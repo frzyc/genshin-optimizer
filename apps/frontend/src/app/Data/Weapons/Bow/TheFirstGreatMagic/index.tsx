@@ -1,9 +1,13 @@
 import type { WeaponKey } from '@genshin-optimizer/consts'
+import { allElementKeys } from '@genshin-optimizer/consts'
 import { allStats } from '@genshin-optimizer/gi-stats'
 import { input, tally } from '../../../../Formula'
 import {
   compareEq,
+  greaterEq,
+  sum,
   lookup,
+  unequal,
   naught,
   subscript,
   threshold,
@@ -29,6 +33,11 @@ const moveSPD_arrs = [
 ]
 
 const sameElementTeammates = lookup(input.charEle, tally, naught)
+const otherElementTeammates = sum(
+  ...allElementKeys.map((ele) =>
+    greaterEq(tally[ele], 1, unequal(ele, input.charEle, tally[ele]))
+  )
+)
 const charged_dmg_ = subscript(input.weapon.refinement, charged_dmg_arr)
 const atk_ = threshold(
   sameElementTeammates,
@@ -42,14 +51,19 @@ const atk_ = threshold(
   )
 )
 const moveSPD_ = threshold(
-  sameElementTeammates,
+  otherElementTeammates,
   3,
   subscript(input.weapon.refinement, moveSPD_arrs[2]),
   compareEq(
-    sameElementTeammates,
+    otherElementTeammates,
     2,
     subscript(input.weapon.refinement, moveSPD_arrs[1]),
-    subscript(input.weapon.refinement, moveSPD_arrs[0])
+    compareEq(
+      otherElementTeammates,
+      1,
+      subscript(input.weapon.refinement, moveSPD_arrs[0]),
+      naught
+    )
   )
 )
 
@@ -78,6 +92,7 @@ const sheet: IWeaponSheet = {
           node: atk_,
         },
         {
+          canShow: (data) => data.get(moveSPD_).value > 0,
           node: moveSPD_,
         },
       ],

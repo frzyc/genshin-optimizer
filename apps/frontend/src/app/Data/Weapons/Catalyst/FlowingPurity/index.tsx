@@ -23,7 +23,7 @@ const [, trm] = trans('weapon', key)
 
 const all_ele_dmg_arr = [-1, 0.08, 0.1, 0.12, 0.14, 0.16]
 const bond_all_ele_dmg_arr = [-1, 0.02, 0.025, 0.03, 0.035, 0.04]
-const maxHpConsumed = 6000
+const bond_max_ele_dmg_arr = [-1, 0.12, 0.15, 0.18, 0.21, 0.24]
 
 const [condAfterSkillPath, condAfterSkill] = cond(key, 'afterSkill')
 const base_ele_dmg_ = equal(
@@ -44,10 +44,12 @@ const bond_all_ele_dmg_ = equal(
   equal(
     condBond,
     'on',
-    prod(
-      subscript(input.weapon.refinement, bond_all_ele_dmg_arr, { unit: '%' }),
-      min(hpConsumed, maxHpConsumed),
-      1 / 1000
+    min(
+      prod(
+        subscript(input.weapon.refinement, bond_all_ele_dmg_arr, { unit: '%' }),
+        prod(hpConsumed, percent(1 / 1000))
+      ),
+      subscript(input.weapon.refinement, bond_max_ele_dmg_arr)
     )
   )
 )
@@ -86,7 +88,12 @@ const sheet: IWeaponSheet = {
             })),
             {
               text: stg('duration'),
-              value: 12,
+              value: 15,
+              unit: 's',
+            },
+            {
+              text: stg('cd'),
+              value: 10,
               unit: 's',
             },
           ],
@@ -106,7 +113,7 @@ const sheet: IWeaponSheet = {
             })),
             {
               text: stg('duration'),
-              value: 12,
+              value: 15,
               unit: 's',
             },
           ],

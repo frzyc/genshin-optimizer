@@ -321,25 +321,6 @@ const sheet: ICharacterSheet = {
           },
         ],
       },
-      ct.condTem('constellation4', {
-        value: condC4Hit,
-        path: condC4HitPath,
-        name: st('hitOp.charged'),
-        states: {
-          on: {
-            fields: [
-              {
-                node: c4_pyro_enemy_res_,
-              },
-              {
-                text: stg('duration'),
-                value: dm.constellation4.duration,
-                unit: 's',
-              },
-            ],
-          },
-        },
-      }),
       ct.headerTem('constellation6', {
         fields: [
           {
@@ -380,6 +361,10 @@ const sheet: ICharacterSheet = {
             fields: [
               {
                 node: infoMut(a1_hatDmgInc, { name: ct.ch('hatDmgInc') }),
+              },
+              {
+                text: stg('energyRegen'),
+                value: 3,
               },
             ],
           },
@@ -493,9 +478,9 @@ const sheet: ICharacterSheet = {
       ct.condTem('constellation2', {
         path: condC2StacksPath,
         value: condC2Stacks,
-        name: ct.ch('c2Stacks'),
+        name: st('timeOnField'),
         states: objKeyMap(c2StacksArr, (stacks) => ({
-          name: st('stack', { count: stacks }),
+          name: st('seconds', { count: stacks * 2 }),
           fields: [
             {
               node: c2_critDMG_,
@@ -507,7 +492,27 @@ const sheet: ICharacterSheet = {
     constellation3: ct.talentTem('constellation3', [
       { fields: [{ node: nodeC3 }] },
     ]),
-    constellation4: ct.talentTem('constellation4'),
+    constellation4: ct.talentTem('constellation4', [
+      ct.condTem('constellation4', {
+        value: condC4Hit,
+        path: condC4HitPath,
+        name: st('hitOp.charged'),
+        states: {
+          on: {
+            fields: [
+              {
+                node: c4_pyro_enemy_res_,
+              },
+              {
+                text: stg('duration'),
+                value: dm.constellation4.duration,
+                unit: 's',
+              },
+            ],
+          },
+        },
+      }),
+    ]),
     constellation5: ct.talentTem('constellation5', [
       { fields: [{ node: nodeC5 }] },
     ]),

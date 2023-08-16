@@ -70,6 +70,7 @@
   "addlCharge": "Additional Skill Charge",
   "addlCharges": "Additional Skill Charges",
   "charOnField": "Character is on-field",
+  "timeOnField": "Time spent on-field",
   "charOffField": "Character is off-field",
   "activeCharField": "Character is inside the ability's field",
   "opponentsField": "Opponent is inside the ability's field",
@@ -178,9 +179,6 @@
     "pyro": "Enemy is affected by <pyro>Pyro</pyro>"
   },
   "getElementalOrbParticle": "After picking up an Elemental Orb or Particle",
-  "hpChange": "After character's HP changes",
-  "afterHeal": "After character is healed",
-  "selfAffected": {
-    "pyro": "Character affected by <pyro>Pyro</pyro>"
-  }
+  "hpChange": "After HP changes",
+  "afterHeal": "After being healed"
 }

@@ -1,8 +1,7 @@
 {
-  "propStacks": "Prop Surplus Stacks",
-  "propStacksUsed": "Prop Surplus Stacks Consumed",
-  "hatDmgInc": "Grin-Malkin Hat DMG Increase",
-  "a1CondName": "HP consumed for <strong>Prop Arrow</strong>",
-  "c2Stacks": "Crisp Focus Stacks",
+  "propStacks": "Prop Surplus",
+  "propStacksUsed": "Prop Surplus Consumed",
+  "hatDmgInc": "Pyrotechnic Strike DMG Increase",
+  "a1CondName": "<strong>Prop Arrow</strong> consumed HP",
   "c6Dmg": "Pyrotechnic Strike: Reprised DMG"
 }

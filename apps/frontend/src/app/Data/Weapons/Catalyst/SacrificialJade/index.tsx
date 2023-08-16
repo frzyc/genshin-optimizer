@@ -2,16 +2,17 @@ import type { WeaponKey } from '@genshin-optimizer/consts'
 import { allStats } from '@genshin-optimizer/gi-stats'
 import { input } from '../../../../Formula'
 import { equal, subscript } from '../../../../Formula/utils'
-import { cond, st, stg } from '../../../SheetUtil'
+import { cond, st, stg, trans } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
 
 const key: WeaponKey = 'SacrificialJade'
 const data_gen = allStats.weapon.data[key]
+const [, trm] = trans('weapon', key)
 
-const hp_arr = [-1, 0.2, 0.25, 0.3, 0.35, 0.4]
-const eleMasArr = [-1, 80, 100, 120, 140, 160]
+const hp_arr = [-1, 0.32, 0.4, 0.48, 0.56, 0.64]
+const eleMasArr = [-1, 40, 50, 60, 70, 80]
 
 const [condOffFieldPath, condOffField] = cond(key, 'offField')
 const hp_ = equal(
@@ -39,7 +40,7 @@ const sheet: IWeaponSheet = {
       header: headerTemplate(key, st('conditional')),
       path: condOffFieldPath,
       value: condOffField,
-      name: st('charOffField'),
+      name: trm('condOffField'),
       states: {
         on: {
           fields: [
@@ -48,11 +49,6 @@ const sheet: IWeaponSheet = {
             },
             {
               node: eleMas,
-            },
-            {
-              text: stg('duration'),
-              value: 6,
-              unit: 's',
             },
           ],
         },

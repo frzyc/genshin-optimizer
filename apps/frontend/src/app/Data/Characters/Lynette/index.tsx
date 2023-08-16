@@ -273,6 +273,7 @@ const sheet: ICharacterSheet = {
           {
             text: ct.chg('skill.skillParams.5'),
             value: dm.skill.holdMaxDuration,
+            fixed: 1,
             unit: 's',
           },
           {
@@ -287,14 +288,6 @@ const sheet: ICharacterSheet = {
           },
         ],
       },
-      ct.headerTem('constellation4', {
-        fields: [
-          {
-            text: st('addlCharges'),
-            value: 1,
-          },
-        ],
-      }),
       ct.condTem('constellation6', {
         value: condC6AfterThrust,
         path: condC6AfterThrustPath,
@@ -368,6 +361,7 @@ const sheet: ICharacterSheet = {
       ct.condTem('passive1', {
         value: condA1AfterBurst,
         path: condA1AfterBurstPath,
+        teamBuff: true,
         name: st('afterUse.burst'),
         states: {
           on: {
@@ -401,7 +395,16 @@ const sheet: ICharacterSheet = {
     constellation3: ct.talentTem('constellation3', [
       { fields: [{ node: burstC3 }] },
     ]),
-    constellation4: ct.talentTem('constellation4'),
+    constellation4: ct.talentTem('constellation4', [
+      ct.headerTem('constellation4', {
+        fields: [
+          {
+            text: st('addlCharges'),
+            value: 1,
+          },
+        ],
+      }),
+    ]),
     constellation5: ct.talentTem('constellation5', [
       { fields: [{ node: skillC5 }] },
     ]),

@@ -45,7 +45,7 @@ const sheet: IWeaponSheet = {
       value: condAffectedPyro,
       path: condAffectedPyroPath,
       header: headerTemplate(key, st('conditional')),
-      name: st('selfAffected.pyro'),
+      name: trm('condName.atk_'),
       states: {
         on: {
           fields: [
@@ -54,6 +54,11 @@ const sheet: IWeaponSheet = {
             },
             {
               text: stg('duration'),
+              value: 15,
+              unit: 's',
+            },
+            {
+              text: stg('cd'),
               value: 12,
               unit: 's',
             },
@@ -65,13 +70,18 @@ const sheet: IWeaponSheet = {
       value: condAffectedOther,
       path: condAffectedOtherPath,
       header: headerTemplate(key, st('conditional')),
-      name: trm('condName'),
+      name: trm('condName.dmg_'),
       states: {
         on: {
           fields: [
             ...Object.values(all_ele_dmg_map).map((node) => ({ node })),
             {
               text: stg('duration'),
+              value: 12,
+              unit: 's',
+            },
+            {
+              text: stg('cd'),
               value: 12,
               unit: 's',
             },

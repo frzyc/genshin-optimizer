@@ -61,6 +61,11 @@ const sheet: IWeaponSheet = {
               value: 12,
               unit: 's',
             },
+            {
+              text: stg('cd'),
+              value: 10,
+              unit: 's',
+            },
           ],
         },
       },

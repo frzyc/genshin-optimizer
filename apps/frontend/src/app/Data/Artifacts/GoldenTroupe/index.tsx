@@ -63,11 +63,6 @@ const sheet: IArtifactSheet = {
                 {
                   node: set4Cond,
                 },
-                {
-                  text: stg('duration'),
-                  value: 2,
-                  unit: 's',
-                },
               ],
             },
           },

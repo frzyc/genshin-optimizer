@@ -13,7 +13,7 @@ const [, trm] = trans('weapon', key)
 
 const atk_arr = [-1, 0.12, 0.15, 0.18, 0.21, 0.24]
 const bond_atkArr = [-1, 0.024, 0.03, 0.036, 0.042, 0.048]
-const maxHpConsumed = 6250
+const bond_maxAtkArr = [-1, 150, 187.5, 225, 262.5, 300]
 
 const [condAfterSkillPath, condAfterSkill] = cond(key, 'afterSkill')
 const base_atk_ = equal(
@@ -30,9 +30,12 @@ const bond_atk = equal(
   equal(
     condBond,
     'on',
-    prod(
-      subscript(input.weapon.refinement, bond_atkArr, { unit: '%' }),
-      min(hpConsumed, maxHpConsumed)
+    min(
+      prod(
+        hpConsumed,
+        subscript(input.weapon.refinement, bond_atkArr, { unit: '%' })
+      ),
+      subscript(input.weapon.refinement, bond_maxAtkArr)
     )
   )
 )
@@ -64,7 +67,12 @@ const sheet: IWeaponSheet = {
             },
             {
               text: stg('duration'),
-              value: 12,
+              value: 15,
+              unit: 's',
+            },
+            {
+              text: stg('cd'),
+              value: 10,
               unit: 's',
             },
           ],
@@ -84,7 +92,7 @@ const sheet: IWeaponSheet = {
             },
             {
               text: stg('duration'),
-              value: 12,
+              value: 15,
               unit: 's',
             },
           ],

@@ -1,7 +1,7 @@
 import type { WeaponKey } from '@genshin-optimizer/consts'
 import { allStats } from '@genshin-optimizer/gi-stats'
 import { input, tally } from '../../../../Formula'
-import { greaterEq, subscript } from '../../../../Formula/utils'
+import { greaterEq, unequal, subscript } from '../../../../Formula/utils'
 import { st } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
@@ -26,7 +26,8 @@ const data = dataObjForWeaponSheet(key, data_gen, {
 const sheet: IWeaponSheet = {
   document: [
     {
-      header: headerTemplate(key, st('stacks')),
+      header: headerTemplate(key, st('passive')),
+      canShow: unequal(eleMas, undefined, 1),
       fields: [
         {
           node: eleMas,

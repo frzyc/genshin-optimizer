@@ -100,17 +100,22 @@ export default function dendro(
 
   const suffusion_hpCost = prod(percent(dm.skill.hpCost), input.total.hp)
 
-  const a4HpConsumedSecondsArr = [
-    0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6,
+  const a4HpConsumedPercentArr = [
+    dm.skill.hpCost,
+    2 * dm.skill.hpCost,
+    3 * dm.skill.hpCost,
+    4 * dm.skill.hpCost,
+    5 * dm.skill.hpCost,
+    6 * dm.skill.hpCost,
   ]
-  const [condA4HpConsumedSecondsPath, condA4HpConsumedSeconds] = cond(
+  const [condA4HpConsumedPercentPath, condA4HpConsumedPercent] = cond(
     condCharKey,
-    'a4HpConsumedSeconds'
+    'a4HpConsumedPercent'
   )
   const a4HpConsumed = lookup(
-    condA4HpConsumedSeconds,
-    objKeyMap(a4HpConsumedSecondsArr, (seconds) =>
-      prod(suffusion_hpCost, seconds)
+    condA4HpConsumedPercent,
+    objKeyMap(a4HpConsumedPercentArr, (percentage) =>
+      prod(input.total.hp, percent(percentage))
     ),
     naught
   )
@@ -132,6 +137,12 @@ export default function dendro(
     input.constellation,
     4,
     shieldElement('hydro', c4Shield)
+  )
+  //Taken off of optimization targets as it scales on receiving character's HP.
+  const c6healing = greaterEq(
+    input.constellation,
+    6,
+    healNode('hp', dm.constellation6.heal, 0)
   )
 
   const dmgFormulas = {
@@ -159,13 +170,6 @@ export default function dendro(
     constellation4: {
       c4Shield,
       c4HydroShield,
-    },
-    constellation6: {
-      heal: greaterEq(
-        input.constellation,
-        6,
-        healNode('hp', dm.constellation6.heal, 0)
-      ),
     },
   } as const
 
@@ -243,19 +247,12 @@ export default function dendro(
           },
         },
       }),
-      ct.headerTem('passive1', {
-        fields: [
-          {
-            node: infoMut(dmgFormulas.passive1.heal, { name: stg('healing') }),
-          },
-        ],
-      }),
       ct.condTem('passive2', {
-        value: condA4HpConsumedSeconds,
-        path: condA4HpConsumedSecondsPath,
+        value: condA4HpConsumedPercent,
+        path: condA4HpConsumedPercentPath,
         name: ch('a4CondName'),
-        states: objKeyMap(a4HpConsumedSecondsArr, (seconds) => ({
-          name: st('seconds', { count: seconds }),
+        states: objKeyMap(a4HpConsumedPercentArr, (percent) => ({
+          name: `${percent * 100}%`,
           fields: [
             {
               node: infoMut(dmgFormulas.passive2.a4HpConsumed_surge_dmgInc, {
@@ -326,7 +323,23 @@ export default function dendro(
       }),
     ]),
 
-    passive1: ct.talentTem('passive1'),
+    passive1: ct.talentTem('passive1', [
+      {
+        fields: [
+          {
+            node: infoMut(dmgFormulas.passive1.heal, { name: stg('healing') }),
+          },
+        ],
+      },
+      ct.headerTem('constellation1', {
+        fields: [
+          {
+            text: stg('energyRegen'),
+            value: dm.constellation1.energyRegen,
+          },
+        ],
+      }),
+    ]),
     passive2: ct.talentTem('passive2'),
     constellation1: ct.talentTem('constellation1'),
     constellation2: ct.talentTem('constellation2'),
@@ -338,15 +351,16 @@ export default function dendro(
       { fields: [{ node: burstC5 }] },
     ]),
     constellation6: ct.talentTem('constellation6', [
-      {
+      ct.headerTem('constellation6', {
+        teamBuff: true,
         fields: [
           {
-            node: infoMut(dmgFormulas.constellation6.heal, {
+            node: infoMut(c6healing, {
               name: stg('healing'),
             }),
           },
         ],
-      },
+      }),
     ]),
   }
 
