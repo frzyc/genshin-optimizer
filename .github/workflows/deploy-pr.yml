@@ -46,7 +46,7 @@ jobs:
           then
             echo "ref=${{ github.event.inputs.ref }}" >> $GITHUB_OUTPUT
           else
-            echo "ref=${{ github.head_ref }}" >> $GITHUB_OUTPUT
+            echo "ref=${{ github.ref }}" >> $GITHUB_OUTPUT
           fi
           if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]
           then
@@ -80,7 +80,7 @@ jobs:
         if: github.event_name != 'workflow_dispatch'
         with:
           body: |
-            [${{ steps.output-date.outputs.date }}] - Building new version
+            [${{ steps.output-date.outputs.date }}] - Building version ${{ github.sha }}
           body-include: '<!-- Created by actions-cool/maintain-one-comment -->'
       - name: Build genshin-optimizer
         run: |
@@ -104,15 +104,15 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add ./${{ steps.build-info.outputs.deploy_path }}
-          git commit -m "build ${{ steps.build-info.outputs.deploy_path }} ${{ steps.build-info.outputs.repo_name }}@${{ steps.build-info.outputs.ref }}"
+          git commit -m "build ${{ steps.build-info.outputs.deploy_path }} ${{ steps.build-info.outputs.repo_name }}@$(cd .. && git rev-parse HEAD)"
           git push origin gh-pages
         working-directory: gh-pages
       - name: Export url
         id: export-url
         run: |
           IFS=/ read -r account repo <<< ${{ vars.PR_REPO }}
-          echo "url=Deployed to https://$account.github.io/$repo/${{ steps.build-info.outputs.deploy_path }} (Takes 3-5 minutes after this completes to be available)" >> $GITHUB_OUTPUT
-          echo "eployed to https://$account.github.io/$repo/${{ steps.build-info.outputs.deploy_path }} (Takes 3-5 minutes after this completes to be available)"
+          echo "url=Deployed $(git rev-parse HEAD) to https://$account.github.io/$repo/${{ steps.build-info.outputs.deploy_path }} (Takes 3-5 minutes after this completes to be available)" >> $GITHUB_OUTPUT
+          echo "Deployed $(git rev-parse HEAD) to https://$account.github.io/$repo/${{ steps.build-info.outputs.deploy_path }} (Takes 3-5 minutes after this completes to be available)"
       - name: Output date
         id: output-date2
         if: github.event_name != 'workflow_dispatch'
