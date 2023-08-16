@@ -1,0 +1,24 @@
+{
+  "name": "Durgunluğun Şarkısı",
+  "description": {
+    "0": "Deniz canlılarını andıran tuhaf bir uzun yay. Kirişinden hiç ses çıkmaz."
+  },
+  "passiveName": "Derinliklerin Nabzı",
+  "passiveDescription": {
+    "0": {
+      "0": "Kuşanan karakter Can yenilediğinde 8 saniyeliğine <cryo>%16</cryo> daha fazla Hasar verir. Bu etki, karakter savaş alanında olmasa da tetiklenebilir."
+    },
+    "1": {
+      "0": "Kuşanan karakter Can yenilediğinde 8 saniyeliğine <cryo>%20</cryo> daha fazla Hasar verir. Bu etki, karakter savaş alanında olmasa da tetiklenebilir."
+    },
+    "2": {
+      "0": "Kuşanan karakter Can yenilediğinde 8 saniyeliğine <cryo>%24</cryo> daha fazla Hasar verir. Bu etki, karakter savaş alanında olmasa da tetiklenebilir."
+    },
+    "3": {
+      "0": "Kuşanan karakter Can yenilediğinde 8 saniyeliğine <cryo>%28</cryo> daha fazla Hasar verir. Bu etki, karakter savaş alanında olmasa da tetiklenebilir."
+    },
+    "4": {
+      "0": "Kuşanan karakter Can yenilediğinde 8 saniyeliğine <cryo>%32</cryo> daha fazla Hasar verir. Bu etki, karakter savaş alanında olmasa da tetiklenebilir."
+    }
+  }
+}

@@ -377,6 +377,13 @@
       "1": "\"Gizli Yaz Cenneti\" etkinliğinde değerli ödülleri açmak için kullanılabilir."
     }
   },
+  "EnigmaticCopperMainspring": {
+    "name": "Gizemli Bakır Yay",
+    "description": {
+      "0": "Esrarengiz metal bir parlaklığa sahip yay. Temelini oluşturan ucuz metalin uygun özelliklere kavuşması için yüzeyinin gizli bir teknikle işlendiği söylenir. Bu yöntem sayesinde yay, meka çekirdeklerinde kullanıldığında uygun fiyata yüksek performans gösterir.",
+      "1": "\"Mega Meka Dövüşü\"nde malzeme ve hediye kilidi açma karşılığı takas edilebilir."
+    }
+  },
   "Primogem": {
     "name": "Köken Taşı",
     "description": {
@@ -450,7 +457,8 @@
   "HydroSigil": {
     "name": "Su Mührü",
     "description": {
-      "0": "Mondstadt çevresinde bulunabilecek özel bir hatıra parası. Dükkandaki nadir eşyalarla takas edilebilir."
+      "0": "Fontaine denizlerinin onayını gösteren bir mühür.",
+      "1": "Kaynak sularının ödüllerini almak için Lucine Çeşmesine bu mührü sun."
     }
   },
   "DendroSigil": {
@@ -509,6 +517,12 @@
     "name": "Liyue İtibarı TP",
     "description": {
       "0": "İtibar Seviyeni artırır. (Liyue)"
+    }
+  },
+  "FontaineReputationEXP": {
+    "name": "Fontaine İtibarı TP",
+    "description": {
+      "0": "İtibar Seviyeni artırır. (Fontaine)"
     }
   },
   "MemoryOfEternalFlames": {
@@ -967,6 +981,24 @@
       "0": "Bubu Eczanesinin sahibi. Genelde Changsheng adında beyaz bir yılanla beraber dolaşır. Tıp bilgisi engin, planları üstü kapalıdır."
     }
   },
+  "Lynette": {
+    "name": "Lynette",
+    "description": {
+      "0": "Sessiz bir sihirbaz asistanı. Duyguları bir kedinininki kadar tahmin edilemezdir."
+    }
+  },
+  "Lyney": {
+    "name": "Lyney",
+    "description": {
+      "0": "Mükemmel bir sahne duruşu olan ve ağzı çok iyi laf yapan Fontaineli ünlü bir sihirbaz. Eşsiz yetenekleriyle ve zekice sarf ettiği her bir sözle izleyiciyi etkilemesini bilir."
+    }
+  },
+  "Freminet": {
+    "name": "Freminet",
+    "description": {
+      "0": "Dalış konusunda oldukça bilgili genç bir beyefendi. Mesafeli ve soğuk tavrının ardında kusursuz, saf bir kalbe sahiptir."
+    }
+  },
   "KamisatoAyakasStellaFortuna": {
     "name": "Kamisato Ayaka'nın Yaşam Yıldızı",
     "description": {
@@ -1379,6 +1411,24 @@
     "name": "Baizhu'nun Yaşam Yıldızı",
     "description": {
       "0": "Baizhu'nun Takımyıldız Etkinleştirme Malzemesi"
+    }
+  },
+  "LynettesStellaFortuna": {
+    "name": "Lynette'in Yaşam Yıldızı",
+    "description": {
+      "0": "Lynette'in Takımyıldız Etkinleştirme Malzemesi"
+    }
+  },
+  "LyneysStellaFortuna": {
+    "name": "Lyney'nin Yaşam Yıldızı",
+    "description": {
+      "0": "Lyney'nin Takımyıldız Etkinleştirme Malzemesi"
+    }
+  },
+  "FreminetsStellaFortuna": {
+    "name": "Freminet'nin Yaşam Yıldızı",
+    "description": {
+      "0": "Freminet'nin Takımyıldız Etkinleştirme Malzemesi"
     }
   },
   "GnosticHymnOldNotes": {
@@ -2022,6 +2072,12 @@
     "name": "Kahve Çekirdekleri",
     "description": {
       "0": "Teyvat'ta yaygın olan ve özel aromaya sahip bir meyve. Öğütüldükten sonra içecek yapımında kullanılabilir."
+    }
+  },
+  "FermentedJuice": {
+    "name": "Fermente Meyve Suyu",
+    "description": {
+      "0": "Kendine has bir meyve kokusu olan fermente edilmiş bir meyve suyu. Genelde marinasyon için kullanılır."
     }
   },
   "JeansDocumentPackage": {
@@ -6061,6 +6117,12 @@
       "0": "Sadece Inazuma'da bulunabilen kesilmemiş bir kristal. Sadece profesyonel bir işçilikle gerçek değeri ortaya çıkar."
     }
   },
+  "CondessenceCrystal": {
+    "name": "Kristal Özütü",
+    "description": {
+      "0": "Parlak ve berrak bir kristal. Çekirdeği hem sağlam hem de şekillendirmeye uygundur."
+    }
+  },
   "NorthlanderSwordBillet": {
     "name": "Kuzey Diyarı Kılıç Prototipi",
     "description": {
@@ -6330,6 +6392,54 @@
       "1": "Toprak onu hatırladığı zaman Viparyas çiçek açar."
     }
   },
+  "PluieLotus": {
+    "name": "Yağmur Nilüferi",
+    "description": {
+      "0": "Uzun yağmurlu sezonlardan sonra Su elementinin bol olduğu Fontaine bölgelerinde yetişen bir bitki. Bu sebeple yerel dilde bitkiye \"yağmur\" anlamına gelen \"Pluie\" adı verilmiştir."
+    }
+  },
+  "BulleFruit": {
+    "name": "Bulle Meyvesi",
+    "description": {
+      "0": "Sıcak, nemli ve bol güneş ışığı alan ortamlarda yetişen bir meyve. Bu top şeklinde yuvarlak meyvenin içinde tatlı ve ferahlatıcı bir sürpriz vardır."
+    }
+  },
+  "Marcotte": {
+    "name": "Marcotte",
+    "description": {
+      "0": "İnci parlaklığına sahip yoğun kokulu pembe bir çiçek. Parfüm yapımındaki en önemli malzemelerinden biridir."
+    }
+  },
+  "BerylConch": {
+    "name": "Beril Kabuk",
+    "description": {
+      "0": "Deniz kabuğu şekline sahiptir ve soluk bir ışıkla parlar. İsminin aksine bir deniz kabuğu değildir, yoğunlaşmış saf element enerjisinden oluşur."
+    }
+  },
+  "RomaritimeFlower": {
+    "name": "Romaritime Çiçeği",
+    "description": {
+      "0": "Havai ve zarif bir mavi renge sahip çiçek. Yumuşak ve elastik yaprakları suyu emdiğinden çeşitli günlük ihtiyaçlar için ideal bir ham madde görevi görür."
+    }
+  },
+  "Tidalga": {
+    "name": "Tidalga",
+    "description": {
+      "0": "Dalgalarla birlikte sürüklenen ve diğer bitkilerin oluşturduğu maddelerle beslenerek hayatta kalan bir alg. Hayvansal planktonlarla sıkça karıştırılmasına rağmen doğasından ötürü Tidalga aslında bir tür bitki planktonudur."
+    }
+  },
+  "LumidouceBell": {
+    "name": "Lumidouce Çanı",
+    "description": {
+      "0": "Huzur ve sakinlik veren bir mor renge sahip çiçek. Hafif, rahatsız etmeyen ve uzun süreli bir kokusu olduğundan lüks parfümler yapmak için kullanılır."
+    }
+  },
+  "RainbowRose": {
+    "name": "Gökkuşağı Gülü",
+    "description": {
+      "0": "Narin ve yumuşak pembe bir çiçek. İsminin aksine Gökkuşağı Gülleri daha çok Zambağa benzer."
+    }
+  },
   "BirchWood": {
     "name": "Huş Ağacı Kütüğü",
     "description": {
@@ -6439,6 +6549,41 @@
     "name": "Ilgın Kütüğü",
     "description": {
       "0": "Ilgın Ağacından elde edilen bir kütük. Özel bir dokuya sahiptir, kuraklığa ve neme karşı dirençli olduğu için oldukça dayanıklıdır.",
+      "1": "Dekorasyon yapmak için kullanılabilir."
+    }
+  },
+  "MallowWood": {
+    "name": "Çınar Kütüğü",
+    "description": {
+      "0": "Çınar Ağacından elde edilen kütük. Ev temeli ve iskeleti yapmak için uygundur. İşlemesi ve kullanımı kolay olduğundan göze hoş gelen mobilyalar yapmak çok fazla el işçiliği gerektirmez.",
+      "1": "Dekorasyon yapmak için kullanılabilir."
+    }
+  },
+  "LindenWood": {
+    "name": "Ihlamur Ağacı Kütüğü",
+    "description": {
+      "0": "Ihlamur Ağacından elde edilen kütük. Pürüzsüz bir dokusu vardır ve açık renklidir. İnce işçilik yapıldığında dahi çok az talaş çıkarır. Genelde oyularak detaylı el sanatı ürünleri veya ahşap mekanizmalar için parçalar haline getirilir.",
+      "1": "Dekorasyon yapmak için kullanılabilir."
+    }
+  },
+  "AshWood": {
+    "name": "Dişbudak Ağacı Kütüğü",
+    "description": {
+      "0": "Dişbudak Ağacından elde edilen kütük. Son derece yüksek mukavemetiyle yalnızca güçlü, yük binen parçaların yapımında değil, aynı zamanda duvar destekleri için levha yapımında ve sık sık darbe alan taşıma sandıklarının üretiminde de kullanılır.",
+      "1": "Dekorasyon yapmak için kullanılabilir."
+    }
+  },
+  "CypressWood": {
+    "name": "Selvi Kütüğü",
+    "description": {
+      "0": "Selvi Ağacından elde edilen kütük. Ağaç özünün çapı geniş ve iç kabuğu incedir. Metal kadar sert ve dayanıklı olmamasına rağmen geniş yüzeyli yapı parçalarının üretiminde daha avantajlıdır.",
+      "1": "Dekorasyon yapmak için kullanılabilir."
+    }
+  },
+  "TorchWood": {
+    "name": "Meşale Ağacı Kütüğü",
+    "description": {
+      "0": "Meşale Ağacından elde edilen kütük. Yumuşak bir dokusu vardır, kolaylıkla kesilebilir ve kuru kalır. Birçok parlak ve açık renk boyaya uygun bir rengi vardır. Bu sebeple narin dekorasyonlar yapmak isteyen zanaatkarlar arasında yaygın bir şekilde tercih edilir.",
       "1": "Dekorasyon yapmak için kullanılabilir."
     }
   },
@@ -8916,7 +9061,7 @@
   "TwilightTheaterHeadsNotes": {
     "name": "Alacakaranlık Tiyatrosu Başkanının Notları",
     "description": {
-      "0": "\"Drama Fantazmagoryası: Kılıç Tutan Prensesin Öyküsü\" oyununun senaryosu. Senaryoya eklenen dipnot benzeri karalamalar, oyuncu topluluğu başkanının notları gibi duruyor. Bazı sahnelerdeki talimatlar öyle aykırı ki uç koşullarda uygulanmaları dahi mümkün değil."
+      "0": "\"Drama Yanılsaması: Kılıç Tutan Prensesin Öyküsü\" oyununun senaryosu. Senaryoya eklenen dipnot benzeri karalamalar, oyuncu topluluğu başkanının notları gibi duruyor. Bazı sahnelerdeki talimatlar öyle aykırı ki uç koşullarda uygulanmaları dahi mümkün değil."
     }
   },
   "FreshlyPickedHarraFruit": {
@@ -9631,6 +9776,69 @@
       "2": "Uygulamalar bilgeliğin meyvesini verir. Pratik, kendi anlamını oluşturur ve bilge kişi yalnızca eylem, söz ve düşünceyi birleştirerek mükemmelliğe ulaşabilir."
     }
   },
+  "TeachingsOfEquity": {
+    "name": "Eşitlik Öğretisi",
+    "description": {
+      "0": "Su Ülkesinin kıyılarında hakkaniyet yatar.",
+      "1": "Hakkaniyet, hakların sınırlarını belirler. Hakkaniyet olmazsa kanunun tanıdığı haklar sömürülür ve erdemli geleneklerimize zarar veren bir araç haline gelir."
+    }
+  },
+  "GuideToEquity": {
+    "name": "Eşitlik Rehberi",
+    "description": {
+      "0": "Su Ülkesinin kıyılarında hakkaniyet yatar.",
+      "1": "Hakkaniyet, Fontaine'in üzerine kurulduğu temeldir. Hakkaniyet, kanunun ölçütüdür. Eğer kanun, hakkaniyetin özünü yitirecek olursa üzerinde kumar oynanıp kar edilen bir satranç tahtasından farkı kalmaz."
+    }
+  },
+  "PhilosophiesOfEquity": {
+    "name": "Eşitlik Felsefesi",
+    "description": {
+      "0": "Su Ülkesinin kıyılarında hakkaniyet yatar.",
+      "1": "Hakkaniyet, Fontaine'in üzerine kurulduğu temeldir. Hakaniyetin devamlı ve sağlam bir şekilde ahlak ve kanun ile beslenmesi gerekir, ayrıca ahlak ve kanun da değişmez hakkaniyet prensibine göre şekillenir."
+    }
+  },
+  "TeachingsOfJustice": {
+    "name": "Adalet Öğretisi",
+    "description": {
+      "0": "Su Ülkesinin kılıcı adalettir.",
+      "1": "Fontaine'in kanunu adaletin kılıcını elinde taşır. Adaletin rehberliği olmadan tüm kanunlar anlamsız kelimelerden ibarettir ve her an değiştirilmeye veya kesilip biçilmeye maruz kalabilir."
+    }
+  },
+  "GuideToJustice": {
+    "name": "Adalet Rehberi",
+    "description": {
+      "0": "Su Ülkesinin kılıcı adalettir.",
+      "1": "Fontaine'in kanunu adaletin kılıcını elinde taşır. Adalet kör olmalıdır ve onun kılıcını taşıyanlar, kendi hesap ve çıkarlarına kapılıp yolunu şaşırmamalıdr."
+    }
+  },
+  "PhilosophiesOfJustice": {
+    "name": "Adalet Felsefesi",
+    "description": {
+      "0": "Su Ülkesinin kılıcı adalettir.",
+      "1": "Fontaine'in kanunu adaletin kılıcını elinde taşır. Adalet, yargılama ve uzlaşı anlamına gelir. Adaletin kılıcı kötü eylemleri cezalandırırken uzlaşı da düzeni tesis eder."
+    }
+  },
+  "TeachingsOfOrder": {
+    "name": "Düzen Öğretisi",
+    "description": {
+      "0": "Su Ülkesinin kalkanı düzendir.",
+      "1": "Fontaine'deki tüm kanunlar nihayetinde düzeni sağlamak için vardır. Düzenin olmadığı yerde kaos olur, kaosun olduğu yerde ise hakkaniyet olmaz."
+    }
+  },
+  "GuideToOrder": {
+    "name": "Düzen Rehberi",
+    "description": {
+      "0": "Su Ülkesinin kalkanı düzendir.",
+      "1": "Fontaine'deki tüm kanunlar nihayetinde düzeni sağlamak için vardır. Düzenin sağladığı güvence olmazsa adalet, herkesin herkese karşı kullandığı, sınırsız şiddet getiren bir silaha dönüşür."
+    }
+  },
+  "PhilosophiesOfOrder": {
+    "name": "Düzen Felsefesi",
+    "description": {
+      "0": "Su Ülkesinin kalkanı düzendir.",
+      "1": "Fontaine'deki tüm kanunlar nihayetinde düzeni sağlamak için vardır. Hakkaniyet ve adalet, düzenden gelir ve ona hizmet eder. Düzen, tıpkı Fontaine'in sakin ve hareketsiz suları gibi Fontaine'in varoluşunun temelini oluşturur."
+    }
+  },
   "SanctifyingDroplet": {
     "name": "",
     "description": {}
@@ -9808,10 +10016,23 @@
       "0": "Khvarena'nın bıraktığı parça. Geçmiş anıları taşır."
     }
   },
+  "Hydroculus": {
+    "name": "Su Özü",
+    "description": {
+      "0": "Yoğun miktarda Su enerjisi içeren bir madde. Bu özü Heykele sunarak zaman içinde kaybettiği gücünü geri kazanmasına yardım et."
+    }
+  },
   "VoucherBox": {
     "name": "Bilet Kutusu",
     "description": {
       "0": "İçinde Neşe Bileti olan bir kutu. Eşsiz bir çiçek benzeri şekilleri vardır ve Veluriyam Serabı'nda bulunabilirler. Ödül kazanmak isteyen misafirler için de önemli bir koleksiyon parçasıdır. Eğlence Kristali ve Mutluluk Kristali kullanmak onların çok daha etkili bir şekilde bulunmasını sağlıyor gibi..."
+    }
+  },
+  "FontaineShrineOfDepthsKey": {
+    "name": "Fontaine Derinlikler Tapınağı Anahtarı",
+    "description": {
+      "0": "Fontaine çevresinde bulunan kadim Derinlikler Tapınaklarının mührünü kırabilen bir anahtar.",
+      "1": "Derinlikler Tapınaklarını inşa eden medeniyet yok olup gidince tapınaklar kendilerini mühürledi. Zindanların derinliklerinde bulunabilen anahtarlar bu mühürleri kırabilir. Belki de bu anahtarlar, mühürlerin kaybettiklerini unutmasına yardımcı oluyordur."
     }
   },
   "Dish": {
@@ -12857,6 +13078,372 @@
       "0": "Kirara'nın özel tarifi. Kirara'nın hazırlarken çok emek verdiği, insanlara uygun bir yemek. İnsan kadınların tercihlerini gözlemleyen Kirara, bu dengeli şekilde hazırlanmış mezelerle, kedi şeklindeki sevimli pirinç toplarını bir araya getirdi. Görünüşü güzelce sarılıp hazırlanmış bir paket gibi... Her gün yesen de bıkmazsın!"
     }
   },
+  "SuspiciousDuckConfit": {
+    "name": "Ördek Konfi (Tuhaf)",
+    "description": {
+      "0": "Tavada kızartılan bir yemek. Ördeğin bacağı tuttuğun yerden elinde kalacak gibi ve daha ilk ısırıkta ağzının içini yağ kaplıyor. Dokusuyla ilgili de garip bir şey var... Ah, ördeğin tüyü mü o?"
+    }
+  },
+  "DuckConfit": {
+    "name": "Ördek Konfi",
+    "description": {
+      "0": "Tavada kızartılan bir yemek. Tuz ve baharatlarla lezzetlendirilen ördek bacağı, ördek yağına sarılmadan önce iyice yıkanır. Konfi daha sonra fırında kızartılıp servis edilir. Ördek yağında pişmiş et, yanında patatesle harika gider."
+    }
+  },
+  "DeliciousDuckConfit": {
+    "name": "Ördek Konfi (Lezzetli)",
+    "description": {
+      "0": "Tavada kızartılan bir yemek. \"Konfi\" pişirme tekniğinin sihri, ördek bacağının dışı çıtır içi ağızda eriyecek kadar yumuşak olmasında saklı. Yemeği yerken harcanan her saniye buna değer demek abartı olmaz!"
+    }
+  },
+  "SuspiciousFontainianFoieGras": {
+    "name": "Fontaine Usulü Kaz Ciğeri (Tuhaf)",
+    "description": {
+      "0": "Geleneksel bir Fontaine yemeği. Sanki bir kaşık yağ yutmuşsun da bir lokma daha yersen yutamayacakmışsın gibi geliyor. Yemeği pişirirken bir kavanoz yağ boca edilmiş sanki."
+    }
+  },
+  "FontainianFoieGras": {
+    "name": "Fontaine Usulü Kaz Ciğeri",
+    "description": {
+      "0": "Geleneksel bir Fontaine yiyeceği. Kaz ciğerini servis etmeden önce sadece tavada kızartmak yeterlidir. Isının ustaca kontrol edilmesi sayesinde nar gibi kızaran kaz ciğerinin baştan çıkaran bir yumuşaklığı vardır. Pişirmek için odaklanıp konsantre olmak gerekir yoksa leziz ciğer eriyip bir yağ çamuruna dönüşebilir."
+    }
+  },
+  "DeliciousFontainianFoieGras": {
+    "name": "Fontaine Usulü Kaz Ciğeri (Lezzetli)",
+    "description": {
+      "0": "Geleneksel bir Fontaine yemeği. Yumuşak ve yağlı kaz ciğeri damağını ipeksi dans hareketleriyle karşılayıp, boğazından aşağı pürüzsüz bir saten gibi vals yaparak iniyor. Sanki gelecekte yiyeceğin her şeyin tadı buna kıyasla yavan olacakmış gibi üstün bir lezzete sahip. Yine de yediğin için pişman olduğunu söyleyemezsin, değil mi?"
+    }
+  },
+  "SuspiciousCreamOfMushroomSoup": {
+    "name": "Kremalı Mantar Çorbası (Tuhaf)",
+    "description": {
+      "0": "Her yerde bulunabilen yoğun bir çorba. İlk kaşıkta aldığın tuhaf tat karşısında donup kalıyorsun. Kendini birden \"Hükümdarların aşkına, yediğim şey çamur olmasın lütfen...\" diye dua ederken buluyorsun."
+    }
+  },
+  "CreamOfMushroomSoup": {
+    "name": "Kremalı Mantar Çorbası",
+    "description": {
+      "0": "Her yerde bulunabilen koyu kıvamlı bir çorba. Pişen malzemeleri sıvılaşıncaya kadar karıştır, çorba koyulaşana kadar ateşte pişir ve işte hazır! İnsanın hem kalbini hem de midesini ısıtan basit bir yemek."
+    }
+  },
+  "DeliciousCreamOfMushroomSoup": {
+    "name": "Kremalı Mantar Çorbası (Lezzetli)",
+    "description": {
+      "0": "Her yerde bulunabilen koyu kıvamlı bir çorba. Kremamsı dokusu ipek bir elbise gibi ve sanki sen de bu güzel elbiseyle sahnede dans ediyorsun... Perde iner, fakat hatırası aklında kalır."
+    }
+  },
+  "SuspiciousGarlicBaguette": {
+    "name": "Sarımsaklı Baget Ekmek (Tuhaf)",
+    "description": {
+      "0": "Dilimlenmiş baget ekmek. O kadar sert ki insan tabağa bakıp düşünmeden edemiyor: Acaba bu aslında baget görünümünde bir taş mı?"
+    }
+  },
+  "GarlicBaguette": {
+    "name": "Sarımsaklı Baget Ekmek",
+    "description": {
+      "0": "Dilimlenmiş baget ekmek. Fırından taze çıkan ekmeğin kabuğu çıtır ve gevrek, içi ise yumuşacık. Tereyağı ve sarımsağın kokusu, bagetin lezzetini daha da artırıyor! Demek bu yüzden işten eve dönen Fontainelilerin elinde sık sık baget görüyorsun."
+    }
+  },
+  "DeliciousGarlicBaguette": {
+    "name": "Sarımsaklı Baget Ekmek (Lezzetli)",
+    "description": {
+      "0": "Dilimlenmiş baget ekmek. Söylenene göre bazen Fontaineliler fırıncılık yarışmaları düzenliyormuş. En iyi baget ekmeği yapan fırıncılar yeteneklerini Mermonia Sarayında gösterirmiş. Bu baget, böyle bir yarışmada kesinlikle ilk sırayı kazanırdı!"
+    }
+  },
+  "SuspiciousFishAndChips": {
+    "name": "Balık ve Patates Kızartması (Tuhaf)",
+    "description": {
+      "0": "Derin yağda kızartılan bir ara sıcak. Bu yemeği yiyecek kadar şanssız olan her Fontaineli, Mermonia Sarayına aynı şikayette bulunur: Yumuşamış Balık ve Patates Kızartması yasalara aykırı olmalı!"
+    }
+  },
+  "FishAndChips": {
+    "name": "Balık ve Patates Kızartması",
+    "description": {
+      "0": "Derin yağda kızartılan bir iştah açıcı. Fileto halindeki balıkları unlu karışıma bula, altın rengi ve çıtır çıtır olana kadar derin yağda kızart. Yanına da patates kızartması koymayı unutma. Bu birleşim o kadar harika ki yanına hangi sosu seçersen seç, yediğinde yüzüne mutlu bir gülümseme yayılmasına engel olamazsın."
+    }
+  },
+  "DeliciousFishAndChips": {
+    "name": "Balık ve Patates Kızartması (Lezzetli)",
+    "description": {
+      "0": "Derin yağda kızartılan bir iştah açıcı. Balık filetoları ve patatesler cızırdayan yağda keyifle kahkaha atarken çatlamış, birbirlerine karışan kokuları odanın içini dolduruyor... Patates kızartması yemekten daha keyifli bir şey varsa o da bu balık filetosundan kocaman bir lokma aldıktan sonra patates kızartması yemek olmalı!"
+    }
+  },
+  "SuspiciousLasagna": {
+    "name": "Lazanya (Tuhaf)",
+    "description": {
+      "0": "Fırında pişen bir makarna yemeği. Makarna ve iç malzeme rastgele karıştırıldığından yemeğin dokusu tam bir hayal kırıklığı. Lazanyanın neredeyse boğazına takılacağını hissediyorsun ama dur, henüz en kötü kısmı başlamadı bile. Bir sonraki lokmayı kesin daha da zor yutacaksın!"
+    }
+  },
+  "Lasagna": {
+    "name": "Lazanya",
+    "description": {
+      "0": "Fırında pişen bir makarna yemeği. Makarna şeritlerinin üstüne peynir, et sosu ve beşamel sosunu yay, sonra üstüne bir kat daha makarna koy. Bu işlemi birkaç defa tekrarla, sonra da peynir altın rengi olup baloncuklar çıkarana kadar fırında pişir. Lezzetin sırrı özenle hazırlanan et sosunda saklı."
+    }
+  },
+  "DeliciousLasagna": {
+    "name": "Lazanya (Lezzetli)",
+    "description": {
+      "0": "Fırında pişen bir makarna yemeği. Tencere ve Ateşin Şarkısı, et sosunun Makarna Tahtına çıkışını anlatan meşhur bir hikayedir. Bir lokma aldığın an o kadar eşsiz bir kutsanma hissedersin ki içinden bugünü Lazanya Günü ilan etmek gelir!"
+    }
+  },
+  "SuspiciousPoissonchantPie": {
+    "name": "Balık Korosu (Tuhaf)",
+    "description": {
+      "0": "Bir balık turtası. Balık kafalarının nasıl bu kadar farklı yönlere bakabileceğini anlamak imkansız. Balıkların \"Koro\" halinde söylemeleri gereken şarkı, düzensiz çığlıklara dönüşmüş. Daha ilk lokmada tuhaf bir hayvan eti yediğin hissi içini kaplar ve damağın teslim bayrağını çeker. Sanki balıkların çığlıklarını işitiyorsun... Bu bir tür sanrı olmalı, değil mi?"
+    }
+  },
+  "PoissonchantPie": {
+    "name": "Balık Korosu",
+    "description": {
+      "0": "Bir balık turtası. İç malzemesini karıştır ve hamurun üzerine koy. Yemeğin püf noktası, fırına atmadan önce balıkların başlarını doğru şekilde ayarlamak. Böylelikle yemek hazır olduğunda tüm balıklar sanki beraber marş söylüyormuş gibi yukarı bakar."
+    }
+  },
+  "DeliciousPoissonchantPie": {
+    "name": "Balık Korosu (Lezzetli)",
+    "description": {
+      "0": "Bir balık turtası. Harlı ateşte cızırdayan balığın yağı turtanın hamuruna akıp altın rengi ve çıtır çıtır olmasını sağlamış. Yemek fırından çıktığında hemen tadına bakmanın cazibesine kimse karşı koyamaz. Balıklar sanki damağında romantik ve lezzetli bir mutluluk şarkısı söylüyor."
+    }
+  },
+  "SuspiciousFruityTrio": {
+    "name": "Meyve Üçlüsü (Tuhaf)",
+    "description": {
+      "0": "Romantik bir havası olan tatlı. Birkaç başarısız denemeden sonra merengin şekli kabul edilebilir halde pişirilmiş ancak bu sırada üzerinde tuhaf görünen birkaç yanık yumrusu oluşmuş. Ne yazık ki uzun süredir pişmekten Bulle Meyvesi de artık buruk bir ifadeyle sinir içinde gülümsüyor ve hiç tatlı değil."
+    }
+  },
+  "FruityTrio": {
+    "name": "Meyve Üçlüsü",
+    "description": {
+      "0": "Romantik bir havası olan tatlı. Turtalar Bulle Meyvesi reçeliyle doldurulup üzerine mereng konularak fırına verilir. Tek ısırıkta üç farklı meyve aroması almak mümkündür. Yemek sonrası atıştırmaların baş tacıdır."
+    }
+  },
+  "DeliciousFruityTrio": {
+    "name": "Meyve Üçlüsü (Lezzetli)",
+    "description": {
+      "0": "Romantik bir havası olan tatlı. Gevrek ve ağızda dağılan turta ile ferahlatıcı meyve dolgusu birleşip ağzında eriyor. Merengin üstündeki kahverengi ve beyaz renklerin harmonisi, insanın içini ısıtan gün ışığının yaldızlara boyadığı bir parça bulut misali. Damağın bu şaşırtıcı lezzetle karşılaşmaktan memnun."
+    }
+  },
+  "SuspiciousTassesRagout": {
+    "name": "Tasses Yahnisi (Tuhaf)",
+    "description": {
+      "0": "Bir tür sebze yahnisi. Eksik bir malzeme varsa veya kazara yemeğe fazladan bir şeyler attıysan sorun değil, kimse farkına varmaz. Çünkü aşırı yoğun kullanılan baharat sebzelerin kendi tadını yok etmiş bile."
+    }
+  },
+  "TassesRagout": {
+    "name": "Tasses Yahnisi",
+    "description": {
+      "0": "Bir tür sebze yahnisi. Sebze hasadını kutlamak amacıyla Fontaineli çiftçiler tarafından uydurulmuş bir yemektir. Konulacak malzeme veya pişirme yöntemiyle ilgili sabit bir kural bulunmaz. İster tavada ister fırında yapılsın, bu basit yemeğin köy yaşamını anımsatan tadıyla insanı mutlu etmemesi mümkün değil."
+    }
+  },
+  "DeliciousTassesRagout": {
+    "name": "Tasses Yahnisi (Lezzetli)",
+    "description": {
+      "0": "Bir tür sebze yahnisi. Bir keresinde bu yemeğin Fontaineli müşkülpesent bir gurmeye çocukluğunu hatırlatıp onu gözyaşlarına boğduğu rivayet edilir. Hikayenin bazı kısımları biraz abartılmış olabilir ama yemeğin lezzetiyle ilgili olan kısımlarının gerçek olduğuna şüphe yok."
+    }
+  },
+  "SuspiciousSteakTartare": {
+    "name": "Biftek Tartar (Tuhaf)",
+    "description": {
+      "0": "Pişirilmeden servis edilen bir çiğ et yemeği. Pas kırmızısı ve hafif ekşimiş et hiç de tekin olmayan bir his veriyor. Bu yemek insanların tüketebileceği bir şey olmaktan çıkmış. Bir güvenlik mekasına vermek de doğru olmaz, değil mi?"
+    }
+  },
+  "SteakTartare": {
+    "name": "Biftek Tartar",
+    "description": {
+      "0": "Pişirilmeden servis edilen bir çiğ et yemeği. Özenle seçilen etler kıyma haline getirilip baharatlanır ve bu karışıma çiğ yumurta sarısı mükemmel bir şekilde eşlik eder. Bu fikri ilk kimin bulunduğu bilinmez. Karnını doyurmaya çalışan bir maceracının çaresizlikten denediği bir şey olabilir."
+    }
+  },
+  "DeliciousSteakTartare": {
+    "name": "Biftek Tartar (Lezzetli)",
+    "description": {
+      "0": "Taze bir çiğ et yemeği. Usulünce kıyılmış yumurta kaplı et son derece sulu ve lezzetli. Enfes et suyu ağzının içini mest ederek olağanüstü saf ve eski bir tatla dolduruyor."
+    }
+  },
+  "SuspiciousVessieChicken": {
+    "name": "Vessie Tavuğu (Tuhaf)",
+    "description": {
+      "0": "Meşhur bir Fontaine yiyeceği. Binbir uğraşla tavuğu mesaneye doldurduktan sonra sabırsızlıkla nihayet pişen yemeğin tadına bakıyorsun... Aa, bu garip koku da ne? Mesane mi yoksa tavuk mu yediğini anlayamıyorsun."
+    }
+  },
+  "VessieChicken": {
+    "name": "Vessie Tavuğu",
+    "description": {
+      "0": "Meşhur bir Fontaine yiyeceği. \"Vessie\" Fontaine'de \"mesane\" anlamına gelir. İsminden anlaşılacağı gibi, baharat katılan tavuk eti bir mesaneye doldurulur ve et suyunda haşlanır. Pişerken mesane toparlak bir Uçarlop gibi şişer. İnsanlar genelde sadece tavuk etini yemeyi sever."
+    }
+  },
+  "DeliciousVessieChicken": {
+    "name": "Vessie Tavuğu (Lezzetli)",
+    "description": {
+      "0": "Meşhur bir Fontaine yiyeceği. Etin içine hapsedilmiş enfes suyu, zengin ve katmanlı bir bir koku yayıyor. Birçok gurmenin peşinde koştuğu bir lezzet. Bir tabak gömdükten sonra bile kimse dudaklarını yalayıp kalan tadı almadan edemez. Bu seçkin yemek şüphesiz Fontaine gastronomisinin baş tacı."
+    }
+  },
+  "SuspiciousFontainianOnionSoup": {
+    "name": "Fontaine Usulü Soğan Çorbası (Tuhaf)",
+    "description": {
+      "0": "Bir soğan çorbası. İlk birkaç yudumun tadı fena değildi ama yağlı peynir tam boğazından geçerken neredeyse kalp çarpıntısına sebep olacaktı... Önümüzdeki günlerde yakınlarında çorba görmek istemeyebilirsin."
+    }
+  },
+  "FontainianOnionSoup": {
+    "name": "Fontaine Usulü Soğan Çorbası",
+    "description": {
+      "0": "Bir soğan çorbası. Soğan hafif renk alana kadar tavada kavrulur ve sonra et suyunda kaynatılır. Malzeme bir çorba tenceresine alınır ve içine bir dilim ekmek konup biraz peynir serpilerek fırına verilir. Tecrübeli şefler soğan doğrarken asla ağlamaz. Bu işin püf noktası ise şu: Soğanı yamağa kestirtmek."
+    }
+  },
+  "DeliciousFontainianOnionSoup": {
+    "name": "Fontaine Usulü Soğan Çorbası (Lezzetli)",
+    "description": {
+      "0": "Bir soğan çorbası. Üstü çıtır altı yumuşak ekmek yatağında altın renkli eriyip uzayan peynir, zengin soğan kokusu ve hafif tuzla birleşmiş. İçinin ısınması için küçücük bir yudum yeterli."
+    }
+  },
+  "SuspiciousIleFlottante": {
+    "name": "Yüzen Ada (Tuhaf)",
+    "description": {
+      "0": "Yumurta beyazından yapılan bir tatlı. Yumurta beyazı çırpmaktan ellerin ağrısa ve durumu kurtarmak için karışımı sosun üzerine yaymaya çalışsan da ikisi karışıp tam bir bulamaç haline geldi... Iı, bunu yeni bir tür içecekmiş gibi düşünemez miyiz mesela?"
+    }
+  },
+  "IleFlottante": {
+    "name": "Yüzen Ada",
+    "description": {
+      "0": "Yumurta beyazından yapılan bir tatlı. Hazırlaması çok basit: Yumurta beyazını uygun şekilde çırp, işin yarısı tamam. Pişirdiğin yumurtayı sosun üzerine koyduğunda yemek hazır. Zarif bir görüntüsü olan bu tatlı, Fontaineli hanımefendilerin akşamüstü çayında ilk tercihidir."
+    }
+  },
+  "DeliciousIleFlottante": {
+    "name": "Yüzen Ada (Lezzetli)",
+    "description": {
+      "0": "Yumurta beyazından yapılan bir tatlı. Kaymak gibi sosun üstünde bir çiy tanesi gibi duran yumurta beyazı, maceracılar tarafından keşfedilmeyi bekleyen bir hazine sandığı gibi. Bu gösterişli sandığı açmanın verdiği zevk için \"keyifli\" demek yetersiz kalır."
+    }
+  },
+  "SuspiciousPoissonSeafoodSoup": {
+    "name": "Poisson Deniz Mahsulü Çorbası (Tuhaf)",
+    "description": {
+      "0": "Deniz mahsullerinden yapılan bir çorba. Sahip olduğu tek tat pis balık kokusundan geliyor. Eğer burnun hâlâ düzgün çalışıyorsa çorbayla ilgili yanlış bir şeyler olduğu kesin... Bekle bir saniye, dişine takılan şey balık pulu mu yoksa bir çakıl mı?"
+    }
+  },
+  "PoissonSeafoodSoup": {
+    "name": "Poisson Deniz Mahsulü Çorbası",
+    "description": {
+      "0": "Deniz mahsullerinden yapılan bir çorba. İlk olarak Poisson köyünde ortaya çıkmıştır. Balıkçılar eskiden artan balıkları bu şekilde değerlendirirdi. Daha sonraları bu çorba tazeliğinden ötürü Fontaine'de popüler hale geldi. Bugünlerde herhangi bir deniz ürünü yemeğe katılabiliyor."
+    }
+  },
+  "DeliciousPoissonSeafoodSoup": {
+    "name": "Poisson Deniz Mahsulü Çorbası (Lezzetli)",
+    "description": {
+      "0": "Deniz mahsullerinden yapılan bir çorba. Tereyağlı çorba, güneşte parıldayan yaldızlı dalgaları andırıyor ve zengin deniz ürünlerinin tatları ağzında eriyor. Okyanusun nimetleri ahenkli bir şaheser oluşturmuş. Yemeğin tek damlasını dahi kaçırmanın yazık olacağını düşünüp kaseyi bitirir bitirmez kalanlara ekmek banmadan edemiyorsun!"
+    }
+  },
+  "SuspiciousFontaineAspic": {
+    "name": "Fontaine Jölesi (Tuhaf)",
+    "description": {
+      "0": "Deniz mahsulünden yapılan soğuk bir yemek. Yemekteki tuzakları, yani balık jelatinine gizlenmiş kılçıkları yememeyi başarabilirsen iyi bir iştah açıcı olabilir."
+    }
+  },
+  "FontaineAspic": {
+    "name": "Fontaine Jölesi",
+    "description": {
+      "0": "Deniz mahsulünden yapılan soğuk bir yemek. Balık rendelenerek macun haline getirilir ve dikdörtgen bir kalıba konularak fırına verilir. Servis etmeden önce soğumaya bırakılır. Ağızda soğuk, ancak insanın kalbinde sıcak hissedilen bir yemek."
+    }
+  },
+  "DeliciousFontaineAspic": {
+    "name": "Fontaine Jölesi (Lezzetli)",
+    "description": {
+      "0": "Deniz mahsulünden yapılan soğuk bir yemek. Jelatindeki havyar taneleri damağını lezzet bombardımanına tutuyor. Çok geçmeden tabağını silip süpürüyorsun. Hazır etrafta kimseler yokken... Tabağını yalaman sorun olmaz herhalde, değil mi?"
+    }
+  },
+  "SuspiciousPateDeFruit": {
+    "name": "Meyve Şekerlemesi (Tuhaf)",
+    "description": {
+      "0": "Bir tür meyveli şekerleme. Yapışkan şeker, dişine yapışıp çiğnemeyi zorlaştırıyor. Dişinden ayırmak çok zor olmasa da yapışkanlığı, tatlı keyfini mahvetmek için yeterli."
+    }
+  },
+  "PateDeFruit": {
+    "name": "Meyve Şekerlemesi",
+    "description": {
+      "0": "Meyveleri saklamak için yapılan bir şekerleme. Yıllar içerisinde her Fontainelinin çocukluğunda bu şekerin bir yeri olmuştur. Tatlı ve yumuşak bu şekerlerden ne kadar yesen de doymazsın."
+    }
+  },
+  "DeliciousPateDeFruit": {
+    "name": "Meyve Şekerlemesi (Lezzetli)",
+    "description": {
+      "0": "Meyveli bir şekerleme. Ağzının içinde sanki bütün bir meyve bahçesi varmış gibi meyveli aromalarla dolu. Farkına varmadan bütün kavanozu bitirmiş hatta parmaklarında kalan şekerleri bile yalamaya başlamışsın!"
+    }
+  },
+  "SuspiciousConchMadeleine": {
+    "name": "Kabuk Madlen Kek (Tuhaf)",
+    "description": {
+      "0": "Normalde \"hoş bir görüntüsü\" olması gereken tatlı. Bu tuhaf görünüşlü pastayı bir Beril Kabuğa benzetmek için çok güçlü bir hayal gücü gerekli... Tek teselli, tadının kabul edilebilir olması."
+    }
+  },
+  "ConchMadeleine": {
+    "name": "Kabuk Madlen Kek",
+    "description": {
+      "0": "Hoş bir görüntüsü olan tatlı. Fontaineli zengin bir aile için çalışan bir şef tarafından yaratıldığı söylenir. Küçük beyi sevindirmek için şef Beril Kabuk şeklinde bir pasta hazırlamış. Hikayenin gerçek olup olmadığı teyit edilemiyor ama pastanın enfes olduğuna şüphe yok."
+    }
+  },
+  "DeliciousConchMadeleine": {
+    "name": "Kabuk Madlen Kek (Lezzetli)",
+    "description": {
+      "0": "Hoş bir görüntüsü olan tatlı. Fontaine'de şöyle söylenir: \"İki çeşit insan vardır. Kabuk Madlen Kek sevenler ve henüz onu denemeyenler.\" Tadına bakan herkes anında bu keke aşık olur!"
+    }
+  },
+  "SeabirdsSojourn": {
+    "name": "\"Deniz Kuşunun Yolculuğu\"",
+    "description": {
+      "0": "Freminet'nin özel tarifi. Tencereyi bıraktıktan sonra kaçıp gitti. Malzemeler sığ sulardan gelmişe benzemiyor. Demek ki onları yakalamak için denizin derinine dalmış. Ona teşekkür etmek istiyorsun ama... Nerede acaba?"
+    }
+  },
+  "CubicTricks": {
+    "name": "Kutu Hileleri",
+    "description": {
+      "0": "Lyney'nin özel tarifi. Topladığın meyvelerin üstünü bir kadifeyle örttü ve sonra örtüyü çektiği anda pof! Birden karşında rengarenk bir şekerleme karışımı vardı. Birinin tadına baktıktan sonra ruh halin hemen değişti. Acaba büyük sihirbaz kimse bakmıyorken kalbini ele geçiren muhteşem bir sihir mi yaptı?"
+    }
+  },
+  "ALeisurelySip": {
+    "name": "Keyif Çayı",
+    "description": {
+      "0": "Lynette'in özel tarifi. Akşamüstü çayı vakti gelmişti ve Lynette senin için özel hazırladığı atıştırmalıkları çıkardı. Kedi şeklindeki tatlılar ve karşında fincanından ufak yudumlar alan genç kadının görüntüsü birbiriyle örtüşüyordu. İçin tatlı bir hisle doluydu ancak mutfak aletlerinin durumundan biraz endişeliydin..."
+    }
+  },
+  "Fonta": {
+    "name": "Fonta",
+    "description": {
+      "0": "Fontaine Araştırma Enstitüsü'nün yarattığı özel bir içecek. Fontaineliler tarafından çok sevilir."
+    }
+  },
+  "SuspiciousFruityDuet": {
+    "name": "Meyve Düeti (Tuhaf)",
+    "description": {
+      "0": "İki lezzetin bir arada olduğu bir meyve içeceği. Alttaki tabaka biraz ekşi, içtikten sonra içini kaplayan his de öyle... Ağzındaki ve kalbindeki bu ekşiliği silmek için bir bardak daha hazırlamaya ne dersin?"
+    }
+  },
+  "FruityDuet": {
+    "name": "Meyve Düeti",
+    "description": {
+      "0": "İki lezzetin bir arada olduğu bir meyve içeceği. Bardağın dibindeki kalın meyve tabakasının üstüne meyve suyu ve çaydan yapılan smoothie eklenir. Katman katman farklı taze meyvelerin lezzeti o kadar çekicidir ki kimse hayır diyemez."
+    }
+  },
+  "DeliciousFruityDuet": {
+    "name": "Meyve Düeti (Lezzetli)",
+    "description": {
+      "0": "İki lezzetin bir arada olduğu bir meyve içeceği. Beyaz kumlara uzanmış, tupturuncu güneşin yükselmesini izlerken aldığın küçük bir yudumda meyvenin kokusu dudaklarında dans eder, kalbin ısınır ve için ferahlar."
+    }
+  },
+  "SuspiciousFruitySmoothie": {
+    "name": "Meyveli Smoothie (Tuhaf)",
+    "description": {
+      "0": "Sade ve parlak renklere sahip bir içecek. Buz gibi soğuk smoothieden içtiğinde kendini doğrudan Ejdersırtı'na gitmiş gibi hissedersin. O kadar soğuk ki sanki Dondurucu Soğuk biriktirmeye başladın... Sınıra ulaşıp hasar almadan önce bir ateş kaynağı bulsan iyi edersin!"
+    }
+  },
+  "FruitySmoothie": {
+    "name": "Meyveli Smoothie",
+    "description": {
+      "0": "Sade renkleri olan bir içecek. Meyve aromalı yoğurttan yapılan smoothie, beyaz bulutları ve mavi gökyüzünü anımsatacak şekilde dizilmiş. En alttaysa kalın bir jöle ve özenle kesilmiş meyve parçaları katmanı bulunuyor. Canlandırıcı tadıyla bu içecek yaz için en iyi seçim."
+    }
+  },
+  "DeliciousFruitySmoothie": {
+    "name": "Meyveli Smoothie (Lezzetli)",
+    "description": {
+      "0": "Sade ve parlak renklere sahip bir içecek. Qingyun Tepesi üstündeki havai bulutları anımsatan, hafif bir meyve kokusuna sahip ferahlatıcı bir smoothie. Acaba tadı da bu kadar hafif ve yumuşak mı?"
+    }
+  },
   "RecipeItem": {
     "name": "Yemek Malzemesi",
     "description": {
@@ -13722,6 +14309,120 @@
       "0": "Güneriği Hoşafı yapımını adım adım anlatan detaylı bir tarif."
     }
   },
+  "RecipeDuckConfit": {
+    "name": "Tarif: Ördek Konfi",
+    "description": {
+      "0": "Ördek Konfi yapımını adım adım anlatan detaylı bir tarif."
+    }
+  },
+  "RecipeFontainianFoieGras": {
+    "name": "Tarif: Fontaine Usulü Kaz Ciğeri",
+    "description": {
+      "0": "Fontaine Usulü Kaz Ciğeri yapımını adım adım anlatan detaylı bir tarif."
+    }
+  },
+  "RecipeCreamOfMushroomSoup": {
+    "name": "Tarif: Kremalı Mantar Çorbası",
+    "description": {
+      "0": "Kremalı Mantar Çorbası yapımını adım adım anlatan detaylı bir tarif."
+    }
+  },
+  "RecipeGarlicBaguette": {
+    "name": "Tarif: Sarımsaklı Baget Ekmek",
+    "description": {
+      "0": "Sarımsaklı Baget Ekmek yapımını adım adım anlatan detaylı bir tarif."
+    }
+  },
+  "RecipeFishAndChips": {
+    "name": "Tarif: Balık ve Patates Kızartması",
+    "description": {
+      "0": "Balık ve Patates Kızartması yapımını adım adım anlatan detaylı bir tarif."
+    }
+  },
+  "RecipeLasagna": {
+    "name": "Tarif: Lazanya",
+    "description": {
+      "0": "Lazanya yapımını adım adım anlatan detaylı bir tarif."
+    }
+  },
+  "RecipePoissonchantPie": {
+    "name": "Tarif: Balık Korosu",
+    "description": {
+      "0": "Balık Korosu yapımını adım adım anlatan detaylı bir tarif."
+    }
+  },
+  "RecipeFruityTrio": {
+    "name": "Tarif: Meyve Üçlüsü",
+    "description": {
+      "0": "Meyve Üçlüsü yapımını adım adım anlatan detaylı bir tarif."
+    }
+  },
+  "RecipeTassesRagout": {
+    "name": "Tarif: Tasses Yahnisi",
+    "description": {
+      "0": "Tasses Yahnisi yapımını adım adım anlatan detaylı bir tarif."
+    }
+  },
+  "RecipeSteakTartare": {
+    "name": "Tarif: Biftek Tartar",
+    "description": {
+      "0": "Biftek Tartar yapımını adım adım anlatan detaylı bir tarif."
+    }
+  },
+  "RecipeVessieChicken": {
+    "name": "Tarif: Vessie Tavuğu",
+    "description": {
+      "0": "Vessie Tavuğu yapımını adım adım anlatan detaylı bir tarif."
+    }
+  },
+  "RecipeFontainianOnionSoup": {
+    "name": "Tarif: Fontaine Usulü Soğan Çorbası",
+    "description": {
+      "0": "Fontaine Usulü Soğan Çorbası yapımını adım adım anlatan detaylı bir tarif."
+    }
+  },
+  "RecipeIleFlottante": {
+    "name": "Tarif: Yüzen Ada",
+    "description": {
+      "0": "Yüzen Ada yapımını adım adım anlatan detaylı bir tarif."
+    }
+  },
+  "RecipePoissonSeafoodSoup": {
+    "name": "Tarif: Poisson Deniz Mahsulü Çorbası",
+    "description": {
+      "0": "Poisson Deniz Mahsulü Çorbası yapımını adım adım anlatan detaylı bir tarif."
+    }
+  },
+  "RecipeFontaineAspic": {
+    "name": "Tarif: Fontaine Jölesi",
+    "description": {
+      "0": "Fontaine Jölesi yapımını adım adım anlatan detaylı bir tarif."
+    }
+  },
+  "RecipePateDeFruit": {
+    "name": "Tarif: Meyve Şekerlemesi",
+    "description": {
+      "0": "Meyve Şekerlemesi yapımını adım adım anlatan detaylı bir tarif."
+    }
+  },
+  "RecipeConchMadeleine": {
+    "name": "Tarif: Kabuk Madlen Kek",
+    "description": {
+      "0": "Kabuk Madlen Kek yapımını adım adım anlatan detaylı bir tarif."
+    }
+  },
+  "RecipeFruityDuet": {
+    "name": "Tarif: Meyve Düeti",
+    "description": {
+      "0": "Meyve Düeti yapımını adım adım anlatan detaylı bir tarif."
+    }
+  },
+  "RecipeFruitySmoothie": {
+    "name": "Tarif: Meyveli Smoothie",
+    "description": {
+      "0": "Meyveli Smoothie yapımını adım adım anlatan detaylı bir tarif."
+    }
+  },
   "CraftedItems": {
     "name": "Üretilen Malzemeler",
     "description": {
@@ -13965,6 +14666,23 @@
       "0": "Yemin temelinde gül çiyi bulunur ve güneşte kurutulmuş Harra Meyvesi tozu ile karıştırılmıştır. İlk tadışta acı gelir ama ağızda tatlı bir lezzet bırakır, aynı bir balıkçının hayatı gibi. Çetin hava koşullarından ve dalgalı denizden sonra elde edilen hasat büyük mutluluk verir.",
       "1": "<br/>",
       "2": "Uygunluk: Balon Balığı ve Balta Balığı."
+    }
+  },
+  "SourBait": {
+    "name": "Ekşi Yem",
+    "description": {
+      "0": "Buğday ununu, Bulle Meyvesinin posası ve çekirdekleri ile karıştırarak yapılan yem. Suya atıldığında hemen Kalp Tüylü Levrek gibi balıkların karşı koyamadığı tatlı ekşi bir koku yayar. Bir keresinde malzemeleri biten bir grup oltacı acil durumda bu yemden yemek zorunda kalmış ve sonucunda zehirlenmişlerdi. Bu tür kazaların yeniden yaşanmaması için yem öncesine göre çok daha ekşi hale getirildi. O kadar ekşi ki ağza koymak bir yana, burna yaklaştırıldığında bile baş dönmesi ve göz yaşarmasına sebep olur...",
+      "1": "<br/>",
+      "2": "Kalp Tüylü Levrek yakalamak için uygundur."
+    }
+  },
+  "FlashingMaintenanceMekBait": {
+    "name": "Parlayan Teknisyen Meka Yemi",
+    "description": {
+      "0": "Fontaine Araştırma Enstitüsü tarafından geliştirilmiş bir teknolojiyi kullandığı iddia edilen özel bir Tuzak. Koruyucu metal bir kafes ve kancalı çubuklarla donanmıştır ve cihaz Marcotte özütünden elde edilen bir ışık vermektedir.",
+      "1": "Suya atıldığında ışık belirli bir frekansta parlayarak, genelde \"Su Bakım Balığı\" ya da \"Demir Balık\" denilen yakındaki Teknisyen Mekaları kendine çeker. Teknisyen Mekaların güçlü çeneleri vardır ancak sadece onları sabit tutmaya yarayan tuzağın dışındaki özel yapılmış kancalı çubukları ısırabilirler. Özetle bu, değerli \"Demir Balıkları\" yakalamak için özel tasarlanmış bir tür mekanizmadır.",
+      "2": "<br/>",
+      "3": "Teknisyen Meka yakalamak için uygundur."
     }
   },
   "PrimordialEssence": {
@@ -14491,6 +15209,93 @@
       "1": "Sonsuza dek yabancı kalacak olan herhangi bir ödül istemez, yalnızca yaptığı işin meyve verdiğini görmek ister..."
     }
   },
+  "TransoceanicPearl": {
+    "name": "Okyanus Ötesi İncisi",
+    "description": {
+      "0": "Bir Fontemer Sapkını yenerek elde edilen bir kristal.",
+      "1": "Fontemer Sapkınları, Fontaine denizlerinden gelir. Sudaki gizemli bir enerjiden doğan özgün bir yaşam formu olduğuna inanılır."
+    }
+  },
+  "TransoceanicChunk": {
+    "name": "Okyanus Ötesi Parça",
+    "description": {
+      "0": "Bir Fontemer Sapkını yenerek elde edilen bir kristal.",
+      "1": "Gizemli bir enerji saçar.",
+      "2": "Efsaneler, insanların ulaşamadığı uzak denizlerde yaşayan büyük yaşam formlarını anlatır ama Fontaine denizlerindeki canlılık, normal okyanuslarla kıyas dahi edilemez."
+    }
+  },
+  "XenochromaticCrystal": {
+    "name": "Alaca Kristal",
+    "description": {
+      "0": "Bir Fontemer Sapkını yenerek elde edilen bir kristal.",
+      "1": "İçinde esrarengiz bir enerji gizli.",
+      "2": "Tüm nehir ve göller Fontaine'de doğar ama sular Fontaine sınırları dışına aktığında tüm orijinal özelliklerini kaybeder."
+    }
+  },
+  "MeshingGear": {
+    "name": "Kavrama Dişlisi",
+    "description": {
+      "0": "Kurmalı Meka dişlisi.",
+      "1": "Mekanın aktarma sisteminin önemli bir parçasıdır. Dişli bulunmadığı takdirde bütün sistem arızalanır."
+    }
+  },
+  "MechanicalSpurGear": {
+    "name": "Mekanik Düz Dişli",
+    "description": {
+      "0": "Kurmalı Meka dişlisi.",
+      "1": "Kurmalı Mekaların devinim araştırmalarında birçok atılım sağlanmış olsa da dinamik araştırmalar, Alain Guillotin'in dört yüz yıl önce ortaya koyduğu sistemin ötesinde çok büyük ilerleme göstermedi."
+    }
+  },
+  "ArtificedDynamicGear": {
+    "name": "Usta İşi Dinamik Dişli",
+    "description": {
+      "0": "Kurmalı Meka dişlisi.",
+      "1": "Hassas işçilik ve malzeme bilimi, Kurmalı Mekaların Fontaine'de gösterdiği gelişimin anahtarlarıdır. Gelişmiş ekipmanlar sayesinde herhangi bir mühendis, \"Usta Lord\" Alain Guillotin'in yarattıklarını gölgede bırakacak mekalar yapabilir."
+    }
+  },
+  "DropOfTaintedWater": {
+    "name": "Kirli Su Damlası",
+    "description": {
+      "0": "Yendiğin bir Lekeli Su Tayfından aldığın küçük bir damla su.",
+      "1": "İçindeki yaşam gücü henüz kaybolmamış."
+    }
+  },
+  "ScoopOfTaintedWater": {
+    "name": "Kirli Su Birikintisi",
+    "description": {
+      "0": "Yendiğin bir Lekeli Su Tayfından aldığın su.",
+      "1": "İçindeki yaşam gücü henüz azalmamış.",
+      "2": "Günümüzde, Fontaine'deki Okeanidlerin kökünün kazınmasıyla birlikte sularda hiç de hoş görünmeyen element yaşam formları ortaya çıktı."
+    }
+  },
+  "NewbornTaintedHydroPhantasm": {
+    "name": "Yenidoğan Lekeli Su Tayfı",
+    "description": {
+      "0": "Yenilen Lekeli Su Tayfından yeniden doğan bir yaşam formu. Bir şişenin içine hapsolmuş.",
+      "1": "Sudaki yaşam şekilsiz, sudan doğan şekilsiz yaşam da suyun şeklini almış."
+    }
+  },
+  "RiftCore": {
+    "name": "Yarık Çekirdeği",
+    "description": {
+      "0": "Bir Patojenin bıraktığı parça.",
+      "1": "Dünyadaki diğer hiçbir yaşam formuna benzemiyor."
+    }
+  },
+  "ForeignSynapse": {
+    "name": "Yabancı Sinaps",
+    "description": {
+      "0": "Bir Patojen'in bıraktığı kırk parça.",
+      "1": "Bu tuhaf yaşam formu Elynas'ta doğar ve burada yaşamını sürer."
+    }
+  },
+  "AlienLifeCore": {
+    "name": "Dünya Dışı Yaşam Çekirdeği",
+    "description": {
+      "0": "Bir Patojen çekirdeği.",
+      "1": "Bu yaşam formunu yok etmenin hiçbir yolu yoktur. Çekirdek boyutuna kadar küçülenler dahi ertesi gün ila on yıl arasında bir sürede yeniden doğar. Neyse ki agresif veya üstün zekaya sahip değiller bu yüzden Fontaineliler genelde mesafelerini korumakla yetiniyor."
+    }
+  },
   "HurricaneSeed": {
     "name": "Kasırga Tohumu",
     "description": {
@@ -14842,7 +15647,7 @@
     }
   },
   "PrimordialGreenbloom": {
-    "name": "İlkel Formlu Yeşil Çiçek",
+    "name": "Ezeli Yeşil Çiçek",
     "description": {
       "0": "Apep'in olduğu vahadan alınan ve ilkel halini koruyan bir çiçek.",
       "1": "Yıllar geçtikçe bu çiçeklerin sayısız rengi, kokusu olmuş ve gece gökyüzündeki yıldızlar kadar isim kazanmıştı.",
@@ -14856,6 +15661,27 @@
       "1": "Bu kadar küçük bir canlının ağacın kehribarıyla sarmalanmış olması tesadüf, varlığının devam etmesi ise kaderin bir lütfudur.",
       "2": "Göklerden gelen felaket sonrası ağaçlar, sarmaşıklar, kökler ve her türlü bitki kuruyup toza döndü. Birçok yaşam formu yok oldu.",
       "3": "Ancak kehribarın durgunluğu içinde kalan isimsiz bir böcek pek çoklarının göremediği geleceğe tanık oldu."
+    }
+  },
+  "ArtificedSpareClockworkComponentCoppelia": {
+    "name": "Usta İşi Yedek Kurmalı Parçası - Coppelia",
+    "description": {
+      "0": "Coppelia'ya ait usta işi yedek kurmalı parçası. Marifetli dansçıya güç verir.",
+      "1": "Yaratıcısının tasarımına göre hassas eklemleri olan bu marifetli dansçının hikayesi mutlu bir sonla bitiyor. Kim bu anı bozmaya kalkarsa Coppelia üstün savaş yetenekleriyle o kişinin hayatında hüzün dolu bir sayfa açar."
+    }
+  },
+  "ArtificedSpareClockworkComponentCoppelius": {
+    "name": "Usta İşi Yedek Kurmalı Parçası - Coppelius",
+    "description": {
+      "0": "Coppellius'a ait usta işi yedek kurmalı parçası. Marifetli dansçıya güç verir.",
+      "1": "Platin notalarla dönerek dans eden marifetli dansçı sonsuz bir buz fırtınası valsi sergiler. Coppelius'un dansı asla bitmez, çanlar çalana kadar dönmeye devam eder."
+    }
+  },
+  "EmperorsResolution": {
+    "name": "İmparatorun Azmi",
+    "description": {
+      "0": "Ateş ve Demir İmparatoru'nun savaş çekici. Muazzam yengeç bu devasa kıskaçla sayısız düşmanını ezmiştir. İster Kurmalı Meka olsun ister Fontemer Sapkını ya da isterse kötü niyetli meraklı avcılar. Hepsi onun gücü altında pes ettiler.",
+      "1": "Fontemer Sapkınları insanlardan tamamen farklıdır. Aristokrasi ya da miras gibi kavramlar onlara tamamen yabancıdır. Hiçbiri bir diğerinden üstün doğmaz. Ölümcül avcılara ve güçlüklere karşı ayakta durabilenler, yüzyıllarca avlanıp beslendikçe sınırsız güç toplayabilir. Yarattığı korkudan dolayı bu tür yaratıklara genelde efendi denilir."
     }
   },
   "TileOfDecarabiansTower": {
@@ -15237,6 +16063,103 @@
       "4": "Ne olursa olsun felaketten kaçış yoktu. Altın böceksi nişanlar, tapınağın ve sarayın derinliklerine, kartal ve boğa resimleriyle oyulmuş çökük sütunların altına gömüldü."
     }
   },
+  "FragmentOfAnAncientChord": {
+    "name": "Kadim Akor Parçası",
+    "description": {
+      "0": "Çürümüş tuşları olan bir arp. Tıkandığından artık çalınamaz ve sesi duyulamaz.",
+      "1": "Anlatılanlara göre unutulan müziğin torunları, ahşaptan mekanik arpları altınla kaplayarak kadim hanedanın o muhteşem kalıntılarını yeniden ayağa kaldırmaya çalışırmış. Sessiz devlere dinletmek için beyhude bir çabaymış bu...",
+      "2": "Aradan uzun bir zaman geçmiş ve çürüyüp akortları kaçan arplar sessiz devlerin avucunda kalmış. Onlara artık sadece dalgalarla hüzünlü notaların ıslığı eşlik edermiş."
+    }
+  },
+  "ChapterOfAnAncientChord": {
+    "name": "Kadim Akor Kuplesi",
+    "description": {
+      "0": "Efsanelere göre kadim hanedandan hayatta kalanlar, anmak ve yas tutmak için siyah demirden bir arp dökmüş.",
+      "1": "Siyah demirden dökülen arplar çalınamaz. Bir zamanlar altın müziğiyle gurur duyan kadim hanedanın yasını tutmak adına geride kalanlar, sessizliği kendinden ağır bu enstrümanı dövmüşler.",
+      "2": "Fakat sonunda siyah demir arp tıpkı o kayıp çağ gibi sessiz kaldı."
+    }
+  },
+  "MovementOfAnAncientChord": {
+    "name": "Kadim Akor Bölümü",
+    "description": {
+      "0": "O büyük felakette altın saray, tahtıyla birlikte batmıştı. Müzik parçalanmış ve notalar sessizliğe gömülmüştü...",
+      "1": "Ancak imparatorluktan kalanlar asla kurtuluş ve kaderlerini aşma arzularından vazgeçmemişti.",
+      "2": "Batmakta olan medeniyetlerini kurtarma ve daima ileriye gitme tutkularıyla Altın Kumpanya, muhteşem melodiler çalmış ve çocukları kandırarak değerli ruhlarını uyuyan devlere vermelerini sağlamış."
+    }
+  },
+  "EchoOfAnAncientChord": {
+    "name": "Kadim Akor Yankısı",
+    "description": {
+      "0": "Tanrı Kral'ın Büyük Senfonisi, birbirine bağlı sayısız melodiden oluşur ancak asıl tezi, Su Ülkesinin ortak kaderi altında gizlidir.",
+      "1": "O kaygısız yıllarda çıkan sonatlar, medeniyet ve düzenin en yüce temsilcileriydiler. Ancak refah içindeki imparatorluk, tiranların oyun alanı haline dönüştü ve acımasız despotlar, altın pelerinlere gizlenmiş halde kaynakla olan bağı kopardılar ve düzensizlik imparatorluğa hakim oldu.",
+      "2": "Solan altına eşlik eden kaderin asıl şarkısı, şaşmaz bir şekilde yankılanmayı sürdürdü... Ta ki her şey çözünüp kaosa dönene dek."
+    }
+  },
+  "DrossOfPureSacredDewdrop": {
+    "name": "Saf Kutsal Çiy Damlası Kalıntısı",
+    "description": {
+      "0": "Efsanelere göre yaşam doğmadan evvel engin ezeli deniz varmış. Var olan her şeyin en saf kökeni oymuş ve bir gün tüm hayatı geri yutacakmış... Ondan doğmayan her şey böylelikle dışarıda kalacak ve denizde sürüklenen enkaz parçalarından farkı olmayacakmış.",
+      "1": "\"Enkazın da bir anlamı var. Her şeyin kaynağı ve tüm yaşamı yutan bir şey tarafından reddedilmek nasıl bir şeydir acaba?\" diye sordu taht hırsızına genç Harmost ve onu karışık düşüncelere sevk etti."
+    }
+  },
+  "SublimationOfPureSacredDewdrop": {
+    "name": "Saf Kutsal Çiy Damlası Buharı",
+    "description": {
+      "0": "\"Ezeli denizden gelen yaşamın kaderi kaçınılmaz bir şekilde ona geri dönmektir.\" Böyle konuştu Harmost Boethius. \"Ancak insanların kaderini aşması için sonsuz ihtimal vardır ve ezeli denizin suları bile onları tamamen yok edemez...\"",
+      "1": "Kibirli taht hırsızı bir keresinde çözünmesi mümkün olmayan İkhor ile saf suyu karıştırmayı denemişti. Bu şekilde bilgelik ve hafızayı içinde koruyabilecek ve tebaasıyla hizmetkarlarının bedenlerinden kurtularak bağımsız ve sonsuz birer hayatı olmasını sağlayacaktı.",
+      "2": "Ancak ruhu bedenden ayırırken hissedilen acıya sıradan canlıların katlanması mümkün değildir. Bu yüzden taht hırsızının emriyle birçok ruh yırtılıp paramparça oldu...",
+      "3": "Sayısız ruhun inlemesi ve ağlamasından İkhor siyaha çaldı ve içindeki uyum ve bilgelik yok oldu. Geriye yalnızca kaos ve delilik kaldı."
+    }
+  },
+  "SpringOfPureSacredDewdrop": {
+    "name": "Saf Kutsal Çiy Damlası Kaynağı",
+    "description": {
+      "0": "Göl Şövalyelerinin henüz dünyada olduğu zamanlardan kalma bir antika. Şövalyelerin dağlarda, kimsenin girmediği pınarlarda ve vadilerde, saf ve kirlenmemiş su kaynaklarını koruyan sadık ruhlar olduğunu anlatır...",
+      "1": "Ancak insan yapımı İkhor'un yaratıcısı, yazdığı büyük senfonide bu tür bir ahenksizliğe müsaade edemezdi. Harmost Boethius'un gittiği yere doğal nektarın gömüldüğü, imparatorluk su kemerlerinin yapıldığı ve saf sudan doğan ruhların hiçbir iz bırakmadan kaybolduğu anlatılır..."
+    }
+  },
+  "EssenceOfPureSacredDewdrop": {
+    "name": "Saf Kutsal Çiy Damlasının Özü",
+    "description": {
+      "0": "Engin ezeli denizin damlalarından arıtılarak elde edilen yoğun ve saf bir çözelti. Kadim Tanrı Kral, bir zamanlar onun sonsuz yaşam ve sınırsız bilgelik getireceğine inanırdı fakat dikkatle dinlediğinde sessizce, belli belirsiz bir şekilde her şeyin nihayetinde çözünerek teklikte buluşacağı kehanetinde bulunuyordu.",
+      "1": "Bu, bir zamanlar Tanrı Kral'ın tamamlanmayan Büyük Senfonisine aitti. Sonsuz ve sınırsız altın renkli İkhor'un, vahşi ilkel suların yerine geçişini ve yüce bilgelerin aydınlanmayı bir nektar gibi dünyanın tüm yoz köşelerine ulaştırmasını anlatır.",
+      "2": "Ancak Tanrı Kral'ın hülyaları, sonunda karanlık hiçliğin derinliklerine battı ve zamanın getirdiği yıkımla birlikte ilkel sular altın İkhor'u aşındırdı...",
+      "3": "Akortçu kötü alametlere göz yumdu ve harap olmuş vücudunu taşıyarak planladıkları gibi yoldaşlarına hayat bahşetmeye devam etti. Eski düzen bir gün geri dönebilsin diye...",
+      "4": "Bugün dahi Fontaine'in çılgın şair ve ressamları, Boethius'un yaşadığı kıyameti dünyanın kaçınılmaz döngülerinin bir hatırası olarak görür."
+    }
+  },
+  "BrokenGobletOfThePristineSea": {
+    "name": "Saf Denizin Kırık Kadehi",
+    "description": {
+      "0": "Efsanelere göre ilk taht hırsızı ezeli denize geldiğinde ilk imparator ona bir kupa su verdi.",
+      "1": "Daha sonra o mutlak Tanrı Kral haline geldi, bu suyu gizemli çiy damlacıklarını arıtmak için kullandı ve bu sayede muhteşem ve güçlü bir imparatorluk oluşturdu.",
+      "2": "Fakat bu artık kadim bir hikayeden ibaret ve karakterler derin sularda yaşayan balık sürülerinin saçtığı ışıkların arasında uyumakta."
+    }
+  },
+  "WineGobletOfThePristineSea": {
+    "name": "Saf Denizin Şarap Kadehi",
+    "description": {
+      "0": "Nasıl bir imparatorluk binlerce yıla meydan okuyabilir? Ejderler krallığından döndükten sonra taht hırsızı bu soru üzerinde kafa yordu.",
+      "1": "Ölümsüz taşı, ezeli sulardan aldığı İkhor özüyle birleştirerek demir gibi siyah, derisi efsun taşından ve kanı İkhor'dan bir ırk yarattı. Böylelikle o ilkel geçmişin lanetine dönmekten korkmasına gerek yoktu...",
+      "2": "Sessiz dev hâlâ imparatorluk hayalleri kuruyor... İmparatorluğun yıkılışından bu yana bin yıldan fazla geçtiğinden bihaber."
+    }
+  },
+  "SilverGobletOfThePristineSea": {
+    "name": "Saf Denizin Gümüş Kadehi",
+    "description": {
+      "0": "Diyarın altın bir tülle kaplı olduğu yıllarda saf kaynak sularının dağlardaki gizli pınarlara saklanması gerekirdi. Göl Şövalyeleri de bu mabetlerde doğmuştu.",
+      "1": "Şövalyeler saf sulardan doğan ruhları koruyacağına, tek bir kaynağa inanan yoldaşlarını kollayacağına ve gökyüzünü kapatıp güneşi solgun kılan mutlak altın güce karşı koyacağına dair gümüş zırhları üzerine yemin ederdi.",
+      "2": "Fakat bu artık kadim bir hikayeden ibaret... İmparatorluğun çöküp batmasından sonra taht hırsızına karşı duran şövalyeler zırhlarını çıkardı ve onların hikayeleri bir masal ve türküler ağına karışıp gitti."
+    }
+  },
+  "GoldenGobletOfThePristineSea": {
+    "name": "Saf Denizin Altın Kadehi",
+    "description": {
+      "0": "Batık şehrin taht hırsızı altın senfoninin son bölümünü çaldığında baş müzisyen, İkhor ile dolu altın kupayı çaldı.",
+      "1": "Tanrı Kral'ın bu ahmakça ihanetinden sarsılan müzisyen, son muhafızları çağırdı ve çözünmeyen İkhor'u kullanarak ejderi uzun kulenin altına hapsedip başkent ile birlikte hiçliğin derinliklerine gömdü.",
+      "2": "Bundan sonra bu soylu hırsız tarihin sayfalarından sessizce kayboldu ve yalnızca \"Altın Kumpanya\" vefalı bir şekilde onun kehanetini hatırlar oldu."
+    }
+  },
   "StarterSupplyBundle": {
     "name": "Aceminin Tedarik Paketi",
     "description": {
@@ -15289,21 +16212,7 @@
     "description": {
       "0": "Lonca düzenli olarak erdem üzerine birkaç kitap paylaşır çünkü erdem, karakteri geliştirir.",
       "1": "<br/>",
-      "2": "Bu eşyayı kullanarak aşağıdakilerden birini ödül olarak seçebilirsin:",
-      "3": [
-        "Özgürlük Rehberi",
-        "Direniş Rehberi",
-        "Şiir Rehberi",
-        "Refah Rehberi",
-        "Çalışkanlık Rehberi",
-        "Altın Rehberi",
-        "Fani Dünya Rehberi",
-        "Zarafet Rehberi",
-        "Işık Rehberi",
-        "Nasihat Rehberi",
-        "Marifet Rehberi",
-        "Uygulama Rehberi"
-      ]
+      "2": "Bu eşyayı kullanarak üç yıldızlı Yetenek Seviyesi Yükseltme Malzemelerinden birini alabilirsin."
     }
   },
   "TalentMaterialsBundleHigh": {
@@ -15343,21 +16252,7 @@
     "description": {
       "0": "Lonca düzenli olarak mükemmel kalitede malzemeler dağıtır. Bazılarının sınırsız potansiyeli vardır.",
       "1": "<br/>",
-      "2": "Bu eşyayı kullanarak aşağıdakilerden birini ödül olarak seçebilirsin:",
-      "3": [
-        "Decarabian'ın Kırık Çinisi",
-        "Kutup Kurdunun Süt Dişi",
-        "Karahindiba Gladyatörü Kelepçesi",
-        "Guyun'un Parlak Kumları",
-        "Sis Kaplı Kurşun Cevher",
-        "Meteor Demiri Tozu",
-        "Uzak Denizlerin Mercan Dalı",
-        "Narukami'nin Bilgeliği",
-        "Habis Teğmenin Maskesi",
-        "Orman Çiyinin Bakır Tılsımı",
-        "Vaha Bahçesi Hatırası",
-        "Kavurucu Kuvvetin Yankısı"
-      ]
+      "2": "Bu eşyayı kullanarak iki yıldızlı Silah Yükseltme Malzemelerinden birini alabilirsin."
     }
   },
   "EminentShareBundle": {
@@ -15365,21 +16260,7 @@
     "description": {
       "0": "Lonca düzenli olarak mükemmel kalitede malzemeler dağıtır. Bazılarının sınırsız potansiyeli vardır.",
       "1": "<br/>",
-      "2": "Bu eşyayı kullanarak aşağıdakilerden birini ödül olarak seçebilirsin:",
-      "3": [
-        "Decarabian'ın Yıkık Duvarı",
-        "Kutup Kurdunun Çatlak Dişi",
-        "Karahindiba Gladyatörü Zinciri",
-        "Guyun'un Işıltılı Taşı",
-        "Sis Kaplı Cıva Cevher",
-        "Meteor Demiri Kırıntısı",
-        "Uzak Denizlerin Kıymetli Dalı",
-        "Narukami'nin Neşesi",
-        "Kaplan Dişinin Maskesi",
-        "Orman Çiyinin Demir Tılsımı",
-        "Vaha Bahçesi Zarafeti",
-        "Kavurucu Kuvvetin Kalan Parıltısı"
-      ]
+      "2": "Bu eşyayı kullanarak üç yıldızlı Silah Yükseltme Malzemelerinden birini alabilirsin."
     }
   },
   "WeaponAscensionBundleHigh": {
@@ -15583,6 +16464,32 @@
         "Nasihat Felsefesi",
         "Marifet Felsefesi",
         "Uygulama Felsefesi"
+      ]
+    }
+  },
+  "GuideToTheOriginalCurrent": {
+    "name": "Kaynak Akıntısı Rehberi",
+    "description": {
+      "0": "Su Diyarı Fontaine'deki gezilerin sırasında bir şey keşfettin. İçindeki eşyaları Yeteneklerini geliştirmede kullanabilirsin.",
+      "1": "<br/>",
+      "2": "Bu eşyayı kullanarak aşağıdaki ödüllerden birini seçebilirsin:",
+      "3": [
+        "Eşitlik Rehberi",
+        "Adalet Rehberi",
+        "Düzen Rehberi"
+      ]
+    }
+  },
+  "PhilosophiesOfTheOriginalCurrent": {
+    "name": "Kaynak Akıntısı Felsefesi",
+    "description": {
+      "0": "Su Diyarı Fontaine'deki gezilerin sırasında bir aydınlanma yaşadın. İçindeki eşyaları Yeteneklerini geliştirmede kullanabilirsin.",
+      "1": "<br/>",
+      "2": "Bu eşyayı kullanarak aşağıdaki ödüllerden birini seçebilirsin:",
+      "3": [
+        "Eşitlik Felsefesi",
+        "Adalet Felsefesi",
+        "Düzen Felsefesi"
       ]
     }
   },
@@ -17177,6 +18084,13 @@
       "0": "Teyvat'ın en popüler kart oyunu Dehanın Yakarışını konu alan bir resimli roman. Birbirinden eşsiz karakterleri ve sürükleyici hikayesiyle tüm dikkatleri üzerine çekti. Şu an herkes bu romanı konuşuyor."
     }
   },
+  "StrangePart": {
+    "name": "Tuhaf Parça",
+    "description": {
+      "0": "Merusea Köyü yakınlarında bulduğun tuhaf bir mekanik parça. Normal mekanik parçalardan biraz farklı görünüyor.",
+      "1": "Buraya nasıl ulaştığı konusunda bir fikrin yok ancak Melusinalar bu tür güzel metal ürünlere bayılırlar..."
+    }
+  },
   "KeyToTheCastlesSecretChamber": {
     "name": "Kaledeki Gizli Odanın Anahtarı",
     "description": {
@@ -17195,6 +18109,27 @@
     "name": "\"Büyük Kaçış\" Dekor Kitabı",
     "description": {
       "0": "İçi oyulmuş ve yerine kazı aletleri yerleştirilmiş bir dekor kitabı. Bir sahne dekoru olduğu için tabii ki sayfaları iyice birbirine yapışmış. Ancak yine de kitabın \"içindekiler\", bazen kitabın içindekiler kısmından çok daha önemli olabilir..."
+    }
+  },
+  "EnigmaticPageI": {
+    "name": "Esrarengiz Sayfa (I)",
+    "description": {
+      "0": "Ne yazdığı anlaşılmayan eski bir kağıt.",
+      "1": "Belki de içeriği çözmenin bir yolu vardır."
+    }
+  },
+  "EnigmaticPageII": {
+    "name": "Esrarengiz Sayfa (II)",
+    "description": {
+      "0": "Ne yazdığı anlaşılmayan eski bir kağıt.",
+      "1": "Belki de içeriği çözmenin bir yolu vardır."
+    }
+  },
+  "EnigmaticPageIII": {
+    "name": "Esrarengiz Sayfa (III)",
+    "description": {
+      "0": "Ne yazdığı anlaşılmayan eski bir kağıt.",
+      "1": "Belki de içeriği çözmenin bir yolu vardır."
     }
   },
   "NamelessAdventurersNotes": {
@@ -17371,6 +18306,24 @@
       "0": "Khvarena Abidesi Yazıtı"
     }
   },
+  "ActiveOdorImitatingBait": {
+    "name": "\"Kokulu Sahte Yem\"",
+    "description": {
+      "0": "Delaroche'un, koku analizi ve gelişmiş yem taklitçiliği yöntemlerini kullanarak geliştirdiği yeni bir balıkçılık malzemesi. Söylenenlere göre \"çok güçlü\" bir etkisi var. Görünüşüne bakılınca, korumalı ambalaj ve özel çantasından yola çıkarak Delaroche'un yem dünyasını düşündüğü söylenebilir. Gelgelelim titizlikle alınmış bu önlemlerin yemin temel işlevine etkisi olup olmayacağı bilinmiyor. Bu şekilde balıkları kendine çekse bile balıklar yemi ısıramayabilirler."
+    }
+  },
+  "SubmergedBox": {
+    "name": "Batık Kutu",
+    "description": {
+      "0": "Batık bir kutu. İçinde neler olduğu bilinmiyor..."
+    }
+  },
+  "KeyToSomePlaceInTheInstitute": {
+    "name": "Enstitüdeki Bir Yerin Anahtarı",
+    "description": {
+      "0": "Doğa Felsefesi Enstitüsündeki bir kapıyı açması gerek."
+    }
+  },
   "BeautifullyWrappedGiftBox": {
     "name": "Güzelce Sarılmış Hediye Kutusu",
     "description": {
@@ -17383,6 +18336,18 @@
       "0": "Tunner'ın rehberliğinde büyük bir özenle topladığın üzümler. Zamanla leziz bir şaraba dönüşebilirler."
     }
   },
+  "HeavyPack": {
+    "name": "Ağır Paket",
+    "description": {
+      "0": "İçinde çok sayıda boya olan epey ağır bir paket. Depierris bu boyaları nasıl kullanacak acaba?"
+    }
+  },
+  "ACanOfFry": {
+    "name": "Bir Kavanoz Yavru Balık",
+    "description": {
+      "0": "Linorea'dan aldığın yavru balıklar. Söylenene göre bunları tek tek kendi elleriyle seçmiş ve bu balıklar, bu sularda hayatta kalmak için birebirmiş."
+    }
+  },
   "PrinceQubadsIntaglio": {
     "name": "Prens Qubad'ın Mührü",
     "description": {
@@ -17391,11 +18356,392 @@
       "2": "Cevap vermek için acele etmene gerek yok. İlerleyen zamanlarda gördüğün, dokunduğun ve hissettiğin şeyleri kullanarak içinden geçen cevabı ortaya koyabilirsin."
     }
   },
+  "OldCaseFiles": {
+    "name": "Eski Dava Dosyaları",
+    "description": {}
+  },
+  "TestimonyFromJacquesFamily": {
+    "name": "Jacques'ın Ailesinin Verdiği İfade",
+    "description": {}
+  },
+  "FlorentsStatement": {
+    "name": "Florent'in Durumu",
+    "description": {}
+  },
+  "ThierrysStatement": {
+    "name": "Thierry'nin Durumu",
+    "description": {}
+  },
+  "MarcelsStatement": {
+    "name": "Marcel'in Durumu",
+    "description": {}
+  },
+  "SuspectAnalysis": {
+    "name": "Şüpheli Analizi",
+    "description": {}
+  },
+  "PrimordialSeawaterPool": {
+    "name": "Ezeli Deniz Suyu Havuzu",
+    "description": {}
+  },
+  "Sinthe": {
+    "name": "\"Sinthe\"",
+    "description": {}
+  },
+  "MissingPersonsPossessions": {
+    "name": "Kayıp Kişinin Eşyaları",
+    "description": {}
+  },
+  "VachersExperimentReport": {
+    "name": "Vacher'in Deney Raporu",
+    "description": {}
+  },
+  "LettersRelatedToCallasCase": {
+    "name": "Callas'ın Davasıyla İlgili Mektuplar",
+    "description": {}
+  },
+  "VigneiresNotebook": {
+    "name": "Vigneire'in Defteri",
+    "description": {
+      "0": "Vigneire'in Defteri"
+    }
+  },
+  "TheHistoryOfTheDeclineAndFallOfRemuriaI": {
+    "name": "Remuria'nın Gerileme ve Çöküş Tarihi (I)",
+    "description": {
+      "0": "Fontaine'in kuruluşunun ilk yıllarında, büyük alim Pulteney'in Remuria uygarlığıyla ilgili bu tarihi destanı yazdığı söylenir."
+    }
+  },
+  "TheHistoryOfTheDeclineAndFallOfRemuriaII": {
+    "name": "Remuria'nın Gerileme ve Çöküş Tarihi (II)",
+    "description": {
+      "0": "Fontaine'in kuruluşunun ilk yıllarında, büyük alim Pulteney'in Remuria uygarlığıyla ilgili bu tarihi destanı yazdığı söylenir."
+    }
+  },
+  "TheHistoryOfTheDeclineAndFallOfRemuriaIII": {
+    "name": "Remuria'nın Gerileme ve Çöküş Tarihi (III)",
+    "description": {
+      "0": "Fontaine'in kuruluşunun ilk yıllarında, büyük alim Pulteney'in Remuria uygarlığıyla ilgili bu tarihi destanı yazdığı söylenir."
+    }
+  },
+  "FablesDeFontaineI": {
+    "name": "Fontaine Masalları (I)",
+    "description": {
+      "0": "Çoğunluğu yazar tarafından kaleme alınmamış, kayıp kadim şiirlerden derlenerek oluşturulan çeşitli hikaye ve masalların anlatıldığı bir hikaye kitabıdır."
+    }
+  },
+  "FablesDeFontaineII": {
+    "name": "Fontaine Masalları (II)",
+    "description": {
+      "0": "Çoğunluğu yazar tarafından kaleme alınmamış, kayıp kadim şiirlerden derlenerek oluşturulan çeşitli hikaye ve masalların anlatıldığı bir hikaye kitabıdır."
+    }
+  },
+  "FablesDeFontaineIII": {
+    "name": "Fontaine Masalları (III)",
+    "description": {
+      "0": "Çoğunluğu yazar tarafından kaleme alınmamış, kayıp kadim şiirlerden derlenerek oluşturulan çeşitli hikaye ve masalların anlatıldığı bir hikaye kitabıdır."
+    }
+  },
+  "RobbenVersusChestertonIridescentBroochI": {
+    "name": "Robben Chesterton'a Karşı: Gökkuşağı Broşu (I)",
+    "description": {
+      "0": "Fontaine'de epey popüler olan eğlenceli bir roman. Kitapta, hırsız \"Gölge Adam\" Fantomas Robben ve ünlü dedektif Chesterton'ın ilk karşılaşması anlatılıyor. Uyarı: Bu eser tamamen kurgudur. Yaşayan veya ölmüş kişilerle, gerçek olaylarla hiçbir ilgisi bulunmamaktadır."
+    }
+  },
+  "RobbenVersusChestertonIridescentBroochII": {
+    "name": "Robben Chesterton'a Karşı: Gökkuşağı Broşu (II)",
+    "description": {
+      "0": "Fontaine'de epey popüler olan eğlenceli bir roman. Kitapta, hırsız \"Gölge Adam\" Fantomas Robben ve ünlü dedektif Chesterton'ın ilk karşılaşması anlatılıyor. Uyarı: Bu eser tamamen kurgudur. Yaşayan veya ölmüş kişilerle, gerçek olaylarla hiçbir ilgisi bulunmamaktadır."
+    }
+  },
+  "RobbenVersusChestertonIridescentBroochIII": {
+    "name": "Robben Chesterton'a Karşı: Gökkuşağı Broşu (III)",
+    "description": {
+      "0": "Fontaine'de epey popüler olan eğlenceli bir roman. Kitapta, hırsız \"Gölge Adam\" Fantomas Robben ve ünlü dedektif Chesterton'ın ilk karşılaşması anlatılıyor. Uyarı: Bu eser tamamen kurgudur. Yaşayan veya ölmüş kişilerle, gerçek olaylarla hiçbir ilgisi bulunmamaktadır."
+    }
+  },
+  "GiftOfParting": {
+    "name": "\"Veda\" Hediyesi",
+    "description": {
+      "0": "Lyney'nin sihir gösterilerinde verdiği çiçekli bir aksesuar. Ayrılığın simgesi olan Lumidouce Çanlarının bir araya getirilmesiyle yapılmıştır."
+    }
+  },
+  "DelightfulEncounter": {
+    "name": "\"Hoş Karşılaşma\"",
+    "description": {
+      "0": "Lyney'nin sihir gösterilerinde verdiği çiçekli bir aksesuar. Ayrılığın simgesi olan Lumidouce Çanlarının ve tutkuyu temsil eden Gökkuşağı Güllerinin bir araya getirilmesiyle yapılmıştır. Ayrılık ve tutku, aynı içgüdüden ortaya çıkan iki farklı taraftır. Asıl önemli olansa içinde bulunduğumuz andır."
+    }
+  },
+  "RedStone": {
+    "name": "Kırmızı Taş",
+    "description": {
+      "0": "Mamere ile beraber bulduğun kırmızı bir cevher. Bu cevherle boya yapılabileceği söyleniyor.",
+      "1": "Sadece bir cevher olmasına rağmen nedense sıcakmış gibi geliyor... Yoksa ellerin mi çok soğuk?"
+    }
+  },
+  "Treasure": {
+    "name": "Hazine",
+    "description": {
+      "0": "Eski bir cep saati.",
+      "1": "Durmuş halde ve kapağı da açılmıyor."
+    }
+  },
+  "HolyBladeOfNarzissenkreuz": {
+    "name": "Nergis Haçının Kutsal Kılıcı",
+    "description": {
+      "0": "Belirli bir hikayede özel bir anlam taşıyan kutsal bir kılıç.",
+      "1": "Kimseye ait değildir."
+    }
+  },
+  "GreenFeatherAccessory": {
+    "name": "Yeşil Tüy Aksesuar",
+    "description": {
+      "0": "Bu tüy bazen hikayeyi ilerletme ya da sonunu getirme gücüne sahiptir.",
+      "1": "Görünüşü, hikayenin ötesinde bir gücü temsil ediyor.",
+      "2": "<br/>",
+      "3": "Eski olmasına rağmen iyi korunduğundan birçok kişi tarafından özenle kullanıldığı anlaşılıyor."
+    }
+  },
+  "TypewriterKeycap": {
+    "name": "Daktilo Tuşu",
+    "description": {
+      "0": "Yeni satın alınmış bir tuş. Daktilodaki parçalarla pek uyumlu olmasa da... Şimdilik idare edilebilir."
+    }
+  },
+  "Lakelight": {
+    "name": "\"Göldeki Işık\"",
+    "description": {
+      "0": "Semaine'ın sevdiği, \"Göldeki Işık\" adında bir parfüm. Bunu işe giderken mi sıkıyor acaba?"
+    }
+  },
+  "Fry": {
+    "name": "Yavru Balık",
+    "description": {
+      "0": "Batasso'dan aldığın yavru balıklar. Söylenene göre bunları tek tek kendi elleriyle seçmiş ve bu balıklar, bu sularda hayatta kalmak için birebirmiş."
+    }
+  },
+  "OperaHouseSwitcherooCaseRecord": {
+    "name": "\"Opera Salonu Değiş Tokuş\" Vaka Dosyası",
+    "description": {
+      "0": "Lyney ve Lynette'in Epiclese Opera Salonundaki yer değiştirme sihir gösterisi sırasında yaşanan cinayet ve kayıp vakasıyla ilgili ayrıntılı bir vaka dosyası. Soruşturma sırasında zorlanırsan lütfen fikir edinmek için şimdiye kadar toplanmış olan ipuçlarını ve kanıtları incele."
+    }
+  },
+  "WaterAndMissingPersonCaseRecord": {
+    "name": "\"Su ve Kayıp Kişi\" Vaka Dosyası",
+    "description": {
+      "0": "Navia'nın babası Callas'ın öldürülmesi ve bu olayla bağlantısı olduğu düşünülen genç kadınların seri halinde kaybolmaları vakasıyla ilgili ayrıntılı bir vaka dosyası. Soruşturma sırasında zorlanırsan lütfen bir fikir edinmek için şimdiye kadar toplanmış olan ipuçlarını ve kanıtları incele."
+    }
+  },
+  "JabberwocksHolySword": {
+    "name": "Jabberwock'un Kutsal Kılıcı",
+    "description": {
+      "0": "Belirli bir hikayede özel bir anlam taşıyan kutsal bir kılıç."
+    }
+  },
   "AbsolutionSeekersTestament": {
     "name": "Bir Günahkarın Son Sözleri",
     "description": {
       "0": "Veluriyam Serabı'nda bulduğun bir mektup. Özenli bir şekilde katlanmış ve sararmış haldedir. Birinin uzun zaman önce Zindanda bıraktığı bir şey gibi görünüyor."
     }
+  },
+  "EnigmaticPageIV": {
+    "name": "Esrarengiz Sayfa (IV)",
+    "description": {
+      "0": "Ne yazdığı anlaşılmayan eski bir kağıt.",
+      "1": "Belki de içeriği çözmenin bir yolu vardır."
+    }
+  },
+  "EnigmaticPageV": {
+    "name": "Esrarengiz Sayfa (V)",
+    "description": {
+      "0": "Ne yazdığı anlaşılmayan eski bir kağıt.",
+      "1": "Belki de içeriği çözmenin bir yolu vardır."
+    }
+  },
+  "EnigmaticPageVI": {
+    "name": "Esrarengiz Sayfa (VI)",
+    "description": {
+      "0": "Ne yazdığı anlaşılmayan eski bir kağıt.",
+      "1": "Belki de içeriği çözmenin bir yolu vardır."
+    }
+  },
+  "EnigmaticPageVII": {
+    "name": "Esrarengiz Sayfa (VII)",
+    "description": {
+      "0": "Ne yazdığı anlaşılmayan eski bir kağıt.",
+      "1": "Belki de içeriği çözmenin bir yolu vardır."
+    }
+  },
+  "EnigmaticPageVIII": {
+    "name": "Esrarengiz Sayfa (VIII)",
+    "description": {
+      "0": "Ne yazdığı anlaşılmayan eski bir kağıt.",
+      "1": "Belki de içeriği çözmenin bir yolu vardır."
+    }
+  },
+  "EnigmaticPageIX": {
+    "name": "Esrarengiz Sayfa (IX)",
+    "description": {
+      "0": "Ne yazdığı anlaşılmayan eski bir kağıt.",
+      "1": "Belki de içeriği çözmenin bir yolu vardır."
+    }
+  },
+  "EnigmaticPageX": {
+    "name": "Esrarengiz Sayfa (X)",
+    "description": {
+      "0": "Ne yazdığı anlaşılmayan eski bir kağıt.",
+      "1": "Belki de içeriği çözmenin bir yolu vardır."
+    }
+  },
+  "EnigmaticPageXI": {
+    "name": "Esrarengiz Sayfa (XI)",
+    "description": {
+      "0": "Ne yazdığı anlaşılmayan eski bir kağıt.",
+      "1": "Belki de içeriği çözmenin bir yolu vardır."
+    }
+  },
+  "EnigmaticPageXII": {
+    "name": "Esrarengiz Sayfa (XII)",
+    "description": {
+      "0": "Ne yazdığı anlaşılmayan eski bir kağıt.",
+      "1": "Belki de içeriği çözmenin bir yolu vardır."
+    }
+  },
+  "EnigmaticPageXIII": {
+    "name": "Esrarengiz Sayfa (XIII)",
+    "description": {
+      "0": "Ne yazdığı anlaşılmayan eski bir kağıt.",
+      "1": "Belki de içeriği çözmenin bir yolu vardır."
+    }
+  },
+  "MelodyOfVesta": {
+    "name": "Vesta'nın Melodisi",
+    "description": {
+      "0": "Kadim bir melodinin notalarının yazdığı bronz bir levha olduğu söylenir. Ancak notaların yazımı o kadar tuhaftır ki anlaşılması zordur."
+    }
+  },
+  "TopyassToken": {
+    "name": "Topyas'ın Nişanı",
+    "description": {
+      "0": "Kendini müzisyen ilan eden Topyas'ın nişanı. Eskiden bununla Kabuk Arp çaldığını söyler."
+    }
+  },
+  "StrangeOre": {
+    "name": "Tuhaf Cevher",
+    "description": {
+      "0": "Tuhaf bir ışıkla parlayan bir cevher. Sıkışık ve sert bir dokusu var."
+    }
+  },
+  "SpecialClock": {
+    "name": "Özel Saat",
+    "description": {
+      "0": "İç dişlilerdeki aşınmayı azaltmak için özel malzemeler kullanılarak yapılan prototip bir saat. İstiridyeye benzer şekilde yapılan açılır kapanır tasarımı sayesinde su altında da kullanılabilir."
+    }
+  },
+  "AncientLog": {
+    "name": "Kadim Günlük",
+    "description": {}
+  },
+  "AncientInvestigativeReport": {
+    "name": "Kadim Araştırma Raporu",
+    "description": {}
+  },
+  "AncientNaturalHistoryExcerpts": {
+    "name": "Kadim Doğa Tarihi Pasajları",
+    "description": {}
+  },
+  "AncientNotes": {
+    "name": "Kadim Notlar",
+    "description": {}
+  },
+  "CoffeeBrewingIngredients": {
+    "name": "Kahve Demleme Malzemeleri",
+    "description": {
+      "0": "Arouet'nin yaptığı malzemeler. Kahve demlemek için kullanılabilir."
+    }
+  },
+  "SpeciallyCookedFish": {
+    "name": "Özel Pişirilmiş Balık",
+    "description": {
+      "0": "Iaune'un özel bir yöntemle hazırladığı balık. Mor Altın Balıkçı Martı çok sevmişe benziyor..."
+    }
+  },
+  "EnhancedTruesightPotion": {
+    "name": "Geliştirilmiş \"Net Görüş İksiri\"",
+    "description": {
+      "0": "Net Görüş İksirinin geliştirilmiş bir versiyonu. İçtiğinde nasıl değişik etkilerini hissedersin acaba?"
+    }
+  },
+  "Bait": {
+    "name": "Yem",
+    "description": {
+      "0": "Boucicaut'dan alınan yem. Belki balık tutarken Roialte'in işine yarar..."
+    }
+  },
+  "MysteriousCore": {
+    "name": "Gizemli Çekirdek",
+    "description": {
+      "0": "Gizemli bir makinadan alınmış gizemli bir çekirdek.",
+      "1": "Bir dişliye benzese de aslında dişli şeklindeki bir çekirdek. Gerçekten de gizemli."
+    }
+  },
+  "DrainedConchCup": {
+    "name": "Deniz Kabuğu Kupası",
+    "description": {
+      "0": "Eski bir deniz kabuğundan kupa. Geçmişi çok daha eski bir uygarlığa kadar da uzanıyor olabilir."
+    }
+  },
+  "NavigationLogFragment": {
+    "name": "Seyir Defteri Parçası",
+    "description": {
+      "0": "Seyir Defteri Parçası"
+    }
+  },
+  "DamagedDiary": {
+    "name": "Hasarlı Günlük",
+    "description": {
+      "0": "Hasarlı Günlük"
+    }
+  },
+  "SuspiciousFowl": {
+    "name": "Kuş Eti (Tuhaf)",
+    "description": {
+      "0": "Yol kenarında bulunan kuş eti. Talihsiz bir kazaya karışmış kuşlardan düşmüş olabilir."
+    }
+  },
+  "FiberyRomaritimeFlowers": {
+    "name": "Lifli Romaritime Çiçekleri",
+    "description": {
+      "0": "Lyney'nin sihirli cepler yapması için toplanan Romaritime Çiçekleri. Söylenene göre bu bölgede yetişen Romaritime Çiçekleri bol lifli olurmuş, bu yüzden de kaliteli sihirli cepler yapmak için birebirmiş."
+    }
+  },
+  "ChildesVision": {
+    "name": "Asilzade'nin Önsezisi",
+    "description": {
+      "0": "Görünen o ki Asilzade, içindeki Element Gücünün kontrolünü kaybetmiş. Önsezi, sahibi onu bıraktıktan sonra parlaklığını yitirmiş."
+    }
+  },
+  "MagicPocketMaterials": {
+    "name": "Sihirli Cep Malzemeleri",
+    "description": {
+      "0": "\"Kehanet krizi\" ile başa çıkmak için daha çok sihirli cep yapmanın bir zararı olmaz. Malzemelerle dolu bu çanta senin, Lyney'nin, Freminet'nin ve diğer herkesin iyi niyetinin bir göstergesidir."
+    }
+  },
+  "MagicPocket": {
+    "name": "Sihirli Cep",
+    "description": {
+      "0": "Sihir gösterilerinde aşırı kullanışlı olmasının yanı sıra Fontainelilere \"kehanet krizi\" ile başa çıkma konusunda yardımcı olan, iyi bir saklama kapasitesine sahip Lyney'nin tarzında sihirli bir eşya."
+    }
+  },
+  "PucasToken": {
+    "name": "Puca'nın Nişanı",
+    "description": {
+      "0": "Puca'nın madenin derinliklerinde kaybettiği nişanı. Acele et ve hemen nişanını ona geri götür!"
+    }
+  },
+  "AStory": {
+    "name": "Bir Hikaye",
+    "description": {}
   },
   "SilkFlowerSeed": {
     "name": "İpek Çiçeği Tohumu",
@@ -17551,6 +18897,30 @@
     "name": "Sumeru Gülü Tohumu",
     "description": {
       "0": "Tohum Kutusundan elde edilen hayat dolu, kaliteli bir tohum. Çaydanlığın büyüleyici tarlalarına ekildikten bir süre sonra büyüyerek Sumeru Gülüne dönüşür."
+    }
+  },
+  "PluieLotusSeed": {
+    "name": "Yağmur Nilüferi Tohumu",
+    "description": {
+      "0": "Tohum Kutusundan elde edilen hayat dolu, kaliteli bir tohum. Çaydanlığın büyüleyici tarlalarına ekildikten bir süre sonra büyüyerek Yağmur Nilüferine dönüşür."
+    }
+  },
+  "MarcotteSeed": {
+    "name": "Marcotte Tohumu",
+    "description": {
+      "0": "Tohum Kutusundan elde edilen hayat dolu, kaliteli bir tohum. Çaydanlığın büyüleyici tarlalarına ekildikten bir süre sonra büyüyerek Marcotte'a dönüşür."
+    }
+  },
+  "LumidouceBellSeed": {
+    "name": "Lumidouce Çanı Tohumu",
+    "description": {
+      "0": "Tohum Kutusundan elde edilen hayat dolu, kaliteli bir tohum. Çaydanlığın büyüleyici tarlalarına ekildikten bir süre sonra büyüyerek Lumidouce Çanına dönüşür."
+    }
+  },
+  "RainbowRoseSeed": {
+    "name": "Gökkuşağı Gülü Tohumu",
+    "description": {
+      "0": "Tohum Kutusundan elde edilen hayat dolu, kaliteli bir tohum. Çaydanlığın büyüleyici tarlalarına ekildikten bir süre sonra büyüyerek Gökkuşağı Gülüne dönüşür."
     }
   },
   "Medaka": {
@@ -17756,6 +19126,61 @@
       "1": "Yeşim Balta Balığı, su bitkilerinin yoğun olduğu ve şeklinin çevresine uyum sağladığı yerlerde yaşamayı tercih eder. Yosunlar arasında gezinen küçük balıklar sıklıkla onun kamufle olmuş gövdesine çarpıp sersemler ama balta balığı buna aldırış etmez, hatta vücudunu komşularına sığınak olarak sunar."
     }
   },
+  "StreamingAxeMarlin": {
+    "name": "Dalgacı Balta Balığı",
+    "description": {
+      "0": "Eşsiz bir biçime sahip ve kelebek balığının Fontaineli kuzeni olan bir balık. Geniş bir kılçığa ve kendine has kıvrımlı bir vücuda sahiptir. Efsaneye göre bu balığı ilk yakalayan balıkçının oltası kuyruk yüzgecine takılmış ve ortaya çıkan şekil bir baltalı mızrağı anımsattığından balıkçı ona \"Balta Balığı\" ismini vermiş. Bilimsel adı \"Çapa Kancalı Kelebek\" ile karşılaştırıldığında bu isim çok daha ilgi çekici olduğundan çoğu insan bu ismi tercih ediyor.",
+      "1": "Deniz mavisi rengindeki bu Balta Balıklarının, Sumeru'dan Fontaine'e göç etmiş özel bir tür olduğu söylenir. Sumeru'daki daha uysal kuzenlerine kıyasla daha dişlidirler ve çok daha zorlu koşullarda yaşayabilirler. Hatta neredeyse tüccar gemileri kadar uzun mesafeler katedebilirler. Bu sebeple bazı denizciler onları cesaretin ve sabrın sembolü olarak görürler."
+    }
+  },
+  "RipplingHeartfeatherBass": {
+    "name": "Dalgalı Kalp Tüylü Levrek",
+    "description": {
+      "0": "Yandan bakıldığında kalp şekline benzeyen, levreğin akrabası olduğu söylenen tuhaf bir balık. Sırt ve karın kısmında bulunan tüy inceliğindeki esnek kılçıklardan ötürü araştırmacılar onun için \"Kalp Tüylü Levrek\" ismini önermişlerdir.",
+      "1": "Kalp Tüylü Levrek familyasının önemli bir alt türü olmasından ötürü Dalgalı Kalp Tüylü Levrekler, göründüklerinden çok daha iyi yüzücülerdir ve dev dalgaların arasında dahi yüzebilirler. Su üstünde akıntıya karşı yüzdüklerinde bir titreşim sesi çıkardıkları söylenir. Kendini korumak için vücudunun aldığı renkten ötürü bu balığı tespit etmek son derece zordur bu yüzden birçok oltacı bu özel sesi hiç duymamıştır."
+    }
+  },
+  "BlazingHeartfeatherBass": {
+    "name": "Alevli Kalp Tüylü Levrek",
+    "description": {
+      "0": "Yandan bakıldığında kalp şekline benzeyen, levreğin akrabası olduğu söylenen tuhaf bir balık. Sırt ve karın kısmında bulunan tüy inceliğindeki esnek kılçıklardan ötürü araştırmacılar onun için \"Kalp Tüylü Levrek\" ismini önermişlerdir.",
+      "1": "Alevli Kalp Tüylü Levreklerin güneş ışığı gibi parlayan özel bir renkleri vardır ve suda son derece dikkat çekicilerdir. Bunun özel bir savunma stratejisi olduğu söylenir. Bu şekilde diğer balıkların onları bilmedikleri yanan bir nesne olarak görmesini sağlar ve böylelikle muhtemel avcılarını kendilerinden uzak tutar. Alevli görüntülerinin aksine aslında vücut ısıları düşüktür ve çok fazla besin tüketmezler. Sığ yerlerde biraz güneş ışığı almak için bazen normal yollarından saptıkları bile olur."
+    }
+  },
+  "MaintenanceMekInitialConfiguration": {
+    "name": "Teknisyen Meka: İlk Ayarlama",
+    "description": {
+      "0": "Meka ekiplerinin kullanım oranını artırmak üzere, su altı projelerine yardımcı olmaları için geliştirilmiş destek mekalarıdır. Aslında hurda, bitki ve diğer su altı molozlarını taşımak ve Kurmalı Mekaların hayati parçalarının tıkanmasını önleyerek arıza oranlarını azaltmak için tasarlanmışlardır. Ayrıca, su altı temizleyicileri olarak Fontaine'in ekosistemine şüphesiz çok katkıları vardır.",
+      "1": "Yüksek derecede hassas sensörleriyle bu meka, hedef eşyaları \"koklayarak\" başarılı bir şekilde bulabilir ve görsel olarak su altı hurdalarının özelliklerini tespit edebilir. Bu sebeple belirli tür yemlere gelmeleri ve onlara \"Su Bakım Balığı\" ya da \"Demir Balık\" diyen oltacılar tarafından avlanmaları mümkündür.",
+      "2": "Hafif ahşap ve ucuz metal kullanılarak yapılan bu model, güvenilir üretim mümkün hale geldikten sonra ortaya çıkan ilk Teknisyen Meka serisini temsil eder ve tasarlandıkları amaca yönelik temel becerilere sahiptirler. Ancak sınırlı bir ömürleri vardır. Buna karşılık bu model oldukça fazla sayıda üretilmiştir ve \"grup vardiyası\" halinde çalışırlar. Ömrünün sonuna ulaşan bir grup çalışmayı bırakır ve önceden suyun altına bırakılan başka bir grup aktif hale gelip sonraki vardiyayı devralır. Sıradan insanların gözünde bu \"Demir Balıklar\" kendi kendilerine sonsuz bir enerji akışı yaratabilmektedir. Arada sırada birkaç tanesini yakalamaktan zarar gelmez."
+    }
+  },
+  "MaintenanceMekWaterBodyCleaner": {
+    "name": "Teknisyen Meka: Su Temizlikçisi",
+    "description": {
+      "0": "Meka ekiplerinin kullanım oranını artırmak üzere, su altı projelerine yardımcı olmaları için geliştirilmiş destek mekalarıdır. Aslında hurda, bitki ve diğer su altı molozlarını taşımak ve Kurmalı Mekaların hayati aksamlarının tıkanmasını önleyerek arıza oranlarını azaltmak için tasarlanmışlardır. Ayrıca, su altı temizleyicileri olarak Fontaine'in ekosistemine şüphesiz çok katkıları vardır.",
+      "1": "Yüksek derecede hassas sensörleriyle bu meka, hedef eşyaları \"koklayarak\" başarılı bir şekilde bulabilir ve görsel olarak su altı hurdalarının özelliklerini tespit edebilir. Bu sebeple belirli tür yemlerle çekilmeleri ve onlara \"Su Bakım Balığı\" ya da \"Demir Balık\" diyen oltacılar tarafından avlanmaları mümkündür.",
+      "2": "Yüksek sayıda üretilip kullanılan \"İlk Ayarlama\" modeline göre \"Su Temizlikçisi\" modeli daha olgundur ve aşınmaya dayanıklı malzemeden yapılmıştır. Bu projeden sorumlu araştırmacılar, ürünleri çevreye saldıktan sonra kendi hallerinde bırakmamış, düzenli olarak geri çağırarak bakımlarını yapmıştır. Belirli bir frekansta yanıp sönen sinyaller gönderip mekaları eve yönlendirerek geri almış, bakım ve incelemeden sonra yeniden serbest bırakmışlardır. Zaman içinde bazı kişiler bu sinyal metodunu mekaları yakalamak için bir \"yem\" olarak kullanmaya başladı. Artık bu oltacılar arasında yaygın bilinen bir şey."
+    }
+  },
+  "MaintenanceMekSituationController": {
+    "name": "Teknisyen Meka: Durum Kontrolcüsü",
+    "description": {
+      "0": "Meka ekiplerinin kullanım oranını artırmak üzere, su altı projelerine yardımcı olmaları için geliştirilmiş destek mekalarıdır. Aslında hurda, bitki ve diğer su altı molozlarını taşımak ve Kurmalı Mekaların hayati aksamlarının tıkanmasını önleyerek arıza oranlarını azaltmak için tasarlanmışlardır. Ayrıca, su altı temizleyicileri olarak Fontaine'in ekosistemine şüphesiz çok katkıları vardır.",
+      "1": "Yüksek derecede hassas sensörleriyle bu meka, hedef eşyaları \"koklayarak\" başarılı bir şekilde bulabilir ve görsel olarak su altı hurdalarının özelliklerini tespit edebilir. Bu sebeple belirli tür yemlere gelmeleri ve onlara \"Su Bakım Balığı\" ya da \"Demir Balık\" diyen oltacılar tarafından avlanmaları mümkündür.",
+      "2": "Belirli koşullar altında Teknisyen Mekalar, bazı su altı canavarlarının yiyeceklerini temizlenmesi gereken hedefler olarak görebilir. Bu sebeple bazen kendilerini, küçük boylu ve güçsüz olmalarından ötürü zor durumda kaldıkları çatışmaların içinde bulurlar. Sonuç olarak zaman içerisinde gittikçe daha fazla sayıda meka zarar görmeye başladı.",
+      "3": "Önceki iki modelin korunması ve temizliğin güvenli hale getirilmesi için araştırmacılar, mevcut sistemleri kullanarak mekaların çekirdek yapılarının güç yoğunluğunu artırmak için ellerinden geleni yaptılar. Sonunda belirli savaş yetenekleri bulunan üçüncü bir model yarattılar. Bu meka öncelikli olarak su altı canavarlarına doğrudan çarparak onları uzaklaştırmak için tasarlanmıştı. Önceki süreçler temelinde yeni model hızla üretildi.",
+      "4": "Fakat \"Durum Kontrolcüsü\" mekaların yaygınlaştırılması Fontaine Araştırma Enstitüsü tarafından birden durduruldu. Eğer bu küçük şeyler vahşi su altı canavarlarını kovmayı başarıyorsa diğer su altı mekalarına ne gerek vardı? Gerçekte bu \"Durum Kontrolcüsü\" mekaların, diğer mekaları gerçek anlamda tehdit eden su altı canavarlarına karşı bir gerçek tehdit oluşturması imkansızdı. Yalnızca sıradan balıklarla başa çıkabiliyor ve ekosisteme zarar veriyordu. Sonuç olarak araştırmacılar bunlardan bir kısmını bilinçli olarak kapatma ve saldırı yeteneklerini kısıtlama yoluna gitti."
+    }
+  },
+  "MaintenanceMekPlatinumCollection": {
+    "name": "Teknisyen Meka: Platin Koleksiyon",
+    "description": {
+      "0": "Meka ekiplerinin kullanım oranını artırmak üzere, su altı projelerine yardımcı olmaları için geliştirilmiş destek mekalarıdır. Aslında hurda, bitki ve diğer su altı molozlarını taşımak ve Kurmalı Mekaların hayati aksamlarının tıkanmasını önleyerek arıza oranlarını azaltmak için tasarlanmışlardır.",
+      "1": "Seri üretilen diğer modellerle kıyaslandığında bu sınırlı sayıdaki özel \"Platin Koleksiyon\" mekalar, parlak ve pürüzsüz dış görünümleriyle dikkat çeker. Proje geliştirme ekibi, zengin tüccarların desteğini Teknisyen Mekalara çekmeye çalışırken onlara bu muhteşem mekanizmaların olduğu bir balık akvaryumunu hediye olarak gönderdi. Ne hediye ama! Ne yazık ki bu girişimlerin hiçbiri başarılı olamadı. Bu yüzden proje geliştirme ekibi proje bütçesini tamamlamak için onları oyuncak olarak satmayı planladı.",
+      "2": "Sonunda hepimizin hatırladığı o kazadan ötürü bütün proje ekibi dağıtıldı ve gelecekteki projeleri de iptal edildi. Bugün Fontaine'de kalan tüm Teknisyen Mekalar, tıpkı \"Platin Koleksiyon\" serisi gibi tamamen denetimsiz bir haldedir. Hepsi sulara karışıp gözlerden kaybolarak Fontaine'in en özel ve pahalı \"balıkları\" haline gelmişlerdir. Buğukuş gazetecilerinin yaptığı detaylı araştırma ve mevcut verilerin çapraz incelenmesinden sonra şu sonuç ortaya çıkmıştır: \"Teknisyen Mekaların kullanılması, Fontaine sularının kirliliğine hiçbir kayda değer etkide bulunmamıştır. Projenin etkisi bugün dahi şüpheli haldedir.\" Günümüzde \"Platin Koleksiyon\" mekalar hâlâ Fontaine sularında gezmektedir ve çok kıymetli avlar olarak görülmektedir. Bir \"Platin Koleksiyon\" meka, diğer uluslardaki en nadir \"Süs Balığı\" kadar kıymetli sayılır ne de olsa."
+    }
+  },
   "WingsOfFirstFlight": {
     "name": "İlk Uçuş Kanatları",
     "description": {
@@ -17821,6 +19246,12 @@
     "name": "Yıldız Işığı Kanatları",
     "description": {
       "0": "Uzak dünyaların birinde kutlanan festival için özel olarak tasarlanmış hediye bir kanat."
+    }
+  },
+  "WingsOfMercifulWrathfulWaters": {
+    "name": "Merhametli ve Öfkeli Suların Kanatları",
+    "description": {
+      "0": "Fontaine'in saygısını ve sevgisini kazandığın için sana hediye edilen süslenmiş bir kanat."
     }
   },
   "RadiantSpincrystal1": {
@@ -18507,6 +19938,60 @@
       "0": "Bol baharatlı leziz bir yemek! Çok hoş bir aroması vardır. Peki bu yemek kimin damak zevkine hitap edecek? Arkadaşlarını ve sevdiklerini çağır, bu yeni tarifle ziyafet çekin!"
     }
   },
+  "RadiantSpincrystal99": {
+    "name": "Parlak Burgu Kristal 99",
+    "description": {
+      "0": "Bu harikulade kristal, narin ipekten güzel bir örgü misali çok hoş bir melodi çalar. Bu eşyayı ana karanın farklı yerlerinden veya nadir nesne toplayan tüccarlardan bulabilirsin. Kristalin içinde çalan ezgiyi, Dinginçay Çaydanlığındaki \"Ebedi Ahenk: Dingin Yankılar\" veya \"Ebedi Ahenk: Rüzgarın Ezgileri\" eşyalarını kullanarak canlandırabilirsin. Bu Parlak Burgu Kristalde Fontaine'den gelen gizemli bir müzik vardır."
+    }
+  },
+  "RadiantSpincrystal100": {
+    "name": "Parlak Burgu Kristal 100",
+    "description": {
+      "0": "Bu harikulade kristal, narin ipekten güzel bir örgü misali çok hoş bir melodi çalar. Bu eşyayı ana karanın farklı yerlerinden veya nadir nesne toplayan tüccarlardan bulabilirsin. Kristalin içinde çalan ezgiyi, Dinginçay Çaydanlığındaki \"Ebedi Ahenk: Dingin Yankılar\" veya \"Ebedi Ahenk: Rüzgarın Ezgileri\" eşyalarını kullanarak canlandırabilirsin. Bu Parlak Burgu Kristalde Fontaine'den gelen gizemli bir müzik vardır."
+    }
+  },
+  "RadiantSpincrystal101": {
+    "name": "Parlak Burgu Kristal 101",
+    "description": {
+      "0": "Bu harikulade kristal, narin ipekten güzel bir örgü misali çok hoş bir melodi çalar. Bu eşyayı ana karanın farklı yerlerinden veya nadir nesne toplayan tüccarlardan bulabilirsin. Kristalin içinde çalan ezgiyi, Dinginçay Çaydanlığındaki \"Ebedi Ahenk: Dingin Yankılar\" veya \"Ebedi Ahenk: Rüzgarın Ezgileri\" eşyalarını kullanarak canlandırabilirsin. Bu Parlak Burgu Kristalde Fontaine'den gelen gizemli bir müzik vardır."
+    }
+  },
+  "RadiantSpincrystal102": {
+    "name": "Parlak Burgu Kristal 102",
+    "description": {
+      "0": "Bu harikulade kristal, narin ipekten güzel bir örgü misali çok hoş bir melodi çalar. Bu eşyayı ana karanın farklı yerlerinden veya nadir nesne toplayan tüccarlardan bulabilirsin. Kristalin içinde çalan ezgiyi, Dinginçay Çaydanlığındaki \"Ebedi Ahenk: Dingin Yankılar\" veya \"Ebedi Ahenk: Rüzgarın Ezgileri\" eşyalarını kullanarak canlandırabilirsin. Bu Parlak Burgu Kristalde Fontaine'den gelen gizemli bir müzik vardır."
+    }
+  },
+  "RadiantSpincrystal103": {
+    "name": "Parlak Burgu Kristal 103",
+    "description": {
+      "0": "Bu harikulade kristal, narin ipekten güzel bir örgü misali çok hoş bir melodi çalar. Bu eşyayı ana karanın farklı yerlerinden veya nadir nesne toplayan tüccarlardan bulabilirsin. Kristalin içinde çalan ezgiyi, Dinginçay Çaydanlığındaki \"Ebedi Ahenk: Dingin Yankılar\" veya \"Ebedi Ahenk: Rüzgarın Ezgileri\" eşyalarını kullanarak canlandırabilirsin. Bu Parlak Burgu Kristalde Fontaine'den gelen gizemli bir müzik vardır."
+    }
+  },
+  "RadiantSpincrystal104": {
+    "name": "Parlak Burgu Kristal 104",
+    "description": {
+      "0": "Bu harikulade kristal, narin ipekten güzel bir örgü misali çok hoş bir melodi çalar. Bu eşyayı ana karanın farklı yerlerinden veya nadir nesne toplayan tüccarlardan bulabilirsin. Kristalin içinde çalan ezgiyi, Dinginçay Çaydanlığındaki \"Ebedi Ahenk: Dingin Yankılar\" veya \"Ebedi Ahenk: Rüzgarın Ezgileri\" eşyalarını kullanarak canlandırabilirsin. Bu Parlak Burgu Kristalde Fontaine'den gelen gizemli bir müzik vardır."
+    }
+  },
+  "RadiantSpincrystal105": {
+    "name": "Parlak Burgu Kristal 105",
+    "description": {
+      "0": "Bu harikulade kristal, narin ipekten güzel bir örgü misali çok hoş bir melodi çalar. Bu eşyayı ana karanın farklı yerlerinden veya nadir nesne toplayan tüccarlardan bulabilirsin. Kristalin içinde çalan ezgiyi, Dinginçay Çaydanlığındaki \"Ebedi Ahenk: Dingin Yankılar\" veya \"Ebedi Ahenk: Rüzgarın Ezgileri\" eşyalarını kullanarak canlandırabilirsin. Bu Parlak Burgu Kristalde Fontaine'den gelen gizemli bir müzik vardır."
+    }
+  },
+  "RadiantSpincrystal106": {
+    "name": "Parlak Burgu Kristal 106",
+    "description": {
+      "0": "Bu harikulade kristal, narin ipekten güzel bir örgü misali çok hoş bir melodi çalar. Bu eşyayı ana karanın farklı yerlerinden veya nadir nesne toplayan tüccarlardan bulabilirsin. Kristalin içinde çalan ezgiyi, Dinginçay Çaydanlığındaki \"Ebedi Ahenk: Dingin Yankılar\" veya \"Ebedi Ahenk: Rüzgarın Ezgileri\" eşyalarını kullanarak canlandırabilirsin. Bu Parlak Burgu Kristalde Fontaine'den gelen gizemli bir müzik vardır."
+    }
+  },
+  "RadiantSpincrystal107": {
+    "name": "Parlak Burgu Kristal 107",
+    "description": {
+      "0": "Bu harikulade kristal, narin ipekten güzel bir örgü misali çok hoş bir melodi çalar. Bu eşyayı ana karanın farklı yerlerinden veya nadir nesne toplayan tüccarlardan bulabilirsin. Kristalin içinde çalan ezgiyi, Dinginçay Çaydanlığındaki \"Ebedi Ahenk: Dingin Yankılar\" veya \"Ebedi Ahenk: Rüzgarın Ezgileri\" eşyalarını kullanarak canlandırabilirsin. Bu Parlak Burgu Kristalde Fontaine'den gelen gizemli bir müzik vardır."
+    }
+  },
   "LanternFiber": {
     "name": "Fener Lifi",
     "description": {
@@ -18639,6 +20124,13 @@
     "description": {
       "0": "Telli Turna için özel saflaştırma malzemesi.",
       "1": "Büyük Kızıl Çöl'de, sonradan Yakarışların Kralı olacak o genç, Leylek Kral'ın soyundan gelenlerin isteği üzerine Kum Yağı Pupasından bir yay kirişi mumu yapmak için birkaç gün uğraştı. Ancak bu yay, Leylek Kral'ın gidişiyle ortadan kayboldu ve yalnızca bal mumu pupanın nasıl yapılacağı nesiller boyunca aktarıldı. Belki de hâlâ bir gün tekrar kullanılmayı bekliyordur."
+    }
+  },
+  "MartensOmniFix": {
+    "name": "Martens'in Çok Amaçlı Bakım Kremi",
+    "description": {
+      "0": "\"Cendre Nehri Kayıkçısı\" için özel saflaştırma malzemesi.",
+      "1": "Belirli malzemelerin üstünde bir izolasyon katmanı oluşturarak aşınma ve oksitlenmeyi engellemekle kalmaz aynı zamanda temizleme, yağlama ve cilalama görevi de görür. Bir zamanlar Fontaine'de çok popülerdi. O zamanki reklamlarda Cendre Nehri'nden efsanevi bir sima, o meşhur kıvrık bakır borunun bakımında bunu kullanırdı."
     }
   },
   "FalconsDance": {
@@ -18937,6 +20429,13 @@
       "0": "Balık tutarken İdeal Misina Gerginliğinde kalırsan balığın oltaya direnme süresini epey kısaltır ve başarı şansını artırırsın. Bu etki yalnızca Sumeru'da geçerlidir.",
       "1": "<br/>",
       "2": "Bu eski Sumeru oltası beyaz yeşim gibi oyulmuş, koyu altın desenleriyle süslenmiş ve yeşil mücevherlerle bezenmiştir. Kusursuz estetiğinin yanı sıra \"yaşama\" dair bir anlamı var gibi görünür. Sumeru'daki en eski oltanın, sarmaşıklarla sarılmış bir dal olduğu ve birçok usta balıkçının bu tarz oltalarla mucizevi avlar yakaladığı söylenir. Günümüz balıkçıları da uzun bir geçmişe sahip olan bu oltaların kendilerine iyi şans getireceğine inanır."
+    }
+  },
+  "Wavepiercer": {
+    "name": "Dalgadeler",
+    "description": {
+      "0": "Metale özgü, hoş bir çekiciliği olan ince bir balıkçı oltası. Fontaine Araştırma Enstitüsü tarafından tasarlanan yenilikçi metal malzemelerle yapıldığından hafif ama dayanıklıdır. Bağlantı kısımlarındaki metalden yapılma sağlam düğümler sayesinde olta, müthiş ağırlıktaki balıkları çekme yeteneğine sahiptir. Kılıçlardaki balçaklardan ilham alınarak tasarlanan makara yuvası, vahşi ve \"dişli\" balıklara karşı balıkçının kendini korumasını sağlar.",
+      "1": "Tecrübeli balıkçılar, tıpkı güvenilir bir mızrak gibi bu oltanın Fontaine'e özel \"Demir Balık\"a karşı, en iyi silah olduğunu söylerler."
     }
   },
   "GenshinImpactANewWorld": {
@@ -20059,6 +21558,69 @@
       "1": "Kim bilir belki de sadece bu şeffaf camın öteki tarafında var olan hayali ışık, buradaki dünyayı az da olsa aydınlatabilir."
     }
   },
+  "LyneyPretense": {
+    "name": "Lyney: Kandırmaca",
+    "description": {
+      "0": "İsim Kartı arka planı.",
+      "1": "Başlıca sihir türlerinden biri, objeleri \"kaybetmek\" üzerinedir. Lyney'nin binbir türlü numarası vardır. Onun suç ortağı olarak bunları görmezden gelmeye niyetliysen senin de tüm problemlerin kaybolabilir."
+    }
+  },
+  "LynetteEarnestness": {
+    "name": "Lynette: İçtenlik",
+    "description": {
+      "0": "İsim Kartı arka planı.",
+      "1": "Başlıca sihir türlerinden biri \"aniden ortaya çıkma\" üzerinedir. Lynette genelde enerjisini saklamayı tercih eder ama onun ciddi tarafı, şapkadan çıkan güvercinler gibi aniden \"ortaya çıkabilir\"."
+    }
+  },
+  "FreminetProgress": {
+    "name": "Freminet: İlerleme",
+    "description": {
+      "0": "İsim Kartı arka planı.",
+      "1": "Kurmalılar çember olmuş dönerken oyuncak bebekler ileri yürüyor."
+    }
+  },
+  "FontaineJudgment": {
+    "name": "Fontaine: Adalet",
+    "description": {
+      "0": "İsim Kartı arka planı.",
+      "1": "Yeni Su Hükümdarı'nın nişanı. Yasal bir bildiri olmasa dahi kimsenin izinsiz kullanmaya cüret edemeyeceği aşikar."
+    }
+  },
+  "AchievementOrbits": {
+    "name": "Başarım: Yörüngeler",
+    "description": {
+      "0": "İsim Kartı arka planı.",
+      "1": "\"Ey Yüce Hükümdar, Universitas Magistrorum talep ettiğiniz tahminleri getirdi: Dünyanın çekimine iki yıldız kapıldı... Uzunca bir süre yörüngede kaldıktan sonra bugün yolları tekrar kesişecek.\""
+    }
+  },
+  "AchievementMariner": {
+    "name": "Başarım: Denizci",
+    "description": {
+      "0": "İsim Kartı arka planı.",
+      "1": "Gezginlerin elleri on binlerce akıntıya değdi. Hepsi dünyanın sularının doğduğu aynı kaynaktan aktı ve hepsi aynı denize geri döküldü."
+    }
+  },
+  "FontaineWondrousMachine": {
+    "name": "Fontaine: Muhteşem Makina",
+    "description": {
+      "0": "İsim Kartı arka planı.",
+      "1": "Fontaine'deki tüm Kurmalı Mekaların kullandığı enerji bloklarının sembolü. Marka olarak tescillenmesi gerekip gerekmediğine dair bir zamanlar büyük bir tartışma vardı ancak sonunda yalnızca, insanlara çok fazla serbest kullanmamaları için çağrı yapmakla yetinildi."
+    }
+  },
+  "FontaineBigNews": {
+    "name": "Fontaine: Büyük Haberler",
+    "description": {
+      "0": "İsim Kartı arka planı.",
+      "1": "Buğukuş'un tescilli logosu. Önceden izin alınmadan kullanılması halinde kanunun öngördüğü tüm haklardan faydalanmak üzere konunun yargıya intikal ettirileceğini bildirmek isteriz!"
+    }
+  },
+  "TravelNotesPrimordialWaters": {
+    "name": "Gezi Notları: Ezeli Sular",
+    "description": {
+      "0": "İsim Kartı arka planı.",
+      "1": "Saatler, yılların sessizce akıp gitmesine tanıklık ederken balıklar da kaynaktan dökülen berrak suların akışına eşlik eder. Eğer bir gün solup gitmeye mahkumsa her şey, düşüncelerim neden hiç olmadığı kadar berrak?"
+    }
+  },
   "AnemoculusResonanceStone": {
     "name": "Rüzgar Özü Rezonans Taşı",
     "description": {
@@ -20275,7 +21837,7 @@
     "name": "Tohum Kutusu",
     "description": {
       "0": "Madam Ping'den alınmış özel bir kutu. Madam Ping bu kutunun \"tohum üretme\" gücü olduğunu söylüyor. Yani özel niteliklerine göre farklı bitki tohumları üretebilir. Sonrasında bu tohumlar Dinginçay Çaydanlığındaki tarıma uygun topraklara ekilebilir.",
-      "1": "Yetiştirilebilen bitkiler ise şunlardır: İpek Çiçeği, Tatlı Çiçek, Sesilya, Parlak Zambak, Rüzgargülü Çiçeği, Qingxin, Mor Ot, Valyemiş, Küçük Lamba Otu, Jueyun Biberi, Havuç, Turp, Nane, Mantar, Gözyaşı Otu, Atkuyruğu, Aslanağzı, Nilüfer Başı, Gelin Çiçeği, Yosun, Deniz Mantarı, Harra Meyvesi, Zaytun Şeftalisi, Sumeru Gülü."
+      "1": "Yetiştirilebilen bitkiler ise şunlardır: İpek Çiçeği, Tatlı Çiçek, Sesilya, Parlak Zambak, Rüzgargülü Çiçeği, Qingxin, Mor Ot, Valyemiş, Küçük Lamba Otu, Jueyun Biberi, Havuç, Turp, Nane, Mantar, Gözyaşı Otu, Atkuyruğu, Aslanağzı, Nilüfer Başı, Gelin Çiçeği, Yosun, Deniz Mantarı, Harra Meyvesi, Zaytun Şeftalisi, Sumeru Gülü, Yağmur Nilüferi, Marcotte, Lumidouce Çanı, Gökkuşağı Gülü."
     }
   },
   "ElectroTreasureCompass": {
@@ -20567,6 +22129,47 @@
       "0": "Amurta araştırmacısı Lamiya'nın ürettiği ayna tarzı bir aygıt. Hayvanların cihazlarına bağlanarak hayvanların bakış açısını aynaya yansıtabilir."
     }
   },
+  "HydroculusResonanceStone": {
+    "name": "Su Özü Rezonans Taşı",
+    "description": {
+      "0": "Fontaine'de, yakınlardaki Su Özlerini bulmak için kullanılabilecek bir tılsım.",
+      "1": "Yedilerin Su Heykellerininkine benzer özellikleri vardır. Su Özlerinin Element Akışını tespit edebildiği söylenir.",
+      "2": "Özler, aslında Yedilerin Heykellerine ait olan, etrafa dağılmış haldeki güç parçalarıdır. Bunları Heykellere geri götürmek gayet mantıklı ve haklı bir davranıştır."
+    }
+  },
+  "HydroTreasureCompass": {
+    "name": "Su Hazinesi Pusulası",
+    "description": {
+      "0": "Fontaine'de yakınlardaki sandıkları aramak için kullanılabilen bir pusula.",
+      "1": "Fontaine'de çevreye dağılmış vaziyette olan bu sandıklar, yasal olarak bir kişiye veya kuruma ait değildir. Çoğu durumda içindekileri almak tamamen yasaldır."
+    }
+  },
+  "CrystalflyTrap": {
+    "name": "Kristal Kelebeği Tuzağı",
+    "description": {
+      "0": "Fontaine Kinetik Enerji Mühendisliği Araştırma Enstitüsünden Fawitzki isimli kıdemli bir araştırmacının geliştirdiği Kristal Kelebeği Tuzağı.",
+      "1": "Düzgün bir şekilde yerleştirilip içine gerekli malzemeler konulunca çalışmaya başlar ve Kristal Kelebeklerini içine çeker.",
+      "2": "Fawitzki bir keresinde araştırma malzemesi olarak çok sayıda Kristal Çekirdek kullanılan ve böylece Kristal Kelebeği Tuzağının geliştirilmesine yol açan \"Düşük Sıcaklık Aydınlatma Cihazları\" araştırmasını yürütmüştü.",
+      "3": "Ancak bu araştırma çeşitli nedenlerden ötürü rafa kaldırıldı.",
+      "4": "\"Bugün burada çalışkanlığıyla bilinen Bay Fawitzki'yi anmak üzere toplanmış bulunuyoruz. Umarız onun araştırmalarını sürdürecek kişiler olur. Enstitü olarak uygun görülen alanlarda tüm desteği vereceğiz.\""
+    }
+  },
+  "WindPoweredWindGenerator": {
+    "name": "Rüzgar Gücüyle Çalışan Rüzgar Jeneratörü",
+    "description": {
+      "0": "Fontaine Kinetik Enerji Mühendisliği Araştırma Enstitüsünden kıdemli araştırmacı Refait'in geliştirdiği bir rüzgar jeneratörü.",
+      "1": "Bu cihaz çalıştırıldıktan sonra Kanat kullanan kişilere güçlü bir kaldırma kuvveti sağlayabilir.",
+      "2": "Ancak birtakım tasarımsal sıkıntılardan ötürü cihazı çalıştırmak için belirli miktarda rüzgar gücü kullanmak gerekir. Gereken rüzgar gücü de yaklaşık olarak Kanat kullanırken gereken rüzgar gücü kadardır.",
+      "3": "\"Hım... Yani bu cihazı ancak Kanatlarımı kullanırken mi çalıştırabilirim?\"",
+      "4": "\"Ama zaten bu cihazı, Kanadımı kullanmak için çalıştırmak istiyorum!\""
+    }
+  },
+  "BressonsSpecialKamera": {
+    "name": "Bresson'un Özel Kamerası",
+    "description": {
+      "0": "Bresson'un özel olarak değişiklikler yaptığı bir kamera. Eldeki en iyi malzemelerden yapılmıştır ve mükemmel şekilde çalışır."
+    }
+  },
   "InstructionsAnemoculusResonanceStone": {
     "name": "Talimatlar: Rüzgar Özü Rezonans Taşı",
     "description": {
@@ -20714,6 +22317,36 @@
       "3": "\"Aslında ay her zaman inci gibi değildi...\""
     }
   },
+  "DiagramFinaleOfTheDeep": {
+    "name": "Plan: Derinliklerin Sonu",
+    "description": {
+      "0": "Estelle'in kadim efsane ve kayıtlara göre çizdiği taslak. Bunu öğrendikten sonra Derinliklerin Sonu yeniden oluşturulabilir (Kılıç)."
+    }
+  },
+  "DiagramSongOfStillness": {
+    "name": "Plan: Durgunluğun Şarkısı",
+    "description": {
+      "0": "Estelle'in kadim efsane ve kayıtlara göre çizdiği taslak. Bunu öğrendikten sonra Durgunluğun Şarkısı yeniden oluşturulabilir (Yay)."
+    }
+  },
+  "DiagramTidalShadow": {
+    "name": "Plan: Dalgaların Gölgesi",
+    "description": {
+      "0": "Estelle'in kadim efsane ve kayıtlara göre çizdiği taslak. Bunu öğrendikten sonra Dalgaların Gölgesi yeniden oluşturulabilir (Çift Elli Kılıç)."
+    }
+  },
+  "DiagramFlowingPurity": {
+    "name": "Plan: Saflığın Akışı",
+    "description": {
+      "0": "Estelle'in kadim efsane ve kayıtlara göre çizdiği taslak. Bunu öğrendikten sonra Saflığın Akışı yeniden oluşturulabilir (Katalizör)."
+    }
+  },
+  "DiagramRightfulReward": {
+    "name": "Plan: Meşru Mükafat",
+    "description": {
+      "0": "Estelle'in kadim efsane ve kayıtlara göre çizdiği taslak. Bunu öğrendikten sonra Meşru Mükafat yeniden oluşturulabilir (Mızrak)."
+    }
+  },
   "InstructionsElectroculusResonanceStone": {
     "name": "Talimatlar: Elektrik Özü Rezonans Taşı",
     "description": {
@@ -20756,6 +22389,18 @@
       "0": "Şeker Özü Yemi yapımını adım adım anlatan ayrıntılı bir reçete."
     }
   },
+  "FormulaSourBait": {
+    "name": "Reçete: Ekşi Yem",
+    "description": {
+      "0": "Ekşi Yem yapımını adım adım anlatan ayrıntılı bir reçete."
+    }
+  },
+  "FormulaFlashingMaintenanceMekBait": {
+    "name": "Reçete: Parlayan Teknisyen Meka Yemi",
+    "description": {
+      "0": "Parlayan Teknisyen Meka Yemi yapımını adım adım anlatan ayrıntılı bir reçete."
+    }
+  },
   "InstructionsDendroculusResonanceStone": {
     "name": "Talimatlar: Doğa Özü Rezonans Taşı",
     "description": {
@@ -20766,6 +22411,18 @@
     "name": "Plan: Doğa Hazinesi Pusulası",
     "description": {
       "0": "Doğa Hazinesi Pusulası yapımını adım adım anlatan detaylı bir plan. Sumeru'nun dört bir yanındaki hazinelerin yerini kolayca bulmak için bunu kullan."
+    }
+  },
+  "InstructionsHydroculusResonanceStone": {
+    "name": "Talimatlar: Su Özü Rezonans Taşı",
+    "description": {
+      "0": "Su Özü Rezonans Taşı yapımını adım adım anlatan ayrıntılı talimatlar. Talimatları baştan sona anladığında seni Su Özlerine götüren bir alet yapabilirsin."
+    }
+  },
+  "DiagramHydroTreasureCompass": {
+    "name": "Plan: Su Hazinesi Pusulası",
+    "description": {
+      "0": "Su Hazinesi Pusulası yapımını adım adım anlatan detaylı bir plan. Fontaine'in dört bir yanındaki hazinelerin yerini kolayca bulmak için bunu kullan."
     }
   },
   "SilkenPrint": {
@@ -21216,6 +22873,12 @@
       "0": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
     }
   },
+  "DescentOfDivinity": {
+    "name": "Kutsallığın Çöküşü",
+    "description": {
+      "0": "Dehanın Yakarışı Kart Oyunundan sert dokulu bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    }
+  },
   "TheSeedOfStoredKnowledge": {
     "name": "Saklanmış Bilgi Tohumu",
     "description": {
@@ -21250,6 +22913,18 @@
     "name": "Fuubutsu Şiirleri",
     "description": {
       "0": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    }
+  },
+  "RiteOfResurrection": {
+    "name": "Canlandırma Ayini",
+    "description": {
+      "0": "Dehanın Yakarışı Kart Oyunundan sert dokulu bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    }
+  },
+  "PulsatingWitch": {
+    "name": "Titreşen Cadı",
+    "description": {
+      "0": "Dehanın Yakarışı Kart Oyunundan sert dokulu bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
     }
   },
   "MagicGuide": {
@@ -21570,6 +23245,12 @@
       "0": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
     }
   },
+  "KingsSquire": {
+    "name": "Kralın Yaveri",
+    "description": {
+      "0": "Dehanın Yakarışı Kart Oyunundan sert dokulu bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    }
+  },
   "LiyueHarborWharf": {
     "name": "Liyue Limanı Rıhtımı",
     "description": {
@@ -21754,6 +23435,18 @@
     "name": "Zhang Usta",
     "description": {
       "0": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    }
+  },
+  "GoldenHouse": {
+    "name": "Altın Ev",
+    "description": {
+      "0": "Dehanın Yakarışı Kart Oyunundan sert dokulu bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    }
+  },
+  "Setaria": {
+    "name": "Setaria",
+    "description": {
+      "0": "Dehanın Yakarışı Kart Oyunundan sert dokulu bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
     }
   },
   "ElementalResonanceWovenIce": {
@@ -22002,6 +23695,18 @@
       "0": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
     }
   },
+  "JoyousCelebration": {
+    "name": "Neşe Dolu Kutlama",
+    "description": {
+      "0": "Dehanın Yakarışı Kart Oyunundan sert dokulu bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    }
+  },
+  "WhereIsTheUnseenRazor": {
+    "name": "Görünmez Ustura Nerede?",
+    "description": {
+      "0": "Dehanın Yakarışı Kart Oyunundan sert dokulu bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    }
+  },
   "Origin": {
     "name": "Köken",
     "description": {
@@ -22054,6 +23759,12 @@
     "name": "Destenin Hazineleri",
     "description": {
       "0": "Dehanın Yakarışı Kart Oyununda alınıp değiştirilebilen bir kart deseni. Farklı tasarımlara sahip kart desenlerinin, yapılışlarında ve dokularında da ufak farklılıklar olduğu söylenir. Hatta bazı oyuncular, farklı tarzdaki kartları toplamayı da bir uğraş ve hobi haline getirmişlerdir."
+    }
+  },
+  "Fontaine": {
+    "name": "Fontaine",
+    "description": {
+      "0": "Dehanın Yakarışı Kart Oyunundan elde edilebilen ve değiştirilebilen bir kart deseni. Farklı tasarımlara sahip kart desenlerinin yapılışlarında ve dokularında da ufak farklılıklar olduğu söylenir. Hatta bazı oyuncular, farklı tarzdaki kartları toplamayı da bir uğraş ve hobi haline getirmişlerdir."
     }
   },
   "BeginnerPlayerBadge": {
@@ -23098,6 +24809,34 @@
     "name": "Parıldayan Lunapark Şekeri Lambası",
     "description": {
       "0": "Parıldayan Lunapark Şekeri Lambası yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
+  "PassagesAppetizingLamp": {
+    "name": "Pasajın İştah Açıcı Lambası",
+    "description": {
+      "0": "Pasajın İştah Açıcı Lambası yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
+  "MekaLuminaireRadiantPath": {
+    "name": "Meka Lamba: Aydınlık Yol",
+    "description": {
+      "0": "Meka Lamba: Aydınlık Yol yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
+  "MekaLuminaireRadiantGrounds": {
+    "name": "Meka Lamba: Aydınlık Yer",
+    "description": {
+      "0": "Meka Lamba: Aydınlık Yer yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
+  "MekaLuminaireRadiantCountryside": {
+    "name": "Meka Lamba: Aydınlık Kırsal",
+    "description": {
+      "0": "Meka Lamba: Aydınlık Kırsal yapımını adım adım anlatan detaylı bir taslak.",
       "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
     }
   },
@@ -24991,6 +26730,41 @@
       "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
     }
   },
+  "MachineDyedAwningMarcotteRed": {
+    "name": "Makina Boyama Tente: \"Marcotte Kırmızısı\"",
+    "description": {
+      "0": "Makina Boyama Tente: \"Marcotte Kırmızısı\" yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
+  "MachineDyedAwningLumidouceBlue": {
+    "name": "Makina Boyama Tente: \"Lumidouce Mavisi\"",
+    "description": {
+      "0": "Makina Boyama Tente: \"Lumidouce Mavisi\" yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
+  "PassagesPolychromaticPottedPlants": {
+    "name": "Pasajın Çok Renkli Saksıları",
+    "description": {
+      "0": "Pasajın Çok Renkli Saksıları yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
+  "PassagesPlentifulProduce": {
+    "name": "Pasajın Bereketli Mahsulü",
+    "description": {
+      "0": "Pasajın Bereketli Mahsulü yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
+  "PassagesPrinciplesOfPunctuality": {
+    "name": "Pasajın Dakiklik Prensibi",
+    "description": {
+      "0": "Pasajın Dakiklik Prensibi yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
   "HilichurlOutpostHut": {
     "name": "Dağ Yabanisi Karakolu",
     "description": {
@@ -25600,6 +27374,125 @@
       "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
     }
   },
+  "CourtOfJusticesLeisure": {
+    "name": "Adalet Sarayı Dinlenme Köşkü",
+    "description": {
+      "0": "Adalet Sarayı Dinlenme Köşkü yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
+  "CourtOfJusticesValor": {
+    "name": "Adalet Sarayı Kahramanlığı",
+    "description": {
+      "0": "Adalet Sarayı Kahramanlığı yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
+  "CourtOfJusticesSteel": {
+    "name": "Adalet Sarayı Çeliği",
+    "description": {
+      "0": "Adalet Sarayı Çeliği yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
+  "CourtOfJusticesArtistry": {
+    "name": "Adalet Sarayı Sanat Evi",
+    "description": {
+      "0": "Adalet Sarayı Sanat Evi yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
+  "CourtOfJusticesConscientiousness": {
+    "name": "Adalet Sarayı Titizliği",
+    "description": {
+      "0": "Adalet Sarayı Titizliği yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
+  "CourtOfJusticesMellowAroma": {
+    "name": "Adalet Sarayı Hoş Kokusu",
+    "description": {
+      "0": "Adalet Sarayı Hoş Kokusu yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
+  "CourtOfJusticesProsperity": {
+    "name": "Adalet Sarayı Bereketi",
+    "description": {
+      "0": "Adalet Sarayı Bereketi yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
+  "CourtOfJusticesMerchandise": {
+    "name": "Adalet Sarayı Çarşısı",
+    "description": {
+      "0": "Adalet Sarayı Çarşısı yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
+  "CourtOfJusticesCommerce": {
+    "name": "Adalet Sarayı Ticarethanesi",
+    "description": {
+      "0": "Adalet Sarayı Ticarethanesi yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
+  "CourtOfJusticesDiligence": {
+    "name": "Adalet Sarayı Çalışkanlığı",
+    "description": {
+      "0": "Adalet Sarayı Çalışkanlığı yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
+  "CourtOfJusticesCouture": {
+    "name": "Adalet Sarayı Terzisi",
+    "description": {
+      "0": "Adalet Sarayı Terzisi yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
+  "CourtOfJusticesGreenGrocers": {
+    "name": "Adalet Sarayı Manavı",
+    "description": {
+      "0": "Adalet Sarayı Manavı yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
+  "CourtOfJusticesFragrance": {
+    "name": "Adalet Sarayı Kokusu",
+    "description": {
+      "0": "Adalet Sarayı Kokusu yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
+  "CourtOfJusticesNewsstand": {
+    "name": "Adalet Sarayı Gazete Büfesi",
+    "description": {
+      "0": "Adalet Sarayı Gazete Büfesi yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
+  "AutomnequisWatch": {
+    "name": "Ekinoks Nöbeti",
+    "description": {
+      "0": "Ekinoks Nöbeti yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
+  "AutomnequisChimneySmoke": {
+    "name": "Ekinoks Baca Dumanı",
+    "description": {
+      "0": "Ekinoks Baca Dumanı yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
+  "DistributedForwardSupplyDepot": {
+    "name": "Ön İkmal Tedarik Deposu",
+    "description": {
+      "0": "Ön İkmal Tedarik Deposu yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
   "BirdAndBlossomDesignFountain": {
     "name": "Kuş ve Çiçek Havuzu",
     "description": {
@@ -25786,6 +27679,13 @@
     "name": "Üç Tekerli Dağ El Arabası",
     "description": {
       "0": "Üç Tekerli Dağ El Arabası yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
+  "AutomnequisCask": {
+    "name": "Ekinoks Fıçısı",
+    "description": {
+      "0": "Ekinoks Fıçısı yapımını adım adım anlatan detaylı bir taslak.",
       "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
     }
   },
@@ -26559,6 +28459,13 @@
       "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
     }
   },
+  "MaintenanceMekTechnicalDemoType": {
+    "name": "Teknisyen Meka: Teknik Tanıtım Modeli",
+    "description": {
+      "0": "Teknisyen Meka: Teknik Tanıtım Modeli yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
   "PottedPlantVerdantVastness": {
     "name": "Saksı Bitkisi: Sonsuz Yeşillik",
     "description": {
@@ -26584,6 +28491,13 @@
     "name": "Karanlığı Özleyen Çamlar",
     "description": {
       "0": "Karanlığı Özleyen Çamlar yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
+  "PassagesPerfumedPottedPlants": {
+    "name": "Pasajın Parfümlü Saksıları",
+    "description": {
+      "0": "Pasajın Parfümlü Saksıları yapımını adım adım anlatan detaylı bir taslak.",
       "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
     }
   },
@@ -27119,6 +29033,13 @@
       "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
     }
   },
+  "PassagesParasol": {
+    "name": "Pasajın Güneş Şemsiyesi",
+    "description": {
+      "0": "Pasajın Güneş Şemsiyesi yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
   "WroughtIronCarvedStreetLight": {
     "name": "Ferforje Sokak Lambası",
     "description": {
@@ -27322,6 +29243,13 @@
       "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
     }
   },
+  "CourtOfJusticesBarrier": {
+    "name": "Adalet Sarayı Bariyeri",
+    "description": {
+      "0": "Adalet Sarayı Bariyeri yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
   "SmoothWoodenBench": {
     "name": "Pürüzsüz Ahşap Bank",
     "description": {
@@ -27368,6 +29296,20 @@
     "name": "\"Teslim Tarihi Mi? O Da Ne?\" Rejisörün Sandalyesi",
     "description": {
       "0": "\"Teslim Tarihi Mi? O Da Ne?\" Rejisörün Sandalyesi yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
+  "PassagesLanguidLifestyle": {
+    "name": "Pasajın Ağır Hayat Tarzı",
+    "description": {
+      "0": "Pasajın Ağır Hayat Tarzı yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
+  "PassagesEveningEnsemble": {
+    "name": "Pasajın Akşam Buluşması",
+    "description": {
+      "0": "Pasajın Akşam Buluşması yapımını adım adım anlatan detaylı bir taslak.",
       "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
     }
   },
@@ -27480,6 +29422,13 @@
     "name": "Karmaphala Sergi Masası",
     "description": {
       "0": "Karmaphala Sergi Masası yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
+  "PassagesPristineRoundTable": {
+    "name": "Pasajın Pürüzsüz Yuvarlak Masası",
+    "description": {
+      "0": "Pasajın Pürüzsüz Yuvarlak Masası yapımını adım adım anlatan detaylı bir taslak.",
       "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
     }
   },

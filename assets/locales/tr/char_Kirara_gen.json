@@ -158,7 +158,7 @@
   "constellation6": {
     "name": "Görülecek Sayısız Manzara",
     "description": {
-      "0": "Kirara, Element Becerisini veya Patlamasını kullandıktan sonra 15 saniyeliğine yakındaki grup üyelerinin Tüm Element Hasarları Bonusu %12 artar."
+      "0": "Kirara, Element Becerisini veya Patlamasını kullandıktan sonra 15 saniyeliğine yakındaki grup üyelerinin Tüm Element Hasarları %12 artar."
     }
   }
 }

@@ -1,0 +1,24 @@
+{
+  "name": "Justa Recompensa",
+  "description": {
+    "0": "Uma lança afiada. Somente a ponta dela permanece recentemente manchada de sangue."
+  },
+  "passiveName": "Ponta da Lança",
+  "passiveDescription": {
+    "0": {
+      "0": "Ao ser curado, restaura <cryo>8</cryo> de Energia. Este efeito pode ser ativado uma vez a cada 10s e pode ser ativado mesmo quando o personagem não estiver em campo."
+    },
+    "1": {
+      "0": "Ao ser curado, restaura <cryo>10</cryo> de Energia. Este efeito pode ser ativado uma vez a cada 10s e pode ser ativado mesmo quando o personagem não estiver em campo."
+    },
+    "2": {
+      "0": "Ao ser curado, restaura <cryo>12</cryo> de Energia. Este efeito pode ser ativado uma vez a cada 10s e pode ser ativado mesmo quando o personagem não estiver em campo."
+    },
+    "3": {
+      "0": "Ao ser curado, restaura <cryo>14</cryo> de Energia. Este efeito pode ser ativado uma vez a cada 10s e pode ser ativado mesmo quando o personagem não estiver em campo."
+    },
+    "4": {
+      "0": "Ao ser curado, restaura <cryo>16</cryo> de Energia. Este efeito pode ser ativado uma vez a cada 10s e pode ser ativado mesmo quando o personagem não estiver em campo."
+    }
+  }
+}

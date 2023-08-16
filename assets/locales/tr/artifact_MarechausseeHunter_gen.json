@@ -1,0 +1,29 @@
+{
+  "setName": "Mareşose Avcısı",
+  "setEffects": {
+    "2": "+%15 Normal ve Yüklü Saldırı Hasarı.",
+    "4": "Mevcut Can arttığında veya azaldığında 5 saniyeliğine Kritik Oranı %12 artar. En fazla 3 kademe birikir."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Avcının Broşu",
+      "desc": "Bir zamanlar savaşa önemli katkılara olanlara verilen kadim bir madalya."
+    },
+    "plume": {
+      "name": "Şaheserin Girişi",
+      "desc": "Bazı eski model kurmalı makinaların torkunu ayarlamak için kullanılan taşınabilir bir alet. Şimdilerde pek bir pratik değeri kalmadı."
+    },
+    "sands": {
+      "name": "Yargı Anı",
+      "desc": "Standart bir cep saati. Tam olarak doğru göstermez."
+    },
+    "goblet": {
+      "name": "Unutulmuş Kap",
+      "desc": "İçinde sert bir şarap olan taşınabilir metal bir kap. Bir ceketin cebine konulup kolayca ulaşılabilir."
+    },
+    "circlet": {
+      "name": "Gazinin Çehresi",
+      "desc": "Yaralı bir yüzü bir noktaya kadar gizleyebilen bir maske. Yaralı bölgeye ve kullananın cinsiyetine göre tasarımında değişiklikler olabilir."
+    }
+  }
+}

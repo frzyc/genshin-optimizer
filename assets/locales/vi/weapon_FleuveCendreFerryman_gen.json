@@ -1,0 +1,24 @@
+{
+  "name": "Ống Đồng Fleuve Cendre",
+  "description": {
+    "0": "Ống đồng khá vừa tay, đã từng được dùng như vũ khí trong quá khứ. Từng để lại danh tiếng hoặc tai tiếng trong một số người."
+  },
+  "passiveName": "Xương Thép",
+  "passiveDescription": {
+    "0": {
+      "0": "Tỉ lệ bạo kích của Kỹ Năng Nguyên Tố tăng <cryo>8%</cryo>; Ngoài ra, trong 5s sau khi thi triển Kỹ Năng Nguyên Tố, hiệu quả nạp nguyên tố tăng <cryo>16%</cryo>."
+    },
+    "1": {
+      "0": "Tỉ lệ bạo kích của Kỹ Năng Nguyên Tố tăng <cryo>10%</cryo>; Ngoài ra, trong 5s sau khi thi triển Kỹ Năng Nguyên Tố, hiệu quả nạp nguyên tố tăng <cryo>20%</cryo>."
+    },
+    "2": {
+      "0": "Tỉ lệ bạo kích của Kỹ Năng Nguyên Tố tăng <cryo>12%</cryo>; Ngoài ra, trong 5s sau khi thi triển Kỹ Năng Nguyên Tố, hiệu quả nạp nguyên tố tăng <cryo>24%</cryo>."
+    },
+    "3": {
+      "0": "Tỉ lệ bạo kích của Kỹ Năng Nguyên Tố tăng <cryo>14%</cryo>; Ngoài ra, trong 5s sau khi thi triển Kỹ Năng Nguyên Tố, hiệu quả nạp nguyên tố tăng <cryo>28%</cryo>."
+    },
+    "4": {
+      "0": "Tỉ lệ bạo kích của Kỹ Năng Nguyên Tố tăng <cryo>16%</cryo>; Ngoài ra, trong 5s sau khi thi triển Kỹ Năng Nguyên Tố, hiệu quả nạp nguyên tố tăng <cryo>32%</cryo>."
+    }
+  }
+}

@@ -81,8 +81,9 @@
       "1": "<br/>",
       "2": "<strong>Absorption élémentaire</strong>",
       "3": "L'Œil de la tempête absorbe les éléments <hydro>Hydro</hydro>, <pyro>Pyro</pyro>, <cryo>Cryo</cryo> et <electro>Électro</electro> avec lesquels il entre en contact ; ceux-ci lui confèrent leurs attributs, et infligent un bonus de DGT de l'élément correspondant.",
-      "4": "<br/>",
-      "5": "<i>Nombre de poèmes chantant la gloire de l'Archon Anémo ont été perdus. Celui-ci raconte sa puissance, et la puissance des vents.</i>"
+      "4": "Une seule réaction d'absorption élémentaire peut avoir lieu par utilisation.",
+      "5": "<br/>",
+      "6": "<i>Nombre de poèmes chantant la gloire de l'Archon Anémo ont été perdus. Celui-ci raconte sa puissance, et la puissance des vents.</i>"
     },
     "skillParams": {
       "0": "DGT continus",

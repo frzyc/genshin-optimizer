@@ -1,0 +1,24 @@
+{
+  "name": "Zeremonielle Jade",
+  "description": {
+    "0": "Eine uralte rituelle Jade. Sie schimmert wie klares Wasser und scheint ein uralter Opfergegenstand zu sein."
+  },
+  "passiveName": "Umlauf der grünen Jade",
+  "passiveDescription": {
+    "0": {
+      "0": "Erhöht die max. LP um <cryo>32 %</cryo> und die Elementarkunde um <cryo>40</cryo> Punkte, sobald sich die Figur mehr als 5 s inaktiv in der Truppe befindet. Der Effekt verschwindet nach 10 s, nachdem der Träger eingewechselt worden ist und sich dauerhaft aktiv auf dem Feld befunden hat."
+    },
+    "1": {
+      "0": "Erhöht die max. LP um <cryo>40 %</cryo> und die Elementarkunde um <cryo>50</cryo> Punkte, sobald sich die Figur mehr als 5 s inaktiv in der Truppe befindet. Der Effekt verschwindet nach 10 s, nachdem der Träger eingewechselt worden ist und sich dauerhaft aktiv auf dem Feld befunden hat."
+    },
+    "2": {
+      "0": "Erhöht die max. LP um <cryo>48 %</cryo> und die Elementarkunde um <cryo>60</cryo> Punkte, sobald sich die Figur mehr als 5 s inaktiv in der Truppe befindet. Der Effekt verschwindet nach 10 s, nachdem der Träger eingewechselt worden ist und sich dauerhaft aktiv auf dem Feld befunden hat."
+    },
+    "3": {
+      "0": "Erhöht die max. LP um <cryo>56 %</cryo> und die Elementarkunde um <cryo>70</cryo> Punkte, sobald sich die Figur mehr als 5 s inaktiv in der Truppe befindet. Der Effekt verschwindet nach 10 s, nachdem der Träger eingewechselt worden ist und sich dauerhaft aktiv auf dem Feld befunden hat."
+    },
+    "4": {
+      "0": "Erhöht die max. LP um <cryo>64 %</cryo> und die Elementarkunde um <cryo>80</cryo> Punkte, sobald sich die Figur mehr als 5 s inaktiv in der Truppe befindet. Der Effekt verschwindet nach 10 s, nachdem der Träger eingewechselt worden ist und sich dauerhaft aktiv auf dem Feld befunden hat."
+    }
+  }
+}

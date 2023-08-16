@@ -117,7 +117,7 @@
   "passive3": {
     "name": "Encyclopedic Expertise",
     "description": {
-      "0": "Memperlihatkan lokasi <strong>produk khas Liyue</strong> di sekitar pada mini-map."
+      "0": "Memperlihatkan lokasi <strong>produk khas Liyue</strong> di sekitar pada peta kecil."
     }
   },
   "constellation1": {

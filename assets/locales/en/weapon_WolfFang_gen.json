@@ -1,0 +1,24 @@
+{
+  "name": "Wolf-Fang",
+  "description": {
+    "0": "Legend has it that this longsword was once used by a wandering knight in the distant past."
+  },
+  "passiveName": "Northwind Wolf",
+  "passiveDescription": {
+    "0": {
+      "0": "DMG dealt by Elemental Skill and Elemental Burst is increased by <cryo>16%</cryo>. When an Elemental Skill hits an opponent, its CRIT Rate will be increased by <cryo>2%</cryo>. When an Elemental Burst hits an opponent, its CRIT Rate will be increased by <cryo>2%</cryo>. Both of these effects last 10s separately, have 4 max stacks, and can be triggered once every 0.1s."
+    },
+    "1": {
+      "0": "DMG dealt by Elemental Skill and Elemental Burst is increased by <cryo>20%</cryo>. When an Elemental Skill hits an opponent, its CRIT Rate will be increased by <cryo>2.5%</cryo>. When an Elemental Burst hits an opponent, its CRIT Rate will be increased by <cryo>2.5%</cryo>. Both of these effects last 10s separately, have 4 max stacks, and can be triggered once every 0.1s."
+    },
+    "2": {
+      "0": "DMG dealt by Elemental Skill and Elemental Burst is increased by <cryo>24%</cryo>. When an Elemental Skill hits an opponent, its CRIT Rate will be increased by <cryo>3%</cryo>. When an Elemental Burst hits an opponent, its CRIT Rate will be increased by <cryo>3%</cryo>. Both of these effects last 10s separately, have 4 max stacks, and can be triggered once every 0.1s."
+    },
+    "3": {
+      "0": "DMG dealt by Elemental Skill and Elemental Burst is increased by <cryo>28%</cryo>. When an Elemental Skill hits an opponent, its CRIT Rate will be increased by <cryo>3.5%</cryo>. When an Elemental Burst hits an opponent, its CRIT Rate will be increased by <cryo>3.5%</cryo>. Both of these effects last 10s separately, have 4 max stacks, and can be triggered once every 0.1s."
+    },
+    "4": {
+      "0": "DMG dealt by Elemental Skill and Elemental Burst is increased by <cryo>32%</cryo>. When an Elemental Skill hits an opponent, its CRIT Rate will be increased by <cryo>4%</cryo>. When an Elemental Burst hits an opponent, its CRIT Rate will be increased by <cryo>4%</cryo>. Both of these effects last 10s separately, have 4 max stacks, and can be triggered once every 0.1s."
+    }
+  }
+}

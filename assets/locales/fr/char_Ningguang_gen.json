@@ -116,7 +116,7 @@
   "passive3": {
     "name": "Corne d'abondance",
     "description": {
-      "0": "Affiche la localisation des <strong>filons de minerai utilisables en forge</strong> proches sur la carte."
+      "0": "Affiche l'emplacement des <strong>filons de minerai utilisables en forge</strong> sur la mini-carte."
     }
   },
   "constellation1": {

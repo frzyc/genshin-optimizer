@@ -1,0 +1,29 @@
+{
+  "setName": "Altın Kumpanya",
+  "setEffects": {
+    "2": "Element Becerisi Hasarını %20 artırır.",
+    "4": "Element Becerisi Hasarını %25 artırır. Ek olarak, karakter savaş alanında değilken Element Becerisi Hasarı %25 daha artar. Bu etki, karakter savaş alanına geldikten 2 saniye sonra kaybolur."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Altın Şarkı Çeşitlemesi",
+      "desc": "İstiridye, sedef ve altın yapraktan yapılmış, gururla açan bir çiçek."
+    },
+    "plume": {
+      "name": "Altın Kuşun Tüyü",
+      "desc": "Gümüş ve altın tel işlemelerle yapılan altın bir tüy. Üzerine kristal berraklığında bir safir yerleştirilmiştir."
+    },
+    "sands": {
+      "name": "Altın Çağın Başlangıcı",
+      "desc": "Altın ve gümüş işlemeleri olan hoş bir güneş saati. Kadran üzerinde zaman artık akmıyor gibi duruyor."
+    },
+    "goblet": {
+      "name": "Altın Gecenin Kargaşası",
+      "desc": "Zamanında içinde yakut kırmızısı güzel bir şarap olan kadim gümüş bir kap. Şimdilerdeyse içi deniz suyuyla dolu."
+    },
+    "circlet": {
+      "name": "Altın Kumpanya Ödülü",
+      "desc": "Bir hükümdarın tacındansa bir sahne dekoruna benzeyen kadim bir taç."
+    }
+  }
+}

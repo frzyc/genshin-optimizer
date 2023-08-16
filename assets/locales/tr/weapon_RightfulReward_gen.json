@@ -1,0 +1,24 @@
+{
+  "name": "Meşru Mükafat",
+  "description": {
+    "0": "Ucunda taze bir kan lekesi olan keskin bir mızrak."
+  },
+  "passiveName": "Mızrağın Ucu",
+  "passiveDescription": {
+    "0": {
+      "0": "Kuşanan karakterin Canı yenilendiğinde <cryo>8</cryo> Enerji yenilenir. Bu etki her 10 saniyede bir tetiklenir ve karakter savaş alanında olmasa da uygulanabilir."
+    },
+    "1": {
+      "0": "Kuşanan karakterin Canı yenilendiğinde <cryo>10</cryo> Enerji yenilenir. Bu etki her 10 saniyede bir tetiklenir ve karakter savaş alanında olmasa da uygulanabilir."
+    },
+    "2": {
+      "0": "Kuşanan karakterin Canı yenilendiğinde <cryo>12</cryo> Enerji yenilenir. Bu etki her 10 saniyede bir tetiklenir ve karakter savaş alanında olmasa da uygulanabilir."
+    },
+    "3": {
+      "0": "Kuşanan karakterin Canı yenilendiğinde <cryo>14</cryo> Enerji yenilenir. Bu etki her 10 saniyede bir tetiklenir ve karakter savaş alanında olmasa da uygulanabilir."
+    },
+    "4": {
+      "0": "Kuşanan karakterin Canı yenilendiğinde <cryo>16</cryo> Enerji yenilenir. Bu etki her 10 saniyede bir tetiklenir ve karakter savaş alanında olmasa da uygulanabilir."
+    }
+  }
+}

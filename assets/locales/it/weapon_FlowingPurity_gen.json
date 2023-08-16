@@ -1,0 +1,24 @@
+{
+  "name": "Corrente d'acqua pura",
+  "description": {
+    "0": "Un'antologia di copioni dalla forma bizzarra. Al suo interno sono contenuti tutti i copioni scritti da Coppelius."
+  },
+  "passiveName": "Capolavoro incompleto",
+  "passiveDescription": {
+    "0": {
+      "0": "Quando usa un'abilità elementale, il personaggio riceve un bonus DAN per tutti gli elementi pari a un <cryo>8%</cryo> per 15 s e un Legame vitale pari a un 24% dei PS max. Quest'effetto può attivarsi una volta ogni 10 s. Quando il Legame vitale si dissolve, per ogni 1.000 PS dissolti il personaggio ottiene un <cryo>2%</cryo> di bonus DAN per tutti gli elementi, fino a un <cryo>12%</cryo> massimo. Questo effetto dura 15 s."
+    },
+    "1": {
+      "0": "Quando usa un'abilità elementale, il personaggio riceve un bonus DAN per tutti gli elementi pari a un <cryo>10%</cryo> per 15 s e un Legame vitale pari a un 24% dei PS max. Quest'effetto può attivarsi una volta ogni 10 s. Quando il Legame vitale si dissolve, per ogni 1.000 PS dissolti il personaggio ottiene un <cryo>2,5%</cryo> di bonus DAN per tutti gli elementi, fino a un <cryo>15%</cryo> massimo. Questo effetto dura 15 s."
+    },
+    "2": {
+      "0": "Quando usa un'abilità elementale, il personaggio riceve un bonus DAN per tutti gli elementi pari a un <cryo>12%</cryo> per 15 s e un Legame vitale pari a un 24% dei PS max. Quest'effetto può attivarsi una volta ogni 10 s. Quando il Legame vitale si dissolve, per ogni 1.000 PS dissolti il personaggio ottiene un <cryo>3%</cryo> di bonus DAN per tutti gli elementi, fino a un <cryo>18%</cryo> massimo. Questo effetto dura 15 s."
+    },
+    "3": {
+      "0": "Quando usa un'abilità elementale, il personaggio riceve un bonus DAN per tutti gli elementi pari a un <cryo>14%</cryo> per 15 s e un Legame vitale pari a un 24% dei PS max. Quest'effetto può attivarsi una volta ogni 10 s. Quando il Legame vitale si dissolve, per ogni 1.000 PS dissolti il personaggio ottiene un <cryo>3,5%</cryo> di bonus DAN per tutti gli elementi, fino a un <cryo>21%</cryo> massimo. Questo effetto dura 15 s."
+    },
+    "4": {
+      "0": "Quando usa un'abilità elementale, il personaggio riceve un bonus DAN per tutti gli elementi pari a un <cryo>16%</cryo> per 15 s e un Legame vitale pari a un 24% dei PS max. Quest'effetto può attivarsi una volta ogni 10 s. Quando il Legame vitale si dissolve, per ogni 1.000 PS dissolti il personaggio ottiene un <cryo>4%</cryo> di bonus DAN per tutti gli elementi, fino a un <cryo>24%</cryo> massimo. Questo effetto dura 15 s."
+    }
+  }
+}

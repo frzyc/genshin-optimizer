@@ -377,6 +377,13 @@
       "1": "Du kannst hiermit während der Aktion „Sommer! Paradies? Mirage!“ wertvolle Belohnungen freischalten."
     }
   },
+  "EnigmaticCopperMainspring": {
+    "name": "Kupferuhrwerk",
+    "description": {
+      "0": "Eine mechanische Feder mit einem seltsamen metallischen Glanz. Es heißt, die Oberfläche wurde nach einem geheimen Verfahren bearbeitet, um das eigentlich billige Metall mit guten Eigenschaften auszustatten, wodurch Schlüsselmechanismen eine hervorragende Funktionalität zu einem geringen Preis erhalten.",
+      "1": "Man kann sie in der Aktion „Kuriose Kuriosa-Keilerei“ gegen wertvolle Materialien eintauschen."
+    }
+  },
   "Primogem": {
     "name": "Urgestein",
     "description": {
@@ -450,7 +457,8 @@
   "HydroSigil": {
     "name": "Hydro-Siegel",
     "description": {
-      "0": "Ein äußerst begehrtes Sammelobjekt in und um Mondstadt, das du bei Händlern gegen seltene Objekte eintauschen kannst."
+      "0": "Ein Siegel, das als Folge der Anerkennung durch die fließenden Wasser von Fontaine gewährt wurde.",
+      "1": "Kann in den Lucine-Brunnen geworfen werden, um dort ein Geschenk des Quellwassers zu erhalten."
     }
   },
   "DendroSigil": {
@@ -500,15 +508,21 @@
     }
   },
   "SumeruReputationEXP": {
-    "name": "Ansehens-EP für Sumeru",
+    "name": "Ansehenserfahrung für Sumeru",
     "description": {
-      "0": "Erhöht dein Ansehen in Sumeru."
+      "0": "Erhöht das Ansehen in Sumeru."
     }
   },
   "LiyueReputationEXP": {
     "name": "Ansehenserfahrung für Liyue",
     "description": {
       "0": "Erhöht das Ansehen in Liyue."
+    }
+  },
+  "FontaineReputationEXP": {
+    "name": "Ansehenserfahrung für Fontaine",
+    "description": {
+      "0": "Erhöht das Ansehen in Fontaine."
     }
   },
   "MemoryOfEternalFlames": {
@@ -967,6 +981,24 @@
       "0": "Der Besitzer der „Bubu-Hütte“. Er trägt eine weiße Schlange namens Changsheng auf seiner Schulter. Ein äußerst geschickter Mediziner, der allerdings als Person schwer zu durchschauen ist."
     }
   },
+  "Lynette": {
+    "name": "Lynette",
+    "description": {
+      "0": "Eine wortkarge Zauberassistentin. Ihre Mimik lässt sich kaum ergründen und ihr Temperament ist so unergründlich wie das einer Katze."
+    }
+  },
+  "Lyney": {
+    "name": "Lyney",
+    "description": {
+      "0": "Ein redegewandter und charismatischer Zauberer aus Fontaine. Er zieht sein Publikum mit raffinierten Tricks und einnehmenden Worten in seinen Bann."
+    }
+  },
+  "Freminet": {
+    "name": "Fréminet",
+    "description": {
+      "0": "Ein schweigsamer Junge, der sich im Tauchen auskennt. Unter seiner eisigen Erscheinung verbirgt sich ein reines und makelloses Herz."
+    }
+  },
   "KamisatoAyakasStellaFortuna": {
     "name": "Stella Fortuna von Kamisato Ayaka",
     "description": {
@@ -1379,6 +1411,24 @@
     "name": "Stella Fortuna von Baizhu",
     "description": {
       "0": "Material zum Aktivieren von Baizhus Sternbild"
+    }
+  },
+  "LynettesStellaFortuna": {
+    "name": "Stella Fortuna von Lynette",
+    "description": {
+      "0": "Material zum Aktivieren von Lynettes Sternbild"
+    }
+  },
+  "LyneysStellaFortuna": {
+    "name": "Stella Fortuna von Lyney",
+    "description": {
+      "0": "Material zum Aktivieren von Lyneys Sternbild"
+    }
+  },
+  "FreminetsStellaFortuna": {
+    "name": "Stella Fortuna von Fréminet",
+    "description": {
+      "0": "Material zum Aktivieren von Fréminets Sternbild"
     }
   },
   "GnosticHymnOldNotes": {
@@ -2038,6 +2088,12 @@
     "name": "Kaffeebohne",
     "description": {
       "0": "Eine in Teyvat weit verbreitete Frucht mit einem besonderen Aroma. Gemahlen kann sie zur Herstellung von Getränken verwendet werden."
+    }
+  },
+  "FermentedJuice": {
+    "name": "Fermentierter Saft",
+    "description": {
+      "0": "Fermentierter Fruchtsaft. Hat ein besonders fruchtiges Aroma und wird oft zum Würzen bei der Zubereitung von Fleisch eingesetzt."
     }
   },
   "JeansDocumentPackage": {
@@ -6079,6 +6135,12 @@
       "0": "Ein ungeschliffener Kristall, der nur in Inazuma gefunden werden kann. Etwas professionelle Handwerkskunst wird seinen wahren Wert zur Geltung bringen."
     }
   },
+  "CondessenceCrystal": {
+    "name": "Kondessenz-Kristall",
+    "description": {
+      "0": "Ein klarer und reiner Kristall mit einem Kern von hoher Härte und Formbarkeit."
+    }
+  },
   "NorthlanderSwordBillet": {
     "name": "Unbearbeiteter Einhänder des Nordens",
     "description": {
@@ -6348,24 +6410,72 @@
       "1": "Sobald das Land seine Erinnerung zurückgewinnt, wird Viparyas blühen."
     }
   },
+  "PluieLotus": {
+    "name": "Pluie-Lotos",
+    "description": {
+      "0": "Eine Pflanze, die in Gebieten mit reichlich Hydro-Element wächst. Kann nach der langen Regensaison überall in Fontaine gesehen werden und hat so ihren Namen erhalten."
+    }
+  },
+  "BulleFruit": {
+    "name": "Blasenmandarine",
+    "description": {
+      "0": "Eine Frucht, die an warmen, feuchten und reichlich sonnigen Plätzen wächst. Unter ihrer rundlichen Gestalt verbirgt sich eine süße und erfrischende Delikatesse."
+    }
+  },
+  "Marcotte": {
+    "name": "Marcotte",
+    "description": {
+      "0": "Eine wunderschöne Blüte in warmen Pfirsichfarben. Mit ihren vielschichtigen Duftnuancen erfreut sie sich vor allem als wichtige Komponente in der Parfümherstellung großer Beliebtheit."
+    }
+  },
+  "BerylConch": {
+    "name": "Beryllmuschel",
+    "description": {
+      "0": "Ein schalenartiges Gebilde, das matt schimmert. Es erscheint eher wie ein Produkt kondensierter Elementarenergie, als die Schale eines Lebewesens."
+    }
+  },
+  "RomaritimeFlower": {
+    "name": "Romaritime-Blume",
+    "description": {
+      "0": "Eine blasse und edle blaue Blume. Die zarten Staubblätter sind sehr flexibel und hydrophil und sind damit ein guter Rohstoff für viele Alltagsgegenstände."
+    }
+  },
+  "Tidalga": {
+    "name": "Gezeitenalge",
+    "description": {
+      "0": "Algen, die mit den Wellen treiben und auf die Nährstoffe angewiesen sind, die von anderen Pflanzen freigesetzt werden, um sich zu erhalten. Obwohl fälschlicherweise oft als Zooplankton bezeichnet, handelt es sich im Grunde genommen um Phytoplankton."
+    }
+  },
+  "LumidouceBell": {
+    "name": "Lumidouce-Glockenblume",
+    "description": {
+      "0": "Eine elegante, wunderschöne violette Blume. Ihr Duft ist leicht, aber langanhaltend, sanft und zart, daher wird sie häufig zur Herstellung kostbarer Parfüme verwendet."
+    }
+  },
+  "RainbowRose": {
+    "name": "Regenbogenrose",
+    "description": {
+      "0": "Eine grazile und sanfte rosa Blume. Auch wenn sie Rose genannt wird, gehört sie eigentlich zu den Lilien."
+    }
+  },
   "BirchWood": {
     "name": "Birkenholz",
     "description": {
-      "0": "Holz, das aus Birken gewonnen wird. Es ist leicht zu bearbeiten und ergibt glatte Schnitte. Möbel aus diesem Holz sind sowohl schön als auch langlebig.",
+      "0": "Das Holz der Birke. Es ist leicht zu bearbeiten und ergibt glatte Schnitte. Möbel aus diesem Holz sind sowohl schön als auch langlebig.",
       "1": "Kann zum Herstellen von Dekoration verwendet werden."
     }
   },
   "CuihuaWood": {
     "name": "Exquisitholz",
     "description": {
-      "0": "Holz von Exquisitbäumen. Mit seiner schönen Farbe und seiner einzigartigen Beschaffenheit wird es bei entsprechender Verarbeitung sicherlich unzählige Verwendungsmöglichkeiten finden.",
+      "0": "Das Holz des Exquisitbaums. Mit seiner schönen Farbe und seiner einzigartigen Beschaffenheit wird es bei entsprechender Verarbeitung sicherlich unzählige Verwendungsmöglichkeiten finden.",
       "1": "Kann zum Herstellen von Dekoration verwendet werden."
     }
   },
   "PineWood": {
     "name": "Kiefernholz",
     "description": {
-      "0": "Holz, das aus Kiefern gewonnen wird. Seine Farbe und Maserung sind nichts Besonderes, aber seine unprätentiöse Art ist auf seine Weise elegant. Außerdem ist das Holz sehr robust. In fähigen Händen sollten seine Produkte Motten und Fäulnis gleichermaßen widerstehen können.",
+      "0": "Das Holz der Kiefer. Seine Farbe und Maserung sind nichts Besonderes, aber seine unprätentiöse Art ist auf seine Weise elegant. Außerdem ist das Holz sehr robust. In fähigen Händen sollten seine Produkte Motten und Fäulnis gleichermaßen widerstehen können.",
       "1": "Kann zum Herstellen von Dekoration verwendet werden."
     }
   },
@@ -6401,28 +6511,28 @@
     "name": "Yumemiru-Holz",
     "description": {
       "0": "Das Holz des Sakura-Baums. Aufgrund der exquisiten Qualität und durchdringenden Feuchtigkeit sagt man, dass es die Menschen in Träume wiegen kann, die so süß sind wie der warme Frühling.",
-      "1": "Kann zur Herstellung von Dekoration verwendet werden."
+      "1": "Kann zum Herstellen von Dekoration verwendet werden."
     }
   },
   "MapleWood": {
     "name": "Ahornholz",
     "description": {
       "0": "Das Holz des Amur-Ahorns. Hervorragende Holzqualität mit feiner Farbe und Maserung.",
-      "1": "Kann zur Herstellung von Dekoration verwendet werden."
+      "1": "Kann zum Herstellen von Dekoration verwendet werden."
     }
   },
   "AraliaWood": {
     "name": "Aralia-Holz",
     "description": {
       "0": "Das Holz der Inazuma-Zeder. Es ist weich, hat gerade Adern und verströmt einen leichten Duft.",
-      "1": "Kann zur Herstellung von Dekoration verwendet werden."
+      "1": "Kann zum Herstellen von Dekoration verwendet werden."
     }
   },
   "OtogiWood": {
     "name": "Otogi-Holz",
     "description": {
       "0": "Das Holz des Otogi-Baums. Es hat genau die richtige Menge an Feuchtigkeit und Öl und ist daher vielseitig verwendbar.",
-      "1": "Kann zur Herstellung von Dekoration verwendet werden."
+      "1": "Kann zum Herstellen von Dekoration verwendet werden."
     }
   },
   "Brightwood": {
@@ -6457,7 +6567,42 @@
     "name": "Athel-Holz",
     "description": {
       "0": "Das Holz des Athel-Baums. Es hat eine besondere Textur, die ihm erlaubt, sowohl Trockenheit als auch Feuchtigkeit lange unbeschadet zu überstehen, es ist ausgesprochen langlebig.",
-      "1": "Kann zur Herstellung von Dekoration verwendet werden."
+      "1": "Kann zum Herstellen von Dekoration verwendet werden."
+    }
+  },
+  "MallowWood": {
+    "name": "Platanenholz",
+    "description": {
+      "0": "Das Holz der „Platane“. Aufgrund seines harten Kerns eignet es sich für den Bau von Fundamenten und Häuserrahmen. Ebenso leicht lässt sich auch das Splintholz bearbeiten. So erfordert es relativ wenig Arbeit, um alle Arten schöner Möbel herzustellen.",
+      "1": "Kann zum Herstellen von Dekoration verwendet werden."
+    }
+  },
+  "LindenWood": {
+    "name": "Lindenholz",
+    "description": {
+      "0": "Das Holz der „Herzblattlinde“. Mit seiner feinen Textur, der hellen Farbe und der geringen Anzahl von Spänen bei der Feinbearbeitung wird es häufig zum Schnitzen von filigranen Kunstwerken oder zur Herstellung von maßgefertigten Teilen für aus Holz hergestellten Vorrichtungen verwendet.",
+      "1": "Kann zum Herstellen von Dekoration verwendet werden."
+    }
+  },
+  "AshWood": {
+    "name": "Eschenholz",
+    "description": {
+      "0": "Das Holz der „Esche“. Kann aufgrund seiner extremen Festigkeit nicht nur zu hochbelastbaren Bauteilen verarbeitet werden, sondern auch zu robusten Platten zur Verstärkung von Wänden oder zu Holzkisten für den Gütertransport. Ebenso zu anderen Gegenständen, die von Zeit zu Zeit Stößen ausgesetzt sein könnten.",
+      "1": "Kann zum Herstellen von Dekoration verwendet werden."
+    }
+  },
+  "CypressWood": {
+    "name": "Zypressenholz",
+    "description": {
+      "0": "Das Holz der „Zypresse“. Es bietet den Vorteil eines dünneren Splintholzes und eines größeren Kerns. Obwohl dieses Holz nicht so robust und zuverlässig wie Metall ist, bietet es doch einzigartige Vorteile, wenn es darum geht, Bauteile mit größerer Fläche anzufertigen.",
+      "1": "Kann zum Herstellen von Dekoration verwendet werden."
+    }
+  },
+  "TorchWood": {
+    "name": "Fackelholz",
+    "description": {
+      "0": "Das Holz des „Fackelbaums“. Es verfügt über eine weiche Textur, lässt sich leicht schneiden und trocknen und verträgt sich hervorragend mit vielen bunten Farben. Handwerker verwerten es daher gern zu einer Vielzahl von schönen Dekoartikeln.",
+      "1": "Kann zum Herstellen von Dekoration verwendet werden."
     }
   },
   "Fabric": {
@@ -9649,6 +9794,69 @@
       "2": "Die Praxis nährt die Frucht der Weisheit. Taten geben sich selbst eine Bedeutung. Nur auf dem Pfad, wo sich Taten, Worte und Gedanken vereinen, kann der Weise die Perfektion erlangen."
     }
   },
+  "TeachingsOfEquity": {
+    "name": "Lehren der „Fairness“",
+    "description": {
+      "0": "Denn der Damm des Reichs des Wassers ist Fairness.",
+      "1": "Fairness setzt den Rechten ihre Grenzen, und ohne Fairness würden die vom Gesetz gewährten Rechte missbräuchlich als Instrument der Untergrabung guter Sitten genutzt werden."
+    }
+  },
+  "GuideToEquity": {
+    "name": "Anleitung zur „Fairness“",
+    "description": {
+      "0": "Denn der Damm des Reichs des Wassers ist Fairness.",
+      "1": "Fairness ist das Fundament von Fontaines Staatlichkeit und wenn das Gesetz seine Fairness einbüßt, ist es nur noch ein Spielbrett des Profits."
+    }
+  },
+  "PhilosophiesOfEquity": {
+    "name": "Philosophie der „Fairness“",
+    "description": {
+      "0": "Denn der Damm des Reichs des Wassers ist Fairness.",
+      "1": "Fairness ist das Fundament von Fontaines Staatlichkeit und Fairness wird immer von solider Moral und Gesetzen untermauert. Diese beiden entwickeln sich auf Grundlage der unerschütterlichen Normen der Fairness."
+    }
+  },
+  "TeachingsOfJustice": {
+    "name": "Lehren der „Gerechtigkeit“",
+    "description": {
+      "0": "Denn das Schwert des Reichs des Wassers ist Gerechtigkeit.",
+      "1": "Die Gesetze von Fontaine werden mit dem Schwert der Gerechtigkeit geführt. Ohne die Norm der Gerechtigkeit wären alle Gesetze nur machtlose Worthülsen, da, um zu manipulieren und zu knechten."
+    }
+  },
+  "GuideToJustice": {
+    "name": "Anleitung zur „Gerechtigkeit“",
+    "description": {
+      "0": "Denn das Schwert des Reichs des Wassers ist Gerechtigkeit.",
+      "1": "Die Gesetze von Fontaine werden mit dem Schwert der Gerechtigkeit geführt. Die Gerechtigkeit ist blind, denn die, die ihre scharfe Klinge führen, lassen sich weder von persönlichen Interessen noch von Eigennutz treiben."
+    }
+  },
+  "PhilosophiesOfJustice": {
+    "name": "Philosophie der „Gerechtigkeit“",
+    "description": {
+      "0": "Denn das Schwert des Reichs des Wassers ist Gerechtigkeit.",
+      "1": "Die Gesetze von Fontaine werden mit dem Schwert der Gerechtigkeit geführt. Gerechtigkeit ist Urteil und Versöhnung. Das Böse wird mit dem Schwert seinem Urteil zugeführt und die Ordnung durch die Versöhnung aufrechterhalten."
+    }
+  },
+  "TeachingsOfOrder": {
+    "name": "Lehren der „Ordnung“",
+    "description": {
+      "0": "Denn der Schild des Reichs des Wassers ist Ordnung.",
+      "1": "Alle Gesetze Fontaines dienen schließlich der festen Ordnung. Ohne Ordnung gibt es keine Fairness, nur Chaos."
+    }
+  },
+  "GuideToOrder": {
+    "name": "Anleitung zur „Ordnung“",
+    "description": {
+      "0": "Denn der Schild des Reichs des Wassers ist Ordnung.",
+      "1": "Alle Gesetze Fontaines dienen schließlich der festen Ordnung. Ohne die Garantie der Ordnung wäre das Recht unendliche Gewalt, eine Waffe, geführt von jedem gegen jeden."
+    }
+  },
+  "PhilosophiesOfOrder": {
+    "name": "Philosophie der „Ordnung“",
+    "description": {
+      "0": "Denn der Schild des Reichs des Wassers ist Ordnung.",
+      "1": "Alle Gesetze Fontaines dienen schließlich der festen Ordnung. Fairness und Gerechtigkeit entspringen der Ordnung und dienen der Ordnung. Wie auch die immerwährenden, windstillen Gewässer von Fontaine bildet die Ordnung das Fundament der Existenz von Fontaine."
+    }
+  },
   "SanctifyingDroplet": {
     "name": "Heiliger Tropfen",
     "description": {}
@@ -9824,10 +10032,23 @@
       "0": "Bruchstücke geronnener Erinnerungen, zurückgelassen von unzähligen Khvarena."
     }
   },
+  "Hydroculus": {
+    "name": "Verlorener Hydroculus",
+    "description": {
+      "0": "Ein Gebilde aus verdichteter Hydro-Energie. Übergib es der Hydro-Statue, um ihre über die Jahre verlorene Kraft wiederaufzubauen."
+    }
+  },
   "VoucherBox": {
     "name": "Gutscheinkiste",
     "description": {
       "0": "Diese eigentümlich blumenförmige Kiste zur Aufbewahrung von „Glücklichen Gutscheinen“ ist eine der Besonderheiten der „Veluriyam-Mirage“ und stellt ein wichtiges Sammelobjekt dar, mit dem die Besucher Belohnungen gewinnen können. Es scheint um einiges leichter zu sein, sie mit dem „Kristall überschwänglicher Freude“ und dem „Kristall unbeschwerter Freude“ zu finden ..."
+    }
+  },
+  "FontaineShrineOfDepthsKey": {
+    "name": "Schlüssel zu den Schreinen der Tiefe in Fontaine",
+    "description": {
+      "0": "Mit diesen Schlüsseln kannst du die Versieglung der alten Schreine der Tiefe, die überall in Fontaine zu finden sind, lösen.",
+      "1": "Diese Schreine versiegelten sich selbst, als die alte Zivilisation, die sie erbaute, unterging. Diese Siegel können mithilfe der Schlüssel, die tief in bestimmten Sphären zu finden sind, gelöst werden. Möglicherweise vergessen die Schreine angesichts der Kraft der Vergangenheit einen Moment lang den Schmerz der Zerstörung."
     }
   },
   "Dish": {
@@ -12873,6 +13094,372 @@
       "0": "Spezialzubereitung von Kirara. Ein für Menschen gedachtes, speziell auf Mädchen zugeschnittenes Bento, das Kirara mit viel Mühe kreiert hat. Die ernährungsphysiologisch ausgewogenen Zutaten, kombiniert mit dem in niedlich-knuddeliger Katzenform gehaltenen Reis, wirken wie eine Lieferung voll der Freundschaft ... Selbst wenn man jeden Tag eins erhält, man kann sich einfach nicht daran satt sehen!"
     }
   },
+  "SuspiciousDuckConfit": {
+    "name": "Misslungenes Entenconfit",
+    "description": {
+      "0": "Ein gebratenes Gericht. Die Entenkeulen zerfallen bei einer leichten Berührung, sie sind ölig und haben einen leicht disharmonischen Geschmack. Oh, sind das Federn?"
+    }
+  },
+  "DuckConfit": {
+    "name": "Entenconfit",
+    "description": {
+      "0": "Ein gebratenes Gericht. Lege erst die Entenbeine in Gewürzen und Salz für eine Weile ein. Reinige sie dann gründlich. Lege sie in Entenfett und brate sie langsam bei leichter Hitze. Zu guter Letzt werden die eingefetteten Entenbeine gut durchgebraten. Serviere sie zusammen mit in Entenfett gebratenen Kartoffeln. Absolut köstlich."
+    }
+  },
+  "DeliciousDuckConfit": {
+    "name": "Leckeres Entenconfit",
+    "description": {
+      "0": "Ein gebratenes Gericht. Die prallen Entenkeulen stehen unter einem Zauber namens „Confit“, ihre Haut ist knusprig ohne zu brechen, ihr Fleisch ist zart ohne zu zergehen ... Jede Minute, jede Sekunde ihrer Zubereitung steckt jetzt in diesen Worten ... Lohnenswert!"
+    }
+  },
+  "SuspiciousFontainianFoieGras": {
+    "name": "Misslungene Foie gras de Fontaine",
+    "description": {
+      "0": "Eine traditionelle Speise in Fontaine. Der erste Biss fühlte sich an, als hätte man einen Löffel Öl geschluckt. Man gab nicht auf und probierte noch einen zweiten, aber es war zu ölig, um sie hinunterzubekommen ... Wurde sie etwa mit zu viel Öl frittiert?"
+    }
+  },
+  "FontainianFoieGras": {
+    "name": "Foie gras de Fontaine",
+    "description": {
+      "0": "Eine traditionelle Speise in Fontaine. Nachdem die Leber einfach durchgebraten wurde, kann sie serviert werden. Äußerlich gelbbraun gebraten und innen zart. Der leckere Geschmack ist das Ergebnis der präzisen Kontrolle über die Temperatur. Daher muss man bei der Zubereitung voll bei der Sache sein. Eine kurze Unachtsamkeit und die Leber wird zu einem Reinfall."
+    }
+  },
+  "DeliciousFontainianFoieGras": {
+    "name": "Leckere Foie gras de Fontaine",
+    "description": {
+      "0": "Eine traditionelle Speise in Fontaine. Die zarte vorzügliche Stopfleber gleitet mit einer sanften Berührung der Zunge wie ein seidenes Band in den Rachen. Man wird es sein ganzes Leben lang bereuen, diese köstliche Delikatesse gekostet zu haben, denn sie macht andere Gerichte geschmacklos. Und man wird auch bereuen, sie nie gekostet zu haben."
+    }
+  },
+  "SuspiciousCreamOfMushroomSoup": {
+    "name": "Misslungene Pilzcremesuppe",
+    "description": {
+      "0": "Eine Suppe, die man überall serviert bekommt. Ein kleiner Schluck, und schon friert dich der seltsame Geschmack ein. Du kannst nicht anders, als zu beten: „Archonten über mir, bitte sagt mir, dass es kein Dreck ist, den ich da schmecke ...“"
+    }
+  },
+  "CreamOfMushroomSoup": {
+    "name": "Pilzcremesuppe",
+    "description": {
+      "0": "Eine Suppe, die man überall serviert bekommt. Nachdem die Zutaten gut gekocht sind, wird aus ihnen eine zähflüssige Masse gemacht, die gemeinsam mit Sahne zu einer dickflüssigen Suppe erhitzt wird. Genieße ganz einfach eine heiße Köstlichkeit, die sowohl den Magen als auch das Herz erwärmt."
+    }
+  },
+  "DeliciousCreamOfMushroomSoup": {
+    "name": "Leckere Pilzcremesuppe",
+    "description": {
+      "0": "Eine Suppe, die man überall serviert bekommt. Der seidig warme Geschmack vermittelt einem das Gefühl, als ob man in Seide gehüllt auf der Bühne hüpfen und springen würde ... Die Vorstellung ist beendet, doch der Nachgeschmack hält sich noch eine Ewigkeit."
+    }
+  },
+  "SuspiciousGarlicBaguette": {
+    "name": "Misslungenes Knoblauchbaguette",
+    "description": {
+      "0": "Baguette in Scheiben. Der harte Biss lässt den Esser immer wieder ungläubig auf den Teller schauen, um sich zu überzeugen ... Dass dieses Brot nicht doch getarnter Stein ist."
+    }
+  },
+  "GarlicBaguette": {
+    "name": "Knoblauchbaguette",
+    "description": {
+      "0": "Baguette in Scheiben. Gerade aus dem Ofen geholt, ist das Äußere knusprig und das Innere weich. Das Ganze wird kombiniert mit dem Aroma von Butter und Knoblauch. Wahrlich ein Gedicht! Kein Wunder, dass alle Leute in Fontaine gern eines zum Feierabend kaufen."
+    }
+  },
+  "DeliciousGarlicBaguette": {
+    "name": "Leckeres Knoblauchbaguette",
+    "description": {
+      "0": "Baguette in Scheiben. In Fontaine soll es ab und an einen Wettbewerb geben, um den Bäcker mit den besten Baguetten zu küren und seine Kunst im Palais Mermonia vorzuführen. Würde dieses hier daran teilnehmen, würde es garantiert gewinnen!"
+    }
+  },
+  "SuspiciousFishAndChips": {
+    "name": "Misslungener Fisch und Pommes",
+    "description": {
+      "0": "Ein frittierter Snack. Jeder einzelne Bewohner von Fontaine würde eine Nachricht an das Palais Mermonia schreiben, nachdem er dieses Gericht gegessen hätte: Bitte erlasst ein Gesetz, das labbrigen Fisch mit Pommes auf dem Markt verbietet, bevor es noch weitere Opfer gibt!"
+    }
+  },
+  "FishAndChips": {
+    "name": "Fisch und Pommes",
+    "description": {
+      "0": "Ein frittierter Snack. Ummantele die Fischfilets in einer Panade und frittiere sie, bis sie goldgelb und knusprig ist. Gib dann Pommes frites dazu. Ganz gleich, mit was für einer Sauce du es kombinierst, wird es ein Lächeln auf das Gesicht des Betrachters zaubern."
+    }
+  },
+  "DeliciousFishAndChips": {
+    "name": "Leckerer Fisch und Pommes",
+    "description": {
+      "0": "Ein frittierter Snack. Fischfilets und Pommes brutzeln fröhlich im Öl. Die wunderbaren Düfte vermischen sich und verschmelzen durch die große Hitze miteinander, bevor sie endlich in die Nase dringen ... Wenn es etwas gibt, das einen noch glücklicher macht als Pommes, dann ist es ein Fischfilet, das sie begleitet!"
+    }
+  },
+  "SuspiciousLasagna": {
+    "name": "Misslungene Lasagne",
+    "description": {
+      "0": "Gebackenes Nudelgericht. Die Pasta und die Füllung sind wild durcheinander gerührt und bieten wahrlich kein gutes Geschmackserlebnis. Man hat ein Gefühl, als werde man gewürgt und das einzige, was schlimmer ist als der jetzige Bissen ... ist der nächste."
+    }
+  },
+  "Lasagna": {
+    "name": "Lasagne",
+    "description": {
+      "0": "Gebackenes Nudelgericht. Gib auf die Nudeln eine Schicht Fleischsauce, Käse und Béchamelsauce. Darauf kommt die nächste Schicht mit Nudeln. Wiederhole dies mehrere Male und backe das Gericht, bis der Käse Blasen bekommt und dunkelgelb wird. Das Geheimnis des leckeren Geschmacks liegt in der sorgfältig zubereiteten Fleischsauce."
+    }
+  },
+  "DeliciousLasagna": {
+    "name": "Leckere Lasagne",
+    "description": {
+      "0": "Gebackenes Nudelgericht. Die Fleischsoße verdichtet sich zu einem Duett von Topf und Flamme und krönt den Thron aus Pasta und Käse. In dem Moment, in dem man es in den Mund nimmt, schenkt es einem ein unvergleichliches Glücksgefühl, sodass man fast den heutigen Tag zum Lasagne-Tag machen möchte!"
+    }
+  },
+  "SuspiciousPoissonchantPie": {
+    "name": "Misslungene Poissonchant-Tarte",
+    "description": {
+      "0": "Eine Fischpastete. Fischköpfe ragen überall hervor. Es ist mehr eine Klage als ein Gesang. Nach einem Bissen wütet ein fischig salziger Geschmack in deinem Mund, dem die Geschmacksknospen hilflos ausgeliefert sind. Du scheinst das Weinen der Fische zu hören ... Das müssen Halluzinationen sein, richtig?"
+    }
+  },
+  "PoissonchantPie": {
+    "name": "Poissonchant-Tarte",
+    "description": {
+      "0": "Eine Fischpastete. Mische erst die Füllung. Gib dann den Teig darauf und bilde die Form eines Pfannkuchens. Das wichtigste ist, die Form des Fischkopfs richtig hinzubekommen, bevor man sie bäckt. Wenn das Gericht aus dem Ofen kommt, blicken die Fischköpfe nach oben, als würden sie singen."
+    }
+  },
+  "DeliciousPoissonchantPie": {
+    "name": "Leckere Poissonchant-Tarte",
+    "description": {
+      "0": "Eine Fischpastete. Zwischen den fröhlichen Flammen träufelt Fischöl in die Pastete, während der Teig langsam knusprig und braun wird. Sofort nach der Zubereitung muss man eine große Brise anhauchen und einen Bissen probieren. Der Fisch singt eine romantische lang andauernde Hymne an der Zungenspitze."
+    }
+  },
+  "SuspiciousFruityTrio": {
+    "name": "Misslungenes fruchtiges Trio",
+    "description": {
+      "0": "Ein Dessert, welches eine romantische Stimmung verströmt. Nach mehrmaligem Backen des Eischnees nahm er eine akzeptable Form an. Aber während dieser langen Zeit sind die Blasenmandarinenscheiben traurig geworden und haben ihre Süße verloren."
+    }
+  },
+  "FruityTrio": {
+    "name": "Fruchtiges Trio",
+    "description": {
+      "0": "Ein Dessert, welches eine romantische Stimmung verströmt. Bereite erst den Teig vor. Fülle in die Unterseite aus Konfitüre und Blasenmandarine gemachten Quark. Füge darauf eine Teigschicht hinzu. Gib darauf Eischnee und lasse das Ganze im Ofen backen. Mit einer Speise kann man dreifachen Fruchtgeschmack genießen. Eine exzellente Wahl für ein Dessert nach dem Essen."
+    }
+  },
+  "DeliciousFruityTrio": {
+    "name": "Leckeres fruchtiges Trio",
+    "description": {
+      "0": "Ein Dessert, welches eine romantische Stimmung verströmt. Die knusprige, duftende Kruste und die erfrischende, leckere Fruchtfüllung vereinigen sich im Mund. Aber das Großartigste ist das braun-weiße Muster, das den Eischnee gleichmäßig durchzieht, wie eine Wolke, die durch die Sonne gebacken wird. Die Geschmacksknospen schweben gen Himmel und hinterlassen einen Mund voller Überraschungen."
+    }
+  },
+  "SuspiciousTassesRagout": {
+    "name": "Misslungenes Tasses-Ragout",
+    "description": {
+      "0": "Ein Mischmasch mit unterschiedlichen Arten von Gemüse. Man würde es nicht wahrnehmen, wenn von einer Zutat mehr oder weniger verwendet würde, weil die strenge Würzung den ursprünglichen Geschmack des Gemüses vollkommen überdeckt."
+    }
+  },
+  "TassesRagout": {
+    "name": "Tasses-Ragout",
+    "description": {
+      "0": "Ein Mischmasch mit unterschiedlichen Arten von Gemüse. Es ist ein alltägliches Gericht, mit dem die Bauern von Fontaine die Gemüseernte feiern. Es gibt keine klare Zusammenstellung der Zutaten und keine feste Art der Zubereitung. Ganz gleich, ob gebraten oder gebacken kann das Gericht auf einfache Weise leckeren Geschmack auf den Esstisch zaubern."
+    }
+  },
+  "DeliciousTassesRagout": {
+    "name": "Leckeres Tasses-Ragout",
+    "description": {
+      "0": "Ein Mischmasch mit unterschiedlichen Arten von Gemüse. Einst soll sich der kritischste Gourmet von Fontaine mit Tränen in den Augen an seine Kindheit erinnert haben, nachdem er dieses Gericht verspeist hatte. Vielleicht ist die Geschichte etwas übertrieben, aber die Köstlichkeit vor deinen Augen schmeckt wahrlich einzigartig."
+    }
+  },
+  "SuspiciousSteakTartare": {
+    "name": "Misslungenes Tatar",
+    "description": {
+      "0": "Mit frischem rohem Fleisch zubereitete Speise. Das dunkelrote Hackfleisch weckt unheilvolle Vorahnungen und bei genauerer Untersuchung offenbart sich ein säuerlicher Geruch. Sie scheint wohl nicht mehr für den menschlichen Verzehr geeignet zu sein. Hm ... Und sicher auch nicht für die Garde-Mecha?"
+    }
+  },
+  "SteakTartare": {
+    "name": "Tatar",
+    "description": {
+      "0": "Mit frischem rohem Fleisch zubereitete Speise. Wähle zunächst die hochwertigsten Fleischstücke. Nach dem Zerhacken werden diese mit einer Sauce vermischt. Das Ganze wird mit rohem Eigelb kombiniert. Niemand weiß, wer sich als Erstes dieses Gericht ausgedacht hat. Wahrscheinlich war es ein Abenteurer, der in einer ausweglosen Lage einen Geistesblitz hatte."
+    }
+  },
+  "DeliciousSteakTartare": {
+    "name": "Leckeres Tatar",
+    "description": {
+      "0": "Mit frischem rohem Fleisch zubereitete Speise. Der Mantel aus Eigelb macht das feine, zarte Hackfleisch süß und saftig. Das sanfte Fleischaroma kombiniert mit dem überreichen Saft ruft sämtliche Geschmacksknospen der Mundhöhle zu einer Feier zusammen und beschert einem das reinste und ursprünglichste Geschmackserlebnis."
+    }
+  },
+  "SuspiciousVessieChicken": {
+    "name": "Misslungenes Hühnchen en vessie",
+    "description": {
+      "0": "Traditionelle Speise aus Fontaine. Allein das Hühnchen in die Blase des Waldschweins zu stopfen war ein Kraftakt. Erwartungsvoll kostet man einen Bissen ... Nun, das Hühnchen hat einen seltsamen Geschmack, sodass man gar nicht genau sagen kann, ob man gerade Huhn oder Waldschwein isst."
+    }
+  },
+  "VessieChicken": {
+    "name": "Hühnchen en vessie",
+    "description": {
+      "0": "Traditionelle Speise aus Fontaine. „Vessie“ hat in Fontaine die Bedeutung einer Blase. Wie der Name vermuten lässt, wird bei diesem Gericht ein einfach mariniertes Huhn in der Blase eines Waldschweins versiegelt. Dann wird die Blase in Suppe gekocht, bis sie prall und rund wie ein Gespenst ist. Üblicherweise wird nur das Hähnchenfleisch im Inneren verzehrt."
+    }
+  },
+  "DeliciousVessieChicken": {
+    "name": "Leckeres Hühnchen en vessie",
+    "description": {
+      "0": "Traditionelle Speise aus Fontaine. Der leckere Saft, sanft vom Fleisch umschlossen, verströmt vielfältige Aromen und macht das Gericht zum Traum eines jeden Feinschmeckers. Man muss einfach alles sofort verputzen und selbst danach leckt man sich die Mundwinkel, um noch die letzte Spur dieses verführerischen Geschmacks auszukosten. Diese Delikatesse wird zu Recht als klassische Perle der fontainischen Küche angesehen."
+    }
+  },
+  "SuspiciousFontainianOnionSoup": {
+    "name": "Misslungene Fontaine-Zwiebelsuppe",
+    "description": {
+      "0": "Eine Suppe mit einer Zwiebelbasis. Die ersten paar Schlucke schmecken noch akzeptabel, aber wenn man anfängt, sie hinunterzuschlucken, bekommt man von dem fettigen Käse fast Herzklopfen ... Wahrscheinlich willst du in der nächsten Woche keine Suppe zu dir nehmen."
+    }
+  },
+  "FontainianOnionSoup": {
+    "name": "Fontaine-Zwiebelsuppe",
+    "description": {
+      "0": "Eine Suppe mit einer Zwiebelbasis. Brate die Zwiebeln, bis sie bräunlich sind. Gib diese in die Brühe und lasse sie köcheln. Gib sie in eine Suppentasse. Darauf werden Brotstücke und Käse gestreut, um diese zu backen. Erfahrene Köche haben auch einen Trick auf Lager, der verhindert, dass einem beim Zwiebelschneiden die Tränen kommen. Dieser lautet ... dass man einen Lehrling die Zwiebeln schneiden lässt."
+    }
+  },
+  "DeliciousFontainianOnionSoup": {
+    "name": "Leckere Fontaine-Zwiebelsuppe",
+    "description": {
+      "0": "Eine Suppe mit einer Zwiebelbasis. Der dehnbare und goldene Käse liegt auf einer Scheibe Brot, die oben knusprig und unten weich ist. Das reiche Zwiebelaroma verbindet sich mit einem leicht salzigen Geschmack. Ein kleiner Schluck reicht aus, um sich aufzuwärmen."
+    }
+  },
+  "SuspiciousIleFlottante": {
+    "name": "Misslungene Île flottante",
+    "description": {
+      "0": "Ein Dessert, welches mit Eiweiß gemacht wird. Nach einem erfolglosen Versuch, das Eiweiß zu schlagen, hast du fast keine Kraft mehr für die Hände. Obwohl du versuchst, die Mischung über die vorbereitete Soße zu geben, verschmelzen die beiden zu einem totalen Durcheinander ... Äh, wie wäre es, wenn du es als neues Getränk betrachtest und einen Schluck trinkst?"
+    }
+  },
+  "IleFlottante": {
+    "name": "Île flottante",
+    "description": {
+      "0": "Ein Dessert, welches mit Eiweiß gemacht wird. Die Zubereitung ist kinderleicht. Das Eiweiß steif zu schlagen, ist bereits die halbe Miete. Danach muss das bereits erhitzte Eiweiß nur noch auf die Sauce gegeben werden und man ist fertig. Die Optik des fertigen Desserts ist romantisch und ist bei den Damen in Fontaine mit Rang und Namen äußerst beliebt."
+    }
+  },
+  "DeliciousIleFlottante": {
+    "name": "Leckere Île flottante",
+    "description": {
+      "0": "Ein Dessert, welches mit Eiweiß gemacht wird. Das sanfte Eiklar schwebt wie Tau auf der weißen Cremesoße, geheimnisvollen Schätzen gleich, die auf ihre Entdeckung durch einen Reisenden warten. Dieser unglaublich leckere Genuss ist genauso befriedigend, wie das Öffnen einer prachtvollen Schatztruhe!"
+    }
+  },
+  "SuspiciousPoissonSeafoodSoup": {
+    "name": "Misslungene Poisson-Suppe",
+    "description": {
+      "0": "Eine aus Meeresfrüchten gemachte Suppe. Außer dem Fischgeschmack kann man kein anderes Aroma herausschmecken. Wenn der Geschmack in Ordnung ist, muss etwas mit der Suppe nicht stimmen ... Warte mal, sind es Fischschuppen oder Kies, die zwischen deinen Zähnen stecken geblieben sind?"
+    }
+  },
+  "PoissonSeafoodSoup": {
+    "name": "Poisson-Suppe",
+    "description": {
+      "0": "Eine aus Meeresfrüchten gemachte Suppe. Dieses Gericht stammt ursprünglich aus dem Fischerdorf Poisson. Beim ersten Mal wurden die von den Fischern nicht verkauften Fischreste willkürlich in einen Topf geworfen und gekocht. Aufgrund seines delikaten Geschmacks wurde das Gericht in Fontaine sehr beliebt. Heutzutage kann praktisch jeder gefangene Fisch in diesem Gericht landen."
+    }
+  },
+  "DeliciousPoissonSeafoodSoup": {
+    "name": "Leckere Poisson-Suppe",
+    "description": {
+      "0": "Eine aus Meeresfrüchten gemachte Suppe. Die dicke Brühe glänzt golden wie die Wellen im Sonnenschein und bringt das Aroma des Meeres an deinen Gaumen. Die Seefrüchte harmonieren und interagieren wie die Farben in Kunstwerken alter Zeiten. Die Schüssel war sofort leer und man konnte nicht anders, als die letzten Reste mit einem Stück Brot aufzutunken."
+    }
+  },
+  "SuspiciousFontaineAspic": {
+    "name": "Misslungenes Fischer-Aspik",
+    "description": {
+      "0": "Ein kaltes Gericht, welches mit Meeresfrüchten zubereitet wird. Wenn man der versteckten Falle in der Sülze unversehrt entgehen kann ... Aus Fischgräten ... Dann ist es kein schlechter Appetitanreger."
+    }
+  },
+  "FontaineAspic": {
+    "name": "Fischer-Aspik",
+    "description": {
+      "0": "Ein kaltes Gericht, welches mit Meeresfrüchten zubereitet wird. Das Fischfleisch wird zu zerkleinertem Fisch gehackt. Dieses wird in Schichten in rechteckige Formen gegeben und gedünstet, bis der Fisch gar ist. Es wird gewartet, bis das Gericht völlig abgekühlt ist, um es auf einen Teller zu geben und zu servieren. Obwohl es sich um eine kalte Speise handelt, kann sie eine aufwärmende Wirkung haben."
+    }
+  },
+  "DeliciousFontaineAspic": {
+    "name": "Leckeres Fischer-Aspik",
+    "description": {
+      "0": "Ein kaltes Gericht, welches mit Meeresfrüchten zubereitet wird. Das Aroma des Fischrogens in Kombination mit der Sülze explodiert in der Mundhöhle und entfaltet ein atemberaubendes Geschmackserlebnis. Es ist gerade niemand in der Nähe ... Es ist doch in Ordnung, den Teller abzulecken, oder?"
+    }
+  },
+  "SuspiciousPateDeFruit": {
+    "name": "Misslungener Fruchtgummi",
+    "description": {
+      "0": "Weiche Süßigkeit. Die zähe Süßigkeit klebt an den Zähnen und lässt sich schwer kauen. Die Zähne lassen sich leicht reinigen, aber der Moment, etwas Süßes zu genießen, ist unwiederbringlich verloren."
+    }
+  },
+  "PateDeFruit": {
+    "name": "Fruchtgummi",
+    "description": {
+      "0": "Weiche Süßigkeit. Früher bot sie eine Möglichkeit, Früchte aufzubewahren. Über die vielen Jahre ist es zu einer Kindheitserinnerung der Menschen in Fontaine geworden. Der Geschmack ist angenehm süß und es kaut sich etwas zäh. Ganz gleich, wie viel du davon isst, wird es dir nicht zum Hals heraushängen."
+    }
+  },
+  "DeliciousPateDeFruit": {
+    "name": "Leckerer Fruchtgummi",
+    "description": {
+      "0": "Weiche Süßigkeit. Schon ein Happen ist so fruchtig, als wäre ein ganzer Obstgarten zu einem Bonbon geronnen. Ehe man sich versieht, ist der Zuckertopf schon leer, und man will sogar den Zuckerguss an den Fingern nicht einmal verschwenden!"
+    }
+  },
+  "SuspiciousConchMadeleine": {
+    "name": "Misslungene Kristallmuschel-Madeleine",
+    "description": {
+      "0": "Süßigkeit in einer niedlichen Form. Die groteske Form ist ein purer Reinfall. Um darin eine Beryllmuschel zu erkennen, ist eine übernatürliche Fantasie vonnöten ... Wenigstens ist der Geschmack einigermaßen annehmbar."
+    }
+  },
+  "ConchMadeleine": {
+    "name": "Kristallmuschel-Madeleine",
+    "description": {
+      "0": "Süßigkeit in einer niedlichen Form. Es heißt, dass der Koch einer wohlhabenden Familie in Fontaine diese Süßspeise in Form einer Beryllmuschel kreiert hat, um den jüngsten Sohn der Familie zufriedenzustellen. Ob die Geschichte den Tatsachen entspricht, kann nicht mehr überprüft werden. Der leckere Geschmack ist aber eine unbestreitbare Tatsache."
+    }
+  },
+  "DeliciousConchMadeleine": {
+    "name": "Leckere Kristallmuschel-Madeleine",
+    "description": {
+      "0": "Süßigkeit in einer niedlichen Form. In Fontaine gibt es ein Sprichwort: „Es gibt nur zwei Arten von Menschen: diejenigen, die Kristallmuschel-Madeleines lieben, und diejenigen, die sie nicht probiert haben.“ Wer diese weichen und süßen Kuchen erst einmal gekostet hat, ist ihnen sofort verfallen."
+    }
+  },
+  "SeabirdsSojourn": {
+    "name": "„Aufenthalt eines Seevogels“",
+    "description": {
+      "0": "Fréminets Spezialzubereitung. Er hat die Suppenschüssel einfach stehengelassen und ist geflüchtet. Die Zutaten kommen nicht aus dem flachen Wasser, vielleicht wurden sie aus der Tiefsee emporgeholt. Du möchtest deine Dankbarkeit zum Ausdruck bringen, aber ... wo kannst du ihn finden?"
+    }
+  },
+  "CubicTricks": {
+    "name": "Würfel-Trick",
+    "description": {
+      "0": "Lyneys Spezialzubereitung. Er bedeckt die Frucht, die du gerade gepflückt hast, mit einem Tuch. Als er das Tuch wieder wegzieht, fesselt eine kunterbunte Süßigkeit deinen Blick. Schon beim ersten Bissen ändert sich deine Stimmung. Hat dich der große Magier mit einem Zauber belegt, ohne dass es jemand bemerkt hat?"
+    }
+  },
+  "ALeisurelySip": {
+    "name": "Gemächlicher Schluck",
+    "description": {
+      "0": "Lynettes Spezialzubereitung. In der nachmittäglichen Teepause serviert dir Lynette still eine Tasse Tee, die sie extra für dich zubereitet hat. Die junge Dame, die kleine Schlucke aus der Tasse nimmt, und das Bild des kätzchenförmigen Desserts scheinen sich zu überschneiden. Dein Herz ist voller Wärme, aber du bist auch ein wenig besorgt über den Zustand des Küchengeschirrs ..."
+    }
+  },
+  "Fonta": {
+    "name": "Fonta",
+    "description": {
+      "0": "Ein spezielles Getränk aus Fontaine, entwickelt am Forschungsinstitut. Erfreut sich bei den Bürgern seit seiner Markteinführung großer Beliebtheit."
+    }
+  },
+  "SuspiciousFruityDuet": {
+    "name": "Misslungenes Fruchtiges Duo",
+    "description": {
+      "0": "Ein Getränk, welches über doppelten Fruchtgeschmack verfügt. Das Fruchtfleisch am Boden des Glases enthält aus irgendeinem Grund einen Hauch von Bitterkeit und trübt einem die Laune ... Wie wäre es mit einem neuen Glas, um die Bitterkeit aus deinem Mund und deinem Herzen zu vertreiben?"
+    }
+  },
+  "FruityDuet": {
+    "name": "Fruchtiges Duo",
+    "description": {
+      "0": "Ein Getränk, welches über doppelten Fruchtgeschmack verfügt. Platziere erst am Boden großzügig Fruchstücke. Gib dann einen Smoothie hinzu, der Teebasis und Fruchtsaft miteinander verbindet. Das Getränk liefert einen fruchtig frischen Geschmack mit mehreren Geschmacksebenen. Niemand kann ihm widerstehen."
+    }
+  },
+  "DeliciousFruityDuet": {
+    "name": "Leckeres fruchtiges Duo",
+    "description": {
+      "0": "Ein Getränk, welches über doppelten Fruchtgeschmack verfügt. Nach einem Schluck umspielt der Fruchtgeschmack Lippen und Zähne. Für einen Moment fühlt es sich so an, als würde man den orangefarbenen Sonnenaufgang an einem weißen Strand beobachten. Das muss deine Stimmung aufhellen."
+    }
+  },
+  "SuspiciousFruitySmoothie": {
+    "name": "Misslungener Früchte-Smoothie",
+    "description": {
+      "0": "Ein Getränk mit einem schlichten Farbton. Der eiskalte Smoothie gibt einem das Gefühl, als würde man gerade den Drachengrat besteigen. In einer extrem frostigen Umgebung hat die bittere Kälte ihren Höhepunkt erreicht ... Du solltest so schnell wie möglich ein Lagerfeuer finden!"
+    }
+  },
+  "FruitySmoothie": {
+    "name": "Früchte-Smoothie",
+    "description": {
+      "0": "Ein Getränk mit einem schlichten Farbton. Ein Smoothie, bei dem Fruchtjoghurt vermischt wird. Erzeugt die Optik eines blauen Himmels mit weißen Wolken. Am Boden befindet sich eine dicke Schicht aus Fruchtstücken und Gelee. Bietet einen erfrischenden Geschmack und ist die perfekte Wahl, um mit der Sommerhitze fertig zu werden."
+    }
+  },
+  "DeliciousFruitySmoothie": {
+    "name": "Leckerer Früchte-Smoothie",
+    "description": {
+      "0": "Ein Getränk mit einem schlichten Farbton. Die feine fruchtige Note dieses frischen Smoothies löst unwillkürlich Assoziationen aus: Schmecken die Wolken, die elfengleich über dem Qingyun-Gipfel schweben, wohl genauso?"
+    }
+  },
   "RecipeItem": {
     "name": "Objekt für Rezepte",
     "description": {
@@ -13738,6 +14325,120 @@
       "0": "Rezept mit detaillierten Schritten zur Zubereitung von „Jadefrucht-Suppe“."
     }
   },
+  "RecipeDuckConfit": {
+    "name": "Rezept: Entenconfit",
+    "description": {
+      "0": "Rezept mit detaillierten Schritten zur Zubereitung von „Entenconfit“."
+    }
+  },
+  "RecipeFontainianFoieGras": {
+    "name": "Rezept: Foie gras de Fontaine",
+    "description": {
+      "0": "Rezept mit detaillierten Schritten zur Zubereitung von „Foie gras de Fontaine“."
+    }
+  },
+  "RecipeCreamOfMushroomSoup": {
+    "name": "Rezept: Pilzcremesuppe",
+    "description": {
+      "0": "Rezept mit detaillierten Schritten zur Zubereitung von „Pilzcremesuppe“."
+    }
+  },
+  "RecipeGarlicBaguette": {
+    "name": "Rezept: Knoblauchbaguette",
+    "description": {
+      "0": "Rezept mit detaillierten Schritten zur Zubereitung von „Knoblauchbaguette“."
+    }
+  },
+  "RecipeFishAndChips": {
+    "name": "Rezept: Fisch und Pommes",
+    "description": {
+      "0": "Rezept mit detaillierten Schritten zur Zubereitung von „Fisch und Pommes“."
+    }
+  },
+  "RecipeLasagna": {
+    "name": "Rezept: Lasagne",
+    "description": {
+      "0": "Rezept mit detaillierten Schritten zur Zubereitung von „Lasagne“."
+    }
+  },
+  "RecipePoissonchantPie": {
+    "name": "Rezept: Poissonchant-Tarte",
+    "description": {
+      "0": "Rezept mit detaillierten Schritten zur Zubereitung von „Poissonchant-Tarte“."
+    }
+  },
+  "RecipeFruityTrio": {
+    "name": "Rezept: Fruchtiges Trio",
+    "description": {
+      "0": "Rezept mit detaillierten Schritten zur Zubereitung von „Fruchtiges Trio“."
+    }
+  },
+  "RecipeTassesRagout": {
+    "name": "Rezept: Tasses-Ragout",
+    "description": {
+      "0": "Rezept mit detaillierten Schritten zur Zubereitung von „Tasses-Ragout“."
+    }
+  },
+  "RecipeSteakTartare": {
+    "name": "Rezept: Tatar",
+    "description": {
+      "0": "Rezept mit detaillierten Schritten zur Zubereitung von „Tatar“."
+    }
+  },
+  "RecipeVessieChicken": {
+    "name": "Rezept: Hühnchen en vessie",
+    "description": {
+      "0": "Rezept mit detaillierten Schritten zur Zubereitung von „Hühnchen en vessie“."
+    }
+  },
+  "RecipeFontainianOnionSoup": {
+    "name": "Rezept: Fontaine-Zwiebelsuppe",
+    "description": {
+      "0": "Rezept mit detaillierten Schritten zur Zubereitung von „Fontaine-Zwiebelsuppe“."
+    }
+  },
+  "RecipeIleFlottante": {
+    "name": "Rezept: Île flottante",
+    "description": {
+      "0": "Rezept mit detaillierten Schritten zur Zubereitung von „Île flottante“."
+    }
+  },
+  "RecipePoissonSeafoodSoup": {
+    "name": "Rezept: Poisson-Suppe",
+    "description": {
+      "0": "Rezept mit detaillierten Schritten zur Zubereitung von „Poisson-Suppe“."
+    }
+  },
+  "RecipeFontaineAspic": {
+    "name": "Rezept: Fischer-Aspik",
+    "description": {
+      "0": "Rezept mit detaillierten Schritten zur Zubereitung von „Fischer-Aspik“."
+    }
+  },
+  "RecipePateDeFruit": {
+    "name": "Rezept: Fruchtgummi",
+    "description": {
+      "0": "Rezept mit detaillierten Schritten zur Zubereitung von „Fruchtgummi“."
+    }
+  },
+  "RecipeConchMadeleine": {
+    "name": "Rezept: Kristallmuschel-Madeleine",
+    "description": {
+      "0": "Rezept mit detaillierten Schritten zur Zubereitung von „Kristallmuschel-Madeleine“."
+    }
+  },
+  "RecipeFruityDuet": {
+    "name": "Rezept: Fruchtiges Duo",
+    "description": {
+      "0": "Rezept mit detaillierten Schritten zur Zubereitung von „Fruchtiges Duo“."
+    }
+  },
+  "RecipeFruitySmoothie": {
+    "name": "Rezept: Früchte-Smoothie",
+    "description": {
+      "0": "Rezept mit detaillierten Schritten zur Zubereitung von „Früchte-Smoothie“."
+    }
+  },
   "CraftedItems": {
     "name": "Hergestelltes Produkt",
     "description": {
@@ -13981,6 +14682,23 @@
       "0": "Ein auf Rosenwasser basierender Fischköder. Vermischt mit getrocknetem Harra-Frucht-Pulver hat er einen scharfen Geschmack mit einem süßen Nachgeschmack. Ein derartiger Geschmack ist wie das Leben eines Fischers, die vielen Herausforderungen bei Regen, Sturm, brennender Sonne und riesigen Wellen, die den Himmel verschlucken. Die Belohnung für die Prüfungen lässt einen jeden vor Freude strahlen.",
       "1": "<br/>",
       "2": "Zum Fangen von Horn-Kugelfischen und Axt-Marlinen geeignet."
+    }
+  },
+  "SourBait": {
+    "name": "Saurer Mandarinenköder",
+    "description": {
+      "0": "Ein Köder auf Weizenmehlbasis, gemischt mit dem Fruchtfleisch und den Kernen der Blasenmandarine. Erst einmal ins Wasser geworfen, verbreitet sich das süß-saure Aroma in Windeseile und lockt Fische wie den Herzfederbarsch an. Es soll schon vorgekommen sein, dass Angler bei längeren Aufenthalten in der Wildnis, als ihnen die Vorräte ausgegangen waren, aus Verzweiflung in der Not diese Köder verzehrt und sich dabei eine Vergiftung zugezogen haben ... Um zu verhindern, dass sich derartige Unfälle wiederholen, hat man den Säuregehalt der seither hergestellten Köder stark erhöht. Ein normaler Mensch muss ihn sich jetzt nur unter die Nase halten, dass der Reiz ausreicht, um Schwindelgefühle und Tränen zu verursachen. Es soll grundsätzlich unmöglich gemacht werden, auch nur auf die Idee zu kommen, ihn in den Mund zu stecken ...",
+      "1": "<br/>",
+      "2": "Zum Fangen von Herzfederbarschen geeignet."
+    }
+  },
+  "FlashingMaintenanceMekBait": {
+    "name": "Unterstützungs-Mecha-Leuchtköder",
+    "description": {
+      "0": "Eine spezielle „Lockfalle“, die auf der Technik einer Entwicklungsgruppe am Forschungsinstitut Fontaine beruhen soll. Ihr Äußeres ist mit einem Schutzkäfig aus Metall und Beißstangen versehen, während das Innere mit Lampen ausgekleidet ist, die Marcotte-Extrakt enthalten.",
+      "1": "Nachdem sie ins Wasser geworfen wurden, beginnen die Lampen im Inneren des Geräts in einer bestimmten Frequenz zu blinken, um in der Nähe befindliche „Unterstützungs-Mecha“ anzulocken. Man kennt sie gemeinhin auch als „Gewässerschutzfische“ oder „Eisenfische“. Der Biss der „Unterstützungs-Mecha“ ist kräftig, aber er kann sich nur in die äußeren, speziell dafür gedachten Stangen verbeißen, an denen er sich dann festhakt. Im Grunde genommen handelt es sich hierbei um einen speziellen „Köder“ für den Fang wertvoller „Eisenfische“.",
+      "2": "<br/>",
+      "3": "Zum Fangen von Unterstützungs-Mecha geeignet."
     }
   },
   "PrimordialEssence": {
@@ -14507,6 +15225,93 @@
       "1": "Der Fremde der Ewigkeit erwartet keine Belohnung. Alles, was er tut, wird schließlich Früchte tragen ..."
     }
   },
+  "TransoceanicPearl": {
+    "name": "Transozeanische Perle",
+    "description": {
+      "0": "Ein winziger Kristall, aus dem Körper eines besiegten Fontemer-Mutanten.",
+      "1": "Fontemer-Mutanten entstammen dem „Meer“ von Fontaine. Man vermutet, dass diese eigenartigen Lebensformen unter dem Einfluss der seltsamen Energie in dem Wasser entstehen."
+    }
+  },
+  "TransoceanicChunk": {
+    "name": "Transozeanischer Brocken",
+    "description": {
+      "0": "Ein Kristall, aus dem Körper eines besiegten Fontemer-Mutanten.",
+      "1": "Er strahlt eine geheimnisvolle Energie aus.",
+      "2": "Obwohl Legenden berichten, dass im weiten Ozean, jenseits von Wasserstraßen und menschlichen Spuren, reiches Leben existiert, sind die gemeinen Ozeane doch nichts im Vergleich zur Vielfalt im „Meer“ von Fontaine."
+    }
+  },
+  "XenochromaticCrystal": {
+    "name": "Xenochromatischer Kristall",
+    "description": {
+      "0": "Ein großer Kristall, aus dem Körper eines besiegten Fontemer-Mutanten.",
+      "1": "Er enthält eine geheimnisvolle Energie.",
+      "2": "Obwohl der Ursprung unendlicher Gewässer, verlieren die Ströme von Fontaine ihren einzigartigen Charakter, je näher sie an fremden Ländern fließen."
+    }
+  },
+  "MeshingGear": {
+    "name": "Greifendes Zahnrad",
+    "description": {
+      "0": "Das Zahnrad eines Uhrwerk-Mecha.",
+      "1": "Ein wichtiges Teil für das Getriebe. Wenn es fehlt, funktioniert die entsprechende Einheit nicht mehr."
+    }
+  },
+  "MechanicalSpurGear": {
+    "name": "Mechanisches Stirnrad",
+    "description": {
+      "0": "Das Zahnrad eines Uhrwerk-Mecha.",
+      "1": "Obwohl es in der Kinematik der Uhrwerk-Mecha bedeutende Durchbrüche gab, konnte die Dynamik bis heute die Fundamente und Regeln nicht erschüttern, die Alain Guillotin vor mehr als vierhundert Jahren aufgestellt hatte."
+    }
+  },
+  "ArtificedDynamicGear": {
+    "name": "Neuartiges Uhrwerk-Zahnrad",
+    "description": {
+      "0": "Das Zahnrad eines Uhrwerk-Mecha.",
+      "1": "Die Fortschritte in der Maschinenpräzision und der Materialforschung sind der Schlüssel für den Fortschritt bei den Uhrwerk-Mecha in Fontaine. Unterstützt durch fortschrittliche Gerätschaften besitzt jeder Ingenieur die Fähigkeit, Maschinen herzustellen, die die des Zeitalters des „Herrn der wunderlichen Maschinen“ Guillotin überragen."
+    }
+  },
+  "DropOfTaintedWater": {
+    "name": "Tropfen verunreinigten Wassers",
+    "description": {
+      "0": "Ein kleiner Wassertropfen, den man von einem besiegten Okeanospuk erhält.",
+      "1": "Die darin enthaltene Lebenskraft scheint noch nicht vollständig verschwunden zu sein."
+    }
+  },
+  "ScoopOfTaintedWater": {
+    "name": "Portion verunreinigten Wassers",
+    "description": {
+      "0": "Wasser, das man von einem besiegten Okeanospuk erhält.",
+      "1": "Die darin enthaltene Lebenskraft scheint noch nicht vollständig verschwunden zu sein.",
+      "2": "Die ursprünglichen Okeaniden sind in Fontaine bereits verschwunden und aus dem Wasser entstehen jetzt nur noch diese unförmigen und bizarren Elementarlebewesen."
+    }
+  },
+  "NewbornTaintedHydroPhantasm": {
+    "name": "Neugeborener Okeanospuk",
+    "description": {
+      "0": "Eine neue Lebensform, die aus einem besiegten Okeanospuk entsteht und in einer Flasche gefangen wird.",
+      "1": "Das im Wasser enthaltene Leben ist formlos, und formloses Leben wird aus dem Wasser geboren und nimmt die Form des Wassers an."
+    }
+  },
+  "RiftCore": {
+    "name": "Risskern",
+    "description": {
+      "0": "Das Überbleibsel eines Rissprimuses.",
+      "1": "Nichts gleicht ihm auf dieser Welt."
+    }
+  },
+  "ForeignSynapse": {
+    "name": "Außerweltliche Synapse",
+    "description": {
+      "0": "Das Überbleibsel eines Rissprimuses.",
+      "1": "Diese fremdartige Lebensform stammt von Elynas ab und auch sein Lebensraum ist von ihm geprägt."
+    }
+  },
+  "AlienLifeCore": {
+    "name": "Außerweltlicher Lebenskern",
+    "description": {
+      "0": "Der Kern eines Rissprimuses.",
+      "1": "Diese Organismen können nicht vernichtet werden, selbst wenn nur ihr Kern übrig bleibt, können sie am nächsten Tag oder auch erst in späteren Jahrzehnten wiederauferstehen. Glücklicherweise scheinen sie nicht aggressiv und intelligent zu sein, daher bewahren ihnen die Leute aus Fontaine auch eine respektvolle Distanz gegenüber."
+    }
+  },
   "HurricaneSeed": {
     "name": "Orkansamen",
     "description": {
@@ -14874,6 +15679,27 @@
       "1": "Der dieses winzige Lebewesen umhüllende Bernstein mag für die Bäume ein Zufall sein, für das Lebewesen in seinem Inneren stellt er jedoch ein Schicksal dar.",
       "2": "Mit der großen Katastrophe, die vom Himmel fiel, verdorrten Bäume, Ranken, Wurzeln und Blumen und wurden zu Staub und zahllose Lebewesen wurden vom Angesicht der Erde getilgt.",
       "3": "Den namenlosen fliegenden Insekten jedoch, nun im Bernstein ruhend und in der Oase bewahrt, eigentlich vom Antlitz der Welt verschwunden, wurde so eine Zukunft gewährt, die ihren Artgenossen verwehrt blieb."
+    }
+  },
+  "ArtificedSpareClockworkComponentCoppelia": {
+    "name": "Neuartiges Uhrwerk-Ersatzteil – Coppelia",
+    "description": {
+      "0": "Ein neuartiges Uhrwerk-Ersatzteil, das zu Coppelia gehört und die Mecha-Tänzerin mit Energie versorgen kann.",
+      "1": "Nach dem Entwurf ihres Schöpfers endet die Geschichte der Mecha-Tänzerin mit den zarten Gelenken in einem heiteren Moment. Coppelia wird jeden, der versucht, diesen Moment zu stören, mit ihren hervorragenden Kampffähigkeiten in ein Kapitel des Unglücks schicken."
+    }
+  },
+  "ArtificedSpareClockworkComponentCoppelius": {
+    "name": "Neuartiges Uhrwerk-Ersatzteil – Coppelius",
+    "description": {
+      "0": "Ein neuartiges Uhrwerk-Ersatzteil, das zu Coppelius gehört und den Mecha-Tänzer mit Energie versorgen kann.",
+      "1": "Der Mecha-Tänzer bewegt sich in einem silbernen Rythmus und bietet den Zuschauern rund um die Uhr seinen Eiswind-Rundtanz dar. Coppelius hört nicht auf, zu tanzen, bis die Sterbeglocke läutet."
+    }
+  },
+  "EmperorsResolution": {
+    "name": "Des Kaisers Entschlossenheit",
+    "description": {
+      "0": "Der Streithammer des Kaisers von Feuer und Eisen. Egal ob andere Fontemer-Mutanten, Uhrwerk-Mecha oder Jäger mit unangebrachter Neugierde, er hat unzählige Besucher mit seiner riesigen Klaue zermalmt.",
+      "1": "Anders als bei den Menschen gibt es bei den Fontemer-Mutanten keine Aristokraten oder Kinder reicher Eltern. Niemand wird höher geboren als ein anderer der gleichen Art. Fontemer-Mutanten, die alle Widrigkeiten überstehen und ihre natürlichen Feinde besiegen, werden durch viele Jahre des Jagens und Fressens immer stärker und wachsen unbegrenzt, bis sie schließlich zu den furchterregenden Tyrannen werden."
     }
   },
   "TileOfDecarabiansTower": {
@@ -15255,6 +16081,103 @@
       "4": "Das Unheil brach dennoch herein. Die goldenen Insignien wurden in den Tiefen des Schreins und des Palastes begraben, unter den eingestürzten Säulen mit den Gravuren von Adlern und Stieren."
     }
   },
+  "FragmentOfAnAncientChord": {
+    "name": "Fragment einer archaischen Serenade",
+    "description": {
+      "0": "Eine Leier, deren Tasten völlig verwittert, deren Klangkammer verstopft und die mittlerweile unspielbar geworden ist.",
+      "1": "Man munkelt, dass die Nachfahren der Vergessenen Musik die prächtigen Überreste einer alten Dynastie wiederzubeleben versuchten und dafür einst eine hölzerne mechanische Leier mit Goldlack überzogen. Ein vergeblicher Versuch, es mit den wortlosen Golems in Einklang zu bringen ...",
+      "2": "Lange, lange Zeit später verblieb dieses zerfallene und verstimmte Instrument in den Händen dieser schweigenden Kolosse. Umschmeichelt vom Gang der Wellen, ward einzig ein Nachhall der Traurigkeit geblieben."
+    }
+  },
+  "ChapterOfAnAncientChord": {
+    "name": "Bruchstück einer archaischen Serenade",
+    "description": {
+      "0": "Der Legende nach haben die Anhänger einer alten Dynastie einst eine Leier aus schwarzem Eisen gefertigt, um damit zu gedenken und zu trauern.",
+      "1": "Jene schwarzeiserne Leier gibt keinen Ton von sich, wenn sie gespielt wird. Ein schweres und lautloses Instrument, konstruiert in Trauer um eine alte Dynastie, die sich einst ihrer goldenen Musik rühmte.",
+      "2": "Aber was auch immer geschieht, die schwarzeiserne Leier bleibt so still wie diese verlorene Zeit."
+    }
+  },
+  "MovementOfAnAncientChord": {
+    "name": "Satz einer archaischen Serenade",
+    "description": {
+      "0": "In jener großen Katastrophe, als der goldene Palast mitsamt dem Thron vergingen, versiegte die Musik, die Noten verstummten ...",
+      "1": "Doch die Anhänger dieser einstigen Dynastie gaben ihren unbändigen Wunsch nach Rettung und dem Überwinden des Schicksals niemals auf.",
+      "2": "Um jene untergegangene Zivilisation und den alten Traum von Transzendenz zu bewahren, ließ die „Goldtruppe“ herrliche Musik erklingen und hielt Kinder dazu an, ihre edlen Seelen den schlafenden Golems darzubieten."
+    }
+  },
+  "EchoOfAnAncientChord": {
+    "name": "Echo einer archaischen Serenade",
+    "description": {
+      "0": "Die große Symphonie des Gottkönigs setzte sich aus einer Vielzahl von Melodien zusammen, deren Hauptthema jedoch tief ins gemeinsame Schicksal des Wasserreichs hineinreichte.",
+      "1": "Die Sonate jener unbeschwerten Jahre war einst oberster Repräsentant von Zivilisation und Ordnung. Doch es sollte die Zeit kommen, in der das Reich in seiner vollen Blüte zu einem Tyrannenparadies verkam. Jene Despoten rissen unter dem Deckmantel ihrer prächtigen goldenen Gewänder die Verbindung zur Quelle ab, und es erhob sich ein Misston, der das Reich bis in seine Grundfesten erschütterte.",
+      "2": "Jene ursprüngliche Sonate des Schicksals ward jedoch unberührt von allem Tumult und erklang weiter und weiter über dem verblassenden Gold der Notenblätter ... solange, bis alles sich aufgelöst und erneut versunken ward im Chaos."
+    }
+  },
+  "DrossOfPureSacredDewdrop": {
+    "name": "Rückstand reinen heiligen Taus",
+    "description": {
+      "0": "Die Legende erzählt von einem dichten Meer der Ursprünglichkeit, das da war, vor der Geburt allen Lebens. Es war der reine Ursprung allen lebenden Seins und wird auch schließlich alles lebende Sein in sich verschlingen ... während alles, was nicht sein ist, ausgesondert wird und zu treibendem Schaum werde.",
+      "1": "„Jener Schaum hat doch einen Zweck – Denn was würde das Urmeer je zurückweisen, es verschlingt ja alles lebende Sein?“, fragte der junge Harmost den großen Tyrannen, grübelnd ob jener Frage."
+    }
+  },
+  "SublimationOfPureSacredDewdrop": {
+    "name": "Sublimation reinen heiligen Taus",
+    "description": {
+      "0": "„Alles Leben, das aus jenem Ursprünglichen Meer kommt, wird zu demselben Schicksal auch wieder zurückkehren.“ So sprach der Harmost Boethius: „Aber die Möglichkeiten menschlicher Transzendenz sind unendlich, und selbst das Urmeer vermag nicht, sie alle aufzulösen ...“",
+      "1": "Einst hatte der anmaßende Tyrann versucht, einen unauflöslichen reinen Ichor zu brauen, der spirituelle Weisheit und Gedächtnis gewähren sollte. Er wollte, dass seine Untertanen sich der Last ihrer physischen Leiber entledigten, um ein Sein der Ewigkeit und Unabhängigkeit zu erlangen.",
+      "2": "Doch der Schmerz spiritueller Transformation ist ein solcher, wie ihn kein sterbliches Leben je ertragen könnte, und die Order des Tyrannen zerfleischte die Seelen und ließ sie in Fetzen zurück ...",
+      "3": "Die Schreie der zahllosen Gepeinigten tauchten den Ichor in ein tiefes Schwarz und verloren ward Harmonie und Vernunft unter ihnen. Was blieb, waren Chaos und Wahnsinn."
+    }
+  },
+  "SpringOfPureSacredDewdrop": {
+    "name": "Quelle reinen heiligen Taus",
+    "description": {
+      "0": "Dies ist ein Relikt aus der Zeit, als die „Okeanidenritterin“ noch durch diese Welt streifte. Die Ritter sagten, dass es in den unberührten Bergquellen noch treue Okeaniden gäbe, die jene reinsten aller reinen Quellen beschützten ...",
+      "1": "Der Herr des künstlichen Ichors duldete jedoch kein Gemurmel, das von der großen Symphonie abwich. Der Legende nach wurde überall dort, wo der Harmost Boethius seinen Fuß hinsetzte, der natürliche Nektar vergraben. Aquädukte des Reiches wurden errichtet und die aus reinem Wasser geborenen Geister verschwanden spurlos ..."
+    }
+  },
+  "EssenceOfPureSacredDewdrop": {
+    "name": "Essenz reinen heiligen Taus",
+    "description": {
+      "0": "Eine dickflüssige und reine Essenz, gewonnen und verfeinert aus den Tropfen des Urmeeres. Der Gottkönig der alten Zeit hatte geglaubt, dass es ewiges Leben und unendliche Weisheit bringen würde, doch hört gut zu ... in ihr verbirgt sich eine Prophezeiung über das Ende: Alles löst sich auf und wird eins.",
+      "1": "Dies war die unvollendete große Symphonie des Gottkönigs: Der goldene Ichor entwurzelter Geister würde das Wasser des Urmeers ersetzen, und die glorreiche Ordnung der ewigen Weisen würde honigtausüße Erleuchtung in die tiefsten Winkel dieser Welt tragen, und seien sie noch so erfüllt von Unwissenheit.",
+      "2": "Doch die Verblendung des Gottkönigs ließ ihn schließlich versinken im pechschwarzen Tief der See, und zerfressen ward der goldene Ichor von der Ursuppe im unerbittlichen Fortlauf der Zeit ...",
+      "3": "Der Harmost verschloss jedoch die Augen im Angesicht jenes schlechten Omens und versuchte, seinen gebrochenen Körper stützend, seinen Landsleuten mit dem letzten Ichor Leben einzuhauchen, auf dass die alte Ordnung der Dinge wiederhergestellt werde ...",
+      "4": "Noch heute suchen wieder und wieder die apokalyptischen Visionen Boethius’ die Albträume vieler verrückter Dichter und junger Maler in Fontaine heim und erinnern sie an den unausweichlichen Kreislauf der Existenz des Seins."
+    }
+  },
+  "BrokenGobletOfThePristineSea": {
+    "name": "Zerbrochener Kelch des unberührten Meers",
+    "description": {
+      "0": "Die Legende berichtet davon, wie der Urtyrann, als er das Urmeer erreichte, vom ersten Herrscher des Reichs des Wassers einen Becher mit ebendiesem geschenkt bekam.",
+      "1": "Später schwang er sich dann zum unbestrittenen Gottkönig auf und benutzte diesen Becher Wasser, um den magischen Tau zu veredeln. Und so gelang es ihm, ein glorreiches und mächtiges Reich zu errichten.",
+      "2": "Diese Geschichte ereignete sich vor langer, langer Zeit, und ihre Protagonisten sind mittlerweile entschlummert in der Phosphoreszenz der Fische der Tiefsee."
+    }
+  },
+  "WineGobletOfThePristineSea": {
+    "name": "Weinkelch des unberührten Meers",
+    "description": {
+      "0": "Welches Imperium vermag es schon, tausend Jahre zu überdauern? Fragen wie diese waren es, die den Tyrannen nach seiner Rückkehr aus dem Reich der Drachen beschäftigten.",
+      "1": "Unsterblicher Stein, kombiniert mit Ichor, extrahiert aus dem Urwasser, geformt zu einer Spezies, so zäh ist wie Schwarzeisen ... die Haut aus magischem Stein und in den Adern fließt der Ichor. Nie wieder Furcht vor dem Fluch der Rückkehr zum Ursprung ...",
+      "2": "Noch immer träumte der stumme Golem den Traum eines Reiches ... nicht wissend, dass jenes längst vergangen war; seit mehr als tausend Jahren."
+    }
+  },
+  "SilverGobletOfThePristineSea": {
+    "name": "Silberkelch des unberührten Meers",
+    "description": {
+      "0": "In den Jahren, als sich die Goldene Decke über das Land gelegt hatte, musste reines Quellwasser in verborgenen Bergbächen versteckt werden, und es war in jenen Heiligtümern, in denen die „Okeanidenritterin“ geboren war.",
+      "1": "Jene Ritter schworen bei ihren silbernen Rüstungen, die Geister, geboren aus dem reinen Wasser, zu beschützen, ebenso, wie ihre Landsleute, die auch auf jene einzige Quelle vertrauten. Auf dass sie der Macht des den Himmel überschattenden Goldes entgegentraten.",
+      "2": "Diese Legende liegt nun bereits in ferner Vergangenheit ... Und kaum war das Reich zerfallen und untergegangen, legten auch die Ritter, die sich dem Tyrannen widersetzt hatten, ihre Rüstungen ab. Ihre Geschichten verloren sich dann alsbald im Gewirr der Sagen und Lieder."
+    }
+  },
+  "GoldenGobletOfThePristineSea": {
+    "name": "Goldkelch des unberührten Meers",
+    "description": {
+      "0": "Als der Tyrann der untergegangenen Stadt zum letzten Satz der goldenen Symphonie anspielte, stahl sein liebster Musiker ihm den goldenen Becher, der den Ichor enthielt.",
+      "1": "Schockiert über den Verrat und die Torheit des Gottkönigs, rief der Musiker die letzten verbleibenden Wachen herbei und benutzte den unlöslichen Ichor, um den Schreckensdrachen unter dem Turm zu versiegeln, auf dass er zusammen mit der Stadt des Königs in den Tiefen des Meeres versank.",
+      "2": "Im Folgenden sollte die Figur des noblen Diebes aus der Geschichte verschwinden. Zurück blieb einzig die „Goldtruppe“, die sich weiterhin treu an seine Prophezeiung erinnert."
+    }
+  },
   "StarterSupplyBundle": {
     "name": "Hilfsgüterpaket für Anfänger",
     "description": {
@@ -15307,21 +16230,7 @@
     "description": {
       "0": "Ein wenig Lektüre über Tugenden, die die Gilde regelmäßig herausgibt. Die Persönlichkeit eines Menschen bestimmt letztendlich seinen Erfolg.",
       "1": "<br/>",
-      "2": "Nach dem Anwenden kannst du einen der folgenden Artikel wählen:",
-      "3": [
-        " Anleitung zur „Freiheit“",
-        " Anleitung zum „Widerstand“",
-        " Anleitung zur „Poesie“",
-        " Anleitung zum „Wohlstand“",
-        " Anleitung zum „Fleiß“",
-        " Anleitung zum „Gold“",
-        " Anleitung zur „Vergänglichkeit“",
-        " Anleitung zur „Eleganz“",
-        " Anleitung zum „Licht“",
-        " Anleitung zur „Ermahnung“",
-        " Anleitung zur „Findigkeit“",
-        " Anleitung zur „Praxis“"
-      ]
+      "2": "Beim Anwenden dieses Objekts kannst du eins von allen Materialien zur Verbesserung von Talenten mit drei Sternen wählen."
     }
   },
   "TalentMaterialsBundleHigh": {
@@ -15361,19 +16270,7 @@
     "description": {
       "0": "Nützliche Materialien, die die Gilde regelmäßig herausgibt. Einige davon enthalten unbegrenzte Möglichkeiten.",
       "1": "<br/>",
-      "2": "Wähle beim Anwenden eins der folgenden Objekte:",
-      "3": "- Decarabians zerbrochener Ziegel",
-      "4": "- Milchzahn des borealischen Wolfs",
-      "5": "- Fesseln des Löwenzahnkämpfers",
-      "6": "- Leuchtender Sand von Guyun",
-      "7": "- Bleikugeln des Nebelschleiers",
-      "8": "- Körnchen pechschwarzer Aerosiderit",
-      "9": "- Korallenzweig eines fernen Meeres",
-      "10": "- Narukamis Weisheit",
-      "11": "- Die Maske des bösen Leutnants",
-      "12": "- Kupfertalisman des Waldtaus",
-      "13": "- Reminiszenz der Oase der blühenden Blumen",
-      "14": "- Echo der sengenden Macht"
+      "2": "Beim Anwenden dieses Objekts kannst du eins von allen Materialien zum Aufstieg von Waffen mit zwei Sternen wählen."
     }
   },
   "EminentShareBundle": {
@@ -15381,21 +16278,7 @@
     "description": {
       "0": "Nützliche Materialien, die die Gilde regelmäßig herausgibt. Einige davon enthalten unbegrenzte Möglichkeiten.",
       "1": "<br/>",
-      "2": "Wähle beim Anwenden eins der folgenden Objekte:",
-      "3": [
-        " Decarabians zerbröckelter Wall",
-        " Zersplitterter Zahn des borealischen Wolfs",
-        " Ketten des Löwenzahnkämpfers",
-        " Glänzender Stein von Guyun",
-        " Quecksilberkugeln des Nebelschleiers",
-        " Stückchen pechschwarzer Aerosiderit",
-        " Juwelenzweig eines fernen Meeres",
-        " Narukamis Freude",
-        " Die Maske des Tigerbisses",
-        " Eisentalisman des Waldtaus",
-        " Gnade der Oase der blühenden Blumen",
-        " Nachglimmen der sengenden Macht"
-      ]
+      "2": "Beim Anwenden dieses Objekts kannst du eins von allen Materialien zum Aufstieg von Waffen mit drei Sternen wählen."
     }
   },
   "WeaponAscensionBundleHigh": {
@@ -15565,7 +16448,7 @@
     }
   },
   "GuidanceOfTheLandOfVerdure": {
-    "name": "Anleitung des Reiches der Pflanzen",
+    "name": "Weisungen des Reiches der Pflanzen",
     "description": {
       "0": "Auf deinen Reisen im Reich der Pflanzen Sumeru hast du eine Entdeckung gemacht. Sammelst du die darin enthaltenen Objekte, kannst du deine Fertigkeiten verbessern.",
       "1": "<br/>",
@@ -15578,12 +16461,34 @@
   "PhilosophiesOfTheLandOfVerdure": {
     "name": "Philosophie des Reiches der Pflanzen",
     "description": {
-      "0": "Auf deinen Reisen im Reich der Pflanzen Sumeru hast du eine Entdeckung gemacht. Sammelst du die darin enthaltenen Objekte, kannst du deine Fertigkeiten verbessern.",
+      "0": "Auf deinen Reisen im Reich der Pflanzen Sumeru hast du eine Erkenntnis erlangt. Sammelst du die darin enthaltenen Objekte, kannst du deine Fertigkeiten verbessern.",
       "1": "<br/>",
       "2": "Nach dem Anwenden kannst du eine der folgenden Belohnungen wählen:",
       "3": "- Philosophie der „Ermahnung“",
       "4": "- Philosophie der „Findigkeit“",
       "5": "- Philosophie der „Praxis“"
+    }
+  },
+  "GuideToTheOriginalCurrent": {
+    "name": "Weisungen des Reiches des Wassers",
+    "description": {
+      "0": "Auf deinen Reisen im Reich des Wassers Fontaine hast du eine Entdeckung gemacht. Sammelst du die darin enthaltenen Objekte, kannst du deine Fertigkeiten verbessern.",
+      "1": "<br/>",
+      "2": "Nach dem Anwenden kannst du eine der folgenden Belohnungen wählen:",
+      "3": "Anleitung zur „Fairness“",
+      "4": "Anleitung zur „Gerechtigkeit“",
+      "5": "Anleitung zur „Ordnung“"
+    }
+  },
+  "PhilosophiesOfTheOriginalCurrent": {
+    "name": "Philosophie des Reiches des Wassers",
+    "description": {
+      "0": "Auf deinen Reisen im Reich des Wassers Fontaine hast du eine Erkenntnis erlangt. Sammelst du die darin enthaltenen Objekte, kannst du deine Fertigkeiten verbessern.",
+      "1": "<br/>",
+      "2": "Nach dem Anwenden kannst du eine der folgenden Belohnungen wählen:",
+      "3": "Philosophie der „Fairness“",
+      "4": "Philosophie der „Gerechtigkeit“",
+      "5": "Philosophie der „Ordnung“"
     }
   },
   "DomainReliquaryTierIII": {
@@ -17177,6 +18082,12 @@
       "0": "Eine kurze Erzählung, die sich um das in Teyvat beliebte Kartenspiel „Geniale Beschwörung“ dreht. Die Figuren sind einzigartig und kreativ, und die Geschichte wartet mit spannenden Wendungen auf, was sie zu einem echten Hit macht."
     }
   },
+  "StrangePart": {
+    "name": "Eigenartige Komponente",
+    "description": {
+      "0": "Ein seltsames mechanisches Teil, das in der Nähe des Dorfes Mérusea gefunden wurde. Es sieht etwas anders aus als gewöhnliche mechanische Teile. Du hast keine Ahnung, warum es hier gelandet ist, aber schöne Metallprodukte wie dieses werden von Melusinen geliebt ..."
+    }
+  },
   "KeyToTheCastlesSecretChamber": {
     "name": "Schlüssel zur Geheimkammer des Schlosses",
     "description": {
@@ -17195,6 +18106,27 @@
     "name": "Buchrequisite im Stück „Die Verzweifelten“",
     "description": {
       "0": "Eine Buchrequisite, dessen Mittelteil ausgehöhlt ist und in dem sich ein Grabungswerkzeug befindet. Natürlich handelt es sich um eine Bühnenrequisite, und die restlichen Seiten wurden bereits vorher zusammengeklebt. Der Inhalt des Buches ist also unleserlich."
+    }
+  },
+  "EnigmaticPageI": {
+    "name": "Mysteriöse Buchseite I",
+    "description": {
+      "0": "Eine alte Seite, deren Inhalt völlig unverständlich ist.",
+      "1": "Vielleicht gibt es eine Möglichkeit, den Inhalt zu interpretieren?"
+    }
+  },
+  "EnigmaticPageII": {
+    "name": "Mysteriöse Buchseite II",
+    "description": {
+      "0": "Eine alte Seite, deren Inhalt völlig unverständlich ist.",
+      "1": "Vielleicht gibt es eine Möglichkeit, den Inhalt zu interpretieren?"
+    }
+  },
+  "EnigmaticPageIII": {
+    "name": "Mysteriöse Buchseite III",
+    "description": {
+      "0": "Eine alte Seite, deren Inhalt völlig unverständlich ist.",
+      "1": "Vielleicht gibt es eine Möglichkeit, den Inhalt zu interpretieren?"
     }
   },
   "NamelessAdventurersNotes": {
@@ -17371,6 +18303,24 @@
       "0": "Khvarena-Steininschrift"
     }
   },
+  "ActiveOdorImitatingBait": {
+    "name": "„Geruchsimulierender Aktivköder“",
+    "description": {
+      "0": "Eine neue Angelausrüstung, die Delaroche entwickelt hat, funktioniert nach dem Prinzip der Geruchsanalyse und imitiert einen attraktiven Köder. Sie soll einen „sehr starken Effekt“ haben. Man merkt, dass Delaroche diesem Köder viel Beachtung geschenkt hat. Sie hat sogar spezielle Taschen und Polstermaterial zu seinem Schutz verwendet. Keine Ahnung, ob sich diese strengen Schutzmaßnahmen auf den eigentlichen Verwendungszweck auswirken. Selbst wenn ein Fisch davon angezogen wird, kann er ja gar nicht anbeißen ..."
+    }
+  },
+  "SubmergedBox": {
+    "name": "Untergetauchte Kiste",
+    "description": {
+      "0": "Eine im Wasser versunkene Kiste, deren Inhalt unbekannt bleibt ..."
+    }
+  },
+  "KeyToSomePlaceInTheInstitute": {
+    "name": "Schlüssel zu einem Ort des Instituts",
+    "description": {
+      "0": "Kann scheinbar eine Tür des Instituts für Naturphilosophie öffnen."
+    }
+  },
   "BeautifullyWrappedGiftBox": {
     "name": "Liebevoll verpackte Geschenkbox",
     "description": {
@@ -17383,6 +18333,18 @@
       "0": "Die Trauben, die du sorgfältig unter Tunners Aufsicht gepflückt hast, werden sich mit der Zeit zu einem vollmundigen Wein entwickeln."
     }
   },
+  "HeavyPack": {
+    "name": "Schweres Paket",
+    "description": {
+      "0": "Ein sehr schweres Paket, das eine Menge Farbstoff enthält. Wofür um alles in der Welt will Depierris diese Farbstoffe verwenden ..."
+    }
+  },
+  "ACanOfFry": {
+    "name": "Eine Dose Fischbrut",
+    "description": {
+      "0": "Fischbruten, die du von Linorea erhalten hast. Es heißt, dass diese Fische von ihr handverlesen wurden und perfekt für das Überleben in diesen Gewässern geeignet sind ..."
+    }
+  },
   "PrinceQubadsIntaglio": {
     "name": "Prinz Qubads Intaglio",
     "description": {
@@ -17391,11 +18353,392 @@
       "2": "Lass dir ruhig Zeit, ehe du antwortest, aber beweise in Zukunft mit deinen Augen, mit deinen Händen und mit deinem Herzen die Antwort, die du in jenem Moment in deiner Seele bewahrtest."
     }
   },
+  "OldCaseFiles": {
+    "name": "Akte des alten Falls",
+    "description": {}
+  },
+  "TestimonyFromJacquesFamily": {
+    "name": "Zeugenaussage von Jacques’ Familie",
+    "description": {}
+  },
+  "FlorentsStatement": {
+    "name": "Aussage von Florent",
+    "description": {}
+  },
+  "ThierrysStatement": {
+    "name": "Aussage von Thierry",
+    "description": {}
+  },
+  "MarcelsStatement": {
+    "name": "Aussage von Marcel",
+    "description": {}
+  },
+  "SuspectAnalysis": {
+    "name": "Analyse über den Verdächtigen",
+    "description": {}
+  },
+  "PrimordialSeawaterPool": {
+    "name": "Teich des Wassers des Urmeers",
+    "description": {}
+  },
+  "Sinthe": {
+    "name": "„Sinth“",
+    "description": {}
+  },
+  "MissingPersonsPossessions": {
+    "name": "Hinterlassenschaften der Vermissten",
+    "description": {}
+  },
+  "VachersExperimentReport": {
+    "name": "Vachers Laborbericht",
+    "description": {}
+  },
+  "LettersRelatedToCallasCase": {
+    "name": "Briefe mit Bezug zu Callas’ Fall",
+    "description": {}
+  },
+  "VigneiresNotebook": {
+    "name": "Vigneires Notizbuch",
+    "description": {
+      "0": "Vigneires Notizbuch"
+    }
+  },
+  "TheHistoryOfTheDeclineAndFallOfRemuriaI": {
+    "name": "Der Niedergang Remurias – Band I",
+    "description": {
+      "0": "Angeblich handelt es sich um ein historisches Meisterwerk über die alte Zivilisation Remuria, das der berühmte Gelehrte Pulteney in den ersten Jahren der Gründung von Fontaine geschrieben hat."
+    }
+  },
+  "TheHistoryOfTheDeclineAndFallOfRemuriaII": {
+    "name": "Der Niedergang Remurias – Band II",
+    "description": {
+      "0": "Angeblich handelt es sich um ein historisches Meisterwerk über die alte Zivilisation Remuria, das der berühmte Gelehrte Pulteney in den ersten Jahren der Gründung von Fontaine geschrieben hat."
+    }
+  },
+  "TheHistoryOfTheDeclineAndFallOfRemuriaIII": {
+    "name": "Der Niedergang Remurias – Band III",
+    "description": {
+      "0": "Angeblich handelt es sich um ein historisches Meisterwerk über die alte Zivilisation Remuria, das der berühmte Gelehrte Pulteney in den ersten Jahren der Gründung von Fontaine geschrieben hat."
+    }
+  },
+  "FablesDeFontaineI": {
+    "name": "Fables de Fontaine – Band I",
+    "description": {
+      "0": "Ein Märchenbuch, das unterschiedliche kurze Fabeln versammelt. Die meisten davon stammen nicht von dem Autor selbst, sondern von altertümlichen Stücken, die für uns heute verloren sind."
+    }
+  },
+  "FablesDeFontaineII": {
+    "name": "Fables de Fontaine – Band II",
+    "description": {
+      "0": "Ein Märchenbuch, das unterschiedliche kurze Fabeln versammelt. Die meisten davon stammen nicht von dem Autor selbst, sondern von altertümlichen Stücken, die für uns heute verloren sind."
+    }
+  },
+  "FablesDeFontaineIII": {
+    "name": "Fables de Fontaine – Band III",
+    "description": {
+      "0": "Ein Märchenbuch, das unterschiedliche kurze Fabeln versammelt. Die meisten davon stammen nicht von dem Autor selbst, sondern von altertümlichen Stücken, die für uns heute verloren sind."
+    }
+  },
+  "RobbenVersusChestertonIridescentBroochI": {
+    "name": "Robben gegen Chesterton: Das Geheimnis der Regenbogenbrosche – Band I",
+    "description": {
+      "0": "Ein unterhaltsames Buch, das in Fontaine sehr populär ist. Es erzählt die Geschichte von der ersten Konfrontation zwischen dem sogenannten „Phantom-Kavalier“, Meisterdieb Fantomas Robben, und dem berühmten Detektiv Chesterton. Hinweis: Diese Geschichte ist rein fiktional und hat keine Verbindung zu realen Orten, Personen oder Ereignissen."
+    }
+  },
+  "RobbenVersusChestertonIridescentBroochII": {
+    "name": "Robben gegen Chesterton: Das Geheimnis der Regenbogenbrosche – Band II",
+    "description": {
+      "0": "Ein unterhaltsames Buch, das in Fontaine sehr populär ist. Es erzählt die Geschichte von der ersten Konfrontation zwischen dem sogenannten „Phantom-Kavalier“, Meisterdieb Fantomas Robben, und dem berühmten Detektiv Chesterton. Hinweis: Diese Geschichte ist rein fiktional und hat keine Verbindung zu realen Orten, Personen oder Ereignissen."
+    }
+  },
+  "RobbenVersusChestertonIridescentBroochIII": {
+    "name": "Robben gegen Chesterton: Das Geheimnis der Regenbogenbrosche – Band III",
+    "description": {
+      "0": "Ein unterhaltsames Buch, das in Fontaine sehr populär ist. Es erzählt die Geschichte von der ersten Konfrontation zwischen dem sogenannten „Phantom-Kavalier“, Meisterdieb Fantomas Robben, und dem berühmten Detektiv Chesterton. Hinweis: Diese Geschichte ist rein fiktional und hat keine Verbindung zu realen Orten, Personen oder Ereignissen."
+    }
+  },
+  "GiftOfParting": {
+    "name": "Geschenk des „Abschieds“",
+    "description": {
+      "0": "Der Blumenschmuck, den du von Lyney bei der Zauberschau bekommen hast, die Lumidouce-Glockenblume, die den Abschied repräsentiert."
+    }
+  },
+  "DelightfulEncounter": {
+    "name": "„Eine schöne Begegnung“",
+    "description": {
+      "0": "Der Blumenschmuck, den du von Lyney bei der Zauberschau bekommen hast, die Lumidouce-Glockenblume, die den Abschied repräsentiert, und die Regenbogenrose, die für Leidenschaft steht. Abschied und Begegnung sind die zwei Seiten derselben Medaille, aber was zählt, ist das Hier und Jetzt."
+    }
+  },
+  "RedStone": {
+    "name": "„Roter Stein“",
+    "description": {
+      "0": "Rotes Erz, das du zusammen mit Mamère gesammelt hast. Es heißt, dass dieses Erz zur Herstellung von Farbstoffen verwendet werden kann.",
+      "1": "Obwohl es sich um Erz handelt, scheint es aus irgendeinem Grund einen schwachen Hauch Wärme abzugeben, wenn man es berührt ... vielleicht ja nur Einbildung?"
+    }
+  },
+  "Treasure": {
+    "name": "„Schatz“",
+    "description": {
+      "0": "Eine alte Taschenuhr.",
+      "1": "Man kann kein Pendel in ihrem Inneren mehr hören. Und das Gehäuse kann nicht geöffnet werden."
+    }
+  },
+  "HolyBladeOfNarzissenkreuz": {
+    "name": "Heiliges Schwert des Narzissenkreuzes",
+    "description": {
+      "0": "Ein heiliges Schwert aus einer Geschichte.",
+      "1": "Es hat keinen Besitzer."
+    }
+  },
+  "GreenFeatherAccessory": {
+    "name": "Smaragdgrüne Feder",
+    "description": {
+      "0": "Manchmal hat diese Feder die Macht, eine Geschichte voranzutreiben oder zu beenden.",
+      "1": "Denn schon ihr Erscheinen stellt eine Macht dar, die über die Geschichte hinausgeht.",
+      "2": "<br/>",
+      "3": "Obwohl sie uralt ist, ist sie gut erhalten. Einst wurde sie von mehr als einer Person geschätzt."
+    }
+  },
+  "TypewriterKeycap": {
+    "name": "Tastenkappe einer Schreibmaschine",
+    "description": {
+      "0": "Eine neu gekaufte Tastenkappe. Auch wenn sie nicht ganz zu den bereits auf der Schreibmaschine vorhandenen passt ... Na ja, für den Moment müssen wir uns damit begnügen."
+    }
+  },
+  "Lakelight": {
+    "name": "„Seebrise“",
+    "description": {
+      "0": "Dieses Parfüm heißt „Seebrise“. Semaine bevorzugt diesen Typ. Ob sie wohl ein wenig für die Arbeit aufträgt ..."
+    }
+  },
+  "Fry": {
+    "name": "Fischbrut",
+    "description": {
+      "0": "Fischbruten, die du von Batasso erhalten hast. Es heißt, dass diese Fische von ihm handverlesen wurden und perfekt für das Überleben in diesen Gewässern geeignet sind ..."
+    }
+  },
+  "OperaHouseSwitcherooCaseRecord": {
+    "name": "Fallakte zu „Opernhaus-Tausch-Dich-Trick“",
+    "description": {
+      "0": "Ein ausführlicher Fallbericht über den Mord und das Verschwinden eines Mädchens, die sich bei dem Austauschzauber von Lyney und Lynette in der „Opéra Épiclèse“ abgespielt haben. Wenn du bei den Ermittlungen nicht weiterkommst, solltest du deine gesammelten Anhaltspunkte und Beweise noch einmal durchgehen und deine Gedanken ordnen."
+    }
+  },
+  "WaterAndMissingPersonCaseRecord": {
+    "name": "Fallakte zu „Wasser und die Vermissten“",
+    "description": {
+      "0": "Ein ausführlicher Fallbericht über den Mord im Zusammenhang mit Navias Vater Callas sowie das damit verbundene mysteriöse Verschwinden der Mädchen. Wenn du bei den Ermittlungen nicht weiterkommst, solltest du deine gesammelten Anhaltspunkte und Beweise noch einmal durchgehen und deine Gedanken ordnen."
+    }
+  },
+  "JabberwocksHolySword": {
+    "name": "Heiliges Schwert von Jabberwock",
+    "description": {
+      "0": "Ein heiliges Schwert aus einer Geschichte."
+    }
+  },
   "AbsolutionSeekersTestament": {
     "name": "Vermächtnis eines Erlösungssuchenden",
     "description": {
       "0": "Ein fein säuberlich gefaltetes, an den Faltstellen vergilbtes Blatt Briefpapier, das du in der „Veluriyam-Mirage“ gefunden hast. Man merkt schnell, dass es jemand vor langer Zeit in der Mirage zurückgelassen hat."
     }
+  },
+  "EnigmaticPageIV": {
+    "name": "Mysteriöse Buchseite IV",
+    "description": {
+      "0": "Eine alte Seite, deren Inhalt völlig unverständlich ist.",
+      "1": "Vielleicht gibt es eine Möglichkeit, den Inhalt zu interpretieren?"
+    }
+  },
+  "EnigmaticPageV": {
+    "name": "Mysteriöse Buchseite V",
+    "description": {
+      "0": "Eine alte Seite, deren Inhalt völlig unverständlich ist.",
+      "1": "Vielleicht gibt es eine Möglichkeit, den Inhalt zu interpretieren?"
+    }
+  },
+  "EnigmaticPageVI": {
+    "name": "Mysteriöse Buchseite VI",
+    "description": {
+      "0": "Eine alte Seite, deren Inhalt völlig unverständlich ist.",
+      "1": "Vielleicht gibt es eine Möglichkeit, den Inhalt zu interpretieren?"
+    }
+  },
+  "EnigmaticPageVII": {
+    "name": "Mysteriöse Buchseite VII",
+    "description": {
+      "0": "Eine alte Seite, deren Inhalt völlig unverständlich ist.",
+      "1": "Vielleicht gibt es eine Möglichkeit, den Inhalt zu interpretieren?"
+    }
+  },
+  "EnigmaticPageVIII": {
+    "name": "Mysteriöse Buchseite VIII",
+    "description": {
+      "0": "Eine alte Seite, deren Inhalt völlig unverständlich ist.",
+      "1": "Vielleicht gibt es eine Möglichkeit, den Inhalt zu interpretieren?"
+    }
+  },
+  "EnigmaticPageIX": {
+    "name": "Mysteriöse Buchseite IX",
+    "description": {
+      "0": "Eine alte Seite, deren Inhalt völlig unverständlich ist.",
+      "1": "Vielleicht gibt es eine Möglichkeit, den Inhalt zu interpretieren?"
+    }
+  },
+  "EnigmaticPageX": {
+    "name": "Mysteriöse Buchseite X",
+    "description": {
+      "0": "Eine alte Seite, deren Inhalt völlig unverständlich ist.",
+      "1": "Vielleicht gibt es eine Möglichkeit, den Inhalt zu interpretieren?"
+    }
+  },
+  "EnigmaticPageXI": {
+    "name": "Mysteriöse Buchseite XI",
+    "description": {
+      "0": "Eine alte Seite, deren Inhalt völlig unverständlich ist.",
+      "1": "Vielleicht gibt es eine Möglichkeit, den Inhalt zu interpretieren?"
+    }
+  },
+  "EnigmaticPageXII": {
+    "name": "Mysteriöse Buchseite XII",
+    "description": {
+      "0": "Eine alte Seite, deren Inhalt völlig unverständlich ist.",
+      "1": "Vielleicht gibt es eine Möglichkeit, den Inhalt zu interpretieren?"
+    }
+  },
+  "EnigmaticPageXIII": {
+    "name": "Mysteriöse Buchseite XIII",
+    "description": {
+      "0": "Eine alte Seite, deren Inhalt völlig unverständlich ist.",
+      "1": "Vielleicht gibt es eine Möglichkeit, den Inhalt zu interpretieren?"
+    }
+  },
+  "MelodyOfVesta": {
+    "name": "Vestas Lied",
+    "description": {
+      "0": "Eine Kupferplatte, die angeblich eine Partitur mit einer uralten Melodie darstellt, die aber aufgrund der seltsamen Notation schwer zu verstehen ist."
+    }
+  },
+  "TopyassToken": {
+    "name": "Topyas „Andenken“",
+    "description": {
+      "0": "Das Andenken, das die selbsternannte Musikerin Topyas dir gegeben hat. Es soll ein Teil sein, um die Meeresschneckenharfe zu spielen."
+    }
+  },
+  "StrangeOre": {
+    "name": "Seltsames Erz",
+    "description": {
+      "0": "Ein Erz, das einen merkwürdigen Glanz ausstrahlt. Es ist ziemlich kompakt und von robuster Beschaffenheit."
+    }
+  },
+  "SpecialClock": {
+    "name": "Spezielle Uhr",
+    "description": {
+      "0": "Das Testmodell einer Uhr aus einem besonderen Material. Der Verschleiß durch die Reibung des Uhrwerks wurde signifikant herabgesetzt. Sie ist wie eine Muschel aufgebaut und kann wohl auch unter Wasser eingesetzt werden."
+    }
+  },
+  "AncientLog": {
+    "name": "Uraltes Protokoll",
+    "description": {}
+  },
+  "AncientInvestigativeReport": {
+    "name": "Uralter Untersuchungsbericht",
+    "description": {}
+  },
+  "AncientNaturalHistoryExcerpts": {
+    "name": "Auszüge aus der alten Enzyklopädie",
+    "description": {}
+  },
+  "AncientNotes": {
+    "name": "Alte Notizen",
+    "description": {}
+  },
+  "CoffeeBrewingIngredients": {
+    "name": "Zutat für Kaffee",
+    "description": {
+      "0": "Ein Stoff, den Arouet hergestellt hat. Man kann ihn direkt in den Kaffee geben."
+    }
+  },
+  "SpeciallyCookedFish": {
+    "name": "Speziell zubereiteter Fisch",
+    "description": {
+      "0": "Fisch, den Iaune mit einer speziell Methode behandelt hat. Die Veilchengold-Anglermöwen scheinen ihn besonders zu mögen ..."
+    }
+  },
+  "EnhancedTruesightPotion": {
+    "name": "Spezialversion des „Tranks des wahren Sehens“",
+    "description": {
+      "0": "Die spezielle Version des „Tranks des wahren Sehens“. Wenn du ihn trinkst, wer weiß, was für seltsame Wirkungen du dann verspürst ..."
+    }
+  },
+  "Bait": {
+    "name": "Fischköder",
+    "description": {
+      "0": "Der Köder, den du von Boucicaut erhalten hast. Hoffentlich wird er Roialte helfen, mehr Fische beim Angeln zu bekommen ..."
+    }
+  },
+  "MysteriousCore": {
+    "name": "Mysteriöser Kern",
+    "description": {
+      "0": "Ein mysteriöser Kern, den du von der geheimnisvollen Maschine erhalten hast.",
+      "1": "Er sieht zwar aus wie ein Zahnrad, ist tatsächlich aber ein Kern in der Form eines Zahnrads. Wirklich sehr mysteriös."
+    }
+  },
+  "DrainedConchCup": {
+    "name": "Ausgetrocknete Muschelschale",
+    "description": {
+      "0": "Ein uraltes Muschelgefäß, das vielleicht auf eine noch ältere Zivilisation zurückgeht."
+    }
+  },
+  "NavigationLogFragment": {
+    "name": "Fragment eines Logbuchs",
+    "description": {
+      "0": "Fragment eines Logbuchs"
+    }
+  },
+  "DamagedDiary": {
+    "name": "Schlecht erhaltenes Tagebuch",
+    "description": {
+      "0": "Schlecht erhaltenes Tagebuch"
+    }
+  },
+  "SuspiciousFowl": {
+    "name": "Fragwürdiges Geflügel",
+    "description": {
+      "0": "Geflügelfleisch, das aus irgendeinem Grund am Straßenrand lag. Vermutlich stammt es von einem Vogel, der einen Unfall hatte."
+    }
+  },
+  "FiberyRomaritimeFlowers": {
+    "name": "Faserige Romaritime-Blume",
+    "description": {
+      "0": "Romaritime-Blumen, die du gepflügt hast, um Lyney mit seiner Zaubertasche zu helfen. Die Romaritime-Blumen in dieser Gegend sollen reich an Pflanzenfasern sein und sich deshalb gut für Zaubertaschen eignen."
+    }
+  },
+  "ChildesVision": {
+    "name": "Göttliches Auge des Grafen",
+    "description": {
+      "0": "Der Graf hat anscheinend manchmal die Kontrolle über die Elementarkraft drin verloren. Das Göttliche Auge hat sein Leuchten verloren, nachdem sein Besitzer es zurückgelassen hat."
+    }
+  },
+  "MagicPocketMaterials": {
+    "name": "Materialien zur Herstellung von Zaubertaschen",
+    "description": {
+      "0": "Um mit der „prophezeiten Krise“ fertigzuwerden, kann es nicht schaden, mehr Zaubertaschen herzustellen. Diese Tasche voller Materialien ist eine aufrichtige Geste des guten Willens von dir, Lyney, Fréminet und allen anderen."
+    }
+  },
+  "MagicPocket": {
+    "name": "Zaubertasche",
+    "description": {
+      "0": "Eine Zauberrequisite im Stile Lyneys. Sie ist nicht nur bei Zaubervorstellungen hilfreich, sondern hat auch ein riesiges Fassungsvermögen und kann den Leuten von Fontaine helfen, die „prophezeite Krise“ zu bewältigen."
+    }
+  },
+  "PucasToken": {
+    "name": "Pucas „Andenken“",
+    "description": {
+      "0": "Pucas Andenken, das sie in den Tiefen der Mine verloren hat. Beeil dich und gib es ihr zurück!"
+    }
+  },
+  "AStory": {
+    "name": "Eine Geschichte",
+    "description": {}
   },
   "SilkFlowerSeed": {
     "name": "Seidenblumensamen",
@@ -17551,6 +18894,30 @@
     "name": "Sumeru-Rosen-Samen",
     "description": {
       "0": "Ein Samen, den du der Saatschachtel entnommen hast. Ein Qualitätssamen voller Leben, der nur darauf wartet, auf den Feldern des Kannenreichs gepflanzt zu werden. Nach einiger Zeit wächst daraus eine Sumeru-Rose."
+    }
+  },
+  "PluieLotusSeed": {
+    "name": "Pluie-Lotos-Samen",
+    "description": {
+      "0": "Ein Samen, den du der Saatschachtel entnommen hast. Ein Qualitätssamen voller Leben, der nur darauf wartet, auf den Feldern des Kannenreichs gepflanzt zu werden. Nach einiger Zeit wächst daraus ein Pluie-Lotos."
+    }
+  },
+  "MarcotteSeed": {
+    "name": "Marcotte-Samen",
+    "description": {
+      "0": "Ein Samen, den du der Saatschachtel entnommen hast. Ein Qualitätssamen voller Leben, der nur darauf wartet, auf den Feldern des Kannenreichs gepflanzt zu werden. Nach einiger Zeit wächst daraus eine Marcotte."
+    }
+  },
+  "LumidouceBellSeed": {
+    "name": "Lumidouce-Glockenblume-Samen",
+    "description": {
+      "0": "Ein Samen, den du der Saatschachtel entnommen hast. Ein Qualitätssamen voller Leben, der nur darauf wartet, auf den Feldern des Kannenreichs gepflanzt zu werden. Nach einiger Zeit wächst daraus eine Lumidouce-Glockenblume."
+    }
+  },
+  "RainbowRoseSeed": {
+    "name": "Regenbogenrose-Samen",
+    "description": {
+      "0": "Ein Samen, den du der Saatschachtel entnommen hast. Ein Qualitätssamen voller Leben, der nur darauf wartet, auf den Feldern des Kannenreichs gepflanzt zu werden. Nach einiger Zeit wächst daraus eine Regenbogenrose."
     }
   },
   "Medaka": {
@@ -17757,6 +19124,61 @@
       "1": "Die jadefarbigen Vertreter der Axt-Marline lieben es, sich in Gebieten mit einer besonders hohen Menge an Wasserpflanzen aufzuhalten. Ihr Körper ist sehr gut an diese Umgebung angepasst und darin getarnt. Kleine Fische erkennen seinen Körper beim Durchqueren der Pflanzen oft nicht und schwimmen dann gegen seinen Körper, was sie benommen macht. Der Marlin wird dadurch aber nicht aufgestachelt und manchmal bietet er seinen Nachbarn auch einen Unterschlupf an."
     }
   },
+  "StreamingAxeMarlin": {
+    "name": "Wellenblau-Axt-Marlin",
+    "description": {
+      "0": "Ein Fisch mit spezieller Form, ein entfernter Verwandter der Schmetterlingsfische aus Fontaine. Diese Art von Fisch hat ein sehr breites Skelett und einen einzigartig geschwungenen Körper. Man sagt, dass die Angelrute des ersten Fischers, der so einen Fisch aus dem Wasser gezogen hat, schräg über die Schwanzflosse des Fisches verlief und so einer Hellebarde ähnelte, wodurch die Axt in den Namen des Fisches kam. Verglichen mit seiner wissenschaftlichen Bezeichnung, „Ankerhaken-Schmetterlingsfisch“, ist dieser Name deutlich interessanter, weshalb er im Volk Verbreitung findet.",
+      "1": "Es heißt, dass der Axt-Marlin mit seiner „wellenblauen“ Farbe aus den Gewässern von Sumeru nach Fontaine migriert sei und damit einen Spezialfall darstelle. Im Vergleich zu seinen sanftmütigen Verwandten aus Sumeru besitzt der Wellenblau-Axt-Marlin einen beharrlicheren Charakter und kann auch in widrigen Umgebungen lange Zeit überleben oder über große Strecken migrieren, wobei er im Hinblick auf die zurückgelegte Distanz sogar den Vergleich mit Handelsschiffen nicht scheuen muss. Daher sehen einige Matrosen in ihm ein Symbol für Mut und Durchhaltevermögen."
+    }
+  },
+  "RipplingHeartfeatherBass": {
+    "name": "Plätschernder Herzfederbarsch",
+    "description": {
+      "0": "Eine außergewöhnliche Fischart, die von der Seite betrachtet wie ein Herz anmutet. Es wird ihr eine eindeutige Verwandtschaft mit dem Barsch nachgesagt, wobei Gelehrte sie aufgrund ihrer langen federartigen und knorpeligen Bauch- und Rückenflossen treffenderweise als „Herzfederbarsch“ bezeichnen.",
+      "1": "Als einer der wichtigsten Vertreter der Herzfederbarsche verfügt der plätschernde Herzfederbarsch über Schwimmfähigkeiten, die im Widerspruch zu seinem äußeren Erscheinungsbild stehen und dank derer er sich sogar in rauer See fortbewegen kann. Es heißt, dass wenn der Fisch an der Wasseroberfläche erscheint und gegen starke Strömungen anschwimmt, seine einzigartigen Flossen ein plätscherndes Geräusch erzeugen. Die größte Herausforderung stellt das Erkennen dieser Fischart mit seiner Tarnfarbe in blauen Gewässern dar, sodass die meisten Fischer die Gelegenheit versäumt haben, dem außergewöhnlichen Klang mit ihren eigenen Ohren zu lauschen."
+    }
+  },
+  "BlazingHeartfeatherBass": {
+    "name": "Glühender Herzfederbarsch",
+    "description": {
+      "0": "Eine außergewöhnliche Fischart, die von der Seite betrachtet wie ein Herz anmutet. Es wird ihr eine eindeutige Verwandtschaft mit dem Barsch nachgesagt, wobei Gelehrte sie aufgrund ihrer langen federartigen und knorpeligen Bauch- und Rückenflossen treffenderweise als „Herzfederbarsch“ bezeichnen.",
+      "1": "Dieser Fisch fällt aufgrund seiner einzigartigen sonnengleichen Farbgebung im Wasser besonders auf, was ihm seinen Namen „glühender Herzfederbarsch“ verleiht. Angeblich soll es sich um eine besondere Art des Selbstschutzes handeln, denn einige Fische nehmen ihn mit ihren Sehorganen als „unbekanntes Objekt, das im Wasser brennt“ wahr und meiden ihn daher aktiv. Ganz im Gegensatz zu seinem glühenden Äußeren, hat diese Art von Herzfederbarschen eine vergleichsweise niedrige Körpertemperatur, frisst sehr wenig und hält sich sogar absichtlich in seichten Gewässern auf, um gelegentlich ein Sonnenbad zu nehmen."
+    }
+  },
+  "MaintenanceMekInitialConfiguration": {
+    "name": "Unterstützungs-Mecha – Grundtyp",
+    "description": {
+      "0": "Eine kompakte Hilfsvorrichtung, die zur Unterstützung von unter Wasser operierenden Uhrwerk-Mecha und zur Erhöhung der Einsatzquote der Flotte entwickelt wurde. Das ursprüngliche Ziel des Entwurfs war es, Rückstände wie Abfall und Pflanzenreste unter Wasser zu entfernen, sodass sich diese nicht in Schlüsselkomponenten von Uhrwerk-Mecha festsetzen können, um so deren Ausfallrate möglichst gering zu halten. Aus einem anderen Blickwinkel betrachtet haben sie zweifelsohne die Rolle von „Unterwasser-Reinigungskräften“ übernommen, was für das Ökosystem von Fontaine äußerst förderlich ist.",
+      "1": "Diese Art von Mecha wurde mit sensiblen Sensoren ausgestattet, um ihre Ziele mithilfe ihres effizienten „Geruchsvermögens“ aufzuspüren und die optischen Merkmale von Unterwasserabfall auszumachen. Daher können sie gelegentlich Fischködern nicht widerstehen und werden von Fischern, die sie an den Haken bekommen, liebevoll „Gewässerschutzfische“ oder „Eisenfische“ genannt.",
+      "2": "Dieses aus leichtem Holz und kostengünstigen Metallen gefertigte Modell stellt die erste Reihe von Unterstützungs-Mecha dar, die nach Erreichen einer zuverlässigen Massenproduktion produziert wurde, und verfügt über eine grundlegende Fähigkeit, um den Zweck zu erfüllen, für den es entwickelt wurde. Da jedoch die Lebensdauer dieses Modells nicht allzu hoch ist, wurden sie in beträchtlicher Anzahl im „Gruppenrotation“-Modus eingesetzt, was es ermöglicht, die durch die erreichte Lebensdauer defekten oder Fehlfunktionen beeinträchtigten Mecha mit Funktionstüchtigen auszutauschen, die zuvor im Wasser platziert worden waren und entsprechend aktiviert wurden. Daher mag es für den Laien den Eindruck erwecken, als ob „Eisenfische“ im unaufhörlichen Strom erscheinen und sich selbst reproduzieren können. Und wenn man hin und wieder ein paar von ihnen angelt, muss man dann auch kein schlechtes Gewissen haben."
+    }
+  },
+  "MaintenanceMekWaterBodyCleaner": {
+    "name": "Unterstützungs-Mecha – Gewässer-Aufräumer",
+    "description": {
+      "0": "Eine kompakte Hilfsvorrichtung, die zur Unterstützung von unter Wasser operierenden Uhrwerk-Mecha und zur Erhöhung der Einsatzquote der Flotte entwickelt wurde. Das ursprüngliche Ziel des Entwurfs war es, Rückstände wie Abfall und Pflanzenreste unter Wasser zu entfernen, sodass sich diese nicht in Schlüsselkomponenten von Uhrwerk-Mecha festsetzen können, um so deren Ausfallrate möglichst gering zu halten. Aus einem anderen Blickwinkel betrachtet haben sie zweifelsohne die Rolle von „Unterwasser-Reinigungskräften“ übernommen, was für das Ökosystem von Fontaine äußerst förderlich ist.",
+      "1": "Diese Art von Mecha wurde mit sensiblen Sensoren ausgestattet, um ihre Ziele mithilfe ihres effizienten „Geruchsvermögens“ aufzuspüren und die optischen Merkmale von Unterwasserabfall auszumachen. Daher können sie gelegentlich Fischködern nicht widerstehen und werden von Fischern, die sie an den Haken bekommen, liebevoll „Gewässerschutzfische“ oder „Eisenfische“ genannt.",
+      "2": "Im Gegensatz zu dem weit verbreiteten „Grundtyp“ wurde die Oberfläche des ausgereifteren und in Serie gefertigten Modells „Gewässer-Aufräumer“ mit einer überaus korrosionsbeständigen Lackierung versehen. Damit die Mecha nach Inbetriebnahme nicht in Vergessenheit geraten, lehnten die an dem Projekt beteiligten Forscher das Modell der einmaligen Nutzung ab und führten stattdessen ein System zur periodischen Rückgewinnung und Wartung ein. Dabei senden die Forscher ein in einer bestimmten Frequenz blinkendes Peilsignal an die Sensoren der Unterstützungs-Mecha, um die Geräte für Überprüfungen und Reparaturen zurückzuholen und sie anschließend für den weiteren Betrieb wieder ins Wasser zu lassen. Dieses spezielle Peilsignal entwickelte sich allmählich zu einer Art Köder für Unterstützungs-Mecha, der auf unbekannte Weise den Weg in das Angelset von gewöhnlichen Fischern gefunden hat."
+    }
+  },
+  "MaintenanceMekSituationController": {
+    "name": "Unterstützungs-Mecha – Arbeitsbedingungs-Stabilisator",
+    "description": {
+      "0": "Eine kompakte Hilfsvorrichtung, die zur Unterstützung von unter Wasser operierenden Uhrwerk-Mecha und zur Erhöhung der Einsatzquote der Flotte entwickelt wurde. Das ursprüngliche Ziel des Entwurfs war es, Rückstände wie Abfall und Pflanzenreste unter Wasser zu entfernen, sodass sich diese nicht in Schlüsselkomponenten von Uhrwerk-Mecha festsetzen können, um so deren Ausfallrate möglichst gering zu halten. Aus einem anderen Blickwinkel betrachtet haben sie zweifelsohne die Rolle von „Unterwasser-Reinigungskräften“ übernommen, was für das Ökosystem von Fontaine äußerst förderlich ist.",
+      "1": "Diese Art von Mecha wurde mit sensiblen Sensoren ausgestattet, um ihre Ziele mithilfe ihres effizienten „Geruchsvermögens“ aufzuspüren und die optischen Merkmale von Unterwasserabfall auszumachen. Daher können sie gelegentlich Fischködern nicht widerstehen und werden von Fischern, die sie an den Haken bekommen, liebevoll „Gewässerschutzfische“ oder „Eisenfische“ genannt.",
+      "2": "Unter bestimmten Umständen verwechseln die Unterstützungs-Mecha die Nahrung von Meerestieren mit Abfall, den es zu beseitigen gilt, was zu einigen Konflikten mit dem jeweiligen Meerestier führen kann, bei denen vergleichsweise leistungsschwache und kleine Mecha im Nachteil liegen. Die Anzahl der auf diese Weise beschädigten Unterstützungs-Mecha stieg drastisch an.",
+      "3": "Um die beiden Vorgängermodelle zu schützen und ihnen eine sichere Arbeitsumgebung zu gewährleisten, stützten sich Forscher auf ihren ursprünglichen Rahmenentwurf und erhöhten damit die Leistung der Kernstruktur. Dabei entwickelten sie ein neues drittes Modell, das über gewisse Kampffähigkeiten verfügt und durch gezielte Kollisionen Meerestiere vertreiben kann. Nun können nicht nur Unterstützungs-Mecha ungestört ihre Arbeit verrichten, sondern dieses Modell kann auch ungehindert über die bestehende Produktionskette eingegliedert und in der Massenproduktion angefertigt werden.",
+      "4": "Allerdings wurden diese Entwicklungspläne vom Forschungsinstitut Fontaine eindringlich mit der Begründung gestoppt, dass man die alten Unterstützungs-Mecha gar nicht mehr benötige, wenn sogar diese biligen Modelle imstande sind, Meerestiere zu vertreiben. Tatsächlich stellte sich jedoch heraus, dass diese „Arbeitsbedingungs-Stabilisatoren“ nicht ihre konzipierte Aufgabe erfüllten, sondern sich vielmehr an friedlebenden Fischen vergriffen und dadurch der Umwelt erheblichen Schaden zufügten. Aus diesem Grund mussten die Forscher einige ihrer „Arbeitsbedingungs-Stabilisatoren“ deaktivieren und ihr Angriffsverhalten einschränken."
+    }
+  },
+  "MaintenanceMekPlatinumCollection": {
+    "name": "Unterstützungs-Mecha – Platin-Klassiker",
+    "description": {
+      "0": "Eine kompakte Hilfsvorrichtung zur Unterstützung von unter Wasser operierenden Uhrwerk-Mecha und zur Erhöhung der Einsatzquote der Flotte. Sie sollten ursprünglich Rückstände wie Abfall und Pflanzenreste unter Wasser entfernen, damit diese nicht die Schlüsselkomponenten von Uhrwerk-Mecha verstopften.",
+      "1": "Bei diesen Platin-Klassikern unter den Unterstützungs-Mecha handelt es um glänzende Gedenkmodelle, die exklusiv vom Entwicklerteam produziert werden. Das Ziel war es, Sponsoren für ihr Projekt zu gewinnen, indem wohlhabenden Händlern diese Modelle als seltene Zierfische geschenkt wurden. Leider scheiterte das Vorhaben, die Pläne wurden über Bord geworfen und die Platin-Klassiker als Spielzeuge verkauft, um den schwindenden finanziellen Mitteln für ihr Projekt entgegenzuwirken.",
+      "2": "Letztendlich kam es aufgrund der allseits bekannten Vorfällen zur vollständigen Auflösung des Entwicklerteams und auch Folgeprojekte wurden gestrichen. Derzeit treiben diese Mecha unbewacht in den Gewässern von Fontaine umher, selbst die im Voraus produzierten „Platin-Klassiker“ ereilte ihr Schicksal und sanken auf den Meeresgrund. Heute halten sie den Ruf der markantesten und wertvollsten „Fische“ in den Gewässern von Fontaine inne. Als einige Projekte des Forschungsinstituts der Öffentlichkeit zugänglich gemacht wurden, stürzten sich Reporter des Dampfvogels auf die Materialen, verglichen diese miteinander und führten gründliche Untersuchungen durch. Dabei stellten sie fest, dass „sich der Verschmutzungsgrad in den Gewässern von Fontaine nach der Freisetzung der Unterstützungs-Mecha nicht signifikant geändert hat und die Wirksamkeit des Projekts fraglich ist“. Seitdem schwimmen bis heute die funktionstüchtigen Platin-Klassiker in den Gewässern von Fontaine und Fischer strahlen nur so voller Stolz, wenn sie diesen Fisch in ihrem Besitz willkommen heißen können, denn der Platin-Klassiker gilt als ebenso selten wie die kostbarsten Zierfische anderer Regionen."
+    }
+  },
   "WingsOfFirstFlight": {
     "name": "Anfängerschwingen",
     "description": {
@@ -17822,6 +19244,12 @@
     "name": "Flügel des Sternenbanketts",
     "description": {
       "0": "Die Ausgabe eines Windgleiters. Ein Geschenk für denjenigen, der die Feierlichkeiten der fernen Welt miterlebt hat."
+    }
+  },
+  "WingsOfMercifulWrathfulWaters": {
+    "name": "Flügel der barmherzigen Wut der Wellen",
+    "description": {
+      "0": "Die Ausgabe eines Windgleiters. Ein großzügiges Geschenk für die Anerkennung, die du in Fontaine erhalten hast."
     }
   },
   "RadiantSpincrystal1": {
@@ -18508,6 +19936,60 @@
       "0": "Ein köstliches Gericht mit einer Extraportion Würze! Es verströmt ein betörendes Aroma ... aber wem wird dieses Gericht schmecken? Lade deine Freunde ein und bring sie dazu, dieses neue Gericht zu probieren!"
     }
   },
+  "RadiantSpincrystal99": {
+    "name": "Strahlender Drehkristall XCIX",
+    "description": {
+      "0": "Dieser wundersame Kristall hat einen gewissen Rhythmus, wie etwas Schönes, das aus zarter Seide gewebt ist. Diese Gegenstände kannst du überall auf dem Festland oder bei Händlern finden, die Einzigartiges sammeln. Die Melodie, die in diesem Kristall enthalten ist, kann in deiner Kanne der Vergänglichkeit durch „Höchste Euphonie – Musik in der Luft“ oder „Höchste Euphonie – Verflochtene Klänge“ wieder zum Leben erweckt werden. In diesem strahlenden Drehkristall ist eine mysteriöse Melodie aus Fontaine enthalten."
+    }
+  },
+  "RadiantSpincrystal100": {
+    "name": "Strahlender Drehkristall C",
+    "description": {
+      "0": "Dieser wundersame Kristall hat einen gewissen Rhythmus, wie etwas Schönes, das aus zarter Seide gewebt ist. Diese Gegenstände kannst du überall auf dem Festland oder bei Händlern finden, die Einzigartiges sammeln. Die Melodie, die in diesem Kristall enthalten ist, kann in deiner Kanne der Vergänglichkeit durch „Höchste Euphonie – Musik in der Luft“ oder „Höchste Euphonie – Verflochtene Klänge“ wieder zum Leben erweckt werden. In diesem strahlenden Drehkristall ist eine mysteriöse Melodie aus Fontaine enthalten."
+    }
+  },
+  "RadiantSpincrystal101": {
+    "name": "Strahlender Drehkristall CI",
+    "description": {
+      "0": "Dieser wundersame Kristall hat einen gewissen Rhythmus, wie etwas Schönes, das aus zarter Seide gewebt ist. Diese Gegenstände kannst du überall auf dem Festland oder bei Händlern finden, die Einzigartiges sammeln. Die Melodie, die in diesem Kristall enthalten ist, kann in deiner Kanne der Vergänglichkeit durch „Höchste Euphonie – Musik in der Luft“ oder „Höchste Euphonie – Verflochtene Klänge“ wieder zum Leben erweckt werden. In diesem strahlenden Drehkristall ist eine mysteriöse Melodie aus Fontaine enthalten."
+    }
+  },
+  "RadiantSpincrystal102": {
+    "name": "Strahlender Drehkristall CII",
+    "description": {
+      "0": "Dieser wundersame Kristall hat einen gewissen Rhythmus, wie etwas Schönes, das aus zarter Seide gewebt ist. Diese Gegenstände kannst du überall auf dem Festland oder bei Händlern finden, die Einzigartiges sammeln. Die Melodie, die in diesem Kristall enthalten ist, kann in deiner Kanne der Vergänglichkeit durch „Höchste Euphonie – Musik in der Luft“ oder „Höchste Euphonie – Verflochtene Klänge“ wieder zum Leben erweckt werden. In diesem strahlenden Drehkristall ist eine mysteriöse Melodie aus Fontaine enthalten."
+    }
+  },
+  "RadiantSpincrystal103": {
+    "name": "Strahlender Drehkristall CIII",
+    "description": {
+      "0": "Dieser wundersame Kristall hat einen gewissen Rhythmus, wie etwas Schönes, das aus zarter Seide gewebt ist. Diese Gegenstände kannst du überall auf dem Festland oder bei Händlern finden, die Einzigartiges sammeln. Die Melodie, die in diesem Kristall enthalten ist, kann in deiner Kanne der Vergänglichkeit durch „Höchste Euphonie – Musik in der Luft“ oder „Höchste Euphonie – Verflochtene Klänge“ wieder zum Leben erweckt werden. In diesem strahlenden Drehkristall ist eine mysteriöse Melodie aus Fontaine enthalten."
+    }
+  },
+  "RadiantSpincrystal104": {
+    "name": "Strahlender Drehkristall CIV",
+    "description": {
+      "0": "Dieser wundersame Kristall hat einen gewissen Rhythmus, wie etwas Schönes, das aus zarter Seide gewebt ist. Diese Gegenstände kannst du überall auf dem Festland oder bei Händlern finden, die Einzigartiges sammeln. Die Melodie, die in diesem Kristall enthalten ist, kann in deiner Kanne der Vergänglichkeit durch „Höchste Euphonie – Musik in der Luft“ oder „Höchste Euphonie – Verflochtene Klänge“ wieder zum Leben erweckt werden. In diesem strahlenden Drehkristall ist eine mysteriöse Melodie aus Fontaine enthalten."
+    }
+  },
+  "RadiantSpincrystal105": {
+    "name": "Strahlender Drehkristall CV",
+    "description": {
+      "0": "Dieser wundersame Kristall hat einen gewissen Rhythmus, wie etwas Schönes, das aus zarter Seide gewebt ist. Diese Gegenstände kannst du überall auf dem Festland oder bei Händlern finden, die Einzigartiges sammeln. Die Melodie, die in diesem Kristall enthalten ist, kann in deiner Kanne der Vergänglichkeit durch „Höchste Euphonie – Musik in der Luft“ oder „Höchste Euphonie – Verflochtene Klänge“ wieder zum Leben erweckt werden. In diesem strahlenden Drehkristall ist eine mysteriöse Melodie aus Fontaine enthalten."
+    }
+  },
+  "RadiantSpincrystal106": {
+    "name": "Strahlender Drehkristall CVI",
+    "description": {
+      "0": "Dieser wundersame Kristall hat einen gewissen Rhythmus, wie etwas Schönes, das aus zarter Seide gewebt ist. Diese Gegenstände kannst du überall auf dem Festland oder bei Händlern finden, die Einzigartiges sammeln. Die Melodie, die in diesem Kristall enthalten ist, kann in deiner Kanne der Vergänglichkeit durch „Höchste Euphonie – Musik in der Luft“ oder „Höchste Euphonie – Verflochtene Klänge“ wieder zum Leben erweckt werden. In diesem strahlenden Drehkristall ist eine mysteriöse Melodie aus Fontaine enthalten."
+    }
+  },
+  "RadiantSpincrystal107": {
+    "name": "Strahlender Drehkristall CVII",
+    "description": {
+      "0": "Dieser wundersame Kristall hat einen gewissen Rhythmus, wie etwas Schönes, das aus zarter Seide gewebt ist. Diese Gegenstände kannst du überall auf dem Festland oder bei Händlern finden, die Einzigartiges sammeln. Die Melodie, die in diesem Kristall enthalten ist, kann in deiner Kanne der Vergänglichkeit durch „Höchste Euphonie – Musik in der Luft“ oder „Höchste Euphonie – Verflochtene Klänge“ wieder zum Leben erweckt werden. In diesem strahlenden Drehkristall ist eine mysteriöse Melodie aus Fontaine enthalten."
+    }
+  },
   "LanternFiber": {
     "name": "Laternenpapierfasern",
     "description": {
@@ -18641,6 +20123,13 @@
     "description": {
       "0": "Objekt zur Verfeinerung von „Durchdringer der Ibisse“.",
       "1": "Es heißt, dass der Junge, der einmal zum „Ass-Beschwörer“ werden sollte, von den Nachkommen des Königs der Ibisse damit betraut wurde, tagelang Sandfettpuppen zu sammeln, um Wachs für Bogensehnen herzustellen. Doch der legendäre Bogen verschwand mit dem König der Ibisse und kehrte nie wieder zurück. Und so wurde das Rezept für das Wachs von Generation zu Generation weitergegeben, vielleicht ja als Vorbereitung auf den Tag, an dem es wieder seine Verwendung finden könnte."
+    }
+  },
+  "MartensOmniFix": {
+    "name": "Martens Universalschutzmittel",
+    "description": {
+      "0": "Objekt zur Verfeinerung von „Schiffer des Fleuve Cendré“.",
+      "1": "Es kann nicht nur eine Schutzschicht auf der Oberfläche eines bestimmten Materials bilden, um Oxidation und Korrosion des Metalls zu verhindern, sondern schmiert, reinigt und poliert auch. Eine Zeitlang erfreute es sich in Fontaine großer Beliebtheit. In der damaligen Werbung verwendete eine legendäre Figur aus Fleuve Cendré es, um das berühmte gebogene Kupferrohr zu pflegen."
     }
   },
   "FalconsDance": {
@@ -18940,6 +20429,13 @@
       "0": "Wenn du im idealen Spannungsbereich verbleiben kannst, während du fischst, kann diese Rute die während des Kampfes mit dem Fisch benötigte Zeit deutlich reduzieren und die Erfolgsrate erhöhen. Dieser Effekt ist nur in Sumeru wirksam.",
       "1": "<br/>",
       "2": "Eine archaische Angelrute aus Sumeru. Ihr Körper wirkt wie aus weißer Jade geschnitzt, ihre Spule ist mit dunkelgoldenen Mustern verziert und sie ist mit blau-grünen Edelsteinen dekoriert. Unter ihrer puren Ästhetik scheint eine mit dem „Leben“ zusammenhängende Bedeutung zu schlummern. Es heißt, dass die alten Angelruten von Sumeru von Reben umschlungene Äste gewesen seien und viele große Fischer ihre einmaligen „wundersamen Fänge“ mit solchen Angelruten erzielt hätten. Auch heute noch glauben viele Fischer, dass eine Angelrute mit einer solchen Geschichte ihnen viel Glück beim Fang bescheren wird."
+    }
+  },
+  "Wavepiercer": {
+    "name": "Gezeitenspeer",
+    "description": {
+      "0": "Diese schlanke und schön schimmernde Angelrute wurde aus einem neuartigen metallischen Werkstoff des Forschungsinstituts Fontaine hergestellt. Sie ist leicht, aber widerstandsfähig, und an den Verbindungsstellen der mehrteiligen Struktur ist ein hochfester metallverstärkter Leitring angebracht, der ausreicht, um selbst Fische von enormem Gewicht zu heben. Der Rollenhalter, der dem Handschutz einer Waffe ähnelt, schützt den Angler und verhindert, dass er sich an wilden und „harten“ Fischen die Hände verletzt.",
+      "1": "Einigen erfahrenen Fischern zufolge ist diese Rute, die einer Lanze frappierend ähnelt, die ideale Waffe, um es mit der Spezialität von Fontaine aufzunehmen: dem „Eisenfisch“."
     }
   },
   "GenshinImpactANewWorld": {
@@ -20062,6 +21558,69 @@
       "1": "Das Licht der Fantasie, das nur auf der anderen Seite des durchsichtigen Glases existiert, vermag auch die Welt auf dieser Seite leicht zu erhellen."
     }
   },
+  "LyneyPretense": {
+    "name": "Lyney – Täuschung",
+    "description": {
+      "0": "Ein Motiv für Namenskärtchen.",
+      "1": "Einer der Hauptbestandteile der Zauberei besteht darin, Dinge „verschwinden“ zu lassen. Lineys hat ein ganzes Arsenal an Täuschungen in petto. Wenn man als Komplize bereit ist, mal ein Auge zuzudrücken, dann könnte es passieren, dass sich alle Probleme plötzlich in Luft auflösen."
+    }
+  },
+  "LynetteEarnestness": {
+    "name": "Lynette – Wahrwerden",
+    "description": {
+      "0": "Ein Motiv für Namenskärtchen.",
+      "1": "Einer der Hauptbestandteile der Zauberei besteht darin, „plötzlich aus dem Nichts aufzutauchen“. Normalerweise spart Lynette ihre Energie, aber ihre ernste Seite kann auftauchen wie eine Taube aus dem Zauberhut."
+    }
+  },
+  "FreminetProgress": {
+    "name": "Fréminet – Vorwärts",
+    "description": {
+      "0": "Ein Motiv für Namenskärtchen.",
+      "1": "So wie das Uhrwerk sich dreht und dreht, so schreiten die Puppen voran."
+    }
+  },
+  "FontaineJudgment": {
+    "name": "Fontaine – Verhandlung",
+    "description": {
+      "0": "Ein Motiv für Namenskärtchen.",
+      "1": "Das Abzeichen des neuen Hydro-Archon. Es ist keine rechtliche Erklärung erforderlich, denn niemand wagt es, es ohne Erlaubnis zu verwenden."
+    }
+  },
+  "AchievementOrbits": {
+    "name": "Errungenschaft – Pfad",
+    "description": {
+      "0": "Ein Motiv für Namenskärtchen.",
+      "1": "„Allmächtiger, die Universitas Magistrorum hat die von dir gewünschten Vorhersagen getätigt: Die Zwillingssterne sind längst von der Schwerkraft der Erde eingefangen worden ... Nun, nach einem langen Zyklus der Rückkehr kreuzen sich ihre Bahnen erneut.“"
+    }
+  },
+  "AchievementMariner": {
+    "name": "Errungenschaft – Wandern",
+    "description": {
+      "0": "Ein Motiv für Namenskärtchen.",
+      "1": "{F#Die Reisende}{M#Der Reisende} hat mit {F#ihrer}{M#seiner} Hand die tausend Ströme berührt, die der Quelle der Welt entspringen und schließlich in das gleiche Meer zurückfließen werden."
+    }
+  },
+  "FontaineWondrousMachine": {
+    "name": "Fontaine – Innovation",
+    "description": {
+      "0": "Ein Motiv für Namenskärtchen.",
+      "1": "Das Logo der Energiemodule von Fontaines Uhrwerk-Mecha. Es entbrannte eine große Diskussion darüber, ob es als Marke eingetragen werden sollte. Sei einfach vorsichtig, wenn du es verwenden willst."
+    }
+  },
+  "FontaineBigNews": {
+    "name": "Fontaine – Nachrichten",
+    "description": {
+      "0": "Ein Motiv für Namenskärtchen.",
+      "1": "Eingetragenes Warenzeichen des Dampfvogels. Alle Rechte vorbehalten. Sollte eine Verwendung ohne vorherige Genehmigung erfolgen, werden wir unsere Rechte wahren und den Verstoß im vollen Umfang des Gesetzes verfolgen!"
+    }
+  },
+  "TravelNotesPrimordialWaters": {
+    "name": "Erlebnispass – Quellwasser",
+    "description": {
+      "0": "Ein Motiv für Namenskärtchen.",
+      "1": "Der Zeitmesser begleitet den ruhigen Fluss vergehender Jahre, so wie Fische den Wirbel hellen, klaren Quellwassers. Wenn doch alles versiegen muss, warum sind dann meine Gedanken so klar wie eh und je?"
+    }
+  },
   "AnemoculusResonanceStone": {
     "name": "Anemoculus-Resonanzstein",
     "description": {
@@ -20081,7 +21640,7 @@
   "GeoTreasureCompass": {
     "name": "Geo-Schatzkompass",
     "description": {
-      "0": "Im Gebiet von Liyue angewendet kannst du hiermit nahegelegene Truhen aufspüren.",
+      "0": "Im Gebiet von Liyue angewendet kannst du hiermit Truhen in der Nähe aufspüren.",
       "1": "Das Reich des Gesteins ist reich an wertvollen Ressourcen und Schätzen, die in den Bergen und in der Wildnis versteckt sind und nur darauf warten, gefunden zu werden."
     }
   },
@@ -20272,14 +21831,14 @@
   "SeedDispensary": {
     "name": "Saatschachtel",
     "description": {
-      "0": "Eine magische Schachtel, die du von Madame Ping erhalten hast. Ihr zufolge kann man mit dieser Schachtel aus Pflanzen auch Samen „gewinnen“ ... Abhängig von den ursprünglichen Pflanzen können die „gewonnenen“ Samen in das entsprechende Ackerfeld der „Kanne der Vergänglichkeit“ gepflanzt werden.",
-      "1": "Was du pflanzen kannst: Seidenblume, Zuckerblume, Cecilia, Glaslilie, Windmühlenaster, Qingxin, Glasglöckchen, Valbeere, Lampenkraut, Jueyun-Peperoni, Möhre, Rettich, Minze, Champignon, Naku-Kraut, Pferdeschwanz, Goldfischkraut, Lotosfrucht, Wasserlilie, Seegras, Meereslackporling, Harra-Frucht, Zaytun-Pfirsich und Sumeru-Rose."
+      "0": "Eine magische Schachtel, die du von Madame Ping erhalten hast. Laut Madame Ping hat diese Schachtel eine „Samensynthese“ Fähigkeit ... Je nach der ursprünglichen Gestalt der Pflanze, können die „synthetisierten Samen“ in das passende Feld der „Kanne der Vergänglichkeit“ gepflanzt werden.",
+      "1": "Was du pflanzen kannst: Seidenblume, Zuckerblume, Cecilia, Glaslilie, Windmühlenaster, Qingxin, Glasglöckchen, Valbeere, Lampenkraut, Jueyun-Peperoni, Möhre, Rettich, Minze, Champignon, Naku-Kraut, Pferdeschwanz, Goldfischkraut, Lotosfrucht, Wasserlilie, Seegras, Meereslackporling, Harra-Frucht, Zaytun-Pfirsich, Sumeru-Rose, Pluie-Lotos, Marcotte, Lumidouce-Glockenblume und Regenbogenrose."
     }
   },
   "ElectroTreasureCompass": {
     "name": "Elektro-Schatzkompass",
     "description": {
-      "0": "Ein praktisches Werkzeug, um nahegelegene Truhen in Inazuma zu finden.",
+      "0": "Im Gebiet von Inazuma angewendet kannst du hiermit Truhen in der Nähe aufspüren.",
       "1": "Das Land des donnernden Archipels hat in der Vergangenheit viele Wunden erlitten. Die vielen Schatztruhen, die die Inseln übersäen, sind ein Symbol für seine Erholung von diesen Wunden."
     }
   },
@@ -20402,7 +21961,7 @@
   "DendroculusResonanceStone": {
     "name": "Dendroculus-Resonanzstein",
     "description": {
-      "0": "Ein Stein, der in Sumeru verwendet werden kann, um nach Dendroculi in der Nähe zu suchen.",
+      "0": "Im Gebiet von Sumeru angewendet kannst du hiermit verlorene Dendroculi in der Nähe aufspüren.",
       "1": "Ein seltsames Amulett, das den Dendro-Statuen der Sieben ähnlich ist. Es wird ebenfalls von Dendroculi angezogen.",
       "2": "In der Welt gibt es Gras, Bäume, Reben, Blumen und Lebewesen aus der Dendro-Kraft in den verschiedensten Formen und Ausprägungen. Obwohl sie sich im Aussehen und in vielen anderen Aspekten unterscheiden, wurden sie aus demselben Land geboren und werden in dasselbe Land zurückkehren."
     }
@@ -20410,7 +21969,7 @@
   "DendroTreasureCompass": {
     "name": "Dendro-Schatzkompass",
     "description": {
-      "0": "Ein Kompass, der in Sumeru verwendet werden kann, um nach Truhen in der Nähe zu suchen.",
+      "0": "Im Gebiet von Sumeru angewendet kannst du hiermit Truhen in der Nähe aufspüren.",
       "1": "Für manche Menschen liegt der Sinn des Lebens im Erforschen und Entdecken. Wenn sie ihr Ziel erreichen, warten immer reiche Schätze auf sie."
     }
   },
@@ -20566,6 +22125,47 @@
       "0": "Ein Spiegel, hergestellt von Lamiya, einer Gelehrten der Lebenskunde. Kann mit den Apparaten, die die Versuchstiere tragen, verbunden werden, um deren Sichtfeld zu erhalten und es auf dem Spiegel wiederzugeben."
     }
   },
+  "HydroculusResonanceStone": {
+    "name": "Hydroculus-Resonanzstein",
+    "description": {
+      "0": "Im Gebiet von Fontaine angewendet kannst du hiermit verlorene Hydroculi in der Nähe aufspüren.",
+      "1": "Ein seltsamer Talisman, der ähnliche Eigenschaften wie die Hydro-Statuen der Sieben besitzt. Er scheint in der Lage zu sein, den Elementarfluss der Hydroculi aufzuspüren.",
+      "2": "Oculi sind von Natur aus verstreute Stücke der Kraft, die zu den Statuen der Sieben gehören. Es ist daher vernünftig, richtig und rechtmäßig, sie an die Statuen zurückzugeben."
+    }
+  },
+  "HydroTreasureCompass": {
+    "name": "Hydro-Schatzkompass",
+    "description": {
+      "0": "Im Gebiet von Fontaine angewendet kannst du hiermit Truhen in der Nähe aufspüren.",
+      "1": "Die Schätze sind in ganz Fontaine verstreut und niemand beansprucht sie für sich. In den meisten Fällen verletzt du keine Gesetze, wenn du sie dir aneignest."
+    }
+  },
+  "CrystalflyTrap": {
+    "name": "Kristallschmetterling-Lockfalle",
+    "description": {
+      "0": "Die „Kristallschmetterling-Lockfalle“ wurde von dem Spitzenforscher Fawitzki am Forschungsinstitut für kinetische Energie Fontaine entwickelt.",
+      "1": "Wenn das Gerät aufgebaut und mit bestimmten Materialien befüllt wurde, nimmt es seinen Betrieb auf und lockt Kristallschmetterlinge in sein Inneres.",
+      "2": "Das Gerät wurde entwickelt, weil man für das Projekt „Niedrigenergie-Leuchtgerät“ unter Leitung von Fawitzki eine Unmenge an Kristallkernen als Forschungsmaterial brauchte.",
+      "3": "Aber aus den verschiedensten Gründen wurde die Forschung an diesem Projekt eingestellt.",
+      "4": "„Wir sind hier, um dem fleißigen Herrn Fawitzki zu gedenken. Wir hoffen aufrichtig, dass es Menschen gibt, die seine Forschungen fortsetzen werden. Das Institut wird in allen Bereichen, in denen es sinnvoll erscheint, die größtmögliche Unterstützung leisten.“"
+    }
+  },
+  "WindPoweredWindGenerator": {
+    "name": "Windgetriebener Windgenerator",
+    "description": {
+      "0": "Der „Windgenerator“ wurde von dem Spitzenforscher Refait am Forschungsinstitut für kinetische Energie Fontaine entwickelt.",
+      "1": "Nach der Aktivierung kann dieses Gerät einen starken Aufwärtsschub für den Benutzer des Windgleiters bereitstellen.",
+      "2": "Aber durch technische Einschränkungen braucht das Gerät die Unterstützung eines starken Windes, um anzulaufen. Die Stärke der benötigten Windkraft entspricht annähernd der Stärke des Luftstroms, der durch den Flug mit einem Windgleiter verursacht wird.",
+      "3": "„Hm ... Du meinst also, man kann das Gerät nur anwerfen, wenn man mit einem Windgleiter fliegt?“",
+      "4": "„Aber wollte ich das Gerät denn nicht nur deswegen anwerfen, weil ich den starken Wind für das Fliegen mit dem Windgleiter brauche?!“"
+    }
+  },
+  "BressonsSpecialKamera": {
+    "name": "Besonderer „Fotoapparat“ von Bresson",
+    "description": {
+      "0": "Ein „Fotoapparat“, den Bresson speziell modifiziert hat. Er soll aus den besten Materialien bestehen und äußerst leistungsstark sein."
+    }
+  },
   "InstructionsAnemoculusResonanceStone": {
     "name": "Erläuterung: Anemoculus-Resonanzstein",
     "description": {
@@ -20713,6 +22313,36 @@
       "3": "„In Wahrheit ist der Mond gar nicht immer rund wie eine Perle ...“"
     }
   },
+  "DiagramFinaleOfTheDeep": {
+    "name": "Bauplan: Finale in der Tiefe",
+    "description": {
+      "0": "Ein von Estelle gezeichneter Bauplan, der auf alten Legenden und Aufzeichnungen beruht. Nach dem Erlernen kannst du den Einhänder „Finale in der Tiefe“ nachbauen."
+    }
+  },
+  "DiagramSongOfStillness": {
+    "name": "Bauplan: Gesang der Stille",
+    "description": {
+      "0": "Ein von Estelle gezeichneter Bauplan, der auf alten Legenden und Aufzeichnungen beruht. Nach dem Erlernen kannst du den Bogen „Gesang der Stille“ nachbauen."
+    }
+  },
+  "DiagramTidalShadow": {
+    "name": "Bauplan: Gezeitenschatten",
+    "description": {
+      "0": "Ein von Estelle gezeichneter Bauplan, der auf alten Legenden und Aufzeichnungen beruht. Nach dem Erlernen kannst du den Zweihänder „Gezeitenschatten“ nachbauen."
+    }
+  },
+  "DiagramFlowingPurity": {
+    "name": "Bauplan: Fließende Reinheit",
+    "description": {
+      "0": "Ein von Estelle gezeichneter Bauplan, der auf alten Legenden und Aufzeichnungen beruht. Nach dem Erlernen kannst du den Katalysator „Fließende Reinheit“ nachbauen."
+    }
+  },
+  "DiagramRightfulReward": {
+    "name": "Bauplan: Rechtmäßige Belohnung",
+    "description": {
+      "0": "Ein von Estelle gezeichneter Bauplan, der auf alten Legenden und Aufzeichnungen beruht. Nach dem Erlernen kannst du die Stangenwaffe „Rechtmäßige Belohnung“ nachbauen."
+    }
+  },
   "InstructionsElectroculusResonanceStone": {
     "name": "Erläuterung: Elektroculus-Resonanzstein",
     "description": {
@@ -20755,16 +22385,40 @@
       "0": "Rezept mit detaillierten Schritten zur Zubereitung von „Manna-Köder“."
     }
   },
+  "FormulaSourBait": {
+    "name": "Rezept: Saurer Mandarinenköder",
+    "description": {
+      "0": "Rezept mit detaillierten Schritten zur Zubereitung von „Saurer Mandarinenköder“."
+    }
+  },
+  "FormulaFlashingMaintenanceMekBait": {
+    "name": "Rezept: Unterstützungs-Mecha-Leuchtköder",
+    "description": {
+      "0": "Rezept mit detaillierten Schritten zur Zubereitung von „Unterstützungs-Mecha-Leuchtköder“."
+    }
+  },
   "InstructionsDendroculusResonanceStone": {
     "name": "Erläuterung: Dendroculus-Resonanzstein",
     "description": {
-      "0": "Anleitung mit detaillierten Schritten zur Herstellung von „Dendroculus -Resonanzstein“. Hiermit kannst du ein Objekt herstellen, mit dessen Hilfe du verlorene Dendroculi finden kannst."
+      "0": "Anleitung mit detaillierten Schritten zur Herstellung von „Dendroculus-Resonanzstein“. Hiermit kannst du ein Objekt herstellen, mit dessen Hilfe du verlorene Dendroculi finden kannst."
     }
   },
   "DiagramDendroTreasureCompass": {
     "name": "Bauplan: Dendro-Schatzkompass",
     "description": {
       "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Dendro-Schatzkompass“. Mithilfe dieses Kompasses kannst du Schätze in Sumeru ganz bequem aufspüren."
+    }
+  },
+  "InstructionsHydroculusResonanceStone": {
+    "name": "Erläuterung: Hydroculus-Resonanzstein",
+    "description": {
+      "0": "Anleitung mit detaillierten Schritten zur Herstellung von „Hydroculus-Resonanzstein“. Hiermit kannst du ein Objekt herstellen, mit dessen Hilfe du verlorene Hydroculi finden kannst."
+    }
+  },
+  "DiagramHydroTreasureCompass": {
+    "name": "Bauplan: Hydro-Schatzkompass",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Hydro-Schatzkompass“. Mithilfe dieses Kompasses kannst du Schätze in Fontaine ganz bequem aufspüren."
     }
   },
   "SilkenPrint": {
@@ -21215,6 +22869,12 @@
       "0": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
     }
   },
+  "DescentOfDivinity": {
+    "name": "Gefallene Gottheit",
+    "description": {
+      "0": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+    }
+  },
   "TheSeedOfStoredKnowledge": {
     "name": "Samen des bewahrten Wissens",
     "description": {
@@ -21247,6 +22907,18 @@
   },
   "PoeticsOfFuubutsu": {
     "name": "Poesie von Fuubutsu",
+    "description": {
+      "0": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+    }
+  },
+  "RiteOfResurrection": {
+    "name": "Auferstehung",
+    "description": {
+      "0": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+    }
+  },
+  "PulsatingWitch": {
+    "name": "Pulsierende Hexe",
     "description": {
       "0": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
     }
@@ -21569,6 +23241,12 @@
       "0": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
     }
   },
+  "KingsSquire": {
+    "name": "Gefolgsfrau des Königs",
+    "description": {
+      "0": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+    }
+  },
   "LiyueHarborWharf": {
     "name": "Hafen von Liyue",
     "description": {
@@ -21751,6 +23429,18 @@
   },
   "MasterZhang": {
     "name": "Herr Zhang",
+    "description": {
+      "0": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+    }
+  },
+  "GoldenHouse": {
+    "name": "Goldstube",
+    "description": {
+      "0": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+    }
+  },
+  "Setaria": {
+    "name": "Setaria",
     "description": {
       "0": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
     }
@@ -22001,6 +23691,18 @@
       "0": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
     }
   },
+  "JoyousCelebration": {
+    "name": "Freudige Feier",
+    "description": {
+      "0": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+    }
+  },
+  "WhereIsTheUnseenRazor": {
+    "name": "Versteckte Klinge, wo bist du?",
+    "description": {
+      "0": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+    }
+  },
   "Origin": {
     "name": "Anbeginn",
     "description": {
@@ -22051,6 +23753,12 @@
   },
   "TreasuresOfTheDeck": {
     "name": "Schätze des Decks",
+    "description": {
+      "0": "Ein Kartenrücken, den man im Kartenspiel „Geniale Beschwörung“ erhalten und verwenden kann. Man sagt, verschiedene Kartenrücken sollen aus unterschiedlichen Materialien bestehen, die sich auch in der Haptik leicht unterscheiden. An Kartenbeschwörern, die diese Kartenrücken mit Freude sammeln, mangelt es nicht."
+    }
+  },
+  "Fontaine": {
+    "name": "Fontaine",
     "description": {
       "0": "Ein Kartenrücken, den man im Kartenspiel „Geniale Beschwörung“ erhalten und verwenden kann. Man sagt, verschiedene Kartenrücken sollen aus unterschiedlichen Materialien bestehen, die sich auch in der Haptik leicht unterscheiden. An Kartenbeschwörern, die diese Kartenrücken mit Freude sammeln, mangelt es nicht."
     }
@@ -23094,6 +24802,34 @@
     "name": "„Leuchtende Paradiessüßigkeiten“",
     "description": {
       "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Leuchtende Paradiessüßigkeiten“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "PassagesAppetizingLamp": {
+    "name": "„Des Wandelgangs Lampe“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Des Wandelgangs Lampe“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "MekaLuminaireRadiantPath": {
+    "name": "Mecha-Luminaire – „Straßenbeleuchtung“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Mecha-Luminaire – ‚Straßenbeleuchtung‘“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "MekaLuminaireRadiantGrounds": {
+    "name": "Mecha-Luminaire – „Bodenbeleuchtung“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Mecha-Luminaire – ‚Bodenbeleuchtung‘“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "MekaLuminaireRadiantCountryside": {
+    "name": "Mecha-Luminaire – „Außenbeleuchtung“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Mecha-Luminaire – ‚Außenbeleuchtung‘“.",
       "1": "Nach der Anwendung im Herstellungsmenü zu finden."
     }
   },
@@ -24987,6 +26723,41 @@
       "1": "Nach der Anwendung im Herstellungsmenü zu finden."
     }
   },
+  "MachineDyedAwningMarcotteRed": {
+    "name": "Maschinell gefärbte Überdachung – „Marcotte-Rot“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Maschinell gefärbte Überdachung – ‚Marcotte-Rot‘“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "MachineDyedAwningLumidouceBlue": {
+    "name": "Maschinell gefärbte Überdachung – „Sanftblau“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Maschinell gefärbte Überdachung – ‚Sanftblau‘“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "PassagesPolychromaticPottedPlants": {
+    "name": "„Des Wandelgangs gefleckte Topfpflanzen“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Des Wandelgangs gefleckte Topfpflanzen“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "PassagesPlentifulProduce": {
+    "name": "„Des Wandelgangs reiche Auswahl“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Des Wandelgangs reiche Auswahl“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "PassagesPrinciplesOfPunctuality": {
+    "name": "„Des Wandelgangs Leitlinie der Pünktlichkeit“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Des Wandelgangs Leitlinie der Pünktlichkeit“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
   "HilichurlOutpostHut": {
     "name": "Hütte des Hilichurl-Vorpostens",
     "description": {
@@ -25596,6 +27367,125 @@
       "1": "Nach der Anwendung im Herstellungsmenü zu finden."
     }
   },
+  "CourtOfJusticesLeisure": {
+    "name": "„Muße der gerechten Vorsehung“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Muße der gerechten Vorsehung“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "CourtOfJusticesValor": {
+    "name": "„Mut der gerechten Vorsehung“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Mut der gerechten Vorsehung“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "CourtOfJusticesSteel": {
+    "name": "„Eiserne Stärke der gerechten Vorsehung“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Eiserne Stärke der gerechten Vorsehung“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "CourtOfJusticesArtistry": {
+    "name": "„Geschicklichkeit der gerechten Vorsehung“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Geschicklichkeit der gerechten Vorsehung“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "CourtOfJusticesConscientiousness": {
+    "name": "„Moment der gerechten Vorsehung“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Moment der gerechten Vorsehung“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "CourtOfJusticesMellowAroma": {
+    "name": "„Mildes Aroma der gerechten Vorsehung“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Mildes Aroma der gerechten Vorsehung“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "CourtOfJusticesProsperity": {
+    "name": "„Florieren der gerechten Vorsehung“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Florieren der gerechten Vorsehung“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "CourtOfJusticesMerchandise": {
+    "name": "„Waren der gerechten Vorsehung“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Waren der gerechten Vorsehung“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "CourtOfJusticesCommerce": {
+    "name": "„Handel der gerechten Vorsehung“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Handel der gerechten Vorsehung“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "CourtOfJusticesDiligence": {
+    "name": "„Dienst der gerechten Vorsehung“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Dienst der gerechten Vorsehung“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "CourtOfJusticesCouture": {
+    "name": "„Leichte Kleidung der gerechten Vorsehung“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Leichte Kleidung der gerechten Vorsehung“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "CourtOfJusticesGreenGrocers": {
+    "name": "„Frische Süße der gerechten Vorsehung“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Frische Süße der gerechten Vorsehung“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "CourtOfJusticesFragrance": {
+    "name": "„Duft der gerechten Vorsehung“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Duft der gerechten Vorsehung“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "CourtOfJusticesNewsstand": {
+    "name": "„Neuigkeiten der gerechten Vorsehung“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Neuigkeiten der gerechten Vorsehung“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "AutomnequisWatch": {
+    "name": "„Warten am Mont Automnéqui“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Warten am Mont Automnéqui“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "AutomnequisChimneySmoke": {
+    "name": "„Schornsteinrauch am Mont Automnéqui“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Schornsteinrauch am Mont Automnéqui“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "DistributedForwardSupplyDepot": {
+    "name": "Verteilte Vormarsch-Nachschubstation",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Verteilte Vormarsch-Nachschubstation“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
   "BirdAndBlossomDesignFountain": {
     "name": "Springbrunnen mit Blumen- und Vogelmuster",
     "description": {
@@ -25782,6 +27672,13 @@
     "name": "Dreirad-Gebirgsgüterwagen",
     "description": {
       "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Dreirad-Gebirgsgüterwagen“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "AutomnequisCask": {
+    "name": "„Edler Wein am Mont Automnéqui“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Edler Wein am Mont Automnéqui“.",
       "1": "Nach der Anwendung im Herstellungsmenü zu finden."
     }
   },
@@ -26555,6 +28452,13 @@
       "1": "Nach der Anwendung im Herstellungsmenü zu finden."
     }
   },
+  "MaintenanceMekTechnicalDemoType": {
+    "name": "Unterstützungs-Mecha – Technisches Testmodell",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Unterstützungs-Mecha – Technisches Testmodell“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
   "PottedPlantVerdantVastness": {
     "name": "Topfpflanze – „Kleine Oase“",
     "description": {
@@ -26580,6 +28484,13 @@
     "name": "„Dämmerung erwartende Kiefern“",
     "description": {
       "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Dämmerung erwartende Kiefern“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "PassagesPerfumedPottedPlants": {
+    "name": "„Des Wandelgangs wohlduftende Verstrickung“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Des Wandelgangs wohlduftende Verstrickung“.",
       "1": "Nach der Anwendung im Herstellungsmenü zu finden."
     }
   },
@@ -27115,6 +29026,13 @@
       "1": "Nach der Anwendung im Herstellungsmenü zu finden."
     }
   },
+  "PassagesParasol": {
+    "name": "„Des Wandelgangs Schattenspender“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Des Wandelgangs Schattenspender“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
   "WroughtIronCarvedStreetLight": {
     "name": "Eiserne Straßenlaterne mit Gravur",
     "description": {
@@ -27318,6 +29236,13 @@
       "1": "Nach der Anwendung im Herstellungsmenü zu finden."
     }
   },
+  "CourtOfJusticesBarrier": {
+    "name": "„Barriere der gerechten Vorsehung“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Barriere der gerechten Vorsehung“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
   "SmoothWoodenBench": {
     "name": "Glatte Holzbank",
     "description": {
@@ -27364,6 +29289,20 @@
     "name": "Chefsessel „Deadline? Welche Deadline?“",
     "description": {
       "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Chefsessel ‚Deadline? Welche Deadline?‘“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "PassagesLanguidLifestyle": {
+    "name": "„Des Wandelgangs Gemütlichkeit“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Des Wandelgangs Gemütlichkeit“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "PassagesEveningEnsemble": {
+    "name": "„Des Wandelgangs abendliches Ensemblespiel“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Des Wandelgangs abendliches Ensemblespiel“.",
       "1": "Nach der Anwendung im Herstellungsmenü zu finden."
     }
   },
@@ -27476,6 +29415,13 @@
     "name": "Ausstellungstisch aus Karmaphala-Holz",
     "description": {
       "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Ausstellungstisch aus Karmaphala-Holz“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "PassagesPristineRoundTable": {
+    "name": "„Des Wandelgangs Rundtisch“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Des Wandelgangs Rundtisch“.",
       "1": "Nach der Anwendung im Herstellungsmenü zu finden."
     }
   },

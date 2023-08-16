@@ -37,7 +37,7 @@
   "skill": {
     "name": "Foglialama affilata",
     "description": {
-      "0": "Con un colpo della tua lama, sprigioni un turbine di foglie affilate come rasoi che ti precedono e infliggono <dendro>DAN da Dendro</dendro>.",
+      "0": "Con un colpo della tua lama, sprigiona un turbine di foglie affilate come rasoi che infliggono <dendro>DAN da Dendro</dendro>.",
       "1": "<br/>",
       "2": "<i>Tu e Paimon avete osservato le fluenti sagome dei fili d'erba e delle foglie.</i>"
     },
@@ -63,7 +63,7 @@
   "burst": {
     "name": "Manifestazione silvestre",
     "description": {
-      "0": "Invocando la potenza della natura intorno a te, crei una Lampada di loto Lea.",
+      "0": "Invocando la potenza della natura circostante, crea una Lampada di loto Lea.",
       "1": "La Lampada infliggerà <dendro>DAN da Dendro</dendro> continui agli avversari nella sua area d'effetto.",
       "2": "<br/>",
       "3": "<strong>Trasfigurazione della luce di loto</strong>",

@@ -1,0 +1,24 @@
+{
+  "name": "Schiffer des Fleuve Cendré",
+  "description": {
+    "0": "Ein ausrangiertes Kupferrohr in genau der richtigen Länge. Diente einst jemandem als Waffe und erfreute sich als solche wohl in bestimmten Kreisen berüchtigter Berühmtheit."
+  },
+  "passiveName": "Eisenknochen",
+  "passiveDescription": {
+    "0": {
+      "0": "Erhöht die KT der Elementarfähigkeit um <cryo>8 %</cryo>. Erhöht außerdem die Aufladerate nach dem Auslösen der Elementarfähigkeit 5 s lang um <cryo>16 %.</cryo>"
+    },
+    "1": {
+      "0": "Erhöht die KT der Elementarfähigkeit um <cryo>10 %</cryo>. Erhöht außerdem die Aufladerate nach dem Auslösen der Elementarfähigkeit 5 s lang um <cryo>20 %.</cryo>"
+    },
+    "2": {
+      "0": "Erhöht die KT der Elementarfähigkeit um <cryo>12 %</cryo>. Erhöht außerdem die Aufladerate nach dem Auslösen der Elementarfähigkeit 5 s lang um <cryo>24 %.</cryo>"
+    },
+    "3": {
+      "0": "Erhöht die KT der Elementarfähigkeit um <cryo>14 %</cryo>. Erhöht außerdem die Aufladerate nach dem Auslösen der Elementarfähigkeit 5 s lang um <cryo>28 %.</cryo>"
+    },
+    "4": {
+      "0": "Erhöht die KT der Elementarfähigkeit um <cryo>16 %</cryo>. Erhöht außerdem die Aufladerate nach dem Auslösen der Elementarfähigkeit 5 s lang um <cryo>32 %.</cryo>"
+    }
+  }
+}

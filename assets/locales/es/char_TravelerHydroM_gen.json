@@ -1,0 +1,154 @@
+{
+  "auto": {
+    "name": "Desbordamiento extranjero",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Ataque Normal</strong>",
+        "1": "Realiza hasta 5 ataques consecutivos con espada."
+      },
+      "charged": {
+        "0": "<strong>Ataque Cargado</strong>",
+        "1": "Consume cierta cantidad de Aguante para desatar un doble golpe de espada."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Descendente</strong>",
+        "1": "Se lanza desde el aire para golpear el suelo, dañando a los enemigos cercanos e infligiendo Daño en el AdE en el momento del impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Daño de 1er golpe",
+      "1": "Daño de 2.º golpe",
+      "2": "Daño de 3er golpe",
+      "3": "Daño de 4.º golpe",
+      "4": "Daño de 5.º golpe",
+      "5": "Daño de ATQ Cargado",
+      "6": "Coste de Aguante de ATQ Cargado",
+      "7": "Daño de Caída",
+      "8": "Daño de impacto de caída baja/alta",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Espada ondulante",
+    "description": {
+      "0": "Libera un aluvión que purifica la tierra.",
+      "1": "<br/>",
+      "2": "<strong>Pulsar una vez</strong>",
+      "3": "Lanza una erupción torrencial hacia delante que inflige <hydro>Daño Hydro</hydro> al enemigo con el que impacta.",
+      "4": "<br/>",
+      "5": "<strong>Mantener pulsado</strong>",
+      "6": "Apunta para liberar continuamente gotas de rocío, las cuales infligen <hydro>Daño Hydro</hydro> al enemigo con el que impactan.",
+      "7": "Al terminar, lanza hacia delante una erupción torrencial que inflige <hydro>Daño Hydro</hydro> al enemigo golpeado.",
+      "8": "Profusión: al mantener pulsado para liberar la habilidad, si {F#la Viajera}{M#el Viajero} tiene más del 50% de Vida, el daño de las gotas de rocío aumenta en función de su propia Vida Máx. y, además, pierde cierta cantidad de Vida por segundo.",
+      "9": "<br/>",
+      "10": "<strong>Arjé: pneuma</strong>",
+      "11": "Cada cierto tiempo tras lanzar la erupción torrencial, aparecerá una espina halitoespiritual que inflige <hydro>Daño Hydro</hydro> cargado de energía pneuma.",
+      "12": "<br/>",
+      "13": "<i>Observaste con Paimon las ondas que se producen en la superficie del agua.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de erupción torrencial",
+      "1": "Daño de gotas de rocío",
+      "2": "Daño de espina halitoespiritual",
+      "3": "Intervalo de espina halitoespiritual",
+      "4": "Consumo de Vida de profusión",
+      "5": "Aumento de daño de profusión",
+      "6": "Duración de mantener pulsado",
+      "7": "TdE",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Correntada ascendente",
+    "description": {
+      "0": "Libera una burbuja flotante que se mueve lentamente e inflige continuamente <hydro>Daño Hydro</hydro> a los enemigos cercanos.",
+      "1": "<br/>",
+      "2": "<i>Investigaste con Paimon la subida y bajada de las mareas.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "Duración",
+      "2": "TdE",
+      "3": "Energía Elemental",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Aguas prístinas",
+    "description": {
+      "0": "Cuando las gotas de rocío lanzadas al mantener pulsado <strong>Espada ondulante</strong> golpean a un enemigo, cerca {F#de la Viajera}{M#del Viajero} se crea una gota primigenia. Al recogerla, {F#la Viajera}{M#el Viajero} recupera un 7% de Vida.",
+      "1": "Solo se puede crear una gota primigenia por segundo de esta manera, y se podrán liberar hasta un máximo de 4 cada vez que se utilice Espada ondulante."
+    }
+  },
+  "passive2": {
+    "name": "Aguas cristalinas",
+    "description": {
+      "0": "Si se consume Vida con el efecto de profusión al mantener pulsado <strong>Espada ondulante</strong>, el daño de la erupción torrencial creada tras terminar de liberar dicha habilidad aumenta en un 45% de la Vida total consumida por {F#la Viajera}{M#el Viajero} con el efecto de profusión mientras se liberaba la habilidad.",
+      "1": "Como máximo, el daño puede aumentar en 5000 pts. de esta manera."
+    }
+  },
+  "constellation1": {
+    "name": "Lagos undosos",
+    "description": {
+      "0": "Al recoger una gota primigenia, {F#la Viajera}{M#el Viajero} recupera 2 pts. de Energía Elemental.",
+      "1": "Es necesario desbloquear el talento pasivo “Aguas prístinas”."
+    }
+  },
+  "constellation2": {
+    "name": "Arroyos borboteantes",
+    "description": {
+      "0": "Reduce en un 30% la velocidad a la que se mueve la burbuja flotante de <strong>Correntada ascendente</strong> y aumenta en 3 s su duración."
+    }
+  },
+  "constellation3": {
+    "name": "Olas furibundas",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Espada ondulante</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Aluviones precipitantes",
+    "description": {
+      "0": "Al utilizar <strong>Espada ondulante</strong>, se crea un escudo ondulante con una capacidad de absorción equivalente al 10% de la Vida Máx. y con un 250% de efectividad de absorción de <hydro>Daño Hydro</hydro>. El escudo dura hasta que se termine de liberar la habilidad.",
+      "1": "Una vez cada 2 s, tras golpear a un enemigo con las gotas de rocío, si {F#la Viajera}{M#el Viajero} está protegid{F#a}{M#o} por un escudo ondulante, su capacidad de absorción se repondrá a un 10% de su Vida Máx.; si no está protegid{F#a}{M#o} por él, se crea un nuevo escudo."
+    }
+  },
+  "constellation5": {
+    "name": "Meandros serpenteantes",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Correntada ascendente</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Mareas de la justicia",
+    "description": {
+      "0": "Cuando {F#la Viajera}{M#el Viajero} recoge una gota primigenia, regenera Vida para el personaje cercano con el menor porcentaje de Vida del equipo en una cantidad equivalente al 6% de la Vida Máx. de dicho personaje."
+    }
+  }
+}

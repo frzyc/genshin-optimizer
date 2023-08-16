@@ -1,0 +1,24 @@
+{
+  "name": "Sacrificial Jade",
+  "description": {
+    "0": "Sebuah batu giok kuno yang bersinar seperti air jernih, sepertinya merupakan benda yang dipakai pada upacara atau ritual kuno."
+  },
+  "passiveName": "Jade Circulation",
+  "passiveDescription": {
+    "0": {
+      "0": "Jika Karakter ada di dalam party, namun tidak berada di medan pertempuran selama lebih dari 5 detik, Max HP meningkat <cryo>32%</cryo>, Elemental Mastery meningkat <cryo>40</cryo> poin. Efek ini akan dihapus setelah Karakter yang mengenakan memasuki dan terus berada di medan pertempuran selama 10 detik."
+    },
+    "1": {
+      "0": "Jika Karakter ada di dalam party, namun tidak berada di medan pertempuran selama lebih dari 5 detik, Max HP meningkat <cryo>40%</cryo>, Elemental Mastery meningkat <cryo>50</cryo> poin. Efek ini akan dihapus setelah Karakter yang mengenakan memasuki dan terus berada di medan pertempuran selama 10 detik."
+    },
+    "2": {
+      "0": "Jika Karakter ada di dalam party, namun tidak berada di medan pertempuran selama lebih dari 5 detik, Max HP meningkat <cryo>48%</cryo>, Elemental Mastery meningkat <cryo>60</cryo> poin. Efek ini akan dihapus setelah Karakter yang mengenakan memasuki dan terus berada di medan pertempuran selama 10 detik."
+    },
+    "3": {
+      "0": "Jika Karakter ada di dalam party, namun tidak berada di medan pertempuran selama lebih dari 5 detik, Max HP meningkat <cryo>56%</cryo>, Elemental Mastery meningkat <cryo>70</cryo> poin. Efek ini akan dihapus setelah Karakter yang mengenakan memasuki dan terus berada di medan pertempuran selama 10 detik."
+    },
+    "4": {
+      "0": "Jika Karakter ada di dalam party, namun tidak berada di medan pertempuran selama lebih dari 5 detik, Max HP meningkat <cryo>64%</cryo>, Elemental Mastery meningkat <cryo>80</cryo> poin. Efek ini akan dihapus setelah Karakter yang mengenakan memasuki dan terus berada di medan pertempuran selama 10 detik."
+    }
+  }
+}

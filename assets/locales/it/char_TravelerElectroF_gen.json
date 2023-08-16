@@ -4,15 +4,15 @@
     "fields": {
       "normal": {
         "0": "<strong><strong>Attacco normale</strong>",
-        "1": "Sferri fino a 5 colpi rapidi."
+        "1": "Sferra fino a 5 colpi rapidi."
       },
       "charged": {
         "0": "<strong>Attacco caricato</strong>",
-        "1": "Consumi una determinata quantità di vigore per sferrare 2 colpi di spada rapidi."
+        "1": "Consuma una determinata quantità di vigore per sferrare 2 colpi di spada rapidi."
       },
       "plunging": {
         "0": "<strong>Attacco in picchiata</strong>",
-        "1": "Attacchi scagliandoti contro il suolo da mezz'aria, infliggendo DAN agli avversari lungo la traiettoria e DAN ad area all'impatto."
+        "1": "Attacca scagliandosi contro il suolo da mezz'aria, infliggendo DAN agli avversari lungo la traiettoria e DAN ad area all'impatto."
       }
     },
     "skillParams": {
@@ -37,7 +37,7 @@
   "skill": {
     "name": "Lama di fulmine",
     "description": {
-      "0": "Scagli 3 rapide ombre di tuono che infliggono <electro>DAN da Electro</electro> agli avversari e rilasciano un Amuleto dell'abbondanza all'impatto con un avversario.",
+      "0": "Scaglia 3 rapide ombre di tuono che infliggono <electro>DAN da Electro</electro> agli avversari e rilasciano un Amuleto dell'abbondanza all'impatto con un avversario.",
       "1": "Inizialmente, si possono creare 2 Amuleti dell'abbondanza. Usare questa abilità annullerà gli Amuleti dell'abbondanza generati in precedenza.",
       "2": "<br/>",
       "3": "<strong>Amuleti dell'abbondanza</strong>",
@@ -71,10 +71,10 @@
   "burst": {
     "name": "Tuono roboante",
     "description": {
-      "0": "Richiami la protezione del tuono, respingendo gli avversari vicini e infliggendo <electro>DAN da Electro</electro>.",
+      "0": "Richiama la protezione del tuono, respingendo gli avversari vicini e infliggendo <electro>DAN da Electro</electro>.",
       "1": "<br/>",
       "2": "<strong>Velo di fulmine</strong>",
-      "3": "Quando gli attacchi normali o caricati del tuo personaggio attivo colpiscono gli avversari, richiamano una Pioggia di tuoni, infliggendo <electro>DAN da Electro</electro>.",
+      "3": "Quando gli attacchi normali o caricati del personaggio attivo colpiscono gli avversari, richiamano una Pioggia di tuoni, infliggendo <electro>DAN da Electro</electro>.",
       "4": "Quando Pioggia di tuoni colpisce gli avversari, rigenera energia per quel personaggio.",
       "5": "È possibile generare una Pioggia di tuoni ogni 0,5 s.",
       "6": "<br/>",

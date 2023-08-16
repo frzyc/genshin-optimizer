@@ -1,0 +1,24 @@
+{
+  "name": "Fleuve Cendre Ferryman",
+  "description": {
+    "0": "A handy length of abandoned copper pipe that was once used as a weapon. It was famous — or infamous, depending — in some circles."
+  },
+  "passiveName": "Ironbone",
+  "passiveDescription": {
+    "0": {
+      "0": "Increases Elemental Skill CRIT Rate by <cryo>8%</cryo>. Additionally, increases Energy Recharge by <cryo>16%</cryo> for 5s after using an Elemental Skill."
+    },
+    "1": {
+      "0": "Increases Elemental Skill CRIT Rate by <cryo>10%</cryo>. Additionally, increases Energy Recharge by <cryo>20%</cryo> for 5s after using an Elemental Skill."
+    },
+    "2": {
+      "0": "Increases Elemental Skill CRIT Rate by <cryo>12%</cryo>. Additionally, increases Energy Recharge by <cryo>24%</cryo> for 5s after using an Elemental Skill."
+    },
+    "3": {
+      "0": "Increases Elemental Skill CRIT Rate by <cryo>14%</cryo>. Additionally, increases Energy Recharge by <cryo>28%</cryo> for 5s after using an Elemental Skill."
+    },
+    "4": {
+      "0": "Increases Elemental Skill CRIT Rate by <cryo>16%</cryo>. Additionally, increases Energy Recharge by <cryo>32%</cryo> for 5s after using an Elemental Skill."
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Wolf-Fang",
+  "description": {
+    "0": "Konon menurut legenda, pedang panjang ini pernah digunakan oleh seorang kesatria pengembara di masa lalu."
+  },
+  "passiveName": "Northwind Wolf",
+  "passiveDescription": {
+    "0": {
+      "0": "Meningkatkan DMG yang diakibatkan Elemental Skill dan Elemental Burst sebesar <cryo>16%</cryo>. Saat Elemental Skill mengenai musuh, CRIT Rate Elemental Skill meningkat <cryo>2%</cryo>. Saat Elemental Burst mengenai musuh, CRIT Rate Elemental Burst meningkat <cryo>2%</cryo>. Kedua efek tersebut masing-masing dapat berlangsung selama 10 detik dan dapat ditumpuk sampai 4 kali. Efek tersebut dapat terpicu sekali setiap 0,1 detik."
+    },
+    "1": {
+      "0": "Meningkatkan DMG yang diakibatkan Elemental Skill dan Elemental Burst sebesar <cryo>20%</cryo>. Saat Elemental Skill mengenai musuh, CRIT Rate Elemental Skill meningkat <cryo>2,5%</cryo>. Saat Elemental Burst mengenai musuh, CRIT Rate Elemental Burst meningkat <cryo>2,5%</cryo>. Kedua efek tersebut masing-masing dapat berlangsung selama 10 detik dan dapat ditumpuk sampai 4 kali. Efek tersebut dapat terpicu sekali setiap 0,1 detik."
+    },
+    "2": {
+      "0": "Meningkatkan DMG yang diakibatkan Elemental Skill dan Elemental Burst sebesar <cryo>24%</cryo>. Saat Elemental Skill mengenai musuh, CRIT Rate Elemental Skill meningkat <cryo>3%</cryo>. Saat Elemental Burst mengenai musuh, CRIT Rate Elemental Burst meningkat <cryo>3%</cryo>. Kedua efek tersebut masing-masing dapat berlangsung selama 10 detik dan dapat ditumpuk sampai 4 kali. Efek tersebut dapat terpicu sekali setiap 0,1 detik."
+    },
+    "3": {
+      "0": "Meningkatkan DMG yang diakibatkan Elemental Skill dan Elemental Burst sebesar <cryo>28%</cryo>. Saat Elemental Skill mengenai musuh, CRIT Rate Elemental Skill meningkat <cryo>3,5%</cryo>. Saat Elemental Burst mengenai musuh, CRIT Rate Elemental Burst meningkat <cryo>3,5%</cryo>. Kedua efek tersebut masing-masing dapat berlangsung selama 10 detik dan dapat ditumpuk sampai 4 kali. Efek tersebut dapat terpicu sekali setiap 0,1 detik."
+    },
+    "4": {
+      "0": "Meningkatkan DMG yang diakibatkan Elemental Skill dan Elemental Burst sebesar <cryo>32%</cryo>. Saat Elemental Skill mengenai musuh, CRIT Rate Elemental Skill meningkat <cryo>4%</cryo>. Saat Elemental Burst mengenai musuh, CRIT Rate Elemental Burst meningkat <cryo>4%</cryo>. Kedua efek tersebut masing-masing dapat berlangsung selama 10 detik dan dapat ditumpuk sampai 4 kali. Efek tersebut dapat terpicu sekali setiap 0,1 detik."
+    }
+  }
+}

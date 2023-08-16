@@ -1,0 +1,24 @@
+{
+  "name": "Ballade der Fjorde",
+  "description": {
+    "0": "Eine Lanze, die von Fischern auf den Eisfeldern verwendet wird. Für die Beute gibt es kein Entkommen."
+  },
+  "passiveName": "Die vielen Geschichten der Eiswüste",
+  "passiveDescription": {
+    "0": {
+      "0": "Erhöht die Elementarkunde um <cryo>120</cryo> Punkte, wenn sich mindestens drei Figuren verschiedener Elementartypen in der Truppe befinden."
+    },
+    "1": {
+      "0": "Erhöht die Elementarkunde um <cryo>150</cryo> Punkte, wenn sich mindestens drei Figuren verschiedener Elementartypen in der Truppe befinden."
+    },
+    "2": {
+      "0": "Erhöht die Elementarkunde um <cryo>180</cryo> Punkte, wenn sich mindestens drei Figuren verschiedener Elementartypen in der Truppe befinden."
+    },
+    "3": {
+      "0": "Erhöht die Elementarkunde um <cryo>210</cryo> Punkte, wenn sich mindestens drei Figuren verschiedener Elementartypen in der Truppe befinden."
+    },
+    "4": {
+      "0": "Erhöht die Elementarkunde um <cryo>240</cryo> Punkte, wenn sich mindestens drei Figuren verschiedener Elementartypen in der Truppe befinden."
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "setName": "Marechaussee Hunter",
+  "setEffects": {
+    "2": "Normal and Charged Attack DMG +15%",
+    "4": "When current HP increases or decreases, CRIT Rate will be increased by 12% for 5s. Max 3 stacks."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Hunter's Brooch",
+      "desc": "An ancient emblem that was once awarded to those who had made exceptional contributions in battle."
+    },
+    "plume": {
+      "name": "Masterpiece's Overture",
+      "desc": "A portable tool used to adjust the torque on some old-school clockwork machine. It has since lost its practical value."
+    },
+    "sands": {
+      "name": "Moment of Judgment",
+      "desc": "A standard pocket watch. Its accuracy is not particularly high."
+    },
+    "goblet": {
+      "name": "Forgotten Vessel",
+      "desc": "A portable metal vessel containing strong wine. Can be stuffed into the pocket of an outer coat for ease of access and use."
+    },
+    "circlet": {
+      "name": "Veteran's Visage",
+      "desc": "An old mask that can, to some extent, stand in for a face marred by wounds. Its design can vary based on the wounded areas and the user's gender."
+    }
+  }
+}

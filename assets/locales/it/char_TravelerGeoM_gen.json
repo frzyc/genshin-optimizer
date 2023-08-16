@@ -4,15 +4,15 @@
     "fields": {
       "normal": {
         "0": "<strong><strong>Attacco normale</strong>",
-        "1": "Sferri fino a 5 colpi rapidi."
+        "1": "Sferra fino a 5 colpi rapidi."
       },
       "charged": {
         "0": "<strong>Attacco caricato</strong>",
-        "1": "Consumi una determinata quantità di vigore per sferrare 2 colpi di spada rapidi."
+        "1": "Consuma una determinata quantità di vigore per sferrare 2 colpi di spada rapidi."
       },
       "plunging": {
         "0": "<strong>Attacco in picchiata</strong>",
-        "1": "Attacchi scagliandoti contro il suolo da mezz'aria, infliggendo DAN agli avversari lungo la traiettoria e DAN ad area all'impatto."
+        "1": "Attacca scagliandosi contro il suolo da mezz'aria, infliggendo DAN agli avversari lungo la traiettoria e DAN ad area all'impatto."
       }
     },
     "skillParams": {
@@ -37,7 +37,7 @@
   "skill": {
     "name": "Lama stellare",
     "description": {
-      "0": "Dissotterri un meteorite dalle profondità della terra, infliggendo <geo>DAN da Geo ad area</geo>.",
+      "0": "Dissotterra un meteorite dalle profondità del suolo, infliggendo <geo>DAN da Geo ad area</geo>.",
       "1": "Il meteorite è considerato un <geo>costrutto di Geo</geo> e si può scalare o usare per bloccare gli attacchi.",
       "2": "<br/>",
       "3": "<strong>Pressione prolungata</strong>",
@@ -67,9 +67,9 @@
   "burst": {
     "name": "Risveglio terrestre",
     "description": {
-      "0": "Stimolando l'energia di Geo che giace in profondità, scateni onde d'urto che si espandono, respingendo gli avversari circostanti e infliggendo <geo>DAN da Geo ad area</geo>.",
-      "1": "Un muro si erge lungo il limite delle onde d'urto.",
-      "2": "Il muro di pietra è considerato un <geo>costrutto di Geo</geo> e si può usare per bloccare gli attacchi.",
+      "0": "Stimolando l'energia di Geo che giace in profondità, scatena onde d'urto che si espandono, respingendo gli avversari circostanti e infliggendo <geo>DAN da Geo ad area</geo>.",
+      "1": "Un muro di pietra si erge lungo il limite delle onde d'urto.",
+      "2": "Tale muro è considerato un <geo>costrutto di Geo</geo> e si può usare per bloccare gli attacchi.",
       "3": "<br/>",
       "4": "<i>Tu e Paimon avete studiato il battito delle montagne.</i>"
     },

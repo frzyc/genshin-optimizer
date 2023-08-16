@@ -1,0 +1,24 @@
+{
+  "name": "Farpa",
+  "description": {
+    "0": "Lendas dizem que essa lâmina foi usada por um cavaleiro andarilho num passado distante."
+  },
+  "passiveName": "Vento Setentrional do Lobo Azul",
+  "passiveDescription": {
+    "0": {
+      "0": "Aumenta o Dano causado pela Habilidade Elemental e Supremo em <cryo>16%</cryo>. Quando a Habilidade Elemental atingir um inimigo, aumenta a Taxa CRIT dela em <cryo>2%</cryo>. Quando o Supremo atingir um inimigo, aumenta a Taxa CRIT dele em <cryo>2%</cryo>. Esses dois efeitos duram 10s cada e podem ser acumulados até 4 vezes, podendo serem desencadeados uma vez a cada 0.1s."
+    },
+    "1": {
+      "0": "Aumenta o Dano causado pela Habilidade Elemental e Supremo em <cryo>20%</cryo>. Quando a Habilidade Elemental atingir um inimigo, aumenta a Taxa CRIT dela em <cryo>2.5%</cryo>. Quando o Supremo atingir um inimigo, aumenta a Taxa CRIT dele em <cryo>2.5%</cryo>. Esses dois efeitos duram 10s cada e podem ser acumulados até 4 vezes, podendo serem desencadeados uma vez a cada 0.1s."
+    },
+    "2": {
+      "0": "Aumenta o Dano causado pela Habilidade Elemental e Supremo em <cryo>24%</cryo>. Quando a Habilidade Elemental atingir um inimigo, aumenta a Taxa CRIT dela em <cryo>3%</cryo>. Quando o Supremo atingir um inimigo, aumenta a Taxa CRIT dele em <cryo>3%</cryo>. Esses dois efeitos duram 10s cada e podem ser acumulados até 4 vezes, podendo serem desencadeados uma vez a cada 0.1s."
+    },
+    "3": {
+      "0": "Aumenta o Dano causado pela Habilidade Elemental e Supremo em <cryo>28%</cryo>. Quando a Habilidade Elemental atingir um inimigo, aumenta a Taxa CRIT dela em <cryo>3.5%</cryo>. Quando o Supremo atingir um inimigo, aumenta a Taxa CRIT dele em <cryo>3.5%</cryo>. Esses dois efeitos duram 10s cada e podem ser acumulados até 4 vezes, podendo serem desencadeados uma vez a cada 0.1s."
+    },
+    "4": {
+      "0": "Aumenta o Dano causado pela Habilidade Elemental e Supremo em <cryo>32%</cryo>. Quando a Habilidade Elemental atingir um inimigo, aumenta a Taxa CRIT dela em <cryo>4%</cryo>. Quando o Supremo atingir um inimigo, aumenta a Taxa CRIT dele em <cryo>4%</cryo>. Esses dois efeitos duram 10s cada e podem ser acumulados até 4 vezes, podendo serem desencadeados uma vez a cada 0.1s."
+    }
+  }
+}

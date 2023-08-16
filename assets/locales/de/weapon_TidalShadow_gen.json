@@ -1,0 +1,24 @@
+{
+  "name": "Gezeitenschatten",
+  "description": {
+    "0": "Ein formschönes Standardschwert. Maßgeschneidert für Generäle und Flaggschiffkapitäne der alten Marine von Fontaine."
+  },
+  "passiveName": "Kreuzende weiße Wellen",
+  "passiveDescription": {
+    "0": {
+      "0": "Erhöht nach erhaltener Heilung den ANG um <cryo>24 %</cryo>, hält 8 s. Der Effekt kann auch noch ausgelöst werden, wenn die Figur inaktiv in der Truppe ist."
+    },
+    "1": {
+      "0": "Erhöht nach erhaltener Heilung den ANG um <cryo>30 %</cryo>, hält 8 s. Der Effekt kann auch noch ausgelöst werden, wenn die Figur inaktiv in der Truppe ist."
+    },
+    "2": {
+      "0": "Erhöht nach erhaltener Heilung den ANG um <cryo>36 %</cryo>, hält 8 s. Der Effekt kann auch noch ausgelöst werden, wenn die Figur inaktiv in der Truppe ist."
+    },
+    "3": {
+      "0": "Erhöht nach erhaltener Heilung den ANG um <cryo>42 %</cryo>, hält 8 s. Der Effekt kann auch noch ausgelöst werden, wenn die Figur inaktiv in der Truppe ist."
+    },
+    "4": {
+      "0": "Erhöht nach erhaltener Heilung den ANG um <cryo>48 %</cryo>, hält 8 s. Der Effekt kann auch noch ausgelöst werden, wenn die Figur inaktiv in der Truppe ist."
+    }
+  }
+}

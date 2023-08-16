@@ -1,0 +1,171 @@
+{
+  "name": "Lynette",
+  "title": "Gölgedeki Zarafet",
+  "description": "Sessiz bir sihirbaz asistanı. Duyguları bir kedinininki kadar tahmin edilemezdir.",
+  "constellationName": "Beyaz Kedi",
+  "auto": {
+    "name": "Seri Tören Kılıcı",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Saldırı</strong>",
+        "1": "En fazla 4 hızlı saldırı yapar."
+      },
+      "charged": {
+        "0": "<strong>Yüklü Saldırı</strong>",
+        "1": "Belirli miktarda Dayanıklılık harcayarak 2 hızlı kılıç saldırısı yapar."
+      },
+      "plunging": {
+        "0": "<strong>Havadan Saldırı</strong>",
+        "1": "Havadayken dalışa geçerek yere vurur ve yoluna çıkan düşmanlara Alan Hasarı verir."
+      }
+    },
+    "skillParams": {
+      "0": "1 Vuruş Hasarı",
+      "1": "2 Vuruş Hasarı",
+      "2": "3 Vuruş Hasarı",
+      "3": "4 Vuruş Hasarı",
+      "4": "Yüklü Saldırı Hasarı",
+      "5": "Yüklü Saldırı Dayanıklılık Maliyeti",
+      "6": "Havadan Saldırı Hasarı",
+      "7": "Havadan Saldırı Hasarı (Alçaktan/Yüksekten)",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Gizemli Aldatmaca",
+    "description": {
+      "0": "Pelerinini sallar ve Gizem Atılımı yaparak <anemo>Rüzgar Hasarı</anemo> verir.",
+      "1": "Gizem Atılımı bir düşmana vurduğunda Maks. Canına göre Lynette'in Canını yeniler, Lynette sonraki 4 saniye boyunca her saniye Canının belirli bir oranını kaybeder.",
+      "2": "Lynette, bu beceriye basmana veya basılı tutmana göre Gizem Atılımını farklı şekilde kullanır.",
+      "3": "<br/>",
+      "4": "<strong>Bas</strong>",
+      "5": "Hızlı bir şekilde Gizem Atılımı yapar.",
+      "6": "<br/>",
+      "7": "<strong>Basılı Tut</strong>",
+      "8": "Lynette çok hızlı bir Küçük Gölge Hırsız durumuna girer ve yakındaki bir düşmana Gölge İşareti uygular. Bu durumdayken yönünü kontrol edebilir ve beceriyi tekrar kullanarak durumun erken sonlanmasını sağlayabilirsin.",
+      "9": "Lynette, bu hızlı durum sona erdiğinde Gizem Atılımını yapar. Bunu yaparken yakınında Gölge İşaretli bir düşman varsa Lynette önce o düşmanın olduğu yerde belirir ve sonra Gizem Atılımını yapar.",
+      "10": "<br/>",
+      "11": "Aynı anda en fazla 1 düşman Gölge İşaretine sahip olabilir. Bu düşman, Lynette'ten çok uzaklaşırsa Gölge İşareti kaybolur.",
+      "12": "<br/>",
+      "13": "<strong>Arkhe: Öz</strong>",
+      "14": "Lynette, Gizem Atılımını kullandıktan sonra belirli aralıklarla Çalkantılı Kılıç saldırısı yaparak Öz tesirli <anemo>Rüzgar Hasarı</anemo> verir.",
+      "15": "<br/>",
+      "16": "<i>\"Şimdi dikkatini sahneye ver, gösterinin tadını çıkar. Hiç beklemediğin bir yerde belireceğim.\"</i>"
+    },
+    "skillParams": {
+      "0": "Gizem Atılımı Hasarı",
+      "1": "Çalkantılı Kılıç Hasarı",
+      "2": "Çalkantılı Kılıç Aralığı",
+      "3": "Can Yenilenmesi",
+      "4": "Can Maliyeti",
+      "5": "Maks. Basılı Tutma Süresi",
+      "6": "BS",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Sihir Numarası: Şaşırtıcı Değişim",
+    "description": {
+      "0": "Lynette, pelerinini kaldırarak <anemo>Rüzgar Alan Hasarı</anemo> verir ve üstün el çabukluğuyla kocaman bir Şaşırtıcı Kedi Kutusu ortaya çıkarır!",
+      "1": "<br/>",
+      "2": "<strong>Şaşırtıcı Kedi Kutusu</strong>",
+      "3": [
+        "Yakındaki düşmanları kışkırtarak saldırıları kendine çeker.",
+        "Belirli aralıklarla yakındaki düşmanlara <anemo>Rüzgar Hasarı</anemo> verir.",
+        "Şaşırtıcı Kedi Kutusu <hydro>Su</hydro>/<pyro>Ateş</pyro>/<cryo>Buz</cryo>/<electro>Elektrik</electro> ile temas ettiğinde element etkisini alır ve ek olarak belirli aralıklarla bu element türünden hasar veren Parlak Atışlar yapar."
+      ],
+      "4": "Bu türden bir Element Emilimi, bu beceri süresince yalnızca bir defa gerçekleşebilir.",
+      "5": "<br/>",
+      "6": "<i>\"Buraya bak, dikkatle izle. Bir mucizeye tanıklık etmek üzeresin. Hem de bize özel bir mucizeye.\"</i>"
+    },
+    "skillParams": {
+      "0": "Beceri Hasarı",
+      "1": "Şaşırtıcı Kedi Kutusu Hasarı",
+      "2": "Parlak Atış Hasarı",
+      "3": "Şaşırtıcı Kedi Kutusu Süresi",
+      "4": "BS",
+      "5": "Enerji Maliyeti",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Karmaşık Uyum",
+    "description": {
+      "0": "<strong>Sihir Numarası: Şaşırtıcı Değişim</strong> kullanıldıktan sonraki 10 saniye boyunca grupta 1/2/3/4 Element Türü varsa tüm grup üyelerinin Saldırısı sırayla %8/%12/%16/%20 artar."
+    }
+  },
+  "passive2": {
+    "name": "İtinayla Hazırlanmış Dekorlar",
+    "description": {
+      "0": "<strong>Sihir Numarası: Şaşırtıcı Değişim</strong> tarafından çağrılan bir Şaşırtıcı Kedi Kutusu, Element Dönüşümüne uğradıktan sonra Lynette'in Element Patlaması %15 daha fazla Hasar verir. Bu etki, Şaşırtıcı Kedi Kutusunun süresi sona erinceye kadar devam eder."
+    }
+  },
+  "passive3": {
+    "name": "Hafıza Sarayı",
+    "description": {
+      "0": "Yakınlardaki <strong>Yenileme Kürelerinin</strong> yerini mini haritada gösterir. Kürelere dokunarak kazanılan Yüzme Dayanıklılığı ve Can %25 artar."
+    }
+  },
+  "constellation1": {
+    "name": "Gölge Gibi Soğuk Bir Kılıç",
+    "description": {
+      "0": "<strong>Gizemli Aldatmaca</strong> becerisinin Gizem Atılımı bir düşmana Gölge İşareti ile vurduğunda, o düşmanın olduğu yerde yakındaki düşmanları kendine çeken bir girdap oluşur."
+    }
+  },
+  "constellation2": {
+    "name": "Sonu Gelmeyen Gizemler",
+    "description": {
+      "0": "<strong>Sihir Numarası: Şaşırtıcı Değişim</strong> tarafından çağrılan Şaşırtıcı Kedi Kutusu bir Parlak Atış yaptığı zaman ek bir Parlak Atış daha yapar."
+    }
+  },
+  "constellation3": {
+    "name": "Anlam Bozan Bakış",
+    "description": {
+      "0": "<strong>Sihir Numarası: Şaşırtıcı Değişim</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation4": {
+    "name": "Sessiz İletişim",
+    "description": {
+      "0": "<strong>Gizemli Aldatmaca</strong> yükünü 1 artırır."
+    }
+  },
+  "constellation5": {
+    "name": "Yanıltıcı Belirsizlik",
+    "description": {
+      "0": "<strong>Gizemli Aldatmaca</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation6": {
+    "name": "Gözüm Üzerinde",
+    "description": {
+      "0": "Lynette, <strong>Gizemli Aldatmaca</strong> becerisinin Gizem Atılımını kullandıktan sonra 6 saniyeliğine <anemo>Rüzgar Tesiri</anemo> ve %20 <anemo>Rüzgar Hasarı Bonusu</anemo> kazanır."
+    }
+  }
+}

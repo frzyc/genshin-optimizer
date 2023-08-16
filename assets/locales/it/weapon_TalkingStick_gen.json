@@ -1,0 +1,24 @@
+{
+  "name": "Bastone parlante",
+  "description": {
+    "0": "Questa mazza decorata con ossidiana risulta alquanto persuasiva agli occhi di molti."
+  },
+  "passiveName": "Lingua sciolta",
+  "passiveDescription": {
+    "0": {
+      "0": "Se il personaggio finisce sotto l'effetto di Pyro, il suo ATT aumenta di un <cryo>16%</cryo> per i 15 s successivi. Quest'effetto può attivarsi una volta ogni 12 s. Se il personaggio finisce sotto l'effetto di Hydro, Cryo, Electro o Dendro, il bonus DAN per tutti gli elementi aumenta di un <cryo>12%</cryo> per i 15 s successivi. Quest'effetto può attivarsi una volta ogni 12 s."
+    },
+    "1": {
+      "0": "Se il personaggio finisce sotto l'effetto di Pyro, il suo ATT aumenta di un <cryo>20%</cryo> per i 15 s successivi. Quest'effetto può attivarsi una volta ogni 12 s. Se il personaggio finisce sotto l'effetto di Hydro, Cryo, Electro o Dendro, il bonus DAN per tutti gli elementi aumenta di un <cryo>15%</cryo> per i 15 s successivi. Quest'effetto può attivarsi una volta ogni 12 s."
+    },
+    "2": {
+      "0": "Se il personaggio finisce sotto l'effetto di Pyro, il suo ATT aumenta di un <cryo>24%</cryo> per i 15 s successivi. Quest'effetto può attivarsi una volta ogni 12 s. Se il personaggio finisce sotto l'effetto di Hydro, Cryo, Electro o Dendro, il bonus DAN per tutti gli elementi aumenta di un <cryo>18%</cryo> per i 15 s successivi. Quest'effetto può attivarsi una volta ogni 12 s."
+    },
+    "3": {
+      "0": "Se il personaggio finisce sotto l'effetto di Pyro, il suo ATT aumenta di un <cryo>28%</cryo> per i 15 s successivi. Quest'effetto può attivarsi una volta ogni 12 s. Se il personaggio finisce sotto l'effetto di Hydro, Cryo, Electro o Dendro, il bonus DAN per tutti gli elementi aumenta di un <cryo>21%</cryo> per i 15 s successivi. Quest'effetto può attivarsi una volta ogni 12 s."
+    },
+    "4": {
+      "0": "Se il personaggio finisce sotto l'effetto di Pyro, il suo ATT aumenta di un <cryo>32%</cryo> per i 15 s successivi. Quest'effetto può attivarsi una volta ogni 12 s. Se il personaggio finisce sotto l'effetto di Hydro, Cryo, Electro o Dendro, il bonus DAN per tutti gli elementi aumenta di un <cryo>24%</cryo> per i 15 s successivi. Quest'effetto può attivarsi una volta ogni 12 s."
+    }
+  }
+}

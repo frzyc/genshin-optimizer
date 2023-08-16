@@ -37,7 +37,7 @@
   "skill": {
     "name": "Vortice del palmo",
     "description": {
-      "0": "Carpendo la forza del vento, formi un vortice nel palmo della tua mano, infliggendo <anemo>DAN da Anemo</anemo> continui agli avversari davanti a te.",
+      "0": "Carpendo la forza del vento, forma un vortice nel palmo della sua mano, infliggendo <anemo>DAN da Anemo</anemo> continui agli avversari davanti a sé.",
       "1": "Il vortice di vuoto esplode al termine della durata dell'abilità, infliggendo una maggiore quantità di DAN da Anemo in un'area più ampia.",
       "2": "<br/>",
       "3": "<strong>Pressione prolungata</strong>",
@@ -71,7 +71,7 @@
   "burst": {
     "name": "Raffica di vento",
     "description": {
-      "0": "Guidando il percorso delle correnti di vento, evochi un tornado che si sposta in avanti e attira oggetti e avversari a sé, infliggendo <anemo>DAN da Anemo</anemo> continui.",
+      "0": "Guidando il percorso delle correnti di vento, evoca un tornado che si sposta in avanti e attira a sé oggetti e avversari, infliggendo <anemo>DAN da Anemo</anemo> continui.",
       "1": "<br/>",
       "2": "<strong>Assorbimento elementale</strong>",
       "3": "Se il tornado entra in contatto con <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<electro>Electro</electro>, infliggerà DAN elementali aggiuntivi di quel tipo.",

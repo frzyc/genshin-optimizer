@@ -1,0 +1,29 @@
+{
+  "setName": "Cazador Fantasmal",
+  "setEffects": {
+    "2": "Daño de Ataque Normal y Cargado +15%.",
+    "4": "Cuando la Vida del personaje aumenta o disminuye, la Prob. CRIT aumenta en un 12%. Este efecto dura 5 s y puede acumularse hasta 3 veces."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Broche Floral del Cazador",
+      "desc": "Una vieja condecoración que en el pasado se otorgaba a las personas que habían hecho heroicas contribuciones en una batalla."
+    },
+    "plume": {
+      "name": "Obertura Maestra",
+      "desc": "Una herramienta para ajustar los torques de algunos mecanismos antiguos. Ya ha perdido su utilidad práctica."
+    },
+    "sands": {
+      "name": "Reloj del Veredicto",
+      "desc": "Un reloj de bolsillo que, en realidad, no mide el tiempo con mucha precisión."
+    },
+    "goblet": {
+      "name": "Licorera del Olvido",
+      "desc": "Un recipiente metálico para alcohol muy fácil de llevar. Se puede meter en el bolsillo de un abrigo para tenerlo a mano."
+    },
+    "circlet": {
+      "name": "Semblante del Veterano",
+      "desc": "Una vieja máscara que sirve para ocultar hasta cierto punto las heridas de la cara. Hay distintos diseños dependiendo del tamaño de la herida y del género de quien la lleve."
+    }
+  }
+}

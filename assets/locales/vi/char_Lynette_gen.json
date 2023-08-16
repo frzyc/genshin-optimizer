@@ -1,0 +1,171 @@
+{
+  "name": "Lynette",
+  "title": "Bóng Hình Trang Nhã",
+  "description": "Trợ lý ảo thuật ít nói, hiếm khi biểu đạt cảm xúc, tính khí khó đoán như loài mèo.",
+  "constellationName": "Cung Bạch Vỹ Miêu",
+  "auto": {
+    "name": "Nghi Thức Tốc Hành",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Tấn Công Thường</strong>",
+        "1": "Thực hiện tối đa 4 lần đánh kiếm liên tiếp."
+      },
+      "charged": {
+        "0": "<strong>Trọng Kích</strong>",
+        "1": "Tiêu hao thể lực nhất định, đánh ra hai kiếm về phía trước trong chớp mắt."
+      },
+      "plunging": {
+        "0": "<strong>Tấn Công Khi Đáp</strong>",
+        "1": "Đáp xuống đất từ trên không, tấn công kẻ địch trên đường và gây sát thương phạm vi khi chạm đất."
+      }
+    },
+    "skillParams": {
+      "0": "Sát Thương Lần 1",
+      "1": "Sát Thương Lần 2",
+      "2": "Sát Thương Lần 3",
+      "3": "Sát Thương Lần 4",
+      "4": "Sát Thương Trọng Kích",
+      "5": "Thể lực Trọng Kích tiêu hao",
+      "6": "Sát Thương Khi Đáp",
+      "7": "ST Khi Rơi Từ Độ Cao Thấp/Cao",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Thủ Thuật Che Mắt",
+    "description": {
+      "0": "Tung áo choàng để thi triển Đột Kích Ảo Ảnh, gây <anemo>Sát Thương Nguyên Tố Phong</anemo>.",
+      "1": "Đột Kích Ảo Ảnh khi trúng kẻ địch sẽ hồi phục một lượng HP cho Lynette căn cứ theo giới hạn HP của cô ấy, đồng thời trong 4s sau sẽ tiêu hao một lượng HP nhất định mỗi giây.",
+      "2": "Căn cứ vào nhấn và nhấn giữ để thi triển Đột Kích Ảo Ảnh khác nhau.",
+      "3": "<br/>",
+      "4": "<strong>Nhấn</strong>",
+      "5": "Nhanh chóng tung ra Đột Kích Ảo Ảnh.",
+      "6": "<br/>",
+      "7": "<strong>Nhấn Giữ</strong>",
+      "8": "Lynette chạy nhanh dưới dạng \"Ảo Ảnh Lẩn Trốn\", gán \"Dấu Ấn Ảo Ảnh\" lên kẻ địch gần đó. Trong thời gian đó có thể điều khiển hướng chạy, đồng thời có thể dùng kỹ năng lần nữa để kết thúc trạng thái chạy.",
+      "9": "Khi kết thúc trạng thái chạy nhanh, Lynette sẽ tung ra Đột Kích Ảo Ảnh. Nếu ở gần đó có kẻ địch mang Dấu Ấn Ảo Ảnh, Lynette sẽ nhanh chóng tiếp cận kẻ địch trước khi tung ra Đột Kích Ảo Ảnh.",
+      "10": "<br/>",
+      "11": "Cùng lúc chỉ có tối đa một kẻ địch mang Dấu Ấn Ảo Ảnh của Lynette. Khi kẻ địch có Dấu Ấn Ảo Ảnh ở quá xa sẽ hủy hiệu ứng này.",
+      "12": "<br/>",
+      "13": "<strong>Sức Mạnh Nền Tảng: Ousia</strong>",
+      "14": "Cứ cách một khoảng thời gian, khi Lynette thi triển Đột Kích Ảo Ảnh sẽ triệu hồi Lưỡi Dao Nổi Sóng, gây <anemo>Sát Thương Nguyên Tố Phong</anemo> thuộc tính Ousia.",
+      "15": "<br/>",
+      "16": "<i>\"Bây giờ, hãy hướng mắt về phía sân khấu và tiếp tục thưởng thức màn biểu diễn nào. Tôi sẽ xuất hiện lại ở nơi khó mà tưởng tượng ra đấy.\"</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Đột Kích Ảo Ảnh",
+      "1": "Sát Thương Lưỡi Dao Nổi Sóng",
+      "2": "Giãn Cách Lưỡi Dao Nổi Sóng",
+      "3": "Lượng Trị Liệu",
+      "4": "HP Tiêu Hao",
+      "5": "Thời Gian Duy Trì Nhấn Giữ Tối Đa",
+      "6": "CD",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Ảo Thuật - Biến Đổi Bất Ngờ",
+    "description": {
+      "0": "Lynette giơ cao áo choàng, gây <anemo>Sát Thương Phạm Vi Nguyên Tố Phong</anemo>, triệu hồi ra Hộp Mèo Kỳ Quái!",
+      "1": "<br/>",
+      "2": "<strong>Hộp Mèo Kỳ Quái</strong>",
+      "3": [
+        "Khiêu khích kẻ địch xung quanh tấn công;",
+        "Gây cho kẻ địch xung quanh <anemo>Sát Thương Nguyên Tố Phong</anemo> theo chu kỳ;",
+        "Hộp Mèo Kỳ Quái khi tiếp xúc nguyên tố <hydro>Thủy</hydro>/<pyro>Hỏa</pyro>/<cryo>Băng</cryo>/<electro>Lôi</electro> sẽ nhận được thuộc tính nguyên tố tương ứng và thi triển Bom Rực Rỡ cho kẻ địch xung quanh theo chu kỳ, gây sát thương nguyên tố tương ứng."
+      ],
+      "4": "Chuyển hóa nguyên tố chỉ diễn ra một lần trong thời gian duy trì kỹ năng.",
+      "5": "<br/>",
+      "6": "<i>\"Nhìn về bên này, đây là thời khắc của phép màu dành riêng cho chúng ta.\"</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Kỹ Năng",
+      "1": "Sát Thương Hộp Mèo Kỳ Quái",
+      "2": "Sát Thương Bom Rực Rỡ",
+      "3": "Thời Gian Duy Trì Hộp Mèo Kỳ Quái",
+      "4": "CD",
+      "5": "Năng Lượng Nguyên Tố",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Hợp Lực Tinh Tế",
+    "description": {
+      "0": "Trong 10s sau khi thi triển <strong>Ảo Thuật - Biến Đổi Bất Ngờ</strong>, trong đội tồn tại 1/2/3/4 loại nguyên tố, tấn công của tất cả nhân vật trong đội tăng 8%/12%/16%/20%."
+    }
+  },
+  "passive2": {
+    "name": "Đạo Cụ Đầy Đủ",
+    "description": {
+      "0": "Hộp Mèo Kỳ Quái được triệu hồi từ <strong>Ảo Thuật - Biến Đổi Bất Ngờ</strong> khi chuyển hóa nguyên tố, sát thương Kỹ Năng Nộ của Lynette tăng 15%. Hiệu quả này tồn tại đến khi Hộp Mèo Kỳ Quái kết thúc thời gian duy trì."
+    }
+  },
+  "passive3": {
+    "name": "Ghi Nhớ Vị Trí",
+    "description": {
+      "0": "Trên bản đồ nhỏ hiển thị vị trí <strong>Bong Bóng Hồi Phục</strong> xung quanh，tăng 25% thể lực dưới nước và HP hồi phục khi tiếp xúc Bong Bóng Hồi Phục."
+    }
+  },
+  "constellation1": {
+    "name": "Lưỡi Kiếm Ảo Ảnh",
+    "description": {
+      "0": "Đột Kích Ảo Ảnh của kỹ năng <strong>Thủ Thuật Che Mắt</strong> khi trúng kẻ địch mang Dấu Ấn Ảo Ảnh, sẽ sản sinh Lốc Xoáy tại vị trí kẻ địch, lôi kéo kẻ địch gần đó."
+    }
+  },
+  "constellation2": {
+    "name": "Bí Ẩn Trùng Trùng",
+    "description": {
+      "0": "Hộp Mèo Kỳ Quái được triệu hồi từ <strong>Ảo Thuật - Biến Đổi Bất Ngờ</strong> khi tung Bom Rực Rỡ, sẽ tung ra thêm một Bom Rực Rỡ."
+    }
+  },
+  "constellation3": {
+    "name": "Tầm Nhìn Điên Đảo",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Ảo Thuật - Biến Đổi Bất Ngờ</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation4": {
+    "name": "Phối Hợp Ăn Ý",
+    "description": {
+      "0": "Số lần sử dụng <strong>Thủ Thuật Che Mắt</strong> tăng 1 lần."
+    }
+  },
+  "constellation5": {
+    "name": "Che Mắt Mờ Ảo",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Thủ Thuật Che Mắt</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation6": {
+    "name": "Ánh Nhìn Nhận Biết",
+    "description": {
+      "0": "Lynette khi thi triển Đột Kích Ảo Ảnh của kỹ năng <strong>Thủ Thuật Che Mắt</strong>, sẽ nhận được <anemo>đính kèm nguyên tố Phong</anemo>, <anemo>Buff Sát Thương Nguyên Tố Phong</anemo> tăng 20% trong 6s."
+    }
+  }
+}

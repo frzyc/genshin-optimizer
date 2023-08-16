@@ -1,0 +1,24 @@
+{
+  "name": "Pureté fluide",
+  "description": {
+    "0": "Une anthologie de scripts à la forme étrange. Tous les scénarios écrits par Coppelius y sont consignés."
+  },
+  "passiveName": "Chef-d'œuvre incomplet",
+  "passiveDescription": {
+    "0": {
+      "0": "Libérer une compétence élémentaire augmente le bonus de DGT élémentaires de <cryo>8 %</cryo> pendant 15 s et accorde un engagement vital d'une valeur équivalant à 24 % des PV max. Cet effet peut être déclenché une fois toutes les 10 s. Lorsque l'engagement vital disparaît, chaque tranche de 1 000 pts de l'engagement accorde un bonus de DGT élémentaires de <cryo>2 %</cryo> pendant 15 s, un maximum de <cryo>12 %</cryo> pouvant être obtenu de cette manière."
+    },
+    "1": {
+      "0": "Libérer une compétence élémentaire augmente le bonus de DGT élémentaires de <cryo>10 %</cryo> pendant 15 s et accorde un engagement vital d'une valeur équivalant à 24 % des PV max. Cet effet peut être déclenché une fois toutes les 10 s. Lorsque l'engagement vital disparaît, chaque tranche de 1 000 pts de l'engagement accorde un bonus de DGT élémentaires de <cryo>2,5 %</cryo> pendant 15 s, un maximum de <cryo>15 %</cryo> pouvant être obtenu de cette manière."
+    },
+    "2": {
+      "0": "Libérer une compétence élémentaire augmente le bonus de DGT élémentaires de <cryo>12 %</cryo> pendant 15 s et accorde un engagement vital d'une valeur équivalant à 24 % des PV max. Cet effet peut être déclenché une fois toutes les 10 s. Lorsque l'engagement vital disparaît, chaque tranche de 1 000 pts de l'engagement accorde un bonus de DGT élémentaires de <cryo>3 %</cryo> pendant 15 s, un maximum de <cryo>18 %</cryo> pouvant être obtenu de cette manière."
+    },
+    "3": {
+      "0": "Libérer une compétence élémentaire augmente le bonus de DGT élémentaires de <cryo>14 %</cryo> pendant 15 s et accorde un engagement vital d'une valeur équivalant à 24 % des PV max. Cet effet peut être déclenché une fois toutes les 10 s. Lorsque l'engagement vital disparaît, chaque tranche de 1 000 pts de l'engagement accorde un bonus de DGT élémentaires de <cryo>3,5 %</cryo> pendant 15 s, un maximum de <cryo>21 %</cryo> pouvant être obtenu de cette manière."
+    },
+    "4": {
+      "0": "Libérer une compétence élémentaire augmente le bonus de DGT élémentaires de <cryo>16 %</cryo> pendant 15 s et accorde un engagement vital d'une valeur équivalant à 24 % des PV max. Cet effet peut être déclenché une fois toutes les 10 s. Lorsque l'engagement vital disparaît, chaque tranche de 1 000 pts de l'engagement accorde un bonus de DGT élémentaires de <cryo>4 %</cryo> pendant 15 s, un maximum de <cryo>24 %</cryo> pouvant être obtenu de cette manière."
+    }
+  }
+}
