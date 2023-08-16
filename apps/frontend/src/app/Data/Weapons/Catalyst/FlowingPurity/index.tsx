@@ -49,7 +49,7 @@ const bond_all_ele_dmg_ = equal(
         subscript(input.weapon.refinement, bond_all_ele_dmg_arr, { unit: '%' }),
         prod(hpConsumed, percent(1 / 1000))
       ),
-      subscript(input.weapon.refinement, bond_max_ele_dmg_arr)
+      subscript(input.weapon.refinement, bond_max_ele_dmg_arr, { unit: '%' })
     )
   )
 )

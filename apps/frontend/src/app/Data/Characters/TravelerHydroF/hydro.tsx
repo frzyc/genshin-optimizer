@@ -138,7 +138,7 @@ export default function dendro(
     4,
     shieldElement('hydro', c4Shield)
   )
-  //Taken off of optimization targets as it scales on receiving character's HP.
+  // Taken off of optimization targets as it scales on receiving character's HP.
   const c6healing = greaterEq(
     input.constellation,
     6,
@@ -352,7 +352,6 @@ export default function dendro(
     ]),
     constellation6: ct.talentTem('constellation6', [
       ct.headerTem('constellation6', {
-        teamBuff: true,
         fields: [
           {
             node: infoMut(c6healing, {

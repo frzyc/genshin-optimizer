@@ -8,6 +8,7 @@ import {
   sum,
   lookup,
   unequal,
+  equal,
   naught,
   subscript,
   threshold,
@@ -58,11 +59,10 @@ const moveSPD_ = threshold(
     otherElementTeammates,
     2,
     subscript(input.weapon.refinement, moveSPD_arrs[1]),
-    compareEq(
+    equal(
       otherElementTeammates,
       1,
-      subscript(input.weapon.refinement, moveSPD_arrs[0]),
-      naught
+      subscript(input.weapon.refinement, moveSPD_arrs[0])
     )
   )
 )
