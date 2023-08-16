@@ -211,12 +211,13 @@ export default async function runExecutor(
 
     if (candSkillDepotIds.length) {
       // Traveler
-      const [, , , anemo, , geo, electro, dendro] = candSkillDepotIds
+      const [, , hydro, anemo, , geo, electro, dendro] = candSkillDepotIds
       // const gender = characterIdMap[charid] === "TravelerF" ? "F" : "M"
       genTalentHash('TravelerAnemo', avatarSkillDepotExcelConfigData[anemo])
       genTalentHash('TravelerGeo', avatarSkillDepotExcelConfigData[geo])
       genTalentHash('TravelerElectro', avatarSkillDepotExcelConfigData[electro])
       genTalentHash('TravelerDendro', avatarSkillDepotExcelConfigData[dendro])
+      genTalentHash('TravelerHydro', avatarSkillDepotExcelConfigData[hydro])
     } else {
       genTalentHash(cKey, avatarSkillDepotExcelConfigData[skillDepotId])
     }

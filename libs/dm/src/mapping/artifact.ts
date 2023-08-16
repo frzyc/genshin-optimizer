@@ -46,6 +46,8 @@ export const artifactIdMap: Record<string | number, ArtifactSetKey> = {
   15028: 'FlowerOfParadiseLost',
   15029: 'NymphsDream',
   15030: 'VourukashasGlow',
+  15031: 'MarechausseeHunter',
+  15032: 'GoldenTroupe',
 } as const
 
 export const artifactSlotMap = {

@@ -746,5 +746,39 @@
       "flower",
       "sands"
     ]
+  },
+  "MarechausseeHunter": {
+    "setNum": [
+      2,
+      4
+    ],
+    "rarities": [
+      4,
+      5
+    ],
+    "slots": [
+      "goblet",
+      "plume",
+      "circlet",
+      "flower",
+      "sands"
+    ]
+  },
+  "GoldenTroupe": {
+    "setNum": [
+      2,
+      4
+    ],
+    "rarities": [
+      4,
+      5
+    ],
+    "slots": [
+      "goblet",
+      "plume",
+      "circlet",
+      "flower",
+      "sands"
+    ]
   }
 }
