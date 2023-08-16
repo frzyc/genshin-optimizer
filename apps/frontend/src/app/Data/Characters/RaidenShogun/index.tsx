@@ -245,10 +245,14 @@ const dmgFormulas = {
         100
       )
     ),
-    energyRestore: infoMut(a4EnergyRestore_, {
-      name: ct.ch('a4.enerRest'),
-      unit: '%',
-    }),
+    energyRestore: greaterEq(
+      input.asc,
+      4,
+      infoMut(a4EnergyRestore_, {
+        name: ct.ch('a4.enerRest'),
+        unit: '%',
+      })
+    ),
   },
 }
 const nodeC3 = greaterEq(input.constellation, 3, 3)

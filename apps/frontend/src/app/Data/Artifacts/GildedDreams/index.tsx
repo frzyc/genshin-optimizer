@@ -1,59 +1,81 @@
+import type { ArtifactSetKey } from '@genshin-optimizer/consts'
+import { allElementKeys } from '@genshin-optimizer/consts'
+import { objKeyMap, range } from '@genshin-optimizer/util'
 import { input, tally } from '../../../Formula'
 import type { Data } from '../../../Formula/type'
 import {
+  compareEq,
+  constant,
   equal,
   greaterEq,
   lookup,
-  naught,
   percent,
   prod,
   sum,
   unequal,
+  zero,
 } from '../../../Formula/utils'
 import KeyMap from '../../../KeyMap'
-import type { ArtifactSetKey } from '@genshin-optimizer/consts'
-import { allElementKeys } from '@genshin-optimizer/consts'
-import { cond, stg, st } from '../../SheetUtil'
+import { cond, st, stg, trans } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
 import type { IArtifactSheet } from '../IArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
 
 const key: ArtifactSetKey = 'GildedDreams'
 const setHeader = setHeaderTemplate(key)
+const [, trm] = trans('artifact', key)
 
 const set2 = greaterEq(input.artSet.GildedDreams, 2, 80, KeyMap.info('eleMas'))
 
 const [condPassivePath, condPassive] = cond(key, 'passive')
+
+const teamSameNum = lookup(input.charEle, tally, zero)
+// Do not include wielder (maybe)
+const autoSameNum = greaterEq(teamSameNum, 2, sum(teamSameNum, -1))
+
+const autoOtherNum = sum(
+  ...allElementKeys.map((ele) =>
+    greaterEq(tally[ele], 1, unequal(ele, input.charEle, tally[ele]))
+  )
+)
+
+const [condOverrideOtherPath, condOverrideOther] = cond(key, 'overrideOther')
+const overrideArr = range(0, 3)
+const overrideOtherNum = lookup(
+  condOverrideOther,
+  objKeyMap(overrideArr, (numOther) => constant(numOther)),
+  undefined
+)
+const [condOverrideSamePath, condOverrideSame] = cond(key, 'overrideSame')
+const overrideSameNum = lookup(
+  condOverrideSame,
+  objKeyMap(overrideArr, (numSame) => constant(numSame)),
+  undefined
+)
+
 const set4_atk_ = greaterEq(
   input.artSet.GildedDreams,
   4,
   equal(
     condPassive,
     'on',
-    lookup(
-      input.charEle,
-      Object.fromEntries(
-        allElementKeys.map((ele) => [
-          ele,
-          greaterEq(tally[ele], 2, prod(sum(tally[ele], -1), percent(0.14))), // Do not include wielder (maybe)
-        ])
-      ),
-      naught
+    prod(
+      percent(0.14),
+      compareEq(overrideSameNum, undefined, autoSameNum, overrideSameNum)
     )
   )
 )
-const totalNonEleParty = sum(
-  ...allElementKeys.map((ele) =>
-    greaterEq(tally[ele], 1, unequal(ele, input.charEle, tally[ele]))
-  )
-)
+
 const set4_eleMas = greaterEq(
   input.artSet.GildedDreams,
   4,
   equal(
     condPassive,
     'on',
-    greaterEq(totalNonEleParty, 1, prod(totalNonEleParty, 50)),
+    prod(
+      50,
+      compareEq(overrideOtherNum, undefined, autoOtherNum, overrideOtherNum)
+    ),
     KeyMap.info('eleMas')
   )
 )
@@ -88,17 +110,11 @@ const sheet: IArtifactSheet = {
                   node: set4_eleMas,
                 },
                 {
-                  canShow: (data) =>
-                    !data.get(set4_atk_).isEmpty ||
-                    !data.get(set4_eleMas).isEmpty,
                   text: stg('duration'),
                   value: 8,
                   unit: 's',
                 },
                 {
-                  canShow: (data) =>
-                    !data.get(set4_atk_).isEmpty ||
-                    !data.get(set4_eleMas).isEmpty,
                   text: stg('cd'),
                   value: 8,
                   unit: 's',
@@ -106,6 +122,28 @@ const sheet: IArtifactSheet = {
               ],
             },
           },
+        },
+        {
+          header: setHeader(4),
+          teamBuff: true,
+          path: condOverrideSamePath,
+          value: condOverrideSame,
+          name: trm('overrideSameCond'),
+          states: objKeyMap(overrideArr, (override) => ({
+            name: st('members', { count: override }),
+            fields: [],
+          })),
+        },
+        {
+          header: setHeader(4),
+          teamBuff: true,
+          path: condOverrideOtherPath,
+          value: condOverrideOther,
+          name: trm('overrideOtherCond'),
+          states: objKeyMap(overrideArr, (override) => ({
+            name: st('members', { count: override }),
+            fields: [],
+          })),
         },
       ],
     },

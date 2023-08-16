@@ -144,7 +144,11 @@ const atk_ = greaterEq(
     )
   )
 )
-const c1atk_ = equal(condC1, 'c1', percent(dm.constellation1.atk_))
+const c1atk_ = greaterEq(
+  input.constellation,
+  1,
+  equal(condC1, 'c1', percent(dm.constellation1.atk_))
+)
 const c2pyro_dmg_ = greaterEq(
   input.constellation,
   2,
@@ -208,13 +212,9 @@ export const dmgFormulas = {
     full: dmgNode('atk', dm.charged.full, 'charged', {
       hit: { ele: constant(elementKey) },
     }),
-    kindling: unequal(
-      condSkill,
-      'skill',
-      dmgNode('atk', dm.charged.kindling, 'charged', {
-        hit: { ele: constant(elementKey) },
-      })
-    ),
+    kindling: dmgNode('atk', dm.charged.kindling, 'charged', {
+      hit: { ele: constant(elementKey) },
+    }),
   },
   plunging: Object.fromEntries(
     Object.entries(dm.plunging).map(([key, value]) => [

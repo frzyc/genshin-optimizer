@@ -61,6 +61,7 @@
   "InvokationCoupons": {},
   "JoyeuxVoucher": {},
   "FascinatingPhenocryst": {},
+  "EnigmaticCopperMainspring": {},
   "Primogem": {
     "type": "MATERIAL_ADSORBATE"
   },
@@ -112,6 +113,7 @@
   "MondstadtReputationEXP": {},
   "SumeruReputationEXP": {},
   "LiyueReputationEXP": {},
+  "FontaineReputationEXP": {},
   "MemoryOfEternalFlames": {
     "type": "MATERIAL_TALENT"
   },
@@ -143,7 +145,7 @@
     "type": "MATERIAL_AVATAR"
   },
   "Lisa": {
-    "type": "MATERIAL_AVATAR"
+    "type": "MATERIAL_GCG_CARD_FACE"
   },
   "FemaleLead": {
     "type": "MATERIAL_AVATAR"
@@ -200,7 +202,7 @@
     "type": "MATERIAL_GCG_CARD_FACE"
   },
   "Qiqi": {
-    "type": "MATERIAL_AVATAR"
+    "type": "MATERIAL_GCG_CARD_FACE"
   },
   "Chongyun": {
     "type": "MATERIAL_GCG_CARD_FACE"
@@ -209,7 +211,7 @@
     "type": "MATERIAL_GCG_CARD_FACE"
   },
   "Albedo": {
-    "type": "MATERIAL_AVATAR"
+    "type": "MATERIAL_GCG_CARD_FACE"
   },
   "Diona": {
     "type": "MATERIAL_GCG_CARD_FACE"
@@ -338,6 +340,15 @@
     "type": "MATERIAL_AVATAR"
   },
   "Baizhu": {
+    "type": "MATERIAL_AVATAR"
+  },
+  "Lynette": {
+    "type": "MATERIAL_AVATAR"
+  },
+  "Lyney": {
+    "type": "MATERIAL_AVATAR"
+  },
+  "Freminet": {
     "type": "MATERIAL_AVATAR"
   },
   "KamisatoAyakasStellaFortuna": {
@@ -545,6 +556,15 @@
     "type": "MATERIAL_TALENT"
   },
   "BaizhusStellaFortuna": {
+    "type": "MATERIAL_TALENT"
+  },
+  "LynettesStellaFortuna": {
+    "type": "MATERIAL_TALENT"
+  },
+  "LyneysStellaFortuna": {
+    "type": "MATERIAL_TALENT"
+  },
+  "FreminetsStellaFortuna": {
     "type": "MATERIAL_TALENT"
   },
   "GnosticHymnOldNotes": {
@@ -884,6 +904,9 @@
     "type": "MATERIAL_EXCHANGE"
   },
   "CoffeeBeans": {
+    "type": "MATERIAL_EXCHANGE"
+  },
+  "FermentedJuice": {
     "type": "MATERIAL_EXCHANGE"
   },
   "JeansDocumentPackage": {
@@ -2866,6 +2889,9 @@
   "AmethystLump": {
     "type": "MATERIAL_GCG_CARD_BACK"
   },
+  "CondessenceCrystal": {
+    "type": "MATERIAL_EXCHANGE"
+  },
   "NorthlanderSwordBillet": {
     "type": "MATERIAL_EXCHANGE"
   },
@@ -2985,6 +3011,30 @@
   "Viparyas": {
     "type": "MATERIAL_EXCHANGE"
   },
+  "PluieLotus": {
+    "type": "MATERIAL_EXCHANGE"
+  },
+  "BulleFruit": {
+    "type": "MATERIAL_NOTICE_ADD_HP"
+  },
+  "Marcotte": {
+    "type": "MATERIAL_QUEST"
+  },
+  "BerylConch": {
+    "type": "MATERIAL_EXCHANGE"
+  },
+  "RomaritimeFlower": {
+    "type": "MATERIAL_EXCHANGE"
+  },
+  "Tidalga": {
+    "type": "MATERIAL_QUEST"
+  },
+  "LumidouceBell": {
+    "type": "MATERIAL_EXCHANGE"
+  },
+  "RainbowRose": {
+    "type": "MATERIAL_EXCHANGE"
+  },
   "BirchWood": {
     "type": "MATERIAL_WOOD"
   },
@@ -3031,6 +3081,21 @@
     "type": "MATERIAL_WOOD"
   },
   "AthelWood": {
+    "type": "MATERIAL_WOOD"
+  },
+  "MallowWood": {
+    "type": "MATERIAL_WOOD"
+  },
+  "LindenWood": {
+    "type": "MATERIAL_WOOD"
+  },
+  "AshWood": {
+    "type": "MATERIAL_WOOD"
+  },
+  "CypressWood": {
+    "type": "MATERIAL_WOOD"
+  },
+  "TorchWood": {
     "type": "MATERIAL_WOOD"
   },
   "Fabric": {
@@ -4515,6 +4580,33 @@
   "PhilosophiesOfPraxis": {
     "type": "MATERIAL_AVATAR_MATERIAL"
   },
+  "TeachingsOfEquity": {
+    "type": "MATERIAL_AVATAR_MATERIAL"
+  },
+  "GuideToEquity": {
+    "type": "MATERIAL_AVATAR_MATERIAL"
+  },
+  "PhilosophiesOfEquity": {
+    "type": "MATERIAL_AVATAR_MATERIAL"
+  },
+  "TeachingsOfJustice": {
+    "type": "MATERIAL_AVATAR_MATERIAL"
+  },
+  "GuideToJustice": {
+    "type": "MATERIAL_AVATAR_MATERIAL"
+  },
+  "PhilosophiesOfJustice": {
+    "type": "MATERIAL_AVATAR_MATERIAL"
+  },
+  "TeachingsOfOrder": {
+    "type": "MATERIAL_AVATAR_MATERIAL"
+  },
+  "GuideToOrder": {
+    "type": "MATERIAL_AVATAR_MATERIAL"
+  },
+  "PhilosophiesOfOrder": {
+    "type": "MATERIAL_AVATAR_MATERIAL"
+  },
   "SanctifyingDroplet": {
     "type": "MATERIAL_RELIQUARY_MATERIAL"
   },
@@ -4596,7 +4688,13 @@
   "PlumeOfPurifyingLight": {
     "type": "MATERIAL_CONSUME"
   },
+  "Hydroculus": {
+    "type": "MATERIAL_ELEM_CRYSTAL"
+  },
   "VoucherBox": {
+    "type": "MATERIAL_CONSUME"
+  },
+  "FontaineShrineOfDepthsKey": {
     "type": "MATERIAL_CONSUME"
   },
   "Dish": {
@@ -6120,6 +6218,189 @@
   "EnergizingBento": {
     "type": "MATERIAL_NOTICE_ADD_HP"
   },
+  "SuspiciousDuckConfit": {
+    "type": "MATERIAL_NOTICE_ADD_HP"
+  },
+  "DuckConfit": {
+    "type": "MATERIAL_NOTICE_ADD_HP"
+  },
+  "DeliciousDuckConfit": {
+    "type": "MATERIAL_NOTICE_ADD_HP"
+  },
+  "SuspiciousFontainianFoieGras": {
+    "type": "MATERIAL_FOOD"
+  },
+  "FontainianFoieGras": {
+    "type": "MATERIAL_FOOD"
+  },
+  "DeliciousFontainianFoieGras": {
+    "type": "MATERIAL_FOOD"
+  },
+  "SuspiciousCreamOfMushroomSoup": {
+    "type": "MATERIAL_FOOD"
+  },
+  "CreamOfMushroomSoup": {
+    "type": "MATERIAL_FOOD"
+  },
+  "DeliciousCreamOfMushroomSoup": {
+    "type": "MATERIAL_FOOD"
+  },
+  "SuspiciousGarlicBaguette": {
+    "type": "MATERIAL_FOOD"
+  },
+  "GarlicBaguette": {
+    "type": "MATERIAL_FOOD"
+  },
+  "DeliciousGarlicBaguette": {
+    "type": "MATERIAL_FOOD"
+  },
+  "SuspiciousFishAndChips": {
+    "type": "MATERIAL_FOOD"
+  },
+  "FishAndChips": {
+    "type": "MATERIAL_FOOD"
+  },
+  "DeliciousFishAndChips": {
+    "type": "MATERIAL_FOOD"
+  },
+  "SuspiciousLasagna": {
+    "type": "MATERIAL_NOTICE_ADD_HP"
+  },
+  "Lasagna": {
+    "type": "MATERIAL_NOTICE_ADD_HP"
+  },
+  "DeliciousLasagna": {
+    "type": "MATERIAL_NOTICE_ADD_HP"
+  },
+  "SuspiciousPoissonchantPie": {
+    "type": "MATERIAL_FOOD"
+  },
+  "PoissonchantPie": {
+    "type": "MATERIAL_FOOD"
+  },
+  "DeliciousPoissonchantPie": {
+    "type": "MATERIAL_FOOD"
+  },
+  "SuspiciousFruityTrio": {
+    "type": "MATERIAL_FOOD"
+  },
+  "FruityTrio": {
+    "type": "MATERIAL_FOOD"
+  },
+  "DeliciousFruityTrio": {
+    "type": "MATERIAL_FOOD"
+  },
+  "SuspiciousTassesRagout": {
+    "type": "MATERIAL_NOTICE_ADD_HP"
+  },
+  "TassesRagout": {
+    "type": "MATERIAL_NOTICE_ADD_HP"
+  },
+  "DeliciousTassesRagout": {
+    "type": "MATERIAL_NOTICE_ADD_HP"
+  },
+  "SuspiciousSteakTartare": {
+    "type": "MATERIAL_NOTICE_ADD_HP"
+  },
+  "SteakTartare": {
+    "type": "MATERIAL_NOTICE_ADD_HP"
+  },
+  "DeliciousSteakTartare": {
+    "type": "MATERIAL_NOTICE_ADD_HP"
+  },
+  "SuspiciousVessieChicken": {
+    "type": "MATERIAL_FOOD"
+  },
+  "VessieChicken": {
+    "type": "MATERIAL_FOOD"
+  },
+  "DeliciousVessieChicken": {
+    "type": "MATERIAL_FOOD"
+  },
+  "SuspiciousFontainianOnionSoup": {
+    "type": "MATERIAL_FOOD"
+  },
+  "FontainianOnionSoup": {
+    "type": "MATERIAL_FOOD"
+  },
+  "DeliciousFontainianOnionSoup": {
+    "type": "MATERIAL_FOOD"
+  },
+  "SuspiciousIleFlottante": {
+    "type": "MATERIAL_NOTICE_ADD_HP"
+  },
+  "IleFlottante": {
+    "type": "MATERIAL_NOTICE_ADD_HP"
+  },
+  "DeliciousIleFlottante": {
+    "type": "MATERIAL_NOTICE_ADD_HP"
+  },
+  "SuspiciousPoissonSeafoodSoup": {
+    "type": "MATERIAL_NOTICE_ADD_HP"
+  },
+  "PoissonSeafoodSoup": {
+    "type": "MATERIAL_NOTICE_ADD_HP"
+  },
+  "DeliciousPoissonSeafoodSoup": {
+    "type": "MATERIAL_NOTICE_ADD_HP"
+  },
+  "SuspiciousFontaineAspic": {
+    "type": "MATERIAL_FOOD"
+  },
+  "FontaineAspic": {
+    "type": "MATERIAL_FOOD"
+  },
+  "DeliciousFontaineAspic": {
+    "type": "MATERIAL_FOOD"
+  },
+  "SuspiciousPateDeFruit": {
+    "type": "MATERIAL_FOOD"
+  },
+  "PateDeFruit": {
+    "type": "MATERIAL_FOOD"
+  },
+  "DeliciousPateDeFruit": {
+    "type": "MATERIAL_FOOD"
+  },
+  "SuspiciousConchMadeleine": {
+    "type": "MATERIAL_FOOD"
+  },
+  "ConchMadeleine": {
+    "type": "MATERIAL_FOOD"
+  },
+  "DeliciousConchMadeleine": {
+    "type": "MATERIAL_FOOD"
+  },
+  "SeabirdsSojourn": {
+    "type": "MATERIAL_NOTICE_ADD_HP"
+  },
+  "CubicTricks": {
+    "type": "MATERIAL_FOOD"
+  },
+  "ALeisurelySip": {
+    "type": "MATERIAL_FOOD"
+  },
+  "Fonta": {
+    "type": "MATERIAL_NOTICE_ADD_HP"
+  },
+  "SuspiciousFruityDuet": {
+    "type": "MATERIAL_FOOD"
+  },
+  "FruityDuet": {
+    "type": "MATERIAL_FOOD"
+  },
+  "DeliciousFruityDuet": {
+    "type": "MATERIAL_FOOD"
+  },
+  "SuspiciousFruitySmoothie": {
+    "type": "MATERIAL_FOOD"
+  },
+  "FruitySmoothie": {
+    "type": "MATERIAL_FOOD"
+  },
+  "DeliciousFruitySmoothie": {
+    "type": "MATERIAL_FOOD"
+  },
   "RecipeItem": {
     "type": "MATERIAL_CONSUME"
   },
@@ -6552,6 +6833,63 @@
   "RecipeJadeFruitSoup": {
     "type": "MATERIAL_CONSUME"
   },
+  "RecipeDuckConfit": {
+    "type": "MATERIAL_CONSUME"
+  },
+  "RecipeFontainianFoieGras": {
+    "type": "MATERIAL_CONSUME"
+  },
+  "RecipeCreamOfMushroomSoup": {
+    "type": "MATERIAL_CONSUME"
+  },
+  "RecipeGarlicBaguette": {
+    "type": "MATERIAL_CONSUME"
+  },
+  "RecipeFishAndChips": {
+    "type": "MATERIAL_CONSUME"
+  },
+  "RecipeLasagna": {
+    "type": "MATERIAL_CONSUME"
+  },
+  "RecipePoissonchantPie": {
+    "type": "MATERIAL_CONSUME"
+  },
+  "RecipeFruityTrio": {
+    "type": "MATERIAL_CONSUME"
+  },
+  "RecipeTassesRagout": {
+    "type": "MATERIAL_CONSUME"
+  },
+  "RecipeSteakTartare": {
+    "type": "MATERIAL_CONSUME"
+  },
+  "RecipeVessieChicken": {
+    "type": "MATERIAL_CONSUME"
+  },
+  "RecipeFontainianOnionSoup": {
+    "type": "MATERIAL_CONSUME"
+  },
+  "RecipeIleFlottante": {
+    "type": "MATERIAL_CONSUME"
+  },
+  "RecipePoissonSeafoodSoup": {
+    "type": "MATERIAL_CONSUME"
+  },
+  "RecipeFontaineAspic": {
+    "type": "MATERIAL_CONSUME"
+  },
+  "RecipePateDeFruit": {
+    "type": "MATERIAL_CONSUME"
+  },
+  "RecipeConchMadeleine": {
+    "type": "MATERIAL_CONSUME"
+  },
+  "RecipeFruityDuet": {
+    "type": "MATERIAL_CONSUME"
+  },
+  "RecipeFruitySmoothie": {
+    "type": "MATERIAL_CONSUME"
+  },
   "CraftedItems": {
     "type": "MATERIAL_EXCHANGE"
   },
@@ -6661,6 +6999,12 @@
     "type": "MATERIAL_FISH_BAIT"
   },
   "SugardewBait": {
+    "type": "MATERIAL_FISH_BAIT"
+  },
+  "SourBait": {
+    "type": "MATERIAL_FISH_BAIT"
+  },
+  "FlashingMaintenanceMekBait": {
     "type": "MATERIAL_FISH_BAIT"
   },
   "PrimordialEssence": {
@@ -6900,6 +7244,42 @@
   "WanderersBloomingFlower": {
     "type": "MATERIAL_AVATAR_MATERIAL"
   },
+  "TransoceanicPearl": {
+    "type": "MATERIAL_AVATAR_MATERIAL"
+  },
+  "TransoceanicChunk": {
+    "type": "MATERIAL_AVATAR_MATERIAL"
+  },
+  "XenochromaticCrystal": {
+    "type": "MATERIAL_AVATAR_MATERIAL"
+  },
+  "MeshingGear": {
+    "type": "MATERIAL_AVATAR_MATERIAL"
+  },
+  "MechanicalSpurGear": {
+    "type": "MATERIAL_AVATAR_MATERIAL"
+  },
+  "ArtificedDynamicGear": {
+    "type": "MATERIAL_AVATAR_MATERIAL"
+  },
+  "DropOfTaintedWater": {
+    "type": "MATERIAL_AVATAR_MATERIAL"
+  },
+  "ScoopOfTaintedWater": {
+    "type": "MATERIAL_AVATAR_MATERIAL"
+  },
+  "NewbornTaintedHydroPhantasm": {
+    "type": "MATERIAL_AVATAR_MATERIAL"
+  },
+  "RiftCore": {
+    "type": "MATERIAL_AVATAR_MATERIAL"
+  },
+  "ForeignSynapse": {
+    "type": "MATERIAL_AVATAR_MATERIAL"
+  },
+  "AlienLifeCore": {
+    "type": "MATERIAL_AVATAR_MATERIAL"
+  },
   "HurricaneSeed": {
     "type": "MATERIAL_AVATAR_MATERIAL"
   },
@@ -7042,6 +7422,15 @@
     "type": "MATERIAL_AVATAR_MATERIAL"
   },
   "Everamber": {
+    "type": "MATERIAL_AVATAR_MATERIAL"
+  },
+  "ArtificedSpareClockworkComponentCoppelia": {
+    "type": "MATERIAL_AVATAR_MATERIAL"
+  },
+  "ArtificedSpareClockworkComponentCoppelius": {
+    "type": "MATERIAL_AVATAR_MATERIAL"
+  },
+  "EmperorsResolution": {
     "type": "MATERIAL_AVATAR_MATERIAL"
   },
   "TileOfDecarabiansTower": {
@@ -7188,6 +7577,42 @@
   "OldenDaysOfScorchingMight": {
     "type": "MATERIAL_AVATAR_MATERIAL"
   },
+  "FragmentOfAnAncientChord": {
+    "type": "MATERIAL_AVATAR_MATERIAL"
+  },
+  "ChapterOfAnAncientChord": {
+    "type": "MATERIAL_AVATAR_MATERIAL"
+  },
+  "MovementOfAnAncientChord": {
+    "type": "MATERIAL_AVATAR_MATERIAL"
+  },
+  "EchoOfAnAncientChord": {
+    "type": "MATERIAL_AVATAR_MATERIAL"
+  },
+  "DrossOfPureSacredDewdrop": {
+    "type": "MATERIAL_AVATAR_MATERIAL"
+  },
+  "SublimationOfPureSacredDewdrop": {
+    "type": "MATERIAL_AVATAR_MATERIAL"
+  },
+  "SpringOfPureSacredDewdrop": {
+    "type": "MATERIAL_AVATAR_MATERIAL"
+  },
+  "EssenceOfPureSacredDewdrop": {
+    "type": "MATERIAL_AVATAR_MATERIAL"
+  },
+  "BrokenGobletOfThePristineSea": {
+    "type": "MATERIAL_AVATAR_MATERIAL"
+  },
+  "WineGobletOfThePristineSea": {
+    "type": "MATERIAL_AVATAR_MATERIAL"
+  },
+  "SilverGobletOfThePristineSea": {
+    "type": "MATERIAL_AVATAR_MATERIAL"
+  },
+  "GoldenGobletOfThePristineSea": {
+    "type": "MATERIAL_AVATAR_MATERIAL"
+  },
   "StarterSupplyBundle": {
     "type": "MATERIAL_CHEST"
   },
@@ -7306,6 +7731,12 @@
     "type": "MATERIAL_SELECTABLE_CHEST"
   },
   "PhilosophiesOfTheLandOfVerdure": {
+    "type": "MATERIAL_SELECTABLE_CHEST"
+  },
+  "GuideToTheOriginalCurrent": {
+    "type": "MATERIAL_SELECTABLE_CHEST"
+  },
+  "PhilosophiesOfTheOriginalCurrent": {
     "type": "MATERIAL_SELECTABLE_CHEST"
   },
   "DomainReliquaryTierIII": {
@@ -8085,6 +8516,9 @@
   "KingOfInvokations": {
     "type": "MATERIAL_QUEST"
   },
+  "StrangePart": {
+    "type": "MATERIAL_QUEST"
+  },
   "KeyToTheCastlesSecretChamber": {
     "type": "MATERIAL_QUEST"
   },
@@ -8092,6 +8526,15 @@
     "type": "MATERIAL_QUEST"
   },
   "TheGreatEscapePropBook": {
+    "type": "MATERIAL_QUEST"
+  },
+  "EnigmaticPageI": {
+    "type": "MATERIAL_QUEST"
+  },
+  "EnigmaticPageII": {
+    "type": "MATERIAL_QUEST"
+  },
+  "EnigmaticPageIII": {
     "type": "MATERIAL_QUEST"
   },
   "NamelessAdventurersNotes": {
@@ -8181,16 +8624,229 @@
   "KhvarenaMonumentInscription": {
     "type": "MATERIAL_QUEST"
   },
+  "ActiveOdorImitatingBait": {
+    "type": "MATERIAL_QUEST"
+  },
+  "SubmergedBox": {
+    "type": "MATERIAL_QUEST"
+  },
+  "KeyToSomePlaceInTheInstitute": {
+    "type": "MATERIAL_QUEST"
+  },
   "BeautifullyWrappedGiftBox": {
     "type": "MATERIAL_QUEST"
   },
   "RipeGrapes": {
     "type": "MATERIAL_QUEST"
   },
+  "HeavyPack": {
+    "type": "MATERIAL_QUEST"
+  },
+  "ACanOfFry": {
+    "type": "MATERIAL_QUEST"
+  },
   "PrinceQubadsIntaglio": {
     "type": "MATERIAL_QUEST"
   },
+  "OldCaseFiles": {
+    "type": "MATERIAL_QUEST"
+  },
+  "TestimonyFromJacquesFamily": {
+    "type": "MATERIAL_QUEST"
+  },
+  "FlorentsStatement": {
+    "type": "MATERIAL_QUEST"
+  },
+  "ThierrysStatement": {
+    "type": "MATERIAL_QUEST"
+  },
+  "MarcelsStatement": {
+    "type": "MATERIAL_QUEST"
+  },
+  "SuspectAnalysis": {
+    "type": "MATERIAL_QUEST"
+  },
+  "PrimordialSeawaterPool": {
+    "type": "MATERIAL_QUEST"
+  },
+  "Sinthe": {
+    "type": "MATERIAL_QUEST"
+  },
+  "MissingPersonsPossessions": {
+    "type": "MATERIAL_QUEST"
+  },
+  "VachersExperimentReport": {
+    "type": "MATERIAL_QUEST"
+  },
+  "LettersRelatedToCallasCase": {
+    "type": "MATERIAL_QUEST"
+  },
+  "VigneiresNotebook": {
+    "type": "MATERIAL_QUEST"
+  },
+  "TheHistoryOfTheDeclineAndFallOfRemuriaI": {
+    "type": "MATERIAL_QUEST"
+  },
+  "TheHistoryOfTheDeclineAndFallOfRemuriaII": {
+    "type": "MATERIAL_QUEST"
+  },
+  "TheHistoryOfTheDeclineAndFallOfRemuriaIII": {
+    "type": "MATERIAL_QUEST"
+  },
+  "FablesDeFontaineI": {
+    "type": "MATERIAL_QUEST"
+  },
+  "FablesDeFontaineII": {
+    "type": "MATERIAL_QUEST"
+  },
+  "FablesDeFontaineIII": {
+    "type": "MATERIAL_QUEST"
+  },
+  "RobbenVersusChestertonIridescentBroochI": {
+    "type": "MATERIAL_QUEST"
+  },
+  "RobbenVersusChestertonIridescentBroochII": {
+    "type": "MATERIAL_QUEST"
+  },
+  "RobbenVersusChestertonIridescentBroochIII": {
+    "type": "MATERIAL_QUEST"
+  },
+  "GiftOfParting": {
+    "type": "MATERIAL_QUEST"
+  },
+  "DelightfulEncounter": {
+    "type": "MATERIAL_QUEST"
+  },
+  "RedStone": {
+    "type": "MATERIAL_QUEST"
+  },
+  "Treasure": {
+    "type": "MATERIAL_QUEST"
+  },
+  "HolyBladeOfNarzissenkreuz": {
+    "type": "MATERIAL_QUEST"
+  },
+  "GreenFeatherAccessory": {
+    "type": "MATERIAL_QUEST"
+  },
+  "TypewriterKeycap": {
+    "type": "MATERIAL_QUEST"
+  },
+  "Lakelight": {
+    "type": "MATERIAL_QUEST"
+  },
+  "Fry": {
+    "type": "MATERIAL_QUEST"
+  },
+  "OperaHouseSwitcherooCaseRecord": {
+    "type": "MATERIAL_QUEST_EVENT_BOOK"
+  },
+  "WaterAndMissingPersonCaseRecord": {
+    "type": "MATERIAL_QUEST_EVENT_BOOK"
+  },
+  "JabberwocksHolySword": {
+    "type": "MATERIAL_QUEST"
+  },
   "AbsolutionSeekersTestament": {
+    "type": "MATERIAL_QUEST"
+  },
+  "EnigmaticPageIV": {
+    "type": "MATERIAL_QUEST"
+  },
+  "EnigmaticPageV": {
+    "type": "MATERIAL_QUEST"
+  },
+  "EnigmaticPageVI": {
+    "type": "MATERIAL_QUEST"
+  },
+  "EnigmaticPageVII": {
+    "type": "MATERIAL_QUEST"
+  },
+  "EnigmaticPageVIII": {
+    "type": "MATERIAL_QUEST"
+  },
+  "EnigmaticPageIX": {
+    "type": "MATERIAL_QUEST"
+  },
+  "EnigmaticPageX": {
+    "type": "MATERIAL_QUEST"
+  },
+  "EnigmaticPageXI": {
+    "type": "MATERIAL_QUEST"
+  },
+  "EnigmaticPageXII": {
+    "type": "MATERIAL_QUEST"
+  },
+  "EnigmaticPageXIII": {
+    "type": "MATERIAL_QUEST"
+  },
+  "MelodyOfVesta": {
+    "type": "MATERIAL_QUEST"
+  },
+  "TopyassToken": {
+    "type": "MATERIAL_QUEST"
+  },
+  "StrangeOre": {
+    "type": "MATERIAL_QUEST"
+  },
+  "SpecialClock": {
+    "type": "MATERIAL_QUEST"
+  },
+  "AncientLog": {
+    "type": "MATERIAL_QUEST"
+  },
+  "AncientInvestigativeReport": {
+    "type": "MATERIAL_QUEST"
+  },
+  "AncientNaturalHistoryExcerpts": {
+    "type": "MATERIAL_QUEST"
+  },
+  "AncientNotes": {
+    "type": "MATERIAL_QUEST"
+  },
+  "CoffeeBrewingIngredients": {
+    "type": "MATERIAL_QUEST"
+  },
+  "SpeciallyCookedFish": {
+    "type": "MATERIAL_QUEST"
+  },
+  "EnhancedTruesightPotion": {
+    "type": "MATERIAL_QUEST"
+  },
+  "Bait": {
+    "type": "MATERIAL_QUEST"
+  },
+  "MysteriousCore": {
+    "type": "MATERIAL_QUEST"
+  },
+  "DrainedConchCup": {
+    "type": "MATERIAL_QUEST"
+  },
+  "NavigationLogFragment": {
+    "type": "MATERIAL_QUEST"
+  },
+  "DamagedDiary": {
+    "type": "MATERIAL_QUEST"
+  },
+  "SuspiciousFowl": {
+    "type": "MATERIAL_QUEST"
+  },
+  "FiberyRomaritimeFlowers": {
+    "type": "MATERIAL_QUEST"
+  },
+  "ChildesVision": {
+    "type": "MATERIAL_QUEST"
+  },
+  "MagicPocketMaterials": {
+    "type": "MATERIAL_QUEST"
+  },
+  "MagicPocket": {
+    "type": "MATERIAL_QUEST"
+  },
+  "PucasToken": {
+    "type": "MATERIAL_QUEST"
+  },
+  "AStory": {
     "type": "MATERIAL_QUEST"
   },
   "SilkFlowerSeed": {
@@ -8269,6 +8925,18 @@
     "type": "MATERIAL_HOME_SEED"
   },
   "SumeruRoseSeed": {
+    "type": "MATERIAL_HOME_SEED"
+  },
+  "PluieLotusSeed": {
+    "type": "MATERIAL_HOME_SEED"
+  },
+  "MarcotteSeed": {
+    "type": "MATERIAL_HOME_SEED"
+  },
+  "LumidouceBellSeed": {
+    "type": "MATERIAL_HOME_SEED"
+  },
+  "RainbowRoseSeed": {
     "type": "MATERIAL_HOME_SEED"
   },
   "Medaka": {
@@ -8355,6 +9023,27 @@
   "HalcyonJadeAxeMarlin": {
     "type": "MATERIAL_EXCHANGE"
   },
+  "StreamingAxeMarlin": {
+    "type": "MATERIAL_EXCHANGE"
+  },
+  "RipplingHeartfeatherBass": {
+    "type": "MATERIAL_EXCHANGE"
+  },
+  "BlazingHeartfeatherBass": {
+    "type": "MATERIAL_EXCHANGE"
+  },
+  "MaintenanceMekInitialConfiguration": {
+    "type": "MATERIAL_EXCHANGE"
+  },
+  "MaintenanceMekWaterBodyCleaner": {
+    "type": "MATERIAL_EXCHANGE"
+  },
+  "MaintenanceMekSituationController": {
+    "type": "MATERIAL_EXCHANGE"
+  },
+  "MaintenanceMekPlatinumCollection": {
+    "type": "MATERIAL_EXCHANGE"
+  },
   "WingsOfFirstFlight": {
     "type": "MATERIAL_FLYCLOAK"
   },
@@ -8386,6 +9075,9 @@
     "type": "MATERIAL_FLYCLOAK"
   },
   "WingsOfTheStarlitFeast": {
+    "type": "MATERIAL_FLYCLOAK"
+  },
+  "WingsOfMercifulWrathfulWaters": {
     "type": "MATERIAL_FLYCLOAK"
   },
   "RadiantSpincrystal1": {
@@ -8730,6 +9422,33 @@
   "FragrantSunshineSprat": {
     "type": "MATERIAL_SPICE_FOOD"
   },
+  "RadiantSpincrystal99": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal100": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal101": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal102": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal103": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal104": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal105": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal106": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal107": {
+    "type": "MATERIAL_BGM"
+  },
   "LanternFiber": {
     "type": "MATERIAL_EXCHANGE"
   },
@@ -8785,6 +9504,9 @@
     "type": "MATERIAL_AVATAR_MATERIAL"
   },
   "CongealedPupaWax": {
+    "type": "MATERIAL_AVATAR_MATERIAL"
+  },
+  "MartensOmniFix": {
     "type": "MATERIAL_AVATAR_MATERIAL"
   },
   "FalconsDance": {
@@ -8929,6 +9651,9 @@
     "type": "MATERIAL_FISH_ROD"
   },
   "Serendipity": {
+    "type": "MATERIAL_FISH_ROD"
+  },
+  "Wavepiercer": {
     "type": "MATERIAL_FISH_ROD"
   },
   "GenshinImpactANewWorld": {
@@ -9411,6 +10136,33 @@
   "TravelNotesVividIllumination": {
     "type": "MATERIAL_NAMECARD"
   },
+  "LyneyPretense": {
+    "type": "MATERIAL_NAMECARD"
+  },
+  "LynetteEarnestness": {
+    "type": "MATERIAL_NAMECARD"
+  },
+  "FreminetProgress": {
+    "type": "MATERIAL_NAMECARD"
+  },
+  "FontaineJudgment": {
+    "type": "MATERIAL_NAMECARD"
+  },
+  "AchievementOrbits": {
+    "type": "MATERIAL_NAMECARD"
+  },
+  "AchievementMariner": {
+    "type": "MATERIAL_NAMECARD"
+  },
+  "FontaineWondrousMachine": {
+    "type": "MATERIAL_NAMECARD"
+  },
+  "FontaineBigNews": {
+    "type": "MATERIAL_NAMECARD"
+  },
+  "TravelNotesPrimordialWaters": {
+    "type": "MATERIAL_NAMECARD"
+  },
   "AnemoculusResonanceStone": {
     "type": "MATERIAL_WIDGET"
   },
@@ -9621,6 +10373,21 @@
   "InscribedMirror": {
     "type": "MATERIAL_WIDGET"
   },
+  "HydroculusResonanceStone": {
+    "type": "MATERIAL_WIDGET"
+  },
+  "HydroTreasureCompass": {
+    "type": "MATERIAL_WIDGET"
+  },
+  "CrystalflyTrap": {
+    "type": "MATERIAL_WIDGET"
+  },
+  "WindPoweredWindGenerator": {
+    "type": "MATERIAL_WIDGET"
+  },
+  "BressonsSpecialKamera": {
+    "type": "MATERIAL_WIDGET"
+  },
   "InstructionsAnemoculusResonanceStone": {
     "type": "MATERIAL_CONSUME"
   },
@@ -9687,6 +10454,21 @@
   "TaleOfThePortent": {
     "type": "MATERIAL_CONSUME"
   },
+  "DiagramFinaleOfTheDeep": {
+    "type": "MATERIAL_CONSUME"
+  },
+  "DiagramSongOfStillness": {
+    "type": "MATERIAL_CONSUME"
+  },
+  "DiagramTidalShadow": {
+    "type": "MATERIAL_CONSUME"
+  },
+  "DiagramFlowingPurity": {
+    "type": "MATERIAL_CONSUME"
+  },
+  "DiagramRightfulReward": {
+    "type": "MATERIAL_CONSUME"
+  },
   "InstructionsElectroculusResonanceStone": {
     "type": "MATERIAL_CONSUME"
   },
@@ -9708,10 +10490,22 @@
   "FormulaSugardewBait": {
     "type": "MATERIAL_CONSUME"
   },
+  "FormulaSourBait": {
+    "type": "MATERIAL_CONSUME"
+  },
+  "FormulaFlashingMaintenanceMekBait": {
+    "type": "MATERIAL_CONSUME"
+  },
   "InstructionsDendroculusResonanceStone": {
     "type": "MATERIAL_CONSUME"
   },
   "DiagramDendroTreasureCompass": {
+    "type": "MATERIAL_CONSUME"
+  },
+  "InstructionsHydroculusResonanceStone": {
+    "type": "MATERIAL_CONSUME"
+  },
+  "DiagramHydroTreasureCompass": {
     "type": "MATERIAL_CONSUME"
   },
   "SilkenPrint": {
@@ -9936,6 +10730,9 @@
   "TheShrinesSacredShade": {
     "type": "MATERIAL_GCG_CARD_FACE"
   },
+  "DescentOfDivinity": {
+    "type": "MATERIAL_GCG_CARD_FACE"
+  },
   "TheSeedOfStoredKnowledge": {
     "type": "MATERIAL_GCG_CARD_FACE"
   },
@@ -9952,6 +10749,12 @@
     "type": "MATERIAL_GCG_CARD_FACE"
   },
   "PoeticsOfFuubutsu": {
+    "type": "MATERIAL_GCG_CARD_FACE"
+  },
+  "RiteOfResurrection": {
+    "type": "MATERIAL_GCG_CARD_FACE"
+  },
+  "PulsatingWitch": {
     "type": "MATERIAL_GCG_CARD_FACE"
   },
   "MagicGuide": {
@@ -10113,6 +10916,9 @@
   "FruitOfFulfillment": {
     "type": "MATERIAL_GCG_CARD_FACE"
   },
+  "KingsSquire": {
+    "type": "MATERIAL_GCG_CARD_FACE"
+  },
   "LiyueHarborWharf": {
     "type": "MATERIAL_GCG_CARD_FACE"
   },
@@ -10204,6 +11010,12 @@
     "type": "MATERIAL_GCG_CARD_FACE"
   },
   "MasterZhang": {
+    "type": "MATERIAL_GCG_CARD_FACE"
+  },
+  "GoldenHouse": {
+    "type": "MATERIAL_GCG_CARD_FACE"
+  },
+  "Setaria": {
     "type": "MATERIAL_GCG_CARD_FACE"
   },
   "ElementalResonanceWovenIce": {
@@ -10329,6 +11141,12 @@
   "RhythmOfTheGreatDream": {
     "type": "MATERIAL_GCG_CARD_FACE"
   },
+  "JoyousCelebration": {
+    "type": "MATERIAL_GCG_CARD_FACE"
+  },
+  "WhereIsTheUnseenRazor": {
+    "type": "MATERIAL_GCG_CARD_FACE"
+  },
   "Origin": {
     "type": "MATERIAL_GCG_CARD_BACK"
   },
@@ -10354,6 +11172,9 @@
     "type": "MATERIAL_GCG_CARD_BACK"
   },
   "TreasuresOfTheDeck": {
+    "type": "MATERIAL_GCG_CARD_BACK"
+  },
+  "Fontaine": {
     "type": "MATERIAL_GCG_CARD_BACK"
   },
   "BeginnerPlayerBadge": {
@@ -10750,6 +11571,18 @@
     "type": "MATERIAL_FURNITURE_FORMULA"
   },
   "GlowingAmusementParkCandyLamp": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "PassagesAppetizingLamp": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "MekaLuminaireRadiantPath": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "MekaLuminaireRadiantGrounds": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "MekaLuminaireRadiantCountryside": {
     "type": "MATERIAL_FURNITURE_FORMULA"
   },
   "EfflorescentIllumination": {
@@ -11562,6 +12395,21 @@
   "AdhigamaWoodOpenAirFoodStall": {
     "type": "MATERIAL_FURNITURE_FORMULA"
   },
+  "MachineDyedAwningMarcotteRed": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "MachineDyedAwningLumidouceBlue": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "PassagesPolychromaticPottedPlants": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "PassagesPlentifulProduce": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "PassagesPrinciplesOfPunctuality": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
   "HilichurlOutpostHut": {
     "type": "MATERIAL_FURNITURE_FORMULA"
   },
@@ -11823,6 +12671,57 @@
   "FineSandInWarmWeather": {
     "type": "MATERIAL_FURNITURE_FORMULA"
   },
+  "CourtOfJusticesLeisure": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "CourtOfJusticesValor": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "CourtOfJusticesSteel": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "CourtOfJusticesArtistry": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "CourtOfJusticesConscientiousness": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "CourtOfJusticesMellowAroma": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "CourtOfJusticesProsperity": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "CourtOfJusticesMerchandise": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "CourtOfJusticesCommerce": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "CourtOfJusticesDiligence": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "CourtOfJusticesCouture": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "CourtOfJusticesGreenGrocers": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "CourtOfJusticesFragrance": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "CourtOfJusticesNewsstand": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "AutomnequisWatch": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "AutomnequisChimneySmoke": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "DistributedForwardSupplyDepot": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
   "BirdAndBlossomDesignFountain": {
     "type": "MATERIAL_FURNITURE_FORMULA"
   },
@@ -11902,6 +12801,9 @@
     "type": "MATERIAL_FURNITURE_FORMULA"
   },
   "ThreeWheeledMountainHandCart": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "AutomnequisCask": {
     "type": "MATERIAL_FURNITURE_FORMULA"
   },
   "AdeptusGate": {
@@ -12234,6 +13136,9 @@
   "WindUpGreatOwlSpiritMechanism": {
     "type": "MATERIAL_FURNITURE_FORMULA"
   },
+  "MaintenanceMekTechnicalDemoType": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
   "PottedPlantVerdantVastness": {
     "type": "MATERIAL_FURNITURE_FORMULA"
   },
@@ -12244,6 +13149,9 @@
     "type": "MATERIAL_FURNITURE_FORMULA"
   },
   "PinesAwaitingTheTwilight": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "PassagesPerfumedPottedPlants": {
     "type": "MATERIAL_FURNITURE_FORMULA"
   },
   "FirShelves": {
@@ -12474,6 +13382,9 @@
   "AmusementParkBroadcastTower": {
     "type": "MATERIAL_FURNITURE_FORMULA"
   },
+  "PassagesParasol": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
   "WroughtIronCarvedStreetLight": {
     "type": "MATERIAL_FURNITURE_FORMULA"
   },
@@ -12561,6 +13472,9 @@
   "SanzaiOtogiFlowerTerrace": {
     "type": "MATERIAL_FURNITURE_FORMULA"
   },
+  "CourtOfJusticesBarrier": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
   "SmoothWoodenBench": {
     "type": "MATERIAL_FURNITURE_FORMULA"
   },
@@ -12580,6 +13494,12 @@
     "type": "MATERIAL_FURNITURE_FORMULA"
   },
   "DeadlineWhatDeadlineDirectorsChair": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "PassagesLanguidLifestyle": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "PassagesEveningEnsemble": {
     "type": "MATERIAL_FURNITURE_FORMULA"
   },
   "TwoStoryHilichurlSentryTower": {
@@ -12628,6 +13548,9 @@
     "type": "MATERIAL_FURNITURE_FORMULA"
   },
   "KarmaphalaDisplayTable": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "PassagesPristineRoundTable": {
     "type": "MATERIAL_FURNITURE_FORMULA"
   },
   "WineShopDisplayCounterToYourHeartsContent": {

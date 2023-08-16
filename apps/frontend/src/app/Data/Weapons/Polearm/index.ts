@@ -1,5 +1,6 @@
 import type { WeaponPoleArmKey } from '@genshin-optimizer/consts'
 import type WeaponSheet from '../WeaponSheet'
+import BalladOfTheFjords from './BalladOfTheFjords'
 import BeginnersProtector from './BeginnersProtector'
 import BlackcliffPole from './BlackcliffPole'
 import BlackTassel from './BlackTassel'
@@ -18,6 +19,7 @@ import MissiveWindspear from './MissiveWindspear'
 import Moonpiercer from './Moonpiercer'
 import PrimordialJadeWingedSpear from './PrimordialJadeWingedSpear'
 import PrototypeStarglitter from './PrototypeStarglitter'
+import RightfulReward from './RightfulReward'
 import RoyalSpear from './RoyalSpear'
 import SkywardSpine from './SkywardSpine'
 import StaffOfHoma from './StaffOfHoma'
@@ -27,6 +29,7 @@ import VortexVanquisher from './VortexVanquisher'
 import WavebreakersFin from './WavebreakersFin'
 import WhiteTassel from './WhiteTassel'
 const polearm: Record<WeaponPoleArmKey, WeaponSheet> = {
+  BalladOfTheFjords,
   BeginnersProtector,
   BlackcliffPole,
   BlackTassel,
@@ -45,6 +48,7 @@ const polearm: Record<WeaponPoleArmKey, WeaponSheet> = {
   Moonpiercer,
   PrimordialJadeWingedSpear,
   PrototypeStarglitter,
+  RightfulReward,
   RoyalSpear,
   SkywardSpine,
   StaffOfHoma,

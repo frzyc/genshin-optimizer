@@ -106,7 +106,7 @@ const nodeSkillDmgRed_ = equal(
   )
 )
 
-const nodeA4Heal = customHealNode(
+const nodeA1Heal = customHealNode(
   greaterEq(input.asc, 1, prod(input.total.hp, percent(0.06)))
 )
 
@@ -130,7 +130,7 @@ export const dmgFormulas = {
     dmgRed_: nodeSkillDmgRed_,
   },
   passive1: {
-    healing: nodeA4Heal,
+    healing: nodeA1Heal,
   },
   burst: {
     dmg: dmgNode('atk', dm.burst.dmg, 'burst', {

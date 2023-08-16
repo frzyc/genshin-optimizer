@@ -127,6 +127,12 @@ export const parsingFunctions: {
         const [normal, charged, breakthrough, plunging] = strings
         return { normal, charged, breakthrough, plunging } as any
       }
+    } else if (strings.length === 5) {
+      const [, charkey] = keys as any
+      if (charkey === 'Lyney') {
+        const [normal, plunging, charged, grinMalkin, arkhe] = strings
+        return { normal, charged, plunging, grinMalkin, arkhe } as any
+      }
     }
     throw `parsing fields error[${keys}](${lang}): ${string}`
   },
