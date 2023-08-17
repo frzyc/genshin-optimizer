@@ -14,7 +14,6 @@ import {
   HitModeToggle,
   ReactionToggle,
 } from '../../../../Components/HitModeEditor'
-import ArtifactCard from '../../../../PageArtifact/ArtifactCard'
 import useDBMeta from '../../../../ReactHooks/useDBMeta'
 import ArtifactSetConfig from '../TabOptimize/Components/ArtifactSetConfig'
 import BonusStatsCard from '../TabOptimize/Components/BonusStatsCard'
