@@ -202,12 +202,20 @@ const dmgFormulas = {
     ),
   },
   passive1: {
-    absorb: unequal(
-      condSkillAbsorption,
-      undefined,
-      customDmgNode(prod(input.total.atk, dm.passive1.absorbAdd), 'plunging', {
-        hit: { ele: condSkillAbsorption },
-      })
+    absorb: greaterEq(
+      input.asc,
+      1,
+      unequal(
+        condSkillAbsorption,
+        undefined,
+        customDmgNode(
+          prod(input.total.atk, dm.passive1.absorbAdd),
+          'plunging',
+          {
+            hit: { ele: condSkillAbsorption },
+          }
+        )
+      )
     ),
   },
   passive2: asc4,

@@ -43,6 +43,8 @@ import KujouSara from './KujouSara'
 import KukiShinobu from './KukiShinobu'
 import Layla from './Layla'
 import Lisa from './Lisa'
+import Lynette from './Lynette'
+import Lyney from './Lyney'
 import Mika from './Mika'
 import Mona from './Mona'
 import Nahida from './Nahida'
@@ -71,6 +73,8 @@ import TravelerElectroF from './TravelerElectroF'
 import TravelerElectroM from './TravelerElectroM'
 import TravelerGeoF from './TravelerGeoF'
 import TravelerGeoM from './TravelerGeoM'
+import TravelerHydroF from './TravelerHydroF'
+import TravelerHydroM from './TravelerHydroM'
 import Venti from './Venti'
 import Xiangling from './Xiangling'
 import Xiao from './Xiao'
@@ -121,6 +125,8 @@ const characters: Record<CharacterSheetKey, CharacterSheet> = {
   KukiShinobu,
   Layla,
   Lisa,
+  Lynette,
+  Lyney,
   Mika,
   Mona,
   Nahida,
@@ -149,6 +155,8 @@ const characters: Record<CharacterSheetKey, CharacterSheet> = {
   TravelerGeoM,
   TravelerElectroM,
   TravelerDendroM,
+  TravelerHydroF,
+  TravelerHydroM,
   Venti,
   Xiangling,
   Xiao,

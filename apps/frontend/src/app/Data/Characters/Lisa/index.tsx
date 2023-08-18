@@ -1,13 +1,20 @@
 import { allStats } from '@genshin-optimizer/gi-stats'
 import { input } from '../../../Formula'
-import { constant, equal, greaterEq, infoMut } from '../../../Formula/utils'
+import {
+  constant,
+  equal,
+  greaterEq,
+  infoMut,
+  percent,
+  prod,
+} from '../../../Formula/utils'
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
 import { range } from '../../../Util/Util'
 import { cond, stg, st } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import { charTemplates } from '../charTemplates'
 import type { ICharacterSheet } from '../ICharacterSheet.d'
-import { dataObjForCharacterSheet, dmgNode } from '../dataUtil'
+import { customDmgNode, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
 
 const key: CharacterKey = 'Lisa'
 const elementKey: ElementKey = 'electro'
@@ -48,6 +55,7 @@ const dm = {
     pressCD: skillParam_gen.skill[s++][0],
   },
   burst: {
+    summon: 0.1, //not in skillParam
     tick: skillParam_gen.burst[b++],
     duration: skillParam_gen.burst[b++][0],
     cd: skillParam_gen.burst[b++][0],
@@ -65,15 +73,15 @@ const dm = {
 const [condA4Path, condA4] = cond(key, 'LisaA4')
 const [condC2Path, condC2] = cond(key, 'LisaC2')
 
-const nodeA4DefShred = equal(
-  condA4,
-  'on',
-  greaterEq(input.asc, 1, dm.passive2.defShred)
+const nodeA4DefShred = greaterEq(
+  input.asc,
+  1,
+  equal(condA4, 'on', dm.passive2.defShred)
 )
-const nodeC2DefIncrease = equal(
-  condC2,
-  'on',
-  greaterEq(input.constellation, 2, constant(0.25))
+const nodeC2DefIncrease = greaterEq(
+  input.constellation,
+  2,
+  equal(condC2, 'on', constant(0.25))
 ) // Doesn't exist in skillParam_gen
 
 const dmgFormulas = {
@@ -97,6 +105,10 @@ const dmgFormulas = {
     press: dmgNode('atk', dm.skill.press, 'skill'),
   },
   burst: {
+    summon: customDmgNode(
+      prod(percent(dm.burst.summon), input.total.atk),
+      'burst'
+    ),
     tick: dmgNode('atk', dm.burst.tick, 'burst'),
   },
 }
@@ -215,8 +227,13 @@ const sheet: ICharacterSheet = {
       {
         fields: [
           {
+            node: infoMut(dmgFormulas.burst.summon, {
+              name: stg('skillDMG'),
+            }),
+          },
+          {
             node: infoMut(dmgFormulas.burst.tick, {
-              name: ct.chg(`burst.skillParams.0`),
+              name: ct.chg('burst.skillParams.0'),
             }),
           },
           {

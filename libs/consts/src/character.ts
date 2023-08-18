@@ -98,6 +98,8 @@ export const nonTravelerCharacterKeys = [
   'KukiShinobu',
   'Layla',
   'Lisa',
+  'Lynette',
+  'Lyney',
   'Mika',
   'Mona',
   'Nahida',
@@ -133,7 +135,13 @@ export const nonTravelerCharacterKeys = [
 ] as const
 export type NonTravelerCharacterKey = (typeof nonTravelerCharacterKeys)[number]
 
-export const travelerElements = ['anemo', 'geo', 'electro', 'dendro'] as const
+export const travelerElements = [
+  'anemo',
+  'geo',
+  'electro',
+  'dendro',
+  'hydro',
+] as const
 export type TravelerElementKey = (typeof travelerElements)[number]
 
 export const allTravelerKeys = [
@@ -141,6 +149,7 @@ export const allTravelerKeys = [
   'TravelerGeo',
   'TravelerElectro',
   'TravelerDendro',
+  'TravelerHydro',
 ] as const
 export type TravelerKey = (typeof allTravelerKeys)[number]
 
@@ -149,6 +158,7 @@ export const travelerEleMap: Partial<Record<ElementKey, TravelerKey>> = {
   geo: 'TravelerGeo',
   electro: 'TravelerElectro',
   dendro: 'TravelerDendro',
+  hydro: 'TravelerHydro',
 } as const
 
 export const locationGenderedCharacterKeys = [

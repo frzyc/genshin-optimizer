@@ -35,6 +35,8 @@ import KujouSara from './KujouSara'
 import KukiShinobu from './KukiShinobu'
 import Layla from './Layla'
 import Lisa from './Lisa'
+import Lynette from './Lynette'
+import Lyney from './Lyney'
 import Mika from './Mika'
 import Mona from './Mona'
 import Nahida from './Nahida'
@@ -59,6 +61,7 @@ import TravelerDendro from './TravelerDendro'
 import TravelerElectro from './TravelerElectro'
 import TravelerF from './TravelerF'
 import TravelerGeo from './TravelerGeo'
+import TravelerHydro from './TravelerHydro'
 import TravelerM from './TravelerM'
 import Venti from './Venti'
 import Wanderer from './Wanderer'
@@ -111,6 +114,8 @@ const data = {
   KukiShinobu,
   Layla,
   Lisa,
+  Lynette,
+  Lyney,
   Mika,
   Mona,
   Nahida,
@@ -135,6 +140,7 @@ const data = {
   TravelerElectro,
   TravelerF,
   TravelerGeo,
+  TravelerHydro,
   TravelerM,
   Venti,
   Wanderer,

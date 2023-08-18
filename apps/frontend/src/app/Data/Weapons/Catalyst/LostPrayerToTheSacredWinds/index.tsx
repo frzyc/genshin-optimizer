@@ -54,7 +54,7 @@ const sheet: IWeaponSheet = {
       value: condPassive,
       path: condPassivePath,
       header: headerTemplate(key, st('stacks')),
-      name: st('activeCharField'),
+      name: st('timeOnField'),
       states: objKeyMap(range(1, 4), (i) => ({
         name: st('seconds', { count: i * 4 }),
         fields: allElementKeys.map((ele) => ({ node: eleDmgStacks[ele] })),
