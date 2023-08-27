@@ -159,10 +159,14 @@ export const data = dataObjForCharacterSheet(
   data_gen,
   dmgFormulas,
   {
+    teamBuff: {
+      premod: {
+        atk_: a1AfterBurst_atk_,
+      },
+    },
     premod: {
       skillBoost: skillC5,
       burstBoost: burstC3,
-      atk_: a1AfterBurst_atk_,
       burst_dmg_: a4BurstAbsorb_burst_dmg_,
       anemo_dmg_: c6AfterThrust_anemo_dmg_,
     },

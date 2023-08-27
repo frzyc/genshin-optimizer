@@ -158,11 +158,7 @@ const dmgFormulas = {
     heal: greaterEq(
       input.constellation,
       4,
-      greaterEq(
-        tally['geo'],
-        2,
-        healNode('def', dm.constellation4.heal_def_, 0)
-      )
+      healNode('def', dm.constellation4.heal_def_, 0)
     ),
   },
 }
