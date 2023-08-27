@@ -118,6 +118,25 @@ const dmgFormulas = {
     aimedCharged: dmgNode('atk', dm.charged.aimedCharged, 'charged', {
       hit: { ele: constant('pyro') },
     }),
+  },
+  plunging: Object.fromEntries(
+    Object.entries(dm.plunging).map(([key, value]) => [
+      key,
+      dmgNode('atk', value, 'plunging'),
+    ])
+  ),
+  skill: {
+    inheritedHp: prod(
+      subscript(input.total.skillIndex, dm.skill.inheritedHp),
+      input.total.hp
+    ),
+    dmg: dmgNode('atk', dm.skill.dmg, 'skill'),
+  },
+  burst: {
+    rainDmg: dmgNode('atk', dm.burst.rainDmg, 'burst'),
+    dmgPerWave: dmgNode('atk', dm.burst.dmgPerWave, 'burst'),
+  },
+  constellation1: {
     secondAimed: greaterEq(
       input.constellation,
       1,
@@ -136,23 +155,6 @@ const dmgFormulas = {
         percent(dm.constellation1.secArrowDmg)
       )
     ),
-  },
-  plunging: Object.fromEntries(
-    Object.entries(dm.plunging).map(([key, value]) => [
-      key,
-      dmgNode('atk', value, 'plunging'),
-    ])
-  ),
-  skill: {
-    inheritedHp: prod(
-      subscript(input.total.skillIndex, dm.skill.inheritedHp),
-      input.total.hp
-    ),
-    dmg: dmgNode('atk', dm.skill.dmg, 'skill'),
-  },
-  burst: {
-    rainDmg: dmgNode('atk', dm.burst.rainDmg, 'burst'),
-    dmgPerWave: dmgNode('atk', dm.burst.dmgPerWave, 'burst'),
   },
   constellation2: {
     manualDetonationDmg: greaterEq(
@@ -221,24 +223,28 @@ const sheet: ICharacterSheet = {
             }),
           },
           {
-            node: infoMut(dmgFormulas.charged.secondAimed, {
+            node: infoMut(dmgFormulas.charged.aimedCharged, {
+              name: ct.chg(`auto.skillParams.6`),
+            }),
+          },
+        ],
+      },
+      ct.headerTem('constellation1', {
+        fields: [
+          {
+            node: infoMut(dmgFormulas.constellation1.secondAimed, {
               name: ct.chg(`auto.skillParams.5`),
               textSuffix: ct.ch('secondArrow'),
             }),
           },
           {
-            node: infoMut(dmgFormulas.charged.aimedCharged, {
-              name: ct.chg(`auto.skillParams.6`),
-            }),
-          },
-          {
-            node: infoMut(dmgFormulas.charged.secondAimedCharged, {
+            node: infoMut(dmgFormulas.constellation1.secondAimedCharged, {
               name: ct.chg(`auto.skillParams.6`),
               textSuffix: ct.ch('secondArrow'),
             }),
           },
         ],
-      },
+      }),
       {
         text: ct.chg('auto.fields.plunging'),
       },

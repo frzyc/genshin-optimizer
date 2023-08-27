@@ -24,12 +24,14 @@ import FlowerOfParadiseLost from './FlowerOfParadiseLost'
 import Gambler from './Gambler'
 import GildedDreams from './GildedDreams'
 import GladiatorsFinale from './GladiatorsFinale'
+import GoldenTroupe from './GoldenTroupe'
 import HeartOfDepth from './HeartOfDepth'
 import HuskOfOpulentDreams from './HuskOfOpulentDreams'
 import Instructor from './Instructor'
 import Lavawalker from './Lavawalker'
 import LuckyDog from './LuckyDog'
 import MaidenBeloved from './MaidenBeloved'
+import MarechausseeHunter from './MarechausseeHunter'
 import MartialArtist from './MartialArtist'
 import NoblesseOblige from './NoblesseOblige'
 import NymphsDream from './NymphsDream'
@@ -71,12 +73,14 @@ const artifacts: Record<ArtifactSetKey, ArtifactSheet> = {
   Gambler,
   GildedDreams,
   GladiatorsFinale,
+  GoldenTroupe,
   HeartOfDepth,
   HuskOfOpulentDreams,
   Instructor,
   Lavawalker,
   LuckyDog,
   MaidenBeloved,
+  MarechausseeHunter,
   MartialArtist,
   NoblesseOblige,
   NymphsDream,

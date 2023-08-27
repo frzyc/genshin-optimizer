@@ -6,15 +6,15 @@ import type {
 } from '@genshin-optimizer/consts'
 import type { NumNode, StrNode } from '@genshin-optimizer/pando'
 import { prod } from '@genshin-optimizer/pando'
-import type { Data, Source, Stat } from '.'
-import { reader, self, selfBuff, tag, teamBuff, usedNames } from '.'
+import type { TagMapNodeEntries, Source, Stat, TagMapNodeEntry } from '.'
+import { reader, self, selfBuff, tag, teamBuff } from '.'
 
 // Use `registerArt` for artifacts
 export function register(
   src: Exclude<Source, ArtifactSetKey>,
-  ...data: (Data[number] | Data)[]
-): Data {
-  const internal = ({ tag, value }: Data[number]) => ({
+  ...data: (TagMapNodeEntry | TagMapNodeEntries)[]
+): TagMapNodeEntries {
+  const internal = ({ tag, value }: TagMapNodeEntry) => ({
     tag: { ...tag, src },
     value,
   })
@@ -23,7 +23,7 @@ export function register(
   )
 }
 
-export function addStatCurve(key: string, value: NumNode): Data[number] {
+export function addStatCurve(key: string, value: NumNode): TagMapNodeEntry {
   return (
     key.endsWith('_dmg_')
       ? selfBuff.premod['dmg_'][key.slice(0, -5) as ElementWithPhyKey]
@@ -42,8 +42,8 @@ export function customDmg(
   move: MoveKey,
   base: NumNode,
   { team, cond = 'dmg' }: FormulaArg = {},
-  ...extra: Data
-): Data {
+  ...extra: TagMapNodeEntries
+): TagMapNodeEntries {
   const buff = team ? teamBuff : selfBuff
   return registerFormula(
     name,
@@ -60,8 +60,8 @@ export function customShield(
   ele: ElementKey | undefined,
   base: NumNode,
   { team, cond = 'shield' }: FormulaArg = {},
-  ...extra: Data
-): Data {
+  ...extra: TagMapNodeEntries
+): TagMapNodeEntries {
   switch (ele) {
     case undefined:
       break
@@ -86,8 +86,8 @@ export function customHeal(
   name: string,
   base: NumNode,
   { team, cond = 'heal' }: FormulaArg = {},
-  ...extra: Data
-): Data {
+  ...extra: TagMapNodeEntries
+): TagMapNodeEntries {
   const buff = team ? teamBuff : selfBuff
   return registerFormula(
     name,
@@ -102,9 +102,9 @@ function registerFormula(
   name: string,
   team: boolean | undefined,
   cond: string | StrNode,
-  ...extra: Data
-): Data {
-  usedNames.add(name)
+  ...extra: TagMapNodeEntries
+): TagMapNodeEntries {
+  reader.name(name) // register name:<name>
   const buff = team ? teamBuff : selfBuff
   return [
     buff.formula.listing.add(tag(cond, { name })),

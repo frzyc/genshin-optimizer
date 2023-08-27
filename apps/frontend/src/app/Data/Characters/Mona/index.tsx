@@ -120,7 +120,7 @@ const vaporize_dmg_ = greaterEq(
 const critRate_ = greaterEq(
   input.constellation,
   4,
-  percent(dm.constellation4.critRateInc)
+  equal(condOmen, 'on', percent(dm.constellation4.critRateInc))
 )
 
 const [condRoCPath, condRoC] = cond(key, 'RhetoricsOfCalamitas')

@@ -25,6 +25,7 @@ type AnyNode = NumNode | StrNode
 export const todo: OptNode = constant(NaN, { name: 'TODO' })
 export const one = percent(1),
   naught = percent(0)
+export const zero = constant(0)
 export const none = constant('none')
 
 export function constant(value: number, info?: Info): ConstantNode<number>

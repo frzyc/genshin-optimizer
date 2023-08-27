@@ -1,40 +1,35 @@
+import { constant, prod, subscript, sum } from '@genshin-optimizer/pando'
 import type { NonTrailblazerCharacterKey } from '@genshin-optimizer/sr-consts'
 import { nonTrailblazerCharacterKeys } from '@genshin-optimizer/sr-consts'
 import { allStats } from '@genshin-optimizer/sr-stats'
-import { constant, prod, read, subscript, sum } from '@genshin-optimizer/pando'
-import type { TaggedFormulas } from '../util'
+import { register, self, selfBuff, type TagMapNodeEntries } from '../util'
 
-type Promotion =
-  (typeof allStats.char)[NonTrailblazerCharacterKey]['ascension'][number]
 // Attach the base stats from the generated datamine
-function handleCharacterGen(ck: NonTrailblazerCharacterKey): TaggedFormulas {
-  const chardataGen = allStats.char[ck]
-  const readAsc = read({ src: ck, q: 'ascension' }, undefined)
-  // The "add" only applies to currLvl - 1, since "base" is stat at lvl1
-  const readLvl = sum(constant(-1), read({ src: ck, q: 'lvl' }, undefined))
-  return [
+function handleCharacterGen(
+  src: NonTrailblazerCharacterKey
+): TagMapNodeEntries {
+  const chardataGen = allStats.char[src]
+  const { ascension } = self.char
+  // The "add" only applies to currLvl - 1, since "base" is stat at lvl 1
+  const readLvl = sum(constant(-1), self.char.lvl)
+  return register(src, [
     ...(['hp', 'atk', 'def'] as const).map((sk) => {
-      const basePerAsc = chardataGen.ascension.map((p: Promotion) => p[sk].base)
-      const addPerAsc = chardataGen.ascension.map((p: Promotion) => p[sk].add)
-      return {
-        tag: { src: ck, qt: 'base', q: sk },
-        value: sum(
-          subscript(readAsc, basePerAsc),
-          prod(readLvl, subscript(readAsc, addPerAsc))
-        ),
-      }
+      const basePerAsc = chardataGen.ascension.map((p) => p[sk].base)
+      const addPerAsc = chardataGen.ascension.map((p) => p[sk].add)
+      return selfBuff.stat[sk].add(
+        sum(
+          subscript(ascension, basePerAsc),
+          prod(readLvl, subscript(ascension, addPerAsc))
+        )
+      )
     }),
     ...(['spd', 'crit_', 'crit_dmg_', 'taunt'] as const).map((sk) => {
-      const statAsc = chardataGen.ascension.map((p: Promotion) => p[sk])
-      return {
-        tag: { src: ck, qt: 'base', q: sk },
-        value: subscript(readAsc, statAsc),
-      }
+      const statAsc = chardataGen.ascension.map((p) => p[sk])
+      return selfBuff.stat[sk].add(subscript(ascension, statAsc))
     }),
-  ] as TaggedFormulas
+  ])
 }
 
-const data: TaggedFormulas =
+const data: TagMapNodeEntries =
   nonTrailblazerCharacterKeys.flatMap(handleCharacterGen)
-
-export { data }
+export default data

@@ -35,6 +35,8 @@ import KujouSara from './Character_Kujou_Sara_Card.jpg'
 import KukiShinobu from './Character_Kuki_Shinobu_Card.jpg'
 import Layla from './Character_Layla_Card.jpeg'
 import Lisa from './Character_Lisa_Card.jpg'
+import Lyney from './Character_Lyney_Card.jpg'
+import Lynette from './Character_Lynette_Card.jpg'
 import Mika from './Character_Mika_Card.jpg'
 import Mona from './Character_Mona_Card.jpg'
 import Nahida from './Character_Nahida_Card.jpeg'
@@ -107,6 +109,8 @@ const charCards = {
   KukiShinobu,
   Layla,
   Lisa,
+  Lyney,
+  Lynette,
   Mika,
   Mona,
   Nahida,
@@ -149,6 +153,7 @@ export function charCard(charKey: CharacterKey, gender: GenderKey): string {
     case 'TravelerDendro':
     case 'TravelerElectro':
     case 'TravelerGeo':
+    case 'TravelerHydro':
       return charCards[`Traveler${gender}`] ?? ''
     default:
       return charCards[charKey] ?? ''

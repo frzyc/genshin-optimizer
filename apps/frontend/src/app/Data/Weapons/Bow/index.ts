@@ -25,10 +25,13 @@ import RecurveBow from './RecurveBow'
 import RoyalBow from './RoyalBow'
 import Rust from './Rust'
 import SacrificialBow from './SacrificialBow'
+import ScionOfTheBlazingSun from './ScionOfTheBlazingSun'
 import SeasonedHuntersBow from './SeasonedHuntersBow'
 import SharpshootersOath from './SharpshootersOath'
 import SkywardHarp from './SkywardHarp'
 import Slingshot from './Slingshot'
+import SongOfStillness from './SongOfStillness'
+import TheFirstGreatMagic from './TheFirstGreatMagic'
 import TheStringless from './TheStringless'
 import TheViridescentHunt from './TheViridescentHunt'
 import ThunderingPulse from './ThunderingPulse'
@@ -60,10 +63,13 @@ const bow: Record<WeaponBowKey, WeaponSheet> = {
   RoyalBow,
   Rust,
   SacrificialBow,
+  ScionOfTheBlazingSun,
   SeasonedHuntersBow,
   SharpshootersOath,
   SkywardHarp,
   Slingshot,
+  SongOfStillness,
+  TheFirstGreatMagic,
   TheStringless,
   TheViridescentHunt,
   ThunderingPulse,

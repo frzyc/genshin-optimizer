@@ -25,7 +25,7 @@ export const allAllowLocationsState = [
 export type AllowLocationsState = (typeof allAllowLocationsState)[number]
 
 export const allArtifactSetExclusionKeys = [
-  ...allArtifactSetKeys.map(
+  ...allArtifactSetKeys.filter(
     (key) =>
       ![
         'PrayersForDestiny',
