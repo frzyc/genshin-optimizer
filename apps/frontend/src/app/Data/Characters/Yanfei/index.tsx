@@ -119,7 +119,10 @@ const p1_pyro_dmg_ = greaterEq(
   prod(
     lookup(
       condP1Seals,
-      objKeyMap(sealsArr, (seal) => constant(seal)),
+      objKeyMap(sealsArr, (seal) =>
+        // Only allow 4th seal for c6.
+        seal === 4 ? greaterEq(input.constellation, 6, seal) : constant(seal)
+      ),
       naught
     ),
     dm.passive1.seal_pyro_dmg_

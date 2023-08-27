@@ -102,13 +102,26 @@ const skillStacks_dmgInc = lookup(
   Object.fromEntries(
     range(1, 5).map((stacks) => [
       stacks,
-      prod(
-        stacks,
-        subscript(input.total.skillIndex, dm.skill.stackHpDmgInc, {
-          unit: '%',
-        }),
-        input.total.hp
-      ),
+      // Only allow 5th stack for c2+
+      stacks === 5
+        ? greaterEq(
+            input.constellation,
+            2,
+            prod(
+              stacks,
+              subscript(input.total.skillIndex, dm.skill.stackHpDmgInc, {
+                unit: '%',
+              }),
+              input.total.hp
+            )
+          )
+        : prod(
+            stacks,
+            subscript(input.total.skillIndex, dm.skill.stackHpDmgInc, {
+              unit: '%',
+            }),
+            input.total.hp
+          ),
     ])
   ),
   naught

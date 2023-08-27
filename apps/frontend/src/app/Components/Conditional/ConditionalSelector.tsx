@@ -1,3 +1,8 @@
+import {
+  deletePropPath,
+  evalIfFunc,
+  layeredAssignment,
+} from '@genshin-optimizer/util'
 import { CheckBox, CheckBoxOutlineBlank } from '@mui/icons-material'
 import type { ButtonProps } from '@mui/material'
 import { Button, ButtonGroup, Divider, MenuItem } from '@mui/material'
@@ -9,11 +14,6 @@ import type {
   IDocumentConditionalExclusive,
   IDocumentConditionalMultiple,
 } from '../../Types/sheet'
-import {
-  deletePropPath,
-  evalIfFunc,
-  layeredAssignment,
-} from '@genshin-optimizer/util'
 import DropdownButton from '../DropdownMenu/DropdownButton'
 import SqBadge from '../SqBadge'
 import { Translate } from '../Translate'
@@ -128,20 +128,12 @@ function ExclusiveConditionalSelector({
   )
   const condName = getCondName(conditional.name)
 
-  // Conditional value is present, but there is no corresponding state.
-  // Can be caused by old db, or by changing constellation
-  // or changing a condition that disables another state
-  if (!state && conditionalValue) {
-    // Clear out the value
-    setConditional(undefined)
-  }
-
   return (
     <DropdownButton
       fullWidth
       size="small"
       sx={{ borderRadius: 0 }}
-      color={conditionalValue ? 'success' : 'primary'}
+      color={conditionalValue && state ? 'success' : 'primary'}
       title={
         <span>
           {condName} {badge}

@@ -99,7 +99,7 @@ const [condA1DetectorStacksPath, condA1DetectorStacks] = cond(
   key,
   'a1DetectorStacks'
 )
-const detectorStacksArr = range(1, 5)
+const detectorStacksArr = range(1, 4)
 const a1DetectorStacks_physical_dmg_disp = greaterEq(
   input.asc,
   1,
@@ -109,7 +109,14 @@ const a1DetectorStacks_physical_dmg_disp = greaterEq(
     lookup(
       condA1DetectorStacks,
       objKeyMap(detectorStacksArr, (stack) =>
-        prod(stack, percent(dm.passive1.physical_dmg_))
+        // Don't allow the 5th stack unless c6
+        stack === 4
+          ? greaterEq(
+              input.constellation,
+              6,
+              prod(stack, percent(dm.passive1.physical_dmg_))
+            )
+          : prod(stack, percent(dm.passive1.physical_dmg_))
       ),
       naught,
       { ...KeyMap.info('physical_dmg_'), isTeamBuff: true }
