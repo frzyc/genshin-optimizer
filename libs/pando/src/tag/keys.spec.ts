@@ -1,14 +1,15 @@
 import { compileTagMapKeys } from './compilation'
 import { TagMapKeys } from './keys'
 
+function tagList(category: string, n: number) {
+  return { category, values: new Set([...Array(n)].map((_, i) => `val${i}`)) }
+}
+
 describe('TagMapKeys', () => {
   describe('compileTagMapKeys', () => {
     it('can encode 32 bits in one word', () => {
       const keys = compileTagMapKeys(
-        [...Array(8)].map((_, i) => ({
-          category: `cat${i}`,
-          values: [...Array(15)].map((_, i) => `val${i}`),
-        }))
+        [...Array(8)].map((_, i) => tagList(`cat${i}`, 15))
       )
       // Each of the eights categories requires 4 bit, requiring exactly 32-bit in total
       expect(keys.tagLen).toEqual(1)
@@ -16,34 +17,25 @@ describe('TagMapKeys', () => {
     describe('can encode multiple words', () => {
       test('automatically', () => {
         const keys = compileTagMapKeys([
-          ...[...Array(7)].map((_, i) => ({
-            category: `cat${i}`,
-            values: [...Array(8)].map((_, i) => `val${i}`),
-          })),
-          { category: `cat8`, values: [...Array(16)].map((_, i) => `val${i}`) },
+          ...[...Array(7)].map((_, i) => tagList(`cat${i}`, 8)),
+          tagList('cat8', 16),
         ])
         // Each of the first seven categories requires 4 bit, and the last category requires 5 bits
         expect(keys.tagLen).toEqual(2)
       })
       test('explicitly', () => {
         const keys = compileTagMapKeys([
-          { category: 'cat1', values: [...Array(8)].map((_, i) => `val${i}`) },
+          tagList('cat1', 8),
           undefined, // Jump to the next byte
-          { category: 'cat2', values: [...Array(16)].map((_, i) => `val${i}`) },
+          tagList('cat2', 16),
         ])
         expect(keys.tagLen).toEqual(2)
       })
     })
     it('can support full tag list', () => {
       const compiled = compileTagMapKeys([
-          {
-            category: 'cat1',
-            values: [...new Array(15)].map((_, i) => `val${i}`),
-          },
-          {
-            category: 'cat2',
-            values: [...new Array(15)].map((_, i) => `val${i}`),
-          },
+          tagList('cat1', 15),
+          tagList('cat2', 15),
         ]),
         keys = new TagMapKeys(compiled)
 
@@ -67,8 +59,8 @@ describe('TagMapKeys', () => {
 
   describe('combine', () => {
     const compiled = compileTagMapKeys([
-        { category: 'cat1', values: ['val1', 'val2', 'val3'] },
-        { category: 'cat2', values: ['val1', 'val2', 'val3'] },
+        tagList('cat1', 4),
+        tagList('cat2', 4),
       ]),
       keys = new TagMapKeys(compiled)
     it('can combine simple tags', () => {

@@ -8,6 +8,7 @@ import EmeraldOrb from './EmeraldOrb'
 import EverlastingMoonglow from './EverlastingMoonglow'
 import EyeOfPerception from './EyeOfPerception'
 import FavoniusCodex from './FavoniusCodex'
+import FlowingPurity from './FlowingPurity'
 import Frostbearer from './Frostbearer'
 import FruitOfFulfillment from './FruitOfFulfillment'
 import HakushinRing from './HakushinRing'
@@ -24,6 +25,7 @@ import PrototypeAmber from './PrototypeAmber'
 import QuantumCatalyst from './QuantumCatalyst'
 import RoyalGrimoire from './RoyalGrimoire'
 import SacrificialFragments from './SacrificialFragments'
+import SacrificialJade from './SacrificialJade'
 import SkywardAtlas from './SkywardAtlas'
 import SolarPearl from './SolarPearl'
 import TheWidsith from './TheWidsith'
@@ -41,6 +43,7 @@ const catalyst: Record<WeaponCatalystKey, WeaponSheet> = {
   EverlastingMoonglow,
   EyeOfPerception,
   FavoniusCodex,
+  FlowingPurity,
   Frostbearer,
   FruitOfFulfillment,
   HakushinRing,
@@ -57,6 +60,7 @@ const catalyst: Record<WeaponCatalystKey, WeaponSheet> = {
   QuantumCatalyst,
   RoyalGrimoire,
   SacrificialFragments,
+  SacrificialJade,
   SkywardAtlas,
   SolarPearl,
   TheWidsith,

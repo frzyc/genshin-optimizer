@@ -1,5 +1,6 @@
-import type { AnyOP, CalcResult } from '@genshin-optimizer/pando'
-import { calculation, Calculator as Base } from '@genshin-optimizer/pando'
+import type { AnyNode, CalcResult } from '@genshin-optimizer/pando'
+import { Calculator as Base, calculation } from '@genshin-optimizer/pando'
+import { assertUnreachable } from '@genshin-optimizer/util'
 import type { Tag } from './data/util'
 
 const { arithmetic } = calculation
@@ -13,12 +14,11 @@ type Output = {
 
 export class Calculator extends Base<Output> {
   override computeMeta(
-    op: Exclude<AnyOP, 'read'>,
-    tag: Tag | undefined,
-    val: any,
-    x: (CalcResult<any, Output> | undefined)[],
-    _br: CalcResult<any, Output>[],
-    ex: any
+    { op, ex }: AnyNode,
+    val: number | string,
+    x: (CalcResult<number | string, Output> | undefined)[],
+    _br: CalcResult<number | string, Output>[],
+    tag: Tag | undefined
   ): Output {
     function constOverride(): Output {
       return { tag, op: 'const', ops: [], conds: [] }
@@ -29,6 +29,10 @@ export class Calculator extends Base<Output> {
     ].filter((x) => x && x.length)
     const conds = preConds.length <= 1 ? preConds[0] ?? [] : preConds.flat()
 
+    if (op === 'read' && ex !== undefined) {
+      op = ex
+      ex = undefined
+    }
     switch (op) {
       case 'sum':
       case 'prod':
@@ -46,6 +50,7 @@ export class Calculator extends Base<Output> {
       }
 
       case 'const':
+      case 'vtag':
       case 'subscript':
         return constOverride()
       case 'match':
@@ -53,12 +58,14 @@ export class Calculator extends Base<Output> {
       case 'lookup':
         return { ...x.find((x) => x)!.meta, conds }
       case 'tag':
+      case 'read':
       case 'dtag': {
         const { tag: baseTag, op, ops } = x[0]!.meta
         return { tag: baseTag ?? tag, op, ops, conds }
       }
       default:
-        throw new Error('Should not reach this point')
+        if (op === 'custom') throw new Error(`Unsupported operation ${ex}`)
+        assertUnreachable(op)
     }
   }
 }

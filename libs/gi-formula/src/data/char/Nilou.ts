@@ -98,7 +98,7 @@ const {
 const { a1AfterSkill, a1AfterHit, c4AfterPirHit } = allBoolConditionals(
   info.key
 )
-const { c2Hydro, c2Dendro } = allConditionals(info.key, 'none')
+const { c2Hydro, c2Dendro } = allConditionals(info.key, 'unique')
 
 const onlyDendroHydroTeam = cmpGE(
   team.common.count.dendro,

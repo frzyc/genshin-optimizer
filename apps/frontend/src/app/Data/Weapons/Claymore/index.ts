@@ -24,8 +24,10 @@ import SkyriderGreatsword from './SkyriderGreatsword'
 import SkywardPride from './SkywardPride'
 import SnowTombedStarsilver from './SnowTombedStarsilver'
 import SongOfBrokenPines from './SongOfBrokenPines'
+import TalkingStick from './TalkingStick'
 import TheBell from './TheBell'
 import TheUnforged from './TheUnforged'
+import TidalShadow from './TidalShadow'
 import WasterGreatsword from './WasterGreatsword'
 import Whiteblind from './Whiteblind'
 import WhiteIronGreatsword from './WhiteIronGreatsword'
@@ -55,8 +57,10 @@ const claymore: Record<WeaponClaymoreKey, WeaponSheet> = {
   SkywardPride,
   SnowTombedStarsilver,
   SongOfBrokenPines,
+  TalkingStick,
   TheBell,
   TheUnforged,
+  TidalShadow,
   WasterGreatsword,
   Whiteblind,
   WhiteIronGreatsword,

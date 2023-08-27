@@ -22,12 +22,14 @@ export const travelerFKeys = [
   'TravelerGeoF',
   'TravelerElectroF',
   'TravelerDendroF',
+  'TravelerHydroF',
 ] as const
 export const travelerMKeys = [
   'TravelerAnemoM',
   'TravelerGeoM',
   'TravelerElectroM',
   'TravelerDendroM',
+  'TravelerHydroM',
 ] as const
 
 export const allCharacterSheetKeys = [

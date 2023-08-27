@@ -135,12 +135,12 @@ const dmgFormulas = {
   passive2: {
     anemo_dmgInc: greaterEq(
       input.asc,
-      1,
+      4,
       equal(
-        condA4Active,
+        condBurstBenefit,
         'on',
         equal(
-          condBurstBenefit,
+          condA4Active,
           'on',
           prod(percent(datamine.passive2.gift_dmgInc), input.base.atk)
         )

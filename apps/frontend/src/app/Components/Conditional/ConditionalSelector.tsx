@@ -142,16 +142,18 @@ function ExclusiveConditionalSelector({
         <span>Not Active</span>
       </MenuItem>
       <Divider />
-      {Object.entries(conditional.states).map(([stateKey, st]) => (
-        <MenuItem
-          key={stateKey}
-          onClick={() => setConditional(stateKey)}
-          selected={conditionalValue === stateKey}
-          disabled={conditionalValue === stateKey}
-        >
-          {st.name}
-        </MenuItem>
-      ))}
+      {Object.entries(conditional.states)
+        .sort((a, b) => (a[0] < b[0] ? -1 : 1))
+        .map(([stateKey, st]) => (
+          <MenuItem
+            key={stateKey}
+            onClick={() => setConditional(stateKey)}
+            selected={conditionalValue === stateKey}
+            disabled={conditionalValue === stateKey}
+          >
+            {st.name}
+          </MenuItem>
+        ))}
     </DropdownButton>
   )
 }

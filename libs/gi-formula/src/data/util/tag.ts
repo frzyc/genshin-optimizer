@@ -1,8 +1,8 @@
 import type { NumNode } from '@genshin-optimizer/pando'
 import { cmpEq, cmpNE, constant } from '@genshin-optimizer/pando'
 import type { Source, Stat } from './listing'
-import type { Tag } from './read'
-import { Read, reader, tag } from './read'
+import type { Read, Tag } from './read'
+import { reader, tag } from './read'
 
 export function percent(x: number | NumNode): NumNode {
   return tag(typeof x === 'number' ? constant(x) : x, { qt: 'misc', q: '_' })
@@ -59,14 +59,14 @@ export function priorityTable(
  */
 
 type Desc = { src: Source | undefined; accu: Read['accu'] }
-const aggStr: Desc = { src: 'agg', accu: undefined }
+const aggStr: Desc = { src: 'agg', accu: 'unique' }
 const agg: Desc = { src: 'agg', accu: 'sum' }
-const iso: Desc = { src: 'iso', accu: undefined }
+const iso: Desc = { src: 'iso', accu: 'unique' }
 const isoSum: Desc = { src: 'iso', accu: 'sum' }
 /** `src:`-agnostic calculation */
-const fixed: Desc = { src: 'static', accu: undefined }
+const fixed: Desc = { src: 'static', accu: 'unique' }
 /** The calculation must have a matching `src:` */
-const prep: Desc = { src: undefined, accu: undefined }
+const prep: Desc = { src: undefined, accu: 'unique' }
 
 const stats: Record<Stat, Desc> = {
   hp: agg,
@@ -154,35 +154,15 @@ export function convert<V extends Record<string, Record<string, Desc>>>(
   v: V,
   tag: Omit<Tag, 'qt' | 'q'>
 ): { [j in keyof V]: { [k in keyof V[j]]: Read } } {
-  return Object.fromEntries(
-    Object.entries(v).map(([qt, v]) => [
-      qt,
-      Object.fromEntries(
-        Object.entries(v).map(([q, { src, accu }]) =>
-          src
-            ? [q, new Read({ src, qt, q, ...tag }, accu)]
-            : [q, new Read({ qt, q, ...tag }, accu)]
-        )
-      ),
-    ])
+  return reader.withTag(tag).withAll('qt', (r, qt) =>
+    r.withAll('q', (r, q) => {
+      const { src, accu } = v[qt][q]
+      // `tag.src` overrides `Desc`
+      if (src && !tag.src) r = r.src(src)
+      return r[accu]
+    })
   ) as any
 }
-
-// For tag key compilation
-export const queries = new Set(
-  [...Object.values(selfTag), ...Object.values(enemyTag)].flatMap((x) =>
-    Object.keys(x)
-  )
-)
-export const queryTypes = new Set([
-  ...Object.keys(selfTag),
-  ...Object.keys(enemyTag),
-  'cond',
-  'misc',
-  'stackIn',
-  'stackInt',
-  'stackOut',
-])
 
 // Default queries
 export const self = convert(selfTag, { et: 'self' })
@@ -198,49 +178,39 @@ export const enemyDebuff = convert(enemyTag, { et: 'enemy' })
 export const userBuff = convert(selfTag, { et: 'self', src: 'custom' })
 
 // Custom tags
-export const allConditionals = (
-  src: Source,
-  accu: Read['accu'] | 'none' = 'sum'
-) => allCustoms(src, 'cond', accu !== 'none' ? reader[accu] : reader)
-export const allStatics = (src: Source) => allCustoms(src, 'misc')
-export const allStacks = (
-  src: Source
-): Record<string, { in: Read; out: Read }> => {
-  const i = allCustoms(src, 'stackIn')
-  const o = allCustoms(src, 'stackOut')
-  return new Proxy(
-    {},
-    {
-      get: (_, q: string) => ({ in: i[q], out: o[q] }),
-    }
-  ) as any
-}
+export const allStatics = (src: Source) => allCustoms(src, 'misc', (x) => x)
+export const allConditionals = (src: Source, accu: Read['accu'] = 'sum') =>
+  allCustoms(src, 'cond', (r) => r[accu])
+export const allStacks = (src: Source) =>
+  allCustoms(src, 'stackOut', (out) => ({
+    add: (cond: NumNode | number) => out.with('qt', 'stackIn').add(cond),
+    apply: (val: NumNode | number, otherwise: NumNode | number = 0) =>
+      cmpEq(out, 1, val, otherwise),
+  }))
+export const allBoolConditionals = (src: Source) =>
+  allCustoms(src, 'cond', ({ sum: r }) => ({
+    ifOn: (node: NumNode | number, off?: NumNode | number) =>
+      cmpNE(r, 0, node, off),
+    ifOff: (node: NumNode | number) => cmpEq(r, 0, node),
+  }))
 
-type BoolConditional = {
-  ifOn: (on: NumNode | number, off?: NumNode | number) => NumNode
-  ifOff: (off: NumNode | number) => NumNode
-}
-export const allBoolConditionals = (
-  src: Source
-): Record<string, BoolConditional> =>
-  new Proxy(reader.sum.withTag({ et: 'self', src, qt: 'cond' })._withAll('q'), {
-    get: (dict, q: string) => {
-      queries.add(q)
-      const cond = dict[q]
-      return {
-        ifOn: (node: NumNode | number, off?: NumNode | number) =>
-          cmpNE(cond, 0, node, off),
-        ifOff: (node: NumNode | number) => cmpEq(cond, 0, node),
-      }
-    },
-  }) as any
-
-function allCustoms(
+function allCustoms<T>(
   src: Source,
   qt: string,
-  r: Read = reader
-): Record<string, Read> {
-  return new Proxy(r.withTag({ et: 'self', src, qt })._withAll('q'), {
-    get: (dict, q: string) => (queries.add(q), dict[q]),
-  })
+  transform: (r: Read, q: string) => T
+): Record<string, T> {
+  return reader.withTag({ et: 'self', src, qt }).withAll('q', transform)
 }
+
+export const queryTypes = new Set([
+  ...Object.keys(selfTag),
+  ...Object.keys(enemyTag),
+  'cond',
+  'misc',
+  'stackIn',
+  'stackInt',
+  'stackOut',
+])
+// Register `q:`
+for (const values of [...Object.values(selfTag), ...Object.values(enemyTag)])
+  for (const q of Object.keys(values)) reader.with('q', q)

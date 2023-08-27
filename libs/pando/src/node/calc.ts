@@ -1,6 +1,6 @@
 import type {
-  CompiledTagMapKeys,
-  CompiledTagMapValues,
+  RawTagMapKeys,
+  RawTagMapValues,
   Tag,
   TagMapSubsetCache,
 } from '../tag'
@@ -12,26 +12,26 @@ import {
 } from '../tag'
 import { assertUnreachable, extract, tagString } from '../util'
 import { arithmetic, branching } from './formula'
-import type { AnyNode, AnyOP, NumNode, ReRead, Read, StrNode } from './type'
+import type { AnyNode, NumNode, ReRead, Read, StrNode } from './type'
 
 type TagCache = TagMapSubsetCache<AnyNode | ReRead>
 type PreRead<M> = {
   pre: CalcResult<number | string, M>[]
   computed: Partial<
-    Record<NonNullable<Read['accu']>, CalcResult<number | string, M>>
+    Record<NonNullable<Read['ex']>, CalcResult<number | string, M>>
   >
 }
 const getV = <V, M>(n: CalcResult<V, M>[]) => extract(n, 'val')
 
-export type CalcResult<V, M> = { val: V; meta: M }
+export type CalcResult<V, M> = { val: V; meta: M; entryTag?: Tag[] }
 export class Calculator<M = any> {
   keys: TagMapKeys
   nodes: TagMapSubsetValues<AnyNode | ReRead>
   calculated: TagMapExactValues<PreRead<M>>
 
   constructor(
-    keys: CompiledTagMapKeys,
-    ...values: CompiledTagMapValues<AnyNode | ReRead>[]
+    keys: RawTagMapKeys,
+    ...values: RawTagMapValues<AnyNode | ReRead>[]
   ) {
     this.keys = new TagMapKeys(keys)
     this.nodes = new TagMapSubsetValues(keys.tagLen, mergeTagMapValues(values))
@@ -54,16 +54,33 @@ export class Calculator<M = any> {
     const result = this.calculated.refExact(cache.id)
     if (result.length) return result[0]!
 
-    result.push({
-      pre: cache
-        .subset()
-        .flatMap((n) =>
+    if (process.env['NODE_ENV'] === 'production')
+      result.push({
+        pre: cache
+          .subset()
+          .flatMap((n) =>
+            n.op === 'reread'
+              ? this._preread(cache.with(n.tag)).pre
+              : [this._compute(n, cache)]
+          ),
+        computed: {},
+      })
+    else {
+      // Slow, debug path
+      const tags = cache.tags()
+      result.push({
+        pre: cache.subset().flatMap((n, i) =>
           n.op === 'reread'
-            ? this._preread(cache.with(n.tag)).pre
-            : [this._compute(n, cache)]
+            ? this._preread(cache.with(n.tag)).pre.map((x) =>
+                // Must be a new object in case `reread` entry is shared with a regular `read`.
+                // They would have the same `val` and `meta` but different `debugTag`.
+                ({ ...x, entryTag: [tags[i]!, n.tag, ...(x.entryTag ?? [])] })
+              )
+            : [{ ...this._compute(n, cache), entryTag: [tags[i]!] }]
         ),
-      computed: {},
-    })
+        computed: {},
+      })
+    }
     return result[0]!
   }
 
@@ -72,27 +89,17 @@ export class Calculator<M = any> {
   _compute(n: AnyNode, cache: TagCache): CalcResult<number | string, M>
   _compute(n: AnyNode, cache: TagCache): CalcResult<number | string, M> {
     // eslint-disable-next-line @typescript-eslint/no-this-alias
-    const self = this,
-      result = internal(n)
-    switch (n.op) {
-      case 'tag':
-      case 'dtag':
-      case 'read':
-        return result
-      // Make sure top-level entries are properly tagged as the caller could be `reread`
-      default:
-        return meta('tag', cache.tag, result.val, [result], [])
-    }
+    const self = this
+    return internal(n)
 
     function meta(
-      op: Exclude<AnyOP, 'read'>,
-      tag: Tag | undefined,
-      val: any,
-      x: (CalcResult<any, M> | undefined)[],
-      br: CalcResult<any, M>[],
-      ex?: any
-    ): CalcResult<any, M> {
-      return { val, meta: self.computeMeta(op, tag, val, x, br, ex) }
+      n: AnyNode,
+      val: number | string,
+      x: (CalcResult<number | string, M> | undefined)[],
+      br: CalcResult<number | string, M>[],
+      tag?: Tag
+    ): CalcResult<number | string, M> {
+      return { val, meta: self.computeMeta(n, val, x, br, tag) }
     }
     function internal(n: StrNode): CalcResult<string, M>
     function internal(n: NumNode): CalcResult<number, M>
@@ -101,15 +108,14 @@ export class Calculator<M = any> {
       const { op } = n
       switch (op) {
         case 'const':
-          return meta(op, undefined, n.ex, [], [])
+          return meta(n, n.ex, [], [])
         case 'sum':
         case 'prod':
         case 'min':
         case 'max':
         case 'sumfrac': {
-          const x = n.x.map((n) => internal(n)),
-            ex = n.ex
-          return meta(op, undefined, arithmetic[op](getV(x), ex), x, [], ex)
+          const x = n.x.map((n) => internal(n))
+          return meta(n, arithmetic[op](getV(x), n.ex), x, [])
         }
         case 'thres':
         case 'match':
@@ -119,18 +125,18 @@ export class Calculator<M = any> {
           const x = [...Array(n.x.length)],
             result = internal(n.x[branchID]!)
           x[branchID] = result
-          return meta(op, undefined, result.val, x, br, n.ex)
+          return meta(n, result.val, x, br)
         }
         case 'subscript': {
           const index = internal(n.br[0]!)
-          return meta(op, undefined, n.ex[index.val], [], [index], n.ex)
+          return meta(n, n.ex[index.val]!, [], [index])
         }
         case 'vtag':
-          return meta(op, undefined, cache.tag[n.ex] ?? '', [], [], n.ex)
+          return meta(n, cache.tag[n.ex] ?? '', [], [])
         case 'tag': {
           const newCache = cache.with(n.tag)
           const result = self._compute(n.x[0]!, newCache)
-          return meta(op, newCache.tag, result.val, [result], [])
+          return meta(n, result.val, [result], [], newCache.tag)
         }
         case 'dtag': {
           const tags = n.br.map((br) => internal(br))
@@ -138,14 +144,14 @@ export class Calculator<M = any> {
             Object.fromEntries(tags.map((tag, i) => [n.ex[i], tag.val]))
           )
           const result = self._compute(n.x[0]!, newCache)
-          return meta(op, newCache.tag, result.val, [result], tags, n.ex)
+          return meta(n, result.val, [result], tags, newCache.tag)
         }
         case 'read': {
           const newCache = cache.with(n.tag)
           const { pre, computed } = self._preread(newCache),
-            accu = n.accu
+            ex = n.ex
 
-          switch (accu) {
+          switch (ex) {
             case undefined:
               if (pre.length !== 1) {
                 const errorMsg = `Found ${
@@ -153,28 +159,29 @@ export class Calculator<M = any> {
                 } nodes while reading tag ${tagString(
                   newCache.tag
                 )} with no accumulator`
-                if (!import.meta.env.PROD) throw new Error(errorMsg)
-                else console.error(errorMsg)
+                if (!import.meta.env.PROD) {
+                  throw new Error(
+                    errorMsg +
+                      ': ' +
+                      pre
+                        .map((pre) => JSON.stringify(pre.entryTag![0]))
+                        .join(', ')
+                  )
+                } else console.error(errorMsg)
               }
-              return meta(
-                'tag',
-                newCache.tag,
-                pre[0]?.val ?? undefined,
-                pre,
-                []
-              )
+              return meta(n, pre[0]?.val ?? undefined!, pre, [], newCache.tag)
             default: {
-              if (computed[accu]) return computed[accu]!
-              const val = arithmetic[accu](getV(pre) as number[], undefined)
-              computed[accu] = meta(accu, newCache.tag, val, pre, [])
-              return computed[accu]!
+              if (computed[ex]) return computed[ex]!
+              const val = arithmetic[ex](getV(pre) as number[], undefined)
+              computed[ex] = meta(n, val, pre, [], newCache.tag)
+              return computed[ex]!
             }
           }
         }
         case 'custom': {
           const x = n.x.map((n) => internal(n)),
             ex = n.ex
-          return meta(op, undefined, self.computeCustom(getV(x), ex), x, [], ex)
+          return meta(n, self.computeCustom(getV(x), ex), x, [])
         }
         default:
           assertUnreachable(op)
@@ -186,12 +193,11 @@ export class Calculator<M = any> {
     throw new Error(`Unsupported custom node ${op} in Calculator`)
   }
   computeMeta(
-    _op: Exclude<AnyOP, 'read'>,
-    _tag: Tag | undefined,
-    _value: any,
-    _x: (CalcResult<any, M> | undefined)[],
-    _br: CalcResult<any, M>[],
-    _ex: any
+    _n: AnyNode,
+    _value: number | string,
+    _x: (CalcResult<number | string, M> | undefined)[],
+    _br: CalcResult<number | string, M>[],
+    _tag: Tag | undefined
   ): M {
     return undefined as any
   }

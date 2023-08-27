@@ -1,12 +1,13 @@
-import type { CompiledTagMapKeys } from './compilation'
+import type { RawTagMapKeys } from './compilation'
 import type { Tag } from './type'
 
 export type TagID = Int32Array
+/** Mapping from `Tag` to a faster internal representation `TagID`. */
 export class TagMapKeys {
-  data: CompiledTagMapKeys['data']
-  tagLen: CompiledTagMapKeys['tagLen']
+  data: RawTagMapKeys['data']
+  tagLen: RawTagMapKeys['tagLen']
 
-  constructor(compiled: CompiledTagMapKeys) {
+  constructor(compiled: RawTagMapKeys) {
     this.data = compiled.data
     this.tagLen = compiled.tagLen
   }
@@ -17,9 +18,9 @@ export class TagMapKeys {
     for (const [category, value] of Object.entries(tag)) {
       if (value === null) continue
       const entry = this.data[category]!
-      // Make sure `category` existed during compilation. Otherwise, it
-      // would crash here, and this non-shaming text would be visible.
       const {
+        // Make sure `category` existed during compilation. Otherwise, it
+        // would crash here, and this non-shaming text would be visible.
         offset,
         ids: { [value]: word },
       } = entry
@@ -38,9 +39,9 @@ export class TagMapKeys {
     for (const [category, value] of Object.entries(tag)) {
       if (value === null) continue
       const entry = this.data[category]!
-      // Make sure `category` existed during compilation. Otherwise, it
-      // would crash here, and this non-shaming text would be visible.
       const {
+        // Make sure `category` existed during compilation. Otherwise, it
+        // would crash here, and this non-shaming text would be visible.
         offset,
         ids: { [value]: word },
         mask,
@@ -60,9 +61,10 @@ export class TagMapKeys {
     let firstReplacedByte = this.tagLen
     for (const [category, value] of Object.entries(extra)) {
       const entry = this.data[category]!
-      // Make sure `category` existed during compilation. Otherwise, it
-      // would crash here, and this non-shaming text would be visible.
+      if (!entry) console.error(category, entry)
       const {
+        // Make sure `category` existed during compilation. Otherwise, it
+        // would crash here, and this non-shaming text would be visible.
         offset,
         ids: { [value!]: word },
         mask,

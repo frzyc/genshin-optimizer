@@ -113,40 +113,36 @@ const a1Regen = greaterEq(
 )
 
 const [condC1Path, condC1] = cond(key, 'c1')
-const skill_dmg_ = equal(
-  condC1,
-  'on',
-  greaterEq(input.constellation, 1, dm.constellation1.increaseDmg)
+const skill_dmg_ = greaterEq(
+  input.constellation,
+  1,
+  equal(condC1, 'on', dm.constellation1.increaseDmg)
 )
 
 const [condC2Path, condC2] = cond(key, 'c2')
-const atkSPD_ = equal(
-  condC2,
-  'on',
-  greaterEq(input.constellation, 2, percent(dm.constellation2.atkSpd))
+const atkSPD_ = greaterEq(
+  input.constellation,
+  2,
+  equal(condC2, 'on', percent(dm.constellation2.atkSpd))
 )
-const moveSPD_ = equal(
-  condC2,
-  'on',
-  greaterEq(input.constellation, 2, percent(dm.constellation2.moveSpd))
+const moveSPD_ = greaterEq(
+  input.constellation,
+  2,
+  equal(condC2, 'on', percent(dm.constellation2.moveSpd))
 )
 
 const [condC4Path, condC4] = cond(key, 'c4')
-const anemo_enemyRes_ = equal(
-  condC4,
-  'on',
-  greaterEq(
-    input.constellation,
-    4,
-    percent(-Math.abs(dm.constellation4.anemoRes))
-  )
+const anemo_enemyRes_ = greaterEq(
+  input.constellation,
+  4,
+  equal(condC4, 'on', percent(-Math.abs(dm.constellation4.anemoRes)))
 )
 
 const [condC6Path, condC6] = cond(key, 'c6')
-const dmgRed_disp = equal(
-  condC6,
-  'on',
-  greaterEq(input.constellation, 6, percent(dm.constellation6.dmgReduction))
+const dmgRed_disp = greaterEq(
+  input.constellation,
+  6,
+  equal(condC6, 'on', percent(dm.constellation6.dmgReduction))
 )
 const dmgRed_ = equal(input.activeCharKey, target.charKey, dmgRed_disp)
 
@@ -174,10 +170,6 @@ const dmgFormulas = {
   },
   passive1: {
     a1Regen,
-  },
-  constellation2: {
-    atkSPD_,
-    moveSPD_,
   },
 }
 const nodeC3 = greaterEq(input.constellation, 3, 3)
