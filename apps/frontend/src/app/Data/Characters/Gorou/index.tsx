@@ -302,8 +302,6 @@ const sheet: ICharacterSheet = {
         ],
       }),
       ct.headerTem('constellation4', {
-        teamBuff: true,
-        canShow: greaterEq(tally.geo, 2, 1),
         fields: [
           {
             node: infoMut(dmgFormulas.constellation4.heal, {

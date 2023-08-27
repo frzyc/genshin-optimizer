@@ -383,6 +383,7 @@ const sheet: ICharacterSheet = {
         },
       }),
       ct.headerTem('passive2', {
+        canShow: unequal(condBurstAbsorb, undefined, 1),
         fields: [
           {
             node: a4BurstAbsorb_burst_dmg_,
