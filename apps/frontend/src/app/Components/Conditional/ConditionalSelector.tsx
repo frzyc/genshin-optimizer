@@ -143,7 +143,6 @@ function ExclusiveConditionalSelector({
       </MenuItem>
       <Divider />
       {Object.entries(conditional.states)
-        .sort((a, b) => (a[0] < b[0] ? -1 : 1))
         .map(([stateKey, st]) => (
           <MenuItem
             key={stateKey}
