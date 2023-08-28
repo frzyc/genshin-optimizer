@@ -7,7 +7,7 @@ import {
   writeFileSync,
 } from 'fs'
 
-export const PROJROOT_PATH = `${process.env['NX_WORKSPACE_ROOT']}/libs/localization`
+export const PROJROOT_PATH = `${process.env['NX_WORKSPACE_ROOT']}/libs/gi-localization`
 
 export default async function runExecutor(_options: GenLocaleExecutorSchema) {
   // Load translation files from POEditor into the assets folder.
