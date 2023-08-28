@@ -1,11 +1,11 @@
 {
-  "name": "localization",
+  "name": "gi-localization",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "libs/localization/src",
+  "sourceRoot": "libs/gi-localization/src",
   "projectType": "library",
   "targets": {
     "genfile": {
-      "executor": "@genshin-optimizer/localization:gen-locale",
+      "executor": "@genshin-optimizer/gi-localization:gen-locale",
       "outputs": [
         "{projectRoot}/Translated",
         "{projectRoot}/assets/locales",
