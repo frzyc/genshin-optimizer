@@ -175,13 +175,6 @@
         "swap": "Tukar"
       },
       "currentDB": "Database Saat ini"
-    },
-    "sillyCard": {
-      "desc": "We <1>stole</1> borrowed (with permission) all the character assets from <strong>Silly Wisher</strong> and gene splice it into Genshin Optimizer.",
-      "toggle": {
-        "enabled": "Silly Optimizer Enabled",
-        "disabled": "Silly Optimizer Disabled"
-      }
     }
   },
   "ui": {
@@ -252,13 +245,9 @@
       "base_stat_mod": "Modifikasi Stat Dasar",
       "stamina_buffs": "Buff Stamina",
       "misc": "Stats Lainnya"
-    },
-    "sillyPageTitle": "Silly Optimizer"
+    }
   },
   "char_Eula": {
-    "skillC": {
-      "name": "Lapisan Grimheart"
-    },
     "burstC": {
       "name": "Lapisan Energi Lightfall Sword",
       "start5": "Mulai dengan 5 Lapisan Energi Lightfall Sword",
@@ -272,16 +261,13 @@
     },
     "passive1": "DMG Shattered Lightfall Sword",
     "c4C": {
-      "name": "Musuh memiliki HP kurang dari 50%",
       "dmgBonus": "Ledakan DMG Bonus Lightfall Sword"
     }
   },
   "char_Noelle": {
     "p4cd": "24 dtk, -1 dtk Setiap 4 hit",
     "c6duration": "15 dtk, +1 dtk/kill, maks 10 dtk",
-    "qlarger": "Serangan AoE yang lebih besar",
-    "c4dmg": "DMG Breastplate Pecah",
-    "skillHeal_": "Kesempatan Memicu Healing"
+    "c4dmg": "DMG Breastplate Pecah"
   },
   "char_Venti": {
     "addAimed": "Tambahan DMG Membidik",
@@ -325,12 +311,7 @@
     "afterUse": {
       "skill": "Setelah menggunakan Elemental Skill",
       "burst": "Setelah menggunakan Elemental Burst",
-      "skillOrBurst": "Setelah menggunakan Ele. Skill or Ele. Burst",
-      "skillPress": "$t(afterUse.skill) ($t(press))",
-      "skillHold": "$t(afterUse.skill) ($t(hold))"
-    },
-    "increase": {
-      "atk": "Peningkatan ATK"
+      "skillOrBurst": "Setelah menggunakan Ele. Skill or Ele. Burst"
     },
     "hits_one": "{{count}} Hit",
     "hits_other": "{{count}} Hits",
@@ -352,10 +333,7 @@
     "afterSprint": "Setelah Berlari",
     "skillCDRed": "Pengurangan CD Ele. Skill",
     "burstCDRed": "Pengurangan CD Ele. Burst",
-    "pressCD": "CD Tekan",
-    "holdCD": "CD Tahan",
     "triggerCD": "CD Pemicu",
-    "eleSwirled": "Elemen yang ter-Swirl",
     "incInterRes": "Resistensi terhadap interupsi ditingkatkan",
     "charges": "Biaya",
     "cooldown": "Cooldown",
@@ -372,7 +350,6 @@
       "dendro": "Dendro Infusion",
       "geo": "Geo Infusion"
     },
-    "energyRegen": "Regenerasi Energi",
     "effectDuration": {
       "pyro": "Durasi efek pyro",
       "cryo": "Durasi efek cryo",
@@ -396,11 +373,12 @@
       "electro": "DMG Absorpsi Electro",
       "dendro": "DMG Absorpsi Dendro",
       "geo": "DMG Absorpsi Geo",
-      "none": "DMG Absorpsi"
+      "none": "DMG Absorpsi",
+      "max": {
+        "none": "DMG Absorpsi Maksimum",
+        "pyro": "Absorpsi Pyro DMG Maksimum"
+      }
     },
-    "opponentsDamaged": "Musuh rusak",
-    "press": "Tekan",
-    "hold": "Tahan",
     "addlCharge": "Biaya tambahan",
     "conditional": "Kondisi",
     "maxStacks": "Lapisan Maksimum",
@@ -462,7 +440,9 @@
       "cryo": "Musuh terpengatuh oleh <cryo>Cryo</cryo>"
     },
     "getElementalOrbParticle": "Setelah mengambil Elemental Orb atau Partikel",
-    "notProtectedByShield": "Ketika tidak dilindungi oleh shield"
+    "notProtectedByShield": "Ketika tidak dilindungi oleh shield",
+    "percentCurrentHP": "% HP Saat Ini",
+    "enerRegenPerHit": "Energi dipulihkan per serangan"
   },
   "weapon_SongOfBrokenPines": {
     "name": "Di bawah pengaruh Millennial Movement: Banner-Hymn"
@@ -471,8 +451,7 @@
     "c1": "Menggunanakan <strong>Kazuha Slash</strong> me-reset CD",
     "c2": "Area Autumn Whirlwind aktif",
     "c6": {
-      "after": "Setelah menggunakan <strong>Chihayaburu</strong> atau <strong>Kazuha Slash</strong>",
-      "bonus": "DMG Normal, Charged dan Plunging"
+      "after": "Setelah menggunakan <strong>Chihayaburu</strong> atau <strong>Kazuha Slash</strong>"
     },
     "skillPlunge": "Midare Ranzan"
   },
@@ -483,7 +462,6 @@
     }
   },
   "char_KamisatoAyaka": {
-    "afterSprint": "Setelah Berlari",
     "afterSprintCryo": "Mengakibatkan <cryo>Cryo</cryo> Setelah Berlari",
     "snowflakeDMG": "DMG Snowflake",
     "dmgBySnowflake": "Musuh terkena Frostflake Seki no To",
@@ -520,9 +498,6 @@
   "char_Aloy": {
     "skill": {
       "coil": "Coil",
-      "coil1": "Lapisan Coil 1",
-      "coil2": "Lapisan Coil 2",
-      "coil3": "Lapisan Coil 3",
       "rush": "Rushing Ice",
       "rushState": "Selama kondisi Rushing Ice (1 lapis / dtk)"
     },
@@ -532,9 +507,6 @@
   "char_KujouSara": {
     "skill": {
       "ambush": "Di bawah pengaruh Tengu Juurai: Ambush"
-    },
-    "a4": {
-      "enerRest": "Energi dipulihkan dari Tengu Juurai: Ambush"
     },
     "c6": {
       "electroCritDmg": "ATK karakter yang ditingkatkan oleh Tengu Juurai"
@@ -589,10 +561,7 @@
       "jobTitle": {
         "leadDev": "Lead Developer",
         "dev": "Developer",
-        "mod": "Moderator",
-        "admin": "Admin",
-        "translator": "Translations Manager",
-        "TC": "TC Correspondant"
+        "mod": "Moderator"
       }
     }
   },
@@ -619,19 +588,12 @@
       "ps": "PlayStation",
       "gameMani": "Game Manipulation",
       "materials": "Material",
-      "characters": "Karakter",
-      "weapons": "Weapons",
-      "achievements": "Achievements"
+      "characters": "Karakter"
     },
     "nb": {
       "title": "Artiscan",
       "p1": "Scanner berbasis web ini dapat menangkap layar gamemu, memindai dari screenshot, atau memindai dari video.",
       "p2": "Tangkapan layar/pengambilan video bisa full screen, dan tidak perlu di-crop."
-    },
-    "ak": {
-      "title": "Akasha Scanner",
-      "p1": "Automatically scans artifacts as well as characters and weapons. Allows exporting of past scans as it keeps a history within the app. Scans only in English.",
-      "p2": "This app is also able to scan achievements for <1>Paimon.moe</1> and <1>Seelie.me</1>."
     },
     "seelieme": "Scanner ini juga dapat memindai material untuk <1>Seelie.me</1>."
   },
@@ -640,9 +602,6 @@
   },
   "artifact_ArchaicPetra": {
     "condName": "Setelah mendapatkan Crystallize Shard"
-  },
-  "artifact_TenacityOfTheMillelith": {
-    "condName": "Elemental Skill mengenai musuh"
   },
   "artifact_ViridescentVenerer": {
     "condName": "Elemen terkena Swirl"
@@ -722,22 +681,13 @@
     "duringBurst": "Selama Durasi Stormbreaker",
     "tidecallerMaxDmg": "Setelah melepaskan Tidecaller dengan bonus DMG maksimumnya",
     "a4charge": "Mengurangi delay sebelum melepaskan Charged Attack",
-    "c4dmg": "DMG Stunning Revenge Electro",
-    "burstDmgRed_": "Pengurangan DMG"
+    "c4dmg": "DMG Stunning Revenge Electro"
   },
   "char_Bennett": {
     "skill": {
-      "pressDMG": "DMG Tekan",
-      "lvl1_1DMG": "Lvl 1 Tahap 1 Hit DMG",
-      "lvl1_2DMG": "Lvl 1 Tahap 2 Hit DMG",
-      "lvl2_1DMG": "Lvl 2 Tahap 1 Hit DMG",
-      "lvl2_2DMG": "Lvl 2 Tahap 2 Hit DMG",
-      "explDMG": "DMG Ledakan",
       "lvl1CD": "Lvl 1 CD",
       "lvl2CD": "Lvl 2 CD"
     },
-    "additionalATK": "Peningkatan ATK Tambahan",
-    "additionalATKRatio_": "Rasio Bonus ATK Tambahan",
     "c4DMG": "DMG Odyssey tak terduga",
     "c6PyroInfusion": "<pyro>Sword, Claymore dan Polearm Pyro Infusion"
   },
@@ -800,14 +750,11 @@
     "c1PullSpeed": "Kecepatan menarik ditingkatkan"
   },
   "char_Kaeya": {
-    "c2burstDuration": "Peningkatan durasi sebanyak 2.5dtk per musuh yang dikalahkan selama, hingga 15dtk",
-    "p1heal": "Healing",
-    "c1cond": "Musuh terpengaruh oleh Cryo"
+    "c2burstDuration": "Peningkatan durasi sebanyak 2.5dtk per musuh yang dikalahkan selama, hingga 15dtk"
   },
   "char_Keqing": {
     "c1DMG": "DMG Thundering Might",
-    "recast": "Setelah menyusun ulang <strong>Stellar Restoration</strong>",
-    "effectTriggers": "Pemicu efek"
+    "recast": "Setelah menyusun ulang <strong>Stellar Restoration</strong>"
   },
   "char_Klee": {
     "a1CondName": "Membawa Explosive Spark",
@@ -821,7 +768,6 @@
   },
   "char_Mona": {
     "omen": "Setelah memukul musuh yang terkena Omen",
-    "bubbleDuration": "Durasi Illusory Bubble",
     "hitOp": {
       "affectedByOmen": "Setelah hit musuh yang terkena Omen"
     },
@@ -848,7 +794,6 @@
   "char_Sayu": {
     "burstHits": "Aktivasi Jumlah Muji-Muji Daruma",
     "p2Heal": "Healing karakter terdekat",
-    "p2Aoe": "Serangan AoE ditingkatkan",
     "c1Text": "Muji-Muji Daruma akan mengabaikan batas HP dan dapat secara bersamaan menyerang musuh terdekat dan heal karakter",
     "c2KickPressDmg_": "DMG Bonus Tekan Fuufuu Whirlwind Kick",
     "c2KickDmg_": "DMG Bonus Fuufuu Whirlwind Kick",
@@ -859,7 +804,6 @@
   "char_Shenhe": {
     "quill": "Icy Quills aktif",
     "c4": "Lapisan Skyfrost Mantra",
-    "c4Bonus_": "Bonus Skyfrost Mantra",
     "pressQuota": "Pemicu Quota Tekan",
     "holdQuota": "Pemicu Quota Tahan",
     "pressDuration": "Durasi Tekan",
@@ -868,8 +812,6 @@
   "char_Thoma": {
     "a2": "Peningkatan DMG Fiery Collapse",
     "c2": "Peningkatan Durasi <strong>Crimson Ooyoroi</strong>",
-    "maxShield": "DMG Absorpsi Maksimum",
-    "maxPyroShield": "Absorpsi Pyro DMG Maksimum",
     "refreshBarrier": "Setelah mendapatkan atau merefresh <strong>Blazing Barrier</strong>"
   },
   "char_Xiangling": {
@@ -881,11 +823,9 @@
   },
   "char_Xiao": {
     "burst": {
-      "autoAtkDmgBonus_": "DMG Bonus Normal/Charged/Plunging Attack",
       "lifeDrain_": "Pengurangan HP",
       "currentHPPerSec": "(HP/dtk saat ini)",
       "incJump": "Kemampuan melompat meningkat",
-      "incAtkAoe": "Serangan AoE meningkat",
       "inBurst": "Di bawah pengaruh <strong>Bane of All Evil</strong>",
       "stack": "Waktu yang dihabiskan di <strong>Bane of All Evil</strong>"
     },
@@ -902,12 +842,6 @@
         "1": "Absorpsi Shield Pyro DMG Level 1",
         "2": "Absorpsi Shield Pyro DMG Level 2",
         "3": "Absorpsi Shield Pyro DMG Level 3"
-      },
-      "shieldLevel": "Level Shield",
-      "shieldLevels": {
-        "1": "1: Ad Lib",
-        "2": "2: Lead-In",
-        "3": "3: Rave"
       }
     },
     "p1": {
@@ -948,7 +882,6 @@
       "sealsConsumed": "Seals dikonsumsi dengan menggunakan Charged Attack"
     },
     "passive2": {
-      "chargedCrit": "Charged Attack menghasilkan serangan CRIT",
       "key": "DMG Blazing Eye"
     },
     "c1": {
@@ -983,11 +916,7 @@
     "condName": "Musuh adalah Slime"
   },
   "weapon_Deathmatch": {
-    "condName": "Total Musuh Terdekat",
-    "opponents": {
-      "oneOrNone": "Kurang dari dua musuh",
-      "moreThanOne": "Setidaknya dua musuh"
-    }
+    "condName": "Total Musuh Terdekat"
   },
   "weapon_DragonspineSpear": {
     "aoeDmg": "DMG Everfrost Icicle",
@@ -1071,9 +1000,6 @@
     }
   },
   "char_KukiShinobu": {
-    "skill": {
-      "cost": "% HP Saat Ini"
-    },
     "a4": {
       "heal": "Peningkatan Healing Ele. Skill"
     },
@@ -1089,7 +1015,6 @@
       "condName": "Jumlah musuh yang ditandai dengan Lifeline"
     },
     "c6": {
-      "condName": "Dalam status Mastermind",
       "dmg": "DMG Mastermind Breakthrough Barb"
     }
   },
@@ -1184,11 +1109,9 @@
     "c2MultiplierKey_": "Jinni Toop Multiplier",
     "c2DmgKey": "DMG Jinni Toop",
     "c4ConnectedBelowHp": "Karakter terhubung ke Jinni dan HP di bawah 50%",
-    "c4ConnectedBelowEner": "Karakter terhubung ke Jinni dan Energi di bawah 50%",
-    "c6Heal": "Normal Attack Healing"
+    "c4ConnectedBelowEner": "Karakter terhubung ke Jinni dan Energi di bawah 50%"
   },
   "char_ShikanoinHeizou": {
-    "declensionStacks": "Lapisan Declension",
     "takingField": "Setelah berada di medan pertempuran"
   },
   "char_Tighnari": {
@@ -1215,8 +1138,7 @@
       "assumptionLvl": {
         "no": "Asumsi Tidakada Lv. Main Stat",
         "lvl": "Asumsikan Main Stat setidaknya Lv. {{lvl}}"
-      },
-      "title": "Main Stat Filter/Configuration"
+      }
     },
     "tcGraph": {
       "vs": "Target Optimisasi Grafik vs.",
@@ -1289,12 +1211,9 @@
     "currentlyEquippedBuild": "Saat ini Digunakan",
     "addBuildToList": "Tambahkan build ke daftar",
     "graphBuildLabel": "Grafik #<1>{{count}}</1>",
-    "workerLoadFailed": "Gagal memuat. Klik disini untuk memuat ulang halaman dan coba lagi",
     "excludeArt": {
       "title_exclude": "Kecualikan Artefak",
       "title_tooltip": "Tambahkan artefak ke daftar pengecualian karakter ini. Artefak dalam daftar pengecualian tidak akan dipertimbangkan untuk pembuatan build.",
-      "usingNum_one": "Menggunakan <1>{{count}}</1> artefak yang dikecualikan",
-      "usingNum_other": "Menggunakan <1>{{count}}</1> artefak yang dikecualikan",
       "excNum_one": "<1>{{count}}</1> artefak dikecualikan",
       "excNum_other": "<1>{{count}}</1> artefak dikecualikan",
       "addExc": "Tambahkan artefak ke daftar pengecualian karakter ini",
@@ -1302,9 +1221,7 @@
       "deSelectExc": "Klik artefak untuk menghapusnya dari daftar pengecualian",
       "excludeArtifactTip": "Mengecualikan artefak akan mencegah generator build menggunakannya untuk karakter ini.",
       "excluded": "Artefak ini dikecualikan.",
-      "included": "Artefak ini tidak dikecualikan.",
-      "button_txt": "Exclude Artifacts",
-      "usingNum": "Using <1>{{totalStr}}</1> excluded artifact(s)"
+      "included": "Artefak ini tidak dikecualikan."
     },
     "excludeChar": {
       "title": "Izinkan Artefak yang Dilengkapi",
@@ -1314,25 +1231,10 @@
       },
       "allowEquip": "Izinkan menggunakan artefak dari",
       "usingNumTot_one": "Menggunakan <1>{{arts}}</1> artefak dari <3>{{count}}</3> karakter",
-      "usingNumTot_other": "Menggunakan <1>{{arts}}</1> artefak dari <3>{{count}}</3> karakter",
-      "tooltip": "Add characters to this character's allow list. Characters in the allow list will be considered for build generation. You can also toggle between using only unequipped artifacts, your custom allow list, and using all equipped and unequipped artifacts.",
-      "chars": "Characters",
-      "artis": "Artifacts",
-      "states": {
-        "unequippedOnly": "Unequipped Only",
-        "customList": "Custom List",
-        "all": "All Artifacts"
-      },
-      "usingState": "Using"
+      "usingNumTot_other": "Menggunakan <1>{{arts}}</1> artefak dari <3>{{count}}</3> karakter"
     },
     "buildCompleted": "Build Selesai",
-    "notifyTooltip": "Mainkan suara saat build selesai dibuat. Juga akan menampilkan prompt alarm saat keluar tab.",
-    "bonusStats": {
-      "title": "Bonus Stats"
-    }
-  },
-  "weapon_CalamityQueller": {
-    "inactiveKey": "Bonus Off Field"
+    "notifyTooltip": "Mainkan suara saat build selesai dibuat. Juga akan menampilkan prompt alarm saat keluar tab."
   },
   "weapon_ForestRegalia": {
     "condName": "Setelah mengambil Leaf of Consciousness"
@@ -1377,9 +1279,6 @@
     },
     "c2": {
       "key": "DMG Rockcore Meltdown"
-    },
-    "c4": {
-      "energyRestore": "Energi dipulihkan per serangan shockwave"
     }
   },
   "page_newTab": {
@@ -1413,7 +1312,6 @@
       "dance2": "DMG 2-Hit Sword Dance",
       "whirl1": "DMG 1-Hit Whirling Steps",
       "whirl2": "DMG 2-Hit Whirling Steps",
-      "moon": "DMG Watery Moon",
       "wheel": "DMG Water Wheel"
     },
     "passive1": {
@@ -1421,9 +1319,6 @@
       "notDendroHydroTeam": "Petunjuk: Tetapkan tim kamu hanya dengan karakter Dendro dan Hydro untuk melihat kondisi dan efek tambahan",
       "condName": "Setelah terkena <dendro>serangan Dendro</dendro> ketika terpengaruh oleh Bounty Golden Chalice",
       "bountifulCores": "Reaksi Bloom akan menciptakan Bountiful Cores"
-    },
-    "c1": {
-      "moon_dmg_": "DMG Bonus Watery Moon"
     },
     "c4": {
       "condName": "Setelah langkah tarian ketiga Pirouette mengenai musuh"
@@ -1484,7 +1379,6 @@
     "projectionDmg": "DMG Proyektil Attack"
   },
   "char_Yaoyao": {
-    "a4Heal": "Ledakan Healing White Jade Radish",
     "inExplosionAoE": "Setelah berada dalam AoE ledakan <strong>White Jade Radish</strong>",
     "inLegacy": "Dalam status Adeptal Legacy",
     "megaDmg": "DMG Mega Radish",
@@ -1518,269 +1412,5 @@
     "initialHeal": "Initial Healing",
     "dotHeal": "Tambahan Healing",
     "critHitDuringBurst": "Jumlah hit CRIT selama sekali penggunaan <strong>The Lioness' Bite</strong>"
-  },
-  "editor": {
-    "title": "Editor Artefak",
-    "rarity": "Kualitas",
-    "level": "Level",
-    "unknownPieceName": "Nama Bagian Artefak Tidak Diketahui",
-    "unknownSetName": "Unknown Set Name",
-    "curSubEff": "Efisiensi Substat Saat Ini",
-    "curSubEffDesc": "Setiap 4 kali upgrade artefak, kamu mendapatkan roll substat. <strong>Efisiensi Substat</strong> menghitung seberapa tinggi roll substat tersebut sebagai persentase.",
-    "maxSubEff": "Efisiensi Substat Maksimum",
-    "maxSubEffDesc": "<strong>Efisiensi Substat Maksimum</strong> dari sebuah artefak menghitung efisiensinya jika upgrade yang tersisa mendapat nilai roll maksimum.",
-    "substat": {
-      "selectSub": "Pilih Substat",
-      "error": {
-        "noCalc": "Tidak dapat menghitung roll stat.",
-        "noOverRoll": "Substat tidak dapat diroll lebih dari {{value}} kali."
-      },
-      "noRoll": "Tanpa Roll",
-      "RollCount_one": "{{count}} Roll",
-      "RollCount_other": "{{count}} Rolls",
-      "noStat": "Tanpa Nilai",
-      "eff": "Efisiensi: <1></1>",
-      "noSubstat": "Tanpa Substat",
-      "substatFormat": "Substat {{value}}",
-      "nextRolls": "Roll berikutnya"
-    },
-    "preview": "Pratinjau Artefak",
-    "dupArt": "Artefak duplikat terdeteksi.",
-    "upArt": "Artefak terupgrade terdeteksi.",
-    "beforeEdit": "Sebelum Edit",
-    "btnSave": "Simpan Artefak",
-    "btnAdd": "Tambah Artefak",
-    "btnClear": "Bersihkan",
-    "btnRandom": "Acak",
-    "btnUpdate": "Perbarui Artefak",
-    "clearPrompt": "Ada artefak di editor. Apa kamu yakin mau membersihkan editor?"
-  },
-  "slot": "Slot",
-  "setEffectNum": "{{setNum}}-Set",
-  "slotName": {
-    "flower": "Flower of Life",
-    "plume": "Plume of Death",
-    "sands": "Sands of Eon",
-    "goblet": "Goblet of Eonothem",
-    "circlet": "Circlet of Logos"
-  },
-  "info": {
-    "title": "Panduan Edit/Manajemen Artefak",
-    "section1": "<0>Substat Roll</0><1> <1>Jumlah roll</1> yang dimiliki substat yang terletak di sebelah kiri substat. Semakin tinggi jumlahnya, substatnya akan semakin berwarna:<3></3>.</1><2>Substat Efisiensi</2><3>Efisiensi dari substat merupakan persentasi dari jumlah saat ini dari potensi jumlah 5<1></1> tertinggi. Dari gambar tersebut, jumlah roll maksimum dari CRIT DMG adalah 7.8%. Dalam efisiensinya: <3>5.8/7.8 = 69.2%.</3></3><4>Efisiensi Substat Saat Ini vs. Efisiensi Substat Maksimum</4><5>Ketika 5<1></1> memiliki total 9(4+5) roll, dengan tiap roll-nya memiliki jumlah tertinggi, itu dinamakan efisiensi 100% artefak. Namun, kebanyakan dari artefak yang ada tidak seberuntung ini. <3>Efisiensi Substat saat ini</3> dari sebuah artefak merupakan persentasi dari efisiensi 100% tersebut. <5>Efisiensi Substat Maksimum</5> merupakan jumlah maksimum dari artefak yang bisa dicapai, jika sisa roll artefak dari upgrade merupakan jumlah tertinggi yang bisa dicapai.</5><6>Mengunci Artefak</6><7>Jika artefak tertentu dikunci <1></1>, maka artefak tersebut tidak akan dipilih oleh build generator untuk optimisasi. Artefak yang dikenakan karakter terkunci secara default.</7>",
-    "section2": "<0>Editor Artefak</0><1>Editor Artefak dengan fitur lengkap yang bisa menerima semua artefak 3<1></1> hingga 5<3></3>. Ketika substat diinput, editor ini bisa menghitung jumlah roll dan efisiensi yang sesuai. Editor ini juga bisa memastikan bahwa jumlah roll yang didapat sesuai dengan levelnya bersama dengan metrik validasi lainnya.</1><2>Memindai Screenshot</2><3>Tidak suka menginput secara manual? Kamu bisa memindai artefakmu dengan screenshot! Dalam Artefak Editor, klik tombol <1>Show Me How!</1> untuk mempelajarinya lebih lanjut.</3><4>Pemindai Artefak Otomatis</4><5>Kalau kamu memainkan Genshin di PC, kamu bisa mengunduh alat yang bisa memindai semua artefakmu secara otomatis, lalu kamu bisa mengimpor data tersebut ke dalam <1></1> Database. <3>Tekan di sini</3> untuk melihat daftar pemindai yang kompatibel dengan GO.</5><6>Deteksi Artefak Duplikat/Upgrade</6><7>Tahukah kamu kalau GO bisa mendeteksi jika kamu menambah artefak <1>duplikat</1> yang sudah ada dalam sistem? Editor ini juga bisa mendeteksi apakah artefak yang ditambahkan merupakan <3>upgrade</3> dari artefak yang sudah ada. Ketika duplikasi/upgrade terdeteksi, pratinjau akan muncul agar kamu bisa membandingkan dua artefak tersebut(Lihat Gambar).</7>",
-    "section3": "<0>Tas Artefak</0><1>Semua artefakmu yang telah kamu tambahkan ke GO ditampilkan di sini. Filter di sini memungkinkan kamu untuk lebih menyempurnakan tampilan artefakmu. </1><2>Contoh: Menentukan Artefak Tumbal</2><3>Dengan memanfaatkan filter artefak, dan perhitungan efisiensi artefak, kamu dapat menentukan artefak untuk dijadikan tumbal dengan cepat.</3><4>Sebagai contoh, filter diatur sebagai berikut: </4><5><0><0>Batasi level hingga 0-8.</0><1>Pastikan artefak dalam tas tidak terkunci.</1><2>Hilangkan kontribusi flat HP, flat DEF, dan Energy Recharge untuk perhitungan efisiensi.</2><3>Urutkan dengan menggunakan urutan meningkat untuk Eff. Substat Maksimum.</3></0></5><6>Ini akan memfilter Tas artefak dari artefak efisiensi terendah, untuk substat yang diinginkan.</6>"
-  },
-  "artifactFilter": "Filter Artefak",
-  "efficiencyFilter": {
-    "title": "Substat yang dipakai dalam perhitungan efisiensi"
-  },
-  "filterLocation": {
-    "location": "Characters",
-    "inventory": "Tas",
-    "currentlyEquipped": "Dikenakan"
-  },
-  "button": {
-    "unequipArtifacts": "Lepaskan Artefak",
-    "deleteArtifacts": "Hapus Artefak",
-    "lockArtifacts": "Kunci Artefak",
-    "unlockrtifacts": "Buka Kunci Artefak"
-  },
-  "buttonHint": "Catatan: tombol merah di atas hanya berlaku untuk <1>artefak terfilter</1>",
-  "tipsOfTheDay": [
-    "Efisiensi maksimum dari artefak bintang 4 adalah sekitar 60%.",
-    "Efisiensi maksimum dari artefak biasanya akan berkurang setelah upgrade. Itu sangat normal!",
-    "Substat dengan angka \"1\" adalah yang tersulit untuk dipindai dalam screenshot.",
-    "Jika seluruh roll(6) masuk ke satu substat, warnanya akan menjadi ungu!",
-    "Klik di \"Rincian/Details\" ketika kamu mengupgrade artefak-mu di dalam game untuk dipindai sekaligus di-upgrade.",
-    "Sekrang kamu bisa mengunggah banyak screenshot artefak untuk dipindai!"
-  ],
-  "sortMap": {
-    "level": "Level",
-    "efficiency": "Eff. Substat Saat Ini",
-    "mefficiency": "Eff. Substat Maksimum"
-  },
-  "mainStat": "Stat Utama",
-  "showingNum_one": "Showing <1>{{count}}</1> out of {{value}} Artifact",
-  "showingNum_other": "Showing <1>{{count}}</1> out of {{value}} Artifacts",
-  "resetFilters": "Reset Filter",
-  "edit": "Edit Artifact",
-  "autocompleteLabels": {
-    "sets": "Artifact Sets",
-    "mainStats": "Main Stats",
-    "substats": "Sub-Stats",
-    "set": "Artifact Set"
-  },
-  "substat_one": "{{count}} substat",
-  "substat_other": "{{count}} substats",
-  "sub_one": "{{count}} sub",
-  "sub_other": "{{count}} subs",
-  "addNew": "Add New Artifact",
-  "cantDeleteLock": "Cannot delete artifact because it is locked",
-  "equippedArt": "All Equipped Artifacts",
-  "artInInv": "All Unequipped Artifacts",
-  "locationsTooltip": "Disable \"All Equipped Artifacts\" to filter by specific characters",
-  "char_Mika": {
-    "inSoulwind": "In the Soulwind state",
-    "numDetectorStacks": "Detector",
-    "incDetectorStacks": "Max. Detector stacks Inc."
-  },
-  "weapon_MailedFlower": {
-    "condName": "After hitting an opponent with an Elemental Skill or triggering an Elemental Reaction"
-  },
-  "artifact_NymphsDream": {
-    "condName": "Mirrored Nymph"
-  },
-  "char_Somnia": {
-    "name": "Somnia",
-    "title": "Creation of Simulated Cognition",
-    "description": "A combination of an array of concepts. She exists in a variety of states and phases. Is she even real?",
-    "constellationName": "Mathematica Felina",
-    "auto": {
-      "name": "Astral Abacus",
-      "fields": {
-        "normal": {
-          "0": "<strong><strong>Normal Attack</strong>",
-          "1": "Performs up to 4 consecutive attacks, launching beads that deal <electro>Electro DMG</electro> from her Astral Abacus."
-        },
-        "charged": {
-          "0": "<strong>Charged Attack</strong>",
-          "1": "Consumes a certain amount of Stamina to charge and unleash a continuous stream of Electro beads, dealing <electro>Electro DMG</electro> to up to 4 targets every 0.3s",
-          "2": "Somnia gains resistance to interruption and is free to move while using her Charged Attack."
-        },
-        "plunging": {
-          "0": "<strong>Plunging Attack</strong>",
-          "1": "Fires Electro beads at the ground, dealing <electro>AoE Electro DMG</electro> upon impact."
-        }
-      },
-      "skillParams": {
-        "0": "1-Hit DMG",
-        "1": "2-Hit DMG",
-        "2": "3-Hit DMG",
-        "3": "4-Hit DMG",
-        "4": "Charged Attack Stream DMG",
-        "5": "Charged Attack Stamina Cost",
-        "6": "Plunge DMG",
-        "7": "Low/High Plunge DMG"
-      }
-    },
-    "skill": {
-      "name": "Cosmic Calculator",
-      "description": {
-        "0": "Somnia condenses immense energy from her Astral Abacus to create an explosion that deals <electro>AoE Electro DMG</electro> and create a Self-Containing Sigil with undefinable contents above her head.",
-        "1": "The Self-Containing Sigil grants her the Schrödinger Superposition effect.",
-        "2": "<br/>",
-        "3": "<strong>Schrödinger Superposition</strong>",
-        "4": "DMG dealt by Somnia's Normal and Charged Attacks is increased based on her Elemental Mastery.",
-        "5": "Schrödinger Superposition expires after Self-Containing Sigil's duration ends or when Somnia leaves the field."
-      },
-      "skillParams": {
-        "0": "Skill DMG",
-        "1": "Duration",
-        "2": "CD"
-      }
-    },
-    "burst": {
-      "name": "Parallax Paws",
-      "description": {
-        "0": "Somnia summons a star-shaped Celestial Cyclone around her, unleashing a burst of <electro>Electro DMG</electro> as it expands. The field will linger and deal continuous <electro>AoE Electro DMG</electro> to enemies within every 1s.",
-        "1": "While Celestial Cyclone is active, Somnia's Elemental Mastery will be increased multiplicatively.",
-        "2": "Additionally, while Celestial Cyclone is active, Somnia gains Stellar Statistics. While in this state, Somnia can set her Astral Abacus to the Multiplication, Addition or Subtraction modes, each granting her attacks and Celestial Cyclone different buffs. Only one Abacus mode from Stellar Statistics may be active simulatenously.",
-        "3": "<br/>",
-        "4": "<strong>Abacus Modes</strong>",
-        "5": [
-          "<strong>Multiplication</strong>: Within Somnia's Celestial Cyclone, all Sword-, Claymore- and Polearm-wielding characters' weapons will be infused with <electro>Electro</electro>. Normal or Charged Attack hits within the field will trigger Star Sunder, a coordinated Electro blast that deals <electro>AoE Electro DMG</electro> based on Somnia's Elemental Mastery. Star Sunder can be triggered once every 1.5s.",
-          "<strong>Addition</strong>: Celestial Cyclone's AoE and DMG are increased. Upon hitting an enemy, Somnia's Normal and Charged attacks will trigger a Supernova that deals <electro>AoE Electro DMG</electro> based on her Elemental Mastery. This effect can be triggered once every 0.75s.",
-          "<strong>Subtraction</strong>: Celestial Cyclone has its AoE and DMG reduced, but applies the \"Less Than Three\" effect to enemies within it. \"Less Than Three\" reduces enemy Elemental and Physical RES based on Somnia's Elemental Mastery. Additionally, Somnia's Normal and Charged Attacks deal increased DMG based on her Elemental Mastery."
-        ]
-      },
-      "skillParams": {
-        "0": "Skill DMG",
-        "1": "Elemental Mastery",
-        "2": "Celestial Cyclone DoT (Multiplication)",
-        "3": "Star Sunder DMG",
-        "4": "Celestial Cyclone DoT (Addition)",
-        "5": "Supernova DMG",
-        "6": "Celestial Cyclone DoT (Subtraction)"
-      }
-    },
-    "passive1": {
-      "name": "Quick Calculation",
-      "description": {
-        "0": "Somnia's Charged Attacks consume 20% less Stamina and charge up 20% faster"
-      }
-    },
-    "passive2": {
-      "name": "Math Whiz",
-      "description": {
-        "0": "For the duration of Celestial Cyclone, Somnia's Elemental Mastery increases by 5% for every hit dealt by Celestial Cyclone, Star Sunder and Supernova, up to a maximum of 25%."
-      }
-    },
-    "passive3": {
-      "name": "Insomniac Iteration",
-      "description": {
-        "0": "At night (18:00 - 6:00), speeds up Genshin Optimizer build speed by 10%."
-      }
-    },
-    "constellation1": {
-      "name": "Decimal Point",
-      "description": {
-        "0": "Somnia's Normal and Charged Attacks have a 25% chance to deal twice the DMG"
-      }
-    },
-    "constellation2": {
-      "name": "Prime Number",
-      "description": {
-        "0": "When Somnia is under the Schrödinger Superposition effect, each Normal or Charged Attack hit will give Somnia a stack of Natural Number. When the amount of Natural Number stacks is prime, Somnia's next Normal or Charged Attack will receive twice the DMG increase from Schrödinger Superposition."
-      }
-    },
-    "constellation3": {
-      "name": "Infinite Series",
-      "description": {
-        "0": "Increases the Level of <strong>Parallax Paws</strong> by 3.",
-        "1": "Maximum upgrade level is 15."
-      }
-    },
-    "constellation4": {
-      "name": "Perfect Square",
-      "description": {
-        "0": "When Somnia triggers an Electro reaction, 4 Elemental Energy is restored to herself and all nearby party members of Elements involved in the reaction.",
-        "1": "This effect can trigger once every 4s."
-      }
-    },
-    "constellation5": {
-      "name": "Catnip Coefficient",
-      "description": {
-        "0": "Increases the Level of <strong>Cosmic Calculator</strong> by 3.",
-        "1": "Maximum upgrade level is 15."
-      }
-    },
-    "constellation6": {
-      "name": "Golden Ratio",
-      "description": {
-        "0": "When Somnia's Charged Attack deals damage, her CRIT Rate and CRIT DMG are increased by 3% and 5% respectively. This effect can be triggered once every 0.2s and stack up to 8 times. All Golden Ratio stacks are cleared 13s after the first stack was obtained."
-      }
-    },
-    "c1Key": "Normal and Charged Att. DMG Mult.",
-    "superpositionCond": "Under the Schrödinger Superposition effect",
-    "cycloneActiveCond": "Celestial Cyclone is active",
-    "multCond": "In Multiplication mode",
-    "subCond": "In Subtraction mode",
-    "lessThan3Cond": "Enemy is affected by \"Less Than Three\"",
-    "c1Cond": "Decimal Point trigger frequency",
-    "average": "Average",
-    "always": "Always",
-    "c2Cond": "Possesses a prime amount of Natural Number stacks"
-  },
-  "weapon_QuantumCatalyst": {
-    "name": "Quantum Cat-alyst",
-    "description": "This advanced Catalyst weapon is infused with the mysterious power of Quantum Mechanics and bears the likeness of a curious cat, with glowing green eyes, a tail that flickers with Electro energy and the occasional spark arcing between the ears.",
-    "passiveName": "Mewon Meowmentum",
-    "passiveDescription": {
-      "0": "Increases Energy Recharge by <cryo>18%</cryo>. Increases Normal and Charged Attack DMG by <cryo>6%</cryo> of Elemental Mastery. Upon triggering an <electro>Electro-related Elemental Reaction</electro>, gain <cryo>10</cryo> Elemental Mastery for 12 seconds. This effect can stack up to 5 times and stacks have their duration counted independently.",
-      "1": "Increases Energy Recharge by <cryo>22.5%</cryo>. Increases Normal and Charged Attack DMG by <cryo>7.5%</cryo> of Elemental Mastery. Upon triggering an <electro>Electro-related Elemental Reaction</electro>, gain <cryo>12</cryo> Elemental Mastery for 12 seconds. This effect can stack up to 5 times and stacks have their duration counted independently.",
-      "2": "Increases Energy Recharge by <cryo>27%</cryo>. Increases Normal and Charged Attack DMG by <cryo>9%</cryo> of Elemental Mastery. Upon triggering an <electro>Electro-related Elemental Reaction</electro>, gain <cryo>14</cryo> Elemental Mastery for 12 seconds. This effect can stack up to 5 times and stacks have their duration counted independently.",
-      "3": "Increases Energy Recharge by <cryo>31.5%</cryo>. Increases Normal and Charged Attack DMG by <cryo>10.5%</cryo> of Elemental Mastery. Upon triggering an <electro>Electro-related Elemental Reaction</electro>, gain <cryo>16</cryo> Elemental Mastery for 12 seconds. This effect can stack up to 5 times and stacks have their duration counted independently.",
-      "4": "Increases Energy Recharge by <cryo>36%</cryo>. Increases Normal and Charged Attack DMG by <cryo>12%</cryo> of Elemental Mastery. Upon triggering an <electro>Electro-related Elemental Reaction</electro>, gain <cryo>18</cryo> Elemental Mastery for 12 seconds. This effect can stack up to 5 times and stacks have their duration counted independently."
-    }
   }
 }

@@ -256,9 +256,6 @@
     "sillyPageTitle": "Silly Optimizer"
   },
   "char_Eula": {
-    "skillC": {
-      "name": "冷酷之心"
-    },
     "burstC": {
       "name": "光降之劍",
       "start5": "立即獲得 5 層能量",
@@ -272,16 +269,13 @@
     },
     "passive1": "Shattered Lightfall Sword DMG",
     "c4C": {
-      "name": "Opponents have less than 50% HP",
       "dmgBonus": "Lightfall Sword Explosion DMG Bonus"
     }
   },
   "char_Noelle": {
     "p4cd": "24s, -1s Every 4 hits",
     "c6duration": "15s, +1s per kill, up to 10s",
-    "qlarger": "Larger attack AoE",
-    "c4dmg": "Breastplate Shatter DMG",
-    "skillHeal_": "Healing Triggering Chance"
+    "c4dmg": "Breastplate Shatter DMG"
   },
   "char_Venti": {
     "addAimed": "Additional Aimed Shot DMG",
@@ -329,9 +323,6 @@
       "skillPress": "$t(afterUse.skill) ($t(press))",
       "skillHold": "$t(afterUse.skill) ($t(hold))"
     },
-    "increase": {
-      "atk": "攻擊力上升"
-    },
     "hits_one": "{{count}} Hit",
     "hits_other": "{{count}} Hits",
     "lessEqPercentHP": "HP less than or equal to {{percent}}%",
@@ -352,10 +343,7 @@
     "afterSprint": "After Sprint",
     "skillCDRed": "Ele. Skill CD Reduction",
     "burstCDRed": "Ele. Burst CD Reduction",
-    "pressCD": "Press CD",
-    "holdCD": "Hold CD",
     "triggerCD": "Trigger CD",
-    "eleSwirled": "Swirled Element",
     "incInterRes": "Increased resistance to interruption",
     "charges": "Charges",
     "cooldown": "Cooldown",
@@ -372,7 +360,6 @@
       "dendro": "Dendro Infusion",
       "geo": "Geo Infusion"
     },
-    "energyRegen": "Energy Regeneration",
     "effectDuration": {
       "pyro": "Pyro effect duration",
       "cryo": "Cryo effect duration",
@@ -398,9 +385,6 @@
       "geo": "Geo DMG Absorption",
       "none": "DMG Absorption"
     },
-    "opponentsDamaged": "Opponents damaged",
-    "press": "Press",
-    "hold": "Hold",
     "addlCharge": "Additional charge",
     "conditional": "Conditional",
     "maxStacks": "Maximum stacks",
@@ -471,8 +455,7 @@
     "c1": "使用<strong>萬葉之一刀</strong>重設冷卻時間",
     "c2": "Autumn Whirlwind field active",
     "c6": {
-      "after": "After using <strong>Chihayaburu</strong> or <strong>Kazuha Slash</strong>",
-      "bonus": "Normal, Charged and Plunging DMG Bonus"
+      "after": "After using <strong>Chihayaburu</strong> or <strong>Kazuha Slash</strong>"
     },
     "skillPlunge": "Midare Ranzan"
   },
@@ -483,7 +466,6 @@
     }
   },
   "char_KamisatoAyaka": {
-    "afterSprint": "After Sprinting",
     "afterSprintCryo": "After applying <cryo>Cryo</cryo> by Sprinting",
     "snowflakeDMG": "Snowflake DMG",
     "dmgBySnowflake": "Enemy's been hit by Frostflake Seki no To",
@@ -520,9 +502,6 @@
   "char_Aloy": {
     "skill": {
       "coil": "Coil",
-      "coil1": "Coil Stack 1",
-      "coil2": "Coil Stack 2",
-      "coil3": "Coil Stack 3",
       "rush": "Rushing Ice",
       "rushState": "During Rushing Ice state (1 stack / s)"
     },
@@ -532,9 +511,6 @@
   "char_KujouSara": {
     "skill": {
       "ambush": "Under the effects of Tengu Juurai: Ambush"
-    },
-    "a4": {
-      "enerRest": "Energy restored from Tengu Juurai: Ambush"
     },
     "c6": {
       "electroCritDmg": "Character has had their ATK increased by Tengu Juurai"
@@ -641,9 +617,6 @@
   "artifact_ArchaicPetra": {
     "condName": "After obtaining a Crystallize Shard"
   },
-  "artifact_TenacityOfTheMillelith": {
-    "condName": "Elemental Skill hits an opponent"
-  },
   "artifact_ViridescentVenerer": {
     "condName": "Element Swirled"
   },
@@ -722,22 +695,13 @@
     "duringBurst": "During the duration of Stormbreaker",
     "tidecallerMaxDmg": "After unleashing Tidecaller with its maximum DMG bonus",
     "a4charge": "Reduced delay before unleashing Charged Attacks",
-    "c4dmg": "Stunning Revenge Electro DMG",
-    "burstDmgRed_": "DMG Reduction"
+    "c4dmg": "Stunning Revenge Electro DMG"
   },
   "char_Bennett": {
     "skill": {
-      "pressDMG": "Press DMG",
-      "lvl1_1DMG": "Lvl 1 1st Hit DMG",
-      "lvl1_2DMG": "Lvl 1 2nd Hit DMG",
-      "lvl2_1DMG": "Lvl 2 1st Hit DMG",
-      "lvl2_2DMG": "Lvl 2 2nd Hit DMG",
-      "explDMG": "Explosion DMG",
       "lvl1CD": "Lvl 1 CD",
       "lvl2CD": "Lvl 2 CD"
     },
-    "additionalATK": "Additional ATK Increase",
-    "additionalATKRatio_": "Additional ATK Bonus Ratio",
     "c4DMG": "Unexpected Odyssey DMG",
     "c6PyroInfusion": "<pyro>Sword, Claymore and Polearm Pyro Infusion"
   },
@@ -800,14 +764,11 @@
     "c1PullSpeed": "Pulling speed increased"
   },
   "char_Kaeya": {
-    "c2burstDuration": "Increase duration by 2.5s per opponent defeated during, up to 15s",
-    "p1heal": "Healing",
-    "c1cond": "Opponent is affected by Cryo"
+    "c2burstDuration": "Increase duration by 2.5s per opponent defeated during, up to 15s"
   },
   "char_Keqing": {
     "c1DMG": "Thundering Might DMG",
-    "recast": "After recasting <strong>Stellar Restoration</strong>",
-    "effectTriggers": "Effect triggers"
+    "recast": "After recasting <strong>Stellar Restoration</strong>"
   },
   "char_Klee": {
     "a1CondName": "Carrying an Explosive Spark",
@@ -821,7 +782,6 @@
   },
   "char_Mona": {
     "omen": "Opponent is affected by Omen",
-    "bubbleDuration": "Illusory Bubble Duration",
     "hitOp": {
       "affectedByOmen": "After hitting an opponent affected by Omen"
     },
@@ -848,7 +808,6 @@
   "char_Sayu": {
     "burstHits": "Number of Muji-Muji Daruma Activations",
     "p2Heal": "Nearby character healing",
-    "p2Aoe": "Increased attack AoE",
     "c1Text": "Muji-Muji Daruma will ignore HP limits and can simultaneously attack nearby opponents and heal characters",
     "c2KickPressDmg_": "Fuufuu Whirlwind Kick Press DMG Bonus",
     "c2KickDmg_": "Fuufuu Whirlwind Kick DMG Bonus",
@@ -859,7 +818,6 @@
   "char_Shenhe": {
     "quill": "Icy Quills active",
     "c4": "Skyfrost Mantra stack",
-    "c4Bonus_": "Skyfrost Mantra Bonus",
     "pressQuota": "Press Trigger Quota",
     "holdQuota": "Hold Trigger Quota",
     "pressDuration": "Press Duration",
@@ -868,8 +826,6 @@
   "char_Thoma": {
     "a2": "Fiery Collapse DMG Increase",
     "c2": "<strong>Crimson Ooyoroi</strong> Duration Increase",
-    "maxShield": "Maximum DMG Absorption",
-    "maxPyroShield": "Maximum Pyro DMG Absorption",
     "refreshBarrier": "After obtaining or refreshing a <strong>Blazing Barrier</strong>"
   },
   "char_Xiangling": {
@@ -881,11 +837,9 @@
   },
   "char_Xiao": {
     "burst": {
-      "autoAtkDmgBonus_": "Normal/Charged/Plunging Attack DMG Bonus",
       "lifeDrain_": "Life Drain",
       "currentHPPerSec": "(Current HP/s)",
       "incJump": "Greatly increases jumping ability",
-      "incAtkAoe": "Increases attack AoE",
       "inBurst": "Under the effects of <strong>Bane of All Evil</strong>",
       "stack": "Time spent in <strong>Bane of All Evil</strong>"
     },
@@ -902,12 +856,6 @@
         "1": "Shield Level 1 Pyro DMG Absorption",
         "2": "Shield Level 2 Pyro DMG Absorption",
         "3": "Shield Level 3 Pyro DMG Absorption"
-      },
-      "shieldLevel": "Shield level",
-      "shieldLevels": {
-        "1": "1: Ad Lib",
-        "2": "2: Lead-In",
-        "3": "3: Rave"
       }
     },
     "p1": {
@@ -948,7 +896,6 @@
       "sealsConsumed": "Seals consumed by using a Charged Attack"
     },
     "passive2": {
-      "chargedCrit": "Charged Attack deals a CRIT hit",
       "key": "Blazing Eye DMG"
     },
     "c1": {
@@ -983,11 +930,7 @@
     "condName": "Opponent is a Slime"
   },
   "weapon_Deathmatch": {
-    "condName": "Total Opponents Nearby",
-    "opponents": {
-      "oneOrNone": "Less than two opponents",
-      "moreThanOne": "At least two opponents"
-    }
+    "condName": "Total Opponents Nearby"
   },
   "weapon_DragonspineSpear": {
     "aoeDmg": "Everfrost Icicle DMG",
@@ -1071,9 +1014,6 @@
     }
   },
   "char_KukiShinobu": {
-    "skill": {
-      "cost": "% Current HP"
-    },
     "a4": {
       "heal": "Ele. Skill Healing Increase"
     },
@@ -1089,7 +1029,6 @@
       "condName": "Number of opponents marked by Lifeline"
     },
     "c6": {
-      "condName": "In the Mastermind state",
       "dmg": "Mastermind Breakthrough Barb DMG"
     }
   },
@@ -1184,11 +1123,9 @@
     "c2MultiplierKey_": "Jinni Toop Multiplier",
     "c2DmgKey": "Jinni Toop DMG",
     "c4ConnectedBelowHp": "Character connected to Jinni and below 50% HP",
-    "c4ConnectedBelowEner": "Character connected to Jinni and below 50% Energy",
-    "c6Heal": "Normal Attack Healing"
+    "c4ConnectedBelowEner": "Character connected to Jinni and below 50% Energy"
   },
   "char_ShikanoinHeizou": {
-    "declensionStacks": "Declension Stacks",
     "takingField": "After taking the field"
   },
   "char_Tighnari": {
@@ -1289,12 +1226,9 @@
     "currentlyEquippedBuild": "Currently Equipped",
     "addBuildToList": "Add build to list",
     "graphBuildLabel": "Graph #<1>{{count}}</1>",
-    "workerLoadFailed": "Worker failed to load. Click here to reload the page and try again",
     "excludeArt": {
       "title_exclude": "Excluded Artifacts",
       "title_tooltip": "Add artifacts to this character's exclusion list. Artifacts in the exclusion list will not be considered for build generation.",
-      "usingNum_one": "Using <1>{{count}}</1> excluded artifacts",
-      "usingNum_other": "Using <1>{{count}}</1> excluded artifacts",
       "excNum_one": "<0>{{count}}</0> artifact is excluded",
       "excNum_other": "<0>{{count}}</0> artifacts are excluded",
       "addExc": "Add artifact to this character's exclusion list",
@@ -1303,8 +1237,8 @@
       "excludeArtifactTip": "Excluding an artifact will prevent the build generator from using it for this character.",
       "excluded": "This artifact is excluded.",
       "included": "This artifact is not excluded.",
-      "button_txt": "Exclude Artifacts",
-      "usingNum": "Using <1>{{totalStr}}</1> excluded artifact(s)"
+      "usingNum": "Using <1>{{totalStr}}</1> excluded artifact(s)",
+      "button_txt": "Exclude Artifacts"
     },
     "excludeChar": {
       "title": "Equipped Artifact Configuration",
@@ -1330,9 +1264,6 @@
     "bonusStats": {
       "title": "Bonus Stats"
     }
-  },
-  "weapon_CalamityQueller": {
-    "inactiveKey": "Off Field Bonus"
   },
   "weapon_ForestRegalia": {
     "condName": "After picking up a Leaf of Consciousness"
@@ -1377,9 +1308,6 @@
     },
     "c2": {
       "key": "Rockcore Meltdown DMG"
-    },
-    "c4": {
-      "energyRestore": "Energy restored per shockwave hit"
     }
   },
   "page_newTab": {
@@ -1413,7 +1341,6 @@
       "dance2": "Sword Dance 2-Hit DMG",
       "whirl1": "Whirling Steps 1-Hit DMG",
       "whirl2": "Whirling Steps 2-Hit DMG",
-      "moon": "Watery Moon DMG",
       "wheel": "Water Wheel DMG"
     },
     "passive1": {
@@ -1421,9 +1348,6 @@
       "notDendroHydroTeam": "Hint: Set your team with only Dendro and Hydro characters to see additional conditionals and effects",
       "condName": "After being hit by a <dendro>Dendro attack</dendro> while affected by Golden Chalice's Bounty",
       "bountifulCores": "Bloom reaction will create Bountiful Cores"
-    },
-    "c1": {
-      "moon_dmg_": "Watery Moon DMG Bonus"
     },
     "c4": {
       "condName": "After the third dance step of Pirouette hits opponents"
@@ -1484,7 +1408,6 @@
     "projectionDmg": "Projection Attack DMG"
   },
   "char_Yaoyao": {
-    "a4Heal": "White Jade Radish Explosion Healing",
     "inExplosionAoE": "After being in a <strong>White Jade Radish</strong> explosion's AoE",
     "inLegacy": "In Adeptal Legacy state",
     "megaDmg": "Mega Radish DMG",
@@ -1519,106 +1442,6 @@
     "dotHeal": "Additional Healing",
     "critHitDuringBurst": "After Flame-Mane's Fist deals a CRIT hit"
   },
-  "editor": {
-    "title": "聖遺物編輯器",
-    "rarity": "稀有度",
-    "level": "等級",
-    "unknownPieceName": "未知的道具名稱",
-    "unknownSetName": "未知的套裝名稱",
-    "curSubEff": "目前估值",
-    "curSubEffDesc": "聖遺物每升級 4 次，就會得到一次副詞條的追加提升。<strong>估值</strong>會計算單一副詞條的提升比例。",
-    "maxSubEff": "最高估值",
-    "maxSubEffDesc": "聖遺物的<strong>最高副詞條估值</strong>指計算持續提升副詞條至最高數值的估計值。",
-    "substat": {
-      "selectSub": "選擇一個副詞條",
-      "error": {
-        "noCalc": "無法計算詞條數",
-        "noOverRoll": "副詞條不可超過 {{value}} 個"
-      },
-      "noRoll": "沒有詞條",
-      "RollCount_one": "{{count}} Roll",
-      "RollCount_other": "提升 {{count}} 次",
-      "noStat": "沒有數值",
-      "eff": "估值：<1></1>",
-      "noSubstat": "無副詞條",
-      "substatFormat": "副詞條 {{value}}",
-      "nextRolls": "下次提升："
-    },
-    "preview": "聖遺物預覽",
-    "dupArt": "偵測到重複的聖遺物",
-    "upArt": "偵測到已升級的聖遺物",
-    "beforeEdit": "編輯前",
-    "btnSave": "鋤存聖遺物",
-    "btnAdd": "新增聖遺物",
-    "btnClear": "清除",
-    "btnRandom": "隨機化",
-    "btnUpdate": "更新聖遺物",
-    "clearPrompt": "目前編輯器裡有一個聖遺物。您確定要清除編輯器嗎？"
-  },
-  "slot": "欄位",
-  "setEffectNum": "{{setNum}} 件套裝",
-  "slotName": {
-    "flower": "生之花",
-    "plume": "死之羽",
-    "sands": "時之沙",
-    "goblet": "空之杯",
-    "circlet": "理之冠"
-  },
-  "info": {
-    "title": "聖遺物編輯／管理指南",
-    "section1": "<0>副詞條升級次數</0><1> <1>副詞條升級次數</1>顯示在副詞條左側. 次數越多，副詞條顏色越深:<3></3>. </1><2>副詞條評分</2><3>副詞條評分指副詞條當前數值佔5<1></1>最高數值的比例. 如圖所示, 暴擊傷害最高升級值一次爲7.8%，在評分中： <3>5.8/7.8 = 69.2%.</3></3><4>當前評分 vs. 最高期望評分</4><5>當一個五<1></1>聖遺物經過 9 (4+5) 次總升級，且每次升級都是最大數值升級，此時被認爲是100%評分的聖遺物. 然而，大部分聖遺物沒有這麼幸運. 3>當前副詞條評分</3> 是該聖遺物與100%評分聖遺物相較的結果. <5>最高副詞條評分</5> 是一個聖遺物接下來的升級都獲得最高數值時，能獲得的評分. </5><6>鎖定聖遺物</6><7>通過鎖定聖遺物 <1></1>，該聖遺物不會被配裝生成器選入計算中. 同樣，已經被裝備的聖遺物是默認被排除的. </7>",
-    "section2": "<0>聖遺物編輯器</0><1>支持任意3<1></1> 到 5<3></3>聖遺物的全功能編輯器. 輸入副詞條後，能自動計算升級次數並評分. 同時編輯器會確保你的升級次數與聖遺物等級匹配. </1><2>截圖掃描</2><3>如果你不想手動輸入聖遺物，可以通過截圖掃描的方式識別輸入聖遺物. 在聖遺物編輯器界面，點擊 <1>Show Me How!</1> 可見使用方法. </3><4>自動聖遺物掃描儀</4><5>如果你在PC上玩原神，你可以下載使用聖遺物掃描工具來爲你掃描所有的聖遺物，並導入GO的 <1></1> 數據庫內. <3>點此</3> 獲取與 GO 兼容的掃描器列表.</5><6>重複/升級後聖遺物檢測</6><7> GO可以檢測出你導入的<1>重複</1> 聖遺物哦！原先擁有的聖遺物<3>升級後</3> 也會被檢測出來. 一旦檢測到重複/升級的聖遺物，會出現預覽界面允許你比較這些聖遺物 (見圖片).</7>",
-    "section3": "<0>聖遺物背包</0><1>這裡會顯示所有被加到 GO 的聖遺物。篩選器可以協助您更精簡地瀏覽目前擁有的聖遺物。</1><2>例如：尋找可消耗的聖遺物。</2><3>利用聖遺物篩選器及估值，您可以快速找到可以消耗的聖遺物。</3><4>在這個例子中，篩選器可以這樣設定：</4><5><0>限制聖遺物等級為 0-8 等。</0><1>背包內未鎖定的聖遺物。</1><2>固定生命值、固定防禦力及元素充能效率不納入估值計算當中。</2><3>依照最大估值進行升序排列。</3></0></5><6>這樣，聖遺物背包就能依照指定的詞條，由低到高篩出最低估值的聖遺物。</6>"
-  },
-  "artifactFilter": "聖遺物篩選",
-  "efficiencyFilter": {
-    "title": "用於估值計算的副詞條"
-  },
-  "filterLocation": {
-    "location": "位置",
-    "inventory": "背包",
-    "currentlyEquipped": "當前裝備"
-  },
-  "button": {
-    "unequipArtifacts": "卸除聖遺物",
-    "deleteArtifacts": "刪除聖遺物",
-    "lockArtifacts": "Lock Artifacts",
-    "unlockrtifacts": "Unlock Artifacts"
-  },
-  "buttonHint": "注意：紅色選項僅用於<1>篩選後的聖遺物</1>",
-  "tipsOfTheDay": [
-    "4 星聖遺物的最高估值為 60% 左右。",
-    "聖遺物的最高估值一般隨著你對它的升級而降低。這很正常！",
-    "含有「1」的副詞條較難通過截圖掃描識別。",
-    "如果你的 6 次副詞條升級，強化了同一個副詞條，它會呈現紫色！",
-    "點選「詳情」以了解如何添加在遊戲內升級後的聖遺物。",
-    "現在您可以上傳多張聖遺物截圖進行識別！"
-  ],
-  "sortMap": {
-    "level": "等級",
-    "efficiency": "目前估值",
-    "mefficiency": "最高估值"
-  },
-  "mainStat": "主詞條",
-  "showingNum_one": "Showing <1>{{count}}</1> out of {{value}} Artifact",
-  "showingNum_other": "Showing <1>{{count}}</1> out of {{value}} Artifacts",
-  "resetFilters": "重設過濾器",
-  "edit": "編輯聖遺物",
-  "autocompleteLabels": {
-    "sets": "聖遺物套裝",
-    "mainStats": "主詞條",
-    "substats": "副詞條",
-    "set": "聖遺物套裝"
-  },
-  "substat_one": "{{count}} 個副詞條",
-  "substat_other": "{{count}} 個副詞條",
-  "sub_one": "{{count}} 副詞條",
-  "sub_other": "{{count}} 副詞條",
-  "addNew": "新增新的聖遺物",
-  "cantDeleteLock": "Cannot delete artifact because it is locked",
-  "equippedArt": "All Equipped Artifacts",
-  "artInInv": "All Unequipped Artifacts",
-  "locationsTooltip": "Disable \"All Equipped Artifacts\" to filter by specific characters",
   "char_Mika": {
     "inSoulwind": "In the Soulwind state",
     "numDetectorStacks": "Detector",
