@@ -8,7 +8,10 @@ import {
   type CharacterKey,
 } from '@genshin-optimizer/consts'
 import { characterAsset } from '@genshin-optimizer/gi-assets'
-import type { Calculator } from '@genshin-optimizer/gi-formula'
+import type {
+  Calculator,
+  TagMapNodeEntries,
+} from '@genshin-optimizer/gi-formula'
 import {
   artifactsData,
   charData,
@@ -318,7 +321,7 @@ function ExistingCharacterCardContent({
         {/* {isTeammateCard && (
           <WeaponFullCard weaponId={character.equippedWeapon} />
         )} */}
-        <TempWeaponCard />
+        {/* <TempWeaponCard /> */}
         {!isTeammateCard && !hideStats && <Stats />}
         {weaponChildren}
         {artifactChildren}
@@ -562,11 +565,12 @@ function Stats() {
   const { calc } = useContext(CalcContext)
   const member0 = convert(selfTag, { member: 'member0', et: 'self' })
   if (!calc) return null
+  console.log(member0.final)
   return (
     <Box sx={{ width: '100%' }}>
-      {Object.entries(member0.final).map(([_name, read]) => (
-        <NodeFieldDisplay calcResult={calc.compute(read)} />
-      ))}
+      {Object.entries(member0.final).map(([_name, read]) => {
+        return <NodeFieldDisplay calcResult={calc.compute(read)} />
+      })}
       {/* {Object.values(data.getDisplay().basic).map((n) => (
         <NodeFieldDisplay key={JSON.stringify(n.info)} node={n} />
       ))}

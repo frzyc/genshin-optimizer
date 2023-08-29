@@ -39,4 +39,9 @@ export default defineConfig({
       { find: /@genshin-optimizer(.*)/, replacement: resolve('libs/$1/src') },
     ],
   },
+
+  // Fix reference to node-provided global
+  define: {
+    global: {},
+  },
 })

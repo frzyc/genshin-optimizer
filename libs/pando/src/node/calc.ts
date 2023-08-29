@@ -54,7 +54,7 @@ export class Calculator<M = any> {
     const result = this.calculated.refExact(cache.id)
     if (result.length) return result[0]!
 
-    if (process.env['NODE_ENV'] === 'production')
+    if (import.meta.env.PROD)
       result.push({
         pre: cache
           .subset()
