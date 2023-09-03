@@ -31,11 +31,12 @@ import {
   Grid,
   MenuItem,
   Skeleton,
-  styled,
   TextField,
   Tooltip,
   Typography,
+  styled,
 } from '@mui/material'
+import structuredClone from 'core-js-pure/actual/structured-clone'
 import type { ChangeEvent, FocusEvent } from 'react'
 import {
   Suspense,
