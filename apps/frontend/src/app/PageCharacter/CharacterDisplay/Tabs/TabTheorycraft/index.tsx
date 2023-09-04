@@ -39,6 +39,7 @@ import {
   ToggleButton,
   Typography,
 } from '@mui/material'
+import structuredClone from 'core-js-pure/actual/structured-clone'
 import React, {
   Suspense,
   useCallback,
@@ -81,8 +82,8 @@ import { getArtSheet } from '../../../../Data/Artifacts'
 import Artifact from '../../../../Data/Artifacts/Artifact'
 import { artifactDefIcon } from '../../../../Data/Artifacts/ArtifactSheet'
 import { getWeaponSheet } from '../../../../Data/Weapons'
-import { DatabaseContext } from '../../../../Database/Database'
 import { initCharTC } from '../../../../Database/DataManagers/CharacterTCData'
+import { DatabaseContext } from '../../../../Database/Database'
 import { uiInput as input } from '../../../../Formula'
 import { computeUIData, dataObjForWeapon } from '../../../../Formula/api'
 import { constant, percent } from '../../../../Formula/utils'
