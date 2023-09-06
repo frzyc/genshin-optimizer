@@ -5,6 +5,5 @@
     "maxStele": "Höchstmenge an Hügelkämmen",
     "nearShield": "Gegner in der Nähe von <strong>Jadeblock-Schild</strong>"
   },
-  "p1cond": "Wenn der <strong>Jadeblock-Schild</strong> Schaden nimmt",
-  "c6heal": "Maximum Health Regen"
+  "p1cond": "Wenn der <strong>Jadeblock-Schild</strong> Schaden nimmt"
 }

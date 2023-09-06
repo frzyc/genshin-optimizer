@@ -7,8 +7,8 @@
   "c1Key": "Personagens <pyro>Pyro</pyro>, <electro>Electro</electro> e <hydro>Hydro</hydro> adicionais para o bônus do <strong>Santuário de Maya</strong>",
   "c2": {
     "bloomCondName": "Inimigo marcado pela <strong>Semente Skandha</strong>",
-    "qasCondName": "Inimigo afetado por Aceleração, Intensificação ou Propagação após ser marcado pela <strong>Semente Skandha</strong"
+    "qasCondName": "Após desencadear <spread>Aceleração</spread>, <aggravate>Intensificação</aggravate> ou <spread>Propagação</spred> em inimigos marcados pela <strong>Semente Skandha</strong>"
   },
-  "c4CondName": "Inimigos próximos afetados pelas Sementes Skandha de <strong>Esquemas Universais</strong>",
+  "c4CondName": "Número de inimigos afetados por <strong>Sementes de Skandha</strong>",
   "c6KarmicDmg": "Dano da Eliminação do Carma"
 }

@@ -12,7 +12,7 @@
         "tooltip": "Programas de terceiros que escaneiam automaticamente os artefatos no seu jogo"
       },
       "kqm": {
-        "title": "Keqing Mains",
+        "title": "KQM",
         "tooltip": "Comunidade de tutoriais e Theorycraft"
       },
       "devDiscord": {
@@ -25,7 +25,7 @@
       },
       "patchNotes": {
         "title": "Histórico de Versões do Genshin Optimizer",
-        "tooltip": "Todas as Notas de Atualização e o Histórico de Versões do GO"
+        "tooltip": "Todas as Notas de Atualização do GO"
       }
     }
   },

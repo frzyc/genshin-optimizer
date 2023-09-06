@@ -2,5 +2,7 @@
   "skillDuration": "Продолжительность за лапку",
   "holdShield": "Поглощение урона заряженным щитом.",
   "a1shielded": "Персонаж под действием щита <strong>Морозные коготочки</strong>",
-  "holdCryoShield": "Поглощение Крио-урона заряженным щитом"
+  "holdCryoShield": "Поглощение Крио-урона заряженным щитом",
+  "pressShield": "Press Shield DMG Absorption",
+  "pressCryoShield": "Press Shield Cryo DMG Absorption"
 }

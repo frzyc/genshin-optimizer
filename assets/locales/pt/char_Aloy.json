@@ -1,12 +1,9 @@
 {
   "skill": {
     "coil": "Bobina",
-    "coil1": "1 Acúmulo de Bobinas",
-    "coil2": "2 Acúmulos de Bobinas",
-    "coil3": "3 Acúmulos de Bobinas",
     "rush": "Gelo Rápido",
-    "rushState": "Sob o estado de Gelo Rápido (1 acúmulo/seg.)"
+    "rushState": "Tempo passado no estado Gelo Rápido"
   },
-  "a1CondName": "Quando a Aloy recebe o efeito de Bobina da <strong>Natureza Gélida</strong>",
+  "a1CondName": "Após receber o efeito de Bobina",
   "normCryoInfus": "<cryo>Infusão Cryo nos Ataques Normais</cryo>"
 }

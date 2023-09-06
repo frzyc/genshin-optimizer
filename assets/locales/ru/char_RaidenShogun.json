@@ -7,7 +7,8 @@
     "resolves": "Уровень решимости",
     "resolveInitial_": "<electro>Бонус увеличения урона Мусо но хитотати</electro",
     "resolveInfused_": "<electro>Бонус увеличения урона Мусо иссин</electro>",
-    "burstDmg": "Урон Мусо но Хитотачи"
+    "burstDmg": "Урон Мусо но Хитотачи",
+    "active": "In the <strong>Musou Isshin</strong> state"
   },
   "a4": {
     "enerRest": "Восстановление энергии от <strong>Мусо иссин</strong>",

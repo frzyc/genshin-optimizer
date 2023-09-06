@@ -4,12 +4,6 @@
       "1": "Absorción de Daño Pyro por Escudo Nivel 1",
       "2": "Absorción de Daño Pyro por Escudo Nivel 2",
       "3": "Absorción de Daño Pyro por Escudo Nivel 3"
-    },
-    "shieldLevel": "Nivel de Escudo",
-    "shieldLevels": {
-      "1": "1: Improvisación",
-      "2": "2: Entrada",
-      "3": "3: Fiesta"
     }
   },
   "p1": {

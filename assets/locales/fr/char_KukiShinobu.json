@@ -1,7 +1,4 @@
 {
-  "skill": {
-    "cost": "% de PV actuel"
-  },
   "a4": {
     "heal": "Augmentation du soin de compétence élémentaire"
   },

@@ -98,5 +98,7 @@
   "cantDeleteLock": "보호된 성유물은 삭제할 수 없습니다",
   "equippedArt": "착용 중인 성유물",
   "artInInv": "보관함의 성유물",
-  "locationsTooltip": "특정 캐릭터로 필터링 하기 위해선 \"착용 중인 성유물\"을 비활성화 하세요"
+  "locationsTooltip": "특정 캐릭터로 필터링 하기 위해선 \"착용 중인 성유물\"을 비활성화 하세요",
+  "showDup": "중복 표시",
+  "noDupAlert": "보관함에 중복된 성유물이 없습니다."
 }

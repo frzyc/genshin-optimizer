@@ -21,7 +21,9 @@
     "dendro": "<dendro>풀 원소 피해</dendro>가 대상에게 명중",
     "normalEle": "일반 공격으로 적에게 원소 피해를 가함",
     "ele": "적에게 원소 피해를 가함",
-    "weakSpot": "조준 사격이 약점에 명중"
+    "weakSpot": "조준 사격이 약점에 명중",
+    "normalChargedSkillBurst": "일반 공격/강공격 혹은 원소 전투 스킬/폭발 스킬 명중 후",
+    "self": "대상에게 피격 후"
   },
   "eleAbsor": "원소 전환",
   "absorDot": "원소 전환 도트 데미지",
@@ -29,11 +31,8 @@
     "skill": "원소 전투 스킬 사용 후",
     "burst": "원소 폭발 사용 후",
     "skillOrBurst": "원소전투스킬 혹은 원소폭발 사용 이후",
-    "skillPress": "$t(afterUse.skill) ($t(press))",
-    "skillHold": "$t(afterUse.skill) ($t(hold))"
-  },
-  "increase": {
-    "atk": "공격력 증가"
+    "skillPress": "원소 전투 스킬 사용 후 (짧은 터치)",
+    "skillHold": "원소 전투 스킬 사용 후 (홀드)"
   },
   "hits_one": "{{count}}회 명중",
   "hits_other": "{{count}}회 명중",
@@ -49,16 +48,13 @@
   "stack_other": "{{count}} 스택",
   "seconds_one": "{{count}}초",
   "seconds_other": "{{count}}초",
-  "uses_one": "{{count}} Use",
-  "uses_other": "{{count}} Uses",
+  "uses_one": "{{count}}회 사용",
+  "uses_other": "{{count}}회 사용",
   "afterDefeatEnemy": "적 처치 후",
   "afterSprint": "대시 후",
   "skillCDRed": "원소 전투 스킬 재사용 대시시간 감소",
   "burstCDRed": "원소 폭발 재사용 대기시간 감소",
-  "pressCD": "짧은 터치 재사용 대기시간",
-  "holdCD": "홀드 재사용 대기시간",
   "triggerCD": "발동 최소 간격",
-  "eleSwirled": "확산된 원소",
   "incInterRes": "경직 저항력 상승",
   "charges": "사용 횟수",
   "cooldown": "재사용 대기시간",
@@ -75,7 +71,6 @@
     "dendro": "풀 원소 부여",
     "geo": "바위 원소 부여"
   },
-  "energyRegen": "원소 에너지 재생",
   "effectDuration": {
     "pyro": "불 원소 부착 시간",
     "cryo": "얼음 원소 부착 시간",
@@ -99,11 +94,14 @@
     "electro": "번개원소 피해 흡수량",
     "dendro": "풀원소 피해 흡수량",
     "geo": "바위원소 피해 흡수량",
-    "none": "피해 흡수량"
+    "none": "피해 흡수량",
+    "increase": "보호막 흡수량 증가",
+    "max": {
+      "none": "최대 피해 흡수량",
+      "pyro": "최대 불원소 피해 흡수량",
+      "dendro": "보호막 풀원소 피해 흡수량 최대치"
+    }
   },
-  "opponentsDamaged": "대상이 피해를 받음",
-  "press": "짧은 터치",
-  "hold": "홀드",
   "addlCharge": "사용 가능 횟수 증가",
   "conditional": "조건부",
   "maxStacks": "최대 스택",
@@ -113,7 +111,7 @@
   "activationStam": "발동 시 소모 스태미나",
   "stamDrain": "지속 스태미나 소모",
   "talents": {
-    "auto": "Auto",
+    "auto": "자동",
     "skill": "전투스킬",
     "burst": "폭발",
     "passive": "패시브",
@@ -141,9 +139,9 @@
     "electro": "<electro>번개 관련</electro> 원소 반응 발동"
   },
   "bonusScaling": {
-    "skill_": "원소 전투 스킬 피해 증가량"
+    "skill_": "원소 전투 스킬 피해 증가량",
+    "atkInc": "공격력 증가량"
   },
-  "energy": "Energy",
   "teamBuff": "파티 버프",
   "opponents_one": "{{count}} 마리",
   "opponents_other": "{{count}} 마리",
@@ -165,5 +163,9 @@
     "cryo": "적이 <cryo>얼음</cryo> 원소의 영향을 받음"
   },
   "getElementalOrbParticle": "원소 구슬 혹은 원소 입자 획득 시",
-  "notProtectedByShield": "보호막의 보호를 받지 않을 시"
+  "notProtectedByShield": "보호막의 보호를 받지 않을 시",
+  "percentCurrentHP": "% 현재 HP",
+  "enerRegenPerHit": "명중당 에너지 회복",
+  "interval": "간격",
+  "charOffField": "캐릭터가 대기상태"
 }

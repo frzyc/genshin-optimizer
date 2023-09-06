@@ -1,6 +1,5 @@
 {
   "omen": "적이 포영 상태가 됨",
-  "bubbleDuration": "포영 지속 시간",
   "hitOp": {
     "affectedByOmen": "포영 상태의 적에게 피해를 줌"
   },

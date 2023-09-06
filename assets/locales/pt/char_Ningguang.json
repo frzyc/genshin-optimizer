@@ -1,8 +1,8 @@
 {
-  "aoeGems": "Gemas dão Dano Geo em AdE",
-  "starJadeStaminaCost": "50; Usando uma Jade Estelar: 0",
-  "skillReset": "O cooldown é resetado quando ela quebra (a cada 6s)",
+  "aoeGems": "Ataques Normais dão Dano em Área",
+  "starJadeStaminaCost": "Ataques Carregados não gastam Stamina se a Ningguang possui uma Jade Estelar",
+  "skillReset": "Tempo de Recarga é redefinido ao partir, a cada 6s",
   "a4toggle": "Após atravessar a Tela de Jade",
   "c4toggle": "Dentro de 10m da Tela de Jade",
-  "c6bonus": "Jades Estelares ganhas"
+  "c6bonus": "Jades Estelares obtidas"
 }

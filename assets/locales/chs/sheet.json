@@ -28,12 +28,7 @@
   "afterUse": {
     "skill": "使用元素战技后",
     "burst": "使用元素爆发后",
-    "skillOrBurst": "释放元素战技或元素爆发后",
-    "skillPress": "$t(afterUse.skill) ($t(press))",
-    "skillHold": "$t(afterUse.skill) ($t(hold))"
-  },
-  "increase": {
-    "atk": "攻击加成"
+    "skillOrBurst": "释放元素战技或元素爆发后"
   },
   "hits_one": "命中{{count}}次",
   "hits_other": "命中{{count}}次",
@@ -55,10 +50,7 @@
   "afterSprint": "冲刺后",
   "skillCDRed": "元素战技冷却时间减少",
   "burstCDRed": "元素爆发冷却时间减少",
-  "pressCD": "点按冷却时间",
-  "holdCD": "长按冷却时间",
   "triggerCD": "效果触发的冷却时间",
-  "eleSwirled": "被扩散的元素",
   "incInterRes": "提升抗打断能力",
   "charges": "充能",
   "cooldown": "冷却时间",
@@ -75,7 +67,6 @@
     "dendro": "草元素附魔",
     "geo": "岩元素附魔"
   },
-  "energyRegen": "元素能量恢复",
   "effectDuration": {
     "pyro": "火元素附着的持续时间",
     "cryo": "冰元素附着的持续时间",
@@ -99,11 +90,12 @@
     "electro": "雷元素伤害吸收量",
     "dendro": "草元素伤害吸收量",
     "geo": "岩元素伤害吸收量",
-    "none": "伤害吸收"
+    "none": "伤害吸收",
+    "max": {
+      "none": "护盾吸收量上限",
+      "pyro": "护盾对火元素伤害的吸收量上限"
+    }
   },
-  "opponentsDamaged": "攻击造成伤害次数",
-  "press": "点按",
-  "hold": "长按",
   "addlCharge": "额外使用次数",
   "conditional": "有条件的",
   "maxStacks": "最大层数",
@@ -165,5 +157,6 @@
     "cryo": "敌人处于<cryo>冰元素</cryo>影响下"
   },
   "getElementalOrbParticle": "获得元素晶球或元素微粒",
-  "notProtectedByShield": "不处于护盾庇护下"
+  "notProtectedByShield": "不处于护盾庇护下",
+  "percentCurrentHP": "%当前生命值"
 }

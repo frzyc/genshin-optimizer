@@ -1,9 +1,0 @@
-{
-  "SprawlingGreenery": {
-    "cond2ele": "After triggering Burn, Catalyze, or Bloom reactions",
-    "cond3ele": "After triggering Aggravate, Spread, Hyperbloom, or Burgeon reactions"
-  },
-  "EnduringRock": {
-    "hitCond": "After dealing DMG to enemies while protected by a shield"
-  }
-}

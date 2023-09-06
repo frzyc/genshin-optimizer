@@ -1,3 +1,5 @@
 {
-  "inactiveKey": "Bônus Fora de Campo"
+  "effectName": "Consumação",
+  "active": "Mult. Ativo",
+  "inactive": "Mult. Fora de Campo"
 }

@@ -98,5 +98,7 @@
   "cantDeleteLock": "Não é possível excluir o artefato pois ele está Trancado",
   "equippedArt": "Artefatos Equipados",
   "artInInv": "Artefatos no Inventário",
-  "locationsTooltip": "Desative \"Todos os Artefatos Equipados\" para selecionar apenas   os de alguns personagens"
+  "locationsTooltip": "Desative \"Todos os Artefatos Equipados\" para selecionar apenas   os de alguns personagens",
+  "showDup": "Mostrar Duplicatas.",
+  "noDupAlert": "Não há artefatos duplicados no seu inventário."
 }

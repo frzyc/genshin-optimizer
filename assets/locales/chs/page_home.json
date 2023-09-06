@@ -41,9 +41,9 @@
       "leadDev": "开发负责人",
       "dev": "开发者",
       "mod": "管理员",
-      "admin": "Admin",
-      "translator": "Translations Manager",
-      "TC": "TC Correspondant"
+      "admin": "管理员",
+      "translator": "翻译负责人",
+      "TC": "理论分析专员"
     }
   }
 }

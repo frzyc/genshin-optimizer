@@ -1,6 +1,5 @@
 {
   "omen": "星异",
-  "bubbleDuration": "泡影持续时间",
   "hitOp": {
     "affectedByOmen": "队伍中自己的角色攻击命中处于星异状态下的敌人"
   },

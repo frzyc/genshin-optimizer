@@ -1,9 +1,6 @@
 {
   "skill": {
     "coil": "Coil",
-    "coil1": "Lapisan Coil 1",
-    "coil2": "Lapisan Coil 2",
-    "coil3": "Lapisan Coil 3",
     "rush": "Rushing Ice",
     "rushState": "Selama kondisi Rushing Ice (1 lapis / dtk)"
   },

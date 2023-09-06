@@ -1,7 +1,7 @@
 {
   "skill": {
     "unableToAuto": "Incapaz de usar Ataques Carregados ou Imersivos",
-    "namisenStacks": "Acúmulos de Ondas Brilhantes",
+    "namisenStacks": "Ondas Brilhantes",
     "shun_dmgInc": "<hydro>Aumento de Dano da Espada Aquática</hydro>"
   },
   "passive1": {
@@ -12,7 +12,7 @@
     "shun_dmg_": "<hydro>Bônus de Dano da Espada Áquatica</hydro>"
   },
   "c2": {
-    "addlStacks": "Aumento do número máx. de acúmulos de Ondas Brilhantes"
+    "addlStacks": "Aum. do Máx. de Acúmulos de Ondas Brilhantes"
   },
   "c6": {
     "dmg": "Dano da Origem Ilimitada"

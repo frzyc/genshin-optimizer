@@ -1,6 +1,5 @@
 {
   "omen": "Omen",
-  "bubbleDuration": "Длительность Теневого Пузыря",
   "hitOp": {
     "affectedByOmen": "Любой участник команды ударил врага под Omen"
   },

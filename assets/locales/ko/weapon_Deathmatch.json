@@ -1,7 +1,3 @@
 {
-  "condName": "주변의 적 수",
-  "opponents": {
-    "oneOrNone": "2기 미만",
-    "moreThanOne": "2기 이상"
-  }
+  "condName": "주변의 적 수"
 }

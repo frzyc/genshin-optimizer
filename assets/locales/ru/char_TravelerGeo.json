@@ -1,11 +1,8 @@
 {
   "passive2": {
-    "key": "Frenzied Rockslide DMG"
+    "key": "Collapse DMG"
   },
   "c2": {
     "key": "Rockcore Meltdown DMG"
-  },
-  "c4": {
-    "energyRestore": "Energy restored per shockwave hit"
   }
 }

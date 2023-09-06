@@ -1,6 +1,5 @@
 {
   "omen": "Presagio",
-  "bubbleDuration": "Duración de Burbuja ilusoria",
   "hitOp": {
     "affectedByOmen": "Cualquier miembro del equipo golpea a un enemigo afectado por un Presagio"
   },

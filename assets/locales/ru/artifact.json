@@ -98,5 +98,7 @@
   "cantDeleteLock": "Чтобы удалить артефакт, разблокируйте его",
   "equippedArt": "Надетые артефакты",
   "artInInv": "Артефакты в инвентаре",
-  "locationsTooltip": "Disable \"All Equipped Artifacts\" to filter by specific characters"
+  "locationsTooltip": "Disable \"All Equipped Artifacts\" to filter by specific characters",
+  "showDup": "Show Duplicates",
+  "noDupAlert": "There are no duplicate artifacts in your inventory."
 }

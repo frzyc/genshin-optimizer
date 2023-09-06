@@ -1,7 +1,7 @@
 {
   "p1": "Урон Клинка Ветра",
   "c6": "Enemy's been hit by <strong>Gust Surge</strong>",
-  "c4": "Reduces DMG taken while casting",
+  "c4": "DMG Reduction while casting",
   "initialEleDmg": "Initial Cutting Absorption DMG",
   "maxEleDmg": "Max Cutting Absorption DMG",
   "stormEleDmg": "Initial Storm Absorption DMG",

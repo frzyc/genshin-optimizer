@@ -81,12 +81,9 @@
   "currentlyEquippedBuild": "현재 사용중",
   "addBuildToList": "리스트에 빌드 추가",
   "graphBuildLabel": "그래프 #<1>{{count}}</1>",
-  "workerLoadFailed": "처리기가 로딩에 실패했습니다. 다시 시도하시려면 여기를 누르세요",
   "excludeArt": {
     "title_exclude": "재외된 성유물",
     "title_tooltip": "이 캐릭터의 제외 리스트에 성유물을 추가합니다. 이 리스트 내의 성유물은 조합 생성 시 고려되지 않습니다.",
-    "usingNum_one": "<1>{{count}}</1>개의 제외된 성유물 사용",
-    "usingNum_other": "<1>{{count}}</1>개의 제외된 성유물 사용",
     "excNum_one": "<0>{{count}}</0>개의 성유물 제외됨",
     "excNum_other": "<0>{{count}}</0>개의 성유물 제외됨",
     "addExc": "이 캐릭터의 제외 리스트에 성유물 추가",
@@ -95,8 +92,8 @@
     "excludeArtifactTip": "성유물을 제외시키면 이 캐릭터의 조합 생성에 포함되지 않습니다.",
     "excluded": "이 성유물은 제외되었습니다.",
     "included": "이 성유물은 제외되지 않았습니다.",
-    "button_txt": "Exclude Artifacts",
-    "usingNum": "<1>{{totalStr}}</1>개의 제외된 성유물 사용중"
+    "usingNum": "<1>{{totalStr}}</1>개의 제외된 성유물 사용중",
+    "button_txt": "성유물 제외"
   },
   "excludeChar": {
     "title": "착용 중인 성유물 설정",
@@ -118,8 +115,5 @@
     "usingState": "선택된 방식"
   },
   "buildCompleted": "생성 완료",
-  "notifyTooltip": "생성이 완료되면 소리로 알려줍니다. 또한 탭을 전환한 경우 경고창도 표시합니다.",
-  "bonusStats": {
-    "title": "Bonus Stats"
-  }
+  "notifyTooltip": "생성이 완료되면 소리로 알려줍니다. 또한 탭을 전환한 경우 경고창도 표시합니다."
 }

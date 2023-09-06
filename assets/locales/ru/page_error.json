@@ -1,13 +1,13 @@
 {
-  "title": "🛑Unexpected Error Occurred🛑",
+  "title": "🛑 Unexpected Error Occurred 🛑",
   "p1.1": "GO has experienced an unexpected error. This is probably our fault, so please help us help you!",
   "p1.2": "Here are some things you can try to resolve the issue:",
   "fixes": {
     "1": "Refresh the page",
-    "2": "Disable any extensions and refresh again",
+    "2": "Disable any browser extensions and refresh again",
     "3": "Download your DB(s) from below and keep it somewhere safe. Click the 'Delete ALL GO Data' button and reupload your DB(s)"
   },
-  "p2": "If you did the above and still managed to get back here, please submit a report to our GitHub Issues page, or to our Bug Reports channel on our Discord",
+  "p2": "If you did the above and still managed to get back here, please submit a report to our GitHub Issues page, or to the Bug Reports channel in our Discord",
   "report": {
     "1": "Download your DB(s) from below",
     "2": "Copy the report text from the box below",

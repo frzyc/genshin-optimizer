@@ -2,5 +2,11 @@
   "electroSigil": "Эмблема Электро",
   "electroSigilAbsorbed": "Энергии восстановлено если Эмблема Электро потрачена",
   "opHitWithClawAndThunder": "Попадание быстрым нажатием <strong>Гром и Когти</strong>",
-  "electroSigilPerProc": "Эмблема Электро за попадание"
+  "electroSigilPerProc": "Эмблема Электро за попадание",
+  "soulCompanion": {
+    "1": "Soul Companion 1-Hit DMG",
+    "2": "Soul Companion 2-Hit DMG",
+    "3": "Soul Companion 3-Hit DMG",
+    "4": "Soul Companion 4-Hit DMG"
+  }
 }

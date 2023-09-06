@@ -1,7 +1,4 @@
 {
-  "skill": {
-    "cost": "% Current HP"
-  },
   "a4": {
     "heal": "Ele. Skill Healing Increase"
   },

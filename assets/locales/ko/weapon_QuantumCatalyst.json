@@ -1,12 +1,12 @@
 {
-  "name": "Quantum Cat-alyst",
-  "description": "This advanced Catalyst weapon is infused with the mysterious power of Quantum Mechanics and bears the likeness of a curious cat, with glowing green eyes, a tail that flickers with Electro energy and the occasional spark arcing between the ears.",
-  "passiveName": "Mewon Meowmentum",
+  "name": "양자 고양이",
+  "description": "이 법구는 양자역학의 신비한 힘을 부여 받았고 빛나는 녹색 눈과 전기 에너지로 빛나는 꼬리, 그리고 귀 사이에서 종종 스파크가 일어나는 신비한 고양이의 모습을 하고 있습니다.",
+  "passiveName": "미유온 미요멘텀",
   "passiveDescription": {
-    "0": "Increases Energy Recharge by <cryo>18%</cryo>. Increases Normal and Charged Attack DMG by <cryo>6%</cryo> of Elemental Mastery. Upon triggering an <electro>Electro-related Elemental Reaction</electro>, gain <cryo>10</cryo> Elemental Mastery for 12 seconds. This effect can stack up to 5 times and stacks have their duration counted independently.",
-    "1": "Increases Energy Recharge by <cryo>22.5%</cryo>. Increases Normal and Charged Attack DMG by <cryo>7.5%</cryo> of Elemental Mastery. Upon triggering an <electro>Electro-related Elemental Reaction</electro>, gain <cryo>12</cryo> Elemental Mastery for 12 seconds. This effect can stack up to 5 times and stacks have their duration counted independently.",
-    "2": "Increases Energy Recharge by <cryo>27%</cryo>. Increases Normal and Charged Attack DMG by <cryo>9%</cryo> of Elemental Mastery. Upon triggering an <electro>Electro-related Elemental Reaction</electro>, gain <cryo>14</cryo> Elemental Mastery for 12 seconds. This effect can stack up to 5 times and stacks have their duration counted independently.",
-    "3": "Increases Energy Recharge by <cryo>31.5%</cryo>. Increases Normal and Charged Attack DMG by <cryo>10.5%</cryo> of Elemental Mastery. Upon triggering an <electro>Electro-related Elemental Reaction</electro>, gain <cryo>16</cryo> Elemental Mastery for 12 seconds. This effect can stack up to 5 times and stacks have their duration counted independently.",
-    "4": "Increases Energy Recharge by <cryo>36%</cryo>. Increases Normal and Charged Attack DMG by <cryo>12%</cryo> of Elemental Mastery. Upon triggering an <electro>Electro-related Elemental Reaction</electro>, gain <cryo>18</cryo> Elemental Mastery for 12 seconds. This effect can stack up to 5 times and stacks have their duration counted independently."
+    "0": "원소 충전 효율 <cryo>18%</cryo>증가. 일반 공격과 강공격 피해량이 원소 마스터리의 <cryo>6%</cryo> 만큼 증가. <electro>번개 원소 관련 반응</electro>가 일어날 때 마다, 12초동안 원소 마스터리 <cryo>10</cryo> 증가. 이 효과는 5번 까지 중첩되며 지속 시간은 각각 계산된다.",
+    "1": "원소 충전 효율 <cryo>22.5%</cryo>증가. 일반 공격과 강공격 피해량이 원소 마스터리의 <cryo>7.5%</cryo> 만큼 증가. <electro>번개 원소 관련 반응</electro>가 일어날 때 마다, 12초동안 원소 마스터리 <cryo>12</cryo> 증가. 이 효과는 5번 까지 중첩되며 지속 시간은 각각 계산된다.",
+    "2": "원소 충전 효율 <cryo>27%</cryo>증가. 일반 공격과 강공격 피해량이 원소 마스터리의 <cryo>9%</cryo> 만큼 증가. <electro>번개 원소 관련 반응</electro>가 일어날 때 마다, 12초동안 원소 마스터리 <cryo>14</cryo> 증가. 이 효과는 5번 까지 중첩되며 지속 시간은 각각 계산된다.",
+    "3": "원소 충전 효율 <cryo>31.5%</cryo>증가. 일반 공격과 강공격 피해량이 원소 마스터리의 <cryo>10.5%</cryo> 만큼 증가. <electro>번개 원소 관련 반응</electro>가 일어날 때 마다, 12초동안 원소 마스터리 <cryo>16</cryo> 증가. 이 효과는 5번 까지 중첩되며 지속 시간은 각각 계산된다.",
+    "4": "원소 충전 효율 <cryo>36%</cryo>증가. 일반 공격과 강공격 피해량이 원소 마스터리의 <cryo>12%</cryo> 만큼 증가. <electro>번개 원소 관련 반응</electro>가 일어날 때 마다, 12초동안 원소 마스터리 <cryo>18</cryo> 증가. 이 효과는 5번 까지 중첩되며 지속 시간은 각각 계산된다."
   }
 }

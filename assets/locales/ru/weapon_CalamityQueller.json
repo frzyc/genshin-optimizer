@@ -1,3 +1,5 @@
 {
-  "inactiveKey": "Бонус Вне Поля"
+  "effectName": "Consummation",
+  "active": "Active Multiplier",
+  "inactive": "Off-field Multiplier"
 }

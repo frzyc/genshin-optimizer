@@ -1,5 +1,3 @@
 {
-  "c2burstDuration": "Aumenta a duração em 2,5s a cada inimigo derrotado durante ela, em até 15s",
-  "p1heal": "Cura",
-  "c1cond": "Inimigo afetado por Cryo"
+  "c2burstDuration": "15s + 2,5s por inimigo derrotado, até +15s"
 }

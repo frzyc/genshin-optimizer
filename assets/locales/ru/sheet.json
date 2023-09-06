@@ -21,7 +21,9 @@
     "dendro": "<dendro>Дендро-удар</dendro> попал по врагу",
     "normalEle": "After dealing Elemental DMG through a Normal Attack",
     "ele": "After dealing Elemental DMG",
-    "weakSpot": "After hitting an enemy Weak Spot with a Charged Shot"
+    "weakSpot": "After hitting an enemy Weak Spot with a Charged Shot",
+    "normalChargedSkillBurst": "After hitting an opponent with a Normal/Charged Att. or Ele. Skill/Burst",
+    "self": "After being hit by an opponent"
   },
   "eleAbsor": "Поглощение стихий",
   "absorDot": "Доп. элементальный урон",
@@ -29,11 +31,8 @@
     "skill": "После использования Элементального навыка",
     "burst": "После использования Взрыва стихии",
     "skillOrBurst": "После применения Элементального навыка или взрыва",
-    "skillPress": "$t(afterUse.skill) ($t(press))",
-    "skillHold": "$t(afterUse.skill) ($t(hold))"
-  },
-  "increase": {
-    "atk": "Увеличение атаки"
+    "skillPress": "After using Elemental Skill (Press)",
+    "skillHold": "After using Elemental Skill (Hold)"
   },
   "hits_one": "{{count}} Удар",
   "hits_other": "{{count}} Удары",
@@ -55,14 +54,11 @@
   "afterSprint": "После рывка",
   "skillCDRed": "Уменьшение времени отката Элe. Навыка",
   "burstCDRed": "Уменьшение времени отката Элe. Взрыва",
-  "pressCD": "Откат быстрого нажатия",
-  "holdCD": "Откат долгого нажатия",
   "triggerCD": "Trigger CD",
-  "eleSwirled": "Поглощенный Элемент",
   "incInterRes": "Повышается сопротивление к прерыванию",
   "charges": "Charges",
   "cooldown": "Откат",
-  "addlCharges": "Additional charges",
+  "addlCharges": "Additional Skill Charges",
   "activeCharField": "Активный персонаж на поле",
   "opponentsField": "Противники на поле",
   "takeDmg": "После получения урона",
@@ -75,7 +71,6 @@
     "dendro": "Дендро инфузия",
     "geo": "Гео инфузия"
   },
-  "energyRegen": "Восстановление энергии",
   "effectDuration": {
     "pyro": "Длительность Пиро эффекта",
     "cryo": "Длительность Крио эффекта",
@@ -99,12 +94,15 @@
     "electro": "Поглощение Электро-урона",
     "dendro": "Поглощение Дендро-урона",
     "geo": "Поглощение Гео-урона",
-    "none": "Поглощение урона"
+    "none": "Поглощение урона",
+    "increase": "Shield Absorption Increase",
+    "max": {
+      "none": "Максимальное поглощение урона",
+      "pyro": "Максимальное поглощение Пиро-урона",
+      "dendro": "Max Shield Dendro DMG Absorption"
+    }
   },
-  "opponentsDamaged": "Противников повреждено",
-  "press": "Быстрое нажатие",
-  "hold": "Долгое нажатие",
-  "addlCharge": "Additional charge",
+  "addlCharge": "Additional Skill Charge",
   "conditional": "Conditional",
   "maxStacks": "Максимум стаков",
   "1set": "1-Сет",
@@ -138,10 +136,14 @@
   "aoeInc": "Увеличивает АоЕ",
   "elementalReaction": {
     "hydro": "After triggering a <hydro>Hydro-related</hydro> Elemental Reaction",
-    "electro": "After triggering an <electro>Electro-related</electro> Elemental Reaction"
+    "electro": "After triggering an <electro>Electro-related</electro> Elemental Reaction",
+    "shatter": "After triggering a <shattered>Shatter</shattered> Elemental Reaction",
+    "cryo": "After triggering a <cryo>Cryo-related</cryo> Elemental Reaction"
   },
   "bonusScaling": {
-    "skill_": "Увел. Бонуса Элем. Навыка"
+    "skill_": "Увел. Бонуса Элем. Навыка",
+    "atkInc": "ATK Inc. Bonus Scaling",
+    "value": "{{value}}% "
   },
   "energy": "Энергия",
   "teamBuff": "Командный бафф",
@@ -162,8 +164,21 @@
     "hydroOrPyro": "Enemy is affected by <hydro>Hydro</hydro> or <pyro>Pyro</pyro>",
     "hydroOrElectro": "Enemy is affected by <hydro>Hydro</hydro> or <electro>Electro</electro>",
     "electro": "Enemy is affected by <electro>Electro</electro>",
-    "cryo": "Enemy is affected by <cryo>Cryo</cryo>"
+    "cryo": "Enemy is affected by <cryo>Cryo</cryo>",
+    "pyro": "Enemy is affected by <pyro>Pyro</pyro>"
   },
   "getElementalOrbParticle": "После получения элементальной сферы/частицы",
-  "notProtectedByShield": "While not protected by a shield"
+  "notProtectedByShield": "While not protected by a shield",
+  "percentCurrentHP": "% текущего HP",
+  "enerRegenPerHit": "Energy Regeneration per Hit",
+  "interval": "Interval",
+  "immuneToElectroCharged": "Immunity to <electrocharged>Electro-Charged</electrocharged>",
+  "charOffField": "Character is off-field",
+  "attackAoeInc": "Larger Attack AoE",
+  "members_one": "{{count}} Member",
+  "members_other": "{{count}} Members",
+  "charOnField": "Character is on-field",
+  "timeOnField": "Time spent on-field",
+  "hpChange": "After HP changes",
+  "afterHeal": "After being healed"
 }

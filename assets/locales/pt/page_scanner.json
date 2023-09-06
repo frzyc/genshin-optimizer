@@ -1,5 +1,5 @@
 {
-  "intro": "<0>Scanners</0><1>Scanners são ferramentas para o Genshin que escaneiam automaticamente as informações do seu jogo a partir de capturas de tela ou lendo diretamente do jogo.</1><2>Abaixo estão diversos scanners que foram testados pelo GO.</2><3>Para fazer o upload do arquivo exportado, vá às <1>Configurações</1> e faça o upload do seu arquivo na seção de <strong>Upload da Base de Dados</strong>.</3>",
+  "intro": "<0>Scanners</0><1>Scanners são ferramentas para o Genshin que escaneiam automaticamente as informações do seu jogo a partir de capturas de tela ou lendo diretamente do jogo.</1><2>Abaixo estão diversos scanners que foram testados pelo GO.</2><3>Para fazer o upload do arquivo exportado, vá às <1>Configurações</1> e vá à seção de <strong>Upload de Base de Dados</strong>.</3>",
   "ik": {
     "title": "Inventory Kamera",
     "p1": "Esse aplicativo leve escaneará todos os seus personagens, armas e artefatos e os adicionará aos seus artefatos. Siga as instruções no app para usá-lo."
@@ -19,7 +19,7 @@
     "pc": "PC",
     "mobile": "Mobile",
     "ps": "PlayStation",
-    "gameMani": "Manipulação do Jogo",
+    "gameMani": "Controle Automático",
     "materials": "Materiais",
     "characters": "Personagens",
     "weapons": "Armas",

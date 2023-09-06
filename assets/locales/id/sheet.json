@@ -28,12 +28,7 @@
   "afterUse": {
     "skill": "Setelah menggunakan Elemental Skill",
     "burst": "Setelah menggunakan Elemental Burst",
-    "skillOrBurst": "Setelah menggunakan Ele. Skill or Ele. Burst",
-    "skillPress": "$t(afterUse.skill) ($t(press))",
-    "skillHold": "$t(afterUse.skill) ($t(hold))"
-  },
-  "increase": {
-    "atk": "Peningkatan ATK"
+    "skillOrBurst": "Setelah menggunakan Ele. Skill or Ele. Burst"
   },
   "hits_one": "{{count}} Hit",
   "hits_other": "{{count}} Hits",
@@ -55,10 +50,7 @@
   "afterSprint": "Setelah Berlari",
   "skillCDRed": "Pengurangan CD Ele. Skill",
   "burstCDRed": "Pengurangan CD Ele. Burst",
-  "pressCD": "CD Tekan",
-  "holdCD": "CD Tahan",
   "triggerCD": "CD Pemicu",
-  "eleSwirled": "Elemen yang ter-Swirl",
   "incInterRes": "Resistensi terhadap interupsi ditingkatkan",
   "charges": "Biaya",
   "cooldown": "Cooldown",
@@ -75,7 +67,6 @@
     "dendro": "Dendro Infusion",
     "geo": "Geo Infusion"
   },
-  "energyRegen": "Regenerasi Energi",
   "effectDuration": {
     "pyro": "Durasi efek pyro",
     "cryo": "Durasi efek cryo",
@@ -99,11 +90,12 @@
     "electro": "DMG Absorpsi Electro",
     "dendro": "DMG Absorpsi Dendro",
     "geo": "DMG Absorpsi Geo",
-    "none": "DMG Absorpsi"
+    "none": "DMG Absorpsi",
+    "max": {
+      "none": "DMG Absorpsi Maksimum",
+      "pyro": "Absorpsi Pyro DMG Maksimum"
+    }
   },
-  "opponentsDamaged": "Musuh rusak",
-  "press": "Tekan",
-  "hold": "Tahan",
   "addlCharge": "Biaya tambahan",
   "conditional": "Kondisi",
   "maxStacks": "Lapisan Maksimum",
@@ -165,5 +157,7 @@
     "cryo": "Musuh terpengatuh oleh <cryo>Cryo</cryo>"
   },
   "getElementalOrbParticle": "Setelah mengambil Elemental Orb atau Partikel",
-  "notProtectedByShield": "Ketika tidak dilindungi oleh shield"
+  "notProtectedByShield": "Ketika tidak dilindungi oleh shield",
+  "percentCurrentHP": "% HP Saat Ini",
+  "enerRegenPerHit": "Energi dipulihkan per serangan"
 }

@@ -10,7 +10,7 @@
     "scanner": "Scanners"
   },
   "social": {
-    "paypal": "Paypal",
+    "paypal": "PayPal",
     "patreon": "Patreon",
     "discord": "Discord"
   },
@@ -23,7 +23,7 @@
   "underConstruction": "Em Construção",
   "error": "Erro",
   "reset": "Redefinir",
-  "info": "EXPLICAÇÃO",
+  "info": "Informações",
   "inventory": "Inventário",
   "close": "Fechar",
   "sortMap": {

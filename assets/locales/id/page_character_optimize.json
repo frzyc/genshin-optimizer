@@ -7,8 +7,7 @@
     "assumptionLvl": {
       "no": "Asumsi Tidakada Lv. Main Stat",
       "lvl": "Asumsikan Main Stat setidaknya Lv. {{lvl}}"
-    },
-    "title": "Main Stat Filter/Configuration"
+    }
   },
   "tcGraph": {
     "vs": "Target Optimisasi Grafik vs.",
@@ -81,12 +80,9 @@
   "currentlyEquippedBuild": "Saat ini Digunakan",
   "addBuildToList": "Tambahkan build ke daftar",
   "graphBuildLabel": "Grafik #<1>{{count}}</1>",
-  "workerLoadFailed": "Gagal memuat. Klik disini untuk memuat ulang halaman dan coba lagi",
   "excludeArt": {
     "title_exclude": "Kecualikan Artefak",
     "title_tooltip": "Tambahkan artefak ke daftar pengecualian karakter ini. Artefak dalam daftar pengecualian tidak akan dipertimbangkan untuk pembuatan build.",
-    "usingNum_one": "Menggunakan <1>{{count}}</1> artefak yang dikecualikan",
-    "usingNum_other": "Menggunakan <1>{{count}}</1> artefak yang dikecualikan",
     "excNum_one": "<1>{{count}}</1> artefak dikecualikan",
     "excNum_other": "<1>{{count}}</1> artefak dikecualikan",
     "addExc": "Tambahkan artefak ke daftar pengecualian karakter ini",
@@ -94,9 +90,7 @@
     "deSelectExc": "Klik artefak untuk menghapusnya dari daftar pengecualian",
     "excludeArtifactTip": "Mengecualikan artefak akan mencegah generator build menggunakannya untuk karakter ini.",
     "excluded": "Artefak ini dikecualikan.",
-    "included": "Artefak ini tidak dikecualikan.",
-    "button_txt": "Exclude Artifacts",
-    "usingNum": "Using <1>{{totalStr}}</1> excluded artifact(s)"
+    "included": "Artefak ini tidak dikecualikan."
   },
   "excludeChar": {
     "title": "Izinkan Artefak yang Dilengkapi",
@@ -106,20 +100,8 @@
     },
     "allowEquip": "Izinkan menggunakan artefak dari",
     "usingNumTot_one": "Menggunakan <1>{{arts}}</1> artefak dari <3>{{count}}</3> karakter",
-    "usingNumTot_other": "Menggunakan <1>{{arts}}</1> artefak dari <3>{{count}}</3> karakter",
-    "tooltip": "Add characters to this character's allow list. Characters in the allow list will be considered for build generation. You can also toggle between using only unequipped artifacts, your custom allow list, and using all equipped and unequipped artifacts.",
-    "chars": "Characters",
-    "artis": "Artifacts",
-    "states": {
-      "unequippedOnly": "Unequipped Only",
-      "customList": "Custom List",
-      "all": "All Artifacts"
-    },
-    "usingState": "Using"
+    "usingNumTot_other": "Menggunakan <1>{{arts}}</1> artefak dari <3>{{count}}</3> karakter"
   },
   "buildCompleted": "Build Selesai",
-  "notifyTooltip": "Mainkan suara saat build selesai dibuat. Juga akan menampilkan prompt alarm saat keluar tab.",
-  "bonusStats": {
-    "title": "Bonus Stats"
-  }
+  "notifyTooltip": "Mainkan suara saat build selesai dibuat. Juga akan menampilkan prompt alarm saat keluar tab."
 }

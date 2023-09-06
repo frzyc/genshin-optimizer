@@ -1,7 +1,4 @@
 {
-  "skillC": {
-    "name": "Grimheart"
-  },
   "burstC": {
     "name": "Lightfall Sword",
     "start5": "เริ่มต้นที่ 5 stacks",
@@ -12,8 +9,5 @@
     "name": "Consume <strong>Grimheart</strong> stacks",
     "durationStack": "6 วินาที + 6 วินาที ต่อ stack สูงสุด 18 วินาที"
   },
-  "passive1": "Shattered Lightfall Sword DMG",
-  "c4C": {
-    "name": "ศัตรูมีพลังชีวิตต่ำกว่า 50% "
-  }
+  "passive1": "Shattered Lightfall Sword DMG"
 }

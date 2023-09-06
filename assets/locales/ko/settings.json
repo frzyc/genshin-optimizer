@@ -57,10 +57,10 @@
     "currentDB": "현재 데이터베이스"
   },
   "sillyCard": {
-    "desc": "We <1>stole</1> borrowed (with permission) all the character assets from <strong>Silly Wisher</strong> and gene splice it into Genshin Optimizer.",
+    "desc": "<strong>Silly Wisher</strong>에서 모든 캐릭터의 자산을 <1>훔치..</1> (허가하에) 가져왔고 유전자를 Genshin Oprimizer에 접목하였습니다.",
     "toggle": {
-      "enabled": "Silly Optimizer Enabled",
-      "disabled": "Silly Optimizer Disabled"
+      "enabled": "Silly Optimizer 활성화",
+      "disabled": "Silly Optimizer 비활성화"
     }
   }
 }

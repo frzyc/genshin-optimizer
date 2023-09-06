@@ -81,12 +81,9 @@
   "currentlyEquippedBuild": "Currently Equipped",
   "addBuildToList": "Add build to list",
   "graphBuildLabel": "Graph #<1>{{count}}</1>",
-  "workerLoadFailed": "Worker failed to load. Click here to reload the page and try again",
   "excludeArt": {
     "title_exclude": "Excluded Artifacts",
     "title_tooltip": "Add artifacts to this character's exclusion list. Artifacts in the exclusion list will not be considered for build generation.",
-    "usingNum_one": "Using <1>{{count}}</1> excluded artifacts",
-    "usingNum_other": "Using <1>{{count}}</1> excluded artifacts",
     "excNum_one": "<0>{{count}}</0> artifact is excluded",
     "excNum_other": "<0>{{count}}</0> artifacts are excluded",
     "addExc": "Add artifact to this character's exclusion list",
@@ -95,8 +92,8 @@
     "excludeArtifactTip": "Excluding an artifact will prevent the build generator from using it for this character.",
     "excluded": "This artifact is excluded.",
     "included": "This artifact is not excluded.",
-    "button_txt": "Exclude Artifacts",
-    "usingNum": "Using <1>{{totalStr}}</1> excluded artifact(s)"
+    "usingNum": "Using <1>{{totalStr}}</1> excluded artifact(s)",
+    "button_txt": "Exclude Artifacts"
   },
   "excludeChar": {
     "title": "Equipped Artifact Configuration",
