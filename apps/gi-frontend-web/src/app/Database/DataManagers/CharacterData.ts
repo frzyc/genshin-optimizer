@@ -10,8 +10,9 @@ import {
   allTravelerKeys,
   charKeyToLocCharKey,
 } from '@genshin-optimizer/consts'
-import { clamp, objKeyMap } from '@genshin-optimizer/util'
 import { validateLevelAsc } from '@genshin-optimizer/gi-util'
+import { clamp, objKeyMap } from '@genshin-optimizer/util'
+import structuredClone from 'core-js-pure/actual/structured-clone'
 import type {
   CustomMultiTarget,
   ICachedCharacter,
@@ -24,9 +25,9 @@ import {
   allHitModes,
   allInfusionAuraElements,
 } from '../../Types/consts'
-import type { ArtCharDatabase } from '../Database'
 import type { TriggerString } from '../DataManager'
 import { DataManager } from '../DataManager'
+import type { ArtCharDatabase } from '../Database'
 import type { IGO, IGOOD, ImportResult } from '../exim'
 import { GOSource } from '../exim'
 

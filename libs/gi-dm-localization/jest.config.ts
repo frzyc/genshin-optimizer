@@ -1,6 +1,6 @@
 /* eslint-disable */
 export default {
-  displayName: 'dm-localization',
+  displayName: 'gi-dm-localization',
   preset: '../../jest.preset.js',
   globals: {
     'ts-jest': {
@@ -11,5 +11,5 @@ export default {
     '^.+\\.[tj]s$': 'ts-jest',
   },
   moduleFileExtensions: ['ts', 'js', 'html'],
-  coverageDirectory: '../../coverage/libs/dm-localization',
+  coverageDirectory: '../../coverage/libs/gi-dm-localization',
 }

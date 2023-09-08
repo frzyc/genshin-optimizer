@@ -19,12 +19,12 @@
         "assets": [
           "apps/gi-frontend-web/src/assets",
           {
-            "input": "libs/localization/assets",
+            "input": "libs/gi-localization/assets",
             "glob": "**/*",
             "output": "assets"
           },
           {
-            "input": "libs/dm-localization/assets",
+            "input": "libs/gi-dm-localization/assets",
             "glob": "**/*",
             "output": "assets"
           },
