@@ -92,14 +92,14 @@ const dm = {
   constellation4: {
     atk_: skillParam_gen.constellation4[0],
     duration: skillParam_gen.constellation4[1],
-    maxStacks: skillParam_gen.constellation4[1],
-    cd: skillParam_gen.constellation4[1],
+    maxStacks: skillParam_gen.constellation4[2],
+    cd: skillParam_gen.constellation4[3],
   },
   constellation6: {
     critDMG_: skillParam_gen.constellation6[0],
-    duration: skillParam_gen.constellation6[0],
-    maxStacks: skillParam_gen.constellation6[0],
-    cd: skillParam_gen.constellation6[0],
+    duration: skillParam_gen.constellation6[1],
+    maxStacks: skillParam_gen.constellation6[2],
+    cd: skillParam_gen.constellation6[3],
   },
 } as const
 
@@ -125,7 +125,7 @@ const c1Pressure_critRate_ = greaterEq(
 )
 
 const [condC4C6StacksPath, condC4C6Stacks] = cond(key, 'c4C6Stacks')
-const c4C6StacksArr = range(1, 3)
+const c4C6StacksArr = range(1, dm.constellation6.maxStacks)
 const c4Stacks_atk_ = greaterEq(
   input.constellation,
   4,
