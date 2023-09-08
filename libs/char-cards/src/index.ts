@@ -19,6 +19,7 @@ import Dori from './Character_Dori_Card.jpg'
 import Eula from './Character_Eula_Card.png'
 import Faruzan from './Character_Faruzan_Card.jpg'
 import Fischl from './Character_Fischl_Card.jpg'
+import Freminet from './Character_Freminet_Card.jpg'
 import Ganyu from './Character_Ganyu_Card.png'
 import Gorou from './Character_Gorou_Card.png'
 import HuTao from './Character_Hu_Tao_Card.png'
@@ -93,6 +94,7 @@ const charCards = {
   Eula,
   Faruzan,
   Fischl,
+  Freminet,
   Ganyu,
   Gorou,
   HuTao,
