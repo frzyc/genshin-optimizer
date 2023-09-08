@@ -11,8 +11,9 @@ import {
   artSlotsData,
 } from '@genshin-optimizer/consts'
 import { deepFreeze, validateArr } from '@genshin-optimizer/util'
-import type { ArtCharDatabase } from '../Database'
+import structuredClone from 'core-js-pure/actual/structured-clone'
 import { DataManager } from '../DataManager'
+import type { ArtCharDatabase } from '../Database'
 
 export const maxBuildsToShowList = [1, 2, 3, 4, 5, 8, 10] as const
 export const maxBuildsToShowDefault = 5

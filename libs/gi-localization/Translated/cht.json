@@ -1,146 +1,146 @@
 {
   "artifact": {
     "editor": {
-      "title": "Trình chỉnh sửa Thánh Di Vật",
+      "title": "聖遺物編輯器",
       "substat": {
-        "substatFormat": "Chỉ số phụ {{value}}",
-        "noSubstat": "Không có chỉ số phụ",
-        "selectSub": "Chọn chỉ số phụ",
+        "substatFormat": "副詞條 {{value}}",
+        "noSubstat": "無副詞條",
+        "selectSub": "選擇一個副詞條",
         "error": {
-          "noCalc": "Không thể tính được chỉ số roll.",
-          "noOverRoll": "Chỉ số phụ không thể roll nhiều hơn {{value}} lần"
+          "noCalc": "無法計算詞條數",
+          "noOverRoll": "副詞條不可超過 {{value}} 個"
         },
-        "noRoll": "Không có roll",
-        "noStat": "Không có giá trị",
-        "eff": "Hiệu suất: <1></1>",
-        "nextRolls": "Rolls kế tiếp:",
+        "noRoll": "沒有詞條",
+        "noStat": "沒有數值",
+        "eff": "估值：<1></1>",
+        "nextRolls": "下次提升：",
         "RollCount_one": "{{count}} Roll",
-        "RollCount_other": "{{count}} Rolls"
+        "RollCount_other": "提升 {{count}} 次"
       },
-      "rarity": "Phẩm chất",
-      "level": "Cấp độ",
-      "unknownPieceName": "Tên món TDV không rõ",
-      "curSubEff": "RV hiện tại",
-      "curSubEffDesc": "Mỗi 4 cấp thánh di vật sẽ có thêm 1 chỉ số phụ. <strong>Hiệu suất chỉ số phụ</strong> thể hiện chỉ số phụ đã rolls cao thấp bao nhiêu theo tỉ lệ phần trăm.",
-      "maxSubEff": "Hiệu suất chỉ số phụ tối đa",
-      "maxSubEffDesc": "<strong>Hiệu suất chỉ số phụ tối đa</strong> của một thánh di vật được tính theo giá trị tối đa của những lần nâng cấp còn lại.",
-      "preview": "Xem trước Thánh Di Vật",
-      "dupArt": "Thánh di vật trùng lặp",
-      "upArt": "Thánh di vật đã được nâng cấp",
-      "beforeEdit": "Trước khi sửa",
-      "btnSave": "Lưu Thánh Di Vật",
-      "btnAdd": "Thêm Thánh Di Vật",
-      "btnClear": "Xóa",
-      "btnRandom": "Ngẫu nhiên",
-      "btnUpdate": "Nâng cấp thánh di vật",
-      "clearPrompt": "Đang có thánh di vật trong trình chỉnh sửa. Bạn có chắc chắn muốn xóa không?",
-      "unknownSetName": "Unknown Set Name"
+      "rarity": "稀有度",
+      "level": "等級",
+      "unknownPieceName": "未知的道具名稱",
+      "curSubEff": "目前估值",
+      "curSubEffDesc": "聖遺物每升級 4 次，就會得到一次副詞條的追加提升。<strong>估值</strong>會計算單一副詞條的提升比例。",
+      "maxSubEff": "最高估值",
+      "maxSubEffDesc": "聖遺物的<strong>最高副詞條估值</strong>指計算持續提升副詞條至最高數值的估計值。",
+      "preview": "聖遺物預覽",
+      "dupArt": "偵測到重複的聖遺物",
+      "upArt": "偵測到已升級的聖遺物",
+      "beforeEdit": "編輯前",
+      "btnSave": "鋤存聖遺物",
+      "btnAdd": "新增聖遺物",
+      "btnClear": "清除",
+      "btnRandom": "隨機化",
+      "btnUpdate": "更新聖遺物",
+      "clearPrompt": "目前編輯器裡有一個聖遺物。您確定要清除編輯器嗎？",
+      "unknownSetName": "未知的套裝名稱"
     },
-    "artifactFilter": "Bộ lọc Thánh Di Vật",
+    "artifactFilter": "聖遺物篩選",
     "filterLocation": {
-      "inventory": "Túi",
-      "currentlyEquipped": "Đang trang bị",
-      "location": "Characters"
+      "inventory": "背包",
+      "currentlyEquipped": "當前裝備",
+      "location": "位置"
     },
     "button": {
-      "unequipArtifacts": "Gỡ Thánh Di Vật",
-      "deleteArtifacts": "Xóa Thánh Di Vật",
-      "lockArtifacts": "Khoá Thánh di vật",
-      "unlockrtifacts": "Mở khoá Thánh di vật"
+      "unequipArtifacts": "卸除聖遺物",
+      "deleteArtifacts": "刪除聖遺物",
+      "lockArtifacts": "Lock Artifacts",
+      "unlockrtifacts": "Unlock Artifacts"
     },
-    "buttonHint": "Ghi chú: Các nút màu đỏ ở trên chỉ áp dụng cho <1>bộ lọc thánh di vật</1>",
+    "buttonHint": "注意：紅色選項僅用於<1>篩選後的聖遺物</1>",
     "tipsOfTheDay": [
-      "RV tối đa của một Thánh Di Vật 4 sao rơi vào khoảng 540%.",
-      "RV tối đa của một Thánh Di Vật thường sẽ giảm đi khi bạn nâng nó lên: Đó là chuyện bình thường!",
-      "Các thuộc tính phụ có số \"1\" là những cái khó quét nhất trong ảnh chụp.",
-      "Nếu tất cả số lần nhảy chỉ số (6 lần) đều vào một dòng, nó sẽ có màu tím!",
-      "Nhấn vào \"Chi Tiết\" khi bạn đang nâng thánh di vật trong game để có thể đồng thời vừa nâng vừa quét.",
-      "Giờ bạn có thể tải lên nhiều ảnh chụp thánh di vật để quét!"
+      "4 星聖遺物的最高估值為 60% 左右。",
+      "聖遺物的最高估值一般隨著你對它的升級而降低。這很正常！",
+      "含有「1」的副詞條較難通過截圖掃描識別。",
+      "如果你的 6 次副詞條升級，強化了同一個副詞條，它會呈現紫色！",
+      "點選「詳情」以了解如何添加在遊戲內升級後的聖遺物。",
+      "現在您可以上傳多張聖遺物截圖進行識別！"
     ],
-    "mainStat": "Chỉ số chính",
-    "slot": "Vị Trí",
+    "mainStat": "主詞條",
+    "slot": "欄位",
     "slotName": {
-      "flower": "Hoa Sự Sống",
-      "plume": "Lông vũ tử vong",
-      "sands": "Cát thời gian",
-      "goblet": "Ly không gian",
-      "circlet": "Nón lý trí"
+      "flower": "生之花",
+      "plume": "死之羽",
+      "sands": "時之沙",
+      "goblet": "空之杯",
+      "circlet": "理之冠"
     },
     "info": {
-      "title": "Hướng dẫn Chỉnh sửa/Quản lý Thánh Di Vật",
-      "section1": "<0>Rolls của chỉ số phụ</0><1><1>Số rolls</1> của chỉ số phụ được hiển thị phía bên trái của chỉ số phụ đó. Càng nhiều rolls thì càng màu mè:<3></3>.</1><2>Hiệu suất chỉ số phụ</2><3>Hiệu suất của một chỉ số phụ là tỉ lệ phần trăm của giá trị hiện tại với giá trị tiềm năng cao nhất của thánh di vật 5 <1></1>. Từ trong hình, giá trị roll cao nhất của Sát thương bạo kích là 7.8%. Hiệu suất: <3>5.8/7.8 = 69.2%.</3></3><4>Hiệu suất hiên tại đối với Hiệu suất tiềm năng cao nhất</4><5>Khi một thánh di vật 5<1></1> có tất cả 9(4+5) rolls, và tất cả các rolls đều có giá trị cao nhất, thì nó là thánh di vật có hiệu suất 100%. Tuy nhiên, đa số là chuyện đó khó mà xảy ra. <3>Hiệu suất hiện tại</3> của một thánh di vật là tỉ lệ phần trăm hiệu suất đối với thánh di vật có 100% hiệu suất. <5>Hiệu suất tối đa</5> là hiệu suất cao nhất mà thánh di vật có thể đạt được, nếu tất cả rolls còn lại đạt giá trị tối đa.</5><6>Khóa thánh di vật</6><7>Bằng việc khóa thánh di vật <1></1> sẽ làm cho thánh di vật đó không được chọn khi tạo build. Thánh di vật đã được trang bị sẽ mặc định bị khóa.</7>",
-      "section2": "<0>Trình chỉnh sửa thánh di vật</0><1>Trình chỉnh sửa có đầy đủ chức năng, có thể chấp nhận thánh di vật từ 3<1></1> tới 5<3></3>. Khi một chỉ số phụ được nhập, nó có thể tính toán chính xác giá trị của rolls và hiệu suất. Nó cũng có thể đưa ra con số chính xác về mỗi roll của thánh di vật đó, cùng với các số liệu xác thực khác.</1><2>Quét hình ảnh</2><3>Bạn lười phải nhập chỉ số bằng tay? Bạn có thể quét thánh di vật bằng hình ảnh! Ở trang Trình chỉnh sửa thánh di vật, bấm vào <1>Cách chụp hình chính xác!</1> để có thể biết thêm chi tiết.</3><4>Phát hiện thánh di vật bị trùng lặp/ đã được nâng cấp</4><5>Bạn có biết GO có thể phát hiện ra thánh di vật bị <1>trùng lặp</1> cái mà đã có trong hệ thống? Nó cũng có thể phát hiện nếu thánh di vật trong trình chỉnh sửa là phiên bản <3>nâng cấp</3> của thánh di vật có sẵn. Một khi phát hiện trùng lặp hoặc đã nâng cấp bạn có thể xem trước để so sánh hai thánh di vật này(Xem hình).</5>",
-      "section3": "<0>Túi thánh di vật</0><1>Tất cả những thánh di vật đã thêm vào của bạn được hiển thị ở đây. Bộ lọc ở đây cho phép bạn tìm kiếm thánh di vật dễ hơn. </1><2>Ví dụ: Tìm Thánh Di vật làm nguyên liệu cường hoá</2><3>Bằng bộ lọc bạn có thể tìm kiếm thánh di vật làm nguyên liệu cường hoá nhanh hơn.</3><4>Ở ví dụ này, bộ được thiết lập như này: </4><5><0>Thánh Di Vật không khóa trong túi.</0><1>Với chỉ số phụ: Tấn công và phòng ngự.</1><2>Xếp theo thứ tự hiệu suất tối đa tăng dần</2></5><6>Một khi thánh di vật đã được đem làm nguyên liệu cường hoá, bấm vào <1>Xóa thánh di vật</1> để xóa thánh di vật vừa được lọc.</6>"
+      "title": "聖遺物編輯／管理指南",
+      "section1": "<0>副詞條升級次數</0><1> <1>副詞條升級次數</1>顯示在副詞條左側. 次數越多，副詞條顏色越深:<3></3>. </1><2>副詞條評分</2><3>副詞條評分指副詞條當前數值佔5<1></1>最高數值的比例. 如圖所示, 暴擊傷害最高升級值一次爲7.8%，在評分中： <3>5.8/7.8 = 69.2%.</3></3><4>當前評分 vs. 最高期望評分</4><5>當一個五<1></1>聖遺物經過 9 (4+5) 次總升級，且每次升級都是最大數值升級，此時被認爲是100%評分的聖遺物. 然而，大部分聖遺物沒有這麼幸運. 3>當前副詞條評分</3> 是該聖遺物與100%評分聖遺物相較的結果. <5>最高副詞條評分</5> 是一個聖遺物接下來的升級都獲得最高數值時，能獲得的評分. </5><6>鎖定聖遺物</6><7>通過鎖定聖遺物 <1></1>，該聖遺物不會被配裝生成器選入計算中. 同樣，已經被裝備的聖遺物是默認被排除的. </7>",
+      "section2": "<0>聖遺物編輯器</0><1>支持任意3<1></1> 到 5<3></3>聖遺物的全功能編輯器. 輸入副詞條後，能自動計算升級次數並評分. 同時編輯器會確保你的升級次數與聖遺物等級匹配. </1><2>截圖掃描</2><3>如果你不想手動輸入聖遺物，可以通過截圖掃描的方式識別輸入聖遺物. 在聖遺物編輯器界面，點擊 <1>Show Me How!</1> 可見使用方法. </3><4>自動聖遺物掃描儀</4><5>如果你在PC上玩原神，你可以下載使用聖遺物掃描工具來爲你掃描所有的聖遺物，並導入GO的 <1></1> 數據庫內. <3>點此</3> 獲取與 GO 兼容的掃描器列表.</5><6>重複/升級後聖遺物檢測</6><7> GO可以檢測出你導入的<1>重複</1> 聖遺物哦！原先擁有的聖遺物<3>升級後</3> 也會被檢測出來. 一旦檢測到重複/升級的聖遺物，會出現預覽界面允許你比較這些聖遺物 (見圖片).</7>",
+      "section3": "<0>聖遺物背包</0><1>這裡會顯示所有被加到 GO 的聖遺物。篩選器可以協助您更精簡地瀏覽目前擁有的聖遺物。</1><2>例如：尋找可消耗的聖遺物。</2><3>利用聖遺物篩選器及估值，您可以快速找到可以消耗的聖遺物。</3><4>在這個例子中，篩選器可以這樣設定：</4><5><0>限制聖遺物等級為 0-8 等。</0><1>背包內未鎖定的聖遺物。</1><2>固定生命值、固定防禦力及元素充能效率不納入估值計算當中。</2><3>依照最大估值進行升序排列。</3></0></5><6>這樣，聖遺物背包就能依照指定的詞條，由低到高篩出最低估值的聖遺物。</6>"
     },
     "sortMap": {
-      "level": "Cấp",
-      "efficiency": "Hiệu suất hiện tại.",
-      "mefficiency": "Hiệu suất tối đa."
+      "level": "等級",
+      "efficiency": "目前估值",
+      "mefficiency": "最高估值"
     },
     "efficiencyFilter": {
-      "title": "Chỉ số phụ để dùng ở công thức tính hiệu suất"
+      "title": "用於估值計算的副詞條"
     },
-    "resetFilters": "Cài lại bộ lọc",
-    "setEffectNum": "Bộ {{setNum}} món",
+    "resetFilters": "重設過濾器",
+    "setEffectNum": "{{setNum}} 件套裝",
     "showingNum_one": "Showing <1>{{count}}</1> out of {{value}} Artifact",
     "showingNum_other": "Showing <1>{{count}}</1> out of {{value}} Artifacts",
-    "edit": "Edit Artifact",
+    "edit": "編輯聖遺物",
     "autocompleteLabels": {
-      "sets": "Artifact Sets",
-      "mainStats": "Main Stats",
-      "substats": "Sub-Stats",
-      "set": "Artifact Set"
+      "sets": "聖遺物套裝",
+      "mainStats": "主詞條",
+      "substats": "副詞條",
+      "set": "聖遺物套裝"
     },
-    "substat_one": "{{count}} substat",
-    "substat_other": "{{count}} substats",
-    "addNew": "Add New Artifact",
-    "sub_one": "{{count}} sub",
-    "sub_other": "{{count}} subs",
+    "substat_one": "{{count}} 個副詞條",
+    "substat_other": "{{count}} 個副詞條",
+    "addNew": "新增新的聖遺物",
+    "sub_one": "{{count}} 副詞條",
+    "sub_other": "{{count}} 副詞條",
     "cantDeleteLock": "Cannot delete artifact because it is locked",
     "equippedArt": "All Equipped Artifacts",
     "artInInv": "All Unequipped Artifacts",
     "locationsTooltip": "Disable \"All Equipped Artifacts\" to filter by specific characters"
   },
   "languages": {
-    "chs": "Tiếng Trung (giản thể)",
-    "cht": "Tiếng Trung (phồn thể)",
-    "de": "Tiếng Đức",
-    "en": "Tiếng Anh",
-    "es": "Tiếng Tây Ban Nha",
-    "fr": "Tiếng Pháp",
-    "id": "Tiếng Indonesia",
-    "ja": "Tiếng Nhật",
-    "ko": "Tiếng Hàn",
-    "pt": "Tiếng Bồ Đào Nha",
-    "ru": "Tiếng Nga",
-    "th": "Tiếng Thái",
-    "vi": "Tiếng Việt",
+    "chs": "簡體中文",
+    "cht": "繁體中文",
+    "de": "德語",
+    "en": "英語",
+    "es": "西班牙語",
+    "fr": "法語",
+    "id": "印尼語",
+    "ja": "日語",
+    "ko": "韓語",
+    "pt": "西班牙語",
+    "ru": "俄語",
+    "th": "泰語",
+    "vi": "越南語",
     "it": "Italian",
     "tr": "Turkish"
   },
   "settings": {
-    "title": "Cài Đặt",
+    "title": "設定",
     "languageCard": {
-      "selectLanguage": "Lựa chọn ngôn ngữ",
-      "languageFormat": "Ngôn ngữ: {{language}}"
+      "selectLanguage": "選擇語言",
+      "languageFormat": "語言：{{language}}"
     },
     "uploadCard": {
-      "title": "Tải lên CSDL",
-      "replaceDatabase": "Cập nhật CSDL",
-      "hint": "Tải tệp JSON của bạn tại đây...",
-      "hintPaste": "...hoặc dán dữ liệu của bạn xuống dưới.",
+      "title": "上傳資料檔",
+      "replaceDatabase": "更新資料檔",
+      "hint": "在此上傳 JSON 檔案...",
+      "hintPaste": "...或在底下貼上你的資料",
       "error": {
-        "jsonParse": "Không thể phân tích tập tin JSON.",
-        "unknown": "Định dạng tập tin không xác định.",
-        "monaInvalid": "Định dạng file Mona-Uranai không hợp lệ",
-        "goInvalid": "Định dạng file backup GO không hợp lệ"
+        "jsonParse": "無法解析 JSON 檔案。",
+        "unknown": "未知的檔案格式。",
+        "monaInvalid": "Invalid Mona-Uranai file format",
+        "goInvalid": "無效的 GO 備份檔案格式。"
       },
-      "dbSource": "Nguồn dữ liệu:",
+      "dbSource": "資料來源：",
       "goodUpload": {
-        "title": "Định dạng <strong>Genshin Open Object Description</strong> (Tốt)"
+        "title": "<strong>原神開放物件描述</strong> (GOOD) 格式"
       },
       "buttons": {
-        "open": "Open",
+        "open": "開啟",
         "detectDups": "Detect Updates/Dupes",
         "delNotInImport": "Delete items not in import"
       },
@@ -152,29 +152,29 @@
       }
     },
     "count": {
-      "chars": "Nhân vật:",
-      "arts": "Thánh di vật:",
-      "weapons": "Vũ khí:",
-      "total": "Tổng cộng:",
-      "new": "Mới:",
-      "updated": "Đã cập nhật:",
-      "removed": "Đã loại bỏ:",
-      "unchanged": "Không thay đổi:",
-      "invalid": "Không hợp lệ:",
+      "chars": "角色:",
+      "arts": "聖遺物：",
+      "weapons": "武器：",
+      "total": "總計：",
+      "new": "已新增：",
+      "updated": "已更新：",
+      "removed": "已移除：",
+      "unchanged": "未更動：",
+      "invalid": "無效：",
       "upgraded": "Upgraded:",
       "dbTotal": "Merged Total:",
       "notInImport": "Not in Import:"
     },
     "DatabaseCard": {
-      "title": "Cơ sở dữ liệu",
+      "title": "資料庫",
       "button": {
-        "download": "Tải xuống",
-        "copy": "Lưu vào bộ nhớ tạm",
-        "delete": "Xóa",
-        "upload": "Tải lên",
-        "swap": "Đổi"
+        "download": "下載",
+        "copy": "剪貼簿",
+        "delete": "刪除",
+        "upload": "上傳",
+        "swap": "轉移"
       },
-      "currentDB": "Cơ sở dữ liệu đã chọn"
+      "currentDB": "目前資料庫"
     },
     "sillyCard": {
       "desc": "We <1>stole</1> borrowed (with permission) all the character assets from <strong>Silly Wisher</strong> and gene splice it into Genshin Optimizer.",
@@ -185,56 +185,56 @@
     }
   },
   "ui": {
-    "pageTitle": "Genshin Optimizer",
+    "pageTitle": "原神最佳化工具",
     "tabs": {
-      "artifacts": "Thánh Di Vật",
-      "characters": "Nhân Vật",
-      "tools": "Công Cụ",
-      "weapons": "Vũ khí",
-      "doc": "Docs",
-      "setting": "Settings",
-      "scanner": "Máy quét"
+      "artifacts": "聖遺物",
+      "characters": "角色",
+      "tools": "工具",
+      "weapons": "武器",
+      "doc": "文件",
+      "setting": "設定",
+      "scanner": "掃描器"
     },
     "social": {
       "paypal": "Paypal",
       "patreon": "Patreon",
       "discord": "Discord"
     },
-    "unselect": "Bỏ chọn",
-    "ascending": "Tăng dần",
-    "descending": "Giảm dần",
-    "loading": "Đang tải...",
-    "rightsDisclaimer": "Genshin Optimizer không được liên kết hoặc chứng thực bởi HoYoverse",
-    "appVersion": "Phiên bản của $t(pageTitle): {{version}}",
-    "underConstruction": "Đang hoàn thiện",
-    "error": "Lỗi",
-    "reset": "Cài lại",
-    "info": "Thông tin",
-    "inventory": "Túi",
-    "close": "Đóng",
+    "unselect": "取消選取",
+    "ascending": "升序",
+    "descending": "降序",
+    "loading": "載入中...",
+    "rightsDisclaimer": "原神最佳化工具不屬於 Hoyoverse，也未受該公司的認可。",
+    "appVersion": "$t(pageTitle) 版本：<1>{{version}}</1>",
+    "underConstruction": "建設中",
+    "error": "錯誤",
+    "reset": "重設",
+    "info": "資訊",
+    "inventory": "庫存",
+    "close": "關閉",
     "sortMap": {
-      "new": "Mới",
-      "name": "Tên",
-      "level": "Cấp độ",
-      "rarity": "Độ hiếm",
-      "efficiency": "Hiệu suất chỉ số phụ hiện tại",
-      "mefficiency": "Hiệu suất chỉ số phụ tối đa",
-      "artsetkey": "Bộ Thánh Di Vật",
-      "probability": "Xác xuất Roll"
+      "new": "New",
+      "name": "名稱",
+      "level": "等級",
+      "rarity": "稀有度",
+      "efficiency": "目前估值",
+      "mefficiency": "最高估值",
+      "artsetkey": "聖遺物套裝",
+      "probability": "Roll Probability"
     },
     "link": {
-      "download": "Download Link",
-      "discord": "Discord Invite Link"
+      "download": "下載連結",
+      "discord": "Discord 邀請連結"
     },
-    "sortBy": "Sắp xếp theo: ",
-    "delete": "Xóa",
-    "locked": "Đã khóa",
-    "unlocked": "Đã mở khóa",
-    "refinement": "Refinement {{value}}",
+    "sortBy": "排列方式: ",
+    "delete": "刪除",
+    "locked": "已上鎖",
+    "unlocked": "未上鎖",
+    "refinement": "精鍊 {{value}}",
     "selectlevel": "Select Level",
     "gender": {
-      "F": "Female",
-      "M": "Male"
+      "F": "女",
+      "M": "男"
     },
     "statGroupKey": {
       "basic_stats": "Basic Stats",
@@ -256,60 +256,54 @@
     "sillyPageTitle": "Silly Optimizer"
   },
   "char_Eula": {
-    "skillC": {
-      "name": "Trái Tim Băng Giá"
-    },
     "burstC": {
-      "name": "Kiếm Ánh Sáng",
-      "start5": "Bắt đầu ở 5 tầng",
-      "addStacks": "50% cơ hội nhận thêm mỗi tầng",
+      "name": "光降之劍",
+      "start5": "立即獲得 5 層能量",
+      "addStacks": "50% chance to get additional energy stacks from Normal Attacks, Elemental Skills and Elemental Bursts",
       "dmg": "Lightfall Sword Explosion DMG",
       "bonusScaling": "Lightfall Sword Bonus Scaling"
     },
     "c1C": {
-      "name": "Sau khi hiệu quả <strong>Trái Tim Băng Giá</strong> bị tiêu hao",
-      "durationStack": "6s + 6s mỗi tầng, tối đa 18s"
+      "name": "After consuming <strong>Grimheart</strong> stacks",
+      "durationStack": "6s + 6s per stack, up to 18s"
     },
-    "passive1": "Sát thương Kiếm Ánh Sáng",
+    "passive1": "Shattered Lightfall Sword DMG",
     "c4C": {
-      "name": "Opponents have less than 50% HP",
       "dmgBonus": "Lightfall Sword Explosion DMG Bonus"
     }
   },
   "char_Noelle": {
-    "p4cd": "24s, -1s Cứ 4 lần đánh trúng",
-    "c6duration": "15s, +1s mỗi lần đánh bại kẻ địch, tối đa 10s",
-    "qlarger": "Tăng phạm vi tấn công",
-    "c4dmg": "Breastplate Shatter DMG",
-    "skillHeal_": "Healing Triggering Chance"
+    "p4cd": "24s, -1s Every 4 hits",
+    "c6duration": "15s, +1s per kill, up to 10s",
+    "c4dmg": "Breastplate Shatter DMG"
   },
   "char_Venti": {
-    "addAimed": "Sát thương mũi tên tăng thêm",
-    "addFullAimed": "Sát thương tụ lực của mũi tên tăng thêm",
-    "upcurrentDuration": "Thời gian luồng gió duy trì",
-    "regenEner": "Hồi phục 15 điểm Năng lượng nguyên tố cho Venti sau khi kết thúc hiệu ứng",
-    "c6": "Mục tiệu nhận sát thương từ <strong>Bài thơ thần gió</strong>",
-    "q": "Hồi phục 15 năng lượng nguyên tố cho tất cả nhân vật trong đội có nguyên tố tương ứng.",
+    "addAimed": "Additional Aimed Shot DMG",
+    "addFullAimed": "Additional Fully-Charged Aimed Shot DMG",
+    "upcurrentDuration": "Upcurrent Duration",
+    "regenEner": "Regens 15 Energy to Venti after effect ends",
+    "c6": "Enemy's been hit by <strong>Wind's Grand Ode</strong>",
+    "q": "Regens 15 Energy to all characters of the absorbed element in the party.",
     "c2": {
-      "hit": "Địch bị đánh trúng",
-      "launched": "Địch bị đánh bay"
+      "hit": "Opponent hit",
+      "launched": "Opponent launched"
     }
   },
   "sheet": {
-    "dmg": "Sát thương",
-    "lessPercentHP": "< {{percent}}% HP",
+    "dmg": "傷害",
+    "lessPercentHP": "血量低於 {{percent}} %",
     "hitOp": {
-      "normal": "Tấn công thường đánh trúng kẻ địch",
-      "charged": "Trọng kích đánh trúng kẻ địch",
-      "plunging": "Tấn công đáp đánh trúng kẻ địch",
-      "skill": "Kỹ năng nguyên tố đánh trúng kẻ địch",
-      "burst": "Kỹ năng nộ đánh trúng kẻ địch",
-      "geo": "Sát thương nguyên tố Nham khi đánh trúng đối thủ",
-      "anemo": "Sát thương nguyên tố Phong khi đánh trúng đối thủ",
-      "hydro": "Sát thương nguyên tố Thuỷ khi đánh trúng đối thủ",
-      "cryo": "Sát thương nguyên tố Băng khi đánh trúng đối thủ",
-      "pyro": "Sát thương nguyên tố Hoả khi đánh trúng đối thủ",
-      "electro": "Sát thương nguyên tố Lôi khi đánh trúng đối thủ",
+      "normal": "After hitting an opponent with a Normal Attack",
+      "charged": "After hitting an opponent with a Charged Attack",
+      "plunging": "After hitting an opponent with a Plunging Attack",
+      "skill": "After hitting an opponent with an Elemental Skill",
+      "burst": "After hitting an opponent with an Elemental Burst",
+      "geo": "After dealing <geo>Geo DMG</geo>",
+      "anemo": "After dealing <anemo>Anemo DMG</anemo>",
+      "hydro": "After dealing <hydro>Hydro DMG</hydro>",
+      "cryo": "After dealing <cryo>Cryo DMG</cryo>",
+      "pyro": "After dealing <pyro>Pyro DMG</pyro>",
+      "electro": "After dealing <electro>Electro DMG</electro>",
       "none": "After hitting an opponent",
       "normalOrCharged": "After hitting an opponent with a Normal/Charged Attack",
       "skillOrBurst": "After hitting an opponent with an Elemental Skill/Burst",
@@ -320,17 +314,14 @@
       "ele": "After dealing Elemental DMG",
       "weakSpot": "After hitting an enemy Weak Spot with a Charged Shot"
     },
-    "eleAbsor": "Chuyển hóa nguyên tố",
-    "absorDot": "Sát thương chuyển hóa theo thời gian",
+    "eleAbsor": "Elemental Absorption",
+    "absorDot": "Absorption DoT",
     "afterUse": {
-      "skill": "Sau khi sử dụng Kỹ năng Nguyên tố",
-      "burst": "Sau khi sử dụng Kỹ năng Nộ",
+      "skill": "After using Elemental Skill",
+      "burst": "After using Elemental Burst",
       "skillOrBurst": "After using Ele. Skill or Ele. Burst",
       "skillPress": "$t(afterUse.skill) ($t(press))",
       "skillHold": "$t(afterUse.skill) ($t(hold))"
-    },
-    "increase": {
-      "atk": "Tăng tấn công"
     },
     "hits_one": "{{count}} Hit",
     "hits_other": "{{count}} Hits",
@@ -352,10 +343,7 @@
     "afterSprint": "After Sprint",
     "skillCDRed": "Ele. Skill CD Reduction",
     "burstCDRed": "Ele. Burst CD Reduction",
-    "pressCD": "Press CD",
-    "holdCD": "Hold CD",
     "triggerCD": "Trigger CD",
-    "eleSwirled": "Swirled Element",
     "incInterRes": "Increased resistance to interruption",
     "charges": "Charges",
     "cooldown": "Cooldown",
@@ -372,7 +360,6 @@
       "dendro": "Dendro Infusion",
       "geo": "Geo Infusion"
     },
-    "energyRegen": "Energy Regeneration",
     "effectDuration": {
       "pyro": "Pyro effect duration",
       "cryo": "Cryo effect duration",
@@ -398,32 +385,29 @@
       "geo": "Geo DMG Absorption",
       "none": "DMG Absorption"
     },
-    "opponentsDamaged": "Kẻ địch đã bị gây sát thương",
-    "press": "Nhấn",
-    "hold": "Nhấn giữ",
     "addlCharge": "Additional charge",
-    "conditional": "Điều kiện",
-    "maxStacks": "Tầng hiệu ứng tối đa",
-    "1set": "Bộ lẻ",
-    "2set": "Bộ hai",
-    "4set": "Bộ bốn",
+    "conditional": "Conditional",
+    "maxStacks": "Maximum stacks",
+    "1set": "1 件套裝",
+    "2set": "2 件套裝",
+    "4set": "4 件套裝",
     "activationStam": "Activation Stamina Consumption",
-    "stamDrain": "Thể lực tiêu hao",
+    "stamDrain": "Stamina Drain",
     "talents": {
-      "auto": "Tự động",
-      "skill": "Kĩ năng",
-      "burst": "Kĩ năng nộ",
-      "passive": "Hiệu ứng",
-      "passive1": "Tinh luyện 1",
-      "passive2": "Tinh luyện 4",
-      "passive3": "Hiệu ứng đặc biệt",
-      "sprint": "Chạy",
-      "constellation1": "C1",
-      "constellation2": "C2",
-      "constellation3": "C3",
-      "constellation4": "C4",
-      "constellation5": "C5",
-      "constellation6": "C6"
+      "auto": "自動",
+      "skill": "Skill",
+      "burst": "Burst",
+      "passive": "Passive",
+      "passive1": "Ascension 1",
+      "passive2": "Ascension 4",
+      "passive3": "Passive",
+      "sprint": "Sprint",
+      "constellation1": "一命",
+      "constellation2": "二命",
+      "constellation3": "三命",
+      "constellation4": "四命",
+      "constellation5": "五命",
+      "constellation6": "六命"
     },
     "swirlReaction": {
       "hydro": "After triggering a <hydro>Hydro</hydro> Swirl reaction",
@@ -465,65 +449,60 @@
     "notProtectedByShield": "While not protected by a shield"
   },
   "weapon_SongOfBrokenPines": {
-    "name": "Ca Khúc Thời Đại Nghìn Năm: Khúc ca vén cờ"
+    "name": "Under the effects of Millennial Movement: Banner-Hymn"
   },
   "char_KaedeharaKazuha": {
-    "c1": "Thi triển <strong>Kazuha nhất đao trảm</strong> làm mới thời gian CD",
-    "c2": "Trong Một khắc gió thu",
+    "c1": "使用<strong>萬葉之一刀</strong>重設冷卻時間",
+    "c2": "Autumn Whirlwind field active",
     "c6": {
-      "after": "Sau khi thi truyển <strong>Chihayaburu</strong> hoặc <strong>Kazuha Nhất đao trảm</strong>",
-      "bonus": "Đánh thường, trọng kích, tấn công khi đáp"
+      "after": "After using <strong>Chihayaburu</strong> or <strong>Kazuha Slash</strong>"
     },
     "skillPlunge": "Midare Ranzan"
   },
   "char_Rosaria": {
-    "a1": "Sau khi tấn công từ phía sau",
+    "a1": "After striking an opponent from behind",
     "a4": {
-      "name": "Khi thi triển <strong>Thánh lễ cuối cùng</strong>"
+      "name": "After using <strong>Rites of Termination</strong>"
     }
   },
   "char_KamisatoAyaka": {
-    "afterSprint": "Sau khi lướt",
-    "afterSprintCryo": "Nhận <cryo>Nguyên tố băng</cyro> sau khi lướt",
-    "snowflakeDMG": "Sát thương Cổng băng tuyết",
-    "dmgBySnowflake": "Kẻ địch chịu sát thương do Cổng băng tuyết của <strong>Trường phái Kamisato-Soumetsu</strong> gây ra",
+    "afterSprintCryo": "After applying <cryo>Cryo</cryo> by Sprinting",
+    "snowflakeDMG": "Snowflake DMG",
+    "dmgBySnowflake": "Enemy's been hit by Frostflake Seki no To",
     "c6Active": "Under the Usurahi Butou effect"
   },
   "weapon_MistsplitterReforged": {
-    "emblem": "Vết cắt sương mù"
+    "emblem": "Mistsplitter's Emblem"
   },
   "char_Yoimiya": {
-    "c1": "Đánh bại kẻ địch ảnh hưởng bởi <strong>Lưu kim quang hỏa</strong>",
-    "c2": "Bạo kịch từ <pyro> Sát thương nguyên tố Hỏa</pyro>",
+    "c1": "After defeating an enemy affected by <strong>Aurous Blaze</strong>",
+    "c2": "After dealing CRIT <pyro>Pyro DMG</pyro>",
     "normPyroInfus": "<pyro>Normal Att. Pyro Infusion</pyro>",
     "c6Key_": "Blazing Arrow Mult."
   },
   "char_RaidenShogun": {
     "skill": {
-      "eye": "Con mắt lôi phạt",
-      "partyCost": "Năng lượng nguyên tố của kỹ năng nộ"
+      "eye": "Carrying the Eye of Stormy Judgement",
+      "partyCost": "Energy Cost"
     },
     "burst": {
-      "resolves": "Ý lực",
+      "resolves": "Resolve Stacks",
       "resolveInitial_": "<electro>Musou no Hitotachi DMG Bonus Scaling</electro",
       "resolveInfused_": "<electro>Musou Isshin DMG Bonus Scaling</electro>",
       "burstDmg": "Musou no Hitotachi DMG"
     },
     "a4": {
-      "enerRest": "Năng lượng nguyên tố hồi phục bởi <strong>Mộng tưởng nhất tâm</strong>",
-      "eleDMG": "Sát thương nguyên tố lôi tăng thêm"
+      "enerRest": "Bonus energy restoration from <strong>Musou Isshin</strong>",
+      "eleDMG": "Electro DMG Bonus"
     },
     "c4": {
-      "expires": "Trạng thái <strong>Mộng tưởng nhất tâm</strong> của <strong>Bí kỹ: Mộng tưởng chân quyết</strong> kết thúc"
+      "expires": "After the <strong>Musou Isshin</strong> state expires"
     }
   },
   "char_Aloy": {
     "skill": {
-      "coil": "Dây Móc",
-      "coil1": "1 Tầng Dây Móc",
-      "coil2": "2 Tầng Dây Móc",
-      "coil3": "3 Tầng Dây Móc",
-      "rush": "Hồ Băng",
+      "coil": "Coil",
+      "rush": "Rushing Ice",
       "rushState": "During Rushing Ice state (1 stack / s)"
     },
     "a1CondName": "When Aloy receives the Coil effect from <strong>Frozen Wilds</strong>",
@@ -531,65 +510,62 @@
   },
   "char_KujouSara": {
     "skill": {
-      "ambush": "Tengu Juurai: Phục kích"
-    },
-    "a4": {
-      "enerRest": "Energy restored from Tengu Juurai: Ambush"
+      "ambush": "Under the effects of Tengu Juurai: Ambush"
     },
     "c6": {
       "electroCritDmg": "Character has had their ATK increased by Tengu Juurai"
     }
   },
   "char_SangonomiyaKokomi": {
-    "burst": "Lễ phục nghi thức",
-    "c2": "Nhân vật có lượng HP bằng hoặc thấp hơn 50%",
-    "c6": "Lúc đòn tấn công thường và trọng kích trị liệu cho nhân vật có HP từ 80% trở lên",
+    "burst": "Donning the Ceremonial Garment",
+    "c2": "Characters with 50% or less HP",
+    "c6": "After Normal and Charged Attacks heal a character with 80% or more HP",
     "c2SkillHeal": "<strong>Kurage's Oath</strong> Healing Bonus",
     "c2BurstHeal": "<strong>Nereid's Ascension</strong> Healing Bonus"
   },
   "page_home": {
-    "intro": "<0>Giới thiệu về Genshin Optimizer</0><1>Genshin Optimizer (GO) là một trang web mã nguồn mở do người hâm mộ tạo ra cho trò chơi gacha hành động nhập vai <1><strong>Genshin Impact</strong></1>. Nó chủ yếu nhằm mục đích giúp đỡ người chơi về khía cạnh phức tạp của trò chơi: Tối ưu hoá Thánh Di Vật. Vì Thánh Di Vật là các yếu tố dựa trên RNG (Random Number Generator) góp phần trực tiếp vào mức độ hiệu quả của các nhân vật của bạn trong trò chơi, GO sẽ cố gắng tìm các Thánh Di Vật tốt nhất cho các nhân vật dựa trên Túi chứa Thánh Di Vật hiện tại của bạn.</1><2>GO có thể theo dõi các Thánh Di Vật và cho phép dễ dàng hơn trong việc lọc/so sánh các Thánh Di Vật, nó đóng vai trò như một công cụ giúp người dùng tìm Thánh Di Vật tốt trong túi để tăng cấp và Thánh Di Vật xấu để sử dụng làm nguyên liệu cường hoá.</2><3>Vì GO có thể sao chép các chỉ số chính xác của bất kỳ nhân vật nào, cùng với việc tính toán tất cả các con số sát thương với độ chính xác lên đến 1%, GO cũng có thể tính sát thương và là công cụ tính toán lý thuyết.</3>",
+    "intro": "The <strong>ultimate</strong> <3><i>Genshin Impact</i></3> calculator, GO will keep track of your artifact/weapon/character inventory, and help you create the best build based on how you play, with what you have.",
     "quickLinksCard": {
-      "title": "Danh sách liên kết",
+      "title": "快速連結",
       "buttons": {
         "tyGuide": {
           "title": "Youtube Guide Playlist",
-          "tooltip": "Cách dùng công cụ tối ưu hóa Genshin"
+          "tooltip": "了解如何使用原神最佳化工具"
         },
         "scanners": {
-          "title": "Tự động nhập dữ liệu",
-          "tooltip": "Phần mềm từ phía thứ 3 cho phép thực hiện lấy dữ liệu tdv tự động"
+          "title": "自動掃描器",
+          "tooltip": "自動掃描遊戲中聖遺物的第三方程式"
         },
         "kqm": {
           "title": "KeqingMains",
           "tooltip": "Theorycrafting & guides community"
         },
         "devDiscord": {
-          "title": "Discord của nhà phát triển Genshin ",
-          "tooltip": "Cộng đồng các nhà phát triển dành cho Genshin"
+          "title": "原神開發者 Discord",
+          "tooltip": "原神開發者社群"
         },
         "good": {
-          "title": "Tài liệu về \"GOOD\"",
+          "title": "GOOD 文件",
           "tooltip": "Genshin Open Object Descriptor Documentation"
         },
         "patchNotes": {
-          "title": "Genshin Optimizer Patch Notes",
+          "title": "原神最佳化工具更新日誌",
           "tooltip": "All patch notes for GO"
         }
       }
     },
     "inventoryCard": {
-      "title": "ĐI ĐẾN túi đồ"
+      "title": "GO 庫存"
     },
     "vidGuideCard": {
-      "title": "Video hướng dẫn"
+      "title": "Video Guides"
     },
     "teamCard": {
-      "title": "Gặp nhóm chúng tôi",
+      "title": "Meet the Team",
       "jobTitle": {
-        "leadDev": "Trưởng nhóm phát triển",
-        "dev": "Nhà phát triển",
-        "mod": "Quản trị viên",
+        "leadDev": "Lead Developer",
+        "dev": "Developer",
+        "mod": "Moderator",
         "admin": "Admin",
         "translator": "Translations Manager",
         "TC": "TC Correspondant"
@@ -600,32 +576,32 @@
     "intro": "<0>Scanners</0><1>Scanners are Genshin tools that can automatically scan game data from screenshots or directly from the game.</1><2>Below are several scanners that have been tested with GO.</2><3>To upload the exported file, go to <1>Settings</1> page and upload your file in the <strong>Database Upload</strong> section.</3>",
     "ik": {
       "title": "Inventory Kamera",
-      "p1": "Ứng dụng này sẽ quét tất cả các nhân vật + vũ khí + thánh di vật trong túi của bạn. Làm theo hướng dẫn trong ứng dụng để thiết lập. Ứng dụng này chỉ quét bằng ngôn ngữ tiếng Anh."
+      "p1": "This light-weight app will scan all the characters, weapons and artifacts in your inventory. Follow the instructions in the app to set it up."
     },
     "am": {
-      "title": "「天目」-- Amenoma",
-      "p1": "Quét tất cả các thánh di vật của bạn trong túi của bạn. Làm theo hướng dẫn để chụp cửa sổ và quét. Có cả phiên bản tiếng Trung và tiếng Anh. (Tải xuống phiên bản <1>_EN.exe</1> để quét bằng tiếng Anh). Cả định dạng <3>mona-uranai</3> và <5>GOOD</5> đều được chấp nhận trong GO. Nên sử dụng định dạng <7>GOOD</7>."
+      "title": "「天目」",
+      "p1": "Scans all you artifacts in your inventory. Follow the instructions to capture the window and scan. Has both Chinese and English versions (download the <1>_EN.exe</1> version to scan in English). GO only accepts the <1>GOOD</1> format."
     },
     "as": {
       "title": "AdeptiScanner",
-      "p1": "Quét tất cả thánh di vật của bạn trong túi. Có chế độ quét thủ công.",
-      "p2": "Ứng dụng này cũng có thể được thiết lập cho các thánh di vật mới trong các phiên bản mới nhất của Genshin mà không cần cập nhật."
+      "p1": "Scans all artifacts in your inventory. Has a manual scanning mode.",
+      "p2": "This scanner can also be configured for new artifacts in new game versions without needing an update."
     },
-    "goodeng": "Ứng dụng này chỉ quét bằng tiếng Anh và xuất sang định dạng GOOD.",
+    "goodeng": "This app only scans in English and exports to <1>GOOD</1> format.",
     "tosWarn": "As any tools that indirectly interact with the game, although their usage is virtually undetectable, <1>there could still be risk with using them.</1> User discretion is advised.",
     "tags": {
-      "pc": "PC",
+      "pc": "桌機",
       "mobile": "Mobile",
       "ps": "PlayStation",
       "gameMani": "Automatic Control",
       "materials": "Materials",
-      "characters": "Characters",
+      "characters": "角色",
       "weapons": "Weapons",
       "achievements": "Achievements"
     },
     "nb": {
       "title": "Artiscan",
-      "p1": "This web-based scanner can capture your game window, scan from a screenshot, or scan from a video. The screenshot/video capture can be fullscreen and does not need to be cropped.",
+      "p1": "這個基於網頁的掃描工具能夠擷取到你的遊戲視窗，並從螢幕截圖或影片中掃描。",
       "p2": "Mobile/PlayStation can only be scanned from screenshots or video."
     },
     "ak": {
@@ -633,34 +609,31 @@
       "p1": "Automatically scans artifacts as well as characters and weapons. Allows exporting of past scans as it keeps a history within the app. Scans only in English.",
       "p2": "This app is also able to scan achievements for <1>Paimon.moe</1> and <1>Seelie.me</1>."
     },
-    "seelieme": "Phần mềm này cũng có thể quét dữ liệu cho <1> Seelie.me </1>."
+    "seelieme": "This app can also scan materials for <1>Seelie.me</1>"
   },
   "weapon_Akuoumaru": {
-    "party": "Tổng giới hạn năng lượng nguyên tố"
+    "party": "Party energy capacity"
   },
   "artifact_ArchaicPetra": {
-    "condName": "Nhận hạt kết tinh"
-  },
-  "artifact_TenacityOfTheMillelith": {
-    "condName": "Kỹ năng nguyên tố trúng kẻ địch"
+    "condName": "After obtaining a Crystallize Shard"
   },
   "artifact_ViridescentVenerer": {
-    "condName": "Khuếch tán nguyên tố"
+    "condName": "Element Swirled"
   },
   "weapon_CinnabarSpindle": {
-    "name": "Tăng sát thương tấn công thường"
+    "name": "Effect is active"
   },
   "weapon_ElegyForTheEnd": {
-    "condName": "Ca khúc thời đại nghìn năm: Bài ca ly biệt"
+    "condName": "Under the effects of Millennial Movement: Farewell Song"
   },
   "weapon_MouunsMoon": {
-    "party": "Tổng giới hạn năng lượng nguyên tố"
+    "party": "Party energy capacity"
   },
   "weapon_ThrillingTalesOfDragonSlayers": {
-    "condName": "Đổi nhân vật"
+    "condName": "After switching from this character"
   },
   "weapon_WavebreakersFin": {
-    "party": "Tổng giới hạn năng lượng nguyên tố"
+    "party": "Party energy capacity"
   },
   "artifact_BlizzardStrayer": {
     "condName": "Enemy is",
@@ -722,22 +695,13 @@
     "duringBurst": "During the duration of Stormbreaker",
     "tidecallerMaxDmg": "After unleashing Tidecaller with its maximum DMG bonus",
     "a4charge": "Reduced delay before unleashing Charged Attacks",
-    "c4dmg": "Stunning Revenge Electro DMG",
-    "burstDmgRed_": "DMG Reduction"
+    "c4dmg": "Stunning Revenge Electro DMG"
   },
   "char_Bennett": {
     "skill": {
-      "pressDMG": "Press DMG",
-      "lvl1_1DMG": "Lvl 1 1st Hit DMG",
-      "lvl1_2DMG": "Lvl 1 2nd Hit DMG",
-      "lvl2_1DMG": "Lvl 2 1st Hit DMG",
-      "lvl2_2DMG": "Lvl 2 2nd Hit DMG",
-      "explDMG": "Explosion DMG",
       "lvl1CD": "Lvl 1 CD",
       "lvl2CD": "Lvl 2 CD"
     },
-    "additionalATK": "Additional ATK Increase",
-    "additionalATKRatio_": "Additional ATK Bonus Ratio",
     "c4DMG": "Unexpected Odyssey DMG",
     "c6PyroInfusion": "<pyro>Sword, Claymore and Polearm Pyro Infusion"
   },
@@ -800,14 +764,11 @@
     "c1PullSpeed": "Pulling speed increased"
   },
   "char_Kaeya": {
-    "c2burstDuration": "Increase duration by 2.5s per opponent defeated during, up to 15s",
-    "p1heal": "Healing",
-    "c1cond": "Opponent is affected by Cryo"
+    "c2burstDuration": "Increase duration by 2.5s per opponent defeated during, up to 15s"
   },
   "char_Keqing": {
     "c1DMG": "Thundering Might DMG",
-    "recast": "After recasting <strong>Stellar Restoration</strong>",
-    "effectTriggers": "Effect triggers"
+    "recast": "After recasting <strong>Stellar Restoration</strong>"
   },
   "char_Klee": {
     "a1CondName": "Carrying an Explosive Spark",
@@ -821,7 +782,6 @@
   },
   "char_Mona": {
     "omen": "Opponent is affected by Omen",
-    "bubbleDuration": "Illusory Bubble Duration",
     "hitOp": {
       "affectedByOmen": "After hitting an opponent affected by Omen"
     },
@@ -848,7 +808,6 @@
   "char_Sayu": {
     "burstHits": "Number of Muji-Muji Daruma Activations",
     "p2Heal": "Nearby character healing",
-    "p2Aoe": "Increased attack AoE",
     "c1Text": "Muji-Muji Daruma will ignore HP limits and can simultaneously attack nearby opponents and heal characters",
     "c2KickPressDmg_": "Fuufuu Whirlwind Kick Press DMG Bonus",
     "c2KickDmg_": "Fuufuu Whirlwind Kick DMG Bonus",
@@ -859,7 +818,6 @@
   "char_Shenhe": {
     "quill": "Icy Quills active",
     "c4": "Skyfrost Mantra stack",
-    "c4Bonus_": "Skyfrost Mantra Bonus",
     "pressQuota": "Press Trigger Quota",
     "holdQuota": "Hold Trigger Quota",
     "pressDuration": "Press Duration",
@@ -868,8 +826,6 @@
   "char_Thoma": {
     "a2": "Fiery Collapse DMG Increase",
     "c2": "<strong>Crimson Ooyoroi</strong> Duration Increase",
-    "maxShield": "Maximum DMG Absorption",
-    "maxPyroShield": "Maximum Pyro DMG Absorption",
     "refreshBarrier": "After obtaining or refreshing a <strong>Blazing Barrier</strong>"
   },
   "char_Xiangling": {
@@ -881,11 +837,9 @@
   },
   "char_Xiao": {
     "burst": {
-      "autoAtkDmgBonus_": "Normal/Charged/Plunging Attack DMG Bonus",
       "lifeDrain_": "Life Drain",
       "currentHPPerSec": "(Current HP/s)",
       "incJump": "Greatly increases jumping ability",
-      "incAtkAoe": "Increases attack AoE",
       "inBurst": "Under the effects of <strong>Bane of All Evil</strong>",
       "stack": "Time spent in <strong>Bane of All Evil</strong>"
     },
@@ -902,12 +856,6 @@
         "1": "Shield Level 1 Pyro DMG Absorption",
         "2": "Shield Level 2 Pyro DMG Absorption",
         "3": "Shield Level 3 Pyro DMG Absorption"
-      },
-      "shieldLevel": "Shield level",
-      "shieldLevels": {
-        "1": "1: Ad Lib",
-        "2": "2: Lead-In",
-        "3": "3: Rave"
       }
     },
     "p1": {
@@ -948,7 +896,6 @@
       "sealsConsumed": "Seals consumed by using a Charged Attack"
     },
     "passive2": {
-      "chargedCrit": "Charged Attack deals a CRIT hit",
       "key": "Blazing Eye DMG"
     },
     "c1": {
@@ -983,11 +930,7 @@
     "condName": "Opponent is a Slime"
   },
   "weapon_Deathmatch": {
-    "condName": "Total Opponents Nearby",
-    "opponents": {
-      "oneOrNone": "Less than two opponents",
-      "moreThanOne": "At least two opponents"
-    }
+    "condName": "Total Opponents Nearby"
   },
   "weapon_DragonspineSpear": {
     "aoeDmg": "Everfrost Icicle DMG",
@@ -1071,9 +1014,6 @@
     }
   },
   "char_KukiShinobu": {
-    "skill": {
-      "cost": "% Current HP"
-    },
     "a4": {
       "heal": "Ele. Skill Healing Increase"
     },
@@ -1089,40 +1029,39 @@
       "condName": "Number of opponents marked by Lifeline"
     },
     "c6": {
-      "condName": "In the Mastermind state",
       "dmg": "Mastermind Breakthrough Barb DMG"
     }
   },
   "page_character": {
-    "addNew": "Add New Character",
+    "addNew": "新增角色",
     "tabs": {
-      "overview": "Overview",
-      "talent": "Talents",
+      "overview": "總覽",
+      "talent": "天賦",
       "teambuffs": "Team Buffs",
       "optimize": "Optimize",
-      "theorycraft": "Theorycraft"
+      "theorycraft": "理論分析"
     },
     "formulas": "Formulas",
     "calculations": "Calculations",
-    "selectCharacter": "Select a Character",
+    "selectCharacter": "選擇一個角色",
     "removeCharacter": "Are you sure you want to remove {{value}}?",
-    "delete": "Delete Character",
+    "delete": "刪除角色",
     "teammates": "Teammates",
     "showingNum_one": "Showing <1>{{count}}</1> out of {{value}} Character",
     "showingNum_other": "Showing <1>{{count}}</1> out of {{value}} Characters",
     "hitmode": {
-      "hit": "Non Crit DMG",
-      "avgHit": "Avg. DMG",
-      "critHit": "Crit Hit DMG"
+      "hit": "無暴擊傷害",
+      "avgHit": "平均傷害",
+      "critHit": "暴擊傷害"
     },
     "tabEquip": {
-      "swapWeapon": "Đổi vũ khí",
-      "swapArt": "Đổi thánh di vật",
-      "compare": "So sánh với bộ tdv hiện tại",
-      "unequipArts": "Unequip all artifacts"
+      "swapWeapon": "替換武器",
+      "swapArt": "替換聖遺物",
+      "compare": "Compare with current Build",
+      "unequipArts": "卸下所有聖遺物"
     },
-    "characterName": "Tên nhân vật",
-    "teammate": "Teammate {{count}}",
+    "characterName": "角色名稱",
+    "teammate": "隊友 {{count}}",
     "noReaction": "No Reactions",
     "multiTarget": {
       "title": "Multi-Optimization Target Config",
@@ -1150,31 +1089,31 @@
       "maxRollsMain": "Because at least one mainstat has the same stat, this substat can have a maximum of {{value}} rolls."
     },
     "tabTeambuff": {
-      "team_reso": "Team Resonance",
-      "resonance_tip": "The party must be full with 4 characters in order for elemental resonance to take effect."
+      "team_reso": "元素共鳴",
+      "resonance_tip": "隊伍中需要有 4 位角色才能觸發元素共鳴。"
     }
   },
   "page_weapon": {
-    "showingNum_one": "Đang hiện <1>{{count}}</1> trên {{value}} Vũ khí",
-    "showingNum_other": "Đang hiện <1>{{count}}</1> trên tổng {{value}} Vũ khí",
-    "edit": "Điều chỉnh Vũ khí",
-    "weaponName": "Tên vũ khí",
-    "removeWeapon": "Bạn có chắc bạn muốn xóa {{value}}?",
-    "addWeapon": "Thêm Vũ khí mới"
+    "showingNum_one": "Showing <1>{{count}}</1> out of {{value}} Weapon",
+    "showingNum_other": "Showing <1>{{count}}</1> out of {{value}} Weapons",
+    "edit": "編輯武器",
+    "weaponName": "武器名稱",
+    "removeWeapon": "您確定要移除 {{value}} 嗎？",
+    "addWeapon": "新增武器"
   },
   "weapon_AquaSimulacra": {
-    "condName": "Kẻ địch ở gần"
+    "condName": "Opponents nearby"
   },
   "weapon_FadingTwilight": {
     "states": {
-      "evengleam": "Chạng Vạng",
-      "afterglow": "Lưu Hà",
-      "dawnblaze": "Hừng Đông"
+      "evengleam": "Evengleam",
+      "afterglow": "Afterglow",
+      "dawnblaze": "Dawnblaze"
     },
-    "condName": "Trạng thái hiện tại"
+    "condName": "Current state"
   },
   "weapon_HaranGeppakuFutsu": {
-    "consumed": "Tầng đã tiêu hao từ hiệu ứng \"mũi sóng\""
+    "consumed": "Stacks of Wavespike consumed"
   },
   "char_Collei": {
     "sproutDmg": "Sprout DMG",
@@ -1184,11 +1123,9 @@
     "c2MultiplierKey_": "Jinni Toop Multiplier",
     "c2DmgKey": "Jinni Toop DMG",
     "c4ConnectedBelowHp": "Character connected to Jinni and below 50% HP",
-    "c4ConnectedBelowEner": "Character connected to Jinni and below 50% Energy",
-    "c6Heal": "Normal Attack Healing"
+    "c4ConnectedBelowEner": "Character connected to Jinni and below 50% Energy"
   },
   "char_ShikanoinHeizou": {
-    "declensionStacks": "Declension Stacks",
     "takingField": "After taking the field"
   },
   "char_Tighnari": {
@@ -1209,19 +1146,19 @@
   "page_character_optimize": {
     "mainStat": {
       "levelAssTooltip": {
-        "title": "Main Stat Level Assumption",
-        "desc": "Changes mainstat value to be at least a specific level. Does not change substats."
+        "title": "主詞條等級強化",
+        "desc": "改變主詞條等級到可提升副詞條的最低特定等級。不能改變副詞條。"
       },
       "assumptionLvl": {
-        "no": "No Main Stat Lv. Assumption",
-        "lvl": "Assume Main Stat at least Lv. {{lvl}}"
+        "no": "假設主詞條不提升等級",
+        "lvl": "假設主詞條至少為 {{lvl}} 級"
       },
       "title": "Main Stat Filter/Configuration"
     },
     "tcGraph": {
       "vs": "Graph Optimization Target vs.",
       "notSel": "Not Selected",
-      "downloadData": "Download Data",
+      "downloadData": "下載資料",
       "desc": "Using data from the builder, this will generate a graph to visualize Optimization Target vs. the selected Graph Target. The graph will show the maximum Optimization Target value per 0.01 of the selected Graph Target. Enabling this is optional, and doing so will slow down build times",
       "showStatThr": "Show Stat Threshold Line",
       "generatedBuilds": "Generated Builds",
@@ -1230,30 +1167,30 @@
       "highlightedBuilds": "Highlighted Builds",
       "buildAlreadyInList": "Build is already in the list"
     },
-    "levelFilter": "Artifact Level Filter",
+    "levelFilter": "聖遺物等級過濾器",
     "allowPartial": "Allow Partial Builds (<5 artifacts)",
     "constraintFilter": {
       "title": "Minimum Build Constraints",
       "tooltip": "Set certain minimum requirements that generated builds must conform to. e.g. Generated builds must have at least 140% Energy Recharge."
     },
     "artSetConfig": {
-      "title": "Artifact Set Configuration",
+      "title": "聖遺物套裝偏好設定",
       "setEffCond": "Set Effect Conditionals",
       "enabled": "Enabled",
       "allowed": "Allowed",
-      "excluded": "Excluded",
-      "selected": "Selected",
+      "excluded": "已排除",
+      "selected": "已選擇",
       "2rainbow": "3-Rainbow",
       "4rainbow": "5-Rainbow",
-      "allowAll2set": "Allow All 2-Set",
-      "excludeAll2set": "Exclude All 2-Set",
-      "allowAll4set": "Allow All 4-Set",
-      "excludeAll4set": "Exclude All 4-Set",
+      "allowAll2set": "允許所有兩件套裝",
+      "excludeAll2set": "排除所有兩件套裝",
+      "allowAll4set": "允許所有四件套裝",
+      "excludeAll4set": "排除所有四件套裝",
       "alExRainbow": "<0>Allow <1></1></0> / <2>Exclude <1></1></2> Rainbow Builds",
       "modal": {
         "setCond": {
           "title": "Artifact Set Conditional Effects",
-          "reset": "Reset Conditionals",
+          "reset": "重設條件",
           "text": "Some artifact set effects provide conditional stats. This window allows you to select those effects, so they can contribute stats when a build that satifies a set effect is calculated during optimization."
         },
         "ArtSetFilter": {
@@ -1281,7 +1218,7 @@
     },
     "selectTargetFirst": "Select an Optimization Target first",
     "generateButton": {
-      "cancel": "Cancel",
+      "cancel": "取消",
       "generateBuilds": "Generate Builds"
     },
     "removeBuildButton": "Remove Build",
@@ -1289,12 +1226,9 @@
     "currentlyEquippedBuild": "Currently Equipped",
     "addBuildToList": "Add build to list",
     "graphBuildLabel": "Graph #<1>{{count}}</1>",
-    "workerLoadFailed": "Worker failed to load. Click here to reload the page and try again",
     "excludeArt": {
       "title_exclude": "Excluded Artifacts",
       "title_tooltip": "Add artifacts to this character's exclusion list. Artifacts in the exclusion list will not be considered for build generation.",
-      "usingNum_one": "Using <1>{{count}}</1> excluded artifacts",
-      "usingNum_other": "Using <1>{{count}}</1> excluded artifacts",
       "excNum_one": "<0>{{count}}</0> artifact is excluded",
       "excNum_other": "<0>{{count}}</0> artifacts are excluded",
       "addExc": "Add artifact to this character's exclusion list",
@@ -1303,8 +1237,8 @@
       "excludeArtifactTip": "Excluding an artifact will prevent the build generator from using it for this character.",
       "excluded": "This artifact is excluded.",
       "included": "This artifact is not excluded.",
-      "button_txt": "Exclude Artifacts",
-      "usingNum": "Using <1>{{totalStr}}</1> excluded artifact(s)"
+      "usingNum": "Using <1>{{totalStr}}</1> excluded artifact(s)",
+      "button_txt": "Exclude Artifacts"
     },
     "excludeChar": {
       "title": "Equipped Artifact Configuration",
@@ -1330,9 +1264,6 @@
     "bonusStats": {
       "title": "Bonus Stats"
     }
-  },
-  "weapon_CalamityQueller": {
-    "inactiveKey": "Off Field Bonus"
   },
   "weapon_ForestRegalia": {
     "condName": "After picking up a Leaf of Consciousness"
@@ -1377,26 +1308,23 @@
     },
     "c2": {
       "key": "Rockcore Meltdown DMG"
-    },
-    "c4": {
-      "energyRestore": "Energy restored per shockwave hit"
     }
   },
   "page_newTab": {
-    "title": "🛑New Optimizer Tab Detected🛑",
-    "p1": "It seems that you've opened Genshin Optimizer in another tab💞. GO is not intended to operate on multiple tabs📵, doing so can result in:",
+    "title": "🛑 偵測到新的 Optimizer 分頁 🛑",
+    "p1": "你似乎在其他分頁開啟了原神最佳化工具 💞。本工具沒有針對多分頁進行設計📵，這可能會導致：",
     "symptom": {
-      "1": "Data desync between tabs🙃.",
-      "2": "Database corruption💔.",
-      "3": "Upset stomach🤰 and frustruated Genshin Optimizer Devs😡.",
-      "4": "In rare cases, DEATH☠️."
+      "1": "不同分頁的資料不會同步🙃。",
+      "2": "資料庫損壞 💔。",
+      "3": "胃部不適🤰，並且讓原神最佳化工具的開發者們感到沮喪 😡。",
+      "4": "在極少數的情況下還會掛掉☠️。"
     },
-    "p2": "We've prevented this from happening by showing you this message📝. You now have the choice of either:",
+    "p2": "我們透過這段訊息來阻止這些事情發生 📝，你有以下選擇：",
     "choice": {
-      "1": "Close this tab🔪, and use the new tab🆕.",
-      "2": "Close the new tab↩️, and once you are sure this is the one and ONLY tab🔂, you can refresh this page🔄."
+      "1": "關閉目前的分頁 🔪，然後在新分頁繼續使用🆕。",
+      "2": "關閉新的分頁 ↩️，並確保目前的分頁是唯一的 GO 網頁 🔂，重新整理此分頁 🔄。"
     },
-    "refresh": "Refresh Page"
+    "refresh": "重新整理頁面"
   },
   "char_Candace": {
     "hydroInfusion": "<hydro>Sword, Claymore and Polearm Hydro Infusion</hydro>"
@@ -1413,7 +1341,6 @@
       "dance2": "Sword Dance 2-Hit DMG",
       "whirl1": "Whirling Steps 1-Hit DMG",
       "whirl2": "Whirling Steps 2-Hit DMG",
-      "moon": "Watery Moon DMG",
       "wheel": "Water Wheel DMG"
     },
     "passive1": {
@@ -1421,9 +1348,6 @@
       "notDendroHydroTeam": "Hint: Set your team with only Dendro and Hydro characters to see additional conditionals and effects",
       "condName": "After being hit by a <dendro>Dendro attack</dendro> while affected by Golden Chalice's Bounty",
       "bountifulCores": "Bloom reaction will create Bountiful Cores"
-    },
-    "c1": {
-      "moon_dmg_": "Watery Moon DMG Bonus"
     },
     "c4": {
       "condName": "After the third dance step of Pirouette hits opponents"
@@ -1484,7 +1408,6 @@
     "projectionDmg": "Projection Attack DMG"
   },
   "char_Yaoyao": {
-    "a4Heal": "White Jade Radish Explosion Healing",
     "inExplosionAoE": "After being in a <strong>White Jade Radish</strong> explosion's AoE",
     "inLegacy": "In Adeptal Legacy state",
     "megaDmg": "Mega Radish DMG",
@@ -1519,106 +1442,6 @@
     "dotHeal": "Additional Healing",
     "critHitDuringBurst": "After Flame-Mane's Fist deals a CRIT hit"
   },
-  "editor": {
-    "title": "Trình chỉnh sửa Thánh Di Vật",
-    "rarity": "Phẩm chất",
-    "level": "Cấp độ",
-    "unknownPieceName": "Tên món TDV không rõ",
-    "unknownSetName": "Unknown Set Name",
-    "curSubEff": "RV hiện tại",
-    "curSubEffDesc": "Mỗi 4 cấp thánh di vật sẽ có thêm 1 chỉ số phụ. <strong>Hiệu suất chỉ số phụ</strong> thể hiện chỉ số phụ đã rolls cao thấp bao nhiêu theo tỉ lệ phần trăm.",
-    "maxSubEff": "Hiệu suất chỉ số phụ tối đa",
-    "maxSubEffDesc": "<strong>Hiệu suất chỉ số phụ tối đa</strong> của một thánh di vật được tính theo giá trị tối đa của những lần nâng cấp còn lại.",
-    "substat": {
-      "selectSub": "Chọn chỉ số phụ",
-      "error": {
-        "noCalc": "Không thể tính được chỉ số roll.",
-        "noOverRoll": "Chỉ số phụ không thể roll nhiều hơn {{value}} lần"
-      },
-      "noRoll": "Không có roll",
-      "RollCount_one": "{{count}} Roll",
-      "RollCount_other": "{{count}} Rolls",
-      "noStat": "Không có giá trị",
-      "eff": "Hiệu suất: <1></1>",
-      "noSubstat": "Không có chỉ số phụ",
-      "substatFormat": "Chỉ số phụ {{value}}",
-      "nextRolls": "Rolls kế tiếp:"
-    },
-    "preview": "Xem trước Thánh Di Vật",
-    "dupArt": "Thánh di vật trùng lặp",
-    "upArt": "Thánh di vật đã được nâng cấp",
-    "beforeEdit": "Trước khi sửa",
-    "btnSave": "Lưu Thánh Di Vật",
-    "btnAdd": "Thêm Thánh Di Vật",
-    "btnClear": "Xóa",
-    "btnRandom": "Ngẫu nhiên",
-    "btnUpdate": "Nâng cấp thánh di vật",
-    "clearPrompt": "Đang có thánh di vật trong trình chỉnh sửa. Bạn có chắc chắn muốn xóa không?"
-  },
-  "slot": "Vị Trí",
-  "setEffectNum": "Bộ {{setNum}} món",
-  "slotName": {
-    "flower": "Hoa Sự Sống",
-    "plume": "Lông vũ tử vong",
-    "sands": "Cát thời gian",
-    "goblet": "Ly không gian",
-    "circlet": "Nón lý trí"
-  },
-  "info": {
-    "title": "Hướng dẫn Chỉnh sửa/Quản lý Thánh Di Vật",
-    "section1": "<0>Rolls của chỉ số phụ</0><1><1>Số rolls</1> của chỉ số phụ được hiển thị phía bên trái của chỉ số phụ đó. Càng nhiều rolls thì càng màu mè:<3></3>.</1><2>Hiệu suất chỉ số phụ</2><3>Hiệu suất của một chỉ số phụ là tỉ lệ phần trăm của giá trị hiện tại với giá trị tiềm năng cao nhất của thánh di vật 5 <1></1>. Từ trong hình, giá trị roll cao nhất của Sát thương bạo kích là 7.8%. Hiệu suất: <3>5.8/7.8 = 69.2%.</3></3><4>Hiệu suất hiên tại đối với Hiệu suất tiềm năng cao nhất</4><5>Khi một thánh di vật 5<1></1> có tất cả 9(4+5) rolls, và tất cả các rolls đều có giá trị cao nhất, thì nó là thánh di vật có hiệu suất 100%. Tuy nhiên, đa số là chuyện đó khó mà xảy ra. <3>Hiệu suất hiện tại</3> của một thánh di vật là tỉ lệ phần trăm hiệu suất đối với thánh di vật có 100% hiệu suất. <5>Hiệu suất tối đa</5> là hiệu suất cao nhất mà thánh di vật có thể đạt được, nếu tất cả rolls còn lại đạt giá trị tối đa.</5><6>Khóa thánh di vật</6><7>Bằng việc khóa thánh di vật <1></1> sẽ làm cho thánh di vật đó không được chọn khi tạo build. Thánh di vật đã được trang bị sẽ mặc định bị khóa.</7>",
-    "section2": "<0>Trình chỉnh sửa thánh di vật</0><1>Trình chỉnh sửa có đầy đủ chức năng, có thể chấp nhận thánh di vật từ 3<1></1> tới 5<3></3>. Khi một chỉ số phụ được nhập, nó có thể tính toán chính xác giá trị của rolls và hiệu suất. Nó cũng có thể đưa ra con số chính xác về mỗi roll của thánh di vật đó, cùng với các số liệu xác thực khác.</1><2>Quét hình ảnh</2><3>Bạn lười phải nhập chỉ số bằng tay? Bạn có thể quét thánh di vật bằng hình ảnh! Ở trang Trình chỉnh sửa thánh di vật, bấm vào <1>Cách chụp hình chính xác!</1> để có thể biết thêm chi tiết.</3><4>Phát hiện thánh di vật bị trùng lặp/ đã được nâng cấp</4><5>Bạn có biết GO có thể phát hiện ra thánh di vật bị <1>trùng lặp</1> cái mà đã có trong hệ thống? Nó cũng có thể phát hiện nếu thánh di vật trong trình chỉnh sửa là phiên bản <3>nâng cấp</3> của thánh di vật có sẵn. Một khi phát hiện trùng lặp hoặc đã nâng cấp bạn có thể xem trước để so sánh hai thánh di vật này(Xem hình).</5>",
-    "section3": "<0>Túi thánh di vật</0><1>Tất cả những thánh di vật đã thêm vào của bạn được hiển thị ở đây. Bộ lọc ở đây cho phép bạn tìm kiếm thánh di vật dễ hơn. </1><2>Ví dụ: Tìm Thánh Di vật làm nguyên liệu cường hoá</2><3>Bằng bộ lọc bạn có thể tìm kiếm thánh di vật làm nguyên liệu cường hoá nhanh hơn.</3><4>Ở ví dụ này, bộ được thiết lập như này: </4><5><0>Thánh Di Vật không khóa trong túi.</0><1>Với chỉ số phụ: Tấn công và phòng ngự.</1><2>Xếp theo thứ tự hiệu suất tối đa tăng dần</2></5><6>Một khi thánh di vật đã được đem làm nguyên liệu cường hoá, bấm vào <1>Xóa thánh di vật</1> để xóa thánh di vật vừa được lọc.</6>"
-  },
-  "artifactFilter": "Bộ lọc Thánh Di Vật",
-  "efficiencyFilter": {
-    "title": "Chỉ số phụ để dùng ở công thức tính hiệu suất"
-  },
-  "filterLocation": {
-    "location": "Characters",
-    "inventory": "Túi",
-    "currentlyEquipped": "Đang trang bị"
-  },
-  "button": {
-    "unequipArtifacts": "Gỡ Thánh Di Vật",
-    "deleteArtifacts": "Xóa Thánh Di Vật",
-    "lockArtifacts": "Khoá Thánh di vật",
-    "unlockrtifacts": "Mở khoá Thánh di vật"
-  },
-  "buttonHint": "Ghi chú: Các nút màu đỏ ở trên chỉ áp dụng cho <1>bộ lọc thánh di vật</1>",
-  "tipsOfTheDay": [
-    "RV tối đa của một Thánh Di Vật 4 sao rơi vào khoảng 540%.",
-    "RV tối đa của một Thánh Di Vật thường sẽ giảm đi khi bạn nâng nó lên: Đó là chuyện bình thường!",
-    "Các thuộc tính phụ có số \"1\" là những cái khó quét nhất trong ảnh chụp.",
-    "Nếu tất cả số lần nhảy chỉ số (6 lần) đều vào một dòng, nó sẽ có màu tím!",
-    "Nhấn vào \"Chi Tiết\" khi bạn đang nâng thánh di vật trong game để có thể đồng thời vừa nâng vừa quét.",
-    "Giờ bạn có thể tải lên nhiều ảnh chụp thánh di vật để quét!"
-  ],
-  "sortMap": {
-    "level": "Cấp",
-    "efficiency": "Hiệu suất hiện tại.",
-    "mefficiency": "Hiệu suất tối đa."
-  },
-  "mainStat": "Chỉ số chính",
-  "showingNum_one": "Showing <1>{{count}}</1> out of {{value}} Artifact",
-  "showingNum_other": "Showing <1>{{count}}</1> out of {{value}} Artifacts",
-  "resetFilters": "Cài lại bộ lọc",
-  "edit": "Edit Artifact",
-  "autocompleteLabels": {
-    "sets": "Artifact Sets",
-    "mainStats": "Main Stats",
-    "substats": "Sub-Stats",
-    "set": "Artifact Set"
-  },
-  "substat_one": "{{count}} substat",
-  "substat_other": "{{count}} substats",
-  "sub_one": "{{count}} sub",
-  "sub_other": "{{count}} subs",
-  "addNew": "Add New Artifact",
-  "cantDeleteLock": "Cannot delete artifact because it is locked",
-  "equippedArt": "All Equipped Artifacts",
-  "artInInv": "All Unequipped Artifacts",
-  "locationsTooltip": "Disable \"All Equipped Artifacts\" to filter by specific characters",
   "char_Mika": {
     "inSoulwind": "In the Soulwind state",
     "numDetectorStacks": "Detector",

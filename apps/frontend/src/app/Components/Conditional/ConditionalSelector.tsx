@@ -1,6 +1,8 @@
+import { deletePropPath, layeredAssignment } from '@genshin-optimizer/util'
 import { CheckBox, CheckBoxOutlineBlank } from '@mui/icons-material'
 import type { ButtonProps } from '@mui/material'
 import { Button, ButtonGroup, Divider, MenuItem } from '@mui/material'
+import structuredClone from 'core-js-pure/actual/structured-clone'
 import { useCallback, useContext } from 'react'
 import { CharacterContext } from '../../Context/CharacterContext'
 import { DataContext } from '../../Context/DataContext'
@@ -9,7 +11,6 @@ import type {
   IDocumentConditionalExclusive,
   IDocumentConditionalMultiple,
 } from '../../Types/sheet'
-import { deletePropPath, layeredAssignment } from '@genshin-optimizer/util'
 import DropdownButton from '../DropdownMenu/DropdownButton'
 import SqBadge from '../SqBadge'
 import { Translate } from '../Translate'

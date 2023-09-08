@@ -152,9 +152,6 @@
     }
   },
   "char_Eula": {
-    "skillC": {
-      "name": "Grimheart"
-    },
     "burstC": {
       "name": "Lightfall Sword",
       "start5": "เริ่มต้นที่ 5 stacks",
@@ -165,15 +162,11 @@
       "name": "Consume <strong>Grimheart</strong> stacks",
       "durationStack": "6 วินาที + 6 วินาที ต่อ stack สูงสุด 18 วินาที"
     },
-    "passive1": "Shattered Lightfall Sword DMG",
-    "c4C": {
-      "name": "ศัตรูมีพลังชีวิตต่ำกว่า 50% "
-    }
+    "passive1": "Shattered Lightfall Sword DMG"
   },
   "char_Noelle": {
     "p4cd": "24 วินาที, -1 วินาที ทุก ๆ การโจมตี 4 ครั้ง",
-    "c6duration": "15 วินาที, +1 วินาทีต่อการฆ่า สูงสุด 10 วินาที",
-    "qlarger": "ขอบเขตการโจมตีกว้างขึ้น"
+    "c6duration": "15 วินาที, +1 วินาทีต่อการฆ่า สูงสุด 10 วินาที"
   },
   "char_Venti": {
     "addAimed": "ความเสียหายการเล็งโจมตีเพิ่มเติม",
@@ -209,9 +202,7 @@
       "skill": "หลังจากใช้งานสกิลธาตุ",
       "burst": "หลังจากใช้งานท่าไม้ตาย"
     },
-    "increase": {
-      "atk": "พลังโจมตีเพิ่มขึ้น"
-    }
+    "afterSprint": "หลังจากการเคลื่อนที่แบบพิเศษ"
   },
   "weapon_SongOfBrokenPines": {
     "name": "ได้รับสถานะ Millennial Movement: Banner-Hymn"
@@ -220,8 +211,7 @@
     "c1": "เมื่อใช้สกิล <strong>Kazuha Slash</strong> จะรีเซ็ตระยะเวลาของสกิลธาตุ",
     "c2": "อยู่ในพื้นที่ของ Autumn Whirlwind",
     "c6": {
-      "after": "หลังจากใช้งาน <strong>Chihayaburu</strong> หรือ <strong>Kazuha Slash</strong>",
-      "bonus": "โบนัสความเสียหายจากการโจมตีปกติ, ชาร์จโจมตี และโจมตีพุ่งลงจากอากาศ"
+      "after": "หลังจากใช้งาน <strong>Chihayaburu</strong> หรือ <strong>Kazuha Slash</strong>"
     },
     "skillPlunge": "Midare Ranzan"
   },
@@ -232,7 +222,6 @@
     }
   },
   "char_KamisatoAyaka": {
-    "afterSprint": "หลังจากการเคลื่อนที่แบบพิเศษ",
     "afterSprintCryo": "แปะธาตุ <cryo> น้ำแข็ง </cryo> หลังการเคลื่อนที่แบบพิเศษ",
     "snowflakeDMG": "ความเสียหายการฟันขนาดเล็ก",
     "dmgBySnowflake": "ศัตรูได้รับความเสียหายจาก <strong>Kamisato Art: Soumetsu</strong>"
@@ -263,9 +252,6 @@
   "char_Aloy": {
     "skill": {
       "coil": "Coil",
-      "coil1": "Coil 1 สแต็ค",
-      "coil2": "Coil 2 สแต็ค",
-      "coil3": "Coil 3 สแต็ค",
       "rush": "สถานะ Rushing Ice",
       "rushState": "ระหว่างสถานะ Rushing Ice (1 สแต็คต่อวินาที)"
     },
@@ -286,9 +272,6 @@
   },
   "artifact_ArchaicPetra": {
     "condName": "เก็บผลึก Crystallize"
-  },
-  "artifact_TenacityOfTheMillelith": {
-    "condName": "สกิลธาตุโดนศัตรู"
   },
   "artifact_ViridescentVenerer": {
     "condName": "ธาตุที่ถูกกระจาย"
@@ -368,22 +351,13 @@
     "duringBurst": "ในระยะเวลาการทำงานของ Stormbreaker",
     "tidecallerMaxDmg": "ปลดปล่อย Tidecaller ที่ความเสียหายขั้นสูงสุด",
     "a4charge": "เวลาที่ต้องใช้ก่อนเริ่มชาร์จโจมตีลดลง",
-    "c4dmg": "ความเสียหายธาตุไฟฟ้า",
-    "burstDmgRed_": "ลดความเสียหายที่ได้รับ"
+    "c4dmg": "ความเสียหายธาตุไฟฟ้า"
   },
   "char_Bennett": {
     "skill": {
-      "pressDMG": "ความเสียหายการกดธรรมดา",
-      "lvl1_1DMG": "ความเสียหายครั้งที่ 1 ของการชาร์จระดับ 1",
-      "lvl1_2DMG": "ความเสียหายครั้งที่ 2 ของการชาร์จระดับ 1",
-      "lvl2_1DMG": "ความเสียหายครั้งที่ 1 ของการชาร์จระดับ 2",
-      "lvl2_2DMG": "ความเสียหายครั้งที่ 2 ของการชาร์จระดับ 2",
-      "explDMG": "ความเสียหายระเบิดครั้งสุดท้ายของการชาร์จระดับ 2",
       "lvl1CD": "เวลาคูลดาวน์เมื่อชาร์จระดับ 1",
       "lvl2CD": "เวลาคูลดาวน์เมื่อชาร์จระดับ 2"
     },
-    "additionalATK": "พลังโจมตีเพิ่มขึ้น",
-    "additionalATKRatio_": "ได้รับอัตราส่วนโบนัสโจมตีเพิ่มขึ้น",
     "c4DMG": "ความเสียหายท่า Unexpected Odyssey",
     "c6PyroInfusion": "<pyro>ดาบ, ดาบใหญ่ และหอกได้รับการเคลือบธาตุไฟ"
   },
