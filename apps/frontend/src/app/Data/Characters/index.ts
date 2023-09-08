@@ -27,6 +27,7 @@ import Dori from './Dori'
 import Eula from './Eula'
 import Faruzan from './Faruzan'
 import Fischl from './Fischl'
+import Freminet from './Freminet'
 import Ganyu from './Ganyu'
 import Gorou from './Gorou'
 import HuTao from './HuTao'
@@ -109,6 +110,7 @@ const characters: Record<CharacterSheetKey, CharacterSheet> = {
   Eula,
   Faruzan,
   Fischl,
+  Freminet,
   Ganyu,
   Gorou,
   HuTao,
