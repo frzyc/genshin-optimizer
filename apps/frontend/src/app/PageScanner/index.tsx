@@ -249,20 +249,25 @@ export default function PageScanner() {
                   <Computer sx={{ pr: 0.5 }} />
                   {t('tags.pc') as string}
                 </SqBadge>
-                <WarningWrapper>
-                  <SqBadge
-                    color="warning"
-                    sx={{ display: 'flex', alignItems: 'center' }}
-                  >
-                    <Warning sx={{ pr: 0.5 }} />
-                    {t('tags.gameMani') as string}
-                  </SqBadge>
-                </WarningWrapper>
+                <SqBadge
+                  sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}
+                >
+                  <AnvilIcon />
+                  {t('tags.weapons') as string}
+                </SqBadge>
               </Typography>
               <Typography gutterBottom>
                 <Trans t={t} i18nKey="as.p1">
-                  Scans all artifacts in your inventory. Has a manual scanning
-                  mode.
+                  Scans all artifacts and weapons in your inventory. Has a
+                  manual scanning mode and can also import via
+                  <Link
+                    href="https://enka.network/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Enka.Network
+                  </Link>
+                  .
                 </Trans>
               </Typography>
               <Typography gutterBottom>
