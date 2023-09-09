@@ -22,12 +22,8 @@
   },
   "as": {
     "title": "AdeptiScanner",
-    "p1": "Scans all artifacts in your inventory. Has a manual scanning mode.",
+    "p1": "Scans all artifacts and weapons in your inventory. Has a manual scanning mode and can also import data from <1>Enka.Network</1>.",
     "p2": "This scanner can also be configured for new artifacts in new game versions without needing an update."
-  },
-  "am": {
-    "title": "「天目」— Amenoma",
-    "p1": "Scans all you artifacts in your inventory. Follow the instructions to capture the window and scan. Has both Chinese and English versions (download the <1>_EN.exe</1> version to scan in English). GO only accepts the <1>GOOD</1> format."
   },
   "ak": {
     "title": "Akasha Scanner",
