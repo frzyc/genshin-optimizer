@@ -1,6 +1,12 @@
+import {
+  deletePropPath,
+  evalIfFunc,
+  layeredAssignment,
+} from '@genshin-optimizer/util'
 import { CheckBox, CheckBoxOutlineBlank } from '@mui/icons-material'
 import type { ButtonProps } from '@mui/material'
 import { Button, ButtonGroup, Divider, MenuItem } from '@mui/material'
+import structuredClone from 'core-js-pure/actual/structured-clone'
 import { useCallback, useContext } from 'react'
 import { CharacterContext } from '../../Context/CharacterContext'
 import { DataContext } from '../../Context/DataContext'
@@ -9,7 +15,6 @@ import type {
   IDocumentConditionalExclusive,
   IDocumentConditionalMultiple,
 } from '../../Types/sheet'
-import { deletePropPath, layeredAssignment } from '@genshin-optimizer/util'
 import DropdownButton from '../DropdownMenu/DropdownButton'
 import SqBadge from '../SqBadge'
 import { Translate } from '../Translate'
@@ -22,7 +27,11 @@ export default function ConditionalSelector({
   conditional,
   disabled = false,
 }: ConditionalSelectorProps) {
-  if (Object.keys(conditional.states).length === 1 && 'path' in conditional) {
+  const { data } = useContext(DataContext)
+  if (
+    Object.keys(evalIfFunc(conditional.states, data)).length === 1 &&
+    'path' in conditional
+  ) {
     return (
       <SimpleConditionalSelector
         conditional={conditional}
@@ -69,7 +78,7 @@ function SimpleConditionalSelector({
   )
 
   const conditionalValue = data.get(conditional.value).value
-  const [stateKey, st] = Object.entries(conditional.states)[0]
+  const [stateKey, st] = Object.entries(evalIfFunc(conditional.states, data))[0]
   const badge = getStateBadge(st.name)
   const condName = getCondName(conditional.name)
 
@@ -111,9 +120,8 @@ function ExclusiveConditionalSelector({
   )
 
   const conditionalValue = data.get(conditional.value).value
-  const state = conditionalValue
-    ? conditional.states[conditionalValue]
-    : undefined
+  const condStates = evalIfFunc(conditional.states, data)
+  const state = conditionalValue ? condStates[conditionalValue] : undefined
   const badge = state ? (
     getStateBadge(state.name)
   ) : (
@@ -126,7 +134,7 @@ function ExclusiveConditionalSelector({
       fullWidth
       size="small"
       sx={{ borderRadius: 0 }}
-      color={conditionalValue ? 'success' : 'primary'}
+      color={conditionalValue && state ? 'success' : 'primary'}
       title={
         <span>
           {condName} {badge}
@@ -142,18 +150,16 @@ function ExclusiveConditionalSelector({
         <span>Not Active</span>
       </MenuItem>
       <Divider />
-      {Object.entries(conditional.states)
-        .sort((a, b) => (a[0] < b[0] ? -1 : 1))
-        .map(([stateKey, st]) => (
-          <MenuItem
-            key={stateKey}
-            onClick={() => setConditional(stateKey)}
-            selected={conditionalValue === stateKey}
-            disabled={conditionalValue === stateKey}
-          >
-            {st.name}
-          </MenuItem>
-        ))}
+      {Object.entries(condStates).map(([stateKey, st]) => (
+        <MenuItem
+          key={stateKey}
+          onClick={() => setConditional(stateKey)}
+          selected={conditionalValue === stateKey}
+          disabled={conditionalValue === stateKey}
+        >
+          {st.name}
+        </MenuItem>
+      ))}
     </DropdownButton>
   )
 }
@@ -187,26 +193,28 @@ function MultipleConditionalSelector({
       disableElevation
       color="secondary"
     >
-      {Object.entries(conditional.states).map(([stateKey, st]) => {
-        const conditionalValue = data.get(st.value).value
-        const isSelected = conditionalValue === stateKey
-        return (
-          <Button
-            color={isSelected ? 'success' : 'primary'}
-            disabled={disabled}
-            fullWidth
-            key={stateKey}
-            onClick={() =>
-              setConditional(st.path, conditionalValue ? undefined : stateKey)
-            }
-            size="small"
-            startIcon={isSelected ? <CheckBox /> : <CheckBoxOutlineBlank />}
-            sx={{ borderRadius: 0 }}
-          >
-            {getCondName(st.name)}
-          </Button>
-        )
-      })}
+      {Object.entries(evalIfFunc(conditional.states, data)).map(
+        ([stateKey, st]) => {
+          const conditionalValue = data.get(st.value).value
+          const isSelected = conditionalValue === stateKey
+          return (
+            <Button
+              color={isSelected ? 'success' : 'primary'}
+              disabled={disabled}
+              fullWidth
+              key={stateKey}
+              onClick={() =>
+                setConditional(st.path, conditionalValue ? undefined : stateKey)
+              }
+              size="small"
+              startIcon={isSelected ? <CheckBox /> : <CheckBoxOutlineBlank />}
+              sx={{ borderRadius: 0 }}
+            >
+              {getCondName(st.name)}
+            </Button>
+          )
+        }
+      )}
     </ButtonGroup>
   )
 }

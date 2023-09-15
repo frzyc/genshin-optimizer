@@ -19,14 +19,15 @@ import type { TriggerString } from '@genshin-optimizer/database'
 import type { IGOOD } from '@genshin-optimizer/gi-good'
 import { validateLevelAsc } from '@genshin-optimizer/gi-util'
 import { clamp, objKeyMap } from '@genshin-optimizer/util'
+import structuredClone from 'core-js-pure/actual/structured-clone'
 import { validateCustomMultiTarget } from '../../PageCharacter/CustomMultiTarget'
 import type {
   CustomMultiTarget,
   ICachedCharacter,
   IGOCharacter,
 } from '../../Types/character'
-import type { ArtCharDatabase } from '../Database'
 import { DataManager } from '../DataManager'
+import type { ArtCharDatabase } from '../Database'
 import type { IGO, ImportResult } from '../exim'
 import { GOSource } from '../exim'
 

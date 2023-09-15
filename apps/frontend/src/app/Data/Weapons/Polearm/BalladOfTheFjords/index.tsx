@@ -26,7 +26,7 @@ const data = dataObjForWeaponSheet(key, data_gen, {
 const sheet: IWeaponSheet = {
   document: [
     {
-      header: headerTemplate(key, st('passive')),
+      header: headerTemplate(key, st('talents.passive')),
       canShow: unequal(eleMas, undefined, 1),
       fields: [
         {

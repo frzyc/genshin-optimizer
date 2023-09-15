@@ -1,4 +1,5 @@
 import type { CharacterKey } from '@genshin-optimizer/consts'
+import structuredClone from 'core-js-pure/actual/structured-clone'
 import { useCallback, useContext } from 'react'
 import { DatabaseContext } from '../Database/Database'
 import type { ICachedCharacter } from '../Types/character'

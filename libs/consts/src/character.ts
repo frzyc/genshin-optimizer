@@ -82,6 +82,7 @@ export const nonTravelerCharacterKeys = [
   'Eula',
   'Faruzan',
   'Fischl',
+  'Freminet',
   'Ganyu',
   'Gorou',
   'HuTao',
