@@ -118,7 +118,7 @@ describe('example', () => {
     // Simple check that all tags are in the correct format
     const names: string[] = []
     for (const { name, move, ...tag } of listing.filter(
-      (x) => x.src === 'Nahida'
+      (x) => x.src === 'Nahida' && x.qt == 'formula' // exclude stats
     )) {
       names.push(name!)
       expect(name).toBeTruthy()
