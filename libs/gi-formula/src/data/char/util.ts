@@ -13,6 +13,7 @@ import { prod, subscript, sum } from '@genshin-optimizer/pando'
 import type { TagMapNodeEntries, FormulaArg, Stat } from '../util'
 import {
   addStatCurve,
+  registerStatListing,
   allStatics,
   customDmg,
   customShield,
@@ -145,7 +146,7 @@ export function entriesForChar(
     ),
 
     // Constants
-    ...[...specials].map((s) => selfBuff.common.special.add(s)),
+    ...[...specials].map((s) => registerStatListing(s)),
     selfBuff.common.weaponType.add(weaponType),
     selfBuff.char.ele.add(ele),
 

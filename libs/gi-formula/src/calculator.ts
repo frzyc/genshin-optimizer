@@ -1,8 +1,8 @@
 import type { AnyNode, CalcResult } from '@genshin-optimizer/pando'
 import { Calculator as Base, calculation } from '@genshin-optimizer/pando'
 import { assertUnreachable } from '@genshin-optimizer/util'
-import type { Tag } from './data/util'
-import { self } from './data/util'
+import type { Read, Tag } from './data/util'
+import { reader, self } from './data/util'
 
 const { arithmetic } = calculation
 
@@ -85,20 +85,10 @@ export class Calculator extends Base<CalcMeta> {
     }
   }
 
-  listFormulas(tag: Omit<Tag, 'qt' | 'q'> & { member: string }): Tag[] {
-    return this.get(self.formula.listing.withTag(tag).tag)
-      .map((listing) => {
-        const {
-          val,
-          meta: {
-            tag: { ...tag },
-          },
-        } = listing
-        // Clone and convert `tag` to appropriate shape
-        tag.q = val as string
-        return tag
-      })
-      .filter((x) => x.q)
+  listFormulas(read: Read): Read[] {
+    return this.get(read.tag)
+      .filter((x) => x.val)
+      .map(({ val, meta }) => reader.withTag(meta.tag!)[val as Read['accu']])
   }
 }
 export function res(x: number): number {

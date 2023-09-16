@@ -250,7 +250,9 @@ export function tag(
   v: number | string | AnyNode,
   tag: Tag
 ): TagOverride<AnyNode> {
-  return baseTag(v, tag)
+  return typeof v == 'object' && v.op == 'tag'
+    ? baseTag(v.x[0], { ...v.tag, ...tag }) // Fold nested tag nodes
+    : baseTag(v, tag)
 }
 export function tagVal(cat: keyof Tag): TagValRead {
   return baseTagVal(cat)

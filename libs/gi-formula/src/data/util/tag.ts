@@ -101,7 +101,6 @@ export const selfTag = {
     isActive: iso,
     weaponType: iso,
     critMode: fixed,
-    special: iso,
     cappedCritRate_: iso,
     count: isoSum,
     eleCount: fixed,
