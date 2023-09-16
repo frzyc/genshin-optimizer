@@ -36,7 +36,7 @@ export default defineConfig({
   resolve: {
     alias: [
       // e.g. Resolves '@genshin-optimizer/pando' -> 'libs/pando/src'
-      { find: /@genshin-optimizer(.*)/, replacement: resolve('libs/$1/src') },
+      { find: /@genshin-optimizer\/(.*)/, replacement: resolve('libs/$1/src') },
     ],
   },
 
