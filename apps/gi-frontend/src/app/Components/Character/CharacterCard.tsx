@@ -565,7 +565,10 @@ function Stats() {
   return (
     <Box sx={{ width: '100%' }}>
       {Object.keys(selfTag.base).map((key) => (
-        <NodeFieldDisplay calcResult={calc.compute(member0.base[key])} />
+        <NodeFieldDisplay
+          key={key}
+          calcResult={calc.compute(member0.base[key])}
+        />
       ))}
     </Box>
   )
@@ -579,7 +582,10 @@ function TempWeaponCard() {
     <Box>
       Weapon stats:
       {Object.keys(selfTag.weapon).map((key) => (
-        <NodeFieldDisplay calcResult={calc.compute(member0.weapon[key])} />
+        <NodeFieldDisplay
+          key={key}
+          calcResult={calc.compute(member0.weapon[key])}
+        />
       ))}
       {'atk: '}
       {
