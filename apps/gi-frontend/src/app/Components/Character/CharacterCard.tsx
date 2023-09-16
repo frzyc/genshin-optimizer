@@ -8,10 +8,7 @@ import {
   type CharacterKey,
 } from '@genshin-optimizer/consts'
 import { characterAsset } from '@genshin-optimizer/gi-assets'
-import type {
-  Calculator,
-  TagMapNodeEntries,
-} from '@genshin-optimizer/gi-formula'
+import type { Calculator } from '@genshin-optimizer/gi-formula'
 import {
   artifactsData,
   charData,
@@ -25,6 +22,7 @@ import {
 } from '@genshin-optimizer/gi-formula'
 import { ascensionMaxLevel } from '@genshin-optimizer/gi-util'
 import { read } from '@genshin-optimizer/pando'
+import { CardThemed } from '@genshin-optimizer/ui-common'
 import { range } from '@genshin-optimizer/util'
 import { Favorite, FavoriteBorder } from '@mui/icons-material'
 import {
@@ -44,11 +42,10 @@ import { DatabaseContext } from '../../Database/Database'
 import useCharMeta from '../../Hooks/useCharMeta'
 import useDBMeta from '../../Hooks/useDBMeta'
 import type { ICachedArtifact } from '../../Types/artifact'
-// import type { ICachedCharacter } from '../../Types/character'
-import { CardThemed } from '@genshin-optimizer/ui-common'
 import { iconAsset } from '../../Util/AssetUtil'
 import { NodeFieldDisplay } from '../FieldDisplay'
 
+// TODO: Add all this stuff back
 type CharacterCardProps = {
   characterKey: CharacterKey
   onClick?: (characterKey: CharacterKey) => void
@@ -321,7 +318,7 @@ function ExistingCharacterCardContent({
         {/* {isTeammateCard && (
           <WeaponFullCard weaponId={character.equippedWeapon} />
         )} */}
-        {/* <TempWeaponCard /> */}
+        <TempWeaponCard />
         {!isTeammateCard && !hideStats && <Stats />}
         {weaponChildren}
         {artifactChildren}
@@ -565,24 +562,11 @@ function Stats() {
   const { calc } = useContext(CalcContext)
   const member0 = convert(selfTag, { member: 'member0', et: 'self' })
   if (!calc) return null
-  console.log(member0.final)
   return (
     <Box sx={{ width: '100%' }}>
-      {Object.entries(member0.final).map(([_name, read]) => {
-        return <NodeFieldDisplay calcResult={calc.compute(read)} />
-      })}
-      {/* {Object.values(data.getDisplay().basic).map((n) => (
-        <NodeFieldDisplay key={JSON.stringify(n.info)} node={n} />
+      {Object.keys(selfTag.base).map((key) => (
+        <NodeFieldDisplay calcResult={calc.compute(member0.base[key])} />
       ))}
-      {data.get(input.special).info.name && (
-        <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
-          <Typography flexGrow={1}>
-            <strong>Specialized:</strong>
-          </Typography>
-          {data.get(input.special).info.icon}
-          <Typography>{data.get(input.special).info.name}</Typography>
-        </Box>
-      )} */}
     </Box>
   )
 }
@@ -594,10 +578,8 @@ function TempWeaponCard() {
   return (
     <Box>
       Weapon stats:
-      {Object.entries(member0.weapon).map(([name, read]) => (
-        <Box key={name}>
-          {name}: {calc.compute(read).val}
-        </Box>
+      {Object.keys(selfTag.weapon).map((key) => (
+        <NodeFieldDisplay calcResult={calc.compute(member0.weapon[key])} />
       ))}
       {'atk: '}
       {

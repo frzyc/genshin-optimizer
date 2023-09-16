@@ -14,6 +14,7 @@ export function NodeFieldDisplay({
   component?: React.ElementType
   emphasize?: boolean
 }) {
+  const formula = translate(calcResult).formula
   return (
     <Box
       width="100%"
@@ -27,11 +28,10 @@ export function NodeFieldDisplay({
     >
       <NodeFieldDisplayText calcResult={calcResult} />
       <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
-        <Typography noWrap>
-          {/* {multiDisplay}
-          {fieldVal} */}
-        </Typography>
-        {!!translate(calcResult).formula && (
+        <Typography noWrap></Typography>
+        {/* TODO: Add back */}
+        {/* {multiDisplay} */}
+        {!!formula && (
           <BootstrapTooltip
             placement="top"
             title={
@@ -41,6 +41,7 @@ export function NodeFieldDisplay({
                     <Skeleton variant="rectangular" width={300} height={30} />
                   }
                 >
+                  {/* TODO: Add back */}
                   {/* {allAmpReactionKeys.includes(node.info.variant as any) && (
                     <Box sx={{ display: 'inline-flex', gap: 1, mr: 1 }}>
                       <Box>
@@ -58,15 +59,16 @@ export function NodeFieldDisplay({
                       <Divider orientation="vertical" flexItem />
                     </Box>
                   )} */}
-                  <span>{translate(calcResult).formula}</span>
+                  <span>{formula}</span>
                 </Suspense>
               </Typography>
             }
           >
+            {/* TODO: Add back */}
             <Help
-              // onClick={onClick}
               fontSize="inherit"
               sx={{ cursor: 'help' }}
+              // onClick={onClick}
             />
           </BootstrapTooltip>
         )}
