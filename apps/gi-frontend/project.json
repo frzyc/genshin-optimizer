@@ -39,7 +39,10 @@
       }
     },
     "test": {
-      "executor": "@nx/vite:test"
+      "executor": "@nx/vite:test",
+      "options": {
+        "config": "apps/gi-frontend/vitest.config.ts"
+      }
     },
     "lint": {},
     "serve-static": {
