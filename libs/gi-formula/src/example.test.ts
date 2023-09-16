@@ -21,7 +21,7 @@ import {
   userBuff,
 } from './data/util'
 import { DebugCalculator } from './debug'
-import * as rawData from './example.test.json'
+import rawData from './example.test.json'
 import {
   artifactsData,
   charData,

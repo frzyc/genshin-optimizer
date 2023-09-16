@@ -1,5 +1,4 @@
 import { render } from '@testing-library/react'
-
 import App from './App'
 
 describe('App', () => {
@@ -10,6 +9,6 @@ describe('App', () => {
 
   it('should have a greeting as the title', () => {
     const { getByText } = render(<App />)
-    expect(getByText(/Welcome gi-frontend/gi)).toBeTruthy()
+    expect(getByText(/pageTitle/gi)).toBeTruthy()
   })
 })
