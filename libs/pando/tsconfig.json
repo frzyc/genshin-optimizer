@@ -3,7 +3,8 @@
   "compilerOptions": {
     "downlevelIteration": true,
     "esModuleInterop": true,
-    "types": ["vite/client"]
+    "types": ["vite/client"],
+    "module": "ES2022"
   },
   "files": [],
   "include": [],
