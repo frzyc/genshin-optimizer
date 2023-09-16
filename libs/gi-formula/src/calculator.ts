@@ -2,7 +2,7 @@ import type { AnyNode, CalcResult } from '@genshin-optimizer/pando'
 import { Calculator as Base, calculation } from '@genshin-optimizer/pando'
 import { assertUnreachable } from '@genshin-optimizer/util'
 import type { Read, Tag } from './data/util'
-import { reader, self } from './data/util'
+import { reader } from './data/util'
 
 const { arithmetic } = calculation
 
@@ -51,10 +51,10 @@ export class Calculator extends Base<CalcMeta> {
           CalcMeta
         >[]
         if (ops.length <= 1) {
-          if (ops.length && ops[0].meta.conds !== conds)
-            // Preserve `conds` even when short-circuiting
-            return { ...ops[0].meta, conds }
-          return ops[0]?.meta ?? constOverride()
+          let meta = ops[0]?.meta ?? constOverride()
+          if (meta.conds !== conds) meta = { ...meta, conds } // Use parent `conds` when short-circuiting
+          if (!meta.tag && tag) meta = { ...meta, tag }
+          return meta
         }
         if (op === 'prod' && val === 0) return constOverride()
         return { tag, op, ops, conds }
