@@ -3,8 +3,9 @@ import {
   allArtifactSlotKeys,
   allCharacterKeys,
 } from '@genshin-optimizer/consts'
-import type { ArtCharDatabase } from '../Database'
+import structuredClone from 'core-js-pure/actual/structured-clone'
 import { DataManager } from '../DataManager'
+import type { ArtCharDatabase } from '../Database'
 
 export interface IBuildResult {
   builds: string[][]

@@ -1,0 +1,35 @@
+{
+  "intro": "<0>Scanners</0><1>Scanners are Genshin tools that can automatically scan game data from screenshots or directly from the game.</1><2>Below are several scanners that have been tested with GO.</2><3>To upload the exported file, go to the <1>Settings</1> page and upload your file in the <strong>Database Upload</strong> section.</3>",
+  "tosWarn": "As any tools that indirectly interact with the game, although their usage is virtually undetectable, <1>there could still be risk with using them.</1> User discretion is advised.",
+  "tags": {
+    "pc": "PC",
+    "mobile": "Mobile",
+    "ps": "PlayStation",
+    "gameMani": "Automatic Control",
+    "materials": "Materials",
+    "characters": "Characters",
+    "weapons": "Weapons",
+    "achievements": "Achievements"
+  },
+  "nb": {
+    "title": "Artiscan",
+    "p1": "This web-based scanner can capture your game window, scan from a screenshot, or scan from a video. The screenshot/video capture can be fullscreen and does not need to be cropped.",
+    "p2": "Mobile/PlayStation can only be scanned from screenshots or video."
+  },
+  "ik": {
+    "title": "Inventory Kamera",
+    "p1": "This light-weight app will scan all the characters, weapons and artifacts in your inventory. Follow the instructions in the app to set it up."
+  },
+  "as": {
+    "title": "AdeptiScanner",
+    "p1": "Scans all artifacts and weapons in your inventory. Has a manual scanning mode and can also import data from <1>Enka.Network</1>.",
+    "p2": "This scanner can also be configured for new artifacts in new game versions without needing an update."
+  },
+  "ak": {
+    "title": "Akasha Scanner",
+    "p1": "Automatically scans artifacts as well as characters and weapons. Allows exporting of past scans as it keeps a history within the app. Scans only in English.",
+    "p2": "This app is also able to scan achievements for <1>Paimon.moe</1> and <1>Seelie.me</1>."
+  },
+  "goodeng": "This app only scans in English and exports to <1>GOOD</1> format.",
+  "seelieme": "This app can also scan materials for <1>Seelie.me</1>"
+}

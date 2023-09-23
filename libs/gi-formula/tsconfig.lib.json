@@ -4,5 +4,6 @@
     "outDir": "../../dist/out-tsc",
     "types": ["node"]
   },
-  "include": ["src/index.ts"]
+  "include": ["src/index.ts"],
+  "exclude": ["**/*.spec.ts", "vitest.config.ts", "src/example/test.json"]
 }

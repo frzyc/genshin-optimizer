@@ -11,6 +11,7 @@ import {
 } from '@genshin-optimizer/consts'
 import { artifactAsset } from '@genshin-optimizer/gi-assets'
 import type { IArtifact, ISubstat } from '@genshin-optimizer/gi-good'
+import { randomizeArtifact } from '@genshin-optimizer/gi-good'
 import { getMainStatDisplayStr } from '@genshin-optimizer/gi-util'
 import { useForceUpdate, usePromise } from '@genshin-optimizer/react-util'
 import { clamp } from '@genshin-optimizer/util'
@@ -34,11 +35,12 @@ import {
   Grid,
   MenuItem,
   Skeleton,
-  styled,
   Typography,
+  styled,
   useMediaQuery,
   useTheme,
 } from '@mui/material'
+import structuredClone from 'core-js-pure/actual/structured-clone'
 import type { ChangeEvent } from 'react'
 import {
   Suspense,
@@ -66,14 +68,13 @@ import ImgIcon from '../Components/Image/ImgIcon'
 import ModalWrapper from '../Components/ModalWrapper'
 import { getArtSheet } from '../Data/Artifacts'
 import Artifact from '../Data/Artifacts/Artifact'
-import { DatabaseContext } from '../Database/Database'
 import {
   cachedArtifact,
   validateArtifact,
 } from '../Database/DataManagers/ArtifactData'
+import { DatabaseContext } from '../Database/Database'
 import StatIcon from '../KeyMap/StatIcon'
 import type { ICachedArtifact } from '../Types/artifact'
-import { randomizeArtifact } from '@genshin-optimizer/gi-good'
 import ArtifactCard from './ArtifactCard'
 import SubstatEfficiencyDisplayCard from './ArtifactEditor/Components/SubstatEfficiencyDisplayCard'
 import SubstatInput from './ArtifactEditor/Components/SubstatInput'

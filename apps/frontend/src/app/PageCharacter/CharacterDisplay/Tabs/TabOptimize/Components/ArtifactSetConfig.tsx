@@ -20,6 +20,7 @@ import {
   Stack,
   Typography,
 } from '@mui/material'
+import structuredClone from 'core-js-pure/actual/structured-clone'
 import { useCallback, useContext, useEffect, useMemo, useState } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
 import SetEffectDisplay from '../../../../../Components/Artifact/SetEffectDisplay'
@@ -37,12 +38,12 @@ import type { dataContextObj } from '../../../../../Context/DataContext'
 import { DataContext } from '../../../../../Context/DataContext'
 import { getArtSheet, setKeysByRarities } from '../../../../../Data/Artifacts'
 import { artifactDefIcon } from '../../../../../Data/Artifacts/ArtifactSheet'
-import { DatabaseContext } from '../../../../../Database/Database'
 import type { ArtSetExclusionKey } from '../../../../../Database/DataManagers/BuildSettingData'
 import {
   allArtifactSetExclusionKeys,
   handleArtSetExclusion,
 } from '../../../../../Database/DataManagers/BuildSettingData'
+import { DatabaseContext } from '../../../../../Database/Database'
 import { UIData } from '../../../../../Formula/uiData'
 import { constant } from '../../../../../Formula/utils'
 import type { SetNum } from '../../../../../Types/consts'

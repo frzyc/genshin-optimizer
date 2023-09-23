@@ -23,9 +23,11 @@ export default function ConditionalDisplay({
   let fields
   if ('path' in conditional) {
     const condVal = data.get(conditional.value).value
-    fields = condVal && conditional.states[condVal]?.fields
+    const condStates = evalIfFunc(conditional.states, data)
+    fields = condVal && condStates[condVal]?.fields
   } /* if ("path" in Object.entries(conditional.states)[0]) */ else {
-    fields = Object.values(conditional.states).flatMap((state) => {
+    const condStates = evalIfFunc(conditional.states, data)
+    fields = Object.values(condStates).flatMap((state) => {
       const stateVal = data.get(state.value).value
       return stateVal ? state.fields : []
     })
