@@ -11,6 +11,8 @@ import {
   threshold,
 } from './utils'
 
+// Note/Warning: changing `optimize` implementation will break several of these tests.
+
 describe('differentiate', () => {
   const x = dynRead('x')
   const y = dynRead('y')
