@@ -164,8 +164,14 @@ export class UpOptCalculator {
    * @param nodes Formulas to find upgrades for. nodes[0] is main objective, the rest are constraints.
    * @param thresholds Constraint values. thresholds[0] will be auto-populated with current objective value.
    * @param build Build to check 1-swaps against.
+   * @param artifacts List of artifacts to consider upgrading.
    */
-  constructor(nodes: OptNode[], thresholds: number[], build: UpOptBuild) {
+  constructor(
+    nodes: OptNode[],
+    thresholds: number[],
+    build: UpOptBuild,
+    artifacts: ICachedArtifact[]
+  ) {
     this.baseBuild = build
     this.nodes = nodes
     this.thresholds = thresholds
@@ -196,10 +202,12 @@ export class UpOptCalculator {
         }
       })
     }
+
+    artifacts.forEach((art) => this._addArtifact(art))
   }
 
   /** Adds an artifact to be tracked by UpOptCalc. It is initially un-evaluated. */
-  addArtifact(art: ICachedArtifact) {
+  _addArtifact(art: ICachedArtifact) {
     const maxLevel = artMaxLevel[art.rarity]
     const mainStatVal = getMainStatDisplayValue(
       art.mainStatKey,
