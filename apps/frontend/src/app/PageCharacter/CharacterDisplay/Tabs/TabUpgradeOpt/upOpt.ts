@@ -113,6 +113,7 @@ type GaussianMixture = {
   upper: number
 }
 
+// TODO: put this into a `constants` files somewhere.
 /* substat roll weights */
 const fWeight: StrictDict<SubstatKey, number> = {
   hp: 6,
