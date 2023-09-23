@@ -283,7 +283,7 @@ export class UpOptCalculator {
    *   of each constraint (rather than their product). If multiple Gaussians are
    *   present in `distr[]`, they are aggregated following standard mixture distribution methods.
    */
-  toResultFast(
+  _toResultFast(
     distr: { prob: number; mu: number[]; cov: number[] }[]
   ): UpOptResult {
     let ptot = 0
@@ -342,7 +342,7 @@ export class UpOptCalculator {
       return { mu, sig2 }
     })
 
-    this.artifacts[ix].result = this.toResultFast([
+    this.artifacts[ix].result = this._toResultFast([
       {
         prob: 1,
         mu: gaussians.map(({ mu }) => mu),
@@ -393,7 +393,7 @@ export class UpOptCalculator {
       }
     })
 
-    this.artifacts[ix].result = this.toResultFast(distr)
+    this.artifacts[ix].result = this._toResultFast(distr)
   }
 
   /**
@@ -402,7 +402,7 @@ export class UpOptCalculator {
    *   non-zero covariances. The probabilities are evaluated using `mvncdf` and aggregated
    *   following standard mixture distribution methods.
    */
-  toResultSlow(
+  _toResultSlow(
     distr: { prob: number; mu: number[]; cov: number[][] }[]
   ): UpOptResult {
     let ptot = 0
@@ -467,7 +467,7 @@ export class UpOptCalculator {
       distrs.push({ prob, mu, cov })
     })
 
-    this.artifacts[ix].result = this.toResultSlow(distrs)
+    this.artifacts[ix].result = this._toResultSlow(distrs)
   }
 
   /**
@@ -513,7 +513,7 @@ export class UpOptCalculator {
       })
     })
 
-    this.artifacts[ix].result = this.toResultSlow(distrs)
+    this.artifacts[ix].result = this._toResultSlow(distrs)
   }
 
   /**
@@ -522,7 +522,7 @@ export class UpOptCalculator {
    * Exact results have no variance, so we can directly check each upgrade branch
    *   to compute the exact probability and upgrade value.
    */
-  toResult3(distr: { prob: number; val: number[] }[]): UpOptResult {
+  _toResultExact(distr: { prob: number; val: number[] }[]): UpOptResult {
     let ptot = 0
     let upAvgtot = 0
     const gmm = distr.map(({ prob, val }) => {
@@ -593,7 +593,7 @@ export class UpOptCalculator {
       })
     })
 
-    this.artifacts[ix].result = this.toResult3(distrs)
+    this.artifacts[ix].result = this._toResultExact(distrs)
   }
 
   /**
@@ -657,7 +657,7 @@ export class UpOptCalculator {
       })
     })
 
-    this.artifacts[ix].result = this.toResult3(distrs)
+    this.artifacts[ix].result = this._toResultExact(distrs)
   }
 }
 
