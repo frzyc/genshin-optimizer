@@ -77,39 +77,18 @@ export function ddx(
 
     case 'min':
     case 'max': {
-      if (f.operands.length === 1) return ddx(f.operands[0], binding, x)
-      else if (f.operands.length === 2) {
-        const [arg1, arg2] = f.operands
-        if (operation === 'min')
-          return threshold(
-            arg1,
-            arg2,
-            ddx(arg2, binding, x),
-            ddx(arg1, binding, x)
-          )
-        if (operation === 'max')
-          return threshold(
-            arg1,
-            arg2,
-            ddx(arg1, binding, x),
-            ddx(arg2, binding, x)
-          )
-        break
-      } else {
-        if (operation === 'min')
-          return ddx(
-            min(f.operands[0], min(...f.operands.slice(1))),
-            binding,
-            x
-          )
-        if (operation === 'max')
-          return ddx(
-            max(f.operands[0], max(...f.operands.slice(1))),
-            binding,
-            x
-          )
-        break
+      let out = ddx(f.operands[0], binding, x)
+      for (let i = 1; i < f.operands.length; i++) {
+        const op_i = f.operands[i]
+        if (operation === 'min') {
+          const cmp_i = min(...f.operands.slice(0, i))
+          out = threshold(op_i, cmp_i, out, ddx(op_i, binding, x))
+        } else if (operation === 'max') {
+          const cmp_i = max(...f.operands.slice(0, i))
+          out = threshold(op_i, cmp_i, ddx(op_i, binding, x), out)
+        }
       }
+      return out
     }
     case 'threshold': {
       const [value, thr, pass, fail] = f.operands
