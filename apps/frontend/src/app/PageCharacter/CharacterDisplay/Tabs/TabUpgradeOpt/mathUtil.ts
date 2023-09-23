@@ -80,11 +80,27 @@ export function factorial(n: number) {
  * Multinomial distribution with 4 uniform bins. Returns probability of (n1, n2, n3, n4) given N total rolls.
  * Algebraically = N! / (n1! n2! n3! n4!) * (1/4)^N
  *
+ * Note: Implementation relies on factorials. Don't use with N > 12.
+ *
  * @param ni rolls numbers for each bin. Expects exactly 4 `ni` and for their sum to equal `N`.
  */
-function multinomial4(ni: number[], N: number) {
-  if (ni.reduce((a, b) => a + b) !== N) return 0
-  return factorial(N) * ni.reduce((prv, v) => prv / factorial(v), 1) * 4 ** -N
+function multinomial4(
+  n1: number,
+  n2: number,
+  n3: number,
+  n4: number,
+  N: number
+) {
+  if (n1 + n2 + n3 + n4 !== N) return 0
+
+  return (
+    (factorial(N) /
+      factorial(n1) /
+      factorial(n2) /
+      factorial(n3) /
+      factorial(n4)) *
+    4 ** -N
+  )
 }
 
 /** Crawl the upgrade distribution for `n` upgrades, with a callback function that accepts fn([n1, n2, n3, n4], prob) */
@@ -102,7 +118,7 @@ export function crawlUpgrades(
     for (let i2 = n - i1; i2 >= 0; i2--) {
       for (let i3 = n - i1 - i2; i3 >= 0; i3--) {
         const i4 = n - i1 - i2 - i3
-        const p_combination = multinomial4([i1, i2, i3, i4], n)
+        const p_combination = multinomial4(i1, i2, i3, i4, n)
         fn([i1, i2, i3, i4], p_combination)
       }
     }
