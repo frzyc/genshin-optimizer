@@ -94,7 +94,6 @@ export function ddx(
             ddx(arg1, binding, x),
             ddx(arg2, binding, x)
           )
-        assertUnreachable(operation)
         break
       } else {
         if (operation === 'min')
@@ -109,7 +108,6 @@ export function ddx(
             binding,
             x
           )
-        assertUnreachable(operation)
         break
       }
     }
