@@ -1,0 +1,42 @@
+name: Deploy GO (WR) PR
+run-name: Deploy GO (WR) for ${{ github.event.number }}${{ github.event.inputs.deployment_name }} - ${{ github.event.pull_request.title }}${{ github.event.inputs.ref }}
+
+on:
+  pull_request:
+    branches:
+      - master
+    paths-ignore:
+      - 'apps/gi-frontend/**'
+      - 'apps/gi-frontend-e2e/**'
+      - 'apps/sr-frontend/**'
+      - 'apps/sr-frontend-e2e/**'
+      - 'libs/sr-assets/**'
+      - 'libs/sr-consts/**'
+      - 'libs/sr-dm/**'
+      - 'libs/sr-formula/**'
+      - 'libs/sr-stats/**'
+    types: [opened, reopened, synchronize, ready_for_review]
+  workflow_dispatch:
+    inputs:
+      repo_full_name:
+        description: 'Full repository name to build from.'
+        type: string
+        default: 'frzyc/genshin-optimizer'
+      ref:
+        description: 'Ref to build from. Can be a commit hash.'
+        type: string
+        default: 'master'
+      deployment_name:
+        description: 'Name for the deployment. This will determine the URL. If you choose a name that is already deployed, it will overwrite that deployment.'
+        type: string
+        default: 'master'
+
+jobs:
+  call-deploy-frontend:
+    uses: ./.github/workflows/deploy-frontend.yml
+    with:
+      frontend-name: 'frontend'
+      repo_full_name: ${{ github.event.inputs.repo_full_name }}
+      ref: ${{ github.ref }}
+      deployment_name: ${{ github.event.number }}
+    secrets: inherit
