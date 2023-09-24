@@ -8,7 +8,7 @@ import { deepFreeze } from '@genshin-optimizer/util'
 import type { ArtCharDatabase } from '../Database'
 import { DataManager } from '../DataManager'
 
-interface ICharMeta {
+export interface ICharMeta {
   rvFilter: SubstatKey[]
   favorite: boolean
 }

@@ -38,8 +38,8 @@ function FooterContent() {
             Genshin Optimizer Version:
             <a
               href={
-                import.meta.env.NX_URL_GITHUB_GO_CURRENT_VERSION ||
-                `${import.meta.env.NX_URL_GITHUB_GO}/releases`
+                import.meta.env['NX_URL_GITHUB_GO_CURRENT_VERSION'] ||
+                `${import.meta.env['NX_URL_GITHUB_GO']}/releases`
               }
               target="_blank"
               rel="noreferrer"

@@ -4,7 +4,7 @@ import type { ArtCharDatabase } from '../Database'
 import { DataEntry } from '../DataEntry'
 import type { IGO, IGOOD, ImportResult } from '../exim'
 
-interface IDBMeta {
+export interface IDBMeta {
   name: string
   lastEdit: number
   gender: GenderKey
