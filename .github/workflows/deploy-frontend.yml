@@ -68,7 +68,7 @@ jobs:
         run: |
           NX_URL_GITHUB_GO_CURRENT_VERSION="https://github.com/${{ inputs.repo_full_name }}/commit/$(git rev-parse HEAD)" \
           NX_DAEMON="false" \
-          yarn run nx run frontend:build-webpack:production --base-href=""
+          yarn run nx run ${{inputs.frontend_name}}:build:production --base-href=""
       - name: Checkout external gh-pages
         uses: actions/checkout@v3
         with:
