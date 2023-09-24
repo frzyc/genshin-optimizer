@@ -25,4 +25,5 @@ jobs:
       repo_full_name: ${{ github.repository }}
       ref: ${{ github.ref }}
       deployment_name: ${{ github.event.number }}
+      pr_repo: ${{ vars.PR_REPO }}
     secrets: inherit

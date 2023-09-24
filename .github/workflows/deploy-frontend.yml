@@ -19,6 +19,9 @@ on:
         description: 'Name for the deployment. This will determine the URL. If you choose a name that is already deployed, it will overwrite that deployment.'
         type: string
         default: 'master'
+      pr_repo:
+        description: 'Name of the repo to create the deployment on'
+        type: string
 
 jobs:
   deploy:
@@ -69,8 +72,7 @@ jobs:
       - name: Checkout external gh-pages
         uses: actions/checkout@v3
         with:
-          # TODO: Verify this
-          repository: ${{ vars.PR_REPO }}
+          repository: ${{ inputs.pr_repo }}
           ssh-key: ${{ secrets.PR_REPO_SSH_KEY }}
           ref: gh-pages
           path: gh-pages
@@ -90,7 +92,7 @@ jobs:
       - name: Export url
         id: export-url
         run: |
-          IFS=/ read -r account repo <<< ${{ vars.PR_REPO }}
+          IFS=/ read -r account repo <<< ${{ inputs.pr_repo }}
           echo "url=Deployed $(git rev-parse HEAD) to https://$account.github.io/$repo/${{ inputs.deployment_name }}/${{ inputs.frontend_name }} (Takes 3-5 minutes after this completes to be available)" >> $GITHUB_OUTPUT
           echo "Deployed $(git rev-parse HEAD) to https://$account.github.io/$repo/${{ inputs.deployment_name }}/${{ inputs.frontend_name }} (Takes 3-5 minutes after this completes to be available)"
       - name: Output date
