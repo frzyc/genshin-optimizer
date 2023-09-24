@@ -1,5 +1,5 @@
 name: Deploy Frontend
-run-name: Deploy frontend of ${{ github.event.inputs.frontend_name }} for ${{ github.event.number }}${{ github.event.inputs.deployment_name }} - ${{ github.event.pull_request.title }}${{ github.event.inputs.ref }}
+run-name: Deploy frontend of ${{ inputs.frontend_name }} for ${{ inputs.deployment_name }} - ${{ github.event.inputs.ref }}
 
 on:
   workflow_call:
@@ -23,6 +23,7 @@ on:
 jobs:
   deploy:
     # Skip for drafts or for forked PRs, as they lack secret access and cannot deploy
+    # TODO: Verify this
     if: |
       (github.event_name == 'workflow_dispatch')
       || (
@@ -68,6 +69,7 @@ jobs:
       - name: Checkout external gh-pages
         uses: actions/checkout@v3
         with:
+          # TODO: Verify this
           repository: ${{ vars.PR_REPO }}
           ssh-key: ${{ secrets.PR_REPO_SSH_KEY }}
           ref: gh-pages
