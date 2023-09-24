@@ -87,8 +87,8 @@ jobs:
       - name: Move to external gh-pages
         run: |
           mkdir --parents "gh-pages/${{ inputs.deployment_name }}/${{ inputs.frontend_name }}"
-          rm -rfv "gh-pages/${{ inputs.deployment_name }}/${{inputs.frontend_name }}" || true
-          mv "dist/apps/${{ inputs.deployment_name }}" "gh-pages/${{ inputs.deployment_name }}/${{ inputs.frontend_name }}"
+          rm -rfv "gh-pages/${{ inputs.deployment_name }}/${{ inputs.frontend_name }}" || true
+          mv "dist/apps/${{ inputs.deployment_name }}/${{ inputs.frontend_name }}" "gh-pages/${{ inputs.deployment_name }}/${{ inputs.frontend_name }}"
       - name: Make commit to deploy
         run: |
           git config user.name "github-actions[bot]"
