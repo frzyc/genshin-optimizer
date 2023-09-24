@@ -62,8 +62,9 @@ jobs:
         if: github.event_name != 'workflow_dispatch'
         with:
           body: |
-            <!-- ${{ inputs.frontend_name }} -->[${{ steps.output-date.outputs.date }}] - Building version ${{ github.sha }}
-          body-include: '<!-- ${{ inputs.frontend_name }} -->'
+            [${{ inputs.frontend_name }}] [${{ steps.output-date.outputs.date }}] - Building version ${{ github.sha }}
+          body-include: '<!-- Created by actions-cool/maintain-one-comment -->'
+          update-mode: 'append'
       - name: Build genshin-optimizer (Webpack)
         if: inputs.frontend_name == 'frontend'
         run: |
@@ -111,5 +112,6 @@ jobs:
         if: github.event_name != 'workflow_dispatch'
         with:
           body: |
-            <!-- ${{ inputs.frontend_name }} -->[${{ steps.output-date2.outputs.date }}] - ${{ steps.export-url.outputs.url }}
-          body-include: '<!-- ${{ inputs.frontend_name }} -->'
+            [${{ inputs.frontend_name }}] [${{ steps.output-date2.outputs.date }}] - ${{ steps.export-url.outputs.url }}
+          body-include: '<!-- Created by actions-cool/maintain-one-comment -->'
+          update-mode: 'append'
