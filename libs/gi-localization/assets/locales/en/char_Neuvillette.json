@@ -1,6 +1,6 @@
 {
-  "a1Cond": "Past Draconic Glories stacks",
-  "judgmentSpecialMult_": "Charged Attack: Equitable Judgment Special Multiplier",
-  "judgment_critDMG_": "Charged Attack: Equitable Judgment Crit DMG",
+  "a1Cond": "Past Draconic Glories",
+  "judgmentSpecialMult_": "Equitable Judgment Mult.",
+  "judgment_critDMG_": "Equitable Judgment CRIT DMG",
   "currentDmg": "Current DMG"
 }

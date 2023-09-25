@@ -18,7 +18,7 @@ const key: WeaponKey = 'TomeOfTheEternalFlow'
 const data_gen = allStats.weapon.data[key]
 
 const hp_arr = data_gen.refinementBonus.hp_
-const charged_dmg_arr = [-1, 0.12, 0.15, 0.18, 0.21, 0.24]
+const charged_dmg_arr = [-1, 0.14, 0.18, 0.22, 0.26, 0.30]
 
 const hp_ = equal(
   input.weapon.key,

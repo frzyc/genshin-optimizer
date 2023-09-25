@@ -11,6 +11,7 @@ import {
   infoMut,
   lookup,
   naught,
+  unequal,
   percent,
   prod,
 } from '../../../Formula/utils'
@@ -99,7 +100,7 @@ const a1Stacks_judgmentSpecialMult_ = greaterEq(
   lookup(
     condA1Stacks,
     objKeyMap(a1StacksArr, (stack) => percent(1 + dm.passive1.dmg_[stack])),
-    naught
+    percent(1)
   )
 )
 
@@ -258,11 +259,6 @@ const sheet: ICharacterSheet = {
               name: ct.chg('auto.skillParams.7'),
             }),
           },
-          {
-            text: ct.chg('auto.skillParams.8'),
-            value: dm.charged.hpThresh * 100,
-            unit: st('percentMaxHP'),
-          },
         ],
       },
       ct.condTem('passive1', {
@@ -286,12 +282,13 @@ const sheet: ICharacterSheet = {
         })),
       }),
       ct.headerTem('constellation2', {
-        canShow: greaterEq(input.asc, 1, 1),
+        canShow: greaterEq(input.asc, 1, unequal(condA1Stacks, undefined, 1)),
         fields: [
           {
             node: infoMut(c2Judgment_critDMG_, {
               name: ct.ch('judgment_critDMG_'),
             }),
+            fixed: 0,
           },
         ],
       }),
@@ -384,7 +381,7 @@ const sheet: ICharacterSheet = {
         path: condA4HpPath,
         name: st('percentCurrentHP'),
         states: objKeyMap(a4Arr, (hp) => ({
-          name: `${hp}%`,
+          name: `${hp + 30}%`,
           fields: [
             {
               node: a4Hp_hydro_dmg_,
