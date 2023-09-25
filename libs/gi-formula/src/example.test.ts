@@ -70,6 +70,16 @@ describe('example', () => {
   const member0 = convert(selfTag, { member: 'member0', et: 'self' })
   const member1 = convert(selfTag, { member: 'member1', et: 'self' })
 
+  test('enumerate all tags', () => {
+    expect(Object.keys(member0).sort()).toEqual(Object.keys(selfTag).sort())
+    for (const [qt, values] of Object.entries(member0)) {
+      expect(values).toBe(member0[qt as keyof typeof member0])
+      for (const [q, v] of Object.entries(values)) {
+        // Swap order here to check if the order of query matters
+        expect(values[q as keyof typeof values]).toBe(v)
+      }
+    }
+  })
   test('calculate stats', () => {
     expect(calc.compute(member1.final.hp).val).toBeCloseTo(9479.7, 1)
     expect(calc.compute(member0.final.atk).val).toBeCloseTo(346.21, 2)
