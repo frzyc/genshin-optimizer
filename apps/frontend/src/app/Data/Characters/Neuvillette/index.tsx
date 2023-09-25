@@ -14,6 +14,8 @@ import {
   unequal,
   percent,
   prod,
+  threshold,
+  one,
 } from '../../../Formula/utils'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
@@ -94,14 +96,15 @@ const dm = {
 
 const [condA1StacksPath, condA1Stacks] = cond(key, 'a1Stacks')
 const a1StacksArr = range(1, dm.passive1.dmg_.length - 1)
-const a1Stacks_judgmentSpecialMult_ = greaterEq(
+const a1Stacks_judgmentSpecialMult_ = threshold(
   input.asc,
   1,
   lookup(
     condA1Stacks,
     objKeyMap(a1StacksArr, (stack) => percent(1 + dm.passive1.dmg_[stack])),
-    percent(1)
-  )
+    naught
+  ),
+  one
 )
 
 const a4Arr = range(1, 50)
@@ -288,7 +291,6 @@ const sheet: ICharacterSheet = {
             node: infoMut(c2Judgment_critDMG_, {
               name: ct.ch('judgment_critDMG_'),
             }),
-            fixed: 0,
           },
         ],
       }),
