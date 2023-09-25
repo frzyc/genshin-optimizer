@@ -94,7 +94,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add ./${{ inputs.deployment_name }}/${{ inputs.frontend_name }}
-          git commit -m "build ${{ inputs.deployment_name }}/${{ inputs.frontend_name }} ${{ inputs.repo_full_name }}@$(cd .. && git rev-parse HEAD)"
+          git commit --allow-empty -m "build ${{ inputs.deployment_name }}/${{ inputs.frontend_name }} ${{ inputs.repo_full_name }}@$(cd .. && git rev-parse HEAD)"
           git push origin gh-pages
         working-directory: gh-pages
       - name: Export url
