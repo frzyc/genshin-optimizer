@@ -3,9 +3,9 @@ import {
   allArtifactSlotKeys,
   allCharacterKeys,
 } from '@genshin-optimizer/consts'
-import structuredClone from 'core-js-pure/actual/structured-clone'
 import { DataManager } from '../DataManager'
 import type { ArtCharDatabase } from '../Database'
+import { deepClone } from '@genshin-optimizer/util'
 
 export interface IBuildResult {
   builds: string[][]
@@ -66,7 +66,7 @@ export class BuildResultDataManager extends DataManager<
   }
 }
 
-const initialBuildResult: IBuildResult = structuredClone({
+const initialBuildResult: IBuildResult = deepClone({
   builds: [],
   buildDate: 0,
 })

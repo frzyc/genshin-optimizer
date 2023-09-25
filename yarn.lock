@@ -7876,13 +7876,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"core-js-pure@npm:^3.32.1":
-  version: 3.32.1
-  resolution: "core-js-pure@npm:3.32.1"
-  checksum: 06d3b1585b1f161e84adaf6a0f1db2434309b8d6c748ee82f1806c5d9755272a30074dfa888d60a164c639c6820588ab8462f1073c6971e76659f13788c2f10d
-  languageName: node
-  linkType: hard
-
 "core-js@npm:^3.28.0":
   version: 3.28.0
   resolution: "core-js@npm:3.28.0"
@@ -10380,7 +10373,6 @@ __metadata:
     "@vitest/ui": ^0.32.0
     babel-jest: 29.4.3
     core-js: ^3.28.0
-    core-js-pure: ^3.32.1
     cypress: 12.11.0
     eslint: ~8.15.0
     eslint-config-prettier: 8.6.0
