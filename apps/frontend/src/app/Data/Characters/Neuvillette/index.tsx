@@ -7,7 +7,6 @@ import { allStats } from '@genshin-optimizer/gi-stats'
 import { objKeyMap, range } from '@genshin-optimizer/util'
 import { input } from '../../../Formula'
 import {
-  constant,
   greaterEq,
   infoMut,
   lookup,
