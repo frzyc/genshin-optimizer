@@ -25,14 +25,6 @@ on:
 
 jobs:
   deploy:
-    # Skip for drafts or for forked PRs, as they lack secret access and cannot deploy
-    # TODO: Verify this
-    if: |
-      (github.event_name == 'workflow_dispatch')
-      || (
-        (github.event.pull_request.draft != true)
-        && (github.event.pull_request.head.repo.full_name == github.repository)
-      )
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
@@ -55,6 +47,7 @@ jobs:
           ENVFILE: ${{ secrets.ENVFILE }}
       - name: Output date
         id: output-date
+        # TODO: Verify this works
         if: github.event_name != 'workflow_dispatch'
         run: echo "date=$(date -u)" >> $GITHUB_OUTPUT
       - name: Maintain comment
