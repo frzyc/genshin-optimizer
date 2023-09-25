@@ -14,7 +14,7 @@ import type { IArtifact, ISubstat } from '@genshin-optimizer/gi-good'
 import { randomizeArtifact } from '@genshin-optimizer/gi-good'
 import { getMainStatDisplayStr } from '@genshin-optimizer/gi-util'
 import { useForceUpdate, usePromise } from '@genshin-optimizer/react-util'
-import { clamp } from '@genshin-optimizer/util'
+import { clamp, deepClone } from '@genshin-optimizer/util'
 import {
   Add,
   ChevronRight,
@@ -40,7 +40,6 @@ import {
   useMediaQuery,
   useTheme,
 } from '@mui/material'
-import structuredClone from 'core-js-pure/actual/structured-clone'
 import type { ChangeEvent } from 'react'
 import {
   Suspense,
@@ -287,7 +286,7 @@ export default function ArtifactEditor({
       setShow(true)
       artifactDispatch({
         type: 'overwrite',
-        artifact: structuredClone(databaseArtifact),
+        artifact: deepClone(databaseArtifact),
       })
     }
   }, [artifactIdToEdit, database, dirtyDatabase])

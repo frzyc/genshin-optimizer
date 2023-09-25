@@ -1,21 +1,3 @@
-/**
- * Assumes that the object entries are all primitives + objects
- * shallow copy the object,
- * deep copy the
- * @param obj
- * @returns
- */
-export function deepClone<T>(obj: T): T {
-  if (!obj) return obj
-  if (!Object.keys(obj).length) return {} as T
-  const ret = { ...obj }
-  Object.entries(obj).forEach(([k, v]: any) => {
-    if (typeof v !== 'object') return
-    ret[k] = JSON.parse(JSON.stringify(v))
-  })
-  return ret
-}
-
 //assign obj.[keys...] = value
 export function layeredAssignment(obj, keys: readonly string[], value) {
   keys.reduce((accu, key, i, arr) => {

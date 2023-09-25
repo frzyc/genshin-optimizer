@@ -10,8 +10,7 @@ import {
   allLocationCharacterKeys,
   artSlotsData,
 } from '@genshin-optimizer/consts'
-import { deepFreeze, validateArr } from '@genshin-optimizer/util'
-import structuredClone from 'core-js-pure/actual/structured-clone'
+import { deepClone, deepFreeze, validateArr } from '@genshin-optimizer/util'
 import { DataManager } from '../DataManager'
 import type { ArtCharDatabase } from '../Database'
 
@@ -126,7 +125,7 @@ export class BuildSettingDataManager extends DataManager<
       !mainStatKeys.goblet ||
       !mainStatKeys.circlet
     )
-      mainStatKeys = structuredClone(initialBuildSettings.mainStatKeys)
+      mainStatKeys = deepClone(initialBuildSettings.mainStatKeys)
     else {
       // make sure the arrays are not empty
       ;(['sands', 'goblet', 'circlet'] as const).forEach((sk) => {
@@ -228,7 +227,7 @@ export function handleArtSetExclusion(
   setKey: ArtSetExclusionKey,
   num: 2 | 4
 ) {
-  const artSetExclusion = structuredClone(currentArtSetExclusion)
+  const artSetExclusion = deepClone(currentArtSetExclusion)
   const setExclusion = artSetExclusion[setKey]
   if (!setExclusion) artSetExclusion[setKey] = [num]
   else if (!setExclusion.includes(num))
