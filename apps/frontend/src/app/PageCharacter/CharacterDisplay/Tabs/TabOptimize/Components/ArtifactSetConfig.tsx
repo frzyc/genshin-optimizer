@@ -5,7 +5,7 @@ import {
 } from '@genshin-optimizer/consts'
 import { useForceUpdate } from '@genshin-optimizer/react-util'
 import { iconInlineProps } from '@genshin-optimizer/svgicons'
-import { objKeyMap } from '@genshin-optimizer/util'
+import { deepClone, objKeyMap } from '@genshin-optimizer/util'
 import { CheckBox, CheckBoxOutlineBlank, Replay } from '@mui/icons-material'
 import BlockIcon from '@mui/icons-material/Block'
 import SettingsIcon from '@mui/icons-material/Settings'
@@ -20,7 +20,6 @@ import {
   Stack,
   Typography,
 } from '@mui/material'
-import structuredClone from 'core-js-pure/actual/structured-clone'
 import { useCallback, useContext, useEffect, useMemo, useState } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
 import SetEffectDisplay from '../../../../../Components/Artifact/SetEffectDisplay'
@@ -148,7 +147,7 @@ export default function ArtifactSetConfig({
   }, [conditional, characterDispatch])
   const setAllExclusion = useCallback(
     (setnum: number, exclude = true) => {
-      const artSetExclusion_ = structuredClone(artSetExclusion)
+      const artSetExclusion_ = deepClone(artSetExclusion)
       artKeysByRarity.forEach((k) => {
         if (exclude)
           artSetExclusion_[k] = [...(artSetExclusion_[k] ?? []), setnum]
