@@ -1,4 +1,5 @@
 import {
+  deepClone,
   deletePropPath,
   evalIfFunc,
   layeredAssignment,
@@ -6,7 +7,6 @@ import {
 import { CheckBox, CheckBoxOutlineBlank } from '@mui/icons-material'
 import type { ButtonProps } from '@mui/material'
 import { Button, ButtonGroup, Divider, MenuItem } from '@mui/material'
-import structuredClone from 'core-js-pure/actual/structured-clone'
 import { useCallback, useContext } from 'react'
 import { CharacterContext } from '../../Context/CharacterContext'
 import { DataContext } from '../../Context/DataContext'
@@ -66,7 +66,7 @@ function SimpleConditionalSelector({
   const { data } = useContext(DataContext)
   const setConditional = useCallback(
     (v?: string) => {
-      const conditionalValues = structuredClone(character.conditional)
+      const conditionalValues = deepClone(character.conditional)
       if (v) {
         layeredAssignment(conditionalValues, conditional.path, v)
       } else {
@@ -108,7 +108,7 @@ function ExclusiveConditionalSelector({
   const { data } = useContext(DataContext)
   const setConditional = useCallback(
     (v?: string) => {
-      const conditionalValues = structuredClone(character.conditional)
+      const conditionalValues = deepClone(character.conditional)
       if (v) {
         layeredAssignment(conditionalValues, conditional.path, v)
       } else {
@@ -175,7 +175,7 @@ function MultipleConditionalSelector({
   const { data } = useContext(DataContext)
   const setConditional = useCallback(
     (path: readonly string[], v?: string) => {
-      const conditionalValues = structuredClone(character.conditional)
+      const conditionalValues = deepClone(character.conditional)
       if (v) {
         layeredAssignment(conditionalValues, path, v)
       } else {
