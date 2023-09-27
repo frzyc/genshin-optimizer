@@ -11,24 +11,12 @@ type CharData = Record<
 const char: Partial<
   Record<LocationCharacterKey | LocationGenderedCharacterKey, CharData>
 > = {
-  // Albedo,
-  // Amber,
-  // Barbara,
-  // Beidou,
-  // Bennett,
-  // Chongyun,
-  // Diluc,
-  // Diona,
   Eula: {
     skill: {
       brandDMG: [3765549071, 'skillParam'],
       grimheartDuration: [164817062, 'skillParam'],
     },
   },
-  // Fischl,
-  // Ganyu,
-  // HuTao,
-  // Jean,
   KaedeharaKazuha: {
     burst: {
       name: 2015878197,
@@ -36,19 +24,15 @@ const char: Partial<
       slashdmg: [439659606, 'skillParam'],
     },
   },
-  // Kaeya,
   KamisatoAyaka: {
     burst: {
       cutting: [373269062, 'skillParam'],
       bloom: [2543020158, 'skillParam'],
     },
   },
-  // KamisatoAyato
-  // Keqing,
-  // Klee,
-  // Lisa,
-  // Mona,
-  // Ningguang,
+  Neuvillette: {
+    constellationName: 1525610219,
+  },
   Noelle: {
     skill: {
       triggerChance: [3971383039, 'skillParam'],
@@ -57,11 +41,6 @@ const char: Partial<
       atkBonus: [4151293863, 'skillParam'],
     },
   },
-  // Qiqi,
-  // Razor,
-  // Rosaria,
-  // Sucrose,
-  // Tartaglia,
   Traveler: {
     electro: {
       skill: {
@@ -73,12 +52,6 @@ const char: Partial<
       },
     },
   },
-  // Venti,
-  // Xiao,
-  // Xiangling,
-  // Xingqiu,
-  // Xinyan,
-  // Yanfei,
   Zhongli: {
     constellationName: 2721221067,
   },

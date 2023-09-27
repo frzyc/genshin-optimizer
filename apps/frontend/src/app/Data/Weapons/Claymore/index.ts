@@ -14,6 +14,7 @@ import LuxuriousSeaLord from './LuxuriousSeaLord'
 import MailedFlower from './MailedFlower'
 import MakhairaAquamarine from './MakhairaAquamarine'
 import OldMercsPal from './OldMercsPal'
+import PortablePowerSaw from './PortablePowerSaw'
 import PrototypeArchaic from './PrototypeArchaic'
 import Rainslasher from './Rainslasher'
 import RedhornStonethresher from './RedhornStonethresher'
@@ -47,6 +48,7 @@ const claymore: Record<WeaponClaymoreKey, WeaponSheet> = {
   MailedFlower,
   MakhairaAquamarine,
   OldMercsPal,
+  PortablePowerSaw,
   PrototypeArchaic,
   Rainslasher,
   RedhornStonethresher,

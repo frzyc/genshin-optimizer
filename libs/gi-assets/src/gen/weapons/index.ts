@@ -7,6 +7,7 @@ import ApprenticesNotes from './ApprenticesNotes'
 import AquaSimulacra from './AquaSimulacra'
 import AquilaFavonia from './AquilaFavonia'
 import AThousandFloatingDreams from './AThousandFloatingDreams'
+import BalladOfTheBoundlessBlue from './BalladOfTheBoundlessBlue'
 import BalladOfTheFjords from './BalladOfTheFjords'
 import BeaconOfTheReedSea from './BeaconOfTheReedSea'
 import BeginnersProtector from './BeginnersProtector'
@@ -90,6 +91,7 @@ import OldMercsPal from './OldMercsPal'
 import OtherworldlyStory from './OtherworldlyStory'
 import PocketGrimoire from './PocketGrimoire'
 import PolarStar from './PolarStar'
+import PortablePowerSaw from './PortablePowerSaw'
 import Predator from './Predator'
 import PrimordialJadeCutter from './PrimordialJadeCutter'
 import PrimordialJadeWingedSpear from './PrimordialJadeWingedSpear'
@@ -142,6 +144,7 @@ import TheAlleyFlash from './TheAlleyFlash'
 import TheBell from './TheBell'
 import TheBlackSword from './TheBlackSword'
 import TheCatch from './TheCatch'
+import TheDockhandsAssistant from './TheDockhandsAssistant'
 import TheFirstGreatMagic from './TheFirstGreatMagic'
 import TheFlute from './TheFlute'
 import TheStringless from './TheStringless'
@@ -151,6 +154,7 @@ import TheWidsith from './TheWidsith'
 import ThrillingTalesOfDragonSlayers from './ThrillingTalesOfDragonSlayers'
 import ThunderingPulse from './ThunderingPulse'
 import TidalShadow from './TidalShadow'
+import TomeOfTheEternalFlow from './TomeOfTheEternalFlow'
 import ToukabouShigure from './ToukabouShigure'
 import TravelersHandySword from './TravelersHandySword'
 import TulaytullahsRemembrance from './TulaytullahsRemembrance'
@@ -177,6 +181,7 @@ const data = {
   ApprenticesNotes,
   AquaSimulacra,
   AquilaFavonia,
+  BalladOfTheBoundlessBlue,
   BalladOfTheFjords,
   BeaconOfTheReedSea,
   BeginnersProtector,
@@ -260,6 +265,7 @@ const data = {
   OtherworldlyStory,
   PocketGrimoire,
   PolarStar,
+  PortablePowerSaw,
   Predator,
   PrimordialJadeCutter,
   PrimordialJadeWingedSpear,
@@ -312,6 +318,7 @@ const data = {
   TheBell,
   TheBlackSword,
   TheCatch,
+  TheDockhandsAssistant,
   TheFirstGreatMagic,
   TheFlute,
   TheStringless,
@@ -321,6 +328,7 @@ const data = {
   ThrillingTalesOfDragonSlayers,
   ThunderingPulse,
   TidalShadow,
+  TomeOfTheEternalFlow,
   ToukabouShigure,
   TravelersHandySword,
   TulaytullahsRemembrance,
