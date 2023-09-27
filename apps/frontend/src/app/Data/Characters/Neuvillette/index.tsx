@@ -102,7 +102,7 @@ const a1Stacks_judgmentSpecialMult_ = threshold(
   lookup(
     condA1Stacks,
     objKeyMap(a1StacksArr, (stack) => percent(1 + dm.passive1.dmg_[stack])),
-    naught
+    one
   ),
   one
 )
