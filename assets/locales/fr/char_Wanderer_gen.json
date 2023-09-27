@@ -127,7 +127,7 @@
   "passive3": {
     "name": "Accord des vents tourbillonnants",
     "description": {
-      "0": "Les moras utilisés lors de l'élévation de catalyseurs et d'arcs sont réduits de 50 %."
+      "0": "Les moras utilisés lors de l'élévation de catalyseurs et d'arcs diminuent de 50 %."
     }
   },
   "constellation1": {

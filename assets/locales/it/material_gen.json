@@ -383,6 +383,12 @@
       "1": "Può essere scambiata con delle scorte e per sbloccare ricompense durante Scontro tra Meka."
     }
   },
+  "PoetryGalaFervor": {
+    "name": "Fervore del Galà della poesia",
+    "description": {
+      "0": "Fervore del Galà della poesia Rime d'acqua"
+    }
+  },
   "Primogem": {
     "name": "Primogemma",
     "description": {
@@ -998,6 +1004,18 @@
       "0": "Un giovane riservato esperto di immersioni. Al di là del suo atteggiamento distante e algido si nasconde un cuore puro e immacolato."
     }
   },
+  "Wriothesley": {
+    "name": "Wriothesley",
+    "description": {
+      "0": "Il Duca di Forte Méropide, misterioso signore delle torbide profondità."
+    }
+  },
+  "Neuvillette": {
+    "name": "Neuvillette",
+    "description": {
+      "0": "Il Giudice supremo di Fontaine, anche conosciuto come lo Iudex, famoso per la sua incontestabile imparzialità."
+    }
+  },
   "KamisatoAyakasStellaFortuna": {
     "name": "Stella Fortuna di Kamisato Ayaka",
     "description": {
@@ -1428,6 +1446,18 @@
     "name": "Stella Fortuna di Freminet",
     "description": {
       "0": "Materiale per l'attivazione della costellazione di Freminet"
+    }
+  },
+  "WriothesleysStellaFortuna": {
+    "name": "Stella Fortuna di Wriothesley",
+    "description": {
+      "0": "Materiale per l'attivazione della costellazione di Wriothesley"
+    }
+  },
+  "NeuvillettesStellaFortuna": {
+    "name": "Stella Fortuna di Neuvillette",
+    "description": {
+      "0": "Materiale per l'attivazione della costellazione di Neuvillette"
     }
   },
   "GnosticHymnOldNotes": {
@@ -6437,6 +6467,18 @@
       "0": "Un fiore rosa tenero e delicato. Nonostante il nome, la rosa arcobaleno è molto più simile al giglio."
     }
   },
+  "Lumitoile": {
+    "name": "Lumitoile",
+    "description": {
+      "0": "Un animale dal corpo soffice che emette una luce delicata. È possibile trovarla mentre si arrampica lungo le mura degli edifici vicino o sotto l'acqua."
+    }
+  },
+  "SubdetectionUnit": {
+    "name": "Unità di sottorilevazione",
+    "description": {
+      "0": "Unità di rilevamento prodotte dall'Istituto di ricerca di Fontaine utilizzando nuovi modelli di componenti artificiali. Il suo scopo originale era quello di monitorare tutti i tipi di dati ambientali."
+    }
+  },
   "BirchWood": {
     "name": "Legno di betulla",
     "description": {
@@ -9777,64 +9819,73 @@
   "TeachingsOfEquity": {
     "name": "Insegnamenti di equità",
     "description": {
-      "0": "L'equità è il confine della Nazione dell'Acqua.",
-      "1": "L'equità pone limiti ai diritti. Senza equità, i diritti concessi dalla legge verrebbero abusati e diventerebbero uno strumento per danneggiare le nostre virtuose tradizioni."
+      "0": "Materiale per l'aumento di livello dei talenti.",
+      "1": "L'equità è il confine della Nazione dell'Acqua.",
+      "2": "L'equità pone limiti ai diritti. Senza equità, i diritti concessi dalla legge verrebbero abusati e diventerebbero uno strumento per danneggiare le nostre virtuose tradizioni."
     }
   },
   "GuideToEquity": {
     "name": "Guida all'equità",
     "description": {
-      "0": "L'equità è il confine della Nazione dell'Acqua.",
-      "1": "L'equità è il caposaldo su cui è sorta Fontaine. L'equità costituisce la norma di legge. Se la legge perde l'essenza della equità, diventerà una scacchiera in cui si gioca per il profitto."
+      "0": "Materiale per l'aumento di livello dei talenti.",
+      "1": "L'equità è il confine della Nazione dell'Acqua.",
+      "2": "L'equità è il caposaldo su cui è sorta Fontaine. L'equità costituisce la norma di legge. Se la legge perde l'essenza della equità, diventerà una scacchiera in cui si gioca per il profitto."
     }
   },
   "PhilosophiesOfEquity": {
     "name": "Filosofie di equità",
     "description": {
-      "0": "L'equità è il confine della Nazione dell'Acqua.",
-      "1": "L'equità è il caposaldo su cui è sorta Fontaine. L'equità richiede il continuo e costante sostegno della moralità e della legge, e la moralità e la legge cambiano costantemente in base al principio immutabile di equità."
+      "0": "Materiale per l'aumento di livello dei talenti.",
+      "1": "L'equità è il confine della Nazione dell'Acqua.",
+      "2": "L'equità è il caposaldo su cui è sorta Fontaine. L'equità richiede il continuo e costante sostegno della moralità e della legge, e la moralità e la legge cambiano costantemente in base al principio immutabile di equità."
     }
   },
   "TeachingsOfJustice": {
     "name": "Insegnamenti della giustizia",
     "description": {
-      "0": "La giustizia è la spada della Nazione dell'Acqua.",
-      "1": "La legge di Fontaine cammina impugnando la spada della giustizia. Senza la guida della giustizia, tutta la legge si riduce a parole senza senso, da manipolare e massacrare a piacimento."
+      "0": "Materiale per l'aumento di livello dei talenti.",
+      "1": "La giustizia è la spada della Nazione dell'Acqua.",
+      "2": "La legge di Fontaine cammina impugnando la spada della giustizia. Senza la guida della giustizia, tutta la legge si riduce a parole senza senso, da manipolare e massacrare a piacimento."
     }
   },
   "GuideToJustice": {
     "name": "Guida alla giustizia",
     "description": {
-      "0": "La giustizia è la spada della Nazione dell'Acqua",
-      "1": "La legge di Fontaine cammina impugnando la spada della giustizia. La giustizia deve essere cieca, e coloro che brandiscono la spada della giustizia non devono essere fuorviati dai propri interessi o dalle proprie vicende."
+      "0": "Materiale per l'aumento di livello dei talenti.",
+      "1": "La giustizia è la spada della Nazione dell'Acqua",
+      "2": "La legge di Fontaine cammina impugnando la spada della giustizia. La giustizia deve essere cieca, e coloro che brandiscono la spada della giustizia non devono essere fuorviati dai propri interessi o dalle proprie vicende."
     }
   },
   "PhilosophiesOfJustice": {
     "name": "Filosofie della giustizia",
     "description": {
-      "0": "La giustizia è la spada della Nazione dell'Acqua",
-      "1": "La legge di Fontaine cammina impugnando la spada della giustizia. Giustizia significa giudizio e riconciliazione, la lama del giudizio arresta le azioni del male, mentre la riconciliazione mantiene l'ordine."
+      "0": "Materiale per l'aumento di livello dei talenti.",
+      "1": "La giustizia è la spada della Nazione dell'Acqua",
+      "2": "La legge di Fontaine cammina impugnando la spada della giustizia. Giustizia significa giudizio e riconciliazione, la lama del giudizio arresta le azioni del male, mentre la riconciliazione mantiene l'ordine."
     }
   },
   "TeachingsOfOrder": {
     "name": "Insegnamenti dell'ordine",
     "description": {
-      "0": "L'ordine è lo scudo della Nazione dell'Acqua.",
-      "1": "L'essenza della legge di Fontaine consiste nel mantenere un ordine stabile. Senza ordine vi è il caos, e nel caos non può esserci equità."
+      "0": "Materiale per l'aumento di livello dei talenti.",
+      "1": "L'ordine è lo scudo della Nazione dell'Acqua.",
+      "2": "L'essenza della legge di Fontaine consiste nel mantenere un ordine stabile. Senza ordine vi è il caos, e nel caos non può esserci equità."
     }
   },
   "GuideToOrder": {
     "name": "Guida all'ordine",
     "description": {
-      "0": "L'ordine è lo scudo della Nazione dell'Acqua.",
-      "1": "L'essenza della legge di Fontaine consiste nel mantenere un ordine stabile. Senza la garanzia dell'ordine, la giustizia degenererà in violenza illimitata, un'arma usata da tutti contro tutti."
+      "0": "Materiale per l'aumento di livello dei talenti.",
+      "1": "L'ordine è lo scudo della Nazione dell'Acqua.",
+      "2": "L'essenza della legge di Fontaine consiste nel mantenere un ordine stabile. Senza la garanzia dell'ordine, la giustizia degenererà in violenza illimitata, un'arma usata da tutti contro tutti."
     }
   },
   "PhilosophiesOfOrder": {
     "name": "Filosofie dell'ordine",
     "description": {
-      "0": "L'ordine è lo scudo della Nazione dell'Acqua.",
-      "1": "L'essenza della legge di Fontaine consiste nel mantenere un ordine stabile. L'equità e la giustizia derivano dall'ordine e servono l'ordine. Come la superficie immobile e senza increspature delle acque di Fontaine, l'ordine è la pietra angolare della sua esistenza."
+      "0": "Materiale per l'aumento di livello dei talenti.",
+      "1": "L'ordine è lo scudo della Nazione dell'Acqua.",
+      "2": "L'essenza della legge di Fontaine consiste nel mantenere un ordine stabile. L'equità e la giustizia derivano dall'ordine e servono l'ordine. Come la superficie immobile e senza increspature delle acque di Fontaine, l'ordine è la pietra angolare della sua esistenza."
     }
   },
   "SanctifyingDroplet": {
@@ -13439,6 +13490,198 @@
       "0": "Una bevanda dai colori semplici. Il vago aroma alla frutta di questo frullato rinfrescante ti ricorda le eteree nuvole del Picco Qingyun. Non ha un sapore leggero e ovattato?"
     }
   },
+  "SuspiciousTroutAmandine": {
+    "name": "Trota alle mandorle sospetta",
+    "description": {
+      "0": "Una bella fetta di pesce fritta nell'olio. Il sapore amaro della pelle di pesce nera e bruciata ti marchia la lingua e non riesci a lavarlo via nemmeno con la zuppa... Sembrerebbe necessario affinare il controllo del fuoco."
+    }
+  },
+  "TroutAmandine": {
+    "name": "Trota alle mandorle",
+    "description": {
+      "0": "Filetti di pesce dalle dimensioni soddisfacenti, fritti nel burro e serviti con un contorno di mandorle fritte croccanti. Secondo la ricetta tradizionale, per questo piatto si deve usare una trota intera, che va posizionata nella padella da frittura. Di recente, però, ha acquisito popolarità anche la versione con il filetto."
+    }
+  },
+  "DeliciousTroutAmandine": {
+    "name": "Trota alle mandorle deliziosa",
+    "description": {
+      "0": "Una deliziosa fetta di pesce fritta a regola d'arte. Mandorle dolci e croccanti abbinate a del pesce grasso al punto giusto ti faranno sentire come se stessi galleggiando beatamente lungo le correnti dell'oceano, e ti sentirai sospingere dalle onde del piacere culinario."
+    }
+  },
+  "SuspiciousBarbequeRibs": {
+    "name": "Costolette al barbecue sospette",
+    "description": {
+      "0": "Un piatto di carne dall'esterno croccante. Purtroppo grigliarlo troppo a lungo ha fatto crepare e annerire la pelle e la carne, una volta tenera, ora è dura, asciutta e insapore... Forse, se si cambiasse il nome in \"Barbecue sbruciacchiato\", qualcuno potrebbe trovarlo tutto sommato accettabile."
+    }
+  },
+  "BarbequeRibs": {
+    "name": "Costolette al barbecue",
+    "description": {
+      "0": "Un piatto di carne croccante. Friggi lievemente la superficie delle costolette finché non trasuderanno un leggero aroma, poi avvolgi l'esterno croccante con la salsa e, per finire, griglia il tutto a fuoco basso. Il meticoloso controllo della temperatura assicura un involucro croccante cotto alla perfezione, mentre la carne all'interno rimane tenera e succulenta."
+    }
+  },
+  "DeliciousBarbequeRibs": {
+    "name": "Costolette al barbecue deliziose",
+    "description": {
+      "0": "Un piatto di carne tenera e dalla pelle croccante. Ancora prima di tirarla via dalla griglia, il seducente aroma di carne assale le narici promettendo il paradiso. Basta un singolo morso, e lo scricchiolio della pelle lascia il posto alla carne tenera e succosa all'interno... Non c'è da sorprendersi se questo piatto ruba la scena nel momento stesso in cui viene servito a tavola!"
+    }
+  },
+  "SuspiciousCoffeeBavarois": {
+    "name": "Bavarese al caffè sospetta",
+    "description": {
+      "0": "Un dolce rinfrescante. Dopo aver dato un bel morso, il cervello viene colpito da un'intensa ondata di amarezza e acidità. Si può solo ipotizzare che siano stati messi troppi chicchi di caffè. Nonostante dopo un po' il sapore amaro si plachi, dovresti preoccuparti di più della qualità del sonno che avrai quella notte..."
+    }
+  },
+  "CoffeeBavarois": {
+    "name": "Bavarese al caffè",
+    "description": {
+      "0": "Un dolce rinfrescante. Sebbene sia un dessert rappresentativo di Fontaine, la sua ricetta è molto semplice e lineare. Fintanto che le proporzioni degli ingredienti sono giuste, preparare questa bavarese è alla portata di chiunque. Ha una consistenza tenera con un gusto leggermente rinfrescante, che risolleva immediatamente lo spirito."
+    }
+  },
+  "DeliciousCoffeeBavarois": {
+    "name": "Bavarese al caffè deliziosa",
+    "description": {
+      "0": "Un dolce rinfrescante. Una buonissima fragranza di crema pasticcera e il gustoso profumo del caffè si mischiano sulla punta della lingua, i passi di questa loro danza delicata si accendono e lasciano una persistente consistenza sorprendentemente morbida e liscia come la seta in bocca. Non c'è da stupirsi che questo piatto sia il più amato del menù dei dolci!"
+    }
+  },
+  "SuspiciousHaggis": {
+    "name": "Haggis sospetto",
+    "description": {
+      "0": "Un piatto dal gusto distinto. Noccioli secchi e grossi di... qualcosa... raschiano la superficie della lingua, facendo pensare che quello che si sta mangiando sia qualcosa di assolutamente non commestibile. Mentre mastichi faticosamente, non riesci a non chiederti se non ci siano finiti dentro dei trucioli di legna da ardere mentre veniva preparato."
+    }
+  },
+  "Haggis": {
+    "name": "Haggis",
+    "description": {
+      "0": "Un piatto dai sapori forti e intensi. Trita le frattaglie di pecora, mescolale con i fiocchi d'avena, farcisci lo stomaco della pecora con diversi condimenti e spezie e avrai una pietanza a forma di sacca da cucinare. Quando servi questo piatto, la sacca dello stomaco viene normalmente rimossa, e si serve il ripieno accompagnandolo con un paté di ravanello e purea di patate. È una specialità locale caratteristica della cucina di Fontaine da offrire agli ospiti importanti."
+    }
+  },
+  "DeliciousHaggis": {
+    "name": "Haggis delizioso",
+    "description": {
+      "0": "Un piatto dai sapori forti e distinti. Assaggiandone un boccone, il gusto morbido e ricco delle frattaglie e delle varie spezie offrirà una varietà di strati di piccantezza alle papille gustative. Mentre se ne assapora il gusto, l'abbondante aroma carnoso riempie la bocca con un retrogusto generoso che indugia a lungo anche dopo che hai finito. Non c'è da stupirsi che ispiri emozioni tanto forti nel cuore dei poeti, i quali raramente riescono a resistere alla tentazione di dedicare un elogio a questo piatto dopo averlo provato."
+    }
+  },
+  "SuspiciousTripesDuPort": {
+    "name": "Tripes du port sospetta",
+    "description": {
+      "0": "Un piatto di frattaglie. La consistenza dello stomaco del manzo è come la pelle d'animale essiccata al vento: totalmente immasticabile. Ancora peggio è lo strano sapore che si diffonde in bocca. È come accettare la sfida di mangiare del cibo in scatola scaduto: rifiutare è la scelta migliore."
+    }
+  },
+  "TripesDuPort": {
+    "name": "Tripes du port",
+    "description": {
+      "0": "Un piatto di frattaglie. Taglia a pezzi gli ingredienti, mettili in una pentola, sigilla con dell'impasto e cuoci. Questa ricetta deve le sue origini a una città portuale. La storia di tale città è stata da tempo inghiottita dall'innalzamento dei mari, ma questa prelibatezza sopravvive ancora sulle tavole di Fontaine."
+    }
+  },
+  "DeliciousTripesDuPort": {
+    "name": "Tripes du port deliziosa",
+    "description": {
+      "0": "Un piatto di frattaglie. Lo stomaco del manzo, friabile ma morbido, ha un aroma quasi fruttato, diverso dalle stupefacenti prelibatezze che conquistano tutti i palati. Il piatto trabocca di sapori ricchi e tradizionali, e una volta che avrai dato un morso, semplicemente non riuscirai più a fermarti!"
+    }
+  },
+  "SuspiciousTomatesNarbonnaises": {
+    "name": "Tomates narbonnaises sospetti",
+    "description": {
+      "0": "Un piatto di carne e verdure. Ogni pomodoro dal colore spento sembra quasi tremare, come se volesse aprire la bocca e piangere per la forma che ha assunto. Ancora peggio, la carne macinata all'interno sa di trucioli di legno. Ci sono quattro di questi abomini di pomodoro: cosa ci si dovrebbe fare?"
+    }
+  },
+  "TomatesNarbonnaises": {
+    "name": "Tomates narbonnaises",
+    "description": {
+      "0": "Un piatto con una proporzione bilanciata di carne e verdure. Svuota l'interno di un pomodoro tondo, riempilo con carne macinata e cuoci il tutto. Questo piatto dal sapore acidulo e dalla consistenza tenera è molto popolare sulle tavole di Fontaine."
+    }
+  },
+  "DeliciousTomatesNarbonnaises": {
+    "name": "Tomates narbonnaises deliziosi",
+    "description": {
+      "0": "Un piatto di carne e verdure. Si tratta di pomodori succosi e appetitosi ripieni di carne gustosa. Ognuno di loro ha un aroma leggero e suggestivo, che esplode in uno magnifico sapore già dal primo morso. Dopo averne mangiato uno, tutte le nuvole oscure che ti opprimono il cuore saranno disperse dall'immensa prelibatezza proveniente dalla tua lingua."
+    }
+  },
+  "SuspiciousConsomme": {
+    "name": "Consommé sospetto",
+    "description": {
+      "0": "Una zuppa dalla preparazione complessa. Un liquido dall'aspetto torbido e fangoso. Un solo sguardo è sufficiente per capire che questa creazione è un fallimento. Forse l'unica cosa a Fontaine che accetterebbe un tale \"cibo\" sono i Fantasmi di Hydro contaminati che vagano vicino all'acqua..."
+    }
+  },
+  "Consomme": {
+    "name": "Consommé",
+    "description": {
+      "0": "Una zuppa dalla preparazione complessa. Schiaccia gli ingredienti, fai bollire il tutto nel brodo e servi solo la parte chiara della zuppa derivante dalla bollitura. Tra le strade di Fontaine circola una voce secondo cui uno scrittore poco ispirato ebbe improvvisamente dei colpi di genio dopo aver mangiato questa zuppa... Questo effetto tanto incredibile, però, non sarà una trovata pubblicitaria inventata dal ristorante che serve la zuppa?"
+    }
+  },
+  "DeliciousConsomme": {
+    "name": "Consommé delizioso",
+    "description": {
+      "0": "Una zuppa dalla preparazione complessa. È una zuppa chiara, che combina l'essenza del cielo blu infinito e delle terre sconfinate. Gli aromi di carne e verdure si mescolano alla perfezione in un qualcosa di perfetto. Non c'è da stupirsi che un giornalista dell'Uccello a vapore, una volta incapace di buttare giù una singola parola su carta, ne bevve una sola scodella e divenne immediatamente un genio letterario, di cui ogni parola era quasi pregiata come questo piatto."
+    }
+  },
+  "SuspiciousBoudinNoirAuxPommes": {
+    "name": "Boudin noir aux pommes sospetto",
+    "description": {
+      "0": "Un piatto tipico di Fontaine. Sembra che sia stato accidentalmente aggiunto troppo olio e che si sia creato un prodotto che trasuda grasso. Se riesci a pensare a un buon modo per assorbire e rimuovere l'olio in eccesso, potrebbe diventare commestibile."
+    }
+  },
+  "BoudinNoirAuxPommes": {
+    "name": "Boudin noir aux pommes",
+    "description": {
+      "0": "Un piatto tipico di Fontaine. Friggi le fette di mela e le fette di sanguinacci separatamente e servile in un piatto unico con la salsa. A giudicare dal nome del piatto, i turisti delle altre nazioni spesso pensano che sia un dolce; in realtà, il Boudin noir aux pommes è solo un altro nome dei sanguinacci."
+    }
+  },
+  "DeliciousBoudinNoirAuxPommes": {
+    "name": "Boudin noir aux pommes delizioso",
+    "description": {
+      "0": "Un piatto tipico di Fontaine. Un connubio perfetto tra mele e sanguinacci, il cui dolce profumo delle prime neutralizza il grasso dei secondi. Un seducente odore leggermente bruciacchiato aleggia dal piatto, facendo illuminare gli occhi di coloro che lo vedono mentre gridano con gioia e aspettativa."
+    }
+  },
+  "SuspiciousCassoulet": {
+    "name": "Cassoulet sospetto",
+    "description": {
+      "0": "Un semplice stufato contadino. Anche se l'aspetto non desta sospetti, mangiandolo noti un leggero sapore di bruciato, per poi renderti conto che lo strato inferiore è stato talmente bruciato che si è fuso con la pentola. Ugh... forse è il caso di ricordare allo chef di mescolare gli ingredienti ogni tanto durante la cottura..."
+    }
+  },
+  "Cassoulet": {
+    "name": "Cassoulet",
+    "description": {
+      "0": "Un semplice stufato contadino. Basta mettere tutti gli ingredienti in una pentola, mescolarli e cuocere fino a quando non sono pronti per essere serviti. Un dettaglio da notare è che il nome completo di questo piatto è \"stufato di fagioli glabri, confit di pollame e salsicce affumicate cotto in pentola da Cassoulet con contorno di Marcotte\". La lunghezza intimidatoria di questo nome ha fatto sì che la gente abbia iniziato a chiamare il piatto semplicemente \"Cassoulet\"."
+    }
+  },
+  "DeliciousCassoulet": {
+    "name": "Cassoulet delizioso",
+    "description": {
+      "0": "Un semplice stufato contadino. Il tempo è l'arma straordinaria che favorisce la delizia di questo piatto, poiché la lenta cottura a stufato permette alla carne di assorbire quell'oceano di sapori in cui galleggia, diventando morbida e profumatissima. Insieme alla ricca fragranza dei fagioli, dona una sensazione di calore e rinvigorimento."
+    }
+  },
+  "SuspiciousCrepesSuzette": {
+    "name": "Crêpe Suzette sospette",
+    "description": {
+      "0": "Crêpe ripiene. Il primo morso è così blando che ti chiedi se non hai perso il senso del gusto. Il secondo morso è così dolce che ti farà rimpiangere di avere ancora il senso del gusto... Una esperienza culinaria così stimolante è come guidare un Cavalcaonde in una tempesta: anche se si riesce ad arrivare a riva, se ne rimane traumatizzati."
+    }
+  },
+  "CrepesSuzette": {
+    "name": "Crêpe Suzette",
+    "description": {
+      "0": "Delle crêpe con il ripieno. Friggi le crêpe, quindi servile con marmellata, panna e pezzi di frutta. La ricetta ha parecchie varianti e il sapore del piatto dipende dai diversi ingredienti utilizzati."
+    }
+  },
+  "DeliciousCrepesSuzette": {
+    "name": "Crêpe Suzette deliziose",
+    "description": {
+      "0": "Crêpe ripiene. La panna leggera e la deliziosa marmellata si uniscono in una sinfonia di sapori ripiegati in una morbida crêpe magistralmente cotta, come vestita di seta, che invita la lingua a unirsi a un elegante e infinito valzer di delizie culinarie."
+    }
+  },
+  "ConsommePurete": {
+    "name": "\"Consommé Pureté\"",
+    "description": {
+      "0": "La specialità di Neuvillette. Afferma di aver selezionato apposta le acque più pure e fredde delle vette montuose più alte per creare questo squisito e ineguagliabile tesoro. Pur avendo una qualità rigenerante, il sapore della zuppa in generale non è diverso dalle zuppe ordinarie, ma probabilmente è meglio non parlarne..."
+    }
+  },
+  "SecretSauceBBQRibs": {
+    "name": "Costolette al barbecue con salsa segreta",
+    "description": {
+      "0": "La specialità di Wriothesley. Poco dopo averlo sentito cacciare i suoi subordinati dicendo \"Uscite subito, la cucina sta per esplodere\", si presenta davanti a te una prelibatezza di carne. Una salsa robusta spalmata sulla pelle leggermente croccante è uno straordinario doppio colpo di delizia, anche se mentre l'assaggi sembra essere praticamente identica a un condimento che è diventato molto popolare di recente..."
+    }
+  },
   "RecipeItem": {
     "name": "Ingrediente",
     "description": {
@@ -14418,6 +14661,66 @@
       "0": "Una ricetta passo dopo passo per preparare un frappè alla frutta."
     }
   },
+  "RecipeTroutAmandine": {
+    "name": "Ricetta: trota alle mandorle",
+    "description": {
+      "0": "Una ricetta passo dopo passo per preparare una trota alle mandorle."
+    }
+  },
+  "RecipeBarbequeRibs": {
+    "name": "Ricetta: costolette al barbecue",
+    "description": {
+      "0": "Una ricetta passo dopo passo per preparare delle costolette al barbecue."
+    }
+  },
+  "RecipeCoffeeBavarois": {
+    "name": "Ricetta: bavarese al caffè",
+    "description": {
+      "0": "Una ricetta passo dopo passo per preparare una bavarese al caffè."
+    }
+  },
+  "RecipeHaggis": {
+    "name": "Ricetta: haggis",
+    "description": {
+      "0": "Una ricetta passo dopo passo per preparare dell'haggis."
+    }
+  },
+  "RecipeTripesDuPort": {
+    "name": "Ricetta: Tripes du port",
+    "description": {
+      "0": "Una ricetta passo dopo passo per preparare della Tripes du port."
+    }
+  },
+  "RecipeTomatesNarbonnaises": {
+    "name": "Ricetta: tomates narbonnaises",
+    "description": {
+      "0": "Una ricetta passo dopo passo per preparare dei tomates narbonnaises."
+    }
+  },
+  "RecipeConsomme": {
+    "name": "Ricetta: Consommé",
+    "description": {
+      "0": "Una ricetta passo dopo passo per preparare un consommé."
+    }
+  },
+  "RecipeBoudinNoirAuxPommes": {
+    "name": "Ricetta: boudin noir aux pommes",
+    "description": {
+      "0": "Una ricetta passo dopo passo per preparare un boudin noir aux pommes."
+    }
+  },
+  "RecipeCassoulet": {
+    "name": "Ricetta: cassoulet",
+    "description": {
+      "0": "Una ricetta passo dopo passo per preparare del cassoulet."
+    }
+  },
+  "RecipeCrepesSuzette": {
+    "name": "Ricetta: crêpe Suzette",
+    "description": {
+      "0": "Una ricetta passo dopo passo per preparare delle crêpe Suzette."
+    }
+  },
   "CraftedItems": {
     "name": "Oggetti creati",
     "description": {
@@ -14661,6 +14964,12 @@
       "0": "L'esca è realizzata con rugiada di rosa mescolata con polvere dei frutti di Harra essiccati. Ha un sapore speziato e un retrogusto dolce, quasi una metafora della vita dei pescatori. Il pescato ottenuto dopo la furia delle intemperie e le onde travolgenti è particolarmente gratificante.",
       "1": "<br/>",
       "2": "Ideale per: pesce palla e pesce mezzaluna."
+    }
+  },
+  "PureWater": {
+    "name": "\"Acqua pura\"",
+    "description": {
+      "0": "Si dice sia il lascito di un ingegnoso pozionista. Può estrarre la forza più pura dall'interno del corpo."
     }
   },
   "SourBait": {
@@ -15290,6 +15599,27 @@
       "1": "Non esiste alcun modo per sterminare questa forma di vita. Per quanto si possa ridurne l'esistenza al semplice nucleo, essa finirà prima o poi per risorgere, che sia dopo un giorno o interi decenni. Fortunatamente, è un essere che non risulta né aggressivo né intelligente, e gli abitanti di Fontaine si limitano solo a tenersene lontani."
     }
   },
+  "OldOperativesPocketWatch": {
+    "name": "Vecchio orologio da operativo",
+    "description": {
+      "0": "Un normale orologio in dotazione agli operativi dei Fatui.",
+      "1": "L'erosione e l'ossidazione sulla cassa raccontano fedelmente i giorni trascorsi come strumento di imposizione in mano ai suoi proprietari."
+    }
+  },
+  "OperativesStandardPocketWatch": {
+    "name": "Orologio comune da operativo",
+    "description": {
+      "0": "Un normale orologio in dotazione agli operativi Fatui.",
+      "1": "La parte superiore non è finemente progettata e la cassa esterna ha fin troppi angoli appuntiti che possono causare strappi e scuciture nei vestiti. Per questo, ci sarà sempre chi metterà quest'orologio dentro a delle casse più pratiche e meno particolari."
+    }
+  },
+  "OperativesConstancy": {
+    "name": "Costanza dell'operativo",
+    "description": {
+      "0": "Un accessorio con un'Illusione incastonata sopra. Questo fa parte del potere degli operativi dei Fatui.",
+      "1": "Detto ciò, toglierlo non pregiudicherà le capacità fisiche dell'operativo, che saranno comunque superiori a quelle dei comuni esseri umani, capacità ottenute con anni di addestramento ed esperienza di combattimento. Essi sono ben consapevoli di aver sacrificato il loro passato, presente e futuro sull'altare del paradiso idilliaco dei Fatui, tale per cui il danno che si autoinfliggono per l'uso dell'Illusione non importa minimamente."
+    }
+  },
   "HurricaneSeed": {
     "name": "Seme d'uragano",
     "description": {
@@ -15680,6 +16010,22 @@
       "1": "Rispetto agli esseri umani, aristocrazia ed eredità sono concetti del tutto estranei agli Aberranti del Fontemer. Nessuno di loro nasce superiore agli altri. Coloro che riescono a sopravvivere contro predatori e avversità letali sono in grado di accumulare un potere pressoché infinito, che permette loro di continuare a cacciare e nutrirsi nel corso dei secoli. Creature simili sono sovente ritenute come dei dominatori per via del timore che sono in grado di suscitare."
     }
   },
+  "TourbillonDevice": {
+    "name": "\"Dispositivo di Tubion\"",
+    "description": {
+      "0": "Il componente centrale del Generatore di campo sperimentale.",
+      "1": "Un componente meccanico dall'elevata precisione che neutralizza gli effetti della gravità tramite la rotazione ad alta velocità, praticamente impossibile da percepire ad occhio nudo.",
+      "2": "Nella sua lunga storia, l'Istituto di ricerca per l'ingegneria dell'Energia cinetica di Fontaine ha sempre combattuto contro un'inondazione che una volta ha fatto una quantità enorme di vittime e che potrebbe ancora coprire la terra e il cielo in futuro, alla ricerca di un modo per sopravvivere.",
+      "3": "Un tempo l'Arkhium, con il suo immenso potenziale energetico e la forza per spezzare le catene della terra, era considerato la chiave per le porte della salvezza."
+    }
+  },
+  "FontemerUnihorn": {
+    "name": "Monocorno del Fontemer",
+    "description": {
+      "0": "La sezione dell'Ippocampo Perlamillenario che emette energia elettrica ed emblema della sua potenza superiore, ora spezzata in uno scontro contro un potente avversario.",
+      "1": "Essendo il maggiore predatore che può nascere dagli ippocampi, l'evoluzione di quest'essere non è la stessa di quella degli altri Aberranti del Fontemer. Non ha avuto inizio da una forma base per poi crescere grande e forte. Ha invece sviluppato arti e un corno che non trovano posto su un normale ippocampo. Anche la muscolatura e lo scheletro sono cambiati. Assomiglia più a una bestia fantastica delle leggende di una volta che alla sua forma originale. Nell'immaginario di poeti e scrittori anche gli ippocampi possono camminare sulla terraferma."
+    }
+  },
   "TileOfDecarabiansTower": {
     "name": "Tegola della Torre di Decarabian",
     "description": {
@@ -16049,98 +16395,110 @@
   "FragmentOfAnAncientChord": {
     "name": "Frammento di un antico accordo",
     "description": {
-      "0": "Un'arpa con delle corde vecchissime, impossibile da suonare.",
-      "1": "Si dice che i discendenti della musica dimenticata abbiano dipinto un'arpa di legno meccanica con dell'oro, al fine di riportare in vita i maestosi resti dell'antica dinastia, tentando senza successo di abbinarla ai golem silenziosi...",
-      "2": "Tanto tempo è trascorso, e l'arpa scordata e rovinata rimane nelle grinfie del gigante silenzioso, accarezzata dalle onde, capace solo di emettere un suono malinconico e sommesso."
+      "0": "Materiale d'ascensione delle armi.",
+      "1": "Un'arpa con delle corde vecchissime, impossibile da suonare.",
+      "2": "Si dice che i discendenti della musica dimenticata abbiano dipinto un'arpa di legno meccanica con dell'oro, al fine di riportare in vita i maestosi resti dell'antica dinastia, tentando senza successo di abbinarla ai golem silenziosi...",
+      "3": "Tanto tempo è trascorso, e l'arpa scordata e rovinata rimane nelle grinfie del gigante silenzioso, accarezzata dalle onde, capace solo di emettere un suono malinconico e sommesso."
     }
   },
   "ChapterOfAnAncientChord": {
     "name": "Capitolo di un antico accordo",
     "description": {
-      "0": "Secondo la leggenda, i sopravvissuti di quell'antica dinastia fusero del ferro nero per modellare un'arpa in segno di lutto e commemorazione.",
-      "1": "Un'arpa di ferro nero non si può suonare. Per commemorare quell'antica dinastia, così orgogliosa della sua musica dorata, i suoi discendenti hanno forgiato questo strumento pesante, assieme al suo silenzio ancora più opprimente.",
-      "2": "Nonostante tutto, l'arpa di ferro nero rimane in silenzio, così come l'era perduta."
+      "0": "Materiale d'ascensione delle armi.",
+      "1": "Secondo la leggenda, i sopravvissuti di quell'antica dinastia fusero del ferro nero per modellare un'arpa in segno di lutto e commemorazione.",
+      "2": "Un'arpa di ferro nero non si può suonare. Per commemorare quell'antica dinastia, così orgogliosa della sua musica dorata, i suoi discendenti hanno forgiato questo strumento pesante, assieme al suo silenzio ancora più opprimente.",
+      "3": "Nonostante tutto, l'arpa di ferro nero rimane in silenzio, così come l'era perduta."
     }
   },
   "MovementOfAnAncientChord": {
     "name": "Movimento di un antico accordo",
     "description": {
-      "0": "In quel gran disastro, il palazzo dorato andò a fondo con il suo trono, la musica si fermò e le note divennero silenzio...",
-      "1": "Ma coloro che sopravvissero non persero mai il desiderio di salvarsi e di beffare il destino.",
-      "2": "Per salvare la loro civiltà morente e il loro desiderio di andare oltre, la Compagnia dorata suonò melodie fantastiche, inducendo i bambini a offrire le loro preziose anime ai golem addormentati."
+      "0": "Materiale d'ascensione delle armi.",
+      "1": "In quel gran disastro, il palazzo dorato andò a fondo con il suo trono, la musica si fermò e le note divennero silenzio...",
+      "2": "Ma coloro che sopravvissero non persero mai il desiderio di salvarsi e di beffare il destino.",
+      "3": "Per salvare la loro civiltà morente e il loro desiderio di andare oltre, la Compagnia dorata suonò melodie fantastiche, inducendo i bambini a offrire le loro preziose anime ai golem addormentati."
     }
   },
   "EchoOfAnAncientChord": {
     "name": "Eco di un antico accordo",
     "description": {
-      "0": "La grande sinfonia del Dio re si compone di innumerevoli melodie collegate tra loro, ma la sua melodia principale è sommersa dal destino comune della Nazione dell'Acqua.",
-      "1": "Le armonie e le sonate di quegli anni spensierati erano l'immagine dell'ordine e della civiltà, ma quando il prospero impero si ritrovò alla mercé dei tiranni, brutali despoti recisero il legame con la fonte, sotto la copertura di mantelli dorati, finché la discordia non si diffuse a macchia d'olio nell'impero...",
-      "2": "La canzone del fato originale continuò a echeggiare su uno spartito d'oro scolorito e imperturbato... finché tutto non si dissolse, spegnendosi fra le braccia del caos."
+      "0": "Materiale d'ascensione delle armi.",
+      "1": "La grande sinfonia del Dio re si compone di innumerevoli melodie collegate tra loro, ma la sua melodia principale è sommersa dal destino comune della Nazione dell'Acqua.",
+      "2": "Le armonie e le sonate di quegli anni spensierati erano l'immagine dell'ordine e della civiltà, ma quando il prospero impero si ritrovò alla mercé dei tiranni, brutali despoti recisero il legame con la fonte, sotto la copertura di mantelli dorati, finché la discordia non si diffuse a macchia d'olio nell'impero...",
+      "3": "La canzone del fato originale continuò a echeggiare su uno spartito d'oro scolorito e imperturbato... finché tutto non si dissolse, spegnendosi fra le braccia del caos."
     }
   },
   "DrossOfPureSacredDewdrop": {
     "name": "Scarto di Goccia di rugiada sacra pura",
     "description": {
-      "0": "Secondo le leggende, prima della nascita della vita esisteva un denso mare primordiale, l'origine più pura di tutte le cose, che un giorno si dice inghiottirà tutta la vita... E tutto ciò che non proviene da esso verrà lasciato fuori, diventando nient'altro che detriti alla deriva.",
-      "1": "\"L'esistenza dei detriti ha anch'essa un significato: quale altra cosa verrebbe rigettata dalla fonte di ciò che inghiotte tutta la vita?\", chiese il giovane Armosta al grande usurpatore, interrogandosi su questo rompicapo."
+      "0": "Materiale d'ascensione delle armi.",
+      "1": "Secondo le leggende, prima della nascita della vita esisteva un denso mare primordiale, l'origine più pura di tutte le cose, che un giorno si dice inghiottirà tutta la vita... E tutto ciò che non proviene da esso verrà lasciato fuori, diventando nient'altro che detriti alla deriva.",
+      "2": "\"L'esistenza dei detriti ha anch'essa un significato: quale altra cosa verrebbe rigettata dalla fonte di ciò che inghiotte tutta la vita?\", chiese il giovane Armosta al grande usurpatore, interrogandosi su questo rompicapo."
     }
   },
   "SublimationOfPureSacredDewdrop": {
     "name": "Sublimazione di Goccia di rugiada sacra pura",
     "description": {
-      "0": "\"La vita che proviene dal mare primordiale inevitabilmente a esso ritornerà\". Così parlò l'Armosta Boethius: \"Ma ci sono infinite possibilità che gli umani hanno per andare oltre, e nemmeno le acque del mare primordiale sono in grado di dissolverle completamente...\"",
-      "1": "L'usurpatore arrogante chiese una volta di miscelare dell'icore insolubile con dell'acqua pura per contenere saggezza e ricordi, permettendo ai suoi sudditi di abbandonare i propri corpi fisici e ottenere vite eterne e indipendenti.",
-      "2": "Ma il dolore della separazione tra anima e corpo è insopportabile per qualsiasi vita ordinaria, e l'ordine dell'usurpatore ha strappato e frantumato molteplici anime...",
-      "3": "L'icore si è annerito a causa dei pianti e delle lamentele di innumerevoli anime, e ha perso la sua armonia e la sua saggezza per lasciarsi dietro solo caos e follia."
+      "0": "Materiale d'ascensione delle armi.",
+      "1": "\"La vita che proviene dal mare primordiale inevitabilmente a esso ritornerà\". Così parlò l'Armosta Boethius: \"Ma ci sono infinite possibilità che gli umani hanno per andare oltre, e nemmeno le acque del mare primordiale sono in grado di dissolverle completamente...\"",
+      "2": "L'usurpatore arrogante chiese una volta di miscelare dell'icore insolubile con dell'acqua pura per contenere saggezza e ricordi, permettendo ai suoi sudditi di abbandonare i propri corpi fisici e ottenere vite eterne e indipendenti.",
+      "3": "Ma il dolore della separazione tra anima e corpo è insopportabile per qualsiasi vita ordinaria, e l'ordine dell'usurpatore ha strappato e frantumato molteplici anime...",
+      "4": "L'icore si è annerito a causa dei pianti e delle lamentele di innumerevoli anime, e ha perso la sua armonia e la sua saggezza per lasciarsi dietro solo caos e follia."
     }
   },
   "SpringOfPureSacredDewdrop": {
     "name": "Zampillo di Goccia di rugiada sacra pura",
     "description": {
-      "0": "Una reliquia proveniente da un tempo in cui i cavalieri di Loch ancora girovagavano per il mondo... Secondo loro c'erano ancora degli spiriti fedeli nelle sorgenti montuose e nelle valli, dove nessuno osava addentrarsi, sorvegliando sorgenti pure...",
-      "1": "Tuttavia, il creatore dell'icore artificiale non poteva tollerare alcuna discordanza nella sua grande sinfonia. Si dice che ovunque andasse l'Armosta Boethius il nettare naturale vi fosse sepolto, gli acquedotti dell'impero vi venissero costruiti, e gli spiriti nati da pura acqua svanissero senza lasciar traccia..."
+      "0": "Materiale d'ascensione delle armi.",
+      "1": "Una reliquia proveniente da un tempo in cui i cavalieri di Loch ancora girovagavano per il mondo... Secondo loro c'erano ancora degli spiriti fedeli nelle sorgenti montuose e nelle valli, dove nessuno osava addentrarsi, sorvegliando sorgenti pure...",
+      "2": "Tuttavia, il creatore dell'icore artificiale non poteva tollerare alcuna discordanza nella sua grande sinfonia. Si dice che ovunque andasse l'Armosta Boethius il nettare naturale vi fosse sepolto, gli acquedotti dell'impero vi venissero costruiti, e gli spiriti nati da pura acqua svanissero senza lasciar traccia..."
     }
   },
   "EssenceOfPureSacredDewdrop": {
     "name": "Essenza di Goccia di rugiada sacra pura",
     "description": {
-      "0": "Una soluzione densa e pura, derivata e raffinata dalle gocce del vasto mare primordiale. L'antico Dio re credeva che avrebbe portato vita eterna e saggezza infinita, ma un attento ascolto rivelava la silenziosa profezia del tutto che si dissolve in una cosa sola.",
-      "1": "Tale era la grande e incompiuta sinfonia del Dio re: icore sconfinato e senza origine, che sostituisce le sfrenate acque primordiali, mentre i gloriosi saggi immortali portano illuminazione simile a nettare negli angoli ignoranti del mondo.",
-      "2": "Ma le illusioni del Dio re si ritrovarono infine intrappolate nelle profondità del nero abisso, e con il trascorrere del tempo l'icore dorato fu infine corroso dal brodo primordiale...",
-      "3": "L'Armosta fece finta di non vedere i presagi malvagi e, sostenendosi con il suo corpo malandato, continuò a dar vita ai suoi compatrioti secondo i piani una volta stabiliti, affinché un giorno ritornasse il vecchio ordine...",
-      "4": "Perfino oggi, molti poeti pazzi e pittori di Fontaine vedono l'apocalisse di Boethius come un richiamo dell'ineluttabile ciclo del mondo."
+      "0": "Materiale d'ascensione delle armi.",
+      "1": "Una soluzione densa e pura, derivata e raffinata dalle gocce del vasto mare primordiale. L'antico Dio re credeva che avrebbe portato vita eterna e saggezza infinita, ma un attento ascolto rivelava la silenziosa profezia del tutto che si dissolve in una cosa sola.",
+      "2": "Tale era la grande e incompiuta sinfonia del Dio re: icore sconfinato e senza origine, che sostituisce le sfrenate acque primordiali, mentre i gloriosi saggi immortali portano illuminazione simile a nettare negli angoli ignoranti del mondo.",
+      "3": "Ma le illusioni del Dio re si ritrovarono infine intrappolate nelle profondità del nero abisso, e con il trascorrere del tempo l'icore dorato fu infine corroso dal brodo primordiale...",
+      "4": "L'Armosta fece finta di non vedere i presagi malvagi e, sostenendosi con il suo corpo malandato, continuò a dar vita ai suoi compatrioti secondo i piani una volta stabiliti, affinché un giorno ritornasse il vecchio ordine...",
+      "5": "Perfino oggi, molti poeti pazzi e pittori di Fontaine vedono l'apocalisse di Boethius come un richiamo dell'ineluttabile ciclo del mondo."
     }
   },
   "BrokenGobletOfThePristineSea": {
     "name": "Calice frantumato del mare immacolato",
     "description": {
-      "0": "Secondo la leggenda, quando il primo usurpatore arrivò al mare primordiale, il primo sovrano gli offrì un calice d'acqua.",
-      "1": "In seguito, questi diventò l'indiscutibile Dio re, e usò questo calice d'acqua per depurare le misteriose gocce di rugiada, stabilendo un impero splendido e potente.",
-      "2": "Ma questa è ormai una storia antica, i cui personaggi principali ora dormono nella fosforescenza dei pesci degli abissi."
+      "0": "Materiale d'ascensione delle armi.",
+      "1": "Secondo la leggenda, quando il primo usurpatore arrivò al mare primordiale, il primo sovrano gli offrì un calice d'acqua.",
+      "2": "In seguito, questi diventò l'indiscutibile Dio re, e usò questo calice d'acqua per depurare le misteriose gocce di rugiada, stabilendo un impero splendido e potente.",
+      "3": "Ma questa è ormai una storia antica, i cui personaggi principali ora dormono nella fosforescenza dei pesci degli abissi."
     }
   },
   "WineGobletOfThePristineSea": {
     "name": "Calice di vino del mare immacolato",
     "description": {
-      "0": "Quale impero può durare per un migliaio di anni? Dopo esser tornato dal regno dei draghi, l'usurpatore si fece questa domanda.",
-      "1": "Combinò la pietra immortale con l'essenza d'icore estratta dall'acqua primordiale, e scolpì una razza nera come ferro, liti arcani al posto ella pelle a e sangue d'icore, senza più temere la maledizione del ritorno al passato primordiale...",
-      "2": "Il golem silenzioso sogna ancora l'impero, non sapendo che questo non esiste più da oltre mille anni."
+      "0": "Materiale d'ascensione delle armi.",
+      "1": "Quale impero può durare per un migliaio di anni? Dopo esser tornato dal regno dei draghi, l'usurpatore si fece questa domanda.",
+      "2": "Combinò la pietra immortale con l'essenza d'icore estratta dall'acqua primordiale, e scolpì una razza nera come ferro, con pelle composta da pietre arcane e sangue fatto d'icore, senza più temere la maledizione del ritorno al passato primordiale...",
+      "3": "Il golem silenzioso sogna ancora l'impero, non sapendo che questo non esiste più da oltre mille anni."
     }
   },
   "SilverGobletOfThePristineSea": {
     "name": "Calice d'argento del mare immacolato",
     "description": {
-      "0": "Negli anni in cui il velo dorato ricopriva il territorio, la pura acqua di sorgente doveva essere nascosta in rivoletti montanari invisibili ai più, e i cavalieri di Loch nacquero in questi santuari.",
-      "1": "I cavalieri giurano sull'armatura d'argento di proteggere gli spiriti nati dall'acqua pura e i loro compagni d'armi anch'essi devoti all'unica vera sorgente, opponendo resistenza all'onnipresente potere dorato che oscurò il cielo ed eclissò il sole.",
-      "2": "Ma questa è una leggenda antica... Non molto tempo dopo il crollo dell'impero, i cavalieri che resistettero all'usurpatore si spogliarono della loro armatura, e le loro vicende finirono in un groviglio di storie e ballate."
+      "0": "Materiale d'ascensione delle armi.",
+      "1": "Negli anni in cui il velo dorato ricopriva il territorio, la pura acqua di sorgente doveva essere nascosta in rivoletti montanari invisibili ai più, e i cavalieri di Loch nacquero in questi santuari.",
+      "2": "I cavalieri giurano sull'armatura d'argento di proteggere gli spiriti nati dall'acqua pura e i loro compagni d'armi anch'essi devoti all'unica vera sorgente, opponendo resistenza all'onnipresente potere dorato che oscurò il cielo ed eclissò il sole.",
+      "3": "Ma questa è una leggenda antica... Non molto tempo dopo il crollo dell'impero, i cavalieri che resistettero all'usurpatore si spogliarono della loro armatura, e le loro vicende finirono in un groviglio di storie e ballate."
     }
   },
   "GoldenGobletOfThePristineSea": {
     "name": "Calice d'oro del mare immacolato",
     "description": {
-      "0": "Quando l'usurpatore della città sommersa suonò l'ultimo movimento della sinfonia dorata, il musicista preferito rubò il calice dorato stracolmo d'icore.",
-      "1": "Sconvolto dal tradimento temerario del Dio re, il musicista chiamò le ultime guardie, usò l'icore insolubile per chiudere il drago sotto la torre e sprofondò nell'abisso assieme alla capitale.",
-      "2": "In seguito, questo ladro gentiluomo svanì in punta di piedi, e solo la \"Compagnia dorata\" ricorda la sua profezia."
+      "0": "Materiale d'ascensione delle armi.",
+      "1": "Quando l'usurpatore della città sommersa suonò l'ultimo movimento della sinfonia dorata, il musicista preferito rubò il calice dorato stracolmo d'icore.",
+      "2": "Sconvolto dal tradimento temerario del Dio re, il musicista chiamò le ultime guardie, usò l'icore insolubile per chiudere il drago sotto la torre e sprofondò nell'abisso assieme alla capitale.",
+      "3": "In seguito, questo ladro gentiluomo svanì in punta di piedi, e solo la \"Compagnia dorata\" ricorda la sua profezia."
     }
   },
   "StarterSupplyBundle": {
@@ -16328,6 +16686,12 @@
         " Billetta del Catalizzatore delle terre centrali",
         " Billetta della Lancia delle terre centrali"
       ]
+    }
+  },
+  "ResoundingMelodies": {
+    "name": "Melodie riecheggianti",
+    "description": {
+      "0": "Se hai già usato il codice di riscatto, ripetere l'acquisto ti darà solo Primogemme e decorazioni."
     }
   },
   "BEP": {
@@ -18037,6 +18401,12 @@
       "0": "Una cassa ottenuta da Bahador. Al suo interno si trovano alcune pozioni speciali. Secondo quanto affermato da Bahador, potrebbero aiutare nell'esplorazione di un certo dominio..."
     }
   },
+  "GearDrivetrain": {
+    "name": "Gruppo motopropulsore a ingranaggi",
+    "description": {
+      "0": "Una parte removibile appartenente alla valvola di trasmissione centrale che si trova nell'area di produzione abbandonata."
+    }
+  },
   "SomeonesJournal": {
     "name": "Diario di qualcuno",
     "description": {
@@ -18389,6 +18759,28 @@
       "0": "Taccuino di Vigneire"
     }
   },
+  "CreditCoupons": {
+    "name": "Coupon di credito",
+    "description": {
+      "0": "Un tipo di valuta usata solamente a Forte Méropide."
+    }
+  },
+  "TheArtOfNegotiation": {
+    "name": "L'arte della negoziazione",
+    "description": {
+      "0": "\"Un caposaldo nella scienza del successo, un capolavoro imprescindibile scritto da un genio assoluto!\"",
+      "1": "Un libro eccezionale, raccomandato con entusiasmo dall'editore de La Gouttière, dai grandi imprenditori e dagli studiosi dell'Istituto di ricerca di Fontaine!",
+      "2": "Il testo compie un profondo viaggio di conoscenza tra gli abissi della natura umana, fornendo un contributo senza paragoni alla scienza e all'arte del successo!"
+    }
+  },
+  "WelfareMeal": {
+    "name": "Pasti assistenziali",
+    "description": {
+      "0": "Un pasto assistenziale del refettorio dei Coupon. Essendo gratuito, bisogna aspettarsi delle sorprese e dei rischi.",
+      "1": "<br/>",
+      "2": "Usalo per ottenere un pasto e un biglietto della fortuna."
+    }
+  },
   "TheHistoryOfTheDeclineAndFallOfRemuriaI": {
     "name": "Remuria: Il declino e la rovina (I)",
     "description": {
@@ -18410,19 +18802,19 @@
   "FablesDeFontaineI": {
     "name": "Fiabe di Fontaine (I)",
     "description": {
-      "0": "Un libro che racchiude leggende e racconti vari, gran parte dei quali sono tratti da poesie antiche andate perdute da tempo."
+      "0": "Un libro scritto da Marie Héricart de La Fontaine che racchiude leggende e racconti vari, gran parte dei quali sono tratti da poesie antiche andate perdute da tempo."
     }
   },
   "FablesDeFontaineII": {
     "name": "Fiabe di Fontaine (II)",
     "description": {
-      "0": "Un libro che racchiude leggende e racconti vari, gran parte dei quali sono tratti da poesie antiche andate perdute da tempo."
+      "0": "Un libro scritto da Marie Héricart de La Fontaine che racchiude leggende e racconti vari, gran parte dei quali sono tratti da poesie antiche andate perdute da tempo."
     }
   },
   "FablesDeFontaineIII": {
     "name": "Fiabe di Fontaine (III)",
     "description": {
-      "0": "Un libro che racchiude leggende e racconti vari, gran parte dei quali sono tratti da poesie antiche andate perdute da tempo."
+      "0": "Un libro scritto da Marie Héricart de La Fontaine che racchiude leggende e racconti vari, gran parte dei quali sono tratti da poesie antiche andate perdute da tempo."
     }
   },
   "RobbenVersusChestertonIridescentBroochI": {
@@ -18491,6 +18883,12 @@
       "0": "Un copritasto appena acquistato. Sebbene non si adatti perfettamente alla tastiera... sarà meglio farcelo andare bene, almeno per il momento."
     }
   },
+  "BeautifullyWrittenLetter": {
+    "name": "Lettera in splendida grafia",
+    "description": {
+      "0": "Una lettera ricevuta da Décembre. Stando a quanto dice, è stata scritta per festeggiare il compleanno del suo figlioletto."
+    }
+  },
   "Lakelight": {
     "name": "\"Lagoluce\"",
     "description": {
@@ -18513,6 +18911,57 @@
     "name": "Dossier sul caso \"L'acqua e la persona scomparsa\"",
     "description": {
       "0": "Un dossier dettagliato che mette in relazione un caso d'omicidio, che vede coinvolto il padre di Navia, Callas, con quello delle sparizioni seriali di giovani donne. Se si riscontrano delle difficoltà nel corso delle indagini, si consiglia di esaminare gli indizi e le prove raccolti fino a questo momento per mettere assieme e organizzare i propri pensieri."
+    }
+  },
+  "PurePinecone": {
+    "name": "Pigna pura",
+    "description": {
+      "0": "Una pigna più grande del normale. Dev'essere perché è più pura di quelle comuni."
+    }
+  },
+  "EmptyBottle": {
+    "name": "Bottiglia vuota",
+    "description": {
+      "0": "Una bottiglia vuota significa che è piena d'aria, il che significa che ci si può conservare anche altre cose."
+    }
+  },
+  "PaimonsFoodFund": {
+    "name": "\"Fondo privato per cibo\" di Paimon",
+    "description": {
+      "0": "Paimon ha usato parte del suo \"fondo privato per cibo\" per pagare la tua commissione. Mmm, a pensarci bene, probabilmente ne avrà ancora molto da parte, non credi?"
+    }
+  },
+  "ExperimentalCrystalLightPathComponent": {
+    "name": "Componente sperimentale per l'ottica cristallina",
+    "description": {
+      "0": "Un componente trovato in un luogo sottomarino misterioso. Sembra essere il componente centrale di qualche tipo di dispositivo ottico. Se messo nella posizione corretta, dovrebbe essere in grado di attivare qualche tipo di dispositivo speciale...",
+      "1": "Dopo l'esperimento, si prega di conservare separatamente i componenti essenziali dal dispositivo principale, questo in conformità con le procedure standard di sicurezza."
+    }
+  },
+  "PunchedTape": {
+    "name": "Nastro perforato",
+    "description": {
+      "0": "Un nastro perforato in buono stato di conservazione. I dati presenti su di esso possono essere decodificati solo tramite un apposito macchinario."
+    }
+  },
+  "MysteriousOre": {
+    "name": "Minerale misterioso",
+    "description": {
+      "0": "Un misterioso minerale cristallino verde e giallo.",
+      "1": "Sembra possedere l'abilità di attrarre i minerali dello stesso tipo."
+    }
+  },
+  "ArkhiumStock": {
+    "name": "Arkhium grezzo",
+    "description": {
+      "0": "La forma grezza dell'Arkhium, che si può formare naturalmente sotto circostanze particolari.",
+      "1": "Può essere in grado di liberare un potenziale infinito una volta forgiato..."
+    }
+  },
+  "ArkhiumLumenite": {
+    "name": "Lumenite di Arkhium",
+    "description": {
+      "0": "Il risultato della forgiatura dell'Arkhium. Emette un'insolita luce ed energia. Si dice che un materiale del genere possa essere utilizzato per aprire una porta da qualche parte..."
     }
   },
   "JabberwocksHolySword": {
@@ -18655,6 +19104,12 @@
       "0": "La versione potenziata della pozione della rivelazione. Chissà quali strani effetti avrà se la berrai...?"
     }
   },
+  "CreditCouponsForUseDuringInvestigation": {
+    "name": "Coupon di credito (Utilizzabile durante le indagini)",
+    "description": {
+      "0": "Dei Coupon di credito speciali che hai ottenuto da Neuvillette quando ti ha richiesto di investigare su Forte Méropide. Ricorda di usarli in conformità al loro scopo."
+    }
+  },
   "Bait": {
     "name": "Esca",
     "description": {
@@ -18674,6 +19129,44 @@
       "0": "Un antico contenitore a forma di conchiglia. Forse risalente a una civiltà ancora più antica."
     }
   },
+  "UnprocessedWidget": {
+    "name": "Componente non lavorato",
+    "description": {
+      "0": "Un componente che non è stato lavorato o forgiato"
+    }
+  },
+  "ProcessedWidget": {
+    "name": "Componente lavorato",
+    "description": {
+      "0": "Un componente che è stato lavorato nell'area di produzione."
+    }
+  },
+  "PankrationFontaCup": {
+    "name": "Coppa di Fonta del torneo di Pankration",
+    "description": {
+      "0": "Un trofeo ottenuto per aver partecipato al torneo ricreativo di Pankration in veste di allenat{F#rice}{M#ore} portando Geneviève e Poiret alla vittoria. Realizzato in metallo dall'aspetto elegante, la giusta luce lo farà brillare come Mora scintillanti.",
+      "1": "Con questo trofeo speciale, potrai ottenere rabbocchi illimitati di Fonta alle apposite macchinette. Potrai bere quanto vorrai e diventare {F#la bevitrice più soddisfatta}{M#il bevitore più soddisfatto} del mondo..."
+    }
+  },
+  "SoakedPunchedTape": {
+    "name": "Nastro perforato bagnato",
+    "description": {
+      "0": "Un nastro perforato recuperato dall'acqua. I dati presenti su di esso possono essere decodificati solo tramite un apposito macchinario.",
+      "1": "Lo speciale materiale impermeabile con cui è fabbricato gli ha permesso di non andare distrutto, ma è rimasto a mollo talmente a lungo da risultare ancora umido al tatto..."
+    }
+  },
+  "SpurGearC": {
+    "name": "Ingranaggio cilindrico C",
+    "description": {
+      "0": "Un ingranaggio cilindrico apparentemente normale. In origine apparteneva al \"Prototipo a funzionalità iniziali Nº 2\", ma sembra essere stato separato dal corpo principale da un'immensa forza esterna..."
+    }
+  },
+  "SpurGearT": {
+    "name": "Ingranaggio cilindrico T",
+    "description": {
+      "0": "Un ingranaggio cilindrico apparentemente normale. In origine apparteneva al \"Prototipo a funzionalità iniziali Nº 2\", ma sembra essere stato separato dal corpo principale da un'immensa forza esterna..."
+    }
+  },
   "NavigationLogFragment": {
     "name": "Frammento di registro nautico",
     "description": {
@@ -18684,6 +19177,82 @@
     "name": "Diario danneggiato",
     "description": {
       "0": "Diario danneggiato"
+    }
+  },
+  "Disclaimer": {
+    "name": "Avvertenza",
+    "description": {}
+  },
+  "MoraCandy": {
+    "name": "Caramella Mora",
+    "description": {
+      "0": "Una caramella che assomiglia a un Mora. Dal gusto dolce e amaro, un sapore che difficilmente un bambino potrebbe apprezzare. Ma la cartina dorata attorno è incredibilmente popolare tra i più piccoli."
+    }
+  },
+  "QualityWoodenBoard": {
+    "name": "Tavola in legno di qualità",
+    "description": {
+      "0": "Una tavola fatta di legno d'alta qualità, adatta a numerosi impieghi. È possibile infilarla sotto i vestiti per bloccare attacchi potenzialmente fatali o usarla negli allenamenti di arti marziali."
+    }
+  },
+  "TheBoarPrincessVIII": {
+    "name": "La principessa dei cinghiali (VIII)",
+    "description": {
+      "0": "L'ottava parte di un classico senza tempo."
+    }
+  },
+  "CasketOfTomesSecondhand": {
+    "name": "Scrigno degli arcani (usato)",
+    "description": {
+      "0": "Uno Scrigno degli arcani che il suo affezionato proprietario ha rivenduto per ragioni sconosciute. Per un periodo limitato, viene fornito insieme a una copia omaggio di \"Invokazione del genio: Da zero a eroe\"."
+    }
+  },
+  "IdolPoster": {
+    "name": "Poster di idol",
+    "description": {
+      "0": "Il poster di una popolarissima idol di Inazuma, uno dei modi migliori per tappezzare la propria stanza. Viene venduto a prezzo scontato se acquistato insieme a delle Bambolotte."
+    }
+  },
+  "CuteDoll": {
+    "name": "Bambolotta",
+    "description": {
+      "0": "Approvata da Roussimoff! Neanche il più virile tra gli uomini rinuncerebbe mai a una bambola così carina! Viene venduta a prezzo scontato se acquistata insieme a dei poster di idol."
+    }
+  },
+  "BeastTrap": {
+    "name": "Trappola per belve",
+    "description": {
+      "0": "Una misteriosa trappola per belve. Basta adagiarci sopra dei Coupon di credito per attirare anche i più avidi tra gli avidi."
+    }
+  },
+  "MarvelousBirdEgg": {
+    "name": "Uovo d'uccello prodigioso",
+    "description": {
+      "0": "Il suo sapore paradisiaco è in grado di resuscitare i morti! Mangiarlo permette di evitare la sfortuna per un'intera giornata."
+    }
+  },
+  "DeliciousTeaLeaves": {
+    "name": "Foglie di tè deliziose",
+    "description": {
+      "0": "Il loro misterioso effetto ti permette di risvegliare la saggezza latente che si cela in te. Un gusto unico per una persona unica. Come te!"
+    }
+  },
+  "PureWaterCase": {
+    "name": "\"Acqua pura\" (cassa)",
+    "description": {
+      "0": "\"Acqua pura\" venduta all'interno di un contenitore. Tempo fa, una persona trionfò al torneo di Pankration dopo aver bevuto metà del contenitore. Berne l'intero contenuto richiede un coraggio superiore a quello di un campione, nonché un sistema digerente ben più forte."
+    }
+  },
+  "FontaSweetSakura": {
+    "name": "Fonta: Dolce Sakura",
+    "description": {
+      "0": "Una variante speciale di Fonta, che si dice includa tra i suoi ingredienti i fiori di sakura tipici di Inazuma. Viene preparata con una minor quantità di zucchero per non sovrastare l'aroma del sakura; tuttavia, stando alle opinioni dei consumatori, il cosiddetto \"aroma di sakura\" ricorda più l'odore di un prato appena tosato."
+    }
+  },
+  "FontaRedBerryBlast": {
+    "name": "Fonta: Esplosione ai frutti rossi",
+    "description": {
+      "0": "Una variante speciale di Fonta che si dice includa tra i suoi ingredienti diversi tipi di \"frutti di colore rosso\". Sfoggia un invitante colore cremisi e un gusto decisamente stratificato. Non si sa di preciso perché, ma sembra provocare forti irritazioni all'intestino; pertanto, finché non se ne scopriranno le ragioni, la promozione su larga scala di questa versione della Fonta è attualmente sospesa..."
     }
   },
   "SuspiciousFowl": {
@@ -18725,6 +19294,246 @@
   "AStory": {
     "name": "Una storia",
     "description": {}
+  },
+  "Handwheel": {
+    "name": "Manettino",
+    "description": {
+      "0": "Una manovella comune usata per regolare le valvole delle tubature attorno a Forte Méropide."
+    }
+  },
+  "EnergyConcentratingComponent": {
+    "name": "Oscillatore di concentrazione dell'energia",
+    "description": {
+      "0": "Originariamente era un comune componente del movimento meccanico, ma gli è stato aggiunto un anello di accumulo energetico fatto di metalli ad alta densità.",
+      "1": "Forse, anche solo questo singolo componente è in grado di alimentare l'intera macchina..."
+    }
+  },
+  "34thIndependentInvestigativeSquadDeploymentInMontEsusEasternQuadrantDeploymentPlan": {
+    "name": "34ª squadra investigativa indipendente: piano di dispiegamento sul Monte Esus (quadrante orientale)",
+    "description": {}
+  },
+  "SkirmishersNotes": {
+    "name": "Appunti dello Schermagliatore",
+    "description": {}
+  },
+  "34thIndependentInvestigativeSquadDeploymentInMontEsusEasternQuadrantDisplinaryProcedures": {
+    "name": "34ª squadra investigativa indipendente: procedimenti disciplinari del dispiegamento sul Monte Esus (quadrante orientale)",
+    "description": {}
+  },
+  "PoemOnFallenLeaf": {
+    "name": "Poesia scritta su una foglia caduta",
+    "description": {
+      "0": "Poesia scritta su una foglia caduta"
+    }
+  },
+  "ResponsePoemOnALeaf": {
+    "name": "Poesia di risposta scritta su una foglia",
+    "description": {
+      "0": "Poesia di risposta scritta su una foglia"
+    }
+  },
+  "PoemOnAFallenLeaf": {
+    "name": "Poesia scritta su una foglia caduta",
+    "description": {
+      "0": "Poesia scritta su una foglia caduta"
+    }
+  },
+  "PoetryRiddleOnALantern": {
+    "name": "Indovinello poetico scritto su una lanterna",
+    "description": {
+      "0": "Indovinello poetico scritto su una lanterna"
+    }
+  },
+  "PoemPlacedByUnknownPerson": {
+    "name": "Poesia lasciata da uno sconosciuto",
+    "description": {
+      "0": "Poesia lasciata da uno sconosciuto"
+    }
+  },
+  "ArkhiumInhibitorCondenserComponent": {
+    "name": "Condensatore dell'inibitore di Arkhium",
+    "description": {
+      "0": "Un condensatore che un tempo era installato sugli inibitori di Arkhium. Secondo Raimondo, una volta reinstallati tutti, gli inibitori verranno riattivati."
+    }
+  },
+  "SpecialReport": {
+    "name": "Rapporto speciale",
+    "description": {
+      "0": "Un rapporto speciale stampato privatamente da Chronie. Si dice che contenga tutte le informazioni che l'Istituto di ricerca di Fontaine sta cercando di tenere segrete..."
+    }
+  },
+  "ClueBookFortressOfMeropide": {
+    "name": "Registro degli indizi di Forte Méropide",
+    "description": {
+      "0": "Racchiude i vari indizi trovati durante le indagini a Forte Méropide."
+    }
+  },
+  "Notice": {
+    "name": "Avviso",
+    "description": {}
+  },
+  "LeftSideTableFileBox": {
+    "name": "Scatola di documenti sulla scrivania a sinistra",
+    "description": {
+      "0": "Una scatola di documenti che ha sferrato un attacco spietato al fianco di Chalmet. È stata posizionata sulla scrivania a sinistra dell'entrata. Forse sarebbe stato più facile trasportarla in una borsa..."
+    }
+  },
+  "RightSideTableFileBox": {
+    "name": "Scatola di documenti sulla scrivania a destra",
+    "description": {
+      "0": "Una scatola di documenti che ha sferrato un attacco spietato al fianco di Chalmet. È stata posizionata sulla scrivania a destra dell'entrata. Forse sarebbe stato più facile trasportarla in una borsa..."
+    }
+  },
+  "MutualAidNetworkAdvertisement": {
+    "name": "Pubblicità della Rete di mutuo soccorso",
+    "description": {
+      "0": "Un opuscolo distribuito da un membro particolarmente zelante della Rete di mutuo soccorso. Al suo interno sono indicati i principi basilari su cui si fonda tale organismo. Il logo in copertina ha un che di familiare..."
+    }
+  },
+  "FreshBerries": {
+    "name": "Bacche fresche",
+    "description": {
+      "0": "Frutti dal colore vivace e dalla consistenza dolce. Abbinandole con altri cibi, è possibile usarle per preparare delle gustose ricette da picnic."
+    }
+  },
+  "FullPankrationFontaCup": {
+    "name": "Coppa di Fonta del torneo di Pankration piena",
+    "description": {
+      "0": "Il trofeo del torneo ricreativo di Pankration, traboccante di Fonta.",
+      "1": "Emette un gorgoglio anche quando è lasciata a riposo, un po' come \"l'olio bollente e il sugo in un pentolone di stufato\", provocando la fame di chi lo sente.",
+      "2": "Tuttavia, le dimensioni della coppa sono fuori dal comune, e in pochi riuscirebbero a buttarne giù l'intero contenuto in un solo sorso. Anche se ti c'impegnassi duramente, probabilmente ti gonfieresti come una Blobbofoca e finiresti addirittura all'ospedale..."
+    }
+  },
+  "ExperimentalDrinkNo1": {
+    "name": "Drink sperimentale 1",
+    "description": {
+      "0": "Un \"drink sperimentale\" creato da Heinry, con tante bollicine e un retrogusto che ricorda il sapore del tè salato...",
+      "1": "Tutto sommato, mantiene ancora un po' del sapore originale della Fonta... Almeno sai cosa stai bevendo."
+    }
+  },
+  "ExperimentalDrinkNo2": {
+    "name": "Drink sperimentale 2",
+    "description": {
+      "0": "Un \"drink sperimentale\" creato da Heinry, con tante bollicine e un retrogusto che ricorda il sapore del tè salato.",
+      "1": "Sembra più un tè gassato che una Fonta."
+    }
+  },
+  "ExperimentalDrinkNo3": {
+    "name": "Drink sperimentale 3",
+    "description": {
+      "0": "Un \"drink sperimentale\" creato da Heinry, privo di bollicine e dalla sapidità alquanto accentuata.",
+      "1": "In fondo in fondo, conta come una Fonta."
+    }
+  },
+  "ExperimentalDrinkNo4": {
+    "name": "Drink sperimentale 4",
+    "description": {
+      "0": "Un \"drink sperimentale\" creato da Heinry, privo di bollicine e ricorda un po' del tè leggermente salato.",
+      "1": "Ok, in pratica è come bere del comunissimo tè."
+    }
+  },
+  "ExperimentalDrinkNo5": {
+    "name": "Drink sperimentale 5",
+    "description": {
+      "0": "Un \"drink sperimentale\" creato da Heinry. Una Fonta rinfrescante, fonte di refrigerio! Una classica Fonta, ahah!",
+      "1": "Ehm... Ma preparare della Fonta tradizionale non avrebbe molto senso."
+    }
+  },
+  "ExperimentalDrinkNo6": {
+    "name": "Drink sperimentale 6",
+    "description": {
+      "0": "Un \"drink sperimentale\" creato da Heinry. Un tè dolce con tante bollicine. Ha un sapore... niente male."
+    }
+  },
+  "ExperimentalDrinkNo7": {
+    "name": "Drink sperimentale 7",
+    "description": {
+      "0": "Un \"drink sperimentale\" creato da Heinry. Una Fonta rinfrescante, una fonte di cosa?! Questa bibita si è ammosciata... Chi è stato ad aprirla e a non finirla?!"
+    }
+  },
+  "ExperimentalDrinkNo8": {
+    "name": "Drink sperimentale 8",
+    "description": {
+      "0": "Un \"drink sperimentale\" creato da Heinry. Un tè dolce senza nemmeno una bollicina. Potrei... avere del tè al suo posto?"
+    }
+  },
+  "AcademicAssemblyHallPicture": {
+    "name": "Foto della Sala per le riunioni accademiche",
+    "description": {
+      "0": "Una foto scattata nella Sala per le riunioni accademiche. Chissà come la userà Iaune...?"
+    }
+  },
+  "DodocosBombTasticAdventure": {
+    "name": "Le scoppiettanti avventure di Dodoco",
+    "description": {
+      "0": "Una fiaba scritta da Lisa e basata sul gioco speciale Le scoppiettanti avventure di Dodoco, con protagonisti Cavalier Scintilla, Dodoco, Conigli Bumbum speciali, {F#la Cavaliere Onoraria}{M#il Cavaliere Onorario} e la loro pallida aiutante nella lotta contro i pesciolini..."
+    }
+  },
+  "Hat": {
+    "name": "Cappello",
+    "description": {
+      "0": "Un cappello preso da Di Tutto un Po'. Sebbene non sia lo stesso di quello che è stato smarrito, dovrebbe bastare a tamponare la situazione."
+    }
+  },
+  "MessilyWrittenNote": {
+    "name": "Appunti disordinati",
+    "description": {}
+  },
+  "TatteredDialogue": {
+    "name": "Dialogo a brandelli",
+    "description": {}
+  },
+  "ALetterLeftBehind": {
+    "name": "Lettera dimenticata",
+    "description": {}
+  },
+  "FontaineResearchInstituteOfKineticEnergyEngineeringCertificate": {
+    "name": "Certificato dell'Istituto di ricerca per l'ingegneria dell'Energia cinetica di Fontaine",
+    "description": {}
+  },
+  "TrainingLog": {
+    "name": "Diario di allenamento",
+    "description": {}
+  },
+  "Memo": {
+    "name": "Promemoria",
+    "description": {}
+  },
+  "NewTideAnthologyPartI": {
+    "name": "Letteratura della Nouvelle vague: Parte I",
+    "description": {}
+  },
+  "NewTideAnthologyPartII": {
+    "name": "Letteratura della Nouvelle vague: Parte II",
+    "description": {}
+  },
+  "NewTideAnthologyPartIII": {
+    "name": "Letteratura della Nouvelle vague: Parte III",
+    "description": {}
+  },
+  "BlanchesLetter": {
+    "name": "Lettera di Blanche",
+    "description": {
+      "0": "Una lettera posta tra due Bulle."
+    }
+  },
+  "LocationNo1Materials": {
+    "name": "Ubicazione materiali 1",
+    "description": {
+      "0": "I materiali smarriti di Heinry. Chissà che tipo d'ispirazione ne trarrà...?"
+    }
+  },
+  "LocationNo2Materials": {
+    "name": "Ubicazione materiali 2",
+    "description": {
+      "0": "I materiali smarriti di Heinry. Chissà che tipo d'ispirazione ne trarrà...?"
+    }
+  },
+  "LocationNo3Materials": {
+    "name": "Ubicazione materiali 3",
+    "description": {
+      "0": "I materiali smarriti di Heinry. Chissà che tipo d'ispirazione ne trarrà...?"
+    }
   },
   "SilkFlowerSeed": {
     "name": "Seme di Fiordiseta",
@@ -19235,6 +20044,12 @@
     "name": "Ali d'acque furenti e misericordiose",
     "description": {
       "0": "Un aliante decorato che ti è stato regalato come segno della gratitudine e del riconoscimento di Fontaine."
+    }
+  },
+  "WingsOfTransientDreams": {
+    "name": "Ali dei sogni fugaci",
+    "description": {
+      "0": "Un aliante stilizzato, ottenuto in un lampo mistico, simile a uno stato di trance, dopo aver visitato un sogno del passato attraverso la musica."
     }
   },
   "RadiantSpincrystal1": {
@@ -19975,6 +20790,48 @@
       "0": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è una melodia misteriosa proveniente da Fontaine."
     }
   },
+  "RadiantSpincrystal108": {
+    "name": "Voltacristallo radioso 108",
+    "description": {
+      "0": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è una melodia misteriosa proveniente da Fontaine."
+    }
+  },
+  "RadiantSpincrystal109": {
+    "name": "Voltacristallo radioso 109",
+    "description": {
+      "0": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è una melodia misteriosa proveniente da Fontaine."
+    }
+  },
+  "RadiantSpincrystal110": {
+    "name": "Voltacristallo radioso 110",
+    "description": {
+      "0": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è una melodia misteriosa proveniente da Fontaine."
+    }
+  },
+  "RadiantSpincrystal111": {
+    "name": "Voltacristallo radioso 111",
+    "description": {
+      "0": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è una melodia misteriosa proveniente da Fontaine."
+    }
+  },
+  "RadiantSpincrystal112": {
+    "name": "Voltacristallo radioso 112",
+    "description": {
+      "0": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è una melodia misteriosa proveniente da Fontaine."
+    }
+  },
+  "RadiantSpincrystal113": {
+    "name": "Voltacristallo radioso 113",
+    "description": {
+      "0": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è una melodia misteriosa proveniente da Fontaine."
+    }
+  },
+  "RadiantSpincrystal114": {
+    "name": "Voltacristallo radioso 114",
+    "description": {
+      "0": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è una melodia misteriosa proveniente da Fontaine."
+    }
+  },
   "LanternFiber": {
     "name": "Fibra per lanterna",
     "description": {
@@ -20114,6 +20971,13 @@
     "description": {
       "0": "Materiale di miglioramento specifico per Traghettatore del Fleuve Cendre.",
       "1": "Non solo può prevenire l'ossidazione e l'erosione formando uno strato isolante su alcuni materiali, ma aiuta anche a lubrificare, pulire e lucidare. In passato ha goduto di grande popolarità a Fontaine. Nelle pubblicità di quell'epoca, una figura leggendaria proveniente dal Fleuve Cendre ne faceva uso per la manutenzione del famoso tubo di rame ricurvo."
+    }
+  },
+  "DandelionBookmark": {
+    "name": "Segnalibro con dente di leone",
+    "description": {
+      "0": "Materiale di miglioramento specifico per la Ballata del blu sempiterno.",
+      "1": "In molte storie e poesie, i denti di leone sono un simbolo di libertà senza limiti che viaggia verso terre lontane. Collocare un segnalibro con l'immagine di un dente di leone tra le pagine di un volume non è una forma di confinamento; gli dà anzi l'opportunità di vagare in un mondo molto più vasto e luminoso del nostro."
     }
   },
   "FalconsDance": {
@@ -20417,7 +21281,7 @@
   "Wavepiercer": {
     "name": "Squarciaonde",
     "description": {
-      "0": "Una canna da pesca sottile dalla fantastica rilucenza metallica. Costruita con materiali innovativi progettati dall'Istituto di ricerca di Fontaine, combina leggerezza e resistenza. Grazie ai solidi morsetti di metallo sulle giunture, la canna è in grado di prendere all'amo pesci dal peso sorprendentemente elevato. Inoltre, il portamulinello simile a un'arma protegge i pescatori dal potenziale danno proveniente da pesci feroci e \"tosti\".",
+      "0": "Se riesci a rimanere all'interno della zona di tensione ideale mentre peschi, questa canna da pesca riduce il tempo in cui il pesce prova a divincolarsi e aumenta le tue probabilità di successo. Una canna da pesca sottile dalla fantastica rilucenza metallica. Costruita con materiali innovativi progettati dall'Istituto di ricerca di Fontaine, combina leggerezza e resistenza. Grazie ai solidi morsetti di metallo sulle giunture, la canna è in grado di prendere all'amo pesci dal peso sorprendentemente elevato. Inoltre, il portamulinello simile a un'arma protegge i pescatori dal potenziale danno proveniente da pesci feroci e \"tosti\".",
       "1": "Secondo pescatori esperti, questa canna è l'arma perfetta per proteggersi dal \"pesce di ferro\", una specialità di Fontaine, ed è paragonabile a una fidata lancia."
     }
   },
@@ -21604,6 +22468,48 @@
       "1": "Orologi accompagnano il passare del tempo, mentre i pesci accompagnano l'ondeggiare delle acque calme della sorgente. Se tutto ciò che cresce appassirà, perché i miei pensieri sono così rigogliosi?"
     }
   },
+  "NeuvilletteSurge": {
+    "name": "Neuvillette: Sovratensione",
+    "description": {
+      "0": "Stile per la carta giocatore.",
+      "1": "La superficie dell'acqua appare placida come una gemma cristallina, ma potrebbe star aspettando il momento migliore per incresparsi."
+    }
+  },
+  "WriothesleyDetention": {
+    "name": "Wriothesley: Detenzione",
+    "description": {
+      "0": "Stile per la carta giocatore.",
+      "1": "Mantenere l'ordine a Forte Méropide non è semplice. Di conseguenza, talvolta è necessario agire con una mano ferma, se non con un pizzico di deplorevole crudeltà."
+    }
+  },
+  "TravelNotesFallingStar": {
+    "name": "Appunti di viaggio: Stella dei desideri",
+    "description": {
+      "0": "Stile per la carta giocatore.",
+      "1": "Esprimi un desiderio prima di scoccare la freccia. Se riuscirai a farla entrare nel vaso, il tuo desiderio potrebbe realizzarsi."
+    }
+  },
+  "CelebrationEuphonia": {
+    "name": "Celebrazione: Euphonia",
+    "description": {
+      "0": "Stile per la carta giocatore.",
+      "1": "Gli alberi cantano sulle picchi e vallate, accompagnati dalla melodia della pioggia battente"
+    }
+  },
+  "AchievementPerpetual": {
+    "name": "Obiettivo: Perpetuum",
+    "description": {
+      "0": "Stile per la carta giocatore.",
+      "1": "\"Nessuno ode il sogno infranto tra le viti e gli ingranaggi. Solo l'infaticabile danzatrice meccanica interroga l'eco dei giorni e delle notti passati con i suoi passi eleganti.\""
+    }
+  },
+  "FontaineRedemption": {
+    "name": "Fontaine: Redenzione",
+    "description": {
+      "0": "Stile per la carta giocatore.",
+      "1": "Il logo ufficiale di Forte Méropide. Ci auguriamo vivamente che coloro che desiderano onorare l'ordine e condurre una vita pacifica non vengano mai associati all'organizzazione che rappresenta questo simbolo."
+    }
+  },
   "AnemoculusResonanceStone": {
     "name": "Pietra di risonanza per Anemoculi",
     "description": {
@@ -22106,6 +23012,14 @@
       "1": "Usalo per trovare tutti i Coupon Joyeux nell'area del Miraggio di Veluriyam."
     }
   },
+  "IttyBittyOctobaby": {
+    "name": "Polpettino",
+    "description": {
+      "0": "Un tipo di polpo minuscolo che vive nelle profondità dell'oceano.",
+      "1": "Forse per via della sua estrema curiosità o per un desiderio di avventura, sin da giovanissimo si diletta a perlustrare le acque in lungo e in largo. Se vede una creatura che gli piace, la segue dappertutto.",
+      "2": "Ma chissà come sarà da grande...?"
+    }
+  },
   "InscribedMirror": {
     "name": "Specchio inciso",
     "description": {
@@ -22151,6 +23065,20 @@
     "name": "Fotokamera speciale di Bresson",
     "description": {
       "0": "Una Fotokamera modificata appositamente da Bresson. È stata realizzata con i migliori materiali disponibili e le sue prestazioni sono eccezionali."
+    }
+  },
+  "PortableAerodynamicGelatinousBubbleGenerator": {
+    "name": "Generatore portatile di bolle gelatinose aerodinamiche",
+    "description": {
+      "0": "Un meccanismo utilizzabile per creare grandi quantità di bolle colloidali.",
+      "1": "<br/>",
+      "2": "Questo prototipo è stato sviluppato da Givalois dell'Istituto di ricerca di Fontaine.",
+      "3": "La finalità originale era realizzare un grande generatore di bolle gelatinose, che potessero trasportare una certa quantità d'acqua al loro interno e spostarsi o levitare stabilmente in aria, raggiungendo potenzialmente lo scopo di trasportare rapidamente risorse idriche.",
+      "4": "Tuttavia, non riuscendo a trovare un materiale per produrre bolle gelatinose di questo tipo, il progetto si fermò al suo stadio prototipico.",
+      "5": "Ma si dice che ai figli del ricercatore Givalois piaccia molto questa macchina per le bolle, quindi forse si potrebbe vendere come giocattolo?",
+      "6": "<br/>",
+      "7": "\"Questa macchina è un prodotto delle ricerche di papà, e si chiama 'generatore portatile di bolle gelatinose aerodinamiche'...\"",
+      "8": "\"Bolle! Che bello! Papà, sei mitico!\""
     }
   },
   "InstructionsAnemoculusResonanceStone": {
@@ -22406,6 +23334,12 @@
     "name": "Diagramma: bussola dei tesori di Hydro",
     "description": {
       "0": "Un diagramma con istruzioni passo dopo passo per realizzare una bussola dei tesori di Hydro, con cui potrai trovare facilmente i tesori sparsi per Fontaine."
+    }
+  },
+  "FormulaPureWater": {
+    "name": "Ricetta: \"Acqua pura\"",
+    "description": {
+      "0": "Una ricetta passo dopo passo per realizzare dell'\"Acqua pura\"."
     }
   },
   "SilkenPrint": {
@@ -22910,6 +23844,24 @@
       "0": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
     }
   },
+  "StalwartAndTrue": {
+    "name": "Onesta rettitudine",
+    "description": {
+      "0": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+    }
+  },
+  "GalesOfReverie": {
+    "name": "Fantasticheria burrascosa",
+    "description": {
+      "0": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+    }
+  },
+  "Beneficent": {
+    "name": "Bontà",
+    "description": {
+      "0": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+    }
+  },
   "MagicGuide": {
     "name": "Manuale di magia",
     "description": {
@@ -23234,6 +24186,18 @@
       "0": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
     }
   },
+  "Moonpiercer": {
+    "name": "Trafiggiluna",
+    "description": {
+      "0": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+    }
+  },
+  "CrownOfWatatsumi": {
+    "name": "Corona di Watatsumi",
+    "description": {
+      "0": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+    }
+  },
   "LiyueHarborWharf": {
     "name": "Molo del Porto di Liyue",
     "description": {
@@ -23428,6 +24392,18 @@
   },
   "Setaria": {
     "name": "Setaria",
+    "description": {
+      "0": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+    }
+  },
+  "GandharvaVille": {
+    "name": "Borgo Gandharva",
+    "description": {
+      "0": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+    }
+  },
+  "YayoiNanatsuki": {
+    "name": "Yayoi Nanatsuki",
     "description": {
       "0": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
     }
@@ -23690,6 +24666,18 @@
       "0": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
     }
   },
+  "FreshWindOfFreedom": {
+    "name": "La dolce brezza della libertà",
+    "description": {
+      "0": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+    }
+  },
+  "Pankration": {
+    "name": "Pankration!",
+    "description": {
+      "0": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+    }
+  },
   "Origin": {
     "name": "Origine",
     "description": {
@@ -23746,6 +24734,24 @@
   },
   "Fontaine": {
     "name": "Fontaine",
+    "description": {
+      "0": "Il dorso di una carta di Invokazione del genio che puoi ottenere e scambiare. Si dice che i dorsi delle carte con design diversi differiscano leggermente anche in termini di fattura e consistenza. Alcuni giocatori collezionano i dorsi delle carte di stili diversi come hobby."
+    }
+  },
+  "TheFortressOfMeropide": {
+    "name": "Forte Méropide",
+    "description": {
+      "0": "Il dorso di una carta di Invokazione del genio che puoi ottenere e scambiare. Si dice che i dorsi delle carte con design diversi differiscano leggermente anche in termini di fattura e consistenza. Alcuni giocatori collezionano i dorsi delle carte di stili diversi come hobby."
+    }
+  },
+  "DragonspineTraces": {
+    "name": "Picco del Drago: Tracce",
+    "description": {
+      "0": "Il dorso di una carta di Invokazione del genio che puoi ottenere e scambiare. Si dice che i dorsi delle carte con design diversi differiscano leggermente anche in termini di fattura e consistenza. Alcuni giocatori collezionano i dorsi delle carte di stili diversi come hobby."
+    }
+  },
+  "DragonspineCrown": {
+    "name": "Picco del Drago: Corona",
     "description": {
       "0": "Il dorso di una carta di Invokazione del genio che puoi ottenere e scambiare. Si dice che i dorsi delle carte con design diversi differiscano leggermente anche in termini di fattura e consistenza. Alcuni giocatori collezionano i dorsi delle carte di stili diversi come hobby."
     }
@@ -24790,9 +25796,9 @@
     }
   },
   "GlowingAmusementParkCandyLamp": {
-    "name": "Lampada delle caramelle luminose del parco divertimenti",
+    "name": "Lampione Bonbon del parco divertimenti",
     "description": {
-      "0": "Un progetto con istruzioni passo dopo passo per realizzare una lampada delle caramelle luminose del parco divertimenti.",
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare un lampione Bonbon del parco divertimenti.",
       "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
     }
   },
@@ -24821,6 +25827,20 @@
     "name": "Mekaluminaria Campagna lucente",
     "description": {
       "0": "Un progetto con istruzioni passo dopo passo per realizzare una Mekaluminaria Campagna lucente.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
+  "SplendrousNightOverflowingLight": {
+    "name": "Notte splendide Luce traboccante",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare Notte splendide Luce traboccante.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
+  "MekaLuminaireShiningSea": {
+    "name": "Mekaluminaria Mare lucente",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare una Mekaluminaria Mare lucente.",
       "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
     }
   },
@@ -25013,6 +26033,34 @@
       "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
     }
   },
+  "MaisonCardinalicesCabinet": {
+    "name": "Armadio della Maison Cardinalice",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare un armadio della Maison Cardinalice.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
+  "MaisonCardinalicesHighShelf": {
+    "name": "Mensola elevata della Maison Cardinalice",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare una mensola elevata della Maison Cardinalice.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
+  "MaisonCardinalicesWingedShelf": {
+    "name": "Libreria con ante ad ali della Maison Cardinalice",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare una mensola alata della Maison Cardinalice.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
+  "MaisonCardinalicesLittleHelper": {
+    "name": "Piccolo aiutante della Maison Cardinalice",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare un Piccolo aiutante della Maison Cardinalice.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
   "SturdyLibraryTable": {
     "name": "Tavolo da studio robusto",
     "description": {
@@ -25174,6 +26222,41 @@
       "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
     }
   },
+  "StudyOfTheForbiddenFortress": {
+    "name": "Studio del Forte proibito",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare Studio del Forte proibito.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
+  "EverydayLifeInTheForbiddenFortress": {
+    "name": "Vita quotidiana nel Forte proibito",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare Vita quotidiana nel Forte proibito.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
+  "ContentedElegance": {
+    "name": "Eleganza confortevole",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare Eleganza confortevole.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
+  "SteadyStatelyStability": {
+    "name": "Solennità stabile e orgogliosa",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare Solennità stabile e orgogliosa.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
+  "MaisonCardinalicesFocus": {
+    "name": "Accortezza della Maison Cardinalice",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare Accortezza della Maison Cardinalice.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
   "BreezeBlessedBed": {
     "name": "Letto Dolce brezza",
     "description": {
@@ -25213,6 +26296,13 @@
     "name": "Divano in legno di Adhigama Riposo",
     "description": {
       "0": "Un progetto con istruzioni passo dopo passo per realizzare un divano in legno di Adhigama Riposo.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
+  "LindenWoodSturdyBunk": {
+    "name": "Letto resistente in legno di tiglio",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare un letto resistente in legno di tiglio.",
       "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
     }
   },
@@ -25360,6 +26450,34 @@
     "name": "Sedia da taverna Sobrietà sollecita",
     "description": {
       "0": "Un progetto con istruzioni passo dopo passo per realizzare una sedia da taverna Sobrietà sollecita.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
+  "ConversationOfTheForbiddenFortress": {
+    "name": "\"Conversazione del Forte proibito\"",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare Conversazione del Forte proibito.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
+  "ComfortOfAHomeAwayFromHome": {
+    "name": "A casa lontano da casa",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare A casa lontano da casa.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
+  "WitnessToGreatFocus": {
+    "name": "\"Testimone di grande concentrazione\"",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare Testimone di grande concentrazione.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
+  "ElationOfSocialDrinking": {
+    "name": "Giubilio del bere in compagnia",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare Giubilio del bere in compagnia.",
       "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
     }
   },
@@ -25671,6 +26789,62 @@
       "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
     }
   },
+  "WisdomOfTheForbiddenFortress": {
+    "name": "Saggezza del Forte proibito",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare Saggezza del Forte proibito.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
+  "ChillAfternoonTeaTime": {
+    "name": "Rilassante tè pomeridiano",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare Rilassante tè pomeridiano.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
+  "MaisonCardinalicesPunctuality": {
+    "name": "Puntualità della Maison Cardinalice",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare Puntualità della Maison Cardinalice.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
+  "MaisonCardinalicesLockbox": {
+    "name": "Forziere metallico della Maison Cardinalice",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare un forziere metallico della Maison Cardinalice.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
+  "MaisonCardinalicesStores": {
+    "name": "Riserve della Maison Cardinalice",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare Riserve della Maison Cardinalice.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
+  "MallowWoodEnhancedPlatformLadder": {
+    "name": "Scaletta migliorata in legno di malva",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare una scaletta migliorata in legno di malva.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
+  "MallowWoodSturdyCargoContainer": {
+    "name": "Scatole per merci resistenti in legno di malva",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare scatole per merci resistenti in legno di malva.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
+  "BurdenOfTheForbiddenFortress": {
+    "name": "\"Onere del Forte proibito\"",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare Onere del Forte proibito.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
   "MondstadtRugCrimsonArdor": {
     "name": "Tappeto di Mondstadt Ardore cremisi",
     "description": {
@@ -25752,6 +26926,20 @@
     "name": "Tappeto da taverna Saggezza del duellante",
     "description": {
       "0": "Un progetto con istruzioni passo dopo passo per realizzare un tappeto da taverna Saggezza del duellante.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
+  "RestaurantRugEqualDialogue": {
+    "name": "Tappeto per ristorante: Dialogo equo",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare un tappeto per ristorante: Dialogo equo.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
+  "RestaurantRugBathingInTheBreeze": {
+    "name": "Tappeto del ristorante: Godersi la brezza",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare un tappeto del ristorante: Godersi la brezza.",
       "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
     }
   },
@@ -26161,6 +27349,20 @@
       "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
     }
   },
+  "MaisonCardinalicesMusicalTone": {
+    "name": "Musica della Maison Cardinalice",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare Musica della Maison Cardinalice.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
+  "MaisonCardinalicesClerk": {
+    "name": "Impiegato della Maison Cardinalice",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare Impiegato della Maison Cardinalice.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
   "RealizationsFromTheLandOfWisdom": {
     "name": "Zelo della Terra della Saggezza",
     "description": {
@@ -26179,6 +27381,27 @@
     "name": "L'arte di trattenere l'acqua",
     "description": {
       "0": "Un progetto con istruzioni passo dopo passo per realizzare L'arte di trattenere l'acqua.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
+  "FloralArrangementNearlyAquamarine": {
+    "name": "Composizione floreale: Quasi acquamarina",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare Composizione floreale: Quasi acquamarina.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
+  "FloralArrangementBloomingPurity": {
+    "name": "Composizione floreale: Purezza in fiore",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare Composizione floreale: Purezza in fiore.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
+  "FloralArrangementArtOfContrast": {
+    "name": "Composizione floreale: Arte del contrasto",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare Composizione floreale: Arte del contrasto.",
       "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
     }
   },
@@ -27673,6 +28896,20 @@
       "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
     }
   },
+  "ImmaculateJudgment": {
+    "name": "Giudizio immacolato",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare Giudizio immacolato.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
+  "AThousandEphemeralVisionsOfDew": {
+    "name": "Mille effimere visioni di rugiada",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare Mille effimere visioni di rugiada.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
   "AdeptusGate": {
     "name": "Porta dell'Adeptus",
     "description": {
@@ -28437,9 +29674,9 @@
     }
   },
   "WindUpGreatOwlSpiritMechanism": {
-    "name": "Meccanismo a molla dello spirito del gran gufo",
+    "name": "Meccanismo a molla dello Spirito del grande gufo",
     "description": {
-      "0": "Un progetto con istruzioni passo dopo passo per realizzare un meccanismo a molla dello spirito del gran gufo.",
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare un meccanismo a molla dello Spirito del grande gufo.",
       "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
     }
   },
@@ -28447,6 +29684,13 @@
     "name": "Meka manutentore Modello dimostrativo",
     "description": {
       "0": "Un progetto con istruzioni passo dopo passo per realizzare un Meka manutentore Modello dimostrativo.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
+  "MajestyOfTheForbiddenFortress": {
+    "name": "Maestà del Forte proibito",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare Maestà del Forte proibito.",
       "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
     }
   },
@@ -28482,6 +29726,13 @@
     "name": "Piante in vaso profumate del Passage",
     "description": {
       "0": "Un progetto con istruzioni passo dopo passo per realizzare delle piante in vaso profumate del Passage.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
+  "RoyalPurple": {
+    "name": "Viola reale",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare un Viola reale.",
       "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
     }
   },
@@ -29476,6 +30727,13 @@
     "name": "Selciato di pietra Grande creazione",
     "description": {
       "0": "Un progetto con istruzioni passo dopo passo per realizzare un selciato di pietra Grande creazione.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
+  "TearstoneTilePerspectiveTheory": {
+    "name": "Piastrella in Pietralacrima Teoria della prospettiva",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare una piastrella in Pietralacrima Teoria della prospettiva.",
       "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
     }
   }

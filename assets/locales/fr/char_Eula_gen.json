@@ -137,7 +137,7 @@
   "constellation2": {
     "name": "Fille d'écume de mer",
     "description": {
-      "0": "Réduit le TdR de l'appui long de <strong>Vortex des mers glacées</strong> pour correspondre à celui de l'appui simple."
+      "0": "Diminue le TdR de l'appui long de <strong>Vortex des mers glacées</strong> pour correspondre à celui de l'appui simple."
     }
   },
   "constellation3": {

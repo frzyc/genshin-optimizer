@@ -120,7 +120,7 @@
   "passive3": {
     "name": "Aux premières lueurs de l'aube",
     "description": {
-      "0": "Réduit la consommation d'endurance de vos personnages dans l'équipe de 20 % lors de l'escalade.",
+      "0": "Diminue la consommation d'endurance de vos personnages dans l'équipe de 20 % lors de l'escalade.",
       "1": "Ne peut pas être cumulé avec d'autres aptitudes passives aux effets identiques."
     }
   },
@@ -146,7 +146,7 @@
   "constellation4": {
     "name": "Serment de la sentinelle",
     "description": {
-      "0": "Réduit le TdR de l'appui long de <strong>Liturgie : Sanctuaire de la héronne</strong> pour correspondre à celui de l'appui simple."
+      "0": "Diminue le TdR de l'appui long de <strong>Liturgie : Sanctuaire de la héronne</strong> pour correspondre à celui de l'appui simple."
     }
   },
   "constellation5": {

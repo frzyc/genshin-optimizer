@@ -43,7 +43,7 @@
     "name": "Jeu fervent",
     "description": {
       "0": "Xinyan brandit sa guitare, et inflige aux ennemis proches des <pyro>DGT Pyro</pyro>, et génère un bouclier grâce au soutien de l'audience.",
-      "1": "Le bouclier absorbe une quantité de PV proportionnelle à la DÉF de Xinyan et aux ennemis touchés :",
+      "1": "Le bouclier absorbe une quantité de DGT proportionnelle à la DÉF de Xinyan et aux ennemis touchés :",
       "2": [
         " 0 à 1 ennemi touché : Bouclier Niv.1",
         " 2 ennemis touchés : Bouclier Niv.2",
@@ -52,7 +52,7 @@
       "3": "<br/>",
       "4": "Le bouclier a les effets suivants :",
       "5": [
-        " Applique au moment de sa création l'<pyro>élément Pyro</pyro> à Xinyan ;"
+        " Applique au moment de sa création l'<pyro>élément Pyro</pyro> à Xinyan."
       ],
       "6": "Le bouclier est efficace à 250 % contre les <pyro>DGT Pyro</pyro>.",
       "7": "<br/>",
@@ -107,7 +107,7 @@
   "passive1": {
     "name": "« Le spectacle doit continuer, même sans audience... »",
     "description": {
-      "0": "Réduit le nombre d'ennemis à toucher pour déclencher chaque niveau de bouclier de <strong>Jeu fervent</strong> :",
+      "0": "Diminue le nombre d'ennemis à toucher pour déclencher chaque niveau de bouclier de <strong>Jeu fervent</strong> :",
       "1": [
         " 1 ennemi touché : Bouclier Niv.2.",
         " 2 ennemis touchés ou plus : Bouclier Niv.3."
@@ -149,7 +149,7 @@
   "constellation4": {
     "name": "Rythme irrésistible",
     "description": {
-      "0": "La RÉS physique des ennemis touchés par Xinyan au début de <strong>Jeu fervent</strong> est réduite de 15 % pendant 12 s."
+      "0": "La RÉS physique des ennemis touchés par Xinyan au début de <strong>Jeu fervent</strong> diminue de 15 % pendant 12 s."
     }
   },
   "constellation5": {
@@ -162,7 +162,7 @@
   "constellation6": {
     "name": "Rock infernal",
     "description": {
-      "0": "Réduit la consommation d'endurance des attaques chargées de Xinyan de 30 %. Xinyan obtient de plus un bonus d'ATQ équivalant à 50 % de sa DÉF lorsqu'elle exécute une attaque chargée."
+      "0": "Diminue la consommation d'endurance des attaques chargées de Xinyan de 30 %. Xinyan obtient de plus un bonus d'ATQ équivalant à 50 % de sa DÉF lorsqu'elle exécute une attaque chargée."
     }
   }
 }

@@ -108,7 +108,7 @@
   "passive1": {
     "name": "De todo corazón",
     "description": {
-      "0": "Si la Vida de tu personaje en uso es inferior al 30% cuando Noelle está en tu equipo pero no en combate:",
+      "0": "Si la Vida de tu personaje en uso es inferior al 30% cuando Noelle está en tu equipo pero no en uso:",
       "1": [
         "Dicho personaje en uso recibirá inmediatamente un escudo con una duración de 20 s que absorbe un daño equivalente al 400% de la DEF de Noelle.",
         "El escudo tiene un 150% de efectividad de absorción contra todo el Daño Elemental y el Daño Físico.",

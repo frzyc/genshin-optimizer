@@ -141,7 +141,7 @@
   "constellation4": {
     "name": "Répression divine",
     "description": {
-      "0": "L'ATQ des cibles marquées par un talisman de fortune est réduite de 20 %."
+      "0": "L'ATQ des cibles marquées par un talisman de fortune diminue de 20 %."
     }
   },
   "constellation5": {

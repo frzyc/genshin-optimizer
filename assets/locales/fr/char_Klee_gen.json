@@ -75,7 +75,7 @@
     "description": {
       "0": "Klee s'enflamme ! Invoque une Fleur bombardier qui harcèle les ennemis proches, infligeant des <pyro>DGT Pyro de zone</pyro>.",
       "1": "<br/>",
-      "2": "<i>Les membres de l'Ordre de Favonius sont convaincus qu'une bonne étoile veille sur Klee ; sinon, comment expliquer qu'elle ne se blesse jamais ?</i>"
+      "2": "<i>Les membres de l'Ordre de Favonius sont convaincus qu'une bonne étoile veille sur Klee... Sinon, comment expliquer qu'elle ne se blesse jamais ?</i>"
     },
     "skillParams": {
       "0": "DGT Fleur bombardier",
@@ -106,7 +106,7 @@
   "passive2": {
     "name": "Étincelle infinie",
     "description": {
-      "0": "Lorsque Klee inflige des DGT CRIT avec des attaques chargées, l'énergie élémentaire de tous les membres de l'équipe est restaurée de 2 pts."
+      "0": "Lorsque Klee inflige des DGT CRIT avec des attaques chargées, l'énergie élémentaire de tous les personnages de l'équipe est restaurée de 2 pts."
     }
   },
   "passive3": {
@@ -150,7 +150,7 @@
   "constellation6": {
     "name": "À tout feu",
     "description": {
-      "0": "Klee restaure 3 pts d'énergie élémentaire à tous les membres de l'équipe (hormis Klee) toutes les 3 s tant que <strong>Fleur bombardier</strong> est active.",
+      "0": "Klee restaure 3 pts d'énergie élémentaire à tous les personnages de l'équipe (hormis Klee) toutes les 3 s tant que <strong>Fleur bombardier</strong> est active.",
       "1": "L'activation de <strong>Fleur bombardier</strong> confère un bonus de <pyro>DGT Pyro</pyro> de 10 % pendant 25 s à tous les membres de l'équipe."
     }
   }

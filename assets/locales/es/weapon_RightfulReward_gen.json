@@ -6,19 +6,19 @@
   "passiveName": "Punta de lanza",
   "passiveDescription": {
     "0": {
-      "0": "Al recibir curación, el personaje recupera <cryo>8</cryo> pts. de Energía Elemental. Este efecto solo se puede activar una vez cada 10 s y puede ocurrir incluso cuando el personaje está en tu equipo pero no en combate."
+      "0": "Al recibir curación, el personaje recupera <cryo>8</cryo> pts. de Energía Elemental. Este efecto solo se puede activar una vez cada 10 s y puede ocurrir incluso cuando el personaje está en tu equipo pero no en uso."
     },
     "1": {
-      "0": "Al recibir curación, el personaje recupera <cryo>10</cryo> pts. de Energía Elemental. Este efecto solo se puede activar una vez cada 10 s y puede ocurrir incluso cuando el personaje está en tu equipo pero no en combate."
+      "0": "Al recibir curación, el personaje recupera <cryo>10</cryo> pts. de Energía Elemental. Este efecto solo se puede activar una vez cada 10 s y puede ocurrir incluso cuando el personaje está en tu equipo pero no en uso."
     },
     "2": {
-      "0": "Al recibir curación, el personaje recupera <cryo>12</cryo> pts. de Energía Elemental. Este efecto solo se puede activar una vez cada 10 s y puede ocurrir incluso cuando el personaje está en tu equipo pero no en combate."
+      "0": "Al recibir curación, el personaje recupera <cryo>12</cryo> pts. de Energía Elemental. Este efecto solo se puede activar una vez cada 10 s y puede ocurrir incluso cuando el personaje está en tu equipo pero no en uso."
     },
     "3": {
-      "0": "Al recibir curación, el personaje recupera <cryo>14</cryo> pts. de Energía Elemental. Este efecto solo se puede activar una vez cada 10 s y puede ocurrir incluso cuando el personaje está en tu equipo pero no en combate."
+      "0": "Al recibir curación, el personaje recupera <cryo>14</cryo> pts. de Energía Elemental. Este efecto solo se puede activar una vez cada 10 s y puede ocurrir incluso cuando el personaje está en tu equipo pero no en uso."
     },
     "4": {
-      "0": "Al recibir curación, el personaje recupera <cryo>16</cryo> pts. de Energía Elemental. Este efecto solo se puede activar una vez cada 10 s y puede ocurrir incluso cuando el personaje está en tu equipo pero no en combate."
+      "0": "Al recibir curación, el personaje recupera <cryo>16</cryo> pts. de Energía Elemental. Este efecto solo se puede activar una vez cada 10 s y puede ocurrir incluso cuando el personaje está en tu equipo pero no en uso."
     }
   }
 }

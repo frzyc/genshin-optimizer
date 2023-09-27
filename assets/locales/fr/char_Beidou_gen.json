@@ -86,7 +86,7 @@
       "2": "<strong>Bouclier de foudre</strong>",
       "3": [
         " Les attaques normales et chargées, lorsqu'elles touchent, libèrent une décharge électrique qui se propage d'ennemi en ennemi et inflige des <electro>DGT Électro</electro>.",
-        " Augmente la RÉS à l'interruption du personnage et réduit les DGT subis."
+        " Augmente la RÉS à l'interruption du personnage et diminue les DGT subis."
       ],
       "4": "<br/>",
       "5": "Une décharge peut être libérée une fois toutes les secondes.<i>Le plus puissant des éclairs peut fendre mers et montagnes.</i>"
@@ -123,14 +123,14 @@
       "1": [
         " Les attaques normales et chargées infligent 15 % de DGT supplémentaires.",
         " La VIT des attaques normales et chargées augmente de 15 %.",
-        " Réduit considérablement le temps de préparation des attaques chargées."
+        " Diminue considérablement le temps de préparation des attaques chargées."
       ]
     }
   },
   "passive3": {
     "name": "Braveuse de marée",
     "description": {
-      "0": "Réduit la consommation d'endurance de vos personnages dans l'équipe de 20 % lors de la nage.",
+      "0": "Diminue la consommation d'endurance de vos personnages dans l'équipe de 20 % lors de la nage.",
       "1": "Ne peut pas être cumulé avec d'autres aptitudes passives aux effets identiques."
     }
   },
@@ -171,7 +171,7 @@
   "constellation6": {
     "name": "Chancre du mal",
     "description": {
-      "0": "La <electro>RÉS Électro</electro> des ennemis proches est réduite de 15 % tant que <strong>Brisure d'orage</strong> est actif."
+      "0": "La <electro>RÉS Électro</electro> des ennemis proches diminue de 15 % tant que <strong>Brisure d'orage</strong> est actif."
     }
   }
 }

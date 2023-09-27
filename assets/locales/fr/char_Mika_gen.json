@@ -107,7 +107,7 @@
       "0": "L'état Spirivent de <strong>Tourbillon de givre étoilé</strong> accorde une amélioration de l'effet Localisation dans les situations suivantes afin d'augmenter les DGT physiques infligés par le personnage sur le terrain de 10 % :",
       "1": [
         " Si la flèche de givreflux touche plus d'un ennemi, chaque ennemi supplémentaire touché accorde 1 cumul de localisation.",
-        " Lorsqu'un éclat de givrétoile touche un ennemi, 1 cumul de localisation est accordé. Chaque éclat de givrétoile peut déclencher cet effet 1 fois."
+        " Lorsqu'un éclat de givrétoile touche un ennemi, 1 cumul de localisation est accordé. Chaque éclat de givrétoile peut déclencher cet effet une fois."
       ],
       "2": "<br/>",
       "3": "L'effet Localisation de l'état Spirivent peut être cumulé 3 fois maximum. Si Tourbillon de givre étoilé est utilisé une nouvelle fois pendant la durée, l'état Spirivent existant et l'effet Localisation sont supprimés."

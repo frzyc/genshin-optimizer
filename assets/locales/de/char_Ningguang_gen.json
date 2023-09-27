@@ -1,7 +1,7 @@
 {
   "name": "Ningguang",
   "title": "Verdeckter Mond",
-  "description": "Der „Tianquan“ unter den „Qixing von Liyue“. Ihr Reichtum ist enorm und bleibt unangefochten der größte im ganzen Land.",
+  "description": "Der „Tianquan“ unter den „Qixing von Liyue“. Ihr Reichtum ist enorm und nur wenige können es auf dem ganzen Kontinent mit ihr aufnehmen.",
   "constellationName": "Opus Aequilibrium",
   "auto": {
     "name": "Teure Geschosse",
@@ -9,7 +9,7 @@
       "normal": {
         "0": "<strong><strong>Standardangriff</strong>",
         "1": "Verschießt Edelsteine, die <geo>Geo-Schaden</geo> verursachen.",
-        "2": "Gibt Ningguang bei Treffern eine Sternjade."
+        "2": "Verleiht Ningguang bei Treffern eine Sternjade."
       },
       "charged": {
         "0": "<strong>Heftiger Schlag</strong>",
@@ -80,7 +80,7 @@
       "0": "Ningguang sammelt unzählige Edelsteine, die auf einen Schlag auf Gegner in der Umgebung zufliegen und hohen <geo>Geo-Schaden</geo> verursachen.",
       "1": "Lässt einen eventuell anwesenden Jadeschirm in der Nähe bei Anwendung von Sternensplitter zusätzlich viele kleine Edelsteine abschießen.",
       "2": "<br/>",
-      "3": "<i>Die Sterne zerbrechen in Tausende Teile.</i>"
+      "3": "<i>Sterne zerbrechen. Stille fällt.</i>"
     },
     "skillParams": {
       "0": "SCH pro Edelstein",

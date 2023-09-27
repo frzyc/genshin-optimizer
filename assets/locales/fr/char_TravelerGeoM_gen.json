@@ -96,7 +96,7 @@
   "passive1": {
     "name": "Roche brisée",
     "description": {
-      "0": "Réduit le TdR d'<strong>Épée d'étoile déchue</strong> de 2 s."
+      "0": "Diminue le TdR d'<strong>Épée d'étoile déchue</strong> de 2 s."
     }
   },
   "passive2": {

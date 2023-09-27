@@ -82,7 +82,7 @@
       "0": "Condensant les particules présentes dans l'air, Ganyu invoque une perle de glace magique qui exorcise les démons.",
       "1": "Tant qu'elle est active, la perle libère des éclats de glace de façon continue qui infligent des <cryo>DGT Cryo</cryo> aux ennemis dans la zone.",
       "2": "<br/>",
-      "3": "<i>Ganyu sait bien sûr comment invoquer une bruine rafraîchissante ; mais quand il s'agit de combattre, la bruine se change en tempête de neige.</i>"
+      "3": "<i>Ganyu sait bien sûr comment invoquer une bruine rafraîchissante... Mais quand il s'agit de combattre, la bruine se change en tempête de neige.</i>"
     },
     "skillParams": {
       "0": "DGT éclats de glace",
@@ -124,7 +124,7 @@
   "constellation1": {
     "name": "Buveur de rosée",
     "description": {
-      "0": "La <cryo>RÉS Cryo</cryo> des ennemis touchés par une flèche de givre (attaque chargée) ou par la zone de givre qui en résulte est réduite de 15 % pendant 6 s.",
+      "0": "La <cryo>RÉS Cryo</cryo> des ennemis touchés par une flèche de givre (attaque chargée) ou par la zone de givre qui en résulte diminue de 15 % pendant 6 s.",
       "1": "Ganyu récupère de plus 2 pts d'énergie élémentaire lorsqu'elle touche. Ce dernier effet ne peut être déclenché qu'une fois par flèche de givre, même si la zone de givre et la flèche de givre touchent toutes les deux."
     }
   },

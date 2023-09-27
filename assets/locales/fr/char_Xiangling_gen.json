@@ -112,7 +112,7 @@
   "constellation1": {
     "name": "Croustillant à l'extérieur, tendre à l'intérieur",
     "description": {
-      "0": "La <pyro>RÉS Pyro</pyro> des ennemis touchés par Gooba est réduite de 15 % pendant 6 s."
+      "0": "La <pyro>RÉS Pyro</pyro> des ennemis touchés par Gooba diminue de 15 % pendant 6 s."
     }
   },
   "constellation2": {

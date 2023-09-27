@@ -1,7 +1,7 @@
 {
   "setName": "Sacrifieur Hydro",
   "setEffects": {
-    "1": "Réduit la durée des effets Hydro subis de 40 %."
+    "1": "Diminue la durée des effets Hydro subis de 40 %."
   },
   "pieces": {
     "circlet": {

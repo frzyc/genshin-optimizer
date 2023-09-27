@@ -43,7 +43,7 @@
   "skill": {
     "name": "Jade Screen",
     "description": {
-      "0": "Ningguang creates a Jade Screen out of gold, obsidian and her great opulence, dealing <geo>AoE Geo DMG</geo>.",
+      "0": "Ningguang creates a Jade Screen out of gold, obsidian, and her great opulence, dealing <geo>AoE Geo DMG</geo>.",
       "1": "<br/>",
       "2": "<strong>Jade Screen</strong>",
       "3": [

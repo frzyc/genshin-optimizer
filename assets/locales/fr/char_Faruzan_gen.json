@@ -106,13 +106,13 @@
   "passive1": {
     "name": "Courant impétueux",
     "description": {
-      "0": "Lorsque Faruzan est dans l'état Épiphanie du vent de <strong>Royaume venteux de nasamjnin</strong>, la durée de charge de son tir visé est réduite de 60 % et elle inflige l'effet Calamité de vent de <strong>Sentier secret du vent</strong> aux ennemis touchés par le vortex créé par l'effet Effondrement compressé."
+      "0": "Lorsque Faruzan est dans l'état Épiphanie du vent de <strong>Royaume venteux de nasamjnin</strong>, la durée de charge de son tir visé diminue de 60 % et elle inflige l'effet Calamité de vent de <strong>Sentier secret du vent</strong> aux ennemis touchés par le vortex créé par l'effet Effondrement compressé."
     }
   },
   "passive2": {
     "name": "Sagesse perdue des sept cavernes",
     "description": {
-      "0": "Lorsqu'un personnage sous l'effet Vent de prière de <strong>Sentier secret du vent</strong> inflige des <anemo>DGT Anémo</anemo> à un ennemi en utilisant une attaque normale, chargée ou plongeante ou une compétence ou un déchaînement élémentaires, il déclenche l'effet Protection venteuse : augmente les DGT infligés d'une valeur équivalant à 32 % de l'ATQ de base de Faruzan. Un effet Protection venteuse peut être déclenché une fois toutes les 0,8 s. Cet effet disparaît à la fin de la durée du vent de prière ou après avoir été activé 1 fois."
+      "0": "Lorsqu'un personnage sous l'effet Vent de prière de <strong>Sentier secret du vent</strong> inflige des <anemo>DGT Anémo</anemo> à un ennemi en utilisant une attaque normale, chargée ou plongeante ou une compétence ou un déchaînement élémentaires, il déclenche l'effet Protection venteuse : augmente les DGT infligés d'une valeur équivalant à 32 % de l'ATQ de base de Faruzan. Un effet Protection venteuse peut être déclenché une fois toutes les 0,8 s. Cet effet disparaît à la fin de la durée du vent de prière ou après avoir été activé une fois."
     }
   },
   "passive3": {

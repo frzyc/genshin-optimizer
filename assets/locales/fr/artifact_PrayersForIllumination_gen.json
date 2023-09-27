@@ -1,7 +1,7 @@
 {
   "setName": "Sacrifieur Pyro",
   "setEffects": {
-    "1": "Réduit la durée des effets Pyro subis de 40 %."
+    "1": "Diminue la durée des effets Pyro subis de 40 %."
   },
   "pieces": {
     "circlet": {

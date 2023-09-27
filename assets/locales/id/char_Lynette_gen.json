@@ -121,7 +121,7 @@
   "passive2": {
     "name": "Props Positively Prepped",
     "description": {
-      "0": "Setelah Bogglecat Box yang tercipta dari <strong>Magic Trick: Astonishing Shift</strong> mengalami perubahan elemen, DMG Elemental Burst Lynette akan meningkat 15%. Efek ini akan berlangsung hingga durasi Bogglecat Box berakhir."
+      "0": "Setelah Bogglecat Box yang tercipta dari <strong>Magic Trick: Astonishing Shift</strong> mengalami Elemental Absorption, DMG Elemental Burst Lynette akan meningkat 15%. Efek ini akan berlangsung hingga durasi Bogglecat Box berakhir."
     }
   },
   "passive3": {

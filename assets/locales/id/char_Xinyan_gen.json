@@ -12,7 +12,7 @@
       "charged": {
         "0": "<strong>Charged Attack</strong>",
         "1": "Terus menguras Stamina untuk melancarkan serangan berputar yang mengakibatkan DMG ke musuh di sekitar.",
-        "2": "Diakhiri dengan sebuah tebasan yang kuat."
+        "2": "Melancarkan sebuah tebasan yang kuat di akhir serangan berputar."
       },
       "plunging": {
         "0": "<strong>Plunging Attack</strong>",
@@ -29,7 +29,7 @@
       "6": "Konsumsi Stamina Charged Attack",
       "7": "Durasi Maksimum",
       "8": "DMG Selama Plunging",
-      "9": "DMG Plunging Attack Min./Maks.",
+      "9": "DMG Plunging Attack Rendah/Tinggi",
       "10": "",
       "11": "",
       "12": "",
@@ -41,24 +41,24 @@
   "skill": {
     "name": "Sweeping Fervor",
     "description": {
-      "0": "Xinyan mengayunkan instrumennya, mengakibatkan <pyro>Pyro DMG</pyro> terhadap semua musuh di dekatnya, dan membentuk sebuah perisai yang terbuat dari hasrat pendengarnya.",
-      "1": "Skala penahanan DMG didasarkan pada DEF Xinyan dan jumlah musuh yang terkena skill ini.",
+      "0": "Xinyan mengayunkan alat musiknya, mengakibatkan <pyro>Pyro DMG</pyro> terhadap semua musuh di dekatnya, dan membentuk sebuah perisai yang terbuat dari hasrat para pendengarnya.",
+      "1": "Jumlah DMG yang bisa ditahan perisai didasarkan pada DEF Xinyan dan jumlah musuh yang terkena skill ini.",
       "2": [
-        "Memukul 0-1 musuh memberikan Perisai Level 1: Ad Lib.",
-        " Memukul 2 musuh memberikan Perisai Level 2: Lead-In.",
-        " Memukul 3 musuh memberikan Perisai Level 3: Rave, yang juga akan mengakibatkan <pyro>Pyro DMG</pyro> secara berkala terhadap semua musuh di dekatnya."
+        " Mengenai 0-1 musuh memberikan Perisai Level 1: Ad Lib.",
+        " Mengenai 2 musuh memberikan Perisai Level 2: Lead-In.",
+        " Mengenai 3 musuh memberikan Perisai Level 3: Rave, yang juga akan mengakibatkan <pyro>Pyro DMG</pyro> secara berkala terhadap semua musuh di dekatnya."
       ],
       "3": "<br/>",
-      "4": "Perisai memiliki sifat khusus berikut:",
+      "4": "Perisai Xinyan memiliki sifat khusus berikut:",
       "5": [
-        "Ketika dilancarkan, perisai memberikan efek <pyro>Pyro</pyro> untuk Xinyan.",
-        "Perisai memiliki 250% efisiensi menahan <pyro>Pyro DMG</pyro>."
+        " Ketika dilancarkan, perisai akan memberikan efek <pyro>Pyro</pyro> untuk Xinyan.",
+        " Perisai dapat menahan <pyro>Pyro DMG</pyro> 250% lebih efektif."
       ],
       "6": "<br/>",
-      "7": "<i>Xinyan menegaskan bahwa pyrotechnics ini adalah puncak dari seni performatif, dan itu adalah fenomena fisik yang tidak ada kaitannya dengan Vision yang dia miliki.</i>"
+      "7": "<i>Xinyan menegaskan bahwa seni Pyrotechnic ini adalah puncak dari seni pertunjukan, dan itu adalah fenomena fisik yang tidak berhubungan dengan Vision yang dia miliki.</i>"
     },
     "skillParams": {
-      "0": "Swing DMG",
+      "0": "DMG Tebasan",
       "1": "Pertahanan Perisai Level 1",
       "2": "Pertahanan Perisai Level 2",
       "3": "Pertahanan Perisai Level 3",
@@ -79,10 +79,10 @@
   "burst": {
     "name": "Riff Revolution",
     "description": {
-      "0": "Menggesek senarnya secara cepat dan menimbulkan bunyi kasar yang bisa menghempas musuh, serta mengakibatkan Physical DMG dan efek hipnotis terhadap mereka.",
-      "1": "Intensitas atmosfer yang tipis akan menyebabkan ledakan yang mengakibatkan <pyro>Pyro DMG</pyro> ke musuh di sekitarnya.",
+      "0": "Xinyan memetik senar gitarnya dengan cepat untuk menghempaskan musuh di sekitar dan mengakibatkan Physical DMG serta membuat suasana menjadi semakin panas.",
+      "1": "Atmosfer yang semakin panas ini akan menyebabkan ledakan dan mengakibatkan <pyro>Pyro DMG</pyro> ke musuh di sekitarnya.",
       "2": "<br/>",
-      "3": "<i>Xinyan biasa mengakhiri rangkaian penampilannya dengan gerakan ini. Dia tidak berhenti karena itu berbahaya, tapi karena dia tidak memiliki penyelesaian yang lebih epik daripada seseorang yang akan berteriak \"Encore!\" </i>"
+      "3": "<i>Xinyan biasa mengakhiri rangkaian penampilannya dengan gerakan ini. Dia bukan berhenti karena berbahaya, tapi karena dia tidak punya gerakan penyelesaian yang lebih keren dari ini seandainya ada penonton yang meminta \"Encore!\". </i>"
     },
     "skillParams": {
       "0": "DMG Skill",
@@ -106,17 +106,17 @@
   "passive1": {
     "name": "\"The Show Goes On, Even Without An Audience...\"",
     "description": {
-      "0": "Mengurangi jumlah musuh yang harus diserang <strong>Sweeping Fervor</strong> untuk memicu setiap level perisai.",
+      "0": "Mengurangi jumlah musuh yang harus terkena serangan <strong>Sweeping Fervor</strong> untuk memicu setiap level perisai.",
       "1": [
-        "Perisai Level 2: syarat Lead-In dikurangi menjadi 1 musuh.",
-        "Perisai Level 3: syarat Rave dikurangi menjadi 2 musuh atau lebih."
+        " Perisai Level 2: Syarat memicu Lead-In dikurangi menjadi 1 musuh.",
+        "Perisai Level 3: Syarat memicu Rave dikurangi menjadi 2 musuh atau lebih."
       ]
     }
   },
   "passive2": {
     "name": "\"...Now That's Rock 'N' Roll!\"",
     "description": {
-      "0": "Meningkatkan 15% Physical DMG karakter yang dilindungi oleh perisai dari <strong>Sweeping Fervor</strong>."
+      "0": "Meningkatkan 15% Physical DMG Karakter yang dilindungi oleh perisai dari <strong>Sweeping Fervor</strong>."
     }
   },
   "passive3": {

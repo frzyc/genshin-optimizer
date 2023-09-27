@@ -384,6 +384,12 @@
       "1": "It can be used to exchange for supplies and unlock rewards in \"Mega Meka Melee.\""
     }
   },
+  "PoetryGalaFervor": {
+    "name": "Poetry Gala Fervor",
+    "description": {
+      "0": "\"Waterborne Poetry\" Poetry Gala Fervor"
+    }
+  },
   "Primogem": {
     "name": "Primogem",
     "description": {
@@ -999,6 +1005,18 @@
       "0": "A reserved young man who is well-versed in diving. Beneath his distant, icy demeanor lies a pure heart bereft of all flaws."
     }
   },
+  "Wriothesley": {
+    "name": "Wriothesley",
+    "description": {
+      "0": "Duke of the Fortress of Meropide, Lord Incognito of the murky depths."
+    }
+  },
+  "Neuvillette": {
+    "name": "Neuvillette",
+    "description": {
+      "0": "The Chief Justice of Fontaine, known as the Iudex, is renowned for his unassailable impartiality."
+    }
+  },
   "KamisatoAyakasStellaFortuna": {
     "name": "Kamisato Ayaka's Stella Fortuna",
     "description": {
@@ -1429,6 +1447,18 @@
     "name": "Freminet's Stella Fortuna",
     "description": {
       "0": "Freminet's Constellation Activation Material"
+    }
+  },
+  "WriothesleysStellaFortuna": {
+    "name": "Wriothesley's Stella Fortuna",
+    "description": {
+      "0": "Wriothesley's Constellation Activation Material"
+    }
+  },
+  "NeuvillettesStellaFortuna": {
+    "name": "Neuvillette's Stella Fortuna",
+    "description": {
+      "0": "Neuvillette's Constellation Activation Material"
     }
   },
   "GnosticHymnOldNotes": {
@@ -6528,6 +6558,18 @@
       "0": "A delicate and tender pink flower. Despite their name, Rainbow Roses are essentially more akin to Lilies."
     }
   },
+  "Lumitoile": {
+    "name": "Lumitoile",
+    "description": {
+      "0": "A soft-bodied animal that emits a gentle light. Often found climbing the walls of buildings near the water or underwater."
+    }
+  },
+  "SubdetectionUnit": {
+    "name": "Subdetection Unit",
+    "description": {
+      "0": "Detection units produced by Fontaine Research Institute using new models of artificed components. Its original purpose was monitoring all kinds of environmental data."
+    }
+  },
   "BirchWood": {
     "name": "Birch Wood",
     "description": {
@@ -9867,64 +9909,73 @@
   "TeachingsOfEquity": {
     "name": "Teachings of Equity",
     "description": {
-      "0": "The shore of the Nation of Water is equity.",
-      "1": "Equity sets boundaries on rights. Without equity, the rights granted by law will be abused, and become a tool to damage our virtuous customs."
+      "0": "Talent Level-Up Material.",
+      "1": "The shore of the Nation of Water is equity.",
+      "2": "Equity sets boundaries on rights. Without equity, the rights granted by law will be abused, and become a tool to damage our virtuous customs."
     }
   },
   "GuideToEquity": {
     "name": "Guide to Equity",
     "description": {
-      "0": "The shore of the Nation of Water is equity.",
-      "1": "Equity is the foundation upon which Fontaine was founded. Equity forms the standard of the law. If law loses the essence of equity, it will become a chessboard played for profit."
+      "0": "Talent Level-Up Material.",
+      "1": "The shore of the Nation of Water is equity.",
+      "2": "Equity is the foundation upon which Fontaine was founded. Equity forms the standard of the law. If law loses the essence of equity, it will become a chessboard played for profit."
     }
   },
   "PhilosophiesOfEquity": {
     "name": "Philosophies of Equity",
     "description": {
-      "0": "The shore of the Nation of Water is equity.",
-      "1": "Equity is the foundation upon which Fontaine was founded. Equity requires the continuous and steady support of morality and law, and morality and law constantly change based upon the invariant principle of equity."
+      "0": "Talent Level-Up Material.",
+      "1": "The shore of the Nation of Water is equity.",
+      "2": "Equity is the foundation upon which Fontaine was founded. Equity requires the continuous and steady support of morality and law, and morality and law constantly change based upon the invariant principle of equity."
     }
   },
   "TeachingsOfJustice": {
     "name": "Teachings of Justice",
     "description": {
-      "0": "The sword of the Nation of Water is justice.",
-      "1": "The law of Fontaine walks with the sword of justice in hand. Without the guidance of justice, all law is reduced to meaningless words, to be tampered with and slaughtered at a whim."
+      "0": "Talent Level-Up Material.",
+      "1": "The sword of the Nation of Water is justice.",
+      "2": "The law of Fontaine walks with the sword of justice in hand. Without the guidance of justice, all law is reduced to meaningless words, to be tampered with and slaughtered at a whim."
     }
   },
   "GuideToJustice": {
     "name": "Guide to Justice",
     "description": {
-      "0": "The sword of the Nation of Water is justice.",
-      "1": "The law of Fontaine walks with the sword of justice in hand. Justice must be blind, and those who wield the sword of justice must not be led astray by their own interests or affairs."
+      "0": "Talent Level-Up Material.",
+      "1": "The sword of the Nation of Water is justice.",
+      "2": "The law of Fontaine walks with the sword of justice in hand. Justice must be blind, and those who wield the sword of justice must not be led astray by their own interests or affairs."
     }
   },
   "PhilosophiesOfJustice": {
     "name": "Philosophies of Justice",
     "description": {
-      "0": "The sword of the Nation of Water is justice.",
-      "1": "The law of Fontaine walks with the sword of justice in hand. Justice means judgment and reconciliation, the blade of judgment arrests the actions of evil, while reconciliation maintains order."
+      "0": "Talent Level-Up Material.",
+      "1": "The sword of the Nation of Water is justice.",
+      "2": "The law of Fontaine walks with the sword of justice in hand. Justice means judgment and reconciliation, the blade of judgment arrests the actions of evil, while reconciliation maintains order."
     }
   },
   "TeachingsOfOrder": {
     "name": "Teachings of Order",
     "description": {
-      "0": "The shield of the Nation of Water is order.",
-      "1": "All law in Fontaine ultimately serves to maintain a stable order. Without order, there is chaos, and there can be no fairness in chaos."
+      "0": "Talent Level-Up Material.",
+      "1": "The shield of the Nation of Water is order.",
+      "2": "All law in Fontaine ultimately serves to maintain a stable order. Without order, there is chaos, and there can be no fairness in chaos."
     }
   },
   "GuideToOrder": {
     "name": "Guide to Order",
     "description": {
-      "0": "The shield of the Nation of Water is order.",
-      "1": "All law in Fontaine ultimately serves to maintain a stable order. Without the guarantee provided by order, justice will be reduced to unlimited violence, a weapon used by all against all."
+      "0": "Talent Level-Up Material.",
+      "1": "The shield of the Nation of Water is order.",
+      "2": "All law in Fontaine ultimately serves to maintain a stable order. Without the guarantee provided by order, justice will be reduced to unlimited violence, a weapon used by all against all."
     }
   },
   "PhilosophiesOfOrder": {
     "name": "Philosophies of Order",
     "description": {
-      "0": "The shield of the Nation of Water is order.",
-      "1": "All law in Fontaine ultimately serves to maintain a stable order. Equity and justice come from order, and serve order. Like the still, ripple-less surface of the waters of Fontaine, order is the cornerstone of Fontaine's existence."
+      "0": "Talent Level-Up Material.",
+      "1": "The shield of the Nation of Water is order.",
+      "2": "All law in Fontaine ultimately serves to maintain a stable order. Equity and justice come from order, and serve order. Like the still, ripple-less surface of the waters of Fontaine, order is the cornerstone of Fontaine's existence."
     }
   },
   "SanctifyingDroplet": {
@@ -13532,6 +13583,198 @@
       "0": "A beverage of simple and clean colors. The refreshing smoothie with a faint fruity scent reminds you of the ethereal clouds above Qingyun Peak. Does it taste as light and fluffy?"
     }
   },
+  "SuspiciousTroutAmandine": {
+    "name": "Suspicious Trout Amandine",
+    "description": {
+      "0": "A large hunk of fish fried in oil. The bitterness of the burnt black fish skin branded into your tongue can't be washed away, not even with a giant mouthful of soup... It would seem that some practice controlling the heat is in order."
+    }
+  },
+  "TroutAmandine": {
+    "name": "Trout Amandine",
+    "description": {
+      "0": "Fish fillets of a satisfying size, fried with butter before serving with a side of crispy fried almonds. According to the traditional recipe for this dish, a whole readied trout would be placed into the frying pan, but a new, fillet-featuring recipe for this dish has been gaining popularity recently as well."
+    }
+  },
+  "DeliciousTroutAmandine": {
+    "name": "Delicious Trout Amandine",
+    "description": {
+      "0": "A scrumptious piece of artfully fried fish. Sweet and crisp almonds paired with perfectly fatty fish make you feel like you are floating blissfully along the ocean currents, buffeted by waves of gastronomic delight."
+    }
+  },
+  "SuspiciousBarbequeRibs": {
+    "name": "Suspicious Barbeque Ribs",
+    "description": {
+      "0": "A meat dish with a crispy skin. Unfortunately, grilling it for too long has left the skin cracked and blackened, with the once-tender meat within now tough, dry, and tasteless... Perhaps if the name is changed to \"Charred Barbeque\" someone might find it more acceptable."
+    }
+  },
+  "BarbequeRibs": {
+    "name": "Barbeque Ribs",
+    "description": {
+      "0": "A crispy meat dish. Lightly fry the surface of the ribs until they exude a faint aroma, then wrap the crispy exterior with sauce, and finally, grill them slowly on low heat. The meticulous temperature control ensures that the exterior is perfectly crisp, while the meat within is kept juicy and tender."
+    }
+  },
+  "DeliciousBarbequeRibs": {
+    "name": "Delicious Barbeque Ribs",
+    "description": {
+      "0": "A tender meat dish with crispy skin. Even before it has been taken off the grill, the enticing meaty aroma assails your nostrils with promises of heaven. Take a single bite, and the crackling of the skin gives way to the juicy, tender meat within... No wonder this dish steals the show the moment it is placed onto the table!"
+    }
+  },
+  "SuspiciousCoffeeBavarois": {
+    "name": "Suspicious Coffee Bavarois",
+    "description": {
+      "0": "A refreshing dessert. After taking a big bite, an intense assault of bitterness and sourness attacks your brain, wiping it clean. You can only surmise that too many Coffee Beans were added. Though the bitterness in your mouth may subside after some time, you might want to worry more about the quality of your sleep tonight..."
+    }
+  },
+  "CoffeeBavarois": {
+    "name": "Coffee Bavarois",
+    "description": {
+      "0": "A refreshing dessert. Though it is one of Fontaine's trademark desserts, its recipe is very simple and straightforward. As long as the proportion of ingredients is right, hardly anyone could fail at making this dessert. It has an exquisite texture with a touch of refreshing cold taste, and can instantly lift your spirits."
+    }
+  },
+  "DeliciousCoffeeBavarois": {
+    "name": "Delicious Coffee Bavarois",
+    "description": {
+      "0": "A refreshing dessert. The rich fragrance of custard and savory scent of coffee mingle on the tip of your tongue, the steps of their delicate dance light, leaving a surprisingly silky and smooth texture lingering in your mouth. No wonder this dish is always the darling of the dessert menu!"
+    }
+  },
+  "SuspiciousHaggis": {
+    "name": "Suspicious Haggis",
+    "description": {
+      "0": "A dish with a very distinctive flavor. Dry and coarse kernels of... something... scrape the surface of your tongue, making you feel like this may not be something edible at all. As you laboriously chew, you can't help but wonder... Did some chips of firewood or something accidentally get mixed in while it was being made?"
+    }
+  },
+  "Haggis": {
+    "name": "Haggis",
+    "description": {
+      "0": "A dish with strong and distinctive flavors. Chop up the sheep offal, mix it with oatmeal, and stuff the mixture into a sheep stomach along with various seasonings and spices. When the dish is served, the stomach-bag is usually removed while the fillings are served with radish paste and mashed potatoes. This is a local specialty that Fontainians often cook as a treat for important guests."
+    }
+  },
+  "DeliciousHaggis": {
+    "name": "Delicious Haggis",
+    "description": {
+      "0": "A dish with strong and distinctive flavors. After venturing a nibble, the mellow and rich taste of the offal and various spices serve up layer after layer of piquancy to your taste buds. As you savor the flavor, the abundant meaty aroma fills your mouth with a bountiful aftertaste that lingers long after you have finished. No wonder it inspires such strong emotions in the hearts of poets, and they can seldom resist dedicating a paean to this dish after trying it."
+    }
+  },
+  "SuspiciousTripesDuPort": {
+    "name": "Suspicious Tripes du Port",
+    "description": {
+      "0": "An offal dish. The texture of the cow's stomach is like wind-dried leather, and it is completely unchewable. Even worse is the strange flavor spreading throughout your mouth, it's like you've taken an \"expired canned food\" challenge... Just giving up might be your best option."
+    }
+  },
+  "TripesDuPort": {
+    "name": "Tripes du Port",
+    "description": {
+      "0": "An offal dish. Cut the ingredients into pieces, put them in a pot, seal with dough, and bake. This recipe originated in a harbor town. The story of the town has long been swallowed by the rising seas, but this delicacy yet survives in Fontaine."
+    }
+  },
+  "DeliciousTripesDuPort": {
+    "name": "Delicious Tripes du Port",
+    "description": {
+      "0": "An offal dish. The flaky yet soft cow's stomach has an almost fruity fragrance. Unlike other surprising delicacies that take the world by storm, the dish is overflowing with rich traditional savor, and once you have a single bite, you simply cannot stop!"
+    }
+  },
+  "SuspiciousTomatesNarbonnaises": {
+    "name": "Suspicious Tomates Narbonnaises",
+    "description": {
+      "0": "A dish of meat and vegetables. Each dully colored tomato seems to be almost trembling, as though it wants to open its mouth and sob at what it has become. Even worse, the ground meat inside tastes like wood chips. There's four of these cup-like tomato abominations, just how should they be dealt with?"
+    }
+  },
+  "TomatesNarbonnaises": {
+    "name": "Tomates Narbonnaises",
+    "description": {
+      "0": "A dish with a well-balanced proportion of meat and vegetables. Hollow out a round tomato, fill the hollowed tomato with ground meat, then bake this combination. This dish has a sour flavor and a tender texture. It is a very popular choice on Fontainian tables."
+    }
+  },
+  "DeliciousTomatesNarbonnaises": {
+    "name": "Delicious Tomates Narbonnaises",
+    "description": {
+      "0": "A dish of meat and vegetables. Juicy mouthwatering tomatoes filled with hearty meat, each one has an agile, charming aroma, which explodes into a splendid savor after biting into it. After eating a single one, all the dark clouds in your heart will have been banished by the rich deliciousness emanating from your tongue."
+    }
+  },
+  "SuspiciousConsomme": {
+    "name": "Suspicious Consomme",
+    "description": {
+      "0": "A soup with a complex recipe. A turbid and muddy looking fluid, a single glance is enough to tell this is a failed creation. Perhaps the only thing in Fontaine that would accept such \"food\" are the Tainted Hydro Phantasms roaming beside the water..."
+    }
+  },
+  "Consomme": {
+    "name": "Consomme",
+    "description": {
+      "0": "A soup with a recipe involving many steps. Mash ingredients, then stew the mash in broth, and finally serve only the clear soup from the stew. Mysterious gossip on the streets in Fontaine claims that a writer suffering from writer's block had a sudden burst of inspiration after slurping this soup down... But how can one be sure that such stupendous effects are really not false advertising cooked up by some restaurant?"
+    }
+  },
+  "DeliciousConsomme": {
+    "name": "Delicious Consomme",
+    "description": {
+      "0": "A soup with a complex recipe. A clear soup the combines the essence of the boundless blue skies above and the limitless land below, the aromas of meat and vegetables blended seamlessly into a greater whole. No wonder a columnist for The Steambird, once unable to squeeze out a single word onto the blank paper before them, drank a single bowl and immediately became a font of literary genius, every word nearly as exquisite as this dish."
+    }
+  },
+  "SuspiciousBoudinNoirAuxPommes": {
+    "name": "Suspicious Boudin Noir aux Pommes",
+    "description": {
+      "0": "A traditional Fontainian dish. It seems too much oil was accidentally added, creating an extremely greasy product dripping in the stuff. If you can think of a good way to absorb and remove the excess oil, it might become edible."
+    }
+  },
+  "BoudinNoirAuxPommes": {
+    "name": "Boudin Noir aux Pommes",
+    "description": {
+      "0": "A traditional Fontainian dish. Fry the apple slices and blood sausage slices separately and serve them on a plate with sauce. Judging by the name of this dish, tourists from other nations often think it should be a dessert, while Boudin Noir is actually just a name for blood sausage."
+    }
+  },
+  "DeliciousBoudinNoirAuxPommes": {
+    "name": "Delicious Boudin Noir aux Pommes",
+    "description": {
+      "0": "A traditional Fontainian dish. A perfect combination, with the sweet fragrance of the apples neutralizing the fat of the blood sausage. An enticing, slightly burnt smell wafts upwards from the plate, and the eyes of those who see it light up as they shout with joy and anticipation."
+    }
+  },
+  "SuspiciousCassoulet": {
+    "name": "Suspicious Cassoulet",
+    "description": {
+      "0": "A simple rustic stew. Though it looks okay at a glance, as you begin to eat, you notice a slight burned taste, before realizing the bottom layer of ingredients has been so badly burned they've all fused to the casserole. Ugh... next time, remember to stir the ingredients occasionally while cooking..."
+    }
+  },
+  "Cassoulet": {
+    "name": "Cassoulet",
+    "description": {
+      "0": "A simple countryside stew. Simply put all the ingredients in a casserole, mix them up, and cook until they are ready to serve. It is worth noting that the full name of this dish is \"Glabrous Beans, Fowl Confit, and Smoked Sausage Stew in Cassoulet Casserole with a Side of Marcotte.\" The intimidating lengthiness of the name has, understandably, driven people to just call it \"Cassoulet.\""
+    }
+  },
+  "DeliciousCassoulet": {
+    "name": "Delicious Cassoulet",
+    "description": {
+      "0": "A simple rustic stew. Time is the most wondrous of weapons for catalyzing the creation of deliciousness, and time allows the meat in this dish to soak up the ocean of stewed flavor it is bathing in, becoming soft and fragrant. Together with the rich aroma of the beans, it conjures a warm delight in one's mouth that stirs the spirit."
+    }
+  },
+  "SuspiciousCrepesSuzette": {
+    "name": "Suspicious Crepes Suzette",
+    "description": {
+      "0": "Crepes with fillings. The first bite is so bland you wonder if you've lost your sense of taste. The second bite is so unbearably sweet that you wish you actually had lost it... Such a stimulating culinary experience is like riding a waverider into a storm: Even if you make it to the shore, you'll be traumatized."
+    }
+  },
+  "CrepesSuzette": {
+    "name": "Crepes Suzette",
+    "description": {
+      "0": "Crepes with fillings. Fry the crepes first, then serve them with jam, cream, and fruit slices. In fact, the recipe has quite a few variants. The dish's taste differs according to the different ingredients used."
+    }
+  },
+  "DeliciousCrepesSuzette": {
+    "name": "Delicious Crepes Suzette",
+    "description": {
+      "0": "Crepes with fillings. The light cream and delectable jam are composed into a symphony of flavor, folded into a masterfully cooked soft crepe, as though robed in silken perfection, inviting your tongue to join an elegant, endless waltz of culinary delight."
+    }
+  },
+  "ConsommePurete": {
+    "name": "\"Consomme Purete\"",
+    "description": {
+      "0": "Neuvillette's specialty. He claims he specifically selected the purest, chilliest waters from the highest mountains to create this exquisite and matchless treasure. Though it does have a refreshing quality, as for how the overall flavor of the soup is no different from ordinary soups... It's probably best not to mention it."
+    }
+  },
+  "SecretSauceBBQRibs": {
+    "name": "Secret Sauce BBQ Ribs",
+    "description": {
+      "0": "Wriothesley's specialty. Soon after kicking out his subordinates with the excuse, \"Feel free to leave, but I'm staying! Things are heating up in here, and it could blow!\", a meatastic delicacy greets your eyes. A full-bodied sauce slathered over flaky skin brings an extraordinary double blast of deliciousness, though as you taste it, it does seem to be practically identically to a condiment that has become awfully popular recently..."
+    }
+  },
   "RecipeItem": {
     "name": "Recipe Item",
     "description": {
@@ -14511,6 +14754,66 @@
       "0": "A detailed step-by-step recipe for making Fruity Smoothie."
     }
   },
+  "RecipeTroutAmandine": {
+    "name": "Recipe: Trout Amandine",
+    "description": {
+      "0": "A detailed step-by-step recipe for making Trout Amandine."
+    }
+  },
+  "RecipeBarbequeRibs": {
+    "name": "Recipe: Barbeque Ribs",
+    "description": {
+      "0": "A detailed step-by-step recipe for making Barbeque Ribs."
+    }
+  },
+  "RecipeCoffeeBavarois": {
+    "name": "Recipe: Coffee Bavarois",
+    "description": {
+      "0": "A detailed step-by-step recipe for making Coffee Bavarois."
+    }
+  },
+  "RecipeHaggis": {
+    "name": "Recipe: Haggis",
+    "description": {
+      "0": "A detailed step-by-step recipe for making Haggis."
+    }
+  },
+  "RecipeTripesDuPort": {
+    "name": "Recipe: Tripes du Port",
+    "description": {
+      "0": "A detailed step-by-step recipe for making Tripes du Port."
+    }
+  },
+  "RecipeTomatesNarbonnaises": {
+    "name": "Recipe: Tomates Narbonnaises",
+    "description": {
+      "0": "A detailed step-by-step recipe for making Tomates Narbonnaises."
+    }
+  },
+  "RecipeConsomme": {
+    "name": "Recipe: Consomme",
+    "description": {
+      "0": "A detailed step-by-step recipe for making Consomme."
+    }
+  },
+  "RecipeBoudinNoirAuxPommes": {
+    "name": "Recipe: Boudin Noir aux Pommes",
+    "description": {
+      "0": "A detailed step-by-step recipe for making Boudin Noir aux Pommes."
+    }
+  },
+  "RecipeCassoulet": {
+    "name": "Recipe: Cassoulet",
+    "description": {
+      "0": "A detailed step-by-step recipe for making Cassoulet."
+    }
+  },
+  "RecipeCrepesSuzette": {
+    "name": "Recipe: Crepes Suzette",
+    "description": {
+      "0": "A detailed step-by-step recipe for making Crepes Suzette."
+    }
+  },
   "CraftedItems": {
     "name": "Crafted Items",
     "description": {
@@ -14754,6 +15057,12 @@
       "0": "The bait is based on rose dew and has been mixed with sun-dried Harra Fruit powder. It has a spicy taste and a sweet aftertaste, just like the life of a fisherman. The harvest after going through all the weather-beaten days and roaring waves is particularly gratifying.",
       "1": "<br/>",
       "2": "Suitable for: Angler and Axe Marlin."
+    }
+  },
+  "PureWater": {
+    "name": "\"Pure Water\"",
+    "description": {
+      "0": "It is said to be the legacy of a genius potioneer. It can draw out the purest strength from within one's body."
     }
   },
   "SourBait": {
@@ -15384,6 +15693,27 @@
       "1": "There is no way to exterminate this life form. One reduced to nothing but its core will resurrect the next day or in decades. Luckily, it is neither aggressive nor intelligent, so Fontainians can just keep their distance."
     }
   },
+  "OldOperativesPocketWatch": {
+    "name": "Old Operative's Pocket Watch",
+    "description": {
+      "0": "A standard-issue pocket watch given to Fatui Operatives.",
+      "1": "The erosion and oxidation on the casing serve as a loyal record of its owners' days spent as an instrument, enforcing the Fatui's will."
+    }
+  },
+  "OperativesStandardPocketWatch": {
+    "name": "Operative's Standard Pocket Watch",
+    "description": {
+      "0": "A standard-issue pocket watch given to Fatui Operatives.",
+      "1": "The head of the watch is not well-designed, as the outer casing has way too many sharp angles, which can cause excessive wear and tear on clothes. As such, there will always be those who will stuff this watch into a more practical, less distinctive casing for use."
+    }
+  },
+  "OperativesConstancy": {
+    "name": "Operative's Constancy",
+    "description": {
+      "0": "An accessory with a Delusion mounted on it. This is source of the Fatui Operative's power.",
+      "1": "That said, taking it off would not detract from the fact that said Operative has physical abilities far beyond that of ordinary humans, forged through long years of training and combat experience. As for them, they are well-aware that they have sacrificed their past, present, and future upon the altar of the Fatui's ideal paradise, such that the damage they cause themselves on account of using a Delusion's power matters not at all."
+    }
+  },
   "HurricaneSeed": {
     "name": "Hurricane Seed",
     "description": {
@@ -15772,6 +16102,22 @@
       "1": "Fontemer Aberrants are different from human beings in that the concepts of aristocracy or inheritance are entirely foreign to them. None of them are born superior. One that survives deadly predators and adversities is able to accumulate infinite power as it keeps hunting and feeding over centuries. Such a creature is often referred to as an overlord for the fear it inspires."
     }
   },
+  "TourbillonDevice": {
+    "name": "\"Tourbillon Device\"",
+    "description": {
+      "0": "The core component of the Experimental Field Generator.",
+      "1": "A precision-machined mechanical component that counteracts the effects of gravity via high-speed rotation. The revolution speed is so fast that it is almost impossible to capture with the naked eye.",
+      "2": "Throughout its long history, the Fontaine Research Institute of Kinetic Energy Engineering has always warred against a flood that once washed countless lives away, and may yet cover the earth and sky one day far in the future, searching for a means to survive.",
+      "3": "Arkhium, with its immense energetic potential and power to shatter the shackles of the earth, was once considered the key to the gate of salvation."
+    }
+  },
+  "FontemerUnihorn": {
+    "name": "Fontemer Unihorn",
+    "description": {
+      "0": "The electricity-emitting section of the Millennial Pearl Seahorse, and its regalia, the symbol of its surpassing might — now snapped off amidst a clash against a mighty challenger.",
+      "1": "As the greatest predator that can arise from seahorses, this being's evolutionary journey is not the same as that experienced by other Fontemer Aberrants. It did not start from a base form before growing larger and stronger, but instead grew limbs and a horn that have no place on an ordinary seahorse. Even its musculature and skeleton have changed. It really seems to resemble a fantastical beast from legends of yore more than its original shape. In the imaginations of poets and authors, even seahorses can frolick upon the earth."
+    }
+  },
   "TileOfDecarabiansTower": {
     "name": "Tile of Decarabian's Tower",
     "description": {
@@ -16154,98 +16500,110 @@
   "FragmentOfAnAncientChord": {
     "name": "Fragment of an Ancient Chord",
     "description": {
-      "0": "A harp with rotten keys. Its voice blocked, it cannot be played nor its sound heard.",
-      "1": "It is said the descendants of the forgotten music once lacquered mechanical wooden harps with gold in order to revive the magnificent remnants of the ancient dynasty, futilely attempting to match them to the silent golems...",
-      "2": "A long time passed, and then more, and the rotten, off-key harps remained in the grasp of those silent giants, caressed by the waves, playing only sorrowful strains."
+      "0": "Weapon Ascension Material.",
+      "1": "A harp with rotten keys. Its voice blocked, it cannot be played nor its sound heard.",
+      "2": "It is said the descendants of the forgotten music once lacquered mechanical wooden harps with gold in order to revive the magnificent remnants of the ancient dynasty, futilely attempting to match them to the silent golems...",
+      "3": "A long time passed, and then more, and the rotten, off-key harps remained in the grasp of those silent giants, caressed by the waves, playing only sorrowful strains."
     }
   },
   "ChapterOfAnAncientChord": {
     "name": "Chapter of an Ancient Chord",
     "description": {
-      "0": "Legends say that the survivors of that ancient dynasty once cast a harp out of black iron to commemorate and mourn.",
-      "1": "A harp cast of black iron cannot be played. To mourn that ancient dynasty that was once so proud of its golden music, those remaining forged this heavy instrument and its yet weightier silence.",
-      "2": "But no matter what, the black iron harp remained as silent as that lost era."
+      "0": "Weapon Ascension Material.",
+      "1": "Legends say that the survivors of that ancient dynasty once cast a harp out of black iron to commemorate and mourn.",
+      "2": "A harp cast of black iron cannot be played. To mourn that ancient dynasty that was once so proud of its golden music, those remaining forged this heavy instrument and its yet weightier silence.",
+      "3": "But no matter what, the black iron harp remained as silent as that lost era."
     }
   },
   "MovementOfAnAncientChord": {
     "name": "Movement of an Ancient Chord",
     "description": {
-      "0": "In that great disaster, the golden palace sank with its throne, the music was shattered, the notes turned to silence...",
-      "1": "But the remnants of that empire never gave up their desire for salvation and to surpass fate.",
-      "2": "To save their waning civilization and their desire to transcend, the Golden Troupe played melodies most wondrous, enticing children to offer their precious souls to the sleeping golems."
+      "0": "Weapon Ascension Material.",
+      "1": "In that great disaster, the golden palace sank with its throne, the music was shattered, the notes turned to silence...",
+      "2": "But the remnants of that empire never gave up their desire for salvation and to surpass fate.",
+      "3": "To save their waning civilization and their desire to transcend, the Golden Troupe played melodies most wondrous, enticing children to offer their precious souls to the sleeping golems."
     }
   },
   "EchoOfAnAncientChord": {
     "name": "Echo of an Ancient Chord",
     "description": {
-      "0": "The God King's Grand Symphony is composed of countless melodies linked together, but its main thesis is submerged under the common destiny of the Water Nation.",
-      "1": "The harmonies of those carefree years and sonatas were once the greatest representation of civilization and order, but when the prosperous empire descended into a playground for tyrants, the brutal despots tore the connection with the source asunder under the cover of golden cloaks, and discord finally swarmed through the empire—",
-      "2": "The original song of fate continued to ring out on a score of fading gold, unperturbed by all... until all was dissolved, and all returned to chaos."
+      "0": "Weapon Ascension Material.",
+      "1": "The God King's Grand Symphony is composed of countless melodies linked together, but its main thesis is submerged under the common destiny of the Water Nation.",
+      "2": "The harmonies of those carefree years and sonatas were once the greatest representation of civilization and order, but when the prosperous empire descended into a playground for tyrants, the brutal despots tore the connection with the source asunder under the cover of golden cloaks, and discord finally swarmed through the empire—",
+      "3": "The original song of fate continued to ring out on a score of fading gold, unperturbed by all... until all was dissolved, and all returned to chaos."
     }
   },
   "DrossOfPureSacredDewdrop": {
     "name": "Dross of Pure Sacred Dewdrop",
     "description": {
-      "0": "Legends say that before the birth of life, there was a dense primordial sea. It is the purest origin of all things, and one day, it will also swallow all life... and those things which did not arise from it will be filtered out, becoming naught but floating detritus.",
-      "1": "\"The existence of detritus also has meaning — What kind of thing would be rejected by the source of all things that swallows all life?\" the young Harmost asked the great usurper, pondering this conundrum."
+      "0": "Weapon Ascension Material.",
+      "1": "Legends say that before the birth of life, there was a dense primordial sea. It is the purest origin of all things, and one day, it will also swallow all life... and those things which did not arise from it will be filtered out, becoming naught but floating detritus.",
+      "2": "\"The existence of detritus also has meaning — What kind of thing would be rejected by the source of all things that swallows all life?\" the young Harmost asked the great usurper, pondering this conundrum."
     }
   },
   "SublimationOfPureSacredDewdrop": {
     "name": "Sublimation of Pure Sacred Dewdrop",
     "description": {
-      "0": "\"Life that came from the primordial sea is inevitably fated to return to it.\" Thus spoke the Harmost Boethius. \"But there are infinite possibilities for humans to transcend, and even the waters of the primordial sea cannot completely dissolve them...\"",
-      "1": "The arrogant usurper once attempted to mix insoluble Ichor with pure water, to contain wisdom and memories, allowing his subjects and servants to discard their physical bodies, and obtain independent, eternal lives.",
-      "2": "But the pain of severing soul and body cannot be endured by any ordinary life, and the usurper's order tore apart and shattered souls...",
-      "3": "The Ichor was dyed black by the crying and howling of so many souls, and it lost its harmony and wisdom, leaving only chaos and madness."
+      "0": "Weapon Ascension Material.",
+      "1": "\"Life that came from the primordial sea is inevitably fated to return to it.\" Thus spoke the Harmost Boethius. \"But there are infinite possibilities for humans to transcend, and even the waters of the primordial sea cannot completely dissolve them...\"",
+      "2": "The arrogant usurper once attempted to mix insoluble Ichor with pure water, to contain wisdom and memories, allowing his subjects and servants to discard their physical bodies, and obtain independent, eternal lives.",
+      "3": "But the pain of severing soul and body cannot be endured by any ordinary life, and the usurper's order tore apart and shattered souls...",
+      "4": "The Ichor was dyed black by the crying and howling of so many souls, and it lost its harmony and wisdom, leaving only chaos and madness."
     }
   },
   "SpringOfPureSacredDewdrop": {
     "name": "Spring of Pure Sacred Dewdrop",
     "description": {
-      "0": "This is a relic from a time when the Lochknights still roamed — the knights said, there were still loyal spirits in the mountain springs and valleys where none tread, guarding those pure, unpolluted springs...",
-      "1": "However, the creator of artificial Ichor couldn't tolerate any discord in his great symphony. It is said that wherever the Harmost Boethius went, the natural nectar was buried, the aqueducts of the empire were built, and the spirits born of pure water vanished without a trace..."
+      "0": "Weapon Ascension Material.",
+      "1": "This is a relic from a time when the Lochknights still roamed — the knights said, there were still loyal spirits in the mountain springs and valleys where none tread, guarding those pure, unpolluted springs...",
+      "2": "However, the creator of artificial Ichor couldn't tolerate any discord in his great symphony. It is said that wherever the Harmost Boethius went, the natural nectar was buried, the aqueducts of the empire were built, and the spirits born of pure water vanished without a trace..."
     }
   },
   "EssenceOfPureSacredDewdrop": {
     "name": "Essence of Pure Sacred Dewdrop",
     "description": {
-      "0": "A dense and pure solution, derived and refined from drops of the vast primordial sea. The ancient God King once believed it would bring eternal life and infinite wisdom, but listening carefully— it was quietly, faintly prophesizing the final end of all dissolving into one.",
-      "1": "This was once the God King's unfinished Grand Symphony — a boundless, sourceless golden Ichor replacing the wild primeval waters, and the glorious immortal sages bringing nectar-like enlightenment to the ignorant corners of the world.",
-      "2": "But the God King's delusions ultimately sank into the depths of the black abyss, and with the ravages of time, the golden Ichor was eventually corroded by the primordial soup...",
-      "3": "The tuner turned a blind eye to the evil omens, and supporting his broken body, continued to give life to his compatriots according to the plans once laid, so that the old order might one day return...",
-      "4": "Even today, many mad poets and painters of Fontaine see the apocalypse experienced by Boethius, a reminder of the inescapable cycle of the world."
+      "0": "Weapon Ascension Material.",
+      "1": "A dense and pure solution, derived and refined from drops of the vast primordial sea. The ancient God King once believed it would bring eternal life and infinite wisdom, but listening carefully— it was quietly, faintly prophesizing the final end of all dissolving into one.",
+      "2": "This was once the God King's unfinished Grand Symphony — a boundless, sourceless golden Ichor replacing the wild primeval waters, and the glorious immortal sages bringing nectar-like enlightenment to the ignorant corners of the world.",
+      "3": "But the God King's delusions ultimately sank into the depths of the black abyss, and with the ravages of time, the golden Ichor was eventually corroded by the primordial soup...",
+      "4": "The tuner turned a blind eye to the evil omens, and supporting his broken body, continued to give life to his compatriots according to the plans once laid, so that the old order might one day return...",
+      "5": "Even today, many mad poets and painters of Fontaine see the apocalypse experienced by Boethius, a reminder of the inescapable cycle of the world."
     }
   },
   "BrokenGobletOfThePristineSea": {
     "name": "Broken Goblet of the Pristine Sea",
     "description": {
-      "0": "Legend says that when the first usurper came to the primordial sea, the first sovereign gave him a goblet of water.",
-      "1": "Later, he became the unquestioned god-king, and used this goblet of water to refine the mysterious drops of dew, establishing a splendid and powerful empire.",
-      "2": "But that is now an ancient story, whose main characters now sleep in the phosphorescence of the schools of the deepwater fish."
+      "0": "Weapon Ascension Material.",
+      "1": "Legend says that when the first usurper came to the primordial sea, the first sovereign gave him a goblet of water.",
+      "2": "Later, he became the unquestioned god-king, and used this goblet of water to refine the mysterious drops of dew, establishing a splendid and powerful empire.",
+      "3": "But that is now an ancient story, whose main characters now sleep in the phosphorescence of the schools of the deepwater fish."
     }
   },
   "WineGobletOfThePristineSea": {
     "name": "Wine Goblet of the Pristine Sea",
     "description": {
-      "0": "What kind of empire can last for a thousand years? After returning from the kingdom of dragons, the usurper once pondered this question.",
-      "1": "Combining the immortal stone with the Ichor essence extracted from primordial water, and carved into a race as black as iron— with arcane lithos for skin and Ichor for blood, never again fearing the curse of returning to the primeval past...",
-      "2": "The silent golem still dreams the dream of the empire — not knowing it has been over a thousand years since the empire's obliteration."
+      "0": "Weapon Ascension Material.",
+      "1": "What kind of empire can last for a thousand years? After returning from the kingdom of dragons, the usurper once pondered this question.",
+      "2": "Combining the immortal stone with the Ichor essence extracted from primordial water, and carved into a race as black as iron — with arcane lithos for skin and Ichor for blood, never again fearing the curse of returning to the primeval past...",
+      "3": "The silent golem still dreams the dream of the empire — not knowing it has been over a thousand years since the empire's obliteration."
     }
   },
   "SilverGobletOfThePristineSea": {
     "name": "Silver Goblet of the Pristine Sea",
     "description": {
-      "0": "In the years when the golden shroud covered the land, pure spring water had to be hidden away in concealed mountain streams, and the Lochknights were born in these sanctuaries.",
-      "1": "The knights swear by armor of silver, to protect the spirits born from pure water, to protect their fellows who also keep faith in the one true font, resisting the omnipresent golden power that blotted out the sky and outshone the sun.",
-      "2": "But that is an ancient legend... Not long after the empire collapsed and sank, the knights who resisted the usurper shed their armor, and their stories were hidden in a tangled web of stories and ballads."
+      "0": "Weapon Ascension Material.",
+      "1": "In the years when the golden shroud covered the land, pure spring water had to be hidden away in concealed mountain streams, and the Lochknights were born in these sanctuaries.",
+      "2": "The knights swear by armor of silver, to protect the spirits born from pure water, to protect their fellows who also keep faith in the one true font, resisting the omnipresent golden power that blotted out the sky and outshone the sun.",
+      "3": "But that is an ancient legend... Not long after the empire collapsed and sank, the knights who resisted the usurper shed their armor, and their stories were hidden in a tangled web of stories and ballads."
     }
   },
   "GoldenGobletOfThePristineSea": {
     "name": "Golden Goblet of the Pristine Sea",
     "description": {
-      "0": "When the Usurper of the sunken city played the last movement of the golden symphony, the favored musician stole the golden goblet brimming with Ichor.",
-      "1": "Shocked by the foolhardy betrayal of the God King, the musician summoned the last guards, and used the insoluble Ichor to seal the dragon beneath the tall tower, and sank into the abyss with the capital.",
-      "2": "Afterwards, this noble thief vanished silently from history, and only the \"Golden Troupe\" faithfully remembers his prophecy."
+      "0": "Weapon Ascension Material.",
+      "1": "When the Usurper of the sunken city played the last movement of the golden symphony, the favored musician stole the golden goblet brimming with Ichor.",
+      "2": "Shocked by the foolhardy betrayal of the God King, the musician summoned the last guards, and used the insoluble Ichor to seal the dragon beneath the tall tower, and sank into the abyss with the capital.",
+      "3": "Afterwards, this noble thief vanished silently from history, and only the \"Golden Troupe\" faithfully remembers his prophecy."
     }
   },
   "StarterSupplyBundle": {
@@ -16433,6 +16791,12 @@
         "Midlander Catalyst Billet",
         "Midlander Polearm Billet"
       ]
+    }
+  },
+  "ResoundingMelodies": {
+    "name": "Resounding Melodies",
+    "description": {
+      "0": "If you have already used the gift redemption code, repeat purchases will only give Primogems and Furnishings."
     }
   },
   "BEP": {
@@ -18142,6 +18506,12 @@
       "0": "A box obtained from Bahador. Within it are some special potions. According to what he said, these potions might be of aid to exploring a certain Domain..."
     }
   },
+  "GearDrivetrain": {
+    "name": "Gear Drivetrain",
+    "description": {
+      "0": "A removable part that belongs to the central drive valve in the abandoned production zone."
+    }
+  },
   "SomeonesJournal": {
     "name": "Someone's Journal",
     "description": {
@@ -18494,6 +18864,28 @@
       "0": "Vigneire's Notebook"
     }
   },
+  "CreditCoupons": {
+    "name": "Credit Coupons",
+    "description": {
+      "0": "A type of currency only used in the Fortress of Meropide."
+    }
+  },
+  "TheArtOfNegotiation": {
+    "name": "\"The Art of Negotiation\"",
+    "description": {
+      "0": "\"A milestone in the science of success, this masterpiece written by a true genius is an absolute must-read!\"",
+      "1": "An exceptional book emphatically recommended by the editor of La Gouttiere, titans of the business world, and researchers at the Fontaine Research Institute!",
+      "2": "It will impart deep insights and understanding into the abyss of human nature, a truly incomparable contribution to the science and art of success!"
+    }
+  },
+  "WelfareMeal": {
+    "name": "Welfare Meal",
+    "description": {
+      "0": "A Welfare Meal from the Coupon Cafeteria. As it's free, there's an element of surprise and risk.",
+      "1": "<br/>",
+      "2": "Use to obtain a meal and a Fortune Slip."
+    }
+  },
   "TheHistoryOfTheDeclineAndFallOfRemuriaI": {
     "name": "The History of the Decline and Fall of Remuria (I)",
     "description": {
@@ -18515,19 +18907,19 @@
   "FablesDeFontaineI": {
     "name": "Fables de Fontaine (I)",
     "description": {
-      "0": "A storybook containing various lore and tales, most of which were not written by the author but are compiled from ancient poems which have since been lost."
+      "0": "A storybook containing various lore and tales authored by Marie Hericart de La Fontaine, most of which were not written by the author but are compiled from ancient poems which have since been lost."
     }
   },
   "FablesDeFontaineII": {
     "name": "Fables de Fontaine (II)",
     "description": {
-      "0": "A storybook containing various lore and tales, most of which were not written by the author but are compiled from ancient poems which have since been lost."
+      "0": "A storybook containing various lore and tales authored by Marie Hericart de La Fontaine, most of which were not written by the author but are compiled from ancient poems which have since been lost."
     }
   },
   "FablesDeFontaineIII": {
     "name": "Fables de Fontaine (III)",
     "description": {
-      "0": "A storybook containing various lore and tales, most of which were not written by the author but are compiled from ancient poems which have since been lost."
+      "0": "A storybook containing various lore and tales authored by Marie Hericart de La Fontaine, most of which were not written by the author but are compiled from ancient poems which have since been lost."
     }
   },
   "RobbenVersusChestertonIridescentBroochI": {
@@ -18596,6 +18988,12 @@
       "0": "A newly purchased keycap. Though it does not quite fit in with its counterparts already on the typewriter... Well, let's just make do for now."
     }
   },
+  "BeautifullyWrittenLetter": {
+    "name": "\"Beautifully-Written Letter\"",
+    "description": {
+      "0": "A letter obtained from Decembre. According to him, this is a letter written to celebrate his child's birthday."
+    }
+  },
   "Lakelight": {
     "name": "\"Lakelight\"",
     "description": {
@@ -18618,6 +19016,57 @@
     "name": "\"Water and Missing Person\" Case Record",
     "description": {
       "0": "A detailed case record of the murder related to Navia's father, Callas, and the serial disappearances of young women case that is thought to be closely linked to the murder. If any difficulties are encountered during the investigation, please examine the clues and evidence collected so far to gather and organize your thoughts."
+    }
+  },
+  "PurePinecone": {
+    "name": "Pure Pinecone",
+    "description": {
+      "0": "Much larger than an ordinary Pinecone. It must be because it is purer than an ordinary Pinecone."
+    }
+  },
+  "EmptyBottle": {
+    "name": "Empty Bottle",
+    "description": {
+      "0": "The meaning of an empty bottle is one full of air, which means other things can also be stored in it."
+    }
+  },
+  "PaimonsFoodFund": {
+    "name": "Paimon's \"Food Fund\"",
+    "description": {
+      "0": "Paimon used part of her personal \"Food Fund\" to pay for your commission fee. Hmm, now that you think about it, she probably has more squirreled away, doesn't she?"
+    }
+  },
+  "ExperimentalCrystalLightPathComponent": {
+    "name": "Experimental Crystal Light Path Component",
+    "description": {
+      "0": "A component found in a mysterious underwater space, it seems to be a core component in some kind of optical device. If placed in the correct position, it should be able to activate some kind of special device...",
+      "1": "After the experiment, please store critical components separately from the main devices. This is in accordance with standard security procedures."
+    }
+  },
+  "PunchedTape": {
+    "name": "Punched Tape",
+    "description": {
+      "0": "Well-preserved punched tape. The data recorded within can only be deciphered using specialized machinery."
+    }
+  },
+  "MysteriousOre": {
+    "name": "Mysterious Ore",
+    "description": {
+      "0": "A mysterious green-yellow crystalline ore.",
+      "1": "Ore of the same type seems to mutually attract."
+    }
+  },
+  "ArkhiumStock": {
+    "name": "Arkhium Stock",
+    "description": {
+      "0": "The raw form of Arkhium, which can come together naturally under special circumstances.",
+      "1": "It may be able to unleash limitless potential after being forged..."
+    }
+  },
+  "ArkhiumLumenite": {
+    "name": "Arkhium Lumenite",
+    "description": {
+      "0": "The result of forging Arkhium. It emits an unusual energy and light. They say that such things can be used to open a gate somewhere..."
     }
   },
   "JabberwocksHolySword": {
@@ -18760,6 +19209,12 @@
       "0": "The improved version of the \"Truesight Potion.\" If you drink it, who knows what kind of strange effects you'll feel..."
     }
   },
+  "CreditCouponsForUseDuringInvestigation": {
+    "name": "Credit Coupons (For Use During Investigation)",
+    "description": {
+      "0": "Special Credit Coupons you obtained when Neuvillette tasked you with investigating the Fortress of Meropide. Remember to use them for their designated purpose."
+    }
+  },
   "Bait": {
     "name": "Bait",
     "description": {
@@ -18779,6 +19234,44 @@
       "0": "An ancient conch container, and it can perhaps be traced back to an even older civilization."
     }
   },
+  "UnprocessedWidget": {
+    "name": "Unprocessed Widget",
+    "description": {
+      "0": "A widget that has neither been processed nor forged."
+    }
+  },
+  "ProcessedWidget": {
+    "name": "Processed Widget",
+    "description": {
+      "0": "A widget that has been processed within the production zone."
+    }
+  },
+  "PankrationFontaCup": {
+    "name": "Pankration Fonta Cup",
+    "description": {
+      "0": "A trophy awarded for taking part in the Pankration recreational tournament as a coach, and guiding Genevieve and Poiret to victory in the championship. Made from classy-looking metal, under the right lighting, it gleams like shining Mora.",
+      "1": "With this special trophy, you can get unlimited refills of refreshing Fonta at designated machines, drinking to your heart's content, and become the most satisfied enjoyer of fine drinks in the world..."
+    }
+  },
+  "SoakedPunchedTape": {
+    "name": "Soaked Punched Tape",
+    "description": {
+      "0": "Punched tape retrieved from the water. The data recorded within can only be deciphered using specialized machinery.",
+      "1": "Although it was made from a special waterproof material and has thus not yet been destroyed, it has been in there long enough to still feel rather wet even after being hauled out..."
+    }
+  },
+  "SpurGearC": {
+    "name": "Spur Gear C",
+    "description": {
+      "0": "A seemingly ordinary spur gear. It originally belonged to \"Initial Skill Sample No. 2,\" but it seems to have been split from the main body by an immense external force..."
+    }
+  },
+  "SpurGearT": {
+    "name": "Spur Gear T",
+    "description": {
+      "0": "A seemingly ordinary spur gear. It originally belonged to \"Initial Skill Sample No. 2,\" but it seems to have been split from the main body by an immense external force..."
+    }
+  },
   "NavigationLogFragment": {
     "name": "Navigation Log Fragment",
     "description": {
@@ -18789,6 +19282,82 @@
     "name": "Damaged Diary",
     "description": {
       "0": "Damaged Diary"
+    }
+  },
+  "Disclaimer": {
+    "name": "Disclaimer",
+    "description": {}
+  },
+  "MoraCandy": {
+    "name": "Mora Candy",
+    "description": {
+      "0": "Candy that looks like Mora. The candy itself is bittersweet, an adult flavor that kids have a hard time appreciating. But the golden wrapping paper is incredibly popular with children."
+    }
+  },
+  "QualityWoodenBoard": {
+    "name": "Quality Wooden Board",
+    "description": {
+      "0": "A high-quality wooden plank with numerous uses. Place it under your clothes to block a potentially fatal attack, or use it for practicing martial arts."
+    }
+  },
+  "TheBoarPrincessVIII": {
+    "name": "The Boar Princess (VIII)",
+    "description": {
+      "0": "The eighth part of this timeless classic."
+    }
+  },
+  "CasketOfTomesSecondhand": {
+    "name": "Casket of Tomes (Secondhand)",
+    "description": {
+      "0": "A cherished Casket of Tomes that its owner has been forced to part with for reasons unknown. For a limited time, comes with a copy of \"Genius Invokation TCG: From Novice to the Summoners' Summit.\""
+    }
+  },
+  "IdolPoster": {
+    "name": "Idol Poster",
+    "description": {
+      "0": "An extremely popular Inazuman idol poster, it is one of the best options of decorating a room. Discounts available if purchased together with Cute Dolls."
+    }
+  },
+  "CuteDoll": {
+    "name": "Cute Doll",
+    "description": {
+      "0": "Certified by Roussimoff! Even the manliest man can't bear to part with such an adorable doll! Discounts available if purchased together with Idol Posters."
+    }
+  },
+  "BeastTrap": {
+    "name": "Beast Trap",
+    "description": {
+      "0": "A mysterious trap for beasts. Place Credit Coupons on it, and it can lure in the greedy."
+    }
+  },
+  "MarvelousBirdEgg": {
+    "name": "Marvelous Bird Egg",
+    "description": {
+      "0": "A delectable taste that could revive the dead! If you eat it, it can counteract an entire day's worth of misfortunes."
+    }
+  },
+  "DeliciousTeaLeaves": {
+    "name": "Delicious Tea Leaves",
+    "description": {
+      "0": "They have the mysterious effect of awakening the latent wisdom sleeping within. A unique flavor for a unique you!"
+    }
+  },
+  "PureWaterCase": {
+    "name": "\"Pure Water\" (Case)",
+    "description": {
+      "0": "\"Pure Water\" sold by the case. Once, someone drank half a case and became the champion of the next Pankration tournament. To drink an entire case, you must have bravery surpassing that of a champion, and an even stronger digestive system."
+    }
+  },
+  "FontaSweetSakura": {
+    "name": "Fonta: Sweet Sakura",
+    "description": {
+      "0": "Specially flavored Fonta, said to use Inazuman Sakura Blooms as an ingredient. During its manufacture, the amount of sugar was reduced in order to avoid overwhelming the sakura flavor, but consumer feedback indicates that the so-called \"sakura flavor\" is more like the smell of a freshly-mown lawn."
+    }
+  },
+  "FontaRedBerryBlast": {
+    "name": "Fonta: Red Berry Blast",
+    "description": {
+      "0": "Specially flavored Fonta, said to use many different \"red-colored fruits\" as ingredients. It has a very enticing crimson color and layered flavor profile. But for reasons unknown, this flavor of Fonta is severely irritating to the bowels, and until the underlying reason is discovered, large-scale promotion of this type of Fonta has been suspended..."
     }
   },
   "SuspiciousFowl": {
@@ -18830,6 +19399,246 @@
   "AStory": {
     "name": "A Story",
     "description": {}
+  },
+  "Handwheel": {
+    "name": "Handwheel",
+    "description": {
+      "0": "A common handwheel, used to adjust regulating valves on the pipes around the Fortress of Meropide."
+    }
+  },
+  "EnergyConcentratingComponent": {
+    "name": "Energy Concentrating Component",
+    "description": {
+      "0": "It was once an ordinary moving clockwork component but someone added an energy storage ring made from high-density materials.",
+      "1": "Perhaps just this single component is capable of powering the entire machine..."
+    }
+  },
+  "34thIndependentInvestigativeSquadDeploymentInMontEsusEasternQuadrantDeploymentPlan": {
+    "name": "34th Independent Investigative Squad Deployment in Mont Esus (Eastern Quadrant) Deployment Plan",
+    "description": {}
+  },
+  "SkirmishersNotes": {
+    "name": "Skirmisher's Notes",
+    "description": {}
+  },
+  "34thIndependentInvestigativeSquadDeploymentInMontEsusEasternQuadrantDisplinaryProcedures": {
+    "name": "34th Independent Investigative Squad Deployment in Mont Esus (Eastern Quadrant) Displinary Procedures",
+    "description": {}
+  },
+  "PoemOnFallenLeaf": {
+    "name": "Poem on Fallen Leaf",
+    "description": {
+      "0": "Poem on Fallen Leaf"
+    }
+  },
+  "ResponsePoemOnALeaf": {
+    "name": "Response Poem on a Leaf",
+    "description": {
+      "0": "Response Poem on a Leaf"
+    }
+  },
+  "PoemOnAFallenLeaf": {
+    "name": "Poem on a Fallen Leaf",
+    "description": {
+      "0": "Poem on a Fallen Leaf"
+    }
+  },
+  "PoetryRiddleOnALantern": {
+    "name": "Poetry Riddle on a Lantern",
+    "description": {
+      "0": "Poetry Riddle on a Lantern"
+    }
+  },
+  "PoemPlacedByUnknownPerson": {
+    "name": "Poem Placed by Unknown Person",
+    "description": {
+      "0": "Poem Placed by Unknown Person"
+    }
+  },
+  "ArkhiumInhibitorCondenserComponent": {
+    "name": "Arkhium Inhibitor Condenser Component",
+    "description": {
+      "0": "A condenser component once installed on the Arkhium Inhibitor. According to Raimondo, after they are all reinstalled, the inhibitor can be restarted."
+    }
+  },
+  "SpecialReport": {
+    "name": "\"Special Report\"",
+    "description": {
+      "0": "A special report privately printed by Chronie. It is said that the contents record the \"truth\" that the Fontaine Research Institute wishes to hide..."
+    }
+  },
+  "ClueBookFortressOfMeropide": {
+    "name": "Clue Book (Fortress of Meropide)",
+    "description": {
+      "0": "Records the various clues you found during your investigation in the Fortress of Meropide."
+    }
+  },
+  "Notice": {
+    "name": "Notice",
+    "description": {}
+  },
+  "LeftSideTableFileBox": {
+    "name": "Left-Side Table File Box",
+    "description": {
+      "0": "A file box that ruthlessly attacked Ms. Chalmet's back. It was placed on the table on the left-hand side of the entrance. It would probably be easier to move if it was placed inside a bag..."
+    }
+  },
+  "RightSideTableFileBox": {
+    "name": "Right-Side Table File Box",
+    "description": {
+      "0": "A file box that ruthlessly attacked Ms. Chalmet's back. It was placed on the table on the right-hand side of the entrance. It would probably be easier to move if it was placed inside a bag..."
+    }
+  },
+  "MutualAidNetworkAdvertisement": {
+    "name": "Mutual Aid Network Advertisement",
+    "description": {
+      "0": "A pamphlet given out by a very enthusiastic member of the Mutual Aid Network. It contains the basic principles of the Network. The logo on the cover looks a bit familiar..."
+    }
+  },
+  "FreshBerries": {
+    "name": "Fresh Berries",
+    "description": {
+      "0": "Brightly colored fruit with a sweet texture. An exceptionally fine picnic can be prepared by pairing it with other foods."
+    }
+  },
+  "FullPankrationFontaCup": {
+    "name": "Full Pankration Fonta Cup",
+    "description": {
+      "0": "The trophy for the Pankration recreational tournament, filled completely with Fonta.",
+      "1": "Even after being set down, a bubbling sound can be heard, a bit like the sound of \"hot oil and juices in a pot of meat,\" making anyone who hears it hanker for food.",
+      "2": "However, the size of the trophy is in a category all its own, and few could swallow the contents in a single swig. Even if you forced yourself to manage the feat, you'd probably bloat up like a Blubberbeast and might even end up hospitalized..."
+    }
+  },
+  "ExperimentalDrinkNo1": {
+    "name": "Experimental Drink No. 1",
+    "description": {
+      "0": "An \"experimental drink\" created by Heinry. It is filled with fizzy bubbles, and has a slightly salty flavor...",
+      "1": "But overall, it still maintains a bit of the orginal Fonta flavor... at least you know what you are drinking is still Fonta."
+    }
+  },
+  "ExperimentalDrinkNo2": {
+    "name": "Experimental Drink No. 2",
+    "description": {
+      "0": "An \"experimental drink\" created by Heinry. It is filled with fizzy bubbles, and you can even taste a bit of a slightly salty tea flavor?",
+      "1": "This drink feels more like a bottle of \"Salty Carbonated Tea,\" and not Fonta."
+    }
+  },
+  "ExperimentalDrinkNo3": {
+    "name": "Experimental Drink No. 3",
+    "description": {
+      "0": "An \"experimental drink\" created by Heinry. This Fonta has no bubbles whatsoever, and the saltiness is quite prominent.",
+      "1": "At the very least, it still counts as Fonta."
+    }
+  },
+  "ExperimentalDrinkNo4": {
+    "name": "Experimental Drink No. 4",
+    "description": {
+      "0": "An \"experimental drink\" created by Heinry. It has no bubbles whatsoever, and is a bit like slightly salty tea.",
+      "1": "Okay, it's basically like a plain old bottle of tea."
+    }
+  },
+  "ExperimentalDrinkNo5": {
+    "name": "Experimental Drink No. 5",
+    "description": {
+      "0": "An \"experimental drink\" created by Heinry. Refreshing Fonta, a font of refreshment! Classic Fonta, aha!",
+      "1": "Uh... but just making a bottle of classic Fonta is pretty meaningless."
+    }
+  },
+  "ExperimentalDrinkNo6": {
+    "name": "Experimental Drink No. 6",
+    "description": {
+      "0": "An \"experimental drink\" created by Heinry. A \"sweet bubbly tea\" bursting with bubbles. It tastes... not all that bad?"
+    }
+  },
+  "ExperimentalDrinkNo7": {
+    "name": "Experimental Drink No. 7",
+    "description": {
+      "0": "An \"experimental drink\" created by Heinry. Refreshing Fonta, a font of— what!? This bottle's gone flat, who took off the cap and didn't finish drinking it!?"
+    }
+  },
+  "ExperimentalDrinkNo8": {
+    "name": "Experimental Drink No. 8",
+    "description": {
+      "0": "An \"experimental drink\" created by Heinry. A \"sweet bubbly tea\" completely bereft of bubbles. Can... Can I just have a cup of tea instead?"
+    }
+  },
+  "AcademicAssemblyHallPicture": {
+    "name": "\"Academic Assembly Hall\" Picture",
+    "description": {
+      "0": "A photo taken in the Academic Assembly Hall. Who knows how Iaune will use it..."
+    }
+  },
+  "DodocosBombTasticAdventure": {
+    "name": "Dodoco's Bomb-Tastic Adventure",
+    "description": {
+      "0": "A fairy tale that Lisa wrote based on the special game \"Dodoco's Bomb-Tastic Adventure,\" featuring the Spark Knight, Dodoco, special Jumpy Dumpties, the Honorary Knight, and their white-colored helper in their victory over the fishies..."
+    }
+  },
+  "Hat": {
+    "name": "Hat",
+    "description": {
+      "0": "A hat obtained from the Rag and Bone Shop. Though it isn't the same hat that was lost, it should be sufficient to handle the situation at hand."
+    }
+  },
+  "MessilyWrittenNote": {
+    "name": "Messily-Written Note",
+    "description": {}
+  },
+  "TatteredDialogue": {
+    "name": "Tattered Dialogue",
+    "description": {}
+  },
+  "ALetterLeftBehind": {
+    "name": "A Letter Left Behind",
+    "description": {}
+  },
+  "FontaineResearchInstituteOfKineticEnergyEngineeringCertificate": {
+    "name": "Fontaine Research Institute of Kinetic Energy Engineering Certificate",
+    "description": {}
+  },
+  "TrainingLog": {
+    "name": "Training Log",
+    "description": {}
+  },
+  "Memo": {
+    "name": "Memo",
+    "description": {}
+  },
+  "NewTideAnthologyPartI": {
+    "name": "New Tide Anthology: Part I",
+    "description": {}
+  },
+  "NewTideAnthologyPartII": {
+    "name": "New Tide Anthology: Part II",
+    "description": {}
+  },
+  "NewTideAnthologyPartIII": {
+    "name": "New Tide Anthology: Part III",
+    "description": {}
+  },
+  "BlanchesLetter": {
+    "name": "Blanche's Letter",
+    "description": {
+      "0": "A letter, placed betwixt two Bulle Fruit."
+    }
+  },
+  "LocationNo1Materials": {
+    "name": "Location No. 1 Materials",
+    "description": {
+      "0": "Heinry's lost materials. Who knows what kind of inspiration he'll get from them.."
+    }
+  },
+  "LocationNo2Materials": {
+    "name": "Location No. 2 Materials",
+    "description": {
+      "0": "Heinry's lost materials. Who knows what kind of inspiration he'll get from them.."
+    }
+  },
+  "LocationNo3Materials": {
+    "name": "Location No. 3 Materials",
+    "description": {
+      "0": "Heinry's lost materials. Who knows what kind of inspiration he'll get from them.."
+    }
   },
   "SilkFlowerSeed": {
     "name": "Silk Flower Seed",
@@ -19341,6 +20150,12 @@
     "name": "Wings of Merciful, Wrathful Waters",
     "description": {
       "0": "A stylized wind glider gifted to you as a mark of Fontaine's acknowledgment and recognition."
+    }
+  },
+  "WingsOfTransientDreams": {
+    "name": "Wings of Transient Dreams",
+    "description": {
+      "0": "A stylized wind glider, one that you obtained in a trance-like flash as you entered a dream of the past through music."
     }
   },
   "RadiantSpincrystal1": {
@@ -20081,6 +20896,48 @@
       "0": "This wondrous crystal contains a certain rhythm, like something beautiful woven from delicate silk. These items can be found throughout the mainland or from merchants who collect curios. The tune held within this crystal can be revivified in your Serenitea Pot using either \"Euphonium Unbound: Winding\" or \"Euphonium Unbound: Soaring.\" The tune contained within this Radiant Spincrystal is a mysterious melody from Fontaine."
     }
   },
+  "RadiantSpincrystal108": {
+    "name": "Radiant Spincrystal 108",
+    "description": {
+      "0": "This wondrous crystal contains a certain rhythm, like something beautiful woven from delicate silk. These items can be found throughout the mainland or from merchants who collect curios. The tune held within this crystal can be revivified in your Serenitea Pot using either \"Euphonium Unbound: Winding\" or \"Euphonium Unbound: Soaring.\" The tune contained within this Radiant Spincrystal is a mysterious melody from Fontaine."
+    }
+  },
+  "RadiantSpincrystal109": {
+    "name": "Radiant Spincrystal 109",
+    "description": {
+      "0": "This wondrous crystal contains a certain rhythm, like something beautiful woven from delicate silk. These items can be found throughout the mainland or from merchants who collect curios. The tune held within this crystal can be revivified in your Serenitea Pot using either \"Euphonium Unbound: Winding\" or \"Euphonium Unbound: Soaring.\" The tune contained within this Radiant Spincrystal is a mysterious melody from Fontaine."
+    }
+  },
+  "RadiantSpincrystal110": {
+    "name": "Radiant Spincrystal 110",
+    "description": {
+      "0": "This wondrous crystal contains a certain rhythm, like something beautiful woven from delicate silk. These items can be found throughout the mainland or from merchants who collect curios. The tune held within this crystal can be revivified in your Serenitea Pot using either \"Euphonium Unbound: Winding\" or \"Euphonium Unbound: Soaring.\" The tune contained within this Radiant Spincrystal is a mysterious melody from Fontaine."
+    }
+  },
+  "RadiantSpincrystal111": {
+    "name": "Radiant Spincrystal 111",
+    "description": {
+      "0": "This wondrous crystal contains a certain rhythm, like something beautiful woven from delicate silk. These items can be found throughout the mainland or from merchants who collect curios. The tune held within this crystal can be revivified in your Serenitea Pot using either \"Euphonium Unbound: Winding\" or \"Euphonium Unbound: Soaring.\" The tune contained within this Radiant Spincrystal is a mysterious melody from Fontaine."
+    }
+  },
+  "RadiantSpincrystal112": {
+    "name": "Radiant Spincrystal 112",
+    "description": {
+      "0": "This wondrous crystal contains a certain rhythm, like something beautiful woven from delicate silk. These items can be found throughout the mainland or from merchants who collect curios. The tune held within this crystal can be revivified in your Serenitea Pot using either \"Euphonium Unbound: Winding\" or \"Euphonium Unbound: Soaring.\" The tune contained within this Radiant Spincrystal is a mysterious melody from Fontaine."
+    }
+  },
+  "RadiantSpincrystal113": {
+    "name": "Radiant Spincrystal 113",
+    "description": {
+      "0": "This wondrous crystal contains a certain rhythm, like something beautiful woven from delicate silk. These items can be found throughout the mainland or from merchants who collect curios. The tune held within this crystal can be revivified in your Serenitea Pot using either \"Euphonium Unbound: Winding\" or \"Euphonium Unbound: Soaring.\" The tune contained within this Radiant Spincrystal is a mysterious melody from Fontaine."
+    }
+  },
+  "RadiantSpincrystal114": {
+    "name": "Radiant Spincrystal 114",
+    "description": {
+      "0": "This wondrous crystal contains a certain rhythm, like something beautiful woven from delicate silk. These items can be found throughout the mainland or from merchants who collect curios. The tune held within this crystal can be revivified in your Serenitea Pot using either \"Euphonium Unbound: Winding\" or \"Euphonium Unbound: Soaring.\" The tune contained within this Radiant Spincrystal is a mysterious melody from Fontaine."
+    }
+  },
   "LanternFiber": {
     "name": "Lantern Fiber",
     "description": {
@@ -20220,6 +21077,13 @@
     "description": {
       "0": "Specialized refinement material for \"Fleuve Cendre Ferryman.\"",
       "1": "Not only can it prevent oxidation and erosion by forming an isolation layer on certain materials, but it also helps lubricate, clean, and polish. It was once all the rage in Fontaine. In the advertisements back then, a legendary figure from the Fleuve Cendre used it to maintain the famous curved copper tube."
+    }
+  },
+  "DandelionBookmark": {
+    "name": "Dandelion Bookmark",
+    "description": {
+      "0": "Specialized refinement material for \"Ballad of the Boundless Blue.\"",
+      "1": "In many poems and tales, Dandelions are a symbol of unrestrained freedom, traveling to faraway lands. Placing a bookmark with the image of a Dandelion within the pages of a book is not a form of confinement, but rather allowing it to wander in a world far vaster and brighter than our own."
     }
   },
   "FalconsDance": {
@@ -20523,8 +21387,10 @@
   "Wavepiercer": {
     "name": "Wavepiercer",
     "description": {
-      "0": "A slender fishing rod with a beautiful metallic glamor. Made of innovative metal materials designed by the Fontaine Research Institute, it combines light weight and resistance. Thanks to the solid metal loops reinforcing the connections between each section, the rod is capable of bearing fish of astonishing weight. Moreover, the reel seat is modeled after the handguards on weapon handles, protecting the angler from being damaged by fierce and \"tough\" fish. ",
-      "1": "According to experienced fishers, this rod is the perfect weapon against \"Iron Fish,\" the specialty of Fontaine, and is comparable to a trusty lance."
+      "0": "If you can stay within the Ideal Tension Zone while fishing, this rod will shorten the time in which fish will struggle by a stable amount and increase your chances of success. This effect only works in Fontaine.",
+      "1": "<br/>",
+      "2": "A slender fishing rod with a beautiful metallic glamor. Made of innovative metal materials designed by the Fontaine Research Institute, it combines light weight and resistance. Thanks to the solid metal loops reinforcing the connections between each section, the rod is capable of bearing fish of astonishing weight. Moreover, the reel seat is modeled after the handguards on weapon handles, protecting the angler from being damaged by fierce and \"tough\" fish. ",
+      "3": "According to experienced fishers, this rod is the perfect weapon against \"Iron Fish,\" the specialty of Fontaine, and is comparable to a trusty lance."
     }
   },
   "GenshinImpactANewWorld": {
@@ -21710,6 +22576,48 @@
       "1": "Timepieces accompany the tranquil passing of the years, as fish accompany the swirling of the clear waters of the font. If all that is must one day wither, why are my thoughts as clear as ever?"
     }
   },
+  "NeuvilletteSurge": {
+    "name": "Neuvillette: Surge",
+    "description": {
+      "0": "Namecard style.",
+      "1": "The water's surface may seem placid as a pristine gem, but it may yet be lying in wait for an opportune moment to gush forth."
+    }
+  },
+  "WriothesleyDetention": {
+    "name": "Wriothesley: Detention",
+    "description": {
+      "0": "Namecard style.",
+      "1": "Maintaining order at the Fortress of Meropide is no simple affair. As such, a deft and sometimes firm hand is needed — along with a small pinch of truly regrettable cruelty."
+    }
+  },
+  "TravelNotesFallingStar": {
+    "name": "Travel Notes: Falling Star",
+    "description": {
+      "0": "Namecard style.",
+      "1": "Make a wish before you toss the arrow. If you manage to get it into the pot, who knows — your wish just might come true."
+    }
+  },
+  "CelebrationEuphonia": {
+    "name": "Celebration: Euphonia",
+    "description": {
+      "0": "Namecard style.",
+      "1": "The trees sing on the slopes of a thousand mountain valleys, accompanied by the music of the passing rain."
+    }
+  },
+  "AchievementPerpetual": {
+    "name": "Achievement: Perpetual",
+    "description": {
+      "0": "Namecard style.",
+      "1": "\"No one hears the dream that shattered between the conches and the gears. Only the tireless mechanical dancer still queries the echoes of the past day and night with its every elegant step.\""
+    }
+  },
+  "FontaineRedemption": {
+    "name": "Fontaine: Redemption",
+    "description": {
+      "0": "Namecard style.",
+      "1": "The official logo of the Fortress of Meropide. It is our dearest hope that all who wish to honor order and live out their lives in peace shall not ever be associated with the organization this insignia represents."
+    }
+  },
   "AnemoculusResonanceStone": {
     "name": "Anemoculus Resonance Stone",
     "description": {
@@ -22213,6 +23121,14 @@
       "1": "Use this to find all Joyeux Vouchers within the Veluriyam Mirage."
     }
   },
+  "IttyBittyOctobaby": {
+    "name": "Itty Bitty Octobaby",
+    "description": {
+      "0": "A type of tiny octopus that normally lives in the depths of the ocean.",
+      "1": "Perhaps out of an overabundance of curiosity, or a desire to travel, it begins to cruise throughout the seas while still extremely young. If it sees a creature it likes, it will follow it everywhere.",
+      "2": "But who knows what it will be like when it grows up..."
+    }
+  },
   "InscribedMirror": {
     "name": "Inscribed Mirror",
     "description": {
@@ -22258,6 +23174,20 @@
     "name": "Bresson's Special Kamera",
     "description": {
       "0": "A Kamera specially modified by Bresson. It was manufactured with the best materials available, and has excellent performance."
+    }
+  },
+  "PortableAerodynamicGelatinousBubbleGenerator": {
+    "name": "Portable Aerodynamic Gelatinous Bubble Generator",
+    "description": {
+      "0": "A mechanism that can be used to create large amounts of colloid bubbles.",
+      "1": "<br/>",
+      "2": "Givalois, a researcher from the Fontaine Research Institute, developed this prototype.",
+      "3": "The original purpose was to create a large generator of gelatinous bubbles. Just as the project aimed to do, the bubbles so produced could carry some amount of water within them, and move or hover stably in the air, potentially achieving the aim of being able to quickly transport water resources.",
+      "4": "However, as they were never able to find a material to make gelatinous bubbles of this type, the project stalled at the prototype stage.",
+      "5": "But it is said the researcher Givalois's children loved this prototype bubble machine, so perhaps it would be possible to sell it as a toy?",
+      "6": "<br/>",
+      "7": "\"This machine is a product of Daddy's research, and it's called the Portable Aerodynamic Gelatinous Bubble Generator...\"",
+      "8": "\"Bubbles! So pretty! Daddy, you're amazing!\""
     }
   },
   "InstructionsAnemoculusResonanceStone": {
@@ -22513,6 +23443,12 @@
     "name": "Diagram: Hydro Treasure Compass",
     "description": {
       "0": "A detailed step-by-step diagram for making a Hydro Treasure Compass. Use it to easily locate treasure all over Fontaine."
+    }
+  },
+  "FormulaPureWater": {
+    "name": "Formula: \"Pure Water\"",
+    "description": {
+      "0": "A detailed step-by-step formula for making \"Pure Water.\""
     }
   },
   "SilkenPrint": {
@@ -23017,6 +23953,24 @@
       "0": "A card for the tabletop game, Genius Invokation TCG. It is built tough, and some special printing method has been used for the illustration on the card's face, resulting in a truly exquisite appearance."
     }
   },
+  "StalwartAndTrue": {
+    "name": "Stalwart and True",
+    "description": {
+      "0": "A card for the tabletop game, Genius Invokation TCG. It is built tough, and some special printing method has been used for the illustration on the card's face, resulting in a truly exquisite appearance."
+    }
+  },
+  "GalesOfReverie": {
+    "name": "Gales of Reverie",
+    "description": {
+      "0": "A card for the tabletop game, Genius Invokation TCG. It is built tough, and some special printing method has been used for the illustration on the card's face, resulting in a truly exquisite appearance."
+    }
+  },
+  "Beneficent": {
+    "name": "Beneficent",
+    "description": {
+      "0": "A card for the tabletop game, Genius Invokation TCG. It is built tough, and some special printing method has been used for the illustration on the card's face, resulting in a truly exquisite appearance."
+    }
+  },
   "MagicGuide": {
     "name": "Magic Guide",
     "description": {
@@ -23341,6 +24295,18 @@
       "0": "A card for the tabletop game, Genius Invokation TCG. It is built tough, and some special printing method has been used for the illustration on the card's face, resulting in a truly exquisite appearance."
     }
   },
+  "Moonpiercer": {
+    "name": "Moonpiercer",
+    "description": {
+      "0": "A card for the tabletop game, Genius Invokation TCG. It is built tough, and some special printing method has been used for the illustration on the card's face, resulting in a truly exquisite appearance."
+    }
+  },
+  "CrownOfWatatsumi": {
+    "name": "Crown of Watatsumi",
+    "description": {
+      "0": "A card for the tabletop game, Genius Invokation TCG. It is built tough, and some special printing method has been used for the illustration on the card's face, resulting in a truly exquisite appearance."
+    }
+  },
   "LiyueHarborWharf": {
     "name": "Liyue Harbor Wharf",
     "description": {
@@ -23535,6 +24501,18 @@
   },
   "Setaria": {
     "name": "Setaria",
+    "description": {
+      "0": "A card for the tabletop game, Genius Invokation TCG. It is built tough, and some special printing method has been used for the illustration on the card's face, resulting in a truly exquisite appearance."
+    }
+  },
+  "GandharvaVille": {
+    "name": "Gandharva Ville",
+    "description": {
+      "0": "A card for the tabletop game, Genius Invokation TCG. It is built tough, and some special printing method has been used for the illustration on the card's face, resulting in a truly exquisite appearance."
+    }
+  },
+  "YayoiNanatsuki": {
+    "name": "Yayoi Nanatsuki",
     "description": {
       "0": "A card for the tabletop game, Genius Invokation TCG. It is built tough, and some special printing method has been used for the illustration on the card's face, resulting in a truly exquisite appearance."
     }
@@ -23797,6 +24775,18 @@
       "0": "A card for the tabletop game, Genius Invokation TCG. It is built tough, and some special printing method has been used for the illustration on the card's face, resulting in a truly exquisite appearance."
     }
   },
+  "FreshWindOfFreedom": {
+    "name": "Fresh Wind of Freedom",
+    "description": {
+      "0": "A card for the tabletop game, Genius Invokation TCG. It is built tough, and some special printing method has been used for the illustration on the card's face, resulting in a truly exquisite appearance."
+    }
+  },
+  "Pankration": {
+    "name": "Pankration!",
+    "description": {
+      "0": "A card for the tabletop game, Genius Invokation TCG. It is built tough, and some special printing method has been used for the illustration on the card's face, resulting in a truly exquisite appearance."
+    }
+  },
   "Origin": {
     "name": "Origin",
     "description": {
@@ -23855,6 +24845,24 @@
     "name": "Fontaine",
     "description": {
       "0": "A Genius Invokation TCG card back that can be obtained and switched around. They say that card backs with different designs also come with minute differences in make and texture. Some players also make collecting card backs of different styles their pursuit and hobby."
+    }
+  },
+  "TheFortressOfMeropide": {
+    "name": "The Fortress of Meropide",
+    "description": {
+      "0": "A Genius Invokation TCG Card Back that can be obtained and switched around. They say that card backs with different designs also come with minute differences in make and texture. Some players also make collecting card backs of different styles their pursuit and hobby."
+    }
+  },
+  "DragonspineTraces": {
+    "name": "Dragonspine: Traces",
+    "description": {
+      "0": "A Genius Invokation TCG Card Back that can be obtained and switched around. They say that card backs with different designs also come with minute differences in make and texture. Some players also make collecting card backs of different styles their pursuit and hobby."
+    }
+  },
+  "DragonspineCrown": {
+    "name": "Dragonspine: Crown",
+    "description": {
+      "0": "A Genius Invokation TCG Card Back that can be obtained and switched around. They say that card backs with different designs also come with minute differences in make and texture. Some players also make collecting card backs of different styles their pursuit and hobby."
     }
   },
   "BeginnerPlayerBadge": {
@@ -24930,6 +25938,20 @@
       "1": "After using this item, you can view it in the Creation Screen."
     }
   },
+  "SplendrousNightOverflowingLight": {
+    "name": "Splendrous Night: Overflowing Light",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making Splendrous Night: Overflowing Light.",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "MekaLuminaireShiningSea": {
+    "name": "Meka Luminaire: Shining Sea",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making a Meka Luminaire: Shining Sea.",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
   "EfflorescentIllumination": {
     "name": "Efflorescent Illumination",
     "description": {
@@ -25119,6 +26141,34 @@
       "1": "After using this item, you can view it in the Creation Screen."
     }
   },
+  "MaisonCardinalicesCabinet": {
+    "name": "\"Maison Cardinalice's Cabinet\"",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making \"Maison Cardinalice's Cabinet.\"",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "MaisonCardinalicesHighShelf": {
+    "name": "\"Maison Cardinalice's High Shelf\"",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making \"Maison Cardinalice's High Shelf.\"",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "MaisonCardinalicesWingedShelf": {
+    "name": "\"Maison Cardinalice's Winged Shelf\"",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making \"Maison Cardinalice's Winged Shelf.\"",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "MaisonCardinalicesLittleHelper": {
+    "name": "\"Maison Cardinalice's Little Helper\"",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making \"Maison Cardinalice's Little Helper.\"",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
   "SturdyLibraryTable": {
     "name": "Sturdy Library Table",
     "description": {
@@ -25280,6 +26330,41 @@
       "1": "After using this item, you can view it in the Creation Screen."
     }
   },
+  "StudyOfTheForbiddenFortress": {
+    "name": "\"Study of the Forbidden Fortress\"",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making \"Study of the Forbidden Fortress.\"",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "EverydayLifeInTheForbiddenFortress": {
+    "name": "\"Everyday Life in the Forbidden Fortress\"",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making \"Everyday Life in the Forbidden Fortress.\"",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "ContentedElegance": {
+    "name": "\"Contented Elegance\"",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making \"Contented Elegance.\"",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "SteadyStatelyStability": {
+    "name": "\"Steady Stately Stability\"",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making \"Steady Stately Stability.\"",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "MaisonCardinalicesFocus": {
+    "name": "\"Maison Cardinalice's Focus\"",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making \"Maison Cardinalice's Focus.\"",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
   "BreezeBlessedBed": {
     "name": "Breeze-Blessed Bed",
     "description": {
@@ -25319,6 +26404,13 @@
     "name": "Adhigama Wood \"Repose\" Couch",
     "description": {
       "0": "A detailed step-by-step blueprint for making an \"Adhigama Wood 'Repose' Couch.\"",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "LindenWoodSturdyBunk": {
+    "name": "Linden Wood \"Sturdy\" Bunk",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making a Linden Wood \"Sturdy\" Bunk.",
       "1": "After using this item, you can view it in the Creation Screen."
     }
   },
@@ -25466,6 +26558,34 @@
     "name": "Tavern Dining Chair - \"Accelerated Sobriety\"",
     "description": {
       "0": "A detailed step-by-step blueprint for making a Tavern Dining Chair - \"Accelerated Sobriety.\"",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "ConversationOfTheForbiddenFortress": {
+    "name": "\"Conversation of the Forbidden Fortress\"",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making \"Conversation of the Forbidden Fortress.\"",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "ComfortOfAHomeAwayFromHome": {
+    "name": "\"Comfort of a Home Away From Home\"",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making \"Comfort of a Home Away From Home.\"",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "WitnessToGreatFocus": {
+    "name": "\"Witness to Great Focus\"",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making \"Witness to Great Focus.\"",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "ElationOfSocialDrinking": {
+    "name": "\"Elation of Social Drinking\"",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making \"Elation of Social Drinking.\"",
       "1": "After using this item, you can view it in the Creation Screen."
     }
   },
@@ -25777,6 +26897,62 @@
       "1": "After using this item, you can view it in the Creation Screen."
     }
   },
+  "WisdomOfTheForbiddenFortress": {
+    "name": "\"Wisdom of the Forbidden Fortress\"",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making \"Wisdom of the Forbidden Fortress.\"",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "ChillAfternoonTeaTime": {
+    "name": "\"Chill Afternoon Tea Time\"",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making \"Chill Afternoon Tea Time.\"",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "MaisonCardinalicesPunctuality": {
+    "name": "\"Maison Cardinalice's Punctuality\"",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making \"Maison Cardinalice's Punctuality.\"",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "MaisonCardinalicesLockbox": {
+    "name": "\"Maison Cardinalice's Lockbox\"",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making \"Maison Cardinalice's Lockbox.\"",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "MaisonCardinalicesStores": {
+    "name": "\"Maison Cardinalice's Stores\"",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making \"Maison Cardinalice's Stores.\"",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "MallowWoodEnhancedPlatformLadder": {
+    "name": "Mallow Wood \"Enhanced\" Platform Ladder",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making a Mallow Wood \"Enhanced\" Platform Ladder.",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "MallowWoodSturdyCargoContainer": {
+    "name": "Mallow Wood \"Sturdy\" Cargo Container",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making Mallow Wood \"Sturdy\" Cargo Container.",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "BurdenOfTheForbiddenFortress": {
+    "name": "\"Burden of the Forbidden Fortress\"",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making \"Burden of the Forbidden Fortress.\"",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
   "MondstadtRugCrimsonArdor": {
     "name": "Mondstadt Rug: Crimson Ardor",
     "description": {
@@ -25858,6 +27034,20 @@
     "name": "Tavern Carpet - \"Duelist's Wisdom\"",
     "description": {
       "0": "A detailed step-by-step blueprint for making a Tavern Carpet - \"Duelist's Wisdom.\"",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "RestaurantRugEqualDialogue": {
+    "name": "Restaurant Rug: \"Equal Dialogue\"",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making a Restaurant Rug: \"Equal Dialogue.\"",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "RestaurantRugBathingInTheBreeze": {
+    "name": "Restaurant Rug: \"Bathing in the Breeze\"",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making a Restaurant Rug: \"Bathing in the Breeze.\"",
       "1": "After using this item, you can view it in the Creation Screen."
     }
   },
@@ -26267,6 +27457,20 @@
       "1": "After using this item, you can view it in the Creation Screen."
     }
   },
+  "MaisonCardinalicesMusicalTone": {
+    "name": "\"Maison Cardinalice's Musical Tone\"",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making \"Maison Cardinalice's Musical Tone.\"",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "MaisonCardinalicesClerk": {
+    "name": "\"Maison Cardinalice's Clerk\"",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making \"Maison Cardinalice's Clerk.\"",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
   "RealizationsFromTheLandOfWisdom": {
     "name": "\"Realizations from the Land of Wisdom\"",
     "description": {
@@ -26285,6 +27489,27 @@
     "name": "The Art of Retaining Water",
     "description": {
       "0": "A detailed step-by-step blueprint for making \"The Art of Retaining Water.\"",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "FloralArrangementNearlyAquamarine": {
+    "name": "Floral Arrangement: \"Nearly Aquamarine\"",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making Floral Arrangement: \"Nearly Aquamarine.\"",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "FloralArrangementBloomingPurity": {
+    "name": "Floral Arrangement: \"Blooming Purity\"",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making Floral Arrangement: \"Blooming Purity.\"",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "FloralArrangementArtOfContrast": {
+    "name": "Floral Arrangement: \"Art of Contrast\"",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making Floral Arrangement: \"Art of Contrast.\"",
       "1": "After using this item, you can view it in the Creation Screen."
     }
   },
@@ -27779,6 +29004,20 @@
       "1": "After using this item, you can view it in the Creation Screen."
     }
   },
+  "ImmaculateJudgment": {
+    "name": "\"Immaculate Judgment\"",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making \"Immaculate Judgment.\"",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "AThousandEphemeralVisionsOfDew": {
+    "name": "\"A Thousand Ephemeral Visions of Dew\"",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making \"A Thousand Ephemeral Visions of Dew.\"",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
   "AdeptusGate": {
     "name": "Adeptus Gate",
     "description": {
@@ -28556,6 +29795,13 @@
       "1": "After using this item, you can view it in the Creation Screen."
     }
   },
+  "MajestyOfTheForbiddenFortress": {
+    "name": "\"Majesty of the Forbidden Fortress\"",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making \"Majesty of the Forbidden Fortress.\"",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
   "PottedPlantVerdantVastness": {
     "name": "Potted Plant: Verdant Vastness",
     "description": {
@@ -28588,6 +29834,13 @@
     "name": "Passage's Perfumed Potted Plants",
     "description": {
       "0": "A detailed step-by-step blueprint for making Passage's Perfumed Potted Plants.",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "RoyalPurple": {
+    "name": "\"Royal Purple\"",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making a \"Royal Purple.\"",
       "1": "After using this item, you can view it in the Creation Screen."
     }
   },
@@ -29582,6 +30835,13 @@
     "name": "Foundations of Stone: Grand Design",
     "description": {
       "0": "A detailed step-by-step blueprint for making \"Foundations of Stone: Grand Design.\"",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "TearstoneTilePerspectiveTheory": {
+    "name": "Tearstone Tile: Perspective Theory",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making a Tearstone Tile: Perspective Theory.",
       "1": "After using this item, you can view it in the Creation Screen."
     }
   }

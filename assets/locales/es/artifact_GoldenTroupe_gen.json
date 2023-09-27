@@ -2,7 +2,7 @@
   "setName": "Compañía Dorada",
   "setEffects": {
     "2": "Daño de Habilidad Elemental +20%.",
-    "4": "Aumenta en un 25% el daño infligido con la Habilidad Elemental. Además, cuando el personaje está en tu equipo pero no en combate, el daño de dicha habilidad aumenta en un 25% adicional. Este efecto se anula 2 s después de entrar en el campo de batalla."
+    "4": "Aumenta en un 25% el daño infligido con la Habilidad Elemental. Además, cuando el personaje está en tu equipo pero no en uso, el daño de dicha habilidad aumenta en un 25% adicional. Este efecto se anula 2 s después de entrar en el campo de batalla."
   },
   "pieces": {
     "flower": {

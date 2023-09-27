@@ -46,7 +46,7 @@
       "2": "<br/>",
       "3": "<strong>Appui long</strong>",
       "4": "Ajuste la zone où la compétence sera lancée.",
-      "5": "Les Lames de foudre peuvent aussi être suspendues dans les airs ; activez à nouveau la compétence Retour des étoiles pour permettre à Keqing de s'y téléporter.",
+      "5": "Les Lames de foudre peuvent aussi être suspendues dans les airs, et Keqing peut activer à nouveau la compétence Retour des étoiles pour s'y téléporter.",
       "6": "<br/>",
       "7": "<strong>Lame de foudre</strong>",
       "8": "Lorsque la marque est active, Keqing peut utiliser à nouveau Retour des étoiles pour se téléporter ou lancer une attaque chargée et la marque disparaîtra avec les effets suivant selon le cas :",
@@ -118,7 +118,7 @@
   "passive3": {
     "name": "Agencement des terres",
     "description": {
-      "0": "Réduit la durée d'une expédition de 25 % lorsqu'elle se déroule à Liyue."
+      "0": "Diminue la durée d'une expédition de 25 % lorsqu'elle se déroule à Liyue."
     }
   },
   "constellation1": {

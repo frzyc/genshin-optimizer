@@ -102,13 +102,13 @@
   "passive2": {
     "name": "Lame du chasseur de glace",
     "description": {
-      "0": "Une lame apparaît à la fin du champ de <strong>Lame de l'esprit : Givre superposé</strong> ; elle inflige des <cryo>DGT Cryo de zone</cryo> équivalant à 100 % des DGT de Lame de l'esprit : Givre superposé aux ennemis proches. La <cryo>RÉS Cryo</cryo> des ennemis touchés est réduite de 10 % pendant 8 s."
+      "0": "Une lame apparaît à la fin du champ de <strong>Lame de l'esprit : Givre superposé</strong> ; elle inflige des <cryo>DGT Cryo de zone</cryo> équivalant à 100 % des DGT de Lame de l'esprit : Givre superposé aux ennemis proches. La <cryo>RÉS Cryo</cryo> des ennemis touchés diminue de 10 % pendant 8 s."
     }
   },
   "passive3": {
     "name": "Périple alyzéen",
     "description": {
-      "0": "Réduit la durée d'une expédition de 25 % lorsqu'elle se déroule à Liyue."
+      "0": "Diminue la durée d'une expédition de 25 % lorsqu'elle se déroule à Liyue."
     }
   },
   "constellation1": {
@@ -120,7 +120,7 @@
   "constellation2": {
     "name": "Révolution astrale",
     "description": {
-      "0": "Lancer une compétence ou un déchaînement élémentaires dans le champ de <strong>Lame de l'esprit : Givre superposé</strong> réduit leur TdR de 15 %."
+      "0": "Lancer une compétence ou un déchaînement élémentaires dans le champ de <strong>Lame de l'esprit : Givre superposé</strong> diminue leur TdR de 15 %."
     }
   },
   "constellation3": {

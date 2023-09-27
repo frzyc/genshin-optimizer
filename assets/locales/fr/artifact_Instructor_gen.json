@@ -2,7 +2,7 @@
   "setName": "Instructeur",
   "setEffects": {
     "2": "Augmente la maîtrise élémentaire de 80 pts.",
-    "4": "Augmente la maîtrise élémentaire de toute l'équipe de 120 pts pendant 8 s après avoir déclenché une réaction élémentaire."
+    "4": "Augmente la maîtrise élémentaire de tous les personnages de l'équipe de 120 pts pendant 8 s après avoir déclenché une réaction élémentaire."
   },
   "pieces": {
     "flower": {

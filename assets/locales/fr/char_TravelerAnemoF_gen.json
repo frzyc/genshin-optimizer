@@ -133,7 +133,7 @@
   "constellation4": {
     "name": "Prévenance de brise",
     "description": {
-      "0": "Les DGT subis sont réduits de 10 % tant que <strong>Vortex destructeur</strong> est actif."
+      "0": "Les DGT subis diminuent de 10 % tant que <strong>Vortex destructeur</strong> est actif."
     }
   },
   "constellation5": {
@@ -146,8 +146,8 @@
   "constellation6": {
     "name": "Vents enlacés",
     "description": {
-      "0": "La <anemo>RÉS Anémo</anemo> des ennemis touchés par <strong>Rafale de vent</strong> est réduite de 20 %.",
-      "1": "En cas d'absorption élémentaire, leur RÉS à l'élément correspondant est également réduite de 20 %."
+      "0": "La <anemo>RÉS Anémo</anemo> des ennemis touchés par <strong>Rafale de vent</strong> diminue de 20 %.",
+      "1": "En cas d'absorption élémentaire, leur RÉS à l'élément correspondant diminue également de 20 %."
     }
   }
 }

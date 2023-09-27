@@ -131,7 +131,7 @@
   "passive3": {
     "name": "Navigation en eaux profondes",
     "description": {
-      "0": "Réduit la consommation d'endurance aquatique de vos personnages dans l'équipe de 35 %.",
+      "0": "Diminue la consommation d'endurance aquatique de vos personnages dans l'équipe de 35 %.",
       "1": "Ne peut pas être cumulé avec d'autres aptitudes passives aux effets identiques."
     }
   },

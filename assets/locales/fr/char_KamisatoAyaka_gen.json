@@ -105,13 +105,13 @@
       "1": "Ayaka consomme de l'endurance pour se déplacer rapidement au milieu d'un brouillard de glace.",
       "2": "<br/>",
       "3": "Sous Sentier de givre, Ayaka peut se déplacer rapidement sur l'eau.",
-      "4": "À la fin de l'état, elle réapparaît ; deux choses se produisent alors simultanément :",
+      "4": "À la fin de l'état, elle réapparaît, et deux choses se produisent alors simultanément :",
       "5": [
         " Elle libère une énergie glacée qui applique aux ennemis proches l'élément <cryo>Cryo</cryo>.",
         " Le froid se concentre sur son épée : les DGT qu'inflige cette dernière sont momentanément convertis en <cryo>DGT Cryo</cryo>."
       ],
       "6": "<br/>",
-      "7": "<i>« Volent les ailes mouillées / Le héron blanc marche sur l'eau / D'une vision parfaite »</i>"
+      "7": "<i>« Volent les ailes mouillées ; le héron blanc marche sur l'eau ; d'une vision parfaite »</i>"
     }
   },
   "passive1": {
@@ -124,7 +124,7 @@
     "name": "Bénédiction de Kanten Senmyou",
     "description": {
       "0": "L'énergie glacée libérée à la fin du Sentier de givre d'<strong>École Kamisato : Sentier de givre</strong> confère à Ayaka les effets suivants lorsqu'elle touche l'ennemi :",
-      "1": "Régénération de 10 pts d'endurance ;",
+      "1": "Régénération de 10 pts d'endurance.",
       "2": "<cryo>Bonus de DGT Cryo</cryo> de 18 % pendant 10 s."
     }
   },
@@ -156,7 +156,7 @@
   "constellation4": {
     "name": "Retour prééminent",
     "description": {
-      "0": "La DÉF des ennemis subissant les DGT infligés par le tourbillon givré d'<strong>École Kamisato : Givre mortel</strong> est réduite de 30 % pendant 6 s."
+      "0": "La DÉF des ennemis subissant les DGT infligés par le tourbillon givré d'<strong>École Kamisato : Givre mortel</strong> diminue de 30 % pendant 6 s."
     }
   },
   "constellation5": {

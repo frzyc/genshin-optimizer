@@ -144,7 +144,7 @@
   "constellation4": {
     "name": "Territoire des pissenlits",
     "description": {
-      "0": "La <anemo>RÉS Anémo</anemo> des ennemis à l'intérieur du champ de <strong>Brise de pissenlit</strong> est réduite de 40 %."
+      "0": "La <anemo>RÉS Anémo</anemo> des ennemis à l'intérieur du champ de <strong>Brise de pissenlit</strong> diminue de 40 %."
     }
   },
   "constellation5": {
@@ -157,7 +157,7 @@
   "constellation6": {
     "name": "Croc de Lion, le protecteur de Mondstadt",
     "description": {
-      "0": "Les DGT subis par les personnages dans le champ de <strong>Brise de pissenlit</strong> sont réduits de 35 %.",
+      "0": "Les DGT subis par les personnages dans le champ de <strong>Brise de pissenlit</strong> diminuent de 35 %.",
       "1": "Après avoir quitté le champ, cet effet disparaît après avoir subi 3 attaques ou après 10 s."
     }
   }

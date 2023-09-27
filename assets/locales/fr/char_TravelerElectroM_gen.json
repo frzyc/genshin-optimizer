@@ -100,7 +100,7 @@
   "passive1": {
     "name": "Éclair soudain",
     "description": {
-      "0": "Réduit de 1,5 s le TdR de <strong>Lame d'éclair</strong> lorsqu'un autre personnage proche absorbe l'amulette d'abondance générée par <strong>Lame d'éclair</strong>."
+      "0": "Diminue de 1,5 s le TdR de <strong>Lame d'éclair</strong> lorsqu'un autre personnage proche absorbe l'amulette d'abondance générée par <strong>Lame d'éclair</strong>."
     }
   },
   "passive2": {
@@ -118,7 +118,7 @@
   "constellation2": {
     "name": "Véhémence pourpre",
     "description": {
-      "0": "Réduit de 15 % pendant 8 s la <electro>RÉS Électro</electro> des ennemis ayant été touchés par la Foudre majestueuse de <strong>Tonnerre hurlant</strong>."
+      "0": "Diminue de 15 % pendant 8 s la <electro>RÉS Électro</electro> des ennemis ayant été touchés par la Foudre majestueuse de <strong>Tonnerre hurlant</strong>."
     }
   },
   "constellation3": {

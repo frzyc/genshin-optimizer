@@ -80,7 +80,7 @@
       "0": "Venti tire une flèche porteuse de la puissance de mille vents et de l'Œil de la tempête. Ce dernier attire les ennemis en son centre, et inflige des <anemo>DGT Anémo continus</anemo>.",
       "1": "<br/>",
       "2": "<strong>Absorption élémentaire</strong>",
-      "3": "L'Œil de la tempête absorbe les éléments <hydro>Hydro</hydro>, <pyro>Pyro</pyro>, <cryo>Cryo</cryo> et <electro>Électro</electro> avec lesquels il entre en contact ; ceux-ci lui confèrent leurs attributs, et infligent un bonus de DGT de l'élément correspondant.",
+      "3": "L'Œil de la tempête absorbe les éléments <hydro>Hydro</hydro>, <pyro>Pyro</pyro>, <cryo>Cryo</cryo> et <electro>Électro</electro> avec lesquels il entre en contact, ceux-ci lui conférant leurs attributs et infligeant un bonus de DGT de l'élément correspondant.",
       "4": "Une seule réaction d'absorption élémentaire peut avoir lieu par utilisation.",
       "5": "<br/>",
       "6": "<i>Nombre de poèmes chantant la gloire de l'Archon Anémo ont été perdus. Celui-ci raconte sa puissance, et la puissance des vents.</i>"
@@ -120,7 +120,7 @@
   "passive3": {
     "name": "Chevaucheur du vent",
     "description": {
-      "0": "Réduit la consommation d'endurance de vos personnages dans l'équipe de 20 % lors du planage.",
+      "0": "Diminue la consommation d'endurance de vos personnages dans l'équipe de 20 % lors du planage.",
       "1": "Ne peut pas être cumulé avec d'autres aptitudes passives aux effets identiques."
     }
   },
@@ -133,8 +133,8 @@
   "constellation2": {
     "name": "Bise de réminiscence",
     "description": {
-      "0": "<strong>Sonnet des Vents célestes</strong> réduit la <anemo>RÉS Anémo</anemo> et la RÉS physique des ennemis de 12 % pendant 10 s.",
-      "1": "La <anemo>RÉS Anémo</anemo> et la RÉS physique des ennemis projetés en l'air par <strong>Sonnet des Vents célestes</strong> sont réduites de 12 % tant qu'ils sont en l'air."
+      "0": "<strong>Sonnet des Vents célestes</strong> diminue la <anemo>RÉS Anémo</anemo> et la RÉS physique des ennemis de 12 % pendant 10 s.",
+      "1": "La <anemo>RÉS Anémo</anemo> et la RÉS physique des ennemis projetés en l'air par <strong>Sonnet des Vents célestes</strong> diminuent de 12 % tant qu'ils sont en l'air."
     }
   },
   "constellation3": {
@@ -160,8 +160,8 @@
   "constellation6": {
     "name": "Tempête de résistance",
     "description": {
-      "0": "La <anemo>RÉS Anémo</anemo> des ennemis touchés par <strong>Ode au Vent</strong> est réduite de 20 %.",
-      "1": "En cas d'absorption élémentaire, leur RÉS à l'élément correspondant est également réduite de 20 %."
+      "0": "La <anemo>RÉS Anémo</anemo> des ennemis touchés par <strong>Ode au Vent</strong> diminue de 20 %.",
+      "1": "En cas d'absorption élémentaire, leur RÉS à l'élément correspondant diminue également de 20 %."
     }
   }
 }

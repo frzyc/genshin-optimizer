@@ -52,7 +52,7 @@
       "8": "Le Yuegui lanceur choisit lui-même ses cibles lors de l'envoi de ses radis :",
       "9": [
         " Si tous les personnages proches ont plus de 70 % de PV, il lance un radis sur un ennemi proche.",
-        " Si certains personnages proches ont 70 % ou moins de PV, il lance un radis sur celui ayant le pourcentage de PV restant le plus bas. S'il n'y a aucun ennemi à proximité, le Yuegui lance ses radis de jade blanc sur les personnages proches si tous ces derniers ont entre 70 % et 100 % de PV ; sinon il lance ses radis aléatoirement."
+        " Si certains personnages proches ont 70 % ou moins de PV, il lance un radis sur celui ayant le pourcentage de PV restant le plus bas. S'il n'y a aucun ennemi à proximité, le Yuegui lance ses radis de jade blanc sur les personnages proches si tous ces derniers ont entre 70 % et 100 % de PV. Sinon, il lance ses radis aléatoirement."
       ],
       "10": "<br/>",
       "11": "Un maximum de 2 Yueguis lanceurs peut exister en même temps.",

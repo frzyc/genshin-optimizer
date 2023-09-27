@@ -2,7 +2,7 @@
   "setName": "Ombre de la Verte Chasseuse",
   "setEffects": {
     "2": "Confère un bonus de DGT Anémo de 15 %.",
-    "4": "Augmente les DGT infligés par Dispersion de 60 % ; la RÉS élémentaire des ennemis est réduite de 40 % pendant 10 s selon le type élémentaire de Dispersion."
+    "4": "Augmente les DGT infligés par Dispersion de 60 % ; la RÉS élémentaire des ennemis diminue de 40 % pendant 10 s selon le type élémentaire de Dispersion."
   },
   "pieces": {
     "flower": {

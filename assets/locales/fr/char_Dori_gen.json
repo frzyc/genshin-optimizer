@@ -114,7 +114,7 @@
   "passive2": {
     "name": "Intérêts composés",
     "description": {
-      "0": "Si le tir pacificateur ou les obus de S.A.V. de <strong>Lampe de protection : Canon pacificateur</strong> touche un ennemi, Dori restaure 5 pts d'énergie élémentaire tous les 100 % de recharge d'énergie qu'elle possède.",
+      "0": "Si le tir pacificateur ou les obus de S.A.V. de <strong>Lampe de protection : Canon pacificateur</strong> touche un ennemi, Dori restaure 5 pts d'énergie élémentaire pour chaque tranche de 100 % de recharge d'énergie qu'elle possède.",
       "1": "Pour chaque utilisation de Lampe de protection : Canon pacificateur, l'énergie élémentaire peut être restaurée une fois et d'un maximum de 15 pts de cette manière."
     }
   },

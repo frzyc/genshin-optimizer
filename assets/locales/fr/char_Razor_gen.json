@@ -116,7 +116,7 @@
   "passive1": {
     "name": "Éveil",
     "description": {
-      "0": "Réduit le TdR de <strong>Griffe et tonnerre</strong> de 18 %.",
+      "0": "Diminue le TdR de <strong>Griffe et tonnerre</strong> de 18 %.",
       "1": "<strong>Croc éclair</strong> réinitialise le TdR de <strong>Griffe et tonnerre</strong> lorsqu'il est activé."
     }
   },
@@ -129,7 +129,7 @@
   "passive3": {
     "name": "Vélocité lupine",
     "description": {
-      "0": "Réduit la consommation d'endurance des personnages de l'équipe de 20 % lors du sprint.",
+      "0": "Diminue la consommation d'endurance des personnages de l'équipe de 20 % lors du sprint.",
       "1": "Ne peut pas être cumulé avec d'autres aptitudes passives aux effets identiques."
     }
   },
@@ -155,7 +155,7 @@
   "constellation4": {
     "name": "Morsure",
     "description": {
-      "0": "L'appui simple de <strong>Griffe et tonnerre</strong> réduit la DÉF des cibles de 15 % pendant 7 s."
+      "0": "L'appui simple de <strong>Griffe et tonnerre</strong> diminue la DÉF des cibles de 15 % pendant 7 s."
     }
   },
   "constellation5": {

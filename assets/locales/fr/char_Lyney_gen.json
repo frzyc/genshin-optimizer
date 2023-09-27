@@ -144,7 +144,7 @@
     "name": "Art de mysticité",
     "description": {
       "0": "Un maximum de 2 <strong>chapeaux félinois</strong> peut exister en même temps.",
-      "1": "De plus, les flèches postiches invoquent 2 chapeaux félinois et accordent un cumul supplémentaire de fantasmagorie après avoir touché. Cet effet peut être déclenché une fois toutes les 15 s."
+      "1": "De plus, les flèches postiches invoquent 2 chapeaux félinois après avoir touché et accordent un cumul supplémentaire de fantasmagorie. Cet effet peut être déclenché une fois toutes les 15 s."
     }
   },
   "constellation2": {

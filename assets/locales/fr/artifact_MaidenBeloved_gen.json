@@ -2,12 +2,12 @@
   "setName": "Amour chéri",
   "setEffects": {
     "2": "Augmente les soins effectués par le personnage de 15 %.",
-    "4": "Augmente les soins reçus par toute l'équipe de 20 % pendant 10 s après l'utilisation d'une compétence élémentaire ou d'un déchaînement élémentaire."
+    "4": "Augmente les soins reçus par tous les personnages de l'équipe de 20 % pendant 10 s après l'utilisation d'une compétence élémentaire ou d'un déchaînement élémentaire."
   },
   "pieces": {
     "flower": {
       "name": "Cœur lointain de la Demoiselle",
-      "desc": "Une fleur délicate qui ne s'est jamais fanée et qui continue à émettre un parfum irrésistible."
+      "desc": "Une fleur délicate qui ne s'est jamais fanée et qui continue d'émettre un parfum irrésistible."
     },
     "plume": {
       "name": "Pensée de la Demoiselle",

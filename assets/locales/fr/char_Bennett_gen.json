@@ -112,7 +112,7 @@
   "passive1": {
     "name": "Renouveau de la passion",
     "description": {
-      "0": "Réduit le TdR de <strong>Surpassion</strong> de 20 %."
+      "0": "Diminue le TdR de <strong>Surpassion</strong> de 20 %."
     }
   },
   "passive2": {
@@ -120,15 +120,15 @@
     "description": {
       "0": "Dans le champ de <strong>Merveilleux voyage</strong>, <strong>Surpassion</strong> bénéficie des effets suivants :",
       "1": [
-        " TdR réduit de 50 %.",
-        " ne projette pas Bennett en l'air en niveau 2 de charge."
+        " Diminue le TdR de 50 %.",
+        " Ne projette pas Bennett en l'air en niveau 2 de charge."
       ]
     }
   },
   "passive3": {
     "name": "R.A.S.",
     "description": {
-      "0": "Réduit la durée d'une expédition de 25 % lorsqu'elle se déroule à Mondstadt."
+      "0": "Diminue la durée d'une expédition de 25 % lorsqu'elle se déroule à Mondstadt."
     }
   },
   "constellation1": {

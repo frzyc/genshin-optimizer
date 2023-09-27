@@ -75,8 +75,8 @@
       "1": "<br/>",
       "2": "<strong>Parure cérémoniale</strong>",
       "3": [
-        " Les DGT des attaques normales et chargées de Kokomi et ceux de la méduse fantôme créée par sa compétence élémentaire augmentent en fonction des PV max de Kokomi ;",
-        " Lorsque ses attaques normales et chargées touchent des ennemis, Kokomi restaure les PV de tous les personnages de l'équipe à proximité, la quantité de PV restaurés dépendant des PV max de Kokomi ;",
+        " Les DGT des attaques normales et chargées de Kokomi et ceux de la méduse fantôme créée par sa compétence élémentaire augmentent en fonction des PV max de Kokomi.",
+        " Lorsque ses attaques normales et chargées touchent des ennemis, Kokomi restaure les PV de tous les personnages de l'équipe à proximité, la quantité de PV restaurés dépendant des PV max de Kokomi.",
         " Augmente la RÉS à l'interruption de Kokomi, et lui permet de se déplacer à la surface de l'eau."
       ],
       "4": "<br/>",
@@ -118,7 +118,7 @@
   "passive3": {
     "name": "Princesse de Watatsumi",
     "description": {
-      "0": "Réduit la consommation d'endurance de vos personnages dans l'équipe de 20 % lors de la nage.",
+      "0": "Diminue la consommation d'endurance de vos personnages dans l'équipe de 20 % lors de la nage.",
       "1": "Ne peut pas être cumulé avec d'autres aptitudes passives aux effets identiques."
     }
   },

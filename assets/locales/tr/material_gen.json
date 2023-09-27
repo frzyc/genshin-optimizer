@@ -108,7 +108,7 @@
     "name": "Şenlik Turu Bileti",
     "description": {
       "0": "Bu biletleri elde etmek için Rüzgarçiçeği Festivalinin kutlama etkinliklerine katıl ve bunları etkinlik dükkanındaki ödüllerle takas et.",
-      "1": "Mondstadt halkı doğası gereği eğlenceyi sever. Mevsimler, farklı mahsullerin hasadı ve tarihi öneme sahip olayların yıldönümleri her zaman kutlanır. Kim bilir, belki bir gün Fırtına Dehşeti'ni mağlup eden yabancıyı anmak için de bir festival düzenlenir..."
+      "1": "Mondstadt halkı doğası gereği eğlenceyi sever. Mevsimler, farklı mahsullerin hasadı ve tarihi öneme sahip olayların yıl dönümleri her zaman kutlanır. Kim bilir, belki bir gün Fırtına Dehşeti'ni mağlup eden yabancıyı anmak için de bir festival düzenlenir..."
     }
   },
   "PeculiarCollabCoupon": {
@@ -382,6 +382,12 @@
     "description": {
       "0": "Esrarengiz metal bir parlaklığa sahip yay. Temelini oluşturan ucuz metalin uygun özelliklere kavuşması için yüzeyinin gizli bir teknikle işlendiği söylenir. Bu yöntem sayesinde yay, meka çekirdeklerinde kullanıldığında uygun fiyata yüksek performans gösterir.",
       "1": "\"Mega Meka Dövüşü\"nde malzeme ve hediye kilidi açma karşılığı takas edilebilir."
+    }
+  },
+  "PoetryGalaFervor": {
+    "name": "Şiir Şenliği Coşkusu",
+    "description": {
+      "0": "\"Sudan Şiirler\" Şiir Şenliği Coşkusu"
     }
   },
   "Primogem": {
@@ -999,6 +1005,18 @@
       "0": "Dalış konusunda oldukça bilgili genç bir beyefendi. Mesafeli ve soğuk tavrının ardında kusursuz, saf bir kalbe sahiptir."
     }
   },
+  "Wriothesley": {
+    "name": "Wriothesley",
+    "description": {
+      "0": "Meropide Kalesi'nin Dükü, karanlık dehlizlerin saklı efendisi."
+    }
+  },
+  "Neuvillette": {
+    "name": "Neuvillette",
+    "description": {
+      "0": "Fontaine'in Başyargıcı, namıdiğer Iudex'i. Asla taviz vermediği tarafsızlığıyla bilinir."
+    }
+  },
   "KamisatoAyakasStellaFortuna": {
     "name": "Kamisato Ayaka'nın Yaşam Yıldızı",
     "description": {
@@ -1429,6 +1447,18 @@
     "name": "Freminet'nin Yaşam Yıldızı",
     "description": {
       "0": "Freminet'nin Takımyıldız Etkinleştirme Malzemesi"
+    }
+  },
+  "WriothesleysStellaFortuna": {
+    "name": "Wriothesley'nin Yaşam Yıldızı",
+    "description": {
+      "0": "Wriothesley'nin Takımyıldız Etkinleştirme Malzemesi"
+    }
+  },
+  "NeuvillettesStellaFortuna": {
+    "name": "Neuvillette'in Yaşam Yıldızı",
+    "description": {
+      "0": "Neuvillette'in Takımyıldız Etkinleştirme Malzemesi"
     }
   },
   "GnosticHymnOldNotes": {
@@ -6440,6 +6470,18 @@
       "0": "Narin ve yumuşak pembe bir çiçek. İsminin aksine Gökkuşağı Gülleri daha çok Zambağa benzer."
     }
   },
+  "Lumitoile": {
+    "name": "Tan Yıldızı",
+    "description": {
+      "0": "Hafifçe ışık yayan yumuşak bedenli bir hayvan. Genellikle sulak yerlerde veya su altındaki binaların duvarlarına tırmanırken görülür."
+    }
+  },
+  "SubdetectionUnit": {
+    "name": "Derin Tespit Ünitesi",
+    "description": {
+      "0": "Fontaine Araştırma Enstitüsü tarafından yapay parçaların yeni modelleri kullanılarak üretilen tespit üniteleri. İlk olarak çevresel verileri izlemek için tasarlanmıştı."
+    }
+  },
   "BirchWood": {
     "name": "Huş Ağacı Kütüğü",
     "description": {
@@ -9378,9 +9420,9 @@
     "name": "Vajrada Ametisti Külçesi",
     "description": {
       "0": "Karakter Yükseltme malzemesi.",
-      "1": "\"Bu beden, dünyadakilerin en soylusu ve en üstünüdür.",
-      "2": "Bu dünya üzerinde mutlak hakimiyet sahibi olmalı.",
-      "3": "Bir zamanlar halkına bir rüya vadetti: asla değişmeyecek bir sonsuzluk.\""
+      "1": "\"Bu beden, dünyadakilerin en soylusu ve en üstünüdür.\"",
+      "2": "\"Bu dünya üzerinde mutlak hakimiyet sahibi olmalıdır.\"",
+      "3": "\"Bir zamanlar halkına bir rüya vadetti: asla değişmeyecek bir 'sonsuzluk'.\""
     }
   },
   "VayudaTurquoiseSliver": {
@@ -9779,64 +9821,73 @@
   "TeachingsOfEquity": {
     "name": "Eşitlik Öğretisi",
     "description": {
-      "0": "Su Ülkesinin kıyılarında hakkaniyet yatar.",
-      "1": "Hakkaniyet, hakların sınırlarını belirler. Hakkaniyet olmazsa kanunun tanıdığı haklar sömürülür ve erdemli geleneklerimize zarar veren bir araç haline gelir."
+      "0": "Yetenek Seviyesi Yükseltme Malzemesi.",
+      "1": "Su Ülkesinin kıyılarında hakkaniyet yatar.",
+      "2": "Hakkaniyet, hakların sınırlarını belirler. Hakkaniyet olmazsa kanunun tanıdığı haklar sömürülür ve erdemli geleneklerimize zarar veren bir araç haline gelir."
     }
   },
   "GuideToEquity": {
     "name": "Eşitlik Rehberi",
     "description": {
-      "0": "Su Ülkesinin kıyılarında hakkaniyet yatar.",
-      "1": "Hakkaniyet, Fontaine'in üzerine kurulduğu temeldir. Hakkaniyet, kanunun ölçütüdür. Eğer kanun, hakkaniyetin özünü yitirecek olursa üzerinde kumar oynanıp kar edilen bir satranç tahtasından farkı kalmaz."
+      "0": "Yetenek Seviyesi Yükseltme Malzemesi.",
+      "1": "Su Ülkesinin kıyılarında hakkaniyet yatar.",
+      "2": "Hakkaniyet, Fontaine'in üzerine kurulduğu temeldir. Hakkaniyet, kanunun ölçütüdür. Eğer kanun, hakkaniyetin özünü yitirecek olursa üzerinde kumar oynanıp kar edilen bir satranç tahtasından farkı kalmaz."
     }
   },
   "PhilosophiesOfEquity": {
     "name": "Eşitlik Felsefesi",
     "description": {
-      "0": "Su Ülkesinin kıyılarında hakkaniyet yatar.",
-      "1": "Hakkaniyet, Fontaine'in üzerine kurulduğu temeldir. Hakaniyetin devamlı ve sağlam bir şekilde ahlak ve kanun ile beslenmesi gerekir, ayrıca ahlak ve kanun da değişmez hakkaniyet prensibine göre şekillenir."
+      "0": "Yetenek Seviyesi Yükseltme Malzemesi.",
+      "1": "Su Ülkesinin kıyılarında hakkaniyet yatar.",
+      "2": "Hakkaniyet, Fontaine'in üzerine kurulduğu temeldir. Hakkaniyetin devamlı ve sağlam bir şekilde ahlak ve kanun ile beslenmesi gerekir, ayrıca ahlak ve kanun da değişmez hakkaniyet prensibine göre şekillenir."
     }
   },
   "TeachingsOfJustice": {
     "name": "Adalet Öğretisi",
     "description": {
-      "0": "Su Ülkesinin kılıcı adalettir.",
-      "1": "Fontaine'in kanunu adaletin kılıcını elinde taşır. Adaletin rehberliği olmadan tüm kanunlar anlamsız kelimelerden ibarettir ve her an değiştirilmeye veya kesilip biçilmeye maruz kalabilir."
+      "0": "Yetenek Seviyesi Yükseltme Malzemesi.",
+      "1": "Su Ülkesinin kılıcı adalettir.",
+      "2": "Fontaine'in kanunu adaletin kılıcını elinde taşır. Adaletin rehberliği olmadan tüm kanunlar anlamsız kelimelerden ibarettir ve her an değiştirilmeye veya kesilip biçilmeye maruz kalabilir."
     }
   },
   "GuideToJustice": {
     "name": "Adalet Rehberi",
     "description": {
-      "0": "Su Ülkesinin kılıcı adalettir.",
-      "1": "Fontaine'in kanunu adaletin kılıcını elinde taşır. Adalet kör olmalıdır ve onun kılıcını taşıyanlar, kendi hesap ve çıkarlarına kapılıp yolunu şaşırmamalıdr."
+      "0": "Yetenek Seviyesi Yükseltme Malzemesi.",
+      "1": "Su Ülkesinin kılıcı adalettir.",
+      "2": "Fontaine'in kanunu adaletin kılıcını elinde taşır. Adalet kör olmalıdır ve onun kılıcını taşıyanlar, kendi hesap ve çıkarlarına kapılıp yolunu şaşırmamalıdr."
     }
   },
   "PhilosophiesOfJustice": {
     "name": "Adalet Felsefesi",
     "description": {
-      "0": "Su Ülkesinin kılıcı adalettir.",
-      "1": "Fontaine'in kanunu adaletin kılıcını elinde taşır. Adalet, yargılama ve uzlaşı anlamına gelir. Adaletin kılıcı kötü eylemleri cezalandırırken uzlaşı da düzeni tesis eder."
+      "0": "Yetenek Seviyesi Yükseltme Malzemesi.",
+      "1": "Su Ülkesinin kılıcı adalettir.",
+      "2": "Fontaine'in kanunu adaletin kılıcını elinde taşır. Adalet, yargılama ve uzlaşı anlamına gelir. Adaletin kılıcı kötü eylemleri cezalandırırken uzlaşı da düzeni tesis eder."
     }
   },
   "TeachingsOfOrder": {
     "name": "Düzen Öğretisi",
     "description": {
-      "0": "Su Ülkesinin kalkanı düzendir.",
-      "1": "Fontaine'deki tüm kanunlar nihayetinde düzeni sağlamak için vardır. Düzenin olmadığı yerde kaos olur, kaosun olduğu yerde ise hakkaniyet olmaz."
+      "0": "Yetenek Seviyesi Yükseltme Malzemesi.",
+      "1": "Su Ülkesinin kalkanı düzendir.",
+      "2": "Fontaine'deki tüm kanunlar nihayetinde düzeni sağlamak için vardır. Düzenin olmadığı yerde kaos olur, kaosun olduğu yerde ise hakkaniyet olmaz."
     }
   },
   "GuideToOrder": {
     "name": "Düzen Rehberi",
     "description": {
-      "0": "Su Ülkesinin kalkanı düzendir.",
-      "1": "Fontaine'deki tüm kanunlar nihayetinde düzeni sağlamak için vardır. Düzenin sağladığı güvence olmazsa adalet, herkesin herkese karşı kullandığı, sınırsız şiddet getiren bir silaha dönüşür."
+      "0": "Yetenek Seviyesi Yükseltme Malzemesi.",
+      "1": "Su Ülkesinin kalkanı düzendir.",
+      "2": "Fontaine'deki tüm kanunlar nihayetinde düzeni sağlamak için vardır. Düzenin sağladığı güvence olmazsa adalet, herkesin herkese karşı kullandığı, sınırsız şiddet getiren bir silaha dönüşür."
     }
   },
   "PhilosophiesOfOrder": {
     "name": "Düzen Felsefesi",
     "description": {
-      "0": "Su Ülkesinin kalkanı düzendir.",
-      "1": "Fontaine'deki tüm kanunlar nihayetinde düzeni sağlamak için vardır. Hakkaniyet ve adalet, düzenden gelir ve ona hizmet eder. Düzen, tıpkı Fontaine'in sakin ve hareketsiz suları gibi Fontaine'in varoluşunun temelini oluşturur."
+      "0": "Yetenek Seviyesi Yükseltme Malzemesi.",
+      "1": "Su Ülkesinin kalkanı düzendir.",
+      "2": "Fontaine'deki tüm kanunlar nihayetinde düzeni sağlamak için vardır. Hakkaniyet ve adalet, düzenden gelir ve ona hizmet eder. Düzen, tıpkı Fontaine'in sakin ve hareketsiz suları gibi Fontaine'in varoluşunun temelini oluşturur."
     }
   },
   "SanctifyingDroplet": {
@@ -13444,6 +13495,198 @@
       "0": "Sade ve parlak renklere sahip bir içecek. Qingyun Tepesi üstündeki havai bulutları anımsatan, hafif bir meyve kokusuna sahip ferahlatıcı bir smoothie. Acaba tadı da bu kadar hafif ve yumuşak mı?"
     }
   },
+  "SuspiciousTroutAmandine": {
+    "name": "Bademli Alabalık (Tuhaf)",
+    "description": {
+      "0": "Yağda kızartılmış irice bir balık. Ağzına gelen yanmış ve kararmış balık derisinin acılığını bir tas çorba bile gideremez... Sıcaklığı tam ayarlayabilmek için biraz daha pratik yapmakta fayda var gibi."
+    }
+  },
+  "TroutAmandine": {
+    "name": "Bademli Alabalık",
+    "description": {
+      "0": "Doyurucu büyüklükteki balık filetolar tereyağı ile kızartılır ve ardından çıtır çıtır kızarmış bademlerle birlikte servis edilir. Geleneksel tarife göre alabalık bütün halde kızartma tavasına konularak kızartılırdı. Ancak son zamanlarda bu yemeğin fileto ile yapılan hali de oldukça revaçta."
+    }
+  },
+  "DeliciousTroutAmandine": {
+    "name": "Bademli Alabalık (Lezzetli)",
+    "description": {
+      "0": "Usta bir şekilde kızartılmış enfes bir balık parçası. Tatlı ve çıtır çıtır bademler yağlı balıkla bir araya geldiğinde kendini sanki okyanus dalgalarının üzerinde süzülüyor ve gastronominin lezzet dalgalarına kapılıyor gibi hissedersin."
+    }
+  },
+  "SuspiciousBarbequeRibs": {
+    "name": "Barbekü Soslu Kaburga (Tuhaf)",
+    "description": {
+      "0": "Çıtır çıtır bir et yemeği. Ancak çok uzun süre pişirilince derisi çatlayıp karardı, ilk başlarda yumuşacık olan et şimdi kuru, sert ve tatsız bir şeye dönüştü... İsmi \"Kömürleşmiş Barbekü\" olsa belki daha uygun olabilirdi."
+    }
+  },
+  "BarbequeRibs": {
+    "name": "Barbekü Soslu Kaburga",
+    "description": {
+      "0": "Çıtır çıtır bir et yemeği. Etrafa hoş bir koku yayılana kadar kaburgaların üzeri hafifçe kızartılır, ardından iyice çıtırlaşan dış kısmı sosa bulanır ve son olarak kısık ateşte yavaş yavaş pişirilir. Sıcaklık öyle hassas bir şekilde ayarlanmalıdır ki dışı harika bir şekilde çıtır çıtır pişerken içi de sulu ve yumuşak kalmalıdır."
+    }
+  },
+  "DeliciousBarbequeRibs": {
+    "name": "Barbekü Soslu Kaburga (Lezzetli)",
+    "description": {
+      "0": "Derisi çıtır çıtır, kendisi yumuşacık bir et yemeği. Izgaradan alındığında dahi o cezbedici kokusu insanı kendinden geçirmeye yeter. Tek bir ısırıkta bile derinin o çıtır çıtır sesi yerini sulu ve yumuşacık ete bırakır... Servis edildiğinde tüm masanın ilgi odağı olmasına şaşırmamalı!"
+    }
+  },
+  "SuspiciousCoffeeBavarois": {
+    "name": "Bavyera Kahvesi (Tuhaf)",
+    "description": {
+      "0": "Ferahlatıcı bir tatlı. Büyükçe bir ısırık aldıktan sonra yoğun bir acı ve ekşi tat beynini kuşatır ve çok fazla Kahve Çekirdeği eklendiğini anlayabilirsin. Ağzındaki acılık bir süre sonra geçse de bu gece nasıl uyuyacağım diye düşünür durursun..."
+    }
+  },
+  "CoffeeBavarois": {
+    "name": "Bavyera Kahvesi",
+    "description": {
+      "0": "Ferahlatıcı bir tatlı. Fontaine'in temsili bir tatlısı olmasına rağmen tarifi çok basit ve anlaşılırdır. Malzemelerin ölçüsü doğru bir şekilde konulduğu müddetçe bu tatlıyı yapamamak neredeyse imkansızdır. Keyifleri hemen yerine getiren ferahlatıcı, serin bir tadı ve yumuşak bir dokusu vardır."
+    }
+  },
+  "DeliciousCoffeeBavarois": {
+    "name": "Bavyera Kahvesi (Lezzetli)",
+    "description": {
+      "0": "Ferahlatıcı bir tatlı. Kremanın zengin kokusu ile kahvenin enfes aroması dilinin ucunda birbirine karışır. Bu lezzet dansının her bir adımı ağzında ipeksi ve yumuşak bir tat bırakır. Bu tatlının, tatlı menüsünün vazgeçilmezi olmasına şaşırmamalı!"
+    }
+  },
+  "SuspiciousHaggis": {
+    "name": "İşkembe Yahnisi (Tuhaf)",
+    "description": {
+      "0": "Çok kendine has bir tadı olan yemek. Kuru ve iri taneli... Şeyler... Dilinin üzerini çizer ve bu yemek sana hiç de yenilebilir bir şey gibi gelmez. Güç bela çiğnersin ama bu yemek yapılırken acaba içine kazara odun falan mı düşmüş diye de düşünmeden edemezsin."
+    }
+  },
+  "Haggis": {
+    "name": "İşkembe Yahnisi",
+    "description": {
+      "0": "Yoğun ve zengin aromaya sahip bir yemek. Koyun sakatatı doğranır, yulaf ezmesi ile karıştırılıp çeşitli baharat ve çeşnilerle harmanlanarak koyun işkembesine doldurulur, kese haline gelen karışım pişirilir. Yemek servis edilirken genellikle bu kese çıkarılır ve içindekiler turp ezmesi ve patates püresi ile birlikte servis edilir. Bu, Fontainelilerin önemli misafirleri geldiğinde onlara ikram etmek için yaptıkları yerel bir yemektir."
+    }
+  },
+  "DeliciousHaggis": {
+    "name": "İşkembe Yahnisi (Lezzetli)",
+    "description": {
+      "0": "Yoğun ve zengin aromaya sahip bir yemek. Hafif bir ısırık aldıktan sonra işkembenin o yumuşak ve zengin tadı ile çeşitli baharatlar damağında lezzet katmanları oluşturur. Etin aroması yemeği yedikten uzun bir süre sonra dahi ağızda hoş bir lezzet bırakır. Şairlerin kalbinde o kadar güçlü duygulara ilham olmasına şaşırmamalı, bu yemeği yiyen şairler ona bir şiir yazmadan edemezler."
+    }
+  },
+  "SuspiciousTripesDuPort": {
+    "name": "İşkembe Kapama (Tuhaf)",
+    "description": {
+      "0": "Bir sakatat yemeği. İnek işkembesinin dokusu tıpkı rüzgarda kurutulan deri gibidir, çiğnemek imkansızdır. Daha da kötüsü ise yedikten sonra ağzını tuhaf bir tat kaplar ve sanki \"tarihi geçmiş konserve yiyeceklere karşı mücadele\" veriyor gibi hissedersin... Bu yemeği yemeyi reddetmek en iyi tercih olabilir."
+    }
+  },
+  "TripesDuPort": {
+    "name": "İşkembe Kapama",
+    "description": {
+      "0": "Bir sakatat yemeği. Malzemeler küçük parçalar halinde doğrandıktan sonra bir tencereye eklenir, üzeri hamurla kapatılır ve pişirilir. Bu tarifin kökeni bir liman kasabasına dayanmaktadır. Çok uzun zaman önce o kasaba sular altında kaldı ama bu leziz yemeğin tarifi hâlâ Fontaine'de kullanılmaktadır."
+    }
+  },
+  "DeliciousTripesDuPort": {
+    "name": "İşkembe Kapama (Lezzetli)",
+    "description": {
+      "0": "Bir sakatat yemeği. Yassı ve yumuşak inek işkembesinin neredeyse meyvemsi bir kokusu vardır. Tüm dünyada çok popüler olan diğer şaşırtıcı lezzetlerin aksine bu yemek, zengin geleneksel lezzetlerle doludur ve bir ısırık aldığında bir daha duramazsın!"
+    }
+  },
+  "SuspiciousTomatesNarbonnaises": {
+    "name": "Domates Dolması (Tuhaf)",
+    "description": {
+      "0": "Et ve sebzelerle yapılan bir yemek. Soluk renkli domates titreyerek sanki geldiği bu hale ağlamak istiyor. Daha da kötüsü içindeki kıymanın tadı talaştan farksız. Böyle kötü durumda olan dört domates daha var, onlarla ne yapacağız?"
+    }
+  },
+  "TomatesNarbonnaises": {
+    "name": "Domates Dolması",
+    "description": {
+      "0": "Et ile sebzenin dengeli olduğu bir yemek. Yuvarlak bir domates alınır, içi oyulur ve kıyma ile doldurulur, daha sonra fırına verilir. Bu yemeğin tadı ekşi, dokusu yumuşaktır. Fontaine sofralarının en gözde seçimlerinden biridir."
+    }
+  },
+  "DeliciousTomatesNarbonnaises": {
+    "name": "Domates Dolması (Lezzetli)",
+    "description": {
+      "0": "Et ve sebzelerle yapılan bir yemek. Etle doldurulmuş ağız sulandıran domateslerin büyüleyici bir tadı vardır, daha ilk lokmadan ağızda muhteşem bir lezzete dönüşür. Bir tane yedikten sonra kalbindeki tüm kara bulutlar, dilinden bedenine karışan o zengin lezzetlerle birlikte dağılır gider."
+    }
+  },
+  "SuspiciousConsomme": {
+    "name": "Konsome (Tuhaf)",
+    "description": {
+      "0": "Tarifi karmaşık bir çorba. Bulanık ve çamurumsu görünümüyle tek bir bakışta bile bu yemeğin tam bir fiyasko olduğu söylenebilir. Tüm Fontaine'de böyle bir \"yemeği\" kabul edebilecek olanlar belki de sadece suların kenarında dolaşan Lekeli Su Tayflarıdır..."
+    }
+  },
+  "Consomme": {
+    "name": "Konsome",
+    "description": {
+      "0": "Tarifi karmaşık bir çorba. Malzemeler ezilerek püre haline getirilir ve et suyunda haşlanır. Daha sonra bu püreli et suyu süzülür ve çorba olarak servis edilir. Fontaine sokaklarında dolaşan gizemli bir söylentiye göre, hiç ilham bulamayan bir yazar bu çorbayı içtikten sonra resmen ilham patlaması yaşamış... Böylesine inanılmaz bir etki, çorbacının yalan yanlış reklamından başka bir şey olamaz herhalde, değil mi?"
+    }
+  },
+  "DeliciousConsomme": {
+    "name": "Konsome (Lezzetli)",
+    "description": {
+      "0": "Tarifi karmaşık bir çorba. Gökteki uçsuz bucaksız mavi gökyüzü ile yerdeki sınırsız toprakların özlerini bir araya getiren bir çorba. Etin ve sebzelerin aromaları birleşerek harika bir bütün oluşturur. Daha önce yazacak bir kelime bile bulamayan bir Buğukuş köşe yazarının bu çorbadan bir kase içtikten sonra hemen edebi bir dehaya dönüşmesine ve yazdığı her bir kelimenin en az bu yemek kadar mükemmel olmasına şaşırmamalı."
+    }
+  },
+  "SuspiciousBoudinNoirAuxPommes": {
+    "name": "Elmalı Siyah Puding (Tuhaf)",
+    "description": {
+      "0": "Geleneksel bir Fontaine yemeği. Görünüşe bakılırsa yanlışlıkla çok fazla yağ eklenmiş ve yağ içinde yüzen bir yemek ortaya çıkmış. Fazla yağı almanın bir yolunu bulabilirsen yenilecek hale gelebilir."
+    }
+  },
+  "BoudinNoirAuxPommes": {
+    "name": "Elmalı Siyah Puding",
+    "description": {
+      "0": "Geleneksel bir Fontaine yemeği. Elma dilimleri ile sosisler ayrı ayrı kızartılır ve sosla birlikte bir tabakta servis edilir. Diğer ülkelerden gelen turistler bu yemeğin ismine baktıklarında aslında bunun bir tatlı olduğunu düşünürler ancak Elmalı Siyah Puding aslında bu sosisli yemeğin bir diğer adıdır."
+    }
+  },
+  "DeliciousBoudinNoirAuxPommes": {
+    "name": "Elmalı Siyah Puding (Lezzetli)",
+    "description": {
+      "0": "Geleneksel bir Fontaine yemeği. Sosisin yağını bastıran elmaların tatlı kokusu ile yapılan mükemmel bir kombinasyon. Tabaktan gelen hafif yanık ve cezbedici kokuyu alanların gözlerinde sevinç ve heyecanla oluşan bir parıltı görülür."
+    }
+  },
+  "SuspiciousCassoulet": {
+    "name": "Güveç (Tuhaf)",
+    "description": {
+      "0": "Basit bir köy güveci. İlk bakışta herhangi bir sorun yokmuş gibi görünse de yiyince ağzına hafif yanık bir tat gelir. Daha sonra alt kısımdaki malzemelerin kötü bir şekilde yandığını ve güvecin kendisiyle tamamen bütünleştiğini fark edersin. Off... Bir daha bu yemeği yaparken malzemeleri ara sıra karıştırmayı unutmamak lazım..."
+    }
+  },
+  "Cassoulet": {
+    "name": "Güveç",
+    "description": {
+      "0": "Basit bir köy güveci. Tüm malzemeler güvece konulur ve karıştırılır, servise hazır olana kadar da pişirilir. Bu yemeğin tam adının \"Marcotte ile Servis Edilen Kabuksuz Nohutlu, Kuş Etli ve Tütsülenmiş Sosisli Güveç\" olduğunu belirtmekte fayda var. Tabii bu isim aşırı derecede uzun olunca insanlar ona sadece \"Güveç\" demekle yetinmiştir."
+    }
+  },
+  "DeliciousCassoulet": {
+    "name": "Güveç (Lezzetli)",
+    "description": {
+      "0": "Basit bir köy güveci. Zaman, bu yemeğin tadına tat katan harikulade bir silahtır çünkü et piştikçe suyunu güzelce çeker, yumuşar ve enfes kokar. Fasulyelerin yoğun kokusuyla birleşince insanın ağzında keyifleri yerine getiren harika bir haz uyandırır."
+    }
+  },
+  "SuspiciousCrepesSuzette": {
+    "name": "Krep Süzet (Tuhaf)",
+    "description": {
+      "0": "İçi dolgulu krepler. İlk ısırık o kadar tatsız gelir ki acaba tat alma duyularımı mı kaybettim diye endişelenirsin. İkinci ısırık ise o kadar tatlıdır ki keşke tat alma duyularımı kaybetseydim dersin... Böylesine heyecan verici bir yemek deneyimi fırtınaya karşı dalgakırana binmek gibidir. Eninde sonunda kıyıya çıkmayı başarsan bile büyük bir travma yaşarsın."
+    }
+  },
+  "CrepesSuzette": {
+    "name": "Krep Süzet",
+    "description": {
+      "0": "İçi dolgulu krepler. Krepler kızartılır ve daha sonra reçel, krema ve meyve dilimleriyle servis edilir. Aslında tarifin birçok çeşidi bulunmaktadır ve tadı, kullanılan malzemelere göre farklılık gösterir."
+    }
+  },
+  "DeliciousCrepesSuzette": {
+    "name": "Krep Süzet (Lezzetli)",
+    "description": {
+      "0": "İçi dolgulu krepler. Hafif krema ile iştah açıcı reçelin tam bir lezzet senfonisine dönüşmüş halidir. Usta bir şekilde hazırlanmış olan yumuşak krepler sanki ipeksi bir mükemmellikle sarılmış gibidir ve damak tadını sonsuz valse davet etmeye hazırdır."
+    }
+  },
+  "ConsommePurete": {
+    "name": "\"Saf Konsome\"",
+    "description": {
+      "0": "Neuvillette'in özel tarifi. Dağların en yüksek yerlerinden gelen en saf ve soğuk suları özellikle seçerek bu özel ve eşsiz hazineyi yaptığını iddia ediyor. Ferahlatıcı bir tadı olmasına rağmen çorbanın genel tadının sıradan çorbalardan bir farkı yok ancak bundan bahsetmesek daha iyi olabilir..."
+    }
+  },
+  "SecretSauceBBQRibs": {
+    "name": "Gizli Barbekü Soslu Kaburga",
+    "description": {
+      "0": "Wriothesley'nin özel tarifi. \"Siz çıkabilirsiniz, ben kalıyorum, burada işler kızışıyor ve mutfak patlamak üzere!\" diye bahane ederek astlarını kovduktan kısa bir süre sonra gözlerin resmen bir et şölenine şahit olur. İnce dilimler halindeki derinin üzerine sürülen dolgun sos enfes bir lezzet şöleni yaşatır. Tadına baktığında ise son zamanlarda oldukça popüler olan bir çeşninin tadıyla neredeyse aynı gelir..."
+    }
+  },
   "RecipeItem": {
     "name": "Yemek Malzemesi",
     "description": {
@@ -14423,6 +14666,66 @@
       "0": "Meyveli Smoothie yapımını adım adım anlatan detaylı bir tarif."
     }
   },
+  "RecipeTroutAmandine": {
+    "name": "Tarif: Bademli Alabalık",
+    "description": {
+      "0": "Bademli Alabalık yapımını adım adım anlatan detaylı bir tarif."
+    }
+  },
+  "RecipeBarbequeRibs": {
+    "name": "Tarif: Barbekü Soslu Kaburga",
+    "description": {
+      "0": "Barbekü Soslu Kaburga yapımını adım adım anlatan detaylı bir tarif."
+    }
+  },
+  "RecipeCoffeeBavarois": {
+    "name": "Tarif: Bavyera Kahvesi",
+    "description": {
+      "0": "Bavyera Kahvesi yapımını adım adım anlatan detaylı bir tarif."
+    }
+  },
+  "RecipeHaggis": {
+    "name": "Tarif: İşkembe Yahnisi",
+    "description": {
+      "0": "İşkembe Yahnisi yapımını adım adım anlatan detaylı bir tarif."
+    }
+  },
+  "RecipeTripesDuPort": {
+    "name": "Tarif: İşkembe Kapama",
+    "description": {
+      "0": "İşkembe Kapama yapımını adım adım anlatan detaylı bir tarif."
+    }
+  },
+  "RecipeTomatesNarbonnaises": {
+    "name": "Tarif: Domates Dolması",
+    "description": {
+      "0": "Domates Dolması yapımını adım adım anlatan detaylı bir tarif."
+    }
+  },
+  "RecipeConsomme": {
+    "name": "Tarif: Konsome",
+    "description": {
+      "0": "Konsome yapımını adım adım anlatan detaylı bir tarif."
+    }
+  },
+  "RecipeBoudinNoirAuxPommes": {
+    "name": "Tarif: Elmalı Siyah Puding",
+    "description": {
+      "0": "Elmalı Siyah Puding yapımını adım adım anlatan detaylı bir tarif."
+    }
+  },
+  "RecipeCassoulet": {
+    "name": "Tarif: Güveç",
+    "description": {
+      "0": "Güveç yapımını adım adım anlatan detaylı bir tarif."
+    }
+  },
+  "RecipeCrepesSuzette": {
+    "name": "Tarif: Krep Süzet",
+    "description": {
+      "0": "Krep Süzet yapımını adım adım anlatan detaylı bir tarif."
+    }
+  },
   "CraftedItems": {
     "name": "Üretilen Malzemeler",
     "description": {
@@ -14666,6 +14969,12 @@
       "0": "Yemin temelinde gül çiyi bulunur ve güneşte kurutulmuş Harra Meyvesi tozu ile karıştırılmıştır. İlk tadışta acı gelir ama ağızda tatlı bir lezzet bırakır, aynı bir balıkçının hayatı gibi. Çetin hava koşullarından ve dalgalı denizden sonra elde edilen hasat büyük mutluluk verir.",
       "1": "<br/>",
       "2": "Uygunluk: Balon Balığı ve Balta Balığı."
+    }
+  },
+  "PureWater": {
+    "name": "\"Saf Su\"",
+    "description": {
+      "0": "Dahi bir iksirciden kalan miras olduğu söyleniyor. İnsan bedenindeki en saf gücü bile harekete geçirebilirmiş."
     }
   },
   "SourBait": {
@@ -15296,6 +15605,27 @@
       "1": "Bu yaşam formunu yok etmenin hiçbir yolu yoktur. Çekirdek boyutuna kadar küçülenler dahi ertesi gün ila on yıl arasında bir sürede yeniden doğar. Neyse ki agresif veya üstün zekaya sahip değiller bu yüzden Fontaineliler genelde mesafelerini korumakla yetiniyor."
     }
   },
+  "OldOperativesPocketWatch": {
+    "name": "Kıdemli Ajanın Cep Saati",
+    "description": {
+      "0": "Fatui Ajanlarına verilen standart bir cep saati.",
+      "1": "Dışındaki aşınma ve oksitlenme, sahibinin Fatui'ye hizmet ederken harcadığı zamanın hakkını verdiğini gösteriyor."
+    }
+  },
+  "OperativesStandardPocketWatch": {
+    "name": "Ajanın Klasik Cep Saati",
+    "description": {
+      "0": "Fatui Ajanlarına verilen standart bir cep saati.",
+      "1": "Saatin kadranının tasarımı iyi bir şekilde yapılmamış ve kasasının etrafı çok keskin hatlara sahip, bu da kıyafetlerin aşınıp yırtılmasına yol açıyor. Durum buyken bu saati daha pratik ve kullanışlı bir biçime sokmak isteyenler her zaman oluyor."
+    }
+  },
+  "OperativesConstancy": {
+    "name": "Ajanın Vefası",
+    "description": {
+      "0": "Üzerine Sanrı gömülü bir aksesuar. Bu aksesuar bir Fatui Ajanının güç kaynağıdır.",
+      "1": "Yine de bu aksesuarı çıkarmak, bir Ajanın uzun yıllar idmanlarla ve savaş tecrübesiyle elde ettiği ve onu sıradan insanlardan ayıran fiziksel özelliklerini azaltmaz. Onlar dünlerini, bugünlerini ve yarınlarını Fatui'nin idealleri uğruna feda ettiklerinin gayet farkındadırlar, bu yüzden Sanrının gücünü kullanarak kendilerine zarar vermiş olmaları da onları hiç tedirgin etmez."
+    }
+  },
   "HurricaneSeed": {
     "name": "Kasırga Tohumu",
     "description": {
@@ -15684,6 +16014,22 @@
       "1": "Fontemer Sapkınları insanlardan tamamen farklıdır. Aristokrasi ya da miras gibi kavramlar onlara tamamen yabancıdır. Hiçbiri bir diğerinden üstün doğmaz. Ölümcül avcılara ve güçlüklere karşı ayakta durabilenler, yüzyıllarca avlanıp beslendikçe sınırsız güç toplayabilir. Yarattığı korkudan dolayı bu tür yaratıklara genelde efendi denilir."
     }
   },
+  "TourbillonDevice": {
+    "name": "\"Tourbillon Cihazı\"",
+    "description": {
+      "0": "Deneysel Alan Oluşturucunun ana parçası.",
+      "1": "Çıplak gözle neredeyse görülemeyecek kadar hızlı dönüşüyle yer çekimine meydan okuyan, hassas işlemeyle yapılmış mekanik bir parça.",
+      "2": "Fontaine Kinetik Enerji Mühendisliği Araştırma Enstitüsü uzun yıllara dayanan tarihi boyunca, sayısız hayatın kaybolmasına neden olan ve bir gün yeri göğü ele geçirebilecek o su baskınına karşı hep savaştı ve hayatta kalmanın bir yolunu araştırdı.",
+      "3": "Arkhiyum bir zamanlar, taşıdığı inanılmaz enerji potansiyeli ve yeryüzünün prangalarını kırıp atacak gücüyle kurtuluşa giden yol olarak görülüyordu."
+    }
+  },
+  "FontemerUnihorn": {
+    "name": "Fontemer Boynuzu",
+    "description": {
+      "0": "Bin Yıllık İnci Denizatının elektrik yayan kısmı ve onun kudretli gücünün simgesi olan nişanı, güçlü bir düşmanla savaştığı sırada koptu.",
+      "1": "Denizatları arasındaki en büyük yırtıcı olan bu Fontemer Sapkınının evrim yolculuğu diğerlerinkinden farklıdır. Temel bir formdan gelişip daha güçlü ve büyük bir hale gelmemiş, onun yerine sıradan denizatlarında olmayan boynuz çıkararak evrimleşmiştir. Hatta iskelet ve kas yapısında bile değişiklikler meydana gelmiştir. Görünüşü gerçekten de bir denizatından çok efsanelerde geçen fantastik hayvanları andırır. Şairlerin ve yazarların hayallerinde denizatları bile dörtnala koşup eğlenebilir."
+    }
+  },
   "TileOfDecarabiansTower": {
     "name": "Decarabian'ın Kırık Çinisi",
     "description": {
@@ -16066,98 +16412,110 @@
   "FragmentOfAnAncientChord": {
     "name": "Kadim Akor Parçası",
     "description": {
-      "0": "Çürümüş tuşları olan bir arp. Tıkandığından artık çalınamaz ve sesi duyulamaz.",
-      "1": "Anlatılanlara göre unutulan müziğin torunları, ahşaptan mekanik arpları altınla kaplayarak kadim hanedanın o muhteşem kalıntılarını yeniden ayağa kaldırmaya çalışırmış. Sessiz devlere dinletmek için beyhude bir çabaymış bu...",
-      "2": "Aradan uzun bir zaman geçmiş ve çürüyüp akortları kaçan arplar sessiz devlerin avucunda kalmış. Onlara artık sadece dalgalarla hüzünlü notaların ıslığı eşlik edermiş."
+      "0": "Silah Yükseltme Malzemesi.",
+      "1": "Çürümüş tuşları olan bir arp. Tıkandığından artık çalınamaz ve sesi duyulamaz.",
+      "2": "Anlatılanlara göre unutulan müziğin torunları, ahşaptan mekanik arpları altınla kaplayarak kadim hanedanın o muhteşem kalıntılarını yeniden ayağa kaldırmaya çalışırmış. Sessiz devlere dinletmek için beyhude bir çabaymış bu...",
+      "3": "Aradan uzun bir zaman geçmiş ve çürüyüp akortları kaçan arplar sessiz devlerin avucunda kalmış. Onlara artık sadece dalgalarla hüzünlü notaların ıslığı eşlik edermiş."
     }
   },
   "ChapterOfAnAncientChord": {
     "name": "Kadim Akor Kuplesi",
     "description": {
-      "0": "Efsanelere göre kadim hanedandan hayatta kalanlar, anmak ve yas tutmak için siyah demirden bir arp dökmüş.",
-      "1": "Siyah demirden dökülen arplar çalınamaz. Bir zamanlar altın müziğiyle gurur duyan kadim hanedanın yasını tutmak adına geride kalanlar, sessizliği kendinden ağır bu enstrümanı dövmüşler.",
-      "2": "Fakat sonunda siyah demir arp tıpkı o kayıp çağ gibi sessiz kaldı."
+      "0": "Silah Yükseltme Malzemesi.",
+      "1": "Efsanelere göre kadim hanedandan hayatta kalanlar, anmak ve yas tutmak için siyah demirden bir arp dökmüş.",
+      "2": "Siyah demirden dökülen arplar çalınamaz. Bir zamanlar altın müziğiyle gurur duyan kadim hanedanın yasını tutmak adına geride kalanlar, sessizliği kendinden ağır bu enstrümanı dövmüşler.",
+      "3": "Fakat sonunda siyah demir arp tıpkı o kayıp çağ gibi sessiz kaldı."
     }
   },
   "MovementOfAnAncientChord": {
     "name": "Kadim Akor Bölümü",
     "description": {
-      "0": "O büyük felakette altın saray, tahtıyla birlikte batmıştı. Müzik parçalanmış ve notalar sessizliğe gömülmüştü...",
-      "1": "Ancak imparatorluktan kalanlar asla kurtuluş ve kaderlerini aşma arzularından vazgeçmemişti.",
-      "2": "Batmakta olan medeniyetlerini kurtarma ve daima ileriye gitme tutkularıyla Altın Kumpanya, muhteşem melodiler çalmış ve çocukları kandırarak değerli ruhlarını uyuyan devlere vermelerini sağlamış."
+      "0": "Silah Yükseltme Malzemesi.",
+      "1": "O büyük felakette altın saray, tahtıyla birlikte batmıştı. Müzik parçalanmış ve notalar sessizliğe gömülmüştü...",
+      "2": "Ancak imparatorluktan kalanlar asla kurtuluş ve kaderlerini aşma arzularından vazgeçmemişti.",
+      "3": "Batmakta olan medeniyetlerini kurtarma ve daima ileriye gitme tutkularıyla Altın Kumpanya, muhteşem melodiler çalmış ve çocukları kandırarak değerli ruhlarını uyuyan devlere vermelerini sağlamış."
     }
   },
   "EchoOfAnAncientChord": {
     "name": "Kadim Akor Yankısı",
     "description": {
-      "0": "Tanrı Kral'ın Büyük Senfonisi, birbirine bağlı sayısız melodiden oluşur ancak asıl tezi, Su Ülkesinin ortak kaderi altında gizlidir.",
-      "1": "O kaygısız yıllarda çıkan sonatlar, medeniyet ve düzenin en yüce temsilcileriydiler. Ancak refah içindeki imparatorluk, tiranların oyun alanı haline dönüştü ve acımasız despotlar, altın pelerinlere gizlenmiş halde kaynakla olan bağı kopardılar ve düzensizlik imparatorluğa hakim oldu.",
-      "2": "Solan altına eşlik eden kaderin asıl şarkısı, şaşmaz bir şekilde yankılanmayı sürdürdü... Ta ki her şey çözünüp kaosa dönene dek."
+      "0": "Silah Yükseltme Malzemesi.",
+      "1": "Tanrı Kral'ın Yüce Senfonisi, birbirine bağlı sayısız melodiden oluşur ancak asıl tezi, Su Ülkesinin ortak kaderi altında gizlidir.",
+      "2": "O kaygısız yıllarda çıkan ezgiler ve sonatlar, medeniyet ve düzenin en yüce temsilcileriydiler. Ancak refah içindeki imparatorluk, tiranların oyun alanı haline dönüştü ve acımasız despotlar, altın pelerinlere gizlenmiş halde kaynakla olan bağı kopardılar ve düzensizlik imparatorluğa hakim oldu.",
+      "3": "Solan altına eşlik eden kaderin asıl şarkısı, şaşmaz bir şekilde yankılanmayı sürdürdü... Ta ki her şey çözünüp kaosa dönene dek."
     }
   },
   "DrossOfPureSacredDewdrop": {
     "name": "Saf Kutsal Çiy Damlası Kalıntısı",
     "description": {
-      "0": "Efsanelere göre yaşam doğmadan evvel engin ezeli deniz varmış. Var olan her şeyin en saf kökeni oymuş ve bir gün tüm hayatı geri yutacakmış... Ondan doğmayan her şey böylelikle dışarıda kalacak ve denizde sürüklenen enkaz parçalarından farkı olmayacakmış.",
-      "1": "\"Enkazın da bir anlamı var. Her şeyin kaynağı ve tüm yaşamı yutan bir şey tarafından reddedilmek nasıl bir şeydir acaba?\" diye sordu taht hırsızına genç Harmost ve onu karışık düşüncelere sevk etti."
+      "0": "Silah Yükseltme Malzemesi.",
+      "1": "Efsanelere göre yaşam doğmadan evvel engin ezeli deniz varmış. Var olan her şeyin en saf kökeni oymuş ve bir gün tüm hayatı geri yutacakmış... Ondan doğmayan her şey böylelikle dışarıda kalacak ve denizde sürüklenen enkaz parçalarından farkı olmayacakmış.",
+      "2": "\"Enkazın da bir anlamı var. Her şeyin kaynağı ve tüm yaşamı yutan bir şey tarafından reddedilmek nasıl bir şeydir acaba?\" diye sordu taht hırsızına genç Harmost ve onu karışık düşüncelere sevk etti."
     }
   },
   "SublimationOfPureSacredDewdrop": {
     "name": "Saf Kutsal Çiy Damlası Buharı",
     "description": {
-      "0": "\"Ezeli denizden gelen yaşamın kaderi kaçınılmaz bir şekilde ona geri dönmektir.\" Böyle konuştu Harmost Boethius. \"Ancak insanların kaderini aşması için sonsuz ihtimal vardır ve ezeli denizin suları bile onları tamamen yok edemez...\"",
-      "1": "Kibirli taht hırsızı bir keresinde çözünmesi mümkün olmayan İkhor ile saf suyu karıştırmayı denemişti. Bu şekilde bilgelik ve hafızayı içinde koruyabilecek ve tebaasıyla hizmetkarlarının bedenlerinden kurtularak bağımsız ve sonsuz birer hayatı olmasını sağlayacaktı.",
-      "2": "Ancak ruhu bedenden ayırırken hissedilen acıya sıradan canlıların katlanması mümkün değildir. Bu yüzden taht hırsızının emriyle birçok ruh yırtılıp paramparça oldu...",
-      "3": "Sayısız ruhun inlemesi ve ağlamasından İkhor siyaha çaldı ve içindeki uyum ve bilgelik yok oldu. Geriye yalnızca kaos ve delilik kaldı."
+      "0": "Silah Yükseltme Malzemesi.",
+      "1": "\"Ezeli denizden gelen yaşamın kaderi kaçınılmaz bir şekilde ona geri dönmektir.\" Böyle konuştu Harmost Boethius. \"Ancak insanların kaderini aşması için sonsuz ihtimal vardır ve ezeli denizin suları bile onları tamamen yok edemez...\"",
+      "2": "Kibirli taht hırsızı bir keresinde çözünmesi mümkün olmayan İkhor ile saf suyu karıştırmayı denemişti. Bu şekilde bilgelik ve hafızayı içinde koruyabilecek ve tebaasıyla hizmetkarlarının bedenlerinden kurtularak bağımsız ve sonsuz birer hayatı olmasını sağlayacaktı.",
+      "3": "Ancak ruhu bedenden ayırırken hissedilen acıya sıradan canlıların katlanması mümkün değildir. Bu yüzden taht hırsızının emriyle birçok ruh yırtılıp paramparça oldu...",
+      "4": "Sayısız ruhun inlemesi ve ağlamasından İkhor siyaha çaldı ve içindeki uyum ve bilgelik yok oldu. Geriye yalnızca kaos ve delilik kaldı."
     }
   },
   "SpringOfPureSacredDewdrop": {
     "name": "Saf Kutsal Çiy Damlası Kaynağı",
     "description": {
-      "0": "Göl Şövalyelerinin henüz dünyada olduğu zamanlardan kalma bir antika. Şövalyelerin dağlarda, kimsenin girmediği pınarlarda ve vadilerde, saf ve kirlenmemiş su kaynaklarını koruyan sadık ruhlar olduğunu anlatır...",
-      "1": "Ancak insan yapımı İkhor'un yaratıcısı, yazdığı büyük senfonide bu tür bir ahenksizliğe müsaade edemezdi. Harmost Boethius'un gittiği yere doğal nektarın gömüldüğü, imparatorluk su kemerlerinin yapıldığı ve saf sudan doğan ruhların hiçbir iz bırakmadan kaybolduğu anlatılır..."
+      "0": "Silah Yükseltme Malzemesi.",
+      "1": "Göl Şövalyelerinin henüz dünyada olduğu zamanlardan kalma bir antika. Şövalyelerin dağlarda, kimsenin girmediği pınarlarda ve vadilerde, saf ve kirlenmemiş su kaynaklarını koruyan sadık ruhlar olduğunu anlatır...",
+      "2": "Ancak insan yapımı İkhor'un yaratıcısı, yazdığı yüce senfonide bu tür bir ahenksizliğe müsaade edemezdi. Harmost Boethius'un gittiği yere doğal nektarın gömüldüğü, imparatorluk su kemerlerinin yapıldığı ve saf sudan doğan ruhların hiçbir iz bırakmadan kaybolduğu anlatılır..."
     }
   },
   "EssenceOfPureSacredDewdrop": {
     "name": "Saf Kutsal Çiy Damlasının Özü",
     "description": {
-      "0": "Engin ezeli denizin damlalarından arıtılarak elde edilen yoğun ve saf bir çözelti. Kadim Tanrı Kral, bir zamanlar onun sonsuz yaşam ve sınırsız bilgelik getireceğine inanırdı fakat dikkatle dinlediğinde sessizce, belli belirsiz bir şekilde her şeyin nihayetinde çözünerek teklikte buluşacağı kehanetinde bulunuyordu.",
-      "1": "Bu, bir zamanlar Tanrı Kral'ın tamamlanmayan Büyük Senfonisine aitti. Sonsuz ve sınırsız altın renkli İkhor'un, vahşi ilkel suların yerine geçişini ve yüce bilgelerin aydınlanmayı bir nektar gibi dünyanın tüm yoz köşelerine ulaştırmasını anlatır.",
-      "2": "Ancak Tanrı Kral'ın hülyaları, sonunda karanlık hiçliğin derinliklerine battı ve zamanın getirdiği yıkımla birlikte ilkel sular altın İkhor'u aşındırdı...",
-      "3": "Akortçu kötü alametlere göz yumdu ve harap olmuş vücudunu taşıyarak planladıkları gibi yoldaşlarına hayat bahşetmeye devam etti. Eski düzen bir gün geri dönebilsin diye...",
-      "4": "Bugün dahi Fontaine'in çılgın şair ve ressamları, Boethius'un yaşadığı kıyameti dünyanın kaçınılmaz döngülerinin bir hatırası olarak görür."
+      "0": "Silah Yükseltme Malzemesi.",
+      "1": "Engin ezeli denizin damlalarından arıtılarak elde edilen yoğun ve saf bir çözelti. Kadim Tanrı Kral, bir zamanlar onun sonsuz yaşam ve sınırsız bilgelik getireceğine inanırdı fakat dikkatle dinlediğinde sessizce, belli belirsiz bir şekilde her şeyin nihayetinde çözünerek teklikte buluşacağı kehanetinde bulunuyordu.",
+      "2": "Bu, bir zamanlar Tanrı Kral'ın tamamlanmayan Yüce Senfonisine aitti. Sonsuz ve sınırsız altın renkli İkhor'un, vahşi ilkel suların yerine geçişini ve yüce bilgelerin aydınlanmayı bir nektar gibi dünyanın tüm yoz köşelerine ulaştırmasını anlatır.",
+      "3": "Ancak Tanrı Kral'ın hülyaları, sonunda karanlık hiçliğin derinliklerine battı ve zamanın getirdiği yıkımla birlikte ilkel sular altın İkhor'u aşındırdı...",
+      "4": "Akortçu kötü alametlere göz yumdu ve harap olmuş vücudunu taşıyarak planladıkları gibi yoldaşlarına hayat bahşetmeye devam etti. Eski düzen bir gün geri dönebilsin diye...",
+      "5": "Bugün dahi Fontaine'in çılgın şair ve ressamları, Boethius'un yaşadığı kıyameti dünyanın kaçınılmaz döngülerinin bir hatırası olarak görür."
     }
   },
   "BrokenGobletOfThePristineSea": {
     "name": "Saf Denizin Kırık Kadehi",
     "description": {
-      "0": "Efsanelere göre ilk taht hırsızı ezeli denize geldiğinde ilk imparator ona bir kupa su verdi.",
-      "1": "Daha sonra o mutlak Tanrı Kral haline geldi, bu suyu gizemli çiy damlacıklarını arıtmak için kullandı ve bu sayede muhteşem ve güçlü bir imparatorluk oluşturdu.",
-      "2": "Fakat bu artık kadim bir hikayeden ibaret ve karakterler derin sularda yaşayan balık sürülerinin saçtığı ışıkların arasında uyumakta."
+      "0": "Silah Yükseltme Malzemesi.",
+      "1": "Efsanelere göre İlk Taht Hırsızı Ezeli Deniz'e geldiğinde ilk Hükümdar ona bir kupa su verdi.",
+      "2": "Daha sonra o mutlak Tanrı Kral haline geldi, bu suyu gizemli çiy damlacıklarını arıtmak için kullandı ve bu sayede muhteşem ve güçlü bir imparatorluk oluşturdu.",
+      "3": "Fakat bu artık kadim bir hikayeden ibaret ve karakterler derin sularda yaşayan balık sürülerinin saçtığı ışıkların arasında uyumakta."
     }
   },
   "WineGobletOfThePristineSea": {
     "name": "Saf Denizin Şarap Kadehi",
     "description": {
-      "0": "Nasıl bir imparatorluk binlerce yıla meydan okuyabilir? Ejderler krallığından döndükten sonra taht hırsızı bu soru üzerinde kafa yordu.",
-      "1": "Ölümsüz taşı, ezeli sulardan aldığı İkhor özüyle birleştirerek demir gibi siyah, derisi efsun taşından ve kanı İkhor'dan bir ırk yarattı. Böylelikle o ilkel geçmişin lanetine dönmekten korkmasına gerek yoktu...",
-      "2": "Sessiz dev hâlâ imparatorluk hayalleri kuruyor... İmparatorluğun yıkılışından bu yana bin yıldan fazla geçtiğinden bihaber."
+      "0": "Silah Yükseltme Malzemesi.",
+      "1": "Nasıl bir imparatorluk binlerce yıla meydan okuyabilir? Ejderler krallığından döndükten sonra taht hırsızı bu soru üzerinde kafa yordu.",
+      "2": "Ölümsüz taşı, ezeli sulardan aldığı İkhor özüyle birleştirerek demir gibi siyah, derisi efsun taşından ve kanı İkhor'dan bir ırk yarattı. Böylelikle o ilkel geçmişin lanetine dönmekten korkmasına gerek yoktu...",
+      "3": "Sessiz dev hâlâ imparatorluk hayalleri kuruyor... İmparatorluğun yıkılışından bu yana bin yıldan fazla geçtiğinden bihaber."
     }
   },
   "SilverGobletOfThePristineSea": {
     "name": "Saf Denizin Gümüş Kadehi",
     "description": {
-      "0": "Diyarın altın bir tülle kaplı olduğu yıllarda saf kaynak sularının dağlardaki gizli pınarlara saklanması gerekirdi. Göl Şövalyeleri de bu mabetlerde doğmuştu.",
-      "1": "Şövalyeler saf sulardan doğan ruhları koruyacağına, tek bir kaynağa inanan yoldaşlarını kollayacağına ve gökyüzünü kapatıp güneşi solgun kılan mutlak altın güce karşı koyacağına dair gümüş zırhları üzerine yemin ederdi.",
-      "2": "Fakat bu artık kadim bir hikayeden ibaret... İmparatorluğun çöküp batmasından sonra taht hırsızına karşı duran şövalyeler zırhlarını çıkardı ve onların hikayeleri bir masal ve türküler ağına karışıp gitti."
+      "0": "Silah Yükseltme Malzemesi.",
+      "1": "Diyarın altın bir tülle kaplı olduğu yıllarda saf kaynak sularının dağlardaki gizli pınarlara saklanması gerekirdi. Göl Şövalyeleri de bu mabetlerde doğmuştu.",
+      "2": "Şövalyeler saf sulardan doğan ruhları koruyacağına, tek bir kaynağa inanan yoldaşlarını kollayacağına ve gökyüzünü kapatıp güneşi solgun kılan mutlak altın güce karşı koyacağına dair gümüş zırhları üzerine yemin ederdi.",
+      "3": "Fakat bu artık kadim bir hikayeden ibaret... İmparatorluğun çöküp batmasından sonra taht hırsızına karşı duran şövalyeler zırhlarını çıkardı ve onların hikayeleri bir masal ve türküler ağına karışıp gitti."
     }
   },
   "GoldenGobletOfThePristineSea": {
     "name": "Saf Denizin Altın Kadehi",
     "description": {
-      "0": "Batık şehrin taht hırsızı altın senfoninin son bölümünü çaldığında baş müzisyen, İkhor ile dolu altın kupayı çaldı.",
-      "1": "Tanrı Kral'ın bu ahmakça ihanetinden sarsılan müzisyen, son muhafızları çağırdı ve çözünmeyen İkhor'u kullanarak ejderi uzun kulenin altına hapsedip başkent ile birlikte hiçliğin derinliklerine gömdü.",
-      "2": "Bundan sonra bu soylu hırsız tarihin sayfalarından sessizce kayboldu ve yalnızca \"Altın Kumpanya\" vefalı bir şekilde onun kehanetini hatırlar oldu."
+      "0": "Silah Yükseltme Malzemesi.",
+      "1": "Batık şehrin taht hırsızı altın senfoninin son bölümünü çaldığında baş müzisyen, İkhor ile dolu altın kupayı çaldı.",
+      "2": "Tanrı Kral'ın bu ahmakça ihanetinden sarsılan müzisyen, son muhafızları çağırdı ve çözünmeyen İkhor'u kullanarak ejderi uzun kulenin altına hapsedip başkent ile birlikte hiçliğin derinliklerine gömdü.",
+      "3": "Bundan sonra bu soylu hırsız tarihin sayfalarından sessizce kayboldu ve yalnızca \"Altın Kumpanya\" vefalı bir şekilde onun kehanetini hatırlar oldu."
     }
   },
   "StarterSupplyBundle": {
@@ -16345,6 +16703,12 @@
         "Orta Diyar Katalizör Prototipi",
         "Orta Diyar Mızrak Prototipi"
       ]
+    }
+  },
+  "ResoundingMelodies": {
+    "name": "Yankılanan Melodiler",
+    "description": {
+      "0": "Hediye etkinleştirme kodunu çoktan kullandıysan tekrar satın alımda sadece Köken Taşı ile Dekorasyon elde edebilirsin."
     }
   },
   "BEP": {
@@ -18054,6 +18418,12 @@
       "0": "Bahador'dan elde edilen bir kutu. İçinde bazı özel iksirler var. Söylediğine göre bu iksirler belli bir Zindanı keşfetmeye yardımcı olabilirmiş..."
     }
   },
+  "GearDrivetrain": {
+    "name": "Dişli Güç Aktarım Tertibatı",
+    "description": {
+      "0": "Terk edilmiş Üretim Alanındaki merkezi tahrik vanasına ait çıkarılabilir bir parça."
+    }
+  },
   "SomeonesJournal": {
     "name": "Birinin Günlüğü",
     "description": {
@@ -18406,6 +18776,28 @@
       "0": "Vigneire'in Defteri"
     }
   },
+  "CreditCoupons": {
+    "name": "Kale Kuponu",
+    "description": {
+      "0": "Sadece Meropide Kalesi'nde kullanılan bir tür para birimi."
+    }
+  },
+  "TheArtOfNegotiation": {
+    "name": "\"Müzakere Sanatı\"",
+    "description": {
+      "0": "\"Başarı biliminde bir dönüm noktası olan ve gerçek bir dahi tarafından yazılan bu başyapıt kesinlikle okunması gereken bir eserdir!\"",
+      "1": "La Gouttiere'in editörü, iş dünyasının önde gelenleri ve Fontaine Araştırma Enstitüsündeki araştırmacılar tarafından şiddetle tavsiye edilen sıra dışı bir kitap!",
+      "2": "İnsan doğasının derinliklerine dair engin bir bakış ve anlayış getirerek bilime ve başarı sanatına ciddi anlamda katkılar sağlamaktadır!"
+    }
+  },
+  "WelfareMeal": {
+    "name": "Yemek Yardımı",
+    "description": {
+      "0": "Kupon Kantini tarafından verilen bir Yemek Yardımı. Ücretsiz olduğundan bazı riskleri ve sürprizleri de beraberinde getiriyor.",
+      "1": "<br/>",
+      "2": "Bir yemek ve Fal Kağıdı almak için bunu kullan."
+    }
+  },
   "TheHistoryOfTheDeclineAndFallOfRemuriaI": {
     "name": "Remuria'nın Gerileme ve Çöküş Tarihi (I)",
     "description": {
@@ -18427,19 +18819,19 @@
   "FablesDeFontaineI": {
     "name": "Fontaine Masalları (I)",
     "description": {
-      "0": "Çoğunluğu yazar tarafından kaleme alınmamış, kayıp kadim şiirlerden derlenerek oluşturulan çeşitli hikaye ve masalların anlatıldığı bir hikaye kitabıdır."
+      "0": "Büyük bir kısmı yazar tarafından kaleme alınmamış, kayıp kadim şiirlerden derlenerek oluşturulan Marie Hericart de La Fontaine imzalı çeşitli hikaye ve masalların anlatıldığı bir hikaye kitabıdır."
     }
   },
   "FablesDeFontaineII": {
     "name": "Fontaine Masalları (II)",
     "description": {
-      "0": "Çoğunluğu yazar tarafından kaleme alınmamış, kayıp kadim şiirlerden derlenerek oluşturulan çeşitli hikaye ve masalların anlatıldığı bir hikaye kitabıdır."
+      "0": "Büyük bir kısmı yazar tarafından kaleme alınmamış, kayıp kadim şiirlerden derlenerek oluşturulan Marie Hericart de La Fontaine imzalı çeşitli hikaye ve masalların anlatıldığı bir hikaye kitabıdır."
     }
   },
   "FablesDeFontaineIII": {
     "name": "Fontaine Masalları (III)",
     "description": {
-      "0": "Çoğunluğu yazar tarafından kaleme alınmamış, kayıp kadim şiirlerden derlenerek oluşturulan çeşitli hikaye ve masalların anlatıldığı bir hikaye kitabıdır."
+      "0": "Büyük bir kısmı yazar tarafından kaleme alınmamış, kayıp kadim şiirlerden derlenerek oluşturulan Marie Hericart de La Fontaine imzalı çeşitli hikaye ve masalların anlatıldığı bir hikaye kitabıdır."
     }
   },
   "RobbenVersusChestertonIridescentBroochI": {
@@ -18508,6 +18900,12 @@
       "0": "Yeni satın alınmış bir tuş. Daktilodaki parçalarla pek uyumlu olmasa da... Şimdilik idare edilebilir."
     }
   },
+  "BeautifullyWrittenLetter": {
+    "name": "\"Güzel Yazılmış Bir Mektup\"",
+    "description": {
+      "0": "Decembre'ın yazdığı bir mektup. Söylediğine göre bu mektubu çocuğunun doğum gününü kutlamak için yazmış."
+    }
+  },
   "Lakelight": {
     "name": "\"Göldeki Işık\"",
     "description": {
@@ -18530,6 +18928,57 @@
     "name": "\"Su ve Kayıp Kişi\" Vaka Dosyası",
     "description": {
       "0": "Navia'nın babası Callas'ın öldürülmesi ve bu olayla bağlantısı olduğu düşünülen genç kadınların seri halinde kaybolmaları vakasıyla ilgili ayrıntılı bir vaka dosyası. Soruşturma sırasında zorlanırsan lütfen bir fikir edinmek için şimdiye kadar toplanmış olan ipuçlarını ve kanıtları incele."
+    }
+  },
+  "PurePinecone": {
+    "name": "Saf Çam Kozalağı",
+    "description": {
+      "0": "Sıradan bir Çam Kozalağından çok daha büyüktür. Böyle olmasının sebebi, sıradan bir Çam Kozalağından daha saf olmasından kaynaklanıyor olmalı."
+    }
+  },
+  "EmptyBottle": {
+    "name": "Boş Şişe",
+    "description": {
+      "0": "Boş Şişe demek içi hava dolu olan bir şişe demektir, yani içine başka şeyler de konulabilir."
+    }
+  },
+  "PaimonsFoodFund": {
+    "name": "Paimon'un \"Yemek Fonu\"",
+    "description": {
+      "0": "Paimon, kişisel \"Yemek Fonu\"nun bir kısmını kullanarak senin özel görev ücretini ödedi. Hımm, şöyle bir düşününce acaba elinde daha fazlası olabilir mi?"
+    }
+  },
+  "ExperimentalCrystalLightPathComponent": {
+    "name": "Deneysel Kristal Işık Yolu Parçası",
+    "description": {
+      "0": "Gizemli su altı dünyasında bulunan bir parça. Bir tür optik cihazın temel bir parçası gibi duruyor. Doğru yere yerleştirildiğinde bir çeşit özel cihazı etkinleştiriyor olmalı...",
+      "1": "Deneyden sonra önemli parçaları lütfen ana cihazdan ayrı yerde olacak şekilde sakla. Bu, standart güvenlik prosedürleri uyarınca yapılmaktadır."
+    }
+  },
+  "PunchedTape": {
+    "name": "Delikli Şerit",
+    "description": {
+      "0": "İyi korunmuş bir delikli şerit. İçindeki kayıtlı veriler ancak özel makinalar kullanılarak deşifre edilebilir."
+    }
+  },
+  "MysteriousOre": {
+    "name": "Gizemli Cevher",
+    "description": {
+      "0": "Sarı yeşil tonlarda gizemli bir kristal cevher.",
+      "1": "Benzer türdeki cevherlerle karşılıklı bir çekim özelliğine sahip gibi duruyor."
+    }
+  },
+  "ArkhiumStock": {
+    "name": "Ham Arkhiyum",
+    "description": {
+      "0": "Arkhiyumun özel koşullar altında doğal bir şekilde oluşabilen ham hali.",
+      "1": "Dövülerek içindeki sınırsız potansiyel açığa çıkarılabilir..."
+    }
+  },
+  "ArkhiumLumenite": {
+    "name": "Arkhiyum Kristali",
+    "description": {
+      "0": "Arkhiyum dövülerek elde edilir. Sıra dışı bir enerji ve ışık yayar. Bir yerlerdeki bir kapıyı açmak için kullanılabileceği söylenir..."
     }
   },
   "JabberwocksHolySword": {
@@ -18672,6 +19121,12 @@
       "0": "Net Görüş İksirinin geliştirilmiş bir versiyonu. İçtiğinde nasıl değişik etkilerini hissedersin acaba?"
     }
   },
+  "CreditCouponsForUseDuringInvestigation": {
+    "name": "Kale Kuponu (Araştırma Kullanımı İçin)",
+    "description": {
+      "0": "Neuvillette seni Meropide Kalesi'ni araştırmakla görevlendirdiğinde elde ettiğin özel Kale Kuponları. Amacı doğrultusunda kullanmayı unutma."
+    }
+  },
   "Bait": {
     "name": "Yem",
     "description": {
@@ -18691,6 +19146,44 @@
       "0": "Eski bir deniz kabuğundan kupa. Geçmişi çok daha eski bir uygarlığa kadar da uzanıyor olabilir."
     }
   },
+  "UnprocessedWidget": {
+    "name": "İşlenmemiş Parça",
+    "description": {
+      "0": "Henüz işlenmemiş veya dövülmemiş bir parça."
+    }
+  },
+  "ProcessedWidget": {
+    "name": "İşlenmiş Parça",
+    "description": {
+      "0": "Üretim alanında işlenmiş bir parça."
+    }
+  },
+  "PankrationFontaCup": {
+    "name": "Pankrasyon Fonta Kupası",
+    "description": {
+      "0": "Pankrasyon eğlence turnuvasına koç olarak katılan ve Genevieve ile Poiret'ye şampiyonluk yolunda zafer getiren kişiye verilen kupa. Şık görünümlü metalden yapılmıştır ve ışığın altına tutulduğunda Mora gibi parlar.",
+      "1": "Bu özel kupa sayesinde, belirli makinalardan sınırsız Fonta alabilir, dilediğin gibi içebilir ve dünyadaki en mutlu Fonta içicisi olabilirsin..."
+    }
+  },
+  "SoakedPunchedTape": {
+    "name": "Islanmış Delikli Şerit",
+    "description": {
+      "0": "Sudan çıkarılmış bir delikli şerit. İçindeki kayıtlı veriler ancak özel makinalar kullanılarak deşifre edilebilir.",
+      "1": "Özel su geçirmez malzemeden yapılmasına ve henüz hasar almamış olmasına rağmen uzun süre suyun içinde kaldığından halen ıslak gibi görünüyor..."
+    }
+  },
+  "SpurGearC": {
+    "name": "Düz Dişli C",
+    "description": {
+      "0": "Sıradan görünümlü bir düz dişli. Aslında \"2 No'lu Başlangıç Becerisi Örneği\"nin bir parçasıydı ancak inanılmaz bir dış gücün etkisiyle ana gövdeden ayrılmış gibi duruyor..."
+    }
+  },
+  "SpurGearT": {
+    "name": "Düz Dişli T",
+    "description": {
+      "0": "Sıradan görünümlü bir düz dişli. Aslında \"2 No'lu Başlangıç Becerisi Örneği\"nin bir parçasıydı ancak inanılmaz bir dış gücün etkisiyle ana gövdeden ayrılmış gibi duruyor..."
+    }
+  },
   "NavigationLogFragment": {
     "name": "Seyir Defteri Parçası",
     "description": {
@@ -18701,6 +19194,82 @@
     "name": "Hasarlı Günlük",
     "description": {
       "0": "Hasarlı Günlük"
+    }
+  },
+  "Disclaimer": {
+    "name": "Uyarı",
+    "description": {}
+  },
+  "MoraCandy": {
+    "name": "Mora Şekeri",
+    "description": {
+      "0": "Moraya benzeyen bir şeker. Şekerin, çocukların pek sevemeyeceği ve daha çok yetişkinlerin hoşlanacağı acı ve tatlı bir tadı vardır. Ancak sarı renkli ambalajı çocuklar arasında oldukça popülerdir."
+    }
+  },
+  "QualityWoodenBoard": {
+    "name": "Kaliteli Ahşap Levha",
+    "description": {
+      "0": "Çok fazla kullanım şekli olan yüksek kaliteli ahşap kalas. Kıyafetinin altına saklayarak potansiyel bir ölümcül saldırıyı engelleyebilir veya dövüş sanatları idmanı yapmak için kullanabilirsin."
+    }
+  },
+  "TheBoarPrincessVIII": {
+    "name": "Yaban Domuzu Prenses (VIII)",
+    "description": {
+      "0": "Bu zamansız klasiğin sekizinci parçası."
+    }
+  },
+  "CasketOfTomesSecondhand": {
+    "name": "Sır Kutusu (İkinci El)",
+    "description": {
+      "0": "Bilinmeyen sebeplerden ötürü sahibinin satmak zorunda kaldığı değerli bir Sır Kutusu. Sınırlı bir süreliğine \"Dehanın Yakarışı Kart Oyunu: Acemilikten Yakarış Zirvesine\" ile birlikte gelir."
+    }
+  },
+  "IdolPoster": {
+    "name": "İdol Posteri",
+    "description": {
+      "0": "Aşırı derecede popüler bir Inazumalı idolün posteri. Bir odayı süslemede kullanılabilecek en iyi seçeneklerden biridir. Sevimli Oyuncak Bebeklerle birlikte indirimli olarak satın alınabilir."
+    }
+  },
+  "CuteDoll": {
+    "name": "Sevimli Oyuncak Bebek",
+    "description": {
+      "0": "Roussimoff sertifikalıdır! En maço erkekler bile bu sevimli oyuncak bebekten öyle kolay kolay ayrılamaz! İdol Posterleriyle birlikte indirimli olarak satın alınabilir."
+    }
+  },
+  "BeastTrap": {
+    "name": "Canavar Tuzağı",
+    "description": {
+      "0": "Canavarlar için üretilmiş gizemli bir tuzak. Üzerine Kale Kuponu koyarak açgözlüleri tuzağa doğru çekebilirsin."
+    }
+  },
+  "MarvelousBirdEgg": {
+    "name": "Muhteşem Kuş Yumurtası",
+    "description": {
+      "0": "Ölüleri bile diriltebilecek kadar lezzetlidir! Bu yumurtayı yediğinde gün boyunca başına gelebilecek talihsizliklerden korunursun."
+    }
+  },
+  "DeliciousTeaLeaves": {
+    "name": "Enfes Çay Yaprakları",
+    "description": {
+      "0": "İçindeki gizli bilgeliği uyandıran gizemli bir etkiye sahiplerdir. Bu lezzet, eşsiz bir benlik isteyenler için birebirdir!"
+    }
+  },
+  "PureWaterCase": {
+    "name": "\"Saf Su\" (Koli)",
+    "description": {
+      "0": "Koliyle satılan bir \"Saf Su\". Bir keresinde biri bundan yarım koli içmiş ve Pankrasyon turnuvasının bir sonraki şampiyonu olmuştu. Kolinin hepsini içmek için o şampiyondan çok daha fazla cesarete ve çok daha güçlü bir sindirim sistemine sahip olman gerekir."
+    }
+  },
+  "FontaSweetSakura": {
+    "name": "Fonta: Tatlı Kiraz",
+    "description": {
+      "0": "İçeriğinde Inazuma'nın Kiraz Çiçeklerinin olduğu söylenen özel aromalı Fonta. Üretimi esnasında kiraz tadını bastırmaması için şeker miktarı azaltılmıştır. Ancak tüketicilerden gelen geri bildirimlere göre sözde \"kiraz aroması\" daha çok yeni biçilmiş otların kokusunu andırıyormuş."
+    }
+  },
+  "FontaRedBerryBlast": {
+    "name": "Fonta: Kırmızı Meyve Şöleni",
+    "description": {
+      "0": "İçeriğinde birçok farklı \"kırmızı renkli meyve\" kullanıldığı söylenen özel aromalı Fonta. Çok hoş bir kırmızı rengi ve her lezzet katmanında farklı aromaları vardır. Ancak nedendir bilinmez, Fonta'nın bu aroması bağırsakları ciddi manada bozmaktadır. Bu yüzden, sorunun altında yatan sebep bulunana kadar Fonta'nın bu türünün geniş çaptaki tanıtımları askıya alınmıştır..."
     }
   },
   "SuspiciousFowl": {
@@ -18742,6 +19311,246 @@
   "AStory": {
     "name": "Bir Hikaye",
     "description": {}
+  },
+  "Handwheel": {
+    "name": "El Çarkı",
+    "description": {
+      "0": "Sıradan bir el çarkı. Meropide Kalesi'nin çevresindeki boruların ayar vanalarını ayarlamak için kullanılır."
+    }
+  },
+  "EnergyConcentratingComponent": {
+    "name": "Enerji Yoğunlaştırıcı Parça",
+    "description": {
+      "0": "Bir zamanlar sıradan bir hareketli kurmalı parçasıydı ama daha sonra birileri ona yüksek yoğunluklu malzemelerden yapılan bir enerji depolama halkası ekledi.",
+      "1": "Belki de sadece bu parça tek başına tüm makinayı çalıştırıyordur."
+    }
+  },
+  "34thIndependentInvestigativeSquadDeploymentInMontEsusEasternQuadrantDeploymentPlan": {
+    "name": "34. Bağımsız Araştırma Ekibinin Esus Dağı (Doğu Bölgesi) Konuşlanma Planı",
+    "description": {}
+  },
+  "SkirmishersNotes": {
+    "name": "Avcı Askerin Notları",
+    "description": {}
+  },
+  "34thIndependentInvestigativeSquadDeploymentInMontEsusEasternQuadrantDisplinaryProcedures": {
+    "name": "34. Bağımsız Araştırma Ekibinin Esus Dağı (Doğu Bölgesi) Konuşlanma Disiplin Yönetmeliği",
+    "description": {}
+  },
+  "PoemOnFallenLeaf": {
+    "name": "Dökülen Yaprağa Yazılmış Şiir",
+    "description": {
+      "0": "Dökülen Yaprağa Yazılmış Şiir"
+    }
+  },
+  "ResponsePoemOnALeaf": {
+    "name": "Yaprağa Yazılmış Yanıt Şiiri",
+    "description": {
+      "0": "Yaprağa Yazılmış Yanıt Şiiri"
+    }
+  },
+  "PoemOnAFallenLeaf": {
+    "name": "Dökülen Yaprağa Yazılmış Şiir",
+    "description": {
+      "0": "Dökülen Yaprağa Yazılmış Şiir"
+    }
+  },
+  "PoetryRiddleOnALantern": {
+    "name": "Fener Üzerindeki Şiir Bilmecesi",
+    "description": {
+      "0": "Fener Üzerindeki Şiir Bilmecesi"
+    }
+  },
+  "PoemPlacedByUnknownPerson": {
+    "name": "Bilinmeyen Birinin Bıraktığı Şiir",
+    "description": {
+      "0": "Bilinmeyen Birinin Bıraktığı Şiir"
+    }
+  },
+  "ArkhiumInhibitorCondenserComponent": {
+    "name": "Arkhiyum İnhibitörü Yoğunlaştırıcı Bileşeni",
+    "description": {
+      "0": "Arkhiyum İnhibitörüne monte edilen bir yoğunlaştırıcı. Raimondo'ya göre hepsi yeniden monte edildiğinde inhibitör tekrar başlatılabilir."
+    }
+  },
+  "SpecialReport": {
+    "name": "\"Özel Rapor\"",
+    "description": {
+      "0": "Chronie tarafından özel olarak basılmış bir rapor. Raporun içeriğinde Fontaine Araştırma Enstitüsünün saklamak istediği bazı \"gerçeklerin\" yer aldığı söyleniyor."
+    }
+  },
+  "ClueBookFortressOfMeropide": {
+    "name": "İpucu Kayıt Defteri (Meropide Kalesi)",
+    "description": {
+      "0": "Meropide Kalesi araştırman sırasında bulduğun çeşitli ipuçlarının kaydı."
+    }
+  },
+  "Notice": {
+    "name": "Bildiri",
+    "description": {}
+  },
+  "LeftSideTableFileBox": {
+    "name": "Sol Masadaki Dosya Kutusu",
+    "description": {
+      "0": "Bayan Chalmet'in beline acımasızca çarpan bir dosya kutusu. Girişin solundaki masanın üzerinde yer alıyor. Bir çantanın içinde taşıması daha kolay olabilir..."
+    }
+  },
+  "RightSideTableFileBox": {
+    "name": "Sağ Masadaki Dosya Kutusu",
+    "description": {
+      "0": "Bayan Chalmet'in beline acımasızca çarpan bir dosya kutusu. Girişin sağındaki masanın üzerinde yer alıyor. Bir çantanın içinde taşıması daha kolay olabilir..."
+    }
+  },
+  "MutualAidNetworkAdvertisement": {
+    "name": "Karşılıklı Yardımlaşma Derneği Tanıtım Kitapçığı",
+    "description": {
+      "0": "Karşılıklı Yardımlaşma Derneğinin çok istekli bir üyesinin dağıttığı tanıtım kitapçığı. Kitapçıkta bu Derneğe ait temel prensipler yer alıyor. Kapağındaki logo bir yerlerden tanıdık geliyor..."
+    }
+  },
+  "FreshBerries": {
+    "name": "Taze Böğürtlen",
+    "description": {
+      "0": "Parlak renkli ve tatlı bir dokusu olan meyve. Diğer yiyeceklerle bir araya geldiğinde harika bir piknik atıştırmalığı olabilir."
+    }
+  },
+  "FullPankrationFontaCup": {
+    "name": "İçi Dolu Pankrasyon Fonta Kupası",
+    "description": {
+      "0": "İçi tamamen Fonta ile dolu olan Pankrasyon eğlence turnuvası kupası.",
+      "1": "Yere konulduğunda bile içindeki kabarcık sesleri duyulabilir, tıpkı \"pişirilen etten sıçrayan kızgın yağ\" gibi ses çıkarır ve bunu duyan herkesin iştahı kabarır.",
+      "2": "Ancak kupanın tamamen kendine has bir büyüklüğü var ve bir dikişte hepsini içmek neredeyse imkansızdır. İlle de içeceğim diyerek kendini zorlarsan büyük ihtimalle Tombalak gibi şişersin ve gözünü hastanede açarsın..."
+    }
+  },
+  "ExperimentalDrinkNo1": {
+    "name": "Deneysel İçecek 1",
+    "description": {
+      "0": "Heinry tarafından üretilen \"deneysel bir içecek\". İçi baloncuklarla doludur ve hafif tuzlu bir aroması vardır...",
+      "1": "Ama yine de orijinal Fonta aromasını korumaktadır... En azından içtiğin şeyin halen bir Fonta olduğunu bilirsin."
+    }
+  },
+  "ExperimentalDrinkNo2": {
+    "name": "Deneysel İçecek 2",
+    "description": {
+      "0": "Heinry tarafından üretilen \"deneysel bir içecek\". İçi baloncuklarla doludur ve hafif tuzlu bir çay aroması vardır...",
+      "1": "İçtiğinde Fonta'dan daha çok \"Tuzlu ve Gazlı Çay\" tadı alırsın."
+    }
+  },
+  "ExperimentalDrinkNo3": {
+    "name": "Deneysel İçecek 3",
+    "description": {
+      "0": "Heinry tarafından üretilen \"deneysel bir içecek\". Bu Fonta'da ne baloncuklar vardır ne de başka bir şey, tuz oranı oldukça öne çıkar.",
+      "1": "Ama yine de adı Fonta'dır."
+    }
+  },
+  "ExperimentalDrinkNo4": {
+    "name": "Deneysel İçecek 4",
+    "description": {
+      "0": "Heinry tarafından üretilen \"deneysel bir içecek\". Bu Fonta'da ne baloncuklar vardır ne de başka bir şey, tadı hafif tuzlu bir çaya benzer.",
+      "1": "Yani bildiğimiz çay gibi bir şeydir."
+    }
+  },
+  "ExperimentalDrinkNo5": {
+    "name": "Deneysel İçecek 5",
+    "description": {
+      "0": "Heinry tarafından üretilen \"deneysel bir içecek\". Aç Bi Fonta, Ferahlığı Yaşa! Klasik Fonta, aha!",
+      "1": "Yani... Klasik bir Fonta üretmenin de bir manası yok."
+    }
+  },
+  "ExperimentalDrinkNo6": {
+    "name": "Deneysel İçecek 6",
+    "description": {
+      "0": "Heinry tarafından üretilen \"deneysel bir içecek\". Baloncuklarla dolu \"tatlı ve baloncuklu çay\". Tadı... Çok da fena değil, değil mi?"
+    }
+  },
+  "ExperimentalDrinkNo7": {
+    "name": "Deneysel İçecek 7",
+    "description": {
+      "0": "Heinry tarafından üretilen \"deneysel bir içecek\". Aç bir Fonta, ferahlığı... Bunun gazı kaçmış. Kim kapağını açıp içmeden öylece bıraktı?"
+    }
+  },
+  "ExperimentalDrinkNo8": {
+    "name": "Deneysel İçecek 8",
+    "description": {
+      "0": "Heinry tarafından üretilen \"deneysel bir içecek\". İçinde hiçbir baloncuk olmayan \"tatlı ve baloncuklu çay\". Şey... Ben bunun yerine bir bardak çay alabilir miyim?"
+    }
+  },
+  "AcademicAssemblyHallPicture": {
+    "name": "\"Akademik Toplantı Salonu\" Fotoğrafı",
+    "description": {
+      "0": "Akademik Toplantı Salonunda çekilen bir fotoğraf. Acaba Iaune bunu nasıl kullanacak?"
+    }
+  },
+  "DodocosBombTasticAdventure": {
+    "name": "Dodoko'nun Bombastik Macerası",
+    "description": {
+      "0": "Lisa'nın \"Dodoko'nun Bombastik Macerası\" adlı özel oyunu temel alarak yazdığı, Kıvılcım Şövalyesi, Dodoko, özel Zıpzıp Bodurlar, Fahri Şövalye ve onun beyaz renkli yardımcısının balıklara karşı kazandıkları zaferin anlatıldığı bir peri masalı..."
+    }
+  },
+  "Hat": {
+    "name": "Şapka",
+    "description": {
+      "0": "Eskiciden alınan bir şapka. Kaybolan şapkanın bire bir aynısı olmasa da durumu idare etmek için yeterli olur."
+    }
+  },
+  "MessilyWrittenNote": {
+    "name": "Özensiz Yazılmış Not",
+    "description": {}
+  },
+  "TatteredDialogue": {
+    "name": "Parçalanmış Diyalog",
+    "description": {}
+  },
+  "ALetterLeftBehind": {
+    "name": "Geride Bırakılan Bir Mektup",
+    "description": {}
+  },
+  "FontaineResearchInstituteOfKineticEnergyEngineeringCertificate": {
+    "name": "Fontaine Kinetik Enerji Mühendisliği Araştırma Enstitüsü Sertifikası",
+    "description": {}
+  },
+  "TrainingLog": {
+    "name": "İdman Günlüğü",
+    "description": {}
+  },
+  "Memo": {
+    "name": "Not",
+    "description": {}
+  },
+  "NewTideAnthologyPartI": {
+    "name": "Yeni Dalga Antolojisi: I. Bölüm",
+    "description": {}
+  },
+  "NewTideAnthologyPartII": {
+    "name": "Yeni Dalga Antolojisi: II. Bölüm",
+    "description": {}
+  },
+  "NewTideAnthologyPartIII": {
+    "name": "Yeni Dalga Antolojisi: III. Bölüm",
+    "description": {}
+  },
+  "BlanchesLetter": {
+    "name": "Blanche'in Mektubu",
+    "description": {
+      "0": "İki Bulle Meyvesinin arasına konulmuş bir mektup."
+    }
+  },
+  "LocationNo1Materials": {
+    "name": "1. Konumdaki Materyaller",
+    "description": {
+      "0": "Heinry'nin kaybolan materyalleri. Acaba bunlardan ne tür bir ilham alacaktı?"
+    }
+  },
+  "LocationNo2Materials": {
+    "name": "2. Konumdaki Materyaller",
+    "description": {
+      "0": "Heinry'nin kaybolan materyalleri. Acaba bunlardan ne tür bir ilham alacaktı?"
+    }
+  },
+  "LocationNo3Materials": {
+    "name": "3. Konumun Materyaller",
+    "description": {
+      "0": "Heinry'nin kaybolan materyalleri. Acaba bunlardan ne tür bir ilham alacaktı?"
+    }
   },
   "SilkFlowerSeed": {
     "name": "İpek Çiçeği Tohumu",
@@ -19122,7 +19931,7 @@
   "HalcyonJadeAxeMarlin": {
     "name": "Dingin Yeşim Balta Balığı",
     "description": {
-      "0": "Eşsiz bir biçime sahip ve kelebek balığının Sumerulu kuzeni olan orta büyüklükte bir balık. Geniş bir kılçığa ve eşsiz bir kıvrımlı vücuda sahiptirler. Efsaneye göre bu balığı ilk yakalayan balıkçının oltası kuyruk yüzgecinin altına sıkışmış ve aslında iki tane yakaladığını keşfetmiş. İkisi birleştirildiğinde de bir baltalı mızrağın ucunu anımsattığı için \"Balta Balığı\" ismini vermişler. Bilimsel adı \"Çapa Kancalı Kelebek\" ile karşılaştırıldığında bu isim çok daha ilgi çekici olduğundan çoğu insan bu ismi tercih ediyor.",
+      "0": "Eşsiz bir biçime sahip ve kelebek balığının Sumerulu kuzeni olan orta büyüklükte bir balık. Geniş bir kılçığa ve eşsiz bir kıvrımlı vücuda sahiptirler. Efsaneye göre bu balığı yakalayan ilk balıkçının oltası balığın kuyruğuna takılmış. Oltayı çektiğinde, görüntü bir baltalı mızrağı anımsattığından \"Balta Balığı\" ismi verilmiş. Bilimsel adı \"Çapa Kancalı Kelebek\" ile karşılaştırıldığında bu isim çok daha ilgi çekici olduğundan çoğu insan bu ismi tercih ediyor.",
       "1": "Yeşim Balta Balığı, su bitkilerinin yoğun olduğu ve şeklinin çevresine uyum sağladığı yerlerde yaşamayı tercih eder. Yosunlar arasında gezinen küçük balıklar sıklıkla onun kamufle olmuş gövdesine çarpıp sersemler ama balta balığı buna aldırış etmez, hatta vücudunu komşularına sığınak olarak sunar."
     }
   },
@@ -19252,6 +20061,12 @@
     "name": "Merhametli ve Öfkeli Suların Kanatları",
     "description": {
       "0": "Fontaine'in saygısını ve sevgisini kazandığın için sana hediye edilen süslenmiş bir kanat."
+    }
+  },
+  "WingsOfTransientDreams": {
+    "name": "Fani Rüyaların Kanatları",
+    "description": {
+      "0": "Müzikle beraber geçmişteki bir rüyana kendinden geçerek girdiğinde elde ettiğin bir kanat."
     }
   },
   "RadiantSpincrystal1": {
@@ -19689,55 +20504,55 @@
   "RadiantSpincrystal73": {
     "name": "Parlak Burgu Kristal 73",
     "description": {
-      "0": "Bu harikulade kristal, narin ipekten güzel bir örgü misali çok hoş bir melodi çalar. Bu eşyayı ana karanın farklı yerlerinden veya nadir nesne toplayan tüccarlardan bulabilirsin. Kristalin içinde çalan ezgiyi, Dinginçay Çaydanlığındaki \"Ebedi Ahenk: Dingin Yankılar\" veya \"Ebedi Ahenk: Rüzgarın Ezgileri\" eşyalarını kullanarak canlandırabilirsin. Bu Parlak Burgu Kristalde \"Beyond Klesha\" müziği vardır."
+      "0": "Bu harikulade kristal, narin ipekten güzel bir örgü misali çok hoş bir melodi çalar. Bu eşyayı ana karanın farklı yerlerinden veya nadir nesne toplayan tüccarlardan bulabilirsin. Kristalin içinde çalan ezgiyi, Dinginçay Çaydanlığındaki \"Ebedi Ahenk: Dingin Yankılar\" veya \"Ebedi Ahenk: Rüzgarın Ezgileri\" eşyalarını kullanarak dinleyebilirsin. Bu Parlak Burgu Kristalde \"Beyond Klesha\" müziği vardır."
     }
   },
   "RadiantSpincrystal74": {
     "name": "Parlak Burgu Kristal 74",
     "description": {
-      "0": "Bu harikulade kristal, narin ipekten güzel bir örgü misali çok güzel bir melodi çalar. Bu eşyayı ana karanın farklı yerlerinden veya nadir nesne toplayan tüccarlardan bulabilirsin. Kristalin içinde çalan ezgiyi, Dinginçay Çaydanlığındaki \"Ebedi Ahenk: Dingin Yankılar\" veya \"Ebedi Ahenk: Rüzgarın Ezgileri\" eşyalarını kullanarak canlandırabilirsin. Bu Parlak Burgu Kristalde \"Melody of Hidden Seeds\" müziği vardır."
+      "0": "Bu harikulade kristal, narin ipekten güzel bir örgü misali çok güzel bir melodi çalar. Bu eşyayı ana karanın farklı yerlerinden veya nadir nesne toplayan tüccarlardan bulabilirsin. Kristalin içinde çalan ezgiyi, Dinginçay Çaydanlığındaki \"Ebedi Ahenk: Dingin Yankılar\" veya \"Ebedi Ahenk: Rüzgarın Ezgileri\" eşyalarını kullanarak dinleyebilirsin. Bu Parlak Burgu Kristalde \"Melody of Hidden Seeds\" müziği vardır."
     }
   },
   "RadiantSpincrystal75": {
     "name": "Parlak Burgu Kristal 75",
     "description": {
-      "0": "Bu harikulade kristal, narin ipekten güzel bir örgü misali çok hoş bir melodi çalar. Bu eşyayı ana karanın farklı yerlerinden veya nadir nesne toplayan tüccarlardan bulabilirsin. Kristalin içinde çalan ezgiyi, Dinginçay Çaydanlığındaki \"Ebedi Ahenk: Dingin Yankılar\" veya \"Ebedi Ahenk: Rüzgarın Ezgileri\" eşyalarını kullanarak canlandırabilirsin. Bu Parlak Burgu Kristalde \"Varuna's Mercy\" müziği vardır."
+      "0": "Bu harikulade kristal, narin ipekten güzel bir örgü misali çok hoş bir melodi çalar. Bu eşyayı ana karanın farklı yerlerinden veya nadir nesne toplayan tüccarlardan bulabilirsin. Kristalin içinde çalan ezgiyi, Dinginçay Çaydanlığındaki \"Ebedi Ahenk: Dingin Yankılar\" veya \"Ebedi Ahenk: Rüzgarın Ezgileri\" eşyalarını kullanarak dinleyebilirsin. Bu Parlak Burgu Kristalde \"Varuna's Mercy\" müziği vardır."
     }
   },
   "RadiantSpincrystal76": {
     "name": "Parlak Burgu Kristal 76",
     "description": {
-      "0": "Bu harikulade kristal, narin ipekten güzel bir örgü misali çok hoş bir melodi çalar. Bu eşyayı ana karanın farklı yerlerinden veya nadir nesne toplayan tüccarlardan bulabilirsin. Kristalin içinde çalan ezgiyi, Dinginçay Çaydanlığındaki \"Ebedi Ahenk: Dingin Yankılar\" veya \"Ebedi Ahenk: Rüzgarın Ezgileri\" eşyalarını kullanarak canlandırabilirsin. Bu Parlak Burgu Kristalde \"Vestige of Dahri\" müziği vardır."
+      "0": "Bu harikulade kristal, narin ipekten güzel bir örgü misali çok hoş bir melodi çalar. Bu eşyayı ana karanın farklı yerlerinden veya nadir nesne toplayan tüccarlardan bulabilirsin. Kristalin içinde çalan ezgiyi, Dinginçay Çaydanlığındaki \"Ebedi Ahenk: Dingin Yankılar\" veya \"Ebedi Ahenk: Rüzgarın Ezgileri\" eşyalarını kullanarak dinleyebilirsin. Bu Parlak Burgu Kristalde \"Vestige of Dahri\" müziği vardır."
     }
   },
   "RadiantSpincrystal77": {
     "name": "Parlak Burgu Kristal 77",
     "description": {
-      "0": "Bu harikulade kristal, narin ipekten güzel bir örgü misali çok hoş bir melodi çalar. Bu eşyayı ana karanın farklı yerlerinden veya nadir nesne toplayan tüccarlardan bulabilirsin. Kristalin içinde çalan ezgiyi, Dinginçay Çaydanlığındaki \"Ebedi Ahenk: Dingin Yankılar\" veya \"Ebedi Ahenk: Rüzgarın Ezgileri\" eşyalarını kullanarak canlandırabilirsin. Bu Parlak Burgu Kristalde \"Chatter Between Roots\" müziği vardır."
+      "0": "Bu harikulade kristal, narin ipekten güzel bir örgü misali çok hoş bir melodi çalar. Bu eşyayı ana karanın farklı yerlerinden veya nadir nesne toplayan tüccarlardan bulabilirsin. Kristalin içinde çalan ezgiyi, Dinginçay Çaydanlığındaki \"Ebedi Ahenk: Dingin Yankılar\" veya \"Ebedi Ahenk: Rüzgarın Ezgileri\" eşyalarını kullanarak dinleyebilirsin. Bu Parlak Burgu Kristalde \"Chatter Between Roots\" müziği vardır."
     }
   },
   "RadiantSpincrystal78": {
     "name": "Parlak Burgu Kristal 78",
     "description": {
-      "0": "Bu harikulade kristal, narin ipekten güzel bir örgü misali çok hoş bir melodi çalar. Bu eşyayı ana karanın farklı yerlerinden veya nadir nesne toplayan tüccarlardan bulabilirsin. Kristalin içinde çalan ezgiyi, Dinginçay Çaydanlığındaki \"Ebedi Ahenk: Dingin Yankılar\" veya \"Ebedi Ahenk: Rüzgarın Ezgileri\" eşyalarını kullanarak canlandırabilirsin. Bu Parlak Burgu Kristalde \"Whirling of Leaves and Petals\" müziği vardır."
+      "0": "Bu harikulade kristal, narin ipekten güzel bir örgü misali çok hoş bir melodi çalar. Bu eşyayı ana karanın farklı yerlerinden veya nadir nesne toplayan tüccarlardan bulabilirsin. Kristalin içinde çalan ezgiyi, Dinginçay Çaydanlığındaki \"Ebedi Ahenk: Dingin Yankılar\" veya \"Ebedi Ahenk: Rüzgarın Ezgileri\" eşyalarını kullanarak dinleyebilirsin. Bu Parlak Burgu Kristalde \"Whirling of Leaves and Petals\" müziği vardır."
     }
   },
   "RadiantSpincrystal79": {
     "name": "Parlak Burgu Kristal 79",
     "description": {
-      "0": "Bu harikulade kristal, narin ipekten güzel bir örgü misali çok hoş bir melodi çalar. Bu eşyayı ana karanın farklı yerlerinden veya nadir nesne toplayan tüccarlardan bulabilirsin. Kristalin içinde çalan ezgiyi, Dinginçay Çaydanlığındaki \"Ebedi Ahenk: Dingin Yankılar\" veya \"Ebedi Ahenk: Rüzgarın Ezgileri\" eşyalarını kullanarak canlandırabilirsin. Bu Parlak Burgu Kristalde \"Hustle and Bustle of Ormos\" müziği vardır."
+      "0": "Bu harikulade kristal, narin ipekten güzel bir örgü misali çok hoş bir melodi çalar. Bu eşyayı ana karanın farklı yerlerinden veya nadir nesne toplayan tüccarlardan bulabilirsin. Kristalin içinde çalan ezgiyi, Dinginçay Çaydanlığındaki \"Ebedi Ahenk: Dingin Yankılar\" veya \"Ebedi Ahenk: Rüzgarın Ezgileri\" eşyalarını kullanarak dinleyebilirsin. Bu Parlak Burgu Kristalde \"Hustle and Bustle of Ormos\" müziği vardır."
     }
   },
   "RadiantSpincrystal80": {
     "name": "Parlak Burgu Kristal 80",
     "description": {
-      "0": "Bu harikulade kristal, narin ipekten güzel bir örgü misali çok hoş bir melodi çalar. Bu eşyayı ana karanın farklı yerlerinden veya nadir nesne toplayan tüccarlardan bulabilirsin. Kristalin içinde çalan ezgiyi, Dinginçay Çaydanlığındaki \"Ebedi Ahenk: Dingin Yankılar\" veya \"Ebedi Ahenk: Rüzgarın Ezgileri\" eşyalarını kullanarak canlandırabilirsin. Bu Parlak Burgu Kristalde \"Halcyon Times\" müziği vardır."
+      "0": "Bu harikulade kristal, narin ipekten güzel bir örgü misali çok hoş bir melodi çalar. Bu eşyayı ana karanın farklı yerlerinden veya nadir nesne toplayan tüccarlardan bulabilirsin. Kristalin içinde çalan ezgiyi, Dinginçay Çaydanlığındaki \"Ebedi Ahenk: Dingin Yankılar\" veya \"Ebedi Ahenk: Rüzgarın Ezgileri\" eşyalarını kullanarak dinleyebilirsin. Bu Parlak Burgu Kristalde \"Halcyon Times\" müziği vardır."
     }
   },
   "RadiantSpincrystal81": {
     "name": "Parlak Burgu Kristal 81",
     "description": {
-      "0": "Bu harikulade kristal, narin ipekten güzel bir örgü misali çok hoş bir melodi çalar. Bu eşyayı ana karanın farklı yerlerinden veya nadir nesne toplayan tüccarlardan bulabilirsin. Kristalin içinde çalan ezgiyi, Dinginçay Çaydanlığındaki \"Ebedi Ahenk: Dingin Yankılar\" veya \"Ebedi Ahenk: Rüzgarın Ezgileri\" eşyalarını kullanarak canlandırabilirsin. Bu Parlak Burgu Kristalde \"A Puff of Cool Breeze\" müziği vardır."
+      "0": "Bu harikulade kristal, narin ipekten güzel bir örgü misali çok hoş bir melodi çalar. Bu eşyayı ana karanın farklı yerlerinden veya nadir nesne toplayan tüccarlardan bulabilirsin. Kristalin içinde çalan ezgiyi, Dinginçay Çaydanlığındaki \"Ebedi Ahenk: Dingin Yankılar\" veya \"Ebedi Ahenk: Rüzgarın Ezgileri\" eşyalarını kullanarak dinleyebilirsin. Bu Parlak Burgu Kristalde \"A Puff of Cool Breeze\" müziği vardır."
     }
   },
   "RadiantSpincrystal82": {
@@ -19941,55 +20756,97 @@
   "RadiantSpincrystal99": {
     "name": "Parlak Burgu Kristal 99",
     "description": {
-      "0": "Bu harikulade kristal, narin ipekten güzel bir örgü misali çok hoş bir melodi çalar. Bu eşyayı ana karanın farklı yerlerinden veya nadir nesne toplayan tüccarlardan bulabilirsin. Kristalin içinde çalan ezgiyi, Dinginçay Çaydanlığındaki \"Ebedi Ahenk: Dingin Yankılar\" veya \"Ebedi Ahenk: Rüzgarın Ezgileri\" eşyalarını kullanarak canlandırabilirsin. Bu Parlak Burgu Kristalde Fontaine'den gelen gizemli bir müzik vardır."
+      "0": "Bu harikulade kristal, narin ipekten güzel bir örgü misali çok hoş bir melodi çalar. Bu eşyayı ana karanın farklı yerlerinden veya nadir nesne toplayan tüccarlardan bulabilirsin. Kristalin içinde çalan ezgiyi, Dinginçay Çaydanlığındaki \"Ebedi Ahenk: Dingin Yankılar\" veya \"Ebedi Ahenk: Rüzgarın Ezgileri\" eşyalarını kullanarak dinleyebilirsin. Bu Parlak Burgu Kristalde Fontaine'den gelen gizemli bir müzik vardır."
     }
   },
   "RadiantSpincrystal100": {
     "name": "Parlak Burgu Kristal 100",
     "description": {
-      "0": "Bu harikulade kristal, narin ipekten güzel bir örgü misali çok hoş bir melodi çalar. Bu eşyayı ana karanın farklı yerlerinden veya nadir nesne toplayan tüccarlardan bulabilirsin. Kristalin içinde çalan ezgiyi, Dinginçay Çaydanlığındaki \"Ebedi Ahenk: Dingin Yankılar\" veya \"Ebedi Ahenk: Rüzgarın Ezgileri\" eşyalarını kullanarak canlandırabilirsin. Bu Parlak Burgu Kristalde Fontaine'den gelen gizemli bir müzik vardır."
+      "0": "Bu harikulade kristal, narin ipekten güzel bir örgü misali çok hoş bir melodi çalar. Bu eşyayı ana karanın farklı yerlerinden veya nadir nesne toplayan tüccarlardan bulabilirsin. Kristalin içinde çalan ezgiyi, Dinginçay Çaydanlığındaki \"Ebedi Ahenk: Dingin Yankılar\" veya \"Ebedi Ahenk: Rüzgarın Ezgileri\" eşyalarını kullanarak dinleyebilirsin. Bu Parlak Burgu Kristalde Fontaine'den gelen gizemli bir müzik vardır."
     }
   },
   "RadiantSpincrystal101": {
     "name": "Parlak Burgu Kristal 101",
     "description": {
-      "0": "Bu harikulade kristal, narin ipekten güzel bir örgü misali çok hoş bir melodi çalar. Bu eşyayı ana karanın farklı yerlerinden veya nadir nesne toplayan tüccarlardan bulabilirsin. Kristalin içinde çalan ezgiyi, Dinginçay Çaydanlığındaki \"Ebedi Ahenk: Dingin Yankılar\" veya \"Ebedi Ahenk: Rüzgarın Ezgileri\" eşyalarını kullanarak canlandırabilirsin. Bu Parlak Burgu Kristalde Fontaine'den gelen gizemli bir müzik vardır."
+      "0": "Bu harikulade kristal, narin ipekten güzel bir örgü misali çok hoş bir melodi çalar. Bu eşyayı ana karanın farklı yerlerinden veya nadir nesne toplayan tüccarlardan bulabilirsin. Kristalin içinde çalan ezgiyi, Dinginçay Çaydanlığındaki \"Ebedi Ahenk: Dingin Yankılar\" veya \"Ebedi Ahenk: Rüzgarın Ezgileri\" eşyalarını kullanarak dinleyebilirsin. Bu Parlak Burgu Kristalde Fontaine'den gelen gizemli bir müzik vardır."
     }
   },
   "RadiantSpincrystal102": {
     "name": "Parlak Burgu Kristal 102",
     "description": {
-      "0": "Bu harikulade kristal, narin ipekten güzel bir örgü misali çok hoş bir melodi çalar. Bu eşyayı ana karanın farklı yerlerinden veya nadir nesne toplayan tüccarlardan bulabilirsin. Kristalin içinde çalan ezgiyi, Dinginçay Çaydanlığındaki \"Ebedi Ahenk: Dingin Yankılar\" veya \"Ebedi Ahenk: Rüzgarın Ezgileri\" eşyalarını kullanarak canlandırabilirsin. Bu Parlak Burgu Kristalde Fontaine'den gelen gizemli bir müzik vardır."
+      "0": "Bu harikulade kristal, narin ipekten güzel bir örgü misali çok hoş bir melodi çalar. Bu eşyayı ana karanın farklı yerlerinden veya nadir nesne toplayan tüccarlardan bulabilirsin. Kristalin içinde çalan ezgiyi, Dinginçay Çaydanlığındaki \"Ebedi Ahenk: Dingin Yankılar\" veya \"Ebedi Ahenk: Rüzgarın Ezgileri\" eşyalarını kullanarak dinleyebilirsin. Bu Parlak Burgu Kristalde Fontaine'den gelen gizemli bir müzik vardır."
     }
   },
   "RadiantSpincrystal103": {
     "name": "Parlak Burgu Kristal 103",
     "description": {
-      "0": "Bu harikulade kristal, narin ipekten güzel bir örgü misali çok hoş bir melodi çalar. Bu eşyayı ana karanın farklı yerlerinden veya nadir nesne toplayan tüccarlardan bulabilirsin. Kristalin içinde çalan ezgiyi, Dinginçay Çaydanlığındaki \"Ebedi Ahenk: Dingin Yankılar\" veya \"Ebedi Ahenk: Rüzgarın Ezgileri\" eşyalarını kullanarak canlandırabilirsin. Bu Parlak Burgu Kristalde Fontaine'den gelen gizemli bir müzik vardır."
+      "0": "Bu harikulade kristal, narin ipekten güzel bir örgü misali çok hoş bir melodi çalar. Bu eşyayı ana karanın farklı yerlerinden veya nadir nesne toplayan tüccarlardan bulabilirsin. Kristalin içinde çalan ezgiyi, Dinginçay Çaydanlığındaki \"Ebedi Ahenk: Dingin Yankılar\" veya \"Ebedi Ahenk: Rüzgarın Ezgileri\" eşyalarını kullanarak dinleyebilirsin. Bu Parlak Burgu Kristalde Fontaine'den gelen gizemli bir müzik vardır."
     }
   },
   "RadiantSpincrystal104": {
     "name": "Parlak Burgu Kristal 104",
     "description": {
-      "0": "Bu harikulade kristal, narin ipekten güzel bir örgü misali çok hoş bir melodi çalar. Bu eşyayı ana karanın farklı yerlerinden veya nadir nesne toplayan tüccarlardan bulabilirsin. Kristalin içinde çalan ezgiyi, Dinginçay Çaydanlığındaki \"Ebedi Ahenk: Dingin Yankılar\" veya \"Ebedi Ahenk: Rüzgarın Ezgileri\" eşyalarını kullanarak canlandırabilirsin. Bu Parlak Burgu Kristalde Fontaine'den gelen gizemli bir müzik vardır."
+      "0": "Bu harikulade kristal, narin ipekten güzel bir örgü misali çok hoş bir melodi çalar. Bu eşyayı ana karanın farklı yerlerinden veya nadir nesne toplayan tüccarlardan bulabilirsin. Kristalin içinde çalan ezgiyi, Dinginçay Çaydanlığındaki \"Ebedi Ahenk: Dingin Yankılar\" veya \"Ebedi Ahenk: Rüzgarın Ezgileri\" eşyalarını kullanarak dinleyebilirsin. Bu Parlak Burgu Kristalde Fontaine'den gelen gizemli bir müzik vardır."
     }
   },
   "RadiantSpincrystal105": {
     "name": "Parlak Burgu Kristal 105",
     "description": {
-      "0": "Bu harikulade kristal, narin ipekten güzel bir örgü misali çok hoş bir melodi çalar. Bu eşyayı ana karanın farklı yerlerinden veya nadir nesne toplayan tüccarlardan bulabilirsin. Kristalin içinde çalan ezgiyi, Dinginçay Çaydanlığındaki \"Ebedi Ahenk: Dingin Yankılar\" veya \"Ebedi Ahenk: Rüzgarın Ezgileri\" eşyalarını kullanarak canlandırabilirsin. Bu Parlak Burgu Kristalde Fontaine'den gelen gizemli bir müzik vardır."
+      "0": "Bu harikulade kristal, narin ipekten güzel bir örgü misali çok hoş bir melodi çalar. Bu eşyayı ana karanın farklı yerlerinden veya nadir nesne toplayan tüccarlardan bulabilirsin. Kristalin içinde çalan ezgiyi, Dinginçay Çaydanlığındaki \"Ebedi Ahenk: Dingin Yankılar\" veya \"Ebedi Ahenk: Rüzgarın Ezgileri\" eşyalarını kullanarak dinleyebilirsin. Bu Parlak Burgu Kristalde Fontaine'den gelen gizemli bir müzik vardır."
     }
   },
   "RadiantSpincrystal106": {
     "name": "Parlak Burgu Kristal 106",
     "description": {
-      "0": "Bu harikulade kristal, narin ipekten güzel bir örgü misali çok hoş bir melodi çalar. Bu eşyayı ana karanın farklı yerlerinden veya nadir nesne toplayan tüccarlardan bulabilirsin. Kristalin içinde çalan ezgiyi, Dinginçay Çaydanlığındaki \"Ebedi Ahenk: Dingin Yankılar\" veya \"Ebedi Ahenk: Rüzgarın Ezgileri\" eşyalarını kullanarak canlandırabilirsin. Bu Parlak Burgu Kristalde Fontaine'den gelen gizemli bir müzik vardır."
+      "0": "Bu harikulade kristal, narin ipekten güzel bir örgü misali çok hoş bir melodi çalar. Bu eşyayı ana karanın farklı yerlerinden veya nadir nesne toplayan tüccarlardan bulabilirsin. Kristalin içinde çalan ezgiyi, Dinginçay Çaydanlığındaki \"Ebedi Ahenk: Dingin Yankılar\" veya \"Ebedi Ahenk: Rüzgarın Ezgileri\" eşyalarını kullanarak dinleyebilirsin. Bu Parlak Burgu Kristalde Fontaine'den gelen gizemli bir müzik vardır."
     }
   },
   "RadiantSpincrystal107": {
     "name": "Parlak Burgu Kristal 107",
     "description": {
-      "0": "Bu harikulade kristal, narin ipekten güzel bir örgü misali çok hoş bir melodi çalar. Bu eşyayı ana karanın farklı yerlerinden veya nadir nesne toplayan tüccarlardan bulabilirsin. Kristalin içinde çalan ezgiyi, Dinginçay Çaydanlığındaki \"Ebedi Ahenk: Dingin Yankılar\" veya \"Ebedi Ahenk: Rüzgarın Ezgileri\" eşyalarını kullanarak canlandırabilirsin. Bu Parlak Burgu Kristalde Fontaine'den gelen gizemli bir müzik vardır."
+      "0": "Bu harikulade kristal, narin ipekten güzel bir örgü misali çok hoş bir melodi çalar. Bu eşyayı ana karanın farklı yerlerinden veya nadir nesne toplayan tüccarlardan bulabilirsin. Kristalin içinde çalan ezgiyi, Dinginçay Çaydanlığındaki \"Ebedi Ahenk: Dingin Yankılar\" veya \"Ebedi Ahenk: Rüzgarın Ezgileri\" eşyalarını kullanarak dinleyebilirsin. Bu Parlak Burgu Kristalde Fontaine'den gelen gizemli bir müzik vardır."
+    }
+  },
+  "RadiantSpincrystal108": {
+    "name": "Parlak Burgu Kristal 108",
+    "description": {
+      "0": "Bu harikulade kristal, narin ipekten güzel bir örgü misali çok hoş bir melodi çalar. Bu eşyayı ana karanın farklı yerlerinden veya nadir nesne toplayan tüccarlardan bulabilirsin. Kristalin içinde çalan ezgiyi, Dinginçay Çaydanlığındaki \"Ebedi Ahenk: Dingin Yankılar\" veya \"Ebedi Ahenk: Rüzgarın Ezgileri\" eşyalarını kullanarak dinleyebilirsin. Bu Parlak Burgu Kristalde Fontaine'den gelen gizemli bir müzik vardır."
+    }
+  },
+  "RadiantSpincrystal109": {
+    "name": "Parlak Burgu Kristal 109",
+    "description": {
+      "0": "Bu harikulade kristal, narin ipekten güzel bir örgü misali çok hoş bir melodi çalar. Bu eşyayı ana karanın farklı yerlerinden veya nadir nesne toplayan tüccarlardan bulabilirsin. Kristalin içinde çalan ezgiyi, Dinginçay Çaydanlığındaki \"Ebedi Ahenk: Dingin Yankılar\" veya \"Ebedi Ahenk: Rüzgarın Ezgileri\" eşyalarını kullanarak dinleyebilirsin. Bu Parlak Burgu Kristalde Fontaine'den gelen gizemli bir müzik vardır."
+    }
+  },
+  "RadiantSpincrystal110": {
+    "name": "Parlak Burgu Kristal 110",
+    "description": {
+      "0": "Bu harikulade kristal, narin ipekten güzel bir örgü misali çok hoş bir melodi çalar. Bu eşyayı ana karanın farklı yerlerinden veya nadir nesne toplayan tüccarlardan bulabilirsin. Kristalin içinde çalan ezgiyi, Dinginçay Çaydanlığındaki \"Ebedi Ahenk: Dingin Yankılar\" veya \"Ebedi Ahenk: Rüzgarın Ezgileri\" eşyalarını kullanarak dinleyebilirsin. Bu Parlak Burgu Kristalde Fontaine'den gelen gizemli bir müzik vardır."
+    }
+  },
+  "RadiantSpincrystal111": {
+    "name": "Parlak Burgu Kristal 111",
+    "description": {
+      "0": "Bu harikulade kristal, narin ipekten güzel bir örgü misali çok hoş bir melodi çalar. Bu eşyayı ana karanın farklı yerlerinden veya nadir nesne toplayan tüccarlardan bulabilirsin. Kristalin içinde çalan ezgiyi, Dinginçay Çaydanlığındaki \"Ebedi Ahenk: Dingin Yankılar\" veya \"Ebedi Ahenk: Rüzgarın Ezgileri\" eşyalarını kullanarak dinleyebilirsin. Bu Parlak Burgu Kristalde Fontaine'den gelen gizemli bir müzik vardır."
+    }
+  },
+  "RadiantSpincrystal112": {
+    "name": "Parlak Burgu Kristal 112",
+    "description": {
+      "0": "Bu harikulade kristal, narin ipekten güzel bir örgü misali çok hoş bir melodi çalar. Bu eşyayı ana karanın farklı yerlerinden veya nadir nesne toplayan tüccarlardan bulabilirsin. Kristalin içinde çalan ezgiyi, Dinginçay Çaydanlığındaki \"Ebedi Ahenk: Dingin Yankılar\" veya \"Ebedi Ahenk: Rüzgarın Ezgileri\" eşyalarını kullanarak dinleyebilirsin. Bu Parlak Burgu Kristalde Fontaine'den gelen gizemli bir müzik vardır."
+    }
+  },
+  "RadiantSpincrystal113": {
+    "name": "Parlak Burgu Kristal 113",
+    "description": {
+      "0": "Bu harikulade kristal, narin ipekten güzel bir örgü misali çok hoş bir melodi çalar. Bu eşyayı ana karanın farklı yerlerinden veya nadir nesne toplayan tüccarlardan bulabilirsin. Kristalin içinde çalan ezgiyi, Dinginçay Çaydanlığındaki \"Ebedi Ahenk: Dingin Yankılar\" veya \"Ebedi Ahenk: Rüzgarın Ezgileri\" eşyalarını kullanarak dinleyebilirsin. Bu Parlak Burgu Kristalde Fontaine'den gelen gizemli bir müzik vardır."
+    }
+  },
+  "RadiantSpincrystal114": {
+    "name": "Parlak Burgu Kristal 114",
+    "description": {
+      "0": "Bu harikulade kristal, narin ipekten güzel bir örgü misali çok hoş bir melodi çalar. Bu eşyayı ana karanın farklı yerlerinden veya nadir nesne toplayan tüccarlardan bulabilirsin. Kristalin içinde çalan ezgiyi, Dinginçay Çaydanlığındaki \"Ebedi Ahenk: Dingin Yankılar\" veya \"Ebedi Ahenk: Rüzgarın Ezgileri\" eşyalarını kullanarak dinleyebilirsin. Bu Parlak Burgu Kristalde Fontaine'den gelen gizemli bir müzik vardır."
     }
   },
   "LanternFiber": {
@@ -20131,6 +20988,13 @@
     "description": {
       "0": "\"Cendre Nehri Kayıkçısı\" için özel saflaştırma malzemesi.",
       "1": "Belirli malzemelerin üstünde bir izolasyon katmanı oluşturarak aşınma ve oksitlenmeyi engellemekle kalmaz aynı zamanda temizleme, yağlama ve cilalama görevi de görür. Bir zamanlar Fontaine'de çok popülerdi. O zamanki reklamlarda Cendre Nehri'nden efsanevi bir sima, o meşhur kıvrık bakır borunun bakımında bunu kullanırdı."
+    }
+  },
+  "DandelionBookmark": {
+    "name": "Karahindiba Ayracı",
+    "description": {
+      "0": "\"Sonsuz Mavinin Şarkısı\" için özel saflaştırma malzemesi.",
+      "1": "Karahindibalar birçok şiir ve hikayede uzak diyarlara seyahati, sınır tanımayan özgürlüğü temsil eder. Üzerinde bir Karahindiba resmi olan ayracı kitabın arasına koymak onu oraya mahkum etmez, aksine onun kendi dünyamıza kıyasla çok daha büyük bir yerde dolaşmasını sağlar."
     }
   },
   "FalconsDance": {
@@ -20434,8 +21298,10 @@
   "Wavepiercer": {
     "name": "Dalgadeler",
     "description": {
-      "0": "Metale özgü, hoş bir çekiciliği olan ince bir balıkçı oltası. Fontaine Araştırma Enstitüsü tarafından tasarlanan yenilikçi metal malzemelerle yapıldığından hafif ama dayanıklıdır. Bağlantı kısımlarındaki metalden yapılma sağlam düğümler sayesinde olta, müthiş ağırlıktaki balıkları çekme yeteneğine sahiptir. Kılıçlardaki balçaklardan ilham alınarak tasarlanan makara yuvası, vahşi ve \"dişli\" balıklara karşı balıkçının kendini korumasını sağlar.",
-      "1": "Tecrübeli balıkçılar, tıpkı güvenilir bir mızrak gibi bu oltanın Fontaine'e özel \"Demir Balık\"a karşı, en iyi silah olduğunu söylerler."
+      "0": "Balık tutarken İdeal Misina Gerginliğinde kalırsan balığın oltaya direnme süresini bayağı kısaltacak ve başarı şansını artıracaktır. Bu etki yalnızca Fontaine'de geçerlidir.",
+      "1": "<br/>",
+      "2": "Metale özgü, hoş bir çekiciliği olan ince bir balıkçı oltası. Fontaine Araştırma Enstitüsü tarafından tasarlanan yenilikçi metal malzemelerle yapıldığından hafif ama dayanıklıdır. Bağlantı kısımlarındaki metalden yapılma sağlam düğümler sayesinde olta, müthiş ağırlıktaki balıkları çekme yeteneğine sahiptir. Kılıçlardaki balçaklardan ilham alınarak tasarlanan makara yuvası, vahşi ve \"dişli\" balıklara karşı balıkçının kendini korumasını sağlar.",
+      "3": "Tecrübeli balıkçılar, tıpkı güvenilir bir mızrak gibi bu oltanın Fontaine'e özel \"Demir Balık\"a karşı, en iyi silah olduğunu söylerler."
     }
   },
   "GenshinImpactANewWorld": {
@@ -21621,6 +22487,48 @@
       "1": "Saatler, yılların sessizce akıp gitmesine tanıklık ederken balıklar da kaynaktan dökülen berrak suların akışına eşlik eder. Eğer bir gün solup gitmeye mahkumsa her şey, düşüncelerim neden hiç olmadığı kadar berrak?"
     }
   },
+  "NeuvilletteSurge": {
+    "name": "Neuvillette: Dalgalanma",
+    "description": {
+      "0": "İsim Kartı arka planı.",
+      "1": "Suyun yüzeyi el değmemiş bir cevher gibi durgundur belki ama bu bir fırtına öncesi sessizlik de olabilir."
+    }
+  },
+  "WriothesleyDetention": {
+    "name": "Wriothesley: Hapis",
+    "description": {
+      "0": "İsim Kartı arka planı.",
+      "1": "Meropide Kalesi'ndeki düzeni sağlamak öyle kolay bir iş değildir. Bunun için becerikli ve güçlü bir bilek ve ne yazık ki birazcık da gaddarlık gerekir."
+    }
+  },
+  "TravelNotesFallingStar": {
+    "name": "Gezi Notları: Kayan Yıldız",
+    "description": {
+      "0": "İsim Kartı arka planı.",
+      "1": "Okunu atmadan önce bir dilek tut. Hedefe atmayı başarırsan kim bilir, belki de dileğin gerçekleşir."
+    }
+  },
+  "CelebrationEuphonia": {
+    "name": "Kutlama: Euphonia",
+    "description": {
+      "0": "İsim Kartı arka planı.",
+      "1": "Ağaçlar dağların yamaçlarında uzanırken geçip giden yağmurun müziğinde şarkılarını söylüyorlar."
+    }
+  },
+  "AchievementPerpetual": {
+    "name": "Başarım: Sonsuz",
+    "description": {
+      "0": "İsim Kartı arka planı.",
+      "1": "\"Kabuklarla dişliler arasında parçalanıp giden hayalleri kimse duymaz artık. Yalnızca yorulmak bilmeyen ve zarafetle dansını sürdüren mekanik dansçı geçmişin yankılarını hâlâ sorgular.\""
+    }
+  },
+  "FontaineRedemption": {
+    "name": "Fontaine: Kefaret",
+    "description": {
+      "0": "İsim Kartı arka planı.",
+      "1": "Meropide Kalesi'nin resmi logosu. Düzeni koruyup hayatlarını huzur içinde sürdürmek isteyenlerin bu nişanın temsil ettiği kurumla hiçbir zaman münasebeti olmaması en içten dileğimizdir."
+    }
+  },
   "AnemoculusResonanceStone": {
     "name": "Rüzgar Özü Rezonans Taşı",
     "description": {
@@ -21760,14 +22668,13 @@
   "InquisitiveEndora": {
     "name": "Meraklı Endora",
     "description": {
-      "0": "Dünyaya meraklı gözlerle bakan garip bir Su Halkı larvası.",
-      "1": "Su Halkı, su şekillerine girmekte ustalaşmıştır. Ayrıca sudan oluşan diğer bedenlerle birleşip birbirlerinin duygularını ve bilgilerini paylaşabilirler. Endora hâlâ küçük, bir o kadar da meraklı. Baloncuklar çıkararak diğer su varlıklarıyla birleşebilir ve her şeyi öğrenebilir."
+      "0": "Dünyaya meraklı gözlerle bakan garip bir Göl Halkı larvası.\\Göl Halkı, su şekillerine girmekte ustalaşmıştır. Ayrıca sudan oluşan diğer bedenlerle birleşip birbirlerinin duygularını ve bilgilerini paylaşabilirler. Endora hâlâ küçük, bir o kadar da meraklı. Baloncuklar çıkararak diğer su varlıklarıyla birleşebilir ve her şeyi öğrenebilir."
     }
   },
   "Endora": {
     "name": "Endora",
     "description": {
-      "0": "Sadece dünyayı görmek isteyen, Su Halkının çok meraklı bir ferdi. Aslında Minik Peri: Çiy Tanesi ile çok iyi anlaşabilirler ama lütfen onları birleştirme. Teşekkürler."
+      "0": "Sadece dünyayı görmek isteyen, Göl Halkının çok meraklı bir ferdi. Aslında Minik Peri: Çiy Tanesi ile çok iyi anlaşabilirler ama lütfen onları birleştirme. Teşekkürler."
     }
   },
   "WindblumeFestivalCommemorativeBalloon": {
@@ -22123,6 +23030,14 @@
       "1": "Veluriyam Serabı'ndaki tüm Neşe Biletlerini bulmak için kullan."
     }
   },
+  "IttyBittyOctobaby": {
+    "name": "Minik Ahtapotçuk",
+    "description": {
+      "0": "Genellikle okyanusun derinliklerinde yaşayan küçük bir ahtapot türü.",
+      "1": "Belki aşırı merakından belki de seyahat etme arzusundan olsa gerek, henüz çok gençken denizlerde gezinmeye başlar. Sevdiği bir canlıyı gördüğünde onun peşinden her yere gider.",
+      "2": "Kim bilir büyüdüğünde nasıl bir şey olacak?"
+    }
+  },
   "InscribedMirror": {
     "name": "İşlemeli Ayna",
     "description": {
@@ -22168,6 +23083,20 @@
     "name": "Bresson'un Özel Kamerası",
     "description": {
       "0": "Bresson'un özel olarak değişiklikler yaptığı bir kamera. Eldeki en iyi malzemelerden yapılmıştır ve mükemmel şekilde çalışır."
+    }
+  },
+  "PortableAerodynamicGelatinousBubbleGenerator": {
+    "name": "Taşınabilir Aerodinamik Jelatinli Baloncuk Üretici",
+    "description": {
+      "0": "Büyük miktarlarda jelatinimsi baloncuklar üretmek için kullanılan bir mekanizma.",
+      "1": "<br/>",
+      "2": "Bu prototip makinayı, Fontaine Araştırma Enstitüsü üyesi Givalois geliştirdi.",
+      "3": "Asıl hedef büyük bir jelatinli baloncuk üreticisi oluşturmaktı. Projenin de amaçladığı gibi bu şekilde üretilen baloncuklar, içlerinde bir miktar su taşıyarak havada sabit bir şekilde hareket edebilecek veya asılı kalabilecekti, böylece potansiyel olarak su kaynaklarının hızlı bir şekilde taşınabilmesini sağlayacaktı.",
+      "4": "Ancak bu tür bir jelatinli baloncuğu üretmek için gereken malzemeyi hiçbir zaman bulamadıkları için bu proje de daha prototip aşamasında rafa kalktı.",
+      "5": "Ancak söylentilere göre araştırmacı Givalois'in çocukları bu prototip baloncuk makinasını çok sevmişler ve bu prototipten bir oyuncak üretip satacaklarmış.",
+      "6": "<br/>",
+      "7": "\"Bu makina babamızın araştırmalarının bir sonucu ve adı da Taşınabilir Aerodinamik Jelatinli Baloncuk Üretici...\"",
+      "8": "\"Baloncuklar! Çok güzeller! Baba, harikasın!\""
     }
   },
   "InstructionsAnemoculusResonanceStone": {
@@ -22423,6 +23352,12 @@
     "name": "Plan: Su Hazinesi Pusulası",
     "description": {
       "0": "Su Hazinesi Pusulası yapımını adım adım anlatan detaylı bir plan. Fontaine'in dört bir yanındaki hazinelerin yerini kolayca bulmak için bunu kullan."
+    }
+  },
+  "FormulaPureWater": {
+    "name": "Reçete: \"Saf Su\"",
+    "description": {
+      "0": "\"Saf Su\" yapımını adım adım anlatan ayrıntılı bir reçete."
     }
   },
   "SilkenPrint": {
@@ -22927,6 +23862,24 @@
       "0": "Dehanın Yakarışı Kart Oyunundan sert dokulu bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
     }
   },
+  "StalwartAndTrue": {
+    "name": "Cesur ve Dürüst",
+    "description": {
+      "0": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    }
+  },
+  "GalesOfReverie": {
+    "name": "Bora Rüyası",
+    "description": {
+      "0": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    }
+  },
+  "Beneficent": {
+    "name": "Cömert",
+    "description": {
+      "0": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    }
+  },
   "MagicGuide": {
     "name": "Büyü Rehberi",
     "description": {
@@ -23251,6 +24204,18 @@
       "0": "Dehanın Yakarışı Kart Oyunundan sert dokulu bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
     }
   },
+  "Moonpiercer": {
+    "name": "Mehtap Delen",
+    "description": {
+      "0": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    }
+  },
+  "CrownOfWatatsumi": {
+    "name": "Watatsumi Tacı",
+    "description": {
+      "0": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    }
+  },
   "LiyueHarborWharf": {
     "name": "Liyue Limanı Rıhtımı",
     "description": {
@@ -23447,6 +24412,18 @@
     "name": "Setaria",
     "description": {
       "0": "Dehanın Yakarışı Kart Oyunundan sert dokulu bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    }
+  },
+  "GandharvaVille": {
+    "name": "Gandharva",
+    "description": {
+      "0": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    }
+  },
+  "YayoiNanatsuki": {
+    "name": "Yayoi Nanatsuki",
+    "description": {
+      "0": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
     }
   },
   "ElementalResonanceWovenIce": {
@@ -23707,6 +24684,18 @@
       "0": "Dehanın Yakarışı Kart Oyunundan sert dokulu bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
     }
   },
+  "FreshWindOfFreedom": {
+    "name": "Özgürlüğün Rüzgarı",
+    "description": {
+      "0": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    }
+  },
+  "Pankration": {
+    "name": "Pankrasyon!",
+    "description": {
+      "0": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    }
+  },
   "Origin": {
     "name": "Köken",
     "description": {
@@ -23765,6 +24754,24 @@
     "name": "Fontaine",
     "description": {
       "0": "Dehanın Yakarışı Kart Oyunundan elde edilebilen ve değiştirilebilen bir kart deseni. Farklı tasarımlara sahip kart desenlerinin yapılışlarında ve dokularında da ufak farklılıklar olduğu söylenir. Hatta bazı oyuncular, farklı tarzdaki kartları toplamayı da bir uğraş ve hobi haline getirmişlerdir."
+    }
+  },
+  "TheFortressOfMeropide": {
+    "name": "Meropide Kalesi",
+    "description": {
+      "0": "Dehanın Yakarışı Kart Oyunundan elde edilebilen ve değiştirilebilen bir Kart Deseni. Farklı tasarımlara sahip kart desenlerinin, yapılışlarında ve dokularında da ufak farklılıklar olduğu söylenir. Hatta bazı oyuncular, farklı tarzdaki kartları toplamayı da bir uğraş ve hobi haline getirmişlerdir."
+    }
+  },
+  "DragonspineTraces": {
+    "name": "Ejdersırtı: İzler",
+    "description": {
+      "0": "Dehanın Yakarışı Kart Oyunundan elde edilebilen ve değiştirilebilen bir Kart Deseni. Farklı tasarımlara sahip kart desenlerinin, yapılışlarında ve dokularında da ufak farklılıklar olduğu söylenir. Hatta bazı oyuncular, farklı tarzdaki kartları toplamayı da bir uğraş ve hobi haline getirmişlerdir."
+    }
+  },
+  "DragonspineCrown": {
+    "name": "Ejdersırtı: Taç",
+    "description": {
+      "0": "Dehanın Yakarışı Kart Oyunundan elde edilebilen ve değiştirilebilen bir Kart Deseni. Farklı tasarımlara sahip kart desenlerinin, yapılışlarında ve dokularında da ufak farklılıklar olduğu söylenir. Hatta bazı oyuncular, farklı tarzdaki kartları toplamayı da bir uğraş ve hobi haline getirmişlerdir."
     }
   },
   "BeginnerPlayerBadge": {
@@ -24840,6 +25847,20 @@
       "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
     }
   },
+  "SplendrousNightOverflowingLight": {
+    "name": "Görkemli Gece: Işık Taşkını",
+    "description": {
+      "0": "Görkemli Gece: Işık Taşkını yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
+  "MekaLuminaireShiningSea": {
+    "name": "Meka Lamba: Parıldayan Deniz",
+    "description": {
+      "0": "Meka Lamba: Parıldayan Deniz yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
   "EfflorescentIllumination": {
     "name": "Gelişen Aydınlatma",
     "description": {
@@ -25029,6 +26050,34 @@
       "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
     }
   },
+  "MaisonCardinalicesCabinet": {
+    "name": "\"Sayıştay Dairesinin Dolabı\"",
+    "description": {
+      "0": "\"Sayıştay Dairesinin Dolabı\" yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
+  "MaisonCardinalicesHighShelf": {
+    "name": "\"Sayıştay Dairesinin Yüksek Rafı\"",
+    "description": {
+      "0": "\"Sayıştay Dairesinin Yüksek Rafı\" yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
+  "MaisonCardinalicesWingedShelf": {
+    "name": "\"Sayıştay Dairesinin Kanatlı Rafı\"",
+    "description": {
+      "0": "\"Sayıştay Dairesinin Kanatlı Rafı\" yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
+  "MaisonCardinalicesLittleHelper": {
+    "name": "\"Sayıştay Dairesinin Küçük Yardımcısı\"",
+    "description": {
+      "0": "\"Sayıştay Dairesinin Küçük Yardımcısı\" yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
   "SturdyLibraryTable": {
     "name": "Sağlam Kütüphane Masası",
     "description": {
@@ -25190,6 +26239,41 @@
       "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
     }
   },
+  "StudyOfTheForbiddenFortress": {
+    "name": "\"Yasak Kale Üzerine Bir Araştırma\"",
+    "description": {
+      "0": "\"Yasak Kale Üzerine Bir Araştırma\" yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
+  "EverydayLifeInTheForbiddenFortress": {
+    "name": "\"Yasak Kalede Gündelik Hayat\"",
+    "description": {
+      "0": "\"Yasak Kalede Gündelik Hayat\" yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
+  "ContentedElegance": {
+    "name": "\"Huzurlu Zarafet\"",
+    "description": {
+      "0": "\"Huzurlu Zarafet\" yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
+  "SteadyStatelyStability": {
+    "name": "\"Sürekli ve Yüce Denge\"",
+    "description": {
+      "0": "\"Sürekli ve Yüce Denge\" yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
+  "MaisonCardinalicesFocus": {
+    "name": "\"Sayıştay Dairesinin Odak Noktası\"",
+    "description": {
+      "0": "\"Sayıştay Dairesinin Odak Noktası\" yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
   "BreezeBlessedBed": {
     "name": "Zarif Esinti Yatağı",
     "description": {
@@ -25229,6 +26313,13 @@
     "name": "Adhigama Kütüğü \"Keyif\" Kanepesi",
     "description": {
       "0": "\"Adhigama Kütüğü 'Keyif' Kanepesi\" yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
+  "LindenWoodSturdyBunk": {
+    "name": "Ihlamur Ağacı \"Sağlam\" Ranza",
+    "description": {
+      "0": "Ihlamur Ağacı \"Sağlam\" Ranza yapımını adım adım anlatan detaylı bir taslak.",
       "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
     }
   },
@@ -25376,6 +26467,34 @@
     "name": "Han Yemek Sandalyesi - \"Hızlı Ayılma\"",
     "description": {
       "0": "Han Yemek Sandalyesi - \"Hızlı Ayılma\" yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
+  "ConversationOfTheForbiddenFortress": {
+    "name": "\"Yasak Kalenin Sohbetleri\"",
+    "description": {
+      "0": "\"Yasak Kalenin Sohbetleri\" yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
+  "ComfortOfAHomeAwayFromHome": {
+    "name": "\"Evden Uzakta Ev Rahatlığı\"",
+    "description": {
+      "0": "\"Evden Uzakta Ev Rahatlığı\" yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
+  "WitnessToGreatFocus": {
+    "name": "\"Olağanüstü Odağa Tanıklık\"",
+    "description": {
+      "0": "\"Olağanüstü Odağa Tanıklık\" yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
+  "ElationOfSocialDrinking": {
+    "name": "\"Sosyal İçiciliğin Hazzı\"",
+    "description": {
+      "0": "\"Sosyal İçiciliğin Hazzı\" yapımını adım adım anlatan detaylı bir taslak.",
       "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
     }
   },
@@ -25687,6 +26806,62 @@
       "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
     }
   },
+  "WisdomOfTheForbiddenFortress": {
+    "name": "\"Yasak Kalenin Bilgeliği\"",
+    "description": {
+      "0": "\"Yasak Kalenin Bilgeliği\" yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
+  "ChillAfternoonTeaTime": {
+    "name": "\"Rahatlatıcı Beş Çayı Zamanı\"",
+    "description": {
+      "0": "\"Rahatlatıcı Beş Çayı Zamanı\" yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
+  "MaisonCardinalicesPunctuality": {
+    "name": "\"Sayıştay Dairesinin Dakikliği\"",
+    "description": {
+      "0": "\"Sayıştay Dairesinin Dakikliği\" yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
+  "MaisonCardinalicesLockbox": {
+    "name": "\"Sayıştay Dairesinin Kilitli Kutusu\"",
+    "description": {
+      "0": "\"Sayıştay Dairesinin Kilitli Kutusu\" yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
+  "MaisonCardinalicesStores": {
+    "name": "\"Sayıştay Dairesinin Deposu\"",
+    "description": {
+      "0": "\"Sayıştay Dairesinin Deposu\" yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
+  "MallowWoodEnhancedPlatformLadder": {
+    "name": "Çınar \"Gelişmiş\" Platform Merdiveni",
+    "description": {
+      "0": "Çınar \"Gelişmiş\" Platform Merdiveni yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
+  "MallowWoodSturdyCargoContainer": {
+    "name": "Çınar \"Sağlam\" Sevkiyat Kasası",
+    "description": {
+      "0": "Çınar \"Sağlam\" Sevkiyat Kasası yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
+  "BurdenOfTheForbiddenFortress": {
+    "name": "\"Yasak Kalenin Yükleri\"",
+    "description": {
+      "0": "\"Yasak Kalenin Yükleri\" yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
   "MondstadtRugCrimsonArdor": {
     "name": "Mondstadt Halısı: Kızıl Coşku",
     "description": {
@@ -25768,6 +26943,20 @@
     "name": "Han Halısı - \"Düellocunun Bilgeliği\"",
     "description": {
       "0": "Han Halısı - \"Düellocunun Bilgeliği\" yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
+  "RestaurantRugEqualDialogue": {
+    "name": "Restoran Halısı: \"Eşit Görüşme\"",
+    "description": {
+      "0": "Restoran Halısı: \"Eşit Görüşme\" yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
+  "RestaurantRugBathingInTheBreeze": {
+    "name": "Restoran Halısı: \"Hafif Esinti Keyfi\"",
+    "description": {
+      "0": "Restoran Halısı: \"Hafif Esinti Keyfi\" yapımını adım adım anlatan detaylı bir taslak.",
       "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
     }
   },
@@ -26177,6 +27366,20 @@
       "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
     }
   },
+  "MaisonCardinalicesMusicalTone": {
+    "name": "\"Sayıştay Dairesinin Müziği\"",
+    "description": {
+      "0": "\"Sayıştay Dairesinin Müziği\" yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
+  "MaisonCardinalicesClerk": {
+    "name": "\"Sayıştay Dairesinin Katibi\"",
+    "description": {
+      "0": "\"Sayıştay Dairesinin Katibi\" yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
   "RealizationsFromTheLandOfWisdom": {
     "name": "\"Bilgelik Diyarı İdrakı\"",
     "description": {
@@ -26195,6 +27398,27 @@
     "name": "Su Depolama Sanatı",
     "description": {
       "0": "\"Su Depolama Sanatı\" yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
+  "FloralArrangementNearlyAquamarine": {
+    "name": "Çiçek Aranjmanı: \"Neredeyse Deniz Yeşili\"",
+    "description": {
+      "0": "Çiçek Aranjmanı: \"Neredeyse Deniz Yeşili\" yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
+  "FloralArrangementBloomingPurity": {
+    "name": "Çiçek Aranjmanı: \"Saflık Çiçeği\"",
+    "description": {
+      "0": "Çiçek Aranjmanı: \"Saflık Çiçeği\" yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
+  "FloralArrangementArtOfContrast": {
+    "name": "Çiçek Aranjmanı: \"Zıtlık Sanatı\"",
+    "description": {
+      "0": "Çiçek Aranjmanı: \"Zıtlık Sanatı\" yapımını adım adım anlatan detaylı bir taslak.",
       "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
     }
   },
@@ -27689,6 +28913,20 @@
       "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
     }
   },
+  "ImmaculateJudgment": {
+    "name": "\"Kusursuz Muhakeme\"",
+    "description": {
+      "0": "\"Kusursuz Muhakeme\" yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
+  "AThousandEphemeralVisionsOfDew": {
+    "name": "\"Binbir Çiy Düşü\"",
+    "description": {
+      "0": "\"Binbir Çiy Düşü\" yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
   "AdeptusGate": {
     "name": "Adeptus Geçidi",
     "description": {
@@ -28466,6 +29704,13 @@
       "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
     }
   },
+  "MajestyOfTheForbiddenFortress": {
+    "name": "\"Yasak Kalenin Majesteleri\"",
+    "description": {
+      "0": "\"Yasak Kalenin Majesteleri\" yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
   "PottedPlantVerdantVastness": {
     "name": "Saksı Bitkisi: Sonsuz Yeşillik",
     "description": {
@@ -28498,6 +29743,13 @@
     "name": "Pasajın Parfümlü Saksıları",
     "description": {
       "0": "Pasajın Parfümlü Saksıları yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
+  "RoyalPurple": {
+    "name": "\"Kraliyet Moru\"",
+    "description": {
+      "0": "\"Kraliyet Moru\" yapımını adım adım anlatan detaylı bir taslak.",
       "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
     }
   },
@@ -29492,6 +30744,13 @@
     "name": "Taş Zemin: Büyük Tasarım",
     "description": {
       "0": "Taş Zemin: Büyük Tasarım yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
+  "TearstoneTilePerspectiveTheory": {
+    "name": "Gözyaşı Taşı Döşeme: Perspektif Teorisi",
+    "description": {
+      "0": "Gözyaşı Taşı Döşeme: Perspektif Teorisi yapımını adım adım anlatan detaylı bir taslak.",
       "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
     }
   }

@@ -13,11 +13,11 @@
       "charged": {
         "0": "<strong>Attaque chargée</strong>",
         "1": "Effectue un <strong>tir visé</strong> plus précis et infligeant davantage de DGT.",
-        "2": "Lors de la visée, la flèche se charge en élément Hydro, infligeant des <hydro>DGT Hydro</hydro> quand elle est complètement chargée et qu'elle touche ; elle inflige également aux ennemis touchés l'effet Contre-courant."
+        "2": "Lors de la visée, la flèche se charge en élément Hydro, infligeant des <hydro>DGT Hydro</hydro> quand elle est complètement chargée et qu'elle touche. Elle inflige également aux ennemis touchés l'effet Contre-courant."
       },
       "riptide": {
         "0": "<strong>Contre-courant</strong>",
-        "1": "Les ennemis affectés par cet effet subissent l'un des types de <hydro>DGT Hydro de zone</hydro> suivants lorsque Tartaglia attaque ; les DGT infligés par ces effets sont considérés comme des DGT d'attaque normale.",
+        "1": "Les ennemis affectés par cet effet subissent l'un des types de <hydro>DGT Hydro de zone</hydro> suivants lorsque Tartaglia attaque, les DGT infligés par ces effets étant considérés comme des DGT d'attaque normale.",
         "2": [
           " Contre-courant : Flash : Les tirs visés complètement chargés touchant les ennemis affectés par Contre-courant infligent des DGT de zone consécutifs. Contre-courant : Flash peut être déclenché une fois toutes les 0,7 s.",
           " Contre-courant : Éclat : Vaincre un ennemi affecté par Contre-courant provoque une onde qui inflige l'effet Contre-courant aux ennemis proches."
@@ -63,7 +63,7 @@
       "9": "<strong>Contre-courant : Entaille</strong>",
       "10": "Les attaques de mêlée appliquent à nouveau l'effet Contre-courant lorsqu'elles touchent un ennemi affecté par Contre-courant. Ceci inflige des <hydro>DGT Hydro de zone</hydro>. Les DGT infligés par Contre-courant : Entaille sont considérés comme des DGT de compétence élémentaire. Contre-courant : Entaille peut être déclenché une fois toutes les 1,5 s.",
       "11": "<br/>",
-      "12": "La compétence prend fin après 30 s, ou lorsque vous appuyez dessus à nouveau. Tartaglia repasse alors en état à distance ; le TdR de la compétence est réinitialisé, et dure plus longtemps si l'état de mêlée a perduré.",
+      "12": "La compétence prend fin après 30 s, ou lorsque vous appuyez dessus à nouveau. Tartaglia repasse alors en état à distance. Le TdR de la compétence est réinitialisé, et dure plus longtemps si l'état de mêlée a perduré.",
       "13": "L'état de mêlée ne peut excéder 30 s. Au bout de cette durée, Tartaglia repasse automatiquement à l'état à distance.",
       "14": "<br/>",
       "15": "<i>C'est pour venir à bout de ses difficultés avec cette arme que Tartaglia a choisi l'arc comme arme de prédilection. Mais... C'est sur le champ de bataille que sa vraie puissance se déchaîne.</i>"
@@ -102,7 +102,7 @@
       "9": "<strong>Contre-courant : Torrent</strong>",
       "10": "Lorsqu'elle touche un ennemi affecté par Contre-courant, Lumière d'élimination consomme cet effet et inflige des <hydro>DGT Hydro de zone</hydro>. Les DGT infligés par Contre-courant : Torrent sont considérés comme des DGT de déchaînement élémentaire.",
       "11": "<br/>",
-      "12": "<i>L'eau qui coule n'est pas une vision courante dans son pays de neige ; peut-être que seul celui capable de saisir l'eau qui fuit entre les doigts est capable de comprendre comme elle est précieuse.</i>"
+      "12": "<i>L'eau qui coule n'est pas une vision courante dans son pays de neige... Peut-être que seul celui capable de saisir l'eau qui fuit entre les doigts est capable de comprendre comme elle est précieuse.</i>"
     },
     "skillParams": {
       "0": "DGT compétence (mêlée)",
@@ -144,7 +144,7 @@
   "constellation1": {
     "name": "Posture du démon : Vague au calme",
     "description": {
-      "0": "Réduit le TdR de <strong>Posture du démon : Marée déchaînée</strong> de 20 %."
+      "0": "Diminue le TdR de <strong>Posture du démon : Marée déchaînée</strong> de 20 %."
     }
   },
   "constellation2": {

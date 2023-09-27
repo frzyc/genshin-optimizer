@@ -146,7 +146,7 @@
   "constellation6": {
     "name": "Acúmulo Envelhecido",
     "description": {
-      "0": "O personagem sob o efeito da Sobrecarga Luminosa criada pela <dendro>Lótus Luminosa</dendro> ganha  12% de <strong>Bônus de Dano Dendro</strong>. Se a Lótus tiver passado pela Transformação da Lótus Luminosa, o personagem também ganhará 12% de Bônus de Dano ao elemento correspondente."
+      "0": "O personagem sob o efeito da Sobrecarga Luminosa criada pela <dendro>Lótus Luminosa</dendro> ganha 12% de <strong>Bônus de Dano Dendro</strong>. Se a Lótus tiver passado pela Transformação da Lótus Luminosa, o personagem também ganhará 12% de Bônus de Dano ao elemento correspondente."
     }
   }
 }

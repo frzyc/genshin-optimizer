@@ -101,7 +101,7 @@
     "name": "Acque incontaminate",
     "description": {
       "0": "Quando un nemico viene colpito con una Goccia di rugiada scagliata con la variante a pressione prolungata di <strong>Fendente dell'Emblema acqueo</strong>, si genera una Goccia d'acqua sorgiva accanto al{F#la }{M# }viaggiat{F#rice}{M#ore}. Se quest'ultim{F#a}{M#o} la raccoglie, ripristina un 7% dei suoi PS.",
-      "1": "È possibile generale 1 Goccia d'acqua sorgiva al secondo, fino a un massimo di 4 per ogni uso di Fendente dell'Emblema acqueo."
+      "1": "È possibile generare 1 Goccia d'acqua sorgiva al secondo, fino a un massimo di 4 per ogni uso di Fendente dell'Emblema acqueo."
     }
   },
   "passive2": {

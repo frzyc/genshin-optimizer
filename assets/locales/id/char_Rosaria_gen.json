@@ -28,7 +28,7 @@
       "5": "DMG Charged Attack",
       "6": "Konsumsi Stamina Charged Attack",
       "7": "DMG Selama Plunging",
-      "8": "DMG Plunging Attack Min./Maks.",
+      "8": "DMG Plunging Attack Rendah/Tinggi",
       "9": "",
       "10": "",
       "11": "",
@@ -44,7 +44,7 @@
       "0": "Rosaria bergerak dengan cepat, muncul di belakang musuh, lalu menusuk dan menebas dengan polearm, mengakibatkan <cryo>Cryo DMG</cryo>.",
       "1": "Talenta ini tidak dapat digunakan untuk bergerak ke belakang musuh yang bertubuh lebih besar.",
       "2": "<br/>",
-      "3": "<i>Mereka yang mengaku dosa pada Suster Rosaria tidak akan mendapat pengampunan. Sebaliknya, para pendosa akan menerima hukuman dingin yang menusuk tulang, masing-masing sebanding dengan berat dosa yang mereka lakukan.</i>"
+      "3": "<i>Mereka yang mengaku dosa pada Suster Rosaria tidak akan mendapatkan pengampunan. Sebaliknya, para pendosa akan menerima hukuman dingin yang menusuk tulang, masing-masing sebanding dengan berat dosa yang mereka lakukan.</i>"
     },
     "skillParams": {
       "0": "DMG Skill",
@@ -95,7 +95,7 @@
   "passive1": {
     "name": "Regina Probationum",
     "description": {
-      "0": "Saat Rosaria menyerang musuh dari belakang menggunakan <strong>Ravaging Confession</strong>, akan meningkatkan 12% CRIT Rate Rosaria selama 5 detik."
+      "0": "Saat Rosaria menyerang musuh dari belakang menggunakan <strong>Ravaging Confession</strong>, CRIT Rate Rosaria akan meningkat 12% selama 5 detik."
     }
   },
   "passive2": {

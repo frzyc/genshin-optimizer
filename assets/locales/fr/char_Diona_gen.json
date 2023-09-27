@@ -86,7 +86,7 @@
         " Restaure les PV des personnages présents dans la zone."
       ],
       "4": "<br/>",
-      "5": "<i>Une recette que même Diona juge inhumaine. L'avant-goût terrifiant est mieux laissé aux ennemis ; nous ne parlerons pas de l'arrière-goût particulièrement frais qui en découle.</i>"
+      "5": "<i>Une recette que même Diona juge inhumaine. L'avant-goût terrifiant est mieux laissé aux ennemis... Nous ne parlerons pas de l'arrière-goût particulièrement frais qui en découle.</i>"
     },
     "skillParams": {
       "0": "DGT compétence",
@@ -110,7 +110,7 @@
   "passive1": {
     "name": "Menu secret de La Queue de Chat",
     "description": {
-      "0": "Augmente de 10 % la VIT de déplacement des personnages sous la protection du bouclier généré par les <strong>Griffes Cryo</strong>. Leur consommation d'endurance est de plus réduite de 10 %."
+      "0": "Augmente de 10 % la VIT de déplacement des personnages sous la protection du bouclier généré par les <strong>Griffes Cryo</strong>. Leur consommation d'endurance diminue de plus de 10 %."
     }
   },
   "passive2": {
@@ -148,7 +148,7 @@
   "constellation4": {
     "name": "Mixologie",
     "description": {
-      "0": "Le temps de charge du tir visé de Diona est réduit de 60 % lorsqu'elle se trouve dans le champ de vapeur d'alcool de <strong>Cuvée spéciale</strong>."
+      "0": "Le temps de charge du tir visé de Diona diminue de 60 % lorsqu'elle se trouve dans le champ de vapeur d'alcool de <strong>Cuvée spéciale</strong>."
     }
   },
   "constellation5": {

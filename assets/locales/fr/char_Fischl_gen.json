@@ -119,7 +119,7 @@
   "passive3": {
     "name": "Jardin secret",
     "description": {
-      "0": "Réduit la durée d'une expédition de 25 % lorsqu'elle se déroule à Mondstadt."
+      "0": "Diminue la durée d'une expédition de 25 % lorsqu'elle se déroule à Mondstadt."
     }
   },
   "constellation1": {

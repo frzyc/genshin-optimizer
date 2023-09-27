@@ -135,7 +135,7 @@
     "name": "Procesión de las antorchas",
     "description": {
       "0": "Cuando Yoimiya asesta un golpe CRIT de <pyro>Daño Pyro</pyro>, obtiene un 25% de <pyro>Bono de Daño Pyro</pyro> durante 6 s.",
-      "1": "Este efecto se puede activar incluso cuando Yoimiya está en tu equipo pero no en combate."
+      "1": "Este efecto se puede activar incluso cuando Yoimiya está en tu equipo pero no en uso."
     }
   },
   "constellation3": {

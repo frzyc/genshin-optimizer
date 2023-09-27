@@ -154,7 +154,7 @@
   "constellation6": {
     "name": "Dedicándotelo todo",
     "description": {
-      "0": "Si un miembro de tu equipo ha sido derrotado cuando Bárbara está en tu equipo pero no en combate:",
+      "0": "Si un miembro de tu equipo ha sido derrotado cuando Bárbara está en tu equipo pero no en uso:",
       "1": [
         "El personaje revive automáticamente.",
         "Su vida se restaura en un 100%."

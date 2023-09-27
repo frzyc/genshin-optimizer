@@ -101,7 +101,7 @@
   "passive1": {
     "name": "Indução Pós-Choque",
     "description": {
-      "0": "Ao ser atingida por Ataques aplica o estado de Condutividade de <strong>Arco Violeta</strong> aos inimigos."
+      "0": "Ao ser atingida por Ataques Carregados aplica o estado de Condutividade de <strong>Arco Violeta</strong> aos inimigos."
     }
   },
   "passive2": {

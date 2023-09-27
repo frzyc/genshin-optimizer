@@ -83,7 +83,7 @@
       "6": "<br/>",
       "7": "L'état prend fin lorsque Xiao quitte le champ de bataille.",
       "8": "<br/>",
-      "9": "<i>En revêtant le Masque du Yaksha, Xiao prend la forme terrifiante du Gardien Yaksha Dompteur de démons. Mais un tel pouvoir a un prix ; aussi l'appelle-t-on : le Fléau du mal.</i>"
+      "9": "<i>En revêtant le Masque du Yaksha, Xiao prend la forme terrifiante du Gardien Yaksha Dompteur de démons. Mais un tel pouvoir a un prix... Aussi l'appelle-t-on : le Fléau du mal.</i>"
     },
     "skillParams": {
       "0": "Bonus ATQ normale/chargée/plongeante",
@@ -121,7 +121,7 @@
   "passive3": {
     "name": "Transcendance : Contrôleur de gravité",
     "description": {
-      "0": "Réduit la consommation d'endurance de vos personnages dans l'équipe de 20 % lors de l'escalade.",
+      "0": "Diminue la consommation d'endurance de vos personnages dans l'équipe de 20 % lors de l'escalade.",
       "1": "Ne peut pas être cumulé avec d'autres aptitudes passives aux effets identiques."
     }
   },

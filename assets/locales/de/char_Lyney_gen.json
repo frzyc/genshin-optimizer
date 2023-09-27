@@ -120,7 +120,7 @@
   "passive1": {
     "name": "Atemberaubende Darbietung",
     "description": {
-      "0": "Verbraucht der von Lyney abgeschossene <strong>Zauberrequisiten-Pfeil</strong> LP, so stellt die durch ihn beschworene Grinsekatzenmütze, wenn sie Gegner trifft, bei Lyney 3 Punkte Elementarenergie wieder her. Außerdem erhöht sich der verursachte Schaden basierend auf dem ANG um 80 %."
+      "0": "Verbraucht der von Lyney abgeschossene <strong>Zauberrequisiten-Pfeil</strong> LP, so stellt die durch ihn beschworene Grinsekatzenmütze, wenn sie Gegner trifft, bei Lyney 3 Punkte Elementarenergie wieder her und erhöht den verursachten Schaden um 80 % ANG."
     }
   },
   "passive2": {

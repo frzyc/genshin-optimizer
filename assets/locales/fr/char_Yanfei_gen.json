@@ -123,7 +123,7 @@
   "constellation1": {
     "name": "Plaidoyer convaincant",
     "description": {
-      "0": "Lorsque Yanfei utilise une attaque chargée, chaque sceau écarlate existant réduit sa consommation d'endurance de 10 % supplémentaires et augmente la RÉS à l'interruption lors de son déclenchement."
+      "0": "Lorsque Yanfei utilise une attaque chargée, chaque sceau écarlate existant diminue sa consommation d'endurance de 10 % supplémentaires et augmente la RÉS à l'interruption lors de son déclenchement."
     }
   },
   "constellation2": {

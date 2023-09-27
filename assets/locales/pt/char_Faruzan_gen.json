@@ -43,7 +43,7 @@
     "name": "Reino do Vento de Nasamjnin",
     "description": {
       "0": "Faruzan lança um poliedro que inflige <anemo>Dano Anemo em AdE</anemo> contra os inimigos próximos e obtém o efeito \"Aparição Tempestuosa\".",
-      "1": "Enquanto estiver no estado \"Aparição Tempestuosa\", o próximo disparo com mira totalmente carregado de Faruza consumirá o efeito \"Aparição Tempestuosa\" para disparar uma \"Flecha do Furacão Intenso\" que contém um vórtice de alta pressão. Esse disparo infligirá <anemo>Dano Anemo</anemo> baseado no Dano de Disparo com Mira totalmente carregado de \"Ataque Normal: Disparo com Reviravoltas\".",
+      "1": "Enquanto estiver no estado \"Aparição Tempestuosa\", o próximo disparo com mira totalmente carregado de Faruzan consumirá o efeito \"Aparição Tempestuosa\" para disparar uma \"Flecha do Furacão Intenso\" que contém um vórtice de alta pressão. Esse disparo infligirá <anemo>Dano Anemo</anemo> baseado no Dano de Disparo com Mira totalmente carregado de \"Ataque Normal: Disparo com Reviravoltas\".",
       "2": "<br/>",
       "3": "<strong>Armadilha da Ventania</strong>",
       "4": "A Flecha do Furacão Intenso desencadeará o efeito \"Armadilha da Ventania\" na posição, inimigo ou personagem que atingir. Esse efeito será removido após um breve intervalo de tempo, gerando um vórtice Anemo que inflige <anemo>Dano Anemo em AdE</anemo> e atrai os inimigos e objetos próximos. Se não atingir inimigos ou personagens, uma Armadilha da Ventania será gerada na posição atingida.",

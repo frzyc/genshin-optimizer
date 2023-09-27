@@ -103,25 +103,25 @@
   "passive1": {
     "name": "Volonté immuable",
     "description": {
-      "0": "Sous l'effet de la protection corvidée de <strong>Tempestrier tengu</strong>, la durée de charge du tir visé est réduite de 60 %."
+      "0": "Sous l'effet de la protection corvidée de <strong>Tempestrier tengu</strong>, la durée de charge du tir visé diminue de 60 %."
     }
   },
   "passive2": {
     "name": "Décorum",
     "description": {
-      "0": "Lorsque Tengu Juurai : Embuscade a touché un ennemi, Sara restaure 1,2 pt d'énergie élémentaire à tous les personnages de l'équipe tous les 100 % de recharge d'énergie dont elle dispose. Cet effet peut être déclenché une fois toutes les 3 s."
+      "0": "Lorsque Tengu Juurai : Embuscade a touché un ennemi, Sara restaure 1,2 pt d'énergie élémentaire à tous les personnages de l'équipe pour chaque tranche de 100 % de recharge d'énergie qu'elle possède. Cet effet peut être déclenché une fois toutes les 3 s."
     }
   },
   "passive3": {
     "name": "Arpentage des terres",
     "description": {
-      "0": "Réduit la durée d'une expédition de 25 % lorsqu'elle se déroule à Inazuma."
+      "0": "Diminue la durée d'une expédition de 25 % lorsqu'elle se déroule à Inazuma."
     }
   },
   "constellation1": {
     "name": "Œil de corbeau",
     "description": {
-      "0": "Lorsque Tengu Juurai a accordé aux personnages des bonus d'ATQ ou touché des ennemis, le TdR de <strong>Tempestrier tengu</strong> est réduit de 1 s.",
+      "0": "Lorsque Tengu Juurai a accordé aux personnages des bonus d'ATQ ou touché des ennemis, le TdR de <strong>Tempestrier tengu</strong> diminue de 1 s.",
       "1": "Cet effet peut être déclenché une fois toutes les 3 s."
     }
   },

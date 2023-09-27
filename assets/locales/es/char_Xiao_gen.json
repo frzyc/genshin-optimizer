@@ -130,7 +130,7 @@
   "constellation2": {
     "name": "Aniquilación: Flor de Kaleidos",
     "description": {
-      "0": "Cuando Xiao está en tu equipo pero no en combate, su Recarga de Energía aumenta en un 25%."
+      "0": "Cuando Xiao está en tu equipo pero no en uso, su Recarga de Energía aumenta en un 25%."
     }
   },
   "constellation3": {

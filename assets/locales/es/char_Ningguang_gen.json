@@ -44,14 +44,15 @@
     "name": "Pantalla de jade",
     "description": {
       "0": "Ninguang crea una Pantalla de jade, oro y obsidiana de gran opulencia, infligiendo <geo>Daño Geo en el AdE</geo>.",
-      "1": "<strong>Pantalla de jade</strong>",
-      "2": [
+      "1": "<br/>",
+      "2": "<strong>Pantalla de jade</strong>",
+      "3": [
         "Bloquea los proyectiles enemigos.",
         "La resistencia de la pantalla es proporcional a la Vida Máx. de Ninguang.",
         "La Pantalla de jade se considera una <geo>creación Geo</geo>, y puede ser usada para bloquear ciertos ataques, pero no se puede escalar. Solo puede existir una Pantalla de jade a la vez."
       ],
-      "3": "<br/>",
-      "4": "<i>El lienzo de las estrellas está escrito en esta pantalla de jade.</i>"
+      "4": "<br/>",
+      "5": "<i>El lienzo de las estrellas está escrito en esta pantalla de jade.</i>"
     },
     "skillParams": {
       "0": "Vida de la Pantalla de jade",

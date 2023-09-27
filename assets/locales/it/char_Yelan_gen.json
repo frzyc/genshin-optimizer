@@ -13,11 +13,11 @@
       "charged": {
         "0": "<strong>Attacco caricato</strong>",
         "1": "Effettua un <strong>attacco mirato</strong> più preciso con DAN aumentati.",
-        "2": "Mentre mira, sulla punta della freccia si accumulerà un flusso d'acqua. Una freccia torrenziale caricata al massimo infligge <hydro>DAN da Hydro</hydro>."
+        "2": "Mentre mira, sulla punta della freccia si accumula un flusso d'acqua. Una freccia torrenziale caricata al massimo infligge <hydro>DAN da Hydro</hydro>."
       },
       "breakthrough": {
         "0": "<strong>Squarcio</strong>",
-        "1": "Trascorsi 5 s fuori combattimento, Yelan entra nello stato Squarcio, che comporta una riduzione di un 80% del tempo di carica del suo attacco mirato, il quale, una volta a piena carica, permette a Yelan di scoccare una Freccia squarciante, che infligge <hydro>DAN da Hydro ad area</hydro> in base ai suoi PS max."
+        "1": "Trascorsi 5 s fuori da un combattimento, Yelan entra nello stato di Squarcio, che comporta una riduzione di un 80% del tempo di carica del suo attacco mirato, il quale, una volta a piena carica, permette a Yelan di scoccare una Freccia squarciante, che infligge <hydro>DAN da Hydro ad area</hydro> in base ai suoi PS max."
       },
       "plunging": {
         "0": "<strong>Attacco in picchiata</strong>",

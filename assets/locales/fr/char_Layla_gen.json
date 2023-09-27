@@ -131,7 +131,7 @@
   "constellation2": {
     "name": "Hégémonie de lumière",
     "description": {
-      "0": "Lorsqu'une étoile filante de <strong>Nuits de solennité</strong> touche un ennemi, Layla récupère 1 pt d'énergie. Chaque étoile filante peut restaurer l'énergie de Layla 1 fois de cette manière."
+      "0": "Lorsqu'une étoile filante de <strong>Nuits de solennité</strong> touche un ennemi, Layla récupère 1 pt d'énergie. Chaque étoile filante peut restaurer l'énergie de Layla une fois de cette manière."
     }
   },
   "constellation3": {
