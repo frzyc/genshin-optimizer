@@ -26,7 +26,7 @@ jobs:
     uses: ./.github/workflows/deploy-frontend.yml
     with:
       frontend_name: 'sr-frontend'
-      repo_full_name: ${{ github.event.pull_request.head.repo.full_name }}
+      repo_full_name: ${{ github.event.pull_request.head.repo }}
       ref: ${{ github.event.pull_request.head.ref }}
       deployment_name: ${{ github.event.number }}
       pr_repo: ${{ vars.PR_REPO }}
