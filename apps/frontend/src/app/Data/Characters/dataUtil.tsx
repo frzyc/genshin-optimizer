@@ -119,7 +119,7 @@ export function dmgNode(
         unit: '%',
       }),
       input.total[base],
-      ...(specialMultiplier ? [specialMultiplier] : [])
+      ...(specialMultiplier ? [infoMut(specialMultiplier, { unit: '%' })] : [])
     ),
     move,
     additional

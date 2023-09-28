@@ -137,6 +137,7 @@ export const characterIdMap: Record<
   10000083: 'Lynette',
   10000084: 'Lyney',
   10000085: 'Freminet',
+  10000087: 'Neuvillette',
   // 11000008: "TEMPLATE",
   // 11000009: "TEMPLATE",
   // 11000010: "TEMPLATE",

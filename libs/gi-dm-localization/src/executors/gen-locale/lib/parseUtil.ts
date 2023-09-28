@@ -127,8 +127,30 @@ export const parsingFunctions: {
         const [normal, charged, breakthrough, plunging] = strings
         return { normal, charged, breakthrough, plunging } as any
       }
+      // Jank for certain languages. Surely they will fix this
+      if (charkey === 'Neuvillette') {
+        const [normal, chargedLegal, charged, plunging] = strings
+        return {
+          normal,
+          chargedLegal,
+          charged,
+          chargedJudgment: {},
+          plunging,
+        } as any
+      }
     } else if (strings.length === 5) {
       const [, charkey] = keys as any
+      if (charkey === 'Neuvillette') {
+        const [normal, chargedLegal, charged, chargedJudgment, plunging] =
+          strings
+        return {
+          normal,
+          chargedLegal,
+          charged,
+          chargedJudgment,
+          plunging,
+        } as any
+      }
       if (charkey === 'Lyney') {
         const [normal, plunging, charged, grinMalkin, arkhe] = strings
         return { normal, charged, plunging, grinMalkin, arkhe } as any
