@@ -117,6 +117,7 @@ export function NodeFieldDisplay({
   let fieldVal = '' as Displayable
   if (oldValue !== undefined) {
     const diff = node.value - oldValue
+    const pctDiff = valueString(Math.abs(diff / oldValue), '%', node.info.fixed)
     fieldVal = (
       <span>
         {valueString(oldValue, node.info.unit, node.info.fixed)}
@@ -125,6 +126,11 @@ export function NodeFieldDisplay({
             {' '}
             {diff > 0 ? '+' : ''}
             {valueString(diff, node.info.unit, node.info.fixed)}
+            {(node.info.unit != "%" && oldValue != 0) ? (
+              " (" + pctDiff + ")"
+            ) : ( 
+              ''
+            )}
           </ColorText>
         ) : (
           ''
