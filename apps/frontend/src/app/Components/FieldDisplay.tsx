@@ -127,7 +127,7 @@ export function NodeFieldDisplay({
             {diff > 0 ? '+' : ''}
             {valueString(diff, node.info.unit, node.info.fixed)}
             {(node.info.unit != "%" && oldValue != 0) ? (
-              " (" + pctDiff + ")"
+              ` (${pctDiff})`
             ) : ( 
               ''
             )}
