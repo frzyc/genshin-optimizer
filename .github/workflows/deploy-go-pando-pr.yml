@@ -7,6 +7,7 @@ permissions:
   issues: write
   pages: write
   pull-requests: read
+  statuses: read
 
 on:
   pull_request_target:
@@ -22,7 +23,7 @@ on:
       - 'libs/sr-dm/**'
       - 'libs/sr-formula/**'
       - 'libs/sr-stats/**'
-    types: [opened, reopened, synchronize, ready_for_review]
+    types: [opened, reopened, synchronize]
 
 jobs:
   call-deploy-frontend:
