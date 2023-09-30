@@ -1,8 +1,10 @@
 name: Deploy GO (Pando) PR
 run-name: Deploy GO (Pando) for ${{ github.event.number }} - ${{ github.event.pull_request.title }}
+
 permissions:
-    contents: read
-    issues: write
+  contents: read
+  issues: write
+
 on:
   pull_request_target:
     branches:

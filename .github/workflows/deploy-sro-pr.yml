@@ -1,6 +1,10 @@
 name: Deploy SRO PR
 run-name: Deploy SRO for ${{ github.event.number }} - ${{ github.event.pull_request.title }}
 
+permissions:
+  contents: read
+  issues: write
+
 on:
   pull_request_target:
     branches:
@@ -27,7 +31,7 @@ jobs:
     with:
       frontend_name: 'sr-frontend'
       repo_full_name: ${{ github.event.pull_request.head.repo }}
-      ref: ${{ github.event.pull_request.head.ref }}
+      ref: ${{ github.event.pull_request.merge_commit_sha }}
       deployment_name: ${{ github.event.number }}
       pr_repo: ${{ vars.PR_REPO }}
     secrets: inherit
