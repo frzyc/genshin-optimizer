@@ -41,6 +41,7 @@ import Lyney from './Lyney'
 import Mika from './Mika'
 import Mona from './Mona'
 import Nahida from './Nahida'
+import Neuvillette from './Neuvillette'
 import Nilou from './Nilou'
 import Ningguang from './Ningguang'
 import Noelle from './Noelle'
@@ -121,6 +122,7 @@ const data = {
   Mika,
   Mona,
   Nahida,
+  Neuvillette,
   Nilou,
   Ningguang,
   Noelle,

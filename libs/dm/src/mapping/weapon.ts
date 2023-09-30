@@ -35,6 +35,7 @@ export const weaponIdMap: Record<number | string, WeaponKey> = {
   11424: 'WolfFang',
   11425: 'FinaleOfTheDeep',
   11426: 'FleuveCendreFerryman',
+  11427: 'TheDockhandsAssistant',
   11501: 'AquilaFavonia',
   11502: 'SkywardBlade',
   11503: 'FreedomSworn',
@@ -76,6 +77,7 @@ export const weaponIdMap: Record<number | string, WeaponKey> = {
   12418: 'MailedFlower',
   12424: 'TalkingStick',
   12425: 'TidalShadow',
+  12427: 'PortablePowerSaw',
   12501: 'SkywardPride',
   12502: 'WolfsGravestone',
   12503: 'SongOfBrokenPines',
@@ -147,6 +149,7 @@ export const weaponIdMap: Record<number | string, WeaponKey> = {
   14417: 'FruitOfFulfillment',
   14424: 'SacrificialJade',
   14425: 'FlowingPurity',
+  14426: 'BalladOfTheBoundlessBlue',
   14501: 'SkywardAtlas',
   14502: 'LostPrayerToTheSacredWinds',
   // 14503: "Lost Ballade",
@@ -160,6 +163,7 @@ export const weaponIdMap: Record<number | string, WeaponKey> = {
   // 14510: "",
   14511: 'AThousandFloatingDreams',
   14512: 'TulaytullahsRemembrance',
+  14514: 'TomeOfTheEternalFlow',
 
   //bow
   15101: 'HuntersBow',
