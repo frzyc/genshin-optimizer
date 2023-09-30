@@ -47,12 +47,9 @@ jobs:
           ENVFILE: ${{ secrets.ENVFILE }}
       - name: Output date
         id: output-date
-        # TODO: Verify this works
-        if: github.event_name != 'workflow_dispatch'
         run: echo "date=$(date -u)" >> $GITHUB_OUTPUT
       - name: Maintain comment
         uses: actions-cool/maintain-one-comment@v3
-        if: github.event_name != 'workflow_dispatch'
         with:
           body: |
             [${{ inputs.frontend_name }}] [${{ steps.output-date.outputs.date }}] - Building version ${{ github.sha }}
@@ -98,11 +95,9 @@ jobs:
           echo "Deployed $(git rev-parse HEAD) to https://$account.github.io/$repo/${{ inputs.deployment_name }}/${{ inputs.frontend_name }} (Takes 3-5 minutes after this completes to be available)"
       - name: Output date
         id: output-date2
-        if: github.event_name != 'workflow_dispatch'
         run: echo "date=$(date -u)" >> $GITHUB_OUTPUT
       - name: Maintain comment
         uses: actions-cool/maintain-one-comment@v3
-        if: github.event_name != 'workflow_dispatch'
         with:
           body: |
             [${{ inputs.frontend_name }}] [${{ steps.output-date2.outputs.date }}] - ${{ steps.export-url.outputs.url }}
