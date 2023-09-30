@@ -4,6 +4,7 @@ run-name: Deploy SRO for ${{ github.event.number }} - ${{ github.event.pull_requ
 permissions:
   contents: read
   issues: write
+  pull-requests: read
 
 on:
   pull_request_target:

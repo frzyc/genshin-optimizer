@@ -4,6 +4,7 @@ run-name: Deploy GO (WR) for ${{ github.event.number }} - ${{ github.event.pull_
 permissions:
   contents: read
   issues: write
+  pull-requests: read
 
 on:
   pull_request_target:

@@ -4,6 +4,7 @@ run-name: Deploy GO (Pando) for ${{ github.event.number }} - ${{ github.event.pu
 permissions:
   contents: read
   issues: write
+  pull-requests: read
 
 on:
   pull_request_target:
