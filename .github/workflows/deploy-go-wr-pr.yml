@@ -5,9 +5,7 @@ permissions:
   actions: read
   contents: read
   issues: write
-  pages: write
   pull-requests: read
-  statuses: read
 
 on:
   pull_request_target:
@@ -32,7 +30,7 @@ jobs:
     uses: ./.github/workflows/deploy-frontend.yml
     with:
       frontend_name: 'frontend'
-      repo_full_name: ${{ github.event.pull_request.head.repo }}
+      repo_full_name: ${{ github.event.pull_request.head.repo.full_name }}
       ref: ${{ github.event.pull_request.merge_commit_sha }}
       deployment_name: ${{ github.event.number }}
       pr_repo: ${{ vars.PR_REPO }}
