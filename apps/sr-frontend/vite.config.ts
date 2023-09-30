@@ -5,6 +5,7 @@ import { defineConfig } from 'vite'
 import viteTsConfigPaths from 'vite-tsconfig-paths'
 
 export default defineConfig({
+  base: '',
   cacheDir: '../../node_modules/.vite/sr-frontend',
 
   server: {

@@ -1,0 +1,35 @@
+name: Deploy GO (Pando) PR
+run-name: Deploy GO (Pando) for ${{ github.event.number }} - ${{ github.event.pull_request.title }}
+
+permissions:
+  actions: read
+  contents: read
+  issues: write
+  pull-requests: read
+
+on:
+  pull_request_target:
+    branches:
+      - master
+    paths-ignore:
+      - 'apps/frontend/**'
+      - 'apps/frontend-e2e/**'
+      - 'apps/sr-frontend/**'
+      - 'apps/sr-frontend-e2e/**'
+      - 'libs/sr-assets/**'
+      - 'libs/sr-consts/**'
+      - 'libs/sr-dm/**'
+      - 'libs/sr-formula/**'
+      - 'libs/sr-stats/**'
+    types: [opened, reopened, synchronize]
+
+jobs:
+  call-deploy-frontend:
+    uses: ./.github/workflows/deploy-frontend.yml
+    with:
+      frontend_name: 'gi-frontend'
+      repo_full_name: ${{ github.event.pull_request.head.repo.full_name }}
+      ref: ${{ github.event.pull_request.merge_commit_sha }}
+      deployment_name: ${{ github.event.number }}
+      pr_repo: ${{ vars.PR_REPO }}
+    secrets: inherit

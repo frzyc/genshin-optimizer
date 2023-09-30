@@ -1,0 +1,39 @@
+name: Deploy SRO PR
+run-name: Deploy SRO for ${{ github.event.number }} - ${{ github.event.pull_request.title }}
+
+permissions:
+  actions: read
+  contents: read
+  issues: write
+  pull-requests: read
+
+on:
+  pull_request_target:
+    branches:
+      - master
+    paths-ignore:
+      - 'apps/gi-frontend/**'
+      - 'apps/gi-frontend-e2e/**'
+      - 'apps/frontend/**'
+      - 'apps/frontend-e2e/**'
+      - 'libs/gi-assets/**'
+      - 'libs/gi-consts/**'
+      - 'libs/gi-dm-localization/**'
+      - 'libs/gi-formula/**'
+      - 'libs/gi-good/**'
+      - 'libs/gi-localization/**'
+      - 'libs/gi-stats/**'
+      - 'libs/gi-svgicons/**'
+      - 'libs/gi-util/**'
+    types: [opened, reopened, synchronize]
+
+jobs:
+  call-deploy-frontend:
+    uses: ./.github/workflows/deploy-frontend.yml
+    with:
+      frontend_name: 'sr-frontend'
+      repo_full_name: ${{ github.event.pull_request.head.repo.full_name }}
+      ref: ${{ github.event.pull_request.merge_commit_sha }}
+      deployment_name: ${{ github.event.number }}
+      pr_repo: ${{ vars.PR_REPO }}
+    secrets: inherit

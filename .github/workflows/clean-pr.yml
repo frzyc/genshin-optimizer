@@ -1,5 +1,5 @@
 name: Clean PR Deployment
-run-name: Clean deployment ${{ github.event.number }}${{ github.event.inputs.deployment_name }} - ${{ github.event.pull_request.title }}${{ github.event.inputs.ref }}
+run-name: Clean deployment ${{ github.event.number }}${{ github.event.inputs.deployment_name }} - ${{ github.event.pull_request.title }}
 
 on:
   pull_request:
@@ -53,3 +53,4 @@ jobs:
           body: |
             [${{ steps.output-date.outputs.date }}] - Deleted deployment
           body-include: '<!-- Created by actions-cool/maintain-one-comment -->'
+          update-mode: 'append'

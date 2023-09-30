@@ -16,7 +16,7 @@ interface IDisplayToolEntry {
   resinDate: number
   timeZoneKey: TimeZoneKey
 }
-export const defThreads = global.navigator?.hardwareConcurrency || 4
+export const defThreads = navigator?.hardwareConcurrency || 4
 function initialTabOptimize(): IDisplayToolEntry {
   return {
     resin: RESIN_MAX,
