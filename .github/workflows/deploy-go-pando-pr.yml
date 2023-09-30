@@ -25,7 +25,7 @@ jobs:
     with:
       frontend_name: 'gi-frontend'
       repo_full_name: ${{ github.event.pull_request.head.repo }}
-      ref: ${{ github.event.pull_request.head.ref }}
+      ref: ${{ github.event.pull_request.merge_commit_sha }}
       deployment_name: ${{ github.event.number }}
       pr_repo: ${{ vars.PR_REPO }}
     secrets: inherit
