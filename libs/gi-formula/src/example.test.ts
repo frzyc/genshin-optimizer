@@ -6,7 +6,6 @@ import {
   compileTagMapValues,
   detach,
   flatten,
-  read,
 } from '@genshin-optimizer/pando'
 import { Calculator } from './calculator'
 import { keys, values } from './data'
@@ -14,7 +13,6 @@ import type { Tag, TagMapNodeEntries } from './data/util'
 import {
   convert,
   enemyDebuff,
-  reader,
   selfBuff,
   selfTag,
   team,
@@ -72,6 +70,16 @@ describe('example', () => {
   const member0 = convert(selfTag, { member: 'member0', et: 'self' })
   const member1 = convert(selfTag, { member: 'member1', et: 'self' })
 
+  test('enumerate all tags', () => {
+    expect(Object.keys(member0).sort()).toEqual(Object.keys(selfTag).sort())
+    for (const [qt, values] of Object.entries(member0)) {
+      expect(values).toBe(member0[qt as keyof typeof member0])
+      for (const [q, v] of Object.entries(values)) {
+        // Swap order here to check if the order of query matters
+        expect(values[q as keyof typeof values]).toBe(v)
+      }
+    }
+  })
   test('calculate stats', () => {
     expect(calc.compute(member1.final.hp).val).toBeCloseTo(9479.7, 1)
     expect(calc.compute(member0.final.atk).val).toBeCloseTo(346.21, 2)
@@ -115,12 +123,12 @@ describe('example', () => {
      * }
      * ```
      */
-    const listing = calc.listFormulas({ member: 'member0' })
+    const listing = calc.listFormulas(member0.formula.listing).map((x) => x.tag)
 
     // Simple check that all tags are in the correct format
     const names: string[] = []
     for (const { name, move, ...tag } of listing.filter(
-      (x) => x.src === 'Nahida'
+      (x) => x.src === 'Nahida' && x.qt == 'formula' // exclude stats
     )) {
       names.push(name!)
       expect(name).toBeTruthy()
@@ -151,16 +159,18 @@ describe('example', () => {
     expect(listing.filter((x) => x.src === 'static').length).toEqual(5)
   })
   test('calculate final formulas', () => {
-    const tag = calc
-      .listFormulas({ member: 'member0' })
-      .find((x) => x.name === 'normal_0')!
-    expect(tag).toBeTruthy()
+    const read = calc
+      .listFormulas(member0.formula.listing)
+      .find((x) => x.tag.name === 'normal_0')!
+    const tag = read.tag
+
+    expect(read).toBeTruthy()
     expect(tag.src).toEqual('Nahida') // Formula from Nahida
     expect(tag.q).toEqual('dmg') // DMG formula
     expect(tag.name).toEqual('normal_0') // Formula name
 
     // Compute formula
-    const { val, meta } = calc.compute(reader.withTag(tag))
+    const { val, meta } = calc.compute(read)
     const { amp, move, ele, cata } = meta.tag!
 
     // Calculation result, reaction, element, etc
@@ -192,12 +202,9 @@ describe('example', () => {
   test('create optimization calculation', () => {
     // Step 1: Pick formula(s); anything that `calc.compute` can handle will work
     const nodes = [
-      read(
-        calc
-          .listFormulas({ member: 'member0' })
-          .find((x) => x.name === 'normal_0')!,
-        undefined
-      ),
+      calc
+        .listFormulas(member0.formula.listing)
+        .find((x) => x.tag.name === 'normal_0')!,
       member0.char.auto,
       member0.final.atk,
     ]
@@ -240,8 +247,8 @@ describe('example', () => {
   test.skip('debug formula', () => {
     // Pick formula
     const normal0 = calc
-      .listFormulas({ member: 'member1' })
-      .find((x) => x.name === 'normal_0')!
+      .listFormulas(member1.formula.listing)
+      .find((x) => x.tag.name === 'normal_0')!
 
     // Use `DebugCalculator` instead of `Calculator`, same constructor
     const debugCalc = new DebugCalculator(
@@ -251,6 +258,6 @@ describe('example', () => {
     )
 
     // Print calculation steps
-    console.log(debugCalc.debug(reader.withTag(normal0)))
+    console.log(debugCalc.debug(normal0))
   })
 })

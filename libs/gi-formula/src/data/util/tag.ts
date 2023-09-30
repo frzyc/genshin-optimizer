@@ -101,7 +101,6 @@ export const selfTag = {
     isActive: iso,
     weaponType: iso,
     critMode: fixed,
-    special: iso,
     cappedCritRate_: iso,
     count: isoSum,
     eleCount: fixed,
@@ -154,8 +153,9 @@ export function convert<V extends Record<string, Record<string, Desc>>>(
   v: V,
   tag: Omit<Tag, 'qt' | 'q'>
 ): { [j in keyof V]: { [k in keyof V[j]]: Read } } {
-  return reader.withTag(tag).withAll('qt', (r, qt) =>
-    r.withAll('q', (r, q) => {
+  return reader.withTag(tag).withAll('qt', Object.keys(v), (r, qt) =>
+    r.withAll('q', Object.keys(v[qt]), (r, q) => {
+      if (!v[qt][q]) console.log(v, qt, q)
       const { src, accu } = v[qt][q]
       // `tag.src` overrides `Desc`
       if (src && !tag.src) r = r.src(src)
@@ -199,7 +199,7 @@ function allCustoms<T>(
   qt: string,
   transform: (r: Read, q: string) => T
 ): Record<string, T> {
-  return reader.withTag({ et: 'self', src, qt }).withAll('q', transform)
+  return reader.withTag({ et: 'self', src, qt }).withAll('q', [], transform)
 }
 
 export const queryTypes = new Set([

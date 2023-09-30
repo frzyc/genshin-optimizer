@@ -166,7 +166,7 @@ function allCustoms<T>(
   qt: string,
   transform: (r: Read, q: string) => T
 ): Record<string, T> {
-  return reader.withTag({ et: 'self', src, qt }).withAll('q', transform)
+  return reader.withTag({ et: 'self', src, qt }).withAll('q', [], transform)
 }
 
 export const queryTypes = new Set([
