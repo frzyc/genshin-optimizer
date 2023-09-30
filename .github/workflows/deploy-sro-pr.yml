@@ -5,7 +5,7 @@ permissions:
   actions: read
   contents: read
   issues: write
-  pull-requests: read
+  pull-requests: write
 
 on:
   pull_request_target:
