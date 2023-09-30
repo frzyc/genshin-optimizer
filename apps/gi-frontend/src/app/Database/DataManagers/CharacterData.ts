@@ -137,7 +137,6 @@ export class CharacterDataManager extends DataManager<
       level,
       ascension,
       hitMode,
-      reaction,
       conditional,
       bonusStats,
       enemyOverride,
@@ -149,6 +148,7 @@ export class CharacterDataManager extends DataManager<
       compareData,
       customMultiTarget,
     }
+    if (reaction) char.reaction = reaction
     return char
   }
   override toCache(storageObj: ICharacter, id: CharacterKey): ICachedCharacter {
@@ -195,7 +195,6 @@ export class CharacterDataManager extends DataManager<
       level,
       ascension,
       hitMode,
-      reaction,
       conditional,
       bonusStats,
       enemyOverride,
@@ -207,6 +206,7 @@ export class CharacterDataManager extends DataManager<
       compareData,
       customMultiTarget,
     }
+    if (reaction) result.reaction = reaction
     return result
   }
   override toStorageKey(key: CharacterKey): string {
