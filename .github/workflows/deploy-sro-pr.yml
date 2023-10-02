@@ -33,7 +33,7 @@ jobs:
     with:
       frontend_name: 'sr-frontend'
       repo_full_name: ${{ github.event.pull_request.head.repo.full_name }}
-      ref: ${GITHUB_SHA}
+      ref: ${{ github.ref }}
       deployment_name: ${{ github.event.number }}
       pr_repo: ${{ vars.PR_REPO }}
     secrets: inherit
