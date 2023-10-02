@@ -82,7 +82,7 @@ export function compileTagMapValues<V>(
     }
     if (!current['']) current[''] = []
     current[''].push(value)
-    if (import.meta.env.DEV) {
+    if (true) {
       if (!current[debugTag]) current[debugTag] = []
       current[debugTag].push(tag)
     }

@@ -26,7 +26,7 @@ export class TagMapKeys {
       } = entry
       id[offset] |= word! // non-existent `value` is treated as zero
 
-      if (!import.meta.env.PROD && word === undefined)
+      if (true && word === undefined)
         throw `NonExistent tag ${category}:${value}`
     }
     return id
@@ -49,7 +49,7 @@ export class TagMapKeys {
       id[offset] |= word! // non-existent `value` is treated as zero
       maskArr[offset] |= mask
 
-      if (!import.meta.env.PROD && word === undefined)
+      if (true && word === undefined)
         throw `NonExistent tag ${category}:${value}`
     }
     return { id, mask: maskArr }
@@ -74,7 +74,7 @@ export class TagMapKeys {
       if (value === null) continue
       id[offset] |= word! // non-existent `value` is treated as zero
 
-      if (!import.meta.env.PROD && word === undefined)
+      if (true && word === undefined)
         throw `NonExistent tag ${category}:${value}`
     }
     return { id, firstReplacedByte }
