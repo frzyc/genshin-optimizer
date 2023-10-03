@@ -1,7 +1,7 @@
 import { ChatInputCommandInteraction, SlashCommandBuilder } from 'discord.js';
 import { IArtifact, ICharacter, IGOOD, IWeapon } from '@genshin-optimizer/gi-good';
 import type { TagMapNodeEntries } from '@genshin-optimizer/gi-formula';
-import { artifactsData, charData, convert, genshinCalculatorWithEntries, selfBuff, selfTag, translate, weaponData, withMember } from '@genshin-optimizer/gi-formula';
+import { artifactsData, charData, convert, enemyDebuff, genshinCalculatorWithEntries, selfBuff, selfTag, translate, weaponData, withMember } from '@genshin-optimizer/gi-formula';
 import { allStats } from '@genshin-optimizer/gi-stats'
 
 export const slashcommand = new SlashCommandBuilder()
@@ -58,7 +58,7 @@ export function getchardata(user : string, charname : string) : any {
     out.weapon = data['test'].weapons?.find(e => e.location === charname);
     out.artifacts = data['test'].artifacts?.filter(e => e.location === charname);
     out.target = data['test'].buildSettings?.find(e => e.id === charname);
-    console.log(JSON.stringify(out.target));
+    console.log(JSON.stringify(out.target.optimizationTarget));``
     const team: TagMapNodeEntries = [
       ...withMember(
         'member0',
@@ -77,13 +77,18 @@ export function getchardata(user : string, charname : string) : any {
           };
         }))
       ),
+      // Enemy
+      enemyDebuff.cond.cata.add('spread'),
+      enemyDebuff.cond.amp.add(''),
+      enemyDebuff.common.lvl.add(80),
+      enemyDebuff.common.preRes.add(0.1),
       selfBuff.common.critMode.add('avg'),
     ];
     const calc = genshinCalculatorWithEntries(team);
     const member0 = convert(selfTag, { member: 'member0', et: 'self' });
     const read = calc
       .listFormulas(member0.formula.listing)
-      .find((x) => x.tag.name === 'karma_dmg')!
+      .find((x) => x.tag.name === 'karma_dmg');
     return {
       hp: calc.compute(member0.final.hp).val,
       atk: calc.compute(member0.final.atk).val,
@@ -91,7 +96,8 @@ export function getchardata(user : string, charname : string) : any {
       eleMas: calc.compute(member0.final.eleMas).val,
       critRate: calc.compute(member0.final.critRate_).val,
       critDMG: calc.compute(member0.final.critDMG_).val,
-      karma_dmg: calc.compute(read).val
+      karma_dmg: read ? calc.compute(read).val : undefined,
+      karma_formula: read ? translate(calc.compute(read)).formula : undefined
     };
 }
 
@@ -105,8 +111,8 @@ export async function run(interaction : ChatInputCommandInteraction) {
     }
     catch (e) {
         console.log(e);
-        interaction.reply('Char not found');
+        interaction.reply(JSON.stringify(e, null, 2).slice(0, 2000));
         return;
     }
-    interaction.reply('```json\n'+JSON.stringify(chardata)+'```');
+    interaction.reply('```json\n'+JSON.stringify(chardata, null, 2)+'```');
 }
