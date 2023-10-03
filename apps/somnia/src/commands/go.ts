@@ -58,13 +58,14 @@ export function getchardata(user : string, charname : string) : any {
     out.weapon = data['test'].weapons?.find(e => e.location === charname);
     out.artifacts = data['test'].artifacts?.filter(e => e.location === charname);
     out.target = data['test'].buildSettings?.find(e => e.id === charname);
+    console.log(JSON.stringify(out.target));
     const team: TagMapNodeEntries = [
       ...withMember(
         'member0',
         ...charData(out.char as ICharacter),
         ...weaponData(out.weapon as IWeapon),
         ...artifactsData(out.artifacts.map((e : IArtifact) => {
-          const a = {
+          return {
             set: e.setKey,
             stats: [
               {key: e.mainStatKey, value: allStats.art.main[e.rarity][e.mainStatKey][e.level]},
@@ -74,21 +75,23 @@ export function getchardata(user : string, charname : string) : any {
               })
             ]
           };
-          console.log(JSON.stringify(a));
-          return a;
         }))
       ),
       selfBuff.common.critMode.add('avg'),
     ];
     const calc = genshinCalculatorWithEntries(team);
     const member0 = convert(selfTag, { member: 'member0', et: 'self' });
+    const read = calc
+      .listFormulas(member0.formula.listing)
+      .find((x) => x.tag.name === 'karma_dmg')!
     return {
       hp: calc.compute(member0.final.hp).val,
       atk: calc.compute(member0.final.atk).val,
       def: calc.compute(member0.final.def).val,
       eleMas: calc.compute(member0.final.eleMas).val,
       critRate: calc.compute(member0.final.critRate_).val,
-      critDMG: calc.compute(member0.final.critDMG_).val
+      critDMG: calc.compute(member0.final.critDMG_).val,
+      karma_dmg: calc.compute(read).val
     };
 }
 
