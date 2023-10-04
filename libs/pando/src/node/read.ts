@@ -30,20 +30,30 @@ export class TypedRead<T extends Tag, Subclass> implements Read {
     for (const [c, v] of Object.entries(tag)) this.register(c, v as T[typeof c])
     return this.ctor({ ...this.tag, ...tag }, this.ex)
   }
-  withAll<C extends keyof T>(cat: C): Record<T[C] & string, Subclass>
+  withAll<C extends keyof T>(
+    cat: C,
+    keys: (T[C] & string)[]
+  ): Record<T[C] & string, Subclass>
   withAll<C extends keyof T, V>(
     cat: C,
+    keys: (T[C] & string)[],
     transform: (r: Subclass, k: T[C] & string) => V
   ): Record<T[C] & string, V>
   withAll<C extends keyof T, V>(
     cat: C,
+    keys: (T[C] & string)[],
     transform: (r: Subclass, k: T[C] & string) => V | Subclass = (x) => x
   ): Record<T[C] & string, V | Subclass> {
-    return new Proxy(this, {
-      get(t, p: T[C] & string) {
-        return transform(t.with(cat, p), p)
-      },
-    }) as any
+    return new Proxy({} as Record<T[C] & string, V | Subclass>, {
+      ownKeys: (_) => keys,
+      get: (old, p: T[C] & string) =>
+        old[p] ?? (old[p] = transform(this.with(cat, p), p)),
+      getOwnPropertyDescriptor: (old, p: T[C] & string) => ({
+        enumerable: true,
+        configurable: true,
+        get: () => old[p] ?? (old[p] = transform(this.with(cat, p), p)),
+      }),
+    })
   }
   toEntry<V>(value: V): TagMapEntry<V, T> {
     return {

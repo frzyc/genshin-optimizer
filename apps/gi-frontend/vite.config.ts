@@ -4,6 +4,7 @@ import viteTsConfigPaths from 'vite-tsconfig-paths'
 import { resolve } from 'path'
 
 export default defineConfig({
+  base: '',
   cacheDir: '../../node_modules/.vite/gi-frontend',
 
   server: {

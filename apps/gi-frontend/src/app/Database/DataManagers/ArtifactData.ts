@@ -134,7 +134,7 @@ export class ArtifactDataManager extends DataManager<
       this.database.chars.setEquippedArtifact(art.location, art.slotKey, '')
     super.remove(key, notify)
   }
-  setProbability(id: string, probability?: number) {
+  setProbability(id: string, probability: number) {
     const art = this.get(id)
     if (art) this.setCached(id, { ...art, probability })
   }

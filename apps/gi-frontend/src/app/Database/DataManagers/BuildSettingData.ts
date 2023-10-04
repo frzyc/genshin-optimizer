@@ -177,23 +177,24 @@ export class BuildSettingDataManager extends DataManager<
         .map(([k, a]) => [k, [...new Set(a)]])
         .filter(([_, a]) => a.length)
     )
-    return {
+    const buildSetting: BuildSetting = {
       artSetExclusion,
       artExclusion,
       useExcludedArts,
       statFilters,
       mainStatKeys,
-      optimizationTarget,
       mainStatAssumptionLevel,
       excludedLocations,
       allowLocationsState,
       allowPartial,
       maxBuildsToShow,
-      plotBase,
       compareBuild,
       levelLow,
       levelHigh,
     }
+    if (optimizationTarget) buildSetting.optimizationTarget = optimizationTarget
+    if (plotBase) buildSetting.plotBase = plotBase
+    return buildSetting
   }
   override get(key: CharacterKey) {
     return super.get(key) ?? initialBuildSettings
@@ -210,13 +211,11 @@ const initialBuildSettings: BuildSetting = deepFreeze({
     goblet: [...artSlotsData['goblet'].stats],
     circlet: [...artSlotsData['circlet'].stats],
   },
-  optimizationTarget: undefined,
   mainStatAssumptionLevel: 0,
   excludedLocations: [],
   allowLocationsState: 'unequippedOnly',
   allowPartial: false,
   maxBuildsToShow: 5,
-  plotBase: undefined,
   compareBuild: true,
   levelLow: 0,
   levelHigh: 20,
