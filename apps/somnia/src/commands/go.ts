@@ -88,7 +88,8 @@ export function getchardata(user : string, charname : string) : any {
     const member0 = convert(selfTag, { member: 'member0', et: 'self' });
     const read = calc
       .listFormulas(member0.formula.listing)
-      .find((x) => x.tag.name === 'karma_dmg');
+      .find((x) => x.tag.name === 'karma_dmg')!
+    console.log(translate(calc.compute(read)).deps);
     return {
       hp: calc.compute(member0.final.hp).val,
       atk: calc.compute(member0.final.atk).val,
@@ -97,7 +98,7 @@ export function getchardata(user : string, charname : string) : any {
       critRate: calc.compute(member0.final.critRate_).val,
       critDMG: calc.compute(member0.final.critDMG_).val,
       karma_dmg: read ? calc.compute(read).val : undefined,
-      karma_formula: read ? translate(calc.compute(read)).formula : undefined
+      karma_formula: read ? translate(calc.compute(read)).deps.map(({name, formula}) => `${name} <= ${formula}`) : undefined
     };
 }
 
@@ -114,5 +115,5 @@ export async function run(interaction : ChatInputCommandInteraction) {
         interaction.reply(JSON.stringify(e, null, 2).slice(0, 2000));
         return;
     }
-    interaction.reply('```json\n'+JSON.stringify(chardata, null, 2)+'```');
+    interaction.reply('```json\n'+JSON.stringify(chardata, null, 2).slice(0, 1980)+'```');
 }
