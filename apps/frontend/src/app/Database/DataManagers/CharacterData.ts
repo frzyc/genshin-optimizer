@@ -18,15 +18,15 @@ import {
 import type { TriggerString } from '@genshin-optimizer/database'
 import type { IGOOD } from '@genshin-optimizer/gi-good'
 import { validateLevelAsc } from '@genshin-optimizer/gi-util'
-import { clamp, objKeyMap } from '@genshin-optimizer/util'
+import { clamp, deepClone, objKeyMap } from '@genshin-optimizer/util'
 import { validateCustomMultiTarget } from '../../PageCharacter/CustomMultiTarget'
 import type {
   CustomMultiTarget,
   ICachedCharacter,
   IGOCharacter,
 } from '../../Types/character'
-import type { ArtCharDatabase } from '../Database'
 import { DataManager } from '../DataManager'
+import type { ArtCharDatabase } from '../Database'
 import type { IGO, ImportResult } from '../exim'
 import { GOSource } from '../exim'
 
@@ -280,7 +280,7 @@ export class CharacterDataManager extends DataManager<
     const setEq = (k: CharacterKey) => {
       const char = super.get(k)
       if (!char) return
-      const equippedArtifacts = structuredClone(char.equippedArtifacts)
+      const equippedArtifacts = deepClone(char.equippedArtifacts)
       equippedArtifacts[slotKey] = artid
       super.setCached(k, { ...char, equippedArtifacts })
     }

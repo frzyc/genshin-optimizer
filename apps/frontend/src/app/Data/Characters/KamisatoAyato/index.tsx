@@ -14,12 +14,12 @@ import {
 } from '../../../Formula/utils'
 import KeyMap from '../../../KeyMap'
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
-import { range } from '../../../Util/Util'
 import { cond, stg, st } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import { charTemplates } from '../charTemplates'
 import type { ICharacterSheet } from '../ICharacterSheet.d'
 import { customDmgNode, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
+import { range } from '@genshin-optimizer/util'
 
 const key: CharacterKey = 'KamisatoAyato'
 const elementKey: ElementKey = 'hydro'
@@ -102,13 +102,26 @@ const skillStacks_dmgInc = lookup(
   Object.fromEntries(
     range(1, 5).map((stacks) => [
       stacks,
-      prod(
-        stacks,
-        subscript(input.total.skillIndex, dm.skill.stackHpDmgInc, {
-          unit: '%',
-        }),
-        input.total.hp
-      ),
+      // Only allow 5th stack for c2+
+      stacks === 5
+        ? greaterEq(
+            input.constellation,
+            2,
+            prod(
+              stacks,
+              subscript(input.total.skillIndex, dm.skill.stackHpDmgInc, {
+                unit: '%',
+              }),
+              input.total.hp
+            )
+          )
+        : prod(
+            stacks,
+            subscript(input.total.skillIndex, dm.skill.stackHpDmgInc, {
+              unit: '%',
+            }),
+            input.total.hp
+          ),
     ])
   ),
   naught
@@ -133,7 +146,6 @@ const c1Shun_dmg_ = greaterEq(
   equal(condC1OppHp, 'on', dm.constellation1.shunDmg_)
 )
 
-// Not sure what "Max HP increased by 50%" means
 const c2_hp_ = greaterEq(
   input.constellation,
   2,
@@ -338,28 +350,31 @@ const sheet: ICharacterSheet = {
         value: condSkillStacks,
         path: condSkillStacksPath,
         name: ct.ch('skill.namisenStacks'),
-        states: Object.fromEntries(
-          range(1, 5).map((stacks) => [
-            stacks,
-            {
-              name: st('stack', { count: stacks }),
-              fields: [
+        states: (data) =>
+          Object.fromEntries(
+            range(1, data.get(input.constellation).value >= 2 ? 5 : 4).map(
+              (stacks) => [
+                stacks,
                 {
-                  node: infoMut(skillStacks_dmgInc, {
-                    name: ct.ch('skill.shun_dmgInc'),
-                  }),
+                  name: st('stack', { count: stacks }),
+                  fields: [
+                    {
+                      node: infoMut(skillStacks_dmgInc, {
+                        name: ct.ch('skill.shun_dmgInc'),
+                      }),
+                    },
+                    {
+                      text: st('maxStacks'),
+                      value: (data) =>
+                        data.get(input.constellation).value >= 2
+                          ? dm.skill.maxStacks + dm.constellation2.extraStacks
+                          : dm.skill.maxStacks,
+                    },
+                  ],
                 },
-                {
-                  text: st('maxStacks'),
-                  value: (data) =>
-                    data.get(input.constellation).value >= 2
-                      ? dm.skill.maxStacks + dm.constellation2.extraStacks
-                      : dm.skill.maxStacks,
-                },
-              ],
-            },
-          ])
-        ),
+              ]
+            )
+          ),
       }),
       ct.condTem('constellation1', {
         value: condC1OppHp,

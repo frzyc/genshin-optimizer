@@ -27,6 +27,7 @@ import Dori from './Dori'
 import Eula from './Eula'
 import Faruzan from './Faruzan'
 import Fischl from './Fischl'
+import Freminet from './Freminet'
 import Ganyu from './Ganyu'
 import Gorou from './Gorou'
 import HuTao from './HuTao'
@@ -48,6 +49,7 @@ import Lyney from './Lyney'
 import Mika from './Mika'
 import Mona from './Mona'
 import Nahida from './Nahida'
+import Neuvillette from './Neuvillette'
 import Nilou from './Nilou'
 import Ningguang from './Ningguang'
 import Noelle from './Noelle'
@@ -109,6 +111,7 @@ const characters: Record<CharacterSheetKey, CharacterSheet> = {
   Eula,
   Faruzan,
   Fischl,
+  Freminet,
   Ganyu,
   Gorou,
   HuTao,
@@ -130,6 +133,7 @@ const characters: Record<CharacterSheetKey, CharacterSheet> = {
   Mika,
   Mona,
   Nahida,
+  Neuvillette,
   Nilou,
   Ningguang,
   Noelle,

@@ -87,6 +87,9 @@ describe('calculator', () => {
           const src = tag.src!,
             name = (value.op === 'tag' && value.tag['name']) || tag.name!
 
+          if (value.tag?.['qt'] === 'base' || value.tag?.['qt'] === 'premod')
+            continue // stat listing
+
           expect(src).toBeTruthy()
           expect(name).toBeTruthy()
 

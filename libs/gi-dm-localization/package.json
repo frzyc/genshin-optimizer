@@ -1,0 +1,6 @@
+{
+  "name": "@genshin-optimizer/gi-dm-localization",
+  "version": "0.0.1",
+  "type": "commonjs",
+  "executors": "./executors.json"
+}

@@ -5,7 +5,7 @@ import {
 } from '@genshin-optimizer/consts'
 import { useForceUpdate } from '@genshin-optimizer/react-util'
 import { iconInlineProps } from '@genshin-optimizer/svgicons'
-import { objKeyMap } from '@genshin-optimizer/util'
+import { deepClone, objKeyMap } from '@genshin-optimizer/util'
 import { CheckBox, CheckBoxOutlineBlank, Replay } from '@mui/icons-material'
 import BlockIcon from '@mui/icons-material/Block'
 import SettingsIcon from '@mui/icons-material/Settings'
@@ -37,12 +37,12 @@ import type { dataContextObj } from '../../../../../Context/DataContext'
 import { DataContext } from '../../../../../Context/DataContext'
 import { getArtSheet, setKeysByRarities } from '../../../../../Data/Artifacts'
 import { artifactDefIcon } from '../../../../../Data/Artifacts/ArtifactSheet'
-import { DatabaseContext } from '../../../../../Database/Database'
 import type { ArtSetExclusionKey } from '../../../../../Database/DataManagers/BuildSettingData'
 import {
   allArtifactSetExclusionKeys,
   handleArtSetExclusion,
 } from '../../../../../Database/DataManagers/BuildSettingData'
+import { DatabaseContext } from '../../../../../Database/Database'
 import { UIData } from '../../../../../Formula/uiData'
 import { constant } from '../../../../../Formula/utils'
 import type { SetNum } from '../../../../../Types/consts'
@@ -147,7 +147,7 @@ export default function ArtifactSetConfig({
   }, [conditional, characterDispatch])
   const setAllExclusion = useCallback(
     (setnum: number, exclude = true) => {
-      const artSetExclusion_ = structuredClone(artSetExclusion)
+      const artSetExclusion_ = deepClone(artSetExclusion)
       artKeysByRarity.forEach((k) => {
         if (exclude)
           artSetExclusion_[k] = [...(artSetExclusion_[k] ?? []), setnum]

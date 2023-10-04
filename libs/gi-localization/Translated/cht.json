@@ -1,0 +1,1609 @@
+{
+  "artifact": {
+    "editor": {
+      "title": "聖遺物編輯器",
+      "substat": {
+        "substatFormat": "副詞條 {{value}}",
+        "noSubstat": "無副詞條",
+        "selectSub": "選擇一個副詞條",
+        "error": {
+          "noCalc": "無法計算詞條數",
+          "noOverRoll": "副詞條不可超過 {{value}} 個"
+        },
+        "noRoll": "沒有詞條",
+        "noStat": "沒有數值",
+        "eff": "估值：<1></1>",
+        "nextRolls": "下次提升：",
+        "RollCount_one": "{{count}} Roll",
+        "RollCount_other": "提升 {{count}} 次"
+      },
+      "rarity": "稀有度",
+      "level": "等級",
+      "unknownPieceName": "未知的道具名稱",
+      "curSubEff": "目前估值",
+      "curSubEffDesc": "聖遺物每升級 4 次，就會得到一次副詞條的追加提升。<strong>估值</strong>會計算單一副詞條的提升比例。",
+      "maxSubEff": "最高估值",
+      "maxSubEffDesc": "聖遺物的<strong>最高副詞條估值</strong>指計算持續提升副詞條至最高數值的估計值。",
+      "preview": "聖遺物預覽",
+      "dupArt": "偵測到重複的聖遺物",
+      "upArt": "偵測到已升級的聖遺物",
+      "beforeEdit": "編輯前",
+      "btnSave": "鋤存聖遺物",
+      "btnAdd": "新增聖遺物",
+      "btnClear": "清除",
+      "btnRandom": "隨機化",
+      "btnUpdate": "更新聖遺物",
+      "clearPrompt": "目前編輯器裡有一個聖遺物。您確定要清除編輯器嗎？",
+      "unknownSetName": "未知的套裝名稱"
+    },
+    "artifactFilter": "聖遺物篩選",
+    "filterLocation": {
+      "inventory": "背包",
+      "currentlyEquipped": "當前裝備",
+      "location": "位置"
+    },
+    "button": {
+      "unequipArtifacts": "卸除聖遺物",
+      "deleteArtifacts": "刪除聖遺物",
+      "lockArtifacts": "Lock Artifacts",
+      "unlockrtifacts": "Unlock Artifacts"
+    },
+    "buttonHint": "注意：紅色選項僅用於<1>篩選後的聖遺物</1>",
+    "tipsOfTheDay": [
+      "4 星聖遺物的最高估值為 60% 左右。",
+      "聖遺物的最高估值一般隨著你對它的升級而降低。這很正常！",
+      "含有「1」的副詞條較難通過截圖掃描識別。",
+      "如果你的 6 次副詞條升級，強化了同一個副詞條，它會呈現紫色！",
+      "點選「詳情」以了解如何添加在遊戲內升級後的聖遺物。",
+      "現在您可以上傳多張聖遺物截圖進行識別！"
+    ],
+    "mainStat": "主詞條",
+    "slot": "欄位",
+    "slotName": {
+      "flower": "生之花",
+      "plume": "死之羽",
+      "sands": "時之沙",
+      "goblet": "空之杯",
+      "circlet": "理之冠"
+    },
+    "info": {
+      "title": "聖遺物編輯／管理指南",
+      "section1": "<0>副詞條升級次數</0><1> <1>副詞條升級次數</1>顯示在副詞條左側. 次數越多，副詞條顏色越深:<3></3>. </1><2>副詞條評分</2><3>副詞條評分指副詞條當前數值佔5<1></1>最高數值的比例. 如圖所示, 暴擊傷害最高升級值一次爲7.8%，在評分中： <3>5.8/7.8 = 69.2%.</3></3><4>當前評分 vs. 最高期望評分</4><5>當一個五<1></1>聖遺物經過 9 (4+5) 次總升級，且每次升級都是最大數值升級，此時被認爲是100%評分的聖遺物. 然而，大部分聖遺物沒有這麼幸運. 3>當前副詞條評分</3> 是該聖遺物與100%評分聖遺物相較的結果. <5>最高副詞條評分</5> 是一個聖遺物接下來的升級都獲得最高數值時，能獲得的評分. </5><6>鎖定聖遺物</6><7>通過鎖定聖遺物 <1></1>，該聖遺物不會被配裝生成器選入計算中. 同樣，已經被裝備的聖遺物是默認被排除的. </7>",
+      "section2": "<0>聖遺物編輯器</0><1>支持任意3<1></1> 到 5<3></3>聖遺物的全功能編輯器. 輸入副詞條後，能自動計算升級次數並評分. 同時編輯器會確保你的升級次數與聖遺物等級匹配. </1><2>截圖掃描</2><3>如果你不想手動輸入聖遺物，可以通過截圖掃描的方式識別輸入聖遺物. 在聖遺物編輯器界面，點擊 <1>Show Me How!</1> 可見使用方法. </3><4>自動聖遺物掃描儀</4><5>如果你在PC上玩原神，你可以下載使用聖遺物掃描工具來爲你掃描所有的聖遺物，並導入GO的 <1></1> 數據庫內. <3>點此</3> 獲取與 GO 兼容的掃描器列表.</5><6>重複/升級後聖遺物檢測</6><7> GO可以檢測出你導入的<1>重複</1> 聖遺物哦！原先擁有的聖遺物<3>升級後</3> 也會被檢測出來. 一旦檢測到重複/升級的聖遺物，會出現預覽界面允許你比較這些聖遺物 (見圖片).</7>",
+      "section3": "<0>聖遺物背包</0><1>這裡會顯示所有被加到 GO 的聖遺物。篩選器可以協助您更精簡地瀏覽目前擁有的聖遺物。</1><2>例如：尋找可消耗的聖遺物。</2><3>利用聖遺物篩選器及估值，您可以快速找到可以消耗的聖遺物。</3><4>在這個例子中，篩選器可以這樣設定：</4><5><0>限制聖遺物等級為 0-8 等。</0><1>背包內未鎖定的聖遺物。</1><2>固定生命值、固定防禦力及元素充能效率不納入估值計算當中。</2><3>依照最大估值進行升序排列。</3></0></5><6>這樣，聖遺物背包就能依照指定的詞條，由低到高篩出最低估值的聖遺物。</6>"
+    },
+    "sortMap": {
+      "level": "等級",
+      "efficiency": "目前估值",
+      "mefficiency": "最高估值"
+    },
+    "efficiencyFilter": {
+      "title": "用於估值計算的副詞條"
+    },
+    "resetFilters": "重設過濾器",
+    "setEffectNum": "{{setNum}} 件套裝",
+    "showingNum_one": "Showing <1>{{count}}</1> out of {{value}} Artifact",
+    "showingNum_other": "Showing <1>{{count}}</1> out of {{value}} Artifacts",
+    "edit": "編輯聖遺物",
+    "autocompleteLabels": {
+      "sets": "聖遺物套裝",
+      "mainStats": "主詞條",
+      "substats": "副詞條",
+      "set": "聖遺物套裝"
+    },
+    "substat_one": "{{count}} 個副詞條",
+    "substat_other": "{{count}} 個副詞條",
+    "addNew": "新增新的聖遺物",
+    "sub_one": "{{count}} 副詞條",
+    "sub_other": "{{count}} 副詞條",
+    "cantDeleteLock": "Cannot delete artifact because it is locked",
+    "equippedArt": "All Equipped Artifacts",
+    "artInInv": "All Unequipped Artifacts",
+    "locationsTooltip": "Disable \"All Equipped Artifacts\" to filter by specific characters"
+  },
+  "languages": {
+    "chs": "簡體中文",
+    "cht": "繁體中文",
+    "de": "德語",
+    "en": "英語",
+    "es": "西班牙語",
+    "fr": "法語",
+    "id": "印尼語",
+    "ja": "日語",
+    "ko": "韓語",
+    "pt": "西班牙語",
+    "ru": "俄語",
+    "th": "泰語",
+    "vi": "越南語",
+    "it": "Italian",
+    "tr": "Turkish"
+  },
+  "settings": {
+    "title": "設定",
+    "languageCard": {
+      "selectLanguage": "選擇語言",
+      "languageFormat": "語言：{{language}}"
+    },
+    "uploadCard": {
+      "title": "上傳資料檔",
+      "replaceDatabase": "更新資料檔",
+      "hint": "在此上傳 JSON 檔案...",
+      "hintPaste": "...或在底下貼上你的資料",
+      "error": {
+        "jsonParse": "無法解析 JSON 檔案。",
+        "unknown": "未知的檔案格式。",
+        "monaInvalid": "Invalid Mona-Uranai file format",
+        "goInvalid": "無效的 GO 備份檔案格式。"
+      },
+      "dbSource": "資料來源：",
+      "goodUpload": {
+        "title": "<strong>原神開放物件描述</strong> (GOOD) 格式"
+      },
+      "buttons": {
+        "open": "開啟",
+        "detectDups": "Detect Updates/Dupes",
+        "delNotInImport": "Delete items not in import"
+      },
+      "tooltip": {
+        "detectdup": "Find upgrade/duplicates in the GO inventory and merge the import into GO.",
+        "ignoreDup": "Do not detect upgrades/duplicates, the import is added on top of existing GO inventory.",
+        "delNotInImport": "Assume the import to be the full inventory. Items in GO Inventory that doesn't exist in the import are deleted.",
+        "keepNotInImport": "Assume the import is a partial inventory. Nothing will be deleted."
+      }
+    },
+    "count": {
+      "chars": "角色:",
+      "arts": "聖遺物：",
+      "weapons": "武器：",
+      "total": "總計：",
+      "new": "已新增：",
+      "updated": "已更新：",
+      "removed": "已移除：",
+      "unchanged": "未更動：",
+      "invalid": "無效：",
+      "upgraded": "Upgraded:",
+      "dbTotal": "Merged Total:",
+      "notInImport": "Not in Import:"
+    },
+    "DatabaseCard": {
+      "title": "資料庫",
+      "button": {
+        "download": "下載",
+        "copy": "剪貼簿",
+        "delete": "刪除",
+        "upload": "上傳",
+        "swap": "轉移"
+      },
+      "currentDB": "目前資料庫"
+    },
+    "sillyCard": {
+      "desc": "We <1>stole</1> borrowed (with permission) all the character assets from <strong>Silly Wisher</strong> and gene splice it into Genshin Optimizer.",
+      "toggle": {
+        "enabled": "Silly Optimizer Enabled",
+        "disabled": "Silly Optimizer Disabled"
+      }
+    }
+  },
+  "ui": {
+    "pageTitle": "原神最佳化工具",
+    "tabs": {
+      "artifacts": "聖遺物",
+      "characters": "角色",
+      "tools": "工具",
+      "weapons": "武器",
+      "doc": "文件",
+      "setting": "設定",
+      "scanner": "掃描器"
+    },
+    "social": {
+      "paypal": "Paypal",
+      "patreon": "Patreon",
+      "discord": "Discord"
+    },
+    "unselect": "取消選取",
+    "ascending": "升序",
+    "descending": "降序",
+    "loading": "載入中...",
+    "rightsDisclaimer": "原神最佳化工具不屬於 Hoyoverse，也未受該公司的認可。",
+    "appVersion": "$t(pageTitle) 版本：<1>{{version}}</1>",
+    "underConstruction": "建設中",
+    "error": "錯誤",
+    "reset": "重設",
+    "info": "資訊",
+    "inventory": "庫存",
+    "close": "關閉",
+    "sortMap": {
+      "new": "New",
+      "name": "名稱",
+      "level": "等級",
+      "rarity": "稀有度",
+      "efficiency": "目前估值",
+      "mefficiency": "最高估值",
+      "artsetkey": "聖遺物套裝",
+      "probability": "Roll Probability"
+    },
+    "link": {
+      "download": "下載連結",
+      "discord": "Discord 邀請連結"
+    },
+    "sortBy": "排列方式: ",
+    "delete": "刪除",
+    "locked": "已上鎖",
+    "unlocked": "未上鎖",
+    "refinement": "精鍊 {{value}}",
+    "selectlevel": "Select Level",
+    "gender": {
+      "F": "女",
+      "M": "男"
+    },
+    "statGroupKey": {
+      "basic_stats": "Basic Stats",
+      "elem_dmg_bonus": "Elemental DMG Bonuses",
+      "enemy_debuffs": "Enemy Debuffs",
+      "self_res": "Self Resistances",
+      "reaction_dmg_bonus": "Reaction DMG Bonuses",
+      "reaction_crit": "Reaction CRIT Bonuses",
+      "elem_dmgInc": "Elemental Damage Increases",
+      "talent_dmgInc": "Talent Damage Increases",
+      "elem_crit": "Elemental CRIT Bonuses",
+      "talent_dmg_bonus": "Talent DMG Bonuses",
+      "talent_crit": "Talent CRIT Bonuses",
+      "talent_level_boost": "Talent Level Boosts",
+      "base_stat_mod": "Base Stat Modifications",
+      "stamina_buffs": "Stamina Buffs",
+      "misc": "Misc. Stats"
+    },
+    "sillyPageTitle": "Silly Optimizer"
+  },
+  "char_Eula": {
+    "burstC": {
+      "name": "光降之劍",
+      "start5": "立即獲得 5 層能量",
+      "addStacks": "50% chance to get additional energy stacks from Normal Attacks, Elemental Skills and Elemental Bursts",
+      "dmg": "Lightfall Sword Explosion DMG",
+      "bonusScaling": "Lightfall Sword Bonus Scaling"
+    },
+    "c1C": {
+      "name": "After consuming <strong>Grimheart</strong> stacks",
+      "durationStack": "6s + 6s per stack, up to 18s"
+    },
+    "passive1": "Shattered Lightfall Sword DMG",
+    "c4C": {
+      "dmgBonus": "Lightfall Sword Explosion DMG Bonus"
+    }
+  },
+  "char_Noelle": {
+    "p4cd": "24s, -1s Every 4 hits",
+    "c6duration": "15s, +1s per kill, up to 10s",
+    "c4dmg": "Breastplate Shatter DMG"
+  },
+  "char_Venti": {
+    "addAimed": "Additional Aimed Shot DMG",
+    "addFullAimed": "Additional Fully-Charged Aimed Shot DMG",
+    "upcurrentDuration": "Upcurrent Duration",
+    "regenEner": "Regens 15 Energy to Venti after effect ends",
+    "c6": "Enemy's been hit by <strong>Wind's Grand Ode</strong>",
+    "q": "Regens 15 Energy to all characters of the absorbed element in the party.",
+    "c2": {
+      "hit": "Opponent hit",
+      "launched": "Opponent launched"
+    }
+  },
+  "sheet": {
+    "dmg": "傷害",
+    "lessPercentHP": "血量低於 {{percent}} %",
+    "hitOp": {
+      "normal": "After hitting an opponent with a Normal Attack",
+      "charged": "After hitting an opponent with a Charged Attack",
+      "plunging": "After hitting an opponent with a Plunging Attack",
+      "skill": "After hitting an opponent with an Elemental Skill",
+      "burst": "After hitting an opponent with an Elemental Burst",
+      "geo": "After dealing <geo>Geo DMG</geo>",
+      "anemo": "After dealing <anemo>Anemo DMG</anemo>",
+      "hydro": "After dealing <hydro>Hydro DMG</hydro>",
+      "cryo": "After dealing <cryo>Cryo DMG</cryo>",
+      "pyro": "After dealing <pyro>Pyro DMG</pyro>",
+      "electro": "After dealing <electro>Electro DMG</electro>",
+      "none": "After hitting an opponent",
+      "normalOrCharged": "After hitting an opponent with a Normal/Charged Attack",
+      "skillOrBurst": "After hitting an opponent with an Elemental Skill/Burst",
+      "crit": "After dealing CRIT DMG",
+      "normalChargedOrPlunging": "After hitting an opponent with a Normal/Charged/Plunging Attack",
+      "dendro": "After dealing <dendro>Dendro DMG</dendro>",
+      "normalEle": "After dealing Elemental DMG through a Normal Attack",
+      "ele": "After dealing Elemental DMG",
+      "weakSpot": "After hitting an enemy Weak Spot with a Charged Shot"
+    },
+    "eleAbsor": "Elemental Absorption",
+    "absorDot": "Absorption DoT",
+    "afterUse": {
+      "skill": "After using Elemental Skill",
+      "burst": "After using Elemental Burst",
+      "skillOrBurst": "After using Ele. Skill or Ele. Burst",
+      "skillPress": "$t(afterUse.skill) ($t(press))",
+      "skillHold": "$t(afterUse.skill) ($t(hold))"
+    },
+    "hits_one": "{{count}} Hit",
+    "hits_other": "{{count}} Hits",
+    "lessEqPercentHP": "HP less than or equal to {{percent}}%",
+    "greaterPercentHP": "HP greater than {{percent}}%",
+    "greaterEqPercentHP": "HP greater than or equal to {{percent}}%",
+    "lessPercentEnergy": "Energy less than {{percent}}%",
+    "enemyLessPercentHP": "Enemy HP less than {{percent}}%",
+    "enemyLessEqPercentHP": "Enemy HP less than or equal to {{percent}}%",
+    "enemyGreaterPercentHP": "Enemy HP greater than {{percent}}%",
+    "enemyGreaterEqPercentHP": "Enemy HP greater than or equal to {{percent}}%",
+    "stack_one": "{{count}} Stack",
+    "stack_other": "{{count}} Stacks",
+    "seconds_one": "{{count}} Second",
+    "seconds_other": "{{count}} Seconds",
+    "uses_one": "{{count}} Use",
+    "uses_other": "{{count}} Uses",
+    "afterDefeatEnemy": "After defeating an opponent",
+    "afterSprint": "After Sprint",
+    "skillCDRed": "Ele. Skill CD Reduction",
+    "burstCDRed": "Ele. Burst CD Reduction",
+    "triggerCD": "Trigger CD",
+    "incInterRes": "Increased resistance to interruption",
+    "charges": "Charges",
+    "cooldown": "Cooldown",
+    "addlCharges": "Additional charges",
+    "activeCharField": "Character is inside the field",
+    "opponentsField": "Opponents in field",
+    "takeDmg": "After taking DMG",
+    "infusion": {
+      "pyro": "Pyro Infusion",
+      "cryo": "Cryo Infusion",
+      "anemo": "Anemo Infusion",
+      "hydro": "Hydro Infusion",
+      "electro": "Electro Infusion",
+      "dendro": "Dendro Infusion",
+      "geo": "Geo Infusion"
+    },
+    "effectDuration": {
+      "pyro": "Pyro effect duration",
+      "cryo": "Cryo effect duration",
+      "anemo": "Anemo effect duration",
+      "hydro": "Hydro effect duration",
+      "electro": "Electro effect duration",
+      "dendro": "Dendro effect duration",
+      "geo": "Geo effect duration"
+    },
+    "durationInc": "Duration increase",
+    "base": "Base",
+    "stacks": "Stacks",
+    "protectedByShield": "Protected by a shield",
+    "protectedByShieldCrystal": "Protected by a shield created by Crystallize",
+    "staminaDec_": "Stamina Consumption Decrease",
+    "dmgAbsorption": {
+      "pyro": "Pyro DMG Absorption",
+      "cryo": "Cryo DMG Absorption",
+      "anemo": "Anemo DMG Absorption",
+      "hydro": "Hydro DMG Absorption",
+      "electro": "Electro DMG Absorption",
+      "dendro": "Dendro DMG Absorption",
+      "geo": "Geo DMG Absorption",
+      "none": "DMG Absorption"
+    },
+    "addlCharge": "Additional charge",
+    "conditional": "Conditional",
+    "maxStacks": "Maximum stacks",
+    "1set": "1 件套裝",
+    "2set": "2 件套裝",
+    "4set": "4 件套裝",
+    "activationStam": "Activation Stamina Consumption",
+    "stamDrain": "Stamina Drain",
+    "talents": {
+      "auto": "自動",
+      "skill": "Skill",
+      "burst": "Burst",
+      "passive": "Passive",
+      "passive1": "Ascension 1",
+      "passive2": "Ascension 4",
+      "passive3": "Passive",
+      "sprint": "Sprint",
+      "constellation1": "一命",
+      "constellation2": "二命",
+      "constellation3": "三命",
+      "constellation4": "四命",
+      "constellation5": "五命",
+      "constellation6": "六命"
+    },
+    "swirlReaction": {
+      "hydro": "After triggering a <hydro>Hydro</hydro> Swirl reaction",
+      "pyro": "After triggering a <pyro>Pyro</pyro> Swirl reaction",
+      "electro": "After triggering an <electro>Electro</electro> Swirl reaction",
+      "cryo": "After triggering a <cryo>Cryo</cryo> Swirl reaction"
+    },
+    "afterReaction": "After triggering an Elemental Reaction",
+    "aoeInc": "AoE increase",
+    "elementalReaction": {
+      "hydro": "After triggering a <hydro>Hydro-related</hydro> Elemental Reaction",
+      "electro": "After triggering an <electro>Electro-related</electro> Elemental Reaction"
+    },
+    "bonusScaling": {
+      "skill_": "Ele. Skill Bonus Scaling"
+    },
+    "energy": "Energy",
+    "teamBuff": "Team Buff",
+    "opponents_one": "{{count}} Opponent",
+    "opponents_other": "{{count}} Opponents",
+    "dmgMult": {
+      "normal": "Normal Att. DMG Mult.",
+      "charged": "Charged Att. DMG Mult.",
+      "skill": "Skill DMG Mult."
+    },
+    "stamRestored": "Stamina Restored",
+    "triggerQuota": "Trigger Quota",
+    "enemyAffected": {
+      "burningOrPyro": "Enemy is affected by <pyro>Burning</pyro> or <pyro>Pyro</pyro>",
+      "frozenOrCryo": "Enemy is <cryo>Frozen</cryo> or affected by <cryo>Cryo</cryo>",
+      "pyroOrElectro": "Enemy is affected by <pyro>Pyro</pyro> or <electro>Electro</electro>",
+      "hydroOrCryo": "Enemy is affected by <hydro>Hydro</hydro> or <cryo>Cryo</cryo>",
+      "hydroOrPyro": "Enemy is affected by <hydro>Hydro</hydro> or <pyro>Pyro</pyro>",
+      "hydroOrElectro": "Enemy is affected by <hydro>Hydro</hydro> or <electro>Electro</electro>",
+      "electro": "Enemy is affected by <electro>Electro</electro>",
+      "cryo": "Enemy is affected by <cryo>Cryo</cryo>"
+    },
+    "getElementalOrbParticle": "After picking up an Elemental Orb or Particle",
+    "notProtectedByShield": "While not protected by a shield"
+  },
+  "weapon_SongOfBrokenPines": {
+    "name": "Under the effects of Millennial Movement: Banner-Hymn"
+  },
+  "char_KaedeharaKazuha": {
+    "c1": "使用<strong>萬葉之一刀</strong>重設冷卻時間",
+    "c2": "Autumn Whirlwind field active",
+    "c6": {
+      "after": "After using <strong>Chihayaburu</strong> or <strong>Kazuha Slash</strong>"
+    },
+    "skillPlunge": "Midare Ranzan"
+  },
+  "char_Rosaria": {
+    "a1": "After striking an opponent from behind",
+    "a4": {
+      "name": "After using <strong>Rites of Termination</strong>"
+    }
+  },
+  "char_KamisatoAyaka": {
+    "afterSprintCryo": "After applying <cryo>Cryo</cryo> by Sprinting",
+    "snowflakeDMG": "Snowflake DMG",
+    "dmgBySnowflake": "Enemy's been hit by Frostflake Seki no To",
+    "c6Active": "Under the Usurahi Butou effect"
+  },
+  "weapon_MistsplitterReforged": {
+    "emblem": "Mistsplitter's Emblem"
+  },
+  "char_Yoimiya": {
+    "c1": "After defeating an enemy affected by <strong>Aurous Blaze</strong>",
+    "c2": "After dealing CRIT <pyro>Pyro DMG</pyro>",
+    "normPyroInfus": "<pyro>Normal Att. Pyro Infusion</pyro>",
+    "c6Key_": "Blazing Arrow Mult."
+  },
+  "char_RaidenShogun": {
+    "skill": {
+      "eye": "Carrying the Eye of Stormy Judgement",
+      "partyCost": "Energy Cost"
+    },
+    "burst": {
+      "resolves": "Resolve Stacks",
+      "resolveInitial_": "<electro>Musou no Hitotachi DMG Bonus Scaling</electro",
+      "resolveInfused_": "<electro>Musou Isshin DMG Bonus Scaling</electro>",
+      "burstDmg": "Musou no Hitotachi DMG"
+    },
+    "a4": {
+      "enerRest": "Bonus energy restoration from <strong>Musou Isshin</strong>",
+      "eleDMG": "Electro DMG Bonus"
+    },
+    "c4": {
+      "expires": "After the <strong>Musou Isshin</strong> state expires"
+    }
+  },
+  "char_Aloy": {
+    "skill": {
+      "coil": "Coil",
+      "rush": "Rushing Ice",
+      "rushState": "During Rushing Ice state (1 stack / s)"
+    },
+    "a1CondName": "When Aloy receives the Coil effect from <strong>Frozen Wilds</strong>",
+    "normCryoInfus": "<cryo>Normal Att. Cryo Infusion</cryo>"
+  },
+  "char_KujouSara": {
+    "skill": {
+      "ambush": "Under the effects of Tengu Juurai: Ambush"
+    },
+    "c6": {
+      "electroCritDmg": "Character has had their ATK increased by Tengu Juurai"
+    }
+  },
+  "char_SangonomiyaKokomi": {
+    "burst": "Donning the Ceremonial Garment",
+    "c2": "Characters with 50% or less HP",
+    "c6": "After Normal and Charged Attacks heal a character with 80% or more HP",
+    "c2SkillHeal": "<strong>Kurage's Oath</strong> Healing Bonus",
+    "c2BurstHeal": "<strong>Nereid's Ascension</strong> Healing Bonus"
+  },
+  "page_home": {
+    "intro": "The <strong>ultimate</strong> <3><i>Genshin Impact</i></3> calculator, GO will keep track of your artifact/weapon/character inventory, and help you create the best build based on how you play, with what you have.",
+    "quickLinksCard": {
+      "title": "快速連結",
+      "buttons": {
+        "tyGuide": {
+          "title": "Youtube Guide Playlist",
+          "tooltip": "了解如何使用原神最佳化工具"
+        },
+        "scanners": {
+          "title": "自動掃描器",
+          "tooltip": "自動掃描遊戲中聖遺物的第三方程式"
+        },
+        "kqm": {
+          "title": "KeqingMains",
+          "tooltip": "Theorycrafting & guides community"
+        },
+        "devDiscord": {
+          "title": "原神開發者 Discord",
+          "tooltip": "原神開發者社群"
+        },
+        "good": {
+          "title": "GOOD 文件",
+          "tooltip": "Genshin Open Object Descriptor Documentation"
+        },
+        "patchNotes": {
+          "title": "原神最佳化工具更新日誌",
+          "tooltip": "All patch notes for GO"
+        }
+      }
+    },
+    "inventoryCard": {
+      "title": "GO 庫存"
+    },
+    "vidGuideCard": {
+      "title": "Video Guides"
+    },
+    "teamCard": {
+      "title": "Meet the Team",
+      "jobTitle": {
+        "leadDev": "Lead Developer",
+        "dev": "Developer",
+        "mod": "Moderator",
+        "admin": "Admin",
+        "translator": "Translations Manager",
+        "TC": "TC Correspondant"
+      }
+    }
+  },
+  "page_scanner": {
+    "intro": "<0>Scanners</0><1>Scanners are Genshin tools that can automatically scan game data from screenshots or directly from the game.</1><2>Below are several scanners that have been tested with GO.</2><3>To upload the exported file, go to <1>Settings</1> page and upload your file in the <strong>Database Upload</strong> section.</3>",
+    "ik": {
+      "title": "Inventory Kamera",
+      "p1": "This light-weight app will scan all the characters, weapons and artifacts in your inventory. Follow the instructions in the app to set it up."
+    },
+    "am": {
+      "title": "「天目」",
+      "p1": "Scans all you artifacts in your inventory. Follow the instructions to capture the window and scan. Has both Chinese and English versions (download the <1>_EN.exe</1> version to scan in English). GO only accepts the <1>GOOD</1> format."
+    },
+    "as": {
+      "title": "AdeptiScanner",
+      "p1": "Scans all artifacts in your inventory. Has a manual scanning mode.",
+      "p2": "This scanner can also be configured for new artifacts in new game versions without needing an update."
+    },
+    "goodeng": "This app only scans in English and exports to <1>GOOD</1> format.",
+    "tosWarn": "As any tools that indirectly interact with the game, although their usage is virtually undetectable, <1>there could still be risk with using them.</1> User discretion is advised.",
+    "tags": {
+      "pc": "桌機",
+      "mobile": "Mobile",
+      "ps": "PlayStation",
+      "gameMani": "Automatic Control",
+      "materials": "Materials",
+      "characters": "角色",
+      "weapons": "Weapons",
+      "achievements": "Achievements"
+    },
+    "nb": {
+      "title": "Artiscan",
+      "p1": "這個基於網頁的掃描工具能夠擷取到你的遊戲視窗，並從螢幕截圖或影片中掃描。",
+      "p2": "Mobile/PlayStation can only be scanned from screenshots or video."
+    },
+    "ak": {
+      "title": "Akasha Scanner",
+      "p1": "Automatically scans artifacts as well as characters and weapons. Allows exporting of past scans as it keeps a history within the app. Scans only in English.",
+      "p2": "This app is also able to scan achievements for <1>Paimon.moe</1> and <1>Seelie.me</1>."
+    },
+    "seelieme": "This app can also scan materials for <1>Seelie.me</1>"
+  },
+  "weapon_Akuoumaru": {
+    "party": "Party energy capacity"
+  },
+  "artifact_ArchaicPetra": {
+    "condName": "After obtaining a Crystallize Shard"
+  },
+  "artifact_ViridescentVenerer": {
+    "condName": "Element Swirled"
+  },
+  "weapon_CinnabarSpindle": {
+    "name": "Effect is active"
+  },
+  "weapon_ElegyForTheEnd": {
+    "condName": "Under the effects of Millennial Movement: Farewell Song"
+  },
+  "weapon_MouunsMoon": {
+    "party": "Party energy capacity"
+  },
+  "weapon_ThrillingTalesOfDragonSlayers": {
+    "condName": "After switching from this character"
+  },
+  "weapon_WavebreakersFin": {
+    "party": "Party energy capacity"
+  },
+  "artifact_BlizzardStrayer": {
+    "condName": "Enemy is",
+    "condCryo": "Affected By Cryo",
+    "condFrozen": "Frozen"
+  },
+  "artifact_HuskOfOpulentDreams": {
+    "condName": "Curiosity"
+  },
+  "artifact_OceanHuedClam": {
+    "condName": "Max Sea-Dyed Foam DMG"
+  },
+  "artifact_ShimenawasReminiscence": {
+    "afterUseEnergy": "After using 15 energy"
+  },
+  "artifact_TinyMiracle": {
+    "condName": "After taking Elemental DMG"
+  },
+  "char_Albedo": {
+    "blossomCD": "Transient Blossom CD",
+    "blossomDmg_": "Transient Blossom DMG Bonus",
+    "isotomaOnField": "Solar Isotoma on field",
+    "enerPerBlossom": "Energy generated per Transient Blossom",
+    "c2Stacks": "Fatal Reckoning stacks consumed"
+  },
+  "char_Amber": {
+    "secondArrow": "(2nd Arrow)",
+    "critRateBonus": "<strong>Fiery Rain</strong> CRIT Rate Bonus",
+    "aoeRangeBonus": "<strong>Fiery Rain</strong> AoE Range Bonus",
+    "manualDetonationDmg": "Manual Detonation DMG",
+    "c6CondName": "After using <strong>Fiery Rain</strong>"
+  },
+  "char_AratakiItto": {
+    "a1": {
+      "name": "Consecutive Arataki Kesagiri uses"
+    },
+    "a4": {
+      "dmgInc": "Arataki Kesagiri DMG increase"
+    },
+    "c1": {
+      "initialGain": "Stacks of Superlative Superstrength gained",
+      "timedGain": "After 1s, stacks of Superlative Superstrength gained every 0.5s for 1.5s"
+    },
+    "c4": {
+      "name": "After the Raging Oni King state ends"
+    }
+  },
+  "char_Barbara": {
+    "passive1": {
+      "cond": "Within <strong>Let the Show Begin♪</strong>'s Melody"
+    },
+    "constellation2": {
+      "cond": "During <strong>Let the Show Begin♪</strong>"
+    }
+  },
+  "char_Beidou": {
+    "skillOneHit": "One hit DMG",
+    "skillTwoHit": "Two hit DMG",
+    "duringBurst": "During the duration of Stormbreaker",
+    "tidecallerMaxDmg": "After unleashing Tidecaller with its maximum DMG bonus",
+    "a4charge": "Reduced delay before unleashing Charged Attacks",
+    "c4dmg": "Stunning Revenge Electro DMG"
+  },
+  "char_Bennett": {
+    "skill": {
+      "lvl1CD": "Lvl 1 CD",
+      "lvl2CD": "Lvl 2 CD"
+    },
+    "c4DMG": "Unexpected Odyssey DMG",
+    "c6PyroInfusion": "<pyro>Sword, Claymore and Polearm Pyro Infusion"
+  },
+  "char_Chongyun": {
+    "infusion": "Sword, Claymore and Polearm Cryo Infusion",
+    "passive2": "Summoned Sword DMG",
+    "asc4Cond": "Opponent's been hit by Rimechaser Blade",
+    "constellation1": "Ice Blade DMG",
+    "constellation6": "Enemy has a lower percentage of their Max HP remaining",
+    "blades": "Spirit Blades summoned"
+  },
+  "char_Diluc": {
+    "skillB": {
+      "0": "2-Hit DMG (Boosted)",
+      "1": "3-Hit DMG (Boosted)"
+    }
+  },
+  "char_Diona": {
+    "skillDuration": "Duration per Paw",
+    "holdShield": "Hold DMG Absorption",
+    "a1shielded": "Character shielded by <strong>Icy Paws</strong>",
+    "holdCryoShield": "Hold Cryo DMG Absorption"
+  },
+  "char_Fischl": {
+    "a1Name": "Fully-Charged Aimed Shot on Oz - Thundering Retribution DMG",
+    "a2Name": "Thundering Retribution DMG",
+    "c1Name": "Joint Attack DMG",
+    "c4AoeDmg": "Additional AoE DMG",
+    "c6OzDmg": "Attack with Active Character DMG"
+  },
+  "char_Ganyu": {
+    "a1": {
+      "condName": "After firing a Frostflake Arrow",
+      "critRateInc": "Frostflake CRIT Rate Increase"
+    },
+    "c1": {
+      "condName": "Opponent's taken DMG from a Frostflake Arrow or Frostflake Arrow Bloom"
+    },
+    "c4": {
+      "lingerDuration": "Effect Linger Duration"
+    }
+  },
+  "char_HuTao": {
+    "paramita": {
+      "enter": "In the <strong>Paramita Papilio</strong> state",
+      "end": "After the <strong>Paramita Papilio</strong> state ends"
+    },
+    "constellation2": {
+      "applyBloodBlossom": "Applies <strong>Blood Blossom</strong> effect"
+    },
+    "constellation4": {
+      "condName": "After defeating an enemy affected by a <strong>Blood Blossom</strong>"
+    },
+    "constellation6": {
+      "condName": "After HP drops below 25% or suffering a lethal strike"
+    }
+  },
+  "char_Jean": {
+    "c1CondName": "Skill held for more than 1s",
+    "c1PullSpeed": "Pulling speed increased"
+  },
+  "char_Kaeya": {
+    "c2burstDuration": "Increase duration by 2.5s per opponent defeated during, up to 15s"
+  },
+  "char_Keqing": {
+    "c1DMG": "Thundering Might DMG",
+    "recast": "After recasting <strong>Stellar Restoration</strong>"
+  },
+  "char_Klee": {
+    "a1CondName": "Carrying an Explosive Spark",
+    "a1CondName2": "Next Charged Attack costs no Stamina",
+    "c2CondName": "Opponent's been hit by <strong>Jumpty Dumpty</strong>'s mines",
+    "c6CondName": "After Sparks 'n' Splash is used"
+  },
+  "char_Lisa": {
+    "a4C": "Opponent's been hit by <strong>Lightning Rose</strong>",
+    "c2C": "Holding <strong>Violet Arc</strong>"
+  },
+  "char_Mona": {
+    "omen": "Opponent is affected by Omen",
+    "hitOp": {
+      "affectedByOmen": "After hitting an opponent affected by Omen"
+    },
+    "frozenDuration": "<cryo>Frozen</cryo> Duration",
+    "uponSprint": "After using Illusory Torrent"
+  },
+  "char_Ningguang": {
+    "aoeGems": "Gems do AoE Geo DMG",
+    "starJadeStaminaCost": "50; With Star Jade: 0",
+    "skillReset": "Resets CD on shatter, every 6s",
+    "a4toggle": "After passing through Jade Screen",
+    "c4toggle": "Within 10m of Jade Screen",
+    "c6bonus": "Star Jade gained"
+  },
+  "char_Qiqi": {
+    "a1C": "After triggering an elemental reaction while under the effects of <strong>Adeptus Art: Herald of Frost</strong>"
+  },
+  "char_Razor": {
+    "electroSigil": "Electro Sigil",
+    "electroSigilAbsorbed": "Energy Regenerated if Electro Sigils are Cleared",
+    "opHitWithClawAndThunder": "Opponent's been hit by <strong>Claw and Thunder</strong> (Press)",
+    "electroSigilPerProc": "Electro Sigils per Proc"
+  },
+  "char_Sayu": {
+    "burstHits": "Number of Muji-Muji Daruma Activations",
+    "p2Heal": "Nearby character healing",
+    "c1Text": "Muji-Muji Daruma will ignore HP limits and can simultaneously attack nearby opponents and heal characters",
+    "c2KickPressDmg_": "Fuufuu Whirlwind Kick Press DMG Bonus",
+    "c2KickDmg_": "Fuufuu Whirlwind Kick DMG Bonus",
+    "c2Cond": "Time spent in the <strong>Fuufuu Windwheel</strong> state",
+    "c6DarumaDmgInc": "Muji-Muji Daruma DMG Inc.",
+    "c6DarumaHealInc": "Muji-Muji Daruma Heal Inc."
+  },
+  "char_Shenhe": {
+    "quill": "Icy Quills active",
+    "c4": "Skyfrost Mantra stack",
+    "pressQuota": "Press Trigger Quota",
+    "holdQuota": "Hold Trigger Quota",
+    "pressDuration": "Press Duration",
+    "holdDuration": "Hold Duration"
+  },
+  "char_Thoma": {
+    "a2": "Fiery Collapse DMG Increase",
+    "c2": "<strong>Crimson Ooyoroi</strong> Duration Increase",
+    "refreshBarrier": "After obtaining or refreshing a <strong>Blazing Barrier</strong>"
+  },
+  "char_Xiangling": {
+    "afterChili": "After picking up Guoba's chili pepper",
+    "explosionDMG": "Explosion DMG",
+    "afterGuobaHit": "Opponent's been hit by Guoba's attacks",
+    "duringPyronado": "Pyronado is active",
+    "c6Exception": "This does not affect <pyro>1-Hit Swing DMG</pyro>, <pyro>2-Hit Swing DMG</pyro>, or <pyro>Pyronado DMG</pyro>"
+  },
+  "char_Xiao": {
+    "burst": {
+      "lifeDrain_": "Life Drain",
+      "currentHPPerSec": "(Current HP/s)",
+      "incJump": "Greatly increases jumping ability",
+      "inBurst": "Under the effects of <strong>Bane of All Evil</strong>",
+      "stack": "Time spent in <strong>Bane of All Evil</strong>"
+    },
+    "skillStack": "Past <strong>Lemniscatic Wind Cycling</strong> uses"
+  },
+  "char_Xingqiu": {
+    "skillCond": "Protected by Rain Swords",
+    "burstCond": "Under the effects of Rainbow Bladework",
+    "c2Cond": "Opponent's been hit by Sword Rain"
+  },
+  "char_Xinyan": {
+    "skill": {
+      "pyroShield": {
+        "1": "Shield Level 1 Pyro DMG Absorption",
+        "2": "Shield Level 2 Pyro DMG Absorption",
+        "3": "Shield Level 3 Pyro DMG Absorption"
+      }
+    },
+    "p1": {
+      "desc": "Decreases hit quota for <strong>Sweeping Fervor</strong> by 1"
+    },
+    "p2": {
+      "activeShield": "Character is shielded by <strong>Sweeping Fervor</strong>"
+    },
+    "c2": {
+      "key_": "<strong>Riff Revolution</strong> Physical DMG CRIT Rate Bonus",
+      "shield": "Form a Level 3: Rave Shield when cast"
+    },
+    "c4": {
+      "swingHit": "Opponent's been hit with <pyro>Swing DMG</pyro>"
+    },
+    "c6": {
+      "duringCharge": "Performing a Charged Attack"
+    }
+  },
+  "char_YaeMiko": {
+    "c4": "Opponent's been hit by <strong>Sesshou Sakura</strong>'s lightning"
+  },
+  "char_Yanfei": {
+    "seals": ["0 seals", "1 seal", "2 seals", "3 seals", "4 seals"],
+    "perSeal": "(per seal)",
+    "maxSeals": "Maximum number of Scarlet Seals",
+    "charged": {
+      "0": "0-Seal DMG",
+      "1": "1-Seal DMG",
+      "2": "2-Seal DMG",
+      "3": "3-Seal DMG",
+      "4": "4-Seal DMG"
+    },
+    "burst": {
+      "grantMax": "Grants the maximum number of Scarlet Seals"
+    },
+    "passive1": {
+      "sealsConsumed": "Seals consumed by using a Charged Attack"
+    },
+    "passive2": {
+      "key": "Blazing Eye DMG"
+    },
+    "c1": {
+      "sealChargedStam_": "Charged Attack Stamina Consumption Decrease"
+    },
+    "c6": {
+      "maxSealInc": "Max number of Scarlet Seals increase"
+    }
+  },
+  "char_YunJin": {
+    "burst": "Under the effects of Flying Cloud Flag Formation",
+    "a4Inc_": "Increase due to party Elemental Types",
+    "c4": "After triggering the Crystallize reaction"
+  },
+  "char_Zhongli": {
+    "skill": {
+      "stele": "Stone Stele DMG",
+      "resonance": "Resonance DMG",
+      "maxStele": "Maximum number of Steles",
+      "nearShield": "Enemy is near the <strong>Jade Shield</strong>"
+    },
+    "p1cond": "After the <strong>Jade Shield</strong> has taken DMG",
+    "c6heal": "Maximum Health Regen"
+  },
+  "weapon_AlleyHunter": {
+    "condName": "Time spent Off-Field"
+  },
+  "weapon_AmosBow": {
+    "condName": "Arrow Flight Duration"
+  },
+  "weapon_BlackTassel": {
+    "condName": "Opponent is a Slime"
+  },
+  "weapon_Deathmatch": {
+    "condName": "Total Opponents Nearby"
+  },
+  "weapon_DragonspineSpear": {
+    "aoeDmg": "Everfrost Icicle DMG",
+    "cryoAffectedDmg": "DMG on <cryo>Cryo</cryo> Affected Opponents"
+  },
+  "weapon_FerrousShadow": {
+    "condName": "HP Meets Threshold",
+    "resistance": "Increased Charged Attack Interruption Resistance"
+  },
+  "weapon_FreedomSworn": {
+    "sigilsConsumed": "After consuming Sigils of Rebellion"
+  },
+  "weapon_Frostbearer": {
+    "aoeDmg": "Everfrost Icicle DMG",
+    "cryoAffectedDmg": "DMG on <cryo>Cryo</cryo> Affected Opponents"
+  },
+  "weapon_Hamayumi": {
+    "condName": "Energy is at 100%"
+  },
+  "weapon_MemoryOfDust": {
+    "atkEffInc": "ATK Effect Increase"
+  },
+  "weapon_PolarStar": {
+    "condName": "Ashen Nightstar"
+  },
+  "weapon_SerpentSpine": {
+    "takeMoreDmg": "Increase to DMG Taken"
+  },
+  "weapon_Slingshot": {
+    "condName": "Normal/Charged Attack Hit",
+    "less": "Within 0.3s of being fired",
+    "more": "After 0.3s of being fired"
+  },
+  "weapon_SnowTombedStarsilver": {
+    "aoeDmg": "Everfrost Icicle DMG",
+    "cryoAffectedDmg": "DMG on <cryo>Cryo</cryo> Affected Opponents"
+  },
+  "weapon_SummitShaper": {
+    "atkEffInc": "ATK Effect Increase"
+  },
+  "weapon_TheAlleyFlash": {
+    "condName": "No DMG Taken"
+  },
+  "weapon_TheUnforged": {
+    "atkEffInc": "ATK Effect Increase"
+  },
+  "weapon_TheWidsith": {
+    "aria": "Aria",
+    "interlude": "Interlude",
+    "recitative": "Recitative"
+  },
+  "weapon_ThunderingPulse": {
+    "condName": "Thunder Emblem"
+  },
+  "weapon_VortexVanquisher": {
+    "atkEffInc": "ATK Effect Increase"
+  },
+  "artifact_EchoesOfAnOffering": {
+    "mode": "Trigger Mode",
+    "avg": "Average",
+    "always": "Always"
+  },
+  "char_KamisatoAyato": {
+    "skill": {
+      "unableToAuto": "Unable to use Charged or Plunging attacks",
+      "namisenStacks": "Namisen stacks",
+      "shun_dmgInc": "<hydro>Shunsuiken DMG Increase</hydro>"
+    },
+    "passive1": {
+      "afterUse": "Namisen stacks gained after skill use",
+      "afterExplode": "Namisen stacks gained after the water illusion explodes"
+    },
+    "c1": {
+      "shun_dmg_": "<hydro>Shunsuiken DMG Bonus</hydro"
+    },
+    "c2": {
+      "addlStacks": "Max Namisen stack increase"
+    },
+    "c6": {
+      "dmg": "Boundless Origin DMG"
+    }
+  },
+  "char_KukiShinobu": {
+    "a4": {
+      "heal": "Ele. Skill Healing Increase"
+    },
+    "c4": {
+      "dmg": "Thundergrass Mark DMG"
+    }
+  },
+  "char_Yelan": {
+    "c2": {
+      "dmg": "Taking All Comers DMG"
+    },
+    "c4": {
+      "condName": "Number of opponents marked by Lifeline"
+    },
+    "c6": {
+      "dmg": "Mastermind Breakthrough Barb DMG"
+    }
+  },
+  "page_character": {
+    "addNew": "新增角色",
+    "tabs": {
+      "overview": "總覽",
+      "talent": "天賦",
+      "teambuffs": "Team Buffs",
+      "optimize": "Optimize",
+      "theorycraft": "理論分析"
+    },
+    "formulas": "Formulas",
+    "calculations": "Calculations",
+    "selectCharacter": "選擇一個角色",
+    "removeCharacter": "Are you sure you want to remove {{value}}?",
+    "delete": "刪除角色",
+    "teammates": "Teammates",
+    "showingNum_one": "Showing <1>{{count}}</1> out of {{value}} Character",
+    "showingNum_other": "Showing <1>{{count}}</1> out of {{value}} Characters",
+    "hitmode": {
+      "hit": "無暴擊傷害",
+      "avgHit": "平均傷害",
+      "critHit": "暴擊傷害"
+    },
+    "tabEquip": {
+      "swapWeapon": "替換武器",
+      "swapArt": "替換聖遺物",
+      "compare": "Compare with current Build",
+      "unequipArts": "卸下所有聖遺物"
+    },
+    "characterName": "角色名稱",
+    "teammate": "隊友 {{count}}",
+    "noReaction": "No Reactions",
+    "multiTarget": {
+      "title": "Multi-Optimization Target Config",
+      "addNewTarget": "Add New Custom target",
+      "addNewMTarget": "Add New Custom Multi-target",
+      "info1": "Note: Community created custom Multi-Optimization Targets can be found within the <1>GO Discord</1> or <3>KQM Multi-Opt Guide</3>, however the validity of such configurations cannot be guaranteed.",
+      "info2": "It is the responsibility of the user to confirm the accuracy for their own use case.",
+      "description": "Description",
+      "duplicate": "Duplicate",
+      "target_one": "<0>{{count}}</0> Target",
+      "target_other": "<0>{{count}}</0> Targets"
+    },
+    "addStats": {
+      "title": "Enemy Config + Bonus Stats",
+      "info": "You can use these fields to add buffs/debuffs not directly supported in GO, such as food buffs, abyss cards, or Superconduct. Please refer to the <1>Genshin Impact wiki</1> for specific values."
+    },
+    "tabTheorycraft": {
+      "substatType": {
+        "min": "Use minimum substat rolls",
+        "max": "Use maximum substat rolls",
+        "mid": "Use median substat rolls"
+      },
+      "maxTotalRolls": "A \"valid\" build can only have a maximum of 45 rolls.",
+      "maxRolls": "This substat can have a maximum of 30 rolls.",
+      "maxRollsMain": "Because at least one mainstat has the same stat, this substat can have a maximum of {{value}} rolls."
+    },
+    "tabTeambuff": {
+      "team_reso": "元素共鳴",
+      "resonance_tip": "隊伍中需要有 4 位角色才能觸發元素共鳴。"
+    }
+  },
+  "page_weapon": {
+    "showingNum_one": "Showing <1>{{count}}</1> out of {{value}} Weapon",
+    "showingNum_other": "Showing <1>{{count}}</1> out of {{value}} Weapons",
+    "edit": "編輯武器",
+    "weaponName": "武器名稱",
+    "removeWeapon": "您確定要移除 {{value}} 嗎？",
+    "addWeapon": "新增武器"
+  },
+  "weapon_AquaSimulacra": {
+    "condName": "Opponents nearby"
+  },
+  "weapon_FadingTwilight": {
+    "states": {
+      "evengleam": "Evengleam",
+      "afterglow": "Afterglow",
+      "dawnblaze": "Dawnblaze"
+    },
+    "condName": "Current state"
+  },
+  "weapon_HaranGeppakuFutsu": {
+    "consumed": "Stacks of Wavespike consumed"
+  },
+  "char_Collei": {
+    "sproutDmg": "Sprout DMG",
+    "miniAnbarDmg": "Miniature Cuilein-Anbar DMG"
+  },
+  "char_Dori": {
+    "c2MultiplierKey_": "Jinni Toop Multiplier",
+    "c2DmgKey": "Jinni Toop DMG",
+    "c4ConnectedBelowHp": "Character connected to Jinni and below 50% HP",
+    "c4ConnectedBelowEner": "Character connected to Jinni and below 50% Energy"
+  },
+  "char_ShikanoinHeizou": {
+    "takingField": "After taking the field"
+  },
+  "char_Tighnari": {
+    "p1Cond": "After firing a <strong>Wreath Arrow</strong>",
+    "c4ReactCond": "After <strong>Tanglevine Shaft</strong> triggers a <dendro>Dendro-based</dendro> reaction",
+    "c6DmgKey": "Additional Clusterbloom Arrow DMG",
+    "c6WreathRed": "<strong>Wreath Arrow</strong> charge time decrease"
+  },
+  "elementalResonance": {
+    "SprawlingGreenery": {
+      "cond2ele": "After triggering Burn, Catalyze, or Bloom reactions",
+      "cond3ele": "After triggering Aggravate, Spread, Hyperbloom, or Burgeon reactions"
+    },
+    "EnduringRock": {
+      "hitCond": "After dealing DMG to enemies while protected by a shield"
+    }
+  },
+  "page_character_optimize": {
+    "mainStat": {
+      "levelAssTooltip": {
+        "title": "主詞條等級強化",
+        "desc": "改變主詞條等級到可提升副詞條的最低特定等級。不能改變副詞條。"
+      },
+      "assumptionLvl": {
+        "no": "假設主詞條不提升等級",
+        "lvl": "假設主詞條至少為 {{lvl}} 級"
+      },
+      "title": "Main Stat Filter/Configuration"
+    },
+    "tcGraph": {
+      "vs": "Graph Optimization Target vs.",
+      "notSel": "Not Selected",
+      "downloadData": "下載資料",
+      "desc": "Using data from the builder, this will generate a graph to visualize Optimization Target vs. the selected Graph Target. The graph will show the maximum Optimization Target value per 0.01 of the selected Graph Target. Enabling this is optional, and doing so will slow down build times",
+      "showStatThr": "Show Stat Threshold Line",
+      "generatedBuilds": "Generated Builds",
+      "statReqThr": "Stat Requirement Threshold Line",
+      "currentBuild": "Current Build",
+      "highlightedBuilds": "Highlighted Builds",
+      "buildAlreadyInList": "Build is already in the list"
+    },
+    "levelFilter": "聖遺物等級過濾器",
+    "allowPartial": "Allow Partial Builds (<5 artifacts)",
+    "constraintFilter": {
+      "title": "Minimum Build Constraints",
+      "tooltip": "Set certain minimum requirements that generated builds must conform to. e.g. Generated builds must have at least 140% Energy Recharge."
+    },
+    "artSetConfig": {
+      "title": "聖遺物套裝偏好設定",
+      "setEffCond": "Set Effect Conditionals",
+      "enabled": "Enabled",
+      "allowed": "Allowed",
+      "excluded": "已排除",
+      "selected": "已選擇",
+      "2rainbow": "3-Rainbow",
+      "4rainbow": "5-Rainbow",
+      "allowAll2set": "允許所有兩件套裝",
+      "excludeAll2set": "排除所有兩件套裝",
+      "allowAll4set": "允許所有四件套裝",
+      "excludeAll4set": "排除所有四件套裝",
+      "alExRainbow": "<0>Allow <1></1></0> / <2>Exclude <1></1></2> Rainbow Builds",
+      "modal": {
+        "setCond": {
+          "title": "Artifact Set Conditional Effects",
+          "reset": "重設條件",
+          "text": "Some artifact set effects provide conditional stats. This window allows you to select those effects, so they can contribute stats when a build that satifies a set effect is calculated during optimization."
+        },
+        "ArtSetFilter": {
+          "title": "Artifact Sets <1>Allowed<1></1></1> / <3>Excluded<1></1></3>",
+          "intro": "You can allow/exclude which sets you want the builder to consider. In the following examples, <strong>A</strong> is on-set, and <strong>R</strong> is rainbow(off-set)",
+          "2set": "<0><0>Excluding<1></1> 2-Set</0></0> would exclude 2-Set builds: <2><0>AA</0>RRR</2> and <4><0>AAA</0>RR</4>.",
+          "4set": "<0><0>Excluding<1></1> 4-Set</0></0> would exclude 4-Set builds: <2><0>AAAA</0>R</2> and <4><0>AAAAA</0></4>.",
+          "2rain": "<0><0>Excluding<1></1> 3-Rainbow</0></0> would exclude 2-Set + 3-Rainbow builds: <2>AA<1>RRR</1></2> and <4>AAA<1>RR</1></4>.",
+          "4rain": "<0><0>Excluding<1></1> 5-Rainbow</0></0> would exclude full 5-Rainbow builds: <2><0>RRRRR</0></2>."
+        }
+      }
+    },
+    "buildDropdownDesc": "Decreasing the number of generated build will decrease build calculation time for large number of builds.",
+    "threadDropdownDesc": "Increasing the number of threads will speed up build time, but will use more CPU power.",
+    "noArtis": "Oops! It looks like you haven't added any artifacts to GO yet! You should go to the <1>Artifacts</1> page and add some!",
+    "build_one": "<0>{{count}}</0> Build",
+    "build_other": "<0>{{count}}</0> Builds",
+    "thread_one": "<0>{{count}}</0> Thread",
+    "thread_other": "<0>{{count}}</0> Threads",
+    "targetSelector": {
+      "selectOptTarget": "Select an Optimization Target",
+      "selectGraphTarget": "Select a Graph Target",
+      "invalidTarget": "INVALID TARGET",
+      "selectBuildTarget": "Select a Build Constraint Target"
+    },
+    "selectTargetFirst": "Select an Optimization Target first",
+    "generateButton": {
+      "cancel": "取消",
+      "generateBuilds": "Generate Builds"
+    },
+    "removeBuildButton": "Remove Build",
+    "theorycraftButton": "Theorycraft",
+    "currentlyEquippedBuild": "Currently Equipped",
+    "addBuildToList": "Add build to list",
+    "graphBuildLabel": "Graph #<1>{{count}}</1>",
+    "excludeArt": {
+      "title_exclude": "Excluded Artifacts",
+      "title_tooltip": "Add artifacts to this character's exclusion list. Artifacts in the exclusion list will not be considered for build generation.",
+      "excNum_one": "<0>{{count}}</0> artifact is excluded",
+      "excNum_other": "<0>{{count}}</0> artifacts are excluded",
+      "addExc": "Add artifact to this character's exclusion list",
+      "selExc": "Select artifact to add to this character's exclusion list",
+      "deSelectExc": "Click on an artifact to remove it from the exclusion list",
+      "excludeArtifactTip": "Excluding an artifact will prevent the build generator from using it for this character.",
+      "excluded": "This artifact is excluded.",
+      "included": "This artifact is not excluded.",
+      "usingNum": "Using <1>{{totalStr}}</1> excluded artifact(s)",
+      "button_txt": "Exclude Artifacts"
+    },
+    "excludeChar": {
+      "title": "Equipped Artifact Configuration",
+      "modal": {
+        "allow_all": "Add all shown characters to the allow list",
+        "disallow_All": "Remove all shown characters from the allow list"
+      },
+      "allowEquip": "Allow using artifacts from",
+      "usingNumTot_one": "Using <1>{{arts}}</1> artifacts from <3>{{count}}</3> character",
+      "usingNumTot_other": "Using <1>{{arts}}</1> artifacts from <3>{{count}}</3> characters",
+      "tooltip": "Add characters to this character's allow list. Characters in the allow list will be considered for build generation. You can also toggle between using only unequipped artifacts, your custom allow list, and using all equipped and unequipped artifacts.",
+      "chars": "Characters",
+      "artis": "Artifacts",
+      "states": {
+        "unequippedOnly": "Unequipped Only",
+        "customList": "Custom List",
+        "all": "All Artifacts"
+      },
+      "usingState": "Using"
+    },
+    "buildCompleted": "Build Completed",
+    "notifyTooltip": "Play a sound when builds finish generating. Will also show an alarm prompt when tabbed out.",
+    "bonusStats": {
+      "title": "Bonus Stats"
+    }
+  },
+  "weapon_ForestRegalia": {
+    "condName": "After picking up a Leaf of Consciousness"
+  },
+  "weapon_FruitOfFulfillment": {
+    "stackName": "Wax and Wane effect"
+  },
+  "weapon_Moonpiercer": {
+    "condName": "After picking up a Leaf of Revival"
+  },
+  "weapon_SapwoodBlade": {
+    "condName": "After picking up a Leaf of Consciousness"
+  },
+  "char_TravelerAnemo": {
+    "p1": "Wind Blade DMG",
+    "c6": "Enemy's been hit by <strong>Gust Surge</strong>",
+    "c4": "Reduces DMG taken while casting",
+    "initialEleDmg": "Initial Cutting Absorption DMG",
+    "maxEleDmg": "Max Cutting Absorption DMG",
+    "stormEleDmg": "Initial Storm Absorption DMG",
+    "stormEleMaxDmg": "Max Storm Absorption DMG"
+  },
+  "char_TravelerElectro": {
+    "skill": {
+      "amuletGenAmt": "Number of Abundance Amulets generated",
+      "absorb": "After absorbing an Abundance Amulet"
+    },
+    "burst": {
+      "3rd": "3rd Falling Thunder DMG",
+      "thunderCd": "Falling Thunder CD"
+    },
+    "passive2": {
+      "enerRech_": "Abundance Amulet Energy Recharge Effect Inc."
+    },
+    "c2": {
+      "thunderHit": "Opponent's been hit by <strong>Falling Thunder</strong>"
+    }
+  },
+  "char_TravelerGeo": {
+    "passive2": {
+      "key": "Frenzied Rockslide DMG"
+    },
+    "c2": {
+      "key": "Rockcore Meltdown DMG"
+    }
+  },
+  "page_newTab": {
+    "title": "🛑 偵測到新的 Optimizer 分頁 🛑",
+    "p1": "你似乎在其他分頁開啟了原神最佳化工具 💞。本工具沒有針對多分頁進行設計📵，這可能會導致：",
+    "symptom": {
+      "1": "不同分頁的資料不會同步🙃。",
+      "2": "資料庫損壞 💔。",
+      "3": "胃部不適🤰，並且讓原神最佳化工具的開發者們感到沮喪 😡。",
+      "4": "在極少數的情況下還會掛掉☠️。"
+    },
+    "p2": "我們透過這段訊息來阻止這些事情發生 📝，你有以下選擇：",
+    "choice": {
+      "1": "關閉目前的分頁 🔪，然後在新分頁繼續使用🆕。",
+      "2": "關閉新的分頁 ↩️，並確保目前的分頁是唯一的 GO 網頁 🔂，重新整理此分頁 🔄。"
+    },
+    "refresh": "重新整理頁面"
+  },
+  "char_Candace": {
+    "hydroInfusion": "<hydro>Sword, Claymore and Polearm Hydro Infusion</hydro>"
+  },
+  "char_Cyno": {
+    "p1Dmg": "Duststalker Bolt DMG",
+    "judication": "Triggering the Judication effect",
+    "burstNormalDmgInc": "Pactsworn Pathclearer's Normal Attack DMG Inc.",
+    "boltDmgInc": "Duststalker Bolt DMG Inc."
+  },
+  "char_Nilou": {
+    "skill": {
+      "dance1": "Sword Dance 1-Hit DMG",
+      "dance2": "Sword Dance 2-Hit DMG",
+      "whirl1": "Whirling Steps 1-Hit DMG",
+      "whirl2": "Whirling Steps 2-Hit DMG",
+      "wheel": "Water Wheel DMG"
+    },
+    "passive1": {
+      "underChaliceEffect": "Under Golden Chalice's Bounty",
+      "notDendroHydroTeam": "Hint: Set your team with only Dendro and Hydro characters to see additional conditionals and effects",
+      "condName": "After being hit by a <dendro>Dendro attack</dendro> while affected by Golden Chalice's Bounty",
+      "bountifulCores": "Bloom reaction will create Bountiful Cores"
+    },
+    "c4": {
+      "condName": "After the third dance step of Pirouette hits opponents"
+    }
+  },
+  "char_Nahida": {
+    "karmaDmg_": "Tri-Karma Purification DMG Bonus",
+    "karmaCritRate_": "Tri-Karma Purification Crit Rate Bonus",
+    "karmaIntervalDec": "Tri-Karma Purification Trigger Interval Decrease",
+    "noBurstEffect": "Hint: No burst effects active. Enable C1 and/or add <pyro>Pyro</pyro>, <electro>Electro</electro>, and/or <hydro>Hydro</hydro> teammates",
+    "partyInBurst": "Party in field",
+    "c1Key": "Additional <pyro>Pyro</pyro>, <electro>Electro</electro>, and <hydro>Hydro</hydro> members for <strong>Shrine of Maya</strong>'s bonus",
+    "c2": {
+      "bloomCondName": "Opponent marked by <strong>Seeds of Skandha</strong>",
+      "qasCondName": "Opponent affected by Quicken, Aggravate, or Spread after being marked by <strong>Seeds of Skandha</strong"
+    },
+    "c4CondName": "Nearby opponents affected by <strong>All Schemes To Know</strong>'s Seeds of Skandha",
+    "c6KarmicDmg": "Karmic Oblivion DMG"
+  },
+  "artifact_FlowerOfParadiseLost": {
+    "condName": "After triggering Bloom, Hyperbloom or Burgeon"
+  },
+  "char_Faruzan": {
+    "giftCondName": "Affected by Prayerful Wind's Benefit",
+    "a4CondName": "Under the Hurricane Guard effect",
+    "c2DurationInc": "Dazzling Polyhedron duration increase",
+    "c6Arrow": "Applies Pressurized Collapse upon dealing DMG",
+    "baleCondName": "Opponent is affected by Perfidious Wind's Bale"
+  },
+  "char_Layla": {
+    "starDmgInc": "Shooting Star DMG Increase",
+    "c1ShieldBonusKey_": "Fortress of Fantasy Bonus",
+    "c4CondKey": "Under the Dawn Star effect",
+    "starDmg_": "Shooting Star DMG Bonus",
+    "slugDmg_": "Starlight Slug DMG Bonus",
+    "starInterval_": "Night Star Creation Interval"
+  },
+  "char_Wanderer": {
+    "windfavoredState": "While in the <strong>Windfavored</strong> state",
+    "p1": {
+      "pyroCondName": "<strong>Hanega: Song of the Wind</strong> comes into contact with <pyro>Pyro</pyro>",
+      "cryoCondName": "<strong>Hanega: Song of the Wind</strong> comes into contact with <cryo>Cryo</cryo>"
+    },
+    "p2Dmg": "Wind Arrow DMG",
+    "c1BonusKey": "Wind Arrow DMG Bonus Scaling",
+    "c2CondName": "Points of difference between maximum and current Kuugoryoku Points",
+    "c6Key": "Shugen: The Curtains' Melancholic Sway Mult."
+  },
+  "weapon_ToukabouShigure": {
+    "condName": "Opponent inflicted with Cursed Parasol"
+  },
+  "char_Alhaitham": {
+    "withMirrors": "In possession of Chisel-Light Mirrors",
+    "debateStacks": "After generating Chisel-Light Mirrors",
+    "mirrorsConsumed": "Mirrors consumed after unleashing <strong>Particular Field: Fetters of Phenomena</strong>",
+    "projectionAttack_dmg_": "Projection Attack DMG Bonus",
+    "excessMirror": "After generating a Chisel-Light Mirror when their amount has reached its limit",
+    "projectionDmg": "Projection Attack DMG"
+  },
+  "char_Yaoyao": {
+    "inExplosionAoE": "After being in a <strong>White Jade Radish</strong> explosion's AoE",
+    "inLegacy": "In Adeptal Legacy state",
+    "megaDmg": "Mega Radish DMG",
+    "megaHeal": "Mega Radish Healing"
+  },
+  "page_error": {
+    "title": "🛑Unexpected Error Occurred🛑",
+    "p1.1": "GO has experienced an unexpected error. This is probably our fault, so please help us help you!",
+    "p1.2": "Here are some things you can try to resolve the issue:",
+    "fixes": {
+      "1": "Refresh the page",
+      "2": "Disable any extensions and refresh again",
+      "3": "Download your DB(s) from below and keep it somewhere safe. Click the 'Delete ALL GO Data' button and reupload your DB(s)"
+    },
+    "p2": "If you did the above and still managed to get back here, please submit a report to our GitHub Issues page, or to our Bug Reports channel on our Discord",
+    "report": {
+      "1": "Download your DB(s) from below",
+      "2": "Copy the report text from the box below",
+      "3": "Click <1>here</1> to report on GitHub. Paste the text in the description, fill in the reproduction steps, and include your JSON files (you might need to rename them to end with '.txt')",
+      "4": "Or click <1>here</1> to report on Discord. Open the #🐛bug-reports channel, create a new thread and paste the text in the message box. Fill in the reproduction steps and upload your JSON files."
+    },
+    "refresh": "Refresh Page",
+    "caption": "Live footage of our engineers investigating the problem",
+    "confirmNuke": "Are you sure you want to delete ALL GO data? This is irreversible!",
+    "finishNuke": "Wiped all GO data. Refreshing page.",
+    "nuke": "Delete ALL GO Data"
+  },
+  "char_Dehya": {
+    "inFieldAndTakeDmg": "After an active character takes damage within the Fiery Sanctum field",
+    "field_dmg_": "Fiery Sanctum DMG Bonus",
+    "initialHeal": "Initial Healing",
+    "dotHeal": "Additional Healing",
+    "critHitDuringBurst": "After Flame-Mane's Fist deals a CRIT hit"
+  },
+  "char_Mika": {
+    "inSoulwind": "In the Soulwind state",
+    "numDetectorStacks": "Detector",
+    "incDetectorStacks": "Max. Detector stacks Inc."
+  },
+  "weapon_MailedFlower": {
+    "condName": "After hitting an opponent with an Elemental Skill or triggering an Elemental Reaction"
+  },
+  "artifact_NymphsDream": {
+    "condName": "Mirrored Nymph"
+  },
+  "char_Somnia": {
+    "name": "Somnia",
+    "title": "Creation of Simulated Cognition",
+    "description": "A combination of an array of concepts. She exists in a variety of states and phases. Is she even real?",
+    "constellationName": "Mathematica Felina",
+    "auto": {
+      "name": "Astral Abacus",
+      "fields": {
+        "normal": {
+          "0": "<strong><strong>Normal Attack</strong>",
+          "1": "Performs up to 4 consecutive attacks, launching beads that deal <electro>Electro DMG</electro> from her Astral Abacus."
+        },
+        "charged": {
+          "0": "<strong>Charged Attack</strong>",
+          "1": "Consumes a certain amount of Stamina to charge and unleash a continuous stream of Electro beads, dealing <electro>Electro DMG</electro> to up to 4 targets every 0.3s",
+          "2": "Somnia gains resistance to interruption and is free to move while using her Charged Attack."
+        },
+        "plunging": {
+          "0": "<strong>Plunging Attack</strong>",
+          "1": "Fires Electro beads at the ground, dealing <electro>AoE Electro DMG</electro> upon impact."
+        }
+      },
+      "skillParams": {
+        "0": "1-Hit DMG",
+        "1": "2-Hit DMG",
+        "2": "3-Hit DMG",
+        "3": "4-Hit DMG",
+        "4": "Charged Attack Stream DMG",
+        "5": "Charged Attack Stamina Cost",
+        "6": "Plunge DMG",
+        "7": "Low/High Plunge DMG"
+      }
+    },
+    "skill": {
+      "name": "Cosmic Calculator",
+      "description": {
+        "0": "Somnia condenses immense energy from her Astral Abacus to create an explosion that deals <electro>AoE Electro DMG</electro> and create a Self-Containing Sigil with undefinable contents above her head.",
+        "1": "The Self-Containing Sigil grants her the Schrödinger Superposition effect.",
+        "2": "<br/>",
+        "3": "<strong>Schrödinger Superposition</strong>",
+        "4": "DMG dealt by Somnia's Normal and Charged Attacks is increased based on her Elemental Mastery.",
+        "5": "Schrödinger Superposition expires after Self-Containing Sigil's duration ends or when Somnia leaves the field."
+      },
+      "skillParams": {
+        "0": "Skill DMG",
+        "1": "Duration",
+        "2": "CD"
+      }
+    },
+    "burst": {
+      "name": "Parallax Paws",
+      "description": {
+        "0": "Somnia summons a star-shaped Celestial Cyclone around her, unleashing a burst of <electro>Electro DMG</electro> as it expands. The field will linger and deal continuous <electro>AoE Electro DMG</electro> to enemies within every 1s.",
+        "1": "While Celestial Cyclone is active, Somnia's Elemental Mastery will be increased multiplicatively.",
+        "2": "Additionally, while Celestial Cyclone is active, Somnia gains Stellar Statistics. While in this state, Somnia can set her Astral Abacus to the Multiplication, Addition or Subtraction modes, each granting her attacks and Celestial Cyclone different buffs. Only one Abacus mode from Stellar Statistics may be active simulatenously.",
+        "3": "<br/>",
+        "4": "<strong>Abacus Modes</strong>",
+        "5": [
+          "<strong>Multiplication</strong>: Within Somnia's Celestial Cyclone, all Sword-, Claymore- and Polearm-wielding characters' weapons will be infused with <electro>Electro</electro>. Normal or Charged Attack hits within the field will trigger Star Sunder, a coordinated Electro blast that deals <electro>AoE Electro DMG</electro> based on Somnia's Elemental Mastery. Star Sunder can be triggered once every 1.5s.",
+          "<strong>Addition</strong>: Celestial Cyclone's AoE and DMG are increased. Upon hitting an enemy, Somnia's Normal and Charged attacks will trigger a Supernova that deals <electro>AoE Electro DMG</electro> based on her Elemental Mastery. This effect can be triggered once every 0.75s.",
+          "<strong>Subtraction</strong>: Celestial Cyclone has its AoE and DMG reduced, but applies the \"Less Than Three\" effect to enemies within it. \"Less Than Three\" reduces enemy Elemental and Physical RES based on Somnia's Elemental Mastery. Additionally, Somnia's Normal and Charged Attacks deal increased DMG based on her Elemental Mastery."
+        ]
+      },
+      "skillParams": {
+        "0": "Skill DMG",
+        "1": "Elemental Mastery",
+        "2": "Celestial Cyclone DoT (Multiplication)",
+        "3": "Star Sunder DMG",
+        "4": "Celestial Cyclone DoT (Addition)",
+        "5": "Supernova DMG",
+        "6": "Celestial Cyclone DoT (Subtraction)"
+      }
+    },
+    "passive1": {
+      "name": "Quick Calculation",
+      "description": {
+        "0": "Somnia's Charged Attacks consume 20% less Stamina and charge up 20% faster"
+      }
+    },
+    "passive2": {
+      "name": "Math Whiz",
+      "description": {
+        "0": "For the duration of Celestial Cyclone, Somnia's Elemental Mastery increases by 5% for every hit dealt by Celestial Cyclone, Star Sunder and Supernova, up to a maximum of 25%."
+      }
+    },
+    "passive3": {
+      "name": "Insomniac Iteration",
+      "description": {
+        "0": "At night (18:00 - 6:00), speeds up Genshin Optimizer build speed by 10%."
+      }
+    },
+    "constellation1": {
+      "name": "Decimal Point",
+      "description": {
+        "0": "Somnia's Normal and Charged Attacks have a 25% chance to deal twice the DMG"
+      }
+    },
+    "constellation2": {
+      "name": "Prime Number",
+      "description": {
+        "0": "When Somnia is under the Schrödinger Superposition effect, each Normal or Charged Attack hit will give Somnia a stack of Natural Number. When the amount of Natural Number stacks is prime, Somnia's next Normal or Charged Attack will receive twice the DMG increase from Schrödinger Superposition."
+      }
+    },
+    "constellation3": {
+      "name": "Infinite Series",
+      "description": {
+        "0": "Increases the Level of <strong>Parallax Paws</strong> by 3.",
+        "1": "Maximum upgrade level is 15."
+      }
+    },
+    "constellation4": {
+      "name": "Perfect Square",
+      "description": {
+        "0": "When Somnia triggers an Electro reaction, 4 Elemental Energy is restored to herself and all nearby party members of Elements involved in the reaction.",
+        "1": "This effect can trigger once every 4s."
+      }
+    },
+    "constellation5": {
+      "name": "Catnip Coefficient",
+      "description": {
+        "0": "Increases the Level of <strong>Cosmic Calculator</strong> by 3.",
+        "1": "Maximum upgrade level is 15."
+      }
+    },
+    "constellation6": {
+      "name": "Golden Ratio",
+      "description": {
+        "0": "When Somnia's Charged Attack deals damage, her CRIT Rate and CRIT DMG are increased by 3% and 5% respectively. This effect can be triggered once every 0.2s and stack up to 8 times. All Golden Ratio stacks are cleared 13s after the first stack was obtained."
+      }
+    },
+    "c1Key": "Normal and Charged Att. DMG Mult.",
+    "superpositionCond": "Under the Schrödinger Superposition effect",
+    "cycloneActiveCond": "Celestial Cyclone is active",
+    "multCond": "In Multiplication mode",
+    "subCond": "In Subtraction mode",
+    "lessThan3Cond": "Enemy is affected by \"Less Than Three\"",
+    "c1Cond": "Decimal Point trigger frequency",
+    "average": "Average",
+    "always": "Always",
+    "c2Cond": "Possesses a prime amount of Natural Number stacks"
+  },
+  "weapon_QuantumCatalyst": {
+    "name": "Quantum Cat-alyst",
+    "description": "This advanced Catalyst weapon is infused with the mysterious power of Quantum Mechanics and bears the likeness of a curious cat, with glowing green eyes, a tail that flickers with Electro energy and the occasional spark arcing between the ears.",
+    "passiveName": "Mewon Meowmentum",
+    "passiveDescription": {
+      "0": "Increases Energy Recharge by <cryo>18%</cryo>. Increases Normal and Charged Attack DMG by <cryo>6%</cryo> of Elemental Mastery. Upon triggering an <electro>Electro-related Elemental Reaction</electro>, gain <cryo>10</cryo> Elemental Mastery for 12 seconds. This effect can stack up to 5 times and stacks have their duration counted independently.",
+      "1": "Increases Energy Recharge by <cryo>22.5%</cryo>. Increases Normal and Charged Attack DMG by <cryo>7.5%</cryo> of Elemental Mastery. Upon triggering an <electro>Electro-related Elemental Reaction</electro>, gain <cryo>12</cryo> Elemental Mastery for 12 seconds. This effect can stack up to 5 times and stacks have their duration counted independently.",
+      "2": "Increases Energy Recharge by <cryo>27%</cryo>. Increases Normal and Charged Attack DMG by <cryo>9%</cryo> of Elemental Mastery. Upon triggering an <electro>Electro-related Elemental Reaction</electro>, gain <cryo>14</cryo> Elemental Mastery for 12 seconds. This effect can stack up to 5 times and stacks have their duration counted independently.",
+      "3": "Increases Energy Recharge by <cryo>31.5%</cryo>. Increases Normal and Charged Attack DMG by <cryo>10.5%</cryo> of Elemental Mastery. Upon triggering an <electro>Electro-related Elemental Reaction</electro>, gain <cryo>16</cryo> Elemental Mastery for 12 seconds. This effect can stack up to 5 times and stacks have their duration counted independently.",
+      "4": "Increases Energy Recharge by <cryo>36%</cryo>. Increases Normal and Charged Attack DMG by <cryo>12%</cryo> of Elemental Mastery. Upon triggering an <electro>Electro-related Elemental Reaction</electro>, gain <cryo>18</cryo> Elemental Mastery for 12 seconds. This effect can stack up to 5 times and stacks have their duration counted independently."
+    }
+  }
+}

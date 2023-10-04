@@ -21,7 +21,7 @@ import {
 } from '@genshin-optimizer/gi-util'
 import { useBoolState } from '@genshin-optimizer/react-util'
 import { iconInlineProps } from '@genshin-optimizer/svgicons'
-import { objMap } from '@genshin-optimizer/util'
+import { deepClone, objMap } from '@genshin-optimizer/util'
 import { CopyAll, DeleteForever, Info, Refresh } from '@mui/icons-material'
 import StarRoundedIcon from '@mui/icons-material/StarRounded'
 import {
@@ -81,8 +81,8 @@ import { getArtSheet } from '../../../../Data/Artifacts'
 import Artifact from '../../../../Data/Artifacts/Artifact'
 import { artifactDefIcon } from '../../../../Data/Artifacts/ArtifactSheet'
 import { getWeaponSheet } from '../../../../Data/Weapons'
-import { DatabaseContext } from '../../../../Database/Database'
 import { initCharTC } from '../../../../Database/DataManagers/CharacterTCData'
+import { DatabaseContext } from '../../../../Database/Database'
 import { uiInput as input } from '../../../../Formula'
 import { computeUIData, dataObjForWeapon } from '../../../../Formula/api'
 import { constant, percent } from '../../../../Formula/utils'
@@ -209,7 +209,7 @@ export default function TabTheorycraft() {
   }, [data])
   const setArtifact = useCallback(
     (artifact: ICharTC['artifact']) => {
-      const data_ = structuredClone(data)
+      const data_ = deepClone(data)
       data_.artifact = artifact
       setData(data_)
     },
@@ -218,7 +218,7 @@ export default function TabTheorycraft() {
 
   const setSubstatsType = useCallback(
     (t: SubstatTypeKey) => {
-      const data_ = structuredClone(data)
+      const data_ = deepClone(data)
       data_.artifact.substats.type = t
       setData(data_)
     },
@@ -227,7 +227,7 @@ export default function TabTheorycraft() {
 
   const setSubstats = useCallback(
     (setSubstats: Record<SubstatKey, number>) => {
-      const data_ = structuredClone(data)
+      const data_ = deepClone(data)
       data_.artifact.substats.stats = setSubstats
       setData(data_)
     },
@@ -463,7 +463,7 @@ function ArtifactMainLevelCard({
 }) {
   const setSlot = useCallback(
     (slotKey: ArtifactSlotKey) => (slot: ICharTCArtifactSlot) => {
-      const artifactData_ = structuredClone(artifactData)
+      const artifactData_ = deepClone(artifactData)
       artifactData_.slots[slotKey] = slot
       setArtifactData(artifactData_)
     },
@@ -472,7 +472,7 @@ function ArtifactMainLevelCard({
 
   const setArtSet = useCallback(
     (artSet: ISet) => {
-      const artifactData_ = structuredClone(artifactData)
+      const artifactData_ = deepClone(artifactData)
       artifactData_.sets = artSet
       setArtifactData(artifactData_)
     },

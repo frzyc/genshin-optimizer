@@ -158,11 +158,7 @@ const dmgFormulas = {
     heal: greaterEq(
       input.constellation,
       4,
-      greaterEq(
-        tally['geo'],
-        2,
-        healNode('def', dm.constellation4.heal_def_, 0)
-      )
+      healNode('def', dm.constellation4.heal_def_, 0)
     ),
   },
 }
@@ -306,8 +302,6 @@ const sheet: ICharacterSheet = {
         ],
       }),
       ct.headerTem('constellation4', {
-        teamBuff: true,
-        canShow: greaterEq(tally.geo, 2, 1),
         fields: [
           {
             node: infoMut(dmgFormulas.constellation4.heal, {

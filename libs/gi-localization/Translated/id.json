@@ -1,0 +1,1416 @@
+{
+  "artifact": {
+    "editor": {
+      "title": "Editor Artefak",
+      "substat": {
+        "substatFormat": "Substat {{value}}",
+        "noSubstat": "Kosong",
+        "selectSub": "Pilih Substat",
+        "error": {
+          "noCalc": "Tidak dapat menghitung roll stat.",
+          "noOverRoll": "Substat tidak dapat diroll lebih dari {{value}} kali."
+        },
+        "noRoll": "Tanpa Roll",
+        "noStat": "Tanpa Nilai",
+        "eff": "RV: <1></1>",
+        "nextRolls": "Roll berikutnya",
+        "RollCount_one": "{{count}} Roll",
+        "RollCount_other": "{{count}} Roll"
+      },
+      "rarity": "Kualitas",
+      "level": "Level",
+      "unknownPieceName": "Nama Bagian Artefak Tidak Diketahui",
+      "curSubEff": "RV Saat Ini",
+      "curSubEffDesc": "Setiap 4 kali upgrade artefak, kamu mendapatkan roll substat. <strong>Roll Value</strong> menghitung seberapa tinggi roll substat tersebut sebagai persentase.",
+      "maxSubEff": "RV Maks.",
+      "maxSubEffDesc": "<strong>Roll Value Substat Maksimum</strong> dari sebuah artefak menghitung efisiensinya jika upgrade yang tersisa mendapat nilai roll maksimum.",
+      "preview": "Pratinjau Artefak",
+      "dupArt": "Artefak duplikat terdeteksi.",
+      "upArt": "Artefak terupgrade terdeteksi.",
+      "beforeEdit": "Sebelum Edit",
+      "btnSave": "Simpan Artefak",
+      "btnAdd": "Tambah Artefak",
+      "btnClear": "Bersihkan",
+      "btnRandom": "Acak",
+      "btnUpdate": "Perbarui Artefak",
+      "clearPrompt": "Ada artefak di editor. Apa kamu yakin mau membersihkan editor?",
+      "unknownSetName": "Nama Set Tidak diketahui"
+    },
+    "artifactFilter": "Filter Artefak",
+    "filterLocation": {
+      "inventory": "Inventaris",
+      "currentlyEquipped": "Dikenakan",
+      "location": "Karakter"
+    },
+    "button": {
+      "unequipArtifacts": "Copot Artefak",
+      "deleteArtifacts": "Hapus Artefak",
+      "lockArtifacts": "Kunci Artefak",
+      "unlockrtifacts": "Buka Kunci Artefak"
+    },
+    "buttonHint": "Catatan: tombol merah di atas hanya berlaku untuk <1>artefak terfilter</1>",
+    "tipsOfTheDay": [
+      "Maksimum RV dari artefak bintang 4 adalah sekitar 540%.",
+      "Maksimum RV dari artefak biasanya akan berkurang setelah upgrade. Itu sangat normal!",
+      "Substat dengan angka \"1\" adalah yang tersulit untuk dipindai dalam screenshot.",
+      "Jika seluruh roll(6) masuk ke satu substat, warnanya akan menjadi ungu!",
+      "Klik di \"Rincian/Details\" ketika kamu mengupgrade artefak-mu di dalam game untuk discan sekaligus di-upgrade.",
+      "Kamu bisa upload banyak screenshot artefak untuk dipindai!"
+    ],
+    "mainStat": "Stat Utama",
+    "slot": "Slot",
+    "slotName": {
+      "flower": "Flower of Life",
+      "plume": "Plume of Death",
+      "sands": "Sands of Eon",
+      "goblet": "Goblet of Eonothem",
+      "circlet": "Circlet of Logos"
+    },
+    "info": {
+      "title": "Panduan Edit/Manajemen Artefak",
+      "section1": "<0>Roll substat</0><1> <1>Jumlah roll</1> yang dimiliki substat ditampilkan di sebelah kanan substat, ditunjukkan dengan jumlah bar. Selain itu, dengan bertambahnya jumlah roll, substat menjadi lebih terang. Selain itu, setiap bilah individu menjadi lebih berwarna saat roll value meningkat:<3></3>.</1><2>Roll Value Substat</2><3>Roll Value (RV) dari substat adalah persentase nilai saat ini di atas nilai 5<1></1> potensial tertinggi. Dari Gambar tersebut, roll value maksimum HP% adalah 5,8%. Di RV: <3>5,3/5,8 ~ 90%.</3></3><4>Roll Value Saat Ini vs. Roll Value Maksimum</4><5>Bila 5<1></1> memiliki 9 (4 base + 5 tambahan) total roll, dengan masing-masing roll memiliki value tertinggi, yang didefinisikan sebagai artefak RV 900%. Namun, sebagian besar artefak tidak seberuntung ini. <3>RV saat ini</3> dari sebuah artefak adalah persentase dari value maksimal artefak tersebut. <5>RV Maksimum</5> adalah kemungkinan RV maksimum yang dapat dicapai artefak, jika sisa artefak roll dari peningkatan adalah value setinggi mungkin.</5>",
+      "section2": "<0>Editor Artefak</0><1>Editor Artefak dengan fitur lengkap yang bisa menerima semua artefak 3<1></1> hingga 5<3></3>. Ketika substat diinput, editor ini bisa menghitung jumlah roll value yang sesuai. Editor ini juga bisa memastikan bahwa jumlah roll yang didapat artefak sesuai dengan levelnya bersama dengan metrik validasi lainnya.</1><2>Scan Screenshot</2><3>Tidak suka menginput secara manual? Kamu bisa memindai artefakmu dengan screenshot! Dalam Artefak Editor, klik tombol <1>Show Me How!</1> untuk mempelajarinya lebih lanjut.</3><4>Pemindai Artefak Otomatis</4><5>Kalau kamu memainkan Genshin di PC, kamu bisa mengunduh alat yang bisa memindai semua artefakmu secara otomatis, lalu kamu bisa mengimpor data tersebut ke dalam <1></1> Database. <3>Tekan di sini</3> untuk melihat daftar pemindai yang kompatibel dengan GO.</5><6>Deteksi Artefak Duplikat/Upgrade</6><7>Tahukah kamu kalau GO bisa mendeteksi jika kamu menambah artefak <1>duplikat</1> yang sudah ada dalam sistem? Editor ini juga bisa mendeteksi apakah artefak yang ditambahkan merupakan <3>upgrade</3> dari artefak yang sudah ada. Ketika duplikasi/upgrade terdeteksi, pratinjau akan muncul agar kamu bisa membandingkan dua artefak tersebut(Lihat Gambar).</7>",
+      "section3": "<0>Tas Artefak</0><1>Semua artefakmu yang telah kamu tambahkan ke GO ditampilkan di sini. Filter di sini memungkinkan kamu untuk lebih menyempurnakan tampilan artefakmu. </1><2>Contoh: Menentukan Artefak Tumbal</2><3>Dengan memanfaatkan filter artefak, dan perhitungan RV artefak, kamu dapat menentukan artefak untuk dijadikan tumbal dengan cepat.</3><4>Sebagai contoh, filter diatur sebagai berikut: </4><5><0><0>Batasi level hingga 0-8.</0><1>Pastikan artefak dalam tas tidak terkunci.</1><2>Hilangkan kontribusi flat HP, flat DEF, dan Energy Recharge untuk perhitungan RV.</2><3>Urutkan dengan menggunakan urutan meningkat untuk RV Substat Maksimum.</3></0></5><6>Ini akan memfilter Tas artefak dari artefak efisiensi terendah, untuk substat yang diinginkan.</6>"
+    },
+    "sortMap": {
+      "level": "Level",
+      "efficiency": "Roll Value Saat Ini",
+      "mefficiency": "Roll Value Maksimum"
+    },
+    "efficiencyFilter": {
+      "title": "Substat yang dipakai dalam perhitungan Roll Value"
+    },
+    "resetFilters": "Reset Filter",
+    "setEffectNum": "{{setNum}}-Set",
+    "showingNum_one": "Menampilkan <1>{{count}}</1> dari {{value}} Artefak",
+    "showingNum_other": "Menampilkan <1>{{count}}</1> dari {{value}} Artefak",
+    "edit": "Edit Karakter",
+    "autocompleteLabels": {
+      "sets": "Set Artefak",
+      "mainStats": "Main Stats",
+      "substats": "Sub-Stats",
+      "set": "Set Artefak"
+    },
+    "substat_one": "{{count}} substat",
+    "substat_other": "{{count}} substats",
+    "addNew": "Tambah Artefak Baru",
+    "sub_one": "{{count}} sub",
+    "sub_other": "{{count}} subs",
+    "cantDeleteLock": "Tidak dapat menghapus artefak karena dikunci",
+    "equippedArt": "Semua Artefak Dipakai",
+    "artInInv": "Semua Artefak yang Tidak Digunakan",
+    "locationsTooltip": "Nonaktifkan \"Semua Artefak yang Dilengkapi\" untuk memfilter menurut karakter tertentu"
+  },
+  "languages": {
+    "chs": "Mandarin (Sederhana)",
+    "cht": "Mandarin (Tradisional)",
+    "de": "Jerman",
+    "en": "Inggris",
+    "es": "Spanyol",
+    "fr": "Prancis",
+    "id": "Bahasa Indonesia",
+    "ja": "Jepang",
+    "ko": "Korea",
+    "pt": "Portugis",
+    "ru": "Rusia",
+    "th": "Thai",
+    "vi": "Vietnam",
+    "it": "Italian",
+    "tr": "Turkish"
+  },
+  "settings": {
+    "title": "Pengaturan",
+    "languageCard": {
+      "selectLanguage": "Pilih Bahasa",
+      "languageFormat": "Bahasa: {{language}}"
+    },
+    "uploadCard": {
+      "title": "Unggah Database",
+      "replaceDatabase": "Perbarui Database",
+      "hint": "Unggah file JSON di sini...",
+      "hintPaste": "...atau tempel datamu di bawah.",
+      "error": {
+        "jsonParse": "Tidak dapat mengurai file JSON.",
+        "unknown": "Format file tidak dikenal.",
+        "monaInvalid": "Format file Mona-Uranai tidak valid",
+        "goInvalid": "Format file cadangan GO tidak valid."
+      },
+      "dbSource": "Sumber data:",
+      "goodUpload": {
+        "title": "<strong>Genshin Open Object Description</strong> (GOOD) format"
+      },
+      "buttons": {
+        "open": "Buka",
+        "detectDups": "Deteksi Update/Duplikat",
+        "delNotInImport": "Hapus item yang tidak di impor"
+      },
+      "tooltip": {
+        "detectdup": "Temukan upgrade/duplikat di inventaris GO dan gabungkan impor ke dalam GO.",
+        "ignoreDup": "Jangan deteksi Upgrade/duplikat, impor ditambahkan di atas inventaris GO yang ada.",
+        "delNotInImport": "Asumsikan impor menjadi inventaris penuh.  Item dalam Inventaris GO yang tidak ada dalam impor akan dihapus.",
+        "keepNotInImport": "Asumsikan impor adalah inventaris parsial.  Tidak ada yang akan dihapus."
+      }
+    },
+    "count": {
+      "chars": "Karakter:",
+      "arts": "Artefak:",
+      "weapons": "Senjata:",
+      "total": "Total:",
+      "new": "Baru:",
+      "updated": "Terupdate:",
+      "removed": "Dihilangkan:",
+      "unchanged": "Tidak berubah:",
+      "invalid": "Invalid:",
+      "upgraded": "Ditingkatkan:",
+      "dbTotal": "Jumlah Penggabungan:",
+      "notInImport": "Tidak di Impor:"
+    },
+    "DatabaseCard": {
+      "title": "Database",
+      "button": {
+        "download": "Download",
+        "copy": "Clipboard",
+        "delete": "Hapus",
+        "upload": "Unggah",
+        "swap": "Tukar"
+      },
+      "currentDB": "Database Saat ini"
+    }
+  },
+  "ui": {
+    "pageTitle": "Genshin Optimizer",
+    "tabs": {
+      "artifacts": "Artefak",
+      "characters": "Karakter",
+      "tools": "Alat",
+      "weapons": "Senjata",
+      "doc": "Docs",
+      "setting": "Pengaturan",
+      "scanner": "Scanner"
+    },
+    "social": {
+      "paypal": "Paypal",
+      "patreon": "Patreon",
+      "discord": "Discord"
+    },
+    "unselect": "Batal pilih",
+    "ascending": "Urutkan Naik",
+    "descending": "Urutkan Menurun",
+    "loading": "Memuat...",
+    "rightsDisclaimer": "Genshin Optimizer tidak berafiliasi dengan HoYoverse",
+    "appVersion": "$t(pageTitle) Versi: <1>{{version}}</1>",
+    "underConstruction": "Sedang Dibangun",
+    "error": "Error",
+    "reset": "Reset",
+    "info": "INFO",
+    "inventory": "Tas",
+    "close": "Tutup",
+    "sortMap": {
+      "new": "Baru",
+      "name": "Nama",
+      "level": "Level",
+      "rarity": "Kualitas",
+      "efficiency": "RV Saat Ini",
+      "mefficiency": "RV Maksimum",
+      "artsetkey": "Set Artefak",
+      "probability": "Probabilitas Roll"
+    },
+    "link": {
+      "download": "Link Download",
+      "discord": "Link Invite Discord"
+    },
+    "sortBy": "Urutkan Berdasarkan: ",
+    "delete": "Hapus",
+    "locked": "Terkunci",
+    "unlocked": "Tidak terkunci",
+    "refinement": "Refinement {{value}}",
+    "selectlevel": "Pilih Level",
+    "gender": {
+      "F": "Perempuan",
+      "M": "Laki-laki"
+    },
+    "statGroupKey": {
+      "basic_stats": "Basic Stats",
+      "elem_dmg_bonus": "Bonus DMG Elemental",
+      "enemy_debuffs": "Debuff Musuh",
+      "self_res": "Self Resistensi",
+      "reaction_dmg_bonus": "Bonus DMG Reaksi",
+      "reaction_crit": "Bonus Reaksi CRIT",
+      "elem_dmgInc": "Damage Elemental Meningkat",
+      "talent_dmgInc": "Damage Talenta Meningkat",
+      "elem_crit": "Bonus CRIT Elemental",
+      "talent_dmg_bonus": "Bonus DMG Talenta",
+      "talent_crit": "Bonus CRIT Talenta",
+      "talent_level_boost": "Peningkatan Level Talenta",
+      "base_stat_mod": "Modifikasi Stat Dasar",
+      "stamina_buffs": "Buff Stamina",
+      "misc": "Stats Lainnya"
+    }
+  },
+  "char_Eula": {
+    "burstC": {
+      "name": "Lapisan Energi Lightfall Sword",
+      "start5": "Mulai dengan 5 Lapisan Energi Lightfall Sword",
+      "addStacks": "50% kemungkinan untuk mendapatkan lapisan energi tambahan dari Normal Atk, Ele. Skill, dan Ele. Burst",
+      "dmg": "DMG Ledakan Lightfall Sword",
+      "bonusScaling": "Bonus Scaling Lightfall Sword"
+    },
+    "c1C": {
+      "name": "Setelah mengkonsumsi lapisan <strong>Grimheart</strong>",
+      "durationStack": "6 dtk + 6 dtk/lapis, maks 18 dtk"
+    },
+    "passive1": "DMG Shattered Lightfall Sword",
+    "c4C": {
+      "dmgBonus": "Ledakan DMG Bonus Lightfall Sword"
+    }
+  },
+  "char_Noelle": {
+    "p4cd": "24 dtk, -1 dtk Setiap 4 hit",
+    "c6duration": "15 dtk, +1 dtk/kill, maks 10 dtk",
+    "c4dmg": "DMG Breastplate Pecah"
+  },
+  "char_Venti": {
+    "addAimed": "Tambahan DMG Membidik",
+    "addFullAimed": "Tambahan DMG Membidik Penuh",
+    "upcurrentDuration": "Durasi Arus Angin",
+    "regenEner": "Memulihkan 15 Energy ke Venti setelah efek berakhir",
+    "c6": "Target yang menerima DMG dari <strong>Wind's Grand Ode</strong>",
+    "q": "Memulihkan 15 Energi ke anggota party yang memiliki elemen tersebut.",
+    "c2": {
+      "hit": "Musuh di-Hit",
+      "launched": "Musuh terhempas"
+    }
+  },
+  "sheet": {
+    "dmg": "DMG",
+    "lessPercentHP": "HP kurang dari {{percent}}%",
+    "hitOp": {
+      "normal": "Setelah memukul musuh dengan Normal Attack",
+      "charged": "Setelah memukul musuh dengan Charged Attack",
+      "plunging": "Setelah memukul musuh dengan Plunging Attack",
+      "skill": "Setelah memukul musuh dengan Elemental Skill",
+      "burst": "Setelah memukul musuh dengan Elemental Burst",
+      "geo": "Setelah mengakibatkan <geo>Geo DMG</geo>",
+      "anemo": "Setelah mengakibatkan <anemo>Anemo DMG</anemo>",
+      "hydro": "Setelah mengakibatkan <hydro>Hydro DMG</hydro>",
+      "cryo": "Setelah mengakibatkan <cryo>Cryo DMG</cryo>",
+      "pyro": "Setelah mengakibatkan <pyro>Pyro DMG</pyro>",
+      "electro": "Setelah mengakibatkan <electro>Electro DMG</electro>",
+      "none": "Setelah memukul musuh",
+      "normalOrCharged": "Setelah memukul musuh dengan Normal/Charged Attack",
+      "skillOrBurst": "Setelah memukul musuh dengan Elemental Skill/Burst",
+      "crit": "Setelah mengakibatkan CRIT DMG",
+      "normalChargedOrPlunging": "Setelah hit musuh dengan Normal/Charged/Plunging Attack",
+      "dendro": "Setelah mengakibatkan <dendro>Dendro DMG</dendro>",
+      "normalEle": "Setelah mengakibatkan Elemental DMG melalui Normal Attack",
+      "ele": "Setelah mengakibatkan Elemental DMG",
+      "weakSpot": "Setelah mengenai Titik Lemah musuh dengan Charged Shot"
+    },
+    "eleAbsor": "Absorpsi Elemental",
+    "absorDot": "DMG Berkelanjutan",
+    "afterUse": {
+      "skill": "Setelah menggunakan Elemental Skill",
+      "burst": "Setelah menggunakan Elemental Burst",
+      "skillOrBurst": "Setelah menggunakan Ele. Skill or Ele. Burst"
+    },
+    "hits_one": "{{count}} Hit",
+    "hits_other": "{{count}} Hits",
+    "lessEqPercentHP": "HP kurang dari atau sama dengan {{percent}}%",
+    "greaterPercentHP": "HP lebih besar dari {{percent}}%",
+    "greaterEqPercentHP": "HP lebih besar dari atau sama dengan {{percent}}%",
+    "lessPercentEnergy": "Energi kurang dari {{percent}}%",
+    "enemyLessPercentHP": "HP musuh kurang dari {{percent}}%",
+    "enemyLessEqPercentHP": "HP musuh kurang dari atau sama dengan {{percent}}%",
+    "enemyGreaterPercentHP": "HP musuh lebih besar dari {{percent}}%",
+    "enemyGreaterEqPercentHP": "HP musuh lebih besar dari atau sama dengan {{percent}}%",
+    "stack_one": "{{count}} Lapis",
+    "stack_other": "{{count}} Lapisan",
+    "seconds_one": "{{count}} Detik",
+    "seconds_other": "{{count}} Detik",
+    "uses_one": "{{count}} Penggunaan",
+    "uses_other": "{{count}} Penggunaan",
+    "afterDefeatEnemy": "Setelah mengalahkan musuh",
+    "afterSprint": "Setelah Berlari",
+    "skillCDRed": "Pengurangan CD Ele. Skill",
+    "burstCDRed": "Pengurangan CD Ele. Burst",
+    "triggerCD": "CD Pemicu",
+    "incInterRes": "Resistensi terhadap interupsi ditingkatkan",
+    "charges": "Biaya",
+    "cooldown": "Cooldown",
+    "addlCharges": "Biaya tambahan",
+    "activeCharField": "Karakter di dalam medan pertempuran",
+    "opponentsField": "Musuh di medan pertempuran",
+    "takeDmg": "Setelah menerima DMG",
+    "infusion": {
+      "pyro": "Pyro Infusion",
+      "cryo": "Cryo Infusion",
+      "anemo": "Anemo Infusion",
+      "hydro": "Hydro Infusion",
+      "electro": "Electro Infusion",
+      "dendro": "Dendro Infusion",
+      "geo": "Geo Infusion"
+    },
+    "effectDuration": {
+      "pyro": "Durasi efek pyro",
+      "cryo": "Durasi efek cryo",
+      "anemo": "Durasi efek anemo",
+      "hydro": "Durasi efek hydro",
+      "electro": "Durasi efek electro",
+      "dendro": "Durasi efek dendro",
+      "geo": "Durasi efek geo"
+    },
+    "durationInc": "Peningkatan Durasi",
+    "base": "Base",
+    "stacks": "Lapisan",
+    "protectedByShield": "Dilindungi oleh shield",
+    "protectedByShieldCrystal": "Dilindungi oleh shield yang dibuat oleh Crystallize",
+    "staminaDec_": "Konsumsi Stamina Menurun",
+    "dmgAbsorption": {
+      "pyro": "DMG Absorpsi Pyro",
+      "cryo": "DMG Absorpsi Cryo",
+      "anemo": "DMG Absorpsi Anemo",
+      "hydro": "DMG Absorpsi Hydro",
+      "electro": "DMG Absorpsi Electro",
+      "dendro": "DMG Absorpsi Dendro",
+      "geo": "DMG Absorpsi Geo",
+      "none": "DMG Absorpsi",
+      "max": {
+        "none": "DMG Absorpsi Maksimum",
+        "pyro": "Absorpsi Pyro DMG Maksimum"
+      }
+    },
+    "addlCharge": "Biaya tambahan",
+    "conditional": "Kondisi",
+    "maxStacks": "Lapisan Maksimum",
+    "1set": "1-Set",
+    "2set": "2-Set",
+    "4set": "4-Set",
+    "activationStam": "Aktivasi Konsumsi Stamina",
+    "stamDrain": "Menguras Stamina",
+    "talents": {
+      "auto": "Auto",
+      "skill": "Skill",
+      "burst": "Burst",
+      "passive": "Pasif",
+      "passive1": "Ascension 1",
+      "passive2": "Ascension 4",
+      "passive3": "Pasif",
+      "sprint": "Sprint",
+      "constellation1": "C1",
+      "constellation2": "C2",
+      "constellation3": "C3",
+      "constellation4": "C4",
+      "constellation5": "C5",
+      "constellation6": "C6"
+    },
+    "swirlReaction": {
+      "hydro": "Setelah memicu reaksi Swirl <hydro>Hydro</hydro>",
+      "pyro": "Setelah memicu reaksi Swirl <pyro>Pyro</pyro>",
+      "electro": "Setelah memicu reaksi Swirl <electro>Electro</electro>",
+      "cryo": "Setelah memicu reaksi Swirl <cryo>Cryo</cryo>"
+    },
+    "afterReaction": "Setelah memicu Reaksi Elemental",
+    "aoeInc": "Peningkatan AoE",
+    "elementalReaction": {
+      "hydro": "Setelah memicu Reaksi Elemen <hydro>Hydro-related</hydro>",
+      "electro": "Setelah memicu Reaksi Elemen <electro>Electro-related</electro>"
+    },
+    "bonusScaling": {
+      "skill_": "Bonus Scaling Ele. Skill"
+    },
+    "energy": "Energi",
+    "teamBuff": "Buff Tim",
+    "opponents_one": "{{count}} Musuh",
+    "opponents_other": "{{count}} Musuh",
+    "dmgMult": {
+      "normal": "Normal Atk. DMG Mult.",
+      "charged": "Charged Atk. DMG Mult.",
+      "skill": "Skill DMG Mult."
+    },
+    "stamRestored": "Stamina Dipulihkan",
+    "triggerQuota": "Pemicu Quota",
+    "enemyAffected": {
+      "burningOrPyro": "Musuh terkena efek <pyro>Burning</pyro> atau <pyro>Pyro</pyro>",
+      "frozenOrCryo": "Musuh dalam keadaan <cryo>Freeze</cryo> atau terpengaruh oleh <cryo>Cryo</cryo>",
+      "pyroOrElectro": "Musuh terpengaruh oleh <pyro>Pyro</pyro> atau <electro>Electro</electro>",
+      "hydroOrCryo": "Musuh terpengatuh oleh <hydro>Hydro</hydro> atau <cryo>Cryo</cryo>",
+      "hydroOrPyro": "Musuh terpengatuh oleh <hydro>Hydro</hydro> or <pyro>Pyro</pyro>",
+      "hydroOrElectro": "Musuh terpengatuh oleh <hydro>Hydro</hydro> or <electro>Electro</electro>",
+      "electro": "Musuh terpengatuh oleh <electro>Electro</electro>",
+      "cryo": "Musuh terpengatuh oleh <cryo>Cryo</cryo>"
+    },
+    "getElementalOrbParticle": "Setelah mengambil Elemental Orb atau Partikel",
+    "notProtectedByShield": "Ketika tidak dilindungi oleh shield",
+    "percentCurrentHP": "% HP Saat Ini",
+    "enerRegenPerHit": "Energi dipulihkan per serangan"
+  },
+  "weapon_SongOfBrokenPines": {
+    "name": "Di bawah pengaruh Millennial Movement: Banner-Hymn"
+  },
+  "char_KaedeharaKazuha": {
+    "c1": "Menggunanakan <strong>Kazuha Slash</strong> me-reset CD",
+    "c2": "Area Autumn Whirlwind aktif",
+    "c6": {
+      "after": "Setelah menggunakan <strong>Chihayaburu</strong> atau <strong>Kazuha Slash</strong>"
+    },
+    "skillPlunge": "Midare Ranzan"
+  },
+  "char_Rosaria": {
+    "a1": "Setelah menyerang musuh dari belakang",
+    "a4": {
+      "name": "Setelah munggunakan <strong>Rites of Termination</strong>"
+    }
+  },
+  "char_KamisatoAyaka": {
+    "afterSprintCryo": "Mengakibatkan <cryo>Cryo</cryo> Setelah Berlari",
+    "snowflakeDMG": "DMG Snowflake",
+    "dmgBySnowflake": "Musuh terkena Frostflake Seki no To",
+    "c6Active": "Di bawah efek Usurahi Butou"
+  },
+  "weapon_MistsplitterReforged": {
+    "emblem": "Mistsplitter's Emblem"
+  },
+  "char_Yoimiya": {
+    "c1": "Setelah mengalahkan musuh yang terkena <strong>Aurous Blaze</strong>",
+    "c2": "Setelah mengakibatkan CRIT <pyro>Pyro DMG</pyro>",
+    "normPyroInfus": "<pyro>Normal Atk. Pyro Infusion</pyro>",
+    "c6Key_": "Mult. Blazing Arrow"
+  },
+  "char_RaidenShogun": {
+    "skill": {
+      "eye": "Membawa Eye of Stormy Judgement",
+      "partyCost": "Konsumsi Energi (party)"
+    },
+    "burst": {
+      "resolves": "Lapisan Resolve",
+      "resolveInitial_": "<electro>Scaling DMG Bonus Musou no Hitotachi</electro>",
+      "resolveInfused_": "<electro>Scaling DMG Bonus Musou no Isshin</electro>",
+      "burstDmg": "DMG Musou no Hitotachi"
+    },
+    "a4": {
+      "enerRest": "Pemulihan energi dari <strong>Musou Isshin</strong>",
+      "eleDMG": "Electro DMG Bonus"
+    },
+    "c4": {
+      "expires": "Setelah status <strong>Musou Isshin</strong> berakhir"
+    }
+  },
+  "char_Aloy": {
+    "skill": {
+      "coil": "Coil",
+      "rush": "Rushing Ice",
+      "rushState": "Selama kondisi Rushing Ice (1 lapis / dtk)"
+    },
+    "a1CondName": "Saat Aloy menerima efek Coil dari <strong>Frozen Wilds</strong>",
+    "normCryoInfus": "<cryo>Normal Atk. Cryo Infusion</cryo>"
+  },
+  "char_KujouSara": {
+    "skill": {
+      "ambush": "Di bawah pengaruh Tengu Juurai: Ambush"
+    },
+    "c6": {
+      "electroCritDmg": "ATK karakter yang ditingkatkan oleh Tengu Juurai"
+    }
+  },
+  "char_SangonomiyaKokomi": {
+    "burst": "Mengenakan Ceremonial Garment",
+    "c2": "Karakter dengan HP kurang dari 50%",
+    "c6": "Setelah Normal dan Charged Attack memulihkan karakter dengan HP 80% atau lebih",
+    "c2SkillHeal": "<strong>Kurage's Oath</strong> Healing Bonus",
+    "c2BurstHeal": "<strong>Nereid's Ascension</strong> Healing Bonus"
+  },
+  "page_home": {
+    "intro": "Kalkulator <strong>ultimate</strong> <3><i>Genshin Impact</i></3>, GO akan melacak inventaris artefak/senjata/karakter kamu, dan membantu kamu untuk membuat build terbaik berdasarkan cara kamu bermain, dengan apa yang kamu miliki.",
+    "quickLinksCard": {
+      "title": "Link Cepat",
+      "buttons": {
+        "tyGuide": {
+          "title": "Playlist Panduan Youtube",
+          "tooltip": "Pelajari cara menggunakan Genshin Optimizer"
+        },
+        "scanners": {
+          "title": "Scanner Otomatis",
+          "tooltip": "Program pihak ke-3 yang secara otomatis memindai artefak dari game"
+        },
+        "kqm": {
+          "title": "KeqingMains",
+          "tooltip": "Theorycrafting & panduan komunitas"
+        },
+        "devDiscord": {
+          "title": "Genshin Dev Discord",
+          "tooltip": "Komunitas developer untuk Genshin"
+        },
+        "good": {
+          "title": "GOPD documentation",
+          "tooltip": "Dokumentasi Deskriptor Objek Terbuka Genshin"
+        },
+        "patchNotes": {
+          "title": "Genshin Optimizer Patch Notes",
+          "tooltip": "Semua patch notes untuk GO"
+        }
+      }
+    },
+    "inventoryCard": {
+      "title": "GO inventori"
+    },
+    "vidGuideCard": {
+      "title": "Video Panduan"
+    },
+    "teamCard": {
+      "title": "Temu Tim",
+      "jobTitle": {
+        "leadDev": "Lead Developer",
+        "dev": "Developer",
+        "mod": "Moderator"
+      }
+    }
+  },
+  "page_scanner": {
+    "intro": "<0>Scanner</0><1>Scanner adalah alat Genshin yang dapat secara otomatis memindai data game dari screenshot atau langsung dari game.</1><2>Berikut adalah beberapa scanner yang telah diuji dengan GO.</2 ><3>Untuk mengunggah file yang diekspor, buka laman <1>Pengaturan</1>, dan unggah file kamu di bagian <strong>Unggah Database</strong>.</3>",
+    "ik": {
+      "title": "Inventory Kamera",
+      "p1": "Aplikasi ringan ini akan memindai semua karakter + senjata + artefak kamu di inventarismu.  Ikuti instruksi di aplikasi untuk menyiapkannya."
+    },
+    "am": {
+      "title": "「天目」-- Amenoma",
+      "p1": "Scan semua artefak di inventarismu.  Ikuti instruksi untuk menangkap jendela dan scan. Memiliki versi Cina dan Inggris. (Download the <1>_EN.exe</1> version to scan in english). Hanya format <5>GOOD</5> yang diterima di GO."
+    },
+    "as": {
+      "title": "AdeptiScanner",
+      "p1": "Scan semua artefak di inventorimu. Memiliki mode scanning manual.",
+      "p2": "Scanner ini juga dapat dikonfigurasi untuk artefak baru di versi game baru tanpa perlu pembaruan."
+    },
+    "goodeng": "Scanner ini hanya memindai bahasa Inggris, dan mengekspor ke format GOOD.",
+    "tosWarn": "Karena alat apapun yang secara tidak langsung berinteraksi dengan game, meskipun penggunaannya hampir tidak terdeteksi, <1>masih ada risiko saat menggunakannya.</1> Kebijaksanaan pengguna disarankan.",
+    "tags": {
+      "pc": "PC",
+      "mobile": "Mobile",
+      "ps": "PlayStation",
+      "gameMani": "Game Manipulation",
+      "materials": "Material",
+      "characters": "Karakter"
+    },
+    "nb": {
+      "title": "Artiscan",
+      "p1": "Scanner berbasis web ini dapat menangkap layar gamemu, memindai dari screenshot, atau memindai dari video.",
+      "p2": "Tangkapan layar/pengambilan video bisa full screen, dan tidak perlu di-crop."
+    },
+    "seelieme": "Scanner ini juga dapat memindai material untuk <1>Seelie.me</1>."
+  },
+  "weapon_Akuoumaru": {
+    "party": "Kapasitas Energy Party"
+  },
+  "artifact_ArchaicPetra": {
+    "condName": "Setelah mendapatkan Crystallize Shard"
+  },
+  "artifact_ViridescentVenerer": {
+    "condName": "Elemen terkena Swirl"
+  },
+  "weapon_CinnabarSpindle": {
+    "name": "Efek aktif"
+  },
+  "weapon_ElegyForTheEnd": {
+    "condName": "Di bawah pengaruh Millennial Movement: Farewell Song"
+  },
+  "weapon_MouunsMoon": {
+    "party": "Kapasitas energy party"
+  },
+  "weapon_ThrillingTalesOfDragonSlayers": {
+    "condName": "Setelah beralih dari karakter ini"
+  },
+  "weapon_WavebreakersFin": {
+    "party": "Kapasitas energy party"
+  },
+  "artifact_BlizzardStrayer": {
+    "condName": "Musuh",
+    "condCryo": "Terpengaruh Oleh Cryo",
+    "condFrozen": "Frozen"
+  },
+  "artifact_HuskOfOpulentDreams": {
+    "condName": "Curiosity"
+  },
+  "artifact_OceanHuedClam": {
+    "condName": "DMG Max Sea-Dyed Foam"
+  },
+  "artifact_ShimenawasReminiscence": {
+    "afterUseEnergy": "Setelah menggunakan 15 energi"
+  },
+  "artifact_TinyMiracle": {
+    "condName": "Setelah menerima Ele. DMG"
+  },
+  "char_Albedo": {
+    "blossomCD": "CD Transient Blossom",
+    "blossomDmg_": "DMG Bonus Transient Blossom",
+    "isotomaOnField": "Solar Isotoma on field",
+    "enerPerBlossom": "Energi dihasilkan per Transient Blossom",
+    "c2Stacks": "Lapisan Fatal Reckoning yang dikonsumsi"
+  },
+  "char_Amber": {
+    "secondArrow": "(Panah ke-2)",
+    "critRateBonus": "Bonus CRIT Rate <strong>Fiery Rain</strong>",
+    "aoeRangeBonus": "Bonus Jangkauan AoE <strong>Fiery Rain</strong>",
+    "manualDetonationDmg": "DMG Detonasi Manual",
+    "c6CondName": "Setelah menggunakan <strong>Fiery Rain</strong>"
+  },
+  "char_AratakiItto": {
+    "a1": {
+      "name": "Menggunakan Arataki Kesagiri Berturut-turut"
+    },
+    "a4": {
+      "dmgInc": "Peningkatan DMG Arataki Kesagiri"
+    },
+    "c1": {
+      "initialGain": "Perolehan lapisan Superlative Superstrength",
+      "timedGain": "Setelah 1dtk, lapisan Superlative Superstrength bertambah setiap 0.5dtk selama 1.5dtk"
+    },
+    "c4": {
+      "name": "Setelah kondisi Raging Oni King berakhir"
+    }
+  },
+  "char_Barbara": {
+    "passive1": {
+      "cond": "Dalam Melody <strong>Let the Show Begin♪</strong>'s"
+    },
+    "constellation2": {
+      "cond": "Selama <strong>Let the Show Begin♪</strong>"
+    }
+  },
+  "char_Beidou": {
+    "skillOneHit": "Satu hit DMG",
+    "skillTwoHit": "Dua hit DMG",
+    "duringBurst": "Selama Durasi Stormbreaker",
+    "tidecallerMaxDmg": "Setelah melepaskan Tidecaller dengan bonus DMG maksimumnya",
+    "a4charge": "Mengurangi delay sebelum melepaskan Charged Attack",
+    "c4dmg": "DMG Stunning Revenge Electro"
+  },
+  "char_Bennett": {
+    "skill": {
+      "lvl1CD": "Lvl 1 CD",
+      "lvl2CD": "Lvl 2 CD"
+    },
+    "c4DMG": "DMG Odyssey tak terduga",
+    "c6PyroInfusion": "<pyro>Sword, Claymore dan Polearm Pyro Infusion"
+  },
+  "char_Chongyun": {
+    "infusion": "Sword, Claymore and Polearm Cryo Infusion",
+    "passive2": "DMG Pedang yang Dipanggil",
+    "asc4Cond": "Musuh terkena Rimechaser Blade",
+    "constellation1": "DMG Ice Blade",
+    "constellation6": "Musuh memiliki persentase lebih rendah dari sisa Max HP mereka",
+    "blades": "Saat Spirit Blades Tersummon"
+  },
+  "char_Diluc": {
+    "skillB": {
+      "0": "2-Hit DMG (Ditingkatkan)",
+      "1": "3-Hit DMG (Ditingkatkan)"
+    }
+  },
+  "char_Diona": {
+    "skillDuration": "Durasi per Paw",
+    "holdShield": "DMG Absorpsi Tahan",
+    "a1shielded": "Karakter dilindungi oleh <strong>Icy Paws</strong>",
+    "holdCryoShield": "DMG Tahan Absorpsi Cryo"
+  },
+  "char_Fischl": {
+    "a1Name": "DMG Membidik Penuh Oz - Thundering Retribution",
+    "a2Name": "DMG Thundering Retribution",
+    "c1Name": "DMG Serangan Gabungan",
+    "c4AoeDmg": "DMG AoE Tambahan",
+    "c6OzDmg": "DMG Atk. dengan Karakter Aktif"
+  },
+  "char_Ganyu": {
+    "a1": {
+      "condName": "Setelah menembakkan Frostflake Arrow",
+      "critRateInc": "Peningkatan CRIT Frostflake"
+    },
+    "c1": {
+      "condName": "Musuh terkena DMG dari Frostflake Arrow atau Frostflake Arrow Bloom"
+    },
+    "c4": {
+      "lingerDuration": "Durasi Efek Linger"
+    }
+  },
+  "char_HuTao": {
+    "paramita": {
+      "enter": "Dalam status <strong>Paramita Papilio</strong",
+      "end": "Setelah status <strong>Paramita Papilio</strong> berakhir"
+    },
+    "constellation2": {
+      "applyBloodBlossom": "Menerapkan efek <strong>Blood Blossom</strong>"
+    },
+    "constellation4": {
+      "condName": "Setelah mengalahkan musuh yang terkena <strong>Blood Blossom</strong>"
+    },
+    "constellation6": {
+      "condName": "Setelah HP berkurang dibawah 25% atau menerima serangan mematikan"
+    }
+  },
+  "char_Jean": {
+    "c1CondName": "Skill ditahan selama lebih dari 1dtk",
+    "c1PullSpeed": "Kecepatan menarik ditingkatkan"
+  },
+  "char_Kaeya": {
+    "c2burstDuration": "Peningkatan durasi sebanyak 2.5dtk per musuh yang dikalahkan selama, hingga 15dtk"
+  },
+  "char_Keqing": {
+    "c1DMG": "DMG Thundering Might",
+    "recast": "Setelah menyusun ulang <strong>Stellar Restoration</strong>"
+  },
+  "char_Klee": {
+    "a1CondName": "Membawa Explosive Spark",
+    "a1CondName2": "Charged Attack Berikutnya tidak mengkonsumsi Stamina",
+    "c2CondName": "Musuh terkena ranjau <strong>Jumpty Dumpty</strong>",
+    "c6CondName": "Setelah Sparks 'n' Splash digunakan"
+  },
+  "char_Lisa": {
+    "a4C": "Musuh terkena <strong>Lightning Rose</strong>",
+    "c2C": "Menahan <strong>Violet Arc</strong>"
+  },
+  "char_Mona": {
+    "omen": "Setelah memukul musuh yang terkena Omen",
+    "hitOp": {
+      "affectedByOmen": "Setelah hit musuh yang terkena Omen"
+    },
+    "frozenDuration": "Durasi <cryo>Frozen</cryo> diperpanjang oleh",
+    "uponSprint": "Setelah menggunakan Illusory Torrent"
+  },
+  "char_Ningguang": {
+    "aoeGems": "DMG Batu yang melakukan AoE Geo",
+    "starJadeStaminaCost": "50; Dengan Star Jade: 0",
+    "skillReset": "Reset CD saat pecah, setiap 6dtk",
+    "a4toggle": "Setelah melewati Jade Screen",
+    "c4toggle": "Dalam jarak 10m dari Jade Screen",
+    "c6bonus": "Mendapat Star Jade"
+  },
+  "char_Qiqi": {
+    "a1C": "Setelah memicu reaksi elemental ketika berada di bawah pengaruh <strong>Adeptus Art: Herald of Frost</strong>"
+  },
+  "char_Razor": {
+    "electroSigil": "Electro Sigil",
+    "electroSigilAbsorbed": "Regenerasi Energi jika Elektro Sigil dibersihkan",
+    "opHitWithClawAndThunder": "Musuh terkena <strong>Claw and Thunder</strong> (Tekan)",
+    "electroSigilPerProc": "Electro Sigils per Proc"
+  },
+  "char_Sayu": {
+    "burstHits": "Aktivasi Jumlah Muji-Muji Daruma",
+    "p2Heal": "Healing karakter terdekat",
+    "c1Text": "Muji-Muji Daruma akan mengabaikan batas HP dan dapat secara bersamaan menyerang musuh terdekat dan heal karakter",
+    "c2KickPressDmg_": "DMG Bonus Tekan Fuufuu Whirlwind Kick",
+    "c2KickDmg_": "DMG Bonus Fuufuu Whirlwind Kick",
+    "c2Cond": "Waktu yang dihabiskan dalam kondisi <strong>Fuufuu Windwheel</strong>",
+    "c6DarumaDmgInc": "Peningkatan DMG Muji-Muji Daruma",
+    "c6DarumaHealInc": "Peningkatan Heal Muji-Muji Daruma"
+  },
+  "char_Shenhe": {
+    "quill": "Icy Quills aktif",
+    "c4": "Lapisan Skyfrost Mantra",
+    "pressQuota": "Pemicu Quota Tekan",
+    "holdQuota": "Pemicu Quota Tahan",
+    "pressDuration": "Durasi Tekan",
+    "holdDuration": "Durasi Tahan"
+  },
+  "char_Thoma": {
+    "a2": "Peningkatan DMG Fiery Collapse",
+    "c2": "Peningkatan Durasi <strong>Crimson Ooyoroi</strong>",
+    "refreshBarrier": "Setelah mendapatkan atau merefresh <strong>Blazing Barrier</strong>"
+  },
+  "char_Xiangling": {
+    "afterChili": "Setelah mengambil cabai Guoba",
+    "explosionDMG": "DMG Ledakan",
+    "afterGuobaHit": "Musuh terkena serangan Guoba",
+    "duringPyronado": "Pyronado aktif",
+    "c6Exception": "Ini tidak memengaruhi <pyro>DMG Swing 1-Hit</pyro>, <pyro>DMG Swing 2-Hit</pyro>, atau <pyro>DMG Pyronado</pyro>"
+  },
+  "char_Xiao": {
+    "burst": {
+      "lifeDrain_": "Pengurangan HP",
+      "currentHPPerSec": "(HP/dtk saat ini)",
+      "incJump": "Kemampuan melompat meningkat",
+      "inBurst": "Di bawah pengaruh <strong>Bane of All Evil</strong>",
+      "stack": "Waktu yang dihabiskan di <strong>Bane of All Evil</strong>"
+    },
+    "skillStack": "Penggunaan <strong>Lemniscatic Wind Cycling</strong> sebelumnya"
+  },
+  "char_Xingqiu": {
+    "skillCond": "Dilindungi oleh Rain Swords",
+    "burstCond": "Di bawah pengaruh Rainbow Bladework",
+    "c2Cond": "Musuh terkena Sword Rain"
+  },
+  "char_Xinyan": {
+    "skill": {
+      "pyroShield": {
+        "1": "Absorpsi Shield Pyro DMG Level 1",
+        "2": "Absorpsi Shield Pyro DMG Level 2",
+        "3": "Absorpsi Shield Pyro DMG Level 3"
+      }
+    },
+    "p1": {
+      "desc": "Mengurangi kuota hit untuk <strong>Sweeping Fervor</strong> sebanyak 1"
+    },
+    "p2": {
+      "activeShield": "Karakter dilindungi oleh <strong>Sweeping Fervor</strong>"
+    },
+    "c2": {
+      "key_": "<strong>Riff Revolution</strong> Physical DMG CRIT Rate Bonus",
+      "shield": "Bentuk Level 3: Rave Shield saat dilemparkan"
+    },
+    "c4": {
+      "swingHit": "Musuh terkena <pyro>Swing DMG</pyro>"
+    },
+    "c6": {
+      "duringCharge": "Melakukan Charged Attack"
+    }
+  },
+  "char_YaeMiko": {
+    "c4": "Musuh terkena petir <strong>Sesshou Sakura</strong>"
+  },
+  "char_Yanfei": {
+    "seals": ["0 seals", "1 seal", "2 seals", "3 seals", "4 seals"],
+    "perSeal": "(per seal)",
+    "maxSeals": "Jumlah maksimum Scarlet Seals",
+    "charged": {
+      "0": "DMG 0-Seal",
+      "1": "DMG 1-Seal",
+      "2": "DMG 2-Seal",
+      "3": "DMG 3-Seal",
+      "4": "DMG 4-Seal"
+    },
+    "burst": {
+      "grantMax": "Memberikan jumlah maksimum Scarlet Seals"
+    },
+    "passive1": {
+      "sealsConsumed": "Seals dikonsumsi dengan menggunakan Charged Attack"
+    },
+    "passive2": {
+      "key": "DMG Blazing Eye"
+    },
+    "c1": {
+      "sealChargedStam_": "Konsumsi Stamina Charged Attack Menurun"
+    },
+    "c6": {
+      "maxSealInc": "Peningkatan Jumlah maks Scarlet Seals"
+    }
+  },
+  "char_YunJin": {
+    "burst": "Di bawah pengaruh Flying Cloud Flag Formation",
+    "a4Inc_": "Peningkatan pada Jenis Elemental party",
+    "c4": "Setelah memicu reaksi Crystallize"
+  },
+  "char_Zhongli": {
+    "skill": {
+      "stele": "DMG Stone Stele",
+      "resonance": "DMG Resonansi",
+      "maxStele": "Jumlah maksimum Stele",
+      "nearShield": "Musuh berada di dekat <strong>Jade Shield</strong>"
+    },
+    "p1cond": "Setelah <strong>Jade Shield</strong> terkena DMG",
+    "c6heal": "Maksimum Regenerasi HP"
+  },
+  "weapon_AlleyHunter": {
+    "condName": "Waktu untuk Off-Field"
+  },
+  "weapon_AmosBow": {
+    "condName": "Durasi Arrow Flight"
+  },
+  "weapon_BlackTassel": {
+    "condName": "Musuh adalah Slime"
+  },
+  "weapon_Deathmatch": {
+    "condName": "Total Musuh Terdekat"
+  },
+  "weapon_DragonspineSpear": {
+    "aoeDmg": "DMG Everfrost Icicle",
+    "cryoAffectedDmg": "DMG pada Musuh yang Terkena Dampak <cryo>Cryo</cryo>"
+  },
+  "weapon_FerrousShadow": {
+    "condName": "HP Memenuhi Batas",
+    "resistance": "Resistensi Interupsi Charged Attack Ditingkatkan"
+  },
+  "weapon_FreedomSworn": {
+    "sigilsConsumed": "Setelah mengkonsumsi Sigils of Rebellion"
+  },
+  "weapon_Frostbearer": {
+    "aoeDmg": "DMG Everfrost Icicle",
+    "cryoAffectedDmg": "DMG pada Musuh yang Terkena <cryo>Cryo</cryo>"
+  },
+  "weapon_Hamayumi": {
+    "condName": "Energi sudah 100%"
+  },
+  "weapon_MemoryOfDust": {
+    "atkEffInc": "Peningkatan Efek ATK"
+  },
+  "weapon_PolarStar": {
+    "condName": "Ashen Nightstar"
+  },
+  "weapon_SerpentSpine": {
+    "takeMoreDmg": "Peningkatan pada DMG yang Diterima"
+  },
+  "weapon_Slingshot": {
+    "condName": "Normal/Charged Attack Hit",
+    "less": "Dalam 0.3dtk setelah dilepaskan",
+    "more": "Setelah 0.3dtk setelah dilepaskan"
+  },
+  "weapon_SnowTombedStarsilver": {
+    "aoeDmg": "DMG Everfrost Icicle",
+    "cryoAffectedDmg": "DMG pada Musuh yang Terkena <cryo>Cryo</cryo>"
+  },
+  "weapon_SummitShaper": {
+    "atkEffInc": "Peningkatan Efek ATK"
+  },
+  "weapon_TheAlleyFlash": {
+    "condName": "Tidak ada DMG Diterima"
+  },
+  "weapon_TheUnforged": {
+    "atkEffInc": "Peningkatan Efek ATK"
+  },
+  "weapon_TheWidsith": {
+    "aria": "Aria",
+    "interlude": "Interlude",
+    "recitative": "Recitative"
+  },
+  "weapon_ThunderingPulse": {
+    "condName": "Thunder Emblem"
+  },
+  "weapon_VortexVanquisher": {
+    "atkEffInc": "Peningkatan Efek ATK"
+  },
+  "artifact_EchoesOfAnOffering": {
+    "mode": "Mode Pemicu",
+    "avg": "Rata-rata",
+    "always": "Selalu"
+  },
+  "char_KamisatoAyato": {
+    "skill": {
+      "unableToAuto": "Tidak dapat menggunakan Charged atau Plunging attack",
+      "namisenStacks": "Lapisan Namisen",
+      "shun_dmgInc": "<hydro>Peningkatan DMG Shunsuiken</hydro>"
+    },
+    "passive1": {
+      "afterUse": "Lapisan Namisen diperoleh setelah penggunaan skill",
+      "afterExplode": "Lapisan Namisen diperoleh setelah ilusi air meledak"
+    },
+    "c1": {
+      "shun_dmg_": "<hydro>Bonus DMG Shunsuiken</hydro"
+    },
+    "c2": {
+      "addlStacks": "Peningkatan Lapisan Namisen Maks"
+    },
+    "c6": {
+      "dmg": "DMG Boundless Origin"
+    }
+  },
+  "char_KukiShinobu": {
+    "a4": {
+      "heal": "Peningkatan Healing Ele. Skill"
+    },
+    "c4": {
+      "dmg": "DMG Thundergrass Mark"
+    }
+  },
+  "char_Yelan": {
+    "c2": {
+      "dmg": "DMG Taking All Comers"
+    },
+    "c4": {
+      "condName": "Jumlah musuh yang ditandai dengan Lifeline"
+    },
+    "c6": {
+      "dmg": "DMG Mastermind Breakthrough Barb"
+    }
+  },
+  "page_character": {
+    "addNew": "Tambah Karakter Baru",
+    "tabs": {
+      "overview": "Overview",
+      "talent": "Talenta",
+      "teambuffs": "Buff Team",
+      "optimize": "Optimize",
+      "theorycraft": "Theorycraft"
+    },
+    "formulas": "Formula",
+    "calculations": "Perhitungan",
+    "selectCharacter": "Pilih Karakter",
+    "removeCharacter": "Kamu yakin ingin menghapus {{value}}?",
+    "delete": "Hapus Karakter",
+    "teammates": "Teammates",
+    "showingNum_one": "Menampilkan <1>{{count}}</1> dari {{value}} Karakter",
+    "showingNum_other": "Menampilkan <1>{{count}}</1> dari {{value}} Karakter",
+    "hitmode": {
+      "hit": "Non Crit DMG",
+      "avgHit": "Avg. DMG",
+      "critHit": "Crit Hit DMG"
+    },
+    "tabEquip": {
+      "swapWeapon": "Ganti Senjata",
+      "swapArt": "Ganti Artefak",
+      "compare": "Bandingkan dengan Build saat ini",
+      "unequipArts": "Copot semua artefak"
+    },
+    "characterName": "Nama Karakter",
+    "teammate": "Teammate {{count}}",
+    "noReaction": "Tanpa Reaksi",
+    "multiTarget": {
+      "title": "Konfigurasi Target Multi-Optimasi",
+      "addNewTarget": "Tambah Kustom target Baru",
+      "addNewMTarget": "Tambah Kustom Multi-target Baru",
+      "info1": "Catatan: Multi-Optimization Targets kustom buatan komunitas dapat ditemukan dalam <1>GO Discord</1> atau <3>KQM Multi-Opt Guide</3>, namun validitas konfigurasi tersebut tidak dapat dijamin.",
+      "info2": "Pengguna bertanggung jawab untuk mengonfirmasi keakuratan untuk kasus penggunaan mereka sendiri.",
+      "description": "Deskripsi",
+      "duplicate": "Duplikat",
+      "target_one": "<0>{{count}}</0> Target",
+      "target_other": "<0>{{count}}</0> Target"
+    },
+    "addStats": {
+      "title": "Konfigurasi Musuh + Bonus Stats",
+      "info": "Kamu dapat menggunakan kolom ini untuk menambahkan buff/debuff yang tidak didukung secara langsung di GO, seperti buff makanan, kartu abyss, atau Superconduct. Lihat <1>Genshin Impact wiki</1> untuk mengetahui nilai spesifiknya."
+    },
+    "tabTheorycraft": {
+      "substatType": {
+        "min": "Gunakan roll substat minimum",
+        "max": "Gunakan roll substat maksimum",
+        "mid": "Gunakan roll substat median"
+      },
+      "maxTotalRolls": "Build \"valid\" hanya dapat memiliki maksimal 45 roll.",
+      "maxRolls": "Substat ini dapat memiliki maksimal 30 roll.",
+      "maxRollsMain": "Karena setidaknya satu mainstat memiliki stat yang sama, substat ini dapat memiliki maksimal {{value}} roll"
+    },
+    "tabTeambuff": {
+      "team_reso": "Team Resonance",
+      "resonance_tip": "Party harus penuh dengan 4 karakter agar resonansi elemen dapat diterapkan."
+    }
+  },
+  "page_weapon": {
+    "showingNum_one": "Menampilkan <1>{{count}}</1> dari {{value}} Senjata",
+    "showingNum_other": "Menampilkan <1>{{count}}</1> dari {{value}} Senjata",
+    "edit": "Edit Senjata",
+    "weaponName": "Nama Senjata",
+    "removeWeapon": "Kamu yakin ingin menghapus {{value}}?",
+    "addWeapon": "Tambah Senjata Baru"
+  },
+  "weapon_AquaSimulacra": {
+    "condName": "Musuh terdekat"
+  },
+  "weapon_FadingTwilight": {
+    "states": {
+      "evengleam": "Evengleam",
+      "afterglow": "Afterglow",
+      "dawnblaze": "Dawnblaze"
+    },
+    "condName": "Status saat ini"
+  },
+  "weapon_HaranGeppakuFutsu": {
+    "consumed": "Lapisan Wavespike dikonsumsi"
+  },
+  "char_Collei": {
+    "sproutDmg": "DMG Sprout",
+    "miniAnbarDmg": "DMG Miniature Cuilein-Anbar"
+  },
+  "char_Dori": {
+    "c2MultiplierKey_": "Jinni Toop Multiplier",
+    "c2DmgKey": "DMG Jinni Toop",
+    "c4ConnectedBelowHp": "Karakter terhubung ke Jinni dan HP di bawah 50%",
+    "c4ConnectedBelowEner": "Karakter terhubung ke Jinni dan Energi di bawah 50%"
+  },
+  "char_ShikanoinHeizou": {
+    "takingField": "Setelah berada di medan pertempuran"
+  },
+  "char_Tighnari": {
+    "p1Cond": "Setelah menembakkan <strong>Wreath Arrow</strong>",
+    "c4ReactCond": "Setelah <strong>Tanglevine Shaft</strong> memicu reaksi <dendro>Dendro</dendro>",
+    "c6DmgKey": "Tambahan DMG Clusterbloom Arrow",
+    "c6WreathRed": "Waktu pengisian <strong>Wreath Arrow</strong> berkurang"
+  },
+  "elementalResonance": {
+    "SprawlingGreenery": {
+      "cond2ele": "Setelah memicu reaksi Burn, Catalyze, atau Bloom",
+      "cond3ele": "Setelah memicu reaksi Aggravate, Spread, Hyperbloom, atau Burgeon"
+    },
+    "EnduringRock": {
+      "hitCond": "Setelah mengakibatkan DMG ke musuh ketika dilindungi oleh shield"
+    }
+  },
+  "page_character_optimize": {
+    "mainStat": {
+      "levelAssTooltip": {
+        "title": "Asumsi Level Main Stat",
+        "desc": "Mengubah nilai mainstat menjadi setidaknya level tertentu.  Tidak mengubah substat."
+      },
+      "assumptionLvl": {
+        "no": "Asumsi Tidakada Lv. Main Stat",
+        "lvl": "Asumsikan Main Stat setidaknya Lv. {{lvl}}"
+      }
+    },
+    "tcGraph": {
+      "vs": "Target Optimisasi Grafik vs.",
+      "notSel": "Tidak Dipilih",
+      "downloadData": "Download Data",
+      "desc": "Dengan menggunakan data dari pembuat, ini akan menghasilkan grafik untuk memvisualisasikan Target Pengoptimalan vs. Target Grafik yang dipilih. Grafik akan menampilkan nilai Target Pengoptimalan maksimum per 0,01 dari Target Grafik yang dipilih. Mengaktifkannya adalah opsional, dan hal itu akan memperlambat waktu build",
+      "showStatThr": "Tampilkan Garis Batas Stat",
+      "generatedBuilds": "Build yang Dihasilkan",
+      "statReqThr": "Garis Batas Persyaratan Stat",
+      "currentBuild": "Build Saat ini",
+      "highlightedBuilds": "Build yang Disorot",
+      "buildAlreadyInList": "Build sudah ada dalam daftar"
+    },
+    "levelFilter": "Filter Level Artefak",
+    "allowPartial": "Izinkan Build Sebagian (<5 artefak)",
+    "constraintFilter": {
+      "title": "Batasan Build Minimum",
+      "tooltip": "Tetapkan persyaratan minimum tertentu yang harus dipenuhi oleh build yang dihasilkan. misalnya Build yang dihasilkan harus memiliki setidaknya 140% Energy Recharge."
+    },
+    "artSetConfig": {
+      "title": "Konfigurasi Set Artefak",
+      "setEffCond": "Tetapkan Kondisi Efek",
+      "enabled": "Diaktifkan",
+      "allowed": "Diizinkan",
+      "excluded": "Pengecualian",
+      "selected": "Terpilih",
+      "2rainbow": "3-Rainbow",
+      "4rainbow": "5-Rainbow",
+      "allowAll2set": "Izinkan Semua 2-Set",
+      "excludeAll2set": "Kecualikan Semua 2-Set",
+      "allowAll4set": "Izinkan Semua 4-Set",
+      "excludeAll4set": "Kecualikan Semua 4-Set",
+      "alExRainbow": "<0>Izinkan <1></1></0> / <2>Kecualikan <1></1></2> Rainbow Builds",
+      "modal": {
+        "setCond": {
+          "title": "Efek Kondisional Set Artefak",
+          "reset": "Reset Kondisional",
+          "text": "Beberapa efek artefak memberikan statistik kondisional. Jendela ini memungkinkanmu untuk memilih efek tersebut, sehingga dapat menyumbangkan statistik saat build yang memenuhi set efek dihitung selama pengoptimalan."
+        },
+        "ArtSetFilter": {
+          "title": "Set Artefak <1>Diizinkan<1></1></1> / <3>Dikecualikan<1></1></3>",
+          "intro": "Kamu dapat mengizinkan/mengecualikan set mana yang ingin dipertimbangkan oleh pembuat. Dalam contoh berikut, <strong>A</strong> sudah on-set, dan <strong>R</strong> adalah rainbow (off-set)",
+          "2set": "<0><0>Mengecualikan<1></1> 2-Set</0></0> akan mengecualikan build 2-Set: <2><0>AA</0>RRR</2> dan < 4><0>AAA</0>RR</4>.",
+          "4set": "<0><0>Mengecualikan<1></1> 4-Set</0></0> akan mengecualikan build 4-Set: <2><0>AAAA</0>R</2> dan < 4><0>AAAAA</0></4>.",
+          "2rain": "<0><0>Mengecualikan<1></1> 3-Rainbow</0></0> akan mengecualikan build 2-Set + 3-Rainbow: <2>AA<1>RRR</1></ 2> dan <4>AAA<1>RR</1></4>.",
+          "4rain": "<0><0>Mengecualikan<1></1> 5-Rainbow</0></0> akan mengecualikan build 5-Rainbow penuh: <2><0>RRRRR</0></2>."
+        }
+      }
+    },
+    "buildDropdownDesc": "Mengurangi jumlah build yang dihasilkan akan mengurangi waktu perhitungan build untuk build dalam jumlah besar.",
+    "threadDropdownDesc": "Meningkatkan jumlah thread akan mempercepat waktu build, tetapi akan menggunakan lebih banyak daya CPU.",
+    "noArtis": "Ups! Sepertinya kamu belum menambahkan artefak ke GO!  Kamu harus membuka halaman <1>Artifacts</1> dan menambahkan beberapa!",
+    "build_one": "<0>{{count}}</0> Build",
+    "build_other": "<0>{{count}}</0> Build",
+    "thread_one": "<0>{{count}}</0> Thread",
+    "thread_other": "<0>{{count}}</0> Thread",
+    "targetSelector": {
+      "selectOptTarget": "Pilih Target Optimisasi",
+      "selectGraphTarget": "Pilih Target Grafik",
+      "invalidTarget": "TARGET TIDAK VALID",
+      "selectBuildTarget": "Pilih Target Build Constraint"
+    },
+    "selectTargetFirst": "Pilih Target Optimisasi terlebih dahulu",
+    "generateButton": {
+      "cancel": "Batal",
+      "generateBuilds": "Hasilkan Build"
+    },
+    "removeBuildButton": "Hapus Build",
+    "theorycraftButton": "Theorycraft",
+    "currentlyEquippedBuild": "Saat ini Digunakan",
+    "addBuildToList": "Tambahkan build ke daftar",
+    "graphBuildLabel": "Grafik #<1>{{count}}</1>",
+    "excludeArt": {
+      "title_exclude": "Kecualikan Artefak",
+      "title_tooltip": "Tambahkan artefak ke daftar pengecualian karakter ini. Artefak dalam daftar pengecualian tidak akan dipertimbangkan untuk pembuatan build.",
+      "excNum_one": "<1>{{count}}</1> artefak dikecualikan",
+      "excNum_other": "<1>{{count}}</1> artefak dikecualikan",
+      "addExc": "Tambahkan artefak ke daftar pengecualian karakter ini",
+      "selExc": "Pilih artefak untuk ditambahkan ke daftar pengecualian karakter ini",
+      "deSelectExc": "Klik artefak untuk menghapusnya dari daftar pengecualian",
+      "excludeArtifactTip": "Mengecualikan artefak akan mencegah generator build menggunakannya untuk karakter ini.",
+      "excluded": "Artefak ini dikecualikan.",
+      "included": "Artefak ini tidak dikecualikan."
+    },
+    "excludeChar": {
+      "title": "Izinkan Artefak yang Dilengkapi",
+      "modal": {
+        "allow_all": "Tambahkan semua karakter ke daftar yang diizinkan",
+        "disallow_All": "Hapus semua karakter dari daftar yang diizinkan"
+      },
+      "allowEquip": "Izinkan menggunakan artefak dari",
+      "usingNumTot_one": "Menggunakan <1>{{arts}}</1> artefak dari <3>{{count}}</3> karakter",
+      "usingNumTot_other": "Menggunakan <1>{{arts}}</1> artefak dari <3>{{count}}</3> karakter"
+    },
+    "buildCompleted": "Build Selesai",
+    "notifyTooltip": "Mainkan suara saat build selesai dibuat. Juga akan menampilkan prompt alarm saat keluar tab."
+  },
+  "weapon_ForestRegalia": {
+    "condName": "Setelah mengambil Leaf of Consciousness"
+  },
+  "weapon_FruitOfFulfillment": {
+    "stackName": "Efek Wax and Wane"
+  },
+  "weapon_Moonpiercer": {
+    "condName": "Setelah mengambil Leaf of Revival"
+  },
+  "weapon_SapwoodBlade": {
+    "condName": "Setelah mengambil Leaf of Consciousness"
+  },
+  "char_TravelerAnemo": {
+    "p1": "DMG Wind Blade",
+    "c6": "Musuh terkena <strong>Gust Surge</strong>",
+    "c4": "Mengurangi DMG yang diambil ketika casting",
+    "initialEleDmg": "DMG Absorpsi Initial Cutting",
+    "maxEleDmg": "DMG Absorpsi Pemotongan Maks",
+    "stormEleDmg": "DMG Absorpsi Initial Storm",
+    "stormEleMaxDmg": "DMG Absorpsi Storm Maks"
+  },
+  "char_TravelerElectro": {
+    "skill": {
+      "amuletGenAmt": "Jumlah Abundance Amulets yang dihasilkan",
+      "absorb": "Setelah menyerap Abundance Amulet"
+    },
+    "burst": {
+      "3rd": "Tahap 3 Falling Thunder DMG",
+      "thunderCd": "Falling Thunder CD"
+    },
+    "passive2": {
+      "enerRech_": "Peningkatan Efek Energy Recharge Abundance Amulet"
+    },
+    "c2": {
+      "thunderHit": "Musuh terkena <strong>Falling Thunder</strong>"
+    }
+  },
+  "char_TravelerGeo": {
+    "passive2": {
+      "key": "DMG Frenzied Rockslide"
+    },
+    "c2": {
+      "key": "DMG Rockcore Meltdown"
+    }
+  },
+  "page_newTab": {
+    "title": "🛑Tab Optimizer Baru Terdeteksi🛑",
+    "p1": "Sepertinya kamu sudah membuka Genshin Optimizer di tab lain💞.  GO tidak dimaksudkan untuk beroperasi pada banyak tab📵, hal itu dapat mengakibatkan:",
+    "symptom": {
+      "1": "Data antar tab tidak Sinkron🙃.",
+      "2": "Database corruption💔.",
+      "3": "Sakit perut🤰 dan Genshin Optimizer Devs yang frustrasi😡.",
+      "4": "Dalam kasus yang jarang terjadi, MATI☠️."
+    },
+    "p2": "Kami telah mencegah hal ini terjadi dengan menampilkan pesan ini📝 kepadamu. Kamu sekarang memiliki pilihan:",
+    "choice": {
+      "1": "Tutup tab ini🔪, dan gunakan tab baru🆕.",
+      "2": "Tutup tab baru↩️, dan setelah kamu yakin ini adalah satu-satunya tab🔂, kamu dapat merefresh halaman ini🔄."
+    },
+    "refresh": "Refresh Halaman"
+  },
+  "char_Candace": {
+    "hydroInfusion": "<hydro>Sword, Claymore danPolearm Hydro Infusion</hydro>"
+  },
+  "char_Cyno": {
+    "p1Dmg": "DMG Duststalker Bolt",
+    "judication": "Memicu efek Judication",
+    "burstNormalDmgInc": "Peningkatan DMG Normal Attack Pactsworn Pathclearer",
+    "boltDmgInc": "Peningkatan DMG Duststalker Bolt"
+  },
+  "char_Nilou": {
+    "skill": {
+      "dance1": "DMG 1-Hit Sword Dance",
+      "dance2": "DMG 2-Hit Sword Dance",
+      "whirl1": "DMG 1-Hit Whirling Steps",
+      "whirl2": "DMG 2-Hit Whirling Steps",
+      "wheel": "DMG Water Wheel"
+    },
+    "passive1": {
+      "underChaliceEffect": "Di Bawah Pengaruh Golden Chalice's Bounty",
+      "notDendroHydroTeam": "Petunjuk: Tetapkan tim kamu hanya dengan karakter Dendro dan Hydro untuk melihat kondisi dan efek tambahan",
+      "condName": "Setelah terkena <dendro>serangan Dendro</dendro> ketika terpengaruh oleh Bounty Golden Chalice",
+      "bountifulCores": "Reaksi Bloom akan menciptakan Bountiful Cores"
+    },
+    "c4": {
+      "condName": "Setelah langkah tarian ketiga Pirouette mengenai musuh"
+    }
+  },
+  "char_Nahida": {
+    "karmaDmg_": "DMG Bonus Tri-Karma Purification",
+    "karmaCritRate_": "Tri-Karma Purification Crit Rate Bonus",
+    "karmaIntervalDec": "Pemicu Penurunan Interval Tri-Karma Purification",
+    "noBurstEffect": "Petunjuk: Tidak ada efek ledakan yang aktif. Aktifkan C1 dan/atau tambahkan rekan tim <pyro>Pyro</pyro>, <electro>Electro</electro>, dan/atau <hydro>Hydro</hydro>",
+    "partyInBurst": "Party di medan pertempuran",
+    "c1Key": "Tambahan bonus <strong>Shrine of Maya</strong> untuk anggota party  <pyro>Pyro</pyro>, <electro>Electro</electro>, dan <hydro>Hydro</hydro>",
+    "c2": {
+      "bloomCondName": "Musuh yang ditandai oleh <strong>Seeds of Skandha</strong>",
+      "qasCondName": "Musuh yang terkena Quicken, Aggravate, atau Spread setelah ditandai oleh <strong>Seeds of Skandha</strong"
+    },
+    "c4CondName": "Musuh terdekat yang terpengaruh oleh Seeds of Skandha milik <strong>All Schemes To Know</strong>",
+    "c6KarmicDmg": "DMG Karmic Oblivion"
+  },
+  "artifact_FlowerOfParadiseLost": {
+    "condName": "Setelah memicu Bloom, Hyperbloom atau Burgeon"
+  },
+  "char_Faruzan": {
+    "giftCondName": "Terpengaruh oleh Prayerful Wind's Benefit",
+    "a4CondName": "Di bawah efek Hurricane Guard",
+    "c2DurationInc": "Peningkatan Durasi Dazzling Polyhedron",
+    "c6Arrow": "Menerapkan Pressurized Collapse saat mengakibatkan DMG",
+    "baleCondName": "Musuh dipengaruhi oleh Prayerful Wind's Bale"
+  },
+  "char_Layla": {
+    "starDmgInc": "Peningkatan DMG Shooting Star",
+    "c1ShieldBonusKey_": "Fortress of Fantasy Bonus",
+    "c4CondKey": "Di bawah efek Dawn Star",
+    "starDmg_": "DMG Bonus Shooting Star",
+    "slugDmg_": "DMG Bonus Starlight Slug",
+    "starInterval_": "Jeda Waktu Penciptaan Night Star"
+  },
+  "char_Wanderer": {
+    "windfavoredState": "Ketika berada dalam status <strong>Windfavored</strong>",
+    "p1": {
+      "pyroCondName": "<strong>Hanega: Song of the Wind</strong> bersentuhan dengan <pyro>Pyro</pyro>",
+      "cryoCondName": "<strong>Hanega: Song of the Wind</strong> bersentuhan dengan <cryo>Cryo</cryo>"
+    },
+    "p2Dmg": "DMG Wind Arrow",
+    "c1BonusKey": "DMG Bonus Scaling Wind Arrow",
+    "c2CondName": "Poin perbedaan antara Poin Kuugoryoku maksimum dan saat ini",
+    "c6Key": "Shugen: The Curtains' Melancholic Sway Mult."
+  },
+  "weapon_ToukabouShigure": {
+    "condName": "Musuh terkena Cursed Parasol"
+  },
+  "char_Alhaitham": {
+    "withMirrors": "Saat memiliki Chisel-Light Mirrors",
+    "debateStacks": "Setelah menghasilkan Chisel-Light Mirrors",
+    "mirrorsConsumed": "Mirror dikonsumsi setelah melepaskan <strong>Particular Field: Fetters of Phenomena</strong>",
+    "projectionAttack_dmg_": "Bonus DMG Serangan Proyektil",
+    "excessMirror": "Setelah menghasilkan Chisel-Light Mirror ketika jumlahnya telah mencapai batasnya",
+    "projectionDmg": "DMG Proyektil Attack"
+  },
+  "char_Yaoyao": {
+    "inExplosionAoE": "Setelah berada dalam AoE ledakan <strong>White Jade Radish</strong>",
+    "inLegacy": "Dalam status Adeptal Legacy",
+    "megaDmg": "DMG Mega Radish",
+    "megaHeal": "Mega Radish Healing"
+  },
+  "page_error": {
+    "title": "🛑Terjadi Kesalahan Tak Terduga🛑",
+    "p1.1": "GO mengalami kesalahan tak terduga. Ini mungkin kesalahan kami, jadi tolong bantu kami membantumu!",
+    "p1.2": "Berikut adalah beberapa hal yang dapat kamu coba untuk mengatasi masalah tersebut:",
+    "fixes": {
+      "1": "Refresh halaman",
+      "2": "Nonaktifkan ekstensi apa pun dan refresh kembali",
+      "3": "Unduh Datamu dari bawah dan simpan di tempat yang aman. Klik tombol 'Hapus SEMUA Data GO' dan unggah kembali Datamu"
+    },
+    "p2": "Jika kamu melakukan hal di atas dan masih kembali ke sini, kirimkan laporan ke halaman GitHub Issues kami, atau ke channel Bug Reports di Discord kami",
+    "report": {
+      "1": "Unduh Database kamu dari bawah",
+      "2": "Salin teks laporan dari kotak di bawah ini",
+      "3": "Klik <1>here</1> untuk melaporkan di GitHub. Paste teks dalam deskripsi, isi langkah-langkah reproduksi, dan sertakan file JSON kamu (kamu mungkin perlu mengganti namanya menjadi diakhiri dengan '.txt')",
+      "4": "Atau klik <1>here</1> untuk melaporkan di Discord. Buka channel #🐛bug-reports, create a new thread dan tempel teks di kotak pesan. Isi langkah-langkah reproduksi dan upload file JSON kamu."
+    },
+    "refresh": "Refresh Halaman",
+    "caption": "Live footage dari teknisi kami yang menyelidiki masalah tersebut",
+    "confirmNuke": "Yakin ingin menghapus SEMUA data GO? Ini tidak dapat diubah!",
+    "finishNuke": "Menghapus semua data GO. Merefresh Halaman.",
+    "nuke": "Hapus SEMUA Data GO"
+  },
+  "char_Dehya": {
+    "inFieldAndTakeDmg": "Setelah karakter aktif menerima damage di dalam Fiery Sanctum",
+    "field_dmg_": "DMG Bonus Fiery Sanctum",
+    "initialHeal": "Initial Healing",
+    "dotHeal": "Tambahan Healing",
+    "critHitDuringBurst": "Jumlah hit CRIT selama sekali penggunaan <strong>The Lioness' Bite</strong>"
+  }
+}

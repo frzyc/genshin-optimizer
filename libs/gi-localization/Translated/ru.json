@@ -1,0 +1,1718 @@
+{
+  "artifact": {
+    "editor": {
+      "title": "Редактор Артефактов",
+      "substat": {
+        "substatFormat": "Характеристика {{value}}",
+        "noSubstat": "Нет характеристик",
+        "selectSub": "Выберите доп. характеристику",
+        "error": {
+          "noCalc": "Невозможно рассчитать роллы характеристик.",
+          "noOverRoll": "Доп. характеристика не может быть улучшена более {{value}} раз."
+        },
+        "noRoll": "Нет роллов",
+        "noStat": "Не задано",
+        "eff": "ЦР: <1></1>",
+        "nextRolls": "След. хар-ка:",
+        "RollCount_one": "{{count}} Ролл",
+        "RollCount_other": "{{count}} Роллов"
+      },
+      "rarity": "Редкость",
+      "level": "Уровень",
+      "unknownPieceName": "Неизвестный тип артефакта",
+      "curSubEff": "Текущая Ценность Ролла",
+      "curSubEffDesc": "Каждые 4 улучшения артефакта, вы получаете ролл характеристики. <strong>Ценность Ролла</strong> определяет насколько высок ролл характеристики в процентах.",
+      "maxSubEff": "Макс. Ценность Ролла",
+      "maxSubEffDesc": "<strong>Максимальная Ценность Роллов Характеристики</strong> артефакта вычисляется, как если бы все оставшиеся улучшения получили максимальные значения.",
+      "preview": "Предпросмотр",
+      "dupArt": "Обнаружен повторяющийся артефакт",
+      "upArt": "Обнаружен улучшенный артефакт",
+      "beforeEdit": "До редактирования",
+      "btnSave": "Сохранить Артефакт",
+      "btnAdd": "Добавить Артефакт",
+      "btnClear": "Очистить",
+      "btnRandom": "Случайно",
+      "btnUpdate": "Обновить Артефакт",
+      "clearPrompt": "В редакторе есть артефакт. Вы уверены, что хотите очистить редактор?",
+      "unknownSetName": "Неизвестный набор артефактов"
+    },
+    "artifactFilter": "Фильтр Артефактов",
+    "filterLocation": {
+      "inventory": "Инвентарь",
+      "currentlyEquipped": "Используются",
+      "location": "Местонахождение"
+    },
+    "button": {
+      "unequipArtifacts": "Снять Артефакты",
+      "deleteArtifacts": "Удалить артефакты",
+      "lockArtifacts": "Заблокировать артефакты",
+      "unlockrtifacts": "Разблокировать артефакты"
+    },
+    "buttonHint": "Примечание: красные кнопки выше применяются только к <1>отфильтрованным артефактам</1>",
+    "tipsOfTheDay": [
+      "Максимальная ЦР 4-х звездочного артефакта около 540%.",
+      "Максимальная ЦР артефакта обычно уменьшается с его улучшением. Это нормально!",
+      "Дополнительные характеристики с \"1\" самые сложные для сканирования в скриншотах.",
+      "Если все ваши роллы(6) ушли в одну характеристику, она будет фиолетовой!",
+      "Нажмите на \"Детали\" когда улучшаете артефакт в игре, чтобы сканировать по мере улучшения.",
+      "Теперь вы можете загружать несколько скриншотов артефактов для сканирования!"
+    ],
+    "mainStat": "Основная хар-ка",
+    "slot": "Слот",
+    "slotName": {
+      "flower": "Цветок жизни",
+      "plume": "Перо смерти",
+      "sands": "Пески времени",
+      "goblet": "Кубок пространства",
+      "circlet": "Корона разума"
+    },
+    "info": {
+      "title": "Руководство по редактированию артефактов",
+      "section1": "<0>Роллы характеристик</0><1><1>Количество роллов</1>, которое имеет характеристика, показано справа и указывается с помощью полосок. Чем больше это число, тем ярче подсвечивается характеристика:<3></3>.</1><2>Ценность Роллов Характеристики</2><3>Ценность Роллов (ЦР) характеристики - это процентное соотношение текущих значений от максимально возможных для 5<1></1> артефакта. На примере из изображения максимальное значение ролла HP% 5.8%.. Тогда ЦР: <3>5.3/5.8 ≈ 90%.</3></3><4>Текущая Ценность Роллов vs. Максимальная Ценность Роллов</4><5>Когда у 5<1></1> все 9 (4 основных + 5 дополнительных) роллов получают максимальные значения, это значит, что артефакт имеет 900% ЦР. Однако большинству артефактов везет меньше. <3>Текущая ЦР</3> артефакта высчитывается относительно такого 100% артефакта. <5>Максимальная ЦР</5> - это максимально возможная ЦР, которую артефакт может получить, если оставшиеся роллы будут самыми высокими.</5><6>Блокировка артефакта</6><7>Заблокированный артефакт <1></1> не будет учитываться при создании сборок. Надетые артефакты заблокированы по умолчанию.</7>",
+      "section2": "<0>Редактор артефактов</0><1>Полнофункциональный редактор артефактов, который принимает любые артефакты от 3<1></1> до 5<3></3>. После ввода характеристик, он может рассчитать точные значения роллов. Также он проверит, правильное ли количество роллов имеет артефакт относительно его уровня, наряду с другими проверками.</1><2>Скан скриншотов</2><3>Вбивать артефакты вручную слишком муторно? Вы можете отсканировать ваши артефакты со скриншотов! Нажмите на кнопку <1>Show Me How!</1> во вкладке Редактор Артефактов, чтобы узнать больше.</3><4>Автоматический Сканер Артефактов</4><5>Если вы играете в Геншин на ПК, вы можете скачать инструмент, который автоматически отсканирует все ваши артефакты, а потом вы сможете импортировать эти данные в <1></1> Настройках. Список сканеров, совместимых с GO можно получить, <3>Нажав здесь</3>.</5><6>Обнаружение улучшенных/повторяющихся артефактов</6><7>А вы знали, что GO может заметить, если вы добавите <1>дубликат</1> уже добавленного артефакта? Еще он заметит, если добавляемый артефакт - это <3>улучшенный вариант</3> уже существующего артефакта. Когда повторяющийся/улучшенный артефакт будет замечен, вы сможете сравнить его с уже существующим для редактирования (см. рис.).</7>",
+      "section3": "<0>Инвентарь артефактов</0><1>Все артефакты, добавленные в GO,  отображаются здесь. Фильтры позволят вам лучше понять текущее положение дел с артефактами. </1><2>Пример: Поиск кормовых артефактов</2><3>С помощью фильтра по артефактам и их ЦР вы сможете с легкостью найти те артефакты, которые можно скормить другим.</3><4>Фильтры в примере на картинке : </4><5><0><0>Уровень 0-8.</0><1>Незаблокированные артефакты в Инвентаре.</1><2>Простые HP, Защита и Восстановление Энергии исключены из подсчёта ЦР.</2><3>Отсортировано по возрастанию Максимальной Ценности Роллов.</3></0></5><6>Это поможет отсортировать артефакты в инвентаре по самой низкой ЦР для указанных характеристик.</6>"
+    },
+    "sortMap": {
+      "level": "Уровень",
+      "efficiency": "Текущая Ценность Роллов",
+      "mefficiency": "Максимальная Ценность Роллов"
+    },
+    "efficiencyFilter": {
+      "title": "Характеристики для использования в рассчете ЦР"
+    },
+    "resetFilters": "Сбросить фильтры",
+    "setEffectNum": "{{setNum}}-Выбор значения",
+    "showingNum_one": "Показан <1>{{count}}</1> из {{value}} артефактов",
+    "showingNum_other": "Показано <1>{{count}}</1> из {{value}} артефактов",
+    "edit": "Редактировать артефакт",
+    "autocompleteLabels": {
+      "sets": "Наборы артефактов",
+      "mainStats": "Основные характеристики",
+      "substats": "Дополнительные характеристики",
+      "set": "Набор артефактов"
+    },
+    "substat_one": "{{count}} доп. хар-ка",
+    "substat_other": "{{count}} доп. хар-ки",
+    "addNew": "Добавить Новый Артефакт",
+    "sub_one": "{{count}} стат",
+    "sub_other": "{{count}} стат",
+    "cantDeleteLock": "Чтобы удалить артефакт, разблокируйте его",
+    "equippedArt": "Надетые артефакты",
+    "artInInv": "Артефакты в инвентаре",
+    "locationsTooltip": "Disable \"All Equipped Artifacts\" to filter by specific characters",
+    "showDup": "Show Duplicates",
+    "noDupAlert": "There are no duplicate artifacts in your inventory."
+  },
+  "languages": {
+    "chs": "Китайский (Упрощённый)",
+    "cht": "Китайский (Традиционный)",
+    "de": "Немецкий",
+    "en": "Английский",
+    "es": "Испанский",
+    "fr": "Французский",
+    "id": "Индонезийский",
+    "ja": "Японский",
+    "ko": "Корейский",
+    "pt": "Португальский",
+    "ru": "Русский",
+    "th": "Тайский",
+    "vi": "Вьетнамский",
+    "it": "Итальянский",
+    "tr": "Турецкий"
+  },
+  "settings": {
+    "title": "Настройки",
+    "languageCard": {
+      "selectLanguage": "Выбрать Язык",
+      "languageFormat": "Язык: {{language}}"
+    },
+    "uploadCard": {
+      "title": "Загрузить данные",
+      "replaceDatabase": "Обновить данные",
+      "hint": "Загрузите сюда ваш JSON файл...",
+      "hintPaste": "...либо вставьте данные ниже.",
+      "error": {
+        "jsonParse": "Невозможно считать JSON файл.",
+        "unknown": "Неизвестный формат файла.",
+        "monaInvalid": "Неверный формат Mona-Uranai файла",
+        "goInvalid": "Неверный формат данных GO"
+      },
+      "dbSource": "Источник данных:",
+      "goodUpload": {
+        "title": "<strong>Genshin Open Object Description</strong> (GOOD) формат"
+      },
+      "buttons": {
+        "open": "Открыть",
+        "detectDups": "Обнаруживать улучшения/дубликаты",
+        "delNotInImport": "Удалять не присутствующее в импорте"
+      },
+      "tooltip": {
+        "detectdup": "Находить улучшения/дублирования в GO и обновлять данные в GO.",
+        "ignoreDup": "Не обнаруживать улучшения/дублирования, импорт добавляется к уже существующему в инвентаре GO.",
+        "delNotInImport": "Предполагать, что импорт является полной описью. Все данные в GO, отсутствующие в импорте, будут удалены.",
+        "keepNotInImport": "Предполагать, что импорт является частичной описью. Ничего не будет удалено."
+      }
+    },
+    "count": {
+      "chars": "Персонажи:",
+      "arts": "Артефакты:",
+      "weapons": "Оружия:",
+      "total": "Общая сумма",
+      "new": "Новое:",
+      "updated": "Обновлено:",
+      "removed": "Удалено:",
+      "unchanged": "Не изменено:",
+      "invalid": "Неисправны:",
+      "upgraded": "Улучшено:",
+      "dbTotal": "Merged Total:",
+      "notInImport": "Not in Import:"
+    },
+    "DatabaseCard": {
+      "title": "Данные",
+      "button": {
+        "download": "Скачать",
+        "copy": "Буфер обмена",
+        "delete": "Удалить",
+        "upload": "Загрузить",
+        "swap": "Сменить"
+      },
+      "currentDB": "Выбранные Данные"
+    },
+    "sillyCard": {
+      "desc": "We <1>stole</1> borrowed (with permission) all the character assets from <strong>Silly Wisher</strong> and gene spliced them into Genshin Optimizer.",
+      "toggle": {
+        "enabled": "Silly Optimizer Enabled",
+        "disabled": "Silly Optimizer Disabled"
+      }
+    }
+  },
+  "ui": {
+    "pageTitle": "Genshin Optimizer",
+    "tabs": {
+      "artifacts": "Артефакты",
+      "characters": "Персонажи",
+      "tools": "Инструменты",
+      "weapons": "Оружия",
+      "doc": "Документация",
+      "setting": "Настройки",
+      "scanner": "Сканеры"
+    },
+    "social": {
+      "paypal": "Paypal",
+      "patreon": "Patreon",
+      "discord": "Discord"
+    },
+    "unselect": "Отменить",
+    "ascending": "По возрастанию",
+    "descending": "По убыванию",
+    "loading": "Загрузка...",
+    "rightsDisclaimer": "Genshin Optimizer не сотрудничает и не поддерживается HoYoverse.",
+    "appVersion": "$t(pageTitle) Версия: {{version}}",
+    "underConstruction": "В разработке",
+    "error": "Ошибка",
+    "reset": "Сбросить",
+    "info": "Информация",
+    "inventory": "Инвентарь",
+    "close": "Закрыть",
+    "sortMap": {
+      "new": "Новое",
+      "name": "Имя",
+      "level": "Уровень",
+      "rarity": "Редкость",
+      "efficiency": "Текущая ЦР",
+      "mefficiency": "Максимальная ЦР",
+      "artsetkey": "Набор артефактов",
+      "probability": "Вероятные хар-ки"
+    },
+    "link": {
+      "download": "Ссылка на скачивание",
+      "discord": "Приглашение в Discord"
+    },
+    "sortBy": "Сортировать по:",
+    "delete": "Удалить",
+    "locked": "Заблокировано",
+    "unlocked": "Разблокировано",
+    "refinement": "Ранг пробуждения {{value}}",
+    "selectlevel": "Выбрать Уровень",
+    "gender": {
+      "F": "Женский",
+      "M": "Мужской"
+    },
+    "statGroupKey": {
+      "basic_stats": "Basic Stats",
+      "elem_dmg_bonus": "Elemental DMG Bonuses",
+      "enemy_debuffs": "Enemy Debuffs",
+      "self_res": "Self Resistances",
+      "reaction_dmg_bonus": "Reaction DMG Bonuses",
+      "reaction_crit": "Reaction CRIT Bonuses",
+      "elem_dmgInc": "Elemental Damage Increases",
+      "talent_dmgInc": "Talent Damage Increases",
+      "elem_crit": "Elemental CRIT Bonuses",
+      "talent_dmg_bonus": "Talent DMG Bonuses",
+      "talent_crit": "Talent CRIT Bonuses",
+      "talent_level_boost": "Talent Level Boosts",
+      "base_stat_mod": "Base Stat Modifications",
+      "stamina_buffs": "Stamina Buffs",
+      "misc": "Misc. Stats"
+    },
+    "sillyPageTitle": "Silly Optimizer"
+  },
+  "char_Eula": {
+    "burstC": {
+      "name": "Меч света",
+      "start5": "Начинается с 5 уровней",
+      "addStacks": "50% шанс получить дополнительные уровни от Элементальных Навыков и Взрывов Стихий",
+      "dmg": "Урон Меча света",
+      "bonusScaling": "Lightfall Sword Bonus Scaling"
+    },
+    "c1C": {
+      "name": "Поглотить уровни <strong>Холодного сердца</strong>",
+      "durationStack": "6с + 6с за каждый уровень, до 18с"
+    },
+    "passive1": "Урон сломанного Меча света",
+    "c4C": {
+      "dmgBonus": "Lightfall Sword Explosion DMG Bonus"
+    }
+  },
+  "char_Noelle": {
+    "p4cd": "24с, -1с каждые 4 удара",
+    "c6duration": "15с, +1с за убийство, до 10с",
+    "c4dmg": "Урон разрушения Бронефартука"
+  },
+  "char_Venti": {
+    "addAimed": "Доп. урон прицельного выстрела",
+    "addFullAimed": "Доп. урон полностью заряженного выстрела",
+    "upcurrentDuration": "Длительность потока ветра",
+    "regenEner": "Восстанавливает 15 ед. энергии Венти по завершению",
+    "c6": "Цели, получившие урон от <strong>Великой оды ветру</strong>",
+    "q": "Восстанавливает 15 ед. энергии всем персонажам поглощённого элемента в команде.",
+    "c2": {
+      "hit": "Удар по врагу",
+      "launched": "Враг подкинут"
+    }
+  },
+  "sheet": {
+    "dmg": "Урон",
+    "lessPercentHP": "HP меньше {{percent}}%",
+    "hitOp": {
+      "normal": "После попадания по врагу обычной атакой",
+      "charged": "После попадания по врагу заряженной атакой",
+      "plunging": "После попадания по врагу атакой в падении",
+      "skill": "После попадания по врагу Элементальным Навыком",
+      "burst": "После попадания по врагу Взрывом Стихий",
+      "geo": "После нанесения<geo>Гео-урона</geo>",
+      "anemo": "После нанесения<anemo>Анемо-урона</anemo>",
+      "hydro": "После нанесения<hydro>Гидро-урона</hydro>",
+      "cryo": "После нанесения<cryo>Крио-урона</cryo>",
+      "pyro": "После нанесения<pyro>Пиро-урона</pyro>",
+      "electro": "После нанесения<electro>Электро-урона</electro>",
+      "none": "Попадает по противникам",
+      "normalOrCharged": "Обычная / Заряженная атака попадает по противникам",
+      "skillOrBurst": "Элементальный навык или Элементальный взрыв попадает по противникам",
+      "crit": "Крит. попадание по противнику",
+      "normalChargedOrPlunging": "Обычные / Заряженные / Атаки в падении попали по врагу",
+      "dendro": "<dendro>Дендро-удар</dendro> попал по врагу",
+      "normalEle": "After dealing Elemental DMG through a Normal Attack",
+      "ele": "After dealing Elemental DMG",
+      "weakSpot": "After hitting an enemy Weak Spot with a Charged Shot",
+      "normalChargedSkillBurst": "After hitting an opponent with a Normal/Charged Att. or Ele. Skill/Burst",
+      "self": "After being hit by an opponent"
+    },
+    "eleAbsor": "Поглощение стихий",
+    "absorDot": "Доп. элементальный урон",
+    "afterUse": {
+      "skill": "После использования Элементального навыка",
+      "burst": "После использования Взрыва стихии",
+      "skillOrBurst": "После применения Элементального навыка или взрыва",
+      "skillPress": "After using Elemental Skill (Press)",
+      "skillHold": "After using Elemental Skill (Hold)"
+    },
+    "hits_one": "{{count}} Удар",
+    "hits_other": "{{count}} Удары",
+    "lessEqPercentHP": "HP меньше или равно {{percent}}%",
+    "greaterPercentHP": "HP больше, чем {{percent}}%",
+    "greaterEqPercentHP": "HP больше или равно {{percent}}%",
+    "lessPercentEnergy": "Энергии меньше, чем {{percent}}%",
+    "enemyLessPercentHP": "HP противника меньше {{percent}}%",
+    "enemyLessEqPercentHP": "HP противника меньше или равно {{percent}}%",
+    "enemyGreaterPercentHP": "HP противника больше {{percent}}% ",
+    "enemyGreaterEqPercentHP": "HP противника больше или равно {{percent}}%",
+    "stack_one": "{{count}} Стак",
+    "stack_other": "{{count}} Стаки",
+    "seconds_one": "{{count}} Секунд",
+    "seconds_other": "{{count}} Секунды",
+    "uses_one": "{{count}} Использование",
+    "uses_other": "{{count}} Использования",
+    "afterDefeatEnemy": "После победы над противником",
+    "afterSprint": "После рывка",
+    "skillCDRed": "Уменьшение времени отката Элe. Навыка",
+    "burstCDRed": "Уменьшение времени отката Элe. Взрыва",
+    "triggerCD": "Trigger CD",
+    "incInterRes": "Повышается сопротивление к прерыванию",
+    "charges": "Charges",
+    "cooldown": "Откат",
+    "addlCharges": "Additional Skill Charges",
+    "activeCharField": "Активный персонаж на поле",
+    "opponentsField": "Противники на поле",
+    "takeDmg": "После получения урона",
+    "infusion": {
+      "pyro": "Пиро инфузия",
+      "cryo": "Крио инфузия",
+      "anemo": "Анемо инфузия",
+      "hydro": "Гидро инфузия",
+      "electro": "Электро инфузия",
+      "dendro": "Дендро инфузия",
+      "geo": "Гео инфузия"
+    },
+    "effectDuration": {
+      "pyro": "Длительность Пиро эффекта",
+      "cryo": "Длительность Крио эффекта",
+      "anemo": "Длительность Анемо эффекта",
+      "hydro": "Длительность Гидро эффекта",
+      "electro": "Длительность Электро эффекта",
+      "dendro": "Длительность Дендро эффекта",
+      "geo": "Длительность Гео эффекта"
+    },
+    "durationInc": "Увеличение продолжительности",
+    "base": "База",
+    "stacks": "Стаки",
+    "protectedByShield": "Под щитом",
+    "protectedByShieldCrystal": "Защищён щитом от Кристаллизации",
+    "staminaDec_": "Уменьшает расход Выносливости",
+    "dmgAbsorption": {
+      "pyro": "Поглощение Пиро-урона",
+      "cryo": "Поглощение Крио-урона",
+      "anemo": "Поглощение Анемо-урона",
+      "hydro": "Поглощение Гидро-урона",
+      "electro": "Поглощение Электро-урона",
+      "dendro": "Поглощение Дендро-урона",
+      "geo": "Поглощение Гео-урона",
+      "none": "Поглощение урона",
+      "increase": "Shield Absorption Increase",
+      "max": {
+        "none": "Максимальное поглощение урона",
+        "pyro": "Максимальное поглощение Пиро-урона",
+        "dendro": "Max Shield Dendro DMG Absorption"
+      }
+    },
+    "addlCharge": "Additional Skill Charge",
+    "conditional": "Conditional",
+    "maxStacks": "Максимум стаков",
+    "1set": "1-Сет",
+    "2set": "2-Сет",
+    "4set": "4-Сет",
+    "activationStam": "Activation Stamina Consumption",
+    "stamDrain": "Расход Стамины",
+    "talents": {
+      "auto": "Авто",
+      "skill": "Навык",
+      "burst": "Burst",
+      "passive": "Пассивно",
+      "passive1": "Возвышение 1",
+      "passive2": "Возвышение 4",
+      "passive3": "Пассивно",
+      "sprint": "Спринт",
+      "constellation1": "C1",
+      "constellation2": "C2",
+      "constellation3": "C3",
+      "constellation4": "C4",
+      "constellation5": "C5",
+      "constellation6": "C6"
+    },
+    "swirlReaction": {
+      "hydro": "После воздействия с <hydro>Гидро</hydro> реакцией, ",
+      "pyro": "После воздействия с <pyro>Пиро</pyro> реакцией",
+      "electro": "После воздействия с <electro>Электро</electro> реакцией",
+      "cryo": "После воздействия с <cryo> Крио</cryo> реакцией"
+    },
+    "afterReaction": "После воздействия с Элементальной Реакцией",
+    "aoeInc": "Увеличивает АоЕ",
+    "elementalReaction": {
+      "hydro": "After triggering a <hydro>Hydro-related</hydro> Elemental Reaction",
+      "electro": "After triggering an <electro>Electro-related</electro> Elemental Reaction",
+      "shatter": "After triggering a <shattered>Shatter</shattered> Elemental Reaction",
+      "cryo": "After triggering a <cryo>Cryo-related</cryo> Elemental Reaction"
+    },
+    "bonusScaling": {
+      "skill_": "Увел. Бонуса Элем. Навыка",
+      "atkInc": "ATK Inc. Bonus Scaling",
+      "value": "{{value}}% "
+    },
+    "energy": "Энергия",
+    "teamBuff": "Командный бафф",
+    "opponents_one": "{{count}} Оппонент",
+    "opponents_other": "{{count}} Оппоненты",
+    "dmgMult": {
+      "normal": "Normal Att. DMG Mult.",
+      "charged": "Charged Att. DMG Mult.",
+      "skill": "Навык"
+    },
+    "stamRestored": "Смола Восстановилась",
+    "triggerQuota": "Trigger Quota",
+    "enemyAffected": {
+      "burningOrPyro": "Enemy is affected by <pyro>Burning</pyro> or <pyro>Pyro</pyro>",
+      "frozenOrCryo": "Enemy is <cryo>Frozen</cryo> or affected by <cryo>Cryo</cryo>",
+      "pyroOrElectro": "Enemy is affected by <pyro>Pyro</pyro> or <electro>Electro</electro>",
+      "hydroOrCryo": "Enemy is affected by <hydro>Hydro</hydro> or <cryo>Cryo</cryo>",
+      "hydroOrPyro": "Enemy is affected by <hydro>Hydro</hydro> or <pyro>Pyro</pyro>",
+      "hydroOrElectro": "Enemy is affected by <hydro>Hydro</hydro> or <electro>Electro</electro>",
+      "electro": "Enemy is affected by <electro>Electro</electro>",
+      "cryo": "Enemy is affected by <cryo>Cryo</cryo>",
+      "pyro": "Enemy is affected by <pyro>Pyro</pyro>"
+    },
+    "getElementalOrbParticle": "После получения элементальной сферы/частицы",
+    "notProtectedByShield": "While not protected by a shield",
+    "percentCurrentHP": "% текущего HP",
+    "enerRegenPerHit": "Energy Regeneration per Hit",
+    "interval": "Interval",
+    "immuneToElectroCharged": "Immunity to <electrocharged>Electro-Charged</electrocharged>",
+    "charOffField": "Character is off-field",
+    "attackAoeInc": "Larger Attack AoE",
+    "members_one": "{{count}} Member",
+    "members_other": "{{count}} Members",
+    "charOnField": "Character is on-field",
+    "timeOnField": "Time spent on-field",
+    "hpChange": "After HP changes",
+    "afterHeal": "After being healed"
+  },
+  "weapon_SongOfBrokenPines": {
+    "name": "Тысячелетняя симфония: Гимн знамени"
+  },
+  "char_KaedeharaKazuha": {
+    "c1": "Применение <strong>Удара Казухи</strong> восстанавливает откат",
+    "c2": "В поле Осеннего вихря",
+    "c6": {
+      "after": "После использования <strong>Тихаяфуру</strong> или <strong>Удар Казухи</strong>"
+    },
+    "skillPlunge": "Мидарэ Рандзан"
+  },
+  "char_Rosaria": {
+    "a1": "После атаки со спины",
+    "a4": {
+      "name": "После использования <strong>Обряда кончины<strong/>"
+    }
+  },
+  "char_KamisatoAyaka": {
+    "afterSprintCryo": "Накладывает <cryo>Крио</cryo> после спринта",
+    "snowflakeDMG": "Урон Снежинки",
+    "dmgBySnowflake": "Морозный сэки но то <strong>Искусства Камисато: Сомэцу</strong> поразил противника",
+    "c6Active": "Усурахи Буто активно"
+  },
+  "weapon_MistsplitterReforged": {
+    "emblem": "Печать рассекателя тумана"
+  },
+  "char_Yoimiya": {
+    "c1": "Побежденный противник был помечен <strong>Золотым сиянием</strong>",
+    "c2": "После нанесения критического <pyro>Пиро урона</pyro>",
+    "normPyroInfus": "<pyro>Инфузия Пиро обычной атаки</pyro>",
+    "c6Key_": "Множитель урона Падающих звёзд Наганохары"
+  },
+  "char_RaidenShogun": {
+    "skill": {
+      "eye": "Глаз грозного наказания",
+      "partyCost": "Потребление энергии (отряда)"
+    },
+    "burst": {
+      "resolves": "Уровень решимости",
+      "resolveInitial_": "<electro>Бонус увеличения урона Мусо но хитотати</electro",
+      "resolveInfused_": "<electro>Бонус увеличения урона Мусо иссин</electro>",
+      "burstDmg": "Урон Мусо но Хитотачи",
+      "active": "In the <strong>Musou Isshin</strong> state"
+    },
+    "a4": {
+      "enerRest": "Восстановление энергии от <strong>Мусо иссин</strong>",
+      "eleDMG": "Бонус электро урона"
+    },
+    "c4": {
+      "expires": "После окончания действия<strong>Мусо Иссин</strong> наложенное <strong>Тайное искусство: Мусо синсэцу</strong>"
+    }
+  },
+  "char_Aloy": {
+    "skill": {
+      "coil": "Спираль",
+      "rush": "Стремительный лёд",
+      "rushState": "В состоянии Стремительного льда (1 уровень / с)"
+    },
+    "a1CondName": "Когда Элой получает эффект Спирали навыка <strong>Ледяная пустошь</strong>",
+    "normCryoInfus": "<cryo>Крио инфузия обычной атаки</cryo>"
+  },
+  "char_KujouSara": {
+    "skill": {
+      "ambush": "Тэнгу Джурай: Засада"
+    },
+    "c6": {
+      "electroCritDmg": "Персонажи имеющие увеличенную ATK от Тэнгу дзюрай"
+    }
+  },
+  "char_SangonomiyaKokomi": {
+    "burst": "Церемониальная одеяние",
+    "c2": "Персонажи менее с чем 50% HP",
+    "c6": "После того как Обычные или Заряженные атаки лечат персонажа с 80% или более HP",
+    "c2SkillHeal": "Бонус лечения <strong>Клятвы Курагэ</strong>",
+    "c2BurstHeal": "Бонус лечения <strong>Вознесения Нереиды</strong>"
+  },
+  "page_home": {
+    "intro": "<0> Что такое Genshin Optimizer? </0><1>Genshin Optimizer (GO) - это созданный фанатами веб-сайт с открытым исходным кодом для ролевой игры в жанре гача <1> <strong> Genshin Impact </strong> </ 1>. В основном он предназначен для помощи игрокам в сложном аспекте игры: оптимизации артефактов. Поскольку артефакты в значительной степени имеют элемент случайности, которые прямо влияют на эффективность ваших персонажей в игре, GO попытается найти лучшие артефакты для ваших персонажей на основе вашего текущего инвентаря. </1><2> GO поможет следить за артефактами и упрощает фильтрацию/сравнение артефактов. Он служит инструментом, помогающим пользователю находить в своем инвентаре артефакты достойные повышения уровня и плохие артефакты для использования в качестве корма. </2><3> Поскольку GO может воспроизводить точные характеристики любого персонажа, а также рассчитывать весь их урон с точностью до 1%, он также может служить калькулятором урона и инструментом для теоретических расчетов.</3>",
+    "quickLinksCard": {
+      "title": "Гиперссылки",
+      "buttons": {
+        "tyGuide": {
+          "title": "Ютуб Плейлист с Гайдами",
+          "tooltip": "Узнайте, как использовать Genshin Optimizer"
+        },
+        "scanners": {
+          "title": "Автоматические сканеры\n",
+          "tooltip": "Программы, считавающие ваши вещи в инвентаре"
+        },
+        "kqm": {
+          "title": "Keqing Mains",
+          "tooltip": "Теорикрафт и гайды комьюнити"
+        },
+        "devDiscord": {
+          "title": "Наш Дискорд Канал",
+          "tooltip": "Общайтесь с людьми или создателями"
+        },
+        "good": {
+          "title": "Документация GOOD",
+          "tooltip": "Документация Genshin Open Object Descriptor"
+        },
+        "patchNotes": {
+          "title": "Обновления, GO",
+          "tooltip": "Все патчноуты для GO"
+        }
+      }
+    },
+    "inventoryCard": {
+      "title": "GO инвентарь"
+    },
+    "vidGuideCard": {
+      "title": "Видео гайды"
+    },
+    "teamCard": {
+      "title": "Встречайте команду",
+      "jobTitle": {
+        "leadDev": "Главный разработчик",
+        "dev": "Разработчик",
+        "mod": "Модератор",
+        "admin": "Admin",
+        "translator": "Translations Manager",
+        "TC": "TC Correspondant"
+      }
+    }
+  },
+  "page_scanner": {
+    "intro": "<0> Автоматические сканеры </0> <1> Автоматические сканеры - это инструменты Геншина, которые могут автоматически сканировать данные в игре, манипулируя движениями мыши, делают скриншоты, а затем считывают информацию с снимков экрана. Это инструменты с низким уровнем риска, которые могут помочь вам автоматизировать большую часть ручных процессов сканирования артефактов для GO. Как и любые инструменты, которые косвенно взаимодействуют с игрой их использование практически невозможно обнаружить, <1>но все же существует риск в их использования. </1> Советуем проявлять осторожность. </1> <p> Самый важный аспект использование этих сканеров с GO является полученный на выходе формат: </p> <3> <0> Начиная с <1> v5.21.0 </1>, GO может импортировать данные артефактов в <3> mona-uranai </3> формате. </0> <1> Начиная с <1> v6.0.0 </1>, GO может импортировать данные в формате <3> Genshin Open Object Description (GOOD) </3>. </1> </3> <p> Ниже приведены несколько сканеров, протестированных с GO. </p> <5> Чтобы загрузить экспортированный файл, перейдите на страницу <1> База данных </1> и загрузите файл в разделе «Загрузка базы данных» . </5>",
+    "ik": {
+      "title": "Inventory Kamera",
+      "p1": "Это небольшое приложение может отсканировать персонажей, оружие и артефакты в вашем инвенторе. Прочитайте инструкцию, чтобы установить приложение. Сканирует только на английском."
+    },
+    "am": {
+      "title": "「天目」-- Amenoma",
+      "p1": "Сканирует артефакты в инвенторе. Ознакомьтесь с инструкцией, чтобы выполнить сканирование. Поддерживает китайский и английский язык. (Скачайте <1>_EN.exe</1> версию на английском). GO читает форматы <3>mona-uranai</3> и <5>GOOD</5>. Формат <7>GOOD</7> предпочтительней."
+    },
+    "as": {
+      "title": "AdeptiScanner",
+      "p1": "Сканирует все артефакты в инвентаре. Есть возможность ручного сканирования.",
+      "p2": "Этой программе не требуются обновления, чтобы сканировать новые артефакты."
+    },
+    "goodeng": "Сканирует только на английском и сохраняет файлы в формате GOOD.",
+    "tosWarn": "Как и любые инструменты, которые косвенно взаимодействуют с игрой, хотя их использование практически невозможно обнаружить, <1>их использование все равно может быть сопряжено с риском.</1> Пользователям рекомендуется соблюдать осторожность.",
+    "tags": {
+      "pc": "ПК",
+      "mobile": "Телефон",
+      "ps": "PlayStation",
+      "gameMani": "Манипуляции с Игрой",
+      "materials": "Материалы",
+      "characters": "Персонажи",
+      "weapons": "Weapons",
+      "achievements": "Achievements"
+    },
+    "nb": {
+      "title": "Artiscan",
+      "p1": "This web-based scanner can capture your game window, scan from a screenshot, or scan from a video. The screenshot/video capture can be fullscreen and does not need to be cropped.",
+      "p2": "Mobile/PlayStation can only be scanned from screenshots or video."
+    },
+    "ak": {
+      "title": "Akasha Scanner",
+      "p1": "Automatically scans artifacts as well as characters and weapons. Allows exporting of past scans as it keeps a history within the app. Scans only in English.",
+      "p2": "This app is also able to scan achievements for <1>Paimon.moe</1> and <1>Seelie.me</1>."
+    },
+    "seelieme": "Этот сканер также может сканировать материалы для <1>Seelie.me</1>."
+  },
+  "weapon_Akuoumaru": {
+    "party": "Общее кол-во энергии членов отряда"
+  },
+  "artifact_ArchaicPetra": {
+    "condName": "Элементальный осколок подобран"
+  },
+  "artifact_ViridescentVenerer": {
+    "condName": "Элемент рассеян"
+  },
+  "weapon_CinnabarSpindle": {
+    "name": "Увеличение урона элементального навыка"
+  },
+  "weapon_ElegyForTheEnd": {
+    "condName": "Получен эффект Тысячелетняя симфония: Прощальный гимн"
+  },
+  "weapon_MouunsMoon": {
+    "party": "Общее кол-во энергии членов отряда"
+  },
+  "weapon_ThrillingTalesOfDragonSlayers": {
+    "condName": "Переключение персонажа"
+  },
+  "weapon_WavebreakersFin": {
+    "party": "Общее кол-во энергии членов отряда"
+  },
+  "artifact_BlizzardStrayer": {
+    "condName": "Атаки по противникам",
+    "condCryo": "С эффектом Крио",
+    "condFrozen": "Заморожен"
+  },
+  "artifact_HuskOfOpulentDreams": {
+    "condName": "Любопытство"
+  },
+  "artifact_OceanHuedClam": {
+    "condName": "Макс. Урон Пузыря морских красок"
+  },
+  "artifact_ShimenawasReminiscence": {
+    "afterUseEnergy": "После использования 15 ед. энергии"
+  },
+  "artifact_TinyMiracle": {
+    "condName": "Получаемый Элементальный урон"
+  },
+  "char_Albedo": {
+    "blossomCD": "Откат Цветка мимолётности",
+    "blossomDmg_": "Бонус урона Цветка мимолётности",
+    "isotomaOnField": "Цветок солнца на поле",
+    "enerPerBlossom": "Восстановлено энергии за Цветок мимолетности",
+    "c2Stacks": "Уровней Рокового расчета поглощено"
+  },
+  "char_Amber": {
+    "secondArrow": "(2-ая стрела)",
+    "critRateBonus": "Бонус к шансу крит. попадания от <strong>Огненного дождя</strong>",
+    "aoeRangeBonus": "Бонус к зоне действия <strong>Огненного дождя</strong>",
+    "manualDetonationDmg": "Урон Ручной детонации",
+    "c6CondName": "После того, как<strong>Огненный дождь</strong>был использован"
+  },
+  "char_AratakiItto": {
+    "a1": {
+      "name": "Когда Аратаки Итто выполняет серию выпадов Аратаки кэсагири"
+    },
+    "a4": {
+      "dmgInc": "Урон Аратаки кэсагири увеличен"
+    },
+    "c1": {
+      "initialGain": "Уровней Невероятной силы получено",
+      "timedGain": "Через 1с, Уровней Невероятной силы получено каждые 0.5с в течении 1.5с"
+    },
+    "c4": {
+      "name": "После оконцания действия статуса Яростный король они от навыка <strong>Явление короля: Итто Жестокий!</strong>"
+    }
+  },
+  "char_Barbara": {
+    "passive1": {
+      "cond": "Внутри песни <strong>Да начнется шоу♪</strong>"
+    },
+    "constellation2": {
+      "cond": "Во время <strong>Да начнется шоу♪</strong>"
+    }
+  },
+  "char_Beidou": {
+    "skillOneHit": "Получен один удар",
+    "skillTwoHit": "Получено два удара",
+    "duringBurst": "Во время действия Крушителя бури",
+    "tidecallerMaxDmg": "Призыв волны с максимальным количеством урона",
+    "a4charge": "Уменьшена задержка перед заряженной атакой",
+    "c4dmg": "Электро урон"
+  },
+  "char_Bennett": {
+    "skill": {
+      "lvl1CD": "Откат 1 ур.",
+      "lvl2CD": "Откат 2 ур."
+    },
+    "c4DMG": "Урон Чрезмерного стремления",
+    "c6PyroInfusion": "<pyro>Пиро инфузия для Копья, Одноручного и Двуручного мечей"
+  },
+  "char_Chongyun": {
+    "infusion": "Крио инфузия для Копья, Одноручного и Двуручного мечей",
+    "passive2": "Урон Призванного меча",
+    "asc4Cond": "Враги получили урон от Духовного лезвия",
+    "constellation1": "Урон Ледяного клинка",
+    "constellation6": "Враг с меньшим процентом оставшегося Макс. HP",
+    "blades": "Духовных лезвий призвано"
+  },
+  "char_Diluc": {
+    "skillB": {
+      "0": "Урон 2-х ударов (Увеличенный)",
+      "1": "Урон 3-х ударов (Увеличенный)"
+    }
+  },
+  "char_Diona": {
+    "skillDuration": "Продолжительность за лапку",
+    "holdShield": "Поглощение урона заряженным щитом.",
+    "a1shielded": "Персонаж под действием щита <strong>Морозные коготочки</strong>",
+    "holdCryoShield": "Поглощение Крио-урона заряженным щитом",
+    "pressShield": "Press Shield DMG Absorption",
+    "pressCryoShield": "Press Shield Cryo DMG Absorption"
+  },
+  "char_Fischl": {
+    "a1Name": "Урон грозы при выстреле полностью заряженной стрелой по Озу",
+    "a2Name": "Урон Божественной молнии",
+    "c1Name": "Урон совместной атаки",
+    "c4AoeDmg": "Дополнительный урон по зоне",
+    "c6OzDmg": "Урон атаки вместе с активным персонажем"
+  },
+  "char_Ganyu": {
+    "a1": {
+      "condName": "После выстрела стрелой-снежинкой",
+      "critRateInc": "Увеличение шанса крит. попадания от стрелы-снежинки"
+    },
+    "c1": {
+      "condName": "Попадание стрелой-снежинкой с уровнем заряда 2 или её цветением"
+    },
+    "c4": {
+      "lingerDuration": "Длительность увеличения эффекта"
+    }
+  },
+  "char_HuTao": {
+    "paramita": {
+      "enter": "Вход в состояние Танца бабочки",
+      "end": "После окончания состояния Танца бабочки навыка Путеводитель загробной жизни"
+    },
+    "constellation2": {
+      "applyBloodBlossom": "Наложен эффект Кровавого цветка (С2)"
+    },
+    "constellation4": {
+      "condName": "После победы над противником, находящимся под эффектом Кровавого цветка, наложенным самой Ху Тао"
+    },
+    "constellation6": {
+      "condName": "HP опускается ниже 25% или, когда она получает летальный урон"
+    }
+  },
+  "char_Jean": {
+    "c1CondName": "Скилл удержан более 1с",
+    "c1PullSpeed": "Скорость притягивания увеличена"
+  },
+  "char_Kaeya": {
+    "c2burstDuration": "Увеличивает длительность на 2,5 сек. за победу над врагом, Макс. 15 сек."
+  },
+  "char_Keqing": {
+    "c1DMG": "Урон Громового Стилета",
+    "recast": "После рекаста <strong>Небесное покаяние</strong>"
+  },
+  "char_Klee": {
+    "a1CondName": "Взрывная искра получена",
+    "a1CondName2": "Следующая заряженная атака не поглощает выносливость",
+    "c2CondName": "Противники поражены <strong>Прыг-скок</strong> бомбами",
+    "c6CondName": "Грохот и искры использован"
+  },
+  "char_Lisa": {
+    "a4C": "Получен урон от<strong>Громовая роза</strong>",
+    "c2C": "Долгое нажатие <strong>Пурпурная дуга</strong>"
+  },
+  "char_Mona": {
+    "omen": "Omen",
+    "hitOp": {
+      "affectedByOmen": "Любой участник команды ударил врага под Omen"
+    },
+    "frozenDuration": "Длительность <cryo>Заморозки</cryo> увеличена на",
+    "uponSprint": "При входе в Иллюзорный поток"
+  },
+  "char_Ningguang": {
+    "aoeGems": "Урон самоцветов по площади",
+    "starJadeStaminaCost": "50; Со Звёздным нефритом: 0",
+    "skillReset": "Сбрасывает время отката при разрушении, может возникнуть раз в 6 сек.",
+    "a4toggle": "Проход через Нефритовую ширму",
+    "c4toggle": "Союзники в радиусе 10м от Нефритовой ширмы",
+    "c6bonus": "Получено Звёздного нефрита"
+  },
+  "char_Qiqi": {
+    "a1C": "Персонаж под эффектами навыка <strong>Искусство Адепта: Вестник стужи</strong> совершает элементальную реакцию"
+  },
+  "char_Razor": {
+    "electroSigil": "Эмблема Электро",
+    "electroSigilAbsorbed": "Энергии восстановлено если Эмблема Электро потрачена",
+    "opHitWithClawAndThunder": "Попадание быстрым нажатием <strong>Гром и Когти</strong>",
+    "electroSigilPerProc": "Эмблема Электро за попадание",
+    "soulCompanion": {
+      "1": "Soul Companion 1-Hit DMG",
+      "2": "Soul Companion 2-Hit DMG",
+      "3": "Soul Companion 3-Hit DMG",
+      "4": "Soul Companion 4-Hit DMG"
+    }
+  },
+  "char_Sayu": {
+    "burstHits": "Количество активаций Мудзи-Мудзи Дарумы",
+    "p2Heal": "Лечение ближайшего персонажа",
+    "c1Text": "Мудзи-Мудзи Дарума будет игнорировать ограничения HP и сможет одновременно атаковать окружающих врагов и лечить персонажей",
+    "c2KickPressDmg_": "Урон от Удара вихря Фуфу в режиме быстрого нажатия",
+    "c2KickDmg_": "Бонус урона Удара вихря Фуфу",
+    "c2Cond": "Проведено в состоянии <strong>Ветряного колеса Фуфу</strong>",
+    "c6DarumaDmgInc": "Увеличение урона Мудзи-Мудзи Дарумы",
+    "c6DarumaHealInc": "Увеличение лечения Мудзи-Мудзи Дарумы"
+  },
+  "char_Shenhe": {
+    "quill": "Ледяное перо активно",
+    "c4": "Уровень Мантры морозных небес",
+    "pressQuota": "Кол-во зарядов при быстром нажатии",
+    "holdQuota": "Кол-во зарядов при долгом нажатии",
+    "pressDuration": "Длительность при быстром нажатии",
+    "holdDuration": "Длительность при долгом нажатии"
+  },
+  "char_Thoma": {
+    "a2": "Увеличение урона Огненного разрыва",
+    "c2": "Длительность <strong>Багрового оёроя</strong> увеличена",
+    "refreshBarrier": "After obtaining or refreshing a <strong>Blazing Barrier</strong>"
+  },
+  "char_Xiangling": {
+    "afterChili": "После подбора перца",
+    "explosionDMG": "Урон взрыва",
+    "afterGuobaHit": "Попадание атакой Гобы",
+    "duringPyronado": "Активный Огневихрь",
+    "c6Exception": "Не влияет на <pyro>Урон взмаха 1</pyro>, <pyro>Урон взмаха 2</pyro> или <pyro>Урон огненного вихря</pyro>"
+  },
+  "char_Xiao": {
+    "burst": {
+      "lifeDrain_": "Потеря HP",
+      "currentHPPerSec": "(HP/сек)",
+      "incJump": "Значительно усиливает прыжки",
+      "inBurst": "Под воздействием <strong>Истребления всего зла</strong>",
+      "stack": "Времени проведено в <strong>Истреблении всего зла</strong>"
+    },
+    "skillStack": "Использований <strong>Лемниската ветра</strong>"
+  },
+  "char_Xingqiu": {
+    "skillCond": "Меч дождя разбит",
+    "burstCond": "Радужная стойка",
+    "c2Cond": "Противник получил урон от Мечей дождя"
+  },
+  "char_Xinyan": {
+    "skill": {
+      "pyroShield": {
+        "1": "Поглощение щита 1 ур.",
+        "2": "Поглощение щита 2 ур.",
+        "3": "Поглощение щита 3 ур."
+      }
+    },
+    "p1": {
+      "desc": "Уменьшает необходимое для <strong>Решительного жара</strong> количество врагов на 1"
+    },
+    "p2": {
+      "activeShield": "Активный персонаж под действием щита <strong>Решительного жара</strong>"
+    },
+    "c2": {
+      "key_": "Увеличение шанса крит. попадания физ. уроном <strong>Струны протеста</strong>",
+      "shield": "Активирует щит 3 ур. - Рейв"
+    },
+    "c4": {
+      "swingHit": "<pyro>Урон взмаха</pyro> попадает по противникам"
+    },
+    "c6": {
+      "duringCharge": "При исполнении заряженной атаки"
+    }
+  },
+  "char_YaeMiko": {
+    "c4": "Попадание по врагу ударом молнии <strong>Сакуры сэссё</strong>",
+    "c6": "Sesshou Sakura Enemy DEF Ignore"
+  },
+  "char_Yanfei": {
+    "seals": ["0 печатей", "1 печать", "2 печати", "3 печати", "4 печати"],
+    "perSeal": "(за печать)",
+    "maxSeals": "Максимальное количество Багровых печатей",
+    "charged": {
+      "0": "Урон с 0 печатей",
+      "1": "Урон с 1 печатью",
+      "2": "Урон с 2 печатями",
+      "3": "Урон с 3 печатями",
+      "4": "Урон с 4 печатями"
+    },
+    "burst": {
+      "grantMax": "Даёт максимальное количество Багровых печатей"
+    },
+    "passive1": {
+      "sealsConsumed": "Печатей потрачено заряженной атакой"
+    },
+    "passive2": {
+      "key": "Урон Пламенного взгляда"
+    },
+    "c1": {
+      "sealChargedStam_": "Потребление выносливости заряженной атакой снижено"
+    },
+    "c6": {
+      "maxSealInc": "Увеличение максимального количества Багровых печатей"
+    }
+  },
+  "char_YunJin": {
+    "burst": "Строй облачных флагов",
+    "a4Inc_": "Увеличение в зависимости от типов элементов отряда",
+    "c4": "Юнь Цзинь вызывает реакцию Кристалл"
+  },
+  "char_Zhongli": {
+    "skill": {
+      "stele": "Урон каменной стелы",
+      "resonance": "Урон резонанса",
+      "maxStele": "Максимальное количество стел",
+      "nearShield": "Враги рядом с <strong>Яшмовым щитом</strong>"
+    },
+    "p1cond": "<strong>Яшмовый щит</strong> получает урон",
+    "c6heal": "Максимальное восстановление HP"
+  },
+  "weapon_AlleyHunter": {
+    "condName": "Времени не на поле"
+  },
+  "weapon_AmosBow": {
+    "condName": "Длительность полёта стрелы"
+  },
+  "weapon_BlackTassel": {
+    "condName": "Против слаймов"
+  },
+  "weapon_Deathmatch": {
+    "condName": "Количество врагов рядом"
+  },
+  "weapon_DragonspineSpear": {
+    "aoeDmg": "Урон ледяного кристалла",
+    "cryoAffectedDmg": "Урон по противникам под воздействием <cryo>Крио</cryo>"
+  },
+  "weapon_FerrousShadow": {
+    "condName": "ХП становится ниже",
+    "resistance": "Увеличивается сопротивление к прерыванию Заряженных атак"
+  },
+  "weapon_FreedomSworn": {
+    "sigilsConsumed": "Талисманы воодушевления использованы"
+  },
+  "weapon_Frostbearer": {
+    "aoeDmg": "Урон ледяного кристалла",
+    "cryoAffectedDmg": "Урон по противникам под воздействием <cryo>Крио</cryo>"
+  },
+  "weapon_Hamayumi": {
+    "condName": "100% энергии"
+  },
+  "weapon_MemoryOfDust": {
+    "atkEffInc": "Увеличивает Атаку"
+  },
+  "weapon_PolarStar": {
+    "condName": "Звезда полярной ночи"
+  },
+  "weapon_SerpentSpine": {
+    "takeMoreDmg": "Увеличивает получаемый урон"
+  },
+  "weapon_Slingshot": {
+    "condName": "Обычная / заряженная атака поражает в течение 0,3 с",
+    "less": "Within 0.3s of being fired",
+    "more": "After 0.3s of being fired"
+  },
+  "weapon_SnowTombedStarsilver": {
+    "aoeDmg": "Урон ледяного кристалла",
+    "cryoAffectedDmg": "Урон по противникам под воздействием <cryo>Крио</cryo>"
+  },
+  "weapon_SummitShaper": {
+    "atkEffInc": "ATK Effect Increase"
+  },
+  "weapon_TheAlleyFlash": {
+    "condName": "Не получает урон"
+  },
+  "weapon_TheUnforged": {
+    "atkEffInc": "ATK Effect Increase"
+  },
+  "weapon_TheWidsith": {
+    "aria": "Ария",
+    "interlude": "Интерлюдия",
+    "recitative": "Речитатив"
+  },
+  "weapon_ThunderingPulse": {
+    "condName": "Громовой Эмблемы"
+  },
+  "weapon_VortexVanquisher": {
+    "atkEffInc": "Увеличение силы атаки"
+  },
+  "artifact_EchoesOfAnOffering": {
+    "mode": "Ритуал долины активируется",
+    "avg": "Обычно",
+    "always": "Всегда"
+  },
+  "char_KamisatoAyato": {
+    "skill": {
+      "unableToAuto": "Заряженные атаки и атаки в падении недоступны",
+      "namisenStacks": "Уровни Намисэн",
+      "shun_dmgInc": "<hydro>Увеличение урона Сюйсуйкэн</hydro>"
+    },
+    "passive1": {
+      "afterUse": "Уровней Намисэн получено после использования навыка",
+      "afterExplode": "Уровней Намисэн получено после взрыва водяной иллюзии"
+    },
+    "c1": {
+      "shun_dmg_": "<hydro>Бонус урона Сюйсуйкэн</hydro>"
+    },
+    "c2": {
+      "addlStacks": "Максимум уровней Намисэн увеличен"
+    },
+    "c6": {
+      "dmg": "Урон Бескрайнего истока"
+    }
+  },
+  "char_KukiShinobu": {
+    "a4": {
+      "heal": "Увел. Лечения Элем. Навыка"
+    },
+    "c4": {
+      "dmg": "Урон Метки громовой травы"
+    }
+  },
+  "char_Yelan": {
+    "c2": {
+      "dmg": "Урон «Принимаем всех желающих»"
+    },
+    "c4": {
+      "condName": "Количество противников, отмеченных Нитью жизни"
+    },
+    "c6": {
+      "dmg": "Урон Прорывной стрелы Стратега"
+    }
+  },
+  "page_character": {
+    "addNew": "Добавить Нового Персонажа",
+    "tabs": {
+      "overview": "Обзор",
+      "talent": "Таланты",
+      "teambuffs": "Бонусы команды",
+      "optimize": "Оптимизировать",
+      "theorycraft": "Теоретический урон"
+    },
+    "formulas": "Формулы",
+    "calculations": "Расчеты",
+    "selectCharacter": "Выберите персонажа",
+    "removeCharacter": "Вы уверены что хотите удалить {{value}}?",
+    "delete": "Удалить персонажа",
+    "teammates": "Команда",
+    "showingNum_one": "Показано <1>{{count}}</1> из {{value}} персонажа",
+    "showingNum_other": "Показано <1>{{count}}</1> из {{value}} персонажей",
+    "hitmode": {
+      "hit": "Не крит. урон",
+      "avgHit": "Средний урон",
+      "critHit": "Крит. урон"
+    },
+    "tabEquip": {
+      "swapWeapon": "Обменять оружие",
+      "swapArt": "Обменять артефакт",
+      "compare": "Сравнить с текущим билдом",
+      "unequipArts": "Снять все артефакты"
+    },
+    "characterName": "Имя Персонажа",
+    "teammate": "Teammate {{count}}",
+    "noReaction": "Без реакций",
+    "multiTarget": {
+      "title": "Multi-Optimization Target Config",
+      "addNewTarget": "Добавить одну ",
+      "addNewMTarget": "Доб. Новый Кастом Мультитаргет",
+      "info1": "Note: Community-created Multi-Optimization Targets can be found within the <1>GO Discord</1> or <3>KQM's Multi-Optimization Guide</3>, however, the validity of such configurations cannot be guaranteed.",
+      "info2": "It is the responsibility of the user to make sure configs accurately represent their use case.",
+      "description": "Description",
+      "duplicate": "Duplicate",
+      "target_one": "<0>{{count}}</0> Target",
+      "target_other": "<0>{{count}}</0> Targets"
+    },
+    "addStats": {
+      "title": "Параметры Врага + Бонусы",
+      "info": "You can use these fields to add buffs/debuffs not directly supported in GO, such as food buffs, Abyss cards, or Superconduct. Please refer to the <1>Genshin Impact Wiki</1> for specific values."
+    },
+    "tabTheorycraft": {
+      "substatType": {
+        "min": "Исп. минимум сабстат роллы",
+        "max": "Исп. Максимум сабстат роллы",
+        "mid": "Use median substat rolls"
+      },
+      "maxTotalRolls": "\"Корректный\" билд может содержать максимум 45 Роллов.",
+      "maxRolls": "Эта доп. хар-ка может содержать максимум 30 Роллов.",
+      "maxRollsMain": "Because at least one main stat has the same attribute, this substat can have a maximum of {{value}} rolls."
+    },
+    "tabTeambuff": {
+      "team_reso": "Элементальный резонанс",
+      "resonance_tip": "Отряд должен состоять из 4 персонажей, чтобы элементарный резонанс вступил в силу."
+    }
+  },
+  "page_weapon": {
+    "showingNum_one": "Показано <1>{{count}}</1> из {{value}} оружия",
+    "showingNum_other": "Показано <1>{{count}}</1> из {{value}} оружий",
+    "edit": "Редактировать оружие",
+    "weaponName": "Название оружия",
+    "removeWeapon": "Вы уверены что хотите удалить {{value}}?",
+    "addWeapon": "Добавить Новое Оружие"
+  },
+  "weapon_AquaSimulacra": {
+    "condName": "Противников рядом"
+  },
+  "weapon_FadingTwilight": {
+    "states": {
+      "evengleam": "Evengleam",
+      "afterglow": "Afterglow",
+      "dawnblaze": "Dawnblaze"
+    },
+    "condName": "Текущее состояние"
+  },
+  "weapon_HaranGeppakuFutsu": {
+    "consumed": "Уровни Волн-шипов"
+  },
+  "char_Collei": {
+    "sproutDmg": "Урон Ростка",
+    "miniAnbarDmg": "Урон миниатюрного Куйлейн-Анбара"
+  },
+  "char_Dori": {
+    "c2MultiplierKey_": "Множитель Особой франшизы",
+    "c2DmgKey": "Урон Особой франшизы",
+    "c4ConnectedBelowHp": "Установлена связь с джинном и меньше 50% HP",
+    "c4ConnectedBelowEner": "Установлена связь с джинном и меньше 50% Энергии"
+  },
+  "char_ShikanoinHeizou": {
+    "takingField": "После вступления в бой"
+  },
+  "char_Tighnari": {
+    "p1Cond": "Выпущена <strong>стрела-венец</strong>",
+    "c4ReactCond": "Вызывает <dendro>Дендро</dendro>-реакцию",
+    "c6DmgKey": "Урон дополнительной стрелы соцветия",
+    "c6WreathRed": "Сокращение времени заряда <strong>стрелы-венца</strong>"
+  },
+  "elementalResonance": {
+    "SprawlingGreenery": {
+      "cond2ele": "After triggering <pyro>Burning</pyro>, <spread>Quicken</spread>, or <bloom>Bloom</bloom>",
+      "cond3ele": "After triggering <aggravate>Aggravate</aggravate>, <spread>Spread</spread>, <hyperbloom>Hyperbloom</hyperbloom>, or <burgeon>Burgeon</burgeon"
+    },
+    "EnduringRock": {
+      "hitCond": "После нанесения урона противникам, будучи под щитом"
+    }
+  },
+  "page_character_optimize": {
+    "mainStat": {
+      "levelAssTooltip": {
+        "title": "Присвоение уровня",
+        "desc": "Изменяет основную характеристику на соответствующую минимуму для конкретного уровня. Не меняет доп. характеристики."
+      },
+      "assumptionLvl": {
+        "no": "Нет присвоения уровней",
+        "lvl": "Присвоить как минимум Ур. {{lvl}}"
+      },
+      "title": "Main Stat Filter/Configuration"
+    },
+    "tcGraph": {
+      "vs": "Graph Optimization Target vs.",
+      "notSel": "Не Выбран",
+      "downloadData": "Скачать Данные",
+      "desc": "Using data from the builder, this will generate a graph to visualize Optimization Target vs. the selected Graph Target. The graph will show the maximum Optimization Target value per 0.01 of the selected Graph Target. Enabling this is optional, and doing so will slow down build times",
+      "showStatThr": "Show Stat Threshold Line",
+      "generatedBuilds": "Сгенерированные Билды",
+      "statReqThr": "Stat Requirement Threshold Line",
+      "currentBuild": "Текущий Билд",
+      "highlightedBuilds": "Highlighted Builds",
+      "buildAlreadyInList": "Build is already in the list"
+    },
+    "levelFilter": "Фильтровать Артефакты по Lvl.",
+    "allowPartial": "Позволить частичные билды (<5 артефактов)",
+    "constraintFilter": {
+      "title": "Постоянное Значение",
+      "tooltip": "Set certain minimum requirements that generated builds must conform to; e.g., have at least 140% Energy Recharge."
+    },
+    "artSetConfig": {
+      "title": "Конфигурация сета артефактов",
+      "setEffCond": "Set Effect Conditionals",
+      "enabled": "Включен",
+      "allowed": "Разрешен",
+      "excluded": "Исключить",
+      "selected": "Выбран",
+      "2rainbow": "3-Rainbow",
+      "4rainbow": "5-Rainbow",
+      "allowAll2set": "Разрешить Все 2-Сета",
+      "excludeAll2set": "Исключить все сеты из 2",
+      "allowAll4set": "Разрешить Все 4-Сета",
+      "excludeAll4set": "Исключить все сеты из 4",
+      "alExRainbow": "<0>Разрешить<1></1></0> / <2>Исключить<1></1></2> Радужные Билды",
+      "modal": {
+        "setCond": {
+          "title": "Artifact Set Conditional Effects",
+          "reset": "Reset Conditionals",
+          "text": "Некоторые эффекты набора артефактов предоставляют условную статистику. Это окно позволяет вам выбрать эти эффекты, чтобы они могли вносить свой вклад в статистику, когда во время оптимизации вычисляется сборка, удовлетворяющая заданному эффекту."
+        },
+        "ArtSetFilter": {
+          "title": "Наборы артефактов <1>Разрешенные<1></1></1> / <3>Исключенные<1></1></3>",
+          "intro": "Вы можете разрешить/исключить какие наборы хотите рассматривать в билде. В следующих примерах <strong>A</strong> относится к набору, и <strong>R</strong> – радуга (не относится к набору)",
+          "2set": "<0><0>Excluding<1></1> 2-Set</0></0> would exclude 2-Set builds: <2><0>AA</0>RRR</2> and <4><0>AAA</0>RR</4>.",
+          "4set": "<0><0>Excluding<1></1> 4-Set</0></0> would exclude 4-Set builds: <2><0>AAAA</0>R</2> and <4><0>AAAAA</0></4>.",
+          "2rain": "<0><0>Excluding<1></1> 3-Rainbow</0></0> would exclude 2-Set + 3-Rainbow builds: <2>AA<1>RRR</1></2> and <4>AAA<1>RR</1></4>.",
+          "4rain": "<0><0>Excluding<1></1> 5-Rainbow</0></0> would exclude full 5-Rainbow builds: <2><0>RRRRR</0></2>."
+        }
+      }
+    },
+    "buildDropdownDesc": "Decreasing the number of generated build will decrease build calculation time for large number of builds.",
+    "threadDropdownDesc": "Increasing the number of threads will speed up build time, but will use more CPU power.",
+    "noArtis": "Упс! Видимо, вы ещё не добавили ни одного артефакта на GO! Вы должны перейти на страничку <1>Artifacts</1> и добавить несколько!",
+    "build_one": "<0>{{count}}</0> Build",
+    "build_other": "<0>{{count}}</0> Builds",
+    "thread_one": "<0>{{count}}</0> Thread",
+    "thread_other": "<0>{{count}}</0> Threads",
+    "targetSelector": {
+      "selectOptTarget": "Выберете Цель Оптимизации",
+      "selectGraphTarget": "Выберете График Цели",
+      "invalidTarget": "INVALID TARGET",
+      "selectBuildTarget": "Select a Build Constraint Target"
+    },
+    "selectTargetFirst": "Сначала Выберете Цель Оптимизации",
+    "generateButton": {
+      "cancel": "Отмена",
+      "generateBuilds": "Сгенерировать Билды"
+    },
+    "removeBuildButton": "Удалить Билд",
+    "theorycraftButton": "Теорикрафт",
+    "currentlyEquippedBuild": "Надето",
+    "addBuildToList": "Добавить билд в лист",
+    "graphBuildLabel": "Графа #<1>{{count}}</1>",
+    "excludeArt": {
+      "title_exclude": "Excluded Artifacts",
+      "title_tooltip": "Add artifacts to this character's exclusion list. Artifacts in the exclusion list will not be considered for build generation.",
+      "excNum_one": "<0>{{count}}</0> artifact is excluded",
+      "excNum_other": "<0>{{count}}</0> artifacts are excluded",
+      "addExc": "Add artifact to this character's exclusion list",
+      "selExc": "Select artifact to add to this character's exclusion list",
+      "deSelectExc": "Click on an artifact to remove it from the exclusion list",
+      "excludeArtifactTip": "Excluding an artifact will prevent the build generator from using it for this character.",
+      "excluded": "This artifact is excluded.",
+      "included": "This artifact is not excluded.",
+      "usingNum": "Using <1>{{totalStr}}</1> excluded artifact(s)",
+      "button_txt": "Exclude Artifacts"
+    },
+    "excludeChar": {
+      "title": "Equipped Artifact Configuration",
+      "modal": {
+        "allow_all": "Add all shown characters to the allow list",
+        "disallow_All": "Remove all shown characters from the allow list"
+      },
+      "allowEquip": "Allow using artifacts from",
+      "usingNumTot_one": "Using <1>{{arts}}</1> artifacts from <3>{{count}}</3> character",
+      "usingNumTot_other": "Using <1>{{arts}}</1> artifacts from <3>{{count}}</3> characters",
+      "tooltip": "Add characters to this character's allow list. Characters in the allow list will be considered for build generation. You can also toggle between using only unequipped artifacts, your custom allow list, and using all artifacts.",
+      "chars": "Characters",
+      "artis": "Artifacts",
+      "states": {
+        "unequippedOnly": "Unequipped Only",
+        "customList": "Custom List",
+        "all": "All Artifacts"
+      },
+      "usingState": "Using"
+    },
+    "buildCompleted": "Build Completed",
+    "notifyTooltip": "Play a sound when builds finish generating. Will also show an alarm prompt when tabbed out.",
+    "bonusStats": {
+      "title": "Bonus Stats"
+    }
+  },
+  "weapon_ForestRegalia": {
+    "condName": "После подбора Семени сознания"
+  },
+  "weapon_FruitOfFulfillment": {
+    "stackName": "эффект Роста и убыли"
+  },
+  "weapon_Moonpiercer": {
+    "condName": "After picking up a Leaf of Revival"
+  },
+  "weapon_SapwoodBlade": {
+    "condName": "После подбора Семени сознания"
+  },
+  "char_TravelerAnemo": {
+    "p1": "Урон Клинка Ветра",
+    "c6": "Enemy's been hit by <strong>Gust Surge</strong>",
+    "c4": "DMG Reduction while casting",
+    "initialEleDmg": "Initial Cutting Absorption DMG",
+    "maxEleDmg": "Max Cutting Absorption DMG",
+    "stormEleDmg": "Initial Storm Absorption DMG",
+    "stormEleMaxDmg": "Max Storm Absorption DMG"
+  },
+  "char_TravelerElectro": {
+    "skill": {
+      "amuletGenAmt": "Number of Abundance Amulets generated",
+      "absorb": "After absorbing an Abundance Amulet",
+      "enerRest": {
+        "none": "Energy Regen. per Amulet",
+        "over35": "Energy Regen. per Amulet (over 35% Energy)",
+        "under35": "Energy Regen. per Amulet (below 35% Energy)"
+      }
+    },
+    "burst": {
+      "3rd": "Урон 3-го Нисходящего Грома",
+      "thunderCd": "КД Нисходящего Грома"
+    },
+    "passive2": {
+      "enerRech_": "Abundance Amulet additional Energy Recharge"
+    },
+    "c2": {
+      "thunderHit": "<strong>Нисходящий Гром</strong> Попадает по врагу"
+    }
+  },
+  "char_TravelerGeo": {
+    "passive2": {
+      "key": "Collapse DMG"
+    },
+    "c2": {
+      "key": "Rockcore Meltdown DMG"
+    }
+  },
+  "page_newTab": {
+    "title": "🛑Обнаружена Новая Вкладка Optimizer🛑",
+    "p1": "Видимо вы открыли Genshin Optimizer в другой вкладке💞. GO не предназначен для работы с несколькими вкладками📵, это может привести к:",
+    "symptom": {
+      "1": "Десинхронизации данных между вкладками🙃.",
+      "2": "Повреждению базы данных💔.",
+      "3": "Расстройству желудка🤰 и разочарованию разработчиков Genshin Optimizer😡.",
+      "4": "В редких случаях, СМЕРТИ☠️."
+    },
+    "p2": "Мы предотвращаем это, показывая вам это сообщение📝. Теперь у вас есть выбор из вариантов:",
+    "choice": {
+      "1": "Закройте эту вкладку🔪 и используйте новую🆕.",
+      "2": "Закройте новую вкладку↩️, и как только вы убедитесь, что это ЕДИНСТВЕННАЯ вкладка🔂, вы можете обновить эту страницу🔄."
+    },
+    "refresh": "Обновить Страницу"
+  },
+  "char_Candace": {
+    "hydroInfusion": "<hydro>Гидро инфузия для Копья, Одноручного и Двуручного мечей</hydro>"
+  },
+  "char_Cyno": {
+    "p1Dmg": "Урон Молний бедствия",
+    "judication": "После активации эффекта Вынесения приговора",
+    "burstNormalDmgInc": "Увеличение урона обычной атаки в состоянии Поклявшегося прокладывать путь",
+    "boltDmgInc": "Увеличение урона Молний бедствия",
+    "duringBurst": "In the <strong>Pactsworn Pathclearer</strong> state",
+    "afterBurstOrJudication": "After using <strong>Sacred Rite: Wolf's Swiftness</strong> or triggering the Judication effect"
+  },
+  "char_Nilou": {
+    "skill": {
+      "dance1": "Урон Танца мечей 1",
+      "dance2": "Урон Танца мечей 2",
+      "whirl1": "Урон Кружащих шагов 1",
+      "whirl2": "Урон Кружащих шагов 2",
+      "wheel": "Урон Водяного колеса",
+      "illusion": "Luminous Illusion DMG"
+    },
+    "passive1": {
+      "underChaliceEffect": "Под воздействием Изобилия золотого кубка",
+      "notDendroHydroTeam": "Подсказка: Составьте отряд полностью из Дендро и Гидро персонажей, чтобы увидеть дополнительные эффекты",
+      "condName": "После получения урона <dendro>Дендро атакой</dendro> во время действия эффекта Изобилия золотого кубка",
+      "bountifulCores": "Реакция Бутонизации будет создавать Ядра изобилия"
+    },
+    "c4": {
+      "condName": "Попадание по противникам третьего шага <strong>Танца Хафткаршвар</strong> во время действия Пируэта"
+    },
+    "c1": {
+      "illusion_dmg_": "Luminous Illusion DMG Bonus"
+    }
+  },
+  "char_Nahida": {
+    "karmaDmg_": "Бонусный Урон Очищения Трикармы",
+    "karmaCritRate_": "Бонусный Крит Урон Очищения Трикармы",
+    "karmaIntervalDec": "Уменьшение интервала времени Очищения Трикармы",
+    "noBurstEffect": "Hint: No Burst effects active. Enable C1 and/or add <pyro>Pyro</pyro>, <electro>Electro</electro>, and/or <hydro>Hydro</hydro> teammates",
+    "partyInBurst": "Party in field",
+    "c1Key": "Additional <pyro>Pyro</pyro>, <electro>Electro</electro>, and <hydro>Hydro</hydro> members for <strong>Shrine of Maya</strong>'s bonus",
+    "c2": {
+      "bloomCondName": "Враги, помеченные <strong>Семенем Скандхии</strong>",
+      "qasCondName": "Враги под действием Горения, Вегетации или Бутонизации после того, как были помечены <strong > Семенами Скандхии</strong"
+    },
+    "c4CondName": "Opponents affected by <strong>Seeds of Skandha</strong>",
+    "c6KarmicDmg": "Урон Очищения Трикармы"
+  },
+  "artifact_FlowerOfParadiseLost": {
+    "condName": "Активация реакций Бутонизация, Вегетация и Цветение"
+  },
+  "char_Faruzan": {
+    "giftCondName": "Affected by Prayerful Wind's Benefit",
+    "a4CondName": "Under the Hurricane Guard effect",
+    "c2DurationInc": "Dazzling Polyhedron Duration Inc.",
+    "c6Arrow": "Applies Pressurized Collapse upon dealing DMG",
+    "baleCondName": "Opponent is affected by Perfidious Wind's Bale"
+  },
+  "char_Layla": {
+    "starDmgInc": "Shooting Star DMG Increase",
+    "c1ShieldBonusKey_": "Fortress of Fantasy Bonus",
+    "c4CondKey": "Under the Dawn Star effect",
+    "starDmg_": "Shooting Star DMG Bonus",
+    "slugDmg_": "Starlight Slug DMG Bonus",
+    "starInterval_": "Night Star Creation Interval"
+  },
+  "char_Wanderer": {
+    "windfavoredState": "In the <strong>Windfavored</strong> state",
+    "p1": {
+      "pyroCondName": "<strong>Hanega: Song of the Wind</strong> came into contact with <pyro>Pyro</pyro>",
+      "cryoCondName": "<strong>Hanega: Song of the Wind</strong> came into contact with <cryo>Cryo</cryo>"
+    },
+    "p2Dmg": "ДМГ Стрелы Ветра",
+    "c1BonusKey": "Скейлинг ДМГ Бонуса Стрелы Ветра",
+    "c2CondName": "Difference between maximum and current Kuugoryoku Points",
+    "c6Key": "Shugen: The Curtains' Melancholic Sway Mult."
+  },
+  "weapon_ToukabouShigure": {
+    "condName": "Opponent inflicted with Cursed Parasol"
+  },
+  "char_Alhaitham": {
+    "withMirrors": "In possession of Chisel-Light Mirrors",
+    "debateStacks": "After generating Chisel-Light Mirrors",
+    "mirrorsConsumed": "Mirrors consumed after unleashing <strong>Particular Field: Fetters of Phenomena</strong>",
+    "projectionAttack_dmg_": "Projection Attack DMG Bonus",
+    "excessMirror": "After generating a Chisel-Light Mirror when their amount has reached its limit",
+    "projectionDmg": "Projection Attack DMG"
+  },
+  "char_Yaoyao": {
+    "inExplosionAoE": "После пребывания в зоне взрыва <strong>Редьки Белого Нефрита</strong>",
+    "inLegacy": "В состоянии Наследия Адептов",
+    "megaDmg": "ДМГ Мега Редьки",
+    "megaHeal": "Лечение МегаРедьки"
+  },
+  "page_error": {
+    "title": "🛑 Unexpected Error Occurred 🛑",
+    "p1.1": "GO has experienced an unexpected error. This is probably our fault, so please help us help you!",
+    "p1.2": "Here are some things you can try to resolve the issue:",
+    "fixes": {
+      "1": "Refresh the page",
+      "2": "Disable any browser extensions and refresh again",
+      "3": "Download your DB(s) from below and keep it somewhere safe. Click the 'Delete ALL GO Data' button and reupload your DB(s)"
+    },
+    "p2": "If you did the above and still managed to get back here, please submit a report to our GitHub Issues page, or to the Bug Reports channel in our Discord",
+    "report": {
+      "1": "Download your DB(s) from below",
+      "2": "Copy the report text from the box below",
+      "3": "Click <1>here</1> to report on GitHub. Paste the text in the description, fill in the reproduction steps, and include your JSON files (you might need to rename them to end with '.txt')",
+      "4": "Or click <1>here</1> to report on Discord. Open the #🐛bug-reports channel, create a new thread and paste the text in the message box. Fill in the reproduction steps and upload your JSON files."
+    },
+    "refresh": "Refresh Page",
+    "caption": "Live footage of our engineers investigating the problem",
+    "confirmNuke": "Are you sure you want to delete ALL GO data? This is irreversible!",
+    "finishNuke": "Wiped all GO data. Refreshing page.",
+    "nuke": "Delete ALL GO Data"
+  },
+  "char_Dehya": {
+    "inFieldAndTakeDmg": "After an active character takes damage within the Fiery Sanctum field",
+    "field_dmg_": "Fiery Sanctum DMG Bonus",
+    "initialHeal": "Initial Healing",
+    "dotHeal": "Additional Healing",
+    "critHitDuringBurst": "After Flame-Mane's Fist deals a CRIT Hit"
+  },
+  "char_Mika": {
+    "inSoulwind": "In the Soulwind state",
+    "numDetectorStacks": "Detector",
+    "incDetectorStacks": "Max. Detector stacks Inc."
+  },
+  "weapon_MailedFlower": {
+    "condName": "After hitting an opponent with an Elemental Skill or triggering an Elemental Reaction"
+  },
+  "artifact_NymphsDream": {
+    "condName": "Mirrored Nymph"
+  },
+  "char_Somnia": {
+    "name": "Somnia",
+    "title": "Creation of Simulated Cognition",
+    "description": "A combination of an array of concepts. She exists in a variety of states and phases. Is she even real?",
+    "constellationName": "Mathematica Felina",
+    "auto": {
+      "name": "Astral Abacus",
+      "fields": {
+        "normal": {
+          "0": "<strong><strong>Normal Attack</strong>",
+          "1": "Performs up to 4 consecutive attacks, launching beads that deal <electro>Electro DMG</electro> from her Astral Abacus."
+        },
+        "charged": {
+          "0": "<strong>Charged Attack</strong>",
+          "1": "Consumes a certain amount of Stamina to charge and unleash a continuous stream of Electro beads, dealing <electro>Electro DMG</electro> to up to 4 targets every 0.3s.",
+          "2": "Somnia gains resistance to interruption and is free to move while using her Charged Attack."
+        },
+        "plunging": {
+          "0": "<strong>Plunging Attack</strong>",
+          "1": "Fires Electro beads at the ground, dealing <electro>AoE Electro DMG</electro> upon impact."
+        }
+      },
+      "skillParams": {
+        "0": "1-Hit DMG",
+        "1": "2-Hit DMG",
+        "2": "3-Hit DMG",
+        "3": "4-Hit DMG",
+        "4": "Charged Attack Stream DMG",
+        "5": "Charged Attack Stamina Cost",
+        "6": "Plunge DMG",
+        "7": "Low/High Plunge DMG"
+      }
+    },
+    "skill": {
+      "name": "Cosmic Calculator",
+      "description": {
+        "0": "Somnia condenses immense energy from her Astral Abacus to create an explosion that deals <electro>AoE Electro DMG</electro> and create a Self-Containing Sigil with undefinable contents above her head.",
+        "1": "The Self-Containing Sigil grants her the Schrödinger Superposition effect.",
+        "2": "<br/>",
+        "3": "<strong>Schrödinger Superposition</strong>",
+        "4": "DMG dealt by Somnia's Normal and Charged Attacks is increased based on her Elemental Mastery.",
+        "5": "Schrödinger Superposition expires after Self-Containing Sigil's duration ends or when Somnia leaves the field."
+      },
+      "skillParams": {
+        "0": "Skill DMG",
+        "1": "Duration",
+        "2": "CD"
+      }
+    },
+    "burst": {
+      "name": "Parallax Paws",
+      "description": {
+        "0": "Somnia summons a star-shaped Celestial Cyclone around her, unleashing a burst of <electro>Electro DMG</electro> as it expands. The field will linger and deal continuous <electro>AoE Electro DMG</electro> to enemies within every 1s.",
+        "1": "While Celestial Cyclone is active, Somnia's Elemental Mastery will be increased multiplicatively.",
+        "2": "Additionally, while Celestial Cyclone is active, Somnia gains Stellar Statistics. While in this state, Somnia can set her Astral Abacus to the Multiplication, Addition or Subtraction modes, each granting her attacks and Celestial Cyclone different buffs. Only one Abacus mode from Stellar Statistics may be active simultaneously.",
+        "3": "<br/>",
+        "4": "Abacus Modes",
+        "5": [
+          "<strong>Multiplication</strong>: Within Somnia's Celestial Cyclone, all Sword-, Claymore- and Polearm-wielding characters' weapons will be infused with <electro>Electro</electro>. Normal or Charged Attack hits within the field will trigger Star Sunder, a coordinated Electro blast that deals <electro>AoE Electro DMG</electro> based on Somnia's Elemental Mastery. Star Sunder can be triggered once every 1.5s.",
+          "<strong>Addition</strong>: Celestial Cyclone's AoE and DMG are increased. Upon hitting an enemy, Somnia's Normal and Charged attacks will trigger a Supernova that deals <electro>AoE Electro DMG</electro> based on her Elemental Mastery. This effect can be triggered once every 0.75s.",
+          "<strong>Subtraction</strong>: Celestial Cyclone has its AoE and DMG reduced, but applies the \"Less Than Three\" effect to enemies within it. \"Less Than Three\" reduces enemy Elemental and Physical RES based on Somnia's Elemental Mastery. Additionally, Somnia's Normal and Charged Attacks deal increased DMG based on her Elemental Mastery."
+        ]
+      },
+      "skillParams": {
+        "0": "Skill DMG",
+        "1": "Elemental Mastery",
+        "2": "Celestial Cyclone DoT (Multiplication)",
+        "3": "Star Sunder DMG",
+        "4": "Celestial Cyclone DoT (Addition)",
+        "5": "Supernova DMG",
+        "6": "Celestial Cyclone DoT (Subtraction)"
+      }
+    },
+    "passive1": {
+      "name": "Quick Calculation",
+      "description": {
+        "0": "Somnia's Charged Attacks consume 20% less Stamina and charge up 20% faster."
+      }
+    },
+    "passive2": {
+      "name": "Math Whiz",
+      "description": {
+        "0": "For the duration of Celestial Cyclone, Somnia's Elemental Mastery increases by 5% for every hit dealt by Celestial Cyclone, Star Sunder and Supernova, up to a maximum of 25%."
+      }
+    },
+    "passive3": {
+      "name": "Insomniac Iteration",
+      "description": {
+        "0": "At night (18:00 - 6:00), speeds up Genshin Optimizer build speed by 10%."
+      }
+    },
+    "constellation1": {
+      "name": "Decimal Point",
+      "description": {
+        "0": "Somnia's Normal and Charged Attacks have a 25% chance to deal twice the DMG."
+      }
+    },
+    "constellation2": {
+      "name": "Prime Number",
+      "description": {
+        "0": "When Somnia is under the Schrödinger Superposition effect, each Normal or Charged Attack hit will give Somnia a stack of Natural Number. When the amount of Natural Number stacks is prime, Somnia's next Normal or Charged Attack will receive twice the DMG increase from Schrödinger Superposition."
+      }
+    },
+    "constellation3": {
+      "name": "Infinite Series",
+      "description": {
+        "0": "Increases the Level of <strong>Parallax Paws</strong> by 3.",
+        "1": "Maximum upgrade level is 15."
+      }
+    },
+    "constellation4": {
+      "name": "Perfect Square",
+      "description": {
+        "0": "When Somnia triggers an Electro reaction, 4 Elemental Energy is restored to herself and all nearby party members of Elements involved in the reaction.",
+        "1": "This effect can trigger once every 4s."
+      }
+    },
+    "constellation5": {
+      "name": "Catnip Coefficient",
+      "description": {
+        "0": "Increases the Level of <strong>Cosmic Calculator</strong> by 3.",
+        "1": "Maximum upgrade level is 15."
+      }
+    },
+    "constellation6": {
+      "name": "Golden Ratio",
+      "description": {
+        "0": "When Somnia's Charged Attack deals damage, her CRIT Rate and CRIT DMG are increased by 3% and 5%, respectively. This effect can be triggered once every 0.2s and stack up to 8 times. All Golden Ratio stacks are cleared 13s after the first stack was obtained."
+      }
+    },
+    "c1Key": "Normal and Charged Att. DMG Mult.",
+    "superpositionCond": "Under the Schrödinger Superposition effect",
+    "cycloneActiveCond": "Celestial Cyclone is active",
+    "multCond": "In Multiplication mode",
+    "subCond": "In Subtraction mode",
+    "lessThan3Cond": "Enemy is affected by \"Less Than Three\"",
+    "c1Cond": "Decimal Point trigger frequency",
+    "average": "Average",
+    "always": "Always",
+    "c2Cond": "Possesses a prime amount of Natural Number stacks"
+  },
+  "weapon_QuantumCatalyst": {
+    "name": "Quantum Cat-alyst",
+    "description": "This advanced Catalyst weapon is infused with the mysterious power of Quantum Mechanics and bears the likeness of a curious cat, with glowing green eyes, a tail that flickers with Electro energy and the occasional spark arcing between the ears.",
+    "passiveName": "Mewon Meowmentum",
+    "passiveDescription": {
+      "0": "Increases Energy Recharge by <cryo>18%</cryo>. Increases Normal and Charged Attack DMG by <cryo>6%</cryo> of Elemental Mastery. Upon triggering an <electro>Electro-related Elemental Reaction</electro>, gain <cryo>10</cryo> Elemental Mastery for 12 seconds. This effect can stack up to 5 times and stacks have their duration counted independently.",
+      "1": "Increases Energy Recharge by <cryo>22.5%</cryo>. Increases Normal and Charged Attack DMG by <cryo>7.5%</cryo> of Elemental Mastery. Upon triggering an <electro>Electro-related Elemental Reaction</electro>, gain <cryo>12</cryo> Elemental Mastery for 12 seconds. This effect can stack up to 5 times and stacks have their duration counted independently.",
+      "2": "Increases Energy Recharge by <cryo>27%</cryo>. Increases Normal and Charged Attack DMG by <cryo>9%</cryo> of Elemental Mastery. Upon triggering an <electro>Electro-related Elemental Reaction</electro>, gain <cryo>14</cryo> Elemental Mastery for 12 seconds. This effect can stack up to 5 times and stacks have their duration counted independently.",
+      "3": "Increases Energy Recharge by <cryo>31.5%</cryo>. Increases Normal and Charged Attack DMG by <cryo>10.5%</cryo> of Elemental Mastery. Upon triggering an <electro>Electro-related Elemental Reaction</electro>, gain <cryo>16</cryo> Elemental Mastery for 12 seconds. This effect can stack up to 5 times and stacks have their duration counted independently.",
+      "4": "Increases Energy Recharge by <cryo>36%</cryo>. Increases Normal and Charged Attack DMG by <cryo>12%</cryo> of Elemental Mastery. Upon triggering an <electro>Electro-related Elemental Reaction</electro>, gain <cryo>18</cryo> Elemental Mastery for 12 seconds. This effect can stack up to 5 times and stacks have their duration counted independently."
+    }
+  },
+  "char_Baizhu": {
+    "seamlessDendro": "Seamless Shield Dendro DMG Absorption",
+    "a4Cond": "Under the Year of Verdant Favor effect",
+    "c2Dmg": "Gossamer Sprite: Splice DMG",
+    "c2Heal": "Gossamer Sprite: Splice Healing",
+    "c6DmgInc": "Spiritvein DMG Increase"
+  },
+  "char_Kaveh": {
+    "c6Dmg": "Pairidaeza's Light DMG"
+  },
+  "char_Kirara": {
+    "extraCardamom": "Extra Cat Grass Cardamoms",
+    "c4Dmg": "Small Cat Grass Cardamom DMG"
+  },
+  "weapon_CalamityQueller": {
+    "effectName": "Consummation",
+    "active": "Active Multiplier",
+    "inactive": "Off-field Multiplier"
+  },
+  "weapon_JadefallsSplendor": {
+    "condName": "Under the Primordial Jade Regalia effect"
+  },
+  "artifact_GildedDreams": {
+    "overrideSameCond": "Override same element teammates",
+    "overrideOtherCond": "Override other element teammates"
+  },
+  "char_Lynette": {
+    "c6CondName": "After using <strong>Enigmatic Feint</strong>'s Enigma Thrust"
+  },
+  "char_Lyney": {
+    "propStacks": "Prop Surplus",
+    "propStacksUsed": "Prop Surplus Consumed",
+    "hatDmgInc": "Pyrotechnic Strike DMG Increase",
+    "a1CondName": "<strong>Prop Arrow</strong> consumed HP",
+    "c6Dmg": "Pyrotechnic Strike: Reprised DMG"
+  },
+  "char_TravelerHydro": {
+    "dewdropDmgInc": "Dewdrop DMG Increase",
+    "a4CondName": "Percentage of Max HP consumed by Suffusion",
+    "surgeDmgInc": "Torrent Surge DMG Inc.",
+    "skillCondName": "In the Suffusion state"
+  },
+  "weapon_FinaleOfTheDeep": {
+    "bondCondName": "After clearing the Bond of Life"
+  },
+  "weapon_FlowingPurity": {
+    "bondCondName": "After clearing the Bond of Life"
+  },
+  "weapon_SacrificialJade": {
+    "condOffField": "Character has/had been off-field for over 5 seconds"
+  },
+  "weapon_ScionOfTheBlazingSun": {
+    "condName": "Opponent has been hit by a Sunfire Arrow",
+    "dmg": "Sunfire Arrow DMG"
+  },
+  "weapon_TalkingStick": {
+    "condName": {
+      "atk_": "Character affected by <pyro>Pyro</pyro>",
+      "dmg_": "Character affected by <hydro>Hydro</hydro>, <cryo>Cryo</cryo>, or <electro>Electro</electro>"
+    }
+  }
+}

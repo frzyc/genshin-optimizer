@@ -13,7 +13,12 @@
       }
     },
     "lint": {},
-    "test": {}
+    "test": {
+      "executor": "@nx/vite:test",
+      "options": {
+        "config": "libs/pando/vitest.config.ts"
+      }
+    }
   },
   "tags": []
 }

@@ -19,6 +19,7 @@ import Dori from './Character_Dori_Card.jpg'
 import Eula from './Character_Eula_Card.png'
 import Faruzan from './Character_Faruzan_Card.jpg'
 import Fischl from './Character_Fischl_Card.jpg'
+import Freminet from './Character_Freminet_Card.jpg'
 import Ganyu from './Character_Ganyu_Card.png'
 import Gorou from './Character_Gorou_Card.png'
 import HuTao from './Character_Hu_Tao_Card.png'
@@ -40,6 +41,7 @@ import Lynette from './Character_Lynette_Card.jpg'
 import Mika from './Character_Mika_Card.jpg'
 import Mona from './Character_Mona_Card.jpg'
 import Nahida from './Character_Nahida_Card.jpeg'
+import Neuvillette from './Character_Neuvillette_Card.jpg'
 import Nilou from './Character_Nilou_Card.jpg'
 import Ningguang from './Character_Ningguang_Card.jpg'
 import Noelle from './Character_Noelle_Card.jpg'
@@ -93,6 +95,7 @@ const charCards = {
   Eula,
   Faruzan,
   Fischl,
+  Freminet,
   Ganyu,
   Gorou,
   HuTao,
@@ -114,6 +117,7 @@ const charCards = {
   Mika,
   Mona,
   Nahida,
+  Neuvillette,
   Nilou,
   Ningguang,
   Noelle,

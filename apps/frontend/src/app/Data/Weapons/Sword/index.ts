@@ -33,6 +33,7 @@ import SummitShaper from './SummitShaper'
 import SwordOfDescension from './SwordOfDescension'
 import TheAlleyFlash from './TheAlleyFlash'
 import TheBlackSword from './TheBlackSword'
+import TheDockhandsAssistant from './TheDockhandsAssistant'
 import TheFlute from './TheFlute'
 import ToukabouShigure from './ToukabouShigure'
 import TravelersHandySword from './TravelersHandySword'
@@ -72,6 +73,7 @@ const sword: Record<WeaponSwordKey, WeaponSheet> = {
   SwordOfDescension,
   TheAlleyFlash,
   TheBlackSword,
+  TheDockhandsAssistant,
   TheFlute,
   ToukabouShigure,
   TravelersHandySword,
