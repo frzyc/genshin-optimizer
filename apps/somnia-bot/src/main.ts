@@ -20,7 +20,8 @@ const client = new Client({
 
 //collect events
 const eventPath = path.join(__dirname, 'events');
-const eventFiles = fs.readdirSync(eventPath).filter(file => file.endsWith('.ts'));
+console.log(eventPath)
+const eventFiles = fs.readdirSync(eventPath).filter(file => file.match(/\.[tj]s$/));
 for (const file of eventFiles) {
   const {name, once, run} = require(path.join(eventPath, file));
   if (name && run) {
@@ -39,7 +40,7 @@ for (const file of eventFiles) {
 export const Commands: Collection<string, any> = new Collection();
 const setcommands: any[] = [];
 const commandsPath = path.join(__dirname, 'commands');
-const commandFiles = fs.readdirSync(commandsPath).filter(file => file.endsWith('.ts'));
+const commandFiles = fs.readdirSync(commandsPath).filter(file => file.match(/\.[tj]s$/));
 for (const file of commandFiles) {
   const command = require(path.join(commandsPath, file));
   if ('slashcommand' in command && 'run' in command) {

@@ -55,3 +55,6 @@ Thumbs.db
 
 # Generated JSON files
 *_gen.json
+
+# somnia bot config
+apps/somnia-bot/src/config.json
