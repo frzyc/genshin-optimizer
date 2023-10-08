@@ -55,6 +55,3 @@ Thumbs.db
 
 # Generated JSON files
 *_gen.json
-
-# Discord config file
-apps/somnia/src/config.json
