@@ -15,7 +15,14 @@
         "bundle": false,
         "main": "apps/somnia-bot/src/main.ts",
         "tsConfig": "apps/somnia-bot/tsconfig.app.json",
-        "assets": ["apps/somnia-bot/src/assets"],
+        "assets": [
+          "apps/somnia-bot/src/assets",
+          {
+            "input": "./apps/somnia-bot/src",
+            "glob": "config.json",
+            "output": "apps/somnia-bot/src/"
+          }
+        ],
         "generatePackageJson": true,
         "esbuildOptions": {
           "sourcemap": true,
