@@ -20,7 +20,6 @@ const client = new Client({
 
 //collect events
 const eventPath = path.join(__dirname, 'events');
-console.log(eventPath)
 const eventFiles = fs.readdirSync(eventPath).filter(file => file.match(/\.[tj]s$/));
 for (const file of eventFiles) {
   const {name, once, run} = require(path.join(eventPath, file));

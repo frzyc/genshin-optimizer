@@ -56,7 +56,8 @@
         "production": {
           "buildTarget": "somnia-bot:build:production"
         }
-      }
+      },
+      "dependsOn": ["build", "gi-stats", "gi-formula"]
     },
     "lint": {
       "executor": "@nx/linter:eslint",
@@ -80,5 +81,9 @@
       }
     }
   },
-  "tags": []
+  "tags": [],
+  "implicitDependencies": [
+    "gi-stats",
+    "gi-formula"
+  ]
 }
