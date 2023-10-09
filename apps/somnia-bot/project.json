@@ -41,7 +41,9 @@
             }
           }
         }
-      }
+      },
+      "dependsOn": ["genfile", "^genfile", "^build", "^pipeline"],
+      "inputs": ["production", "^production", "{projectRoot}/src/config.json"]
     },
     "serve": {
       "executor": "@nx/js:node",
@@ -57,7 +59,7 @@
           "buildTarget": "somnia-bot:build:production"
         }
       },
-      "dependsOn": ["build", "gi-stats", "gi-formula"]
+      "dependsOn": ["build"]
     },
     "lint": {
       "executor": "@nx/linter:eslint",
@@ -81,9 +83,5 @@
       }
     }
   },
-  "tags": [],
-  "implicitDependencies": [
-    "gi-stats",
-    "gi-formula"
-  ]
+  "tags": []
 }
