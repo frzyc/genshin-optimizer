@@ -2,6 +2,7 @@
   "compilerOptions": {
     "jsx": "react-jsx",
     "esModuleInterop": false,
+    "module": "ESNext",
     "noPropertyAccessFromIndexSignature": false,
     "noImplicitAny": false,
     "exactOptionalPropertyTypes": false,
