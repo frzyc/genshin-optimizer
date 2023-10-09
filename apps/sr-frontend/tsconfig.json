@@ -7,6 +7,7 @@
     "useDefineForClassFields": true,
     "lib": ["ESNext", "DOM"],
     "moduleResolution": "Node",
+    "module": "ESNext",
     "isolatedModules": true,
     "esModuleInterop": true,
     "noEmit": true,
