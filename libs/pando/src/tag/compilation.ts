@@ -82,7 +82,7 @@ export function compileTagMapValues<V>(
     }
     if (!current['']) current[''] = []
     current[''].push(value)
-    if (true) {
+    if (process.env['NODE_ENV'] === 'development') {
       if (!current[debugTag]) current[debugTag] = []
       current[debugTag].push(tag)
     }

@@ -58,7 +58,7 @@ class Internal<V> {
     const { '': values, ...remaining } = compiled
     this.children = new Map()
     this.values = values ?? []
-    if (false) {
+    if (process.env['NODE_ENV'] === 'production') {
       this.tags = remaining[debugTag] ?? []
       delete remaining[debugTag]
     }
@@ -104,7 +104,7 @@ export class TagMapSubsetCache<V> {
   }
   /** List the tags associated with `subset` results. Works only in debug and test modes */
   tags(): Tag[] {
-    if (false)
+    if (process.env['NODE_ENV'] === 'production')
       throw new Error('Tags are not tracked in production')
     return this.internal.entries.flatMap((x) => x.tags)
   }
