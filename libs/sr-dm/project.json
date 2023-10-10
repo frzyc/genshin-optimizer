@@ -17,7 +17,11 @@
     },
     "genfile": {},
     "build": {},
-    "build-ts": {},
+    "build-ts": {
+      "options": {
+        "updateBuildableProjectDepsInPackageJson": true
+      }
+    },
     "lint": {}
   },
   "tags": [],
