@@ -55,3 +55,6 @@ Thumbs.db
 
 # Generated JSON files
 *_gen.json
+
+# Next.js
+.next
