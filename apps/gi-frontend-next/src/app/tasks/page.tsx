@@ -1,7 +1,7 @@
-import * as React from 'react';
-import Container from '@mui/material/Container';
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
+import * as React from 'react'
+import Container from '@mui/material/Container'
+import Box from '@mui/material/Box'
+import Typography from '@mui/material/Typography'
 
 export default function TasksPage() {
   return (
@@ -19,5 +19,5 @@ export default function TasksPage() {
         </Typography>
       </Box>
     </Container>
-  );
+  )
 }

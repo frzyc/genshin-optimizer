@@ -1,13 +1,14 @@
-import * as React from 'react';
-import Box from '@mui/material/Box';
-import Grid from '@mui/material/Unstable_Grid2';
-import Drawer from '@mui/material/Drawer';
-import Typography from '@mui/material/Typography';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import Alert from '@mui/material/Alert';
-import AlertTitle from '@mui/material/AlertTitle';
-import MediaCard from '../components/MediaCard';
+import * as React from 'react'
+import Box from '@mui/material/Box'
+import Grid from '@mui/material/Unstable_Grid2'
+import Drawer from '@mui/material/Drawer'
+import Typography from '@mui/material/Typography'
+import List from '@mui/material/List'
+import ListItem from '@mui/material/ListItem'
+import Alert from '@mui/material/Alert'
+import AlertTitle from '@mui/material/AlertTitle'
+import MediaCard from '../components/MediaCard'
+import { SetList } from './components/SetList'
 
 export default function HomePage() {
   return (
@@ -61,12 +62,13 @@ export default function HomePage() {
       >
         <List sx={{ px: 2 }}>
           <ListItem disablePadding>
-            <Typography variant="overline" sx={{ fontWeight: 500 }}>
+            {/* <Typography variant="overline" sx={{ fontWeight: 500 }}>
               On this page
-            </Typography>
+            </Typography> */}
+            <SetList />
           </ListItem>
         </List>
       </Drawer>
     </Box>
-  );
+  )
 }
