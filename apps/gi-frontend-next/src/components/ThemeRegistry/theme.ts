@@ -1,5 +1,6 @@
 import { Roboto } from 'next/font/google'
 import { createTheme } from '@mui/material/styles'
+import { theme as commonTheme } from '@genshin-optimizer/ui-common'
 
 const roboto = Roboto({
   weight: ['300', '400', '500', '700'],
@@ -8,22 +9,9 @@ const roboto = Roboto({
 })
 
 const theme = createTheme({
-  palette: {
-    mode: 'light',
-  },
+  ...commonTheme,
   typography: {
     fontFamily: roboto.style.fontFamily,
-  },
-  components: {
-    MuiAlert: {
-      styleOverrides: {
-        root: ({ ownerState }) => ({
-          ...(ownerState.severity === 'info' && {
-            backgroundColor: '#60a5fa',
-          }),
-        }),
-      },
-    },
   },
 })
 

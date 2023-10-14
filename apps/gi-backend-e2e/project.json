@@ -1,16 +1,12 @@
 {
   "name": "gi-backend-e2e",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "implicitDependencies": [
-    "gi-backend"
-  ],
+  "implicitDependencies": ["gi-backend"],
   "projectType": "application",
   "targets": {
     "e2e": {
       "executor": "@nx/jest:jest",
-      "outputs": [
-        "{workspaceRoot}/coverage/{e2eProjectRoot}"
-      ],
+      "outputs": ["{workspaceRoot}/coverage/{e2eProjectRoot}"],
       "options": {
         "jestConfig": "apps/gi-backend-e2e/jest.config.ts",
         "passWithNoTests": true
@@ -18,13 +14,9 @@
     },
     "lint": {
       "executor": "@nx/linter:eslint",
-      "outputs": [
-        "{options.outputFile}"
-      ],
+      "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": [
-          "apps/gi-backend-e2e/**/*.{js,ts}"
-        ]
+        "lintFilePatterns": ["apps/gi-backend-e2e/**/*.{js,ts}"]
       }
     }
   }

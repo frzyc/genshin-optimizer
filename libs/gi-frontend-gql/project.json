@@ -7,7 +7,7 @@
   "targets": {
     "genfile": {
       "command": "npx graphql-codegen --config libs/gi-frontend-gql/codegen.yml",
-      "inputs": ["default","production","^production","gqlschema"]
+      "inputs": ["production", "^production", "gqlschema"]
     },
     "lint": {
       "executor": "@nx/linter:eslint",
@@ -18,12 +18,7 @@
     }
   },
   "namedInputs": {
-    "gqlschema":[
-      "apps/gi-backend/src/app/schema.graphql"
-    ]
+    "gqlschema": ["{workspaceRoot}/apps/gi-backend/src/app/schema.graphql"]
   },
-  "implicitDependencies": [
-    "gi-backend"
-  ]
-
+  "implicitDependencies": ["gi-backend"]
 }

@@ -1,7 +1,11 @@
-import { PrismaAdapter } from "@auth/prisma-adapter"
-import type { GetServerSidePropsContext, NextApiRequest, NextApiResponse } from "next"
-import type { NextAuthOptions } from "next-auth"
-import { getServerSession } from "next-auth"
+import { PrismaAdapter } from '@auth/prisma-adapter'
+import type {
+  GetServerSidePropsContext,
+  NextApiRequest,
+  NextApiResponse,
+} from 'next'
+import type { NextAuthOptions } from 'next-auth'
+import { getServerSession } from 'next-auth'
 import GoogleProvider from 'next-auth/providers/google'
 import { PrismaClient } from '@prisma/client/gi' // Using the client generated from libs\gi-prisma-schema
 
@@ -27,8 +31,12 @@ export const config = {
   // debug:true
 } satisfies NextAuthOptions
 
-
 // Use in server contexts
-export function auth(...args: [GetServerSidePropsContext["req"], GetServerSidePropsContext["res"]] | [NextApiRequest, NextApiResponse] | []) {
+export function auth(
+  ...args:
+    | [GetServerSidePropsContext['req'], GetServerSidePropsContext['res']]
+    | [NextApiRequest, NextApiResponse]
+    | []
+) {
   return getServerSession(...args, config)
 }

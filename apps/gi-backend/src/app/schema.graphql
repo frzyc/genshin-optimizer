@@ -1,3 +1,4 @@
+# Example Lego Typedefs
 type Set {
   id: Int!
   name: String
@@ -11,4 +12,25 @@ type Query {
 
 type Mutation {
   addSet(name: String, year: String, numParts: Int): Set
+}
+
+# GO fields
+
+# User stuff
+type User {
+  id: String
+  username: String
+}
+
+type Query {
+  searchUsers(username: String): [User]
+}
+
+type Mutation {
+  createUsername(username: String!): CreateUserNameResponse
+}
+
+type CreateUserNameResponse {
+  success: Boolean
+  error: String
 }
