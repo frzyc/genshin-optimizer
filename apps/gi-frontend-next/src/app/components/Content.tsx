@@ -7,15 +7,16 @@ export const metadata = {
   description: 'Next.js App Router + Material UI v5',
 }
 
-export default async function Content({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function Content({ children }: { children: React.ReactNode }) {
   return (
     <Stack minHeight="100vh" spacing={{ xs: 0.5, sm: 1, md: 2 }}>
       {/* Header */}
-      <AppBar position="static" color="transparent" variant="outlined">
+      <AppBar
+        position="static"
+        color="transparent"
+        variant="outlined"
+        elevation={0}
+      >
         <Toolbar disableGutters>Header</Toolbar>
       </AppBar>
 
@@ -26,7 +27,12 @@ export default async function Content({
       {/* make sure footer is always at bottom */}
       <Box flexGrow={1} />
       {/* footer */}
-      <AppBar position="static" color="transparent" variant="outlined">
+      <AppBar
+        position="static"
+        color="transparent"
+        variant="outlined"
+        elevation={0}
+      >
         <Toolbar disableGutters>Footer</Toolbar>
       </AppBar>
     </Stack>

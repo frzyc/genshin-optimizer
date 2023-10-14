@@ -4,7 +4,6 @@ import GoogleIcon from '@mui/icons-material/Google'
 import {
   Button,
   CardContent,
-  Input,
   Stack,
   TextField,
   Typography,
@@ -28,7 +27,8 @@ export default function Auth({
     })
   console.log('useCreateUsernameMutation', { data, loading, error })
   const onSubmit = async () => {
-    console.log('onSubmit')
+    if (!username) return
+    console.log('onSubmit', username)
     try {
       createUsernameMutation()
     } catch (e) {
@@ -56,7 +56,7 @@ export default function Auth({
             value={username}
             onChange={(e) => setusername(e.target.value)}
           />
-          <Button variant="contained" onClick={onSubmit}>
+          <Button variant="contained" onClick={onSubmit} disabled={!username}>
             Submit
           </Button>
         </Stack>

@@ -56,7 +56,7 @@ model User {
   sessions      Session[]
 
   //additional fields for GO
-  username String?
+  username String? @unique
 }
 
 // model used by authjs
