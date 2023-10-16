@@ -17,6 +17,7 @@
         "tsConfig": "apps/somnia-bot/tsconfig.app.json",
         "assets": [
           "apps/somnia-bot/src/assets",
+          "apps/somnia-bot/src/data",
           {
             "input": "./apps/somnia-bot/src",
             "glob": "config.json",

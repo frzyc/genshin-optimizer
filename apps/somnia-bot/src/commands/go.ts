@@ -1,5 +1,6 @@
-import { ChatInputCommandInteraction, SlashCommandBuilder } from 'discord.js';
-import { IArtifact, ICharacter, IGOOD, IWeapon } from '@genshin-optimizer/gi-good';
+import type { ChatInputCommandInteraction} from 'discord.js';
+import { SlashCommandBuilder } from 'discord.js';
+import type { IArtifact, ICharacter, IGOOD, IWeapon } from '@genshin-optimizer/gi-good';
 import type { TagMapNodeEntries } from '@genshin-optimizer/gi-formula';
 import { artifactsData, charData, convert, enemyDebuff, genshinCalculatorWithEntries, selfBuff, selfTag, translate, weaponData, withMember } from '@genshin-optimizer/gi-formula';
 import { allStats } from '@genshin-optimizer/gi-stats'
@@ -47,12 +48,12 @@ type IChar = {
 //TODO
 type IGO = IGOOD & {buildSettings : any[]}
 
-var data : Record<string, IGO> = {};
+const data : Record<string, IGO> = {};
 
 export function getchardata(user : string, charname : string) : any {
     console.log(charname);
-    let out : any = {};
-    data['test'] = require('../../data/test.json');
+    const out : any = {};
+    data['test'] = require('../data/test.json');
     out.char = data['test'].characters?.find(e => e.key === charname);
     if (out.char === undefined) throw 0;
     out.weapon = data['test'].weapons?.find(e => e.location === charname);

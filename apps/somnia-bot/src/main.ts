@@ -54,7 +54,7 @@ for (const file of commandFiles) {
 //register commands
 const rest = new REST().setToken(token);
 rest.put(Routes.applicationCommands(clientid), { body: setcommands })
-  .then(data => console.log(`Reloaded ${(data as any).length} commands`))
-  .catch(e => console.log(e))
+  .then((data : any) => console.log(`Reloaded ${(data as any).length} commands`))
+  .catch((e : any) => console.log(e))
 
 client.login(token);

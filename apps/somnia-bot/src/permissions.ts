@@ -1,4 +1,4 @@
-import { ChatInputCommandInteraction, Message, PermissionsBitField } from 'discord.js'
+import type { ChatInputCommandInteraction, Message, PermissionsBitField } from 'discord.js'
 import { ownerid, clientid } from './config.json';
 
 export default {

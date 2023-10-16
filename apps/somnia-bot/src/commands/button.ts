@@ -1,4 +1,5 @@
-import { ActionRowBuilder, ButtonBuilder, ButtonInteraction, ButtonStyle, ChatInputCommandInteraction, SlashCommandBuilder } from 'discord.js';
+import type { ButtonInteraction, ChatInputCommandInteraction} from 'discord.js';
+import { ActionRowBuilder, ButtonBuilder, ButtonStyle, SlashCommandBuilder } from 'discord.js';
 
 export const slashcommand = new SlashCommandBuilder()
 .setName('button')
