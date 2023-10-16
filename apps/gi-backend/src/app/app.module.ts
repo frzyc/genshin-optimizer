@@ -22,8 +22,11 @@ import { UserModule } from './user/user.module'
     }),
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
-      // NOTE: nestjs can also auto generate the schema file using decorators, might make thing easier? see `autoSchemaFile`
-      typePaths: ['./**/*.graphql'],
+      // Auto generate graphql definition using resolvers
+      autoSchemaFile: join(
+        process.cwd(),
+        'apps/gi-backend/src/app/schema_gen.graphql'
+      ),
       context: ({ req }: any) => {
         req
       },

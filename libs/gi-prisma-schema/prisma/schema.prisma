@@ -68,3 +68,30 @@ model VerificationToken {
 
   @@unique([identifier, token])
 }
+
+// Genshin UID
+// TODO: attach to User
+model GenshinUser {
+  id         String     @id @default(auto()) @map("_id") @db.ObjectId
+  uid        String     @unique
+  artifacts  Artifact[]
+  nickname   String
+  Signature  String
+  worldLevel Int
+  nameCardId Int
+}
+
+model Artifact {
+  id           String      @id @default(auto()) @map("_id") @db.ObjectId
+  guser        GenshinUser @relation(fields: [guserId], references: [id], onDelete: Cascade)
+  guserId      String      @db.ObjectId
+  setKey       String
+  slotKey      String
+  level        Int
+  rarity       Int
+  mainstatKey  String
+  location     String
+  lock         Boolean
+  subStatKey   String[]
+  subStatValue Float[]
+}

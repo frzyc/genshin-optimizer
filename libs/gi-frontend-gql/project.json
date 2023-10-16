@@ -18,7 +18,7 @@
     }
   },
   "namedInputs": {
-    "gqlschema": ["{workspaceRoot}/apps/gi-backend/src/app/schema.graphql"]
+    "gqlschema": ["{workspaceRoot}/apps/gi-backend/src/app/schema_gen.graphql"]
   },
   "implicitDependencies": ["gi-backend"]
 }

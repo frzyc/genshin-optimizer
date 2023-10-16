@@ -1,19 +1,44 @@
-import { Args, Mutation, Query, Resolver } from '@nestjs/graphql'
+import {
+  Args,
+  Field,
+  Mutation,
+  ObjectType,
+  Query,
+  Resolver,
+} from '@nestjs/graphql'
 import { JWTUser } from '../_decorator/jwtuser.decorator'
-import type { CreateUserNameResponse, User as GQLUser } from '../graphql_gen'
 import { UserService } from './user.service'
+
+@ObjectType()
+export class CreateUserNameResponse {
+  @Field()
+  success: boolean
+
+  @Field({ nullable: true })
+  error?: string
+}
+
+@ObjectType()
+export class User {
+  @Field()
+  id: string
+
+  @Field()
+  username: string
+}
 
 @Resolver('User')
 export class UserResolver {
   constructor(private readonly userService: UserService) {}
 
-  @Query('searchUsers')
-  searchUsers(@Args('username') username: string): GQLUser[] {
+  @Query(() => User)
+  searchUsers(@Args('username') username: string): User[] {
     console.log('searchUsers', { username })
+    // TODO: Implementation
     return []
   }
 
-  @Mutation('createUsername')
+  @Mutation(() => CreateUserNameResponse)
   async createUsername(
     @JWTUser('sub') id: string,
     @Args('username') username: string

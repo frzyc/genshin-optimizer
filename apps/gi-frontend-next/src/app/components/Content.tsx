@@ -1,6 +1,8 @@
-import { AppBar, Container, Stack, Toolbar } from '@mui/material'
+import { Container, Stack } from '@mui/material'
 import Box from '@mui/material/Box'
 import * as React from 'react'
+import Footer from './Footer'
+import Header from './Header'
 
 export const metadata = {
   title: 'Next.js App Router + Material UI v5',
@@ -10,15 +12,7 @@ export const metadata = {
 export default function Content({ children }: { children: React.ReactNode }) {
   return (
     <Stack minHeight="100vh" spacing={{ xs: 0.5, sm: 1, md: 2 }}>
-      {/* Header */}
-      <AppBar
-        position="static"
-        color="transparent"
-        variant="outlined"
-        elevation={0}
-      >
-        <Toolbar disableGutters>Header</Toolbar>
-      </AppBar>
+      <Header />
 
       {/* <Box></Box> */}
       <Container maxWidth="xl" sx={{ px: { xs: 0.5, sm: 1, md: 2 } }}>
@@ -26,15 +20,7 @@ export default function Content({ children }: { children: React.ReactNode }) {
       </Container>
       {/* make sure footer is always at bottom */}
       <Box flexGrow={1} />
-      {/* footer */}
-      <AppBar
-        position="static"
-        color="transparent"
-        variant="outlined"
-        elevation={0}
-      >
-        <Toolbar disableGutters>Footer</Toolbar>
-      </AppBar>
+      <Footer />
     </Stack>
   )
 }

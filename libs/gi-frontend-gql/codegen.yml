@@ -1,5 +1,5 @@
 overwrite: true
-schema: 'apps/gi-backend/src/app/schema.graphql'
+schema: 'apps/gi-backend/src/app/schema_gen.graphql'
 generates:
   libs/gi-frontend-gql/src/lib/generated/generated.tsx:
     documents: 'libs/gi-frontend-gql/src/lib/**/*.graphql'

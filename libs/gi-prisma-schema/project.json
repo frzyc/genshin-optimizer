@@ -10,12 +10,6 @@
         "cwd": "libs/gi-prisma-schema"
       }
     },
-    "prisma-format": {
-      "command": "prisma format",
-      "options": {
-        "cwd": "libs/gi-prisma-schema"
-      }
-    },
     "migrate": {
       "command": "prisma migrate dev",
       "options": {

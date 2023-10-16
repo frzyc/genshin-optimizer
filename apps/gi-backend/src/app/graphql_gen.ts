@@ -8,31 +8,22 @@
 /* tslint:disable */
 /* eslint-disable */
 
-export interface Set {
-    id: number;
-    name?: Nullable<string>;
-    year?: Nullable<number>;
-    numParts?: Nullable<number>;
-}
-
-export interface IQuery {
-    allSets(): Nullable<Nullable<Set>[]> | Promise<Nullable<Nullable<Set>[]>>;
-    searchUsers(username?: Nullable<string>): Nullable<Nullable<User>[]> | Promise<Nullable<Nullable<User>[]>>;
-}
-
-export interface IMutation {
-    addSet(name?: Nullable<string>, year?: Nullable<string>, numParts?: Nullable<number>): Nullable<Set> | Promise<Nullable<Set>>;
-    createUsername(username: string): Nullable<CreateUserNameResponse> | Promise<Nullable<CreateUserNameResponse>>;
+export interface CreateUserNameResponse {
+    success: boolean;
+    error?: Nullable<string>;
 }
 
 export interface User {
-    id?: Nullable<string>;
-    username?: Nullable<string>;
+    id: string;
+    username: string;
 }
 
-export interface CreateUserNameResponse {
-    success?: Nullable<boolean>;
-    error?: Nullable<string>;
+export interface IQuery {
+    searchUsers(username: string): User | Promise<User>;
+}
+
+export interface IMutation {
+    createUsername(username: string): CreateUserNameResponse | Promise<CreateUserNameResponse>;
 }
 
 type Nullable<T> = T | null;
