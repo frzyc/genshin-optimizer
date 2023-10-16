@@ -1,6 +1,7 @@
 import {
   Args,
   Field,
+  ID,
   Mutation,
   ObjectType,
   Query,
@@ -20,18 +21,23 @@ export class CreateUserNameResponse {
 
 @ObjectType()
 export class User {
-  @Field()
+  @Field(() => ID)
   id: string
 
-  @Field()
-  username: string
+  @Field(() => String, { nullable: true })
+  username: string | null
 }
 
 @Resolver('User')
 export class UserResolver {
   constructor(private readonly userService: UserService) {}
 
-  @Query(() => User)
+  @Query(() => User, { nullable: true })
+  async getUserById(@Args('id') dbId: string): Promise<User | null> {
+    return await this.userService.findOne(dbId)
+  }
+
+  @Query(() => [User])
   searchUsers(@Args('username') username: string): User[] {
     console.log('searchUsers', { username })
     // TODO: Implementation
@@ -44,6 +50,7 @@ export class UserResolver {
     @Args('username') username: string
   ): Promise<CreateUserNameResponse> {
     if (!id) return { success: false, error: 'Not Authorized' }
+    // TODO: username validation
     const user = await this.userService.findWithUserName(username)
     if (user?.id === id && user?.username === username) {
       return {

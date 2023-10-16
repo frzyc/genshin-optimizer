@@ -8,12 +8,13 @@ type CreateUserNameResponse {
 }
 
 type User {
-  id: String!
-  username: String!
+  id: ID!
+  username: String
 }
 
 type Query {
-  searchUsers(username: String!): User!
+  getUserById(id: String!): User
+  searchUsers(username: String!): [User!]!
 }
 
 type Mutation {

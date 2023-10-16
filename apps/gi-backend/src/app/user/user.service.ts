@@ -6,7 +6,7 @@ export class UserService {
   constructor(private prisma: PrismaService) {}
 
   findOne(id: string) {
-    return this.prisma.user.findUniqueOrThrow({ where: { id } })
+    return this.prisma.user.findUnique({ where: { id } })
   }
   findWithUserName(username: string) {
     return this.prisma.user.findUnique({ where: { username } })

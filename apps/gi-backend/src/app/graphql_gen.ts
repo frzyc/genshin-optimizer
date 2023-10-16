@@ -15,11 +15,12 @@ export interface CreateUserNameResponse {
 
 export interface User {
     id: string;
-    username: string;
+    username?: Nullable<string>;
 }
 
 export interface IQuery {
-    searchUsers(username: string): User | Promise<User>;
+    getUserById(id: string): Nullable<User> | Promise<Nullable<User>>;
+    searchUsers(username: string): User[] | Promise<User[]>;
 }
 
 export interface IMutation {

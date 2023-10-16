@@ -53,6 +53,7 @@ export const config = {
     },
     async session({ session, token }) {
       session.auth_token = token['auth_token'] as string
+      session.user.dbId = token.sub as string
       return session
     },
   },

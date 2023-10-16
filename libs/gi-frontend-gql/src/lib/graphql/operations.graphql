@@ -4,3 +4,10 @@ mutation createUsername($username: String!) {
     error
   }
 }
+
+query getUser($dbId: String!) {
+  getUserById(id: $dbId) {
+    id
+    username
+  }
+}

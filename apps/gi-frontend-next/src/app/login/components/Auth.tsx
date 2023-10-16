@@ -1,66 +1,46 @@
-import { useCreateUsernameMutation } from '@genshin-optimizer/gi-frontend-gql'
-import { CardThemed } from '@genshin-optimizer/ui-common'
-import GoogleIcon from '@mui/icons-material/Google'
-import {
-  Button,
-  CardContent,
-  Stack,
-  TextField,
-  Typography,
-} from '@mui/material'
+import { useGetUserQuery } from '@genshin-optimizer/gi-frontend-gql'
+import LogoutIcon from '@mui/icons-material/Logout'
+import { Button, Stack, Typography } from '@mui/material'
 import type { Session } from 'next-auth'
-import { signIn } from 'next-auth/react'
-import { useState } from 'react'
+import { signOut } from 'next-auth/react'
+import UsernameForm from './UsernameForm'
 export default function Auth({
+  dbId,
   session,
-  reloadSession,
 }: {
-  session: Session | null
-  reloadSession: () => void
+  dbId: string
+  session: Session
 }) {
-  const [username, setusername] = useState('')
-  const [createUsernameMutation, { data, loading, error }] =
-    useCreateUsernameMutation({
-      variables: {
-        username,
-      },
-    })
-  console.log('useCreateUsernameMutation', { data, loading, error })
-  const onSubmit = async () => {
-    if (!username) return
-    console.log('onSubmit', username)
-    try {
-      createUsernameMutation()
-    } catch (e) {
-      console.error(e)
-    }
-  }
+  const { data, loading, error } = useGetUserQuery({
+    variables: {
+      dbId: dbId,
+    },
+  })
+  if (loading) return null //TODO:suspense
+  if (error) return null //TODO: error
+  const username = data?.getUserById?.username
 
-  if (!session)
-    return (
-      <Button // not logged in
-        onClick={() => signIn('google')}
-        startIcon={<GoogleIcon />}
+  return (
+    <Stack spacing={2} alignItems="center">
+      {username ? (
+        <Typography>
+          Logged in as <strong>{username}</strong>.
+        </Typography>
+      ) : (
+        <Typography>
+          Logged in as <strong>{session.user.email}</strong>.
+        </Typography>
+      )}
+
+      {!username && <UsernameForm dbId={dbId} />}
+
+      <Button
+        onClick={() => signOut()}
+        startIcon={<LogoutIcon />}
         variant="contained"
       >
-        Sign In
+        Sign out
       </Button>
-    )
-  return (
-    <CardThemed bgt="light">
-      <CardContent>
-        <Stack spacing={2}>
-          <Typography>Create a Username</Typography>
-          <TextField
-            placeholder="Enter a Username"
-            value={username}
-            onChange={(e) => setusername(e.target.value)}
-          />
-          <Button variant="contained" onClick={onSubmit} disabled={!username}>
-            Submit
-          </Button>
-        </Stack>
-      </CardContent>
-    </CardThemed>
+    </Stack>
   )
 }
