@@ -5,9 +5,24 @@ mutation createUsername($username: String!) {
   }
 }
 
-query getUser($dbId: String!) {
-  getUserById(id: $dbId) {
+query getUser($userId: String!) {
+  getUserById(id: $userId) {
     id
     username
+    genshinUsers {
+      id,
+      uid
+    }
+  }
+}
+
+mutation addGenshinUser($uid: String!) {
+  addGenshinUser(uid: $uid) {
+    success
+    genshinUser {
+      id
+      uid
+    }
+    error
   }
 }

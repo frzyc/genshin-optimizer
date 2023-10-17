@@ -6,7 +6,10 @@ export class UserService {
   constructor(private prisma: PrismaService) {}
 
   findOne(id: string) {
-    return this.prisma.user.findUnique({ where: { id } })
+    return this.prisma.user.findUnique({
+      where: { id },
+      include: { genshinUsers: true },
+    })
   }
   findWithUserName(username: string) {
     return this.prisma.user.findUnique({ where: { username } })

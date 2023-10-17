@@ -56,7 +56,8 @@ model User {
   sessions      Session[]
 
   //additional fields for GO
-  username String? @unique
+  username     String?       @unique
+  genshinUsers GenshinUser[]
 }
 
 // model used by authjs
@@ -70,28 +71,29 @@ model VerificationToken {
 }
 
 // Genshin UID
-// TODO: attach to User
 model GenshinUser {
   id         String     @id @default(auto()) @map("_id") @db.ObjectId
   uid        String     @unique
   artifacts  Artifact[]
-  nickname   String
-  Signature  String
-  worldLevel Int
-  nameCardId Int
+  nickname   String?
+  Signature  String?
+  worldLevel Int?
+  nameCardId Int?
+  User       User?      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId     String?    @db.ObjectId
 }
 
 model Artifact {
-  id           String      @id @default(auto()) @map("_id") @db.ObjectId
-  guser        GenshinUser @relation(fields: [guserId], references: [id], onDelete: Cascade)
-  guserId      String      @db.ObjectId
-  setKey       String
-  slotKey      String
-  level        Int
-  rarity       Int
-  mainstatKey  String
-  location     String
-  lock         Boolean
-  subStatKey   String[]
-  subStatValue Float[]
+  id            String      @id @default(auto()) @map("_id") @db.ObjectId
+  genshinUser   GenshinUser @relation(fields: [genshinUserId], references: [id], onDelete: Cascade)
+  genshinUserId String      @db.ObjectId
+  setKey        String
+  slotKey       String
+  level         Int
+  rarity        Int
+  mainstatKey   String
+  location      String
+  lock          Boolean
+  subStatKey    String[]
+  subStatValue  Float[]
 }

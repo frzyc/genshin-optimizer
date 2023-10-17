@@ -9,7 +9,7 @@ declare module 'next-auth' {
     auth_token: string // for jwt
 
     user: {
-      dbId: string
+      userId: string
     } & DefaultSession['user']
   }
 }

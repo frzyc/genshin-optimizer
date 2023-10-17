@@ -11,11 +11,11 @@ import { JwtAuthGuard } from './jwt-auth.guard'
 import { JwtStrategy } from './jwt.strategy'
 import { PrismaModule } from './prisma/prisma.module'
 import { UserModule } from './user/user.module'
+import { GenshinUserModule } from './genshinUser/genshinUser.module'
 
 @Module({
   imports: [
     PrismaModule,
-    UserModule,
     JwtModule.register({
       global: true,
       secret: 'my-32-character-ultra-secure-and-ultra-long-secret',
@@ -34,6 +34,10 @@ import { UserModule } from './user/user.module'
         path: join(process.cwd(), 'apps/gi-backend/src/app/graphql_gen.ts'),
       },
     }),
+
+    // custom modules
+    UserModule,
+    GenshinUserModule,
   ],
   controllers: [AppController],
   providers: [

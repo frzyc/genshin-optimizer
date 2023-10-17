@@ -1,20 +1,23 @@
 import {
   GetUserDocument,
-  useCreateUsernameMutation,
+  useAddGenshinUserMutation,
 } from '@genshin-optimizer/gi-frontend-gql'
 import { CardThemed } from '@genshin-optimizer/ui-common'
 import LoadingButton from '@mui/lab/LoadingButton'
 
 import { CardContent, Stack, TextField, Typography } from '@mui/material'
 import { useState } from 'react'
-export default function UsernameForm({ userId }: { userId: string }) {
-  const [username, setusername] = useState('')
-  const [createUsernameMutation, { loading }] = useCreateUsernameMutation({
+export default function UIDForm({ userId }: { userId: string }) {
+  const [uid, setUid] = useState('')
+  const [addGenshinUserMutation, { loading }] = useAddGenshinUserMutation({
     variables: {
-      username,
+      uid,
     },
     update(cache, { data }) {
-      if (!data?.createUsername.success) return
+      console.log('update', { cache, data })
+      if (!data?.addGenshinUser.success) return
+      const newGenshinUser = data.addGenshinUser.genshinUser
+      if (!newGenshinUser) return
       cache.updateQuery(
         {
           query: GetUserDocument,
@@ -23,10 +26,13 @@ export default function UsernameForm({ userId }: { userId: string }) {
           },
         },
         ({ getUserById }) => {
+          const genshinUsers = getUserById.genshinUsers
           return {
             getUserById: {
               ...getUserById,
-              username,
+              genshinUsers: genshinUsers
+                ? [...genshinUsers, newGenshinUser]
+                : [newGenshinUser],
             },
           }
         }
@@ -34,26 +40,26 @@ export default function UsernameForm({ userId }: { userId: string }) {
     },
   })
   const onSubmit = async () => {
-    if (!username) return
-    createUsernameMutation()
+    if (!uid) return
+    addGenshinUserMutation()
   }
-  // TODO: validate username length
+  // TODO: validate UID with enka?
   // TODO: print out errors from data.createUsername.error
   return (
     <CardThemed bgt="light">
       <CardContent>
         <Stack spacing={2}>
-          <Typography>Create a Username</Typography>
+          <Typography>Add a UID</Typography>
           <TextField
-            placeholder="Enter a Username"
-            value={username}
-            onChange={(e) => setusername(e.target.value)}
+            placeholder="Enter UID"
+            value={uid}
+            onChange={(e) => setUid(e.target.value)}
           />
           <LoadingButton
             loading={loading}
             variant="contained"
             onClick={onSubmit}
-            disabled={!username}
+            disabled={!uid}
           >
             Submit
           </LoadingButton>
