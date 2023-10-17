@@ -67,6 +67,7 @@ import TravelerHydro from './TravelerHydro'
 import TravelerM from './TravelerM'
 import Venti from './Venti'
 import Wanderer from './Wanderer'
+import Wriothesley from './Wriothesley'
 import Xiangling from './Xiangling'
 import Xiao from './Xiao'
 import Xingqiu from './Xingqiu'
@@ -148,6 +149,7 @@ const data = {
   TravelerM,
   Venti,
   Wanderer,
+  Wriothesley,
   Xiangling,
   Xiao,
   Xingqiu,

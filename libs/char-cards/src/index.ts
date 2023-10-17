@@ -60,6 +60,7 @@ import Thoma from './Character_Thoma_Card.jpg'
 import Tighnari from './Character_Tighnari_Card.jpg'
 import Venti from './Character_Venti_Card.jpg'
 import Wanderer from './Character_Wanderer_Card.jpg'
+import Wriothesley from './Character_Wriothesley_Card.jpg'
 import Xiangling from './Character_Xiangling_Card.jpg'
 import Xiao from './Character_Xiao_Card.jpg'
 import Xingqiu from './Character_Xingqiu_Card.jpg'
@@ -138,6 +139,7 @@ const charCards = {
   TravelerM,
   Venti,
   Wanderer,
+  Wriothesley,
   Xiangling,
   Xiao,
   Xingqiu,
