@@ -1,8 +1,8 @@
 {
   "rebukeDmg": "Rebuke: Vaulting Fist DMG",
   "a4Cond": "Prosecution Edict stacks",
-  "c4Cond": "Healing overflows",
   "icicleDmg": "Icicle DMG",
+  "c4Cond": "Healing overflows",
   "rebuke_critRate_": "Rebuke: Vaulting Fist Crit Rate",
   "rebuke_critDMG_": "Rebuke: Vaulting Fist Crit DMG",
   "rebuke_dmg_": "Rebuke: Vaulting Fist DMG Bonus"
