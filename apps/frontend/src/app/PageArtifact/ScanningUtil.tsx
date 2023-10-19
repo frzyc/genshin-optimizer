@@ -39,13 +39,11 @@ const schedulers = new BorrowManager(
     const promises = Array(workerCount)
       .fill(0)
       .map(async (_) => {
-        const worker = await createWorker({
+        const worker = await createWorker(language, undefined, {
           errorHandler: console.error,
         })
 
         await worker.load()
-        await worker.loadLanguage(language)
-        await worker.initialize(language)
         scheduler.addWorker(worker)
       })
 
