@@ -175,29 +175,36 @@ async function ocr(imageURL: string): Promise<{
   const imageData = await urlToImageData(imageURL)
 
   const width = imageData.width,
-    halfHeight = Math.floor(imageData.height / 2)
+    halfHeight = Math.floor(imageData.height / 2),
+    halfWidth = Math.floor(imageData.width / 2)
   const bottomOpts = {
     rectangle: { top: halfHeight, left: 0, width, height: halfHeight },
   }
 
   const awaits = [
+    // slotkey, mainStatValue, level
     textsFromImage(
       bandPass(imageData, [140, 140, 140], [255, 255, 255], {
         mode: 'bw',
         region: 'top',
-      })
-    ), // slotkey, mainStatValue, level
+      }),
+      {
+        rectangle: { top: 0, left: 0, width: halfWidth, height: halfHeight },
+      }
+    ),
+    // substats
     textsFromImage(
       bandPass(imageData, [30, 50, 80], [160, 160, 160], { region: 'bot' }),
       bottomOpts
-    ), // substats
+    ),
+    // artifact set, look for greenish texts
     textsFromImage(
       bandPass(imageData, [30, 160, 30], [200, 255, 200], {
         mode: 'bw',
         region: 'bot',
       }),
       bottomOpts
-    ), // artifact set, look for greenish texts
+    ),
   ]
 
   const rarities = parseRarities(
