@@ -166,6 +166,7 @@ export const allWeaponCatalystKeys = [
   'AThousandFloatingDreams',
   'BalladOfTheBoundlessBlue',
   'BlackcliffAgate',
+  'CashflowSupervision',
   'DodocoTales',
   'EmeraldOrb',
   'EverlastingMoonglow',

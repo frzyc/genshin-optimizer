@@ -123,6 +123,7 @@ export const nonTravelerCharacterKeys = [
   'Tighnari',
   'Venti',
   'Wanderer',
+  'Wriothesley',
   'Xiangling',
   'Xiao',
   'Xingqiu',
