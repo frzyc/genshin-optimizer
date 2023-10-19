@@ -30,7 +30,7 @@ import KeyMap from '../KeyMap'
 import type { ICachedArtifact } from '../Types/artifact'
 import { BorrowManager } from './BorrowManager'
 
-const starColor = { r: 255, g: 204, b: 50 } //#FFCC32
+const starColor = { r: 255, g: 204, b: 50 } // #FFCC32
 const workerCount = 2
 
 const schedulers = new BorrowManager(
@@ -41,6 +41,7 @@ const schedulers = new BorrowManager(
       .map(async (_) => {
         const worker = await createWorker(language, undefined, {
           errorHandler: console.error,
+          langPath: './assets',
         })
 
         await worker.load()
@@ -213,7 +214,7 @@ async function textsFromImage(
 ): Promise<string[]> {
   const canvas = imageDataToCanvas(imageData)
   const rec = await schedulers.borrow(
-    'eng',
+    'genshin_fast_09_04_21',
     async (scheduler) =>
       (await (
         await scheduler
