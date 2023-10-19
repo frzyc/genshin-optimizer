@@ -842,7 +842,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/parser@npm:^7.1.0, @babel/parser@npm:^7.14.7, @babel/parser@npm:^7.20.7, @babel/parser@npm:^7.7.0":
+"@babel/parser@npm:^7.1.0, @babel/parser@npm:^7.14.7, @babel/parser@npm:^7.20.7":
   version: 7.20.7
   resolution: "@babel/parser@npm:7.20.7"
   bin:
@@ -2546,7 +2546,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/traverse@npm:^7.16.0, @babel/traverse@npm:^7.20.10, @babel/traverse@npm:^7.20.7, @babel/traverse@npm:^7.7.0, @babel/traverse@npm:^7.7.2":
+"@babel/traverse@npm:^7.16.0, @babel/traverse@npm:^7.20.10, @babel/traverse@npm:^7.20.7, @babel/traverse@npm:^7.7.2":
   version: 7.20.10
   resolution: "@babel/traverse@npm:7.20.10"
   dependencies:
@@ -2600,7 +2600,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/types@npm:^7.0.0, @babel/types@npm:^7.18.6, @babel/types@npm:^7.19.0, @babel/types@npm:^7.20.2, @babel/types@npm:^7.20.7, @babel/types@npm:^7.3.0, @babel/types@npm:^7.3.3, @babel/types@npm:^7.4.4, @babel/types@npm:^7.7.0, @babel/types@npm:^7.8.3":
+"@babel/types@npm:^7.0.0, @babel/types@npm:^7.18.6, @babel/types@npm:^7.19.0, @babel/types@npm:^7.20.2, @babel/types@npm:^7.20.7, @babel/types@npm:^7.3.0, @babel/types@npm:^7.3.3, @babel/types@npm:^7.4.4, @babel/types@npm:^7.8.3":
   version: 7.20.7
   resolution: "@babel/types@npm:7.20.7"
   dependencies:
@@ -6716,22 +6716,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"babel-eslint@npm:^10.1.0":
-  version: 10.1.0
-  resolution: "babel-eslint@npm:10.1.0"
-  dependencies:
-    "@babel/code-frame": ^7.0.0
-    "@babel/parser": ^7.7.0
-    "@babel/traverse": ^7.7.0
-    "@babel/types": ^7.7.0
-    eslint-visitor-keys: ^1.0.0
-    resolve: ^1.12.0
-  peerDependencies:
-    eslint: ">= 4.12.1"
-  checksum: bdc1f62b6b0f9c4d5108c96d835dad0c0066bc45b7c020fcb2d6a08107cf69c9217a99d3438dbd701b2816896190c4283ba04270ed9a8349ee07bd8dafcdc050
-  languageName: node
-  linkType: hard
-
 "babel-jest@npm:29.4.3":
   version: 29.4.3
   resolution: "babel-jest@npm:29.4.3"
@@ -9531,13 +9515,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-visitor-keys@npm:^1.0.0":
-  version: 1.3.0
-  resolution: "eslint-visitor-keys@npm:1.3.0"
-  checksum: 37a19b712f42f4c9027e8ba98c2b06031c17e0c0a4c696cd429bd9ee04eb43889c446f2cd545e1ff51bef9593fcec94ecd2c2ef89129fcbbf3adadbef520376a
-  languageName: node
-  linkType: hard
-
 "eslint-visitor-keys@npm:^3.0.0, eslint-visitor-keys@npm:^3.4.1":
   version: 3.4.1
   resolution: "eslint-visitor-keys@npm:3.4.1"
@@ -10029,13 +10006,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"file-type@npm:^12.4.1":
-  version: 12.4.2
-  resolution: "file-type@npm:12.4.2"
-  checksum: 67c8d7f8f032fd8cf4d14016d96567d20eeb7bf3524915f2c5d79337ca4e5338032d373a5fe827610eaf4ab7eb80629ff868331a66f63d1f9e9cc4c433e3f047
-  languageName: node
-  linkType: hard
-
 "file-type@npm:^17.1.6":
   version: 17.1.6
   resolution: "file-type@npm:17.1.6"
@@ -10513,7 +10483,7 @@ __metadata:
     regenerator-runtime: 0.13.11
     remark-gfm: ^3.0.1
     swc-loader: 0.1.15
-    tesseract.js: ^4.0.2
+    tesseract.js: ^5.0.2
     ts-jest: 29.1.0
     ts-node: 10.9.1
     tslib: ^2.5.0
@@ -11210,10 +11180,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"idb-keyval@npm:^3.2.0":
-  version: 3.2.0
-  resolution: "idb-keyval@npm:3.2.0"
-  checksum: 3270010af049fa7f07b0381818daa7f16d3704aaba9d2585e531908f09130f6d0772464b2b48c23676dd1e51e5245585da5ce56f2c74dfd4f9961d1e0d0f5909
+"idb-keyval@npm:^6.2.0":
+  version: 6.2.1
+  resolution: "idb-keyval@npm:6.2.1"
+  checksum: 7c0836f832096086e99258167740181132a71dd2694c8b8454a4f5ec69114ba6d70983115153306f0b6de1c8d3bad04f67eed3dff8f50c96815b9985d6d78470
   languageName: node
   linkType: hard
 
@@ -11489,10 +11459,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"is-electron@npm:^2.2.0":
-  version: 2.2.1
-  resolution: "is-electron@npm:2.2.1"
-  checksum: 06e569aa933a737d418489bb9ca081af62eceb714d4c3d553ad2497610e35494be6dddd010c4e29890c7dd9d0481c2e3e1e9097af9d19df1c52dd5be747d80a0
+"is-electron@npm:^2.2.2":
+  version: 2.2.2
+  resolution: "is-electron@npm:2.2.2"
+  checksum: de5aa8bd8d72c96675b8d0f93fab4cc21f62be5440f65bc05c61338ca27bd851a64200f31f1bf9facbaa01b3dbfed7997b2186741d84b93b63e0aff1db6a9494
   languageName: node
   linkType: hard
 
@@ -14042,7 +14012,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"node-fetch@npm:2.6.7, node-fetch@npm:^2.6.0":
+"node-fetch@npm:2.6.7":
   version: 2.6.7
   resolution: "node-fetch@npm:2.6.7"
   dependencies:
@@ -14053,6 +14023,20 @@ __metadata:
     encoding:
       optional: true
   checksum: 8d816ffd1ee22cab8301c7756ef04f3437f18dace86a1dae22cf81db8ef29c0bf6655f3215cb0cdb22b420b6fe141e64b26905e7f33f9377a7fa59135ea3e10b
+  languageName: node
+  linkType: hard
+
+"node-fetch@npm:^2.6.9":
+  version: 2.7.0
+  resolution: "node-fetch@npm:2.7.0"
+  dependencies:
+    whatwg-url: ^5.0.0
+  peerDependencies:
+    encoding: ^0.1.0
+  peerDependenciesMeta:
+    encoding:
+      optional: true
+  checksum: d76d2f5edb451a3f05b15115ec89fc6be39de37c6089f1b6368df03b91e1633fd379a7e01b7ab05089a25034b2023d959b47e59759cb38d88341b2459e89d6e5
   languageName: node
   linkType: hard
 
@@ -14449,7 +14433,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"opencollective-postinstall@npm:^2.0.2":
+"opencollective-postinstall@npm:^2.0.3":
   version: 2.0.3
   resolution: "opencollective-postinstall@npm:2.0.3"
   bin:
@@ -16051,13 +16035,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"resolve-url@npm:^0.2.1":
-  version: 0.2.1
-  resolution: "resolve-url@npm:0.2.1"
-  checksum: 7b7035b9ed6e7bc7d289e90aef1eab5a43834539695dac6416ca6e91f1a94132ae4796bbd173cdacfdc2ade90b5f38a3fb6186bebc1b221cd157777a23b9ad14
-  languageName: node
-  linkType: hard
-
 "resolve.exports@npm:1.1.0":
   version: 1.1.0
   resolution: "resolve.exports@npm:1.1.0"
@@ -17435,31 +17412,28 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tesseract.js-core@npm:^4.0.2":
-  version: 4.0.2
-  resolution: "tesseract.js-core@npm:4.0.2"
-  checksum: ed721837842f2a545880a5878303d6732489638a4e6c81650b05110aa2167b40e44901f033cc95d8cdcb174af8ef14e188b9ec5a80a0109ea9f3a5d2307deb29
+"tesseract.js-core@npm:^5.0.0":
+  version: 5.0.0
+  resolution: "tesseract.js-core@npm:5.0.0"
+  checksum: 5d66291078ecf36f2e957e195bc82c4b313136bebf64cfc974e188226a524690785c6f3561ce4cc42f6060190318d3a08c6fee88dade19d77e70f50badd59d7e
   languageName: node
   linkType: hard
 
-"tesseract.js@npm:^4.0.2":
-  version: 4.0.2
-  resolution: "tesseract.js@npm:4.0.2"
+"tesseract.js@npm:^5.0.2":
+  version: 5.0.2
+  resolution: "tesseract.js@npm:5.0.2"
   dependencies:
-    babel-eslint: ^10.1.0
     bmp-js: ^0.1.0
-    file-type: ^12.4.1
-    idb-keyval: ^3.2.0
-    is-electron: ^2.2.0
+    idb-keyval: ^6.2.0
+    is-electron: ^2.2.2
     is-url: ^1.2.4
-    node-fetch: ^2.6.0
-    opencollective-postinstall: ^2.0.2
+    node-fetch: ^2.6.9
+    opencollective-postinstall: ^2.0.3
     regenerator-runtime: ^0.13.3
-    resolve-url: ^0.2.1
-    tesseract.js-core: ^4.0.2
+    tesseract.js-core: ^5.0.0
     wasm-feature-detect: ^1.2.11
     zlibjs: ^0.3.1
-  checksum: ca3117dfd504c98ab3b4b4e7be541391e327955ce87cb3ab2cc13a7586f18f48ad8a8614e73f2f00ebf46c3816c117e9e0cbc9f9e34c8f6d7df709688c7d4a55
+  checksum: 5804757f438dcf63d25709c5ba25fc7960c8062d7d2fa101a4af5b603c70112ba2da02b5d1ed069c27bf5bae97b6e317b7c84a5a8f9126e261d8afc1128a2904
   languageName: node
   linkType: hard
 

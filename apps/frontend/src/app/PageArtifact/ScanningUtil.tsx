@@ -30,7 +30,7 @@ import KeyMap from '../KeyMap'
 import type { ICachedArtifact } from '../Types/artifact'
 import { BorrowManager } from './BorrowManager'
 
-const starColor = { r: 255, g: 204, b: 50 } //#FFCC32
+const starColor = { r: 255, g: 204, b: 50 } // #FFCC32
 const workerCount = 2
 
 const schedulers = new BorrowManager(
@@ -39,13 +39,12 @@ const schedulers = new BorrowManager(
     const promises = Array(workerCount)
       .fill(0)
       .map(async (_) => {
-        const worker = await createWorker({
+        const worker = await createWorker(language, undefined, {
           errorHandler: console.error,
+          langPath: './assets',
         })
 
         await worker.load()
-        await worker.loadLanguage(language)
-        await worker.initialize(language)
         scheduler.addWorker(worker)
       })
 
@@ -176,29 +175,36 @@ async function ocr(imageURL: string): Promise<{
   const imageData = await urlToImageData(imageURL)
 
   const width = imageData.width,
-    halfHeight = Math.floor(imageData.height / 2)
+    halfHeight = Math.floor(imageData.height / 2),
+    halfWidth = Math.floor(imageData.width / 2)
   const bottomOpts = {
     rectangle: { top: halfHeight, left: 0, width, height: halfHeight },
   }
 
   const awaits = [
+    // slotkey, mainStatValue, level
     textsFromImage(
       bandPass(imageData, [140, 140, 140], [255, 255, 255], {
         mode: 'bw',
         region: 'top',
-      })
-    ), // slotkey, mainStatValue, level
+      }),
+      {
+        rectangle: { top: 0, left: 0, width: halfWidth, height: halfHeight },
+      }
+    ),
+    // substats
     textsFromImage(
       bandPass(imageData, [30, 50, 80], [160, 160, 160], { region: 'bot' }),
       bottomOpts
-    ), // substats
+    ),
+    // artifact set, look for greenish texts
     textsFromImage(
       bandPass(imageData, [30, 160, 30], [200, 255, 200], {
         mode: 'bw',
         region: 'bot',
       }),
       bottomOpts
-    ), // artifact set, look for greenish texts
+    ),
   ]
 
   const rarities = parseRarities(
@@ -215,7 +221,7 @@ async function textsFromImage(
 ): Promise<string[]> {
   const canvas = imageDataToCanvas(imageData)
   const rec = await schedulers.borrow(
-    'eng',
+    'genshin_fast_09_04_21',
     async (scheduler) =>
       (await (
         await scheduler
