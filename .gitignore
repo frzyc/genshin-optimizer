@@ -58,3 +58,4 @@ Thumbs.db
 
 # somnia bot config
 apps/somnia-bot/src/config.json
+somnia-data/*

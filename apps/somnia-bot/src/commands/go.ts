@@ -1,23 +1,18 @@
 import type { ChatInputCommandInteraction} from 'discord.js';
 import { SlashCommandBuilder } from 'discord.js';
-import type { IArtifact, ICharacter, IGOOD, IWeapon } from '@genshin-optimizer/gi-good';
-import type { TagMapNodeEntries } from '@genshin-optimizer/gi-formula';
-import { artifactsData, charData, convert, enemyDebuff, genshinCalculatorWithEntries, selfBuff, selfTag, translate, weaponData, withMember } from '@genshin-optimizer/gi-formula';
-import { allStats } from '@genshin-optimizer/gi-stats'
+import { calc } from '../go/calc'
+import { storedata, getchar } from '../go/data'
 
 export const slashcommand = new SlashCommandBuilder()
 .setName('go')
 .setDescription('shows optimizer data')
 .addSubcommand(subcommand => subcommand
-    .setName('team')
-    .setDescription('show team info')
-    .addStringOption(option => option
-        .setName('char')
-        .setDescription('the character to show with team')
-        .setRequired(true))
-    .addUserOption(option => option
-        .setName('user')
-        .setDescription('user')))
+    .setName('upload')
+    .setDescription('upload your GOOD data')
+    .addAttachmentOption(option => option
+      .setName('data')
+      .setDescription('GOOD format data')
+      .setRequired(true)))
 .addSubcommand(subcommand => subcommand
     .setName('char')
     .setDescription('show char info')
@@ -38,83 +33,39 @@ export const slashcommand = new SlashCommandBuilder()
         .setName('user')
         .setDescription('user')))
 
-type IChar = {
-    char : ICharacter | undefined,
-    weapon : IWeapon | undefined,
-    artifacts : IArtifact[] | undefined,
-    target : any
-}
-
-//TODO
-type IGO = IGOOD & {buildSettings : any[]}
-
-const data : Record<string, IGO> = {};
-
-export function getchardata(user : string, charname : string) : any {
-    console.log(charname);
-    const out : any = {};
-    data['test'] = require('../data/test.json');
-    out.char = data['test'].characters?.find(e => e.key === charname);
-    if (out.char === undefined) throw 0;
-    out.weapon = data['test'].weapons?.find(e => e.location === charname);
-    out.artifacts = data['test'].artifacts?.filter(e => e.location === charname);
-    out.target = data['test'].buildSettings?.find(e => e.id === charname);
-    console.log(JSON.stringify(out.target.optimizationTarget));``
-    const team: TagMapNodeEntries = [
-      ...withMember(
-        'member0',
-        ...charData(out.char as ICharacter),
-        ...weaponData(out.weapon as IWeapon),
-        ...artifactsData(out.artifacts.map((e : IArtifact) => {
-          return {
-            set: e.setKey,
-            stats: [
-              {key: e.mainStatKey, value: allStats.art.main[e.rarity][e.mainStatKey][e.level]},
-              ...e.substats.map(s => {
-                if (s.key.endsWith('_')) s.value /= 100;
-                return s;
-              })
-            ]
-          };
-        }))
-      ),
-      // Enemy
-      enemyDebuff.cond.cata.add('spread'),
-      enemyDebuff.cond.amp.add(''),
-      enemyDebuff.common.lvl.add(80),
-      enemyDebuff.common.preRes.add(0.1),
-      selfBuff.common.critMode.add('avg'),
-    ];
-    const calc = genshinCalculatorWithEntries(team);
-    const member0 = convert(selfTag, { member: 'member0', et: 'self' });
-    const read = calc
-      .listFormulas(member0.formula.listing)
-      .find((x) => x.tag.name === 'karma_dmg')!
-    console.log(translate(calc.compute(read)).deps);
-    return {
-      hp: calc.compute(member0.final.hp).val,
-      atk: calc.compute(member0.final.atk).val,
-      def: calc.compute(member0.final.def).val,
-      eleMas: calc.compute(member0.final.eleMas).val,
-      critRate: calc.compute(member0.final.critRate_).val,
-      critDMG: calc.compute(member0.final.critDMG_).val,
-      karma_dmg: read ? calc.compute(read).val : undefined,
-      karma_formula: read ? translate(calc.compute(read)).deps.map(({name, formula}) => `${name} <= ${formula}`) : undefined
-    };
-}
-
 export async function run(interaction : ChatInputCommandInteraction) {
     const subcommand = interaction.options.getSubcommand();
-    const user = interaction.options.getUser('user', false) || interaction.user;
-    const charname = interaction.options.getString('char', true);
-    let chardata : any;
-    try {
-        chardata = getchardata(user.id, charname);
+    switch (subcommand) {
+      case 'upload':
+        const attachment = interaction.options.getAttachment('data', true);
+        await interaction.deferReply({ephemeral:true});
+        try {
+          await storedata(interaction.user.id, attachment);
+        }
+        catch (e) {
+          interaction.editReply(JSON.stringify(e, null, 2).slice(0, 2000));
+          return;
+        }
+        interaction.editReply("Data successfully uploaded");
+      return;
+      case 'char':
+        const user = interaction.options.getUser('user', false) || interaction.user;
+        const charname = interaction.options.getString('char', true);
+        let chardata : any;
+        let result : any;
+        try {
+            chardata = getchar(user.id, charname);
+            result = calc(chardata);
+        }
+        catch (e) {
+            console.log(e);
+            interaction.reply({
+              content: JSON.stringify(e, null, 2).slice(0, 2000),
+              ephemeral: true
+            });
+            return;
+        }
+        interaction.reply('```json\n'+JSON.stringify(result, null, 2).slice(0, 1980)+'```');
+      return;
     }
-    catch (e) {
-        console.log(e);
-        interaction.reply(JSON.stringify(e, null, 2).slice(0, 2000));
-        return;
-    }
-    interaction.reply('```json\n'+JSON.stringify(chardata, null, 2).slice(0, 1980)+'```');
 }
