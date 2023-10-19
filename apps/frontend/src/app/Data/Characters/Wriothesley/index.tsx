@@ -7,7 +7,6 @@ import { allStats } from '@genshin-optimizer/gi-stats'
 import { objKeyMap, range } from '@genshin-optimizer/util'
 import { input } from '../../../Formula'
 import {
-  equal,
   greaterEq,
   infoMut,
   lookup,
@@ -62,8 +61,8 @@ const dm = {
     skillDmg: skillParam_gen.burst[b++],
     bladeDmg: skillParam_gen.burst[b++],
     cd: skillParam_gen.burst[b++][0],
-    bladeCd: skillParam_gen.burst[b++][0],
     enerCost: skillParam_gen.burst[b++][0],
+    bladeCd: skillParam_gen.burst[b++][0],
   },
   passive1: {
     hpThresh: skillParam_gen.passive1[0][0],
@@ -127,26 +126,6 @@ const c2EdictStacks_burst_dmg_ = greaterEq(
       ),
       naught
     )
-  )
-)
-
-const [condC4OverHealPath, condC4OverHeal] = cond(key, 'c4OverHeal')
-const c4Self_atkSPD_ = greaterEq(
-  input.constellation,
-  4,
-  equal(
-    condC4OverHeal,
-    'on',
-    equal(input.activeCharKey, key, dm.constellation4.selfAtkSPD_)
-  )
-)
-const c4Team_atkSPD_ = greaterEq(
-  input.constellation,
-  4,
-  equal(
-    condC4OverHeal,
-    'on',
-    unequal(input.activeCharKey, key, dm.constellation4.teamAtkSPD_)
   )
 )
 
@@ -240,12 +219,6 @@ export const data = dataObjForCharacterSheet(
       autoBoost: autoC3,
       atk_: a4EdictStacks_atk_,
       burst_dmg_: c2EdictStacks_burst_dmg_,
-      atkSPD_: c4Self_atkSPD_,
-    },
-    teamBuff: {
-      premod: {
-        atkSPD_: c4Team_atkSPD_,
-      },
     },
   }
 )
@@ -288,6 +261,49 @@ const sheet: ICharacterSheet = {
           },
         ],
       },
+      ct.headerTem('passive1', {
+        fields: [
+          {
+            node: infoMut(dmgFormulas.charged.rebukeDmg, {
+              name: ct.ch('rebukeDmg'),
+            }),
+          },
+          {
+            node: infoMut(dmgFormulas.passive1.heal, { name: stg('healing') }),
+          },
+        ],
+      }),
+      ct.headerTem('constellation1', {
+        fields: [
+          {
+            node: infoMut(c1Rebuke_dmg_, {
+              name: ct.ch('rebuke_dmg_'),
+              unit: '%',
+            }),
+          },
+        ],
+      }),
+      ct.headerTem('constellation6', {
+        fields: [
+          {
+            node: infoMut(dmgFormulas.constellation6.icicleDmg, {
+              name: ct.ch('icicleDmg'),
+            }),
+          },
+          {
+            node: infoMut(c6Rebuke_critRate_, {
+              name: ct.ch('rebuke_critRate_'),
+              unit: '%',
+            }),
+          },
+          {
+            node: infoMut(c6Rebuke_critDMG_, {
+              name: ct.ch('rebuke_critDMG_'),
+              unit: '%',
+            }),
+          },
+        ],
+      }),
       {
         text: ct.chg('auto.fields.plunging'),
       },
@@ -345,22 +361,22 @@ const sheet: ICharacterSheet = {
         fields: [
           {
             node: infoMut(dmgFormulas.burst.skillDmg, {
-              name: ct.chg(`burst.skillParams.0`),
+              name: ct.chg('burst.skillParams.0'),
               multi: 5,
             }),
           },
           {
             node: infoMut(dmgFormulas.burst.bladeDmg, {
-              name: ct.chg(`burst.skillParams.1`),
+              name: ct.chg('burst.skillParams.1'),
             }),
           },
           {
-            text: ct.chg('burst.skillParams.3'),
+            text: ct.chg('burst.skillParams.2'),
             value: dm.burst.cd,
             unit: 's',
           },
           {
-            text: ct.chg('burst.skillParams.4'),
+            text: ct.chg('burst.skillParams.3'),
             value: dm.burst.bladeCd,
             unit: 's',
           },
@@ -370,55 +386,9 @@ const sheet: ICharacterSheet = {
           },
         ],
       },
-      ct.headerTem('constellation2', {
-        fields: [
-          {
-            node: c2EdictStacks_burst_dmg_,
-          },
-        ],
-      }),
     ]),
 
-    passive1: ct.talentTem('passive1', [
-      ct.fieldsTem('passive1', {
-        fields: [
-          {
-            node: infoMut(dmgFormulas.charged.rebukeDmg, {
-              name: ct.ch('rebukeDmg'),
-            }),
-          },
-          {
-            node: infoMut(dmgFormulas.passive1.heal, { name: stg('healing') }),
-          },
-        ],
-      }),
-      ct.headerTem('constellation1', {
-        fields: [
-          {
-            node: infoMut(c1Rebuke_dmg_, {
-              name: ct.ch('rebuke_dmg_'),
-              unit: '%',
-            }),
-          },
-        ],
-      }),
-      ct.headerTem('constellation6', {
-        fields: [
-          {
-            node: infoMut(c6Rebuke_critRate_, {
-              name: ct.ch('rebuke_critRate_'),
-              unit: '%',
-            }),
-          },
-          {
-            node: infoMut(c6Rebuke_critDMG_, {
-              name: ct.ch('rebuke_critDMG_'),
-              unit: '%',
-            }),
-          },
-        ],
-      }),
-    ]),
+    passive1: ct.talentTem('passive1'),
     passive2: ct.talentTem('passive2', [
       ct.condTem('passive2', {
         value: condA4EdictStacks,
@@ -433,6 +403,14 @@ const sheet: ICharacterSheet = {
           ],
         })),
       }),
+      ct.headerTem('constellation2', {
+        canShow: unequal(condA4EdictStacks, undefined, 1),
+        fields: [
+          {
+            node: c2EdictStacks_burst_dmg_,
+          },
+        ],
+      }),
     ]),
     passive3: ct.talentTem('passive3'),
     constellation1: ct.talentTem('constellation1'),
@@ -440,52 +418,11 @@ const sheet: ICharacterSheet = {
     constellation3: ct.talentTem('constellation3', [
       { fields: [{ node: autoC3 }] },
     ]),
-    constellation4: ct.talentTem('constellation4', [
-      ct.condTem('constellation4', {
-        value: condC4OverHeal,
-        path: condC4OverHealPath,
-        teamBuff: true,
-        name: ct.ch('c4Cond'),
-        states: {
-          on: {
-            fields: [
-              {
-                node: c4Self_atkSPD_,
-              },
-              {
-                node: c4Team_atkSPD_,
-              },
-              {
-                canShow: (data) => data.get(input.activeCharKey).value === key,
-                text: stg('duration'),
-                value: dm.constellation4.selfDuration,
-                unit: 's',
-              },
-              {
-                canShow: (data) => data.get(input.activeCharKey).value !== key,
-                text: stg('duration'),
-                value: dm.constellation4.teamDuration,
-                unit: 's',
-              },
-            ],
-          },
-        },
-      }),
-    ]),
+    constellation4: ct.talentTem('constellation4'),
     constellation5: ct.talentTem('constellation5', [
       { fields: [{ node: burstC5 }] },
     ]),
-    constellation6: ct.talentTem('constellation6', [
-      {
-        fields: [
-          {
-            node: infoMut(dmgFormulas.constellation6.icicleDmg, {
-              name: ct.ch('icicleDmg'),
-            }),
-          },
-        ],
-      },
-    ]),
+    constellation6: ct.talentTem('constellation6'),
   },
 }
 export default new CharacterSheet(sheet, data)
