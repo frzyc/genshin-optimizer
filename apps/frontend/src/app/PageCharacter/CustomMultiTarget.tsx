@@ -11,7 +11,12 @@ import {
   allInfusionAuraElementKeys,
 } from '@genshin-optimizer/consts'
 import { useBoolState, useTimeout } from '@genshin-optimizer/react-util'
-import { arrayMove, clamp, objPathValue } from '@genshin-optimizer/util'
+import {
+  arrayMove,
+  clamp,
+  deepClone,
+  objPathValue,
+} from '@genshin-optimizer/util'
 import AddIcon from '@mui/icons-material/Add'
 import ContentCopyIcon from '@mui/icons-material/ContentCopy'
 import ContentPasteIcon from '@mui/icons-material/ContentPaste'
@@ -36,7 +41,6 @@ import {
   Typography,
   styled,
 } from '@mui/material'
-import structuredClone from 'core-js-pure/actual/structured-clone'
 import type { ChangeEvent, FocusEvent } from 'react'
 import {
   Suspense,
@@ -413,7 +417,7 @@ function CustomMultiTargetDisplay({
   const dupCustomTarget = useCallback(
     (index: number) => () => {
       const targets = [...target.targets]
-      targets.splice(index, 0, structuredClone(targets[index]))
+      targets.splice(index, 0, deepClone(targets[index]))
       setTarget({ ...target, targets })
     },
     [target, setTarget]

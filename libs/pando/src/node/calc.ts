@@ -54,7 +54,7 @@ export class Calculator<M = any> {
     const result = this.calculated.refExact(cache.id)
     if (result.length) return result[0]!
 
-    if (import.meta.env.PROD)
+    if (process.env['NODE_ENV'] === 'production')
       result.push({
         pre: cache
           .subset()
@@ -159,7 +159,7 @@ export class Calculator<M = any> {
                 } nodes while reading tag ${tagString(
                   newCache.tag
                 )} with no accumulator`
-                if (!import.meta.env.PROD) {
+                if (process.env['NODE_ENV'] !== 'production') {
                   throw new Error(
                     errorMsg +
                       ': ' +

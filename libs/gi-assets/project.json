@@ -7,7 +7,7 @@
   "targets": {
     "genfile": {
       "executor": "@genshin-optimizer/gi-assets:gen-assets",
-      "outputs": ["${projectRoot}/src/gen/**/*"]
+      "outputs": ["{workspaceRoot}/${projectRoot}/src/gen/**/*"]
     },
     "lint": {},
     "build": {},

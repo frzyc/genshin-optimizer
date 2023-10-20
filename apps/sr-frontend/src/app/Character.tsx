@@ -1,7 +1,11 @@
+import { reread } from '@genshin-optimizer/pando'
 import type { CharacterKey } from '@genshin-optimizer/sr-consts'
 import { allCharacterKeys } from '@genshin-optimizer/sr-consts'
-import { srCalculatorWithEntries } from '@genshin-optimizer/sr-formula'
-import { constant, read } from '@genshin-optimizer/pando'
+import {
+  self,
+  selfBuff,
+  srCalculatorWithEntries,
+} from '@genshin-optimizer/sr-formula'
 import {
   Box,
   Card,
@@ -23,8 +27,12 @@ export default function Character() {
   const calc = useMemo(
     () =>
       srCalculatorWithEntries([
-        { tag: { src: charKey, q: 'lvl' }, value: constant(level) },
-        { tag: { src: charKey, q: 'ascension' }, value: constant(ascension) },
+        selfBuff.char.lvl.add(level),
+        selfBuff.char.ascension.add(ascension),
+        {
+          tag: { src: 'char' },
+          value: reread({ src: charKey }),
+        },
       ]),
     [charKey, level, ascension]
   )
@@ -72,13 +80,8 @@ export default function Character() {
                 ['SPD', 'spd'],
               ] as const
             ).map(([txt, skey]) => (
-              <Typography>
-                {txt}:{' '}
-                {
-                  calc.compute(
-                    read({ src: charKey, qt: 'base', q: skey }, undefined)
-                  ).val
-                }
+              <Typography key={skey}>
+                {txt}: {calc.compute(self.stat[skey].src('char')).val}
               </Typography>
             ))}
           </Stack>

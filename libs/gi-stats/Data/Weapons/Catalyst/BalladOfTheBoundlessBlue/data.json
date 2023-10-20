@@ -1,0 +1,38 @@
+{
+  "weaponType": "catalyst",
+  "rarity": 4,
+  "mainStat": {
+    "type": "atk",
+    "base": 43.7349,
+    "curve": "GROW_CURVE_ATTACK_202"
+  },
+  "subStat": {
+    "type": "enerRech_",
+    "base": 0.066667,
+    "curve": "GROW_CURVE_CRITICAL_201"
+  },
+  "lvlCurves": [
+    {
+      "key": "atk",
+      "base": 43.7349,
+      "curve": "GROW_CURVE_ATTACK_202"
+    },
+    {
+      "key": "enerRech_",
+      "base": 0.066667,
+      "curve": "GROW_CURVE_CRITICAL_201"
+    }
+  ],
+  "refinementBonus": {},
+  "ascensionBonus": {
+    "atk": [
+      0,
+      25.9,
+      51.9,
+      77.8,
+      103.7,
+      129.7,
+      155.6
+    ]
+  }
+}

@@ -109,7 +109,7 @@ const [condAfterBurstPath, condAfterBurst] = cond(key, 'afterBurst')
 const afterBurst_eleMas = equal(condAfterBurst, 'on', dm.burst.eleMas)
 
 const [condA1JudicationPath, condA1Judication] = cond(key, 'a1Judication')
-const a1Judication_skill_dmg_ = greaterEq(
+const a1Judication_soulfarer_dmg_ = greaterEq(
   input.asc,
   1,
   equal(condA1Judication, 'on', dm.passive1.skill_dmg_)
@@ -163,8 +163,12 @@ const dmgFormulas = {
     ])
   ),
   skill: {
-    skillDmg: dmgNode('atk', dm.skill.skillDmg, 'skill'),
-    riteDmg: dmgNode('atk', dm.skill.riteDmg, 'skill'),
+    skillDmg: dmgNode('atk', dm.skill.skillDmg, 'skill', {
+      premod: { skill_dmg_: a1Judication_soulfarer_dmg_ },
+    }),
+    riteDmg: dmgNode('atk', dm.skill.riteDmg, 'skill', {
+      premod: { skill_dmg_: a1Judication_soulfarer_dmg_ },
+    }),
   },
   burst: {
     ...Object.fromEntries(
@@ -235,7 +239,6 @@ export const data = dataObjForCharacterSheet(
       burstBoost: burstC3,
       skillBoost: skillC5,
       eleMas: afterBurst_eleMas,
-      skill_dmg_: a1Judication_skill_dmg_,
       electro_dmg_: c2_electro_dmg_,
     },
   }
@@ -351,7 +354,10 @@ const sheet: ICharacterSheet = {
           on: {
             fields: [
               {
-                node: a1Judication_skill_dmg_,
+                node: infoMut(a1Judication_soulfarer_dmg_, {
+                  name: ct.ch('a1soulfarer_dmg_'),
+                  unit: '%',
+                }),
               },
             ],
           },
@@ -398,12 +404,12 @@ const sheet: ICharacterSheet = {
             unit: 's',
           },
           {
-            text: ct.chg(`burst.skillParams.10`),
+            text: ct.chg(`burst.skillParams.11`),
             value: dm.burst.cd,
             unit: 's',
           },
           {
-            text: stg('energyCost'),
+            text: ct.chg(`burst.skillParams.12`),
             value: dm.burst.enerCost,
           },
         ],

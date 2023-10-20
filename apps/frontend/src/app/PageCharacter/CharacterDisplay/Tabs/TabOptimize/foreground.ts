@@ -4,7 +4,7 @@ import {
   artMaxLevel,
 } from '@genshin-optimizer/consts'
 import { getMainStatDisplayValue } from '@genshin-optimizer/gi-util'
-import { objKeyMap, objMap } from '@genshin-optimizer/util'
+import { deepClone, objKeyMap, objMap } from '@genshin-optimizer/util'
 import { input } from '../../../../Formula'
 import { computeUIData } from '../../../../Formula/api'
 import { formulaString } from '../../../../Formula/debug'
@@ -16,7 +16,6 @@ import type {
   DynStat,
 } from '../../../../Solver/common'
 import type { ICachedArtifact } from '../../../../Types/artifact'
-import { deepClone } from '../../../../Util/Util'
 const dynamic = setReadNodeKeys(
   deepClone({ dyn: { ...input.art, ...input.artSet } })
 )

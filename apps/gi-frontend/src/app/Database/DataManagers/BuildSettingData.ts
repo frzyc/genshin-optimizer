@@ -10,8 +10,7 @@ import {
   allLocationCharacterKeys,
   artSlotsData,
 } from '@genshin-optimizer/consts'
-import { deepFreeze } from '@genshin-optimizer/util'
-import structuredClone from 'core-js-pure/actual/structured-clone'
+import { deepClone, deepFreeze } from '@genshin-optimizer/util'
 import { DataManager } from '../DataManager'
 import type { ArtCharDatabase } from '../Database'
 import { validateArr } from '../validationUtil'
@@ -126,7 +125,7 @@ export class BuildSettingDataManager extends DataManager<
       !mainStatKeys.goblet ||
       !mainStatKeys.circlet
     )
-      mainStatKeys = structuredClone(initialBuildSettings.mainStatKeys)
+      mainStatKeys = deepClone(initialBuildSettings.mainStatKeys)
     else {
       // make sure the arrays are not empty
       ;(['sands', 'goblet', 'circlet'] as const).forEach((sk) => {
@@ -178,23 +177,24 @@ export class BuildSettingDataManager extends DataManager<
         .map(([k, a]) => [k, [...new Set(a)]])
         .filter(([_, a]) => a.length)
     )
-    return {
+    const buildSetting: BuildSetting = {
       artSetExclusion,
       artExclusion,
       useExcludedArts,
       statFilters,
       mainStatKeys,
-      optimizationTarget,
       mainStatAssumptionLevel,
       excludedLocations,
       allowLocationsState,
       allowPartial,
       maxBuildsToShow,
-      plotBase,
       compareBuild,
       levelLow,
       levelHigh,
     }
+    if (optimizationTarget) buildSetting.optimizationTarget = optimizationTarget
+    if (plotBase) buildSetting.plotBase = plotBase
+    return buildSetting
   }
   override get(key: CharacterKey) {
     return super.get(key) ?? initialBuildSettings
@@ -211,13 +211,11 @@ const initialBuildSettings: BuildSetting = deepFreeze({
     goblet: [...artSlotsData['goblet'].stats],
     circlet: [...artSlotsData['circlet'].stats],
   },
-  optimizationTarget: undefined,
   mainStatAssumptionLevel: 0,
   excludedLocations: [],
   allowLocationsState: 'unequippedOnly',
   allowPartial: false,
   maxBuildsToShow: 5,
-  plotBase: undefined,
   compareBuild: true,
   levelLow: 0,
   levelHigh: 20,
@@ -228,7 +226,7 @@ export function handleArtSetExclusion(
   setKey: ArtSetExclusionKey,
   num: 2 | 4
 ) {
-  const artSetExclusion = structuredClone(currentArtSetExclusion)
+  const artSetExclusion = deepClone(currentArtSetExclusion)
   const setExclusion = artSetExclusion[setKey]
   if (!setExclusion) artSetExclusion[setKey] = [num]
   else if (!setExclusion.includes(num))

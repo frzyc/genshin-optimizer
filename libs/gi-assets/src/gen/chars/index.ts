@@ -41,6 +41,7 @@ import Lyney from './Lyney'
 import Mika from './Mika'
 import Mona from './Mona'
 import Nahida from './Nahida'
+import Neuvillette from './Neuvillette'
 import Nilou from './Nilou'
 import Ningguang from './Ningguang'
 import Noelle from './Noelle'
@@ -66,6 +67,7 @@ import TravelerHydro from './TravelerHydro'
 import TravelerM from './TravelerM'
 import Venti from './Venti'
 import Wanderer from './Wanderer'
+import Wriothesley from './Wriothesley'
 import Xiangling from './Xiangling'
 import Xiao from './Xiao'
 import Xingqiu from './Xingqiu'
@@ -121,6 +123,7 @@ const data = {
   Mika,
   Mona,
   Nahida,
+  Neuvillette,
   Nilou,
   Ningguang,
   Noelle,
@@ -146,6 +149,7 @@ const data = {
   TravelerM,
   Venti,
   Wanderer,
+  Wriothesley,
   Xiangling,
   Xiao,
   Xingqiu,

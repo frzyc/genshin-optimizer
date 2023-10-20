@@ -7,6 +7,7 @@
   "greaterPercentHP": "HP greater than {{percent}}%",
   "greaterEqPercentHP": "HP greater than or equal to {{percent}}%",
   "percentCurrentHP": "% Current HP",
+  "percentMaxHP": "% Max HP",
   "lessPercentEnergy": "Energy less than {{percent}}%",
   "enemyLessPercentHP": "Enemy HP less than {{percent}}%",
   "enemyLessEqPercentHP": "Enemy HP less than or equal to {{percent}}%",
@@ -22,6 +23,8 @@
   "opponents_other": "{{count}} Opponents",
   "members_one": "{{count}} Member",
   "members_other": "{{count}} Members",
+  "times_one": "{{count}} Time",
+  "times_other": "{{count}} Times",
   "afterDefeatEnemy": "After defeating an opponent",
   "hitOp": {
     "none": "After hitting an opponent",

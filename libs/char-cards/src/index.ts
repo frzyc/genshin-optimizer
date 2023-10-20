@@ -41,6 +41,7 @@ import Lynette from './Character_Lynette_Card.jpg'
 import Mika from './Character_Mika_Card.jpg'
 import Mona from './Character_Mona_Card.jpg'
 import Nahida from './Character_Nahida_Card.jpeg'
+import Neuvillette from './Character_Neuvillette_Card.jpg'
 import Nilou from './Character_Nilou_Card.jpg'
 import Ningguang from './Character_Ningguang_Card.jpg'
 import Noelle from './Character_Noelle_Card.jpg'
@@ -59,6 +60,7 @@ import Thoma from './Character_Thoma_Card.jpg'
 import Tighnari from './Character_Tighnari_Card.jpg'
 import Venti from './Character_Venti_Card.jpg'
 import Wanderer from './Character_Wanderer_Card.jpg'
+import Wriothesley from './Character_Wriothesley_Card.jpg'
 import Xiangling from './Character_Xiangling_Card.jpg'
 import Xiao from './Character_Xiao_Card.jpg'
 import Xingqiu from './Character_Xingqiu_Card.jpg'
@@ -116,6 +118,7 @@ const charCards = {
   Mika,
   Mona,
   Nahida,
+  Neuvillette,
   Nilou,
   Ningguang,
   Noelle,
@@ -136,6 +139,7 @@ const charCards = {
   TravelerM,
   Venti,
   Wanderer,
+  Wriothesley,
   Xiangling,
   Xiao,
   Xingqiu,

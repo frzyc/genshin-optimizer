@@ -2,7 +2,9 @@ import type { WeaponCatalystKey } from '@genshin-optimizer/consts'
 import type WeaponSheet from '../WeaponSheet'
 import ApprenticesNotes from './ApprenticesNotes'
 import AThousandFloatingDreams from './AThousandFloatingDreams'
+import BalladOfTheBoundlessBlue from './BalladOfTheBoundlessBlue'
 import BlackcliffAgate from './BlackcliffAgate'
+import CashflowSupervision from './CashflowSupervision'
 import DodocoTales from './DodocoTales'
 import EmeraldOrb from './EmeraldOrb'
 import EverlastingMoonglow from './EverlastingMoonglow'
@@ -30,6 +32,7 @@ import SkywardAtlas from './SkywardAtlas'
 import SolarPearl from './SolarPearl'
 import TheWidsith from './TheWidsith'
 import ThrillingTalesOfDragonSlayers from './ThrillingTalesOfDragonSlayers'
+import TomeOfTheEternalFlow from './TomeOfTheEternalFlow'
 import TulaytullahsRemembrance from './TulaytullahsRemembrance'
 import TwinNephrite from './TwinNephrite'
 import WanderingEvenstar from './WanderingEvenstar'
@@ -37,7 +40,9 @@ import WineAndSong from './WineAndSong'
 const catalyst: Record<WeaponCatalystKey, WeaponSheet> = {
   ApprenticesNotes,
   AThousandFloatingDreams,
+  BalladOfTheBoundlessBlue,
   BlackcliffAgate,
+  CashflowSupervision,
   DodocoTales,
   EmeraldOrb,
   EverlastingMoonglow,
@@ -65,6 +70,7 @@ const catalyst: Record<WeaponCatalystKey, WeaponSheet> = {
   SolarPearl,
   TheWidsith,
   ThrillingTalesOfDragonSlayers,
+  TomeOfTheEternalFlow,
   TulaytullahsRemembrance,
   TwinNephrite,
   WanderingEvenstar,

@@ -4,7 +4,9 @@
     "esModuleInterop": false,
     "jsxImportSource": "@emotion/react",
     "types": ["vite/client", "vitest"],
-    "resolveJsonModule": true
+    "module": "ESNext",
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true
   },
   "files": [],
   "include": [],

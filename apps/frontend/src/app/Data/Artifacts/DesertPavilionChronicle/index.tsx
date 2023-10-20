@@ -66,7 +66,7 @@ const sheet: IArtifactSheet = {
                 },
                 {
                   text: stg('duration'),
-                  value: 10,
+                  value: 15,
                   unit: 's',
                 },
               ],

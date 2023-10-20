@@ -11,8 +11,7 @@ import {
   charKeyToLocCharKey,
 } from '@genshin-optimizer/consts'
 import { validateLevelAsc } from '@genshin-optimizer/gi-util'
-import { clamp, objKeyMap } from '@genshin-optimizer/util'
-import structuredClone from 'core-js-pure/actual/structured-clone'
+import { clamp, deepClone, objKeyMap } from '@genshin-optimizer/util'
 import type {
   CustomMultiTarget,
   ICachedCharacter,
@@ -138,7 +137,6 @@ export class CharacterDataManager extends DataManager<
       level,
       ascension,
       hitMode,
-      reaction,
       conditional,
       bonusStats,
       enemyOverride,
@@ -150,6 +148,7 @@ export class CharacterDataManager extends DataManager<
       compareData,
       customMultiTarget,
     }
+    if (reaction) char.reaction = reaction
     return char
   }
   override toCache(storageObj: ICharacter, id: CharacterKey): ICachedCharacter {
@@ -196,7 +195,6 @@ export class CharacterDataManager extends DataManager<
       level,
       ascension,
       hitMode,
-      reaction,
       conditional,
       bonusStats,
       enemyOverride,
@@ -208,6 +206,7 @@ export class CharacterDataManager extends DataManager<
       compareData,
       customMultiTarget,
     }
+    if (reaction) result.reaction = reaction
     return result
   }
   override toStorageKey(key: CharacterKey): string {
@@ -273,7 +272,7 @@ export class CharacterDataManager extends DataManager<
     const setEq = (k: CharacterKey) => {
       const char = super.get(k)
       if (!char) return
-      const equippedArtifacts = structuredClone(char.equippedArtifacts)
+      const equippedArtifacts = deepClone(char.equippedArtifacts)
       equippedArtifacts[slotKey] = artid
       super.setCached(k, { ...char, equippedArtifacts })
     }

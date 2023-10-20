@@ -21,7 +21,7 @@ import {
 } from '@genshin-optimizer/gi-util'
 import { useBoolState } from '@genshin-optimizer/react-util'
 import { iconInlineProps } from '@genshin-optimizer/svgicons'
-import { objMap } from '@genshin-optimizer/util'
+import { deepClone, objMap } from '@genshin-optimizer/util'
 import { CopyAll, DeleteForever, Info, Refresh } from '@mui/icons-material'
 import StarRoundedIcon from '@mui/icons-material/StarRounded'
 import {
@@ -39,7 +39,6 @@ import {
   ToggleButton,
   Typography,
 } from '@mui/material'
-import structuredClone from 'core-js-pure/actual/structured-clone'
 import React, {
   Suspense,
   useCallback,
@@ -210,7 +209,7 @@ export default function TabTheorycraft() {
   }, [data])
   const setArtifact = useCallback(
     (artifact: ICharTC['artifact']) => {
-      const data_ = structuredClone(data)
+      const data_ = deepClone(data)
       data_.artifact = artifact
       setData(data_)
     },
@@ -219,7 +218,7 @@ export default function TabTheorycraft() {
 
   const setSubstatsType = useCallback(
     (t: SubstatTypeKey) => {
-      const data_ = structuredClone(data)
+      const data_ = deepClone(data)
       data_.artifact.substats.type = t
       setData(data_)
     },
@@ -228,7 +227,7 @@ export default function TabTheorycraft() {
 
   const setSubstats = useCallback(
     (setSubstats: Record<SubstatKey, number>) => {
-      const data_ = structuredClone(data)
+      const data_ = deepClone(data)
       data_.artifact.substats.stats = setSubstats
       setData(data_)
     },
@@ -464,7 +463,7 @@ function ArtifactMainLevelCard({
 }) {
   const setSlot = useCallback(
     (slotKey: ArtifactSlotKey) => (slot: ICharTCArtifactSlot) => {
-      const artifactData_ = structuredClone(artifactData)
+      const artifactData_ = deepClone(artifactData)
       artifactData_.slots[slotKey] = slot
       setArtifactData(artifactData_)
     },
@@ -473,7 +472,7 @@ function ArtifactMainLevelCard({
 
   const setArtSet = useCallback(
     (artSet: ISet) => {
-      const artifactData_ = structuredClone(artifactData)
+      const artifactData_ = deepClone(artifactData)
       artifactData_.sets = artSet
       setArtifactData(artifactData_)
     },

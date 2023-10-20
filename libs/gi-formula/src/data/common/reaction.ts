@@ -344,8 +344,8 @@ const data: TagMapNodeEntries = [
   // Trans listing
   ...allTransformativeReactionKeys.flatMap((trans) => {
     const { canCrit, variants } = transInfo[trans]
-    let cond: string | StrNode =
-      trans === 'swirl' ? 'swirl' : canCrit ? 'transCrit' : 'trans'
+    const q = trans === 'swirl' ? 'swirl' : canCrit ? 'transCrit' : 'trans'
+    let cond: string | StrNode = 'unique'
     const available = allElementKeys.filter((ele) =>
       transTriggerByEle[ele].has(trans)
     )
@@ -365,7 +365,7 @@ const data: TagMapNodeEntries = [
       const name = trans === 'swirl' ? `swirl_${ele}` : trans
       return [
         selfBuff.formula.listing.add(
-          tag(cond, { trans, ele, src: 'static', name })
+          tag(cond, { trans, q, ele, src: 'static', name })
         ),
         selfBuff.prep.ele.name(name).add(ele),
       ]

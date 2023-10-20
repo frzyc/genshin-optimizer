@@ -3,7 +3,8 @@
   "compilerOptions": {
     "sourceMap": false,
     "outDir": "../../dist/out-tsc",
-    "types": ["cypress", "node"]
+    "types": ["cypress", "node"],
+    "module": "ESNext"
   },
   "include": ["src/**/*.ts", "src/**/*.js", "cypress.config.ts"]
 }
