@@ -17,20 +17,12 @@
     },
     "genfile": {},
     "build": {},
-    "build-ts": {},
+    "build-ts": {
+      "options": {
+        "updateBuildableProjectDepsInPackageJson": true
+      }
+    },
     "lint": {}
   },
-  "tags": [],
-  "namedInputs": {
-    "production": [
-      "{projectRoot}/version.hash",
-      "{projectRoot}/src/**/*",
-      "{projectRoot}/scripts/**/*",
-      "sharedGlobals",
-      "{projectRoot}/.eslintrc.json",
-      "{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",
-      "{projectRoot}/tsconfig.spec.json",
-      "{projectRoot}/jest.config.[jt]s"
-    ]
-  }
+  "tags": []
 }

@@ -6,7 +6,10 @@
   "targets": {
     "build": {},
     "build-ts": {
-      "inputs": ["!{projectRoot}/**/*.gen.ts"]
+      "inputs": ["!{projectRoot}/**/*.gen.ts"],
+      "options": {
+        "updateBuildableProjectDepsInPackageJson": true
+      }
     },
     "publish": {
       "executor": "nx:run-commands",

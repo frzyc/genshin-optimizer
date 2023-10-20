@@ -1,4 +1,4 @@
-// `quadronomial` coefficients (See https://oeis.org/A008287)
+// Quadronomial coefficients (See https://oeis.org/A008287)
 // step 1: a basic lookup-table with a few steps of Pascal's triangle
 const quadrinomials = [
   [1],
@@ -10,26 +10,20 @@ const quadrinomials = [
 ]
 
 // step 2: a function that builds out the lookup-table if it needs to.
+/**
+ * Quadronomial coefficients (See https://oeis.org/A008287).
+ * Returns the coefficient of x^k in (1 + x + x^2 + x^3)^n.
+ */
 export function quadrinomial(n: number, k: number) {
-  while (n >= quadrinomials.length) {
-    const s = quadrinomials.length
-
-    const nextRow: number[] = []
-    for (let i = 0, prev = s - 1; i <= 3 * s; i++) {
-      const a = quadrinomials[prev][i - 3] ?? 0
-      const b = quadrinomials[prev][i - 2] ?? 0
-      const c = quadrinomials[prev][i - 1] ?? 0
-      const d = quadrinomials[prev][i] ?? 0
-
-      nextRow[i] = a + b + c + d
-    }
-    quadrinomials.push(nextRow)
-  }
+  if (n >= quadrinomials.length)
+    throw Error('Input to `quadrinomial` leaves expected range 0 <= n <= 5')
   return quadrinomials[n][k] ?? 0
 }
 
-// https://hewgill.com/picomath/javascript/erf.js.html
-// very good algebraic approximation of erf function. Maximum deviation below 1.5e-7
+/**
+ * Very good algebraic approximation of erf function. Maximum deviation below 1.5e-7.
+ * Source: https://hewgill.com/picomath/javascript/erf.js.html
+ */
 export function erf(x: number) {
   // constants
   const a1 = 0.254829592,
@@ -52,7 +46,7 @@ export function erf(x: number) {
   return sign * y
 }
 
-// Gaussian probability distribution. mean & variance can be omitted for standard Gaussian.
+/** Gaussian probability distribution. mean & variance can be omitted for a standard Gaussian. */
 export function gaussPDF(x: number, mu?: number, sig2?: number) {
   if (mu === undefined) mu = 0
   if (sig2 === undefined) sig2 = 1
@@ -63,31 +57,38 @@ export function gaussPDF(x: number, mu?: number, sig2?: number) {
   )
 }
 
-// `sigr` and `sig_arr` constitute a near perfect hash (https://en.wikipedia.org/wiki/Perfect_hash_function) of all combinations for N=1 to N=5.
-// prettier-ignore
-const sig_arr = [270 / 1024, 80 / 1024, 0, 12 / 256, 8 / 256, 120 / 1024, 0, 60 / 1024, 4 / 256, 60 / 1024, 4 / 256, 30 / 1024, 24 / 256, 160 / 1024, 1 / 64, 1 / 64, 24 / 256, 1 / 64, 12 / 256, 0, 6 / 256, 2 / 16, 6 / 256, 0, 81 / 256, 16 / 256, 0, 27 / 64, 12 / 64, 0, 1 / 16, 1 / 16, 12 / 64, 1 / 16, 6 / 64, 3 / 4, 2 / 4, 243 / 1024, 32 / 1024, 0, 108 / 256, 32 / 256, 0, 9 / 64, 6 / 64, 48 / 256, 0, 24 / 256, 3 / 64, 5 / 1024, 3 / 64, 5 / 1024, 0, 405 / 1024, 80 / 1024, 0, 54 / 256, 90 / 1024, 40 / 1024, 0, 1 / 256, 1 / 256, 40 / 1024, 1 / 256, 20 / 1024, 9 / 16, 4 / 16, 0, 1 / 4, 1 / 4, 0, 1 / 4, 27 / 64, 8 / 64, 0, 6 / 16, 4 / 16, 10 / 1024, 0, 10 / 1024, 2 / 16, 0, 0, 0, 15 / 1024, 10 / 1024, 1 / 1024, 1 / 1024, 0, 1 / 1024]
-const sigr = [35, 64, 70, 21, 33, 45, 12, 0, 53, 76, 48, 86]
+const facts = [1, 1, 2, 6, 24, 120, 720]
+/** Computes factorial `n!` for integer n. */
+export function factorial(n: number) {
+  while (n >= facts.length) facts.push(facts.length * facts[facts.length - 1])
+  return facts[n]
+}
+
 /**
- * Manually cached multinomial distribution with uniform bins. Returns probability of (n1, n2, n3, n4) given N total rolls.
+ * Multinomial distribution with 4 uniform bins. Returns probability of (n1, n2, n3, n4) given N total rolls.
  * Algebraically = N! / (n1! n2! n3! n4!) * (1/4)^N
  *
- * WARNING: This function has undefined behavior for N > 5 and N = 0
+ * Note: Implementation relies on factorials. Don't use with N > 12.
+ *
+ * @param ni rolls numbers for each bin. Expects exactly 4 `ni` and for their sum to equal `N`.
  */
-function sigma(ss: number[], N: number) {
-  const ssum = ss.reduce((a, b) => a + b)
-  if (ss.length > 4 || ssum > N) return 0
-  if (ss.length === 4 && ssum !== N) return 0
-  if (ss.length === 3) ss = [...ss, N - ssum]
-  ss.sort().reverse()
+function multinomial4(
+  n1: number,
+  n2: number,
+  n3: number,
+  n4: number,
+  N: number
+) {
+  if (n1 + n2 + n3 + n4 !== N) return 0
 
-  // t = 12
-  // offset = -14
-  let v = 13 * N + ss.length - 14 + 16 * ss[0]
-  if (ss.length > 1) v += 4 * ss[1]
-  const x = v % 12
-  const y = Math.trunc(v / 12) // integer divide
-
-  return sig_arr[x + sigr[y]]
+  return (
+    (factorial(N) /
+      factorial(n1) /
+      factorial(n2) /
+      factorial(n3) /
+      factorial(n4)) *
+    4 ** -N
+  )
 }
 
 /** Crawl the upgrade distribution for `n` upgrades, with a callback function that accepts fn([n1, n2, n3, n4], prob) */
@@ -105,8 +106,8 @@ export function crawlUpgrades(
     for (let i2 = n - i1; i2 >= 0; i2--) {
       for (let i3 = n - i1 - i2; i3 >= 0; i3--) {
         const i4 = n - i1 - i2 - i3
-        const p_comb = sigma([i1, i2, i3, i4], n)
-        fn([i1, i2, i3, i4], p_comb)
+        const p_combination = multinomial4(i1, i2, i3, i4, n)
+        fn([i1, i2, i3, i4], p_combination)
       }
     }
   }

@@ -19,6 +19,7 @@ import BlackcliffWarbow from './BlackcliffWarbow'
 import BlackTassel from './BlackTassel'
 import BloodtaintedGreatsword from './BloodtaintedGreatsword'
 import CalamityQueller from './CalamityQueller'
+import CashflowSupervision from './CashflowSupervision'
 import CinnabarSpindle from './CinnabarSpindle'
 import CompoundBow from './CompoundBow'
 import CoolSteel from './CoolSteel'
@@ -193,6 +194,7 @@ const data = {
   BlackcliffWarbow,
   BloodtaintedGreatsword,
   CalamityQueller,
+  CashflowSupervision,
   CinnabarSpindle,
   CompoundBow,
   CoolSteel,

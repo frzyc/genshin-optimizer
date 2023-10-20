@@ -219,7 +219,7 @@ const dmgFormulas = {
         'atk',
         dm.charged.pyrotechnicDmg,
         'charged',
-        hat_addl,
+        hit_ele_pyro,
         percent(dm.constellation6.dmg)
       )
     ),
