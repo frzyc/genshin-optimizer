@@ -18,8 +18,8 @@ const key: WeaponKey = 'CashflowSupervision'
 const data_gen = allStats.weapon.data[key]
 
 const atk_arr = data_gen.refinementBonus.atk_
-const normal_dmg_arr = [-1, 0.14, 0.175, 0.21, 0.245, 0.28]
-const charged_dmg_arr = [-1, 0.12, 0.15, 0.18, 0.21, 0.24]
+const normal_dmg_arr = [-1, 0.16, 0.2, 0.24, 0.28, 0.32]
+const charged_dmg_arr = [-1, 0.14, 0.175, 0.21, 0.245, 0.28]
 const atkSPD_arr = [-1, 0.08, 0.1, 0.12, 0.14, 0.16]
 
 const atk_ = equal(
