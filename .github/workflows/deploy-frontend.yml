@@ -22,6 +22,10 @@ on:
       pr_repo:
         description: 'Name of the repo to create the deployment on'
         type: string
+      show_dev_components:
+        description: 'Flag to show components typically only shown in development mode, for experimental or in-progress features.'
+        type: boolean
+        default: false
 
 jobs:
   deploy:
@@ -63,12 +67,14 @@ jobs:
         run: |
           NX_URL_GITHUB_GO_CURRENT_VERSION="https://github.com/${{ inputs.repo_full_name }}/commit/$(git rev-parse HEAD)" \
           NX_DAEMON="false" \
+          NX_SHOW_DEV_COMPONENTS=${{inputs.show_dev_components}}
           yarn run nx run ${{inputs.frontend_name}}:build-webpack:production --base-href=""
       - name: Build genshin-optimizer (Vite)
         if: inputs.frontend_name == 'gi-frontend' || inputs.frontend_name == 'sr-frontend'
         run: |
           NX_URL_GITHUB_GO_CURRENT_VERSION="https://github.com/${{ inputs.repo_full_name }}/commit/$(git rev-parse HEAD)" \
           NX_DAEMON="false" \
+          NX_SHOW_DEV_COMPONENTS=${{inputs.show_dev_components}}
           yarn run nx run ${{inputs.frontend_name}}:build-vite:production --base-href=""
       - name: Checkout external gh-pages
         uses: actions/checkout@v3
