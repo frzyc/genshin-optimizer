@@ -18,7 +18,6 @@ export class GenshinUser {
 
   @Field(() => String)
   uid: string
-
 }
 
 @ObjectType()

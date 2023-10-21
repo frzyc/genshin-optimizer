@@ -12,6 +12,7 @@ import { JwtStrategy } from './jwt.strategy'
 import { PrismaModule } from './prisma/prisma.module'
 import { UserModule } from './user/user.module'
 import { GenshinUserModule } from './genshinUser/genshinUser.module'
+import { ArtifactModule } from './artifact/artifact.module'
 
 @Module({
   imports: [
@@ -38,6 +39,7 @@ import { GenshinUserModule } from './genshinUser/genshinUser.module'
     // custom modules
     UserModule,
     GenshinUserModule,
+    ArtifactModule,
   ],
   controllers: [AppController],
   providers: [

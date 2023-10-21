@@ -24,14 +24,57 @@ type User {
   genshinUsers: [GenshinUser!]
 }
 
+type Artifact {
+  id: ID!
+  genshinUserId: String!
+  setKey: String!
+  slotKey: String!
+  level: Int!
+  rarity: Int!
+  mainStatKey: String!
+  location: String!
+  lock: Boolean!
+  substats: [Substat!]!
+}
+
+type Substat {
+  key: String!
+  value: Float!
+}
+
+type AddArtifactRes {
+  success: Boolean!
+  artifact: Artifact
+  error: String
+}
+
 type Query {
   getUserById(id: String!): User
   searchUsers(username: String!): [User!]!
   getGenshinUser(id: String!): GenshinUser
   getGenshinUserByUid(uid: String!): GenshinUser
+  getArtifact(id: String!): Artifact
+  getAllUserArtifact(genshinUserId: String!): [Artifact!]!
 }
 
 type Mutation {
   createUsername(username: String!): CreateUserNameResponse!
   addGenshinUser(uid: String!): AddGenshinUserRes!
+  addArtifact(genshinUserId: String!, artifact: InputArtifact!): AddArtifactRes!
+}
+
+input InputArtifact {
+  setKey: String!
+  slotKey: String!
+  level: Int!
+  rarity: Int!
+  mainStatKey: String!
+  location: String!
+  lock: Boolean!
+  substats: [InputSubstat!]!
+}
+
+input InputSubstat {
+  key: String!
+  value: Float!
 }

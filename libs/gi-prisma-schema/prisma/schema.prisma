@@ -79,8 +79,8 @@ model GenshinUser {
   Signature  String?
   worldLevel Int?
   nameCardId Int?
-  User       User?      @relation(fields: [userId], references: [id], onDelete: Cascade)
-  userId     String?    @db.ObjectId
+  user       User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId     String     @db.ObjectId
 }
 
 model Artifact {
@@ -91,9 +91,13 @@ model Artifact {
   slotKey       String
   level         Int
   rarity        Int
-  mainstatKey   String
+  mainStatKey   String
   location      String
   lock          Boolean
-  subStatKey    String[]
-  subStatValue  Float[]
+  substats      Substat[]
+}
+
+type Substat {
+  key   String
+  value Float
 }

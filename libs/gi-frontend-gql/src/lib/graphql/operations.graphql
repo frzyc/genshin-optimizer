@@ -10,7 +10,7 @@ query getUser($userId: String!) {
     id
     username
     genshinUsers {
-      id,
+      id
       uid
     }
   }
@@ -24,5 +24,36 @@ mutation addGenshinUser($uid: String!) {
       uid
     }
     error
+  }
+}
+
+query getAllUserArtifact($genshinUserId: String!) {
+  getAllUserArtifact(genshinUserId: $genshinUserId) {
+    ...ArtifactParts
+  }
+}
+
+mutation addArtifact($genshinUserId: String!, $artifact: InputArtifact!) {
+  addArtifact(genshinUserId: $genshinUserId, artifact: $artifact) {
+    success
+    artifact {
+      ...ArtifactParts
+    }
+    error
+  }
+}
+
+fragment ArtifactParts on Artifact {
+  id
+  setKey
+  slotKey
+  level
+  rarity
+  mainStatKey
+  location
+  lock
+  substats {
+    key
+    value
   }
 }

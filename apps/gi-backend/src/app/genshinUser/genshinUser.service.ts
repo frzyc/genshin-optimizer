@@ -9,7 +9,7 @@ export class GenshinUserService {
     return this.prisma.genshinUser.create({
       data: {
         uid,
-        User: {
+        user: {
           connect: {
             id: userId,
           },
