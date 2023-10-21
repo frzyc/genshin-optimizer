@@ -70,8 +70,10 @@ function ScrollTop({ children }: { children: React.ReactElement }) {
 
 function App() {
   const dbIndex = parseInt(localStorage.getItem('dbIndex') || '1')
-  const [databases, setDatabases] = useState(() =>
-    ([1, 2, 3, 4] as const).map((index) => {
+  const [databases, setDatabases] = useState(() => {
+    localStorage.removeItem('GONewTabDetection')
+    localStorage.setItem('GONewTabDetection', 'debug')
+    return ([1, 2, 3, 4] as const).map((index) => {
       if (index === dbIndex) {
         return new ArtCharDatabase(index, new DBLocalStorage(localStorage))
       } else {
@@ -83,7 +85,7 @@ function App() {
         return db
       }
     })
-  )
+  })
   const setDatabase = useCallback(
     (index: number, db: ArtCharDatabase) => {
       const dbs = [...databases]
