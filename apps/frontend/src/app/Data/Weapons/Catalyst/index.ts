@@ -4,6 +4,7 @@ import ApprenticesNotes from './ApprenticesNotes'
 import AThousandFloatingDreams from './AThousandFloatingDreams'
 import BalladOfTheBoundlessBlue from './BalladOfTheBoundlessBlue'
 import BlackcliffAgate from './BlackcliffAgate'
+import CashflowSupervision from './CashflowSupervision'
 import DodocoTales from './DodocoTales'
 import EmeraldOrb from './EmeraldOrb'
 import EverlastingMoonglow from './EverlastingMoonglow'
@@ -41,6 +42,7 @@ const catalyst: Record<WeaponCatalystKey, WeaponSheet> = {
   AThousandFloatingDreams,
   BalladOfTheBoundlessBlue,
   BlackcliffAgate,
+  CashflowSupervision,
   DodocoTales,
   EmeraldOrb,
   EverlastingMoonglow,
