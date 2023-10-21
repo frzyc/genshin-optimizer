@@ -208,14 +208,16 @@ function HeaderContent({ anchor }: { anchor: string }) {
                   ) : undefined}
                 </Box>
               ) : (
-                <Typography variant="h6" sx={{ px: 1 }}>
-                  {t('pageTitle')}
+                <Box display="flex" alignItems="center">
+                  <Typography variant="h6" sx={{ px: 1 }}>
+                    {t('pageTitle')}
+                  </Typography>
                   {shouldShowDevComponents ? (
                     <Typography variant="body1" sx={{ px: 1 }}>
                       (Dev Mode)
                     </Typography>
                   ) : undefined}
-                </Typography>
+                </Box>
               )
             }
           />
@@ -335,6 +337,11 @@ function MobileHeader({
             <Typography variant="h6" noWrap component="div">
               {silly ? t('sillyPageTitle') : t('pageTitle')}
             </Typography>
+            {shouldShowDevComponents ? (
+              <Typography variant="body1" sx={{ px: 1 }}>
+                (Dev Mode)
+              </Typography>
+            ) : undefined}
           </Button>
           <Box flexGrow={1} />
           <IconButton
