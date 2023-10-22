@@ -1,5 +1,4 @@
-export * from './components/Card/CardThemed'
-export * from './components/Card/CardHeaderCustom'
+export * from './components'
 export * from './theme'
 
 declare module '@mui/material/styles' {

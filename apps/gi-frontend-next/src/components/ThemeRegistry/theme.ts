@@ -1,6 +1,6 @@
 import { Roboto } from 'next/font/google'
 import { createTheme } from '@mui/material/styles'
-import { theme as commonTheme } from '@genshin-optimizer/ui-common'
+import { theme as commonTheme } from '@genshin-optimizer/gi-ui'
 
 const roboto = Roboto({
   weight: ['300', '400', '500', '700'],
@@ -14,5 +14,4 @@ const theme = createTheme({
     fontFamily: roboto.style.fontFamily,
   },
 })
-
 export default theme

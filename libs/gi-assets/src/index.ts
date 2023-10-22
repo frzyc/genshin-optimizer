@@ -34,7 +34,7 @@ export function characterAsset(
   ck: CharacterKey,
   asset: characterAssetKey,
   gender: GenderKey = 'F'
-): string {
+): string | { src: string } {
   switch (asset) {
     case 'icon':
     case 'iconSide':
@@ -46,7 +46,7 @@ export function characterAsset(
 export function artifactAsset(
   ak: ArtifactSetKey,
   slotKey: ArtifactSlotKey
-): string {
+): string | { src: string } {
   if (
     ak === 'PrayersForDestiny' ||
     ak === 'PrayersForIllumination' ||

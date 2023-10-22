@@ -5074,6 +5074,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@mui/types@npm:^7.2.6":
+  version: 7.2.6
+  resolution: "@mui/types@npm:7.2.6"
+  peerDependencies:
+    "@types/react": ^17.0.0 || ^18.0.0
+  peerDependenciesMeta:
+    "@types/react":
+      optional: true
+  checksum: eb92f9c2fa5df048bcf182a611131bee2799ce1de64acfca12855f349d0b69f5f92c953b7e6c4e341e1df48f0e86f1329ed0251be4835ed194f53342827bd576
+  languageName: node
+  linkType: hard
+
 "@mui/utils@npm:^5.14.12, @mui/utils@npm:^5.14.3":
   version: 5.14.12
   resolution: "@mui/utils@npm:5.14.12"
@@ -13248,6 +13260,7 @@ __metadata:
     "@mui/icons-material": ^5.14.12
     "@mui/lab": ^5.0.0-alpha.147
     "@mui/material": ^5.14.12
+    "@mui/types": ^7.2.6
     "@nestjs/apollo": ^12.0.9
     "@nestjs/common": ^10.0.2
     "@nestjs/core": ^10.0.2

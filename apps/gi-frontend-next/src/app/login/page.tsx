@@ -4,21 +4,17 @@ import { CardContent, CardHeader, Divider } from '@mui/material'
 import { useSession } from 'next-auth/react'
 
 import { CardThemed } from '@genshin-optimizer/ui-common'
-import User from './components/User'
 import LoginButton from './components/LoginButton'
+import SignOutButton from './components/SignOutButton'
+import User from './components/User'
 export default function LoginPage() {
   const { data: session } = useSession()
-  const userId = session?.user.userId
   return (
     <CardThemed>
-      <CardHeader title="Login Page" />
+      <CardHeader title="Login Page" action={session && <SignOutButton />} />
       <Divider />
       <CardContent>
-        {session && userId ? (
-          <User session={session} userId={userId} />
-        ) : (
-          <LoginButton />
-        )}
+        {session ? <User session={session} /> : <LoginButton />}
       </CardContent>
     </CardThemed>
   )

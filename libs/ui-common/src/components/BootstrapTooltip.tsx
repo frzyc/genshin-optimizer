@@ -1,11 +1,11 @@
 import type { TooltipProps } from '@mui/material'
 import { styled, Tooltip, tooltipClasses } from '@mui/material'
-/**
- * @deprecated use BootstrapTooltip in `@genshin-optimizer/ui-common`
- */
-const BootstrapTooltip = styled(({ className, ...props }: TooltipProps) => (
-  <Tooltip {...props} arrow classes={{ popper: className }} />
-))(({ theme }) => ({
+
+export const BootstrapTooltip = styled(
+  ({ className, ...props }: TooltipProps) => (
+    <Tooltip {...props} arrow classes={{ popper: className }} />
+  )
+)(({ theme }) => ({
   [`& .${tooltipClasses.arrow}`]: {
     color: theme.palette.common.black,
   },
@@ -14,4 +14,3 @@ const BootstrapTooltip = styled(({ className, ...props }: TooltipProps) => (
     maxWidth: 500,
   },
 }))
-export default BootstrapTooltip

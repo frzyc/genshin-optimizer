@@ -1,23 +1,17 @@
 import { useGetUserQuery } from '@genshin-optimizer/gi-frontend-gql'
-import LogoutIcon from '@mui/icons-material/Logout'
-import { Button, Stack, Typography } from '@mui/material'
+import { Stack, Typography } from '@mui/material'
 import type { Session } from 'next-auth'
-import { signOut } from 'next-auth/react'
-import UsernameForm from './UsernameForm'
 import UIDForm from './UIDForm'
+import UsernameForm from './UsernameForm'
 
-export default function User({
-  userId,
-  session,
-}: {
-  userId: string
-  session: Session
-}) {
+export default function User({ session }: { session: Session }) {
+  const userId = session.user.userId
   const { data, loading, error } = useGetUserQuery({
     variables: {
       userId,
     },
   })
+  console.log({data, loading, error})
   if (loading) return null //TODO:suspense
   if (error) return null //TODO: error
   const user = data?.getUserById
@@ -41,13 +35,6 @@ export default function User({
         UIDS: {genshinUsers?.map(({ uid }) => uid).join(' ,')}
       </Typography>
       {username && <UIDForm userId={userId} />}
-      <Button
-        onClick={() => signOut()}
-        startIcon={<LogoutIcon />}
-        variant="contained"
-      >
-        Sign out
-      </Button>
     </Stack>
   )
 }

@@ -1,17 +1,35 @@
 import type {
+  ArtifactRarity,
+  ArtifactSlotKey,
   MainStatKey,
   RarityKey,
   SubstatKey,
 } from '@genshin-optimizer/consts'
-import { artMaxLevel, artSubstatRollData } from '@genshin-optimizer/consts'
+import {
+  allArtifactRarityKeys,
+  allArtifactSetKeys,
+  allRarityKeys,
+  allSubstatKeys,
+  artMaxLevel,
+  artSlotsData,
+  artSubstatRollData,
+} from '@genshin-optimizer/consts'
+import type { IArtifact, ISubstat } from '@genshin-optimizer/gi-good'
 import { allStats } from '@genshin-optimizer/gi-stats'
 import type { Unit } from '@genshin-optimizer/util'
-import { clampPercent, toPercent, unit } from '@genshin-optimizer/util'
+import {
+  clampPercent,
+  getRandomElementFromArray,
+  getRandomIntInclusive,
+  objKeyMap,
+  toPercent,
+  unit,
+} from '@genshin-optimizer/util'
 
 export function artDisplayValue(value: number, unit: Unit): string {
   switch (unit) {
     case '%':
-      return (Math.round(value * 10) / 10).toFixed(1) // TODO: % conversion
+      return (Math.round(value * 10) / 10).toFixed(1)
     default:
       return Math.round(value).toFixed(0)
   }
@@ -124,4 +142,227 @@ export function getTotalPossibleRolls(rarity: RarityKey) {
   return (
     artSubstatRollData[rarity].high + artSubstatRollData[rarity].numUpgrades
   )
+}
+const maxSubstatRollEfficiency = objKeyMap(allRarityKeys, (rarity) =>
+  Math.max(
+    ...allSubstatKeys.map(
+      (substat) => getSubstatValue(substat, rarity) / getSubstatValue(substat)
+    )
+  )
+)
+
+export function getArtifactEfficiency(
+  artifact: IArtifact,
+  substatMetas: SubstatMeta[],
+  filter: Set<SubstatKey>
+): { currentEfficiency: number; maxEfficiency: number } {
+  const { substats, rarity, level } = artifact
+  // Relative to max star, so comparison between different * makes sense.
+  const currentEfficiency = substatMetas
+    .filter(({ key }) => key && filter.has(key))
+    .reduce((sum, { efficiency }) => sum + (efficiency ?? 0), 0)
+
+  const rollsRemaining = getRollsRemaining(level, rarity)
+  const emptySlotCount = substats.filter((s) => !s.key).length
+  const matchedSlotCount = substats.filter(
+    (s) => s.key && filter.has(s.key)
+  ).length
+  const unusedFilterCount =
+    filter.size -
+    matchedSlotCount -
+    (filter.has(artifact.mainStatKey as any) ? 1 : 0)
+  let maxEfficiency
+  if (emptySlotCount && unusedFilterCount)
+    maxEfficiency =
+      currentEfficiency + maxSubstatRollEfficiency[rarity] * rollsRemaining
+  // Rolls into good empty slot
+  else if (matchedSlotCount)
+    maxEfficiency =
+      currentEfficiency +
+      maxSubstatRollEfficiency[rarity] * (rollsRemaining - emptySlotCount)
+  // Rolls into existing matched slot
+  else maxEfficiency = currentEfficiency // No possible roll
+
+  return { currentEfficiency, maxEfficiency }
+}
+
+// do not randomize Prayers since they don't have all slots
+const artSets = allArtifactSetKeys.filter((k) => !k.startsWith('Prayers'))
+export function randomizeArtifact(base: Partial<IArtifact> = {}): IArtifact {
+  const setKey = base.setKey ?? getRandomElementFromArray(artSets)
+  const data = allStats.art.data[setKey]
+
+  const rarity = (base.rarity ??
+    getRandomElementFromArray(
+      data.rarities.filter((r: number) =>
+        // GO only supports artifacts from 3 to 5 stars
+        allArtifactRarityKeys.includes(r as ArtifactRarity)
+      )
+    )) as ArtifactRarity
+  const slot: ArtifactSlotKey =
+    base.slotKey ?? getRandomElementFromArray(data.slots)
+  const mainStatKey: MainStatKey =
+    base.mainStatKey ?? getRandomElementFromArray(artSlotsData[slot].stats)
+  const level =
+    base.level ?? getRandomIntInclusive(0, artMaxLevel[rarity as RarityKey])
+  const substats: ISubstat[] = [0, 1, 2, 3].map(() => ({ key: '', value: 0 }))
+
+  const { low, high } = artSubstatRollData[rarity]
+  const totRolls = Math.floor(level / 4) + getRandomIntInclusive(low, high)
+  const numOfInitialSubstats = Math.min(totRolls, 4)
+  const numUpgradesOrUnlocks = totRolls - numOfInitialSubstats
+
+  const RollStat = (substat: SubstatKey): number =>
+    getRandomElementFromArray(getSubstatValuesPercent(substat, rarity))
+
+  let remainingSubstats = allSubstatKeys.filter((key) => mainStatKey !== key)
+  for (const substat of substats.slice(0, numOfInitialSubstats)) {
+    substat.key = getRandomElementFromArray(remainingSubstats)
+    substat.value = RollStat(substat.key as SubstatKey)
+    remainingSubstats = remainingSubstats.filter((key) => key !== substat.key)
+  }
+  for (let i = 0; i < numUpgradesOrUnlocks; i++) {
+    const substat = getRandomElementFromArray(substats)
+    substat.value += RollStat(substat.key as any)
+  }
+  for (const substat of substats)
+    if (substat.key) {
+      const value = artDisplayValue(substat.value, unit(substat.key))
+      substat.value = parseFloat(
+        allStats.art.subRollCorrection[rarity]?.[substat.key]?.[value] ?? value
+      )
+    }
+
+  return {
+    setKey,
+    rarity,
+    slotKey: slot,
+    mainStatKey,
+    level,
+    substats,
+    location: base.location ?? '',
+    lock: false,
+  }
+}
+
+export type SubstatMeta = {
+  key: SubstatKey | ''
+  value: number
+  accurateValue: number
+  rolls: number[]
+  efficiency: number
+}
+
+export function getSubstatMetas(artifact: IArtifact) {
+  const { substats, rarity, level } = artifact
+  const allPossibleRolls: { index: number; substatRolls: number[][] }[] = []
+  let totalUnambiguousRolls = 0
+
+  const substatMetas = substats.map((substat, index): SubstatMeta => {
+    const { key, value } = substat
+    let efficiency = 0
+    let rolls: number[] = []
+    let accurateValue = value
+
+    if (key && value) {
+      const max5Value = getSubstatValue(key)
+      efficiency = value / max5Value
+
+      const possibleRolls = getSubstatRolls(key, value, rarity)
+
+      if (possibleRolls.length) {
+        // Valid Substat
+        const possibleLengths = new Set(
+          possibleRolls.map((roll) => roll.length)
+        )
+
+        if (possibleLengths.size !== 1) {
+          // Ambiguous Rolls
+          allPossibleRolls.push({ index, substatRolls: possibleRolls })
+        } else {
+          // Unambiguous Rolls
+          totalUnambiguousRolls += possibleRolls[0].length
+        }
+
+        rolls = possibleRolls.reduce((best, current) =>
+          best.length < current.length ? best : current
+        )
+        accurateValue = rolls.reduce((a, b) => a + b, 0)
+        efficiency = accurateValue / max5Value
+      }
+    }
+    return {
+      key,
+      value,
+      accurateValue,
+      rolls,
+      efficiency,
+    }
+  })
+
+  const { low, high } = artSubstatRollData[rarity],
+    lowerBound = low + Math.floor(level / 4),
+    upperBound = high + Math.floor(level / 4)
+
+  let highestScore = -Infinity // -Max(substats.rolls[i].length) over ambiguous rolls
+  const tryAllSubstats = (
+    rolls: { index: number; roll: number[] }[],
+    currentScore: number,
+    total: number
+  ) => {
+    if (rolls.length === allPossibleRolls.length) {
+      if (
+        total <= upperBound &&
+        total >= lowerBound &&
+        highestScore < currentScore
+      ) {
+        highestScore = currentScore
+        for (const { index, roll } of rolls) {
+          const key = substatMetas[index].key as SubstatKey
+          const accurateValue = roll.reduce((a, b) => a + b, 0)
+          substatMetas[index].rolls = roll
+          substatMetas[index].accurateValue = accurateValue
+          substatMetas[index].efficiency = accurateValue / getSubstatValue(key)
+        }
+      }
+
+      return
+    }
+
+    const { index, substatRolls } = allPossibleRolls[rolls.length]
+    for (const roll of substatRolls) {
+      rolls.push({ index, roll })
+      const newScore = Math.min(currentScore, -roll.length)
+      if (newScore >= highestScore)
+        // Scores won't get better, so we can skip.
+        tryAllSubstats(rolls, newScore, total + roll.length)
+      rolls.pop()
+    }
+  }
+
+  tryAllSubstats([], Infinity, totalUnambiguousRolls)
+
+  const totalRolls = substatMetas.reduce(
+    (accu, { rolls }) => accu + rolls.length,
+    0
+  )
+
+  if (totalRolls > upperBound)
+    console.error(
+      `${rarity}-star artifact (level ${level}) should have no more than ${upperBound} rolls. It currently has ${totalRolls} rolls.`
+    )
+  else if (totalRolls < lowerBound)
+    console.error(
+      `${rarity}-star artifact (level ${level}) should have at least ${lowerBound} rolls. It currently has ${totalRolls} rolls.`
+    )
+  if (substatMetas.some((substat) => !substat.key)) {
+    const substat = substatMetas.find(
+      (substat) => (substat.rolls?.length ?? 0) > 1
+    )
+    if (substat)
+      console.error(
+        `Substat ${substat.key} has > 1 roll, but not all substats are unlocked.`
+      )
+  }
+  return substatMetas
 }

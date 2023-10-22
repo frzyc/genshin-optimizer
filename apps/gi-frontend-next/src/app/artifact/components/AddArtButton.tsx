@@ -2,7 +2,7 @@ import {
   GetAllUserArtifactDocument,
   useAddArtifactMutation,
 } from '@genshin-optimizer/gi-frontend-gql'
-import { randomizeArtifact } from '@genshin-optimizer/gi-good'
+import { randomizeArtifact } from '@genshin-optimizer/gi-util'
 import { Button } from '@mui/material'
 
 export default function AddArtButton({
@@ -35,7 +35,6 @@ export default function AddArtButton({
         )
       },
     })
-  console.log({ data, loading, error })
   return (
     <Button onClick={() => addArtifactMutation()}>Add random Artifact</Button>
   )

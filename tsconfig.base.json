@@ -47,6 +47,7 @@
       ],
       "@genshin-optimizer/gi-stats": ["libs/gi-stats/src/index.ts"],
       "@genshin-optimizer/gi-svgicons": ["libs/gi-svgicons/src/index.ts"],
+      "@genshin-optimizer/gi-ui": ["libs/gi-ui/src/index.ts"],
       "@genshin-optimizer/gi-util": ["libs/gi-util/src/index.ts"],
       "@genshin-optimizer/pando": ["libs/pando/src/index.ts"],
       "@genshin-optimizer/pipeline": ["libs/pipeline/src/index.ts"],
