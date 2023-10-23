@@ -1,5 +1,6 @@
 import type { TooltipProps } from '@mui/material'
-import { styled, Tooltip, tooltipClasses } from '@mui/material'
+import { styled } from '@mui/material/styles'
+import { Tooltip, tooltipClasses } from '@mui/material'
 
 export const BootstrapTooltip = styled(
   ({ className, ...props }: TooltipProps) => (

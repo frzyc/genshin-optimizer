@@ -2938,7 +2938,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.0.0":
+"@babel/runtime@npm:^7.0.0, @babel/runtime@npm:^7.21.5, @babel/runtime@npm:^7.22.5":
   version: 7.23.2
   resolution: "@babel/runtime@npm:7.23.2"
   dependencies:
@@ -2947,7 +2947,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.1.2, @babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.18.3, @babel/runtime@npm:^7.19.4, @babel/runtime@npm:^7.20.6, @babel/runtime@npm:^7.20.7, @babel/runtime@npm:^7.5.5, @babel/runtime@npm:^7.7.2, @babel/runtime@npm:^7.8.4, @babel/runtime@npm:^7.8.7":
+"@babel/runtime@npm:^7.1.2, @babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.18.3, @babel/runtime@npm:^7.19.4, @babel/runtime@npm:^7.20.7, @babel/runtime@npm:^7.5.5, @babel/runtime@npm:^7.7.2, @babel/runtime@npm:^7.8.4, @babel/runtime@npm:^7.8.7":
   version: 7.20.7
   resolution: "@babel/runtime@npm:7.20.7"
   dependencies:
@@ -5346,10 +5346,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@next/env@npm:13.5.4":
-  version: 13.5.4
-  resolution: "@next/env@npm:13.5.4"
-  checksum: 95ec7108bc88a01fed5389fb33e4b9eb34937908859d9f0aa87930c660f4395d90dafe10e54830faae5bc0a1b799be544c6455a2c8054499569d1e9296369076
+"@next/env@npm:13.5.6":
+  version: 13.5.6
+  resolution: "@next/env@npm:13.5.6"
+  checksum: 5e8f3f6f987a15dad3cd7b2bcac64a6382c2ec372d95d0ce6ab295eb59c9731222017eebf71ff3005932de2571f7543bce7e5c6a8c90030207fb819404138dc2
   languageName: node
   linkType: hard
 
@@ -5362,65 +5362,65 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@next/swc-darwin-arm64@npm:13.5.4":
-  version: 13.5.4
-  resolution: "@next/swc-darwin-arm64@npm:13.5.4"
+"@next/swc-darwin-arm64@npm:13.5.6":
+  version: 13.5.6
+  resolution: "@next/swc-darwin-arm64@npm:13.5.6"
   conditions: os=darwin & cpu=arm64
   languageName: node
   linkType: hard
 
-"@next/swc-darwin-x64@npm:13.5.4":
-  version: 13.5.4
-  resolution: "@next/swc-darwin-x64@npm:13.5.4"
+"@next/swc-darwin-x64@npm:13.5.6":
+  version: 13.5.6
+  resolution: "@next/swc-darwin-x64@npm:13.5.6"
   conditions: os=darwin & cpu=x64
   languageName: node
   linkType: hard
 
-"@next/swc-linux-arm64-gnu@npm:13.5.4":
-  version: 13.5.4
-  resolution: "@next/swc-linux-arm64-gnu@npm:13.5.4"
+"@next/swc-linux-arm64-gnu@npm:13.5.6":
+  version: 13.5.6
+  resolution: "@next/swc-linux-arm64-gnu@npm:13.5.6"
   conditions: os=linux & cpu=arm64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@next/swc-linux-arm64-musl@npm:13.5.4":
-  version: 13.5.4
-  resolution: "@next/swc-linux-arm64-musl@npm:13.5.4"
+"@next/swc-linux-arm64-musl@npm:13.5.6":
+  version: 13.5.6
+  resolution: "@next/swc-linux-arm64-musl@npm:13.5.6"
   conditions: os=linux & cpu=arm64 & libc=musl
   languageName: node
   linkType: hard
 
-"@next/swc-linux-x64-gnu@npm:13.5.4":
-  version: 13.5.4
-  resolution: "@next/swc-linux-x64-gnu@npm:13.5.4"
+"@next/swc-linux-x64-gnu@npm:13.5.6":
+  version: 13.5.6
+  resolution: "@next/swc-linux-x64-gnu@npm:13.5.6"
   conditions: os=linux & cpu=x64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@next/swc-linux-x64-musl@npm:13.5.4":
-  version: 13.5.4
-  resolution: "@next/swc-linux-x64-musl@npm:13.5.4"
+"@next/swc-linux-x64-musl@npm:13.5.6":
+  version: 13.5.6
+  resolution: "@next/swc-linux-x64-musl@npm:13.5.6"
   conditions: os=linux & cpu=x64 & libc=musl
   languageName: node
   linkType: hard
 
-"@next/swc-win32-arm64-msvc@npm:13.5.4":
-  version: 13.5.4
-  resolution: "@next/swc-win32-arm64-msvc@npm:13.5.4"
+"@next/swc-win32-arm64-msvc@npm:13.5.6":
+  version: 13.5.6
+  resolution: "@next/swc-win32-arm64-msvc@npm:13.5.6"
   conditions: os=win32 & cpu=arm64
   languageName: node
   linkType: hard
 
-"@next/swc-win32-ia32-msvc@npm:13.5.4":
-  version: 13.5.4
-  resolution: "@next/swc-win32-ia32-msvc@npm:13.5.4"
+"@next/swc-win32-ia32-msvc@npm:13.5.6":
+  version: 13.5.6
+  resolution: "@next/swc-win32-ia32-msvc@npm:13.5.6"
   conditions: os=win32 & cpu=ia32
   languageName: node
   linkType: hard
 
-"@next/swc-win32-x64-msvc@npm:13.5.4":
-  version: 13.5.4
-  resolution: "@next/swc-win32-x64-msvc@npm:13.5.4"
+"@next/swc-win32-x64-msvc@npm:13.5.6":
+  version: 13.5.6
+  resolution: "@next/swc-win32-x64-msvc@npm:13.5.6"
   conditions: os=win32 & cpu=x64
   languageName: node
   linkType: hard
@@ -7019,6 +7019,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/cookie@npm:^0.5.1":
+  version: 0.5.3
+  resolution: "@types/cookie@npm:0.5.3"
+  checksum: b785618f6b2fdceb6a20a17e1dfe99651b1e5c2c079f486de76dfb21b508f09d91913755e4a6dbdfe628882ea32466bb2e9318b114ce34efa5e624356494fcab
+  languageName: node
+  linkType: hard
+
 "@types/d3-array@npm:^3.0.3":
   version: 3.0.4
   resolution: "@types/d3-array@npm:3.0.4"
@@ -7174,6 +7181,16 @@ __metadata:
   dependencies:
     "@types/unist": "*"
   checksum: fff47998f4c11e21a7454b58673f70478740ecdafd95aaf50b70a3daa7da9cdc57315545bf9c039613732c40b7b0e9e49d11d03fe9a4304721cdc3b29a88141e
+  languageName: node
+  linkType: hard
+
+"@types/hoist-non-react-statics@npm:^3.3.1":
+  version: 3.3.4
+  resolution: "@types/hoist-non-react-statics@npm:3.3.4"
+  dependencies:
+    "@types/react": "*"
+    hoist-non-react-statics: ^3.3.0
+  checksum: dee430941a9ea16b7f665ecafa9b134066a49d13ae497fc051cf5d41b3aead394ab1a8179c3c98c9a3584f80aed16fab82dd7979c7dcddfbb5f74a132575d362
   languageName: node
   linkType: hard
 
@@ -8244,6 +8261,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"accept-language@npm:^3.0.18":
+  version: 3.0.18
+  resolution: "accept-language@npm:3.0.18"
+  dependencies:
+    bcp47: ^1.1.2
+    stable: ^0.1.6
+  checksum: 80729f988a5931f75b37d985d5497ee58cb914ab94d6d58ebeb0191d7e24406d464587897c2dfb1f873f2414ac06161b42f15f14859bc89d16715602bc3237fb
+  languageName: node
+  linkType: hard
+
 "accepts@npm:~1.3.4, accepts@npm:~1.3.5, accepts@npm:~1.3.8":
   version: 1.3.8
   resolution: "accepts@npm:1.3.8"
@@ -9163,6 +9190,13 @@ __metadata:
   version: 0.6.1
   resolution: "batch@npm:0.6.1"
   checksum: 61f9934c7378a51dce61b915586191078ef7f1c3eca707fdd58b96ff2ff56d9e0af2bdab66b1462301a73c73374239e6542d9821c0af787f3209a23365d07e7f
+  languageName: node
+  linkType: hard
+
+"bcp47@npm:^1.1.2":
+  version: 1.1.2
+  resolution: "bcp47@npm:1.1.2"
+  checksum: 4e67daddfacf846e28895d682972f7de0c22669e99b2ed4561615f13c9a8fecc100ebe76f4b8496f535945db84ce04a32f7bce6ef26329a3cf49242cf0d36a0a
   languageName: node
   linkType: hard
 
@@ -13306,6 +13340,7 @@ __metadata:
     "@vitejs/plugin-react": 4.0.0
     "@vitest/coverage-c8": ^0.32.0
     "@vitest/ui": ^0.32.0
+    accept-language: ^3.0.18
     axios: ^1.0.0
     babel-jest: 29.4.3
     core-js: ^3.28.0
@@ -13321,15 +13356,16 @@ __metadata:
     eslint-plugin-react-hooks: 4.6.0
     gh-pages: ^5.0.0
     graphql: ^16.8.1
-    i18next: ^22.4.10
+    i18next: ^23.6.0
     i18next-browser-languagedetector: ^7.0.1
     i18next-http-backend: ^2.1.1
+    i18next-resources-to-backend: ^1.1.4
     jest: 29.4.3
     jest-environment-jsdom: 29.4.3
     jest-environment-node: ^29.4.1
     jsdom: 22.1.0
     jsonwebtoken: ^9.0.2
-    next: 13.5.4
+    next: 13.5.6
     next-auth: ^4.23.2
     nx: 16.10.0
     passport: ^0.6.0
@@ -13337,9 +13373,10 @@ __metadata:
     prettier: ^2.8.4
     prisma: ^5.4.2
     react: 18.2.0
+    react-cookie: ^6.1.1
     react-dom: 18.2.0
     react-ga4: ^1.4.1
-    react-i18next: ^12.1.5
+    react-i18next: ^13.3.1
     react-markdown: ^8.0.5
     react-refresh: ^0.10.0
     react-router-dom: 6.11.2
@@ -13901,7 +13938,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hoist-non-react-statics@npm:^3.3.1, hoist-non-react-statics@npm:^3.3.2":
+"hoist-non-react-statics@npm:^3.3.0, hoist-non-react-statics@npm:^3.3.1, hoist-non-react-statics@npm:^3.3.2":
   version: 3.3.2
   resolution: "hoist-non-react-statics@npm:3.3.2"
   dependencies:
@@ -14171,12 +14208,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"i18next@npm:^22.4.10":
-  version: 22.4.10
-  resolution: "i18next@npm:22.4.10"
+"i18next-resources-to-backend@npm:^1.1.4":
+  version: 1.1.4
+  resolution: "i18next-resources-to-backend@npm:1.1.4"
   dependencies:
-    "@babel/runtime": ^7.20.6
-  checksum: 731423e3fafe4ecaf0fc3c5867b69ae5c35c9021f7b5aad8392a9bf5cf56fbf1503376ba5aa935f2b21e12a97862fa31be0e4b35e98eefb747e2008b5808e35c
+    "@babel/runtime": ^7.21.5
+  checksum: 4f3f25de0d9c96b109dfdc9259864898ac9d140a80a372925e0c5a34b13bd95dcb4c682c6255a5f3bb4c4dc40c20d0f9d1b82c491ebe2f8f245ae149fe911a1d
+  languageName: node
+  linkType: hard
+
+"i18next@npm:^23.6.0":
+  version: 23.6.0
+  resolution: "i18next@npm:23.6.0"
+  dependencies:
+    "@babel/runtime": ^7.22.5
+  checksum: 0898be75ce56a5901eb9763c8cd941a23cfc24fbe7b32ba0479c08f58c40c1c88c95596430154a6250087ec76d150335144b2cb637ebaa443490b9af7b6e275e
   languageName: node
   linkType: hard
 
@@ -17569,20 +17615,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"next@npm:13.5.4":
-  version: 13.5.4
-  resolution: "next@npm:13.5.4"
+"next@npm:13.5.6":
+  version: 13.5.6
+  resolution: "next@npm:13.5.6"
   dependencies:
-    "@next/env": 13.5.4
-    "@next/swc-darwin-arm64": 13.5.4
-    "@next/swc-darwin-x64": 13.5.4
-    "@next/swc-linux-arm64-gnu": 13.5.4
-    "@next/swc-linux-arm64-musl": 13.5.4
-    "@next/swc-linux-x64-gnu": 13.5.4
-    "@next/swc-linux-x64-musl": 13.5.4
-    "@next/swc-win32-arm64-msvc": 13.5.4
-    "@next/swc-win32-ia32-msvc": 13.5.4
-    "@next/swc-win32-x64-msvc": 13.5.4
+    "@next/env": 13.5.6
+    "@next/swc-darwin-arm64": 13.5.6
+    "@next/swc-darwin-x64": 13.5.6
+    "@next/swc-linux-arm64-gnu": 13.5.6
+    "@next/swc-linux-arm64-musl": 13.5.6
+    "@next/swc-linux-x64-gnu": 13.5.6
+    "@next/swc-linux-x64-musl": 13.5.6
+    "@next/swc-win32-arm64-msvc": 13.5.6
+    "@next/swc-win32-ia32-msvc": 13.5.6
+    "@next/swc-win32-x64-msvc": 13.5.6
     "@swc/helpers": 0.5.2
     busboy: 1.6.0
     caniuse-lite: ^1.0.30001406
@@ -17620,7 +17666,7 @@ __metadata:
       optional: true
   bin:
     next: dist/bin/next
-  checksum: f8e964ee9bbabd0303f9d807c9193833fcc47960be029c3721db9a5a35cc4ff690313e30fc6ee497f959a9141048957dddf6eb038b4a23c78c8762b0cd9d0ae0
+  checksum: c869b0014ae921ada3bf22301985027ec320aebcd6aa9c16e8afbded68bb8def5874cca034c680e8c351a79578f1e514971d02777f6f0a5a1d7290f25970ac0d
   languageName: node
   linkType: hard
 
@@ -19518,6 +19564,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-cookie@npm:^6.1.1":
+  version: 6.1.1
+  resolution: "react-cookie@npm:6.1.1"
+  dependencies:
+    "@types/hoist-non-react-statics": ^3.3.1
+    hoist-non-react-statics: ^3.3.2
+    universal-cookie: ^6.0.0
+  peerDependencies:
+    react: ">= 16.3.0"
+  checksum: d04a2be8cb1e84511ea51a51d89a1c0dca9a3d311bdd73a14a6396226dd466d3854cf36d4d1bd958e26e9c7475882de25d41e78071d1a0cb9058f47366f7e41c
+  languageName: node
+  linkType: hard
+
 "react-dom@npm:18.2.0":
   version: 18.2.0
   resolution: "react-dom@npm:18.2.0"
@@ -19537,21 +19596,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-i18next@npm:^12.1.5":
-  version: 12.1.5
-  resolution: "react-i18next@npm:12.1.5"
+"react-i18next@npm:^13.3.1":
+  version: 13.3.1
+  resolution: "react-i18next@npm:13.3.1"
   dependencies:
-    "@babel/runtime": ^7.20.6
+    "@babel/runtime": ^7.22.5
     html-parse-stringify: ^3.0.1
   peerDependencies:
-    i18next: ">= 19.0.0"
+    i18next: ">= 23.2.3"
     react: ">= 16.8.0"
   peerDependenciesMeta:
     react-dom:
       optional: true
     react-native:
       optional: true
-  checksum: 90f151dfef237eee4e24d5ca6ddac45869b5025b9173b3cf0403afbc794a448d5ba429105c88e6a539cea1e8ec3f6e18df46d8bee78e7918d79305aa9ec585cb
+  checksum: 71a9ae4968d701aa8c11009389f49548058abb16e96d0e0f4107206fe2dfd2df6c43e44b3209824ea42b8d2aefa8fe5ebc56e019a40947b39c3cb703e5293a87
   languageName: node
   linkType: hard
 
@@ -21139,6 +21198,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"stable@npm:^0.1.6":
+  version: 0.1.8
+  resolution: "stable@npm:0.1.8"
+  checksum: 2ff482bb100285d16dd75cd8f7c60ab652570e8952c0bfa91828a2b5f646a0ff533f14596ea4eabd48bb7f4aeea408dce8f8515812b975d958a4cc4fa6b9dfeb
+  languageName: node
+  linkType: hard
+
 "stack-utils@npm:^2.0.3":
   version: 2.0.6
   resolution: "stack-utils@npm:2.0.6"
@@ -22526,6 +22592,16 @@ __metadata:
     unist-util-is: ^5.0.0
     unist-util-visit-parents: ^5.1.1
   checksum: 95a34e3f7b5b2d4b68fd722b6229972099eb97b6df18913eda44a5c11df8b1e27efe7206dd7b88c4ed244a48c474a5b2e2629ab79558ff9eb936840295549cee
+  languageName: node
+  linkType: hard
+
+"universal-cookie@npm:^6.0.0":
+  version: 6.1.1
+  resolution: "universal-cookie@npm:6.1.1"
+  dependencies:
+    "@types/cookie": ^0.5.1
+    cookie: ^0.5.0
+  checksum: 5c4d83f5879c5f133a51dadd080bf7a7a5c3a4b38695bb52ae560564884b84156d3c872abb1ade54a0ee00baf3870a59abc9907a4fa5bcf7a8d2d63af581c8e1
   languageName: node
   linkType: hard
 

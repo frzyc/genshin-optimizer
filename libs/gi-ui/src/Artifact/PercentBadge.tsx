@@ -1,7 +1,7 @@
-import type { RollColorKey } from '@genshin-optimizer/consts'
 import { SqBadge } from '@genshin-optimizer/ui-common'
 import { clamp } from '@genshin-optimizer/util'
 import type { ButtonProps } from '@mui/material'
+import type { RollColorKey } from './util'
 
 export default function PercentBadge({
   value,

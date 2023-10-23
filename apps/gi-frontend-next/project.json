@@ -9,7 +9,24 @@
       "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
-        "outputPath": "dist/apps/gi-frontend-next"
+        "outputPath": "dist/apps/gi-frontend-next",
+        "assets": [
+          {
+            "input": "libs/gi-localization/assets",
+            "glob": "**/*",
+            "output": ""
+          },
+          {
+            "input": "libs/gi-dm-localization/assets",
+            "glob": "**/*",
+            "output": ""
+          },
+          {
+            "input": "libs/silly-wisher-names/assets",
+            "glob": "**/*",
+            "output": ""
+          }
+        ]
       },
       "configurations": {
         "development": {
@@ -66,5 +83,10 @@
     }
   },
   "tags": [],
-  "implicitDependencies": ["gi-prisma-schema"]
+  "implicitDependencies": [
+    "gi-prisma-schema",
+    "gi-localization",
+    "gi-dm-localization",
+    "silly-wisher-names"
+  ]
 }
