@@ -111,6 +111,7 @@ export const weaponIdMap: Record<number | string, WeaponKey> = {
   13419: 'MissiveWindspear',
   13424: 'BalladOfTheFjords',
   13425: 'RightfulReward',
+  13427: 'ProspectorsDrill',
   13501: 'StaffOfHoma',
   13502: 'SkywardSpine',
   // 13503: "",
