@@ -1,15 +1,12 @@
-import type { ButtonProps } from '@mui/material'
-import { styled } from '@mui/material'
+import type { Palette, PaletteColor } from '@mui/material'
+import { styled } from "@mui/material/styles"
 import type { HTMLAttributes } from 'react'
 
 interface ColorTextProps extends HTMLAttributes<HTMLSpanElement> {
-  color?: ButtonProps['color']
+  color?: keyof Palette
 }
 
-/**
- * @deprecated use SqBadge in `@genshin-optimizer/ui-common`
- */
-const SqBadge = styled('span', {
+export const SqBadge = styled('span', {
   name: 'SqBadge',
   slot: 'Root',
 })<ColorTextProps>(({ theme, color = 'primary' }) => ({
@@ -20,7 +17,6 @@ const SqBadge = styled('span', {
   whiteSpace: 'nowrap',
   verticalAlign: 'baseline',
   borderRadius: '.25em',
-  backgroundColor: theme.palette[color]?.main,
-  color: theme.palette[color]?.contrastText,
+  backgroundColor: (theme.palette[color] as PaletteColor | undefined)?.main,
+  color: (theme.palette[color] as PaletteColor | undefined)?.contrastText,
 }))
-export default SqBadge
