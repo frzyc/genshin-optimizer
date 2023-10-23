@@ -184,7 +184,6 @@ declare module '@mui/material/SvgIcon' {
   }
 }
 
-
 export const theme = createTheme({
   ...commonTheme,
   palette: {

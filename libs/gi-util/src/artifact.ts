@@ -11,7 +11,7 @@ import {
   allSubstatKeys,
   artMaxLevel,
   artSlotsData,
-  artSubstatRollData
+  artSubstatRollData,
 } from '@genshin-optimizer/consts'
 import type { IArtifact, ISubstat } from '@genshin-optimizer/gi-good'
 import { allStats } from '@genshin-optimizer/gi-stats'
@@ -21,7 +21,7 @@ import {
   getRandomElementFromArray,
   getRandomIntInclusive,
   toPercent,
-  unit
+  unit,
 } from '@genshin-optimizer/util'
 
 export function artDisplayValue(value: number, unit: Unit): string {
