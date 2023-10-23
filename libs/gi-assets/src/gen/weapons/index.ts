@@ -96,6 +96,7 @@ import PortablePowerSaw from './PortablePowerSaw'
 import Predator from './Predator'
 import PrimordialJadeCutter from './PrimordialJadeCutter'
 import PrimordialJadeWingedSpear from './PrimordialJadeWingedSpear'
+import ProspectorsDrill from './ProspectorsDrill'
 import PrototypeAmber from './PrototypeAmber'
 import PrototypeArchaic from './PrototypeArchaic'
 import PrototypeCrescent from './PrototypeCrescent'
@@ -271,6 +272,7 @@ const data = {
   Predator,
   PrimordialJadeCutter,
   PrimordialJadeWingedSpear,
+  ProspectorsDrill,
   PrototypeAmber,
   PrototypeArchaic,
   PrototypeCrescent,
