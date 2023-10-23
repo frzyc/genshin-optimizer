@@ -64,7 +64,6 @@ import ShikanoinHeizou from './ShikanoinHeizou'
 import Somnia from './Somnia'
 import Sucrose from './Sucrose'
 import Tartaglia from './Tartaglia'
-import Wanderer from './Wanderer'
 import Thoma from './Thoma'
 import Tighnari from './Tighnari'
 import TravelerAnemoF from './TravelerAnemoF'
@@ -78,6 +77,8 @@ import TravelerGeoM from './TravelerGeoM'
 import TravelerHydroF from './TravelerHydroF'
 import TravelerHydroM from './TravelerHydroM'
 import Venti from './Venti'
+import Wanderer from './Wanderer'
+import Wriothesley from './Wriothesley'
 import Xiangling from './Xiangling'
 import Xiao from './Xiao'
 import Xingqiu from './Xingqiu'
@@ -148,7 +149,6 @@ const characters: Record<CharacterSheetKey, CharacterSheet> = {
   Somnia,
   Sucrose,
   Tartaglia,
-  Wanderer,
   Thoma,
   Tighnari,
   TravelerAnemoF,
@@ -162,6 +162,8 @@ const characters: Record<CharacterSheetKey, CharacterSheet> = {
   TravelerHydroF,
   TravelerHydroM,
   Venti,
+  Wanderer,
+  Wriothesley,
   Xiangling,
   Xiao,
   Xingqiu,
