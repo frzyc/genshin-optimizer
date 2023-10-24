@@ -1,0 +1,24 @@
+{
+  "name": "Mũi Khoan Thăm Dò",
+  "description": {
+    "0": "Máy khoan cán dài, ngày nay gần như tuyệt tích. Thường dùng trong thăm dò và chạm khắc đá."
+  },
+  "passiveName": "Khúc Ca Thợ Đẽo Đá",
+  "passiveDescription": {
+    "0": {
+      "0": "Khi trị liệu hoặc nhận trị liệu sẽ nhận một Ký Hiệu Đoàn Kết, duy trì 30s, tối đa có được 3 Ký Hiệu. Khi thi triển Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ sẽ tiêu hao tất cả Ký Hiệu để sản sinh hiệu quả Chống Đối trong 10s：Mỗi Ký Hiệu tiêu hao sẽ tăng <cryo>3%</cryo> tấn công và <cryo>7%</cryo> buff sát thương tất cả nguyên tố. Mỗi 15s tối đa kích hoạt một lần hiệu quả Chống Đối; Nhân vật không ra trận cũng có thể nhận được Ký Hiệu Đoàn Kết."
+    },
+    "1": {
+      "0": "Khi trị liệu hoặc nhận trị liệu sẽ nhận một Ký Hiệu Đoàn Kết, duy trì 30s, tối đa có được 3 Ký Hiệu. Khi thi triển Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ sẽ tiêu hao tất cả Ký Hiệu để sản sinh hiệu quả Chống Đối trong 10s：Mỗi Ký Hiệu tiêu hao sẽ tăng <cryo>4%</cryo> tấn công và <cryo>8.5%</cryo> buff sát thương tất cả nguyên tố. Mỗi 15s tối đa kích hoạt một lần hiệu quả Chống Đối; Nhân vật không ra trận cũng có thể nhận được Ký Hiệu Đoàn Kết."
+    },
+    "2": {
+      "0": "Khi trị liệu hoặc nhận trị liệu sẽ nhận một Ký Hiệu Đoàn Kết, duy trì 30s, tối đa có được 3 Ký Hiệu. Khi thi triển Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ sẽ tiêu hao tất cả Ký Hiệu để sản sinh hiệu quả Chống Đối trong 10s：Mỗi Ký Hiệu tiêu hao sẽ tăng <cryo>5%</cryo> tấn công và <cryo>10%</cryo> buff sát thương tất cả nguyên tố. Mỗi 15s tối đa kích hoạt một lần hiệu quả Chống Đối; Nhân vật không ra trận cũng có thể nhận được Ký Hiệu Đoàn Kết."
+    },
+    "3": {
+      "0": "Khi trị liệu hoặc nhận trị liệu sẽ nhận một Ký Hiệu Đoàn Kết, duy trì 30s, tối đa có được 3 Ký Hiệu. Khi thi triển Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ sẽ tiêu hao tất cả Ký Hiệu để sản sinh hiệu quả Chống Đối trong 10s：Mỗi Ký Hiệu tiêu hao sẽ tăng <cryo>6%</cryo> tấn công và <cryo>11.5%</cryo> buff sát thương tất cả nguyên tố. Mỗi 15s tối đa kích hoạt một lần hiệu quả Chống Đối; Nhân vật không ra trận cũng có thể nhận được Ký Hiệu Đoàn Kết."
+    },
+    "4": {
+      "0": "Khi trị liệu hoặc nhận trị liệu sẽ nhận một Ký Hiệu Đoàn Kết, duy trì 30s, tối đa có được 3 Ký Hiệu. Khi thi triển Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ sẽ tiêu hao tất cả Ký Hiệu để sản sinh hiệu quả Chống Đối trong 10s：Mỗi Ký Hiệu tiêu hao sẽ tăng <cryo>7%</cryo> tấn công và <cryo>13%</cryo> buff sát thương tất cả nguyên tố. Mỗi 15s tối đa kích hoạt một lần hiệu quả Chống Đối; Nhân vật không ra trận cũng có thể nhận được Ký Hiệu Đoàn Kết."
+    }
+  }
+}
