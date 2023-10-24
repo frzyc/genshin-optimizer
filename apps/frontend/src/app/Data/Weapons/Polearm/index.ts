@@ -18,6 +18,7 @@ import LithicSpear from './LithicSpear'
 import MissiveWindspear from './MissiveWindspear'
 import Moonpiercer from './Moonpiercer'
 import PrimordialJadeWingedSpear from './PrimordialJadeWingedSpear'
+import ProspectorsDrill from './ProspectorsDrill'
 import PrototypeStarglitter from './PrototypeStarglitter'
 import RightfulReward from './RightfulReward'
 import RoyalSpear from './RoyalSpear'
@@ -47,6 +48,7 @@ const polearm: Record<WeaponPoleArmKey, WeaponSheet> = {
   MissiveWindspear,
   Moonpiercer,
   PrimordialJadeWingedSpear,
+  ProspectorsDrill,
   PrototypeStarglitter,
   RightfulReward,
   RoyalSpear,
