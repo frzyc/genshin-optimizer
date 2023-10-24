@@ -143,6 +143,7 @@ export const allWeaponBowKeys = [
   'PolarStar',
   'Predator',
   'PrototypeCrescent',
+  'RangeGauge',
   'RavenBow',
   'RecurveBow',
   'RoyalBow',

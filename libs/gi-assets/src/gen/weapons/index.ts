@@ -104,6 +104,7 @@ import PrototypeRancour from './PrototypeRancour'
 import PrototypeStarglitter from './PrototypeStarglitter'
 import QuantumCatalyst from './QuantumCatalyst'
 import Rainslasher from './Rainslasher'
+import RangeGauge from './RangeGauge'
 import RavenBow from './RavenBow'
 import RecurveBow from './RecurveBow'
 import RedhornStonethresher from './RedhornStonethresher'
@@ -280,6 +281,7 @@ const data = {
   PrototypeStarglitter,
   QuantumCatalyst,
   Rainslasher,
+  RangeGauge,
   RavenBow,
   RecurveBow,
   RedhornStonethresher,

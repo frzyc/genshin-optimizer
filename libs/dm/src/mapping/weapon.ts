@@ -197,6 +197,7 @@ export const weaponIdMap: Record<number | string, WeaponKey> = {
   15419: 'IbisPiercer',
   15424: 'ScionOfTheBlazingSun',
   15425: 'SongOfStillness',
+  15427: 'RangeGauge',
   15501: 'SkywardHarp',
   15502: 'AmosBow',
   15503: 'ElegyForTheEnd',

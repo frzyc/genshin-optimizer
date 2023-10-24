@@ -8,7 +8,7 @@ import type { IWeaponSheet } from '../../IWeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
 
-const key: WeaponKey = 'ProspectorsDrill'
+const key: WeaponKey = 'RangeGauge'
 const data_gen = allStats.weapon.data[key]
 const [, trm] = trans('weapon', key)
 
