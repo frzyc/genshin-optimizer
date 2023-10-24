@@ -8,22 +8,22 @@ export const slashcommand = new SlashCommandBuilder()
 let clicks = 0;
 
 function getbutton() {
-  const button = new ButtonBuilder()
-    .setCustomId('button')
-    .setLabel(''+clicks)
-    .setStyle(ButtonStyle.Primary);
-  const row = new ActionRowBuilder<ButtonBuilder>()
-    .addComponents(button);
-  return {components: [row]};
+    const button = new ButtonBuilder()
+        .setCustomId('button')
+        .setLabel(''+clicks)
+        .setStyle(ButtonStyle.Primary);
+    const row = new ActionRowBuilder<ButtonBuilder>()
+        .addComponents(button);
+    return {components: [row]};
 }
 
 export async function run(interaction : ChatInputCommandInteraction) {
-  interaction.reply(getbutton());
-  return;
+    interaction.reply(getbutton());
+    return;
 }
 
 export async function button(interaction : ButtonInteraction) {
-  clicks++;
-  interaction.update(getbutton())
-  return;
+    clicks++;
+    interaction.update(getbutton())
+    return;
 }

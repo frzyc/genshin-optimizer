@@ -1,7 +1,7 @@
 import type { AutocompleteInteraction, ChatInputCommandInteraction} from 'discord.js';
 import { SlashCommandBuilder } from 'discord.js';
 import { calc, gettargets } from '../go/calc'
-import { storedata, getchardata, getuserdata } from '../go/data'
+import { storedata, getchardata, getuserdata, Userdata } from '../go/data'
 
 export const slashcommand = new SlashCommandBuilder()
 .setName('go')
@@ -41,7 +41,14 @@ export const slashcommand = new SlashCommandBuilder()
 
 export async function autocomplete(interaction : AutocompleteInteraction) {
     const focused = interaction.options.getFocused(true);
-    const userdata = getuserdata(interaction.user.id);
+    let userdata : Userdata;
+    try {
+        userdata = getuserdata(interaction.user.id);
+    }
+    catch {
+        interaction.respond([{name:"No user data", value:""}]);
+        return;
+    }
     const chars : string[] = userdata.characters?.map(e => e.key) || [];
     let result : string[] = [];
     switch (focused.name) {
@@ -51,7 +58,7 @@ export async function autocomplete(interaction : AutocompleteInteraction) {
         case 'target':
             const charname = interaction.options.getString('name', true);
             if (!chars.includes(charname)) {
-                interaction.respond([]);
+                interaction.respond([{name:"No such character",value:""}]);
                 return;
             };
             if (userdata.character?.name != charname) getchardata(interaction.user.id, charname);
@@ -60,7 +67,7 @@ export async function autocomplete(interaction : AutocompleteInteraction) {
     }
     result = result.filter(e => e.toLowerCase().includes(focused.value.toLowerCase()));
     result = result.slice(0,25);
-    await interaction.respond(result.map(e => ({name:e, value:e})));
+    interaction.respond(result.map(e => ({name:e, value:e})));
 }
 
 export async function run(interaction : ChatInputCommandInteraction) {

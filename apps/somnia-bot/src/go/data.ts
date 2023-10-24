@@ -2,14 +2,13 @@ import type { IArtifact, ICharacter, IGOOD, IWeapon } from '@genshin-optimizer/g
 import * as path from 'path'
 import * as fs from 'fs';
 import { Attachment } from 'discord.js';
-import { Calculator } from '@genshin-optimizer/gi-formula';
 import { getcalculator } from './calc';
 
 const datapath = path.join(process.cwd(), 'somnia-data');
 if (!fs.existsSync(datapath)) fs.mkdir(datapath, ()=>{console.log("Could not make data folder")});
 
 //TODO
-type Userdata = IGOOD & {
+export type Userdata = IGOOD & {
     buildSettings : any[],
     character : any
 }
@@ -46,6 +45,6 @@ export function getchardata(user : string, charname : string) : any {
     char.target = data[user].buildSettings?.find(e => e.id === charname);
     char.calculator = getcalculator(char);
     data[user].character = char;
-    console.log(char.name);
+    console.log('caching:', user, char.name);
     return char;
 }
