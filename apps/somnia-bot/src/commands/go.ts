@@ -1,7 +1,7 @@
-import type { ChatInputCommandInteraction} from 'discord.js';
+import type { AutocompleteInteraction, ChatInputCommandInteraction} from 'discord.js';
 import { SlashCommandBuilder } from 'discord.js';
-import { calc } from '../go/calc'
-import { storedata, getchar } from '../go/data'
+import { calc, gettargets } from '../go/calc'
+import { storedata, getchardata, getuserdata } from '../go/data'
 
 export const slashcommand = new SlashCommandBuilder()
 .setName('go')
@@ -17,8 +17,14 @@ export const slashcommand = new SlashCommandBuilder()
     .setName('char')
     .setDescription('show char info')
     .addStringOption(option => option
-        .setName('char')
+        .setName('name')
         .setDescription('the character to show')
+        .setAutocomplete(true)
+        .setRequired(true))
+    .addStringOption(option => option
+        .setName('target')
+        .setDescription('the target to calculate')
+        .setAutocomplete(true)
         .setRequired(true))
     .addUserOption(option => option
         .setName('user')
@@ -33,39 +39,64 @@ export const slashcommand = new SlashCommandBuilder()
         .setName('user')
         .setDescription('user')))
 
+export async function autocomplete(interaction : AutocompleteInteraction) {
+    const focused = interaction.options.getFocused(true);
+    const userdata = getuserdata(interaction.user.id);
+    const chars : string[] = userdata.characters?.map(e => e.key) || [];
+    let result : string[] = [];
+    switch (focused.name) {
+        case 'name':
+            result = chars;
+        break;
+        case 'target':
+            const charname = interaction.options.getString('name', true);
+            if (!chars.includes(charname)) {
+                interaction.respond([]);
+                return;
+            };
+            if (userdata.character?.name != charname) getchardata(interaction.user.id, charname);
+            result = gettargets(userdata.character.calculator);
+        break;
+    }
+    result = result.filter(e => e.toLowerCase().includes(focused.value.toLowerCase()));
+    result = result.slice(0,25);
+    await interaction.respond(result.map(e => ({name:e, value:e})));
+}
+
 export async function run(interaction : ChatInputCommandInteraction) {
     const subcommand = interaction.options.getSubcommand();
     switch (subcommand) {
-      case 'upload':
-        const attachment = interaction.options.getAttachment('data', true);
-        await interaction.deferReply({ephemeral:true});
-        try {
-          await storedata(interaction.user.id, attachment);
-        }
-        catch (e) {
-          interaction.editReply(JSON.stringify(e, null, 2).slice(0, 2000));
-          return;
-        }
-        interaction.editReply("Data successfully uploaded");
-      return;
-      case 'char':
-        const user = interaction.options.getUser('user', false) || interaction.user;
-        const charname = interaction.options.getString('char', true);
-        let chardata : any;
-        let result : any;
-        try {
-            chardata = getchar(user.id, charname);
-            result = calc(chardata);
-        }
-        catch (e) {
-            console.log(e);
-            interaction.reply({
-              content: JSON.stringify(e, null, 2).slice(0, 2000),
-              ephemeral: true
-            });
-            return;
-        }
-        interaction.reply('```json\n'+JSON.stringify(result, null, 2).slice(0, 1980)+'```');
-      return;
+        case 'upload':
+            const attachment = interaction.options.getAttachment('data', true);
+            await interaction.deferReply({ephemeral:true});
+            try {
+                await storedata(interaction.user.id, attachment);
+            }
+            catch (e) {
+                interaction.editReply(JSON.stringify(e, null, 2).slice(0, 2000));
+                return;
+            }
+            interaction.editReply("Data successfully uploaded");
+        return;
+        case 'char':
+            const user = interaction.options.getUser('user', false) || interaction.user;
+            const charname = interaction.options.getString('name', true);
+            const target = interaction.options.getString('target', true);
+            const userdata = getuserdata(user.id);
+            let result : any;
+            try {
+                if (!(userdata.character?.name == charname)) getchardata(user.id, charname);
+                result = calc(userdata.character.calculator, target);
+            }
+            catch (e) {
+                console.log(e);
+                interaction.reply({
+                    content: JSON.stringify(e, null, 2).slice(0, 2000),
+                    ephemeral: true
+                });
+                return;
+            }
+            interaction.reply('```json\n'+JSON.stringify(result, null, 2).slice(0, 1980)+'```');
+        return;
     }
 }
