@@ -7,6 +7,7 @@ import AquaSimulacra from './AquaSimulacra'
 import BlackcliffWarbow from './BlackcliffWarbow'
 import CompoundBow from './CompoundBow'
 import ElegyForTheEnd from './ElegyForTheEnd'
+import EndOfTheLine from './EndOfTheLine'
 import FadingTwilight from './FadingTwilight'
 import FavoniusWarbow from './FavoniusWarbow'
 import Hamayumi from './Hamayumi'
@@ -20,6 +21,7 @@ import MouunsMoon from './MouunsMoon'
 import PolarStar from './PolarStar'
 import Predator from './Predator'
 import PrototypeCrescent from './PrototypeCrescent'
+import RangeGauge from './RangeGauge'
 import RavenBow from './RavenBow'
 import RecurveBow from './RecurveBow'
 import RoyalBow from './RoyalBow'
@@ -35,9 +37,7 @@ import TheFirstGreatMagic from './TheFirstGreatMagic'
 import TheStringless from './TheStringless'
 import TheViridescentHunt from './TheViridescentHunt'
 import ThunderingPulse from './ThunderingPulse'
-import EndOfTheLine from './EndOfTheLine'
 import WindblumeOde from './WindblumeOde'
-
 const bow: Record<WeaponBowKey, WeaponSheet> = {
   AlleyHunter,
   AmosBow,
@@ -58,6 +58,7 @@ const bow: Record<WeaponBowKey, WeaponSheet> = {
   PolarStar,
   Predator,
   PrototypeCrescent,
+  RangeGauge,
   RavenBow,
   RecurveBow,
   RoyalBow,
