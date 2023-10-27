@@ -131,7 +131,7 @@ function FormulaAccordian({ node }: { node: NodeDisplay }) {
 
   return (
     <Accordion
-      sx={{ bgcolor: 'contentDark.main' }}
+      sx={{ bgcolor: 'contentNormal.main' }}
       expanded={node === contextNode || expanded}
       onChange={handleChange}
       ref={scrollRef}

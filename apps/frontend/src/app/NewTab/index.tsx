@@ -1,3 +1,4 @@
+import { theme } from '@genshin-optimizer/gi-ui'
 import { DynamicFeed, Refresh } from '@mui/icons-material'
 import {
   Box,
@@ -12,9 +13,8 @@ import {
 } from '@mui/material'
 import { useTranslation } from 'react-i18next'
 import CardLight from '../Components/Card/CardLight'
-import { theme } from '../Theme'
-import derp from './derp.jpeg'
 import '../i18n'
+import derp from './derp.jpeg'
 
 export default function NewTab() {
   const { t } = useTranslation('page_newTab')

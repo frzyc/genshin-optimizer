@@ -1,4 +1,5 @@
 import { DBLocalStorage, SandboxStorage } from '@genshin-optimizer/database'
+import { theme } from '@genshin-optimizer/gi-ui'
 import { KeyboardArrowUp } from '@mui/icons-material'
 import {
   Box,
@@ -9,10 +10,10 @@ import {
   Skeleton,
   StyledEngineProvider,
   ThemeProvider,
-  useScrollTrigger,
   Zoom,
+  useScrollTrigger,
 } from '@mui/material'
-import React, { lazy, Suspense, useCallback, useMemo, useState } from 'react'
+import React, { Suspense, lazy, useCallback, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { HashRouter, Route, Routes, useMatch } from 'react-router-dom'
 import './App.scss'
@@ -21,9 +22,8 @@ import { ArtCharDatabase, DatabaseContext } from './Database/Database'
 import ErrorBoundary from './ErrorBoundary'
 import Footer from './Footer'
 import Header from './Header'
-import './i18n'
 import useTitle from './ReactHooks/useTitle'
-import { theme } from './Theme'
+import './i18n'
 
 const PageHome = lazy(() => import('./PageHome'))
 const PageArtifact = lazy(() => import('./PageArtifact'))
@@ -70,8 +70,10 @@ function ScrollTop({ children }: { children: React.ReactElement }) {
 
 function App() {
   const dbIndex = parseInt(localStorage.getItem('dbIndex') || '1')
-  const [databases, setDatabases] = useState(() =>
-    ([1, 2, 3, 4] as const).map((index) => {
+  const [databases, setDatabases] = useState(() => {
+    localStorage.removeItem('GONewTabDetection')
+    localStorage.setItem('GONewTabDetection', 'debug')
+    return ([1, 2, 3, 4] as const).map((index) => {
       if (index === dbIndex) {
         return new ArtCharDatabase(index, new DBLocalStorage(localStorage))
       } else {
@@ -83,7 +85,7 @@ function App() {
         return db
       }
     })
-  )
+  })
   const setDatabase = useCallback(
     (index: number, db: ArtCharDatabase) => {
       const dbs = [...databases]

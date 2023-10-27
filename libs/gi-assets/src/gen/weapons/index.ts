@@ -96,6 +96,7 @@ import PortablePowerSaw from './PortablePowerSaw'
 import Predator from './Predator'
 import PrimordialJadeCutter from './PrimordialJadeCutter'
 import PrimordialJadeWingedSpear from './PrimordialJadeWingedSpear'
+import ProspectorsDrill from './ProspectorsDrill'
 import PrototypeAmber from './PrototypeAmber'
 import PrototypeArchaic from './PrototypeArchaic'
 import PrototypeCrescent from './PrototypeCrescent'
@@ -103,6 +104,7 @@ import PrototypeRancour from './PrototypeRancour'
 import PrototypeStarglitter from './PrototypeStarglitter'
 import QuantumCatalyst from './QuantumCatalyst'
 import Rainslasher from './Rainslasher'
+import RangeGauge from './RangeGauge'
 import RavenBow from './RavenBow'
 import RecurveBow from './RecurveBow'
 import RedhornStonethresher from './RedhornStonethresher'
@@ -271,6 +273,7 @@ const data = {
   Predator,
   PrimordialJadeCutter,
   PrimordialJadeWingedSpear,
+  ProspectorsDrill,
   PrototypeAmber,
   PrototypeArchaic,
   PrototypeCrescent,
@@ -278,6 +281,7 @@ const data = {
   PrototypeStarglitter,
   QuantumCatalyst,
   Rainslasher,
+  RangeGauge,
   RavenBow,
   RecurveBow,
   RedhornStonethresher,
