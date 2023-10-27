@@ -1,5 +1,5 @@
 import type { Palette, PaletteColor } from '@mui/material'
-import { styled } from "@mui/material/styles"
+import { styled } from '@mui/material/styles'
 import type { HTMLAttributes } from 'react'
 
 interface ColorTextProps extends HTMLAttributes<HTMLSpanElement> {

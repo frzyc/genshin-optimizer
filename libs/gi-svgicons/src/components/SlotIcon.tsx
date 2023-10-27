@@ -1,11 +1,5 @@
 import type { ArtifactSlotKey } from '@genshin-optimizer/consts'
-import {
-  CircletIcon,
-  FlowerIcon,
-  GobletIcon,
-  PlumeIcon,
-  SandsIcon,
-} from '../'
+import { CircletIcon, FlowerIcon, GobletIcon, PlumeIcon, SandsIcon } from '../'
 import type { SvgIconProps } from '@mui/material'
 
 export function SlotIcon({

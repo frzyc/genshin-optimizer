@@ -3,7 +3,7 @@
     "jsx": "react-jsx",
     "esModuleInterop": false,
     "jsxImportSource": "@emotion/react",
-    "exactOptionalPropertyTypes": false,
+    "exactOptionalPropertyTypes": false
   },
   "files": [],
   "include": [],

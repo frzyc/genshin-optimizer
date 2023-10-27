@@ -11,7 +11,7 @@ export default function User({ session }: { session: Session }) {
       userId,
     },
   })
-  console.log({data, loading, error})
+  console.log({ data, loading, error })
   if (loading) return null //TODO:suspense
   if (error) return null //TODO: error
   const user = data?.getUserById
