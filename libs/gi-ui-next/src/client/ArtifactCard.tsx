@@ -35,8 +35,14 @@ import {
 } from '@mui/material'
 import { Suspense, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
-import PercentBadge from './PercentBadge'
-import { artifactLevelVariant } from './util'
+import {
+  ArtifactSlotDesc,
+  ArtifactSlotName,
+  PercentBadge,
+  artifactLevelVariant,
+} from '@genshin-optimizer/gi-ui'
+import Image from 'next/image'
+import { assetWrapper } from './util'
 
 // TODO: translations
 const sheet = {
@@ -118,23 +124,10 @@ export function ArtifactCard({
   )
 
   const artifactValid = maxEfficiency !== 0
-  const slotName = sheet?.getSlotName(slotKey)
-  const slotDesc = sheet?.getSlotDesc(slotKey)
-  const slotDescTooltip = slotDesc && (
-    <InfoTooltip
-      title={
-        <Box>
-          <Suspense fallback={<Skeleton variant="text" width={100} />}>
-            <Typography variant="h6">{slotName}</Typography>
-          </Suspense>
-          <Typography>{slotDesc}</Typography>
-        </Box>
-      }
-    />
-  )
+  const slotName = <ArtifactSlotName setKey={setKey} slotKey={slotKey} />
+  const slotDesc = <ArtifactSlotDesc setKey={setKey} slotKey={slotKey} />
+
   const ele = allElementWithPhyKeys.find((e) => mainStatKey.startsWith(e))
-  const image = artifactAsset(setKey, slotKey)
-  const src = typeof image === 'object' ? image.src : image
   return (
     <Suspense
       fallback={
@@ -144,104 +137,16 @@ export function ArtifactCard({
         />
       }
     >
-      {/* {editorProps && (
-        <Suspense fallback={false}>
-          <ArtifactEditor
-            artifactIdToEdit={showEditor ? artifactId : ''}
-            cancelEdit={onHideEditor}
-            {...editorProps}
-          />
-        </Suspense>
-      )} */}
       <CardThemed
         bgt="light"
         sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}
       >
-        <Box
-          className={`grad-${rarity}star`}
-          sx={{ position: 'relative', width: '100%' }}
-        >
-          <IconButton
-            color="primary"
-            disabled={disabled}
-            onClick={() => {}} // TODO: lock onlick
-            sx={{ position: 'absolute', right: 0, bottom: 0, zIndex: 2 }}
-          >
-            {lock ? <Lock /> : <LockOpen />}
-          </IconButton>
-
-          <Box sx={{ pt: 2, px: 2, position: 'relative', zIndex: 1 }}>
-            {/* header */}
-            <Box
-              component="div"
-              sx={{ display: 'flex', alignItems: 'center', gap: 0.4, mb: 1 }}
-            >
-              <Chip
-                size="small"
-                label={<strong>{` +${level}`}</strong>}
-                color={artifactLevelVariant(level)}
-              />
-              {!slotName && <Skeleton variant="text" width={100} />}
-              {slotName && (
-                <Typography
-                  noWrap
-                  sx={{
-                    textAlign: 'center',
-                    backgroundColor: 'rgba(100,100,100,0.35)',
-                    borderRadius: '1em',
-                    px: 1.5,
-                  }}
-                >
-                  <strong>{slotName}</strong>
-                </Typography>
-              )}
-              {!slotDescTooltip ? <Skeleton width={10} /> : slotDescTooltip}
-            </Box>
-            <Typography
-              color="text.secondary"
-              variant="body2"
-              sx={{ display: 'flex', gap: 0.5, alignItems: 'center' }}
-            >
-              <SlotIcon iconProps={{ fontSize: 'inherit' }} slotKey={slotKey} />
-              {t(`slotName.${slotKey}`)}
-            </Typography>
-            <Typography
-              variant="h6"
-              sx={{ display: 'flex', alignItems: 'center', gap: 1 }}
-            >
-              <StatIcon
-                statKey={mainStatKey}
-                iconProps={{ sx: { color: `${ele}.main` } }}
-              />
-              <span>{tk(mainStatKey)}</span>
-            </Typography>
-            <Typography variant="h5">
-              <strong>
-                <ColorText
-                  color={mainStatLevel !== level ? 'warning' : undefined}
-                >
-                  {getMainStatDisplayStr(mainStatKey, rarity, mainStatLevel)}
-                </ColorText>
-              </strong>
-            </Typography>
-            <StarsDisplay stars={rarity} colored />
-            {/* {process.env.NODE_ENV === "development" && <Typography color="common.black">{id || `""`} </Typography>} */}
-          </Box>
-          <Box sx={{ height: '100%', position: 'absolute', right: 0, top: 0 }}>
-            <Box
-              component="img"
-              src={src}
-              width="auto"
-              height="110%"
-              sx={{
-                float: 'right',
-                marginBottom: '-5%',
-                marginTop: '-5%',
-                marginRight: '-5%',
-              }}
-            />
-          </Box>
-        </Box>
+        <Header
+          artifact={artifact}
+          mainStatAssumptionLevel={mainStatAssumptionLevel}
+          disabled={disabled}
+        />
+        {/* Substats & efficiency */}
         <CardContent
           sx={{
             flexGrow: 1,
@@ -312,6 +217,7 @@ export function ArtifactCard({
           )} */}
           <Typography color="success.main">
             {setKey}
+            {/* TODO: */}
             {/* {sheet?.name ?? 'Artifact Set'} */}{' '}
             {/* {sheet && (
                 <InfoTooltipInline
@@ -320,6 +226,7 @@ export function ArtifactCard({
               )} */}
           </Typography>
         </CardContent>
+        {/* Footer */}
         <Box
           sx={{
             p: 1,
@@ -379,6 +286,131 @@ export function ArtifactCard({
         </Box>
       </CardThemed>
     </Suspense>
+  )
+}
+function Header({
+  artifact,
+  mainStatAssumptionLevel = 0,
+  disabled = false,
+}: Data): JSX.Element | null {
+  const { t } = useTranslation(['artifact', 'ui'])
+  const { t: tk } = useTranslation('statKey_gen')
+  const {
+    lock,
+    slotKey,
+    setKey,
+    rarity,
+    level,
+    mainStatKey,
+    substats,
+    location = '',
+  } = artifact
+
+  const mainStatLevel = Math.max(
+    Math.min(mainStatAssumptionLevel, rarity * 4),
+    level
+  )
+
+  const slotName = <ArtifactSlotName setKey={setKey} slotKey={slotKey} />
+  const slotDesc = <ArtifactSlotDesc setKey={setKey} slotKey={slotKey} />
+
+  const ele = allElementWithPhyKeys.find((e) => mainStatKey.startsWith(e))
+  return (
+    <Box
+      className={`grad-${rarity}star`}
+      sx={{ position: 'relative', width: '100%' }}
+    >
+      <IconButton
+        color="primary"
+        disabled={disabled}
+        onClick={() => {}} // TODO: lock onlick
+        sx={{ position: 'absolute', right: 0, bottom: 0, zIndex: 2 }}
+      >
+        {lock ? <Lock /> : <LockOpen />}
+      </IconButton>
+
+      <Box sx={{ pt: 2, px: 2, position: 'relative', zIndex: 1 }}>
+        {/* header */}
+        <Box
+          component="div"
+          sx={{ display: 'flex', alignItems: 'center', gap: 0.4, mb: 1 }}
+        >
+          <Chip
+            size="small"
+            label={<strong>{` +${level}`}</strong>}
+            color={artifactLevelVariant(level)}
+          />
+          <Typography
+            noWrap
+            sx={{
+              textAlign: 'center',
+              backgroundColor: 'rgba(100,100,100,0.35)',
+              borderRadius: '1em',
+              px: 1.5,
+            }}
+          >
+            <strong>{slotName}</strong>
+          </Typography>
+          <InfoTooltip
+            title={
+              <Box>
+                <Suspense fallback={<Skeleton variant="text" width={100} />}>
+                  <Typography variant="h6">{slotName}</Typography>
+                </Suspense>
+                <Typography>{slotDesc}</Typography>
+              </Box>
+            }
+          />
+        </Box>
+        <Typography
+          color="text.secondary"
+          variant="body2"
+          sx={{ display: 'flex', gap: 0.5, alignItems: 'center' }}
+        >
+          <SlotIcon iconProps={{ fontSize: 'inherit' }} slotKey={slotKey} />
+          {t(`slotName.${slotKey}`)}
+        </Typography>
+        <Typography
+          variant="h6"
+          sx={{ display: 'flex', alignItems: 'center', gap: 1 }}
+        >
+          <StatIcon
+            statKey={mainStatKey}
+            iconProps={{ sx: { color: `${ele}.main` } }}
+          />
+          <span>{tk(mainStatKey)}</span>
+        </Typography>
+        <Typography variant="h5">
+          <strong>
+            <ColorText color={mainStatLevel !== level ? 'warning' : undefined}>
+              {getMainStatDisplayStr(mainStatKey, rarity, mainStatLevel)}
+            </ColorText>
+          </strong>
+        </Typography>
+        <StarsDisplay stars={rarity} colored />
+      </Box>
+      <Box
+        sx={{
+          height: '125%',
+          width: '125%',
+          position: 'absolute',
+          top: 0,
+          right: 0,
+          m: '-5%',
+        }}
+      >
+        <Image
+          src={assetWrapper(artifactAsset(setKey, slotKey))}
+          fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          alt=""
+          style={{
+            objectFit: 'contain',
+            objectPosition: 'right',
+          }}
+        />
+      </Box>
+    </Box>
   )
 }
 function SubstatDisplay({
@@ -442,7 +474,7 @@ function SubstatDisplay({
     </Box>
   )
 }
-export function SmolProgress({ color = 'red', value = 50 }) {
+function SmolProgress({ color = 'red', value = 50 }) {
   return (
     <Box
       sx={{
