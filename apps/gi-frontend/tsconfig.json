@@ -6,7 +6,8 @@
     "types": ["vite/client", "vitest"],
     "module": "ESNext",
     "resolveJsonModule": true,
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "exactOptionalPropertyTypes": false
   },
   "files": [],
   "include": [],

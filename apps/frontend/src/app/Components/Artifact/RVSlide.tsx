@@ -41,7 +41,7 @@ export default function RVSlide({
         width: '100%',
         display: 'flex',
         alignItems: 'center',
-        bgcolor: dark ? 'contentDark.main' : 'contentLight.main',
+        bgcolor: dark ? 'contentNormal.main' : 'contentLight.main',
         overflow: 'visible',
       }}
     >

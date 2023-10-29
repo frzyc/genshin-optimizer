@@ -6,6 +6,9 @@ interface ColorTextProps extends HTMLAttributes<HTMLSpanElement> {
   color?: ButtonProps['color']
 }
 
+/**
+ * @deprecated use SqBadge in `@genshin-optimizer/ui-common`
+ */
 const SqBadge = styled('span', {
   name: 'SqBadge',
   slot: 'Root',

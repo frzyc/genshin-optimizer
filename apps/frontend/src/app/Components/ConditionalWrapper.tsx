@@ -7,6 +7,9 @@ type Prop = {
   children: ReactNode
 }
 // Wrap children with element provided by wrapper func when condition is true.
+/**
+ * @deprecated use `ConditionalWrapper` in `@genshin-optimizer/ui-common`
+ */
 export default function ConditionalWrapper({
   condition,
   wrapper,

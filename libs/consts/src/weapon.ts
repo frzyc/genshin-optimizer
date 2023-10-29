@@ -118,6 +118,7 @@ export const allWeaponPolearmKeys = [
   'VortexVanquisher',
   'WavebreakersFin',
   'WhiteTassel',
+  'ProspectorsDrill',
 ] as const
 export type WeaponPoleArmKey = (typeof allWeaponPolearmKeys)[number]
 
@@ -142,6 +143,7 @@ export const allWeaponBowKeys = [
   'PolarStar',
   'Predator',
   'PrototypeCrescent',
+  'RangeGauge',
   'RavenBow',
   'RecurveBow',
   'RoyalBow',
