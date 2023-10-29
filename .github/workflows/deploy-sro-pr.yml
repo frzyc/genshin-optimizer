@@ -25,6 +25,7 @@ on:
       - 'libs/gi-stats/**'
       - 'libs/gi-svgicons/**'
       - 'libs/gi-util/**'
+      - 'libs/gi-ui/**'
     types: [opened, reopened, synchronize]
 
 jobs:

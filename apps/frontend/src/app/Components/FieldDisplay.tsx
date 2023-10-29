@@ -220,8 +220,8 @@ export interface FieldDisplayListProps extends ListProps {
 export const FieldDisplayList = styled(List)<FieldDisplayListProps>(
   ({
     theme,
-    light = 'contentDark',
-    dark = 'contentDarker',
+    light = 'contentNormal',
+    dark = 'contentDark',
     palletOption = 'main',
   }) => ({
     borderRadius: theme.shape.borderRadius,

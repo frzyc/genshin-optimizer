@@ -1,7 +1,7 @@
 import type { CharacterKey } from '@genshin-optimizer/consts'
 import type { IArtifact } from '../Types/artifact'
 import type { IWeapon } from '../Types/weapon'
-import { randomizeArtifact } from '@genshin-optimizer/gi-good'
+import { randomizeArtifact } from '@genshin-optimizer/gi-util'
 import { defaultInitialWeapon, initialWeapon } from '../Util/WeaponUtil'
 import { ArtCharDatabase } from './Database'
 import { initialCharacter } from './DataManagers/CharacterData'
