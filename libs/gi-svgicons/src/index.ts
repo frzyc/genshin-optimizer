@@ -25,3 +25,6 @@ export * from './icons/Stats/HealingBonusIcon'
 export * from './icons/Stats/HpIcon'
 export * from './icons/Stats/ShieldStrIcon'
 export * from './icons/Stats/StaminaIcon'
+
+export * from './components/SlotIcon'
+export * from './components/StatIcon'

@@ -1,6 +1,9 @@
 import InfoIcon from '@mui/icons-material/Info'
 import type { TooltipProps } from '@mui/material'
 import BootstrapTooltip from './BootstrapTooltip'
+/**
+ * @deprecated use `InfoTooltip` in `@genshin-optimizer/ui-common`
+ */
 export default function InfoTooltip(props: Omit<TooltipProps, 'children'>) {
   return (
     <BootstrapTooltip placement="top" {...props}>
@@ -9,6 +12,9 @@ export default function InfoTooltip(props: Omit<TooltipProps, 'children'>) {
   )
 }
 
+/**
+ * @deprecated use `InfoTooltipInline` in `@genshin-optimizer/ui-common`
+ */
 export function InfoTooltipInline(props: Omit<TooltipProps, 'children'>) {
   return (
     <BootstrapTooltip placement="top" {...props}>
