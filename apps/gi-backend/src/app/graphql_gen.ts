@@ -24,6 +24,29 @@ export interface InputSubstat {
     value: number;
 }
 
+export interface InputWeapon {
+    key: string;
+    level: number;
+    ascension: number;
+    refinement: number;
+    location: string;
+    lock: boolean;
+}
+
+export interface InputCharacter {
+    key: string;
+    level: number;
+    ascension: number;
+    constellation: number;
+    talent: InputTalent;
+}
+
+export interface InputTalent {
+    auto: number;
+    skill: number;
+    burst: number;
+}
+
 export interface GenshinUser {
     id: string;
     uid: string;
@@ -70,6 +93,45 @@ export interface AddArtifactRes {
     error?: Nullable<string>;
 }
 
+export interface Weapon {
+    id: string;
+    genshinUserId: string;
+    key: string;
+    level: number;
+    ascension: number;
+    refinement: number;
+    location: string;
+    lock: boolean;
+}
+
+export interface AddWeaponRes {
+    success: boolean;
+    weapon?: Nullable<Weapon>;
+    error?: Nullable<string>;
+}
+
+export interface Talent {
+    auto: number;
+    skill: number;
+    burst: number;
+}
+
+export interface Character {
+    id: string;
+    genshinUserId: string;
+    key: string;
+    level: number;
+    ascension: number;
+    constellation: number;
+    talent: Talent;
+}
+
+export interface AddCharacterRes {
+    success: boolean;
+    character?: Nullable<Character>;
+    error?: Nullable<string>;
+}
+
 export interface IQuery {
     getUserById(id: string): Nullable<User> | Promise<Nullable<User>>;
     searchUsers(username: string): User[] | Promise<User[]>;
@@ -77,12 +139,18 @@ export interface IQuery {
     getGenshinUserByUid(uid: string): Nullable<GenshinUser> | Promise<Nullable<GenshinUser>>;
     getArtifact(id: string): Nullable<Artifact> | Promise<Nullable<Artifact>>;
     getAllUserArtifact(genshinUserId: string): Artifact[] | Promise<Artifact[]>;
+    getWeapon(id: string): Nullable<Weapon> | Promise<Nullable<Weapon>>;
+    getAllUserWeapon(genshinUserId: string): Weapon[] | Promise<Weapon[]>;
+    getCharacter(id: string): Nullable<Character> | Promise<Nullable<Character>>;
+    getAllUserCharacter(genshinUserId: string): Character[] | Promise<Character[]>;
 }
 
 export interface IMutation {
     createUsername(username: string): CreateUserNameResponse | Promise<CreateUserNameResponse>;
     addGenshinUser(uid: string): AddGenshinUserRes | Promise<AddGenshinUserRes>;
     addArtifact(genshinUserId: string, artifact: InputArtifact): AddArtifactRes | Promise<AddArtifactRes>;
+    addWeapon(genshinUserId: string, weapon: InputWeapon): AddWeaponRes | Promise<AddWeaponRes>;
+    addCharacter(genshinUserId: string, character: InputCharacter): AddCharacterRes | Promise<AddCharacterRes>;
 }
 
 type Nullable<T> = T | null;

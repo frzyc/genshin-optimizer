@@ -1,0 +1,28 @@
+query getAllUserCharacter($genshinUserId: String!) {
+  getAllUserCharacter(genshinUserId: $genshinUserId) {
+    ...CharacterParts
+  }
+}
+
+mutation addCharacter($genshinUserId: String!, $character: InputCharacter!) {
+  addCharacter(genshinUserId: $genshinUserId, character: $character) {
+    success
+    character {
+      ...CharacterParts
+    }
+    error
+  }
+}
+
+fragment CharacterParts on Character {
+  id
+  key
+  level
+  ascension
+  constellation
+  talent {
+    auto
+    skill
+    burst
+  }
+}

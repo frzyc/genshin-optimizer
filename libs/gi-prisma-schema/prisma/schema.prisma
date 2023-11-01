@@ -72,15 +72,17 @@ model VerificationToken {
 
 // Genshin UID
 model GenshinUser {
-  id         String     @id @default(auto()) @map("_id") @db.ObjectId
-  uid        String     @unique
+  id         String      @id @default(auto()) @map("_id") @db.ObjectId
+  uid        String      @unique
   artifacts  Artifact[]
+  weapons    Weapon[]
+  characters Character[]
   nickname   String?
   Signature  String?
   worldLevel Int?
   nameCardId Int?
-  user       User       @relation(fields: [userId], references: [id], onDelete: Cascade)
-  userId     String     @db.ObjectId
+  user       User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId     String      @db.ObjectId
 }
 
 model Artifact {
@@ -100,4 +102,34 @@ model Artifact {
 type Substat {
   key   String
   value Float
+}
+
+model Weapon {
+  id            String      @id @default(auto()) @map("_id") @db.ObjectId
+  genshinUser   GenshinUser @relation(fields: [genshinUserId], references: [id], onDelete: Cascade)
+  genshinUserId String      @db.ObjectId
+  key           String
+  level         Int
+  ascension     Int
+  refinement     Int
+  location      String
+  lock          Boolean
+}
+
+model Character {
+  id            String      @id @default(auto()) @map("_id") @db.ObjectId
+  genshinUser   GenshinUser @relation(fields: [genshinUserId], references: [id], onDelete: Cascade)
+  genshinUserId String      @db.ObjectId
+  key           String
+  level         Int
+  ascension     Int
+  constellation Int
+  talent        Talent
+  @@unique([genshinUserId, key])
+}
+
+type Talent {
+  auto  Int
+  skill Int
+  burst Int
 }

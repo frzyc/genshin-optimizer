@@ -1,0 +1,10 @@
+mutation addGenshinUser($uid: String!) {
+  addGenshinUser(uid: $uid) {
+    success
+    genshinUser {
+      id
+      uid
+    }
+    error
+  }
+}

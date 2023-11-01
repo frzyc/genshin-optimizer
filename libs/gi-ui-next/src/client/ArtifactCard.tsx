@@ -44,12 +44,6 @@ import {
 import Image from 'next/image'
 import { assetWrapper } from './util'
 
-// TODO: translations
-const sheet = {
-  getSlotName: (s: string) => s,
-  getSlotDesc: (s: string) => s,
-}
-
 type Data = {
   artifact: IArtifact
   mainStatAssumptionLevel?: number
@@ -69,17 +63,7 @@ export function ArtifactCard({
   extraButtons,
 }: Data): JSX.Element | null {
   const { t } = useTranslation(['artifact', 'ui'])
-  const { t: tk } = useTranslation('statKey_gen')
-  const {
-    lock,
-    slotKey,
-    setKey,
-    rarity,
-    level,
-    mainStatKey,
-    substats,
-    location = '',
-  } = artifact
+  const { slotKey, setKey, rarity, level, mainStatKey } = artifact
   // const setLocation = useCallback(
   //   (k: LocationKey) =>
   //     artifactId && database.arts.set(artifactId, { location: k }),
@@ -320,15 +304,16 @@ function Header({
       className={`grad-${rarity}star`}
       sx={{ position: 'relative', width: '100%' }}
     >
-      <IconButton
-        color="primary"
-        disabled={disabled}
-        onClick={() => {}} // TODO: lock onlick
-        sx={{ position: 'absolute', right: 0, bottom: 0, zIndex: 2 }}
-      >
-        {lock ? <Lock /> : <LockOpen />}
-      </IconButton>
-
+      {!disabled && (
+        <IconButton
+          color="primary"
+          disabled={disabled}
+          onClick={() => {}} // TODO: lock onclick
+          sx={{ position: 'absolute', right: 0, bottom: 0, zIndex: 2 }}
+        >
+          {lock ? <Lock /> : <LockOpen />}
+        </IconButton>
+      )}
       <Box sx={{ pt: 2, px: 2, position: 'relative', zIndex: 1 }}>
         {/* header */}
         <Box

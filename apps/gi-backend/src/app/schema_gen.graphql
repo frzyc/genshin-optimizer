@@ -48,6 +48,45 @@ type AddArtifactRes {
   error: String
 }
 
+type Weapon {
+  id: ID!
+  genshinUserId: String!
+  key: String!
+  level: Int!
+  ascension: Int!
+  refinement: Int!
+  location: String!
+  lock: Boolean!
+}
+
+type AddWeaponRes {
+  success: Boolean!
+  weapon: Weapon
+  error: String
+}
+
+type Talent {
+  auto: Int!
+  skill: Int!
+  burst: Int!
+}
+
+type Character {
+  id: ID!
+  genshinUserId: String!
+  key: String!
+  level: Int!
+  ascension: Int!
+  constellation: Int!
+  talent: Talent!
+}
+
+type AddCharacterRes {
+  success: Boolean!
+  character: Character
+  error: String
+}
+
 type Query {
   getUserById(id: String!): User
   searchUsers(username: String!): [User!]!
@@ -55,12 +94,18 @@ type Query {
   getGenshinUserByUid(uid: String!): GenshinUser
   getArtifact(id: String!): Artifact
   getAllUserArtifact(genshinUserId: String!): [Artifact!]!
+  getWeapon(id: String!): Weapon
+  getAllUserWeapon(genshinUserId: String!): [Weapon!]!
+  getCharacter(id: String!): Character
+  getAllUserCharacter(genshinUserId: String!): [Character!]!
 }
 
 type Mutation {
   createUsername(username: String!): CreateUserNameResponse!
   addGenshinUser(uid: String!): AddGenshinUserRes!
   addArtifact(genshinUserId: String!, artifact: InputArtifact!): AddArtifactRes!
+  addWeapon(genshinUserId: String!, weapon: InputWeapon!): AddWeaponRes!
+  addCharacter(genshinUserId: String!, character: InputCharacter!): AddCharacterRes!
 }
 
 input InputArtifact {
@@ -77,4 +122,27 @@ input InputArtifact {
 input InputSubstat {
   key: String!
   value: Float!
+}
+
+input InputWeapon {
+  key: String!
+  level: Int!
+  ascension: Int!
+  refinement: Int!
+  location: String!
+  lock: Boolean!
+}
+
+input InputCharacter {
+  key: String!
+  level: Int!
+  ascension: Int!
+  constellation: Int!
+  talent: InputTalent!
+}
+
+input InputTalent {
+  auto: Int!
+  skill: Int!
+  burst: Int!
 }

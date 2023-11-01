@@ -3,8 +3,8 @@ import { useGetUserQuery } from '@genshin-optimizer/gi-frontend-gql'
 import { CardThemed } from '@genshin-optimizer/ui-common'
 import { CardContent, CardHeader, Divider } from '@mui/material'
 import { useSession } from 'next-auth/react'
-import AddArtButton from './components/AddArtButton'
-import ArtifactList from './components/ArtifactList'
+import AddCharacterButton from './components/AddCharacterButton'
+import WeaponList from './components/CharacterList'
 
 export default function ArtifactPage() {
   const { data: session } = useSession()
@@ -29,12 +29,12 @@ export default function ArtifactPage() {
   return (
     <CardThemed>
       <CardHeader
-        title="Artifact Page"
-        action={<AddArtButton genshinUserId={genshinUserId} />}
+        title="Character Page"
+        action={<AddCharacterButton genshinUserId={genshinUserId} />}
       />
       <Divider />
       <CardContent>
-        <ArtifactList genshinUserId={genshinUserId} />
+        <WeaponList genshinUserId={genshinUserId} />
       </CardContent>
     </CardThemed>
   )

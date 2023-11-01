@@ -13,6 +13,8 @@ import { PrismaModule } from './prisma/prisma.module'
 import { UserModule } from './user/user.module'
 import { GenshinUserModule } from './genshinUser/genshinUser.module'
 import { ArtifactModule } from './artifact/artifact.module'
+import { WeaponModule } from './weapon/weapon.module'
+import { CharacterModule } from './character/character.module'
 
 @Module({
   imports: [
@@ -40,6 +42,8 @@ import { ArtifactModule } from './artifact/artifact.module'
     UserModule,
     GenshinUserModule,
     ArtifactModule,
+    WeaponModule,
+    CharacterModule,
   ],
   controllers: [AppController],
   providers: [

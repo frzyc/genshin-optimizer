@@ -1,32 +1,3 @@
-mutation createUsername($username: String!) {
-  createUsername(username: $username) {
-    success
-    error
-  }
-}
-
-query getUser($userId: String!) {
-  getUserById(id: $userId) {
-    id
-    username
-    genshinUsers {
-      id
-      uid
-    }
-  }
-}
-
-mutation addGenshinUser($uid: String!) {
-  addGenshinUser(uid: $uid) {
-    success
-    genshinUser {
-      id
-      uid
-    }
-    error
-  }
-}
-
 query getAllUserArtifact($genshinUserId: String!) {
   getAllUserArtifact(genshinUserId: $genshinUserId) {
     ...ArtifactParts
