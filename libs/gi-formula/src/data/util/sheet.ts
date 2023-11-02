@@ -6,8 +6,10 @@ import type {
 } from '@genshin-optimizer/consts'
 import type { NumNode, StrNode } from '@genshin-optimizer/pando'
 import { prod } from '@genshin-optimizer/pando'
-import type { TagMapNodeEntries, Source, Stat, TagMapNodeEntry } from '.'
-import { reader, self, selfBuff, tag, teamBuff } from '.'
+import type { Source, Stat } from './listing'
+import { reader, tag } from './read'
+import { self, selfBuff, teamBuff } from './tag'
+import type { TagMapNodeEntries, TagMapNodeEntry } from './tagMapType'
 
 // Use `registerArt` for artifacts
 export function register(
