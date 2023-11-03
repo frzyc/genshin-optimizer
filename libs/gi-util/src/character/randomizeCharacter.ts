@@ -6,9 +6,7 @@ import {
 } from '@genshin-optimizer/util'
 import { validateLevelAsc } from '../level'
 
-export function randomizeCharacter(
-  base: Partial<ICharacter> = {}
-): ICharacter {
+export function randomizeCharacter(base: Partial<ICharacter> = {}): ICharacter {
   const key =
     base.key ??
     getRandomElementFromArray(allCharacterKeys.filter((c) => c !== 'Somnia')) // Do not return somnia

@@ -279,16 +279,7 @@ function Header({
 }: Data): JSX.Element | null {
   const { t } = useTranslation(['artifact', 'ui'])
   const { t: tk } = useTranslation('statKey_gen')
-  const {
-    lock,
-    slotKey,
-    setKey,
-    rarity,
-    level,
-    mainStatKey,
-    substats,
-    location = '',
-  } = artifact
+  const { lock, slotKey, setKey, rarity, level, mainStatKey } = artifact
 
   const mainStatLevel = Math.max(
     Math.min(mainStatAssumptionLevel, rarity * 4),

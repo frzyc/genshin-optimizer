@@ -1,13 +1,13 @@
 import type {
   MainStatKey,
   RarityKey,
-  SubstatKey
+  SubstatKey,
 } from '@genshin-optimizer/consts'
 import {
   allRarityKeys,
   allSubstatKeys,
   artMaxLevel,
-  artSubstatRollData
+  artSubstatRollData,
 } from '@genshin-optimizer/consts'
 import type { IArtifact } from '@genshin-optimizer/gi-good'
 import { allStats } from '@genshin-optimizer/gi-stats'
@@ -16,7 +16,7 @@ import {
   clampPercent,
   objKeyMap,
   toPercent,
-  unit
+  unit,
 } from '@genshin-optimizer/util'
 
 export function artDisplayValue(value: number, unit: Unit): string {
@@ -178,7 +178,6 @@ export function getArtifactEfficiency(
 
   return { currentEfficiency, maxEfficiency }
 }
-
 
 export type SubstatMeta = {
   key: SubstatKey | ''

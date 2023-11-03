@@ -1,5 +1,8 @@
 import { useGetAllUserCharacterQuery } from '@genshin-optimizer/gi-frontend-gql'
 import { Grid } from '@mui/material'
+import TestComponent from './TestComponent'
+import { CharacterCard } from '@genshin-optimizer/gi-ui-next'
+import type { ICharacter } from '@genshin-optimizer/gi-good'
 
 const columns = { xs: 1, sm: 2, md: 3, lg: 3, xl: 4 }
 export default function WeaponList({
@@ -14,10 +17,10 @@ export default function WeaponList({
   })
   return (
     <Grid container spacing={1} columns={columns}>
+      <TestComponent />
       {data?.getAllUserCharacter.map((character) => (
         <Grid item key={character.id} xs={1}>
-          {JSON.stringify(character)}
-          {/* <CharacterCard character={character as ICharacter} /> */}
+          <CharacterCard character={character as ICharacter} />
         </Grid>
       ))}
     </Grid>

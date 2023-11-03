@@ -1,6 +1,6 @@
 import {
   GetAllUserWeaponDocument,
-  useAddWeaponMutation
+  useAddWeaponMutation,
 } from '@genshin-optimizer/gi-frontend-gql'
 import { randomizeWeapon } from '@genshin-optimizer/gi-util'
 import { Button } from '@mui/material'

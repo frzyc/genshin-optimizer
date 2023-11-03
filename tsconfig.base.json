@@ -35,6 +35,7 @@
         "libs/gi-dm-localization/src/index.ts"
       ],
       "@genshin-optimizer/gi-formula": ["libs/gi-formula/src/index.ts"],
+      "@genshin-optimizer/gi-formula-ui": ["libs/gi-formula-ui/src/index.ts"],
       "@genshin-optimizer/gi-frontend-gql": [
         "libs/gi-frontend-gql/src/index.ts"
       ],

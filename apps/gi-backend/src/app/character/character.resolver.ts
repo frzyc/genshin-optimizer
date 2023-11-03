@@ -8,7 +8,7 @@ import {
   ObjectType,
   OmitType,
   Query,
-  Resolver
+  Resolver,
 } from '@nestjs/graphql'
 import { JWTUser } from '../_decorator/jwtuser.decorator'
 import { GenshinUserService } from '../genshinUser/genshinUser.service'
@@ -49,7 +49,6 @@ export class Character {
   @Field(() => Talent)
   talent: Talent
 }
-
 
 @InputType()
 class InputTalent {

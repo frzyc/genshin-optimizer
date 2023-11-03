@@ -11,14 +11,14 @@ import {
   allSubstatKeys,
   artMaxLevel,
   artSlotsData,
-  artSubstatRollData
+  artSubstatRollData,
 } from '@genshin-optimizer/consts'
 import type { IArtifact, ISubstat } from '@genshin-optimizer/gi-good'
 import { allStats } from '@genshin-optimizer/gi-stats'
 import {
   getRandomElementFromArray,
   getRandomIntInclusive,
-  unit
+  unit,
 } from '@genshin-optimizer/util'
 import { artDisplayValue, getSubstatValuesPercent } from './artifact'
 
