@@ -1,92 +1,8 @@
-import {
-  Args,
-  Field,
-  Float,
-  ID,
-  InputType,
-  Int,
-  Mutation,
-  ObjectType,
-  OmitType,
-  Query,
-  Resolver,
-} from '@nestjs/graphql'
+import { Args, Mutation, Query, Resolver } from '@nestjs/graphql'
 import { JWTUser } from '../_decorator/jwtuser.decorator'
 import { GenshinUserService } from '../genshinUser/genshinUser.service'
+import { Artifact, InputArtifact, UpdateArtifact } from './artifact.entity'
 import { ArtifactService } from './artifact.service'
-
-@ObjectType()
-export class Artifact {
-  @Field(() => ID)
-  id: string
-
-  @Field(() => String)
-  genshinUserId: string
-
-  @Field(() => String)
-  setKey: string
-
-  @Field(() => String)
-  slotKey: string
-
-  @Field(() => Int)
-  level: number
-
-  @Field(() => Int)
-  rarity: number
-
-  @Field(() => String)
-  mainStatKey: string
-
-  @Field(() => String)
-  location: string
-
-  @Field(() => Boolean)
-  lock: boolean
-
-  @Field(() => [Substat])
-  substats: Substat[]
-}
-
-@ObjectType()
-class Substat {
-  @Field(() => String)
-  key: string
-
-  @Field(() => Float)
-  value: number
-}
-
-@InputType()
-class InputSubstat {
-  @Field(() => String)
-  key: string
-
-  @Field(() => Float)
-  value: number
-}
-
-@InputType()
-export class InputArtifact extends OmitType(
-  Artifact,
-  ['id', 'genshinUserId', 'substats'] as const,
-  InputType
-) {
-  @Field(() => [InputSubstat])
-  substats: InputSubstat[]
-}
-
-@ObjectType()
-export class AddArtifactRes {
-  @Field(() => Boolean)
-  success: boolean
-
-  @Field(() => Artifact, { nullable: true })
-  artifact?: Artifact
-
-  @Field(() => String, { nullable: true })
-  error?: string
-}
 
 @Resolver(() => Artifact)
 export class ArtifactResolver {
@@ -105,21 +21,30 @@ export class ArtifactResolver {
     return await this.artifactService.findAllUser(genshinUserId)
   }
 
-  @Mutation(() => AddArtifactRes)
+  @Mutation(() => Artifact)
   async addArtifact(
     @JWTUser('sub') userId: string,
     @Args('genshinUserId') genshinUserId: string,
     @Args('artifact', { type: () => InputArtifact })
     inputArtifact: InputArtifact
-  ): Promise<AddArtifactRes> {
-    const genshinUser = await this.genshinUserService.findOne(genshinUserId)
-    if (!genshinUser) return { success: false, error: 'Invalid User' }
-    if (genshinUser.userId !== userId)
-      return { success: false, error: 'User does not own UID' }
+  ): Promise<Artifact> {
+    this.genshinUserService.validateGenshinUser(userId, genshinUserId)
     const artifact = await this.artifactService.create(
       inputArtifact,
       genshinUserId
     )
-    return { success: true, artifact }
+    return artifact
+  }
+
+  @Mutation(() => Artifact)
+  async updateArtifact(
+    @JWTUser('sub') userId: string,
+    @Args('genshinUserId') genshinUserId: string,
+    @Args('artifact', { type: () => UpdateArtifact })
+    updateArtifact: UpdateArtifact
+  ): Promise<Artifact> {
+    this.genshinUserService.validateGenshinUser(userId, genshinUserId)
+    const artifact = await this.artifactService.update(updateArtifact)
+    return artifact
   }
 }

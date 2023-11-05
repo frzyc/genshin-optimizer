@@ -32,7 +32,7 @@ type Artifact {
   level: Int!
   rarity: Int!
   mainStatKey: String!
-  location: String!
+  location: String
   lock: Boolean!
   substats: [Substat!]!
 }
@@ -40,12 +40,6 @@ type Artifact {
 type Substat {
   key: String!
   value: Float!
-}
-
-type AddArtifactRes {
-  success: Boolean!
-  artifact: Artifact
-  error: String
 }
 
 type Weapon {
@@ -103,7 +97,8 @@ type Query {
 type Mutation {
   createUsername(username: String!): CreateUserNameResponse!
   addGenshinUser(uid: String!): AddGenshinUserRes!
-  addArtifact(genshinUserId: String!, artifact: InputArtifact!): AddArtifactRes!
+  addArtifact(genshinUserId: String!, artifact: InputArtifact!): Artifact!
+  updateArtifact(genshinUserId: String!, artifact: UpdateArtifact!): Artifact!
   addWeapon(genshinUserId: String!, weapon: InputWeapon!): AddWeaponRes!
   addCharacter(genshinUserId: String!, character: InputCharacter!): AddCharacterRes!
 }
@@ -114,7 +109,7 @@ input InputArtifact {
   level: Int!
   rarity: Int!
   mainStatKey: String!
-  location: String!
+  location: String
   lock: Boolean!
   substats: [InputSubstat!]!
 }
@@ -122,6 +117,18 @@ input InputArtifact {
 input InputSubstat {
   key: String!
   value: Float!
+}
+
+input UpdateArtifact {
+  setKey: String
+  slotKey: String
+  level: Int
+  rarity: Int
+  mainStatKey: String
+  location: String
+  lock: Boolean
+  substats: [InputSubstat!]
+  id: ID!
 }
 
 input InputWeapon {

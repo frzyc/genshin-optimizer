@@ -14,7 +14,7 @@ export interface InputArtifact {
     level: number;
     rarity: number;
     mainStatKey: string;
-    location: string;
+    location?: Nullable<string>;
     lock: boolean;
     substats: InputSubstat[];
 }
@@ -22,6 +22,18 @@ export interface InputArtifact {
 export interface InputSubstat {
     key: string;
     value: number;
+}
+
+export interface UpdateArtifact {
+    setKey?: Nullable<string>;
+    slotKey?: Nullable<string>;
+    level?: Nullable<number>;
+    rarity?: Nullable<number>;
+    mainStatKey?: Nullable<string>;
+    location?: Nullable<string>;
+    lock?: Nullable<boolean>;
+    substats?: Nullable<InputSubstat[]>;
+    id: string;
 }
 
 export interface InputWeapon {
@@ -77,7 +89,7 @@ export interface Artifact {
     level: number;
     rarity: number;
     mainStatKey: string;
-    location: string;
+    location?: Nullable<string>;
     lock: boolean;
     substats: Substat[];
 }
@@ -85,12 +97,6 @@ export interface Artifact {
 export interface Substat {
     key: string;
     value: number;
-}
-
-export interface AddArtifactRes {
-    success: boolean;
-    artifact?: Nullable<Artifact>;
-    error?: Nullable<string>;
 }
 
 export interface Weapon {
@@ -148,7 +154,8 @@ export interface IQuery {
 export interface IMutation {
     createUsername(username: string): CreateUserNameResponse | Promise<CreateUserNameResponse>;
     addGenshinUser(uid: string): AddGenshinUserRes | Promise<AddGenshinUserRes>;
-    addArtifact(genshinUserId: string, artifact: InputArtifact): AddArtifactRes | Promise<AddArtifactRes>;
+    addArtifact(genshinUserId: string, artifact: InputArtifact): Artifact | Promise<Artifact>;
+    updateArtifact(genshinUserId: string, artifact: UpdateArtifact): Artifact | Promise<Artifact>;
     addWeapon(genshinUserId: string, weapon: InputWeapon): AddWeaponRes | Promise<AddWeaponRes>;
     addCharacter(genshinUserId: string, character: InputCharacter): AddCharacterRes | Promise<AddCharacterRes>;
 }

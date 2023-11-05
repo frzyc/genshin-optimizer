@@ -8,3 +8,15 @@ mutation addGenshinUser($uid: String!) {
     error
   }
 }
+
+query getAllData($genshinUserId: String!){
+  getAllUserArtifact(genshinUserId: $genshinUserId) {
+    ...ArtifactParts
+  }
+  getAllUserWeapon(genshinUserId: $genshinUserId) {
+    ...WeaponParts
+  }
+  getAllUserCharacter(genshinUserId: $genshinUserId) {
+    ...CharacterParts
+  }
+}

@@ -1,5 +1,6 @@
 import { Injectable } from '@nestjs/common'
 import { PrismaService } from '../prisma/prisma.service'
+import { GraphQLError } from 'graphql'
 
 @Injectable()
 export class GenshinUserService {
@@ -27,5 +28,11 @@ export class GenshinUserService {
 
   remove(id: string) {
     return this.prisma.genshinUser.delete({ where: { id } })
+  }
+  async validateGenshinUser(loggedInUserId: string, genshinUserId: string) {
+    const genshinUser = await this.findOne(genshinUserId)
+    if (!genshinUser) throw new GraphQLError('Invalid GenshinUser')
+    if (genshinUser.userId !== loggedInUserId)
+      throw new GraphQLError('User does not own UID')
   }
 }

@@ -6,7 +6,7 @@ import { useSession } from 'next-auth/react'
 import AddWeaponButton from './components/AddWeaponButton'
 import WeaponList from './components/WeaponList'
 
-export default function ArtifactPage() {
+export default function WeaponPage() {
   const { data: session } = useSession()
   const userId = session?.user.userId ?? ''
   const { data, loading, error } = useGetUserQuery({
@@ -14,7 +14,6 @@ export default function ArtifactPage() {
       userId,
     },
   })
-  console.log({ data, loading, error })
   if (loading) return null //TODO:suspense
   if (error) return null //TODO: error
   const user = data?.getUserById
@@ -24,7 +23,6 @@ export default function ArtifactPage() {
   const genshinUser = (genshinUsers ?? [])[0]
 
   const genshinUserId = genshinUser.id
-  console.log({ genshinUser })
 
   return (
     <CardThemed>

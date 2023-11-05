@@ -21,7 +21,7 @@ import { CharacterModule } from './character/character.module'
     PrismaModule,
     JwtModule.register({
       global: true,
-      secret: 'my-32-character-ultra-secure-and-ultra-long-secret',
+      secret: process.env['APP_JWT_SECRET'] ?? '',
     }),
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
