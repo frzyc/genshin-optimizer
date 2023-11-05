@@ -17,8 +17,7 @@ export default function AddArtButton({
         artifact: randomizeArtifact(),
       },
       update(cache, { data }) {
-        if (!data?.addArtifact.success) return
-        const art = data.addArtifact.artifact
+        const art = data?.addArtifact
         if (!art) return
         cache.updateQuery(
           {

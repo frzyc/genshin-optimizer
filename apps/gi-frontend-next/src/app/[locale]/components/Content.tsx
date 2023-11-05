@@ -3,6 +3,7 @@ import Box from '@mui/material/Box'
 import * as React from 'react'
 import Footer from './Footer'
 import Header from './Header'
+import DataWrapper from '../../../components/DataWrapper'
 
 export const metadata = {
   title: 'Next.js App Router + Material UI v5',
@@ -11,16 +12,18 @@ export const metadata = {
 
 export default function Content({ children }: { children: React.ReactNode }) {
   return (
-    <Stack minHeight="100vh" spacing={{ xs: 0.5, sm: 1, md: 2 }}>
-      <Header />
+    <DataWrapper>
+      <Stack minHeight="100vh" spacing={{ xs: 0.5, sm: 1, md: 2 }}>
+        <Header />
 
-      {/* <Box></Box> */}
-      <Container maxWidth="xl" sx={{ px: { xs: 0.5, sm: 1, md: 2 } }}>
-        {children}
-      </Container>
-      {/* make sure footer is always at bottom */}
-      <Box flexGrow={1} />
-      <Footer />
-    </Stack>
+        {/* <Box></Box> */}
+        <Container maxWidth="xl" sx={{ px: { xs: 0.5, sm: 1, md: 2 } }}>
+          {children}
+        </Container>
+        {/* make sure footer is always at bottom */}
+        <Box flexGrow={1} />
+        <Footer />
+      </Stack>
+    </DataWrapper>
   )
 }

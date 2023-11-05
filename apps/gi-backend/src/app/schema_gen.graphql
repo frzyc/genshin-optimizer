@@ -99,6 +99,7 @@ type Mutation {
   addGenshinUser(uid: String!): AddGenshinUserRes!
   addArtifact(genshinUserId: String!, artifact: InputArtifact!): Artifact!
   updateArtifact(genshinUserId: String!, artifact: UpdateArtifact!): Artifact!
+  removeArtifact(genshinUserId: String!, artifactId: String!): Artifact!
   addWeapon(genshinUserId: String!, weapon: InputWeapon!): AddWeaponRes!
   addCharacter(genshinUserId: String!, character: InputCharacter!): AddCharacterRes!
 }

@@ -31,31 +31,39 @@ export class ArtifactService {
     return this.prisma.artifact.findMany({ where: { genshinUserId } })
   }
 
-  remove(id: string) {
-    return this.prisma.artifact.delete({ where: { id } })
+  remove(id: string, genshinUserId: string) {
+    return this.prisma.artifact.delete({ where: { id, genshinUserId } })
   }
-  async update(art: UpdateArtifact) {
-    // if (art.location) {
-    //   const oldArt = await this.prisma.artifact.findUnique({
-    //     where: { id: art.id },
-    //   })
-    //   if (!oldArt) throw new GraphQLError('Artifact does not exist')
-    //   if (oldArt.location !== art.location && oldArt.location) {
-    //     // update other artifacts that could be equipped to the same char in the same slot
-    //     await this.prisma.artifact.updateMany({
-    //       where: {
-    //         id: {
-    //           not: art.id,
-    //         },
-    //         slotKey: art.slotKey ?? oldArt.slotKey,
-    //         location: oldArt.location,
-    //       },
-    //       data: {
-    //         location: null,
-    //       },
-    //     })
-    //   }
-    // }
-    return this.prisma.artifact.update({ where: { id: art.id }, data: art })
+  async update(art: UpdateArtifact, genshinUserId: string) {
+    if (art.location) {
+      const oldArt = await this.prisma.artifact.findUnique({
+        where: { id: art.id },
+      })
+      if (!oldArt) throw new GraphQLError('Artifact does not exist')
+      if (oldArt.location !== art.location && art.location) {
+        // update other artifact that could be equipped to the same char in the same slot
+        const where = {
+          genshinUserId_slotKey_location: {
+            genshinUserId,
+            slotKey: art.slotKey ?? oldArt.slotKey,
+            location: art.location,
+          },
+        }
+        const conflictArt = await this.prisma.artifact.findUnique({ where })
+        if (conflictArt)
+          await this.prisma.artifact.update({
+            where,
+            data: {
+              // in corner case where both location and slot is updated, just set conflict to inventory
+              location: art.slotKey === oldArt.slotKey ? oldArt.location : null,
+            },
+          })
+      }
+    }
+    const { id, ...data } = art
+    return this.prisma.artifact.update({
+      where: { id, genshinUserId },
+      data,
+    })
   }
 }

@@ -14,5 +14,5 @@ export function CharacterName({
 }) {
   let cKey = characterKey as LocationGenderedCharacterKey
   if (characterKey.startsWith('Traveler')) cKey = `Traveler${gender}`
-  return <Translate ns={`char_${cKey}_gen`} key18={`name`} />
+  return <Translate ns="charNames_gen" key18={cKey} />
 }

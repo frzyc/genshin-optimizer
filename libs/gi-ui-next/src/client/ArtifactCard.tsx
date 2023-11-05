@@ -1,11 +1,28 @@
-import type { RarityKey, SubstatKey } from '@genshin-optimizer/consts'
+'use client'
+import type {
+  LocationCharacterKey,
+  RarityKey,
+  SubstatKey,
+} from '@genshin-optimizer/consts'
 import {
   allElementWithPhyKeys,
   allSubstatKeys,
 } from '@genshin-optimizer/consts'
 import { artifactAsset } from '@genshin-optimizer/gi-assets'
+import type { Artifact } from '@genshin-optimizer/gi-frontend-gql'
+import {
+  GetAllUserArtifactDocument,
+  useRemoveArtifactMutation,
+  useUpdateArtifactMutation,
+} from '@genshin-optimizer/gi-frontend-gql'
 import type { IArtifact } from '@genshin-optimizer/gi-good'
 import { SlotIcon, StatIcon } from '@genshin-optimizer/gi-svgicons'
+import {
+  ArtifactSlotDesc,
+  ArtifactSlotName,
+  PercentBadge,
+  artifactLevelVariant,
+} from '@genshin-optimizer/gi-ui'
 import type { SubstatMeta } from '@genshin-optimizer/gi-util'
 import {
   artDisplayValue,
@@ -17,6 +34,7 @@ import {
 } from '@genshin-optimizer/gi-util'
 import { iconInlineProps } from '@genshin-optimizer/svgicons'
 import {
+  BootstrapTooltip,
   CardThemed,
   ColorText,
   InfoTooltip,
@@ -25,25 +43,25 @@ import {
 import type { Unit } from '@genshin-optimizer/util'
 import { clamp, clamp01 } from '@genshin-optimizer/util'
 import { Lock, LockOpen } from '@mui/icons-material'
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import {
   Box,
+  Button,
   CardContent,
   Chip,
   IconButton,
   Skeleton,
   Typography,
 } from '@mui/material'
-import { Suspense, useMemo } from 'react'
-import { useTranslation } from 'react-i18next'
-import {
-  ArtifactSlotDesc,
-  ArtifactSlotName,
-  PercentBadge,
-  artifactLevelVariant,
-} from '@genshin-optimizer/gi-ui'
 import Image from 'next/image'
+import type { ReactNode } from 'react'
+import { Suspense, useContext, useEffect, useMemo, useState } from 'react'
+import { useTranslation } from 'react-i18next'
+import { LocationAutocomplete } from './LocationAutocomplete'
+import LocationName from './LocationName'
+import { UserContext } from './UserDataWrapper'
+import { updateArtifactList } from './artifactUtil'
 import { assetWrapper } from './util'
-
 type Data = {
   artifact: IArtifact
   mainStatAssumptionLevel?: number
@@ -63,12 +81,7 @@ export function ArtifactCard({
   extraButtons,
 }: Data): JSX.Element | null {
   const { t } = useTranslation(['artifact', 'ui'])
-  const { slotKey, setKey, rarity, level, mainStatKey } = artifact
-  // const setLocation = useCallback(
-  //   (k: LocationKey) =>
-  //     artifactId && database.arts.set(artifactId, { location: k }),
-  //   [database, artifactId]
-  // )
+  const { setKey, rarity } = artifact
 
   const substatMetas = useMemo(() => getSubstatMetas(artifact), [artifact])
 
@@ -102,16 +115,7 @@ export function ArtifactCard({
     }
   }, [artifact, effFilter, substatMetas])
 
-  const mainStatLevel = Math.max(
-    Math.min(mainStatAssumptionLevel, rarity * 4),
-    level
-  )
-
   const artifactValid = maxEfficiency !== 0
-  const slotName = <ArtifactSlotName setKey={setKey} slotKey={slotKey} />
-  const slotDesc = <ArtifactSlotDesc setKey={setKey} slotKey={slotKey} />
-
-  const ele = allElementWithPhyKeys.find((e) => mainStatKey.startsWith(e))
   return (
     <Suspense
       fallback={
@@ -196,9 +200,6 @@ export function ArtifactCard({
             </Typography>
           )}
           <Box flexGrow={1} />
-          {/* {art.probability !== undefined && art.probability >= 0 && (
-            <strong>Probability: {(art.probability * 100).toFixed(2)}%</strong>
-          )} */}
           <Typography color="success.main">
             {setKey}
             {/* TODO: */}
@@ -210,64 +211,11 @@ export function ArtifactCard({
               )} */}
           </Typography>
         </CardContent>
-        {/* Footer */}
-        <Box
-          sx={{
-            p: 1,
-            display: 'flex',
-            gap: 1,
-            justifyContent: 'space-between',
-            alignItems: 'center',
-          }}
-        >
-          {/* <Box sx={{ flexGrow: 1 }}>
-            {editable && canEquip ? (
-              <LocationAutocomplete
-                location={location}
-                setLocation={setLocation}
-              />
-            ) : (
-              <LocationName location={location} />
-            )}
-          </Box> */}
-          <Box
-            display="flex"
-            gap={1}
-            alignItems="stretch"
-            height="100%"
-            sx={{ '& .MuiButton-root': { minWidth: 0, height: '100%' } }}
-          >
-            {/* {editable && editorProps && (
-              <BootstrapTooltip
-                title={<Typography>{t`artifact:edit`}</Typography>}
-                placement="top"
-                arrow
-              >
-                <Button color="info" size="small" onClick={onShowEditor}>
-                  <EditIcon />
-                </Button>
-              </BootstrapTooltip>
-            )}
-            {editable && !!onDelete && (
-              <BootstrapTooltip
-                title={lock ? t('artifact:cantDeleteLock') : ''}
-                placement="top"
-              >
-                <span>
-                  <Button
-                    color="error"
-                    size="small"
-                    onClick={() => onDelete(id)}
-                    disabled={lock}
-                  >
-                    <DeleteForeverIcon />
-                  </Button>
-                </span>
-              </BootstrapTooltip>
-            )} */}
-            {extraButtons}
-          </Box>
-        </Box>
+        <Footer
+          artifact={artifact as Artifact}
+          disabled={disabled}
+          extraButtons={extraButtons}
+        />
       </CardThemed>
     </Suspense>
   )
@@ -475,4 +423,121 @@ function SmolProgress({ color = 'red', value = 50 }) {
 function unitStr(key = ''): Unit {
   if (key.endsWith('_')) return '%'
   return ''
+}
+function Footer({
+  artifact,
+  disabled,
+  extraButtons,
+}: {
+  artifact: Artifact
+  disabled: boolean
+  extraButtons: ReactNode
+}) {
+  const { t } = useTranslation('artifact')
+  const { id, location: baseLocation, lock } = artifact
+  const [location, setLocation] = useState(
+    baseLocation as LocationCharacterKey | null
+  )
+
+  const { genshinUserId } = useContext(UserContext)
+  const [updateArtifactMutation, { data, loading, error }] =
+    useUpdateArtifactMutation({
+      variables: {
+        genshinUserId,
+        artifact: { id, location },
+      },
+      update(cache, { data }) {
+        const art = data?.updateArtifact
+        if (!art) return
+        cache.updateQuery(
+          {
+            query: GetAllUserArtifactDocument,
+            variables: {
+              genshinUserId,
+            },
+          },
+          ({ getAllUserArtifact }) => {
+            return {
+              getAllUserArtifact: updateArtifactList(getAllUserArtifact, art),
+            }
+          }
+        )
+      },
+    })
+  useEffect(() => {
+    if (baseLocation === location) return
+    updateArtifactMutation()
+  }, [baseLocation, location, updateArtifactMutation])
+  return (
+    <Box
+      sx={{
+        p: 1,
+        display: 'flex',
+        gap: 1,
+        justifyContent: 'space-between',
+        alignItems: 'center',
+      }}
+    >
+      <Box sx={{ flexGrow: 1 }}>
+        {disabled ? (
+          <LocationName location={location} />
+        ) : (
+          <LocationAutocomplete location={location} setLocation={setLocation} />
+        )}
+      </Box>
+      <Box
+        display="flex"
+        gap={1}
+        alignItems="stretch"
+        height="100%"
+        sx={{ '& .MuiButton-root': { minWidth: 0, height: '100%' } }}
+      >
+        {/* {editable && editorProps && (
+      <BootstrapTooltip
+        title={<Typography>{t`artifact:edit`}</Typography>}
+        placement="top"
+        arrow
+      >
+        <Button color="info" size="small" onClick={onShowEditor}>
+          <EditIcon />
+        </Button>
+      </BootstrapTooltip>
+    )}
+     */}
+        {!disabled && (
+          <BootstrapTooltip
+            title={lock ? t('cantDeleteLock') : ''}
+            placement="top"
+          >
+            <DeleteButton artifact={artifact} />
+          </BootstrapTooltip>
+        )}
+        {extraButtons}
+      </Box>
+    </Box>
+  )
+}
+function DeleteButton({ artifact }: { artifact: Artifact }) {
+  const { lock, id } = artifact
+  const { genshinUserId } = useContext(UserContext)
+  const [removeArtifactMutation, { data, loading, error }] =
+    useRemoveArtifactMutation({
+      variables: {
+        genshinUserId,
+        artifactId: id,
+      },
+    })
+
+  return (
+    <span>
+      <Button
+        color="error"
+        size="small"
+        onClick={() => removeArtifactMutation()}
+        disabled={lock || loading}
+      >
+        <DeleteForeverIcon />
+      </Button>
+    </span>
+  )
 }

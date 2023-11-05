@@ -44,7 +44,25 @@ export class ArtifactResolver {
     updateArtifact: UpdateArtifact
   ): Promise<Artifact> {
     this.genshinUserService.validateGenshinUser(userId, genshinUserId)
-    const artifact = await this.artifactService.update(updateArtifact)
+    const artifact = await this.artifactService.update(
+      updateArtifact,
+      genshinUserId
+    )
+    return artifact
+  }
+
+  @Mutation(() => Artifact)
+  async removeArtifact(
+    @JWTUser('sub') userId: string,
+    @Args('genshinUserId') genshinUserId: string,
+    @Args('artifactId')
+    artifactId: string
+  ): Promise<Artifact> {
+    this.genshinUserService.validateGenshinUser(userId, genshinUserId)
+    const artifact = await this.artifactService.remove(
+      artifactId,
+      genshinUserId
+    )
     return artifact
   }
 }

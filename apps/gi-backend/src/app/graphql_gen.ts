@@ -156,6 +156,7 @@ export interface IMutation {
     addGenshinUser(uid: string): AddGenshinUserRes | Promise<AddGenshinUserRes>;
     addArtifact(genshinUserId: string, artifact: InputArtifact): Artifact | Promise<Artifact>;
     updateArtifact(genshinUserId: string, artifact: UpdateArtifact): Artifact | Promise<Artifact>;
+    removeArtifact(genshinUserId: string, artifactId: string): Artifact | Promise<Artifact>;
     addWeapon(genshinUserId: string, weapon: InputWeapon): AddWeaponRes | Promise<AddWeaponRes>;
     addCharacter(genshinUserId: string, character: InputCharacter): AddCharacterRes | Promise<AddCharacterRes>;
 }

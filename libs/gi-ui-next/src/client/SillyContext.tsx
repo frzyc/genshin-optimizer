@@ -1,3 +1,4 @@
+'use client'
 import { createContext, useEffect, useMemo, useState } from 'react'
 
 export type SillyContextObj = {
@@ -6,7 +7,7 @@ export type SillyContextObj = {
 }
 
 export const SillyContext = createContext({
-  silly: false,
+  silly: true, //TODO: should be false by default
   setSilly: () => {},
 } as SillyContextObj)
 
