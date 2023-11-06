@@ -17,6 +17,7 @@ import Barbara from './Barbara'
 import Beidou from './Beidou'
 import Bennett from './Bennett'
 import Candace from './Candace'
+import Charlotte from './Charlotte'
 import Chongyun from './Chongyun'
 import Collei from './Collei'
 import Cyno from './Cyno'
@@ -103,6 +104,7 @@ const characters: Record<CharacterSheetKey, CharacterSheet> = {
   Beidou,
   Bennett,
   Candace,
+  Charlotte,
   Chongyun,
   Collei,
   Cyno,
