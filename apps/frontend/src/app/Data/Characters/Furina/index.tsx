@@ -196,63 +196,73 @@ const c2Overstack_hp_ = greaterEq(
   )
 )
 
-const [condC6AfterSkillPath, condC6AfterSkill] = cond(key, 'c6AfterSkill')
-const c6AfterSkill_infusion = greaterEqStr(
+const [condc6Path, condc6] = cond(key, 'c6')
+const [condC6PneumaPath, condC6Pneuma] = cond(key, 'c6Pneuma')
+
+const c6_infusion = greaterEqStr(
   input.constellation,
   6,
-  equalStr(condC6AfterSkill, 'on', 'hydro')
+  equalStr(condc6, 'on', 'hydro')
 )
-const c6AfterSkill_auto_dmgInc = greaterEq(
+const c6_auto_dmgInc = greaterEq(
   input.constellation,
   6,
   equal(
-    condC6AfterSkill,
+    condc6,
     'on',
-    prod(percent(dm.constellation6.auto_dmgInc), input.total.hp)
+    prod(
+      sum(
+        percent(dm.constellation6.auto_dmgInc),
+        equal(condC6Pneuma, 'on', percent(dm.constellation6.pneumaAuto_dmgInc))
+      ),
+      input.total.hp
+    )
   )
 )
-const c6AfterSkill_normal_dmgInc = infoMut(
-  { ...c6AfterSkill_auto_dmgInc },
+const c6_normal_dmgInc = infoMut(
+  { ...c6_auto_dmgInc },
   KeyMap.info('normal_dmgInc')
 )
-const c6AfterSkill_charged_dmgInc = infoMut(
-  { ...c6AfterSkill_auto_dmgInc },
+const c6_charged_dmgInc = infoMut(
+  { ...c6_auto_dmgInc },
   KeyMap.info('charged_dmgInc')
 )
-const c6AfterSkill_plunging_dmgInc = infoMut(
-  { ...c6AfterSkill_auto_dmgInc },
-  KeyMap.info('plunging_dmgInc')
-)
-
-const [condC6PneumaPath, condC6Pneuma] = cond(key, 'c6Pneuma')
-const c6Pneuma_auto_dmgInc = equal(condC6Pneuma, 'on', c6AfterSkill_auto_dmgInc)
-const c6Pneuma_normal_dmgInc = infoMut(
-  { ...c6Pneuma_auto_dmgInc },
-  KeyMap.info('normal_dmgInc')
-)
-const c6Pneuma_charged_dmgInc = infoMut(
-  { ...c6Pneuma_auto_dmgInc },
-  KeyMap.info('charged_dmgInc')
-)
-const c6Pneuma_plunging_dmgInc = infoMut(
-  { ...c6Pneuma_auto_dmgInc },
+const c6_plunging_dmgInc = infoMut(
+  { ...c6_auto_dmgInc },
   KeyMap.info('plunging_dmgInc')
 )
 
 const dmgFormulas = {
   normal: {
     ...Object.fromEntries(
-      dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
+      dm.normal.hitArr.map((arr, i) => [
+        i,
+        dmgNode('atk', arr, 'normal', {
+          premod: {
+            normal_dmgInc: c6_normal_dmgInc,
+          },
+        }),
+      ])
     ),
-    thornBladeDmg: dmgNode('atk', dm.normal.bladeThornDmg, 'normal'),
+    thornBladeDmg: dmgNode('atk', dm.normal.bladeThornDmg, 'normal', {
+      hit: { ele: constant(data_gen.ele) },
+    }),
   },
   charged: {
-    dmg: dmgNode('atk', dm.charged.dmg, 'charged'),
+    dmg: dmgNode('atk', dm.charged.dmg, 'charged', {
+      premod: {
+        charged_dmgInc: c6_charged_dmgInc,
+      },
+    }),
   },
   plunging: Object.fromEntries(
     Object.entries(dm.plunging).map(([key, value]) => [
       key,
-      dmgNode('atk', value, 'plunging'),
+      dmgNode('atk', value, 'plunging', {
+        premod: {
+          plunging_dmgInc: c6_plunging_dmgInc,
+        },
+      }),
     ])
   ),
   skill: {
@@ -289,17 +299,15 @@ const dmgFormulas = {
     skillDmg: dmgNode('hp', dm.burst.skillDmg, 'burst'),
   },
   passive1: {
-    // TODO: Technically this should target a specific teammate
-    // and use their incoming healing bonus and hp stat
     heal: greaterEq(input.asc, 1, healNode('hp', dm.passive1.heal, 0)),
   },
   passive2: {
     member_dmg_: a4Member_dmg_,
   },
   constellation6: {
-    c6AfterSkill_normal_dmgInc,
-    c6AfterSkill_charged_dmgInc,
-    c6AfterSkill_plunging_dmgInc,
+    c6_normal_dmgInc,
+    c6_charged_dmgInc,
+    c6_plunging_dmgInc,
     heal: greaterEq(
       input.constellation,
       6,
@@ -320,16 +328,10 @@ export const data = dataObjForCharacterSheet(
     premod: {
       skillBoost: skillC5,
       burstBoost: burstC3,
-      normal_dmgInc: sum(c6AfterSkill_normal_dmgInc, c6Pneuma_normal_dmgInc),
-      charged_dmgInc: sum(c6AfterSkill_charged_dmgInc, c6Pneuma_charged_dmgInc),
-      plunging_dmgInc: sum(
-        c6AfterSkill_plunging_dmgInc,
-        c6Pneuma_plunging_dmgInc
-      ),
       hp_: c2Overstack_hp_,
     },
     infusion: {
-      nonOverridableSelf: c6AfterSkill_infusion,
+      nonOverridableSelf: c6_infusion,
     },
     teamBuff: {
       premod: {
@@ -506,8 +508,8 @@ const sheet: ICharacterSheet = {
         ],
       }),
       ct.condTem('constellation6', {
-        value: condC6AfterSkill,
-        path: condC6AfterSkillPath,
+        value: condc6,
+        path: condc6Path,
         name: st('afterUse.skill'),
         states: {
           on: {
@@ -518,11 +520,22 @@ const sheet: ICharacterSheet = {
                 ),
               },
               {
-                node: c6AfterSkill_normal_dmgInc,
+                node: c6_normal_dmgInc,
               },
-              { node: c6AfterSkill_charged_dmgInc },
-              { node: c6AfterSkill_plunging_dmgInc },
+              { node: c6_charged_dmgInc },
+              { node: c6_plunging_dmgInc },
             ],
+          },
+        },
+      }),
+      ct.condTem('constellation6', {
+        canShow: equal(condc6, 'on', 1),
+        path: condC6PneumaPath,
+        value: condC6Pneuma,
+        name: ct.ch('c6Pneuma'),
+        states: {
+          on: {
+            fields: [],
           },
         },
       }),
@@ -534,23 +547,6 @@ const sheet: ICharacterSheet = {
             }),
           },
         ],
-      }),
-      ct.condTem('constellation6', {
-        canShow: equal(condC6AfterSkill, 'on', 1),
-        path: condC6PneumaPath,
-        value: condC6Pneuma,
-        name: ct.ch('c6Pneuma'),
-        states: {
-          on: {
-            fields: [
-              {
-                node: c6Pneuma_normal_dmgInc,
-              },
-              { node: c6Pneuma_charged_dmgInc },
-              { node: c6Pneuma_plunging_dmgInc },
-            ],
-          },
-        },
       }),
     ]),
 
