@@ -307,8 +307,8 @@ const dmgFormulas = {
     ),
   },
 }
-const skillC5 = greaterEq(input.constellation, 5, 3)
 const burstC3 = greaterEq(input.constellation, 3, 3)
+const skillC5 = greaterEq(input.constellation, 5, 3)
 
 export const data = dataObjForCharacterSheet(
   key,
@@ -318,8 +318,8 @@ export const data = dataObjForCharacterSheet(
   dmgFormulas,
   {
     premod: {
-      burstBoost: skillC5,
-      skillBoost: burstC3,
+      skillBoost: skillC5,
+      burstBoost: burstC3,
       normal_dmgInc: sum(c6AfterSkill_normal_dmgInc, c6Pneuma_normal_dmgInc),
       charged_dmgInc: sum(c6AfterSkill_charged_dmgInc, c6Pneuma_charged_dmgInc),
       plunging_dmgInc: sum(
