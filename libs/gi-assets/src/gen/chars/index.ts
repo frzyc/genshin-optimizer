@@ -20,6 +20,7 @@ import Eula from './Eula'
 import Faruzan from './Faruzan'
 import Fischl from './Fischl'
 import Freminet from './Freminet'
+import Furina from './Furina'
 import Ganyu from './Ganyu'
 import Gorou from './Gorou'
 import HuTao from './HuTao'
@@ -102,6 +103,7 @@ const data = {
   Faruzan,
   Fischl,
   Freminet,
+  Furina,
   Ganyu,
   Gorou,
   HuTao,

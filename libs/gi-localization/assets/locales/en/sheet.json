@@ -183,5 +183,6 @@
   },
   "getElementalOrbParticle": "After picking up an Elemental Orb or Particle",
   "hpChange": "After HP changes",
+  "otherHpChange": "After other party members' HP changes",
   "afterHeal": "After being healed"
 }

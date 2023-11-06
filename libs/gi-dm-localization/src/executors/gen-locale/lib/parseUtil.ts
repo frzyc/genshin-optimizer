@@ -138,6 +138,10 @@ export const parsingFunctions: {
           plunging,
         } as any
       }
+      if (charkey === 'Furina') {
+        const [normal, charged, arkhe, plunging] = strings
+        return { normal, charged, arkhe, plunging } as any
+      }
     } else if (strings.length === 5) {
       const [, charkey] = keys as any
       if (charkey === 'Neuvillette') {
