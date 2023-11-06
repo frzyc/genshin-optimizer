@@ -62,12 +62,6 @@ const sheet: IWeaponSheet = {
             value: 6,
             unit: 's',
           },
-          {
-            text: stg('cd'),
-            value: 0.2,
-            fixed: 1,
-            unit: 's',
-          },
         ],
       })),
     },
@@ -85,12 +79,6 @@ const sheet: IWeaponSheet = {
           {
             text: stg('duration'),
             value: 6,
-            unit: 's',
-          },
-          {
-            text: stg('cd'),
-            value: 0.2,
-            fixed: 1,
             unit: 's',
           },
         ],
