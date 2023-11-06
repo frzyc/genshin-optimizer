@@ -12,7 +12,7 @@ const key: WeaponKey = 'SplendorOfTranquilWaters'
 const data_gen = allStats.weapon.data[key]
 
 const skill_dmg_arr = [-1, 0.08, 0.1, 0.12, 0.14, 0.16]
-const hp_arr = [-1, 0.12, 0.15, 0.18, 0.21, 0.24]
+const hp_arr = [-1, 0.14, 0.175, 0.21, 0.245, 0.28]
 
 const [condSelfHpChangePath, condSelfHpChange] = cond(key, 'selfHpChange')
 const selfHpChangeArr = range(1, 3)
@@ -76,7 +76,7 @@ const sheet: IWeaponSheet = {
       path: condTeamHpChangePath,
       header: headerTemplate(key, st('stacks')),
       name: st('otherHpChange'),
-      states: objKeyMap(selfHpChangeArr, (changes) => ({
+      states: objKeyMap(teamHpChangeArr, (changes) => ({
         name: st('times', { count: changes }),
         fields: [
           {
