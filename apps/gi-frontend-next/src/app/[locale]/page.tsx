@@ -1,6 +1,5 @@
-import Box from '@mui/material/Box'
 import { useTranslation } from '../../i18n'
-import { Typography } from '@mui/material'
+import { Typography, Box } from '@mui/material'
 import { HomeClient } from './HomeClient'
 
 export const metadata = {

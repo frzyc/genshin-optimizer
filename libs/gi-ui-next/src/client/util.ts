@@ -1,7 +1,6 @@
 import type { StaticImageData } from 'next/image'
 
-import type {
-  TravelerKey} from '@genshin-optimizer/consts';
+import type { TravelerKey } from '@genshin-optimizer/consts'
 import {
   allTravelerKeys,
   type CharacterKey,

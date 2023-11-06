@@ -2,10 +2,9 @@
 import type {
   Artifact,
   Character,
-  Weapon} from '@genshin-optimizer/gi-frontend-gql';
-import {
-  useGetAllDataLazyQuery,
+  Weapon,
 } from '@genshin-optimizer/gi-frontend-gql'
+import { useGetAllDataLazyQuery } from '@genshin-optimizer/gi-frontend-gql'
 import type { ReactNode } from 'react'
 import { createContext, useContext, useEffect, useMemo } from 'react'
 import { UserContext } from './UserDataWrapper'
@@ -23,11 +22,7 @@ const defaultGenshinUserDataObj: GenshinUserDataObj = {
 }
 export const GenshinUserContext = createContext(defaultGenshinUserDataObj)
 
-export function GenshinUserDataWrapper({
-  children,
-}: {
-  children: ReactNode
-}) {
+export function GenshinUserDataWrapper({ children }: { children: ReactNode }) {
   const { genshinUserId } = useContext(UserContext)
   const [getAllData, { data, loading, error }] = useGetAllDataLazyQuery({
     variables: {

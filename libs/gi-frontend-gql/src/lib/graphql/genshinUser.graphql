@@ -9,7 +9,7 @@ mutation addGenshinUser($uid: String!) {
   }
 }
 
-query getAllData($genshinUserId: String!){
+query getAllData($genshinUserId: String!) {
   getAllUserArtifact(genshinUserId: $genshinUserId) {
     ...ArtifactParts
   }

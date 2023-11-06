@@ -456,11 +456,9 @@ function Footer({
               genshinUserId,
             },
           },
-          ({ getAllUserArtifact }) => {
-            return {
-              getAllUserArtifact: updateArtifactList(getAllUserArtifact, art),
-            }
-          }
+          ({ getAllUserArtifact }) => ({
+            getAllUserArtifact: updateArtifactList(getAllUserArtifact, art),
+          })
         )
       },
     })
@@ -509,7 +507,9 @@ function Footer({
             title={lock ? t('cantDeleteLock') : ''}
             placement="top"
           >
-            <DeleteButton artifact={artifact} />
+            <span>
+              <DeleteButton artifact={artifact} />
+            </span>
           </BootstrapTooltip>
         )}
         {extraButtons}
@@ -526,18 +526,33 @@ function DeleteButton({ artifact }: { artifact: Artifact }) {
         genshinUserId,
         artifactId: id,
       },
+      update(cache, { data }) {
+        const art = data?.removeArtifact
+        if (!art) return
+        cache.updateQuery(
+          {
+            query: GetAllUserArtifactDocument,
+            variables: {
+              genshinUserId,
+            },
+          },
+          ({ getAllUserArtifact }) => ({
+            getAllUserArtifact: (getAllUserArtifact as Artifact[]).filter(
+              (a) => a.id !== art.id
+            ),
+          })
+        )
+      },
     })
 
   return (
-    <span>
-      <Button
-        color="error"
-        size="small"
-        onClick={() => removeArtifactMutation()}
-        disabled={lock || loading}
-      >
-        <DeleteForeverIcon />
-      </Button>
-    </span>
+    <Button
+      color="error"
+      size="small"
+      onClick={() => removeArtifactMutation()}
+      disabled={lock || loading}
+    >
+      <DeleteForeverIcon />
+    </Button>
   )
 }

@@ -1,6 +1,6 @@
 import { Roboto } from 'next/font/google'
-import { createTheme } from '@mui/material/styles'
 import { theme as commonTheme } from '@genshin-optimizer/gi-ui'
+import { createTheme } from '@mui/material'
 
 const roboto = Roboto({
   weight: ['300', '400', '500', '700'],

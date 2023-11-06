@@ -14,10 +14,5 @@ export function updateArtifactList(
       a.location = newArt.slotKey === oldArt.slotKey ? oldArt.location : null
     })
   }
-  return arts.map((a) => {
-    if (a.id === newArt.id) {
-      return { ...a, ...newArt }
-    }
-    return a
-  })
+  return arts.map((a) => (a.id !== newArt.id ? a : { ...a, ...newArt }))
 }

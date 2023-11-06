@@ -1,9 +1,9 @@
 'use client'
 import * as React from 'react'
 import ThemeProvider from '@mui/material/styles/ThemeProvider'
-import CssBaseline from '@mui/material/CssBaseline'
 import NextAppDirEmotionCacheProvider from './EmotionCache'
 import theme from './theme'
+import { CssBaseline } from '@mui/material'
 
 export default function ThemeRegistry({
   children,

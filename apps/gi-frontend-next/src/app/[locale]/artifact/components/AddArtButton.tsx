@@ -2,14 +2,13 @@ import {
   GetAllUserArtifactDocument,
   useAddArtifactMutation,
 } from '@genshin-optimizer/gi-frontend-gql'
+import { UserContext } from '@genshin-optimizer/gi-ui-next'
 import { randomizeArtifact } from '@genshin-optimizer/gi-util'
 import { Button } from '@mui/material'
+import { useContext } from 'react'
 
-export default function AddArtButton({
-  genshinUserId,
-}: {
-  genshinUserId: string
-}) {
+export default function AddArtButton() {
+  const { genshinUserId } = useContext(UserContext)
   const [addArtifactMutation, { data, loading, error }] =
     useAddArtifactMutation({
       variables: {
