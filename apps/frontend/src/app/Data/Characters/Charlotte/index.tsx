@@ -214,7 +214,7 @@ const dmgFormulas = {
     heal: greaterEq(
       input.constellation,
       6,
-      healNode('atk', dm.constellation6.heal, 0)
+      healNode('atk', percent(dm.constellation6.heal), 0)
     ),
   },
 }
@@ -391,6 +391,20 @@ const sheet: ICharacterSheet = {
           ],
         })),
       }),
+      ct.condTem('constellation4', {
+        value: condC4Marked,
+        path: condC4MarkedPath,
+        name: ct.ch('c4Cond'),
+        states: {
+          on: {
+            fields: [
+              {
+                node: c4Marked_burst_dmg_,
+              },
+            ],
+          },
+        },
+      }),
     ]),
 
     burst: ct.talentTem('burst', [
@@ -451,20 +465,6 @@ const sheet: ICharacterSheet = {
           },
         ],
       }),
-      ct.condTem('constellation4', {
-        value: condC4Marked,
-        path: condC4MarkedPath,
-        name: ct.ch('c4Cond'),
-        states: {
-          on: {
-            fields: [
-              {
-                node: c4Marked_burst_dmg_,
-              },
-            ],
-          },
-        },
-      }),
     ]),
 
     passive1: ct.talentTem('passive1'),
@@ -472,9 +472,11 @@ const sheet: ICharacterSheet = {
       {
         fields: [
           {
+            canShow: (data) => data.get(numOtherFontainians).value > 0,
             node: a4_heal_,
           },
           {
+            canShow: (data) => data.get(numNonFontainians).value > 0,
             node: a4_cryo_dmg_,
           },
         ],
