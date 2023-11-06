@@ -1,11 +1,12 @@
 {
-  "fanfarePoints": "Fanfare Points",
+  "fanfarePoints": "Fanfare",
   "memberMult_": "Salon Members Mult.",
-  "numOffer": "Number of Characters Offered HP",
-  "c1Inc": "Maximum Fanfare Points Increase",
-  "c1Bonus": "Fanfare gain",
+  "numOffer": "Number of characters who offered HP",
+  "c1Inc": "Max Fanfare Increase",
+  "c1Bonus": "Fanfare on Cast",
   "a4MemberDmg": "Salon Member DMG Bonus",
-  "a4HealInterval": "Singers of the Streams Healing Interval",
-  "c2Points": "Fanfare Points above the limit",
-  "c6Pneuma": "In Arkhe: Pneuma alignment"
+  "a4HealInterval": "Singer of Many Waters Healing Interval",
+  "c2Points": "Fanfare points Above the limit",
+  "c6Healing": "Ousia Continuous Healing",
+  "c6Pneuma": "In Pneuma alignment"
 }

@@ -89,7 +89,7 @@ const dm = {
     enerCost: skillParam_gen.burst[b++][0],
   },
   passive1: {
-    cd: skillParam_gen.passive1[0][0],
+    duration: skillParam_gen.passive1[0][0],
     interval: skillParam_gen.passive1[1][0],
     heal: skillParam_gen.passive1[2][0],
   },
@@ -153,18 +153,24 @@ const clampedFanfareNum = lookup(
 )
 const burstFanfare_all_dmg_ = prod(
   clampedFanfareNum,
-  subscript(input.total.burstIndex, dm.burst.dmgIncRatio)
+  subscript(input.total.burstIndex, dm.burst.dmgIncRatio, {
+    unit: '%',
+    fixed: 2,
+  })
 )
 const burstFanfare_incHeal_ = prod(
   clampedFanfareNum,
-  subscript(input.total.burstIndex, dm.burst.heal_ratio)
+  subscript(input.total.burstIndex, dm.burst.heal_ratio, {
+    unit: '%',
+    fixed: 2,
+  })
 )
 
 const a4Member_dmg_ = greaterEq(
   input.asc,
   4,
   min(
-    prod(percent(dm.passive2.member_dmg_), input.total.hp, 1 / 1000),
+    prod(percent(dm.passive2.member_dmg_), input.total.hp, percent(1 / 1000)),
     percent(dm.passive2.max_member_dmg_)
   )
 )
@@ -172,7 +178,11 @@ const a4HealInterval = greaterEq(
   input.asc,
   4,
   max(
-    prod(percent(-dm.passive2.interval_dec_), input.total.hp, 1 / 1000),
+    prod(
+      percent(-dm.passive2.interval_dec_),
+      input.total.hp,
+      percent(1 / 1000)
+    ),
     percent(-dm.passive2.max_interval_dec_)
   )
 )
@@ -190,7 +200,7 @@ const c2Overstack_hp_ = greaterEq(
   lookup(
     condC2Overstack,
     objKeyMap(c2OverstackArr, (stack) =>
-      prod(stack, percent(dm.constellation2.hp_))
+      prod(stack, percent(dm.constellation2.hp_, { fixed: 2 }))
     ),
     naught
   )
@@ -418,6 +428,57 @@ const sheet: ICharacterSheet = {
           },
         ],
       },
+      ct.condTem('constellation6', {
+        value: condc6,
+        path: condc6Path,
+        name: st('afterUse.skill'),
+        states: {
+          on: {
+            fields: [
+              {
+                text: (
+                  <ColorText color="hydro">{st('infusion.hydro')}</ColorText>
+                ),
+              },
+              {
+                node: c6_normal_dmgInc,
+              },
+              { node: c6_charged_dmgInc },
+              { node: c6_plunging_dmgInc },
+            ],
+          },
+        },
+      }),
+      ct.condTem('constellation6', {
+        canShow: equal(condc6, 'on', 1),
+        path: condC6PneumaPath,
+        value: condC6Pneuma,
+        name: ct.ch('c6Pneuma'),
+        states: {
+          on: {
+            fields: [],
+          },
+        },
+      }),
+      ct.headerTem('constellation6', {
+        fields: [
+          {
+            node: infoMut(dmgFormulas.constellation6.heal, {
+              name: ct.ch('c6Healing'),
+            }),
+          },
+          {
+            text: st('interval'),
+            value: dm.constellation6.ousiaCd,
+            unit: 's',
+          },
+          {
+            text: st('duration'),
+            value: dm.constellation6.ousiaDuration,
+            unit: 's',
+          },
+        ],
+      }),
     ]),
 
     skill: ct.talentTem('skill', [
@@ -507,47 +568,6 @@ const sheet: ICharacterSheet = {
           },
         ],
       }),
-      ct.condTem('constellation6', {
-        value: condc6,
-        path: condc6Path,
-        name: st('afterUse.skill'),
-        states: {
-          on: {
-            fields: [
-              {
-                text: (
-                  <ColorText color="hydro">{st('infusion.hydro')}</ColorText>
-                ),
-              },
-              {
-                node: c6_normal_dmgInc,
-              },
-              { node: c6_charged_dmgInc },
-              { node: c6_plunging_dmgInc },
-            ],
-          },
-        },
-      }),
-      ct.condTem('constellation6', {
-        canShow: equal(condc6, 'on', 1),
-        path: condC6PneumaPath,
-        value: condC6Pneuma,
-        name: ct.ch('c6Pneuma'),
-        states: {
-          on: {
-            fields: [],
-          },
-        },
-      }),
-      ct.headerTem('constellation6', {
-        fields: [
-          {
-            node: infoMut(dmgFormulas.constellation6.heal, {
-              name: stg('healing'),
-            }),
-          },
-        ],
-      }),
     ]),
 
     burst: ct.talentTem('burst', [
@@ -571,28 +591,6 @@ const sheet: ICharacterSheet = {
                     dm.constellation1.bonusFanfare
                   } = ${dm.burst.maxFanfare + dm.constellation1.bonusFanfare}`
                 : dm.burst.maxFanfare,
-          },
-          {
-            text: ct.chg('burst.skillParams.3'),
-            value: (data) =>
-              data.get(
-                subscript(input.total.burstIndex, dm.burst.dmgIncRatio, {
-                  unit: '%',
-                })
-              ).value * 100,
-            unit: '%',
-            fixed: 2,
-          },
-          {
-            text: ct.chg('burst.skillParams.4'),
-            value: (data) =>
-              data.get(
-                subscript(input.total.burstIndex, dm.burst.heal_ratio, {
-                  unit: '%',
-                })
-              ).value * 100,
-            unit: '%',
-            fixed: 2,
           },
           {
             text: stg('cd'),
@@ -657,7 +655,19 @@ const sheet: ICharacterSheet = {
       {
         fields: [
           {
-            node: infoMut(dmgFormulas.passive1.heal, { name: stg('healing') }),
+            node: infoMut(dmgFormulas.passive1.heal, {
+              name: stg('contHealing'),
+            }),
+          },
+          {
+            text: st('interval'),
+            value: dm.passive1.interval,
+            unit: 's',
+          },
+          {
+            text: stg('duration'),
+            value: dm.passive1.duration,
+            unit: 's',
           },
         ],
       },
