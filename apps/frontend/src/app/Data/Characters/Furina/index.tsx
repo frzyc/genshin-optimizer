@@ -473,7 +473,7 @@ const sheet: ICharacterSheet = {
             unit: 's',
           },
           {
-            text: st('duration'),
+            text: stg('duration'),
             value: dm.constellation6.ousiaDuration,
             unit: 's',
           },
