@@ -9,6 +9,7 @@ import Barbara from './Barbara'
 import Beidou from './Beidou'
 import Bennett from './Bennett'
 import Candace from './Candace'
+import Charlotte from './Charlotte'
 import Chongyun from './Chongyun'
 import Collei from './Collei'
 import Cyno from './Cyno'
@@ -20,6 +21,7 @@ import Eula from './Eula'
 import Faruzan from './Faruzan'
 import Fischl from './Fischl'
 import Freminet from './Freminet'
+import Furina from './Furina'
 import Ganyu from './Ganyu'
 import Gorou from './Gorou'
 import HuTao from './HuTao'
@@ -91,6 +93,7 @@ const data = {
   Beidou,
   Bennett,
   Candace,
+  Charlotte,
   Chongyun,
   Collei,
   Cyno,
@@ -102,6 +105,7 @@ const data = {
   Faruzan,
   Fischl,
   Freminet,
+  Furina,
   Ganyu,
   Gorou,
   HuTao,

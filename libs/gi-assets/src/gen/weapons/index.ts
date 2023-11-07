@@ -138,6 +138,7 @@ import SnowTombedStarsilver from './SnowTombedStarsilver'
 import SolarPearl from './SolarPearl'
 import SongOfBrokenPines from './SongOfBrokenPines'
 import SongOfStillness from './SongOfStillness'
+import SplendorOfTranquilWaters from './SplendorOfTranquilWaters'
 import StaffOfHoma from './StaffOfHoma'
 import StaffOfTheScarletSands from './StaffOfTheScarletSands'
 import SummitShaper from './SummitShaper'
@@ -315,6 +316,7 @@ const data = {
   SolarPearl,
   SongOfBrokenPines,
   SongOfStillness,
+  SplendorOfTranquilWaters,
   StaffOfHoma,
   StaffOfTheScarletSands,
   SummitShaper,

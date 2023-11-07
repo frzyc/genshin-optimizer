@@ -48,6 +48,7 @@ export const weaponIdMap: Record<number | string, WeaponKey> = {
   11510: 'HaranGeppakuFutsu',
   11511: 'KeyOfKhajNisut',
   11512: 'LightOfFoliarIncision',
+  11513: 'SplendorOfTranquilWaters',
 
   //claymore
   12101: 'WasterGreatsword',
