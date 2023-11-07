@@ -1,16 +1,14 @@
 'use client'
 import { KeyboardArrowUp } from '@mui/icons-material'
 import {
-  Box,
   Fab,
-  Zoom,
   useMediaQuery,
-  useScrollTrigger,
-  useTheme,
+  useTheme
 } from '@mui/material'
 import { usePathname } from 'next/navigation'
 import DesktopHeader from './DesktopHeader'
 import MobileHeader from './MobileHeader'
+import ScrollTop from './ScrollTop'
 export default function Header({ locale }: { locale: string }) {
   const theme = useTheme()
   const pathname = usePathname()
@@ -36,43 +34,4 @@ export default function Header({ locale }: { locale: string }) {
     </>
   )
   return
-}
-
-function ScrollTop({
-  children,
-  anchor,
-}: {
-  anchor: string
-  children: React.ReactElement
-}) {
-  const trigger = useScrollTrigger({
-    target: window,
-    disableHysteresis: true,
-    threshold: 100,
-  })
-
-  const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {
-    const anchorElement = (
-      (event.target as HTMLDivElement).ownerDocument || document
-    ).querySelector(`#${anchor}`)
-
-    if (anchorElement) {
-      anchorElement.scrollIntoView({
-        behavior: 'smooth',
-        block: 'center',
-      })
-    }
-  }
-
-  return (
-    <Zoom in={trigger}>
-      <Box
-        onClick={handleClick}
-        role="presentation"
-        sx={{ position: 'fixed', bottom: 85, right: 16, zIndex: 1000 }}
-      >
-        {children}
-      </Box>
-    </Zoom>
-  )
 }

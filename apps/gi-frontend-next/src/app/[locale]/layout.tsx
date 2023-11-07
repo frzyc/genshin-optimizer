@@ -37,11 +37,14 @@ export default async function RootLayout({
             <ThemeRegistry>
               <TransClientUpdate locale={locale} />
               <DataWrapper>
-                <Stack minHeight="100vh" spacing={{ xs: 0.5, sm: 1, md: 2 }}>
+                <Stack minHeight="100vh">
                   <Header locale={locale} />
                   <Container
                     maxWidth="xl"
-                    sx={{ px: { xs: 0.5, sm: 1, md: 2 } }}
+                    sx={{
+                      px: { xs: 0.5, sm: 1, md: 2 },
+                      py: { xs: 0.5, sm: 1, md: 2 },
+                    }}
                   >
                     {children}
                   </Container>
