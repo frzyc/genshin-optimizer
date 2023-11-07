@@ -4,8 +4,8 @@ import type {
   RegionKey,
 } from '@genshin-optimizer/consts'
 import { allStats } from '@genshin-optimizer/gi-stats'
+import { ColorText } from '@genshin-optimizer/ui-common'
 import { objKeyMap, range } from '@genshin-optimizer/util'
-import ColorText from '../../../Components/ColoredText'
 import { input } from '../../../Formula'
 import type { Data } from '../../../Formula/type'
 import {
@@ -220,13 +220,7 @@ const c6_auto_dmgInc = greaterEq(
   equal(
     condc6,
     'on',
-    prod(
-      sum(
-        percent(dm.constellation6.auto_dmgInc),
-        equal(condC6Pneuma, 'on', percent(dm.constellation6.pneumaAuto_dmgInc))
-      ),
-      input.total.hp
-    )
+    prod(percent(dm.constellation6.auto_dmgInc), input.total.hp)
   )
 )
 const c6_normal_dmgInc = infoMut(
@@ -242,6 +236,32 @@ const c6_plunging_dmgInc = infoMut(
   KeyMap.info('plunging_dmgInc')
 )
 
+const c6Pneuma_auto_dmgInc = greaterEq(
+  input.constellation,
+  6,
+  equal(
+    condc6,
+    'on',
+    equal(
+      condC6Pneuma,
+      'on',
+      prod(percent(dm.constellation6.pneumaAuto_dmgInc), input.total.hp)
+    )
+  )
+)
+const c6Pneuma_normal_dmgInc = infoMut(
+  { ...c6Pneuma_auto_dmgInc },
+  KeyMap.info('normal_dmgInc')
+)
+const c6Pneuma_charged_dmgInc = infoMut(
+  { ...c6Pneuma_auto_dmgInc },
+  KeyMap.info('charged_dmgInc')
+)
+const c6Pneuma_plunging_dmgInc = infoMut(
+  { ...c6Pneuma_auto_dmgInc },
+  KeyMap.info('plunging_dmgInc')
+)
+
 const dmgFormulas = {
   normal: {
     ...Object.fromEntries(
@@ -249,7 +269,7 @@ const dmgFormulas = {
         i,
         dmgNode('atk', arr, 'normal', {
           premod: {
-            normal_dmgInc: c6_normal_dmgInc,
+            normal_dmgInc: sum(c6_normal_dmgInc, c6Pneuma_normal_dmgInc),
           },
         }),
       ])
@@ -259,20 +279,12 @@ const dmgFormulas = {
     }),
   },
   charged: {
-    dmg: dmgNode('atk', dm.charged.dmg, 'charged', {
-      premod: {
-        charged_dmgInc: c6_charged_dmgInc,
-      },
-    }),
+    dmg: dmgNode('atk', dm.charged.dmg, 'charged'),
   },
   plunging: Object.fromEntries(
     Object.entries(dm.plunging).map(([key, value]) => [
       key,
-      dmgNode('atk', value, 'plunging', {
-        premod: {
-          plunging_dmgInc: c6_plunging_dmgInc,
-        },
-      }),
+      dmgNode('atk', value, 'plunging'),
     ])
   ),
   skill: {
@@ -339,6 +351,8 @@ export const data = dataObjForCharacterSheet(
       skillBoost: skillC5,
       burstBoost: burstC3,
       hp_: c2Overstack_hp_,
+      plunging_dmgInc: sum(c6_plunging_dmgInc, c6Pneuma_plunging_dmgInc),
+      charged_dmgInc: sum(c6_charged_dmgInc, c6Pneuma_charged_dmgInc),
     },
     infusion: {
       nonOverridableSelf: c6_infusion,
@@ -443,8 +457,12 @@ const sheet: ICharacterSheet = {
               {
                 node: c6_normal_dmgInc,
               },
-              { node: c6_charged_dmgInc },
-              { node: c6_plunging_dmgInc },
+              {
+                node: c6_charged_dmgInc,
+              },
+              {
+                node: c6_plunging_dmgInc,
+              },
             ],
           },
         },
@@ -456,7 +474,17 @@ const sheet: ICharacterSheet = {
         name: ct.ch('c6Pneuma'),
         states: {
           on: {
-            fields: [],
+            fields: [
+              {
+                node: c6Pneuma_normal_dmgInc,
+              },
+              {
+                node: c6Pneuma_charged_dmgInc,
+              },
+              {
+                node: c6Pneuma_plunging_dmgInc,
+              },
+            ],
           },
         },
       }),
