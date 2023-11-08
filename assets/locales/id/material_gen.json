@@ -390,6 +390,13 @@
       "0": "Poetry Gala Fervor untuk event \"Puisi Lintas Samudra\""
     }
   },
+  "ThelxiesBadge": {
+    "name": "Thelxie's Badge",
+    "description": {
+      "0": "Lencana berbentuk penguin emas yang bersinar metalik. Memberikan kekuatan tekad pada yang memakainya untuk terus maju ke depan ....",
+      "1": "Sebuah hadiah berharga yang didapatkan dalam event \"Petualangan Fantastis Thelxie\"."
+    }
+  },
   "Primogem": {
     "name": "Primogem",
     "description": {
@@ -1017,6 +1024,14 @@
       "0": "Hakim Agung Fontaine yang bergelar Iudex. Terkenal karena selalu adil dan tidak berpihak."
     }
   },
+  "Charlotte": {
+    "name": "Charlotte",
+    "description": {}
+  },
+  "Furina": {
+    "name": "Furina",
+    "description": {}
+  },
   "KamisatoAyakasStellaFortuna": {
     "name": "Kamisato Ayaka's Stella Fortuna",
     "description": {
@@ -1459,6 +1474,18 @@
     "name": "Neuvillette's Stella Fortuna",
     "description": {
       "0": "Material aktivasi untuk konstelasi Neuvillette"
+    }
+  },
+  "CharlottesStellaFortuna": {
+    "name": "Charlotte's Stella Fortuna",
+    "description": {
+      "0": "Material aktivasi untuk konstelasi Charlotte"
+    }
+  },
+  "FurinasStellaFortuna": {
+    "name": "Furina's Stella Fortuna",
+    "description": {
+      "0": "Material aktivasi untuk konstelasi Furina"
     }
   },
   "GnosticHymnOldNotes": {
@@ -6496,10 +6523,22 @@
       "0": "Hewan berbadan lembek yang memancarkan cahaya hangat. Sering ditemukan memanjat dinding bangunan di dekat air atau di bawah air."
     }
   },
+  "LakelightLily": {
+    "name": "Lakelight Lily",
+    "description": {
+      "0": "Bunga berwarna biru yang bersih dan cerah, lahir di tempat aliran air berkumpul. Aromanya begitu dingin dan menyegarkan namun juga lembut."
+    }
+  },
   "SubdetectionUnit": {
     "name": "Subdetection Unit",
     "description": {
       "0": "Alat pendeteksi buatan Institut Penelitian Fontaine yang dilengkapi dengan komponen model terbaru. Fungsi aslinya adalah untuk memonitor segala jenis data lingkungan."
+    }
+  },
+  "SpringOfTheFirstDewdrop": {
+    "name": "Spring of the First Dewdrop",
+    "description": {
+      "0": "Tetesan embun jernih yang mengambang di perairan Morte. Berbeda dengan air murni lainnya, embun ini sepertinya merupakan kumpulan energi elemen yang lebih murni."
     }
   },
   "BirchWood": {
@@ -13710,6 +13749,54 @@
       "0": "Spesialisasi Wriothesley. Segera setelah mendengar dia mengusir anak buahnya dengan teriakan \"Keluar, dapurnya sudah mau meledak\", daging yang terlihat luar biasa lezat langsung muncul di depan matamu. Saus yang dioleskan di atas kulit yang terkelupas menghadirkan kelezatan berganda, tapi saat dicicipi, rasanya kok sama persis dengan bumbu yang belakangan ini lagi populer di mana-mana ya ...."
     }
   },
+  "SuspiciousLaLettreAFocalors": {
+    "name": "Suspicious La Lettre a Focalors",
+    "description": {
+      "0": "Kue kecil berbentuk balok. Rasa dari setiap lapisannya sepertinya kurang lebih sama, dan ... Eh tunggu, kok sepertinya beberapa lapisan tidak ada sih! Pecinta kue sih sekali gigit pasti langsung tahu kalau ada masalah dalam proses pembuatannya."
+    }
+  },
+  "LaLettreAFocalors": {
+    "name": "La Lettre a Focalors",
+    "description": {
+      "0": "Kue kecil berbentuk balok. Dikatakan bahwa pada zaman dahulu kala, seorang pembuat kue mencurahkan segenap kasih sayang orang-orang Fontaine untuk Archon Hydro tercinta sebagai inspirasi dalam pembuatan kue ini. Lapisan yang bertumpuk-tumpuk adalah salah satu ujian untuk melihat kemampuan sang pembuat kue. dan setiap aspek dari kue ini adalah bukti dari pengaruh sang Archon Hydro itu sendiri."
+    }
+  },
+  "DeliciousLaLettreAFocalors": {
+    "name": "Delicious La Lettre a Focalors",
+    "description": {
+      "0": "Kue kecil berbentuk balok. Aroma kopi dan almond yang memikat dapat membuat pikiranmu melayang jauh seolah berada di dalam opera mewah. Tanpa disadari, kamu tenggelam dalam pertunjukan megah dan hanya bisa berharap bahwa momen ini tidak akan pernah berakhir."
+    }
+  },
+  "SuspiciousBlubberProfiterole": {
+    "name": "Suspicious Blubber Profiterole",
+    "description": {
+      "0": "Makanan penutup berisi krim. Karena sudah didiamkan terlalu lama di luar, kulitnya yang harusnya renyah kini menjadi lembek. Ini ... berbeda dari tekstur garing yang kamu bayangkan. Setelah gigitan pertama, kamu langsung ingin mengoper makanan yang bak \"hukuman mati\" ini kepada orang lain."
+    }
+  },
+  "BlubberProfiterole": {
+    "name": "Blubber Profiterole",
+    "description": {
+      "0": "Makanan penutup berisi krim. Kulitnya yang garing dengan krim di dalamnya. Berbentuk bulat dan begitu imut seperti perut Blubberbeast. Tak heran jika makanan penutup ini bisa menarik hati hampir semua orang yang melihatnya."
+    }
+  },
+  "DeliciousBlubberProfiterole": {
+    "name": "Delicious Blubber Profiterole",
+    "description": {
+      "0": "Makanan penutup berisi krim. Setelah gigitan pertama menyentuh bibirmu, kamu tidak tahan untuk terus menerus melahapnya! Dan bahkan sisa krim di sisi bibirmu saja sudah cukup untuk membuat hatimu dipenuhi rasa bahagia. Ah, andai saja setiap hidangan bisa semanis dan sesempurna ini ... Pastinya hidup ini akan menjadi lebih indah!"
+    }
+  },
+  "PourLaJustice": {
+    "name": "\"Pour la Justice\"",
+    "description": {
+      "0": "Masakan spesialisasi Furina. Di Fontaine, \"Pour la Justice\" artinya \"menghormati keadilan\". Dan dia pernah menyaksikan lahirnya keadilan yang paling mulia di atas panggung termegah. Rasanya yang berlapis-lapis seolah menyatu dan menghilang bagai ombak laut, dan akhirnya menjadi tenang seperti terbebas dari beban berat selama ini. Mungkin ini mencerminkan apa yang sudah dialaminya selama ini?"
+    }
+  },
+  "ExclusiveScoopGourmetColumn": {
+    "name": "Exclusive Scoop: Gourmet Column",
+    "description": {
+      "0": "Makanan spesialisasi Charlotte. Camilan yang selalu menemaninya dalam mengejar berita-berita heboh. Ketika dia melihat sekeliling, dan langkah kakinya yang bersemangat seolah beresonansi dengan suara gurih dari camilan ikan garing yang ada di mulutnya ... Walaupun berita terbarunya ini belum selesai ditulis, namun kebahagiaan dan kepuasan dari lubuk hatinya sudah mencapai puncaknya."
+    }
+  },
   "RecipeItem": {
     "name": "Bahan Resep",
     "description": {
@@ -14747,6 +14834,18 @@
     "name": "Resep: Crepes Suzette",
     "description": {
       "0": "Resep yang berisi langkah-langkah untuk membuat Crepes Suzette."
+    }
+  },
+  "RecipeLaLettreAFocalors": {
+    "name": "Resep: La Lettre a Focalors",
+    "description": {
+      "0": "Resep yang berisi langkah-langkah untuk membuat La Lettre a Focalors."
+    }
+  },
+  "RecipeBlubberProfiterole": {
+    "name": "Resep: Blubber Profiterole",
+    "description": {
+      "0": "Resep yang berisi langkah-langkah untuk membuat Blubber Profiterole."
     }
   },
   "CraftedItems": {
@@ -16054,6 +16153,34 @@
     "description": {
       "0": "Bagian penghasil listrik dari Millennial Pearl Seahorse, dan tanda kebesarannya, simbol dari kekuatannya yang luar biasa — kini sudah terputus di tengah bentrokan melawan penantang yang perkasa.",
       "1": "Sebagai predator terkuat yang bisa tumbuh dari kuda laut, perjalanan evolusi makhluk ini sangat berbeda dengan yang dialami Fontemer Aberrant lainnya. Perbedaan tersebut tidak terletak pada bentuk dasar sebelum mereka tumbuh lebih besar dan lebih kuat, melainkan mereka memiliki anggota tubuh dan tanduk yang tidak terdapat pada kuda laut biasa sedari lahir. Selain itu, bahkan otot dan kerangkanya pun telah mengalami perubahan. Jika dibandingkan dengan wujud aslinya, mereka benar-benar tampak menyerupai makhluk imajinasi yang diceritakan dalam legenda kuno. Dalam imajinasi para penyair dan penulis, kuda laut pun bahkan dapat bermain-main di tanah."
+    }
+  },
+  "LightlessSilkString": {
+    "name": "Lightless Silk String",
+    "description": {
+      "0": "Untaian tipis yang entah bagaimana bisa menempel di senjatamu saat sedang bertempur melawan All-Devouring Narwhal.",
+      "1": "Di Fontaine zaman kuno, ada orang yang menganggap bahwa Fortuna yang menguasai dunia ini terbentuk dari anyaman serat yang tak terhitung jumlahnya, seperti senar-senar yang disusun menjadi harpa. Senar yang menghasilkan melodi megah akan membawa kebahagiaan bagi dunia, sementara suara kekacuan akan menghancurkan alam semesta."
+    }
+  },
+  "LightlessEyeOfTheMaelstrom": {
+    "name": "Lightless Eye of the Maelstrom",
+    "description": {
+      "0": "Sebuah \"zat\" aneh yang diperoleh dari pertempuran dengan All-Devouring Narwhal. Beratnya jauh melebihi ukurannya.",
+      "1": "Segalanya berkumpul di sekeliling objek yang berat, seperti emas yang lebih menarik dibandingkan besi, dan tanah yang luas dibandingkan angin sepoi. Layaknya cahaya yang tidak bisa terlepas dari pusaran kegelapan, sebab dan akibat juga terikat dengan takdir, tidak bisa diganggu gugat."
+    }
+  },
+  "LightlessMass": {
+    "name": "Lightless Mass",
+    "description": {
+      "0": "Pecahan yang muncul setelah pertempuran sengit melawan All-Devouring Narwhal.",
+      "1": "Dalam gelapnya malam, tetap selalu ada secercah cahaya. Layaknya mutiara yang tertutup pasir, serpihan berlian di atas aspal, cahaya yang menembus malam berkabut, dan percikan yang menyalakan api terang."
+    }
+  },
+  "WaterThatFailedToTranscend": {
+    "name": "Water That Failed To Transcend",
+    "description": {
+      "0": "Satu-satunya yang tersisa setelah Hydro Tulpa tercerai-berai.",
+      "1": "Objek ini sangat mirip dengan kristal yang diekstrak dari tubuh Fontemer Aberrant. Tapi yang ini mengandung banyak ketidakmurnian kecil, layaknya gelembung-gelembung kaca yang dibentuk oleh pengrajin yang kaku."
     }
   },
   "TileOfDecarabiansTower": {
@@ -18877,6 +19004,60 @@
       "0": "Bahan bacaan hiburan populer di Fontaine. Buku ini bercerita tentang konfrontasi pertama antara \"pencuri baik hati\" Fantomas Robben dan detektif Chesterton yang terkenal. Penafian: Cerita ini murni fiksi dan tidak ada hubungannya dengan lokasi, karakter, atau kejadian di dunia nyata."
     }
   },
+  "TheFallOfTheFadedCastleI": {
+    "name": "Runtuhnya Kastil yang Pudar (I)",
+    "description": {
+      "0": "Puisi yang dibuat oleh seseorang yang tak diketahui. Gaya penulisannya seolah memberikan aura yang aneh dan tidak menyenangkan."
+    }
+  },
+  "TheFallOfTheFadedCastleII": {
+    "name": "Runtuhnya Kastil yang Pudar (II)",
+    "description": {
+      "0": "Puisi yang dibuat oleh seseorang yang tak diketahui. Gaya penulisannya seolah memberikan aura yang aneh dan tidak menyenangkan."
+    }
+  },
+  "TheFallOfTheFadedCastleIII": {
+    "name": "Runtuhnya Kastil yang Pudar (III)",
+    "description": {
+      "0": "Puisi yang dibuat oleh seseorang yang tak diketahui. Gaya penulisannya seolah memberikan aura yang aneh dan tidak menyenangkan."
+    }
+  },
+  "LaChansonDErinnyesI": {
+    "name": "Nyanyian Erinnyes (I)",
+    "description": {
+      "0": "Utusan Raja Remus datang ke Erinnyes, meminta hadiah berupa air dan tanah dari Kastil Aremori, dan agar dia tunduk kepada Sumphonia Capitolii (yang artinya keselarasan kekal)."
+    }
+  },
+  "LaChansonDErinnyesII": {
+    "name": "Nyanyian Erinnyes (II)",
+    "description": {
+      "0": "Bagaimana cara kesatria dari setiap wilayah bersatu dan bekerja sama dengan Erinnyes melawan Capitoliani yang menyerbu?"
+    }
+  },
+  "LaChansonDErinnyesIII": {
+    "name": "Nyanyian Erinnyes (III)",
+    "description": {
+      "0": "Kini Erinnyes mengucapkan selamat tinggal pada Ratu Segala Perairan, dan bagaimana dia akhirnya melemparkan pedangnya ke danau tiga kali."
+    }
+  },
+  "TalesOfASnowWingedGooseI": {
+    "name": "Kisah Angsa Bersayap Salju (I)",
+    "description": {
+      "0": "Sebuah buku dongeng kecil yang populer di Fontaine. Sampulnya yang indah membuat banyak anak kecil salah mengira bahwa buku ini benar-benar ditulis oleh Nyonya Angsa Bersayap Salju yang baik hati dalam legenda."
+    }
+  },
+  "TalesOfASnowWingedGooseII": {
+    "name": "Kisah Angsa Bersayap Salju (II)",
+    "description": {
+      "0": "Sebuah buku dongeng kecil yang populer di Fontaine. Sampulnya yang indah membuat banyak anak kecil salah mengira bahwa buku ini benar-benar ditulis oleh Nyonya Angsa Bersayap Salju yang baik hati dalam legenda."
+    }
+  },
+  "TalesOfASnowWingedGooseIII": {
+    "name": "Kisah Angsa Bersayap Salju (III)",
+    "description": {
+      "0": "Sebuah buku dongeng kecil yang populer di Fontaine. Sampulnya yang indah membuat banyak anak kecil salah mengira bahwa buku ini benar-benar ditulis oleh Nyonya Angsa Bersayap Salju yang baik hati dalam legenda."
+    }
+  },
   "GiftOfParting": {
     "name": "Hadiah \"Perpisahan\"",
     "description": {
@@ -19221,6 +19402,63 @@
       "0": "Jurnal yang Terkoyak"
     }
   },
+  "SirArthursWing": {
+    "name": "Sayap Sir Arthur",
+    "description": {
+      "0": "Sayap roda gigi milik Sir Arthur.",
+      "1": "Pelakunya benar-benar keterlaluan!"
+    }
+  },
+  "SirArthursBody": {
+    "name": "Tubuh Sir Arthur",
+    "description": {
+      "0": "Tubuh roda gigi milik Sir Arthur.",
+      "1": "Pelakunya benar-benar keterlaluan!"
+    }
+  },
+  "SirArthursHead": {
+    "name": "Kepala Sir Arthur",
+    "description": {
+      "0": "Kepala roda gigi milik Sir Arthur.",
+      "1": "Pelakunya benar-benar keterlaluan!"
+    }
+  },
+  "LeftoverPoissonchantPie": {
+    "name": "Poissonchant Pie yang Tersisa",
+    "description": {
+      "0": "Makanan yang kelihatannya lucu, tapi sepertinya bisa buat sakit perut."
+    }
+  },
+  "MysteriousThreatLetter": {
+    "name": "Surat Ancaman Misterius",
+    "description": {}
+  },
+  "AnotherMysteriousThreatLetter": {
+    "name": "Surat Ancaman Misterius Lagi",
+    "description": {}
+  },
+  "KevinsLetter": {
+    "name": "Surat Kevin",
+    "description": {}
+  },
+  "MessilyWrittenLetter": {
+    "name": "Surat yang Tulisannya Jelek",
+    "description": {}
+  },
+  "ScribbledOrders": {
+    "name": "Instruksi yang Tertulis Berantakan",
+    "description": {}
+  },
+  "OldPhoto": {
+    "name": "Foto Lama",
+    "description": {
+      "0": "Foto bersama."
+    }
+  },
+  "LetterToTheEditorinChiefDraft": {
+    "name": "Surat untuk Pemimpin Redaksi (Draf)",
+    "description": {}
+  },
   "Disclaimer": {
     "name": "Penjelasan",
     "description": {}
@@ -19333,6 +19571,12 @@
       "0": "Token milik Puca yang hilang di kedalaman gua penambangan. Cepat kembalikan kepadanya!"
     }
   },
+  "TalochardsInvestigationNotes": {
+    "name": "Catatan Penyelidikan Talochard",
+    "description": {
+      "0": "Catatan penyelidikan yang dibagikan oleh Talochard, mencatat informasi terkait tentang kasus hilangnya Sir Arthur."
+    }
+  },
   "AStory": {
     "name": "Sebuah Cerita",
     "description": {}
@@ -19341,6 +19585,18 @@
     "name": "Roda Tangan",
     "description": {
       "0": "Roda tangan yang sering ditemukan. Digunakan untuk mengontrol katup penyesuaian pipa di sekitar Benteng Meropide."
+    }
+  },
+  "MaterialForThelxiesWeapon": {
+    "name": "Material untuk Senjata Thelxie",
+    "description": {
+      "0": "Pernak-pernik warna-warni yang dikumpulkan dari dalam air. Akan digunakan untuk membuat senjata Thelxie."
+    }
+  },
+  "MaterialForThelxiesCrown": {
+    "name": "Material untuk Mahkota Thelxie",
+    "description": {
+      "0": "Pernak-pernik warna-warni yang dikumpulkan dari dalam air. Akan digunakan untuk membuat mahkota Thelxie."
     }
   },
   "EnergyConcentratingComponent": {
@@ -19361,6 +19617,12 @@
   "34thIndependentInvestigativeSquadDeploymentInMontEsusEasternQuadrantDisplinaryProcedures": {
     "name": "Peraturan Ketertiban Tim Investigasi Mandiri ke-34 di Mont Esus East",
     "description": {}
+  },
+  "TravelersExclusiveInterviewHandbook": {
+    "name": "Panduan Wawancara Eksklusif Petualang",
+    "description": {
+      "0": "Sebuah catatan wawancara eksklusif yang dilakukan oleh reporter terkenal The Steambird, Charlotte, dengan pengembara berambut pirang. Setelah informasi yang di dalamnya melalui berbagai revisi, kini catatan ini punya berbagai fungsi lain selain \"diterbitkan di surat kabar\"."
+    }
   },
   "PoemOnFallenLeaf": {
     "name": "Puisi di Daun yang Gugur",
@@ -19413,6 +19675,60 @@
   "Notice": {
     "name": "Pengumuman",
     "description": {}
+  },
+  "LiamsBallad": {
+    "name": "Nyanyian Liam",
+    "description": {
+      "0": "Botol transparan yang mengandung kertas dengan gambar aneh di bagian belakangnya, meringkas kejadian tentang seseorang yang bernama Liam."
+    }
+  },
+  "RockyAvildsensDisappearance": {
+    "name": "Hilangnya Rocky Avildsen",
+    "description": {
+      "0": "Botol transparan yang berisi kertas dengan gambar aneh di bagian belakangnya, meringkas kejadian tentang seseorang yang bernama Rocky Avildsen."
+    }
+  },
+  "AthossConfession": {
+    "name": "Pengakuan Athos",
+    "description": {
+      "0": "Botol transparan yang mengandung kertas dengan gambar aneh di bagian belakangnya, meringkas kejadian tentang seseorang yang bernama Athos."
+    }
+  },
+  "ParkersHopes": {
+    "name": "Harapan Parker",
+    "description": {
+      "0": "Botol transparan yang mengandung kertas dengan gambar aneh di bagian belakangnya, meringkas kejadian tentang seseorang yang bernama Parker."
+    }
+  },
+  "BarrowsExpectations": {
+    "name": "Ekspektasi Barrow",
+    "description": {
+      "0": "Botol transparan yang mengandung kertas dengan gambar aneh di bagian belakangnya, meringkas kejadian tentang seseorang yang bernama Barrow."
+    }
+  },
+  "AutumnsRegrets": {
+    "name": "Penyesalan Autumn",
+    "description": {
+      "0": "Kertas dengan gambar aneh di bagian belakangnya, meringkas kejadian tentang seseorang yang bernama Autumn."
+    }
+  },
+  "RougesWritings": {
+    "name": "Tulisan Rouge",
+    "description": {
+      "0": "Botol transparan yang mengandung kertas dengan gambar aneh di bagian belakangnya, meringkas kejadian tentang seseorang yang bernama Rouge."
+    }
+  },
+  "FreemansAnnouncement": {
+    "name": "Pengumuman Freeman",
+    "description": {
+      "0": "Botol transparan yang mengandung kertas dengan gambar aneh di bagian belakangnya, meringkas kejadian tentang seseorang yang bernama Freeman."
+    }
+  },
+  "RainbowRosesIdeals": {
+    "name": "Idealisme Rainbow Rose",
+    "description": {
+      "0": "Kertas yang terbentuk dengan menggabungkan delapan catatan. Gambar aneh di belakangnya rupanya adalah Rainbow Rose."
+    }
   },
   "LeftSideTableFileBox": {
     "name": "Berkas Kasus di Sisi Kiri Meja",
@@ -19499,6 +19815,37 @@
       "0": "\"Minuman percobaan\" yang dibuat oleh Heinry. \"Bubble tea manis\" yang sudah tidak ada bubblenya sama sekali. Bisa tidak aku minum segelas teh saja?!"
     }
   },
+  "DiaryOfAValiantStruggleI": {
+    "name": "Buku Harian Sang Pemberani (I)",
+    "description": {
+      "0": "Buku Harian Sang Pemberani (I)"
+    }
+  },
+  "DiaryOfAValiantStruggleII": {
+    "name": "Buku Harian Sang Pemberani (II)",
+    "description": {
+      "0": "Buku Harian Sang Pemberani (II)"
+    }
+  },
+  "DiaryOfAValiantStruggleIII": {
+    "name": "Buku Harian Sang Pemberani (III)",
+    "description": {
+      "0": "Buku Harian Sang Pemberani (III)"
+    }
+  },
+  "DiaryOfAValiantStruggleIV": {
+    "name": "Buku Harian Sang Pemberani (IV)",
+    "description": {
+      "0": "Buku Harian Sang Pemberani (IV)"
+    }
+  },
+  "DiaryOfAValiantStruggle": {
+    "name": "Buku Harian Sang Pemberani",
+    "description": {
+      "0": "Catatan pengalaman hidup seorang pejuang.",
+      "1": "\"Sayat saja langsung burung bodoh itu! Seharusnya ini menjadi peringatan yang cukup baik bagi mereka, kan?\""
+    }
+  },
   "AcademicAssemblyHallPicture": {
     "name": "Lukisan \"Aula Akademik\"",
     "description": {
@@ -19529,9 +19876,21 @@
     "name": "Surat yang Ditinggalkan",
     "description": {}
   },
+  "SpecialKey": {
+    "name": "Kunci Khusus",
+    "description": {
+      "0": "Kunci khusus, mungkin bisa digunakan di suatu tempat."
+    }
+  },
   "FontaineResearchInstituteOfKineticEnergyEngineeringCertificate": {
     "name": "Sertifikat Penghargaan Institut Penelitian Energi Kinetik Fontaine",
     "description": {}
+  },
+  "TeardropKey": {
+    "name": "Kunci Air Mata",
+    "description": {
+      "0": "Sebuah permata berbentuk seperti tetesan hujan, atau mungkin seperti tetesan air mata seseorang."
+    }
   },
   "TrainingLog": {
     "name": "Catatan Latihan",
@@ -19559,6 +19918,13 @@
       "0": "Sepucuk surat, yang diletakkan di samping dua Bulle Fruit."
     }
   },
+  "ThelxiesFantasticAdventures": {
+    "name": "Petualangan Fantastis Thelxie",
+    "description": {
+      "0": "Sebuah buku dongeng anak-anak yang hanya berisi 3 halaman, menceritakan tentang kisah seorang pangeran yang berhasil melewati kesendirian.",
+      "1": "Bertuliskan \"bagi mereka yang mengalami masa sulit\" dengan huruf yang kecil di sampul belakangnya."
+    }
+  },
   "LocationNo1Materials": {
     "name": "Material Lokasi No. 1",
     "description": {
@@ -19575,6 +19941,215 @@
     "name": "Material Lokasi No. 3",
     "description": {
       "0": "Material milik Heinry yang hilang. Tidak ada yang tahu inspirasi apa yang bisa didapatkannya dari benda ini ...."
+    }
+  },
+  "IridescentGlory": {
+    "name": "\"Iridescent Glory\"",
+    "description": {
+      "0": "Kerang dan terumbu karang dengan berbagai warna. Dikatakan bahwa ini adalah harta karun paling berharga milik Siluman Air, dan mereka juga berhasil membangun Jembatan Pelangi di Kerajaan Siluman Air ...."
+    }
+  },
+  "AureliesNotesI": {
+    "name": "Catatan Aurelie (I)",
+    "description": {
+      "0": "Catatan Aurelie (I)"
+    }
+  },
+  "MarvelousJellyImprovedFontaineEdition": {
+    "name": "Marvelous Jelly: Edisi Pengembangan Fontaine",
+    "description": {
+      "0": "Hadiah istimewa yang dikirimkan Haniyyah. Di dalamnya berisi Marvelous Jelly yang sangat disukai Fungus, ditambah lagi dengan berbagai rasa Jelly yang bisa diberikan kepada Fungus sesuai dengan selera mereka masing-masing.",
+      "1": "Seiring dengan pemahamannya terhadap para Fungus dan pengalaman yang terus dikumpulkan, Haniyyah mulai bisa menguasai rasa-rasa dari Marvelous Jelly. Versi yang dikembangkan ini bukan cuma lebih bergizi bagi para Fungus, tapi juga sudah mengadopsi ciri khas makanan Fontaine sehingga memiliki rasa baru yang unik. Fungus pun jadi sehat dan bahagia saat memakannya!"
+    }
+  },
+  "SpinaDiRosulaUniformGiftBox": {
+    "name": "Kotak Hadiah Seragam Spina di Rosula",
+    "description": {
+      "0": "Hadiah yang disiapkan oleh Navia, di dalamnya terdapat seragam Spina di Rosula untuk Adele. Sepertinya ukurannya masih terlalu besar untuk Adele saat ini, tapi ini bisa dipakai untuk menepati janji."
+    }
+  },
+  "StrangelyShapedKey": {
+    "name": "Kunci Berbentuk Aneh",
+    "description": {
+      "0": "Kunci yang didapat dari geng Romeu. Sepertinya ini adalah alat yang diperlukan untuk menghentikan ledakan."
+    }
+  },
+  "RecommendationLetter": {
+    "name": "Surat Rekomendasi",
+    "description": {
+      "0": "Surat Rekomendasi"
+    }
+  },
+  "RustyIronKey": {
+    "name": "Kunci Besi Berkarat",
+    "description": {
+      "0": "Kunci yang ditinggalkan di sini ... Bisa dipakai untuk buka kunci yang mana ya?"
+    }
+  },
+  "Persona": {
+    "name": "\"Kepribadian\"",
+    "description": {
+      "0": "Salah satu bahan yang diperlukan untuk menempa Pedang Agung Narzissenkreuz. Hampir tidak terasa berat sama sekali."
+    }
+  },
+  "UnlockedTreasure": {
+    "name": "\"Harta Karun\" yang Terbuka",
+    "description": {
+      "0": "Sebuah jam saku tua.",
+      "1": "Sepertinya waktunya sudah berhenti di saat tertentu, sehingga kenangan indahnya juga menjadi abadi."
+    }
+  },
+  "AureliesNotesII": {
+    "name": "Catatan Aurelie (II)",
+    "description": {
+      "0": "Catatan Aurelie (II)"
+    }
+  },
+  "ANewLifesBeginning": {
+    "name": "\"Awal Kehidupan Baru\"",
+    "description": {
+      "0": "Sebuah surat jalan yang dikeluarkan oleh Benteng Meropide. Hanya secarik kertas, namun mempunyai nama yang begitu berarti."
+    }
+  },
+  "RootCycle": {
+    "name": "Roda Asal-Muasal",
+    "description": {
+      "0": "Salah satu kunci yang didesain oleh Asosiasi Narzissenkreuz untuk menara ini. Saat digabungkan, kunci ini akan membentuk bentuk aneh tiga setengah lingkaran, dan ada penjelasan khususnya untuk bentuk ini.",
+      "1": "Lingkaran paling dalam adalah Siklus Hyperborea yang melambangkan dunia saat masih beku dan tanah kebahagiaan yang hilang."
+    }
+  },
+  "SimpleVaultKeyI": {
+    "name": "Kunci Harta Sederhana I",
+    "description": {
+      "0": "Salah satu kunci yang bisa digunakan untuk membuka pagar besi yang terpasang di atas kapal hancur."
+    }
+  },
+  "SimpleVaultKeyII": {
+    "name": "Kunci Harta Sederhana II",
+    "description": {
+      "0": "Salah satu kunci yang bisa digunakan untuk membuka pagar besi yang terpasang di atas kapal hancur."
+    }
+  },
+  "SimpleVaultKeyIII": {
+    "name": "Kunci Harta Sederhana III",
+    "description": {
+      "0": "Salah satu kunci yang bisa digunakan untuk membuka pagar besi yang terpasang di atas kapal hancur."
+    }
+  },
+  "FoggyForestBranch": {
+    "name": "Carang Hutan Kabut",
+    "description": {
+      "0": "Sebuah ranting yang bersinar dengan warna hijau bagai giok. Sepertinya ada hubungannya dengan Jalan Hutan Berkabut.",
+      "1": "Jika dilihat lebih dekat, sepertinya ada sesuatu yang mengalir di dalam ranting tersebut."
+    }
+  },
+  "FallenBouquet": {
+    "name": "Buket yang Terjatuh",
+    "description": {
+      "0": "Bunga liar yang pernah menjadi bunga yang sangat berharga bagi seseorang. Tidak ada yang spesial selain tempatnya terjatuh.",
+      "1": "Rasa syukur dan kerinduan mungkin adalah kunci untuk tetap maju."
+    }
+  },
+  "Tripod": {
+    "name": "Tripod",
+    "description": {
+      "0": "Tripod Urville yang hilang. Seharusnya kalau sudah dikeringkan, masih bisa digunakan."
+    }
+  },
+  "NadiasToken": {
+    "name": "Token Nadia",
+    "description": {
+      "0": "Sebuah roda gigi kecil, sepertinya tidak ada yang spesial."
+    }
+  },
+  "TinyConch": {
+    "name": "Keong Kecil",
+    "description": {
+      "0": "Keong yang indah. Nadia sangat menyukainya."
+    }
+  },
+  "DivingSet": {
+    "name": "Peralatan Menyelam",
+    "description": {
+      "0": "Peralatan menyelam Urville yang hilang. Sepertinya sudah rusak."
+    }
+  },
+  "SunkenCoinPouch": {
+    "name": "Kantong Koin yang Tenggelam",
+    "description": {
+      "0": "Kantong koin biasa yang dipenuhi Mora."
+    }
+  },
+  "StrangeMessage": {
+    "name": "Pesan Aneh",
+    "description": {
+      "0": "Pesan Aneh"
+    }
+  },
+  "MysteriousXenochromaticCrystal": {
+    "name": "Xenochromatic Crystal Misterius",
+    "description": {
+      "0": "Kristal besar yang diperoleh dari dalam tubuh Fontemer Aberrant yang sangat kuat di area Morte.",
+      "1": "Kekuatan yang dikandungnya lebih misterius dari Xenochromatic Crystal yang biasanya.",
+      "2": "Mungkin akan ada orang yang bersedia membayarkan harga yang setara untuknya."
+    }
+  },
+  "MapFragment": {
+    "name": "Sobekan Peta",
+    "description": {
+      "0": "Halaman sobek yang sepertinya adalah bagian sudut kanan bawah dari sebuah peta. Terdapat titik dan garis aneh yang tergambar di atasnya."
+    }
+  },
+  "SmallKey": {
+    "name": "Kunci Kecil",
+    "description": {
+      "0": "Kunci kecil yang bisa digunakan sebagai pembatas buku. Kenapa tidak diperiksa dan disita ya? Terus kenapa kunci kecil ini bisa membuka pintu sepenting itu?"
+    }
+  },
+  "Notes": {
+    "name": "Buku Catatan",
+    "description": {}
+  },
+  "Description": {
+    "name": "Pengenalan",
+    "description": {}
+  },
+  "Storybook": {
+    "name": "Buku Cerita",
+    "description": {}
+  },
+  "Certificate": {
+    "name": "Sertifikat",
+    "description": {}
+  },
+  "InvestigationLog": {
+    "name": "Catatan Investigasi",
+    "description": {}
+  },
+  "Excerpt": {
+    "name": "Kutipan",
+    "description": {}
+  },
+  "Log": {
+    "name": "Catatan",
+    "description": {}
+  },
+  "TearsAmongTheStars": {
+    "name": "Air Mata di Lautan Bintang",
+    "description": {
+      "0": "Setetes air diambil dari binatang raksasa yang mendambakan lautan primordial kehidupan.",
+      "1": "<br/>",
+      "2": "Jika ada kelahiran, pasti ada kematian; jika ada kehancuran alam, pasti ada kelahiran yang baru — di dunia kuno nan jauh di sana ... Sempat ada filsuf yang menyimpulkan hal demikian.",
+      "3": "Jika tidak, cahaya sekilas itu tidak akan mampu menahan kegelapan abadi. Setelah waktunya habis, segalanya akan menjadi layu.",
+      "4": "Hukum bintang-bintang, yakni hukum alam semesta, tentu saja harus dilestarikan. Tapi hukum alam semesta tidak pernah dilestarikan.",
+      "5": "Dalam kotak tertutup, kehancuran akan selalu mengalahkan kelahiran kembali. Kemakmuran ribuan tahun pada jutaan yang lalu itu tidak lebih dari sekejap mata saja. Kemuliaan yang patut dibanggakan akan selalu berkarat, membusuk, hilang, dan akhirnya dilupakan.",
+      "6": "Oleh karena itu, ada hal-hal yang mengapung di antara bintang-bintang, hal-hal yang memiliki nama yang tak terhitung jumlahnya dari peradaban yang tak terhitung jumlahnya, dan meneteskan air matanya pada saat-saat kehancurannya yang sudah ditentukan.",
+      "7": "Menangis karena putus asa, menangis karena harapan, menangis karena segala keputusasaan dan harapan, karena pada akhirnya dia akan padam bersama ribuan bintang terang lainnya.",
+      "8": "Menangis karena sedih, menangis karena tertawa, karena segala tangis dan tawa itu pada akhirnya akan tercerai berai menuju ke kehampaan yang gelap dan dingin tak berujung.",
+      "9": "Semua sosok kecil yang indah, semua momen yang pantas dikenang, semuanya akan sirna ditelan oleh waktu, bintang-bintang juga tidak terkecuali.",
+      "10": "Makanya, ada hal yang dulu disebut \"dewa\", bertekad untuk menyelamatkan segala sesuatu yang perlu diselamatkan dan melahap segala sesuatu yang perlu dilahap.",
+      "11": "Hingga akhir waktu, hingga lautan bintang yang sepi terbakar menjadi bara api yang dingin ... Hingga saat itu, \"dunia\" baru akan muncul di dalam perut ikan paus.",
+      "12": "\"Tidak akan ada lagi dosa, tidak akan ada lagi kesedihan, tidak akan ada lagi dukacita, tidak akan ada lagi air mata, karena semuanya telah musnah bersama dengan bintang-bintang pada zaman dulu.\""
     }
   },
   "SilkFlowerSeed": {
@@ -20014,6 +20589,14 @@
       "0": "Mekanisme pendukung yang dikembangkan untuk meningkatkan tingkat utilitas kelompok Clockwork Meka, dengan menyediakan bantuan di bawah air. Awalnya diciptakan untuk menghilangkan sampah, residu tanaman, dan kotoran lain di dalam air agar tidak menyumbat bagian penting Clockwork Meka, untuk memperkecil kemungkinan kerusakan Clockwork Meka.",
       "1": "Dibanding dengan model lainnya, mekanisme pemelihara khusus \"Koleksi Platinum\" ini merupakan model cendera mata yang diproduksi khusus oleh tim pengembang. Ketika tim tersebut melobi beberapa pengusaha kaya untuk berinvestasi dalam proyek mekanisme pemelihara, mereka akan membagikan suvenir semacam ini sebagai hiasan mewah untuk akuarium. Namun upaya lobi tersebut gagal dan akhirnya mereka terpaksa menjual mekanisme pemelihara ini sebagai mainan untuk menyubsidi pendanaan proyek yang semakin menipis.",
       "2": "Setelah insiden itu, tim pengembang mekanisme pemelihara tersebut diberhentikan seluruhnya, sementara kesinambungan proyek itu pun dibatalkan. Saat ini, sudah tidak ada lagi yang mengelola semua mekanisme pemelihara tersebut di perairan Fontaine. Sekelompok \"Koleksi Platinum\" yang diproduksi sebelumnya pun tenggelam dan menghilang di dalam air, merekalah \"ikan\" khas paling mahal yang ada di perairan Fontaine. Dengan dirilisnya beberapa proyek Institut, para wartawan \"The Steambird\" membandingkan data serta melakukan penyelidikan mendalam. Mereka menemukan bahwa, \"Tidak adanya perubahan atau kemajuan yang signifikan pada kondisi polusi perairan Fontaine sebelum maupun sesudah perilisan mekanisme pemelihara patut menjadi sebuah tanda tanya besar terhadap efektivitas keberhasilan proyek tersebut.\" Sejak saat itu, mekanisme pemelihara \"Koleksi Platinum\" yang masih beraktivitas, masih terus berenang di perairan Fontaine, dan para nelayan juga menganggap bahwa keberhasilan menangkap \"Koleksi Platinum\" tersebut menjadi sebuah hal yang membanggakan. Lagi pula, \"Koleksi Platinum\" pun sama langkanya dengan ikan akuarium yang paling berharga di bangsa lain."
+    }
+  },
+  "MaintenanceMekGoldLeader": {
+    "name": "Maintenance Mek: Gold Leader",
+    "description": {
+      "0": "Mekanisme pendukung yang dikembangkan untuk membantu mekanisme roda gigi di dalam air dan meningkatkan kinerjanya. Awalnya dirancang untuk membersihkan sampah, sisa-sisa tumbuhan, dan benda-benda lainnya di dalam air agar benda-benda tersebut tidak menempel pada bagian kunci mekanisme dan mengurangi risiko kegagalan sistem roda gigi. Selain itu, mekanisme ini juga berperan untuk membersihkan ekosistem dalam air Fontaine.",
+      "1": "Dibandingkan dengan model lain yang diproduksi massal, tipe \"Gold Leader\" spesial ini dipasangi cangkang luar berwarna emas bening bersama dan diberi peralatan kendali khusus. Tim pengembang merancangnya demikian agar bisa dengan akurat memenuhi perannya sebagai \"penyambung komando lingkungan dalam air\" yang rumit, menyampaikan perintah dari perangkat pengendali ke mekanisme roda gigi lain dan memainkan peran pentingnya sebagai \"pemimpin\".",
+      "2": "Tetapi, saat proyek pemeliharaan mekanisme roda gigi secara keseluruhan berhenti, mesin ini pun kehilangan fungsi utamanya. Hanya tampilannya yang mewah berlapis emas saja yang masih dihargai oleh para pemancing yang mengoleksinya."
     }
   },
   "WingsOfFirstFlight": {
@@ -20875,6 +21458,36 @@
       "0": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah melodi misterius dari Fontaine."
     }
   },
+  "RadiantSpincrystal115": {
+    "name": "Radiant Spincrystal 115",
+    "description": {
+      "0": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah melodi misterius dari Fontaine."
+    }
+  },
+  "RadiantSpincrystal116": {
+    "name": "Radiant Spincrystal 116",
+    "description": {
+      "0": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah melodi misterius dari Fontaine."
+    }
+  },
+  "RadiantSpincrystal117": {
+    "name": "Radiant Spincrystal 117",
+    "description": {
+      "0": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah melodi misterius dari Fontaine."
+    }
+  },
+  "RadiantSpincrystal118": {
+    "name": "Radiant Spincrystal 118",
+    "description": {
+      "0": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah melodi misterius dari Fontaine."
+    }
+  },
+  "RadiantSpincrystal119": {
+    "name": "Radiant Spincrystal 119",
+    "description": {
+      "0": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah melodi misterius dari Fontaine."
+    }
+  },
   "LanternFiber": {
     "name": "Lantern Fiber",
     "description": {
@@ -21021,6 +21634,13 @@
     "description": {
       "0": "Material refinement khusus untuk \"Ballad of the Boundless Blue\".",
       "1": "Dalam banyak pantun dan kisah, Dandelion adalah simbol kebebasan, bertualang ke tempat yang jauh. Meletakkan pembatas buku bergambar Dandelion di antara lembar halaman buku bukanlah semacam ikatan, tapi justru bisa membuatnya berkelana ke dunia yang lebih luas dan cerah daripada kenyataan."
+    }
+  },
+  "SurgingSacredChalice": {
+    "name": "Surging Sacred Chalice",
+    "description": {
+      "0": "Material refinement khusus untuk \"Sword of Narzissenkreuz\".",
+      "1": "Keong seringkali menjadi bahan favorit dalam budaya orang Fontaine kuno untuk membuat peralatan ritual, dan minyak di dalam keong yang dipilih sebagai cawan suci akhirnya muncul. Secara simbolis, cawan ini ibarat kata kuno, minyak adalah kehendak yang terasah, dan pedang suci itu sendiri adalah hikmat yang menembus segalanya."
     }
   },
   "FalconsDance": {
@@ -22556,6 +23176,34 @@
       "1": "Logo resmi dari Benteng Meropide. Adalah harapan kami bahwa siapa pun yang menjunjung aturan dan hidup dalam damai jangan pernah terlibat dalam organisasi yang tercantum dalam logo ini."
     }
   },
+  "FurinaBanquet": {
+    "name": "Furina: Banquet",
+    "description": {
+      "0": "Style Kartu Nama.",
+      "1": "Memangnya satu orang bisa makan semua kue? Kalau sehari makan satu, harusnya kuenya bisa dimakan satu minggu kan ya? Tapi apa kuenya bisa tetap segar selama itu? Hmm ... Yah, jangan khawatir deh. Soalnya pasti akan ada teman yang datang untuk makan kuenya bersama-sama."
+    }
+  },
+  "CharlotteExclusive": {
+    "name": "Charlotte: Exclusive",
+    "description": {
+      "0": "Style Kartu Nama.",
+      "1": "\"Satu, aku sudah tulis berita eksklusif, pasti akan jadi heboh! Dua, kantor redaksi bilang perkembangan situasinya terlalu lambat, jadi diubah ke siaran pers saja ... Tiga, orang yang menulis siaran pers itu besok akan hadir di Opera Epiclese sebagai terdakwa, jadi mereka memang mau rebut bagianku ya!\""
+    }
+  },
+  "FontaineCompleteness": {
+    "name": "Fontaine: Kelengkapan",
+    "description": {
+      "0": "Style Kartu Nama.",
+      "1": "\"Awan malam menyebar di bawah langit, sungai kecil bersinar keemasan di bawah matahari terbenam. Bayanganku berkelana kesepian, layaknya jiwa kesepian di dasar air terjun.\""
+    }
+  },
+  "TravelNotesWhirlingWaltz": {
+    "name": "Catatan Perjalanan: Tarian Berputar",
+    "description": {
+      "0": "Style Kartu Nama.",
+      "1": "Meski roda gigi sudah berhenti berputar, meski boneka tidak berjalan maju lagi. Meski ingatan kita selamanya membeku menjadi karang, harap jangan lupakan petualangan dan waktu yang kita lalui bersama."
+    }
+  },
   "AnemoculusResonanceStone": {
     "name": "Anemoculus Resonance Stone",
     "description": {
@@ -23126,6 +23774,19 @@
       "6": "<br/>",
       "7": "\"Mesin ini hasil penelitian Papa. Namanya Penghasil Gelembung Gelatin Aerodinamis Portabel ....\"",
       "8": "\"Gelembung!!! Cantik! Papa hebat!\""
+    }
+  },
+  "SpecialAnalysisZoomLens": {
+    "name": "\"Special Analysis Zoom Lens\"",
+    "description": {
+      "0": "Komponen Kamera tipe baru yang bisa mempertajam kemampuan pengenalan grafis.",
+      "1": "Setelah dikenakan, Kamera biasa bisa langsung menyesuaikan fokusnya, sehingga bisa menangkap gambar dengan lebih cepat dan efisien selama perjalanan. Jangan sampai kamu melewatkan momen berharga perjalananmu."
+    }
+  },
+  "ImageSamplingKamera": {
+    "name": "Image Sampling Kamera",
+    "description": {
+      "0": "Kamera spesial yang dimodifikasi oleh Lepine-Pauline untuk \"pengenalan gambar anti-kriminal\". Tidak diketahui sebenarnya komponen mahal dan rumit seperti apa yang dimasukkan ke dalamnya, tapi sepertinya bisa mengambil karakteristik struktur, latar belakang, dan warna subjek foto tertentu ...."
     }
   },
   "InstructionsAnemoculusResonanceStone": {
@@ -23909,6 +24570,24 @@
       "0": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
     }
   },
+  "TheStarrySkiesTheirFlowersRain": {
+    "name": "The Starry Skies Their Flowers Rain",
+    "description": {
+      "0": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    }
+  },
+  "DiscretionarySupplement": {
+    "name": "Discretionary Supplement",
+    "description": {
+      "0": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    }
+  },
+  "AllThingsAreOfTheEarth": {
+    "name": "All Things Are of the Earth",
+    "description": {
+      "0": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    }
+  },
   "MagicGuide": {
     "name": "Magic Guide",
     "description": {
@@ -24245,6 +24924,18 @@
       "0": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
     }
   },
+  "OceanHuedClam": {
+    "name": "Ocean-Hued Clam",
+    "description": {
+      "0": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    }
+  },
+  "ShadowOfTheSandKing": {
+    "name": "Shadow of the Sand King",
+    "description": {
+      "0": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    }
+  },
   "LiyueHarborWharf": {
     "name": "Liyue Harbor Wharf",
     "description": {
@@ -24451,6 +25142,12 @@
   },
   "YayoiNanatsuki": {
     "name": "Yayoi Nanatsuki",
+    "description": {
+      "0": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    }
+  },
+  "StormterrorsLair": {
+    "name": "Stormterror's Lair",
     "description": {
       "0": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
     }
@@ -24721,6 +25418,18 @@
   },
   "Pankration": {
     "name": "Pankration!",
+    "description": {
+      "0": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    }
+  },
+  "InEveryHouseAStove": {
+    "name": "In Every House a Stove",
+    "description": {
+      "0": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    }
+  },
+  "Lyresong": {
+    "name": "Lyresong",
     "description": {
       "0": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
     }
@@ -25891,6 +26600,20 @@
       "1": "Setelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
     }
   },
+  "HelloWelcome": {
+    "name": "\"Halo, Selamat Datang!\"",
+    "description": {
+      "0": "Blueprint yang berisi langkah-langkah untuk membuat \"Halo! Selamat Datang!\".",
+      "1": "Setelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+    }
+  },
+  "ShinyShell": {
+    "name": "\"Kerang Mengkilap\"",
+    "description": {
+      "0": "Diagram yang berisi langkah-langkah untuk membuat \"Kerang Mengkilap\".",
+      "1": "Setelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+    }
+  },
   "EfflorescentIllumination": {
     "name": "Iluminasi Berbunga",
     "description": {
@@ -26350,6 +27073,13 @@
     "name": "Kasur Kayu Linden yang \"Kokoh\"",
     "description": {
       "0": "Blueprint yang berisi langkah-langkah untuk membuat Kasur Kayu Linden yang \"Kokoh\".",
+      "1": "Setelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+    }
+  },
+  "LindenWoodSweetSlumberBed": {
+    "name": "Ranjang Kayu Linden \"Tidur Lelap\"",
+    "description": {
+      "0": "Blueprint yang berisi langkah-langkah untuk membuat Ranjang Kayu Linden \"Tidur Lelap\".",
       "1": "Setelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
     }
   },
@@ -27407,6 +28137,27 @@
     "name": "\"Juru Tulis Maison Cardinalice\"",
     "description": {
       "0": "Diagram yang berisi langkah-langkah untuk membuat \"Juru Tulis Maison Cardinalice\".",
+      "1": "Setelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+    }
+  },
+  "CompactAirSupplyDevice": {
+    "name": "Perangkat Suplai Udara Ringkas",
+    "description": {
+      "0": "Blueprint yang berisi langkah-langkah untuk membuat \"Perangkat Suplai Udara Ringkas\".",
+      "1": "Setelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+    }
+  },
+  "PassagesStableStorage": {
+    "name": "\"Penyimpanan Stabil Koridor\"",
+    "description": {
+      "0": "Blueprint yang berisi langkah-langkah untuk membuat \"Penyimpanan Stabil Koridor\".",
+      "1": "Setelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+    }
+  },
+  "ModelContraptionReasonableRoundabout": {
+    "name": "Model Kit: Perubahan yang Wajar",
+    "description": {
+      "0": "Diagram yang berisi langkah-langkah untuk membuat \"Model Kit: Perubahan yang Wajar\".",
       "1": "Setelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
     }
   },
@@ -28747,6 +29498,41 @@
       "1": "Setelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
     }
   },
+  "CourtOfJusticesAuthenticity": {
+    "name": "\"Kebenaran Balai Pengadilan\"",
+    "description": {
+      "0": "Diagram yang berisi langkah-langkah untuk membuat \"Kebenaran Balai Pengadilan\".",
+      "1": "Setelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+    }
+  },
+  "CourtOfJusticesRespect": {
+    "name": "\"Kehormatan Balai Pengadilan\".",
+    "description": {
+      "0": "Diagram yang berisi langkah-langkah untuk membuat \"Kehormatan Balai Pengadilan\".",
+      "1": "Setelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+    }
+  },
+  "SlipperyShack": {
+    "name": "\"Pondok Licin\"",
+    "description": {
+      "0": "Blueprint yang berisi langkah-langkah untuk membuat \"Pondok Licin\".",
+      "1": "Setelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+    }
+  },
+  "BedroomBedlam": {
+    "name": "\"Kamar Berisik\"",
+    "description": {
+      "0": "Diagram yang berisi langkah-langkah untuk membuat \"Kamar Berisik\".",
+      "1": "Setelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+    }
+  },
+  "SmallStonecrab": {
+    "name": "\"Kepiting Batu Mini\"",
+    "description": {
+      "0": "Blueprint yang berisi langkah-langkah terperinci untuk membuat \"Kepiting Batu Mini\".",
+      "1": "Setelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+    }
+  },
   "BirdAndBlossomDesignFountain": {
     "name": "Air Mancur Bunga & Burung",
     "description": {
@@ -28954,6 +29740,34 @@
     "name": "\"Seribu Visi Embun\"",
     "description": {
       "0": "Diagram yang berisi langkah-langkah untuk membuat \"Seribu Visi Embun\".",
+      "1": "Setelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+    }
+  },
+  "LumidouceHarborType05CombineLifter": {
+    "name": "Derek Tipe-05 Pelabuhan Lumidouce",
+    "description": {
+      "0": "Blueprint yang berisi langkah-langkah untuk membuat \"Derek Tipe-05 Pelabuhan Lumidouce\".",
+      "1": "Setelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+    }
+  },
+  "StandardFluidShippingUnit": {
+    "name": "Unit Pengiriman Cairan Standar",
+    "description": {
+      "0": "Blueprint yang berisi langkah-langkah untuk membuat Unit Pengiriman Cairan Standar.",
+      "1": "Setelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+    }
+  },
+  "StandardShippingPallet": {
+    "name": "Palet Pengiriman Standar",
+    "description": {
+      "0": "Blueprint yang berisi langkah-langkah untuk membuat Palet Pengiriman Standar.",
+      "1": "Setelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+    }
+  },
+  "LargeShippingPallet": {
+    "name": "Palet Pengiriman Besar",
+    "description": {
+      "0": "Blueprint yang berisi langkah-langkah untuk membuat Palet Pengiriman Besar.",
       "1": "Setelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
     }
   },
@@ -29741,6 +30555,27 @@
       "1": "Setelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
     }
   },
+  "CommonCookingDevice": {
+    "name": "Perangkat Memasak Umum",
+    "description": {
+      "0": "Blueprint yang berisi langkah-langkah untuk membuat Perangkat Memasak Umum.",
+      "1": "Setelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+    }
+  },
+  "ModelContraptionRepair": {
+    "name": "Model Kit: Perbaikan",
+    "description": {
+      "0": "Diagram yang berisi langkah-langkah untuk membuat \"Model Kit: Perbaikan\".",
+      "1": "Setelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+    }
+  },
+  "ModelContraptionRockcrackerAnchor": {
+    "name": "Model Kit: Jangkar Pemecah Batu",
+    "description": {
+      "0": "Diagram yang berisi langkah-langkah untuk membuat \"Model Kit: Jangkar Pemecah Batu\".",
+      "1": "Setelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+    }
+  },
   "PottedPlantVerdantVastness": {
     "name": "Pot Tanaman: Hamparan Hijau",
     "description": {
@@ -30434,6 +31269,76 @@
       "1": "Setelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
     }
   },
+  "LindenWoodHalfMetalAnnouncementBoard": {
+    "name": "Papan Pengumuman Setengah Logam, Setengah Kayu Linden",
+    "description": {
+      "0": "Blueprint yang berisi langkah-langkah terperinci untuk membuat Papan Pengumuman Setengah Logam, Setengah Kayu Linden.",
+      "1": "Setelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+    }
+  },
+  "YetAnotherDiscussion": {
+    "name": "\"Lagi-Lagi Diskusi\"",
+    "description": {
+      "0": "Diagram yang berisi langkah-langkah untuk membuat \"Lagi-Lagi Diskusi\".",
+      "1": "Setelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+    }
+  },
+  "CourtOfJusticesTrivia": {
+    "name": "\"Trivia Balai Pengadilan\"",
+    "description": {
+      "0": "Diagram yang berisi langkah-langkah untuk membuat \"Trivia Balai Pengadilan\".",
+      "1": "Setelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+    }
+  },
+  "DuelingSigil": {
+    "name": "\"Lambang Duel\"",
+    "description": {
+      "0": "Blueprint yang berisi langkah-langkah untuk membuat \"Lambang Duel\".",
+      "1": "Setelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+    }
+  },
+  "FurysTorch": {
+    "name": "\"Obor Berang\"",
+    "description": {
+      "0": "Diagram yang berisi langkah-langkah untuk membuat \"Obor Berang\".",
+      "1": "Setelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+    }
+  },
+  "SoftWatersVoice": {
+    "name": "\"Suara Air yang Lembut\"",
+    "description": {
+      "0": "Blueprint yang berisi langkah-langkah terperinci untuk membuat \"Suara Air yang Lembut\".",
+      "1": "Setelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+    }
+  },
+  "LetsPlay": {
+    "name": "\"Main Yuk!\"",
+    "description": {
+      "0": "Blueprint yang berisi langkah-langkah untuk membuat \"Main Yuk!\".",
+      "1": "Setelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+    }
+  },
+  "GoodStuffIsForSharing": {
+    "name": "\"Barang Bagus Harus Dibagi!\"",
+    "description": {
+      "0": "Blueprint yang berisi langkah-langkah untuk membuat \"Barang Bagus Harus Dibagi!\".",
+      "1": "Setelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+    }
+  },
+  "SatisfyingWeight": {
+    "name": "\"Berat yang Memuaskan\"",
+    "description": {
+      "0": "Blueprint yang berisi langkah-langkah untuk membuat \"Berat yang Memuaskan\".",
+      "1": "Setelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+    }
+  },
+  "ASistersDuty": {
+    "name": "\"Kewajiban Kakak\"",
+    "description": {
+      "0": "Blueprint yang berisi langkah-langkah untuk membuat \"Kewajiban Kakak\".",
+      "1": "Setelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+    }
+  },
   "PoolOfSapphireGrace": {
     "name": "\"Kolam Renungan Awan\"",
     "description": {
@@ -30529,6 +31434,20 @@
     "name": "\"Barisan Pengadilan Hukum\"",
     "description": {
       "0": "Diagram yang berisi langkah-langkah untuk membuat \"Barisan Pengadilan Hukum\".",
+      "1": "Setelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+    }
+  },
+  "StandardRailingOrderAndSymmetry": {
+    "name": "Pagar Standar: Teratur dan Simetris",
+    "description": {
+      "0": "Diagram yang berisi langkah-langkah untuk membuat \"Pagar Standar: Teratur dan Simetris\".",
+      "1": "Setelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+    }
+  },
+  "StandardRailingScatteredStructure": {
+    "name": "Pagar Standar: Struktur Tersebar",
+    "description": {
+      "0": "Blueprint yang berisi langkah-langkah untuk membuat \"Pagar Standar: Struktur Tersebar\".",
       "1": "Setelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
     }
   },

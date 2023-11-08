@@ -390,6 +390,13 @@
       "0": "\"Waterborne Poetry\" Poetry Gala Fervor"
     }
   },
+  "ThelxiesBadge": {
+    "name": "Thelxie's Badge",
+    "description": {
+      "0": "A golden penguin badge that shines with a metallic glow. It seems to give the bearer a staunch resolve to move forward...",
+      "1": "A precious reward that can be unlocked in the \"Thelxie's Fantastic Adventures\" event."
+    }
+  },
   "Primogem": {
     "name": "Primogem",
     "description": {
@@ -1017,6 +1024,14 @@
       "0": "The Chief Justice of Fontaine, known as the Iudex, is renowned for his unassailable impartiality."
     }
   },
+  "Charlotte": {
+    "name": "Charlotte",
+    "description": {}
+  },
+  "Furina": {
+    "name": "Furina",
+    "description": {}
+  },
   "KamisatoAyakasStellaFortuna": {
     "name": "Kamisato Ayaka's Stella Fortuna",
     "description": {
@@ -1459,6 +1474,18 @@
     "name": "Neuvillette's Stella Fortuna",
     "description": {
       "0": "Neuvillette's Constellation Activation Material"
+    }
+  },
+  "CharlottesStellaFortuna": {
+    "name": "Charlotte's Stella Fortuna",
+    "description": {
+      "0": "Charlotte's Constellation Activation Material"
+    }
+  },
+  "FurinasStellaFortuna": {
+    "name": "Furina's Stella Fortuna",
+    "description": {
+      "0": "Furina's Constellation Activation Material."
     }
   },
   "GnosticHymnOldNotes": {
@@ -6564,10 +6591,22 @@
       "0": "A soft-bodied animal that emits a gentle light. Often found climbing the walls of buildings near the water or underwater."
     }
   },
+  "LakelightLily": {
+    "name": "Lakelight Lily",
+    "description": {
+      "0": "A clear and clean azure flower, it is born where Water Veins come together. It has a simple, cool, and elegant fragrance, pungent and refreshing yet gentle."
+    }
+  },
   "SubdetectionUnit": {
     "name": "Subdetection Unit",
     "description": {
       "0": "Detection units produced by Fontaine Research Institute using new models of artificed components. Its original purpose was monitoring all kinds of environmental data."
+    }
+  },
+  "SpringOfTheFirstDewdrop": {
+    "name": "Spring of the First Dewdrop",
+    "description": {
+      "0": "A limpid drop of dew floating amidst the waters of Morte Region. It is different from other pure water bodies, as though it is a conglomeration of even more pure and primordial Elemental Energy."
     }
   },
   "BirchWood": {
@@ -13775,6 +13814,54 @@
       "0": "Wriothesley's specialty. Soon after kicking out his subordinates with the excuse, \"Feel free to leave, but I'm staying! Things are heating up in here, and it could blow!\", a meatastic delicacy greets your eyes. A full-bodied sauce slathered over flaky skin brings an extraordinary double blast of deliciousness, though as you taste it, it does seem to be practically identically to a condiment that has become awfully popular recently..."
     }
   },
+  "SuspiciousLaLettreAFocalors": {
+    "name": "Suspicious La Lettre a Focalors",
+    "description": {
+      "0": "A small cake, shaped into a long rectangle. The flavor of each layer seems more or less the same, and... wait a minute, it's even missing a few layers! Connoisseurs will know the bakery messed up badly after the first bite."
+    }
+  },
+  "LaLettreAFocalors": {
+    "name": "La Lettre a Focalors",
+    "description": {
+      "0": "A small cake, shaped into a long rectangle. It is said that long, long ago, a certain patissier used the great love the people of Fontaine held for their Hydro Archon as inspiration to create this confectionary masterpiece. The manifold layers stacked one upon the other are a true test of the chef's skills, and each aspect of this cake is proof of the great Hydro Archon's influence."
+    }
+  },
+  "DeliciousLaLettreAFocalors": {
+    "name": "Delicious La Lettre a Focalors",
+    "description": {
+      "0": "A small cake, shaped into a long rectangle. The endlessly indulgent aroma of coffee and almonds draws you in and pushes your thoughts forward, as though you absentmindedly stumbled into an extravagant opera without even realizing it. You find yourself drowning in the twists and turns of this luxurious performance, and only hope that the finale never comes."
+    }
+  },
+  "SuspiciousBlubberProfiterole": {
+    "name": "Suspicious Blubber Profiterole",
+    "description": {
+      "0": "A cream-filled dessert. It's been sitting out way too long, and the once-flaky crust is now soft and mushy. It is... quite different from the crispy texture you imagined. After trying a single bite, you want to just pass the \"death sentence\" on this erstwhile dessert."
+    }
+  },
+  "BlubberProfiterole": {
+    "name": "Blubber Profiterole",
+    "description": {
+      "0": "A cream-filled dessert. Fluffy, flaky crust cradles a rich cream within. Round and nearly bursting, it's as cute as a Blubberbeast's belly. Few hearts can escape being ensnared by the thick, soft cream within."
+    }
+  },
+  "DeliciousBlubberProfiterole": {
+    "name": "Delicious Blubber Profiterole",
+    "description": {
+      "0": "A cream-filled dessert. After the first morsel crosses your lips, you simply cannot help but scarf the rest down! Even the remnants of the cream lingering on the corners of your mouth is enough to flood your heart with contented bliss. If only every meal could be followed by such sweet perfection... Ah! How wondrous would this adventrous life be!"
+    }
+  },
+  "PourLaJustice": {
+    "name": "\"Pour la Justice\"",
+    "description": {
+      "0": "Furina's specialty. \"Pour la Justice\" means \"veneration of justice\" in Fontaine, and she who once performed on the greatest of stages bore witness to the birth of sublime justice. Its layered flavors seem to swell and fade like the waves of the sea, before finally relaxing as though laying down a heavy burden. Perhaps it reflects something she personally experienced?"
+    }
+  },
+  "ExclusiveScoopGourmetColumn": {
+    "name": "Exclusive Scoop: Gourmet Column",
+    "description": {
+      "0": "Charlotte's specialty. A snack that she stuffed in your hands while you accompany her on a relentless pursuit of exclusive scoops. You glance at her skipping beside you, and the excited rhythm of her steps slowly overlaps with the crackling of crispy fried fish fillets in your mouth... Though this latest news has yet to be turned into a finished story, the joy and contentment in your heart has already reached its peak."
+    }
+  },
   "RecipeItem": {
     "name": "Recipe Item",
     "description": {
@@ -14812,6 +14899,18 @@
     "name": "Recipe: Crepes Suzette",
     "description": {
       "0": "A detailed step-by-step recipe for making Crepes Suzette."
+    }
+  },
+  "RecipeLaLettreAFocalors": {
+    "name": "Recipe: La Lettre a Focalors",
+    "description": {
+      "0": "A detailed step-by-step recipe for making La Lettre a Focalors."
+    }
+  },
+  "RecipeBlubberProfiterole": {
+    "name": "Recipe: Blubber Profiterole",
+    "description": {
+      "0": "A detailed step-by-step recipe for making Blubber Profiterole."
     }
   },
   "CraftedItems": {
@@ -16116,6 +16215,35 @@
     "description": {
       "0": "The electricity-emitting section of the Millennial Pearl Seahorse, and its regalia, the symbol of its surpassing might — now snapped off amidst a clash against a mighty challenger.",
       "1": "As the greatest predator that can arise from seahorses, this being's evolutionary journey is not the same as that experienced by other Fontemer Aberrants. It did not start from a base form before growing larger and stronger, but instead grew limbs and a horn that have no place on an ordinary seahorse. Even its musculature and skeleton have changed. It really seems to resemble a fantastical beast from legends of yore more than its original shape. In the imaginations of poets and authors, even seahorses can frolick upon the earth."
+    }
+  },
+  "LightlessSilkString": {
+    "name": "Lightless Silk String",
+    "description": {
+      "0": "A slender strand that somehow ended up entangled on your weapon while fighting the All-Devouring Narwhal.",
+      "1": "In ancient Fontaine, some thought that Fortuna, which ruled the world, was woven from countless fibers, like the strings of a harp. Strings that resonate with the majestic music would bring happiness to all, while discord would destroy the fabric of the universe."
+    }
+  },
+  "LightlessEyeOfTheMaelstrom": {
+    "name": "Lightless Eye of the Maelstrom",
+    "description": {
+      "0": "A strange \"substance\" obtained from fighting against the All-Devouring Narwhal. Its actual weight far exceeds what would be expected given its size.",
+      "1": "Everything gathers around heavy objects, just as gold attracts more than iron, or the ground more than in the breeze blowing above. Just as light cannot escape from the vortex of darkness, cause and effect is attached to fate, perhaps irreversibly so."
+    }
+  },
+  "LightlessMass": {
+    "name": "Lightless Mass",
+    "description": {
+      "0": "A fragment produced from the intense battle against the All-Devouring Narwhal.",
+      "1": "The universe is a dark and cold place.",
+      "2": "But look carefully. Inside are always faint glimmers of light, like pearls gleaming from within the sand, splinters of diamond sprinkled over asphalt, lights lancing through the fog on a misty night, and sparks that ignite the brightest blazes."
+    }
+  },
+  "WaterThatFailedToTranscend": {
+    "name": "Water That Failed To Transcend",
+    "description": {
+      "0": "The only remnants of Hydro Tulpas after their parts are dispersed.",
+      "1": "This substance is very similar to the crystals extracted from the bodies of Fontemer Aberrants, but they contain a lot of tiny impurities, like the bubbles in glass crafted by clumsy craftsmen."
     }
   },
   "TileOfDecarabiansTower": {
@@ -18940,6 +19068,60 @@
       "0": "An entertaining novel quite popular in Fontaine. It tells a story about the thief \"Phantom Gentleman\" Fantomas Robben and the famous detective Chesterton's first confrontation. Disclaimer: This is a work of fiction. Any similarities to persons living or dead, or actual events is purely coincidental."
     }
   },
+  "TheFallOfTheFadedCastleI": {
+    "name": "The Fall of the Faded Castle (I)",
+    "description": {
+      "0": "A poem penned by an author unknown. The writing style seems to give off a strange and ominous aura."
+    }
+  },
+  "TheFallOfTheFadedCastleII": {
+    "name": "The Fall of the Faded Castle (II)",
+    "description": {
+      "0": "A poem penned by an author unknown. The writing style seems to give off a strange and ominous aura."
+    }
+  },
+  "TheFallOfTheFadedCastleIII": {
+    "name": "The Fall of the Faded Castle (III)",
+    "description": {
+      "0": "A poem penned by an author unknown. The writing style seems to give off a strange and ominous aura."
+    }
+  },
+  "LaChansonDErinnyesI": {
+    "name": "La Chanson d'Erinnyes (I)",
+    "description": {
+      "0": "How the emissary of King Remus came to Erinnyes, asking her for a gift of Aremori Castle's water and earth, and for her to submit to the Sumphonia Capitolii (which means \"the eternal harmony\")."
+    }
+  },
+  "LaChansonDErinnyesII": {
+    "name": "La Chanson d'Erinnyes (II)",
+    "description": {
+      "0": "How the Knights of every region united to lend their strength to Erinnyes, in opposition to the designs of the Capitoliani to invade."
+    }
+  },
+  "LaChansonDErinnyesIII": {
+    "name": "La Chanson d'Erinnyes (III)",
+    "description": {
+      "0": "How Erinnyes bid farewell to the Mistress of Many Waters, and how she threw her sword into the lake three times."
+    }
+  },
+  "TalesOfASnowWingedGooseI": {
+    "name": "Tales of a Snow-Winged Goose (I)",
+    "description": {
+      "0": "A short fairy tale that is quite popular in Fontaine. Many children saw the exquisitely drawn cover and thought it was really written by the kind Madam Snow-Winged Goose of legend."
+    }
+  },
+  "TalesOfASnowWingedGooseII": {
+    "name": "Tales of a Snow-Winged Goose (II)",
+    "description": {
+      "0": "A short fairy tale that is quite popular in Fontaine. Many children saw the exquisitely drawn cover and thought it was really written by the kind Madam Snow-Winged Goose of legend."
+    }
+  },
+  "TalesOfASnowWingedGooseIII": {
+    "name": "Tales of a Snow-Winged Goose (III)",
+    "description": {
+      "0": "A short fairy tale that is quite popular in Fontaine. Many children saw the exquisitely drawn cover and thought it was really written by the kind Madam Snow-Winged Goose of legend."
+    }
+  },
   "GiftOfParting": {
     "name": "Gift of \"Parting\"",
     "description": {
@@ -19284,6 +19466,63 @@
       "0": "Damaged Diary"
     }
   },
+  "SirArthursWing": {
+    "name": "Sir Arthur's Wing",
+    "description": {
+      "0": "A clockwork wing that belonged to Sir Arthur.",
+      "1": "What the criminal did was unforgivable!"
+    }
+  },
+  "SirArthursBody": {
+    "name": "Sir Arthur's Body",
+    "description": {
+      "0": "A clockwork body that belonged to Sir Arthur.",
+      "1": "What the criminal did was unforgivable!"
+    }
+  },
+  "SirArthursHead": {
+    "name": "Sir Arthur's Head",
+    "description": {
+      "0": "A clockwork head that belonged to Sir Arthur.",
+      "1": "What the criminal did was unforgivable!"
+    }
+  },
+  "LeftoverPoissonchantPie": {
+    "name": "Leftover Poissonchant Pie",
+    "description": {
+      "0": "It looks cute, but might cause stomach problems later..."
+    }
+  },
+  "MysteriousThreatLetter": {
+    "name": "Mysterious Threat Letter",
+    "description": {}
+  },
+  "AnotherMysteriousThreatLetter": {
+    "name": "Another Mysterious Threat Letter",
+    "description": {}
+  },
+  "KevinsLetter": {
+    "name": "Kevin's Letter",
+    "description": {}
+  },
+  "MessilyWrittenLetter": {
+    "name": "Messily-Written Letter",
+    "description": {}
+  },
+  "ScribbledOrders": {
+    "name": "Scribbled Orders",
+    "description": {}
+  },
+  "OldPhoto": {
+    "name": "Old Photo",
+    "description": {
+      "0": "Group photo."
+    }
+  },
+  "LetterToTheEditorinChiefDraft": {
+    "name": "Letter to the Editor-in-Chief (Draft)",
+    "description": {}
+  },
   "Disclaimer": {
     "name": "Disclaimer",
     "description": {}
@@ -19396,6 +19635,12 @@
       "0": "Puca's token, which she lost in the depths of the mine. Hurry up and return it to her!"
     }
   },
+  "TalochardsInvestigationNotes": {
+    "name": "Talochard's Investigation Notes",
+    "description": {
+      "0": "These investigation notes shared by Talochard contain information on the missing Sir Arthur."
+    }
+  },
   "AStory": {
     "name": "A Story",
     "description": {}
@@ -19404,6 +19649,18 @@
     "name": "Handwheel",
     "description": {
       "0": "A common handwheel, used to adjust regulating valves on the pipes around the Fortress of Meropide."
+    }
+  },
+  "MaterialForThelxiesWeapon": {
+    "name": "Material for Thelxie's Weapon",
+    "description": {
+      "0": "A colorful gizmo retrieved from the water. Will be used to make Thelxie's weapon."
+    }
+  },
+  "MaterialForThelxiesCrown": {
+    "name": "Material for Thelxie's Crown",
+    "description": {
+      "0": "A colorful gizmo retrieved from the water. Will be used to make Thelxie's crown."
     }
   },
   "EnergyConcentratingComponent": {
@@ -19424,6 +19681,12 @@
   "34thIndependentInvestigativeSquadDeploymentInMontEsusEasternQuadrantDisplinaryProcedures": {
     "name": "34th Independent Investigative Squad Deployment in Mont Esus (Eastern Quadrant) Displinary Procedures",
     "description": {}
+  },
+  "TravelersExclusiveInterviewHandbook": {
+    "name": "Traveler's Exclusive Interview Handbook",
+    "description": {
+      "0": "A record of the exclusive interview that the renowned reporter from the Steambird, Charlotte, had with the golden-haired Traveler. After various reorganizations and revisions of the information within, it is now fully able to take on various functions apart from \"being published in the papers.\""
+    }
   },
   "PoemOnFallenLeaf": {
     "name": "Poem on Fallen Leaf",
@@ -19476,6 +19739,60 @@
   "Notice": {
     "name": "Notice",
     "description": {}
+  },
+  "LiamsBallad": {
+    "name": "Liam's Ballad",
+    "description": {
+      "0": "A clear bottle with a note that contains the deeds of someone named Liam and a strange drawing on the back."
+    }
+  },
+  "RockyAvildsensDisappearance": {
+    "name": "Rocky Avildsen's Disappearance",
+    "description": {
+      "0": "A clear bottle with a note that contains the history of someone named Rocky Avildsen and a strange drawing on the back."
+    }
+  },
+  "AthossConfession": {
+    "name": "Athos's Confession",
+    "description": {
+      "0": "A clear bottle with a note that contains events from the life of someone named Athos and a strange drawing on the back."
+    }
+  },
+  "ParkersHopes": {
+    "name": "Parker's Hopes",
+    "description": {
+      "0": "A clear bottle with a note that contains records of someone named Parker and a strange drawing on the back."
+    }
+  },
+  "BarrowsExpectations": {
+    "name": "Barrow's Expectations",
+    "description": {
+      "0": "A clear bottle with a note that contains records of someone named Barrow and a strange drawing on the back."
+    }
+  },
+  "AutumnsRegrets": {
+    "name": "Autumn's Regrets",
+    "description": {
+      "0": "A clear bottle with a note that contains the history of someone named Autumn and a strange drawing on the back."
+    }
+  },
+  "RougesWritings": {
+    "name": "Rouge's Writings",
+    "description": {
+      "0": "A clear bottle with a note that contains the records of someone named Rouge and a strange drawing on the back."
+    }
+  },
+  "FreemansAnnouncement": {
+    "name": "Freeman's Announcement",
+    "description": {
+      "0": "A clear bottle with a note that contains the writings of someone named Freeman and a strange drawing on the back."
+    }
+  },
+  "RainbowRosesIdeals": {
+    "name": "Rainbow Rose's Ideals",
+    "description": {
+      "0": "A piece of paper formed by putting the eight notes together. The strange drawing turns out to be a complete Rainbow Rose."
+    }
   },
   "LeftSideTableFileBox": {
     "name": "Left-Side Table File Box",
@@ -19562,6 +19879,37 @@
       "0": "An \"experimental drink\" created by Heinry. A \"sweet bubbly tea\" completely bereft of bubbles. Can... Can I just have a cup of tea instead?"
     }
   },
+  "DiaryOfAValiantStruggleI": {
+    "name": "Diary of a Valiant Struggle (I)",
+    "description": {
+      "0": "Diary of a Valiant Struggle (I)"
+    }
+  },
+  "DiaryOfAValiantStruggleII": {
+    "name": "Diary of a Valiant Struggle (II)",
+    "description": {
+      "0": "Diary of a Valiant Struggle (II)"
+    }
+  },
+  "DiaryOfAValiantStruggleIII": {
+    "name": "Diary of a Valiant Struggle (III)",
+    "description": {
+      "0": "Diary of a Valiant Struggle (III)"
+    }
+  },
+  "DiaryOfAValiantStruggleIV": {
+    "name": "Diary of a Valiant Struggle (IV)",
+    "description": {
+      "0": "Diary of a Valiant Struggle (IV)"
+    }
+  },
+  "DiaryOfAValiantStruggle": {
+    "name": "Diary of a Valiant Struggle",
+    "description": {
+      "0": "A record of the life experiences of a striver.",
+      "1": "\"Knife those stupid birds straight through! This should be a good enough warning for them, right?\""
+    }
+  },
   "AcademicAssemblyHallPicture": {
     "name": "\"Academic Assembly Hall\" Picture",
     "description": {
@@ -19592,9 +19940,21 @@
     "name": "A Letter Left Behind",
     "description": {}
   },
+  "SpecialKey": {
+    "name": "Special Key",
+    "description": {
+      "0": "A special key, perhaps it can be used in a certain place."
+    }
+  },
   "FontaineResearchInstituteOfKineticEnergyEngineeringCertificate": {
     "name": "Fontaine Research Institute of Kinetic Energy Engineering Certificate",
     "description": {}
+  },
+  "TeardropKey": {
+    "name": "Teardrop Key",
+    "description": {
+      "0": "A gem like a raindrop, or perhaps like someone's falling tear."
+    }
   },
   "TrainingLog": {
     "name": "Training Log",
@@ -19622,6 +19982,13 @@
       "0": "A letter, placed betwixt two Bulle Fruit."
     }
   },
+  "ThelxiesFantasticAdventures": {
+    "name": "Thelxie's Fantastic Adventures",
+    "description": {
+      "0": "A children's fantasy book containing only three pages, it tells the story of a prince who overcomes loneliness.",
+      "1": "It reads \"For anyone in a tough spot\" in small print on the back cover."
+    }
+  },
   "LocationNo1Materials": {
     "name": "Location No. 1 Materials",
     "description": {
@@ -19638,6 +20005,215 @@
     "name": "Location No. 3 Materials",
     "description": {
       "0": "Heinry's lost materials. Who knows what kind of inspiration he'll get from them.."
+    }
+  },
+  "IridescentGlory": {
+    "name": "\"Iridescent Glory\"",
+    "description": {
+      "0": "Shells and corals of all different hues and colors. Said to be the greatest treasure of the Water Imps, and the very reason they built the shining Rainbow Bridge in the Kingdom of Water Imps..."
+    }
+  },
+  "AureliesNotesI": {
+    "name": "Aurelie's Notes (I)",
+    "description": {
+      "0": "Aurelie's Notes (I)"
+    }
+  },
+  "MarvelousJellyImprovedFontaineEdition": {
+    "name": "Marvelous Jelly: Improved Fontaine Edition",
+    "description": {
+      "0": "An exquisite gift box from Haniyyah, the jellies within are loved by Fungi. There are many unique flavors, so Fungi with different preferences can be fed separately.",
+      "1": "With a better understanding of the Fungi and her accumulated experience, Haniyyah has mastered the flavors of the Marvelous Jelly. The improved version is not only more nutritious, but also contains special Fontainian flavors. The healthy jellies allow the Fungi to eat well and live well!"
+    }
+  },
+  "SpinaDiRosulaUniformGiftBox": {
+    "name": "Spina di Rosula Uniform Gift Box",
+    "description": {
+      "0": "Navia prepared this gift, which contains a Spina di Rosula uniform, for Adele. The dimensions are a bit large for Adele at present, but it works just fine for a promise."
+    }
+  },
+  "StrangelyShapedKey": {
+    "name": "Strangely-Shaped Key",
+    "description": {
+      "0": "A key you got from a member of Romeuf's gang. This seems to be the tool required to quickly stop the explosives."
+    }
+  },
+  "RecommendationLetter": {
+    "name": "Recommendation Letter",
+    "description": {
+      "0": "Recommendation Letter"
+    }
+  },
+  "RustyIronKey": {
+    "name": "Rusty Iron Key",
+    "description": {
+      "0": "Someone must have dropped this here. Just what lock does it open?"
+    }
+  },
+  "Persona": {
+    "name": "\"Persona\"",
+    "description": {
+      "0": "One of the fabricated materials necessary to forge the Holy Blade of Narzissenkreuz. It feels almost weightless."
+    }
+  },
+  "UnlockedTreasure": {
+    "name": "Unlocked \"Treasure\"",
+    "description": {
+      "0": "An old pocket watch.",
+      "1": "It seems to have stopped at a certain instant, the beautiful memory of a moment becoming eternal."
+    }
+  },
+  "AureliesNotesII": {
+    "name": "Aurelie's Notes (II)",
+    "description": {
+      "0": "Aurelie's Notes (II)"
+    }
+  },
+  "ANewLifesBeginning": {
+    "name": "\"A New Life's Beginning\"",
+    "description": {
+      "0": "An exit card issued by the Fortress of Meropide. It's just a piece of paper, but it has been given a name most heartening."
+    }
+  },
+  "RootCycle": {
+    "name": "Root Cycle",
+    "description": {
+      "0": "One of the keys designed by the Narzissenkreuz Ordo for the tower. When combined, the keys form a peculiar shape of three and a half circles, for which there is a special explanation.",
+      "1": "The innermost circle is the Cycle of Hyperborea, symbolizing the age when the world was frozen and the lost paradise."
+    }
+  },
+  "SimpleVaultKeyI": {
+    "name": "Simple Vault Key I",
+    "description": {
+      "0": "One of the keys that opens the iron barrier on the shattered vessel."
+    }
+  },
+  "SimpleVaultKeyII": {
+    "name": "Simple Vault Key II",
+    "description": {
+      "0": "One of the keys that opens the iron barrier on the shattered vessel."
+    }
+  },
+  "SimpleVaultKeyIII": {
+    "name": "Simple Vault Key III",
+    "description": {
+      "0": "One of the keys that opens the iron barrier on the shattered vessel."
+    }
+  },
+  "FoggyForestBranch": {
+    "name": "Foggy Forest Branch",
+    "description": {
+      "0": "A branch that glimmers with a jade-green light. It seems to have some kind of mysterious connection with the Foggy Forest Path.",
+      "1": "Upon closer inspection, it appears as though something is flowing within the branch."
+    }
+  },
+  "FallenBouquet": {
+    "name": "Fallen Bouquet",
+    "description": {
+      "0": "Wild flowers in bloom that were once cherished by someone. There is little special about it, unless that be the place where it fell.",
+      "1": "A little gratitude and remembrance may be the key to moving forward."
+    }
+  },
+  "Tripod": {
+    "name": "Tripod",
+    "description": {
+      "0": "Urville's lost tripod. It should be usable once it is dried."
+    }
+  },
+  "NadiasToken": {
+    "name": "Nadia's Token",
+    "description": {
+      "0": "A small gear. It seems very ordinary indeed."
+    }
+  },
+  "TinyConch": {
+    "name": "Tiny Conch",
+    "description": {
+      "0": "A beautiful conch. Nadia loves it a lot."
+    }
+  },
+  "DivingSet": {
+    "name": "Diving Set",
+    "description": {
+      "0": "Urville's lost diving equipment. It seems to have been damaged a bit."
+    }
+  },
+  "SunkenCoinPouch": {
+    "name": "Sunken Coin Pouch",
+    "description": {
+      "0": "A commonly-seen coin pouch filled with Mora."
+    }
+  },
+  "StrangeMessage": {
+    "name": "Strange Message",
+    "description": {
+      "0": "Strange Message"
+    }
+  },
+  "MysteriousXenochromaticCrystal": {
+    "name": "Mysterious Xenochromatic Crystal",
+    "description": {
+      "0": "A large crystal obtained by defeating the extremely powerful Fontemer Aberrants in the Morte Region.",
+      "1": "The power it contains is more mysterious than common Xenochromatic Crystals.",
+      "2": "Maybe someone will be willing to pay the right price for it."
+    }
+  },
+  "MapFragment": {
+    "name": "Map Fragment",
+    "description": {
+      "0": "A damaged piece of paper that looks like the bottom-right corner of a map. There are strange points and lines drawn on it."
+    }
+  },
+  "SmallKey": {
+    "name": "Small Key",
+    "description": {
+      "0": "A small key that can even be used as a bookmark. Why was it not confiscated? And why does such a tiny key open such an important door?"
+    }
+  },
+  "Notes": {
+    "name": "Notes",
+    "description": {}
+  },
+  "Description": {
+    "name": "Description",
+    "description": {}
+  },
+  "Storybook": {
+    "name": "Storybook",
+    "description": {}
+  },
+  "Certificate": {
+    "name": "Certificate",
+    "description": {}
+  },
+  "InvestigationLog": {
+    "name": "Investigation Log",
+    "description": {}
+  },
+  "Excerpt": {
+    "name": "Excerpt",
+    "description": {}
+  },
+  "Log": {
+    "name": "Log",
+    "description": {}
+  },
+  "TearsAmongTheStars": {
+    "name": "Tears Among the Stars",
+    "description": {
+      "0": "A drop of water obtained from within the colossal beast who coveted the primordial sea of life.",
+      "1": "<br/>",
+      "2": "A philosopher in the faraway ancient world once posited that where there is life, there is death; naturally where there is death, there is life.",
+      "3": "If not, then the fleeting light cannot resist the eternal darkness, and all withers into nothingness at the end of time.",
+      "4": "The rules among the stars dictate that nature must be conserved, but the laws of the universe have never been conserved.",
+      "5": "In a sealed box, destruction always overpowers new life. Millennia upon millennia of prosperity are but an instant in a span of billions of years. The greatest of achievements, the proudest accomplishments, in time all will tarnish, decay, dissipate, and ultimately fade into oblivion.",
+      "6": "Thus there are things floating in among the stars, once adorned with countless prestigious titles from innumerable civilizations, shedding tears for their ordained demise.",
+      "7": "Their tears stream down, out of desperation, out of hope, because all desperation and hope alike will be utterly extinguished along with the innumerable stars.",
+      "8": "Their tears stream down out of sorrow, out of joy, because both will eventually scatter into the cold, dark endless void.",
+      "9": "Every tiny yet beautiful silhouette and every moment worth remembering will fade with time, even stars.",
+      "10": "And then there are these so-called \"gods\" that are determined to save everything worth saving, and devour everything that should be devoured.",
+      "11": "Until the end of time, until the sea of stars recess into nothing but dying embers, until a newborn \"world\" moves for the first time in the stomach of the whale.",
+      "12": "\"There will be no more sins, no more sadness, and no more tears, because everything died with the ancient stars.\""
     }
   },
   "SilkFlowerSeed": {
@@ -20077,6 +20653,14 @@
       "0": "Compact assistance meka developed to increase the overall utilization rates of meka teams, providing aid for underwater projects. They were originally designed to remove junk, vegetation, and other underwater debris in order to prevent these from clogging up the vital parts of other clockwork meka, thereby minimizing failure rates.",
       "1": "Compared to the other batch-produced models, these special limited-edition \"Platinum Collection\" meks stand out with their clean and bright casing. When trying to attract support from wealthy merchants for the Maintenance Mek project, the development team would send them a fish tank containing one of these exquisite contraptions as a gift – and fine gifts they were indeed! Unfortunately, none of these attempts worked, so the development team adjusted their plans and tried to sell them off as toys to make up for the lack of project funds instead.",
       "2": "In the end, due to the accident that we all remember, the whole development team was dismissed and all of their future projects were canceled. At present, all of the remaining Maintenance Meks in Fontaine are totally unsupervised, and the \"Platinum Collection\" batch are no exception – they have all been lost to the water. Disappearing completely off the radar, they have turned out to be the most unique and expensive \"fishes\" in Fontaine. According to an in-depth investigation and cross-examination of the existing data by journalists of The Steambird, \"the deployment of Maintenance Meks has not made any significant difference to the pollution levels of Fontaine's waters, and the effect of the project is still in question.\" Nowadays, surviving \"Platinum Collection\" meks still wander the waters of Fontaine, and they are considered among the most prized of catches. After all, a \"Platinum Collection\" mek is now as rare as the most valuable Ornamental Fish in other nations."
+    }
+  },
+  "MaintenanceMekGoldLeader": {
+    "name": "Maintenance Mek: Gold Leader",
+    "description": {
+      "0": "Compact assistance meka developed to increase the overall utilization rates of meka groups, providing aid for underwater projects. They were originally designed to remove junk, vegetation, and other underwater debris in order to prevent these from clogging up the vital parts of other clockwork meka, thereby minimizing failure rates. From another point of view, they are undoubtedly benefiting Fontaine's ecosystem greatly as underwater cleaners.",
+      "1": "Compared to other mass-produced models, this special \"Gold Leader\" assistance meka utilizes a clear gold outer casing along with special control equipment. The project team designed it to fulfill the role of a command relay station in particularly complex underwater environments, receiving and re-transmitting commands from the controller to all other meka within the group, effectively fulfilling the important role of leader.",
+      "2": "However, as the whole maintenance meka project stopped functioning, these leader meka lost their reason for existence. Only their highly recognizable clear golden casing gives them value in the eyes of the anglers who collect them."
     }
   },
   "WingsOfFirstFlight": {
@@ -20938,6 +21522,36 @@
       "0": "This wondrous crystal contains a certain rhythm, like something beautiful woven from delicate silk. These items can be found throughout the mainland or from merchants who collect curios. The tune held within this crystal can be revivified in your Serenitea Pot using either \"Euphonium Unbound: Winding\" or \"Euphonium Unbound: Soaring.\" The tune contained within this Radiant Spincrystal is a mysterious melody from Fontaine."
     }
   },
+  "RadiantSpincrystal115": {
+    "name": "Radiant Spincrystal 115",
+    "description": {
+      "0": "This wondrous crystal contains a certain rhythm, like something beautiful woven from delicate silk. These items can be found throughout the mainland or from merchants who collect curios. The tune held within this crystal can be revivified in your Serenitea Pot using either \"Euphonium Unbound: Winding\" or \"Euphonium Unbound: Soaring.\" The tune contained within this Radiant Spincrystal is a mysterious melody from Fontaine."
+    }
+  },
+  "RadiantSpincrystal116": {
+    "name": "Radiant Spincrystal 116",
+    "description": {
+      "0": "This wondrous crystal contains a certain rhythm, like something beautiful woven from delicate silk. These items can be found throughout the mainland or from merchants who collect curios. The tune held within this crystal can be revivified in your Serenitea Pot using either \"Euphonium Unbound: Winding\" or \"Euphonium Unbound: Soaring.\" The tune contained within this Radiant Spincrystal is a mysterious melody from Fontaine."
+    }
+  },
+  "RadiantSpincrystal117": {
+    "name": "Radiant Spincrystal 117",
+    "description": {
+      "0": "This wondrous crystal contains a certain rhythm, like something beautiful woven from delicate silk. These items can be found throughout the mainland or from merchants who collect curios. The tune held within this crystal can be revivified in your Serenitea Pot using either \"Euphonium Unbound: Winding\" or \"Euphonium Unbound: Soaring.\" The tune contained within this Radiant Spincrystal is a mysterious melody from Fontaine."
+    }
+  },
+  "RadiantSpincrystal118": {
+    "name": "Radiant Spincrystal 118",
+    "description": {
+      "0": "This wondrous crystal contains a certain rhythm, like something beautiful woven from delicate silk. These items can be found throughout the mainland or from merchants who collect curios. The tune held within this crystal can be revivified in your Serenitea Pot using either \"Euphonium Unbound: Winding\" or \"Euphonium Unbound: Soaring.\" The tune contained within this Radiant Spincrystal is a mysterious melody from Fontaine."
+    }
+  },
+  "RadiantSpincrystal119": {
+    "name": "Radiant Spincrystal 119",
+    "description": {
+      "0": "This wondrous crystal contains a certain rhythm, like something beautiful woven from delicate silk. These items can be found throughout the mainland or from merchants who collect curios. The tune held within this crystal can be revivified in your Serenitea Pot using either \"Euphonium Unbound: Winding\" or \"Euphonium Unbound: Soaring.\" The tune contained within this Radiant Spincrystal is a mysterious melody from Fontaine."
+    }
+  },
   "LanternFiber": {
     "name": "Lantern Fiber",
     "description": {
@@ -21084,6 +21698,13 @@
     "description": {
       "0": "Specialized refinement material for \"Ballad of the Boundless Blue.\"",
       "1": "In many poems and tales, Dandelions are a symbol of unrestrained freedom, traveling to faraway lands. Placing a bookmark with the image of a Dandelion within the pages of a book is not a form of confinement, but rather allowing it to wander in a world far vaster and brighter than our own."
+    }
+  },
+  "SurgingSacredChalice": {
+    "name": "Surging Sacred Chalice",
+    "description": {
+      "0": "The specialized refinement material for the Sword of Narzissenkreuz.",
+      "1": "Conches were often favored materials in ancient Fontainian civilization for making ritual implements, and the sacred unguents within this conch chosen as a sanctified chalice have finally emerged. Symbolically, this chalice is the primordial word, the oils are the honed will, and the holy sword itself is reason, which breaks through all."
     }
   },
   "FalconsDance": {
@@ -22618,6 +23239,34 @@
       "1": "The official logo of the Fortress of Meropide. It is our dearest hope that all who wish to honor order and live out their lives in peace shall not ever be associated with the organization this insignia represents."
     }
   },
+  "FurinaBanquet": {
+    "name": "Furina: Banquet",
+    "description": {
+      "0": "Namecard style.",
+      "1": "Can one person eat every cake? If they eat one per day, they should be able to enjoy cake for a week or so, right? But will the cakes stay fresh that long? Hmm... Well, don't worry, because there will be friends coming to eat the cakes together."
+    }
+  },
+  "CharlotteExclusive": {
+    "name": "Charlotte: Exclusive",
+    "description": {
+      "0": "Namecard style.",
+      "1": "\"One, I've written an exclusive, and it's going to generate a lot of buzz for sure! Two, the newspaper said the situation is developing too slowly, so they're changing to a press release instead... Three, the person writing the press release will be in the Opera Epiclese as the defendant tomorrow, so they've decided to run my piece after all!\""
+    }
+  },
+  "FontaineCompleteness": {
+    "name": "Fontaine: Completeness",
+    "description": {
+      "0": "Namecard style.",
+      "1": "\"The evening clouds scatter in the sky and the creek shines gold under the setting sun. My shadow wanders alone, akin to a lonely apparition at the bottom of a waterfall.\""
+    }
+  },
+  "TravelNotesWhirlingWaltz": {
+    "name": "Travel Notes: Whirling Waltz",
+    "description": {
+      "0": "Namecard style.",
+      "1": "Even if the clockwork stops ticking, even if the puppets stop stepping forward. Though our memories be frozen eternally as coral, do not forget our adventures and the time we spent together."
+    }
+  },
   "AnemoculusResonanceStone": {
     "name": "Anemoculus Resonance Stone",
     "description": {
@@ -23188,6 +23837,19 @@
       "6": "<br/>",
       "7": "\"This machine is a product of Daddy's research, and it's called the Portable Aerodynamic Gelatinous Bubble Generator...\"",
       "8": "\"Bubbles! So pretty! Daddy, you're amazing!\""
+    }
+  },
+  "SpecialAnalysisZoomLens": {
+    "name": "\"Special Analysis Zoom Lens\"",
+    "description": {
+      "0": "A new type of Kamera accessory developed to enhance image recognition capabilities.",
+      "1": "After equipping this accessory, a normal Kamera can quickly adjust its focus, allowing it to capture images of your travels so you can record precious memories at a moment's notice."
+    }
+  },
+  "ImageSamplingKamera": {
+    "name": "Image Sampling Kamera",
+    "description": {
+      "0": "A Kamera specially modified by Lepine-Pauline for the profound discipline of \"Graph Adversarial Technology.\" It is unknown just what kind of complex and expensive components are installed inside, but it seems to be able to capture the photograph subject's particular structure, profile, and coloration..."
     }
   },
   "InstructionsAnemoculusResonanceStone": {
@@ -23971,6 +24633,24 @@
       "0": "A card for the tabletop game, Genius Invokation TCG. It is built tough, and some special printing method has been used for the illustration on the card's face, resulting in a truly exquisite appearance."
     }
   },
+  "TheStarrySkiesTheirFlowersRain": {
+    "name": "The Starry Skies Their Flowers Rain",
+    "description": {
+      "0": "A card for the tabletop game, Genius Invokation TCG. It is built tough, and some special printing method has been used for the illustration on the card's face, resulting in a truly exquisite appearance."
+    }
+  },
+  "DiscretionarySupplement": {
+    "name": "Discretionary Supplement",
+    "description": {
+      "0": "A card for the tabletop game, Genius Invokation TCG. It is built tough, and some special printing method has been used for the illustration on the card's face, resulting in a truly exquisite appearance."
+    }
+  },
+  "AllThingsAreOfTheEarth": {
+    "name": "All Things Are of the Earth",
+    "description": {
+      "0": "A card for the tabletop game, Genius Invokation TCG. It is built tough, and some special printing method has been used for the illustration on the card's face, resulting in a truly exquisite appearance."
+    }
+  },
   "MagicGuide": {
     "name": "Magic Guide",
     "description": {
@@ -24307,6 +24987,18 @@
       "0": "A card for the tabletop game, Genius Invokation TCG. It is built tough, and some special printing method has been used for the illustration on the card's face, resulting in a truly exquisite appearance."
     }
   },
+  "OceanHuedClam": {
+    "name": "Ocean-Hued Clam",
+    "description": {
+      "0": "A card for the tabletop game, Genius Invokation TCG. It is built tough, and some special printing method has been used for the illustration on the card's face, resulting in a truly exquisite appearance."
+    }
+  },
+  "ShadowOfTheSandKing": {
+    "name": "Shadow of the Sand King",
+    "description": {
+      "0": "A card for the tabletop game, Genius Invokation TCG. It is built tough, and some special printing method has been used for the illustration on the card's face, resulting in a truly exquisite appearance."
+    }
+  },
   "LiyueHarborWharf": {
     "name": "Liyue Harbor Wharf",
     "description": {
@@ -24513,6 +25205,12 @@
   },
   "YayoiNanatsuki": {
     "name": "Yayoi Nanatsuki",
+    "description": {
+      "0": "A card for the tabletop game, Genius Invokation TCG. It is built tough, and some special printing method has been used for the illustration on the card's face, resulting in a truly exquisite appearance."
+    }
+  },
+  "StormterrorsLair": {
+    "name": "Stormterror's Lair",
     "description": {
       "0": "A card for the tabletop game, Genius Invokation TCG. It is built tough, and some special printing method has been used for the illustration on the card's face, resulting in a truly exquisite appearance."
     }
@@ -24783,6 +25481,18 @@
   },
   "Pankration": {
     "name": "Pankration!",
+    "description": {
+      "0": "A card for the tabletop game, Genius Invokation TCG. It is built tough, and some special printing method has been used for the illustration on the card's face, resulting in a truly exquisite appearance."
+    }
+  },
+  "InEveryHouseAStove": {
+    "name": "In Every House a Stove",
+    "description": {
+      "0": "A card for the tabletop game, Genius Invokation TCG. It is built tough, and some special printing method has been used for the illustration on the card's face, resulting in a truly exquisite appearance."
+    }
+  },
+  "Lyresong": {
+    "name": "Lyresong",
     "description": {
       "0": "A card for the tabletop game, Genius Invokation TCG. It is built tough, and some special printing method has been used for the illustration on the card's face, resulting in a truly exquisite appearance."
     }
@@ -25952,6 +26662,20 @@
       "1": "After using this item, you can view it in the Creation Screen."
     }
   },
+  "HelloWelcome": {
+    "name": "\"Hello! Welcome!\"",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making a \"Hello! Welcome!\"",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "ShinyShell": {
+    "name": "\"Shiny Shell\"",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making \"Shiny Shell.\"",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
   "EfflorescentIllumination": {
     "name": "Efflorescent Illumination",
     "description": {
@@ -26411,6 +27135,13 @@
     "name": "Linden Wood \"Sturdy\" Bunk",
     "description": {
       "0": "A detailed step-by-step blueprint for making a Linden Wood \"Sturdy\" Bunk.",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "LindenWoodSweetSlumberBed": {
+    "name": "Linden Wood \"Sweet Slumber\" Bed",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making a Linden Wood \"Sweet Slumber\" Bed.",
       "1": "After using this item, you can view it in the Creation Screen."
     }
   },
@@ -27468,6 +28199,27 @@
     "name": "\"Maison Cardinalice's Clerk\"",
     "description": {
       "0": "A detailed step-by-step blueprint for making \"Maison Cardinalice's Clerk.\"",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "CompactAirSupplyDevice": {
+    "name": "Compact Air Supply Device",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making a Compact Air Supply Device.",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "PassagesStableStorage": {
+    "name": "\"Passage's Stable Storage\"",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making \"Passage's Stable Storage.\"",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "ModelContraptionReasonableRoundabout": {
+    "name": "Model Contraption: Reasonable Roundabout",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making a Model Contraption: Reasonable Roundabout.",
       "1": "After using this item, you can view it in the Creation Screen."
     }
   },
@@ -28808,6 +29560,41 @@
       "1": "After using this item, you can view it in the Creation Screen."
     }
   },
+  "CourtOfJusticesAuthenticity": {
+    "name": "\"Court of Justice's Authenticity\"",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making a \"Court of Justice's Authenticity.\"",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "CourtOfJusticesRespect": {
+    "name": "\"Court of Justice's Respect\"",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making a \"Court of Justice's Respect.\"",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "SlipperyShack": {
+    "name": "\"Slippery Shack\"",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making a \"Slippery Shack.\"",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "BedroomBedlam": {
+    "name": "\"Bedroom Bedlam\"",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making \"Bedroom Bedlam.\"",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "SmallStonecrab": {
+    "name": "\"Small Stonecrab\"",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making a \"Small Stonecrab.\"",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
   "BirdAndBlossomDesignFountain": {
     "name": "Bird and Blossom Design Fountain",
     "description": {
@@ -29015,6 +29802,34 @@
     "name": "\"A Thousand Ephemeral Visions of Dew\"",
     "description": {
       "0": "A detailed step-by-step blueprint for making \"A Thousand Ephemeral Visions of Dew.\"",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "LumidouceHarborType05CombineLifter": {
+    "name": "Lumidouce Harbor Type-05 Combine Lifter",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making a Lumidouce Harbor Type-05 Combine Lifter.",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "StandardFluidShippingUnit": {
+    "name": "Standard Fluid Shipping Unit",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making a Standard Fluid Shipping Unit.",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "StandardShippingPallet": {
+    "name": "Standard Shipping Pallet",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making a Standard Shipping Pallet.",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "LargeShippingPallet": {
+    "name": "Large Shipping Pallet",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making a Large Shipping Pallet.",
       "1": "After using this item, you can view it in the Creation Screen."
     }
   },
@@ -29802,6 +30617,27 @@
       "1": "After using this item, you can view it in the Creation Screen."
     }
   },
+  "CommonCookingDevice": {
+    "name": "Common Cooking Device",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making a Common Cooking Device.",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "ModelContraptionRepair": {
+    "name": "Model Contraption: Repair",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making a Model Contraption: Repair.",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "ModelContraptionRockcrackerAnchor": {
+    "name": "Model Contraption: Rockcracker Anchor",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making a Model Contraption: Rockcracker Anchor.",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
   "PottedPlantVerdantVastness": {
     "name": "Potted Plant: Verdant Vastness",
     "description": {
@@ -30495,6 +31331,76 @@
       "1": "After using this item, you can view it in the Creation Screen."
     }
   },
+  "LindenWoodHalfMetalAnnouncementBoard": {
+    "name": "Linden Wood Half-Metal Announcement Board",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making a Linden Wood Half-Metal Announcement Board.",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "YetAnotherDiscussion": {
+    "name": "\"Yet Another Discussion\"",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making \"Yet Another Discussion.\"",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "CourtOfJusticesTrivia": {
+    "name": "\"Court of Justice's Trivia\"",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making a \"Court of Justice's Trivia.\"",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "DuelingSigil": {
+    "name": "\"Dueling Sigil\"",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making the \"Dueling Sigil.\"",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "FurysTorch": {
+    "name": "\"Fury's Torch\"",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making a \"Fury's Torch.\"",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "SoftWatersVoice": {
+    "name": "\"Soft Water's Voice\"",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making \"Soft Water's Voice.\"",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "LetsPlay": {
+    "name": "\"Let's Play!\"",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making \"Let's Play!\"",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "GoodStuffIsForSharing": {
+    "name": "\"Good Stuff Is for Sharing!\"",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making \"Good Stuff Is for Sharing!\"",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "SatisfyingWeight": {
+    "name": "\"Satisfying Weight\"",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making the \"Satisfying Weight.\"",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "ASistersDuty": {
+    "name": "\"A Sister's Duty\"",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making \"A Sister's Duty.\"",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
   "PoolOfSapphireGrace": {
     "name": "Pool of Sapphire Grace",
     "description": {
@@ -30590,6 +31496,20 @@
     "name": "Court of Justice's Barrier",
     "description": {
       "0": "A detailed step-by-step blueprint for making a \"Court of Justice's Barrier.\"",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "StandardRailingOrderAndSymmetry": {
+    "name": "Standard Railing: Order and Symmetry",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making a Standard Railing: Order and Symmetry.",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "StandardRailingScatteredStructure": {
+    "name": "Standard Railing: Scattered Structure",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making a Standard Railing: Scattered Structure.",
       "1": "After using this item, you can view it in the Creation Screen."
     }
   },

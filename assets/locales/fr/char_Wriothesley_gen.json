@@ -76,7 +76,7 @@
   "burst": {
     "name": "Morsure lupine de l'or",
     "description": {
-      "0": "Activant ses gants de boxe, Wriothesley déclenche un coup droit condensé de givre, puis utilise un impact de stalactite pour infliger plusieurs fois des <cryo>DGT Cryo de zone</cryo>.",
+      "0": "Activant ses gants de boxe, Wriothesley déclenche un coup droit condensé de givre, puis utilise un impact de stalactite vers l'avant pour infliger plusieurs fois des <cryo>DGT Cryo de zone</cryo>.",
       "1": "<br/>",
       "2": "<strong>Arkhe : Ousia</strong>",
       "3": "Après la fin de l'impact de stalactite, une lame fluide descend à l'emplacement de l'ennemi pour infliger des <cryo>DGT Cryo</cryo> chargés d'énergie ousia.",

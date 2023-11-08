@@ -28,7 +28,7 @@
       "2": "SCH Phase 3",
       "3": "SCH heftiger Schläge",
       "4": "Ausdauerverbrauch heftiger Schläge",
-      "5": "Verringerung des Ausdauerverbrauchs für Flammensiegel",
+      "5": "Verringerung des Ausdauerverbrauchs durch Flammensiegel",
       "6": "Dauer der Flammensiegel",
       "7": "SCH beim Fallen",
       "8": "SCH beim Fallen aus niedriger/großer Höhe",
@@ -79,9 +79,9 @@
         " Gibt Yanfei in gleichen zeitlichen Abständen je ein Flammensiegel.",
         " Erhöht den Schaden heftiger Schläge."
       ],
-      "5": "Endet, wenn Yanfei ausgewechselt wird.",
+      "5": "Endet, wenn Yanfei ausgewechselt oder besiegt wird.",
       "6": "<br/>",
-      "7": "<i>„Der Pakt zwischen uns von Leben und Tod ist nun vollständig. Demgemäß wirst du sterben und ich werde weiterleben.“</i>"
+      "7": "<i>„Der Pakt zwischen uns von Leben und Tod ist nun vollständig. Demgemäß wirst du sterben und ich werde weiterleben!“</i>"
     },
     "skillParams": {
       "0": "Fähigkeits-SCH",
@@ -111,7 +111,7 @@
   "passive2": {
     "name": "Wachsame Argusaugen",
     "description": {
-      "0": "Verursacht einmal zusätzlichen <pyro>Pyro-Flächenschaden</pyro> in Höhe von 80 % ANG, wenn Yanfeis heftige Schläge KT bei Gegnern verursachen. Der Flächenschaden wird als Schaden von heftigen Schlägen betrachtet."
+      "0": "Verursacht einmal zusätzlichen <pyro>Pyro-Flächenschaden</pyro> in Höhe von 80 % ANG, wenn Yanfeis heftige Schläge KT bei Gegnern verursachen. Der Flächenschaden wird als Schaden von heftigen Schlägen betrachtet."
     }
   },
   "passive3": {
@@ -123,7 +123,7 @@
   "constellation1": {
     "name": "Rechthaberei",
     "description": {
-      "0": "Erhöht mit jedem Flammensiegel Yanfeis Unterbrechungs-WDS beim Aufladen, wenn sie einen heftigen Schlag ausführt, und verringert den Ausdauerverbrauch bei dem heftigen Schlag."
+      "0": "Erhöht mit jedem Flammensiegel Yanfeis Unterbrechungs-WDS beim Aufladen, wenn sie einen heftigen Schlag ausführt, und verringert den Ausdauerverbrauch für diesen heftigen Schlag zusätzlich um 10 %."
     }
   },
   "constellation2": {

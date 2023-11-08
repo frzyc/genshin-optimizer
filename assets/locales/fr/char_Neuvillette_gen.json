@@ -14,7 +14,7 @@
         "0": "<strong>Charge d'attaque chargée : Avertissement procédural</strong>",
         "1": "Pendant la charge, Neuvillette concentre progressivement la puissance de l'eau en un sceau d'arbitrage. Dans cet état, Neuvillette peut se déplacer, changer d'orientation et absorber les gouttes d'eau de source à portée.",
         "2": "Chaque goutte absorbée permet d'augmenter la vitesse de formation du sceau d'arbitrage et soigne les PV de Neuvillette.",
-        "3": "À la fin de la charge, Neuvillette déclenche une attaque chargée si le sceau d'arbitrage est incomplet. Si ce dernier est complet, il déclenche une attaque chargée « Jugement équitable »."
+        "3": "À la fin de la charge, Neuvillette déclenche une attaque chargée si le sceau d'arbitrage est incomplet. Si ce dernier est complet, il déclenche une attaque chargée « Jugement équitable »."
       },
       "charged": {
         "0": "<strong>Attaque chargée</strong>",
@@ -24,7 +24,7 @@
         "0": "<strong>Attaque chargée : Jugement équitable</strong>",
         "1": "Neuvillette libère un torrent déferlant qui inflige des <hydro>DGT Hydro de zone</hydro> de façon continue aux ennemis en ligne droite devant lui.",
         "2": "Le jugement équitable ne consomme pas l'endurance et dure 3 s.",
-        "3": "Lorsque ses PV sont supérieurs à 50 %, Neuvillette perd des PV de façon continue en utilisant cette attaque."
+        "3": "Lorsque ses PV sont supérieurs à 50 %, Neuvillette perd des PV de façon continue en utilisant cette attaque."
       },
       "plunging": {
         "0": "<strong>Attaque plongeante</strong>",
@@ -162,7 +162,7 @@
   "constellation6": {
     "name": "Récompense du courroux",
     "description": {
-      "0": "En utilisant l'attaque chargée « Jugement équitable », Neuvillette peut aspirer les gouttes d'eau de source à portée. Chaque goutte absorbée permet de prolonger la durée de l'attaque chargée « Jugement équitable » de 1 s.",
+      "0": "En utilisant l'attaque chargée « Jugement équitable », Neuvillette peut aspirer les gouttes d'eau de source à portée. Chaque goutte absorbée permet de prolonger la durée de l'attaque chargée « Jugement équitable » de 1 s.",
       "1": "De plus, lorsque l'attaque chargée « Jugement équitable » touche un ennemi, 2 torrents supplémentaires sont libérés toutes les 2 s, chacun infligeant des <hydro>DGT Hydro</hydro> pour une valeur équivalant à 10 % des PV max de Neuvillette. Les DGT infligés de cette manière sont considérés comme des DGT de l'attaque chargée « Jugement équitable »."
     }
   }

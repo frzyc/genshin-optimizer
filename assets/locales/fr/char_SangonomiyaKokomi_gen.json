@@ -125,7 +125,7 @@
   "passive": {
     "name": "Stratégie sans faille",
     "description": {
-      "0": "Kokomi obtient un bonus de soins de 25 %, mais son taux CRIT diminue de 100 %."
+      "0": "Le bonus de soins de Kokomi augmente de 25 %, mais son taux CRIT diminue de 100 %."
     }
   },
   "constellation1": {

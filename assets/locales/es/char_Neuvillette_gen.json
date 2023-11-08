@@ -108,8 +108,8 @@
   "passive1": {
     "name": "Legatario de toda agua",
     "description": {
-      "0": "Cuando un personaje del equipo causa una reacción de Vaporización, Congelado, Electrocargado, Florecimiento, Torbellino Hydro o Cristalización Hydro, Neuvillette obtiene una carga de “gloria del legado dacroniano” durante 30 s. Este efecto puede acumularse hasta 3 veces y hace que el Ataque Cargado: Sentencia ecuánime inflija, respectivamente, un 110/125/160% de su daño original.",
-      "1": "Los efectos de gloria del legado dacroniano obtenidos con cada Reacción Elemental son independientes unos de otros."
+      "0": "Cuando un personaje del equipo causa una reacción de Vaporización, Congelado, Electrocargado, Florecimiento, Torbellino Hydro o Cristalización Hydro, Neuvillette obtiene una carga de “gloria del legado draconiano” durante 30 s. Este efecto puede acumularse hasta 3 veces y hace que el Ataque Cargado: Sentencia ecuánime inflija, respectivamente, un 110/125/160% de su daño original.",
+      "1": "Los efectos de gloria del legado draconiano obtenidos con cada Reacción Elemental son independientes unos de otros."
     }
   },
   "passive2": {
@@ -128,14 +128,14 @@
   "constellation1": {
     "name": "Eminente ordenanza",
     "description": {
-      "0": "Cuando Neuvillette entra en el campo de batalla, obtiene 1 carga del efecto “gloria del legado dacroniano” del talento pasivo “Legatario de toda agua” (es necesario desbloquear el talento pasivo Legatario de toda agua).",
+      "0": "Cuando Neuvillette entra en el campo de batalla, obtiene 1 carga del efecto “gloria del legado draconiano” del talento pasivo “Legatario de toda agua” (es necesario desbloquear el talento pasivo Legatario de toda agua).",
       "1": "Además, al ejecutar el Ataque Potenciado: Apercibimiento procesal y el Ataque Cargado: Sentencia ecuánime, su Res a interrupción aumenta."
     }
   },
   "constellation2": {
     "name": "Mandato legal",
     "description": {
-      "0": "Fortalece el talento pasivo “Legatario de toda agua”, de modo que por cada carga de gloria del legado dacroniano, el Daño CRIT del Ataque Cargado: Sentencia ecuánime aumenta en un 14%, hasta un máximo del 42%.",
+      "0": "Fortalece el talento pasivo “Legatario de toda agua”, de modo que por cada carga de gloria del legado draconiano, el Daño CRIT del Ataque Cargado: Sentencia ecuánime aumenta en un 14%, hasta un máximo del 42%.",
       "1": "Es necesario desbloquear el talento pasivo “Legatario de toda agua”."
     }
   },
@@ -163,7 +163,7 @@
     "name": "Retribución atrabiliaria",
     "description": {
       "0": "Al ejecutar el Ataque Cargado: Sentencia ecuánime, Neuvillette absorbe las gotas primigenias que haya en cierta área. Por cada gota que absorba, la duración del Ataque Cargado: Sentencia ecuánime aumentará en 1 s.",
-      "1": "Además, al golpear a un enemigo con el Ataque Cargado: Sentencia ecuánime, se liberan 2 torrentes adicionales, y cada uno inflige <hydro>Daño Hydro</hydro> equivalente al 10% de la Vida Máx. de Neuvillette. El daño infligido de esta manera se considera daño de Ataque Cargado: Sentencia ecuánime."
+      "1": "Además, al golpear a un enemigo con el Ataque Cargado: Sentencia ecuánime, se liberan 2 torrentes adicionales cada 2 s, y cada uno inflige <hydro>Daño Hydro</hydro> equivalente al 10% de la Vida Máx. de Neuvillette. El daño infligido de esta manera se considera daño de Ataque Cargado: Sentencia ecuánime."
     }
   }
 }

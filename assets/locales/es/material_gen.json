@@ -390,6 +390,13 @@
       "0": "Popularidad poética de «Entre tinta y versos»"
     }
   },
+  "ThelxiesBadge": {
+    "name": "Broche de Thelxie",
+    "description": {
+      "0": "Un broche con forma de pingüino que tiene un brillo metálico. Al parecer, otorga a su portador la voluntad de seguir adelante.",
+      "1": "Sirve para desbloquear valiosos objetos y recompensas durante el evento «Las fantásticas aventuras de Thelxie»."
+    }
+  },
   "Primogem": {
     "name": "Protogema",
     "description": {
@@ -1017,6 +1024,14 @@
       "0": "El juez supremo de Fontaine. Es conocido por su impecable imparcialidad y abnegación."
     }
   },
+  "Charlotte": {
+    "name": "Charlotte",
+    "description": {}
+  },
+  "Furina": {
+    "name": "Furina",
+    "description": {}
+  },
   "KamisatoAyakasStellaFortuna": {
     "name": "Stella Fortuna de Kamisato Ayaka",
     "description": {
@@ -1459,6 +1474,18 @@
     "name": "Stella Fortuna de Neuvillette",
     "description": {
       "0": "Material de activación de constelación de Neuvillette."
+    }
+  },
+  "CharlottesStellaFortuna": {
+    "name": "Stella Fortuna de Charlotte",
+    "description": {
+      "0": "Material de activación de constelación de Charlotte."
+    }
+  },
+  "FurinasStellaFortuna": {
+    "name": "Stella Fortuna de Furina",
+    "description": {
+      "0": "Material de activación de constelación de Furina."
     }
   },
   "GnosticHymnOldNotes": {
@@ -6536,10 +6563,22 @@
       "0": "Un molusco que emite un ligero brillo en el agua. La mayoría trepa por los bordes de las zonas con agua o por la superficie de los edificios submarinos."
     }
   },
+  "LakelightLily": {
+    "name": "Lirio lumilago",
+    "description": {
+      "0": "Una flor de color azul, clara y pura. Nacida donde convergen las aguas, su fragancia es fresca, elegante y suave."
+    }
+  },
   "SubdetectionUnit": {
     "name": "Unidad de subdetección",
     "description": {
       "0": "Una pequeña unidad de detección fabricada por el Instituto de Ciencias de Fontaine que utiliza los nuevos componentes mecánicos y que, en un principio, se utilizaban para monitorizar diversos tipos de datos medioambientales."
+    }
+  },
+  "SpringOfTheFirstDewdrop": {
+    "name": "Gota de rocío primigenio",
+    "description": {
+      "0": "Una gota de rocío cristalina que flota entre las aguas del Condado Morte. Es diferente de otras creaciones de agua pura, como si fuera una conglomeración aún más impoluta y primordial de Energía Elemental."
     }
   },
   "BirchWood": {
@@ -10013,21 +10052,21 @@
     }
   },
   "MondstadtShrineOfDepthsKey": {
-    "name": "Llave de Santuario de Mondstadt",
+    "name": "Llave de Santuario de las Profundidades de Mondstadt",
     "description": {
       "0": "Capaz de romper los sellos de los antiguos santuarios esparcidos por toda Mondstadt.",
       "1": "El altar de una deidad antigua se levanta imponente, a pesar de la destrucción de su civilización. Las llaves, que pueden encontrarse en dominios, pueden romper su sello. Tal vez un soplo del pasado pueda hacer que la deidad del altar olvide sus aflicciones."
     }
   },
   "LiyueShrineOfDepthsKey": {
-    "name": "Llave de Santuario de Liyue",
+    "name": "Llave de Santuario de las Profundidades de Liyue",
     "description": {
       "0": "Capaz de romper los sellos de los antiguos santuarios esparcidos por toda Liyue.",
       "1": "El altar de una deidad antigua se levanta imponente, a pesar de la destrucción de su civilización. Las llaves, que pueden encontrarse en dominios, pueden romper su sello. Tal vez un soplo del pasado pueda hacer que la deidad del altar olvide sus aflicciones."
     }
   },
   "InazumaShrineOfDepthsKey": {
-    "name": "Llave de Santuario de Inazuma",
+    "name": "Llave de Santuario de las Profundidades de Inazuma",
     "description": {
       "0": "Capaz de romper los sellos de los antiguos santuarios esparcidos por toda Inazuma.",
       "1": "El altar de una deidad antigua se levanta imponente, a pesar de la destrucción de su civilización. Las llaves, que pueden encontrarse en dominios, pueden romper su sello. Tal vez un soplo del pasado pueda hacer que la deidad del altar olvide sus aflicciones."
@@ -13500,7 +13539,7 @@
   "SeabirdsSojourn": {
     "name": "La migración de las gaviotas",
     "description": {
-      "0": "La especialidad de Fréminet. Se marchó volando nada más dejar la olla en su sitio. Parece que todos los ingredientes proceden de zonas submarinas, así que debe haberse tomado la molestias de bucear para encontrarlos. Deberías darle las gracias, pero... ¿Dónde podría estar?"
+      "0": "La especialidad de Fréminet. Se marchó volando nada más dejar la olla en su sitio. Parece que todos los ingredientes proceden de zonas submarinas, así que debe haberse tomado la molestias de bucear para encontrarlos. Deberías darle las gracias, pero... ¿dónde podría estar?"
     }
   },
   "CubicTricks": {
@@ -13747,6 +13786,54 @@
     "name": "Costillas con salsa secreta",
     "description": {
       "0": "La especialidad de Wriothesley. Tras oírle rechazar a sus subordinados bajo el pretexto de que “si nos vamos ahora, la cocina explotará”, al poco rato apareció un plato de carne. El jugo de la carne y la piel crujiente provocan un doble placer extraordinario, aunque el sabor era exactamente igual al de cierto condimento que se había popularizado recientemente..."
+    }
+  },
+  "SuspiciousLaLettreAFocalors": {
+    "name": "“Para Foçalors” extraño",
+    "description": {
+      "0": "Un pastel pequeño y de forma alargada. El sabor de cada capa parece más o menos el mismo, y... un momento, ¡incluso le faltan algunas capas! Los entendidos sabrán que la pastelería ha metido la pata hasta el fondo tras el primer bocado."
+    }
+  },
+  "LaLettreAFocalors": {
+    "name": "“Para Foçalors”",
+    "description": {
+      "0": "Un pastel pequeño y de forma alargada. Se dice que hace mucho, mucho tiempo, un maestro pastelero creó este postre inspirado en el amor de la gente de Fontaine por la Arconte Hydro. Las múltiples capas apiladas unas sobre otras son una verdadera prueba de las habilidades del chef, y cada aspecto de este pastel demuestra la influencia de la gran Arconte Hydro."
+    }
+  },
+  "DeliciousLaLettreAFocalors": {
+    "name": "“Para Foçalors” delicioso",
+    "description": {
+      "0": "Un pastel pequeño y de forma alargada. El aroma del café y las almendras te atrae y hace que te pierdas en tus pensamientos, como si te hubieras topado distraídamente con una ópera extravagante en cuyos giros representativos no puedes evitar sumergirte, y de la que solo esperas que nunca llegue el final."
+    }
+  },
+  "SuspiciousBlubberProfiterole": {
+    "name": "Burbiteroles extraños",
+    "description": {
+      "0": "Un postre relleno de crema. Lleva demasiado reposando, y la corteza que antes era crujiente ahora está blanda y pastosa. Es... muy diferente de la textura que imaginabas. Tras probar un solo bocado, te entran ganas de “sentenciar a muerte” este postre."
+    }
+  },
+  "BlubberProfiterole": {
+    "name": "Burbiteroles",
+    "description": {
+      "0": "Un postre relleno de crema. La esponjosa corteza de hojaldre envuelve una rica crema. Redondo e hinchado, es tan adorable como la barriga de una Foca Abotargada. Pocos corazones pueden escapar de ser atrapados por la espesa y suave crema de su interior."
+    }
+  },
+  "DeliciousBlubberProfiterole": {
+    "name": "Burbiteroles deliciosos",
+    "description": {
+      "0": "Un postre relleno de crema. Después de probar el primer bocado, no podrás evitar engullir el resto. Incluso los restos de crema que quedan en las comisuras de los labios son suficientes para inundar tu corazón de felicidad. Ojalá todas las comidas fueran seguidas de una perfección tan dulce... ¡Ah! ¡Qué maravillosa sería esta vida aventurera!"
+    }
+  },
+  "PourLaJustice": {
+    "name": "Pour la justice",
+    "description": {
+      "0": "La especialidad de Furina. “Pour la justice” significa “por la justicia” en Fontaine, donde la que una vez actuó en el mayor de los escenarios fue testigo del nacimiento de la más noble justicia. Sus sabores en capas parecen hincharse y desvanecerse como las olas del mar, antes de relajarse finalmente, como si dejara atrás una pesada carga. ¿Quizás sea el reflejo de alguna experiencia personal suya?"
+    }
+  },
+  "ExclusiveScoopGourmetColumn": {
+    "name": "Noticias exclusivas: Columna gastronómica",
+    "description": {
+      "0": "La especialidad de Charlotte. Un aperitivo que sostiene en sus manos en su incesante búsqueda de exclusivas primicias. Mientras mira a su alrededor, el ritmo excitado de sus pasos se sincroniza gradualmente con el crepitar de los crujientes filetes de pescado frito en su boca... Puede que no hubiera terminado aún con la noticia, pero la alegría y satisfacción ya habían alcanzado su punto álgido en ese momento."
     }
   },
   "RecipeItem": {
@@ -14786,6 +14873,18 @@
     "name": "Receta: crepes Suzette",
     "description": {
       "0": "Receta paso a paso para hacer crepes Suzette."
+    }
+  },
+  "RecipeLaLettreAFocalors": {
+    "name": "Receta: “Para Foçalors”",
+    "description": {
+      "0": "Receta paso a paso para hacer un “Para Foçalors”."
+    }
+  },
+  "RecipeBlubberProfiterole": {
+    "name": "Receta: burbiteroles",
+    "description": {
+      "0": "Receta paso a paso para hacer burbiteroles."
     }
   },
   "CraftedItems": {
@@ -16089,6 +16188,35 @@
       "1": "Como depredador superior que creció a partir de un Caballito Burbumarino, el proceso evolutivo del Corcel de Mar Perlamilenario es completamente distinto al de otros Engendros Fontamarinos: no evolucionó para hacerse más grande y fuerte basándose en la estructura original de la especie, sino que desarrolló extremidades, un cuerno e incluso cambios en su estructura ósea y muscular que no estaban presentes en los Caballitos Burbumarinos. Su forma se parece más a la de una bestia fantástica de una antigua leyenda que a la original. En las fantasías de poetas y dramaturgos, incluso un caballito de mar podría ser como un unicornio galopando y saltando sobre la superficie terrestre."
     }
   },
+  "LightlessSilkString": {
+    "name": "Hilo de seda deslucido",
+    "description": {
+      "0": "Unos finos filamentos que, sin darte cuenta, se enrollaron alrededor de tu arma durante tu batalla contra el Narval Devoraestrellas.",
+      "1": "En la antigua Fontaine se creía que el Fortuna, el cual había dominado todos los fenómenos, estaba compuesto de fibras muy finas, como las cuerdas de un arpa. Así como los filamentos que resuenan con el magnífico sonido de la música traen la felicidad universal, la disonancia destruye el tejido del universo."
+    }
+  },
+  "LightlessEyeOfTheMaelstrom": {
+    "name": "Ojo del vórtice deslucido",
+    "description": {
+      "0": "Una extraña sustancia obtenida en el combate contra el Narval Devoraestrellas cuyo peso real es mucho mayor de lo que aparenta según sus dimensiones.",
+      "1": "Todas las cosas se reúnen junto a lo que está destinado a ser pesado, como el oro con el hierro negro, o la tierra con la brisa. Así como la luz no puede escapar de la singularidad de un agujero negro, el karma converge en los destinos con más peso. Tal vez se trate de una regla irreversible."
+    }
+  },
+  "LightlessMass": {
+    "name": "Masa deslucida",
+    "description": {
+      "0": "Un fragmento creado a raíz de la feroz batalla contra el Narval Devoraestrellas.",
+      "1": "El universo es oscuro y frío.",
+      "2": "Pero fíjate bien. En él siempre hay pequeños destellos de luz, como perlas en la arena a medio cubrir, como diamantes en el asfalto, como luces en la distancia en una noche de niebla, o como chispas que iluminan un prado yermo."
+    }
+  },
+  "WaterThatFailedToTranscend": {
+    "name": "Agua intrascendible",
+    "description": {
+      "0": "El único rastro que queda después de que un Tulpa Hidromimético se desintegra.",
+      "1": "Tiene propiedades muy similares a los cristales extraídos de los Engendros Fontamarinos, pero contiene muchas partículas finas y turbias, como pequeñas burbujas solidificadas en la cristalería de un pobre artesano."
+    }
+  },
   "TileOfDecarabiansTower": {
     "name": "Fragmento de azulejo de Decarabian",
     "description": {
@@ -16257,7 +16385,7 @@
     "name": "Trozo de siderita oscura",
     "description": {
       "0": "Material de ascensión de arma.",
-      "1": "Cuando Khaenri'ah fue destruido, un gran criminal creó un sinfín de monstruos cuya sangre oscura no podía ser aceptada por este mundo. Arrasaron todas las tierras y destruyeron todo lo que encontraban a su paso. Se trataba de mutaciones creadas por poderes de más allá de este mundo. De hecho, Durin, el dragón oscuro que atacó Mondstadt en el pasado, también era una mutación."
+      "1": "Cuando Khaenri'ah fue destruido, una gran pecadora creó un sinfín de monstruos cuya sangre oscura no podía ser aceptada por este mundo. Arrasaron todas las tierras y destruyeron todo lo que encontraban a su paso. Se trataba de mutaciones creadas por poderes de más allá de este mundo. De hecho, Durin, el dragón oscuro que atacó Mondstadt en el pasado, también era una mutación."
     }
   },
   "CoralBranchOfADistantSea": {
@@ -16944,10 +17072,10 @@
       "0": "Una reliquia obtenida de un cofre de artefactos. Que aquel que lo encuentre reciba un milagro.",
       "1": "<br/>",
       "2": "De cada cofre se puede obtener una pieza de alguno de los siguientes conjuntos:",
-      "3": "<br/>",
-      "4": " Final del Gladiador",
-      "5": "<br/>",
-      "6": " Orquesta del Errante"
+      "3": [
+        "Final del Gladiador",
+        "Orquesta del Errante"
+      ]
     }
   },
   "ReliquaryWanderersTroupeAndGladiator": {
@@ -18904,6 +19032,60 @@
       "0": "Un libro de entretenimiento muy popular en Fontaine. Relata la historia del ladrón Fantômas Robben, conocido como el Gentilhombre Fantasma, y de su primer enfrentamiento con el detective Chesterton. Aviso legal: los personajes y hechos retratados en esta obra son completamente ficticios. Cualquier parecido con personas (vivas o muertas) o hechos reales es pura coincidencia."
     }
   },
+  "TheFallOfTheFadedCastleI": {
+    "name": "El derrumbe del castillo apagado (I)",
+    "description": {
+      "0": "Un poema escrito por un autor desconocido. Entre los versos se aprecia un aire inquietante y ominoso."
+    }
+  },
+  "TheFallOfTheFadedCastleII": {
+    "name": "El derrumbe del castillo apagado (II)",
+    "description": {
+      "0": "Un poema escrito por un autor desconocido. Entre los versos se aprecia un aire inquietante y ominoso."
+    }
+  },
+  "TheFallOfTheFadedCastleIII": {
+    "name": "El derrumbe del castillo apagado (III)",
+    "description": {
+      "0": "Un poema escrito por un autor desconocido. Entre los versos se aprecia un aire inquietante y ominoso."
+    }
+  },
+  "LaChansonDErinnyesI": {
+    "name": "La canción de Erinias (I)",
+    "description": {
+      "0": "La historia de cómo el emisario del rey Remo fue a ver a Erinias para pedirle el agua y la tierra del Castillo Armórica, y de cómo le pidieron que se sometiera a la Symphonia Capitolii, o “melodía armónica eterna”."
+    }
+  },
+  "LaChansonDErinnyesII": {
+    "name": "La canción de Erinias (II)",
+    "description": {
+      "0": "La historia de cómo los caballeros de cada condado unieron fuerzas con Erinias para hacer frente al intento de invasión de los capitolianos."
+    }
+  },
+  "LaChansonDErinnyesIII": {
+    "name": "La canción de Erinias (III)",
+    "description": {
+      "0": "La historia de cómo Erinias se despidió de la Maestra de Todas las Aguas y lanzó su espada tres veces a un lago."
+    }
+  },
+  "TalesOfASnowWingedGooseI": {
+    "name": "Fábulas del ganso nievealado (I)",
+    "description": {
+      "0": "Un pequeño libro de cuentos muy popular en Fontaine. Su hermosa portada ha hecho creer a más de un niño que el libro había sido escrito por el legendario y bondadoso ganso nievealado."
+    }
+  },
+  "TalesOfASnowWingedGooseII": {
+    "name": "Fábulas del ganso nievealado (II)",
+    "description": {
+      "0": "Un pequeño libro de cuentos muy popular en Fontaine. Su hermosa portada ha hecho creer a más de un niño que el libro había sido escrito por el legendario y bondadoso ganso nievealado."
+    }
+  },
+  "TalesOfASnowWingedGooseIII": {
+    "name": "Fábulas del ganso nievealado (III)",
+    "description": {
+      "0": "Un pequeño libro de cuentos muy popular en Fontaine. Su hermosa portada ha hecho creer a más de un niño que el libro había sido escrito por el legendario y bondadoso ganso nievealado."
+    }
+  },
   "GiftOfParting": {
     "name": "Regalo de despedida",
     "description": {
@@ -18960,7 +19142,7 @@
   "Lakelight": {
     "name": "Lamparita de lago",
     "description": {
-      "0": "Una fragancia con el nombre de la flor. Parece que a Semaine le gusta mucho este perfume. ¿Será que lo usa para ir al trabajo?"
+      "0": "Una fragancia llamada “Lamparita de lago”. Parece que a Semaine le gusta mucho este perfume. ¿Será que lo usa para ir al trabajo?"
     }
   },
   "Fry": {
@@ -19246,6 +19428,63 @@
       "0": "Diario desgastado."
     }
   },
+  "SirArthursWing": {
+    "name": "Alas del monsieur Arthur",
+    "description": {
+      "0": "Unas alas mecánicas pertenecientes a monsieur Arthur.",
+      "1": "¡Ese criminal se ha pasado de la raya!"
+    }
+  },
+  "SirArthursBody": {
+    "name": "Cuerpo del monsieur Arthur",
+    "description": {
+      "0": "Un cuerpo mecánico perteneciente a monsieur Arthur.",
+      "1": "¡Ese criminal se ha pasado de la raya!"
+    }
+  },
+  "SirArthursHead": {
+    "name": "Cabeza del monsieur Arthur",
+    "description": {
+      "0": "Una cabeza mecánica perteneciente a monsieur Arthur.",
+      "1": "¡Ese criminal se ha pasado de la raya!"
+    }
+  },
+  "LeftoverPoissonchantPie": {
+    "name": "Sobras de pastel pezcanto",
+    "description": {
+      "0": "Un alimento de aspecto adorable pero que no parece sentar bien al estómago."
+    }
+  },
+  "MysteriousThreatLetter": {
+    "name": "Carta de amenaza misteriosa",
+    "description": {}
+  },
+  "AnotherMysteriousThreatLetter": {
+    "name": "Otra carta de amenaza misteriosa",
+    "description": {}
+  },
+  "KevinsLetter": {
+    "name": "Carta de Kayvan",
+    "description": {}
+  },
+  "MessilyWrittenLetter": {
+    "name": "Carta escrita con caligrafía caótica",
+    "description": {}
+  },
+  "ScribbledOrders": {
+    "name": "Órdenes escritas con letra descuidada",
+    "description": {}
+  },
+  "OldPhoto": {
+    "name": "Imagen antigua",
+    "description": {
+      "0": "Imagen grupal"
+    }
+  },
+  "LetterToTheEditorinChiefDraft": {
+    "name": "Carta para la editora jefa (borrador)",
+    "description": {}
+  },
   "Disclaimer": {
     "name": "Declaración",
     "description": {}
@@ -19358,6 +19597,12 @@
       "0": "El amuleto que Pucca perdió en las profundidades mineras. ¡Devuélveselo cuanto antes!"
     }
   },
+  "TalochardsInvestigationNotes": {
+    "name": "Notas de investigación de Talochard",
+    "description": {
+      "0": "Unas notas de investigación que compartió Talochard. En ellas hay información sobre la desaparición de monsieur Arthur."
+    }
+  },
   "AStory": {
     "name": "Una historia",
     "description": {}
@@ -19366,6 +19611,18 @@
     "name": "Rueda de control",
     "description": {
       "0": "Una rueda común utilizada para controlar las válvulas de ajuste de las tuberías alrededor del Fuerte Merópide."
+    }
+  },
+  "MaterialForThelxiesWeapon": {
+    "name": "Material para armas de Thelxie",
+    "description": {
+      "0": "Un artilugio multicolor recogido bajo el agua. Sirve para fabricar las armas de Thelxie."
+    }
+  },
+  "MaterialForThelxiesCrown": {
+    "name": "Material para corona de Thelxie",
+    "description": {
+      "0": "Un artilugio multicolor recogido bajo el agua. Sirve para fabricar la corona de Thelxie."
     }
   },
   "EnergyConcentratingComponent": {
@@ -19387,34 +19644,40 @@
     "name": "Código disciplinario del 34.º equipo independiente de reconocimiento en el pie oriental del Monte Esus",
     "description": {}
   },
+  "TravelersExclusiveInterviewHandbook": {
+    "name": "Manual de la entrevista {F#de la viajera}{M#del viajero}",
+    "description": {
+      "0": "Un registro de la entrevista exclusiva que la renombrada reportera de «El Pájaro de Vapor», Charlotte, mantuvo contigo, {F#la viajera}{M#el viajero} de cabellos dorados. Tras recapitular y revisar la información que contiene, ahora sirve para asumir otras funciones aparte de la de publicarse en un periódico."
+    }
+  },
   "PoemOnFallenLeaf": {
     "name": "Poema en una hoja",
     "description": {
-      "0": "Poema en una hoja"
+      "0": "Poema en una hoja."
     }
   },
   "ResponsePoemOnALeaf": {
     "name": "Poema de respuesta escrito en una hoja",
     "description": {
-      "0": "Poema de respuesta escrito en una hoja"
+      "0": "Poema de respuesta escrito en una hoja."
     }
   },
   "PoemOnAFallenLeaf": {
     "name": "Poema en una hoja",
     "description": {
-      "0": "Poema en una hoja"
+      "0": "Poema en una hoja."
     }
   },
   "PoetryRiddleOnALantern": {
     "name": "Acertijo poético de linterna",
     "description": {
-      "0": "Acertijo poético de linterna"
+      "0": "Acertijo poético de linterna."
     }
   },
   "PoemPlacedByUnknownPerson": {
     "name": "Poema abandonado",
     "description": {
-      "0": "Poema abandonado"
+      "0": "Poema abandonado."
     }
   },
   "ArkhiumInhibitorCondenserComponent": {
@@ -19438,6 +19701,60 @@
   "Notice": {
     "name": "Cartel",
     "description": {}
+  },
+  "LiamsBallad": {
+    "name": "La balada de Liam",
+    "description": {
+      "0": "Una pequeña botella transparente que contiene una nota con un extraño diseño en el reverso. En ella están registradas de forma resumida las hazañas de un hombre llamado Liam."
+    }
+  },
+  "RockyAvildsensDisappearance": {
+    "name": "La desaparición de Rocky Avildsen",
+    "description": {
+      "0": "Una pequeña botella transparente que contiene una nota con un extraño diseño en el reverso. En ella están registradas de forma resumida las hazañas de un hombre llamado Rocky Avildsen."
+    }
+  },
+  "AthossConfession": {
+    "name": "La confesión de Atos",
+    "description": {
+      "0": "Una pequeña botella transparente que contiene una nota con un extraño diseño en el reverso. En ella están registradas de forma resumida las hazañas de un hombre llamado Atos."
+    }
+  },
+  "ParkersHopes": {
+    "name": "El anhelo de Parker",
+    "description": {
+      "0": "Una pequeña botella transparente que contiene una nota con un extraño diseño en el reverso. En ella están registradas de forma resumida las hazañas de un hombre llamado Parker."
+    }
+  },
+  "BarrowsExpectations": {
+    "name": "El anhelo de Barrow",
+    "description": {
+      "0": "Una pequeña botella transparente que contiene una nota con un extraño diseño en el reverso. En ella están registradas de forma resumida las hazañas de un hombre llamado Barrow."
+    }
+  },
+  "AutumnsRegrets": {
+    "name": "El arrepentimiento de Automne",
+    "description": {
+      "0": "Tiene una nota con un extraño diseño en el reverso en la que están registradas de forma resumida las hazañas de una persona llamada Automne."
+    }
+  },
+  "RougesWritings": {
+    "name": "La fe de Rouge",
+    "description": {
+      "0": "Una pequeña botella transparente que contiene una nota con un extraño diseño en el reverso. En ella están registradas de forma resumida las hazañas de un hombre llamado Rouge."
+    }
+  },
+  "FreemansAnnouncement": {
+    "name": "La declaración de Freeman",
+    "description": {
+      "0": "Una pequeña botella transparente que contiene una nota con un extraño diseño en el reverso. En ella están registradas de forma resumida las hazañas de un hombre llamado Freeman."
+    }
+  },
+  "RainbowRosesIdeals": {
+    "name": "Ideal de rosarcoíris",
+    "description": {
+      "0": "Un papel formado por ocho mensajes unidos. El dibujo roto del reverso de los mensajes originalmente era una rosarcoíris entera."
+    }
   },
   "LeftSideTableFileBox": {
     "name": "Caja con expedientes de la mesa izquierda",
@@ -19524,6 +19841,37 @@
       "0": "Una bebida experimental creada por Heinry que lleva té dulce sin burbujas. ¿No es mejor tomarse una taza de té directamente?"
     }
   },
+  "DiaryOfAValiantStruggleI": {
+    "name": "Diario del valiente (I)",
+    "description": {
+      "0": "El Diario del valiente (I)."
+    }
+  },
+  "DiaryOfAValiantStruggleII": {
+    "name": "Diario del valiente (II)",
+    "description": {
+      "0": "El Diario del valiente (II)."
+    }
+  },
+  "DiaryOfAValiantStruggleIII": {
+    "name": "Diario del valiente (III)",
+    "description": {
+      "0": "El Diario del valiente (III)."
+    }
+  },
+  "DiaryOfAValiantStruggleIV": {
+    "name": "Diario del valiente (IV)",
+    "description": {
+      "0": "El Diario del valiente (IV)."
+    }
+  },
+  "DiaryOfAValiantStruggle": {
+    "name": "Diario del valiente",
+    "description": {
+      "0": "Un registro de las experiencias de la vida de un valiente.",
+      "1": "“Supongo que darle una puñalada a ese pajarraco les servirá como advertencia”."
+    }
+  },
   "AcademicAssemblyHallPicture": {
     "name": "Imagen del Salón Académico",
     "description": {
@@ -19554,9 +19902,21 @@
     "name": "Carta abandonada",
     "description": {}
   },
+  "SpecialKey": {
+    "name": "Llave especial",
+    "description": {
+      "0": "Una llave especial. Tal vez pueda usarse en algún lugar."
+    }
+  },
   "FontaineResearchInstituteOfKineticEnergyEngineeringCertificate": {
     "name": "Premio del Instituto de Investigación Científica e Ingeniería de Energía Cinética de Fontaine",
     "description": {}
+  },
+  "TeardropKey": {
+    "name": "Llave de las lágrimas",
+    "description": {
+      "0": "Una piedra preciosa como una gota de lluvia, o como las lágrimas de alguien."
+    }
   },
   "TrainingLog": {
     "name": "Diario de entrenamiento",
@@ -19584,6 +19944,13 @@
       "0": "Una carta colocada junto a dos burburanjas."
     }
   },
+  "ThelxiesFantasticAdventures": {
+    "name": "Las fantásticas aventuras de Thelxie",
+    "description": {
+      "0": "Un cuento de tan solo tres páginas que narra la historia fantástica de un príncipe que derrotó a la soledad.",
+      "1": "Impreso con letra pequeña en la contraportada pone: “Para quienes estén en problemas”."
+    }
+  },
   "LocationNo1Materials": {
     "name": "Documentos del lugar nº. 1",
     "description": {
@@ -19600,6 +19967,215 @@
     "name": "Documentos del lugar nº. 3",
     "description": {
       "0": "Los documentos de Heinry. ¿Qué tipo de inspiración podrá obtener con ellos?"
+    }
+  },
+  "IridescentGlory": {
+    "name": "Gloria iridiscente",
+    "description": {
+      "0": "Caracolas y corales de colores variados. Se dice que son los tesoros más preciados de los nixies, ya que fueron ellos quienes construyeron el resplandeciente Puente Arcoíris en el Reino de los Nixies..."
+    }
+  },
+  "AureliesNotesI": {
+    "name": "Notas de Aurélie (I)",
+    "description": {
+      "0": "Las notas de Aurélie (I)."
+    }
+  },
+  "MarvelousJellyImprovedFontaineEdition": {
+    "name": "Agar mirífico: Versión mejorada de Fontaine",
+    "description": {
+      "0": "Una bella caja que te regaló Haniyyah y que contiene el agar mirífico que tanto les gusta a los Hongos. Los agares están divididos según el sabor para poder alimentar a los Hongos de acuerdo a sus gustos particulares.",
+      "1": "A medida que ha ido conociendo a los compihongos y adquiriendo más experiencia en su elaboración, Haniyyah ha perfeccionado sus conocimientos sobre el sabor del agar mirífico. El agar mejorado no solo proporciona los nutrientes necesarios para los compihongos, sino que incorpora las peculiaridades de las comidas de Fontaine con el fin de traer nuevos sabores, ¡para que así los compihongos se diviertan comiendo y tengan una vida sana!"
+    }
+  },
+  "SpinaDiRosulaUniformGiftBox": {
+    "name": "Caja regalo con uniforme de Spina di Rosula",
+    "description": {
+      "0": "Un regalo preparado por Navia para Adele. Es el uniforme de Spina di Rosula. Aunque la talla es demasiado grande para Adele, es el objeto perfecto para hacer un juramento."
+    }
+  },
+  "StrangelyShapedKey": {
+    "name": "Llave de forma extraña",
+    "description": {
+      "0": "Una llave que encontraste del miembro abatido de la banda de Romeuf. Parece que es la herramienta necesaria para detener rápidamente los explosivos."
+    }
+  },
+  "RecommendationLetter": {
+    "name": "Carta de recomendación",
+    "description": {
+      "0": "Una carta de recomendación."
+    }
+  },
+  "RustyIronKey": {
+    "name": "Llave de hierro oxidada",
+    "description": {
+      "0": "Una llave que cayó aquí. ¿Qué se abrirá con ella?"
+    }
+  },
+  "Persona": {
+    "name": "“Personalidades”",
+    "description": {
+      "0": "Uno de los materiales necesarios para forjar la Sacroespada Cruz de los Narcisos. Parece como si prácticamente careciera de peso alguno."
+    }
+  },
+  "UnlockedTreasure": {
+    "name": "Tesoro abierto",
+    "description": {
+      "0": "Un antiguo reloj de bolsillo.",
+      "1": "Se ha detenido en un momento determinado, inmortalizando la belleza de un recuerdo."
+    }
+  },
+  "AureliesNotesII": {
+    "name": "Notas de Aurélie (II)",
+    "description": {
+      "0": "Las notas de Aurélie (II)."
+    }
+  },
+  "ANewLifesBeginning": {
+    "name": "El comienzo de una nueva vida",
+    "description": {
+      "0": "Un salvoconducto del Fuerte Merópide. Aunque es solo un papel, tiene un nombre inspirador."
+    }
+  },
+  "RootCycle": {
+    "name": "Rueda del origen",
+    "description": {
+      "0": "Una de las llaves diseñadas por la Comunidad Cruz de los Narcisos para esta torre. La combinación final es una extraña forma con tres círculos y un semicírculo, lo cual tiene una explicación.",
+      "1": "El círculo interior es el ciclo de Hiperbórea y simboliza la etapa de la glaciación del mundo y la pérdida del paraíso."
+    }
+  },
+  "SimpleVaultKeyI": {
+    "name": "Llave del tesoro sencilla (I)",
+    "description": {
+      "0": "Una de las llaves utilizadas para abrir la valla de hierro instalada en el barco destrozado."
+    }
+  },
+  "SimpleVaultKeyII": {
+    "name": "Llave del tesoro sencilla (II)",
+    "description": {
+      "0": "Una de las llaves utilizadas para abrir la valla de hierro instalada en el barco destrozado."
+    }
+  },
+  "SimpleVaultKeyIII": {
+    "name": "Llave del tesoro sencilla (III)",
+    "description": {
+      "0": "Una de las llaves utilizadas para abrir la valla de hierro instalada en el barco destrozado."
+    }
+  },
+  "FoggyForestBranch": {
+    "name": "Rama silvícola",
+    "description": {
+      "0": "Una rama con un brillo azul oscuro que parece estar relacionada con el misterioso camino de la Senda Silvícola Caliginosa.",
+      "1": "Si observas con detenimiento, parece que algo fluye por el interior de la rama."
+    }
+  },
+  "FallenBouquet": {
+    "name": "Ramo de flores abandonado",
+    "description": {
+      "0": "Unas flores silvestres que una vez fueron apreciadas por alguien. No tienen nada de especial, salvo el lugar en el que fueron olvidadas.",
+      "1": "Un pequeño agradecimiento y rememoración pueden ser la clave para seguir adelante."
+    }
+  },
+  "Tripod": {
+    "name": "Trípode",
+    "description": {
+      "0": "El trípode perdido de Urville. Debería poder usarse una vez se seque."
+    }
+  },
+  "NadiasToken": {
+    "name": "Amuleto de Nadia",
+    "description": {
+      "0": "Una pieza pequeña. No parece tener nada de especial."
+    }
+  },
+  "TinyConch": {
+    "name": "Caracola pequeña",
+    "description": {
+      "0": "Una hermosa caracola que le encanta a Nadia."
+    }
+  },
+  "DivingSet": {
+    "name": "Equipo de buceo",
+    "description": {
+      "0": "El equipo de buceo perdido de Urville. Parece que está un poco dañado."
+    }
+  },
+  "SunkenCoinPouch": {
+    "name": "Bolsa de monedas hundida",
+    "description": {
+      "0": "Una bolsa de monedas común llena de Moras."
+    }
+  },
+  "StrangeMessage": {
+    "name": "Mensaje extraño",
+    "description": {
+      "0": "Un mensaje extraño."
+    }
+  },
+  "MysteriousXenochromaticCrystal": {
+    "name": "Cristalización cromática misteriosa",
+    "description": {
+      "0": "Una enorme Cristalización obtenida del interior del imponente Engendro Fontamarino tras ser derrotado.",
+      "1": "Contiene una energía misteriosa mayor que la Cristalización cromática ordinaria.",
+      "2": "Quizá haya alguien dispuesto a pagar un precio adecuado por ella."
+    }
+  },
+  "MapFragment": {
+    "name": "Fragmento de mapa",
+    "description": {
+      "0": "Un trozo de papel rasgado. Parece que se trata de la esquina inferior derecha de un mapa. Hay unas líneas y puntos extraños dibujados en él."
+    }
+  },
+  "SmallKey": {
+    "name": "Llave pequeña",
+    "description": {
+      "0": "Una llave diminuta que podría encajar en un libro. ¿Por qué no la han incautado y confiscado? ¿Y cómo puede algo tan pequeño abrir algo tan importante?"
+    }
+  },
+  "Notes": {
+    "name": "Notas",
+    "description": {}
+  },
+  "Description": {
+    "name": "Explicación",
+    "description": {}
+  },
+  "Storybook": {
+    "name": "Libro de historias",
+    "description": {}
+  },
+  "Certificate": {
+    "name": "Certificado de condecoración",
+    "description": {}
+  },
+  "InvestigationLog": {
+    "name": "Registro de investigación",
+    "description": {}
+  },
+  "Excerpt": {
+    "name": "Extracto",
+    "description": {}
+  },
+  "Log": {
+    "name": "Registro",
+    "description": {}
+  },
+  "TearsAmongTheStars": {
+    "name": "Lágrima estelar",
+    "description": {
+      "0": "Una gota de agua obtenida de la bestia colosal del primigenio mar de la vida.",
+      "1": "<br/>",
+      "2": "Un filósofo del antiguo mundo afirmó una vez que donde hay vida, hay muerte; y naturalmente, donde hay muerte, hay vida.",
+      "3": "Si no fuera así, la luz fugaz no podría resistir a la oscuridad eterna y, al final de los tiempos, todas las cosas se marchitarían.",
+      "4": "Las reglas de las estrellas, es decir, las leyes del universo, dictan que la naturaleza debe conservarse, pero las leyes del universo nunca lo han hecho.",
+      "5": "En una caja sellada, la destrucción siempre supera a la nueva vida. Milenios y milenios de prosperidad no son más que un instante en un lapso de miles de millones de años. El mayor de los logros con el tiempo todo se empañará, decaerá, se disipará, y en última instancia se desvanecerá en el olvido.",
+      "6": "Así, hay cosas flotando entre las estrellas, una vez adornadas con innumerables títulos de prestigio de innumerables civilizaciones, derramando lágrimas por su muerte predestinada.",
+      "7": "Sus lágrimas caen por la desesperación, por la esperanza, porque toda la desesperación y la esperanza por igual se extinguirán por completo junto con las innumerables estrellas.",
+      "8": "Sus lágrimas caen de pena, de alegría, porque ambas acabarán dispersándose en el frío, oscuro e interminable vacío.",
+      "9": "Todas las pequeñas pero bellas siluetas, todos los momentos memorables, todo se desvanece con el tiempo, incluso las estrellas.",
+      "10": "Y así, allí estaba lo que una vez se llamó “divino”, decidido a preservar todo lo que debía ser preservado, decidido a devorar todo lo que debía ser devorado.",
+      "11": "Hasta el fin de los tiempos, hasta que el mar de estrellas se reduzca a nada más que brasas moribundas, hasta que un “mundo” recién nacido se mueva por primera vez en el estómago de la ballena.",
+      "12": "“No habrá más pecados, ni más tristeza, ni más lágrimas, porque todo murió con las antiguas estrellas”."
     }
   },
   "SilkFlowerSeed": {
@@ -20010,7 +20586,7 @@
   "MaintenanceMekInitialConfiguration": {
     "name": "Mecarreparador de función básica",
     "description": {
-      "0": "Un Mecabot que ayuda en tareas submarinas y mejora el rendimiento de la maquinaria de submarinismo. Originalmente, servía para limpiar basura, algas y otros deshechos a fin de evitar la obstrucción de los componentes de los Mecabots acuáticos y, así, minimizar los errores. Es por ello que se los considera “basureros subacuáticos” y son tan importantes para el ecosistema de Fontaine.",
+      "0": "Un Mecabot que ayuda en tareas submarinas y mejora el rendimiento de la maquinaria de submarinismo. Originalmente, servía para limpiar basura, algas y otros desechos a fin de evitar la obstrucción de los componentes de los Mecabots acuáticos y, así, minimizar los errores. Es por ello que se los considera “basureros subacuáticos” y son tan importantes para el ecosistema de Fontaine.",
       "1": "Este Mecabot cuenta con un sensor que detecta cualquier objetivo y analiza la basura que encuentra con su “olfato”. Por eso, a veces también se sienten atraídos por los cebos que lanzan los pescadores al agua. Los que han conseguido atrapar uno con su caña suelen denominarlo “mecarreparador acuático” o “mecapez”.",
       "2": "Los primeros modelos de mecarreparadores están hechos a base de finas capas de madera y minerales de relativo bajo coste. La primera tanda de modelos estaba equipada con un dispositivo de movilidad enfocada directamente a cumplir con sus objetivos. Sin embargo, su funcionamiento distaba mucho de lo deseado. Por eso, se implementó un modelo de trabajo por turnos, de forma que cuando algunos de estos mecarreparadores completaban sus tareas o quedaban inutilizados por algún motivo, otra tanda de mecapeces que permanecían ocultos en el fondo marino los reemplazaban de inmediato, garantizando así la continuidad de las tareas de limpieza submarina. Por ello, la mayor parte de la gente piensa que se trata de mecanismos capaces incluso de reproducirse, pues surgen de la nada en un instante. Así que no te sientas culpable si pescas uno o dos sin darte cuenta."
     }
@@ -20018,7 +20594,7 @@
   "MaintenanceMekWaterBodyCleaner": {
     "name": "Mecarreparador purificaaguas",
     "description": {
-      "0": "Un Mecabot que ayuda en tareas submarinas y mejora el rendimiento de la maquinaria de submarinismo. Originalmente, servía para limpiar basura, algas y otros deshechos a fin de evitar la obstrucción de los componentes de los Mecabots acuáticos y, así, minimizar los errores. Es por ello que se los considera “basureros subacuáticos” y son tan importantes para el ecosistema de Fontaine.",
+      "0": "Un Mecabot que ayuda en tareas submarinas y mejora el rendimiento de la maquinaria de submarinismo. Originalmente, servía para limpiar basura, algas y otros desechos a fin de evitar la obstrucción de los componentes de los Mecabots acuáticos y, así, minimizar los errores. Es por ello que se los considera “basureros subacuáticos” y son tan importantes para el ecosistema de Fontaine.",
       "1": "Este Mecabot cuenta con un sensor que detecta cualquier objetivo y analiza la basura que encuentra con su “olfato”. Por eso, a veces también se sienten atraídos por los cebos que lanzan los pescadores al agua. Los que han conseguido atrapar uno con su caña suelen denominarlo “mecarreparador acuático” o “mecapez”.",
       "2": "Comparado con el modelo de mecarreparador de función básica, el cual ha sido masivamente distribuido, este modelo purificaaguas más pulido y producido en masa cuenta con una potente capa anticorrosiva. Además, el investigador a cargo de desarrollar este mecanismo no empleó un sistema de transporte de descarga inmediata y no adoptó medidas de descarga desfavorables, sino que utilizó un diseño de recuperación y reparación periódicos. De esta forma, los investigadores pueden usar destellos de cierta frecuencia para enviar señales de navegación al sensor de este mecarreparador y, así, lograr que regresen para repararlos, examinarlos y volver a soltarlos en el agua para que sigan trabajando. Al final, esos destellos se acabaron convirtiendo en un cebo específico para mecarreparadores y, de alguna forma desconocida, se popularizaron entre los pescadores."
     }
@@ -20026,7 +20602,7 @@
   "MaintenanceMekSituationController": {
     "name": "Mecarreparador de control",
     "description": {
-      "0": "Un Mecabot que ayuda en tareas submarinas y mejora el rendimiento de la maquinaria de submarinismo. Originalmente, servía para limpiar basura, algas y otros deshechos a fin de evitar la obstrucción de los componentes de los Mecabots acuáticos y, así, minimizar los errores. Es por ello que se los considera “basureros subacuáticos” y son tan importantes para el ecosistema de Fontaine.",
+      "0": "Un Mecabot que ayuda en tareas submarinas y mejora el rendimiento de la maquinaria de submarinismo. Originalmente, servía para limpiar basura, algas y otros desechos a fin de evitar la obstrucción de los componentes de los Mecabots acuáticos y, así, minimizar los errores. Es por ello que se los considera “basureros subacuáticos” y son tan importantes para el ecosistema de Fontaine.",
       "1": "Este Mecabot cuenta con un sensor que detecta cualquier objetivo y analiza la basura que encuentra con su “olfato”. Por eso, a veces también se sienten atraídos por los cebos que lanzan los pescadores al agua. Los que han conseguido atrapar uno con su caña suelen denominarlo “mecarreparador acuático” o “mecapez”.",
       "2": "En ciertas circunstancias, los mecarreparadores confunden el alimento de criaturas acuáticas con basura, lo que da lugar a desencuentros de los que los mecanismos más pequeños no salen muy bien parados. Por ello, poco después, la población de mecarreparadores se redujo drásticamente.",
       "3": "Para proteger a los dos anteriores modelos, los investigadores se basaron en el marco científico disponible para aumentar el rendimiento de la estructura central y, así, desarrollar un nuevo tercer modelo con capacidad de combate que expulsara a esas criaturas acuáticas. Así garantizaría un buen entorno de trabajo para los mecarreparadores y se podrían seguir produciendo en masa.",
@@ -20039,6 +20615,14 @@
       "0": "Un Mecabot que ayuda en tareas submarinas y mejora el rendimiento de la maquinaria de submarinismo. Originalmente, servía para limpiar basura, algas y otros deshechos a fin de evitar la obstrucción de los componentes de los Mecabots acuáticos y, así, minimizar los errores.",
       "1": "Comparado con otros modelos producidos en masa, este mecarreparador dorado de coleccionismo posee una cubierta más limpia y brillante. Se trata de un modelo conmemorativo producido por un equipo de desarrolladores que, para convencer a unos comerciantes adinerados de que financiaran su proyecto, les regalaron estos modelos conmemorativos para que los colocaran en sus peceras como sofisticados peces ornamentales. Por desgracia, todos los intentos del equipo para captar inversiones fracasaron, así que decidieron vender estos mecarreparadores como juguetes para sufragar los gastos cada vez más cuantiosos del proyecto.",
       "2": "Al final, todo el mundo acabó enterándose de lo ocurrido, así que el equipo de desarrolladores detuvo su trabajo y se cancelaron los proyectos futuros. Actualmente, nadie se encarga de ningún mecarreparador que vive en las aguas de Fontaine, y el lote del modelo dorado de coleccionismo cuya producción se realizó con antelación acabó en el fondo del agua, en paradero desconocido y siendo la especie piscícola más distintiva y cara de Fontaine. Conforme se hacían públicos algunos proyectos del Instituto de Ciencias, los periodistas de «El Pájaro de Vapor» empezaron a investigar y contrastar información, y descubrieron que “la contaminación acuática de Fontaine no experimentó grandes mejoras incluso tras el despliegue de los mecarreparadores, por lo que dicho proyecto ha tenido una eficacia dudosa”. Más tarde, los mecarreparadores dorados de colección que aún no habían sido activados siguieron patrullando las aguas de Fontaine, y los pescadores empezaron a alardear cuando pescaban uno, ya que eran con diferencia mucho menos comunes que los peces ornamentales de otras naciones."
+    }
+  },
+  "MaintenanceMekGoldLeader": {
+    "name": "Mecarreparador: Líder áureo",
+    "description": {
+      "0": "Meca auxiliar compacto que se desarrolló para ayudar a los Mecabots submarinos a aumentar la tasa de asistencia al trabajo general del equipo. Originalmente, se diseñó para eliminar los residuos submarinos, como basura y restos vegetales, y así evitar que se adhirieran a las partes clave de los Mecabots, minimizando la tasa de fallos de estos. Visto de otro modo, no cabe duda de que también desempeñan el papel de “limpiadores submarinos”, lo cual es beneficioso para el entorno ecológico de Fontaine.",
+      "1": "En comparación con otros modelos fabricados en serie, este particular mecarreparador líder áureo presenta una carcasa de color dorado claro y un dispositivo de control especial. El equipo de desarrollo concibió este mecarreparador como una “estación de mando de transmisión” de alto rendimiento que recibiría y distribuiría diversas órdenes a los mecarreparadores circundantes cuando operasen en terrenos submarinos complejos, lo que lo convierte en todo un “líder” indispensable.",
+      "2": "Sin embargo, con la suspensión del proyecto de los mecarreparadores, estos “mecas líderes” han perdido su importancia, salvo por su reconocible aspecto de color dorado claro, lo que los hace tener un gran valor de colección a ojos de algunos pescadores."
     }
   },
   "WingsOfFirstFlight": {
@@ -20900,6 +21484,36 @@
       "0": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. Este Girocristal radiante contiene una misteriosa canción de Fontaine."
     }
   },
+  "RadiantSpincrystal115": {
+    "name": "Girocristal radiante (115)",
+    "description": {
+      "0": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. Este Girocristal radiante contiene una misteriosa canción de Fontaine."
+    }
+  },
+  "RadiantSpincrystal116": {
+    "name": "Girocristal radiante (116)",
+    "description": {
+      "0": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. Este Girocristal radiante contiene una misteriosa canción de Fontaine."
+    }
+  },
+  "RadiantSpincrystal117": {
+    "name": "Girocristal radiante (117)",
+    "description": {
+      "0": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. Este Girocristal radiante contiene una misteriosa canción de Fontaine."
+    }
+  },
+  "RadiantSpincrystal118": {
+    "name": "Girocristal radiante (118)",
+    "description": {
+      "0": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. Este Girocristal radiante contiene una misteriosa canción de Fontaine."
+    }
+  },
+  "RadiantSpincrystal119": {
+    "name": "Girocristal radiante (119)",
+    "description": {
+      "0": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. Este Girocristal radiante contiene una misteriosa canción de Fontaine."
+    }
+  },
   "LanternFiber": {
     "name": "Celulosa para linterna",
     "description": {
@@ -21047,6 +21661,13 @@
     "description": {
       "0": "Objeto de refinamiento exclusivo para el arma “Oda al Vasto Azul”.",
       "1": "En numerosos poemas e historias, los dientes de león son un símbolo de libertad y viaje sin restricciones. Es posible que meter en un libro un marcapáginas con forma de diente de león resulte paradójico, pero no es una forma de aprisionarlo, sino más bien de darle la oportunidad de flotar en un mundo aún más vasto y brillante que el real."
+    }
+  },
+  "SurgingSacredChalice": {
+    "name": "Sacrocáliz rebosante",
+    "description": {
+      "0": "Objeto de refinamiento exclusivo para el arma “Espada Cruz de los Narcisos”.",
+      "1": "Según el folclore de Fontaine, a las civilizaciones antiguas les gustaba utilizar caracolas para fabricar herramientas ceremoniales, y de esta caracola elegida como cáliz sacro surgió, finalmente, el ungüento sagrado. Simbólicamente, este cáliz es la palabra primordial; el ungüento, la voluntad refinada y la espada sagrada, la razón capaz de destruirlo todo."
     }
   },
   "FalconsDance": {
@@ -22509,7 +23130,7 @@
     "name": "Logro - Órbitas",
     "description": {
       "0": "Diseño de tarjeta de presentación.",
-      "1": "“Oh, gran y eminente monarca, el instituto secreto viene a informarle de los resultados de las predicciones: ambas estrellas fueron atrapadas por la gravedad de la tierra hace mucho tiempo, y ahora, tras un largo periodo de retorno, sus órbitas volverán a alinearse”."
+      "1": "“Oh, gran y eminente monarca, la Universitas Magistrorum viene a informarle de los resultados de las predicciones: ambas estrellas fueron atrapadas por la gravedad de la tierra hace mucho tiempo, y ahora, tras un largo periodo de retorno, sus órbitas volverán a alinearse”."
     }
   },
   "AchievementMariner": {
@@ -22580,6 +23201,34 @@
     "description": {
       "0": "Diseño de tarjeta de presentación.",
       "1": "El logotipo oficial del Fuerte Merópide. Se espera que todos respeten el orden, para que así puedan vivir el resto de sus vidas en paz y no tengan nada que ver con la institución tras este logotipo."
+    }
+  },
+  "FurinaBanquet": {
+    "name": "Furina - Celebración",
+    "description": {
+      "0": "Diseño de tarjeta de presentación.",
+      "1": "¿Podré comerme yo sola todos los pasteles? ¿O mejor si como uno al día, y así tengo para una semana? Pero no puedo dejar los pasteles tanto tiempo... Bueno, no pasa nada, ya tendré amigos que vengan a comérselos."
+    }
+  },
+  "CharlotteExclusive": {
+    "name": "Charlotte - Exclusiva",
+    "description": {
+      "0": "Diseño de tarjeta de presentación.",
+      "1": "“1. Exclusiva terminada. ¡Seguro que da mucho de qué hablar! 2. El periódico dijo que la situación se estaba agravando y publicó un comunicado rectificando... 3. La persona que escribió el comunicado mañana comparecerá como acusado en la Ópera de la Epíclesis. ¡Vuelve a ser mi oportunidad!”."
+    }
+  },
+  "FontaineCompleteness": {
+    "name": "Fontaine - Confusión",
+    "description": {
+      "0": "Diseño de tarjeta de presentación.",
+      "1": "“Las nubes del atardecer se dispersan en el cielo crepuscular, y los arroyos fluyen dorados bajo el sol menguante. Mi sombra solitaria flota como un fantasma silencioso en el fondo de un arroyo”."
+    }
+  },
+  "TravelNotesWhirlingWaltz": {
+    "name": "PB - Vals pivotante",
+    "description": {
+      "0": "Diseño de tarjeta de presentación.",
+      "1": "Aunque los Mecabots no giren más en su sitio, aunque las muñecas no den un paso más, los recuerdos se hacen eternos y se convierten en corales, así que no olvides nunca nuestras aventuras y el tiempo que hemos pasado juntos."
     }
   },
   "AnemoculusResonanceStone": {
@@ -23118,7 +23767,7 @@
       "1": "Si se coloca correctamente y se insertan los materiales necesarios, el dispositivo se pone en marcha para atraer a los cristalópteros y atraparlos en el interior.",
       "2": "Fawitzki fue el encargado de liderar en su momento el proyecto de investigación sobre los dispositivos lumínicos de baja temperatura. Durante el proyecto se necesitó una ingente cantidad de núcleos de cristal. Se puede decir que este artilugio fue la consecuencia de las necesidades del proyecto.",
       "3": "Sin embargo, el proyecto acabó siendo suspendido por diversos motivos.",
-      "4": "“Nos hemos reunido aquí para celebrar el ímpetu del Sr. Fawitziki en su trabajo. Ojalá que en el futuro alguien continúe con su investigación. El Instituto estará más que dispuesto a proporcionar el apoyo económico necesario en las áreas pertinentes”."
+      "4": "“Nos hemos reunido aquí para celebrar el ímpetu del Sr. Fawitzki en su trabajo. Ojalá que en el futuro alguien continúe con su investigación. El Instituto estará más que dispuesto a proporcionar el apoyo económico necesario en las áreas pertinentes”."
     }
   },
   "WindPoweredWindGenerator": {
@@ -23149,6 +23798,19 @@
       "6": "<br/>",
       "7": "“Esta máquina es un producto de la investigación de papá, y se llama Generador aerodinámico portátil de burbujas gelatinosas...”.",
       "8": "“¡Burbujas! ¡Qué bonitas! ¡Papá, eres increíble!”."
+    }
+  },
+  "SpecialAnalysisZoomLens": {
+    "name": "Objetivo zoom de análisis especial",
+    "description": {
+      "0": "Un nuevo accesorio de Daguerrotipo diseñado para mejorar la capacidad de reconocimiento gráfico.",
+      "1": "Equipar este accesorio en un Daguerrotipo normal hace que aumente su velocidad de zoom y de enfoque, lo que permite a los usuarios tomar imágenes instantáneas rápidas y de forma eficaz para grabar momentos preciosos durante sus viajes."
+    }
+  },
+  "ImageSamplingKamera": {
+    "name": "Daguerrotipo de muestra gráfica",
+    "description": {
+      "0": "Un Daguerrotipo modificado por Lépine-Pauline para la vasta disciplina del contraste gráfico. Se desconoce qué clase de complejos y caros componentes contiene, pero parece que es capaz de captar las características específicas de estructura, silueta y color del objetivo..."
     }
   },
   "InstructionsAnemoculusResonanceStone": {
@@ -23932,6 +24594,24 @@
       "0": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
     }
   },
+  "TheStarrySkiesTheirFlowersRain": {
+    "name": "Lluvia florestelar",
+    "description": {
+      "0": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+    }
+  },
+  "DiscretionarySupplement": {
+    "name": "Compensación de pérdidas",
+    "description": {
+      "0": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+    }
+  },
+  "AllThingsAreOfTheEarth": {
+    "name": "Madre tierra",
+    "description": {
+      "0": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+    }
+  },
   "MagicGuide": {
     "name": "Guía Mágica",
     "description": {
@@ -24268,6 +24948,18 @@
       "0": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
     }
   },
+  "OceanHuedClam": {
+    "name": "Perla Oceánica",
+    "description": {
+      "0": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+    }
+  },
+  "ShadowOfTheSandKing": {
+    "name": "Reminiscencia del Rey del Desierto",
+    "description": {
+      "0": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+    }
+  },
   "LiyueHarborWharf": {
     "name": "Puerto de Liyue",
     "description": {
@@ -24474,6 +25166,12 @@
   },
   "YayoiNanatsuki": {
     "name": "Yayoi Nanatsuki",
+    "description": {
+      "0": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+    }
+  },
+  "StormterrorsLair": {
+    "name": "Guarida de Stormterror",
     "description": {
       "0": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
     }
@@ -24744,6 +25442,18 @@
   },
   "Pankration": {
     "name": "¡A Bocajarro!",
+    "description": {
+      "0": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+    }
+  },
+  "InEveryHouseAStove": {
+    "name": "Hornilla del pueblo",
+    "description": {
+      "0": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+    }
+  },
+  "Lyresong": {
+    "name": "Lira poética",
     "description": {
       "0": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
     }
@@ -25915,6 +26625,20 @@
       "1": "Tras usarlo, entra en el menú de fabricación para verlo."
     }
   },
+  "HelloWelcome": {
+    "name": "¡Hola! ¡Bienvenido!",
+    "description": {
+      "0": "Plano detallado para fabricar “¡Hola! ¡Bienvenido!”.",
+      "1": "Tras usarlo, entra en el menú de fabricación para verlo."
+    }
+  },
+  "ShinyShell": {
+    "name": "Caracola brillante",
+    "description": {
+      "0": "Plano detallado para fabricar “Caracola brillante”.",
+      "1": "Tras usarlo, entra en el menú de fabricación para verlo."
+    }
+  },
   "EfflorescentIllumination": {
     "name": "Luminiscencia floral",
     "description": {
@@ -26374,6 +27098,13 @@
     "name": "Litera de la corpulencia de tilo silvestre",
     "description": {
       "0": "Plano detallado para fabricar una Litera de la corpulencia de tilo silvestre.",
+      "1": "Tras usarlo, entra en el menú de fabricación para verlo."
+    }
+  },
+  "LindenWoodSweetSlumberBed": {
+    "name": "Cama de sueño plácido de madera de tilo silvestre",
+    "description": {
+      "0": "Plano detallado para fabricar una Cama de sueño plácido de madera de tilo silvestre.",
       "1": "Tras usarlo, entra en el menú de fabricación para verlo."
     }
   },
@@ -27431,6 +28162,27 @@
     "name": "Oficinista del palacio cardenalicio",
     "description": {
       "0": "Plano detallado para fabricar “Oficinista del palacio cardenalicio”.",
+      "1": "Tras usarlo, entra en el menú de fabricación para verlo."
+    }
+  },
+  "CompactAirSupplyDevice": {
+    "name": "Unidad compacta de suministro de aire",
+    "description": {
+      "0": "Plano detallado para fabricar una Unidad compacta de suministro de aire.",
+      "1": "Tras usarlo, entra en el menú de fabricación para verlo."
+    }
+  },
+  "PassagesStableStorage": {
+    "name": "Baúl fideligno de corredor",
+    "description": {
+      "0": "Plano detallado para fabricar un Baúl fideligno de corredor.",
+      "1": "Tras usarlo, entra en el menú de fabricación para verlo."
+    }
+  },
+  "ModelContraptionReasonableRoundabout": {
+    "name": "Modelo de mecanismo: Lógica aparente",
+    "description": {
+      "0": "Plano detallado para fabricar “Modelo de mecanismo: Lógica aparente”.",
       "1": "Tras usarlo, entra en el menú de fabricación para verlo."
     }
   },
@@ -28771,6 +29523,41 @@
       "1": "Tras usarlo, entra en el menú de fabricación para verlo."
     }
   },
+  "CourtOfJusticesAuthenticity": {
+    "name": "Verdad de la corte de la justicia",
+    "description": {
+      "0": "Plano detallado para fabricar “Verdad de la corte de la justicia”.",
+      "1": "Tras usarlo, entra en el menú de fabricación para verlo."
+    }
+  },
+  "CourtOfJusticesRespect": {
+    "name": "Veneración de la corte de la justicia",
+    "description": {
+      "0": "Plano detallado para fabricar “Veneración de la corte de la justicia”.",
+      "1": "Tras usarlo, entra en el menú de fabricación para verlo."
+    }
+  },
+  "SlipperyShack": {
+    "name": "Cabaña resbaladiza",
+    "description": {
+      "0": "Plano detallado para fabricar “Cabaña resbaladiza”.",
+      "1": "Tras usarlo, entra en el menú de fabricación para verlo."
+    }
+  },
+  "BedroomBedlam": {
+    "name": "Aposento encantado",
+    "description": {
+      "0": "Plano detallado para fabricar “Aposento encantado”.",
+      "1": "Tras usarlo, entra en el menú de fabricación para verlo."
+    }
+  },
+  "SmallStonecrab": {
+    "name": "Minicangrejo de piedra",
+    "description": {
+      "0": "Plano detallado para fabricar “Minicangrejo de piedra”.",
+      "1": "Tras usarlo, entra en el menú de fabricación para verlo."
+    }
+  },
   "BirdAndBlossomDesignFountain": {
     "name": "Fuente con flores y pájaros",
     "description": {
@@ -28978,6 +29765,34 @@
     "name": "Fuente de los mil deseos",
     "description": {
       "0": "Plano detallado para fabricar una Fuente de los mil deseos.",
+      "1": "Tras usarlo, entra en el menú de fabricación para verlo."
+    }
+  },
+  "LumidouceHarborType05CombineLifter": {
+    "name": "Mecanismo de elevación compuesto del Puerto Lumidulce (V)",
+    "description": {
+      "0": "Plano detallado para fabricar un Mecanismo de elevación compuesto del Puerto Lumidulce (V).",
+      "1": "Tras usarlo, entra en el menú de fabricación para verlo."
+    }
+  },
+  "StandardFluidShippingUnit": {
+    "name": "Unidad común de transporte de líquidos",
+    "description": {
+      "0": "Plano detallado para fabricar una Unidad común de transporte de líquidos.",
+      "1": "Tras usarlo, entra en el menú de fabricación para verlo."
+    }
+  },
+  "StandardShippingPallet": {
+    "name": "Palé de transporte estándar",
+    "description": {
+      "0": "Plano detallado para fabricar un Palé de transporte estándar.",
+      "1": "Tras usarlo, entra en el menú de fabricación para verlo."
+    }
+  },
+  "LargeShippingPallet": {
+    "name": "Palé de transporte grande",
+    "description": {
+      "0": "Plano detallado para fabricar un Palé de transporte grande.",
       "1": "Tras usarlo, entra en el menú de fabricación para verlo."
     }
   },
@@ -29765,6 +30580,27 @@
       "1": "Tras usarlo, entra en el menú de fabricación para verlo."
     }
   },
+  "CommonCookingDevice": {
+    "name": "Dispositivo de cocina universal",
+    "description": {
+      "0": "Plano detallado para fabricar un Dispositivo de cocina universal.",
+      "1": "Tras usarlo, entra en el menú de fabricación para verlo."
+    }
+  },
+  "ModelContraptionRepair": {
+    "name": "Modelo de mecanismo: Reparación",
+    "description": {
+      "0": "Plano detallado para fabricar “Modelo de mecanismo: Reparación”.",
+      "1": "Tras usarlo, entra en el menú de fabricación para verlo."
+    }
+  },
+  "ModelContraptionRockcrackerAnchor": {
+    "name": "Modelo de mecanismo: Anclaje de roca cortada",
+    "description": {
+      "0": "Plano detallado para fabricar “Modelo de mecanismo: Anclaje de roca cortada”.",
+      "1": "Tras usarlo, entra en el menú de fabricación para verlo."
+    }
+  },
   "PottedPlantVerdantVastness": {
     "name": "Maceta: Verdor abundante",
     "description": {
@@ -30458,6 +31294,76 @@
       "1": "Tras usarlo, entra en el menú de fabricación para verlo."
     }
   },
+  "LindenWoodHalfMetalAnnouncementBoard": {
+    "name": "Tablón de madera de tilo silvestre metalizado",
+    "description": {
+      "0": "Plano detallado para fabricar un Tablón de madera de tilo silvestre metalizado.",
+      "1": "Tras usarlo, entra en el menú de fabricación para verlo."
+    }
+  },
+  "YetAnotherDiscussion": {
+    "name": "Otro debate",
+    "description": {
+      "0": "Plano detallado para fabricar “Otro debate”.",
+      "1": "Tras usarlo, entra en el menú de fabricación para verlo."
+    }
+  },
+  "CourtOfJusticesTrivia": {
+    "name": "Noticias interesantes de la corte de la justicia",
+    "description": {
+      "0": "Plano detallado para fabricar “Noticias interesantes de la corte de la justicia”.",
+      "1": "Tras usarlo, entra en el menú de fabricación para verlo."
+    }
+  },
+  "DuelingSigil": {
+    "name": "Emblema del duelo",
+    "description": {
+      "0": "Plano detallado para fabricar “Emblema del duelo”.",
+      "1": "Tras usarlo, entra en el menú de fabricación para verlo."
+    }
+  },
+  "FurysTorch": {
+    "name": "Antorcha de la justa indignación",
+    "description": {
+      "0": "Plano detallado para fabricar “Antorcha de la justa indignación”.",
+      "1": "Tras usarlo, entra en el menú de fabricación para verlo."
+    }
+  },
+  "SoftWatersVoice": {
+    "name": "Suave sonido del agua",
+    "description": {
+      "0": "Plano detallado para fabricar “Suave sonido del agua”.",
+      "1": "Tras usarlo, entra en el menú de fabricación para verlo."
+    }
+  },
+  "LetsPlay": {
+    "name": "¡A divertirse!",
+    "description": {
+      "0": "Plano detallado para fabricar “¡A divertirse!”.",
+      "1": "Tras usarlo, entra en el menú de fabricación para verlo."
+    }
+  },
+  "GoodStuffIsForSharing": {
+    "name": "¡Hay que compartir lo bueno!",
+    "description": {
+      "0": "Plano detallado para fabricar “¡Hay que compartir lo bueno!”.",
+      "1": "Tras usarlo, entra en el menú de fabricación para verlo."
+    }
+  },
+  "SatisfyingWeight": {
+    "name": "El peso de la satisfacción",
+    "description": {
+      "0": "Plano detallado para fabricar “El peso de la satisfacción”.",
+      "1": "Tras usarlo, entra en el menú de fabricación para verlo."
+    }
+  },
+  "ASistersDuty": {
+    "name": "El deber de la hermana",
+    "description": {
+      "0": "Plano detallado para fabricar “El deber de la hermana”.",
+      "1": "Tras usarlo, entra en el menú de fabricación para verlo."
+    }
+  },
   "PoolOfSapphireGrace": {
     "name": "Estanque nubespiritual",
     "description": {
@@ -30553,6 +31459,20 @@
     "name": "Valla de la corte de la justicia",
     "description": {
       "0": "Plano detallado para fabricar una Valla de la corte de la justicia.",
+      "1": "Tras usarlo, entra en el menú de fabricación para verlo."
+    }
+  },
+  "StandardRailingOrderAndSymmetry": {
+    "name": "Valla estándar: Simetría ordenada",
+    "description": {
+      "0": "Plano detallado para fabricar una Valla estándar: Simetría ordenada.",
+      "1": "Tras usarlo, entra en el menú de fabricación para verlo."
+    }
+  },
+  "StandardRailingScatteredStructure": {
+    "name": "Valla estándar: Estructura irregular",
+    "description": {
+      "0": "Plano detallado para fabricar una Valla estándar: Estructura irregular.",
       "1": "Tras usarlo, entra en el menú de fabricación para verlo."
     }
   },

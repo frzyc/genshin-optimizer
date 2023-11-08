@@ -389,6 +389,13 @@
       "0": "Độ Náo Nhiệt của Hội Thơ Ca trong sự kiện \"Vần Thơ Trong Nước\""
     }
   },
+  "ThelxiesBadge": {
+    "name": "Huy Chương Thelxie",
+    "description": {
+      "0": "Huy chương chim cánh cụt với màu kim loại lấp lánh. Hình như có thể ban cho người đeo ý chí kiên định để tiến bước...",
+      "1": "Trong sự kiện \"Chuyến Thám Hiểm Kỳ Ảo Của Thelxie\", có thể dùng nó để mở khóa phần thưởng quý giá."
+    }
+  },
   "Primogem": {
     "name": "Nguyên Thạch",
     "description": {
@@ -1016,6 +1023,14 @@
       "0": "Thẩm phán tối cao của Fontaine, nổi tiếng với sự công chính liêm minh của mình."
     }
   },
+  "Charlotte": {
+    "name": "Charlotte",
+    "description": {}
+  },
+  "Furina": {
+    "name": "Furina",
+    "description": {}
+  },
   "KamisatoAyakasStellaFortuna": {
     "name": "Chòm Sao Của Kamisato Ayaka",
     "description": {
@@ -1458,6 +1473,18 @@
     "name": "Chòm Sao Của Neuvillette",
     "description": {
       "0": "Nguyên liệu kích hoạt cung mệnh Neuvillette"
+    }
+  },
+  "CharlottesStellaFortuna": {
+    "name": "Chòm Sao Của Charlotte",
+    "description": {
+      "0": "Nguyên liệu kích hoạt cung mệnh Charlotte"
+    }
+  },
+  "FurinasStellaFortuna": {
+    "name": "Chòm Sao Của Furina",
+    "description": {
+      "0": "Nguyên liệu kích hoạt cung mệnh Furina"
     }
   },
   "GnosticHymnOldNotes": {
@@ -6537,10 +6564,22 @@
       "0": "Động vật thân mềm phát ra ánh sáng nhẹ sống trong nước. Phần lớn sẽ bám vào trên bề mặt kiến trúc nhân tạo ở mép nước hoặc dưới nước."
     }
   },
+  "LakelightLily": {
+    "name": "Lily Ánh Sáng Hồ Nước",
+    "description": {
+      "0": "Đóa hoa màu xanh trong trẻo. Sinh trưởng ở nơi mạch nước hội tụ, có hương thơm nhẹ nhàng, tao nhã."
+    }
+  },
   "SubdetectionUnit": {
     "name": "Đơn Vị Thăm Dò Phụ Trợ",
     "description": {
       "0": "Đơn vị thăm dò cỡ nhỏ do Viện Khoa Học Fontaine dùng linh kiện kiểu mới để tạo ra, vốn dùng để theo dõi các loại dữ liệu môi trường."
+    }
+  },
+  "SpringOfTheFirstDewdrop": {
+    "name": "Giọt Sương Ban Sớm",
+    "description": {
+      "0": "Giọt sương trong suốt ở sâu trong khối nước lơ lửng tại Khu Morte. Khác với những tạo vật nước trong thường thấy, hình như trong đó ngưng tụ năng lượng nguyên tố càng nguyên thủy và thuần túy hơn."
     }
   },
   "BirchWood": {
@@ -13750,6 +13789,54 @@
       "0": "Món ăn đặc sắc của Wriothesley. Nghe anh ấy từ chối cấp dưới với lý do \"bây giờ mà rời khỏi là khu bếp sẽ nổ ngay\". Một lúc sau, đĩa thịt đã được bày ra trước mắt. Miếng thịt mọng nước và lớp da giòn tan đem lại hai tầng cảm nhận thật tuyệt hảo. Có điều hương vị này hình như chẳng khác gì một loại gia vị nào đó mới nổi trên thị trường gần đây..."
     }
   },
+  "SuspiciousLaLettreAFocalors": {
+    "name": "Dâng Thủy Thần Kỳ Lạ",
+    "description": {
+      "0": "Bánh kem dạng dài. Hương vị của mỗi một tầng đều không giống nhau, thậm chí còn lười biếng bỏ bớt mấy tầng. Người trong nghề ăn miếng đầu tiên là phát hiện ra ngay cách làm có vấn đề."
+    }
+  },
+  "LaLettreAFocalors": {
+    "name": "Dâng Thủy Thần",
+    "description": {
+      "0": "Bánh kem dạng dài. Nghe nói rất lâu trước đây, một thợ làm bánh kem nào đó đã lấy tình yêu mến của dân chúng Fontaine đối với Thủy Thần làm cảm hứng sáng tạo ra chiếc bánh này. Nhiều lớp bánh được xếp chồng lên nhau, quy trình làm bánh đầy tính thử thách tài nghệ của người thợ, đủ để chứng minh tầm ảnh hưởng của Thủy Thần."
+    }
+  },
+  "DeliciousLaLettreAFocalors": {
+    "name": "Dâng Thủy Thần Ngon",
+    "description": {
+      "0": "Bánh kem dạng dài. Hương thơm của cà phê và hạnh nhân vương vấn kéo dài, làm cho tinh thần cũng thêm phần phấn chấn. Trong thoáng chốc như bước vào một vở ca kịch vừa du dương vừa tráng lệ, làm cho người ta đắm chìm vào trong, chỉ hy vọng thời khắc hạ màn sẽ không bao giờ đến."
+    }
+  },
+  "SuspiciousBlubberProfiterole": {
+    "name": "Bánh Su Bồng Bềnh Kỳ Lạ",
+    "description": {
+      "0": "Món bánh ngọt với nhân kem. Do đã để quá lâu sau khi làm xong, nên lớp vỏ đã bị mềm, khác xa với cảm giác xốp giòn trong tưởng tượng. Mới nếm thử một miếng là muốn phán ngay tội \"tử hình\" cho món này."
+    }
+  },
+  "BlubberProfiterole": {
+    "name": "Bánh Su Bồng Bềnh",
+    "description": {
+      "0": "Món bánh ngọt với nhân kem. Vỏ bánh xốp giòn gói trọn phần nhân kem đầy ắp, chiếc bánh tròn vo trông đáng yêu như bụng của Hải Thú Bồng Bềnh. Nhân kem mềm mại có thể chiếm trọn trái tim của mỗi một người."
+    }
+  },
+  "DeliciousBlubberProfiterole": {
+    "name": "Bánh Su Bồng Bềnh Ngon",
+    "description": {
+      "0": "Món bánh ngọt với nhân kem. Cắn vào một miếng cảm thấy vẫn chưa đã, liền một hơi ăn hết phần còn lại. Cho dù là chút kem dính ở khóe miệng cũng có thể làm cho hạnh phúc trào dâng. Nếu món tráng miệng sau mỗi bữa ăn đều là món bánh này, thì cuộc đời thám hiểm mới tuyệt vời làm sao!"
+    }
+  },
+  "PourLaJustice": {
+    "name": "\"Pour Justice\"",
+    "description": {
+      "0": "Món ăn đặc sắc của Furina. \"Pour Justice\" ở Fontaine có ý nghĩa là \"kính trọng chính nghĩa\", và ở trên sân khấu cô đã từng chứng kiến sự ra đời của chính nghĩa tối cao. Món ăn với nhiều tầng hương vị này giống như sau quá trình thăng trầm, cuối cùng cũng trút bỏ gánh nặng. Liệu có phải xuất phát từ trải nghiệm của một giai đoạn nào đó trong cuộc đời cô không?"
+    }
+  },
+  "ExclusiveScoopGourmetColumn": {
+    "name": "Tin Tức Độc Quyền - Mục Ẩm Thực",
+    "description": {
+      "0": "Món ăn đặc sắc của Charlotte. Món ăn vặt cầm trong tay đã cùng cô ấy theo đuổi những tin tức độc quyền. Cá chiên giòn tan giữa kẽ răng, nhìn qua bên cạnh, cô ấy với những bước chân nhanh nhẹn như chim, nhịp điệu của hai người dần hòa nhịp... Tuy rằng vẫn chưa có được bản thảo tin tức, nhưng niềm vui và sự thỏa mãn trong lòng đã đạt đến đỉnh điểm."
+    }
+  },
   "RecipeItem": {
     "name": "Đạo Cụ Công Thức",
     "description": {
@@ -14787,6 +14874,18 @@
     "name": "Công Thức: Crepes Suzette",
     "description": {
       "0": "Công thức món ăn, ghi lại cách làm món \"Crepes Suzette\"."
+    }
+  },
+  "RecipeLaLettreAFocalors": {
+    "name": "Công Thức: Dâng Thủy Thần",
+    "description": {
+      "0": "Công thức món ăn, ghi lại cách làm món \"Dâng Thủy Thần\"."
+    }
+  },
+  "RecipeBlubberProfiterole": {
+    "name": "Công Thức: Bánh Su Bồng Bềnh",
+    "description": {
+      "0": "Công thức món ăn, ghi lại cách làm món \"Bánh Su Bồng Bềnh\"."
     }
   },
   "CraftedItems": {
@@ -16094,6 +16193,35 @@
     "description": {
       "0": "Bộ phận phóng điện của Cá Ngựa Ngọc Trai Ngàn Năm, và cũng là vương khí tượng trưng cho sự vĩ đại siêu việt của nó. Đã bị gãy trong trận đấu với người khiêu chiến.",
       "1": "Kẻ săn mồi đỉnh cao trưởng thành từ Cá Ngựa Bong Bóng, hành trình tiến hóa của Cá Ngựa Ngọc Trai Ngàn Năm khác biệt hoàn toàn với các Dị Chủng Biển Sâu khác: Không phải dựa trên chủng loài nguyên bản để tiến hóa lớn mạnh hơn, mà là sản sinh ra những thứ Cá Ngựa Bong Bóng không hề có, như các chi, sừng, thậm chí là cả xương thịt cũng biến đổi. So với hình thái vốn có ban đầu, thân hình của nó càng giống với ảo thú trong truyền thuyết cổ xưa hơn. Trong tưởng tượng của nhà thơ và tác giả, ngay cả cá ngựa cũng có tư thế phi nước đại, nhảy cao giống như thiên lý mã."
+    }
+  },
+  "LightlessSilkString": {
+    "name": "Sợi Không Ánh Sáng",
+    "description": {
+      "0": "Vật chất dạng sợi vô tình vướng vào vũ khí khi chiến đấu với Thôn Tinh Kình Ngư.",
+      "1": "Ở Fontaine cổ đại, từng có người cho rằng một Fortuna thống trị vạn vật cũng được dệt từ những vật chất dạng sợi cực kỳ tinh xảo này, trông như dây nhạc trên cung đàn vậy. Những sợi dây cộng hưởng với thanh âm hùng vĩ sẽ mang đến niềm hạnh phúc cho nhân gian, cũng như những nốt lệch điệu sẽ phá hủy kết cấu của vũ trụ."
+    }
+  },
+  "LightlessEyeOfTheMaelstrom": {
+    "name": "Mắt Xoáy Không Ánh Sáng",
+    "description": {
+      "0": "\"Vật chất\" kỳ lạ thu được khi chiến đấu với Thôn Tinh Kình Ngư, khối lượng thực tế khác xa so với kích thước mà nó thể hiện.",
+      "1": "Mọi thứ đều tập trung xung quanh những sự vật nặng nề, giống như vàng với sắt, hay mặt đất với gió nhẹ. Cũng giống như ánh sáng không thể thoát khỏi vòng xoáy của bóng tối, nhân duyên cũng sẽ hội tụ trên vận mệnh nặng nề. Có lẽ đây cũng là quy tắc không thể làm trái được."
+    }
+  },
+  "LightlessMass": {
+    "name": "Khối Không Ánh Sáng",
+    "description": {
+      "0": "Mảnh vỡ sinh ra trong lúc chiến đấu kịch liệt với Thôn Tinh Kình Ngư.",
+      "1": "Vũ trụ là nơi tối tăm và lạnh lẽo.",
+      "2": "Nhưng hãy nhìn cho kỹ, trong đó vẫn luôn có những tia sáng le lói, giống như ngọc trai lấp ló dưới cát, hay vụn kim cương lấp lánh giữa lớp nhựa đường, ánh sáng cuối chân trời trong đêm sương hay những đốm lửa thiêu rụi cả đồng cỏ."
+    }
+  },
+  "WaterThatFailedToTranscend": {
+    "name": "Nước Chưa Đạt Mức Siêu Việt",
+    "description": {
+      "0": "Dấu vết duy nhất mà Nhân Dạng Nước để lại sau khi phân tán.",
+      "1": "Có tính chất tương đồng với tinh thể lấy được từ Dị Chủng Biển Sâu, nhưng bên trong chứa rất nhiều tạp chất vụn, trông như bong bóng khí đọng bên trong thủy tinh được chế tác bởi những người thợ vụng về vậy."
     }
   },
   "TileOfDecarabiansTower": {
@@ -18917,6 +19045,60 @@
       "0": "Tiểu thuyết giải trí phổ biến ở Fontaine, kể về câu chuyện lần đầu quyết đấu giữa siêu trộm được gọi là \"Quý Ngài Ảo Ảnh\" Fantomas Robben và thám tử lừng danh Chesterton. Thông báo miễn trừ trách nhiệm: Câu chuyện này hoàn toàn hư cấu, không liên quan đến địa danh, nhân vật, sự kiện trong đời thực."
     }
   },
+  "TheFallOfTheFadedCastleI": {
+    "name": "Sự Sụp Đổ Của Thành Cổ Phai Nhạt I",
+    "description": {
+      "0": "Thơ ca không biết do ai sáng tác. Trong cách hành văn có chút quỷ dị và quái gở."
+    }
+  },
+  "TheFallOfTheFadedCastleII": {
+    "name": "Sự Sụp Đổ Của Thành Cổ Phai Nhạt II",
+    "description": {
+      "0": "Thơ ca không biết do ai sáng tác. Trong cách hành văn có chút quỷ dị và quái gở."
+    }
+  },
+  "TheFallOfTheFadedCastleIII": {
+    "name": "Sự Sụp Đổ Của Thành Cổ Phai Nhạt III",
+    "description": {
+      "0": "Thơ ca không biết do ai sáng tác. Trong cách hành văn có chút quỷ dị và quái gở."
+    }
+  },
+  "LaChansonDErinnyesI": {
+    "name": "La Chanson d'Erinnyes I",
+    "description": {
+      "0": "Sứ giả của Vua Remus đã làm thế nào để đến gặp Erinnyes, đòi cô ấy ban cho nước và đất của Thành Aremori, rồi lại làm thế nào để yêu cầu cô quy phục dưới trướng Sumphonia Capitolii (có nghĩa là \"giai điệu hài hòa vĩnh hằng\")."
+    }
+  },
+  "LaChansonDErinnyesII": {
+    "name": "La Chanson d'Erinnyes II",
+    "description": {
+      "0": "Kỵ sĩ của các nơi đã làm thế nào để thể hiện sự đồng tâm hiệp lực với Erinnyes, từ đó đối phó với âm mưu xâm lược của Capitolii."
+    }
+  },
+  "LaChansonDErinnyesIII": {
+    "name": "La Chanson d'Erinnyes III",
+    "description": {
+      "0": "Erinnyes đã từ biệt nữ chủ nhân của mọi dòng nước như thế nào, và làm thế nào để ném kiếm của cô vào hồ ba lần."
+    }
+  },
+  "TalesOfASnowWingedGooseI": {
+    "name": "Truyện Cổ Tích Ngỗng Cánh Tuyết I",
+    "description": {
+      "0": "Truyện cổ tích thịnh hành ở Fontaine. Phần bìa tinh xảo từng khiến rất nhiều đứa trẻ tưởng lầm rằng cuốn truyện này thực sự được viết bởi Phu Nhân Ngỗng Cánh Tuyết hiền từ trong truyền thuyết."
+    }
+  },
+  "TalesOfASnowWingedGooseII": {
+    "name": "Truyện Cổ Tích Ngỗng Cánh Tuyết II",
+    "description": {
+      "0": "Truyện cổ tích thịnh hành ở Fontaine. Phần bìa tinh xảo từng khiến rất nhiều đứa trẻ tưởng lầm rằng cuốn truyện này thực sự được viết bởi Phu Nhân Ngỗng Cánh Tuyết hiền từ trong truyền thuyết."
+    }
+  },
+  "TalesOfASnowWingedGooseIII": {
+    "name": "Truyện Cổ Tích Ngỗng Cánh Tuyết III",
+    "description": {
+      "0": "Truyện cổ tích thịnh hành ở Fontaine. Phần bìa tinh xảo từng khiến rất nhiều đứa trẻ tưởng lầm rằng cuốn truyện này thực sự được viết bởi Phu Nhân Ngỗng Cánh Tuyết hiền từ trong truyền thuyết."
+    }
+  },
   "GiftOfParting": {
     "name": "Món Quà Từ Biệt",
     "description": {
@@ -19261,6 +19443,63 @@
       "0": "Nhật Ký Rách"
     }
   },
+  "SirArthursWing": {
+    "name": "Cánh Của Ngài Arthur",
+    "description": {
+      "0": "Cánh dây cót, thuộc về Ngài Arthur.",
+      "1": "Tên trộm quá đáng thật đấy!"
+    }
+  },
+  "SirArthursBody": {
+    "name": "Cơ Thể Của Ngài Arthur",
+    "description": {
+      "0": "Cơ thể dây cót, thuộc về Ngài Arthur.",
+      "1": "Tên trộm quá đáng thật đấy!"
+    }
+  },
+  "SirArthursHead": {
+    "name": "Đầu Của Ngài Arthur",
+    "description": {
+      "0": "Phần đầu dây cót, thuộc về Ngài Arthur.",
+      "1": "Tên trộm quá đáng thật đấy!"
+    }
+  },
+  "LeftoverPoissonchantPie": {
+    "name": "Bánh Poissonchant Còn Thừa",
+    "description": {
+      "0": "Trông rất dễ thương, nhưng chắc sẽ khiến người ăn bị đau bụng..."
+    }
+  },
+  "MysteriousThreatLetter": {
+    "name": "Thư Đe Dọa Bí Ẩn",
+    "description": {}
+  },
+  "AnotherMysteriousThreatLetter": {
+    "name": "Thư Đe Dọa Bí Ẩn Khác",
+    "description": {}
+  },
+  "KevinsLetter": {
+    "name": "Thư Của Kevin",
+    "description": {}
+  },
+  "MessilyWrittenLetter": {
+    "name": "Thư Với Nét Chữ Xiêu Vẹo",
+    "description": {}
+  },
+  "ScribbledOrders": {
+    "name": "Mệnh Lệnh Với Nét Chữ Nguệch Ngoạc",
+    "description": {}
+  },
+  "OldPhoto": {
+    "name": "Tấm Ảnh Cũ",
+    "description": {
+      "0": "Một tấm ảnh nhóm."
+    }
+  },
+  "LetterToTheEditorinChiefDraft": {
+    "name": "Thư Gửi Tổng Biên Tập (Bản Thảo)",
+    "description": {}
+  },
   "Disclaimer": {
     "name": "Tuyên Bố",
     "description": {}
@@ -19373,6 +19612,12 @@
       "0": "\"Tín vật\" mà Puca đã đánh mất ở sâu trong mạch khoáng, hãy mau trả lại thôi!"
     }
   },
+  "TalochardsInvestigationNotes": {
+    "name": "Sổ Tay Điều Tra Của Talochard",
+    "description": {
+      "0": "Sổ tay điều tra được Talochard chia sẻ, ghi chép thông tin liên quan đến vụ án Ngài Arthur mất tích."
+    }
+  },
   "AStory": {
     "name": "Một Câu Chuyện",
     "description": {}
@@ -19381,6 +19626,18 @@
     "name": "Tay Quay",
     "description": {
       "0": "Tay quay thông dụng thường thấy, dùng để khống chế các van điều tiết đường ống ở vùng nước xung quanh Pháo Đài Meropide."
+    }
+  },
+  "MaterialForThelxiesWeapon": {
+    "name": "Nguyên Liệu Vũ Khí Của Thelxie",
+    "description": {
+      "0": "Món đồ có màu sắc sặc sỡ thu thập được dưới nước, dùng để chế tạo vũ khí của Thelxie."
+    }
+  },
+  "MaterialForThelxiesCrown": {
+    "name": "Nguyên Liệu Vương Miện Của Thelxie",
+    "description": {
+      "0": "Món đồ có màu sắc sặc sỡ thu thập được dưới nước, dùng để chế tạo vương miện của Thelxie."
     }
   },
   "EnergyConcentratingComponent": {
@@ -19401,6 +19658,12 @@
   "34thIndependentInvestigativeSquadDeploymentInMontEsusEasternQuadrantDisplinaryProcedures": {
     "name": "Kỷ Luật Của Đội Trinh Sát Độc Lập Thứ 34 Trú Phía Đông Núi Esus",
     "description": {}
+  },
+  "TravelersExclusiveInterviewHandbook": {
+    "name": "Sổ Tay Phỏng Vấn Nhà Lữ Hành",
+    "description": {
+      "0": "Sổ tay ghi chép phỏng vấn về nhà lữ hành tóc vàng của phóng viên Charlotte. Qua nhiều phiên bản sắp xếp và chỉnh sửa, đã có thể đảm nhiệm chức năng khác ngoài việc \"đăng báo\"."
+    }
   },
   "PoemOnFallenLeaf": {
     "name": "Thơ Trên Lá Rụng",
@@ -19453,6 +19716,60 @@
   "Notice": {
     "name": "Thông Báo",
     "description": {}
+  },
+  "LiamsBallad": {
+    "name": "Khúc Nhạc Của Liam",
+    "description": {
+      "0": "Chiếc bình nhỏ trong suốt, bên trong đựng mảnh giấy ghi chép về sự tích của một người nào đó tên là Liam với hình vẽ kỳ lạ ở mặt sau."
+    }
+  },
+  "RockyAvildsensDisappearance": {
+    "name": "Sự Mất Tích Của Rocky Avildsen",
+    "description": {
+      "0": "Chiếc bình nhỏ trong suốt, bên trong đựng mảnh giấy ghi chép về sự tích của một người nào đó tên là Rocky Avildsen với hình vẽ kỳ lạ ở mặt sau."
+    }
+  },
+  "AthossConfession": {
+    "name": "Lời Thổ Lộ Của Athos",
+    "description": {
+      "0": "Chiếc bình nhỏ trong suốt, bên trong đựng mảnh giấy ghi chép về sự tích của một người nào đó tên là Athos với hình vẽ kỳ lạ ở mặt sau."
+    }
+  },
+  "ParkersHopes": {
+    "name": "Hy Vọng Của Parker",
+    "description": {
+      "0": "Chiếc bình nhỏ trong suốt, bên trong đựng mảnh giấy ghi chép về sự tích của một người nào đó tên là Parker với hình vẽ kỳ lạ ở mặt sau."
+    }
+  },
+  "BarrowsExpectations": {
+    "name": "Hy Vọng Của Barrow",
+    "description": {
+      "0": "Chiếc bình nhỏ trong suốt, bên trong đựng mảnh giấy ghi chép về sự tích của một người nào đó tên là Barrow với hình vẽ kỳ lạ ở mặt sau."
+    }
+  },
+  "AutumnsRegrets": {
+    "name": "Hối Hận Của Autumn",
+    "description": {
+      "0": "Mảnh giấy ghi chép về sự tích của một người nào đó tên là Autumn với hình vẽ kỳ lạ ở mặt sau."
+    }
+  },
+  "RougesWritings": {
+    "name": "Niềm Tin Của Rouge",
+    "description": {
+      "0": "Chiếc bình nhỏ trong suốt, bên trong đựng mảnh giấy ghi chép về sự tích của một người nào đó tên là Rouge với hình vẽ kỳ lạ ở mặt sau."
+    }
+  },
+  "FreemansAnnouncement": {
+    "name": "Tuyên Bố Của Freeman",
+    "description": {
+      "0": "Chiếc bình nhỏ trong suốt, bên trong đựng mảnh giấy ghi chép về sự tích của một người nào đó tên là Freeman với hình vẽ kỳ lạ ở mặt sau."
+    }
+  },
+  "RainbowRosesIdeals": {
+    "name": "Lý Tưởng Của Tường Vi Cầu Vồng",
+    "description": {
+      "0": "Mảnh giấy được ghép từ tám mảnh ghép khác nhau. Hóa ra hình vẽ rời rạc phía sau là một đóa Tường Vi Cầu Vồng hoàn chỉnh."
+    }
   },
   "LeftSideTableFileBox": {
     "name": "Rương Tài Liệu Trên Bàn Bên Trái",
@@ -19539,6 +19856,37 @@
       "0": "\"Thức uống thử nghiệm\" do Heinry điều chế. \"Trà sủi bọt vị ngọt\" không có chút bọt khí nào. Tôi... Hay để tôi uống một ly trà luôn cho rồi?"
     }
   },
+  "DiaryOfAValiantStruggleI": {
+    "name": "Nhật Ký Phấn Đấu Anh Dũng (I)",
+    "description": {
+      "0": "Nhật Ký Phấn Đấu Anh Dũng (I)"
+    }
+  },
+  "DiaryOfAValiantStruggleII": {
+    "name": "Nhật Ký Phấn Đấu Anh Dũng (II)",
+    "description": {
+      "0": "Nhật Ký Phấn Đấu Anh Dũng (II)"
+    }
+  },
+  "DiaryOfAValiantStruggleIII": {
+    "name": "Nhật Ký Phấn Đấu Anh Dũng (III)",
+    "description": {
+      "0": "Nhật Ký Phấn Đấu Anh Dũng (III)"
+    }
+  },
+  "DiaryOfAValiantStruggleIV": {
+    "name": "Nhật Ký Phấn Đấu Anh Dũng (IV)",
+    "description": {
+      "0": "Nhật Ký Phấn Đấu Anh Dũng (IV)"
+    }
+  },
+  "DiaryOfAValiantStruggle": {
+    "name": "Nhật Ký Phấn Đấu Anh Dũng",
+    "description": {
+      "0": "Ghi chép về kinh nghiệm cuộc đời của một người phấn đấu vươn lên.",
+      "1": "\"Một dao đâm xuyên con chim ngu ngốc kia là có thể cảnh cáo bọn họ rồi nhỉ?\""
+    }
+  },
   "AcademicAssemblyHallPicture": {
     "name": "Ảnh \"Hội Trường Học Thuật\"",
     "description": {
@@ -19569,9 +19917,21 @@
     "name": "Thư Để Lại",
     "description": {}
   },
+  "SpecialKey": {
+    "name": "Chìa Khóa Đặc Biệt",
+    "description": {
+      "0": "Chìa khóa đặc biệt, có lẽ sẽ dùng được ở đâu đó."
+    }
+  },
   "FontaineResearchInstituteOfKineticEnergyEngineeringCertificate": {
     "name": "Bằng Khen Của Viện Nghiên Cứu Khoa Học Công Trình Động Năng Fontaine",
     "description": {}
+  },
+  "TeardropKey": {
+    "name": "Chìa Khóa Nước Mắt",
+    "description": {
+      "0": "Bảo thạch trông như giọt mưa, và cũng giống như nước mắt của ai đó."
+    }
   },
   "TrainingLog": {
     "name": "Nhật Ký Huấn Luyện",
@@ -19599,6 +19959,13 @@
       "0": "Một lá thư, đặt bên cạnh hai Trái Bulle."
     }
   },
+  "ThelxiesFantasticAdventures": {
+    "name": "Chuyến Thám Hiểm Kỳ Ảo Của Thelxie",
+    "description": {
+      "0": "Quyển truyện cổ tích chỉ có ba trang, kể về câu chuyện ảo tưởng của một hoàng tử đã chiến thắng sự cô đơn.",
+      "1": "\"Gửi người đang ở trong hoàn cảnh bế tắc\" - Dòng chữ nhỏ phía cuối quyển truyện."
+    }
+  },
   "LocationNo1Materials": {
     "name": "Tài Liệu Địa Điểm 1",
     "description": {
@@ -19615,6 +19982,215 @@
     "name": "Tài Liệu Địa Điểm 3",
     "description": {
       "0": "Tài liệu thất lạc của Heinry. Không biết có giúp được gì cho anh ta không..."
+    }
+  },
+  "IridescentGlory": {
+    "name": "\"Vinh Quang Cầu Vồng\"",
+    "description": {
+      "0": "Vỏ sò và san hô với màu sắc khác nhau, nghe nói là món báu vật mà các Thủy Yêu rất trân trọng, chính là chúng đã xây dựng nên chiếc cầu vồng trong nước soi rọi cho vương quốc Thủy Yêu..."
+    }
+  },
+  "AureliesNotesI": {
+    "name": "Ghi Chép Của Aurelie I",
+    "description": {
+      "0": "Ghi Chép Của Aurelie I"
+    }
+  },
+  "MarvelousJellyImprovedFontaineEdition": {
+    "name": "Rau Câu Kỳ Diệu - Bản Fontaine Cải Tiến",
+    "description": {
+      "0": "Hộp quà tinh xảo được Haniyyah tặng, trong đó đựng Rau Câu Kỳ Diệu mà Nấm Quỷ ưa thích, được chia ra nhiều khẩu vị đặc biệt. Có thể cho ăn riêng theo sở thích cá nhân của từng Nấm Quỷ.",
+      "1": "Không ngừng tích lũy dựa trên những hiểu biết về Nấm Quỷ và kinh nghiệm chế tác, mức độ nắm bắt khẩu vị Rau Câu Kỳ Diệu của Haniyyah có thể gọi là hoàn hảo. Rau Câu Kỳ Diệu sau khi cải tiến không chỉ cung cấp đầy đủ dưỡng chất cho những người bạn Nấm Quỷ, mà còn chứa đựng những đặc trưng ẩm thực của Fontaine, có hương vị mới mẻ hơn, mang lại cảm giác vui vẻ và khỏe mạnh cho Nấm Quỷ khi thưởng thức!"
+    }
+  },
+  "SpinaDiRosulaUniformGiftBox": {
+    "name": "Hộp Đồng Phục Spina di Rosula",
+    "description": {
+      "0": "Quà do Navia chuẩn bị cho Adele, bên trong có đồng phục của Spina di Rosula. Tuy kích thước có vẻ không phù hợp lắm, nhưng cũng vừa đủ để thực hiện lời hứa."
+    }
+  },
+  "StrangelyShapedKey": {
+    "name": "Chìa Khóa Hình Dạng Đặc Biệt",
+    "description": {
+      "0": "Chìa khóa thu được trên người thành viên của nhóm Romeu, hình như là công cụ cần thiết để nhanh chóng ngăn chặn chất nổ."
+    }
+  },
+  "RecommendationLetter": {
+    "name": "Thư Đề Cử",
+    "description": {
+      "0": "Thư Đề Cử"
+    }
+  },
+  "RustyIronKey": {
+    "name": "Chìa Khóa Sắt Rỉ Sét",
+    "description": {
+      "0": "Chìa khóa bị rơi ở đây, dùng để mở ổ khóa nào nhỉ?"
+    }
+  },
+  "Persona": {
+    "name": "\"Nhân Cách\"",
+    "description": {
+      "0": "Một trong những vật chất cần thiết để rèn Thánh Kiếm Narzissenkreuz. Dường như không cảm nhận được chút trọng lực nào."
+    }
+  },
+  "UnlockedTreasure": {
+    "name": "\"Kho Báu\" Đã Mở",
+    "description": {
+      "0": "Một chiếc đồng hồ cũ.",
+      "1": "Thời gian đã ngừng lại tại một thời khắc nào đó, ký ức tươi đẹp cũng đã trở thành vĩnh cửu."
+    }
+  },
+  "AureliesNotesII": {
+    "name": "Ghi Chép Của Aurelie II",
+    "description": {
+      "0": "Ghi Chép Của Aurelie II"
+    }
+  },
+  "ANewLifesBeginning": {
+    "name": "\"Khởi Đầu Của Cuộc Sống Mới\"",
+    "description": {
+      "0": "Một vé ra ngoài được cấp bởi Pháo Đài Meropide. Tuy chỉ là một mảnh giấy, nhưng lại được đặt cái tên khích lệ lòng người."
+    }
+  },
+  "RootCycle": {
+    "name": "Vòng Xoay Căn Nguyên",
+    "description": {
+      "0": "Một trong những chìa khóa được Hội Narzissenkreuz thiết kế cho tòa tháp. Sau cùng sẽ ghép thành một hình thù kỳ lạ có ba vòng rưỡi, có một lời giải thích đặc biệt về chuyện này.",
+      "1": "Vòng trong cùng là Vòng Xoay Hyperborea, tượng trưng cho thời đại thế giới băng giá và khu vườn đã mất."
+    }
+  },
+  "SimpleVaultKeyI": {
+    "name": "Chìa Khóa Kho Báu Thô Sơ I",
+    "description": {
+      "0": "Một trong những chìa khóa dùng để mở hàng rào sắt trên con tàu vỡ nát."
+    }
+  },
+  "SimpleVaultKeyII": {
+    "name": "Chìa Khóa Kho Báu Thô Sơ II",
+    "description": {
+      "0": "Một trong những chìa khóa dùng để mở hàng rào sắt trên con tàu vỡ nát."
+    }
+  },
+  "SimpleVaultKeyIII": {
+    "name": "Chìa Khóa Kho Báu Thô Sơ III",
+    "description": {
+      "0": "Một trong những chìa khóa dùng để mở hàng rào sắt trên con tàu vỡ nát."
+    }
+  },
+  "FoggyForestBranch": {
+    "name": "Cành Cây Rừng Rậm",
+    "description": {
+      "0": "Cành cây lấp lánh ánh sáng xanh mờ ảo, hình như có mối liên hệ thần bí nào đó với Đường Sương Rừng Rậm.",
+      "1": "Quan sát kỹ, hình như bên trong cành cây có thứ gì đó đang chảy."
+    }
+  },
+  "FallenBouquet": {
+    "name": "Bó Hoa Đánh Rơi",
+    "description": {
+      "0": "Hoa dại nở rộ từng được ai đó trân trọng. Ngoài địa điểm mà nó bị đánh rơi ra, thì không có điểm gì đặc biệt khác.",
+      "1": "Một chút lòng cảm kích và hoài niệm có lẽ là điều mấu chốt để bước tiếp."
+    }
+  },
+  "Tripod": {
+    "name": "Giá Ba Chân",
+    "description": {
+      "0": "Giá ba chân mà Urville làm mất, sau khi hong khô có lẽ vẫn dùng tiếp được."
+    }
+  },
+  "NadiasToken": {
+    "name": "Tín Vật Của Nadia",
+    "description": {
+      "0": "Một chiếc bánh răng nhỏ, trông không có gì đặc biệt."
+    }
+  },
+  "TinyConch": {
+    "name": "Ốc Biển Nhỏ",
+    "description": {
+      "0": "Ốc biển xinh đẹp, Nadia cực kỳ yêu thích."
+    }
+  },
+  "DivingSet": {
+    "name": "Bộ Đồ Lặn",
+    "description": {
+      "0": "Bộ đồ lặn mà Urville làm mất, hình như có chút hư tổn."
+    }
+  },
+  "SunkenCoinPouch": {
+    "name": "Túi Tiền Chìm Dưới Nước",
+    "description": {
+      "0": "Túi tiền thường thấy, trong đó chứa đầy Mora."
+    }
+  },
+  "StrangeMessage": {
+    "name": "Lời Nhắn Kỳ Lạ",
+    "description": {
+      "0": "Lời Nhắn Kỳ Lạ"
+    }
+  },
+  "MysteriousXenochromaticCrystal": {
+    "name": "Tinh Thạch Dị Sắc Thần Bí",
+    "description": {
+      "0": "Kết tinh lấy được từ cơ thể Dị Chủng Biển Sâu mạnh mẽ trong Khu Morte sau khi bị đánh bại.",
+      "1": "Bên trong chứa năng lượng bí ẩn hơn so với các Tinh Thạch Dị Sắc thông thường.",
+      "2": "Chắc sẽ có người đồng ý trả cái giá hợp lý cho thứ này."
+    }
+  },
+  "MapFragment": {
+    "name": "Mảnh Bản Đồ",
+    "description": {
+      "0": "Mảnh giấy cũ nát, nhìn giống như góc phải bên dưới của một tấm bản đồ. Trên đó còn vẽ những điểm đánh dấu và đường nét kỳ lạ."
+    }
+  },
+  "SmallKey": {
+    "name": "Chìa Khóa Nhỏ",
+    "description": {
+      "0": "Chiếc chìa khóa nhỏ kẹp trong sách. Tại sao nó không bị kiểm tra và thu giữ? Và thứ nhỏ bé này tại sao có thể mở được cánh cửa quan trọng như vậy?"
+    }
+  },
+  "Notes": {
+    "name": "Nhật Ký",
+    "description": {}
+  },
+  "Description": {
+    "name": "Giới Thiệu",
+    "description": {}
+  },
+  "Storybook": {
+    "name": "Sách Truyện",
+    "description": {}
+  },
+  "Certificate": {
+    "name": "Giấy Khen",
+    "description": {}
+  },
+  "InvestigationLog": {
+    "name": "Ghi Chép Khảo Sát",
+    "description": {}
+  },
+  "Excerpt": {
+    "name": "Trích Đoạn",
+    "description": {}
+  },
+  "Log": {
+    "name": "Ghi Chép",
+    "description": {}
+  },
+  "TearsAmongTheStars": {
+    "name": "Giọt Lệ Giữa Những Vì Sao",
+    "description": {
+      "0": "Giọt nước thu được từ con thú khổng lồ khao khát biển sự sống nguyên thủy.",
+      "1": "<br/>",
+      "2": "Có sinh có diệt, tự nhiên trong diệt sẽ có sinh... Trong thế giới cổ đại xa xôi từng có một vị triết gia nhận định như vậy.",
+      "3": "Nếu không phải vậy, thì ánh sáng trong khoảnh khắc vĩnh viễn không thể chống lại được bóng tối vĩnh hằng, và ở tận cùng thời gian, vạn vật đều phải suy tàn.",
+      "4": "Quy luật của các vì sao, thiên nhiên sẽ luôn được bảo toàn, còn với quy luật của vũ trụ, xưa nay không hề bất biến.",
+      "5": "Trong chiếc hộp được đóng kín, sự hủy diệt luôn áp đảo sự sống mới. Sự thịnh vượng hàng ngàn hàng vạn năm chẳng là gì so với hàng tỷ năm đã qua. Sự huy hoàng đáng tự hào rồi sẽ hoen ố, mục nát, tiêu tan, rồi sau cùng chìm vào quên lãng.",
+      "6": "Vì vậy, có những thứ trôi nổi giữa các vì sao, thứ từng có được vô số thanh danh từ vô số nền văn minh khác nhau đã rơi lệ vì khoảnh khắc lụi tàn được định mệnh an bài.",
+      "7": "Những giọt nước mắt rơi vì tuyệt vọng, cũng vì hy vọng. Tất cả sự tuyệt vọng và hy vọng sau cùng đều sẽ lụi tàn theo ngàn vạn những vì sao rực rỡ.",
+      "8": "Những giọt nước mắt rơi vì đau thương, vì hân hoan. Tất cả niềm đau thương và hân hoan sau cùng sẽ như bèo dạt, trôi về hư không vô tận, tăm tối và lạnh lẽo.",
+      "9": "Mỗi bóng hình nhỏ bé xinh đẹp, mỗi khoảnh khắc ghi sâu trong lòng, tất cả đều tan biến theo thời gian. Như các vì tinh tú, không có ngoại lệ.",
+      "10": "Vậy nên sẽ có thứ từng được gọi là \"thần linh\" đó quyết tâm lưu giữ những thứ đáng tồn tại, và quyết tâm nuốt lấy những thứ đáng bị nuốt chửng.",
+      "11": "Cho đến tận cùng thời gian, đến khi biển sao không còn gì ngoài tro tàn le lói. Đến lúc đó, bào thai \"thế giới\" hoàn toàn mới sẽ đạp những bước đầu tiên trong bụng cá voi.",
+      "12": "\"Sẽ không còn tội lỗi, không còn bi thương, không còn đau khổ hay nước mắt, vì tất cả đều đã chết theo những vì sao cổ xưa.\""
     }
   },
   "SilkFlowerSeed": {
@@ -20054,6 +20630,14 @@
       "0": "Robot dây cót hỗ trợ cho hoạt động dưới nước kiểu gọn nhẹ, được phát triển để nâng cao hiệu suất làm việc của đội robot. Mục đích thiết kế ban đầu là để dọn sạch các tạp chất như rác, cặn bã thực vật ở dưới nước. Từ đó tránh việc chúng bám vào những bộ phận quan trọng trên robot dây cót, làm giảm thiểu tỷ lệ xảy ra sự cố.",
       "1": "So với những dòng khác, robot bảo trì \"Phiên Bản Bạch Kim\" này đã sử dụng nguyên liệu sáng bóng, là dòng robot mà nhóm phát triển đã thiết kế để làm hàng lưu niệm. Nhóm dự án này khi tìm được thương nhân có tài chính hùng hậu, hoặc khi kêu gọi đầu tư cho dự án sẽ dùng món hàng lưu niệm này làm quà tặng cho thương nhân. Đây là một món trưng bày tinh tế trong hồ cá, đúng là khá hiếm. Đáng tiếc là, mọi cố gắng thu hút đầu tư của nhóm này đều thất bại, nên đã đổi ý đem robot bảo trì này làm đồ chơi để bán ra, bù lại cho khoảng kinh phí thiếu hụt của mình.",
       "2": "Cuối cùng, sau sự cố mà mọi người đều biết đó, thì cả nhóm phát triển robot bảo trì đã triệt để ngừng hoạt động, dự án robot bảo trì sau đó cũng bị hủy. Hiện tại, robot bảo trì trong vùng nước Fontaine đều không ai quản lý. Lô robot \"Phiên Bản Bạch Kim\" đã sản xuất trước đó cũng chìm trong nước, không biết đi về đâu, trở thành \"Cá Sắt\" đặc sắc nhất và cũng đắt đỏ nhất của vùng nước Fontaine. Khi một số dự án của Viện Khoa Học được công khai, các phóng viên của \"Báo Chim Hơi Nước\" đối chiếu tài liệu, đào sâu điều tra đã phát hiện \"trước và sau khi đưa robot bảo trì vào hoạt động, thì tình trạng ô nhiễm vùng nước Fontaine cũng không có biến đổi gì lớn. Hiệu năng của hạng mục này đáng phải nghi ngờ\". Sau đó, robot \"Phiên Bản Bạch Kim\" chưa hoạt động vẫn cứ lang thang trong vùng nước Fontaine như xưa. Các thợ câu cũng bắt đầu xem việc câu được \"Phiên Bản Bạch Kim\" là vinh dự, dù sao thì độ hiếm của robot \"Phiên Bản Bạch Kim\" cũng tương đương với những loài cá cảnh quý nhất của quốc gia khác."
+    }
+  },
+  "MaintenanceMekGoldLeader": {
+    "name": "Robot Bảo Trì - Thủ Lĩnh Vàng",
+    "description": {
+      "0": "Robot dây cót hỗ trợ cho hoạt động dưới nước, là robot hỗ trợ kiểu gọn nhẹ được phát triển để nâng cao hiệu suất làm việc của đội robot. Mục đích thiết kế ban đầu là để dọn sạch các tạp chất như rác, cặn bã thực vật ở dưới nước, để tránh việc chúng bám vào những bộ phận quan trọng trên robot dây cót, làm giảm thiểu tỷ lệ xảy ra sự cố của robot dây cót. Nhìn từ góc độ khác, chúng cũng đóng vai trò \"công nhân vệ sinh dưới nước\", có lợi cho môi trường sinh thái của Fontaine.",
+      "1": "So sánh với các mẫu khác, robot bảo trì \"Thủ Lĩnh Vàng\" đặc biệt này đã dùng lớp vỏ màu vàng sáng loáng, và thiết bị điều khiển đặc biệt. Theo dự kiến của nhóm thiết kế, khi hoạt động ở địa hình dưới nước tương đối phức tạp, loại robot bảo trì này có thể đảm đương vai trò \"trạm chỉ huy trung chuyển\" hiệu quả cao, sẽ tiếp nhận và gửi đi các loại chỉ lệnh của người điều khiển đến các robot bảo trì xung quanh, có thể nói đây là một robot quan trọng như \"thủ lĩnh\".",
+      "2": "Thế nhưng, khi toàn bộ dự án robot bảo trì bị ngừng lại, thì những \"Thủ Lĩnh Vàng\" này cũng mất đi ý nghĩa tồn tại, chỉ có vẻ ngoài màu vàng sáng loáng dễ phân biệt của nó, đã làm cho nó có giá trị sưu tầm rất cao trong mắt những người thợ câu."
     }
   },
   "WingsOfFirstFlight": {
@@ -20915,6 +21499,36 @@
       "0": "Kết tinh ẩn chứa vần điệu kỳ diệu, như một viên ngọc bích tuyệt đẹp dệt từ dải lụa mỏng manh. Chúng được phân bổ ở khắp nơi trên vùng đất này hoặc ở trong tay những thương nhân bảo vật. Có thể vào trong \"Ấm Trần Ca\", dùng \"Âm Vang Vạn Dặm - Phiêu Dương\" hoặc \"Âm Vang Vạn Dặm - Mậu Nhiễu\" để khôi phục lại giai điệu bên trong. Giai điệu ẩn chứa trong \"Ngọc Thạch Âm Vang\" thuộc về Fontaine thần bí."
     }
   },
+  "RadiantSpincrystal115": {
+    "name": "Ngọc Thạch Âm Vang 115",
+    "description": {
+      "0": "Kết tinh ẩn chứa vần điệu kỳ diệu, như một viên ngọc bích tuyệt đẹp dệt từ dải lụa mỏng manh. Chúng được phân bổ ở khắp nơi trên vùng đất này hoặc ở trong tay những thương nhân bảo vật. Có thể vào trong \"Ấm Trần Ca\", dùng \"Âm Vang Vạn Dặm - Phiêu Dương\" hoặc \"Âm Vang Vạn Dặm - Mậu Nhiễu\" để khôi phục lại giai điệu bên trong. Giai điệu ẩn chứa trong \"Ngọc Thạch Âm Vang\" thuộc về Fontaine thần bí."
+    }
+  },
+  "RadiantSpincrystal116": {
+    "name": "Ngọc Thạch Âm Vang 116",
+    "description": {
+      "0": "Kết tinh ẩn chứa vần điệu kỳ diệu, như một viên ngọc bích tuyệt đẹp dệt từ dải lụa mỏng manh. Chúng được phân bổ ở khắp nơi trên vùng đất này hoặc ở trong tay những thương nhân bảo vật. Có thể vào trong \"Ấm Trần Ca\", dùng \"Âm Vang Vạn Dặm - Phiêu Dương\" hoặc \"Âm Vang Vạn Dặm - Mậu Nhiễu\" để khôi phục lại giai điệu bên trong. Giai điệu ẩn chứa trong \"Ngọc Thạch Âm Vang\" thuộc về Fontaine thần bí."
+    }
+  },
+  "RadiantSpincrystal117": {
+    "name": "Ngọc Thạch Âm Vang 117",
+    "description": {
+      "0": "Kết tinh ẩn chứa vần điệu kỳ diệu, như một viên ngọc bích tuyệt đẹp dệt từ dải lụa mỏng manh. Chúng được phân bổ ở khắp nơi trên vùng đất này hoặc ở trong tay những thương nhân bảo vật. Có thể vào trong \"Ấm Trần Ca\", dùng \"Âm Vang Vạn Dặm - Phiêu Dương\" hoặc \"Âm Vang Vạn Dặm - Mậu Nhiễu\" để khôi phục lại giai điệu bên trong. Giai điệu ẩn chứa trong \"Ngọc Thạch Âm Vang\" thuộc về Fontaine thần bí."
+    }
+  },
+  "RadiantSpincrystal118": {
+    "name": "Ngọc Thạch Âm Vang 118",
+    "description": {
+      "0": "Kết tinh ẩn chứa vần điệu kỳ diệu, như một viên ngọc bích tuyệt đẹp dệt từ dải lụa mỏng manh. Chúng được phân bổ ở khắp nơi trên vùng đất này hoặc ở trong tay những thương nhân bảo vật. Có thể vào trong \"Ấm Trần Ca\", dùng \"Âm Vang Vạn Dặm - Phiêu Dương\" hoặc \"Âm Vang Vạn Dặm - Mậu Nhiễu\" để khôi phục lại giai điệu bên trong. Giai điệu ẩn chứa trong \"Ngọc Thạch Âm Vang\" thuộc về Fontaine thần bí."
+    }
+  },
+  "RadiantSpincrystal119": {
+    "name": "Ngọc Thạch Âm Vang 119",
+    "description": {
+      "0": "Kết tinh ẩn chứa vần điệu kỳ diệu, như một viên ngọc bích tuyệt đẹp dệt từ dải lụa mỏng manh. Chúng được phân bổ ở khắp nơi trên vùng đất này hoặc ở trong tay những thương nhân bảo vật. Có thể vào trong \"Ấm Trần Ca\", dùng \"Âm Vang Vạn Dặm - Phiêu Dương\" hoặc \"Âm Vang Vạn Dặm - Mậu Nhiễu\" để khôi phục lại giai điệu bên trong. Giai điệu ẩn chứa trong \"Ngọc Thạch Âm Vang\" thuộc về Fontaine thần bí."
+    }
+  },
   "LanternFiber": {
     "name": "Giấy Đèn",
     "description": {
@@ -21062,6 +21676,13 @@
     "description": {
       "0": "Đạo cụ tinh luyện chuyên dụng cho \"Khúc Ca Xanh Bao La\".",
       "1": "Trong rất nhiều thơ ca và câu chuyện, bồ công anh luôn là biểu tượng cho sự tự do, không bị trói buộc, là hành trình đi đến phương xa. Kẹp chiếc kẹp sách có hình bồ công anh vào trong trang sách, ở một tầng ý nghĩa nào đó không phải là một kiểu giam cầm, mà ngược lại là giúp nó có thể ngao du trong một thế giới càng rộng lớn hơn, càng sáng sủa hơn."
+    }
+  },
+  "SurgingSacredChalice": {
+    "name": "Chén Thánh Ào Ạt",
+    "description": {
+      "0": "Đạo cụ tinh luyện chuyên dụng cho \"Lưỡi Kiếm Narzissenkreuz\".",
+      "1": "Nền văn minh Fontaine cổ đại thường thích dùng vỏ ốc để chế tạo đạo cụ nghi lễ, chiếc vỏ ốc được chọn làm chén thánh này cuối cùng đã ào ạt dầu thánh. Từ góc độ ý nghĩa tượng trưng mà nói, chén thánh này là ngôn ngữ của nguyên thủy, dầu thánh là ý chí rèn luyện, thánh kiếm là lý trí để mở ra mọi thứ."
     }
   },
   "FalconsDance": {
@@ -22597,6 +23218,34 @@
       "1": "Biểu tượng chính thức của Pháo Đài Meropide. Chúng tôi hy vọng rằng tất cả những ai muốn tôn trọng trật tự và sống cuộc sống yên ổn, thì không cần nảy sinh bất kỳ mối liên hệ nào với cơ cấu phía sau của biểu tượng này."
     }
   },
+  "FurinaBanquet": {
+    "name": "Furina - Tiệc Mừng",
+    "description": {
+      "0": "Hoa văn danh thiếp.",
+      "1": "Một mình có ăn được hết tất cả bánh kem không nhỉ? Hay mỗi ngày ăn một cái, như vậy là có thể ăn được tầm một tuần rồi? Nhưng bánh kem đâu để lâu được. Hmm... Không cần lo, rồi sẽ có nhiều bạn bè cùng đến thưởng thức thôi."
+    }
+  },
+  "CharlotteExclusive": {
+    "name": "Charlotte - Độc Quyền",
+    "description": {
+      "0": "Hoa văn danh thiếp.",
+      "1": "\"Một, đã viết xong bài báo độc quyền, chắc chắn sẽ được bàn tán xôn xao! Hai, kết quả tòa soạn nói tình hình tiến triển chậm nên đang chuyển sang thông cáo báo chí... Ba, ngày mai người viết bản thảo sẽ đến Viện Ca Kịch Epiclese để ngồi vào ghế bị cáo, nên lại phải đổi sang mình làm rồi!\""
+    }
+  },
+  "FontaineCompleteness": {
+    "name": "Fontaine - Trọn Vẹn",
+    "description": {
+      "0": "Hoa văn danh thiếp.",
+      "1": "\"Những đám mây muộn rải rác dưới ánh chiều tà, dòng suối rực ánh vàng hoàng hôn. Bóng hình đơn độc bồng bềnh tựa linh hồn cô đơn dưới khe nước.\""
+    }
+  },
+  "TravelNotesWhirlingWaltz": {
+    "name": "Nhật Ký Hành Trình - Vũ Điệu",
+    "description": {
+      "0": "Hoa văn danh thiếp.",
+      "1": "Cho dù dây cót không còn chuyển động, cho dù những con rối không còn bước tiếp nữa. Hồi ức đã trở thành san hô vĩnh hằng, xin đừng quên chuyến đi của chúng ta và thời gian bên cạnh nhau."
+    }
+  },
   "AnemoculusResonanceStone": {
     "name": "Đá Cộng Hưởng Phong Thần Đồng",
     "description": {
@@ -23166,6 +23815,19 @@
       "6": "<br/>",
       "7": "\"Cỗ máy này là thành quả nghiên cứu của cha, gọi là Máy Tạo Bong Bóng Keo Động Lực Không Khí...\"",
       "8": "\"Bong bóng! Đẹp quá! Cha thật lợi hại!\""
+    }
+  },
+  "SpecialAnalysisZoomLens": {
+    "name": "\"Ống Kính Thu Phóng Đặc Biệt\"",
+    "description": {
+      "0": "Linh kiện ống kính máy ảnh kiểu mới được phát triển để tăng cường khả năng \"nhận diện hình ảnh\".",
+      "1": "Sau khi lắp đặt linh kiện này, máy ảnh thông thường sẽ có được hiệu quả thu phóng và lấy nét nhanh hơn, giúp cho người sử dụng có thể kịp thời bắt lấy khoảnh khắc đáng quý trong chuyến hành trình."
+    }
+  },
+  "ImageSamplingKamera": {
+    "name": "Máy Ảnh Lấy Mẫu",
+    "description": {
+      "0": "Máy ảnh được Lepine-Pauline cải tạo để \"đối chiếu hình ảnh\". Không biết bên trong đã lắp đặt linh kiện quý giá và phức tạp gì mà có thể bắt được kết cấu, đường nét và đặc trưng màu sắc của đối tượng chụp ảnh..."
     }
   },
   "InstructionsAnemoculusResonanceStone": {
@@ -23949,6 +24611,24 @@
       "0": "Thẻ bài \"Thất Thánh Triệu Hồi\", chất liệu rất tốt. Hình minh họa trên đó không biết là dùng cách in ấn đặc biệt nào để làm ra, trông rất tinh tế."
     }
   },
+  "TheStarrySkiesTheirFlowersRain": {
+    "name": "Mưa Hoa Trời Sao",
+    "description": {
+      "0": "Thẻ bài \"Thất Thánh Triệu Hồi\", chất liệu rất tốt. Hình minh họa trên đó không biết là dùng cách in ấn đặc biệt nào để làm ra, trông rất tinh tế."
+    }
+  },
+  "DiscretionarySupplement": {
+    "name": "Bổ Sung Tùy Ý",
+    "description": {
+      "0": "Thẻ bài \"Thất Thánh Triệu Hồi\", chất liệu rất tốt. Hình minh họa trên đó không biết là dùng cách in ấn đặc biệt nào để làm ra, trông rất tinh tế."
+    }
+  },
+  "AllThingsAreOfTheEarth": {
+    "name": "Tại Địa Vi Hóa",
+    "description": {
+      "0": "Thẻ bài \"Thất Thánh Triệu Hồi\", chất liệu rất tốt. Hình minh họa trên đó không biết là dùng cách in ấn đặc biệt nào để làm ra, trông rất tinh tế."
+    }
+  },
   "MagicGuide": {
     "name": "Tóm Tắt Ma Pháp",
     "description": {
@@ -24285,6 +24965,18 @@
       "0": "Thẻ bài \"Thất Thánh Triệu Hồi\", chất liệu rất tốt. Hình minh họa trên đó không biết là dùng cách in ấn đặc biệt nào để làm ra, trông rất tinh tế."
     }
   },
+  "OceanHuedClam": {
+    "name": "Xà Cừ Đại Dương",
+    "description": {
+      "0": "Thẻ bài \"Thất Thánh Triệu Hồi\", chất liệu rất tốt. Hình minh họa trên đó không biết là dùng cách in ấn đặc biệt nào để làm ra, trông rất tinh tế."
+    }
+  },
+  "ShadowOfTheSandKing": {
+    "name": "Hình Chiếu Vua Cát",
+    "description": {
+      "0": "Thẻ bài \"Thất Thánh Triệu Hồi\", chất liệu rất tốt. Hình minh họa trên đó không biết là dùng cách in ấn đặc biệt nào để làm ra, trông rất tinh tế."
+    }
+  },
   "LiyueHarborWharf": {
     "name": "Bến Cảng Liyue",
     "description": {
@@ -24491,6 +25183,12 @@
   },
   "YayoiNanatsuki": {
     "name": "Yayoi Nanatsuki",
+    "description": {
+      "0": "Thẻ bài \"Thất Thánh Triệu Hồi\", chất liệu rất tốt. Hình minh họa trên đó không biết là dùng cách in ấn đặc biệt nào để làm ra, trông rất tinh tế."
+    }
+  },
+  "StormterrorsLair": {
+    "name": "Phế Tích Phong Long",
     "description": {
       "0": "Thẻ bài \"Thất Thánh Triệu Hồi\", chất liệu rất tốt. Hình minh họa trên đó không biết là dùng cách in ấn đặc biệt nào để làm ra, trông rất tinh tế."
     }
@@ -24761,6 +25459,18 @@
   },
   "Pankration": {
     "name": "Đối Kháng!",
+    "description": {
+      "0": "Thẻ bài \"Thất Thánh Triệu Hồi\", chất liệu rất tốt. Hình minh họa trên đó không biết là dùng cách in ấn đặc biệt nào để làm ra, trông rất tinh tế."
+    }
+  },
+  "InEveryHouseAStove": {
+    "name": "Bếp Lửa Của Mọi Nhà",
+    "description": {
+      "0": "Thẻ bài \"Thất Thánh Triệu Hồi\", chất liệu rất tốt. Hình minh họa trên đó không biết là dùng cách in ấn đặc biệt nào để làm ra, trông rất tinh tế."
+    }
+  },
+  "Lyresong": {
+    "name": "Bài Thơ Tiếng Nhạc",
     "description": {
       "0": "Thẻ bài \"Thất Thánh Triệu Hồi\", chất liệu rất tốt. Hình minh họa trên đó không biết là dùng cách in ấn đặc biệt nào để làm ra, trông rất tinh tế."
     }
@@ -25930,6 +26640,20 @@
       "1": "Sau khi dùng có thể đến giao diện chế tạo để xem."
     }
   },
+  "HelloWelcome": {
+    "name": "Xin Chào! Hoan Nghênh!",
+    "description": {
+      "0": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Xin Chào! Hoan Nghênh!\".",
+      "1": "Sau khi dùng có thể đến giao diện chế tạo để xem."
+    }
+  },
+  "ShinyShell": {
+    "name": "Vỏ Sò Lung Linh",
+    "description": {
+      "0": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Vỏ Sò Lung Linh\".",
+      "1": "Sau khi dùng có thể đến giao diện chế tạo để xem."
+    }
+  },
   "EfflorescentIllumination": {
     "name": "Ánh Sáng Trăm Hoa",
     "description": {
@@ -26389,6 +27113,13 @@
     "name": "Giường \"Vững Chắc\" Gỗ Linden",
     "description": {
       "0": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Giường 'Vững Chắc' Gỗ Linden\".",
+      "1": "Sau khi dùng có thể đến giao diện chế tạo để xem."
+    }
+  },
+  "LindenWoodSweetSlumberBed": {
+    "name": "Giường \"Ngon Giấc\" Gỗ Linden",
+    "description": {
+      "0": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Giường 'Ngon Giấc' Gỗ Linden\".",
       "1": "Sau khi dùng có thể đến giao diện chế tạo để xem."
     }
   },
@@ -27446,6 +28177,27 @@
     "name": "Nhân Viên Của Sảnh Chính Luật",
     "description": {
       "0": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Nhân Viên Của Sảnh Chính Luật\".",
+      "1": "Sau khi dùng có thể đến giao diện chế tạo để xem."
+    }
+  },
+  "CompactAirSupplyDevice": {
+    "name": "Thiết Bị Truyền Gió Gọn Nhẹ",
+    "description": {
+      "0": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Thiết Bị Truyền Gió Gọn Nhẹ\".",
+      "1": "Sau khi dùng có thể đến giao diện chế tạo để xem."
+    }
+  },
+  "PassagesStableStorage": {
+    "name": "Lưu Trữ An Toàn Trên Phố",
+    "description": {
+      "0": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Lưu Trữ An Toàn Trên Phố\".",
+      "1": "Sau khi dùng có thể đến giao diện chế tạo để xem."
+    }
+  },
+  "ModelContraptionReasonableRoundabout": {
+    "name": "Mô Hình Máy Móc - Chuyển Động Hợp Lý",
+    "description": {
+      "0": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Mô Hình Máy Móc - Chuyển Động Hợp Lý\".",
       "1": "Sau khi dùng có thể đến giao diện chế tạo để xem."
     }
   },
@@ -28786,6 +29538,41 @@
       "1": "Sau khi dùng có thể đến giao diện chế tạo để xem."
     }
   },
+  "CourtOfJusticesAuthenticity": {
+    "name": "Chân Thật Của Sảnh Chính Nghĩa",
+    "description": {
+      "0": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Chân Thật Của Sảnh Chính Nghĩa\".",
+      "1": "Sau khi dùng có thể đến giao diện chế tạo để xem."
+    }
+  },
+  "CourtOfJusticesRespect": {
+    "name": "Tôn Kính Của Sảnh Chính Nghĩa",
+    "description": {
+      "0": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Tôn Kính Của Sảnh Chính Nghĩa\".",
+      "1": "Sau khi dùng có thể đến giao diện chế tạo để xem."
+    }
+  },
+  "SlipperyShack": {
+    "name": "Nhà Nhỏ Trơn Trượt",
+    "description": {
+      "0": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Nhà Nhỏ Trơn Trượt\".",
+      "1": "Sau khi dùng có thể đến giao diện chế tạo để xem."
+    }
+  },
+  "BedroomBedlam": {
+    "name": "Phòng Ngủ Rôm Rả",
+    "description": {
+      "0": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Phòng Ngủ Rôm Rả\".",
+      "1": "Sau khi dùng có thể đến giao diện chế tạo để xem."
+    }
+  },
+  "SmallStonecrab": {
+    "name": "Cua Đá Nhỏ",
+    "description": {
+      "0": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Cua Đá Nhỏ\".",
+      "1": "Sau khi dùng có thể đến giao diện chế tạo để xem."
+    }
+  },
   "BirdAndBlossomDesignFountain": {
     "name": "Đài Phun Nước Hoa Và Chim",
     "description": {
@@ -28993,6 +29780,34 @@
     "name": "Hàng Ngàn Ước Nguyện Của Sương Mai",
     "description": {
       "0": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Hàng Ngàn Ước Nguyện Của Sương Mai\".",
+      "1": "Sau khi dùng có thể đến giao diện chế tạo để xem."
+    }
+  },
+  "LumidouceHarborType05CombineLifter": {
+    "name": "Cần Cẩu Cảng Lumidouce Loại 5",
+    "description": {
+      "0": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Cần Cẩu Cảng Lumidouce Loại 5\".",
+      "1": "Sau khi dùng có thể đến giao diện chế tạo để xem."
+    }
+  },
+  "StandardFluidShippingUnit": {
+    "name": "Đơn Vị Vận Chuyển Chất Lỏng Thông Dụng",
+    "description": {
+      "0": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Đơn Vị Vận Chuyển Chất Lỏng Thông Dụng\".",
+      "1": "Sau khi dùng có thể đến giao diện chế tạo để xem."
+    }
+  },
+  "StandardShippingPallet": {
+    "name": "Ván Vận Chuyển Tiêu Chuẩn",
+    "description": {
+      "0": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Ván Vận Chuyển Tiêu Chuẩn\".",
+      "1": "Sau khi dùng có thể đến giao diện chế tạo để xem."
+    }
+  },
+  "LargeShippingPallet": {
+    "name": "Ván Vận Chuyển Cỡ Lớn",
+    "description": {
+      "0": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Ván Vận Chuyển Cỡ Lớn\".",
       "1": "Sau khi dùng có thể đến giao diện chế tạo để xem."
     }
   },
@@ -29780,6 +30595,27 @@
       "1": "Sau khi dùng có thể đến giao diện chế tạo để xem."
     }
   },
+  "CommonCookingDevice": {
+    "name": "Thiết Bị Nấu Nướng Thông Dụng",
+    "description": {
+      "0": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Thiết Bị Nấu Nướng Thông Dụng\".",
+      "1": "Sau khi dùng có thể đến giao diện chế tạo để xem."
+    }
+  },
+  "ModelContraptionRepair": {
+    "name": "Mô Hình Máy Móc - Chỉnh Chỉnh Sửa Sửa",
+    "description": {
+      "0": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Mô Hình Máy Móc - Chỉnh Chỉnh Sửa Sửa\".",
+      "1": "Sau khi dùng có thể đến giao diện chế tạo để xem."
+    }
+  },
+  "ModelContraptionRockcrackerAnchor": {
+    "name": "Mô Hình Máy Móc - Mỏ Neo Đá Nứt",
+    "description": {
+      "0": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Mô Hình Máy Móc - Mỏ Neo Đá Nứt\".",
+      "1": "Sau khi dùng có thể đến giao diện chế tạo để xem."
+    }
+  },
   "PottedPlantVerdantVastness": {
     "name": "Chậu Cây Xanh - Xanh Ngắt Mát Mẻ",
     "description": {
@@ -30473,6 +31309,76 @@
       "1": "Sau khi dùng có thể đến giao diện chế tạo để xem."
     }
   },
+  "LindenWoodHalfMetalAnnouncementBoard": {
+    "name": "Bảng Thông Báo Gỗ Linden Nửa Kim Loại",
+    "description": {
+      "0": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Bảng Thông Báo Gỗ Linden Nửa Kim Loại\".",
+      "1": "Sau khi dùng có thể đến giao diện chế tạo để xem."
+    }
+  },
+  "YetAnotherDiscussion": {
+    "name": "Lại Một Phần Hùng Biện",
+    "description": {
+      "0": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Lại Một Phần Hùng Biện\".",
+      "1": "Sau khi dùng có thể đến giao diện chế tạo để xem."
+    }
+  },
+  "CourtOfJusticesTrivia": {
+    "name": "Thú Vị Của Sảnh Chính Nghĩa",
+    "description": {
+      "0": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Thú Vị Của Sảnh Chính Nghĩa\".",
+      "1": "Sau khi dùng có thể đến giao diện chế tạo để xem."
+    }
+  },
+  "DuelingSigil": {
+    "name": "Huy Hiệu Quyết Đấu",
+    "description": {
+      "0": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Huy Hiệu Quyết Đấu\".",
+      "1": "Sau khi dùng có thể đến giao diện chế tạo để xem."
+    }
+  },
+  "FurysTorch": {
+    "name": "Ngọn Đuốc Phẫn Nộ",
+    "description": {
+      "0": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Ngọn Đuốc Phẫn Nộ\".",
+      "1": "Sau khi dùng có thể đến giao diện chế tạo để xem."
+    }
+  },
+  "SoftWatersVoice": {
+    "name": "Âm Thanh Nước Dịu Êm",
+    "description": {
+      "0": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Âm Thanh Nước Dịu Êm\".",
+      "1": "Sau khi dùng có thể đến giao diện chế tạo để xem."
+    }
+  },
+  "LetsPlay": {
+    "name": "Cùng Đến Chơi Nào!",
+    "description": {
+      "0": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Cùng Đến Chơi Nào!\".",
+      "1": "Sau khi dùng có thể đến giao diện chế tạo để xem."
+    }
+  },
+  "GoodStuffIsForSharing": {
+    "name": "Đồ Tốt Là Phải Chia Sẻ!",
+    "description": {
+      "0": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Đồ Tốt Là Phải Chia Sẻ!\".",
+      "1": "Sau khi dùng có thể đến giao diện chế tạo để xem."
+    }
+  },
+  "SatisfyingWeight": {
+    "name": "Trọng Lượng Vừa Ý",
+    "description": {
+      "0": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Trọng Lượng Vừa Ý\".",
+      "1": "Sau khi dùng có thể đến giao diện chế tạo để xem."
+    }
+  },
+  "ASistersDuty": {
+    "name": "Nghĩa Vụ Của Người Chị",
+    "description": {
+      "0": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Nghĩa Vụ Của Người Chị\".",
+      "1": "Sau khi dùng có thể đến giao diện chế tạo để xem."
+    }
+  },
   "PoolOfSapphireGrace": {
     "name": "Hồ Linh Vân",
     "description": {
@@ -30568,6 +31474,20 @@
     "name": "Hàng Rào Của Sảnh Chính Nghĩa",
     "description": {
       "0": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Hàng Rào Của Sảnh Chính Nghĩa\".",
+      "1": "Sau khi dùng có thể đến giao diện chế tạo để xem."
+    }
+  },
+  "StandardRailingOrderAndSymmetry": {
+    "name": "Lan Can Tiêu Chuẩn - Đối Xứng Trình Tự",
+    "description": {
+      "0": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Lan Can Tiêu Chuẩn - Đối Xứng Trình Tự\".",
+      "1": "Sau khi dùng có thể đến giao diện chế tạo để xem."
+    }
+  },
+  "StandardRailingScatteredStructure": {
+    "name": "Lan Can Tiêu Chuẩn - Bất Quy Tắc",
+    "description": {
+      "0": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Lan Can Tiêu Chuẩn - Bất Quy Tắc\".",
       "1": "Sau khi dùng có thể đến giao diện chế tạo để xem."
     }
   },

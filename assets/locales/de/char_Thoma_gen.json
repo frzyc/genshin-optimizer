@@ -20,7 +20,7 @@
       }
     },
     "skillParams": {
-      "0": "SCH PHase 1",
+      "0": "SCH Phase 1",
       "1": "SCH Phase 2",
       "2": "SCH Phase 3",
       "3": "SCH Phase 4",
@@ -41,7 +41,7 @@
   "skill": {
     "name": "Lodernder Segen",
     "description": {
-      "0": "Thoma benutzt die Spitze seiner Stangenwaffe als Punkt, um Flammen zu kanalisieren und einen Tritt auszuführen, mit dem er <pyro>Pyro-Flächenschaden</pyro> verursacht. Erschafft dann einen Schild des lodernden Segens und verleiht Thoma beim Auslösen das <pyro>Pyro-Attribut</pyro>.",
+      "0": "Thoma rammt seine Stangenwaffe in den Boden und stößt sich damit nach vorn, um einen gewaltigen Tritt auszuführen, der <pyro>Pyro-Flächenschaden</pyro> verursacht. Erschafft dann einen Schild des lodernden Segens und verleiht Thoma beim Auslösen das <pyro>Pyro-Attribut</pyro>.",
       "1": "Die Schildstärke hängt von Thomas max. LP ab.",
       "2": "Merkmale des Schilds des lodernden Segens:",
       "3": [
@@ -122,7 +122,7 @@
   "passive2": {
     "name": "Flammenangriff",
     "description": {
-      "0": "Erhöht den mit dem brennenden Zusammenbruch von <strong>Rote Ooyoroi</strong> verursachten Schaden in Höhe von 2,2 % der max. LP von Thoma."
+      "0": "Erhöht den mit dem brennenden Zusammenbruch von <strong>Rote Ooyoroi</strong> verursachten Schaden in Höhe von 2,2 % der max. LP von Thoma."
     }
   },
   "passive3": {

@@ -42,7 +42,7 @@
   "skill": {
     "name": "Banchisa pressurizzata",
     "description": {
-      "0": "Esegue un affondo ascendente che infligge <cryo>DAN da Cryo</cryo> e permette a Freminet di avviare il Manometro di Pers per 10 s.",
+      "0": "Esegue un fendente ascendente che infligge <cryo>DAN da Cryo</cryo> e permette a Freminet di avviare il Manometro di Pers per 10 s.",
       "1": "Mentre il Manometro di Pers è attivo, la sua abilità elementale cambia e diventa Pressione frantumante.",
       "2": "<br/>",
       "3": "<strong>Pressione frantumante</strong>",
@@ -58,13 +58,13 @@
       "9": "I <cryo>DAN da Cryo</cryo> inflitti in questo modo vengono considerati DAN da abilità elementale.",
       "10": "<br/>",
       "11": "<strong>Archè: Pneuma</strong>",
-      "12": "A determinati intervalli, dopo aver eseguito l'affondo ascendente, si genera un Aculeo spettrale che esegue un ulteriore affondo ascendente, infliggendo <cryo>DAN da Cryo</cryo> di polarità Pneuma.",
+      "12": "A determinati intervalli, dopo aver eseguito il fendente ascendente, si genera un Aculeo spettrale che esegue un ulteriore fendente ascendente, infliggendo <cryo>DAN da Cryo</cryo> di polarità Pneuma.",
       "13": "<br/>",
       "14": "<i>In certi casi, anche immobilizzare il proprio avversario senza privarlo della vita può essere considerata una strategia di \"sopravvivenza\".</i>",
       "15": "<i>\"Pers... al resto pensaci tu.\"</i>"
     },
     "skillParams": {
-      "0": "DAN da affondo ascendente",
+      "0": "DAN da fendente ascendente",
       "1": "DAN da gelo",
       "2": "DAN da Pressione frantumante livello 0",
       "3": "DAN da Pressione frantumante livello 1",

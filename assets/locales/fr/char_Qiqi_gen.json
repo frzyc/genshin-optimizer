@@ -104,7 +104,7 @@
   "passive1": {
     "name": "Survie en milieu hostile",
     "description": {
-      "0": "Lorsqu'un personnage sous l'effet d'<strong>Arcane d'Adepte : Héraut de givre</strong> déclenche une réaction élémentaire, il gagne un bonus de soins reçus de 20 % pendant 8 s."
+      "0": "Lorsqu'un personnage sous l'effet d'<strong>Arcane d'Adepte : Héraut de givre</strong> déclenche une réaction élémentaire, son bonus de soins reçus augmente de 20 % pendant 8 s."
     }
   },
   "passive2": {

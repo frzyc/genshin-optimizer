@@ -115,7 +115,7 @@
   "passive2": {
     "name": "Khuôn Phép Thẩm Phán Tối Cao",
     "description": {
-      "0": "Căn cứ vào 30% HP hiện tại vượt quá lượng HP tối đa, mỗi 1% khiến Neuvillette nhận được 0.6% <hydro>buff sát thương nguyên tố Thủy</hydro>. Tối đa tăng 30% bằng phương thức này."
+      "0": "Mỗi 1% lượng HP hiện tại vượt qua mốc 30% HP tối đa sẽ khiến Neuvillette nhận được 0.6% <hydro>buff sát thương nguyên tố Thủy</hydro>. Tối đa tăng 30% bằng phương thức này."
     }
   },
   "passive3": {

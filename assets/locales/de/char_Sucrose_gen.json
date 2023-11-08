@@ -68,7 +68,7 @@
     "name": "Verbotene Windseelenschaffung – Isomorpher Typ 75-II",
     "description": {
       "0": "Saccharose wirft einen Glaskolben mit leicht reagierenden Stoffen und erschafft so eine große Windseele.",
-      "1": "Zieht während der Wirkungsdauer fortlaufend Gegner und Objekte in der Nähe an, schleudert die angezogenen Genger weg und verursacht <anemo>Anemo-Schaden</anemo>.",
+      "1": "Zieht während der Wirkungsdauer fortlaufend Gegner und Objekte in der Nähe an, schleudert die angezogenen Gegner weg und verursacht <anemo>Anemo-Schaden</anemo>.",
       "2": "<br/>",
       "3": "<strong>Elementarumwandlung</strong>",
       "4": "Verleiht der Windseele beim Treffen auf <hydro>Hydro</hydro>-, <pyro>Pyro</pyro>-, <cryo>Kryo</cryo>- oder <electro>Elektro</electro>-Effekte während der Wirkungsdauer das jeweilige Element und verursacht dementsprechend zusätzlichen Schaden.",

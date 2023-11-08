@@ -390,6 +390,13 @@
       "0": "Festlichkeit des Gedichtfestes von „Ausflug der Poesie“."
     }
   },
+  "ThelxiesBadge": {
+    "name": "„Thelxies Wappen“",
+    "description": {
+      "0": "Ein Pinguin-Wappen, das in einem metallischen Glanz erstrahlt. Es scheint dem Träger eine feste Entschlossenheit zu geben, vorwärts zu streben ...",
+      "1": "Du kannst hiermit während der Aktion „Thelxies fantastische Abenteuer“ wertvolle Belohnungen freischalten."
+    }
+  },
   "Primogem": {
     "name": "Urgestein",
     "description": {
@@ -1017,6 +1024,14 @@
       "0": "Oberster Richter Fontaines, bekannt für seine unanfechtbare „Unparteilichkeit“."
     }
   },
+  "Charlotte": {
+    "name": "Charlotte",
+    "description": {}
+  },
+  "Furina": {
+    "name": "Furina",
+    "description": {}
+  },
   "KamisatoAyakasStellaFortuna": {
     "name": "Stella Fortuna von Kamisato Ayaka",
     "description": {
@@ -1459,6 +1474,18 @@
     "name": "Stella Fortuna von Neuvillette",
     "description": {
       "0": "Material zum Aktivieren von Neuvillettes Sternbild"
+    }
+  },
+  "CharlottesStellaFortuna": {
+    "name": "Stella Fortuna von Charlotte",
+    "description": {
+      "0": "Material zum Aktivieren von Charlottes Sternbild"
+    }
+  },
+  "FurinasStellaFortuna": {
+    "name": "Stella Fortuna von Furina",
+    "description": {
+      "0": "Material zum Aktivieren von Furinas Sternbild"
     }
   },
   "GnosticHymnOldNotes": {
@@ -6494,10 +6521,22 @@
       "0": "Eine Molluske, die im Wasser einen sanft-blassen Schimmer ausstrahlt. Meistens erklimmen sie gern von Menschenhand geschaffene Flächen am oder unter Wasser."
     }
   },
+  "LakelightLily": {
+    "name": "Seeschimmer-Maiglöckchen",
+    "description": {
+      "0": "Diese blasse Blume, klar und rein, wächst dort, wo Wasseradern zusammenfließen. Sie verströmt einen kühlen und eleganten Duft, der scharf und doch sanft ist."
+    }
+  },
   "SubdetectionUnit": {
     "name": "Subdetektionseinheit",
     "description": {
       "0": "Das Forschungsinstitut Fontaine produziert mithilfe neuer und innovativer Komponenten Mikro-Detektionseinheiten. Diese sollten ursprünglich zur Überwachung verschiedener Arten von Umweltdaten eingesetzt werden."
+    }
+  },
+  "SpringOfTheFirstDewdrop": {
+    "name": "Quelle des ersten Taus",
+    "description": {
+      "0": "Dieser klare Tautropfen, der in den Gewässern des Bezirks Morte umherschwebt, scheint sich von anderen Kreationen reinen Wassers zu unterscheiden und mit einer ursprünglicheren und reineren Art der Elementarenergie zu verschmelzen."
     }
   },
   "BirchWood": {
@@ -13688,7 +13727,7 @@
   "DeliciousCrepesSuzette": {
     "name": "Leckere Crêpes Suzette",
     "description": {
-      "0": "Gefüllte Crêpes. Die lockere Sahne und die dichte Konfitüre verflechten sich zu einer sanften Symfonie, während die locker-flockige Kruste wie ein elegant flatternder Rocksaum die Zunge zu einem Tanz auffordert."
+      "0": "Gefüllte Crêpes. Die lockere Sahne und die dichte Konfitüre verflechten sich zu einer sanften Sinfonie, während die locker-flockige Kruste wie ein elegant flatternder Rocksaum die Zunge zu einem Tanz auffordert."
     }
   },
   "ConsommePurete": {
@@ -13701,6 +13740,54 @@
     "name": "Gegrillte Rippchen mit geheimer Soße",
     "description": {
       "0": "Wriothesleys Spezialzubereitung. Kurz nachdem du hörtest, wie er seine Untergebenen mit den Worten: „Wenn ich jetzt weggehe, geht die Küche gleich in die Luft.“, hinausschmiss, erfreut auch schon eine mit dieser Fleischkreation gefüllte Platte deine Augen. Die reichhaltige Bratensoße und die lockere Kruste ergeben einen außergewöhnlichen Genuss in doppelter Hinsicht. Nur, dass das Aroma haargenau dem eines bestimmten Gewürzes gleicht, das sich in jüngster Zeit großer Beliebtheit erfreut ..."
+    }
+  },
+  "SuspiciousLaLettreAFocalors": {
+    "name": "Misslungenes Für den Hydro-Archon",
+    "description": {
+      "0": "Ein längliches Törtchen. Jede Schicht schmeckt mehr oder weniger gleich. Anscheinend war da jemand sogar so faul und hat ein paar Schichten weggelassen. Wer sich auskennt, merkt schon beim ersten Bissen, dass da bei der Zubereitung ziemlich geschlampt wurde."
+    }
+  },
+  "LaLettreAFocalors": {
+    "name": "Für den Hydro-Archon",
+    "description": {
+      "0": "Ein längliches Törtchen. Man erzählt sich, dass ein gewisser Konditor es vor langer, langer Zeit kreiert hat und die Muse, die ihn küsste, soll angeblich die Liebe gewesen sein, die die Bewohner Fontaines für den Hydro-Archon empfinden. Die vielen einzelnen Schichten stellen bei der Herstellung ohne Zweifel die kulinarischen Fähigkeiten des Konditors auf eine harte Probe und zeugen vom außergewöhnlichen Einfluss des Hydro-Archons auf dieses Gebäckstück."
+    }
+  },
+  "DeliciousLaLettreAFocalors": {
+    "name": "Leckeres Für den Hydro-Archon",
+    "description": {
+      "0": "Ein längliches Törtchen. Der intensive Duft von Kaffee und Mandeln regt den Geist an. Es ist, als ob man, ohne es zu merken, in einer extravaganten, von Wendungen gespickten Oper gelandet wäre. Man kann nicht anders, als sich ihr hinzugeben, in der Hoffnung, dass der Vorhang niemals fallen möge."
+    }
+  },
+  "SuspiciousBlubberProfiterole": {
+    "name": "Misslungene Pummel-Profiterole",
+    "description": {
+      "0": "Ein mit Sahne gefülltes Dessert. Der Teig ist völlig durchgeweicht. Anscheinend hat man es nach der Fertigstellung zu lange stehen lassen. Das „Knusprige“ am Geschmack ist völlig anders als erwartet und kommt einem Verbrechen gleich. Stände dieses Dessert vor Gericht, wäre nach dem ersten Bissen das Urteil klar: „Der Tod“!"
+    }
+  },
+  "BlubberProfiterole": {
+    "name": "Pummel-Profiterole",
+    "description": {
+      "0": "Ein mit Sahne gefülltes Dessert. Der fluffige Blätterteig, der das cremige Herzstück dieser Leckerei umhüllt, erinnert mit seiner kugelrunden Form an eine zuckersüße Pummelrobbe, während die dichte weiche Sahne ein jedes Herz dahinschmelzen lässt."
+    }
+  },
+  "DeliciousBlubberProfiterole": {
+    "name": "Leckere Pummel-Profiterole",
+    "description": {
+      "0": "Ein mit Sahne gefülltes Dessert. Nur ein Bissen davon, und man ist ihm verfallen. Der Rest wird dann in einem verspeist, und selbst die Sahne in den Mundwinkeln lässt einen vor Glück fast platzen! Wie schön doch das Abenteurerleben wäre, wenn jeder Mahlzeit dieser Nachtisch folgen würde!"
+    }
+  },
+  "PourLaJustice": {
+    "name": "„Pour la Justice“",
+    "description": {
+      "0": "Furinas Spezialzubereitung. In Fontaine steht „Pour la Justice“ für das Ehren der Gerechtigkeit und sie war einst Zeuge der Geburt der edelsten Gerechtigkeit auf der großen Bühne. Entstammt dieser vielschichtige Geschmack etwa ihren persönlichen Erfahrungen aus dieser Zeit? Ungezwungen in seinen Höhen und Tiefen und am Ende erwartet einen die Erleichterung."
+    }
+  },
+  "ExclusiveScoopGourmetColumn": {
+    "name": "Exklusive Geheimnisse – Gourmet-Kolumne",
+    "description": {
+      "0": "Charlottes Spezialzubereitung. Eine kleine Knabberei, die sie dir in die Hand drückt, während du sie auf der Jagd nach der nächsten Exklusivmeldung begleitest. Während du knuspernd den gebratenen Fisch kaust, schaust du zur Seite. Charlotte flaniert fröhlichen Schrittes voran, wodurch sich der Rhythmus ihrer Schritte mit dem des Kauens allmählich überschneiden ... Und obwohl die Neuigkeiten noch nicht druckfertig sind, lassen Freude und Zufriedenheit das Herz bereits höher schlagen."
     }
   },
   "RecipeItem": {
@@ -14740,6 +14827,18 @@
     "name": "Rezept: Crêpes Suzette",
     "description": {
       "0": "Rezept mit detaillierten Schritten zur Zubereitung von „Crêpes Suzette“."
+    }
+  },
+  "RecipeLaLettreAFocalors": {
+    "name": "Rezept: Für den Hydro-Archon",
+    "description": {
+      "0": "Rezept mit detaillierten Schritten zur Zubereitung von „Für den Hydro-Archon“."
+    }
+  },
+  "RecipeBlubberProfiterole": {
+    "name": "Rezept: Pummel-Profiterole",
+    "description": {
+      "0": "Rezept mit detaillierten Schritten zur Zubereitung von „Pummel-Profiterole“."
     }
   },
   "CraftedItems": {
@@ -16046,6 +16145,35 @@
     "description": {
       "0": "Dieser elektrisch geladene Fortsatz des Millenniums-Perlenseepferds dient diesem auch als königliches Instrument und als Symbol für dessen Erhabenheit, wurde aber mittlerweile von dem Herausforderer abgetrennt.",
       "1": "Als Spitzenprädator, der sich aus dem Blubber-Seepferdchen entwickelt hat, unterscheidet sich die evolutionäre Reise des Millenniums-Perlenseepferds deutlich von der anderer Fontemer-Mutanten: Anstatt sich entsprechend ursprünglicher Physiognomie zu entwickeln und stärker zu werden, bildeten sich Gliedmaßen und Hörner, die die Blubber-Seepferdchen eigentlich nicht aufweisen, gemeinsam mit Veränderungen der Knochenstruktur und Muskulatur. Es entwickelte dadurch eher eine Ähnlichkeit zu den fantastischen Bestien alter Legenden als zu der Gestalt, der es ursprünglich entsprungen war. In der Fantasie der Dichter und Dramatiker besitzen selbst Seepferdchen den Gestus eines scheckigen Rosses, wie es über Wiesen und Felder hinweg galoppiert."
+    }
+  },
+  "LightlessSilkString": {
+    "name": "Aphotischer Seidenfaden",
+    "description": {
+      "0": "Ein dünner Faden, der sich unwissentlich beim Kampf gegen den Sternenverschlingenden Narwal um deine Waffe gewickelt hat.",
+      "1": "Im alten Fontaine glaubte man einst, dass „Fortuna“, die alles beherrsche, aus feinsten Fäden bestünde, wie die Saiten einer Harfe. Jene filigranen Saiten, die mit dem wunderbaren Klang der Musik mitschwingen, würden universelles Glück bringen, genauso, wie die Dissonanz dem Gefüge im Universum Zerstörung brächte."
+    }
+  },
+  "LightlessEyeOfTheMaelstrom": {
+    "name": "Aphotisches Auge des Wirbels",
+    "description": {
+      "0": "Eine seltsame „Materie“, die aus dem Kampf mit dem Sternenverschlingenden Narwal gewonnen wurde. Die tatsächliche Masse ist viel schwerer, als man von der Größe her annehmen würde.",
+      "1": "Alles versammelt sich neben dem, was schwer sein soll, wie das Gold im Vergleich zum schwarzen Eisen und die Erde im Vergleich zum leichten Wind. So wie das Licht nicht aus dem Auge des Wirbels der Dunkelheit entkommen kann, so konvergieren Ursache und Wirkung auf ein schweres Schicksal. Vielleicht ist dies ja eine unumkehrbare Regel."
+    }
+  },
+  "LightlessMass": {
+    "name": "Aphotische Masse",
+    "description": {
+      "0": "Splitter, erschaffen im erbitterten Kampf mit dem Sternenverschlingenden Narwal.",
+      "1": "Das Universum ist ein finsterer und kalter Ort.",
+      "2": "Sieh aber mal genau hin: Inmitten dessen, ein unscheinbarer Schimmer, wie eine Perle, halb bedeckt vom Sand, ein Diamant auf dem Asphalt, ein Licht am Ende eines nebelverhangenen Horizonts bei Nacht, ein Funke, der eine ausgedorrte Wiese entfacht."
+    }
+  },
+  "WaterThatFailedToTranscend": {
+    "name": "Nicht transzendiertes Wasser",
+    "description": {
+      "0": "Die einzigen Überbleibsel, die nach dem Zerschlagen des Hydro-Imitators zurückblieben.",
+      "1": "Ähneln in ihrer Beschaffenheit sehr den Kristallen, die den Körpern der Fontemer-Mutanten entnommen werden, enthalten aber eine Menge feiner Trübungen, ähnlich den winzigen Luftblasen, die in den Glasarbeiten mittelmäßiger Handwerker erstarrt sind."
     }
   },
   "TileOfDecarabiansTower": {
@@ -18849,6 +18977,60 @@
       "0": "Ein unterhaltsames Buch, das in Fontaine sehr populär ist. Es erzählt die Geschichte von der ersten Konfrontation zwischen dem sogenannten „Phantom-Kavalier“, Meisterdieb Fantomas Robben, und dem berühmten Detektiv Chesterton. Hinweis: Diese Geschichte ist rein fiktional und hat keine Verbindung zu realen Orten, Personen oder Ereignissen."
     }
   },
+  "TheFallOfTheFadedCastleI": {
+    "name": "Der Zusammenbruch eines verblassenden alten Schlosses – Band I",
+    "description": {
+      "0": "Poesie eines Unbekannten. Zwischen den Zeilen schwingt eine bizarr unheilvolle Bedrohlichkeit mit."
+    }
+  },
+  "TheFallOfTheFadedCastleII": {
+    "name": "Der Zusammenbruch eines verblassenden alten Schlosses – Band II",
+    "description": {
+      "0": "Poesie eines Unbekannten. Zwischen den Zeilen schwingt eine bizarr unheilvolle Bedrohlichkeit mit."
+    }
+  },
+  "TheFallOfTheFadedCastleIII": {
+    "name": "Der Zusammenbruch eines verblassenden alten Schlosses – Band III",
+    "description": {
+      "0": "Poesie eines Unbekannten. Zwischen den Zeilen schwingt eine bizarr unheilvolle Bedrohlichkeit mit."
+    }
+  },
+  "LaChansonDErinnyesI": {
+    "name": "La chanson d'Erinnyes I",
+    "description": {
+      "0": "Wie die Gesandten von König Remus vor Erinnyes traten, um von ihr Wasser und Erde der Burg Aremori zu verlangen, ebenso wie ihre Ergebenheit gegenüber der Sumphonia Capitolii (Bedeutung: Ewige harmonische Melodie)."
+    }
+  },
+  "LaChansonDErinnyesII": {
+    "name": "La chanson d'Erinnyes II",
+    "description": {
+      "0": "Wie die Ritter aller Grafschaften Erinnyes gelobten, sich gemeinsam der Invasion der Capitoliani entgegenzustellen."
+    }
+  },
+  "LaChansonDErinnyesIII": {
+    "name": "La chanson d'Erinnyes III",
+    "description": {
+      "0": "Wie Erinnyes von der Herrin allen Wassers Abschied nahm und wie sie ihr Schwert dreimal in den See warf."
+    }
+  },
+  "TalesOfASnowWingedGooseI": {
+    "name": "Märchensammlung Schneeflügelgans – Band I",
+    "description": {
+      "0": "Ein kleines Märchenbuch, das Fontaine wie im Sturm eroberte. Der schöne Einband hatte schon so manches Kind glauben lassen, dass dieses Buch tatsächlich von einer legendären und liebenswürdigen Frau Schneeflügelgans geschrieben wurde."
+    }
+  },
+  "TalesOfASnowWingedGooseII": {
+    "name": "Märchensammlung Schneeflügelgans – Band II",
+    "description": {
+      "0": "Ein kleines Märchenbuch, das Fontaine wie im Sturm eroberte. Der schöne Einband hatte schon so manches Kind glauben lassen, dass dieses Buch tatsächlich von einer legendären und liebenswürdigen Frau Schneeflügelgans geschrieben wurde."
+    }
+  },
+  "TalesOfASnowWingedGooseIII": {
+    "name": "Märchensammlung Schneeflügelgans – Band III",
+    "description": {
+      "0": "Ein kleines Märchenbuch, das Fontaine wie im Sturm eroberte. Der schöne Einband hatte schon so manches Kind glauben lassen, dass dieses Buch tatsächlich von einer legendären und liebenswürdigen Frau Schneeflügelgans geschrieben wurde."
+    }
+  },
   "GiftOfParting": {
     "name": "Geschenk des „Abschieds“",
     "description": {
@@ -19193,6 +19375,63 @@
       "0": "Schlecht erhaltenes Tagebuch"
     }
   },
+  "SirArthursWing": {
+    "name": "Herr Arthurs Flügel",
+    "description": {
+      "0": "Direkt vor dir, ein Uhrwerk-Flügel, der zu Herrn Arthur gehörte.",
+      "1": "Was der Täter tat, ist unverzeihlich!"
+    }
+  },
+  "SirArthursBody": {
+    "name": "Herr Arthurs Körper",
+    "description": {
+      "0": "Direkt vor dir, ein Uhrwerk-Körper, der zu Herrn Arthur gehörte.",
+      "1": "Was der Täter tat, ist unverzeihlich!"
+    }
+  },
+  "SirArthursHead": {
+    "name": "Herr Arthurs Kopf",
+    "description": {
+      "0": "Direkt vor dir, ein Uhrwerk-Kopf, der zu Herrn Arthur gehörte.",
+      "1": "Was der Täter tat, ist unverzeihlich!"
+    }
+  },
+  "LeftoverPoissonchantPie": {
+    "name": "Reste einer „Poissonchant-Tarte“",
+    "description": {
+      "0": "Sieht echt niedlich aus, könnte aber für Magenprobleme sorgen."
+    }
+  },
+  "MysteriousThreatLetter": {
+    "name": "Mysteriöser Drohbrief",
+    "description": {}
+  },
+  "AnotherMysteriousThreatLetter": {
+    "name": "Ein weiterer mysteriöser Drohbrief",
+    "description": {}
+  },
+  "KevinsLetter": {
+    "name": "Kevins Brief",
+    "description": {}
+  },
+  "MessilyWrittenLetter": {
+    "name": "Kritzelig geschriebener Brief",
+    "description": {}
+  },
+  "ScribbledOrders": {
+    "name": "Befehl in unleserlicher Schrift",
+    "description": {}
+  },
+  "OldPhoto": {
+    "name": "Altes Foto",
+    "description": {
+      "0": "Gruppenfoto"
+    }
+  },
+  "LetterToTheEditorinChiefDraft": {
+    "name": "Brief an den Chefredakteur (Entwurf)",
+    "description": {}
+  },
   "Disclaimer": {
     "name": "Erklärung",
     "description": {}
@@ -19284,7 +19523,7 @@
   "ChildesVision": {
     "name": "Göttliches Auge des Grafen",
     "description": {
-      "0": "Der Graf hat anscheinend manchmal die Kontrolle über die Elementarkraft drin verloren. Das Göttliche Auge hat sein Leuchten verloren, nachdem sein Besitzer es zurückgelassen hat."
+      "0": "Anscheinend hat der Graf zuvor die Kontrolle über die Elementarkraft darin verloren. Das Göttliche Auge hat sein Leuchten verloren, nachdem sein Besitzer es zurückgelassen hat."
     }
   },
   "MagicPocketMaterials": {
@@ -19305,6 +19544,12 @@
       "0": "Pucas Andenken, das sie in den Tiefen der Mine verloren hat. Beeil dich und gib es ihr zurück!"
     }
   },
+  "TalochardsInvestigationNotes": {
+    "name": "Talochards Ermittlungsnotizen",
+    "description": {
+      "0": "Von Talochard geteilte Ermittlungsnotizen. Enthalten Informationen hinsichtlich des Verschwindens von Herrn Arthur."
+    }
+  },
   "AStory": {
     "name": "Eine Geschichte",
     "description": {}
@@ -19313,6 +19558,18 @@
     "name": "Handrad",
     "description": {
       "0": "Ein gängiges Handrad, das zur Steuerung von Ventilen zur Regulierung von Rohrleitungen in den Gewässern um Fort Méropide verwendet wird."
+    }
+  },
+  "MaterialForThelxiesWeapon": {
+    "name": "Material für Thelxies Waffen",
+    "description": {
+      "0": "Ein aus dem Wasser geborgener bunter Gegenstand, der dazu verwendet wird, Thelxies Waffen herzustellen."
+    }
+  },
+  "MaterialForThelxiesCrown": {
+    "name": "Material für Thelxies Krone",
+    "description": {
+      "0": "Ein aus dem Wasser geborgener bunter Gegenstand, der dazu verwendet wird, Thelxies Krone herzustellen."
     }
   },
   "EnergyConcentratingComponent": {
@@ -19333,6 +19590,12 @@
   "34thIndependentInvestigativeSquadDeploymentInMontEsusEasternQuadrantDisplinaryProcedures": {
     "name": "Disziplinarvorschriften für den 34. Autonomen Spähtrupp im östlichen Ausläufer des Bergs Esus",
     "description": {}
+  },
+  "TravelersExclusiveInterviewHandbook": {
+    "name": "Exklusives Interview-Handbuch {F#der}{M#des} Reisenden",
+    "description": {
+      "0": "Das Transkript eines Interviews, das Charlotte, die große Reporterin des Dampfvogels, mit {F#der berühmten blonden Reisenden von weit her}{M#dem berühmten blonden Reisenden von weit her} geführt hat. Nach mehreren Auflagen, in denen Informationen zusammengetragen und Revisionen vorgenommen wurden, kann das hier Aufgezeichnete noch für viel mehr verwendet werden, als nur „in einer Zeitung veröffentlicht zu werden“."
+    }
   },
   "PoemOnFallenLeaf": {
     "name": "Gedicht auf einem gefallenen Blatt",
@@ -19385,6 +19648,60 @@
   "Notice": {
     "name": "Bekanntmachung",
     "description": {}
+  },
+  "LiamsBallad": {
+    "name": "Liams Ballade",
+    "description": {
+      "0": "Eine durchsichtige Flasche. Im Inneren befindet sich ein Zettel mit merkwürdigen Zeichnungen auf der Rückseite, der von den Taten eines gewissen Liams erzählt."
+    }
+  },
+  "RockyAvildsensDisappearance": {
+    "name": "Rocky Avildsens Verschwinden",
+    "description": {
+      "0": "Eine durchsichtige Flasche. Im Inneren befindet sich ein Zettel mit merkwürdigen Zeichnungen auf der Rückseite, der von den Taten eines gewissen Rocky Avildsens Aversons erzählt."
+    }
+  },
+  "AthossConfession": {
+    "name": "Athos’ Bekenntnis",
+    "description": {
+      "0": "Eine durchsichtige Flasche. Im Inneren befindet sich ein Zettel mit merkwürdigen Zeichnungen auf der Rückseite, der von den Taten eines gewissen Athos’ erzählt."
+    }
+  },
+  "ParkersHopes": {
+    "name": "Parkers Hoffnung",
+    "description": {
+      "0": "Eine durchsichtige Flasche. Im Inneren befindet sich ein Zettel mit merkwürdigen Zeichnungen auf der Rückseite, der von den Taten eines gewissen Parkers erzählt."
+    }
+  },
+  "BarrowsExpectations": {
+    "name": "Barrows Hoffnung",
+    "description": {
+      "0": "Eine durchsichtige Flasche. Im Inneren befindet sich ein Zettel mit merkwürdigen Zeichnungen auf der Rückseite, der von den Taten eines gewissen Barrows erzählt."
+    }
+  },
+  "AutumnsRegrets": {
+    "name": "Autumns Bedauern",
+    "description": {
+      "0": "Ein Zettel mit merkwürdigen Zeichnungen auf der Rückseite, der von den Taten einer gewissen Autumn erzählt."
+    }
+  },
+  "RougesWritings": {
+    "name": "Rouges Schriftstück",
+    "description": {
+      "0": "Eine durchsichtige Flasche. Im Inneren befindet sich ein Zettel mit merkwürdigen Zeichnungen auf der Rückseite, der von den Taten eines gewissen Rouges erzählt."
+    }
+  },
+  "FreemansAnnouncement": {
+    "name": "Freemans Manifest",
+    "description": {
+      "0": "Eine durchsichtige Flasche. Im Inneren befindet sich ein Zettel mit merkwürdigen Zeichnungen auf der Rückseite, der von den Taten eines gewissen Freemans erzählt."
+    }
+  },
+  "RainbowRosesIdeals": {
+    "name": "Der Regenbogenrose Ideal",
+    "description": {
+      "0": "Ein Stück Papier, das durch Zusammenfügen der acht Zettel entsteht. Die seltsamen Zeichnungen auf ihren Rückseiten entpuppen sich als eine komplette Regenbogenrose."
+    }
   },
   "LeftSideTableFileBox": {
     "name": "Aktenordner auf dem linken Tisch",
@@ -19471,6 +19788,37 @@
       "0": "Ein von Heinry entwickeltes „experimentelles Getränk“. Ein süßer „Blubbertee“, dem das „Blubbern“ fehlt. Kö... Könnte ich nicht einfach einen Becher Tee trinken?"
     }
   },
+  "DiaryOfAValiantStruggleI": {
+    "name": "Tagebuch eines tapferen Kampfes (I)",
+    "description": {
+      "0": "Tagebuch eines tapferen Kampfes (I)"
+    }
+  },
+  "DiaryOfAValiantStruggleII": {
+    "name": "Tagebuch eines tapferen Kampfes (II)",
+    "description": {
+      "0": "Tagebuch eines tapferen Kampfes (II)"
+    }
+  },
+  "DiaryOfAValiantStruggleIII": {
+    "name": "Tagebuch eines tapferen Kampfes (III)",
+    "description": {
+      "0": "Tagebuch eines tapferen Kampfes (III)"
+    }
+  },
+  "DiaryOfAValiantStruggleIV": {
+    "name": "Tagebuch eines tapferen Kampfes (IV)",
+    "description": {
+      "0": "Tagebuch eines tapferen Kampfes (IV)"
+    }
+  },
+  "DiaryOfAValiantStruggle": {
+    "name": "Tagebuch eines tapferen Kampfes",
+    "description": {
+      "0": "Aufzeichnungen der Lebenserfahrungen eines Kämpfers.",
+      "1": "„Schlitz den Vogel der Länge nach auf! Das wird ihnen eine gute Warnung sein.“"
+    }
+  },
   "AcademicAssemblyHallPicture": {
     "name": "Bild der „Akademischen Versammlungshalle“",
     "description": {
@@ -19501,9 +19849,21 @@
     "name": "Zurückgelassener Brief",
     "description": {}
   },
+  "SpecialKey": {
+    "name": "Besonderer Schlüssel",
+    "description": {
+      "0": "Ein besonderer Schlüssel, der irgendwo passen könnte."
+    }
+  },
   "FontaineResearchInstituteOfKineticEnergyEngineeringCertificate": {
     "name": "Zertifikat des Forschungsinstituts für kinetische Energie Fontaine",
     "description": {}
+  },
+  "TeardropKey": {
+    "name": "Tränenschlüssel",
+    "description": {
+      "0": "Ein Edelstein, der einem Regentropfen gleicht, oder jemandes vergossene Träne."
+    }
   },
   "TrainingLog": {
     "name": "Trainingstagebuch",
@@ -19531,6 +19891,13 @@
       "0": "Ein Brief, der neben zwei Blasenmandarinen gefunden wurde."
     }
   },
+  "ThelxiesFantasticAdventures": {
+    "name": "„Thelxies fantastische Abenteuer“",
+    "description": {
+      "0": "Ein dreiseitiges Märchenbuch, das die zauberhafte Geschichte eines Prinzen erzählt, der die Einsamkeit überwindet.",
+      "1": "Auf der Rückseite findet sich in kleinen Buchstaben „Für alle, die es gerade schwer haben“ geschrieben."
+    }
+  },
   "LocationNo1Materials": {
     "name": "Informationen von Standort 1",
     "description": {
@@ -19547,6 +19914,215 @@
     "name": "Informationen von Standort 3",
     "description": {
       "0": "Von Heinry zurückgelassene Informationen. Welche Erkenntnisse er daraus wohl gezogen haben könnte ..."
+    }
+  },
+  "IridescentGlory": {
+    "name": "„Regenbogen-Ruhm“",
+    "description": {
+      "0": "Glänzende Muscheln und Korallen in verschiedenen Farben. Sie sollen den Wasser-Unholden angeblich als besonders kostbare Schätze gelten. Sie waren es, die die Regenbogenbrücke gebaut haben, die nun das Königreich der Wasser-Unholde erleuchtet ..."
+    }
+  },
+  "AureliesNotesI": {
+    "name": "Aurélies Notizen I",
+    "description": {
+      "0": "Aurélies Notizen I"
+    }
+  },
+  "MarvelousJellyImprovedFontaineEdition": {
+    "name": "„Wundergelee – Verbesserte Fontaine-Edition“",
+    "description": {
+      "0": "Eine filigrane Geschenkbox von Haniyyah, die das von den Pilzbestien heißgeliebte „Wundergelee“ in verschiedenen Geschmacksrichtungen enthält, welches den einzelnen Pilzbestien je nach Vorliebe gefüttert werden kann.",
+      "1": "Mit der Zeit lernte Haniyyah ihre Pilzgefährten immer besser kennen und sammelte mehr und mehr Erfahrung in der Herstellung des „Wundergelees“. So konnte sie dessen Geschmack immer weiter perfektionieren. Das verbesserte Gelee liefert den Pilzgefährten nicht nur reichlich Nährstoffe, sondern vereint in sich auch die Eigenschaften der Küche Fontaines mit neueren und exotischeren Geschmacksrichtungen. So verhilft es den Pilzlingen nicht nur zu einem erquicklichen Schmaus, sondern auch zu einem gesunden Lebensstil!"
+    }
+  },
+  "SpinaDiRosulaUniformGiftBox": {
+    "name": "Geschenkkiste mit Uniform der Spina di Rosula",
+    "description": {
+      "0": "Ein Geschenk von Navia für Adèle. Drinnen liegt eine Uniform der Spina di Rosula. Auch wenn sie für Adèle zu groß ist, aber als ein Versprechen reicht sie allemal."
+    }
+  },
+  "StrangelyShapedKey": {
+    "name": "Eigenartig geformter Schlüssel",
+    "description": {
+      "0": "Ein Schlüssel, den du von einem Mitglied der Romeu-Gang erhalten hast. Er scheint ein notwendiges Objekt zu sein, um Sprengstoff schnell zu stoppen."
+    }
+  },
+  "RecommendationLetter": {
+    "name": "Empfehlungsschreiben",
+    "description": {
+      "0": "Empfehlungsschreiben"
+    }
+  },
+  "RustyIronKey": {
+    "name": "Verrosteter Eisenschlüssel",
+    "description": {
+      "0": "Den muss hier wohl irgendwer verloren haben. Was er wohl öffnet?"
+    }
+  },
+  "Persona": {
+    "name": "„Persönlichkeit“",
+    "description": {
+      "0": "Eines der notwendigen Materialien, die zum Schmieden des heiligen Schwertes des Narzissenkreuzes notwendig sind. Es scheint fast überhaupt kein Gewicht zu haben."
+    }
+  },
+  "UnlockedTreasure": {
+    "name": "Geöffneter „Schatz“",
+    "description": {
+      "0": "Eine alte Taschenuhr.",
+      "1": "Die Zeit bleibt in einem besonderen Moment stehen und schöne Erinnerungen werden unvergänglich."
+    }
+  },
+  "AureliesNotesII": {
+    "name": "Aurélies Notizen II",
+    "description": {
+      "0": "Aurélies Notizen II"
+    }
+  },
+  "ANewLifesBeginning": {
+    "name": "„Der Beginn eines neuen Lebens“",
+    "description": {
+      "0": "Ein im Fort Méropide ausgestellter Ausreisepass. Obwohl es sich dabei nur um ein Stück Papier handelt, trägt es doch einen inspirierenden Namen."
+    }
+  },
+  "RootCycle": {
+    "name": "Fundamentkreis",
+    "description": {
+      "0": "Einer der vom Narzissenkreuz-Verein für diesen Turm konzipierten Schlüssel. Zusammengesetzt, ergibt sich eine seltsame Form aus dreieinhalb Kreisen, für die es eine besondere Erklärung gibt.",
+      "1": "Der innerste Kreis ist das Rad von Hyperborea. Es steht für die Zeit, als die Welt noch eingefroren war, und für das verlorene Paradies."
+    }
+  },
+  "SimpleVaultKeyI": {
+    "name": "Einfacher Schatzkajüten-Schlüssel I",
+    "description": {
+      "0": "Einer der Schlüssel, mit denen man die Eisengitter am kaputten Schiff aufschließt."
+    }
+  },
+  "SimpleVaultKeyII": {
+    "name": "Einfacher Schatzkajüten-Schlüssel II",
+    "description": {
+      "0": "Einer der Schlüssel, mit denen man die Eisengitter am kaputten Schiff aufschließt."
+    }
+  },
+  "SimpleVaultKeyIII": {
+    "name": "Einfacher Schatzkajüten-Schlüssel III",
+    "description": {
+      "0": "Einer der Schlüssel, mit denen man die Eisengitter am kaputten Schiff aufschließt."
+    }
+  },
+  "FoggyForestBranch": {
+    "name": "Zweig des einsamen Waldes",
+    "description": {
+      "0": "Ein Zweig, der in einem ätherischen Türkis schimmert. Er scheint in einer sonderbaren Verbindung mit dem Nebelpfad im einsamen Wald zu stehen.",
+      "1": "Bei genauerer Betrachtung scheint etwas in seinem Inneren zu fließen."
+    }
+  },
+  "FallenBouquet": {
+    "name": "Zurückgelassener Blumenstrauß",
+    "description": {
+      "0": "Wildblumen in voller Blüte, die einst jemand sehr zu schätzen wusste. An ihnen ist nichts Besonderes. Na ja, außer dem Ort, an dem sie zurückgelassen wurden.",
+      "1": "Manchmal reichen ein wenig Dankbarkeit und Nostalgie schon aus, um weiterzumachen."
+    }
+  },
+  "Tripod": {
+    "name": "Stativ",
+    "description": {
+      "0": "Urvilles verloren gegangenes Stativ. Sobald es getrocknet ist, sollte man es wieder benutzen können."
+    }
+  },
+  "NadiasToken": {
+    "name": "Nadias Andenken",
+    "description": {
+      "0": "Ein kleines Zahnrad. An ihm scheint nichts Besonderes zu sein."
+    }
+  },
+  "TinyConch": {
+    "name": "Kleine Meeresschnecke",
+    "description": {
+      "0": "Eine wunderschöne Meeresschnecke, die Nadia über alles liebt."
+    }
+  },
+  "DivingSet": {
+    "name": "Tauchausrüstung",
+    "description": {
+      "0": "Urvilles verloren gegangene Tauchausrüstung. Scheint ein wenig lädiert zu sein."
+    }
+  },
+  "SunkenCoinPouch": {
+    "name": "Versunkener Geldbeutel",
+    "description": {
+      "0": "Ein gewöhnlicher Geldbeutel, der voller Mora ist."
+    }
+  },
+  "StrangeMessage": {
+    "name": "Seltsame Nachricht",
+    "description": {
+      "0": "Seltsame Nachricht"
+    }
+  },
+  "MysteriousXenochromaticCrystal": {
+    "name": "Mysteriöser xenochromatischer Kristall",
+    "description": {
+      "0": "Ein großer Kristall. Er stammt aus dem Körper eines besiegten außerordentlich mächtigen Fontemer-Mutanten im Bezirk Morte.",
+      "1": "Er enthält eine Energie, die noch geheimnisvoller ist als die von gewöhnlichen xenochromatischen Kristallen.",
+      "2": "Vielleicht würde ja jemand einen angemessenen Preis dafür bezahlen."
+    }
+  },
+  "MapFragment": {
+    "name": "Kartenfragment",
+    "description": {
+      "0": "Ein zerrissenes Stück Papier, das wie die rechte untere Ecke einer Landkarte aussieht. Ist mit sonderbaren Punkten und Linien bemalt."
+    }
+  },
+  "SmallKey": {
+    "name": "Kleiner Schlüssel",
+    "description": {
+      "0": "Ein kleiner Schlüssel, der auch als Lesezeichen dienen kann. Warum wurde er nicht konfisziert? Und warum öffnet so ein kleiner Schlüssel eine derart wichtige Tür."
+    }
+  },
+  "Notes": {
+    "name": "Notiz",
+    "description": {}
+  },
+  "Description": {
+    "name": "Beschreibung",
+    "description": {}
+  },
+  "Storybook": {
+    "name": "Geschichtenbuch",
+    "description": {}
+  },
+  "Certificate": {
+    "name": "Zertifikat",
+    "description": {}
+  },
+  "InvestigationLog": {
+    "name": "Ermittlungsprotokoll",
+    "description": {}
+  },
+  "Excerpt": {
+    "name": "Exzerpt",
+    "description": {}
+  },
+  "Log": {
+    "name": "Protokoll",
+    "description": {}
+  },
+  "TearsAmongTheStars": {
+    "name": "Tränen zwischen den Sternen",
+    "description": {
+      "0": "Ein Tropfen Wasser, der dem Ungetüm entnommen wurde, welchem es nach dem Urmeer des Lebens gelüstete.",
+      "1": "<br/>",
+      "2": "Wo es Geburt gibt, da muss es auch Sterben geben. Und wo es Sterben gibt, da gibt es auch Geburt, so mutmaßte einst ein Philosoph einer fernen und uralten Welt.",
+      "3": "Wäre dem nicht so, so könnte der flüchtige Strom des Lichts einer ewigen Finsternis nicht standhalten, und am Ende der Zeit würde alles verwelken in Dunkelheit.",
+      "4": "Das Gesetz der Sterne, das Gesetz des Kosmos, es sollte auf natürliche Weise erhalten bleiben. Allerdings, das Gesetz des Kosmos, nie war es eine Konstante.",
+      "5": "In einer geschlossenen Box obsiegt das Sterben immer über das Entstehen neuen Lebens. Millionen der Jahre des Wohlstandes sind nur ein Wimpernschlag in Milliarden von Jahren. Und der Ruhm, mit dem man sich schmücken kann, wird immer rosten, verfaulen, sich auflösen und schließlich in Vergessenheit geraten.",
+      "6": "Und so vergossen die, die zwischen den Sternen schwebten, die, die zahllose Namen in zahllosen Zivilisationen trugen, für den Moment der verdammten Stille ihre Tränen.",
+      "7": "Ihre Tränen der Verzweiflung, ihre Tränen der Hoffnung, denn alle Verzweiflung und alle Hoffnung, sie werden schließlich zusammen mit den Abermillionen leuchtender Sterne erlöschen.",
+      "8": "Ihre Tränen des Kummers, ihre Tränen des Glücks, denn aller Kummer und alles Glück werden in der kalten, dunklen, endlosen Leere verstreut.",
+      "9": "Alle Gestalten, klein, doch wunderschön, alle Momente, gehütet in Erinnerung, sie alle werden verblassen in der Zeit, ja selbst die Sterne sind nicht gefeit vor ihr.",
+      "10": "Und so kam es, dass das, was dereinst „göttlich“ genannt wurde, entschlossen war, alles zu bewahren, was bewahrt werden sollte, entschlossen, alles zu verschlingen, was verschlungen werden sollte.",
+      "11": "Bis ans Ende der Zeit, bis das Meer einsamer Sterne verbrannt war zu erkalteter Glut, in jenem Moment wird da entstehen eine ganz neue „Welt“, geboren im Leib des Narwals.",
+      "12": "„Keine Sünde mehr, keine Trauer, kein Bedauern, keine Tränen. Denn alles ist längst entschwunden zu den Sternen alter Zeiten.“"
     }
   },
   "SilkFlowerSeed": {
@@ -19944,7 +20520,7 @@
     "name": "Plätschernder Herzfederbarsch",
     "description": {
       "0": "Eine außergewöhnliche Fischart, die von der Seite betrachtet wie ein Herz anmutet. Es wird ihr eine eindeutige Verwandtschaft mit dem Barsch nachgesagt, wobei Gelehrte sie aufgrund ihrer langen federartigen und knorpeligen Bauch- und Rückenflossen treffenderweise als „Herzfederbarsch“ bezeichnen.",
-      "1": "Als einer der wichtigsten Vertreter der Herzfederbarsche verfügt der plätschernde Herzfederbarsch über Schwimmfähigkeiten, die im Widerspruch zu seinem äußeren Erscheinungsbild stehen und dank derer er sich sogar in rauer See fortbewegen kann. Es heißt, dass wenn der Fisch an der Wasseroberfläche erscheint und gegen starke Strömungen anschwimmt, seine einzigartigen Flossen ein plätscherndes Geräusch erzeugen. Die größte Herausforderung stellt das Erkennen dieser Fischart mit seiner Tarnfarbe in blauen Gewässern dar, sodass die meisten Fischer die Gelegenheit versäumt haben, dem außergewöhnlichen Klang mit ihren eigenen Ohren zu lauschen."
+      "1": "Als einer der wichtigsten Vertreter der Herzfederbarsche verfügt der plätschernde Herzfederbarsch über Schwimmfähigkeiten, die im Widerspruch zu seinem äußeren Erscheinungsbild stehen und dank derer er sich sogar in rauer See fortbewegen kann. Es heißt, dass, wenn der Fisch an der Wasseroberfläche erscheint und gegen starke Strömungen anschwimmt, seine einzigartigen Flossen ein plätscherndes Geräusch erzeugen. Die größte Herausforderung stellt das Erkennen dieser Fischart mit seiner Tarnfarbe in blauen Gewässern dar, sodass die meisten Fischer die Gelegenheit versäumt haben, dem außergewöhnlichen Klang mit ihren eigenen Ohren zu lauschen."
     }
   },
   "BlazingHeartfeatherBass": {
@@ -19986,6 +20562,14 @@
       "0": "Eine kompakte Hilfsvorrichtung zur Unterstützung von unter Wasser operierenden Uhrwerk-Mecha und zur Erhöhung der Einsatzquote der Flotte. Sie sollten ursprünglich Rückstände wie Abfall und Pflanzenreste unter Wasser entfernen, damit diese nicht die Schlüsselkomponenten von Uhrwerk-Mecha verstopften.",
       "1": "Bei diesen Platin-Klassikern unter den Unterstützungs-Mecha handelt es um glänzende Gedenkmodelle, die exklusiv vom Entwicklerteam produziert werden. Das Ziel war es, Sponsoren für ihr Projekt zu gewinnen, indem wohlhabenden Händlern diese Modelle als seltene Zierfische geschenkt wurden. Leider scheiterte das Vorhaben, die Pläne wurden über Bord geworfen und die Platin-Klassiker als Spielzeuge verkauft, um den schwindenden finanziellen Mitteln für ihr Projekt entgegenzuwirken.",
       "2": "Letztendlich kam es aufgrund der allseits bekannten Vorfällen zur vollständigen Auflösung des Entwicklerteams und auch Folgeprojekte wurden gestrichen. Derzeit treiben diese Mecha unbewacht in den Gewässern von Fontaine umher, selbst die im Voraus produzierten „Platin-Klassiker“ ereilte ihr Schicksal und sanken auf den Meeresgrund. Heute halten sie den Ruf der markantesten und wertvollsten „Fische“ in den Gewässern von Fontaine inne. Als einige Projekte des Forschungsinstituts der Öffentlichkeit zugänglich gemacht wurden, stürzten sich Reporter des Dampfvogels auf die Materialen, verglichen diese miteinander und führten gründliche Untersuchungen durch. Dabei stellten sie fest, dass „sich der Verschmutzungsgrad in den Gewässern von Fontaine nach der Freisetzung der Unterstützungs-Mecha nicht signifikant geändert hat und die Wirksamkeit des Projekts fraglich ist“. Seitdem schwimmen bis heute die funktionstüchtigen Platin-Klassiker in den Gewässern von Fontaine und Fischer strahlen nur so voller Stolz, wenn sie diesen Fisch in ihrem Besitz willkommen heißen können, denn der Platin-Klassiker gilt als ebenso selten wie die kostbarsten Zierfische anderer Regionen."
+    }
+  },
+  "MaintenanceMekGoldLeader": {
+    "name": "Unterstützungs-Mecha – Goldener Anführer",
+    "description": {
+      "0": "Eine kompakte Hilfsvorrichtung, die zur Unterstützung von unter Wasser operierenden Uhrwerk-Mecha und zur Erhöhung der Einsatzquote der Flotte entwickelt wurde. Das ursprüngliche Ziel des Entwurfs war es, Rückstände wie Abfall und Pflanzenreste unter Wasser zu entfernen, sodass sich diese nicht in Schlüsselkomponenten von Uhrwerk-Mecha festsetzen können, um so deren Ausfallrate möglichst gering zu halten. Aus einem anderen Blickwinkel betrachtet haben sie zweifelsohne die Rolle von „Unterwasser-Reinigungskräften“ übernommen, was für das Ökosystem von Fontaine äußerst förderlich ist.",
+      "1": "Im Vergleich zu anderen Serienmodellen, zeichnet sich dieser spezielle Unterstützungs-Mecha „Goldener Anführer“ durch ein kristallklares, goldfarbenes Gehäuse und ein einzigartiges Steuergerät aus. Den Erwartungen der Entwicklergruppe zufolge sollte dieser Unterstützungs-Mecha bei Einsätzen in komplexen Unterwassergeländen als leistungsstarker „Relais-Kommandant“ die Anweisungen vom Kontrolleur entgegennehmen und an die umliegenden Unterstützungs-Mecha weitergeben. Somit wäre dieser Mecha in der Rolle eines „Anführers“ unentbehrlich gewesen.",
+      "2": "Mit der Einstellung des gesamten Unterstützungs-Mecha-Projekts verloren jedoch diese „Anführer-Mecha“ ihre Bedeutung. Lediglich ihre markante Persönlichkeit und ihr kristallklares, goldfarbenes Aussehen machen sie in den Augen einiger Fischer noch zu begehrten Sammlerstücken."
     }
   },
   "WingsOfFirstFlight": {
@@ -20847,6 +21431,36 @@
       "0": "Dieser wundersame Kristall hat einen gewissen Rhythmus, wie etwas Schönes, das aus zarter Seide gewebt ist. Diese Gegenstände kannst du überall auf dem Festland oder bei Händlern finden, die Einzigartiges sammeln. Die Melodie, die in diesem Kristall enthalten ist, kann in deiner Kanne der Vergänglichkeit durch „Höchste Euphonie – Musik in der Luft“ oder „Höchste Euphonie – Verflochtene Klänge“ wieder zum Leben erweckt werden. In diesem strahlenden Drehkristall ist eine mysteriöse Melodie aus Fontaine enthalten."
     }
   },
+  "RadiantSpincrystal115": {
+    "name": "Strahlender Drehkristall CXV",
+    "description": {
+      "0": "Dieser wundersame Kristall hat einen gewissen Rhythmus, wie etwas Schönes, das aus zarter Seide gewebt ist. Diese Gegenstände kannst du überall auf dem Festland oder bei Händlern finden, die Einzigartiges sammeln. Die Melodie, die in diesem Kristall enthalten ist, kann in deiner Kanne der Vergänglichkeit durch „Höchste Euphonie – Musik in der Luft“ oder „Höchste Euphonie – Verflochtene Klänge“ wieder zum Leben erweckt werden. In diesem strahlenden Drehkristall ist eine mysteriöse Melodie aus Fontaine enthalten."
+    }
+  },
+  "RadiantSpincrystal116": {
+    "name": "Strahlender Drehkristall CXVI",
+    "description": {
+      "0": "Dieser wundersame Kristall hat einen gewissen Rhythmus, wie etwas Schönes, das aus zarter Seide gewebt ist. Diese Gegenstände kannst du überall auf dem Festland oder bei Händlern finden, die Einzigartiges sammeln. Die Melodie, die in diesem Kristall enthalten ist, kann in deiner Kanne der Vergänglichkeit durch „Höchste Euphonie – Musik in der Luft“ oder „Höchste Euphonie – Verflochtene Klänge“ wieder zum Leben erweckt werden. In diesem strahlenden Drehkristall ist eine mysteriöse Melodie aus Fontaine enthalten."
+    }
+  },
+  "RadiantSpincrystal117": {
+    "name": "Strahlender Drehkristall CXVII",
+    "description": {
+      "0": "Dieser wundersame Kristall hat einen gewissen Rhythmus, wie etwas Schönes, das aus zarter Seide gewebt ist. Diese Gegenstände kannst du überall auf dem Festland oder bei Händlern finden, die Einzigartiges sammeln. Die Melodie, die in diesem Kristall enthalten ist, kann in deiner Kanne der Vergänglichkeit durch „Höchste Euphonie – Musik in der Luft“ oder „Höchste Euphonie – Verflochtene Klänge“ wieder zum Leben erweckt werden. In diesem strahlenden Drehkristall ist eine mysteriöse Melodie aus Fontaine enthalten."
+    }
+  },
+  "RadiantSpincrystal118": {
+    "name": "Strahlender Drehkristall CXVIII",
+    "description": {
+      "0": "Dieser wundersame Kristall hat einen gewissen Rhythmus, wie etwas Schönes, das aus zarter Seide gewebt ist. Diese Gegenstände kannst du überall auf dem Festland oder bei Händlern finden, die Einzigartiges sammeln. Die Melodie, die in diesem Kristall enthalten ist, kann in deiner Kanne der Vergänglichkeit durch „Höchste Euphonie – Musik in der Luft“ oder „Höchste Euphonie – Verflochtene Klänge“ wieder zum Leben erweckt werden. In diesem strahlenden Drehkristall ist eine mysteriöse Melodie aus Fontaine enthalten."
+    }
+  },
+  "RadiantSpincrystal119": {
+    "name": "Strahlender Drehkristall CXIX",
+    "description": {
+      "0": "Dieser wundersame Kristall hat einen gewissen Rhythmus, wie etwas Schönes, das aus zarter Seide gewebt ist. Diese Gegenstände kannst du überall auf dem Festland oder bei Händlern finden, die Einzigartiges sammeln. Die Melodie, die in diesem Kristall enthalten ist, kann in deiner Kanne der Vergänglichkeit durch „Höchste Euphonie – Musik in der Luft“ oder „Höchste Euphonie – Verflochtene Klänge“ wieder zum Leben erweckt werden. In diesem strahlenden Drehkristall ist eine mysteriöse Melodie aus Fontaine enthalten."
+    }
+  },
   "LanternFiber": {
     "name": "Laternenpapierfasern",
     "description": {
@@ -20986,7 +21600,7 @@
     "name": "Martens Universalschutzmittel",
     "description": {
       "0": "Objekt zur Verfeinerung von „Schiffer des Fleuve Cendré“.",
-      "1": "Es kann nicht nur eine Schutzschicht auf der Oberfläche eines bestimmten Materials bilden, um Oxidation und Korrosion des Metalls zu verhindern, sondern schmiert, reinigt und poliert auch. Eine Zeitlang erfreute es sich in Fontaine großer Beliebtheit. In der damaligen Werbung verwendete eine legendäre Figur aus Fleuve Cendré es, um das berühmte gebogene Kupferrohr zu pflegen."
+      "1": "Es kann nicht nur eine Schutzschicht auf der Oberfläche eines bestimmten Materials bilden, um Oxidation und Korrosion des Metalls zu verhindern, sondern schmiert, reinigt und poliert auch. Eine Zeit lang erfreute es sich in Fontaine großer Beliebtheit. In der damaligen Werbung verwendete eine legendäre Figur aus Fleuve Cendré es, um das berühmte gebogene Kupferrohr zu pflegen."
     }
   },
   "DandelionBookmark": {
@@ -20994,6 +21608,13 @@
     "description": {
       "0": "Objekt zur Verfeinerung von „Ballade des unendlichen Blaus“.",
       "1": "In zahllosen Gedichten und Erzählungen steht der Löwenzahn für Ungezwungenheit, Unbeschwertheit und Fernweh. Ein Lesezeichen mit dem Motiv eines Löwenzahns in einem Buch zu verwenden, bedeutet in gewissem Sinne keine Einschränkung, sondern ermöglicht es ihm, in einer Welt zu baden, die weiter und heller ist als die Realität."
+    }
+  },
+  "SurgingSacredChalice": {
+    "name": "Aufsteigender Heiliger Kelch",
+    "description": {
+      "0": "Objekt zur Verfeinerung von „Heiliges Schwert des Narzissenkreuzes“.",
+      "1": "Im alten Fontaine wurden Schneckenschalen gern als Zeremonialobjekte verwendet. Dieser aus einer Schneckenschale gefertigte heilige Kelch floss schließlich mit heiligem Öl über. Symbolisch gesehen steht der Kelch für das erste Wort, das heilige Öl für den Willen des Schmiedens und das heilige Schwert für die alles durchbrechende Vernunft."
     }
   },
   "FalconsDance": {
@@ -22529,6 +23150,34 @@
       "1": "Das offizielle Symbol vom Fort Méropide. Es bleibt zu hoffen, dass diejenigen, die die Ordnung respektieren und deren Ziel es ist, den Rest ihres Lebens in Frieden zu verbringen, niemals mit der Organisation, die hinter diesem Symbol steht, in Verbindung gebracht werden."
     }
   },
+  "FurinaBanquet": {
+    "name": "Furina – Festmahl",
+    "description": {
+      "0": "Ein Motiv für Namenskärtchen.",
+      "1": "Kann wirklich einer allein den ganzen Kuchen essen? Oder vielleicht ein Kuchen pro Tag, das würde dann fast für eine Woche reichen, richtig? Aber so lange hält sich Kuchen doch nicht. Hmm ... Na ja, keine Sorge, denn von nun an werden viele Freunde bei diesem Festschmaus Gesellschaft leisten."
+    }
+  },
+  "CharlotteExclusive": {
+    "name": "Charlotte – Exklusiv",
+    "description": {
+      "0": "Ein Motiv für Namenskärtchen.",
+      "1": "„I. Der Exklusivbericht ist fertig, wird mit Sicherheit ein Knüller! II. Die Zeitung meint, dass sich die Lage schnell entwickelt. Es soll stattdessen eine Presseerklärung herausgegeben werden ... III. Der Verfasser der Pressemitteilung wird morgen in der Opéra Épiclèse auf der Anklagebank sitzen, ich bin also wieder am Zug!“"
+    }
+  },
+  "FontaineCompleteness": {
+    "name": "Fontaine – Vervollständigung",
+    "description": {
+      "0": "Ein Motiv für Namenskärtchen.",
+      "1": "„Die Abendwolken zerstreuen sich am dämmernden Himmel, die Bäche fließen golden unter der schwindenden Sonne. Mein einsamer Schatten, wie ein einsamer Geist treibt er am Grund des Stroms.“"
+    }
+  },
+  "TravelNotesWhirlingWaltz": {
+    "name": "Erlebnispass – Wirbeltanz",
+    "description": {
+      "0": "Ein Motiv für Namenskärtchen.",
+      "1": "Auch wenn sich das Uhrwerk nicht mehr dreht, und sich die Puppe nicht mehr vorwärts bewegt. Erinnerungen werden auf ewig zu Korallen. Bitte vergiss niemals die Abenteuer und die Zeit, die wir zusammen verbrachten."
+    }
+  },
   "AnemoculusResonanceStone": {
     "name": "Anemoculus-Resonanzstein",
     "description": {
@@ -23094,6 +23743,19 @@
       "6": "<br/>",
       "7": "„Dieses Gerät ist das Ergebnis von Papas Forschung, und wir nennen ihn aerodynamischer Gel-Blasengenerator ...“",
       "8": "„Blasen! So hübsch! Sooo cool!“"
+    }
+  },
+  "SpecialAnalysisZoomLens": {
+    "name": "„Spezial-Analyse-Zoomobjektiv“",
+    "description": {
+      "0": "Ein innovatives Fotoapparat-Objektivmodul, das zur Verbesserung der „grafischen Erfassung“ entwickelt wurde.",
+      "1": "Nach Ausrüsten des Objektivmoduls erhalten gewöhnliche Fotoapparate einen schnelleren Zoom und Fokus, sodass der Anwender unterwegs noch schnellere und effizientere Schnappschüsse aufnehmen und wertvolle Momente festhalten kann."
+    }
+  },
+  "ImageSamplingKamera": {
+    "name": "Fotoapparat für grafische Proben",
+    "description": {
+      "0": "Dieser Fotoapparat wurde von Lépine-Pauline für die gründliche Untersuchung bei den „Grafischen Gegenmaßnahmen“ modifiziert. Wer weiß schon, was für komplexe und kostspielige Komponenten in seinem Inneren verbaut wurden, um die spezifische Struktur, die Konturen und die farblichen Merkmale des zu fotografierenden Objekts zu erfassen ..."
     }
   },
   "InstructionsAnemoculusResonanceStone": {
@@ -23877,6 +24539,24 @@
       "0": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
     }
   },
+  "TheStarrySkiesTheirFlowersRain": {
+    "name": "Blumenregen des Sternenhimmels",
+    "description": {
+      "0": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+    }
+  },
+  "DiscretionarySupplement": {
+    "name": "Zuschlag für Defizite",
+    "description": {
+      "0": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+    }
+  },
+  "AllThingsAreOfTheEarth": {
+    "name": "Aus der Erde geboren",
+    "description": {
+      "0": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+    }
+  },
   "MagicGuide": {
     "name": "Magieführer",
     "description": {
@@ -24213,6 +24893,18 @@
       "0": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
     }
   },
+  "OceanHuedClam": {
+    "name": "Meeresmuschel",
+    "description": {
+      "0": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+    }
+  },
+  "ShadowOfTheSandKing": {
+    "name": "Schatten des Sandkönigs",
+    "description": {
+      "0": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+    }
+  },
   "LiyueHarborWharf": {
     "name": "Hafen von Liyue",
     "description": {
@@ -24419,6 +25111,12 @@
   },
   "YayoiNanatsuki": {
     "name": "Yayoi Nanatsuki",
+    "description": {
+      "0": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+    }
+  },
+  "StormterrorsLair": {
+    "name": "Dvalins Ruinen",
     "description": {
       "0": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
     }
@@ -24689,6 +25387,18 @@
   },
   "Pankration": {
     "name": "Pankration!",
+    "description": {
+      "0": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+    }
+  },
+  "InEveryHouseAStove": {
+    "name": "Eines jeden Hauses Ofenfeuer",
+    "description": {
+      "0": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+    }
+  },
+  "Lyresong": {
+    "name": "Lied der Zither",
     "description": {
       "0": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
     }
@@ -25855,6 +26565,20 @@
       "1": "Nach der Anwendung im Herstellungsmenü zu finden."
     }
   },
+  "HelloWelcome": {
+    "name": "„Hallo! Willkommen!“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Hallo! Willkommen!“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "ShinyShell": {
+    "name": "„Leuchtemuschel“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Leuchtemuschel“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
   "EfflorescentIllumination": {
     "name": "„Mannigfaltiges Licht der Blütenblätter“",
     "description": {
@@ -26314,6 +27038,13 @@
     "name": "„Robustes“ Bett aus Lindenholz",
     "description": {
       "0": "Bauplan mit detaillierten Schritten zur Herstellung von „‚Robustes‘ Bett aus Lindenholz“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "LindenWoodSweetSlumberBed": {
+    "name": "„Schlaf schön“-Bett aus Lindenholz",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „‚Schlaf schön‘-Bett aus Lindenholz“.",
       "1": "Nach der Anwendung im Herstellungsmenü zu finden."
     }
   },
@@ -27371,6 +28102,27 @@
     "name": "„Sekretärin der Maison Cardinalice“",
     "description": {
       "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Sekretärin der Maison Cardinalice“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "CompactAirSupplyDevice": {
+    "name": "Kompakter Luftversorgungsapparat",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Kompakter Luftversorgungsapparat“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "PassagesStableStorage": {
+    "name": "„Stabile Korridor-Aufbewahrung“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Stabile Korridor-Aufbewahrung“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "ModelContraptionReasonableRoundabout": {
+    "name": "Vorrichtungsmodell – „Versierte Vernunft“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Vorrichtungsmodell – ‚Versierte Vernunft‘“.",
       "1": "Nach der Anwendung im Herstellungsmenü zu finden."
     }
   },
@@ -28711,6 +29463,41 @@
       "1": "Nach der Anwendung im Herstellungsmenü zu finden."
     }
   },
+  "CourtOfJusticesAuthenticity": {
+    "name": "„Wahre Natur der gerechten Vorsehung“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Wahre Natur der gerechten Vorsehung“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "CourtOfJusticesRespect": {
+    "name": "„Ehrfurcht der gerechten Vorsehung“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Ehrfurcht der gerechten Vorsehung“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "SlipperyShack": {
+    "name": "„Rutschige Hütte“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Rutschige Hütte“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "BedroomBedlam": {
+    "name": "„Turbulentes Schlafgemach“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Turbulentes Schlafgemach“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "SmallStonecrab": {
+    "name": "„Kleiner Steinkrebs“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Kleiner Steinkrebs“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
   "BirdAndBlossomDesignFountain": {
     "name": "Springbrunnen mit Blumen- und Vogelmuster",
     "description": {
@@ -28918,6 +29705,34 @@
     "name": "„Tausend flüchtige Visionen von Tau“",
     "description": {
       "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Tausend flüchtige Visionen von Tau“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "LumidouceHarborType05CombineLifter": {
+    "name": "Lumidouce-Hafen-Kombi-Kran Typ 5",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Lumidouce-Hafen-Kombi-Kran Typ 5“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "StandardFluidShippingUnit": {
+    "name": "Allzweck-Flüssigkeitstransporteinheit",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Allzweck-Flüssigkeitstransporteinheit“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "StandardShippingPallet": {
+    "name": "Standard-Transportpalette",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Standard-Transportpalette“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "LargeShippingPallet": {
+    "name": "Große Transportpalette",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Große Transportpalette“.",
       "1": "Nach der Anwendung im Herstellungsmenü zu finden."
     }
   },
@@ -29705,6 +30520,27 @@
       "1": "Nach der Anwendung im Herstellungsmenü zu finden."
     }
   },
+  "CommonCookingDevice": {
+    "name": "Universal-Kochgerät",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Universal-Kochgerät“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "ModelContraptionRepair": {
+    "name": "Vorrichtungsmodell – „Wartung“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Vorrichtungsmodell – ‚Wartung‘“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "ModelContraptionRockcrackerAnchor": {
+    "name": "Vorrichtungsmodell – „Steinbruch-Anker“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Vorrichtungsmodell – ‚Steinbruch-Anker‘“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
   "PottedPlantVerdantVastness": {
     "name": "Topfpflanze – „Kleine Oase“",
     "description": {
@@ -30398,6 +31234,76 @@
       "1": "Nach der Anwendung im Herstellungsmenü zu finden."
     }
   },
+  "LindenWoodHalfMetalAnnouncementBoard": {
+    "name": "Halbmetallische Anschlagtafel aus Lindenholz",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Halbmetallische Anschlagtafel aus Lindenholz“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "YetAnotherDiscussion": {
+    "name": "„Eine weitere Diskussion“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Eine weitere Diskussion“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "CourtOfJusticesTrivia": {
+    "name": "„Anekdoten der gerechten Vorsehung“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Anekdoten der gerechten Vorsehung“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "DuelingSigil": {
+    "name": "„Duell-Abzeichen“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Duell-Abzeichen“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "FurysTorch": {
+    "name": "„Fackel der Gerechtigkeit“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Fackel der Gerechtigkeit“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "SoftWatersVoice": {
+    "name": "„Stimme sanften Wassers“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Stimme sanften Wassers“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "LetsPlay": {
+    "name": "„Lass uns spielen!“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Lass uns spielen!“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "GoodStuffIsForSharing": {
+    "name": "„Gutes muss geteilt werden!“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Gutes muss geteilt werden!“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "SatisfyingWeight": {
+    "name": "„Zufriedenstellendes Gewicht“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Zufriedenstellendes Gewicht“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "ASistersDuty": {
+    "name": "„Einer Schwester Pflicht“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Einer Schwester Pflicht“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
   "PoolOfSapphireGrace": {
     "name": "Geistwolkenbecken",
     "description": {
@@ -30493,6 +31399,20 @@
     "name": "„Barriere der gerechten Vorsehung“",
     "description": {
       "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Barriere der gerechten Vorsehung“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "StandardRailingOrderAndSymmetry": {
+    "name": "Standard-Geländer – „Ordnung und Symmetrie“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Standard-Geländer – ‚Ordnung und Symmetrie‘“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "StandardRailingScatteredStructure": {
+    "name": "Standard-Geländer – „Verstreute Strukturen“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Standard-Geländer – ‚Verstreute Strukturen‘“.",
       "1": "Nach der Anwendung im Herstellungsmenü zu finden."
     }
   },

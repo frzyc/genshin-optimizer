@@ -333,8 +333,6 @@ MIT
 
 @genshin-optimizer/gi-assets
 
-@genshin-optimizer/gi-good
-
 @genshin-optimizer/gi-stats
 
 @genshin-optimizer/gi-svgicons

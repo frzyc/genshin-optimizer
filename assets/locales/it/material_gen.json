@@ -389,6 +389,13 @@
       "0": "Fervore del Galà della poesia Rime d'acqua"
     }
   },
+  "ThelxiesBadge": {
+    "name": "Distintivo di Thelxie",
+    "description": {
+      "0": "Il distintivo dorato di un pinguino, che scintilla di un bagliore metallico. Sembra infondere perseveranza in colui che lo indossa...",
+      "1": "Una preziosa ricompensa che è possibile ottenere nell'evento Le Fantastiche avventure di Thelxie."
+    }
+  },
   "Primogem": {
     "name": "Primogemma",
     "description": {
@@ -1016,6 +1023,14 @@
       "0": "Il Giudice supremo di Fontaine, anche conosciuto come lo Iudex, famoso per la sua incontestabile imparzialità."
     }
   },
+  "Charlotte": {
+    "name": "Charlotte",
+    "description": {}
+  },
+  "Furina": {
+    "name": "Furina",
+    "description": {}
+  },
   "KamisatoAyakasStellaFortuna": {
     "name": "Stella Fortuna di Kamisato Ayaka",
     "description": {
@@ -1458,6 +1473,18 @@
     "name": "Stella Fortuna di Neuvillette",
     "description": {
       "0": "Materiale per l'attivazione della costellazione di Neuvillette"
+    }
+  },
+  "CharlottesStellaFortuna": {
+    "name": "Stella Fortuna di Charlotte",
+    "description": {
+      "0": "Materiale per l'attivazione della costellazione di Charlotte"
+    }
+  },
+  "FurinasStellaFortuna": {
+    "name": "Stella Fortuna di Furina",
+    "description": {
+      "0": "Materiale per l'attivazione della costellazione di Furina"
     }
   },
   "GnosticHymnOldNotes": {
@@ -6473,10 +6500,22 @@
       "0": "Un animale dal corpo soffice che emette una luce delicata. È possibile trovarla mentre si arrampica lungo le mura degli edifici vicino o sotto l'acqua."
     }
   },
+  "LakelightLily": {
+    "name": "Giglio Lagoluce",
+    "description": {
+      "0": "Un fiore azzurro dall'aspetto immacolato, che nasce quando le vene d'acqua confluiscono. Ha un profumo semplice, fresco ed elegante, intenso e corroborante nella sua gentilezza."
+    }
+  },
   "SubdetectionUnit": {
     "name": "Unità di sottorilevazione",
     "description": {
       "0": "Unità di rilevamento prodotte dall'Istituto di ricerca di Fontaine utilizzando nuovi modelli di componenti artificiali. Il suo scopo originale era quello di monitorare tutti i tipi di dati ambientali."
+    }
+  },
+  "SpringOfTheFirstDewdrop": {
+    "name": "Sorgente della prima goccia di rugiada",
+    "description": {
+      "0": "Una goccia di rugiada limpida che fluttua tra le acque della Regione di Morterre. Ha una natura diversa rispetto ad altri corpi d'acqua, essendo un agglomerato di energia elementale ancora più pura e ancestrale."
     }
   },
   "BirchWood": {
@@ -13682,6 +13721,54 @@
       "0": "La specialità di Wriothesley. Poco dopo averlo sentito cacciare i suoi subordinati dicendo \"Uscite subito, la cucina sta per esplodere\", si presenta davanti a te una prelibatezza di carne. Una salsa robusta spalmata sulla pelle leggermente croccante è uno straordinario doppio colpo di delizia, anche se mentre l'assaggi sembra essere praticamente identica a un condimento che è diventato molto popolare di recente..."
     }
   },
+  "SuspiciousLaLettreAFocalors": {
+    "name": "Lettre à Focalors sospetta",
+    "description": {
+      "0": "Una piccola torta di forma rettangolare. Ogni strato sembra avere più o meno lo stesso sapore e... Un momento, ha anche meno strati di quelli che dovrebbe avere! Ai veri intenditori basta un solo morso per capire che la pasticceria che l'ha preparata ha fatto un gran bel... pasticcio."
+    }
+  },
+  "LaLettreAFocalors": {
+    "name": "Lettre à Focalors",
+    "description": {
+      "0": "Una piccola torta di forma rettangolare. Si dice che, molto, molto tempo fa, un certo pasticciere usò il grande amore del popolo di Fontaine verso l'Archon di Hydro come ispirazione per creare questo capolavoro. Gli strati posti accumulati uno sull'altro sono un vero test delle abilità dello chef, e ogni aspetto di questa torta è la prova della straordinaria influenza dell'Archon di Hydro."
+    }
+  },
+  "DeliciousLaLettreAFocalors": {
+    "name": "Lettre à Focalors deliziosa",
+    "description": {
+      "0": "Una piccola torta di forma rettangolare. L'aroma del caffè e delle mandorle ti attira a sé e stimola i tuoi pensieri, dandoti l'impressione di stare assistendo a un'opera stravagante senza nemmeno rendertene conto. Ti ritrovi ad affondare nei meandri di questa sontuosa esibizione, con la speranza che non giunga mai alla fine."
+    }
+  },
+  "SuspiciousBlubberProfiterole": {
+    "name": "Blobboprofiterole sospetto",
+    "description": {
+      "0": "Un dolcetto ripieno di panna. È rimasto a riposo talmente a lungo che la sua crosta, prima friabile, è diventata gommosa e molliccia. È decisamente... diversa dalla consistenza croccante che ti aspettavi. Dopo appena un morso, l'unica cosa che vorresti fare di questo dessert è \"condannarlo a morte\"."
+    }
+  },
+  "BlubberProfiterole": {
+    "name": "Blobboprofiterole",
+    "description": {
+      "0": "Un dolcetto ripieno di panna. La crosta racchiude una ricca farcitura a base di panna. La sua forma tonda, come sul punto di esplodere, la rende adorabile come la pancia di una Blobbofoca. In pochi trovano scampo al fascino del suo denso e dolce cuor di panna."
+    }
+  },
+  "DeliciousBlubberProfiterole": {
+    "name": "Blobboprofiterole delizioso",
+    "description": {
+      "0": "Un dolcetto ripieno di panna. Nel sentire il primo morso che ti attraversa le labbra, non resisti alla tentazione di mangiarlo tutto in un sol boccone! Perfino i resti di panna agli angoli della bocca bastano a infonderti una sensazione di beatitudine completa. Se solo fosse possibile mangiare una tale delizia alla fine di ogni pasto... Ah! Che meravigliosa vita d'avventure sarebbe!"
+    }
+  },
+  "PourLaJustice": {
+    "name": "Iuslatria",
+    "description": {
+      "0": "La specialità di Furina. \"Iuslatria\" a Fontaine significa \"venerazione della giustizia\", e colei che ha calcato i palcoscenici più importanti è anche colei che ha assistito alla nascita della giustizia nella sua forma più sublime. Il suo sapore stratificato sembra espandersi e poi svanire come lo sciabordio delle onde del mare, per poi lasciarsi andare come se si fosse liberato da un pesante fardello. Che sia il riflesso di un'esperienza di colei che l'ha preparato?"
+    }
+  },
+  "ExclusiveScoopGourmetColumn": {
+    "name": "Esclusiva speciale: Rubrica del gastronomo",
+    "description": {
+      "0": "La specialità di Charlotte. Uno spuntino che porta sempre con sé mentre la accompagni nella sua instancabile ricerca di scoop. La osservi saltellare allegramente vicino a te, e il ritmo vivace dei suoi passi quasi si confonde con il suono croccante del pesce fritto nella sua bocca... Anche se questa notizia non ha ancora assunto una forma definitiva, la gioia e l'appagamento nel tuo cuore hanno già raggiunto il culmine."
+    }
+  },
   "RecipeItem": {
     "name": "Ingrediente",
     "description": {
@@ -14704,9 +14791,9 @@
     }
   },
   "RecipeBoudinNoirAuxPommes": {
-    "name": "Ricetta: boudin noir aux pommes",
+    "name": "Ricetta: Boudin noir aux pommes",
     "description": {
-      "0": "Una ricetta passo dopo passo per preparare un boudin noir aux pommes."
+      "0": "Una ricetta passo dopo passo per preparare un Boudin noir aux pommes."
     }
   },
   "RecipeCassoulet": {
@@ -14719,6 +14806,18 @@
     "name": "Ricetta: crêpe Suzette",
     "description": {
       "0": "Una ricetta passo dopo passo per preparare delle crêpe Suzette."
+    }
+  },
+  "RecipeLaLettreAFocalors": {
+    "name": "Ricetta: Lettre à Focalors",
+    "description": {
+      "0": "Una ricetta passo dopo passo per preparare una Lettre à Focalors."
+    }
+  },
+  "RecipeBlubberProfiterole": {
+    "name": "Ricetta: Blobboprofiterole",
+    "description": {
+      "0": "Una ricetta passo dopo passo per preparare un Blobboprofiterole."
     }
   },
   "CraftedItems": {
@@ -16024,6 +16123,35 @@
     "description": {
       "0": "La sezione dell'Ippocampo Perlamillenario che emette energia elettrica ed emblema della sua potenza superiore, ora spezzata in uno scontro contro un potente avversario.",
       "1": "Essendo il maggiore predatore che può nascere dagli ippocampi, l'evoluzione di quest'essere non è la stessa di quella degli altri Aberranti del Fontemer. Non ha avuto inizio da una forma base per poi crescere grande e forte. Ha invece sviluppato arti e un corno che non trovano posto su un normale ippocampo. Anche la muscolatura e lo scheletro sono cambiati. Assomiglia più a una bestia fantastica delle leggende di una volta che alla sua forma originale. Nell'immaginario di poeti e scrittori anche gli ippocampi possono camminare sulla terraferma."
+    }
+  },
+  "LightlessSilkString": {
+    "name": "Filo di seta senza luce",
+    "description": {
+      "0": "Un filo sottile che è rimasto in qualche modo impigliato nella tua arma durante il combattimento contro il Narvalo Divoramondi.",
+      "1": "Nella Fontaine antica alcuni pensavano che Fortuna, che dominava il mondo, avesse infiniti filamenti, come le corde di un'arpa. Corde che risuonano della musica maestosa che porta felicità in tutti i cuori, mentre la discordia distrugge la tela dell'universo."
+    }
+  },
+  "LightlessEyeOfTheMaelstrom": {
+    "name": "Occhio del vortice senza luce",
+    "description": {
+      "0": "Una strana \"sostanza\" ottenuta dallo scontro con il Narvalo Divoramondi. Il suo peso effettivo è superiore a quello previsto, date le sue dimensioni.",
+      "1": "Tutto converge attorno agli oggetti più pesanti, proprio come l'oro attrae più del ferro, o il suolo più della brezza che lo sovrasta. Come la luce non può sfuggire al vortice delle tenebre, causa ed effetto sono vincolati al destino, forse in modo irreversibile."
+    }
+  },
+  "LightlessMass": {
+    "name": "Massa senza luce",
+    "description": {
+      "0": "Un frammento generato dall'intensa battaglia contro il Narvalo Divoramondi.",
+      "1": "L'universo è un luogo buio e freddo.",
+      "2": "Ma osserva con attenzione: al suo interno vi sono sempre deboli bagliori di luce, come perle che brillano nella sabbia, schegge di diamante disseminate sull'asfalto, fari che fendono la nebbia notturna e scintille che divampano vivacemente."
+    }
+  },
+  "WaterThatFailedToTranscend": {
+    "name": "Acqua non trascesa",
+    "description": {
+      "0": "Tutto ciò che resta dei Tulpa di Hydro dopo che si sono dispersi.",
+      "1": "Questa sostanza è molto simile ai cristalli estratti dai corpi degli Aberranti del Fontemer, ma contiene molte impurità di minuscole dimensioni, come le bolle all'interno del vetro lavorato da un artigiano maldestro."
     }
   },
   "TileOfDecarabiansTower": {
@@ -18835,6 +18963,60 @@
       "0": "Un romanzo piacevole piuttosto popolare a Fontaine. Racconta la storia del primo confronto tra Fantomas Robben, il ladro conosciuto come \"Fantasma gentiluomo\", con il famoso detective Chesterton. Attenzione: questa è un'opera di fantasia. Ogni riferimento a persone esistenti o a fatti realmente accaduti è puramente casuale."
     }
   },
+  "TheFallOfTheFadedCastleI": {
+    "name": "Il crollo del Castello sbiadito (I)",
+    "description": {
+      "0": "Un componimento poetico a opera di un autore sconosciuto. Lo stile di scrittura sembra emanare un'aura indecifrabile e nefasta."
+    }
+  },
+  "TheFallOfTheFadedCastleII": {
+    "name": "Il crollo del Castello sbiadito (II)",
+    "description": {
+      "0": "Un componimento poetico a opera di un autore sconosciuto. Lo stile di scrittura sembra emanare un'aura indecifrabile e nefasta."
+    }
+  },
+  "TheFallOfTheFadedCastleIII": {
+    "name": "Il crollo del Castello sbiadito (III)",
+    "description": {
+      "0": "Un componimento poetico a opera di un autore sconosciuto. Lo stile di scrittura sembra emanare un'aura indecifrabile e nefasta."
+    }
+  },
+  "LaChansonDErinnyesI": {
+    "name": "La chanson d'Érinnyes (I)",
+    "description": {
+      "0": "La storia di come l'emissario di re Remus si presentò da Érinnyes, chiedendo in dono l'acqua e la terra del Castello di Aremori, nonché di sottomettersi alla Sumphonia Capitolii. (ovvero \"l'eterna armonia\")."
+    }
+  },
+  "LaChansonDErinnyesII": {
+    "name": "La chanson d'Érinnyes (II)",
+    "description": {
+      "0": "La storia di come i Cavalieri di ogni regione si allearono per offrire la propria forza a Érinnyes, per sventare i piani d'invasione dei Capitoliani."
+    }
+  },
+  "LaChansonDErinnyesIII": {
+    "name": "La chanson d'Érinnyes (III)",
+    "description": {
+      "0": "La storia di come Érinnyes disse addio alla Signora delle Mille Acque, di quando gettò per tre volte la sua spada nel lago."
+    }
+  },
+  "TalesOfASnowWingedGooseI": {
+    "name": "Storia di un'oca dalle ali di neve (I)",
+    "description": {
+      "0": "Una breve fiaba alquanto popolare a Fontaine. Molti bambini, vedendo i magnifici disegni sulla copertina, hanno pensato che sia stata scritta dalla gentile signora oca dalle ali di neve della leggenda in persona."
+    }
+  },
+  "TalesOfASnowWingedGooseII": {
+    "name": "Storia di un'oca dalle ali di neve (II)",
+    "description": {
+      "0": "Una breve fiaba alquanto popolare a Fontaine. Molti bambini, vedendo i magnifici disegni sulla copertina, hanno pensato che sia stata scritta dalla gentile signora oca dalle ali di neve della leggenda in persona."
+    }
+  },
+  "TalesOfASnowWingedGooseIII": {
+    "name": "Storia di un'oca dalle ali di neve (III)",
+    "description": {
+      "0": "Una breve fiaba alquanto popolare a Fontaine. Molti bambini, vedendo i magnifici disegni sulla copertina, hanno pensato che sia stata scritta dalla gentile signora oca dalle ali di neve della leggenda in persona."
+    }
+  },
   "GiftOfParting": {
     "name": "Regalo d'addio",
     "description": {
@@ -19179,6 +19361,63 @@
       "0": "Diario danneggiato"
     }
   },
+  "SirArthursWing": {
+    "name": "Ali di Sir Arthur",
+    "description": {
+      "0": "Delle ali meccaniche appartenute a Sir Arthur.",
+      "1": "Ciò che ha fatto quel criminale è imperdonabile!"
+    }
+  },
+  "SirArthursBody": {
+    "name": "Corpo di Sir Arthur",
+    "description": {
+      "0": "Un corpo meccanico appartenuto a Sir Arthur.",
+      "1": "Ciò che ha fatto quel criminale è imperdonabile!"
+    }
+  },
+  "SirArthursHead": {
+    "name": "Testa di Sir Arthur",
+    "description": {
+      "0": "Una testa meccanica appartenuta a Sir Arthur.",
+      "1": "Ciò che ha fatto quel criminale è imperdonabile!"
+    }
+  },
+  "LeftoverPoissonchantPie": {
+    "name": "Tortino Chanson du poisson avanzato",
+    "description": {
+      "0": "Ha un bell'aspetto, ma potrebbe provocare un bel mal di pancia in seguito..."
+    }
+  },
+  "MysteriousThreatLetter": {
+    "name": "Lettera minatoria misteriosa",
+    "description": {}
+  },
+  "AnotherMysteriousThreatLetter": {
+    "name": "Un'altra lettera minatoria misteriosa",
+    "description": {}
+  },
+  "KevinsLetter": {
+    "name": "Lettera di Kevin",
+    "description": {}
+  },
+  "MessilyWrittenLetter": {
+    "name": "Lettera dal tratto impreciso",
+    "description": {}
+  },
+  "ScribbledOrders": {
+    "name": "Ordini scarabocchiati",
+    "description": {}
+  },
+  "OldPhoto": {
+    "name": "Vecchia foto",
+    "description": {
+      "0": "Foto di gruppo"
+    }
+  },
+  "LetterToTheEditorinChiefDraft": {
+    "name": "Lettera alla caporedattrice (bozza)",
+    "description": {}
+  },
   "Disclaimer": {
     "name": "Avvertenza",
     "description": {}
@@ -19291,6 +19530,12 @@
       "0": "L'\"amuleto\" che Puca ha smarrito nelle profondità della miniera. Affrettati a restituirglielo!"
     }
   },
+  "TalochardsInvestigationNotes": {
+    "name": "Appunti investigativi di Talochard",
+    "description": {
+      "0": "Questi appunti investigativi condivisi da Talochard contengono delle informazioni sullo scomparso Sir Arthur."
+    }
+  },
   "AStory": {
     "name": "Una storia",
     "description": {}
@@ -19299,6 +19544,18 @@
     "name": "Manettino",
     "description": {
       "0": "Una manovella comune usata per regolare le valvole delle tubature attorno a Forte Méropide."
+    }
+  },
+  "MaterialForThelxiesWeapon": {
+    "name": "Materiale per l'arma di Thelxie",
+    "description": {
+      "0": "Un congegno colorato recuperato in acqua. Utile per fabbricare l'arma di Thelxie."
+    }
+  },
+  "MaterialForThelxiesCrown": {
+    "name": "Materiale per la corona di Thelxie",
+    "description": {
+      "0": "Un congegno colorato recuperato in acqua. Utile per fabbricare la corona di Thelxie."
     }
   },
   "EnergyConcentratingComponent": {
@@ -19319,6 +19576,12 @@
   "34thIndependentInvestigativeSquadDeploymentInMontEsusEasternQuadrantDisplinaryProcedures": {
     "name": "34ª squadra investigativa indipendente: procedimenti disciplinari del dispiegamento sul Monte Esus (quadrante orientale)",
     "description": {}
+  },
+  "TravelersExclusiveInterviewHandbook": {
+    "name": "Manuale delle interviste esclusive {F#alla viaggiatrice}{M#al viaggiatore}",
+    "description": {
+      "0": "Una raccolta delle interviste esclusive che Charlotte, la famosa giornalista dell'Uccello a vapore, ha ottenuto {F#dalla famosa viaggiatrice}{M#dal famoso viaggiatore} dai capelli biondi. Dopo un lungo lavoro di riorganizzazione e revisione delle informazioni in essa contenute, ora può essere impiegata per svariati usi, a parte l'essere pubblicata sui giornali."
+    }
   },
   "PoemOnFallenLeaf": {
     "name": "Poesia scritta su una foglia caduta",
@@ -19371,6 +19634,60 @@
   "Notice": {
     "name": "Avviso",
     "description": {}
+  },
+  "LiamsBallad": {
+    "name": "Ballata di Liam",
+    "description": {
+      "0": "Una bottiglia trasparente con un biglietto che contiene le gesta di un tale Liam e un bizzarro disegno sul retro."
+    }
+  },
+  "RockyAvildsensDisappearance": {
+    "name": "Scomparsa di Rocky Avildsen",
+    "description": {
+      "0": "Una bottiglia trasparente con un biglietto che contiene la storia di un certo Rocky Avildsen e un bizzarro disegno sul retro."
+    }
+  },
+  "AthossConfession": {
+    "name": "Confessione di Athos",
+    "description": {
+      "0": "Una bottiglia trasparente con un biglietto che contiene i fatti salienti della vita di un tale Athos e un bizzarro disegno sul retro."
+    }
+  },
+  "ParkersHopes": {
+    "name": "Speranze di Parker",
+    "description": {
+      "0": "Una bottiglia trasparente con un biglietto che contiene le informazioni su un certo Parker e un bizzarro disegno sul retro."
+    }
+  },
+  "BarrowsExpectations": {
+    "name": "Aspettative di Barrow",
+    "description": {
+      "0": "Una bottiglia trasparente con un biglietto che contiene le informazioni su un certo Barrow e un bizzarro disegno sul retro."
+    }
+  },
+  "AutumnsRegrets": {
+    "name": "Rimpianti di Autumn",
+    "description": {
+      "0": "Una bottiglia trasparente con un biglietto che contiene la storia di una certa Autumn e un bizzarro disegno sul retro."
+    }
+  },
+  "RougesWritings": {
+    "name": "Scritti di Rouge",
+    "description": {
+      "0": "Una bottiglia trasparente con un biglietto che contiene le informazioni su un certo Rouge e un bizzarro disegno sul retro."
+    }
+  },
+  "FreemansAnnouncement": {
+    "name": "Annuncio di Freeman",
+    "description": {
+      "0": "Una bottiglia trasparente con un biglietto che contiene gli scritti di un certo Freeman e un bizzarro disegno sul retro."
+    }
+  },
+  "RainbowRosesIdeals": {
+    "name": "Ideali della rosa arcobaleno",
+    "description": {
+      "0": "Un pezzo di carta formato mettendo assieme gli otto biglietti. La combinazione dei disegni sul retro rappresenta una rosa arcobaleno."
+    }
   },
   "LeftSideTableFileBox": {
     "name": "Scatola di documenti sulla scrivania a sinistra",
@@ -19457,6 +19774,37 @@
       "0": "Un \"drink sperimentale\" creato da Heinry. Un tè dolce senza nemmeno una bollicina. Potrei... avere del tè al suo posto?"
     }
   },
+  "DiaryOfAValiantStruggleI": {
+    "name": "Diario di una lotta valorosa (I)",
+    "description": {
+      "0": "Diario di una lotta valorosa (I)"
+    }
+  },
+  "DiaryOfAValiantStruggleII": {
+    "name": "Diario di una lotta valorosa (II)",
+    "description": {
+      "0": "Diario di una lotta valorosa (II)"
+    }
+  },
+  "DiaryOfAValiantStruggleIII": {
+    "name": "Diario di una lotta valorosa (III)",
+    "description": {
+      "0": "Diario di una lotta valorosa (III)"
+    }
+  },
+  "DiaryOfAValiantStruggleIV": {
+    "name": "Diario di una lotta valorosa (IV)",
+    "description": {
+      "0": "Diario di una lotta valorosa (IV)"
+    }
+  },
+  "DiaryOfAValiantStruggle": {
+    "name": "Diario di una lotta valorosa",
+    "description": {
+      "0": "Un resoconto delle esperienze di vita di un uomo ambizioso.",
+      "1": "\"Accoltellate quegli stupidi uccelli! Questo dovrebbe essere un avvertimento sufficiente per loro, giusto?\""
+    }
+  },
   "AcademicAssemblyHallPicture": {
     "name": "Foto della Sala per le riunioni accademiche",
     "description": {
@@ -19487,9 +19835,21 @@
     "name": "Lettera dimenticata",
     "description": {}
   },
+  "SpecialKey": {
+    "name": "Chiave speciale",
+    "description": {
+      "0": "Una chiave speciale, forse utilizzabile in qualche posto."
+    }
+  },
   "FontaineResearchInstituteOfKineticEnergyEngineeringCertificate": {
     "name": "Certificato dell'Istituto di ricerca per l'ingegneria dell'Energia cinetica di Fontaine",
     "description": {}
+  },
+  "TeardropKey": {
+    "name": "Chiave a lacrima",
+    "description": {
+      "0": "Una gemma che ricorda una goccia di pioggia, o una lacrima versata da qualcuno."
+    }
   },
   "TrainingLog": {
     "name": "Diario di allenamento",
@@ -19517,6 +19877,13 @@
       "0": "Una lettera posta tra due Bulle."
     }
   },
+  "ThelxiesFantasticAdventures": {
+    "name": "Le Fantastiche avventure di Thelxie",
+    "description": {
+      "0": "Un libro fantasy per bambini. In tre sole pagine, racconta l'intera storia di un principe che supera la sua solitudine.",
+      "1": "Sul retro del libro, scritto in piccolo, appaiono le seguenti parole: \"Per tutti coloro che sono in difficoltà\"."
+    }
+  },
   "LocationNo1Materials": {
     "name": "Ubicazione materiali 1",
     "description": {
@@ -19533,6 +19900,215 @@
     "name": "Ubicazione materiali 3",
     "description": {
       "0": "I materiali smarriti di Heinry. Chissà che tipo d'ispirazione ne trarrà...?"
+    }
+  },
+  "IridescentGlory": {
+    "name": "Arcobagloria",
+    "description": {
+      "0": "Conchiglie e coralli di varie tonalità e colori. Alcuni dicono che costituiscano il più grande tesoro dei folletti dell'acqua, nonché il vero motivo che li ha portati a costruire il Ponte arcobaleno all'interno del loro Regno..."
+    }
+  },
+  "AureliesNotesI": {
+    "name": "Appunti di Aurélie (I)",
+    "description": {
+      "0": "Appunti di Aurélie (I)"
+    }
+  },
+  "MarvelousJellyImprovedFontaineEdition": {
+    "name": "Gelatina meravigliosa: Edizione di Fontaine migliorata",
+    "description": {
+      "0": "Una bella scatola che ti ha regalato Haniyyah, contenente le gelatine di cui vanno ghiotti i Miconoidi. Ci sono diversi gusti unici, così i Miconoidi possono scegliere in base alle loro preferenze personali.",
+      "1": "Grazie a una migliore conoscenza dei Miconoidi e all'esperienza acquisita, Haniyyah è diventata un'esperta di gusti delle gelatine meravigliose. La versione migliorata non è soltanto più nutriente, ma contiene anche dei gusti speciali di Fontaine. Queste gelatine salutari consentono ai Miconoidi di mangiare sano e vivere bene!"
+    }
+  },
+  "SpinaDiRosulaUniformGiftBox": {
+    "name": "Scatola regalo di un'uniforme della Spina di Rosula",
+    "description": {
+      "0": "Navia ha preparato questo regalo, che contiene un'uniforme della di Rosula, per Adele. Le dimensioni sono un po' grandi per Adele al momento, ma è perfetta per una promessa."
+    }
+  },
+  "StrangelyShapedKey": {
+    "name": "Chiave dalla forma strana",
+    "description": {
+      "0": "Chiave ottenuta da un membro della gang di Romeuf. Sembra che sia necessariia per fermare rapidamente gli esplosivi"
+    }
+  },
+  "RecommendationLetter": {
+    "name": "Lettera di raccomandazione",
+    "description": {
+      "0": "Lettera di raccomandazione"
+    }
+  },
+  "RustyIronKey": {
+    "name": "Chiave di ferro arrugginita",
+    "description": {
+      "0": "Dev'essere caduta a qualcuno. Che serratura aprirà?"
+    }
+  },
+  "Persona": {
+    "name": "\"Personalità\"",
+    "description": {
+      "0": "Uno dei materiali fabbricati necessari per forgiare la Spada sacra di Narzissenkreuz. Ha un peso quasi impercettibile."
+    }
+  },
+  "UnlockedTreasure": {
+    "name": "\"Tesoro\" sbloccato",
+    "description": {
+      "0": "Un antico orologio da tasca.",
+      "1": "Sembra essersi fermato in un momento ben preciso, trasformando quell'istante in un ricordo stupendo ed eterno."
+    }
+  },
+  "AureliesNotesII": {
+    "name": "Appunti di Aurélie (II)",
+    "description": {
+      "0": "Appunti di Aurélie (II)"
+    }
+  },
+  "ANewLifesBeginning": {
+    "name": "L'inizio di una nuova vita",
+    "description": {
+      "0": "Un permesso d'uscita erogato da Forte Méropide. È solo un pezzo di carta, ma a cui è stato dato un nome rincuorante."
+    }
+  },
+  "RootCycle": {
+    "name": "Ciclo originale",
+    "description": {
+      "0": "Una delle chiavi della torre concepite dall'Ordo Narzissenkreuz. Se combinate, le chiavi assumono una forma particolare di tre cerchi e mezzo, per cui esiste una spiegazione apposita.",
+      "1": "Il cerchio interno è il Ciclo di Iperborea, che simboleggia l'epoca della glaciazione del mondo e del paradiso perduto."
+    }
+  },
+  "SimpleVaultKeyI": {
+    "name": "Chiave del tesoro semplice I",
+    "description": {
+      "0": "Una delle chiavi che aprono la grata di ferro sulla nave distrutta."
+    }
+  },
+  "SimpleVaultKeyII": {
+    "name": "Chiave del tesoro semplice II",
+    "description": {
+      "0": "Una delle chiavi che aprono la grata di ferro sulla nave distrutta."
+    }
+  },
+  "SimpleVaultKeyIII": {
+    "name": "Chiave del tesoro semplice III",
+    "description": {
+      "0": "Una delle chiavi che aprono la grata di ferro sulla nave distrutta."
+    }
+  },
+  "FoggyForestBranch": {
+    "name": "Ramo della Foresta nebbiosa",
+    "description": {
+      "0": "Un ramo che scintilla di un bagliore color giada. Sembra avere un misterioso legame col sentiero della Foresta nebbiosa.",
+      "1": "A un'occhiata più attenta, sembra che ci sia qualcosa che scorre al suo interno."
+    }
+  },
+  "FallenBouquet": {
+    "name": "Mazzo di fiori caduto",
+    "description": {
+      "0": "Un mazzo di fiori selvatici in boccio che un tempo qualcuno trattava come un tesoro. Non ha nulla di speciale, a parte il posto in cui è caduto.",
+      "1": "Un po' di gratitudine e di ossequio potrebbe essere la chiave per proseguire."
+    }
+  },
+  "Tripod": {
+    "name": "Tripode",
+    "description": {
+      "0": "Il tripode smarrito da Urville. Una volta asciugato, dovrebbe essere ancora utilizzabile."
+    }
+  },
+  "NadiasToken": {
+    "name": "Amuleto di Nadia",
+    "description": {
+      "0": "Un piccolo ingranaggio. Non sembra avere nulla di particolare."
+    }
+  },
+  "TinyConch": {
+    "name": "Conchiglia piccola",
+    "description": {
+      "0": "Una splendida conchiglia. A Nadia piace da impazzire."
+    }
+  },
+  "DivingSet": {
+    "name": "Attrezzatura da immersione",
+    "description": {
+      "0": "L'attrezzatura da immersione che Urville aveva smarrito. Sembra sia danneggiata in alcuni punti."
+    }
+  },
+  "SunkenCoinPouch": {
+    "name": "Sacchetto di monete affondato",
+    "description": {
+      "0": "Un comunissimo sacchetto pieno di Mora."
+    }
+  },
+  "StrangeMessage": {
+    "name": "Strano messaggio",
+    "description": {
+      "0": "Strano messaggio"
+    }
+  },
+  "MysteriousXenochromaticCrystal": {
+    "name": "Cristallo xenocromatico misterioso",
+    "description": {
+      "0": "Un grosso cristallo ottenuto sconfiggendo i possenti Aberranti del Fontemer nella Regione di Morterre.",
+      "1": "Il potere che contiene è più misterioso di quello dei cristalli xenocromatici comuni.",
+      "2": "Forse qualcuno sarebbe disposto a pagare un giusto prezzo pur di averlo."
+    }
+  },
+  "MapFragment": {
+    "name": "Frammento di mappa",
+    "description": {
+      "0": "Un pezzo di carta danneggiato che sembra la parte inferiore destra di una mappa. Vi sono segnati dei punti e delle linee."
+    }
+  },
+  "SmallKey": {
+    "name": "Piccola chiave",
+    "description": {
+      "0": "Una piccola chiave che può essere usata anche come segnalibro. Perché non è stata confiscata? E come mai una chiave tanto piccina apre una porta così importante?"
+    }
+  },
+  "Notes": {
+    "name": "Appunti",
+    "description": {}
+  },
+  "Description": {
+    "name": "Descrizione",
+    "description": {}
+  },
+  "Storybook": {
+    "name": "Libro di storie",
+    "description": {}
+  },
+  "Certificate": {
+    "name": "Certificato",
+    "description": {}
+  },
+  "InvestigationLog": {
+    "name": "Diario d'esplorazione",
+    "description": {}
+  },
+  "Excerpt": {
+    "name": "Estratto",
+    "description": {}
+  },
+  "Log": {
+    "name": "Diario",
+    "description": {}
+  },
+  "TearsAmongTheStars": {
+    "name": "Lacrime tra le stelle",
+    "description": {
+      "0": "Una goccia d'acqua ottenuta dall'interno della bestia colossale che bramava il Mare primordiale della vita.",
+      "1": "<br/>",
+      "2": "Una volta, un filosofo del lontano mondo antico ipotizzò che dove c'è vita, c'è morte, e che dove c'è morte, c'è vita.",
+      "3": "Se così non fosse, la fugace luce non potrebbe resistere all'oscurità eterna, e tutto appassirebbe nell'inesistenza alla fine dei tempi.",
+      "4": "Le regole tra le stelle impongono che la natura vada conservata, ma le leggi dell'universo non sono mai state preservate.",
+      "5": "In una scatola sigillata, la distruzione sconfigge sempre la vita nuova. Millenni di prosperità non sono altro che un istante in miliardi di anni. Nel tempo, tutti i traguardi più importanti e i successi più gloriosi decadono, si deteriorano, si disperdono e infine cadono nell'oblio.",
+      "6": "Pertanto vi sono cose che fluttuano tra le stelle, un tempo adornate da infiniti titoli prestigiosi di innumerevoli civiltà, che versano lacrime per la loro dipartita predestinata.",
+      "7": "Le loro lacrime scorrono ormai prive di disperazione o speranza, poiché tutta la disperazione e la speranza si estingueranno completamente con le migliaia di stelle.",
+      "8": "Le loro lacrime scorrono ormai prive di dolore e di gioia, poiché il dolore e la gioia si disperderanno nel freddo, oscuro e infinito nulla.",
+      "9": "Ogni minuscola seppur magnifica sagoma e ogni momento degno di essere ricordato svaniranno nel tempo, persino le stelle.",
+      "10": "E poi ci sono questi cosiddetti \"dèi\" che sono determinati a salvare tutto ciò che sia meritevole salvare, e a divorare ogni cosa che vada divorata.",
+      "11": "Fino alla fine dei tempi, fin quando il mare di stelle non sarà regredito in nient'altro che braci morenti, fino al momento in cui un \"mondo\" neonato accennerà i suoi primi movimenti nel ventre della balena.",
+      "12": "\"Non ci saranno più peccati, tristezza, né lacrime, perché sarà tutto morto con le antiche stelle.\""
     }
   },
   "SilkFlowerSeed": {
@@ -19971,6 +20547,14 @@
       "0": "Meka d'assistenza compatti sviluppati per aumentare il tasso d'utilizzo generale delle squadre di Meka, offrendo aiuto per progetti subacquei. Sono stati progettati originariamente per rimuovere immondizia, vegetazione e altri detriti sott'acqua, per impedire il blocco delle parti vitali di altri Mekautomi e minimizzando così i guasti.",
       "1": "Paragonati agli altri modelli prodotti in serie, questi Meka in edizione limitata denominati \"Collettori platinati\" sono molto appariscenti grazie al loro rivestimento pulito e brillante. Nel tentativo di ottenere supporto dai ricchi mercanti, la squadra di sviluppo inviò loro in regalo un acquario contenente uno di questi deliziosi marchingegni. Un regalo davvero pregiato! Ahimè, questa strategia risultò inutile, così la squadra di sviluppo provò a venderli come giocattoli per compensare la mancanza di fondi del progetto.",
       "2": "Alla fine, per via dell'incidente che tutti ricordiamo, la squadra di sviluppo venne sciolta e tutti i progetti futuri furono annullati. Attualmente tutti i restanti Meka manutentori sono incustoditi, compresi i \"Collettori platinati\". Sono stati abbandonati sott'acqua, diventando i \"pesci\" più rari e costosi di Fontaine. Secondo un'indagine approfondita condotta dai giornalisti dell'Uccello a vapore: \"L'utilizzo dei Meka manutentori non ha avuto un impatto significativo sui livelli d'inquinamento delle acque di Fontaine, e l'efficacia del progetto è tutt'ora dubbia\". Ad oggi, i Meka \"Collettori platinati\" superstiti si aggirano nelle acque di Fontaine, e sono considerati delle prede di altissimo valore. Dopotutto, in altre nazioni un Meka \"Collettore platinato\" è considerato il pesce ornamentale più pregiato."
+    }
+  },
+  "MaintenanceMekGoldLeader": {
+    "name": "Meka manutentore: Leader dorato",
+    "description": {
+      "0": "Un aiutante Meka dalla forma compatta, in grado di fornire assistenza durante i progetti sott'acqua. È stato sviluppato per aumentare il tasso di impiego dei gruppi di Meka. Il compito originale di questo tipo di macchinario era quello di rimuovere i rifiuti, la vegetazione e altri detriti sottomarini per evitare che inceppassero le parti vitali di altri Mekautomi, riducendo quindi la percentuale di guasti. Da un altro punto di vista, ha indubbiamente un effetto positivo sull'ecosistema di Fontaine come \"spazzino\" subacqueo.",
+      "1": "Rispetto ai modelli prodotti in serie, questo speciale \"Leader dorato\" vanta un rivestimento d'oro chiaro e un'attrezzatura di controllo speciale. La squadra di sviluppo l'aveva progettato per svolgere il ruolo di stazione ripetitrice per gli ambienti subacquei particolarmente complessi, per ricevere i comandi del supervisore e ritrasmetterli a tutti gli altri Meka del gruppo, svolgendo efficacemente il ruolo di leader.",
+      "2": "Tuttavia, dato che il progetto dei Meka manutentori è stato interrotto, questi leader Meka hanno perso la loro ragion d'essere. Solo il loro vistoso rivestimento color oro chiaro dà loro un valore agli occhi dei pescatori che li collezionano."
     }
   },
   "WingsOfFirstFlight": {
@@ -20832,6 +21416,36 @@
       "0": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è una melodia misteriosa proveniente da Fontaine."
     }
   },
+  "RadiantSpincrystal115": {
+    "name": "Voltacristallo radioso 115",
+    "description": {
+      "0": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero: Sinuosità o Eufonio libero: Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è una melodia misteriosa proveniente da Fontaine."
+    }
+  },
+  "RadiantSpincrystal116": {
+    "name": "Voltacristallo radioso 116",
+    "description": {
+      "0": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero: Sinuosità o Eufonio libero: Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è una melodia misteriosa proveniente da Fontaine."
+    }
+  },
+  "RadiantSpincrystal117": {
+    "name": "Voltacristallo radioso 117",
+    "description": {
+      "0": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero: Sinuosità o Eufonio libero: Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è una melodia misteriosa proveniente da Fontaine."
+    }
+  },
+  "RadiantSpincrystal118": {
+    "name": "Voltacristallo radioso 118",
+    "description": {
+      "0": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero: Sinuosità o Eufonio libero: Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è una melodia misteriosa proveniente da Fontaine."
+    }
+  },
+  "RadiantSpincrystal119": {
+    "name": "Voltacristallo radioso 119",
+    "description": {
+      "0": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero: Sinuosità o Eufonio libero: Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è una melodia misteriosa proveniente da Fontaine."
+    }
+  },
   "LanternFiber": {
     "name": "Fibra per lanterna",
     "description": {
@@ -20978,6 +21592,13 @@
     "description": {
       "0": "Materiale di miglioramento specifico per la Ballata del blu sempiterno.",
       "1": "In molte storie e poesie, i denti di leone sono un simbolo di libertà senza limiti che viaggia verso terre lontane. Collocare un segnalibro con l'immagine di un dente di leone tra le pagine di un volume non è una forma di confinamento; gli dà anzi l'opportunità di vagare in un mondo molto più vasto e luminoso del nostro."
+    }
+  },
+  "SurgingSacredChalice": {
+    "name": "Calice sacro impetuoso",
+    "description": {
+      "0": "Materiale di miglioramento specifico per la Spada di Narzissenkreuz.",
+      "1": "Nell'antica civiltà di Fontaine, le conchiglie erano spesso la prima scelta in fatto di materiali per oggetti rituali, e gli unguenti sacri all'interno di questa conchiglia, scelta come calice santificato, sono finalmente affiorati. Simbolicamente, questo calice rappresenta la parola primordiale, gli oli rappresentano la volontà tenace, e la spada sacra rappresenta la ragione che si fa strada superando qualunque ostacolo."
     }
   },
   "FalconsDance": {
@@ -22510,6 +23131,34 @@
       "1": "Il logo ufficiale di Forte Méropide. Ci auguriamo vivamente che coloro che desiderano onorare l'ordine e condurre una vita pacifica non vengano mai associati all'organizzazione che rappresenta questo simbolo."
     }
   },
+  "FurinaBanquet": {
+    "name": "Furina: Banchetto",
+    "description": {
+      "0": "Stile per la carta giocatore.",
+      "1": "Una persona riuscirebbe a mangiare tutte le torte da sola? Se ne mangiasse una al giorno, forse potrebbe riuscire a gustarsele per circa una settimana, giusto? Ma le torte si conserverebbero tanto a lungo? Mmm... Beh, non temere, gli amici verranno a mangiarle assieme a te."
+    }
+  },
+  "CharlotteExclusive": {
+    "name": "Charlotte: Esclusiva",
+    "description": {
+      "0": "Stile per la carta giocatore.",
+      "1": "\"Primo: ho scritto un'esclusiva che causerà sicuramente parecchio fermento! Secondo: il giornale ha detto che la situazione si sta evolvendo troppo lentamente, quindi opteranno per un comunicato stampa... Terzo: la persona che redigerà il comunicato stampa sarà imputata all'Opéra Épiclèse domani, quindi alla fine hanno deciso di pubblicare il mio articolo!\""
+    }
+  },
+  "FontaineCompleteness": {
+    "name": "Fontaine: Completezza",
+    "description": {
+      "0": "Stile per la carta giocatore.",
+      "1": "\"Le nubi della sera si sparpagliano nel cielo e il ruscello si colora d'oro sotto il sole del tramonto. La mia ombra vaga da sola, simile a un'apparizione malinconica in fondo alla cascata.\""
+    }
+  },
+  "TravelNotesWhirlingWaltz": {
+    "name": "Appunti di viaggio: Valzer vorticoso",
+    "description": {
+      "0": "Stile per la carta giocatore.",
+      "1": "Anche se il meccanismo smetterà di funzionare e le marionette non faranno più un passo. Anche se i nostri ricordi verranno congelati in eterno come il corallo, non dimenticare le nostre avventure e il tempo trascorso assieme."
+    }
+  },
   "AnemoculusResonanceStone": {
     "name": "Pietra di risonanza per Anemoculi",
     "description": {
@@ -23081,6 +23730,19 @@
       "8": "\"Bolle! Che bello! Papà, sei mitico!\""
     }
   },
+  "SpecialAnalysisZoomLens": {
+    "name": "Teleobiettivo per analisi speciali",
+    "description": {
+      "0": "Un nuovo tipo di accessorio per la Fotokamera, sviluppato per aumentare le capacità di riconoscimento delle immagini.",
+      "1": "Dopo aver equipaggiato questo accessorio, una Fotokamera può regolare velocemente la messa a fuoco, permettendole di immortalare fotografie dei viaggi, trasformando rapidamente dei preziosi ricordi in istantanee."
+    }
+  },
+  "ImageSamplingKamera": {
+    "name": "Fotokamera per campionamento grafico",
+    "description": {
+      "0": "Una Fotokamera con delle speciali modifiche effettuate da Lépine-Pauline per l'astrusa disciplina del \"confronto delle immagini\". Non è noto quale tipo di componenti complessi e costosi contenga al suo interno, ma sembra essere in grado di catturare dettagli importanti di chi viene fotografato, fra cui la struttura particolare, il profilo, il colorito..."
+    }
+  },
   "InstructionsAnemoculusResonanceStone": {
     "name": "Istruzioni: pietra di risonanza per Anemoculi",
     "description": {
@@ -23509,7 +24171,7 @@
     }
   },
   "AbyssLectorFathomlessFlames": {
-    "name": "Cantore dell'Abisso Fiamme imperscrutabili",
+    "name": "Cantore dell'Abisso: Fiamme imperscrutabili",
     "description": {
       "0": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
     }
@@ -23862,6 +24524,24 @@
       "0": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
     }
   },
+  "TheStarrySkiesTheirFlowersRain": {
+    "name": "Cieli stellati e piogge di fiori",
+    "description": {
+      "0": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di un materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+    }
+  },
+  "DiscretionarySupplement": {
+    "name": "Supplemento all'occorrenza",
+    "description": {
+      "0": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di un materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+    }
+  },
+  "AllThingsAreOfTheEarth": {
+    "name": "Tutto si origina dalla terra",
+    "description": {
+      "0": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di un materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+    }
+  },
   "MagicGuide": {
     "name": "Manuale di magia",
     "description": {
@@ -24198,6 +24878,18 @@
       "0": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
     }
   },
+  "OceanHuedClam": {
+    "name": "Mollusco oceanico",
+    "description": {
+      "0": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di un materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+    }
+  },
+  "ShadowOfTheSandKing": {
+    "name": "Ombra del re delle sabbie",
+    "description": {
+      "0": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di un materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+    }
+  },
   "LiyueHarborWharf": {
     "name": "Molo del Porto di Liyue",
     "description": {
@@ -24406,6 +25098,12 @@
     "name": "Yayoi Nanatsuki",
     "description": {
       "0": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+    }
+  },
+  "StormterrorsLair": {
+    "name": "Covo di Terrore alato",
+    "description": {
+      "0": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di un materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
     }
   },
   "ElementalResonanceWovenIce": {
@@ -24676,6 +25374,18 @@
     "name": "Pankration!",
     "description": {
       "0": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+    }
+  },
+  "InEveryHouseAStove": {
+    "name": "Un fornello in ogni casa",
+    "description": {
+      "0": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di un materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+    }
+  },
+  "Lyresong": {
+    "name": "Lira poetica",
+    "description": {
+      "0": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di un materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
     }
   },
   "Origin": {
@@ -25844,6 +26554,20 @@
       "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
     }
   },
+  "HelloWelcome": {
+    "name": "Ciao! Ti do il benvenuto!",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare Ciao! Ti do il benvenuto!",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
+  "ShinyShell": {
+    "name": "Conchiglia scintillante",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare Conchiglia scintillante.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
   "EfflorescentIllumination": {
     "name": "Illuminazione in boccio",
     "description": {
@@ -26303,6 +27027,13 @@
     "name": "Letto resistente in legno di tiglio",
     "description": {
       "0": "Un progetto con istruzioni passo dopo passo per realizzare un letto resistente in legno di tiglio.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
+  "LindenWoodSweetSlumberBed": {
+    "name": "Letto Dolce sonno in legno di tiglio",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare un letto Dolce sonno in legno di tiglio.",
       "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
     }
   },
@@ -27360,6 +28091,27 @@
     "name": "Impiegato della Maison Cardinalice",
     "description": {
       "0": "Un progetto con istruzioni passo dopo passo per realizzare Impiegato della Maison Cardinalice.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
+  "CompactAirSupplyDevice": {
+    "name": "Dispositivo compatto per fornitura d'aria",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare un dispositivo compatto per fornitura d'aria.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
+  "PassagesStableStorage": {
+    "name": "Stoccaggio stabile del Passage",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare uno Stoccaggio stabile per disimpegno.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
+  "ModelContraptionReasonableRoundabout": {
+    "name": "Modello di meccanismo Logica apparente",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare un modello di meccanismo Logica apparente.",
       "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
     }
   },
@@ -28700,6 +29452,41 @@
       "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
     }
   },
+  "CourtOfJusticesAuthenticity": {
+    "name": "Autenticità della Corte di Giustizia",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare Autenticità della Corte di Giustizia.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
+  "CourtOfJusticesRespect": {
+    "name": "Rispetto della Corte di Giustizia",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare Rispetto della Corte di Giustizia.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
+  "SlipperyShack": {
+    "name": "Capanna viscosa",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare una Capanna viscosa.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
+  "BedroomBedlam": {
+    "name": "Camera da letto Bailamme",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare una Camera da letto Bailamme.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
+  "SmallStonecrab": {
+    "name": "Granchietto in pietra",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare un Granchietto in pietra.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
   "BirdAndBlossomDesignFountain": {
     "name": "Fontana con fiori e uccelli",
     "description": {
@@ -28907,6 +29694,34 @@
     "name": "Mille effimere visioni di rugiada",
     "description": {
       "0": "Un progetto con istruzioni passo dopo passo per realizzare Mille effimere visioni di rugiada.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
+  "LumidouceHarborType05CombineLifter": {
+    "name": "Elevatore combinato di tipo 5 del Porto Lumidouce",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare un elevatore combinato di tipo 5 del Porto Lumidouce.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
+  "StandardFluidShippingUnit": {
+    "name": "Unità per trasporto di liquidi standard",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare un'unità di trasporto di liquidi standard.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
+  "StandardShippingPallet": {
+    "name": "Bancale per trasporti standard",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare un bancale per trasporti standard.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
+  "LargeShippingPallet": {
+    "name": "Bancale per trasporti grande",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare un bancale per trasporti grande.",
       "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
     }
   },
@@ -29694,6 +30509,27 @@
       "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
     }
   },
+  "CommonCookingDevice": {
+    "name": "Dispositivo di cottura comune",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare un dispositivo di cottura comune.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
+  "ModelContraptionRepair": {
+    "name": "Modello di meccanismo: Riparazione",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare un modello di meccanismo: Riparazione.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
+  "ModelContraptionRockcrackerAnchor": {
+    "name": "Modello di meccanismo: Ancora penetrante",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare un Modello di meccanismo: Ancora penetrante.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
   "PottedPlantVerdantVastness": {
     "name": "Vaso con pianta Immensità verdeggiante",
     "description": {
@@ -30387,6 +31223,76 @@
       "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
     }
   },
+  "LindenWoodHalfMetalAnnouncementBoard": {
+    "name": "Bacheca in legno di tiglio e metallo",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare una bacheca in legno di tiglio e metallo.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
+  "YetAnotherDiscussion": {
+    "name": "Ennesima discussione",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare Ennesima discussione.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
+  "CourtOfJusticesTrivia": {
+    "name": "Quiz della Corte di Giustizia",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare Quiz della Corte di Giustizia.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
+  "DuelingSigil": {
+    "name": "Sigillo dei duelli",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare Sigillo dei duelli.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
+  "FurysTorch": {
+    "name": "Torcia dell'indignazione",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare una Torcia dell'indignazione.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
+  "SoftWatersVoice": {
+    "name": "Voce dell'acqua dolce",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare Voce dell'acqua dolce.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
+  "LetsPlay": {
+    "name": "Giochiamo!",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare Giochiamo!",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
+  "GoodStuffIsForSharing": {
+    "name": "Il buono va condiviso!",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare Il buono va condiviso!",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
+  "SatisfyingWeight": {
+    "name": "Peso soddisfacente",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare Peso soddisfacente.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
+  "ASistersDuty": {
+    "name": "Il dovere di una sorella",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare Il dovere di una sorella.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
   "PoolOfSapphireGrace": {
     "name": "Stagno Grazia mistica",
     "description": {
@@ -30482,6 +31388,20 @@
     "name": "Barriera della Corte di Giustizia",
     "description": {
       "0": "Un progetto con istruzioni passo dopo passo per realizzare una barriera della Corte di Giustizia.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
+  "StandardRailingOrderAndSymmetry": {
+    "name": "Parapetto standard Ordine e simmetria",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare un parapetto standard Ordine e simmetria.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
+  "StandardRailingScatteredStructure": {
+    "name": "Parapetto standard Struttura sparsa",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare un parapetto standard Struttura sparsa.",
       "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
     }
   },
