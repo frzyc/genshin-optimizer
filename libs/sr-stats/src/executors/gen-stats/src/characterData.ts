@@ -63,9 +63,10 @@ export default function characterData() {
         ).map(([pointId, skillTree]) => {
           const { Anchor, PointType, LevelUpSkillID } = skillTree[0]
           const skillId = LevelUpSkillID[0]
-          const skillParamList = skillId
+          const skillConfig = skillId && avatarSkillConfig[skillId]
+          const skillParamList = skillConfig
             ? transposeArray(
-                avatarSkillConfig[skillId].map(({ ParamList }) =>
+                skillConfig.map(({ ParamList }) =>
                   ParamList.map(({ Value }) => Value)
                 )
               )
