@@ -8,7 +8,7 @@ type CatTotalKey = string | number | symbol
 // A helper function to generate multiple `current/total` formated string object with categories using a single callback
 export function bulkCatTotal(
   catTotals: Record<CatTotalKey, readonly CatTotalKey[]>,
-  cb: (ctMap: Record<CatTotalKey, Record<CatTotalKey, Entry>>) => void
+  cb: (ctMap: Partial<Record<CatTotalKey, Record<CatTotalKey, Entry>>>) => void
 ) {
   const ctMap = objMap(catTotals, (keys) => catTotalObj(keys))
   cb(ctMap)
