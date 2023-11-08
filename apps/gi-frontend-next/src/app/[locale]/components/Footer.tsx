@@ -30,7 +30,7 @@ export default function Footer() {
           >
             Genshin Optimizer Version:
             <a
-              href={`${process.env['GITHUB_GO_URL']}/releases`}
+              href={`${process.env['NEXT_PUBLIC_GITHUB_GO_URL']}/releases`}
               target="_blank"
               rel="noreferrer"
             >
