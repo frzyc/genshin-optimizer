@@ -21,7 +21,8 @@
           "buildTarget": "gi-frontend:build-vite:production",
           "hmr": false
         }
-      }
+      },
+      "dependsOn": ["build-vite"]
     },
     "preview": {
       "executor": "@nx/vite:preview-server",
