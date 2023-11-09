@@ -143,6 +143,7 @@ import StaffOfHoma from './StaffOfHoma'
 import StaffOfTheScarletSands from './StaffOfTheScarletSands'
 import SummitShaper from './SummitShaper'
 import SwordOfDescension from './SwordOfDescension'
+import SwordOfNarzissenkreuz from './SwordOfNarzissenkreuz'
 import TalkingStick from './TalkingStick'
 import TheAlleyFlash from './TheAlleyFlash'
 import TheBell from './TheBell'
@@ -321,6 +322,7 @@ const data = {
   StaffOfTheScarletSands,
   SummitShaper,
   SwordOfDescension,
+  SwordOfNarzissenkreuz,
   TalkingStick,
   TheAlleyFlash,
   TheBell,
