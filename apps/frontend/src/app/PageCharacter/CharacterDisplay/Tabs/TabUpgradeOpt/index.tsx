@@ -49,7 +49,7 @@ import useCharSelectionCallback from '../../../../ReactHooks/useCharSelectionCal
 import useTeamData, { getTeamData } from '../../../../ReactHooks/useTeamData'
 import type { DynStat } from '../../../../Solver/common'
 import type { ICachedArtifact } from '../../../../Types/artifact'
-import { objPathValue } from '../../../../Util/Util'
+import { objPathValue, shouldShowDevComponents } from '../../../../Util/Util'
 import MainStatSelectionCard from '../TabOptimize/Components/MainStatSelectionCard'
 import { dynamicData } from '../TabOptimize/foreground'
 import useBuildSetting from '../TabOptimize/useBuildSetting'
@@ -196,8 +196,9 @@ export default function TabUpopt() {
       artSetExclusion,
     } = buildSetting
 
+    if (!shouldShowDevComponents) return
     if (!characterKey || !optimizationTarget) return
-    const teamData = await getTeamData(database, characterKey, 0, [])
+    const teamData = getTeamData(database, characterKey, 0, [])
     if (!teamData) return
     const workerData = uiDataForTeam(teamData.teamData, gender, characterKey)[
       characterKey

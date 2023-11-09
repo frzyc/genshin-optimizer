@@ -69,6 +69,7 @@ import TabTeambuffs from './Tabs/TabTeambuffs'
 import TabTheorycraft from './Tabs/TabTheorycraft'
 import TravelerElementSelect from './TravelerElementSelect'
 import TravelerGenderSelect from './TravelerGenderSelect'
+import { shouldShowDevComponents } from '../../Util/Util'
 
 export default function CharacterDisplay() {
   const navigate = useNavigate()
@@ -232,7 +233,9 @@ function CharacterPanel() {
         <Route path="/teambuffs" element={<TabTeambuffs />} />
         <Route path="/optimize" element={<TabBuild />} />
         <Route path="/theorycraft" element={<TabTheorycraft />} />
-        <Route path="/upopt" element={<TabUpopt />} />
+        {shouldShowDevComponents && (
+          <Route path="/upopt" element={<TabUpopt />} />
+        )}
       </Routes>
     </Suspense>
   )
@@ -291,14 +294,16 @@ function TabNav({ tab }: { tab: string }) {
         component={RouterLink}
         to="theorycraft"
       />
-      <Tab
-        sx={{ minWidth: '16.6%' }}
-        value="upopt"
-        label={t('tabs.upgradeopt')}
-        icon={<TrendingUp />}
-        component={RouterLink}
-        to="upopt"
-      />
+      {shouldShowDevComponents && (
+        <Tab
+          sx={{ minWidth: '16.6%' }}
+          value="upopt"
+          label={t('tabs.upgradeopt')}
+          icon={<TrendingUp />}
+          component={RouterLink}
+          to="upopt"
+        />
+      )}
     </Tabs>
   )
 }
