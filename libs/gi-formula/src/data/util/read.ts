@@ -20,8 +20,9 @@ import {
   constant,
   reread,
 } from '@genshin-optimizer/pando'
-import type { Source, TagMapNodeEntry } from '.'
+import type { Source } from './listing'
 import { entryTypes, members, presets, srcs } from './listing'
+import type { TagMapNodeEntry } from './tagMapType'
 
 export const fixedTags = {
   preset: presets,

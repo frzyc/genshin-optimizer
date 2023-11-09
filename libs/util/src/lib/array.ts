@@ -2,13 +2,17 @@ export function getArrLastElement<E>(arr: E[]): E | null {
   return arr.length ? arr[arr.length - 1] : null
 }
 
-const rangeGen = function* (from: number, to: number): Iterable<number> {
-  for (let i = from; i <= to; i++) yield i
+const rangeGen = function* (
+  from: number,
+  to: number,
+  step: number
+): Iterable<number> {
+  for (let i = from; i <= to; i += step) yield i
 }
 
 /** range of [from, to], inclusive */
-export function range(from: number, to: number): number[] {
-  return [...rangeGen(from, to)]
+export function range(from: number, to: number, step = 1): number[] {
+  return [...rangeGen(from, to, step)]
 }
 
 /** Will change `arr` in-place */

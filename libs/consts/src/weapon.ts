@@ -39,6 +39,7 @@ export const allWeaponSwordKeys = [
   'SilverSword',
   'SkyriderSword',
   'SkywardBlade',
+  'SplendorOfTranquilWaters',
   'SummitShaper',
   'SwordOfDescension',
   'TheAlleyFlash',
@@ -108,6 +109,7 @@ export const allWeaponPolearmKeys = [
   'MissiveWindspear',
   'Moonpiercer',
   'PrimordialJadeWingedSpear',
+  'ProspectorsDrill',
   'PrototypeStarglitter',
   'RightfulReward',
   'RoyalSpear',
@@ -118,7 +120,6 @@ export const allWeaponPolearmKeys = [
   'VortexVanquisher',
   'WavebreakersFin',
   'WhiteTassel',
-  'ProspectorsDrill',
 ] as const
 export type WeaponPoleArmKey = (typeof allWeaponPolearmKeys)[number]
 
