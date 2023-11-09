@@ -49,14 +49,8 @@ type Weapon {
   level: Int!
   ascension: Int!
   refinement: Int!
-  location: String!
+  location: String
   lock: Boolean!
-}
-
-type AddWeaponRes {
-  success: Boolean!
-  weapon: Weapon
-  error: String
 }
 
 type Talent {
@@ -73,12 +67,6 @@ type Character {
   ascension: Int!
   constellation: Int!
   talent: Talent!
-}
-
-type AddCharacterRes {
-  success: Boolean!
-  character: Character
-  error: String
 }
 
 type Query {
@@ -100,8 +88,12 @@ type Mutation {
   addArtifact(genshinUserId: String!, artifact: InputArtifact!): Artifact!
   updateArtifact(genshinUserId: String!, artifact: UpdateArtifact!): Artifact!
   removeArtifact(genshinUserId: String!, artifactId: String!): Artifact!
-  addWeapon(genshinUserId: String!, weapon: InputWeapon!): AddWeaponRes!
-  addCharacter(genshinUserId: String!, character: InputCharacter!): AddCharacterRes!
+  addWeapon(genshinUserId: String!, weapon: InputWeapon!): Weapon!
+  updateWeapon(genshinUserId: String!, weapon: UpdateWeapon!): Weapon!
+  removeWeapon(genshinUserId: String!, weaponId: String!): Weapon!
+  addCharacter(genshinUserId: String!, character: InputCharacter!): Character!
+  updateCharacter(genshinUserId: String!, character: UpdateCharacter!): Character!
+  removeCharacter(genshinUserId: String!, characterId: String!): Character!
 }
 
 input InputArtifact {
@@ -137,8 +129,18 @@ input InputWeapon {
   level: Int!
   ascension: Int!
   refinement: Int!
-  location: String!
+  location: String
   lock: Boolean!
+}
+
+input UpdateWeapon {
+  key: String
+  level: Int
+  ascension: Int
+  refinement: Int
+  location: String
+  lock: Boolean
+  id: ID!
 }
 
 input InputCharacter {
@@ -153,4 +155,12 @@ input InputTalent {
   auto: Int!
   skill: Int!
   burst: Int!
+}
+
+input UpdateCharacter {
+  level: Int
+  ascension: Int
+  constellation: Int
+  talent: InputTalent
+  id: ID!
 }

@@ -1,14 +1,34 @@
-import type { WeaponTypeKey } from '@genshin-optimizer/consts'
+import type {
+  LocationCharacterKey,
+  WeaponTypeKey,
+} from '@genshin-optimizer/consts'
 import { imgAssets, weaponAsset } from '@genshin-optimizer/gi-assets'
+import type { Weapon } from '@genshin-optimizer/gi-frontend-gql'
+import {
+  GetAllUserWeaponDocument,
+  useRemoveWeaponMutation,
+  useUpdateWeaponMutation,
+} from '@genshin-optimizer/gi-frontend-gql'
 import type { IWeapon } from '@genshin-optimizer/gi-good'
 import { WeaponName } from '@genshin-optimizer/gi-ui'
 import { ascensionMaxLevel } from '@genshin-optimizer/gi-util'
-import { CardThemed, StarsDisplay } from '@genshin-optimizer/ui-common'
+import {
+  BootstrapTooltip,
+  CardThemed,
+  StarsDisplay,
+} from '@genshin-optimizer/ui-common'
 import { Lock, LockOpen } from '@mui/icons-material'
-import { Box, IconButton, Skeleton, Typography } from '@mui/material'
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
+import { Box, Button, IconButton, Skeleton, Typography } from '@mui/material'
 import Image from 'next/image'
-import { Suspense } from 'react'
+import type { ReactNode } from 'react'
+import { Suspense, useContext, useEffect, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { ImageIcon } from './ImageIcon'
+import { LocationAutocomplete } from './LocationAutocomplete'
+import LocationName from './LocationName'
+import { UserContext } from './UserDataWrapper'
+import { updateWeaponList } from './gqlUtil'
 import { assetWrapper } from './util'
 
 type WeaponCardProps = {
@@ -79,65 +99,18 @@ export function WeaponCard({
             )
           })}
         </CardContent> */}
-        <Box
-          sx={{
-            p: 1,
-            display: 'flex',
-            gap: 1,
-            justifyContent: 'space-between',
-            alignItems: 'center',
-          }}
-        >
-          <Box sx={{ flexGrow: 1 }}>
-            {/* {disabled ? (
-              <LocationName location={location} />
-            ) : (
-              <LocationAutocomplete
-                location={location}
-                setLocation={setLocation}
-                filter={filter}
-                autoCompleteProps={{ getOptionDisabled: (t) => !t.key }}
-              />
-            )} */}
-          </Box>
-          <Box
-            display="flex"
-            gap={1}
-            alignItems="stretch"
-            height="100%"
-            sx={{ '& .MuiButton-root': { minWidth: 0, height: '100%' } }}
-          >
-            {/* {!!onEdit && (
-              <Tooltip
-                title={<Typography>{t`page_weapon:edit`}</Typography>}
-                placement="top"
-                arrow
-              >
-                <Button color="info" size="small" onClick={() => onEdit(id)}>
-                  <EditIcon />
-                </Button>
-              </Tooltip>
-            )}
-            {!!onDelete && (
-              <Button
-                color="error"
-                size="small"
-                onClick={() => onDelete(id)}
-                disabled={!!location || lock}
-              >
-                <DeleteForeverIcon />
-              </Button>
-            )} */}
-            {extraButtons}
-          </Box>
-        </Box>
+        <Footer
+          weapon={weapon as Weapon}
+          disabled={disabled}
+          extraButtons={extraButtons}
+        />
       </CardThemed>
     </Suspense>
   )
 }
 
 function Header({ weapon, disabled = false }: WeaponCardProps) {
-  const { key, level, ascension, refinement, location = '', lock } = weapon
+  const { key, level, ascension, refinement } = weapon
 
   // TODO:
   // const weaponTypeKey = UIData.get(input.weapon.type).value!
@@ -150,15 +123,7 @@ function Header({ weapon, disabled = false }: WeaponCardProps) {
       className={`grad-${rarity}star`}
       sx={{ position: 'relative', pt: 2, px: 2 }}
     >
-      {!disabled && (
-        <IconButton
-          color="primary"
-          onClick={() => {}} // TODO: lock onclick
-          sx={{ position: 'absolute', right: 0, bottom: 0, zIndex: 2 }}
-        >
-          {lock ? <Lock /> : <LockOpen />}
-        </IconButton>
-      )}
+      <LockButton weapon={weapon as Weapon} disabled={disabled} />
       <Box sx={{ position: 'relative', zIndex: 1 }}>
         <Box
           component="div"
@@ -214,5 +179,190 @@ function Header({ weapon, disabled = false }: WeaponCardProps) {
         />
       </Box>
     </Box>
+  )
+}
+function Footer({
+  weapon,
+  disabled,
+  extraButtons,
+}: {
+  weapon: Weapon
+  disabled: boolean
+  extraButtons: ReactNode
+}) {
+  const { t } = useTranslation('page_weapon')
+  const { lock } = weapon
+  return (
+    <Box
+      sx={{
+        p: 1,
+        display: 'flex',
+        gap: 1,
+        justifyContent: 'space-between',
+        alignItems: 'center',
+      }}
+    >
+      <Box sx={{ flexGrow: 1 }}>
+        <Location weapon={weapon} disabled={disabled} />
+      </Box>
+      <Box
+        display="flex"
+        gap={1}
+        alignItems="stretch"
+        height="100%"
+        sx={{ '& .MuiButton-root': { minWidth: 0, height: '100%' } }}
+      >
+        {/* {!!onEdit && (
+          <Tooltip
+            title={<Typography>{t`page_weapon:edit`}</Typography>}
+            placement="top"
+            arrow
+          >
+            <Button color="info" size="small" onClick={() => onEdit(id)}>
+              <EditIcon />
+            </Button>
+          </Tooltip>
+        )} */}
+        {!disabled && (
+          <BootstrapTooltip
+            title={lock ? t('cantDeleteLock') : ''}
+            placement="top"
+          >
+            <span>
+              <DeleteButton weapon={weapon} />
+            </span>
+          </BootstrapTooltip>
+        )}
+        {extraButtons}
+      </Box>
+    </Box>
+  )
+}
+function Location({ weapon, disabled }: { weapon: Weapon; disabled: boolean }) {
+  const { id } = weapon
+  const [location, setLocation] = useState(
+    weapon.location as LocationCharacterKey | null
+  )
+
+  const { genshinUserId } = useContext(UserContext)
+  const [updateWeaponMutation, { data, loading, error }] =
+    useUpdateWeaponMutation({
+      variables: {
+        genshinUserId,
+        weapon: { id, location },
+      },
+      update(cache, { data }) {
+        const weapon = data?.updateWeapon
+        if (!weapon) return
+        cache.updateQuery(
+          {
+            query: GetAllUserWeaponDocument,
+            variables: {
+              genshinUserId,
+            },
+          },
+          ({ getAllUserWeapon }) => ({
+            getAllUserWeapon: updateWeaponList(getAllUserWeapon, weapon),
+          })
+        )
+      },
+    })
+  useEffect(() => {
+    if (weapon.location === location) return
+    updateWeaponMutation()
+  }, [weapon.location, location, updateWeaponMutation])
+  return disabled ? (
+    <LocationName location={location} />
+  ) : (
+    <LocationAutocomplete location={location} setLocation={setLocation} />
+  )
+}
+function DeleteButton({ weapon }: { weapon: Weapon }) {
+  const { lock, id } = weapon
+  const { genshinUserId } = useContext(UserContext)
+  const [removeWeaponMutation, { data, loading, error }] =
+    useRemoveWeaponMutation({
+      variables: {
+        genshinUserId,
+        weaponId: id,
+      },
+      update(cache, { data }) {
+        const weapon = data?.removeWeapon
+        if (!weapon) return
+        cache.updateQuery(
+          {
+            query: GetAllUserWeaponDocument,
+            variables: {
+              genshinUserId,
+            },
+          },
+          ({ getAllUserWeapon }) => ({
+            getAllUserWeapon: (getAllUserWeapon as Weapon[]).filter(
+              (a) => a.id !== weapon.id
+            ),
+          })
+        )
+      },
+    })
+
+  return (
+    <Button
+      color="error"
+      size="small"
+      onClick={() => removeWeaponMutation()}
+      disabled={lock || loading}
+    >
+      <DeleteForeverIcon />
+    </Button>
+  )
+}
+function LockButton({
+  weapon,
+  disabled,
+}: {
+  weapon: Weapon
+  disabled: boolean
+}) {
+  const { id } = weapon
+  const [lock, setlock] = useState(weapon.lock)
+  const { genshinUserId } = useContext(UserContext)
+  const [updateWeaponMutation, { data, loading, error }] =
+    useUpdateWeaponMutation({
+      variables: {
+        genshinUserId,
+        weapon: { id, lock },
+      },
+
+      update(cache, { data }) {
+        const weapon = data?.updateWeapon
+        if (!weapon) return
+        cache.updateQuery(
+          {
+            query: GetAllUserWeaponDocument,
+            variables: {
+              genshinUserId,
+            },
+          },
+          ({ getAllUserWeapon }) => ({
+            getAllUserWeapon: (getAllUserWeapon as Weapon[]).map((a) =>
+              a.id === id ? { ...a, ...weapon } : a
+            ),
+          })
+        )
+      },
+    })
+  useEffect(() => {
+    if (weapon.lock === lock) return
+    updateWeaponMutation()
+  }, [weapon.lock, lock, updateWeaponMutation])
+  return (
+    <IconButton
+      color="primary"
+      disabled={disabled || loading}
+      onClick={() => setlock((l) => !l)}
+      sx={{ position: 'absolute', right: 0, bottom: 0, zIndex: 2 }}
+    >
+      {lock ? <Lock /> : <LockOpen />}
+    </IconButton>
   )
 }

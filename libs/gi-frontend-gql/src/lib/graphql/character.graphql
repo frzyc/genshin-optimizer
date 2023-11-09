@@ -6,11 +6,21 @@ query getAllUserCharacter($genshinUserId: String!) {
 
 mutation addCharacter($genshinUserId: String!, $character: InputCharacter!) {
   addCharacter(genshinUserId: $genshinUserId, character: $character) {
-    success
-    character {
-      ...CharacterParts
-    }
-    error
+    ...CharacterParts
+  }
+}
+
+mutation updateCharacter(
+  $genshinUserId: String!
+  $character: UpdateCharacter!
+) {
+  updateCharacter(genshinUserId: $genshinUserId, character: $character) {
+    ...CharacterParts
+  }
+}
+mutation removeCharacter($genshinUserId: String!, $characterId: String!) {
+  removeCharacter(genshinUserId: $genshinUserId, characterId: $characterId) {
+    ...CharacterParts
   }
 }
 

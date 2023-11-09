@@ -90,7 +90,7 @@ export default function DesktopHeader({
                   </Box>
                 ) : undefined
               }
-              sx={{ ml: value === 'setting' ? 'auto' : undefined }}
+              sx={{ ml: value === 'login' ? 'auto' : undefined }}
             />
           )
         })}

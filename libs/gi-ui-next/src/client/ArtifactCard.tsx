@@ -60,15 +60,8 @@ import { useTranslation } from 'react-i18next'
 import { LocationAutocomplete } from './LocationAutocomplete'
 import LocationName from './LocationName'
 import { UserContext } from './UserDataWrapper'
-import { updateArtifactList } from './artifactUtil'
+import { updateArtifactList } from './gqlUtil'
 import { assetWrapper } from './util'
-type Data = {
-  artifact: IArtifact
-  mainStatAssumptionLevel?: number
-  effFilter?: Set<SubstatKey>
-  disabled?: boolean
-  extraButtons?: JSX.Element
-}
 const allSubstatFilter = new Set(allSubstatKeys)
 
 const MAX_ART_EFFICIENCY = 9
@@ -79,7 +72,13 @@ export function ArtifactCard({
   effFilter = allSubstatFilter,
   disabled = false,
   extraButtons,
-}: Data): JSX.Element | null {
+}: {
+  artifact: IArtifact
+  mainStatAssumptionLevel?: number
+  effFilter?: Set<SubstatKey>
+  disabled?: boolean
+  extraButtons?: JSX.Element
+}): JSX.Element | null {
   const { t } = useTranslation(['artifact', 'ui'])
   const { setKey, rarity } = artifact
 
@@ -224,10 +223,14 @@ function Header({
   artifact,
   mainStatAssumptionLevel = 0,
   disabled = false,
-}: Data): JSX.Element | null {
+}: {
+  artifact: IArtifact
+  mainStatAssumptionLevel?: number
+  disabled?: boolean
+}): JSX.Element | null {
   const { t } = useTranslation(['artifact', 'ui'])
   const { t: tk } = useTranslation('statKey_gen')
-  const { lock, slotKey, setKey, rarity, level, mainStatKey } = artifact
+  const { slotKey, setKey, rarity, level, mainStatKey } = artifact
 
   const mainStatLevel = Math.max(
     Math.min(mainStatAssumptionLevel, rarity * 4),
@@ -243,16 +246,7 @@ function Header({
       className={`grad-${rarity}star`}
       sx={{ position: 'relative', width: '100%' }}
     >
-      {!disabled && (
-        <IconButton
-          color="primary"
-          disabled={disabled}
-          onClick={() => {}} // TODO: lock onclick
-          sx={{ position: 'absolute', right: 0, bottom: 0, zIndex: 2 }}
-        >
-          {lock ? <Lock /> : <LockOpen />}
-        </IconButton>
-      )}
+      <LockButton artifact={artifact as Artifact} disabled={disabled} />
       <Box sx={{ pt: 2, px: 2, position: 'relative', zIndex: 1 }}>
         {/* header */}
         <Box
@@ -434,38 +428,7 @@ function Footer({
   extraButtons: ReactNode
 }) {
   const { t } = useTranslation('artifact')
-  const { id, location: baseLocation, lock } = artifact
-  const [location, setLocation] = useState(
-    baseLocation as LocationCharacterKey | null
-  )
-
-  const { genshinUserId } = useContext(UserContext)
-  const [updateArtifactMutation, { data, loading, error }] =
-    useUpdateArtifactMutation({
-      variables: {
-        genshinUserId,
-        artifact: { id, location },
-      },
-      update(cache, { data }) {
-        const art = data?.updateArtifact
-        if (!art) return
-        cache.updateQuery(
-          {
-            query: GetAllUserArtifactDocument,
-            variables: {
-              genshinUserId,
-            },
-          },
-          ({ getAllUserArtifact }) => ({
-            getAllUserArtifact: updateArtifactList(getAllUserArtifact, art),
-          })
-        )
-      },
-    })
-  useEffect(() => {
-    if (baseLocation === location) return
-    updateArtifactMutation()
-  }, [baseLocation, location, updateArtifactMutation])
+  const { lock } = artifact
   return (
     <Box
       sx={{
@@ -477,11 +440,7 @@ function Footer({
       }}
     >
       <Box sx={{ flexGrow: 1 }}>
-        {disabled ? (
-          <LocationName location={location} />
-        ) : (
-          <LocationAutocomplete location={location} setLocation={setLocation} />
-        )}
+        <Location artifact={artifact} disabled={disabled} />
       </Box>
       <Box
         display="flex"
@@ -515,6 +474,51 @@ function Footer({
         {extraButtons}
       </Box>
     </Box>
+  )
+}
+function Location({
+  artifact,
+  disabled,
+}: {
+  artifact: Artifact
+  disabled: boolean
+}) {
+  const { id } = artifact
+  const [location, setLocation] = useState(
+    artifact.location as LocationCharacterKey | null
+  )
+
+  const { genshinUserId } = useContext(UserContext)
+  const [updateArtifactMutation, { data, loading, error }] =
+    useUpdateArtifactMutation({
+      variables: {
+        genshinUserId,
+        artifact: { id, location },
+      },
+      update(cache, { data }) {
+        const art = data?.updateArtifact
+        if (!art) return
+        cache.updateQuery(
+          {
+            query: GetAllUserArtifactDocument,
+            variables: {
+              genshinUserId,
+            },
+          },
+          ({ getAllUserArtifact }) => ({
+            getAllUserArtifact: updateArtifactList(getAllUserArtifact, art),
+          })
+        )
+      },
+    })
+  useEffect(() => {
+    if (artifact.location === location) return
+    updateArtifactMutation()
+  }, [artifact.location, location, updateArtifactMutation])
+  return disabled ? (
+    <LocationName location={location} />
+  ) : (
+    <LocationAutocomplete location={location} setLocation={setLocation} />
   )
 }
 function DeleteButton({ artifact }: { artifact: Artifact }) {
@@ -554,5 +558,55 @@ function DeleteButton({ artifact }: { artifact: Artifact }) {
     >
       <DeleteForeverIcon />
     </Button>
+  )
+}
+function LockButton({
+  artifact,
+  disabled,
+}: {
+  artifact: Artifact
+  disabled: boolean
+}) {
+  const { id } = artifact
+  const [lock, setlock] = useState(artifact.lock)
+  const { genshinUserId } = useContext(UserContext)
+  const [updateArtifactMutation, { data, loading, error }] =
+    useUpdateArtifactMutation({
+      variables: {
+        genshinUserId,
+        artifact: { id, lock },
+      },
+
+      update(cache, { data }) {
+        const art = data?.updateArtifact
+        if (!art) return
+        cache.updateQuery(
+          {
+            query: GetAllUserArtifactDocument,
+            variables: {
+              genshinUserId,
+            },
+          },
+          ({ getAllUserArtifact }) => ({
+            getAllUserArtifact: (getAllUserArtifact as Artifact[]).map((a) =>
+              a.id === id ? { ...a, ...art } : a
+            ),
+          })
+        )
+      },
+    })
+  useEffect(() => {
+    if (artifact.lock === lock) return
+    updateArtifactMutation()
+  }, [artifact.lock, lock, updateArtifactMutation])
+  return (
+    <IconButton
+      color="primary"
+      disabled={disabled || loading}
+      onClick={() => setlock((l) => !l)}
+      sx={{ position: 'absolute', right: 0, bottom: 0, zIndex: 2 }}
+    >
+      {lock ? <Lock /> : <LockOpen />}
+    </IconButton>
   )
 }

@@ -59,8 +59,8 @@ const doc: ITab = {
 const setting: ITab = {
   i18Key: 'tabs.setting',
   icon: <Settings />,
-  to: (l) => `/${l}/setting`,
-  value: 'setting',
+  to: (l) => `/${l}/login`,
+  value: 'login',
   textSuffix: <DBChip />,
 }
 

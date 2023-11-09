@@ -29,11 +29,7 @@ export class ArtifactResolver {
     inputArtifact: InputArtifact
   ): Promise<Artifact> {
     this.genshinUserService.validateGenshinUser(userId, genshinUserId)
-    const artifact = await this.artifactService.create(
-      inputArtifact,
-      genshinUserId
-    )
-    return artifact
+    return this.artifactService.create(inputArtifact, genshinUserId)
   }
 
   @Mutation(() => Artifact)

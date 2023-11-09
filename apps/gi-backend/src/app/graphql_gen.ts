@@ -41,8 +41,18 @@ export interface InputWeapon {
     level: number;
     ascension: number;
     refinement: number;
-    location: string;
+    location?: Nullable<string>;
     lock: boolean;
+}
+
+export interface UpdateWeapon {
+    key?: Nullable<string>;
+    level?: Nullable<number>;
+    ascension?: Nullable<number>;
+    refinement?: Nullable<number>;
+    location?: Nullable<string>;
+    lock?: Nullable<boolean>;
+    id: string;
 }
 
 export interface InputCharacter {
@@ -57,6 +67,14 @@ export interface InputTalent {
     auto: number;
     skill: number;
     burst: number;
+}
+
+export interface UpdateCharacter {
+    level?: Nullable<number>;
+    ascension?: Nullable<number>;
+    constellation?: Nullable<number>;
+    talent?: Nullable<InputTalent>;
+    id: string;
 }
 
 export interface GenshinUser {
@@ -106,14 +124,8 @@ export interface Weapon {
     level: number;
     ascension: number;
     refinement: number;
-    location: string;
+    location?: Nullable<string>;
     lock: boolean;
-}
-
-export interface AddWeaponRes {
-    success: boolean;
-    weapon?: Nullable<Weapon>;
-    error?: Nullable<string>;
 }
 
 export interface Talent {
@@ -130,12 +142,6 @@ export interface Character {
     ascension: number;
     constellation: number;
     talent: Talent;
-}
-
-export interface AddCharacterRes {
-    success: boolean;
-    character?: Nullable<Character>;
-    error?: Nullable<string>;
 }
 
 export interface IQuery {
@@ -157,8 +163,12 @@ export interface IMutation {
     addArtifact(genshinUserId: string, artifact: InputArtifact): Artifact | Promise<Artifact>;
     updateArtifact(genshinUserId: string, artifact: UpdateArtifact): Artifact | Promise<Artifact>;
     removeArtifact(genshinUserId: string, artifactId: string): Artifact | Promise<Artifact>;
-    addWeapon(genshinUserId: string, weapon: InputWeapon): AddWeaponRes | Promise<AddWeaponRes>;
-    addCharacter(genshinUserId: string, character: InputCharacter): AddCharacterRes | Promise<AddCharacterRes>;
+    addWeapon(genshinUserId: string, weapon: InputWeapon): Weapon | Promise<Weapon>;
+    updateWeapon(genshinUserId: string, weapon: UpdateWeapon): Weapon | Promise<Weapon>;
+    removeWeapon(genshinUserId: string, weaponId: string): Weapon | Promise<Weapon>;
+    addCharacter(genshinUserId: string, character: InputCharacter): Character | Promise<Character>;
+    updateCharacter(genshinUserId: string, character: UpdateCharacter): Character | Promise<Character>;
+    removeCharacter(genshinUserId: string, characterId: string): Character | Promise<Character>;
 }
 
 type Nullable<T> = T | null;

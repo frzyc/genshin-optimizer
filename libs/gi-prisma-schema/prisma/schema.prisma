@@ -98,7 +98,7 @@ model Artifact {
   lock          Boolean
   substats      Substat[]
 
-  // Each artifact can only be equipped to the same char (multiple location:null are allowed)
+  // Char can have only one art equipped per slotKey (multiple location:null are allowed)
   @@unique([genshinUserId, slotKey, location])
 }
 
@@ -114,9 +114,12 @@ model Weapon {
   key           String
   level         Int
   ascension     Int
-  refinement     Int
-  location      String
+  refinement    Int
+  location      String?
   lock          Boolean
+
+  // Char can only have one weapon equipped (multiple location:null are allowed)
+  @@unique([genshinUserId, location])
 }
 
 model Character {
@@ -128,6 +131,7 @@ model Character {
   ascension     Int
   constellation Int
   talent        Talent
+
   @@unique([genshinUserId, key])
 }
 

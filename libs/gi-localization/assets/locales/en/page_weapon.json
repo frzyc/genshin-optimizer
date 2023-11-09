@@ -4,5 +4,6 @@
   "edit": "Edit Weapon",
   "weaponName": "Weapon Name",
   "removeWeapon": "Are you sure you want to remove {{value}}?",
-  "addWeapon": "Add New Weapon"
+  "addWeapon": "Add New Weapon",
+  "cantDeleteLock": "Cannot delete artifact because it is locked"
 }

@@ -1,9 +1,11 @@
+import type { CharacterKey } from '@genshin-optimizer/consts'
 import type { Character } from '@genshin-optimizer/gi-frontend-gql'
 import {
   GetAllUserCharacterDocument,
   useAddCharacterMutation,
 } from '@genshin-optimizer/gi-frontend-gql'
 import { randomizeCharacter } from '@genshin-optimizer/gi-util'
+import { getRandomElementFromArray } from '@genshin-optimizer/util'
 import { Button } from '@mui/material'
 
 export default function AddCharacterButton({
@@ -15,11 +17,17 @@ export default function AddCharacterButton({
     useAddCharacterMutation({
       variables: {
         genshinUserId,
-        character: randomizeCharacter(),
+        character: randomizeCharacter({
+          // Only a small subset of characters have been added to gi-formula
+          key: getRandomElementFromArray([
+            'Candace',
+            'Nahida',
+            'Nilou',
+          ] as CharacterKey[]),
+        }),
       },
       update(cache, { data }) {
-        if (!data?.addCharacter.success) return
-        const char = data?.addCharacter.character
+        const char = data?.addCharacter
         if (!char) return
         cache.updateQuery(
           {
