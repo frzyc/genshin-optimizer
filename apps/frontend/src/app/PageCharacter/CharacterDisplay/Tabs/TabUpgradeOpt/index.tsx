@@ -295,13 +295,7 @@ export default function TabUpopt() {
       workerData,
       ({ path: [p] }) => p !== 'dyn'
     )
-    const upoptCalc = new UpOptCalculator(
-      nodes,
-      [-Infinity, ...valueFilter.map((x) => x.minimum)],
-      curEquip
-    )
-    upoptCalc.calc4th = check4th
-    database.arts.values
+    const artifactsToConsider = database.arts.values
       .filter((art) => art.rarity === 5)
       .filter(respectSexExclusion)
       .filter((art) => show20 || art.level !== 20)
@@ -315,7 +309,14 @@ export default function TabUpopt() {
         (art) =>
           !useFilters || (levelLow <= art.level && art.level <= levelHigh)
       )
-      .forEach((art) => upoptCalc.addArtifact(art))
+
+    const upoptCalc = new UpOptCalculator(
+      nodes,
+      [-Infinity, ...valueFilter.map((x) => x.minimum)],
+      curEquip,
+      artifactsToConsider
+    )
+    upoptCalc.calc4th = check4th
     upoptCalc.calcFastAll()
     upoptCalc.calcSlowToIndex(5)
     setUpOptCalc(upoptCalc)
