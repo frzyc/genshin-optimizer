@@ -120,7 +120,6 @@ export const allWeaponPolearmKeys = [
   'VortexVanquisher',
   'WavebreakersFin',
   'WhiteTassel',
-  'ProspectorsDrill',
 ] as const
 export type WeaponPoleArmKey = (typeof allWeaponPolearmKeys)[number]
 
