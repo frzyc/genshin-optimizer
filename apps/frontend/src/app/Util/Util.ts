@@ -135,4 +135,4 @@ export function cartesian<T>(...q: T[][]): T[][] {
  */
 export const shouldShowDevComponents =
   process.env.NODE_ENV === 'development' ||
-  process.env.NX_SHOW_DEV_COMPONENTS === 'true'
+  process.env.NX_SHOW_DEV_COMPONENTS === true
