@@ -24,8 +24,8 @@ on:
         type: string
       show_dev_components:
         description: 'Flag to show components typically only shown in development mode, for experimental or in-progress features.'
-        type: boolean
-        default: false
+        type: string
+        default: 'false'
 
 jobs:
   deploy:
