@@ -85,7 +85,8 @@
           "buildTarget": "frontend:build-webpack:production",
           "hmr": false
         }
-      }
+      },
+      "dependsOn": ["build-webpack"]
     },
     "lint": {},
     "test": {}
