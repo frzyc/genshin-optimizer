@@ -1,5 +1,15 @@
 import type { Tag } from '../tag'
 
+type DebugMode = boolean
+
+let debugMode = false
+export function setDebugMode(mode: DebugMode) {
+  debugMode = mode
+}
+export function isDebug(_: 'calc' | 'tag_db'): boolean {
+  return debugMode
+}
+
 export function assertUnreachable(value: never): never {
   throw new Error(`Should not reach this with value ${value}`)
 }
