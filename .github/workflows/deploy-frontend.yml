@@ -50,11 +50,9 @@ jobs:
         env:
           ENVFILE: ${{ secrets.ENVFILE }}
       - name: Output date
-        if: ${{ inputs.deployment_name }} != "beta"
         id: output-date
         run: echo "date=$(date -u)" >> $GITHUB_OUTPUT
       - name: Maintain comment
-        if: ${{ inputs.deployment_name }} != "beta"
         uses: actions-cool/maintain-one-comment@v3
         with:
           body: |
@@ -100,21 +98,19 @@ jobs:
           max_attempts: 4
           timeout_minutes: 4
           command: |
-            git pull
+            cd gh-pages
+            git pull origin gh-pages
             git push origin gh-pages
       - name: Export url
-        if: ${{ inputs.deployment_name }} != "beta"
         id: export-url
         run: |
           IFS=/ read -r account repo <<< ${{ inputs.pr_repo }}
           echo "url=Deployed $(git rev-parse HEAD) to https://$account.github.io/$repo/${{ inputs.deployment_name }}/${{ inputs.frontend_name }} (Takes 3-5 minutes after this completes to be available)" >> $GITHUB_OUTPUT
           echo "Deployed $(git rev-parse HEAD) to https://$account.github.io/$repo/${{ inputs.deployment_name }}/${{ inputs.frontend_name }} (Takes 3-5 minutes after this completes to be available)"
       - name: Output date
-        if: ${{ inputs.deployment_name }} != "beta"
         id: output-date2
         run: echo "date=$(date -u)" >> $GITHUB_OUTPUT
       - name: Maintain comment
-        if: ${{ inputs.deployment_name }} != "beta"
         uses: actions-cool/maintain-one-comment@v3
         with:
           body: |
