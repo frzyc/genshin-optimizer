@@ -5,6 +5,11 @@ on:
     branches:
       - master
 
+# Only allow the most recent run of beta release to complete, if multiple are queued.
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: true
+
 jobs:
   call-deploy-frontend:
     uses: ./.github/workflows/deploy-frontend.yml
