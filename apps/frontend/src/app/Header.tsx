@@ -166,9 +166,6 @@ function HeaderContent({ anchor }: { anchor: string }) {
   } = useMatch({ path: '/:currentTab', end: false }) ?? {
     params: { currentTab: '' },
   }
-  console.log(process.env)
-  console.log(process.env.NX_SHOW_DEV_COMPONENTS)
-  console.log(shouldShowDevComponents)
   if (isMobile)
     return <MobileHeader anchor={anchor} currentTab={currentTab ?? ''} />
   return (
