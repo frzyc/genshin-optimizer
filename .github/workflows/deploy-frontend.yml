@@ -100,7 +100,8 @@ jobs:
           max_attempts: 4
           timeout_minutes: 4
           command: |
-            git pull
+            cd gh-pages
+            git pull origin gh-pages
             git push origin gh-pages
       - name: Export url
         if: ${{ inputs.deployment_name }} != "beta"
