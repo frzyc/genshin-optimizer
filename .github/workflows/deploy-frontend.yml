@@ -71,7 +71,7 @@ jobs:
         run: |
           NX_URL_GITHUB_GO_CURRENT_VERSION="https://github.com/${{ inputs.repo_full_name }}/commit/$(git rev-parse HEAD)" \
           NX_DAEMON="false" \
-          NX_SHOW_DEV_COMPONENTS="${{inputs.show_dev_components}}"
+          NX_SHOW_DEV_COMPONENTS="${{inputs.show_dev_components}}" \
           yarn run nx run ${{inputs.frontend_name}}:build-vite:production --base-href=""
       - name: Checkout external gh-pages
         uses: actions/checkout@v3
@@ -89,6 +89,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config pull.rebase false
           git add ./${{ inputs.deployment_name }}/${{ inputs.frontend_name }}
           git commit --allow-empty -m "build ${{ inputs.deployment_name }}/${{ inputs.frontend_name }} ${{ inputs.repo_full_name }}@$(cd .. && git rev-parse HEAD)"
         working-directory: gh-pages
