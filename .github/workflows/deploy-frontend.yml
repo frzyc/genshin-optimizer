@@ -32,9 +32,6 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
-      - name: Wait 15 seconds for mergeability check
-        run: |
-          sleep 15s
       - name: Checkout
         uses: actions/checkout@v3
         with:
@@ -53,9 +50,11 @@ jobs:
         env:
           ENVFILE: ${{ secrets.ENVFILE }}
       - name: Output date
+        if: ${{ inputs.deployment_name }} != "beta"
         id: output-date
         run: echo "date=$(date -u)" >> $GITHUB_OUTPUT
       - name: Maintain comment
+        if: ${{ inputs.deployment_name }} != "beta"
         uses: actions-cool/maintain-one-comment@v3
         with:
           body: |
@@ -67,14 +66,14 @@ jobs:
         run: |
           NX_URL_GITHUB_GO_CURRENT_VERSION="https://github.com/${{ inputs.repo_full_name }}/commit/$(git rev-parse HEAD)" \
           NX_DAEMON="false" \
-          NX_SHOW_DEV_COMPONENTS=${{inputs.show_dev_components}}
+          NX_SHOW_DEV_COMPONENTS="${{inputs.show_dev_components}}"
           yarn run nx run ${{inputs.frontend_name}}:build-webpack:production --base-href=""
       - name: Build genshin-optimizer (Vite)
         if: inputs.frontend_name == 'gi-frontend' || inputs.frontend_name == 'sr-frontend'
         run: |
           NX_URL_GITHUB_GO_CURRENT_VERSION="https://github.com/${{ inputs.repo_full_name }}/commit/$(git rev-parse HEAD)" \
           NX_DAEMON="false" \
-          NX_SHOW_DEV_COMPONENTS=${{inputs.show_dev_components}}
+          NX_SHOW_DEV_COMPONENTS="${{inputs.show_dev_components}}"
           yarn run nx run ${{inputs.frontend_name}}:build-vite:production --base-href=""
       - name: Checkout external gh-pages
         uses: actions/checkout@v3
@@ -97,15 +96,18 @@ jobs:
           git push origin gh-pages
         working-directory: gh-pages
       - name: Export url
+        if: ${{ inputs.deployment_name }} != "beta"
         id: export-url
         run: |
           IFS=/ read -r account repo <<< ${{ inputs.pr_repo }}
           echo "url=Deployed $(git rev-parse HEAD) to https://$account.github.io/$repo/${{ inputs.deployment_name }}/${{ inputs.frontend_name }} (Takes 3-5 minutes after this completes to be available)" >> $GITHUB_OUTPUT
           echo "Deployed $(git rev-parse HEAD) to https://$account.github.io/$repo/${{ inputs.deployment_name }}/${{ inputs.frontend_name }} (Takes 3-5 minutes after this completes to be available)"
       - name: Output date
+        if: ${{ inputs.deployment_name }} != "beta"
         id: output-date2
         run: echo "date=$(date -u)" >> $GITHUB_OUTPUT
       - name: Maintain comment
+        if: ${{ inputs.deployment_name }} != "beta"
         uses: actions-cool/maintain-one-comment@v3
         with:
           body: |
