@@ -4,7 +4,7 @@
   "sourceRoot": "libs/gi-stats/src",
   "projectType": "library",
   "targets": {
-    "gen-file": {
+    "genfile": {
       "executor": "@genshin-optimizer/gi-stats:gen-stats",
       "outputs": [
         "{projectRoot}/Data/**/*",

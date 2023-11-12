@@ -4,7 +4,7 @@
   "sourceRoot": "libs/silly-wisher-names/src",
   "projectType": "library",
   "targets": {
-    "gen-file": {
+    "genfile": {
       "executor": "@genshin-optimizer/silly-wisher-names:gen-assets",
       "outputs": ["{projectRoot}/assets/locales", "{projectRoot}/Translated"]
     },
