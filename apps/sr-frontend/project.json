@@ -23,7 +23,7 @@
           "hmr": false
         }
       },
-      "dependsOn": ["build-vite"]
+      "dependsOn": ["^gen-file"]
     },
     "preview": {
       "executor": "@nx/vite:preview-server",
