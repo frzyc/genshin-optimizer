@@ -242,6 +242,9 @@ function CharacterPanel() {
 }
 function TabNav({ tab }: { tab: string }) {
   const { t } = useTranslation('page_character')
+  const tabSx = shouldShowDevComponents
+    ? { minWidth: '16.6%' }
+    : { minWidth: '20%' }
   return (
     <Tabs
       value={tab}
@@ -255,7 +258,7 @@ function TabNav({ tab }: { tab: string }) {
       }}
     >
       <Tab
-        sx={{ minWidth: '16.6%' }}
+        sx={tabSx}
         value="overview"
         label={t('tabs.overview')}
         icon={<Person />}
@@ -263,7 +266,7 @@ function TabNav({ tab }: { tab: string }) {
         to=""
       />
       <Tab
-        sx={{ minWidth: '16.6%' }}
+        sx={tabSx}
         value="talent"
         label={t('tabs.talent')}
         icon={<FactCheck />}
@@ -271,7 +274,7 @@ function TabNav({ tab }: { tab: string }) {
         to="talent"
       />
       <Tab
-        sx={{ minWidth: '16.6%' }}
+        sx={tabSx}
         value="teambuffs"
         label={t('tabs.teambuffs')}
         icon={<Groups />}
@@ -279,7 +282,7 @@ function TabNav({ tab }: { tab: string }) {
         to="teambuffs"
       />
       <Tab
-        sx={{ minWidth: '16.6%' }}
+        sx={tabSx}
         value="optimize"
         label={t('tabs.optimize')}
         icon={<TrendingUp />}
@@ -287,7 +290,7 @@ function TabNav({ tab }: { tab: string }) {
         to="optimize"
       />
       <Tab
-        sx={{ minWidth: '16.6%' }}
+        sx={tabSx}
         value="theorycraft"
         label={t('tabs.theorycraft')}
         icon={<Science />}
@@ -296,7 +299,7 @@ function TabNav({ tab }: { tab: string }) {
       />
       {shouldShowDevComponents && (
         <Tab
-          sx={{ minWidth: '16.6%' }}
+          sx={tabSx}
           value="upopt"
           label={t('tabs.upgradeopt')}
           icon={<TrendingUp />}
