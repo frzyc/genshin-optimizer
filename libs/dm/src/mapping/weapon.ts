@@ -79,6 +79,7 @@ export const weaponIdMap: Record<number | string, WeaponKey> = {
   12424: 'TalkingStick',
   12425: 'TidalShadow',
   12427: 'PortablePowerSaw',
+  11428: 'SwordOfNarzissenkreuz',
   12501: 'SkywardPride',
   12502: 'WolfsGravestone',
   12503: 'SongOfBrokenPines',

@@ -42,6 +42,7 @@ export const allWeaponSwordKeys = [
   'SplendorOfTranquilWaters',
   'SummitShaper',
   'SwordOfDescension',
+  'SwordOfNarzissenkreuz',
   'TheAlleyFlash',
   'TheBlackSword',
   'TheDockhandsAssistant',
