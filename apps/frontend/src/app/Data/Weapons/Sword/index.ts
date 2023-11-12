@@ -32,6 +32,7 @@ import SkywardBlade from './SkywardBlade'
 import SummitShaper from './SummitShaper'
 import SplendorOfTranquilWaters from './SplendorOfTranquilWaters'
 import SwordOfDescension from './SwordOfDescension'
+import SwordOfNarzissenkreuz from './SwordOfNarzissenkreuz'
 import TheAlleyFlash from './TheAlleyFlash'
 import TheBlackSword from './TheBlackSword'
 import TheDockhandsAssistant from './TheDockhandsAssistant'
@@ -73,6 +74,7 @@ const sword: Record<WeaponSwordKey, WeaponSheet> = {
   SplendorOfTranquilWaters,
   SummitShaper,
   SwordOfDescension,
+  SwordOfNarzissenkreuz,
   TheAlleyFlash,
   TheBlackSword,
   TheDockhandsAssistant,

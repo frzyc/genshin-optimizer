@@ -13,14 +13,12 @@ import {
 import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive'
 import NotificationsOffIcon from '@mui/icons-material/NotificationsOff'
 import {
-  Alert,
   Box,
   Button,
   ButtonGroup,
   CardContent,
   Divider,
   Grid,
-  Link,
   MenuItem,
   Skeleton,
   ToggleButton,
@@ -37,7 +35,7 @@ import React, {
   useState,
 } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
-import { Link as RouterLink, useLocation, useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import ArtifactLevelSlider from '../../../../Components/Artifact/ArtifactLevelSlider'
 import BootstrapTooltip from '../../../../Components/BootstrapTooltip'
 import CardLight from '../../../../Components/Card/CardLight'
@@ -48,6 +46,7 @@ import {
   ReactionToggle,
 } from '../../../../Components/HitModeEditor'
 import InfoTooltip from '../../../../Components/InfoTooltip'
+import NoArtWarning from '../../../../Components/NoArtWarning'
 import SolidToggleButtonGroup from '../../../../Components/SolidToggleButtonGroup'
 import SqBadge from '../../../../Components/SqBadge'
 import { CharacterContext } from '../../../../Context/CharacterContext'
@@ -503,18 +502,7 @@ export default function TabBuild() {
   const getNormBuildLabel = useCallback((index: number) => `#${index + 1}`, [])
   return (
     <Box display="flex" flexDirection="column" gap={1}>
-      {noArtifact && (
-        <Alert severity="warning" variant="filled">
-          <Trans t={t} i18nKey="noArtis">
-            Oops! It looks like you haven't added any artifacts to GO yet! You
-            should go to the
-            <Link component={RouterLink} to="/artifacts">
-              Artifacts
-            </Link>
-            page and add some!
-          </Trans>
-        </Alert>
-      )}
+      {noArtifact && <NoArtWarning />}
       {/* Build Generator Editor */}
       {dataContext && (
         <DataContext.Provider value={dataContext}>

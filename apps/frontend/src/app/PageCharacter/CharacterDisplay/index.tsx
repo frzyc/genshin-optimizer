@@ -62,12 +62,14 @@ import CharSelectButton from './CharSelectButton'
 import FormulaModal from './FormulaModal'
 import StatModal from './StatModal'
 import TabBuild from './Tabs/TabOptimize'
+import TabUpopt from './Tabs/TabUpgradeOpt'
 import TabOverview from './Tabs/TabOverview'
 import TabTalent from './Tabs/TabTalent'
 import TabTeambuffs from './Tabs/TabTeambuffs'
 import TabTheorycraft from './Tabs/TabTheorycraft'
 import TravelerElementSelect from './TravelerElementSelect'
 import TravelerGenderSelect from './TravelerGenderSelect'
+import { shouldShowDevComponents } from '../../Util/Util'
 
 export default function CharacterDisplay() {
   const navigate = useNavigate()
@@ -231,12 +233,18 @@ function CharacterPanel() {
         <Route path="/teambuffs" element={<TabTeambuffs />} />
         <Route path="/optimize" element={<TabBuild />} />
         <Route path="/theorycraft" element={<TabTheorycraft />} />
+        {shouldShowDevComponents && (
+          <Route path="/upopt" element={<TabUpopt />} />
+        )}
       </Routes>
     </Suspense>
   )
 }
 function TabNav({ tab }: { tab: string }) {
   const { t } = useTranslation('page_character')
+  const tabSx = shouldShowDevComponents
+    ? { minWidth: '16.6%' }
+    : { minWidth: '20%' }
   return (
     <Tabs
       value={tab}
@@ -250,7 +258,7 @@ function TabNav({ tab }: { tab: string }) {
       }}
     >
       <Tab
-        sx={{ minWidth: '20%' }}
+        sx={tabSx}
         value="overview"
         label={t('tabs.overview')}
         icon={<Person />}
@@ -258,7 +266,7 @@ function TabNav({ tab }: { tab: string }) {
         to=""
       />
       <Tab
-        sx={{ minWidth: '20%' }}
+        sx={tabSx}
         value="talent"
         label={t('tabs.talent')}
         icon={<FactCheck />}
@@ -266,7 +274,7 @@ function TabNav({ tab }: { tab: string }) {
         to="talent"
       />
       <Tab
-        sx={{ minWidth: '20%' }}
+        sx={tabSx}
         value="teambuffs"
         label={t('tabs.teambuffs')}
         icon={<Groups />}
@@ -274,7 +282,7 @@ function TabNav({ tab }: { tab: string }) {
         to="teambuffs"
       />
       <Tab
-        sx={{ minWidth: '20%' }}
+        sx={tabSx}
         value="optimize"
         label={t('tabs.optimize')}
         icon={<TrendingUp />}
@@ -282,13 +290,23 @@ function TabNav({ tab }: { tab: string }) {
         to="optimize"
       />
       <Tab
-        sx={{ minWidth: '20%' }}
+        sx={tabSx}
         value="theorycraft"
         label={t('tabs.theorycraft')}
         icon={<Science />}
         component={RouterLink}
         to="theorycraft"
       />
+      {shouldShowDevComponents && (
+        <Tab
+          sx={tabSx}
+          value="upopt"
+          label={t('tabs.upgradeopt')}
+          icon={<TrendingUp />}
+          component={RouterLink}
+          to="upopt"
+        />
+      )}
     </Tabs>
   )
 }

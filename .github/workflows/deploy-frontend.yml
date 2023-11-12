@@ -32,9 +32,6 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
-      - name: Wait 15 seconds for mergeability check
-        run: |
-          sleep 15s
       - name: Checkout
         uses: actions/checkout@v3
         with:
@@ -67,14 +64,14 @@ jobs:
         run: |
           NX_URL_GITHUB_GO_CURRENT_VERSION="https://github.com/${{ inputs.repo_full_name }}/commit/$(git rev-parse HEAD)" \
           NX_DAEMON="false" \
-          NX_SHOW_DEV_COMPONENTS=${{inputs.show_dev_components}}
+          NX_SHOW_DEV_COMPONENTS="${{inputs.show_dev_components}}" \
           yarn run nx run ${{inputs.frontend_name}}:build-webpack:production --base-href=""
       - name: Build genshin-optimizer (Vite)
         if: inputs.frontend_name == 'gi-frontend' || inputs.frontend_name == 'sr-frontend'
         run: |
           NX_URL_GITHUB_GO_CURRENT_VERSION="https://github.com/${{ inputs.repo_full_name }}/commit/$(git rev-parse HEAD)" \
           NX_DAEMON="false" \
-          NX_SHOW_DEV_COMPONENTS=${{inputs.show_dev_components}}
+          NX_SHOW_DEV_COMPONENTS="${{inputs.show_dev_components}}" \
           yarn run nx run ${{inputs.frontend_name}}:build-vite:production --base-href=""
       - name: Checkout external gh-pages
         uses: actions/checkout@v3
@@ -92,10 +89,19 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config pull.rebase false
           git add ./${{ inputs.deployment_name }}/${{ inputs.frontend_name }}
           git commit --allow-empty -m "build ${{ inputs.deployment_name }}/${{ inputs.frontend_name }} ${{ inputs.repo_full_name }}@$(cd .. && git rev-parse HEAD)"
-          git push origin gh-pages
         working-directory: gh-pages
+      - name: Push commit
+        uses: nick-fields/retry@v2
+        with:
+          max_attempts: 4
+          timeout_minutes: 4
+          command: |
+            cd gh-pages
+            git pull origin gh-pages
+            git push origin gh-pages
       - name: Export url
         id: export-url
         run: |

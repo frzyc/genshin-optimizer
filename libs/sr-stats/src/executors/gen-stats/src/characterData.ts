@@ -65,7 +65,7 @@ export default function characterData() {
           const skillId = LevelUpSkillID[0]
           const skillParamList = skillId
             ? transposeArray(
-                avatarSkillConfig[skillId].map(({ ParamList }) =>
+                avatarSkillConfig[skillId]!.map(({ ParamList }) =>
                   ParamList.map(({ Value }) => Value)
                 )
               )

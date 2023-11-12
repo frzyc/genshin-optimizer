@@ -7,7 +7,7 @@
       "options": {
         "cacheableOperations": [
           "load-dm",
-          "genfile",
+          "gen-file",
           "build",
           "build-webpack",
           "build-vite",
@@ -24,9 +24,9 @@
       "executor": "@genshin-optimizer/plugin:sync-repo",
       "outputs": ["{workspaceRoot}/{options.outputPath}.hash"]
     },
-    "genfile": {
+    "gen-file": {
       "executor": "nx:noop",
-      "dependsOn": ["load-dm", "^genfile"],
+      "dependsOn": ["load-dm", "^gen-file"],
       "inputs": ["production", "^production"]
     },
     "build": {
@@ -35,7 +35,7 @@
       "inputs": ["production", "^production"]
     },
     "build-webpack": {
-      "dependsOn": ["genfile", "^genfile", "^build", "^pipeline"],
+      "dependsOn": ["gen-file", "^gen-file"],
       "inputs": ["production", "^production"]
     },
     "build-vite": {
@@ -53,7 +53,7 @@
           "mode": "production"
         }
       },
-      "dependsOn": ["genfile", "^genfile", "^build", "^pipeline"],
+      "dependsOn": ["gen-file", "^gen-file", "^build"],
       "inputs": ["production", "^production"]
     },
     "build-ts": {
@@ -64,7 +64,7 @@
         "main": "{projectRoot}/src/index.ts",
         "tsConfig": "{projectRoot}/tsconfig.lib.json"
       },
-      "dependsOn": ["genfile", "^genfile", "^build", "^pipeline"],
+      "dependsOn": ["gen-file", "^gen-file", "^build"],
       "inputs": ["production", "^production"]
     },
     "e2e": {
@@ -78,7 +78,7 @@
         "fix": true
       },
       "inputs": ["default", "{workspaceRoot}/.eslintrc.json"],
-      "dependsOn": ["genfile", "^genfile", "^pipeline"]
+      "dependsOn": ["gen-file", "^gen-file"]
     },
     "test": {
       "executor": "@nx/jest:jest",
@@ -89,7 +89,7 @@
         "reportsDirectory": "{workspaceRoot}/coverage/{projectRoot}",
         "passWithNoTests": true
       },
-      "dependsOn": ["genfile", "^genfile", "^pipeline"],
+      "dependsOn": ["gen-file", "^gen-file"],
       "inputs": ["default", "^production", "{workspaceRoot}/jest.preset.js"]
     },
     "publish": {

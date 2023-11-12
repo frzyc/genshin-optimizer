@@ -42,6 +42,7 @@ export const allWeaponSwordKeys = [
   'SplendorOfTranquilWaters',
   'SummitShaper',
   'SwordOfDescension',
+  'SwordOfNarzissenkreuz',
   'TheAlleyFlash',
   'TheBlackSword',
   'TheDockhandsAssistant',
@@ -120,7 +121,6 @@ export const allWeaponPolearmKeys = [
   'VortexVanquisher',
   'WavebreakersFin',
   'WhiteTassel',
-  'ProspectorsDrill',
 ] as const
 export type WeaponPoleArmKey = (typeof allWeaponPolearmKeys)[number]
 
