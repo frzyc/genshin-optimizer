@@ -22,7 +22,8 @@
           "buildTarget": "sr-frontend:build-vite:production",
           "hmr": false
         }
-      }
+      },
+      "dependsOn": ["^gen-file"]
     },
     "preview": {
       "executor": "@nx/vite:preview-server",

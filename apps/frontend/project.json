@@ -86,7 +86,7 @@
           "hmr": false
         }
       },
-      "dependsOn": ["build-webpack"]
+      "dependsOn": ["^gen-file"]
     },
     "lint": {},
     "test": {}

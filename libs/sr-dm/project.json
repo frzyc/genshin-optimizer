@@ -15,7 +15,7 @@
         }
       ]
     },
-    "genfile": {},
+    "gen-file": {},
     "build": {},
     "build-ts": {
       "options": {
