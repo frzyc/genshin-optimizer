@@ -99,7 +99,7 @@ export default function PageScanner() {
                   sx={{ display: 'flex', alignItems: 'center' }}
                 >
                   <Gamepad sx={{ pr: 0.5 }} />
-                  4.0
+                  4.2
                 </SqBadge>
                 <SqBadge sx={{ display: 'flex', alignItems: 'center' }}>
                   <Computer sx={{ pr: 0.5 }} />
@@ -243,7 +243,7 @@ export default function PageScanner() {
                   sx={{ display: 'flex', alignItems: 'center' }}
                 >
                   <Gamepad sx={{ pr: 0.5 }} />
-                  4.0
+                  4.2
                 </SqBadge>
                 <SqBadge sx={{ display: 'flex', alignItems: 'center' }}>
                   <Computer sx={{ pr: 0.5 }} />
@@ -318,7 +318,7 @@ export default function PageScanner() {
                   sx={{ display: 'flex', alignItems: 'center' }}
                 >
                   <Gamepad sx={{ pr: 0.5 }} />
-                  4.0
+                  4.2
                 </SqBadge>
                 <SqBadge sx={{ display: 'flex', alignItems: 'center' }}>
                   <Computer sx={{ pr: 0.5 }} />
