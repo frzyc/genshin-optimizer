@@ -8,12 +8,10 @@ import { clamp, filterFunction, sortFunction } from '@genshin-optimizer/util'
 import { Add } from '@mui/icons-material'
 import DifferenceIcon from '@mui/icons-material/Difference'
 import {
-  Alert,
   Box,
   Button,
   CardContent,
   Grid,
-  Link,
   Pagination,
   Skeleton,
   Typography,
@@ -30,7 +28,7 @@ import React, {
 } from 'react'
 import ReactGA from 'react-ga4'
 import { Trans, useTranslation } from 'react-i18next'
-import { Link as RouterLink } from 'react-router-dom'
+import AddArtInfo from '../Components/AddArtInfo'
 import SubstatToggle from '../Components/Artifact/SubstatToggle'
 import BootstrapTooltip from '../Components/BootstrapTooltip'
 import CardDark from '../Components/Card/CardDark'
@@ -197,15 +195,7 @@ export default function PageArtifact() {
         <InfoDisplay />
       </InfoComponent>
 
-      {noArtifact && (
-        <Alert severity="info" variant="filled">
-          Looks like you haven't added any artifacts yet. If you want, there are
-          <Link color="warning.main" component={RouterLink} to="/scanner">
-            automatic scanners
-          </Link>
-          that can speed up the import process!
-        </Alert>
-      )}
+      {noArtifact && <AddArtInfo />}
 
       <ArtifactFilter
         numShowing={artifactIds.length}

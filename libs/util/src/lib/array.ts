@@ -46,3 +46,13 @@ export function arrayMove<T>(arr: T[], oldIndex: number, newIndex: number) {
 export function transposeArray<T>(arr: T[][]): T[][] {
   return arr[0].map((_, i) => arr.map((row) => row[i]))
 }
+
+export function linspace(
+  start: number,
+  stop: number,
+  num: number,
+  inclusiveEnd = true
+) {
+  const step = (stop - start) / (inclusiveEnd ? num - 1 : num)
+  return range(0, num - 1).map((i) => start + step * i)
+}
