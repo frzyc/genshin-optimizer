@@ -579,7 +579,6 @@ function ShowingArt({ numShowing, total }) {
   return (
     <Typography color="text.secondary">
       <Trans i18nKey="showingNum" count={numShowing} value={total}>
-        {/* Showing <b>{{ count: numShowing }}</b> out of {{ value: total }} Artifacts */}
         Showing {{ count: numShowing }} out of {{ value: total }} Artifacts
       </Trans>
     </Typography>
