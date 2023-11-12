@@ -18,6 +18,7 @@ const key: WeaponKey = 'SwordOfNarzissenkreuz'
 const data_gen = allStats.weapon.data[key]
 
 const dmg_arr = [-1, 1.6, 2, 2.4, 2.8, 3.2]
+// TODO: Don't show dmg value when wielder has an Arkhe
 const dmg = equal(
   input.weapon.key,
   key,
