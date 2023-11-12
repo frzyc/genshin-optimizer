@@ -26,18 +26,17 @@ import {
 import ReactGA from 'react-ga4'
 import { Trans, useTranslation } from 'react-i18next'
 import { Link as RouterLink } from 'react-router-dom'
-import CardDark from '../Components/Card/CardDark'
-import SqBadge from '../Components/SqBadge'
 import AdScanner from './AdeptiScanner.png'
 import AkashaScanner from './AkashaScanner.png'
 import Artiscan from './artiscan.png'
 import GIScanner from './GIScanner.png'
+import { CardThemed, SqBadge } from '@genshin-optimizer/ui-common'
 export default function PageScanner() {
   const { t } = useTranslation('page_scanner')
   ReactGA.send({ hitType: 'pageview', page: '/scanner' })
   return (
     <Box display="flex" flexDirection="column" gap={2} my={1}>
-      <CardDark>
+      <CardThemed>
         <CardContent>
           <Trans t={t} i18nKey="intro">
             <Typography gutterBottom variant="h5">
@@ -61,11 +60,11 @@ export default function PageScanner() {
             </Typography>
           </Trans>
         </CardContent>
-      </CardDark>
+      </CardThemed>
 
       <Grid container columns={{ xs: 1, md: 2, lg: 4 }} spacing={2}>
         <Grid item xs={1}>
-          <CardDark sx={{ height: '100%' }}>
+          <CardThemed sx={{ height: '100%' }}>
             <CardActionArea
               href="https://artiscan.ninjabay.org/"
               target="_blank"
@@ -117,10 +116,10 @@ export default function PageScanner() {
               <Typography gutterBottom>{t('nb.p1') as string}</Typography>
               <Typography gutterBottom>{t('nb.p2') as string}</Typography>
             </CardContent>
-          </CardDark>
+          </CardThemed>
         </Grid>
         <Grid item xs={1}>
-          <CardDark sx={{ height: '100%' }}>
+          <CardThemed sx={{ height: '100%' }}>
             <CardActionArea
               href="https://github.com/Andrewthe13th/Inventory_Kamera"
               target="_blank"
@@ -157,6 +156,7 @@ export default function PageScanner() {
                   sx={{ display: 'flex', alignItems: 'center' }}
                 >
                   <Gamepad sx={{ pr: 0.5 }} />
+                  4.2
                 </SqBadge>
                 <SqBadge sx={{ display: 'flex', alignItems: 'center' }}>
                   <Computer sx={{ pr: 0.5 }} />
@@ -209,10 +209,10 @@ export default function PageScanner() {
                 </Trans>
               </Typography>
             </CardContent>
-          </CardDark>
+          </CardThemed>
         </Grid>
         <Grid item xs={1}>
-          <CardDark sx={{ height: '100%' }}>
+          <CardThemed sx={{ height: '100%' }}>
             <CardActionArea
               href="https://github.com/D1firehail/AdeptiScanner-GI"
               target="_blank"
@@ -255,6 +255,15 @@ export default function PageScanner() {
                   <AnvilIcon />
                   {t('tags.weapons') as string}
                 </SqBadge>
+                <WarningWrapper>
+                  <SqBadge
+                    color="warning"
+                    sx={{ display: 'flex', alignItems: 'center' }}
+                  >
+                    <Warning sx={{ pr: 0.5 }} />
+                    {t('tags.gameMani') as string}
+                  </SqBadge>
+                </WarningWrapper>
               </Typography>
               <Typography gutterBottom>
                 <Trans t={t} i18nKey="as.p1">
@@ -284,10 +293,10 @@ export default function PageScanner() {
                 </Trans>
               </Typography>
             </CardContent>
-          </CardDark>
+          </CardThemed>
         </Grid>
         <Grid item xs={1}>
-          <CardDark sx={{ height: '100%' }}>
+          <CardThemed sx={{ height: '100%' }}>
             <CardActionArea
               href="https://github.com/xenesty/AkashaScanner"
               target="_blank"
@@ -373,7 +382,7 @@ export default function PageScanner() {
                 </Trans>
               </Typography>
             </CardContent>
-          </CardDark>
+          </CardThemed>
         </Grid>
       </Grid>
     </Box>
