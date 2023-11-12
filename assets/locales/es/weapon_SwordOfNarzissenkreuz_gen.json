@@ -1,0 +1,24 @@
+{
+  "name": "Espada Cruz de los Narcisos",
+  "description": {
+    "0": "Una espada cuyo poder y determinación desaparecieron cuando la historia que había detrás de ella terminó, y que ahora volverá a emprender un nuevo camino. Los resquicios de poder que aún conserva conmemoran cierto gran sueño."
+  },
+  "passiveName": "Espada de los héroes",
+  "passiveDescription": {
+    "0": {
+      "0": "Si el portador de esta arma no tiene arjé y golpea a un enemigo con un Ataque Normal, Cargado o Descendente, liberará una explosión de energía pneuma u ousía que inflige daño equivalente al <cryo>160%</cryo> de su ATQ. Este efecto solo se puede activar una vez cada 12 s, y el tipo de explosión de energía dependerá de si el tipo de energía actual de la Espada Cruz de los Narcisos es pneuma u ousía."
+    },
+    "1": {
+      "0": "Si el portador de esta arma no tiene arjé y golpea a un enemigo con un Ataque Normal, Cargado o Descendente, liberará una explosión de energía pneuma u ousía que inflige daño equivalente al <cryo>200%</cryo> de su ATQ. Este efecto solo se puede activar una vez cada 12 s, y el tipo de explosión de energía dependerá de si el tipo de energía actual de la Espada Cruz de los Narcisos es pneuma u ousía."
+    },
+    "2": {
+      "0": "Si el portador de esta arma no tiene arjé y golpea a un enemigo con un Ataque Normal, Cargado o Descendente, liberará una explosión de energía pneuma u ousía que inflige daño equivalente al <cryo>240%</cryo> de su ATQ. Este efecto solo se puede activar una vez cada 12 s, y el tipo de explosión de energía dependerá de si el tipo de energía actual de la Espada Cruz de los Narcisos es pneuma u ousía."
+    },
+    "3": {
+      "0": "Si el portador de esta arma no tiene arjé y golpea a un enemigo con un Ataque Normal, Cargado o Descendente, liberará una explosión de energía pneuma u ousía que inflige daño equivalente al <cryo>280%</cryo> de su ATQ. Este efecto solo se puede activar una vez cada 12 s, y el tipo de explosión de energía dependerá de si el tipo de energía actual de la Espada Cruz de los Narcisos es pneuma u ousía."
+    },
+    "4": {
+      "0": "Si el portador de esta arma no tiene arjé y golpea a un enemigo con un Ataque Normal, Cargado o Descendente, liberará una explosión de energía pneuma u ousía que inflige daño equivalente al <cryo>320%</cryo> de su ATQ. Este efecto solo se puede activar una vez cada 12 s, y el tipo de explosión de energía dependerá de si el tipo de energía actual de la Espada Cruz de los Narcisos es pneuma u ousía."
+    }
+  }
+}
