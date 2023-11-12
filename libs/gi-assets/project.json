@@ -5,7 +5,7 @@
   "projectType": "library",
   "tags": [],
   "targets": {
-    "genfile": {
+    "gen-file": {
       "executor": "@genshin-optimizer/gi-assets:gen-assets",
       "outputs": ["{workspaceRoot}/${projectRoot}/src/gen/**/*"]
     },
