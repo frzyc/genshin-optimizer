@@ -30,9 +30,8 @@ import { useBoolState } from '@genshin-optimizer/react-util'
 import { range, shouldShowDevComponents } from '../Util/Util'
 import UploadCard from './UploadCard'
 
-const CLIENT_ID =
-  '1000000000000-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.apps.googleusercontent.com'
-const API_KEY = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
+const CLIENT_ID = process.env.NX_GOOGLE_CLIENT_ID
+const API_KEY = process.env.NX_GOOGLE_API_KEY
 const SCOPES = 'https://www.googleapis.com/auth/drive.appdata'
 const DRIVE_DISCOVERY_DOCS_URL =
   'https://www.googleapis.com/discovery/v1/apis/drive/v3/rest'
