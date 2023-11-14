@@ -1,7 +1,6 @@
 import type { ArtCharDatabase } from '../Database/Database'
 import type { IGOOD } from '@genshin-optimizer/gi-good'
 import type { IGO } from '../Database/exim'
-import { shouldShowDevComponents } from '../Util/Util'
 import {
   Delete,
   Download,
@@ -28,7 +27,7 @@ import { StyledInputBase } from '../Components/CustomNumberInput'
 import ModalWrapper from '../Components/ModalWrapper'
 import { DatabaseContext } from '../Database/Database'
 import { useBoolState } from '@genshin-optimizer/react-util'
-import { range } from '../Util/Util'
+import { range, shouldShowDevComponents } from '../Util/Util'
 import UploadCard from './UploadCard'
 
 const CLIENT_ID =
@@ -130,18 +129,29 @@ async function uploadDataToDrive(
         const { result: fileResult } = await gapi.client.drive.files.get({
           fileId: fileID,
           alt: 'media',
-        });
+        })
 
-        const dbFileResult = (fileResult as any) as (IGOOD & IGO)
+        const dbFileResult = fileResult as any as IGOOD & IGO
 
-        const artifactCount = dbFileResult.artifacts ? dbFileResult.artifacts.length : 0
-        const characterCount = dbFileResult.characters ? dbFileResult.characters.length : 0
-        const weaponCount = dbFileResult.weapons ? dbFileResult.weapons.length : 0
+        const artifactCount = dbFileResult.artifacts
+          ? dbFileResult.artifacts.length
+          : 0
+        const characterCount = dbFileResult.characters
+          ? dbFileResult.characters.length
+          : 0
+        const weaponCount = dbFileResult.weapons
+          ? dbFileResult.weapons.length
+          : 0
 
-        if (!window.confirm(`Are you sure you want to replace the existing backup? the backup has ` +
-        `${artifactCount} artifact(s), ` +
-        `${characterCount} character(s), ` +
-        `and ${weaponCount} weapon(s).`)) return
+        if (
+          !window.confirm(
+            `Are you sure you want to replace the existing backup? the backup has ` +
+              `${artifactCount} artifact(s), ` +
+              `${characterCount} character(s), ` +
+              `and ${weaponCount} weapon(s).`
+          )
+        )
+          return
         await createCloudFile(database, index, fileID)
       } else {
         await createCloudFile(database, index)
@@ -176,6 +186,7 @@ async function downloadDataFromDrive(
 
       if (result.files.length === 0) {
         console.info('downloadDataFromDrive: no file')
+        window.alert('No backup found')
         // TODO: this happens if file doesn't exist on drive it should have a way to let the user know that
         return
       }
@@ -184,18 +195,29 @@ async function downloadDataFromDrive(
         const { result: fileResult } = await gapi.client.drive.files.get({
           fileId: fileID,
           alt: 'media',
-        });
+        })
 
-        const dbFileResult = (fileResult as any) as (IGOOD & IGO)
+        const dbFileResult = fileResult as any as IGOOD & IGO
 
-        const artifactCount = dbFileResult.artifacts ? dbFileResult.artifacts.length : 0
-        const characterCount = dbFileResult.characters ? dbFileResult.characters.length : 0
-        const weaponCount = dbFileResult.weapons ? dbFileResult.weapons.length : 0
+        const artifactCount = dbFileResult.artifacts
+          ? dbFileResult.artifacts.length
+          : 0
+        const characterCount = dbFileResult.characters
+          ? dbFileResult.characters.length
+          : 0
+        const weaponCount = dbFileResult.weapons
+          ? dbFileResult.weapons.length
+          : 0
 
-        if (!window.confirm(`Are you sure you want to replace the current database with the backup with ` +
-        `${artifactCount} artifact(s), ` +
-        `${characterCount} character(s), ` +
-        `and ${weaponCount} weapon(s)?`)) return
+        if (
+          !window.confirm(
+            `Are you sure you want to replace the current database with the backup with ` +
+              `${artifactCount} artifact(s), ` +
+              `${characterCount} character(s), ` +
+              `and ${weaponCount} weapon(s)?`
+          )
+        )
+          return
 
         database.importGOOD(dbFileResult, true, true)
       } catch (e) {
@@ -392,7 +414,7 @@ function DataCard({ index, readOnly }: { index: number; readOnly: boolean }) {
                 </Button>
               </Grid>
               {shouldShowDevComponents ? (
-                  <Grid item xs={1}>
+                <Grid item xs={1}>
                   <Button
                     fullWidth
                     color="info"
@@ -403,21 +425,19 @@ function DataCard({ index, readOnly }: { index: number; readOnly: boolean }) {
                     {t`DatabaseCard.button.uploadDrive`}
                   </Button>
                 </Grid>
-                ) : undefined
-              }
+              ) : undefined}
               {shouldShowDevComponents ? (
-                   <Grid item xs={1}>
-                   <Button
-                     fullWidth
-                     disabled={readOnly}
-                     onClick={onDriveDownload}
-                     startIcon={<CloudDownload />}
-                   >
-                     {t`DatabaseCard.button.downloadDrive`}
-                   </Button>
-                 </Grid>
-                ) : undefined
-              }
+                <Grid item xs={1}>
+                  <Button
+                    fullWidth
+                    disabled={readOnly}
+                    onClick={onDriveDownload}
+                    startIcon={<CloudDownload />}
+                  >
+                    {t`DatabaseCard.button.downloadDrive`}
+                  </Button>
+                </Grid>
+              ) : undefined}
               <Grid item xs={1}>
                 <Button
                   fullWidth
