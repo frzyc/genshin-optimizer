@@ -126,7 +126,22 @@ async function uploadDataToDrive(
 
       if (result.files.length > 0) {
         const fileID = result.files[0].id
-        if (!window.confirm(`Are you sure you want to replace the existing backup?`)) return
+
+        const { result: fileResult } = await gapi.client.drive.files.get({
+          fileId: fileID,
+          alt: 'media',
+        });
+
+        const dbFileResult = (fileResult as any) as (IGOOD & IGO)
+
+        const artifactCount = dbFileResult.artifacts ? dbFileResult.artifacts.length : 0
+        const characterCount = dbFileResult.characters ? dbFileResult.characters.length : 0
+        const weaponCount = dbFileResult.weapons ? dbFileResult.weapons.length : 0
+
+        if (!window.confirm(`Are you sure you want to replace the existing backup? the backup has ` +
+        `${artifactCount} artifact(s), ` +
+        `${characterCount} character(s), ` +
+        `and ${weaponCount} weapon(s).`)) return
         await createCloudFile(database, index, fileID)
       } else {
         await createCloudFile(database, index)
