@@ -7,13 +7,13 @@ export type CloudSyncContextObj = {
 
 export const CloudSyncContext = createContext({
   cloudSyncInProgress: false,
-  setCloudSyncInProgress: (s: boolean) => {
-
-  },
+  setCloudSyncInProgress: () => {},
 } as CloudSyncContextObj)
-
 
 export function useCloudSync(): CloudSyncContextObj {
   const [cloudSyncInProgress, setCloudSyncInProgress] = useState(false)
-  return useMemo(() => ({ cloudSyncInProgress, setCloudSyncInProgress }), [cloudSyncInProgress])
+  return useMemo(
+    () => ({ cloudSyncInProgress, setCloudSyncInProgress }),
+    [cloudSyncInProgress]
+  )
 }

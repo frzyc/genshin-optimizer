@@ -53,7 +53,7 @@ export default function DatabaseCard({
         <Grid container spacing={2} columns={{ xs: 1, md: 2 }}>
           {range(0, 3).map((i) => (
             <Grid key={i} item xs={1}>
-              <DataCard index={i} readOnly={readOnly}  />
+              <DataCard index={i} readOnly={readOnly} />
             </Grid>
           ))}
         </Grid>
@@ -183,7 +183,7 @@ async function downloadDataFromDrive(
   ) {
     gapi.client.setApiKey(API_KEY)
     try {
-    await gapi.client.load(DRIVE_DISCOVERY_DOCS_URL)
+      await gapi.client.load(DRIVE_DISCOVERY_DOCS_URL)
     } catch (e) {
       console.error('loading drive discovery docs failed', e)
       callback()
@@ -263,8 +263,8 @@ function DataCard({ index, readOnly }: { index: number; readOnly: boolean }) {
   // Need to update the dbMeta when database changes
   useEffect(() => setDBMeta(database.dbMeta.get()), [database])
 
-  const { cloudSyncInProgress, setCloudSyncInProgress } = useContext(CloudSyncContext)
-
+  const { cloudSyncInProgress, setCloudSyncInProgress } =
+    useContext(CloudSyncContext)
 
   const current = mainDB === database
   const [uploadOpen, onOpen, onClose] = useBoolState()
@@ -291,7 +291,14 @@ function DataCard({ index, readOnly }: { index: number; readOnly: boolean }) {
   const onDriveUpload = useCallback(() => {
     const uploadDataWrapper = (
       tokenResponse: google.accounts.oauth2.TokenResponse
-    ) => uploadDataToDrive(tokenResponse, database, index, setCloudSyncInProgress, () => setCloudSyncInProgress(false))
+    ) =>
+      uploadDataToDrive(
+        tokenResponse,
+        database,
+        index,
+        setCloudSyncInProgress,
+        () => setCloudSyncInProgress(false)
+      )
     const client = google.accounts.oauth2.initTokenClient({
       client_id: CLIENT_ID,
       scope: SCOPES,
@@ -303,7 +310,14 @@ function DataCard({ index, readOnly }: { index: number; readOnly: boolean }) {
   const onDriveDownload = useCallback(() => {
     const downloadDataWrapper = (
       tokenResponse: google.accounts.oauth2.TokenResponse
-    ) => downloadDataFromDrive(tokenResponse, database, index, setCloudSyncInProgress, () => setCloudSyncInProgress(false))
+    ) =>
+      downloadDataFromDrive(
+        tokenResponse,
+        database,
+        index,
+        setCloudSyncInProgress,
+        () => setCloudSyncInProgress(false)
+      )
     const client = google.accounts.oauth2.initTokenClient({
       client_id: CLIENT_ID,
       scope: SCOPES,
