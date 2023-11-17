@@ -18,6 +18,7 @@ import { useTranslation } from 'react-i18next'
 import { HashRouter, Route, Routes, useMatch } from 'react-router-dom'
 import './App.scss'
 import { SillyContext, useSilly } from './Context/SillyContext'
+import { CloudSyncContext, useCloudSync } from './Context/CloudSyncContext'
 import { ArtCharDatabase, DatabaseContext } from './Database/Database'
 import ErrorBoundary from './ErrorBoundary'
 import Footer from './Footer'
@@ -101,31 +102,34 @@ function App() {
     [databases, setDatabases, database, setDatabase]
   )
   const SillyContextObj = useSilly()
+  const CloudSyncContextObj = useCloudSync()
   return (
     <StyledEngineProvider injectFirst>
       {/* https://mui.com/guides/interoperability/#css-injection-order-2 */}
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <SillyContext.Provider value={SillyContextObj}>
-          <DatabaseContext.Provider value={dbContextObj}>
-            <ErrorBoundary>
-              <HashRouter basename="/">
-                <Suspense fallback={null}>
-                  <MatchTitle />
-                </Suspense>
-                <Content />
-                <ScrollTop>
-                  <Fab
-                    color="secondary"
-                    size="small"
-                    aria-label="scroll back to top"
-                  >
-                    <KeyboardArrowUp />
-                  </Fab>
-                </ScrollTop>
-              </HashRouter>
-            </ErrorBoundary>
-          </DatabaseContext.Provider>
+          <CloudSyncContext.Provider value={CloudSyncContextObj}>
+            <DatabaseContext.Provider value={dbContextObj}>
+              <ErrorBoundary>
+                <HashRouter basename="/">
+                  <Suspense fallback={null}>
+                    <MatchTitle />
+                  </Suspense>
+                  <Content />
+                  <ScrollTop>
+                    <Fab
+                      color="secondary"
+                      size="small"
+                      aria-label="scroll back to top"
+                    >
+                      <KeyboardArrowUp />
+                    </Fab>
+                  </ScrollTop>
+                </HashRouter>
+              </ErrorBoundary>
+            </DatabaseContext.Provider>
+          </CloudSyncContext.Provider>
         </SillyContext.Provider>
       </ThemeProvider>
     </StyledEngineProvider>

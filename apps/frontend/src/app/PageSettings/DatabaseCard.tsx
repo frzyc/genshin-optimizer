@@ -29,6 +29,7 @@ import { DatabaseContext } from '../Database/Database'
 import { useBoolState } from '@genshin-optimizer/react-util'
 import { range, shouldShowDevComponents } from '../Util/Util'
 import UploadCard from './UploadCard'
+import { CloudSyncContext } from '../Context/CloudSyncContext'
 
 const CLIENT_ID = process.env.NX_GOOGLE_CLIENT_ID
 const API_KEY = process.env.NX_GOOGLE_API_KEY
@@ -52,7 +53,7 @@ export default function DatabaseCard({
         <Grid container spacing={2} columns={{ xs: 1, md: 2 }}>
           {range(0, 3).map((i) => (
             <Grid key={i} item xs={1}>
-              <DataCard index={i} readOnly={readOnly} />
+              <DataCard index={i} readOnly={readOnly}  />
             </Grid>
           ))}
         </Grid>
@@ -99,8 +100,11 @@ async function createCloudFile(
 async function uploadDataToDrive(
   tokenResponse: google.accounts.oauth2.TokenResponse,
   database: ArtCharDatabase,
-  index: number
+  index: number,
+  setCloudSyncInProgress: (s: boolean) => void,
+  callback: () => void
 ) {
+  setCloudSyncInProgress(true)
   if (
     tokenResponse &&
     tokenResponse.access_token &&
@@ -111,6 +115,7 @@ async function uploadDataToDrive(
       await gapi.client.load(DRIVE_DISCOVERY_DOCS_URL)
     } catch (e) {
       console.error('loading drive discovery docs failed', e)
+      callback()
       // TODO: better error handling
       return
     }
@@ -132,15 +137,9 @@ async function uploadDataToDrive(
 
         const dbFileResult = fileResult as any as IGOOD & IGO
 
-        const artifactCount = dbFileResult.artifacts
-          ? dbFileResult.artifacts.length
-          : 0
-        const characterCount = dbFileResult.characters
-          ? dbFileResult.characters.length
-          : 0
-        const weaponCount = dbFileResult.weapons
-          ? dbFileResult.weapons.length
-          : 0
+        const artifactCount = dbFileResult.artifacts?.length ?? 0
+        const characterCount = dbFileResult.characters?.length ?? 0
+        const weaponCount = dbFileResult.weapons?.length ?? 0
 
         if (
           !window.confirm(
@@ -149,33 +148,46 @@ async function uploadDataToDrive(
               `${characterCount} character(s), ` +
               `and ${weaponCount} weapon(s).`
           )
-        )
+        ) {
+          callback()
           return
+        }
         await createCloudFile(database, index, fileID)
+        callback()
       } else {
         await createCloudFile(database, index)
+        callback()
       }
     } catch (e) {
       console.error('listing files failed', e)
+      callback()
     }
   } else {
-    // this happens if user cancels the auth flow so it should be safe to ignore
+    callback()
+    // it should be safe to ignore
   }
 }
 
 async function downloadDataFromDrive(
   tokenResponse: google.accounts.oauth2.TokenResponse,
   database: ArtCharDatabase,
-  index: number
+  index: number,
+  setCloudSyncInProgress: (s: boolean) => void,
+  callback: () => void
 ) {
+  setCloudSyncInProgress(true)
   if (
     tokenResponse &&
     tokenResponse.access_token &&
     google.accounts.oauth2.hasGrantedAllScopes(tokenResponse, SCOPES)
   ) {
     gapi.client.setApiKey(API_KEY)
+    try {
     await gapi.client.load(DRIVE_DISCOVERY_DOCS_URL)
-
+    } catch (e) {
+      console.error('loading drive discovery docs failed', e)
+      callback()
+    }
     try {
       // list files to check if file already exists
       const { result } = await gapi.client.drive.files.list({
@@ -186,6 +198,8 @@ async function downloadDataFromDrive(
       if (result.files.length === 0) {
         console.info('downloadDataFromDrive: no file')
         window.alert('No backup found')
+
+        callback()
         // TODO: this happens if file doesn't exist on drive it should have a way to let the user know that
         return
       }
@@ -198,15 +212,9 @@ async function downloadDataFromDrive(
 
         const dbFileResult = fileResult as any as IGOOD & IGO
 
-        const artifactCount = dbFileResult.artifacts
-          ? dbFileResult.artifacts.length
-          : 0
-        const characterCount = dbFileResult.characters
-          ? dbFileResult.characters.length
-          : 0
-        const weaponCount = dbFileResult.weapons
-          ? dbFileResult.weapons.length
-          : 0
+        const artifactCount = dbFileResult.artifacts?.length ?? 0
+        const characterCount = dbFileResult.characters?.length ?? 0
+        const weaponCount = dbFileResult.weapons?.length ?? 0
 
         if (
           !window.confirm(
@@ -215,22 +223,28 @@ async function downloadDataFromDrive(
               `${characterCount} character(s), ` +
               `and ${weaponCount} weapon(s)?`
           )
-        )
+        ) {
+          callback()
           return
+        }
 
         database.importGOOD(dbFileResult, true, true)
+        callback()
       } catch (e) {
         console.error('downloading cloud file failed', e)
+        callback()
         // TODO: better error handling
         return
       }
     } catch (e) {
       console.error('listing files failed', e)
       // TODO: better error handling
+      callback()
       return
     }
   } else {
-    // this happens if user cancels the auth flow so it should be safe to ignore
+    callback()
+    // it should be safe to ignore
   }
 }
 
@@ -248,6 +262,9 @@ function DataCard({ index, readOnly }: { index: number; readOnly: boolean }) {
   )
   // Need to update the dbMeta when database changes
   useEffect(() => setDBMeta(database.dbMeta.get()), [database])
+
+  const { cloudSyncInProgress, setCloudSyncInProgress } = useContext(CloudSyncContext)
+
 
   const current = mainDB === database
   const [uploadOpen, onOpen, onClose] = useBoolState()
@@ -274,26 +291,26 @@ function DataCard({ index, readOnly }: { index: number; readOnly: boolean }) {
   const onDriveUpload = useCallback(() => {
     const uploadDataWrapper = (
       tokenResponse: google.accounts.oauth2.TokenResponse
-    ) => uploadDataToDrive(tokenResponse, database, index)
+    ) => uploadDataToDrive(tokenResponse, database, index, setCloudSyncInProgress, () => setCloudSyncInProgress(false))
     const client = google.accounts.oauth2.initTokenClient({
       client_id: CLIENT_ID,
       scope: SCOPES,
       callback: uploadDataWrapper,
     })
     client.requestAccessToken()
-  }, [database, index])
+  }, [database, index, setCloudSyncInProgress])
 
   const onDriveDownload = useCallback(() => {
     const downloadDataWrapper = (
       tokenResponse: google.accounts.oauth2.TokenResponse
-    ) => downloadDataFromDrive(tokenResponse, database, index)
+    ) => downloadDataFromDrive(tokenResponse, database, index, setCloudSyncInProgress, () => setCloudSyncInProgress(false))
     const client = google.accounts.oauth2.initTokenClient({
       client_id: CLIENT_ID,
       scope: SCOPES,
       callback: downloadDataWrapper,
     })
     client.requestAccessToken()
-  }, [database, index])
+  }, [database, index, setCloudSyncInProgress])
 
   const download = useCallback(() => {
     const date = new Date()
@@ -417,7 +434,7 @@ function DataCard({ index, readOnly }: { index: number; readOnly: boolean }) {
                   <Button
                     fullWidth
                     color="info"
-                    disabled={!hasData || readOnly}
+                    disabled={!hasData || readOnly || cloudSyncInProgress}
                     onClick={onDriveUpload}
                     startIcon={<CloudUpload />}
                   >
@@ -429,7 +446,7 @@ function DataCard({ index, readOnly }: { index: number; readOnly: boolean }) {
                 <Grid item xs={1}>
                   <Button
                     fullWidth
-                    disabled={readOnly}
+                    disabled={readOnly || cloudSyncInProgress}
                     onClick={onDriveDownload}
                     startIcon={<CloudDownload />}
                   >
