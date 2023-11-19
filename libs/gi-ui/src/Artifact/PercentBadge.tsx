@@ -3,7 +3,7 @@ import { clamp } from '@genshin-optimizer/util'
 import type { ButtonProps } from '@mui/material'
 import type { RollColorKey } from './util'
 
-export default function PercentBadge({
+export function PercentBadge({
   value,
   max = 1,
   valid,
