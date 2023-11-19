@@ -9,7 +9,7 @@ import {
   allSubstatKeys,
 } from '@genshin-optimizer/consts'
 import { artifactAsset } from '@genshin-optimizer/gi-assets'
-import type { Artifact } from '@genshin-optimizer/gi-frontend-gql'
+import type { Artifact, Substat } from '@genshin-optimizer/gi-frontend-gql'
 import {
   GetAllUserArtifactDocument,
   useRemoveArtifactMutation,
@@ -18,8 +18,8 @@ import {
 import type { IArtifact } from '@genshin-optimizer/gi-good'
 import { SlotIcon, StatIcon } from '@genshin-optimizer/gi-svgicons'
 import {
-  ArtifactSlotDesc,
-  ArtifactSlotName,
+  ArtifactSetSlotDesc,
+  ArtifactSetSlotName,
   PercentBadge,
   artifactLevelVariant,
 } from '@genshin-optimizer/gi-ui'
@@ -27,8 +27,8 @@ import type { SubstatMeta } from '@genshin-optimizer/gi-util'
 import {
   artDisplayValue,
   getArtifactEfficiency,
+  getArtifactMeta,
   getMainStatDisplayStr,
-  getSubstatMetas,
   getSubstatValue,
   getSubstatValuesPercent,
 } from '@genshin-optimizer/gi-util'
@@ -62,6 +62,7 @@ import LocationName from './LocationName'
 import { UserContext } from './UserDataWrapper'
 import { updateArtifactList } from './gqlUtil'
 import { assetWrapper } from './util'
+import EditIcon from '@mui/icons-material/Edit'
 const allSubstatFilter = new Set(allSubstatKeys)
 
 const MAX_ART_EFFICIENCY = 9
@@ -72,17 +73,22 @@ export function ArtifactCard({
   effFilter = allSubstatFilter,
   disabled = false,
   extraButtons,
+  onEdit = () => {},
 }: {
-  artifact: IArtifact
+  artifact: Artifact
   mainStatAssumptionLevel?: number
   effFilter?: Set<SubstatKey>
   disabled?: boolean
   extraButtons?: JSX.Element
+  onEdit?: () => void
 }): JSX.Element | null {
   const { t } = useTranslation(['artifact', 'ui'])
   const { setKey, rarity } = artifact
 
-  const substatMetas = useMemo(() => getSubstatMetas(artifact), [artifact])
+  const { artifactMeta } = useMemo(
+    () => getArtifactMeta(artifact as IArtifact),
+    [artifact]
+  )
 
   const {
     currentEfficiency,
@@ -98,21 +104,21 @@ export function ArtifactCard({
         maxEfficiency_: 0,
       }
     const { currentEfficiency, maxEfficiency } = getArtifactEfficiency(
-      artifact,
-      substatMetas,
+      artifact as IArtifact,
+      artifactMeta,
       effFilter
     )
     const {
       currentEfficiency: currentEfficiency_,
       maxEfficiency: maxEfficiency_,
-    } = getArtifactEfficiency(artifact, substatMetas, new Set(allSubstatKeys))
+    } = getArtifactEfficiency(artifact as IArtifact, artifactMeta)
     return {
       currentEfficiency,
       maxEfficiency,
       currentEfficiency_,
       maxEfficiency_,
     }
-  }, [artifact, effFilter, substatMetas])
+  }, [artifact, effFilter, artifactMeta])
 
   const artifactValid = maxEfficiency !== 0
   return (
@@ -144,14 +150,15 @@ export function ArtifactCard({
             width: '100%',
           }}
         >
-          {substatMetas.map(
-            (stat) =>
+          {artifact.substats.map(
+            (stat, i) =>
               !!stat.value && (
                 <SubstatDisplay
                   key={stat.key}
                   stat={stat}
+                  statMeta={artifactMeta.substats[i]}
                   effFilter={effFilter}
-                  rarity={rarity}
+                  rarity={rarity as RarityKey}
                 />
               )
           )}
@@ -214,6 +221,7 @@ export function ArtifactCard({
           artifact={artifact as Artifact}
           disabled={disabled}
           extraButtons={extraButtons}
+          onEdit={onEdit}
         />
       </CardThemed>
     </Suspense>
@@ -224,7 +232,7 @@ function Header({
   mainStatAssumptionLevel = 0,
   disabled = false,
 }: {
-  artifact: IArtifact
+  artifact: Artifact
   mainStatAssumptionLevel?: number
   disabled?: boolean
 }): JSX.Element | null {
@@ -237,8 +245,8 @@ function Header({
     level
   )
 
-  const slotName = <ArtifactSlotName setKey={setKey} slotKey={slotKey} />
-  const slotDesc = <ArtifactSlotDesc setKey={setKey} slotKey={slotKey} />
+  const slotName = <ArtifactSetSlotName setKey={setKey} slotKey={slotKey} />
+  const slotDesc = <ArtifactSetSlotDesc setKey={setKey} slotKey={slotKey} />
 
   const ele = allElementWithPhyKeys.find((e) => mainStatKey.startsWith(e))
   return (
@@ -301,11 +309,15 @@ function Header({
         <Typography variant="h5">
           <strong>
             <ColorText color={mainStatLevel !== level ? 'warning' : undefined}>
-              {getMainStatDisplayStr(mainStatKey, rarity, mainStatLevel)}
+              {getMainStatDisplayStr(
+                mainStatKey,
+                rarity as RarityKey,
+                mainStatLevel
+              )}
             </ColorText>
           </strong>
         </Typography>
-        <StarsDisplay stars={rarity} colored />
+        <StarsDisplay stars={rarity as RarityKey} colored />
       </Box>
       <Box
         sx={{
@@ -333,26 +345,29 @@ function Header({
 }
 function SubstatDisplay({
   stat,
+  statMeta,
   effFilter,
   rarity,
 }: {
-  stat: SubstatMeta
+  stat: Substat
+  statMeta: SubstatMeta
   effFilter: Set<SubstatKey>
   rarity: RarityKey
 }) {
   const { t: tk } = useTranslation('statKey_gen')
-  const numRolls = stat.rolls?.length ?? 0
-  const maxRoll = stat.key ? getSubstatValue(stat.key) : 0
+  const { key, value } = stat
+  const { efficiency } = statMeta
+  const numRolls = statMeta.rolls?.length ?? 0
+  const maxRoll = key ? getSubstatValue(stat.key) : 0
   const rollData = useMemo(
-    () => (stat.key ? getSubstatValuesPercent(stat.key, rarity) : []),
-    [stat.key, rarity]
+    () => (key ? getSubstatValuesPercent(key, rarity) : []),
+    [key, rarity]
   )
   const rollOffset = 7 - rollData.length
   const rollColor = `roll${clamp(numRolls, 1, 6)}`
-  const efficiency = stat.efficiency ?? 0
-  const inFilter = stat.key && effFilter.has(stat.key)
+  const inFilter = key && effFilter.has(key)
   const effOpacity = clamp01(0.5 + (efficiency / (100 * 5)) * 0.5) //divide by 6 because an substat can have max 6 rolls
-  const unit = unitStr(stat.key)
+  const unit = unitStr(key)
   const progresses = useMemo(
     () => (
       <Box
@@ -361,7 +376,7 @@ function SubstatDisplay({
         height="1.3em"
         sx={{ opacity: inFilter ? 1 : 0.3 }}
       >
-        {[...stat.rolls].sort().map((v, i) => (
+        {[...statMeta.rolls].sort().map((v, i) => (
           <SmolProgress
             key={`${i}${v}`}
             value={(100 * v) / maxRoll}
@@ -370,7 +385,7 @@ function SubstatDisplay({
         ))}
       </Box>
     ),
-    [inFilter, stat.rolls, maxRoll, rollData, rollOffset]
+    [inFilter, statMeta.rolls, maxRoll, rollData, rollOffset]
   )
   return (
     <Box display="flex" gap={1} alignContent="center">
@@ -379,9 +394,8 @@ function SubstatDisplay({
         color={numRolls ? `${rollColor}.main` : 'error.main'}
         component="span"
       >
-        <StatIcon statKey={stat.key} iconProps={iconInlineProps} />{' '}
-        {tk(stat.key)}
-        {`+${artDisplayValue(stat.value, unitStr(stat.key))}${unit}`}
+        <StatIcon statKey={key} iconProps={iconInlineProps} /> {tk(key)}
+        {`+${artDisplayValue(value, unitStr(key))}${unit}`}
       </Typography>
       {progresses}
       <Typography
@@ -422,9 +436,11 @@ function Footer({
   artifact,
   disabled,
   extraButtons,
+  onEdit,
 }: {
   artifact: Artifact
   disabled: boolean
+  onEdit: () => void
   extraButtons: ReactNode
 }) {
   const { t } = useTranslation('artifact')
@@ -449,18 +465,18 @@ function Footer({
         height="100%"
         sx={{ '& .MuiButton-root': { minWidth: 0, height: '100%' } }}
       >
-        {/* {editable && editorProps && (
-      <BootstrapTooltip
-        title={<Typography>{t`artifact:edit`}</Typography>}
-        placement="top"
-        arrow
-      >
-        <Button color="info" size="small" onClick={onShowEditor}>
-          <EditIcon />
-        </Button>
-      </BootstrapTooltip>
-    )}
-     */}
+        {!disabled && (
+          <BootstrapTooltip
+            title={<Typography>{t`artifact:edit`}</Typography>}
+            placement="top"
+            arrow
+          >
+            <Button color="info" size="small" onClick={onEdit}>
+              <EditIcon />
+            </Button>
+          </BootstrapTooltip>
+        )}
+
         {!disabled && (
           <BootstrapTooltip
             title={lock ? t('cantDeleteLock') : ''}

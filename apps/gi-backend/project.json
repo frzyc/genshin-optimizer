@@ -36,7 +36,8 @@
         "production": {
           "buildTarget": "gi-backend:build:production"
         }
-      }
+      },
+      "dependsOn": ["^gen-file"]
     },
     "lint": {
       "executor": "@nx/linter:eslint",

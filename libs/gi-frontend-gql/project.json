@@ -5,7 +5,7 @@
   "projectType": "library",
   "tags": [],
   "targets": {
-    "genfile": {
+    "gen-file": {
       "command": "npx graphql-codegen --config libs/gi-frontend-gql/codegen.yml",
       "inputs": ["production", "^production", "gqlschema"]
     },

@@ -27,19 +27,190 @@ type User {
 type Artifact {
   id: ID!
   genshinUserId: String!
-  setKey: String!
-  slotKey: String!
+  setKey: ArtifactSetKey!
+  slotKey: ArtifactSlotKey!
   level: Int!
   rarity: Int!
-  mainStatKey: String!
-  location: String
+  mainStatKey: MainStatKey!
+  location: LocationKey
   lock: Boolean!
   substats: [Substat!]!
 }
 
+enum ArtifactSetKey {
+  Adventurer
+  ArchaicPetra
+  Berserker
+  BlizzardStrayer
+  BloodstainedChivalry
+  BraveHeart
+  CrimsonWitchOfFlames
+  DeepwoodMemories
+  DefendersWill
+  DesertPavilionChronicle
+  EchoesOfAnOffering
+  EmblemOfSeveredFate
+  FlowerOfParadiseLost
+  Gambler
+  GildedDreams
+  GladiatorsFinale
+  GoldenTroupe
+  HeartOfDepth
+  HuskOfOpulentDreams
+  Instructor
+  Lavawalker
+  LuckyDog
+  MaidenBeloved
+  MarechausseeHunter
+  MartialArtist
+  NoblesseOblige
+  NymphsDream
+  OceanHuedClam
+  PaleFlame
+  PrayersForDestiny
+  PrayersForIllumination
+  PrayersForWisdom
+  PrayersToSpringtime
+  ResolutionOfSojourner
+  RetracingBolide
+  Scholar
+  ShimenawasReminiscence
+  TenacityOfTheMillelith
+  TheExile
+  ThunderingFury
+  Thundersoother
+  TinyMiracle
+  TravelingDoctor
+  VermillionHereafter
+  ViridescentVenerer
+  VourukashasGlow
+  WanderersTroupe
+}
+
+enum ArtifactSlotKey {
+  flower
+  plume
+  sands
+  goblet
+  circlet
+}
+
+enum MainStatKey {
+  hp
+  hp_
+  atk
+  atk_
+  def_
+  eleMas
+  enerRech_
+  critRate_
+  critDMG_
+  physical_dmg_
+  anemo_dmg_
+  geo_dmg_
+  electro_dmg_
+  hydro_dmg_
+  pyro_dmg_
+  cryo_dmg_
+  dendro_dmg_
+  heal_
+}
+
+enum LocationKey {
+  Albedo
+  Alhaitham
+  Aloy
+  Amber
+  AratakiItto
+  Baizhu
+  Barbara
+  Beidou
+  Bennett
+  Candace
+  Charlotte
+  Chongyun
+  Collei
+  Cyno
+  Dehya
+  Diluc
+  Diona
+  Dori
+  Eula
+  Faruzan
+  Fischl
+  Freminet
+  Furina
+  Ganyu
+  Gorou
+  HuTao
+  Jean
+  KaedeharaKazuha
+  Kaeya
+  KamisatoAyaka
+  KamisatoAyato
+  Kaveh
+  Keqing
+  Kirara
+  Klee
+  KujouSara
+  KukiShinobu
+  Layla
+  Lisa
+  Lynette
+  Lyney
+  Mika
+  Mona
+  Nahida
+  Neuvillette
+  Nilou
+  Ningguang
+  Noelle
+  Qiqi
+  RaidenShogun
+  Razor
+  Rosaria
+  SangonomiyaKokomi
+  Sayu
+  Shenhe
+  ShikanoinHeizou
+  Somnia
+  Sucrose
+  Tartaglia
+  Thoma
+  Tighnari
+  Venti
+  Wanderer
+  Wriothesley
+  Xiangling
+  Xiao
+  Xingqiu
+  Xinyan
+  YaeMiko
+  Yanfei
+  Yaoyao
+  Yelan
+  Yoimiya
+  YunJin
+  Zhongli
+  Traveler
+}
+
 type Substat {
-  key: String!
+  key: SubstatKey!
   value: Float!
+}
+
+enum SubstatKey {
+  hp
+  hp_
+  atk
+  atk_
+  def
+  def_
+  eleMas
+  enerRech_
+  critRate_
+  critDMG_
 }
 
 type Weapon {
@@ -97,28 +268,28 @@ type Mutation {
 }
 
 input InputArtifact {
-  setKey: String!
-  slotKey: String!
+  setKey: ArtifactSetKey!
+  slotKey: ArtifactSlotKey!
   level: Int!
   rarity: Int!
-  mainStatKey: String!
-  location: String
+  mainStatKey: MainStatKey!
+  location: LocationKey
   lock: Boolean!
   substats: [InputSubstat!]!
 }
 
 input InputSubstat {
-  key: String!
+  key: SubstatKey!
   value: Float!
 }
 
 input UpdateArtifact {
-  setKey: String
-  slotKey: String
+  setKey: ArtifactSetKey
+  slotKey: ArtifactSlotKey
   level: Int
   rarity: Int
-  mainStatKey: String
-  location: String
+  mainStatKey: MainStatKey
+  location: LocationKey
   lock: Boolean
   substats: [InputSubstat!]
   id: ID!

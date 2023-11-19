@@ -16,6 +16,12 @@ export type DropdownButtonProps = Omit<ButtonProps, 'title'> & {
   id?: string
   children: React.ReactNode
 }
+
+/**
+ * @deprecated use @go/ui-common
+ * @param param0
+ * @returns
+ */
 export default function DropdownButton({
   title,
   children,

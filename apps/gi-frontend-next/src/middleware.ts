@@ -13,7 +13,8 @@ export const config = {
 export function middleware(req: NextRequest) {
   if (
     req.nextUrl.pathname.indexOf('icon') > -1 ||
-    req.nextUrl.pathname.indexOf('chrome') > -1
+    req.nextUrl.pathname.indexOf('chrome') > -1 ||
+    req.nextUrl.pathname.indexOf('genshin_fast_09_04_21') > -1
   )
     return NextResponse.next()
   let lng

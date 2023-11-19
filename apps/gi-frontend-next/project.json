@@ -52,7 +52,8 @@
           "buildTarget": "gi-frontend-next:build:production",
           "dev": false
         }
-      }
+      },
+      "dependsOn": ["^gen-file"]
     },
     "export": {
       "executor": "@nx/next:export",

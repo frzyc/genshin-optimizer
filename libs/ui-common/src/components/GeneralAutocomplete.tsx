@@ -17,7 +17,8 @@ import {
   TextField,
   useTheme,
 } from '@mui/material'
-import { ReactNode, Suspense, useMemo } from 'react'
+import type { ReactNode } from 'react'
+import { Suspense, useMemo } from 'react'
 import { ColorText } from './ColorText'
 /**
  * NOTE: the rationale behind toImg/toExlabel/toExItemLabel, is because `options` needs to be serializable, and having JSX in there will disrupt seralizability.
@@ -61,13 +62,13 @@ export function GeneralAutocomplete<T extends string>({
   textFieldProps,
   ...acProps
 }: GeneralAutocompleteProps<T>) {
-  const value = options.find((o) => o.key === valueKey)!
+  const value = options.find((o) => o.key === valueKey)
   const theme = useTheme()
   return (
     <Autocomplete
       autoHighlight
       options={options}
-      value={value}
+      value={value ?? null}
       onChange={(_event, newValue, _reason) => onChange(newValue?.key ?? null)}
       isOptionEqualToValue={(option, value) => option.key === value?.key}
       renderInput={(params) => {
@@ -75,7 +76,6 @@ export function GeneralAutocomplete<T extends string>({
         const color = variant
           ? (theme.palette[variant] as PaletteColor | undefined)?.main
           : undefined
-        const valueKey = value?.key
         const { InputLabelProps, InputProps, inputProps, ...restParams } =
           params
         return (
@@ -85,7 +85,8 @@ export function GeneralAutocomplete<T extends string>({
             label={label}
             InputProps={{
               ...InputProps,
-              startAdornment: toImg(valueKey),
+              startAdornment:
+                typeof valueKey === 'string' ? toImg(valueKey) : undefined,
             }}
             inputProps={{
               ...inputProps,

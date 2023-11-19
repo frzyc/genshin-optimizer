@@ -8,29 +8,200 @@
 /* tslint:disable */
 /* eslint-disable */
 
+export enum ArtifactSetKey {
+    Adventurer = "Adventurer",
+    ArchaicPetra = "ArchaicPetra",
+    Berserker = "Berserker",
+    BlizzardStrayer = "BlizzardStrayer",
+    BloodstainedChivalry = "BloodstainedChivalry",
+    BraveHeart = "BraveHeart",
+    CrimsonWitchOfFlames = "CrimsonWitchOfFlames",
+    DeepwoodMemories = "DeepwoodMemories",
+    DefendersWill = "DefendersWill",
+    DesertPavilionChronicle = "DesertPavilionChronicle",
+    EchoesOfAnOffering = "EchoesOfAnOffering",
+    EmblemOfSeveredFate = "EmblemOfSeveredFate",
+    FlowerOfParadiseLost = "FlowerOfParadiseLost",
+    Gambler = "Gambler",
+    GildedDreams = "GildedDreams",
+    GladiatorsFinale = "GladiatorsFinale",
+    GoldenTroupe = "GoldenTroupe",
+    HeartOfDepth = "HeartOfDepth",
+    HuskOfOpulentDreams = "HuskOfOpulentDreams",
+    Instructor = "Instructor",
+    Lavawalker = "Lavawalker",
+    LuckyDog = "LuckyDog",
+    MaidenBeloved = "MaidenBeloved",
+    MarechausseeHunter = "MarechausseeHunter",
+    MartialArtist = "MartialArtist",
+    NoblesseOblige = "NoblesseOblige",
+    NymphsDream = "NymphsDream",
+    OceanHuedClam = "OceanHuedClam",
+    PaleFlame = "PaleFlame",
+    PrayersForDestiny = "PrayersForDestiny",
+    PrayersForIllumination = "PrayersForIllumination",
+    PrayersForWisdom = "PrayersForWisdom",
+    PrayersToSpringtime = "PrayersToSpringtime",
+    ResolutionOfSojourner = "ResolutionOfSojourner",
+    RetracingBolide = "RetracingBolide",
+    Scholar = "Scholar",
+    ShimenawasReminiscence = "ShimenawasReminiscence",
+    TenacityOfTheMillelith = "TenacityOfTheMillelith",
+    TheExile = "TheExile",
+    ThunderingFury = "ThunderingFury",
+    Thundersoother = "Thundersoother",
+    TinyMiracle = "TinyMiracle",
+    TravelingDoctor = "TravelingDoctor",
+    VermillionHereafter = "VermillionHereafter",
+    ViridescentVenerer = "ViridescentVenerer",
+    VourukashasGlow = "VourukashasGlow",
+    WanderersTroupe = "WanderersTroupe"
+}
+
+export enum ArtifactSlotKey {
+    flower = "flower",
+    plume = "plume",
+    sands = "sands",
+    goblet = "goblet",
+    circlet = "circlet"
+}
+
+export enum MainStatKey {
+    hp = "hp",
+    hp_ = "hp_",
+    atk = "atk",
+    atk_ = "atk_",
+    def_ = "def_",
+    eleMas = "eleMas",
+    enerRech_ = "enerRech_",
+    critRate_ = "critRate_",
+    critDMG_ = "critDMG_",
+    physical_dmg_ = "physical_dmg_",
+    anemo_dmg_ = "anemo_dmg_",
+    geo_dmg_ = "geo_dmg_",
+    electro_dmg_ = "electro_dmg_",
+    hydro_dmg_ = "hydro_dmg_",
+    pyro_dmg_ = "pyro_dmg_",
+    cryo_dmg_ = "cryo_dmg_",
+    dendro_dmg_ = "dendro_dmg_",
+    heal_ = "heal_"
+}
+
+export enum LocationKey {
+    Albedo = "Albedo",
+    Alhaitham = "Alhaitham",
+    Aloy = "Aloy",
+    Amber = "Amber",
+    AratakiItto = "AratakiItto",
+    Baizhu = "Baizhu",
+    Barbara = "Barbara",
+    Beidou = "Beidou",
+    Bennett = "Bennett",
+    Candace = "Candace",
+    Charlotte = "Charlotte",
+    Chongyun = "Chongyun",
+    Collei = "Collei",
+    Cyno = "Cyno",
+    Dehya = "Dehya",
+    Diluc = "Diluc",
+    Diona = "Diona",
+    Dori = "Dori",
+    Eula = "Eula",
+    Faruzan = "Faruzan",
+    Fischl = "Fischl",
+    Freminet = "Freminet",
+    Furina = "Furina",
+    Ganyu = "Ganyu",
+    Gorou = "Gorou",
+    HuTao = "HuTao",
+    Jean = "Jean",
+    KaedeharaKazuha = "KaedeharaKazuha",
+    Kaeya = "Kaeya",
+    KamisatoAyaka = "KamisatoAyaka",
+    KamisatoAyato = "KamisatoAyato",
+    Kaveh = "Kaveh",
+    Keqing = "Keqing",
+    Kirara = "Kirara",
+    Klee = "Klee",
+    KujouSara = "KujouSara",
+    KukiShinobu = "KukiShinobu",
+    Layla = "Layla",
+    Lisa = "Lisa",
+    Lynette = "Lynette",
+    Lyney = "Lyney",
+    Mika = "Mika",
+    Mona = "Mona",
+    Nahida = "Nahida",
+    Neuvillette = "Neuvillette",
+    Nilou = "Nilou",
+    Ningguang = "Ningguang",
+    Noelle = "Noelle",
+    Qiqi = "Qiqi",
+    RaidenShogun = "RaidenShogun",
+    Razor = "Razor",
+    Rosaria = "Rosaria",
+    SangonomiyaKokomi = "SangonomiyaKokomi",
+    Sayu = "Sayu",
+    Shenhe = "Shenhe",
+    ShikanoinHeizou = "ShikanoinHeizou",
+    Somnia = "Somnia",
+    Sucrose = "Sucrose",
+    Tartaglia = "Tartaglia",
+    Thoma = "Thoma",
+    Tighnari = "Tighnari",
+    Venti = "Venti",
+    Wanderer = "Wanderer",
+    Wriothesley = "Wriothesley",
+    Xiangling = "Xiangling",
+    Xiao = "Xiao",
+    Xingqiu = "Xingqiu",
+    Xinyan = "Xinyan",
+    YaeMiko = "YaeMiko",
+    Yanfei = "Yanfei",
+    Yaoyao = "Yaoyao",
+    Yelan = "Yelan",
+    Yoimiya = "Yoimiya",
+    YunJin = "YunJin",
+    Zhongli = "Zhongli",
+    Traveler = "Traveler"
+}
+
+export enum SubstatKey {
+    hp = "hp",
+    hp_ = "hp_",
+    atk = "atk",
+    atk_ = "atk_",
+    def = "def",
+    def_ = "def_",
+    eleMas = "eleMas",
+    enerRech_ = "enerRech_",
+    critRate_ = "critRate_",
+    critDMG_ = "critDMG_"
+}
+
 export interface InputArtifact {
-    setKey: string;
-    slotKey: string;
+    setKey: ArtifactSetKey;
+    slotKey: ArtifactSlotKey;
     level: number;
     rarity: number;
-    mainStatKey: string;
-    location?: Nullable<string>;
+    mainStatKey: MainStatKey;
+    location?: Nullable<LocationKey>;
     lock: boolean;
     substats: InputSubstat[];
 }
 
 export interface InputSubstat {
-    key: string;
+    key: SubstatKey;
     value: number;
 }
 
 export interface UpdateArtifact {
-    setKey?: Nullable<string>;
-    slotKey?: Nullable<string>;
+    setKey?: Nullable<ArtifactSetKey>;
+    slotKey?: Nullable<ArtifactSlotKey>;
     level?: Nullable<number>;
     rarity?: Nullable<number>;
-    mainStatKey?: Nullable<string>;
-    location?: Nullable<string>;
+    mainStatKey?: Nullable<MainStatKey>;
+    location?: Nullable<LocationKey>;
     lock?: Nullable<boolean>;
     substats?: Nullable<InputSubstat[]>;
     id: string;
@@ -102,18 +273,18 @@ export interface User {
 export interface Artifact {
     id: string;
     genshinUserId: string;
-    setKey: string;
-    slotKey: string;
+    setKey: ArtifactSetKey;
+    slotKey: ArtifactSlotKey;
     level: number;
     rarity: number;
-    mainStatKey: string;
-    location?: Nullable<string>;
+    mainStatKey: MainStatKey;
+    location?: Nullable<LocationKey>;
     lock: boolean;
     substats: Substat[];
 }
 
 export interface Substat {
-    key: string;
+    key: SubstatKey;
     value: number;
 }
 

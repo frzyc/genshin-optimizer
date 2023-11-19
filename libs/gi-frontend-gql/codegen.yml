@@ -11,3 +11,6 @@ generates:
       withHooks: true
       withComponent: false
       withHOC: false
+      enumsAsTypes: true
+      namingConvention:
+        enumValues: keep

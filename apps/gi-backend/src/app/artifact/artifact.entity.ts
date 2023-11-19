@@ -7,7 +7,43 @@ import {
   ObjectType,
   OmitType,
   PartialType,
+  registerEnumType,
 } from '@nestjs/graphql'
+
+import type { LocationCharacterKey } from '@genshin-optimizer/consts'
+import {
+  ArtifactSetKey,
+  ArtifactSlotKey,
+  SubstatKey,
+  allArtifactSetKeys,
+  allArtifactSlotKeys,
+  allMainStatKeys,
+  allSubstatKeys,
+  MainStatKey,
+} from '@genshin-optimizer/consts'
+import { objKeyMap } from '@genshin-optimizer/util'
+import { LocationEnum } from '../common.entity'
+
+const ArtifactSetEnum = objKeyMap(allArtifactSetKeys, (k) => k)
+registerEnumType(ArtifactSetEnum, {
+  name: 'ArtifactSetKey',
+})
+
+const ArtifactSlotEnum = objKeyMap(allArtifactSlotKeys, (k) => k)
+registerEnumType(ArtifactSlotEnum, {
+  name: 'ArtifactSlotKey',
+})
+
+const MainStatEnum = objKeyMap(allMainStatKeys, (k) => k)
+registerEnumType(MainStatEnum, {
+  name: 'MainStatKey',
+})
+
+const SubstatEnum = objKeyMap(allSubstatKeys, (k) => k)
+registerEnumType(SubstatEnum, {
+  name: 'SubstatKey',
+})
+
 @ObjectType()
 export class Artifact {
   @Field(() => ID)
@@ -16,11 +52,11 @@ export class Artifact {
   @Field(() => String)
   genshinUserId: string
 
-  @Field(() => String)
-  setKey: string
+  @Field(() => ArtifactSetEnum)
+  setKey: ArtifactSetKey
 
-  @Field(() => String)
-  slotKey: string
+  @Field(() => ArtifactSlotEnum)
+  slotKey: ArtifactSlotKey
 
   @Field(() => Int)
   level: number
@@ -28,11 +64,11 @@ export class Artifact {
   @Field(() => Int)
   rarity: number
 
-  @Field(() => String)
-  mainStatKey: string
+  @Field(() => MainStatEnum)
+  mainStatKey: MainStatKey
 
-  @Field(() => String, { nullable: true })
-  location: string | null
+  @Field(() => LocationEnum, { nullable: true })
+  location: LocationCharacterKey | null
 
   @Field(() => Boolean)
   lock: boolean
@@ -43,8 +79,8 @@ export class Artifact {
 
 @ObjectType()
 class Substat {
-  @Field(() => String)
-  key: string
+  @Field(() => SubstatEnum)
+  key: SubstatKey
 
   @Field(() => Float)
   value: number
@@ -52,8 +88,8 @@ class Substat {
 
 @InputType()
 class InputSubstat {
-  @Field(() => String)
-  key: string
+  @Field(() => SubstatEnum)
+  key: SubstatKey
 
   @Field(() => Float)
   value: number

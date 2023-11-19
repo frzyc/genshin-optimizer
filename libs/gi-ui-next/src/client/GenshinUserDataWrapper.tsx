@@ -11,7 +11,7 @@ import { UserContext } from './UserDataWrapper'
 import type { ApolloError } from '@apollo/client'
 
 export type GenshinUserDataObj = {
-  artifacts?: Omit<Artifact, 'genshinUserId'>[]
+  artifacts?: Artifact[]
   characters?: Omit<Character, 'genshinUserId'>[]
   weapons?: Omit<Weapon, 'genshinUserId'>[]
   loading?: boolean
@@ -30,7 +30,7 @@ export function GenshinUserDataWrapper({ children }: { children: ReactNode }) {
     },
   })
   useEffect(() => {
-    getAllData()
+    genshinUserId && getAllData()
   }, [getAllData, genshinUserId])
   const value = useMemo(() => {
     if (!data)
@@ -40,7 +40,9 @@ export function GenshinUserDataWrapper({ children }: { children: ReactNode }) {
         error,
       }
     const ret: GenshinUserDataObj = {
-      artifacts: data.getAllUserArtifact,
+      // we are casting this to Artifact for convenience.
+      //`genshinUserId` prop should not be used in logic at all
+      artifacts: data.getAllUserArtifact as Artifact[],
       weapons: data.getAllUserWeapon,
       characters: data.getAllUserCharacter,
       loading,
@@ -48,7 +50,6 @@ export function GenshinUserDataWrapper({ children }: { children: ReactNode }) {
     }
     return ret
   }, [data, loading, error])
-
   return (
     <GenshinUserContext.Provider value={value}>
       {children}

@@ -11,6 +11,7 @@ const roboto = Roboto({
 const theme = createTheme({
   ...commonTheme,
   typography: {
+    ...commonTheme.typography,
     fontFamily: roboto.style.fontFamily,
   },
 })

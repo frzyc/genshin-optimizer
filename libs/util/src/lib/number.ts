@@ -10,3 +10,7 @@ export function toPercent(number: number, statKey: string) {
   if (statKey.endsWith('_')) return number * 100
   return number
 }
+export function within(val: number, a: number, b: number, inclusive = true) {
+  if (inclusive) return val >= a && val <= b
+  return val > a && val < b
+}
