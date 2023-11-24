@@ -74,6 +74,7 @@
   "addlCharges": "Additional Skill Charges",
   "charOnField": "Character is on-field",
   "timeOnField": "Time spent on-field",
+  "activeChar": "Active character",
   "charOffField": "Character is off-field",
   "activeCharField": "Character is inside the ability's field",
   "opponentsField": "Opponent is inside the ability's field",

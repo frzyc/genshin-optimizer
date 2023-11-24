@@ -100,8 +100,8 @@ const dm = {
     max_interval_dec_: skillParam_gen.passive2[3][0],
   },
   constellation1: {
-    fanfareLimitInc: skillParam_gen.constellation1[0],
-    bonusFanfare: skillParam_gen.constellation1[1],
+    bonusFanfare: skillParam_gen.constellation1[0],
+    fanfareLimitInc: skillParam_gen.constellation1[1],
   },
   constellation2: {
     idk: skillParam_gen.constellation2[0],
