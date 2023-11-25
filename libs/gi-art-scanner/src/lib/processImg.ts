@@ -244,7 +244,6 @@ export async function processEntry(
 
   const rarity = parseRarity(headerCropped, debugImgs)
 
-  console.log({ whiteTexts, substatTexts, artifactSetTexts })
   const [artifact, texts] = findBestArtifact(
     new Set([rarity]),
     parseSetKeys(artifactSetTexts),
