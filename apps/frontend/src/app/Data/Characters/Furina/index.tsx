@@ -265,14 +265,7 @@ const c6Pneuma_plunging_dmgInc = infoMut(
 const dmgFormulas = {
   normal: {
     ...Object.fromEntries(
-      dm.normal.hitArr.map((arr, i) => [
-        i,
-        dmgNode('atk', arr, 'normal', {
-          premod: {
-            normal_dmgInc: sum(c6_normal_dmgInc, c6Pneuma_normal_dmgInc),
-          },
-        }),
-      ])
+      dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
     ),
     thornBladeDmg: dmgNode('atk', dm.normal.bladeThornDmg, 'normal', {
       hit: { ele: constant(data_gen.ele) },
@@ -321,7 +314,7 @@ const dmgFormulas = {
     skillDmg: dmgNode('hp', dm.burst.skillDmg, 'burst'),
   },
   passive1: {
-    heal: greaterEq(input.asc, 1, healNode('hp', dm.passive1.heal, 0)),
+    heal: greaterEq(input.asc, 1, healNode('hp', percent(dm.passive1.heal), 0)),
   },
   passive2: {
     member_dmg_: a4Member_dmg_,
@@ -333,7 +326,7 @@ const dmgFormulas = {
     heal: greaterEq(
       input.constellation,
       6,
-      healNode('hp', dm.constellation6.ousiaHeal, 0)
+      healNode('hp', percent(dm.constellation6.ousiaHeal), 0)
     ),
   },
 }
@@ -351,6 +344,7 @@ export const data = dataObjForCharacterSheet(
       skillBoost: skillC5,
       burstBoost: burstC3,
       hp_: c2Overstack_hp_,
+      normal_dmgInc: sum(c6_normal_dmgInc, c6Pneuma_normal_dmgInc),
       plunging_dmgInc: sum(c6_plunging_dmgInc, c6Pneuma_plunging_dmgInc),
       charged_dmgInc: sum(c6_charged_dmgInc, c6Pneuma_charged_dmgInc),
     },
