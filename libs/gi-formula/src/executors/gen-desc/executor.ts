@@ -3,7 +3,7 @@ import { workspaceRoot } from '@nx/devkit'
 import * as path from 'path'
 
 // Note:
-// It is import that `data` has NOT been loaded at this point
+// It is important that `data` has NOT been loaded at this point
 // as we are injecting `tagList` to "collect" the metadata
 import { metaList } from '../../data/util'
 import type { entries as Entries } from '../../data'
@@ -13,7 +13,7 @@ metaList.conditionals = {}
 export default async function runExecutor(
   options: GenDescExecutorSchema
 ): Promise<{ success: boolean }> {
-  // Defer loading of `data` to here so that `metaList` trick above works
+  // Defer loading of `data` to here so that the `metaList` trick above works
   // eslint-disable-next-line @typescript-eslint/no-var-requires
   const { entries } = require('../../data')
   const { outputPath } = options
@@ -27,7 +27,7 @@ export default async function runExecutor(
     }
   }
 
-  // Crawl for formulas in `{ qt:formula q:listing }`
+  // Crawl for formulas in sheet-specific formula listing
   for (const { tag, value } of entries as typeof Entries) {
     if (
       // sheet-specific
