@@ -1,13 +1,13 @@
 import type { GenDescExecutorSchema } from './schema'
 import { workspaceRoot } from '@nx/devkit'
 import * as path from 'path'
+import { writeFileSync } from 'fs'
 
 // Note:
 // It is important that `data` has NOT been loaded at this point
 // as we are injecting `tagList` to "collect" the metadata
 import { metaList } from '../../data/util'
 import type { entries as Entries } from '../../data'
-import { writeFileSync } from 'fs'
 metaList.conditionals = {}
 
 export default async function runExecutor(

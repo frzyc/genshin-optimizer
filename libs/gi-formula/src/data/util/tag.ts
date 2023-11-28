@@ -196,7 +196,7 @@ export const allBoolConditionals = (src: Source) =>
       cmpNE(r, 0, node, off),
     ifOff: (node: NumNode | number) => cmpEq(r, 0, node),
   }))
-export const allListConditional = <T extends string>(src: Source, list: T[]) =>
+export const allListConditionals = <T extends string>(src: Source, list: T[]) =>
   allCustoms(src, 'cond', { type: 'list', list }, ({ max: r }) => ({
     map: (table: Record<T, number>, def = 0) => {
       subscript(

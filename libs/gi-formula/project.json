@@ -14,7 +14,7 @@
     "gen-file": {
       "executor": "@genshin-optimizer/gi-formula:gen-desc",
       "options": {
-        "outputPath": "libs/gi-formula/src/meta.gen.ts"
+        "outputPath": "libs/gi-formula/src/meta.ts"
       }
     },
     "publish": {
