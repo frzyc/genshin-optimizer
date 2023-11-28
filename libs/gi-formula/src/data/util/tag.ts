@@ -1,8 +1,12 @@
 import type { NumNode } from '@genshin-optimizer/pando'
-import { cmpEq, cmpNE, constant } from '@genshin-optimizer/pando'
+import { cmpEq, cmpNE, constant, subscript } from '@genshin-optimizer/pando'
 import type { Source, Stat } from './listing'
 import type { Read, Tag } from './read'
 import { reader, tag } from './read'
+
+export const metaList: {
+  conditionals?: Partial<Record<Source, Record<string, any>>>
+} = {}
 
 export function percent(x: number | NumNode): NumNode {
   return tag(typeof x === 'number' ? constant(x) : x, { qt: 'misc', q: '_' })
@@ -178,27 +182,61 @@ export const enemyDebuff = convert(enemyTag, { et: 'enemy' })
 export const userBuff = convert(selfTag, { et: 'self', src: 'custom' })
 
 // Custom tags
-export const allStatics = (src: Source) => allCustoms(src, 'misc', (x) => x)
-export const allConditionals = (src: Source, accu: Read['accu'] = 'sum') =>
-  allCustoms(src, 'cond', (r) => r[accu])
+export const allStatics = (src: Source) =>
+  allCustoms(src, 'misc', undefined, (x) => x)
 export const allStacks = (src: Source) =>
-  allCustoms(src, 'stackOut', (out) => ({
+  allCustoms(src, 'stackOut', undefined, (out) => ({
     add: (cond: NumNode | number) => out.with('qt', 'stackIn').add(cond),
     apply: (val: NumNode | number, otherwise: NumNode | number = 0) =>
       cmpEq(out, 1, val, otherwise),
   }))
 export const allBoolConditionals = (src: Source) =>
-  allCustoms(src, 'cond', ({ sum: r }) => ({
+  allCustoms(src, 'cond', { type: 'bool' }, ({ sum: r }) => ({
     ifOn: (node: NumNode | number, off?: NumNode | number) =>
       cmpNE(r, 0, node, off),
     ifOff: (node: NumNode | number) => cmpEq(r, 0, node),
   }))
+export const allListConditional = <T extends string>(src: Source, list: [T]) =>
+  allCustoms(src, 'cond', { type: 'list', list }, ({ max: r }) => ({
+    map: (table: Record<T, number>, def = 0) => {
+      subscript(
+        r,
+        list.map((v) => table[v] ?? def)
+      )
+    },
+    value: r,
+  }))
+export const allNumConditional = (
+  src: Source,
+  ex: Read['accu'],
+  int_only: boolean,
+  min?: number,
+  max?: number
+) => allCustoms(src, 'cond', { type: 'num', int_only, min, max }, (r) => r[ex])
+
+export const conditionalEntries = (src: Source) => {
+  const base = allCustoms(src, 'cond', undefined, (r) => r)
+  return (name: string, val: string | number) => base[name].add(val)
+}
 
 function allCustoms<T>(
   src: Source,
   qt: string,
+  meta: object | undefined,
   transform: (r: Read, q: string) => T
 ): Record<string, T> {
+  if (meta && metaList.conditionals) {
+    const entries = metaList.conditionals
+    if (!entries[src]) {
+      entries[src] = {}
+    }
+    const srcEntries = entries[src]!
+    return reader.withTag({ et: 'self', src, qt }).withAll('q', [], (r, q) => {
+      if (srcEntries[q]) console.error(`Duplicate conditional ${src}:${q}`)
+      srcEntries[q] = meta
+      return transform(r, q)
+    })
+  }
   return reader.withTag({ et: 'self', src, qt }).withAll('q', [], transform)
 }
 

@@ -11,6 +11,12 @@
         "updateBuildableProjectDepsInPackageJson": true
       }
     },
+    "gen-file": {
+      "executor": "@genshin-optimizer/gi-formula:gen-desc",
+      "options": {
+        "outputPath": "libs/gi-formula/src/meta.gen.ts"
+      }
+    },
     "publish": {
       "executor": "nx:run-commands",
       "options": {

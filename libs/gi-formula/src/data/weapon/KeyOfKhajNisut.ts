@@ -1,7 +1,7 @@
 import type { WeaponKey } from '@genshin-optimizer/consts'
 import { cmpEq, prod, subscript } from '@genshin-optimizer/pando'
 import {
-  allConditionals,
+  allNumConditional,
   percent,
   register,
   self,
@@ -17,7 +17,7 @@ const {
   final,
   weapon: { refinement },
 } = self
-const { afterSkillStacks } = allConditionals(key)
+const { afterSkillStacks } = allNumConditional(key, 'sum', true, 0, 3)
 const selfElemas = prod(
   afterSkillStacks,
   percent(subscript(refinement, selfEmSrc)),

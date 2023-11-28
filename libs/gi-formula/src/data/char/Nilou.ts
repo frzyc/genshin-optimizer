@@ -3,7 +3,6 @@ import { allStats } from '@genshin-optimizer/gi-stats'
 import { cmpEq, cmpGE, max, min, prod, sum } from '@genshin-optimizer/pando'
 import {
   allBoolConditionals,
-  allConditionals,
   enemyDebuff,
   percent,
   register,
@@ -98,7 +97,7 @@ const {
 const { a1AfterSkill, a1AfterHit, c4AfterPirHit } = allBoolConditionals(
   info.key
 )
-const { c2Hydro, c2Dendro } = allConditionals(info.key, 'unique')
+const { c2Hydro, c2Dendro } = allBoolConditionals(info.key)
 
 const onlyDendroHydroTeam = cmpGE(
   team.common.count.dendro,
@@ -141,7 +140,7 @@ const c2_hydro_enemyRes_ = cmpGE(
   cmpEq(
     isGoldenChaliceBountyActive,
     1,
-    cmpEq(c2Hydro, 'hydro', percent(dm.constellation2.hydro_enemyRes_))
+    c2Hydro.ifOn(percent(dm.constellation2.hydro_enemyRes_))
   )
 )
 const c2_dendro_enemyRes_ = cmpGE(
@@ -150,7 +149,7 @@ const c2_dendro_enemyRes_ = cmpGE(
   cmpEq(
     isGoldenChaliceBountyActive,
     1,
-    cmpEq(c2Dendro, 'dendro', percent(dm.constellation2.dendro_enemyRes_))
+    c2Dendro.ifOn(percent(dm.constellation2.dendro_enemyRes_))
   )
 )
 const c4_burst_dmg_ = cmpGE(
