@@ -27,7 +27,7 @@ export default registerArt(
   // - Add self-buff formulas using `selfBuff.<buff target>.add(<buff value>)`
   // - Add teambuff formulas using `teamBuff.<buff target>.add(<buff value>)
   // - Add active buff formulas using `activeCharBuff.<buff target>.add(<buff value>)`
-  // - Add enemy debuff using `enemyDebuff.<debugg target>.add(<debuff value>)`
+  // - Add enemy debuff using `enemyDebuff.<debuff target>.add(<debuff value>)`
   //
   // Check for 2-set effect using `cmpGE(count, 2, ...)`
   selfBuff.premod.atk_.add(cmpGE(count, 2, percent(1))),

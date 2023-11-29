@@ -5,7 +5,7 @@ import type { GenDescExecutorSchema } from './schema'
 
 // Note:
 // It is important that `data` has NOT been loaded at this point
-// as we are injecting `tagList` to "collect" the metadata
+// as we are injecting `conditionals` to "collect" the metadata
 import * as prettier from 'prettier'
 import type { entries as Entries } from '../../data'
 import { metaList } from '../../data/util'

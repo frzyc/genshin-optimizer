@@ -59,7 +59,7 @@ export default register(
   teamBuff.premod.atk.add(1),
   // - Add active buff formulas using `activeCharBuff.<buff target>.add(<buff value>)`
   activeCharBuff.premod.atk.add(1),
-  // - Add enemy debuff using `enemyDebuff.<debugg target>.add(<debuff value>)`
+  // - Add enemy debuff using `enemyDebuff.<debuff target>.add(<debuff value>)`
   enemyDebuff.common.defRed_.add(1),
   //
   // <buff value> uses `self.*`, `team.*`, `target.*` (target of team buff), and `enemy.*`
