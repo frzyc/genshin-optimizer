@@ -1,0 +1,9 @@
+{
+  "generators": {
+    "gen-sheet": {
+      "factory": "./src/generators/gen-sheet/generator",
+      "schema": "./src/generators/gen-sheet/schema.json",
+      "description": "gen-sheet generator"
+    }
+  }
+}
