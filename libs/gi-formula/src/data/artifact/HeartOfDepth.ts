@@ -15,13 +15,13 @@ const src: ArtifactSetKey = 'HeartOfDepth'
 const count = artCount(src)
 // TODO: Conditionals
 const { someBoolConditional } = allBoolConditionals(src)
-const { someListConditional } = allListConditionals(src, [])
-const { someNumConditional } = allNumConditionals(src, 'unique', false)
+const { _someListConditional } = allListConditionals(src, [])
+const { _someNumConditional } = allNumConditionals(src, 'unique', false)
 // TODO: Non-stack values
 const { someStack } = allStacks(src)
 
 export default registerArt(
-  src
+  src,
 
   // TODO:
   // - Add self-buff formulas using `selfBuff.<buff target>.add(<buff value>)`
@@ -30,5 +30,9 @@ export default registerArt(
   // - Add enemy debuff using `enemyDebuff.<debugg target>.add(<debuff value>)`
   //
   // Check for 2-set effect using `cmpGE(count, 2, ...)`
+  selfBuff.premod.atk_.add(cmpGE(count, 2, percent(1))),
   // Check for 4-set effect using `cmpGE(count, 4, ...)`
+  // Applies non-stacking teambuff
+  someStack.add(someBoolConditional.ifOn(cmpGE(count, 4, 1))),
+  teamBuff.premod.atk_.add(someStack.apply(percent(1)))
 )

@@ -12,14 +12,14 @@ import {
 const src: WeaponKey = 'MissiveWindspear'
 
 const {
-  weapon: { refinement },
+  weapon: { refinement: _refinement },
 } = self
 // TODO: Conditionals
-const { someBoolConditional } = allBoolConditionals(src)
-const { someListConditional } = allListConditionals(src, [])
-const { someNumConditional } = allNumConditionals(src, 'unique', false)
+const { _someBoolConditional } = allBoolConditionals(src)
+const { _someListConditional } = allListConditionals(src, [])
+const { _someNumConditional } = allNumConditionals(src, 'unique', false)
 // TODO: Non-stack values
-const { someStack } = allStacks(src)
+const { _someStack } = allStacks(src)
 
 export default register(
   src
