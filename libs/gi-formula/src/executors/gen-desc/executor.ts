@@ -1,13 +1,14 @@
-import type { GenDescExecutorSchema } from './schema'
 import { workspaceRoot } from '@nx/devkit'
-import * as path from 'path'
 import { writeFileSync } from 'fs'
+import * as path from 'path'
+import type { GenDescExecutorSchema } from './schema'
 
 // Note:
 // It is important that `data` has NOT been loaded at this point
 // as we are injecting `tagList` to "collect" the metadata
-import { metaList } from '../../data/util'
+import * as prettier from 'prettier'
 import type { entries as Entries } from '../../data'
+import { metaList } from '../../data/util'
 metaList.conditionals = {}
 
 export default async function runExecutor(
@@ -49,50 +50,56 @@ export default async function runExecutor(
     }
   }
 
-  const str = `
-  type Tag = Record<string, string>
-
-  export type IConditionalData = IBoolConditionalData | IListConditionalData | INumConditionalData
-  export type IFormulaData = {
-    src: string // entity
-    name: string // formula name
-    tag: Tag // tag used to access value
-  }
-
-  /// Conditional whose values are True (1.0) and False (0.0)
-  export type IBoolConditionalData = {
-    type: "bool" // type discriminator
-    src: string // entity
-    name: string // conditional name
-    tag: Tag // tag used to access value
-  }
-  /// Conditional whose values are those in the list. When inputting the
-  /// entry, use the (0-based) position in the list
-  export type IListConditionalData = {
-    type: "list" // type discriminator
-    src: string // entity
-    name: string // conditional name
-    tag: Tag // tag used to access value
-
-    list: [string] // feasible values
-  }
-  /// Conditional whose values are regular numbers
-  export type INumConditionalData = {
-    type: "num" // type discriminator
-    src: string // entity
-    name: string // conditional name
-    tag: Tag // tag used to access value
-
-    int_only: boolean // whether the value must be an integer
-    min?: number // smallest feasible value, if applicable
-    max?: number // largest feasible value, if applicable
-  }
-
-  export const conditionals = ${JSON.stringify(conditionals)}
-  export const formulas = ${JSON.stringify(formulas)}
-  `
-
   const cwd = path.join(workspaceRoot, outputPath)
+  const prettierRc = await prettier.resolveConfig(cwd)
+  const str = prettier.format(
+    `
+type Tag = Record<string, string>
+
+export type IConditionalData =
+  | IBoolConditionalData
+  | IListConditionalData
+  | INumConditionalData
+export type IFormulaData = {
+  src: string // entity
+  name: string // formula name
+  tag: Tag // tag used to access value
+}
+
+/// Conditional whose values are True (1.0) and False (0.0)
+export type IBoolConditionalData = {
+  type: 'bool' // type discriminator
+  src: string // entity
+  name: string // conditional name
+  tag: Tag // tag used to access value
+}
+/// Conditional whose values are those in the list. When inputting the
+/// entry, use the (0-based) position in the list
+export type IListConditionalData = {
+  type: 'list' // type discriminator
+  src: string // entity
+  name: string // conditional name
+  tag: Tag // tag used to access value
+
+  list: [string] // feasible values
+}
+/// Conditional whose values are regular numbers
+export type INumConditionalData = {
+  type: 'num' // type discriminator
+  src: string // entity
+  name: string // conditional name
+  tag: Tag // tag used to access value
+
+  int_only: boolean // whether the value must be an integer
+  min?: number // smallest feasible value, if applicable
+  max?: number // largest feasible value, if applicable
+}
+
+export const conditionals = ${JSON.stringify(conditionals)}
+export const formulas = ${JSON.stringify(formulas)}
+  `,
+    { ...prettierRc, parser: 'typescript' }
+  )
   writeFileSync(cwd, str)
 
   return { success: true }
