@@ -281,11 +281,11 @@ const dmgFormulas = {
   },
   plunging: {
     dmg: dmgNode('atk', dm.plunging.dmg, 'plunging'),
-    low: dmgNode('atk', dm.plunging.dmg, 'plunging', {
-      premod: { normal_dmgInc: c6Pneuma_plunging_dmgInc },
+    low: dmgNode('atk', dm.plunging.low, 'plunging', {
+      premod: { plunging_dmgInc: c6Pneuma_plunging_dmgInc },
     }),
-    high: dmgNode('atk', dm.plunging.dmg, 'plunging', {
-      premod: { normal_dmgInc: c6Pneuma_plunging_dmgInc },
+    high: dmgNode('atk', dm.plunging.high, 'plunging', {
+      premod: { plunging_dmgInc: c6Pneuma_plunging_dmgInc },
     }),
   },
   skill: {
