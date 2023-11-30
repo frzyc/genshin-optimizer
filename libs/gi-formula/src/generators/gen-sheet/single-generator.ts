@@ -6,6 +6,7 @@ import {
 import type { Tree } from '@nx/devkit'
 import genSheet from './genSheet'
 import type { GenSheetGeneratorSchema } from './schema'
+import genIndex from './genIndex'
 export default async function genSheetGenerator(
   tree: Tree,
   options: GenSheetGeneratorSchema
@@ -29,6 +30,7 @@ export default async function genSheetGenerator(
       return
   }
   await genSheet(tree, options, true)
+  await genIndex(tree, sheet_type)
   console.log(
     'Generated sheet. Include the generated file in the corresponding `index.ts` to complete the process'
   )
