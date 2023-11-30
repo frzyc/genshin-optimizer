@@ -45,7 +45,7 @@ const { _someStack } = allStacks(info.key)
 
 const _count = team.common.count
 
-export default register(
+const t = register(
   info.key,
   entriesForChar(info, data_gen),
   // TODO: Double check these
@@ -66,5 +66,6 @@ export default register(
 
   // Formulas
   // TODO: Add dmg/heal/shield formulas using `dmg`, `customDmg`, `shield`, `customShield`, `fixedShield`, or `customHeal`
-  dmg('normal1', info, 'atk', dm.normal.dmg1, 'normal')
+  dmg('normal1', info, 'atk', _dm.normal.dmg1, 'normal')
 )
+export default t

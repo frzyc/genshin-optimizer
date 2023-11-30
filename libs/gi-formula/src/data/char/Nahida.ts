@@ -192,8 +192,7 @@ const a4Karma_critRate_ = percent(
     prod(percent(dm.passive2.eleMas_critRate_), passive2Elemas)
   )
 )
-
-export default register(
+const t = register(
   info.key,
   entriesForChar(info, data_gen),
   selfBuff.char.skill.add(cmpGE(constellation, 3, 3)),
@@ -254,3 +253,4 @@ export default register(
     selfBuff.premod.critRate_.add(a4Karma_critRate_)
   )
 )
+export default t
