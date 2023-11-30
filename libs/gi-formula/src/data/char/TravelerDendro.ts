@@ -17,8 +17,9 @@ import {
 import { dataGenToCharInfo, dmg, entriesForChar } from './util'
 
 const key: CharacterKey = 'TravelerDendro'
-const data_gen = allStats.char.data[key]
-const skillParam_gen = allStats.char.skillParam[key]
+const data_gen = allStats.char.data['Traveler']
+// TODO: Fix gender 🏳️‍⚧️
+const skillParam_gen = allStats.char.skillParam['TravelerDendroF']
 
 // TODO: Fill data-mine values here
 const _dm = {
