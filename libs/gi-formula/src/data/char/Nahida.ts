@@ -13,7 +13,7 @@ import {
 import {
   activeCharBuff,
   allBoolConditionals,
-  allConditionals,
+  allNumConditionals,
   allStatics,
   customDmg,
   enemyDebuff,
@@ -109,7 +109,7 @@ const {
 const { a1ActiveInBurst, c2Bloom, c2QSA, partyInBurst } = allBoolConditionals(
   info.key
 )
-const { c4Count } = allConditionals(info.key)
+const { c4Count } = allNumConditionals(info.key, 'sum', true, 0, 4)
 const { c2_critRate_, c2_critDMG_, c2qsa_defRed_ } = allStatics(info.key)
 
 const count = team.common.count
