@@ -366,6 +366,7 @@ const sheet: ICharacterSheet = {
       ct.condTem('skill', {
         value: condGrimheartConsumed,
         path: condGrimheartConsumedPath,
+        teamBuff: true,
         name: ct.ch('c1C.name'),
         states: {
           on: {
