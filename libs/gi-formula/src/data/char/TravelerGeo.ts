@@ -32,7 +32,7 @@ const _dm = {
   burst: {},
 } as const
 
-const info = dataGenToCharInfo(data_gen)
+const info = dataGenToCharInfo(data_gen, 'geo')
 const {
   final: _final,
   char: { ascension: _ascension, constellation },

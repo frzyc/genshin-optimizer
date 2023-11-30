@@ -2747,6 +2747,94 @@ export const conditionals = {
       int_only: false,
     },
   },
+  TravelerGeo: {
+    _someBoolConditional: {
+      src: 'TravelerGeo',
+      name: '_someBoolConditional',
+      tag: { src: 'TravelerGeo', name: '_someBoolConditional' },
+      type: 'bool',
+    },
+    _someListConditional: {
+      src: 'TravelerGeo',
+      name: '_someListConditional',
+      tag: { src: 'TravelerGeo', name: '_someListConditional' },
+      type: 'list',
+      list: [],
+    },
+    _someNumConditional: {
+      src: 'TravelerGeo',
+      name: '_someNumConditional',
+      tag: { src: 'TravelerGeo', name: '_someNumConditional' },
+      type: 'num',
+      int_only: false,
+    },
+  },
+  TravelerElectro: {
+    _someBoolConditional: {
+      src: 'TravelerElectro',
+      name: '_someBoolConditional',
+      tag: { src: 'TravelerElectro', name: '_someBoolConditional' },
+      type: 'bool',
+    },
+    _someListConditional: {
+      src: 'TravelerElectro',
+      name: '_someListConditional',
+      tag: { src: 'TravelerElectro', name: '_someListConditional' },
+      type: 'list',
+      list: [],
+    },
+    _someNumConditional: {
+      src: 'TravelerElectro',
+      name: '_someNumConditional',
+      tag: { src: 'TravelerElectro', name: '_someNumConditional' },
+      type: 'num',
+      int_only: false,
+    },
+  },
+  TravelerDendro: {
+    _someBoolConditional: {
+      src: 'TravelerDendro',
+      name: '_someBoolConditional',
+      tag: { src: 'TravelerDendro', name: '_someBoolConditional' },
+      type: 'bool',
+    },
+    _someListConditional: {
+      src: 'TravelerDendro',
+      name: '_someListConditional',
+      tag: { src: 'TravelerDendro', name: '_someListConditional' },
+      type: 'list',
+      list: [],
+    },
+    _someNumConditional: {
+      src: 'TravelerDendro',
+      name: '_someNumConditional',
+      tag: { src: 'TravelerDendro', name: '_someNumConditional' },
+      type: 'num',
+      int_only: false,
+    },
+  },
+  TravelerHydro: {
+    _someBoolConditional: {
+      src: 'TravelerHydro',
+      name: '_someBoolConditional',
+      tag: { src: 'TravelerHydro', name: '_someBoolConditional' },
+      type: 'bool',
+    },
+    _someListConditional: {
+      src: 'TravelerHydro',
+      name: '_someListConditional',
+      tag: { src: 'TravelerHydro', name: '_someListConditional' },
+      type: 'list',
+      list: [],
+    },
+    _someNumConditional: {
+      src: 'TravelerHydro',
+      name: '_someNumConditional',
+      tag: { src: 'TravelerHydro', name: '_someNumConditional' },
+      type: 'num',
+      int_only: false,
+    },
+  },
   AmenomaKageuchi: {
     _someBoolConditional: {
       src: 'AmenomaKageuchi',
@@ -8156,6 +8244,62 @@ export const formulas = {
         qt: 'formula',
         q: 'dmg',
         src: 'TravelerAnemo',
+        move: 'normal',
+        name: 'normal1',
+      },
+    },
+  },
+  TravelerGeo: {
+    normal1: {
+      src: 'TravelerGeo',
+      name: 'normal1',
+      tag: {
+        et: 'self',
+        qt: 'formula',
+        q: 'dmg',
+        src: 'TravelerGeo',
+        move: 'normal',
+        name: 'normal1',
+      },
+    },
+  },
+  TravelerElectro: {
+    normal1: {
+      src: 'TravelerElectro',
+      name: 'normal1',
+      tag: {
+        et: 'self',
+        qt: 'formula',
+        q: 'dmg',
+        src: 'TravelerElectro',
+        move: 'normal',
+        name: 'normal1',
+      },
+    },
+  },
+  TravelerDendro: {
+    normal1: {
+      src: 'TravelerDendro',
+      name: 'normal1',
+      tag: {
+        et: 'self',
+        qt: 'formula',
+        q: 'dmg',
+        src: 'TravelerDendro',
+        move: 'normal',
+        name: 'normal1',
+      },
+    },
+  },
+  TravelerHydro: {
+    normal1: {
+      src: 'TravelerHydro',
+      name: 'normal1',
+      tag: {
+        et: 'self',
+        qt: 'formula',
+        q: 'dmg',
+        src: 'TravelerHydro',
         move: 'normal',
         name: 'normal1',
       },
