@@ -27,7 +27,7 @@ const atkInc = prod(
 
 export default register(
   key,
-  entriesForWeapon(key)
+  entriesForWeapon(key),
   allElementKeys.map((ele) =>
     selfBuff.premod.dmg_[ele].add(subscript(refinement, dmg_))
   ),

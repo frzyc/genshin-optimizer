@@ -15,7 +15,7 @@ const { set4 } = allBoolConditionals(key),
   { canNO4 } = allStacks(key)
 
 export default registerArt(
-  name,
+  key,
   selfBuff.premod.dmg_.burst.add(cmpGE(count, 2, percent(0.2))),
 
   canNO4.add(set4.ifOn(cmpGE(count, 4, 1))),

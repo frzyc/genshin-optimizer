@@ -31,4 +31,8 @@ const normal_dmg_ = min(
   sum(time_normal_dmg_, hit_normal_dmg_)
 )
 
-export default register(key, selfBuff.premod.dmg_.normal.add(normal_dmg_))
+export default register(
+  key,
+  entriesForWeapon(key),
+  selfBuff.premod.dmg_.normal.add(normal_dmg_)
+)

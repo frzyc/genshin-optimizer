@@ -32,7 +32,7 @@ const teamEleMas = cmpEq(
 
 export default register(
   key,
-  entriesForWeapon(key)
+  entriesForWeapon(key),
   selfBuff.final.eleMas.add(selfElemas),
   teamBuff.final.eleMas.add(teamEleMas)
 )

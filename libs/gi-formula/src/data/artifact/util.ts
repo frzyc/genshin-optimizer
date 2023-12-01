@@ -15,7 +15,7 @@ export function registerArt(
    */
 
   function internal({ tag: oldTag, value }: TagMapNodeEntry): TagMapNodeEntry {
-    if (oldTag.key === key)
+    if (oldTag.src === key)
       // Special entries (usually stack count) that override `stack`
       return { tag: oldTag, value }
 
@@ -23,8 +23,8 @@ export function registerArt(
     if (value.op === 'reread' || value.op === 'tag' || value.op === 'read')
       // Reuses `value` since it is already changing tags
       value = { ...value, tag: { ...value.tag, key } }
-    else value = tag(value, { key })
-    return { tag: { ...oldTag, key: 'art' }, value }
+    else value = tag(value, { src: key })
+    return { tag: { ...oldTag, src: 'art' }, value }
   }
   return data.flatMap((data) =>
     Array.isArray(data) ? data.map(internal) : internal(data)
@@ -32,5 +32,5 @@ export function registerArt(
 }
 
 export function artCount(key: ArtifactSetKey): NumNode {
-  return self.common.count.key(key)
+  return self.common.count.src(key)
 }
