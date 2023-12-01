@@ -9,10 +9,10 @@ import {
 } from '../util'
 import { artCount, registerArt } from './util'
 
-const name: ArtifactSetKey = 'NoblesseOblige',
-  count = artCount(name)
-const { set4 } = allBoolConditionals(name),
-  { canNO4 } = allStacks(name)
+const key: ArtifactSetKey = 'NoblesseOblige',
+  count = artCount(key)
+const { set4 } = allBoolConditionals(key),
+  { canNO4 } = allStacks(key)
 
 export default registerArt(
   name,

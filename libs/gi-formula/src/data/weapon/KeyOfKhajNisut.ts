@@ -8,6 +8,7 @@ import {
   selfBuff,
   teamBuff,
 } from '../util'
+import { entriesForWeapon } from './util'
 
 const key: WeaponKey = 'KeyOfKhajNisut'
 const selfEmSrc = [NaN, 0.0012, 0.0015, 0.0018, 0.0021, 0.0024]
@@ -31,6 +32,7 @@ const teamEleMas = cmpEq(
 
 export default register(
   key,
+  entriesForWeapon(key)
   selfBuff.final.eleMas.add(selfElemas),
   teamBuff.final.eleMas.add(teamEleMas)
 )
