@@ -22,3 +22,7 @@ export function deepClone<T>(obj: T): T {
   })
   return ret
 }
+
+export function isIn<T>(values: readonly T[], val: any): val is T {
+  return values.includes(val)
+}
