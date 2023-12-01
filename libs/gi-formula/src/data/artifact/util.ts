@@ -4,26 +4,26 @@ import type { TagMapNodeEntries, TagMapNodeEntry } from '../util'
 import { self, tag } from '../util'
 
 export function registerArt(
-  src: ArtifactSetKey,
+  key: ArtifactSetKey,
   ...data: (TagMapNodeEntry | TagMapNodeEntries)[]
 ): TagMapNodeEntries {
   /* Unlike character and weapon, artifact buff is all-or-nothing, so we can register every
-   * buff as `src:art` and tag the formula as `src:src`. This means that `src:art`, which is
-   * read on each `et:agg`, does not need to reread `src:src`. This greatly reduce `Read`
-   * traffic due to the sheer numbers of `et:agg` calculations and `src:src` it would require
-   * for each `src:art` read.
+   * buff as `key:art` and tag the formula as `key:key`. This means that `key:art`, which is
+   * read on each `et:agg`, does not need to reread `key:key`. This greatly reduce `Read`
+   * traffic due to the sheer numbers of `et:agg` calculations and `key:key` it would require
+   * for each `key:art` read.
    */
 
   function internal({ tag: oldTag, value }: TagMapNodeEntry): TagMapNodeEntry {
-    if (oldTag.src === src)
+    if (oldTag.src === key)
       // Special entries (usually stack count) that override `stack`
       return { tag: oldTag, value }
 
-    // Add `src:art` to the tag and add `tag(src:<<src>>, value)` to set tags for calculation
+    // Add `key:art` to the tag and add `tag(key:<<key>>, value)` to set tags for calculation
     if (value.op === 'reread' || value.op === 'tag' || value.op === 'read')
       // Reuses `value` since it is already changing tags
-      value = { ...value, tag: { ...value.tag, src } }
-    else value = tag(value, { src })
+      value = { ...value, tag: { ...value.tag, key } }
+    else value = tag(value, { src: key })
     return { tag: { ...oldTag, src: 'art' }, value }
   }
   return data.flatMap((data) =>
@@ -31,6 +31,6 @@ export function registerArt(
   )
 }
 
-export function artCount(src: ArtifactSetKey): NumNode {
-  return self.common.count.src(src)
+export function artCount(key: ArtifactSetKey): NumNode {
+  return self.common.count.src(key)
 }

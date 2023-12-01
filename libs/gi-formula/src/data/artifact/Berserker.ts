@@ -11,17 +11,17 @@ import {
 } from '../util'
 import { artCount, registerArt } from './util'
 
-const src: ArtifactSetKey = 'Berserker'
-const count = artCount(src)
+const key: ArtifactSetKey = 'Berserker'
+const count = artCount(key)
 // TODO: Conditionals
-const { someBoolConditional } = allBoolConditionals(src)
-const { _someListConditional } = allListConditionals(src, [])
-const { _someNumConditional } = allNumConditionals(src, 'unique', false)
+const { someBoolConditional } = allBoolConditionals(key)
+const { _someListConditional } = allListConditionals(key, [])
+const { _someNumConditional } = allNumConditionals(key, 'unique', false)
 // TODO: Non-stack values
-const { someStack } = allStacks(src)
+const { someStack } = allStacks(key)
 
 export default registerArt(
-  src,
+  key,
 
   // TODO:
   // - Add self-buff formulas using `selfBuff.<buff target>.add(<buff value>)`

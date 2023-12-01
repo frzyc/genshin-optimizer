@@ -16,9 +16,10 @@ import {
 } from '../util'
 import { dataGenToCharInfo, dmg, entriesForChar } from './util'
 
-const key: CharacterKey = 'TravelerAnemo'
-const data_gen = allStats.char.data[key]
-const skillParam_gen = allStats.char.skillParam[key]
+const _key: CharacterKey = 'TravelerAnemo'
+const data_gen = allStats.char.data['Traveler']
+// TODO: Fix gender 🏳️‍⚧️
+const skillParam_gen = allStats.char.skillParam['TravelerAnemoF']
 
 // TODO: Fill data-mine values here
 const _dm = {
@@ -31,7 +32,7 @@ const _dm = {
   burst: {},
 } as const
 
-const info = dataGenToCharInfo(data_gen)
+const info = dataGenToCharInfo(data_gen, 'anemo')
 const {
   final: _final,
   char: { ascension: _ascension, constellation },
@@ -66,5 +67,5 @@ export default register(
 
   // Formulas
   // TODO: Add dmg/heal/shield formulas using `dmg`, `customDmg`, `shield`, `customShield`, `fixedShield`, or `customHeal`
-  dmg('normal1', info, 'atk', dm.normal.dmg1, 'normal')
+  dmg('normal1', info, 'atk', _dm.normal.dmg1, 'normal')
 )

@@ -8,21 +8,23 @@ import {
   register,
   self,
 } from '../util'
+import { entriesForWeapon } from './util'
 
-const src: WeaponKey = 'WolfFang'
+const key: WeaponKey = 'WolfFang'
 
 const {
   weapon: { refinement: _refinement },
 } = self
 // TODO: Conditionals
-const { _someBoolConditional } = allBoolConditionals(src)
-const { _someListConditional } = allListConditionals(src, [])
-const { _someNumConditional } = allNumConditionals(src, 'unique', false)
+const { _someBoolConditional } = allBoolConditionals(key)
+const { _someListConditional } = allListConditionals(key, [])
+const { _someNumConditional } = allNumConditionals(key, 'unique', false)
 // TODO: Non-stack values
-const { _someStack } = allStacks(src)
+const { _someStack } = allStacks(key)
 
 export default register(
-  src
+  key,
+  entriesForWeapon(key)
 
   // TODO:
   // - Add self-buff formulas using `selfBuff.<buff target>.add(<buff value>)`
