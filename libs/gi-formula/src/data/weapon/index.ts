@@ -1,5 +1,4 @@
 import type { TagMapNodeEntries } from '../util'
-import { entriesForWeapon } from './util'
 import AmenomaKageuchi from './AmenomaKageuchi'
 import AquilaFavonia from './AquilaFavonia'
 import BlackcliffLongsword from './BlackcliffLongsword'
