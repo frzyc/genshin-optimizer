@@ -30,11 +30,13 @@
       "@genshin-optimizer/consts": ["libs/consts/src/index.ts"],
       "@genshin-optimizer/database": ["libs/database/src/index.ts"],
       "@genshin-optimizer/dm": ["libs/dm/src/index.ts"],
+      "@genshin-optimizer/gi-art-scanner": ["libs/gi-art-scanner/src/index.ts"],
       "@genshin-optimizer/gi-assets": ["libs/gi-assets/src/index.ts"],
       "@genshin-optimizer/gi-dm-localization": [
         "libs/gi-dm-localization/src/index.ts"
       ],
       "@genshin-optimizer/gi-formula": ["libs/gi-formula/src/index.ts"],
+      "@genshin-optimizer/gi-formula-ui": ["libs/gi-formula-ui/src/index.ts"],
       "@genshin-optimizer/gi-good": ["libs/gi-good/src/index.ts"],
       "@genshin-optimizer/gi-localization": [
         "libs/gi-localization/src/index.ts"
@@ -43,6 +45,7 @@
       "@genshin-optimizer/gi-svgicons": ["libs/gi-svgicons/src/index.ts"],
       "@genshin-optimizer/gi-ui": ["libs/gi-ui/src/index.ts"],
       "@genshin-optimizer/gi-util": ["libs/gi-util/src/index.ts"],
+      "@genshin-optimizer/img-util": ["libs/img-util/src/index.ts"],
       "@genshin-optimizer/pando": ["libs/pando/src/index.ts"],
       "@genshin-optimizer/pipeline": ["libs/pipeline/src/index.ts"],
       "@genshin-optimizer/plugin": ["libs/plugin/src/index.ts"],
