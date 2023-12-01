@@ -141,7 +141,7 @@ const [condBurstFanfarePath, condBurstFanfare] = cond(key, 'burstFanfare')
 const burstFanfareArr = range(50, dm.burst.maxFanfare, 50)
 const c1FanfareArr = range(
   50,
-  dm.burst.maxFanfare + dm.constellation1.bonusFanfare,
+  dm.burst.maxFanfare + dm.constellation1.fanfareLimitInc,
   50
 )
 const clampedFanfareNum = lookup(
@@ -618,8 +618,10 @@ const sheet: ICharacterSheet = {
             value: (data) =>
               data.get(input.constellation).value >= 1
                 ? `${dm.burst.maxFanfare} + ${
-                    dm.constellation1.bonusFanfare
-                  } = ${dm.burst.maxFanfare + dm.constellation1.bonusFanfare}`
+                    dm.constellation1.fanfareLimitInc
+                  } = ${
+                    dm.burst.maxFanfare + dm.constellation1.fanfareLimitInc
+                  }`
                 : dm.burst.maxFanfare,
           },
           {
