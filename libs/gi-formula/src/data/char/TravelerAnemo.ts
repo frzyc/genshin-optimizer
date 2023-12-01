@@ -16,7 +16,7 @@ import {
 } from '../util'
 import { dataGenToCharInfo, dmg, entriesForChar } from './util'
 
-const key: CharacterKey = 'TravelerAnemo'
+const _key: CharacterKey = 'TravelerAnemo'
 const data_gen = allStats.char.data['Traveler']
 // TODO: Fix gender 🏳️‍⚧️
 const skillParam_gen = allStats.char.skillParam['TravelerAnemoF']
