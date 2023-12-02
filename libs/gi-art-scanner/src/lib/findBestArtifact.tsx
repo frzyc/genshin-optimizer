@@ -52,15 +52,16 @@ export function findBestArtifact(
       value ? 'Locked' : 'Unlocked'
     ),
   } as Partial<Record<TextKey, ReactNode>>
+
   const relevantSetKey = [
-    ...new Set<ArtifactSetKey>([...textSetKeys, 'Adventurer']),
+    ...new Set<ArtifactSetKey>([...textSetKeys, 'EmblemOfSeveredFate']),
   ]
 
   let bestScore = -1,
     bestArtifacts: IArtifact[] = [
       {
-        setKey: 'Adventurer',
-        rarity: 3,
+        setKey: 'EmblemOfSeveredFate',
+        rarity: 5,
         level: 0,
         slotKey: 'flower',
         mainStatKey: 'hp',
@@ -81,6 +82,7 @@ export function findBestArtifact(
       )
       score += count / textSetKeys.size
     }
+    if (rarities.has(rarity)) score++
     if (substats.length) {
       const count = substats.reduce(
         (count, substat) =>
