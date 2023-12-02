@@ -72,15 +72,11 @@ export async function processEntry(
 
   const goldTitleHistogram = histogramContAnalysis(
     artifactCardImageData,
-    darkerColor(goldenTitleDarkerColor),
-    lighterColor(goldenTitleLighterColor),
+    darkerColor(goldenTitleDarkerColor, 20),
+    lighterColor(goldenTitleLighterColor, 20),
     false
   )
-  const [goldTitleTop, goldTitleBot] = findHistogramRange(
-    goldTitleHistogram,
-    0.7,
-    3 //account for smaller verical pixel
-  )
+  const [goldTitleTop, goldTitleBot] = findHistogramRange(goldTitleHistogram)
 
   const whiteCardHistogram = histogramContAnalysis(
     imageData,
@@ -252,7 +248,7 @@ export async function processEntry(
       // artifact set, look for greenish texts
       textsFromImage(bwGreenText),
       // equipment
-      bwEquipped ? textsFromImage(bwEquipped) : [''],
+      bwEquipped && textsFromImage(bwEquipped),
     ])
 
   const rarity = parseRarity(headerCropped, debugImgs)
@@ -264,7 +260,7 @@ export async function processEntry(
     parseSubstats(substatTexts),
     parseMainStatKeys(whiteTexts),
     parseMainStatValues(whiteTexts),
-    parseLocation(equippedTexts),
+    equippedTexts ? parseLocation(equippedTexts) : '',
     locked
   )
 

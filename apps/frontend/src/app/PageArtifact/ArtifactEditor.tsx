@@ -94,29 +94,34 @@ function artifactReducer(
   state: IArtifact | undefined,
   action: Message
 ): IArtifact | undefined {
-  switch (action.type) {
-    case 'reset':
-      return undefined
-    case 'substat': {
-      const { index, substat } = action
-      const oldIndex = substat.key
-        ? state!.substats.findIndex((current) => current.key === substat.key)
-        : -1
-      if (oldIndex === -1 || oldIndex === index)
-        state!.substats[index] = substat
-      // Already in used, swap the items instead
-      else
-        [state!.substats[index], state!.substats[oldIndex]] = [
-          state!.substats[oldIndex],
-          state!.substats[index],
-        ]
-      return { ...state! }
+  const handle = () => {
+    switch (action.type) {
+      case 'reset':
+        return undefined
+      case 'substat': {
+        const { index, substat } = action
+        const oldIndex = substat.key
+          ? state!.substats.findIndex((current) => current.key === substat.key)
+          : -1
+        if (oldIndex === -1 || oldIndex === index)
+          state!.substats[index] = substat
+        // Already in used, swap the items instead
+        else
+          [state!.substats[index], state!.substats[oldIndex]] = [
+            state!.substats[oldIndex],
+            state!.substats[index],
+          ]
+        return { ...state! }
+      }
+      case 'overwrite':
+        return action.artifact
+      case 'update':
+        return { ...state!, ...action.artifact }
     }
-    case 'overwrite':
-      return action.artifact
-    case 'update':
-      return { ...state!, ...action.artifact }
   }
+  const art = handle()
+  if (!art) return art
+  return validateArtifact(art, true)
 }
 
 const InputInvis = styled('input')({
@@ -154,14 +159,7 @@ export default function ArtifactEditor({
     [database, setDirtyDatabase]
   )
 
-  const [editorArtifact, artifactDispatch] = useReducer(
-    artifactReducer,
-    undefined
-  )
-  const artifact = useMemo(
-    () => editorArtifact && validateArtifact(editorArtifact, true),
-    [editorArtifact]
-  )
+  const [artifact, artifactDispatch] = useReducer(artifactReducer, undefined)
 
   const [modalShow, setModalShow] = useState(false)
 
@@ -175,7 +173,9 @@ export default function ArtifactEditor({
   const { fileName, imageURL, debugImgs, texts } = scannedData ?? {}
 
   const queueTotal = processedNum + outstandingNum + scanningNum
-  const disableEditSlot = !!artifact?.location || disableSlot
+  const disableEditSlot =
+    (!['new', ''].includes(artifactIdToEdit) && !!artifact?.location) ||
+    disableSlot
 
   const uploadFiles = useCallback(
     (files?: FileList | null) => {
@@ -467,7 +467,11 @@ export default function ArtifactEditor({
               {/* slot */}
               <Box component="div" display="flex">
                 <ArtifactSlotDropdown
-                  disabled={disableEditSlot || !sheet}
+                  disabled={
+                    disableEditSlot ||
+                    !sheet ||
+                    artifact?.setKey?.startsWith('Prayer')
+                  }
                   slotKey={slotKey}
                   onChange={(slotKey) => update({ slotKey })}
                 />
@@ -749,14 +753,14 @@ export default function ArtifactEditor({
                 <Button
                   startIcon={<Add />}
                   onClick={() => {
-                    database.arts.set(old!.id, editorArtifact!)
+                    artifact && database.arts.set(old!.id, artifact)
                     if (!allowEmpty) {
                       setShow(false)
                       cancelEdit()
                     }
                     reset()
                   }}
-                  disabled={!editorArtifact || !isValid}
+                  disabled={!artifact || !isValid}
                   color="primary"
                 >
                   {t`editor.btnSave`}
@@ -810,10 +814,10 @@ export default function ArtifactEditor({
                 <Button
                   startIcon={<Update />}
                   onClick={() => {
-                    database.arts.set(old.id, editorArtifact)
+                    artifact && database.arts.set(old.id, artifact)
                     allowEmpty ? reset() : setShow(false)
                   }}
-                  disabled={!editorArtifact || !isValid}
+                  disabled={!artifact || !isValid}
                   color="success"
                 >{t`editor.btnUpdate`}</Button>
               </Grid>

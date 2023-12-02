@@ -2,9 +2,9 @@ import type {
   ArtifactRarity,
   ArtifactSetKey,
   ArtifactSlotKey,
-  LocationCharacterKey,
+  LocationKey,
   MainStatKey,
-  SubstatKey,
+  SubstatKey
 } from '@genshin-optimizer/consts'
 import {
   allArtifactRarityKeys,
@@ -43,15 +43,16 @@ export function findBestArtifact(
   substats: ISubstat[],
   mainStatKeys: Set<MainStatKey>,
   mainStatValues: { mainStatValue: number; unit?: string }[],
-  location: LocationCharacterKey | null,
+  location: LocationKey,
   lock = false
 ): [IArtifact, Partial<Record<TextKey, ReactNode>>] {
   const texts = {
-    location: detectedText(location, 'Location', (value) => value),
     lock: detectedText(lock, 'Lock', (value) =>
       value ? 'Locked' : 'Unlocked'
     ),
   } as Partial<Record<TextKey, ReactNode>>
+  if (location)
+    texts.location = detectedText(location, 'Location', (value) => value)
 
   const relevantSetKey = [
     ...new Set<ArtifactSetKey>([...textSetKeys, 'EmblemOfSeveredFate']),
