@@ -3,14 +3,15 @@ import type {
   LocationKey,
 } from '@genshin-optimizer/consts'
 import {
+  allLocationCharacterKeys,
   allTravelerKeys,
   charKeyToLocCharKey,
   charKeyToLocGenderedCharKey,
 } from '@genshin-optimizer/consts'
 import { BusinessCenter } from '@mui/icons-material'
 import type { AutocompleteProps } from '@mui/material'
-import { Skeleton } from '@mui/material'
-import { Suspense, useCallback, useContext, useMemo } from 'react'
+import { Box, Skeleton } from '@mui/material'
+import { Suspense, useCallback, useContext, useEffect, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { SillyContext } from '../../Context/SillyContext'
 import { getCharSheet } from '../../Data/Characters'
@@ -20,6 +21,8 @@ import useDBMeta from '../../ReactHooks/useDBMeta'
 import type { GeneralAutocompleteOption } from '../GeneralAutocomplete'
 import { GeneralAutocomplete } from '../GeneralAutocomplete'
 import CharIconSide from '../Image/CharIconSide'
+import { useForceUpdate } from '@genshin-optimizer/react-util'
+import type { Variant } from '../../Formula/type'
 type LocationAutocompleteProps = {
   location: LocationKey
   setLocation: (v: LocationKey) => void
@@ -62,16 +65,31 @@ export function LocationAutocomplete({
         ),
     [database, gender, t]
   )
+
+  const [charListDirty, setCharListDirty] = useForceUpdate()
+  useEffect(
+    () => database.arts.followAny(() => setCharListDirty()),
+    [database, setCharListDirty]
+  )
+
+  const charInDb = useMemo(
+    () =>
+      charListDirty && database.chars.keys.map((c) => charKeyToLocCharKey(c)),
+    [charListDirty, database]
+  )
+
   const toImg = useCallback(
     (key: LocationKey) =>
       key === '' ? (
         <BusinessCenter />
       ) : (
-        <CharIconSide
-          characterKey={database.chars.LocationToCharacterKey(key)}
-        />
+        <Box sx={{ opacity: charInDb.includes(key) ? undefined : 0.7 }}>
+          <CharIconSide
+            characterKey={database.chars.LocationToCharacterKey(key)}
+          />
+        </Box>
       ),
-    [database]
+    [database, charInDb]
   )
   const isFavorite = useCallback(
     (key: LocationCharacterKey) =>
@@ -91,11 +109,11 @@ export function LocationAutocomplete({
       },
       ...Array.from(
         new Set(
-          database.chars.keys
-            .filter((k) =>
-              getCharSheet(k, gender) ? filter(getCharSheet(k, gender)) : true
+          allLocationCharacterKeys.filter((k) =>
+            filter(
+              getCharSheet(database.chars.LocationToCharacterKey(k), gender)
             )
-            .map((k) => charKeyToLocCharKey(k))
+          )
         )
       )
         .map(
@@ -104,15 +122,18 @@ export function LocationAutocomplete({
             label: toText(silly)(v),
             favorite: isFavorite(v),
             alternateNames: silly ? [toText(!silly)(v)] : undefined,
+            color: charInDb.includes(v) ? undefined : ('secondary' as Variant),
           })
         )
         .sort((a, b) => {
           if (a.favorite && !b.favorite) return -1
           if (!a.favorite && b.favorite) return 1
+          if (!a.color && b.color) return -1
+          if (a.color && !b.color) return 1
           return a.label.localeCompare(b.label)
         }),
     ],
-    [t, database.chars.keys, gender, filter, toText, silly, isFavorite]
+    [t, database.chars, gender, charInDb, filter, toText, silly, isFavorite]
   )
   return (
     <Suspense fallback={<Skeleton variant="text" width={100} />}>

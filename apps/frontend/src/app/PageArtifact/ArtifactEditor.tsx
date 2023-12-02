@@ -12,6 +12,8 @@ import {
   getMainStatDisplayStr,
   randomizeArtifact,
 } from '@genshin-optimizer/gi-util'
+import LockIcon from '@mui/icons-material/Lock'
+import LockOpenIcon from '@mui/icons-material/LockOpen'
 import { useForceUpdate } from '@genshin-optimizer/react-util'
 import { CardThemed } from '@genshin-optimizer/ui-common'
 import { clamp, deepClone } from '@genshin-optimizer/util'
@@ -80,6 +82,7 @@ import SubstatEfficiencyDisplayCard from './ArtifactEditor/Components/SubstatEff
 import SubstatInput from './ArtifactEditor/Components/SubstatInput'
 import UploadExplainationModal from './ArtifactEditor/Components/UploadExplainationModal'
 import { textsFromImage } from './ScanningUtil'
+import { LocationAutocomplete } from '../Components/Character/LocationAutocomplete'
 
 const allSubstatFilter = new Set(allSubstatKeys)
 type ResetMessage = { type: 'reset' }
@@ -217,9 +220,8 @@ export default function ArtifactEditor({
   const { artifact: cArtifact, errors } = useMemo(() => {
     if (!artifact) return { artifact: undefined, errors: [] as Displayable[] }
     const validated = cachedArtifact(artifact, artifactIdToEdit)
-    if (old) validated.artifact.location = old.location
     return validated
-  }, [artifact, artifactIdToEdit, old])
+  }, [artifact, artifactIdToEdit])
 
   const sheet = artifact ? getArtSheet(artifact.setKey) : undefined
   const reset = useCallback(() => {
@@ -492,7 +494,7 @@ export default function ArtifactEditor({
               </Box>
 
               {/* main stat */}
-              <Box component="div" display="flex">
+              <Box component="div" display="flex" gap={1}>
                 <DropdownButton
                   startIcon={
                     artifact?.mainStatKey ? (
@@ -522,7 +524,7 @@ export default function ArtifactEditor({
                     </MenuItem>
                   ))}
                 </DropdownButton>
-                <CardThemed bgt="light" sx={{ p: 1, ml: 1, flexGrow: 1 }}>
+                <CardThemed bgt="light" sx={{ p: 1, flexGrow: 1 }}>
                   <Typography color="text.secondary">
                     {artifact
                       ? getMainStatDisplayStr(
@@ -533,7 +535,19 @@ export default function ArtifactEditor({
                       : t`mainStat`}
                   </Typography>
                 </CardThemed>
+                <Button
+                  disabled={!artifact}
+                  onClick={() => update({ lock: !artifact?.lock })}
+                  color={artifact?.lock ? 'success' : 'primary'}
+                >
+                  {artifact?.lock ? <LockIcon /> : <LockOpenIcon />}
+                </Button>
               </Box>
+              <LocationAutocomplete
+                location={artifact?.location ?? ''}
+                setLocation={(location) => update({ location })}
+                autoCompleteProps={{ disabled: !artifact }}
+              />
 
               {/* Current/Max Substats Efficiency */}
               <SubstatEfficiencyDisplayCard
@@ -575,6 +589,12 @@ export default function ArtifactEditor({
                             </Button>
                           </label>
                         </Grid>
+                        {process.env.NODE_ENV === 'development' &&
+                          debugImgs && (
+                            <Grid item>
+                              <DebugModal imgs={debugImgs} />
+                            </Grid>
+                          )}
                         <Grid item>
                           <Button
                             color="info"
@@ -599,11 +619,6 @@ export default function ArtifactEditor({
                               'Screenshot to parse for artifact values'
                             }
                           />
-                        </Box>
-                      )}
-                      {process.env.NODE_ENV === 'development' && debugImgs && (
-                        <Box>
-                          <DebugModal imgs={debugImgs} />
                         </Box>
                       )}
                       {!!queueTotal && (
@@ -662,8 +677,10 @@ export default function ArtifactEditor({
                     <div>{texts.mainStatVal}</div>
                     <div>{texts.rarity}</div>
                     <div>{texts.level}</div>
+                    <div>{texts.lock}</div>
                     <div>{texts.substats}</div>
                     <div>{texts.setKey}</div>
+                    <div>{texts.location}</div>
                   </CardContent>
                 </CardThemed>
               )}
@@ -793,10 +810,7 @@ export default function ArtifactEditor({
                 <Button
                   startIcon={<Update />}
                   onClick={() => {
-                    database.arts.set(old.id, {
-                      ...editorArtifact,
-                      location: old.location,
-                    })
+                    database.arts.set(old.id, editorArtifact)
                     allowEmpty ? reset() : setShow(false)
                   }}
                   disabled={!editorArtifact || !isValid}

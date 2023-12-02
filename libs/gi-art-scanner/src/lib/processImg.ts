@@ -23,6 +23,7 @@ import {
   goldenTitleDarkerColor,
   goldenTitleLighterColor,
   greenTextColor,
+  lockColor,
   starColor,
   textColorDark,
   textColorLight,
@@ -75,7 +76,11 @@ export async function processEntry(
     lighterColor(goldenTitleLighterColor),
     false
   )
-  const [goldTitleTop, goldTitleBot] = findHistogramRange(goldTitleHistogram)
+  const [goldTitleTop, goldTitleBot] = findHistogramRange(
+    goldTitleHistogram,
+    0.7,
+    3 //account for smaller verical pixel
+  )
 
   const whiteCardHistogram = histogramContAnalysis(
     imageData,
@@ -190,10 +195,18 @@ export async function processEntry(
     0,
     greenTextTop
   )
+  const lockHisto = histogramAnalysis(
+    whiteCardCropped,
+    darkerColor(lockColor),
+    lighterColor(lockColor)
+  )
+  const locked = lockHisto.filter((v) => v > 5).length > 5
 
-  if (debugImgs)
-    debugImgs['substatsCardCropped'] =
-      imageDataToCanvas(substatsCardCropped).toDataURL()
+  if (debugImgs) {
+    const canvas = imageDataToCanvas(substatsCardCropped)
+    drawHistogram(canvas, lockHisto, { r: 0, g: 100, b: 0, a: 100 })
+    debugImgs['substatsCardCropped'] = canvas.toDataURL()
+  }
 
   const bwHeader = bandPass(
     headerCropped,
@@ -203,7 +216,7 @@ export async function processEntry(
   )
   const bwGreenText = bandPass(
     greenTextCropped,
-    { r: 30, g: 160, b: 30 },
+    { r: 30, g: 100, b: 30 },
     { r: 200, g: 255, b: 200 },
     'bw'
   )
@@ -251,7 +264,8 @@ export async function processEntry(
     parseSubstats(substatTexts),
     parseMainStatKeys(whiteTexts),
     parseMainStatValues(whiteTexts),
-    parseLocation(equippedTexts)
+    parseLocation(equippedTexts),
+    locked
   )
 
   return {

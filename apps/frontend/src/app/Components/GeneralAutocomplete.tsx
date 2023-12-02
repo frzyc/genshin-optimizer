@@ -24,7 +24,7 @@ export type GeneralAutocompleteOption<T extends string> = {
   key: T
   label: string
   grouper?: string | number
-  variant?: Variant
+  color?: Variant
   favorite?: boolean
   alternateNames?: string[]
 }
@@ -69,7 +69,7 @@ export function GeneralAutocomplete<T extends string>({
       onChange={(_event, newValue, _reason) => onChange(newValue?.key ?? null)}
       isOptionEqualToValue={(option, value) => option.key === value?.key}
       renderInput={(params) => {
-        const variant = value?.variant
+        const variant = value?.color
         const color = variant ? theme.palette[variant]?.main : undefined
         const valueKey = value?.key
         return (
@@ -93,10 +93,10 @@ export function GeneralAutocomplete<T extends string>({
       renderOption={(props, option) => (
         <MenuItem value={option.key} sx={{ whiteSpace: 'normal' }} {...props}>
           <ListItemIcon>{toImg(option.key)}</ListItemIcon>
-          <ListItemText color={option.variant}>
+          <ListItemText color={option.color}>
             <Suspense fallback={<Skeleton variant="text" width={100} />}>
               <ColorText
-                color={option.variant}
+                color={option.color}
                 sx={{ display: 'flex', gap: 1 }}
               >
                 {option.key === value?.key ? (
@@ -183,7 +183,7 @@ export function GeneralAutocompleteMulti<T extends string>({
           <ListItemText>
             <Suspense fallback={<Skeleton variant="text" width={100} />}>
               <ColorText
-                color={option.variant}
+                color={option.color}
                 sx={{ display: 'flex', gap: 1 }}
               >
                 {keys.includes(option.key) ? (
@@ -199,7 +199,7 @@ export function GeneralAutocompleteMulti<T extends string>({
         </MenuItem>
       )}
       renderTags={(selected, getTagProps) =>
-        selected.map(({ key, label, variant }, index) => (
+        selected.map(({ key, label, color }, index) => (
           <Chip
             {...chipProps}
             {...getTagProps({ index })}
@@ -214,7 +214,7 @@ export function GeneralAutocompleteMulti<T extends string>({
                 label
               )
             }
-            color={variant}
+            color={color}
           />
         ))
       }

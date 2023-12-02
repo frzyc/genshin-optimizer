@@ -9,8 +9,8 @@ import {
 import CardDark from '../../../Components/Card/CardDark'
 import CloseButton from '../../../Components/CloseButton'
 import ModalWrapper from '../../../Components/ModalWrapper'
-import scan_art_main from './imgs/scan_art_main.png'
-import Snippet from './imgs/snippet.png'
+import scan_art_main from './imgs/scanned.png'
+import Snippet from './imgs/fullscreen.png'
 export default function UploadExplainationModal({
   modalShow,
   hide,
@@ -25,7 +25,7 @@ export default function UploadExplainationModal({
           <Grid container>
             <Grid item flexGrow={1}>
               <Typography variant="subtitle1">
-                How do Upload Screenshots for parsing
+                How to Upload Screenshots for parsing
               </Typography>
             </Grid>
             <Grid item>
@@ -36,11 +36,11 @@ export default function UploadExplainationModal({
         <Divider />
         <CardContent>
           <Alert variant="outlined" severity="warning">
-            NOTE: Artifact Scanning currently only works for
+            NOTE: Artifact Scanning currently only works for{' '}
             <strong>ENGLISH</strong> artifacts.
           </Alert>
           <Grid container spacing={1} mt={1}>
-            <Grid item xs={8} md={4}>
+            <Grid item xs={8} md={6}>
               <Box
                 component="img"
                 alt="snippet of the screen to take"
@@ -49,7 +49,7 @@ export default function UploadExplainationModal({
                 height="auto"
               />
             </Grid>
-            <Grid item xs={12} md={8}>
+            <Grid item xs={12} md={6}>
               <Typography gutterBottom>
                 Using screenshots can dramatically decrease the amount of time
                 you manually input in stats on the Genshin Optimizer.
@@ -65,7 +65,7 @@ export default function UploadExplainationModal({
               <Typography variant="h6">Single artifact</Typography>
               <Typography gutterBottom>
                 To take a screenshot, in Windows, the shortcut is{' '}
-                <strong>Shift + WindowsKey + S</strong>. Once you selected the
+                <strong>Alt + Print Screen</strong>. Once you selected the
                 region, the image is automatically included in your clipboard.
               </Typography>
               <Typography variant="h6">Multiple artifacts</Typography>
@@ -74,15 +74,15 @@ export default function UploadExplainationModal({
                 <a href="https://picpick.app/" target="_blank" rel="noreferrer">
                   PicPick
                 </a>{' '}
-                to create a macro to easily to screenshot a region to screenshot
-                multiple artifacts at once.
+                to create a macro to easily to screenshot multiple artifacts at
+                once.
               </Typography>
               <Typography variant="h5">
                 What to include in the screenshot.
               </Typography>
               <Typography>
-                As shown in the Image, starting from the top with the artifact
-                name, all the way to the set name(the text in green).{' '}
+                The full genshin window, or at least a region that covers the
+                artifact card.
               </Typography>
             </Grid>
             <Grid item xs={12} md={7}>
@@ -90,8 +90,8 @@ export default function UploadExplainationModal({
                 Adding Screenshot to Genshin Optimizer
               </Typography>
               <Typography>
-                At this point, you should have the artifact snippet either saved
-                to your harddrive, or in your clipboard.
+                At this point, you should have the artifact screenshot either
+                saved to your harddrive, or in your clipboard.
               </Typography>
               <Typography gutterBottom>
                 You can click on the box next to "Browse" to browse the files in

@@ -33,6 +33,8 @@ export type TextKey =
   | 'level'
   | 'substats'
   | 'setKey'
+  | 'location'
+  | 'lock'
 
 export function findBestArtifact(
   rarities: Set<number>,
@@ -41,8 +43,15 @@ export function findBestArtifact(
   substats: ISubstat[],
   mainStatKeys: Set<MainStatKey>,
   mainStatValues: { mainStatValue: number; unit?: string }[],
-  location: LocationCharacterKey | null
+  location: LocationCharacterKey | null,
+  lock = false
 ): [IArtifact, Partial<Record<TextKey, ReactNode>>] {
+  const texts = {
+    location: detectedText(location, 'Location', (value) => value),
+    lock: detectedText(lock, 'Lock', (value) =>
+      value ? 'Locked' : 'Unlocked'
+    ),
+  } as Partial<Record<TextKey, ReactNode>>
   const relevantSetKey = [
     ...new Set<ArtifactSetKey>([...textSetKeys, 'Adventurer']),
   ]
@@ -57,7 +66,7 @@ export function findBestArtifact(
         mainStatKey: 'hp',
         substats: [],
         location: location ?? '',
-        lock: false,
+        lock,
       },
     ]
 
@@ -131,7 +140,7 @@ export function findBestArtifact(
                 mainStatKey,
                 substats: [],
                 location: location ?? '',
-                lock: false,
+                lock,
               })
             }
           }
@@ -151,7 +160,7 @@ export function findBestArtifact(
               mainStatKey,
               substats: [],
               location: location ?? '',
-              lock: false,
+              lock,
             })
           }
         }
@@ -159,7 +168,6 @@ export function findBestArtifact(
     }
   }
 
-  const texts = {} as Partial<Record<TextKey, ReactNode>>
   const chosen = {
     setKey: new Set(),
     rarity: new Set(),
