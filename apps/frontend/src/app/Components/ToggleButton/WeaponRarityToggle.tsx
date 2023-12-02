@@ -5,7 +5,7 @@ import { Box, Chip, ToggleButton, useMediaQuery, useTheme } from '@mui/material'
 import { handleMultiSelect } from '../../Util/MultiSelect'
 import type { SolidToggleButtonGroupProps } from '../SolidToggleButtonGroup'
 import SolidToggleButtonGroup from '../SolidToggleButtonGroup'
-type RarityToggleProps = Omit<
+type WeaponRarityToggleProps = Omit<
   SolidToggleButtonGroupProps,
   'onChange' | 'value'
 > & {
@@ -14,12 +14,12 @@ type RarityToggleProps = Omit<
   totals: Record<RarityKey, Displayable>
 }
 const rarityHandler = handleMultiSelect([...allRarityKeys])
-export default function RarityToggle({
+export default function WeaponRarityToggle({
   value,
   totals,
   onChange,
   ...props
-}: RarityToggleProps) {
+}: WeaponRarityToggleProps) {
   const theme = useTheme()
   const xs = !useMediaQuery(theme.breakpoints.up('sm'))
   return (

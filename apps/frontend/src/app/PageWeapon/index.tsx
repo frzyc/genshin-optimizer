@@ -29,7 +29,7 @@ import ReactGA from 'react-ga4'
 import { Trans, useTranslation } from 'react-i18next'
 import CardDark from '../Components/Card/CardDark'
 import SortByButton from '../Components/SortByButton'
-import RarityToggle from '../Components/ToggleButton/RarityToggle'
+import WeaponRarityToggle from '../Components/ToggleButton/WeaponRarityToggle'
 import WeaponToggle from '../Components/ToggleButton/WeaponToggle'
 import { getWeaponSheet } from '../Data/Weapons'
 import { DatabaseContext } from '../Database/Database'
@@ -228,7 +228,7 @@ export default function PageWeapon() {
               totals={weaponTotals}
               size="small"
             />
-            <RarityToggle
+            <WeaponRarityToggle
               sx={{ height: '100%' }}
               onChange={(rarity) => database.displayWeapon.set({ rarity })}
               value={rarity}
