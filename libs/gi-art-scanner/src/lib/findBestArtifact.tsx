@@ -4,7 +4,7 @@ import type {
   ArtifactSlotKey,
   LocationKey,
   MainStatKey,
-  SubstatKey
+  SubstatKey,
 } from '@genshin-optimizer/consts'
 import {
   allArtifactRarityKeys,

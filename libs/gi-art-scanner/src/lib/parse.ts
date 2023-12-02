@@ -109,7 +109,7 @@ export function parseSubstats(texts: string[]): ISubstat[] {
 }
 
 type Ham = [LocationCharacterKey, number]
-export function parseLocation(texts: string[]): LocationCharacterKey  {
+export function parseLocation(texts: string[]): LocationCharacterKey {
   const hams: Array<Ham> = []
   for (let text of texts) {
     if (!text) continue
