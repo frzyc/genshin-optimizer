@@ -95,10 +95,7 @@ export function GeneralAutocomplete<T extends string>({
           <ListItemIcon>{toImg(option.key)}</ListItemIcon>
           <ListItemText color={option.color}>
             <Suspense fallback={<Skeleton variant="text" width={100} />}>
-              <ColorText
-                color={option.color}
-                sx={{ display: 'flex', gap: 1 }}
-              >
+              <ColorText color={option.color} sx={{ display: 'flex', gap: 1 }}>
                 {option.key === value?.key ? (
                   <strong>{option.label}</strong>
                 ) : (
@@ -182,10 +179,7 @@ export function GeneralAutocompleteMulti<T extends string>({
           <ListItemIcon>{toImg(option.key)}</ListItemIcon>
           <ListItemText>
             <Suspense fallback={<Skeleton variant="text" width={100} />}>
-              <ColorText
-                color={option.color}
-                sx={{ display: 'flex', gap: 1 }}
-              >
+              <ColorText color={option.color} sx={{ display: 'flex', gap: 1 }}>
                 {keys.includes(option.key) ? (
                   <strong>{option.label}</strong>
                 ) : (
