@@ -6,6 +6,7 @@ import {
   allArtifactSlotKeys,
   allElementKeys,
   allWeaponTypeKeys,
+  allCharacterRarityKeys,
   charKeyToLocCharKey,
 } from '@genshin-optimizer/consts'
 import { useBoolState, useForceUpdate } from '@genshin-optimizer/react-util'
@@ -45,6 +46,7 @@ import SolidToggleButtonGroup from '../../../../../Components/SolidToggleButtonG
 import SqBadge from '../../../../../Components/SqBadge'
 import ElementToggle from '../../../../../Components/ToggleButton/ElementToggle'
 import WeaponToggle from '../../../../../Components/ToggleButton/WeaponToggle'
+import CharacterRarityToggle from '../../../../../Components/ToggleButton/CharacterRarityToggle'
 import { CharacterContext } from '../../../../../Context/CharacterContext'
 import { SillyContext } from '../../../../../Context/SillyContext'
 import { getCharSheet } from '../../../../../Data/Characters'
@@ -89,6 +91,9 @@ export default function AllowChar({
   const deferredElementKeys = useDeferredValue(elementKeys)
   const [weaponTypeKeys, setWeaponTypeKeys] = useState([...allWeaponTypeKeys])
   const deferredWeaponTypeKeys = useDeferredValue(weaponTypeKeys)
+  const [characterRarityKeys, setCharacterRarityKeys] =
+      useState([...allCharacterRarityKeys])
+  const deferredCharacterRarityKeys = useDeferredValue(characterRarityKeys)
 
   const charKeyMap: Dict<CharacterKey, ICachedCharacter> = useMemo(
     () =>
@@ -139,10 +144,16 @@ export default function AllowChar({
     })
     .map(([ck]) => charKeyToLocCharKey(ck))
 
-  const { elementTotals, weaponTypeTotals, locListTotals } = useMemo(() => {
+  const {
+    elementTotals,
+    weaponTypeTotals,
+    characterRarityTotals,
+    locListTotals,
+  } = useMemo(() => {
     const catKeys = {
       elementTotals: [...allElementKeys],
       weaponTypeTotals: [...allWeaponTypeKeys],
+      characterRarityTotals: [...allCharacterRarityKeys],
       locListTotals: ['allowed', 'excluded'],
     } as const
     return bulkCatTotal(catKeys, (ctMap) =>
@@ -157,6 +168,10 @@ export default function AllowChar({
           const weaponTypeKey = sheet.weaponTypeKey
           ctMap.weaponTypeTotals[weaponTypeKey].total++
           if (charKeyMap[ck]) ctMap.weaponTypeTotals[weaponTypeKey].current++
+
+          const characterRarityKey = sheet.rarity
+          ctMap.characterRarityTotals[characterRarityKey].total++
+          if (charKeyMap[ck]) ctMap.characterRarityTotals[characterRarityKey].current++
 
           const locKey = charKeyToLocCharKey(ck)
           if (locList.includes(locKey)) {
@@ -320,6 +335,13 @@ export default function AllowChar({
                   onChange={setElementKeys}
                   value={deferredElementKeys}
                   totals={elementTotals}
+                  size="small"
+                />
+                <CharacterRarityToggle
+                  sx={{ height: '100%' }}
+                  onChange={setCharacterRarityKeys}
+                  value={deferredCharacterRarityKeys}
+                  totals={characterRarityTotals}
                   size="small"
                 />
               </Box>

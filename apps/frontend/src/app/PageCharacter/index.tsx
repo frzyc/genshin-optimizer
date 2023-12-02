@@ -2,6 +2,7 @@ import type { CharacterKey } from '@genshin-optimizer/consts'
 import {
   allElementKeys,
   allWeaponTypeKeys,
+  allCharacterRarityKeys,
   charKeyToLocGenderedCharKey,
 } from '@genshin-optimizer/consts'
 import { useForceUpdate, useMediaQueryUp } from '@genshin-optimizer/react-util'
@@ -46,6 +47,7 @@ import CharacterCard from '../Components/Character/CharacterCard'
 import SortByButton from '../Components/SortByButton'
 import ElementToggle from '../Components/ToggleButton/ElementToggle'
 import WeaponToggle from '../Components/ToggleButton/WeaponToggle'
+import CharacterRarityToggle from '../Components/ToggleButton/CharacterRarityToggle'
 import { SillyContext } from '../Context/SillyContext'
 import { getCharSheet } from '../Data/Characters'
 import { getWeaponSheet } from '../Data/Weapons'
@@ -155,7 +157,7 @@ export default function PageCharacter() {
     return deferredDbDirty && { charKeyList, totalCharNum }
   }, [database, deferredState, deferredSearchTerm, silly, deferredDbDirty])
 
-  const { weaponType, element, sortType, ascending, pageIndex = 0 } = state
+  const { weaponType, element, rarity, sortType, ascending, pageIndex = 0 } = state
 
   const { charKeyListToShow, numPages, currentPageIndex } = useMemo(() => {
     const numPages = Math.ceil(charKeyList.length / maxNumToDisplay)
@@ -201,6 +203,18 @@ export default function PageCharacter() {
     [database, charKeyList]
   )
 
+  const rarityTotals = useMemo(
+    () =>
+      catTotal(allCharacterRarityKeys, (ct) =>
+        Object.entries(database.chars.data).forEach(([ck, char]) => {
+          const eleKey = getCharSheet(char.key, database.gender).rarity
+          ct[eleKey].total++
+          if (charKeyList.includes(ck)) ct[eleKey].current++
+        })
+      ),
+    [database, charKeyList]
+  )
+
   return (
     <Box my={1} display="flex" flexDirection="column" gap={1}>
       <Suspense fallback={false}>
@@ -233,6 +247,17 @@ export default function PageCharacter() {
                 }
                 value={element}
                 totals={elementTotals}
+                size="small"
+              />
+            </Grid>
+            <Grid item>
+              <CharacterRarityToggle
+                sx={{ height: '100%' }}
+                onChange={(rarity) =>
+                  database.displayCharacter.set({ rarity })
+                }
+                value={rarity}
+                totals={rarityTotals}
                 size="small"
               />
             </Grid>
