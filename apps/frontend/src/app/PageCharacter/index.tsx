@@ -138,11 +138,11 @@ export default function PageCharacter() {
   const { charKeyList, totalCharNum } = useMemo(() => {
     const chars = database.chars.keys
     const totalCharNum = chars.length
-    const { element, weaponType, sortType, ascending } = deferredState
+    const { element, weaponType, rarity, sortType, ascending } = deferredState
     const charKeyList = database.chars.keys
       .filter(
         filterFunction(
-          { element, weaponType, name: deferredSearchTerm },
+          { element, weaponType, rarity, name: deferredSearchTerm },
           characterFilterConfigs(database, silly)
         )
       )

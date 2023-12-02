@@ -108,6 +108,7 @@ export default function AllowChar({
                   {
                     element: deferredElementKeys,
                     weaponType: deferredWeaponTypeKeys,
+                    rarity: deferredCharacterRarityKeys,
                     name: deferredSearchTerm,
                   },
                   characterFilterConfigs(database, silly)
@@ -122,6 +123,7 @@ export default function AllowChar({
       characterKey,
       deferredElementKeys,
       deferredWeaponTypeKeys,
+      deferredCharacterRarityKeys,
       deferredSearchTerm,
       silly,
     ]
