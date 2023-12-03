@@ -40,6 +40,8 @@ export const allMoveKeys = [
 ] as const
 export type MoveKey = (typeof allMoveKeys)[number]
 
+export const maxConstellationCount = 6 as const
+
 export const characterSpecializedStatKeys = [
   'hp_',
   'atk_',
@@ -187,6 +189,10 @@ export const allLocationCharacterKeys = [
 export type LocationCharacterKey = (typeof allLocationCharacterKeys)[number]
 
 export type LocationKey = LocationCharacterKey | ''
+
+// Genshin Impact currently only has 4-5 star characters
+export const allCharacterRarityKeys = [5, 4] as const
+export type CharacterRarityKey = (typeof allCharacterRarityKeys)[number]
 
 export function charKeyToLocGenderedCharKey(
   charKey: CharacterKey,

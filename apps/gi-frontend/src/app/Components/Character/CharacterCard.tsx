@@ -34,7 +34,7 @@ import {
   Skeleton,
   Typography,
 } from '@mui/material'
-import { Suspense, useContext, useMemo, useState } from 'react'
+import { Suspense, useContext, useEffect, useMemo, useState } from 'react'
 import type { CalcContextObj } from '../../Context/CalcContext'
 import { CalcContext } from '../../Context/CalcContext'
 import { SillyContext } from '../../Context/SillyContext'
@@ -177,6 +177,45 @@ export default function CharacterCard({
         })
       ),
     ])
+  )
+  useEffect(
+    () =>
+      setCalc(
+        genshinCalculatorWithEntries([
+          ...teamData(['member0'], ['member0']),
+          ...withMember(
+            'member0',
+            ...charData({
+              key: characterKey,
+              level: 50,
+              ascension: 3,
+              constellation: 3,
+              talent: {
+                auto: 1,
+                skill: 1,
+                burst: 1,
+              },
+            }),
+            ...weaponData({
+              key: 'KeyOfKhajNisut',
+              level: 50,
+              ascension: 3,
+              refinement: 1,
+              location: characterKey as LocationKey,
+              lock: false,
+            }),
+            ...artifactsData([
+              // per art stat
+            ]),
+            ...conditionalData({
+              KeyOfKhajNisut: {
+                afterSkillStacks: 1,
+              },
+            })
+          ),
+        ])
+      ),
+    [characterKey]
   )
   const calcContextObj = useMemo(
     () => ({

@@ -1,36 +1,36 @@
-import type { RarityKey } from '@genshin-optimizer/consts'
-import { allRarityKeys } from '@genshin-optimizer/consts'
+import type { CharacterRarityKey } from '@genshin-optimizer/consts'
+import { allCharacterRarityKeys } from '@genshin-optimizer/consts'
 import StarRoundedIcon from '@mui/icons-material/StarRounded'
 import { Box, Chip, ToggleButton, useMediaQuery, useTheme } from '@mui/material'
 import { handleMultiSelect } from '../../Util/MultiSelect'
 import type { SolidToggleButtonGroupProps } from '../SolidToggleButtonGroup'
 import SolidToggleButtonGroup from '../SolidToggleButtonGroup'
-type RarityToggleProps = Omit<
+type CharacterRarityToggleProps = Omit<
   SolidToggleButtonGroupProps,
   'onChange' | 'value'
 > & {
-  onChange: (value: RarityKey[]) => void
-  value: RarityKey[]
-  totals: Record<RarityKey, Displayable>
+  onChange: (value: CharacterRarityKey[]) => void
+  value: CharacterRarityKey[]
+  totals: Record<CharacterRarityKey, Displayable>
 }
-const rarityHandler = handleMultiSelect([...allRarityKeys])
-export default function RarityToggle({
+const rarityHandler = handleMultiSelect([...allCharacterRarityKeys])
+export default function CharacterRarityToggle({
   value,
   totals,
   onChange,
   ...props
-}: RarityToggleProps) {
+}: CharacterRarityToggleProps) {
   const theme = useTheme()
   const xs = !useMediaQuery(theme.breakpoints.up('sm'))
   return (
     <SolidToggleButtonGroup exclusive value={value} {...props}>
-      {allRarityKeys.map((star) => (
+      {allCharacterRarityKeys.map((star) => (
         <ToggleButton
           key={star}
           value={star}
           sx={{
             p: xs ? 1 : undefined,
-            minWidth: xs ? 0 : '7em',
+            minWidth: xs ? 0 : '6em',
             display: 'flex',
             gap: xs ? 0 : 1,
           }}
@@ -39,7 +39,7 @@ export default function RarityToggle({
           <Box display="flex">
             <strong>{star}</strong>
             <StarRoundedIcon />
-            <Chip label={totals[star]} size="small" />
+            {!xs && <Chip label={totals[star]} size="small" />}
           </Box>
         </ToggleButton>
       ))}

@@ -53,8 +53,10 @@ Thumbs.db
 .env.test.local
 .env.production.local
 
-# Generated JSON files
+# Generated files
 *_gen.json
+*.gen.json
+*.gen.ts
 
 # Next.js
 .next

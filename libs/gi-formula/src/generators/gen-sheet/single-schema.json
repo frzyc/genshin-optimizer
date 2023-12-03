@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "$id": "GenSheet",
+  "title": "",
+  "type": "object",
+  "properties": {
+    "sheet_type": {
+      "type": "string",
+      "description": "Type of sheet (char/artifact/weapon)",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      },
+      "x-prompt": "What is the sheet type (char/artifact/weapon)?"
+    },
+    "src": {
+      "type": "string",
+      "description": "Sheet name",
+      "$default": {
+        "$source": "argv",
+        "index": 1
+      },
+      "x-prompt": "What is the sheet name?"
+    }
+  },
+  "required": ["sheet_type", "src"]
+}

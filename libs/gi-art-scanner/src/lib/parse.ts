@@ -9,7 +9,7 @@ import {
   allArtifactSlotKeys,
   allLocationCharacterKeys,
   allMainStatKeys,
-  allSubstatKeys
+  allSubstatKeys,
 } from '@genshin-optimizer/consts'
 import type { ISubstat } from '@genshin-optimizer/gi-good'
 import { hammingDistance, unit } from '@genshin-optimizer/util'

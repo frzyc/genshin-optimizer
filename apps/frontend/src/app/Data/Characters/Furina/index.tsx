@@ -100,8 +100,8 @@ const dm = {
     max_interval_dec_: skillParam_gen.passive2[3][0],
   },
   constellation1: {
-    fanfareLimitInc: skillParam_gen.constellation1[0],
-    bonusFanfare: skillParam_gen.constellation1[1],
+    bonusFanfare: skillParam_gen.constellation1[0],
+    fanfareLimitInc: skillParam_gen.constellation1[1],
   },
   constellation2: {
     idk: skillParam_gen.constellation2[0],
@@ -141,7 +141,7 @@ const [condBurstFanfarePath, condBurstFanfare] = cond(key, 'burstFanfare')
 const burstFanfareArr = range(50, dm.burst.maxFanfare, 50)
 const c1FanfareArr = range(
   50,
-  dm.burst.maxFanfare + dm.constellation1.bonusFanfare,
+  dm.burst.maxFanfare + dm.constellation1.fanfareLimitInc,
   50
 )
 const clampedFanfareNum = lookup(
@@ -268,9 +268,7 @@ const dmgFormulas = {
       dm.normal.hitArr.map((arr, i) => [
         i,
         dmgNode('atk', arr, 'normal', {
-          premod: {
-            normal_dmgInc: sum(c6_normal_dmgInc, c6Pneuma_normal_dmgInc),
-          },
+          premod: { normal_dmgInc: c6Pneuma_normal_dmgInc },
         }),
       ])
     ),
@@ -281,12 +279,15 @@ const dmgFormulas = {
   charged: {
     dmg: dmgNode('atk', dm.charged.dmg, 'charged'),
   },
-  plunging: Object.fromEntries(
-    Object.entries(dm.plunging).map(([key, value]) => [
-      key,
-      dmgNode('atk', value, 'plunging'),
-    ])
-  ),
+  plunging: {
+    dmg: dmgNode('atk', dm.plunging.dmg, 'plunging'),
+    low: dmgNode('atk', dm.plunging.low, 'plunging', {
+      premod: { plunging_dmgInc: c6Pneuma_plunging_dmgInc },
+    }),
+    high: dmgNode('atk', dm.plunging.high, 'plunging', {
+      premod: { plunging_dmgInc: c6Pneuma_plunging_dmgInc },
+    }),
+  },
   skill: {
     bubbleDmg: dmgNode('hp', dm.skill.bubbleDmg, 'skill'),
     usherDmg: dmgNode(
@@ -321,7 +322,7 @@ const dmgFormulas = {
     skillDmg: dmgNode('hp', dm.burst.skillDmg, 'burst'),
   },
   passive1: {
-    heal: greaterEq(input.asc, 1, healNode('hp', dm.passive1.heal, 0)),
+    heal: greaterEq(input.asc, 1, healNode('hp', percent(dm.passive1.heal), 0)),
   },
   passive2: {
     member_dmg_: a4Member_dmg_,
@@ -333,7 +334,7 @@ const dmgFormulas = {
     heal: greaterEq(
       input.constellation,
       6,
-      healNode('hp', dm.constellation6.ousiaHeal, 0)
+      healNode('hp', percent(dm.constellation6.ousiaHeal), 0)
     ),
   },
 }
@@ -351,7 +352,8 @@ export const data = dataObjForCharacterSheet(
       skillBoost: skillC5,
       burstBoost: burstC3,
       hp_: c2Overstack_hp_,
-      plunging_dmgInc: sum(c6_plunging_dmgInc, c6Pneuma_plunging_dmgInc),
+      normal_dmgInc: c6_normal_dmgInc,
+      plunging_dmgInc: c6_plunging_dmgInc,
       charged_dmgInc: sum(c6_charged_dmgInc, c6Pneuma_charged_dmgInc),
     },
     infusion: {
@@ -616,8 +618,10 @@ const sheet: ICharacterSheet = {
             value: (data) =>
               data.get(input.constellation).value >= 1
                 ? `${dm.burst.maxFanfare} + ${
-                    dm.constellation1.bonusFanfare
-                  } = ${dm.burst.maxFanfare + dm.constellation1.bonusFanfare}`
+                    dm.constellation1.fanfareLimitInc
+                  } = ${
+                    dm.burst.maxFanfare + dm.constellation1.fanfareLimitInc
+                  }`
                 : dm.burst.maxFanfare,
           },
           {

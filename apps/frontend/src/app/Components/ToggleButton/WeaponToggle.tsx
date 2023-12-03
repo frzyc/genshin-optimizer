@@ -32,7 +32,7 @@ export default function WeaponToggle({
           value={wt}
           sx={{
             p: xs ? 1 : undefined,
-            minWidth: xs ? 0 : '7em',
+            minWidth: xs ? 0 : '6em',
             display: 'flex',
             gap: xs ? 0 : 1,
           }}
