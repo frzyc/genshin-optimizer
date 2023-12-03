@@ -157,7 +157,14 @@ export default function PageCharacter() {
     return deferredDbDirty && { charKeyList, totalCharNum }
   }, [database, deferredState, deferredSearchTerm, silly, deferredDbDirty])
 
-  const { weaponType, element, rarity, sortType, ascending, pageIndex = 0 } = state
+  const {
+    weaponType,
+    element,
+    rarity,
+    sortType,
+    ascending,
+    pageIndex = 0,
+  } = state
 
   const { charKeyListToShow, numPages, currentPageIndex } = useMemo(() => {
     const numPages = Math.ceil(charKeyList.length / maxNumToDisplay)
@@ -253,9 +260,7 @@ export default function PageCharacter() {
             <Grid item>
               <CharacterRarityToggle
                 sx={{ height: '100%' }}
-                onChange={(rarity) =>
-                  database.displayCharacter.set({ rarity })
-                }
+                onChange={(rarity) => database.displayCharacter.set({ rarity })}
                 value={rarity}
                 totals={rarityTotals}
                 size="small"

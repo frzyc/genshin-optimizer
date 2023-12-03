@@ -91,8 +91,9 @@ export default function AllowChar({
   const deferredElementKeys = useDeferredValue(elementKeys)
   const [weaponTypeKeys, setWeaponTypeKeys] = useState([...allWeaponTypeKeys])
   const deferredWeaponTypeKeys = useDeferredValue(weaponTypeKeys)
-  const [characterRarityKeys, setCharacterRarityKeys] =
-      useState([...allCharacterRarityKeys])
+  const [characterRarityKeys, setCharacterRarityKeys] = useState([
+    ...allCharacterRarityKeys,
+  ])
   const deferredCharacterRarityKeys = useDeferredValue(characterRarityKeys)
 
   const charKeyMap: Dict<CharacterKey, ICachedCharacter> = useMemo(
@@ -173,7 +174,8 @@ export default function AllowChar({
 
           const characterRarityKey = sheet.rarity
           ctMap.characterRarityTotals[characterRarityKey].total++
-          if (charKeyMap[ck]) ctMap.characterRarityTotals[characterRarityKey].current++
+          if (charKeyMap[ck])
+            ctMap.characterRarityTotals[characterRarityKey].current++
 
           const locKey = charKeyToLocCharKey(ck)
           if (locList.includes(locKey)) {

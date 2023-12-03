@@ -1,7 +1,7 @@
 import type {
   CharacterRarityKey,
   ElementKey,
-  WeaponTypeKey
+  WeaponTypeKey,
 } from '@genshin-optimizer/consts'
 import {
   allElementKeys,
