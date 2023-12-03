@@ -54,9 +54,10 @@ export default function CharacterTalentPane() {
 
   const theme = useTheme()
   const grlg = useMediaQuery(theme.breakpoints.up('lg'))
+  const maxConstellationCount = 6
   const constellationCards = useMemo(
     () =>
-      range(1, 6).map((i) => (
+      range(1, maxConstellationCount).map((i) => (
         <SkillDisplayCard
           talentKey={`constellation${i}` as TalentSheetElementKey}
           subtitle={`Constellation Lv. ${i}`}
@@ -69,6 +70,30 @@ export default function CharacterTalentPane() {
       )),
     [constellation, characterDispatch]
   )
+  const constellationHeader = (
+    <DropdownButton
+      fullWidth
+      title={`Constellation Lv. ${constellation}`}
+      color={'success'}
+      sx={{ borderRadius: 0 }}
+    >
+      {range(0, maxConstellationCount).map((i) => (
+        <MenuItem
+          key={i}
+          selected={constellation === i}
+          disabled={constellation === i}
+          onClick={() =>
+            characterDispatch({
+              constellation: i,
+            })
+          }
+        >
+          Constellation Lv. {i}
+        </MenuItem>
+      ))}
+    </DropdownButton>
+  )
+
   return (
     <>
       <ReactionDisplay />
@@ -82,13 +107,7 @@ export default function CharacterTalentPane() {
             lg={3}
             sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}
           >
-            <CardLight>
-              <CardContent>
-                <Typography variant="h6" sx={{ textAlign: 'center' }}>
-                  Constellation Lv. {constellation}
-                </Typography>
-              </CardContent>
-            </CardLight>
+            <CardLight>{constellationHeader}</CardLight>
             {constellationCards.map((c, i) => (
               <Box key={i} sx={{ opacity: constellation >= i + 1 ? 1 : 0.5 }}>
                 {c}
@@ -136,13 +155,7 @@ export default function CharacterTalentPane() {
         {!grlg && (
           <Grid item xs={12} md={12} lg={3} container spacing={1}>
             <Grid item xs={12}>
-              <CardLight>
-                <CardContent>
-                  <Typography variant="h6" sx={{ textAlign: 'center' }}>
-                    Constellation Lv. {constellation}
-                  </Typography>
-                </CardContent>
-              </CardLight>
+              <CardLight>{constellationHeader}</CardLight>
             </Grid>
             {constellationCards.map((c, i) => (
               <Grid
