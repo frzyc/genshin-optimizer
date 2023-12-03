@@ -188,7 +188,7 @@ export type LocationCharacterKey = (typeof allLocationCharacterKeys)[number]
 
 export type LocationKey = LocationCharacterKey | ''
 
-// GO currently only support 4-5 star characters
+// Genshin Impact currently only has 4-5 star characters
 export const allCharacterRarityKeys = [5, 4] as const
 export type CharacterRarityKey = (typeof allCharacterRarityKeys)[number]
 
