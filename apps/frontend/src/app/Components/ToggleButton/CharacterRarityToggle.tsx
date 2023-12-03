@@ -14,7 +14,7 @@ type CharacterRarityToggleProps = Omit<
   totals: Record<CharacterRarityKey, Displayable>
 }
 const rarityHandler = handleMultiSelect([...allCharacterRarityKeys])
-export default function RarityToggle({
+export default function CharacterRarityToggle({
   value,
   totals,
   onChange,
