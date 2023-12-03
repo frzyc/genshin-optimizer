@@ -2,10 +2,12 @@ import type {
   CharacterKey,
   ElementKey,
   WeaponTypeKey,
+  CharacterRarityKey,
 } from '@genshin-optimizer/consts'
 import {
   allElementKeys,
   allWeaponTypeKeys,
+  allCharacterRarityKeys,
   charKeyToLocCharKey,
   charKeyToLocGenderedCharKey,
 } from '@genshin-optimizer/consts'
@@ -48,6 +50,7 @@ export function characterSortConfigs(
 export const characterFilterKeys = [
   'element',
   'weaponType',
+  'rarity',
   'name',
   'new',
 ] as const
@@ -65,6 +68,8 @@ export function characterFilterConfigs(
     element: (ck, filter) => filter.includes(getCharEle(ck)),
     weaponType: (ck, filter) =>
       filter.includes(allStats.char.data[charKeyToLocCharKey(ck)].weaponType),
+    rarity: (ck, filter) =>
+      filter.includes(allStats.char.data[charKeyToLocCharKey(ck)].rarity),
     name: (ck, filter) =>
       filter === undefined ||
       i18n
@@ -101,11 +106,13 @@ export const initialCharacterDisplayState = (): {
   ascending: boolean
   weaponType: WeaponTypeKey[]
   element: ElementKey[]
+  rarity: CharacterRarityKey[]
   pageIndex: number
 } => ({
   sortType: characterSortKeys[0],
   ascending: false,
   weaponType: [...allWeaponTypeKeys],
   element: [...allElementKeys],
+  rarity: [...allCharacterRarityKeys],
   pageIndex: 0,
 })
