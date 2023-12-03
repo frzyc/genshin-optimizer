@@ -38,6 +38,12 @@ export const greenTextColor: Color = {
   g: 178,
   b: 87,
 }
+// red lock color rgb(255, 137, 117)
+export const lockColor: Color = {
+  r: 255,
+  g: 137,
+  b: 117,
+}
 
 export const starColor = { r: 255, g: 204, b: 50 } // #FFCC32
 

@@ -94,7 +94,7 @@ export function getPixelIndex(x: number, y: number, width: number) {
 export function findHistogramRange(
   histogram: number[],
   threshold = 0.7,
-  window = 5
+  window = 3
 ) {
   const max = Math.max(...histogram)
   const hMax = max * threshold

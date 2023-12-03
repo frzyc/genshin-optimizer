@@ -1,4 +1,4 @@
-import { within } from '@genshin-optimizer/util'
+import { clamp, within } from '@genshin-optimizer/util'
 
 export type Color = {
   r: number
@@ -17,9 +17,9 @@ export function darkerColor(color: Color, value = 10) {
 export function modColor(color: Color, value = 10) {
   const { r, g, b, a } = color
   return {
-    r: r + value,
-    g: g + value,
-    b: b + value,
+    r: clamp(r + value, 0, 255),
+    g: clamp(g + value, 0, 255),
+    b: clamp(b + value, 0, 255),
     a,
   }
 }

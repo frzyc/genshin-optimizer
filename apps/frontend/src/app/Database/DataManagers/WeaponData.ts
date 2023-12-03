@@ -98,7 +98,7 @@ export class WeaponDataManager extends DataManager<
         : undefined
 
       // previously equipped art at new location
-      const prevWeapon = super.get(newChar?.equippedWeapon)
+      let prevWeapon = super.get(newChar?.equippedWeapon)
 
       //current prevWeapon <-> newChar  && newWeapon <-> prevChar
       //swap to prevWeapon <-> prevChar && newWeapon <-> newChar(outside of this if)
@@ -108,6 +108,13 @@ export class WeaponDataManager extends DataManager<
           ...prevWeapon,
           location: prevChar?.key ? charKeyToLocCharKey(prevChar.key) : '',
         })
+      else if (prevChar?.key)
+        prevWeapon = this.get(
+          this.new(
+            defaultInitialWeapon(allStats.char.data[prevChar.key].weaponType)
+          )
+        )
+
       if (newChar)
         this.database.chars.setEquippedWeapon(
           charKeyToLocCharKey(newChar.key),
@@ -116,7 +123,7 @@ export class WeaponDataManager extends DataManager<
       if (prevChar)
         this.database.chars.setEquippedWeapon(
           charKeyToLocCharKey(prevChar.key),
-          prevWeapon?.id ?? ''
+          prevWeapon.id
         )
     } else
       newWeapon.location &&

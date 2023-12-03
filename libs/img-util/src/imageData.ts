@@ -35,6 +35,11 @@ export function cropHorizontal(
   y1: number,
   y2: number
 ) {
+  if (y1 === y2) {
+    console.warn(`trying to crop with y1:${y1} y2:${y2}. Crop aborted.`)
+    return cropImageData(srcCanvas, 0, 0, srcCanvas.width, srcCanvas.height)
+  }
+
   return cropImageData(srcCanvas, 0, y1, srcCanvas.width, y2 - y1)
 }
 

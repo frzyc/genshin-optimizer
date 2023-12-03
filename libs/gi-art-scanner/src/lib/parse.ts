@@ -108,23 +108,35 @@ export function parseSubstats(texts: string[]): ISubstat[] {
   return matches.slice(0, 4)
 }
 
-export function parseLocation(texts: string[]): LocationCharacterKey | null {
+type Ham = [LocationCharacterKey, number]
+export function parseLocation(texts: string[]): LocationCharacterKey {
+  const hams: Array<Ham> = []
   for (let text of texts) {
     if (!text) continue
     const colonInd = text.indexOf(':')
     if (colonInd !== -1) text = text.slice(colonInd + 1)
     if (!text) continue
 
-    for (const key of allLocationCharacterKeys) {
-      if (
+    for (const key of allLocationCharacterKeys)
+      hams.push([
+        key,
         hammingDistance(
           text.replace(/\W/g, ''),
           key //TODO: use the translated character name?
-        ) <= 2
-      )
-        return key
-    }
-    return 'Traveler' // just assume its traveler when we don't recognize the name
+        ),
+      ])
   }
-  return null
+  const [key] = hams.reduce(
+    (accu: Ham, curr: Ham) => {
+      const [, val] = accu
+      const [, curVal] = curr
+      if (curVal < val) return curr
+      return accu
+    },
+    [
+      'Traveler', // traveler is the default value when we don't recognize the name
+      8,
+    ] as [LocationCharacterKey, number]
+  )
+  return key
 }
