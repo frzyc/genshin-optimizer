@@ -1,3 +1,4 @@
+import { maxConstellationCount } from '@genshin-optimizer/consts'
 import {
   Box,
   CardActionArea,
@@ -54,7 +55,6 @@ export default function CharacterTalentPane() {
 
   const theme = useTheme()
   const grlg = useMediaQuery(theme.breakpoints.up('lg'))
-  const maxConstellationCount = 6
   const constellationCards = useMemo(
     () =>
       range(1, maxConstellationCount).map((i) => (

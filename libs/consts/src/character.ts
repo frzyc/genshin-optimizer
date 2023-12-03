@@ -40,6 +40,8 @@ export const allMoveKeys = [
 ] as const
 export type MoveKey = (typeof allMoveKeys)[number]
 
+export const maxConstellationCount = 6 as const
+
 export const characterSpecializedStatKeys = [
   'hp_',
   'atk_',
