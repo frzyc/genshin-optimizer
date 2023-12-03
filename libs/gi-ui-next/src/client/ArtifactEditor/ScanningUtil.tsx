@@ -1,12 +1,7 @@
-import {
-  imageDataToCanvas
-} from '@genshin-optimizer/img-util'
-import {
-  BorrowManager
-} from '@genshin-optimizer/util'
+import { imageDataToCanvas } from '@genshin-optimizer/img-util'
+import { BorrowManager } from '@genshin-optimizer/util'
 import type { RecognizeResult, Scheduler } from 'tesseract.js'
 import { createScheduler, createWorker } from 'tesseract.js'
-
 
 const workerCount = 2
 
