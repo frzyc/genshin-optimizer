@@ -2,15 +2,7 @@
   "page_character": {
     "tabTalent": {
       "constellation": "Takımyıldız",
-      "constellation_lv": {
-        "0": "Takımyıldız Sv. 0",
-        "1": "Takımyıldız Sv. 1",
-        "2": "Takımyıldız Sv. 2",
-        "3": "Takımyıldız Sv. 3",
-        "4": "Takımyıldız Sv. 4",
-        "5": "Takımyıldız Sv. 5",
-        "6": "Takımyıldız Sv. 6"
-      },
+      "constellationLvl": "Takımyıldız Sv. {{level}}",
       "auto": "Normal Saldırı",
       "skill": "Element Becerisi",
       "burst": "Element Patlaması",
@@ -19,21 +11,7 @@
       "unlockPassive3": "Pasif Yetenek",
       "altSprint": "Alternatif Depar",
       "talent": "Yetenek",
-      "talent_lv": {
-        "1": "Yetenek Sv. 1",
-        "2": "Yetenek Sv. 2",
-        "3": "Yetenek Sv. 3",
-        "4": "Yetenek Sv. 4",
-        "5": "Yetenek Sv. 5",
-        "6": "Yetenek Sv. 6",
-        "7": "Yetenek Sv. 7",
-        "8": "Yetenek Sv. 8",
-        "9": "Yetenek Sv. 9",
-        "10": "Yetenek Sv. 10",
-        "11": "Yetenek Sv. 11",
-        "12": "Yetenek Sv. 12",
-        "13": "Yetenek Sv. 13"
-      }
+      "talentLvl": "Yetenek Sv. {{level}}"
     }
   }
 }

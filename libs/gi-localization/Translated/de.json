@@ -274,15 +274,7 @@
     },
     "tabTalent": {
       "constellation": "Sternbild",
-      "constellation_lv": {
-        "0": "Sternbild Stufe 0",
-        "1": "Sternbild Stufe 1",
-        "2": "Sternbild Stufe 2",
-        "3": "Sternbild Stufe 3",
-        "4": "Sternbild Stufe 4",
-        "5": "Sternbild Stufe 5",
-        "6": "Sternbild Stufe 6"
-      },
+      "constellationLvl": "Sternbild Stufe {{level}}",
       "auto": "Standardangriff",
       "skill": "Elementarfähigkeit",
       "burst": "Spezialfähigkeit",
@@ -291,21 +283,7 @@
       "unlockPassive3": "Passives Talent",
       "altSprint": "Ersetzt Rennen",
       "talent": "Talent",
-      "talent_lv": {
-        "1": "Talentstufe 1",
-        "2": "Talentstufe 2",
-        "3": "Talentstufe 3",
-        "4": "Talentstufe 4",
-        "5": "Talentstufe 5",
-        "6": "Talentstufe 6",
-        "7": "Talentstufe 7",
-        "8": "Talentstufe 8",
-        "9": "Talentstufe 9",
-        "10": "Talentstufe 10",
-        "11": "Talentstufe 11",
-        "12": "Talentstufe 12",
-        "13": "Talentstufe 13"
-      }
+      "talentLvl": "Talentstufe {{level}}"
     }
   },
   "page_character_optimize": {

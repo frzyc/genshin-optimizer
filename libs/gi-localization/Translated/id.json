@@ -1080,15 +1080,7 @@
     },
     "tabTalent": {
       "constellation": "Konstelasi",
-      "constellation_lv": {
-        "0": "Konstelasi Lv. 0",
-        "1": "Konstelasi Lv. 1",
-        "2": "Konstelasi Lv. 2",
-        "3": "Konstelasi Lv. 3",
-        "4": "Konstelasi Lv. 4",
-        "5": "Konstelasi Lv. 5",
-        "6": "Konstelasi Lv. 6"
-      },
+      "constellationLvl": "Konstelasi Lv. {{level}}",
       "auto": "Normal Attack",
       "skill": "Elemental Skill",
       "burst": "Elemental Burst",
@@ -1097,21 +1089,7 @@
       "unlockPassive3": "Talenta Pasif",
       "altSprint": "Alternate Sprint",
       "talent": "Talent",
-      "talent_lv": {
-        "1": "Talent Lv. 1",
-        "2": "Talent Lv. 2",
-        "3": "Talent Lv. 3",
-        "4": "Talent Lv. 4",
-        "5": "Talent Lv. 5",
-        "6": "Talent Lv. 6",
-        "7": "Talent Lv. 7",
-        "8": "Talent Lv. 8",
-        "9": "Talent Lv. 9",
-        "10": "Talent Lv. 10",
-        "11": "Talent Lv. 11",
-        "12": "Talent Lv. 12",
-        "13": "Talent Lv. 13"
-      }
+      "talentLvl": "Talent Lv. {{level}}"
     }
   },
   "page_weapon": {

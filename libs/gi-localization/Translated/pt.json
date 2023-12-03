@@ -1137,15 +1137,7 @@
     },
     "tabTalent": {
       "constellation": "Constelação",
-      "constellation_lv": {
-        "0": "Nv. de Constelação 0",
-        "1": "Nv. de Constelação 1",
-        "2": "Nv. de Constelação 2",
-        "3": "Nv. de Constelação 3",
-        "4": "Nv. de Constelação 4",
-        "5": "Nv. de Constelação 5",
-        "6": "Nv. de Constelação 6"
-      },
+      "constellationLvl": "Nv. de Constelação {{level}}",
       "auto": "Ataque Normal",
       "skill": "Habilidade Elemental",
       "burst": "Surpemo",
@@ -1154,21 +1146,7 @@
       "unlockPassive3": "Talento Passivo",
       "altSprint": "Corrida Alternada",
       "talent": "Talento",
-      "talent_lv": {
-        "1": "Talento Nv.1",
-        "2": "Talento Nv.2",
-        "3": "Talento Nv.3",
-        "4": "Talento Nv.4",
-        "5": "Talento Nv.5",
-        "6": "Talento Nv.6",
-        "7": "Talento Nv.7",
-        "8": "Talento Nv.8",
-        "9": "Talento Nv.9",
-        "10": "Talento Nv.10",
-        "11": "Talento Nv.11",
-        "12": "Talento Nv.12",
-        "13": "Talento Nv.13"
-      }
+      "talentLvl": "Talento Nv.{{level}}"
     }
   },
   "page_weapon": {

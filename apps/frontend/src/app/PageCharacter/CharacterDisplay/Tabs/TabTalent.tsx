@@ -62,7 +62,7 @@ export default function CharacterTalentPane() {
       range(1, maxConstellationCount).map((i) => (
         <SkillDisplayCard
           talentKey={`constellation${i}` as TalentSheetElementKey}
-          subtitle={t(`tabTalent.constellation_lv.${i}`)}
+          subtitle={t('tabTalent.constellationLvl', { level: i })}
           onClickTitle={() =>
             characterDispatch({
               constellation: i === constellation ? i - 1 : i,
@@ -75,7 +75,7 @@ export default function CharacterTalentPane() {
   const constellationHeader = (
     <DropdownButton
       fullWidth
-      title={t(`tabTalent.constellation_lv.${constellation}`)}
+      title={t('tabTalent.constellationLvl', { level: constellation })}
       color={'success'}
       sx={{ borderRadius: 0 }}
     >
@@ -90,7 +90,7 @@ export default function CharacterTalentPane() {
             })
           }
         >
-          {t(`tabTalent.constellation_lv.${i}`)}
+          {t(`tabTalent.constellationLvl`, { level: i })}
         </MenuItem>
       ))}
     </DropdownButton>
@@ -245,7 +245,7 @@ function SkillDisplayCard({
     header = (
       <DropdownButton
         fullWidth
-        title={t(`tabTalent.talent_lv.${level}`)}
+        title={t('tabTalent.talentLvl', { level: level })}
         color={levelBoost ? 'info' : 'primary'}
         sx={{ borderRadius: 0 }}
       >
@@ -256,7 +256,7 @@ function SkillDisplayCard({
             disabled={talent[talentKey] === i}
             onClick={() => setTalentLevel(talentKey, i)}
           >
-            {t(`tabTalent.talent_lv.${i + levelBoost}`)}
+            {t('tabTalent.talentLvl', { level: i + levelBoost })}
           </MenuItem>
         ))}
       </DropdownButton>

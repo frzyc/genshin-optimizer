@@ -227,15 +227,7 @@
   "page_character": {
     "tabTalent": {
       "constellation": "Constellation",
-      "constellation_lv": {
-        "0": "Constellation Niv.0",
-        "1": "Constellation Niv.1",
-        "2": "Constellation Niv.2",
-        "3": "Constellation Niv.3",
-        "4": "Constellation Niv.4",
-        "5": "Constellation Niv.5",
-        "6": "Constellation Niv.6"
-      },
+      "constellationLvl": "Constellation Niv.{{level}}",
       "auto": "Attaque normale",
       "skill": "Compétence élémentaire",
       "burst": "Déchaînement élémentaire",
@@ -244,21 +236,7 @@
       "unlockPassive3": "Aptitude passive",
       "altSprint": "Sprint alternatif",
       "talent": "Aptitude",
-      "talent_lv": {
-        "1": "Niveau d'aptitude 1",
-        "2": "Niveau d'aptitude 2",
-        "3": "Niveau d'aptitude 3",
-        "4": "Niveau d'aptitude 4",
-        "5": "Niveau d'aptitude 5",
-        "6": "Niveau d'aptitude 6",
-        "7": "Niveau d'aptitude 7",
-        "8": "Niveau d'aptitude 8",
-        "9": "Niveau d'aptitude 9",
-        "10": "Niveau d'aptitude 10",
-        "11": "Niveau d'aptitude 11",
-        "12": "Niveau d'aptitude 12",
-        "13": "Niveau d'aptitude 13"
-      }
+      "talentLvl": "Niveau d'aptitude {{level}}"
     }
   }
 }
