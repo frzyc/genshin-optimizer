@@ -1,4 +1,14 @@
-import { Delete, Download, ImportExport, Upload } from '@mui/icons-material'
+import type { ArtCharDatabase } from '../Database/Database'
+import type { IGOOD } from '@genshin-optimizer/gi-good'
+import type { IGO } from '../Database/exim'
+import {
+  Delete,
+  Download,
+  ImportExport,
+  Upload,
+  CloudUpload,
+  CloudDownload,
+} from '@mui/icons-material'
 import ContentPasteIcon from '@mui/icons-material/ContentPaste'
 import {
   Box,
@@ -17,8 +27,15 @@ import { StyledInputBase } from '../Components/CustomNumberInput'
 import ModalWrapper from '../Components/ModalWrapper'
 import { DatabaseContext } from '../Database/Database'
 import { useBoolState } from '@genshin-optimizer/react-util'
-import { range } from '../Util/Util'
+import { range, shouldShowDevComponents } from '../Util/Util'
 import UploadCard from './UploadCard'
+import { CloudSyncContext } from '../Context/CloudSyncContext'
+
+const CLIENT_ID = process.env.NX_GOOGLE_CLIENT_ID
+const API_KEY = process.env.NX_GOOGLE_API_KEY
+const SCOPES = 'https://www.googleapis.com/auth/drive.appdata'
+const DRIVE_DISCOVERY_DOCS_URL =
+  'https://www.googleapis.com/discovery/v1/apis/drive/v3/rest'
 
 export default function DatabaseCard({
   readOnly = false,
@@ -45,6 +62,192 @@ export default function DatabaseCard({
   )
 }
 
+async function createCloudFile(
+  database: ArtCharDatabase,
+  index: number,
+  fileID?: string
+) {
+  const JSONStr = JSON.stringify(database.exportGOOD())
+  if (!fileID) {
+    try {
+      const { result } = await gapi.client.drive.files.create({
+        resource: {
+          name: `genshin-optimizer-${index}.json`,
+          parents: ['appDataFolder'],
+        },
+        fields: 'id',
+      })
+      fileID = result.id
+    } catch (e) {
+      console.error('create cloud file for id failed', e)
+      // TODO: better error handling
+      return
+    }
+  }
+  try {
+    await gapi.client.request({
+      path: `/upload/drive/v3/files/${fileID}`,
+      method: 'PATCH',
+      params: { uploadType: 'media' },
+      body: JSONStr,
+    })
+  } catch (e) {
+    console.error('updating cloud file failed', e)
+    // TODO: better error handling
+  }
+}
+
+async function uploadDataToDrive(
+  tokenResponse: google.accounts.oauth2.TokenResponse,
+  database: ArtCharDatabase,
+  index: number,
+  setCloudSyncInProgress: (s: boolean) => void,
+  callback: () => void
+) {
+  setCloudSyncInProgress(true)
+  if (
+    tokenResponse &&
+    tokenResponse.access_token &&
+    google.accounts.oauth2.hasGrantedAllScopes(tokenResponse, SCOPES)
+  ) {
+    gapi.client.setApiKey(API_KEY)
+    try {
+      await gapi.client.load(DRIVE_DISCOVERY_DOCS_URL)
+    } catch (e) {
+      console.error('loading drive discovery docs failed', e)
+      callback()
+      // TODO: better error handling
+      return
+    }
+
+    try {
+      // list files to check if file already exists
+      const { result } = await gapi.client.drive.files.list({
+        spaces: 'appDataFolder',
+        q: `name = 'genshin-optimizer-${index}.json'`,
+      })
+
+      if (result.files.length > 0) {
+        const fileID = result.files[0].id
+
+        const { result: fileResult } = await gapi.client.drive.files.get({
+          fileId: fileID,
+          alt: 'media',
+        })
+
+        const dbFileResult = fileResult as any as IGOOD & IGO
+
+        const artifactCount = dbFileResult.artifacts?.length ?? 0
+        const characterCount = dbFileResult.characters?.length ?? 0
+        const weaponCount = dbFileResult.weapons?.length ?? 0
+
+        if (
+          !window.confirm(
+            `Are you sure you want to replace the existing backup? the backup has ` +
+              `${artifactCount} artifact(s), ` +
+              `${characterCount} character(s), ` +
+              `and ${weaponCount} weapon(s).`
+          )
+        ) {
+          callback()
+          return
+        }
+        await createCloudFile(database, index, fileID)
+        callback()
+      } else {
+        await createCloudFile(database, index)
+        callback()
+      }
+    } catch (e) {
+      console.error('listing files failed', e)
+      callback()
+    }
+  } else {
+    callback()
+    // it should be safe to ignore
+  }
+}
+
+async function downloadDataFromDrive(
+  tokenResponse: google.accounts.oauth2.TokenResponse,
+  database: ArtCharDatabase,
+  index: number,
+  setCloudSyncInProgress: (s: boolean) => void,
+  callback: () => void
+) {
+  setCloudSyncInProgress(true)
+  if (
+    tokenResponse &&
+    tokenResponse.access_token &&
+    google.accounts.oauth2.hasGrantedAllScopes(tokenResponse, SCOPES)
+  ) {
+    gapi.client.setApiKey(API_KEY)
+    try {
+      await gapi.client.load(DRIVE_DISCOVERY_DOCS_URL)
+    } catch (e) {
+      console.error('loading drive discovery docs failed', e)
+      callback()
+    }
+    try {
+      // list files to check if file already exists
+      const { result } = await gapi.client.drive.files.list({
+        spaces: 'appDataFolder',
+        q: `name = 'genshin-optimizer-${index}.json'`,
+      })
+
+      if (result.files.length === 0) {
+        console.info('downloadDataFromDrive: no file')
+        window.alert('No backup found')
+
+        callback()
+        // TODO: this happens if file doesn't exist on drive it should have a way to let the user know that
+        return
+      }
+      try {
+        const fileID = result.files[0].id
+        const { result: fileResult } = await gapi.client.drive.files.get({
+          fileId: fileID,
+          alt: 'media',
+        })
+
+        const dbFileResult = fileResult as any as IGOOD & IGO
+
+        const artifactCount = dbFileResult.artifacts?.length ?? 0
+        const characterCount = dbFileResult.characters?.length ?? 0
+        const weaponCount = dbFileResult.weapons?.length ?? 0
+
+        if (
+          !window.confirm(
+            `Are you sure you want to replace the current database with the backup with ` +
+              `${artifactCount} artifact(s), ` +
+              `${characterCount} character(s), ` +
+              `and ${weaponCount} weapon(s)?`
+          )
+        ) {
+          callback()
+          return
+        }
+
+        database.importGOOD(dbFileResult, true, true)
+        callback()
+      } catch (e) {
+        console.error('downloading cloud file failed', e)
+        callback()
+        // TODO: better error handling
+        return
+      }
+    } catch (e) {
+      console.error('listing files failed', e)
+      // TODO: better error handling
+      callback()
+      return
+    }
+  } else {
+    callback()
+    // it should be safe to ignore
+  }
+}
+
 function DataCard({ index, readOnly }: { index: number; readOnly: boolean }) {
   const {
     databases,
@@ -59,6 +262,9 @@ function DataCard({ index, readOnly }: { index: number; readOnly: boolean }) {
   )
   // Need to update the dbMeta when database changes
   useEffect(() => setDBMeta(database.dbMeta.get()), [database])
+
+  const { cloudSyncInProgress, setCloudSyncInProgress } =
+    useContext(CloudSyncContext)
 
   const current = mainDB === database
   const [uploadOpen, onOpen, onClose] = useBoolState()
@@ -81,6 +287,44 @@ function DataCard({ index, readOnly }: { index: number; readOnly: boolean }) {
     database.clear()
     database.toExtraLocalDB()
   }, [database, name])
+
+  const onDriveUpload = useCallback(() => {
+    const uploadDataWrapper = (
+      tokenResponse: google.accounts.oauth2.TokenResponse
+    ) =>
+      uploadDataToDrive(
+        tokenResponse,
+        database,
+        index,
+        setCloudSyncInProgress,
+        () => setCloudSyncInProgress(false)
+      )
+    const client = google.accounts.oauth2.initTokenClient({
+      client_id: CLIENT_ID,
+      scope: SCOPES,
+      callback: uploadDataWrapper,
+    })
+    client.requestAccessToken()
+  }, [database, index, setCloudSyncInProgress])
+
+  const onDriveDownload = useCallback(() => {
+    const downloadDataWrapper = (
+      tokenResponse: google.accounts.oauth2.TokenResponse
+    ) =>
+      downloadDataFromDrive(
+        tokenResponse,
+        database,
+        index,
+        setCloudSyncInProgress,
+        () => setCloudSyncInProgress(false)
+      )
+    const client = google.accounts.oauth2.initTokenClient({
+      client_id: CLIENT_ID,
+      scope: SCOPES,
+      callback: downloadDataWrapper,
+    })
+    client.requestAccessToken()
+  }, [database, index, setCloudSyncInProgress])
 
   const download = useCallback(() => {
     const date = new Date()
@@ -175,17 +419,6 @@ function DataCard({ index, readOnly }: { index: number; readOnly: boolean }) {
           <Box>
             <Grid container spacing={1} columns={{ xs: 2 }}>
               <Grid item xs={1}>
-                <Button
-                  fullWidth
-                  disabled={!hasData}
-                  color="info"
-                  onClick={copyToClipboard}
-                  startIcon={<ContentPasteIcon />}
-                >
-                  <Trans t={t} i18nKey="DatabaseCard.button.copy" />
-                </Button>
-              </Grid>
-              <Grid item xs={1}>
                 <ModalWrapper open={uploadOpen} onClose={onClose}>
                   <UploadCard index={index} onReplace={onClose} />
                 </ModalWrapper>
@@ -208,6 +441,42 @@ function DataCard({ index, readOnly }: { index: number; readOnly: boolean }) {
                   startIcon={<Download />}
                 >
                   {t`DatabaseCard.button.download`}
+                </Button>
+              </Grid>
+              {shouldShowDevComponents ? (
+                <Grid item xs={1}>
+                  <Button
+                    fullWidth
+                    color="info"
+                    disabled={!hasData || readOnly || cloudSyncInProgress}
+                    onClick={onDriveUpload}
+                    startIcon={<CloudUpload />}
+                  >
+                    {t`DatabaseCard.button.uploadDrive`}
+                  </Button>
+                </Grid>
+              ) : undefined}
+              {shouldShowDevComponents ? (
+                <Grid item xs={1}>
+                  <Button
+                    fullWidth
+                    disabled={readOnly || cloudSyncInProgress}
+                    onClick={onDriveDownload}
+                    startIcon={<CloudDownload />}
+                  >
+                    {t`DatabaseCard.button.downloadDrive`}
+                  </Button>
+                </Grid>
+              ) : undefined}
+              <Grid item xs={1}>
+                <Button
+                  fullWidth
+                  disabled={!hasData}
+                  color="info"
+                  onClick={copyToClipboard}
+                  startIcon={<ContentPasteIcon />}
+                >
+                  <Trans t={t} i18nKey="DatabaseCard.button.copy" />
                 </Button>
               </Grid>
               <Grid item xs={1}>

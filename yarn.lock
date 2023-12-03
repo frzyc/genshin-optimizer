@@ -3642,6 +3642,26 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@maxim_mazurok/gapi.client.discovery-v1@npm:latest":
+  version: 0.1.20200806
+  resolution: "@maxim_mazurok/gapi.client.discovery-v1@npm:0.1.20200806"
+  dependencies:
+    "@types/gapi.client": "*"
+    "@types/gapi.client.discovery-v1": "*"
+  checksum: 18b93607889ca62301b149841115eee9720d4fdaa4329d6e865b73ceb77c3cfea4d23808b2a861d583a96ccac4a3b9affb9d04b08fa329a6956d4272175f1696
+  languageName: node
+  linkType: hard
+
+"@maxim_mazurok/gapi.client.drive-v3@npm:latest":
+  version: 0.0.20231107
+  resolution: "@maxim_mazurok/gapi.client.drive-v3@npm:0.0.20231107"
+  dependencies:
+    "@types/gapi.client": "*"
+    "@types/gapi.client.discovery-v1": "*"
+  checksum: c7a07aa6547278c0a2a5553776707cecf9f38f4db94a8ea665e505f4febc598eec7f14246d5be1881abe747b7fffc118c7c55f4d07f74b9f81ed9057fc81b0c1
+  languageName: node
+  linkType: hard
+
 "@microsoft/api-extractor-model@npm:7.27.3":
   version: 7.27.3
   resolution: "@microsoft/api-extractor-model@npm:7.27.3"
@@ -5330,6 +5350,45 @@ __metadata:
     "@types/qs": "*"
     "@types/serve-static": "*"
   checksum: b4acd8a836d4f6409cdf79b12d6e660485249b62500cccd61e7997d2f520093edf77d7f8498ca79d64a112c6434b6de5ca48039b8fde2c881679eced7e96979b
+  languageName: node
+  linkType: hard
+
+"@types/gapi.client.discovery-v1@npm:*":
+  version: 0.0.4
+  resolution: "@types/gapi.client.discovery-v1@npm:0.0.4"
+  dependencies:
+    "@maxim_mazurok/gapi.client.discovery-v1": latest
+  checksum: 51d20e6cfbda250eb95f55ba563662ba9b71b97aee375cdc46179ff7cbc553082f45d6e4ce322767d121298a6e90bd7848e6c1c56c433217600627fbcc78f600
+  languageName: node
+  linkType: hard
+
+"@types/gapi.client.drive-v3@npm:^0.0.4":
+  version: 0.0.4
+  resolution: "@types/gapi.client.drive-v3@npm:0.0.4"
+  dependencies:
+    "@maxim_mazurok/gapi.client.drive-v3": latest
+  checksum: ddcf47b1cd6155e748425844f5ae5189c612ea5f87ffa3e2702e0a988ddeffbe6171de5dc282ddd1a7abd30396315d417114d04fa2196f4153aeacac207b98af
+  languageName: node
+  linkType: hard
+
+"@types/gapi.client@npm:*":
+  version: 1.0.8
+  resolution: "@types/gapi.client@npm:1.0.8"
+  checksum: add67fad25689d8cd2d6557c99c949f8e74b91d9f7c0b3f1708dd08b902efaf16fd58c7a0d4a678614d96806db1413ca59da23fe36da286121808602a61de1af
+  languageName: node
+  linkType: hard
+
+"@types/gapi@npm:^0.0.47":
+  version: 0.0.47
+  resolution: "@types/gapi@npm:0.0.47"
+  checksum: 9f18e5d22a549f0b0b99c43e63d2ed2f7438ee8edf12963f7edb3934592908f8ce24ad23cc5e36952faa4d9c486625b70d3dd39f4a905a397507ceb8f8ef41ce
+  languageName: node
+  linkType: hard
+
+"@types/google.accounts@npm:^0.0.14":
+  version: 0.0.14
+  resolution: "@types/google.accounts@npm:0.0.14"
+  checksum: 6ec6864f5d5773e17b351e5b4a2dc8fee5e47d65c64b170f4bed99d4d534366b7d29320bd179f175f1cbf8aef35b3f268d890d894d49419570a1363079f07a75
   languageName: node
   linkType: hard
 
@@ -10444,6 +10503,9 @@ __metadata:
     "@swc/core": 1.3.92
     "@swc/helpers": 0.5.3
     "@testing-library/react": 14.0.0
+    "@types/gapi": ^0.0.47
+    "@types/gapi.client.drive-v3": ^0.0.4
+    "@types/google.accounts": ^0.0.14
     "@types/jest": 29.4.4
     "@types/node": 18.14.2
     "@types/react": 18.2.14

@@ -32,7 +32,9 @@
       "copy": "Clipboard",
       "delete": "Delete",
       "upload": "Upload",
-      "swap": "Swap"
+      "swap": "Swap",
+      "uploadDrive": "Upload to Drive",
+      "downloadDrive": "Download from Drive"
     },
     "currentDB": "Current Database"
   },
