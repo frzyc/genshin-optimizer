@@ -401,7 +401,42 @@
       "swapArt": "Đổi thánh di vật",
       "compare": "So sánh với bộ tdv hiện tại"
     },
-    "characterName": "Tên nhân vật"
+    "characterName": "Tên nhân vật",
+    "tabTalent": {
+      "constellation": "Cung Mệnh",
+      "constellation_lv": {
+        "0": "Cung Mệnh Tầng 0",
+        "1": "Cung Mệnh Tầng 1",
+        "2": "Cung Mệnh Tầng 2",
+        "3": "Cung Mệnh Tầng 3",
+        "4": "Cung Mệnh Tầng 4",
+        "5": "Cung Mệnh Tầng 5",
+        "6": "Cung Mệnh Tầng 6"
+      },
+      "auto": "Tấn Công Thường",
+      "skill": "Kỹ Năng Nguyên Tố",
+      "burst": "Kỹ Năng Nộ",
+      "unlockPassive1": "Nhân vật đột phá Cấp 1 sẽ mở",
+      "unlockPassive2": "Nhân vật đột phá Cấp 4 sẽ mở",
+      "unlockPassive3": "Thiên Phú Cố Định",
+      "altSprint": "Thay thế xung kích",
+      "talent": "Thiên Phú",
+      "talent_lv": {
+        "1": "Cấp Thiên Phú 1",
+        "2": "Cấp Thiên Phú 2",
+        "3": "Cấp Thiên Phú 3",
+        "4": "Cấp Thiên Phú 4",
+        "5": "Cấp Thiên Phú 5",
+        "6": "Cấp Thiên Phú 6",
+        "7": "Cấp Thiên Phú 7",
+        "8": "Cấp Thiên Phú 8",
+        "9": "Cấp Thiên Phú 9",
+        "10": "Cấp Thiên Phú 10",
+        "11": "Cấp Thiên Phú 11",
+        "12": "Cấp Thiên Phú 12",
+        "13": "Cấp Thiên Phú 13"
+      }
+    }
   },
   "page_weapon": {
     "showingNum_one": "Đang hiện <1>{{count}}</1> trên {{value}} Vũ khí",

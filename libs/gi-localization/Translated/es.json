@@ -854,7 +854,42 @@
     },
     "characterName": "Nombre del personaje",
     "teammate": "Compañero {{count}}",
-    "noReaction": "Sin reacciones"
+    "noReaction": "Sin reacciones",
+    "tabTalent": {
+      "constellation": "Constelación",
+      "constellation_lv": {
+        "0": "Constelación Niv. 0",
+        "1": "Constelación Niv. 1",
+        "2": "Constelación Niv. 2",
+        "3": "Constelación Niv. 3",
+        "4": "Constelación Niv. 4",
+        "5": "Constelación Niv. 5",
+        "6": "Constelación Niv. 6"
+      },
+      "auto": "Ataque Normal",
+      "skill": "Habilidad Elemental",
+      "burst": "Habilidad Definitiva",
+      "unlockPassive1": "Se desbloquea al alcanzar Niv. de ascensión 1",
+      "unlockPassive2": "Se desbloquea al alcanzar Niv. de ascensión 4",
+      "unlockPassive3": "Talento pasivo",
+      "altSprint": "Reemplaza a Esprintar",
+      "talent": "Talento",
+      "talent_lv": {
+        "1": "Niv. talento 1",
+        "2": "Niv. talento 2",
+        "3": "Niv. talento 3",
+        "4": "Niv. talento 4",
+        "5": "Niv. talento 5",
+        "6": "Niv. talento 6",
+        "7": "Niv. talento 7",
+        "8": "Niv. talento 8",
+        "9": "Niv. talento 9",
+        "10": "Niv. talento 10",
+        "11": "Niv. talento 11",
+        "12": "Niv. talento 12",
+        "13": "Niv. talento 13"
+      }
+    }
   },
   "page_weapon": {
     "showingNum_one": "Mostrando <1>{{count}}</1> de {{value}} arma",

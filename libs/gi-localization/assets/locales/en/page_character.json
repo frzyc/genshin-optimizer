@@ -57,5 +57,40 @@
   "tabTeambuff": {
     "team_reso": "Team Resonance",
     "resonance_tip": "The party must be full with 4 characters in order for Elemental Resonance to take effect."
+  },
+  "tabTalent": {
+    "constellation": "Constellation",
+    "constellation_lv": {
+      "0": "Constellation Lv. 0",
+      "1": "Constellation Lv. 1",
+      "2": "Constellation Lv. 2",
+      "3": "Constellation Lv. 3",
+      "4": "Constellation Lv. 4",
+      "5": "Constellation Lv. 5",
+      "6": "Constellation Lv. 6"
+    },
+    "auto": "Normal Attack",
+    "skill": "Elemental Skill",
+    "burst": "Elemental Burst",
+    "unlockPassive1": "Unlocks at Character Ascension Phase 1",
+    "unlockPassive2": "Unlocks at Character Ascension Phase 4",
+    "unlockPassive3": "Passive Talent",
+    "altSprint": "Alternative Sprint",
+    "talent": "Talent",
+    "talent_lv": {
+      "1": "Talent Lv. 1",
+      "2": "Talent Lv. 2",
+      "3": "Talent Lv. 3",
+      "4": "Talent Lv. 4",
+      "5": "Talent Lv. 5",
+      "6": "Talent Lv. 6",
+      "7": "Talent Lv. 7",
+      "8": "Talent Lv. 8",
+      "9": "Talent Lv. 9",
+      "10": "Talent Lv. 10",
+      "11": "Talent Lv. 11",
+      "12": "Talent Lv. 12",
+      "13": "Talent Lv. 13"
+    }
   }
 }
