@@ -74,7 +74,7 @@ export default function CharacterTalentPane() {
     <DropdownButton
       fullWidth
       title={`Constellation Lv. ${constellation}`}
-      color={'success'}
+      color="primary"
       sx={{ borderRadius: 0 }}
     >
       {range(0, maxConstellationCount).map((i) => (
