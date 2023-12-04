@@ -21,13 +21,6 @@
       "options": {
         "cwd": "libs/gi-prisma-schema"
       }
-    },
-    "lint": {
-      "executor": "@nx/linter:eslint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": ["libs/gi-prisma-schema/**/*.ts"]
-      }
     }
   },
   "tags": []

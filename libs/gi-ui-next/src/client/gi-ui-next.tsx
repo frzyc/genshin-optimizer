@@ -2,6 +2,7 @@
 export interface GiUiNextProps {}
 
 export function GiUiNext(props: GiUiNextProps) {
+  console.log({ props })
   return (
     <div>
       <h1>Welcome to GiUiNext!</h1>

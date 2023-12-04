@@ -503,61 +503,65 @@ function Location({ artifact }: { artifact: Artifact }) {
   )
 
   const { genshinUserId } = useContext(UserContext)
-  const [updateArtifactMutation, { data, loading, error }] =
-    useUpdateArtifactMutation({
-      variables: {
-        genshinUserId,
-        artifact: { id, location },
-      },
-      update(cache, { data }) {
-        const art = data?.updateArtifact
-        if (!art) return
-        cache.updateQuery(
-          {
-            query: GetAllUserArtifactDocument,
-            variables: {
-              genshinUserId,
-            },
+  const [updateArtifactMutation, { loading }] = useUpdateArtifactMutation({
+    variables: {
+      genshinUserId,
+      artifact: { id, location },
+    },
+    update(cache, { data }) {
+      const art = data?.updateArtifact
+      if (!art) return
+      cache.updateQuery(
+        {
+          query: GetAllUserArtifactDocument,
+          variables: {
+            genshinUserId,
           },
-          ({ getAllUserArtifact }) => ({
-            getAllUserArtifact: updateArtifactList(getAllUserArtifact, art),
-          })
-        )
-      },
-    })
+        },
+        ({ getAllUserArtifact }) => ({
+          getAllUserArtifact: updateArtifactList(getAllUserArtifact, art),
+        })
+      )
+    },
+  })
   useEffect(() => {
     if (artifact.location === location) return
     updateArtifactMutation()
   }, [artifact.location, location, updateArtifactMutation])
-  return <LocationAutocomplete location={location} setLocation={setLocation} />
+  return (
+    <LocationAutocomplete
+      location={location}
+      setLocation={setLocation}
+      autoCompleteProps={{ disabled: loading }}
+    />
+  )
 }
 function DeleteButton({ artifact }: { artifact: Artifact }) {
   const { lock, id } = artifact
   const { genshinUserId } = useContext(UserContext)
-  const [removeArtifactMutation, { data, loading, error }] =
-    useRemoveArtifactMutation({
-      variables: {
-        genshinUserId,
-        artifactId: id,
-      },
-      update(cache, { data }) {
-        const art = data?.removeArtifact
-        if (!art) return
-        cache.updateQuery(
-          {
-            query: GetAllUserArtifactDocument,
-            variables: {
-              genshinUserId,
-            },
+  const [removeArtifactMutation, { loading }] = useRemoveArtifactMutation({
+    variables: {
+      genshinUserId,
+      artifactId: id,
+    },
+    update(cache, { data }) {
+      const art = data?.removeArtifact
+      if (!art) return
+      cache.updateQuery(
+        {
+          query: GetAllUserArtifactDocument,
+          variables: {
+            genshinUserId,
           },
-          ({ getAllUserArtifact }) => ({
-            getAllUserArtifact: (getAllUserArtifact as Artifact[]).filter(
-              (a) => a.id !== art.id
-            ),
-          })
-        )
-      },
-    })
+        },
+        ({ getAllUserArtifact }) => ({
+          getAllUserArtifact: (getAllUserArtifact as Artifact[]).filter(
+            (a) => a.id !== art.id
+          ),
+        })
+      )
+    },
+  })
 
   return (
     <Button
@@ -580,31 +584,30 @@ function LockButton({
   const { id } = artifact
   const [lock, setlock] = useState(artifact.lock)
   const { genshinUserId } = useContext(UserContext)
-  const [updateArtifactMutation, { data, loading, error }] =
-    useUpdateArtifactMutation({
-      variables: {
-        genshinUserId,
-        artifact: { id, lock },
-      },
+  const [updateArtifactMutation, { loading }] = useUpdateArtifactMutation({
+    variables: {
+      genshinUserId,
+      artifact: { id, lock },
+    },
 
-      update(cache, { data }) {
-        const art = data?.updateArtifact
-        if (!art) return
-        cache.updateQuery(
-          {
-            query: GetAllUserArtifactDocument,
-            variables: {
-              genshinUserId,
-            },
+    update(cache, { data }) {
+      const art = data?.updateArtifact
+      if (!art) return
+      cache.updateQuery(
+        {
+          query: GetAllUserArtifactDocument,
+          variables: {
+            genshinUserId,
           },
-          ({ getAllUserArtifact }) => ({
-            getAllUserArtifact: (getAllUserArtifact as Artifact[]).map((a) =>
-              a.id === id ? { ...a, ...art } : a
-            ),
-          })
-        )
-      },
-    })
+        },
+        ({ getAllUserArtifact }) => ({
+          getAllUserArtifact: (getAllUserArtifact as Artifact[]).map((a) =>
+            a.id === id ? { ...a, ...art } : a
+          ),
+        })
+      )
+    },
+  })
   useEffect(() => {
     if (artifact.lock === lock) return
     updateArtifactMutation()

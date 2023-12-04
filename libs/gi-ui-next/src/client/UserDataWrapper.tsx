@@ -2,11 +2,10 @@
 import { useGetUserQuery } from '@genshin-optimizer/gi-frontend-gql'
 import { useSession } from 'next-auth/react'
 import type { ReactNode } from 'react'
-import { useMemo } from 'react'
+import { createContext, useMemo } from 'react'
 
 import type { ApolloError } from '@apollo/client'
 import type { User } from '@genshin-optimizer/gi-frontend-gql'
-import { createContext } from 'react'
 
 export type UserDataObj = {
   user?: User

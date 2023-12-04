@@ -245,28 +245,30 @@ function Location({ weapon, disabled }: { weapon: Weapon; disabled: boolean }) {
   )
 
   const { genshinUserId } = useContext(UserContext)
-  const [updateWeaponMutation, { data, loading, error }] =
-    useUpdateWeaponMutation({
-      variables: {
-        genshinUserId,
-        weapon: { id, location },
-      },
-      update(cache, { data }) {
-        const weapon = data?.updateWeapon
-        if (!weapon) return
-        cache.updateQuery(
-          {
-            query: GetAllUserWeaponDocument,
-            variables: {
-              genshinUserId,
-            },
+  const [
+    updateWeaponMutation,
+    // { data, loading, error }
+  ] = useUpdateWeaponMutation({
+    variables: {
+      genshinUserId,
+      weapon: { id, location },
+    },
+    update(cache, { data }) {
+      const weapon = data?.updateWeapon
+      if (!weapon) return
+      cache.updateQuery(
+        {
+          query: GetAllUserWeaponDocument,
+          variables: {
+            genshinUserId,
           },
-          ({ getAllUserWeapon }) => ({
-            getAllUserWeapon: updateWeaponList(getAllUserWeapon, weapon),
-          })
-        )
-      },
-    })
+        },
+        ({ getAllUserWeapon }) => ({
+          getAllUserWeapon: updateWeaponList(getAllUserWeapon, weapon),
+        })
+      )
+    },
+  })
   useEffect(() => {
     if (weapon.location === location) return
     updateWeaponMutation()
@@ -280,30 +282,29 @@ function Location({ weapon, disabled }: { weapon: Weapon; disabled: boolean }) {
 function DeleteButton({ weapon }: { weapon: Weapon }) {
   const { lock, id } = weapon
   const { genshinUserId } = useContext(UserContext)
-  const [removeWeaponMutation, { data, loading, error }] =
-    useRemoveWeaponMutation({
-      variables: {
-        genshinUserId,
-        weaponId: id,
-      },
-      update(cache, { data }) {
-        const weapon = data?.removeWeapon
-        if (!weapon) return
-        cache.updateQuery(
-          {
-            query: GetAllUserWeaponDocument,
-            variables: {
-              genshinUserId,
-            },
+  const [removeWeaponMutation, { loading }] = useRemoveWeaponMutation({
+    variables: {
+      genshinUserId,
+      weaponId: id,
+    },
+    update(cache, { data }) {
+      const weapon = data?.removeWeapon
+      if (!weapon) return
+      cache.updateQuery(
+        {
+          query: GetAllUserWeaponDocument,
+          variables: {
+            genshinUserId,
           },
-          ({ getAllUserWeapon }) => ({
-            getAllUserWeapon: (getAllUserWeapon as Weapon[]).filter(
-              (a) => a.id !== weapon.id
-            ),
-          })
-        )
-      },
-    })
+        },
+        ({ getAllUserWeapon }) => ({
+          getAllUserWeapon: (getAllUserWeapon as Weapon[]).filter(
+            (a) => a.id !== weapon.id
+          ),
+        })
+      )
+    },
+  })
 
   return (
     <Button
@@ -326,31 +327,30 @@ function LockButton({
   const { id } = weapon
   const [lock, setlock] = useState(weapon.lock)
   const { genshinUserId } = useContext(UserContext)
-  const [updateWeaponMutation, { data, loading, error }] =
-    useUpdateWeaponMutation({
-      variables: {
-        genshinUserId,
-        weapon: { id, lock },
-      },
+  const [updateWeaponMutation, { loading }] = useUpdateWeaponMutation({
+    variables: {
+      genshinUserId,
+      weapon: { id, lock },
+    },
 
-      update(cache, { data }) {
-        const weapon = data?.updateWeapon
-        if (!weapon) return
-        cache.updateQuery(
-          {
-            query: GetAllUserWeaponDocument,
-            variables: {
-              genshinUserId,
-            },
+    update(cache, { data }) {
+      const weapon = data?.updateWeapon
+      if (!weapon) return
+      cache.updateQuery(
+        {
+          query: GetAllUserWeaponDocument,
+          variables: {
+            genshinUserId,
           },
-          ({ getAllUserWeapon }) => ({
-            getAllUserWeapon: (getAllUserWeapon as Weapon[]).map((a) =>
-              a.id === id ? { ...a, ...weapon } : a
-            ),
-          })
-        )
-      },
-    })
+        },
+        ({ getAllUserWeapon }) => ({
+          getAllUserWeapon: (getAllUserWeapon as Weapon[]).map((a) =>
+            a.id === id ? { ...a, ...weapon } : a
+          ),
+        })
+      )
+    },
+  })
   useEffect(() => {
     if (weapon.lock === lock) return
     updateWeaponMutation()

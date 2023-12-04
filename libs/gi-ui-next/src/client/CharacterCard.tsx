@@ -65,7 +65,7 @@ type CharacterCardProps = {
   isTeammateCard?: boolean
 }
 export function CharacterCard({
-  character,
+  // character,
   artifactChildren,
   weaponChildren,
   characterChildren,
