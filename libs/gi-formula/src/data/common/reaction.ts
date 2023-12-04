@@ -226,62 +226,62 @@ type TransInfo = {
   multi: number
   canCrit: boolean
   triggeredBy: ElementWithPhyKey[]
-  variants: ElementWithPhyKey[]
+  colors: ElementWithPhyKey[]
 }
 const transInfo: Record<TransformativeReactionKey, TransInfo> = {
   overloaded: {
     multi: 2,
     canCrit: false,
     triggeredBy: ['pyro'],
-    variants: ['pyro'],
+    colors: ['pyro'],
   },
   shattered: {
     multi: 1.5,
     canCrit: false,
     triggeredBy: ['physical'],
-    variants: ['physical'],
+    colors: ['physical'],
   },
   electrocharged: {
     multi: 1.2,
     canCrit: false,
     triggeredBy: ['electro'],
-    variants: ['electro'],
+    colors: ['electro'],
   },
   superconduct: {
     multi: 0.5,
     canCrit: false,
     triggeredBy: ['cryo'],
-    variants: ['cryo'],
+    colors: ['cryo'],
   },
   swirl: {
     multi: 0.6,
     canCrit: false,
     triggeredBy: ['anemo'],
-    variants: ['pyro', 'hydro', 'electro', 'cryo'],
+    colors: ['pyro', 'hydro', 'electro', 'cryo'],
   },
   burning: {
     multi: 0.25,
     canCrit: true,
     triggeredBy: ['pyro', 'dendro'],
-    variants: ['pyro'],
+    colors: ['pyro'],
   },
   bloom: {
     multi: 2,
     canCrit: true,
     triggeredBy: ['dendro', 'hydro'],
-    variants: ['dendro'],
+    colors: ['dendro'],
   },
   burgeon: {
     multi: 3,
     canCrit: true,
     triggeredBy: ['pyro'],
-    variants: ['dendro'],
+    colors: ['dendro'],
   },
   hyperbloom: {
     multi: 3,
     canCrit: true,
     triggeredBy: ['electro'],
-    variants: ['dendro'],
+    colors: ['dendro'],
   },
 }
 const transTriggerByEle = Object.fromEntries(
@@ -295,8 +295,8 @@ function trigger(
   if (transTriggerByEle[ele].has(trans)) return
   transTriggerByEle[ele].add(trans)
 
-  for (const variant of transInfo[trans].variants)
-    for (const trans of immediateFromEle[variant])
+  for (const color of transInfo[trans].colors)
+    for (const trans of immediateFromEle[color])
       trigger(ele, trans, immediateFromEle)
 }
 {
@@ -343,7 +343,7 @@ const data: TagMapNodeEntries = [
 
   // Trans listing
   ...allTransformativeReactionKeys.flatMap((trans) => {
-    const { canCrit, variants } = transInfo[trans]
+    const { canCrit, colors } = transInfo[trans]
     const q = trans === 'swirl' ? 'swirl' : canCrit ? 'transCrit' : 'trans'
     let cond: string | StrNode = 'unique'
     const available = allElementKeys.filter((ele) =>
@@ -361,7 +361,7 @@ const data: TagMapNodeEntries = [
               Object.fromEntries(available.map((k) => [k, cond])),
               ''
             )
-    return variants.flatMap((ele) => {
+    return colors.flatMap((ele) => {
       const name = trans === 'swirl' ? `swirl_${ele}` : trans
       return [
         selfBuff.formula.listing.add(
