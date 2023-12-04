@@ -39,7 +39,9 @@ export default class Artifact {
       )
   )
 
-  //ARTIFACT IN GENERAL
+  /**
+   * @deprecate
+   */
   static getArtifactEfficiency(
     artifact: ICachedArtifact,
     filter: Set<SubstatKey>
