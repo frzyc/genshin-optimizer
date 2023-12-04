@@ -61,7 +61,7 @@ export class ScanningQueue {
   }
   shiftProcessed(): Processed | undefined {
     const procesesd = this.processed.shift()
-    this.processQueue()
+    if (procesesd) this.processQueue()
     return procesesd
   }
   clearQueue() {

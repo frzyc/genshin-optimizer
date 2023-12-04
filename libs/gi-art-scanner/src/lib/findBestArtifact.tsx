@@ -2,7 +2,7 @@ import type {
   ArtifactRarity,
   ArtifactSetKey,
   ArtifactSlotKey,
-  LocationCharacterKey,
+  LocationKey,
   MainStatKey,
   SubstatKey,
 } from '@genshin-optimizer/consts'
@@ -33,6 +33,8 @@ export type TextKey =
   | 'level'
   | 'substats'
   | 'setKey'
+  | 'location'
+  | 'lock'
 
 export function findBestArtifact(
   rarities: Set<number>,
@@ -41,23 +43,32 @@ export function findBestArtifact(
   substats: ISubstat[],
   mainStatKeys: Set<MainStatKey>,
   mainStatValues: { mainStatValue: number; unit?: string }[],
-  location: LocationCharacterKey | null
+  location: LocationKey,
+  lock = false
 ): [IArtifact, Partial<Record<TextKey, ReactNode>>] {
+  const texts = {
+    lock: detectedText(lock, 'Lock', (value) =>
+      value ? 'Locked' : 'Unlocked'
+    ),
+  } as Partial<Record<TextKey, ReactNode>>
+  if (location)
+    texts.location = detectedText(location, 'Location', (value) => value)
+
   const relevantSetKey = [
-    ...new Set<ArtifactSetKey>([...textSetKeys, 'Adventurer']),
+    ...new Set<ArtifactSetKey>([...textSetKeys, 'EmblemOfSeveredFate']),
   ]
 
   let bestScore = -1,
     bestArtifacts: IArtifact[] = [
       {
-        setKey: 'Adventurer',
-        rarity: 3,
+        setKey: 'EmblemOfSeveredFate',
+        rarity: 5,
         level: 0,
         slotKey: 'flower',
         mainStatKey: 'hp',
         substats: [],
         location: location ?? '',
-        lock: false,
+        lock,
       },
     ]
 
@@ -72,6 +83,7 @@ export function findBestArtifact(
       )
       score += count / textSetKeys.size
     }
+    if (rarities.has(rarity)) score++
     if (substats.length) {
       const count = substats.reduce(
         (count, substat) =>
@@ -131,7 +143,7 @@ export function findBestArtifact(
                 mainStatKey,
                 substats: [],
                 location: location ?? '',
-                lock: false,
+                lock,
               })
             }
           }
@@ -151,7 +163,7 @@ export function findBestArtifact(
               mainStatKey,
               substats: [],
               location: location ?? '',
-              lock: false,
+              lock,
             })
           }
         }
@@ -159,7 +171,6 @@ export function findBestArtifact(
     }
   }
 
-  const texts = {} as Partial<Record<TextKey, ReactNode>>
   const chosen = {
     setKey: new Set(),
     rarity: new Set(),
