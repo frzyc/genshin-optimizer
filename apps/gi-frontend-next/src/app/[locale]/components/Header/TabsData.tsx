@@ -9,7 +9,8 @@ import {
   Settings,
 } from '@mui/icons-material'
 import { Chip } from '@mui/material'
-import { ReactNode, useContext } from 'react'
+import type { ReactNode } from 'react'
+import { useContext } from 'react'
 type ITab = {
   i18Key: string
   icon: JSX.Element

@@ -1,4 +1,4 @@
-import { useTranslation } from '../../i18n'
+import { initTranslation } from '../../i18n'
 import { Typography, Box } from '@mui/material'
 import { HomeClient } from './HomeClient'
 
@@ -11,7 +11,7 @@ export default async function HomePage({
 }: {
   params: { locale: string }
 }) {
-  const { t } = await useTranslation(locale, 'artifact_Adventurer_gen')
+  const { t } = await initTranslation(locale, 'artifact_Adventurer_gen')
   return (
     <Box sx={{ display: 'flex' }}>
       <Typography>HOME PAGE</Typography>

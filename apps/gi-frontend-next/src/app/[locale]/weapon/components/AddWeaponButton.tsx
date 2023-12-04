@@ -12,7 +12,10 @@ export default function AddWeaponButton({
 }: {
   genshinUserId: string
 }) {
-  const [addWeaponMutation, { data, loading, error }] = useAddWeaponMutation({
+  const [
+    addWeaponMutation,
+    // { data, loading, error }
+  ] = useAddWeaponMutation({
     variables: {
       genshinUserId,
       weapon: randomizeWeapon({

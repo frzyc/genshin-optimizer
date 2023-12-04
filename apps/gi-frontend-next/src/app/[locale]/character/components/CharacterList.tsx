@@ -9,7 +9,10 @@ export default function WeaponList({
 }: {
   genshinUserId: string
 }) {
-  const { data, loading, error } = useGetAllUserCharacterQuery({
+  const {
+    data,
+    // loading, error
+  } = useGetAllUserCharacterQuery({
     variables: {
       genshinUserId,
     },
