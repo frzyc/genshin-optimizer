@@ -1,7 +1,7 @@
 import type {
   GenderKey,
   LocationCharacterKey,
-  LocationKey
+  LocationKey,
 } from '@genshin-optimizer/consts'
 import {
   allLocationCharacterKeys,
