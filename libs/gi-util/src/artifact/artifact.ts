@@ -104,7 +104,7 @@ export function getMainStatDisplayValues(
   statKey: MainStatKey
 ): number[] {
   return allStats.art.main[rarity][statKey].map((k: number) =>
-    toPercent(k, statKey)
+    statKey === 'eleMas' ? Math.round(k) : toPercent(k, statKey)
   )
 }
 

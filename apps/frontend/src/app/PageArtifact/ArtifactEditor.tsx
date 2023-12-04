@@ -83,6 +83,7 @@ import SubstatInput from './ArtifactEditor/Components/SubstatInput'
 import UploadExplainationModal from './ArtifactEditor/Components/UploadExplainationModal'
 import { textsFromImage } from './ScanningUtil'
 import { LocationAutocomplete } from '../Components/Character/LocationAutocomplete'
+import { shouldShowDevComponents } from '../Util/Util'
 
 const allSubstatFilter = new Set(allSubstatKeys)
 type ResetMessage = { type: 'reset' }
@@ -593,7 +594,8 @@ export default function ArtifactEditor({
                             </Button>
                           </label>
                         </Grid>
-                        {process.env.NODE_ENV === 'development' &&
+                        {(shouldShowDevComponents ||
+                          process.env.NODE_ENV === 'development') &&
                           debugImgs && (
                             <Grid item>
                               <DebugModal imgs={debugImgs} />

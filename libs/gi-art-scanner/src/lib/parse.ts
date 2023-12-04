@@ -46,15 +46,14 @@ export function parseMainStatKeys(texts: string[]): Set<MainStatKey> {
   const results = new Set<MainStatKey>([])
   for (const text of texts)
     for (const key of allMainStatKeys) {
-      if (text.toLowerCase().includes(statMap[key]?.toLowerCase() ?? ''))
-        results.add(key)
-      //use fuzzy compare on the ... Bonus texts. heal_ is included.
-      if (
-        key.includes('_bonu') &&
+      const statStr = statMap[key]?.toLowerCase()
+      if (statStr.length <= 3) {
+        if (text.toLowerCase().includes(statStr ?? '')) results.add(key)
+      } else if (
         hammingDistance(
           text.replace(/\W/g, ''),
           (statMap[key] ?? '').replace(/\W/g, '')
-        ) <= 1
+        ) <= 3
       )
         results.add(key)
     }
