@@ -152,8 +152,10 @@ export function ScannedTextCard({ texts }: { texts: Processed['texts'] }) {
         <div>{texts.mainStatVal}</div>
         <div>{texts.rarity}</div>
         <div>{texts.level}</div>
+        <div>{texts.lock}</div>
         <div>{texts.substats}</div>
         <div>{texts.setKey}</div>
+        <div>{texts.location}</div>
       </CardContent>
     </CardThemed>
   )

@@ -66,7 +66,7 @@ import {
   ArtifactColoredIconStatWithUnit,
   ArtifactStatWithUnit,
 } from './ArtifactStatKeyDisplay'
-import ExistingArtFrag from './ExistingArtFrag'
+import ExistingArtDisplay from './ExistingArtDisplay'
 import { ScanDisplay, ScannedTextCard } from './ScanDisplay'
 import { textsFromImage } from './ScanningUtil'
 import SubstatEfficiencyDisplayCard from './SubstatEfficiencyDisplayCard'
@@ -340,7 +340,7 @@ export function ArtifactEditor({
 
           {/* Duplicate/Updated/Edit UI */}
           {!!artifactFull && (
-            <ExistingArtFrag
+            <ExistingArtDisplay
               artifact={artifactFull}
               old={old}
               oldType={oldType}
@@ -602,9 +602,6 @@ function LeftEditor({
         </Button>
       </Box>
       {/* Location */}
-      {/* FIXME: can scan a location for a character that does not exist.
-        In theory, should not be able to select those characters in a dropdown.
-      */}
       <LocationAutocomplete
         autoCompleteProps={{ disabled: !setKey }}
         location={location || null}

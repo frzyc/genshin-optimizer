@@ -13,7 +13,7 @@ import { locationCharacterKeyToCharacterKey } from './util'
 export default function LocationName({
   location,
   ...props
-}: { location: LocationCharacterKey | null } & TypographyProps) {
+}: { location?: LocationCharacterKey | null } & TypographyProps) {
   const { t } = useTranslation('ui')
   const gender: GenderKey = 'F' //TODO:  const { gender } = useDBMeta()
   const { characters } = useContext(GenshinUserContext)

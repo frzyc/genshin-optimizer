@@ -179,6 +179,89 @@ export enum SubstatKey {
     critDMG_ = "critDMG_"
 }
 
+export enum CharacterKey {
+    Albedo = "Albedo",
+    Alhaitham = "Alhaitham",
+    Aloy = "Aloy",
+    Amber = "Amber",
+    AratakiItto = "AratakiItto",
+    Baizhu = "Baizhu",
+    Barbara = "Barbara",
+    Beidou = "Beidou",
+    Bennett = "Bennett",
+    Candace = "Candace",
+    Charlotte = "Charlotte",
+    Chongyun = "Chongyun",
+    Collei = "Collei",
+    Cyno = "Cyno",
+    Dehya = "Dehya",
+    Diluc = "Diluc",
+    Diona = "Diona",
+    Dori = "Dori",
+    Eula = "Eula",
+    Faruzan = "Faruzan",
+    Fischl = "Fischl",
+    Freminet = "Freminet",
+    Furina = "Furina",
+    Ganyu = "Ganyu",
+    Gorou = "Gorou",
+    HuTao = "HuTao",
+    Jean = "Jean",
+    KaedeharaKazuha = "KaedeharaKazuha",
+    Kaeya = "Kaeya",
+    KamisatoAyaka = "KamisatoAyaka",
+    KamisatoAyato = "KamisatoAyato",
+    Kaveh = "Kaveh",
+    Keqing = "Keqing",
+    Kirara = "Kirara",
+    Klee = "Klee",
+    KujouSara = "KujouSara",
+    KukiShinobu = "KukiShinobu",
+    Layla = "Layla",
+    Lisa = "Lisa",
+    Lynette = "Lynette",
+    Lyney = "Lyney",
+    Mika = "Mika",
+    Mona = "Mona",
+    Nahida = "Nahida",
+    Neuvillette = "Neuvillette",
+    Nilou = "Nilou",
+    Ningguang = "Ningguang",
+    Noelle = "Noelle",
+    Qiqi = "Qiqi",
+    RaidenShogun = "RaidenShogun",
+    Razor = "Razor",
+    Rosaria = "Rosaria",
+    SangonomiyaKokomi = "SangonomiyaKokomi",
+    Sayu = "Sayu",
+    Shenhe = "Shenhe",
+    ShikanoinHeizou = "ShikanoinHeizou",
+    Somnia = "Somnia",
+    Sucrose = "Sucrose",
+    Tartaglia = "Tartaglia",
+    Thoma = "Thoma",
+    Tighnari = "Tighnari",
+    Venti = "Venti",
+    Wanderer = "Wanderer",
+    Wriothesley = "Wriothesley",
+    Xiangling = "Xiangling",
+    Xiao = "Xiao",
+    Xingqiu = "Xingqiu",
+    Xinyan = "Xinyan",
+    YaeMiko = "YaeMiko",
+    Yanfei = "Yanfei",
+    Yaoyao = "Yaoyao",
+    Yelan = "Yelan",
+    Yoimiya = "Yoimiya",
+    YunJin = "YunJin",
+    Zhongli = "Zhongli",
+    TravelerAnemo = "TravelerAnemo",
+    TravelerGeo = "TravelerGeo",
+    TravelerElectro = "TravelerElectro",
+    TravelerDendro = "TravelerDendro",
+    TravelerHydro = "TravelerHydro"
+}
+
 export interface InputArtifact {
     setKey: ArtifactSetKey;
     slotKey: ArtifactSlotKey;
@@ -227,7 +310,7 @@ export interface UpdateWeapon {
 }
 
 export interface InputCharacter {
-    key: string;
+    key: CharacterKey;
     level: number;
     ascension: number;
     constellation: number;
@@ -308,7 +391,7 @@ export interface Talent {
 export interface Character {
     id: string;
     genshinUserId: string;
-    key: string;
+    key: CharacterKey;
     level: number;
     ascension: number;
     constellation: number;

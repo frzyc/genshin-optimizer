@@ -40,11 +40,11 @@ export function GenshinUserDataWrapper({ children }: { children: ReactNode }) {
         error,
       }
     const ret: GenshinUserDataObj = {
-      // we are casting this to Artifact for convenience.
+      // we are casting these data for convenience.
       //`genshinUserId` prop should not be used in logic at all
       artifacts: data.getAllUserArtifact as Artifact[],
-      weapons: data.getAllUserWeapon,
-      characters: data.getAllUserCharacter,
+      weapons: data.getAllUserWeapon as Weapon[],
+      characters: data.getAllUserCharacter as Character[],
       loading,
       error,
     }

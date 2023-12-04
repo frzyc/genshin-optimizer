@@ -233,11 +233,94 @@ type Talent {
 type Character {
   id: ID!
   genshinUserId: String!
-  key: String!
+  key: CharacterKey!
   level: Int!
   ascension: Int!
   constellation: Int!
   talent: Talent!
+}
+
+enum CharacterKey {
+  Albedo
+  Alhaitham
+  Aloy
+  Amber
+  AratakiItto
+  Baizhu
+  Barbara
+  Beidou
+  Bennett
+  Candace
+  Charlotte
+  Chongyun
+  Collei
+  Cyno
+  Dehya
+  Diluc
+  Diona
+  Dori
+  Eula
+  Faruzan
+  Fischl
+  Freminet
+  Furina
+  Ganyu
+  Gorou
+  HuTao
+  Jean
+  KaedeharaKazuha
+  Kaeya
+  KamisatoAyaka
+  KamisatoAyato
+  Kaveh
+  Keqing
+  Kirara
+  Klee
+  KujouSara
+  KukiShinobu
+  Layla
+  Lisa
+  Lynette
+  Lyney
+  Mika
+  Mona
+  Nahida
+  Neuvillette
+  Nilou
+  Ningguang
+  Noelle
+  Qiqi
+  RaidenShogun
+  Razor
+  Rosaria
+  SangonomiyaKokomi
+  Sayu
+  Shenhe
+  ShikanoinHeizou
+  Somnia
+  Sucrose
+  Tartaglia
+  Thoma
+  Tighnari
+  Venti
+  Wanderer
+  Wriothesley
+  Xiangling
+  Xiao
+  Xingqiu
+  Xinyan
+  YaeMiko
+  Yanfei
+  Yaoyao
+  Yelan
+  Yoimiya
+  YunJin
+  Zhongli
+  TravelerAnemo
+  TravelerGeo
+  TravelerElectro
+  TravelerDendro
+  TravelerHydro
 }
 
 type Query {
@@ -315,7 +398,7 @@ input UpdateWeapon {
 }
 
 input InputCharacter {
-  key: String!
+  key: CharacterKey!
   level: Int!
   ascension: Int!
   constellation: Int!

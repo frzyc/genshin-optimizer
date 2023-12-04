@@ -1,3 +1,5 @@
+import { CharacterKey, allCharacterKeys } from '@genshin-optimizer/consts'
+import { objKeyMap } from '@genshin-optimizer/util'
 import {
   Field,
   ID,
@@ -6,7 +8,13 @@ import {
   ObjectType,
   OmitType,
   PartialType,
+  registerEnumType,
 } from '@nestjs/graphql'
+
+const CharacterEnum = objKeyMap(allCharacterKeys, (k) => k)
+registerEnumType(CharacterEnum, {
+  name: 'CharacterKey',
+})
 
 @ObjectType()
 class Talent {
@@ -28,8 +36,8 @@ export class Character {
   @Field(() => String)
   genshinUserId: string
 
-  @Field(() => String)
-  key: string
+  @Field(() => CharacterEnum)
+  key: CharacterKey
 
   @Field(() => Int)
   level: number

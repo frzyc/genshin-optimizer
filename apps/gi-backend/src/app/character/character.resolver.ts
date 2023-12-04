@@ -29,7 +29,10 @@ export class CharacterResolver {
     inputCharacter: InputCharacter
   ): Promise<Character> {
     this.genshinUserService.validateGenshinUser(userId, genshinUserId)
-    return this.characterService.create(inputCharacter, genshinUserId)
+    return this.characterService.create(
+      inputCharacter,
+      genshinUserId
+    ) as Promise<Character>
   }
   @Mutation(() => Character)
   async updateCharacter(
@@ -43,7 +46,7 @@ export class CharacterResolver {
       updateCharacter,
       genshinUserId
     )
-    return character
+    return character as Character
   }
 
   @Mutation(() => Character)
@@ -54,6 +57,9 @@ export class CharacterResolver {
     characterId: string
   ): Promise<Character> {
     this.genshinUserService.validateGenshinUser(userId, genshinUserId)
-    return this.characterService.remove(characterId, genshinUserId)
+    return this.characterService.remove(
+      characterId,
+      genshinUserId
+    ) as Promise<Character>
   }
 }

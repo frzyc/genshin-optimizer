@@ -444,7 +444,7 @@ function Footer({
   extraButtons: ReactNode
 }) {
   const { t } = useTranslation('artifact')
-  const { lock } = artifact
+  const { lock, location } = artifact
   return (
     <Box
       sx={{
@@ -456,7 +456,11 @@ function Footer({
       }}
     >
       <Box sx={{ flexGrow: 1 }}>
-        <Location artifact={artifact} disabled={disabled} />
+        {disabled ? (
+          <LocationName location={location} />
+        ) : (
+          <Location artifact={artifact} />
+        )}
       </Box>
       <Box
         display="flex"
@@ -492,13 +496,7 @@ function Footer({
     </Box>
   )
 }
-function Location({
-  artifact,
-  disabled,
-}: {
-  artifact: Artifact
-  disabled: boolean
-}) {
+function Location({ artifact }: { artifact: Artifact }) {
   const { id } = artifact
   const [location, setLocation] = useState(
     artifact.location as LocationCharacterKey | null
@@ -531,11 +529,7 @@ function Location({
     if (artifact.location === location) return
     updateArtifactMutation()
   }, [artifact.location, location, updateArtifactMutation])
-  return disabled ? (
-    <LocationName location={location} />
-  ) : (
-    <LocationAutocomplete location={location} setLocation={setLocation} />
-  )
+  return <LocationAutocomplete location={location} setLocation={setLocation} />
 }
 function DeleteButton({ artifact }: { artifact: Artifact }) {
   const { lock, id } = artifact
