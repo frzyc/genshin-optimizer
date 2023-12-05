@@ -26,7 +26,7 @@
     },
     "gen-file": {
       "executor": "nx:noop",
-      "dependsOn": ["load-dm", "^gen-file"],
+      "dependsOn": ["^gen-file"],
       "inputs": ["production", "^production"]
     },
     "build": {

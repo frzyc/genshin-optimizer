@@ -75,7 +75,8 @@
       "defaultConfiguration": "development",
       "options": {
         "buildTarget": "frontend:build-webpack",
-        "hmr": true
+        "hmr": true,
+        "port": 8080
       },
       "configurations": {
         "development": {
