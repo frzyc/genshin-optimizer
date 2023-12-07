@@ -7,7 +7,7 @@
       "options": {
         "cacheableOperations": [
           "load-dm",
-          "gen-file",
+          "genfile",
           "build",
           "build-webpack",
           "build-vite",
@@ -24,9 +24,9 @@
       "executor": "@genshin-optimizer/plugin:sync-repo",
       "outputs": ["{workspaceRoot}/{options.outputPath}.hash"]
     },
-    "gen-file": {
+    "genfile": {
       "executor": "nx:noop",
-      "dependsOn": ["^gen-file"],
+      "dependsOn": ["load-dm", "^genfile"],
       "inputs": ["production", "^production"]
     },
     "build": {
@@ -35,7 +35,7 @@
       "inputs": ["production", "^production"]
     },
     "build-webpack": {
-      "dependsOn": ["^gen-file"],
+      "dependsOn": ["genfile", "^genfile", "^build", "^pipeline"],
       "inputs": ["production", "^production"]
     },
     "build-vite": {
@@ -53,7 +53,7 @@
           "mode": "production"
         }
       },
-      "dependsOn": ["^gen-file", "^build"],
+      "dependsOn": ["genfile", "^genfile", "^build", "^pipeline"],
       "inputs": ["production", "^production"]
     },
     "build-ts": {
@@ -64,7 +64,7 @@
         "main": "{projectRoot}/src/index.ts",
         "tsConfig": "{projectRoot}/tsconfig.lib.json"
       },
-      "dependsOn": ["^gen-file", "^build"],
+      "dependsOn": ["genfile", "^genfile", "^build", "^pipeline"],
       "inputs": ["production", "^production"]
     },
     "e2e": {
@@ -78,7 +78,7 @@
         "fix": true
       },
       "inputs": ["default", "{workspaceRoot}/.eslintrc.json"],
-      "dependsOn": ["^gen-file"]
+      "dependsOn": ["genfile", "^genfile", "^pipeline"]
     },
     "test": {
       "executor": "@nx/jest:jest",
@@ -89,7 +89,7 @@
         "reportsDirectory": "{workspaceRoot}/coverage/{projectRoot}",
         "passWithNoTests": true
       },
-      "dependsOn": ["^gen-file"],
+      "dependsOn": ["genfile", "^genfile", "^pipeline"],
       "inputs": ["default", "^production", "{workspaceRoot}/jest.preset.js"]
     },
     "publish": {
