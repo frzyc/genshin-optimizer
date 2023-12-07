@@ -7,6 +7,7 @@ on:
   push:
     branches:
       - master
+      - van/azure
   workflow_dispatch:
 
 jobs:
