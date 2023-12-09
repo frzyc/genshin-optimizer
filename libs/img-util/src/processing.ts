@@ -100,7 +100,7 @@ export function findHistogramRange(
   const hMax = max * threshold
   const length = histogram.length
   let a = -window
-  for (let i = 0; i < histogram.length; i++) {
+  for (let i = 0; i < length; i++) {
     const maxed = histogram[i] > hMax
     if (!maxed) a = -window
     else if (maxed && a < 0) a = i

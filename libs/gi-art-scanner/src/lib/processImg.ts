@@ -79,12 +79,16 @@ export async function processEntry(
   const [goldTitleTop, goldTitleBot] = findHistogramRange(goldTitleHistogram)
 
   const whiteCardHistogram = histogramContAnalysis(
-    imageData,
+    artifactCardImageData,
     darkerColor(cardWhite),
     lighterColor(cardWhite),
     false
   )
-  const [whiteCardTop, whiteCardBot] = findHistogramRange(whiteCardHistogram)
+  const [whiteCardTop, whiteCardBot] = findHistogramRange(
+    whiteCardHistogram,
+    0.8,
+    2
+  )
 
   const equipHistogram = histogramContAnalysis(
     imageData,
@@ -97,33 +101,7 @@ export async function processEntry(
     (i) => i > artifactCardImageData.width * 0.5
   )
   const [equipTop, equipBot] = findHistogramRange(equipHistogram)
-  if (debugImgs) {
-    const canvas = imageDataToCanvas(artifactCardImageData)
-    drawHistogram(
-      canvas,
-      goldTitleHistogram,
-      {
-        r: 0,
-        g: 150,
-        b: 150,
-        a: 100,
-      },
-      false
-    )
-    drawHistogram(
-      canvas,
-      whiteCardHistogram,
-      { r: 150, g: 0, b: 0, a: 100 },
-      false
-    )
-    drawHistogram(
-      canvas,
-      equipHistogram,
-      { r: 0, g: 100, b: 100, a: 100 },
-      false
-    )
-    debugImgs['artifactCardAnalysis'] = canvas.toDataURL()
-  }
+
   const artifactCardCropped = cropHorizontal(
     artifactCardCanvas,
     goldTitleTop,
@@ -151,6 +129,40 @@ export async function processEntry(
     goldTitleBot,
     whiteCardTop
   )
+
+  if (debugImgs) {
+    const canvas = imageDataToCanvas(artifactCardImageData)
+    drawHistogram(
+      canvas,
+      goldTitleHistogram,
+      {
+        r: 0,
+        g: 150,
+        b: 150,
+        a: 100,
+      },
+      false
+    )
+
+    drawHistogram(
+      canvas,
+      whiteCardHistogram,
+      { r: 150, g: 0, b: 0, a: 100 },
+      false
+    )
+    drawHistogram(canvas, equipHistogram, { r: 0, g: 0, b: 100, a: 100 }, false)
+
+    drawline(canvas, goldTitleTop, { r: 0, g: 255, b: 0, a: 200 }, false)
+    drawline(
+      canvas,
+      hasEquip ? equipBot : whiteCardBot,
+      { r: 0, g: 0, b: 255, a: 200 },
+      false
+    )
+    drawline(canvas, whiteCardTop, { r: 255, g: 0, b: 200, a: 200 }, false)
+
+    debugImgs['artifactCardAnalysis'] = canvas.toDataURL()
+  }
 
   if (debugImgs)
     debugImgs['headerCropped'] = imageDataToCanvas(headerCropped).toDataURL()

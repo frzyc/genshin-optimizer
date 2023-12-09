@@ -15,50 +15,58 @@ import type { ISubstat } from '@genshin-optimizer/gi-good'
 import { hammingDistance, unit } from '@genshin-optimizer/util'
 import { artSlotNames, statMap } from './enStringMap'
 
+/** small utility function used by most string parsing functions below */
+export type Ham<T extends string> = [T, number]
+export function getBestHamming<T extends string>(hams: Array<Ham<T>>) {
+  const minHam = Math.min(...hams.map(([, ham]) => ham))
+  const keys = hams.filter(([, ham]) => ham === minHam).map(([key]) => key)
+  return new Set(keys)
+}
+
 export function parseSetKeys(texts: string[]): Set<ArtifactSetKey> {
-  const results = new Set<ArtifactSetKey>([])
+  const hams: Array<Ham<ArtifactSetKey>> = []
   for (const text of texts)
     for (const key of allArtifactSetKeys)
-      if (
+      hams.push([
+        key,
         hammingDistance(
           text.replace(/\W/g, ''),
           key //TODO: use the translated set name?
-        ) <= 2
-      )
-        results.add(key)
-  return results
+        ),
+      ])
+  return getBestHamming(hams)
 }
 
 export function parseSlotKeys(texts: string[]): Set<ArtifactSlotKey> {
-  const results = new Set<ArtifactSlotKey>()
+  const hams: Array<Ham<ArtifactSlotKey>> = []
   for (const text of texts)
     for (const key of allArtifactSlotKeys)
-      if (
+      hams.push([
+        key,
         hammingDistance(
           text.replace(/\W/g, ''),
           artSlotNames[key].replace(/\W/g, '')
-        ) <= 2
-      )
-        results.add(key)
-  return results
+        ),
+      ])
+  return getBestHamming(hams)
 }
 export function parseMainStatKeys(texts: string[]): Set<MainStatKey> {
-  const results = new Set<MainStatKey>([])
+  const hams: Array<Ham<MainStatKey>> = []
   for (const text of texts)
     for (const key of allMainStatKeys) {
-      if (text.toLowerCase().includes(statMap[key]?.toLowerCase() ?? ''))
-        results.add(key)
-      //use fuzzy compare on the ... Bonus texts. heal_ is included.
-      if (
-        key.includes('_bonu') &&
-        hammingDistance(
-          text.replace(/\W/g, ''),
-          (statMap[key] ?? '').replace(/\W/g, '')
-        ) <= 1
-      )
-        results.add(key)
+      const statStr = statMap[key]?.toLowerCase()
+      if (statStr.length <= 3) {
+        if (text.toLowerCase().includes(statStr ?? '')) hams.push([key, 0])
+      } else
+        hams.push([
+          key,
+          hammingDistance(
+            text.replace(/\W/g, ''),
+            (statMap[key] ?? '').replace(/\W/g, '')
+          ),
+        ])
     }
-  return results
+  return getBestHamming(hams)
 }
 export function parseMainStatValues(
   texts: string[]
@@ -108,9 +116,8 @@ export function parseSubstats(texts: string[]): ISubstat[] {
   return matches.slice(0, 4)
 }
 
-type Ham = [LocationCharacterKey, number]
 export function parseLocation(texts: string[]): LocationCharacterKey {
-  const hams: Array<Ham> = []
+  const hams: Array<Ham<LocationCharacterKey>> = []
   for (let text of texts) {
     if (!text) continue
     const colonInd = text.indexOf(':')
@@ -127,7 +134,7 @@ export function parseLocation(texts: string[]): LocationCharacterKey {
       ])
   }
   const [key] = hams.reduce(
-    (accu: Ham, curr: Ham) => {
+    (accu: Ham<LocationCharacterKey>, curr: Ham<LocationCharacterKey>) => {
       const [, val] = accu
       const [, curVal] = curr
       if (curVal < val) return curr
