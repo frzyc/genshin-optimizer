@@ -9,7 +9,7 @@ import type {
 import {
   allArtifactRarityKeys,
   allArtifactSlotKeys,
-  artSlotsData,
+  artSlotMainKeys,
 } from '@genshin-optimizer/consts'
 import type { IArtifact, ISubstat } from '@genshin-optimizer/gi-good'
 import { allStats } from '@genshin-optimizer/gi-stats'
@@ -54,9 +54,9 @@ export function findBestArtifact(
   if (location)
     texts.location = detectedText(location, 'Location', (value) => value)
 
-  const relevantSetKey = [
-    ...new Set<ArtifactSetKey>([...textSetKeys, 'EmblemOfSeveredFate']),
-  ]
+  const relevantSetKey: ArtifactSetKey[] = textSetKeys.size
+    ? [...textSetKeys]
+    : ['EmblemOfSeveredFate']
 
   let bestScore = -1,
     bestArtifacts: IArtifact[] = [
@@ -101,7 +101,10 @@ export function findBestArtifact(
 
   // Test all *probable* combinations
   for (const slotKey of allArtifactSlotKeys) {
-    for (const mainStatKey of artSlotsData[slotKey].stats) {
+    for (const mainStatKey of artSlotMainKeys[slotKey]) {
+      const mainStatUnit = unit(mainStatKey)
+      const mainStatFixed = mainStatUnit === '%' ? 1 : 0
+      const mainStatOffset = mainStatUnit === '%' ? 0.1 : 1
       const mainStatScore =
         (slotKeys.has(slotKey) ? 1 : 0) +
         (mainStatKeys.has(mainStatKey) ? 1 : 0)
@@ -123,11 +126,17 @@ export function findBestArtifact(
           const values = getMainStatDisplayValues(rarity, mainStatKey)
           const level = Math.max(
             0,
-            values.findIndex((level) => level >= minimumMainStatValue)
+            values.findIndex(
+              (level) => level + mainStatOffset >= minimumMainStatValue
+            )
           )
           const mainStatVal = values[level]
           const mainStatValScore =
-            rarityScore + (mainStatVal === minimumMainStatValue ? 1 : 0)
+            rarityScore +
+            (mainStatVal.toFixed(mainStatFixed) ===
+            minimumMainStatValue.toFixed(mainStatFixed)
+              ? 1
+              : 0)
 
           for (const setKey of setKeys) {
             const score = mainStatValScore + (textSetKeys.has(setKey) ? 1 : 0)
@@ -313,8 +322,13 @@ export function findBestArtifact(
       {unit(result.mainStatKey)}
     </>
   )
+  const toFixed = unit(result.mainStatKey) === '%' ? 1 : 0
   if (
-    mainStatValues.find((value) => value.mainStatValue === resultMainStatVal)
+    mainStatValues.find(
+      (value) =>
+        value.mainStatValue.toFixed(toFixed) ===
+        resultMainStatVal.toFixed(toFixed)
+    )
   ) {
     if (mainStatKeys.has(result.mainStatKey)) {
       texts.level = detectedText(result.level, 'Level', (value) => '+' + value)
