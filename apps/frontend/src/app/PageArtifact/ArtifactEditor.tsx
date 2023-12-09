@@ -594,13 +594,11 @@ export default function ArtifactEditor({
                             </Button>
                           </label>
                         </Grid>
-                        {(shouldShowDevComponents ||
-                          process.env.NODE_ENV === 'development') &&
-                          debugImgs && (
-                            <Grid item>
-                              <DebugModal imgs={debugImgs} />
-                            </Grid>
-                          )}
+                        {shouldShowDevComponents && debugImgs && (
+                          <Grid item>
+                            <DebugModal imgs={debugImgs} />
+                          </Grid>
+                        )}
                         <Grid item>
                           <Button
                             color="info"
