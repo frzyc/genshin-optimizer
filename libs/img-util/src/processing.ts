@@ -57,12 +57,19 @@ export function histogramContAnalysis(
   imageData: ImageData,
   color1: Color,
   color2: Color,
-  hori = true
+  hori = true,
+  range = [0, 1]
 ): number[] {
   const height = imageData.height
   const width = imageData.width
   const p = imageData.data
-  return Array.from({ length: hori ? width : height }, (v, i) => {
+  const max = hori ? width : height
+  const [leftRange, rightRange] = range
+  const left = max * leftRange
+  const right = max * rightRange
+
+  return Array.from({ length: max }, (v, i) => {
+    if (i < left || i > right) return 0
     let longest = 0
     let num = 0
     for (let j = 0; j < (hori ? height : width); j++) {
