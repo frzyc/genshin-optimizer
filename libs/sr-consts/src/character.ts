@@ -54,15 +54,28 @@ export const path = [
 export type PathKey = (typeof path)[number]
 
 export const allTrailblazerGeneredKeys = [
-  'TrailBlazerPhysicalM',
-  'TrailBlazerPhysicalF',
-  'TrailBlazerFireM',
-  'TrailBlazerFireF',
+  'TrailblazerPhysicalM',
+  'TrailblazerPhysicalF',
+  'TrailblazerFireM',
+  'TrailblazerFireF',
 ] as const
-export type TrailBlazerGeneredKey = (typeof allTrailblazerGeneredKeys)[number]
+export type TrailblazerGeneredKey = (typeof allTrailblazerGeneredKeys)[number]
 
 export const allCharacterKeys = [
   ...nonTrailblazerCharacterKeys,
   ...allTrailblazerGeneredKeys,
 ] as const
 export type CharacterKey = (typeof allCharacterKeys)[number]
+
+export const allLocationKeys = [
+  ...nonTrailblazerCharacterKeys,
+  'Trailblazer',
+  '',
+] as const
+export type LocationKey = (typeof allLocationKeys)[number]
+
+export const allBonusAbilityKeys = [1, 2, 3] as const
+export type BonusAbilityKey = (typeof allBonusAbilityKeys)[number]
+
+export const allStatBoostKeys = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] as const
+export type StatBoostKey = (typeof allStatBoostKeys)[number]

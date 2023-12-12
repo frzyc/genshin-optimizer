@@ -22,10 +22,10 @@ import Serval from './Serval'
 import SilverWolf from './SilverWolf'
 import Sushang from './Sushang'
 import Tingyun from './Tingyun'
-import TrailBlazerFireF from './TrailBlazerFireF'
-import TrailBlazerFireM from './TrailBlazerFireM'
-import TrailBlazerPhysicalF from './TrailBlazerPhysicalF'
-import TrailBlazerPhysicalM from './TrailBlazerPhysicalM'
+import TrailblazerFireF from './TrailblazerFireF'
+import TrailblazerFireM from './TrailblazerFireM'
+import TrailblazerPhysicalF from './TrailblazerPhysicalF'
+import TrailblazerPhysicalM from './TrailblazerPhysicalM'
 import Welt from './Welt'
 import Yanqing from './Yanqing'
 
@@ -53,10 +53,10 @@ const data = {
   SilverWolf,
   Sushang,
   Tingyun,
-  TrailBlazerFireF,
-  TrailBlazerFireM,
-  TrailBlazerPhysicalF,
-  TrailBlazerPhysicalM,
+  TrailblazerFireF,
+  TrailblazerFireM,
+  TrailblazerPhysicalF,
+  TrailblazerPhysicalM,
   Welt,
   Yanqing,
 } as const
