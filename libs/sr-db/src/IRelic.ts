@@ -13,7 +13,7 @@ export interface IRelic {
   level: number
   rarity: RarityKey
   mainStatKey: RelicMainStatKey
-  location: LocationKey
+  location: LocationKey | ''
   lock: boolean
   substats: ISubstat[]
 }

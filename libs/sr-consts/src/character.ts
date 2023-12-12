@@ -70,7 +70,6 @@ export type CharacterKey = (typeof allCharacterKeys)[number]
 export const allLocationKeys = [
   ...nonTrailblazerCharacterKeys,
   'Trailblazer',
-  '',
 ] as const
 export type LocationKey = (typeof allLocationKeys)[number]
 
