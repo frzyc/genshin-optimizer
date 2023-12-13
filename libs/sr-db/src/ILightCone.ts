@@ -1,8 +1,8 @@
 import type {
   AscensionKey,
   LightConeKey,
-  LocationKey,
   SuperimposeKey,
+  LocationKey,
 } from '@genshin-optimizer/sr-consts'
 
 export interface ILightCone {
@@ -10,6 +10,6 @@ export interface ILightCone {
   level: number
   ascension: AscensionKey
   superimpose: SuperimposeKey
-  location: LocationKey | '' // where '' means not equipped
+  location: LocationKey // where '' means not equipped
   lock: boolean
 }

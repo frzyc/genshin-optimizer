@@ -67,10 +67,13 @@ export const allCharacterKeys = [
 ] as const
 export type CharacterKey = (typeof allCharacterKeys)[number]
 
-export const allLocationKeys = [
+export const allCharacterLocationKeys = [
   ...nonTrailblazerCharacterKeys,
   'Trailblazer',
 ] as const
+export type CharacterLocationKey = (typeof allCharacterLocationKeys)[number]
+
+export const allLocationKeys = [...allCharacterLocationKeys, ''] as const
 export type LocationKey = (typeof allLocationKeys)[number]
 
 export const allBonusAbilityKeys = [1, 2, 3] as const
