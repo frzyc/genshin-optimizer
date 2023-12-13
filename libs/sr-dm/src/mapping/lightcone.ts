@@ -1,7 +1,7 @@
 import type { LightConeKey } from '@genshin-optimizer/sr-consts'
 import type { EquipmentConfig } from '../dm'
 
-export const lightconeIdMap: Record<string, LightConeKey> = {
+export const lightConeIdMap: Record<string, LightConeKey> = {
   '20000': 'Arrows',
   '20001': 'Cornucopia',
   '20002': 'CollapsingSky',
@@ -71,7 +71,7 @@ export const lightconeIdMap: Record<string, LightConeKey> = {
   '24001': 'CruisingInTheStellarSea',
   '24002': 'TextureOfMemories',
 }
-export type LightConeId = keyof typeof lightconeIdMap
+export type LightConeId = keyof typeof lightConeIdMap
 
 export const lightConeRarityMap: Record<EquipmentConfig['Rarity'], 3 | 4 | 5> =
   {

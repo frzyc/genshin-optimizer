@@ -7,7 +7,7 @@ import {
   avatarBaseTypeMap,
   equipmentConfig,
   equipmentPromotionConfig,
-  lightconeIdMap,
+  lightConeIdMap,
   lightConeRarityMap,
 } from '@genshin-optimizer/sr-dm'
 
@@ -31,11 +31,11 @@ export type LightConeDatas = Record<LightConeKey, LightConeDataGen>
 export default function LightConeData() {
   return Object.fromEntries(
     Object.entries(equipmentConfig).map(
-      ([lightconeId, { Rarity, AvatarBaseType }]) => {
+      ([lightConeId, { Rarity, AvatarBaseType }]) => {
         const result: LightConeDataGen = {
           rarity: lightConeRarityMap[Rarity],
           path: avatarBaseTypeMap[AvatarBaseType],
-          ascension: equipmentPromotionConfig[lightconeId].map(
+          ascension: equipmentPromotionConfig[lightConeId].map(
             ({
               BaseHP,
               BaseHPAdd,
@@ -59,7 +59,7 @@ export default function LightConeData() {
             })
           ),
         }
-        const lightConeKey = lightconeIdMap[lightconeId]
+        const lightConeKey = lightConeIdMap[lightConeId]
         return [lightConeKey, result] as const
       }
     )
