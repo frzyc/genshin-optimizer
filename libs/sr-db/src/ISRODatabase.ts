@@ -8,5 +8,5 @@ export type ISRODatabase = {
   version: 1
   characters?: ICharacter[]
   relics?: IRelic[]
-  lightcones?: ILightCone[]
+  lightCones?: ILightCone[]
 }

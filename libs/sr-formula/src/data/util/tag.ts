@@ -85,7 +85,7 @@ export const selfTag = {
     ascension: iso,
     eidolon: iso,
   },
-  lightcone: { lvl: iso, ascension: iso, superimposition: iso },
+  lightCone: { lvl: iso, ascension: iso, superimposition: iso },
   common: {
     isActive: iso,
     weaponType: iso,

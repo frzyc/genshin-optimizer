@@ -1,3 +1,3 @@
 export * from './character'
-export * from './lightcone'
+export * from './lightCone'
 export * from './relic'

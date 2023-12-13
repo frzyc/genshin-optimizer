@@ -2,13 +2,13 @@ import type {
   NonTrailblazerCharacterKey,
   PathKey,
   RarityKey,
-  TrailblazerGeneredKey,
+  TrailblazerGenderedKey,
 } from '@genshin-optimizer/sr-consts'
 import type { AvatarRarity } from '../dm'
 
 export const characterIdMap: Record<
   string,
-  NonTrailblazerCharacterKey | TrailblazerGeneredKey
+  NonTrailblazerCharacterKey | TrailblazerGenderedKey
 > = {
   '1001': 'March7th',
   '1002': 'DanHeng',
