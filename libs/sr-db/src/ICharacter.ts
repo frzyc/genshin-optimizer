@@ -10,12 +10,10 @@ export interface ICharacter {
   level: number
   eidolon: number
   ascension: AscensionKey
-  traces: {
-    basic: number
-    skill: number
-    ult: number
-    talent: number
-    bonusAbilities: Partial<Record<BonusAbilityKey, boolean>>
-    statBoosts: Partial<Record<StatBoostKey, boolean>>
-  }
+  basic: number
+  skill: number
+  ult: number
+  talent: number
+  bonusAbilities: Partial<Record<BonusAbilityKey, boolean>>
+  statBoosts: Partial<Record<StatBoostKey, boolean>>
 }
