@@ -64,17 +64,15 @@ export async function processEntry(
   const imageData = await urlToImageData(imageURL)
 
   const debugImgs = debug ? ({} as Record<string, string>) : undefined
-  const artifactCardImageData = horizontallyCropArtifactCard(
-    imageData,
-    debugImgs
-  )
+  const artifactCardImageData = verticallyCropArtifactCard(imageData, debugImgs)
   const artifactCardCanvas = imageDataToCanvas(artifactCardImageData)
 
   const goldTitleHistogram = histogramContAnalysis(
     artifactCardImageData,
     darkerColor(goldenTitleDarkerColor, 20),
     lighterColor(goldenTitleLighterColor, 20),
-    false
+    false,
+    [0, 0.3]
   )
   const [goldTitleTop, goldTitleBot] = findHistogramRange(goldTitleHistogram)
 
@@ -284,7 +282,7 @@ export async function processEntry(
     debugImgs,
   }
 }
-function horizontallyCropArtifactCard(
+function verticallyCropArtifactCard(
   imageData: ImageData,
   debugImgs?: Record<string, string>
 ) {
