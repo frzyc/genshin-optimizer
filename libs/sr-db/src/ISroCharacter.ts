@@ -5,7 +5,7 @@ import type {
 } from '@genshin-optimizer/sr-consts'
 import type { ICharacter } from '@genshin-optimizer/sr-data'
 
-export interface ISROCharacter extends ICharacter {
+export interface ISroCharacter extends ICharacter {
   hitMode: HitModeKey
   // conditional: IConditionalValues
   // bonusStats: Partial<Record<InputPremodKey, number>>
@@ -24,7 +24,7 @@ export interface ISROCharacter extends ICharacter {
   ]
 }
 
-export interface ICachedSROCharacter extends ISROCharacter {
+export interface ICachedSroCharacter extends ISroCharacter {
   equippedRelics: Record<RelicSlotKey, string>
   equippedWeapon: string
 }
