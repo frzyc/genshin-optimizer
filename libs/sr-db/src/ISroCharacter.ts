@@ -26,5 +26,5 @@ export interface ISroCharacter extends ICharacter {
 
 export interface ICachedSroCharacter extends ISroCharacter {
   equippedRelics: Record<RelicSlotKey, string>
-  equippedWeapon: string
+  equippedLightCone: string
 }
