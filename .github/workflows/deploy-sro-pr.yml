@@ -16,16 +16,21 @@ on:
       - 'apps/gi-frontend-e2e/**'
       - 'apps/frontend/**'
       - 'apps/frontend-e2e/**'
+      - 'libs/consts/**'
+      - 'libs/dm/**'
+      - 'libs/gi-art-scanner/**'
       - 'libs/gi-assets/**'
-      - 'libs/gi-consts/**'
       - 'libs/gi-dm-localization/**'
       - 'libs/gi-formula/**'
+      - 'libs/gi-formula-ui/**'
       - 'libs/gi-good/**'
       - 'libs/gi-localization/**'
       - 'libs/gi-stats/**'
       - 'libs/gi-svgicons/**'
-      - 'libs/gi-util/**'
       - 'libs/gi-ui/**'
+      - 'libs/gi-util/**'
+      - 'libs/silly-wisher/**'
+      - 'libs/silly-wisher-names/**'
     types: [opened, reopened, synchronize, labeled]
 
 jobs:
