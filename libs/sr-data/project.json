@@ -1,14 +1,14 @@
 {
-  "name": "sr-db",
+  "name": "sr-data",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "libs/sr-db/src",
+  "sourceRoot": "libs/sr-data/src",
   "projectType": "library",
   "targets": {
     "lint": {
       "executor": "@nx/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["libs/sr-db/**/*.ts"]
+        "lintFilePatterns": ["libs/sr-data/**/*.ts"]
       }
     }
   },

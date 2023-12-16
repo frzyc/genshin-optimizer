@@ -1,12 +1,12 @@
-import type { ICharacter } from './ICharacter'
-import type { ILightCone } from './ILightCone'
-import type { IRelic } from './IRelic'
+import { type ISRDatabase } from '@genshin-optimizer/sr-data'
 
-export type ISRODatabase = {
+export const SROSource = 'Star Rail Optimizer' as const
+
+export interface ISRODatabase extends ISRDatabase {
   format: 'SRO'
-  source: string
   version: 1
-  characters?: ICharacter[]
-  relics?: IRelic[]
-  lightCones?: ILightCone[]
+  dbVersion: number
+  source: typeof SROSource
+  // buildSettings?: Array<BuildSetting & { id: string }>
+  [sroSettingsKey: string]: unknown
 }
