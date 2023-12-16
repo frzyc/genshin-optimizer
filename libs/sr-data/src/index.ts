@@ -1,4 +1,4 @@
 export * from './ICharacter'
 export * from './ILightCone'
 export * from './IRelic'
-export * from './ISRDatabase'
+export * from './ISrDatabase'
