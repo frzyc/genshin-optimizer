@@ -2,8 +2,8 @@ import type { IArtifact } from '@genshin-optimizer/gi-good'
 import { clamp } from '@genshin-optimizer/util'
 import type { ReactNode } from 'react'
 
+import type { Color } from '@genshin-optimizer/img-util'
 import {
-  Color,
   bandPass,
   cropHorizontal,
   cropImageData,
@@ -392,6 +392,7 @@ function findTitle(artifactCardImageData: ImageData) {
     [purpleTitleDarkerColor, purpleTitleLighterColor],
     [blueTitleDarkerColor, blueTitleLighterColor],
   ] as const
+  // Return first detected title color
   return titleColors.reduce(
     (a, curr) => (a ? a : findTitleColored(curr[0], curr[1])),
     null as null | number[]
