@@ -6,10 +6,10 @@ import { register, self, selfBuff, type TagMapNodeEntries } from '../util'
 
 // Attach the base stats from the generated datamine
 export function lightConeBaseStats(src: LightConeKey): TagMapNodeEntries {
-  const dataGen = allStats.lightcone[src]
-  const { ascension } = self.lightcone
+  const dataGen = allStats.lightCone[src]
+  const { ascension } = self.lightCone
   // The "add" only applies to lvl - 1, since "base" is stat at lvl1
-  const lvl1 = sum(self.lightcone.lvl, -1)
+  const lvl1 = sum(self.lightCone.lvl, -1)
   return register(src, [
     ...(['hp', 'atk', 'def'] as const).map((sk) => {
       const basePerAsc = dataGen.ascension.map((p) => p[sk].base)

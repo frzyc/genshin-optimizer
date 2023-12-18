@@ -104,7 +104,7 @@ export function getMainStatDisplayValues(
   statKey: MainStatKey
 ): number[] {
   return allStats.art.main[rarity][statKey].map((k: number) =>
-    toPercent(k, statKey)
+    statKey === 'eleMas' ? Math.round(k) : toPercent(k, statKey)
   )
 }
 
@@ -172,17 +172,14 @@ export function getArtifactEfficiency(
     filter.size -
     matchedSlotCount -
     (filter.has(artifact.mainStatKey as any) ? 1 : 0)
-  let maxEfficiency
-  if (emptySlotCount && unusedFilterCount)
-    maxEfficiency =
-      currentEfficiency + maxSubstatRollEfficiency[rarity] * rollsRemaining
-  // Rolls into good empty slot
-  else if (matchedSlotCount)
-    maxEfficiency =
-      currentEfficiency +
-      maxSubstatRollEfficiency[rarity] * (rollsRemaining - emptySlotCount)
-  // Rolls into existing matched slot
-  else maxEfficiency = currentEfficiency // No possible roll
+
+  let maxEfficiency = currentEfficiency
+  const maxRollEff = maxSubstatRollEfficiency[rarity]
+  // Rolls into good empty slots, assuming max-level artifacts have no empty slots
+  maxEfficiency += maxRollEff * Math.min(emptySlotCount, unusedFilterCount)
+  // Rolls into an existing good slot
+  if (matchedSlotCount || (emptySlotCount && unusedFilterCount))
+    maxEfficiency += maxRollEff * (rollsRemaining - emptySlotCount)
 
   return { currentEfficiency, maxEfficiency }
 }

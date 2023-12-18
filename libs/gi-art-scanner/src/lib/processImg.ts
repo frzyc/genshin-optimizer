@@ -2,6 +2,7 @@ import type { IArtifact } from '@genshin-optimizer/gi-good'
 import { clamp } from '@genshin-optimizer/util'
 import type { ReactNode } from 'react'
 
+import type { Color } from '@genshin-optimizer/img-util'
 import {
   bandPass,
   cropHorizontal,
@@ -18,12 +19,16 @@ import {
   urlToImageData,
 } from '@genshin-optimizer/img-util'
 import {
+  blueTitleDarkerColor,
+  blueTitleLighterColor,
   cardWhite,
   equipColor,
   goldenTitleDarkerColor,
   goldenTitleLighterColor,
   greenTextColor,
   lockColor,
+  purpleTitleDarkerColor,
+  purpleTitleLighterColor,
   starColor,
   textColorDark,
   textColorLight,
@@ -64,27 +69,25 @@ export async function processEntry(
   const imageData = await urlToImageData(imageURL)
 
   const debugImgs = debug ? ({} as Record<string, string>) : undefined
-  const artifactCardImageData = horizontallyCropArtifactCard(
-    imageData,
-    debugImgs
-  )
+  const artifactCardImageData = verticallyCropArtifactCard(imageData, debugImgs)
   const artifactCardCanvas = imageDataToCanvas(artifactCardImageData)
 
-  const goldTitleHistogram = histogramContAnalysis(
-    artifactCardImageData,
-    darkerColor(goldenTitleDarkerColor, 20),
-    lighterColor(goldenTitleLighterColor, 20),
-    false
-  )
-  const [goldTitleTop, goldTitleBot] = findHistogramRange(goldTitleHistogram)
+  const titleHistogram = findTitle(artifactCardImageData)
+  const [titleTop, titleBot] = titleHistogram
+    ? findHistogramRange(titleHistogram)
+    : [0, 0]
 
   const whiteCardHistogram = histogramContAnalysis(
-    imageData,
+    artifactCardImageData,
     darkerColor(cardWhite),
     lighterColor(cardWhite),
     false
   )
-  const [whiteCardTop, whiteCardBot] = findHistogramRange(whiteCardHistogram)
+  const [whiteCardTop, whiteCardBot] = findHistogramRange(
+    whiteCardHistogram,
+    0.8,
+    2
+  )
 
   const equipHistogram = histogramContAnalysis(
     imageData,
@@ -97,36 +100,10 @@ export async function processEntry(
     (i) => i > artifactCardImageData.width * 0.5
   )
   const [equipTop, equipBot] = findHistogramRange(equipHistogram)
-  if (debugImgs) {
-    const canvas = imageDataToCanvas(artifactCardImageData)
-    drawHistogram(
-      canvas,
-      goldTitleHistogram,
-      {
-        r: 0,
-        g: 150,
-        b: 150,
-        a: 100,
-      },
-      false
-    )
-    drawHistogram(
-      canvas,
-      whiteCardHistogram,
-      { r: 150, g: 0, b: 0, a: 100 },
-      false
-    )
-    drawHistogram(
-      canvas,
-      equipHistogram,
-      { r: 0, g: 100, b: 100, a: 100 },
-      false
-    )
-    debugImgs['artifactCardAnalysis'] = canvas.toDataURL()
-  }
+
   const artifactCardCropped = cropHorizontal(
     artifactCardCanvas,
-    goldTitleTop,
+    titleTop,
     hasEquip ? equipBot : whiteCardBot
   )
 
@@ -138,8 +115,8 @@ export async function processEntry(
    */
   // const goldenTitleCropped = cropHorizontal(
   //   artifactCardCanvas,
-  //   goldTitleTop,
-  //   goldTitleBot
+  //   titleTop,
+  //   titleBot
   // )
 
   // if (debug)
@@ -148,9 +125,44 @@ export async function processEntry(
 
   const headerCropped = cropHorizontal(
     artifactCardCanvas,
-    goldTitleBot,
+    titleBot,
     whiteCardTop
   )
+
+  if (debugImgs) {
+    const canvas = imageDataToCanvas(artifactCardImageData)
+    titleHistogram &&
+      drawHistogram(
+        canvas,
+        titleHistogram,
+        {
+          r: 0,
+          g: 150,
+          b: 150,
+          a: 100,
+        },
+        false
+      )
+
+    drawHistogram(
+      canvas,
+      whiteCardHistogram,
+      { r: 150, g: 0, b: 0, a: 100 },
+      false
+    )
+    drawHistogram(canvas, equipHistogram, { r: 0, g: 0, b: 100, a: 100 }, false)
+
+    drawline(canvas, titleTop, { r: 0, g: 255, b: 0, a: 200 }, false)
+    drawline(
+      canvas,
+      hasEquip ? equipBot : whiteCardBot,
+      { r: 0, g: 0, b: 255, a: 200 },
+      false
+    )
+    drawline(canvas, whiteCardTop, { r: 255, g: 0, b: 200, a: 200 }, false)
+
+    debugImgs['artifactCardAnalysis'] = canvas.toDataURL()
+  }
 
   if (debugImgs)
     debugImgs['headerCropped'] = imageDataToCanvas(headerCropped).toDataURL()
@@ -272,7 +284,7 @@ export async function processEntry(
     debugImgs,
   }
 }
-function horizontallyCropArtifactCard(
+function verticallyCropArtifactCard(
   imageData: ImageData,
   debugImgs?: Record<string, string>
 ) {
@@ -358,4 +370,31 @@ function parseRarity(
     }
   }
   return clamp(count, 1, 5)
+}
+
+function findTitle(artifactCardImageData: ImageData) {
+  const width = artifactCardImageData.width
+  const widthThreshold = width * 0.7
+
+  function findTitleColored(darkerTitleColor: Color, LighterTitleColor: Color) {
+    const hist = histogramContAnalysis(
+      artifactCardImageData,
+      darkerColor(darkerTitleColor, 20),
+      lighterColor(LighterTitleColor, 20),
+      false,
+      [0, 0.3] // only scan the top 30% of the img
+    )
+    if (hist.find((v) => v > widthThreshold)) return hist
+    return null
+  }
+  const titleColors = [
+    [goldenTitleDarkerColor, goldenTitleLighterColor],
+    [purpleTitleDarkerColor, purpleTitleLighterColor],
+    [blueTitleDarkerColor, blueTitleLighterColor],
+  ] as const
+  // Return first detected title color
+  return titleColors.reduce(
+    (a, curr) => (a ? a : findTitleColored(curr[0], curr[1])),
+    null as null | number[]
+  )
 }

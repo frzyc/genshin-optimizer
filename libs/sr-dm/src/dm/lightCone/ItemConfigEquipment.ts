@@ -1,8 +1,8 @@
 import { dumpFile, nameToKey } from '@genshin-optimizer/pipeline'
 import { objFilterKeys } from '@genshin-optimizer/util'
 import { PROJROOT_PATH } from '../../consts'
-import type { LightConeId } from '../../mapping/lightcone'
-import { lightconeIdMap } from '../../mapping/lightcone'
+import type { LightConeId } from '../../mapping/lightCone'
+import { lightConeIdMap } from '../../mapping/lightCone'
 import { TextMapEN } from '../../TextMapUtil'
 import { readDMJSON } from '../../util'
 import type { HashId } from '../common'
@@ -41,7 +41,7 @@ const ItemConfigEquipmentSrc = JSON.parse(
 ) as Record<string, ItemConfigEquipment>
 
 dumpFile(
-  `${PROJROOT_PATH}/src/dm/lightcone/ItemConfigEquipment_idmap_gen.json`,
+  `${PROJROOT_PATH}/src/dm/lightCone/ItemConfigEquipment_idmap_gen.json`,
   Object.fromEntries(
     Object.entries(ItemConfigEquipmentSrc).map(([avatarId, data]) => [
       avatarId,
@@ -50,7 +50,7 @@ dumpFile(
   )
 )
 dumpFile(
-  `${PROJROOT_PATH}/src/dm/lightcone/ItemConfigEquipment_keys_gen.json`,
+  `${PROJROOT_PATH}/src/dm/lightCone/ItemConfigEquipment_keys_gen.json`,
   [
     ...new Set(
       Object.entries(ItemConfigEquipmentSrc).map(([, data]) =>
@@ -64,6 +64,6 @@ dumpFile(
 
 const ItemConfigEquipment = objFilterKeys(
   ItemConfigEquipmentSrc,
-  Object.keys(lightconeIdMap) as LightConeId[]
+  Object.keys(lightConeIdMap) as LightConeId[]
 ) as Record<LightConeId, ItemConfigEquipment>
 export { ItemConfigEquipment }

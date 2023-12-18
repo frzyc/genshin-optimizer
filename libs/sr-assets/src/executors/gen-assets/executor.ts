@@ -11,7 +11,7 @@ import {
   characterIdMap,
   DM2D_PATH,
   equipmentConfig,
-  lightconeIdMap,
+  lightConeIdMap,
   relicDataInfo,
   relicSetIdMap,
   relicSlotMap,
@@ -101,7 +101,7 @@ export default async function runExecutor(
       icon: ThumbnailPath.toLocaleLowerCase(),
       cover: ImagePath.toLocaleLowerCase(),
     }
-    AssetData.lightCones[lightconeIdMap[id]] = assets
+    AssetData.lightCones[lightConeIdMap[id]] = assets
   })
 
   // Dump out the asset List.

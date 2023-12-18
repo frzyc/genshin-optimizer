@@ -31,7 +31,7 @@ export const srcs = [
   ...allLightConeKeys,
   ...allRelicSetKeys,
   'char',
-  'lightcone',
+  'lightCone',
   'relic',
   'dyn',
   'enemy',
