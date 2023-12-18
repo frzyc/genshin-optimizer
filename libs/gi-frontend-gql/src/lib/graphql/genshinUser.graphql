@@ -1,0 +1,22 @@
+mutation addGenshinUser($uid: String!) {
+  addGenshinUser(uid: $uid) {
+    success
+    genshinUser {
+      id
+      uid
+    }
+    error
+  }
+}
+
+query getAllData($genshinUserId: String!) {
+  getAllUserArtifact(genshinUserId: $genshinUserId) {
+    ...ArtifactParts
+  }
+  getAllUserWeapon(genshinUserId: $genshinUserId) {
+    ...WeaponParts
+  }
+  getAllUserCharacter(genshinUserId: $genshinUserId) {
+    ...CharacterParts
+  }
+}

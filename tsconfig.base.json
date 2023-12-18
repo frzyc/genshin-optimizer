@@ -37,13 +37,21 @@
       ],
       "@genshin-optimizer/gi-formula": ["libs/gi-formula/src/index.ts"],
       "@genshin-optimizer/gi-formula-ui": ["libs/gi-formula-ui/src/index.ts"],
+      "@genshin-optimizer/gi-frontend-gql": [
+        "libs/gi-frontend-gql/src/index.ts"
+      ],
       "@genshin-optimizer/gi-good": ["libs/gi-good/src/index.ts"],
       "@genshin-optimizer/gi-localization": [
         "libs/gi-localization/src/index.ts"
       ],
+      "@genshin-optimizer/gi-prisma-schema": [
+        "libs/gi-prisma-schema/src/index.ts"
+      ],
       "@genshin-optimizer/gi-stats": ["libs/gi-stats/src/index.ts"],
       "@genshin-optimizer/gi-svgicons": ["libs/gi-svgicons/src/index.ts"],
       "@genshin-optimizer/gi-ui": ["libs/gi-ui/src/index.ts"],
+      "@genshin-optimizer/gi-ui-next": ["libs/gi-ui-next/src/index.ts"],
+      "@genshin-optimizer/gi-ui-next/server": ["libs/gi-ui-next/src/server.ts"],
       "@genshin-optimizer/gi-util": ["libs/gi-util/src/index.ts"],
       "@genshin-optimizer/img-util": ["libs/img-util/src/index.ts"],
       "@genshin-optimizer/pando": ["libs/pando/src/index.ts"],

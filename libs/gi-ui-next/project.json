@@ -1,0 +1,16 @@
+{
+  "name": "gi-ui-next",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/gi-ui-next/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/gi-ui-next/**/*.{ts,tsx,js,jsx}"]
+      }
+    }
+  }
+}

@@ -1,0 +1,42 @@
+query getArtifact($id: String!) {
+  getArtifact(id: $id) {
+    ...ArtifactParts
+  }
+}
+query getAllUserArtifact($genshinUserId: String!) {
+  getAllUserArtifact(genshinUserId: $genshinUserId) {
+    ...ArtifactParts
+  }
+}
+
+mutation addArtifact($genshinUserId: String!, $artifact: InputArtifact!) {
+  addArtifact(genshinUserId: $genshinUserId, artifact: $artifact) {
+    ...ArtifactParts
+  }
+}
+
+mutation updateArtifact($genshinUserId: String!, $artifact: UpdateArtifact!) {
+  updateArtifact(genshinUserId: $genshinUserId, artifact: $artifact) {
+    ...ArtifactParts
+  }
+}
+mutation removeArtifact($genshinUserId: String!, $artifactId: String!) {
+  removeArtifact(genshinUserId: $genshinUserId, artifactId: $artifactId) {
+    ...ArtifactParts
+  }
+}
+
+fragment ArtifactParts on Artifact {
+  id
+  setKey
+  slotKey
+  level
+  rarity
+  mainStatKey
+  location
+  lock
+  substats {
+    key
+    value
+  }
+}

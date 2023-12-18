@@ -1,0 +1,17 @@
+mutation createUsername($username: String!) {
+  createUsername(username: $username) {
+    success
+    error
+  }
+}
+
+query getUser($userId: String!) {
+  getUserById(id: $userId) {
+    id
+    username
+    genshinUsers {
+      id
+      uid
+    }
+  }
+}
