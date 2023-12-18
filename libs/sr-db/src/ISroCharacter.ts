@@ -3,7 +3,7 @@ import type {
   CharacterKey,
   HitModeKey,
 } from '@genshin-optimizer/sr-consts'
-import type { ICharacter } from '@genshin-optimizer/sr-data'
+import type { ICharacter } from '@genshin-optimizer/sr-srod'
 
 export interface ISroCharacter extends ICharacter {
   hitMode: HitModeKey

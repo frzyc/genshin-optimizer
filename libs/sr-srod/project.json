@@ -1,14 +1,14 @@
 {
-  "name": "sr-data",
+  "name": "sr-srod",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "libs/sr-data/src",
+  "sourceRoot": "libs/sr-srod/src",
   "projectType": "library",
   "targets": {
     "lint": {
       "executor": "@nx/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["libs/sr-data/**/*.ts"]
+        "lintFilePatterns": ["libs/sr-srod/**/*.ts"]
       }
     }
   },
