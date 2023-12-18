@@ -1,1 +1,2 @@
-export * from './lib/sr-db'
+export * from './ISroCharacter'
+export * from './ISroDatabase'

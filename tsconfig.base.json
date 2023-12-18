@@ -59,6 +59,7 @@
       "@genshin-optimizer/sr-db": ["libs/sr-db/src/index.ts"],
       "@genshin-optimizer/sr-dm": ["libs/sr-dm/src/index.ts"],
       "@genshin-optimizer/sr-formula": ["libs/sr-formula/src/index.ts"],
+      "@genshin-optimizer/sr-srod": ["libs/sr-srod/src/index.ts"],
       "@genshin-optimizer/sr-stats": ["libs/sr-stats/src/index.ts"],
       "@genshin-optimizer/svgicons": ["libs/svgicons/src/index.ts"],
       "@genshin-optimizer/ui-common": ["libs/ui-common/src/index.ts"],
