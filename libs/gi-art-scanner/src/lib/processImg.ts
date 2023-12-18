@@ -115,7 +115,7 @@ export async function processEntry(
    */
   // const goldenTitleCropped = cropHorizontal(
   //   artifactCardCanvas,
-  //   artifactCardImageData,
+  //   titleTop,
   //   titleBot
   // )
 
