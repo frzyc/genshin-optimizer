@@ -16,6 +16,38 @@ export const goldenTitleLighterColor: Color = {
   b: 50,
 }
 
+/**
+ * "purple" title
+ * light: a056e0 rgb(160, 86, 224)
+ * dark: 7943a7 rgb(121, 67, 167)
+ */
+export const purpleTitleDarkerColor: Color = {
+  r: 121,
+  g: 67,
+  b: 167,
+}
+export const purpleTitleLighterColor: Color = {
+  r: 160,
+  g: 86,
+  b: 224,
+}
+
+/**
+ * "blue" title
+ * light: 517fcc rgb(81, 127, 204)
+ * dark: 3e6095 rgb(62, 96, 149)
+ */
+export const blueTitleDarkerColor: Color = {
+  r: 62,
+  g: 96,
+  b: 149,
+}
+export const blueTitleLighterColor: Color = {
+  r: 81,
+  g: 127,
+  b: 204,
+}
+
 // The "baige" background of artifact card, ebe4d8  rgb(235, 228, 216)
 export const cardWhite: Color = {
   r: 235,
