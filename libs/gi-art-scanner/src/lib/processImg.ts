@@ -5,8 +5,7 @@ import type { ReactNode } from 'react'
 import type { Color } from '@genshin-optimizer/img-util'
 import {
   bandPass,
-  cropHorizontal,
-  cropImageData,
+  crop,
   darkerColor,
   drawHistogram,
   drawline,
@@ -83,7 +82,7 @@ export async function processEntry(
     lighterColor(cardWhite),
     false
   )
-  const [whiteCardTop, whiteCardBot] = findHistogramRange(
+  let [whiteCardTop, whiteCardBot] = findHistogramRange(
     whiteCardHistogram,
     0.8,
     2
@@ -101,14 +100,39 @@ export async function processEntry(
   )
   const [equipTop, equipBot] = findHistogramRange(equipHistogram)
 
-  const artifactCardCropped = cropHorizontal(
-    artifactCardCanvas,
-    titleTop,
-    hasEquip ? equipBot : whiteCardBot
-  )
+  if (hasEquip) {
+    whiteCardBot = equipBot
+  } else {
+    // try to match green text.
+    // this value is not used because it can be noisy due to possible card background.
+
+    const greentextHisto = histogramAnalysis(
+      artifactCardImageData,
+      darkerColor(greenTextColor),
+      lighterColor(greenTextColor),
+      false
+    )
+
+    const [greenTextTop, greenTextBot] = findHistogramRange(greentextHisto, 0.2)
+    const greenTextBuffer = greenTextBot - greenTextTop
+    if (greenTextBot > whiteCardBot)
+      whiteCardBot = clamp(
+        greenTextBot + greenTextBuffer,
+        0,
+        artifactCardImageData.height
+      )
+  }
+
+  const artifactCardCropped = crop(artifactCardCanvas, {
+    y1: titleTop,
+    y2: whiteCardBot,
+  })
 
   const equippedCropped = hasEquip
-    ? cropHorizontal(artifactCardCanvas, equipTop, equipBot)
+    ? crop(artifactCardCanvas, {
+        y1: equipTop,
+        y2: equipBot,
+      })
     : undefined
   /**
    * Technically this is a way to get both the set+slot
@@ -123,11 +147,13 @@ export async function processEntry(
   //   debugImgs['goldenTitlecropped'] =
   //     imageDataToCanvas(goldenTitleCropped).toDataURL()
 
-  const headerCropped = cropHorizontal(
-    artifactCardCanvas,
-    titleBot,
-    whiteCardTop
-  )
+  const headerCropped = crop(artifactCardCanvas, {
+    // crop out the right 40% of the header, to reduce noise from the artifact image
+    x1: 0,
+    x2: artifactCardCanvas.width * 0.6,
+    y1: titleBot,
+    y2: whiteCardTop,
+  })
 
   if (debugImgs) {
     const canvas = imageDataToCanvas(artifactCardImageData)
@@ -167,11 +193,10 @@ export async function processEntry(
   if (debugImgs)
     debugImgs['headerCropped'] = imageDataToCanvas(headerCropped).toDataURL()
 
-  const whiteCardCropped = cropHorizontal(
-    artifactCardCanvas,
-    whiteCardTop,
-    whiteCardBot
-  )
+  const whiteCardCropped = crop(artifactCardCanvas, {
+    y1: whiteCardTop,
+    y2: whiteCardBot,
+  })
 
   const greentextHisto = histogramAnalysis(
     whiteCardCropped,
@@ -192,17 +217,14 @@ export async function processEntry(
 
   const greenTextBuffer = greenTextBot - greenTextTop
 
-  const greenTextCropped = cropHorizontal(
-    imageDataToCanvas(whiteCardCropped),
-    greenTextTop - greenTextBuffer,
-    greenTextBot + greenTextBuffer
-  )
+  const greenTextCropped = crop(imageDataToCanvas(whiteCardCropped), {
+    y1: greenTextTop - greenTextBuffer,
+    y2: greenTextBot + greenTextBuffer,
+  })
 
-  const substatsCardCropped = cropHorizontal(
-    imageDataToCanvas(whiteCardCropped),
-    0,
-    greenTextTop
-  )
+  const substatsCardCropped = crop(imageDataToCanvas(whiteCardCropped), {
+    y2: greenTextTop,
+  })
   const lockHisto = histogramAnalysis(
     whiteCardCropped,
     darkerColor(lockColor),
@@ -296,13 +318,7 @@ function verticallyCropArtifactCard(
 
   const [a, b] = findHistogramRange(histogram)
 
-  const cropped = cropImageData(
-    imageDataToCanvas(imageData),
-    a,
-    0,
-    b - a,
-    imageData.height
-  )
+  const cropped = crop(imageDataToCanvas(imageData), { x1: a, x2: b })
 
   if (debugImgs) {
     const canvas = imageDataToCanvas(imageData)
@@ -336,13 +352,10 @@ function parseRarity(
   )
   const [starTop, starBot] = findHistogramRange(hist, 0.3)
 
-  const stars = cropImageData(
-    imageDataToCanvas(headerData),
-    0,
-    starTop,
-    headerData.width,
-    starBot - starTop
-  )
+  const stars = crop(imageDataToCanvas(headerData), {
+    y1: starTop,
+    y2: starBot,
+  })
 
   const starsHistogram = histogramContAnalysis(
     stars,
