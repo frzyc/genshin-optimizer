@@ -10,42 +10,46 @@
       "executor": "@nx/vite:dev-server",
       "defaultConfiguration": "development",
       "options": {
-        "buildTarget": "gi-frontend:build"
+        "buildTarget": "gi-frontend:build-vite"
       },
       "configurations": {
         "development": {
-          "buildTarget": "gi-frontend:build:development",
+          "buildTarget": "gi-frontend:build-vite:development",
           "hmr": true
         },
         "production": {
-          "buildTarget": "gi-frontend:build:production",
+          "buildTarget": "gi-frontend:build-vite:production",
           "hmr": false
         }
-      }
+      },
+      "dependsOn": ["^gen-file"]
     },
     "preview": {
       "executor": "@nx/vite:preview-server",
       "defaultConfiguration": "development",
       "options": {
-        "buildTarget": "gi-frontend:build"
+        "buildTarget": "gi-frontend:build-vite"
       },
       "configurations": {
         "development": {
-          "buildTarget": "gi-frontend:build:development"
+          "buildTarget": "gi-frontend:build-vite:development"
         },
         "production": {
-          "buildTarget": "gi-frontend:build:production"
+          "buildTarget": "gi-frontend:build-vite:production"
         }
       }
     },
     "test": {
-      "executor": "@nx/vite:test"
+      "executor": "@nx/vite:test",
+      "options": {
+        "config": "apps/gi-frontend/vitest.config.ts"
+      }
     },
     "lint": {},
     "serve-static": {
       "executor": "@nx/web:file-server",
       "options": {
-        "buildTarget": "gi-frontend:build"
+        "buildTarget": "gi-frontend:build-vite"
       }
     }
   },

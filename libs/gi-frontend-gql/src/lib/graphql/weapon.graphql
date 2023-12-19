@@ -1,0 +1,32 @@
+query getAllUserWeapon($genshinUserId: String!) {
+  getAllUserWeapon(genshinUserId: $genshinUserId) {
+    ...WeaponParts
+  }
+}
+
+mutation addWeapon($genshinUserId: String!, $weapon: InputWeapon!) {
+  addWeapon(genshinUserId: $genshinUserId, weapon: $weapon) {
+    ...WeaponParts
+  }
+}
+
+mutation updateWeapon($genshinUserId: String!, $weapon: UpdateWeapon!) {
+  updateWeapon(genshinUserId: $genshinUserId, weapon: $weapon) {
+    ...WeaponParts
+  }
+}
+mutation removeWeapon($genshinUserId: String!, $weaponId: String!) {
+  removeWeapon(genshinUserId: $genshinUserId, weaponId: $weaponId) {
+    ...WeaponParts
+  }
+}
+
+fragment WeaponParts on Weapon {
+  id
+  key
+  level
+  ascension
+  refinement
+  location
+  lock
+}

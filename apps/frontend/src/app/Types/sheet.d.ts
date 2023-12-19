@@ -24,26 +24,33 @@ export interface IDocumentText extends IDocumentBase {
   text?: Displayable | ((data: UIData) => Displayable)
 }
 
+type ExclusiveConditionalStates = {
+  [key: string]: {
+    name?: Displayable
+    fields: IFieldDisplay[]
+  }
+}
+type MultipleConditionalStates = {
+  [key: string]: {
+    path: readonly string[]
+    value: ReadNode<string>
+    name: Displayable
+    fields: IFieldDisplay[]
+  }
+}
+
 interface IDocumentConditionalExclusiveBase extends IDocumentBase {
   path: readonly string[]
   value: ReadNode<string>
   name: Displayable
-  states: {
-    [key: string]: {
-      name?: Displayable
-      fields: IFieldDisplay[]
-    }
-  }
+  states:
+    | ExclusiveConditionalStates
+    | ((data: UIData) => ExclusiveConditionalStates)
 }
 interface IDocumentConditionalMultipleBase extends IDocumentBase {
-  states: {
-    [key: string]: {
-      path: readonly string[]
-      value: ReadNode<string>
-      name: Displayable
-      fields: IFieldDisplay[]
-    }
-  }
+  states:
+    | MultipleConditionalStates
+    | ((data: UIData) => MultipleConditionalStates)
 }
 export type DocumentConditionalBase =
   | IDocumentConditionalExclusiveBase

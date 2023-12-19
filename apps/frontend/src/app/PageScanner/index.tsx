@@ -26,19 +26,17 @@ import {
 import ReactGA from 'react-ga4'
 import { Trans, useTranslation } from 'react-i18next'
 import { Link as RouterLink } from 'react-router-dom'
-import CardDark from '../Components/Card/CardDark'
-import SqBadge from '../Components/SqBadge'
 import AdScanner from './AdeptiScanner.png'
 import AkashaScanner from './AkashaScanner.png'
-import Amenoma from './Amenoma.png'
 import Artiscan from './artiscan.png'
 import GIScanner from './GIScanner.png'
+import { CardThemed, SqBadge } from '@genshin-optimizer/ui-common'
 export default function PageScanner() {
   const { t } = useTranslation('page_scanner')
   ReactGA.send({ hitType: 'pageview', page: '/scanner' })
   return (
     <Box display="flex" flexDirection="column" gap={2} my={1}>
-      <CardDark>
+      <CardThemed>
         <CardContent>
           <Trans t={t} i18nKey="intro">
             <Typography gutterBottom variant="h5">
@@ -62,11 +60,11 @@ export default function PageScanner() {
             </Typography>
           </Trans>
         </CardContent>
-      </CardDark>
+      </CardThemed>
 
-      <Grid container columns={{ xs: 1, md: 2, lg: 3 }} spacing={2}>
+      <Grid container columns={{ xs: 1, md: 2, lg: 4 }} spacing={2}>
         <Grid item xs={1}>
-          <CardDark sx={{ height: '100%' }}>
+          <CardThemed sx={{ height: '100%' }}>
             <CardActionArea
               href="https://artiscan.ninjabay.org/"
               target="_blank"
@@ -100,7 +98,7 @@ export default function PageScanner() {
                   sx={{ display: 'flex', alignItems: 'center' }}
                 >
                   <Gamepad sx={{ pr: 0.5 }} />
-                  3.7
+                  4.2
                 </SqBadge>
                 <SqBadge sx={{ display: 'flex', alignItems: 'center' }}>
                   <Computer sx={{ pr: 0.5 }} />
@@ -118,10 +116,10 @@ export default function PageScanner() {
               <Typography gutterBottom>{t('nb.p1') as string}</Typography>
               <Typography gutterBottom>{t('nb.p2') as string}</Typography>
             </CardContent>
-          </CardDark>
+          </CardThemed>
         </Grid>
         <Grid item xs={1}>
-          <CardDark sx={{ height: '100%' }}>
+          <CardThemed sx={{ height: '100%' }}>
             <CardActionArea
               href="https://github.com/Andrewthe13th/Inventory_Kamera"
               target="_blank"
@@ -158,7 +156,7 @@ export default function PageScanner() {
                   sx={{ display: 'flex', alignItems: 'center' }}
                 >
                   <Gamepad sx={{ pr: 0.5 }} />
-                  3.7
+                  4.2
                 </SqBadge>
                 <SqBadge sx={{ display: 'flex', alignItems: 'center' }}>
                   <Computer sx={{ pr: 0.5 }} />
@@ -211,10 +209,10 @@ export default function PageScanner() {
                 </Trans>
               </Typography>
             </CardContent>
-          </CardDark>
+          </CardThemed>
         </Grid>
         <Grid item xs={1}>
-          <CardDark sx={{ height: '100%' }}>
+          <CardThemed sx={{ height: '100%' }}>
             <CardActionArea
               href="https://github.com/D1firehail/AdeptiScanner-GI"
               target="_blank"
@@ -245,11 +243,17 @@ export default function PageScanner() {
                   sx={{ display: 'flex', alignItems: 'center' }}
                 >
                   <Gamepad sx={{ pr: 0.5 }} />
-                  3.7
+                  4.2
                 </SqBadge>
                 <SqBadge sx={{ display: 'flex', alignItems: 'center' }}>
                   <Computer sx={{ pr: 0.5 }} />
                   {t('tags.pc') as string}
+                </SqBadge>
+                <SqBadge
+                  sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}
+                >
+                  <AnvilIcon />
+                  {t('tags.weapons') as string}
                 </SqBadge>
                 <WarningWrapper>
                   <SqBadge
@@ -263,8 +267,16 @@ export default function PageScanner() {
               </Typography>
               <Typography gutterBottom>
                 <Trans t={t} i18nKey="as.p1">
-                  Scans all artifacts in your inventory. Has a manual scanning
-                  mode.
+                  Scans all artifacts and weapons in your inventory. Has a
+                  manual scanning mode and can also import via
+                  <Link
+                    href="https://enka.network/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Enka.Network
+                  </Link>
+                  .
                 </Trans>
               </Typography>
               <Typography gutterBottom>
@@ -281,92 +293,10 @@ export default function PageScanner() {
                 </Trans>
               </Typography>
             </CardContent>
-          </CardDark>
+          </CardThemed>
         </Grid>
         <Grid item xs={1}>
-          <CardDark sx={{ height: '100%' }}>
-            <CardActionArea
-              href="https://github.com/daydreaming666/Amenoma"
-              target="_blank"
-            >
-              <CardMedia component="img" image={Amenoma} />
-            </CardActionArea>
-            <CardContent>
-              <Box display="flex" gap={1} alignItems="center">
-                <Typography variant="h5" flexGrow={1}>
-                  <Trans t={t} i18nKey="am.title">
-                    「天目」-- Amenoma
-                  </Trans>
-                </Typography>
-                <IconButton
-                  href="https://discord.gg/BTrCYgVGFP"
-                  target="_blank"
-                >
-                  <DiscordIcon />
-                </IconButton>
-                <IconButton
-                  href="https://github.com/daydreaming666/Amenoma"
-                  target="_blank"
-                >
-                  <Download />
-                </IconButton>
-              </Box>
-
-              <Typography
-                variant="subtitle2"
-                sx={{ display: 'flex', gap: 1, py: 1, flexWrap: 'wrap' }}
-              >
-                <SqBadge
-                  color="success"
-                  sx={{ display: 'flex', alignItems: 'center' }}
-                >
-                  <Gamepad sx={{ pr: 0.5 }} />
-                  3.4
-                </SqBadge>
-                <SqBadge sx={{ display: 'flex', alignItems: 'center' }}>
-                  <Computer sx={{ pr: 0.5 }} />
-                  {t('tags.pc') as string}
-                </SqBadge>
-                <SqBadge sx={{ display: 'flex', alignItems: 'center' }}>
-                  <Backpack sx={{ pr: 0.5 }} />
-                  {t('tags.materials') as string}
-                </SqBadge>
-                <WarningWrapper>
-                  <SqBadge
-                    color="warning"
-                    sx={{ display: 'flex', alignItems: 'center' }}
-                  >
-                    <Warning sx={{ pr: 0.5 }} />
-                    {t('tags.gameMani') as string}
-                  </SqBadge>
-                </WarningWrapper>
-              </Typography>
-              <Typography gutterBottom>
-                <Trans t={t} i18nKey="am.p1">
-                  Scans all the artifacts in your inventory. Follow the
-                  instructions to capture the window and scan. Has both Chinese
-                  and English versions (download the <code>_EN.exe</code>
-                  version to scan in English). GO only accepts the
-                  <code>GOOD</code> format.
-                </Trans>
-              </Typography>
-              <Typography gutterBottom>
-                <Trans t={t} i18nKey="seelieme">
-                  This app can also scan materials for
-                  <Link
-                    href="https://seelie.me/"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    Seelie.me
-                  </Link>
-                </Trans>
-              </Typography>
-            </CardContent>
-          </CardDark>
-        </Grid>
-        <Grid item xs={1}>
-          <CardDark sx={{ height: '100%' }}>
+          <CardThemed sx={{ height: '100%' }}>
             <CardActionArea
               href="https://github.com/xenesty/AkashaScanner"
               target="_blank"
@@ -397,7 +327,7 @@ export default function PageScanner() {
                   sx={{ display: 'flex', alignItems: 'center' }}
                 >
                   <Gamepad sx={{ pr: 0.5 }} />
-                  3.7
+                  4.2
                 </SqBadge>
                 <SqBadge sx={{ display: 'flex', alignItems: 'center' }}>
                   <Computer sx={{ pr: 0.5 }} />
@@ -452,7 +382,7 @@ export default function PageScanner() {
                 </Trans>
               </Typography>
             </CardContent>
-          </CardDark>
+          </CardThemed>
         </Grid>
       </Grid>
     </Box>

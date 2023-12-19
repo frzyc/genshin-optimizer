@@ -9,6 +9,7 @@ import Barbara from './Character_Barbara_Card.jpg'
 import Beidou from './Character_Beidou_Card.jpg'
 import Bennett from './Character_Bennett_Card.jpg'
 import Candace from './Character_Candace_Card.jpg'
+import Charlotte from './Character_Charlotte_Card.jpg'
 import Chongyun from './Character_Chongyun_Card.jpg'
 import Collei from './Character_Collei_Card.jpg'
 import Cyno from './Character_Cyno_Card.jpg'
@@ -19,6 +20,8 @@ import Dori from './Character_Dori_Card.jpg'
 import Eula from './Character_Eula_Card.png'
 import Faruzan from './Character_Faruzan_Card.jpg'
 import Fischl from './Character_Fischl_Card.jpg'
+import Freminet from './Character_Freminet_Card.jpg'
+import Furina from './Character_Furina_Card.jpg'
 import Ganyu from './Character_Ganyu_Card.png'
 import Gorou from './Character_Gorou_Card.png'
 import HuTao from './Character_Hu_Tao_Card.png'
@@ -35,9 +38,12 @@ import KujouSara from './Character_Kujou_Sara_Card.jpg'
 import KukiShinobu from './Character_Kuki_Shinobu_Card.jpg'
 import Layla from './Character_Layla_Card.jpeg'
 import Lisa from './Character_Lisa_Card.jpg'
+import Lyney from './Character_Lyney_Card.jpg'
+import Lynette from './Character_Lynette_Card.jpg'
 import Mika from './Character_Mika_Card.jpg'
 import Mona from './Character_Mona_Card.jpg'
 import Nahida from './Character_Nahida_Card.jpeg'
+import Neuvillette from './Character_Neuvillette_Card.jpg'
 import Nilou from './Character_Nilou_Card.jpg'
 import Ningguang from './Character_Ningguang_Card.jpg'
 import Noelle from './Character_Noelle_Card.jpg'
@@ -56,6 +62,7 @@ import Thoma from './Character_Thoma_Card.jpg'
 import Tighnari from './Character_Tighnari_Card.jpg'
 import Venti from './Character_Venti_Card.jpg'
 import Wanderer from './Character_Wanderer_Card.jpg'
+import Wriothesley from './Character_Wriothesley_Card.jpg'
 import Xiangling from './Character_Xiangling_Card.jpg'
 import Xiao from './Character_Xiao_Card.jpg'
 import Xingqiu from './Character_Xingqiu_Card.jpg'
@@ -81,6 +88,7 @@ const charCards = {
   Beidou,
   Bennett,
   Candace,
+  Charlotte,
   Chongyun,
   Collei,
   Cyno,
@@ -91,6 +99,8 @@ const charCards = {
   Eula,
   Faruzan,
   Fischl,
+  Freminet,
+  Furina,
   Ganyu,
   Gorou,
   HuTao,
@@ -107,9 +117,12 @@ const charCards = {
   KukiShinobu,
   Layla,
   Lisa,
+  Lyney,
+  Lynette,
   Mika,
   Mona,
   Nahida,
+  Neuvillette,
   Nilou,
   Ningguang,
   Noelle,
@@ -130,6 +143,7 @@ const charCards = {
   TravelerM,
   Venti,
   Wanderer,
+  Wriothesley,
   Xiangling,
   Xiao,
   Xingqiu,
@@ -149,6 +163,7 @@ export function charCard(charKey: CharacterKey, gender: GenderKey): string {
     case 'TravelerDendro':
     case 'TravelerElectro':
     case 'TravelerGeo':
+    case 'TravelerHydro':
       return charCards[`Traveler${gender}`] ?? ''
     default:
       return charCards[charKey] ?? ''

@@ -20,8 +20,9 @@ import {
   constant,
   reread,
 } from '@genshin-optimizer/pando'
-import type { Source, TagMapNodeEntry } from '.'
+import type { Source } from './listing'
 import { entryTypes, members, presets, srcs } from './listing'
+import type { TagMapNodeEntry } from './tagMapType'
 
 export const fixedTags = {
   preset: presets,
@@ -250,7 +251,9 @@ export function tag(
   v: number | string | AnyNode,
   tag: Tag
 ): TagOverride<AnyNode> {
-  return baseTag(v, tag)
+  return typeof v == 'object' && v.op == 'tag'
+    ? baseTag(v.x[0], { ...v.tag, ...tag }) // Fold nested tag nodes
+    : baseTag(v, tag)
 }
 export function tagVal(cat: keyof Tag): TagValRead {
   return baseTagVal(cat)

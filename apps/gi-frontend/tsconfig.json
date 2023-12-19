@@ -3,7 +3,11 @@
     "jsx": "react-jsx",
     "esModuleInterop": false,
     "jsxImportSource": "@emotion/react",
-    "types": ["vite/client", "vitest"]
+    "types": ["vite/client", "vitest"],
+    "module": "ESNext",
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "exactOptionalPropertyTypes": false
   },
   "files": [],
   "include": [],

@@ -1,0 +1,66 @@
+{
+  "name": "gi-backend",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/gi-backend/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nx/webpack:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "target": "node",
+        "compiler": "tsc",
+        "outputPath": "dist/apps/gi-backend",
+        "main": "apps/gi-backend/src/main.ts",
+        "tsConfig": "apps/gi-backend/tsconfig.app.json",
+        "assets": ["apps/gi-backend/src/assets"],
+        "isolatedConfig": true,
+        "webpackConfig": "apps/gi-backend/webpack.config.js"
+      },
+      "configurations": {
+        "development": {},
+        "production": {}
+      }
+    },
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "gi-backend:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "gi-backend:build:development"
+        },
+        "production": {
+          "buildTarget": "gi-backend:build:production"
+        }
+      },
+      "dependsOn": ["^gen-file"]
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/gi-backend/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "apps/gi-backend/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["gi-prisma-schema"]
+}

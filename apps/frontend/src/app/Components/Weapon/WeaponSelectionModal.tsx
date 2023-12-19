@@ -33,7 +33,7 @@ import CloseButton from '../CloseButton'
 import ImgIcon from '../Image/ImgIcon'
 import ModalWrapper from '../ModalWrapper'
 import { StarsDisplay } from '../StarDisplay'
-import RarityToggle from '../ToggleButton/RarityToggle'
+import WeaponRarityToggle from '../ToggleButton/WeaponRarityToggle'
 import WeaponToggle from '../ToggleButton/WeaponToggle'
 
 type WeaponSelectionModalProps = {
@@ -132,7 +132,7 @@ export default function WeaponSelectionModal({
               />
             </Grid>
             <Grid item>
-              <RarityToggle
+              <WeaponRarityToggle
                 sx={{ height: '100%' }}
                 onChange={(rarity) => database.displayWeapon.set({ rarity })}
                 value={rarity}

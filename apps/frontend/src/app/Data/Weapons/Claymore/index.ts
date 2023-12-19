@@ -14,6 +14,7 @@ import LuxuriousSeaLord from './LuxuriousSeaLord'
 import MailedFlower from './MailedFlower'
 import MakhairaAquamarine from './MakhairaAquamarine'
 import OldMercsPal from './OldMercsPal'
+import PortablePowerSaw from './PortablePowerSaw'
 import PrototypeArchaic from './PrototypeArchaic'
 import Rainslasher from './Rainslasher'
 import RedhornStonethresher from './RedhornStonethresher'
@@ -24,8 +25,10 @@ import SkyriderGreatsword from './SkyriderGreatsword'
 import SkywardPride from './SkywardPride'
 import SnowTombedStarsilver from './SnowTombedStarsilver'
 import SongOfBrokenPines from './SongOfBrokenPines'
+import TalkingStick from './TalkingStick'
 import TheBell from './TheBell'
 import TheUnforged from './TheUnforged'
+import TidalShadow from './TidalShadow'
 import WasterGreatsword from './WasterGreatsword'
 import Whiteblind from './Whiteblind'
 import WhiteIronGreatsword from './WhiteIronGreatsword'
@@ -45,6 +48,7 @@ const claymore: Record<WeaponClaymoreKey, WeaponSheet> = {
   MailedFlower,
   MakhairaAquamarine,
   OldMercsPal,
+  PortablePowerSaw,
   PrototypeArchaic,
   Rainslasher,
   RedhornStonethresher,
@@ -55,8 +59,10 @@ const claymore: Record<WeaponClaymoreKey, WeaponSheet> = {
   SkywardPride,
   SnowTombedStarsilver,
   SongOfBrokenPines,
+  TalkingStick,
   TheBell,
   TheUnforged,
+  TidalShadow,
   WasterGreatsword,
   Whiteblind,
   WhiteIronGreatsword,

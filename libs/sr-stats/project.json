@@ -4,7 +4,7 @@
   "sourceRoot": "libs/sr-stats/src",
   "projectType": "library",
   "targets": {
-    "genfile": {
+    "gen-file": {
       "executor": "@genshin-optimizer/sr-stats:gen-stats",
       "outputs": [
         "{projectRoot}/Data/**/*",
@@ -12,7 +12,11 @@
       ]
     },
     "build": {},
-    "build-ts": {},
+    "build-ts": {
+      "options": {
+        "updateBuildableProjectDepsInPackageJson": true
+      }
+    },
     "lint": {}
   },
   "tags": []

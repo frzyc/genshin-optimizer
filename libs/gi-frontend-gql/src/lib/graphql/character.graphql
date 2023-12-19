@@ -1,0 +1,38 @@
+query getAllUserCharacter($genshinUserId: String!) {
+  getAllUserCharacter(genshinUserId: $genshinUserId) {
+    ...CharacterParts
+  }
+}
+
+mutation addCharacter($genshinUserId: String!, $character: InputCharacter!) {
+  addCharacter(genshinUserId: $genshinUserId, character: $character) {
+    ...CharacterParts
+  }
+}
+
+mutation updateCharacter(
+  $genshinUserId: String!
+  $character: UpdateCharacter!
+) {
+  updateCharacter(genshinUserId: $genshinUserId, character: $character) {
+    ...CharacterParts
+  }
+}
+mutation removeCharacter($genshinUserId: String!, $characterId: String!) {
+  removeCharacter(genshinUserId: $genshinUserId, characterId: $characterId) {
+    ...CharacterParts
+  }
+}
+
+fragment CharacterParts on Character {
+  id
+  key
+  level
+  ascension
+  constellation
+  talent {
+    auto
+    skill
+    burst
+  }
+}

@@ -15,7 +15,7 @@ export type { CharacterDataGen }
 
 const allStat = {
   char: characterDataDump,
-  lightcone: lightConeDataDump,
+  lightCone: lightConeDataDump,
   relic: {
     sub,
     main,
@@ -30,7 +30,7 @@ export default async function runExecutor(_options: GenStatsExecutorSchema) {
     dumpFile(`${path}/Characters/${key}/data.json`, data)
   )
 
-  console.log(`Writing lightcone data to ${path}/LightCone`)
+  console.log(`Writing lightCone data to ${path}/LightCone`)
   Object.entries(lightConeDataDump).forEach(([key, data]) =>
     dumpFile(`${path}/LightCone/${key}/data.json`, data)
   )

@@ -1,0 +1,142 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+  // output into a separate subdirectory so multiple schemas can be used in a monorepo
+  // this make the import path `@prisma/client/gi` instead of `@prisma/client`
+  output   = "../../../node_modules/@prisma/client/gi"
+
+  // Enable this if you have trouble on a macbook
+  // binaryTargets = ["native", "darwin"]
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("MONGODB_URI")
+}
+
+// model used by authjs
+model Account {
+  id                String  @id @default(auto()) @map("_id") @db.ObjectId
+  userId            String  @db.ObjectId
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @db.String
+  access_token      String? @db.String
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.String
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+// model used by authjs
+model Session {
+  id           String   @id @default(auto()) @map("_id") @db.ObjectId
+  sessionToken String   @unique
+  userId       String   @db.ObjectId
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+// model used by authjs
+model User {
+  id            String    @id @default(auto()) @map("_id") @db.ObjectId
+  name          String?
+  email         String?   @unique
+  emailVerified DateTime?
+  image         String?
+  accounts      Account[]
+  sessions      Session[]
+
+  //additional fields for GO
+  username     String?       @unique
+  genshinUsers GenshinUser[]
+}
+
+// model used by authjs
+model VerificationToken {
+  id         String   @id @default(auto()) @map("_id") @db.ObjectId
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+// Genshin UID
+model GenshinUser {
+  id         String      @id @default(auto()) @map("_id") @db.ObjectId
+  uid        String      @unique
+  artifacts  Artifact[]
+  weapons    Weapon[]
+  characters Character[]
+  nickname   String?
+  Signature  String?
+  worldLevel Int?
+  nameCardId Int?
+  user       User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId     String      @db.ObjectId
+}
+
+model Artifact {
+  id            String      @id @default(auto()) @map("_id") @db.ObjectId
+  genshinUser   GenshinUser @relation(fields: [genshinUserId], references: [id], onDelete: Cascade)
+  genshinUserId String      @db.ObjectId
+  setKey        String
+  slotKey       String
+  level         Int
+  rarity        Int
+  mainStatKey   String
+  location      String?
+  lock          Boolean
+  substats      Substat[]
+
+  // Char can have only one art equipped per slotKey (multiple location:null are allowed)
+  @@unique([genshinUserId, slotKey, location])
+}
+
+type Substat {
+  key   String
+  value Float
+}
+
+model Weapon {
+  id            String      @id @default(auto()) @map("_id") @db.ObjectId
+  genshinUser   GenshinUser @relation(fields: [genshinUserId], references: [id], onDelete: Cascade)
+  genshinUserId String      @db.ObjectId
+  key           String
+  level         Int
+  ascension     Int
+  refinement    Int
+  location      String?
+  lock          Boolean
+
+  // Char can only have one weapon equipped (multiple location:null are allowed)
+  @@unique([genshinUserId, location])
+}
+
+model Character {
+  id            String      @id @default(auto()) @map("_id") @db.ObjectId
+  genshinUser   GenshinUser @relation(fields: [genshinUserId], references: [id], onDelete: Cascade)
+  genshinUserId String      @db.ObjectId
+  key           String
+  level         Int
+  ascension     Int
+  constellation Int
+  talent        Talent
+
+  @@unique([genshinUserId, key])
+}
+
+type Talent {
+  auto  Int
+  skill Int
+  burst Int
+}

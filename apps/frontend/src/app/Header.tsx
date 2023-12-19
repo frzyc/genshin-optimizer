@@ -37,6 +37,7 @@ import { DatabaseContext } from './Database/Database'
 import useDBMeta from './ReactHooks/useDBMeta'
 import { useForceUpdate } from '@genshin-optimizer/react-util'
 import silly_icon from './silly_icon.png'
+import { shouldShowDevComponents } from './Util/Util'
 type ITab = {
   i18Key: string
   icon: Displayable
@@ -200,11 +201,23 @@ function HeaderContent({ anchor }: { anchor: string }) {
                   <Typography variant="h6" sx={{ px: 1 }}>
                     {t('sillyPageTitle')}
                   </Typography>
+                  {shouldShowDevComponents ? (
+                    <Typography variant="body1" sx={{ px: 1 }}>
+                      (Dev Mode)
+                    </Typography>
+                  ) : undefined}
                 </Box>
               ) : (
-                <Typography variant="h6" sx={{ px: 1 }}>
-                  {t('pageTitle')}
-                </Typography>
+                <Box display="flex" alignItems="center">
+                  <Typography variant="h6" sx={{ px: 1 }}>
+                    {t('pageTitle')}
+                  </Typography>
+                  {shouldShowDevComponents ? (
+                    <Typography variant="body1" sx={{ px: 1 }}>
+                      (Dev Mode)
+                    </Typography>
+                  ) : undefined}
+                </Box>
               )
             }
           />
@@ -324,6 +337,11 @@ function MobileHeader({
             <Typography variant="h6" noWrap component="div">
               {silly ? t('sillyPageTitle') : t('pageTitle')}
             </Typography>
+            {shouldShowDevComponents ? (
+              <Typography variant="body1" sx={{ px: 1 }}>
+                (Dev Mode)
+              </Typography>
+            ) : undefined}
           </Button>
           <Box flexGrow={1} />
           <IconButton

@@ -9,6 +9,7 @@ import Barbara from './Barbara'
 import Beidou from './Beidou'
 import Bennett from './Bennett'
 import Candace from './Candace'
+import Charlotte from './Charlotte'
 import Chongyun from './Chongyun'
 import Collei from './Collei'
 import Cyno from './Cyno'
@@ -19,6 +20,8 @@ import Dori from './Dori'
 import Eula from './Eula'
 import Faruzan from './Faruzan'
 import Fischl from './Fischl'
+import Freminet from './Freminet'
+import Furina from './Furina'
 import Ganyu from './Ganyu'
 import Gorou from './Gorou'
 import HuTao from './HuTao'
@@ -35,9 +38,12 @@ import KujouSara from './KujouSara'
 import KukiShinobu from './KukiShinobu'
 import Layla from './Layla'
 import Lisa from './Lisa'
+import Lynette from './Lynette'
+import Lyney from './Lyney'
 import Mika from './Mika'
 import Mona from './Mona'
 import Nahida from './Nahida'
+import Neuvillette from './Neuvillette'
 import Nilou from './Nilou'
 import Ningguang from './Ningguang'
 import Noelle from './Noelle'
@@ -59,9 +65,11 @@ import TravelerDendro from './TravelerDendro'
 import TravelerElectro from './TravelerElectro'
 import TravelerF from './TravelerF'
 import TravelerGeo from './TravelerGeo'
+import TravelerHydro from './TravelerHydro'
 import TravelerM from './TravelerM'
 import Venti from './Venti'
 import Wanderer from './Wanderer'
+import Wriothesley from './Wriothesley'
 import Xiangling from './Xiangling'
 import Xiao from './Xiao'
 import Xingqiu from './Xingqiu'
@@ -85,6 +93,7 @@ const data = {
   Beidou,
   Bennett,
   Candace,
+  Charlotte,
   Chongyun,
   Collei,
   Cyno,
@@ -95,6 +104,8 @@ const data = {
   Eula,
   Faruzan,
   Fischl,
+  Freminet,
+  Furina,
   Ganyu,
   Gorou,
   HuTao,
@@ -111,9 +122,12 @@ const data = {
   KukiShinobu,
   Layla,
   Lisa,
+  Lynette,
+  Lyney,
   Mika,
   Mona,
   Nahida,
+  Neuvillette,
   Nilou,
   Ningguang,
   Noelle,
@@ -135,9 +149,11 @@ const data = {
   TravelerElectro,
   TravelerF,
   TravelerGeo,
+  TravelerHydro,
   TravelerM,
   Venti,
   Wanderer,
+  Wriothesley,
   Xiangling,
   Xiao,
   Xingqiu,

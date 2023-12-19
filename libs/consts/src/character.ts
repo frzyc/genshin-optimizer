@@ -40,6 +40,8 @@ export const allMoveKeys = [
 ] as const
 export type MoveKey = (typeof allMoveKeys)[number]
 
+export const maxConstellationCount = 6 as const
+
 export const characterSpecializedStatKeys = [
   'hp_',
   'atk_',
@@ -72,6 +74,7 @@ export const nonTravelerCharacterKeys = [
   'Beidou',
   'Bennett',
   'Candace',
+  'Charlotte',
   'Chongyun',
   'Collei',
   'Cyno',
@@ -82,6 +85,8 @@ export const nonTravelerCharacterKeys = [
   'Eula',
   'Faruzan',
   'Fischl',
+  'Freminet',
+  'Furina',
   'Ganyu',
   'Gorou',
   'HuTao',
@@ -98,9 +103,12 @@ export const nonTravelerCharacterKeys = [
   'KukiShinobu',
   'Layla',
   'Lisa',
+  'Lynette',
+  'Lyney',
   'Mika',
   'Mona',
   'Nahida',
+  'Neuvillette',
   'Nilou',
   'Ningguang',
   'Noelle',
@@ -119,6 +127,7 @@ export const nonTravelerCharacterKeys = [
   'Tighnari',
   'Venti',
   'Wanderer',
+  'Wriothesley',
   'Xiangling',
   'Xiao',
   'Xingqiu',
@@ -133,7 +142,13 @@ export const nonTravelerCharacterKeys = [
 ] as const
 export type NonTravelerCharacterKey = (typeof nonTravelerCharacterKeys)[number]
 
-export const travelerElements = ['anemo', 'geo', 'electro', 'dendro'] as const
+export const travelerElements = [
+  'anemo',
+  'geo',
+  'electro',
+  'dendro',
+  'hydro',
+] as const
 export type TravelerElementKey = (typeof travelerElements)[number]
 
 export const allTravelerKeys = [
@@ -141,6 +156,7 @@ export const allTravelerKeys = [
   'TravelerGeo',
   'TravelerElectro',
   'TravelerDendro',
+  'TravelerHydro',
 ] as const
 export type TravelerKey = (typeof allTravelerKeys)[number]
 
@@ -149,6 +165,7 @@ export const travelerEleMap: Partial<Record<ElementKey, TravelerKey>> = {
   geo: 'TravelerGeo',
   electro: 'TravelerElectro',
   dendro: 'TravelerDendro',
+  hydro: 'TravelerHydro',
 } as const
 
 export const locationGenderedCharacterKeys = [
@@ -172,6 +189,10 @@ export const allLocationCharacterKeys = [
 export type LocationCharacterKey = (typeof allLocationCharacterKeys)[number]
 
 export type LocationKey = LocationCharacterKey | ''
+
+// Genshin Impact currently only has 4-5 star characters
+export const allCharacterRarityKeys = [5, 4] as const
+export type CharacterRarityKey = (typeof allCharacterRarityKeys)[number]
 
 export function charKeyToLocGenderedCharKey(
   charKey: CharacterKey,

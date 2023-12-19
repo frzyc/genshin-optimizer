@@ -24,6 +24,9 @@ import {
 } from '@genshin-optimizer/gi-svgicons'
 import type { SvgIconProps } from '@mui/material'
 
+/**
+ * @deprecated use StatIcon in @genshin-optimizer/gi-svgicons
+ */
 export default function StatIcon({
   statKey,
   iconProps = {},
@@ -70,6 +73,9 @@ export default function StatIcon({
   return null
 }
 
+/**
+ * @deprecated use ElementIcon in @genshin-optimizer/gi-svgicons
+ */
 export function ElementIcon({
   ele,
   iconProps = {},

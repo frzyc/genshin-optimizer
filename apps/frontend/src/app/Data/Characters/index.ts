@@ -17,6 +17,7 @@ import Barbara from './Barbara'
 import Beidou from './Beidou'
 import Bennett from './Bennett'
 import Candace from './Candace'
+import Charlotte from './Charlotte'
 import Chongyun from './Chongyun'
 import Collei from './Collei'
 import Cyno from './Cyno'
@@ -27,6 +28,8 @@ import Dori from './Dori'
 import Eula from './Eula'
 import Faruzan from './Faruzan'
 import Fischl from './Fischl'
+import Freminet from './Freminet'
+import Furina from './Furina'
 import Ganyu from './Ganyu'
 import Gorou from './Gorou'
 import HuTao from './HuTao'
@@ -43,9 +46,12 @@ import KujouSara from './KujouSara'
 import KukiShinobu from './KukiShinobu'
 import Layla from './Layla'
 import Lisa from './Lisa'
+import Lynette from './Lynette'
+import Lyney from './Lyney'
 import Mika from './Mika'
 import Mona from './Mona'
 import Nahida from './Nahida'
+import Neuvillette from './Neuvillette'
 import Nilou from './Nilou'
 import Ningguang from './Ningguang'
 import Noelle from './Noelle'
@@ -60,7 +66,6 @@ import ShikanoinHeizou from './ShikanoinHeizou'
 import Somnia from './Somnia'
 import Sucrose from './Sucrose'
 import Tartaglia from './Tartaglia'
-import Wanderer from './Wanderer'
 import Thoma from './Thoma'
 import Tighnari from './Tighnari'
 import TravelerAnemoF from './TravelerAnemoF'
@@ -71,7 +76,11 @@ import TravelerElectroF from './TravelerElectroF'
 import TravelerElectroM from './TravelerElectroM'
 import TravelerGeoF from './TravelerGeoF'
 import TravelerGeoM from './TravelerGeoM'
+import TravelerHydroF from './TravelerHydroF'
+import TravelerHydroM from './TravelerHydroM'
 import Venti from './Venti'
+import Wanderer from './Wanderer'
+import Wriothesley from './Wriothesley'
 import Xiangling from './Xiangling'
 import Xiao from './Xiao'
 import Xingqiu from './Xingqiu'
@@ -95,6 +104,7 @@ const characters: Record<CharacterSheetKey, CharacterSheet> = {
   Beidou,
   Bennett,
   Candace,
+  Charlotte,
   Chongyun,
   Collei,
   Cyno,
@@ -105,6 +115,8 @@ const characters: Record<CharacterSheetKey, CharacterSheet> = {
   Eula,
   Faruzan,
   Fischl,
+  Freminet,
+  Furina,
   Ganyu,
   Gorou,
   HuTao,
@@ -121,9 +133,12 @@ const characters: Record<CharacterSheetKey, CharacterSheet> = {
   KukiShinobu,
   Layla,
   Lisa,
+  Lynette,
+  Lyney,
   Mika,
   Mona,
   Nahida,
+  Neuvillette,
   Nilou,
   Ningguang,
   Noelle,
@@ -138,7 +153,6 @@ const characters: Record<CharacterSheetKey, CharacterSheet> = {
   Somnia,
   Sucrose,
   Tartaglia,
-  Wanderer,
   Thoma,
   Tighnari,
   TravelerAnemoF,
@@ -149,7 +163,11 @@ const characters: Record<CharacterSheetKey, CharacterSheet> = {
   TravelerGeoM,
   TravelerElectroM,
   TravelerDendroM,
+  TravelerHydroF,
+  TravelerHydroM,
   Venti,
+  Wanderer,
+  Wriothesley,
   Xiangling,
   Xiao,
   Xingqiu,

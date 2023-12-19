@@ -1,6 +1,10 @@
 import type { RarityKey } from '@genshin-optimizer/consts'
 import StarRoundedIcon from '@mui/icons-material/StarRounded'
 import ColorText from './ColoredText'
+
+/**
+ * @deprecated use `StarsDisplay` in `@genshin-optimizer/ui-common`
+ */
 export const StarsDisplay = ({
   stars = 1,
   colored = false,

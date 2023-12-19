@@ -11,31 +11,32 @@
       "executor": "@nx/vite:dev-server",
       "defaultConfiguration": "development",
       "options": {
-        "buildTarget": "sr-frontend:build"
+        "buildTarget": "sr-frontend:build-vite"
       },
       "configurations": {
         "development": {
-          "buildTarget": "sr-frontend:build:development",
+          "buildTarget": "sr-frontend:build-vite:development",
           "hmr": true
         },
         "production": {
-          "buildTarget": "sr-frontend:build:production",
+          "buildTarget": "sr-frontend:build-vite:production",
           "hmr": false
         }
-      }
+      },
+      "dependsOn": ["^gen-file"]
     },
     "preview": {
       "executor": "@nx/vite:preview-server",
       "defaultConfiguration": "development",
       "options": {
-        "buildTarget": "sr-frontend:build"
+        "buildTarget": "sr-frontend:build-vite"
       },
       "configurations": {
         "development": {
-          "buildTarget": "sr-frontend:build:development"
+          "buildTarget": "sr-frontend:build-vite:development"
         },
         "production": {
-          "buildTarget": "sr-frontend:build:production"
+          "buildTarget": "sr-frontend:build-vite:production"
         }
       }
     },

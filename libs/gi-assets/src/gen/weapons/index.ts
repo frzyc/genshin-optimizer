@@ -7,6 +7,8 @@ import ApprenticesNotes from './ApprenticesNotes'
 import AquaSimulacra from './AquaSimulacra'
 import AquilaFavonia from './AquilaFavonia'
 import AThousandFloatingDreams from './AThousandFloatingDreams'
+import BalladOfTheBoundlessBlue from './BalladOfTheBoundlessBlue'
+import BalladOfTheFjords from './BalladOfTheFjords'
 import BeaconOfTheReedSea from './BeaconOfTheReedSea'
 import BeginnersProtector from './BeginnersProtector'
 import BlackcliffAgate from './BlackcliffAgate'
@@ -17,6 +19,7 @@ import BlackcliffWarbow from './BlackcliffWarbow'
 import BlackTassel from './BlackTassel'
 import BloodtaintedGreatsword from './BloodtaintedGreatsword'
 import CalamityQueller from './CalamityQueller'
+import CashflowSupervision from './CashflowSupervision'
 import CinnabarSpindle from './CinnabarSpindle'
 import CompoundBow from './CompoundBow'
 import CoolSteel from './CoolSteel'
@@ -43,6 +46,9 @@ import FavoniusWarbow from './FavoniusWarbow'
 import FerrousShadow from './FerrousShadow'
 import FesteringDesire from './FesteringDesire'
 import FilletBlade from './FilletBlade'
+import FinaleOfTheDeep from './FinaleOfTheDeep'
+import FleuveCendreFerryman from './FleuveCendreFerryman'
+import FlowingPurity from './FlowingPurity'
 import ForestRegalia from './ForestRegalia'
 import FreedomSworn from './FreedomSworn'
 import Frostbearer from './Frostbearer'
@@ -86,9 +92,11 @@ import OldMercsPal from './OldMercsPal'
 import OtherworldlyStory from './OtherworldlyStory'
 import PocketGrimoire from './PocketGrimoire'
 import PolarStar from './PolarStar'
+import PortablePowerSaw from './PortablePowerSaw'
 import Predator from './Predator'
 import PrimordialJadeCutter from './PrimordialJadeCutter'
 import PrimordialJadeWingedSpear from './PrimordialJadeWingedSpear'
+import ProspectorsDrill from './ProspectorsDrill'
 import PrototypeAmber from './PrototypeAmber'
 import PrototypeArchaic from './PrototypeArchaic'
 import PrototypeCrescent from './PrototypeCrescent'
@@ -96,9 +104,11 @@ import PrototypeRancour from './PrototypeRancour'
 import PrototypeStarglitter from './PrototypeStarglitter'
 import QuantumCatalyst from './QuantumCatalyst'
 import Rainslasher from './Rainslasher'
+import RangeGauge from './RangeGauge'
 import RavenBow from './RavenBow'
 import RecurveBow from './RecurveBow'
 import RedhornStonethresher from './RedhornStonethresher'
+import RightfulReward from './RightfulReward'
 import RoyalBow from './RoyalBow'
 import RoyalGreatsword from './RoyalGreatsword'
 import RoyalGrimoire from './RoyalGrimoire'
@@ -108,8 +118,10 @@ import Rust from './Rust'
 import SacrificialBow from './SacrificialBow'
 import SacrificialFragments from './SacrificialFragments'
 import SacrificialGreatsword from './SacrificialGreatsword'
+import SacrificialJade from './SacrificialJade'
 import SacrificialSword from './SacrificialSword'
 import SapwoodBlade from './SapwoodBlade'
+import ScionOfTheBlazingSun from './ScionOfTheBlazingSun'
 import SeasonedHuntersBow from './SeasonedHuntersBow'
 import SerpentSpine from './SerpentSpine'
 import SharpshootersOath from './SharpshootersOath'
@@ -125,14 +137,20 @@ import Slingshot from './Slingshot'
 import SnowTombedStarsilver from './SnowTombedStarsilver'
 import SolarPearl from './SolarPearl'
 import SongOfBrokenPines from './SongOfBrokenPines'
+import SongOfStillness from './SongOfStillness'
+import SplendorOfTranquilWaters from './SplendorOfTranquilWaters'
 import StaffOfHoma from './StaffOfHoma'
 import StaffOfTheScarletSands from './StaffOfTheScarletSands'
 import SummitShaper from './SummitShaper'
 import SwordOfDescension from './SwordOfDescension'
+import SwordOfNarzissenkreuz from './SwordOfNarzissenkreuz'
+import TalkingStick from './TalkingStick'
 import TheAlleyFlash from './TheAlleyFlash'
 import TheBell from './TheBell'
 import TheBlackSword from './TheBlackSword'
 import TheCatch from './TheCatch'
+import TheDockhandsAssistant from './TheDockhandsAssistant'
+import TheFirstGreatMagic from './TheFirstGreatMagic'
 import TheFlute from './TheFlute'
 import TheStringless from './TheStringless'
 import TheUnforged from './TheUnforged'
@@ -140,6 +158,8 @@ import TheViridescentHunt from './TheViridescentHunt'
 import TheWidsith from './TheWidsith'
 import ThrillingTalesOfDragonSlayers from './ThrillingTalesOfDragonSlayers'
 import ThunderingPulse from './ThunderingPulse'
+import TidalShadow from './TidalShadow'
+import TomeOfTheEternalFlow from './TomeOfTheEternalFlow'
 import ToukabouShigure from './ToukabouShigure'
 import TravelersHandySword from './TravelersHandySword'
 import TulaytullahsRemembrance from './TulaytullahsRemembrance'
@@ -153,6 +173,7 @@ import WhiteIronGreatsword from './WhiteIronGreatsword'
 import WhiteTassel from './WhiteTassel'
 import WindblumeOde from './WindblumeOde'
 import WineAndSong from './WineAndSong'
+import WolfFang from './WolfFang'
 import WolfsGravestone from './WolfsGravestone'
 import XiphosMoonlight from './XiphosMoonlight'
 
@@ -165,6 +186,8 @@ const data = {
   ApprenticesNotes,
   AquaSimulacra,
   AquilaFavonia,
+  BalladOfTheBoundlessBlue,
+  BalladOfTheFjords,
   BeaconOfTheReedSea,
   BeginnersProtector,
   BlackTassel,
@@ -175,6 +198,7 @@ const data = {
   BlackcliffWarbow,
   BloodtaintedGreatsword,
   CalamityQueller,
+  CashflowSupervision,
   CinnabarSpindle,
   CompoundBow,
   CoolSteel,
@@ -201,6 +225,9 @@ const data = {
   FerrousShadow,
   FesteringDesire,
   FilletBlade,
+  FinaleOfTheDeep,
+  FleuveCendreFerryman,
+  FlowingPurity,
   ForestRegalia,
   FreedomSworn,
   Frostbearer,
@@ -244,9 +271,11 @@ const data = {
   OtherworldlyStory,
   PocketGrimoire,
   PolarStar,
+  PortablePowerSaw,
   Predator,
   PrimordialJadeCutter,
   PrimordialJadeWingedSpear,
+  ProspectorsDrill,
   PrototypeAmber,
   PrototypeArchaic,
   PrototypeCrescent,
@@ -254,9 +283,11 @@ const data = {
   PrototypeStarglitter,
   QuantumCatalyst,
   Rainslasher,
+  RangeGauge,
   RavenBow,
   RecurveBow,
   RedhornStonethresher,
+  RightfulReward,
   RoyalBow,
   RoyalGreatsword,
   RoyalGrimoire,
@@ -266,8 +297,10 @@ const data = {
   SacrificialBow,
   SacrificialFragments,
   SacrificialGreatsword,
+  SacrificialJade,
   SacrificialSword,
   SapwoodBlade,
+  ScionOfTheBlazingSun,
   SeasonedHuntersBow,
   SerpentSpine,
   SharpshootersOath,
@@ -283,14 +316,20 @@ const data = {
   SnowTombedStarsilver,
   SolarPearl,
   SongOfBrokenPines,
+  SongOfStillness,
+  SplendorOfTranquilWaters,
   StaffOfHoma,
   StaffOfTheScarletSands,
   SummitShaper,
   SwordOfDescension,
+  SwordOfNarzissenkreuz,
+  TalkingStick,
   TheAlleyFlash,
   TheBell,
   TheBlackSword,
   TheCatch,
+  TheDockhandsAssistant,
+  TheFirstGreatMagic,
   TheFlute,
   TheStringless,
   TheUnforged,
@@ -298,6 +337,8 @@ const data = {
   TheWidsith,
   ThrillingTalesOfDragonSlayers,
   ThunderingPulse,
+  TidalShadow,
+  TomeOfTheEternalFlow,
   ToukabouShigure,
   TravelersHandySword,
   TulaytullahsRemembrance,
@@ -311,6 +352,7 @@ const data = {
   Whiteblind,
   WindblumeOde,
   WineAndSong,
+  WolfFang,
   WolfsGravestone,
   XiphosMoonlight,
 } as const

@@ -1,13 +1,15 @@
-import type {
-  ArtifactSetKey,
-  CharacterKey,
-  WeaponKey,
-} from '@genshin-optimizer/consts'
+import type { ArtifactSetKey } from '@genshin-optimizer/consts'
 import type { ICharacter, IWeapon } from '@genshin-optimizer/gi-good'
 import { cmpEq, cmpGE } from '@genshin-optimizer/pando'
-import type { Member, Preset, Stat, TagMapNodeEntries } from './data/util'
+import type {
+  Member,
+  Preset,
+  Source,
+  Stat,
+  TagMapNodeEntries,
+} from './data/util'
 import {
-  allConditionals,
+  conditionalEntries,
   convert,
   reader,
   selfBuff,
@@ -97,13 +99,12 @@ export function artifactsData(
   ]
 }
 
-type CondKey = CharacterKey | WeaponKey | ArtifactSetKey
 export function conditionalData(
-  data: Partial<Record<CondKey, Record<string, string | number>>>
+  data: Partial<Record<Source, Record<string, string | number>>>
 ) {
   return Object.entries(data).flatMap(([key, entries]) => {
-    const conds = allConditionals(key as CondKey)
-    return Object.entries(entries).map(([k, v]) => conds[k].add(v))
+    const conds = conditionalEntries(key as Source)
+    return Object.entries(entries).map(([k, v]) => conds(k, v))
   })
 }
 
@@ -112,8 +113,8 @@ export function teamData(
   members: readonly Member[]
 ): TagMapNodeEntries {
   const teamEntry = reader.with('et', 'team')
-  const { active, self, teamBuff } = reader.src('agg').withAll('et')
-  const { stackIn, stackInt, stackOut } = reader.withAll('qt')
+  const { active, self, teamBuff } = reader.src('agg').withAll('et', [])
+  const { stackIn, stackInt, stackOut } = reader.withAll('qt', [])
   return [
     // Active Member Buff
     activeMembers.flatMap((dst) => {

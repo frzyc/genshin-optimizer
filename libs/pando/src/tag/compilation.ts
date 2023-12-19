@@ -1,3 +1,4 @@
+import { isDebug } from '../util'
 import { debugTag } from './debug'
 import { TagMapKeys } from './keys'
 import type { Tag, TagCategory, TagValue } from './type'
@@ -82,7 +83,7 @@ export function compileTagMapValues<V>(
     }
     if (!current['']) current[''] = []
     current[''].push(value)
-    if (process.env['NODE_ENV'] !== 'production') {
+    if (isDebug('tag_db')) {
       if (!current[debugTag]) current[debugTag] = []
       current[debugTag].push(tag)
     }

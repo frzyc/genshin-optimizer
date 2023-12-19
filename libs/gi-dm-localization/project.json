@@ -1,0 +1,14 @@
+{
+  "name": "gi-dm-localization",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/gi-dm-localization/src",
+  "projectType": "application",
+  "targets": {
+    "gen-file": {
+      "executor": "@genshin-optimizer/gi-dm-localization:gen-locale",
+      "outputs": ["{projectRoot}/assets/locales"]
+    },
+    "lint": {}
+  },
+  "tags": []
+}

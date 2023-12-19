@@ -91,7 +91,7 @@ export default function LocationFilterMultiAutocomplete({
             key: v,
             label: namesCB(v, silly),
             favorite: isFavorite(v),
-            variant: toVariant(v),
+            color: toVariant(v),
             alternateNames: [namesCB(v, false)],
           })
         )

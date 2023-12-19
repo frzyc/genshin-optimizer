@@ -1,3 +1,4 @@
+import { isDebug } from '../util'
 import type { RawTagMapKeys } from './compilation'
 import type { Tag } from './type'
 
@@ -26,7 +27,7 @@ export class TagMapKeys {
       } = entry
       id[offset] |= word! // non-existent `value` is treated as zero
 
-      if (process.env['NODE_ENV'] !== 'production' && word === undefined)
+      if (isDebug('tag_db') && word === undefined)
         throw `NonExistent tag ${category}:${value}`
     }
     return id
@@ -49,7 +50,7 @@ export class TagMapKeys {
       id[offset] |= word! // non-existent `value` is treated as zero
       maskArr[offset] |= mask
 
-      if (process.env['NODE_ENV'] !== 'production' && word === undefined)
+      if (isDebug('tag_db') && word === undefined)
         throw `NonExistent tag ${category}:${value}`
     }
     return { id, mask: maskArr }
@@ -74,7 +75,7 @@ export class TagMapKeys {
       if (value === null) continue
       id[offset] |= word! // non-existent `value` is treated as zero
 
-      if (process.env['NODE_ENV'] !== 'production' && word === undefined)
+      if (isDebug('tag_db') && word === undefined)
         throw `NonExistent tag ${category}:${value}`
     }
     return { id, firstReplacedByte }

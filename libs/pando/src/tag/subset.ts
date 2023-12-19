@@ -1,3 +1,4 @@
+import { isDebug } from '../util'
 import type { RawTagMapValues } from './compilation'
 import { debugTag } from './debug'
 import type { TagID, TagMapKeys } from './keys'
@@ -58,7 +59,7 @@ class Internal<V> {
     const { '': values, ...remaining } = compiled
     this.children = new Map()
     this.values = values ?? []
-    if (process.env['NODE_ENV'] !== 'production') {
+    if (isDebug('tag_db')) {
       this.tags = remaining[debugTag] ?? []
       delete remaining[debugTag]
     }
@@ -104,7 +105,7 @@ export class TagMapSubsetCache<V> {
   }
   /** List the tags associated with `subset` results. Works only in debug and test modes */
   tags(): Tag[] {
-    if (process.env['NODE_ENV'] === 'production')
+    if (!isDebug('tag_db'))
       throw new Error('Tags are not tracked in production')
     return this.internal.entries.flatMap((x) => x.tags)
   }

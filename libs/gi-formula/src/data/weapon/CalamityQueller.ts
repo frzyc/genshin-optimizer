@@ -1,7 +1,8 @@
 import type { WeaponKey } from '@genshin-optimizer/consts'
 import { allElementKeys } from '@genshin-optimizer/consts'
 import { cmpEq, prod, subscript } from '@genshin-optimizer/pando'
-import { allConditionals, register, self, selfBuff } from '../util'
+import { allNumConditionals, register, self, selfBuff } from '../util'
+import { entriesForWeapon } from './util'
 
 const key: WeaponKey = 'CalamityQueller'
 const dmg_ = [NaN, 0.12, 0.15, 0.18, 0.21, 0.24]
@@ -11,7 +12,7 @@ const {
   common,
   weapon: { refinement },
 } = self
-const { stack } = allConditionals(key)
+const { stack } = allNumConditionals(key, 'sum', true, 0, 6)
 
 const atkInc = prod(
   cmpEq(
@@ -26,6 +27,7 @@ const atkInc = prod(
 
 export default register(
   key,
+  entriesForWeapon(key),
   allElementKeys.map((ele) =>
     selfBuff.premod.dmg_[ele].add(subscript(refinement, dmg_))
   ),

@@ -45,7 +45,7 @@ export const allRelicSetKeys = [
 
 export type RelicSetKey = (typeof allRelicSetKeys)[number]
 
-export const allRelicSubStatKey = [
+export const allRelicSubStatKeys = [
   'hp',
   'atk',
   'def',
@@ -60,9 +60,9 @@ export const allRelicSubStatKey = [
   'brEff_',
 ] as const
 
-export type RelicSubStatKey = (typeof allRelicSubStatKey)[number]
+export type RelicSubStatKey = (typeof allRelicSubStatKeys)[number]
 
-export const allRelicMainStatKey = [
+export const allRelicMainStatKeys = [
   'hp',
   'atk',
   'hp_',
@@ -84,4 +84,4 @@ export const allRelicMainStatKey = [
   'enerRegen_',
 ] as const
 
-export type RelicMainStatKey = (typeof allRelicMainStatKey)[number]
+export type RelicMainStatKey = (typeof allRelicMainStatKeys)[number]

@@ -1,0 +1,27 @@
+{
+  "name": "gi-frontend-gql",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/gi-frontend-gql/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "gen-file": {
+      "command": "npx graphql-codegen --config libs/gi-frontend-gql/codegen.yml",
+      "inputs": ["production", "^production", "gqlschema"]
+    },
+    "codegen": {
+      "command": "npx graphql-codegen --config libs/gi-frontend-gql/codegen.yml"
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/gi-frontend-gql/**/*.{ts,tsx,js,jsx}"]
+      }
+    }
+  },
+  "namedInputs": {
+    "gqlschema": ["{workspaceRoot}/apps/gi-backend/src/app/schema_gen.graphql"]
+  },
+  "implicitDependencies": ["gi-backend"]
+}

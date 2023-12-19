@@ -119,7 +119,7 @@ export function dmgNode(
         unit: '%',
       }),
       input.total[base],
-      ...(specialMultiplier ? [specialMultiplier] : [])
+      ...(specialMultiplier ? [infoMut(specialMultiplier, { unit: '%' })] : [])
     ),
     move,
     additional
@@ -206,7 +206,8 @@ export function healNodeTalent(
   baseMultiplier: number[],
   flat: number[],
   move: 'normal' | 'charged' | 'plunging' | 'skill' | 'burst',
-  additional?: Data
+  additional?: Data,
+  multiplier?: NumNode | number
 ): NumNode {
   const talentType = getTalentType(move)
   const talentIndex = input.total[`${talentType}Index`]
@@ -214,9 +215,10 @@ export function healNodeTalent(
     sum(
       prod(
         subscript(talentIndex, baseMultiplier, { unit: '%' }),
-        input.total[base]
+        input.total[base],
+        ...(multiplier ? [multiplier] : [])
       ),
-      subscript(talentIndex, flat)
+      prod(subscript(talentIndex, flat), ...(multiplier ? [multiplier] : []))
     ),
     additional
   )

@@ -13,3 +13,7 @@ export function getRandomIntInclusive(min: number, max: number) {
 export function getRandomArbitrary(min: number, max: number) {
   return Math.random() * (max - min) + min
 }
+
+export function getRandBool() {
+  return !Math.round(Math.random())
+}

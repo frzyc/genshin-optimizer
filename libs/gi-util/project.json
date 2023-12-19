@@ -5,7 +5,11 @@
   "projectType": "library",
   "targets": {
     "build": {},
-    "build-ts": {},
+    "build-ts": {
+      "options": {
+        "updateBuildableProjectDepsInPackageJson": true
+      }
+    },
     "lint": {},
     "test": {
       "configurations": {

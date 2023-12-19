@@ -25,12 +25,12 @@
           "apps/frontend/src/notification.mp3",
           "apps/frontend/src/assets",
           {
-            "input": "libs/localization/assets",
+            "input": "libs/gi-localization/assets",
             "glob": "**/*",
             "output": "assets"
           },
           {
-            "input": "libs/dm-localization/assets",
+            "input": "libs/gi-dm-localization/assets",
             "glob": "**/*",
             "output": "assets"
           },
@@ -86,15 +86,15 @@
           "hmr": false
         }
       },
-      "dependsOn": ["build-webpack"]
+      "dependsOn": ["^gen-file"]
     },
     "lint": {},
     "test": {}
   },
   "tags": [],
   "implicitDependencies": [
-    "localization",
-    "dm-localization",
+    "gi-localization",
+    "gi-dm-localization",
     "silly-wisher-names"
   ]
 }

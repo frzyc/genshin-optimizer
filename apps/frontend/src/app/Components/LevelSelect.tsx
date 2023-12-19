@@ -50,7 +50,7 @@ export default function LevelSelect({
     else setBoth({ ascension: lowerAscension })
   }, [setBoth, ascensionMaxLevels, ascension, level])
   return (
-    <ButtonGroup sx={{ bgcolor: (t) => t.palette.contentDark.main }}>
+    <ButtonGroup sx={{ bgcolor: (t) => t.palette.contentNormal.main }}>
       <CustomNumberInputButtonGroupWrapper>
         <CustomNumberInput
           onChange={setLevel}
