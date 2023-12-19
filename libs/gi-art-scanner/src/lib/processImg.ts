@@ -82,11 +82,12 @@ export async function processEntry(
     lighterColor(cardWhite),
     false
   )
-  let [whiteCardTop, whiteCardBot] = findHistogramRange(
+  const [whiteCardTop, whiteCardBotOri] = findHistogramRange(
     whiteCardHistogram,
     0.8,
     2
   )
+  let whiteCardBot = whiteCardBotOri
 
   const equipHistogram = histogramContAnalysis(
     imageData,
