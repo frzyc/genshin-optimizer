@@ -29,6 +29,7 @@ Caution: if this is part of nx cache replay,
     // Clone
     const parent = path.dirname(cwd)
     fs.mkdirSync(parent, { recursive: true })
+    execSync(`git lfs install --skip-smudge`, { cwd: parent })
     execSync(`git clone ${url} --depth 1 ${name}`, { cwd: parent })
   }
 
