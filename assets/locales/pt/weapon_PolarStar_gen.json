@@ -6,7 +6,7 @@
   "passiveName": "Pressagiador do Dia",
   "passiveDescription": {
     "0": {
-      "0": "Aumenta o Dano causado por Habilidade Elemental e Supremo em <cryo>12%</cryo>; Depois  que o Ataque Normal, Ataque Carregado, Habilidade Elemental ou Supremo acerta o inimigo, gera 1 efeito \"Estrela Polar da Noite Branca\" por 12s. Quando tiver 1/2/3/4 acúmulos de \"Estrela Polar da Noite Branca\", o ATQ é aumentado em <cryo>10/20/30/48%</cryo>. Os efeitos de \"Estrela Polar da Noite Branca\" gerados por Ataque Normal, Ataque Carregado, Habilidade Elemental ou Supremo são individuais."
+      "0": "Aumenta o Dano causado por Habilidade Elemental e Supremo em <cryo>12%</cryo>; Depois que o Ataque Normal, Ataque Carregado, Habilidade Elemental ou Supremo acerta o inimigo, gera 1 efeito \"Estrela Polar da Noite Branca\" por 12s. Quando tiver 1/2/3/4 acúmulos de \"Estrela Polar da Noite Branca\", o ATQ é aumentado em <cryo>10/20/30/48%</cryo>. Os efeitos de \"Estrela Polar da Noite Branca\" gerados por Ataque Normal, Ataque Carregado, Habilidade Elemental ou Supremo são individuais."
     },
     "1": {
       "0": "Aumenta o Dano causado por Habilidade Elemental e Supremo em <cryo>15%</cryo>; Depois que o Ataque Normal, Ataque Carregado, Habilidade Elemental ou Supremo acerta o inimigo, gera 1 efeito \"Estrela Polar da Noite Branca\" por 12s. Quando tiver 1/2/3/4 acúmulos de \"Estrela Polar da Noite Branca\", o ATQ é aumentado em <cryo>12.5/25/37.5/60%</cryo>. Os efeitos de \"Estrela Polar da Noite Branca\" gerados por Ataque Normal, Ataque Carregado, Habilidade Elemental ou Supremo são individuais."

@@ -129,7 +129,7 @@
       "0": "Erhöht den Schaden, den Lyney den vom <pyro>Pyro-Element</pyro> betroffenen Gegnern zufügt, auf folgende Weise:",
       "1": [
         " Erhöht den Schaden bedingungslos um 60 %.",
-        " Für jede Figur in der Truppe außer Lyney, die die <pyro>Pyro-</pyro>Kraft beherrscht, wird der Schaden zusätzlich um 20 % erhöht."
+        " Für jede Figur in der Truppe außer Lyney, die die <pyro>Pyro</pyro>-Kraft beherrscht, wird der Schaden zusätzlich um 20 % erhöht."
       ],
       "2": "Durch die oben beschriebenen Methoden kann sich der Schaden, den Lyney Gegnern zufügt, die vom <pyro>Pyro-Element</pyro> betroffen sind, um bis zu 100 % erhöhen."
     }

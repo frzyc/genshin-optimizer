@@ -57,7 +57,7 @@
       "8": "Beschwört die „Sängerin der Ströme“, die in regelmäßigen Abständen die LP der in der Nähe befindlichen aktiven Figuren basierend auf den max. LP wiederherstellt.",
       "9": "<br/>",
       "10": "Die Dauer gilt für die „Salonmitglieder“ und die „Sängerin der Ströme“ gemeinsam. Wenn Furina ihren heftigen Schlag einsetzt, um die Aufstellung der Gäste zu ändern, übernehmen die neuen Gäste die verbleibende Dauer.",
-      "11": "Während die „Salonmitglieder“ und die „Sängerin der Ströme“ existieren, kann Furina sich auf Wasseroberflächen bewegen.",
+      "11": "Während die „Salonmitglieder“ oder die „Sängerin der Ströme“ existiert, kann Furina sich auf Wasseroberflächen bewegen.",
       "12": "<br/>",
       "13": "<i>In Furinas Salon solitaire gibt es einen festen Stamm an Gästen. Zu anderen Zeiten kommen Mademoiselle Crabaletta, Surintendante Chevalmarin und Gentilhomme Usher, und an düsteren Mittwochen ist es die Sängerin, die vorbeikommt.</i>"
     },
@@ -171,7 +171,7 @@
       "4": "Arkhe: Ousia",
       "5": "Stellt allen Truppenmitgliedern in der Nähe jede Sekunde LP in Höhe von 4 % der max. LP von Furina wieder her, hält 2,9 s. Verlängert die Wirkungsdauer bei erneutem Auslösen.",
       "6": "Arkhe: Pneuma",
-      "7": "Erhöht den diesmaligen Schaden des Standardangriffs (außer den Angriffen von „Arkhe: Thron der Geistlichkeit und Weltlichkeit“), des heftigen Schlags oder des Angriffs aus dem Fall beim Aufkommen um 25 % der max. LP von Furina. Beim Treffen von Gegnern mit den oben genannten Angriffsmethoden werden 1 % der aktuellen LP aller Truppenmitglieder in der Nähe verbraucht.",
+      "7": "Erhöht den diesmaligen Schaden des Standardangriffs (außer den Angriffen von „Arkhe: Thron der Geistlichkeit und Weltlichkeit“), des heftigen Schlags oder des Angriffs aus dem Fall beim Aufkommen um weitere 25 % der max. LP von Furina. Beim Treffen von Gegnern mit den oben genannten Angriffsmethoden werden 1 % der aktuellen LP aller Truppenmitglieder in der Nähe verbraucht.",
       "8": "<br/>",
       "9": "Während der Wirkungsdauer eines einzelnen „Im Mittelpunkt der Blicke“ kann der oben genannte Effekt höchstens 6-mal ausgelöst werden. Dieser Effekt endet, sobald er 6-mal ausgelöst wurde oder seine Dauer abgelaufen ist."
     }

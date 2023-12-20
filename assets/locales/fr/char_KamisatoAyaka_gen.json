@@ -149,7 +149,7 @@
   "constellation3": {
     "name": "Confettis de fleuraison givrée",
     "description": {
-      "0": "Niveau de compétence <strong>École Kamisato : Givre mortel</strong> +3.",
+      "0": "Niveau d'aptitude <strong>École Kamisato : Givre mortel</strong> +3.",
       "1": "Niveau max : 15"
     }
   },
@@ -162,7 +162,7 @@
   "constellation5": {
     "name": "Lune entre les nuages",
     "description": {
-      "0": "Niveau de compétence <strong>École Kamisato : Fleur de glace</strong> +3.",
+      "0": "Niveau d'aptitude <strong>École Kamisato : Fleur de glace</strong> +3.",
       "1": "Niveau max : 15"
     }
   },

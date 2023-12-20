@@ -42,14 +42,14 @@
   "skill": {
     "name": "Lampe des Dschinns – Sorgenbefreiende Kanone",
     "description": {
-      "0": "Die Lampe feuert eine sorgenbefreiende Kanone auf Gegner ab und verursacht <electro>Elektro-Schaden</electro>.",
-      "1": "Trifft die sorgenbefreiende Kanone, erzeugt sie 2 Kundendienst-Kanonen, die die Gegner automatisch verfolgen und <electro>Elektro-Schaden</electro> verursachen.",
+      "0": "Die Lampe feuert eine sorgenbefreiende Kanonenkugel auf Gegner ab und verursacht <electro>Elektro-Schaden</electro>.",
+      "1": "Trifft die sorgenbefreiende Kanonenkugel, erzeugt sie 2 Kundendienst-Kanonenkugeln, die die Gegner automatisch verfolgen und <electro>Elektro-Schaden</electro> verursachen.",
       "2": "<br/>",
       "3": "<i>Es heißt, dass Dori jede Sorge nehmen kann ... für den richtigen Preis.</i>"
     },
     "skillParams": {
-      "0": "SCH der sorgenbefreienden Kanone",
-      "1": "SCH der Kundendienst-Kanone",
+      "0": "SCH pro sorgenbefreiende Kanonenkugel",
+      "1": "SCH pro Kundendienst-Kanonenkugel",
       "2": "Abklingzeit",
       "3": "",
       "4": "",
@@ -114,7 +114,7 @@
   "passive2": {
     "name": "Zinseszinsen",
     "description": {
-      "0": "Stellt Dori pro 100 % Aufladerate, die sie besitzt, 5 Punkte Elementarenergie wieder her, wenn sorgenbefreiende Kanonen oder Kundendienst-Kanonen der Fähigkeit <strong>Lampe des Dschinns – Sorgenbefreiende Kanone</strong> Gegner treffen.",
+      "0": "Stellt Dori pro 100 % Aufladerate, die sie besitzt, 5 Punkte Elementarenergie wieder her, wenn sorgenbefreiende Kanonenkugeln oder Kundendienst-Kanonenkugeln der Fähigkeit <strong>Lampe des Dschinns – Sorgenbefreiende Kanone</strong> Gegner treffen.",
       "1": "Bis zu 15 Punkte Elementarenergie können auf diese Weise höchstens einmal pro Lampe des Dschinns – Sorgenbefreiende Kanone wiederhergestellt werden."
     }
   },
@@ -127,7 +127,7 @@
   "constellation1": {
     "name": "Zusatzinvestition",
     "description": {
-      "0": "Erhöht die Anzahl der beim Treffen mit der <strong>sorgenbefreienden Kanone</strong> entstehenden Kundendienst-Kanonen um 1."
+      "0": "Erhöht die Anzahl der beim Treffen von <strong>sorgenbefreienden Kanonenkugeln</strong> entstehenden Kundendienst-Kanonenkugeln um 1."
     }
   },
   "constellation2": {

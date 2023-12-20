@@ -1,0 +1,24 @@
+{
+  "name": "Mega Ultra Espada Mágica do Soberano",
+  "description": {
+    "0": "Uma espada mágica que só pode ser empunhada por quem comandar os mares. Como foi feita com materiais especiais à prova d'água, não ficará encharcada mesmo que seja mergulhada na água. Pode-se dizer que ela é invencível!"
+  },
+  "passiveName": "Você consegue!",
+  "passiveDescription": {
+    "0": {
+      "0": "Aumenta o ATQ em <cryo>12%</cryo>. Mas não só isso! As Melusines da Vila Marusea lhe oferecem todo seu apoio, de forma que segundo a quantidade de Melusines que você já ajudou, o ATQ pode aumentar em até <cryo>12%</cryo> a mais."
+    },
+    "1": {
+      "0": "Aumenta o ATQ em <cryo>15%</cryo>. Mas não só isso! As Melusines da Vila Marusea lhe oferecem todo seu apoio, de forma que segundo a quantidade de Melusines que você já ajudou, o ATQ pode aumentar em até <cryo>15%</cryo> a mais."
+    },
+    "2": {
+      "0": "Aumenta o ATQ em <cryo>18%</cryo>. Mas não só isso! As Melusines da Vila Marusea lhe oferecem todo seu apoio, de forma que segundo a quantidade de Melusines que você já ajudou, o ATQ pode aumentar em até <cryo>18%</cryo> a mais."
+    },
+    "3": {
+      "0": "Aumenta o ATQ em <cryo>21%</cryo>. Mas não só isso! As Melusines da Vila Marusea lhe oferecem todo seu apoio, de forma que segundo a quantidade de Melusines que você já ajudou, o ATQ pode aumentar em até <cryo>21%</cryo> a mais."
+    },
+    "4": {
+      "0": "Aumenta o ATQ em <cryo>24%</cryo>. Mas não só isso! As Melusines da Vila Marusea lhe oferecem todo seu apoio, de forma que segundo a quantidade de Melusines que você já ajudou, o ATQ pode aumentar em até <cryo>24%</cryo> a mais."
+    }
+  }
+}

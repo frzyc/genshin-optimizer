@@ -1,0 +1,29 @@
+{
+  "setName": "Canto di giorni che furono",
+  "setEffects": {
+    "2": "Bonus di guarigione +15%.",
+    "4": "Quando il personaggio che equipaggia il set apporta effetti di guarigione a un membro del gruppo, attiva l'effetto Anelito per 6 s, che registra gli effetti di guarigione totali apportati (inclusi quelli che superano il limite di guarigione massimo). Al termine della sua durata, Anelito si converte in \"Onde di giorni che furono\": quando il membro attivo del tuo gruppo colpisce un nemico con un attacco normale, caricato o in picchiata, o con un'abilità o un Tripudio elementale, infligge DAN aumentati di un 8% della guarigione totale registrata da Anelito. L'effetto \"Onde di giorni che furono\" termina dopo 5 attivazioni o trascorsi 10 s. Una singola iterazione di Anelito è in grado di registrare fino a 15.000 PS derivanti dalla guarigione, e il gruppo può avere un'unica iterazione attiva; tuttavia, Anelito può registrare gli effetti di guarigione apportati da più membri del gruppo che equipaggiano il set. Anelito può essere attivato anche se i membri in questione non sono in campo."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Giuramento dimenticato di giorni che furono",
+      "desc": "Un accessorio dalla forma di un fiore che non avvizzisce, plasmato con larimar e argento scintillante. In molti sembrano ritenerlo ancora oggi un simbolo di resistenza."
+    },
+    "plume": {
+      "name": "Ricordo di giorni che furono",
+      "desc": "Una piuma ornativa a forma di farfalla, realizzata in argento e cristalli color azzurro. Si dice che, in un remoto passato, simboleggiasse un giuramento di unione eterna."
+    },
+    "sands": {
+      "name": "Suono riecheggiante di giorni che furono",
+      "desc": "Una clessidra dalla forma inconsueta, fabbricata con giada e lazurite. Si dice sia ispirata alla torre campanaria che svetta a Petrichor."
+    },
+    "goblet": {
+      "name": "Sogno promesso di giorni che furono",
+      "desc": "Uno sfarzoso contenitore che riprende la forma del leggendario \"Puro Graal\". Si dice possa esaudire i desideri di chi ha un cuore virtuoso."
+    },
+    "circlet": {
+      "name": "Poesia di giorni che furono",
+      "desc": "Un copricapo formale, un tempo in voga tra gli autori lirici di Fontaine. Pare che la sua piuma decorativa sia ispirata agli elmi indossati dai leggendari cavalieri di Loch."
+    }
+  }
+}

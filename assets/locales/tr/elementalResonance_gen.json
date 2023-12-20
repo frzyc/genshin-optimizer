@@ -13,7 +13,7 @@
   },
   "ShatteringIce": {
     "name": "Kırıcı Buz",
-    "desc": "Elektrik etkisinde kalma süresini %40 kısaltır. Donma veya Buz etkisindeki düşmanlara karşı Kritik Oranı %15 artırır."
+    "desc": "Elektrik etkisinde kalma süresini %40 kısaltır. Donma veya Buz etkisindeki düşmanlara karşı Kritik Oranını %15 artırır."
   },
   "HighVoltage": {
     "name": "Yüksek Gerilim",

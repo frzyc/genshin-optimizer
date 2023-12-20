@@ -1,0 +1,24 @@
+{
+  "name": "\"Ultimate Overlord's Mega Magic Sword\"",
+  "description": {
+    "0": "Pedang ajaib yang hanya bisa digunakan oleh penguasa tertinggi di laut. Karena menggunakan bahan tahan air khusus, pedang ini tidak akan rusak meskipun terendam di dalam air ... Pedang ini hampir bisa dianggap tak terkalahkan!"
+  },
+  "passiveName": "Melussistance!",
+  "passiveDescription": {
+    "0": {
+      "0": "ATK meningkat <cryo>12%</cryo>. Bukan hanya itu! Para Melusine dari Merusea Village yang pernah kamu bantu menyemangatimu dengan penuh semangat, dan berdasarkan jumlah mereka, ATK-mu akan mendapatkan peningkatan tambahan hingga <cryo>12%</cryo>."
+    },
+    "1": {
+      "0": "ATK meningkat <cryo>15%</cryo>. Bukan hanya itu! Para Melusine dari Merusea Village yang pernah kamu bantu menyemangatimu dengan penuh semangat, dan berdasarkan jumlah mereka, ATK-mu akan mendapatkan peningkatan tambahan hingga <cryo>15%</cryo>."
+    },
+    "2": {
+      "0": "ATK meningkat <cryo>18%</cryo>. Bukan hanya itu! Para Melusine dari Merusea Village yang pernah kamu bantu menyemangatimu dengan penuh semangat, dan berdasarkan jumlah mereka, ATK-mu akan mendapatkan peningkatan tambahan hingga <cryo>18%</cryo>."
+    },
+    "3": {
+      "0": "ATK meningkat <cryo>21%</cryo>. Bukan hanya itu! Para Melusine dari Merusea Village yang pernah kamu bantu menyemangatimu dengan penuh semangat, dan berdasarkan jumlah mereka, ATK-mu akan mendapatkan peningkatan tambahan hingga <cryo>21%</cryo>."
+    },
+    "4": {
+      "0": "ATK meningkat <cryo>24%</cryo>. Bukan hanya itu! Para Melusine dari Merusea Village yang pernah kamu bantu menyemangatimu dengan penuh semangat, dan berdasarkan jumlah mereka, ATK-mu akan mendapatkan peningkatan tambahan hingga <cryo>24%</cryo>."
+    }
+  }
+}

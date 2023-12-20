@@ -36,7 +36,7 @@
   "addEleDMG": "DAN elementali aggiuntivi",
   "hpRegenPerHit": "RIGEN PS per colpo",
   "press": {
-    "dmg": "DAN variante a pressione",
+    "dmg": "DAN da pressione",
     "cd": "TdR pressione"
   },
   "hold": {

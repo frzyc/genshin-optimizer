@@ -17,8 +17,8 @@
   },
   "plunging": {
     "dmg": "DMG Selama Plunging",
-    "low": "DMG Plunging Attack Min.",
-    "high": "DMG Plunging Attack Maks."
+    "low": "DMG Plunging Attack Rendah",
+    "high": "DMG Plunging Attack Tinggi"
   },
   "maxDuration": "Durasi Maksimum",
   "maxStacks": "Lapisan Maks.",

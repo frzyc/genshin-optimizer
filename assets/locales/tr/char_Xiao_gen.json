@@ -118,7 +118,7 @@
     }
   },
   "passive3": {
-    "name": "Yorulmaz Tırmanıcı",
+    "name": "Doğaüstü: Yorulmaz Tırmanıcı",
     "description": {
       "0": "Kendi grup üyelerinin tırmanma Dayanıklılık tüketimini %20 azaltır.",
       "1": "Aynı etkiyi veren Pasif Yeteneklerle birikmez."

@@ -397,6 +397,20 @@
       "1": "Uma recompensa preciosa que pode ser desbloqueada no evento \"Aventuras Fantásticas de Thelxie\"."
     }
   },
+  "TheaterTickets": {
+    "name": "Bilhetes de Teatro",
+    "description": {
+      "0": "Bilhetes de lembrança feitos primorosamente para lembrar a participação nos vários eventos relacionados ao Festival de Cinema de Fontinalia. Esses bilhetes são ditos terem uma textura similar a lâminas de filme. Claro como cristal ao refletir luz, eles não lembram nada tanto quanto fragmentos de gema finos...",
+      "1": "Durante o período do evento \"Rosas e Pistolas\", use isso para desbloquear os vários tipos de recompensas."
+    }
+  },
+  "FilmForFun": {
+    "name": "Filmes Divertidos",
+    "description": {
+      "0": "Moedas de lembranças em formato de rolos de filme. Essas são lembranças que podem ser acumuladas e ganhas por participação no Festival de Cinema de Fontinalia. Elas não podem ser colocadas em dispositivos especializados para reproduzir filmes emocionantes, claro, mas seus designs únicos sem dúvidas levantarão os espíritos das pessoas com lembretes do que viram durante aquele festival...",
+      "1": "Elas podem ser usadas para resgatar todo tipo de recompensas durante o evento \"Rosas e Pistolas\"."
+    }
+  },
   "Primogem": {
     "name": "Gema Essencial",
     "description": {
@@ -1026,11 +1040,27 @@
   },
   "Charlotte": {
     "name": "Charlotte",
-    "description": {}
+    "description": {
+      "0": "A jornalista cheia de energia do Pássaro a Vapor, sempre correndo atrás da \"verdade\"."
+    }
   },
   "Furina": {
     "name": "Furina",
-    "description": {}
+    "description": {
+      "0": "O foco absoluto em cima do palco durante um julgamento, até o momento das cortinas caírem e dos aplausos soarem."
+    }
+  },
+  "Chevreuse": {
+    "name": "Chevreuse",
+    "description": {
+      "0": "A capitã da Patrulha de Segurança e Monitoramento Especial, que tem a justiça como uma insígnia eterna em seu coração. Seu mosquete só aponta contra os culpados."
+    }
+  },
+  "Navia": {
+    "name": "Navia",
+    "description": {
+      "0": "A atual Presidente da Spina di Rosula, é a patroa adorável e responsável."
+    }
   },
   "KamisatoAyakasStellaFortuna": {
     "name": "Stella Fortuna de Kamisato Ayaka",
@@ -1486,6 +1516,18 @@
     "name": "Stella Fortuna de Furina",
     "description": {
       "0": "Material de Ativação da Constelação de Furina"
+    }
+  },
+  "ChevreusesStellaFortuna": {
+    "name": "Stella Fortuna de Chevreuse",
+    "description": {
+      "0": "Material de Ativação da Constelação de Chevreuse"
+    }
+  },
+  "NaviasStellaFortuna": {
+    "name": "Stella Fortuna de Navia",
+    "description": {
+      "0": "Material de Ativação da Constelação de Navia"
     }
   },
   "GnosticHymnOldNotes": {
@@ -2601,7 +2643,7 @@
   "HilichurlBalladSelectionII": {
     "name": "Antologia de Poemas de Hilichurls (II)",
     "description": {
-      "0": "O vinho e os poemas fazem parte do estilo de vida do Hilichurl? Eles possuem desejos puros e devotos? Especiliasta de Hilichurls, Jacob Musk tem as respostas para você!"
+      "0": "O vinho e os poemas fazem parte do estilo de vida do Hilichurl? Eles possuem desejos puros e devotos? Especialista de Hilichurls, Jacob Musk tem as respostas para você!"
     }
   },
   "VerasMelancholyV": {
@@ -3793,7 +3835,7 @@
   "ValleyWeaverEssentialOil": {
     "name": "Óleo Essencial de \"Tecedor dos Vales\"",
     "description": {
-      "0": "A Essência das Flores de Seda decoctadas. Pode ser refinado ainda mais em perfume. Exala um perfume intenso."
+      "0": "A Essência das Flores de Seda fervida. Pode ser refinada ainda mais em perfume. Exala um perfume intenso."
     }
   },
   "FatesYearningEssentialOil": {
@@ -3830,7 +3872,7 @@
   "ValleyWeaverPerfume": {
     "name": "Perfume de \"Tecedor dos Vales\"",
     "description": {
-      "0": "Um perfume decoctado de uma espécie especial de Flor de Seda.",
+      "0": "Um perfume feito por decocção de uma espécie especial de Flor de Seda.",
       "1": "Ele libera um aroma espesso e opressivo. Dizem que é muito popular entre as filhas de famílias ricas."
     }
   },
@@ -4628,7 +4670,7 @@
   "GreatSnowboarKingMeat": {
     "name": "Carne do Grande Rei Javali da Neve",
     "description": {
-      "0": "Rica em gordura e com um maravilhoso sabor. Essa carne é excepcionalmente deliciosa, independentmenete da técnica que se usa para cozinhá-la.",
+      "0": "Rica em gordura e com um maravilhoso sabor. Essa carne é excepcionalmente deliciosa, independentemente da técnica que se usa para cozinhá-la.",
       "1": "Apenas os javalis mais fortes e que viveram uma longa vida merecem o título de \"rei\"."
     }
   },
@@ -5267,7 +5309,7 @@
     }
   },
   "CyrusLetterToIris": {
-    "name": "Carta de Cryus para Yuxia",
+    "name": "Carta de Cryus para Iris",
     "description": {
       "0": "Esta longa carta nos deixa curiosos quanto ao que Cyrus escreveu nela... Mas não é muito apropriado ler as cartas privadas entre um irmão e uma irmã, não é mesmo?"
     }
@@ -5275,7 +5317,7 @@
   "PictureOfDragonspine": {
     "name": "Foto da Espinha do Dragão",
     "description": {
-      "0": "Uma foto tirada para Yuxia com uma paisagem de fundo da Montanha Nevada."
+      "0": "Uma foto tirada para Iris com uma paisagem de fundo da Montanha Nevada."
     }
   },
   "TheCruxClashChampionMedal": {
@@ -9934,7 +9976,7 @@
     "description": {
       "0": "Material de Elevação de Talento.",
       "1": "A costa da nação da água é a justiça.",
-      "2": "Justiça é a fundação de Fontaine. Justiça requer o apoío contínuo da moralidae e da lei, e a moralidade e a lei mudam constantemente segundo os invariáveis princípios da justiça."
+      "2": "Justiça é a fundação de Fontaine. Justiça requer o apoio contínuo da moralidade e da lei, e a moralidade e a lei mudam constantemente segundo os invariáveis princípios da justiça."
     }
   },
   "TeachingsOfJustice": {
@@ -11108,7 +11150,7 @@
   "SuspiciousTianshuMeat": {
     "name": "Carne de Tianshu Estranha",
     "description": {
-      "0": "Um prato de carne assada. Foi cozido por muito tempo, resultando em uma carne muito macia. Os cortes expessos são gordurosos o suficiente para causar palpitações, e você mal consegue enrolá-los nas pequenas pétalas de Qingxin."
+      "0": "Um prato de carne assada. Foi cozido por muito tempo, resultando em uma carne muito macia. Os cortes espessos são gordurosos o suficiente para causar palpitações, e você mal consegue enrolá-los nas pequenas pétalas de Qingxin."
     }
   },
   "TianshuMeat": {
@@ -11894,7 +11936,7 @@
   "RiceCakeSoup": {
     "name": "Cozido Misto do Mercado",
     "description": {
-      "0": "Uma comida comum das cidades. Os ingredientes foram mergulhados na sopa, fazendo-os apetitosos.  Dizem que no começo, esses prato tinha apenas alguns ingredientes, mas outros foram adicionados com o tempo, resultando na sua forma atual."
+      "0": "Uma comida comum das cidades. Os ingredientes foram mergulhados na sopa, fazendo-os apetitosos. Dizem que no começo, esses pratos tinham apenas alguns ingredientes, mas outros foram adicionados com o tempo, resultando na sua forma atual."
     }
   },
   "DeliciousRiceCakeSoup": {
@@ -12602,7 +12644,7 @@
   "DeliciousPitaPocket": {
     "name": "Pão Pita Delicioso",
     "description": {
-      "0": "Um Pão Pita com vários recheios. O molho é como uma luz que acentua o charme dos ingredientes no centro do palco. A crocância da carne e dos legumes tem uma proporção perfeita e fazem desta “bolsinha cheia de comida” um chapéu mágico cheio de tesouros num espetáculo de magia repleta de surpresas."
+      "0": "Um Pão Pita com vários recheios. O molho é como uma luz que acentua o charme dos ingredientes no centro do palco. A crocância da carne e dos legumes tem uma proporção perfeita e fazem desta \"bolsinha cheia de comida\" um chapéu mágico cheio de tesouros num espetáculo de magia repleta de surpresas."
     }
   },
   "SuspiciousPanipuri": {
@@ -13737,7 +13779,7 @@
   "SuspiciousCassoulet": {
     "name": "Cassoulet Estranho",
     "description": {
-      "0": "Um cozido rústico simples. Apesar da aparência parecer ok, enquanto come, você percebe um gosto levemente queimado, antes de perceber que a camada do fundo dos ingredientes queimou tanto que se fundiu com a panela. Ugh... Lembre o chef de mexer os ingredientes ocasionalmente ao cozinhar..."
+      "0": "Um cozido simples e rústico. Embora tenha uma boa aparência de relance, conforme você começa a comer, você percebe um gosto levemente queimado, antes de perceber que a camada do fundo dos ingredientes ficou tão queimada que todos se fundiram à panela. Ugh... da próxima vez, mexa os ingredientes ocasionalmente enquanto cozinha..."
     }
   },
   "Cassoulet": {
@@ -13828,6 +13870,72 @@
     "name": "Furo Exclusivo: Coluna Gourmet",
     "description": {
       "0": "Especialidade de Charlotte. São lanches que ela leva consigo na sua busca incessável por furos exclusivos. Ela olha para os lados, e o ritmo excitado de seus passos lentamente se sobrepõe com o som do peixe frito crocante na sua boca... Apesar dessa notícia de última hora ainda ter que virar uma história finalizada, a alegria no seu coração já chegou ao limite."
+    }
+  },
+  "SuspiciousFeastOs": {
+    "name": "Redondinho Estranho",
+    "description": {
+      "0": "Um lanche frito dourado, do qual o excesso de óleo foi drenado após muito tempo e esforço árduo, apenas para resultar em uma bagunça empapada carente de qualquer crocância. Hmm... Talvez as gaivotas na costa estejam dispostas a aceitar esta oferta fraca?"
+    }
+  },
+  "FeastOs": {
+    "name": "Redondinho",
+    "description": {
+      "0": "Um lanche frito dourado. Frango desfiado é posto em um formato oval, formando um \"O\" com um buraco ao combiná-lo com anéis de cebola. Peixe desfiado e batatas são combinadas similarmente em círculos, fazendo a carne do \"Redondinho\". Coloque-as na panela cheia de óleo e veja só, prontinho — seus \"Redondinhos\" nascem entre a fritura estalante."
+    }
+  },
+  "DeliciousFeastOs": {
+    "name": "Redondinho Delicioso",
+    "description": {
+      "0": "Um delicioso lanche frito dourado. Acabaram de ser fritos e são totalmente fragrantes, prontos para chacoalhar o apetite. Com o anel em sua mão esquerda e o círculo na direita, observe, a marca da crocância está ao seu alcance. Devore! Que o sabor preencha sua boca."
+    }
+  },
+  "SuspiciousRainbowMacarons": {
+    "name": "Macaron Arco-Íris Estranho",
+    "description": {
+      "0": "Doces redondos e pequenos multicoloridos. O primeiro parece vazio, o segundo está inclinado, o terceiro desigual e o quarto é uma combinação inconstante... Como esperado de uma sobremesa de Fontaine ditada por dúzias de detalhes, isso precisará de mais esforço para ser dominado."
+    }
+  },
+  "RainbowMacarons": {
+    "name": "Macaron Arco-Íris",
+    "description": {
+      "0": "Doces redondos e pequenos multicoloridos. Tem um ditado em Fontaine que uma mesa de sobremesa sem macarons é como muitas águas sem sua fonte. Esqueça os chefs de sobremesa nas cozinhas de Fontaine — até quem cozinha por passatempo nas ruas saberia desse ditado de cor."
+    }
+  },
+  "DeliciousRainbowMacarons": {
+    "name": "Macaron Arco-Íris Delicioso",
+    "description": {
+      "0": "Doces redondos e pequenos multicoloridos. A casca crocante envolve um recheio espesso e macio, e tudo está em paz no mundo. Experimente um e será como se um filhotinho de gato tivesse colocado seu nariz em seu peito. Com certeza ninguém ficaria inabalado pela experiência."
+    }
+  },
+  "SinTheKindThatDoesntNeedToBeDealtWith": {
+    "name": "Pecado: O Tipo que Não Precisa Ser Resolvido",
+    "description": {
+      "0": "Especialidade de Chevreuse. Há algo indubitavelmente \"pecaminoso\" sobre esse prato de um ponto de vista de saúde. Como líder da Patrulha de Segurança e Monitoramento Especial, ela não entregará levianamente a tarefa de lidar com os pecados dos outros — essa é uma questão de profissionalismo e ética pessoal, afinal. Mas às vezes, compartilhar tais deveres com alguém que ela confia plenamente é um... jeito aceitável de aliviar o estresse."
+    }
+  },
+  "PickWhatYouLike": {
+    "name": "\"Escolha o Que Quiser!\"",
+    "description": {
+      "0": "Especialidade de Navia. \"Vamos, escolha o que quiser!\" Junto aos familiares gritos de alegria, você vê perante seus olhos a mesa de sobremesa de duas camadas esteticamente agradável e as belas fileiras de macarons com expressões diferentes pintadas neles. Um pensamento fascina você de repente... Que expressão Navia faria se você roubasse todos eles para si em um repentino lampejo de ganância?"
+    }
+  },
+  "SuspiciousFontinaliaMousse": {
+    "name": "Mousse Fontinalia Estranha",
+    "description": {
+      "0": "Um verdadeiro lanche azul do Festival Fontinalia. Dito isso, uma verdadeira tragédia parece ter caído sobre essa porção, lembrando nada além de uma Flor Gigante Cryo... Você tem certeza que as Flores da Luz do Lago nesse não eram, na verdade, Flores Gigantes? Hmm, melhor você se livrar disso discretamente... servir um prato como esse durante o festival pode ser uma ofensa passível de punição legal!"
+    }
+  },
+  "FontinaliaMousse": {
+    "name": "Mousse Fontinalia",
+    "description": {
+      "0": "Um verdadeiro lanche azul do Festival Fontinalia. Essa mousse tem formato da imagem da Flor da Luz do Lago. Após os costumes do Festival serem mudados para se alinharem mais com o deleite de sobremesas, rapidamente se tornou uma comida muito apreciada em Fontaine. Não se esqueça de compartilhá-la com todas as pessoas que aparecerem perguntando por \"doces ou julgamento\"."
+    }
+  },
+  "DeliciousFontinaliaMousse": {
+    "name": "Mousse Fontinalia Deliciosa",
+    "description": {
+      "0": "Um verdadeiro lanche azul do Festival Fontinalia. Sua coloração cristalina não ficaria para trás se comparada à luz dispersa pelas ondas quebrando. Sua elegância leve é como pétalas caindo, e sua sensação areada na boca é como um floco de neve derretendo em sua garganta. Comer tal iguaria certamente deve ser a coisa mais adorável que poderia acontecer durante o Festival!"
     }
   },
   "RecipeItem": {
@@ -14881,6 +14989,24 @@
       "0": "Receita passo a passo detalhada de como fazer Profiterole Rotundo"
     }
   },
+  "RecipeFeastOs": {
+    "name": "Receita: Redondinho",
+    "description": {
+      "0": "Uma receita passo a passo detalhada para fazer Redondinho."
+    }
+  },
+  "RecipeRainbowMacarons": {
+    "name": "Receita: Macaron Arco-Íris",
+    "description": {
+      "0": "Uma receita passo a passo detalhada para fazer Macaron Arco-Íris."
+    }
+  },
+  "RecipeFontinaliaMousse": {
+    "name": "Receita: Mousse Fontinalia",
+    "description": {
+      "0": "Uma receita passo a passo detalhada para fazer Mousse Fontinalia."
+    }
+  },
   "CraftedItems": {
     "name": "Produtos Combinados",
     "description": {
@@ -15425,7 +15551,7 @@
     "name": "Protetor de Mão Velho",
     "description": {
       "0": "Um protetor de mão gasto que estava em uma lâmina de Inazuma.",
-      "1": "Para aqueles que são adeptos na esgrima, o tsuba é a defesa contra  a lâmina de um oponente. Para iniciantes, é uma defesa contra eles mesmos."
+      "1": "Para aqueles que são adeptos na esgrima, o tsuba é a defesa contra a lâmina de um oponente. Para iniciantes, é uma defesa contra eles mesmos."
     }
   },
   "KageuchiHandguard": {
@@ -15966,7 +16092,7 @@
       "1": "\"Eu tive um sonho muito, muito longo\".",
       "2": "\"Sonhei que você e eu nos encontrávamos no mundo puro branco que criamos\".",
       "3": "\"Mas eu acordei. Eu há muito tempo fui consumida pelas chamas incandescentes. Você há muito tempo retornou para a terra junto com aquele sangue envenenado\".",
-      "4": "\"Nada disso importa mais agora. Eu devo continuar forjando em frente. Devo incinerar tudo atrás de mim. Devo acreditar naquele puro, limpo e eterno reino que ele falou, que eu vi na 'Ilusão' que ele me deixou ver, no final do horizonte, no sonho de Vossa Majestade\"."
+      "4": "\"Nada disso importa mais agora. Eu devo continuar avançando. Devo incinerar tudo atrás de mim. Devo acreditar naquele puro, limpo e eterno reino que ele falou, que eu vi na 'Ilusão' que ele me deixou ver, no final do horizonte, no sonho de Vossa Majestade\"."
     }
   },
   "HellfireButterfly": {
@@ -16010,7 +16136,7 @@
     "name": "Barbatana Falsa do Dragão Herdeiro das Profundezas",
     "description": {
       "0": "Um pedaço de tecido biológico que você encontrou após derrotar os Dragartos das Profundezas.",
-      "1": "Embora pareça uma barbatana de algum tipo, na verdade não tem nenhuma função.",
+      "1": "Embora pareça uma barbatana de algum tipo, na verdade, não tem nenhuma função.",
       "2": "O povo do Reino de Byakuya investigou profundamente os Dragartos das Profundezas. Sua habilidade mais distinta foi a capacidade de escolher quais características desejava transmitir à sua prole. Por causa do seu grande ódio pela humanidade, estes talvez percam qualquer acuidade visual no momento em que atingirem a maturidade. Ao mesmo tempo, eles também desenvolveram um certo grau de polimorfismo elemental para fins de combate."
     }
   },
@@ -17658,7 +17784,7 @@
   "SacredSealGrandDoor": {
     "name": "Selo Sagrado: Porta Gigante",
     "description": {
-      "0": "Uma tabuleta de pedra com textos antigos. Ela parece ter sido parte de algum edifício. Nas areias do deserto dormem vários desejos desconhecidos, e quem hoje os carrega? O símbolo é a silhueta de de uma porta de pedra de um palácio antigo."
+      "0": "Uma tabuleta de pedra com textos antigos. Ela parece ter sido parte de algum edifício. Nas areias do deserto dormem vários desejos desconhecidos, e quem hoje os carrega? O símbolo é a silhueta de uma porta de pedra de um palácio antigo."
     }
   },
   "MysteriousStoneSlateI": {
@@ -19083,6 +19209,24 @@
       "0": "Um pequeno livro de contos muito popular em Fontaine. Sua bela capa fez mais de uma criança acreditar que o livro tinha sido escrito pelo lendário e benevolente Ganso de Asas Nevadas."
     }
   },
+  "TheTwoMusketeersI": {
+    "name": "Os Dois Mosqueteiros I",
+    "description": {
+      "0": "Um livro popular em Fontaine que conta uma história de conspiração e vingança, de justiça e maldade."
+    }
+  },
+  "TheTwoMusketeersII": {
+    "name": "Os Dois Mosqueteiros II",
+    "description": {
+      "0": "Um livro popular em Fontaine que conta uma história de conspiração e vingança, de justiça e maldade."
+    }
+  },
+  "TheTwoMusketeersIII": {
+    "name": "Os Dois Mosqueteiros III",
+    "description": {
+      "0": "Um livro popular em Fontaine que conta uma história de conspiração e vingança, de justiça e maldade."
+    }
+  },
   "GiftOfParting": {
     "name": "Presente de Despedida",
     "description": {
@@ -19113,7 +19257,7 @@
     "name": "Espada Sagrada da Cruz de Narcissus",
     "description": {
       "0": "Uma espada sagrada que possui um significado especial em uma certa história.",
-      "1": "Não pertece a ninguém."
+      "1": "Não pertence a ninguém."
     }
   },
   "GreenFeatherAccessory": {
@@ -19632,14 +19776,14 @@
     }
   },
   "34thIndependentInvestigativeSquadDeploymentInMontEsusEasternQuadrantDeploymentPlan": {
-    "name": "Planejamento de Implantação da 34ª Equipe de Investigação Independente na Floresta de Mont Esus (Quadrante Leste)",
+    "name": "Planejamento de Implantação da 34ª Equipe de Investigação Independente na Floresta de Mont Esus (Quadrante Oriental)",
     "description": {}
   },
   "SkirmishersNotes": {
     "name": "Anotações do Escaramuçador",
     "description": {}
   },
-  "34thIndependentInvestigativeSquadDeploymentInMontEsusEasternQuadrantDisplinaryProcedures": {
+  "34thIndependentInvestigativeSquadDeploymentInMontEsusEasternQuadrantDisciplinaryProcedures": {
     "name": "Procedimentos Disciplinares para a Implantação da 34ª Equipe de Investigação Independente na Floresta de Mont Esus (Quadrante Leste)",
     "description": {}
   },
@@ -19996,7 +20140,7 @@
   "StrangelyShapedKey": {
     "name": "Chave com Estilo Estranho",
     "description": {
-      "0": "A chave encontrada com um membro da facção derrubada de Romov parece ser o dispositivo usado para acionar o explosivo de emergência."
+      "0": "A chave encontrada com um membro da facção derrubada de Romeu parece ser o dispositivo usado para acionar o explosivo de emergência."
     }
   },
   "RecommendationLetter": {
@@ -20061,6 +20205,14 @@
       "0": "Uma das chaves usadas para abrir a cerca de ferro instalada no navio destruído."
     }
   },
+  "AratakiGangsInstantRamen": {
+    "name": "Lámen Instantâneo da Gangue Arataki",
+    "description": {
+      "0": "Um presente de Kuki Shinobu após ajudar o Verdadeiro Rei das Batalhas de Besouros a se fortalecer e encontrar novos caminhos na Batalha de Besouros no Esplendoroso Acampamento de Batalha de Besouros do Arataki.",
+      "1": "Blocos de lámen secos são colocados em uma caixa resistente, porém leve, com condimentos selados, utensílios excepcionalmente rígidos e uma tigela. Coloque o lámen e os condimentos na tigela, então coloque água quente para fazer uma tigela de lámen rapidamente que não é nada mau. Conveniente, não é?",
+      "2": "Mas segundo a carta que Kuki Shinobu deixou na caixa, nem ela, nem Arataki Itto puderam comer isso durante sua jornada pela água até Liyue, porque eles só trouxeram biscoitos e picles. Durante sua estadia em Liyue, Kuki Shinobu se inspirou pelas comidas de trigo lá e criou esse lámen instantâneo para que a Mão Direita do Rei Oni e Melão de Lavanda Destruidora do Céu pudessem combater sua fome durante suas viagens..."
+    }
+  },
   "FoggyForestBranch": {
     "name": "Galho da Floresta Nevoenta",
     "description": {
@@ -20111,12 +20263,25 @@
       "0": "Mensagem Estranha"
     }
   },
+  "AutumnsGift": {
+    "name": "Presente de Autumn",
+    "description": {
+      "0": "Um brinquedo musical vendido na Casa de Curiosidades de Bertin. É muito popular entre as crianças. Este parece ter sido comprado há muito tempo e já não é o modelo mais recente disponível na loja.",
+      "1": "Presentes são feitos para serem dados às pessoas, e se não podem ser enviados para seu destino original, pelo menos devem ser deixados com alguém que saiba apreciá-los."
+    }
+  },
   "MysteriousXenochromaticCrystal": {
     "name": "Cristal Caleidoscópico Misterioso",
     "description": {
-      "0": "Um cristal enorme obtido ao derrotar uma Aberração Primordial extremamente poderosa na Região Mortaine.",
+      "0": "Um cristal enorme obtido ao derrotar uma Aberração Primordial extremamente poderosa.",
       "1": "O poder que ele contém é mais misterioso do que Cristais Caleidoscópicos comuns.",
       "2": "Talvez alguém esteja disposto a pagar o preço certo por isso."
+    }
+  },
+  "RecruitmentNotice": {
+    "name": "Anúncio de Recrutamento",
+    "description": {
+      "0": "Um formulário com instruções preenchidas pelo requerente, Benoit Leroy. Um mapa foi anexado à coluna de endereços."
     }
   },
   "MapFragment": {
@@ -20158,6 +20323,31 @@
   "Log": {
     "name": "Registro",
     "description": {}
+  },
+  "ShootingPracticeOpticalLenses": {
+    "name": "Lentes Ópticas de Prática de Tiro",
+    "description": {
+      "0": "Um dispositivo óptico fornecido por uma membro da Patrulha de Segurança e Monitoramento Especial, Turenna. Parece usar algumas técnicas de imagem difíceis de entender, em conjunto com o dispositivo de mesa de areia da \"Zona de Tiro em Arco de Defesa de Mil Passos\", serve para simular o uso de um mosquete para ser disparado nos inimigos.",
+      "1": "Embora isso possa ser considerado, de diversas formas, insuficiente para os atuais regimes de treinamento dos membros da Patrulha, é mais do que suficiente para despertar o interesse por mosquetes e pela artilharia, em desenvolver os talentos de alguém para isso e para usar esses dons para o bem."
+    }
+  },
+  "HelpMePlease": {
+    "name": "Socorro!",
+    "description": {
+      "0": "Nota, para ler"
+    }
+  },
+  "BracarisGeneralStoreReceipt": {
+    "name": "Recibo da Loja de Bracari",
+    "description": {
+      "0": "Recibo da Loja de Bracari"
+    }
+  },
+  "PackageForTheLeroyFamily": {
+    "name": "Pacote da Família Leroy",
+    "description": {
+      "0": "Pip, o entregador de jornais, encheu este pacote com todos os jornais que a família Leroy não recolheu há algum tempo."
+    }
   },
   "TearsAmongTheStars": {
     "name": "Lágrima das Estrelas",
@@ -20525,7 +20715,7 @@
     "name": "Pêssego das Ondas Profundas",
     "description": {
       "0": "Um peixe redondo de tamanho médio com cartilagens semelhantes a chifres usados para cavar tocas submarinas, construir abrigos e afastar predadores.",
-      "1": "Todo o corpo desta espécie é rosa e a barbatana caudal é verde, cores associadas ao Pêssego Zaytun. Esses peixes são, como o próprio nome sugere, tão doces que são considerados “ideais para sobremesas”.",
+      "1": "Todo o corpo desta espécie é rosa e a barbatana caudal é verde, cores associadas ao Pêssego Zaytun. Esses peixes são, como o próprio nome sugere, tão doces que são considerados \"ideais para sobremesas\".",
       "2": "Sem dúvida, devido a vários fatores, a sobremesa de peixe que os chefs esperavam criar não deu certo. Como esse tipo de peixe é raro e caro, muitas vezes é criado como peixe ornamental.",
       "3": "Há uma grande quantidade de clientes que não queriam gastar muita Mora neste tipo de peixe, mas mesmo assim não se cansam de suas cores brilhantes. Existem até empresários que conseguiram reverter esse fenômeno, modelando seus Pêssegos Zaytun a partir desses peixes. Esses pêssegos se tornaram campeões de vendas."
     }
@@ -21667,6 +21857,14 @@
       "1": "Conchas eram materiais abençoados na antiga civilização de Fontaine para fazer rituais, e os unguentos sagrados nessa concha eram escolhidos como um cálice sagrado. Simbolicamente, esse cálice são as palavras primordiais, os óleos, a vontade significada, e a espada sagrada é a razão, que a tudo quebra com um corte."
     }
   },
+  "SuperDuperInvincibleShiningSparklyMagicCrystal": {
+    "name": "Cristal Mágico Super-Ultra Brilhante Reluzente Imbatível",
+    "description": {
+      "0": "Material de Refinamento especial para a \"Mega Ultra Espada Mágica do Soberano\".",
+      "1": "Pode reunir vários desejos (incluindo os de papelão legais) e os colocar juntos, formando um poder super ultra misterioso.",
+      "2": "Apesar de você poder comprar uma versão de brinquedo na Loja de Departamento Damoville que parece similar (bem, é igualzinha), na verdade, há (provavelmente) uma diferença qualitativa entre as duas, por isso não as misture!"
+    }
+  },
   "FalconsDance": {
     "name": "Dança do Falcão",
     "description": {
@@ -21953,7 +22151,7 @@
   "Moonstringer": {
     "name": "Cordas Lunares",
     "description": {
-      "0": "Durante a pesca, se você  puder se manter dentro da Zona de Tensão Ideal, usar essa vara pode reduzir o tempo de resistência do peixe de forma estável. Se você sair da Zona de Tensão Ideal, a aceleração será redefinida.",
+      "0": "Durante a pesca, se você puder se manter dentro da Zona de Tensão Ideal, usar essa vara pode reduzir o tempo de resistência do peixe de forma estável. Se você sair da Zona de Tensão Ideal, a aceleração será redefinida.",
       "1": "<br/>",
       "2": "Uma vara de pesca especial criada para pescar o Leviatã Lunar. Para enfrentar esse peixe lendário, o criador dessa vara adicionou especialmente alguns materiais com funções raras tanto na vara como na linha de pesca, dando-lhes alta maleabilidade e força de tensão. Claro que um tesouro como esse poderia facilmente pegar peixes ordinários, mas parece um exagero tão grande que até a vara ficaria envergonhada de ser usada."
     }
@@ -23120,7 +23318,7 @@
     "name": "Fontaine - Julgamento",
     "description": {
       "0": "Estilo de cartão de visita.",
-      "1": "A insígna da nova Arconte Hydro. Mesmo sem nenhum aviso legal, é entendido que ninguém ousa usar sem permissão."
+      "1": "A insígnia da nova Arconte Hydro. Mesmo sem nenhum aviso legal, é entendido que ninguém ousa usar sem permissão."
     }
   },
   "AchievementOrbits": {
@@ -23226,6 +23424,27 @@
     "description": {
       "0": "Estilo de cartão de visita.",
       "1": "Mesmo se o relógio mecânico parar de girar, mesmo se as marionetes pararem de andar adiante. Embora nossas memórias estejam congeladas eternamente como um coral, não se esqueça de nossas aventuras e o tempo que passamos juntos."
+    }
+  },
+  "NaviaRosula": {
+    "name": "Navia: Rosula",
+    "description": {
+      "0": "Estilo de Cartão de Visita.",
+      "1": "As rosas florescerão, e assim também floresce o guarda-chuva da Srta. Navia. Mas cuidado, pois as rosas têm espinhos, e o guarda-chuva robusto da Navia possui um golpe poderoso."
+    }
+  },
+  "ChevreuseTypeII": {
+    "name": "Chevreuse - Tipo II",
+    "description": {
+      "0": "Estilo de Cartão de Visita.",
+      "1": "A arma padrão da Patrulha de Segurança e Monitoramento Especial é conhecida como \"Mosquete Tipo II da Patrulha de Segurança e Monitoramento Especial\". No entanto, mesmo que haja inúmeras flores neste mundo, a que você valoriza é especial, mesmo que para o mundo ela possa não ser considerada especial de forma alguma."
+    }
+  },
+  "TravelNotesTimeInscribed": {
+    "name": "Passe de Batalha: Escultura do Tempo",
+    "description": {
+      "0": "Estilo de Cartão de Visita.",
+      "1": "Quem sabe quanto tempo levará para que o cinema em Teyvat avance ao ponto de reinventar a arte de \"esculpir o tempo\"? Ainda assim, esta cena realmente congelou um passado pecaminoso."
     }
   },
   "AnemoculusResonanceStone": {
@@ -23440,7 +23659,7 @@
     "name": "Caixa de Sementificação",
     "description": {
       "0": "Um recipiente especial obtido da Madame Ping. Segundo ela, este dispensário tem o poder de \"gerar sementes\"... Ou seja, pode criar as sementes de várias plantas de acordo com suas características especiais, que podem então ser plantadas nos campos apropriados dentro do seu Bule de Relachá.",
-      "1": "As plantas que podem ser semeadas são as seguintes:  Flor de Seda, Flor Doce, Cecília, Lírio de Vidro, Margaridas Voadoras, Qingxin, Violeta, Valberry, Lâmpada de Grama Pequena, Pimenta de Jueyun, Cenoura, Rabanete Branco, Menta, Cogumelo, Erva Naku, Rabo de Cavalo, Flor Crânio de Dragão, Cabeças de Lótus, Lótus de Leite, Erva Marinha, Fungos Marítimos, Fruta Harra, Pêssego Zaytun, Rosa de Sumeru, Lótus Pluie, Marcotte, Campânula Lumidouce e Rosa Arco-Íris."
+      "1": "As plantas que podem ser semeadas são as seguintes: Flor de Seda, Flor Doce, Cecília, Lírio de Vidro, Margaridas Voadoras, Qingxin, Violeta, Valberry, Lâmpada de Grama Pequena, Pimenta de Jueyun, Cenoura, Rabanete Branco, Menta, Cogumelo, Erva Naku, Rabo de Cavalo, Flor Crânio de Dragão, Cabeças de Lótus, Lótus de Leite, Erva Marinha, Fungos Marítimos, Fruta Harra, Pêssego Zaytun, Rosa de Sumeru, Lótus Pluie, Marcotte, Campânula Lumidouce e Rosa Arco-Íris."
     }
   },
   "ElectroTreasureCompass": {
@@ -23807,6 +24026,13 @@
       "0": "Um Aparelho Fotográfico modificado por Lepine-Pauline para a disciplina profunda de reconhecimento de imagens anticrime. É desconhecido que tipo de componentes complexos e caros estão nele, mas parece poder capturar a estrutura particular de um sujeito, seu perfil e coloração..."
     }
   },
+  "MiniSeelieBrilliance": {
+    "name": "Mini Seelie - Brilhante",
+    "description": {
+      "0": "Uma lembrança da Caça aos Tesouros. Equipe esse Seelie para ter sua companhia.",
+      "1": "Um Mini Seelie com cores brilhantes que pode ser mover livremente debaixo d'água."
+    }
+  },
   "InstructionsAnemoculusResonanceStone": {
     "name": "Instruções: Pedra de Ressonância de Anemoculus",
     "description": {
@@ -24082,6 +24308,13 @@
       "1": "Ao inalar sua doce fragrância, belas imagens se formam na mente, permitindo que se manipule o poder da Criação Sub-espacial para recriar as vistas fantásticas de Sumeru no Paraíso Mágico..."
     }
   },
+  "SwirlingSceneInABottle": {
+    "name": "Paisagem no Frasco Giratório",
+    "description": {
+      "0": "Este adorável terrário foi trazido de Fontaine pelo Espírito do Bule Viajador Chubby, exalando uma fragrância verdadeiramente maravilhosa.",
+      "1": "As paisagens nele contidas evocam certas imagens, que você pode manipular através do poder da Criação Sub-espacial para recriar as vistas maravilhosas de Fontaine no Paraíso Mágico..."
+    }
+  },
   "TheMountainCloudsLetDownGoldenRain": {
     "name": "As Nuvens Montanhosas Jorram Chuva Dourada",
     "description": {
@@ -24151,7 +24384,7 @@
   "WanminFeast": {
     "name": "Banquete de Wanmin",
     "description": {
-      "0": "Um fogo de artifício  baseado em um pequeno ajudante de uma chef famosa do Restaurante Wanmin. Quando alguém de Liyue vê esse ajudante, imediatamente pensam em comida boa. E onde há um festival, há comida boa."
+      "0": "Um fogo de artifício baseado em um pequeno ajudante de uma chef famosa do Restaurante Wanmin. Quando alguém de Liyue vê esse ajudante, imediatamente pensam em comida boa. E onde há um festival, há comida boa."
     }
   },
   "BetweenTheExquisiteThrowsOfHerEnigmaticDice": {
@@ -24241,6 +24474,36 @@
   },
   "ElectroHypostasis": {
     "name": "Hypostasis Electro",
+    "description": {
+      "0": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+    }
+  },
+  "LaSignora": {
+    "name": "Signora",
+    "description": {
+      "0": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+    }
+  },
+  "Azhdaha": {
+    "name": "Azhdaha",
+    "description": {
+      "0": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+    }
+  },
+  "EremiteScorchingLoremaster": {
+    "name": "Eremita Narradora da Areia Ardente",
+    "description": {
+      "0": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+    }
+  },
+  "ThunderManifestation": {
+    "name": "Manifestação Trovejante",
+    "description": {
+      "0": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+    }
+  },
+  "Dvalin": {
+    "name": "Dvalin",
     "description": {
       "0": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
     }
@@ -24605,6 +24868,72 @@
       "0": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
     }
   },
+  "LightsRemit": {
+    "name": "Hegemonia Estelar",
+    "description": {
+      "0": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+    }
+  },
+  "TurnControl": {
+    "name": "Estratégia Controlada",
+    "description": {
+      "0": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+    }
+  },
+  "ConclusiveOvation": {
+    "name": "Aplausos Deslumbrados!",
+    "description": {
+      "0": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+    }
+  },
+  "AColdBladeLikeAShadow": {
+    "name": "Uma Lâmina Fria como a Água",
+    "description": {
+      "0": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+    }
+  },
+  "RushingHoundSwiftAsTheWind": {
+    "name": "Pegureiro Veloz: Rápido como o Vento",
+    "description": {
+      "0": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+    }
+  },
+  "Structuration": {
+    "name": "Raciocínio Correto",
+    "description": {
+      "0": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+    }
+  },
+  "PainForPain": {
+    "name": "Retribuição da Dor",
+    "description": {
+      "0": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+    }
+  },
+  "Scorpocalypse": {
+    "name": "Pyrofuracão do Escorpião",
+    "description": {
+      "0": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+    }
+  },
+  "GrievingEcho": {
+    "name": "Eco Trágico",
+    "description": {
+      "0": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+    }
+  },
+  "RendingVortex": {
+    "name": "Vórtice Destruidor",
+    "description": {
+      "0": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+    }
+  },
+  "LunarCyclesUnending": {
+    "name": "Ciclo Interminável",
+    "description": {
+      "0": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+    }
+  },
   "MagicGuide": {
     "name": "Guia de Magia",
     "description": {
@@ -24953,6 +25282,66 @@
       "0": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
     }
   },
+  "LostPrayerToTheSacredWinds": {
+    "name": "Oração Perdida aos Ventos Sagrados",
+    "description": {
+      "0": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+    }
+  },
+  "TulaytullahsRemembrance": {
+    "name": "Reminiscências de Tulaytullah",
+    "description": {
+      "0": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+    }
+  },
+  "BeaconOfTheReedSea": {
+    "name": "Sinal dos Mares",
+    "description": {
+      "0": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+    }
+  },
+  "PrimordialJadeWingedSpear": {
+    "name": "Lança de Jade Primitiva",
+    "description": {
+      "0": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+    }
+  },
+  "LightOfFoliarIncision": {
+    "name": "Luz das Folhas Cortadas",
+    "description": {
+      "0": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+    }
+  },
+  "GildedDreams": {
+    "name": "Sonhos Dourados",
+    "description": {
+      "0": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+    }
+  },
+  "FlowingRings": {
+    "name": "Jades da Torrente",
+    "description": {
+      "0": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+    }
+  },
+  "EchoesOfAnOffering": {
+    "name": "Eco do Sacrifício",
+    "description": {
+      "0": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+    }
+  },
+  "HeartOfKhvarenasBrilliance": {
+    "name": "Coração do Brilho de Khvarena",
+    "description": {
+      "0": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+    }
+  },
+  "VourukashasGlow": {
+    "name": "Brilho Vourukasha",
+    "description": {
+      "0": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+    }
+  },
   "LiyueHarborWharf": {
     "name": "Porto de Liyue",
     "description": {
@@ -25165,6 +25554,24 @@
   },
   "StormterrorsLair": {
     "name": "Toca de Stormterror",
+    "description": {
+      "0": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+    }
+  },
+  "WeepingWillowOfTheLake": {
+    "name": "Salgueiro Chorão do Lago",
+    "description": {
+      "0": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+    }
+  },
+  "OperaEpiclese": {
+    "name": "Ópera Epiclese",
+    "description": {
+      "0": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+    }
+  },
+  "Mamere": {
+    "name": "Maime",
     "description": {
       "0": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
     }
@@ -25451,6 +25858,30 @@
       "0": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
     }
   },
+  "PassingOfJudgment": {
+    "name": "Hora do Julgamento",
+    "description": {
+      "0": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+    }
+  },
+  "TheBoarPrincess": {
+    "name": "A Princesa Javali",
+    "description": {
+      "0": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+    }
+  },
+  "FallsAndFortune": {
+    "name": "Colapso e Fortuna",
+    "description": {
+      "0": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+    }
+  },
+  "FlickeringFourLeafSigil": {
+    "name": "Selo de Trevo Flutuante",
+    "description": {
+      "0": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+    }
+  },
   "Origin": {
     "name": "Primordial",
     "description": {
@@ -25525,6 +25956,12 @@
   },
   "DragonspineCrown": {
     "name": "Espinha do Dragão - Diadema",
+    "description": {
+      "0": "Um Verso de Carta que pode ser obtido e trocado em o Chamado Sagrado dos Sete. Dizem que Versos de Carta feitos de maneiras diferente possuem qualidades e texturas distintas, e que há jogadores que têm como passatempo colecionar esses Versos de Carta diferentes."
+    }
+  },
+  "TheChasmSolidIron": {
+    "name": "Despenhadeiro - Metal Sólido",
     "description": {
       "0": "Um Verso de Carta que pode ser obtido e trocado em o Chamado Sagrado dos Sete. Dizem que Versos de Carta feitos de maneiras diferente possuem qualidades e texturas distintas, e que há jogadores que têm como passatempo colecionar esses Versos de Carta diferentes."
     }
@@ -25956,7 +26393,7 @@
   "CottageKitchen": {
     "name": "Cozinha de Fumo de Lenha",
     "description": {
-      "0": "Um diagrama passo a passo detalhado para fabricação de uma “Cozinha de Fumo de Lenha”.",
+      "0": "Um diagrama passo a passo detalhado para fabricação de uma \"Cozinha de Fumo de Lenha\".",
       "1": "Uma cozinha totalmente equipada com um armário cheio de temperos preparados cuidadosamente.",
       "2": "Chefs buscando excelência comprarão ingredientes frescos do mercado diariamente e verdadeiros artistas culinários até prestarão muita atenção à lenha usando em seus fogões. A jovem chef principal do Restaurante Wanmin já compartilhou que para fazer pratos tradicionais da Vila Qinqce, deve-se colocar lascas de bambu secas no fogão e controlar a chama cuidadosamente. Se alguém conseguir processar os arbustos próximos de Ganchos de Lobos em lenha fina, é possível até adicionar um toque de Mondstadt neles.",
       "3": "Diferentes tipos de lenha produzem efeitos imensamente diferentes e a maioria dos chefs nunca verdadeiramente os dominará. Assim, o Restaurante Wanmin tem um monopólio desta técnica em particular.",
@@ -26280,6 +26717,107 @@
       "2": "Este conjunto de decorações é o preferido dos seguintes companheiros: Tighnari, {REALNAME[ID(1)|HOSTONLY(true)]}."
     }
   },
+  "KeyToAStableWorkRestCycle": {
+    "name": "Chave para um Ciclo de Trabalho e Descanso Estável",
+    "description": {
+      "0": "Um quarto simples e amplo que equilibra conforto e sofisticação. Para pessoas exaustas, a cama significa uma rápida entrada no mundo dos sonhos, e aqueles que acordam de manhã entrarão igualmente rapidamente no modo de trabalho.",
+      "1": "Muitos habitantes de Fontaine consideram o design de interiores como um fator-chave para o sono, e um sono estável é fundamental para o ciclo de trabalho e descanso de uma pessoa. Dessa forma, o design do quarto é realmente crucial.",
+      "2": "Este conjunto de decorações é o preferido das seguintes companheiras: Charlotte e Chevreuse"
+    }
+  },
+  "StrictAdherenceToOfficeCodes": {
+    "name": "Adesão Estrita aos Códigos do Escritório",
+    "description": {
+      "0": "Um layout de escritório clássico baseado nos móveis do Palais Mermonia, recriando aquele escritório sempre movimentado, onde tudo segue regulamentos.",
+      "1": "Um pesquisador do Instituto de Pesquisas de Fontaine certa vez afirmou que \"o ambiente de uma pessoa afetará muito o seu estado de trabalho.\" Seguindo esse princípio, alguém que está em um ambiente muito semelhante ao do Palais Mermonia pode, subconscientemente, seguir de maneira confiável cada processo detalhadamente...",
+      "2": "Este conjunto de decorações é o preferido do seguinte companheiro: Neuvillette"
+    }
+  },
+  "GarbForGloriousGourmet": {
+    "name": "Traje Gourmet Luxuoso",
+    "description": {
+      "0": "Um restaurante completamente decorado, construído imitando o Hotel Debord. É adequado para realizar animados banquetes familiares, nos quais inúmeros parentes e amigos serão convidados.",
+      "1": "Nem mesmo chefs experientes podem negar que a mise en scène gastronômica dita os sentimentos dos comensais, o que influencia a avaliação geral da comida. Portanto, um restaurante bonito pode ser considerado uma espécie de traje para comida e bebida boa.",
+      "2": "Este conjunto de decorações é o preferido das seguintes companheiras: Navia e Furina"
+    }
+  },
+  "PerfectlyDrawnFocus": {
+    "name": "Foco Desenhado Perfeitamente",
+    "description": {
+      "0": "Um interior com um palco de tamanho médio como peça central, suficiente para realizar uma pequena apresentação.",
+      "1": "Para aqueles que são novos na arte da atuação, uma plateia muito grande pode causar nervosismo indevido e afetar sua interpretação, e para os mestres experientes, às vezes um espetáculo para os amigos traz muito mais felicidade do que um espetáculo lotado. Portanto, a maioria dos artistas pode apreciar a falta de grandiosidade deste palco.",
+      "2": "Este conjunto de decorações é o preferido dos seguintes companheiros: Lynette e Lyney"
+    }
+  },
+  "ContinuousClockworkInspiration": {
+    "name": "Inspiração Contínua de Mecanismo de Relógio",
+    "description": {
+      "0": "Um ambiente baseado em uma oficina de mecanismos de relógio, com equipamentos de processamento suficientes para atender à maioria das necessidades dos artesãos.",
+      "1": "Alguns poetas de Fontaine acreditam que os Mecautômatos de relojoaria são criações dignas de respeito, respeito que deve brilhar sobre as ferramentas do artesão também. \"A inspiração inclina os ouvidos desses componentes, ensina-os a dançar como um só a um ritmo perpétuo\".",
+      "2": "Este conjunto de decorações é o preferido do seguinte companheiro: Freminet"
+    }
+  },
+  "WellspringOfRuleViolationPrevention": {
+    "name": "Manancial de Prevenção de Violação das Regras",
+    "description": {
+      "0": "Um escritório com uma atmosfera solene que reproduz com precisão o escritório do \"Duque\" da Fortaleza Meropide.",
+      "1": "Dizem que, depois que o Duque assumiu o controle da Fortaleza, ele apenas fez algumas pequenas mudanças nos móveis do escritório e deixou o resto do local como estava, esse foi o escritório onde foram redigidas as regulamentações que muitos prisioneiros devem seguir.",
+      "2": "Este conjunto de decorações é o preferido do seguinte companheiro: Wriothesley"
+    }
+  },
+  "CourtOfJusticesPlacidDays": {
+    "name": "Dias Mundanos na Corte",
+    "description": {
+      "0": "Uma rua que se baseia nas ruas comuns das áreas residenciais de Fontaine como seu modelo. As inúmeras residências também replicaram fielmente a aparência autêntica da Corte de Fontaine.",
+      "1": "Para muitos residentes de Fontaine, uma parte significativa de suas vidas consiste em viver de forma organizada, cumprir horários de trabalho, descansar, encontrar amigos para uma refeição ou compras e, ocasionalmente, assistir a grandiosas apresentações na Ópera Epiclese. Mesmo alguns aventureiros experientes em situações de crise podem ocasionalmente pensar que um estilo de vida tão tranquilo seria agradável...",
+      "2": "Este conjunto de decorações é o preferido da seguinte companheira: Charlotte"
+    }
+  },
+  "CourtOfJusticesBoomingCommerce": {
+    "name": "Comércio da Prosperidade do Pavilhão da Justiça",
+    "description": {
+      "0": "Este lugar se baseia no Quartier Lyonnais na Corte de Fontaine, repleto de várias lojas especializadas e mesas onde também é possível descansar e desfrutar de chá.",
+      "1": "Alguns turistas experientes vão te dizer que você pode perguntar aos moradores daqui se não estiver familiarizado com as lojas e especializações dos produtos à venda. Como muitas lojas seguem rigorosamente os controles de preços estabelecidos pelo Palais Mermonia, poucas pessoas compram itens com preços inadequados.",
+      "2": "Este conjunto de decorações é o preferido dos seguintes companheiros: Lynette e Lyney"
+    }
+  },
+  "CourtOfJusticesFreshMist": {
+    "name": "Névoa Refrescante da Corte",
+    "description": {
+      "0": "Um quadrado cheio de arbustos verdes, flores vibrante e uma bela montanha. O conceito de design é baseado na Fonte de Lucine em Erinnyes.",
+      "1": "Quando o clima está agradável, a névoa fresca se entrelaça nas flores de Erinnyes, e a visão disso eleva o ânimo tanto dos residentes quanto dos visitantes. Mesmo se alguém chegar em meio a um aguaceiro, as lendas que cercam a Fonte ainda enchem o coração com uma esperança maravilhosa.",
+      "2": "Este conjunto de decorações é o preferido dos seguintes companheiros: Neuvillette e Furina"
+    }
+  },
+  "PoissonTheUnassuming": {
+    "name": "Poisson, Imemorável",
+    "description": {
+      "0": "Uma paisagem centrada ao redor de vários edifícios únicos que recria um canto de Poisson. As estruturas que focam na praticidade, elevando o trabalho da eficiência naqueles que residem nelas, apesar disso não imediatamente se tornar exaustão, mas sim uma maneira de alguém guardar os dias de tranquilidade de alguém. Mais dos habitantes de Poisson vivem sob o lema \"que o trabalho seja feito rápido, para que nossa vida seja aproveitada melhor\".",
+      "1": "Esse conjunto de decorações é o preferido pelos seguintes companheiros: Navia."
+    }
+  },
+  "UnderseaMeruseasLuster": {
+    "name": "A Espuma Luminosa sob as Águas Silenciosas",
+    "description": {
+      "0": "Um pequeno assentamento que se esforça para recriar a paisagem na Vila Marusea, com edifícios únicos e bastante chamativos.",
+      "1": "As Melusines habitam Elynas, sob as ondas, e poucas pessoas normais visitarão sua vila, embora aqueles que o façam sempre elogiem sua experiência ao retornar. Alguns artistas tentaram desenhar o lugar com base nessas descrições e informações obtidas ao entrevistar Melusines na Corte de Fontaine. No entanto, sempre houve uma \"diferença de cor\" entre seu trabalho e as cores reais da vila que era difícil de ignorar. Esse problema só foi resolvido quando fotos tiradas por um Aparelho Fotográfico da Vila Marusea se tornaram amplamente conhecidas, resolvendo mais ou menos o problema...",
+      "2": "Este conjunto de decorações é o preferido do seguinte companheiro: Freminet"
+    }
+  },
+  "FullForceForwardInTheForbiddenFortress": {
+    "name": "Força Total Avante na Fortaleza Proibida",
+    "description": {
+      "0": "Uma arena cujo ponto central é um ringue de boxe. Ficando dentro dele, você pode ouvir novamente os aplausos e gritos da plateia, os comentários animados do apresentador e o som abafado do punho batendo contra a carne vindo de cada competidor, essa é a profunda impressão que o Ringue de Pancrácio da Fortaleza Meropide deixa.",
+      "1": "\"Em um ringue onde seu punho decide tudo, você só pode dar o seu melhor para reivindicar a glória, e os Cupons Especiais, que deveriam ser seus.\" ... Muitos competidores do Ringue de Pancrácio adotam isso como seu lema mesmo após deixarem completamente a Fortaleza...",
+      "2": "Este conjunto de decorações é o preferido dos seguintes companheiros: Wriothesley e Chevreuse"
+    }
+  },
+  "TheNationOfHydrosMottledColors": {
+    "name": "As Cores Marmóreas da Nação Hydro",
+    "description": {
+      "0": "Uma cena rural repleta de plantas exuberantes. Ela contém todos os tipos de flores e arbustos que podem ser encontrados por toda parte em Fontaine. Flores e plantas são temas comuns em pinturas e representam um ponto de partida para explorações da \"cor\". Alguns pintores em Fontaine acreditam que a paleta do mundo usa plantas para demonstrar a combinação perfeita de cores. Portanto, se todas as cores em uma pintura encontram sua origem nas flores, então essa pintura deve certamente possuir uma beleza harmoniosa igual à da paisagem natural. Claro, isso parte da premissa de que você não vai misturar todas as cores derivadas de plantas em uma única conversa..."
+    }
+  },
   "TimberWallWithJadeEaves": {
     "name": "Parede de Madeira com Beiral de Jade",
     "description": {
@@ -26305,6 +26843,13 @@
     "name": "Parede de Madeira Radiante com Colunas Entalhadas",
     "description": {
       "0": "Um diagrama que descreve passo a passo como fabricar Parede de Madeira Radiante com Colunas Entalhadas.",
+      "1": "Depois de usar, você pode entrar na interface de colocação para ver."
+    }
+  },
+  "AnnexsGoldenMosaic": {
+    "name": "Entalhes Dourados do Anexo",
+    "description": {
+      "0": "Um diagrama que descreve passo a passo como fabricar Entalhes Dourados do Anexo.",
       "1": "Depois de usar, você pode entrar na interface de colocação para ver."
     }
   },
@@ -26336,6 +26881,13 @@
       "1": "Depois de usar, você pode entrar na interface de colocação para ver."
     }
   },
+  "AnnexsMirrorSheenFloorTile": {
+    "name": "Pisos de Azulejo com Superfície Espelhada do Anexo",
+    "description": {
+      "0": "Um diagrama que descreve passo a passo como fabricar Pisos de Azulejo com Superfície Espelhada do Anex.",
+      "1": "Depois de usar, você pode entrar na interface de colocação para ver."
+    }
+  },
   "CheckeredCedarCeiling": {
     "name": "Teto Xadrez de Cedro",
     "description": {
@@ -26361,6 +26913,13 @@
     "name": "Teto de Madeira Radiante Entalhada",
     "description": {
       "0": "Um diagrama que descreve passo a passo como fabricar Teto de Madeira Radiante Entalhada.",
+      "1": "Depois de usar, você pode entrar na interface de colocação para ver."
+    }
+  },
+  "AnnexsSpotlessDome": {
+    "name": "Redoma Impecável do Anexo",
+    "description": {
+      "0": "Um diagrama que descreve passo a passo como fabricar Redoma Impecável do Anexo.",
       "1": "Depois de usar, você pode entrar na interface de colocação para ver."
     }
   },
@@ -26630,11 +27189,32 @@
       "1": "Depois de usar, você pode entrar na interface de produção para ver."
     }
   },
+  "ForbiddenZoneFloorLampIronhammer": {
+    "name": "Lanterna de Chão da Zona Proibida: Martelo de Ferro",
+    "description": {
+      "0": "Um diagrama que descreve passo a passo como fabricar Lanterna de Chão da Zona Proibida: Martelo de Ferro.",
+      "1": "Depois de usar, você pode entrar na interface de produção para vê-la."
+    }
+  },
+  "ForbiddenZoneFloorLampNightlight": {
+    "name": "Lanterna de Chão da Zona Proibida: Luz da Noite",
+    "description": {
+      "0": "Um diagrama que descreve passo a passo como fabricar Lanterna de Chão da Zona Proibida: Luz da Noite.",
+      "1": "Depois de usar, você pode entrar na interface de produção para vê-la."
+    }
+  },
   "EfflorescentIllumination": {
     "name": "Luz Floral",
     "description": {
       "0": "Um diagrama que descreve passo a passo como fabricar Luz Floral.",
       "1": "Depois de usar, você pode entrar na interface de produção para ver."
+    }
+  },
+  "AnnexsSwirlingLight": {
+    "name": "Luz Reluzente do Anexo",
+    "description": {
+      "0": "Um diagrama que descreve passo a passo como fabricar Luz Reluzente do Anexo.",
+      "1": "Depois de usar, você pode entrar na interface de colocação para ver."
     }
   },
   "NorthernBirchFoldingCounter": {
@@ -26718,6 +27298,13 @@
     "name": "Armário de Cerâmica e Madeira de Tamarisco",
     "description": {
       "0": "Um diagrama que descreve passo a passo como fabricar Armário de Cerâmica e Madeira de Tamarisco.",
+      "1": "Depois de usar, você pode entrar na interface de colocação para ver."
+    }
+  },
+  "MallowWoodMultiModelWardrobe": {
+    "name": "Armário de Madeira de Malva \"Multimodelos\"",
+    "description": {
+      "0": "Um diagrama que descreve passo a passo como fabricar Armário de Madeira de Malva \"Multimodelos\".",
       "1": "Depois de usar, você pode entrar na interface de colocação para ver."
     }
   },
@@ -26844,6 +27431,13 @@
     "name": "\"Ajudante de Maison Cardinalice\"",
     "description": {
       "0": "Um diagrama que descreve passo a passo como fabricar \"Ajudante de Maison Cardinalice\".",
+      "1": "Depois de usar, você pode entrar na interface de produção para ver."
+    }
+  },
+  "AThousandTextsInTheCentralHub": {
+    "name": "\"Mil Textos na Central\"",
+    "description": {
+      "0": "Um diagrama que descreve passo a passo como fabricar \"Mil Textos na Central\".",
       "1": "Depois de usar, você pode entrar na interface de produção para ver."
     }
   },
@@ -27043,6 +27637,27 @@
       "1": "Depois de usar, você pode entrar na interface de produção para ver."
     }
   },
+  "StableWorkStationInTheCentralHub": {
+    "name": "\"Estação de Trabalho Estável Central\"",
+    "description": {
+      "0": "Um diagrama que descreve passo a passo como fabricar \"Estação de Trabalho Estável Central\".",
+      "1": "Depois de usar, você pode entrar na interface de produção para ver."
+    }
+  },
+  "RestTimeInTheCentralHub": {
+    "name": "\"Sesta na Central\"",
+    "description": {
+      "0": "Um diagrama que descreve passo a passo como fabricar \"Sesta na Central\".",
+      "1": "Depois de usar, você pode entrar na interface de produção para ver."
+    }
+  },
+  "TheLeisureOfDailyMeetings": {
+    "name": "\"A Diversão de Encontros Diários\"",
+    "description": {
+      "0": "Um diagrama que descreve passo a passo como fabricar \"A Diversão de Encontros Diários\".",
+      "1": "Depois de usar, você pode entrar na interface de produção para vê-la."
+    }
+  },
   "BreezeBlessedBed": {
     "name": "Cama Suave Como a Brisa",
     "description": {
@@ -27139,6 +27754,13 @@
     "description": {
       "0": "Um diagrama que descreve passo a passo como fabricar a Testemunha Onisciente da Taverna.",
       "1": "Depois de usar, você pode entrar na interface de colocação para vê-la."
+    }
+  },
+  "CelebrationOfAnAdHocPerformance": {
+    "name": "\"Celebração da Performance\"",
+    "description": {
+      "0": "Um diagrama que descreve passo a passo como fabricar \"Celebração da Performance\".",
+      "1": "Depois de usar, você pode entrar na interface de produção para ver."
     }
   },
   "SoftLoungeSofa": {
@@ -27272,6 +27894,27 @@
     "description": {
       "0": "Um diagrama que descreve passo a passo como fabricar \"Elegia a Beber Socialmente\".",
       "1": "Depois de usar, você pode entrar na interface de produção para vê-lo."
+    }
+  },
+  "MallowWoodViewingRitesChair": {
+    "name": "Cadeira \"Admirando Rituais\" de Madeira de Malva",
+    "description": {
+      "0": "Um diagrama que descreve passo a passo como fabricar Cadeira \"Admirando Rituais\" de Madeira de Malva.",
+      "1": "Depois de usar, você pode entrar na interface de produção para vê-la."
+    }
+  },
+  "LindenWoodSubduingSeatBackedChair": {
+    "name": "Cadeira de Madeira de Tilia \"Assento Perigoso\"",
+    "description": {
+      "0": "Um diagrama que descreve passo a passo como fabricar Cadeira de Madeira de Tilia \"Assento Perigoso\".",
+      "1": "Depois de usar, você pode entrar na interface de colocação para ver."
+    }
+  },
+  "MomentaryRestInTheCentralHub": {
+    "name": "\"Descanso Temporário na Central\"",
+    "description": {
+      "0": "Um diagrama que descreve passo a passo como fabricar \"Descanso Temporário na Central\".",
+      "1": "Depois de usar, você pode entrar na interface de produção para ver."
     }
   },
   "NorthernStoneHearth": {
@@ -27613,7 +28256,7 @@
   "MaisonCardinalicesStores": {
     "name": "\"Estoque de Maison Cardinalice\"",
     "description": {
-      "0": "Um diagrama que descreve passo a passo como fabricar \"Estoque de Maison Cardinalice.",
+      "0": "Um diagrama que descreve passo a passo como fabricar \"Estoque de Maison Cardinalice\".",
       "1": "Depois de usar, você pode entrar na interface de produção para ver."
     }
   },
@@ -27636,6 +28279,13 @@
     "description": {
       "0": "Um diagrama que descreve passo a passo como fabricar \"Fardo da Fortaleza Proibida\".",
       "1": "Depois de usar, você pode entrar na interface de produção para ver."
+    }
+  },
+  "StandardMusicStandAccurateTuning": {
+    "name": "Prateleira de Música Padrão: Afinamento Preciso",
+    "description": {
+      "0": "Um diagrama que descreve passo a passo como fabricar Prateleira de Música Padrão: Afinamento Preciso.",
+      "1": "Depois de usar, você pode entrar na interface de colocação para ver."
     }
   },
   "MondstadtRugCrimsonArdor": {
@@ -27940,7 +28590,7 @@
     }
   },
   "TeaWispCloudedWhiteCouch": {
-    "name": "“Conjunto de Chá Branco Fumegante”",
+    "name": "\"Conjunto de Chá Branco Fumegante\"",
     "description": {
       "0": "Um diagrama que descreve passo a passo como fabricar \"Conjunto de Chá Branco Fumegante\".",
       "1": "Depois de usar, você pode entrar na interface de colocação para vê-lo."
@@ -28177,6 +28827,13 @@
       "1": "Depois de usar, você pode entrar na interface de colocação para ver."
     }
   },
+  "CommonUseNoteHolder": {
+    "name": "Porta-Anotações Comum",
+    "description": {
+      "0": "Um diagrama que descreve passo a passo como fabricar Porta-Anotações Comum.",
+      "1": "Depois de usar, você pode entrar na interface de colocação para ver."
+    }
+  },
   "RealizationsFromTheLandOfWisdom": {
     "name": "Despertar do Local da Sagacidade",
     "description": {
@@ -28399,6 +29056,13 @@
     "description": {
       "0": "Um diagrama que descreve passo a passo como fabricar \"Escudo de Metal e Madeira de Tamarisco\"",
       "1": "Depois de usar, você pode entrar na interface de colocação para ver."
+    }
+  },
+  "IndoorLampTheTwilightSea": {
+    "name": "Lanterna Interna: Mar Crepuscular",
+    "description": {
+      "0": "Um diagrama que descreve passo a passo como fabricar Lanterna Interna: Mar Crepuscular.",
+      "1": "Depois de usar, você pode entrar na interface de colocação para vê-la."
     }
   },
   "LingeringMoment": {
@@ -28784,6 +29448,20 @@
     "description": {
       "0": "Um diagrama que descreve passo a passo como fabricar Normas Pontuais do Corredor.",
       "1": "Depois de usar, você pode entrar na interface de colocação para ver."
+    }
+  },
+  "QuickTemporaryWorkshed": {
+    "name": "\"Mesa de Trabalho Temporária\"",
+    "description": {
+      "0": "Um diagrama que descreve passo a passo como fabricar \"Mesa de Trabalho Temporária\".",
+      "1": "Depois de usar, você pode entrar na interface de colocação para ver."
+    }
+  },
+  "PoissonsSeasonalProduce": {
+    "name": "\"Produção Sazonal de Poisson\"",
+    "description": {
+      "0": "Um diagrama que descreve passo a passo como fabricar \"Produção Sazonal de Poisson\".",
+      "1": "Depois de usar, você pode entrar na interface de produção para ver."
     }
   },
   "HilichurlOutpostHut": {
@@ -29514,6 +30192,13 @@
       "1": "Depois de usar, você pode entrar na interface de colocação para ver."
     }
   },
+  "CourtyardPavilionAmidstTheRivers": {
+    "name": "Pavilhão: Entre os Rios",
+    "description": {
+      "0": "Um diagrama que descreve passo a passo como fabricar Pavilhão: Entre os Rios.",
+      "1": "Depois de usar, você pode entrar na interface de colocação para ver."
+    }
+  },
   "CourtOfJusticesAuthenticity": {
     "name": "\"Autenticidade da Corte da Justiça\"",
     "description": {
@@ -29547,6 +30232,27 @@
     "description": {
       "0": "Um diagrama que descreve passo a passo como fabricar \"Caranguejo de Pedra Pequeno\".",
       "1": "Depois de usar, você pode entrar na interface de colocação para ver."
+    }
+  },
+  "TheArenaWhereFistsReemerge": {
+    "name": "\"A Arena em que os Punhos Reemergem\"",
+    "description": {
+      "0": "Um diagrama que descreve passo a passo como fabricar \"A Arena em que os Punhos Reemergem\".",
+      "1": "Depois de usar, você pode entrar na interface de produção para ver."
+    }
+  },
+  "TheWisdomOfPoisson": {
+    "name": "\"A Sabedoria de Poisson\"",
+    "description": {
+      "0": "Um diagrama que descreve passo a passo como fabricar \"A Sabedoria de Poisson\".",
+      "1": "Depois de usar, você pode entrar na interface de produção para ver."
+    }
+  },
+  "ASimpleResidenceInPoisson": {
+    "name": "\"Uma Residência Simples em Poisson\"",
+    "description": {
+      "0": "Um diagrama que descreve passo a passo como fabricar \"Uma Residência Simples em Poisson\".",
+      "1": "Depois de usar, você pode entrar na interface de produção para ver."
     }
   },
   "BirdAndBlossomDesignFountain": {
@@ -30095,6 +30801,34 @@
       "1": "Depois de usar, você pode entrar na interface de colocação para ver."
     }
   },
+  "CourtyardCorridorTheMoraDividend": {
+    "name": "Corredor do Pavilhão: Dividindo Mora",
+    "description": {
+      "0": "Um diagrama que descreve passo a passo como fabricar Corredor do Pavilhão: Dividindo Mora.",
+      "1": "Depois de usar, você pode entrar na interface de colocação para ver."
+    }
+  },
+  "CourtyardCorridorManifoldCorners": {
+    "name": "Corredor do Pavilhão: Canto do Fluxo",
+    "description": {
+      "0": "Um diagrama que descreve passo a passo como fabricar Corredor do Pavilhão: Canto do Fluxo.",
+      "1": "Depois de usar, você pode entrar na interface de colocação para ver."
+    }
+  },
+  "CourtyardArchwayMomentOfGlory": {
+    "name": "Arco do Pavilhão: Momento de Glória",
+    "description": {
+      "0": "Um diagrama que descreve passo a passo como fabricar Arco do Pavilhão: Momento de Glória.",
+      "1": "Depois de usar, você pode entrar na interface de colocação para vê-lo."
+    }
+  },
+  "CourtyardWallABitOfScenery": {
+    "name": "Parede do Pavilhão: Uma Paisagem",
+    "description": {
+      "0": "Um diagrama que descreve passo a passo como fabricar Parede do Pavilhão: Uma Paisagem.",
+      "1": "Depois de usar, você pode entrar na interface de colocação para ver."
+    }
+  },
   "FoundationsOfStoneFortunateTimes": {
     "name": "Fundações de Pedra: Fortuna e Tranquilidade",
     "description": {
@@ -30590,6 +31324,13 @@
     "description": {
       "0": "Um diagrama que descreve passo a passo como fabricar Modelo Mecânico: Âncora Destruidora de Rochas",
       "1": "Depois de usar, você pode entrar na interface de colocação para ver."
+    }
+  },
+  "BoxingTargetOfTheForbiddenFortress": {
+    "name": "\"Alvo de Boxe da Fortaleza Proibida\"",
+    "description": {
+      "0": "Um diagrama que descreve passo a passo como fabricar \"Alvo de Boxe da Fortaleza Proibida\".",
+      "1": "Depois de usar, você pode entrar na interface de produção para ver."
     }
   },
   "PottedPlantVerdantVastness": {
@@ -31355,6 +32096,55 @@
       "1": "Depois de usar, você pode entrar na interface de produção para vê-la."
     }
   },
+  "OverburdeningOfTheForbiddenFortress": {
+    "name": "\"Peso da Fortaleza Proibida\"",
+    "description": {
+      "0": "Um diagrama que descreve passo a passo como fabricar \"Peso da Fortaleza Proibida\".",
+      "1": "Depois de usar, você pode entrar na interface de produção para ver."
+    }
+  },
+  "AreaMarkerUpward": {
+    "name": "Marcador de Área: Para Cima",
+    "description": {
+      "0": "Um diagrama que descreve passo a passo como fabricar Marcador de Área: Para Cima.",
+      "1": "Depois de usar, você pode entrar na interface de produção para ver."
+    }
+  },
+  "AreaMarkerDownward": {
+    "name": "Marcador de Área: Para Baixo",
+    "description": {
+      "0": "Um diagrama que descreve passo a passo como fabricar Marcador de Área: Para Baixo.",
+      "1": "Depois de usar, você pode entrar na interface de produção para ver."
+    }
+  },
+  "PoissonDoorFrame": {
+    "name": "\"Porta de Poisson\"",
+    "description": {
+      "0": "Um diagrama que descreve passo a passo como fabricar \"Porta de Poisson\".",
+      "1": "Depois de usar, você pode entrar na interface de produção para ver."
+    }
+  },
+  "BookshelfFreeReading": {
+    "name": "Prateleira de Livros: Leitura Livre",
+    "description": {
+      "0": "Um diagrama que descreve passo a passo como fabricar Prateleira de Livros: Leitura Livre.",
+      "1": "Depois de usar, você pode entrar na interface de colocação para vê-la."
+    }
+  },
+  "BookshelfSpeedyBrowsing": {
+    "name": "Prateleira de Livros: Olhada Rápida",
+    "description": {
+      "0": "Um diagrama que descreve passo a passo como fabricar Prateleira de Livros: Olhada Rápida.",
+      "1": "Depois de usar, você pode entrar na interface de colocação para vê-la."
+    }
+  },
+  "BookshelfFocusedEffect": {
+    "name": "Prateleira de Livros: Efeito Focado",
+    "description": {
+      "0": "Um diagrama que descreve passo a passo como fabricar Prateleira de Livros: Efeito Focado.",
+      "1": "Depois de usar, você pode entrar na interface de colocação para vê-la."
+    }
+  },
   "PoolOfSapphireGrace": {
     "name": "Piscina da Nuvem de Espíritos",
     "description": {
@@ -31646,6 +32436,20 @@
     "name": "Mesa Redonda Pura do Corredor",
     "description": {
       "0": "Um diagrama que descreve passo a passo como fabricar Mesa Redonda Pura do Corredor.",
+      "1": "Depois de usar, você pode entrar na interface de colocação para ver."
+    }
+  },
+  "ProductionRackTheBasics": {
+    "name": "Base de Produção: O Básico",
+    "description": {
+      "0": "Um diagrama que descreve passo a passo como fabricar Base de Produção: O Básico.",
+      "1": "Depois de usar, você pode entrar na interface de colocação para ver."
+    }
+  },
+  "ProductionRackCustomBuild": {
+    "name": "Base de Produção: Modelo Personalizado",
+    "description": {
+      "0": "Um diagrama que descreve passo a passo como fabricar Base de Produção: Modelo Personalizado.",
       "1": "Depois de usar, você pode entrar na interface de colocação para ver."
     }
   },

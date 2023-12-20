@@ -396,6 +396,20 @@
       "1": "Una preziosa ricompensa che è possibile ottenere nell'evento Le Fantastiche avventure di Thelxie."
     }
   },
+  "TheaterTickets": {
+    "name": "Biglietti per il teatro",
+    "description": {
+      "0": "Biglietti commemorativi di squisita fattura per celebrare la partecipazione ai vari eventi del Cinefestival di Fontinalia. Si dice che la loro consistenza ricordi le pellicole cinematografiche. Cristallini quando riflettono la luce, somigliano a sottili frammenti di gemme...",
+      "1": "Usali per sbloccare varie ricompense durante l'evento Rose e moschetti."
+    }
+  },
+  "FilmForFun": {
+    "name": "Cinemonete",
+    "description": {
+      "0": "Monete commemorative a forma di bobine cinematografiche. Questi cimeli si possono vincere e accumulare partecipando al Cinefestival di Fontinalia. Sebbene non sia possibile inserirle all'interno di alcun dispositivo speciale per visionare dei film appassionanti, il design unico di queste monete rallegra lo spirito di chi ha partecipato al festival, evocandone i momenti più lieti...",
+      "1": "Puoi usarle per ottenere preziose ricompense durante l'evento Rose e moschetti."
+    }
+  },
   "Primogem": {
     "name": "Primogemma",
     "description": {
@@ -1025,11 +1039,27 @@
   },
   "Charlotte": {
     "name": "Charlotte",
-    "description": {}
+    "description": {
+      "0": "Instancabile giornalista dell'Uccello a vapore, sempre a caccia della \"verità\"."
+    }
   },
   "Furina": {
     "name": "Furina",
-    "description": {}
+    "description": {
+      "0": "La protagonista assoluta della scena del giudizio, fino all'applauso finale."
+    }
+  },
+  "Chevreuse": {
+    "name": "Chevreuse",
+    "description": {
+      "0": "La capitana della Pattuglia speciale di sicurezza e sorveglianza, che porta il sigillo della giustizia perennemente apposto sul cuore. Il suo moschetto non mirerà mai a nessuno se non a rei e malfattori."
+    }
+  },
+  "Navia": {
+    "name": "Navia",
+    "description": {
+      "0": "L'attuale Presidentessa della Spina di Rosula: amabile, diligente e una leader eccezionale."
+    }
   },
   "KamisatoAyakasStellaFortuna": {
     "name": "Stella Fortuna di Kamisato Ayaka",
@@ -1485,6 +1515,18 @@
     "name": "Stella Fortuna di Furina",
     "description": {
       "0": "Materiale per l'attivazione della costellazione di Furina"
+    }
+  },
+  "ChevreusesStellaFortuna": {
+    "name": "Stella Fortuna di Chevreuse",
+    "description": {
+      "0": "Materiale per l'attivazione della costellazione di Chevreuse"
+    }
+  },
+  "NaviasStellaFortuna": {
+    "name": "Stella Fortuna di Navia",
+    "description": {
+      "0": "Materiale per l'attivazione della costellazione di Navia"
     }
   },
   "GnosticHymnOldNotes": {
@@ -5371,15 +5413,15 @@
     }
   },
   "MinaciousIsleMural": {
-    "name": "Murale dell'Isola funesta",
+    "name": "Murale dell'Isola Funesta",
     "description": {
-      "0": "Un murale che hai trovato su una parete di pietra dell'Isola funesta. Sembra raffigurare un naufragio..."
+      "0": "Un murale che hai trovato su una parete di pietra dell'Isola Funesta. Sembra raffigurare un naufragio..."
     }
   },
   "BrokenIsleMural": {
-    "name": "Murale dell'Isola infranta",
+    "name": "Murale dell'Isola Infranta",
     "description": {
-      "0": "Un murale che hai trovato su una parete di pietra dell'Isola infranta. Raffigura cinque strani oggetti..."
+      "0": "Un murale che hai trovato su una parete di pietra dell'Isola Infranta. Raffigura cinque strani oggetti..."
     }
   },
   "NamelessIslandMural": {
@@ -5389,9 +5431,9 @@
     }
   },
   "TwinningIsleMural": {
-    "name": "Murale delle Isole gemelle",
+    "name": "Murale delle Isole Gemelle",
     "description": {
-      "0": "Un murale che hai trovato su una parete di pietra delle Isole gemelle. C'è un segno particolare sulla montagna del disegno..."
+      "0": "Un murale che hai trovato su una parete di pietra delle Isole Gemelle. C'è un segno particolare sulla montagna del disegno..."
     }
   },
   "IllegibleNotes": {
@@ -13676,7 +13718,7 @@
   "SuspiciousCassoulet": {
     "name": "Cassoulet sospetto",
     "description": {
-      "0": "Un semplice stufato contadino. Anche se l'aspetto non desta sospetti, mangiandolo noti un leggero sapore di bruciato, per poi renderti conto che lo strato inferiore è stato talmente bruciato che si è fuso con la pentola. Ugh... forse è il caso di ricordare allo chef di mescolare gli ingredienti ogni tanto durante la cottura..."
+      "0": "Un semplice stufato contadino. Anche se l'apparenza non desta sospetti, mangiandolo noti un leggero sapore di bruciato, per poi renderti conto che lo strato inferiore è stato cotto al punto da fondersi con la pentola. Uh... La prossima volta sarà meglio mescolare gli ingredienti ogni tanto durante la cottura..."
     }
   },
   "Cassoulet": {
@@ -13767,6 +13809,72 @@
     "name": "Esclusiva speciale: Rubrica del gastronomo",
     "description": {
       "0": "La specialità di Charlotte. Uno spuntino che porta sempre con sé mentre la accompagni nella sua instancabile ricerca di scoop. La osservi saltellare allegramente vicino a te, e il ritmo vivace dei suoi passi quasi si confonde con il suono croccante del pesce fritto nella sua bocca... Anche se questa notizia non ha ancora assunto una forma definitiva, la gioia e l'appagamento nel tuo cuore hanno già raggiunto il culmine."
+    }
+  },
+  "SuspiciousFeastOs": {
+    "name": "Frittondini sospetti",
+    "description": {
+      "0": "Degli stuzzichini fritti e dorati. Ci è voluto parecchio tempo per far sì che l'olio in eccesso venisse assorbito, e questo processo ha reso molliccia la panatura croccante. Mm... Chissà se i gabbiani a riva li mangeranno."
+    }
+  },
+  "FeastOs": {
+    "name": "Frittondini",
+    "description": {
+      "0": "Degli stuzzichini fritti e dorati. La polpa di pollo viene lavorata fino ad assumere una forma circolare, per poi essere combinata con gli anelli di cipolla. Analogamente, viene pressato anche un composto di pesce e patate in una forma tonda, creando una composizione gastronomica degna di un banchetto. Basta immergere tutto nell'olio e, in men che non si dica, i tuoi Frittondini saranno pronti da gustare."
+    }
+  },
+  "DeliciousFeastOs": {
+    "name": "Frittondini deliziosi",
+    "description": {
+      "0": "Degli stuzzichini fritti e dorati, la cui fragranza fa venire l'acquolina in bocca. Con l'anello di pollo e cipolle nella mano sinistra e quello di pesce e patate nella destra, la bontà è letteralmente a portata di mano! Lascia che il loro sapore inebri il tuo palato."
+    }
+  },
+  "SuspiciousRainbowMacarons": {
+    "name": "Macaron arcobaleno sospetti",
+    "description": {
+      "0": "Dei dolcetti rotondi multicolore. Il primo che assaggi sembra vuoto, il secondo è sbilenco, il terzo non è omogeneo e il quarto è uno strano miscuglio dei primi tre... Come ci si aspetterebbe da un dolce di Fontaine ricco di dettagli, servirà più tempo per padroneggiare questo metodo di preparazione."
+    }
+  },
+  "RainbowMacarons": {
+    "name": "Macaron arcobaleno",
+    "description": {
+      "0": "Dei dolcetti rotondi variopinti. A Fontaine c'è un detto che recita: \"Un dolce senza macaron è come acqua senza sorgente\". Questa massima non è nota soltanto ai grandi pasticceri fontainiani, qualsiasi amante dei dessert la conosce a memoria."
+    }
+  },
+  "DeliciousRainbowMacarons": {
+    "name": "Macaron arcobaleno deliziosi",
+    "description": {
+      "0": "Dei dolcetti rotondi multicolore. La crosta croccante racchiude un ripieno denso e morbido che ti mette in pace con il mondo. Provane uno e ti sembrerà che un micetto ti stia facendo le fusa. Non esiste nessuno in grado di resistere a una tale esperienza culinaria."
+    }
+  },
+  "SinTheKindThatDoesntNeedToBeDealtWith": {
+    "name": "Peccato di gola: Impossibile da espiare",
+    "description": {
+      "0": "La specialità di Chevreuse. C'è qualcosa d'indubbiamente \"peccaminoso\" in questo piatto, da un punto di vista prettamente salutistico. In quanto capo della Pattuglia speciale di sicurezza e sorveglianza, non permetterà che siano gli altri a occuparsi dei peccati... È una questione di professionalità ed etica personale, dopotutto. Talvolta, però, condividere un compito tanto solenne con qualcuno di cui ci si fida è un... modo accettabile per alleviare lo stress."
+    }
+  },
+  "PickWhatYouLike": {
+    "name": "\"Scegli quello che preferisci!\"",
+    "description": {
+      "0": "La specialità di Navia. \"Scegli quello che preferisci!\" Al suono delle familiari grida di gioia, ecco che davanti ai tuoi occhi appare un dolce a doppio strato esteticamente gradevole, con file di macaron con varie espressioni disegnate sopra. Un pensiero ti passa improvvisamente per la testa... Che espressione farebbe Navia se tu cedessi all'ingordigia e te li pappassi tutti?"
+    }
+  },
+  "SuspiciousFontinaliaMousse": {
+    "name": "Mousse di Fontinalia sospetta",
+    "description": {
+      "0": "Un dolce di colore azzurro tipico della Festa di Fontinalia. Detto questo, il suo aspetto discutibile ricorda un Malefiore di Cryo... Siamo sicuri che i gigli Lagoluce utilizzati per la sua preparazione non siano in realtà dei Malefiori? Mh, meglio liberarsene... Servire un dolce simile durante la festa potrebbe risultare offensivo!"
+    }
+  },
+  "FontinaliaMousse": {
+    "name": "Mousse di Fontinalia",
+    "description": {
+      "0": "Un dolce di colore azzurro tipico della Festa di Fontinalia. Una mousse dalla forma di un bocciolo di Giglio Lagoluce. Dopo che le tradizioni della festa sono state adeguate per includere la degustazione dolciaria, questa mousse è diventata uno dei dolci preferiti di Fontaine. Non dimenticare di darne un po' a chiunque voglia giocare a \"Dolcetto o processo\" con te!"
+    }
+  },
+  "DeliciousFontinaliaMousse": {
+    "name": "Mousse di Fontinalia deliziosa",
+    "description": {
+      "0": "Un dolce di colore azzurro tipico della Festa di Fontinalia. La sua colorazione cristallina non ha nulla da invidiare a quella delle onde del mare. La sua eleganza leggiadra è simile a quella dei petali che cadono, e la sua consistenza ariosa è come un fiocco di neve che si scioglie in bocca. Gustare una tale prelibatezza è sicuramente una delle cose migliori che potrebbero capitare durante la festa!"
     }
   },
   "RecipeItem": {
@@ -14818,6 +14926,24 @@
     "name": "Ricetta: Blobboprofiterole",
     "description": {
       "0": "Una ricetta passo dopo passo per preparare un Blobboprofiterole."
+    }
+  },
+  "RecipeFeastOs": {
+    "name": "Ricetta: Frittondini",
+    "description": {
+      "0": "Una ricetta passo dopo passo per preparare dei Frittondini."
+    }
+  },
+  "RecipeRainbowMacarons": {
+    "name": "Ricetta: macaron arcobaleno",
+    "description": {
+      "0": "Una ricetta passo dopo passo per preparare dei macaron arcobaleno."
+    }
+  },
+  "RecipeFontinaliaMousse": {
+    "name": "Ricetta: mousse di Fontinalia",
+    "description": {
+      "0": "Una ricetta passo dopo passo per preparare della mousse di Fontinalia."
     }
   },
   "CraftedItems": {
@@ -15900,11 +16026,11 @@
   "MoltenMoment": {
     "name": "Ora della fusione",
     "description": {
-      "0": "Un certo frammento deformato che contiene un grande potere. L'hai ottenuto sconfiggendo Signora, che ha scatenato il suo potere originale.",
+      "0": "Un frammento deformato che racchiude un grande potere. L'hai ottenuto sconfiggendo Signora, quando ha sprigionato il suo potere originale.",
       "1": "\"Ho fatto un sogno molto lungo.",
       "2": "Ho sognato che ci saremmo incontrati di nuovo nel mondo puro che avevamo creato.",
       "3": "Ma alla fine mi sono svegliata, essendo stata consumata a lungo dalle fiamme violente, mentre tu eri tornato da tempo alla terra insieme a quel sangue avvelenato.",
-      "4": "Ma niente di tutto ciò ha più importanza. Devo andare avanti. Devo incenerire tutto ciò che è dietro di me. Devo credere in quel puro e immacolato reame eterno di cui ha parlato... che ho visto nell'Illusione che mi ha mostrato, alla fine dell'orizzonte dei sogni di Sua Maestà.\""
+      "4": "Ma niente di tutto ciò ha più importanza. Devo andare avanti. Devo incenerire tutto ciò che è dietro di me. Devo credere in quel puro e immacolato reame eterno di cui ha parlato... e che ho visto nell'Illusione che mi ha mostrato, alla fine dell'orizzonte dei sogni di Sua Maestà.\""
     }
   },
   "HellfireButterfly": {
@@ -18253,7 +18379,7 @@
   "ColleisWindblume": {
     "name": "Florvento di Collei",
     "description": {
-      "0": "Per Collei, l'unico fiore in grado di farle da Florvento per esprimere la sua gratitudine e i suoi desideri è il Padisarah, di ha deciso di offrirti i semi.",
+      "0": "Per Collei, l'unico fiore in grado di farle da Florvento per esprimere la sua gratitudine e i suoi desideri è il Padisarah, di cui ha deciso di offrirti i semi.",
       "1": "Con il suo ritorno a Mondstadt, Collei ha compiuto un esitante passo in avanti verso il futuro. Che i suoi giorni a venire siano come un piccolo seme nascosto nel suo palmo, pieno di luce e speranza."
     }
   },
@@ -19017,6 +19143,24 @@
       "0": "Una breve fiaba alquanto popolare a Fontaine. Molti bambini, vedendo i magnifici disegni sulla copertina, hanno pensato che sia stata scritta dalla gentile signora oca dalle ali di neve della leggenda in persona."
     }
   },
+  "TheTwoMusketeersI": {
+    "name": "I due moschettieri (I)",
+    "description": {
+      "0": "Una serie che spopola a Fontaine e che parla di cospirazioni, vendetta e malvagità."
+    }
+  },
+  "TheTwoMusketeersII": {
+    "name": "I due moschettieri (II)",
+    "description": {
+      "0": "Una serie che spopola a Fontaine e che parla di cospirazioni, vendetta e malvagità."
+    }
+  },
+  "TheTwoMusketeersIII": {
+    "name": "I due moschettieri (III)",
+    "description": {
+      "0": "Una serie che spopola a Fontaine e che parla di cospirazioni, vendetta e malvagità."
+    }
+  },
   "GiftOfParting": {
     "name": "Regalo d'addio",
     "description": {
@@ -19573,7 +19717,7 @@
     "name": "Appunti dello Schermagliatore",
     "description": {}
   },
-  "34thIndependentInvestigativeSquadDeploymentInMontEsusEasternQuadrantDisplinaryProcedures": {
+  "34thIndependentInvestigativeSquadDeploymentInMontEsusEasternQuadrantDisciplinaryProcedures": {
     "name": "34ª squadra investigativa indipendente: procedimenti disciplinari del dispiegamento sul Monte Esus (quadrante orientale)",
     "description": {}
   },
@@ -19765,7 +19909,7 @@
   "ExperimentalDrinkNo7": {
     "name": "Drink sperimentale 7",
     "description": {
-      "0": "Un \"drink sperimentale\" creato da Heinry. Una Fonta rinfrescante, una fonte di cosa?! Questa bibita si è ammosciata... Chi è stato ad aprirla e a non finirla?!"
+      "0": "Un \"drink sperimentale\" creato da Heinry. Fonta mia bella?, una fonte di... cosa?! Questa bibita si è sgasata... Chi è stato ad aprirla e a non finirla?!"
     }
   },
   "ExperimentalDrinkNo8": {
@@ -19922,15 +20066,15 @@
     }
   },
   "SpinaDiRosulaUniformGiftBox": {
-    "name": "Scatola regalo di un'uniforme della Spina di Rosula",
+    "name": "Scatola regalo con uniforme della Spina di Rosula",
     "description": {
-      "0": "Navia ha preparato questo regalo, che contiene un'uniforme della di Rosula, per Adele. Le dimensioni sono un po' grandi per Adele al momento, ma è perfetta per una promessa."
+      "0": "Navia ha preparato questo regalo contenente un'uniforme della Spina di Rosula per Adèle. Le dimensioni sono un po' grandi per lei, al momento, ma è perfetta per una promessa."
     }
   },
   "StrangelyShapedKey": {
     "name": "Chiave dalla forma strana",
     "description": {
-      "0": "Chiave ottenuta da un membro della gang di Romeuf. Sembra che sia necessariia per fermare rapidamente gli esplosivi"
+      "0": "Chiave ottenuta da un membro della banda di Romeuf. Sembra che sia necessaria per fermare rapidamente gli esplosivi."
     }
   },
   "RecommendationLetter": {
@@ -19995,6 +20139,14 @@
       "0": "Una delle chiavi che aprono la grata di ferro sulla nave distrutta."
     }
   },
+  "AratakiGangsInstantRamen": {
+    "name": "Ramen istantaneo della Banda di Arataki",
+    "description": {
+      "0": "Un regalo di Kuki Shinobu ottenuto dopo aver aiutato il Re Combattente Stercorario Supremo a diventare più forte e a trovare nuove strade nella lotta tra scarabei nel Campo di addestramento Arataki per le sfolgoranti lotte tra scarabei corazzati.",
+      "1": "I blocchi di ramen essiccati sono posti in una scatola robusta ma leggera, con condimenti sigillati, utensili incredibilmente rigidi e una ciotola. Basta mettere il ramen e i condimenti nella ciotola e versare dell'acqua calda per ottenere rapidamente un piatto dal sapore gradevole. Comodo, vero?",
+      "2": "Tuttavia, stando alla lettera che Kuki Shinobu ha lasciato nella scatola, né lei né Arataki Itto hanno potuto mangiarlo durante il loro viaggio via mare verso Liyue, avendo portato solo biscotti e sottaceti. Durante il loro soggiorno a Liyue, Kuki Shinobu si è ispirata ai cibi farinosi del posto per creare questo ramen istantaneo, per dare modo a Braccio destro del Re oni e a Melonlavanda Biancoferro Squarciatrice dei cieli di respingere la fame durante il loro viaggio..."
+    }
+  },
   "FoggyForestBranch": {
     "name": "Ramo della Foresta nebbiosa",
     "description": {
@@ -20045,12 +20197,25 @@
       "0": "Strano messaggio"
     }
   },
+  "AutumnsGift": {
+    "name": "Regalo di Autumn",
+    "description": {
+      "0": "Un giocattolo musicale molto amato dai bambini, venduto presso la Casa delle Curiosità di Bertin. Questo esemplare sembra sia stato comprato tempo addietro, dato che non è più l'ultimo modello disponibile al negozio.",
+      "1": "I regali sono pensieri da inviare alle persone; e se non è possibile fare in modo che arrivino a destinazione, la cosa migliore è che rimangano con chi può prendersi cura di loro."
+    }
+  },
   "MysteriousXenochromaticCrystal": {
     "name": "Cristallo xenocromatico misterioso",
     "description": {
-      "0": "Un grosso cristallo ottenuto sconfiggendo i possenti Aberranti del Fontemer nella Regione di Morterre.",
-      "1": "Il potere che contiene è più misterioso di quello dei cristalli xenocromatici comuni.",
+      "0": "Un grosso cristallo ottenuto sconfiggendo i possenti Aberranti del Fontemer.",
+      "1": "Il potere che racchiude è più misterioso di quello dei cristalli xenocromatici comuni.",
       "2": "Forse qualcuno sarebbe disposto a pagare un giusto prezzo pur di averlo."
+    }
+  },
+  "RecruitmentNotice": {
+    "name": "Bando di reclutamento",
+    "description": {
+      "0": "Un elenco di istruzioni compilato da Benoît Leroy. In allegato all'indirizzo è fornita anche una mappa."
     }
   },
   "MapFragment": {
@@ -20092,6 +20257,31 @@
   "Log": {
     "name": "Diario",
     "description": {}
+  },
+  "ShootingPracticeOpticalLenses": {
+    "name": "Lenti ottiche per pratica di tiro",
+    "description": {
+      "0": "Un apparato ottico ricevuto da Turenna della Pattuglia speciale di sicurezza e sorveglianza. Sembra fare uso di alcune complesse tecniche per la creazione di immagini, in abbinamento al tavolo tattico della \"Zona di tiro dei mille passi\", per simulare l'uso del moschetto per colpire gli avversari.",
+      "1": "Sebbene per molti versi sia ritenuto insufficiente per quelli che sono i livelli d'addestramento dei membri della Pattuglia, basta e avanza per suscitare un interesse per i moschetti e la moschetteria, sviluppare il talento per l'uso di quest'arma e adottarla in maniera definitiva."
+    }
+  },
+  "HelpMePlease": {
+    "name": "Aiutatemi, vi prego!",
+    "description": {
+      "0": "Nota, materiale da lettura"
+    }
+  },
+  "BracarisGeneralStoreReceipt": {
+    "name": "Ricevuta dell'Emporio Bracari",
+    "description": {
+      "0": "Ricevuta dell'Emporio Bracari"
+    }
+  },
+  "PackageForTheLeroyFamily": {
+    "name": "Pacchetto per la famiglia Leroy",
+    "description": {
+      "0": "Il fattorino del giornale, Pip, ha inzeppato al suo interno tutti i giornali che la famiglia Leroy non ha ritirato negli ultimi tempi."
+    }
   },
   "TearsAmongTheStars": {
     "name": "Lacrime tra le stelle",
@@ -21599,6 +21789,14 @@
     "description": {
       "0": "Materiale di miglioramento specifico per la Spada di Narzissenkreuz.",
       "1": "Nell'antica civiltà di Fontaine, le conchiglie erano spesso la prima scelta in fatto di materiali per oggetti rituali, e gli unguenti sacri all'interno di questa conchiglia, scelta come calice santificato, sono finalmente affiorati. Simbolicamente, questo calice rappresenta la parola primordiale, gli oli rappresentano la volontà tenace, e la spada sacra rappresenta la ragione che si fa strada superando qualunque ostacolo."
+    }
+  },
+  "SuperDuperInvincibleShiningSparklyMagicCrystal": {
+    "name": "Cristallo magico scintillante super mega invincibile",
+    "description": {
+      "0": "Materiale di miglioramento specifico per la \"Spada magica del Super Signore Supremo\".",
+      "1": "Può raccogliere un gran numero di desideri (compresi quelli fortissimi fatti di cartone) e metterli insieme, creando un misterioso mega potere finale.",
+      "2": "Anche se è possibile acquistarne una versione giocattolo molto simile presso lo Spaccio Damoville (praticamente identico, a dirla tutta), c'è (probabilmente) una differenza qualitativa tra i due, quindi non bisogna assolutamente confonderli!"
     }
   },
   "FalconsDance": {
@@ -23159,6 +23357,27 @@
       "1": "Anche se il meccanismo smetterà di funzionare e le marionette non faranno più un passo. Anche se i nostri ricordi verranno congelati in eterno come il corallo, non dimenticare le nostre avventure e il tempo trascorso assieme."
     }
   },
+  "NaviaRosula": {
+    "name": "Navia: Rosula",
+    "description": {
+      "0": "Stile per la carta giocatore.",
+      "1": "Le rose fioriranno, aprendosi come l'ombrello di Mademoiselle Navia. Ma attenzione: come ogni rosa ha la sua spina, così l'ombrello di Navia può scagliare colpi devastanti."
+    }
+  },
+  "ChevreuseTypeII": {
+    "name": "Chevreuse: Tipo II",
+    "description": {
+      "0": "Stile per la carta giocatore.",
+      "1": "L'arma di ordinanza della Pattuglia speciale di sicurezza e sorveglianza è conosciuta come \"moschetto d'ordinanza Tipo II della Pattuglia speciale di sicurezza e sorveglianza\". Nonostante ci siano infiniti fiori al mondo, quello da te custodito è speciale, anche se per tutti gli altri potrebbe non esserlo."
+    }
+  },
+  "TravelNotesTimeInscribed": {
+    "name": "Appunti di viaggio: Iscrizione del tempo",
+    "description": {
+      "0": "Stile per la carta giocatore.",
+      "1": "Chissà quanto ci vorrà prima che la cinematografia a Teyvat giunga al punto di reinventare l'arte di \"scolpire il tempo\". Ciononostante, questa scena ha immortalato un passato colmo di peccati."
+    }
+  },
   "AnemoculusResonanceStone": {
     "name": "Pietra di risonanza per Anemoculi",
     "description": {
@@ -23235,21 +23454,21 @@
     }
   },
   "MiniSeelieDayflower": {
-    "name": "Mini Seelie (commelina)",
+    "name": "Mini Seelie: Commelina",
     "description": {
       "0": "Un ricordo dell'evento Ricchezze perdute. Equipaggialo per ottenere un mini Seelie come compagno.",
       "1": "Un Seelie color blu mare in miniatura. A differenza degli altri, non serve a guidare le persone, ma a seguirle per vedere il mondo."
     }
   },
   "MiniSeelieRos": {
-    "name": "Mini Seelie (rosa)",
+    "name": "Mini Seelie: Rosa",
     "description": {
       "0": "Un ricordo dell'evento Ricchezze perdute. Equipaggialo per ottenere un mini Seelie come compagno.",
       "1": "Un Seelie color rosa cipria in miniatura. Nonostante non sia in grado di parlare, se u{F#na}{M#n} viaggiat{F#rice}{M#ore} attira la sua attenzione l{F#a}{M#o} seguirà silenziosamente per tutto il mondo."
     }
   },
   "MiniSeelieCurcuma": {
-    "name": "Mini Seelie (curcuma)",
+    "name": "Mini Seelie: Curcuma",
     "description": {
       "0": "Un ricordo dell'evento Ricchezze perdute. Equipaggialo per ottenere un mini Seelie come compagno.",
       "1": "Un Seelie color oro in miniatura. Emana una sensazione simile a quella dei Mora. Si dice che i Seelie di questo colore siano simbolo di buona sorte."
@@ -23402,7 +23621,7 @@
     }
   },
   "MiniSeelieViola": {
-    "name": "Mini Seelie (violetta)",
+    "name": "Mini Seelie: Violetta",
     "description": {
       "0": "Un ricordo dell'evento Ricchezze perdute. Equipaggialo per ottenere un mini Seelie come compagno.",
       "1": "Un Seelie color viola in miniatura. La sua tinta è molto simile a quella degli oggetti infusi di Electro. Chissà se toccandolo si avverte un po' di formicolio..."
@@ -23533,7 +23752,7 @@
     }
   },
   "MiniSeelieMoss": {
-    "name": "Mini Seelie (muschio)",
+    "name": "Mini Seelie: Muschio",
     "description": {
       "0": "Un ricordo dell'evento Ricchezze perdute. Equipaggialo per ottenere un mini Seelie come compagno.",
       "1": "Un Seelie in miniatura di color verde. Se si avvicina a un albero, sprizza gioia da tutti i pori."
@@ -23741,6 +23960,13 @@
     "name": "Fotokamera per campionamento grafico",
     "description": {
       "0": "Una Fotokamera con delle speciali modifiche effettuate da Lépine-Pauline per l'astrusa disciplina del \"confronto delle immagini\". Non è noto quale tipo di componenti complessi e costosi contenga al suo interno, ma sembra essere in grado di catturare dettagli importanti di chi viene fotografato, fra cui la struttura particolare, il profilo, il colorito..."
+    }
+  },
+  "MiniSeelieBrilliance": {
+    "name": "Mini Seelie: Fulgore",
+    "description": {
+      "0": "Un ricordo di Ricchezze perdute. Equipaggialo per ottenere un mini Seelie come compagno.",
+      "1": "Un Seelie dai colori sgargianti, in grado di muoversi senza problemi sott'acqua."
     }
   },
   "InstructionsAnemoculusResonanceStone": {
@@ -24018,6 +24244,13 @@
       "1": "Il profumo di questo frutto evoca immagini alla mente che puoi manipolare col potere della Creazione di Mondi alternativi per ricreare le meravigliose viste di Sumeru nel tuo Regno interiore..."
     }
   },
+  "SwirlingSceneInABottle": {
+    "name": "Scena vorticosa in bottiglia",
+    "description": {
+      "0": "Questo grazioso acquario, al cui interno sono contenuti paesaggi magnifici, è stato portato come ricordo di Fontaine da Tondo, il Venditore itinerante della Serenteiera.",
+      "1": "Le scene al suo interno rievocano immagini che è possibile manipolare col potere della Creazione di Mondi alternativi, per ricreare i meravigliosi panorami di Fontaine nel tuo Regno interiore..."
+    }
+  },
   "TheMountainCloudsLetDownGoldenRain": {
     "name": "Dalle nuvole della montagna cade la pioggia aurea",
     "description": {
@@ -24180,6 +24413,36 @@
     "name": "Ipostasi di Electro",
     "description": {
       "0": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+    }
+  },
+  "LaSignora": {
+    "name": "Signora",
+    "description": {
+      "0": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di un materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+    }
+  },
+  "Azhdaha": {
+    "name": "Azhdaha",
+    "description": {
+      "0": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di un materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+    }
+  },
+  "EremiteScorchingLoremaster": {
+    "name": "Eremita maestra del folklore infuocato",
+    "description": {
+      "0": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di un materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+    }
+  },
+  "ThunderManifestation": {
+    "name": "Manifestazione del tuono",
+    "description": {
+      "0": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di un materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+    }
+  },
+  "Dvalin": {
+    "name": "Dvalin",
+    "description": {
+      "0": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di un materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
     }
   },
   "UndividedHeart": {
@@ -24542,6 +24805,72 @@
       "0": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di un materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
     }
   },
+  "LightsRemit": {
+    "name": "Mandato della luce",
+    "description": {
+      "0": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di un materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+    }
+  },
+  "TurnControl": {
+    "name": "Controllo strategico",
+    "description": {
+      "0": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di un materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+    }
+  },
+  "ConclusiveOvation": {
+    "name": "Applauso finale",
+    "description": {
+      "0": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di un materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+    }
+  },
+  "AColdBladeLikeAShadow": {
+    "name": "Ombra sferzante",
+    "description": {
+      "0": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di un materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+    }
+  },
+  "RushingHoundSwiftAsTheWind": {
+    "name": "Segugio fuggente: Veloce come il vento",
+    "description": {
+      "0": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di un materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+    }
+  },
+  "Structuration": {
+    "name": "Strutturazione",
+    "description": {
+      "0": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di un materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+    }
+  },
+  "PainForPain": {
+    "name": "Sofferenza per sofferenza",
+    "description": {
+      "0": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di un materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+    }
+  },
+  "Scorpocalypse": {
+    "name": "Apocalisse scorpionica",
+    "description": {
+      "0": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di un materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+    }
+  },
+  "GrievingEcho": {
+    "name": "Eco di dolore",
+    "description": {
+      "0": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di un materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+    }
+  },
+  "RendingVortex": {
+    "name": "Vortice lacerante",
+    "description": {
+      "0": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di un materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+    }
+  },
+  "LunarCyclesUnending": {
+    "name": "Sempiterni cicli lunari",
+    "description": {
+      "0": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di un materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+    }
+  },
   "MagicGuide": {
     "name": "Manuale di magia",
     "description": {
@@ -24890,6 +25219,66 @@
       "0": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di un materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
     }
   },
+  "LostPrayerToTheSacredWinds": {
+    "name": "Origine dei venti sacri",
+    "description": {
+      "0": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di un materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+    }
+  },
+  "TulaytullahsRemembrance": {
+    "name": "Rimembranza di Tulaytullah",
+    "description": {
+      "0": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di un materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+    }
+  },
+  "BeaconOfTheReedSea": {
+    "name": "Faro del Mare dei Giunchi",
+    "description": {
+      "0": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di un materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+    }
+  },
+  "PrimordialJadeWingedSpear": {
+    "name": "Lancia di giada primordiale",
+    "description": {
+      "0": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di un materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+    }
+  },
+  "LightOfFoliarIncision": {
+    "name": "Lume del Taglio frondoso",
+    "description": {
+      "0": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di un materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+    }
+  },
+  "GildedDreams": {
+    "name": "Sogni dorati",
+    "description": {
+      "0": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di un materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+    }
+  },
+  "FlowingRings": {
+    "name": "Orecchini mutevoli",
+    "description": {
+      "0": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di un materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+    }
+  },
+  "EchoesOfAnOffering": {
+    "name": "Echi di un'offerta",
+    "description": {
+      "0": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di un materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+    }
+  },
+  "HeartOfKhvarenasBrilliance": {
+    "name": "Fulgore del Cuore di Khvarena",
+    "description": {
+      "0": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di un materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+    }
+  },
+  "VourukashasGlow": {
+    "name": "Bagliore di Vourukasha",
+    "description": {
+      "0": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di un materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+    }
+  },
   "LiyueHarborWharf": {
     "name": "Molo del Porto di Liyue",
     "description": {
@@ -25102,6 +25491,24 @@
   },
   "StormterrorsLair": {
     "name": "Covo di Terrore alato",
+    "description": {
+      "0": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di un materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+    }
+  },
+  "WeepingWillowOfTheLake": {
+    "name": "Salice piangente lacustre",
+    "description": {
+      "0": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di un materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+    }
+  },
+  "OperaEpiclese": {
+    "name": "Opéra Épiclèse",
+    "description": {
+      "0": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di un materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+    }
+  },
+  "Mamere": {
+    "name": "Mamère",
     "description": {
       "0": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di un materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
     }
@@ -25388,6 +25795,30 @@
       "0": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di un materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
     }
   },
+  "PassingOfJudgment": {
+    "name": "Ora del Giudizio",
+    "description": {
+      "0": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di un materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+    }
+  },
+  "TheBoarPrincess": {
+    "name": "La principessa dei cinghiali",
+    "description": {
+      "0": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di un materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+    }
+  },
+  "FallsAndFortune": {
+    "name": "Cadute e opportunità",
+    "description": {
+      "0": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di un materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+    }
+  },
+  "FlickeringFourLeafSigil": {
+    "name": "Sigillo a quattro foglie scintillante",
+    "description": {
+      "0": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di un materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+    }
+  },
   "Origin": {
     "name": "Origine",
     "description": {
@@ -25462,6 +25893,12 @@
   },
   "DragonspineCrown": {
     "name": "Picco del Drago: Corona",
+    "description": {
+      "0": "Il dorso di una carta di Invokazione del genio che puoi ottenere e scambiare. Si dice che i dorsi delle carte con design diversi differiscano leggermente anche in termini di fattura e consistenza. Alcuni giocatori collezionano i dorsi delle carte di stili diversi come hobby."
+    }
+  },
+  "TheChasmSolidIron": {
+    "name": "La Voragine: Color del ferro",
     "description": {
       "0": "Il dorso di una carta di Invokazione del genio che puoi ottenere e scambiare. Si dice che i dorsi delle carte con design diversi differiscano leggermente anche in termini di fattura e consistenza. Alcuni giocatori collezionano i dorsi delle carte di stili diversi come hobby."
     }
@@ -26218,6 +26655,106 @@
       "2": "Questo set decorativo piace particolarmente a Tighnari e {REALNAME[ID(1)|HOSTONLY(true)]}."
     }
   },
+  "KeyToAStableWorkRestCycle": {
+    "name": "Armonia tra vita e lavoro",
+    "description": {
+      "0": "Una grande camera da letto dallo stile semplice che mette d'accordo calore e raffinatezza. Per le persone stremate dagli impegni quotidiani, il letto rappresenta un accesso veloce al mondo dei sogni, e quelli che si svegliano al mattino si sentiranno freschi e riposati per affrontare un'altra dura giornata di lavoro.",
+      "1": "Molti abitanti di Fontaine considerano il design d'interni un fattore chiave per il proprio sonno, e dormire bene è cruciale per lavorare al meglio. In quest'ottica, la camera da letto assume un ruolo fondamentale.",
+      "2": "Questo set decorativo piace particolarmente a Charlotte e Chevreuse."
+    }
+  },
+  "StrictAdherenceToOfficeCodes": {
+    "name": "Osservanza delle regole d'ufficio",
+    "description": {
+      "0": "Ispirato agli arredi del Palais Mermonia, questo studio dallo stile classico ricrea l'atmosfera brulicante di un ufficio, dove ogni cosa rispetta delle regole specifiche.",
+      "1": "Una volta, un certo ricercatore dell'Istituto di ricerca di Fontaine proclamò che \"l'ambiente di una persona influisce enormemente sulla qualità del suo lavoro\". Basandosi su questo principio, chiunque si troverà in un contesto simile a quello del Palais seguirà inconsciamente ogni processo alla lettera...",
+      "2": "Questo set decorativo piace particolarmente a Neuvillette."
+    }
+  },
+  "GarbForGloriousGourmet": {
+    "name": "Gourmet in stile glorioso",
+    "description": {
+      "0": "Un ristorante completamente decorato, ispirato all'Hotel Débord. Ideale per ricevimenti di famiglie numerose con molti parenti e amici.",
+      "1": "Nemmeno gli chef più esperti possono negare che la \"mise en scène\" gastronomica determina l'umore dei commensali e il loro apprezzamento delle portate. Di conseguenza, un bel ristorante può essere anche considerato come una sorta di abito per il buon cibo e le bevande.",
+      "2": "Questo set decorativo piace particolarmente a Furina e Navia."
+    }
+  },
+  "PerfectlyDrawnFocus": {
+    "name": "Concentrazione perfetta",
+    "description": {
+      "0": "Un ambiente con un palco di medie dimensioni come elemento centrale, sufficiente ad allestire una piccola rappresentazione.",
+      "1": "Chi è nuovo all'arte della recitazione potrebbe sentirsi intimorito da un pubblico troppo numeroso, e gli artisti stagionati si sentono spesso più appagati dal recitare per pochi intimi anziché dinanzi a centinaia di spettatori. Pertanto, la maggior parte degli attori è in grado di apprezzare la semplicità di questo palco.",
+      "2": "Questo set decorativo piace particolarmente a Lynette e Lyney."
+    }
+  },
+  "ContinuousClockworkInspiration": {
+    "name": "Ispirazione meccanica",
+    "description": {
+      "0": "Una stanza ispirata a un laboratorio meccanico, con attrezzature sufficienti a soddisfare le necessità della maggior parte degli artigiani.",
+      "1": "Alcuni poeti fontainiani credono che i Mekautomi siano creazioni degne di rispetto, e che questo dovrebbe riflettersi anche sugli strumenti utilizzati: \"L'ispirazione tende l'orecchio a questi componenti, gli insegna a danzare in un tutt'uno perpetuo\".",
+      "2": "Questo set decorativo piace particolarmente a Freminet."
+    }
+  },
+  "WellspringOfRuleViolationPrevention": {
+    "name": "Prevenzione alla violazione delle regole",
+    "description": {
+      "0": "Un ambiente dall'aria solenne che riproduce fedelmente l'ufficio del \"Duca\" presso Forte Méropide.",
+      "1": "Si dice che, da quando ha assunto il comando del Forte, il Duca abbia apportato soltanto qualche lieve modifica agli arredi dell'ufficio, il luogo dove sono state scritte le regole che i tanti detenuti devono rispettare. Questo set decorativo piace particolarmente a Wriothesley."
+    }
+  },
+  "CourtOfJusticesPlacidDays": {
+    "name": "Giorni lieti della Corte di Giustizia",
+    "description": {
+      "0": "Un viale comune ispirato al modello delle aree residenziali di Fontaine. Anche le numerose abitazioni riproducono in modo autentico lo stile della Corte di Fontaine.",
+      "1": "La vita di molti residenti di Fontaine si basa sulla routine: vanno al lavoro, riposano, incontrano gli amici per consumare un pasto assieme o fare compere, e assistono a qualche spettacolo all'Opéra Épiclèse. Persino alcuni avventurieri temerari potrebbero apprezzare uno stile di vita tanto pacato...",
+      "2": "Questo set decorativo piace particolarmente a Charlotte."
+    }
+  },
+  "CourtOfJusticesBoomingCommerce": {
+    "name": "Commercio fiorente della Corte di Giustizia",
+    "description": {
+      "0": "Ispirato al Quartiere Lyonnais nella Corte di Fontaine, questo luogo brulica di negozi specializzati e tavoli a cui sedersi per assaporare un tè e godersi un momento di relax.",
+      "1": "Se non conosci bene i negozi e i prodotti in vendita, alcuni turisti abituali suggeriscono che questo sia il posto migliore dove chiedere informazioni ai residenti. Dato che molti negozi seguono rigorosamente i controlli dei prezzi stabiliti dal Palais Mermonia, in pochissimi acquistano degli articoli a prezzi gonfiati.",
+      "2": "Questo set decorativo piace particolarmente a Lynette e Lyney."
+    }
+  },
+  "CourtOfJusticesFreshMist": {
+    "name": "Bruma rinfrescante della Corte di Giustizia",
+    "description": {
+      "0": "Una piazza abbellita da alberi, fiori e una magnifica fontana. Il concetto di design prende spunto dalla Fontana di Lucine di Érinnyes.",
+      "1": "Quando il tempo è bello, la bruma pervade i fiori di Érinnyes, sollevando lo spirito di residenti e visitatori. Anche se piovesse a catinelle, la leggenda che circonda la fontana colmerebbe comunque il tuo cuore di speranza.",
+      "2": "Questo set decorativo piace particolarmente a Neuvillette e Furina."
+    }
+  },
+  "PoissonTheUnassuming": {
+    "name": "Poisson la Modesta",
+    "description": {
+      "0": "Un paesaggio incentrato su vari edifici unici che riproducono un angolo di Poisson. Strutture che enfatizzano la funzionalità, ed elevano l'efficienza del lavoro di coloro che vi abitano, sebbene questo non si traduca immediatamente in frenesia e spossatezza, ma piuttosto sia un modo per salvaguardare i giorni di svago dei residenti. Senza dubbio, molti abitanti di Poisson vivono secondo il detto \"prima si finisce di lavorare, prima si può riposare\", e conducono una vita piena seppur semplice.",
+      "1": "Questo set decorativo piace particolarmente a Navia."
+    }
+  },
+  "UnderseaMeruseasLuster": {
+    "name": "Lustro subacqueo di Merusea",
+    "description": {
+      "0": "Un piccolo insediamento che s'impegna a ricreare il panorama del Villaggio di Merusea, con edifici unici e decisamente scenografici.",
+      "1": "Le Melusine abitano all'interno di Elynas, al di sotto dei flutti ondosi. Sebbene le persone che visitano il loro villaggio siano poche, tutte ne cantano le lodi al loro ritorno a casa. Alcuni artisti hanno tentato di dipingere il luogo in base a queste descrizioni e alle informazioni acquisite intervistando le Melusine nella Corte di Fontaine. La \"differenza cromatica\" tra il loro lavoro e i veri colori del villaggio, però, è sempre stata difficile da ignorare. Questo problema è stato risolto soltanto in seguito alla diffusione di alcuni scatti del Villaggio di Merusea eseguiti con la Fotokamera...",
+      "2": "Questo set decorativo piace particolarmente a Freminet."
+    }
+  },
+  "FullForceForwardInTheForbiddenFortress": {
+    "name": "Massimo sforzo nel Forte proibito",
+    "description": {
+      "0": "Un'arena il cui punto centrale è un ring. Stando al suo interno, puoi ancora sentire le incitazioni e gli applausi del pubblico, i commenti concitati del presentatore e il suono sordo dei pugni dei combattenti. Chiunque abbia assistito o preso parte a un incontro sul ring di Pankration di Forte Méropide porterà sempre con sé quest'esperienza.",
+      "1": "\"Su un ring dove ogni cosa dipende dai tuoi pugni, l'unico modo per rivendicare la gloria, nonché i Coupon di credito, è spingerti al massimo\". Molti combattenti del ring di Pankration considerano queste parole il loro motto, anche dopo aver lasciato il Forte...",
+      "2": "Questo set decorativo piace particolarmente a Wriothesley e Chevreuse."
+    }
+  },
+  "TheNationOfHydrosMottledColors": {
+    "name": "Colori screziati della Nazione di Hydro",
+    "description": {
+      "0": "Un panorama rurale ricco di piante rigogliose. Al suo interno è possibile ammirare ogni sorta di fiori e arbusti presenti a Fontaine. Piante e fiori sono temi comuni nei dipinti, e fungono da punto di partenza per l'esplorazione del \"colore\". Alcuni pittori di Fontaine credono che il mondo usi le piante come tavolozza per dimostrare le combinazioni di colori perfette. Pertanto, se tutti i colori di un dipinto trovano la loro origine nei fiori, quest'opera possiede senza dubbio una bellezza equiparabile a quella di uno scenario naturale. Naturalmente, questo accade soltanto se si evita di mescolare tutti i colori derivati dalle piante in un'unica conversazione..."
+    }
+  },
   "TimberWallWithJadeEaves": {
     "name": "Parete di legno con grondaia di giada",
     "description": {
@@ -26243,6 +26780,13 @@
     "name": "Parete intagliata semplice in Legno dello splendore",
     "description": {
       "0": "Un progetto con istruzioni passo dopo passo per realizzare una parete intagliata semplice in Legno dello splendore.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
+  "AnnexsGoldenMosaic": {
+    "name": "Mosaico dorato della dépendance",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare un mosaico dorato della dépendance.",
       "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
     }
   },
@@ -26274,6 +26818,13 @@
       "1": "Dopo aver usato questo oggetto potrai vederlo nella Schermata di creazione."
     }
   },
+  "AnnexsMirrorSheenFloorTile": {
+    "name": "Pavimento a specchio della dépendance",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare un pavimento a specchio della dépendance.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
   "CheckeredCedarCeiling": {
     "name": "Soffitto a scacchi in cedro",
     "description": {
@@ -26300,6 +26851,13 @@
     "description": {
       "0": "Un progetto con istruzioni passo dopo passo per realizzare un soffitto cesellato in Legno dello splendore.",
       "1": "Dopo aver usato questo oggetto potrai vederlo nella Schermata di creazione."
+    }
+  },
+  "AnnexsSpotlessDome": {
+    "name": "Volta immacolata della dépendance",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare una volta immacolata della dépendance.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
     }
   },
   "TwoTierCandleChandelier": {
@@ -26568,10 +27126,31 @@
       "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
     }
   },
+  "ForbiddenZoneFloorLampIronhammer": {
+    "name": "Piantana dell'area proibita Martello di ferro",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare una piantana dell'area proibita Martello di ferro.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
+  "ForbiddenZoneFloorLampNightlight": {
+    "name": "Piantana dell'area proibita Luce notturna",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare una piantana dell'area proibita Luce notturna.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
   "EfflorescentIllumination": {
     "name": "Illuminazione in boccio",
     "description": {
       "0": "Un progetto con istruzioni passo dopo passo per realizzare un'Illuminazione in boccio.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
+  "AnnexsSwirlingLight": {
+    "name": "Luci a spirale della dépendance",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare Luci a spirale della dépendance.",
       "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
     }
   },
@@ -26656,6 +27235,13 @@
     "name": "Scaffale in legno di athel",
     "description": {
       "0": "Un progetto con istruzioni passo dopo passo per realizzare uno scaffale in legno di Athel.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
+  "MallowWoodMultiModelWardrobe": {
+    "name": "Armadio multimodello in legno di malva",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare un armadio multimodello in legno di malva.",
       "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
     }
   },
@@ -26782,6 +27368,13 @@
     "name": "Piccolo aiutante della Maison Cardinalice",
     "description": {
       "0": "Un progetto con istruzioni passo dopo passo per realizzare un Piccolo aiutante della Maison Cardinalice.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
+  "AThousandTextsInTheCentralHub": {
+    "name": "Momento di lettura nella stazione centrale",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare Momento di lettura nella stazione centrale.",
       "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
     }
   },
@@ -26981,6 +27574,27 @@
       "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
     }
   },
+  "StableWorkStationInTheCentralHub": {
+    "name": "Postazione di lavoro stabile nella stazione centrale",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare una postazione di lavoro stabile nella stazione centrale.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
+  "RestTimeInTheCentralHub": {
+    "name": "Piccola pausa nella stazione centrale",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare Piccola pausa nella stazione centrale.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
+  "TheLeisureOfDailyMeetings": {
+    "name": "Piacevoli incontri quotidiani",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare Piacevoli incontri quotidiani.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
   "BreezeBlessedBed": {
     "name": "Letto Dolce brezza",
     "description": {
@@ -27076,6 +27690,13 @@
     "name": "Testimone d'affari",
     "description": {
       "0": "Un progetto con istruzioni passo dopo passo per realizzare un Testimone d'affari.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
+  "CelebrationOfAnAdHocPerformance": {
+    "name": "Celebrazione di uno spettacolo ad hoc",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare Celebrazione di uno spettacolo ad hoc.",
       "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
     }
   },
@@ -27209,6 +27830,27 @@
     "name": "Giubilio del bere in compagnia",
     "description": {
       "0": "Un progetto con istruzioni passo dopo passo per realizzare Giubilio del bere in compagnia.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
+  "MallowWoodViewingRitesChair": {
+    "name": "Poltrone in legno di malva Galateo dello spettatore",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare due poltrone in legno di malva Galateo dello spettatore.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
+  "LindenWoodSubduingSeatBackedChair": {
+    "name": "Poltrona in legno di tiglio Scranna intimidatoria",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare una poltrona in legno di tiglio Scranna intimidatoria.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
+  "MomentaryRestInTheCentralHub": {
+    "name": "Momento di riposo nella stazione centrale",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare Momento di riposo nella stazione centrale.",
       "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
     }
   },
@@ -27573,6 +28215,13 @@
     "name": "\"Onere del Forte proibito\"",
     "description": {
       "0": "Un progetto con istruzioni passo dopo passo per realizzare Onere del Forte proibito.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
+  "StandardMusicStandAccurateTuning": {
+    "name": "Leggio standard Accordatura precisa",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare un leggio standard Accordatura precisa.",
       "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
     }
   },
@@ -28115,6 +28764,13 @@
       "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
     }
   },
+  "CommonUseNoteHolder": {
+    "name": "Portabiglietti comune",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare un portabiglietti comune.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
   "RealizationsFromTheLandOfWisdom": {
     "name": "Zelo della Terra della Saggezza",
     "description": {
@@ -28336,6 +28992,13 @@
     "name": "Scudo metallico in legno di Athel",
     "description": {
       "0": "Un progetto con istruzioni passo dopo passo per realizzare uno scudo metallico in legno di Athel.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
+  "IndoorLampTheTwilightSea": {
+    "name": "Lampada da interno Mare crepuscolare",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare una lampada da interno Mare crepuscolare.",
       "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
     }
   },
@@ -28721,6 +29384,20 @@
     "name": "Standard di puntualità del Passage",
     "description": {
       "0": "Un progetto con istruzioni passo dopo passo per realizzare Standard di puntualità del Passage.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
+  "QuickTemporaryWorkshed": {
+    "name": "Capanno da lavoro temporaneo",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare un capanno da lavoro temporaneo.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
+  "PoissonsSeasonalProduce": {
+    "name": "Prodotti stagionali di Poisson",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare Prodotti stagionali di Poisson.",
       "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
     }
   },
@@ -29452,6 +30129,13 @@
       "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
     }
   },
+  "CourtyardPavilionAmidstTheRivers": {
+    "name": "Padiglione del giardino In mezzo ai fiumi",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare un padiglione del giardino In mezzo ai fiumi.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
   "CourtOfJusticesAuthenticity": {
     "name": "Autenticità della Corte di Giustizia",
     "description": {
@@ -29484,6 +30168,27 @@
     "name": "Granchietto in pietra",
     "description": {
       "0": "Un progetto con istruzioni passo dopo passo per realizzare un Granchietto in pietra.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
+  "TheArenaWhereFistsReemerge": {
+    "name": "Arena della rinascita dei pugni",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare Arena della rinascita dei pugni.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
+  "TheWisdomOfPoisson": {
+    "name": "Saggezza di Poisson",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare Saggezza di Poisson.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
+  "ASimpleResidenceInPoisson": {
+    "name": "Residenza semplice a Poisson",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare Residenza semplice a Poisson.",
       "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
     }
   },
@@ -30033,6 +30738,34 @@
       "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
     }
   },
+  "CourtyardCorridorTheMoraDividend": {
+    "name": "Sentiero del cortile Il dividendo dei Mora",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare un sentiero del cortile Il dividendo dei Mora.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
+  "CourtyardCorridorManifoldCorners": {
+    "name": "Sentiero del cortile Abbondanza angolare",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare un sentiero del cortile Abbondanza angolare.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
+  "CourtyardArchwayMomentOfGlory": {
+    "name": "Arco del giardino Momento di gloria",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare un arco del giardino Momento di gloria.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
+  "CourtyardWallABitOfScenery": {
+    "name": "Muro del giardino Uno scorcio",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare un muro del giardino Uno scorcio.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
   "FoundationsOfStoneFortunateTimes": {
     "name": "Selciato di pietra Tempi fortunati",
     "description": {
@@ -30527,6 +31260,13 @@
     "name": "Modello di meccanismo: Ancora penetrante",
     "description": {
       "0": "Un progetto con istruzioni passo dopo passo per realizzare un Modello di meccanismo: Ancora penetrante.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
+  "BoxingTargetOfTheForbiddenFortress": {
+    "name": "Bersaglio da boxe del Forte proibito",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare un bersaglio da boxe del Forte proibito.",
       "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
     }
   },
@@ -31293,6 +32033,55 @@
       "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
     }
   },
+  "OverburdeningOfTheForbiddenFortress": {
+    "name": "Eccedenza del Forte proibito",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare Eccedenza del Forte proibito.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
+  "AreaMarkerUpward": {
+    "name": "Segnale In alto",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare un segnale In alto.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
+  "AreaMarkerDownward": {
+    "name": "Segnale In basso",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare un segnale In basso.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
+  "PoissonDoorFrame": {
+    "name": "Telaio per porta di Poisson",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare un telaio per porta di Poisson.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
+  "BookshelfFreeReading": {
+    "name": "Portalibri Lettura libera",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare un portalibri Lettura libera.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
+  "BookshelfSpeedyBrowsing": {
+    "name": "Espositore Lettura veloce",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare un espositore Lettura veloce.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
+  "BookshelfFocusedEffect": {
+    "name": "Espositore Lettura intensa",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare un espositore Lettura intensa.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
   "PoolOfSapphireGrace": {
     "name": "Stagno Grazia mistica",
     "description": {
@@ -31584,6 +32373,20 @@
     "name": "Tavolo rotondo immacolato del Passage",
     "description": {
       "0": "Un progetto con istruzioni passo dopo passo per realizzare un tavolo rotondo immacolato del Passage.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
+  "ProductionRackTheBasics": {
+    "name": "Supporto di produzione Fondamenti",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare un supporto di produzione Fondamenti.",
+      "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    }
+  },
+  "ProductionRackCustomBuild": {
+    "name": "Supporto di produzione Su misura",
+    "description": {
+      "0": "Un progetto con istruzioni passo dopo passo per realizzare un supporto di produzione Su misura.",
       "1": "Dopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
     }
   },

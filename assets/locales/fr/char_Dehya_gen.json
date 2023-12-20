@@ -124,7 +124,7 @@
   "passive2": {
     "name": "Rectitude",
     "description": {
-      "0": "Lorsque ses PV sont inférieurs à 40 %, Dehya les restaure pour une valeur équivalant à 20 % de ses PV max, puis 6 % de ses PV max toutes les 2 s pendant 10 s. Cet effet peut être déclenché une fois toutes les 20 s."
+      "0": "Lorsque ses PV sont inférieurs à 40 %, Dehya les restaure d'une valeur équivalant à 20 % de ses PV max, puis 6 % de ses PV max toutes les 2 s pendant 10 s. Cet effet peut être déclenché une fois toutes les 20 s."
     }
   },
   "passive3": {
@@ -161,7 +161,7 @@
   "constellation4": {
     "name": "Liant serment de respect",
     "description": {
-      "0": "Lorsqu'un poing de crinière enflammée ou un pied plongeant d'incinération de <strong>Morsure léonine</strong> touche un ennemi, Dehya récupère 1,5 pt d'énergie élémentaire et se soigne pour une valeur équivalant à 2,5 % de ses PV max. Cet effet peut être déclenché une fois toutes les 0,2 s."
+      "0": "Lorsqu'un poing de crinière enflammée ou un pied plongeant d'incinération de <strong>Morsure léonine</strong> touche un ennemi, Dehya récupère 1,5 pt d'énergie élémentaire et se soigne d'une valeur équivalant à 2,5 % de ses PV max. Cet effet peut être déclenché une fois toutes les 0,2 s."
     }
   },
   "constellation5": {

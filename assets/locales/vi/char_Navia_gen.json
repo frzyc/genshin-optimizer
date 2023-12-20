@@ -1,0 +1,163 @@
+{
+  "name": "Navia",
+  "title": "Bánh Lái Hoa Lệ",
+  "description": "Hội trưởng hiện tại của Spina di Rosula, là một cô chủ dễ thương và rất có trách nhiệm.",
+  "constellationName": "Cung Dã Tường Vi",
+  "auto": {
+    "name": "Từ Chối Thẳng",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Tấn Công Thường</strong>",
+        "1": "Thực hiện tối đa 4 lần chém liên tiếp."
+      },
+      "charged": {
+        "0": "<strong>Trọng Kích</strong>",
+        "1": "Tiêu hao thể lực để xoay kiếm tấn công địch xung quanh.",
+        "2": "Khi ngừng quay, sẽ chém một nhát cực mạnh."
+      },
+      "plunging": {
+        "0": "<strong>Tấn Công Khi Đáp</strong>",
+        "1": "Đáp xuống đất từ trên không, tấn công kẻ địch trên đường và gây sát thương phạm vi khi chạm đất."
+      }
+    },
+    "skillParams": {
+      "0": "Sát Thương Lần 1",
+      "1": "Sát Thương Lần 2",
+      "2": "Sát Thương Lần 3",
+      "3": "Sát Thương Lần 4",
+      "4": "Sát Thương Trọng Kích Tuần Hoàn",
+      "5": "Sát Thương Trọng Kích Cuối Cùng",
+      "6": "Thể lực Trọng Kích tiêu hao",
+      "7": "Thời Gian Duy Trì Tối Đa",
+      "8": "Sát Thương Khi Đáp",
+      "9": "ST Khi Rơi Từ Độ Cao Thấp/Cao",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Đạn Pha Lê Thanh Lịch",
+    "description": {
+      "0": "Khi nhân vật trong đội nhận được mảnh tinh thể sinh ra từ phản ứng Kết Tinh, sẽ tích tụ cho Navia 1 \"Mảnh Đạn Pha Lê\", tối đa tích tụ 6 Mảnh Đạn Pha Lê. Mỗi lần tích tụ Mảnh Đạn Pha Lê sẽ làm mới thời gian duy trì của chúng.",
+      "1": "Khi thi triển, Navia sẽ tiêu hao toàn bộ Mảnh Đạn Pha Lê để triển khai Dù Cán Súng thanh lịch và chết chóc, bắn ra một loạt \"Đạn Pha Lê Rosula\" xuyên thấu kẻ địch, gây <geo>Sát Thương Nguyên Tố Nham</geo> cho kẻ địch trúng phải.",
+      "2": "Tiêu hao 0/1/2/3 Mảnh Đạn Pha Lê trở lên, sẽ bắn ra 5/7/9/11 viên Đạn Pha Lê Rosula. Số Đạn Pha Lê Rosula trúng cùng một kẻ địch càng nhiều thì sát thương gây ra cho kẻ địch đó càng cao; Khi 11 viên Đạn Pha Lê Rosula cùng trúng một mục tiêu, sẽ gây ra lượng sát thương bằng 200% so với mức ban đầu.",
+      "3": "Ngoài ra, khi tiêu hao hơn 3 Mảnh Đạn Pha Lê, thì mỗi Mảnh Đạn Pha Lê vượt quá 3 trong lần đó sẽ khiến sát thương gây ra tăng 15%.",
+      "4": "<br/>",
+      "5": "<strong>Nhấn Giữ</strong>",
+      "6": "Vào trạng thái ngắm chuẩn, liên tục thu thập mảnh tinh thể xung quanh được tạo ra từ phản ứng Kết Tinh, khi kết thúc sẽ bắn ra Đạn Pha Lê Rosula tương tự với khi nhấn.",
+      "7": "<br/>",
+      "8": "Ban đầu sẽ có hai lần sử dụng.",
+      "9": "<br/>",
+      "10": "<strong>Sức Mạnh Nền Tảng: Ousia</strong>",
+      "11": "Mỗi cách một khoảng thời gian, khi Navia dùng Dù Cán Súng để bắn sẽ triệu hồi Lưỡi Dao Nổi Sóng, gây <geo>Sát Thương Nguyên Tố Nham</geo> thuộc tính Ousia.",
+      "12": "<br/>",
+      "13": "<i>\"Giữ khoảng cách với những người cần thiết là một phần của xã giao, tuy nhiên cũng sẽ có nhiều cách để thực hiện nó...\"</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Cơ Bản Đạn Pha Lê Rosula",
+      "1": "Thời Gian Duy Trì Mảnh Đạn Pha Lê",
+      "2": "Sát Thương Lưỡi Dao Nổi Sóng",
+      "3": "Giãn Cách Lưỡi Dao Nổi Sóng",
+      "4": "CD",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Pháo Mừng Vang Trời",
+    "description": {
+      "0": "Dùng mệnh lệnh của hội trưởng Spina di Rosula, triệu hồi \"Pháo Hoa Hồng Vàng\" tráng lệ pháo kích mãnh liệt vào kẻ địch phía trước, gây <geo>Sát Thương Phạm Vi Nguyên Tố Nham</geo>, đồng thời trong một thời gian sau đó sẽ liên tục tiến hành \"Pháo Kích Chi Viện\", gây <geo>Sát Thương Nguyên Tố Nham</geo> theo từng đợt cho kẻ địch gần đó.",
+      "1": "Khi pháo kích trúng kẻ địch sẽ tích tụ cho Navia 1 Mảnh Đạn Pha Lê, hiệu quả này mỗi 2.4s tối đa kích hoạt một lần.",
+      "2": "<br/>",
+      "3": "<i>\"Pháo chào mừng của Spina di Rosula, sẽ được khai hỏa trước cuộc đàm phán để chúc cho mọi việc thành công. Đừng hiểu lầm, sẽ không mang bất kỳ hàm ý đe dọa nào đâu.\"</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Kỹ Năng",
+      "1": "Sát Thương Pháo Kích Chi Viện",
+      "2": "Pháo Kích Chi Viện Duy Trì",
+      "3": "CD",
+      "4": "Năng Lượng Nguyên Tố",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Kênh Phân Phối Ngầm",
+    "description": {
+      "0": "Trong 4s sau khi thi triển <strong>Đạn Pha Lê Thanh Lịch</strong>, sát thương Tấn Công Thường, Trọng Kích và Tấn Công Khi Đáp của Navia sẽ chuyển thành <geo>Sát Thương Nguyên Tố Nham</geo> không thể bị thay thế; Đồng thời sát thương gây ra từ Tấn Công Thường, Trọng Kích và Tấn Công Khi Đáp của Navia tăng 40%."
+    }
+  },
+  "passive2": {
+    "name": "Mạng Lưới Hỗ Trợ",
+    "description": {
+      "0": "Trong đội mỗi tồn tại một nhân vật nguyên tố <pyro>Hỏa</pyro>/<electro>Lôi</electro>/<cryo>Băng</cryo>/<hydro>Thủy</hydro> thì tấn công của Navia sẽ tăng 20%. Hiệu quả này tối đa cộng dồn 2 tầng."
+    }
+  },
+  "passive3": {
+    "name": "Giao Dịch Tỉ Mỉ",
+    "description": {
+      "0": "Khi làm nhiệm vụ Phái Đi Thám Hiểm có thời gian là 20 giờ ở Fontaine, phần thưởng nhận được tăng 25%."
+    }
+  },
+  "constellation1": {
+    "name": "Cảm Nhận Cự Ly Của Thiếu Nữ",
+    "description": {
+      "0": "Khi thi triển <strong>Đạn Pha Lê Thanh Lịch</strong>, mỗi tiêu hao 1 \"Mảnh Đạn Pha Lê\" đều sẽ hồi phục 3 điểm Năng Lượng Nguyên Tố cho Navia, đồng thời khiến thời gian chờ của kỹ năng <strong>Pháo Mừng Vang Trời</strong> giảm 1s. Tối đa hồi phục 9 điểm Năng Lượng Nguyên Tố và khiến thời gian chờ của \"Pháo Mừng Vang Trời\" giảm 3s bằng cách này."
+    }
+  },
+  "constellation2": {
+    "name": "Thừa Thắng Truy Kích Của Chỉ Huy",
+    "description": {
+      "0": "Khi thi triển <strong>Đạn Pha Lê Thanh Lịch</strong>, mỗi tiêu hao 1 Mảnh Đạn Pha Lê đều sẽ khiến Tỷ Lệ Bạo Kích của lần Đạn Pha Lê Thanh Lịch đó tăng 12%, tối đa tăng đến 36% thông qua cách này.",
+      "1": "Ngoài ra, khi Đạn Pha Lê Thanh Lịch bắn trúng kẻ địch, sẽ giáng một lần Pháo Kích Chi Viện của <strong>Pháo Mừng Vang Trời</strong> xuống gần nơi kẻ địch trúng đòn. Mỗi lần thi triển Đạn Pha Lê Thanh Lịch tối đa chỉ giáng xuống một lần Pháo Kích Chi Viện, sát thương gây ra của Pháo Kích Chi Viện từ phương thức này sẽ được tính là sát thương Kỹ Năng Nộ."
+    }
+  },
+  "constellation3": {
+    "name": "Tầm Nhìn Rộng Mở Của Doanh Nhân",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Đạn Pha Lê Thanh Lịch</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation4": {
+    "name": "Bất Khuất Tuyệt Đối Của Lời Thề",
+    "description": {
+      "0": "Khi <strong>Pháo Mừng Vang Trời</strong> trúng kẻ địch, sẽ khiến <geo>Kháng Nguyên Tố Nham</geo> của kẻ địch đó giảm 20% trong 8s."
+    }
+  },
+  "constellation5": {
+    "name": "Ý Chí Kiên Quyết Của Đàm Phán",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Pháo Mừng Vang Trời</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation6": {
+    "name": "Linh Hoạt Uyển Chuyển Của Hội Trưởng",
+    "description": {
+      "0": "Nếu tiêu hao hơn 3 Mảnh Đạn Pha Lê khi thi triển <strong>Đạn Pha Lê Thanh Lịch</strong>, thì mỗi Mảnh Đạn Pha Lê vượt quá 3 trong lần đó sẽ khiến Sát Thương Bạo Kích của Đạn Pha Lê Thanh Lịch gây ra tăng 45%, đồng thời phần tiêu hao quá 3 sau khi thi triển sẽ được hoàn trả lại cho Navia."
+    }
+  }
+}

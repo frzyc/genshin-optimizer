@@ -166,7 +166,7 @@
       "0": "Après avoir utilisé <strong>Lampe de protection : Canon pacificateur</strong>, Dori obtient les effets suivants pendant 3 s :",
       "1": [
         " <electro>Enchantement Électro</electro>.",
-        " Si une attaque normale touche un ennemi, tous les personnages de l'équipe à proximité récupèrent des PV pour une valeur équivalant à 4 % des PV max de Dori. Les PV peuvent être restaurés une fois toutes les 0,1 s de cette manière."
+        " Si une attaque normale touche un ennemi, tous les personnages de l'équipe à proximité récupèrent des PV d'une valeur équivalant à 4 % des PV max de Dori. Les PV peuvent être restaurés une fois toutes les 0,1 s de cette manière."
       ]
     }
   }

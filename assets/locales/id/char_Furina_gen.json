@@ -151,7 +151,7 @@
   "constellation4": {
     "name": "\"They Know Not Life, Who Dwelt in the Netherworld Not!\"",
     "description": {
-      "0": "Saat Salon Members dari <strong>Salon Solitaire</strong> mengenai musuh, atau saat Singer of Many Waters memulihkan HP Karakter aktif, Furina akan mendapatkan 4 poin Energy. Efek ini dapat terpicu sekali setiap 5 detik."
+      "0": "Saat serangan Salon Members dari <strong>Salon Solitaire</strong> mengenai musuh, atau saat Singer of Many Waters memulihkan HP Karakter aktif di sekitarnya, Furina akan mendapatkan 4 poin Energy. Efek ini dapat terpicu sekali setiap 5 detik."
     }
   },
   "constellation5": {

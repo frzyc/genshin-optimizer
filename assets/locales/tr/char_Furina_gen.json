@@ -16,7 +16,7 @@
       },
       "arkhe": {
         "0": "<strong>Arkhe: Kutsal ve Laik Tahtlar</strong>",
-        "1": "Furina'nın Normal Saldırıları isabet ettiğinde belirli aralıklarla mevcut enerji türüne göre <hydro>Su Hasarı</hydro> veren bir Ruh Nefesi Dikeni veya Çalkantılı Kılıç indirir.",
+        "1": "Furina'nın Normal Saldırıları isabet ettiğinde belirli aralıklarla mevcut Arkhe türüne göre Ruh veya Öz tesirli <hydro>Su Hasarı</hydro> veren bir Ruh Nefesi Dikeni veya Çalkantılı Kılıç indirir.",
         "2": "Furina, savaş alanına girdiğinde başlangıç Arkhesi Öz olur."
       },
       "plunging": {
@@ -56,8 +56,8 @@
       "7": "<strong>Ruh</strong>",
       "8": "Maks. Canına göre yakındaki karakterlerin Canını belirli aralıklarla yenileyen Tüm Suların Şarkıcısını çağırır.",
       "9": "<br/>",
-      "10": "Salon Üyeleri ve Tüm Suların Şarkıcısı aynı süreyi paylaşırlar. Furina Yüklü Saldırısı ile misafir türünü değiştirdiğinde savaş alanına yeni gelen misafirler, öncekinin süresini devralırlar.",
-      "11": "Salon Üyeleri ve Tüm Suların Şarkıcısı alandayken Furina su yüzeyinde hareket edebilir.",
+      "10": "Salon Üyeleri ve Tüm Suların Şarkıcısı aynı süreyi paylaşırlar. Furina Yüklü Saldırısı ile misafir türünü değiştirdiğinde savaş alanına yeni gelen misafirler, kalan süreyi devralırlar.",
+      "11": "Salon Üyeleri veya Tüm Suların Şarkıcısı alandayken Furina su yüzeyinde hareket edebilir.",
       "12": "<br/>",
       "13": "<i>Furina'nın Yalnızlık Salonunun müdavimleri vardır. Bazı günler Matmazel Crabaletta, Leydi Chevalmarin ve Lord Usher ziyaret ederken kasvetli çarşamba günleri ise şarkıcı gelir.</i>"
     },
@@ -111,15 +111,15 @@
   "passive1": {
     "name": "Sonsuz Vals",
     "description": {
-      "0": "Grubundaki aktif karakter iyileştirildiğinde bu iyileştirmeyi yapan Furina değilse ve gelen iyileştirme karakterin Maks. Canını geçerse Furina, 4 saniye boyunca her 2 saniyede bir yakındaki bir grup üyesini, o üyenin Maks. Canının %2'si kadar iyileştirir."
+      "0": "Grubundaki aktif karakter iyileştirildiğinde bu iyileştirmeyi yapan Furina değilse ve gelen iyileştirme karakterin Maks. Canını geçerse Furina, 4 saniye boyunca her 2 saniyede bir yakındaki grup üyelerini, o üyenin Maks. Canının %2'si kadar iyileştirir."
     }
   },
   "passive2": {
     "name": "Duyulmamış İtiraf",
     "description": {
       "0": "Furina'nın her 1.000 Maks. Canı başına <strong>Yalnızlık Salonu</strong> becerisinin farklı Arkhe türleri şu şekilde güçlenir:",
-      "1": "Salon Üyesi becerisinin Hasarı en fazla %28 olmak üzere %0,7 artar.",
-      "2": "Tüm Suların Şarkıcısı becerisinin aktif karakter iyileştirme aralığı en fazla %16 olmak üzere %0,4 azalır."
+      "1": "Salon Üyelerinin Hasarı en fazla %28 olmak üzere %0,7 artar.",
+      "2": "Tüm Suların Şarkıcısının yakındaki aktif karakterleri iyileştirme aralığı en fazla %16 olmak üzere %0,4 azalır."
     }
   },
   "passive3": {
@@ -151,7 +151,7 @@
   "constellation4": {
     "name": "\"Cehennemi Görmeyenler Cennetin Ne Olduğunu Bilmezler!\"",
     "description": {
-      "0": "<strong>Yalnızlık Salonunun</strong> Salon Üyeleri bir düşmana vurduğunda veya Tüm Suların Şarkıcısı aktif karaktere Can yenilediğinde Furina 4 Enerji yeniler. Bu etki 5 saniyede bir tetiklenebilir."
+      "0": "<strong>Yalnızlık Salonunun</strong> Salon Üyeleri bir düşmana vurduğunda veya Tüm Suların Şarkıcısı yakındaki aktif karakterlere Can yenilediğinde Furina 4 Enerji yeniler. Bu etki 5 saniyede bir tetiklenebilir."
     }
   },
   "constellation5": {

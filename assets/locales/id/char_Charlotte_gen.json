@@ -84,7 +84,7 @@
       "2": "<strong>Newsflash Field</strong>",
       "3": [
         "Selama durasinya berlangsung, Monsieur Verite akan menyerang musuh secara berkala dan mengakibatkan <cryo>Cryo DMG</cryo>.",
-        "Selama durasinya berlangsung, akan memulihkan HP Karakter aktif, jumlah pemulihan didasarkan pada ATK Charlotte."
+        "Selama durasinya berlangsung, akan memulihkan HP Karakter aktif yang berada di dalam jangkauannya, jumlah pemulihan didasarkan pada ATK Charlotte."
       ],
       "4": "<br/>",
       "5": "<i>\"Mendengar cerita dari perspektif yang berbeda untuk merekayasa kembali sebuah kejadian benar-benar kunci penting untuk menghadirkan laporan yang berkualitas ... Yah, itu kan cara untuk dapatkan sudut terbaik dalam menulis artikelmu!\"</i>"

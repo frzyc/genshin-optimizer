@@ -129,7 +129,7 @@
   "constellation1": {
     "name": "Une vérification des faits",
     "description": {
-      "0": "Lorsque <strong>Pose : Corroboration complète</strong> a effectué un soin sur un personnage, ce dernier obtient une marque de vérification pendant 6 s, qui le soigne une fois toutes les 2 s pour une valeur équivalant à 80 % de l'ATQ de Charlotte."
+      "0": "Lorsque <strong>Pose : Corroboration complète</strong> a effectué un soin sur un personnage, ce dernier obtient une marque de vérification pendant 6 s, qui le soigne une fois toutes les 2 s d'une valeur équivalant à 80 % de l'ATQ de Charlotte."
     }
   },
   "constellation2": {
@@ -161,7 +161,7 @@
   "constellation6": {
     "name": "Un résumé de pertinence",
     "description": {
-      "0": "Lorsqu'une attaque normale ou chargée du personnage déployé a touché un ennemi affligé de l'effet Impression ciblée de <strong>Cadrage : Composition gelée</strong>, Monsieur Vérité effectue une attaque coordonnée qui inflige des <cryo>DGT Cryo de zone</cryo> d'une valeur équivalant à 180 % de l'ATQ de Charlotte et soigne les PV des personnages déployés à portée de l'attaque pour une valeur équivalant à 42 % de l'ATQ de Charlotte. Cet effet peut être déclenché une fois toutes les 6 s et les DGT et soins déclenchés de cette manière sont considérés comme provenant du déchaînement élémentaire de Charlotte."
+      "0": "Lorsqu'une attaque normale ou chargée du personnage déployé a touché un ennemi affligé de l'effet Impression ciblée de <strong>Cadrage : Composition gelée</strong>, Monsieur Vérité effectue une attaque coordonnée qui inflige des <cryo>DGT Cryo de zone</cryo> d'une valeur équivalant à 180 % de l'ATQ de Charlotte et soigne les PV des personnages déployés à portée de l'attaque d'une valeur équivalant à 42 % de l'ATQ de Charlotte. Cet effet peut être déclenché une fois toutes les 6 s et les DGT et soins déclenchés de cette manière sont considérés comme provenant du déchaînement élémentaire de Charlotte."
     }
   }
 }

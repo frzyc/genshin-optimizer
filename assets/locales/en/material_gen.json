@@ -397,6 +397,20 @@
       "1": "A precious reward that can be unlocked in the \"Thelxie's Fantastic Adventures\" event."
     }
   },
+  "TheaterTickets": {
+    "name": "Theater Tickets",
+    "description": {
+      "0": "Exquisitely-made souvenir tickets meant to memorialize participation in the various events related to the Fontinalia Film Festival. These tickets are said to be made to have a similar texture to film slides. Crystal-clear when reflecting light, they resemble nothing so much as thin gem fragments...",
+      "1": "Use these to unlock various rewards during the \"Roses and Muskets\" event."
+    }
+  },
+  "FilmForFun": {
+    "name": "Film for Fun",
+    "description": {
+      "0": "Souvenir coins shaped like film slides. These are mementos that can be accumulated and won through participation in the Fontinalia Film Festival. These cannot be placed within specialized devices to play exciting films, sure, but their unique designs are sure to lift peoples' spirits with reminders of what they saw during that festival...",
+      "1": "These can be exchanged for valuable rewards during the \"Roses and Muskets\" event."
+    }
+  },
   "Primogem": {
     "name": "Primogem",
     "description": {
@@ -1026,11 +1040,27 @@
   },
   "Charlotte": {
     "name": "Charlotte",
-    "description": {}
+    "description": {
+      "0": "Indefatigable reporter of The Steambird, constantly on the hunt for the \"truth.\""
+    }
   },
   "Furina": {
     "name": "Furina",
-    "description": {}
+    "description": {
+      "0": "The absolute focus of the stage of judgment, until the final applause sounds."
+    }
+  },
+  "Chevreuse": {
+    "name": "Chevreuse",
+    "description": {
+      "0": "The captain of the Special Security and Surveillance Patrol, who wears justice as an ever-present seal upon her heart. Her musket shall only ever point at the guilty."
+    }
+  },
+  "Navia": {
+    "name": "Navia",
+    "description": {
+      "0": "The current President of Spina di Rosula, who is lovely, dutiful, and a great boss."
+    }
   },
   "KamisatoAyakasStellaFortuna": {
     "name": "Kamisato Ayaka's Stella Fortuna",
@@ -1486,6 +1516,18 @@
     "name": "Furina's Stella Fortuna",
     "description": {
       "0": "Furina's Constellation Activation Material."
+    }
+  },
+  "ChevreusesStellaFortuna": {
+    "name": "Chevreuse's Stella Fortuna",
+    "description": {
+      "0": "Chevreuse's Constellation Activation Material"
+    }
+  },
+  "NaviasStellaFortuna": {
+    "name": "Navia's Stella Fortuna",
+    "description": {
+      "0": "Navia's Constellation Activation Material"
     }
   },
   "GnosticHymnOldNotes": {
@@ -13769,7 +13811,7 @@
   "SuspiciousCassoulet": {
     "name": "Suspicious Cassoulet",
     "description": {
-      "0": "A simple rustic stew. Though it looks okay at a glance, as you begin to eat, you notice a slight burned taste, before realizing the bottom layer of ingredients has been so badly burned they've all fused to the casserole. Ugh... next time, remember to stir the ingredients occasionally while cooking..."
+      "0": "A simple rustic stew. Though it looks okay at a glance, as you begin to eat, you notice a slight burned taste, before realizing the bottom layer of ingredients has been so badly burned they've all fused to the casserole. Ugh... next time, stir the ingredients occasionally while cooking..."
     }
   },
   "Cassoulet": {
@@ -13860,6 +13902,72 @@
     "name": "Exclusive Scoop: Gourmet Column",
     "description": {
       "0": "Charlotte's specialty. A snack that she stuffed in your hands while you accompany her on a relentless pursuit of exclusive scoops. You glance at her skipping beside you, and the excited rhythm of her steps slowly overlaps with the crackling of crispy fried fish fillets in your mouth... Though this latest news has yet to be turned into a finished story, the joy and contentment in your heart has already reached its peak."
+    }
+  },
+  "SuspiciousFeastOs": {
+    "name": "Suspicious Feast-O's",
+    "description": {
+      "0": "A golden brown fried snack, from which the excess oil was drained after much arduous labor, only to result in a soggy fried slop stripped of any crispiness. Hmm... Might the gulls by the shore be willing to accept such a meager offering?"
+    }
+  },
+  "FeastOs": {
+    "name": "Feast-O's",
+    "description": {
+      "0": "A golden brown fried snack. Mashed chicken is shaped into a hollow \"O\" shape by combining them with onion rings. Mashed fish and potatoes are similarly combined into a round form, making up the meat of the \"feast.\" Put them both into a pot of hot oil and presto — your \"Feast-O's\" are born amidst the crackling oil."
+    }
+  },
+  "DeliciousFeastOs": {
+    "name": "Delicious Feast-O's",
+    "description": {
+      "0": "A golden brown fried snack. Freshly fried and fully fragrant they come, ready to get appetites roaring. With the ring in your left hand and the round in your right, behold, the crest of crispness lies in your grasp. Dig in! Let the flavor flood forth into your mouth."
+    }
+  },
+  "SuspiciousRainbowMacarons": {
+    "name": "Suspicious Rainbow Macarons",
+    "description": {
+      "0": "Small, multi-colored round pastries. The first one feels empty, the second is slanted, the third uneven, and the fourth's a fickle mix... As expected of a Fontainian dessert dictated by dozens of details, this will take more work to master."
+    }
+  },
+  "RainbowMacarons": {
+    "name": "Rainbow Macarons",
+    "description": {
+      "0": "Small, multi-colored round pastries. There's a saying in Fontaine that a dessert spread without macarons is like having the many waters bereft of their source. Never mind the dessert artists in Fontainian kitchens — even dessert dilettantes on the streets know this adage by heart."
+    }
+  },
+  "DeliciousRainbowMacarons": {
+    "name": "Delicious Rainbow Macarons",
+    "description": {
+      "0": "Small, multi-colored round pastries. The crisp shell wraps a thick, soft filling, and all is right with the world. Try one, and it shall be as if a little kitten's nose is nuzzling against your chest. Surely no one could help but fall for such an experience."
+    }
+  },
+  "SinTheKindThatDoesntNeedToBeDealtWith": {
+    "name": "Sin: The Kind that Doesn't Need to be Dealt With",
+    "description": {
+      "0": "Chevreuse's specialty. There is something indubitably \"sinful\" about this dish from a health standpoint. As the leader of the Special Security and Surveillance Patrol, she will not lightly hand the task of dealing with sin to others — this is a matter of professionalism and personal ethics, after all. Sometimes, though, sharing such a solemn duty with one she trusts deeply is an... acceptable way of relieving stress."
+    }
+  },
+  "PickWhatYouLike": {
+    "name": "\"Pick What You Like!\"",
+    "description": {
+      "0": "Navia's specialty. \"Come on, pick the one you like!\" Along with the familiar cries of joy, you see before your eyes the aesthetically pleasing double-layered dessert stand and the neat rows of macarons with different expressions painted onto them. One thought suddenly fascinates you... What expression would Navia make if you were to give in to greed and steal all of them for yourself?"
+    }
+  },
+  "SuspiciousFontinaliaMousse": {
+    "name": "Suspicious Fontinalia Mousse",
+    "description": {
+      "0": "A true blue Fontinalia Festival snack. That said, a true tragedy seems to have befallen this serving, reminding one of nothing so much as a Cryo Whopperflower... Are you sure the Lakelight Lilies in this one weren't, in truth, Whopperflowers? Uh, best you get rid of this on the down low... serving a dish like this during the festival might just be a chargeable offense!"
+    }
+  },
+  "FontinaliaMousse": {
+    "name": "Fontinalia Mousse",
+    "description": {
+      "0": "A true blue Fontinalia Festival snack. This mousse is shaped in the image of the Lakelight Lily's bud. After the Festival's customs were changed to align more with dessert delectation, it quickly came to be a much-favored Fontainian food favorite. Don't forget to share them with all the trial-or-treaters who come your way!"
+    }
+  },
+  "DeliciousFontinaliaMousse": {
+    "name": "Delicious Fontinalia Mousse",
+    "description": {
+      "0": "A true blue Fontinalia Festival snack. Its crystalline coloration would not be ashamed if compared to the light scattering off the rippling waves. Its featherweight elegance is like that of falling petals, its airy texture like a snowflake melting in your throat. To eat such a delicacy must surely be the loveliest thing that could happen during the Festival!"
     }
   },
   "RecipeItem": {
@@ -14911,6 +15019,24 @@
     "name": "Recipe: Blubber Profiterole",
     "description": {
       "0": "A detailed step-by-step recipe for making Blubber Profiterole."
+    }
+  },
+  "RecipeFeastOs": {
+    "name": "Recipe: Feast-O's",
+    "description": {
+      "0": "A detailed step-by-step recipe for making Feast-O's."
+    }
+  },
+  "RecipeRainbowMacarons": {
+    "name": "Recipe: Rainbow Macarons",
+    "description": {
+      "0": "A detailed step-by-step recipe for making Rainbow Macarons."
+    }
+  },
+  "RecipeFontinaliaMousse": {
+    "name": "Recipe: Fontinalia Mousse",
+    "description": {
+      "0": "A detailed step-by-step recipe for making Fontinalia Mousse."
     }
   },
   "CraftedItems": {
@@ -15994,10 +16120,10 @@
   "MoltenMoment": {
     "name": "Molten Moment",
     "description": {
-      "0": "A certain deformed fragment containing great might. You obtained this from defeating Signora, who unleashed her original power.",
-      "1": "\"I had a long, long dream.",
-      "2": "\"I dreamed that you and I met again in the pure white world that we created.",
-      "3": "\"But I woke up at last, having long been consumed by the raging flames, while you had long returned to the earth along with that poisoned blood.",
+      "0": "A certain deformed fragment containing great might. You obtained this from defeating La Signora, who unleashed her original power.",
+      "1": "\"I had a long, long dream.\"",
+      "2": "\"I dreamed that you and I met again in the pure white world that we created.\"",
+      "3": "\"But I woke up at last, having long been consumed by the raging flames, while you had long returned to the earth along with that poisoned blood.\"",
       "4": "\"But none of it matters anymore. I must continue forging ahead. I must incinerate everything behind me. I must believe in that pure, spotless, everlasting realm that he spoke of — that I saw in the 'delusion' he let me see, at the end of the horizon of Her Majesty's dreams.\""
     }
   },
@@ -19122,6 +19248,24 @@
       "0": "A short fairy tale that is quite popular in Fontaine. Many children saw the exquisitely drawn cover and thought it was really written by the kind Madam Snow-Winged Goose of legend."
     }
   },
+  "TheTwoMusketeersI": {
+    "name": "The Two Musketeers (I)",
+    "description": {
+      "0": "A series about conspiracy, revenge, justice, and evil that took Fontaine by storm."
+    }
+  },
+  "TheTwoMusketeersII": {
+    "name": "The Two Musketeers (II)",
+    "description": {
+      "0": "A series about conspiracy, revenge, justice, and evil that took Fontaine by storm."
+    }
+  },
+  "TheTwoMusketeersIII": {
+    "name": "The Two Musketeers (III)",
+    "description": {
+      "0": "A series about conspiracy, revenge, justice, and evil that took Fontaine by storm."
+    }
+  },
   "GiftOfParting": {
     "name": "Gift of \"Parting\"",
     "description": {
@@ -19678,8 +19822,8 @@
     "name": "Skirmisher's Notes",
     "description": {}
   },
-  "34thIndependentInvestigativeSquadDeploymentInMontEsusEasternQuadrantDisplinaryProcedures": {
-    "name": "34th Independent Investigative Squad Deployment in Mont Esus (Eastern Quadrant) Displinary Procedures",
+  "34thIndependentInvestigativeSquadDeploymentInMontEsusEasternQuadrantDisciplinaryProcedures": {
+    "name": "34th Independent Investigative Squad Deployment in Mont Esus (Eastern Quadrant) Disciplinary Procedures",
     "description": {}
   },
   "TravelersExclusiveInterviewHandbook": {
@@ -20100,6 +20244,14 @@
       "0": "One of the keys that opens the iron barrier on the shattered vessel."
     }
   },
+  "AratakiGangsInstantRamen": {
+    "name": "Arataki Gang's Instant Ramen",
+    "description": {
+      "0": "A gift from Kuki Shinobu after helping the Bona-Fide Beetle Battle King power up and find new ways in Beetle Battle in Arataki Blazing Armor Beetle Battle Boot Camp. ",
+      "1": "Dried ramen blocks are placed in a sturdy yet light box, with sealed condiments, exceptionally rigid utensils, and a bowl. Put the ramen and the condiments in the bowl, then pour in hot water to quickly make a bowl of ramen that doesn't taste too bad at all. Convenient, isn't it? ",
+      "2": "But according to the letter that Kuki Shinobu left in the box, neither she nor Arataki Itto got to eat this during their journey on the water to Liyue, because they only brought cookies and pickles. During their stay in Liyue, Kuki Shinobu was inspired by the wheaten foods there, and created this instant ramen so that Oni King's Right Hand and Skycleaving White-Iron Lavender Melon could fight off their hunger during their travels..."
+    }
+  },
   "FoggyForestBranch": {
     "name": "Foggy Forest Branch",
     "description": {
@@ -20150,12 +20302,25 @@
       "0": "Strange Message"
     }
   },
+  "AutumnsGift": {
+    "name": "Autumn's Gift",
+    "description": {
+      "0": "A musical toy sold at Bertin's House of Curiosities. It is very popular among children. This one appears to have been bought a long while back and is no longer the latest model available in the store.",
+      "1": "Presents are for sending to people, and if they cannot be sent to their original destination, then let them at least be left with one who will treasure them."
+    }
+  },
   "MysteriousXenochromaticCrystal": {
     "name": "Mysterious Xenochromatic Crystal",
     "description": {
-      "0": "A large crystal obtained by defeating the extremely powerful Fontemer Aberrants in the Morte Region.",
+      "0": "A large crystal obtained by defeating extremely powerful Fontemer Aberrants.",
       "1": "The power it contains is more mysterious than common Xenochromatic Crystals.",
       "2": "Maybe someone will be willing to pay the right price for it."
+    }
+  },
+  "RecruitmentNotice": {
+    "name": "Recruitment Notice",
+    "description": {
+      "0": "Instructions filled in by Benoit Leroy. A map has been kindly appended to the address."
     }
   },
   "MapFragment": {
@@ -20197,6 +20362,31 @@
   "Log": {
     "name": "Log",
     "description": {}
+  },
+  "ShootingPracticeOpticalLenses": {
+    "name": "Shooting Practice Optical Lenses",
+    "description": {
+      "0": "An optical array provided by Special Security and Surveillance Patrol member Turenna. It appears to use some hard-to-grasp imaging techniques in conjunction with the sand table device from the \"Thousand-Pace Interdiction Arcminute Sharpshooting Zone\" to simulate using a musket to shoot at one's foes.",
+      "1": "Though this is considered in many ways insufficient for actual Patrol members' training regimens, it is more than enough to drum up interest in muskets and musketry, in developing one's talents for such, and for using such gifts for good."
+    }
+  },
+  "HelpMePlease": {
+    "name": "Help Me, Please!",
+    "description": {
+      "0": "Note, Readable"
+    }
+  },
+  "BracarisGeneralStoreReceipt": {
+    "name": "Bracari's General Store Receipt",
+    "description": {
+      "0": "Bracari's General Store Receipt"
+    }
+  },
+  "PackageForTheLeroyFamily": {
+    "name": "Package for the Leroy Family",
+    "description": {
+      "0": "The newspaper deliveryperson, Pip, has stuffed the papers that the Leroy family has not collected during this time into this package."
+    }
   },
   "TearsAmongTheStars": {
     "name": "Tears Among the Stars",
@@ -21705,6 +21895,14 @@
     "description": {
       "0": "The specialized refinement material for the Sword of Narzissenkreuz.",
       "1": "Conches were often favored materials in ancient Fontainian civilization for making ritual implements, and the sacred unguents within this conch chosen as a sanctified chalice have finally emerged. Symbolically, this chalice is the primordial word, the oils are the honed will, and the holy sword itself is reason, which breaks through all."
+    }
+  },
+  "SuperDuperInvincibleShiningSparklyMagicCrystal": {
+    "name": "Super-Duper Invincible Shining Sparkly Magic Crystal",
+    "description": {
+      "0": "Specialized refinement material for \"Ultimate Overlord's Mega Magic Sword.\"",
+      "1": "Can gather many wishes (including super cool cardboard ones) and put them together, forming an ultimate super-duper mysterious power.",
+      "2": "Though you can buy a toy version in Damoville Purveyor that looks similar (okay, basically exactly the same), in reality, there is (probably) a qualitative difference between the two, so definitely don't mix them up!"
     }
   },
   "FalconsDance": {
@@ -23267,6 +23465,27 @@
       "1": "Even if the clockwork stops ticking, even if the puppets stop stepping forward. Though our memories be frozen eternally as coral, do not forget our adventures and the time we spent together."
     }
   },
+  "NaviaRosula": {
+    "name": "Navia: Rosula",
+    "description": {
+      "0": "Namecard style.",
+      "1": "Roses shall bloom, and thus does Ms. Navia's umbrella flower. Yet beware, for roses have thorns, and Navia's booming brolly packs a powerful punch."
+    }
+  },
+  "ChevreuseTypeII": {
+    "name": "Chevreuse: Type II",
+    "description": {
+      "0": "Namecard style.",
+      "1": "The standard issue weapon of the Special Security and Surveillance Patrol is known as the \"Special Security and Surveillance Patrol Type II Standard Musket.\" Yet, though there may be countless flowers in this world, the one you treasure is special, even if it should be known to the world as nothing at all special."
+    }
+  },
+  "TravelNotesTimeInscribed": {
+    "name": "Travel Notes: Time Inscribed",
+    "description": {
+      "0": "Namecard style.",
+      "1": "Who knows how long it shall take before film in Teyvat will advance to the point of reinventing the art of \"carving time\"? Still, this scene has indeed frozen the sinful past."
+    }
+  },
   "AnemoculusResonanceStone": {
     "name": "Anemoculus Resonance Stone",
     "description": {
@@ -23852,6 +24071,13 @@
       "0": "A Kamera specially modified by Lepine-Pauline for the profound discipline of \"Graph Adversarial Technology.\" It is unknown just what kind of complex and expensive components are installed inside, but it seems to be able to capture the photograph subject's particular structure, profile, and coloration..."
     }
   },
+  "MiniSeelieBrilliance": {
+    "name": "Mini Seelie: Brilliance",
+    "description": {
+      "0": "A memento from Lost Riches. Equip the Seelie to gain its company.",
+      "1": "A mini Seelie with brilliant colors, it can move freely underwater."
+    }
+  },
   "InstructionsAnemoculusResonanceStone": {
     "name": "Instructions: Anemoculus Resonance Stone",
     "description": {
@@ -24127,6 +24353,13 @@
       "1": "Even a whiff of this fruit brings certain images to mind, which you can manipulate via the power of Sub-Space Creation to recreate the wondrous sights of Sumeru in your Realm Within..."
     }
   },
+  "SwirlingSceneInABottle": {
+    "name": "\"Swirling Scene in a Bottle\"",
+    "description": {
+      "0": "This lovely terrarium filled with beautiful landscapes was brought from Fontaine by the Teapot Traveling Salesman Chubby.",
+      "1": "The scenes contained within bring certain images to mind, which you can manipulate via the power of Sub-Space Creation to recreate the wondrous sights of Fontaine in your Realm Within..."
+    }
+  },
   "TheMountainCloudsLetDownGoldenRain": {
     "name": "The Mountain Clouds Let Down Golden Rain",
     "description": {
@@ -24287,6 +24520,36 @@
   },
   "ElectroHypostasis": {
     "name": "Electro Hypostasis",
+    "description": {
+      "0": "A card for the tabletop game, Genius Invokation TCG. It is built tough, and some special printing method has been used for the illustration on the card's face, resulting in a truly exquisite appearance."
+    }
+  },
+  "LaSignora": {
+    "name": "La Signora",
+    "description": {
+      "0": "A card for the tabletop game, Genius Invokation TCG. It is built tough, and some special printing method has been used for the illustration on the card's face, resulting in a truly exquisite appearance."
+    }
+  },
+  "Azhdaha": {
+    "name": "Azhdaha",
+    "description": {
+      "0": "A card for the tabletop game, Genius Invokation TCG. It is built tough, and some special printing method has been used for the illustration on the card's face, resulting in a truly exquisite appearance."
+    }
+  },
+  "EremiteScorchingLoremaster": {
+    "name": "Eremite Scorching Loremaster",
+    "description": {
+      "0": "A card for the tabletop game, Genius Invokation TCG. It is built tough, and some special printing method has been used for the illustration on the card's face, resulting in a truly exquisite appearance."
+    }
+  },
+  "ThunderManifestation": {
+    "name": "Thunder Manifestation",
+    "description": {
+      "0": "A card for the tabletop game, Genius Invokation TCG. It is built tough, and some special printing method has been used for the illustration on the card's face, resulting in a truly exquisite appearance."
+    }
+  },
+  "Dvalin": {
+    "name": "Dvalin",
     "description": {
       "0": "A card for the tabletop game, Genius Invokation TCG. It is built tough, and some special printing method has been used for the illustration on the card's face, resulting in a truly exquisite appearance."
     }
@@ -24651,6 +24914,72 @@
       "0": "A card for the tabletop game, Genius Invokation TCG. It is built tough, and some special printing method has been used for the illustration on the card's face, resulting in a truly exquisite appearance."
     }
   },
+  "LightsRemit": {
+    "name": "Light's Remit",
+    "description": {
+      "0": "A card for the tabletop game, Genius Invokation TCG. It is built tough, and some special printing method has been used for the illustration on the card's face, resulting in a truly exquisite appearance."
+    }
+  },
+  "TurnControl": {
+    "name": "Turn Control",
+    "description": {
+      "0": "A card for the tabletop game, Genius Invokation TCG. It is built tough, and some special printing method has been used for the illustration on the card's face, resulting in a truly exquisite appearance."
+    }
+  },
+  "ConclusiveOvation": {
+    "name": "Conclusive Ovation",
+    "description": {
+      "0": "A card for the tabletop game, Genius Invokation TCG. It is built tough, and some special printing method has been used for the illustration on the card's face, resulting in a truly exquisite appearance."
+    }
+  },
+  "AColdBladeLikeAShadow": {
+    "name": "A Cold Blade Like a Shadow",
+    "description": {
+      "0": "A card for the tabletop game, Genius Invokation TCG. It is built tough, and some special printing method has been used for the illustration on the card's face, resulting in a truly exquisite appearance."
+    }
+  },
+  "RushingHoundSwiftAsTheWind": {
+    "name": "Rushing Hound: Swift as the Wind",
+    "description": {
+      "0": "A card for the tabletop game, Genius Invokation TCG. It is built tough, and some special printing method has been used for the illustration on the card's face, resulting in a truly exquisite appearance."
+    }
+  },
+  "Structuration": {
+    "name": "Structuration",
+    "description": {
+      "0": "A card for the tabletop game, Genius Invokation TCG. It is built tough, and some special printing method has been used for the illustration on the card's face, resulting in a truly exquisite appearance."
+    }
+  },
+  "PainForPain": {
+    "name": "Pain for Pain",
+    "description": {
+      "0": "A card for the tabletop game, Genius Invokation TCG. It is built tough, and some special printing method has been used for the illustration on the card's face, resulting in a truly exquisite appearance."
+    }
+  },
+  "Scorpocalypse": {
+    "name": "Scorpocalypse",
+    "description": {
+      "0": "A card for the tabletop game, Genius Invokation TCG. It is built tough, and some special printing method has been used for the illustration on the card's face, resulting in a truly exquisite appearance."
+    }
+  },
+  "GrievingEcho": {
+    "name": "Grieving Echo",
+    "description": {
+      "0": "A card for the tabletop game, Genius Invokation TCG. It is built tough, and some special printing method has been used for the illustration on the card's face, resulting in a truly exquisite appearance."
+    }
+  },
+  "RendingVortex": {
+    "name": "Rending Vortex",
+    "description": {
+      "0": "A card for the tabletop game, Genius Invokation TCG. It is built tough, and some special printing method has been used for the illustration on the card's face, resulting in a truly exquisite appearance."
+    }
+  },
+  "LunarCyclesUnending": {
+    "name": "Lunar Cycles Unending",
+    "description": {
+      "0": "A card for the tabletop game, Genius Invokation TCG. It is built tough, and some special printing method has been used for the illustration on the card's face, resulting in a truly exquisite appearance."
+    }
+  },
   "MagicGuide": {
     "name": "Magic Guide",
     "description": {
@@ -24999,6 +25328,66 @@
       "0": "A card for the tabletop game, Genius Invokation TCG. It is built tough, and some special printing method has been used for the illustration on the card's face, resulting in a truly exquisite appearance."
     }
   },
+  "LostPrayerToTheSacredWinds": {
+    "name": "Lost Prayer to the Sacred Winds",
+    "description": {
+      "0": "A card for the tabletop game, Genius Invokation TCG. It is built tough, and some special printing method has been used for the illustration on the card's face, resulting in a truly exquisite appearance."
+    }
+  },
+  "TulaytullahsRemembrance": {
+    "name": "Tulaytullah's Remembrance",
+    "description": {
+      "0": "A card for the tabletop game, Genius Invokation TCG. It is built tough, and some special printing method has been used for the illustration on the card's face, resulting in a truly exquisite appearance."
+    }
+  },
+  "BeaconOfTheReedSea": {
+    "name": "Beacon of the Reed Sea",
+    "description": {
+      "0": "A card for the tabletop game, Genius Invokation TCG. It is built tough, and some special printing method has been used for the illustration on the card's face, resulting in a truly exquisite appearance."
+    }
+  },
+  "PrimordialJadeWingedSpear": {
+    "name": "Primordial Jade Winged-Spear",
+    "description": {
+      "0": "A card for the tabletop game, Genius Invokation TCG. It is built tough, and some special printing method has been used for the illustration on the card's face, resulting in a truly exquisite appearance."
+    }
+  },
+  "LightOfFoliarIncision": {
+    "name": "Light of Foliar Incision",
+    "description": {
+      "0": "A card for the tabletop game, Genius Invokation TCG. It is built tough, and some special printing method has been used for the illustration on the card's face, resulting in a truly exquisite appearance."
+    }
+  },
+  "GildedDreams": {
+    "name": "Gilded Dreams",
+    "description": {
+      "0": "A card for the tabletop game, Genius Invokation TCG. It is built tough, and some special printing method has been used for the illustration on the card's face, resulting in a truly exquisite appearance."
+    }
+  },
+  "FlowingRings": {
+    "name": "Flowing Rings",
+    "description": {
+      "0": "A card for the tabletop game, Genius Invokation TCG. It is built tough, and some special printing method has been used for the illustration on the card's face, resulting in a truly exquisite appearance."
+    }
+  },
+  "EchoesOfAnOffering": {
+    "name": "Echoes of an Offering",
+    "description": {
+      "0": "A card for the tabletop game, Genius Invokation TCG. It is built tough, and some special printing method has been used for the illustration on the card's face, resulting in a truly exquisite appearance."
+    }
+  },
+  "HeartOfKhvarenasBrilliance": {
+    "name": "Heart of Khvarena's Brilliance",
+    "description": {
+      "0": "A card for the tabletop game, Genius Invokation TCG. It is built tough, and some special printing method has been used for the illustration on the card's face, resulting in a truly exquisite appearance."
+    }
+  },
+  "VourukashasGlow": {
+    "name": "Vourukasha's Glow",
+    "description": {
+      "0": "A card for the tabletop game, Genius Invokation TCG. It is built tough, and some special printing method has been used for the illustration on the card's face, resulting in a truly exquisite appearance."
+    }
+  },
   "LiyueHarborWharf": {
     "name": "Liyue Harbor Wharf",
     "description": {
@@ -25211,6 +25600,24 @@
   },
   "StormterrorsLair": {
     "name": "Stormterror's Lair",
+    "description": {
+      "0": "A card for the tabletop game, Genius Invokation TCG. It is built tough, and some special printing method has been used for the illustration on the card's face, resulting in a truly exquisite appearance."
+    }
+  },
+  "WeepingWillowOfTheLake": {
+    "name": "Weeping Willow of the Lake",
+    "description": {
+      "0": "A card for the tabletop game, Genius Invokation TCG. It is built tough, and some special printing method has been used for the illustration on the card's face, resulting in a truly exquisite appearance."
+    }
+  },
+  "OperaEpiclese": {
+    "name": "Opera Epiclese",
+    "description": {
+      "0": "A card for the tabletop game, Genius Invokation TCG. It is built tough, and some special printing method has been used for the illustration on the card's face, resulting in a truly exquisite appearance."
+    }
+  },
+  "Mamere": {
+    "name": "Mamere",
     "description": {
       "0": "A card for the tabletop game, Genius Invokation TCG. It is built tough, and some special printing method has been used for the illustration on the card's face, resulting in a truly exquisite appearance."
     }
@@ -25497,6 +25904,30 @@
       "0": "A card for the tabletop game, Genius Invokation TCG. It is built tough, and some special printing method has been used for the illustration on the card's face, resulting in a truly exquisite appearance."
     }
   },
+  "PassingOfJudgment": {
+    "name": "Passing of Judgment",
+    "description": {
+      "0": "A card for the tabletop game, Genius Invokation TCG. It is built tough, and some special printing method has been used for the illustration on the card's face, resulting in a truly exquisite appearance."
+    }
+  },
+  "TheBoarPrincess": {
+    "name": "The Boar Princess",
+    "description": {
+      "0": "A card for the tabletop game, Genius Invokation TCG. It is built tough, and some special printing method has been used for the illustration on the card's face, resulting in a truly exquisite appearance."
+    }
+  },
+  "FallsAndFortune": {
+    "name": "Falls and Fortune",
+    "description": {
+      "0": "A card for the tabletop game, Genius Invokation TCG. It is built tough, and some special printing method has been used for the illustration on the card's face, resulting in a truly exquisite appearance."
+    }
+  },
+  "FlickeringFourLeafSigil": {
+    "name": "Flickering Four-Leaf Sigil",
+    "description": {
+      "0": "A card for the tabletop game, Genius Invokation TCG. It is built tough, and some special printing method has been used for the illustration on the card's face, resulting in a truly exquisite appearance."
+    }
+  },
   "Origin": {
     "name": "Origin",
     "description": {
@@ -25571,6 +26002,12 @@
   },
   "DragonspineCrown": {
     "name": "Dragonspine: Crown",
+    "description": {
+      "0": "A Genius Invokation TCG Card Back that can be obtained and switched around. They say that card backs with different designs also come with minute differences in make and texture. Some players also make collecting card backs of different styles their pursuit and hobby."
+    }
+  },
+  "TheChasmSolidIron": {
+    "name": "The Chasm: Solid Iron",
     "description": {
       "0": "A Genius Invokation TCG Card Back that can be obtained and switched around. They say that card backs with different designs also come with minute differences in make and texture. Some players also make collecting card backs of different styles their pursuit and hobby."
     }
@@ -26326,6 +26763,107 @@
       "2": "This Furnishing Set is favored by the following companions: Tighnari, {REALNAME[ID(1)|HOSTONLY(true)]}"
     }
   },
+  "KeyToAStableWorkRestCycle": {
+    "name": "Key to a Stable Work-Rest Cycle",
+    "description": {
+      "0": "A simple, large bedroom that balances warmth and sophistication. For exhausted people, the bed means a quick entry into dreamland, and those who wake in the morning will enter just as swiftly into work mode.",
+      "1": "Many Fontainians treat interior design as a key factor in sleep, and stable sleep is key to one's work-rest cycle. From this perspective, bedroom design is indeed critical.",
+      "2": "This Furnishing Set is favored by the following companions: Charlotte, Chevreuse"
+    }
+  },
+  "StrictAdherenceToOfficeCodes": {
+    "name": "Strict Adherence to Office Codes",
+    "description": {
+      "0": "A classic study layout based on the Palais Mermonia's furnishings, recreating that ever-bustling office, where everything is in accordance with regulations.",
+      "1": "A certain Fontaine Research Institute researcher once claimed that \"a person's environment will greatly affect their state at work.\" Following this principle, one who is within an environment so much like the Palais might subconsciously, reliably follow every process to the letter...",
+      "2": "This Furnishing Set is favored by the following companion: Neuvillette"
+    }
+  },
+  "GarbForGloriousGourmet": {
+    "name": "Garb for Glorious Gourmet",
+    "description": {
+      "0": "A fully decked-out restaurant built in imitation of the Hotel Debord. It is suited to staging lively family banquets to which large numbers of relatives and friends will be invited.",
+      "1": "Even seasoned chefs cannot deny that the gastronomical mise en scene dictates the feelings of the diners, which influences their overall rating of the food. As such, a beautiful restaurant can also be considered a sort of outer garment for good food and drink.",
+      "2": "This Furnishing Set is favored by the following companions: Furina, Navia"
+    }
+  },
+  "PerfectlyDrawnFocus": {
+    "name": "Perfectly-Drawn Focus",
+    "description": {
+      "0": "An interior with a middle-sized stage as its centerpiece, large enough to stage a small performance.",
+      "1": "For those new to performing, an audience too large will cause them undue nerves and affect their performance, and for seasoned masters, sometimes a show put on for one's friends brings one far more happiness than a sold-out extravaganza. As such, most performers can appreciate the lack of grandeur in this stage.",
+      "2": "This Furnishing Set is favored by the following companions: Lynette, Lyney"
+    }
+  },
+  "ContinuousClockworkInspiration": {
+    "name": "Continuous Clockwork Inspiration",
+    "description": {
+      "0": "A room based around a clockwork workshop with enough machinery processing equipment to meet most artisans' needs.",
+      "1": "Some Fontainian poets believe that clockwork meka are creations worthy of respect, respect that should shine upon the artisan's tools as well. \"Inspiration inclines the ears of these components, it teaches them to dance as one at a pace perpetual.\"",
+      "2": "This Furnishing Set is favored by the following companion: Freminet"
+    }
+  },
+  "WellspringOfRuleViolationPrevention": {
+    "name": "Wellspring of Rule Violation Prevention",
+    "description": {
+      "0": "An office with a solemn air that accurately reproduces the office of the Fortress of Meropide's \"Duke.\"",
+      "1": "They say that after the Duke took over the Fortress, he only changed a few small office furnishings, and otherwise left the place alone — this, then, was the type of office in which the regulations the many inmates must follow were written up.",
+      "2": "This Furnishing Set is favored by the following companion: Wriothesley"
+    }
+  },
+  "CourtOfJusticesPlacidDays": {
+    "name": "Court of Justice's Placid Days",
+    "description": {
+      "0": "A lane using the ordinary streets of Fontaine's residential districts as the blueprint. The numerous residences have also reproduced the authentic look of the Court of Fontaine.",
+      "1": "For many residents of Fontaine, a large part of their lives consists of orderly activity, getting on and off work on time, resting, meeting friends for a meal or shopping, and occasionally heading to the Opera Epiclese for a grand performance. Even some crisis-tested adventurers might sometimes think that such a placid lifestyle might be nice...",
+      "2": "This Furnishing Set is favored by the following companion: Charlotte"
+    }
+  },
+  "CourtOfJusticesBoomingCommerce": {
+    "name": "Court of Justice's Booming Commerce",
+    "description": {
+      "0": "Based on the Quartier Lyonnais in the Court of Fontaine, this place is filled with tons of Fontainian specialty stores and tables at which to also rest and enjoy some tea.",
+      "1": "Some experienced tourists will tell you that you can ask the residents here if you are unfamiliar with the stores and characteristics of the goods on sale. Since many stores strictly follow the price controls set by the Palais Mermonia, very few people will purchase items with incongruent prices.",
+      "2": "This Furnishing Set is favored by the following companions: Lynette, Lyney"
+    }
+  },
+  "CourtOfJusticesFreshMist": {
+    "name": "Court of Justice's Fresh Mist",
+    "description": {
+      "0": "A square filled with green bushes, vibrant flowers, and a luxurious fountain. The design concept is based on the Fountain of Lucine on Erinnyes.",
+      "1": "When the weather is fine, the fresh mist threads through the flowers on Erinnyes, the sight of which lifts the spirits of both residents and visitors from abroad. Even should one arrive amid a driving shower, the legends that surround the Fountain still fill the heart with wondrous hope.",
+      "2": "This Furnishing Set is favored by the following companions: Neuvillette, Furina"
+    }
+  },
+  "PoissonTheUnassuming": {
+    "name": "Poisson the Unassuming",
+    "description": {
+      "0": "A landscape centered around various unique buildings that recreate a corner of Poisson. Structures that emphasize practicality elevate the work efficiency of those who dwell in them, though this does not immediately translate to busywork and exhaustion, but rather is a way of safeguarding one's leisurely days. Many residents of Poisson, indeed, live by the adage \"Let us be done with work swiftly, so that we may enjoy our rest,\" living full yet simple lives.",
+      "1": "This Furnishing Set is favored by the following companion: Navia"
+    }
+  },
+  "UnderseaMeruseasLuster": {
+    "name": "Undersea Merusea's Luster",
+    "description": {
+      "0": "A small settlement that makes an effort to recapture the scenery in Merusea Village, with unique and rather eye-catching buildings.",
+      "1": "The Melusines dwell within Elynas, beneath the waves, and few normal people visit their village, though those who do all sing its praises upon their return. Some artists have tried to draw the place based on the descriptions and information gained from interviewing Melusines in the Court of Fontaine. However, there was always a \"color difference\" between their work and the real colors of the village that was hard to ignore. This problem was only solved once Kamera-taken images of Merusea Village became widespread, thus more or less solving the problem...",
+      "2": "This Furnishing Set is favored by the following companion: Freminet"
+    }
+  },
+  "FullForceForwardInTheForbiddenFortress": {
+    "name": "Full Force Forward in the Forbidden Fortress",
+    "description": {
+      "0": "An arena whose centerpiece is a boxing ring. Standing within it, you can hear again the cheers and applause of the audience, the excited commentary of the host, and the dull sound of fists thudding against flesh coming from both competitors — such is the deep impression that the Fortress of Meropide's Pankration Ring leaves.",
+      "1": "\"In a ring where your fists decide everything, you can only go full force forward to claim the glory — and the Credit Coupons — that should be yours.\" ...Many Pankration Ring competitors take this as their motto even after departing the Fortress altogether...",
+      "2": "This Furnishing Set is favored by the following companions: Wriothesley, Chevreuse"
+    }
+  },
+  "TheNationOfHydrosMottledColors": {
+    "name": "The Nation of Hydro's Mottled Colors",
+    "description": {
+      "0": "A countryside scene full of luxurious plants. It contains all sorts of flowers and bushes that can be found everywhere in Fontaine. Flowers and plants are common themes in paintings, and are a starting point for explorations into \"color.\" Some painters in Fontaine believe that the world's palette uses plants to demonstrate the perfect combination of colors. As such, if all the colors in a painting may find their source in flowers, then this painting must surely have harmonious beauty equal to that of natural scenery. Of course, this is predicated on you not mixing all plant-derived colors together in a single conversation..."
+    }
+  },
   "TimberWallWithJadeEaves": {
     "name": "Timber Wall With Jade Eaves",
     "description": {
@@ -26351,6 +26889,13 @@
     "name": "Simple Brightwood Carved Wall",
     "description": {
       "0": "A detailed step-by-step blueprint for making a Simple Brightwood Carved Wall.",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "AnnexsGoldenMosaic": {
+    "name": "Annex's Golden Mosaic",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making \"Annex's Golden Mosaic.\"",
       "1": "After using this item, you can view it in the Creation Screen."
     }
   },
@@ -26382,6 +26927,13 @@
       "1": "After using this item, you can view it in the Creation Screen."
     }
   },
+  "AnnexsMirrorSheenFloorTile": {
+    "name": "Annex's Mirror-Sheen Floor Tile",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making \"Annex's Mirror-Sheen Floor Tile.\"",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
   "CheckeredCedarCeiling": {
     "name": "Checkered Cedar Ceiling",
     "description": {
@@ -26407,6 +26959,13 @@
     "name": "Brightwood Chiseled Ceiling",
     "description": {
       "0": "A detailed step-by-step blueprint for making a Brightwood Chiseled Ceiling.",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "AnnexsSpotlessDome": {
+    "name": "Annex's Spotless Dome",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making \"Annex's Spotless Dome.\"",
       "1": "After using this item, you can view it in the Creation Screen."
     }
   },
@@ -26676,10 +27235,31 @@
       "1": "After using this item, you can view it in the Creation Screen."
     }
   },
+  "ForbiddenZoneFloorLampIronhammer": {
+    "name": "Forbidden Zone Floor Lamp: Ironhammer",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making a \"Forbidden Zone Floor Lamp: Ironhammer.\"",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "ForbiddenZoneFloorLampNightlight": {
+    "name": "Forbidden Zone Floor Lamp: Nightlight",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making a \"Forbidden Zone Floor Lamp: Nightlight.\"",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
   "EfflorescentIllumination": {
     "name": "Efflorescent Illumination",
     "description": {
       "0": "A detailed step-by-step blueprint for making Efflorescent Illumination.",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "AnnexsSwirlingLight": {
+    "name": "Annex's Swirling Light",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making \"Annex's Swirling Light.\"",
       "1": "After using this item, you can view it in the Creation Screen."
     }
   },
@@ -26764,6 +27344,13 @@
     "name": "Athel Pottery Shelf",
     "description": {
       "0": "A detailed step-by-step blueprint for making Athel Pottery Shelf.",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "MallowWoodMultiModelWardrobe": {
+    "name": "Mallow Wood \"Multi-Model\" Wardrobe",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making a Mallow Wood \"Multi-Model\" Wardrobe.",
       "1": "After using this item, you can view it in the Creation Screen."
     }
   },
@@ -26890,6 +27477,13 @@
     "name": "\"Maison Cardinalice's Little Helper\"",
     "description": {
       "0": "A detailed step-by-step blueprint for making \"Maison Cardinalice's Little Helper.\"",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "AThousandTextsInTheCentralHub": {
+    "name": "\"A Thousand Texts in the Central Hub\"",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making \"A Thousand Texts in the Central Hub.\"",
       "1": "After using this item, you can view it in the Creation Screen."
     }
   },
@@ -27089,6 +27683,27 @@
       "1": "After using this item, you can view it in the Creation Screen."
     }
   },
+  "StableWorkStationInTheCentralHub": {
+    "name": "\"Stable Work Station in the Central Hub\"",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making \"Stable Work Station in the Central Hub.\"",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "RestTimeInTheCentralHub": {
+    "name": "\"Rest Time in the Central Hub\"",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making \"Rest Time in the Central Hub.\"",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "TheLeisureOfDailyMeetings": {
+    "name": "\"The Leisure of Daily Meetings\"",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making \"The Leisure of Daily Meetings.\"",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
   "BreezeBlessedBed": {
     "name": "Breeze-Blessed Bed",
     "description": {
@@ -27184,6 +27799,13 @@
     "name": "Witness of Tavern Affairs",
     "description": {
       "0": "A detailed step-by-step blueprint for making Witness of Tavern Affairs.",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "CelebrationOfAnAdHocPerformance": {
+    "name": "\"Celebration of an Ad-Hoc Performance\"",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making \"Celebration of an Ad-Hoc Performance.\"",
       "1": "After using this item, you can view it in the Creation Screen."
     }
   },
@@ -27317,6 +27939,27 @@
     "name": "\"Elation of Social Drinking\"",
     "description": {
       "0": "A detailed step-by-step blueprint for making \"Elation of Social Drinking.\"",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "MallowWoodViewingRitesChair": {
+    "name": "Mallow Wood \"Viewing Rites\" Chair",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making a Mallow Wood \"Viewing Rites\" Chair.",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "LindenWoodSubduingSeatBackedChair": {
+    "name": "Linden Wood \"Subduing Seat\" Backed Chair",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making a Linden Wood \"Subduing Seat\" Backed Chair.",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "MomentaryRestInTheCentralHub": {
+    "name": "\"Momentary Rest in the Central Hub\"",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making \"Momentary Rest in the Central Hub.\"",
       "1": "After using this item, you can view it in the Creation Screen."
     }
   },
@@ -27681,6 +28324,13 @@
     "name": "\"Burden of the Forbidden Fortress\"",
     "description": {
       "0": "A detailed step-by-step blueprint for making \"Burden of the Forbidden Fortress.\"",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "StandardMusicStandAccurateTuning": {
+    "name": "Standard Music Stand: Accurate Tuning",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making a Standard Music Stand: Accurate Tuning.",
       "1": "After using this item, you can view it in the Creation Screen."
     }
   },
@@ -28223,6 +28873,13 @@
       "1": "After using this item, you can view it in the Creation Screen."
     }
   },
+  "CommonUseNoteHolder": {
+    "name": "Common-Use Note Holder",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making a Common-Use Note Holder.",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
   "RealizationsFromTheLandOfWisdom": {
     "name": "\"Realizations from the Land of Wisdom\"",
     "description": {
@@ -28444,6 +29101,13 @@
     "name": "Athelwood Metal Combat Shield",
     "description": {
       "0": "A detailed step-by-step blueprint for making an Athelwood Metal Combat Shield.",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "IndoorLampTheTwilightSea": {
+    "name": "Indoor Lamp: The Twilight Sea",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making an Indoor Lamp: The Twilight Sea.",
       "1": "After using this item, you can view it in the Creation Screen."
     }
   },
@@ -28829,6 +29493,20 @@
     "name": "Passage's Principles of Punctuality",
     "description": {
       "0": "A detailed step-by-step blueprint for making Passage's Principles of Punctuality.",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "QuickTemporaryWorkshed": {
+    "name": "\"Quick Temporary Workshed\"",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making a \"Quick Temporary Workshed.\"",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "PoissonsSeasonalProduce": {
+    "name": "\"Poisson's Seasonal Produce\"",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making \"Poisson's Seasonal Produce.\"",
       "1": "After using this item, you can view it in the Creation Screen."
     }
   },
@@ -29560,6 +30238,13 @@
       "1": "After using this item, you can view it in the Creation Screen."
     }
   },
+  "CourtyardPavilionAmidstTheRivers": {
+    "name": "Courtyard Pavilion: Amidst the Rivers",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making a Courtyard Pavilion: Amidst the Rivers.",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
   "CourtOfJusticesAuthenticity": {
     "name": "\"Court of Justice's Authenticity\"",
     "description": {
@@ -29592,6 +30277,27 @@
     "name": "\"Small Stonecrab\"",
     "description": {
       "0": "A detailed step-by-step blueprint for making a \"Small Stonecrab.\"",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "TheArenaWhereFistsReemerge": {
+    "name": "\"The Arena Where Fists Reemerge\"",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making \"The Arena Where Fists Reemerge.\"",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "TheWisdomOfPoisson": {
+    "name": "\"The Wisdom of Poisson\"",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making \"The Wisdom of Poisson.\"",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "ASimpleResidenceInPoisson": {
+    "name": "\"A Simple Residence in Poisson\"",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making \"A Simple Residence in Poisson.\"",
       "1": "After using this item, you can view it in the Creation Screen."
     }
   },
@@ -30141,6 +30847,34 @@
       "1": "After using this item, you can view it in the Creation Screen."
     }
   },
+  "CourtyardCorridorTheMoraDividend": {
+    "name": "Courtyard Corridor: The Mora Dividend",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making a Courtyard Corridor: The Mora Dividend.",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "CourtyardCorridorManifoldCorners": {
+    "name": "Courtyard Corridor: Manifold Corners",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making a Courtyard Corridor: Manifold Corners.",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "CourtyardArchwayMomentOfGlory": {
+    "name": "Courtyard Archway: Moment of Glory",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making a Courtyard Archway: Moment of Glory.",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "CourtyardWallABitOfScenery": {
+    "name": "Courtyard Wall: A Bit of Scenery",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making a Courtyard Wall: A Bit of Scenery.",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
   "FoundationsOfStoneFortunateTimes": {
     "name": "Foundations of Stone: Fortunate Times",
     "description": {
@@ -30635,6 +31369,13 @@
     "name": "Model Contraption: Rockcracker Anchor",
     "description": {
       "0": "A detailed step-by-step blueprint for making a Model Contraption: Rockcracker Anchor.",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "BoxingTargetOfTheForbiddenFortress": {
+    "name": "\"Boxing Target of the Forbidden Fortress\"",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making a \"Boxing Target of the Forbidden Fortress.\"",
       "1": "After using this item, you can view it in the Creation Screen."
     }
   },
@@ -31401,6 +32142,55 @@
       "1": "After using this item, you can view it in the Creation Screen."
     }
   },
+  "OverburdeningOfTheForbiddenFortress": {
+    "name": "\"Overburdening of the Forbidden Fortress\"",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making \"Overburdening of the Forbidden Fortress.\"",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "AreaMarkerUpward": {
+    "name": "Area Marker: Upward",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making an Area Marker: Upward.",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "AreaMarkerDownward": {
+    "name": "Area Marker: Downward",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making an Area Marker: Downward.",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "PoissonDoorFrame": {
+    "name": "\"Poisson Door Frame\"",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making \"Poisson Door Frame.\"",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "BookshelfFreeReading": {
+    "name": "Bookshelf: Free Reading",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making a Bookshelf: Free Reading.",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "BookshelfSpeedyBrowsing": {
+    "name": "Bookshelf: Speedy Browsing",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making a Bookshelf: Speedy Browsing.",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "BookshelfFocusedEffect": {
+    "name": "Bookshelf: Focused Effect",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making a Bookshelf: Focused Effect.",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
   "PoolOfSapphireGrace": {
     "name": "Pool of Sapphire Grace",
     "description": {
@@ -31692,6 +32482,20 @@
     "name": "Passage's Pristine Round Table",
     "description": {
       "0": "A detailed step-by-step blueprint for making a Passage's Pristine Round Table.",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "ProductionRackTheBasics": {
+    "name": "Production Rack: The Basics",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making a Production Rack: The Basics.",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "ProductionRackCustomBuild": {
+    "name": "Production Rack: Custom Build",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making a Production Rack: Custom Build.",
       "1": "After using this item, you can view it in the Creation Screen."
     }
   },

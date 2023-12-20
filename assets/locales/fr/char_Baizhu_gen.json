@@ -117,7 +117,7 @@
   "passive3": {
     "name": "Bienfait herbacé",
     "description": {
-      "0": "Lorsque Baizhu fait partie de l'équipe, interagir avec certains objets récoltables soigne votre personnage déployé pour une valeur équivalant à 2,5 % des PV max de Baizhu."
+      "0": "Lorsque Baizhu fait partie de l'équipe, interagir avec certains objets récoltables soigne votre personnage déployé d'une valeur équivalant à 2,5 % des PV max de Baizhu."
     }
   },
   "constellation1": {
@@ -130,7 +130,7 @@
     "name": "Discernement incisif",
     "description": {
       "0": "Lorsque votre personnage déployé touche un ennemi proche avec une attaque, Baizhu libère un esprit divisé de gaze.",
-      "1": "L'esprit divisé de gaze effectue 1 attaque avant de revenir, infligeant des <dendro>DGT Dendro</dendro> pour une valeur équivalant à 250 % de l'ATQ de Baizhu et soignant pour 20 % du soin de l'esprit de gaze de <strong>Diagnostic universel</strong>.",
+      "1": "L'esprit divisé de gaze effectue 1 attaque avant de revenir, infligeant des <dendro>DGT Dendro</dendro> d'une valeur équivalant à 250 % de l'ATQ de Baizhu et soignant pour 20 % du soin de l'esprit de gaze de <strong>Diagnostic universel</strong>.",
       "2": "Les DGT infligés de cette manière sont considérés comme des DGT de compétence élémentaire.",
       "3": "Cet effet peut être déclenché une fois toutes les 5 s."
     }

@@ -396,6 +396,20 @@
       "1": "Trong sự kiện \"Chuyến Thám Hiểm Kỳ Ảo Của Thelxie\", có thể dùng nó để mở khóa phần thưởng quý giá."
     }
   },
+  "TheaterTickets": {
+    "name": "Vé Ca Kịch",
+    "description": {
+      "0": "Tấm vé lưu niệm được làm rất tỉ mỉ, là vật phẩm kỷ niệm nhận được khi tham gia các sự kiện của Liên Hoan Phim Fontinalia. Nghe nói loại vé này sử dụng kỹ thuật chế tác độc đáo, có chất liệu tương tự như phim ảnh, trở nên trong veo khi phản chiếu ánh sáng, trông như những lát cắt đá quý vậy...",
+      "1": "Trong thời gian diễn ra sự kiện \"Tường Vi Và Hỏa Mai\", có thể dùng để mở khóa các loại phần thưởng."
+    }
+  },
+  "FilmForFun": {
+    "name": "Phim Giải Trí",
+    "description": {
+      "0": "Đồ lưu niệm khá giống với tấm phim, là vật phẩm kỷ niệm được nhận khi tích cực hoạt động trong thời gian diễn ra Liên Hoan Phim Fontinalia. Tuy không thể đặt vào thiết bị chuyên dụng để phát ra những bộ phim xuất sắc, nhưng thiết kế độc đáo của nó đủ khiến người ta vui vẻ khi vừa nhìn là đã liên tưởng ngay đến những thứ được mắt thấy tai nghe trong lễ hội...",
+      "1": "Trong thời gian sự kiện \"Tường Vi Và Hỏa Mai\" có thể dùng để đổi những vật tư có giá trị."
+    }
+  },
   "Primogem": {
     "name": "Nguyên Thạch",
     "description": {
@@ -1025,11 +1039,27 @@
   },
   "Charlotte": {
     "name": "Charlotte",
-    "description": {}
+    "description": {
+      "0": "Phóng viên đầy năng lượng của tờ báo Chim Hơi Nước, mỗi giây phút đều hướng về \"chân tướng\"."
+    }
   },
   "Furina": {
     "name": "Furina",
-    "description": {}
+    "description": {
+      "0": "Tâm điểm tuyệt đối trên sân khấu xét xử, cho đến khi tiếng vỗ tay hạ màn nổi lên."
+    }
+  },
+  "Chevreuse": {
+    "name": "Chevreuse",
+    "description": {
+      "0": "Đội trưởng Đội Tuần Tra Đặc Biệt luôn tuân thủ \"chính nghĩa\" trong lòng. Khẩu súng hỏa mai trong tay chỉ hướng về những kẻ có tội."
+    }
+  },
+  "Navia": {
+    "name": "Navia",
+    "description": {
+      "0": "Hội trưởng hiện tại của Spina di Rosula, là một cô chủ dễ thương và rất có trách nhiệm."
+    }
   },
   "KamisatoAyakasStellaFortuna": {
     "name": "Chòm Sao Của Kamisato Ayaka",
@@ -1485,6 +1515,18 @@
     "name": "Chòm Sao Của Furina",
     "description": {
       "0": "Nguyên liệu kích hoạt cung mệnh Furina"
+    }
+  },
+  "ChevreusesStellaFortuna": {
+    "name": "Chòm Sao Của Chevreuse",
+    "description": {
+      "0": "Nguyên liệu kích hoạt cung mệnh Chevreuse"
+    }
+  },
+  "NaviasStellaFortuna": {
+    "name": "Chòm Sao Của Navia",
+    "description": {
+      "0": "Nguyên liệu kích hoạt cung mệnh Navia"
     }
   },
   "GnosticHymnOldNotes": {
@@ -3444,7 +3486,7 @@
   "HumorFromTianheng": {
     "name": "Thiên Hoành Tuyệt Đảo Tập",
     "description": {
-      "0": "Một tuyển tập những bài thơ của nhà thơ cổ đại ẩn cư nơi Bình Sơn, với chất lượng khác nhau. Nhưng vẫn được lưu hành và được tham khảo bởi các nhà thơ trẻ của Liyue hoặc bởi những người nghĩ rằng họ là nhà thơ."
+      "0": "Một tuyển tập những bài thơ của nhà thơ cổ ẩn sĩ Bình Sơn, với chất lượng khác nhau. Nhưng vẫn được lưu hành và được tham khảo bởi các nhà thơ trẻ của Liyue hoặc bởi những người nghĩ rằng họ là nhà thơ."
     }
   },
   "HilichurlCulturalCustomsI": {
@@ -3508,7 +3550,7 @@
     }
   },
   "YakshasTheGuardianAdepti": {
-    "name": "Hộ Pháp Tiên Chúng Dạ Xoa",
+    "name": "Hộ Pháp Tiên Chúng Dạ Xoa Lục",
     "description": {
       "0": "\"Hạp Trung Lưu Ly Vân Gian Nguyệt\" của Liyue được biên soạn lại từ cuốn sách bách khoa văn hóa dân gian bách khoa toàn thư \"Lưu Ly Nham Gian Quốc Sĩ Kỷ Hành\" của học giả Sumeru - Masudi, do lời văn khó hiểu, nội dung uyên thâm mà khiến cuốn sách không được độc giả đón nhận rộng rãi. \"Hộ Pháp Tiên Chúng Dạ Xoa Lục\" là một trong số các tập trong đó, tập này giới thiệu về sự tích các Dạ Xoa từng kề vai sát cánh với Nham Thần."
     }
@@ -5148,21 +5190,21 @@
     "description": {
       "0": "\"Vật Trấn Giữ\" mà Ioroi tặng bạn làm quà cám ơn, có hình dáng của một chiếc lược đẹp đẽ.",
       "1": "Ioroi từng cướp chiếc lược này để dụ \"hồ ly thối kia\" hiện thân. Để trừng phạt, Ioroi và đồng bọn đã bị \"tên khốn đó\" phong ấn trong tượng đá.",
-      "2": "Theo cách nói của \"Hanachirusato\", cần phải dùng vật này để thực hiện \"Tế Lễ Thần Anh Đào\"."
+      "2": "Theo cách nói của \"Hanachirusato\", cần phải dùng vật này để thực hiện \"Tế Lễ Anh Đào Thần\"."
     }
   },
   "ScrollShapedWard": {
     "name": "\"Vật Trấn Giữ\" Cuộn Tròn",
     "description": {
       "0": "Vật bí ẩn cổ xưa, mang hình dáng của một cuộn giấy được niêm phong. Cho dù dùng cách gì cũng không thể mở ra.",
-      "1": "Theo cách nói của \"Hanachirusato\", cần phải dùng vật này để thực hiện \"Tế Lễ Thần Anh Đào\"."
+      "1": "Theo cách nói của \"Hanachirusato\", cần phải dùng vật này để thực hiện \"Tế Lễ Anh Đào Thần\"."
     }
   },
   "KeyShapedWard": {
     "name": "\"Vật Trấn Giữ\" Hình Chìa Khóa",
     "description": {
       "0": "Vật bí ẩn cổ xưa có hình một chiếc chìa khóa cũ. Nếu đã có chìa khóa thì phải có ổ khóa. Chiếc ổ khóa khớp với chìa khóa này hình như sắp bị xuyên thủng vì những thứ ô uế mà rễ cây hút vào.",
-      "1": "Theo cách nói của \"Hanachirusato\", cần phải dùng vật này để thực hiện \"Tế Lễ Thần Anh Đào\"."
+      "1": "Theo cách nói của \"Hanachirusato\", cần phải dùng vật này để thực hiện \"Tế Lễ Anh Đào Thần\"."
     }
   },
   "OldKey": {
@@ -6985,9 +7027,9 @@
     }
   },
   "SacredSakuraCleansingSummary": {
-    "name": "Yếu Lược Tế Lễ Thần Anh Đào",
+    "name": "Yếu Lược Tế Lễ Anh Đào Thần",
     "description": {
-      "0": "Ghi lại thông tin liên quan đến \"Tế Lễ Thần Anh Đào\", có trang còn có dấu chu sa hình ngôi đền nữa."
+      "0": "Ghi lại thông tin liên quan đến \"Tế Lễ Anh Đào Thần\", có trang còn có dấu chu sa hình ngôi đền nữa."
     }
   },
   "FreshMushroom": {
@@ -13744,7 +13786,7 @@
   "SuspiciousCassoulet": {
     "name": "Cassoulet Kỳ Lạ",
     "description": {
-      "0": "Món hầm dân dã mộc mạc. Bề ngoài nhìn không có vấn đề gì, ăn được một lúc, ngửi được vị khét nhè nhẹ, lúc này mới phát hiện phần nguyên liệu bên dưới đã bị khét và dính chặt dưới đáy nồi. Hừm... Lần sau khi nấu nhớ đảo đều nhé..."
+      "0": "Món hầm dân dã mộc mạc. Bề ngoài nhìn không có vấn đề gì, ăn được một lúc, ngửi được vị khét nhè nhẹ, lúc này mới phát hiện phần nguyên liệu bên dưới đã bị khét và dính chặt dưới đáy nồi. Hừm... Lần sau nấu nhớ đảo đều nhé..."
     }
   },
   "Cassoulet": {
@@ -13835,6 +13877,72 @@
     "name": "Tin Tức Độc Quyền - Mục Ẩm Thực",
     "description": {
       "0": "Món ăn đặc sắc của Charlotte. Món ăn vặt cầm trong tay đã cùng cô ấy theo đuổi những tin tức độc quyền. Cá chiên giòn tan giữa kẽ răng, nhìn qua bên cạnh, cô ấy với những bước chân nhanh nhẹn như chim, nhịp điệu của hai người dần hòa nhịp... Tuy rằng vẫn chưa có được bản thảo tin tức, nhưng niềm vui và sự thỏa mãn trong lòng đã đạt đến đỉnh điểm."
+    }
+  },
+  "SuspiciousFeastOs": {
+    "name": "Feast-O's Kỳ Lạ",
+    "description": {
+      "0": "Món ăn vặt chiên giòn vàng rực rỡ. Mất rất nhiều thời gian để hong khô phần dầu thừa, nên khi nếm thử đã bị mềm đi, không còn giòn rụm nữa. Hmm... Không biết đám hải âu bên bờ biển có vui vẻ chấp nhận món này không nhỉ?"
+    }
+  },
+  "FeastOs": {
+    "name": "Feast-O's",
+    "description": {
+      "0": "Món ăn vặt chiên giòn vàng rực rỡ. Thịt gà nghiền nhỏ được tạo hình rỗng ở giữa, tạo thành hình \"vòng\" cùng với những khoanh hành tây. Thịt cá và khoai tây nghiền được nén thành bánh, sau đó tạo hình \"tròn\". Cuối cùng đặt vào chảo dầu, từ đó món Feast-O's được hoàn thành trong tiếng dầu sôi lách tách."
+    }
+  },
+  "DeliciousFeastOs": {
+    "name": "Feast-O's Ngon",
+    "description": {
+      "0": "Món ăn vặt chiên giòn vàng rực rỡ. Hương thơm ngào ngạt khi vừa ra lò có thể lập tức kích thích cơn đói của mọi người. Tay trái móc vòng bánh, tay phải cầm miếng tròn, cảm giác giòn rụm giữa hai hàm răng, hương vị dịu nhẹ lan tỏa trên đầu lưỡi."
+    }
+  },
+  "SuspiciousRainbowMacarons": {
+    "name": "Macaron Cầu Vồng Kỳ Lạ",
+    "description": {
+      "0": "Bánh tròn nhỏ nhắn, màu sắc sặc sỡ. Lấy chiếc đầu tiên, cảm giác rỗng ruột. Lấy chiếc thứ hai, tạo hình hơi méo mó. Lấy chiếc thứ ba, bề mặt sần sùi thô ráp, màu sắc không đều... Không hổ danh là món tráng miệng kiểu Fontaine với rất nhiều chi tiết tỉ mỉ, xem ra muốn làm chủ được món này thì cần phải dành rất nhiều thời gian để luyện tập."
+    }
+  },
+  "RainbowMacarons": {
+    "name": "Macaron Cầu Vồng",
+    "description": {
+      "0": "Bánh tròn nhỏ nhắn, màu sắc sặc sỡ. Có một câu nói truyền miệng ở Fontaine: Thiếu đi Macaron trong món tráng miệng, cũng như mất đi suối nguồn của muôn dòng nước. Là một trong những món tráng miệng tiêu biểu nhất ở vương quốc của nước, chưa nói đến đầu bếp đồ ngọt chuyên nghiệp ở Fontaine, ngay cả những người yêu thích ẩm thực trên đường phố cũng thuộc lòng công thức làm món ăn này."
+    }
+  },
+  "DeliciousRainbowMacarons": {
+    "name": "Macaron Cầu Vồng Ngon",
+    "description": {
+      "0": "Bánh tròn nhỏ nhắn, màu sắc sặc sỡ. Lớp vỏ giòn bọc bên ngoài lớp nhân mềm mại, mọi thứ đều được sắp đặt hoàn hảo. Cắn một miếng, có cảm giác như một chú mèo nhỏ đang dùng mũi dụi nhẹ vào lồng ngực bạn vậy. Bất kể là ai cũng sẽ đổ gục bởi trải nghiệm ngọt ngào và lãng mạn này."
+    }
+  },
+  "SinTheKindThatDoesntNeedToBeDealtWith": {
+    "name": "Tội Ác - Loại Không Nhất Thiết Xử Lý",
+    "description": {
+      "0": "Món ăn đặc biệt của Chevreuse. Dưới góc độ sức khỏe thì đây chắc chắn là một thứ \"tội ác\". Chevreuse, đội trưởng Đội Tuần Tra Đặc Biệt, về quy tắc đạo đức nghề nghiệp và bản thân, tuyệt đối sẽ không dễ dàng giao phó nhiệm vụ diệt trừ cái ác của mình cho người khác... Nhưng đôi khi chia sẻ nhiệm vụ quan trọng cùng những người thân tín, cũng là một cách thích hợp để giải tỏa căng thẳng."
+    }
+  },
+  "PickWhatYouLike": {
+    "name": "\"Cứ Chọn Thoải Mái!\"",
+    "description": {
+      "0": "Món ăn đặc biệt của Navia. \"Mau đến đây và chọn thứ mình thích nhé!\" Cùng với tiếng cười vui quen thuộc đó vang lên, bạn sẽ thấy trước mắt mình là khay bánh ngọt hai tầng sang trọng đầy tính thẩm mỹ. Rất nhiều Macaron được bày trí gọn gàng, phía trên được vẽ các khuôn mặt với biểu cảm khác nhau, rất thú vị... Thật khiến người ta không kìm được suy nghĩ... Nếu tham lam lấy hết chỗ đó thì Navia sẽ có biểu cảm thế nào nhỉ?"
+    }
+  },
+  "SuspiciousFontinaliaMousse": {
+    "name": "Bánh Mousse Fontinalia Kỳ Lạ",
+    "description": {
+      "0": "Món bánh ngọt xanh biếc của Lễ Hội Fontinalia. Ngoại hình trông có vẻ không ổn lắm, khiến người ta liên tưởng đến Hoa Lừa Dối Băng Giá. Lẽ nào Lily Ánh Sáng Hồ Nước được lấy cảm hứng lại chính là do Hoa Lừa Dối biến ra sao? Trưng món bánh ngọt thế này trong Lễ Hội Fontinalia, không chừng sẽ phải chịu xét xử đó... Nên tốt nhất là lặng lẽ xử lý đi!"
+    }
+  },
+  "FontinaliaMousse": {
+    "name": "Bánh Mousse Fontinalia",
+    "description": {
+      "0": "Món bánh ngọt xanh biếc của Lễ Hội Fontinalia. Bánh mousse được lấy cảm hứng từ nụ hoa Lily Ánh Sáng Hồ Nước. Sau khi phong tục được thay đổi sang xin đồ ngọt, nó đã nhanh chóng trở thành món ăn lễ hội được nhiều người ưa chuộng ở Fontaine. Khi nghe thấy câu \"cho kẹo hay xét xử\" thì đừng quên chia sẻ nó cho mọi người nhé!"
+    }
+  },
+  "DeliciousFontinaliaMousse": {
+    "name": "Bánh Mousse Fontinalia Ngon",
+    "description": {
+      "0": "Món bánh ngọt xanh biếc của Lễ Hội Fontinalia. Màu sắc lấp lánh, tựa như ánh sáng lung linh từ những gợn sóng trên mặt nước. Ngoại hình thanh tao như những cánh hoa vừa rời cành. Cảm nhận vị giác mềm mại, phảng phất như bông tuyết tan chảy trong cổ họng. Được ăn một món ngon như vậy, hẳn là điều hạnh phúc nhất trong Lễ Hội Fontinalia này rồi!"
     }
   },
   "RecipeItem": {
@@ -14886,6 +14994,24 @@
     "name": "Công Thức: Bánh Su Bồng Bềnh",
     "description": {
       "0": "Công thức món ăn, ghi lại cách làm món \"Bánh Su Bồng Bềnh\"."
+    }
+  },
+  "RecipeFeastOs": {
+    "name": "Công Thức: Feast-O's",
+    "description": {
+      "0": "Công thức món ăn, ghi lại cách làm món \"Feast-O's\"."
+    }
+  },
+  "RecipeRainbowMacarons": {
+    "name": "Công Thức: Macaron Cầu Vồng",
+    "description": {
+      "0": "Công thức món ăn, ghi lại cách làm món \"Macaron Cầu Vồng\"."
+    }
+  },
+  "RecipeFontinaliaMousse": {
+    "name": "Công Thức: Bánh Mousse Fontinalia",
+    "description": {
+      "0": "Công thức món ăn, ghi lại cách làm món \"Bánh Mousse Fontinalia\"."
     }
   },
   "CraftedItems": {
@@ -19099,6 +19225,24 @@
       "0": "Truyện cổ tích thịnh hành ở Fontaine. Phần bìa tinh xảo từng khiến rất nhiều đứa trẻ tưởng lầm rằng cuốn truyện này thực sự được viết bởi Phu Nhân Ngỗng Cánh Tuyết hiền từ trong truyền thuyết."
     }
   },
+  "TheTwoMusketeersI": {
+    "name": "Hai Người Lính Ngự Lâm (I)",
+    "description": {
+      "0": "Quyển sách bán chạy ở Fontaine, kể về câu chuyện đan xen giữa âm mưu và phục thù, giữa chính nghĩa và tà ác."
+    }
+  },
+  "TheTwoMusketeersII": {
+    "name": "Hai Người Lính Ngự Lâm (II)",
+    "description": {
+      "0": "Quyển sách bán chạy ở Fontaine, kể về câu chuyện đan xen giữa âm mưu và phục thù, giữa chính nghĩa và tà ác."
+    }
+  },
+  "TheTwoMusketeersIII": {
+    "name": "Hai Người Lính Ngự Lâm (III)",
+    "description": {
+      "0": "Quyển sách bán chạy ở Fontaine, kể về câu chuyện đan xen giữa âm mưu và phục thù, giữa chính nghĩa và tà ác."
+    }
+  },
   "GiftOfParting": {
     "name": "Món Quà Từ Biệt",
     "description": {
@@ -19655,7 +19799,7 @@
     "name": "Sổ Tay Của Binh Sĩ Đội Tiên Phong",
     "description": {}
   },
-  "34thIndependentInvestigativeSquadDeploymentInMontEsusEasternQuadrantDisplinaryProcedures": {
+  "34thIndependentInvestigativeSquadDeploymentInMontEsusEasternQuadrantDisciplinaryProcedures": {
     "name": "Kỷ Luật Của Đội Trinh Sát Độc Lập Thứ 34 Trú Phía Đông Núi Esus",
     "description": {}
   },
@@ -20012,7 +20156,7 @@
   "StrangelyShapedKey": {
     "name": "Chìa Khóa Hình Dạng Đặc Biệt",
     "description": {
-      "0": "Chìa khóa thu được trên người thành viên của nhóm Romeu, hình như là công cụ cần thiết để nhanh chóng ngăn chặn chất nổ."
+      "0": "Chìa khóa thu được trên người thành viên của nhóm Romeuf, hình như là công cụ cần thiết để nhanh chóng ngăn chặn chất nổ."
     }
   },
   "RecommendationLetter": {
@@ -20077,6 +20221,14 @@
       "0": "Một trong những chìa khóa dùng để mở hàng rào sắt trên con tàu vỡ nát."
     }
   },
+  "AratakiGangsInstantRamen": {
+    "name": "Ramen Ăn Liền Của Bang Arataki",
+    "description": {
+      "0": "Món quà nhận được từ chỗ Kuki Shinobu, sau khi giúp \"Quỷ Vương Đấu Bọ Thiên Tài\" tăng thực lực, tìm kiếm cách đấu bọ kiểu mới trong \"Tập Huấn Đấu Bọ Arataki Rực Cháy\"...",
+      "1": "Bên trong chiếc hộp cứng cáp mà nhẹ nhàng có đựng mì ramen đã được phơi khô, gói gia vị được niêm phong kín và bát đũa cực kỳ bền bỉ. Làm theo hướng dẫn kèm theo, chỉ cần cho mì và gia vị vào bát, đổ nước nóng vào là bạn có thể nhanh chóng thu được một tô ramen có hương vị ngon lành, khá tiện lợi...",
+      "2": "Có điều, theo lời nhắn của Shinobu trong hộp, lúc cô ấy và Arataki Itto đi thuyền đến Liyue tham gia buổi họp mặt, trên đường cũng chưa hề được ăn món này... Lúc đó họ chỉ mang theo một ít bánh quy và dưa muối. Trong thời gian chơi ở Liyue, Shinobu lấy cảm hứng từ một số món mì của Liyue nên đã thử làm ra loại ramen công nghệ mới này, để tiện cho \"Cánh Tay Phải Của Quỷ Vương\" và \"Dưa Tím Thép Trắng Kinh Thiên Động Địa\" trên chuyến hành trình có thể nhanh chóng lấp đầy bụng đói bằng món ăn thơm ngon này..."
+    }
+  },
   "FoggyForestBranch": {
     "name": "Cành Cây Rừng Rậm",
     "description": {
@@ -20127,12 +20279,25 @@
       "0": "Lời Nhắn Kỳ Lạ"
     }
   },
+  "AutumnsGift": {
+    "name": "Món Quà Của Autumn",
+    "description": {
+      "0": "Đồ chơi âm nhạc bán tại Tiệm Đồ Hiếm Bertin, trẻ em rất yêu thích. Món đồ này hình như được mua rất lâu rồi, không phải mẫu mới nhất của tiệm.",
+      "1": "Món quà là thứ để tặng, nếu nó không thể đến được nơi vốn dĩ phải đến, thì ít nhất hãy để nó được ở bên cạnh người thực sự trân trọng."
+    }
+  },
   "MysteriousXenochromaticCrystal": {
     "name": "Tinh Thạch Dị Sắc Thần Bí",
     "description": {
-      "0": "Kết tinh lấy được từ cơ thể Dị Chủng Biển Sâu mạnh mẽ trong Khu Morte sau khi bị đánh bại.",
+      "0": "Kết tinh lấy được từ cơ thể Dị Chủng Biển Sâu mạnh mẽ sau khi bị đánh bại.",
       "1": "Bên trong chứa năng lượng bí ẩn hơn so với các Tinh Thạch Dị Sắc thông thường.",
       "2": "Chắc sẽ có người đồng ý trả cái giá hợp lý cho thứ này."
+    }
+  },
+  "RecruitmentNotice": {
+    "name": "Ghi Chú Chiêu Mộ",
+    "description": {
+      "0": "Ghi chú được viết bởi người ủy thác là Benoit Leroy, với một bản đồ được đính kèm trên khung địa chỉ."
     }
   },
   "MapFragment": {
@@ -20174,6 +20339,31 @@
   "Log": {
     "name": "Ghi Chép",
     "description": {}
+  },
+  "ShootingPracticeOpticalLenses": {
+    "name": "Ống Kính Quang Học Tập Bắn",
+    "description": {
+      "0": "Thiết bị quang học được cung cấp bởi Turenna của Đội Tuần Tra Đặc Biệt, có vẻ được ứng dụng những nguyên lý mà người thường không thể hiểu được. Kết hợp cùng thiết bị sa bàn \"Bắn Chặn Ngàn Bước\", có thể mô phỏng khung cảnh sử dụng súng hỏa mai bắn kẻ địch.",
+      "1": "Tuy vậy, thiết bị này vẫn còn nhiều thiếu sót trong những huấn luyện chính thức của thành viên Đội Tuần Tra Đặc Biệt, nhưng cũng đủ để khiến mọi người cảm thấy hứng thú với súng ống, dẫn dắt mọi người khai quật tiềm năng bản thân, sử dụng năng khiếu bắn súng của mình vào sự nghiệp chính nghĩa."
+    }
+  },
+  "HelpMePlease": {
+    "name": "Cứu, Cứu Tôi!",
+    "description": {
+      "0": "Mảnh giấy có thể đọc"
+    }
+  },
+  "BracarisGeneralStoreReceipt": {
+    "name": "Biên Lai Tiệm Tạp Hóa Bracari",
+    "description": {
+      "0": "Biên Lai Tiệm Tạp Hóa Bracari"
+    }
+  },
+  "PackageForTheLeroyFamily": {
+    "name": "Gói Hàng Của Nhà Leroy",
+    "description": {
+      "0": "Người giao báo tên Pip đã mang tất cả báo mà nhà Leroy chưa nhận nhét hết vào gói hàng này."
+    }
   },
   "TearsAmongTheStars": {
     "name": "Giọt Lệ Giữa Những Vì Sao",
@@ -21683,6 +21873,14 @@
     "description": {
       "0": "Đạo cụ tinh luyện chuyên dụng cho \"Lưỡi Kiếm Narzissenkreuz\".",
       "1": "Nền văn minh Fontaine cổ đại thường thích dùng vỏ ốc để chế tạo đạo cụ nghi lễ, chiếc vỏ ốc được chọn làm chén thánh này cuối cùng đã ào ạt dầu thánh. Từ góc độ ý nghĩa tượng trưng mà nói, chén thánh này là ngôn ngữ của nguyên thủy, dầu thánh là ý chí rèn luyện, thánh kiếm là lý trí để mở ra mọi thứ."
+    }
+  },
+  "SuperDuperInvincibleShiningSparklyMagicCrystal": {
+    "name": "Ma Tinh Lấp Lánh Siêu Vô Địch",
+    "description": {
+      "0": "Đạo cụ tinh luyện chuyên dụng của \"Bá Vương Tối Thượng Siêu Cấp Ma Kiếm\".",
+      "1": "Có thể ghép nhiều tâm nguyện (và cả những tấm bìa cứng cực ngầu) lại với nhau một cách chắc chắn, từ đó sinh ra sức mạnh tối thượng thần kỳ vô địch.",
+      "2": "Tuy những đạo cụ nhỏ với tạo hình tương tự (hoặc có thể nói là hoàn toàn giống nhau) có thể mua được tại Bách Hóa Damoville, nhưng không chừng thực tế giữa cả hai lại tồn tại sự khác biệt về bản chất, vì vậy tuyệt đối đừng nhầm lẫn!"
     }
   },
   "FalconsDance": {
@@ -23246,6 +23444,27 @@
       "1": "Cho dù dây cót không còn chuyển động, cho dù những con rối không còn bước tiếp nữa. Hồi ức đã trở thành san hô vĩnh hằng, xin đừng quên chuyến đi của chúng ta và thời gian bên cạnh nhau."
     }
   },
+  "NaviaRosula": {
+    "name": "Navia - Rosula",
+    "description": {
+      "0": "Hoa văn danh thiếp.",
+      "1": "Hoa hồng sẽ nở rộ, và chiếc ô của tiểu thư Navia sẽ bung ra. Nhưng phải cẩn thận, vì hoa hồng có gai, nên chiếc ô của tiểu thư Navia cũng sẽ bắn rất rát đấy."
+    }
+  },
+  "ChevreuseTypeII": {
+    "name": "Chevreuse - Mẫu II",
+    "description": {
+      "0": "Hoa văn danh thiếp.",
+      "1": "Khẩu súng mà Đội Tuần Tra Đặc Biệt trang bị có tên đầy đủ là \"Súng Hỏa Mai Mẫu II Tiêu Chuẩn Đội Tuần Tra Đặc Biệt\". Chevreuse gọi khẩu của mình là \"Mẫu II\". Giống như trên thế giới có vô số loài hoa, cho dù đóa hoa mà bạn trân trọng có bị đặt tên là \"hoa chẳng có gì đặc biệt\", thì nó vẫn là một sự khác biệt."
+    }
+  },
+  "TravelNotesTimeInscribed": {
+    "name": "Nhật Ký Hành Trình - Khắc Ghi",
+    "description": {
+      "0": "Hoa văn danh thiếp.",
+      "1": "Không biết cần bao lâu nữa nghệ thuật phim ảnh Teyvat mới có thể phát minh lại khái niệm \"khắc ghi thời gian\". Nhưng những khung hình này, quả thật đã ngưng đọng lại quá khứ của tội ác."
+    }
+  },
   "AnemoculusResonanceStone": {
     "name": "Đá Cộng Hưởng Phong Thần Đồng",
     "description": {
@@ -23830,6 +24049,13 @@
       "0": "Máy ảnh được Lepine-Pauline cải tạo để \"đối chiếu hình ảnh\". Không biết bên trong đã lắp đặt linh kiện quý giá và phức tạp gì mà có thể bắt được kết cấu, đường nét và đặc trưng màu sắc của đối tượng chụp ảnh..."
     }
   },
+  "MiniSeelieBrilliance": {
+    "name": "Tiên Linh Nhỏ Bé - Rực Rỡ",
+    "description": {
+      "0": "Kỷ niệm của sự kiện Kho Báu Mất Dấu, sau khi trang bị sẽ có Tiên Linh Nhỏ Bé bầu bạn.",
+      "1": "Tiên Linh Nhỏ Bé có ánh sáng lấp lánh, hoạt động thoải mái trong môi trường dưới nước."
+    }
+  },
   "InstructionsAnemoculusResonanceStone": {
     "name": "Giải Thích: Đá Cộng Hưởng Phong Thần Đồng",
     "description": {
@@ -24105,6 +24331,13 @@
       "1": "Ngửi nhẹ hương thơm của loại quả này, trong đầu dường như sẽ hiện ra một cảnh tượng nào đó. Mượn \"sức mạnh ngoại cảnh\" có thể xây dựng nên cảnh sắc Sumeru kỳ diệu..."
     }
   },
+  "SwirlingSceneInABottle": {
+    "name": "\"Dòng Xoáy Trong Bể\"",
+    "description": {
+      "0": "Bình sinh thái có cảnh quan đẹp mắt bên trong, là món quà kỷ niệm mà Tiên Ấm Chu Du Chubby đã mang về từ Fontaine.",
+      "1": "Ngắm nhìn khung cảnh trong bể, trong đầu dường như hiện lên một cảnh tượng nào đó. Mượn sức mạnh ngoại cảnh sẽ có thể xây dựng nên cảnh sắc Fontaine kỳ diệu..."
+    }
+  },
   "TheMountainCloudsLetDownGoldenRain": {
     "name": "Mây Trôi Nghìn Trùng Đón Tiếng Mưa",
     "description": {
@@ -24265,6 +24498,36 @@
   },
   "ElectroHypostasis": {
     "name": "Lôi Nguyên Bản",
+    "description": {
+      "0": "Thẻ bài \"Thất Thánh Triệu Hồi\", chất liệu rất tốt. Hình minh họa trên đó không biết là dùng cách in ấn đặc biệt nào để làm ra, trông rất tinh tế."
+    }
+  },
+  "LaSignora": {
+    "name": "Signora",
+    "description": {
+      "0": "Thẻ bài \"Thất Thánh Triệu Hồi\", chất liệu rất tốt. Hình minh họa trên đó không biết là dùng cách in ấn đặc biệt nào để làm ra, trông rất tinh tế."
+    }
+  },
+  "Azhdaha": {
+    "name": "Azhdaha",
+    "description": {
+      "0": "Thẻ bài \"Thất Thánh Triệu Hồi\", chất liệu rất tốt. Hình minh họa trên đó không biết là dùng cách in ấn đặc biệt nào để làm ra, trông rất tinh tế."
+    }
+  },
+  "EremiteScorchingLoremaster": {
+    "name": "Eremite - Người Kể Chuyện Cát Nóng",
+    "description": {
+      "0": "Thẻ bài \"Thất Thánh Triệu Hồi\", chất liệu rất tốt. Hình minh họa trên đó không biết là dùng cách in ấn đặc biệt nào để làm ra, trông rất tinh tế."
+    }
+  },
+  "ThunderManifestation": {
+    "name": "Thực Thể Sấm Sét",
+    "description": {
+      "0": "Thẻ bài \"Thất Thánh Triệu Hồi\", chất liệu rất tốt. Hình minh họa trên đó không biết là dùng cách in ấn đặc biệt nào để làm ra, trông rất tinh tế."
+    }
+  },
+  "Dvalin": {
+    "name": "Dvalin",
     "description": {
       "0": "Thẻ bài \"Thất Thánh Triệu Hồi\", chất liệu rất tốt. Hình minh họa trên đó không biết là dùng cách in ấn đặc biệt nào để làm ra, trông rất tinh tế."
     }
@@ -24629,6 +24892,72 @@
       "0": "Thẻ bài \"Thất Thánh Triệu Hồi\", chất liệu rất tốt. Hình minh họa trên đó không biết là dùng cách in ấn đặc biệt nào để làm ra, trông rất tinh tế."
     }
   },
+  "LightsRemit": {
+    "name": "Ánh Sáng Xá Tội",
+    "description": {
+      "0": "Thẻ bài \"Thất Thánh Triệu Hồi\", chất liệu rất tốt. Hình minh họa trên đó không biết là dùng cách in ấn đặc biệt nào để làm ra, trông rất tinh tế."
+    }
+  },
+  "TurnControl": {
+    "name": "Nắm Thế Chủ Động",
+    "description": {
+      "0": "Thẻ bài \"Thất Thánh Triệu Hồi\", chất liệu rất tốt. Hình minh họa trên đó không biết là dùng cách in ấn đặc biệt nào để làm ra, trông rất tinh tế."
+    }
+  },
+  "ConclusiveOvation": {
+    "name": "Pháo Tay Hạ Màn",
+    "description": {
+      "0": "Thẻ bài \"Thất Thánh Triệu Hồi\", chất liệu rất tốt. Hình minh họa trên đó không biết là dùng cách in ấn đặc biệt nào để làm ra, trông rất tinh tế."
+    }
+  },
+  "AColdBladeLikeAShadow": {
+    "name": "Lưỡi Kiếm Ảo Ảnh",
+    "description": {
+      "0": "Thẻ bài \"Thất Thánh Triệu Hồi\", chất liệu rất tốt. Hình minh họa trên đó không biết là dùng cách in ấn đặc biệt nào để làm ra, trông rất tinh tế."
+    }
+  },
+  "RushingHoundSwiftAsTheWind": {
+    "name": "Chạy: Nhanh Nhẹn Như Gió",
+    "description": {
+      "0": "Thẻ bài \"Thất Thánh Triệu Hồi\", chất liệu rất tốt. Hình minh họa trên đó không biết là dùng cách in ấn đặc biệt nào để làm ra, trông rất tinh tế."
+    }
+  },
+  "Structuration": {
+    "name": "Lẽ Phải",
+    "description": {
+      "0": "Thẻ bài \"Thất Thánh Triệu Hồi\", chất liệu rất tốt. Hình minh họa trên đó không biết là dùng cách in ấn đặc biệt nào để làm ra, trông rất tinh tế."
+    }
+  },
+  "PainForPain": {
+    "name": "Hoàn Trả Đau Thương",
+    "description": {
+      "0": "Thẻ bài \"Thất Thánh Triệu Hồi\", chất liệu rất tốt. Hình minh họa trên đó không biết là dùng cách in ấn đặc biệt nào để làm ra, trông rất tinh tế."
+    }
+  },
+  "Scorpocalypse": {
+    "name": "Hiểm Họa Bò Cạp",
+    "description": {
+      "0": "Thẻ bài \"Thất Thánh Triệu Hồi\", chất liệu rất tốt. Hình minh họa trên đó không biết là dùng cách in ấn đặc biệt nào để làm ra, trông rất tinh tế."
+    }
+  },
+  "GrievingEcho": {
+    "name": "Tiếng Than Vang Vọng",
+    "description": {
+      "0": "Thẻ bài \"Thất Thánh Triệu Hồi\", chất liệu rất tốt. Hình minh họa trên đó không biết là dùng cách in ấn đặc biệt nào để làm ra, trông rất tinh tế."
+    }
+  },
+  "RendingVortex": {
+    "name": "Gió Lốc Hủy Diệt",
+    "description": {
+      "0": "Thẻ bài \"Thất Thánh Triệu Hồi\", chất liệu rất tốt. Hình minh họa trên đó không biết là dùng cách in ấn đặc biệt nào để làm ra, trông rất tinh tế."
+    }
+  },
+  "LunarCyclesUnending": {
+    "name": "Dẫn Lối Ngày Đêm",
+    "description": {
+      "0": "Thẻ bài \"Thất Thánh Triệu Hồi\", chất liệu rất tốt. Hình minh họa trên đó không biết là dùng cách in ấn đặc biệt nào để làm ra, trông rất tinh tế."
+    }
+  },
   "MagicGuide": {
     "name": "Tóm Tắt Ma Pháp",
     "description": {
@@ -24977,6 +25306,66 @@
       "0": "Thẻ bài \"Thất Thánh Triệu Hồi\", chất liệu rất tốt. Hình minh họa trên đó không biết là dùng cách in ấn đặc biệt nào để làm ra, trông rất tinh tế."
     }
   },
+  "LostPrayerToTheSacredWinds": {
+    "name": "Điển Tích Tây Phong",
+    "description": {
+      "0": "Thẻ bài \"Thất Thánh Triệu Hồi\", chất liệu rất tốt. Hình minh họa trên đó không biết là dùng cách in ấn đặc biệt nào để làm ra, trông rất tinh tế."
+    }
+  },
+  "TulaytullahsRemembrance": {
+    "name": "Hồi Ức Tulaytullah",
+    "description": {
+      "0": "Thẻ bài \"Thất Thánh Triệu Hồi\", chất liệu rất tốt. Hình minh họa trên đó không biết là dùng cách in ấn đặc biệt nào để làm ra, trông rất tinh tế."
+    }
+  },
+  "BeaconOfTheReedSea": {
+    "name": "Hải Đăng Bờ Biển Lau",
+    "description": {
+      "0": "Thẻ bài \"Thất Thánh Triệu Hồi\", chất liệu rất tốt. Hình minh họa trên đó không biết là dùng cách in ấn đặc biệt nào để làm ra, trông rất tinh tế."
+    }
+  },
+  "PrimordialJadeWingedSpear": {
+    "name": "Hòa Phác Diên",
+    "description": {
+      "0": "Thẻ bài \"Thất Thánh Triệu Hồi\", chất liệu rất tốt. Hình minh họa trên đó không biết là dùng cách in ấn đặc biệt nào để làm ra, trông rất tinh tế."
+    }
+  },
+  "LightOfFoliarIncision": {
+    "name": "Tán Lá Phán Quyết",
+    "description": {
+      "0": "Thẻ bài \"Thất Thánh Triệu Hồi\", chất liệu rất tốt. Hình minh họa trên đó không biết là dùng cách in ấn đặc biệt nào để làm ra, trông rất tinh tế."
+    }
+  },
+  "GildedDreams": {
+    "name": "Giấc Mộng Hoàng Kim",
+    "description": {
+      "0": "Thẻ bài \"Thất Thánh Triệu Hồi\", chất liệu rất tốt. Hình minh họa trên đó không biết là dùng cách in ấn đặc biệt nào để làm ra, trông rất tinh tế."
+    }
+  },
+  "FlowingRings": {
+    "name": "Khuyên Tai Trôi Nổi",
+    "description": {
+      "0": "Thẻ bài \"Thất Thánh Triệu Hồi\", chất liệu rất tốt. Hình minh họa trên đó không biết là dùng cách in ấn đặc biệt nào để làm ra, trông rất tinh tế."
+    }
+  },
+  "EchoesOfAnOffering": {
+    "name": "Dư Âm Tế Lễ",
+    "description": {
+      "0": "Thẻ bài \"Thất Thánh Triệu Hồi\", chất liệu rất tốt. Hình minh họa trên đó không biết là dùng cách in ấn đặc biệt nào để làm ra, trông rất tinh tế."
+    }
+  },
+  "HeartOfKhvarenasBrilliance": {
+    "name": "Trái Tim Khvarena Huy Hoàng",
+    "description": {
+      "0": "Thẻ bài \"Thất Thánh Triệu Hồi\", chất liệu rất tốt. Hình minh họa trên đó không biết là dùng cách in ấn đặc biệt nào để làm ra, trông rất tinh tế."
+    }
+  },
+  "VourukashasGlow": {
+    "name": "Vầng Sáng Vourukasha",
+    "description": {
+      "0": "Thẻ bài \"Thất Thánh Triệu Hồi\", chất liệu rất tốt. Hình minh họa trên đó không biết là dùng cách in ấn đặc biệt nào để làm ra, trông rất tinh tế."
+    }
+  },
   "LiyueHarborWharf": {
     "name": "Bến Cảng Liyue",
     "description": {
@@ -25189,6 +25578,24 @@
   },
   "StormterrorsLair": {
     "name": "Phế Tích Phong Long",
+    "description": {
+      "0": "Thẻ bài \"Thất Thánh Triệu Hồi\", chất liệu rất tốt. Hình minh họa trên đó không biết là dùng cách in ấn đặc biệt nào để làm ra, trông rất tinh tế."
+    }
+  },
+  "WeepingWillowOfTheLake": {
+    "name": "Liễu Rũ Trong Hồ",
+    "description": {
+      "0": "Thẻ bài \"Thất Thánh Triệu Hồi\", chất liệu rất tốt. Hình minh họa trên đó không biết là dùng cách in ấn đặc biệt nào để làm ra, trông rất tinh tế."
+    }
+  },
+  "OperaEpiclese": {
+    "name": "Viện Ca Kịch Epiclese",
+    "description": {
+      "0": "Thẻ bài \"Thất Thánh Triệu Hồi\", chất liệu rất tốt. Hình minh họa trên đó không biết là dùng cách in ấn đặc biệt nào để làm ra, trông rất tinh tế."
+    }
+  },
+  "Mamere": {
+    "name": "Mamere",
     "description": {
       "0": "Thẻ bài \"Thất Thánh Triệu Hồi\", chất liệu rất tốt. Hình minh họa trên đó không biết là dùng cách in ấn đặc biệt nào để làm ra, trông rất tinh tế."
     }
@@ -25475,6 +25882,30 @@
       "0": "Thẻ bài \"Thất Thánh Triệu Hồi\", chất liệu rất tốt. Hình minh họa trên đó không biết là dùng cách in ấn đặc biệt nào để làm ra, trông rất tinh tế."
     }
   },
+  "PassingOfJudgment": {
+    "name": "Thời Khắc Phán Quyết",
+    "description": {
+      "0": "Thẻ bài \"Thất Thánh Triệu Hồi\", chất liệu rất tốt. Hình minh họa trên đó không biết là dùng cách in ấn đặc biệt nào để làm ra, trông rất tinh tế."
+    }
+  },
+  "TheBoarPrincess": {
+    "name": "Công Chúa Heo Rừng",
+    "description": {
+      "0": "Thẻ bài \"Thất Thánh Triệu Hồi\", chất liệu rất tốt. Hình minh họa trên đó không biết là dùng cách in ấn đặc biệt nào để làm ra, trông rất tinh tế."
+    }
+  },
+  "FallsAndFortune": {
+    "name": "Cạm Bẫy Và Cơ Hội",
+    "description": {
+      "0": "Thẻ bài \"Thất Thánh Triệu Hồi\", chất liệu rất tốt. Hình minh họa trên đó không biết là dùng cách in ấn đặc biệt nào để làm ra, trông rất tinh tế."
+    }
+  },
+  "FlickeringFourLeafSigil": {
+    "name": "Ấn Bốn Lá Lơ Lửng",
+    "description": {
+      "0": "Thẻ bài \"Thất Thánh Triệu Hồi\", chất liệu rất tốt. Hình minh họa trên đó không biết là dùng cách in ấn đặc biệt nào để làm ra, trông rất tinh tế."
+    }
+  },
   "Origin": {
     "name": "Nguyên Sơ",
     "description": {
@@ -25549,6 +25980,12 @@
   },
   "DragonspineCrown": {
     "name": "Long Tích Tuyết Sơn - Vương Miện",
+    "description": {
+      "0": "Lưng bài nhận được trong \"Thất Thánh Triệu Hồi\", tạo hình rất đa dạng, chất liệu cũng có đôi chút khác nhau. Có nhiều bài thủ có sở thích và đam mê sưu tập lưng bài."
+    }
+  },
+  "TheChasmSolidIron": {
+    "name": "Vực Đá Sâu - Sắt Cứng",
     "description": {
       "0": "Lưng bài nhận được trong \"Thất Thánh Triệu Hồi\", tạo hình rất đa dạng, chất liệu cũng có đôi chút khác nhau. Có nhiều bài thủ có sở thích và đam mê sưu tập lưng bài."
     }
@@ -26304,6 +26741,107 @@
       "2": "Bạn đồng hành thích bộ trang trí này: Tighnari, {REALNAME[ID(1)|HOSTONLY(true)]}"
     }
   },
+  "KeyToAStableWorkRestCycle": {
+    "name": "Yếu Tố Quan Trọng Giữa Làm Và Nghỉ",
+    "description": {
+      "0": "Phòng ngủ đơn giản, rộng rãi, cho cảm giác cân bằng giữa sự ấm áp và nét tinh tế. Với những người uể oải mà nói, khi nằm lên chiếc giường trong căn phòng này, rất nhanh sẽ chìm vào giấc ngủ, mà sáng ngủ dậy cũng nhanh chóng tỉnh táo, sớm bước vào trạng thái làm việc.",
+      "1": "Nhiều người Fontaine cho rằng, thiết kế phòng ốc là yếu tố quan trọng ảnh hưởng đến giấc ngủ, và giấc ngủ ổn định chính là chìa khóa cho ai đó khi muốn làm việc và nghỉ ngơi một cách khoa học. Xem ra, thiết kế phòng ngủ thực sự rất quan trọng.",
+      "2": "Bạn đồng hành thích bộ trang trí này: Charlotte, Chevreuse"
+    }
+  },
+  "StrictAdherenceToOfficeCodes": {
+    "name": "Chuẩn Mực Văn Phòng Tuân Thủ Quy Trình",
+    "description": {
+      "0": "Phòng đọc sách được bố trí vô cùng kinh điển, tham khảo theo cách thức trang trí trong Palais Mermonia, tái hiện lại văn phòng làm việc luôn bận rộn một cách bất thường đó. Mọi thứ đều được tuân thủ nghiêm ngặt.",
+      "1": "Vị học giả nào đó của Viện Khoa Học Fontaine từng tuyên bố \"môi trường của một người sẽ ảnh hưởng lớn đến trạng thái làm việc của họ\". Theo nguyên tắc này, khi ở trong phòng đọc sách với môi trường tương tự như trong Palais Mermonia, người ta sẽ vô thức tuân theo quy trình, làm việc một cách bình tĩnh thận trọng...",
+      "2": "Bạn đồng hành thích bộ trang trí này: Neuvillette"
+    }
+  },
+  "GarbForGloriousGourmet": {
+    "name": "Lớp Áo Hoa Lệ Của Bàn Tiệc",
+    "description": {
+      "0": "Nhà hàng với nội thất và trang thiết bị đa dạng đầy đủ, dựa trên cách bố trí tầng trệt của Khách Sạn Debord, thích hợp cho việc tổ chức tiệc gia đình náo nhiệt để tiếp đãi nhiều bạn bè thân thiết.",
+      "1": "Ngay cả những đầu bếp dày dặn kinh nghiệm cũng không thể phủ nhận, môi trường dùng bữa sẽ quyết định tâm trạng ăn uống của thực khách. Vì vậy, một nhà hàng được bố trí đẹp mắt về cơ bản cũng được coi là \"lớp áo choàng của các món ăn hoa mỹ và rượu ngon\".",
+      "2": "Bạn đồng hành thích bộ trang trí này: Furina, Navia"
+    }
+  },
+  "PerfectlyDrawnFocus": {
+    "name": "Vừa Vặn Thu Hút Mọi Ánh Nhìn",
+    "description": {
+      "0": "Cách bày trí với sân khấu có kích thước vừa phải ở chính giữa, đủ để hỗ trợ cho một buổi biểu diễn nhỏ.",
+      "1": "Với những người mới lên sân khấu, khán giả phía dưới quá đông, dễ khiến họ cảm thấy căng thẳng, ảnh hưởng đến màn trình diễn. Còn với những bậc thầy dày dặn kinh nghiệm, đôi khi cống hiến một màn trình diễn cho những người bạn quan trọng là chuyện còn vui hơn cả việc bán cháy vé. Vì vậy, hầu hết người biểu diễn đều thích loại sân khấu có kích cỡ vừa phải này.",
+      "2": "Bạn đồng hành thích bộ trang trí này: Lynette, Lyney"
+    }
+  },
+  "ContinuousClockworkInspiration": {
+    "name": "Dây Cót Cảm Hứng Xoay Không Ngừng",
+    "description": {
+      "0": "Căn phòng được bố trí với đối tượng tham khảo là các xưởng dây cót, có đầy đủ thiết bị gia công, đáp ứng hầu hết nhu cầu của thợ máy thông thường.",
+      "1": "Trong quan niệm của một số nhà thơ Fontaine, robot dây cót là tạo vật đáng được tôn trọng, sự tôn trọng này cũng nên được lan tỏa trên các thiết bị của nghệ nhân... \"Cảm hứng đã lắng nghe đám linh kiện, dạy chúng xoay chuyển ăn khớp với nhau, để các khớp nối không ngừng vận động. Đây là sứ mệnh và sự nghiệp của chúng.\"",
+      "2": "Bạn đồng hành thích bộ trang trí này: Freminet"
+    }
+  },
+  "WellspringOfRuleViolationPrevention": {
+    "name": "Nguồn Quy Tắc Nghiêm Cấm Vi Phạm",
+    "description": {
+      "0": "Phòng làm việc với bầu không khí nghiêm túc, tái hiện tương đối chính xác bố trí văn phòng của \"Công Tước\" trong Pháo Đài Meropide.",
+      "1": "Nghe nói sau khi tiếp quản Pháo Đài Meropide, công tước chỉ thay đổi một số nội thất chứ không điều chỉnh nhiều về bố cục văn phòng. Vì vậy, vô số quy tắc mà tù nhân cần tuân thủ nghiêm ngặt đều được hoàn thiện từ trong căn phòng này.",
+      "2": "Bạn đồng hành thích bộ trang trí này: Wriothesley"
+    }
+  },
+  "CourtOfJusticesPlacidDays": {
+    "name": "Những Ngày Bình Yên Ở Sảnh Chính Nghĩa",
+    "description": {
+      "0": "Khu phố được thiết kế dựa trên đường phố bình thường của cư dân Fontaine, với những căn nhà san sát đã tái hiện lại khung cảnh bình thường nhất ở Đại Sảnh Fontaine, phản ánh diện mạo chân thực nhất của thành phố này.",
+      "1": "Với đa số người dân Fontaine, phần lớn cuộc sống của họ là những chuỗi ngày đều đặn, đi làm và ra về đúng giờ, khi nghỉ ngơi thì cùng bạn bè ăn uống hay mua sắm, thỉnh thoảng đến Viện Ca Kịch Epiclese xem những buổi biểu diễn hoành tráng. Ngay cả một số nhà mạo hiểm từng trải qua phong ba bão táp cũng cảm thấy, cuộc sống bình yên như vậy quả thật không tệ...",
+      "2": "Bạn đồng hành thích bộ trang trí này: Charlotte"
+    }
+  },
+  "CourtOfJusticesBoomingCommerce": {
+    "name": "Thương Mại Tấp Nập Ở Sảnh Chính Nghĩa",
+    "description": {
+      "0": "Khu phố được bố trí dựa trên Quận Lyonnais ở Đại Sảnh Fontaine, với rất nhiều cửa tiệm đặc sắc của Fontaine cùng các bàn ngồi nghỉ thưởng trà sau khi mua sắm.",
+      "1": "Theo lời một số du khách có kinh nghiệm, nếu đến Fontaine mà không rành về các cửa tiệm và sản phẩm mà họ bày bán, thì có thể yên tâm hỏi thăm cư dân xung quanh. Vì phần lớn các cửa tiệm đều tuân thủ nghiêm ngặt quy định quản lý giá cả sản phẩm của Palais Mermonia, nên rất hiếm khi người ta mua phải hàng hóa bị chặt chém ở nơi này.",
+      "2": "Bạn đồng hành thích bộ trang trí này: Lynette, Lyney"
+    }
+  },
+  "CourtOfJusticesFreshMist": {
+    "name": "Màn Sương Tươi Mát Ở Sảnh Chính Nghĩa",
+    "description": {
+      "0": "Quảng trường tràn ngập những bụi cây xanh tươi, hoa cỏ rực rỡ cùng với đài phun nước lộng lẫy. Quan điểm thiết kế được tham khảo từ khu vực Đài Phun Nước Lucine trên Đảo Erinnyes.",
+      "1": "Vào ngày đẹp trời, hương hoa thơm trên Đảo Erinnyes hòa quyện cùng màn sương tươi mát thường sẽ mang lại tâm trạng vui vẻ thoải mái cho những vị du khách nước ngoài hay cư dân bản địa khi đến đây. Ngay cả khi gặp phải trời mưa như trút nước khi ghé thăm, những giai thoại lưu truyền xung quanh Đài Phun Nước Lucine cũng sẽ mang đến cho mọi người những hy vọng và mong đợi tốt đẹp.",
+      "2": "Bạn đồng hành thích bộ trang trí này: Neuvillette, Furina"
+    }
+  },
+  "PoissonTheUnassuming": {
+    "name": "Phố Poisson Giản Dị Mộc Mạc",
+    "description": {
+      "0": "Cảnh quan khu vực với trọng tâm là những kiến trúc độc đáo, tái hiện lại một góc diện mạo của Thị Trấn Poisson. Nhà cửa và đồ trang trí nhấn mạnh vào công năng thực tế, có thể tối đa hóa hiệu suất làm việc của cư dân trong thị trấn. Nhưng điều đó không hề thể hiện vẻ bận rộn hay mệt nhọc, mà là để bảo đảm cho một cuộc sống an nhàn... \"Nhanh chóng hoàn thành công việc hằng ngày là có thể tận hưởng quãng thời gian rảnh rỗi\". Một bộ phận cư dân của Thị Trấn Poisson đang làm việc dựa trên nguyên tắc này, sống một cuộc sống đầy đủ và giản dị.",
+      "1": "Bạn đồng hành thích bộ trang trí này: Navia"
+    }
+  },
+  "UnderseaMeruseasLuster": {
+    "name": "Merusea Thấp Thoáng Dưới Nước",
+    "description": {
+      "0": "Cảnh quan thôn làng cố gắng tái hiện lại Làng Merusea, với kiến trúc khá độc đáo và bắt mắt.",
+      "1": "Làng quê mà các Melusine sinh sống nằm ở vị trí Elynas phía dưới nước, nơi có ít người bình thường qua lại. Sau khi một số người ghé thăm nơi này trở về, hầu hết mọi người đều khen ngợi không ngớt về sự độc đáo đầy màu sắc của Làng Merusea. Từng có vài họa sĩ muốn vẽ lại cảnh quan của Làng Merusea dựa trên mô tả của họ và những thông tin thu được từ Melusine sinh sống ở Đại Sảnh Fontaine. Tiếc là các tác phẩm này thực tế vẫn tồn tại những điểm khác biệt \"sắc độ\" rất rõ ràng so với màu sắc thực tế. Vấn đề này đã làm khó các họa sĩ trong thời gian dài, cho đến khi những tấm ảnh vô cùng khách quan chụp từ máy ảnh được lưu truyền rộng rãi thì vấn đề này mới cơ bản được giải quyết...",
+      "2": "Bạn đồng hành thích bộ trang trí này: Freminet"
+    }
+  },
+  "FullForceForwardInTheForbiddenFortress": {
+    "name": "Đối Kháng Hết Mình Của Pháo Đài Ngăn Cấm",
+    "description": {
+      "0": "Đấu trường với phần trung tâm là võ đài đối kháng. Đứng trong đó có thể nghe thấy tiếng reo hò và vỗ tay của khán giả, lời dẫn đầy hào hứng của người dẫn chương trình cùng những tiếng nắm đấm bắp thịt va đập vào nhau của tuyển thủ hai bên khi thi đấu. Nguyên mẫu của nó là Đấu Trường Sức Mạnh ở Pháo Đài Meropide, quả là một nơi khiến người ta vô cùng ấn tượng.",
+      "1": "\"Đứng trên sàn đấu, nơi mà nắm đấm quyết định tất cả, chỉ có nỗ lực hết mình mới có thể giành được vinh quang thuộc về bản thân, và cả Phiếu Đặc Cách nữa\"... Không ít người từng tham gia đối kháng đã lấy câu nói này làm tôn chỉ khi bước chân ra khỏi Pháo Đài Meropide...",
+      "2": "Bạn đồng hành thích bộ trang trí này: Wriothesley, Chevreuse"
+    }
+  },
+  "TheNationOfHydrosMottledColors": {
+    "name": "Sắc Màu Rực Rỡ Trên Vương Quốc Của Nước",
+    "description": {
+      "0": "Khung cảnh ngoại ô với thảm thực vật tươi tốt, hội tụ các loài cây cỏ hoa lá thường thấy tại Fontaine. Hoa cỏ là chủ thể phổ biến trong hội họa, cũng là điểm khởi đầu trong hành trình khám phá \"màu sắc\". Một số họa sĩ của Fontaine cho rằng, bảng màu của thế giới là ví dụ điển hình về \"sự kết hợp hoàn hảo\" từ các loài thực vật. Vì vậy, nếu tất cả sắc độ trong một bức tranh đều tìm thấy nguyên mẫu thực vật của nó, thì bức tranh đó nhất định sẽ có thẩm mỹ hài hòa, vô cùng tự nhiên. Đương nhiên, với tiền đề là không được trộn lẫn màu sắc của các loài thực vật lại với nhau..."
+    }
+  },
   "TimberWallWithJadeEaves": {
     "name": "Tường Cao Mặt Ngọc",
     "description": {
@@ -26329,6 +26867,13 @@
     "name": "Tường Điêu Khắc Gỗ Sáng",
     "description": {
       "0": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Tường Điêu Khắc Gỗ Sáng\".",
+      "1": "Sau khi dùng có thể đến giao diện chế tạo để xem."
+    }
+  },
+  "AnnexsGoldenMosaic": {
+    "name": "Biệt Thự Khảm Vàng",
+    "description": {
+      "0": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Biệt Thự Khảm Vàng\".",
       "1": "Sau khi dùng có thể đến giao diện chế tạo để xem."
     }
   },
@@ -26360,6 +26905,13 @@
       "1": "Sau khi dùng có thể đến giao diện chế tạo để xem."
     }
   },
+  "AnnexsMirrorSheenFloorTile": {
+    "name": "Gạch Lát Nền Biệt Thự Sáng Bóng",
+    "description": {
+      "0": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Gạch Lát Nền Biệt Thự Sáng Bóng\".",
+      "1": "Sau khi dùng có thể đến giao diện chế tạo để xem."
+    }
+  },
   "CheckeredCedarCeiling": {
     "name": "Trần Caro Gỗ Thùy Hương",
     "description": {
@@ -26385,6 +26937,13 @@
     "name": "Trần Nhà Điêu Khắc Gỗ Sáng",
     "description": {
       "0": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Trần Nhà Điêu Khắc Gỗ Sáng\".",
+      "1": "Sau khi dùng có thể đến giao diện chế tạo để xem."
+    }
+  },
+  "AnnexsSpotlessDome": {
+    "name": "Mái Vòm Biệt Thự Không Tì Vết",
+    "description": {
+      "0": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Mái Vòm Biệt Thự Không Tì Vết\".",
       "1": "Sau khi dùng có thể đến giao diện chế tạo để xem."
     }
   },
@@ -26654,10 +27213,31 @@
       "1": "Sau khi dùng có thể đến giao diện chế tạo để xem."
     }
   },
+  "ForbiddenZoneFloorLampIronhammer": {
+    "name": "Đèn Sàn Vùng Cấm - \"Búa Sắt\"",
+    "description": {
+      "0": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Đèn Sàn Vùng Cấm - 'Búa Sắt'\".",
+      "1": "Sau khi dùng có thể đến giao diện chế tạo để xem."
+    }
+  },
+  "ForbiddenZoneFloorLampNightlight": {
+    "name": "Đèn Sàn Vùng Cấm - \"Ánh Sáng Đêm\"",
+    "description": {
+      "0": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Đèn Sàn Vùng Cấm - 'Ánh Sáng Đêm'\".",
+      "1": "Sau khi dùng có thể đến giao diện chế tạo để xem."
+    }
+  },
   "EfflorescentIllumination": {
     "name": "Ánh Sáng Trăm Hoa",
     "description": {
       "0": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Ánh Sáng Trăm Hoa\".",
+      "1": "Sau khi dùng có thể đến giao diện chế tạo để xem."
+    }
+  },
+  "AnnexsSwirlingLight": {
+    "name": "Ánh Đèn Xoay Biệt Thự",
+    "description": {
+      "0": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Ánh Đèn Xoay Biệt Thự\".",
       "1": "Sau khi dùng có thể đến giao diện chế tạo để xem."
     }
   },
@@ -26742,6 +27322,13 @@
     "name": "Tủ Trưng Đồ Gốm Gỗ Sanh",
     "description": {
       "0": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Tủ Trưng Đồ Gốm Gỗ Sanh\".",
+      "1": "Sau khi dùng có thể đến giao diện chế tạo để xem."
+    }
+  },
+  "MallowWoodMultiModelWardrobe": {
+    "name": "Tủ Áo \"Mẫu Đa Năng\" Gỗ Ngô Đồng",
+    "description": {
+      "0": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Tủ Áo 'Mẫu Đa Năng' Gỗ Ngô Đồng\".",
       "1": "Sau khi dùng có thể đến giao diện chế tạo để xem."
     }
   },
@@ -26868,6 +27455,13 @@
     "name": "Kệ Nhỏ Của Sảnh Chính Luật",
     "description": {
       "0": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Kệ Nhỏ Của Sảnh Chính Luật\".",
+      "1": "Sau khi dùng có thể đến giao diện chế tạo để xem."
+    }
+  },
+  "AThousandTextsInTheCentralHub": {
+    "name": "Tài Liệu Vô Cùng Nhiều Ở Trung Tâm",
+    "description": {
+      "0": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Tài Liệu Vô Cùng Nhiều Ở Trung Tâm\".",
       "1": "Sau khi dùng có thể đến giao diện chế tạo để xem."
     }
   },
@@ -27067,6 +27661,27 @@
       "1": "Sau khi dùng có thể đến giao diện chế tạo để xem."
     }
   },
+  "StableWorkStationInTheCentralHub": {
+    "name": "Bàn Làm Việc Trung Tâm Vững Chắc",
+    "description": {
+      "0": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Bàn Làm Việc Trung Tâm Vững Chắc\".",
+      "1": "Sau khi dùng có thể đến giao diện chế tạo để xem."
+    }
+  },
+  "RestTimeInTheCentralHub": {
+    "name": "Thời Gian Nghỉ Ở Trung Tâm",
+    "description": {
+      "0": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Thời Gian Nghỉ Ở Trung Tâm\".",
+      "1": "Sau khi dùng có thể đến giao diện chế tạo để xem."
+    }
+  },
+  "TheLeisureOfDailyMeetings": {
+    "name": "Thảnh Thơi Giữa Cuộc Gặp Thường Ngày",
+    "description": {
+      "0": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Thảnh Thơi Giữa Cuộc Gặp Thường Ngày\".",
+      "1": "Sau khi dùng có thể đến giao diện chế tạo để xem."
+    }
+  },
   "BreezeBlessedBed": {
     "name": "Giường Bảo Vệ Êm Ái",
     "description": {
@@ -27162,6 +27777,13 @@
     "name": "Chứng Nhân Của Mọi Chuyện Tại Quán Rượu",
     "description": {
       "0": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Chứng Nhân Của Mọi Chuyện Tại Quán Rượu\".",
+      "1": "Sau khi dùng có thể đến giao diện chế tạo để xem."
+    }
+  },
+  "CelebrationOfAnAdHocPerformance": {
+    "name": "Khoảnh Khắc Mừng Buổi Diễn Ngẫu Hứng",
+    "description": {
+      "0": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Khoảnh Khắc Mừng Buổi Diễn Ngẫu Hứng\".",
       "1": "Sau khi dùng có thể đến giao diện chế tạo để xem."
     }
   },
@@ -27295,6 +27917,27 @@
     "name": "Sảng Khoái Uống Rượu Hoan Ca",
     "description": {
       "0": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Sảng Khoái Uống Rượu Hoan Ca\".",
+      "1": "Sau khi dùng có thể đến giao diện chế tạo để xem."
+    }
+  },
+  "MallowWoodViewingRitesChair": {
+    "name": "Ghế \"Văn Hóa Thưởng Thức\" Gỗ Ngô Đồng",
+    "description": {
+      "0": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Ghế 'Văn Hóa Thưởng Thức' Gỗ Ngô Đồng\".",
+      "1": "Sau khi dùng có thể đến giao diện chế tạo để xem."
+    }
+  },
+  "LindenWoodSubduingSeatBackedChair": {
+    "name": "Ghế Tựa Lưng \"Ngồi Ngay Ngắn\" Gỗ Linden",
+    "description": {
+      "0": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Ghế Tựa Lưng 'Ngồi Ngay Ngắn' Gỗ Linden\".",
+      "1": "Sau khi dùng có thể đến giao diện chế tạo để xem."
+    }
+  },
+  "MomentaryRestInTheCentralHub": {
+    "name": "Giây Phút Thư Giãn Ở Trung Tâm",
+    "description": {
+      "0": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Giây Phút Thư Giãn Ở Trung Tâm\".",
       "1": "Sau khi dùng có thể đến giao diện chế tạo để xem."
     }
   },
@@ -27659,6 +28302,13 @@
     "name": "Gánh Nặng Của Pháo Đài Ngăn Cấm",
     "description": {
       "0": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Gánh Nặng Của Pháo Đài Ngăn Cấm\".",
+      "1": "Sau khi dùng có thể đến giao diện chế tạo để xem."
+    }
+  },
+  "StandardMusicStandAccurateTuning": {
+    "name": "Giá Nhạc Tiêu Chuẩn - \"Chỉnh Âm Chính Xác\"",
+    "description": {
+      "0": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Giá Nhạc Tiêu Chuẩn - 'Chỉnh Âm Chính Xác'\".",
       "1": "Sau khi dùng có thể đến giao diện chế tạo để xem."
     }
   },
@@ -28201,6 +28851,13 @@
       "1": "Sau khi dùng có thể đến giao diện chế tạo để xem."
     }
   },
+  "CommonUseNoteHolder": {
+    "name": "Giá Ghi Chú Thông Dụng",
+    "description": {
+      "0": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Giá Ghi Chú Thông Dụng\".",
+      "1": "Sau khi dùng có thể đến giao diện chế tạo để xem."
+    }
+  },
   "RealizationsFromTheLandOfWisdom": {
     "name": "Thức Tỉnh Ở Vùng Đất Trí Tuệ",
     "description": {
@@ -28422,6 +29079,13 @@
     "name": "Khiên Tấn Công Bằng Sắt Cứng Gỗ Sanh",
     "description": {
       "0": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Khiên Tấn Công Bằng Sắt Cứng Gỗ Sanh\".",
+      "1": "Sau khi dùng có thể đến giao diện chế tạo để xem."
+    }
+  },
+  "IndoorLampTheTwilightSea": {
+    "name": "Đèn Trong Nhà - \"Hoàng Hôn Trên Biển\"",
+    "description": {
+      "0": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Đèn Trong Nhà - 'Hoàng Hôn Trên Biển'\".",
       "1": "Sau khi dùng có thể đến giao diện chế tạo để xem."
     }
   },
@@ -28807,6 +29471,20 @@
     "name": "Quy Tắc Đúng Giờ Trên Phố",
     "description": {
       "0": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Quy Tắc Đúng Giờ Trên Phố\".",
+      "1": "Sau khi dùng có thể đến giao diện chế tạo để xem."
+    }
+  },
+  "QuickTemporaryWorkshed": {
+    "name": "Lều Tạm Nhanh Gọn",
+    "description": {
+      "0": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Lều Tạm Nhanh Gọn\".",
+      "1": "Sau khi dùng có thể đến giao diện chế tạo để xem."
+    }
+  },
+  "PoissonsSeasonalProduce": {
+    "name": "Đồ Tươi Đầu Mùa Phố Poisson",
+    "description": {
+      "0": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Đồ Tươi Đầu Mùa Phố Poisson\".",
       "1": "Sau khi dùng có thể đến giao diện chế tạo để xem."
     }
   },
@@ -29538,6 +30216,13 @@
       "1": "Sau khi dùng có thể đến giao diện chế tạo để xem."
     }
   },
+  "CourtyardPavilionAmidstTheRivers": {
+    "name": "Đình Sân Vườn - \"Giữa Ngàn Dòng Nước\"",
+    "description": {
+      "0": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Đình Sân Vườn - 'Giữa Ngàn Dòng Nước'\".",
+      "1": "Sau khi dùng có thể đến giao diện chế tạo để xem."
+    }
+  },
   "CourtOfJusticesAuthenticity": {
     "name": "Chân Thật Của Sảnh Chính Nghĩa",
     "description": {
@@ -29570,6 +30255,27 @@
     "name": "Cua Đá Nhỏ",
     "description": {
       "0": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Cua Đá Nhỏ\".",
+      "1": "Sau khi dùng có thể đến giao diện chế tạo để xem."
+    }
+  },
+  "TheArenaWhereFistsReemerge": {
+    "name": "Nơi Tái Hiện Sàn Đấu Đối Kháng",
+    "description": {
+      "0": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Nơi Tái Hiện Sàn Đấu Đối Kháng\".",
+      "1": "Sau khi dùng có thể đến giao diện chế tạo để xem."
+    }
+  },
+  "TheWisdomOfPoisson": {
+    "name": "Trí Tuệ Của Phố Poisson",
+    "description": {
+      "0": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Trí Tuệ Của Phố Poisson\".",
+      "1": "Sau khi dùng có thể đến giao diện chế tạo để xem."
+    }
+  },
+  "ASimpleResidenceInPoisson": {
+    "name": "Căn Nhà Đơn Sơ Phố Poisson",
+    "description": {
+      "0": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Căn Nhà Đơn Sơ Phố Poisson\".",
       "1": "Sau khi dùng có thể đến giao diện chế tạo để xem."
     }
   },
@@ -30119,6 +30825,34 @@
       "1": "Sau khi dùng có thể đến giao diện chế tạo để xem."
     }
   },
+  "CourtyardCorridorTheMoraDividend": {
+    "name": "Hành Lang Sân Vườn - \"Mora Chia Tách\"",
+    "description": {
+      "0": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Hành Lang Sân Vườn - 'Mora Chia Tách'\".",
+      "1": "Sau khi dùng có thể đến giao diện chế tạo để xem."
+    }
+  },
+  "CourtyardCorridorManifoldCorners": {
+    "name": "Hành Lang Sân Vườn - \"Góc Đa Tạp\"",
+    "description": {
+      "0": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Hành Lang Sân Vườn - 'Góc Đa Tạp'\".",
+      "1": "Sau khi dùng có thể đến giao diện chế tạo để xem."
+    }
+  },
+  "CourtyardArchwayMomentOfGlory": {
+    "name": "Cổng Vòm Sân Vườn - \"Thời Khắc Vinh Quang\"",
+    "description": {
+      "0": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Cổng Vòm Sân Vườn - 'Thời Khắc Vinh Quang'\".",
+      "1": "Sau khi dùng có thể đến giao diện chế tạo để xem."
+    }
+  },
+  "CourtyardWallABitOfScenery": {
+    "name": "Tường Sân Vườn - \"Một Góc Phong Cảnh\"",
+    "description": {
+      "0": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Tường Sân Vườn - 'Một Góc Phong Cảnh'\".",
+      "1": "Sau khi dùng có thể đến giao diện chế tạo để xem."
+    }
+  },
   "FoundationsOfStoneFortunateTimes": {
     "name": "Nền Đá - \"Thời Đại May Mắn\"",
     "description": {
@@ -30613,6 +31347,13 @@
     "name": "Mô Hình Máy Móc - Mỏ Neo Đá Nứt",
     "description": {
       "0": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Mô Hình Máy Móc - Mỏ Neo Đá Nứt\".",
+      "1": "Sau khi dùng có thể đến giao diện chế tạo để xem."
+    }
+  },
+  "BoxingTargetOfTheForbiddenFortress": {
+    "name": "Hình Nộm Của Pháo Đài Ngăn Cấm",
+    "description": {
+      "0": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Hình Nộm Của Pháo Đài Ngăn Cấm\".",
       "1": "Sau khi dùng có thể đến giao diện chế tạo để xem."
     }
   },
@@ -31379,6 +32120,55 @@
       "1": "Sau khi dùng có thể đến giao diện chế tạo để xem."
     }
   },
+  "OverburdeningOfTheForbiddenFortress": {
+    "name": "Tải Nặng Của Pháo Đài Ngăn Cấm",
+    "description": {
+      "0": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Tải Nặng Của Pháo Đài Ngăn Cấm\".",
+      "1": "Sau khi dùng có thể đến giao diện chế tạo để xem."
+    }
+  },
+  "AreaMarkerUpward": {
+    "name": "Ký Hiệu Khu Vực - \"Đi Lên\"",
+    "description": {
+      "0": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Ký Hiệu Khu Vực - 'Đi Lên'\".",
+      "1": "Sau khi dùng có thể đến giao diện chế tạo để xem."
+    }
+  },
+  "AreaMarkerDownward": {
+    "name": "Ký Hiệu Khu Vực - \"Đi Xuống\"",
+    "description": {
+      "0": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Ký Hiệu Khu Vực - 'Đi Xuống'\".",
+      "1": "Sau khi dùng có thể đến giao diện chế tạo để xem."
+    }
+  },
+  "PoissonDoorFrame": {
+    "name": "Khung Cổng Phố Poisson",
+    "description": {
+      "0": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Khung Cổng Phố Poisson\".",
+      "1": "Sau khi dùng có thể đến giao diện chế tạo để xem."
+    }
+  },
+  "BookshelfFreeReading": {
+    "name": "Kệ Sách Báo - \"Tự Do Lấy Đọc\"",
+    "description": {
+      "0": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Kệ Sách Báo - 'Tự Do Lấy Đọc'\".",
+      "1": "Sau khi dùng có thể đến giao diện chế tạo để xem."
+    }
+  },
+  "BookshelfSpeedyBrowsing": {
+    "name": "Kệ Sách Báo - \"Lướt Xem Nhanh\"",
+    "description": {
+      "0": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Kệ Sách Báo - 'Lướt Xem Nhanh'\".",
+      "1": "Sau khi dùng có thể đến giao diện chế tạo để xem."
+    }
+  },
+  "BookshelfFocusedEffect": {
+    "name": "Kệ Sách Báo - \"Hiệu Quả Tập Trung\"",
+    "description": {
+      "0": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Kệ Sách Báo - 'Hiệu Quả Tập Trung'\".",
+      "1": "Sau khi dùng có thể đến giao diện chế tạo để xem."
+    }
+  },
   "PoolOfSapphireGrace": {
     "name": "Hồ Linh Vân",
     "description": {
@@ -31670,6 +32460,20 @@
     "name": "Bàn Tròn Sạch Sẽ Trên Phố",
     "description": {
       "0": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Bàn Tròn Sạch Sẽ Trên Phố\".",
+      "1": "Sau khi dùng có thể đến giao diện chế tạo để xem."
+    }
+  },
+  "ProductionRackTheBasics": {
+    "name": "Kệ Hàng Sản Xuất - \"Mẫu Cơ Bản\"",
+    "description": {
+      "0": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Kệ Hàng Sản Xuất - 'Mẫu Cơ Bản'\".",
+      "1": "Sau khi dùng có thể đến giao diện chế tạo để xem."
+    }
+  },
+  "ProductionRackCustomBuild": {
+    "name": "Kệ Hàng Sản Xuất - \"Mẫu Cải Tạo\"",
+    "description": {
+      "0": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Kệ Hàng Sản Xuất - 'Mẫu Cải Tạo'\".",
       "1": "Sau khi dùng có thể đến giao diện chế tạo để xem."
     }
   },

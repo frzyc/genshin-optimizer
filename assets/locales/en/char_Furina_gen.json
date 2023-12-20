@@ -12,12 +12,12 @@
       },
       "charged": {
         "0": "<strong>Charged Attack</strong>",
-        "1": "Consumes a certain amount of Stamina to unleash a solo dance, dealing Physical DMG to nearby opponents and changing her Arkhe alignment. If Salon Members or Singer of Many Waters summoned by her Elemental Skill \"Salon Solitaire\" are present, their lineup will switch in response."
+        "1": "Consumes a certain amount of Stamina to unleash a solo dance, dealing Physical DMG to nearby opponents and changing her Arkhe alignment. If Salon Members or the Singer of Many Waters summoned by her Elemental Skill \"Salon Solitaire\" is present, their lineup will switch in response."
       },
       "arkhe": {
         "0": "<strong>Arkhe: Seats Sacred and Secular</strong>",
-        "1": "At intervals, when Furina's Normal Attacks hit, a Spiritbreath Thorn or a Surging Blade will descend based on her current alignment, dealing <hydro>Hydro DMG</hydro> based on her current alignment.",
-        "2": "When Furina takes the field, her starting Arkhe will be Ousia."
+        "1": "At intervals, when Furina's Normal Attacks hit, a Spiritbreath Thorn or a Surging Blade will descend based on her current Arkhe alignment, dealing Pneuma- or Ousia-aligned <hydro>Hydro DMG</hydro>.",
+        "2": "When Furina takes the field, her starting Arkhe alignment will be Ousia."
       },
       "plunging": {
         "0": "<strong>Plunging Attack</strong>",
@@ -46,18 +46,18 @@
   "skill": {
     "name": "Salon Solitaire",
     "description": {
-      "0": "Invites the guests of the Salon Solitaire to come forth and abet in Furina's performance. Will summon either the Salon Members or the Singer of Many Waters based on Furina's current <strong>Arkhe alignment</strong>.",
+      "0": "Invites the guests of the Salon Solitaire to come forth and aid in Furina's performance. Will summon either the Salon Members or the Singer of Many Waters based on Furina's current <strong>Arkhe alignment</strong>.",
       "1": "<br/>",
       "2": "<strong>Ousia</strong>",
       "3": "Foaming bubbles like celebrants shall dance, dealing <hydro>AoE Hydro DMG</hydro> based on Furina's Max HP and summoning 3 Salon Members: the Ball Octopus-shaped Gentilhomme Usher, the Bubbly Seahorse-shaped Surintendante Chevalmarin, and the Armored Crab-shaped Mademoiselle Crabaletta.",
       "4": "They will attack nearby opponents at intervals, prioritizing the target of the active character, dealing <hydro>Hydro</hydro> DMG based on Max HP.",
-      "5": "When they attack, if character(s) with more than 50% HP are nearby, the Members will increase their current attack's power based on the number of such characters, and consume said characters' HP. If the characters who meet these requirements are 1/2/3/4 (or more), the Members' attacks will deal 110%/120%/130%/140% of their original DMG.",
+      "5": "When they attack, if character(s) with more than 50% HP are nearby, the Members will increase their current attack's power based on the number of such characters, and consume said characters' HP. If 1/2/3/4 (or more) characters meet these requirements, the Members' attacks will deal 110%/120%/130%/140% of their original DMG.",
       "6": "<br/>",
       "7": "<strong>Pneuma</strong>",
       "8": "Summons the Singer of Many Waters, who will heal nearby active character(s) based on Max HP at intervals.",
       "9": "<br/>",
-      "10": "The Salon Members and Singer of Many Waters share a duration, and when Furina uses her Charged Attack to change the guest type, the new guests will inherit the initial duration.",
-      "11": "While the Salon Members and the Singer of Many Waters are on the field, Furina can move on the water's surface.",
+      "10": "The Salon Members and Singer of Many Waters share a duration, and when Furina uses her Charged Attack to change the guest type, the new guests will inherit the remaining duration.",
+      "11": "While the Salon Members or the Singer of Many Waters is on the field, Furina can move on the water's surface.",
       "12": "<br/>",
       "13": "<i>A fixed roster of regulars frequent Furina's Salon Solitaire. At other times, Mademoiselle Crabaletta, Surintendante Chevalmarin, and Gentilhomme Usher shall visit, and on gloomy Wednesdays, it is the singer who comes by.</i>"
     },
@@ -111,15 +111,15 @@
   "passive1": {
     "name": "Endless Waltz",
     "description": {
-      "0": "When the active character in your party receives healing, if the source of the healing is not Furina herself and the healing overflows, then Furina will heal a nearby party member for 2% of their Max HP once every 2s within the next 4s."
+      "0": "When the active character in your party receives healing, if the source of the healing is not Furina herself and the healing overflows, then Furina will heal nearby party members for 2% of their Max HP once every 2s for the next 4s."
     }
   },
   "passive2": {
     "name": "Unheard Confession",
     "description": {
       "0": "Every 1,000 points of Furina's Max HP can buff the different Arkhe-aligned <strong>Salon Solitaire</strong> in the following ways:",
-      "1": "Will increase Salon Member DMG dealt by 0.7%, up to a maximum of 28%.",
-      "2": "Will decrease active character healing interval of the Singer of Many Waters by 0.4%, up to a maximum of 16%."
+      "1": "Will increase Salon Members' DMG dealt by 0.7%, up to a maximum of 28%.",
+      "2": "Will decrease the Singer of Many Waters' healing interval for nearby active characters by 0.4%, up to a maximum of 16%."
     }
   },
   "passive3": {
@@ -151,7 +151,7 @@
   "constellation4": {
     "name": "\"They Know Not Life, Who Dwelt in the Netherworld Not!\"",
     "description": {
-      "0": "When the Salon Members from <strong>Salon Solitaire</strong> hit an opponent, or the Singer of Many Waters restores HP to the active character, Furina will restore 4 Energy. This effect triggers once every 5s."
+      "0": "When the Salon Members from <strong>Salon Solitaire</strong> hit an opponent, or the Singer of Many Waters restores HP to nearby active characters, Furina will restore 4 Energy. This effect can be triggered once every 5s."
     }
   },
   "constellation5": {

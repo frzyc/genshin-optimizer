@@ -16,7 +16,7 @@
       },
       "arkhe": {
         "0": "<strong>Archè: Seggi sacri e secolari</strong>",
-        "1": "Dopo aver colpito gli avversari con attacchi normali, e in base alla sua polarità attuale, Furina genera a determinati intervalli un Aculeo spettrale o una Lama nascente, infliggendo <hydro>DAN da Hydro</hydro> della polarità corrispondente.",
+        "1": "Dopo aver colpito gli avversari con attacchi normali, e in base alla sua polarità Archè attuale, Furina genera a determinati intervalli un Aculeo spettrale o una Lama nascente, infliggendo <hydro>DAN da Hydro</hydro> della polarità corrispondente.",
         "2": "Quando Furina entra in campo, il suo Archè di partenza è Ousia."
       },
       "plunging": {
@@ -56,7 +56,7 @@
       "7": "<strong>Pneuma</strong>",
       "8": "Evoca il Cantante delle Mille Acque, che ripristina i PS dei personaggi attivi nelle vicinanze a intervalli regolari, in base ai PS max.",
       "9": "<br/>",
-      "10": "I Membri del Salon e il Cantante delle Mille Acque condividono la medesima durata, e quando Furina usa il suo attacco caricato per cambiare il tipo di ospiti presenti, i nuovi ospiti ereditano la durata iniziale di quelli precedenti.",
+      "10": "I Membri del Salon e il Cantante delle Mille Acque condividono la medesima durata, e quando Furina usa il suo attacco caricato per cambiare il tipo di ospiti presenti, i nuovi ospiti ereditano la durata rimanente di quelli precedenti.",
       "11": "<br/>",
       "12": "Mentre i Membri del Salon o il Cantante delle Mille Acque sono in campo, Furina può muoversi sulle superfici acquatiche.",
       "13": "<br/>",
@@ -112,7 +112,7 @@
   "passive1": {
     "name": "Valzer infinito",
     "description": {
-      "0": "Quando il personaggio attivo del gruppo riceve effetti di guarigione, se l'effetto non è apportato da Furina e la guarigione supera il limite massimo, Furina guarisce un membro del gruppo nelle vicinanze di una quantità pari a un 2% dei PS max del membro in questione, una volta ogni 2 s per i 4 s successivi."
+      "0": "Quando il personaggio attivo del gruppo riceve effetti di guarigione, se l'effetto non è apportato da Furina e la guarigione supera il limite massimo, Furina guarisce i membri vicini del gruppo di una quantità pari a un 2% dei PS max del membro in questione, una volta ogni 2 s per i 4 s successivi."
     }
   },
   "passive2": {
@@ -121,7 +121,7 @@
       "0": "Per ogni 1.000 PS max di Furina, le polarità Archè di <strong>Salon Solitaire</strong> possono essere potenziate nei seguenti modi:",
       "1": [
         " i DAN inflitti dai Membri del Salon aumentano di uno 0,7%, fino a un 28% massimo;",
-        " l'intervallo di guarigione del Cantante delle Mille Acque per il personaggio attivo si riduce di uno 0,4%, fino a un 16% massimo."
+        " l'intervallo di guarigione del Cantante delle Mille Acque per i personaggi attivi vicini si riduce di uno 0,4%, fino a un 16% massimo."
       ]
     }
   },
@@ -154,7 +154,7 @@
   "constellation4": {
     "name": "\"Ché ci è gradita soltanto qui la vita, nel gran regno infernal!\"",
     "description": {
-      "0": "Quando i Membri del <strong>Salon Solitaire</strong> colpiscono un avversario, o quando il Cantante delle Mille Acque ripristina i PS del personaggio attivo, l'energia di Furina si ripristina di 4. Quest'effetto può attivarsi una volta ogni 5 s."
+      "0": "Quando i Membri del <strong>Salon Solitaire</strong> colpiscono un avversario, o quando il Cantante delle Mille Acque ripristina i PS dei personaggi attivi vicini, l'energia di Furina si ripristina di 4. Quest'effetto può attivarsi una volta ogni 5 s."
     }
   },
   "constellation5": {

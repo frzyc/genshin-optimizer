@@ -1,0 +1,24 @@
+{
+  "name": "Sentenciadora",
+  "description": {
+    "0": "El arma que usó la joven aristócrata que renunció a su apellido. Está manchada con la sangre de enemigos y seres queridos."
+  },
+  "passiveName": "Promesa de mil albas y crepúsculos",
+  "passiveDescription": {
+    "0": {
+      "0": "El ATQ aumenta en un <cryo>20%</cryo>. Cuando un personaje del equipo recoge un fragmento creado con la reacción de Cristalización, el portador de esta arma obtiene 1 “sello promisorio”, el cual aumenta en un <cryo>18%</cryo> el daño de la Habilidad Elemental. El sello promisorio dura 15 s y se pueden poseer un máximo de 2 al mismo tiempo. Todos los sellos se eliminarán 0.2 s después de que el portador de esta arma inflija daño con su Habilidad Elemental."
+    },
+    "1": {
+      "0": "El ATQ aumenta en un <cryo>25%</cryo>. Cuando un personaje del equipo recoge un fragmento creado con la reacción de Cristalización, el portador de esta arma obtiene 1 “sello promisorio”, el cual aumenta en un <cryo>22.5%</cryo> el daño de la Habilidad Elemental. El sello promisorio dura 15 s y se pueden poseer un máximo de 2 al mismo tiempo. Todos los sellos se eliminarán 0.2 s después de que el portador de esta arma inflija daño con su Habilidad Elemental."
+    },
+    "2": {
+      "0": "El ATQ aumenta en un <cryo>30%</cryo>. Cuando un personaje del equipo recoge un fragmento creado con la reacción de Cristalización, el portador de esta arma obtiene 1 “sello promisorio”, el cual aumenta en un <cryo>27%</cryo> el daño de la Habilidad Elemental. El sello promisorio dura 15 s y se pueden poseer un máximo de 2 al mismo tiempo. Todos los sellos se eliminarán 0.2 s después de que el portador de esta arma inflija daño con su Habilidad Elemental."
+    },
+    "3": {
+      "0": "El ATQ aumenta en un <cryo>35%</cryo>. Cuando un personaje del equipo recoge un fragmento creado con la reacción de Cristalización, el portador de esta arma obtiene 1 “sello promisorio”, el cual aumenta en un <cryo>31.5%</cryo> el daño de la Habilidad Elemental. El sello promisorio dura 15 s y se pueden poseer un máximo de 2 al mismo tiempo. Todos los sellos se eliminarán 0.2 s después de que el portador de esta arma inflija daño con su Habilidad Elemental."
+    },
+    "4": {
+      "0": "El ATQ aumenta en un <cryo>40%</cryo>. Cuando un personaje del equipo recoge un fragmento creado con la reacción de Cristalización, el portador de esta arma obtiene 1 “sello promisorio”, el cual aumenta en un <cryo>36%</cryo> el daño de la Habilidad Elemental. El sello promisorio dura 15 s y se pueden poseer un máximo de 2 al mismo tiempo. Todos los sellos se eliminarán 0.2 s después de que el portador de esta arma inflija daño con su Habilidad Elemental."
+    }
+  }
+}

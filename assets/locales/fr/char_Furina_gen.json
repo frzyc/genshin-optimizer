@@ -51,7 +51,7 @@
       "2": "<strong>Ousia</strong>",
       "3": "De l'écume danse joyeusement, infligeant des <hydro>DGT Hydro de zone</hydro> selon les PV max de Furina et convoquant 3 membres du salon : le gentilhomme Usher en forme de poulpe bouffi, la surintendante Chevalmarin en forme d'Hippocampe bulleux et la demoiselle Crabaletta en forme de Cuiracrabe.",
       "4": "Ces derniers attaquent les ennemis proches de façon intermittente en donnant la priorité aux cibles que le personnage déployé attaque, infligeant des <hydro>DGT Hydro</hydro> selon les PV max de Furina.",
-      "5": "En attaquant, les membres du salon renforcent l'attaque en cours selon le nombre de personnages de l'équipe à proximité dont les PV sont supérieurs à 50 % tout en consommant les PV de ces derniers : lorsque 1, 2, 3 ou au moins 4 personnages sont concernés, l'attaque inflige des DGT pour une valeur équivalant respectivement à 110 %, 120 %, 130 % ou 140 % des DGT d'origine.",
+      "5": "En attaquant, les membres du salon renforcent l'attaque en cours selon le nombre de personnages de l'équipe à proximité dont les PV sont supérieurs à 50 % tout en consommant les PV de ces derniers : lorsque 1, 2, 3 ou au moins 4 personnages sont concernés, l'attaque inflige des DGT d'une valeur équivalant respectivement à 110 %, 120 %, 130 % ou 140 % des DGT d'origine.",
       "6": "<br/>",
       "7": "<strong>Pneuma</strong>",
       "8": "Furina convoque le chanteur des eaux, qui restaure régulièrement les PV des personnages déployés à proximité selon ses PV max.",
@@ -83,7 +83,7 @@
   "burst": {
     "name": "Liesse populaire",
     "description": {
-      "0": "Éveille l'envie de se délecter, créant une scène d'écume qui inflige des <hydro>DGT Hydro de zone</hydro> selon les PV max de Furina et accorde l'état Réjouissance universelle aux personnages de l'équipe à proximité : pendant sa durée, lorsque les PV actuels d'un personnage augmentent ou diminuent, Furina obtient 1 pt de fanfare à chaque fois que le personnage obtient ou perd des PV pour une valeur équivalant à 1 % de ses PV Max.",
+      "0": "Éveille l'envie de se délecter, créant une scène d'écume qui inflige des <hydro>DGT Hydro de zone</hydro> selon les PV max de Furina et accorde l'état Réjouissance universelle aux personnages de l'équipe à proximité : pendant sa durée, lorsque les PV actuels d'un personnage augmentent ou diminuent, Furina obtient 1 pt de fanfare à chaque fois que le personnage obtient ou perd des PV d'une valeur équivalant à 1 % de ses PV Max.",
       "1": "De plus, les DGT infligés et le bonus de soins reçus de tous les personnages de l'équipe à proximité augmentent selon la quantité de points de fanfare de Furina.",
       "2": "Une fois la durée terminée, la fanfare de Furina est annulée.",
       "3": "<br/>",
@@ -111,7 +111,7 @@
   "passive1": {
     "name": "Valse inarrêtable",
     "description": {
-      "0": "Lorsque le personnage déployé de votre groupe est soigné, si ces soins ne proviennent pas de Furina et dépassent la quantité maximum qu'il peut recevoir, Furina soigne les personnages de l'équipe à proximité pour une valeur équivalant à 2 % de leurs PV max respectifs une fois toutes les 2 s pendant 4 s."
+      "0": "Lorsque le personnage déployé de votre groupe est soigné, si ces soins ne proviennent pas de Furina et dépassent la quantité maximum qu'il peut recevoir, Furina soigne les personnages de l'équipe à proximité d'une valeur équivalant à 2 % de leurs PV max respectifs une fois toutes les 2 s pendant 4 s."
     }
   },
   "passive2": {
@@ -169,7 +169,7 @@
       "2": "De plus, après avoir touché un ennemi pendant cette durée, ses attaques normales (sauf les attaques de « Arkhe : Sacralité et sécularisation »), chargées et l'impact au sol de ses attaques plongeantes produisent divers effets toutes les 0,1 s selon l'alignement actuel de son Arkhe :",
       "3": "<br/>",
       "4": "Arkhe : Ousia",
-      "5": "Soigne les PV de tous les personnages de l'équipe à proximité pour une valeur équivalant à 4 % des PV max de Furina toutes les secondes pendant 2,9 s, tout déclenchement répété prolongeant cette durée.",
+      "5": "Soigne les PV de tous les personnages de l'équipe à proximité d'une valeur équivalant à 4 % des PV max de Furina toutes les secondes pendant 2,9 s, tout déclenchement répété prolongeant cette durée.",
       "6": "Arkhe : Pneuma",
       "7": "Les DGT de cette attaque normale (sauf les attaques de « Arkhe : Sacralité et sécularisation »), chargée ou plongeante (lorsque cette dernière touche le sol) augmentent encore d'une valeur équivalant à 25 % des PV max de Furina. De plus, lorsqu'une de ces attaques touche un ennemi, tous les personnages de l'équipe à proximité perdent 1 % de leurs PV actuels.",
       "8": "<br/>",

@@ -79,8 +79,8 @@
   "burst": {
     "name": "Sabit Fotoğraf: Tam Doğrulama",
     "description": {
-      "0": "Charlotte, Buğukuş'un imzasını oluşturmak için buzu yoğunlaştırıp <cryo>Buz Alan Hasarı</cryo> veren bir Önemli Haber Bölgesi oluşturur ve Saldırısına göre yakındaki tüm grup üyelerine Can yeniler.",
-      "1": "<strong>Önemli Haber Bölgesi</strong>",
+      "0": "Charlotte, Buğukuş'un imzasını oluşturmak için buzu yoğunlaştırıp <cryo>Buz Alan Hasarı</cryo> veren bir Önemli Haber Alanı oluşturur ve Saldırısına göre yakındaki tüm grup üyelerine Can yeniler.",
+      "1": "<strong>Önemli Haber Alanı</strong>",
       "2": [
         "Bu beceri etkinken Mösyö Verite belirli aralıklarla kendi Etki Alanı içindeki düşmanlara <cryo>Buz Hasarı</cryo> verir.",
         "Charlotte'un Saldırısına göre sürekli olarak Etki Alanındaki aktif karakterlere Can yeniler."
@@ -134,7 +134,7 @@
   "constellation2": {
     "name": "Daima Gerçeğin Peşinde",
     "description": {
-      "0": "<strong>Kare: Dondurma Tekniği</strong> kullanırken Mösyö Verite 1/2/3 veya daha fazla düşmana vurduğunda 12 saniyeliğine Charlotte'un kendi Saldırısı %10/%20/%30 artar."
+      "0": "<strong>Kadraj: Dondurma Tekniği</strong> kullanırken Mösyö Verite 1/2/3 veya daha fazla düşmana vurduğunda 12 saniyeliğine Charlotte'un kendi Saldırısı %10/%20/%30 artar."
     }
   },
   "constellation3": {

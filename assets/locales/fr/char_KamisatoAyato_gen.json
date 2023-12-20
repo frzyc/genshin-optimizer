@@ -141,7 +141,7 @@
   "constellation3": {
     "name": "Contemplation des fleurs",
     "description": {
-      "0": "Niveau de compétence <strong>École Kamisato : Beauté réfléchie</strong> +3.",
+      "0": "Niveau d'aptitude <strong>École Kamisato : Beauté réfléchie</strong> +3.",
       "1": "Niveau max : 15"
     }
   },
@@ -154,7 +154,7 @@
   "constellation5": {
     "name": "Rosée de mille gouttes",
     "description": {
-      "0": "Niveau de compétence <strong>École Kamisato : Jardin d'eau</strong> +3.",
+      "0": "Niveau d'aptitude <strong>École Kamisato : Jardin d'eau</strong> +3.",
       "1": "Niveau max : 15"
     }
   },

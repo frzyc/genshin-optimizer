@@ -163,7 +163,7 @@
     "name": "Récompense du courroux",
     "description": {
       "0": "En utilisant l'attaque chargée « Jugement équitable », Neuvillette peut aspirer les gouttes d'eau de source à portée. Chaque goutte absorbée permet de prolonger la durée de l'attaque chargée « Jugement équitable » de 1 s.",
-      "1": "De plus, lorsque l'attaque chargée « Jugement équitable » touche un ennemi, 2 torrents supplémentaires sont libérés toutes les 2 s, chacun infligeant des <hydro>DGT Hydro</hydro> pour une valeur équivalant à 10 % des PV max de Neuvillette. Les DGT infligés de cette manière sont considérés comme des DGT de l'attaque chargée « Jugement équitable »."
+      "1": "De plus, lorsque l'attaque chargée « Jugement équitable » touche un ennemi, 2 torrents supplémentaires sont libérés toutes les 2 s, chacun infligeant des <hydro>DGT Hydro</hydro> d'une valeur équivalant à 10 % des PV max de Neuvillette. Les DGT infligés de cette manière sont considérés comme des DGT de l'attaque chargée « Jugement équitable »."
     }
   }
 }

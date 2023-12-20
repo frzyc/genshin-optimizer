@@ -397,6 +397,20 @@
       "1": "Cette précieuse récompense peut être débloquée lors de l'événement « Les aventures fantastiques de Thelxie »."
     }
   },
+  "TheaterTickets": {
+    "name": "Coupons de théâtre",
+    "description": {
+      "0": "Des coupons de théâtre très raffinés reçus en souvenir de votre participation aux différentes activités du Festival cinématographique de Fontinalia. On raconte que ce genre de coupon est fabriqué à l'aide d'un procédé unique qui lui donne une texture similaire à une pellicule. Parfaitement translucides à la lumière, ils rappellent très fort des fragments de gemme...",
+      "1": "Utilisez-les pendant l'événement « Roses et mousquets » pour débloquer de nombreuses récompenses."
+    }
+  },
+  "FilmForFun": {
+    "name": "Pellicule fun",
+    "description": {
+      "0": "Des pièces commémoratives en forme de pellicule. Ces souvenirs peuvent être gagnés en participant au Festival cinématographique de Fontinalia. Bien qu'elles ne puissent pas être visionnées, leur forme unique ravira les gens en leur rappelant ce qu'ils ont vu pendant le festival...",
+      "1": "Échangez-les pendant l'événement « Roses et mousquets » pour obtenir des objets de valeur."
+    }
+  },
   "Primogem": {
     "name": "Primo-gemme",
     "description": {
@@ -1026,11 +1040,27 @@
   },
   "Charlotte": {
     "name": "Charlotte",
-    "description": {}
+    "description": {
+      "0": "Une infatigable journaliste de L'Oiseau de vapeur, en constante recherche de la « vérité »."
+    }
   },
   "Furina": {
     "name": "Furina",
-    "description": {}
+    "description": {
+      "0": "Le point central absolu de la scène du jugement, jusqu'aux applaudissements finaux."
+    }
+  },
+  "Chevreuse": {
+    "name": "Chevreuse",
+    "description": {
+      "0": "La capitaine de la patrouille de surveillance spéciale, qui porte la justice comme un sceau omniprésent sur son cœur. Son mousquet ne doit pointer que vers les coupables."
+    }
+  },
+  "Navia": {
+    "name": "Navia",
+    "description": {
+      "0": "L'actuelle présidente de la Spina di Rosula, qui est une patronne adorable, dévouée et formidable."
+    }
   },
   "KamisatoAyakasStellaFortuna": {
     "name": "Stella Fortuna de Kamisato Ayaka.",
@@ -1486,6 +1516,18 @@
     "name": "Stella Fortuna de Furina",
     "description": {
       "0": "Matériau d'activation de la constellation de Furina."
+    }
+  },
+  "ChevreusesStellaFortuna": {
+    "name": "Stella Fortuna de Chevreuse",
+    "description": {
+      "0": "Matériau d'activation de la constellation de Chevreuse."
+    }
+  },
+  "NaviasStellaFortuna": {
+    "name": "Stella Fortuna de Navia",
+    "description": {
+      "0": "Matériau d'activation de la constellation de Navia."
     }
   },
   "GnosticHymnOldNotes": {
@@ -13740,7 +13782,7 @@
   "SuspiciousCassoulet": {
     "name": "Cassoulet (suspect)",
     "description": {
-      "0": "Une sorte de ragoût venu de la campagne. Bien que l'apparence semble correcte, le manger vous fait remarquer un léger goût de brûlé, avant de réaliser que la couche inférieure d'ingrédients a été si gravement brûlée qu'elle a complètement fusionné avec la casserole. Beurk... Il faudrait rappeler au chef de remuer sa casserole de temps en temps pendant la cuisson..."
+      "0": "Une sorte de ragoût venu de la campagne. Bien que l'apparence semble correcte, le manger vous fait remarquer un léger goût de brûlé, avant de réaliser que la couche inférieure d'ingrédients a été si gravement brûlée qu'elle a complètement fusionné avec la casserole. Beurk... Il faudra remuer sa casserole de temps en temps pendant la cuisson..."
     }
   },
   "Cassoulet": {
@@ -13831,6 +13873,72 @@
     "name": "Scoop exclusif : Rubrique gourmande",
     "description": {
       "0": "Spécialité culinaire de Charlotte. Elle garde toujours cet encas à portée de mains dans sa quête incessante de scoops exclusifs. Alors qu'elle croque dans le poisson frit, elle regarde de côté et le rythme joyeux de ses pas s'enchaîne et chevauche lentement le craquèlement de la panure croustillante dans sa bouche... Bien que son dernier scoop ne soit pas encore prêt à être imprimé, la joie et le contentement dans son cœur ont déjà atteint leur apogée."
+    }
+  },
+  "SuspiciousFeastOs": {
+    "name": "Rondélice (suspect)",
+    "description": {
+      "0": "Des régals frits dorés. Il a fallu une éternité pour éliminer l'excès d'huile et lorsque vous les goûtez, vous remarquez immédiatement à quel point ils ont ramolli et perdu tout leur croquant. Qui sait, peut-être que les goélands de la côte en voudront ?"
+    }
+  },
+  "FeastOs": {
+    "name": "Rondélice",
+    "description": {
+      "0": "Des régals frits dorés. La purée de poulet est façonnée en forme circulaire avec les rondelles d'oignon. La purée de poisson et la purée de pommes de terre sont pressées et façonnées en galettes rondes. Plongez ensuite le tout dans l'huile bouillante et les rondélices prendront forme avec le grésillement de l'huile."
+    }
+  },
+  "DeliciousFeastOs": {
+    "name": "Rondélice (délicieux)",
+    "description": {
+      "0": "Des régals frits dorés. Fraîchement sortis de l'huile, leur arôme met immédiatement l'eau à la bouche. La rondelle de poulet et d'oignon dans la main gauche, et la rondelle de poisson et de purée de pommes de terre dans la droite. Légers et croustillants, les Rondélices sauront ravir vos papilles."
+    }
+  },
+  "SuspiciousRainbowMacarons": {
+    "name": "Macarons arc-en-ciel (suspects)",
+    "description": {
+      "0": "Des petits gâteaux multicolores de forme ronde. Le premier donne l'impression d'être vide. Le deuxième est un peu déformé, et le troisième est complètement raté... Comme on peut l'attendre d'un dessert de Fontaine, ces gâteaux sont subtils et complexes. Il y a encore du travail pour maîtriser cette recette."
+    }
+  },
+  "RainbowMacarons": {
+    "name": "Macarons arc-en-ciel",
+    "description": {
+      "0": "Des petits gâteaux multicolores de forme ronde. Il y a un dicton à Fontaine : un dessert sans macarons, c'est comme de l'eau privée de sa source. C'est l'un des desserts les plus emblématiques de la nation de l'eau. Des chefs pâtissiers aux amateurs dans la rue, tout le monde en connaît la recette par cœur."
+    }
+  },
+  "DeliciousRainbowMacarons": {
+    "name": "Macarons arc-en-ciel (délicieux)",
+    "description": {
+      "0": "Des petits gâteaux multicolores de forme ronde. La coque fine et croustillante contient une garniture dense mais moelleuse en parfaite harmonie. Essayez-en un, et c'est comme si un chaton ronronnait sur votre poitrine. C'est bien simple, personne ne peut résister à cette expérience enivrante."
+    }
+  },
+  "SinTheKindThatDoesntNeedToBeDealtWith": {
+    "name": "Péché : Dont il est inutile de s'occuper",
+    "description": {
+      "0": "La spécialité de Chevreuse. D'un point de vue diététique, c'est un « péché » absolu. Dans son rôle de capitaine de la patrouille de surveillance spéciale, Chevreuse ne confierait jamais la tâche importante de combattre le mal à quelqu'un d'autre sans raison valable... C'est une question d'éthique professionnelle et personnelle. Cependant, partager ce fardeau avec quelqu'un de confiance est un... bon moyen d'évacuer le stress."
+    }
+  },
+  "PickWhatYouLike": {
+    "name": "« À vous de choisir ! »",
+    "description": {
+      "0": "La spécialité de Navia. « Allez, à vous de choisir ! » Au son de cette voix familière et joyeuse, votre regard se pose sur l'étagère à desserts à deux étages, et sur les macarons soigneusement disposés dessus avec leurs différents motifs. Tout simplement merveilleux... Quelle tête ferait Navia si vous décidiez de tous les prendre ?"
+    }
+  },
+  "SuspiciousFontinaliaMousse": {
+    "name": "Mousse fontinalienne (suspecte)",
+    "description": {
+      "0": "Un vrai dessert bleu du Festival Fontinalia. Un peu disgracieux par sa forme, celui-ci fait penser à une Fleur mensongère Cryo. Le lys lacmineux choisi à l'époque comme référence serait-il en fait une variante de la Fleur mensongère ? Vous feriez mieux de vous en débarrasser discrètement... Servir quelque chose comme ça pendant le festival pourrait vous apporter des ennuis !"
+    }
+  },
+  "FontinaliaMousse": {
+    "name": "Mousse fontinalienne",
+    "description": {
+      "0": "Un vrai dessert bleu du Festival Fontinalia, dont la mousse est façonnée à l'image d'un bourgeon de lys lacmineux. Après que les coutumes du Festival ont été modifiées pour se concentrer davantage sur la dégustation de sucreries, la mousse fontinalienne est rapidement devenue une recette fontainoise très appréciée. N'oubliez pas de la partager avec tous ceux qui vous demandent « Du sucré ou un procès » !"
+    }
+  },
+  "DeliciousFontinaliaMousse": {
+    "name": "Mousse fontinalienne (délicieuse)",
+    "description": {
+      "0": "Un vrai dessert bleu du Festival Fontinalia, sa couleur cristalline n'a rien à envier à la lumière diffusée par les vagues. Son élégance est celle de pétales tombant avec grâce, sa texture aérée s'apparente à un flocon de neige sur votre langue. Déguster un tel met constitue sans doute la chose la plus agréable du festival !"
     }
   },
   "RecipeItem": {
@@ -14882,6 +14990,24 @@
     "name": "Recette : Boudi-profiteroles",
     "description": {
       "0": "Étapes de préparation des boudi-profiteroles."
+    }
+  },
+  "RecipeFeastOs": {
+    "name": "Recette : Rondélice",
+    "description": {
+      "0": "Étapes de préparation du rondélice."
+    }
+  },
+  "RecipeRainbowMacarons": {
+    "name": "Recette : Macarons arc-en-ciel",
+    "description": {
+      "0": "Étapes de préparation des macarons arc-en-ciel."
+    }
+  },
+  "RecipeFontinaliaMousse": {
+    "name": "Recette : Mousse fontinalienne",
+    "description": {
+      "0": "Étapes de préparation de la mousse fontinalienne."
     }
   },
   "CraftedItems": {
@@ -19087,6 +19213,24 @@
       "0": "Un court conte de fées très populaire à Fontaine. De nombreux enfants, après avoir vu la couverture superbement dessinée, pensent qu'il a réellement été écrit par la gentille oie aux ailes enneigées de la légende."
     }
   },
+  "TheTwoMusketeersI": {
+    "name": "Les deux mousquetaires - Tome I",
+    "description": {
+      "0": "Une série de romans qui fait fureur à Fontaine. On y parle de conspirations, de revanche, de justice et du mal."
+    }
+  },
+  "TheTwoMusketeersII": {
+    "name": "Les deux mousquetaires - Tome II",
+    "description": {
+      "0": "Une série de romans qui fait fureur à Fontaine. On y parle de conspirations, de revanche, de justice et du mal."
+    }
+  },
+  "TheTwoMusketeersIII": {
+    "name": "Les deux mousquetaires - Tome III",
+    "description": {
+      "0": "Une série de romans qui fait fureur à Fontaine. On y parle de conspirations, de revanche, de justice et du mal."
+    }
+  },
   "GiftOfParting": {
     "name": "Cadeau de séparation",
     "description": {
@@ -19643,7 +19787,7 @@
     "name": "Notes d'un tirailleur",
     "description": {}
   },
-  "34thIndependentInvestigativeSquadDeploymentInMontEsusEasternQuadrantDisplinaryProcedures": {
+  "34thIndependentInvestigativeSquadDeploymentInMontEsusEasternQuadrantDisciplinaryProcedures": {
     "name": "Code disciplinaire de la 34e équipe d'enquête indépendante du pied est du Mont Esus",
     "description": {}
   },
@@ -19992,15 +20136,15 @@
     }
   },
   "SpinaDiRosulaUniformGiftBox": {
-    "name": "Cadeau d'une tenue de la Spina di Rosula",
+    "name": "Cadeau de l'uniforme de la Spina di Rosula",
     "description": {
-      "0": "Navia a préparé ce cadeau, qui contient un uniforme de la Spina di Rosula, pour Adèle. C'est actuellement un peu grand pour Adèle, mais ça fonctionne comme une promesse."
+      "0": "Navia a préparé ce cadeau pour Adèle qui contient un uniforme de la Spina di Rosula. Il est actuellement un peu grand pour elle, mais il fait office de promesse."
     }
   },
   "StrangelyShapedKey": {
     "name": "Clé de forme étrange",
     "description": {
-      "0": "Une clé que vous avez obtenue d'un membre du gang de Romeu. Il semble que ce soit un outil nécessaire pour arrêter rapidement des explosifs."
+      "0": "Une clé que vous avez obtenue d'un membre du gang de Romeuf. Il semble que ce soit un outil nécessaire pour arrêter rapidement des explosifs."
     }
   },
   "RecommendationLetter": {
@@ -20065,6 +20209,14 @@
       "0": "Une des clés qui ouvre la barrière de fer sur le vaisseau brisé."
     }
   },
+  "AratakiGangsInstantRamen": {
+    "name": "Nouilles instantanées du gang Arataki",
+    "description": {
+      "0": "Un cadeau de remerciement de la part de Kuki Shinobu pour avoir aidé l'Authentique Roi oni des scarabées de combat à devenir encore plus fort, et lui avoir montré de nouvelles façons de combattre les scarabées pendant le super entraînement éblouissant aux combats de scarabées d'Arataki...",
+      "1": "Cette boîte robuste mais légère contient un bloc de nouilles instantanées séchées, des assaisonnements sous vide, un bol extrêmement solide et des baguettes. Mettez simplement le bloc de nouilles instantanées dans le bol avec les épices, versez de l'eau chaude et vous obtenez un délicieux bol de nouilles. Super pratique, n'est-ce pas ?",
+      "2": "Cependant, selon le mot que Kuki Shinobu a laissé dans la boîte, ni elle ni Arataki Itto n'ont eu la chance d'apprécier ce repas pendant leur voyage à Liyue. Ils n'avaient que quelques biscuits et légumes marinés sur eux. Lors de son séjour à Liyue, Kuki Shinobu s'est inspirée des plats de nouilles locaux pour s'essayer à la création de ce plat de nouilles, de sorte que le Bras droit du Roi oni et le Melon lavande de fer blanc puisse profiter d'un plat savoureux au cours de leur voyage..."
+    }
+  },
   "FoggyForestBranch": {
     "name": "Branche brumeuse",
     "description": {
@@ -20115,12 +20267,25 @@
       "0": "Message étrange"
     }
   },
+  "AutumnsGift": {
+    "name": "Cadeau d'Automne",
+    "description": {
+      "0": "Un jouet musical très apprécié des enfants que l'on peut acheter à la Maison des curiosités de Bertin. Celui-ci semble avoir été acheté il y a un certain temps déjà, et ce n'est d'ailleurs plus le modèle le plus récent de la boutique.",
+      "1": "Les cadeaux sont faits pour être offerts, et s'ils n'arrivent pas à leur destinataire initial, ils devraient au moins faire plaisir à quelqu'un qui saura les apprécier."
+    }
+  },
   "MysteriousXenochromaticCrystal": {
     "name": "Cristal xénochromatique mystérieux",
     "description": {
-      "0": "Un grand cristal obtenu en vainquant un Aberrant fontemarin extrêmement puissant dans la Région mortée.",
+      "0": "Un grand cristal obtenu en vainquant un Aberrant fontemarin extrêmement puissant.",
       "1": "Le pouvoir qu'il contient est plus mystérieux que celui des cristaux xénochromatiques ordinaires.",
       "2": "Peut-être que quelqu'un sera prêt à payer un bon prix pour ça..."
+    }
+  },
+  "RecruitmentNotice": {
+    "name": "Note de recrutement",
+    "description": {
+      "0": "Instructions rédigées par Benoît Leroy. Une carte a été aimablement jointe à l'adresse."
     }
   },
   "MapFragment": {
@@ -20162,6 +20327,31 @@
   "Log": {
     "name": "Journal",
     "description": {}
+  },
+  "ShootingPracticeOpticalLenses": {
+    "name": "Lentille optique d'entraînement au tir",
+    "description": {
+      "0": "Ce dispositif optique, fourni par Turenna de la patrouille de surveillance spéciale, semble utiliser un principe de représentation difficile à comprendre pour monsieur Tout-le-monde. Le modèle de terrain du Tir à mille pas de moins d'une minute d'arc peut être utilisé pour simuler des scénarios dans lesquels on tire au mousquet sur des ennemis.",
+      "1": "Bien que ce dispositif ne réponde pas parfaitement aux critères d'entraînement des membres de la patrouille de surveillance spéciale, il permet de susciter l'intérêt du public pour le mousquet et de lui faire découvrir son potentiel au service d'une juste cause."
+    }
+  },
+  "HelpMePlease": {
+    "name": "À l'aide !",
+    "description": {
+      "0": "Une note à lire."
+    }
+  },
+  "BracarisGeneralStoreReceipt": {
+    "name": "Reçu de l'épicerie de Bracari",
+    "description": {
+      "0": "Reçu de l'épicerie de Bracari"
+    }
+  },
+  "PackageForTheLeroyFamily": {
+    "name": "Paquet pour la famille Leroy",
+    "description": {
+      "0": "Pip, le livreur de journaux, a mis dans ce paquet tous les journaux que la famille Leroy a commandés mais pas récupérés durant cette période."
+    }
   },
   "TearsAmongTheStars": {
     "name": "Larme parmi les étoiles",
@@ -21671,6 +21861,14 @@
     "description": {
       "0": "Matériau de raffinement spécial pour la Lame du Narzissenkreuz.",
       "1": "Les conques étaient souvent des matériaux privilégiés dans l'ancienne civilisation fontainoise pour fabriquer des instruments rituels, et les onguents sacrés contenus dans cette conque choisie comme calice sanctifié ont finalement émergé. Symboliquement, ce calice est la parole primordiale, les huiles sont la volonté aiguisée et la sainte lame elle-même est la raison qui transperce tout."
+    }
+  },
+  "SuperDuperInvincibleShiningSparklyMagicCrystal": {
+    "name": "Cristal magique scintillant super-méga invincible",
+    "description": {
+      "0": "Matériau de raffinement spécial pour la « Méga épée magique du suzerain ultime ».",
+      "1": "Il permet d'exaucer et de combiner de nombreux vœux (et de grandes découpes en carton). C'est ainsi qu'est créé un super-méga pouvoir mystérieux.",
+      "2": "Bien qu'il existe des objets similaires (ou identiques) en vente à la Galerie Damoville, il y a (sans doute) une différence qualitative entre les deux. Alors ne vous y trompez pas."
     }
   },
   "FalconsDance": {
@@ -23233,6 +23431,27 @@
       "1": "Même si les mécanismes horlogoïdes s'arrêtent de tourner, même si les marionnettes cessent d'avancer... Même si nos souvenirs restent éternellement figés comme du corail... N'oublions pas nos aventures et le temps que nous avons passé ensemble."
     }
   },
+  "NaviaRosula": {
+    "name": "Navia : Rosula",
+    "description": {
+      "0": "Thème.",
+      "1": "À l'image des roses qui fleurissent, l'ombrelle de Navia peut s'ouvrir. Mais attention, car tout comme les roses piquent avec leurs épines, le parapluie de Navia permet de tirer de puissants projectiles."
+    }
+  },
+  "ChevreuseTypeII": {
+    "name": "Chevreuse : Type II",
+    "description": {
+      "0": "Thème.",
+      "1": "Le nom complet de l'arme réglementaire de la patrouille de surveillance spéciale est le mousquet standard type II de la patrouille de surveillance spéciale. Mais Chevreuse se contente d'appeler la sienne « Type II ». Même s'il existe d'innombrables fleurs dans le monde, celle que vous chérissez est spéciale à vos yeux, qu'importe ce qu'en pensent les autres."
+    }
+  },
+  "TravelNotesTimeInscribed": {
+    "name": "PB - Marque du temps",
+    "description": {
+      "0": "Thème.",
+      "1": "Qui sait combien de temps il faudra avant que l'art cinématographique de Teyvat n'avance au point de réinventer l'art de la gravure du temps ? Quoi qu'il en soit, cette scène a véritablement capturé un passé plein de péchés."
+    }
+  },
   "AnemoculusResonanceStone": {
     "name": "Pierre de résonance Anémoculus",
     "description": {
@@ -23814,6 +24033,13 @@
       "0": "Un Daguerréotype spécialement modifié par Lépine-Pauline pour le domaine compliqué de la confrontation graphique. On ne sait pas exactement quels types de composants complexes et coûteux sont installés à l'intérieur, mais l'appareil semble être capable de capturer la structure, le profil et la coloration du sujet photographié..."
     }
   },
+  "MiniSeelieBrilliance": {
+    "name": "Mini-fée brillante",
+    "description": {
+      "0": "Un souvenir de l'événement « Richesses perdues », équipez-vous-en pour être {M#accompagné}{F#accompagnée} d'une petite Fée.",
+      "1": "Une mini-Fée aux couleurs brillantes qui se déplace librement sous l'eau."
+    }
+  },
   "InstructionsAnemoculusResonanceStone": {
     "name": "Instructions : Pierre de résonance Anémoculus",
     "description": {
@@ -24089,6 +24315,13 @@
       "1": "Un relent de celui-ci vous évoque certaines images que vous pouvez manipuler grâce à l'énergie dimensionnelle pour recréer de merveilleux paysages de Sumeru dans votre royaume intérieur..."
     }
   },
+  "SwirlingSceneInABottle": {
+    "name": "« Scène tourbillonnante dans une bouteille »",
+    "description": {
+      "0": "Ce charmant terrarium a été ramené de Fontaine par Toby, l'esprit itinérant de la théière.",
+      "1": "La scène qu'il contient vous évoque certaines images que vous pouvez manipuler grâce à l'énergie dimensionnelle pour recréer de merveilleux paysages de Fontaine dans votre royaume intérieur..."
+    }
+  },
   "TheMountainCloudsLetDownGoldenRain": {
     "name": "Des nuages de montagne, la pluie dorée tombe",
     "description": {
@@ -24249,6 +24482,36 @@
   },
   "ElectroHypostasis": {
     "name": "Hypostase Électro",
+    "description": {
+      "0": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+    }
+  },
+  "LaSignora": {
+    "name": "Signora",
+    "description": {
+      "0": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+    }
+  },
+  "Azhdaha": {
+    "name": "Azhdaha",
+    "description": {
+      "0": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+    }
+  },
+  "EremiteScorchingLoremaster": {
+    "name": "Lettrée incandescente des Érémites",
+    "description": {
+      "0": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+    }
+  },
+  "ThunderManifestation": {
+    "name": "Manifestation du tonnerre",
+    "description": {
+      "0": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+    }
+  },
+  "Dvalin": {
+    "name": "Dvalin",
     "description": {
       "0": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
     }
@@ -24613,6 +24876,72 @@
       "0": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
     }
   },
+  "LightsRemit": {
+    "name": "Hégémonie de lumière",
+    "description": {
+      "0": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+    }
+  },
+  "TurnControl": {
+    "name": "Contrôle stratégique",
+    "description": {
+      "0": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+    }
+  },
+  "ConclusiveOvation": {
+    "name": "Ovation concluante",
+    "description": {
+      "0": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+    }
+  },
+  "AColdBladeLikeAShadow": {
+    "name": "Lame d'ombre frisquette",
+    "description": {
+      "0": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+    }
+  },
+  "RushingHoundSwiftAsTheWind": {
+    "name": "Vivacité canine : Célérité du vent",
+    "description": {
+      "0": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+    }
+  },
+  "Structuration": {
+    "name": "Structuration",
+    "description": {
+      "0": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+    }
+  },
+  "PainForPain": {
+    "name": "Talion de la douleur",
+    "description": {
+      "0": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+    }
+  },
+  "Scorpocalypse": {
+    "name": "Scorpiocalypse",
+    "description": {
+      "0": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+    }
+  },
+  "GrievingEcho": {
+    "name": "Écho de lamentation",
+    "description": {
+      "0": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+    }
+  },
+  "RendingVortex": {
+    "name": "Vortex déchirant",
+    "description": {
+      "0": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+    }
+  },
+  "LunarCyclesUnending": {
+    "name": "Cycle interminable",
+    "description": {
+      "0": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+    }
+  },
   "MagicGuide": {
     "name": "Guide de magie",
     "description": {
@@ -24961,6 +25290,66 @@
       "0": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
     }
   },
+  "LostPrayerToTheSacredWinds": {
+    "name": "L'origine des Quatre Vents",
+    "description": {
+      "0": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+    }
+  },
+  "TulaytullahsRemembrance": {
+    "name": "Mémoire de Tulaytullah",
+    "description": {
+      "0": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+    }
+  },
+  "BeaconOfTheReedSea": {
+    "name": "Balise de la mer de roseaux",
+    "description": {
+      "0": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+    }
+  },
+  "PrimordialJadeWingedSpear": {
+    "name": "Lance de jade ailée",
+    "description": {
+      "0": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+    }
+  },
+  "LightOfFoliarIncision": {
+    "name": "Lumière d'incision foliaire",
+    "description": {
+      "0": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+    }
+  },
+  "GildedDreams": {
+    "name": "Rêve doré",
+    "description": {
+      "0": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+    }
+  },
+  "FlowingRings": {
+    "name": "Anneaux de fluidité",
+    "description": {
+      "0": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+    }
+  },
+  "EchoesOfAnOffering": {
+    "name": "Échos d'une offrande",
+    "description": {
+      "0": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+    }
+  },
+  "HeartOfKhvarenasBrilliance": {
+    "name": "Cœur de la brillance de la khvarena",
+    "description": {
+      "0": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+    }
+  },
+  "VourukashasGlow": {
+    "name": "Lueur du vourukasha",
+    "description": {
+      "0": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+    }
+  },
   "LiyueHarborWharf": {
     "name": "Quai du Port de Liyue",
     "description": {
@@ -25173,6 +25562,24 @@
   },
   "StormterrorsLair": {
     "name": "Antre de Stormterror",
+    "description": {
+      "0": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+    }
+  },
+  "WeepingWillowOfTheLake": {
+    "name": "Saule pleureur du lac",
+    "description": {
+      "0": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+    }
+  },
+  "OperaEpiclese": {
+    "name": "Opéra Épiclèse",
+    "description": {
+      "0": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+    }
+  },
+  "Mamere": {
+    "name": "Mamère",
     "description": {
       "0": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
     }
@@ -25459,6 +25866,30 @@
       "0": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
     }
   },
+  "PassingOfJudgment": {
+    "name": "Instant du verdict",
+    "description": {
+      "0": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+    }
+  },
+  "TheBoarPrincess": {
+    "name": "La princesse sanglier",
+    "description": {
+      "0": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+    }
+  },
+  "FallsAndFortune": {
+    "name": "Chute opportune",
+    "description": {
+      "0": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+    }
+  },
+  "FlickeringFourLeafSigil": {
+    "name": "Insigne vacillant de trèfle",
+    "description": {
+      "0": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+    }
+  },
   "Origin": {
     "name": "Origine",
     "description": {
@@ -25533,6 +25964,12 @@
   },
   "DragonspineCrown": {
     "name": "Monts Dosdragon : Couronne",
+    "description": {
+      "0": "Un dos de carte d'Invocation des Sept que vous pouvez obtenir et changer. On dit que les dos de cartes avec des motifs différents ont également des différences minimes de fabrication et de texture. Certains joueurs font même de la collection de dos de cartes de différents styles leur mission et leur passe-temps..."
+    }
+  },
+  "TheChasmSolidIron": {
+    "name": "Gouffre : Fer solide",
     "description": {
       "0": "Un dos de carte d'Invocation des Sept que vous pouvez obtenir et changer. On dit que les dos de cartes avec des motifs différents ont également des différences minimes de fabrication et de texture. Certains joueurs font même de la collection de dos de cartes de différents styles leur mission et leur passe-temps..."
     }
@@ -26287,6 +26724,107 @@
       "2": "Compagnons préférant ce set : Tighnari, {REALNAME[ID(1)|HOSTONLY(true)]}."
     }
   },
+  "KeyToAStableWorkRestCycle": {
+    "name": "Clé d'un cycle travail-repos stable",
+    "description": {
+      "0": "Une grande chambre simple qui allie convivialité et sophistication. Pour les personnes exténuées, le lit est la porte d'entrée vers le pays des rêves, et ceux qui se réveillent le matin prennent tout aussi rapidement le chemin du travail.",
+      "1": "De nombreux Fontainois considèrent que l'intérieur d'une chambre influence grandement le sommeil. Un sommeil stable est la clé d'un cycle d'activités régulier. De ce fait, la conception d'une chambre à coucher est d'une importance capitale.",
+      "2": "Compagnons préférant ce set : Charlotte, Chevreuse."
+    }
+  },
+  "StrictAdherenceToOfficeCodes": {
+    "name": "Respect strict des normes de travail",
+    "description": {
+      "0": "Un agencement de bureau classique basé sur le mobilier du Palais Mermonia, qui recrée son ambiance animée où tout suit les règles établies.",
+      "1": "Un chercheur de l'Institut de recherche de Fontaine a affirmé un jour que « l'environnement d'une personne affectait grandement son état d'esprit au travail ». Suivant ce principe, les personnes qui se retrouvent dans un environnement de travail se rapprochant du Palais Mermonia pourraient suivre inconsciemment une certaine routine et agir de façon réfléchie...",
+      "2": "Compagnon préférant ce set : Neuvillette."
+    }
+  },
+  "GarbForGloriousGourmet": {
+    "name": "Tenue de gourmet glorieux",
+    "description": {
+      "0": "Un restaurant entièrement décoré cherchant à reproduire l'esthétique de l'Hôtel Debord. Il convient pour l'organisation de banquets familiaux où peuvent être invités nombre de nos proches et amis.",
+      "1": "Même les chefs gastronomiques les plus chevronnés ne peuvent nier le fait que l'environnement du restaurant dicte les sentiments des convives, ce qui influence l'évaluation globale des mets qu'ils dégustent. Par conséquent, un beau restaurant peut être considéré comme une sorte de manteau extérieur pour plats et boissons.",
+      "2": "Compagnons préférant ce set : Navia, Furina."
+    }
+  },
+  "PerfectlyDrawnFocus": {
+    "name": "Concentration parfaite",
+    "description": {
+      "0": "Un intérieur avec une scène de taille moyenne comme pièce maîtresse, suffisante pour jouer un petit spectacle.",
+      "1": "Pour ceux qui débutent dans le domaine du spectacle, des spectateurs trop nombreux les rendront nerveux et affecteront leur performance, et pour les maîtres en la matière qui se moquent du nombre de spectateurs, un spectacle organisé pour leurs amis peut leur valoir bien plus de bonheur qu'un grand numéro à guichets fermés. Par conséquent, la plupart des artistes, qu'ils soient novices ou experts, pourront apprécier la simplicité de cette scène.",
+      "2": "Compagnons préférant ce set : Lynette, Lyney."
+    }
+  },
+  "ContinuousClockworkInspiration": {
+    "name": "Inspiration horlogoïde continue",
+    "description": {
+      "0": "Une pièce construite autour d'un atelier d'horlogerie avec suffisamment d'outils de bricolage pour répondre aux besoins de la plupart des artisans.",
+      "1": "Certains poètes fontainois croient que les Mékas horlogoïdes sont des créations dignes de respect, un respect qui devrait également rayonner sur les outils de l'artisan qui les ont conçus. « L'inspiration attire les oreilles de ces composants, elle leur apprend à virevolter ensemble pour au final se coupler, poursuivant leur route sans s'arrêter, ainsi est leur mission et leur métier. »",
+      "2": "Compagnon préférant ce set : Fréminet."
+    }
+  },
+  "WellspringOfRuleViolationPrevention": {
+    "name": "Source de prévention des violations de règles",
+    "description": {
+      "0": "Un bureau à l'ambiance solennelle qui reproduit fidèlement le bureau du duc de la Forteresse de Méropide.",
+      "1": "Après avoir pris possession de la Forteresse, le duc n'aurait changé que quelques meubles de faible importance dans ce bureau, et il n'aurait fait aucun grand changement dans ce lieu apaisant. Depuis, c'est le bureau dans lequel sont rédigés les règlements que doivent suivre de nombreux détenus de la Forteresse.",
+      "2": "Compagnon préférant ce set : Wriothesley."
+    }
+  },
+  "CourtOfJusticesPlacidDays": {
+    "name": "« Routine de la cour de justice »",
+    "description": {
+      "0": "Une rue qui a pour modèle les rues ordinaires des quartiers résidentiels de Fontaine. Les nombreuses résidences de ce set reproduisent parfaitement l'aspect authentique de la Cour de Fontaine.",
+      "1": "Pour de nombreux Fontainois, une grande partie de leur vie consiste à vivre de manière ordonnée, d'arriver et de quitter leur lieu de travail à l'heure, de flâner, de retrouver leurs amis pour un repas ou faire du lèche-vitrines, ou bien encore de se rendre occasionnellement à l'Opéra Épiclèse pour assister à une grande représentation. Même certains aventuriers, qui ont connu des temps difficiles par le passé, pourraient penser qu'une telle douceur de vivre dans ces quartiers ne serait pas si mal s'il leur prenait l'envie d'y emménager à l'occasion...",
+      "2": "Compagnon préférant ce set : Charlotte."
+    }
+  },
+  "CourtOfJusticesBoomingCommerce": {
+    "name": "« Prospérité de la cour de justice »",
+    "description": {
+      "0": "Ce set, basé sur le Quartier lyonnais de la Cour de Fontaine, est rempli de mille et un magasins spécialisés fontainois ainsi que de tables pour se reposer et prendre le thé.",
+      "1": "Certains touristes avertis vous conseilleront de demander aux locaux des renseignements sur les magasins et les produits qui s'y vendent si jamais vous êtes peu familiers avec ces spécialités. Étant donné que de nombreux magasins suivent strictement les contrôles de prix fixés par le Palais Mermonia, très peu de gens achèteront des articles dont les prix ne correspondent pas à ceux prévus.",
+      "2": "Compagnons préférant ce set : Lynette, Lyney."
+    }
+  },
+  "CourtOfJusticesFreshMist": {
+    "name": "« Effluve de la cour de justice »",
+    "description": {
+      "0": "Une place remplie de buissons verts, de fleurs à profusion et d'une fontaine somptueuse. Son design est basé sur la Fontaine de Lucine à Erinnyes.",
+      "1": "Quand le temps le permet, la brume fraîche se faufile à travers les fleurs d'Erinnyes, dont la vue remonte le moral des résidents et des visiteurs venus de loin. Même s'ils la visitent en pleine averse, les légendes qui entourent la fontaine remplissent encore leur cœur d'un merveilleux espoir.",
+      "2": "Compagnons préférant ce set : Neuvillette, Furina."
+    }
+  },
+  "PoissonTheUnassuming": {
+    "name": "Poisson la modeste",
+    "description": {
+      "0": "Un paysage centré autour de divers bâtiments uniques en leur genre qui reproduisent un petit coin du Village de Poisson. La structure des maisons qui met l'accent sur leur aspect pratique augmente l'efficacité du travail de ceux qui y habitent, même si cela ne se traduit pas par un travail laborieux et éreintant, mais plutôt par un moyen de préserver leurs journées de loisirs. De nombreux habitants de Poisson vivent en effet selon cet adage : « Finissons vite notre travail afin de profiter de notre repos ». Cela se traduit par une vie à la fois simple et bien remplie.",
+      "1": "Compagnon préférant ce set : Navia."
+    }
+  },
+  "UnderseaMeruseasLuster": {
+    "name": "Lustre sous-marin de Mérusea",
+    "description": {
+      "0": "Un petit set qui s'efforce de reproduire le paysage du Village Mérusea, avec des bâtiments pittoresques et saisissants.",
+      "1": "Les mélusines habitent à Elynas, sous les vagues. Peu de gens ordinaires ont l'occasion de visiter cet endroit, mais ceux qui en ont le privilège ne tarissent pas d'éloges sur les couleurs uniques du village. Certains artistes ont tenté de dessiner ce lieu à partir de descriptions et d'informations recueillies lors d'entretiens faits avec des mélusines à la Cour de Fontaine. Cependant, il y avait toujours une « différence de couleurs » difficile à ignorer entre les esquisses qu'ils produisaient et celles qui se trouvaient dans le vrai village. Ce problème n'a été résolu qu'une fois que les images du Village Mérusea ont été prises grâce à la généralisation de la technologie du Daguerréotype, résolvant ainsi plus ou moins le problème...",
+      "2": "Compagnon préférant ce set : Fréminet."
+    }
+  },
+  "FullForceForwardInTheForbiddenFortress": {
+    "name": "« Avancée de la Forteresse interdite »",
+    "description": {
+      "0": "Une arène dont la pièce maîtresse est un ring de boxe. Debout à l'intérieur, vous pouvez entendre à nouveau les acclamations et les applaudissements du public, les paroles enthousiastes du commentateur et le bruit sourd des coups de poing contre les corps provenant de l'un ou l'autre de vos concurrents, telle est la profonde impression que laisse l'Arène de Pancrace de la Forteresse de Méropide.",
+      "1": "« Dans un ring où vos poings décident de tout, vous ne pouvez qu'y aller de toutes vos forces pour réclamer la gloire et les coupons de crédit qui vous sont dus. » De nombreux concurrents de l'Arène de Pancrace prennent ce dicton comme devise, même après avoir quitté définitivement la Forteresse...",
+      "2": "Compagnons préférant ce set : Wriothesley, Chevreuse."
+    }
+  },
+  "TheNationOfHydrosMottledColors": {
+    "name": "Couleurs tachetées de la nation Hydro",
+    "description": {
+      "0": "Une scène de campagne envahie par des plantes luxuriantes. Nous y trouvons toutes sortes de fleurs et d'arbustes endémiques de plusieurs régions de Fontaine. Les plantes sont un thème courant dans la peinture et elles constituent un point de départ pour expérimenter la « couleur ». Certains peintres de Fontaine pensent que la palette de couleurs de notre monde leur donne un exemple de « combinaison parfaite » à travers les végétaux. Ainsi, si toutes les couleurs d'un tableau peuvent trouver leur source dans les plantes, celui-ci a certainement une beauté harmonieuse égale à celle d'un paysage naturel. Bien entendu, cela suppose que vous ne mélangiez pas toutes les couleurs d'origine végétale dans un seul creuset..."
+    }
+  },
   "TimberWallWithJadeEaves": {
     "name": "Mur en bois avec alcôve de jade",
     "description": {
@@ -26312,6 +26850,13 @@
     "name": "Mur sculpté rustique en bois radiant",
     "description": {
       "0": "Étapes de fabrication du mur sculpté rustique en bois radiant.",
+      "1": "Après utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+    }
+  },
+  "AnnexsGoldenMosaic": {
+    "name": "Mosaïque dorée de l'Annexe",
+    "description": {
+      "0": "Étapes de fabrication de la mosaïque dorée de l'Annexe.",
       "1": "Après utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
     }
   },
@@ -26343,6 +26888,13 @@
       "1": "Après utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
     }
   },
+  "AnnexsMirrorSheenFloorTile": {
+    "name": "Parquet miroir de l'Annexe",
+    "description": {
+      "0": "Étapes de fabrication du parquet miroir de l'Annexe.",
+      "1": "Après utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+    }
+  },
   "CheckeredCedarCeiling": {
     "name": "Plafond quadrillé en cèdre",
     "description": {
@@ -26368,6 +26920,13 @@
     "name": "Plafond ciselé en bois radiant",
     "description": {
       "0": "Étapes de fabrication du plafond ciselé en bois radiant.",
+      "1": "Après utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+    }
+  },
+  "AnnexsSpotlessDome": {
+    "name": "Dôme immaculé de l'Annexe",
+    "description": {
+      "0": "Étapes de fabrication du dôme immaculé de l'Annexe.",
       "1": "Après utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
     }
   },
@@ -26637,10 +27196,31 @@
       "1": "Après utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
     }
   },
+  "ForbiddenZoneFloorLampIronhammer": {
+    "name": "Lanterne à pied prohibée « Marteau de fer »",
+    "description": {
+      "0": "Étapes de fabrication de la lanterne à pied prohibée « Marteau de fer ».",
+      "1": "Après utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+    }
+  },
+  "ForbiddenZoneFloorLampNightlight": {
+    "name": "Lanterne à pied prohibée « Veilleuse »",
+    "description": {
+      "0": "Étapes de fabrication de la lanterne à pied prohibée « Veilleuse ».",
+      "1": "Après utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+    }
+  },
   "EfflorescentIllumination": {
     "name": "Illumination efflorescente",
     "description": {
       "0": "Étapes de fabrication de l'illumination efflorescente.",
+      "1": "Après utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+    }
+  },
+  "AnnexsSwirlingLight": {
+    "name": "Lumière tourbillonnante de l'Annexe",
+    "description": {
+      "0": "Étapes de fabrication de la lumière tourbillonnante de l'Annexe.",
       "1": "Après utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
     }
   },
@@ -26725,6 +27305,13 @@
     "name": "Étagère de poterie en bois de tamaris Athel",
     "description": {
       "0": "Étapes de fabrication de l'étagère de poterie en bois de tamaris Athel.",
+      "1": "Après utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+    }
+  },
+  "MallowWoodMultiModelWardrobe": {
+    "name": "Armoire « Modèle multiple » en bois d'hibiscus",
+    "description": {
+      "0": "Étapes de fabrication de l'armoire « Modèle multiple » en bois d'hibiscus.",
       "1": "Après utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
     }
   },
@@ -26851,6 +27438,13 @@
     "name": "« Dressoir de la Maison Cardinalice »",
     "description": {
       "0": "Étapes de fabrication du « Dressoir de la Maison Cardinalice ».",
+      "1": "Après utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+    }
+  },
+  "AThousandTextsInTheCentralHub": {
+    "name": "Tabularium de la station centrale",
+    "description": {
+      "0": "Étapes de fabrication du tabularium de la station centrale.",
       "1": "Après utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
     }
   },
@@ -27050,6 +27644,27 @@
       "1": "Après utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
     }
   },
+  "StableWorkStationInTheCentralHub": {
+    "name": "Plan de travail sécurisé de la station centrale",
+    "description": {
+      "0": "Étapes de fabrication du plan de travail sécurisé de la station centrale.",
+      "1": "Après utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+    }
+  },
+  "RestTimeInTheCentralHub": {
+    "name": "Repos de la station centrale",
+    "description": {
+      "0": "Étapes de fabrication du repos de la station centrale.",
+      "1": "Après utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+    }
+  },
+  "TheLeisureOfDailyMeetings": {
+    "name": "« Placidité des réunions quotidiennes »",
+    "description": {
+      "0": "Étapes de fabrication de la « Placidité des réunions quotidiennes ».",
+      "1": "Après utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+    }
+  },
   "BreezeBlessedBed": {
     "name": "Lit « Douce brise »",
     "description": {
@@ -27145,6 +27760,13 @@
     "name": "Témoin des affaires de taverne",
     "description": {
       "0": "Étapes de fabrication du témoin des affaires de taverne.",
+      "1": "Après utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+    }
+  },
+  "CelebrationOfAnAdHocPerformance": {
+    "name": "« Célébration d'une prestation ponctuelle »",
+    "description": {
+      "0": "Étapes de fabrication de la « Célébration d'une prestation ponctuelle ».",
       "1": "Après utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
     }
   },
@@ -27278,6 +27900,27 @@
     "name": "Exaltation de buvette sociale",
     "description": {
       "0": "Étapes de fabrication de l'exaltation de buvette sociale.",
+      "1": "Après utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+    }
+  },
+  "MallowWoodViewingRitesChair": {
+    "name": "Siège « Respect d'étiquette » en bois d'hibiscus",
+    "description": {
+      "0": "Étapes de fabrication du siège « Respect d'étiquette » en bois d'hibiscus.",
+      "1": "Après utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+    }
+  },
+  "LindenWoodSubduingSeatBackedChair": {
+    "name": "Chaise à dossier « Assise périlleuse » en bois de tilleul",
+    "description": {
+      "0": "Étapes de fabrication de la chaise à dossier « Assise périlleuse » en bois de tilleul.",
+      "1": "Après utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+    }
+  },
+  "MomentaryRestInTheCentralHub": {
+    "name": "Sérénité de la station centrale",
+    "description": {
+      "0": "Étapes de fabrication de la sérénité de la station centrale.",
       "1": "Après utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
     }
   },
@@ -27642,6 +28285,13 @@
     "name": "« Charge de la Forteresse interdite »",
     "description": {
       "0": "Étapes de fabrication de la « Charge de la Forteresse interdite ».",
+      "1": "Après utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+    }
+  },
+  "StandardMusicStandAccurateTuning": {
+    "name": "Pupitre standard « Accordage précis »",
+    "description": {
+      "0": "Étapes de fabrication du pupitre standard « Accordage précis ».",
       "1": "Après utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
     }
   },
@@ -28184,6 +28834,13 @@
       "1": "Après utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
     }
   },
+  "CommonUseNoteHolder": {
+    "name": "Porte-notes universel",
+    "description": {
+      "0": "Étapes de fabrication du porte-notes universel.",
+      "1": "Après utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+    }
+  },
   "RealizationsFromTheLandOfWisdom": {
     "name": "« Réalisation du pays de la sagesse »",
     "description": {
@@ -28405,6 +29062,13 @@
     "name": "Bouclier de combat en bois de tamaris Athel",
     "description": {
       "0": "Étapes de fabrication du bouclier de combat en bois de tamaris Athel.",
+      "1": "Après utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+    }
+  },
+  "IndoorLampTheTwilightSea": {
+    "name": "Lampe d'intérieur « Mer crépusculaire »",
+    "description": {
+      "0": "Étapes de fabrication de la lampe d'intérieur « Mer crépusculaire ».",
       "1": "Après utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
     }
   },
@@ -28790,6 +29454,20 @@
     "name": "Principe de ponctualité du Passage",
     "description": {
       "0": "Étapes de fabrication du principe de ponctualité du Passage.",
+      "1": "Après utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+    }
+  },
+  "QuickTemporaryWorkshed": {
+    "name": "Établi temporaire rapide",
+    "description": {
+      "0": "Étapes de fabrication de l'établi temporaire rapide.",
+      "1": "Après utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+    }
+  },
+  "PoissonsSeasonalProduce": {
+    "name": "« Saisonnalité de Poisson »",
+    "description": {
+      "0": "Étapes de fabrication de la « Saisonnalité de Poisson ».",
       "1": "Après utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
     }
   },
@@ -29521,10 +30199,17 @@
       "1": "Après utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
     }
   },
+  "CourtyardPavilionAmidstTheRivers": {
+    "name": "Pavillon de cour « Au milieu des rivières »",
+    "description": {
+      "0": "Étapes de fabrication du pavillon de cour « Au milieu des rivières ».",
+      "1": "Après utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+    }
+  },
   "CourtOfJusticesAuthenticity": {
     "name": "« Authenticité de la cour de justice »",
     "description": {
-      "0": "Étapes de fabrication de l'« Authenticité de la cour de justice ».",
+      "0": "Étapes de fabrication de l'« Authenticité de la cour de justice ».",
       "1": "Après utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
     }
   },
@@ -29553,6 +30238,27 @@
     "name": "Petit crabe de pierre",
     "description": {
       "0": "Étapes de fabrication du petit crabe de pierre.",
+      "1": "Après utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+    }
+  },
+  "TheArenaWhereFistsReemerge": {
+    "name": "« L'arène où les poings renaissent »",
+    "description": {
+      "0": "Étapes de fabrication de « L'arène où les poings renaissent ».",
+      "1": "Après utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+    }
+  },
+  "TheWisdomOfPoisson": {
+    "name": "« Sagesse de Poisson »",
+    "description": {
+      "0": "Étapes de fabrication de la « Sagesse de Poisson ».",
+      "1": "Après utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+    }
+  },
+  "ASimpleResidenceInPoisson": {
+    "name": "« Simple résidence de Poisson »",
+    "description": {
+      "0": "Étapes de fabrication de la « Simple résidence de Poisson ».",
       "1": "Après utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
     }
   },
@@ -30102,6 +30808,34 @@
       "1": "Après utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
     }
   },
+  "CourtyardCorridorTheMoraDividend": {
+    "name": "Couloir de cour « Partage de moras »",
+    "description": {
+      "0": "Étapes de fabrication du couloir de cour « Partage de moras ».",
+      "1": "Après utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+    }
+  },
+  "CourtyardCorridorManifoldCorners": {
+    "name": "Couloir de cour « Coin d'abondance »",
+    "description": {
+      "0": "Étapes de fabrication du couloir de cour « Coin d'abondance ».",
+      "1": "Après utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+    }
+  },
+  "CourtyardArchwayMomentOfGlory": {
+    "name": "Arche de cour « Instant glorieux »",
+    "description": {
+      "0": "Étapes de fabrication de l'arche de cour « Instant glorieux ».",
+      "1": "Après utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+    }
+  },
+  "CourtyardWallABitOfScenery": {
+    "name": "Mur de cour « Coin de paysage »",
+    "description": {
+      "0": "Étapes de fabrication du mur de cour « Coin de paysage ».",
+      "1": "Après utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+    }
+  },
   "FoundationsOfStoneFortunateTimes": {
     "name": "Fondations de pierre « Temps fortuné »",
     "description": {
@@ -30596,6 +31330,13 @@
     "name": "Engin modèle « Ancre pénétrante »",
     "description": {
       "0": "Étapes de fabrication de l'engin modèle « Ancre pénétrante ».",
+      "1": "Après utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+    }
+  },
+  "BoxingTargetOfTheForbiddenFortress": {
+    "name": "« Pattes d'ours de la Forteresse interdite »",
+    "description": {
+      "0": "Étapes de fabrication des « Pattes d'ours de la Forteresse interdite ».",
       "1": "Après utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
     }
   },
@@ -31358,7 +32099,56 @@
   "ASistersDuty": {
     "name": "« Obligation d'une sœur »",
     "description": {
-      "0": "Étapes de fabrication de l'« Obligation d'une sœur ».",
+      "0": "Étapes de fabrication de l'« Obligation d'une sœur ».",
+      "1": "Après utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+    }
+  },
+  "OverburdeningOfTheForbiddenFortress": {
+    "name": "« Surcharge de la Forteresse interdite »",
+    "description": {
+      "0": "Étapes de fabrication de la « Surcharge de la Forteresse interdite ».",
+      "1": "Après utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+    }
+  },
+  "AreaMarkerUpward": {
+    "name": "Marqueur de zone « En haut »",
+    "description": {
+      "0": "Étapes de fabrication du marqueur de zone « En haut ».",
+      "1": "Après utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+    }
+  },
+  "AreaMarkerDownward": {
+    "name": "Marqueur de zone « En bas »",
+    "description": {
+      "0": "Étapes de fabrication du marqueur de zone « En bas ».",
+      "1": "Après utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+    }
+  },
+  "PoissonDoorFrame": {
+    "name": "« Chambranle de Poisson »",
+    "description": {
+      "0": "Étapes de fabrication du « Chambranle de Poisson ».",
+      "1": "Après utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+    }
+  },
+  "BookshelfFreeReading": {
+    "name": "Présentoir à livres « Lecture libre »",
+    "description": {
+      "0": "Étapes de fabrication du présentoir à livres « Lecture libre ».",
+      "1": "Après utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+    }
+  },
+  "BookshelfSpeedyBrowsing": {
+    "name": "Présentoir à livres « Feuilletage rapide »",
+    "description": {
+      "0": "Étapes de fabrication du présentoir à livres « Feuilletage rapide ».",
+      "1": "Après utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+    }
+  },
+  "BookshelfFocusedEffect": {
+    "name": "Présentoir à livres « Effet de concentration »",
+    "description": {
+      "0": "Étapes de fabrication du présentoir à livres « Effet de concentration ».",
       "1": "Après utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
     }
   },
@@ -31653,6 +32443,20 @@
     "name": "Table ronde immaculée du Passage",
     "description": {
       "0": "Étapes de fabrication de la table ronde immaculée du Passage.",
+      "1": "Après utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+    }
+  },
+  "ProductionRackTheBasics": {
+    "name": "Étagère de production « Basique »",
+    "description": {
+      "0": "Étapes de fabrication de l'étagère de production « Basique ».",
+      "1": "Après utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+    }
+  },
+  "ProductionRackCustomBuild": {
+    "name": "Étagère de production « Personnalisée »",
+    "description": {
+      "0": "Étapes de fabrication de l'étagère de production « Personnalisée ».",
       "1": "Après utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
     }
   },

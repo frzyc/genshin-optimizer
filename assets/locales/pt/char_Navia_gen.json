@@ -1,0 +1,163 @@
+{
+  "name": "Navia",
+  "title": "Leme da Rosa Radiante",
+  "description": "A atual Presidente da Spina di Rosula, é a patroa adorável e responsável.",
+  "constellationName": "Rosa Multiflora",
+  "auto": {
+    "name": "Desistência Franca",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Ataque Normal</strong>",
+        "1": "Realiza até 4 golpes consecutivos."
+      },
+      "charged": {
+        "0": "<strong>Ataque Carregado</strong>",
+        "1": "Drena Stamina ao longo do tempo para realizar um ataque giratório contínuo contra todos os inimigos próximos.",
+        "2": "Ao final da sequência, realiza um corte poderoso."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Imersivo</strong>",
+        "1": "Mergulha em pleno ar para golpear o chão, causando dano aos inimigos em seu caminho e infligindo Dano em uma AdE durante o impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Dano do 1° Golpe",
+      "1": "Dano do 2° Golpe",
+      "2": "Dano do 3° Golpe",
+      "3": "Dano do 4° Golpe",
+      "4": "Dano de Loop de Ataque Carregado",
+      "5": "Dano Final de Ataque Carregado",
+      "6": "Consumo de Stamina de Ataque Carregado",
+      "7": "Duração Máxima",
+      "8": "Dano Durante a Queda",
+      "9": "Dano de Queda de Baixa/Alta Altitude",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Cerimônia Cristalina Flamejante",
+    "description": {
+      "0": "Quando um personagem da equipe obtém um Fragmento gerado por uma reação de Cristalização, fornecerá para Navia 1 Fragmento da Rachadura. É possível acumular até 6 Fragmentos da Rachadura. Cada vez que desencadear, redefinirá a duração dos Fragmentos da Rachadura possuídos.",
+      "1": "Ao lançar, Navia consumirá todos os Fragmentos da Rachadura e revelará sua refinada arma guarda-chuva, disparando vários Projéteis Cristalinos Rosados que perfuram os inimigos, infligindo <geo>Dano Geo</geo> contra os inimigos que atingir.",
+      "2": "Consumir 0/1/2/3 ou mais Fragmentos da Rachadura disparará 5/7/9/11 Projéteis Cristalinos Rosados respectivamente. Quanto mais Projéteis Cristalinos Rosados atingirem o mesmo inimigo, maior será o Dano causado contra esse inimigo. Se os 11 Projéteis Cristalinos Rosados atingirem, causará 200% do Dano original.",
+      "3": "Além disso, quando consumir mais que três Fragmentos da Rachadura, para cada Fragmento da Rachadura excedente aumenta o Dano causado desse disparo em 15%.",
+      "4": "<br/>",
+      "5": "<strong>Manter Pressionado</strong>",
+      "6": "Entra no Modo de Mira, obtendo continuamente os fragmentos de Cristalização próximos, e quando acabar a duração, Manter Pressionado disparará um Projétil Cristalino Rosado igual ao de pressionar.",
+      "7": "<br/>",
+      "8": "Inicialmente possui dois usos.",
+      "9": "<br/>",
+      "10": "<strong>Arkhe: Ousia</strong>",
+      "11": "Periodicamente quando Navia disparar sua arma guarda-chuva invocará uma Lâmina da Fluidez que causará <geo>Dano Geo</geo> com Ousia.",
+      "12": "<br/>",
+      "13": "<i>\"Manter distância de algumas pessoas que deve se ter distância é parte da etiqueta social. Mas, bem, há outras formas de também se manter essa distância...\"</i>"
+    },
+    "skillParams": {
+      "0": "Dano Básico do Projétil Cristalino Rosado",
+      "1": "Duração do Fragmento da Rachadura",
+      "2": "Dano de Lâmina da Fluidez",
+      "3": "Intervalo de Lâmina da Fluidez",
+      "4": "Tempo de Recarga",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Como um Presente do Céu Claro",
+    "description": {
+      "0": "Como líder da Spina di Rosula, invoca uma fantástica \"Salva de Canhões Dourados\", ferozmente disparando contra os inimigos em frente, causando <geo>Dano Geo em AdE</geo>, e em seguida continuamente realiza uma Saraivada de Suporte, periodicamente causando <geo>Dano Geo</geo> aos inimigos próximos.",
+      "1": "Quando um tiro atingir um inimigo, concederá 1 Fragmento da Rachadura a Navia. Esse efeito pode ser desencadeado uma vez a 2.4s.",
+      "2": "<br/>",
+      "3": "<i>\"Os canhões da Spina di Rosula não servem para ameaçar ninguém, são só disparados antes de uma negociação para celebrá-la com sucesso de antemão.\"</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Habilidade",
+      "1": "Dano da Saraivada de Suporte",
+      "2": "Duração da Saraivada de Suporte",
+      "3": "Tempo de Recarga",
+      "4": "Energia Elemental",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Canal de Corrente Desconhecida",
+    "description": {
+      "0": "Nos 4s depois de lançar <strong>Cerimônia Cristalina Flamejante</strong>, o Dano do Ataque Normal, Carregado e Imersivo de Navia será convertido em <geo>Dano Geo</geo> que não pode ser substituído, e aumenta o Dano do Ataque Normal, Carregado e Imersivo de Navia em 40%."
+    }
+  },
+  "passive2": {
+    "name": "Rede de Ajuda Mútua",
+    "description": {
+      "0": "Aumenta o ATQ de Navia em 20% para cada personagem <pyro>Pyro</pyro>/<electro>Electro</electro>/<cryo>Cryo</cryo>/<hydro>Hydro</hydro> na equipe. Esse efeito pode ser acumulado até duas vezes."
+    }
+  },
+  "passive3": {
+    "name": "Transação Detalhada",
+    "description": {
+      "0": "Quando enviada para uma expedição de Fontaine por 20 horas, obtém 25% a mais de recompensas."
+    }
+  },
+  "constellation1": {
+    "name": "As Regras de uma Dama para Manter a Distância",
+    "description": {
+      "0": "Ao lançar <strong>Cerimônia Cristalina Flamejante</strong> consome 1 de Fragmento da Rachadura, regenera 3 de Energia Elemental para Navia e reduz a Recarga de <strong>Como um Presente do Céu Claro</strong> em 1s. É possível regenerar até 9 de Energia Elemental dessa forma, e reduzir a recarga de Como um Presente do Céu Claro em 3s."
+    }
+  },
+  "constellation2": {
+    "name": "Busca da Vitória da Presidente",
+    "description": {
+      "0": "Ao lançar <strong>Cerimônia Cristalina Flamejante</strong> consome 1 Fragmento da Rachadura e aumenta a Taxa CRIT dessa Cerimônia Cristalina Flamejante em 12%, é possível aumentar a Taxa CRIT em até 36% dessa forma.",
+      "1": "Além disso, quando o disparo de Cerimônia Cristalina Flamejante atinge um inimigo, fará cair uma Saraivada de Suporte de <strong>Como um Presente do Céu Claro</strong> perto do inimigo atingido. Até uma instância de Saraivada de Suporte pode ser lançada por cada Cerimônia Cristalina Flamejante, o Dano causado pela Saraivada de Suporte é considerado Dano de Supremo."
+    }
+  },
+  "constellation3": {
+    "name": "Visão da Mulher de Negócios",
+    "description": {
+      "0": "Aumenta o nível do <strong>Cerimônia Cristalina Flamejante</strong> em 3.",
+      "1": "O nível máximo de elevação é 15."
+    }
+  },
+  "constellation4": {
+    "name": "Aqueles que Juram Nunca Capitulam",
+    "description": {
+      "0": "Quando <strong>Como um Presente do Céu Claro</strong> atinge um inimigo, reduz a <geo>RES Geo</geo> desse inimigo em 20% por 8s."
+    }
+  },
+  "constellation5": {
+    "name": "Negociações Resolutas",
+    "description": {
+      "0": "Aumenta o nível da <strong>Como um Presente do Céu Claro</strong> em 3.",
+      "1": "O nível máximo de elevação é 15."
+    }
+  },
+  "constellation6": {
+    "name": "A Flexibilidade da Presidente da Spina di Rosula",
+    "description": {
+      "0": "Ao lançar <strong>Cerimônia Cristalina Flamejante</strong>, se consumir mais do que 3 Fragmentos da Rachadura, cada Fragmento da Rachadura consumido a mais aumentará o Dano CRIT de Cerimônia Cristalina Flamejante em 45%, e os fragmentos acima de 3 consumidos serão devolvidos depois de lançada a habilidade."
+    }
+  }
+}

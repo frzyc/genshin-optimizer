@@ -100,7 +100,7 @@
   "passive1": {
     "name": "Responsabilité d'un créateur",
     "description": {
-      "0": "Lorsque des DGT infligés par un noyau Dendro (incluant Bourgeonnement et Exubérance) touchent Kaveh, il récupère des PV pour une valeur équivalant à 300 % de sa maîtrise élémentaire. Cet effet peut être déclenché une fois toutes les 0,5 s."
+      "0": "Lorsque des DGT infligés par un noyau Dendro (incluant Bourgeonnement et Exubérance) touchent Kaveh, il récupère des PV d'une valeur équivalant à 300 % de sa maîtrise élémentaire. Cet effet peut être déclenché une fois toutes les 0,5 s."
     }
   },
   "passive2": {

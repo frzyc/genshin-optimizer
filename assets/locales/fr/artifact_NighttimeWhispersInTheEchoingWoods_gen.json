@@ -1,0 +1,29 @@
+{
+  "setName": "Murmure nocturne en forêt d'échos",
+  "setEffects": {
+    "2": "Augmente l'ATQ de 18 %.",
+    "4": "Après l'utilisation d'une compétence élémentaire, le bonus de DGT Géo augmente de 20 % pendant 10 s. Sous la protection d'un bouclier généré par une réaction de Cristallisation, cet effet augmente de 150 %, cette augmentation supplémentaire disparaissant 1 s après la perte du bouclier."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Accessoire floral d'altruisme",
+      "desc": "La broche utilisée par la sorcière dans l'histoire. Comme les autres ornements qu'elle aimait, celui-ci est caractérisé par des formes ressemblant à des papillons."
+    },
+    "plume": {
+      "name": "Plume d'eau d'honnêteté",
+      "desc": "Le stylo plume utilisé par la sorcière dans l'histoire. Son écriture douce et soyeuse ne vaut même pas la peine d'être mentionnée face à ses autres avantages divers."
+    },
+    "sands": {
+      "name": "Sablier temporel de fidélité",
+      "desc": "La montre à sable utilisée par la sorcière dans l'histoire. La légende raconte que si vous récitez une mauvaise incantation à côté, le temps s'écoule soudainement exceptionnellement vite."
+    },
+    "goblet": {
+      "name": "Bouteille d'encre de magnanimité",
+      "desc": "La bouteille d'encre utilisée par la sorcière dans l'histoire. Elle possède un étrange enchantement non moins puissant que celui lancé sur le stylo plume."
+    },
+    "circlet": {
+      "name": "Chapeau de dame de compassion",
+      "desc": "Le chapeau de dame utilisée par la sorcière dans l'histoire. Elle adorait ce couvre-chef pour son tissage solennel et son style ludique."
+    }
+  }
+}

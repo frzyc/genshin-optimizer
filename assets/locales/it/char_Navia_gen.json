@@ -1,0 +1,163 @@
+{
+  "name": "Navia",
+  "title": "Timoniere della rosa splendente",
+  "description": "L'attuale Presidentessa della Spina di Rosula: amabile, diligente e una leader eccezionale.",
+  "constellationName": "Rosa Multiflora",
+  "auto": {
+    "name": "Netto rifiuto",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attacco normale</strong>",
+        "1": "Sferra fino a 4 colpi consecutivi."
+      },
+      "charged": {
+        "0": "<strong>Attacco caricato</strong>",
+        "1": "Consuma vigore nel tempo per sferrare attacchi rotanti contro tutti gli avversari vicini.",
+        "2": "Al termine della sequenza, sferra un affondo più potente."
+      },
+      "plunging": {
+        "0": "<strong>Attacco in picchiata</strong>",
+        "1": "Attacca scagliandosi contro il suolo da mezz'aria, infliggendo DAN agli avversari lungo la traiettoria e DAN ad area all'impatto."
+      }
+    },
+    "skillParams": {
+      "0": "DAN da 1º colpo",
+      "1": "DAN da 2º colpo",
+      "2": "DAN da 3º colpo",
+      "3": "DAN da 4º colpo",
+      "4": "DAN da ATT caricato ciclico",
+      "5": "DAN da ATT caricato finali",
+      "6": "Costo vigore ATT caricato",
+      "7": "Durata max",
+      "8": "DAN da ATT in picchiata",
+      "9": "DAN da ATT in picchiata basso/alto",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Salva cristallina",
+    "description": {
+      "0": "Quando un personaggio del gruppo ottiene un frammento elementale generato dalla reazione di Cristallizzazione, Navia riceve 1 accumulo di Bossolo di cristallo fino a un massimo di 6. A ogni accumulo ottenuto, la durata degli accumuli già in suo possesso viene ripristinata.",
+      "1": "Quando spara, Navia consuma tutti gli accumuli e apre il suo elegante e letale Piombrello, scagliando Proiettili di cristallo di Rosula in grado di penetrare gli avversari e infliggere <geo>DAN da Geo</geo> all'impatto.",
+      "2": "Quando vengono consumati 0/1/2/3 o più accumuli di Bossolo di cristallo, Navia spara rispettivamente 5/7/9/11 Proiettili di cristallo di Rosula. Maggiore è il numero di Proiettili che colpisce un avversario, maggiori sono i DAN subiti da quest'ultimo. Quando tutti e 11 i Proiettili colpiscono, viene inflitto un 200% della quantità di DAN originale.",
+      "3": "In più, quando Navia consuma più di 3 accumuli di Bossolo di cristallo, ogni accumulo successivo al terzo aumenta i DAN inflitti dall'attacco del Piombrello di un 15% aggiuntivo.",
+      "4": "<br/>",
+      "5": "<strong>Pressione prolungata</strong>",
+      "6": "Entra in modalità di mira, raccogliendo continuamente i frammenti elementali generati dalle reazioni di Cristallizzazione nelle vicinanze. Quando l'abilità viene rilasciata, spara dei Proiettili di cristallo di Rosula con lo stesso effetto della variante a pressione.",
+      "7": "<br/>",
+      "8": "L'abilità ha 2 cariche inizialmente disponibili.",
+      "9": "<br/>",
+      "10": "<strong>Archè: Ousia</strong>",
+      "11": "Quando Navia spara col suo Piombrello, a determinati intervalli evoca una Lama nascente che infligge <geo>DAN da Geo</geo> di polarità Ousia.",
+      "12": "<br/>",
+      "13": "<i>\"Mantenere una distanza appropriata dagli altri in base alla situazione è una delle regole fondamentali del galateo. Naturalmente, esistono diversi modi per rispettarla...\"</i>"
+    },
+    "skillParams": {
+      "0": "DAN base da Proiettili di cristallo di Rosula",
+      "1": "Durata Bossolo di cristallo",
+      "2": "DAN da Lama nascente",
+      "3": "Intervallo Lama nascente",
+      "4": "TdR",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Tributo del sole luminoso",
+    "description": {
+      "0": "La Presidentessa della Spina di Rosula ordina l'esecuzione del trionfale Saluto della Rosula dorata. Scatena un devastante bombardamento sugli avversari di fronte a lei, infliggendo <geo>DAN da Geo ad area</geo> e fornendo Fuoco di supporto coi suoi cannoni per una certa durata, infliggendo periodicamente <geo>DAN da Geo</geo> agli avversari nelle vicinanze.",
+      "1": "Quando gli attacchi dei cannoni colpiscono gli avversari, Navia ottiene 1 accumulo di Bossolo di cristallo. Quest'effetto può attivarsi una volta ogni 2,4 s.",
+      "2": "<br/>",
+      "3": "<i>\"Il saluto della Spina di Rosula è una celebrazione preventiva per l'esito positivo dei nostri negoziati, e viene eseguito prima che le trattative abbiano inizio. Non fraintendere: non è affatto una forma di minaccia, nella maniera più assoluta.\"</i>"
+    },
+    "skillParams": {
+      "0": "DAN da abilità",
+      "1": "DAN da Fuoco di supporto",
+      "2": "Durata Fuoco di supporto",
+      "3": "TdR",
+      "4": "Costo energia",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Canali di distribuzione segreti",
+    "description": {
+      "0": "Per 4 s dopo aver usato <strong>Salva cristallina</strong>, i DAN inflitti dagli attacchi normali, caricati e in picchiata di Navia vengono convertiti in <geo>DAN da Geo</geo> che non possono essere contrastati da altre infusioni elementali. Inoltre, i DAN inflitti dai suoi attacchi normali, caricati e in picchiata aumentano di un 40%."
+    }
+  },
+  "passive2": {
+    "name": "Rete di assistenza reciproca",
+    "description": {
+      "0": "Per ogni membro di <pyro>Pyro</pyro>/<electro>Electro</electro>/<cryo>Cryo</cryo>/<hydro>Hydro</hydro> presente nel gruppo, l'ATT di Navia aumenta di un 20%. Quest'effetto è cumulabile fino a 2 volte."
+    }
+  },
+  "passive3": {
+    "name": "Transazione scrupolosa",
+    "description": {
+      "0": "Ottiene un 25% in più di ricompense quando intraprende una spedizione a Fontaine per 20 ore."
+    }
+  },
+  "constellation1": {
+    "name": "Regole di distanziamento di una signora perbene",
+    "description": {
+      "0": "Ogni accumulo di Bossolo di cristallo consumato dall'uso di <strong>Salva cristallina</strong> ripristina di 3 l'energia di Navia e riduce di 1 s il TdR di <strong>Tributo del sole luminoso</strong>. È possibile ottenere in questo modo fino a 9 di energia, e il TdR di Tributo del sole luminoso può essere ridotto di 3 s al massimo."
+    }
+  },
+  "constellation2": {
+    "name": "Ricerca della vittoria della Presidentessa",
+    "description": {
+      "0": "Per ogni accumulo di Bossolo di cristallo consumato, il tasso di CRIT dell'attuale iterazione di <strong>Salva cristallina</strong> aumenta di un 12%. In questo modo, il tasso di CRIT può aumentare fino a un 36%.",
+      "1": "Inoltre, quando Salva cristallina colpisce un avversario, viene sparata una palla di cannone del Fuoco di supporto di <strong>Tributo del sole luminoso</strong> che precipita nell'area vicino all'impatto. L'effetto del Fuoco di supporto può attivarsi non più di una volta per ogni utilizzo di Salva cristallina, e i DAN inflitti in questo modo dalla suddetta palla di cannone sono considerati DAN da Tripudio elementale."
+    }
+  },
+  "constellation3": {
+    "name": "Donna d'affari di ampie vedute",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Salva cristallina</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation4": {
+    "name": "Giuramento inamovibile",
+    "description": {
+      "0": "Quando un avversario viene colpito da <strong>Tributo del sole luminoso</strong>, la sua <geo>RES a Geo</geo> si riduce di un 20% per 8 s."
+    }
+  },
+  "constellation5": {
+    "name": "Risolute trattative della negoziatrice",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Tributo del sole luminoso</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation6": {
+    "name": "Flessibile finezza della Presidentessa",
+    "description": {
+      "0": "Durante l'uso di <strong>Salva cristallina</strong>, se vengono consumati più di 3 accumuli di Bossolo di cristallo, ogni accumulo consumato successivo al terzo aumenta i DAN da CRIT di Salva cristallina di un 45%, e ciascun accumulo consumato dopo i prime 3 viene restituito a Navia."
+    }
+  }
+}

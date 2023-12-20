@@ -123,7 +123,7 @@
   "passive2": {
     "name": "Empathie",
     "description": {
-      "0": "Lorsqu'un <strong>radis de jade blanc</strong> explose, les personnages déployés dans la zone d'effet récupèrent des PV pour une valeur équivalant à 0,8 % des PV max de Yaoyao toutes les secondes pendant 5 s."
+      "0": "Lorsqu'un <strong>radis de jade blanc</strong> explose, les personnages déployés dans la zone d'effet récupèrent des PV d'une valeur équivalant à 0,8 % des PV max de Yaoyao toutes les secondes pendant 5 s."
     }
   },
   "passive3": {

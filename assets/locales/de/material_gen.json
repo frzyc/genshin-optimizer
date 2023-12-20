@@ -397,6 +397,20 @@
       "1": "Du kannst hiermit während der Aktion „Thelxies fantastische Abenteuer“ wertvolle Belohnungen freischalten."
     }
   },
+  "TheaterTickets": {
+    "name": "Theaterkarten",
+    "description": {
+      "0": "Wunderschön gestaltete Andenkenkarten. Ein Souvenir, das du für die Teilnahme an den verschiedenen Aktionen der Fontainale erhältst. Es heißt, dass für diese Karten ein ganz spezielles Herstellungsverfahren verwendet wird, wodurch sie eine filmähnliche Textur aufweisen, die im Licht kristallklar erscheint, wie die dünne Scheibe eines Juwels ...",
+      "1": "Bei der Aktion „Rosen und Musketen“ kannst du mit ihnen zahlreiche Belohnungen freischalten."
+    }
+  },
+  "FilmForFun": {
+    "name": "Filmisches Vergnügen",
+    "description": {
+      "0": "Diese Andenkenmünzen erinnern von ihrer Form her frappierend an die Filmrollen und können während der Fontainale durch aktive Teilnahme gewonnen werden. Obwohl sie sich nicht in speziellen Apparaten abspielen lassen, sorgt doch ihre einzigartige Form dafür, dass die Menschen sie betrachten und sie mit den Erfahrungen und Eindrücken der Festivitäten assoziieren, um sie mit Freude zu erfüllen ...",
+      "1": "Bei der Aktion „Rosen und Musketen“ kannst du sie gegen seltene Waren eintauschen."
+    }
+  },
   "Primogem": {
     "name": "Urgestein",
     "description": {
@@ -1026,11 +1040,27 @@
   },
   "Charlotte": {
     "name": "Charlotte",
-    "description": {}
+    "description": {
+      "0": "Die tüchtige Reporterin vom Dampfvogel ist stets auf der Suche nach der „Wahrheit“."
+    }
   },
   "Furina": {
     "name": "Furina",
-    "description": {}
+    "description": {
+      "0": "Der absolute Mittelpunkt auf der Bühne bei Verhandlungen bis zum Applaus am Ende."
+    }
+  },
+  "Chevreuse": {
+    "name": "Chevreuse",
+    "description": {
+      "0": "Truppenführerin der Sonderpatrouille für Sicherheit und Überwachung, deren Herz stets für die „Gerechtigkeit“ schlägt, während ihre Muskete sich nur auf die Schuldigen richtet."
+    }
+  },
+  "Navia": {
+    "name": "Navia",
+    "description": {
+      "0": "Die amtierende Präsidentin der Spina di Rosula, eine liebenswerte, pflichtbewusste und großartige Chefin."
+    }
   },
   "KamisatoAyakasStellaFortuna": {
     "name": "Stella Fortuna von Kamisato Ayaka",
@@ -1486,6 +1516,18 @@
     "name": "Stella Fortuna von Furina",
     "description": {
       "0": "Material zum Aktivieren von Furinas Sternbild"
+    }
+  },
+  "ChevreusesStellaFortuna": {
+    "name": "Stella Fortuna von Chevreuse",
+    "description": {
+      "0": "Material zum Aktivieren von Chevreuses Sternbild"
+    }
+  },
+  "NaviasStellaFortuna": {
+    "name": "Stella Fortuna von Navia",
+    "description": {
+      "0": "Material zum Aktivieren von Navias Sternbild"
     }
   },
   "GnosticHymnOldNotes": {
@@ -13790,6 +13832,72 @@
       "0": "Charlottes Spezialzubereitung. Eine kleine Knabberei, die sie dir in die Hand drückt, während du sie auf der Jagd nach der nächsten Exklusivmeldung begleitest. Während du knuspernd den gebratenen Fisch kaust, schaust du zur Seite. Charlotte flaniert fröhlichen Schrittes voran, wodurch sich der Rhythmus ihrer Schritte mit dem des Kauens allmählich überschneiden ... Und obwohl die Neuigkeiten noch nicht druckfertig sind, lassen Freude und Zufriedenheit das Herz bereits höher schlagen."
     }
   },
+  "SuspiciousFeastOs": {
+    "name": "Misslungene Schlemmerkugeln und -ringe",
+    "description": {
+      "0": "Eine golden-frittierte Leckerei. Es dauerte eine halbe Ewigkeit, das überschüssige Öl abzugießen und beim Probieren fällt sofort auf, wie labberig sie geworden sind. Keine Spur von Knusprigkeit. Nun ... wer weiß, vielleicht finden ja die Anglermöwen an der Küste Gefallen daran?"
+    }
+  },
+  "FeastOs": {
+    "name": "Schlemmerkugeln und -ringe",
+    "description": {
+      "0": "Eine golden-frittierte Leckerei. Das pürierte Hähnchenfleisch wird ausgehöhlt und mit den Zwiebelringen in eine kreisrunde Form gebracht. Der pürierte Fisch und das Kartoffelpüree werden dann in eine runde Kuchenform gepresst und so ebenfalls zu ihrer signifikanten Form verarbeitet. Zum Schluss noch alles in ein heißes Ölbad geben und schon erblicken im brutzelnden Geräusch des Frittierens die „Schlemmerkugeln und -ringe“ das Licht der Welt."
+    }
+  },
+  "DeliciousFeastOs": {
+    "name": "Leckere Schlemmerkugeln und -ringe",
+    "description": {
+      "0": "Eine golden-frittierte Leckerei. Der Duft, frisch aus dem Ölbad, lässt einem sofort das Wasser im Munde zusammenlaufen. Ein Hähnchen-Zwiebelring in der linken Hand und Fisch und Kartoffelpüree in der rechten. Locker flockig und doch knusprig beim Reinbeißen ... und erst der milde Geschmack, wie er sich auf der Zunge ausbreitet."
+    }
+  },
+  "SuspiciousRainbowMacarons": {
+    "name": "Misslungene Regenbogen-Macarons",
+    "description": {
+      "0": "Kleine bunte runde Küchlein. Im ersten ist nichts drin, wenn man hineinbeißt. Das zweite ist irgendwie schief, das dritte dann vollkommen zerbeult und die Farbe nicht gleichmäßig verteilt ... Wie es sich für eine Leckerei aus Fontaine gehört, strotzt diese hier auch nur so vor kleinen Details, allerdings braucht es wohl noch einiges an Übung, bis dieses Gericht gemeistert wurde."
+    }
+  },
+  "RainbowMacarons": {
+    "name": "Regenbogen-Macarons",
+    "description": {
+      "0": "Kleine bunte runde Küchlein. In Fontaine gibt es ein Sprichwort: Eine Süßspeise ohne Macarons ist wie viele Wasser ohne Quelle. Als eine der ikonischsten Süßspeisen im Reich des Wassers beherrschen selbst Hobbyköche von der Straße die Zubereitung dieser aus dem Effeff, ganz zu schweigen von den Dessertköchen in Fontaines Küchen."
+    }
+  },
+  "DeliciousRainbowMacarons": {
+    "name": "Leckere Regenbogen-Macarons",
+    "description": {
+      "0": "Kleine bunte runde Küchlein. Die dünne, knusprige Hülle, die sich um eine dichte, aber weiche Füllung wickelt; alles passt perfekt, genau richtig. Probier mal eins. Es ist, als würde ein Kätzchen deine Brust sanft mit seinem Näschen anstupsen. Du wirst einfach nicht anders können, als ihm voll und ganz zu verfallen."
+    }
+  },
+  "SinTheKindThatDoesntNeedToBeDealtWith": {
+    "name": "Sünde – Das Ding, mit dem man sich nicht befassen muss",
+    "description": {
+      "0": "Chevreuses Spezialzubereitung. Aus gesundheitlicher Sicht handelt es sich hierbei um eine absolute „Sünde“. In ihrer Funktion als Truppenführerin der Sonderpatrouille für Sicherheit und Überwachung würde Chevreuse sowohl aus beruflicher als auch aus persönlicher Ethik die wichtige Aufgabe, das Böse zu bekämpfen, niemals einfach so irgendjemand anderem überlassen ... Allerdings gibt es auch Zeiten, die Last mit jemandem zu teilen, dem man vertraut; außerdem ist es ein guter Weg, um Stress abzubauen."
+    }
+  },
+  "PickWhatYouLike": {
+    "name": "„Wähl, was dir gefällt!“",
+    "description": {
+      "0": "Navias Spezialzubereitung. „Na los, such dir was aus!“ Wie so diese vertraute, heitere Stimme ertönt, fällt dein Blick auf das erlesene und exquisite doppelstöckige Luxus-Dessertregal und die darauf fein säuberlich arrangierten Macarons mit ihren verschiedenen aufgemalten Gesichtern. Einfach herrlich ... Welches Gesicht Navia wohl ziehen würde, wenn du dir in deiner Gier einfach alle schnappen würdest?"
+    }
+  },
+  "SuspiciousFontinaliaMousse": {
+    "name": "Misslungene Fontainale-Mousse",
+    "description": {
+      "0": "Eine leuchtend blaue Leckerei der Fontainale. Von der Form her ein wenig unschön, erinnert sie an eine Kryo-Vaniloqua. Ob es sich bei dem als Referenz gewählten Seeschimmer-Maiglöckchen vielleicht doch eigentlich um eine Variante der Vaniloqua handelt? Auf der Fontainale diese Speise zu servieren, könnte möglicherweise vor Gericht enden ... Lösen wir das Ganze lieber im Stillen."
+    }
+  },
+  "FontinaliaMousse": {
+    "name": "Fontainale-Mousse",
+    "description": {
+      "0": "Eine leuchtend blaue Leckerei der Fontainale. Diese Mousse orientiert sich in ihrer Form an den Blüten des Seeschimmer-Maiglöckchens und mauserte sich schnell zu einer der beliebtesten Festspeisen in Fontaine, nachdem die Bräuche des Fests mehr auf den Verzehr von Süßspeisen ausgerichtet geändert wurden. Vergiss nicht, sie mit allen zu teilen, wenn du „Süßes, sonst gibt’s ein bitteres Urteil!“ hörst."
+    }
+  },
+  "DeliciousFontinaliaMousse": {
+    "name": "Leckere Fontainale-Mousse",
+    "description": {
+      "0": "Eine leuchtend blaue Leckerei der Fontainale. In ihrer kristallklaren Farbe erinnert sie an die funkelnden Wellen auf einer Wasseroberfläche. Federleicht und gleichzeitig so geschmackvoll; wie eine Blüte, die frisch vom Halm gepflückt wurde. So etwas Schönes verspeisen zu dürfen, ist wohl das größte Glück, welches einem auf der Fontainale widerfahren kann!"
+    }
+  },
   "RecipeItem": {
     "name": "Objekt für Rezepte",
     "description": {
@@ -14839,6 +14947,24 @@
     "name": "Rezept: Pummel-Profiterole",
     "description": {
       "0": "Rezept mit detaillierten Schritten zur Zubereitung von „Pummel-Profiterole“."
+    }
+  },
+  "RecipeFeastOs": {
+    "name": "Rezept: Schlemmerkugeln und -ringe",
+    "description": {
+      "0": "Rezept mit detaillierten Schritten zur Zubereitung von „Schlemmerkugeln und -ringe“."
+    }
+  },
+  "RecipeRainbowMacarons": {
+    "name": "Rezept: Regenbogen-Macarons",
+    "description": {
+      "0": "Rezept mit detaillierten Schritten zur Zubereitung von „Regenbogen-Macarons“."
+    }
+  },
+  "RecipeFontinaliaMousse": {
+    "name": "Rezept: Fontainale-Mousse",
+    "description": {
+      "0": "Rezept mit detaillierten Schritten zur Zubereitung von „Fontainale-Mousse“."
     }
   },
   "CraftedItems": {
@@ -18998,7 +19124,7 @@
   "LaChansonDErinnyesI": {
     "name": "La chanson d'Erinnyes I",
     "description": {
-      "0": "Wie die Gesandten von König Remus vor Erinnyes traten, um von ihr Wasser und Erde der Burg Aremori zu verlangen, ebenso wie ihre Ergebenheit gegenüber der Sumphonia Capitolii (Bedeutung: Ewige harmonische Melodie)."
+      "0": "Wie der Gesandte von König Remus vor Erinnyes trat, um von ihr Wasser und Erde der Burg Aremori zu verlangen, ebenso wie ihre Ergebenheit gegenüber der Sumphonia Capitolii (Bedeutung: Ewige harmonische Melodie)."
     }
   },
   "LaChansonDErinnyesII": {
@@ -19029,6 +19155,24 @@
     "name": "Märchensammlung Schneeflügelgans – Band III",
     "description": {
       "0": "Ein kleines Märchenbuch, das Fontaine wie im Sturm eroberte. Der schöne Einband hatte schon so manches Kind glauben lassen, dass dieses Buch tatsächlich von einer legendären und liebenswürdigen Frau Schneeflügelgans geschrieben wurde."
+    }
+  },
+  "TheTwoMusketeersI": {
+    "name": "Die zwei Musketiere – Band I",
+    "description": {
+      "0": "Diese in Fontaine so beliebte Bestseller-Reihe erzählt eine Geschichte von Intrigen und Rache und davon, wie Gut und Böse miteinander verwoben sind."
+    }
+  },
+  "TheTwoMusketeersII": {
+    "name": "Die zwei Musketiere – Band II",
+    "description": {
+      "0": "Diese in Fontaine so beliebte Bestseller-Reihe erzählt eine Geschichte von Intrigen und Rache und davon, wie Gut und Böse miteinander verwoben sind."
+    }
+  },
+  "TheTwoMusketeersIII": {
+    "name": "Die zwei Musketiere – Band III",
+    "description": {
+      "0": "Diese in Fontaine so beliebte Bestseller-Reihe erzählt eine Geschichte von Intrigen und Rache und davon, wie Gut und Böse miteinander verwoben sind."
     }
   },
   "GiftOfParting": {
@@ -19580,14 +19724,14 @@
     }
   },
   "34thIndependentInvestigativeSquadDeploymentInMontEsusEasternQuadrantDeploymentPlan": {
-    "name": "Einsatzplan für den 34. Autonomen Spähtrupp im östlichen Ausläufer des Berg Esus",
+    "name": "Einsatzplan für den 34. Autonomen Spähtrupp im östlichen Ausläufer des Bergs Esus",
     "description": {}
   },
   "SkirmishersNotes": {
     "name": "Notizen eines Plänklers",
     "description": {}
   },
-  "34thIndependentInvestigativeSquadDeploymentInMontEsusEasternQuadrantDisplinaryProcedures": {
+  "34thIndependentInvestigativeSquadDeploymentInMontEsusEasternQuadrantDisciplinaryProcedures": {
     "name": "Disziplinarvorschriften für den 34. Autonomen Spähtrupp im östlichen Ausläufer des Bergs Esus",
     "description": {}
   },
@@ -19938,13 +20082,13 @@
   "SpinaDiRosulaUniformGiftBox": {
     "name": "Geschenkkiste mit Uniform der Spina di Rosula",
     "description": {
-      "0": "Ein Geschenk von Navia für Adèle. Drinnen liegt eine Uniform der Spina di Rosula. Auch wenn sie für Adèle zu groß ist, aber als ein Versprechen reicht sie allemal."
+      "0": "Ein Geschenk von Navia für Adèle. Drinnen liegt eine Uniform der Spina di Rosula. Auch wenn sie für Adèle zu groß ist, als ein Versprechen reicht sie allemal."
     }
   },
   "StrangelyShapedKey": {
     "name": "Eigenartig geformter Schlüssel",
     "description": {
-      "0": "Ein Schlüssel, den du von einem Mitglied der Romeu-Gang erhalten hast. Er scheint ein notwendiges Objekt zu sein, um Sprengstoff schnell zu stoppen."
+      "0": "Ein Schlüssel, den du von einem Mitglied der Romeuf-Bande erhalten hast. Er scheint ein notwendiges Objekt zu sein, um Sprengstoff schnell zu stoppen."
     }
   },
   "RecommendationLetter": {
@@ -20009,6 +20153,14 @@
       "0": "Einer der Schlüssel, mit denen man die Eisengitter am kaputten Schiff aufschließt."
     }
   },
+  "AratakiGangsInstantRamen": {
+    "name": "Fertig-Ramen der Arataki-Bande",
+    "description": {
+      "0": "Ein Dankeschön von Kuki Shinobu, nachdem du dem „Großen Oni-König des Käferkampfes“ geholfen hast, noch stärker zu werden und ihm neue Wege des Käferkampfes im „Arataki-Ausbildungslager zum Flammenpanzer-Käferkampf“ aufgezeigt hast ...",
+      "1": "Diese stabile, aber dennoch leichte Schachtel enthält einen Block dampfgetrockneter Ramen-Nudeln, in Papierbeuteln versiegelte Gewürze, eine extrem robuste Schale sowie ein paar Essstäbchen. Einfach den Ramenblock zusammen mit den Gewürzen in die Schüssel geben, mit heißem Wasser aufgießen und schon hat man laut Anleitung eine leckere Schüssel Ramen. Super praktisch, oder nicht?",
+      "2": "Laut der in der Schachtel von Kuki Shinobu zurückgelassenen Nachricht sind jedoch weder sie noch Arataki Itto während ihrer Schiffsreise nach Liyue in den Genuss dieser Mahlzeit gekommen. Damals hatten sie lediglich ein paar Kekse und eingelegtes Gemüse dabei. Während ihres Aufenthalts in Liyue ließ sich Kuki Shinobu dann von den lokalen Nudelgerichten dazu inspirieren, sich an der Kreation dieser Ramen zu versuchen. So war gegeben, dass sich die „treue rechte Hand des Oni-Königs“ und „Silbermelone die Himmelsbrecherin“ auf ihrer Reise den Bauch mit etwas Schmackhaftem vollschlagen konnten ..."
+    }
+  },
   "FoggyForestBranch": {
     "name": "Zweig des einsamen Waldes",
     "description": {
@@ -20059,12 +20211,25 @@
       "0": "Seltsame Nachricht"
     }
   },
+  "AutumnsGift": {
+    "name": "Autumns Geschenk",
+    "description": {
+      "0": "Ein musikalisches Spielzeug, das man in Bertins Kuriositätenkabinett kaufen kann und das sich bei Kindern großer Beliebtheit erfreut. Dieses scheint schon vor einer ganzen Weile gekauft worden zu sein; es gehört nicht mehr zu den neusten Modellen im Laden.",
+      "1": "Geschenke sind dazu da, weitergegeben zu werden, und wenn es schon nicht dorthin gelangt, wo es hingehört, dann soll es wenigstens bei jemandem bleiben, der es zu schätzen weiß."
+    }
+  },
   "MysteriousXenochromaticCrystal": {
     "name": "Mysteriöser xenochromatischer Kristall",
     "description": {
-      "0": "Ein großer Kristall. Er stammt aus dem Körper eines besiegten außerordentlich mächtigen Fontemer-Mutanten im Bezirk Morte.",
+      "0": "Ein großer Kristall. Er stammt aus dem Körper eines besiegten außerordentlich mächtigen Fontemer-Mutanten.",
       "1": "Er enthält eine Energie, die noch geheimnisvoller ist als die von gewöhnlichen xenochromatischen Kristallen.",
       "2": "Vielleicht würde ja jemand einen angemessenen Preis dafür bezahlen."
+    }
+  },
+  "RecruitmentNotice": {
+    "name": "Arbeitsplatzbeschreibung",
+    "description": {
+      "0": "Instruktionen, die vom Auftraggeber Benoit Leroy verfasst wurden. Ins Adressfeld wurde freundlicherweise eine Karte eingezeichnet."
     }
   },
   "MapFragment": {
@@ -20106,6 +20271,31 @@
   "Log": {
     "name": "Protokoll",
     "description": {}
+  },
+  "ShootingPracticeOpticalLenses": {
+    "name": "„Optische Linse der Schusspraxis“",
+    "description": {
+      "0": "Dieses von Turenna, ihres Zeichens Mitglied der Sonderpatrouille für Sicherheit und Überwachung, zur Verfügung gestellte optische Gerät scheint ein Darstellungsprinzip zu verwenden, das für den Ottonormalverbraucher nur schwer zu verstehen ist. Mit dem Geländemodell aus „Auf tausend Schritt ins Schwarze“ kann man Szenarien simulieren, in denen Musketen gegen den Feind zum Einsatz kommen.",
+      "1": "Obwohl das Gerät bei der offiziellen Ausbildung der Truppenmitglieder zu wünschen übrig lässt, reicht es doch völlig dazu aus, das Interesse der Leute für die Muskete zu wecken und sie dazu zu bringen, ihr Potenzial zu erkunden, was ihr Talent an der Waffe im Dienst einer gerechten Sache anbelangt."
+    }
+  },
+  "HelpMePlease": {
+    "name": "Bitte hilf mir!",
+    "description": {
+      "0": "Lesematerial auf Papier"
+    }
+  },
+  "BracarisGeneralStoreReceipt": {
+    "name": "Bestätigung von Bracaris Gemischtwarenladen",
+    "description": {
+      "0": "Bestätigung von Bracaris Gemischtwarenladen"
+    }
+  },
+  "PackageForTheLeroyFamily": {
+    "name": "Paket für die Leroy-Familie",
+    "description": {
+      "0": "Pip, der Zeitungsausträger, hat das Paket mit all den Zeitungen gefüllt, die die Familie Leroy schon eine Weile nicht mehr abgeholt hat."
+    }
   },
   "TearsAmongTheStars": {
     "name": "Tränen zwischen den Sternen",
@@ -21615,6 +21805,14 @@
     "description": {
       "0": "Objekt zur Verfeinerung von „Heiliges Schwert des Narzissenkreuzes“.",
       "1": "Im alten Fontaine wurden Schneckenschalen gern als Zeremonialobjekte verwendet. Dieser aus einer Schneckenschale gefertigte heilige Kelch floss schließlich mit heiligem Öl über. Symbolisch gesehen steht der Kelch für das erste Wort, das heilige Öl für den Willen des Schmiedens und das heilige Schwert für die alles durchbrechende Vernunft."
+    }
+  },
+  "SuperDuperInvincibleShiningSparklyMagicCrystal": {
+    "name": "„Megamagisch-unbesiegbarer hell-glänzender Kristall“",
+    "description": {
+      "0": "Objekt zur Verfeinerung von „megamagisches Schwert des ultimativen Oberherrn“.",
+      "1": "Verfügt über die Fähigkeit, zahlreiche Wünsche (und ansehnliche Pappaufsteller) miteinander zu verbinden. So entsteht die megamagische Kraft der ultimativen Unbesiegbarkeit.",
+      "2": "Obwohl es in der Galerie Damoville ähnliche (oder identische) Objekte zu kaufen gibt, kann der Unterschied zwischen den beiden grundlegend sein. Lass dich also nicht beirren."
     }
   },
   "FalconsDance": {
@@ -23178,6 +23376,27 @@
       "1": "Auch wenn sich das Uhrwerk nicht mehr dreht, und sich die Puppe nicht mehr vorwärts bewegt. Erinnerungen werden auf ewig zu Korallen. Bitte vergiss niemals die Abenteuer und die Zeit, die wir zusammen verbrachten."
     }
   },
+  "NaviaRosula": {
+    "name": "Navia – Rosula",
+    "description": {
+      "0": "Ein Motiv für Namenskärtchen.",
+      "1": "So, wie die Rosen erblühen, so wird auch Navia ihren Schirm aufspannen. Sei aber vorsichtig, denn so, wie die Rosen mit ihren Dornen stechen, so feuert auch der Schirm von Navia mächtige Schirmgeschosse ab."
+    }
+  },
+  "ChevreuseTypeII": {
+    "name": "Chevreuse – Typ II",
+    "description": {
+      "0": "Ein Motiv für Namenskärtchen.",
+      "1": "Der vollständige Name dieser Waffe der Sonderpatrouille für Sicherheit und Überwachung lautet „Muskete der Sonderpatrouille für Sicherheit und Überwachung Typ II“. Chevreuse nennt sie hingegen einfach nur „Typ II“. Genauso wie es unzählige Blumen auf der Welt gibt, so ist auch diejenige, die du ganz besonders schätzt, etwas ganz Besonderes, selbst wenn du sie einfach nur „Blume“ nennst."
+    }
+  },
+  "TravelNotesTimeInscribed": {
+    "name": "Erlebnispass – Zeitgravur",
+    "description": {
+      "0": "Ein Motiv für Namenskärtchen.",
+      "1": "Wer weiß, wie lange es noch dauert, bis die Filmkunst Teyvats das „Gravieren der Zeit“ erneut erfinden wird. Aber wie dem auch sei, diese Szene hat fürwahr die sündige Vergangenheit festgehalten."
+    }
+  },
   "AnemoculusResonanceStone": {
     "name": "Anemoculus-Resonanzstein",
     "description": {
@@ -23758,6 +23977,13 @@
       "0": "Dieser Fotoapparat wurde von Lépine-Pauline für die gründliche Untersuchung bei den „Grafischen Gegenmaßnahmen“ modifiziert. Wer weiß schon, was für komplexe und kostspielige Komponenten in seinem Inneren verbaut wurden, um die spezifische Struktur, die Konturen und die farblichen Merkmale des zu fotografierenden Objekts zu erfassen ..."
     }
   },
+  "MiniSeelieBrilliance": {
+    "name": "Miniseelie – Prachtvoller Glanz",
+    "description": {
+      "0": "Ein Andenken an die Aktion „Vermisste Schätze“. Wenn man es anlegt, begleitet einen eine Miniseelie.",
+      "1": "Diese in leuchtenden Farben erstrahlende Miniseelie ist in der Lage, sich auch unter Wasser völlig frei zu bewegen."
+    }
+  },
   "InstructionsAnemoculusResonanceStone": {
     "name": "Erläuterung: Anemoculus-Resonanzstein",
     "description": {
@@ -24033,6 +24259,13 @@
       "1": "Allein der Geruch dieser Frucht erzeugt bestimmte Bilder in deinem Kopf. Du kannst die Raumschaffung verwenden, um die wundersame Landschaft von Sumeru in das Kannenreich zu übertragen ..."
     }
   },
+  "SwirlingSceneInABottle": {
+    "name": "„Strudelnder Flaschengarten“",
+    "description": {
+      "0": "Ein mit wunderschönem Interieur ausgestatteter Flaschengarten. Er wurde von Bolle, dem Kannengeist auf der Durchreise, als Andenken aus Fontaine, mitgebracht.",
+      "1": "Bei Betrachten der Szenerie in ihrem Inneren scheint sich eine Art von Bild im Kopf zu manifestieren. Du kannst die Raumschaffung verwenden, um die wundersame Landschaft von Fontaine in das Kannenreich zu übertragen ..."
+    }
+  },
   "TheMountainCloudsLetDownGoldenRain": {
     "name": "Von Bergwolken fällt der goldene Regen",
     "description": {
@@ -24193,6 +24426,36 @@
   },
   "ElectroHypostasis": {
     "name": "Elektro-Hypostase",
+    "description": {
+      "0": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+    }
+  },
+  "LaSignora": {
+    "name": "„La Signora“",
+    "description": {
+      "0": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+    }
+  },
+  "Azhdaha": {
+    "name": "Azhdaha",
+    "description": {
+      "0": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+    }
+  },
+  "EremiteScorchingLoremaster": {
+    "name": "Goldbrigade – Erzählerin der Sengenden Sande",
+    "description": {
+      "0": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+    }
+  },
+  "ThunderManifestation": {
+    "name": "Verkörperung des Donners",
+    "description": {
+      "0": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+    }
+  },
+  "Dvalin": {
+    "name": "Dvalin",
     "description": {
       "0": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
     }
@@ -24557,6 +24820,72 @@
       "0": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
     }
   },
+  "LightsRemit": {
+    "name": "Entsendung des Lichts",
+    "description": {
+      "0": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+    }
+  },
+  "TurnControl": {
+    "name": "Beste Gewinnstrategie",
+    "description": {
+      "0": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+    }
+  },
+  "ConclusiveOvation": {
+    "name": "Abschließender Beifall",
+    "description": {
+      "0": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+    }
+  },
+  "AColdBladeLikeAShadow": {
+    "name": "Schattenhafte kalte Klinge",
+    "description": {
+      "0": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+    }
+  },
+  "RushingHoundSwiftAsTheWind": {
+    "name": "Laufender Hund – Schnell wie der Wind",
+    "description": {
+      "0": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+    }
+  },
+  "Structuration": {
+    "name": "Strukturierung",
+    "description": {
+      "0": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+    }
+  },
+  "PainForPain": {
+    "name": "Schmerz für Schmerz",
+    "description": {
+      "0": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+    }
+  },
+  "Scorpocalypse": {
+    "name": "Skorpiokalypse",
+    "description": {
+      "0": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+    }
+  },
+  "GrievingEcho": {
+    "name": "Echo der Trauer",
+    "description": {
+      "0": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+    }
+  },
+  "RendingVortex": {
+    "name": "Zerstörerischer Wirbel",
+    "description": {
+      "0": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+    }
+  },
+  "LunarCyclesUnending": {
+    "name": "Unendlicher Mondzyklus",
+    "description": {
+      "0": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+    }
+  },
   "MagicGuide": {
     "name": "Magieführer",
     "description": {
@@ -24905,6 +25234,66 @@
       "0": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
     }
   },
+  "LostPrayerToTheSacredWinds": {
+    "name": "Gebete der Vier Winde",
+    "description": {
+      "0": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+    }
+  },
+  "TulaytullahsRemembrance": {
+    "name": "Tulaytullahs Erinnerung",
+    "description": {
+      "0": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+    }
+  },
+  "BeaconOfTheReedSea": {
+    "name": "Schilfmeer-Bake",
+    "description": {
+      "0": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+    }
+  },
+  "PrimordialJadeWingedSpear": {
+    "name": "Urzeitlicher Jadespeer",
+    "description": {
+      "0": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+    }
+  },
+  "LightOfFoliarIncision": {
+    "name": "Licht der schneidenden Blätter",
+    "description": {
+      "0": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+    }
+  },
+  "GildedDreams": {
+    "name": "Vergoldeter Traum",
+    "description": {
+      "0": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+    }
+  },
+  "FlowingRings": {
+    "name": "Ring der Strömung",
+    "description": {
+      "0": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+    }
+  },
+  "EchoesOfAnOffering": {
+    "name": "Echo des Opferfests",
+    "description": {
+      "0": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+    }
+  },
+  "HeartOfKhvarenasBrilliance": {
+    "name": "Herz khvarenaischer Brillianz",
+    "description": {
+      "0": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+    }
+  },
+  "VourukashasGlow": {
+    "name": "Licht der Vourukasha-Oase",
+    "description": {
+      "0": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+    }
+  },
   "LiyueHarborWharf": {
     "name": "Hafen von Liyue",
     "description": {
@@ -25117,6 +25506,24 @@
   },
   "StormterrorsLair": {
     "name": "Dvalins Ruinen",
+    "description": {
+      "0": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+    }
+  },
+  "WeepingWillowOfTheLake": {
+    "name": "Trauerweide inmitten des Sees",
+    "description": {
+      "0": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+    }
+  },
+  "OperaEpiclese": {
+    "name": "Opéra Épiclèse",
+    "description": {
+      "0": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+    }
+  },
+  "Mamere": {
+    "name": "Mamère",
     "description": {
       "0": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
     }
@@ -25403,6 +25810,30 @@
       "0": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
     }
   },
+  "PassingOfJudgment": {
+    "name": "Zeit des Urteils",
+    "description": {
+      "0": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+    }
+  },
+  "TheBoarPrincess": {
+    "name": "Die Wildschweinprinzessin",
+    "description": {
+      "0": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+    }
+  },
+  "FallsAndFortune": {
+    "name": "Zusammenbruch und Wendepunkt",
+    "description": {
+      "0": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+    }
+  },
+  "FlickeringFourLeafSigil": {
+    "name": "Flackerndes Vierblatt-Symbol",
+    "description": {
+      "0": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+    }
+  },
   "Origin": {
     "name": "Anbeginn",
     "description": {
@@ -25477,6 +25908,12 @@
   },
   "DragonspineCrown": {
     "name": "Drachengrat – Krone",
+    "description": {
+      "0": "Ein Kartenrücken, den man im Kartenspiel „Geniale Beschwörung“ erhalten und verwenden kann. Man sagt, verschiedene Kartenrücken sollen aus unterschiedlichen Materialien bestehen, die sich auch in der Haptik leicht unterscheiden. An Kartenbeschwörern, die diese Kartenrücken mit Freude sammeln, mangelt es nicht."
+    }
+  },
+  "TheChasmSolidIron": {
+    "name": "Große Kluft – Solides Eisen",
     "description": {
       "0": "Ein Kartenrücken, den man im Kartenspiel „Geniale Beschwörung“ erhalten und verwenden kann. Man sagt, verschiedene Kartenrücken sollen aus unterschiedlichen Materialien bestehen, die sich auch in der Haptik leicht unterscheiden. An Kartenbeschwörern, die diese Kartenrücken mit Freude sammeln, mangelt es nicht."
     }
@@ -26229,6 +26666,107 @@
       "2": "Dieses Set wird von den folgenden Kameraden bevorzugt: Tighnari, {REALNAME[ID(1)|HOSTONLY(true)]}"
     }
   },
+  "KeyToAStableWorkRestCycle": {
+    "name": "Maßgebender Faktor einer stabilen Balance zwischen Arbeit und Erholung",
+    "description": {
+      "0": "Die einfache und großzügige Komposition dieses Schlafzimmers nivelliert Geborgenheit und Kompetenz in seiner Betrachtung. Der Müde legt sich ins Bett und kann sofort ins Reich der Träume entschlummern; der morgens Erwachende ist hingegen blitzschnell auf den Beinen und kann früh zur Tat schreiten.",
+      "1": "Für viele Leute in Fontaine spielt das Raum-Arrangement eine wichtige Rolle beim Schlaf. Denn ein geregelter Schlaf ist der Schlüssel zu einer geregelten Routine! So betrachtet fällt der Einrichtung eines Schlafzimmers eine große Bedeutung zu.",
+      "2": "Dieses Set wird von folgenden Kameraden bevorzugt: Charlotte und Chevreuse."
+    }
+  },
+  "StrictAdherenceToOfficeCodes": {
+    "name": "Regeln zur strikten Einhaltung von Arbeitsabläufen",
+    "description": {
+      "0": "Ein äußerst klassisch eingerichtetes Büro. Das Interieur ist eine Hommage an die Einrichtung des Palais Mermonia und gibt die Erscheinung dessen stark frequentierten Büros bis ins kleinste Detail wieder. Denn alles hat in Einklang mit den Gesetzen zu funktionieren.",
+      "1": "Ein Gelehrter des Forschungsinstitut Fontaines behauptete einst, dass „die Umgebung, in der ein Mensch sich befindet, seine Arbeitsbedingungen stark beeinflusst“. Dieser Theorie zufolge sollte ein Arbeitender, wenn er sich in einem Arbeitszimmer befindet, dessen Einrichtung sich am Palais Mermonia orientiert, auch unbewusst eben jenen Arbeitsprozessen folgen und stetig danach handeln ...",
+      "2": "Dieses Set wird von folgenden Kameraden bevorzugt: Neuvillette."
+    }
+  },
+  "GarbForGloriousGourmet": {
+    "name": "Das Ambiente von Speis und Trunk",
+    "description": {
+      "0": "Ein vollständig eingerichteter Speisesaal. Die mit allen erdenklichen Utensilien ausgestattete Einrichtung erinnert an die Gestaltung des Erdgeschosses des Hotel Debord und eignet sich hervorragend für die Ausrichtung von Familienfeiern und die Bewirtung zahlreicher Verwandter und Freunde.",
+      "1": "Selbst Spitzenköche können nicht leugnen, dass die Umgebung einen maßgeblichen Einfluss auf die Laune der Gäste vor Einnahme der Speisen hat und letztendlich auch bestimmt, wie diese ihr Gericht am Ende bewerten. Eine geschmackvolle Einrichtung des Speisesaals selbst zählt also zum „Ambiente von Speis und Trunk“.",
+      "2": "Dieses Set wird von folgenden Kameraden bevorzugt: Furina und Navia."
+    }
+  },
+  "PerfectlyDrawnFocus": {
+    "name": "Genau richtiger Fokus",
+    "description": {
+      "0": "Ein Raum, in dessen Zentrum eine bescheidene Bühne aufgebaut ist; ihre Größe reicht alle mal aus für kleinere Darbietungen.",
+      "1": "Für Neulinge im Rampenlicht können zu viele Zuschauer leicht zu Lampenfieber führen, was sich wiederum in einem schlechten Spiel äußern kann. Außerdem sei es nach Meinung von Experten, die weniger auf die Zahl der Zuschauer geben, doch eine größere Freude, gelegentlich den teuersten Freunden eine Vorstellung zu geben, als unbedingt viel Geld mit Eintrittskarten zu verdienen. Somit sollte eine Bühne von solch überschaubarer Größe doch auf viel Gegenliebe bei vielen Künstlern stoßen.",
+      "2": "Dieses Set wird von folgenden Kameraden bevorzugt: Lynette und Lyney."
+    }
+  },
+  "ContinuousClockworkInspiration": {
+    "name": "Immerwährend laufendes Uhrwerk der Inspiration",
+    "description": {
+      "0": "Ein Raum, der in Anlehnung an die verschiedenen Uhrwerk-Werkstätten eingerichtet ist. Er verfügt über eine breite Palette von Gerätschaften, die den Anforderungen eines durchschnittlichen Handwerkers gerecht werden.",
+      "1": "Einigen Dichtern aus Fontaine zufolge sind Uhrwerk-Mecha durchaus respektable Schöpfungen, und dieser Respekt sollte sich auch auf die Gerätschaften der Handwerker erstrecken: „Die Inspiration flüstert den Bauteilen zu, sie lehrt sie, sich miteinander zu verbinden und zu drehen, um so alles am Laufen zu halten. Dies ist ihre Mission und ihre Berufung.“",
+      "2": "Dieses Set wird von folgenden Kameraden bevorzugt: Fréminet."
+    }
+  },
+  "WellspringOfRuleViolationPrevention": {
+    "name": "Ursprung der Regeln gegen Zuwiderhandeln",
+    "description": {
+      "0": "Diese Räumlichkeit besticht durch ihre ehrwürdige Atmosphäre und ist eine exakte Nachbildung des Büros des „Herzogs“ von Fort Méropide.",
+      "1": "Der Legende nach ersetzte der „Herzog“, als er Fort Méropide übernahm, nur einige der Möbel in seinem Büro und nahm keine größeren Veränderungen am Interieur vor. In einem derartigen Raum sind daher viele der Regeln, an die sich die Gefangenen strikt zu halten haben, kodifiziert und in Stein gemeißelt.",
+      "2": "Dieses Set wird von folgenden Kameraden bevorzugt: Wriothesley."
+    }
+  },
+  "CourtOfJusticesPlacidDays": {
+    "name": "Der gerechten Vorsehung ganz normaler Tag",
+    "description": {
+      "0": "Ein Bezirk, der sich an den Straßen eines gewöhnlichen Viertels aus Fontaine orientiert. Die zahlreichen Häuser stellen einen alltäglichen Anblick des Stadtbilds dar und spiegeln das wahre Gesicht Fontaines wider.",
+      "1": "Für die meisten Einwohner von Fontaine besteht der Großteil ihres Lebens darin, eben jenes ganz normal zu führen. Das heißt, pünktlich zur Arbeit zu kommen und zu gehen, sich in ihrer Freizeit mit Freunden zum Essen oder zum Einkaufen zu treffen und gelegentlich eine Vorstellung in der Opéra Épiclèse zu genießen. Für manch einen Abenteurer, der schon so gut wie alles gesehen hat, mag ein derart ereignisloses Leben gar nicht mal so schlecht klingen ...",
+      "2": "Dieses Set wird von folgenden Kameraden bevorzugt: Charlotte."
+    }
+  },
+  "CourtOfJusticesBoomingCommerce": {
+    "name": "Der gerechten Vorsehung florierender Handel",
+    "description": {
+      "0": "Ein Viertel in Anlehnung an den Bezirk Lyonnais des Hofs von Fontaine, mit seinen zahlreichen Spezialitätengeschäften und Tischen, an denen man sich nach einem Einkaufsbummel ausruhen und eine Tasse Tee genießen kann.",
+      "1": "Sollte es dich nach Fontaine verschlagen und du bist noch nicht mit den Eigenheiten der verschiedenen Geschäfte und Waren vertraut, kannst du dich gern bei den Einheimischen erkundigen, so jedenfalls die Meinung einiger erfahrener Touristen. Und da die meisten Geschäfte den Prinzipien der individuellen Preiskontrolle des Palais Mermonia folgen, gibt es kaum jemanden, der Produkte kauft, die nicht dem Preis entsprechen.",
+      "2": "Dieses Set wird von folgenden Kameraden bevorzugt: Lynette und Lyney."
+    }
+  },
+  "CourtOfJusticesFreshMist": {
+    "name": "Der gerechten Vorsehung erfrischender Nebel",
+    "description": {
+      "0": "Das Konzept dieses mit üppigen Sträuchern, farbenfrohen Blumen und prächtigem Brunnen gestalteten Platzes ist eine Hommage an den Lucine-Brunnen auf Erinnyes.",
+      "1": "An klaren Tagen erheitern der Duft der Blumen und die Frische des Wassers auf Erinnyes oft die Stimmung der Besucher von weit her und die der Einwohner gleichermaßen. Und selbst bei Regenwetter wird die Legende, die sich um den Brunnen rangt, ihnen frohe Hoffnung bringen.",
+      "2": "Dieses Set wird von folgenden Kameraden bevorzugt: Neuvillette und Furina."
+    }
+  },
+  "PoissonTheUnassuming": {
+    "name": "Poisson, schlicht und ohne Schnickschnack",
+    "description": {
+      "0": "Die Szenerie dieses Gebiets mit ihren verschiedenen charakteristischen Gebäuden als Kernstück bildet das Erscheinungsbild einer Ecke von Poisson nach. Die Konzentration auf funktionelle Häuser und eine solche Einrichtung maximiert die Effizienz der Stadtbewohner bei der Arbeit. Man sollte allerdings nicht den Fehler begehen, dies mit Hektik und Plackerei zu verwechseln, vielmehr ist es ein Garant für ein entspanntes Leben. „Je eher daran, desto eher davon“, einige Einwohner von Poisson handeln nach eben diesem Prinzip und führen ein erfülltes und einfaches Leben.",
+      "1": "Dieses Set wird von folgenden Kameraden bevorzugt: Navia."
+    }
+  },
+  "UnderseaMeruseasLuster": {
+    "name": "Unter den stillen Wassern des Dorfes Glanz",
+    "description": {
+      "0": "Eine Siedlung in Anlehnung an die Szenerie Méruseas, die mit ihrer unverwechselbaren Architektur ein echter Hingucker ist.",
+      "1": "Das Dorf, in dem die Melusinen leben, liegt entlang Elynas’ unter Wasser. Nur wenige gewöhnliche Menschen besuchen diesen Ort und diejenigen, die zurückkehren, hören nicht auf, von den einzigartigen Farben dort zu schwärmen. Mehrere Maler haben sich bereits daran versucht, die dortige Landschaft auf Leinwand zu bannen, wobei sie auf eine Kombination der vorher erwähnten Schwärmereien und Interviews mit Melusinen am Hof von Fontaine zurückgriffen. Leider bestanden stets unausweichliche „farbliche Abweichungen“ zwischen ihren Werken und den tatsächlichen Farben des Dorfes. Ein Problem, mit dem sich die Maler lange Zeit herumschlagen mussten und das erst mithilfe halbwegs objektiver Aufnahmen von Fotoapparaten gelöst werden konnte ...",
+      "2": "Dieses Set wird von folgenden Kameraden bevorzugt: Fréminet"
+    }
+  },
+  "FullForceForwardInTheForbiddenFortress": {
+    "name": "„Alles geben beim Pankration“ in der verbotenen Festung",
+    "description": {
+      "0": "Eine Arena, in deren Mittelpunkt sich ein Kampfplatz befindet. Setzt du deinen Fuß auf diesen, ist es so, als würden deine Ohren vom Jubel und dem Geschrei des Publikums, vom aufgeregten Kommentar des Moderators und vom Klatschen fliegender Fäuste auf rohes Fleisch klingen, wenn beide Kontrahenten in vollem Einsatz gegeneinander antreten. Vorbild für diesen Veranstaltungsort bildet die „Pankration-Arena“ von Fort Méropide, ein Ort, der einem den Atem zu verschlagen weiß.",
+      "1": "„In einer Arena, in der nur die Schlagkraft zählt, ist der einzige Weg zu Ruhm und Tauschscheinen, einfach alles zu geben!“ ... Für viele von denen, die am „Pankration“ teilgenommen hatten, ist dieser Satz zu einem Credo geworden, sogar, nachdem sie Fort Méropide verlassen haben ...",
+      "2": "Dieses Set wird von folgenden Kameraden bevorzugt: Wriothesley und Chevreuse."
+    }
+  },
+  "TheNationOfHydrosMottledColors": {
+    "name": "Getupfte Farben des Reichs des Wassers",
+    "description": {
+      "0": "Eine Landschaft mit üppiger Vegetation und einer Vielzahl von Blumen und Sträuchern, wie sie in Fontaine üblich sind. Blumen und Pflanzen sind ein beliebtes Thema in der Malerei und einer der Ansätze, wenn es darum geht, „Farben“ zu erforschen. Einige der Maler von Fontaine glauben, dass ihnen die Farbpalette der Welt mit ihren vielen Pflanzen das Paradigma „perfekter Übereinstimmung“ vor Augen führt. Wenn sich also alle Farben eines Gemäldes in den Pflanzen wiederfinden, dann muss doch dieses Gemälde die Harmonie und Schönheit der natürlichen Landschaft aufweisen. Natürlich unter der Voraussetzung, dass man niemals die Farben mehrerer Pflanzen mischt ..."
+    }
+  },
   "TimberWallWithJadeEaves": {
     "name": "Holzwand mit Jadetraufe",
     "description": {
@@ -26254,6 +26792,13 @@
     "name": "Schlicht geschnitzte Wände aus Hellholz",
     "description": {
       "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Schlicht geschnitzte Wände aus Hellholz“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "AnnexsGoldenMosaic": {
+    "name": "„Goldverzierte Mosaikbilder des äußeren Palasts“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Goldverzierte Mosaikbilder des äußeren Palasts“.",
       "1": "Nach der Anwendung im Herstellungsmenü zu finden."
     }
   },
@@ -26285,6 +26830,13 @@
       "1": "Nach der Anwendung im Herstellungsmenü zu finden."
     }
   },
+  "AnnexsMirrorSheenFloorTile": {
+    "name": "„Spiegelklare Bodenfliesen des äußeren Palasts“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Spiegelklare Bodenfliesen des äußeren Palasts“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
   "CheckeredCedarCeiling": {
     "name": "Karierte Zederndecke",
     "description": {
@@ -26310,6 +26862,13 @@
     "name": "Gravierte Decke aus Hellholz",
     "description": {
       "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Gravierte Decke aus Hellholz“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "AnnexsSpotlessDome": {
+    "name": "„Makelloses Kuppelgewölbe des äußeren Palasts“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Makelloses Kuppelgewölbe des äußeren Palasts“.",
       "1": "Nach der Anwendung im Herstellungsmenü zu finden."
     }
   },
@@ -26579,10 +27138,31 @@
       "1": "Nach der Anwendung im Herstellungsmenü zu finden."
     }
   },
+  "ForbiddenZoneFloorLampIronhammer": {
+    "name": "Lampe des verbotenen Ortes – „Eisenhammer“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Lampe des verbotenen Ortes – ‚Eisenhammer‘“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "ForbiddenZoneFloorLampNightlight": {
+    "name": "Lampe des verbotenen Ortes – „Dunkles Licht“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Lampe des verbotenen Ortes – ‚Dunkles Licht‘“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
   "EfflorescentIllumination": {
     "name": "„Mannigfaltiges Licht der Blütenblätter“",
     "description": {
       "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Mannigfaltiges Licht der Blütenblätter“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "AnnexsSwirlingLight": {
+    "name": "„Schimmernder Lichtwirbel des äußeren Palasts“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Schimmernder Lichtwirbel des äußeren Palasts“.",
       "1": "Nach der Anwendung im Herstellungsmenü zu finden."
     }
   },
@@ -26667,6 +27247,13 @@
     "name": "Töpferwarenregal aus Athel-Holz",
     "description": {
       "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Töpferwarenregal aus Athel-Holz“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "MallowWoodMultiModelWardrobe": {
+    "name": "Kleiderschrank „Zahlreiche Ausführungen“ aus Platanenholz",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Kleiderschrank ‚Zahlreiche Ausführungen‘ aus Platanenholz“.",
       "1": "Nach der Anwendung im Herstellungsmenü zu finden."
     }
   },
@@ -26793,6 +27380,13 @@
     "name": "„Hilfekiste der Maison Cardinalice“",
     "description": {
       "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Hilfekiste der Maison Cardinalice“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "AThousandTextsInTheCentralHub": {
+    "name": "„Zahllose Aufzeichnungen am Dreh- und Angelpunkt“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Zahllose Aufzeichnungen am Dreh- und Angelpunkt“.",
       "1": "Nach der Anwendung im Herstellungsmenü zu finden."
     }
   },
@@ -26992,6 +27586,27 @@
       "1": "Nach der Anwendung im Herstellungsmenü zu finden."
     }
   },
+  "StableWorkStationInTheCentralHub": {
+    "name": "„Sicherer und stabiler Arbeitsplatz am Dreh- und Angelpunkt“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Sicherer und stabiler Arbeitsplatz am Dreh- und Angelpunkt“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "RestTimeInTheCentralHub": {
+    "name": "„Gemütliche Atempause am Dreh- und Angelpunkt“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Gemütliche Atempause am Dreh- und Angelpunkt“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "TheLeisureOfDailyMeetings": {
+    "name": "„Muße täglicher Zusammenkunft“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Muße täglicher Zusammenkunft“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
   "BreezeBlessedBed": {
     "name": "Brisenbelüftetes Bett",
     "description": {
@@ -27087,6 +27702,13 @@
     "name": "„Zeuge der Tavernenangelegenheiten“",
     "description": {
       "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Zeuge der Tavernenangelegenheiten“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "CelebrationOfAnAdHocPerformance": {
+    "name": "„Festliche Zeit des improvisatorischen Spiels“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Festliche Zeit des improvisatorischen Spiels“.",
       "1": "Nach der Anwendung im Herstellungsmenü zu finden."
     }
   },
@@ -27220,6 +27842,27 @@
     "name": "„Die Wonne des Zusammenseins und des Trinkens“",
     "description": {
       "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Die Wonne des Zusammenseins und des Trinkens“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "MallowWoodViewingRitesChair": {
+    "name": "Stuhl „Verhaltensregeln für Zuschauer“ aus Platanenholz",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Stuhl ‚Verhaltensregeln für Zuschauer‘ aus Platanenholz“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "LindenWoodSubduingSeatBackedChair": {
+    "name": "Stuhl „Respektvolle Haltung“ aus Lindenholz",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Stuhl ‚Respektvolle Haltung‘ aus Lindenholz“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "MomentaryRestInTheCentralHub": {
+    "name": "„Ein Moment der Ruhe am Dreh- und Angelpunkt“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Ein Moment der Ruhe am Dreh- und Angelpunkt“.",
       "1": "Nach der Anwendung im Herstellungsmenü zu finden."
     }
   },
@@ -27532,9 +28175,9 @@
     }
   },
   "WisdomOfTheForbiddenFortress": {
-    "name": "„Weisheit der verbotenen Festung“",
+    "name": "„Weisheit in der verbotenen Festung“",
     "description": {
-      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Weisheit der verbotenen Festung“.",
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Weisheit in der verbotenen Festung“.",
       "1": "Nach der Anwendung im Herstellungsmenü zu finden."
     }
   },
@@ -27581,9 +28224,16 @@
     }
   },
   "BurdenOfTheForbiddenFortress": {
-    "name": "„Bürde der verbotenen Festung“",
+    "name": "„Bürde in der verbotenen Festung“",
     "description": {
-      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Bürde der verbotenen Festung“.",
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Bürde in der verbotenen Festung“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "StandardMusicStandAccurateTuning": {
+    "name": "Standard-Notenpult – „Exakt abgestimmt“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Standard-Notenpult – ‚Exakt abgestimmt‘“.",
       "1": "Nach der Anwendung im Herstellungsmenü zu finden."
     }
   },
@@ -28126,6 +28776,13 @@
       "1": "Nach der Anwendung im Herstellungsmenü zu finden."
     }
   },
+  "CommonUseNoteHolder": {
+    "name": "Universal-Notizenhalter",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Universal-Notizenhalter“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
   "RealizationsFromTheLandOfWisdom": {
     "name": "„Erhabenheit am Ort der Gelehrsamkeit“",
     "description": {
@@ -28347,6 +29004,13 @@
     "name": "Athel-Angriffsschild mit Metallrahmen",
     "description": {
       "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Athel-Angriffsschild mit Metallrahmen“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "IndoorLampTheTwilightSea": {
+    "name": "Hängelampe für den Innenbereich – „Gelbe Meeresszenerie“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Hängelampe für den Innenbereich – ‚Gelbe Meeresszenerie‘“.",
       "1": "Nach der Anwendung im Herstellungsmenü zu finden."
     }
   },
@@ -28732,6 +29396,20 @@
     "name": "„Des Wandelgangs Leitlinie der Pünktlichkeit“",
     "description": {
       "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Des Wandelgangs Leitlinie der Pünktlichkeit“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "QuickTemporaryWorkshed": {
+    "name": "„Sofortige Notunterkunft“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Sofortige Notunterkunft“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "PoissonsSeasonalProduce": {
+    "name": "„Die Frische Poissons“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Die Frische Poissons“.",
       "1": "Nach der Anwendung im Herstellungsmenü zu finden."
     }
   },
@@ -29463,6 +30141,13 @@
       "1": "Nach der Anwendung im Herstellungsmenü zu finden."
     }
   },
+  "CourtyardPavilionAmidstTheRivers": {
+    "name": "Hofvilla-Pavillon – „Inmitten aller Wasser“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Hofvilla-Pavillon – ‚Inmitten aller Wasser‘“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
   "CourtOfJusticesAuthenticity": {
     "name": "„Wahre Natur der gerechten Vorsehung“",
     "description": {
@@ -29495,6 +30180,27 @@
     "name": "„Kleiner Steinkrebs“",
     "description": {
       "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Kleiner Steinkrebs“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "TheArenaWhereFistsReemerge": {
+    "name": "„Wiederkehr der Pankration-Kraft“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Wiederkehr der Pankration-Kraft“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "TheWisdomOfPoisson": {
+    "name": "„Weisheit der Straßen Poissons“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Weisheit der Straßen Poissons“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "ASimpleResidenceInPoisson": {
+    "name": "„Einfaches Heim Poissons“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Einfaches Heim Poissons“.",
       "1": "Nach der Anwendung im Herstellungsmenü zu finden."
     }
   },
@@ -30044,6 +30750,34 @@
       "1": "Nach der Anwendung im Herstellungsmenü zu finden."
     }
   },
+  "CourtyardCorridorTheMoraDividend": {
+    "name": "Hofvilla-Gang – „Mora-Teiler“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Hofvilla-Gang – ‚Mora-Teiler‘“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "CourtyardCorridorManifoldCorners": {
+    "name": "Hofvilla-Gang – „Stromlinienförmige Ecke“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Hofvilla-Gang – ‚Stromlinienförmige Ecke‘“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "CourtyardArchwayMomentOfGlory": {
+    "name": "Hofvilla-Arkade – „Glorreicher Moment“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Hofvilla-Arkade – ‚Glorreicher Moment‘“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "CourtyardWallABitOfScenery": {
+    "name": "Hofvilla-Umfassungsmauer – „Einer Landschaft Ecke“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Hofvilla-Umfassungsmauer – ‚Einer Landschaft Ecke‘“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
   "FoundationsOfStoneFortunateTimes": {
     "name": "Steinbodenbelag – „Glückliche Zeiten“",
     "description": {
@@ -30514,9 +31248,9 @@
     }
   },
   "MajestyOfTheForbiddenFortress": {
-    "name": "„Majestät der verbotenen Festung“",
+    "name": "„Majestät in der verbotenen Festung“",
     "description": {
-      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Majestät der verbotenen Festung“.",
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Majestät in der verbotenen Festung“.",
       "1": "Nach der Anwendung im Herstellungsmenü zu finden."
     }
   },
@@ -30538,6 +31272,13 @@
     "name": "Vorrichtungsmodell – „Steinbruch-Anker“",
     "description": {
       "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Vorrichtungsmodell – ‚Steinbruch-Anker‘“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "BoxingTargetOfTheForbiddenFortress": {
+    "name": "„Ziel in der verbotenen Festung“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Ziel in der verbotenen Festung“.",
       "1": "Nach der Anwendung im Herstellungsmenü zu finden."
     }
   },
@@ -31304,6 +32045,55 @@
       "1": "Nach der Anwendung im Herstellungsmenü zu finden."
     }
   },
+  "OverburdeningOfTheForbiddenFortress": {
+    "name": "„Speicher in der verbotenen Festung“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Speicher in der verbotenen Festung“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "AreaMarkerUpward": {
+    "name": "Gebietshinweis – „Nach oben“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Gebietshinweis – ‚Nach oben‘“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "AreaMarkerDownward": {
+    "name": "Gebietshinweis – „Nach unten“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Gebietshinweis – ‚Nach unten‘“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "PoissonDoorFrame": {
+    "name": "„Türrahmen Poissons“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Türrahmen Poissons“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "BookshelfFreeReading": {
+    "name": "Bücher- und Zeitschriftenregal – „Zur freien Verfügung“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Bücher- und Zeitschriftenregal – ‚Zur freien Verfügung‘“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "BookshelfSpeedyBrowsing": {
+    "name": "Bücher- und Zeitschriftenregal – „Schnelle Übersicht“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Bücher- und Zeitschriftenregal – ‚Schnelle Übersicht‘“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "BookshelfFocusedEffect": {
+    "name": "Bücher- und Zeitschriftenregal – „Fokuseffekt“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Bücher- und Zeitschriftenregal – ‚Fokuseffekt‘“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
   "PoolOfSapphireGrace": {
     "name": "Geistwolkenbecken",
     "description": {
@@ -31595,6 +32385,20 @@
     "name": "„Des Wandelgangs Rundtisch“",
     "description": {
       "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Des Wandelgangs Rundtisch“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "ProductionRackTheBasics": {
+    "name": "Produktionsregal – „Basismodell“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Produktionsregal – ‚Basismodell‘“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "ProductionRackCustomBuild": {
+    "name": "Produktionsregal – „Umgebaut“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Produktionsregal – ‚Umgebaut‘“.",
       "1": "Nach der Anwendung im Herstellungsmenü zu finden."
     }
   },
