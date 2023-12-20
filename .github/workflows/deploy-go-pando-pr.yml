@@ -8,9 +8,7 @@ permissions:
   pull-requests: write
 
 on:
-  pull_request_target:
-    branches:
-      - master
+  pull_request:
     paths-ignore:
       - 'apps/frontend/**'
       - 'apps/frontend-e2e/**'
@@ -28,6 +26,8 @@ on:
 jobs:
   call-deploy-frontend:
     uses: ./.github/workflows/deploy-frontend.yml
+    # Forks don't have permission to deploy
+    if: ${{ github.event.pull_request.head.repo.full_name == github.repository }}
     with:
       frontend_name: 'gi-frontend'
       repo_full_name: ${{ github.event.pull_request.head.repo.full_name }}
