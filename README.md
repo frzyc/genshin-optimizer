@@ -10,10 +10,10 @@
 
 # WE NEED HELP!
 
-Are you a web developer who is looking to contribute to the most over-engineered Genshin website every made? Can you distinguish which one of the following is a pokemon?
+Are you a web developer who is looking to contribute to the most over-engineered Genshin website ever made? Can you distinguish which one of the following is a pokemon?
 
 ```
-React MaterialUI nx ekans GraphQL git metapod NextJS discord.js vite nodeJS emotion prisma Agumon tessract.js typescript bun webpack next-auth jest
+React MaterialUI nx ekans GraphQL git metapod NextJS discord.js vite nodeJS emotion prisma Agumon tessract.js typescript bun sawk webpack next-auth jest
 ```
 
 If you have knowledge in some(or any) of those techonology mentioned above, or are hoping to learn in an actively-developed app with thousands of users, please join our (discord)[https://discord.gg/CXUbQXyfUs]! We'd love to work with you.
@@ -63,7 +63,7 @@ The dependencies to the apps are in [/libs](/libs/)
 
 [`gi-frontend-next`](/apps/gi-frontend-next/) - WIP GO frontend - website built using NextJS, MUI, next-auth, using the Pando calculation engine.
 
-[`gi-backend`](/apps/gi-backend/) - WIP GO backend - supporting `gi-frontend-next`, using nextJS, prisma, GraphQL, and mongoDB.
+[`gi-backend`](/apps/gi-backend/) - WIP GO backend - supporting `gi-frontend-next`, using nestJS, prisma, GraphQL, and mongoDB.
 
 `somnia-bot` - WIP discord bot - built using discord.js, using the Pando Calculation engine.
 
