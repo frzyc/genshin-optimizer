@@ -76,11 +76,14 @@ jobs:
       - name: Output date
         id: output-date
         run: echo "date=$(date -u)" >> $GITHUB_OUTPUT
+      - name: Output ref
+        id: output-ref
+        run: echo "ref=$(git rev-parse HEAD)" >> $GITHUB_OUTPUT
       - name: Maintain comment
         uses: actions-cool/maintain-one-comment@v3
         with:
           body: |
-            [${{ inputs.frontend_name }}] [${{ steps.output-date.outputs.date }}] - Building version $(git rev-parse HEAD)
+            [${{ inputs.frontend_name }}] [${{ steps.output-date.outputs.date }}] - Building version ${{ steps.output-ref.outputs.ref }}
           body-include: '<!-- Created by actions-cool/maintain-one-comment -->'
           update-mode: 'append'
       - name: Build genshin-optimizer (Webpack)
@@ -128,6 +131,7 @@ jobs:
             git push origin gh-pages
       - name: Export url
         id: export-url
+        # First line splits the full repo name (frzyc/genshin-optimizer) into $account (frzyc) and $repo (genshin-optimizer)
         run: |
           IFS=/ read -r account repo <<< ${{ inputs.pr_repo }}
           echo "url=Deployed $(git rev-parse HEAD) to https://$account.github.io/$repo/${{ inputs.deployment_name }}/${{ inputs.frontend_name }} (Takes 3-5 minutes after this completes to be available)" >> $GITHUB_OUTPUT
