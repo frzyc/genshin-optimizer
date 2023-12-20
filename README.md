@@ -16,7 +16,7 @@ Are you a web developer who is looking to contribute to the most over-engineered
 React MaterialUI nx ekans GraphQL git metapod NextJS discord.js vite nodeJS emotion prisma Agumon tessract.js typescript bun sawk webpack next-auth jest
 ```
 
-If you have knowledge in some(or any) of those techonology mentioned above, or are hoping to learn in an actively-developed app with thousands of users, please join our (discord)[https://discord.gg/CXUbQXyfUs]! We'd love to work with you.
+If you have knowledge in some(or any) of those techonology mentioned above, or are hoping to learn in an actively-developed app with thousands of users, please join our [Discord](https://discord.gg/CXUbQXyfUs)! We'd love to work with you.
 
 ## Genshin Optimizer Roadmap
 
