@@ -80,7 +80,7 @@ jobs:
         uses: actions-cool/maintain-one-comment@v3
         with:
           body: |
-            [${{ inputs.frontend_name }}] [${{ steps.output-date.outputs.date }}] - Building version ${{ inputs.ref }}
+            [${{ inputs.frontend_name }}] [${{ steps.output-date.outputs.date }}] - Building version $(git rev-parse HEAD)
           body-include: '<!-- Created by actions-cool/maintain-one-comment -->'
           update-mode: 'append'
       - name: Build genshin-optimizer (Webpack)
