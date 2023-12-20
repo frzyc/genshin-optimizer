@@ -62,7 +62,7 @@ The dependencies to the apps are in [/libs](/libs/)
 ### Notable Libs
 [gi-good](/libs/gi-good/) - Interface for the Genshin Open Object Description (GOOD). An import format for Genshin scanners.
 
-[sr-srod](/libs/sr-srod/) - Interface for the Star Rail Object Description (SROD). An import format for Star rail scanners.
+[sr-srod](/libs/sr-srod/) - Interface for the Star Rail Object Description (SROD). An import format for Star Rail scanners.
 
 [pando](/libs/pando/) - The new Optimizer calculation engine.
 
