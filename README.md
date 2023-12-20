@@ -9,7 +9,9 @@
 [Genshin Optimizer](https://frzyc.github.io/genshin-optimizer) is a helper website for the online action-rpg gacha game [Genshin Impact](https://genshin.mihoyo.com/). It is intended to assist players with optimizing artifacts to max-min their characters, while providing a clean, structured UI, and provide real-time results.
 
 # WE NEED HELP!
+
 Are you a web developer who is looking to contribute to the most over-engineered Genshin website every made? Can you distinguish which one of the following is a pokemon?
+
 ```
 React MaterialUI nx ekans GraphQL git metapod NextJS discord.js vite nodeJS emotion prisma Agumon tessract.js typescript bun webpack next-auth jest
 ```
@@ -17,12 +19,15 @@ React MaterialUI nx ekans GraphQL git metapod NextJS discord.js vite nodeJS emot
 If you have knowledge in some(or any) of those techonology mentioned above, or are hoping to learn in an actively-developed app with thousands of users, please join our (discord)[https://discord.gg/CXUbQXyfUs]! We'd love to work with you.
 
 ## Genshin Optimizer Roadmap
+
 ### Main site https://frzyc.github.io/genshin-optimizer/
--  New characters and content will continue to be added as Genshin updates
+
+- New characters and content will continue to be added as Genshin updates
 - Artifact upgrade damage probability calculator - **Q1 2024**
 - Optimal substat solver for TC mode - **Q2 2024**
 
 ### GO-next
+
 - A full-stack GO solution with a backend and database
 - User login, saving artifacts/data in the backend
   - Easily sharing character builds (URL)
@@ -35,14 +40,17 @@ If you have knowledge in some(or any) of those techonology mentioned above, or a
 - **Coming Q4 2024**
 
 ### Somnia-bot
+
 - Access your GO builds from a discord bot
 - **Coming Q2 2024**
 
 ### SRO - GO but Star Rail
+
 - **We need more devs!** Please help us!
 - Coming ???
 
 ## Code structure
+
 GO is hosted as a monorepo.
 The Applications are in [/apps](/apps/)
 The dependencies to the apps are in [/libs](/libs/)
@@ -60,6 +68,7 @@ The dependencies to the apps are in [/libs](/libs/)
 `somnia-bot` - WIP discord bot - built using discord.js, using the Pando Calculation engine.
 
 ### Notable Libs
+
 [gi-good](/libs/gi-good/) - Interface for the Genshin Open Object Description (GOOD). An import format for Genshin scanners.
 
 [sr-srod](/libs/sr-srod/) - Interface for the Star Rail Object Description (SROD). An import format for Star Rail scanners.
