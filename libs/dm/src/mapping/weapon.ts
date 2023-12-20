@@ -78,6 +78,7 @@ export const weaponIdMap: Record<number | string, WeaponKey> = {
   12418: 'MailedFlower',
   12424: 'TalkingStick',
   12425: 'TidalShadow',
+  12426: 'UltimateOverlordsMegaMagicSword',
   12427: 'PortablePowerSaw',
   11428: 'SwordOfNarzissenkreuz',
   12501: 'SkywardPride',
@@ -89,6 +90,7 @@ export const weaponIdMap: Record<number | string, WeaponKey> = {
   // 12508: "",
   12510: 'RedhornStonethresher',
   12511: 'BeaconOfTheReedSea',
+  12512: 'Verdict',
 
   //polearm
   13101: 'BeginnersProtector',
