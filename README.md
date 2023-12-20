@@ -82,7 +82,7 @@ Run `yarn` to install dependencies.
 
 ## Development server
 
-Run `nx serve frontend` for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
+Run `nx serve {frontend | sr-frontend}` for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
 
 ## Understand this workspace
 
