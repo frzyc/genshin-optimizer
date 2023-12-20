@@ -57,7 +57,7 @@ The dependencies to the apps are in [/libs](/libs/)
 
 [`gi-backend`](/apps/gi-backend/) - WIP GO backend - supporting `gi-frontend-next`, using nextJS, prisma, GraphQL, and mongoDB.
 
-`somia-bot` - WIP discord bot - built using discord.js, using the Pando Calculation engine.
+`somnia-bot` - WIP discord bot - built using discord.js, using the Pando Calculation engine.
 
 ### Notable Libs
 [gi-good](/libs/gi-good/) - Interface for the Genshin Open Object Description (GOOD). An import format for Genshin scanners.
