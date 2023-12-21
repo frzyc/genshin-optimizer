@@ -84,6 +84,8 @@ export const allWeaponClaymoreKeys = [
   'TheBell',
   'TheUnforged',
   'TidalShadow',
+  'UltimateOverlordsMegaMagicSword',
+  'Verdict',
   'WasterGreatsword',
   'Whiteblind',
   'WhiteIronGreatsword',

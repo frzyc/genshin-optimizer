@@ -23,6 +23,7 @@ import ErrorBoundary from './ErrorBoundary'
 import Footer from './Footer'
 import Header from './Header'
 import useTitle from './ReactHooks/useTitle'
+import Snow from './Snow'
 import './i18n'
 
 const PageHome = lazy(() => import('./PageHome'))
@@ -133,7 +134,7 @@ function App() {
 }
 function Content() {
   return (
-    <Grid container direction="column" minHeight="100vh">
+    <Grid container direction="column" minHeight="100vh" position="relative">
       <Grid item>
         <Header anchor="back-to-top-anchor" />
       </Grid>
@@ -163,6 +164,7 @@ function Content() {
       </Container>
       {/* make sure footer is always at bottom */}
       <Grid item flexGrow={1} />
+      <Snow />
       <Grid item>
         <Footer />
       </Grid>

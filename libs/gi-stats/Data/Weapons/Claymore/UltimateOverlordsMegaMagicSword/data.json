@@ -1,0 +1,47 @@
+{
+  "weaponType": "claymore",
+  "rarity": 4,
+  "mainStat": {
+    "type": "atk",
+    "base": 43.7349,
+    "curve": "GROW_CURVE_ATTACK_202"
+  },
+  "subStat": {
+    "type": "enerRech_",
+    "base": 0.066667,
+    "curve": "GROW_CURVE_CRITICAL_201"
+  },
+  "lvlCurves": [
+    {
+      "key": "atk",
+      "base": 43.7349,
+      "curve": "GROW_CURVE_ATTACK_202"
+    },
+    {
+      "key": "enerRech_",
+      "base": 0.066667,
+      "curve": "GROW_CURVE_CRITICAL_201"
+    }
+  ],
+  "refinementBonus": {
+    "atk_": [
+      -1,
+      0.12,
+      0.15,
+      0.18,
+      0.21,
+      0.24
+    ]
+  },
+  "ascensionBonus": {
+    "atk": [
+      0,
+      25.9,
+      51.9,
+      77.8,
+      103.7,
+      129.7,
+      155.6
+    ]
+  }
+}

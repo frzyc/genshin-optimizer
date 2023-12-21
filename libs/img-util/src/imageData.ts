@@ -13,34 +13,32 @@ export function cropCanvas(
   return canvas
 }
 
-export function cropImageData(
-  srcCanvas: HTMLCanvasElement,
-  x: number,
-  y: number,
-  w: number,
-  h: number
-) {
-  const ctx = srcCanvas.getContext('2d', { willReadFrequently: true })!
-  return ctx.getImageData(x, y, w, h)
+type CropOptions = {
+  x1?: number
+  x2?: number
+  y1?: number
+  y2?: number
 }
-export function cropVertical(
-  srcCanvas: HTMLCanvasElement,
-  x1: number,
-  x2: number
-) {
-  return cropImageData(srcCanvas, x1, 0, x2 - x1, srcCanvas.height)
-}
-export function cropHorizontal(
-  srcCanvas: HTMLCanvasElement,
-  y1: number,
-  y2: number
-) {
-  if (y1 === y2) {
-    console.warn(`trying to crop with y1:${y1} y2:${y2}. Crop aborted.`)
-    return cropImageData(srcCanvas, 0, 0, srcCanvas.width, srcCanvas.height)
+export function crop(srcCanvas: HTMLCanvasElement, options: CropOptions) {
+  const width = srcCanvas.width
+  const height = srcCanvas.height
+  let { x1 = 0, x2 = width, y1 = 0, y2 = height } = options
+  if (y1 > y2 || y1 > height) {
+    console.warn(
+      `trying to crop with y1:${y1} y2:${y2}, with src height ${height}.`
+    )
+    y1 = 0
+    y2 = height
   }
-
-  return cropImageData(srcCanvas, 0, y1, srcCanvas.width, y2 - y1)
+  if (x1 > x2 || x1 > width) {
+    console.warn(
+      `trying to crop with x1:${x1} x2:${x2}, with src width ${width}.`
+    )
+    x1 = 0
+    x2 = width
+  }
+  const ctx = srcCanvas.getContext('2d', { willReadFrequently: true })!
+  return ctx.getImageData(x1, y1, x2 - x1, y2 - y1)
 }
 
 export const fileToURL = (file: File): Promise<string> =>

@@ -41,8 +41,16 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git rm -r ./${{ steps.build-info.outputs.deploy_path }}
           git commit -m "clean ${{ steps.build-info.outputs.deploy_path }}"
-          git push origin gh-pages
         working-directory: gh-pages
+      - name: Push commit
+        uses: nick-fields/retry@v2
+        with:
+          max_attempts: 4
+          timeout_minutes: 4
+          command: |
+            cd gh-pages
+            git pull origin gh-pages
+            git push origin gh-pages
       - name: Output date
         id: output-date
         run: echo "date=$(date -u)" >> $GITHUB_OUTPUT
