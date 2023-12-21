@@ -1,3 +1,5 @@
+import { clamp } from '@genshin-optimizer/util'
+
 export function cropCanvas(
   srcCanvas: HTMLCanvasElement,
   x: number,
@@ -23,14 +25,18 @@ export function crop(srcCanvas: HTMLCanvasElement, options: CropOptions) {
   const width = srcCanvas.width
   const height = srcCanvas.height
   let { x1 = 0, x2 = width, y1 = 0, y2 = height } = options
-  if (y1 > y2 || y1 > height) {
+  x1 = clamp(x1, 0, width)
+  x2 = clamp(x2, 0, width)
+  y1 = clamp(y1, 0, height)
+  y2 = clamp(y2, 0, height)
+  if (y1 >= y2) {
     console.warn(
       `trying to crop with y1:${y1} y2:${y2}, with src height ${height}.`
     )
     y1 = 0
     y2 = height
   }
-  if (x1 > x2 || x1 > width) {
+  if (x1 >= x2) {
     console.warn(
       `trying to crop with x1:${x1} x2:${x2}, with src width ${width}.`
     )

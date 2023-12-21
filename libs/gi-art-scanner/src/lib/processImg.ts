@@ -73,7 +73,7 @@ export async function processEntry(
 
   const titleHistogram = findTitle(artifactCardImageData)
   const [titleTop, titleBot] = titleHistogram
-    ? findHistogramRange(titleHistogram)
+    ? findHistogramRange(titleHistogram, 0.7, 1) // smaller threshold
     : [0, 0]
 
   const whiteCardHistogram = histogramContAnalysis(
@@ -261,6 +261,8 @@ export async function processEntry(
     )
   if (debugImgs) {
     debugImgs['bwHeader'] = imageDataToCanvas(bwHeader).toDataURL()
+    debugImgs['greenTextCropped'] =
+      imageDataToCanvas(greenTextCropped).toDataURL()
     debugImgs['bwGreenText'] = imageDataToCanvas(bwGreenText).toDataURL()
     if (bwEquipped)
       debugImgs['bwEquipped'] = imageDataToCanvas(bwEquipped).toDataURL()
