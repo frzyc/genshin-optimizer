@@ -164,6 +164,8 @@ import ToukabouShigure from './ToukabouShigure'
 import TravelersHandySword from './TravelersHandySword'
 import TulaytullahsRemembrance from './TulaytullahsRemembrance'
 import TwinNephrite from './TwinNephrite'
+import UltimateOverlordsMegaMagicSword from './UltimateOverlordsMegaMagicSword'
+import Verdict from './Verdict'
 import VortexVanquisher from './VortexVanquisher'
 import WanderingEvenstar from './WanderingEvenstar'
 import WasterGreatsword from './WasterGreatsword'
@@ -343,6 +345,8 @@ const data = {
   TravelersHandySword,
   TulaytullahsRemembrance,
   TwinNephrite,
+  UltimateOverlordsMegaMagicSword,
+  Verdict,
   VortexVanquisher,
   WanderingEvenstar,
   WasterGreatsword,
