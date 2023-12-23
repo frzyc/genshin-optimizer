@@ -7,8 +7,8 @@ export default function Snow() {
   if (!snow) return null
   return (
     <div id="snowflake-container">
-      {range(1, 200).map(() => (
-        <div className="snowflake" />
+      {range(1, 200).map((i) => (
+        <div key={i} className="snowflake" />
       ))}
     </div>
   )
