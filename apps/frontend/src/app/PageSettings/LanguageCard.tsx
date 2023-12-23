@@ -1,24 +1,7 @@
-import { CardContent, Divider, MenuItem } from '@mui/material'
+import { MenuItem } from '@mui/material'
 import { Trans, useTranslation } from 'react-i18next'
-import CardLight from '../Components/Card/CardLight'
 import DropdownButton from '../Components/DropdownMenu/DropdownButton'
-import SqBadge from '../Components/SqBadge'
 import { languageCodeList } from '../i18n'
-export default function LanguageCard() {
-  const { t } = useTranslation()
-  return (
-    <CardLight>
-      <CardContent sx={{ py: 1 }}>
-        {t('settings:languageCard.selectLanguage')}{' '}
-        <SqBadge color="warning">{t('ui:underConstruction')}</SqBadge>
-      </CardContent>
-      <Divider />
-      <CardContent>
-        <LanguageDropdown />
-      </CardContent>
-    </CardLight>
-  )
-}
 
 const nativeLanguages = {
   chs: '简体中文',
@@ -37,7 +20,7 @@ const nativeLanguages = {
   tr: 'Türkçe',
   vi: 'Tiếng Việt',
 }
-export function LanguageDropdown() {
+export default function LanguageCard() {
   const { t, i18n } = useTranslation(['ui', 'settings'])
   const onSetLanguage = (lang) => () => i18n.changeLanguage(lang)
   const currentLang = i18n.languages[0]
