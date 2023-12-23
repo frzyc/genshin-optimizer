@@ -25,6 +25,7 @@ import Header from './Header'
 import useTitle from './ReactHooks/useTitle'
 import Snow from './Snow'
 import './i18n'
+import { SnowContext, useSnow } from './Context/SnowContext'
 
 const PageHome = lazy(() => import('./PageHome'))
 const PageArtifact = lazy(() => import('./PageArtifact'))
@@ -102,31 +103,34 @@ function App() {
     [databases, setDatabases, database, setDatabase]
   )
   const SillyContextObj = useSilly()
+  const SnowContextObj = useSnow()
   return (
     <StyledEngineProvider injectFirst>
       {/* https://mui.com/guides/interoperability/#css-injection-order-2 */}
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <SillyContext.Provider value={SillyContextObj}>
-          <DatabaseContext.Provider value={dbContextObj}>
-            <ErrorBoundary>
-              <HashRouter basename="/">
-                <Suspense fallback={null}>
-                  <MatchTitle />
-                </Suspense>
-                <Content />
-                <ScrollTop>
-                  <Fab
-                    color="secondary"
-                    size="small"
-                    aria-label="scroll back to top"
-                  >
-                    <KeyboardArrowUp />
-                  </Fab>
-                </ScrollTop>
-              </HashRouter>
-            </ErrorBoundary>
-          </DatabaseContext.Provider>
+          <SnowContext.Provider value={SnowContextObj}>
+            <DatabaseContext.Provider value={dbContextObj}>
+              <ErrorBoundary>
+                <HashRouter basename="/">
+                  <Suspense fallback={null}>
+                    <MatchTitle />
+                  </Suspense>
+                  <Content />
+                  <ScrollTop>
+                    <Fab
+                      color="secondary"
+                      size="small"
+                      aria-label="scroll back to top"
+                    >
+                      <KeyboardArrowUp />
+                    </Fab>
+                  </ScrollTop>
+                </HashRouter>
+              </ErrorBoundary>
+            </DatabaseContext.Provider>
+          </SnowContext.Provider>
         </SillyContext.Provider>
       </ThemeProvider>
     </StyledEngineProvider>

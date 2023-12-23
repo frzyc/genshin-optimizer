@@ -1,7 +1,7 @@
 {
   "title": "Settings",
+  "letsnow": "Let it snow",
   "languageCard": {
-    "selectLanguage": "Select Language",
     "languageFormat": "Language: {{language}}"
   },
   "sillyCard": {
