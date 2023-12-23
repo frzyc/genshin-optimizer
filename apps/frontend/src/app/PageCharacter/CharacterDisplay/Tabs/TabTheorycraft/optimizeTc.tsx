@@ -16,7 +16,7 @@ import { constant } from '../../../../Formula/utils'
 import { getTeamData } from '../../../../ReactHooks/useTeamData'
 import type { ICharTC } from '../../../../Types/character'
 import type { ICachedWeapon } from '../../../../Types/weapon'
-import { deepClone, objPathValue, objectMap } from '../../../../Util/Util'
+import { objPathValue, objectMap } from '../../../../Util/Util'
 import { dynamicData } from '../TabOptimize/foreground'
 
 // This solves

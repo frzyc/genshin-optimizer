@@ -417,8 +417,6 @@ export default function TabTheorycraft() {
                     mainStatKeys={Object.values(charTC.artifact.slots).map(
                       (s) => s.statKey
                     )}
-                    distributedSubstats={distributedSubstats}
-                    setDistributedSubstats={setDistributedSubstats}
                     maxSubstats={maxSubstats}
                     setMaxSubstats={(k: SubstatKey) => (v: number) => {
                       if (charTC.optimization.maxSubstats[k] === v) return
@@ -881,8 +879,6 @@ function ArtifactSubCard({
   substatsType,
   setSubstatsType,
   mainStatKeys,
-  distributedSubstats,
-  setDistributedSubstats,
   maxSubstats,
   setMaxSubstats,
 }: {
@@ -891,8 +887,6 @@ function ArtifactSubCard({
   substatsType: SubstatTypeKey
   setSubstatsType: (t: SubstatTypeKey) => void
   mainStatKeys: MainStatKey[]
-  distributedSubstats: number
-  setDistributedSubstats: (f: number) => void
   maxSubstats: Record<SubstatKey, number>
   setMaxSubstats: (k: SubstatKey) => (v: number) => void
 }) {
