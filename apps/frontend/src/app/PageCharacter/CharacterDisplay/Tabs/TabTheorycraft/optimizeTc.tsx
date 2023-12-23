@@ -164,7 +164,7 @@ export function optimizeTc(
     }
 
     if (apply) {
-      const data_ = deepClone(charTC)
+      const data_ = structuredClone(charTC)
       data_.artifact.substats.stats = objectMap(
         charTC.artifact.substats.stats,
         (v, k) => v + (maxBuffer![k] ?? 0) * comp(k)

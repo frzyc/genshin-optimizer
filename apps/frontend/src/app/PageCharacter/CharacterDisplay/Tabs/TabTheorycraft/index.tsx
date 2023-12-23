@@ -99,6 +99,7 @@ import OptimizationTargetSelector from '../TabOptimize/Components/OptimizationTa
 import useCharTC from './useCharTC'
 import useDBMeta from '../../../../ReactHooks/useDBMeta'
 import { optimizeTc } from './optimizeTc'
+import CalculateIcon from '@mui/icons-material/Calculate'
 const WeaponSelectionModal = React.lazy(
   () => import('../../../../Components/Weapon/WeaponSelectionModal')
 )
@@ -394,57 +395,86 @@ export default function TabTheorycraft() {
         </CardLight>
         {dataContextValue ? (
           <DataContext.Provider value={dataContextValue}>
-            <Grid container spacing={1} sx={{ justifyContent: 'center' }}>
-              <Grid item sx={{ flexGrow: -1 }}>
-                <WeaponEditorCard
-                  weapon={weapon}
-                  setWeapon={setWeapon}
-                  weaponTypeKey={characterSheet.weaponTypeKey}
-                />
-                <ArtifactMainLevelCard
-                  artifactData={charTC.artifact}
-                  setArtifactData={setArtifact}
-                />
+            <Box>
+              <Grid container spacing={1} sx={{ justifyContent: 'center' }}>
+                <Grid item sx={{ flexGrow: -1, maxWidth: '450px' }}>
+                  <WeaponEditorCard
+                    weapon={weapon}
+                    setWeapon={setWeapon}
+                    weaponTypeKey={characterSheet.weaponTypeKey}
+                  />
+                  <ArtifactMainLevelCard
+                    artifactData={charTC.artifact}
+                    setArtifactData={setArtifact}
+                  />
+                </Grid>
+                <Grid item sx={{ flexGrow: 1 }}>
+                  <ArtifactSubCard
+                    substats={charTC.artifact.substats.stats}
+                    setSubstats={setSubstats}
+                    substatsType={charTC.artifact.substats.type}
+                    setSubstatsType={setSubstatsType}
+                    mainStatKeys={Object.values(charTC.artifact.slots).map(
+                      (s) => s.statKey
+                    )}
+                    distributedSubstats={distributedSubstats}
+                    setDistributedSubstats={setDistributedSubstats}
+                    maxSubstats={maxSubstats}
+                    setMaxSubstats={(k: SubstatKey) => (v: number) => {
+                      if (charTC.optimization.maxSubstats[k] === v) return
+                      const data_ = structuredClone(charTC)
+                      data_.optimization.maxSubstats[k] = v
+                      setCharTC(data_)
+                    }}
+                  />
+                </Grid>
               </Grid>
-              <Grid item sx={{ flexGrow: 1 }}>
-                <ArtifactSubCard
-                  substats={charTC.artifact.substats.stats}
-                  setSubstats={setSubstats}
-                  substatsType={charTC.artifact.substats.type}
-                  setSubstatsType={setSubstatsType}
-                  mainStatKeys={Object.values(charTC.artifact.slots).map(
-                    (s) => s.statKey
-                  )}
-                  distributedSubstats={distributedSubstats}
-                  setDistributedSubstats={setDistributedSubstats}
-                  maxSubstats={maxSubstats}
-                  setMaxSubstats={(k: SubstatKey) => (v: number) => {
-                    if (charTC.optimization.maxSubstats[k] === v) return
-                    const data_ = structuredClone(charTC)
-                    data_.optimization.maxSubstats[k] = v
-                    setCharTC(data_)
+            </Box>
+            <Box display="flex" flexDirection="column" gap={1}>
+              <Box display="flex" gap={1}>
+                <OptimizationTargetSelector
+                  optimizationTarget={optimizationTarget}
+                  setTarget={(target) => setOptimizationTarget(target)}
+                />
+                <CustomNumberInput
+                  value={distributedSubstats}
+                  onChange={(v) => v !== undefined && setDistributedSubstats(v)}
+                  endAdornment={'Substats'}
+                  sx={{
+                    borderRadius: 1,
+                    px: 1,
+                    textWrap: 'nowrap',
+                    flexShrink: 1,
+                  }}
+                  inputProps={{
+                    sx: {
+                      textAlign: 'right',
+                      px: 1,
+                      width: '3em',
+                      minWidth: '3em',
+                    },
+                    min: 0,
                   }}
                 />
-              </Grid>
-            </Grid>
-            <OptimizationTargetSelector
-              optimizationTarget={optimizationTarget}
-              setTarget={(target) => setOptimizationTarget(target)}
-            />
-            {process.env.NODE_ENV === 'development' && (
-              <Button
-                onClick={optimizeSubstats(false)}
-                disabled={!optimizationTarget}
-              >
-                Log Optimized Substats
-              </Button>
-            )}
-            <Button
-              onClick={optimizeSubstats(true)}
-              disabled={!optimizationTarget}
-            >
-              Optimize Substats
-            </Button>
+                <Button
+                  onClick={optimizeSubstats(true)}
+                  disabled={!optimizationTarget || !distributedSubstats}
+                  color="success"
+                  startIcon={<CalculateIcon />}
+                >
+                  Distribute
+                </Button>
+              </Box>
+
+              {process.env.NODE_ENV === 'development' && (
+                <Button
+                  onClick={optimizeSubstats(false)}
+                  disabled={!optimizationTarget}
+                >
+                  Log Optimized Substats
+                </Button>
+              )}
+            </Box>
           </DataContext.Provider>
         ) : (
           <Skeleton variant="rectangular" width="100%" height={500} />
@@ -882,58 +912,48 @@ function ArtifactSubCard({
   )
   return (
     <CardLight sx={{ p: 1, height: '100%' }}>
-      <Box sx={{ mb: 1, display: 'flex', gap: 1 }}>
-        <DropdownButton
-          fullWidth
-          title={t(`tabTheorycraft.substatType.${substatsType}`)}
-        >
-          {substatTypeKeys.map((st) => (
-            <MenuItem
-              key={st}
-              disabled={substatsType === st}
-              onClick={() => setSubstatsType(st)}
-            >
-              {t(`tabTheorycraft.substatType.${st}`)}
-            </MenuItem>
-          ))}
-        </DropdownButton>
-        <BootstrapTooltip
-          title={<Typography>{t`tabTheorycraft.maxTotalRolls`}</Typography>}
-          placement="top"
-        >
-          <CardDark
-            sx={{
-              textAlign: 'center',
-              py: 0.5,
-              px: 1,
-              minWidth: '15em',
-              whiteSpace: 'nowrap',
-              display: 'flex',
-              gap: 2,
-              justifyContent: 'flex-end',
-              alignItems: 'center',
-            }}
-          >
-            <ColorText color={rolls > 45 ? 'warning' : undefined}>
-              Rolls: <strong>{rolls.toFixed(0)}</strong>
-            </ColorText>
-            <ColorText color={rolls > 45 ? 'warning' : undefined}>
-              RV: <strong>{rv.toFixed(1)}%</strong>
-            </ColorText>
-          </CardDark>
-        </BootstrapTooltip>
-        <CustomNumberInput
-          value={distributedSubstats}
-          onChange={(v) => v !== undefined && setDistributedSubstats(v)}
-          endAdornment={'Distributed Substats'}
-          sx={{ borderRadius: 1, px: 1, width: '50%' }}
-          inputProps={{
-            sx: { textAlign: 'right', px: 1, width: '20%' },
-            min: 0,
-          }}
-        />
-      </Box>
       <Stack spacing={1}>
+        <Box sx={{ display: 'flex', gap: 1 }}>
+          <DropdownButton
+            sx={{ flexGrow: 1 }}
+            title={t(`tabTheorycraft.substatType.${substatsType}`)}
+          >
+            {substatTypeKeys.map((st) => (
+              <MenuItem
+                key={st}
+                disabled={substatsType === st}
+                onClick={() => setSubstatsType(st)}
+              >
+                {t(`tabTheorycraft.substatType.${st}`)}
+              </MenuItem>
+            ))}
+          </DropdownButton>
+          <BootstrapTooltip
+            title={<Typography>{t`tabTheorycraft.maxTotalRolls`}</Typography>}
+            placement="top"
+          >
+            <CardDark
+              sx={{
+                textAlign: 'center',
+                py: 0.5,
+                px: 1,
+                whiteSpace: 'nowrap',
+                display: 'flex',
+                gap: 2,
+                justifyContent: 'flex-end',
+                alignItems: 'center',
+                flexShrink: 1,
+              }}
+            >
+              <ColorText color={rolls > 45 ? 'warning' : undefined}>
+                Rolls: <strong>{rolls.toFixed(0)}</strong>
+              </ColorText>
+              <ColorText color={rolls > 45 ? 'warning' : undefined}>
+                RV: <strong>{rv.toFixed()}%</strong>
+              </ColorText>
+            </CardDark>
+          </BootstrapTooltip>
+        </Box>
         <ArtifactAllSubstatEditor />
         {Object.entries(substats).map(([k, v]) => (
           <ArtifactSubstatEditor
@@ -997,6 +1017,17 @@ function ArtifactSubstatEditor({
         justifyContent="space-between"
         alignItems="center"
       >
+        <CustomNumberInput
+          color={displayValue ? 'success' : 'primary'}
+          float={KeyMap.unit(statKey) === '%'}
+          endAdornment={
+            KeyMap.unit(statKey) || <Box width="1em" component="span" />
+          }
+          value={parseFloat(displayValue.toFixed(2))}
+          onChange={(v) => v !== undefined && setValue(v)}
+          sx={{ borderRadius: 1, px: 1, height: '100%', width: '5em' }}
+          inputProps={{ sx: { textAlign: 'right' }, min: 0 }}
+        />
         <CardDark
           sx={{
             p: 0.5,
@@ -1012,10 +1043,34 @@ function ArtifactSubstatEditor({
           {KeyMap.getStr(statKey)}
           {KeyMap.unit(statKey)}
         </CardDark>
+        <CustomNumberInput
+          color={value ? (invalid ? 'warning' : 'success') : 'primary'}
+          float
+          startAdornment={
+            <Box
+              sx={{
+                whiteSpace: 'nowrap',
+                width: '6em',
+                display: 'flex',
+                justifyContent: 'space-between',
+              }}
+            >
+              <span>
+                {artDisplayValue(substatValue, unit)}
+                {unit}
+              </span>
+              <span>x</span>
+            </Box>
+          }
+          value={parseFloat(rolls.toFixed(2))}
+          onChange={(v) => v !== undefined && setValue(v * substatValue)}
+          sx={{ borderRadius: 1, px: 1, my: 0, height: '100%', width: '5.5em' }}
+          inputProps={{ sx: { textAlign: 'right', pr: 0.5 }, min: 0, step: 1 }}
+        />
         {/* <BootstrapTooltip title={<Typography>{t(numMains ? `tabTheorycraft.maxRollsMain` : `tabTheorycraft.maxRolls`, { value: maxRolls })}</Typography>} placement="top"> */}
-        <CardDark sx={{ textAlign: 'center', p: 0.5, minWidth: '8em' }}>
+        <CardDark sx={{ textAlign: 'center', p: 0.5, minWidth: '6em' }}>
           <ColorText color={invalid ? 'warning' : undefined}>
-            RV: <strong>{rv.toFixed(1)}%</strong>
+            RV: <strong>{rv.toFixed()}%</strong>
           </ColorText>
         </CardDark>
         {/* </BootstrapTooltip> */}
@@ -1026,17 +1081,6 @@ function ArtifactSubstatEditor({
         justifyContent="space-between"
         alignItems="center"
       >
-        <CustomNumberInput
-          color={displayValue ? 'success' : 'primary'}
-          float={KeyMap.unit(statKey) === '%'}
-          endAdornment={
-            KeyMap.unit(statKey) || <Box width="1em" component="span" />
-          }
-          value={parseFloat(displayValue.toFixed(2))}
-          onChange={(v) => v !== undefined && setValue(v)}
-          sx={{ borderRadius: 1, px: 1, height: '100%', width: '6em' }}
-          inputProps={{ sx: { textAlign: 'right' }, min: 0 }}
-        />
         <CardDark
           sx={{
             px: 2,
@@ -1060,36 +1104,13 @@ function ArtifactSubstatEditor({
             onChangeCommitted={(e, v) => setRValue(v as number)}
           />
         </CardDark>
-        <CustomNumberInput
-          color={value ? (invalid ? 'warning' : 'success') : 'primary'}
-          float
-          startAdornment={
-            <Box
-              sx={{
-                whiteSpace: 'nowrap',
-                width: '7em',
-                display: 'flex',
-                justifyContent: 'space-between',
-              }}
-            >
-              <span>
-                {artDisplayValue(substatValue, unit)}
-                {unit}
-              </span>
-              <span>x</span>
-            </Box>
-          }
-          value={parseFloat(rolls.toFixed(2))}
-          onChange={(v) => v !== undefined && setValue(v * substatValue)}
-          sx={{ borderRadius: 1, px: 1, my: 0, height: '100%', width: '7em' }}
-          inputProps={{ sx: { textAlign: 'right', pr: 0.5 }, min: 0, step: 1 }}
-        />
+
         <CustomNumberInput
           value={maxSubstat}
           startAdornment={'Max'}
           onChange={(v) => v !== undefined && setMaxSubstat(v)}
           color={maxSubstat > maxRolls ? 'warning' : 'success'}
-          sx={{ borderRadius: 1, px: 1, my: 0, height: '100%', width: '7em' }}
+          sx={{ borderRadius: 1, px: 1, my: 0, height: '100%', width: '6em' }}
           inputProps={{ sx: { textAlign: 'right', pr: 0.5 }, min: 0, step: 1 }}
         />
       </Box>
@@ -1141,17 +1162,6 @@ function ArtifactAllSubstatEditor() {
     >
       <CardDark
         sx={{
-          p: 0.5,
-          minWidth: '11em',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}
-      >
-        Change all Substats
-      </CardDark>
-      <CardDark
-        sx={{
           px: 2,
           flexGrow: 1,
           display: 'flex',
@@ -1187,7 +1197,7 @@ function ArtifactAllSubstatEditor() {
         startAdornment={<Box sx={{ whiteSpace: 'nowrap' }}>All Max</Box>}
         onChange={(v) => v !== undefined && setMaxSubstat(v)}
         color={(maxSubstat ?? 0) > maxRolls ? 'warning' : 'success'}
-        sx={{ borderRadius: 1, px: 1, my: 0, height: '100%', width: '7em' }}
+        sx={{ borderRadius: 1, px: 1, my: 0, height: '100%', width: '6.5em' }}
         inputProps={{ sx: { textAlign: 'right', pr: 0.5 }, min: 0, step: 1 }}
       />
     </Box>
