@@ -46,9 +46,9 @@
   },
   "tabTheorycraft": {
     "substatType": {
-      "min": "Use minimum substat rolls",
-      "max": "Use maximum substat rolls",
-      "mid": "Use median substat rolls"
+      "min": "Min substat roll",
+      "max": "Max substat roll",
+      "mid": "Median substat roll"
     },
     "maxTotalRolls": "A \"valid\" build can only have a maximum of 45 rolls.",
     "maxRolls": "This substat can have a maximum of 30 rolls.",

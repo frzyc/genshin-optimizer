@@ -281,6 +281,7 @@ export default function TabTheorycraft() {
                 />
                 <CustomNumberInput
                   value={distributedSubstats}
+                  disabled={!optimizationTarget}
                   onChange={(v) => v !== undefined && setDistributedSubstats(v)}
                   endAdornment={'Substats'}
                   sx={{

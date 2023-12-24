@@ -1,4 +1,4 @@
-import type { SubstatKey } from '@genshin-optimizer/consts'
+import { artMaxLevel, type SubstatKey } from '@genshin-optimizer/consts'
 import { artDisplayValue, getSubstatValue } from '@genshin-optimizer/gi-util'
 import { Box, Slider, Stack } from '@mui/material'
 import { useCallback, useContext, useEffect, useState } from 'react'
@@ -14,7 +14,7 @@ export function ArtifactSubstatEditor({ statKey }: { statKey: SubstatKey }) {
     charTC: {
       artifact: {
         slots,
-        substats: { type: substatsType, stats: substats },
+        substats: { type: substatsType, stats: substats, rarity },
       },
       optimization: { maxSubstats },
     },
@@ -40,7 +40,7 @@ export function ArtifactSubstatEditor({ statKey }: { statKey: SubstatKey }) {
     [setCharTC, statKey]
   )
   // const { t } = useTranslation('page_character')
-  const substatValue = getSubstatValue(statKey, 5, substatsType)
+  const substatValue = getSubstatValue(statKey, rarity, substatsType)
   const [rolls, setRolls] = useState(() => value / substatValue)
   useEffect(() => setRolls(value / substatValue), [value, substatValue])
 
@@ -52,7 +52,7 @@ export function ArtifactSubstatEditor({ statKey }: { statKey: SubstatKey }) {
     (t, ms) => t + (ms === statKey ? 1 : 0),
     0
   )
-  const maxRolls = (5 - numMains) * 6
+  const maxRolls = (5 - numMains) * (artMaxLevel[rarity] / 4 + 1)
   // 0.0001 to nudge float comparasion
   const invalid = rolls - 0.0001 > maxRolls
   const setRValue = useCallback(
@@ -146,7 +146,7 @@ export function ArtifactSubstatEditor({ statKey }: { statKey: SubstatKey }) {
           <Slider
             size="small"
             value={rolls}
-            max={maxRolls}
+            max={Math.min(maxRolls, maxSubstat)}
             min={0}
             step={1}
             marks
@@ -160,7 +160,13 @@ export function ArtifactSubstatEditor({ statKey }: { statKey: SubstatKey }) {
           value={maxSubstat}
           startAdornment={'Max'}
           onChange={(v) => v !== undefined && setMaxSubstat(v)}
-          color={maxSubstat > maxRolls ? 'warning' : 'success'}
+          color={
+            rolls > maxSubstat
+              ? 'error'
+              : maxSubstat > maxRolls
+              ? 'warning'
+              : 'success'
+          }
           sx={{ borderRadius: 1, px: 1, my: 0, height: '100%', width: '6em' }}
           inputProps={{ sx: { textAlign: 'right', pr: 0.5 }, min: 0, step: 1 }}
         />

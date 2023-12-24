@@ -4,22 +4,44 @@ import { Box, Slider } from '@mui/material'
 import { useContext, useDeferredValue, useEffect, useState } from 'react'
 import CardDark from '../../../../../Components/Card/CardDark'
 import CustomNumberInput from '../../../../../Components/CustomNumberInput'
+import type { ICharTC } from '../../../../../Types/character'
 import { CharTCContext } from '../CharTCContext'
 
 const DEFAULT_MAX_ROLLS = 30
+
+function getMinRoll(charTC: ICharTC) {
+  const {
+    artifact: {
+      substats: { stats, rarity, type },
+    },
+  } = charTC
+  return Math.floor(
+    Math.min(
+      ...Object.entries(stats).map(
+        ([k, v]) => v / getSubstatValue(k, rarity, type)
+      )
+    )
+  )
+}
+function getMinMax(charTC: ICharTC) {
+  return Math.floor(Math.min(...Object.values(charTC.optimization.maxSubstats)))
+}
 export function ArtifactAllSubstatEditor() {
-  const [rolls, setRolls] = useState(undefined as undefined | number)
-  const [maxSubstat, setMaxSubstat] = useState(undefined as undefined | number)
-  const { setCharTC } = useContext(CharTCContext)
+  const { charTC, setCharTC } = useContext(CharTCContext)
+  const [rolls, setRolls] = useState(() => getMinRoll(charTC))
+  const [maxSubstat, setMaxSubstat] = useState(() => getMinMax(charTC))
 
   const rollsDeferred = useDeferredValue(rolls)
   useEffect(() => {
     if (rollsDeferred === undefined) return
     setCharTC((charTC) => {
-      const stats = charTC.artifact.substats.stats
-      const substatsType = charTC.artifact.substats.type
+      const {
+        artifact: {
+          substats: { stats, type, rarity },
+        },
+      } = charTC
       charTC.artifact.substats.stats = objMap(stats, (val, statKey) => {
-        const substatValue = getSubstatValue(statKey, 5, substatsType)
+        const substatValue = getSubstatValue(statKey, rarity, type)
         return substatValue * rollsDeferred
       })
     })

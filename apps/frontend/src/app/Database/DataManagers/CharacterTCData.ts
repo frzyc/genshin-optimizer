@@ -6,6 +6,7 @@ import type {
   WeaponKey,
 } from '@genshin-optimizer/consts'
 import {
+  allArtifactRarityKeys,
   allArtifactSlotKeys,
   allSubstatKeys,
   allWeaponKeys,
@@ -73,6 +74,7 @@ export function initCharTC(weaponKey: WeaponKey): ICharTC {
       substats: {
         type: 'max',
         stats: objKeyMap(allSubstatKeys, () => 0),
+        rarity: 5,
       },
       sets: {},
     },
@@ -115,13 +117,14 @@ function validateCharTCArtifact(
   if (typeof artifact !== 'object') return undefined
   let {
     slots,
-    substats: { type, stats },
+    substats: { type, stats, rarity },
     sets,
   } = artifact as ICharTC['artifact']
   const _slots = validateCharTCArtifactSlots(slots)
   if (!_slots) return undefined
   slots = _slots
   if (!substatTypeKeys.includes(type)) type = 'max'
+  if (!allArtifactRarityKeys.includes(rarity)) rarity = 5
   if (typeof stats !== 'object') stats = objKeyMap(allSubstatKeys, () => 0)
   stats = objKeyMap(allSubstatKeys, (k) =>
     typeof stats[k] === 'number' ? stats[k] : 0
@@ -130,7 +133,7 @@ function validateCharTCArtifact(
   if (typeof sets !== 'object') sets = {}
   // TODO: validate sets
 
-  return { slots, substats: { type, stats }, sets }
+  return { slots, substats: { type, stats, rarity }, sets }
 }
 function validateCharTCArtifactSlots(
   slots: unknown

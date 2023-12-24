@@ -1,4 +1,4 @@
-import type { SubstatTypeKey } from '@genshin-optimizer/consts'
+import type { ArtifactRarity, SubstatTypeKey } from '@genshin-optimizer/consts'
 import { substatTypeKeys } from '@genshin-optimizer/consts'
 import { getSubstatValue } from '@genshin-optimizer/gi-util'
 import { Box, MenuItem, Stack, Typography } from '@mui/material'
@@ -12,12 +12,13 @@ import DropdownButton from '../../../../../Components/DropdownMenu/DropdownButto
 import { CharTCContext } from '../CharTCContext'
 import { ArtifactAllSubstatEditor } from './ArtifactAllSubstatEditor'
 import { ArtifactSubstatEditor } from './ArtifactSubstatEditor'
+import ArtifactRarityDropdown from '../../../../../Components/Artifact/ArtifactRarityDropdown'
 export function ArtifactSubCard() {
   const { t } = useTranslation('page_character')
   const {
     charTC: {
       artifact: {
-        substats: { type: substatsType, stats: substats },
+        substats: { type: substatsType, stats: substats, rarity },
       },
     },
     setCharTC,
@@ -30,6 +31,14 @@ export function ArtifactSubCard() {
     },
     [setCharTC]
   )
+  const setRarity = useCallback(
+    (r: ArtifactRarity) => {
+      setCharTC((charTC) => {
+        charTC.artifact.substats.rarity = r
+      })
+    },
+    [setCharTC]
+  )
 
   const rv =
     Object.entries(substats).reduce(
@@ -37,7 +46,7 @@ export function ArtifactSubCard() {
       0
     ) * 100
   const rolls = Object.entries(substats).reduce(
-    (t, [k, v]) => t + v / getSubstatValue(k, undefined, substatsType),
+    (t, [k, v]) => t + v / getSubstatValue(k, rarity, substatsType),
     0
   )
   return (
@@ -58,6 +67,11 @@ export function ArtifactSubCard() {
               </MenuItem>
             ))}
           </DropdownButton>
+          <ArtifactRarityDropdown
+            rarity={rarity}
+            onChange={(r) => setRarity(r)}
+            filter={(r) => r !== rarity}
+          />
           <BootstrapTooltip
             title={<Typography>{t`tabTheorycraft.maxTotalRolls`}</Typography>}
             placement="top"

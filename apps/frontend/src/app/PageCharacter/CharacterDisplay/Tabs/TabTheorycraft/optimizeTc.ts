@@ -1,7 +1,7 @@
 import type { SubstatKey } from '@genshin-optimizer/consts'
 import { allSubstatKeys, type CharacterKey } from '@genshin-optimizer/consts'
 import { getSubstatValue } from '@genshin-optimizer/gi-util'
-import { objMap } from '@genshin-optimizer/util'
+import { clampLow, objMap } from '@genshin-optimizer/util'
 import type { TeamData } from '../../../../Context/DataContext'
 import { mergeData } from '../../../../Formula/api'
 import { mapFormulas } from '../../../../Formula/internal'
@@ -24,10 +24,15 @@ export function optimizeTc(
 ) {
   const startTime = performance.now()
   const {
-    target: optimizationTarget,
-    distributedSubstats,
-    maxSubstats,
-  } = charTC.optimization
+    artifact: {
+      substats: { stats: substats, type: substatsType, rarity },
+    },
+    optimization: {
+      target: optimizationTarget,
+      distributedSubstats,
+      maxSubstats: rawMaxSubstats,
+    },
+  } = charTC
   if (!optimizationTarget) return {}
   const workerData = teamDataProp[characterKey]?.target.data![0]
   if (!workerData) return {}
@@ -73,14 +78,22 @@ export function optimizeTc(
 
   const comp = (statKey: string) => (statKey.endsWith('_') ? 100 : 1)
   const substatValue = (x: string, m: number) =>
-    m *
-    getSubstatValue(x as SubstatKey, 5, charTC.artifact.substats.type, false)
+    m * getSubstatValue(x as SubstatKey, rarity, substatsType, false)
 
   let maxBuffer: Record<string, number> = Object.fromEntries(
     [...subs].map((x) => [x, 0])
   )
   const subsArr = [...subs]
   let distributed = distributedSubstats
+  const maxSubstats = objMap(rawMaxSubstats, (v, k) => {
+    return (
+      v -
+      clampLow(
+        Math.ceil(substats[k] / getSubstatValue(k, rarity, substatsType)),
+        0
+      )
+    )
+  })
   const assignableMaxTot = subsArr.reduce((a, x) => a + maxSubstats[x], 0)
   if (assignableMaxTot <= distributedSubstats) {
     distributed = assignableMaxTot
@@ -125,13 +138,7 @@ export function optimizeTc(
         maxBufferInt: objMap(
           maxBuffer,
           (v, k) =>
-            v /
-            getSubstatValue(
-              k as SubstatKey,
-              5,
-              charTC.artifact.substats.type,
-              false
-            )
+            v / getSubstatValue(k as SubstatKey, rarity, substatsType, false)
         ),
         subsArr,
       })
