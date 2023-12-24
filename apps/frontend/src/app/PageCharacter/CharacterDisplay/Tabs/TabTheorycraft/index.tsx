@@ -1,4 +1,7 @@
-import { getMainStatDisplayValue } from '@genshin-optimizer/gi-util'
+import {
+  getMainStatDisplayValue,
+  getSubstatValue,
+} from '@genshin-optimizer/gi-util'
 import { objMap } from '@genshin-optimizer/util'
 import { CopyAll, Refresh } from '@mui/icons-material'
 import CalculateIcon from '@mui/icons-material/Calculate'
@@ -34,7 +37,8 @@ import { CharTCContext } from './CharTCContext'
 import { WeaponEditorCard } from './WeaponEditorCard'
 import { optimizeTc } from './optimizeTc'
 import useCharTC from './useCharTC'
-
+import ImgIcon from '../../../../Components/Image/ImgIcon'
+import kqmIcon from './kqm.png'
 export default function TabTheorycraft() {
   const { database } = useContext(DatabaseContext)
   const { data: oldData } = useContext(DataContext)
@@ -225,6 +229,37 @@ export default function TabTheorycraft() {
       return charTC
     })
   }
+  const kqms = useCallback(() => {
+    setCharTC((charTC) => {
+      charTC.artifact.substats.type = 'mid'
+
+      const {
+        artifact: {
+          slots,
+          substats: { stats, type, rarity },
+        },
+      } = charTC
+      charTC.optimization.distributedSubstats =
+        20 - (rarity === 5 ? 0 : rarity === 4 ? 10 : 15)
+      charTC.artifact.substats.stats = objMap(stats, (val, statKey) => {
+        const substatValue = getSubstatValue(statKey, rarity, type)
+        return substatValue * 2
+      })
+      charTC.optimization.maxSubstats = objMap(
+        charTC.optimization.maxSubstats,
+        (_val, statKey) => {
+          const rollsPerSlot = 2
+          const diffSlot = 5
+          if (statKey === 'hp' || statKey === 'atk')
+            return (diffSlot - 1) * rollsPerSlot
+          const sameSlot = Object.entries(slots).filter(
+            ([_slotKey, { statKey: mainStatKey }]) => mainStatKey === statKey
+          ).length
+          return (diffSlot - sameSlot) * 2
+        }
+      )
+    })
+  }, [setCharTC])
 
   return (
     <CharTCContext.Provider value={valueCharTCContext}>
@@ -241,6 +276,9 @@ export default function TabTheorycraft() {
               </Button>
               <Button color="error" onClick={resetData} startIcon={<Refresh />}>
                 Reset
+              </Button>
+              <Button onClick={kqms} startIcon={<ImgIcon src={kqmIcon} />}>
+                KQMS
               </Button>
             </Box>
             <SolidToggleButtonGroup
