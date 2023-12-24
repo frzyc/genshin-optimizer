@@ -7,6 +7,7 @@ import CustomNumberInput from '../../../../../Components/CustomNumberInput'
 import type { ICharTC } from '../../../../../Types/character'
 import { CharTCContext } from '../CharTCContext'
 import { artSubstatRollData } from '@genshin-optimizer/consts'
+import { useIsMount } from '@genshin-optimizer/ui-common'
 
 function getMinRoll(charTC: ICharTC) {
   const {
@@ -33,7 +34,9 @@ export function ArtifactAllSubstatEditor() {
   const [rolls] = rollsData
   const [maxSubstat] = maxSubstatData
   const rollsDeferred = useDeferredValue(rollsData)
+  const isMount = useIsMount()
   useEffect(() => {
+    if (isMount) return
     setCharTC((charTC) => {
       const {
         artifact: {
@@ -45,16 +48,21 @@ export function ArtifactAllSubstatEditor() {
         return substatValue * rollsDeferred[0]
       })
     })
+    // disable triggering for isMount
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [setCharTC, rollsDeferred])
 
   const maxSubstatDeferred = useDeferredValue(maxSubstatData)
   useEffect(() => {
+    if (isMount) return
     setCharTC((charTC) => {
       charTC.optimization.maxSubstats = objMap(
         charTC.optimization.maxSubstats,
         (_val, _statKey) => maxSubstatDeferred[0]
       )
     })
+    // disable triggering for isMount
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [setCharTC, maxSubstatDeferred])
 
   const maxRolls =
