@@ -6,8 +6,7 @@ import CardDark from '../../../../../Components/Card/CardDark'
 import CustomNumberInput from '../../../../../Components/CustomNumberInput'
 import type { ICharTC } from '../../../../../Types/character'
 import { CharTCContext } from '../CharTCContext'
-
-const DEFAULT_MAX_ROLLS = 30
+import { artSubstatRollData } from '@genshin-optimizer/consts'
 
 function getMinRoll(charTC: ICharTC) {
   const {
@@ -28,12 +27,13 @@ function getMinMax(charTC: ICharTC) {
 }
 export function ArtifactAllSubstatEditor() {
   const { charTC, setCharTC } = useContext(CharTCContext)
-  const [rolls, setRolls] = useState(() => getMinRoll(charTC))
-  const [maxSubstat, setMaxSubstat] = useState(() => getMinMax(charTC))
-
-  const rollsDeferred = useDeferredValue(rolls)
+  // Encapsulate the values in an array so that changes to the same number still trigger useEffects
+  const [rollsData, setRolls] = useState(() => [getMinRoll(charTC)])
+  const [maxSubstatData, setMaxSubstat] = useState(() => [getMinMax(charTC)])
+  const [rolls] = rollsData
+  const [maxSubstat] = maxSubstatData
+  const rollsDeferred = useDeferredValue(rollsData)
   useEffect(() => {
-    if (rollsDeferred === undefined) return
     setCharTC((charTC) => {
       const {
         artifact: {
@@ -42,24 +42,25 @@ export function ArtifactAllSubstatEditor() {
       } = charTC
       charTC.artifact.substats.stats = objMap(stats, (val, statKey) => {
         const substatValue = getSubstatValue(statKey, rarity, type)
-        return substatValue * rollsDeferred
+        return substatValue * rollsDeferred[0]
       })
     })
   }, [setCharTC, rollsDeferred])
 
-  const maxSubstatDeferred = useDeferredValue(maxSubstat)
+  const maxSubstatDeferred = useDeferredValue(maxSubstatData)
   useEffect(() => {
-    if (maxSubstatDeferred === undefined) return
     setCharTC((charTC) => {
       charTC.optimization.maxSubstats = objMap(
         charTC.optimization.maxSubstats,
-        (_val, _statKey) => maxSubstatDeferred
+        (_val, _statKey) => maxSubstatDeferred[0]
       )
     })
   }, [setCharTC, maxSubstatDeferred])
 
+  const maxRolls =
+    (artSubstatRollData[charTC.artifact.substats.rarity].numUpgrades + 1) * 5
   // 0.0001 to nudge float comparasion
-  const invalid = (rolls ?? 0 - 0.0001) > DEFAULT_MAX_ROLLS
+  const invalid = (rolls ?? 0 - 0.0001) > maxRolls
 
   return (
     <Box
@@ -82,29 +83,29 @@ export function ArtifactAllSubstatEditor() {
         <Slider
           size="small"
           value={rolls ?? 0}
-          max={DEFAULT_MAX_ROLLS}
+          max={maxRolls}
           min={0}
           step={1}
           marks
           valueLabelDisplay="auto"
-          onChange={(e, v) => setRolls(v as number)}
-          onChangeCommitted={(e, v) => setRolls(v as number)}
+          onChange={(e, v) => setRolls([v as number])}
+          onChangeCommitted={(e, v) => setRolls([v as number])}
         />
       </CardDark>
       <CustomNumberInput
-        color={rolls ? (invalid ? 'warning' : 'success') : 'primary'}
+        color={rolls && invalid ? 'warning' : 'primary'}
         float
         startAdornment={<Box sx={{ whiteSpace: 'nowrap' }}>All Rolls</Box>}
         value={parseFloat((rolls ?? 0).toFixed(2))}
-        onChange={(v) => v !== undefined && setRolls(v)}
+        onChange={(v) => v !== undefined && setRolls([v])}
         sx={{ borderRadius: 1, px: 1, my: 0, height: '100%', width: '7em' }}
         inputProps={{ sx: { textAlign: 'right', pr: 0.5 }, min: 0, step: 1 }}
       />
       <CustomNumberInput
         value={maxSubstat ?? 0}
         startAdornment={<Box sx={{ whiteSpace: 'nowrap' }}>All Max</Box>}
-        onChange={(v) => v !== undefined && setMaxSubstat(v)}
-        color={(maxSubstat ?? 0) > DEFAULT_MAX_ROLLS ? 'warning' : 'success'}
+        onChange={(v) => v !== undefined && setMaxSubstat([v])}
+        color={(maxSubstat ?? 0) > maxRolls ? 'warning' : 'primary'}
         sx={{ borderRadius: 1, px: 1, my: 0, height: '100%', width: '6.5em' }}
         inputProps={{ sx: { textAlign: 'right', pr: 0.5 }, min: 0, step: 1 }}
       />
