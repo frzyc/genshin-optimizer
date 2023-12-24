@@ -1,9 +1,9 @@
 import { AnvilIcon, DiscordIcon } from '@genshin-optimizer/svgicons'
+import { CardThemed, SqBadge } from '@genshin-optimizer/ui-common'
 import {
   Backpack,
   Computer,
   Download,
-  EmojiEvents,
   Gamepad,
   InsertLink,
   PersonSearch,
@@ -27,10 +27,8 @@ import ReactGA from 'react-ga4'
 import { Trans, useTranslation } from 'react-i18next'
 import { Link as RouterLink } from 'react-router-dom'
 import AdScanner from './AdeptiScanner.png'
-import AkashaScanner from './AkashaScanner.png'
-import Artiscan from './artiscan.png'
 import GIScanner from './GIScanner.png'
-import { CardThemed, SqBadge } from '@genshin-optimizer/ui-common'
+import Artiscan from './artiscan.png'
 export default function PageScanner() {
   const { t } = useTranslation('page_scanner')
   ReactGA.send({ hitType: 'pageview', page: '/scanner' })
@@ -295,7 +293,7 @@ export default function PageScanner() {
             </CardContent>
           </CardThemed>
         </Grid>
-        <Grid item xs={1}>
+        {/* <Grid item xs={1}>
           <CardThemed sx={{ height: '100%' }}>
             <CardActionArea
               href="https://github.com/xenesty/AkashaScanner"
@@ -383,7 +381,7 @@ export default function PageScanner() {
               </Typography>
             </CardContent>
           </CardThemed>
-        </Grid>
+        </Grid> */}
       </Grid>
     </Box>
   )
