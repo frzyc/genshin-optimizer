@@ -1,9 +1,10 @@
 import type { ArtifactRarity, SubstatTypeKey } from '@genshin-optimizer/consts'
-import { substatTypeKeys } from '@genshin-optimizer/consts'
+import { artSubstatRollData, substatTypeKeys } from '@genshin-optimizer/consts'
 import { getSubstatValue } from '@genshin-optimizer/gi-util'
 import { Box, MenuItem, Stack, Typography } from '@mui/material'
 import { useCallback, useContext } from 'react'
 import { useTranslation } from 'react-i18next'
+import ArtifactRarityDropdown from '../../../../../Components/Artifact/ArtifactRarityDropdown'
 import BootstrapTooltip from '../../../../../Components/BootstrapTooltip'
 import CardDark from '../../../../../Components/Card/CardDark'
 import CardLight from '../../../../../Components/Card/CardLight'
@@ -12,7 +13,6 @@ import DropdownButton from '../../../../../Components/DropdownMenu/DropdownButto
 import { CharTCContext } from '../CharTCContext'
 import { ArtifactAllSubstatEditor } from './ArtifactAllSubstatEditor'
 import { ArtifactSubstatEditor } from './ArtifactSubstatEditor'
-import ArtifactRarityDropdown from '../../../../../Components/Artifact/ArtifactRarityDropdown'
 export function ArtifactSubCard() {
   const { t } = useTranslation('page_character')
   const {
@@ -49,6 +49,8 @@ export function ArtifactSubCard() {
     (t, [k, v]) => t + v / getSubstatValue(k, rarity, substatsType),
     0
   )
+  const { high, numUpgrades } = artSubstatRollData[rarity]
+  const maxRolls = (high + numUpgrades) * 5
   return (
     <CardLight sx={{ p: 1, height: '100%' }}>
       <Stack spacing={1}>
@@ -89,10 +91,10 @@ export function ArtifactSubCard() {
                 flexShrink: 1,
               }}
             >
-              <ColorText color={rolls > 45 ? 'warning' : undefined}>
+              <ColorText color={rolls > maxRolls ? 'error' : undefined}>
                 Rolls: <strong>{rolls.toFixed(0)}</strong>
               </ColorText>
-              <ColorText color={rolls > 45 ? 'warning' : undefined}>
+              <ColorText color={rolls > maxRolls ? 'error' : undefined}>
                 RV: <strong>{rv.toFixed()}%</strong>
               </ColorText>
             </CardDark>

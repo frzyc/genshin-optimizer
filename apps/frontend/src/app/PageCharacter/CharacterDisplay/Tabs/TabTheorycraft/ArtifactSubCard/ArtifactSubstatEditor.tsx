@@ -161,7 +161,8 @@ export function ArtifactSubstatEditor({ statKey }: { statKey: SubstatKey }) {
           startAdornment={'Max'}
           onChange={(v) => v !== undefined && setMaxSubstat(v)}
           color={
-            rolls > maxSubstat
+            // 0.0001 to nudge float comparasion
+            rolls - 0.0001 > maxSubstat
               ? 'error'
               : maxSubstat > maxRolls
               ? 'warning'

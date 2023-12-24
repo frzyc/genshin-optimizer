@@ -75,7 +75,7 @@ export type ICharTC = {
     substats: {
       type: SubstatTypeKey
       stats: Record<SubstatKey, number>
-      rarity:ArtifactRarity
+      rarity: ArtifactRarity
     }
     sets: Partial<Record<ArtifactSetKey, 1 | 2 | 4>>
   }
