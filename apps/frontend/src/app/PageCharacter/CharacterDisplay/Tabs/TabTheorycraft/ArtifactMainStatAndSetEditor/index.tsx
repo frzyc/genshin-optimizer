@@ -1,0 +1,25 @@
+import { allArtifactSlotKeys } from '@genshin-optimizer/consts'
+import { Skeleton, Stack } from '@mui/material'
+import { Suspense } from 'react'
+import CardLight from '../../../../../Components/Card/CardLight'
+import { ArtifactMainLevelSlot } from './ArtifactMainLevelSlot'
+import { ArtifactSetsEditor } from './ArtifactSetsEditor'
+
+export function ArtifactMainStatAndSetEditor() {
+  return (
+    <Stack spacing={1}>
+      <CardLight sx={{ p: 1 }}>
+        <Stack spacing={1}>
+          {allArtifactSlotKeys.map((s) => (
+            <ArtifactMainLevelSlot key={s} slotKey={s} />
+          ))}
+        </Stack>
+      </CardLight>
+      <Suspense
+        fallback={<Skeleton variant="rectangular" width="100%" height={200} />}
+      >
+        <ArtifactSetsEditor />
+      </Suspense>
+    </Stack>
+  )
+}
