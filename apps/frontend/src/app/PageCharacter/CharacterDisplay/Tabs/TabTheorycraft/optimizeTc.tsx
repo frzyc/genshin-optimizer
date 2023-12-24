@@ -122,6 +122,7 @@ export function optimizeTc(
       const permute = (distributedSubstats: number, [x, ...xs]: string[]) => {
         if (xs.length === 0) {
           if (distributedSubstats > maxSubstats[x]) return
+          buffer[x] = substatValue(x, distributedSubstats)
           const [result] = compute([
             { values: bufferSubs },
             { values: buffer },
