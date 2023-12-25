@@ -251,12 +251,11 @@ export default function TabTheorycraft() {
         (_val, statKey) => {
           const rollsPerSlot = 2
           const diffSlot = 5
-          if (statKey === 'hp' || statKey === 'atk')
-            return 2 + (diffSlot - 1) * rollsPerSlot
           const sameSlot = Object.entries(slots).filter(
             ([_slotKey, { statKey: mainStatKey }]) => mainStatKey === statKey
           ).length
-          return 2 + (diffSlot - sameSlot) * 2
+          // +2 for the inital fixed rolls
+          return 2 + (diffSlot - sameSlot) * rollsPerSlot
         }
       )
     })

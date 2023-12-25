@@ -168,5 +168,8 @@ function validateCharTcOptimization(
   return { target, distributedSubstats, maxSubstats }
 }
 function initCharTcOptimizationMaxSubstats(): ICharTC['optimization']['maxSubstats'] {
-  return objKeyMap(allSubstatKeys, () => 30)
+  return objKeyMap(
+    allSubstatKeys,
+    (k) => 6 * (k === 'hp' || k === 'atk' ? 4 : k === 'atk_' ? 2 : 5)
+  )
 }
