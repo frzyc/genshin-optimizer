@@ -7,7 +7,12 @@ import * as path from 'path'
 export default async function runExecutor(
   options: SyncRepoExecutorSchema
 ): Promise<{ success: boolean }> {
-  const { outputPath, repoUrl: url, prefixPath: prefix = true } = options
+  const {
+    outputPath,
+    repoUrl: url,
+    prefixPath: prefix = true,
+    branch,
+  } = options
   const cwd = prefix ? path.join(workspaceRoot, outputPath) : outputPath
   const remoteHash = getRemoteRepoHash(url)
   const name = path.basename(cwd)
@@ -23,7 +28,7 @@ Caution: if this is part of nx cache replay,
     const localHash = getLocalRepoHash(cwd)
     if (remoteHash !== localHash) {
       execSync(`git fetch --depth 1`, { cwd })
-      execSync(`git reset --hard origin/master`, { cwd })
+      execSync(`git reset --hard ${branch}`, { cwd })
     } else console.log('Repo already existed with the latest commit')
   } else {
     // Clone
