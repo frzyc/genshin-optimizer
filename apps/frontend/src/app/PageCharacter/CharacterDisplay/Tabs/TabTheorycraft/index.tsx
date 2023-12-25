@@ -39,6 +39,7 @@ import { optimizeTc } from './optimizeTc'
 import useCharTC from './useCharTC'
 import ImgIcon from '../../../../Components/Image/ImgIcon'
 import kqmIcon from './kqm.png'
+import { shouldShowDevComponents } from '../../../../Util/Util'
 export default function TabTheorycraft() {
   const { database } = useContext(DatabaseContext)
   const { data: oldData } = useContext(DataContext)
@@ -348,7 +349,7 @@ export default function TabTheorycraft() {
                 </Button>
               </Box>
 
-              {process.env.NODE_ENV === 'development' && (
+              {shouldShowDevComponents && (
                 <Button
                   onClick={() => optimizeSubstats(false)}
                   disabled={!optimizationTarget}
