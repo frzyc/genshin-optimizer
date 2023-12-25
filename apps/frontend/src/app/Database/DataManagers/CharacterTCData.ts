@@ -56,8 +56,11 @@ export class CharacterTCDataManager extends DataManager<
     super.remove(key)
   }
   getWithInit(key: CharacterKey, weaponKey: WeaponKey): ICharTC {
-    const charTc = key ? this.data[key] : undefined
-    return charTc ?? initCharTC(weaponKey)
+    const charTc = this.get(key)
+    if (charTc) return charTc
+    const set = this.set(key, initCharTC(weaponKey))
+    if (!set) console.error("can't set ", key, charTc)
+    return this.get(key)
   }
 }
 
