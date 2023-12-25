@@ -186,14 +186,18 @@ export class UpOptCalculator {
     const evalOpt = optimize(toEval, {}, ({ path: [p] }) => p !== 'dyn')
 
     const evalFn = precompute(evalOpt, {}, (f) => f.path[1], 5)
-    thresholds[0] = evalFn(Object.values(build) as ArtifactBuildData[] & { length: 5 })[0] // dmg threshold is current objective value
+    thresholds[0] = evalFn(
+      Object.values(build) as ArtifactBuildData[] & { length: 5 }
+    )[0] // dmg threshold is current objective value
 
     this.skippableDerivatives = allSubstatKeys.map((sub) =>
       nodes.every((n) => zero_deriv(n, (f) => f.path[1], sub))
     )
     this.eval = (stats: DynStat, slot: ArtifactSlotKey) => {
       const b2 = { ...build, [slot]: { id: '', values: stats } }
-      const out = evalFn(Object.values(b2) as ArtifactBuildData[] & { length: 5 })
+      const out = evalFn(
+        Object.values(b2) as ArtifactBuildData[] & { length: 5 }
+      )
       return nodes.map((_, i) => {
         const ix = i * (1 + allSubstatKeys.length)
         return {
