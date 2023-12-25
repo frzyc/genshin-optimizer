@@ -1,4 +1,4 @@
-import { KeyboardArrowDown } from '@mui/icons-material'
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 import type { ButtonProps } from '@mui/material'
 import {
   Button,
@@ -34,7 +34,7 @@ export function DropdownButton({
   return (
     <Suspense
       fallback={
-        <Button endIcon={<KeyboardArrowDown />} {...props}>
+        <Button endIcon={<KeyboardArrowDownIcon />} {...props}>
           <Skeleton width={50} />
         </Button>
       }
@@ -46,7 +46,7 @@ export function DropdownButton({
         aria-haspopup="true"
         aria-expanded={open ? 'true' : undefined}
         onClick={handleClick}
-        endIcon={<KeyboardArrowDown />}
+        endIcon={<KeyboardArrowDownIcon />}
       >
         {title}
       </Button>

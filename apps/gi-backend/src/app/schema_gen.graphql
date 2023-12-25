@@ -63,6 +63,7 @@ enum ArtifactSetKey {
   MaidenBeloved
   MarechausseeHunter
   MartialArtist
+  NighttimeWhispersInTheEchoingWoods
   NoblesseOblige
   NymphsDream
   OceanHuedClam
@@ -75,6 +76,7 @@ enum ArtifactSetKey {
   RetracingBolide
   Scholar
   ShimenawasReminiscence
+  SongOfDaysPast
   TenacityOfTheMillelith
   TheExile
   ThunderingFury
@@ -161,6 +163,7 @@ enum LocationKey {
   Mika
   Mona
   Nahida
+  Navia
   Neuvillette
   Nilou
   Ningguang
@@ -285,6 +288,7 @@ enum CharacterKey {
   Mika
   Mona
   Nahida
+  Navia
   Neuvillette
   Nilou
   Ningguang

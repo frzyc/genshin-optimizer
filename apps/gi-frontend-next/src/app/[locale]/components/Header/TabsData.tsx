@@ -1,13 +1,11 @@
 import { FlowerIcon } from '@genshin-optimizer/gi-svgicons'
 import { GenshinUserContext, UserContext } from '@genshin-optimizer/gi-ui-next'
 import { AnvilIcon } from '@genshin-optimizer/svgicons'
-import {
-  Article,
-  Construction,
-  People,
-  Scanner,
-  Settings,
-} from '@mui/icons-material'
+import ArticleIcon from '@mui/icons-material/Article'
+import ConstructionIcon from '@mui/icons-material/Construction'
+import PeopleIcon from '@mui/icons-material/People'
+import ScannerIcon from '@mui/icons-material/Scanner'
+import SettingsIcon from '@mui/icons-material/Settings'
 import { Chip } from '@mui/material'
 import type { ReactNode } from 'react'
 import { useContext } from 'react'
@@ -34,32 +32,32 @@ const weapons: ITab = {
 }
 const characters: ITab = {
   i18Key: 'tabs.characters',
-  icon: <People />,
+  icon: <PeopleIcon />,
   to: (l) => `/${l}/character`,
   value: 'character',
   textSuffix: <CharacterChip key="charAdd" />,
 }
 const tools: ITab = {
   i18Key: 'tabs.tools',
-  icon: <Construction />,
+  icon: <ConstructionIcon />,
   to: (l) => `/${l}/tools`,
   value: 'tools',
 }
 const scanner: ITab = {
   i18Key: 'tabs.scanner',
-  icon: <Scanner />,
+  icon: <ScannerIcon />,
   to: (l) => `/${l}/scanner`,
   value: 'scanner',
 }
 const doc: ITab = {
   i18Key: 'tabs.doc',
-  icon: <Article />,
+  icon: <ArticleIcon />,
   to: (l) => `/${l}/doc`,
   value: 'doc',
 }
 const setting: ITab = {
   i18Key: 'tabs.setting',
-  icon: <Settings />,
+  icon: <SettingsIcon />,
   to: (l) => `/${l}/login`,
   value: 'login',
   textSuffix: <DBChip />,

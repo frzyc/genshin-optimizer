@@ -17,8 +17,9 @@ import {
   CardThemed,
   StarsDisplay,
 } from '@genshin-optimizer/ui-common'
-import { Lock, LockOpen } from '@mui/icons-material'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
+import LockIcon from '@mui/icons-material/Lock'
+import LockOpenIcon from '@mui/icons-material/LockOpen'
 import { Box, Button, IconButton, Skeleton, Typography } from '@mui/material'
 import Image from 'next/image'
 import type { ReactNode } from 'react'
@@ -362,7 +363,7 @@ function LockButton({
       onClick={() => setlock((l) => !l)}
       sx={{ position: 'absolute', right: 0, bottom: 0, zIndex: 2 }}
     >
-      {lock ? <Lock /> : <LockOpen />}
+      {lock ? <LockIcon /> : <LockOpenIcon />}
     </IconButton>
   )
 }
