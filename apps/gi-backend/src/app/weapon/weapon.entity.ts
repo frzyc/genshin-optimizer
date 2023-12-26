@@ -1,3 +1,6 @@
+import type { LocationCharacterKey } from '@genshin-optimizer/consts'
+import { WeaponKey, allWeaponKeys } from '@genshin-optimizer/consts'
+import { objKeyMap } from '@genshin-optimizer/util'
 import {
   Field,
   ID,
@@ -6,7 +9,14 @@ import {
   ObjectType,
   OmitType,
   PartialType,
+  registerEnumType,
 } from '@nestjs/graphql'
+import { LocationEnum } from '../common.entity'
+
+const WeaponKeyEnum = objKeyMap(allWeaponKeys, (k) => k)
+registerEnumType(WeaponKeyEnum, {
+  name: 'WeaponKey',
+})
 
 @ObjectType()
 export class Weapon {
@@ -16,8 +26,8 @@ export class Weapon {
   @Field(() => String)
   genshinUserId: string
 
-  @Field(() => String)
-  key: string
+  @Field(() => WeaponKeyEnum)
+  key: WeaponKey
 
   @Field(() => Int)
   level: number
@@ -28,8 +38,8 @@ export class Weapon {
   @Field(() => Int)
   refinement: number
 
-  @Field(() => String, { nullable: true })
-  location: string | null
+  @Field(() => LocationEnum, { nullable: true })
+  location: LocationCharacterKey | null
 
   @Field(() => Boolean)
   lock: boolean

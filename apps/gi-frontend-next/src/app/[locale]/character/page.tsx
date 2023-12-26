@@ -4,7 +4,7 @@ import { CardThemed } from '@genshin-optimizer/ui-common'
 import { CardContent, CardHeader, Divider } from '@mui/material'
 import { useSession } from 'next-auth/react'
 import AddCharacterButton from './components/AddCharacterButton'
-import WeaponList from './components/CharacterList'
+import CharacterList from './components/CharacterList'
 
 export default function CharacterPage() {
   const { data: session } = useSession()
@@ -32,7 +32,7 @@ export default function CharacterPage() {
       />
       <Divider />
       <CardContent>
-        <WeaponList genshinUserId={genshinUserId} />
+        <CharacterList genshinUserId={genshinUserId} />
       </CardContent>
     </CardThemed>
   )

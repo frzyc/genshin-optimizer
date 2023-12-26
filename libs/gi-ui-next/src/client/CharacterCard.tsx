@@ -21,7 +21,6 @@ import {
   weaponData,
   withMember,
 } from '@genshin-optimizer/gi-formula'
-import type { IArtifact, ICharacter } from '@genshin-optimizer/gi-good'
 import { ascensionMaxLevel } from '@genshin-optimizer/gi-util'
 import { read } from '@genshin-optimizer/pando'
 import {
@@ -30,126 +29,48 @@ import {
   SqBadge,
   StarsDisplay,
 } from '@genshin-optimizer/ui-common'
-import { getRandBool, range } from '@genshin-optimizer/util'
+import { getRandBool, objKeyMap } from '@genshin-optimizer/util'
 import { Favorite, FavoriteBorder } from '@mui/icons-material'
 import {
   Box,
-  CardContent,
   Chip,
   Grid,
   IconButton,
   Skeleton,
-  Typography,
+  Typography
 } from '@mui/material'
-import type { ReactNode } from 'react'
 import { Suspense, useContext, useMemo, useState } from 'react'
 
 import { CalcContext, NodeFieldDisplay } from '@genshin-optimizer/gi-formula-ui'
+import type { Character } from '@genshin-optimizer/gi-frontend-gql'
 import { getCharData } from '@genshin-optimizer/gi-stats'
 import type { RollColorKey } from '@genshin-optimizer/gi-ui'
 import { CharacterName } from '@genshin-optimizer/gi-ui'
 import Image from 'next/image'
+import { ArtifactCardPico, ArtifactCardPicoBlank } from './Artifact'
+import { GenshinUserContext } from './GenshinUserDataWrapper'
 import { SillyContext } from './SillyContext'
+import { WeaponCardPico } from './Weapon'
 import { assetWrapper, iconAsset } from './util'
 
-type CharacterCardProps = {
-  character: ICharacter
-  onClick?: (characterKey: CharacterKey) => void
-  onClickHeader?: (characterKey: CharacterKey) => void
-  onClickTeammate?: (characterKey: CharacterKey) => void
-  artifactChildren?: ReactNode
-  weaponChildren?: ReactNode
-  characterChildren?: ReactNode
-  footer?: ReactNode
-  hideStats?: boolean
-  isTeammateCard?: boolean
-}
-export function CharacterCard({
-  // character,
-  artifactChildren,
-  weaponChildren,
-  characterChildren,
-  // onClick,
-  // onClickHeader,
-  // onClickTeammate,
-  footer,
-  hideStats = false,
-  isTeammateCard = false,
-}: CharacterCardProps) {
-  // const teamData = useTeamData(characterKey)
-  // const character = useCharacter(characterKey)
-  // const character: ICachedCharacter = {
-  //   key: characterKey,
-  //   level: 50,
-  //   constellation: 3,
-  //   ascension: 3,
-  //   talent: {
-  //     auto: 5,
-  //     skill: 5,
-  //     burst: 5,
-  //   },
-  //   hitMode: 'avgHit',
-  //   conditional: {},
-  //   bonusStats: {},
-  //   enemyOverride: {},
-  //   infusionAura: '',
-  //   compareData: false,
-  //   customMultiTarget: [],
-  //   team: ['', '', ''],
-  //   teamConditional: {},
-  //   equippedArtifacts: {
-  //     flower: '',
-  //     plume: '',
-  //     sands: '',
-  //     goblet: '',
-  //     circlet: '',
-  //   },
-  //   equippedWeapon: 'test',
-  // }
-  // const { gender } = useDBMeta()
-  // const characterSheet = getCharSheet(characterKey, gender)
-  // const characterDispatch = useCharacterReducer(characterKey)
-  // const data = teamData?.[characterKey]?.target
-  // const onClickHandler = useCallback(
-  //   () => characterKey && onClick?.(characterKey),
-  //   [characterKey, onClick]
-  // )
-  // const actionWrapperFunc = useCallback(
-  //   (children) => (
-  //     <CardActionArea
-  //       onClick={onClickHandler}
-  //       sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column' }}
-  //     >
-  //       {children}
-  //     </CardActionArea>
-  //   ),
-  //   [onClickHandler]
-  // )
-
-  // const characterContextObj: CharacterContextObj | undefined = useMemo(
-  //   () =>
-  //     character &&
-  //     characterSheet && {
-  //       character,
-  //       characterSheet,
-  //       characterDispatch,
-  //     },
-  //   [character, characterSheet, characterDispatch]
-  // )
-  // const dataContextObj: dataContextObj | undefined = useMemo(
-  //   () =>
-  //     data &&
-  //     teamData && {
-  //       data,
-  //       teamData,
-  //     },
-  //   [data, teamData]
-  // )
-
-  // const { favorite } = useCharMeta(characterKey)
+export function CharacterCard({ character }: { character: Character }) {
   const favorite = getRandBool() //TODO:
-  // const { key: characterKey } = character
-  const characterKey = 'Candace'
+  const { key: characterKey } = character
+  const { artifacts, weapons } = useContext(GenshinUserContext)
+  const equippedArtifacts = useMemo(
+    () =>
+      objKeyMap(allArtifactSlotKeys, (slot) =>
+        artifacts?.find(
+          ({ slotKey, location }) =>
+            location === characterKey && slotKey === slot
+        )
+      ),
+    [characterKey, artifacts]
+  )
+  const equippedWeapon = useMemo(
+    () => weapons?.find(({ location }) => location === characterKey),
+    [characterKey, weapons]
+  )
 
   const [calc, setCalc] = useState<Calculator | undefined>(
     genshinCalculatorWithEntries([
@@ -196,13 +117,7 @@ export function CharacterCard({
 
   return (
     <Suspense
-      fallback={
-        <Skeleton
-          variant="rectangular"
-          width="100%"
-          height={hideStats ? 300 : 600}
-        />
-      }
+      fallback={<Skeleton variant="rectangular" width="100%" height={600} />}
     >
       <CardThemed
         bgt="light"
@@ -226,54 +141,37 @@ export function CharacterCard({
           </IconButton>
         </Box>
         <CalcContext.Provider value={calcContextObj}>
-          <Header
-            characterKey={characterKey}
-            // onClick={!onClick ? onClickHeader : undefined}
-          >
-            <HeaderContent />
+          <Header characterKey={characterKey}>
+            <HeaderContent characterKey={characterKey} />
           </Header>
-          <CardContent
-            sx={(theme) => ({
+          <Box
+            sx={{
+              p: 1,
               width: '100%',
               display: 'flex',
               flexDirection: 'column',
               gap: 1,
               flexGrow: 1,
-              padding: hideStats ? `${theme.spacing(1)}!important` : undefined,
-            })}
+            }}
           >
-            <Artifacts />
-            {!isTeammateCard && (
-              <Grid container columns={4} spacing={0.75}>
-                <Grid item xs={1} height="100%">
-                  {/* <WeaponCardPico weaponId={character.equippedWeapon} /> */}
-                </Grid>
-                {range(0, 2).map((i) => (
-                  <Grid key={i} item xs={1} height="100%">
-                    {/* {character.team[i] ? (
-                  <CharacterCardPico
-                    simpleTooltip={hideStats}
-                    characterKey={character.team[i] as CharacterKey}
-                    onClick={!onClick ? onClickTeammate : undefined}
-                  />
-                ) : (
-                  <BlankCharacterCardPico index={i} />
-                )} */}
-                  </Grid>
-                ))}
+            <Grid container columns={3} spacing={1}>
+              <Grid item xs={1}>
+                {!!equippedWeapon && <WeaponCardPico weapon={equippedWeapon} />}
               </Grid>
-            )}
-            {/* {isTeammateCard && (
-          <WeaponFullCard weaponId={character.equippedWeapon} />
-        )} */}
+              {Object.entries(equippedArtifacts).map(([slot, art]) => (
+                <Grid item xs={1} key={slot}>
+                  {art ? (
+                    <ArtifactCardPico artifact={art} />
+                  ) : (
+                    <ArtifactCardPicoBlank slotKey={slot as ArtifactSlotKey} />
+                  )}
+                </Grid>
+              ))}
+            </Grid>
             <TempWeaponCard />
-            {!isTeammateCard && !hideStats && <Stats />}
-            {weaponChildren}
-            {artifactChildren}
-            {characterChildren}
-          </CardContent>
+            <Stats />
+          </Box>
         </CalcContext.Provider>
-        {footer}
       </CardThemed>
     </Suspense>
   )
@@ -312,7 +210,7 @@ function Header({
           src={assetWrapper(characterAsset(characterKey, 'banner', gender))}
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          alt=""
+          alt="" //TODO:
           style={{
             objectFit: 'cover',
             objectPosition: 'right',
@@ -341,7 +239,7 @@ function Header({
   )
 }
 
-function HeaderContent() {
+function HeaderContent({ characterKey }: { characterKey: CharacterKey }) {
   // const { characterSheet } = useContext(CharacterContext)
   // const { data } = useContext(DataContext)
   const { calc } = useContext(CalcContext)
@@ -361,7 +259,6 @@ function HeaderContent() {
   const tSkill = calc.compute(member0.char.skill).val
   const tBurst = calc.compute(member0.char.burst).val
 
-  const characterKey: CharacterKey = 'Candace' //TODO:
   const rarity = getCharData(characterKey).rarity
 
   const gender: GenderKey = 'F' //TODO:
@@ -424,32 +321,6 @@ function HeaderContent() {
         <StarsDisplay stars={rarity} colored inline />
       </Typography>
     </>
-  )
-}
-
-function Artifacts() {
-  // const { database } = useContext(DatabaseContext)
-  // const { data } = useContext(DataContext)
-  const artifacts = useMemo(
-    () =>
-      allArtifactSlotKeys.map((k) => [
-        k,
-        // database.arts.get(''),
-        undefined,
-      ]),
-    []
-  ) as Array<[ArtifactSlotKey, IArtifact | undefined]>
-
-  return (
-    <Grid direction="row" container spacing={0.75} columns={5}>
-      {artifacts.map(
-        ([key, _art]: [ArtifactSlotKey, IArtifact | undefined]) => (
-          <Grid item key={key} xs={1}>
-            {/* <ArtifactCardPico artifactObj={art} slotKey={key} /> */}
-          </Grid>
-        )
-      )}
-    </Grid>
   )
 }
 
