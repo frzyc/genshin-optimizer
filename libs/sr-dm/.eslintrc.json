@@ -1,6 +1,6 @@
 {
   "extends": ["../../.eslintrc.json"],
-  "ignorePatterns": ["!**/*", "StarRailData/*", "StarRailData", "StarRailData/**/*"],
+  "ignorePatterns": ["!**/*", "StarRailData/"],
   "overrides": [
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
