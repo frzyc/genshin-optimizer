@@ -7,7 +7,8 @@
     "load-dm": {
       "options": {
         "repoUrl": "https://gitlab.com/Dimbreath/AnimeGameData.git",
-        "outputPath": "libs/dm/GenshinData"
+        "outputPath": "libs/dm/GenshinData",
+        "branch": "origin/main"
       },
       "inputs": [
         {
