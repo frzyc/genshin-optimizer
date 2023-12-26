@@ -4,20 +4,19 @@ import { SlotIcon, StatIcon } from '@genshin-optimizer/gi-svgicons'
 import {
   ArtifactSetName,
   ArtifactSetSlotName,
+  IconStatDisplay,
   artifactLevelVariant,
   getVariant,
 } from '@genshin-optimizer/gi-ui'
-import {
-  artDisplayValue,
-  getMainStatDisplayStr,
-} from '@genshin-optimizer/gi-util'
+import { getMainStatDisplayStr } from '@genshin-optimizer/gi-util'
 import { iconInlineProps } from '@genshin-optimizer/svgicons'
 import {
   BootstrapTooltip,
   SqBadge,
   StarsDisplay,
 } from '@genshin-optimizer/ui-common'
-import { clamp, unit } from '@genshin-optimizer/util'
+import { clamp } from '@genshin-optimizer/util'
+import type { Palette } from '@mui/material'
 import { Box, Skeleton, Typography } from '@mui/material'
 import { Suspense } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -75,18 +74,15 @@ function ArtifactData({ artifact }: { artifact: Artifact }) {
       </Typography>
       <Box py={1}>
         {substats.map(
-          (stat) =>
-            !!stat.value && (
-              <Typography
-                key={stat.key}
-                color={`roll${clamp(1, 1, 6)}.main`} //TODO: stat.rolls.length
-              >
-                <StatIcon statKey={stat.key} iconProps={iconInlineProps} />{' '}
-                {tk(stat.key)}{' '}
-                <strong>{`+${artDisplayValue(stat.value, unit(stat.key))}${unit(
-                  stat.key
-                )}`}</strong>
-              </Typography>
+          ({ value, key }) =>
+            !!(value && key) && (
+              <IconStatDisplay
+                key={key}
+                statKey={key}
+                value={value}
+                color={`roll${clamp(1, 1, 6)}` as keyof Palette} //TODO: stat.rolls.length instead of 1
+                prefix="+"
+              />
             )
         )}
       </Box>

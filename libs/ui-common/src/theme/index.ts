@@ -1,3 +1,4 @@
+'use client'
 import { createTheme, darkScrollbar } from '@mui/material'
 
 declare module '@mui/material/styles' {

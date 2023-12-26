@@ -1,7 +1,7 @@
 'use client'
 import { useGetUserQuery } from '@genshin-optimizer/gi-frontend-gql'
 import { CardThemed } from '@genshin-optimizer/ui-common'
-import { CardContent, CardHeader, Divider } from '@mui/material'
+import { CardContent, CardHeader, Divider, Stack } from '@mui/material'
 import { useSession } from 'next-auth/react'
 import AddCharacterButton from './components/AddCharacterButton'
 import CharacterList from './components/CharacterList'
@@ -25,15 +25,16 @@ export default function CharacterPage() {
   const genshinUserId = genshinUser.id
 
   return (
-    <CardThemed>
-      <CardHeader
-        title="Character Page"
-        action={<AddCharacterButton genshinUserId={genshinUserId} />}
-      />
-      <Divider />
-      <CardContent>
-        <CharacterList genshinUserId={genshinUserId} />
-      </CardContent>
-    </CardThemed>
+    <Stack spacing={1}>
+      <CardThemed>
+        <CardHeader
+          title="Character Page"
+          action={<AddCharacterButton genshinUserId={genshinUserId} />}
+        />
+        <Divider />
+        <CardContent></CardContent>
+      </CardThemed>
+      <CharacterList genshinUserId={genshinUserId} />
+    </Stack>
   )
 }

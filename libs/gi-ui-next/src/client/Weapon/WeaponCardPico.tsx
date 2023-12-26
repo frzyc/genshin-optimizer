@@ -1,21 +1,42 @@
+import type { AscensionKey } from '@genshin-optimizer/consts'
 import { weaponAsset } from '@genshin-optimizer/gi-assets'
+import { CalcContext } from '@genshin-optimizer/gi-formula-ui'
 import type { Weapon } from '@genshin-optimizer/gi-frontend-gql'
 import { allStats } from '@genshin-optimizer/gi-stats'
+import { IconStatDisplay } from '@genshin-optimizer/gi-ui'
+import { getLevelString } from '@genshin-optimizer/gi-util'
+import { read } from '@genshin-optimizer/pando'
 import { CardThemed, SqBadge } from '@genshin-optimizer/ui-common'
 import { Box, Typography } from '@mui/material'
-import WeaponNameTooltip from './WeaponNameTooltip'
-import { getLevelString } from '@genshin-optimizer/gi-util'
-import type { AscensionKey } from '@genshin-optimizer/consts'
-import { assetWrapper } from '../util'
 import Image from 'next/image'
+import { useContext } from 'react'
+import { assetWrapper } from '../util'
+import WeaponNameTooltip from './WeaponNameTooltip'
 
 export function WeaponCardPico({ weapon }: { weapon: Weapon }) {
+  const { calc } = useContext(CalcContext)
   const { key: weaponKey, level, ascension } = weapon
+
+  const atkVal = calc
+    ? calc.compute(
+        read(
+          {
+            member: 'member0',
+            src: 'KeyOfKhajNisut',
+            qt: 'base',
+            q: 'atk',
+            et: 'self',
+          },
+          'sum'
+        )
+      ).val
+    : 0
+
   const tooltipAddl = (
     <Box>
-      {/* TODO: */}
-      {/* <WeaponStatPico node={UIData.get(input.weapon.main)} />
-      <WeaponStatPico node={UIData.get(input.weapon.sub)} /> */}
+      <IconStatDisplay statKey="atk" value={atkVal} />
+      {/* TODO: weapon secondary stat */}
+      {/* <WeaponStatPico node={UIData.get(input.weapon.sub)} /> */}
     </Box>
   )
   const rarity = allStats.weapon.data[weaponKey].rarity
@@ -84,10 +105,3 @@ export function WeaponCardPico({ weapon }: { weapon: Weapon }) {
     </CardThemed>
   )
 }
-// function WeaponStatPico({ node }: { node: NodeDisplay }) {
-//   return (
-//     <Typography>
-//       {node.info.icon} {nodeVStr(node)}
-//     </Typography>
-//   )
-// }

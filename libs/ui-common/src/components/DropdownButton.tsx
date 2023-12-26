@@ -1,3 +1,4 @@
+'use client'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 import type { ButtonProps } from '@mui/material'
 import {
