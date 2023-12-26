@@ -7,7 +7,7 @@
     "frontend": "nx serve frontend",
     "build-all": "nx run-many -t build",
     "mini-ci": "nx format:write && nx affected -t test,lint --max-warnings=0",
-    "reload-dm": "nx run-many -t load-dm --skip-nx-cache"
+    "reload-dm": "git submodule update --init"
   },
   "devDependencies": {
     "@babel/core": "^7.14.5",

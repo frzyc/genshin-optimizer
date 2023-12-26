@@ -6,7 +6,6 @@
       "runner": "nx/tasks-runners/default",
       "options": {
         "cacheableOperations": [
-          "load-dm",
           "gen-file",
           "build",
           "build-webpack",
@@ -20,13 +19,9 @@
     }
   },
   "targetDefaults": {
-    "load-dm": {
-      "executor": "@genshin-optimizer/plugin:sync-repo",
-      "outputs": ["{workspaceRoot}/{options.outputPath}.hash"]
-    },
     "gen-file": {
       "executor": "nx:noop",
-      "dependsOn": ["load-dm", "^gen-file"],
+      "dependsOn": ["^gen-file"],
       "inputs": ["production", "^production"]
     },
     "build": {

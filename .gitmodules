@@ -1,0 +1,6 @@
+[submodule "libs/dm/GenshinData"]
+	path = libs/dm/GenshinData
+	url = https://gitlab.com/Dimbreath/AnimeGameData.git
+[submodule "libs/sr-dm/StarRailData"]
+	path = libs/sr-dm/StarRailData
+	url = https://github.com/Dimbreath/StarRailData.git

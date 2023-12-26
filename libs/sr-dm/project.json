@@ -4,17 +4,6 @@
   "sourceRoot": "libs/sr-dm/src",
   "projectType": "library",
   "targets": {
-    "load-dm": {
-      "options": {
-        "repoUrl": "https://github.com/Dimbreath/StarRailData.git",
-        "outputPath": "libs/sr-dm/StarRailData"
-      },
-      "inputs": [
-        {
-          "runtime": "git ls-remote -q https://github.com/Dimbreath/StarRailData.git HEAD"
-        }
-      ]
-    },
     "gen-file": {},
     "build": {},
     "build-ts": {
