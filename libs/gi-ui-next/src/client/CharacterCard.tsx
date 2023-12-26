@@ -37,7 +37,7 @@ import {
   Grid,
   IconButton,
   Skeleton,
-  Typography
+  Typography,
 } from '@mui/material'
 import { Suspense, useContext, useMemo, useState } from 'react'
 
