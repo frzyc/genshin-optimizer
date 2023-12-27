@@ -30,4 +30,9 @@ export class DataManager<
     if (entries && Array.isArray(entries))
       entries.forEach((ele) => ele.id && this.set(ele.id, ele))
   }
+  override get goKeySingle() {
+    const key = this.dataKey.replace('sro_', '')
+    if (key.endsWith('s')) return key.slice(0, -1)
+    return key
+  }
 }

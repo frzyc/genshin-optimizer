@@ -46,13 +46,6 @@ export class LightConeDataManager extends DataManager<
     if (typeof superimpose !== 'number' || superimpose < 1 || superimpose > 5)
       superimpose = 1
     if (location && !allCharacterLocationKeys.includes(location)) location = ''
-    // TODO: Validate path of Trailblazer
-    if (
-      location &&
-      location !== 'Trailblazer' && // Trailblazer is multi-path
-      allStats.char[location].path !== path
-    )
-      return undefined
     lock = !!lock
     return { key, level, ascension, superimpose, location, lock }
   }
@@ -79,7 +72,7 @@ export class LightConeDataManager extends DataManager<
         : undefined
 
       // previously equipped light cone at new location
-      const prevLightCone = super.get(newChar?.equippedLightCone)
+      let prevLightCone = super.get(newChar?.equippedLightCone)
 
       //current prevLightCone <-> newChar  && newLightCone <-> prevChar
       //swap to prevLightCone <-> prevChar && newLightCone <-> newChar(outside of this if)
@@ -89,15 +82,7 @@ export class LightConeDataManager extends DataManager<
           ...prevLightCone,
           location: prevChar?.key ? charKeyToCharLocKey(prevChar.key) : '',
         })
-      // TODO: Verify we don't need this, since characters don't need an LC equipped
-      // else if (prevChar?.key)
-      //   prevLightCone = this.get(
-      //     this.new(
-      //       defaultInitialLightCone(
-      //         allStats.char.data[prevChar.key].lightConeType
-      //       )
-      //     )
-      //   )
+      else if (prevChar?.key) prevLightCone = undefined
 
       if (newChar)
         this.database.chars.setEquippedLightCone(
@@ -123,6 +108,12 @@ export class LightConeDataManager extends DataManager<
     const id = this.generateKey()
     this.set(id, value)
     return id
+  }
+  override remove(key: string, notify = true) {
+    const lc = this.get(key)
+    if (!lc) return
+    lc.location && this.database.chars.setEquippedLightCone(lc.location, '')
+    super.remove(key, notify)
   }
   override importSROD(
     srod: ISrObjectDescription & ISroDatabase,

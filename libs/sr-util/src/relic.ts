@@ -1,11 +1,27 @@
+import type { RelicSlotKey } from '@genshin-optimizer/sr-consts'
 import {
+  allRelicCavernSlotKeys,
+  allRelicPlanarSetKeys,
+  allRelicPlanarSlotKeys,
+  allRelicRarityKeys,
+  allRelicSetKeys,
+  allRelicSubStatKeys,
+  relicMaxLevel,
+  relicSlotToMainStatKeys,
   relicSubstatRollData,
   type RelicMainStatKey,
   type RelicRarityKey,
   type RelicSubStatKey,
 } from '@genshin-optimizer/sr-consts'
+import type { IRelic, ISubstat } from '@genshin-optimizer/sr-srod'
 import { allStats } from '@genshin-optimizer/sr-stats'
-import { toPercent } from '@genshin-optimizer/util'
+import {
+  getRandomElementFromArray,
+  getRandomIntInclusive,
+  range,
+  toPercent,
+  unit,
+} from '@genshin-optimizer/util'
 
 export function getRelicMainStatVal(
   rarity: RelicRarityKey,
@@ -25,9 +41,13 @@ export function getRelicMainStatDisplayVal(
   statKey: RelicMainStatKey,
   level: number
 ) {
-  return toPercent(getRelicMainStatVal(rarity, statKey, level), statKey)
+  return toPercent(
+    roundStat(getRelicMainStatVal(rarity, statKey, level), statKey),
+    statKey
+  )
 }
 
+// TODO: Update this with proper corrected rolls
 export function getSubstatValue(
   rarity: RelicRarityKey,
   statKey: RelicSubStatKey,
@@ -39,9 +59,10 @@ export function getSubstatValue(
       `Attempted to get relic sub stat value that doesn't exist for a ${rarity}-star relic with substat ${statKey}.`
     )
   const steps = type === 'low' ? 0 : type === 'med' ? 1 : 2
-  return base + steps * step
+  return roundStat(base + steps * step, statKey)
 }
 
+// TODO: Update this with proper corrected rolls
 export function getSubstatRange(
   rarity: RelicRarityKey,
   statKey: RelicSubStatKey
@@ -52,5 +73,69 @@ export function getSubstatRange(
       `Attempted to get relic sub stat value that doesn't exist for a ${rarity}-star relic with substat ${statKey}.`
     )
   const { numUpgrades } = relicSubstatRollData[rarity]
-  return { low: base, high: base + step * 2 * numUpgrades }
+  return {
+    low: roundStat(base, statKey),
+    high: roundStat(base + step * 2 * numUpgrades, statKey),
+  }
+}
+
+export function randomizeRelic(base: Partial<IRelic> = {}): IRelic {
+  const setKey = base.setKey ?? getRandomElementFromArray(allRelicSetKeys)
+
+  const rarity = base.rarity ?? getRandomElementFromArray(allRelicRarityKeys)
+  const slot: RelicSlotKey =
+    base.slotKey ??
+    getRandomElementFromArray(
+      [...(allRelicPlanarSetKeys as readonly string[])].includes(setKey)
+        ? allRelicPlanarSlotKeys
+        : allRelicCavernSlotKeys
+    )
+  const mainStatKey: RelicMainStatKey =
+    base.mainStatKey ?? getRandomElementFromArray(relicSlotToMainStatKeys[slot])
+  const level = base.level ?? getRandomIntInclusive(0, relicMaxLevel[rarity])
+  const substats: ISubstat[] = [0, 1, 2, 3].map(() => ({ key: '', value: 0 }))
+
+  const { low, high } = relicSubstatRollData[rarity]
+  const totRolls = Math.floor(level / 3) + getRandomIntInclusive(low, high)
+  const numOfInitialSubstats = Math.min(totRolls, 4)
+  const numUpgradesOrUnlocks = totRolls - numOfInitialSubstats
+
+  const RollStat = (substat: RelicSubStatKey): number =>
+    allStats.relic.sub[rarity][substat].base +
+    getRandomElementFromArray(range(0, 2)) *
+      allStats.relic.sub[rarity][substat].step
+
+  let remainingSubstats = allRelicSubStatKeys.filter(
+    (key) => mainStatKey !== key
+  )
+  for (const substat of substats.slice(0, numOfInitialSubstats)) {
+    substat.key = getRandomElementFromArray(remainingSubstats)
+    substat.value = RollStat(substat.key as RelicSubStatKey)
+    remainingSubstats = remainingSubstats.filter((key) => key !== substat.key)
+  }
+  for (let i = 0; i < numUpgradesOrUnlocks; i++) {
+    const substat = getRandomElementFromArray(substats)
+    substat.value += RollStat(substat.key as any)
+  }
+  for (const substat of substats)
+    if (substat.key) {
+      substat.value = roundStat(substat.value, substat.key)
+    }
+
+  return {
+    setKey,
+    rarity,
+    slotKey: slot,
+    mainStatKey,
+    level,
+    substats,
+    location: base.location ?? '',
+    lock: false,
+  }
+}
+
+function roundStat(value: number, statKey: RelicMainStatKey | RelicSubStatKey) {
+  return unit(statKey) === '%'
+    ? Math.round(value * 10000) / 10000
+    : Math.round(value * 100) / 100
 }

@@ -1,0 +1,31 @@
+import { DBLocalStorage } from '@genshin-optimizer/database'
+import { randomizeRelic } from '@genshin-optimizer/sr-util'
+import { SroDatabase } from './Database'
+
+const dbStorage = new DBLocalStorage(localStorage)
+const dbIndex = 1
+let database = new SroDatabase(dbIndex, dbStorage)
+
+describe('Database', () => {
+  beforeEach(() => {
+    dbStorage.clear()
+    database = new SroDatabase(dbIndex, dbStorage)
+  })
+
+  test('DataManager.set', () => {
+    const invalid = database.relics.set('INVALID', () => ({ level: 0 }))
+    expect(invalid).toEqual(false)
+    expect(database.relics.values.length).toEqual(0)
+    const id = 'testid'
+    database.relics.set(id, randomizeRelic({ level: 0 }))
+    expect(database.relics.get(id)?.level).toEqual(0)
+
+    database.relics.set(id, (art) => {
+      art.level = art.level + 4
+    })
+    expect(database.relics.get(id)?.level).toEqual(4)
+
+    database.relics.set(id, ({ level }) => ({ level: level + 4 }))
+    expect(database.relics.get(id)?.level).toEqual(8)
+  })
+})

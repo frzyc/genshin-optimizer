@@ -75,22 +75,18 @@ export class CharacterDataManager extends DataManager<
     if (typeof bonusAbilities !== 'object')
       bonusAbilities = objKeyMap(allBonusAbilityKeys, (_key) => false)
     else {
-      allBonusAbilityKeys.forEach((key) => {
-        bonusAbilities[key] =
-          typeof bonusAbilities[key] !== 'boolean'
-            ? false
-            : bonusAbilities[key] ?? false
-      })
+      bonusAbilities = objKeyMap(allBonusAbilityKeys, (key) =>
+        typeof bonusAbilities[key] !== 'boolean'
+          ? false
+          : bonusAbilities[key] ?? false
+      )
     }
     if (typeof statBoosts !== 'object')
       statBoosts = objKeyMap(allStatBoostKeys, (_key) => false)
     else {
-      allStatBoostKeys.forEach((key) => {
-        statBoosts[key] =
-          typeof statBoosts[key] !== 'boolean'
-            ? false
-            : statBoosts[key] ?? false
-      })
+      statBoosts = objKeyMap(allStatBoostKeys, (key) =>
+        typeof statBoosts[key] !== 'boolean' ? false : statBoosts[key] ?? false
+      )
     }
     basic = typeof basic !== 'number' ? 1 : clamp(basic, 1, 6)
     skill = typeof skill !== 'number' ? 1 : clamp(skill, 1, 10)
