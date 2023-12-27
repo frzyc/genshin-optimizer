@@ -93,22 +93,22 @@ describe('Database', () => {
 
     tryStorage(
       (storage) => {
-        storage['char_x'] = '{ test: "test" }'
-        storage['relic_x'] = '{}'
+        storage['sro_char_x'] = '{ test: "test" }'
+        storage['sro_relic_x'] = '{}'
       },
       (storage) => {
-        expect(storage.getItem('char_x')).toBeNull()
+        expect(storage.getItem('sro_char_x')).toBeNull()
       }
     )
     tryStorage(
       (storage) => {
-        storage['char_x'] = '{ test: "test" }'
-        storage['relic_x'] = '{}'
-        expect(storage.getItem('char_x')).not.toBeNull()
+        storage['sro_char_x'] = '{ test: "test" }'
+        storage['sro_relic_x'] = '{}'
+        expect(storage.getItem('sro_char_x')).not.toBeNull()
       },
       (storage) => {
-        expect(storage.getItem('char_x')).toBeNull()
-        expect(storage.getItem('relic_x')).toBeNull()
+        expect(storage.getItem('sro_char_x')).toBeNull()
+        expect(storage.getItem('sro_relic_x')).toBeNull()
       }
     )
   })

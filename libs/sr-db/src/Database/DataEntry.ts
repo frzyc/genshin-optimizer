@@ -10,14 +10,16 @@ export class DataEntry<
   StorageValue
 > extends DataEntryBase<Key, SROKey, CacheValue, StorageValue> {
   exportSROD(sroDb: Partial<ISroDatabase & ISrObjectDescription>) {
-    sroDb[this.goKey] = this.data
+    const key = this.goKey.replace('sro_', '')
+    sroDb[key] = this.data
   }
   importSROD(
     sroDb: ISrObjectDescription &
       ISroDatabase & { [k in SROKey]?: Partial<StorageValue> | never },
     _result: ImportResult
   ) {
-    const data = sroDb[this.goKey]
+    const key = this.goKey.replace('sro_', '')
+    const data = sroDb[key]
     if (data) this.set(data)
   }
 }
