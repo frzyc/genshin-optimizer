@@ -138,9 +138,6 @@ export class RelicDataManager extends DataManager<
     const relic = this.get(id)
     if (relic) this.setCached(id, { ...relic, probability })
   }
-  override clear(): void {
-    super.clear()
-  }
   override importSROD(
     srod: ISrObjectDescription & ISroDatabase,
     result: ImportResult

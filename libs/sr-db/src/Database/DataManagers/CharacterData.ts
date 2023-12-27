@@ -346,7 +346,7 @@ export class CharacterDataManager extends DataManager<
     result.characters.beforeMerge = this.values.length
 
     const source = sr.source ?? 'Unknown'
-    const characters = sr[this.dataKey]
+    const characters = sr.characters
     if (Array.isArray(characters) && characters?.length) {
       result.characters.import = characters.length
       const idsToRemove = new Set(this.keys)

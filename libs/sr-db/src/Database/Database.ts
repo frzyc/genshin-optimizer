@@ -124,7 +124,7 @@ export class SroDatabase extends Database {
       ignoreDups
     )
 
-    // Follow updates from char/art/weapon to gather import results
+    // Follow updates from char/relic/lightCone to gather import results
     const unfollows = [
       this.chars.followAny((key, reason, value) => {
         const arr = result.characters[reason]
