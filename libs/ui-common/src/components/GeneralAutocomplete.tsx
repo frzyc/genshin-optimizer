@@ -178,7 +178,7 @@ export function GeneralAutocompleteMulti<T extends string>({
       multiple
       disableCloseOnSelect
       value={value}
-      onChange={(event, newValue, reason) => {
+      onChange={(_event, newValue, reason) => {
         if (reason === 'clear') return onChange([])
         return newValue !== null && onChange(newValue.map((v) => v.key))
       }}

@@ -132,10 +132,10 @@ export class SroDatabase extends Database {
         if (ind < 0) arr.push(value)
         else arr[ind] = value
       }),
-      this.relics.followAny((key, reason, value) =>
+      this.relics.followAny((_key, reason, value) =>
         result.relics[reason].push(value)
       ),
-      this.lightCones.followAny((key, reason, value) =>
+      this.lightCones.followAny((_key, reason, value) =>
         result.lightCones[reason].push(value)
       ),
     ]
