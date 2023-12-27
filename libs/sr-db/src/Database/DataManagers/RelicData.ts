@@ -33,17 +33,19 @@ import { DataManager } from '../DataManager'
 import type { SroDatabase } from '../Database'
 import type { ImportResult } from '../exim'
 
+const storageKey = 'sro_relics'
+const storageHash = 'sro_relic_'
 export class RelicDataManager extends DataManager<
   string,
-  'sro_relics',
+  typeof storageKey,
   ICachedRelic,
   IRelic,
   SroDatabase
 > {
   constructor(database: SroDatabase) {
-    super(database, 'sro_relics')
+    super(database, storageKey)
     for (const key of this.database.storage.keys)
-      if (key.startsWith('relic_') && !this.set(key, {}))
+      if (key.startsWith(storageHash) && !this.set(key, {}))
         this.database.storage.remove(key)
   }
   override validate(obj: unknown): IRelic | undefined {
@@ -126,6 +128,9 @@ export class RelicDataManager extends DataManager<
     const id = this.generateKey()
     this.set(id, value)
     return id
+  }
+  override toStorageKey(key: string): string {
+    return `${storageHash}${key}`
   }
   override remove(key: string, notify = true) {
     const relic = this.get(key)

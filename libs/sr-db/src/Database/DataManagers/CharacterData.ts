@@ -28,6 +28,7 @@ import type { SroDatabase } from '../Database'
 import type { ImportResult } from '../exim'
 
 const storageKey = 'sro_characters'
+const storageHash = 'sro_char_'
 export class CharacterDataManager extends DataManager<
   CharacterKey,
   typeof storageKey,
@@ -39,8 +40,8 @@ export class CharacterDataManager extends DataManager<
     super(database, storageKey)
     for (const key of this.database.storage.keys) {
       if (
-        key.startsWith('char_') &&
-        !this.set(key.split('char_')[1] as CharacterKey, {})
+        key.startsWith(storageHash) &&
+        !this.set(key.split(storageHash)[1] as CharacterKey, {})
       )
         this.database.storage.remove(key)
     }
@@ -180,7 +181,7 @@ export class CharacterDataManager extends DataManager<
     return result
   }
   override toStorageKey(key: CharacterKey): string {
-    return `char_${key}`
+    return `${storageHash}${key}`
   }
   getTrailblazerCharacterKey(): CharacterKey {
     return (

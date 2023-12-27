@@ -19,8 +19,9 @@ const initCharMeta: ICharMeta = deepFreeze({
   rvFilter: [...allRelicSubStatKeys],
   favorite: false,
 })
-const storageHash = 'charMeta_'
-const storageKey = 'sro_charMetas_'
+
+const storageKey = 'sro_charMetas'
+const storageHash = 'sro_charMeta_'
 export class CharMetaDataManager extends DataManager<
   CharacterKey,
   typeof storageKey,

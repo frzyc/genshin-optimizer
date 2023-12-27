@@ -58,24 +58,26 @@ export interface BuildSetting {
   levelHigh: number
 }
 
+const storageKey = 'sro_buildSettings'
+const storageHash = 'sro_buildSetting_'
 export class BuildSettingDataManager extends DataManager<
   CharacterKey,
-  'sro_buildSettings',
+  typeof storageKey,
   BuildSetting,
   BuildSetting,
   SroDatabase
 > {
   constructor(database: SroDatabase) {
-    super(database, 'sro_buildSettings')
+    super(database, storageKey)
     for (const key of this.database.storage.keys)
       if (
-        key.startsWith('buildSetting_') &&
-        !this.set(key.split('buildSetting_')[1] as CharacterKey, {})
+        key.startsWith(storageHash) &&
+        !this.set(key.split(storageHash)[1] as CharacterKey, {})
       )
         this.database.storage.remove(key)
   }
   override toStorageKey(key: string): string {
-    return `buildSetting_${key}`
+    return `${storageHash}${key}`
   }
   override validate(obj: object, key: string): BuildSetting | undefined {
     if (!allCharacterKeys.includes(key as CharacterKey)) return undefined

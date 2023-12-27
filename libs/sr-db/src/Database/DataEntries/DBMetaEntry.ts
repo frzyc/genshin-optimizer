@@ -21,14 +21,15 @@ function dbMetaInit(database: Database): IDBMeta {
   }
 }
 
+const storageKey = 'sro_dbMeta'
 export class DBMetaEntry extends DataEntry<
-  'dbMeta',
-  'dbMeta',
+  typeof storageKey,
+  typeof storageKey,
   IDBMeta,
   IDBMeta
 > {
   constructor(database: SroDatabase) {
-    super(database, 'dbMeta', dbMetaInit, 'dbMeta')
+    super(database, storageKey, dbMetaInit, storageKey)
   }
   override validate(obj: any): IDBMeta | undefined {
     if (typeof obj !== 'object') return undefined

@@ -12,23 +12,25 @@ export interface IBuildResult {
   buildDate: number
 }
 
+const storageKey = 'sro_buildResults'
+const storageHash = 'sro_buildResult_'
 export class BuildResultDataManager extends DataManager<
   CharacterKey,
-  'sro_buildResults',
+  typeof storageKey,
   IBuildResult,
   IBuildResult,
   SroDatabase
 > {
   constructor(database: SroDatabase) {
-    super(database, 'sro_buildResults')
+    super(database, storageKey)
     for (const key of this.database.storage.keys)
-      if (key.startsWith('buildResult_')) {
-        const charKey = key.split('buildResult_')[1] as CharacterKey
+      if (key.startsWith(storageHash)) {
+        const charKey = key.split(storageHash)[1] as CharacterKey
         if (!this.set(charKey, {})) this.database.storage.remove(key)
       }
   }
   override toStorageKey(key: string): string {
-    return `buildResult_${key}`
+    return `${storageHash}${key}`
   }
   override validate(obj: unknown, key: CharacterKey): IBuildResult | undefined {
     if (typeof obj !== 'object') return undefined
