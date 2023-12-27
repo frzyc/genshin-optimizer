@@ -43,7 +43,6 @@ export default function Database() {
       }
       // Figure out the file format
       if (parsed.format === 'SROD' || parsed.format === 'SRO') {
-        console.log('1')
         // Parse as SROD format
         const copyStorage = new SandboxStorage()
         copyStorage.copyFrom(database.storage)
