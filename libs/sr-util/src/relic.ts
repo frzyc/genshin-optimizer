@@ -51,7 +51,8 @@ export function getRelicMainStatDisplayVal(
 export function getSubstatValue(
   rarity: RelicRarityKey,
   statKey: RelicSubStatKey,
-  type: 'low' | 'med' | 'high' = 'high'
+  type: 'low' | 'med' | 'high' = 'high',
+  round = true
 ) {
   const { base, step } = allStats.relic.sub[rarity][statKey] ?? {}
   if (base === undefined || step === undefined)
@@ -59,7 +60,8 @@ export function getSubstatValue(
       `Attempted to get relic sub stat value that doesn't exist for a ${rarity}-star relic with substat ${statKey}.`
     )
   const steps = type === 'low' ? 0 : type === 'med' ? 1 : 2
-  return roundStat(base + steps * step, statKey)
+  const value = base + steps * step
+  return round ? roundStat(value, statKey) : value
 }
 
 // TODO: Update this with proper corrected rolls
@@ -67,15 +69,13 @@ export function getSubstatRange(
   rarity: RelicRarityKey,
   statKey: RelicSubStatKey
 ) {
-  const { base, step } = allStats.relic.sub[rarity][statKey] ?? {}
-  if (base === undefined || step === undefined)
-    throw new Error(
-      `Attempted to get relic sub stat value that doesn't exist for a ${rarity}-star relic with substat ${statKey}.`
-    )
   const { numUpgrades } = relicSubstatRollData[rarity]
   return {
-    low: roundStat(base, statKey),
-    high: roundStat(base + step * 2 * numUpgrades, statKey),
+    low: getSubstatValue(rarity, statKey, 'low'),
+    high: roundStat(
+      getSubstatValue(rarity, statKey, 'high', false) * (numUpgrades + 1),
+      statKey
+    ),
   }
 }
 

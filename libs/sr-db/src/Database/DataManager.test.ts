@@ -17,15 +17,15 @@ describe('Database', () => {
     expect(invalid).toEqual(false)
     expect(database.relics.values.length).toEqual(0)
     const id = 'testid'
-    database.relics.set(id, randomizeRelic({ level: 0 }))
+    database.relics.set(id, randomizeRelic({ rarity: 4, level: 0 }))
     expect(database.relics.get(id)?.level).toEqual(0)
 
     database.relics.set(id, (art) => {
-      art.level = art.level + 4
+      art.level = art.level + 3
     })
-    expect(database.relics.get(id)?.level).toEqual(4)
+    expect(database.relics.get(id)?.level).toEqual(3)
 
-    database.relics.set(id, ({ level }) => ({ level: level + 4 }))
-    expect(database.relics.get(id)?.level).toEqual(8)
+    database.relics.set(id, ({ level }) => ({ level: level + 3 }))
+    expect(database.relics.get(id)?.level).toEqual(6)
   })
 })

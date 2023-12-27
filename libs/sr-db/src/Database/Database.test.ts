@@ -58,7 +58,7 @@ describe('Database', () => {
 
     const newDB = new SroDatabase(dbIndex, new SandboxStorage())
     const srod = database.exportSROD()
-    newDB.importSROD(srod, false, false)!
+    newDB.importSROD(srod, false, false)
     expect(
       database.storage.entries.filter(
         ([k]) =>
