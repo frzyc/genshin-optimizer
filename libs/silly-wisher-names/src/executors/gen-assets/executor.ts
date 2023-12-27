@@ -123,11 +123,9 @@ export default async function runExecutor(_options: GenAssetsExecutorSchema) {
       id, // indonesian
       pt, // Portuguese(Brazil)
       ru, // Russian
-      _po, // Polish
       vi, // Vietnamese
+      _po, // Polish
       tr, // Turkish
-      _ar, // Arabic,
-      _fi, // Filipino / Tagalog
     ] = line.split(',')
     const characterKey = swKeyMap[skey as keyof typeof swKeyMap]
     if (!characterKey) return
