@@ -25,7 +25,7 @@ export default function Database() {
   const current = database === mainDB
   const [data, setData] = useState('')
   // Need to update the dbMeta when database changes
-  const [{ lastEdit }, setDBMeta] = useState(database.dbMeta.get())
+  const [{ name, lastEdit }, setDBMeta] = useState(database.dbMeta.get())
   useEffect(() => setDBMeta(database.dbMeta.get()), [database])
 
   const { importedDatabase } =
@@ -68,6 +68,25 @@ export default function Database() {
     reader.readAsText(file)
   }
 
+  const download = useCallback(() => {
+    const date = new Date()
+    const dateStr = date
+      .toISOString()
+      .split('.')[0]
+      .replace('T', '_')
+      .replaceAll(':', '-')
+    const JSONStr = JSON.stringify(database.exportSROD())
+    const filename = `${name.trim().replaceAll(' ', '_')}_${dateStr}.json`
+    const contentType = 'application/json;charset=utf-8'
+    const a = document.createElement('a')
+    a.download = filename
+    a.href = `data:${contentType},${encodeURIComponent(JSONStr)}`
+    a.target = '_blank'
+    document.body.appendChild(a)
+    a.click()
+    document.body.removeChild(a)
+  }, [database, name])
+
   const replaceDb = useCallback(() => {
     if (!importedDatabase) return
     importedDatabase.swapStorage(database)
@@ -105,6 +124,7 @@ export default function Database() {
                 ))}
               </DropdownButton>
               <Button onClick={swapDb}>Swap to Database</Button>
+              <Button onClick={download}>Download DB</Button>
               <input
                 accept=".json"
                 id="icon-button-file"
