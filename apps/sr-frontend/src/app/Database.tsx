@@ -4,17 +4,16 @@ import { Card, CardContent, Container, Typography } from '@mui/material'
 import { useContext } from 'react'
 
 export default function Database() {
-  const { database } = useContext(DatabaseContext)
-  const valStrings = Object.keys(database)
+  const { database: mainDB } = useContext(DatabaseContext)
   return (
     <Container>
       <Card>
         <CardThemed bgt="dark">
           <CardContent>
-            <Typography variant="h5">Database Keys</Typography>
-            {valStrings.map((str) => (
-              <Typography key={str}>{str}</Typography>
-            ))}
+            <Typography variant="h5">Database</Typography>
+            <Typography>
+              <pre>{JSON.stringify(mainDB.exportSROD(), undefined, 2)}</pre>
+            </Typography>
           </CardContent>
         </CardThemed>
       </Card>
