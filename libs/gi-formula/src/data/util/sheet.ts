@@ -7,9 +7,11 @@ import type {
 import type { NumNode, StrNode } from '@genshin-optimizer/pando'
 import { prod } from '@genshin-optimizer/pando'
 import type { Source, Stat } from './listing'
+import type { Read } from './read'
 import { reader, tag } from './read'
 import { self, selfBuff, teamBuff } from './tag'
 import type { TagMapNodeEntries, TagMapNodeEntry } from './tagMapType'
+import type { StatKey } from '@genshin-optimizer/dm'
 
 // Use `registerArt` for artifacts
 export function register(
@@ -23,24 +25,6 @@ export function register(
   return data.flatMap((data) =>
     Array.isArray(data) ? data.map(internal) : internal(data)
   )
-}
-
-export function addStatCurve(key: string, value: NumNode): TagMapNodeEntry {
-  return (
-    key.endsWith('_dmg_')
-      ? selfBuff.premod['dmg_'][key.slice(0, -5) as ElementWithPhyKey]
-      : selfBuff.base[key as Stat]
-  ).add(value)
-}
-export function registerStatListing(key: string): TagMapNodeEntry {
-  const tags = key.endsWith('_dmg_')
-    ? {
-        qt: 'premod',
-        q: 'dmg_',
-        ele: key.slice(0, -5) as ElementWithPhyKey,
-      }
-    : { qt: 'base', q: key }
-  return selfBuff.formula.listing.add(tag('sum', tags))
 }
 
 export type FormulaArg = {
@@ -126,4 +110,13 @@ function registerFormula(
     buff.formula.listing.add(tag(cond, { name, q })),
     ...extra.map(({ tag, value }) => ({ tag: { ...tag, name }, value })),
   ]
+}
+
+export function readStat(
+  list: Record<Stat | 'shield_', Read>,
+  key: StatKey
+): Read {
+  return key.endsWith('_dmg_')
+    ? list['dmg_'][key.slice(0, -5) as ElementWithPhyKey]
+    : list[key as Stat]
 }

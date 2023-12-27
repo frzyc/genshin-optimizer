@@ -12,12 +12,11 @@ import type { NumNode } from '@genshin-optimizer/pando'
 import { prod, subscript, sum } from '@genshin-optimizer/pando'
 import type { TagMapNodeEntries, FormulaArg, Stat } from '../util'
 import {
-  addStatCurve,
-  registerStatListing,
   allStatics,
   customDmg,
   customShield,
   percent,
+  readStat,
   self,
   selfBuff,
 } from '../util'
@@ -126,6 +125,8 @@ export function fixedShield(
   )
 }
 
+const baseStats = new Set(['atk', 'def', 'hp'])
+
 export function entriesForChar(
   { ele, weaponType, region }: CharInfo,
   { lvlCurves, ascensionBonus }: CharacterDataGen
@@ -139,14 +140,16 @@ export function entriesForChar(
   return [
     // Stats
     ...lvlCurves.map(({ key, base, curve }) =>
-      addStatCurve(key, prod(base, allStatics('static')[curve]))
+      selfBuff.base[key].add(prod(base, allStatics('static')[curve]))
     ),
     ...Object.entries(ascensionBonus).map(([key, values]) =>
-      addStatCurve(key, subscript(ascension, values))
+      (baseStats.has(key)
+        ? selfBuff.base[key as 'atk' | 'def' | 'hp']
+        : readStat(selfBuff.premod, key as keyof typeof ascensionBonus)
+      ).add(subscript(ascension, values))
     ),
 
     // Constants
-    ...[...specials].map((s) => registerStatListing(s)),
     selfBuff.common.weaponType.add(weaponType),
     selfBuff.char.ele.add(ele),
 

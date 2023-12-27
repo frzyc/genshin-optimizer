@@ -15,10 +15,10 @@ const data: TagMapNodeEntries = [
     })
   ),
   selfBuff.formula.shield.add(
-    prod(self.formula.base, sum(percent(1), self.base.shield_))
+    prod(self.formula.base, sum(percent(1), self.premod.shield_))
   ),
   selfBuff.formula.heal.add(
-    prod(self.formula.base, sum(percent(1), self.base.heal_))
+    prod(self.formula.base, sum(percent(1), self.premod.heal_))
   ),
 
   // Transformative reactions

@@ -161,7 +161,7 @@ export class DebugCalculator extends BaseCalculator<DebugMeta> {
               text: `expand ${tagStr(nTag!, ex)} (${tagStr(tag!)})`,
               deps: args.map(({ meta, entryTag }) => ({
                 ...meta,
-                text: `${entryTag!.map((tag) => tagStr(tag)).join(' <- ')} <= ${
+                text: `${entryTag?.map((tag) => tagStr(tag)).join(' <- ')} <= ${
                   meta.text
                 }`,
               })),
