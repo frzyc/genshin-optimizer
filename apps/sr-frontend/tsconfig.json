@@ -15,6 +15,7 @@
     "noUnusedParameters": true,
     "allowSyntheticDefaultImports": true,
     "skipLibCheck": true,
+    "exactOptionalPropertyTypes": false,
     "types": ["vite/client", "vitest"]
   },
   "include": ["src"],
