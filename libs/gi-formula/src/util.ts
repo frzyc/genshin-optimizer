@@ -44,8 +44,8 @@ export function charData(data: ICharacter): TagMapNodeEntries {
     constellation.add(data.constellation),
 
     // Default char
-    selfBuff.base.critRate_.add(0.05),
-    selfBuff.base.critDMG_.add(0.5),
+    selfBuff.premod.critRate_.add(0.05),
+    selfBuff.premod.critDMG_.add(0.5),
   ]
 }
 

@@ -25,9 +25,9 @@ export type WeaponDataGen = {
   rarity: 1 | 2 | 3 | 4 | 5
   mainStat: WeaponProp
   subStat?: WeaponProp | undefined
-  lvlCurves: { key: string; base: number; curve: WeaponGrowCurveKey }[]
-  refinementBonus: { [key in string]: number[] }
-  ascensionBonus: { [key in string]: number[] }
+  lvlCurves: { key: StatKey; base: number; curve: WeaponGrowCurveKey }[]
+  refinementBonus: { [key in StatKey]?: number[] }
+  ascensionBonus: { [key in StatKey]?: number[] }
 }
 
 export default function weaponData() {
@@ -52,7 +52,7 @@ export default function weaponData() {
           if (!(key in refinementBonus))
             refinementBonus[key] = [...emptyRefinement]
           // Refinement uses 1-based index, hence the +1
-          refinementBonus[key][i + 1] += extrapolateFloat(value)
+          refinementBonus[key]![i + 1] += extrapolateFloat(value)
         }
       })
       const ascensionBonus: WeaponDataGen['ascensionBonus'] = {}
@@ -63,7 +63,7 @@ export default function weaponData() {
           const key = propTypeMap[propType]
           if (!(key in ascensionBonus))
             ascensionBonus[key] = [...emptyAscension]
-          ascensionBonus[key][i] += extrapolateFloat(value)
+          ascensionBonus[key]![i] += extrapolateFloat(value)
         }
       })
 
