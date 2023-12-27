@@ -26,6 +26,10 @@ export default function Database() {
   const [data, setData] = useState('')
   // Need to update the dbMeta when database changes
   const [{ name, lastEdit }, setDBMeta] = useState(database.dbMeta.get())
+  useEffect(
+    () => database.dbMeta.follow((_r, dbMeta) => setDBMeta(dbMeta)),
+    [database]
+  )
   useEffect(() => setDBMeta(database.dbMeta.get()), [database])
 
   const { importedDatabase } =
@@ -101,7 +105,6 @@ export default function Database() {
     setDatabase(index, database)
   }, [current, database, index, mainDB, setDatabase])
 
-  // TODO: Make this reload the component
   const clearDb = useCallback(() => {
     database.clear()
     database.toExtraLocalDB()
