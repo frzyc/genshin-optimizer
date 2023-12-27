@@ -17,7 +17,7 @@ import {
   Typography,
 } from '@mui/material'
 import { Container } from '@mui/system'
-import React, { useMemo, useState } from 'react'
+import { useMemo, useState } from 'react'
 
 export default function Character() {
   const [charKey, setcharKey] = useState<CharacterKey>('March7th')

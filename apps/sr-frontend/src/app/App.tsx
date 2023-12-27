@@ -6,7 +6,7 @@ import {
   StyledEngineProvider,
   ThemeProvider,
 } from '@mui/material'
-import React, { useCallback, useMemo, useState } from 'react'
+import { useCallback, useMemo, useState } from 'react'
 import Character from './Character'
 import Database from './Database'
 import { theme } from './Theme'
