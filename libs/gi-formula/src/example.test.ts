@@ -109,7 +109,7 @@ describe('example', () => {
         calc.compute(member1.final.eleMas).val
     )
   })
-  describe('list final formulas', () => {
+  describe('retrieve formulas in formula listing', () => {
     /**
      * Each entry in listing is a `Tag` in the shape of
      * ```
@@ -123,7 +123,9 @@ describe('example', () => {
      * }
      * ```
      */
-    const listing = calc.listFormulas(member0.formula.listing).map((x) => x.tag)
+    const listing = calc
+      .listFormulas(member0.listing.formulas)
+      .map((x) => x.tag)
 
     // Simple check that all tags are in the correct format
     const names: string[] = []
@@ -158,9 +160,9 @@ describe('example', () => {
     ])
     expect(listing.filter((x) => x.src === 'static').length).toEqual(5)
   })
-  test('calculate final formulas', () => {
+  test('calculate formulas in a listing', () => {
     const read = calc
-      .listFormulas(member0.formula.listing)
+      .listFormulas(member0.listing.formulas)
       .find((x) => x.tag.name === 'normal_0')!
     const tag = read.tag
 
@@ -203,7 +205,7 @@ describe('example', () => {
     // Step 1: Pick formula(s); anything that `calc.compute` can handle will work
     const nodes = [
       calc
-        .listFormulas(member0.formula.listing)
+        .listFormulas(member0.listing.formulas)
         .find((x) => x.tag.name === 'normal_0')!,
       member0.char.auto,
       member0.final.atk,
@@ -247,7 +249,7 @@ describe('example', () => {
   test.skip('debug formula', () => {
     // Pick formula
     const normal0 = calc
-      .listFormulas(member1.formula.listing)
+      .listFormulas(member1.listing.formulas)
       .find((x) => x.tag.name === 'normal_0')!
 
     // Use `DebugCalculator` instead of `Calculator`, same constructor

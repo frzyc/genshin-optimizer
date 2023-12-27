@@ -34,8 +34,8 @@ export default async function runExecutor(
       // sheet-specific
       tag['src'] != 'agg' &&
       // formula listing
-      tag['qt'] == 'formula' &&
-      tag['q'] == 'listing' &&
+      tag['qt'] == 'listing' &&
+      tag['q'] == 'formulas' &&
       // pattern from `registerFormula`
       value['op'] == 'tag' &&
       'name' in value.tag &&

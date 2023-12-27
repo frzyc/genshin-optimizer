@@ -7,6 +7,7 @@ describe('SyncRepo Executor', () => {
     const repoUrl = 'https://github.com/chrislgarry/Apollo-11/'
     const outputPath = path.join(__dirname, 'TestDB')
     const hashPath = path.join(__dirname, 'TestDB.hash')
+    const branch = 'origin/master'
 
     if (fs.existsSync(outputPath))
       fs.rmSync(outputPath, { recursive: true, force: true })
@@ -15,6 +16,7 @@ describe('SyncRepo Executor', () => {
     const output1 = await executor({
       repoUrl,
       outputPath,
+      branch,
       prefixPath: false,
     })
 
@@ -28,6 +30,7 @@ describe('SyncRepo Executor', () => {
     const output2 = await executor({
       repoUrl,
       outputPath,
+      branch,
       prefixPath: false,
     })
     expect(output2.success).toBe(true)

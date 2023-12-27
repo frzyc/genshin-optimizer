@@ -364,7 +364,7 @@ const data: TagMapNodeEntries = [
     return variants.flatMap((ele) => {
       const name = trans === 'swirl' ? `swirl_${ele}` : trans
       return [
-        selfBuff.formula.listing.add(
+        selfBuff.listing.formulas.add(
           tag(cond, { trans, q, ele, src: 'static', name })
         ),
         selfBuff.prep.ele.name(name).add(ele),

@@ -175,6 +175,7 @@ const dmgFormulas = {
   ),
   skill: {
     dmg: dmgNode('atk', dm.skill.dmg, 'skill'),
+    atk,
   },
   burst: {
     dmg: dmgNode('atk', dm.burst.dmg, 'burst'),
