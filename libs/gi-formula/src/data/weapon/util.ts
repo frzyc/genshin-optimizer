@@ -40,16 +40,14 @@ export function entriesForWeapon(key: WeaponKey): TagMapNodeEntries {
       )
     ),
     ...[...Object.keys(gen.refinementBonus)].map((stat) =>
-      self.listing.specialized
-        .src(key)
-        .add(
-          listingItem(
-            readStat(
-              self.weaponRefinement,
-              stat as keyof typeof gen.refinementBonus
-            )
-          )
+      self.listing.specialized.add(
+        listingItem(
+          readStat(
+            self.weaponRefinement,
+            stat as keyof typeof gen.refinementBonus
+          ).src(key)
         )
+      )
     ),
   ]
 }
