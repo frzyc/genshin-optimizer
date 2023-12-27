@@ -88,6 +88,7 @@ const stats: Record<Stat, Desc> = {
 } as const
 export const selfTag = {
   base: { atk: agg, def: agg, hp: agg },
+  weaponRefinement: { ...stats, shield_: agg },
   premod: { ...stats, shield_: agg },
   final: stats,
   char: {

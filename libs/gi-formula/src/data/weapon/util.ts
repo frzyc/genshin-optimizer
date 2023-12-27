@@ -22,9 +22,10 @@ export function entriesForWeapon(key: WeaponKey): TagMapNodeEntries {
       ).add(subscript(ascension, values))
     ),
     ...Object.entries(gen.refinementBonus).map(([key, values]) =>
-      readStat(selfBuff.premod, key as keyof typeof gen.refinementBonus).add(
-        subscript(refinement, values)
-      )
+      readStat(
+        selfBuff.weaponRefinement,
+        key as keyof typeof gen.refinementBonus
+      ).add(subscript(refinement, values))
     ),
   ]
 }
