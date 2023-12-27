@@ -105,11 +105,15 @@ function registerFormula(
   ...extra: TagMapNodeEntries
 ): TagMapNodeEntries {
   reader.name(name) // register name:<name>
-  const buff = team ? teamBuff : selfBuff
+  const listing = (team ? teamBuff : selfBuff).listing.formulas
   return [
-    buff.formula.listing.add(tag(cond, { name, q })),
+    listing.add(listingItem(reader.withTag({ name, qt: 'formula', q }), cond)),
     ...extra.map(({ tag, value }) => ({ tag: { ...tag, name }, value })),
   ]
+}
+
+export function listingItem(t: Read, cond?: string | StrNode) {
+  return tag(cond ?? t.ex ?? 'unique', t.tag)
 }
 
 export function readStat(

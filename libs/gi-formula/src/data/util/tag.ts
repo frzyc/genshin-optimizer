@@ -133,13 +133,16 @@ export const selfTag = {
   prep: { ele: prep, move: prep, amp: prep, cata: prep, trans: prep },
   formula: {
     base: agg,
-    listing: aggStr,
     dmg: prep,
     shield: prep,
     heal: prep,
     trans: prep,
     transCrit: prep,
     swirl: prep,
+  },
+  listing: {
+    formulas: aggStr,
+    specialized: aggStr,
   },
 } as const
 export const enemyTag = {

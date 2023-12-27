@@ -15,6 +15,7 @@ import {
   allStatics,
   customDmg,
   customShield,
+  listingItem,
   percent,
   readStat,
   self,
@@ -128,13 +129,15 @@ export function fixedShield(
 const baseStats = new Set(['atk', 'def', 'hp'])
 
 export function entriesForChar(
-  { ele, weaponType, region }: CharInfo,
+  { key, ele, weaponType, region }: CharInfo,
   { lvlCurves, ascensionBonus }: CharacterDataGen
 ): TagMapNodeEntries {
-  const specials = new Set(Object.keys(ascensionBonus))
-  specials.delete('atk')
-  specials.delete('def')
-  specials.delete('hp')
+  const specialized = new Set(
+    Object.keys(ascensionBonus) as (keyof typeof ascensionBonus)[]
+  )
+  specialized.delete('atk')
+  specialized.delete('def')
+  specialized.delete('hp')
 
   const { ascension } = self.char
   return [
@@ -156,5 +159,25 @@ export function entriesForChar(
     // Counters
     selfBuff.common.count[ele].add(1),
     ...(region !== '' ? [selfBuff.common.count[region].add(1)] : []),
+
+    // Listing (formulas)
+    selfBuff.listing.formulas.add(listingItem(self.final.hp)),
+    selfBuff.listing.formulas.add(listingItem(self.final.atk)),
+    selfBuff.listing.formulas.add(listingItem(self.final.def)),
+    selfBuff.listing.formulas.add(listingItem(self.final.eleMas)),
+    selfBuff.listing.formulas.add(listingItem(self.final.enerRech_)),
+    selfBuff.listing.formulas.add(listingItem(self.common.cappedCritRate_)),
+    selfBuff.listing.formulas.add(listingItem(self.final.critDMG_)),
+    selfBuff.listing.formulas.add(listingItem(self.final.heal_)),
+    selfBuff.listing.formulas.add(listingItem(self.final.dmg_[ele])),
+    selfBuff.listing.formulas.add(listingItem(self.final.dmg_.physical)),
+
+    // Listing (specialized)
+    ...[...specialized].map((stat) =>
+      selfBuff.listing.specialized.add(
+        // Sheet-specific data (i.e., `src:<key>`)
+        listingItem(readStat(self.premod, stat).src(key))
+      )
+    ),
   ]
 }
