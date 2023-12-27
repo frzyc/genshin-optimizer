@@ -4,6 +4,16 @@
   "sourceRoot": "libs/sr-dm/src",
   "projectType": "library",
   "targets": {
+    "load-dm": {
+      "options": {
+        "outputPath": "libs/sr-dm/StarRailData"
+      },
+      "inputs": [
+        {
+          "runtime": "git ls-tree --object-only HEAD libs/sr-dm/StarRailData"
+        }
+      ]
+    },
     "gen-file": {},
     "build": {},
     "build-ts": {
