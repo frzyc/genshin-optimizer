@@ -67,15 +67,15 @@ export function getSubstatValue(
 // TODO: Update this with proper corrected rolls
 export function getSubstatRange(
   rarity: RelicRarityKey,
-  statKey: RelicSubStatKey
+  statKey: RelicSubStatKey,
+  round = false
 ) {
   const { numUpgrades } = relicSubstatRollData[rarity]
+  const high =
+    getSubstatValue(rarity, statKey, 'high', false) * (numUpgrades + 1)
   return {
-    low: getSubstatValue(rarity, statKey, 'low'),
-    high: roundStat(
-      getSubstatValue(rarity, statKey, 'high', false) * (numUpgrades + 1),
-      statKey
-    ),
+    low: getSubstatValue(rarity, statKey, 'low', round),
+    high: round ? roundStat(high, statKey) : high,
   }
 }
 
