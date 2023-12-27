@@ -1,4 +1,4 @@
-import type { DBStorage } from './DBStorage'
+import type { DBStorage, DbIndexKey, DbVersionKey } from './DBStorage'
 
 export class SandboxStorage implements DBStorage {
   protected storage: Record<string, string> = {}
@@ -51,16 +51,16 @@ export class SandboxStorage implements DBStorage {
       Object.entries(this.storage).filter(([key]) => !shouldRemove(key))
     )
   }
-  getDBVersion(): number {
-    return parseInt(this.getString('db_ver') ?? '0')
+  getDBVersion(key: DbVersionKey = 'db_ver'): number {
+    return parseInt(this.getString(key) ?? '0')
   }
-  setDBVersion(version: number): void {
-    this.setString('db_ver', version.toString())
+  setDBVersion(version: number, key: DbVersionKey = 'db_ver'): void {
+    this.setString(key, version.toString())
   }
-  getDBIndex(): 1 | 2 | 3 | 4 {
-    return parseInt(this.getString('dbIndex') ?? '1') as 1 | 2 | 3 | 4
+  getDBIndex(key: DbIndexKey = 'dbIndex'): 1 | 2 | 3 | 4 {
+    return parseInt(this.getString(key) ?? '1') as 1 | 2 | 3 | 4
   }
-  setDBIndex(ind: 1 | 2 | 3 | 4) {
-    this.setString('dbIndex', ind.toString())
+  setDBIndex(ind: 1 | 2 | 3 | 4, key: DbIndexKey = 'dbIndex') {
+    this.setString(key, ind.toString())
   }
 }

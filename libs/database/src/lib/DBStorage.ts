@@ -1,3 +1,9 @@
+export const dbVersionKeys = ['db_ver', 'sro_db_ver'] as const
+export type DbVersionKey = (typeof dbVersionKeys)[number]
+
+export const dbIndexKeys = ['dbIndex', 'sro_dbIndex'] as const
+export type DbIndexKey = (typeof dbIndexKeys)[number]
+
 export interface DBStorage {
   keys: string[]
   entries: [key: string, value: string][]
@@ -12,8 +18,8 @@ export interface DBStorage {
 
   copyFrom(other: DBStorage): void
   clear(): void
-  getDBVersion(): number
-  setDBVersion(version: number): void
-  getDBIndex(): 1 | 2 | 3 | 4
-  setDBIndex(ind: 1 | 2 | 3 | 4): void
+  getDBVersion(key?: DbVersionKey): number
+  setDBVersion(version: number, key?: DbVersionKey): void
+  getDBIndex(key?: DbIndexKey): 1 | 2 | 3 | 4
+  setDBIndex(ind: 1 | 2 | 3 | 4, key?: DbIndexKey): void
 }
