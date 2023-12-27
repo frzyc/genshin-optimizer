@@ -139,7 +139,9 @@ export default function Database() {
                 Nuke
               </Button>
             </Grid>
-            <Typography>Last Edit: {lastEdit}</Typography>
+            <Typography>
+              Last Edit: {new Date(lastEdit).toLocaleString()}
+            </Typography>
             <Typography component="pre" fontFamily="monospace">
               {JSON.stringify(database.exportSROD(), undefined, 2)}
             </Typography>
