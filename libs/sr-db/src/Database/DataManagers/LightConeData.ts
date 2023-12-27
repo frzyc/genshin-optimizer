@@ -9,7 +9,6 @@ import type {
   ILightCone,
   ISrObjectDescription,
 } from '@genshin-optimizer/sr-srod'
-import { allStats } from '@genshin-optimizer/sr-stats'
 import { validateLevelAsc } from '@genshin-optimizer/sr-util'
 import type {
   ICachedLightCone,
@@ -40,7 +39,6 @@ export class LightConeDataManager extends DataManager<
     let { superimpose, location, lock } = obj as ILightCone
 
     if (!allLightConeKeys.includes(key)) return undefined
-    const { path } = allStats.lightCone[key]
     if (rawLevel > lightConeMaxLevel) return undefined
     const { level, ascension } = validateLevelAsc(rawLevel, rawAscension)
     if (typeof superimpose !== 'number' || superimpose < 1 || superimpose > 5)
