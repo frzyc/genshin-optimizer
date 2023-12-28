@@ -8,9 +8,7 @@ permissions:
   pull-requests: write
 
 on:
-  pull_request_target:
-    branches:
-      - master
+  pull_request:
     paths-ignore:
       - 'apps/frontend/**'
       - 'apps/frontend-e2e/**'
@@ -18,18 +16,22 @@ on:
       - 'apps/sr-frontend-e2e/**'
       - 'libs/sr-assets/**'
       - 'libs/sr-consts/**'
+      - 'libs/sr-db/**'
       - 'libs/sr-dm/**'
       - 'libs/sr-formula/**'
+      - 'libs/sr-srod/**'
       - 'libs/sr-stats/**'
     types: [opened, reopened, synchronize, labeled]
 
 jobs:
   call-deploy-frontend:
     uses: ./.github/workflows/deploy-frontend.yml
+    # Forks don't have permission to deploy
+    if: ${{ github.event.pull_request.head.repo.full_name == github.repository }}
     with:
       frontend_name: 'gi-frontend'
       repo_full_name: ${{ github.event.pull_request.head.repo.full_name }}
-      ref: ${{ github.event.pull_request.merge_commit_sha }}
+      ref: ''
       deployment_name: ${{ github.event.number }}
       pr_repo: ${{ vars.PR_REPO }}
       show_dev_components: ${{ contains(github.event.pull_request.labels.*.name, 'showDevComponents') }}

@@ -1,0 +1,16 @@
+overwrite: true
+schema: 'apps/gi-backend/src/app/schema_gen.graphql'
+generates:
+  libs/gi-frontend-gql/src/lib/generated/generated.tsx:
+    documents: 'libs/gi-frontend-gql/src/lib/**/*.graphql'
+    plugins:
+      - 'typescript'
+      - 'typescript-operations'
+      - 'typescript-react-apollo'
+    config:
+      withHooks: true
+      withComponent: false
+      withHOC: false
+      enumsAsTypes: true
+      namingConvention:
+        enumValues: keep

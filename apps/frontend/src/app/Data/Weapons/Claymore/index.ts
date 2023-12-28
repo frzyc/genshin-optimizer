@@ -29,6 +29,8 @@ import TalkingStick from './TalkingStick'
 import TheBell from './TheBell'
 import TheUnforged from './TheUnforged'
 import TidalShadow from './TidalShadow'
+import UltimateOverlordsMegaMagicSword from './UltimateOverlordsMegaMagicSword'
+import Verdict from './Verdict'
 import WasterGreatsword from './WasterGreatsword'
 import Whiteblind from './Whiteblind'
 import WhiteIronGreatsword from './WhiteIronGreatsword'
@@ -63,6 +65,8 @@ const claymore: Record<WeaponClaymoreKey, WeaponSheet> = {
   TheBell,
   TheUnforged,
   TidalShadow,
+  UltimateOverlordsMegaMagicSword,
+  Verdict,
   WasterGreatsword,
   Whiteblind,
   WhiteIronGreatsword,

@@ -57,12 +57,19 @@ export function histogramContAnalysis(
   imageData: ImageData,
   color1: Color,
   color2: Color,
-  hori = true
+  hori = true,
+  range = [0, 1]
 ): number[] {
   const height = imageData.height
   const width = imageData.width
   const p = imageData.data
-  return Array.from({ length: hori ? width : height }, (v, i) => {
+  const max = hori ? width : height
+  const [leftRange, rightRange] = range
+  const left = max * leftRange
+  const right = max * rightRange
+
+  return Array.from({ length: max }, (v, i) => {
+    if (i < left || i > right) return 0
     let longest = 0
     let num = 0
     for (let j = 0; j < (hori ? height : width); j++) {
@@ -94,13 +101,13 @@ export function getPixelIndex(x: number, y: number, width: number) {
 export function findHistogramRange(
   histogram: number[],
   threshold = 0.7,
-  window = 5
+  window = 3
 ) {
   const max = Math.max(...histogram)
   const hMax = max * threshold
   const length = histogram.length
   let a = -window
-  for (let i = 0; i < histogram.length; i++) {
+  for (let i = 0; i < length; i++) {
     const maxed = histogram[i] > hMax
     if (!maxed) a = -window
     else if (maxed && a < 0) a = i

@@ -5,6 +5,7 @@ import CardDark from '../Components/Card/CardDark'
 import DatabaseCard from './DatabaseCard'
 import LanguageCard from './LanguageCard'
 import SillyCard from './SillyCard'
+import { SnowToggle } from './SnowToggle'
 
 export default function PageSettings() {
   const { t } = useTranslation(['settings'])
@@ -20,6 +21,7 @@ export default function PageSettings() {
       <Divider />
       <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
         <LanguageCard />
+        <SnowToggle />
         <SillyCard />
         <DatabaseCard />
       </CardContent>

@@ -12,53 +12,61 @@ import {
   allSubstatKeys,
 } from '@genshin-optimizer/consts'
 import type { ISubstat } from '@genshin-optimizer/gi-good'
-import { hammingDistance, unit } from '@genshin-optimizer/util'
+import { levenshteinDistance, unit } from '@genshin-optimizer/util'
 import { artSlotNames, statMap } from './enStringMap'
 
+/** small utility function used by most string parsing functions below */
+export type KeyDist<T extends string> = [T, number]
+export function getBestKeyDist<T extends string>(hams: Array<KeyDist<T>>) {
+  const minHam = Math.min(...hams.map(([, ham]) => ham))
+  const keys = hams.filter(([, ham]) => ham === minHam).map(([key]) => key)
+  return new Set(keys)
+}
+
 export function parseSetKeys(texts: string[]): Set<ArtifactSetKey> {
-  const results = new Set<ArtifactSetKey>([])
+  const kdist: Array<KeyDist<ArtifactSetKey>> = []
   for (const text of texts)
     for (const key of allArtifactSetKeys)
-      if (
-        hammingDistance(
+      kdist.push([
+        key,
+        levenshteinDistance(
           text.replace(/\W/g, ''),
           key //TODO: use the translated set name?
-        ) <= 2
-      )
-        results.add(key)
-  return results
+        ),
+      ])
+  return getBestKeyDist(kdist)
 }
 
 export function parseSlotKeys(texts: string[]): Set<ArtifactSlotKey> {
-  const results = new Set<ArtifactSlotKey>()
+  const kdist: Array<KeyDist<ArtifactSlotKey>> = []
   for (const text of texts)
     for (const key of allArtifactSlotKeys)
-      if (
-        hammingDistance(
+      kdist.push([
+        key,
+        levenshteinDistance(
           text.replace(/\W/g, ''),
           artSlotNames[key].replace(/\W/g, '')
-        ) <= 2
-      )
-        results.add(key)
-  return results
+        ),
+      ])
+  return getBestKeyDist(kdist)
 }
 export function parseMainStatKeys(texts: string[]): Set<MainStatKey> {
-  const results = new Set<MainStatKey>([])
+  const kdist: Array<KeyDist<MainStatKey>> = []
   for (const text of texts)
     for (const key of allMainStatKeys) {
-      if (text.toLowerCase().includes(statMap[key]?.toLowerCase() ?? ''))
-        results.add(key)
-      //use fuzzy compare on the ... Bonus texts. heal_ is included.
-      if (
-        key.includes('_bonu') &&
-        hammingDistance(
-          text.replace(/\W/g, ''),
-          (statMap[key] ?? '').replace(/\W/g, '')
-        ) <= 1
-      )
-        results.add(key)
+      const statStr = statMap[key]?.toLowerCase()
+      if (statStr.length <= 3) {
+        if (text.toLowerCase().includes(statStr ?? '')) kdist.push([key, 0])
+      } else
+        kdist.push([
+          key,
+          levenshteinDistance(
+            text.replace(/\W/g, ''),
+            (statMap[key] ?? '').replace(/\W/g, '')
+          ),
+        ])
     }
-  return results
+  return getBestKeyDist(kdist)
 }
 export function parseMainStatValues(
   texts: string[]
@@ -108,23 +116,26 @@ export function parseSubstats(texts: string[]): ISubstat[] {
   return matches.slice(0, 4)
 }
 
-export function parseLocation(texts: string[]): LocationCharacterKey | null {
+export function parseLocation(texts: string[]): LocationCharacterKey {
+  const kdist: Array<KeyDist<LocationCharacterKey>> = []
   for (let text of texts) {
     if (!text) continue
     const colonInd = text.indexOf(':')
     if (colonInd !== -1) text = text.slice(colonInd + 1)
     if (!text) continue
 
-    for (const key of allLocationCharacterKeys) {
-      if (
-        hammingDistance(
+    for (const key of allLocationCharacterKeys)
+      kdist.push([
+        key,
+        levenshteinDistance(
           text.replace(/\W/g, ''),
           key //TODO: use the translated character name?
-        ) <= 2
-      )
-        return key
-    }
-    return 'Traveler' // just assume its traveler when we don't recognize the name
+        ),
+      ])
   }
-  return null
+
+  // traveler is the default value when we don't recognize the name
+  kdist.push(['Traveler', 8])
+  const [char] = getBestKeyDist(kdist)
+  return char
 }

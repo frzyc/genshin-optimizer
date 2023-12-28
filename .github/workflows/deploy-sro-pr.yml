@@ -8,33 +8,38 @@ permissions:
   pull-requests: write
 
 on:
-  pull_request_target:
-    branches:
-      - master
+  pull_request:
     paths-ignore:
       - 'apps/gi-frontend/**'
       - 'apps/gi-frontend-e2e/**'
       - 'apps/frontend/**'
       - 'apps/frontend-e2e/**'
+      - 'libs/consts/**'
+      - 'libs/dm/**'
+      - 'libs/gi-art-scanner/**'
       - 'libs/gi-assets/**'
-      - 'libs/gi-consts/**'
       - 'libs/gi-dm-localization/**'
       - 'libs/gi-formula/**'
+      - 'libs/gi-formula-ui/**'
       - 'libs/gi-good/**'
       - 'libs/gi-localization/**'
       - 'libs/gi-stats/**'
       - 'libs/gi-svgicons/**'
-      - 'libs/gi-util/**'
       - 'libs/gi-ui/**'
+      - 'libs/gi-util/**'
+      - 'libs/silly-wisher/**'
+      - 'libs/silly-wisher-names/**'
     types: [opened, reopened, synchronize, labeled]
 
 jobs:
   call-deploy-frontend:
     uses: ./.github/workflows/deploy-frontend.yml
+    # Forks don't have permission to deploy
+    if: ${{ github.event.pull_request.head.repo.full_name == github.repository }}
     with:
       frontend_name: 'sr-frontend'
       repo_full_name: ${{ github.event.pull_request.head.repo.full_name }}
-      ref: ${{ github.event.pull_request.merge_commit_sha }}
+      ref: ''
       deployment_name: ${{ github.event.number }}
       pr_repo: ${{ vars.PR_REPO }}
       show_dev_components: ${{ contains(github.event.pull_request.labels.*.name, 'showDevComponents') }}

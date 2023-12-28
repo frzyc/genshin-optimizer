@@ -6,7 +6,7 @@ import type {
   SubstatKey,
 } from '@genshin-optimizer/consts'
 import { allElementWithPhyKeys } from '@genshin-optimizer/consts'
-import { getMainStatDisplayValue } from '@genshin-optimizer/gi-util'
+import { getMainStatValue } from '@genshin-optimizer/gi-util'
 import {
   crawlObject,
   layeredAssignment,
@@ -66,7 +66,7 @@ function dataObjForArtifact(
   art: ICachedArtifact,
   mainStatAssumptionLevel = 0
 ): Data {
-  const mainStatVal = getMainStatDisplayValue(
+  const mainStatVal = getMainStatValue(
     art.mainStatKey,
     art.rarity,
     Math.max(Math.min(mainStatAssumptionLevel, art.rarity * 4), art.level)
@@ -428,15 +428,15 @@ function compareInternal(data1: any | undefined, data2: any | undefined): any {
   }
 }
 
-export type { NodeDisplay, UIData }
 export {
+  compareDisplayUIData,
+  compareTeamBuffUIData,
+  computeUIData,
   dataObjForArtifact,
   dataObjForCharacter,
   dataObjForWeapon,
-  mergeData,
-  computeUIData,
   inferInfoMut,
+  mergeData,
   uiDataForTeam,
-  compareTeamBuffUIData,
-  compareDisplayUIData,
 }
+export type { NodeDisplay, UIData }

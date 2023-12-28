@@ -1,0 +1,420 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type GenshinUser {
+  id: ID!
+  uid: String!
+}
+
+type AddGenshinUserRes {
+  success: Boolean!
+  genshinUser: GenshinUser
+  error: String
+}
+
+type CreateUserNameResponse {
+  success: Boolean!
+  error: String
+}
+
+type User {
+  id: ID!
+  username: String
+  genshinUsers: [GenshinUser!]
+}
+
+type Artifact {
+  id: ID!
+  genshinUserId: String!
+  setKey: ArtifactSetKey!
+  slotKey: ArtifactSlotKey!
+  level: Int!
+  rarity: Int!
+  mainStatKey: MainStatKey!
+  location: LocationKey
+  lock: Boolean!
+  substats: [Substat!]!
+}
+
+enum ArtifactSetKey {
+  Adventurer
+  ArchaicPetra
+  Berserker
+  BlizzardStrayer
+  BloodstainedChivalry
+  BraveHeart
+  CrimsonWitchOfFlames
+  DeepwoodMemories
+  DefendersWill
+  DesertPavilionChronicle
+  EchoesOfAnOffering
+  EmblemOfSeveredFate
+  FlowerOfParadiseLost
+  Gambler
+  GildedDreams
+  GladiatorsFinale
+  GoldenTroupe
+  HeartOfDepth
+  HuskOfOpulentDreams
+  Instructor
+  Lavawalker
+  LuckyDog
+  MaidenBeloved
+  MarechausseeHunter
+  MartialArtist
+  NoblesseOblige
+  NymphsDream
+  OceanHuedClam
+  PaleFlame
+  PrayersForDestiny
+  PrayersForIllumination
+  PrayersForWisdom
+  PrayersToSpringtime
+  ResolutionOfSojourner
+  RetracingBolide
+  Scholar
+  ShimenawasReminiscence
+  TenacityOfTheMillelith
+  TheExile
+  ThunderingFury
+  Thundersoother
+  TinyMiracle
+  TravelingDoctor
+  VermillionHereafter
+  ViridescentVenerer
+  VourukashasGlow
+  WanderersTroupe
+}
+
+enum ArtifactSlotKey {
+  flower
+  plume
+  sands
+  goblet
+  circlet
+}
+
+enum MainStatKey {
+  hp
+  hp_
+  atk
+  atk_
+  def_
+  eleMas
+  enerRech_
+  critRate_
+  critDMG_
+  physical_dmg_
+  anemo_dmg_
+  geo_dmg_
+  electro_dmg_
+  hydro_dmg_
+  pyro_dmg_
+  cryo_dmg_
+  dendro_dmg_
+  heal_
+}
+
+enum LocationKey {
+  Albedo
+  Alhaitham
+  Aloy
+  Amber
+  AratakiItto
+  Baizhu
+  Barbara
+  Beidou
+  Bennett
+  Candace
+  Charlotte
+  Chongyun
+  Collei
+  Cyno
+  Dehya
+  Diluc
+  Diona
+  Dori
+  Eula
+  Faruzan
+  Fischl
+  Freminet
+  Furina
+  Ganyu
+  Gorou
+  HuTao
+  Jean
+  KaedeharaKazuha
+  Kaeya
+  KamisatoAyaka
+  KamisatoAyato
+  Kaveh
+  Keqing
+  Kirara
+  Klee
+  KujouSara
+  KukiShinobu
+  Layla
+  Lisa
+  Lynette
+  Lyney
+  Mika
+  Mona
+  Nahida
+  Neuvillette
+  Nilou
+  Ningguang
+  Noelle
+  Qiqi
+  RaidenShogun
+  Razor
+  Rosaria
+  SangonomiyaKokomi
+  Sayu
+  Shenhe
+  ShikanoinHeizou
+  Somnia
+  Sucrose
+  Tartaglia
+  Thoma
+  Tighnari
+  Venti
+  Wanderer
+  Wriothesley
+  Xiangling
+  Xiao
+  Xingqiu
+  Xinyan
+  YaeMiko
+  Yanfei
+  Yaoyao
+  Yelan
+  Yoimiya
+  YunJin
+  Zhongli
+  Traveler
+}
+
+type Substat {
+  key: SubstatKey!
+  value: Float!
+}
+
+enum SubstatKey {
+  hp
+  hp_
+  atk
+  atk_
+  def
+  def_
+  eleMas
+  enerRech_
+  critRate_
+  critDMG_
+}
+
+type Weapon {
+  id: ID!
+  genshinUserId: String!
+  key: String!
+  level: Int!
+  ascension: Int!
+  refinement: Int!
+  location: String
+  lock: Boolean!
+}
+
+type Talent {
+  auto: Int!
+  skill: Int!
+  burst: Int!
+}
+
+type Character {
+  id: ID!
+  genshinUserId: String!
+  key: CharacterKey!
+  level: Int!
+  ascension: Int!
+  constellation: Int!
+  talent: Talent!
+}
+
+enum CharacterKey {
+  Albedo
+  Alhaitham
+  Aloy
+  Amber
+  AratakiItto
+  Baizhu
+  Barbara
+  Beidou
+  Bennett
+  Candace
+  Charlotte
+  Chongyun
+  Collei
+  Cyno
+  Dehya
+  Diluc
+  Diona
+  Dori
+  Eula
+  Faruzan
+  Fischl
+  Freminet
+  Furina
+  Ganyu
+  Gorou
+  HuTao
+  Jean
+  KaedeharaKazuha
+  Kaeya
+  KamisatoAyaka
+  KamisatoAyato
+  Kaveh
+  Keqing
+  Kirara
+  Klee
+  KujouSara
+  KukiShinobu
+  Layla
+  Lisa
+  Lynette
+  Lyney
+  Mika
+  Mona
+  Nahida
+  Neuvillette
+  Nilou
+  Ningguang
+  Noelle
+  Qiqi
+  RaidenShogun
+  Razor
+  Rosaria
+  SangonomiyaKokomi
+  Sayu
+  Shenhe
+  ShikanoinHeizou
+  Somnia
+  Sucrose
+  Tartaglia
+  Thoma
+  Tighnari
+  Venti
+  Wanderer
+  Wriothesley
+  Xiangling
+  Xiao
+  Xingqiu
+  Xinyan
+  YaeMiko
+  Yanfei
+  Yaoyao
+  Yelan
+  Yoimiya
+  YunJin
+  Zhongli
+  TravelerAnemo
+  TravelerGeo
+  TravelerElectro
+  TravelerDendro
+  TravelerHydro
+}
+
+type Query {
+  getUserById(id: String!): User
+  searchUsers(username: String!): [User!]!
+  getGenshinUser(id: String!): GenshinUser
+  getGenshinUserByUid(uid: String!): GenshinUser
+  getArtifact(id: String!): Artifact
+  getAllUserArtifact(genshinUserId: String!): [Artifact!]!
+  getWeapon(id: String!): Weapon
+  getAllUserWeapon(genshinUserId: String!): [Weapon!]!
+  getCharacter(id: String!): Character
+  getAllUserCharacter(genshinUserId: String!): [Character!]!
+}
+
+type Mutation {
+  createUsername(username: String!): CreateUserNameResponse!
+  addGenshinUser(uid: String!): AddGenshinUserRes!
+  addArtifact(genshinUserId: String!, artifact: InputArtifact!): Artifact!
+  updateArtifact(genshinUserId: String!, artifact: UpdateArtifact!): Artifact!
+  removeArtifact(genshinUserId: String!, artifactId: String!): Artifact!
+  addWeapon(genshinUserId: String!, weapon: InputWeapon!): Weapon!
+  updateWeapon(genshinUserId: String!, weapon: UpdateWeapon!): Weapon!
+  removeWeapon(genshinUserId: String!, weaponId: String!): Weapon!
+  addCharacter(genshinUserId: String!, character: InputCharacter!): Character!
+  updateCharacter(genshinUserId: String!, character: UpdateCharacter!): Character!
+  removeCharacter(genshinUserId: String!, characterId: String!): Character!
+}
+
+input InputArtifact {
+  setKey: ArtifactSetKey!
+  slotKey: ArtifactSlotKey!
+  level: Int!
+  rarity: Int!
+  mainStatKey: MainStatKey!
+  location: LocationKey
+  lock: Boolean!
+  substats: [InputSubstat!]!
+}
+
+input InputSubstat {
+  key: SubstatKey!
+  value: Float!
+}
+
+input UpdateArtifact {
+  setKey: ArtifactSetKey
+  slotKey: ArtifactSlotKey
+  level: Int
+  rarity: Int
+  mainStatKey: MainStatKey
+  location: LocationKey
+  lock: Boolean
+  substats: [InputSubstat!]
+  id: ID!
+}
+
+input InputWeapon {
+  key: String!
+  level: Int!
+  ascension: Int!
+  refinement: Int!
+  location: String
+  lock: Boolean!
+}
+
+input UpdateWeapon {
+  key: String
+  level: Int
+  ascension: Int
+  refinement: Int
+  location: String
+  lock: Boolean
+  id: ID!
+}
+
+input InputCharacter {
+  key: CharacterKey!
+  level: Int!
+  ascension: Int!
+  constellation: Int!
+  talent: InputTalent!
+}
+
+input InputTalent {
+  auto: Int!
+  skill: Int!
+  burst: Int!
+}
+
+input UpdateCharacter {
+  level: Int
+  ascension: Int
+  constellation: Int
+  talent: InputTalent
+  id: ID!
+}

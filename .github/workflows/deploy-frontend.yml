@@ -2,6 +2,30 @@ name: Deploy Frontend
 run-name: Deploy frontend of ${{ inputs.frontend_name }} for ${{ inputs.deployment_name }} - ${{ github.event.inputs.ref }}
 
 on:
+  workflow_dispatch:
+    inputs:
+      frontend_name:
+        description: 'Frontend type to build. Can be `frontend`, `gi-frontend` or `sr-frontend`'
+        type: string
+      repo_full_name:
+        description: 'Full repository name to build from.'
+        type: string
+        default: 'frzyc/genshin-optimizer'
+      ref:
+        description: 'Ref to build from. Can be a commit hash.'
+        type: string
+        default: 'master'
+      deployment_name:
+        description: 'Name for the deployment. This will determine the URL. If you choose a name that is already deployed, it will overwrite that deployment.'
+        type: string
+        default: 'master'
+      pr_repo:
+        description: 'Name of the repo to create the deployment on'
+        type: string
+      show_dev_components:
+        description: 'Flag to show components typically only shown in development mode, for experimental or in-progress features.'
+        type: boolean
+        default: false
   workflow_call:
     inputs:
       frontend_name:
@@ -37,6 +61,7 @@ jobs:
         with:
           repository: ${{ inputs.repo_full_name }}
           ref: ${{ inputs.ref }}
+          submodules: true
       - uses: actions/setup-node@v3
         with:
           node-version: 18
@@ -52,11 +77,14 @@ jobs:
       - name: Output date
         id: output-date
         run: echo "date=$(date -u)" >> $GITHUB_OUTPUT
+      - name: Output ref
+        id: output-ref
+        run: echo "ref=$(git rev-parse HEAD)" >> $GITHUB_OUTPUT
       - name: Maintain comment
         uses: actions-cool/maintain-one-comment@v3
         with:
           body: |
-            [${{ inputs.frontend_name }}] [${{ steps.output-date.outputs.date }}] - Building version ${{ inputs.ref }}
+            [${{ inputs.frontend_name }}] [${{ steps.output-date.outputs.date }}] - Building version ${{ steps.output-ref.outputs.ref }}
           body-include: '<!-- Created by actions-cool/maintain-one-comment -->'
           update-mode: 'append'
       - name: Build genshin-optimizer (Webpack)
@@ -104,6 +132,7 @@ jobs:
             git push origin gh-pages
       - name: Export url
         id: export-url
+        # First line splits the full repo name (frzyc/genshin-optimizer) into $account (frzyc) and $repo (genshin-optimizer)
         run: |
           IFS=/ read -r account repo <<< ${{ inputs.pr_repo }}
           echo "url=Deployed $(git rev-parse HEAD) to https://$account.github.io/$repo/${{ inputs.deployment_name }}/${{ inputs.frontend_name }} (Takes 3-5 minutes after this completes to be available)" >> $GITHUB_OUTPUT

@@ -6,12 +6,11 @@
   "targets": {
     "load-dm": {
       "options": {
-        "repoUrl": "https://gitlab.com/Dimbreath/AnimeGameData.git",
         "outputPath": "libs/dm/GenshinData"
       },
       "inputs": [
         {
-          "runtime": "git ls-remote -q https://gitlab.com/Dimbreath/AnimeGameData.git HEAD"
+          "runtime": "git ls-tree --object-only HEAD libs/dm/GenshinData"
         }
       ]
     },

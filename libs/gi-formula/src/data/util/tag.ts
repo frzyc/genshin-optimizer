@@ -87,8 +87,9 @@ const stats: Record<Stat, Desc> = {
   heal_: agg,
 } as const
 export const selfTag = {
-  base: { ...stats, shield_: agg },
-  premod: stats,
+  base: { atk: agg, def: agg, hp: agg },
+  weaponRefinement: { ...stats, shield_: agg },
+  premod: { ...stats, shield_: agg },
   final: stats,
   char: {
     lvl: iso,
@@ -102,7 +103,7 @@ export const selfTag = {
   },
   weapon: { lvl: iso, refinement: iso, ascension: iso },
   common: {
-    isActive: iso,
+    isActive: isoSum,
     weaponType: iso,
     critMode: fixed,
     cappedCritRate_: iso,
@@ -132,13 +133,16 @@ export const selfTag = {
   prep: { ele: prep, move: prep, amp: prep, cata: prep, trans: prep },
   formula: {
     base: agg,
-    listing: aggStr,
     dmg: prep,
     shield: prep,
     heal: prep,
     trans: prep,
     transCrit: prep,
     swirl: prep,
+  },
+  listing: {
+    formulas: aggStr,
+    specialized: aggStr,
   },
 } as const
 export const enemyTag = {
@@ -159,7 +163,7 @@ export function convert<V extends Record<string, Record<string, Desc>>>(
 ): { [j in keyof V]: { [k in keyof V[j]]: Read } } {
   return reader.withTag(tag).withAll('qt', Object.keys(v), (r, qt) =>
     r.withAll('q', Object.keys(v[qt]), (r, q) => {
-      if (!v[qt][q]) console.log(v, qt, q)
+      if (!v[qt][q]) console.error(`Invalid { qt:${qt} q:${q} }`)
       const { src, accu } = v[qt][q]
       // `tag.src` overrides `Desc`
       if (src && !tag.src) r = r.src(src)

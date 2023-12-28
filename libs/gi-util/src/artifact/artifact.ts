@@ -94,6 +94,21 @@ export function getSubstatValue(
 }
 
 /**
+ * Raw number from the datamine.
+ * @param rarity
+ * @param statKey
+ * @param level
+ * @returns
+ */
+export function getMainStatValue(
+  statKey: MainStatKey,
+  rarity: RarityKey,
+  level: number
+) {
+  return allStats.art.main[rarity][statKey][level]
+}
+
+/**
  * NOTE: this gives the toPercent value of the main stat
  * @param rarity
  * @param statKey
@@ -104,7 +119,7 @@ export function getMainStatDisplayValues(
   statKey: MainStatKey
 ): number[] {
   return allStats.art.main[rarity][statKey].map((k: number) =>
-    toPercent(k, statKey)
+    statKey === 'eleMas' ? Math.round(k) : toPercent(k, statKey)
   )
 }
 
@@ -113,7 +128,8 @@ export function getMainStatDisplayValue(
   rarity: RarityKey,
   level: number
 ): number {
-  return getMainStatDisplayValues(rarity, key)[level]
+  const val = getMainStatValue(key, rarity, level)
+  return key === 'eleMas' ? Math.round(val) : toPercent(val, key)
 }
 
 export function getMainStatDisplayStr(
@@ -172,17 +188,14 @@ export function getArtifactEfficiency(
     filter.size -
     matchedSlotCount -
     (filter.has(artifact.mainStatKey as any) ? 1 : 0)
-  let maxEfficiency
-  if (emptySlotCount && unusedFilterCount)
-    maxEfficiency =
-      currentEfficiency + maxSubstatRollEfficiency[rarity] * rollsRemaining
-  // Rolls into good empty slot
-  else if (matchedSlotCount)
-    maxEfficiency =
-      currentEfficiency +
-      maxSubstatRollEfficiency[rarity] * (rollsRemaining - emptySlotCount)
-  // Rolls into existing matched slot
-  else maxEfficiency = currentEfficiency // No possible roll
+
+  let maxEfficiency = currentEfficiency
+  const maxRollEff = maxSubstatRollEfficiency[rarity]
+  // Rolls into good empty slots, assuming max-level artifacts have no empty slots
+  maxEfficiency += maxRollEff * Math.min(emptySlotCount, unusedFilterCount)
+  // Rolls into an existing good slot
+  if (matchedSlotCount || (emptySlotCount && unusedFilterCount))
+    maxEfficiency += maxRollEff * (rollsRemaining - emptySlotCount)
 
   return { currentEfficiency, maxEfficiency }
 }

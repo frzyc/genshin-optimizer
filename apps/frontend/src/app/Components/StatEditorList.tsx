@@ -51,7 +51,7 @@ export default function StatEditorList({
                   statKey as MainStatKey | SubstatKey
                 )}`
               : KeyMap.getStr(statKey) ?? 'ERROR',
-            variant: KeyMap.getVariant(statKey),
+            color: KeyMap.getVariant(statKey),
           })
         )
         .sort(

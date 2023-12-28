@@ -12,15 +12,15 @@ import {
 } from './util'
 
 import charData from './char'
-import lcData from './lightcone'
+import lcData from './lightCone'
 
 const data: TagMapNodeEntries = [
   ...charData,
   ...lcData,
   // convert src:char to src:total for accumulation
   reader.src('agg').add(reader.sum.src('char')),
-  // convert src:lightcone to src:total for accumulation
-  reader.src('agg').add(reader.sum.src('lightcone')),
+  // convert src:lightCone to src:total for accumulation
+  reader.src('agg').add(reader.sum.src('lightCone')),
 ]
 export const keys = compileTagMapKeys([
   { category: 'qt', values: queryTypes },

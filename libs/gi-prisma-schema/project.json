@@ -1,0 +1,27 @@
+{
+  "name": "gi-prisma-schema",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/gi-prisma-schema/src",
+  "projectType": "library",
+  "targets": {
+    "prisma": {
+      "command": "prisma",
+      "options": {
+        "cwd": "libs/gi-prisma-schema"
+      }
+    },
+    "migrate": {
+      "command": "prisma migrate dev",
+      "options": {
+        "cwd": "libs/gi-prisma-schema"
+      }
+    },
+    "gen-file": {
+      "command": "prisma generate",
+      "options": {
+        "cwd": "libs/gi-prisma-schema"
+      }
+    }
+  },
+  "tags": []
+}

@@ -26,3 +26,6 @@ export const allStatKeys = [
   'imaginary_dmg_',
 ] as const
 export type StatKey = (typeof allStatKeys)[number]
+
+export const allAscensionKeys = [0, 1, 2, 3, 4, 5, 6] as const
+export type AscensionKey = (typeof allAscensionKeys)[number]

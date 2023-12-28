@@ -23,7 +23,9 @@ import ErrorBoundary from './ErrorBoundary'
 import Footer from './Footer'
 import Header from './Header'
 import useTitle from './ReactHooks/useTitle'
+import Snow from './Snow'
 import './i18n'
+import { SnowContext, useSnow } from './Context/SnowContext'
 
 const PageHome = lazy(() => import('./PageHome'))
 const PageArtifact = lazy(() => import('./PageArtifact'))
@@ -101,31 +103,34 @@ function App() {
     [databases, setDatabases, database, setDatabase]
   )
   const SillyContextObj = useSilly()
+  const SnowContextObj = useSnow()
   return (
     <StyledEngineProvider injectFirst>
       {/* https://mui.com/guides/interoperability/#css-injection-order-2 */}
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <SillyContext.Provider value={SillyContextObj}>
-          <DatabaseContext.Provider value={dbContextObj}>
-            <ErrorBoundary>
-              <HashRouter basename="/">
-                <Suspense fallback={null}>
-                  <MatchTitle />
-                </Suspense>
-                <Content />
-                <ScrollTop>
-                  <Fab
-                    color="secondary"
-                    size="small"
-                    aria-label="scroll back to top"
-                  >
-                    <KeyboardArrowUp />
-                  </Fab>
-                </ScrollTop>
-              </HashRouter>
-            </ErrorBoundary>
-          </DatabaseContext.Provider>
+          <SnowContext.Provider value={SnowContextObj}>
+            <DatabaseContext.Provider value={dbContextObj}>
+              <ErrorBoundary>
+                <HashRouter basename="/">
+                  <Suspense fallback={null}>
+                    <MatchTitle />
+                  </Suspense>
+                  <Content />
+                  <ScrollTop>
+                    <Fab
+                      color="secondary"
+                      size="small"
+                      aria-label="scroll back to top"
+                    >
+                      <KeyboardArrowUp />
+                    </Fab>
+                  </ScrollTop>
+                </HashRouter>
+              </ErrorBoundary>
+            </DatabaseContext.Provider>
+          </SnowContext.Provider>
         </SillyContext.Provider>
       </ThemeProvider>
     </StyledEngineProvider>
@@ -133,7 +138,7 @@ function App() {
 }
 function Content() {
   return (
-    <Grid container direction="column" minHeight="100vh">
+    <Grid container direction="column" minHeight="100vh" position="relative">
       <Grid item>
         <Header anchor="back-to-top-anchor" />
       </Grid>
@@ -163,6 +168,7 @@ function Content() {
       </Container>
       {/* make sure footer is always at bottom */}
       <Grid item flexGrow={1} />
+      <Snow />
       <Grid item>
         <Footer />
       </Grid>
