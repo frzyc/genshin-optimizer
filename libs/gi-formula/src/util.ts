@@ -123,6 +123,9 @@ export function teamData(
         entry.reread(active.withTag({ dst, member: src }))
       )
     }),
+    activeMembers.map((member) =>
+      selfBuff.common.isActive.withTag({ member }).add(1)
+    ),
     // Team Buff
     members.flatMap((dst) => {
       const entry = self.with('member', dst)
