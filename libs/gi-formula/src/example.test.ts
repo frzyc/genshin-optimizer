@@ -7,7 +7,6 @@ import {
   detach,
   flatten,
 } from '@genshin-optimizer/pando'
-import { Calculator } from './calculator'
 import { keys, values } from './data'
 import type { Tag, TagMapNodeEntries } from './data/util'
 import {
@@ -28,6 +27,7 @@ import {
   weaponData,
   withMember,
 } from './util'
+import { genshinCalculatorWithEntries } from './index'
 
 // This test acts as an example usage. It's mostly sufficient to test that the code
 // doesn't crash. Any test for correct values should go to `correctness` tests.
@@ -65,7 +65,7 @@ describe('example', () => {
       enemyDebuff.common.preRes.add(0.1),
       selfBuff.common.critMode.add('avg'),
     ],
-    calc = new Calculator(keys, values, compileTagMapValues(keys, data))
+    calc = genshinCalculatorWithEntries(data)
 
   const member0 = convert(selfTag, { member: 'member0', et: 'self' })
   const member1 = convert(selfTag, { member: 'member1', et: 'self' })
@@ -268,7 +268,7 @@ describe('weapon-only example', () => {
       ...weaponData(rawData[1].weapon as IWeapon),
       ...conditionalData(rawData[1].conditionals),
     ],
-    calc = new Calculator(keys, values, compileTagMapValues(keys, data))
+    calc = genshinCalculatorWithEntries(data)
 
   const self = convert(selfTag, { et: 'self' })
 
