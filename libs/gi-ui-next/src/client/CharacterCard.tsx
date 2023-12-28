@@ -24,7 +24,6 @@ import {
   withMember,
 } from '@genshin-optimizer/gi-formula'
 import { ascensionMaxLevel } from '@genshin-optimizer/gi-util'
-import { read } from '@genshin-optimizer/pando'
 import {
   CardThemed,
   ColorText,

@@ -19,6 +19,7 @@ import {
   useUpdateWeaponMutation,
 } from '@genshin-optimizer/gi-frontend-gql'
 import type { IWeapon } from '@genshin-optimizer/gi-good'
+import { allStats } from '@genshin-optimizer/gi-stats'
 import { StatIcon } from '@genshin-optimizer/gi-svgicons'
 import { WeaponName } from '@genshin-optimizer/gi-ui'
 import { artDisplayValue, ascensionMaxLevel } from '@genshin-optimizer/gi-util'
@@ -50,7 +51,6 @@ import LocationName from '../LocationName'
 import { UserContext } from '../UserDataWrapper'
 import { updateWeaponList } from '../gqlUtil'
 import { assetWrapper } from '../util'
-import { allStats } from '@genshin-optimizer/gi-stats'
 
 type WeaponCardProps = {
   weapon: IWeapon
@@ -78,25 +78,24 @@ export function WeaponCard({
   const mainStatVal = mainStatRead && calc ? calc.compute(mainStatRead).val : 0
   stats.push({ key: 'atk', value: mainStatVal })
 
-  // const subStatRead = listing?.find(({ tag: { qt } }) => qt === 'premod')
-  // const subStatVal = subStatRead && calc ? calc.compute(subStatRead).val : 0
-  // const subStatKey = subStatRead ? subStatRead.tag.q : ''
-  // if (subStatKey)
-  //   stats.push({
-  //     key: subStatKey as SubstatKey | MainStatKey,
-  //     value: subStatVal,
-  //   })
-  // TODO: refinment stat
-  // const refStatRead = listing?.find(
-  //   ({ tag: { qt } }) => qt === 'weaponRefinement'
-  // )
-  // const refStatVal = refStatRead && calc ? calc.compute(refStatRead).val : 0
-  // const refStatKey = refStatRead ? refStatRead.tag.q : ''
-  // if (refStatKey)
-  //   stats.push({
-  //     key: refStatKey as SubstatKey | MainStatKey,
-  //     value: refStatVal,
-  //   })
+  const subStatRead = listing?.find(({ tag: { qt } }) => qt === 'premod')
+  const subStatVal = subStatRead && calc ? calc.compute(subStatRead).val : 0
+  const subStatKey = subStatRead ? subStatRead.tag.q : ''
+  if (subStatKey)
+    stats.push({
+      key: subStatKey as SubstatKey | MainStatKey,
+      value: subStatVal,
+    })
+  const refStatRead = listing?.find(
+    ({ tag: { qt } }) => qt === 'weaponRefinement'
+  )
+  const refStatVal = refStatRead && calc ? calc.compute(refStatRead).val : 0
+  const refStatKey = refStatRead ? refStatRead.tag.q : ''
+  if (refStatKey)
+    stats.push({
+      key: refStatKey as SubstatKey | MainStatKey,
+      value: refStatVal,
+    })
 
   return (
     <Suspense
@@ -126,6 +125,7 @@ export function WeaponCard({
                 </Typography>
                 <Typography>
                   {artDisplayValue(toPercent(value, statKey), unit(statKey))}
+                  {unit(statKey)}
                 </Typography>
               </Box>
             )
