@@ -2,10 +2,24 @@ import {
   getMainStatDisplayValue,
   getSubstatValue,
 } from '@genshin-optimizer/gi-util'
+import { useBoolState } from '@genshin-optimizer/react-util'
 import { objMap } from '@genshin-optimizer/util'
 import { CopyAll, Refresh } from '@mui/icons-material'
 import CalculateIcon from '@mui/icons-material/Calculate'
-import { Box, Button, Grid, Skeleton, Stack, ToggleButton } from '@mui/material'
+import {
+  Box,
+  Button,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogContentText,
+  DialogTitle,
+  Grid,
+  Link,
+  Skeleton,
+  Stack,
+  ToggleButton,
+} from '@mui/material'
 import {
   useCallback,
   useContext,
@@ -13,10 +27,12 @@ import {
   useEffect,
   useMemo,
 } from 'react'
+import { Trans, useTranslation } from 'react-i18next'
 import { useLocation } from 'react-router-dom'
 import CardLight from '../../../../Components/Card/CardLight'
 import StatDisplayComponent from '../../../../Components/Character/StatDisplayComponent'
 import CustomNumberInput from '../../../../Components/CustomNumberInput'
+import ImgIcon from '../../../../Components/Image/ImgIcon'
 import SolidToggleButtonGroup from '../../../../Components/SolidToggleButtonGroup'
 import { CharacterContext } from '../../../../Context/CharacterContext'
 import type { dataContextObj } from '../../../../Context/DataContext'
@@ -28,6 +44,7 @@ import useTeamData from '../../../../ReactHooks/useTeamData'
 import type { ICachedArtifact } from '../../../../Types/artifact'
 import type { ICharTC } from '../../../../Types/character'
 import type { ICachedWeapon } from '../../../../Types/weapon'
+import { shouldShowDevComponents } from '../../../../Util/Util'
 import { defaultInitialWeaponKey } from '../../../../Util/WeaponUtil'
 import OptimizationTargetSelector from '../TabOptimize/Components/OptimizationTargetSelector'
 import { ArtifactMainStatAndSetEditor } from './ArtifactMainStatAndSetEditor'
@@ -35,12 +52,11 @@ import { ArtifactSubCard } from './ArtifactSubCard'
 import type { SetCharTCAction } from './CharTCContext'
 import { CharTCContext } from './CharTCContext'
 import { WeaponEditorCard } from './WeaponEditorCard'
+import kqmIcon from './kqm.png'
 import { optimizeTc } from './optimizeTc'
 import useCharTC from './useCharTC'
-import ImgIcon from '../../../../Components/Image/ImgIcon'
-import kqmIcon from './kqm.png'
-import { shouldShowDevComponents } from '../../../../Util/Util'
 export default function TabTheorycraft() {
+  const { t } = useTranslation('page_character')
   const { database } = useContext(DatabaseContext)
   const { data: oldData } = useContext(DataContext)
   const {
@@ -267,19 +283,9 @@ export default function TabTheorycraft() {
         <CardLight>
           <Box sx={{ display: 'flex', gap: 1, p: 1 }}>
             <Box sx={{ flexGrow: 1, display: 'flex', gap: 1 }}>
-              <Button
-                color="info"
-                onClick={copyFromEquipped}
-                startIcon={<CopyAll />}
-              >
-                Copy from equipped
-              </Button>
-              <Button color="error" onClick={resetData} startIcon={<Refresh />}>
-                Reset
-              </Button>
-              <Button onClick={kqms} startIcon={<ImgIcon src={kqmIcon} />}>
-                KQMS
-              </Button>
+              <CopyFromEquippedButton action={copyFromEquipped} />
+              <ResetButton action={resetData} />
+              <KQMSButton action={kqms} />
             </Box>
             <SolidToggleButtonGroup
               exclusive
@@ -288,10 +294,10 @@ export default function TabTheorycraft() {
               size="small"
             >
               <ToggleButton value={false} disabled={!compareData}>
-                Show TC stats
+                {t`tabTheorycraft.compareToggle.tc`}
               </ToggleButton>
               <ToggleButton value={true} disabled={compareData}>
-                Compare vs. equipped
+                {t`tabTheorycraft.compareToggle.equipped`}
               </ToggleButton>
             </SolidToggleButtonGroup>
           </Box>
@@ -344,7 +350,7 @@ export default function TabTheorycraft() {
                   color="success"
                   startIcon={<CalculateIcon />}
                 >
-                  Distribute
+                  {t`tabTheorycraft.distribute`}
                 </Button>
               </Box>
 
@@ -372,5 +378,122 @@ export default function TabTheorycraft() {
         </CardLight>
       </Stack>
     </CharTCContext.Provider>
+  )
+}
+function CopyFromEquippedButton({ action }: { action: () => void }) {
+  const { t } = useTranslation(['page_character', 'ui'])
+  const [open, onOpen, onClose] = useBoolState()
+  return (
+    <>
+      <Button color="info" onClick={onOpen} startIcon={<CopyAll />}>
+        {t('tabTheorycraft.copyDialog.copyBtn')}
+      </Button>
+      <Dialog open={open} onClose={onClose}>
+        <DialogTitle>{t('tabTheorycraft.copyDialog.title')}</DialogTitle>
+        <DialogContent>
+          <DialogContentText>
+            {t('tabTheorycraft.copyDialog.content')}
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={onClose} color="error">
+            {t('ui:close')}
+          </Button>
+          <Button
+            color="success"
+            onClick={() => {
+              onClose()
+              action()
+            }}
+            autoFocus
+          >
+            {t('tabTheorycraft.copyDialog.copyBtn')}
+          </Button>
+        </DialogActions>
+      </Dialog>
+    </>
+  )
+}
+
+function ResetButton({ action }: { action: () => void }) {
+  const { t } = useTranslation(['page_character', 'ui'])
+  const [open, onOpen, onClose] = useBoolState()
+  return (
+    <>
+      <Button color="error" onClick={onOpen} startIcon={<Refresh />}>
+        {t('ui:reset')}
+      </Button>
+      <Dialog open={open} onClose={onClose}>
+        <DialogTitle>{t('tabTheorycraft.resetDialog.title')}</DialogTitle>
+        <DialogContent>
+          <DialogContentText>
+            {t('tabTheorycraft.resetDialog.content')}
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={onClose} color="error">
+            {t('ui:close')}
+          </Button>
+          <Button
+            color="success"
+            onClick={() => {
+              onClose()
+              action()
+            }}
+            autoFocus
+          >
+            {t('ui:reset')}
+          </Button>
+        </DialogActions>
+      </Dialog>
+    </>
+  )
+}
+
+function KQMSButton({ action }: { action: () => void }) {
+  const { t } = useTranslation(['page_character', 'ui'])
+  const [open, onOpen, onClose] = useBoolState()
+  return (
+    <>
+      <Button
+        color="keqing"
+        onClick={onOpen}
+        startIcon={<ImgIcon src={kqmIcon} />}
+      >
+        {t('tabTheorycraft.kqmsDialog.kqmsBtn')}
+      </Button>
+      <Dialog open={open} onClose={onClose}>
+        <DialogTitle>{t('tabTheorycraft.kqmsDialog.title')}</DialogTitle>
+        <DialogContent>
+          <DialogContentText>
+            <Trans>
+              This will replace your current <strong>substat setup</strong> with
+              one that adheres to the{' '}
+              <Link
+                href="https://compendium.keqingmains.com/kqm-standards"
+                target="_blank"
+              >
+                KQM Standards
+              </Link>
+            </Trans>
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={onClose} color="error">
+            {t('ui:close')}
+          </Button>
+          <Button
+            color="success"
+            onClick={() => {
+              onClose()
+              action()
+            }}
+            autoFocus
+          >
+            {t('tabTheorycraft.kqmsDialog.kqmsBtn')}
+          </Button>
+        </DialogActions>
+      </Dialog>
+    </>
   )
 }

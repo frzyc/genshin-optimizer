@@ -8,6 +8,7 @@ import type { ICharTC } from '../../../../../Types/character'
 import { CharTCContext } from '../CharTCContext'
 import { artSubstatRollData } from '@genshin-optimizer/consts'
 import { useIsMount } from '@genshin-optimizer/ui-common'
+import { useTranslation } from 'react-i18next'
 
 function getMinRoll(charTC: ICharTC) {
   const {
@@ -27,6 +28,7 @@ function getMinMax(charTC: ICharTC) {
   return Math.floor(Math.min(...Object.values(charTC.optimization.maxSubstats)))
 }
 export function ArtifactAllSubstatEditor() {
+  const { t } = useTranslation('page_character')
   const { charTC, setCharTC } = useContext(CharTCContext)
   // Encapsulate the values in an array so that changes to the same number still trigger useEffects
   const [rollsData, setRolls] = useState(() => [getMinRoll(charTC)])
@@ -103,7 +105,9 @@ export function ArtifactAllSubstatEditor() {
       <CustomNumberInput
         color={rolls && invalid ? 'warning' : 'primary'}
         float
-        startAdornment={<Box sx={{ whiteSpace: 'nowrap' }}>All Rolls</Box>}
+        startAdornment={
+          <Box sx={{ whiteSpace: 'nowrap' }}>{t`tabTheorycraft.all.rolls`}</Box>
+        }
         value={parseFloat((rolls ?? 0).toFixed(2))}
         onChange={(v) => v !== undefined && setRolls([v])}
         sx={{ borderRadius: 1, px: 1, my: 0, height: '100%', width: '7em' }}
@@ -111,7 +115,9 @@ export function ArtifactAllSubstatEditor() {
       />
       <CustomNumberInput
         value={maxSubstat ?? 0}
-        startAdornment={<Box sx={{ whiteSpace: 'nowrap' }}>All Max</Box>}
+        startAdornment={
+          <Box sx={{ whiteSpace: 'nowrap' }}>{t`tabTheorycraft.all.max`}</Box>
+        }
         onChange={(v) => v !== undefined && setMaxSubstat([v])}
         color={(maxSubstat ?? 0) > maxRolls ? 'warning' : 'primary'}
         sx={{ borderRadius: 1, px: 1, my: 0, height: '100%', width: '6.5em' }}

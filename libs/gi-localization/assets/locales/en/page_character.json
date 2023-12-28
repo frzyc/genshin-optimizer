@@ -45,6 +45,32 @@
     "info": "You can use these fields to add buffs/debuffs not directly supported in GO, such as food buffs, Abyss cards, or Superconduct. Please refer to the <1>Genshin Impact Wiki</1> for specific values."
   },
   "tabTheorycraft": {
+    "distribute": "Distribute",
+    "compareToggle": {
+      "equipped": "Compare vs. equipped",
+      "tc": "Show TC stats"
+    },
+    "resetDialog": {
+      "title": "Reset TC build configuration?",
+      "content": "This will clear the currently configured TC build you have."
+    },
+    "copyDialog": {
+      "copyBtn": "Copy from equipped",
+      "title": "Copy data from equipped artifacts and weapon?",
+      "content": "This will clear the currently configured TC build you have, with data from the currently equipped build."
+    },
+    "kqmsDialog": {
+      "kqmsBtn": "Use KQMS",
+      "title": "Use KQMS config?",
+      "content": "This will replace your current <strong>substat setup</strong> with one that adheres to the <0>KQM Standards<0/>"
+    },
+    "all": {
+      "rolls": "All Rolls",
+      "max": "All Max"
+    },
+    "substat": {
+      "max": "Max"
+    },
     "substatType": {
       "min": "Min substat roll",
       "max": "Max substat roll",

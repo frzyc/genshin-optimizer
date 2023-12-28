@@ -2,6 +2,7 @@ import { artMaxLevel, type SubstatKey } from '@genshin-optimizer/consts'
 import { artDisplayValue, getSubstatValue } from '@genshin-optimizer/gi-util'
 import { Box, Slider, Stack } from '@mui/material'
 import { useCallback, useContext, useEffect, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import CardDark from '../../../../../Components/Card/CardDark'
 import ColorText from '../../../../../Components/ColoredText'
 import CustomNumberInput from '../../../../../Components/CustomNumberInput'
@@ -10,6 +11,7 @@ import StatIcon from '../../../../../KeyMap/StatIcon'
 import { CharTCContext } from '../CharTCContext'
 
 export function ArtifactSubstatEditor({ statKey }: { statKey: SubstatKey }) {
+  const { t } = useTranslation('page_character')
   const {
     charTC: {
       artifact: {
@@ -158,7 +160,7 @@ export function ArtifactSubstatEditor({ statKey }: { statKey: SubstatKey }) {
 
         <CustomNumberInput
           value={maxSubstat}
-          startAdornment={'Max'}
+          startAdornment={t`tabTheorycraft.substat.max`}
           onChange={(v) => v !== undefined && setMaxSubstat(v)}
           color={
             // 0.0001 to nudge float comparasion
