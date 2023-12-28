@@ -4,7 +4,6 @@ export interface ICachedRelic extends IRelic {
   id: string
   mainStatVal: number
   substats: ICachedSubstat[]
-  probability?: number
 }
 
 export interface ICachedSubstat extends ISubstat {

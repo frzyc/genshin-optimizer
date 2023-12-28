@@ -139,10 +139,6 @@ export class RelicDataManager extends DataManager<
       this.database.chars.setEquippedRelic(relic.location, relic.slotKey, '')
     super.remove(key, notify)
   }
-  setProbability(id: string, probability?: number) {
-    const relic = this.get(id)
-    if (relic) this.setCached(id, { ...relic, probability })
-  }
   override importSROD(
     srod: ISrObjectDescription & ISroDatabase,
     result: ImportResult
@@ -341,7 +337,6 @@ export function cachedRelic(
     level,
     substats,
     mainStatVal,
-    probability: (flex as any).probability,
   }
 
   // TODO: Validate rolls
