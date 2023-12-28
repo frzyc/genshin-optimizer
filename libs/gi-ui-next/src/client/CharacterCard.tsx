@@ -15,7 +15,9 @@ import {
   charData,
   conditionalData,
   convert,
+  enemyDebuff,
   genshinCalculatorWithEntries,
+  selfBuff,
   selfTag,
   teamData,
   weaponData,
@@ -30,7 +32,8 @@ import {
   StarsDisplay,
 } from '@genshin-optimizer/ui-common'
 import { getRandBool, objKeyMap } from '@genshin-optimizer/util'
-import { Favorite, FavoriteBorder } from '@mui/icons-material'
+import FavoriteIcon from '@mui/icons-material/Favorite'
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
 import {
   Box,
   Chip,
@@ -71,8 +74,10 @@ export function CharacterCard({ character }: { character: Character }) {
     () => weapons?.find(({ location }) => location === characterKey),
     [characterKey, weapons]
   )
+  if (!equippedWeapon) console.error('No equippedWeapon')
 
-  const [calc, setCalc] = useState<Calculator | undefined>(
+  //TODO should not be undefined, why use state?
+  const [calc, setCalc] = useState<Calculator | undefined>(() =>
     genshinCalculatorWithEntries([
       ...teamData(['member0'], ['member0']),
       ...withMember(
@@ -90,9 +95,9 @@ export function CharacterCard({ character }: { character: Character }) {
         }),
         ...weaponData({
           key: 'KeyOfKhajNisut',
-          level: 50,
-          ascension: 3,
-          refinement: 1,
+          level: 90,
+          ascension: 6,
+          refinement: 5,
           location: characterKey as LocationKey,
           lock: false,
         }),
@@ -105,6 +110,12 @@ export function CharacterCard({ character }: { character: Character }) {
           },
         })
       ),
+      // Enemy
+      enemyDebuff.cond.cata.add('spread'),
+      enemyDebuff.cond.amp.add(''),
+      enemyDebuff.common.lvl.add(12),
+      enemyDebuff.common.preRes.add(0.1),
+      selfBuff.common.critMode.add('avg'),
     ])
   )
   const calcContextObj = useMemo(
@@ -137,7 +148,7 @@ export function CharacterCard({ character }: { character: Character }) {
               (_) => {} //TODO: database.charMeta.set(characterKey, { favorite: !favorite })
             }
           >
-            {favorite ? <Favorite /> : <FavoriteBorder />}
+            {favorite ? <FavoriteIcon /> : <FavoriteBorderIcon />}
           </IconButton>
         </Box>
         <CalcContext.Provider value={calcContextObj}>
@@ -168,7 +179,6 @@ export function CharacterCard({ character }: { character: Character }) {
                 </Grid>
               ))}
             </Grid>
-            <TempWeaponCard />
             <Stats />
           </Box>
         </CalcContext.Provider>
@@ -336,38 +346,6 @@ function Stats() {
           calcResult={calc.compute((member0.base as any)[key as any] as any)}
         />
       ))}
-    </Box>
-  )
-}
-
-function TempWeaponCard() {
-  const { calc } = useContext(CalcContext)
-  const member0 = convert(selfTag, { member: 'member0', et: 'self' })
-  if (!calc) return null
-  return (
-    <Box>
-      Weapon stats:
-      {Object.keys(selfTag.weapon).map((key) => (
-        <NodeFieldDisplay
-          key={key}
-          calcResult={calc.compute((member0.weapon as any)[key as any] as any)}
-        />
-      ))}
-      {'atk: '}
-      {
-        calc.compute(
-          read(
-            {
-              member: 'member0',
-              src: 'KeyOfKhajNisut',
-              qt: 'base',
-              q: 'atk',
-              et: 'self',
-            },
-            'sum'
-          )
-        ).val
-      }
     </Box>
   )
 }

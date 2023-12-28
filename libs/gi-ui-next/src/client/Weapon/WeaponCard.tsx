@@ -1,8 +1,17 @@
-import type {
-  LocationCharacterKey,
-  WeaponTypeKey,
+import type { RarityKey } from '@genshin-optimizer/consts'
+import {
+  type LocationCharacterKey,
+  type MainStatKey,
+  type SubstatKey,
+  type WeaponTypeKey,
 } from '@genshin-optimizer/consts'
 import { imgAssets, weaponAsset } from '@genshin-optimizer/gi-assets'
+import {
+  convert,
+  genshinCalculatorWithEntries,
+  selfTag,
+  weaponData,
+} from '@genshin-optimizer/gi-formula'
 import type { Weapon } from '@genshin-optimizer/gi-frontend-gql'
 import {
   GetAllUserWeaponDocument,
@@ -10,20 +19,30 @@ import {
   useUpdateWeaponMutation,
 } from '@genshin-optimizer/gi-frontend-gql'
 import type { IWeapon } from '@genshin-optimizer/gi-good'
+import { StatIcon } from '@genshin-optimizer/gi-svgicons'
 import { WeaponName } from '@genshin-optimizer/gi-ui'
-import { ascensionMaxLevel } from '@genshin-optimizer/gi-util'
+import { artDisplayValue, ascensionMaxLevel } from '@genshin-optimizer/gi-util'
+import { iconInlineProps } from '@genshin-optimizer/svgicons'
 import {
   BootstrapTooltip,
   CardThemed,
   StarsDisplay,
 } from '@genshin-optimizer/ui-common'
+import { toPercent, unit } from '@genshin-optimizer/util'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import LockIcon from '@mui/icons-material/Lock'
 import LockOpenIcon from '@mui/icons-material/LockOpen'
-import { Box, Button, IconButton, Skeleton, Typography } from '@mui/material'
+import {
+  Box,
+  Button,
+  CardContent,
+  IconButton,
+  Skeleton,
+  Typography,
+} from '@mui/material'
 import Image from 'next/image'
 import type { ReactNode } from 'react'
-import { Suspense, useContext, useEffect, useState } from 'react'
+import { Suspense, useContext, useEffect, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { ImageIcon } from '../ImageIcon'
 import { LocationAutocomplete } from '../LocationAutocomplete'
@@ -31,6 +50,7 @@ import LocationName from '../LocationName'
 import { UserContext } from '../UserDataWrapper'
 import { updateWeaponList } from '../gqlUtil'
 import { assetWrapper } from '../util'
+import { allStats } from '@genshin-optimizer/gi-stats'
 
 type WeaponCardProps = {
   weapon: IWeapon
@@ -42,32 +62,41 @@ export function WeaponCard({
   disabled = false,
   extraButtons,
 }: WeaponCardProps) {
-  // TODO:
-  // const { t } = useTranslation(['page_weapon', 'ui'])
+  const { t: tk } = useTranslation('statKey_gen')
+  const { key: weaponKey } = weapon
+  const calc = useMemo(
+    () => genshinCalculatorWithEntries(weaponData(weapon)),
+    [weapon]
+  )
 
-  // const filter = useCallback(
-  //   (cs: CharacterSheet) => cs.weaponTypeKey === weaponSheet?.weaponType,
-  //   [weaponSheet]
-  // )
+  const self = convert(selfTag, { et: 'self' })
+  const listing = calc
+    ?.listFormulas(self.listing.specialized)
+    .filter(({ tag }) => tag.src === weaponKey)
+  const stats: Array<{ key: SubstatKey | MainStatKey; value: number }> = []
+  const mainStatRead = listing?.find(({ tag: { qt } }) => qt === 'base')
+  const mainStatVal = mainStatRead && calc ? calc.compute(mainStatRead).val : 0
+  stats.push({ key: 'atk', value: mainStatVal })
 
-  // const setLocation = useCallback(
-  //   (k: LocationKey) =>
-  //     weaponId && database.weapons.set(weaponId, { location: k }),
-  //   [database, weaponId]
+  // const subStatRead = listing?.find(({ tag: { qt } }) => qt === 'premod')
+  // const subStatVal = subStatRead && calc ? calc.compute(subStatRead).val : 0
+  // const subStatKey = subStatRead ? subStatRead.tag.q : ''
+  // if (subStatKey)
+  //   stats.push({
+  //     key: subStatKey as SubstatKey | MainStatKey,
+  //     value: subStatVal,
+  //   })
+  // TODO: refinment stat
+  // const refStatRead = listing?.find(
+  //   ({ tag: { qt } }) => qt === 'weaponRefinement'
   // )
-
-  // const UIData = useMemo(
-  //   () =>
-  //     weaponSheet &&
-  //     weapon &&
-  //     computeUIData([weaponSheet.data, dataObjForWeapon(weapon)]),
-  //   [weaponSheet, weapon]
-  // )
-
-  // const { level, ascension, refinement, location = '', lock } = weapon
-  // const stats = [input.weapon.main, input.weapon.sub, input.weapon.sub2].map(
-  //   (x) => UIData.get(x)
-  // )
+  // const refStatVal = refStatRead && calc ? calc.compute(refStatRead).val : 0
+  // const refStatKey = refStatRead ? refStatRead.tag.q : ''
+  // if (refStatKey)
+  //   stats.push({
+  //     key: refStatKey as SubstatKey | MainStatKey,
+  //     value: refStatVal,
+  //   })
 
   return (
     <Suspense
@@ -87,19 +116,21 @@ export function WeaponCard({
         }}
       >
         <Header weapon={weapon} disabled={disabled} />
-        {/* <CardContent>
-          {stats.map((node) => {
-            if (!node.info.name) return null
+        <CardContent>
+          {stats.map(({ key: statKey, value }, i) => {
             return (
-              <Box key={JSON.stringify(node.info)} sx={{ display: 'flex' }}>
+              <Box key={`${statKey}${i}`} sx={{ display: 'flex' }}>
                 <Typography flexGrow={1}>
-                  {node.info.icon} {node.info.name}
+                  <StatIcon statKey={statKey} iconProps={iconInlineProps} />{' '}
+                  {tk(statKey)}{' '}
                 </Typography>
-                <Typography>{nodeVStr(node)}</Typography>
+                <Typography>
+                  {artDisplayValue(toPercent(value, statKey), unit(statKey))}
+                </Typography>
               </Box>
             )
           })}
-        </CardContent> */}
+        </CardContent>
         <Footer
           weapon={weapon as Weapon}
           disabled={disabled}
@@ -112,13 +143,9 @@ export function WeaponCard({
 
 function Header({ weapon, disabled = false }: WeaponCardProps) {
   const { key, level, ascension, refinement } = weapon
-
-  // TODO:
-  // const weaponTypeKey = UIData.get(input.weapon.type).value!
-  const weaponTypeKey: WeaponTypeKey = 'claymore'
-
-  // TODO: weaponsheet rarity
-  const rarity = 5
+  const data = allStats.weapon.data[key]
+  const weaponTypeKey: WeaponTypeKey = data.weaponType
+  const rarity: RarityKey = data.rarity
   return (
     <Box
       className={`grad-${rarity}star`}

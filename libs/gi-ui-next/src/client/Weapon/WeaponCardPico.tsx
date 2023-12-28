@@ -1,12 +1,17 @@
-import type { AscensionKey } from '@genshin-optimizer/consts'
+import type {
+  AscensionKey,
+  MainStatKey,
+  SubstatKey,
+} from '@genshin-optimizer/consts'
 import { weaponAsset } from '@genshin-optimizer/gi-assets'
+import { convert, selfTag } from '@genshin-optimizer/gi-formula'
 import { CalcContext } from '@genshin-optimizer/gi-formula-ui'
 import type { Weapon } from '@genshin-optimizer/gi-frontend-gql'
 import { allStats } from '@genshin-optimizer/gi-stats'
 import { IconStatDisplay } from '@genshin-optimizer/gi-ui'
 import { getLevelString } from '@genshin-optimizer/gi-util'
-import { read } from '@genshin-optimizer/pando'
 import { CardThemed, SqBadge } from '@genshin-optimizer/ui-common'
+import { toPercent } from '@genshin-optimizer/util'
 import { Box, Typography } from '@mui/material'
 import Image from 'next/image'
 import { useContext } from 'react'
@@ -17,26 +22,39 @@ export function WeaponCardPico({ weapon }: { weapon: Weapon }) {
   const { calc } = useContext(CalcContext)
   const { key: weaponKey, level, ascension } = weapon
 
-  const atkVal = calc
-    ? calc.compute(
-        read(
-          {
-            member: 'member0',
-            src: 'KeyOfKhajNisut',
-            qt: 'base',
-            q: 'atk',
-            et: 'self',
-          },
-          'sum'
-        )
-      ).val
-    : 0
+  const member0 = convert(selfTag, { member: 'member0', et: 'self' })
+  const listing = calc
+    ?.listFormulas(member0.listing.specialized)
+    .filter(({ tag }) => tag.src === 'KeyOfKhajNisut')
+  // console.log({ listing, value: listing!.map((l) => calc?.compute(l)) })
+  const mainStatRead = listing?.find(({ tag: { qt } }) => qt === 'base')
+  const mainStatVal = mainStatRead && calc ? calc.compute(mainStatRead).val : 0
+
+  const subStatRead = listing?.find(({ tag: { qt } }) => qt === 'premod')
+  const subStatVal = subStatRead && calc ? calc.compute(subStatRead).val : 0
+  const subStatKey = subStatRead ? subStatRead.tag.q : ''
+
+  const refStatRead = listing?.find(
+    ({ tag: { qt } }) => qt === 'weaponRefinement'
+  )
+  const refStatVal = refStatRead && calc ? calc.compute(refStatRead).val : 0
+  const refStatKey = refStatRead ? refStatRead.tag.q : ''
 
   const tooltipAddl = (
     <Box>
-      <IconStatDisplay statKey="atk" value={atkVal} />
-      {/* TODO: weapon secondary stat */}
-      {/* <WeaponStatPico node={UIData.get(input.weapon.sub)} /> */}
+      <IconStatDisplay statKey="atk" value={mainStatVal} />
+      {subStatKey && (
+        <IconStatDisplay
+          statKey={subStatKey as MainStatKey | SubstatKey}
+          value={toPercent(subStatVal, subStatKey)}
+        />
+      )}
+      {refStatKey && (
+        <IconStatDisplay
+          statKey={refStatKey as MainStatKey | SubstatKey}
+          value={toPercent(refStatVal, refStatKey)}
+        />
+      )}
     </Box>
   )
   const rarity = allStats.weapon.data[weaponKey].rarity
