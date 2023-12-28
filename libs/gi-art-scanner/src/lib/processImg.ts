@@ -43,6 +43,8 @@ import {
   parseSubstats,
 } from './parse'
 
+import { computeCropBoxes } from './processImgML'
+
 export type Processed = {
   fileName: string
   imageURL: string
@@ -70,6 +72,9 @@ export async function processEntry(
   const debugImgs = debug ? ({} as Record<string, string>) : undefined
   const artifactCardImageData = verticallyCropArtifactCard(imageData, debugImgs)
   const artifactCardCanvas = imageDataToCanvas(artifactCardImageData)
+
+  console.log('processImg.ts: ', { imageURL, imageData })
+  await computeCropBoxes(imageData, debugImgs)
 
   const titleHistogram = findTitle(artifactCardImageData)
   const [titleTop, titleBot] = titleHistogram

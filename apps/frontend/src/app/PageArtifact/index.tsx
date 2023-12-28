@@ -61,7 +61,7 @@ export default function PageArtifact() {
   const { database } = useContext(DatabaseContext)
   const artifactDisplayState = useDisplayArtifact()
 
-  const [showEditor, onShowEditor, onHideEditor] = useBoolState(false)
+  const [showEditor, onShowEditor, onHideEditor] = useBoolState(true)
 
   const [showDup, onShowDup, onHideDup] = useBoolState(false)
 

@@ -47,6 +47,52 @@ export function crop(srcCanvas: HTMLCanvasElement, options: CropOptions) {
   return ctx.getImageData(x1, y1, x2 - x1, y2 - y1)
 }
 
+function interpolate_bilinear(
+  image: ImageData,
+  x: number,
+  y: number,
+  i: number
+) {
+  const x1 = x === image.width ? x - 1 : Math.floor(x),
+    x2 = x1 + 1
+  const y1 = y === image.height ? y - 1 : Math.floor(y),
+    y2 = y1 + 1
+  const ch = 4
+  const _x = ch,
+    _y = image.width * ch
+
+  const q11 = (x2 - x) * (y2 - y) * image.data[i + _x * x1 + _y * y1]
+  const q21 = (x - x1) * (y2 - y) * image.data[i + _x * x2 + _y * y1]
+  const q12 = (x2 - x) * (y - y1) * image.data[i + _x * x1 + _y * y2]
+  const q22 = (x - x1) * (y - y1) * image.data[i + _x * x2 + _y * y2]
+  return q11 + q21 + q12 + q22
+}
+export function resize(
+  imageData: ImageData,
+  options: { width?: number; height?: number }
+): ImageData {
+  const { width = imageData.width, height = imageData.height } = options
+
+  const dataBuffer = new Uint8ClampedArray(width * height * 4)
+  const sx = width / imageData.width
+  const sy = height / imageData.height
+  for (let x = 0; x < width; x++) {
+    for (let y = 0; y < height; y++) {
+      for (let i = 0; i < 4; i++) {
+        dataBuffer[x * 4 + y * width * 4 + i] = interpolate_bilinear(
+          imageData,
+          x / sx,
+          y / sy,
+          i
+        )
+      }
+    }
+  }
+
+  const resized = new ImageData(dataBuffer, width, height)
+  return resized
+}
+
 export const fileToURL = (file: File): Promise<string> =>
   new Promise((resolve) => {
     const reader = new FileReader()
