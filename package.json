@@ -82,7 +82,8 @@
     "vite-plugin-dts": "2.3.0",
     "vite-plugin-eslint": "^1.8.1",
     "vite-tsconfig-paths": "4.2.0",
-    "vitest": "^0.32.0"
+    "vitest": "^0.32.0",
+    "yaml": "^2.3.4"
   },
   "dependencies": {
     "@apollo/client": "^3.8.6",
