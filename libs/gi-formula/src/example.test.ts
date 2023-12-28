@@ -277,6 +277,7 @@ describe('weapon-only example', () => {
     expect(listing.length).toEqual(3)
   })
   test('calculate formulas in a listing', () => {
+    // Some listings require character data (e.g., `formulas` listing) and will crash if used
     const listing = calc.listFormulas(self.listing.specialized)
 
     expect(calc.compute(listing[0]).val).toBeCloseTo(337.96) // atk
