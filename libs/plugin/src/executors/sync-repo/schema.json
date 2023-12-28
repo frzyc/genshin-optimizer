@@ -5,17 +5,9 @@
   "description": "",
   "type": "object",
   "properties": {
-    "repoUrl": {
-      "type": "string",
-      "description": "Git repo URL"
-    },
     "outputPath": {
       "type": "string",
       "description": "Local repo path (including the repo name)"
-    },
-    "branch": {
-      "type": "string",
-      "description": "Branch to sync (e.g. origin/master)"
     },
     "prefixPath": {
       "type": "boolean",

@@ -6,13 +6,11 @@
   "targets": {
     "load-dm": {
       "options": {
-        "repoUrl": "https://github.com/Dimbreath/StarRailData.git",
-        "outputPath": "libs/sr-dm/StarRailData",
-        "branch": "origin/master"
+        "outputPath": "libs/sr-dm/StarRailData"
       },
       "inputs": [
         {
-          "runtime": "git ls-remote -q https://github.com/Dimbreath/StarRailData.git HEAD"
+          "runtime": "git ls-tree --object-only HEAD libs/sr-dm/StarRailData"
         }
       ]
     },

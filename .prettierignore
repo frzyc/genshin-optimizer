@@ -5,6 +5,7 @@
 /.yarn
 
 /libs/dm/GenshinData
+/libs/sr-dm/StarRailData
 *_gen.json
 
 /libs/gi-stats/Data

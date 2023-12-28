@@ -7,14 +7,9 @@ import * as path from 'path'
 export default async function runExecutor(
   options: SyncRepoExecutorSchema
 ): Promise<{ success: boolean }> {
-  const {
-    outputPath,
-    repoUrl: url,
-    prefixPath: prefix = true,
-    branch,
-  } = options
+  const { outputPath, prefixPath: prefix = true } = options
   const cwd = prefix ? path.join(workspaceRoot, outputPath) : outputPath
-  const remoteHash = getRemoteRepoHash(url)
+  const remoteHash = getRemoteRepoHash(cwd)
   const name = path.basename(cwd)
 
   console.log(
@@ -23,18 +18,12 @@ Caution: if this is part of nx cache replay,
          no git command is actually executed.` + '\n '
   )
 
-  if (fs.existsSync(cwd)) {
+  {
     // Fetch & reset
     const localHash = getLocalRepoHash(cwd)
     if (remoteHash !== localHash) {
-      execSync(`git fetch --depth 1`, { cwd })
-      execSync(`git reset --hard ${branch}`, { cwd })
+      execSync(`git submodule update ${cwd}`)
     } else console.log('Repo already existed with the latest commit')
-  } else {
-    // Clone
-    const parent = path.dirname(cwd)
-    fs.mkdirSync(parent, { recursive: true })
-    execSync(`git clone ${url} --depth 1 ${name}`, { cwd: parent })
   }
 
   // Compute hash
@@ -48,5 +37,5 @@ Caution: if this is part of nx cache replay,
 
 export const getLocalRepoHash = (cwd: string): string =>
   `${execSync(`git rev-parse HEAD`, { cwd })}`.trimEnd()
-export const getRemoteRepoHash = (url: string): string =>
-  `${execSync(`git ls-remote ${url} HEAD`)}`.replace(/\s+HEAD\s*$/, '')
+export const getRemoteRepoHash = (cwd: string): string =>
+  `${execSync(`git ls-tree --object-only HEAD ${cwd}`)}`.trimEnd()
