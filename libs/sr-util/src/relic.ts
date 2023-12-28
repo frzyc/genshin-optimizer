@@ -41,8 +41,8 @@ export function getRelicMainStatDisplayVal(
   statKey: RelicMainStatKey,
   level: number
 ) {
-  return toPercent(
-    roundStat(getRelicMainStatVal(rarity, statKey, level), statKey),
+  return roundStat(
+    toPercent(getRelicMainStatVal(rarity, statKey, level), statKey),
     statKey
   )
 }
@@ -68,7 +68,7 @@ export function getSubstatValue(
 export function getSubstatRange(
   rarity: RelicRarityKey,
   statKey: RelicSubStatKey,
-  round = false
+  round = true
 ) {
   const { numUpgrades } = relicSubstatRollData[rarity]
   const high =

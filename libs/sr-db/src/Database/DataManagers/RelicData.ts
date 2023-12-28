@@ -318,7 +318,7 @@ export function cachedRelic(
 ): { relic: ICachedRelic; errors: string[] } {
   const { location, lock, setKey, slotKey, rarity, mainStatKey } = flex
   const level = Math.round(
-    Math.min(Math.max(0, flex.level), rarity >= 3 ? rarity * 3 : 3)
+    Math.min(Math.max(0, flex.level), relicMaxLevel[rarity])
   )
   const mainStatVal = getRelicMainStatDisplayVal(rarity, mainStatKey, level)
 
