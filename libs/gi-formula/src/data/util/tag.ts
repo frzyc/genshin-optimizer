@@ -103,7 +103,7 @@ export const selfTag = {
   },
   weapon: { lvl: iso, refinement: iso, ascension: iso },
   common: {
-    isActive: iso,
+    isActive: isoSum,
     weaponType: iso,
     critMode: fixed,
     cappedCritRate_: iso,
