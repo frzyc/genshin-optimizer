@@ -4,7 +4,6 @@ import { CardThemed, DropdownButton } from '@genshin-optimizer/ui-common'
 import { range } from '@genshin-optimizer/util'
 import {
   Button,
-  Card,
   CardContent,
   Container,
   Grid,
@@ -48,7 +47,7 @@ export default function Database() {
       // Figure out the file format
       if (parsed.format === 'SROD' || parsed.format === 'SRO') {
         // Parse as SROD format
-        const copyStorage = new SandboxStorage()
+        const copyStorage = new SandboxStorage(undefined, 'sro')
         copyStorage.copyFrom(database.storage)
         const importedDatabase = new SroDatabase(
           (index + 1) as 1 | 2 | 3 | 4,
@@ -112,42 +111,40 @@ export default function Database() {
 
   return (
     <Container>
-      <Card>
-        <CardThemed bgt="dark">
-          <CardContent>
-            <Typography variant="h5">Database</Typography>
-            <Grid container gap={1}>
-              <DropdownButton
-                title={`${current ? '* ' : ''}Database ${index + 1}`}
-              >
-                {range(0, 3).map((i) => (
-                  <MenuItem key={i} onClick={() => setIndex(i)}>{`${
-                    mainDB === databases[i] ? '* ' : ''
-                  }Database ${i + 1}`}</MenuItem>
-                ))}
-              </DropdownButton>
-              <Button onClick={swapDb}>Swap to Database</Button>
-              <Button onClick={download}>Download DB</Button>
-              <input
-                accept=".json"
-                id="icon-button-file"
-                type="file"
-                onChange={onUpload}
-              />
-              <Button onClick={replaceDb}>Replace</Button>
-              <Button color="warning" onClick={clearDb}>
-                Nuke
-              </Button>
-            </Grid>
-            <Typography>
-              Last Edit: {new Date(lastEdit).toLocaleString()}
-            </Typography>
-            <Typography component="pre" fontFamily="monospace">
-              {JSON.stringify(database.exportSROD(), undefined, 2)}
-            </Typography>
-          </CardContent>
-        </CardThemed>
-      </Card>
+      <CardThemed bgt="dark">
+        <CardContent>
+          <Typography variant="h5">Database</Typography>
+          <Grid container gap={1}>
+            <DropdownButton
+              title={`${current ? '* ' : ''}Database ${index + 1}`}
+            >
+              {range(0, 3).map((i) => (
+                <MenuItem key={i} onClick={() => setIndex(i)}>{`${
+                  mainDB === databases[i] ? '* ' : ''
+                }Database ${i + 1}`}</MenuItem>
+              ))}
+            </DropdownButton>
+            <Button onClick={swapDb}>Swap to Database</Button>
+            <Button onClick={download}>Download DB</Button>
+            <input
+              accept=".json"
+              id="icon-button-file"
+              type="file"
+              onChange={onUpload}
+            />
+            <Button onClick={replaceDb}>Replace</Button>
+            <Button color="warning" onClick={clearDb}>
+              Nuke
+            </Button>
+          </Grid>
+          <Typography>
+            Last Edit: {new Date(lastEdit).toLocaleString()}
+          </Typography>
+          <Typography component="pre" fontFamily="monospace">
+            {JSON.stringify(database.exportSROD(), undefined, 2)}
+          </Typography>
+        </CardContent>
+      </CardThemed>
     </Container>
   )
 }

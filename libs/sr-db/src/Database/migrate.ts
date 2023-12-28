@@ -40,7 +40,7 @@ export function migrateSr(
  * Throw an error if `storage` uses unsupported DB version.
  */
 export function migrateStorage(storage: DBStorage) {
-  const version = storage.getDBVersion('sro_db_ver')
+  const version = storage.getDBVersion()
 
   // function migrateVersion(version: number, cb: () => void) {
   //   const dbver = storage.getDBVersion()
@@ -54,7 +54,7 @@ export function migrateStorage(storage: DBStorage) {
 
   // migrateVersion(2, () => {})
 
-  storage.setDBVersion(currentDBVersion, 'sro_db_ver')
+  storage.setDBVersion(currentDBVersion)
   if (version > currentDBVersion)
     throw new Error(`Database version ${version} is not supported`)
 }

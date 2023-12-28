@@ -1,4 +1,5 @@
 import { DBLocalStorage, SandboxStorage } from '@genshin-optimizer/database'
+import type { DatabaseContextObj } from '@genshin-optimizer/sr-db'
 import { DatabaseContext, SroDatabase } from '@genshin-optimizer/sr-db'
 import {
   CssBaseline,
@@ -18,12 +19,12 @@ export default function App() {
     localStorage.setItem('SRONewTabDetection', 'debug')
     return ([1, 2, 3, 4] as const).map((index) => {
       if (index === dbIndex) {
-        return new SroDatabase(index, new DBLocalStorage(localStorage))
+        return new SroDatabase(index, new DBLocalStorage(localStorage, 'sro'))
       } else {
         const dbName = `sro_extraDatabase_${index}`
         const eDB = localStorage.getItem(dbName)
         const dbObj = eDB ? JSON.parse(eDB) : {}
-        const db = new SroDatabase(index, new SandboxStorage(dbObj))
+        const db = new SroDatabase(index, new SandboxStorage(dbObj, 'sro'))
         db.toExtraLocalDB()
         return db
       }
@@ -39,7 +40,7 @@ export default function App() {
   )
 
   const database = databases[dbIndex - 1]
-  const dbContextObj = useMemo(
+  const dbContextObj: DatabaseContextObj = useMemo(
     () => ({ databases, setDatabases, database, setDatabase }),
     [databases, setDatabases, database, setDatabase]
   )

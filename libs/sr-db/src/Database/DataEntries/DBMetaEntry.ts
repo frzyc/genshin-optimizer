@@ -1,10 +1,10 @@
 import type { Database } from '@genshin-optimizer/database'
-import { DataEntry } from '../DataEntry'
 import type { GenderKey } from '@genshin-optimizer/sr-consts'
 import { allGenderKeys } from '@genshin-optimizer/sr-consts'
-import type { SroDatabase } from '../Database'
 import type { ISrObjectDescription } from '@genshin-optimizer/sr-srod'
 import type { ISroDatabase } from '../../Interfaces'
+import { DataEntry } from '../DataEntry'
+import type { SroDatabase } from '../Database'
 import type { ImportResult } from '../exim'
 
 interface IDBMeta {
@@ -15,7 +15,7 @@ interface IDBMeta {
 
 function dbMetaInit(database: Database): IDBMeta {
   return {
-    name: `Database ${database.storage.getDBIndex('sro_dbIndex')}`,
+    name: `Database ${database.storage.getDBIndex()}`,
     lastEdit: 0,
     gender: 'F',
   }
@@ -35,7 +35,7 @@ export class DBMetaEntry extends DataEntry<
     if (typeof obj !== 'object') return undefined
     let { name, lastEdit, gender } = obj
     if (typeof name !== 'string')
-      name = `Database ${this.database.storage.getDBIndex('sro_dbIndex')}`
+      name = `Database ${this.database.storage.getDBIndex()}`
     if (typeof lastEdit !== 'number') console.warn('lastEdit INVALID')
     if (typeof lastEdit !== 'number') lastEdit = 0
     if (!allGenderKeys.includes(gender)) gender = 'F'

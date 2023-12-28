@@ -12,7 +12,7 @@ import { SroSource } from '../Interfaces'
 import { initialCharacter } from './DataManagers/CharacterData'
 import { SroDatabase } from './Database'
 
-const dbStorage = new DBLocalStorage(localStorage)
+const dbStorage = new DBLocalStorage(localStorage, 'sro')
 const dbIndex = 1
 let database = new SroDatabase(dbIndex, dbStorage)
 
@@ -57,7 +57,7 @@ describe('Database', () => {
     database.relics.set(relic2id, { location: 'Tingyun' })
     database.lightCones.set(tingyunLightConeid, { location: 'Tingyun' })
 
-    const newDB = new SroDatabase(dbIndex, new SandboxStorage())
+    const newDB = new SroDatabase(dbIndex, new SandboxStorage(undefined, 'sro'))
     const srod = database.exportSROD()
     newDB.importSROD(srod, false, false)
     expect(

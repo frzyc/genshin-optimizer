@@ -6,12 +6,12 @@ import { createContext } from 'react'
 import type { ISroDatabase } from '../Interfaces'
 import { SroSource } from '../Interfaces'
 import { DBMetaEntry } from './DataEntries/DBMetaEntry'
-import { RelicDataManager } from './DataManagers/RelicData'
 import { BuildResultDataManager } from './DataManagers/BuildResultData'
 import { BuildSettingDataManager } from './DataManagers/BuildSettingData'
 import { CharMetaDataManager } from './DataManagers/CharMetaData'
 import { CharacterDataManager } from './DataManagers/CharacterData'
 import { LightConeDataManager } from './DataManagers/LightConeData'
+import { RelicDataManager } from './DataManagers/RelicData'
 import type { ImportResult } from './exim'
 import { newImportResult } from './exim'
 import {
@@ -36,9 +36,9 @@ export class SroDatabase extends Database {
     migrateStorage(storage)
     // Transfer non DataManager/DataEntry data from storage
     this.dbIndex = dbIndex
-    this.dbVer = storage.getDBVersion('sro_db_ver')
-    this.storage.setDBVersion(this.dbVer, 'sro_db_ver')
-    this.storage.setDBIndex(this.dbIndex, 'sro_dbIndex')
+    this.dbVer = storage.getDBVersion()
+    this.storage.setDBVersion(this.dbVer)
+    this.storage.setDBIndex(this.dbIndex)
 
     // Handle Datamanagers
     this.chars = new CharacterDataManager(this)
@@ -153,8 +153,8 @@ export class SroDatabase extends Database {
   saveStorage() {
     this.dataManagers.map((dm) => dm.saveStorage())
     this.dataEntries.map((de) => de.saveStorage())
-    this.storage.setDBVersion(this.dbVer, 'sro_db_ver')
-    this.storage.setDBIndex(this.dbIndex, 'sro_dbIndex')
+    this.storage.setDBVersion(this.dbVer)
+    this.storage.setDBIndex(this.dbIndex)
   }
   swapStorage(other: SroDatabase) {
     this.clearStorage()
@@ -168,8 +168,8 @@ export class SroDatabase extends Database {
     other.saveStorage()
   }
   toExtraLocalDB() {
-    const key = `extraDatabase_${this.storage.getDBIndex('sro_dbIndex')}`
-    const other = new SandboxStorage()
+    const key = `extraDatabase_${this.storage.getDBIndex()}`
+    const other = new SandboxStorage(undefined, 'sro')
     const oldstorage = this.storage
     this.storage = other
     this.saveStorage()

@@ -1,10 +1,27 @@
-import type { DBStorage, DbIndexKey, DbVersionKey } from './DBStorage'
+import type {
+  DBStorage,
+  DbIndexKey,
+  DbVersionKey,
+  StorageType,
+} from './DBStorage'
 
 export class SandboxStorage implements DBStorage {
   protected storage: Record<string, string> = {}
+  dbVersionKey: DbVersionKey
+  dbIndexKey: DbIndexKey
 
-  constructor(obj?: Record<string, string>) {
+  constructor(obj?: Record<string, string>, storageType: StorageType = 'go') {
     if (obj) this.storage = obj
+    switch (storageType) {
+      case 'go':
+        this.dbVersionKey = 'db_ver'
+        this.dbIndexKey = 'dbIndex'
+        break
+      case 'sro':
+        this.dbVersionKey = 'sro_db_ver'
+        this.dbIndexKey = 'sro_dbIndex'
+        break
+    }
   }
 
   get keys(): string[] {
@@ -51,16 +68,16 @@ export class SandboxStorage implements DBStorage {
       Object.entries(this.storage).filter(([key]) => !shouldRemove(key))
     )
   }
-  getDBVersion(key: DbVersionKey = 'db_ver'): number {
-    return parseInt(this.getString(key) ?? '0')
+  getDBVersion(): number {
+    return parseInt(this.getString(this.dbVersionKey) ?? '0')
   }
-  setDBVersion(version: number, key: DbVersionKey = 'db_ver'): void {
-    this.setString(key, version.toString())
+  setDBVersion(version: number): void {
+    this.setString(this.dbVersionKey, version.toString())
   }
-  getDBIndex(key: DbIndexKey = 'dbIndex'): 1 | 2 | 3 | 4 {
-    return parseInt(this.getString(key) ?? '1') as 1 | 2 | 3 | 4
+  getDBIndex(): 1 | 2 | 3 | 4 {
+    return parseInt(this.getString(this.dbIndexKey) ?? '1') as 1 | 2 | 3 | 4
   }
-  setDBIndex(ind: 1 | 2 | 3 | 4, key: DbIndexKey = 'dbIndex') {
-    this.setString(key, ind.toString())
+  setDBIndex(ind: 1 | 2 | 3 | 4) {
+    this.setString(this.dbIndexKey, ind.toString())
   }
 }
