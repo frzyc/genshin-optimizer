@@ -109,7 +109,7 @@ describe('example', () => {
         calc.compute(member1.final.eleMas).val
     )
   })
-  describe('retrieve formulas in formula listing', () => {
+  describe('retrieve formulas in a listing', () => {
     /**
      * Each entry in listing is a `Tag` in the shape of
      * ```
@@ -261,5 +261,27 @@ describe('example', () => {
 
     // Print calculation steps
     console.log(debugCalc.debug(normal0))
+  })
+})
+describe('weapon-only example', () => {
+  const data: TagMapNodeEntries = [
+      ...weaponData(rawData[1].weapon as IWeapon),
+      ...conditionalData(rawData[1].conditionals),
+    ],
+    calc = new Calculator(keys, values, compileTagMapValues(keys, data))
+
+  const self = convert(selfTag, { et: 'self' })
+
+  test('retrieve formulas in a listing', () => {
+    const listing = calc.listFormulas(self.listing.specialized)
+    expect(listing.length).toEqual(3)
+  })
+  test('calculate formulas in a listing', () => {
+    // Some listings require character data (e.g., `formulas` listing) and will crash if used
+    const listing = calc.listFormulas(self.listing.specialized)
+
+    expect(calc.compute(listing[0]).val).toBeCloseTo(337.96) // atk
+    expect(calc.compute(listing[1]).val).toBeCloseTo(0.458) // hp_
+    expect(calc.compute(listing[2]).val).toBeCloseTo(0.3) // refinement hp_
   })
 })
