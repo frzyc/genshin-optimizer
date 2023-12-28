@@ -81,6 +81,8 @@ describe('example', () => {
     }
   })
   test('calculate stats', () => {
+    expect(calc.compute(member0.common.isActive).val).toBe(1)
+    expect(calc.compute(member1.common.isActive).val).toBe(0)
     expect(calc.compute(member1.final.hp).val).toBeCloseTo(9479.7, 1)
     expect(calc.compute(member0.final.atk).val).toBeCloseTo(346.21, 2)
     expect(calc.compute(member0.final.def).val).toBeCloseTo(124.15, 2)
