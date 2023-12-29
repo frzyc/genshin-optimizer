@@ -1,6 +1,14 @@
 import { DBLocalStorage, SandboxStorage } from '@genshin-optimizer/database'
-import type { DatabaseContextObj } from '@genshin-optimizer/sr-db'
-import { DatabaseContext, SroDatabase } from '@genshin-optimizer/sr-db'
+import type { CharacterKey } from '@genshin-optimizer/sr-consts'
+import type {
+  CharacterContextObj,
+  DatabaseContextObj,
+} from '@genshin-optimizer/sr-context'
+import {
+  CharacterContext,
+  DatabaseContext,
+} from '@genshin-optimizer/sr-context'
+import { SroDatabase } from '@genshin-optimizer/sr-db'
 import {
   CssBaseline,
   Stack,
@@ -45,16 +53,24 @@ export default function App() {
     [databases, setDatabases, database, setDatabase]
   )
 
+  const [characterKey, setCharacterKey] = useState<CharacterKey | ''>('')
+  const characterContextObj: CharacterContextObj = useMemo(
+    () => ({ characterKey, setCharacterKey }),
+    [characterKey]
+  )
+
   return (
     <StyledEngineProvider injectFirst>
       {/* https://mui.com/guides/interoperability/#css-injection-order-2 */}
       <ThemeProvider theme={theme}>
         <DatabaseContext.Provider value={dbContextObj}>
-          <CssBaseline />
-          <Stack gap={1} pt={1}>
-            <Character />
-            <Database />
-          </Stack>
+          <CharacterContext.Provider value={characterContextObj}>
+            <CssBaseline />
+            <Stack gap={1} pt={1}>
+              <Character />
+              <Database />
+            </Stack>
+          </CharacterContext.Provider>
         </DatabaseContext.Provider>
       </ThemeProvider>
     </StyledEngineProvider>

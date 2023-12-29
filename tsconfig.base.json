@@ -64,6 +64,7 @@
       ],
       "@genshin-optimizer/sr-assets": ["libs/sr-assets/src/index.ts"],
       "@genshin-optimizer/sr-consts": ["libs/sr-consts/src/index.ts"],
+      "@genshin-optimizer/sr-context": ["libs/sr-context/src/index.ts"],
       "@genshin-optimizer/sr-db": ["libs/sr-db/src/index.ts"],
       "@genshin-optimizer/sr-dm": ["libs/sr-dm/src/index.ts"],
       "@genshin-optimizer/sr-formula": ["libs/sr-formula/src/index.ts"],
