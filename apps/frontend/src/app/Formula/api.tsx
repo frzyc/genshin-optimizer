@@ -12,6 +12,7 @@ import {
   layeredAssignment,
   objKeyMap,
   objPathValue,
+  toDecimal,
 } from '@genshin-optimizer/util'
 import type { ICachedArtifact } from '../Types/artifact'
 import type { ICachedCharacter } from '../Types/character'
@@ -74,16 +75,16 @@ function dataObjForArtifact(
   const stats: [ArtifactSetKey | MainStatKey | SubstatKey, number][] = []
   stats.push([art.mainStatKey, mainStatVal])
   art.substats.forEach(
-    ({ key, accurateValue }) => key && stats.push([key, accurateValue])
+    ({ key, accurateValue }) =>
+      key && stats.push([key, toDecimal(accurateValue, key)])
   )
   return {
     art: {
       ...Object.fromEntries(
-        stats.map(([key, value]) =>
-          key.endsWith('_')
-            ? [key, percent(value / 100)]
-            : [key, constant(value)]
-        )
+        stats.map(([key, value]) => [
+          key,
+          key.endsWith('_') ? percent(value) : constant(value),
+        ])
       ),
       [art.slotKey]: {
         id: constant(art.id),
