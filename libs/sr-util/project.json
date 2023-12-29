@@ -1,20 +1,14 @@
 {
-  "name": "sr-db",
+  "name": "sr-util",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "libs/sr-db/src",
+  "sourceRoot": "libs/sr-util/src",
   "projectType": "library",
   "targets": {
     "lint": {
       "executor": "@nx/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["libs/sr-db/**/*.ts"]
-      }
-    },
-    "test": {
-      "executor": "@nx/vite:test",
-      "options": {
-        "config": "libs/sr-db/vitest.config.ts"
+        "lintFilePatterns": ["libs/sr-util/**/*.ts"]
       }
     }
   },

@@ -2,7 +2,7 @@
   "extends": "../../tsconfig.base.json",
   "files": [],
   "compilerOptions": {
-    "jsx": "react",
+    "jsx": "react-jsx",
     "target": "ESNext",
     "useDefineForClassFields": true,
     "lib": ["ESNext", "DOM"],
@@ -15,6 +15,7 @@
     "noUnusedParameters": true,
     "allowSyntheticDefaultImports": true,
     "skipLibCheck": true,
+    "exactOptionalPropertyTypes": false,
     "types": ["vite/client", "vitest"]
   },
   "include": ["src"],

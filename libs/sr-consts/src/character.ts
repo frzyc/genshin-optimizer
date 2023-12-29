@@ -69,7 +69,7 @@ export type TrailblazerKey = (typeof allTrailblazerKeys)[number]
 
 export const allCharacterKeys = [
   ...nonTrailblazerCharacterKeys,
-  ...allTrailblazerGenderedKeys,
+  ...allTrailblazerKeys,
 ] as const
 export type CharacterKey = (typeof allCharacterKeys)[number]
 
@@ -87,3 +87,11 @@ export type BonusAbilityKey = (typeof allBonusAbilityKeys)[number]
 
 export const allStatBoostKeys = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] as const
 export type StatBoostKey = (typeof allStatBoostKeys)[number]
+
+export function charKeyToCharLocKey(
+  charKey: CharacterKey
+): CharacterLocationKey {
+  return charKey.includes('Trailblazer')
+    ? 'Trailblazer'
+    : (charKey as CharacterLocationKey)
+}

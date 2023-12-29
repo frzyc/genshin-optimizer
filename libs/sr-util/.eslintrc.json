@@ -1,12 +1,10 @@
 {
-  "extends": ["plugin:@nx/react", "../../.eslintrc.json"],
+  "extends": ["../../.eslintrc.json"],
   "ignorePatterns": ["!**/*"],
   "overrides": [
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
-      "rules": {
-        "@typescript-eslint/consistent-type-imports": "error"
-      }
+      "rules": {}
     },
     {
       "files": ["*.ts", "*.tsx"],
