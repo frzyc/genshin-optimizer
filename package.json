@@ -95,6 +95,7 @@
     "@mui/icons-material": "^5.14.12",
     "@mui/lab": "^5.0.0-alpha.147",
     "@mui/material": "^5.14.12",
+    "@mui/material-nextjs": "^5.15.0",
     "@nestjs/apollo": "^12.0.9",
     "@nestjs/common": "^10.0.2",
     "@nestjs/core": "^10.0.2",

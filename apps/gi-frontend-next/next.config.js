@@ -7,6 +7,9 @@ const { composePlugins, withNx } = require('@nx/next')
  * @type {import('@nx/next/plugins/with-nx').WithNxOptions}
  **/
 const nextConfig = {
+  // to speed up slow dev
+  // https://github.com/vercel/next.js/issues/48748#issuecomment-1858705129
+  swcMinify: true,
   nx: {
     // Set this to true if you would like to to use SVGR
     // See: https://github.com/gregberge/svgr

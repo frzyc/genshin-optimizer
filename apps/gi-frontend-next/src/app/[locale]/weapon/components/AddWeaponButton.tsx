@@ -18,15 +18,18 @@ export default function AddWeaponButton({
   ] = useAddWeaponMutation({
     variables: {
       genshinUserId,
-      weapon: randomizeWeapon({
-        // Only a small subset of weapons have been added to gi-formula
-        key: getRandomElementFromArray([
-          'CalamityQueller',
-          'KeyOfKhajNisut',
-          'PrototypeAmber',
-          'TulaytullahsRemembrance',
-        ] as WeaponKey[]),
-      }),
+      weapon: {
+        ...randomizeWeapon({
+          // Only a small subset of weapons have been added to gi-formula
+          key: getRandomElementFromArray([
+            'CalamityQueller',
+            'KeyOfKhajNisut',
+            'PrototypeAmber',
+            'TulaytullahsRemembrance',
+          ] as WeaponKey[]),
+        }),
+        location: null,
+      },
     },
     update(cache, { data }) {
       if (!data?.addWeapon) return

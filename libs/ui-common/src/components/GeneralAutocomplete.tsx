@@ -1,4 +1,4 @@
-import { Favorite } from '@mui/icons-material'
+import FavoriteIcon from '@mui/icons-material/Favorite'
 import type {
   AutocompleteProps,
   ChipProps,
@@ -124,7 +124,7 @@ export function GeneralAutocomplete<T extends string>({
                 </ColorText>
               </Suspense>
             </ListItemText>
-            {!!option.favorite && <Favorite />}
+            {!!option.favorite && <FavoriteIcon />}
           </MenuItem>
         )
       }}
@@ -209,7 +209,7 @@ export function GeneralAutocompleteMulti<T extends string>({
               </ColorText>
             </Suspense>
           </ListItemText>
-          {!!option.favorite && <Favorite />}
+          {!!option.favorite && <FavoriteIcon />}
         </MenuItem>
       )}
       renderTags={(selected, getTagProps) =>

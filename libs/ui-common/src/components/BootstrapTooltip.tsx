@@ -1,3 +1,4 @@
+'use client'
 import type { TooltipProps } from '@mui/material'
 import { Tooltip, tooltipClasses, styled } from '@mui/material'
 
