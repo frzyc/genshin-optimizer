@@ -13,11 +13,8 @@
       "command": "npx graphql-codegen --config libs/gi-frontend-gql/codegen.yml"
     },
     "lint": {
-      "executor": "@nx/linter:eslint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": ["libs/gi-frontend-gql/**/*.{ts,tsx,js,jsx}"]
-      }
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"]
     }
   },
   "namedInputs": {
