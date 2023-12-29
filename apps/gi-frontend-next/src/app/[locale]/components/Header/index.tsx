@@ -1,5 +1,5 @@
 'use client'
-import { KeyboardArrowUp } from '@mui/icons-material'
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp'
 import { Fab, useMediaQuery, useTheme } from '@mui/material'
 import { usePathname } from 'next/navigation'
 import DesktopHeader from './DesktopHeader'
@@ -24,7 +24,7 @@ export default function Header({ locale }: { locale: string }) {
       )}
       <ScrollTop anchor={anchor}>
         <Fab color="secondary" size="small" aria-label="scroll back to top">
-          <KeyboardArrowUp />
+          <KeyboardArrowUpIcon />
         </Fab>
       </ScrollTop>
     </>

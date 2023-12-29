@@ -8,7 +8,8 @@
       "executor": "@genshin-optimizer/gi-dm-localization:gen-locale",
       "outputs": ["{projectRoot}/assets/locales"]
     },
-    "lint": {}
+    "lint": {},
+    "test": {}
   },
   "tags": []
 }

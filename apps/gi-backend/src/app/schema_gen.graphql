@@ -63,6 +63,7 @@ enum ArtifactSetKey {
   MaidenBeloved
   MarechausseeHunter
   MartialArtist
+  NighttimeWhispersInTheEchoingWoods
   NoblesseOblige
   NymphsDream
   OceanHuedClam
@@ -75,6 +76,7 @@ enum ArtifactSetKey {
   RetracingBolide
   Scholar
   ShimenawasReminiscence
+  SongOfDaysPast
   TenacityOfTheMillelith
   TheExile
   ThunderingFury
@@ -161,6 +163,7 @@ enum LocationKey {
   Mika
   Mona
   Nahida
+  Navia
   Neuvillette
   Nilou
   Ningguang
@@ -216,12 +219,194 @@ enum SubstatKey {
 type Weapon {
   id: ID!
   genshinUserId: String!
-  key: String!
+  key: WeaponKey!
   level: Int!
   ascension: Int!
   refinement: Int!
-  location: String
+  location: LocationKey
   lock: Boolean!
+}
+
+enum WeaponKey {
+  AmenomaKageuchi
+  AquilaFavonia
+  BlackcliffLongsword
+  CinnabarSpindle
+  CoolSteel
+  DarkIronSword
+  DullBlade
+  FavoniusSword
+  FesteringDesire
+  FilletBlade
+  FinaleOfTheDeep
+  FleuveCendreFerryman
+  FreedomSworn
+  HaranGeppakuFutsu
+  HarbingerOfDawn
+  IronSting
+  KagotsurubeIsshin
+  KeyOfKhajNisut
+  LightOfFoliarIncision
+  LionsRoar
+  MistsplitterReforged
+  PrimordialJadeCutter
+  PrototypeRancour
+  RoyalLongsword
+  SacrificialSword
+  SapwoodBlade
+  SilverSword
+  SkyriderSword
+  SkywardBlade
+  SplendorOfTranquilWaters
+  SummitShaper
+  SwordOfDescension
+  SwordOfNarzissenkreuz
+  TheAlleyFlash
+  TheBlackSword
+  TheDockhandsAssistant
+  TheFlute
+  ToukabouShigure
+  TravelersHandySword
+  WolfFang
+  XiphosMoonlight
+  Akuoumaru
+  BeaconOfTheReedSea
+  BlackcliffSlasher
+  BloodtaintedGreatsword
+  DebateClub
+  FavoniusGreatsword
+  FerrousShadow
+  ForestRegalia
+  KatsuragikiriNagamasa
+  LithicBlade
+  LuxuriousSeaLord
+  MailedFlower
+  MakhairaAquamarine
+  OldMercsPal
+  PortablePowerSaw
+  PrototypeArchaic
+  Rainslasher
+  RedhornStonethresher
+  RoyalGreatsword
+  SacrificialGreatsword
+  SerpentSpine
+  SkyriderGreatsword
+  SkywardPride
+  SnowTombedStarsilver
+  SongOfBrokenPines
+  TalkingStick
+  TheBell
+  TheUnforged
+  TidalShadow
+  UltimateOverlordsMegaMagicSword
+  Verdict
+  WasterGreatsword
+  Whiteblind
+  WhiteIronGreatsword
+  WolfsGravestone
+  BalladOfTheFjords
+  BeginnersProtector
+  BlackcliffPole
+  BlackTassel
+  CalamityQueller
+  CrescentPike
+  Deathmatch
+  DragonsBane
+  DragonspineSpear
+  EngulfingLightning
+  FavoniusLance
+  Halberd
+  IronPoint
+  KitainCrossSpear
+  LithicSpear
+  MissiveWindspear
+  Moonpiercer
+  PrimordialJadeWingedSpear
+  ProspectorsDrill
+  PrototypeStarglitter
+  RightfulReward
+  RoyalSpear
+  SkywardSpine
+  StaffOfHoma
+  StaffOfTheScarletSands
+  TheCatch
+  VortexVanquisher
+  WavebreakersFin
+  WhiteTassel
+  AlleyHunter
+  AmosBow
+  AquaSimulacra
+  BlackcliffWarbow
+  CompoundBow
+  ElegyForTheEnd
+  EndOfTheLine
+  FadingTwilight
+  FavoniusWarbow
+  Hamayumi
+  HuntersBow
+  HuntersPath
+  IbisPiercer
+  KingsSquire
+  Messenger
+  MitternachtsWaltz
+  MouunsMoon
+  PolarStar
+  Predator
+  PrototypeCrescent
+  RangeGauge
+  RavenBow
+  RecurveBow
+  RoyalBow
+  Rust
+  SacrificialBow
+  ScionOfTheBlazingSun
+  SeasonedHuntersBow
+  SharpshootersOath
+  SkywardHarp
+  Slingshot
+  SongOfStillness
+  TheFirstGreatMagic
+  TheStringless
+  TheViridescentHunt
+  ThunderingPulse
+  WindblumeOde
+  ApprenticesNotes
+  AThousandFloatingDreams
+  BalladOfTheBoundlessBlue
+  BlackcliffAgate
+  CashflowSupervision
+  DodocoTales
+  EmeraldOrb
+  EverlastingMoonglow
+  EyeOfPerception
+  FavoniusCodex
+  FlowingPurity
+  Frostbearer
+  FruitOfFulfillment
+  HakushinRing
+  JadefallsSplendor
+  KagurasVerity
+  LostPrayerToTheSacredWinds
+  MagicGuide
+  MappaMare
+  MemoryOfDust
+  OathswornEye
+  OtherworldlyStory
+  PocketGrimoire
+  PrototypeAmber
+  QuantumCatalyst
+  RoyalGrimoire
+  SacrificialFragments
+  SacrificialJade
+  SkywardAtlas
+  SolarPearl
+  TheWidsith
+  ThrillingTalesOfDragonSlayers
+  TomeOfTheEternalFlow
+  TulaytullahsRemembrance
+  TwinNephrite
+  WanderingEvenstar
+  WineAndSong
 }
 
 type Talent {
@@ -285,6 +470,7 @@ enum CharacterKey {
   Mika
   Mona
   Nahida
+  Navia
   Neuvillette
   Nilou
   Ningguang
@@ -379,20 +565,20 @@ input UpdateArtifact {
 }
 
 input InputWeapon {
-  key: String!
+  key: WeaponKey!
   level: Int!
   ascension: Int!
   refinement: Int!
-  location: String
+  location: LocationKey
   lock: Boolean!
 }
 
 input UpdateWeapon {
-  key: String
+  key: WeaponKey
   level: Int
   ascension: Int
   refinement: Int
-  location: String
+  location: LocationKey
   lock: Boolean
   id: ID!
 }

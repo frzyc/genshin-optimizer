@@ -61,6 +61,7 @@ jobs:
         with:
           repository: ${{ inputs.repo_full_name }}
           ref: ${{ inputs.ref }}
+          submodules: true
       - uses: actions/setup-node@v3
         with:
           node-version: 18
