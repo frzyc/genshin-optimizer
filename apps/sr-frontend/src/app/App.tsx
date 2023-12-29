@@ -1,7 +1,4 @@
-import {
-  CharacterProvider,
-  DatabaseProvider,
-} from '@genshin-optimizer/sr-context'
+import { CharacterProvider, DatabaseProvider } from '@genshin-optimizer/sr-ui'
 import {
   CssBaseline,
   Stack,

@@ -1,7 +1,7 @@
 import { useForceUpdate } from '@genshin-optimizer/react-util'
 import type { CharacterKey } from '@genshin-optimizer/sr-consts'
 import { allCharacterKeys } from '@genshin-optimizer/sr-consts'
-import { DatabaseContext } from '@genshin-optimizer/sr-context'
+import { DatabaseContext } from '@genshin-optimizer/sr-ui'
 import type { GeneralAutocompleteOption } from '@genshin-optimizer/ui-common'
 import { GeneralAutocomplete } from '@genshin-optimizer/ui-common'
 import { objKeyMap } from '@genshin-optimizer/util'

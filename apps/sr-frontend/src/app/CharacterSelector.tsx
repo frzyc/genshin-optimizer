@@ -1,5 +1,7 @@
-import { CharacterContext } from '@genshin-optimizer/sr-context'
-import { CharacterAutocomplete } from '@genshin-optimizer/sr-ui'
+import {
+  CharacterAutocomplete,
+  CharacterContext,
+} from '@genshin-optimizer/sr-ui'
 import { CardThemed } from '@genshin-optimizer/ui-common'
 import { CardContent, Container } from '@mui/material'
 import { useContext } from 'react'
