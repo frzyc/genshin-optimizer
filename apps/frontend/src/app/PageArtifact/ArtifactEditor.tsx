@@ -145,7 +145,7 @@ export default function ArtifactEditor({
   disableSlot = false,
 }: ArtifactEditorProps) {
   const queueRef = useRef(
-    new ScanningQueue(textsFromImage, process.env.NODE_ENV === 'development')
+    new ScanningQueue(textsFromImage, shouldShowDevComponents)
   )
   const queue = queueRef.current
   const { t } = useTranslation('artifact')
