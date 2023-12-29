@@ -105,5 +105,25 @@ const data = {
     res: {},
     misc: {},
   },
+  // Constellation Lv. {{level}}
+  constellationLvl: [892900816, 'constellation'],
+  // Talent Lv. {{level}}
+  talentLvl: [1647967600, 'talent'],
+  talents: {
+    // Normal Attack
+    auto: 1171619685, // or 1653327868
+    // Elemental Skill
+    skill: 3477257188, // or 4260972229
+    // Elemental Burst
+    burst: 3250738285, // 2453877364 3626565793 3152729845
+    // Altenate Sprint
+    altSprint: [3378550992, 'altSprint'], // mona's desc
+  },
+  // Unlocks at Character Ascension Phase 1
+  unlockPassive1: [941237898, 'passive1'],
+  // Unlocks at Character Ascension Phase 4
+  unlockPassive2: [941237898, 'passive4'],
+  // Passive Talent
+  unlockPassive3: 2602723764,
 } as const
 export default data
