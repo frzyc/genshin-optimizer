@@ -74,8 +74,8 @@ export function resize(
   const { width = imageData.width, height = imageData.height } = options
 
   const dataBuffer = new Uint8ClampedArray(width * height * 4)
-  const sx = width / imageData.width
-  const sy = height / imageData.height
+  const sx = (width - 1) / (imageData.width - 1)
+  const sy = (height - 1) / (imageData.height - 1)
   for (let x = 0; x < width; x++) {
     for (let y = 0; y < height; y++) {
       for (let i = 0; i < 4; i++) {
