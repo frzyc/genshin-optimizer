@@ -101,20 +101,5 @@
       "name": "<strong>冷酷な心</strong>を消費",
       "durationStack": "一つごとに6秒+6秒、最大18秒まで"
     }
-  },
-  "page_character": {
-    "tabTalent": {
-      "constellation": "命ノ星座",
-      "constellationLvl": "命ノ星座 第{{level}}重",
-      "auto": "通常攻擊",
-      "skill": "元素スキル",
-      "burst": "元素爆発",
-      "unlockPassive1": "突破段階「1」で解放",
-      "unlockPassive2": "突破段階「4」で解放",
-      "unlockPassive3": "固有天賦",
-      "altSprint": "ダッシュの代わりに発動する",
-      "talent": "天賦",
-      "talentLvl": "天賦Lv.{{level}}"
-    }
   }
 }

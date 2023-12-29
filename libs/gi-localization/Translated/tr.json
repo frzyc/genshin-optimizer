@@ -1,17 +1,1 @@
-{
-  "page_character": {
-    "tabTalent": {
-      "constellation": "Takımyıldız",
-      "constellationLvl": "Takımyıldız Sv. {{level}}",
-      "auto": "Normal Saldırı",
-      "skill": "Element Becerisi",
-      "burst": "Element Patlaması",
-      "unlockPassive1": "1. Karakter Yükseltme Aşamasında açılır",
-      "unlockPassive2": "4. Karakter Yükseltme Aşamasında açılır",
-      "unlockPassive3": "Pasif Yetenek",
-      "altSprint": "Alternatif Depar",
-      "talent": "Yetenek",
-      "talentLvl": "Yetenek Sv. {{level}}"
-    }
-  }
-}
+{}

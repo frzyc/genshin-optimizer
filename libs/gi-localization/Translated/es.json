@@ -854,20 +854,7 @@
     },
     "characterName": "Nombre del personaje",
     "teammate": "Compañero {{count}}",
-    "noReaction": "Sin reacciones",
-    "tabTalent": {
-      "constellation": "Constelación",
-      "constellationLvl": "Constelación Niv. {{level}}",
-      "auto": "Ataque Normal",
-      "skill": "Habilidad Elemental",
-      "burst": "Habilidad Definitiva",
-      "unlockPassive1": "Se desbloquea al alcanzar Niv. de ascensión 1",
-      "unlockPassive2": "Se desbloquea al alcanzar Niv. de ascensión 4",
-      "unlockPassive3": "Talento pasivo",
-      "altSprint": "Reemplaza a Esprintar",
-      "talent": "Talento",
-      "talentLvl": "Niv. talento {{level}}"
-    }
+    "noReaction": "Sin reacciones"
   },
   "page_weapon": {
     "showingNum_one": "Mostrando <1>{{count}}</1> de {{value}} arma",

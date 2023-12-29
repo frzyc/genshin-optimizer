@@ -1091,19 +1091,6 @@
     "tabTeambuff": {
       "team_reso": "元素共鳴",
       "resonance_tip": "隊伍中需要有 4 位角色才能觸發元素共鳴。"
-    },
-    "tabTalent": {
-      "constellation": "命之座",
-      "constellationLvl": "命之座 第{{level}}層",
-      "auto": "普通攻擊",
-      "skill": "元素戰技",
-      "burst": "元素爆發",
-      "unlockPassive1": "角色突破等級達1解鎖",
-      "unlockPassive2": "角色突破等級達4解鎖",
-      "unlockPassive3": "固有天賦",
-      "altSprint": "代替衝刺",
-      "talent": "天賦",
-      "talentLvl": "天賦等級{{level}}"
     }
   },
   "page_weapon": {

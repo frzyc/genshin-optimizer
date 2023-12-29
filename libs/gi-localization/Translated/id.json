@@ -1077,19 +1077,6 @@
     "tabTeambuff": {
       "team_reso": "Team Resonance",
       "resonance_tip": "Party harus penuh dengan 4 karakter agar resonansi elemen dapat diterapkan."
-    },
-    "tabTalent": {
-      "constellation": "Konstelasi",
-      "constellationLvl": "Konstelasi Lv. {{level}}",
-      "auto": "Normal Attack",
-      "skill": "Elemental Skill",
-      "burst": "Elemental Burst",
-      "unlockPassive1": "Terbuka saat Tahap Ascension Karakter 1",
-      "unlockPassive2": "Terbuka saat Tahap Ascension Karakter 4",
-      "unlockPassive3": "Talenta Pasif",
-      "altSprint": "Alternate Sprint",
-      "talent": "Talent",
-      "talentLvl": "Talent Lv. {{level}}"
     }
   },
   "page_weapon": {

@@ -271,19 +271,6 @@
     },
     "tabTheorycraft": {
       "maxTotalRolls": "Ein \"zulässiger\" Build kann maximal 45 Rolls haben."
-    },
-    "tabTalent": {
-      "constellation": "Sternbild",
-      "constellationLvl": "Sternbild Stufe {{level}}",
-      "auto": "Standardangriff",
-      "skill": "Elementarfähigkeit",
-      "burst": "Spezialfähigkeit",
-      "unlockPassive1": "Ab Figurenaufstiegsstufe 1 verfügbar",
-      "unlockPassive2": "Ab Figurenaufstiegsstufe 4 verfügbar",
-      "unlockPassive3": "Passives Talent",
-      "altSprint": "Ersetzt Rennen",
-      "talent": "Talent",
-      "talentLvl": "Talentstufe {{level}}"
     }
   },
   "page_character_optimize": {

@@ -223,20 +223,5 @@
     "p1Cond": "Après avoir tiré une <strong>Flèche florale</strong>",
     "c6DmgKey": "DGT de flèche fleuronnée supplémentaire",
     "c6WreathRed": "Diminution du temps de charge de <strong>Flèche florale</strong>"
-  },
-  "page_character": {
-    "tabTalent": {
-      "constellation": "Constellation",
-      "constellationLvl": "Constellation Niv.{{level}}",
-      "auto": "Attaque normale",
-      "skill": "Compétence élémentaire",
-      "burst": "Déchaînement élémentaire",
-      "unlockPassive1": "Disponible lorsque le personnage atteint la phase d'élévation 1",
-      "unlockPassive2": "Disponible lorsque le personnage atteint la phase d'élévation 4",
-      "unlockPassive3": "Aptitude passive",
-      "altSprint": "Sprint alternatif",
-      "talent": "Aptitude",
-      "talentLvl": "Niveau d'aptitude {{level}}"
-    }
   }
 }

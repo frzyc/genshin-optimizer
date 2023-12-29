@@ -419,20 +419,5 @@
   },
   "char_Kaeya": {
     "c2burstDuration": "เพิ่มระยะเวลา 2.5 วินาทีต่อศัตรูที่กำจัดได้, เพิ่มได้สูงสุด 15 วินาที"
-  },
-  "page_character": {
-    "tabTalent": {
-      "constellation": "กลุ่มดาว",
-      "constellationLvl": "กลุ่มดาว Lv.{{level}}",
-      "auto": "โจมตีปกติ",
-      "skill": "สกิลธาตุ",
-      "burst": "ท่าไม้ตาย",
-      "unlockPassive1": "ปลดล็อกเมื่อตัวละครเลื่อนขั้นถึงระดับ 1",
-      "unlockPassive2": "ปลดล็อกเมื่อตัวละครเลื่อนขั้นถึงระดับ 4",
-      "unlockPassive3": "พรสวรรค์ติดตัว",
-      "altSprint": "Alternate Sprint",
-      "talent": "พรสวรรค์",
-      "talentLvl": "เลเวลพรสวรรค์ {{level}}"
-    }
   }
 }
