@@ -191,7 +191,7 @@ export function talent(string: string) {
 }
 
 export function altSprint(string: string) {
-  const re = new RegExp(/<strong>([a-zA-Z\s]+)<\/strong>/)
+  const re = new RegExp(/<strong>(.+)<\/strong>/)
   const match = re.exec(string)
   return match?.[1] ?? ''
 }
