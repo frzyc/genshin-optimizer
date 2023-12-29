@@ -17,6 +17,20 @@ export function drawline(
   return canvas
 }
 
+export function drawBox(
+  canvas: HTMLCanvasElement,
+  { x, y, w, h }: { x: number; y: number; w: number; h: number },
+  color: Color
+) {
+  const ctx = canvas.getContext('2d')!
+  ctx.fillStyle = `rgba(${color.r},${color.g},${color.b},${
+    color.a ? color.a / 255 : 1
+  })`
+  ctx.fillRect(x, y, w, h)
+
+  return canvas
+}
+
 export function drawHistogram(
   canvas: HTMLCanvasElement,
   histogram: number[],
