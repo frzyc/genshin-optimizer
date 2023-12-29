@@ -9,6 +9,7 @@ import {
   ThemeProvider,
 } from '@mui/material'
 import Character from './Character'
+import CharacterSelector from './CharacterSelector'
 import Database from './Database'
 import { theme } from './Theme'
 
@@ -21,6 +22,7 @@ export default function App() {
           <CharacterProvider>
             <CssBaseline />
             <Stack gap={1} pt={1}>
+              <CharacterSelector />
               <Character />
               <Database />
             </Stack>
