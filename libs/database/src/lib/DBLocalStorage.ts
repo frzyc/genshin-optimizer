@@ -1,10 +1,23 @@
-import type { DBStorage } from './DBStorage'
+import type { DbIndexKey, DbVersionKey } from './DBStorage'
+import { type DBStorage, type StorageType } from './DBStorage'
 
 export class DBLocalStorage implements DBStorage {
   private storage: Storage
+  dbVersionKey: DbVersionKey
+  dbIndexKey: DbIndexKey
 
-  constructor(storage: Storage) {
+  constructor(storage: Storage, storageType: StorageType = 'go') {
     this.storage = storage
+    switch (storageType) {
+      case 'go':
+        this.dbVersionKey = 'db_ver'
+        this.dbIndexKey = 'dbIndex'
+        break
+      case 'sro':
+        this.dbVersionKey = 'sro_db_ver'
+        this.dbIndexKey = 'sro_dbIndex'
+        break
+    }
   }
 
   get keys(): string[] {
@@ -52,15 +65,15 @@ export class DBLocalStorage implements DBStorage {
     }
   }
   getDBVersion(): number {
-    return parseInt(this.getString('db_ver') ?? '0')
+    return parseInt(this.getString(this.dbVersionKey) ?? '0')
   }
   setDBVersion(version: number): void {
-    this.setString('db_ver', version.toString())
+    this.setString(this.dbVersionKey, version.toString())
   }
   getDBIndex(): 1 | 2 | 3 | 4 {
-    return parseInt(this.getString('dbIndex') ?? '1') as 1 | 2 | 3 | 4
+    return parseInt(this.getString(this.dbIndexKey) ?? '1') as 1 | 2 | 3 | 4
   }
   setDBIndex(ind: 1 | 2 | 3 | 4) {
-    this.setString('dbIndex', ind.toString())
+    this.setString(this.dbIndexKey, ind.toString())
   }
 }
