@@ -134,8 +134,31 @@ export function randomizeRelic(base: Partial<IRelic> = {}): IRelic {
   }
 }
 
-function roundStat(value: number, statKey: RelicMainStatKey | RelicSubStatKey) {
+export function roundStat(
+  value: number,
+  statKey: RelicMainStatKey | RelicSubStatKey
+) {
   return unit(statKey) === '%'
     ? Math.round(value * 10000) / 10000
     : Math.round(value * 100) / 100
+}
+
+// TODO: implement when roll table is added
+export function getSubstatSummedRolls(
+  rarity: RelicRarityKey,
+  key: RelicSubStatKey
+): number[] {
+  // for now, return min and max range
+  return Object.values(getSubstatRange(rarity, key, false)).map((v) =>
+    toPercent(v, key)
+  )
+}
+
+// TODO: implement when roll table is added
+export function getSubstatValuesPercent(
+  substatKey: RelicSubStatKey,
+  rarity: RelicRarityKey
+) {
+  console.log('getSubstatValuesPercent', substatKey, rarity)
+  return []
 }
