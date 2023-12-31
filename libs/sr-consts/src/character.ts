@@ -31,18 +31,18 @@ export const nonTrailblazerCharacterKeys = [
 export type NonTrailblazerCharacterKey =
   (typeof nonTrailblazerCharacterKeys)[number]
 
-export const damageType = [
+export const allTypeKeys = [
   'Physical',
   'Quantum',
-  'Thunder',
+  'Lightning',
   'Ice',
   'Wind',
   'Fire',
   'Imaginary',
 ] as const
-export type DamageTypeKey = (typeof damageType)[number]
+export type TypeKey = (typeof allTypeKeys)[number]
 
-export const path = [
+export const allPathKeys = [
   'Erudition',
   'Preservation',
   'Abundance',
@@ -51,7 +51,7 @@ export const path = [
   'Harmony',
   'TheHunt',
 ] as const
-export type PathKey = (typeof path)[number]
+export type PathKey = (typeof allPathKeys)[number]
 
 export const allTrailblazerGenderedKeys = [
   'TrailblazerPhysicalM',

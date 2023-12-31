@@ -1,9 +1,9 @@
 import type {
-  DamageTypeKey,
   NonTrailblazerCharacterKey,
   PathKey,
   RarityKey,
   StatKey,
+  TypeKey,
 } from '@genshin-optimizer/sr-consts'
 import type { Anchor } from '@genshin-optimizer/sr-dm'
 import {
@@ -44,7 +44,7 @@ type SkillTreeNode = {
 }
 export type CharacterDataGen = {
   rarity: RarityKey
-  damageType: DamageTypeKey
+  damageType: TypeKey
   path: PathKey
   ascension: Promotion[]
   skillTreeList: SkillTree[]
