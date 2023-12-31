@@ -70,11 +70,23 @@ export async function processEntry(
   const imageData = await urlToImageData(imageURL)
 
   const debugImgs = debug ? ({} as Record<string, string>) : undefined
+  if (true) {
+    const { artifact, texts, imageURL } = await processEntryML(
+      imageData,
+      textsFromImage,
+      debugImgs
+    )
+    return {
+      fileName: fName,
+      imageURL,
+      artifact,
+      texts,
+      debugImgs,
+    }
+  }
+
   const artifactCardImageData = verticallyCropArtifactCard(imageData, debugImgs)
   const artifactCardCanvas = imageDataToCanvas(artifactCardImageData)
-
-  console.log('processImg.ts: ', { imageURL, imageData })
-  await processEntryML(imageData, textsFromImage, debugImgs)
 
   const titleHistogram = findTitle(artifactCardImageData)
   const [titleTop, titleBot] = titleHistogram

@@ -124,7 +124,7 @@ async function doInference(
   const result = results['output1'] as ort.TypedTensor<'float32'>
   const h = imageCropped.height,
     w = imageCropped.width
-  return {
+  const out = {
     title: getBox(result, h, w, 0, cropOptions),
     slot: getBox(result, h, w, 1, cropOptions),
     mainstat: getBox(result, h, w, 2, cropOptions),
@@ -135,6 +135,9 @@ async function doInference(
     lock: getBox(result, h, w, 7, cropOptions),
     bbox: getBox(result, h, w, 8, cropOptions),
   }
+  // Manually fix inconsistent substat box width
+  out.substats.w = out.lock.x - out.substats.x
+  return out
 }
 
 export async function processEntryML(
@@ -158,22 +161,6 @@ export async function processEntryML(
     debugImgs
   )
 
-  if (debugImgs) {
-    const canvas = imageDataToCanvas(imageDataRaw)
-
-    drawBox(canvas, mlBoxes.title, { r: 31, g: 119, b: 180, a: 80 })
-    drawBox(canvas, mlBoxes.slot, { r: 255, g: 127, b: 14, a: 80 })
-    drawBox(canvas, mlBoxes.mainstat, { r: 44, g: 160, b: 44, a: 80 })
-    drawBox(canvas, mlBoxes.level, { r: 214, g: 39, b: 40, a: 80 })
-    drawBox(canvas, mlBoxes.rarity, { r: 128, g: 103, b: 189, a: 80 })
-    drawBox(canvas, mlBoxes.substats, { r: 140, g: 86, b: 75, a: 80 })
-    drawBox(canvas, mlBoxes.set, { r: 227, g: 119, b: 194, a: 80 })
-    drawBox(canvas, mlBoxes.lock, { r: 188, g: 189, b: 34, a: 80 })
-    drawBox(canvas, mlBoxes.bbox, { r: 127, g: 127, b: 127, a: 60 })
-
-    debugImgs['MLBoxes'] = canvas.toDataURL()
-  }
-
   const rawCanvas = imageDataToCanvas(imageDataRaw)
   const titleCrop = crop(rawCanvas, box2CropOption(mlBoxes.title, 0.1))
   const titleText = textsFromImage(titleCrop)
@@ -181,10 +168,12 @@ export async function processEntryML(
   const slotCrop = crop(rawCanvas, box2CropOption(mlBoxes.slot, 0.1))
   const slotText = textsFromImage(slotCrop)
 
-  const levelCrop = crop(rawCanvas, box2CropOption(mlBoxes.level, 0.1))
-  const levelText = textsFromImage(invert(levelCrop))
+  const levelCrop = invert(crop(rawCanvas, box2CropOption(mlBoxes.level, 0.1)))
+  const levelText = textsFromImage(levelCrop)
 
-  const mainstatCrop = crop(rawCanvas, box2CropOption(mlBoxes.mainstat, 0.1))
+  const mainstatCrop = invert(
+    crop(rawCanvas, box2CropOption(mlBoxes.mainstat, 0.1))
+  )
   const mainstatText = textsFromImage(mainstatCrop, {
     tessedit_pageseg_mode: PSM.SPARSE_TEXT,
   })
@@ -217,7 +206,36 @@ export async function processEntryML(
     locked
   )
 
-  console.log('DETECTION: ', { artifact, texts })
+  const canvasRaw = imageDataToCanvas(imageDataRaw)
+  drawBox(canvasRaw, mlBoxes.title, { r: 31, g: 119, b: 180, a: 80 })
+  drawBox(canvasRaw, mlBoxes.slot, { r: 255, g: 127, b: 14, a: 80 })
+  drawBox(canvasRaw, mlBoxes.mainstat, { r: 44, g: 160, b: 44, a: 80 })
+  drawBox(canvasRaw, mlBoxes.level, { r: 214, g: 39, b: 40, a: 80 })
+  drawBox(canvasRaw, mlBoxes.rarity, { r: 128, g: 103, b: 189, a: 80 })
+  drawBox(canvasRaw, mlBoxes.substats, { r: 140, g: 86, b: 75, a: 80 })
+  drawBox(canvasRaw, mlBoxes.set, { r: 227, g: 119, b: 194, a: 80 })
+  drawBox(canvasRaw, mlBoxes.lock, { r: 188, g: 189, b: 34, a: 80 })
+  drawBox(canvasRaw, mlBoxes.bbox, { r: 127, g: 127, b: 127, a: 60 })
+  if (debugImgs) {
+    debugImgs['MLBoxesFull'] = canvasRaw.toDataURL()
+    debugImgs['slotCrop'] = imageDataToCanvas(slotCrop).toDataURL()
+    debugImgs['levelCrop'] = imageDataToCanvas(levelCrop).toDataURL()
+    debugImgs['mainstatCrop'] = imageDataToCanvas(mainstatCrop).toDataURL()
+    debugImgs['substatCrop'] = imageDataToCanvas(substatCrop).toDataURL()
+    debugImgs['setCrop'] = imageDataToCanvas(setCrop).toDataURL()
+    debugImgs['lockCrop'] = imageDataToCanvas(lockCrop).toDataURL()
+    debugImgs['rarityCrop'] = imageDataToCanvas(rarityCrop).toDataURL()
+  }
 
-  return [0, 0, 1, 1]
+  const cropOp = box2CropOption(mlBoxes0.bbox, 0.2)
+  const canvas = imageDataToCanvas(crop(canvasRaw, cropOp))
+  console.log('DETECTION: ', { artifact, texts })
+  console.log('TEXT:', {
+    slotText,
+    levelText,
+    mainstatText,
+    substatText,
+    setText,
+  })
+  return { artifact, texts, imageURL: canvas.toDataURL() }
 }
