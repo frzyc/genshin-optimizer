@@ -61,7 +61,7 @@
     },
     "kqmsDialog": {
       "kqmsBtn": "Use KQMS",
-      "title": "Use KQMS config?",
+      "title": "Use KQMS?",
       "content": "This will replace your current <strong>substat setup</strong> with one that adheres to the <0>KQM Standards<0/>"
     },
     "all": {
