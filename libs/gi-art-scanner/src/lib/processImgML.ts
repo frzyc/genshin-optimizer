@@ -1,20 +1,25 @@
 import * as ort from 'onnxruntime-web'
+import { lockColor } from './consts'
 import {
-  bandPass,
   crop,
-  darkerColor,
-  drawHistogram,
-  drawline,
-  fileToURL,
-  findHistogramRange,
-  histogramAnalysis,
-  histogramContAnalysis,
   imageDataToCanvas,
-  lighterColor,
-  urlToImageData,
   resize,
   drawBox,
+  invert,
+  histogramAnalysis,
+  darkerColor,
+  lighterColor,
 } from '@genshin-optimizer/img-util'
+import { PSM } from 'tesseract.js'
+import { parseRarity } from './processImg'
+import {
+  parseMainStatKeys,
+  parseMainStatValues,
+  parseSetKeys,
+  parseSlotKeys,
+  parseSubstats,
+} from './parse'
+import { findBestArtifact } from './findBestArtifact'
 
 type Box = {
   x: number
@@ -58,7 +63,8 @@ function padBox(box: Box, pad: number): Box {
     h: box.h * (1 + pad),
   }
 }
-function box2CropOption(box: Box) {
+function box2CropOption(box: Box, pad?: number) {
+  if (pad) box = padBox(box, pad)
   return {
     x1: box.x,
     y1: box.y,
@@ -131,8 +137,12 @@ async function doInference(
   }
 }
 
-export async function computeCropBoxes(
+export async function processEntryML(
   imageDataRaw: ImageData,
+  textsFromImage: (
+    imageData: ImageData,
+    options?: object | undefined
+  ) => Promise<string[]>,
   debugImgs?: Record<string, string>
 ) {
   // const session = await ort.InferenceSession.create('https://github.com/tooflesswulf/genshin-scanner/raw/main/onnx/simplenet.onnx')
@@ -144,7 +154,7 @@ export async function computeCropBoxes(
   const mlBoxes = await doInference(
     imageDataRaw,
     session,
-    box2CropOption(padBox(mlBoxes0.bbox, 0.2)),
+    box2CropOption(mlBoxes0.bbox, 0.2),
     debugImgs
   )
 
@@ -163,6 +173,51 @@ export async function computeCropBoxes(
 
     debugImgs['MLBoxes'] = canvas.toDataURL()
   }
+
+  const rawCanvas = imageDataToCanvas(imageDataRaw)
+  const titleCrop = crop(rawCanvas, box2CropOption(mlBoxes.title, 0.1))
+  const titleText = textsFromImage(titleCrop)
+
+  const slotCrop = crop(rawCanvas, box2CropOption(mlBoxes.slot, 0.1))
+  const slotText = textsFromImage(slotCrop)
+
+  const levelCrop = crop(rawCanvas, box2CropOption(mlBoxes.level, 0.1))
+  const levelText = textsFromImage(invert(levelCrop))
+
+  const mainstatCrop = crop(rawCanvas, box2CropOption(mlBoxes.mainstat, 0.1))
+  const mainstatText = textsFromImage(mainstatCrop, {
+    tessedit_pageseg_mode: PSM.SPARSE_TEXT,
+  })
+
+  const substatCrop = crop(rawCanvas, box2CropOption(mlBoxes.substats, 0.1))
+  const substatText = textsFromImage(substatCrop)
+
+  const setCrop = crop(rawCanvas, box2CropOption(mlBoxes.set, 0.1))
+  const setText = textsFromImage(setCrop)
+
+  const lockCrop = crop(rawCanvas, box2CropOption(mlBoxes.lock, 0.1))
+  const lockHisto = histogramAnalysis(
+    lockCrop,
+    darkerColor(lockColor),
+    lighterColor(lockColor)
+  )
+  const locked = lockHisto.filter((v) => v > 5).length > 5
+
+  const rarityCrop = crop(rawCanvas, box2CropOption(mlBoxes.rarity, 0.1))
+  const rarity = parseRarity(rarityCrop, debugImgs)
+
+  const [artifact, texts] = findBestArtifact(
+    new Set([rarity]),
+    parseSetKeys(await setText),
+    parseSlotKeys(await slotText),
+    parseSubstats(await substatText),
+    parseMainStatKeys(await mainstatText),
+    parseMainStatValues(await mainstatText),
+    '',
+    locked
+  )
+
+  console.log('DETECTION: ', { artifact, texts })
 
   return [0, 0, 1, 1]
 }

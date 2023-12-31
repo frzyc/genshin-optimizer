@@ -92,6 +92,21 @@ export function resize(
   const resized = new ImageData(dataBuffer, width, height)
   return resized
 }
+export function invert(imageData: ImageData) {
+  const width = imageData.width,
+    height = imageData.height
+
+  const invDataBuffer = new Uint8ClampedArray(width * height * 4)
+  for (let i = 0; i < width * height * 4; i++) {
+    if (i % 4 == 3) {
+      invDataBuffer[i] = imageData.data[i]
+      continue
+    }
+    invDataBuffer[i] = 255 - imageData.data[i]
+  }
+
+  return new ImageData(invDataBuffer, width, height)
+}
 
 export const fileToURL = (file: File): Promise<string> =>
   new Promise((resolve) => {
