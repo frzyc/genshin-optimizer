@@ -39,9 +39,10 @@ type SkillTree = {
   pointType: number
 }
 type SkillTreeNode = {
-  stats?: Partial<Record<StatKey, number>>
+  stats?: SkillTreeNodeBonusStat
   //TODO: MaterialList
 }
+export type SkillTreeNodeBonusStat = Partial<Record<StatKey, number>>
 export type CharacterDataGen = {
   rarity: RarityKey
   damageType: TypeKey
