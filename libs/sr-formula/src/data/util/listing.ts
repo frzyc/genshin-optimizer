@@ -6,12 +6,41 @@ import {
 
 const stats = [
   'hp',
+  'hp_',
   'atk',
+  'atk_',
   'def',
+  'def_',
   'spd',
+  'spd_',
   'crit_',
   'crit_dmg_',
-  'taunt',
+  'brEff_',
+  'eff_',
+  'eff_res_',
+  'enerRegen_',
+  'heal_',
+  'dmg_',
+  'resPen_',
+] as const
+
+export const bonusAbilities = [
+  'bonusAbility1',
+  'bonusAbility2',
+  'bonusAbility3',
+] as const
+
+export const statBoosts = [
+  'statBoost1',
+  'statBoost2',
+  'statBoost3',
+  'statBoost4',
+  'statBoost5',
+  'statBoost6',
+  'statBoost7',
+  'statBoost8',
+  'statBoost9',
+  'statBoost10',
 ] as const
 
 export const moves = ['basic', 'skill', 'ult', 'followup', 'dot'] as const
@@ -40,6 +69,8 @@ export const srcs = [
 export const members = ['member0', 'member1', 'member2', 'member3'] as const
 
 export type Stat = (typeof stats)[number]
+export type BonusAbility = (typeof bonusAbilities)[number]
+export type StatBoost = (typeof statBoosts)[number]
 export type Move = (typeof moves)[number]
 export type EntryType = (typeof entryTypes)[number]
 export type Source = (typeof srcs)[number]
