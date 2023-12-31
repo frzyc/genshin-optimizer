@@ -55,6 +55,7 @@ import { WeaponEditorCard } from './WeaponEditorCard'
 import kqmIcon from './kqm.png'
 import { optimizeTc } from './optimizeTc'
 import useCharTC from './useCharTC'
+import GcsimButton from './GcsimButton'
 export default function TabTheorycraft() {
   const { t } = useTranslation('page_character')
   const { database } = useContext(DatabaseContext)
@@ -286,6 +287,7 @@ export default function TabTheorycraft() {
               <CopyFromEquippedButton action={copyFromEquipped} />
               <ResetButton action={resetData} />
               <KQMSButton action={kqms} />
+              <GcsimButton />
             </Box>
             <SolidToggleButtonGroup
               exclusive
@@ -466,7 +468,7 @@ function KQMSButton({ action }: { action: () => void }) {
         <DialogTitle>{t('tabTheorycraft.kqmsDialog.title')}</DialogTitle>
         <DialogContent>
           <DialogContentText>
-            <Trans>
+            <Trans t={t} i18nKey="tabTheorycraft.kqmsDialog.content">
               This will replace your current <strong>substat setup</strong> with
               one that adheres to the{' '}
               <Link
@@ -475,6 +477,7 @@ function KQMSButton({ action }: { action: () => void }) {
               >
                 KQM Standards
               </Link>
+              .
             </Trans>
           </DialogContentText>
         </DialogContent>

@@ -62,7 +62,12 @@
     "kqmsDialog": {
       "kqmsBtn": "Use KQMS",
       "title": "Use KQMS?",
-      "content": "This will replace your current <strong>substat setup</strong> with one that adheres to the <0>KQM Standards<0/>"
+      "content": "This will replace your current <strong>substat setup</strong> with one that adheres to the <4>KQM Standards</4>."
+    },
+    "gcsimDialog": {
+      "title": "gcsim Input",
+      "content": "Import this build into <2>gcsim</2> by copying the code below.",
+      "copied": "Copied gcsim config to clipboard."
     },
     "all": {
       "rolls": "All Rolls",
