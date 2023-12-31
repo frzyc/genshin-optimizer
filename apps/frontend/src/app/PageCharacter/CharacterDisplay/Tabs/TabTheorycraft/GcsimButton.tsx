@@ -1,8 +1,5 @@
 import type { MainStatKey, SubstatKey } from '@genshin-optimizer/consts'
-import {
-  ascensionMaxLevel,
-  getMainStatDisplayValue,
-} from '@genshin-optimizer/gi-util'
+import { ascensionMaxLevel, getMainStatValue } from '@genshin-optimizer/gi-util'
 import { useBoolState } from '@genshin-optimizer/react-util'
 import { CardThemed, CodeBlock } from '@genshin-optimizer/ui-common'
 import { toDecimal } from '@genshin-optimizer/util'
@@ -84,11 +81,7 @@ export default function GcsimButton() {
   const mainStatsText = Object.entries(slots)
     .map(
       ([_, { level, statKey, rarity }]) =>
-        `${GOODtoSRL[statKey]}=${getMainStatDisplayValue(
-          statKey,
-          rarity,
-          level
-        )}`
+        `${GOODtoSRL[statKey]}=${getMainStatValue(statKey, rarity, level)}`
     )
     .join(' ')
   const substatsText = Object.entries(substats)
