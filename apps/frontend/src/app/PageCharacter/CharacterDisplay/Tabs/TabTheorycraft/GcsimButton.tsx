@@ -60,7 +60,12 @@ export default function GcsimButton() {
   } = useContext(CharacterContext)
   const {
     charTC: {
-      weapon: { key: weaponKey, level: wLevel, ascension: wAscension },
+      weapon: {
+        key: weaponKey,
+        level: wLevel,
+        ascension: wAscension,
+        refinement: wRefinement,
+      },
       artifact: {
         slots,
         substats: { stats: substats },
@@ -101,7 +106,7 @@ ${charKeyLow} char lvl=${level}/${
   } cons=${constellation} talent=${auto},${burst},${skill};
 
 # Weapon
-${charKeyLow} add weapon="${weaponKey.toLowerCase()}" refine=3 lvl=${wLevel}/${
+${charKeyLow} add weapon="${weaponKey.toLowerCase()}" refine=${wRefinement} lvl=${wLevel}/${
     ascensionMaxLevel[wAscension]
   };
 
