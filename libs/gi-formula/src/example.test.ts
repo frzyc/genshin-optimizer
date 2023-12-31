@@ -7,7 +7,6 @@ import {
   detach,
   flatten,
 } from '@genshin-optimizer/pando'
-import { Calculator } from './calculator'
 import { keys, values } from './data'
 import type { Tag, TagMapNodeEntries } from './data/util'
 import {
@@ -28,6 +27,7 @@ import {
   weaponData,
   withMember,
 } from './util'
+import { genshinCalculatorWithEntries } from './index'
 
 // This test acts as an example usage. It's mostly sufficient to test that the code
 // doesn't crash. Any test for correct values should go to `correctness` tests.
@@ -65,7 +65,7 @@ describe('example', () => {
       enemyDebuff.common.preRes.add(0.1),
       selfBuff.common.critMode.add('avg'),
     ],
-    calc = new Calculator(keys, values, compileTagMapValues(keys, data))
+    calc = genshinCalculatorWithEntries(data)
 
   const member0 = convert(selfTag, { member: 'member0', et: 'self' })
   const member1 = convert(selfTag, { member: 'member1', et: 'self' })
@@ -81,6 +81,8 @@ describe('example', () => {
     }
   })
   test('calculate stats', () => {
+    expect(calc.compute(member0.common.isActive).val).toBe(1)
+    expect(calc.compute(member1.common.isActive).val).toBe(0)
     expect(calc.compute(member1.final.hp).val).toBeCloseTo(9479.7, 1)
     expect(calc.compute(member0.final.atk).val).toBeCloseTo(346.21, 2)
     expect(calc.compute(member0.final.def).val).toBeCloseTo(124.15, 2)
@@ -109,7 +111,7 @@ describe('example', () => {
         calc.compute(member1.final.eleMas).val
     )
   })
-  describe('list final formulas', () => {
+  describe('retrieve formulas in a listing', () => {
     /**
      * Each entry in listing is a `Tag` in the shape of
      * ```
@@ -123,7 +125,9 @@ describe('example', () => {
      * }
      * ```
      */
-    const listing = calc.listFormulas(member0.formula.listing).map((x) => x.tag)
+    const listing = calc
+      .listFormulas(member0.listing.formulas)
+      .map((x) => x.tag)
 
     // Simple check that all tags are in the correct format
     const names: string[] = []
@@ -158,9 +162,9 @@ describe('example', () => {
     ])
     expect(listing.filter((x) => x.src === 'static').length).toEqual(5)
   })
-  test('calculate final formulas', () => {
+  test('calculate formulas in a listing', () => {
     const read = calc
-      .listFormulas(member0.formula.listing)
+      .listFormulas(member0.listing.formulas)
       .find((x) => x.tag.name === 'normal_0')!
     const tag = read.tag
 
@@ -203,7 +207,7 @@ describe('example', () => {
     // Step 1: Pick formula(s); anything that `calc.compute` can handle will work
     const nodes = [
       calc
-        .listFormulas(member0.formula.listing)
+        .listFormulas(member0.listing.formulas)
         .find((x) => x.tag.name === 'normal_0')!,
       member0.char.auto,
       member0.final.atk,
@@ -247,7 +251,7 @@ describe('example', () => {
   test.skip('debug formula', () => {
     // Pick formula
     const normal0 = calc
-      .listFormulas(member1.formula.listing)
+      .listFormulas(member1.listing.formulas)
       .find((x) => x.tag.name === 'normal_0')!
 
     // Use `DebugCalculator` instead of `Calculator`, same constructor
@@ -259,5 +263,27 @@ describe('example', () => {
 
     // Print calculation steps
     console.log(debugCalc.debug(normal0))
+  })
+})
+describe('weapon-only example', () => {
+  const data: TagMapNodeEntries = [
+      ...weaponData(rawData[1].weapon as IWeapon),
+      ...conditionalData(rawData[1].conditionals),
+    ],
+    calc = genshinCalculatorWithEntries(data)
+
+  const self = convert(selfTag, { et: 'self' })
+
+  test('retrieve formulas in a listing', () => {
+    const listing = calc.listFormulas(self.listing.specialized)
+    expect(listing.length).toEqual(3)
+  })
+  test('calculate formulas in a listing', () => {
+    // Some listings require character data (e.g., `formulas` listing) and will crash if used
+    const listing = calc.listFormulas(self.listing.specialized)
+
+    expect(calc.compute(listing[0]).val).toBeCloseTo(337.96) // atk
+    expect(calc.compute(listing[1]).val).toBeCloseTo(0.458) // hp_
+    expect(calc.compute(listing[2]).val).toBeCloseTo(0.3) // refinement hp_
   })
 })

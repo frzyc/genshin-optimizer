@@ -34,11 +34,15 @@ const burst_dmgInc = { ...healing_dmgInc }
 export const data: Data = dataObjForArtifactSheet(key, {
   premod: {
     heal_: set2,
-    normal_dmgInc,
-    charged_dmgInc,
-    plunging_dmgInc,
-    skill_dmgInc,
-    burst_dmgInc,
+  },
+  teamBuff: {
+    premod: {
+      normal_dmgInc,
+      charged_dmgInc,
+      plunging_dmgInc,
+      skill_dmgInc,
+      burst_dmgInc,
+    },
   },
 })
 
@@ -54,6 +58,7 @@ const sheet: IArtifactSheet = {
           value: condHealing,
           path: condHealingPath,
           name: trm('condName'),
+          teamBuff: true,
           states: objKeyMap(healingArr, (heal) => ({
             name: `${heal}`,
             fields: [

@@ -175,4 +175,30 @@ export const parsingFunctions: {
   plungeLow: (lang, string) => plungeUtil(lang, string, true),
   plungeHigh: (lang, string) => plungeUtil(lang, string, false),
   string: (lang, string) => string,
+  constellation: (lang, string) => constellation(string),
+  talent: (lang, string) => talent(string),
+  altSprint: (lang, string) => altSprint(string),
+  passive1: (lang, string) => passive1(string),
+  passive4: (lang, string) => passive4(string),
+}
+
+export function constellation(string: string) {
+  return string.replace('<strong>{0}</strong>', '{{level}}')
+}
+
+export function talent(string: string) {
+  return string.replace('+{0}', '{{level}}')
+}
+
+export function altSprint(string: string) {
+  const re = new RegExp(/<strong>(.+)<\/strong>/)
+  const match = re.exec(string)
+  return match?.[1] ?? ''
+}
+
+export function passive1(string: string) {
+  return string.replace('{0}', '1')
+}
+export function passive4(string: string) {
+  return string.replace('{0}', '4')
 }

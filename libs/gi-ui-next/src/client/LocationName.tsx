@@ -1,7 +1,7 @@
 import type { GenderKey, LocationCharacterKey } from '@genshin-optimizer/consts'
 import type { ICharacter } from '@genshin-optimizer/gi-good'
 import { CharacterName } from '@genshin-optimizer/gi-ui'
-import { BusinessCenter } from '@mui/icons-material'
+import BusinessCenterIcon from '@mui/icons-material/BusinessCenter'
 import type { TypographyProps } from '@mui/material'
 import { Box, Typography } from '@mui/material'
 import { useContext } from 'react'
@@ -35,7 +35,7 @@ export default function LocationName({
         </Box>
       ) : (
         <Box>
-          <BusinessCenter sx={{ verticalAlign: 'text-bottom' }} />{' '}
+          <BusinessCenterIcon sx={{ verticalAlign: 'text-bottom' }} />{' '}
           {t('inventory')}
         </Box>
       )}

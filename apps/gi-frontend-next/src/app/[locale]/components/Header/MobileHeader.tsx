@@ -1,5 +1,5 @@
 import { SillyContext } from '@genshin-optimizer/gi-ui-next'
-import { Menu as MenuIcon } from '@mui/icons-material'
+import MenuIcon from '@mui/icons-material/Menu'
 import {
   AppBar,
   Avatar,

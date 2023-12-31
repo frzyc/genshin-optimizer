@@ -12,8 +12,8 @@ import type { ApolloError } from '@apollo/client'
 
 export type GenshinUserDataObj = {
   artifacts?: Artifact[]
-  characters?: Omit<Character, 'genshinUserId'>[]
-  weapons?: Omit<Weapon, 'genshinUserId'>[]
+  characters?: Character[]
+  weapons?: Weapon[]
   loading?: boolean
   error?: ApolloError
 }
@@ -32,6 +32,7 @@ export function GenshinUserDataWrapper({ children }: { children: ReactNode }) {
   useEffect(() => {
     genshinUserId && getAllData()
   }, [getAllData, genshinUserId])
+  if (error) console.error(error)
   const value = useMemo(() => {
     if (!data)
       return {

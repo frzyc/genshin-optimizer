@@ -29,7 +29,10 @@ export class WeaponResolver {
     inputWeapon: InputWeapon
   ): Promise<Weapon> {
     this.genshinUserService.validateGenshinUser(userId, genshinUserId)
-    return this.weaponService.create(inputWeapon, genshinUserId)
+    return this.weaponService.create(
+      inputWeapon,
+      genshinUserId
+    ) as Promise<Weapon>
   }
 
   @Mutation(() => Weapon)
@@ -40,7 +43,10 @@ export class WeaponResolver {
     updateWeapon: UpdateWeapon
   ): Promise<Weapon> {
     this.genshinUserService.validateGenshinUser(userId, genshinUserId)
-    return this.weaponService.update(updateWeapon, genshinUserId)
+    return this.weaponService.update(
+      updateWeapon,
+      genshinUserId
+    ) as Promise<Weapon>
   }
 
   @Mutation(() => Weapon)
@@ -51,6 +57,6 @@ export class WeaponResolver {
     weaponId: string
   ): Promise<Weapon> {
     this.genshinUserService.validateGenshinUser(userId, genshinUserId)
-    return this.weaponService.remove(weaponId, genshinUserId)
+    return this.weaponService.remove(weaponId, genshinUserId) as Promise<Weapon>
   }
 }

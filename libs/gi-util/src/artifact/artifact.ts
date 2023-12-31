@@ -101,6 +101,21 @@ export function getSubstatValue(
 }
 
 /**
+ * Raw number from the datamine.
+ * @param rarity
+ * @param statKey
+ * @param level
+ * @returns
+ */
+export function getMainStatValue(
+  statKey: MainStatKey,
+  rarity: RarityKey,
+  level: number
+) {
+  return allStats.art.main[rarity][statKey][level]
+}
+
+/**
  * NOTE: this gives the toPercent value of the main stat
  * @param rarity
  * @param statKey
@@ -120,7 +135,8 @@ export function getMainStatDisplayValue(
   rarity: RarityKey,
   level: number
 ): number {
-  return getMainStatDisplayValues(rarity, key)[level]
+  const val = getMainStatValue(key, rarity, level)
+  return key === 'eleMas' ? Math.round(val) : toPercent(val, key)
 }
 
 export function getMainStatDisplayStr(

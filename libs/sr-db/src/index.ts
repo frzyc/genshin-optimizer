@@ -1,2 +1,2 @@
-export * from './ISroCharacter'
-export * from './ISroDatabase'
+export * from './Interfaces'
+export * from './Database'

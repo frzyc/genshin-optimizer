@@ -34,6 +34,7 @@ export enum ArtifactSetKey {
     MaidenBeloved = "MaidenBeloved",
     MarechausseeHunter = "MarechausseeHunter",
     MartialArtist = "MartialArtist",
+    NighttimeWhispersInTheEchoingWoods = "NighttimeWhispersInTheEchoingWoods",
     NoblesseOblige = "NoblesseOblige",
     NymphsDream = "NymphsDream",
     OceanHuedClam = "OceanHuedClam",
@@ -46,6 +47,7 @@ export enum ArtifactSetKey {
     RetracingBolide = "RetracingBolide",
     Scholar = "Scholar",
     ShimenawasReminiscence = "ShimenawasReminiscence",
+    SongOfDaysPast = "SongOfDaysPast",
     TenacityOfTheMillelith = "TenacityOfTheMillelith",
     TheExile = "TheExile",
     ThunderingFury = "ThunderingFury",
@@ -132,6 +134,7 @@ export enum LocationKey {
     Mika = "Mika",
     Mona = "Mona",
     Nahida = "Nahida",
+    Navia = "Navia",
     Neuvillette = "Neuvillette",
     Nilou = "Nilou",
     Ningguang = "Ningguang",
@@ -179,6 +182,188 @@ export enum SubstatKey {
     critDMG_ = "critDMG_"
 }
 
+export enum WeaponKey {
+    AmenomaKageuchi = "AmenomaKageuchi",
+    AquilaFavonia = "AquilaFavonia",
+    BlackcliffLongsword = "BlackcliffLongsword",
+    CinnabarSpindle = "CinnabarSpindle",
+    CoolSteel = "CoolSteel",
+    DarkIronSword = "DarkIronSword",
+    DullBlade = "DullBlade",
+    FavoniusSword = "FavoniusSword",
+    FesteringDesire = "FesteringDesire",
+    FilletBlade = "FilletBlade",
+    FinaleOfTheDeep = "FinaleOfTheDeep",
+    FleuveCendreFerryman = "FleuveCendreFerryman",
+    FreedomSworn = "FreedomSworn",
+    HaranGeppakuFutsu = "HaranGeppakuFutsu",
+    HarbingerOfDawn = "HarbingerOfDawn",
+    IronSting = "IronSting",
+    KagotsurubeIsshin = "KagotsurubeIsshin",
+    KeyOfKhajNisut = "KeyOfKhajNisut",
+    LightOfFoliarIncision = "LightOfFoliarIncision",
+    LionsRoar = "LionsRoar",
+    MistsplitterReforged = "MistsplitterReforged",
+    PrimordialJadeCutter = "PrimordialJadeCutter",
+    PrototypeRancour = "PrototypeRancour",
+    RoyalLongsword = "RoyalLongsword",
+    SacrificialSword = "SacrificialSword",
+    SapwoodBlade = "SapwoodBlade",
+    SilverSword = "SilverSword",
+    SkyriderSword = "SkyriderSword",
+    SkywardBlade = "SkywardBlade",
+    SplendorOfTranquilWaters = "SplendorOfTranquilWaters",
+    SummitShaper = "SummitShaper",
+    SwordOfDescension = "SwordOfDescension",
+    SwordOfNarzissenkreuz = "SwordOfNarzissenkreuz",
+    TheAlleyFlash = "TheAlleyFlash",
+    TheBlackSword = "TheBlackSword",
+    TheDockhandsAssistant = "TheDockhandsAssistant",
+    TheFlute = "TheFlute",
+    ToukabouShigure = "ToukabouShigure",
+    TravelersHandySword = "TravelersHandySword",
+    WolfFang = "WolfFang",
+    XiphosMoonlight = "XiphosMoonlight",
+    Akuoumaru = "Akuoumaru",
+    BeaconOfTheReedSea = "BeaconOfTheReedSea",
+    BlackcliffSlasher = "BlackcliffSlasher",
+    BloodtaintedGreatsword = "BloodtaintedGreatsword",
+    DebateClub = "DebateClub",
+    FavoniusGreatsword = "FavoniusGreatsword",
+    FerrousShadow = "FerrousShadow",
+    ForestRegalia = "ForestRegalia",
+    KatsuragikiriNagamasa = "KatsuragikiriNagamasa",
+    LithicBlade = "LithicBlade",
+    LuxuriousSeaLord = "LuxuriousSeaLord",
+    MailedFlower = "MailedFlower",
+    MakhairaAquamarine = "MakhairaAquamarine",
+    OldMercsPal = "OldMercsPal",
+    PortablePowerSaw = "PortablePowerSaw",
+    PrototypeArchaic = "PrototypeArchaic",
+    Rainslasher = "Rainslasher",
+    RedhornStonethresher = "RedhornStonethresher",
+    RoyalGreatsword = "RoyalGreatsword",
+    SacrificialGreatsword = "SacrificialGreatsword",
+    SerpentSpine = "SerpentSpine",
+    SkyriderGreatsword = "SkyriderGreatsword",
+    SkywardPride = "SkywardPride",
+    SnowTombedStarsilver = "SnowTombedStarsilver",
+    SongOfBrokenPines = "SongOfBrokenPines",
+    TalkingStick = "TalkingStick",
+    TheBell = "TheBell",
+    TheUnforged = "TheUnforged",
+    TidalShadow = "TidalShadow",
+    UltimateOverlordsMegaMagicSword = "UltimateOverlordsMegaMagicSword",
+    Verdict = "Verdict",
+    WasterGreatsword = "WasterGreatsword",
+    Whiteblind = "Whiteblind",
+    WhiteIronGreatsword = "WhiteIronGreatsword",
+    WolfsGravestone = "WolfsGravestone",
+    BalladOfTheFjords = "BalladOfTheFjords",
+    BeginnersProtector = "BeginnersProtector",
+    BlackcliffPole = "BlackcliffPole",
+    BlackTassel = "BlackTassel",
+    CalamityQueller = "CalamityQueller",
+    CrescentPike = "CrescentPike",
+    Deathmatch = "Deathmatch",
+    DragonsBane = "DragonsBane",
+    DragonspineSpear = "DragonspineSpear",
+    EngulfingLightning = "EngulfingLightning",
+    FavoniusLance = "FavoniusLance",
+    Halberd = "Halberd",
+    IronPoint = "IronPoint",
+    KitainCrossSpear = "KitainCrossSpear",
+    LithicSpear = "LithicSpear",
+    MissiveWindspear = "MissiveWindspear",
+    Moonpiercer = "Moonpiercer",
+    PrimordialJadeWingedSpear = "PrimordialJadeWingedSpear",
+    ProspectorsDrill = "ProspectorsDrill",
+    PrototypeStarglitter = "PrototypeStarglitter",
+    RightfulReward = "RightfulReward",
+    RoyalSpear = "RoyalSpear",
+    SkywardSpine = "SkywardSpine",
+    StaffOfHoma = "StaffOfHoma",
+    StaffOfTheScarletSands = "StaffOfTheScarletSands",
+    TheCatch = "TheCatch",
+    VortexVanquisher = "VortexVanquisher",
+    WavebreakersFin = "WavebreakersFin",
+    WhiteTassel = "WhiteTassel",
+    AlleyHunter = "AlleyHunter",
+    AmosBow = "AmosBow",
+    AquaSimulacra = "AquaSimulacra",
+    BlackcliffWarbow = "BlackcliffWarbow",
+    CompoundBow = "CompoundBow",
+    ElegyForTheEnd = "ElegyForTheEnd",
+    EndOfTheLine = "EndOfTheLine",
+    FadingTwilight = "FadingTwilight",
+    FavoniusWarbow = "FavoniusWarbow",
+    Hamayumi = "Hamayumi",
+    HuntersBow = "HuntersBow",
+    HuntersPath = "HuntersPath",
+    IbisPiercer = "IbisPiercer",
+    KingsSquire = "KingsSquire",
+    Messenger = "Messenger",
+    MitternachtsWaltz = "MitternachtsWaltz",
+    MouunsMoon = "MouunsMoon",
+    PolarStar = "PolarStar",
+    Predator = "Predator",
+    PrototypeCrescent = "PrototypeCrescent",
+    RangeGauge = "RangeGauge",
+    RavenBow = "RavenBow",
+    RecurveBow = "RecurveBow",
+    RoyalBow = "RoyalBow",
+    Rust = "Rust",
+    SacrificialBow = "SacrificialBow",
+    ScionOfTheBlazingSun = "ScionOfTheBlazingSun",
+    SeasonedHuntersBow = "SeasonedHuntersBow",
+    SharpshootersOath = "SharpshootersOath",
+    SkywardHarp = "SkywardHarp",
+    Slingshot = "Slingshot",
+    SongOfStillness = "SongOfStillness",
+    TheFirstGreatMagic = "TheFirstGreatMagic",
+    TheStringless = "TheStringless",
+    TheViridescentHunt = "TheViridescentHunt",
+    ThunderingPulse = "ThunderingPulse",
+    WindblumeOde = "WindblumeOde",
+    ApprenticesNotes = "ApprenticesNotes",
+    AThousandFloatingDreams = "AThousandFloatingDreams",
+    BalladOfTheBoundlessBlue = "BalladOfTheBoundlessBlue",
+    BlackcliffAgate = "BlackcliffAgate",
+    CashflowSupervision = "CashflowSupervision",
+    DodocoTales = "DodocoTales",
+    EmeraldOrb = "EmeraldOrb",
+    EverlastingMoonglow = "EverlastingMoonglow",
+    EyeOfPerception = "EyeOfPerception",
+    FavoniusCodex = "FavoniusCodex",
+    FlowingPurity = "FlowingPurity",
+    Frostbearer = "Frostbearer",
+    FruitOfFulfillment = "FruitOfFulfillment",
+    HakushinRing = "HakushinRing",
+    JadefallsSplendor = "JadefallsSplendor",
+    KagurasVerity = "KagurasVerity",
+    LostPrayerToTheSacredWinds = "LostPrayerToTheSacredWinds",
+    MagicGuide = "MagicGuide",
+    MappaMare = "MappaMare",
+    MemoryOfDust = "MemoryOfDust",
+    OathswornEye = "OathswornEye",
+    OtherworldlyStory = "OtherworldlyStory",
+    PocketGrimoire = "PocketGrimoire",
+    PrototypeAmber = "PrototypeAmber",
+    QuantumCatalyst = "QuantumCatalyst",
+    RoyalGrimoire = "RoyalGrimoire",
+    SacrificialFragments = "SacrificialFragments",
+    SacrificialJade = "SacrificialJade",
+    SkywardAtlas = "SkywardAtlas",
+    SolarPearl = "SolarPearl",
+    TheWidsith = "TheWidsith",
+    ThrillingTalesOfDragonSlayers = "ThrillingTalesOfDragonSlayers",
+    TomeOfTheEternalFlow = "TomeOfTheEternalFlow",
+    TulaytullahsRemembrance = "TulaytullahsRemembrance",
+    TwinNephrite = "TwinNephrite",
+    WanderingEvenstar = "WanderingEvenstar",
+    WineAndSong = "WineAndSong"
+}
+
 export enum CharacterKey {
     Albedo = "Albedo",
     Alhaitham = "Alhaitham",
@@ -224,6 +409,7 @@ export enum CharacterKey {
     Mika = "Mika",
     Mona = "Mona",
     Nahida = "Nahida",
+    Navia = "Navia",
     Neuvillette = "Neuvillette",
     Nilou = "Nilou",
     Ningguang = "Ningguang",
@@ -291,20 +477,20 @@ export interface UpdateArtifact {
 }
 
 export interface InputWeapon {
-    key: string;
+    key: WeaponKey;
     level: number;
     ascension: number;
     refinement: number;
-    location?: Nullable<string>;
+    location?: Nullable<LocationKey>;
     lock: boolean;
 }
 
 export interface UpdateWeapon {
-    key?: Nullable<string>;
+    key?: Nullable<WeaponKey>;
     level?: Nullable<number>;
     ascension?: Nullable<number>;
     refinement?: Nullable<number>;
-    location?: Nullable<string>;
+    location?: Nullable<LocationKey>;
     lock?: Nullable<boolean>;
     id: string;
 }
@@ -374,11 +560,11 @@ export interface Substat {
 export interface Weapon {
     id: string;
     genshinUserId: string;
-    key: string;
+    key: WeaponKey;
     level: number;
     ascension: number;
     refinement: number;
-    location?: Nullable<string>;
+    location?: Nullable<LocationKey>;
     lock: boolean;
 }
 
