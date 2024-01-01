@@ -58,7 +58,7 @@ export function scalingParams(data_gen: CharacterDataGen) {
  * @param stat Stat that the damage scales on
  * @param levelScaling Array representing the scaling at different levels of the ability
  * @param abilityScalingType Ability level that the scaling depends on
- * @param splits Array of decimals that should add up to 1. Each entry represents the percentage of damage that hit deals, for multi-hit moves
+ * @param splits Array of decimals that should add up to 1. Each entry represents the percentage of damage that hit deals, for multi-hit moves. We get splits from SRSim devs, see the array at the top of https://github.com/simimpact/srsim/blob/main/internal/character/march7th/ult.go for example.
  * @param overrideAttackType Type of attack damage that is dealt, only need to set if it deals a different damage type than abilityScalingType, or if abilityScalingType is Talent
  * @param arg
  * @param extra Buffs that should only apply to this damage instance

@@ -55,7 +55,7 @@ export function listingItem(t: Read, cond?: string | StrNode) {
  * @param name Base name to be used as the key
  * @param type Type of the damage
  * @param AttackType Type of attack damage that is dealt
- * @param splits Array of decimals that should add up to 1. Each entry represents the percentage of damage that hit deals, for multi-hit moves
+ * @param splits Array of decimals that should add up to 1. Each entry represents the percentage of damage that hit deals, for multi-hit moves. We get splits from SRSim devs, see the array at the top of https://github.com/simimpact/srsim/blob/main/internal/character/march7th/ult.go for example.
  * @param arg
  * @param extra Buffs that should only apply to this damage instance
  * @returns Array of TagMapNodeEntries representing the damage instance
