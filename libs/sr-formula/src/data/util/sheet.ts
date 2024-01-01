@@ -2,6 +2,7 @@ import { prod, type NumNode, type StrNode } from '@genshin-optimizer/pando'
 import type { TypeKey } from '@genshin-optimizer/sr-consts'
 import type { Read } from '.'
 import {
+  TypeKeyToListingType,
   percent,
   reader,
   selfBuff,
@@ -10,7 +11,7 @@ import {
   type TagMapNodeEntries,
   type TagMapNodeEntry,
 } from '.'
-import type { AttackType, Source, Type } from './listing'
+import type { AttackType, Source } from './listing'
 
 export type FormulaArg = {
   team?: boolean // true if applies to every member, and false (default) if applies only to self
@@ -69,7 +70,7 @@ export function customDmg(
   ...extra: TagMapNodeEntries
 ): TagMapNodeEntries[] {
   const buff = team ? teamBuff : selfBuff
-  const type = typeKey.toLowerCase() as Type
+  const type = TypeKeyToListingType[typeKey]
   return splits.map((split, index) =>
     registerFormula(
       `${name}_${index}`,

@@ -19,6 +19,7 @@ import type {
 import { objKeyMap } from '@genshin-optimizer/util'
 import type { AttackType, FormulaArg, Stat, Type } from '../util'
 import {
+  TypeKeyToListingType,
   customDmg,
   customHeal,
   customShield,
@@ -190,7 +191,7 @@ export function entriesForChar(data_gen: CharacterDataGen): TagMapNodeEntries {
     selfBuff.listing.formulas.add(listingItem(self.final.crit_dmg_)),
     selfBuff.listing.formulas.add(listingItem(self.final.heal_)),
     selfBuff.listing.formulas.add(
-      listingItem(self.final.dmg_[data_gen.damageType.toLowerCase() as Type])
+      listingItem(self.final.dmg_[TypeKeyToListingType[data_gen.damageType]])
     ),
     selfBuff.listing.formulas.add(listingItem(self.final.dmg_.physical)),
   ]
