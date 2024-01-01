@@ -15,7 +15,7 @@ type DatabaseContextObj = {
   database: SroDatabase
 }
 
-const DatabaseContext = createContext({} as DatabaseContextObj)
+export const DatabaseContext = createContext({} as DatabaseContextObj)
 
 export function useDatabaseContext() {
   return useContext(DatabaseContext)

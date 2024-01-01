@@ -43,6 +43,16 @@ export const statBoosts = [
   'statBoost10',
 ] as const
 
+export const types = [
+  'physical',
+  'quantum',
+  'lightning',
+  'ice',
+  'wind',
+  'fire',
+  'imaginary',
+] as const
+
 export const attackTypes = ['basic', 'skill', 'ult', 'followup', 'dot'] as const
 
 export const entryTypes = [
@@ -71,6 +81,7 @@ export const members = ['member0', 'member1', 'member2', 'member3'] as const
 export type Stat = (typeof stats)[number]
 export type BonusAbility = (typeof bonusAbilities)[number]
 export type StatBoost = (typeof statBoosts)[number]
+export type Type = (typeof types)[number]
 export type AttackType = (typeof attackTypes)[number]
 export type EntryType = (typeof entryTypes)[number]
 export type Source = (typeof srcs)[number]

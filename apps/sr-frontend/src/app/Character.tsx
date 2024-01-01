@@ -28,7 +28,7 @@ export default function Character() {
               label="Level"
               variant="outlined"
               inputProps={{ min: 1, max: 90 }}
-              value={character?.level}
+              value={character?.level || 0}
               onChange={(e) => charReducer({ level: parseInt(e.target.value) })}
             />
             <TextField
@@ -36,7 +36,7 @@ export default function Character() {
               label="Ascension"
               variant="outlined"
               inputProps={{ min: 0, max: 6 }}
-              value={character?.ascension}
+              value={character?.ascension || 0}
               onChange={(e) =>
                 charReducer({
                   ascension: parseInt(e.target.value) as AscensionKey,
@@ -52,7 +52,7 @@ export default function Character() {
               ] as const
             ).map(([txt, skey]) => (
               <Typography key={skey}>
-                {txt}: {calc?.compute(self.stat[skey].src('char')).val}
+                {txt}: {calc?.compute(self.final[skey].src('char')).val}
               </Typography>
             ))}
           </Stack>

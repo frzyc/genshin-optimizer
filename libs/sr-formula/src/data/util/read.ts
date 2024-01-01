@@ -13,9 +13,15 @@ import {
   constant,
   reread,
 } from '@genshin-optimizer/pando'
-import { allTypeKeys } from '@genshin-optimizer/sr-consts'
 import type { TagMapNodeEntry } from '.'
-import { attackTypes, entryTypes, members, srcs, type Source } from './listing'
+import {
+  attackTypes,
+  entryTypes,
+  members,
+  srcs,
+  types,
+  type Source,
+} from './listing'
 
 export const fixedTags = {
   member: members,
@@ -23,7 +29,7 @@ export const fixedTags = {
   et: entryTypes,
   src: srcs,
 
-  dt: allTypeKeys,
+  dt: types,
   attackType: attackTypes,
 }
 export type Tag = {
@@ -60,26 +66,26 @@ export class Read extends TypedRead<Tag, Read> {
   // Optional Modifiers
 
   // Damage Type
-  get Physical() {
-    return super.with('dt', 'Physical')
+  get physical(): Read {
+    return super.with('dt', 'physical')
   }
-  get Quantum(): Read {
-    return super.with('dt', 'Quantum')
+  get quantum(): Read {
+    return super.with('dt', 'quantum')
   }
-  get Lightning(): Read {
-    return super.with('dt', 'Lightning')
+  get lightning(): Read {
+    return super.with('dt', 'lightning')
   }
-  get Ice(): Read {
-    return super.with('dt', 'Ice')
+  get ice(): Read {
+    return super.with('dt', 'ice')
   }
-  get Wind(): Read {
-    return super.with('dt', 'Wind')
+  get wind(): Read {
+    return super.with('dt', 'wind')
   }
-  get Fire(): Read {
-    return super.with('dt', 'Fire')
+  get fire(): Read {
+    return super.with('dt', 'fire')
   }
-  get Imaginary(): Read {
-    return super.with('dt', 'Imaginary')
+  get imaginary(): Read {
+    return super.with('dt', 'imaginary')
   }
 
   // Move
