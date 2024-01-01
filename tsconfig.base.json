@@ -25,7 +25,7 @@
     "exactOptionalPropertyTypes": true,
     "strictNullChecks": true,
     "allowSyntheticDefaultImports": false,
-    "typeRoots": ["./types"],
+    "typeRoots": ["./types", "./node_modules/@types"],
     "paths": {
       "@genshin-optimizer/char-cards": ["libs/char-cards/src/index.ts"],
       "@genshin-optimizer/consts": ["libs/consts/src/index.ts"],
