@@ -1,5 +1,5 @@
 import type { AscensionKey } from '@genshin-optimizer/sr-consts'
-import { self } from '@genshin-optimizer/sr-formula'
+import { convert, selfTag } from '@genshin-optimizer/sr-formula'
 import {
   useCalcContext,
   useCharacter,
@@ -16,6 +16,7 @@ export default function Character() {
   const charReducer = useCharacterReducer(characterKey)
 
   const { calc } = useCalcContext()
+  const member0 = convert(selfTag, { member: 'member0', et: 'self' })
 
   return (
     <Container>
@@ -52,7 +53,7 @@ export default function Character() {
               ] as const
             ).map(([txt, skey]) => (
               <Typography key={skey}>
-                {txt}: {calc?.compute(self.final[skey].src('char')).val}
+                {txt}: {calc?.compute(member0.final[skey]).val}
               </Typography>
             ))}
           </Stack>
