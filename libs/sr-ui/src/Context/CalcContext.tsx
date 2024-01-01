@@ -1,8 +1,8 @@
-import { reread } from '@genshin-optimizer/pando'
 import type { Calculator } from '@genshin-optimizer/sr-formula'
 import {
-  selfBuff,
+  charData,
   srCalculatorWithEntries,
+  withMember,
 } from '@genshin-optimizer/sr-formula'
 import type { ReactNode } from 'react'
 import { createContext, useContext, useMemo } from 'react'
@@ -26,15 +26,10 @@ export function CalcProvider({ children }: { children: ReactNode }) {
       calc:
         character &&
         srCalculatorWithEntries([
-          selfBuff.char.lvl.add(character.level),
-          selfBuff.char.ascension.add(character?.ascension),
-          {
-            tag: { src: 'char' },
-            value: reread({ src: characterKey }),
-          },
+          ...withMember('member0', ...charData(character)),
         ]),
     }),
-    [character, characterKey]
+    [character]
   )
 
   return (

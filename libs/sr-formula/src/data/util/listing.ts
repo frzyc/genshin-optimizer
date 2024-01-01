@@ -77,6 +77,18 @@ export const srcs = [
   'custom',
 ] as const
 export const members = ['member0', 'member1', 'member2', 'member3'] as const
+export const presets = [
+  'preset0',
+  'preset1',
+  'preset2',
+  'preset3',
+  'preset4',
+  'preset5',
+  'preset6',
+  'preset7',
+  'preset8',
+  'preset9',
+] as const
 
 export type Stat = (typeof stats)[number]
 export type BonusAbility = (typeof bonusAbilities)[number]
@@ -86,3 +98,4 @@ export type AttackType = (typeof attackTypes)[number]
 export type EntryType = (typeof entryTypes)[number]
 export type Source = (typeof srcs)[number]
 export type Member = (typeof members)[number]
+export type Preset = (typeof presets)[number]

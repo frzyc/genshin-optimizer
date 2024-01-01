@@ -106,6 +106,7 @@ export const selfTag = {
   },
   lightCone: { lvl: iso, ascension: iso, superimpose: iso },
   common: {
+    count: isoSum,
     path: iso,
     critMode: fixed,
     cappedCrit_: iso,

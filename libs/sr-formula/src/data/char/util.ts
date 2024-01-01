@@ -17,7 +17,7 @@ import type {
   SkillTreeNodeBonusStat,
 } from '@genshin-optimizer/sr-stats'
 import { objKeyMap } from '@genshin-optimizer/util'
-import type { AttackType, FormulaArg, Stat } from '../util'
+import type { AttackType, FormulaArg, Stat, Type } from '../util'
 import {
   customDmg,
   customHeal,
@@ -157,9 +157,7 @@ export function entriesForChar(data_gen: CharacterDataGen): TagMapNodeEntries {
           case 'imaginary_dmg_':
             // substring will fetch 'physical' from 'physical_dmg_', for example
             stat =
-              selfBuff.premod.dmg_[
-                key.substring(0, key.indexOf('_')) as TypeKey
-              ]
+              selfBuff.premod.dmg_[key.substring(0, key.indexOf('_')) as Type]
             break
           default:
             stat = selfBuff.premod[key]

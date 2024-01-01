@@ -18,12 +18,14 @@ import {
   attackTypes,
   entryTypes,
   members,
+  presets,
   srcs,
   types,
   type Source,
 } from './listing'
 
 export const fixedTags = {
+  presets: presets,
   member: members,
   dst: members,
   et: entryTypes,
