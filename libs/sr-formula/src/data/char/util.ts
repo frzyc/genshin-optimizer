@@ -6,12 +6,26 @@ import {
   subscript,
   sum,
 } from '@genshin-optimizer/pando'
-import type { StatBoostKey, TypeKey } from '@genshin-optimizer/sr-consts'
+import type {
+  AbilityKey,
+  StatBoostKey,
+  TypeKey,
+} from '@genshin-optimizer/sr-consts'
 import type {
   CharacterDataGen,
   SkillTreeNodeBonusStat,
 } from '@genshin-optimizer/sr-stats'
-import { self, selfBuff, type TagMapNodeEntries } from '../util'
+import type { AttackType, FormulaArg, Stat } from '../util'
+import {
+  customDmg,
+  customShield,
+  percent,
+  self,
+  selfBuff,
+  type TagMapNodeEntries,
+} from '../util'
+
+type AbilityScalingType = Exclude<AbilityKey, 'technique'>
 
 export function traceParams(data_gen: CharacterDataGen) {
   const [normal, skill, ult, talent, technique] = data_gen.skillTreeList
@@ -24,6 +38,37 @@ export function traceParams(data_gen: CharacterDataGen) {
     talent,
     technique,
   }
+}
+
+export function dmg(
+  name: string,
+  type: TypeKey,
+  stat: Stat,
+  levelScaling: number[],
+  abilityScalingType: AbilityScalingType,
+  attackType: AttackType,
+  arg: FormulaArg = {},
+  ...extra: TagMapNodeEntries
+): TagMapNodeEntries {
+  const multi = percent(subscript(self.char[abilityScalingType], levelScaling))
+  const base = prod(self.final[stat], multi)
+  return customDmg(name, type, attackType, base, arg, ...extra)
+}
+
+export function shield(
+  name: string,
+  stat: Stat,
+  levelScalingMulti: number[],
+  levelScalingFlat: number[],
+  abilityScalingType: AbilityScalingType,
+  arg: FormulaArg = {},
+  ...extra: TagMapNodeEntries
+): TagMapNodeEntries {
+  const abilityLevel = self.char[abilityScalingType]
+  const multi = percent(subscript(abilityLevel, levelScalingMulti))
+  const flat = subscript(abilityLevel, levelScalingFlat)
+  const base = sum(prod(self.final[stat], multi), flat)
+  return customShield(name, base, arg, ...extra)
 }
 
 export function entriesForChar(data_gen: CharacterDataGen): TagMapNodeEntries {

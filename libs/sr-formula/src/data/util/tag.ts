@@ -111,7 +111,7 @@ export const selfTag = {
     cappedCrit_: iso,
   },
   dmg: { out: fixed, critMulti: fixed },
-  prep: { ele: prep, move: prep },
+  prep: { type: prep, move: prep },
   formula: {
     base: agg,
     listing: aggStr,

@@ -15,7 +15,7 @@ import {
 } from '@genshin-optimizer/pando'
 import { allTypeKeys } from '@genshin-optimizer/sr-consts'
 import type { TagMapNodeEntry } from '.'
-import { entryTypes, members, moves, srcs, type Source } from './listing'
+import { attackTypes, entryTypes, members, srcs, type Source } from './listing'
 
 export const fixedTags = {
   member: members,
@@ -24,7 +24,7 @@ export const fixedTags = {
   src: srcs,
 
   dt: allTypeKeys,
-  move: moves,
+  attackType: attackTypes,
 }
 export type Tag = {
   [key in keyof typeof fixedTags]?: (typeof fixedTags)[key][number] | null
@@ -84,13 +84,13 @@ export class Read extends TypedRead<Tag, Read> {
 
   // Move
   get basicDmg(): Read {
-    return super.with('move', 'basic')
+    return super.with('attackType', 'basic')
   }
   get skillDmg(): Read {
-    return super.with('move', 'skill')
+    return super.with('attackType', 'skill')
   }
   get ultDmg(): Read {
-    return super.with('move', 'ult')
+    return super.with('attackType', 'ult')
   }
 }
 export function tag(v: number | NumNode, tag: Tag): TagOverride<NumNode>
