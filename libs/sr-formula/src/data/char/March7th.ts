@@ -95,7 +95,7 @@ const sheet = register(
     undefined,
     'followup',
     undefined,
-    self.formula.base.add(e4_counter_dmgInc) // TODO: Verify this is the right way
+    self.formula.base.add(e4_counter_dmgInc)
   ),
   ...customDmg(
     'techniqueFreeze',
@@ -104,14 +104,15 @@ const sheet = register(
     prod(self.final.atk, percent(dm.technique.dmg))
   ),
   // Eidolon formulas
-  // TODO: Hide these behind proper checks
   customShield(
     'e1Shield',
-    sum(prod(self.final.def, dm.e2.shieldMult), dm.e2.shieldBase)
+    sum(prod(self.final.def, dm.e2.shieldMult), dm.e2.shieldBase),
+    { cond: cmpGE(char.eidolon, 1, 'unique', '') }
   ),
   customHeal(
     'e6Heal',
-    sum(prod(target.final.hp, dm.e6.healMult), dm.e6.healBase)
+    sum(prod(target.final.hp, dm.e6.healMult), dm.e6.healBase),
+    { cond: cmpGE(char.eidolon, 6, 'unique', '') }
   )
 )
 export default sheet
