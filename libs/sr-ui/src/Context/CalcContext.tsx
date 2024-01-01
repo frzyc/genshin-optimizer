@@ -33,7 +33,7 @@ export function CalcProvider({ children }: { children: ReactNode }) {
       calc:
         character &&
         srCalculatorWithEntries([
-          ...teamData(['member0'], ['member0']),
+          ...teamData(['member0']),
           ...withMember(
             'member0',
             ...charData(character),
