@@ -22,6 +22,7 @@ import {
   customDmg,
   customHeal,
   customShield,
+  listingItem,
   percent,
   self,
   selfBuff,
@@ -175,5 +176,22 @@ export function entriesForChar(data_gen: CharacterDataGen): TagMapNodeEntries {
           selfBuff.char[abilityKey].add(cmpGE(eidolon, ei, levelBoost))
       )
     ),
+    // Formula listings for stats
+    // TODO: Reorder this
+    selfBuff.listing.formulas.add(listingItem(self.final.hp)),
+    selfBuff.listing.formulas.add(listingItem(self.final.atk)),
+    selfBuff.listing.formulas.add(listingItem(self.final.def)),
+    selfBuff.listing.formulas.add(listingItem(self.final.spd)),
+    selfBuff.listing.formulas.add(listingItem(self.final.enerRegen_)),
+    selfBuff.listing.formulas.add(listingItem(self.final.eff_)),
+    selfBuff.listing.formulas.add(listingItem(self.final.eff_res_)),
+    selfBuff.listing.formulas.add(listingItem(self.final.brEff_)),
+    selfBuff.listing.formulas.add(listingItem(self.common.cappedCrit_)),
+    selfBuff.listing.formulas.add(listingItem(self.final.crit_dmg_)),
+    selfBuff.listing.formulas.add(listingItem(self.final.heal_)),
+    selfBuff.listing.formulas.add(
+      listingItem(self.final.dmg_[data_gen.damageType.toLowerCase() as Type])
+    ),
+    selfBuff.listing.formulas.add(listingItem(self.final.dmg_.physical)),
   ]
 }

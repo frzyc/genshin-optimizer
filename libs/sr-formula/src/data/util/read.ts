@@ -31,7 +31,7 @@ export const fixedTags = {
   et: entryTypes,
   src: srcs,
 
-  dt: types,
+  type: types,
   attackType: attackTypes,
 }
 export type Tag = {
@@ -69,25 +69,25 @@ export class Read extends TypedRead<Tag, Read> {
 
   // Damage Type
   get physical(): Read {
-    return super.with('dt', 'physical')
+    return super.with('type', 'physical')
   }
   get quantum(): Read {
-    return super.with('dt', 'quantum')
+    return super.with('type', 'quantum')
   }
   get lightning(): Read {
-    return super.with('dt', 'lightning')
+    return super.with('type', 'lightning')
   }
   get ice(): Read {
-    return super.with('dt', 'ice')
+    return super.with('type', 'ice')
   }
   get wind(): Read {
-    return super.with('dt', 'wind')
+    return super.with('type', 'wind')
   }
   get fire(): Read {
-    return super.with('dt', 'fire')
+    return super.with('type', 'fire')
   }
   get imaginary(): Read {
-    return super.with('dt', 'imaginary')
+    return super.with('type', 'imaginary')
   }
 
   // Move

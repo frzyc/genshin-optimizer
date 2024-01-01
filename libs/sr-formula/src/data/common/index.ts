@@ -2,9 +2,11 @@ import { max, min, prod } from '@genshin-optimizer/pando'
 import type { TagMapNodeEntries } from '../util'
 import { percent, reader, self, selfBuff } from '../util'
 import dmg from './dmg'
+import prep from './prep'
 
 const data: TagMapNodeEntries = [
   ...dmg,
+  ...prep,
 
   reader.withTag({ src: 'iso', et: 'self' }).reread(reader.src('custom')),
   reader.withTag({ src: 'agg', et: 'self' }).reread(reader.src('custom')),

@@ -10,7 +10,7 @@ import {
   type TagMapNodeEntries,
   type TagMapNodeEntry,
 } from '.'
-import type { AttackType, Source } from './listing'
+import type { AttackType, Source, Type } from './listing'
 
 export type FormulaArg = {
   team?: boolean // true if applies to every member, and false (default) if applies only to self
@@ -61,7 +61,7 @@ export function listingItem(t: Read, cond?: string | StrNode) {
  */
 export function customDmg(
   name: string,
-  type: TypeKey,
+  typeKey: TypeKey,
   attackType: AttackType,
   base: NumNode,
   splits: number[] = [1],
@@ -69,14 +69,14 @@ export function customDmg(
   ...extra: TagMapNodeEntries
 ): TagMapNodeEntries[] {
   const buff = team ? teamBuff : selfBuff
+  const type = typeKey.toLowerCase() as Type
   return splits.map((split, index) =>
     registerFormula(
       `${name}_${index}`,
       team,
       'dmg',
-      tag(cond, { attackType }),
+      tag(cond, { attackType, type }),
       buff.formula.base.add(prod(base, percent(split))),
-      buff.prep.type.add(type),
       ...extra
     )
   )

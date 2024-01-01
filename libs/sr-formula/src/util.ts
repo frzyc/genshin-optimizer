@@ -1,3 +1,4 @@
+import { cmpEq, cmpGE } from '@genshin-optimizer/pando'
 import type { RelicSetKey } from '@genshin-optimizer/sr-consts'
 import {
   allBonusAbilityKeys,
@@ -95,4 +96,41 @@ export function relicsData(
 
     ...Object.entries(sets).map(([k, v]) => count.src(k as RelicSetKey).add(v)),
   ]
+}
+
+export function teamData(
+  activeMembers: readonly Member[],
+  members: readonly Member[]
+): TagMapNodeEntries {
+  const teamEntry = reader.with('et', 'team')
+  const { self, teamBuff } = reader.src('agg').withAll('et', [])
+  const { stackIn, stackInt, stackOut } = reader.withAll('qt', [])
+  return [
+    // Team Buff
+    members.flatMap((dst) => {
+      const entry = self.with('member', dst)
+      return members.map((src) =>
+        entry.reread(teamBuff.withTag({ dst, member: src }))
+      )
+    }),
+    // Stacking
+    members.map((member, i) =>
+      stackInt.add(cmpGE(stackIn.withTag({ member }).max, 1, i + 1))
+    ),
+    members.map((member, i) =>
+      stackOut.withTag({ member }).add(cmpEq(stackInt.max, i + 1, 1))
+    ),
+    // Total Team Stat
+    //
+    // CAUTION:
+    // This formula only works for queries with default `undefined` or `sum` accumulator.
+    // Using this on queries with other accumulators, e.g., `ampMulti` may results in an
+    // incorrect result. We cannot use `reread` here because the outer `team` query may
+    // use different accumulators from the inner query. Such is the case for maximum team
+    // final eleMas, where the outer query uses a `max` accumulator, while final eleMas
+    // must use `sum` accumulator for a correct result.
+    members.map((member) =>
+      teamEntry.add(reader.withTag({ member, et: 'self' }).sum)
+    ),
+  ].flat()
 }
