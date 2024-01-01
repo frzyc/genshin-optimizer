@@ -12,7 +12,6 @@ import {
 import Character from './Character'
 import CharacterSelector from './CharacterSelector'
 import Database from './Database'
-import Optimize from './Optimize'
 import { theme } from './Theme'
 
 export default function App() {
@@ -27,7 +26,6 @@ export default function App() {
               <Stack gap={1} pt={1}>
                 <CharacterSelector />
                 <Character />
-                <Optimize />
                 <Database />
               </Stack>
             </CalcProvider>
