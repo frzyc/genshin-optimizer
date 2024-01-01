@@ -41,7 +41,7 @@ export function CalcProvider({ children }: { children: ReactNode }) {
             ...relicsData([])
           ),
           enemyDebuff.common.lvl.add(80),
-          enemyDebuff.common.preRes.add(0.1),
+          enemyDebuff.common.res.add(0.1),
           selfBuff.common.critMode.add('avg'),
         ]),
     }),

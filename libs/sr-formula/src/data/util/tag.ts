@@ -129,8 +129,7 @@ export const enemyTag = {
     inDmg: fixed,
     defRed_: agg,
     defIgn: agg,
-    preRes: agg,
-    postRes: fixed,
+    res: agg,
   },
 } as const
 

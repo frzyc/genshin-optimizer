@@ -1,13 +1,31 @@
-import { lookup, prod, sum } from '@genshin-optimizer/pando'
+import { lookup, prod, sum, sumfrac } from '@genshin-optimizer/pando'
 import type { TagMapNodeEntries } from '../util'
 import { enemy, enemyDebuff, percent, self, selfBuff } from '../util'
 
-const preRes = enemy.common.preRes
-
 const data: TagMapNodeEntries = [
   // TODO Def/Res
-  enemyDebuff.common.postRes.add(preRes),
-  enemyDebuff.common.inDmg.add(1),
+  enemyDebuff.common.inDmg.add(
+    prod(
+      // DEF Multiplier
+      sumfrac(
+        sum(self.char.lvl, 20),
+        prod(
+          sum(enemy.common.lvl, 20),
+          sum(
+            percent(1),
+            prod(-1, enemy.common.defRed_),
+            prod(-1, enemy.common.defIgn)
+          )
+        )
+      ),
+      // RES Multiplier
+      sum(
+        percent(1),
+        prod(-1, sum(enemyDebuff.common.res, prod(-1, self.final.resPen_)))
+      )
+      // TODO: Vulnerability, DMG Reduction and Broken multipliers
+    )
+  ),
   selfBuff.dmg.out.add(
     prod(self.formula.base, sum(percent(1), self.final.dmg_))
   ),
