@@ -1,8 +1,13 @@
-import { compileTagMapValues, reread } from '@genshin-optimizer/pando'
-import type { CharacterKey, LightConeKey } from '@genshin-optimizer/sr-consts'
+import { compileTagMapValues } from '@genshin-optimizer/pando'
+import type {
+  AscensionKey,
+  CharacterKey,
+  LightConeKey,
+} from '@genshin-optimizer/sr-consts'
+import { charData, lightConeData, withMember } from '.'
 import { Calculator } from './calculator'
 import { keys, values } from './data'
-import { self, selfBuff, type TagMapNodeEntries } from './data/util'
+import { convert, selfTag, type TagMapNodeEntries } from './data/util'
 
 describe('character test', () => {
   it.each([
@@ -13,19 +18,29 @@ describe('character test', () => {
   ])('Calculate character base stats', (lvl, ascension, atk, def, hp, spd) => {
     const charKey: CharacterKey = 'March7th'
     const data: TagMapNodeEntries = [
-      selfBuff.char.lvl.add(lvl),
-      selfBuff.char.ascension.add(ascension),
-      {
-        tag: { src: 'char' },
-        value: reread({ src: charKey }),
-      },
+      ...withMember(
+        'member0',
+        ...charData({
+          level: lvl,
+          ascension: ascension as AscensionKey,
+          key: charKey,
+          eidolon: 0,
+          basic: 0,
+          skill: 0,
+          ult: 0,
+          talent: 0,
+          bonusAbilities: {},
+          statBoosts: {},
+        })
+      ),
     ]
     const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
 
-    expect(calc.compute(self.stat.atk.src('char')).val).toBeCloseTo(atk)
-    expect(calc.compute(self.stat.def.src('char')).val).toBeCloseTo(def)
-    expect(calc.compute(self.stat.hp.src('char')).val).toBeCloseTo(hp)
-    expect(calc.compute(self.stat.spd.src('char')).val).toBeCloseTo(spd)
+    const member0 = convert(selfTag, { member: 'member0', et: 'self' })
+    expect(calc.compute(member0.final.atk).val).toBeCloseTo(atk)
+    expect(calc.compute(member0.final.def).val).toBeCloseTo(def)
+    expect(calc.compute(member0.final.hp).val).toBeCloseTo(hp)
+    expect(calc.compute(member0.final.spd).val).toBeCloseTo(spd)
   })
 })
 
@@ -37,18 +52,36 @@ describe('lightCone test', () => {
   ])('Calculate lightCone base stats', (lvl, ascension, atk, def, hp) => {
     const lcKey: LightConeKey = 'Arrows'
     const data: TagMapNodeEntries = [
-      selfBuff.lightCone.lvl.add(lvl),
-      selfBuff.lightCone.ascension.add(ascension),
-      {
-        tag: { src: 'lightCone' },
-        value: reread({ src: lcKey }),
-      },
+      ...withMember(
+        'member0',
+        ...charData({
+          level: 1,
+          ascension: 0,
+          key: 'March7th',
+          eidolon: 0,
+          basic: 0,
+          skill: 0,
+          ult: 0,
+          talent: 0,
+          bonusAbilities: {},
+          statBoosts: {},
+        }),
+        ...lightConeData({
+          key: lcKey,
+          level: lvl,
+          ascension: ascension as AscensionKey,
+          superimpose: 0,
+          lock: false,
+          location: 'March7th',
+        })
+      ),
     ]
     const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
 
-    expect(calc.compute(self.stat.atk.src('lightCone')).val).toBeCloseTo(atk)
-    expect(calc.compute(self.stat.def.src('lightCone')).val).toBeCloseTo(def)
-    expect(calc.compute(self.stat.hp.src('lightCone')).val).toBeCloseTo(hp)
+    const member0 = convert(selfTag, { member: 'member0', et: 'self' })
+    expect(calc.compute(member0.base.atk.src(lcKey)).val).toBeCloseTo(atk)
+    expect(calc.compute(member0.base.def.src(lcKey)).val).toBeCloseTo(def)
+    expect(calc.compute(member0.base.hp.src(lcKey)).val).toBeCloseTo(hp)
   })
 })
 
@@ -58,20 +91,32 @@ describe('char+lightCone test', () => {
     const lcKey: LightConeKey = 'Amber'
 
     const data: TagMapNodeEntries = [
-      self.char.lvl.add(1),
-      self.char.ascension.add(0),
-      self.lightCone.lvl.add(1),
-      self.lightCone.ascension.add(0),
-      {
-        tag: { src: 'char' },
-        value: reread({ src: charKey }),
-      },
-      {
-        tag: { src: 'lightCone' },
-        value: reread({ src: lcKey }),
-      },
+      ...withMember(
+        'member0',
+        ...charData({
+          level: 1,
+          ascension: 0,
+          key: charKey,
+          eidolon: 0,
+          basic: 0,
+          skill: 0,
+          ult: 0,
+          talent: 0,
+          bonusAbilities: {},
+          statBoosts: {},
+        }),
+        ...lightConeData({
+          key: lcKey,
+          level: 1,
+          ascension: 0,
+          superimpose: 0,
+          lock: false,
+          location: 'March7th',
+        })
+      ),
     ]
     const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
-    expect(calc.compute(self.stat.atk).val).toBeCloseTo(81.6)
+    const member0 = convert(selfTag, { member: 'member0', et: 'self' })
+    expect(calc.compute(member0.final.atk).val).toBeCloseTo(81.6)
   })
 })
