@@ -12,6 +12,7 @@ import {
 import type { ReactNode } from 'react'
 import { createContext, useContext, useMemo } from 'react'
 import { useCharacter } from '../Hook'
+import { useLightCone } from '../Hook/useLightCone'
 import { useCharacterContext } from './CharacterContext'
 type CalcContextObj = {
   calc: Calculator | undefined
@@ -26,6 +27,7 @@ export function useCalcContext() {
 export function CalcProvider({ children }: { children: ReactNode }) {
   const { characterKey } = useCharacterContext()
   const character = useCharacter(characterKey)
+  const lightCone = useLightCone(character?.equippedLightCone)
   const calcContextObj: CalcContextObj = useMemo(
     () => ({
       calc:
@@ -35,14 +37,7 @@ export function CalcProvider({ children }: { children: ReactNode }) {
           ...withMember(
             'member0',
             ...charData(character),
-            ...lightConeData({
-              key: 'TrendOfTheUniversalMarket',
-              ascension: 1,
-              level: 20,
-              superimpose: 1,
-              location: 'March7th',
-              lock: false,
-            }),
+            ...lightConeData(lightCone),
             ...relicsData([])
           ),
           enemyDebuff.common.lvl.add(80),
@@ -50,7 +45,7 @@ export function CalcProvider({ children }: { children: ReactNode }) {
           selfBuff.common.critMode.add('avg'),
         ]),
     }),
-    [character]
+    [character, lightCone]
   )
 
   return (

@@ -50,7 +50,8 @@ export function charData(data: ICharacter): TagMapNodeEntries {
   ]
 }
 
-export function lightConeData(data: ILightCone): TagMapNodeEntries {
+export function lightConeData(data: ILightCone | undefined): TagMapNodeEntries {
+  if (!data) return []
   const { lvl, ascension, superimpose } = selfBuff.lightCone
 
   return [
