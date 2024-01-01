@@ -57,6 +57,11 @@ export default function Character() {
               </Typography>
             ))}
           </Stack>
+          <Stack>
+            {calc
+              ?.listFormulas(member0.listing.formulas)
+              .map((read) => calc.compute(read).val)}
+          </Stack>
         </CardContent>
       </CardThemed>
     </Container>
