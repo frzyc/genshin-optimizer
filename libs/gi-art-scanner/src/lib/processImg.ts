@@ -288,15 +288,7 @@ export async function processEntry(
   const [whiteTexts, substatTexts, artifactSetTexts, equippedTexts] =
     await Promise.all([
       // slotkey, mainStatValue, level
-      textsFromImage(bwHeader, {
-        // only the left half is worth scanning
-        rectangle: {
-          top: 0,
-          left: 0,
-          width: Math.floor(bwHeader.width * 0.7),
-          height: bwHeader.height,
-        },
-      }),
+      textsFromImage(bwHeader),
       // substats
       textsFromImage(substatsCardCropped),
       // artifact set, look for greenish texts

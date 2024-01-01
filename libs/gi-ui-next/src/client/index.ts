@@ -2,7 +2,7 @@
 
 export * from './gi-ui-next'
 export * from './ArtifactCard'
-export * from './WeaponCard'
+export * from './Weapon'
 export * from './ImageIcon'
 export * from './CharacterCard'
 export * from './util'
@@ -11,3 +11,4 @@ export * from './GenshinUserDataWrapper'
 export * from './UserDataWrapper'
 export * from './ArtifactEditor'
 export * from './artifactUtil'
+export * from './Artifact'

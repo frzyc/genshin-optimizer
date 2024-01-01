@@ -1,6 +1,6 @@
 import { Box, Typography, Skeleton } from '@mui/material'
 import { Suspense } from 'react'
-import { Help } from '@mui/icons-material'
+import HelpIcon from '@mui/icons-material/Help'
 import type { CalcResult } from '@genshin-optimizer/pando'
 import { translate, type CalcMeta } from '@genshin-optimizer/gi-formula'
 import { BootstrapTooltip } from '@genshin-optimizer/ui-common'
@@ -65,7 +65,7 @@ export function NodeFieldDisplay({
             }
           >
             {/* TODO: Add back */}
-            <Help
+            <HelpIcon
               fontSize="inherit"
               sx={{ cursor: 'help' }}
               // onClick={onClick}

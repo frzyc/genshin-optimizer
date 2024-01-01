@@ -1,3 +1,4 @@
+'use client'
 import { ColorText, SqBadge } from '@genshin-optimizer/ui-common'
 import { Skeleton, Typography } from '@mui/material'
 import type { TFunction } from 'i18next'

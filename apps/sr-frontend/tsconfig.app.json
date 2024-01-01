@@ -5,5 +5,5 @@
     "types": ["node", "vite/client"]
   },
   "exclude": ["src/**/*.spec.ts", "src/**/*.test.ts"],
-  "include": ["src/**/*.ts", "src/main.tsx", "src/app/App.tsx"]
+  "include": ["src/**/*.ts", "src/**/*.tsx"]
 }

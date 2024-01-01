@@ -1,6 +1,16 @@
+export const dbVersionKeys = ['db_ver', 'sro_db_ver'] as const
+export type DbVersionKey = (typeof dbVersionKeys)[number]
+
+export const dbIndexKeys = ['dbIndex', 'sro_dbIndex'] as const
+export type DbIndexKey = (typeof dbIndexKeys)[number]
+
+export type StorageType = 'go' | 'sro'
+
 export interface DBStorage {
   keys: string[]
   entries: [key: string, value: string][]
+  dbVersionKey: DbVersionKey
+  dbIndexKey: DbIndexKey
 
   get(key: string): any | undefined
   set(key: string, value: any): void

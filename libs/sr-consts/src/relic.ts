@@ -42,7 +42,6 @@ export const allRelicSetKeys = [
   ...allRelicCavernSetKeys,
   ...allRelicPlanarSetKeys,
 ] as const
-
 export type RelicSetKey = (typeof allRelicSetKeys)[number]
 
 export const allRelicSubStatKeys = [
@@ -59,7 +58,6 @@ export const allRelicSubStatKeys = [
   'eff_res_',
   'brEff_',
 ] as const
-
 export type RelicSubStatKey = (typeof allRelicSubStatKeys)[number]
 
 export const allRelicMainStatKeys = [
@@ -83,5 +81,45 @@ export const allRelicMainStatKeys = [
   'brEff_',
   'enerRegen_',
 ] as const
-
 export type RelicMainStatKey = (typeof allRelicMainStatKeys)[number]
+
+export const allRelicRarityKeys = [2, 3, 4, 5] as const
+export type RelicRarityKey = (typeof allRelicRarityKeys)[number]
+
+export const relicMaxLevel: Record<RelicRarityKey, number> = {
+  2: 6,
+  3: 9,
+  4: 12,
+  5: 15,
+} as const
+
+export const relicSubstatRollData: Record<
+  RelicRarityKey,
+  { low: number; high: number; numUpgrades: number }
+> = {
+  2: { low: 0, high: 0, numUpgrades: 0 },
+  3: { low: 1, high: 2, numUpgrades: 1 },
+  4: { low: 2, high: 3, numUpgrades: 3 },
+  5: { low: 3, high: 4, numUpgrades: 5 },
+} as const
+
+export const relicSlotToMainStatKeys: Record<RelicSlotKey, RelicMainStatKey[]> =
+  {
+    head: ['hp'],
+    hand: ['atk'],
+    body: ['hp_', 'atk_', 'def_', 'eff_', 'heal_', 'crit_', 'crit_dmg_'],
+    feet: ['hp_', 'atk_', 'def_', 'spd'],
+    sphere: [
+      'hp_',
+      'atk_',
+      'def_',
+      'physical_dmg_',
+      'fire_dmg_',
+      'ice_dmg_',
+      'wind_dmg_',
+      'lightning_dmg_',
+      'quantum_dmg_',
+      'imaginary_dmg_',
+    ],
+    rope: ['brEff_', 'enerRegen_'],
+  }

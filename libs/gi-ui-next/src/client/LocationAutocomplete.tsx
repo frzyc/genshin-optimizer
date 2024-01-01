@@ -12,7 +12,7 @@ import type { ICharacter } from '@genshin-optimizer/gi-good'
 import type { GeneralAutocompleteOption } from '@genshin-optimizer/ui-common'
 import { GeneralAutocomplete } from '@genshin-optimizer/ui-common'
 import { getRandBool } from '@genshin-optimizer/util'
-import { BusinessCenter } from '@mui/icons-material'
+import BusinessCenterIcon from '@mui/icons-material/BusinessCenter'
 import type { AutocompleteProps, Palette } from '@mui/material'
 import { Box, Skeleton } from '@mui/material'
 import { Suspense, useCallback, useContext, useMemo } from 'react'
@@ -74,7 +74,7 @@ export function LocationAutocomplete({
   const toImg = useCallback(
     (key: LocationKey) =>
       key === '' ? (
-        <BusinessCenter />
+        <BusinessCenterIcon />
       ) : (
         <Box sx={{ opacity: charInDb.has(key) ? undefined : 0.7 }}>
           <CharIconSide

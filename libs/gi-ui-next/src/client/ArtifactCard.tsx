@@ -42,8 +42,9 @@ import {
 } from '@genshin-optimizer/ui-common'
 import type { Unit } from '@genshin-optimizer/util'
 import { clamp, clamp01 } from '@genshin-optimizer/util'
-import { Lock, LockOpen } from '@mui/icons-material'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
+import LockIcon from '@mui/icons-material/Lock'
+import LockOpenIcon from '@mui/icons-material/LockOpen'
 import {
   Box,
   Button,
@@ -619,7 +620,7 @@ function LockButton({
       onClick={() => setlock((l) => !l)}
       sx={{ position: 'absolute', right: 0, bottom: 0, zIndex: 2 }}
     >
-      {lock ? <Lock /> : <LockOpen />}
+      {lock ? <LockIcon /> : <LockOpenIcon />}
     </IconButton>
   )
 }

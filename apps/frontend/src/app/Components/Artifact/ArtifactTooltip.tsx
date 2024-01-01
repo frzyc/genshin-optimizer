@@ -1,9 +1,8 @@
-import {
-  artDisplayValue,
-  getMainStatDisplayStr,
-} from '@genshin-optimizer/gi-util'
+import type { RollColorKey } from '@genshin-optimizer/gi-ui'
+import { IconStatDisplay } from '@genshin-optimizer/gi-ui'
+import { getMainStatDisplayStr } from '@genshin-optimizer/gi-util'
 import { iconInlineProps } from '@genshin-optimizer/svgicons'
-import { clamp, unit } from '@genshin-optimizer/util'
+import { clamp } from '@genshin-optimizer/util'
 import { Box, Skeleton, Typography } from '@mui/material'
 import { Suspense } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -11,7 +10,7 @@ import { getArtSheet } from '../../Data/Artifacts'
 import Artifact from '../../Data/Artifacts/Artifact'
 import KeyMap from '../../KeyMap'
 import StatIcon from '../../KeyMap/StatIcon'
-import type { ICachedArtifact, ICachedSubstat } from '../../Types/artifact'
+import type { ICachedArtifact } from '../../Types/artifact'
 import BootstrapTooltip from '../BootstrapTooltip'
 import LocationName from '../Character/LocationName'
 import SqBadge from '../SqBadge'
@@ -70,18 +69,15 @@ function ArtifactData({ art }: { art: ICachedArtifact }) {
       </Typography>
       <Box py={1}>
         {substats.map(
-          (stat: ICachedSubstat) =>
-            !!stat.value && (
-              <Typography
-                key={stat.key}
-                color={`roll${clamp(stat.rolls.length, 1, 6)}.main`}
-              >
-                <StatIcon statKey={stat.key} iconProps={iconInlineProps} />{' '}
-                {tk(stat.key)}{' '}
-                <strong>{`+${artDisplayValue(stat.value, unit(stat.key))}${unit(
-                  stat.key
-                )}`}</strong>
-              </Typography>
+          ({ value, key, rolls }) =>
+            !!(value && key) && (
+              <IconStatDisplay
+                key={key}
+                statKey={key}
+                value={value}
+                color={`roll${clamp(rolls.length, 1, 6)}` as RollColorKey} //TODO: stat.rolls.length instead of 1
+                prefix="+"
+              />
             )
         )}
       </Box>

@@ -1,4 +1,4 @@
-import { Close } from '@mui/icons-material'
+import CloseIcon from '@mui/icons-material/Close'
 import type { ButtonProps } from '@mui/material'
 import { Button } from '@mui/material'
 import { useTranslation } from 'react-i18next'
@@ -12,11 +12,15 @@ export default function CloseButton({
   const { t } = useTranslation('ui')
   if (large)
     return (
-      <Button color="error" startIcon={<Close />} {...props}>{t`close`}</Button>
+      <Button
+        color="error"
+        startIcon={<CloseIcon />}
+        {...props}
+      >{t`close`}</Button>
     )
   return (
     <Button color="error" sx={{ p: 1, minWidth: 0 }} {...props}>
-      <Close />
+      <CloseIcon />
     </Button>
   )
 }

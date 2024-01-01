@@ -5,6 +5,7 @@
 /.yarn
 
 /libs/dm/GenshinData
+/libs/sr-dm/StarRailData
 *_gen.json
 
 /libs/gi-stats/Data
@@ -13,3 +14,6 @@
 # generated from backend
 apps/gi-backend/src/app/graphql_gen.ts
 apps/gi-backend/src/app/schema_gen.graphql
+
+# nx
+/.nx/cache

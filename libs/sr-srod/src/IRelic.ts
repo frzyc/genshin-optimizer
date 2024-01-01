@@ -1,7 +1,7 @@
 import type {
   LocationKey,
-  RarityKey,
   RelicMainStatKey,
+  RelicRarityKey,
   RelicSetKey,
   RelicSlotKey,
   RelicSubStatKey,
@@ -11,7 +11,7 @@ export interface IRelic {
   setKey: RelicSetKey
   slotKey: RelicSlotKey
   level: number
-  rarity: RarityKey
+  rarity: RelicRarityKey
   mainStatKey: RelicMainStatKey
   location: LocationKey
   lock: boolean

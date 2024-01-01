@@ -1,3 +1,4 @@
+'use client'
 import type { ButtonProps } from '@mui/material'
 import { Button, styled } from '@mui/material'
 
