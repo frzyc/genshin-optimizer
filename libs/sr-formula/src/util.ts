@@ -25,7 +25,7 @@ export function charData(data: ICharacter): TagMapNodeEntries {
   const { lvl, basic, skill, ult, talent, ascension, eidolon } = selfBuff.char
 
   return [
-    reader.src('agg').reread(reader.src(data.key)),
+    reader.src('char').reread(reader.src(data.key)),
     reader.withTag({ src: 'iso', et: 'self' }).reread(reader.src(data.key)),
 
     lvl.add(data.level),
@@ -55,7 +55,7 @@ export function lightConeData(data: ILightCone | undefined): TagMapNodeEntries {
   const { lvl, ascension, superimpose } = selfBuff.lightCone
 
   return [
-    reader.src('agg').reread(reader.src(data.key)),
+    reader.src('lightCone').reread(reader.src(data.key)),
 
     lvl.add(data.level),
     ascension.add(data.ascension),
@@ -87,7 +87,7 @@ export function relicsData(
   }
   return [
     // Opt-in for artifact buffs, instead of enabling it by default to reduce `read` traffic
-    reader.src('agg').reread(reader.src('relic')),
+    reader.src('relic').reread(reader.src('relic')),
 
     // Add `src:dyn` between the stat and the buff so that we can `detach` them easily
     reader.withTag({ src: 'relic', qt: 'premod' }).reread(reader.src('dyn')),

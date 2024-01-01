@@ -79,9 +79,9 @@ describe('lightCone test', () => {
     const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
 
     const member0 = convert(selfTag, { member: 'member0', et: 'self' })
-    expect(calc.compute(member0.base.atk.src(lcKey)).val).toBeCloseTo(atk)
-    expect(calc.compute(member0.base.def.src(lcKey)).val).toBeCloseTo(def)
-    expect(calc.compute(member0.base.hp.src(lcKey)).val).toBeCloseTo(hp)
+    expect(calc.compute(member0.base.atk.src('lightCone')).val).toBeCloseTo(atk)
+    expect(calc.compute(member0.base.def.src('lightCone')).val).toBeCloseTo(def)
+    expect(calc.compute(member0.base.hp.src('lightCone')).val).toBeCloseTo(hp)
   })
 })
 
