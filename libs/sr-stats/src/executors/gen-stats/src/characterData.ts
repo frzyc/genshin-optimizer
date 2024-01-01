@@ -1,22 +1,27 @@
-import type {
-  NonTrailblazerCharacterKey,
-  PathKey,
-  RarityKey,
-  StatKey,
-  TypeKey,
+import {
+  allEidolonKeys,
+  type AbilityKey,
+  type EidolonKey,
+  type NonTrailblazerCharacterKey,
+  type PathKey,
+  type RarityKey,
+  type StatKey,
+  type TypeKey,
 } from '@genshin-optimizer/sr-consts'
 import type { Anchor } from '@genshin-optimizer/sr-dm'
 import {
+  DmAttackTypeMap,
   avatarBaseTypeMap,
   avatarConfig,
   avatarPromotionConfig,
+  avatarRankConfig,
   avatarRarityMap,
   avatarSkillConfig,
   avatarSkillTreeConfig,
   characterIdMap,
   statKeyMap,
 } from '@genshin-optimizer/sr-dm'
-import { transposeArray } from '@genshin-optimizer/util'
+import { objKeyMap, transposeArray } from '@genshin-optimizer/util'
 
 type Promotion = {
   atk: Scaling
@@ -43,12 +48,19 @@ type SkillTreeNode = {
   //TODO: MaterialList
 }
 export type SkillTreeNodeBonusStat = Partial<Record<StatKey, number>>
+type RankMap = Record<EidolonKey, Rank>
+type Rank = {
+  skillTypeAddLevel: SkillTypeAddLevel
+  params: number[]
+}
+type SkillTypeAddLevel = Record<Exclude<AbilityKey, 'technique'>, number>
 export type CharacterDataGen = {
   rarity: RarityKey
   damageType: TypeKey
   path: PathKey
   ascension: Promotion[]
   skillTreeList: SkillTree[]
+  rankMap: RankMap
 }
 
 export type CharacterDatas = Record<
@@ -93,42 +105,61 @@ export default function characterData() {
           }
         })
 
+        const ascension = avatarPromotionConfig[avatarid].map(
+          ({
+            AttackAdd,
+            AttackBase,
+            DefenceBase,
+            DefenceAdd,
+            HPBase,
+            HPAdd,
+            SpeedBase,
+            CriticalChance,
+            CriticalDamage,
+            BaseAggro,
+          }) => ({
+            atk: {
+              base: AttackBase.Value,
+              add: AttackAdd.Value,
+            },
+            def: {
+              base: DefenceBase.Value,
+              add: DefenceAdd.Value,
+            },
+            hp: {
+              base: HPBase.Value,
+              add: HPAdd.Value,
+            },
+            spd: SpeedBase.Value,
+            crit_: CriticalChance.Value,
+            crit_dmg_: CriticalDamage.Value,
+            taunt: BaseAggro.Value,
+          })
+        )
+
+        const rankMap = objKeyMap(allEidolonKeys, (eidolon): Rank => {
+          const rankConfig = avatarRankConfig[avatarid][eidolon]
+          return {
+            skillTypeAddLevel: Object.fromEntries(
+              Object.entries(rankConfig.SkillAddLevelList).map(
+                ([skillId, levelBoost]) => [
+                  // AttackType is always defined on the skills that get buffed by eidolons
+                  DmAttackTypeMap[avatarSkillConfig[skillId][0].AttackType!],
+                  levelBoost,
+                ]
+              )
+            ) as SkillTypeAddLevel,
+            params: rankConfig.Param.map((p) => p.Value),
+          }
+        })
+
         const result: CharacterDataGen = {
           rarity: avatarRarityMap[Rarity] as RarityKey,
           damageType: DamageType,
           path: avatarBaseTypeMap[AvatarBaseType],
           skillTreeList,
-          ascension: avatarPromotionConfig[avatarid].map(
-            ({
-              AttackAdd,
-              AttackBase,
-              DefenceBase,
-              DefenceAdd,
-              HPBase,
-              HPAdd,
-              SpeedBase,
-              CriticalChance,
-              CriticalDamage,
-              BaseAggro,
-            }) => ({
-              atk: {
-                base: AttackBase.Value,
-                add: AttackAdd.Value,
-              },
-              def: {
-                base: DefenceBase.Value,
-                add: DefenceAdd.Value,
-              },
-              hp: {
-                base: HPBase.Value,
-                add: HPAdd.Value,
-              },
-              spd: SpeedBase.Value,
-              crit_: CriticalChance.Value,
-              crit_dmg_: CriticalDamage.Value,
-              taunt: BaseAggro.Value,
-            })
-          ),
+          ascension,
+          rankMap,
         }
         const charKey = characterIdMap[avatarid]
         return [charKey, result]

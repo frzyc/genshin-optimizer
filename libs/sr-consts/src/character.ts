@@ -88,6 +88,18 @@ export type BonusAbilityKey = (typeof allBonusAbilityKeys)[number]
 export const allStatBoostKeys = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] as const
 export type StatBoostKey = (typeof allStatBoostKeys)[number]
 
+export const allEidolonKeys = [1, 2, 3, 4, 5, 6] as const
+export type EidolonKey = (typeof allEidolonKeys)[number]
+
+export const allAbilityKeys = [
+  'basic',
+  'skill',
+  'ult',
+  'talent',
+  'technique',
+] as const
+export type AbilityKey = (typeof allAbilityKeys)[number]
+
 export function charKeyToCharLocKey(
   charKey: CharacterKey
 ): CharacterLocationKey {

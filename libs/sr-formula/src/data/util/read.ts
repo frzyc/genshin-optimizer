@@ -14,6 +14,7 @@ import {
   reread,
 } from '@genshin-optimizer/pando'
 import { allTypeKeys } from '@genshin-optimizer/sr-consts'
+import type { TagMapNodeEntry } from '.'
 import { entryTypes, members, moves, srcs, type Source } from './listing'
 
 export const fixedTags = {
@@ -46,7 +47,7 @@ export class Read extends TypedRead<Tag, Read> {
     return super.with('src', src)
   }
 
-  add(value: number | string | AnyNode): { tag: Tag; value: AnyNode } {
+  add(value: number | string | AnyNode): TagMapNodeEntry {
     return {
       tag: this.tag,
       value: typeof value === 'object' ? value : constant(value),
