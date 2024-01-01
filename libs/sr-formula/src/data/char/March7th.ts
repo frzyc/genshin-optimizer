@@ -76,7 +76,7 @@ const sheet = register(
   entriesForChar(data_gen),
 
   // Formulas
-  ...dmg('basic', type, 'atk', dm.basic.dmg, 'basic'),
+  ...dmg('basicDmg', type, 'atk', dm.basic.dmg, 'basic'),
   shield(
     'skillShield',
     'def',
@@ -84,10 +84,10 @@ const sheet = register(
     dm.skill.shieldBase,
     'skill'
   ),
-  ...dmg('ult', type, 'atk', dm.ult.dmg, 'ult', [0.25, 0.25, 0.25, 0.25]),
+  ...dmg('ultDmg', type, 'atk', dm.ult.dmg, 'ult', [0.25, 0.25, 0.25, 0.25]),
   ...dmg('ultFreeze', type, 'atk', dm.ult.freezeDmg, 'ult', undefined, 'dot'),
   ...dmg(
-    'talent',
+    'talentDmg',
     type,
     'atk',
     dm.talent.dmg,
@@ -98,7 +98,7 @@ const sheet = register(
     self.formula.base.add(e4_counter_dmgInc) // TODO: Verify this is the right way
   ),
   ...customDmg(
-    'technique',
+    'techniqueFreeze',
     type,
     'dot',
     prod(self.final.atk, percent(dm.technique.dmg))
