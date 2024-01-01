@@ -6,18 +6,21 @@ import {
   subscript,
   sum,
 } from '@genshin-optimizer/pando'
-import type {
-  AbilityKey,
-  StatBoostKey,
-  TypeKey,
+import {
+  allEidolonKeys,
+  type AbilityKey,
+  type StatBoostKey,
+  type TypeKey,
 } from '@genshin-optimizer/sr-consts'
 import type {
   CharacterDataGen,
   SkillTreeNodeBonusStat,
 } from '@genshin-optimizer/sr-stats'
+import { objKeyMap } from '@genshin-optimizer/util'
 import type { AttackType, FormulaArg, Stat } from '../util'
 import {
   customDmg,
+  customHeal,
   customShield,
   percent,
   self,
@@ -27,32 +30,55 @@ import {
 
 type AbilityScalingType = Exclude<AbilityKey, 'technique'>
 
-export function traceParams(data_gen: CharacterDataGen) {
-  const [normal, skill, ult, talent, technique] = data_gen.skillTreeList
+export function scalingParams(data_gen: CharacterDataGen) {
+  const [basic, skill, ult, talent, technique] = data_gen.skillTreeList
     .map((s) => s.skillParamList)
     .filter((s): s is number[][] => !!s)
+  const eidolon = objKeyMap(
+    allEidolonKeys,
+    (eidolon) => data_gen.rankMap[eidolon].params
+  )
+
   return {
-    normal,
+    basic,
     skill,
     ult,
     talent,
     technique,
+    eidolon,
   }
 }
 
+/**
+ * Creates an array of TagMapNodeEntries representing a levelable ability's damage instance, and registers their formulas
+ * @param name Base name to be used as the key
+ * @param type Type of the damage
+ * @param stat Stat that the damage scales on
+ * @param levelScaling Array representing the scaling at different levels of the ability
+ * @param abilityScalingType Ability level that the scaling depends on
+ * @param splits Array of decimals that should add up to 1. Each entry represents the percentage of damage that hit deals, for multi-hit moves
+ * @param overrideAttackType Type of attack damage that is dealt, only need to set if it deals a different damage type than abilityScalingType, or if abilityScalingType is Talent
+ * @param arg
+ * @param extra Buffs that should only apply to this damage instance
+ * @returns Array of TagMapNodeEntries representing the damage instance
+ */
 export function dmg(
   name: string,
   type: TypeKey,
   stat: Stat,
   levelScaling: number[],
   abilityScalingType: AbilityScalingType,
-  attackType: AttackType,
+  splits: number[] = [1],
+  overrideAttackType: AttackType | undefined = undefined,
   arg: FormulaArg = {},
   ...extra: TagMapNodeEntries
-): TagMapNodeEntries {
+): TagMapNodeEntries[] {
   const multi = percent(subscript(self.char[abilityScalingType], levelScaling))
+  const attackType = overrideAttackType ?? abilityScalingType
+  if (attackType === 'talent')
+    throw new Error(`Cannot infer attack type for Talent-type ability ${name}`)
   const base = prod(self.final[stat], multi)
-  return customDmg(name, type, attackType, base, arg, ...extra)
+  return customDmg(name, type, attackType, base, splits, arg, ...extra)
 }
 
 export function shield(
@@ -69,6 +95,22 @@ export function shield(
   const flat = subscript(abilityLevel, levelScalingFlat)
   const base = sum(prod(self.final[stat], multi), flat)
   return customShield(name, base, arg, ...extra)
+}
+
+export function heal(
+  name: string,
+  stat: Stat,
+  levelScalingMulti: number[],
+  levelScalingFlat: number[],
+  abilityScalingType: AbilityScalingType,
+  arg: FormulaArg = {},
+  ...extra: TagMapNodeEntries
+): TagMapNodeEntries {
+  const abilityLevel = self.char[abilityScalingType]
+  const multi = percent(subscript(abilityLevel, levelScalingMulti))
+  const flat = subscript(abilityLevel, levelScalingFlat)
+  const base = sum(prod(self.final[stat], multi), flat)
+  return customHeal(name, base, arg, ...extra)
 }
 
 export function entriesForChar(data_gen: CharacterDataGen): TagMapNodeEntries {

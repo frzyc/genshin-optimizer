@@ -1,7 +1,8 @@
-import type { NumNode, StrNode } from '@genshin-optimizer/pando'
+import { prod, type NumNode, type StrNode } from '@genshin-optimizer/pando'
 import type { TypeKey } from '@genshin-optimizer/sr-consts'
 import type { Read } from '.'
 import {
+  percent,
   reader,
   selfBuff,
   tag,
@@ -48,23 +49,36 @@ export function listingItem(t: Read, cond?: string | StrNode) {
   return tag(cond ?? t.ex ?? 'unique', t.tag)
 }
 
+/**
+ * Creates an array of TagMapNodeEntries representing a damage instance, and registers their formulas
+ * @param name Base name to be used as the key
+ * @param type Type of the damage
+ * @param AttackType Type of attack damage that is dealt
+ * @param splits Array of decimals that should add up to 1. Each entry represents the percentage of damage that hit deals, for multi-hit moves
+ * @param arg
+ * @param extra Buffs that should only apply to this damage instance
+ * @returns Array of TagMapNodeEntries representing the damage instance
+ */
 export function customDmg(
   name: string,
   type: TypeKey,
   attackType: AttackType,
   base: NumNode,
+  splits: number[] = [1],
   { team, cond = 'unique' }: FormulaArg = {},
   ...extra: TagMapNodeEntries
-) {
+): TagMapNodeEntries[] {
   const buff = team ? teamBuff : selfBuff
-  return registerFormula(
-    name,
-    team,
-    'dmg',
-    tag(cond, { attackType }),
-    buff.formula.base.add(base),
-    buff.prep.type.add(type),
-    ...extra
+  return splits.map((split, index) =>
+    registerFormula(
+      `${name}_${index}`,
+      team,
+      'dmg',
+      tag(cond, { attackType }),
+      buff.formula.base.add(prod(base, percent(split))),
+      buff.prep.type.add(type),
+      ...extra
+    )
   )
 }
 
@@ -79,6 +93,23 @@ export function customShield(
     name,
     team,
     'shield',
+    cond,
+    buff.formula.base.add(base),
+    ...extra
+  )
+}
+
+export function customHeal(
+  name: string,
+  base: NumNode,
+  { team, cond = 'unique' }: FormulaArg = {},
+  ...extra: TagMapNodeEntries
+): TagMapNodeEntries {
+  const buff = team ? teamBuff : selfBuff
+  return registerFormula(
+    name,
+    team,
+    'heal',
     cond,
     buff.formula.base.add(base),
     ...extra
