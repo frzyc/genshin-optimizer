@@ -10,6 +10,7 @@ import type { ICachedRelic } from '@genshin-optimizer/sr-db'
 import type { Read, Tag } from '@genshin-optimizer/sr-formula'
 import { convert, selfTag } from '@genshin-optimizer/sr-formula'
 import { useCalcContext, useDatabaseContext } from '@genshin-optimizer/sr-ui'
+import { getRelicMainStatVal } from '@genshin-optimizer/sr-util'
 import { CardThemed, DropdownButton } from '@genshin-optimizer/ui-common'
 import {
   Box,
@@ -90,24 +91,28 @@ export default function Optimize() {
     let bestIds = {} as Record<RelicSlotKey, string>
     function convertRelicToStats(relic: ICachedRelic) {
       const a = {
-        [relic.mainStatKey]: relic.mainStatVal,
+        [relic.mainStatKey]: getRelicMainStatVal(
+          relic.rarity,
+          relic.mainStatKey,
+          relic.level
+        ),
         ...Object.fromEntries(
           relic.substats.map((substat) => [substat.key, substat.value])
         ),
       }
       return a
     }
-    relicsBySlot.head.forEach((headRelic) =>
-      relicsBySlot.hand.forEach((handRelic) =>
-        relicsBySlot.feet.forEach((feetRelic) =>
-          relicsBySlot.body.forEach((bodyRelic) =>
-            relicsBySlot.sphere.forEach((sphereRelic) =>
+    relicsBySlot.head.forEach((headRelic) => {
+      const headStats = convertRelicToStats(headRelic)
+      relicsBySlot.hand.forEach((handRelic) => {
+        const handStats = convertRelicToStats(handRelic)
+        relicsBySlot.feet.forEach((feetRelic) => {
+          const feetStats = convertRelicToStats(feetRelic)
+          relicsBySlot.body.forEach((bodyRelic) => {
+            const bodyStats = convertRelicToStats(bodyRelic)
+            relicsBySlot.sphere.forEach((sphereRelic) => {
+              const sphereStats = convertRelicToStats(sphereRelic)
               relicsBySlot.rope.forEach((ropeRelic) => {
-                const headStats = convertRelicToStats(headRelic)
-                const handStats = convertRelicToStats(handRelic)
-                const feetStats = convertRelicToStats(feetRelic)
-                const bodyStats = convertRelicToStats(bodyRelic)
-                const sphereStats = convertRelicToStats(sphereRelic)
                 const ropeStats = convertRelicToStats(ropeRelic)
                 const val = compiled([
                   headStats,
@@ -129,11 +134,11 @@ export default function Optimize() {
                   }
                 }
               })
-            )
-          )
-        )
-      )
-    )
+            })
+          })
+        })
+      })
+    })
     console.log(best)
     console.log(bestIds)
     setBuild({
