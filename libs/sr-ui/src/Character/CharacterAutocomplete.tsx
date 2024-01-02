@@ -5,8 +5,8 @@ import type { GeneralAutocompleteOption } from '@genshin-optimizer/ui-common'
 import { GeneralAutocomplete } from '@genshin-optimizer/ui-common'
 import { objKeyMap } from '@genshin-optimizer/util'
 import { Skeleton } from '@mui/material'
-import { Suspense, useContext, useEffect, useMemo } from 'react'
-import { DatabaseContext } from '../Context'
+import { Suspense, useEffect, useMemo } from 'react'
+import { useDatabaseContext } from '../Context'
 
 type CharacterAutocompleteProps = {
   charKey: CharacterKey | ''
@@ -16,7 +16,7 @@ export function CharacterAutocomplete({
   charKey,
   setCharKey,
 }: CharacterAutocompleteProps) {
-  const { database } = useContext(DatabaseContext)
+  const { database } = useDatabaseContext()
   const [charListDirty, setCharListDirty] = useForceUpdate()
   useEffect(
     () => database.chars.followAny(() => setCharListDirty()),
