@@ -1,3 +1,4 @@
+import type { TypeKey } from '@genshin-optimizer/sr-consts'
 import {
   allCharacterKeys,
   allLightConeKeys,
@@ -6,15 +7,54 @@ import {
 
 const stats = [
   'hp',
+  'hp_',
   'atk',
+  'atk_',
   'def',
+  'def_',
   'spd',
+  'spd_',
   'crit_',
   'crit_dmg_',
-  'taunt',
+  'brEff_',
+  'eff_',
+  'eff_res_',
+  'enerRegen_',
+  'heal_',
+  'dmg_',
+  'resPen_',
 ] as const
 
-export const moves = ['basic', 'skill', 'ult', 'followup', 'dot'] as const
+export const bonusAbilities = [
+  'bonusAbility1',
+  'bonusAbility2',
+  'bonusAbility3',
+] as const
+
+export const statBoosts = [
+  'statBoost1',
+  'statBoost2',
+  'statBoost3',
+  'statBoost4',
+  'statBoost5',
+  'statBoost6',
+  'statBoost7',
+  'statBoost8',
+  'statBoost9',
+  'statBoost10',
+] as const
+
+export const types = [
+  'physical',
+  'quantum',
+  'lightning',
+  'ice',
+  'wind',
+  'fire',
+  'imaginary',
+] as const
+
+export const attackTypes = ['basic', 'skill', 'ult', 'followup', 'dot'] as const
 
 export const entryTypes = [
   'self',
@@ -38,9 +78,35 @@ export const srcs = [
   'custom',
 ] as const
 export const members = ['member0', 'member1', 'member2', 'member3'] as const
+export const presets = [
+  'preset0',
+  'preset1',
+  'preset2',
+  'preset3',
+  'preset4',
+  'preset5',
+  'preset6',
+  'preset7',
+  'preset8',
+  'preset9',
+] as const
 
 export type Stat = (typeof stats)[number]
-export type Move = (typeof moves)[number]
+export type BonusAbility = (typeof bonusAbilities)[number]
+export type StatBoost = (typeof statBoosts)[number]
+export type Type = (typeof types)[number]
+export type AttackType = (typeof attackTypes)[number]
 export type EntryType = (typeof entryTypes)[number]
 export type Source = (typeof srcs)[number]
 export type Member = (typeof members)[number]
+export type Preset = (typeof presets)[number]
+
+export const TypeKeyToListingType: Record<TypeKey, Type> = {
+  Physical: 'physical',
+  Quantum: 'quantum',
+  Lightning: 'lightning',
+  Ice: 'ice',
+  Wind: 'wind',
+  Fire: 'fire',
+  Imaginary: 'imaginary',
+}

@@ -1,6 +1,7 @@
 import type { NumNode } from '@genshin-optimizer/pando'
 import { cmpEq, cmpNE, constant } from '@genshin-optimizer/pando'
-import type { Source, Stat } from './listing'
+import { objKeyMap } from '@genshin-optimizer/util'
+import { bonusAbilities, statBoosts, type Source, type Stat } from './listing'
 import type { Tag } from './read'
 import { Read, reader, tag } from './read'
 
@@ -25,15 +26,15 @@ export function priorityTable(
 /**
  * Possible types of queries:
  *
- * *--------*-----------------------------------------------------*
- * |        |                      Affected By                    |
- * |  src:  *-----------*-----*----------*--------*------*--------*
- * |        | Team Buff | Art | Reaction | Weapon | Char | Custom |
- * *--------*-----------*-----*----------*--------*------*--------*
- * |  agg   |    YES    | YES |   YES    |  YES   | YES  |  YES   |
- * |  iso   |     -     |  -  |    -     |   -    | YES  |  YES   |
- * | static |     -     |  -  |    -     |   -    |  -   |   -    |
- * *--------*-----------*-----*----------*--------*------*--------*
+ * *--------*-----------------------------------------------------------*
+ * |        |                       Affected By                         |
+ * |  src:  *-----------*------*----------*-------------*------*--------*
+ * |        | Team Buff | Relic | Reaction | Light Cone | Char | Custom |
+ * *--------*-----------*-------*----------*------------*------*--------*
+ * |  agg   |    YES    |  YES  |   YES    |    YES     | YES  |  YES   |
+ * |  iso   |     -     |   -   |    -     |     -      | YES  |  YES   |
+ * | static |     -     |   -   |    -     |     -      |  -   |   -    |
+ * *--------*-----------*-------*----------*------------*------*--------*
  *
  * Entries below list queries in the following format:
  *
@@ -70,33 +71,47 @@ const prep: Desc = { src: undefined, accu: undefined }
 
 const stats: Record<Stat, Desc> = {
   hp: agg,
+  hp_: agg,
   atk: agg,
+  atk_: agg,
   def: agg,
+  def_: agg,
   spd: agg,
+  spd_: agg,
   crit_: agg,
   crit_dmg_: agg,
-  taunt: agg,
+  brEff_: agg,
+  eff_: agg,
+  eff_res_: agg,
+  enerRegen_: agg,
+  heal_: agg,
+  dmg_: agg,
+  resPen_: agg,
 } as const
 export const selfTag = {
-  stat: stats,
+  base: { atk: agg, def: agg, hp: agg, spd: agg },
+  premod: { ...stats, shield_: agg },
+  final: stats,
   char: {
     lvl: iso,
     ele: iso,
     ascension: iso,
     eidolon: iso,
+    basic: agg,
+    skill: agg,
+    ult: agg,
+    talent: agg,
+    ...objKeyMap(bonusAbilities, () => isoSum),
+    ...objKeyMap(statBoosts, () => isoSum),
   },
-  lightCone: { lvl: iso, ascension: iso, superimposition: iso },
+  lightCone: { lvl: iso, ascension: iso, superimpose: iso },
   common: {
-    isActive: iso,
-    weaponType: iso,
-    critMode: fixed,
-    special: iso,
-    cappedCritRate_: iso,
     count: isoSum,
-    eleCount: fixed,
+    path: iso,
+    critMode: fixed,
+    cappedCrit_: iso,
   },
   dmg: { out: fixed, critMulti: fixed },
-  prep: { ele: prep, move: prep },
   formula: {
     base: agg,
     listing: aggStr,
@@ -104,15 +119,18 @@ export const selfTag = {
     shield: prep,
     heal: prep,
   },
+  listing: {
+    formulas: aggStr,
+  },
 } as const
 export const enemyTag = {
   common: {
     lvl: fixed,
     inDmg: fixed,
-    preRes: agg,
-    postRes: fixed,
+    defRed_: agg,
+    defIgn: agg,
+    res: agg,
   },
-  cond: { amp: fixed, cata: fixed },
 } as const
 
 export function convert<V extends Record<string, Record<string, Desc>>>(

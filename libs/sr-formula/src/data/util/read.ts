@@ -14,16 +14,25 @@ import {
   reread,
 } from '@genshin-optimizer/pando'
 import { allElementalTypeKeys } from '@genshin-optimizer/sr-consts'
-import { entryTypes, members, moves, srcs, type Source } from './listing'
+import type { TagMapNodeEntry } from '.'
+import {
+  attackTypes,
+  entryTypes,
+  members,
+  presets,
+  srcs,
+  type Source,
+} from './listing'
 
 export const fixedTags = {
+  preset: presets,
   member: members,
   dst: members,
   et: entryTypes,
   src: srcs,
 
   elementalType: allElementalTypeKeys,
-  move: moves,
+  attackType: attackTypes,
 }
 export type Tag = {
   [key in keyof typeof fixedTags]?: (typeof fixedTags)[key][number] | null
@@ -46,7 +55,7 @@ export class Read extends TypedRead<Tag, Read> {
     return super.with('src', src)
   }
 
-  add(value: number | string | AnyNode): { tag: Tag; value: AnyNode } {
+  add(value: number | string | AnyNode): TagMapNodeEntry {
     return {
       tag: this.tag,
       value: typeof value === 'object' ? value : constant(value),
@@ -83,13 +92,13 @@ export class Read extends TypedRead<Tag, Read> {
 
   // Move
   get basicDmg(): Read {
-    return super.with('move', 'basic')
+    return super.with('attackType', 'basic')
   }
   get skillDmg(): Read {
-    return super.with('move', 'skill')
+    return super.with('attackType', 'skill')
   }
   get ultDmg(): Read {
-    return super.with('move', 'ult')
+    return super.with('attackType', 'ult')
   }
 }
 export function tag(v: number | NumNode, tag: Tag): TagOverride<NumNode>
@@ -109,7 +118,19 @@ export function tagVal(cat: keyof Tag): TagValRead {
 }
 
 export function tagStr(tag: Tag, ex?: any): string {
-  const { name, member, dst, et, src, q, qt, dt, move, ...remaining } = tag
+  const {
+    name,
+    preset,
+    member,
+    dst,
+    et,
+    src,
+    q,
+    qt,
+    elementalType,
+    attackType,
+    ...remaining
+  } = tag
 
   if (Object.keys(remaining).length) console.error(remaining)
 
@@ -130,6 +151,7 @@ export function tagStr(tag: Tag, ex?: any): string {
     result += str + ' '
   }
   required(name && `#${name}`)
+  required(preset)
   required(member)
   required(dst && `(${dst})`)
   required(src)
@@ -138,8 +160,8 @@ export function tagStr(tag: Tag, ex?: any): string {
   else if (qt) required(`${qt}.`)
   else if (q) required(`.${q}`)
 
-  optional(dt)
-  optional(move)
+  optional(elementalType)
+  optional(attackType)
   required(ex && `[${ex}]`)
   return result + '}'
 }
