@@ -8,6 +8,7 @@ import {
   percent,
   register,
   self,
+  selfBuff,
   target,
 } from '../util'
 import { dmg, entriesForChar, scalingParams, shield } from './util'
@@ -62,7 +63,7 @@ const dm = {
   },
 } as const
 
-const { final: _final, char } = self
+const { char } = self
 
 const e4_counter_dmgInc = cmpGE(
   char.eidolon,
@@ -95,7 +96,7 @@ const sheet = register(
     undefined,
     'followup',
     undefined,
-    self.formula.base.add(e4_counter_dmgInc)
+    selfBuff.formula.base.add(e4_counter_dmgInc)
   ),
   ...customDmg(
     'techniqueFreeze',

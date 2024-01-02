@@ -116,10 +116,10 @@ export function heal(
 }
 
 export function entriesForChar(data_gen: CharacterDataGen): TagMapNodeEntries {
-  const { final: _final, char } = self
-  const { eidolon, ascension } = char
+  const { char } = self
+  const { eidolon, ascension, lvl } = char
   // The "add" only applies to currLvl - 1, since "base" is stat at lvl 1
-  const readLvl = sum(constant(-1), self.char.lvl)
+  const readLvl = sum(constant(-1), lvl)
   const statBoosts = data_gen.skillTreeList
     .map((s) => s.levels?.[0]?.stats)
     .filter((s): s is SkillTreeNodeBonusStat => !!s)
