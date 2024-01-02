@@ -432,7 +432,7 @@
     "3": {
       "skillTypeAddLevel": {
         "skill": 2,
-        "undefined": 2
+        "talent": 2
       },
       "params": []
     },

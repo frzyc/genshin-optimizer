@@ -145,8 +145,10 @@ export default function characterData() {
             skillTypeAddLevel: Object.fromEntries(
               Object.entries(rankConfig.SkillAddLevelList).map(
                 ([skillId, levelBoost]) => [
-                  // AttackType is always defined on the skills that get buffed by eidolons
-                  DmAttackTypeMap[avatarSkillConfig[skillId][0].AttackType!],
+                  // AttackType fallback to Talent if not defined
+                  DmAttackTypeMap[
+                    avatarSkillConfig[skillId][0].AttackType || 'MazeNormal'
+                  ],
                   levelBoost,
                 ]
               )

@@ -475,7 +475,7 @@
     "3": {
       "skillTypeAddLevel": {
         "ult": 2,
-        "undefined": 2
+        "talent": 2
       },
       "params": []
     },
