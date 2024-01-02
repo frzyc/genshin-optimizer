@@ -19,7 +19,6 @@ import {
   getRandomElementFromArray,
   getRandomIntInclusive,
   range,
-  toPercent,
   unit,
 } from '@genshin-optimizer/util'
 
@@ -41,10 +40,7 @@ export function getRelicMainStatDisplayVal(
   statKey: RelicMainStatKey,
   level: number
 ) {
-  return roundStat(
-    toPercent(getRelicMainStatVal(rarity, statKey, level), statKey),
-    statKey
-  )
+  return roundStat(getRelicMainStatVal(rarity, statKey, level), statKey)
 }
 
 // TODO: Update this with proper corrected rolls
