@@ -474,5 +474,48 @@
       "crit_dmg_": 0.5000000004656613,
       "taunt": 150
     }
-  ]
+  ],
+  "rankMap": {
+    "1": {
+      "skillTypeAddLevel": {},
+      "params": [
+        0.25000000023283064,
+        0.5000000004656613
+      ]
+    },
+    "2": {
+      "skillTypeAddLevel": {},
+      "params": [
+        0.02000000001862645,
+        27
+      ]
+    },
+    "3": {
+      "skillTypeAddLevel": {
+        "skill": 2,
+        "undefined": 2
+      },
+      "params": []
+    },
+    "4": {
+      "skillTypeAddLevel": {},
+      "params": [
+        4
+      ]
+    },
+    "5": {
+      "skillTypeAddLevel": {
+        "basic": 1,
+        "ult": 2
+      },
+      "params": []
+    },
+    "6": {
+      "skillTypeAddLevel": {},
+      "params": [
+        0.10000000009313226,
+        3
+      ]
+    }
+  }
 }

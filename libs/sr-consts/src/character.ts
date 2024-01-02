@@ -31,16 +31,16 @@ export const nonTrailblazerCharacterKeys = [
 export type NonTrailblazerCharacterKey =
   (typeof nonTrailblazerCharacterKeys)[number]
 
-export const damageType = [
+export const allTypeKeys = [
   'Physical',
   'Quantum',
-  'Thunder',
+  'Lightning',
   'Ice',
   'Wind',
   'Fire',
   'Imaginary',
 ] as const
-export type DamageTypeKey = (typeof damageType)[number]
+export type TypeKey = (typeof allTypeKeys)[number]
 
 export const path = [
   'Erudition',
