@@ -121,7 +121,7 @@ export function tagStr(tag: Tag, ex?: any): string {
     result += str + ' '
     includedRequired = true
   }
-  function optional(str: string | undefined | null) {
+  function _optional(str: string | undefined | null) {
     if (!str) return
     if (includedRequired && !includedBar) {
       includedBar = true
