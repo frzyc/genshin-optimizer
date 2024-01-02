@@ -87,7 +87,7 @@ export function relicsData(
   }
   return [
     // Opt-in for artifact buffs, instead of enabling it by default to reduce `read` traffic
-    reader.src('relic').reread(reader.src('relic')),
+    reader.src('agg').reread(reader.src('relic')),
 
     // Add `src:dyn` between the stat and the buff so that we can `detach` them easily
     reader.withTag({ src: 'relic', qt: 'premod' }).reread(reader.src('dyn')),

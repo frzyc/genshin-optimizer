@@ -11,10 +11,10 @@ const data: TagMapNodeEntries = [
   reader.withTag({ src: 'iso', et: 'self' }).reread(reader.src('custom')),
   reader.withTag({ src: 'agg', et: 'self' }).reread(reader.src('custom')),
 
-  // convert src:char, lightCone, relic to src:agg for accumulation
-  reader.src('agg').add(reader.sum.src('char')),
-  reader.src('agg').add(reader.sum.src('lightCone')),
-  reader.src('agg').add(reader.sum.src('relic')),
+  // convert src:char, lightCone to src:agg for accumulation
+  // src: relic is reread in src/util.ts:relicsData()
+  reader.src('agg').reread(reader.src('char')),
+  reader.src('agg').reread(reader.src('lightCone')),
 
   // Final <= Premod <= Base
   reader
