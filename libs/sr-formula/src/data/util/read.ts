@@ -25,7 +25,7 @@ import {
 } from './listing'
 
 export const fixedTags = {
-  presets: presets,
+  preset: presets,
   member: members,
   dst: members,
   et: entryTypes,
@@ -115,6 +115,55 @@ export function tag(
 }
 export function tagVal(cat: keyof Tag): TagValRead {
   return baseTagVal(cat)
+}
+
+export function tagStr(tag: Tag, ex?: any): string {
+  const {
+    name,
+    preset,
+    member,
+    dst,
+    et,
+    src,
+    q,
+    qt,
+    type,
+    attackType,
+    ...remaining
+  } = tag
+
+  if (Object.keys(remaining).length) console.error(remaining)
+
+  let result = '{ ',
+    includedRequired = false,
+    includedBar = false
+  function required(str: string | undefined | null) {
+    if (!str) return
+    result += str + ' '
+    includedRequired = true
+  }
+  function optional(str: string | undefined | null) {
+    if (!str) return
+    if (includedRequired && !includedBar) {
+      includedBar = true
+      result += '| '
+    }
+    result += str + ' '
+  }
+  required(name && `#${name}`)
+  required(preset)
+  required(member)
+  required(dst && `(${dst})`)
+  required(src)
+  required(et)
+  if (qt && q) required(`${qt}.${q}`)
+  else if (qt) required(`${qt}.`)
+  else if (q) required(`.${q}`)
+
+  optional(type)
+  optional(attackType)
+  required(ex && `[${ex}]`)
+  return result + '}'
 }
 
 export const reader = new Read({}, undefined)
