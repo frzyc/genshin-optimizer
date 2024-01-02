@@ -121,7 +121,8 @@ export function tagStr(tag: Tag, ex?: any): string {
     result += str + ' '
     includedRequired = true
   }
-  function _optional(str: string | undefined | null) {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  function optional(str: string | undefined | null) {
     if (!str) return
     if (includedRequired && !includedBar) {
       includedBar = true
