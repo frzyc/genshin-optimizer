@@ -109,7 +109,7 @@ export function tagVal(cat: keyof Tag): TagValRead {
 }
 
 export function tagStr(tag: Tag, ex?: any): string {
-  const { name, member, dst, et, src, q, qt, ...remaining } = tag
+  const { name, member, dst, et, src, q, qt, dt, move, ...remaining } = tag
 
   if (Object.keys(remaining).length) console.error(remaining)
 
@@ -121,7 +121,6 @@ export function tagStr(tag: Tag, ex?: any): string {
     result += str + ' '
     includedRequired = true
   }
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   function optional(str: string | undefined | null) {
     if (!str) return
     if (includedRequired && !includedBar) {
@@ -139,6 +138,8 @@ export function tagStr(tag: Tag, ex?: any): string {
   else if (qt) required(`${qt}.`)
   else if (q) required(`.${q}`)
 
+  optional(dt)
+  optional(move)
   required(ex && `[${ex}]`)
   return result + '}'
 }
