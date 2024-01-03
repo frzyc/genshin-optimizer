@@ -31,7 +31,7 @@ export const nonTrailblazerCharacterKeys = [
 export type NonTrailblazerCharacterKey =
   (typeof nonTrailblazerCharacterKeys)[number]
 
-export const allTypeKeys = [
+export const allElementalTypeKeys = [
   'Physical',
   'Quantum',
   'Lightning',
@@ -40,7 +40,7 @@ export const allTypeKeys = [
   'Fire',
   'Imaginary',
 ] as const
-export type TypeKey = (typeof allTypeKeys)[number]
+export type ElementalType = (typeof allElementalTypeKeys)[number]
 
 export const allPathKeys = [
   'Erudition',

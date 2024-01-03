@@ -2,11 +2,11 @@ import {
   allEidolonKeys,
   type AbilityKey,
   type EidolonKey,
+  type ElementalType,
   type NonTrailblazerCharacterKey,
   type PathKey,
   type RarityKey,
   type StatKey,
-  type TypeKey,
 } from '@genshin-optimizer/sr-consts'
 import type { Anchor } from '@genshin-optimizer/sr-dm'
 import {
@@ -58,7 +58,7 @@ type SkillTypeAddLevel = Partial<
 >
 export type CharacterDataGen = {
   rarity: RarityKey
-  damageType: TypeKey
+  damageType: ElementalType
   path: PathKey
   ascension: Promotion[]
   skillTreeList: SkillTree[]
