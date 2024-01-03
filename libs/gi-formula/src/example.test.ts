@@ -6,8 +6,9 @@ import {
   compileTagMapValues,
   detach,
   flatten,
+  setDebugMode,
 } from '@genshin-optimizer/pando'
-import { keys, values } from './data'
+import { entries, keys, values } from './data'
 import type { Tag, TagMapNodeEntries } from './data/util'
 import {
   convert,
@@ -28,6 +29,10 @@ import {
   withMember,
 } from './util'
 import { genshinCalculatorWithEntries } from './index'
+
+setDebugMode(true)
+// This is generally unnecessary, but without it, some tags in `DebugCalculator` will be missing
+Object.assign(values, compileTagMapValues(keys, entries))
 
 // This test acts as an example usage. It's mostly sufficient to test that the code
 // doesn't crash. Any test for correct values should go to `correctness` tests.
@@ -248,7 +253,7 @@ describe('example', () => {
     compiled([{ atk: 10 }, { atk_: 0.5 }])
   })
 
-  test.skip('debug formula', () => {
+  test.only('debug formula', () => {
     // Pick formula
     const normal0 = calc
       .listFormulas(member1.listing.formulas)
@@ -262,7 +267,7 @@ describe('example', () => {
     )
 
     // Print calculation steps
-    console.log(debugCalc.debug(normal0))
+    console.log(debugCalc.debugCompute(normal0).join('\n'))
   })
 })
 describe('weapon-only example', () => {
