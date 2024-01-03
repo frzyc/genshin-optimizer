@@ -1,11 +1,9 @@
-import { useForceUpdate } from '@genshin-optimizer/react-util'
 import type { CharacterKey } from '@genshin-optimizer/sr-consts'
 import { allCharacterKeys } from '@genshin-optimizer/sr-consts'
 import type { GeneralAutocompleteOption } from '@genshin-optimizer/ui-common'
 import { GeneralAutocomplete } from '@genshin-optimizer/ui-common'
-import { objKeyMap } from '@genshin-optimizer/util'
 import { Skeleton } from '@mui/material'
-import { Suspense, useContext, useEffect, useMemo } from 'react'
+import { Suspense, useCallback, useContext, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { DatabaseContext } from '../Context'
 
@@ -19,30 +17,14 @@ export function CharacterAutocomplete({
 }: CharacterAutocompleteProps) {
   const { t } = useTranslation(['character', 'charNames_gen'])
   const { database } = useContext(DatabaseContext)
-  const [charListDirty, setCharListDirty] = useForceUpdate()
-  useEffect(
-    () => database.chars.followAny(() => setCharListDirty()),
-    [database, setCharListDirty]
-  )
-  const [charFaveDirty, setCharFaveDirty] = useForceUpdate()
-  useEffect(
-    () => database.charMeta.followAny(() => setCharFaveDirty()),
-    [database, setCharFaveDirty]
+  const charInDb = useCallback(
+    (charKey: CharacterKey) => !!database.chars.get(charKey),
+    [database.chars]
   )
 
-  const charDbMap = useMemo(
-    () => charListDirty && objKeyMap(database.chars.keys, () => true),
-    [charListDirty, database.chars.keys]
-  )
-
-  const charFavoriteMap = useMemo(
-    () =>
-      charFaveDirty &&
-      objKeyMap(
-        database.charMeta.keys,
-        (k) => database.charMeta.get(k).favorite
-      ),
-    [charFaveDirty, database.charMeta]
+  const charIsFavorite = useCallback(
+    (charKey: CharacterKey) => database.charMeta.get(charKey).favorite,
+    [database.charMeta]
   )
 
   const options: GeneralAutocompleteOption<CharacterKey | ''>[] = useMemo(
@@ -55,12 +37,12 @@ export function CharacterAutocomplete({
         (key): GeneralAutocompleteOption<CharacterKey | ''> => ({
           key,
           label: t(`charNames_gen:${key}`),
-          favorite: charFavoriteMap[key],
-          color: charDbMap[key] ? undefined : 'secondary',
+          favorite: charIsFavorite(key),
+          color: charInDb(key) ? undefined : 'secondary',
         })
       ),
     ],
-    [charDbMap, charFavoriteMap, t]
+    [charInDb, charIsFavorite, t]
   )
 
   return (
