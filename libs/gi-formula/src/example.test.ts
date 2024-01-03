@@ -253,7 +253,7 @@ describe('example', () => {
     compiled([{ atk: 10 }, { atk_: 0.5 }])
   })
 
-  test.only('debug formula', () => {
+  test.skip('debug formula', () => {
     // Pick formula
     const normal0 = calc
       .listFormulas(member1.listing.formulas)
