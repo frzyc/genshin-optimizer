@@ -3,6 +3,7 @@ import { Calculator as Base, calculation } from '@genshin-optimizer/pando'
 import { assertUnreachable } from '@genshin-optimizer/util'
 import type { Read, Tag } from './data/util'
 import { reader } from './data/util'
+import { DebugCalculator } from './debug'
 
 const { arithmetic } = calculation
 
@@ -89,6 +90,9 @@ export class Calculator extends Base<CalcMeta> {
     return this.get(read.tag)
       .filter((x) => x.val)
       .map(({ val, meta }) => reader.withTag(meta.tag!)[val as Read['accu']])
+  }
+  toDebug(): DebugCalculator {
+    return new DebugCalculator(this)
   }
 }
 export function res(x: number): number {
