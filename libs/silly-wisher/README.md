@@ -27,3 +27,5 @@ Now the splash and portrait files should be in
 `asset-ripper/Ripped/ExportedProject/Assets/Texture2D`. The language assets
 file should be in
 `asset-ripper/Ripped/ExportedProject/Assets/Resources/I2Languages.asset`.
+
+We keep the portraits as 256x256 and the splashes as 512x512.
