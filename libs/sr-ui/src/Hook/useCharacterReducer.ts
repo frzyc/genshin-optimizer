@@ -1,7 +1,7 @@
 import type { CharacterKey } from '@genshin-optimizer/sr-consts'
 import type { ICachedSroCharacter } from '@genshin-optimizer/sr-db'
-import { useCallback, useContext } from 'react'
-import { DatabaseContext } from '../Context'
+import { useCallback } from 'react'
+import { useDatabaseContext } from '../Context'
 
 type characterTeamAction = {
   type: 'team'
@@ -13,7 +13,7 @@ export type characterReducerAction =
   | Partial<ICachedSroCharacter>
 
 export function useCharacterReducer(characterKey: CharacterKey | '') {
-  const { database } = useContext(DatabaseContext)
+  const { database } = useDatabaseContext()
 
   return useCallback(
     (action: characterReducerAction): void => {
