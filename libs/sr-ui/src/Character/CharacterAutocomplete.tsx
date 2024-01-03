@@ -17,7 +17,7 @@ export function CharacterAutocomplete({
   charKey,
   setCharKey,
 }: CharacterAutocompleteProps) {
-  const { t } = useTranslation('character')
+  const { t } = useTranslation(['character', 'charNames_gen'])
   const { database } = useContext(DatabaseContext)
   const [charListDirty, setCharListDirty] = useForceUpdate()
   useEffect(
@@ -49,12 +49,12 @@ export function CharacterAutocomplete({
     () => [
       {
         key: '',
-        label: t('autocomplete.none'), // TODO
+        label: t('character:autocomplete.none'),
       },
       ...allCharacterKeys.map(
         (key): GeneralAutocompleteOption<CharacterKey | ''> => ({
           key,
-          label: key, // TODO
+          label: t(`charNames_gen:${key}`),
           favorite: charFavoriteMap[key],
           color: charDbMap[key] ? undefined : 'secondary',
         })
