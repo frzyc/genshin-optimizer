@@ -19,3 +19,4 @@
 - [ ] For front-end changes, I have updated the corresponding English translations.
 - [ ] Ran `yarn run mini-ci` locally to validate format + lint.
 - [ ] If there were format issues, I ran `nx format write` to resolve them automatically.
+- [ ] If I have added a new library or app, I have updated the deployment scripts to ignore changes as needed

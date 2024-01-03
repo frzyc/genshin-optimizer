@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
     inputs:
       frontend_name:
-        description: 'Frontend type to build. Can be `frontend`, `gi-frontend` or `sr-frontend`'
+        description: 'Frontend type to build. Can be `frontend`, or `sr-frontend`'
         type: string
       repo_full_name:
         description: 'Full repository name to build from.'
@@ -29,7 +29,7 @@ on:
   workflow_call:
     inputs:
       frontend_name:
-        description: 'Frontend type to build. Can be `frontend`, `gi-frontend` or `sr-frontend`'
+        description: 'Frontend type to build. Can be `frontend`, or `sr-frontend`'
         type: string
       repo_full_name:
         description: 'Full repository name to build from.'
@@ -57,7 +57,7 @@ jobs:
     timeout-minutes: 15
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           repository: ${{ inputs.repo_full_name }}
           ref: ${{ inputs.ref }}
@@ -95,14 +95,14 @@ jobs:
           NX_SHOW_DEV_COMPONENTS="${{inputs.show_dev_components}}" \
           yarn run nx run ${{inputs.frontend_name}}:build-webpack:production --base-href=""
       - name: Build genshin-optimizer (Vite)
-        if: inputs.frontend_name == 'gi-frontend' || inputs.frontend_name == 'sr-frontend'
+        if: inputs.frontend_name == 'sr-frontend'
         run: |
           NX_URL_GITHUB_GO_CURRENT_VERSION="https://github.com/${{ inputs.repo_full_name }}/commit/$(git rev-parse HEAD)" \
           NX_DAEMON="false" \
           NX_SHOW_DEV_COMPONENTS="${{inputs.show_dev_components}}" \
           yarn run nx run ${{inputs.frontend_name}}:build-vite:production --base-href=""
       - name: Checkout external gh-pages
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           repository: ${{ inputs.pr_repo }}
           ssh-key: ${{ secrets.PR_REPO_SSH_KEY }}
