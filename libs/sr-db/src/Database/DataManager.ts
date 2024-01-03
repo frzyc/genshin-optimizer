@@ -18,12 +18,10 @@ export class DataManager<
 > {
   exportSROD(sro: Partial<ISrObjectDescription & ISroDatabase>) {
     const key = this.dataKey.replace('sro_', '')
-    sro[key] = (Object.entries(this.data) as [CacheKey, CacheValue][]).map(
-      ([id, value]) => ({
-        ...this.deCache(value),
-        id,
-      })
-    )
+    sro[key] = Object.entries(this.data).map(([id, value]) => ({
+      ...this.deCache(value),
+      id,
+    }))
   }
   importSROD(sro: ISrObjectDescription & ISroDatabase, _result: ImportResult) {
     const entries = sro[this.dataKey]
