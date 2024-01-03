@@ -15,7 +15,7 @@ export function useLightCone(lightConeId: string | '' | undefined = '') {
       lightConeId
         ? database.lightCones.follow(
             lightConeId,
-            (_k, r, v) => r === 'update' && setLightCone(v)
+            (_k, r, v) => (r === 'update' || r === 'remove') && setLightCone(v)
           )
         : undefined,
     [lightConeId, setLightCone, database]
