@@ -1,8 +1,8 @@
-import { useContext, useEffect, useState } from 'react'
-import { DatabaseContext } from '../Context'
+import { useEffect, useState } from 'react'
+import { useDatabaseContext } from '../Context'
 
 export function useLightCone(lightConeId: string | '' | undefined = '') {
-  const { database } = useContext(DatabaseContext)
+  const { database } = useDatabaseContext()
   const [lightCone, setLightCone] = useState(
     database.lightCones.get(lightConeId)
   )
