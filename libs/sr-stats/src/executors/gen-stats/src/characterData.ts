@@ -1,3 +1,5 @@
+// TODO: We need a different extrapolateFloat for Star Rail
+// https://github.com/users/frzyc/projects/2/views/1?pane=issue&itemId=48937466
 import { extrapolateFloat } from '@genshin-optimizer/pipeline'
 import {
   allEidolonKeys,
