@@ -18,7 +18,6 @@ import {
   team,
   userBuff,
 } from './data/util'
-import { DebugCalculator } from './debug'
 import rawData from './example.test.json'
 import {
   artifactsData,
@@ -253,7 +252,7 @@ describe('example', () => {
     compiled([{ atk: 10 }, { atk_: 0.5 }])
   })
 
-  test.skip('debug formula', () => {
+  test.only('debug formula', () => {
     // Pick formula
     const normal0 = calc
       .listFormulas(member1.listing.formulas)
