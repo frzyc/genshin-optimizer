@@ -1,3 +1,4 @@
+import { extrapolateFloat } from '@genshin-optimizer/pipeline'
 import {
   allEidolonKeys,
   type AbilityKey,
@@ -81,7 +82,7 @@ export default function characterData() {
           const skillParamList = skillId
             ? transposeArray(
                 avatarSkillConfig[skillId]!.map(({ ParamList }) =>
-                  ParamList.map(({ Value }) => Value)
+                  ParamList.map(({ Value }) => extrapolateFloat(Value))
                 )
               )
             : undefined
@@ -90,7 +91,7 @@ export default function characterData() {
             if (!StatusAddList.length) return {}
             const stats = Object.fromEntries(
               StatusAddList.map(({ PropertyType, Value }) => {
-                return [statKeyMap[PropertyType], Value.Value]
+                return [statKeyMap[PropertyType], extrapolateFloat(Value.Value)]
               })
             ) as Partial<Record<StatKey, number>>
             return { stats }
@@ -121,21 +122,21 @@ export default function characterData() {
             BaseAggro,
           }) => ({
             atk: {
-              base: AttackBase.Value,
-              add: AttackAdd.Value,
+              base: extrapolateFloat(AttackBase.Value),
+              add: extrapolateFloat(AttackAdd.Value),
             },
             def: {
-              base: DefenceBase.Value,
-              add: DefenceAdd.Value,
+              base: extrapolateFloat(DefenceBase.Value),
+              add: extrapolateFloat(DefenceAdd.Value),
             },
             hp: {
-              base: HPBase.Value,
-              add: HPAdd.Value,
+              base: extrapolateFloat(HPBase.Value),
+              add: extrapolateFloat(HPAdd.Value),
             },
-            spd: SpeedBase.Value,
-            crit_: CriticalChance.Value,
-            crit_dmg_: CriticalDamage.Value,
-            taunt: BaseAggro.Value,
+            spd: extrapolateFloat(SpeedBase.Value),
+            crit_: extrapolateFloat(CriticalChance.Value),
+            crit_dmg_: extrapolateFloat(CriticalDamage.Value),
+            taunt: extrapolateFloat(BaseAggro.Value),
           })
         )
 
@@ -153,7 +154,7 @@ export default function characterData() {
                 ]
               )
             ) as SkillTypeAddLevel,
-            params: rankConfig.Param.map((p) => p.Value),
+            params: rankConfig.Param.map((p) => extrapolateFloat(p.Value)),
           }
         })
 
