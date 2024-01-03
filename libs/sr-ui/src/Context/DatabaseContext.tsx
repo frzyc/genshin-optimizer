@@ -1,14 +1,25 @@
 import { DBLocalStorage, SandboxStorage } from '@genshin-optimizer/database'
 import { SroDatabase } from '@genshin-optimizer/sr-db'
 import type { ReactNode } from 'react'
-import { createContext, useCallback, useMemo, useState } from 'react'
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useMemo,
+  useState,
+} from 'react'
 
 type DatabaseContextObj = {
   databases: SroDatabase[]
   setDatabase: (index: number, db: SroDatabase) => void
   database: SroDatabase
 }
-export const DatabaseContext = createContext({} as DatabaseContextObj)
+
+const DatabaseContext = createContext({} as DatabaseContextObj)
+
+export function useDatabaseContext() {
+  return useContext(DatabaseContext)
+}
 
 export function DatabaseProvider({ children }: { children: ReactNode }) {
   const dbIndex = parseInt(localStorage.getItem('sro_dbIndex') || '1')
