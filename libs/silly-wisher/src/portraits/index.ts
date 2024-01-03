@@ -7,10 +7,12 @@ import Aloy from './portrait_aloy.png'
 import Amber from './portrait_amber.png'
 import KamisatoAyaka from './portrait_ayaka.png'
 import KamisatoAyato from './portrait_ayato.png'
+import Baizhu from './portrait_baizhu.png'
 import Barbara from './portrait_barbara.png'
 import Beidou from './portrait_beidou.png'
 import Bennett from './portrait_bennett.png'
 import Candace from './portrait_candace.png'
+import Charlotte from './portrait_charlotte.png'
 import Chongyun from './portrait_chongyun.png'
 import Collei from './portrait_collei.png'
 import Cyno from './portrait_cyno.png'
@@ -21,23 +23,31 @@ import Dori from './portrait_dori.png'
 import Eula from './portrait_eula.png'
 import Faruzan from './portrait_faruzan.png'
 import Fischl from './portrait_fischl.png'
+import Freminet from './portrait_freminet.png'
+import Furina from './portrait_furina.png'
 import Ganyu from './portrait_ganyu.png'
 import Gorou from './portrait_gorou.png'
 import HuTao from './portrait_hutao.png'
 import AratakiItto from './portrait_itto.png'
 import Jean from './portrait_jean.png'
 import Kaeya from './portrait_kaeya.png'
+import Kaveh from './portrait_kaveh.png'
 import KaedeharaKazuha from './portrait_kazuha.png'
 import Keqing from './portrait_keqing.png'
+import Kirara from './portrait_kirara.png'
 import Klee from './portrait_klee.png'
 import SangonomiyaKokomi from './portrait_kokomi.png'
 import KukiShinobu from './portrait_kuki.png'
 import Layla from './portrait_layla.png'
 import Lisa from './portrait_lisa.png'
+import Lynette from './portrait_lynette.png'
+import Lyney from './portrait_lyney.png'
 import Mika from './portrait_mika.png'
 import TravelerF from './portrait_lumine.png'
 import Mona from './portrait_mona.png'
 import Nahida from './portrait_nahida.png'
+import Navia from './portrait_navia.png'
+import Neuvillette from './portrait_neuvillette.png'
 import Nilou from './portrait_nilou.png'
 import Ningguang from './portrait_ningguang.png'
 import Noelle from './portrait_noelle.png'
@@ -54,6 +64,7 @@ import Thoma from './portrait_thoma.png'
 import Tighnari from './portrait_tightnari.png'
 import Venti from './portrait_venti.png'
 import Wanderer from './portrait_wanderer.png'
+import Wriothesley from './portrait_wriothesley.png'
 import Xiangling from './portrait_xiangling.png'
 import Xiao from './portrait_xiao.png'
 import Xingqiu from './portrait_xingqiu.png'
@@ -72,10 +83,12 @@ const data = {
   Aloy,
   Amber,
   AratakiItto,
+  Baizhu,
   Barbara,
   Beidou,
   Bennett,
   Candace,
+  Charlotte,
   Chongyun,
   Collei,
   Cyno,
@@ -86,23 +99,31 @@ const data = {
   Eula,
   Faruzan,
   Fischl,
+  Freminet,
+  Furina,
   Ganyu,
   Gorou,
   HuTao,
   Jean,
   KaedeharaKazuha,
   Kaeya,
+  Kaveh,
   KamisatoAyaka,
   KamisatoAyato,
   Keqing,
+  Kirara,
   Klee,
   KujouSara,
   KukiShinobu,
   Layla,
   Lisa,
+  Lynette,
+  Lyney,
   Mika,
   Mona,
   Nahida,
+  Navia,
+  Neuvillette,
   Nilou,
   Ningguang,
   Noelle,
@@ -122,6 +143,7 @@ const data = {
   TravelerM,
   Venti,
   Wanderer,
+  Wriothesley,
   Xiangling,
   Xiao,
   Xingqiu,

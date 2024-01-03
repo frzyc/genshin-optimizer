@@ -6,10 +6,12 @@ import Alhaitham from './splash_alhaitham.png'
 import Amber from './splash_amber.png'
 import KamisatoAyaka from './splash_ayaka.png'
 import KamisatoAyato from './splash_ayato.png'
+import Baizhu from './splash_baizhu.png'
 import Barbara from './splash_barbara.png'
 import Beidou from './splash_beidou.png'
 import Bennett from './splash_bennett.png'
 import Candace from './splash_candace.png'
+import Charlotte from './splash_charlotte.png'
 import Chongyun from './splash_chongyun.png'
 import Collei from './splash_collei.png'
 import Cyno from './splash_cyno.png'
@@ -20,6 +22,8 @@ import Dori from './splash_dori.png'
 import Eula from './splash_eula.png'
 import Faruzan from './splash_faruzan.png'
 import Fischl from './splash_fischl.png'
+import Freminet from './splash_freminet.png'
+import Furina from './splash_furina.png'
 import Ganyu from './splash_ganyu.png'
 import Gorou from './splash_gorou.png'
 import ShikanoinHeizou from './splash_heizou.png'
@@ -27,17 +31,23 @@ import HuTao from './splash_hutao.png'
 import AratakiItto from './splash_itto.png'
 import Jean from './splash_jean.png'
 import Kaeya from './splash_kaeya.png'
+import Kaveh from './splash_kaveh.png'
 import KaedeharaKazuha from './splash_kazuha.png'
 import Keqing from './splash_keqing.png'
+import Kirara from './splash_kirara.png'
 import Klee from './splash_klee.png'
 import SangonomiyaKokomi from './splash_kokomi.png'
 import KukiShinobu from './splash_kuki.png'
 import Layla from './splash_layla.png'
 import Lisa from './splash_lisa.png'
+import Lynette from './splash_lynette.png'
+import Lyney from './splash_lyney.png'
 import Mika from './splash_mika.png'
 import TravelerF from './splash_lumine.png'
 import Mona from './splash_mona.png'
 import Nahida from './splash_nahida.png'
+import Navia from './splash_navia.png'
+import Neuvillette from './splash_neuvillette.png'
 import Nilou from './splash_nilou.png'
 import Ningguang from './splash_ningguang.png'
 import Noelle from './splash_noelle.png'
@@ -54,6 +64,7 @@ import Thoma from './splash_thoma.png'
 import Tighnari from './splash_tighnari.png'
 import Venti from './splash_venti.png'
 import Wanderer from './splash_wanderer.png'
+import Wriothesley from './splash_wriothesley.png'
 import Xiangling from './splash_xiangling.png'
 import Xiao from './splash_xiao.png'
 import Xingqiu from './splash_xingqiu.png'
@@ -71,10 +82,12 @@ const charCards = {
   Alhaitham,
   Amber,
   AratakiItto,
+  Baizhu,
   Barbara,
   Beidou,
   Bennett,
   Candace,
+  Charlotte,
   Chongyun,
   Collei,
   Cyno,
@@ -85,6 +98,8 @@ const charCards = {
   Eula,
   Faruzan,
   Fischl,
+  Freminet,
+  Furina,
   Ganyu,
   Gorou,
   HuTao,
@@ -93,15 +108,21 @@ const charCards = {
   Kaeya,
   KamisatoAyaka,
   KamisatoAyato,
+  Kaveh,
   Keqing,
+  Kirara,
   Klee,
   KujouSara,
   KukiShinobu,
   Layla,
   Lisa,
+  Lynette,
+  Lyney,
   Mika,
   Mona,
   Nahida,
+  Navia,
+  Neuvillette,
   Nilou,
   Ningguang,
   Noelle,
@@ -121,6 +142,7 @@ const charCards = {
   TravelerM,
   Venti,
   Wanderer,
+  Wriothesley,
   Xiangling,
   Xiao,
   Xingqiu,

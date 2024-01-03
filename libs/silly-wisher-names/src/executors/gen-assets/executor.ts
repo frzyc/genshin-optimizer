@@ -1,4 +1,5 @@
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'fs'
+import * as YAML from 'yaml'
 import type { GenAssetsExecutorSchema } from './schema'
 
 export const PROJROOT_PATH = `${process.env['NX_WORKSPACE_ROOT']}/libs/silly-wisher-names`
@@ -18,6 +19,7 @@ const languages = [
   'pt',
   'ru',
   'vi',
+  'pl',
   'tr',
 ] as const
 type LangKey = (typeof languages)[number]
@@ -38,6 +40,7 @@ const swKeyMap = {
   beidou: 'Beidou',
   bennett: 'Bennett',
   candace: 'Candace',
+  charlotte: 'Charlotte',
   chongyun: 'Chongyun',
   collei: 'Collei',
   cyno: 'Cyno',
@@ -48,24 +51,32 @@ const swKeyMap = {
   eula: 'Eula',
   faruzan: 'Faruzan',
   fischl: 'Fischl',
+  freminet: 'Freminet',
+  furina: 'Furina',
   ganyu: 'Ganyu',
   gorou: 'Gorou',
   hutao: 'HuTao',
   jean: 'Jean',
   kazuha: 'KaedeharaKazuha',
   kaeya: 'Kaeya',
+  kaveh: 'Kaveh',
   ayaka: 'KamisatoAyaka',
   ayato: 'KamisatoAyato',
   keqing: 'Keqing',
+  kirara: 'Kirara',
   klee: 'Klee',
   sara: 'KujouSara',
   kuki: 'KukiShinobu',
   layla: 'Layla',
   lisa: 'Lisa',
+  lynette: 'Lynette',
+  lyney: 'Lyney',
   lumine: 'TravelerF',
   mika: 'Mika',
   mona: 'Mona',
   nahida: 'Nahida',
+  navia: 'Navia',
+  neuvillette: 'Neuvillette',
   nilou: 'Nilou',
   ningguang: 'Ningguang',
   noelle: 'Noelle',
@@ -83,6 +94,7 @@ const swKeyMap = {
   tighnari: 'Tighnari',
   venti: 'Venti',
   wanderer: 'Wanderer',
+  wriothesley: 'Wriothesley',
   xiangling: 'Xiangling',
   xiao: 'Xiao',
   xingqiu: 'Xingqiu',
@@ -96,60 +108,40 @@ const swKeyMap = {
   zhongli: 'Zhongli',
 } as const
 
+interface AssetSource {
+  mTerms: CharacterTerm[]
+}
+
+interface CharacterTerm {
+  Term: string
+  TermType: number
+  Description: string
+  Languages: string[]
+}
+
 export default async function runExecutor(_options: GenAssetsExecutorSchema) {
-  // Load translation files from POEditor into the assets folder.
-  const namesFilePath = `${PROJROOT_PATH}/Translated/CharMemNames.csv`
+  // Load translation files from Silly Wisher APK into the assets folder.
+  const namesFilePath = `${PROJROOT_PATH}/Translated/I2Languages.asset`
   const localeDir = `${PROJROOT_PATH}/assets/locales/`
 
-  const raw = readFileSync(namesFilePath).toString()
+  const raw = YAML.parse(readFileSync(namesFilePath).toString())
+  const source = raw.MonoBehaviour.mSource as AssetSource
 
-  const lines = raw.split('\r\n')
+  const characterNames = Object.fromEntries(
+    source.mTerms
+      .filter((term) => term.Term.startsWith('CharMemNames'))
+      .map((term) => [term.Term.split('/').at(1), term.Languages] as const)
+      .filter(([shortName, _]) => shortName && shortName in swKeyMap)
+      .map(
+        ([shortName, languages]) =>
+          [swKeyMap[shortName as keyof typeof swKeyMap], languages] as const
+      )
+  )
 
-  lines.shift() // First line is langauge heading
-  lines.pop() // Empty last line
-  lines.forEach((line) => {
-    const [
-      skey,
-      en, // English (United States)
-      cht, // Chinese (Traditional)
-      chs, // Chinese(Simplified)
-      ja, // Japanese
-      fr, // French
-      it, // Italian
-      de, // German
-      es, // Spanish
-      ko, // Korean
-      th, // Thai
-      id, // indonesian
-      pt, // Portuguese(Brazil)
-      ru, // Russian
-      _po, // Polish
-      vi, // Vietnamese
-      tr, // Turkish
-      _ar, // Arabic,
-      _fi, // Filipino / Tagalog
-    ] = line.split(',')
-    const characterKey = swKeyMap[skey as keyof typeof swKeyMap]
-    if (!characterKey) return
-
-    const langStrings = [
-      en,
-      chs,
-      cht,
-      ja,
-      fr,
-      it,
-      de,
-      es,
-      ko,
-      th,
-      id,
-      pt,
-      ru,
-      vi,
-      tr,
-    ]
-    langStrings.forEach((str, i) => (data[languages[i]][characterKey] = str))
+  languages.forEach((lang, idx) => {
+    for (const name in characterNames) {
+      data[lang][name] = characterNames[name][idx]
+    }
   })
 
   Object.entries(data).map(([langkey, d]) => {
