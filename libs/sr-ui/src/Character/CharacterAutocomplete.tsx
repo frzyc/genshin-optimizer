@@ -6,6 +6,7 @@ import { GeneralAutocomplete } from '@genshin-optimizer/ui-common'
 import { objKeyMap } from '@genshin-optimizer/util'
 import { Skeleton } from '@mui/material'
 import { Suspense, useContext, useEffect, useMemo } from 'react'
+import { useTranslation } from 'react-i18next'
 import { DatabaseContext } from '../Context'
 
 type CharacterAutocompleteProps = {
@@ -16,6 +17,7 @@ export function CharacterAutocomplete({
   charKey,
   setCharKey,
 }: CharacterAutocompleteProps) {
+  const { t } = useTranslation('character')
   const { database } = useContext(DatabaseContext)
   const [charListDirty, setCharListDirty] = useForceUpdate()
   useEffect(
@@ -47,7 +49,7 @@ export function CharacterAutocomplete({
     () => [
       {
         key: '',
-        label: 'None', // TODO
+        label: t('autocomplete.none'), // TODO
       },
       ...allCharacterKeys.map(
         (key): GeneralAutocompleteOption<CharacterKey | ''> => ({
@@ -58,7 +60,7 @@ export function CharacterAutocomplete({
         })
       ),
     ],
-    [charDbMap, charFavoriteMap]
+    [charDbMap, charFavoriteMap, t]
   )
 
   return (
