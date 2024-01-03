@@ -274,8 +274,8 @@ function SliderWrapper({
       // marks={marks}
       min={marks[1]?.value ?? 0}
       max={marks[marks.length - 1]?.value ?? 0}
-      onChange={(e, v) => setinnerValue(v as number)}
-      onChangeCommitted={(e, v) => setValue(v as number)}
+      onChange={(_e, v) => setinnerValue(v as number)}
+      onChangeCommitted={(_e, v) => setValue(v as number)}
       valueLabelDisplay="auto"
     />
   )

@@ -2,7 +2,10 @@ import type { ButtonProps } from '@mui/material'
 import { MenuItem } from '@mui/material'
 import { useTranslation } from 'react-i18next'
 import { DropdownButton, StarsDisplay } from '@genshin-optimizer/ui-common'
-import type { RelicRarityKey } from '@genshin-optimizer/sr-consts'
+import {
+  type RelicRarityKey,
+  allRelicRarityKeys,
+} from '@genshin-optimizer/sr-consts'
 
 type props = ButtonProps & {
   rarity?: RelicRarityKey
@@ -23,7 +26,7 @@ export default function RelicRarityDropdown({
       title={rarity ? <StarsDisplay stars={rarity} inline /> : t`editor.rarity`}
       color={rarity ? 'success' : 'primary'}
     >
-      {([5, 4, 3, 2] as RelicRarityKey[]).map((rarity) => (
+      {allRelicRarityKeys.map((rarity) => (
         <MenuItem
           key={rarity}
           disabled={!filter(rarity)}
