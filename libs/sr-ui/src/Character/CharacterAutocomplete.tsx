@@ -3,9 +3,9 @@ import { allCharacterKeys } from '@genshin-optimizer/sr-consts'
 import type { GeneralAutocompleteOption } from '@genshin-optimizer/ui-common'
 import { GeneralAutocomplete } from '@genshin-optimizer/ui-common'
 import { Skeleton } from '@mui/material'
-import { Suspense, useCallback, useContext, useMemo } from 'react'
+import { Suspense, useCallback, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
-import { DatabaseContext } from '../Context'
+import { useDatabaseContext } from '../Context'
 
 type CharacterAutocompleteProps = {
   charKey: CharacterKey | ''
@@ -16,7 +16,7 @@ export function CharacterAutocomplete({
   setCharKey,
 }: CharacterAutocompleteProps) {
   const { t } = useTranslation(['character', 'charNames_gen'])
-  const { database } = useContext(DatabaseContext)
+  const { database } = useDatabaseContext()
   const charInDb = useCallback(
     (charKey: CharacterKey) => !!database.chars.get(charKey),
     [database.chars]
