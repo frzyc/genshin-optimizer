@@ -83,5 +83,9 @@ export type ICharTC = {
     target?: string[]
     distributedSubstats: number
     maxSubstats: Record<SubstatKey, number>
+    /** NB: this is in raw value, not substat count
+     * e.g. `{enerRech_: 0.3}`
+     */
+    minSubstats: Record<SubstatKey, number>
   }
 }

@@ -31,6 +31,7 @@ export function optimizeTc(
       target: optimizationTarget,
       distributedSubstats,
       maxSubstats: rawMaxSubstats,
+      minSubstats,
     },
   } = charTC
   if (!optimizationTarget) return {}
@@ -57,7 +58,8 @@ export function optimizeTc(
       if (f.operation === 'read' && f.path[0] === 'dyn') {
         const a = charTC.artifact.sets[f.path[1]]
         if (a) return constant(a)
-        if (!allSubstatKeys.includes(f.path[1] as any)) return constant(0)
+        if (!(allSubstatKeys as readonly string[]).includes(f.path[1]))
+          return constant(0)
       }
       return f
     },
@@ -85,6 +87,11 @@ export function optimizeTc(
   )
   const subsArr = [...subs]
   let distributed = distributedSubstats
+  for (const [k, v] of Object.entries(minSubstats)) {
+    distributed -= Math.ceil(
+      v / getSubstatValue(k, rarity, substatsType, false)
+    )
+  }
   const maxSubstats = objMap(rawMaxSubstats, (v, k) => {
     return (
       v -
@@ -107,7 +114,11 @@ export function optimizeTc(
     const buffer = Object.fromEntries([...subs].map((x) => [x, 0]))
     const existingSubs = objMap(
       charTC.artifact.substats.stats,
-      (v, k) => v / comp(k)
+      (v, k) =>
+        v / comp(k) +
+        Math.ceil(
+          minSubstats[k] / getSubstatValue(k, rarity, substatsType, false)
+        )
     )
     const permute = (toAssign: number, [x, ...xs]: string[]) => {
       if (xs.length === 0) {
@@ -144,5 +155,11 @@ export function optimizeTc(
       })
     }
   }
-  return { maxBuffer, distributed }
+  return {
+    maxBuffer,
+    distributed,
+    scalesWith: subsArr.filter((x) =>
+      (allSubstatKeys as readonly string[]).includes(x)
+    ) as SubstatKey[],
+  }
 }
