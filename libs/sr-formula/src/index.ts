@@ -3,6 +3,7 @@ import { compileTagMapValues, constant } from '@genshin-optimizer/pando'
 import { Calculator } from './calculator'
 import { keys, values } from './data'
 export * from './data/util'
+export * from './debug'
 
 export function srCalculatorWithValues(extras: TagMapEntries<number>) {
   return srCalculatorWithEntries(

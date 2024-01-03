@@ -23,7 +23,11 @@ type PreRead<M> = {
 }
 const getV = <V, M>(n: CalcResult<V, M>[]) => extract(n, 'val')
 
-export type CalcResult<V, M> = { val: V; meta: M; entryTag?: Tag[] }
+export type CalcResult<V, M> = {
+  val: V
+  meta: M
+  entryTag?: (Tag | undefined)[]
+}
 export class Calculator<M = any> {
   keys: TagMapKeys
   nodes: TagMapSubsetValues<AnyNode | ReRead>
@@ -76,7 +80,7 @@ export class Calculator<M = any> {
                 // They would have the same `val` and `meta` but different `debugTag`.
                 ({ ...x, entryTag: [tags[i]!, n.tag, ...(x.entryTag ?? [])] })
               )
-            : [{ ...this._compute(n, cache), entryTag: [tags[i]!] }]
+            : [{ ...this._compute(n, cache), entryTag: [tags[i]] }]
         ),
         computed: {},
       })

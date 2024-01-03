@@ -2,7 +2,6 @@ import type { DBStorage } from '@genshin-optimizer/database'
 import { Database, SandboxStorage } from '@genshin-optimizer/database'
 import type { GenderKey } from '@genshin-optimizer/sr-consts'
 import type { ISrObjectDescription } from '@genshin-optimizer/sr-srod'
-import { createContext } from 'react'
 import type { ISroDatabase } from '../Interfaces'
 import { SroSource } from '../Interfaces'
 import { DBMetaEntry } from './DataEntries/DBMetaEntry'
@@ -177,9 +176,3 @@ export class SroDatabase extends Database {
     localStorage.setItem(key, JSON.stringify(Object.fromEntries(other.entries)))
   }
 }
-export type DatabaseContextObj = {
-  databases: SroDatabase[]
-  setDatabase: (index: number, db: SroDatabase) => void
-  database: SroDatabase
-}
-export const DatabaseContext = createContext({} as DatabaseContextObj)
