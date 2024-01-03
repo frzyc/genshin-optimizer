@@ -1,2 +1,2 @@
-export * from './Database'
 export * from './DataManagers'
+export * from './Database'
