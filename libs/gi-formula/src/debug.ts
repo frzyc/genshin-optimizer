@@ -115,6 +115,11 @@ export type DebugMeta = {
   deps: DebugMeta[]
 }
 export class DebugCalculator extends BaseCalculator<DebugMeta> {
+  constructor(calc: Calculator) {
+    super(calc.keys)
+    this.nodes = calc.nodes
+  }
+
   override computeCustom(val: any[], op: string): any {
     if (op == 'res') return res(val[0])
     return super.computeCustom(val, op)

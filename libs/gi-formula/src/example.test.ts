@@ -259,12 +259,8 @@ describe('example', () => {
       .listFormulas(member1.listing.formulas)
       .find((x) => x.tag.name === 'normal_0')!
 
-    // Use `DebugCalculator` instead of `Calculator`, same constructor
-    const debugCalc = new DebugCalculator(
-      keys,
-      values,
-      compileTagMapValues(keys, data)
-    )
+    // Get a debug calculator
+    const debugCalc = calc.toDebug()
 
     // Print calculation steps
     console.log(debugCalc.debugCompute(normal0).join('\n'))
