@@ -32,16 +32,10 @@ import {
   TextField,
   Typography,
 } from '@mui/material'
-import {
-  Suspense,
-  useCallback,
-  useContext,
-  useEffect,
-  useMemo,
-  useReducer,
-} from 'react'
+import { Suspense, useCallback, useEffect, useMemo, useReducer } from 'react'
 import { useTranslation } from 'react-i18next'
-import { DatabaseContext } from '../Context'
+import { LocationAutocomplete } from '../Character'
+import { useDatabaseContext } from '../Context'
 import RelicRarityDropdown from './RelicRarityDropdown'
 import SubstatInput from './SubstatInput'
 import { relicReducer } from './reducer'
@@ -63,7 +57,7 @@ export type RelicEditorProps = {
 }
 export function RelicEditor({ relicIdToEdit = 'new' }: RelicEditorProps) {
   const { t } = useTranslation('relic')
-  const { database } = useContext(DatabaseContext)
+  const { database } = useDatabaseContext()
   const [dirtyDatabase, setDirtyDatabase] = useForceUpdate()
   useEffect(
     () => database.relics.followAny(setDirtyDatabase),
@@ -291,6 +285,10 @@ export function RelicEditor({ relicIdToEdit = 'new' }: RelicEditorProps) {
                   {relic?.lock ? <LockIcon /> : <LockOpenIcon />}
                 </Button>
               </Box>
+              <LocationAutocomplete
+                locKey={cRelic?.location ?? ''}
+                setLocKey={(charKey) => update({ location: charKey })}
+              />
             </Grid>
 
             {/* right column */}
