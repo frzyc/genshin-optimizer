@@ -140,7 +140,7 @@ export function tagStr(tag: Tag, ex?: any): string {
     q,
     qt,
     elementalType,
-    damageType: attackType,
+    damageType,
     ...remaining
   } = tag
 
@@ -173,7 +173,7 @@ export function tagStr(tag: Tag, ex?: any): string {
   else if (q) required(`.${q}`)
 
   optional(elementalType)
-  optional(attackType)
+  optional(damageType)
   required(ex && `[${ex}]`)
   return result + '}'
 }
