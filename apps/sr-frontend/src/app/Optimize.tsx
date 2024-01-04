@@ -1,16 +1,9 @@
-import {
-  combineConst,
-  compile,
-  detach,
-  flatten,
-} from '@genshin-optimizer/pando'
 import type { RelicSlotKey } from '@genshin-optimizer/sr-consts'
-import { allRelicSetKeys } from '@genshin-optimizer/sr-consts'
 import type { ICachedRelic } from '@genshin-optimizer/sr-db'
-import type { Read, Tag } from '@genshin-optimizer/sr-formula'
+import type { Read } from '@genshin-optimizer/sr-formula'
 import { convert, selfTag } from '@genshin-optimizer/sr-formula'
+import { OptimizeForNode } from '@genshin-optimizer/sr-opt'
 import { useCalcContext, useDatabaseContext } from '@genshin-optimizer/sr-ui'
-import { getRelicMainStatVal } from '@genshin-optimizer/sr-util'
 import { CardThemed, DropdownButton } from '@genshin-optimizer/ui-common'
 import {
   Box,
@@ -60,101 +53,16 @@ export default function Optimize() {
 
   const optimize = useCallback(async () => {
     if (!optTarget || !calc) return
-    // Step 2: Detach nodes from Calculator
-    const relicSetKeys = new Set(allRelicSetKeys)
-    let detached = detach([optTarget], calc, (tag: Tag) => {
-      if (tag['member'] !== 'member0') return undefined // Wrong member
-      if (tag['et'] !== 'self') return undefined // Not applied (only) to self
-
-      if (tag['src'] === 'dyn' && tag['qt'] === 'premod')
-        return { q: tag['q']! } // Art stat bonus
-      if (tag['q'] === 'count' && relicSetKeys.has(tag['src'] as any))
-        return { q: tag['src']! } // Art set counter
-      return undefined
-    })
-
-    // Step 3: Optimize nodes, as needed
-    detached = flatten(detached)
-    detached = combineConst(detached)
-
-    // Step 4: Compile for quick iteration
-    const compiled = compile(
-      detached,
-      'q', // Tag category for object key
-      6, // Number of slots
-      {} // Initial values
-      // Header; includes custom formulas, such as `res`
+    const { results, resultsIds } = await OptimizeForNode(
+      calc,
+      optTarget,
+      relicsBySlot
     )
-
-    // Step 5: Calculate the value
-    let best = -Infinity
-    let bestIds = {} as Record<RelicSlotKey, string>
-    function convertRelicToStats(relic: ICachedRelic) {
-      const a = {
-        [relic.mainStatKey]: getRelicMainStatVal(
-          relic.rarity,
-          relic.mainStatKey,
-          relic.level
-        ),
-        ...Object.fromEntries(
-          relic.substats.map((substat) => [substat.key, substat.value])
-        ),
-      }
-      return a
-    }
-    relicsBySlot.head.forEach((headRelic) => {
-      const headStats = convertRelicToStats(headRelic)
-      relicsBySlot.hand.forEach((handRelic) => {
-        const handStats = convertRelicToStats(handRelic)
-        relicsBySlot.feet.forEach((feetRelic) => {
-          const feetStats = convertRelicToStats(feetRelic)
-          relicsBySlot.body.forEach((bodyRelic) => {
-            const bodyStats = convertRelicToStats(bodyRelic)
-            relicsBySlot.sphere.forEach((sphereRelic) => {
-              const sphereStats = convertRelicToStats(sphereRelic)
-              relicsBySlot.rope.forEach((ropeRelic) => {
-                const ropeStats = convertRelicToStats(ropeRelic)
-                const val = compiled([
-                  headStats,
-                  handStats,
-                  feetStats,
-                  bodyStats,
-                  sphereStats,
-                  ropeStats,
-                ])
-                if (val[0] > best) {
-                  best = val[0]
-                  bestIds = {
-                    head: headRelic.id,
-                    hand: handRelic.id,
-                    feet: feetRelic.id,
-                    body: bodyRelic.id,
-                    sphere: sphereRelic.id,
-                    rope: ropeRelic.id,
-                  }
-                }
-              })
-            })
-          })
-        })
-      })
-    })
-    console.log(best)
-    console.log(bestIds)
     setBuild({
-      value: best,
-      relicIds: Object.values(bestIds),
+      value: results[0],
+      relicIds: Object.values(resultsIds[0]),
     })
-  }, [
-    calc,
-    optTarget,
-    relicsBySlot.body,
-    relicsBySlot.feet,
-    relicsBySlot.hand,
-    relicsBySlot.head,
-    relicsBySlot.rope,
-    relicsBySlot.sphere,
-  ])
+  }, [calc, optTarget, relicsBySlot])
 
   const member0 = convert(selfTag, { member: 'member0', et: 'self' })
 
