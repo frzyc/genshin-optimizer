@@ -516,7 +516,7 @@ function parseSubstats(
         return defSub()
       if (key) {
         value = key.endsWith('_')
-          ? Math.round(value * 10) / 10
+          ? Math.round(value * 1000) / 1000
           : Math.round(value)
         const { low, high } = getSubstatRange(rarity, key)
         value = clamp(value, allowZeroSub ? 0 : low, high)

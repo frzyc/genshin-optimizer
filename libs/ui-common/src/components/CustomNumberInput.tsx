@@ -1,5 +1,6 @@
 import type { ButtonProps, InputProps } from '@mui/material'
 import { Button, InputBase, styled } from '@mui/material'
+import type { ChangeEvent, KeyboardEvent } from 'react'
 import { useCallback, useEffect, useState } from 'react'
 export type CustomNumberInputProps = Omit<InputProps, 'onChange'> & {
   value?: number | undefined
@@ -10,9 +11,6 @@ export type CustomNumberInputProps = Omit<InputProps, 'onChange'> & {
   disableNegative?: boolean
 }
 
-/**
- * @deprecated use `StyledInputBase` in `@genshin-optimizer/ui-common`
- */
 export const StyledInputBase = styled(InputBase)(
   ({ theme, color = 'primary' }) => ({
     backgroundColor: theme.palette[color].main,
@@ -40,9 +38,6 @@ const Wrapper = styled(Button)(({ theme }) => ({
 }))
 
 // wrap the Input with this when using the input in a buttongroup
-/**
- * @deprecated use `CustomNumberInputButtonGroupWrapper` in `@genshin-optimizer/ui-common`
- */
 export function CustomNumberInputButtonGroupWrapper({
   children,
   disableRipple,
@@ -57,10 +52,7 @@ export function CustomNumberInputButtonGroupWrapper({
   )
 }
 
-/**
- * @deprecated use `CustomNumberInput` in `@genshin-optimizer/ui-common`
- */
-export default function CustomNumberInput({
+export function CustomNumberInput({
   value = 0,
   onChange,
   disabled = false,
@@ -78,21 +70,28 @@ export default function CustomNumberInput({
   const onBlur = useCallback(() => {
     onChange(number)
     setFocus(false)
-  }, [onChange, number, setFocus])
+  }, [onChange, number])
   const onFocus = useCallback(() => {
     setFocus(true)
-  }, [setFocus])
-  useEffect(() => setNumber(value), [value, setNumber]) // update value on value change
+  }, [])
+  useEffect(() => setNumber(value), [value]) // update value on value change
+
+  const min = inputProps['min']
+  const max = inputProps['max']
   const onInputChange = useCallback(
-    (e) => {
-      const newNum = parseFunc(e.target.value) || 0
-      if (inputProps.min !== undefined && newNum < inputProps.min) return
-      if (inputProps.max !== undefined && newNum > inputProps.max) return
+    (e: ChangeEvent<HTMLInputElement>) => {
+      const newNum = parseFunc(e.target?.value) || 0
+      if (min !== undefined && newNum < min) return
+      if (max !== undefined && newNum > max) return
       setNumber(newNum)
     },
-    [setNumber, parseFunc, inputProps.min, inputProps.max]
+    [parseFunc, min, max]
+    // [setNumber, parseFunc, inputProps['min'], inputProps['max']]
   )
-  const onKeyDown = useCallback((e) => e.key === 'Enter' && onBlur(), [onBlur])
+  const onKeyDown = useCallback(
+    (e: KeyboardEvent<HTMLInputElement>) => e.key === 'Enter' && onBlur(),
+    [onBlur]
+  )
 
   return (
     <StyledInputBase
