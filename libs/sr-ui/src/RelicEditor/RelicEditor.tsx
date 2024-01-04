@@ -1,3 +1,4 @@
+import { useForceUpdate } from '@genshin-optimizer/react-util'
 import type {
   RelicRarityKey,
   RelicSetKey,
@@ -8,7 +9,14 @@ import {
   allRelicSlotKeys,
   relicSlotToMainStatKeys,
 } from '@genshin-optimizer/sr-consts'
+import { cachedRelic } from '@genshin-optimizer/sr-db'
+import type { IRelic, ISubstat } from '@genshin-optimizer/sr-srod'
+import { getRelicMainStatDisplayVal } from '@genshin-optimizer/sr-util'
 import { CardThemed, DropdownButton } from '@genshin-optimizer/ui-common'
+import { clamp, deepClone } from '@genshin-optimizer/util'
+import { Add } from '@mui/icons-material'
+import LockIcon from '@mui/icons-material/Lock'
+import LockOpenIcon from '@mui/icons-material/LockOpen'
 import {
   Alert,
   Box,
@@ -24,7 +32,6 @@ import {
   TextField,
   Typography,
 } from '@mui/material'
-import { Add } from '@mui/icons-material'
 import {
   Suspense,
   useCallback,
@@ -33,17 +40,11 @@ import {
   useMemo,
   useReducer,
 } from 'react'
-import LockIcon from '@mui/icons-material/Lock'
-import LockOpenIcon from '@mui/icons-material/LockOpen'
-import type { IRelic, ISubstat } from '@genshin-optimizer/sr-srod'
-import { relicReducer } from './reducer'
-import { clamp, deepClone } from '@genshin-optimizer/util'
-import RelicRarityDropdown from './RelicRarityDropdown'
-import { DatabaseContext } from '../Context'
-import { useForceUpdate } from '@genshin-optimizer/react-util'
 import { useTranslation } from 'react-i18next'
-import { cachedRelic } from '@genshin-optimizer/sr-db'
+import { DatabaseContext } from '../Context'
+import RelicRarityDropdown from './RelicRarityDropdown'
 import SubstatInput from './SubstatInput'
+import { relicReducer } from './reducer'
 
 // TODO: temporary until relic sheet is implemented
 interface IRelicSheet {
@@ -273,7 +274,13 @@ export function RelicEditor({ relicIdToEdit = 'new' }: RelicEditorProps) {
                 </DropdownButton>
                 <CardThemed bgt="light" sx={{ p: 1, flexGrow: 1 }}>
                   <Typography color="text.secondary">
-                    {relic ? relic.mainStatKey : 'Main Stat'}
+                    {relic
+                      ? getRelicMainStatDisplayVal(
+                          rarity,
+                          relic.mainStatKey,
+                          level
+                        )
+                      : t`mainStat`}
                   </Typography>
                 </CardThemed>
                 <Button
