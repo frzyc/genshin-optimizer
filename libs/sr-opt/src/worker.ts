@@ -12,12 +12,16 @@ export interface Optimize {
   detachedNodes: NumTagFree[]
 }
 
-export interface OptimizeMessage {
-  resultType: 'err' | 'done'
-  message?: string
-  best?: number
-  bestIds?: Record<RelicSlotKey, string>
+export interface OptimizeMessageDone {
+  resultType: 'done'
+  best: number
+  bestIds: Record<RelicSlotKey, string>
 }
+export interface OptimizeMessageErr {
+  resultType: 'err'
+  message: string
+}
+export type OptimizeMessage = OptimizeMessageDone | OptimizeMessageErr
 
 // Get proper typings for posting a message back to main thread
 declare function postMessage(message: OptimizeMessage): void
@@ -70,6 +74,7 @@ function optimize({ relicsBySlot, detachedNodes }: Optimize) {
             const sphereStats = convertRelicToStats(sphereRelic)
             relicsBySlot.rope.forEach((ropeRelic) => {
               const ropeStats = convertRelicToStats(ropeRelic)
+              // Step 5: Calculate the value
               const val = compiledCalcFunction([
                 headStats,
                 handStats,

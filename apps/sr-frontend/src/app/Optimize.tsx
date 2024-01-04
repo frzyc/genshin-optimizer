@@ -5,6 +5,7 @@ import { convert, selfTag } from '@genshin-optimizer/sr-formula'
 import { OptimizeForNode } from '@genshin-optimizer/sr-opt'
 import { useCalcContext, useDatabaseContext } from '@genshin-optimizer/sr-ui'
 import { CardThemed, DropdownButton } from '@genshin-optimizer/ui-common'
+import { range } from '@genshin-optimizer/util'
 import {
   Box,
   Button,
@@ -26,6 +27,8 @@ export default function Optimize() {
   const { database } = useDatabaseContext()
 
   const { calc } = useCalcContext()
+
+  const [numWorkers, setNumWorkers] = useState(8)
 
   // Step 1: Pick formula(s); anything that `calc.compute` can handle will work
   const [optTarget, setOptTarget] = useState<Read | undefined>(undefined)
@@ -53,16 +56,17 @@ export default function Optimize() {
 
   const optimize = useCallback(async () => {
     if (!optTarget || !calc) return
-    const { results, resultsIds } = await OptimizeForNode(
+    const results = await OptimizeForNode(
       calc,
       optTarget,
-      relicsBySlot
+      relicsBySlot,
+      numWorkers
     )
     setBuild({
-      value: results[0],
-      relicIds: Object.values(resultsIds[0]),
+      value: results[0].best,
+      relicIds: Object.values(results[0].bestIds),
     })
-  }, [calc, optTarget, relicsBySlot])
+  }, [calc, numWorkers, optTarget, relicsBySlot])
 
   const member0 = convert(selfTag, { member: 'member0', et: 'self' })
 
@@ -87,6 +91,13 @@ export default function Optimize() {
                   </MenuItem>
                 ))}
               </DropdownButton>
+              <DropdownButton title={`Num Workers: ${numWorkers}`}>
+                {range(1, 16).map((n) => (
+                  <MenuItem key={n} onClick={() => setNumWorkers(n)}>
+                    {n} worker(s)
+                  </MenuItem>
+                ))}
+              </DropdownButton>
               <Button onClick={optimize}>Optimize</Button>
             </Box>
             <Box>
@@ -95,7 +106,7 @@ export default function Optimize() {
                 {build?.relicIds.map((id) => {
                   const relic = database.relics.get(id)
                   return (
-                    <Grid item xs={1}>
+                    <Grid item xs={1} key={id}>
                       <Relic relic={relic} />
                     </Grid>
                   )
