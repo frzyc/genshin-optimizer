@@ -13,10 +13,10 @@ import {
   constant,
   reread,
 } from '@genshin-optimizer/pando'
-import { allElementalTypeKeys } from '@genshin-optimizer/sr-consts'
 import type { TagMapNodeEntry } from '.'
 import {
   attackTypes,
+  elementalTypes,
   entryTypes,
   members,
   presets,
@@ -31,7 +31,7 @@ export const fixedTags = {
   et: entryTypes,
   src: srcs,
 
-  elementalType: allElementalTypeKeys,
+  elementalType: elementalTypes,
   attackType: attackTypes,
 }
 export type Tag = {
@@ -69,25 +69,25 @@ export class Read extends TypedRead<Tag, Read> {
 
   // Elemental Type
   get physical() {
-    return super.with('elementalType', 'Physical')
+    return super.with('elementalType', 'physical')
   }
   get quantum(): Read {
-    return super.with('elementalType', 'Quantum')
+    return super.with('elementalType', 'quantum')
   }
   get lightning(): Read {
-    return super.with('elementalType', 'Lightning')
+    return super.with('elementalType', 'lightning')
   }
   get ice(): Read {
-    return super.with('elementalType', 'Ice')
+    return super.with('elementalType', 'ice')
   }
   get wind(): Read {
-    return super.with('elementalType', 'Wind')
+    return super.with('elementalType', 'wind')
   }
   get fire(): Read {
-    return super.with('elementalType', 'Fire')
+    return super.with('elementalType', 'fire')
   }
   get imaginary(): Read {
-    return super.with('elementalType', 'Imaginary')
+    return super.with('elementalType', 'imaginary')
   }
 
   // Move

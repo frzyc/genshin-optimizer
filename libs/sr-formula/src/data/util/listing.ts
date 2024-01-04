@@ -1,4 +1,4 @@
-import type { TypeKey } from '@genshin-optimizer/sr-consts'
+import type { ElementalTypeKey } from '@genshin-optimizer/sr-consts'
 import {
   allCharacterKeys,
   allLightConeKeys,
@@ -44,7 +44,7 @@ export const statBoosts = [
   'statBoost10',
 ] as const
 
-export const types = [
+export const elementalTypes = [
   'physical',
   'quantum',
   'lightning',
@@ -94,14 +94,14 @@ export const presets = [
 export type Stat = (typeof stats)[number]
 export type BonusAbility = (typeof bonusAbilities)[number]
 export type StatBoost = (typeof statBoosts)[number]
-export type Type = (typeof types)[number]
+export type ElementalType = (typeof elementalTypes)[number]
 export type AttackType = (typeof attackTypes)[number]
 export type EntryType = (typeof entryTypes)[number]
 export type Source = (typeof srcs)[number]
 export type Member = (typeof members)[number]
 export type Preset = (typeof presets)[number]
 
-export const TypeKeyToListingType: Record<TypeKey, Type> = {
+export const TypeKeyToListingType: Record<ElementalTypeKey, ElementalType> = {
   Physical: 'physical',
   Quantum: 'quantum',
   Lightning: 'lightning',
