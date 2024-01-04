@@ -36,7 +36,6 @@ export async function OptimizeForNode(
       })
   )
   // Wait for all workers to finish
-  console.log(relicsBySlot)
   const results = await Promise.all(
     workers.map((worker, index) => {
       return new Promise<OptimizeMessageDone>((res, rej) => {
