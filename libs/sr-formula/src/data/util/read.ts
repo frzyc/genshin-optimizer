@@ -13,7 +13,7 @@ import {
   constant,
   reread,
 } from '@genshin-optimizer/pando'
-import { damageType } from '@genshin-optimizer/sr-consts'
+import { allElementalTypeKeys } from '@genshin-optimizer/sr-consts'
 import { entryTypes, members, moves, srcs, type Source } from './listing'
 
 export const fixedTags = {
@@ -22,7 +22,7 @@ export const fixedTags = {
   et: entryTypes,
   src: srcs,
 
-  dt: damageType,
+  elementalType: allElementalTypeKeys,
   move: moves,
 }
 export type Tag = {
@@ -58,27 +58,27 @@ export class Read extends TypedRead<Tag, Read> {
 
   // Optional Modifiers
 
-  // Damage Type
+  // Elemental Type
   get physical() {
-    return super.with('dt', 'Physical')
+    return super.with('elementalType', 'Physical')
   }
   get quantum(): Read {
-    return super.with('dt', 'Quantum')
+    return super.with('elementalType', 'Quantum')
   }
-  get thunder(): Read {
-    return super.with('dt', 'Thunder')
+  get lightning(): Read {
+    return super.with('elementalType', 'Lightning')
   }
   get ice(): Read {
-    return super.with('dt', 'Ice')
+    return super.with('elementalType', 'Ice')
   }
   get wind(): Read {
-    return super.with('dt', 'Wind')
+    return super.with('elementalType', 'Wind')
   }
   get fire(): Read {
-    return super.with('dt', 'Fire')
+    return super.with('elementalType', 'Fire')
   }
   get imaginary(): Read {
-    return super.with('dt', 'Imaginary')
+    return super.with('elementalType', 'Imaginary')
   }
 
   // Move

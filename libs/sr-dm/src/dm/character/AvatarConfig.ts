@@ -1,10 +1,10 @@
 import { dumpFile, nameToKey } from '@genshin-optimizer/pipeline'
-import type { DamageTypeKey } from '@genshin-optimizer/sr-consts'
+import type { ElementalType } from '@genshin-optimizer/sr-consts'
 import { objFilterKeys } from '@genshin-optimizer/util'
+import { TextMapEN } from '../../TextMapUtil'
 import { PROJROOT_PATH } from '../../consts'
 import type { AvatarBaseTypeKey, AvatarId } from '../../mapping'
 import { characterIdMap } from '../../mapping'
-import { TextMapEN } from '../../TextMapUtil'
 import { readDMJSON } from '../../util'
 import type { HashId, MaterialValue, Value } from '../common'
 
@@ -16,7 +16,7 @@ export type AvatarConfig = {
   AvatarVOTag: string
   Rarity: AvatarRarity
   JsonPath: string
-  DamageType: DamageTypeKey
+  DamageType: ElementalType
   SPNeed: Value
   ExpGroup: number
   MaxPromotion: number

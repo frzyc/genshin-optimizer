@@ -1,22 +1,30 @@
-import type {
-  DamageTypeKey,
-  NonTrailblazerCharacterKey,
-  PathKey,
-  RarityKey,
-  StatKey,
+// TODO: We need a different extrapolateFloat for Star Rail
+// https://github.com/users/frzyc/projects/2/views/1?pane=issue&itemId=48937466
+import { extrapolateFloat } from '@genshin-optimizer/pipeline'
+import {
+  allEidolonKeys,
+  type AbilityKey,
+  type EidolonKey,
+  type ElementalType,
+  type NonTrailblazerCharacterKey,
+  type PathKey,
+  type RarityKey,
+  type StatKey,
 } from '@genshin-optimizer/sr-consts'
 import type { Anchor } from '@genshin-optimizer/sr-dm'
 import {
+  DmAttackTypeMap,
   avatarBaseTypeMap,
   avatarConfig,
   avatarPromotionConfig,
+  avatarRankConfig,
   avatarRarityMap,
   avatarSkillConfig,
   avatarSkillTreeConfig,
   characterIdMap,
   statKeyMap,
 } from '@genshin-optimizer/sr-dm'
-import { transposeArray } from '@genshin-optimizer/util'
+import { objKeyMap, transposeArray } from '@genshin-optimizer/util'
 
 type Promotion = {
   atk: Scaling
@@ -39,15 +47,25 @@ type SkillTree = {
   pointType: number
 }
 type SkillTreeNode = {
-  stats?: Partial<Record<StatKey, number>>
+  stats?: SkillTreeNodeBonusStat
   //TODO: MaterialList
 }
+export type SkillTreeNodeBonusStat = Partial<Record<StatKey, number>>
+type RankMap = Record<EidolonKey, Rank>
+type Rank = {
+  skillTypeAddLevel: SkillTypeAddLevel
+  params: number[]
+}
+type SkillTypeAddLevel = Partial<
+  Record<Exclude<AbilityKey, 'technique'>, number>
+>
 export type CharacterDataGen = {
   rarity: RarityKey
-  damageType: DamageTypeKey
+  damageType: ElementalType
   path: PathKey
   ascension: Promotion[]
   skillTreeList: SkillTree[]
+  rankMap: RankMap
 }
 
 export type CharacterDatas = Record<
@@ -66,7 +84,7 @@ export default function characterData() {
           const skillParamList = skillId
             ? transposeArray(
                 avatarSkillConfig[skillId]!.map(({ ParamList }) =>
-                  ParamList.map(({ Value }) => Value)
+                  ParamList.map(({ Value }) => extrapolateFloat(Value))
                 )
               )
             : undefined
@@ -75,7 +93,7 @@ export default function characterData() {
             if (!StatusAddList.length) return {}
             const stats = Object.fromEntries(
               StatusAddList.map(({ PropertyType, Value }) => {
-                return [statKeyMap[PropertyType], Value.Value]
+                return [statKeyMap[PropertyType], extrapolateFloat(Value.Value)]
               })
             ) as Partial<Record<StatKey, number>>
             return { stats }
@@ -92,42 +110,63 @@ export default function characterData() {
           }
         })
 
+        const ascension = avatarPromotionConfig[avatarid].map(
+          ({
+            AttackAdd,
+            AttackBase,
+            DefenceBase,
+            DefenceAdd,
+            HPBase,
+            HPAdd,
+            SpeedBase,
+            CriticalChance,
+            CriticalDamage,
+            BaseAggro,
+          }) => ({
+            atk: {
+              base: extrapolateFloat(AttackBase.Value),
+              add: extrapolateFloat(AttackAdd.Value),
+            },
+            def: {
+              base: extrapolateFloat(DefenceBase.Value),
+              add: extrapolateFloat(DefenceAdd.Value),
+            },
+            hp: {
+              base: extrapolateFloat(HPBase.Value),
+              add: extrapolateFloat(HPAdd.Value),
+            },
+            spd: extrapolateFloat(SpeedBase.Value),
+            crit_: extrapolateFloat(CriticalChance.Value),
+            crit_dmg_: extrapolateFloat(CriticalDamage.Value),
+            taunt: extrapolateFloat(BaseAggro.Value),
+          })
+        )
+
+        const rankMap = objKeyMap(allEidolonKeys, (eidolon): Rank => {
+          const rankConfig = avatarRankConfig[avatarid][eidolon]
+          return {
+            skillTypeAddLevel: Object.fromEntries(
+              Object.entries(rankConfig.SkillAddLevelList).map(
+                ([skillId, levelBoost]) => [
+                  // AttackType fallback to Talent if not defined
+                  DmAttackTypeMap[
+                    avatarSkillConfig[skillId][0].AttackType || 'MazeNormal'
+                  ],
+                  levelBoost,
+                ]
+              )
+            ) as SkillTypeAddLevel,
+            params: rankConfig.Param.map((p) => extrapolateFloat(p.Value)),
+          }
+        })
+
         const result: CharacterDataGen = {
           rarity: avatarRarityMap[Rarity] as RarityKey,
           damageType: DamageType,
           path: avatarBaseTypeMap[AvatarBaseType],
           skillTreeList,
-          ascension: avatarPromotionConfig[avatarid].map(
-            ({
-              AttackAdd,
-              AttackBase,
-              DefenceBase,
-              DefenceAdd,
-              HPBase,
-              HPAdd,
-              SpeedBase,
-              CriticalChance,
-              CriticalDamage,
-              BaseAggro,
-            }) => ({
-              atk: {
-                base: AttackBase.Value,
-                add: AttackAdd.Value,
-              },
-              def: {
-                base: DefenceBase.Value,
-                add: DefenceAdd.Value,
-              },
-              hp: {
-                base: HPBase.Value,
-                add: HPAdd.Value,
-              },
-              spd: SpeedBase.Value,
-              crit_: CriticalChance.Value,
-              crit_dmg_: CriticalDamage.Value,
-              taunt: BaseAggro.Value,
-            })
-          ),
+          ascension,
+          rankMap,
         }
         const charKey = characterIdMap[avatarid]
         return [charKey, result]
