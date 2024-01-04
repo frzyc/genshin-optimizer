@@ -54,7 +54,16 @@ export const elementalTypes = [
   'imaginary',
 ] as const
 
-export const attackTypes = ['basic', 'skill', 'ult', 'followup', 'dot'] as const
+export const damageTypes = [
+  'basic',
+  'skill',
+  'ult',
+  'technique',
+  'followUp',
+  'dot',
+  'break',
+  'elemental',
+] as const
 
 export const entryTypes = [
   'self',
@@ -95,7 +104,7 @@ export type Stat = (typeof stats)[number]
 export type BonusAbility = (typeof bonusAbilities)[number]
 export type StatBoost = (typeof statBoosts)[number]
 export type ElementalType = (typeof elementalTypes)[number]
-export type AttackType = (typeof attackTypes)[number]
+export type DamageType = (typeof damageTypes)[number]
 export type EntryType = (typeof entryTypes)[number]
 export type Source = (typeof srcs)[number]
 export type Member = (typeof members)[number]
