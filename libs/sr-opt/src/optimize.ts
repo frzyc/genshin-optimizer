@@ -5,12 +5,15 @@ import {
 } from '@genshin-optimizer/sr-consts'
 import type { ICachedRelic } from '@genshin-optimizer/sr-db'
 import type { Calculator, Read, Tag } from '@genshin-optimizer/sr-formula'
-import type { OptimizeMessage } from './worker'
+import { range } from '@genshin-optimizer/util'
+import type { OptimizeMessageDone } from './worker'
+import { type OptimizeMessage } from './worker'
 // TODO: maybe change this to sr-srod's IRelic, and return the relic objs, rather than IDs?
 export async function OptimizeForNode(
   calc: Calculator,
   optTarget: Read,
-  relicsBySlot: Record<RelicSlotKey, ICachedRelic[]>
+  relicsBySlot: Record<RelicSlotKey, ICachedRelic[]>,
+  numWorkers: number
 ) {
   // Step 2: Detach nodes from Calculator
   const relicSetKeys = new Set(allRelicSetKeys)
@@ -23,35 +26,49 @@ export async function OptimizeForNode(
       return { q: tag['src']! } // Art set counter
     return undefined
   })
-  // Step 5: Calculate the value
-  let best = -Infinity
-  let bestIds = {} as Record<RelicSlotKey, string>
-  // Calculate results on workers
-  const worker = new Worker(new URL('./worker.ts', import.meta.url), {
-    type: 'module',
-  })
-  await new Promise<void>((res, rej) => {
-    worker.onmessage = ({ data }: MessageEvent<OptimizeMessage>) => {
-      console.log(data)
-      if (
-        data.resultType === 'done' &&
-        data.best !== undefined &&
-        data.bestIds !== undefined
-      ) {
-        if (data.best > best) {
-          best = data.best
-          bestIds = data.bestIds
-          res()
-        }
-      } else rej()
-    }
-    worker.postMessage({
-      command: 'optimize',
-      relicsBySlot,
-      optTarget,
-      detachedNodes,
-    })
-  })
 
-  return { results: [best], resultsIds: [bestIds] }
+  const chunkSize = Math.ceil(relicsBySlot.head.length / numWorkers)
+  // Calculate results on workers
+  const workers = range(1, numWorkers).map(
+    () =>
+      new Worker(new URL('./worker.ts', import.meta.url), {
+        type: 'module',
+      })
+  )
+  // Wait for all workers to finish
+  console.log(relicsBySlot)
+  const results = await Promise.all(
+    workers.map((worker, index) => {
+      return new Promise<OptimizeMessageDone>((res, rej) => {
+        // On worker completion, resolve promise
+        worker.onmessage = ({ data }: MessageEvent<OptimizeMessage>) => {
+          console.log(data)
+          if (data.resultType === 'done') {
+            res(data)
+          } else rej()
+        }
+        // Chunk data
+        const chunkedRelicsBySlot: Record<RelicSlotKey, ICachedRelic[]> = {
+          head: relicsBySlot.head.slice(
+            index * chunkSize,
+            (index + 1) * chunkSize
+          ),
+          hand: relicsBySlot.hand,
+          body: relicsBySlot.body,
+          feet: relicsBySlot.feet,
+          sphere: relicsBySlot.sphere,
+          rope: relicsBySlot.rope,
+        }
+        // Start worker
+        worker.postMessage({
+          command: 'optimize',
+          relicsBySlot: chunkedRelicsBySlot,
+          optTarget,
+          detachedNodes,
+        })
+      })
+    })
+  )
+
+  return results.sort((a, b) => a.best - b.best)
 }
