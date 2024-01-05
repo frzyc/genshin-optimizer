@@ -45,8 +45,12 @@ export class RelicDataManager extends DataManager<
   constructor(database: SroDatabase) {
     super(database, storageKey)
     for (const key of this.database.storage.keys)
-      if (key.startsWith(storageHash) && !this.set(key, {}))
+      if (
+        key.startsWith(storageHash) &&
+        !this.set(key.split(storageHash)[1], {})
+      ) {
         this.database.storage.remove(key)
+      }
   }
   override validate(obj: unknown): IRelic | undefined {
     return validateRelic(obj)
