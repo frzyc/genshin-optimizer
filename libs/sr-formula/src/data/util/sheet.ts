@@ -56,7 +56,9 @@ export function listingItem(t: Read, cond?: string | StrNode) {
  * @param elementalTypeKey Elemental type of the damage
  * @param base Node representing the full damage value
  * @param splits Array of decimals that should add up to 1. Each entry represents the percentage of damage that hit deals, for multi-hit moves. We get splits from SRSim devs, see the array at the top of https://github.com/simimpact/srsim/blob/main/internal/character/march7th/ult.go for example.
- * @param arg `{ team: true }` to use `teamBuff` instead of `selfBuff`. `{ cond: <node> }` to hide these instances behind a conditional check.
+ * @param arg `{ team: true }` to use `teamBuff` instead of `selfBuff`, and also show the formula in teammates' listing.
+ *
+ * `{ cond: <node> }` to hide these instances behind a conditional check.
  * @param extra Buffs that should only apply to this damage instance
  * @returns Array of TagMapNodeEntries representing the damage instance
  */

@@ -32,6 +32,11 @@ import {
 
 type AbilityScalingType = Exclude<AbilityKey, 'technique'>
 
+/**
+ * Returns simple `number` arrays representing scalings of a character's traces
+ * @param data_gen Character's entire `data` object from sr-stats:allStats
+ * @returns Object with entry for basic, skill, ult, talent, technique and eidolon scalings. Eidolon contains further entries 1-6 for each eidolon.
+ */
 export function scalingParams(data_gen: CharacterDataGen) {
   const [basic, skill, ult, talent, technique] = data_gen.skillTreeList
     .map((s) => s.skillParamList)
@@ -137,6 +142,14 @@ export function heal(
   return customHeal(name, base, arg, ...extra)
 }
 
+/**
+ * Creates, registers, and returns TagMapNodeEntries for a character's:
+ * - Base stats
+ * - Stat boost traces
+ * - Eidolon 3 and 5
+ * @param data_gen Character's entire `data` object from sr-stats:allStats
+ * @returns TagMapNodeEntries representing character stats/buffs
+ */
 export function entriesForChar(data_gen: CharacterDataGen): TagMapNodeEntries {
   const { char } = self
   const { eidolon, ascension, lvl } = char
@@ -157,16 +170,16 @@ export function entriesForChar(data_gen: CharacterDataGen): TagMapNodeEntries {
         )
       )
     }),
-    ...(['crit_', 'crit_dmg_', 'spd'] as const).map((sk) => {
+    ...(['crit_', 'crit_dmg_'] as const).map((sk) => {
       const statAsc = data_gen.ascension.map((p) => p[sk])
-      switch (sk) {
-        case 'crit_':
-        case 'crit_dmg_':
-          return selfBuff.premod[sk].add(subscript(ascension, statAsc))
-        case 'spd':
-          return selfBuff.base[sk].add(subscript(ascension, statAsc))
-      }
+      return selfBuff.premod[sk].add(subscript(ascension, statAsc))
     }),
+    selfBuff.base.spd.add(
+      subscript(
+        ascension,
+        data_gen.ascension.map((p) => p.spd)
+      )
+    ),
     // Small trace stat boosts
     ...statBoosts.flatMap((statBoost) =>
       Object.entries(statBoost).map(([key, amt], index) => {
