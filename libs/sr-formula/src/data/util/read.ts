@@ -13,17 +13,26 @@ import {
   constant,
   reread,
 } from '@genshin-optimizer/pando'
-import { allElementalTypeKeys } from '@genshin-optimizer/sr-consts'
-import { entryTypes, members, moves, srcs, type Source } from './listing'
+import type { TagMapNodeEntry } from '.'
+import {
+  damageTypes,
+  elementalTypes,
+  entryTypes,
+  members,
+  presets,
+  srcs,
+  type Source,
+} from './listing'
 
 export const fixedTags = {
+  preset: presets,
   member: members,
   dst: members,
   et: entryTypes,
   src: srcs,
 
-  elementalType: allElementalTypeKeys,
-  move: moves,
+  elementalType: elementalTypes,
+  damageType: damageTypes,
 }
 export type Tag = {
   [key in keyof typeof fixedTags]?: (typeof fixedTags)[key][number] | null
@@ -46,7 +55,7 @@ export class Read extends TypedRead<Tag, Read> {
     return super.with('src', src)
   }
 
-  add(value: number | string | AnyNode): { tag: Tag; value: AnyNode } {
+  add(value: number | string | AnyNode): TagMapNodeEntry {
     return {
       tag: this.tag,
       value: typeof value === 'object' ? value : constant(value),
@@ -60,36 +69,48 @@ export class Read extends TypedRead<Tag, Read> {
 
   // Elemental Type
   get physical() {
-    return super.with('elementalType', 'Physical')
+    return super.with('elementalType', 'physical')
   }
   get quantum(): Read {
-    return super.with('elementalType', 'Quantum')
+    return super.with('elementalType', 'quantum')
   }
   get lightning(): Read {
-    return super.with('elementalType', 'Lightning')
+    return super.with('elementalType', 'lightning')
   }
   get ice(): Read {
-    return super.with('elementalType', 'Ice')
+    return super.with('elementalType', 'ice')
   }
   get wind(): Read {
-    return super.with('elementalType', 'Wind')
+    return super.with('elementalType', 'wind')
   }
   get fire(): Read {
-    return super.with('elementalType', 'Fire')
+    return super.with('elementalType', 'fire')
   }
   get imaginary(): Read {
-    return super.with('elementalType', 'Imaginary')
+    return super.with('elementalType', 'imaginary')
   }
 
-  // Move
+  // Damage type
   get basicDmg(): Read {
-    return super.with('move', 'basic')
+    return super.with('damageType', 'basic')
   }
   get skillDmg(): Read {
-    return super.with('move', 'skill')
+    return super.with('damageType', 'skill')
   }
   get ultDmg(): Read {
-    return super.with('move', 'ult')
+    return super.with('damageType', 'ult')
+  }
+  get techniqueDmg(): Read {
+    return super.with('damageType', 'technique')
+  }
+  get followUpDmg(): Read {
+    return super.with('damageType', 'followUp')
+  }
+  get breakDmg(): Read {
+    return super.with('damageType', 'break')
+  }
+  get elementalDmg(): Read {
+    return super.with('damageType', 'elemental')
   }
 }
 export function tag(v: number | NumNode, tag: Tag): TagOverride<NumNode>
@@ -109,7 +130,19 @@ export function tagVal(cat: keyof Tag): TagValRead {
 }
 
 export function tagStr(tag: Tag, ex?: any): string {
-  const { name, member, dst, et, src, q, qt, dt, move, ...remaining } = tag
+  const {
+    name,
+    preset,
+    member,
+    dst,
+    et,
+    src,
+    q,
+    qt,
+    elementalType,
+    damageType,
+    ...remaining
+  } = tag
 
   if (Object.keys(remaining).length) console.error(remaining)
 
@@ -130,6 +163,7 @@ export function tagStr(tag: Tag, ex?: any): string {
     result += str + ' '
   }
   required(name && `#${name}`)
+  required(preset)
   required(member)
   required(dst && `(${dst})`)
   required(src)
@@ -138,8 +172,8 @@ export function tagStr(tag: Tag, ex?: any): string {
   else if (qt) required(`${qt}.`)
   else if (q) required(`.${q}`)
 
-  optional(dt)
-  optional(move)
+  optional(elementalType)
+  optional(damageType)
   required(ex && `[${ex}]`)
   return result + '}'
 }

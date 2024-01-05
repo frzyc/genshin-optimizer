@@ -14,7 +14,7 @@ export function lightConeBaseStats(src: LightConeKey): TagMapNodeEntries {
     ...(['hp', 'atk', 'def'] as const).map((sk) => {
       const basePerAsc = dataGen.ascension.map((p) => p[sk].base)
       const addPerAsc = dataGen.ascension.map((p) => p[sk].add)
-      return selfBuff.stat[sk].add(
+      return selfBuff.base[sk].add(
         sum(
           subscript(ascension, basePerAsc),
           prod(lvl1, subscript(ascension, addPerAsc))

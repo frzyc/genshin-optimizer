@@ -40,7 +40,7 @@ export const allElementalTypeKeys = [
   'Fire',
   'Imaginary',
 ] as const
-export type ElementalType = (typeof allElementalTypeKeys)[number]
+export type ElementalTypeKey = (typeof allElementalTypeKeys)[number]
 
 export const allPathKeys = [
   'Erudition',

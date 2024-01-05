@@ -16,20 +16,27 @@ function handleCharacterGen(
     ...(['hp', 'atk', 'def'] as const).map((sk) => {
       const basePerAsc = chardataGen.ascension.map((p) => p[sk].base)
       const addPerAsc = chardataGen.ascension.map((p) => p[sk].add)
-      return selfBuff.stat[sk].add(
+      return selfBuff.base[sk].add(
         sum(
           subscript(ascension, basePerAsc),
           prod(readLvl, subscript(ascension, addPerAsc))
         )
       )
     }),
-    ...(['spd', 'crit_', 'crit_dmg_', 'taunt'] as const).map((sk) => {
+    ...(['crit_', 'crit_dmg_'] as const).map((sk) => {
       const statAsc = chardataGen.ascension.map((p) => p[sk])
-      return selfBuff.stat[sk].add(subscript(ascension, statAsc))
+      return selfBuff.premod[sk].add(subscript(ascension, statAsc))
     }),
+    selfBuff.premod.spd.add(
+      subscript(
+        ascension,
+        chardataGen.ascension.map((p) => p.spd)
+      )
+    ),
   ])
 }
 
-const data: TagMapNodeEntries =
-  nonTrailblazerCharacterKeys.flatMap(handleCharacterGen)
-export default data
+const data: TagMapNodeEntries[] = [
+  nonTrailblazerCharacterKeys.flatMap(handleCharacterGen),
+]
+export default data.flat()
