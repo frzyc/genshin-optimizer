@@ -1,8 +1,9 @@
 import { reread } from '@genshin-optimizer/pando'
 import type { AscensionKey } from '@genshin-optimizer/sr-consts'
 import {
-  self,
+  convert,
   selfBuff,
+  selfTag,
   srCalculatorWithEntries,
 } from '@genshin-optimizer/sr-formula'
 import {
@@ -43,6 +44,7 @@ export default function Character() {
       ]),
     [character, characterKey]
   )
+  const member0 = convert(selfTag, { member: 'member0', et: 'self' })
 
   return (
     <Container>
@@ -84,7 +86,7 @@ export default function Character() {
                   ] as const
                 ).map(([txt, skey]) => (
                   <Typography key={skey}>
-                    {txt}: {calc?.compute(self.stat[skey].src('char')).val}
+                    {txt}: {calc?.compute(member0.final[skey]).val}
                   </Typography>
                 ))}
               </AccordionDetails>

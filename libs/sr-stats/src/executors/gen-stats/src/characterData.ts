@@ -5,7 +5,7 @@ import {
   allEidolonKeys,
   type AbilityKey,
   type EidolonKey,
-  type ElementalType,
+  type ElementalTypeKey,
   type NonTrailblazerCharacterKey,
   type PathKey,
   type RarityKey,
@@ -61,7 +61,7 @@ type SkillTypeAddLevel = Partial<
 >
 export type CharacterDataGen = {
   rarity: RarityKey
-  damageType: ElementalType
+  damageType: ElementalTypeKey
   path: PathKey
   ascension: Promotion[]
   skillTreeList: SkillTree[]
