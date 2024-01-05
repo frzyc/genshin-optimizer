@@ -1,4 +1,5 @@
 import {
+  CalcProvider,
   CharacterProvider,
   DatabaseProvider,
   RelicEditor,
@@ -21,13 +22,15 @@ export default function App() {
       <ThemeProvider theme={theme}>
         <DatabaseProvider>
           <CharacterProvider>
-            <CssBaseline />
-            <Stack gap={1} pt={1}>
-              <CharacterSelector />
-              <Character />
-              <RelicEditor />
-              <Database />
-            </Stack>
+            <CalcProvider>
+              <CssBaseline />
+              <Stack gap={1} pt={1}>
+                <CharacterSelector />
+                <Character />
+                <RelicEditor />
+                <Database />
+              </Stack>
+            </CalcProvider>
           </CharacterProvider>
         </DatabaseProvider>
       </ThemeProvider>

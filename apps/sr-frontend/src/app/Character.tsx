@@ -1,12 +1,7 @@
-import { reread } from '@genshin-optimizer/pando'
 import type { AscensionKey } from '@genshin-optimizer/sr-consts'
+import { convert, selfTag } from '@genshin-optimizer/sr-formula'
 import {
-  convert,
-  selfBuff,
-  selfTag,
-  srCalculatorWithEntries,
-} from '@genshin-optimizer/sr-formula'
-import {
+  useCalcContext,
   useCharacter,
   useCharacterContext,
   useCharacterReducer,
@@ -19,31 +14,18 @@ import {
   AccordionSummary,
   Box,
   CardContent,
+  Container,
   Stack,
   TextField,
   Typography,
 } from '@mui/material'
-import { Container } from '@mui/system'
-import { useMemo } from 'react'
 
 export default function Character() {
   const { characterKey } = useCharacterContext()
   const character = useCharacter(characterKey)
   const charReducer = useCharacterReducer(characterKey)
 
-  const calc = useMemo(
-    () =>
-      character &&
-      srCalculatorWithEntries([
-        selfBuff.char.lvl.add(character.level),
-        selfBuff.char.ascension.add(character?.ascension),
-        {
-          tag: { src: 'char' },
-          value: reread({ src: characterKey }),
-        },
-      ]),
-    [character, characterKey]
-  )
+  const { calc } = useCalcContext()
   const member0 = convert(selfTag, { member: 'member0', et: 'self' })
 
   return (
