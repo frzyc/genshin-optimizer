@@ -22,7 +22,7 @@ export class SroDataManager<
     for (const key of this.database.storage.keys)
       if (
         key.startsWith(this.goKeySingle) &&
-        !this.set(this.toDatumKey(key), {})
+        !this.set(this.toCacheKey(key), {})
       ) {
         this.database.storage.remove(key)
       }
@@ -47,7 +47,7 @@ export class SroDataManager<
   override toStorageKey(key: string): string {
     return `${this.goKeySingle}_${key}`
   }
-  override toDatumKey(key: string): CacheKey {
+  override toCacheKey(key: string): CacheKey {
     return key.split(`${this.goKeySingle}_`)[1] as CacheKey
   }
   override generateKey(keys: Set<string> = new Set(this.keys)): string {

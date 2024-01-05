@@ -27,8 +27,8 @@ export class DataManagerBase<
   toStorageKey(key: CacheKey): string {
     return key
   }
-  toDatumKey(key: string): string {
-    return key
+  toCacheKey(key: string): CacheKey {
+    return key as CacheKey
   }
   validate(obj: unknown, _key: CacheKey): StorageValue | undefined {
     return obj as StorageValue
