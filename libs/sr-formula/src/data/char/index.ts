@@ -23,16 +23,16 @@ function handleCharacterGen(
         )
       )
     }),
-    ...(['crit_', 'crit_dmg_', 'spd'] as const).map((sk) => {
+    ...(['crit_', 'crit_dmg_'] as const).map((sk) => {
       const statAsc = chardataGen.ascension.map((p) => p[sk])
-      switch (sk) {
-        case 'crit_':
-        case 'crit_dmg_':
-          return selfBuff.premod[sk].add(subscript(ascension, statAsc))
-        case 'spd':
-          return selfBuff.base[sk].add(subscript(ascension, statAsc))
-      }
+      return selfBuff.premod[sk].add(subscript(ascension, statAsc))
     }),
+    selfBuff.premod.spd.add(
+      subscript(
+        ascension,
+        chardataGen.ascension.map((p) => p.spd)
+      )
+    ),
   ])
 }
 
