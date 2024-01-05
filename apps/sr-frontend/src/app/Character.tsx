@@ -74,6 +74,36 @@ export default function Character() {
               </AccordionDetails>
             </Accordion>
           </Stack>
+          <Accordion>
+            <AccordionSummary expandIcon={<ExpandMore />}>
+              All target values, if sheet is created
+            </AccordionSummary>
+            <AccordionDetails>
+              <Stack>
+                {calc?.listFormulas(member0.listing.formulas).map((read) => {
+                  const computed = calc.compute(read)
+                  const name = read.tag.name || read.tag.q
+                  return (
+                    <Box>
+                      <Typography key={name}>
+                        {name}: {computed.val}
+                      </Typography>
+                      <Accordion>
+                        <AccordionSummary expandIcon={<ExpandMore />}>
+                          meta for {name}
+                        </AccordionSummary>
+                        <AccordionDetails>
+                          <Typography component="pre">
+                            {JSON.stringify(computed.meta, undefined, 2)}
+                          </Typography>{' '}
+                        </AccordionDetails>
+                      </Accordion>
+                    </Box>
+                  )
+                })}
+              </Stack>
+            </AccordionDetails>
+          </Accordion>
         </CardContent>
       </CardThemed>
     </Container>
