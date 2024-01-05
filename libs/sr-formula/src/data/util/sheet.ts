@@ -1,5 +1,5 @@
 import { prod, type NumNode, type StrNode } from '@genshin-optimizer/pando'
-import type { TypeKey } from '@genshin-optimizer/sr-consts'
+import type { ElementalTypeKey } from '@genshin-optimizer/sr-consts'
 import type { Read } from '.'
 import {
   TypeKeyToListingType,
@@ -11,7 +11,7 @@ import {
   type TagMapNodeEntries,
   type TagMapNodeEntry,
 } from '.'
-import type { AttackType, Source } from './listing'
+import type { DamageType, Source } from './listing'
 
 export type FormulaArg = {
   team?: boolean // true if applies to every member, and false (default) if applies only to self
@@ -51,38 +51,46 @@ export function listingItem(t: Read, cond?: string | StrNode) {
 }
 
 /**
- * Creates an array of TagMapNodeEntries representing a damage instance, and registers their formulas
+ * Creates an array of TagMapNodeEntries representing a damage instance split by their multipliers, and registers their formulas
  * @param name Base name to be used as the key
- * @param type Type of the damage
- * @param AttackType Type of attack damage that is dealt
+ * @param elementalTypeKey Elemental type of the damage
+ * @param base Node representing the full damage value
  * @param splits Array of decimals that should add up to 1. Each entry represents the percentage of damage that hit deals, for multi-hit moves. We get splits from SRSim devs, see the array at the top of https://github.com/simimpact/srsim/blob/main/internal/character/march7th/ult.go for example.
- * @param arg
+ * @param arg `{ team: true }` to use `teamBuff` instead of `selfBuff`. `{ cond: <node> }` to hide these instances behind a conditional check.
  * @param extra Buffs that should only apply to this damage instance
  * @returns Array of TagMapNodeEntries representing the damage instance
  */
 export function customDmg(
   name: string,
-  typeKey: TypeKey,
-  attackType: AttackType,
+  elementalTypeKey: ElementalTypeKey,
+  damageType: DamageType,
   base: NumNode,
   splits: number[] = [1],
   { team, cond = 'unique' }: FormulaArg = {},
   ...extra: TagMapNodeEntries
 ): TagMapNodeEntries[] {
   const buff = team ? teamBuff : selfBuff
-  const type = TypeKeyToListingType[typeKey]
+  const elementalType = TypeKeyToListingType[elementalTypeKey]
   return splits.map((split, index) =>
     registerFormula(
       `${name}_${index}`,
       team,
       'dmg',
-      tag(cond, { attackType, type }),
+      tag(cond, { damageType, elementalType }),
       buff.formula.base.add(prod(base, percent(split))),
       ...extra
     )
   )
 }
 
+/**
+ * Creates TagMapNodeEntries representing a shield instance, and registers the formula
+ * @param name Base name to be used as the key
+ * @param base Node representing the shield value
+ * @param arg `{ team: true }` to use `teamBuff` instead of `selfBuff`. `{ cond: <node> }` to hide these instances behind a conditional check.
+ * @param extra Buffs that should only apply to this damage instance
+ * @returns TagMapNodeEntries representing the shield instance
+ */
 export function customShield(
   name: string,
   base: NumNode,
@@ -100,6 +108,14 @@ export function customShield(
   )
 }
 
+/**
+ * Creates TagMapNodeEntries representing a heal instance, and registers the formula
+ * @param name Base name to be used as the key
+ * @param base Node representing the heal value
+ * @param arg `{ team: true }` to use `teamBuff` instead of `selfBuff`. `{ cond: <node> }` to hide these instances behind a conditional check.
+ * @param extra Buffs that should only apply to this damage instance
+ * @returns TagMapNodeEntries representing the heal instance
+ */
 export function customHeal(
   name: string,
   base: NumNode,

@@ -6,18 +6,18 @@ import {
   subscript,
   sum,
 } from '@genshin-optimizer/pando'
+import type { ElementalTypeKey } from '@genshin-optimizer/sr-consts'
 import {
   allEidolonKeys,
   type AbilityKey,
   type StatBoostKey,
-  type TypeKey,
 } from '@genshin-optimizer/sr-consts'
 import type {
   CharacterDataGen,
   SkillTreeNodeBonusStat,
 } from '@genshin-optimizer/sr-stats'
 import { objKeyMap } from '@genshin-optimizer/util'
-import type { AttackType, FormulaArg, Stat, Type } from '../util'
+import type { DamageType, ElementalType, FormulaArg, Stat } from '../util'
 import {
   TypeKeyToListingType,
   customDmg,
@@ -54,35 +54,46 @@ export function scalingParams(data_gen: CharacterDataGen) {
 /**
  * Creates an array of TagMapNodeEntries representing a levelable ability's damage instance, and registers their formulas
  * @param name Base name to be used as the key
- * @param type Type of the damage
+ * @param elementalType Elemental type of the damage
  * @param stat Stat that the damage scales on
  * @param levelScaling Array representing the scaling at different levels of the ability
  * @param abilityScalingType Ability level that the scaling depends on
  * @param splits Array of decimals that should add up to 1. Each entry represents the percentage of damage that hit deals, for multi-hit moves. We get splits from SRSim devs, see the array at the top of https://github.com/simimpact/srsim/blob/main/internal/character/march7th/ult.go for example.
- * @param overrideAttackType Type of attack damage that is dealt, only need to set if it deals a different damage type than abilityScalingType, or if abilityScalingType is Talent
- * @param arg
+ * @param overrideDamageType Type of attack damage that is dealt, only need to set if it deals a different damage type than abilityScalingType, or if abilityScalingType is Talent
+ * @param arg `{ team: true }` to use `teamBuff` instead of `selfBuff`. `{ cond: <node> }` to hide these instances behind a conditional check.
  * @param extra Buffs that should only apply to this damage instance
  * @returns Array of TagMapNodeEntries representing the damage instance
  */
 export function dmg(
   name: string,
-  type: TypeKey,
+  elementalType: ElementalTypeKey,
   stat: Stat,
   levelScaling: number[],
   abilityScalingType: AbilityScalingType,
   splits: number[] = [1],
-  overrideAttackType: AttackType | undefined = undefined,
+  overrideDamageType: DamageType | undefined = undefined,
   arg: FormulaArg = {},
   ...extra: TagMapNodeEntries
 ): TagMapNodeEntries[] {
   const multi = percent(subscript(self.char[abilityScalingType], levelScaling))
-  const attackType = overrideAttackType ?? abilityScalingType
+  const attackType = overrideDamageType ?? abilityScalingType
   if (attackType === 'talent')
     throw new Error(`Cannot infer attack type for Talent-type ability ${name}`)
   const base = prod(self.final[stat], multi)
-  return customDmg(name, type, attackType, base, splits, arg, ...extra)
+  return customDmg(name, elementalType, attackType, base, splits, arg, ...extra)
 }
 
+/**
+ * Creates an array of TagMapNodeEntries representing a levelable ability's shield instance, and registers their formulas
+ * @param name Base name to be used as the key
+ * @param stat Stat that the damage scales on
+ * @param levelScalingMulti Array representing the multiplicative scaling at different levels of the ability
+ * @param levelScalingFlat Array representing the flat scaling at different levels of the ability
+ * @param abilityScalingType Ability level that the scaling depends on
+ * @param arg `{ team: true }` to use `teamBuff` instead of `selfBuff`. `{ cond: <node> }` to hide these instances behind a conditional check.
+ * @param extra Buffs that should only apply to this shield instance
+ * @returns Array of TagMapNodeEntries representing the shield instance
+ */
 export function shield(
   name: string,
   stat: Stat,
@@ -99,6 +110,17 @@ export function shield(
   return customShield(name, base, arg, ...extra)
 }
 
+/**
+ * Creates an array of TagMapNodeEntries representing a levelable ability's heal instance, and registers their formulas
+ * @param name Base name to be used as the key
+ * @param stat Stat that the damage scales on
+ * @param levelScalingMulti Array representing the multiplicative scaling at different levels of the ability
+ * @param levelScalingFlat Array representing the flat scaling at different levels of the ability
+ * @param abilityScalingType Ability level that the scaling depends on
+ * @param arg `{ team: true }` to use `teamBuff` instead of `selfBuff`. `{ cond: <node> }` to hide these instances behind a conditional check.
+ * @param extra Buffs that should only apply to this heal instance
+ * @returns Array of TagMapNodeEntries representing the heal instance
+ */
 export function heal(
   name: string,
   stat: Stat,
@@ -159,7 +181,9 @@ export function entriesForChar(data_gen: CharacterDataGen): TagMapNodeEntries {
           case 'imaginary_dmg_':
             // substring will fetch 'physical' from 'physical_dmg_', for example
             stat =
-              selfBuff.premod.dmg_[key.substring(0, key.indexOf('_')) as Type]
+              selfBuff.premod.dmg_[
+                key.substring(0, key.indexOf('_')) as ElementalType
+              ]
             break
           default:
             stat = selfBuff.premod[key]
