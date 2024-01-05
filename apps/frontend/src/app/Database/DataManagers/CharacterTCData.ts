@@ -85,7 +85,7 @@ export function initCharTC(weaponKey: WeaponKey): ICharTC {
       target: undefined,
       distributedSubstats: 45,
       maxSubstats: initCharTcOptimizationMaxSubstats(),
-      minSubstats: initCharTcOptimizationMinSubstats(),
+      minTotal: initCharTcOptimizationMinTotal(),
     },
   }
 }
@@ -157,7 +157,7 @@ function validateCharTcOptimization(
   optimization: unknown
 ): ICharTC['optimization'] | undefined {
   if (typeof optimization !== 'object') return undefined
-  let { target, distributedSubstats, maxSubstats, minSubstats } =
+  let { target, distributedSubstats, maxSubstats, minTotal } =
     optimization as ICharTC['optimization']
   if (!Array.isArray(target)) target = undefined
   if (typeof distributedSubstats !== 'number') distributedSubstats = 20
@@ -166,12 +166,12 @@ function validateCharTcOptimization(
   maxSubstats = objKeyMap([...allSubstatKeys], (k) =>
     typeof maxSubstats[k] === 'number' ? maxSubstats[k] : 0
   )
-  if (typeof minSubstats !== 'object')
-    minSubstats = initCharTcOptimizationMaxSubstats()
-  minSubstats = objKeyMap([...allSubstatKeys], (k) =>
-    typeof minSubstats[k] === 'number' ? minSubstats[k] : 0
+  if (typeof minTotal !== 'object')
+    minTotal = initCharTcOptimizationMaxSubstats()
+  minTotal = objKeyMap([...allSubstatKeys], (k) =>
+    typeof minTotal[k] === 'number' ? minTotal[k] : 0
   )
-  return { target, distributedSubstats, maxSubstats, minSubstats }
+  return { target, distributedSubstats, maxSubstats, minTotal: minTotal }
 }
 function initCharTcOptimizationMaxSubstats(): ICharTC['optimization']['maxSubstats'] {
   return objKeyMap(
@@ -179,6 +179,6 @@ function initCharTcOptimizationMaxSubstats(): ICharTC['optimization']['maxSubsta
     (k) => 6 * (k === 'hp' || k === 'atk' ? 4 : k === 'atk_' ? 2 : 5)
   )
 }
-function initCharTcOptimizationMinSubstats(): ICharTC['optimization']['minSubstats'] {
+function initCharTcOptimizationMinTotal(): ICharTC['optimization']['minTotal'] {
   return objKeyMap(allSubstatKeys, () => 0)
 }
