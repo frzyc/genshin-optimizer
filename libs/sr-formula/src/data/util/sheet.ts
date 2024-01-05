@@ -89,7 +89,9 @@ export function customDmg(
  * Creates TagMapNodeEntries representing a shield instance, and registers the formula
  * @param name Base name to be used as the key
  * @param base Node representing the shield value
- * @param arg `{ team: true }` to use `teamBuff` instead of `selfBuff`. `{ cond: <node> }` to hide these instances behind a conditional check.
+ * @param arg `{ team: true }` to use `teamBuff` instead of `selfBuff`, and also show the formula in teammates' listing.
+ *
+ * `{ cond: <node> }` to hide these instances behind a conditional check.
  * @param extra Buffs that should only apply to this damage instance
  * @returns TagMapNodeEntries representing the shield instance
  */
@@ -114,7 +116,9 @@ export function customShield(
  * Creates TagMapNodeEntries representing a heal instance, and registers the formula
  * @param name Base name to be used as the key
  * @param base Node representing the heal value
- * @param arg `{ team: true }` to use `teamBuff` instead of `selfBuff`. `{ cond: <node> }` to hide these instances behind a conditional check.
+ * @param arg `{ team: true }` to use `teamBuff` instead of `selfBuff`, and also show the formula in teammates' listing.
+ *
+ * `{ cond: <node> }` to hide these instances behind a conditional check.
  * @param extra Buffs that should only apply to this damage instance
  * @returns TagMapNodeEntries representing the heal instance
  */
