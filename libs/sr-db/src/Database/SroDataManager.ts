@@ -45,10 +45,10 @@ export class SroDataManager<
     return key
   }
   override toStorageKey(key: string): string {
-    return `${this.goKeySingle}${key}`
+    return `${this.goKeySingle}_${key}`
   }
   override toDatumKey(key: string): CacheKey {
-    return key.split(this.goKeySingle)[1] as CacheKey
+    return key.split(`${this.goKeySingle}_`)[1] as CacheKey
   }
   override generateKey(keys: Set<string> = new Set(this.keys)): string {
     let ind = keys.size
