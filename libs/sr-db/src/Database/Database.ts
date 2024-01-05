@@ -42,15 +42,15 @@ export class SroDatabase extends Database {
     // Handle Datamanagers
     this.chars = new CharacterDataManager(this)
 
-    // Weapons needs to be instantiated after character to check for relations
+    // Light cone needs to be instantiated after character to check for relations
     this.lightCones = new LightConeDataManager(this)
 
-    // Artifacts needs to be instantiated after character to check for relations
+    // Relics needs to be instantiated after character to check for relations
     this.relics = new RelicDataManager(this)
 
     this.buildSettings = new BuildSettingDataManager(this)
 
-    // This should be instantiated after artifacts, so that invalid artifacts that persists in build results can be pruned.
+    // This should be instantiated after relics, so that invalid relics that persists in build results can be pruned.
     this.buildResult = new BuildResultDataManager(this)
 
     this.charMeta = new CharMetaDataManager(this)
@@ -70,7 +70,7 @@ export class SroDatabase extends Database {
     })
   }
   get dataManagers() {
-    // IMPORTANT: it must be chars, weapon, arts in order, to respect import order
+    // IMPORTANT: it must be chars, light cones, relics in order, to respect import order
     return [
       this.chars,
       this.lightCones,
