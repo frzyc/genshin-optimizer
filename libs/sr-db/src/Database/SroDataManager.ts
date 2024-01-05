@@ -19,13 +19,11 @@ export class SroDataManager<
     // If the storage has a key for some entry AND
     // the entry doesn't exist in memory:
     // Delete it from storage
-    console.log(this.database.storage.keys)
     for (const key of this.database.storage.keys)
       if (
         key.startsWith(this.goKeySingle) &&
         !this.set(this.toDatumKey(key), {})
       ) {
-        console.log(key)
         this.database.storage.remove(key)
       }
   }
