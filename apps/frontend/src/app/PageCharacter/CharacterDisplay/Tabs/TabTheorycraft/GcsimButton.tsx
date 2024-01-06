@@ -116,7 +116,7 @@ ${setText ? setText : '# No Artifact Sets'}
 # Main stats
 ${charKeyLow} add stats ${mainStatsText};
 
-# sub stats
+# Sub stats
 ${charKeyLow} add stats ${substatsText};`
   const copyToClipboard = () =>
     navigator.clipboard
