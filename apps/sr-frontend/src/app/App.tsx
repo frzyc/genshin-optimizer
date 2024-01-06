@@ -1,4 +1,9 @@
-import { CharacterProvider, DatabaseProvider } from '@genshin-optimizer/sr-ui'
+import {
+  CalcProvider,
+  CharacterProvider,
+  DatabaseProvider,
+  RelicEditor,
+} from '@genshin-optimizer/sr-ui'
 import {
   CssBaseline,
   Stack,
@@ -17,12 +22,15 @@ export default function App() {
       <ThemeProvider theme={theme}>
         <DatabaseProvider>
           <CharacterProvider>
-            <CssBaseline />
-            <Stack gap={1} pt={1}>
-              <CharacterSelector />
-              <Character />
-              <Database />
-            </Stack>
+            <CalcProvider>
+              <CssBaseline />
+              <Stack gap={1} pt={1}>
+                <CharacterSelector />
+                <Character />
+                <RelicEditor />
+                <Database />
+              </Stack>
+            </CalcProvider>
           </CharacterProvider>
         </DatabaseProvider>
       </ThemeProvider>

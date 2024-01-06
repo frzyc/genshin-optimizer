@@ -29,24 +29,18 @@ import type {
   ICachedSubstat,
   ISroDatabase,
 } from '../../Interfaces'
-import { DataManager } from '../DataManager'
 import type { SroDatabase } from '../Database'
+import { SroDataManager } from '../SroDataManager'
 import type { ImportResult } from '../exim'
 
-const storageKey = 'sro_relics'
-const storageHash = 'sro_relic_'
-export class RelicDataManager extends DataManager<
+export class RelicDataManager extends SroDataManager<
   string,
-  typeof storageKey,
+  'sro_relics',
   ICachedRelic,
-  IRelic,
-  SroDatabase
+  IRelic
 > {
   constructor(database: SroDatabase) {
-    super(database, storageKey)
-    for (const key of this.database.storage.keys)
-      if (key.startsWith(storageHash) && !this.set(key, {}))
-        this.database.storage.remove(key)
+    super(database, 'sro_relics')
   }
   override validate(obj: unknown): IRelic | undefined {
     return validateRelic(obj)
@@ -128,9 +122,6 @@ export class RelicDataManager extends DataManager<
     const id = this.generateKey()
     this.set(id, value)
     return id
-  }
-  override toStorageKey(key: string): string {
-    return `${storageHash}${key}`
   }
   override remove(key: string, notify = true) {
     const relic = this.get(key)
@@ -516,7 +507,7 @@ function parseSubstats(
         return defSub()
       if (key) {
         value = key.endsWith('_')
-          ? Math.round(value * 10) / 10
+          ? Math.round(value * 1000) / 1000
           : Math.round(value)
         const { low, high } = getSubstatRange(rarity, key)
         value = clamp(value, allowZeroSub ? 0 : low, high)

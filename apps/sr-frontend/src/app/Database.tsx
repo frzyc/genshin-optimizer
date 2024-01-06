@@ -34,7 +34,6 @@ export default function Database() {
       let parsed: any
       try {
         parsed = JSON.parse(data)
-        console.log(parsed)
         if (typeof parsed !== 'object') {
           return undefined
         }
