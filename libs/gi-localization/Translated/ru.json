@@ -15,7 +15,13 @@
         "eff": "ЦР: <1></1>",
         "nextRolls": "След. хар-ка:",
         "RollCount_one": "{{count}} Ролл",
-        "RollCount_other": "{{count}} Роллов"
+        "RollCount_other": "{{count}} Роллов",
+        "RollCount": {
+          "one": "{{count}} Roll",
+          "few": "",
+          "many": "",
+          "other": ""
+        }
       },
       "rarity": "Редкость",
       "level": "Уровень",
@@ -100,8 +106,26 @@
     "equippedArt": "Надетые артефакты",
     "artInInv": "Артефакты в инвентаре",
     "locationsTooltip": "Disable \"All Equipped Artifacts\" to filter by specific characters",
-    "showDup": "Show Duplicates",
-    "noDupAlert": "There are no duplicate artifacts in your inventory."
+    "showDup": "Показать Дупликаты",
+    "noDupAlert": "В инвентаре нет задвоенных артефактов",
+    "showingNum": {
+      "one": "Showing <1>{{count}}</1> out of {{value}} Artifact",
+      "few": "",
+      "many": "",
+      "other": ""
+    },
+    "substat": {
+      "one": "{{count}} substat",
+      "few": "",
+      "many": "",
+      "other": ""
+    },
+    "sub": {
+      "one": "{{count}} sub",
+      "few": "",
+      "many": "",
+      "other": ""
+    }
   },
   "languages": {
     "chs": "Китайский (Упрощённый)",
@@ -277,7 +301,8 @@
   "char_Noelle": {
     "p4cd": "24с, -1с каждые 4 удара",
     "c6duration": "15с, +1с за убийство, до 10с",
-    "c4dmg": "Урон разрушения Бронефартука"
+    "c4dmg": "Урон разрушения Бронефартука",
+    "qlarger": "Larger attack AoE"
   },
   "char_Venti": {
     "addAimed": "Доп. урон прицельного выстрела",
@@ -324,8 +349,8 @@
       "skill": "После использования Элементального навыка",
       "burst": "После использования Взрыва стихии",
       "skillOrBurst": "После применения Элементального навыка или взрыва",
-      "skillPress": "After using Elemental Skill (Press)",
-      "skillHold": "After using Elemental Skill (Hold)"
+      "skillPress": "После использования Элементального навыка(касание)",
+      "skillHold": "После использования Элементального навыка(зажатие)"
     },
     "hits_one": "{{count}} Удар",
     "hits_other": "{{count}} Удары",
@@ -473,7 +498,52 @@
     "charOnField": "Character is on-field",
     "timeOnField": "Time spent on-field",
     "hpChange": "After HP changes",
-    "afterHeal": "After being healed"
+    "afterHeal": "After being healed",
+    "hits": {
+      "one": "{{count}} Hit",
+      "few": "",
+      "many": "",
+      "other": ""
+    },
+    "percentMaxHP": "% Max HP",
+    "stack": {
+      "one": "{{count}} Stack",
+      "few": "",
+      "many": "",
+      "other": ""
+    },
+    "seconds": {
+      "one": "{{count}} Second",
+      "few": "",
+      "many": "",
+      "other": ""
+    },
+    "uses": {
+      "one": "{{count}} Use",
+      "few": "",
+      "many": "",
+      "other": ""
+    },
+    "opponents": {
+      "one": "{{count}} Opponent",
+      "few": "",
+      "many": "",
+      "other": ""
+    },
+    "members": {
+      "one": "{{count}} Member",
+      "few": "",
+      "many": "",
+      "other": ""
+    },
+    "times": {
+      "one": "{{count}} Time",
+      "few": "",
+      "many": "",
+      "other": ""
+    },
+    "activeChar": "Active character",
+    "otherHpChange": "After a teammate's HP changes"
   },
   "weapon_SongOfBrokenPines": {
     "name": "Тысячелетняя симфония: Гимн знамени"
@@ -517,7 +587,7 @@
       "resolveInitial_": "<electro>Бонус увеличения урона Мусо но хитотати</electro",
       "resolveInfused_": "<electro>Бонус увеличения урона Мусо иссин</electro>",
       "burstDmg": "Урон Мусо но Хитотачи",
-      "active": "In the <strong>Musou Isshin</strong> state"
+      "active": "В состоянии <strong>Мусо но Иссин</strong>"
     },
     "a4": {
       "enerRest": "Восстановление энергии от <strong>Мусо иссин</strong>",
@@ -624,8 +694,8 @@
       "gameMani": "Манипуляции с Игрой",
       "materials": "Материалы",
       "characters": "Персонажи",
-      "weapons": "Weapons",
-      "achievements": "Achievements"
+      "weapons": "Оружия",
+      "achievements": "Достижения"
     },
     "nb": {
       "title": "Artiscan",
@@ -634,8 +704,8 @@
     },
     "ak": {
       "title": "Akasha Scanner",
-      "p1": "Automatically scans artifacts as well as characters and weapons. Allows exporting of past scans as it keeps a history within the app. Scans only in English.",
-      "p2": "This app is also able to scan achievements for <1>Paimon.moe</1> and <1>Seelie.me</1>."
+      "p1": "Автоматически сканирует как артефакты, так и персонажей, и оружие. Позволяет экспортировать предыдущие сканы и сохранить в приложении как историю. Сканирует ТОЛЬКО на Английском языке.",
+      "p2": "Приложение способно сканировать достижения для <1>Paimon.moe</1> и <1>Seelie.me</1>."
     },
     "seelieme": "Этот сканер также может сканировать материалы для <1>Seelie.me</1>."
   },
@@ -1109,7 +1179,13 @@
       "description": "Description",
       "duplicate": "Duplicate",
       "target_one": "<0>{{count}}</0> Target",
-      "target_other": "<0>{{count}}</0> Targets"
+      "target_other": "<0>{{count}}</0> Targets",
+      "target": {
+        "one": "<0>{{count}}</0> Target",
+        "few": "",
+        "many": "",
+        "other": ""
+      }
     },
     "addStats": {
       "title": "Параметры Врага + Бонусы",
@@ -1128,6 +1204,12 @@
     "tabTeambuff": {
       "team_reso": "Элементальный резонанс",
       "resonance_tip": "Отряд должен состоять из 4 персонажей, чтобы элементарный резонанс вступил в силу."
+    },
+    "showingNum": {
+      "one": "Showing <1>{{count}}</1> out of {{value}} Character",
+      "few": "",
+      "many": "",
+      "other": ""
     }
   },
   "page_weapon": {
@@ -1136,7 +1218,14 @@
     "edit": "Редактировать оружие",
     "weaponName": "Название оружия",
     "removeWeapon": "Вы уверены что хотите удалить {{value}}?",
-    "addWeapon": "Добавить Новое Оружие"
+    "addWeapon": "Добавить Новое Оружие",
+    "showingNum": {
+      "one": "Showing <1>{{count}}</1> out of {{value}} Weapon",
+      "few": "",
+      "many": "",
+      "other": ""
+    },
+    "cantDeleteLock": "Cannot delete weapon because it is locked"
   },
   "weapon_AquaSimulacra": {
     "condName": "Противников рядом"
@@ -1193,7 +1282,7 @@
       "title": "Main Stat Filter/Configuration"
     },
     "tcGraph": {
-      "vs": "Graph Optimization Target vs.",
+      "vs": "Сравнение по графику",
       "notSel": "Не Выбран",
       "downloadData": "Скачать Данные",
       "desc": "Using data from the builder, this will generate a graph to visualize Optimization Target vs. the selected Graph Target. The graph will show the maximum Optimization Target value per 0.01 of the selected Graph Target. Enabling this is optional, and doing so will slow down build times",
@@ -1275,7 +1364,13 @@
       "excluded": "This artifact is excluded.",
       "included": "This artifact is not excluded.",
       "usingNum": "Using <1>{{totalStr}}</1> excluded artifact(s)",
-      "button_txt": "Exclude Artifacts"
+      "button_txt": "Exclude Artifacts",
+      "excNum": {
+        "one": "<0>{{count}}</0> artifact is excluded",
+        "few": "",
+        "many": "",
+        "other": ""
+      }
     },
     "excludeChar": {
       "title": "Equipped Artifact Configuration",
@@ -1291,15 +1386,33 @@
       "artis": "Artifacts",
       "states": {
         "unequippedOnly": "Unequipped Only",
-        "customList": "Custom List",
-        "all": "All Artifacts"
+        "customList": "Свой список",
+        "all": "Все Артефакты"
       },
-      "usingState": "Using"
+      "usingState": "Использовать",
+      "usingNumTot": {
+        "one": "Using <1>{{arts}}</1> artifacts from <3>{{count}}</3> character",
+        "few": "",
+        "many": "",
+        "other": ""
+      }
     },
     "buildCompleted": "Build Completed",
     "notifyTooltip": "Play a sound when builds finish generating. Will also show an alarm prompt when tabbed out.",
     "bonusStats": {
       "title": "Bonus Stats"
+    },
+    "build": {
+      "one": "<0>{{count}}</0> Build",
+      "few": "",
+      "many": "",
+      "other": ""
+    },
+    "thread": {
+      "one": "<0>{{count}}</0> Thread",
+      "few": "",
+      "many": "",
+      "other": ""
     }
   },
   "weapon_ForestRegalia": {
@@ -1377,7 +1490,8 @@
     "burstNormalDmgInc": "Увеличение урона обычной атаки в состоянии Поклявшегося прокладывать путь",
     "boltDmgInc": "Увеличение урона Молний бедствия",
     "duringBurst": "In the <strong>Pactsworn Pathclearer</strong> state",
-    "afterBurstOrJudication": "After using <strong>Sacred Rite: Wolf's Swiftness</strong> or triggering the Judication effect"
+    "afterBurstOrJudication": "After using <strong>Sacred Rite: Wolf's Swiftness</strong> or triggering the Judication effect",
+    "a1soulfarer_dmg_": "Chasmic Soulfarer DMG Bonus"
   },
   "char_Nilou": {
     "skill": {
@@ -1496,42 +1610,42 @@
     "incDetectorStacks": "Max. Detector stacks Inc."
   },
   "weapon_MailedFlower": {
-    "condName": "After hitting an opponent with an Elemental Skill or triggering an Elemental Reaction"
+    "condName": "После попадания элементальным навыком по противнику или активации элементальной реакции"
   },
   "artifact_NymphsDream": {
     "condName": "Mirrored Nymph"
   },
   "char_Somnia": {
-    "name": "Somnia",
-    "title": "Creation of Simulated Cognition",
+    "name": "Сомния",
+    "title": "Создание имитированного познания",
     "description": "A combination of an array of concepts. She exists in a variety of states and phases. Is she even real?",
     "constellationName": "Mathematica Felina",
     "auto": {
       "name": "Astral Abacus",
       "fields": {
         "normal": {
-          "0": "<strong><strong>Normal Attack</strong>",
+          "0": "<strong><strong>Обычная Атака</strong>",
           "1": "Performs up to 4 consecutive attacks, launching beads that deal <electro>Electro DMG</electro> from her Astral Abacus."
         },
         "charged": {
           "0": "<strong>Charged Attack</strong>",
           "1": "Consumes a certain amount of Stamina to charge and unleash a continuous stream of Electro beads, dealing <electro>Electro DMG</electro> to up to 4 targets every 0.3s.",
-          "2": "Somnia gains resistance to interruption and is free to move while using her Charged Attack."
+          "2": "Сомния получает сопротивление к прерыванию атак и может свободно двигаться во время использования заряженной атаки."
         },
         "plunging": {
-          "0": "<strong>Plunging Attack</strong>",
+          "0": "<strong>Атака в падении</strong>",
           "1": "Fires Electro beads at the ground, dealing <electro>AoE Electro DMG</electro> upon impact."
         }
       },
       "skillParams": {
-        "0": "1-Hit DMG",
-        "1": "2-Hit DMG",
-        "2": "3-Hit DMG",
-        "3": "4-Hit DMG",
-        "4": "Charged Attack Stream DMG",
-        "5": "Charged Attack Stamina Cost",
-        "6": "Plunge DMG",
-        "7": "Low/High Plunge DMG"
+        "0": "Урон атаки 1",
+        "1": "Урон атаки 2",
+        "2": "Урон атаки 3",
+        "3": "Урон атаки 4",
+        "4": "Урон заряженной атаки",
+        "5": "Потребление выносливости",
+        "6": "Урон в падении",
+        "7": "Урон низкого/высокого удара"
       }
     },
     "skill": {
@@ -1545,8 +1659,8 @@
         "5": "Schrödinger Superposition expires after Self-Containing Sigil's duration ends or when Somnia leaves the field."
       },
       "skillParams": {
-        "0": "Skill DMG",
-        "1": "Duration",
+        "0": "Урон Навыка",
+        "1": "Длительность",
         "2": "CD"
       }
     },
@@ -1565,7 +1679,7 @@
         ]
       },
       "skillParams": {
-        "0": "Skill DMG",
+        "0": "Урон Навыка",
         "1": "Elemental Mastery",
         "2": "Celestial Cyclone DoT (Multiplication)",
         "3": "Star Sunder DMG",
@@ -1589,13 +1703,13 @@
     "passive3": {
       "name": "Insomniac Iteration",
       "description": {
-        "0": "At night (18:00 - 6:00), speeds up Genshin Optimizer build speed by 10%."
+        "0": "В ночное время(18:00 - 6:00) ускоряет работу GO при генерации билдов на 10%"
       }
     },
     "constellation1": {
       "name": "Decimal Point",
       "description": {
-        "0": "Somnia's Normal and Charged Attacks have a 25% chance to deal twice the DMG."
+        "0": "Обычные и заряженные атаки Сомнии имеют 25% шанс нанести двойной урон"
       }
     },
     "constellation2": {
@@ -1626,9 +1740,9 @@
       }
     },
     "constellation6": {
-      "name": "Golden Ratio",
+      "name": "Золотое Равновесие",
       "description": {
-        "0": "When Somnia's Charged Attack deals damage, her CRIT Rate and CRIT DMG are increased by 3% and 5%, respectively. This effect can be triggered once every 0.2s and stack up to 8 times. All Golden Ratio stacks are cleared 13s after the first stack was obtained."
+        "0": "Когда заряженная атака Сомнии наносит урон, ее Крит.Шанс и Крит.Урон увеличивается на 3% и 5% соответственно. Эффект может возникнуть каждые 0.2сек и складывается до 8раз. Стаки Золотого Равновесия исчезнут спустя 13сек после получения первого стака."
       }
     },
     "c1Key": "Normal and Charged Att. DMG Mult.",
@@ -1714,5 +1828,71 @@
       "atk_": "Character affected by <pyro>Pyro</pyro>",
       "dmg_": "Character affected by <hydro>Hydro</hydro>, <cryo>Cryo</cryo>, or <electro>Electro</electro>"
     }
+  },
+  "artifact_SongOfDaysPast": {
+    "condName": "Yearning effect amount"
+  },
+  "char_Charlotte": {
+    "c2Cond": "Monsieur Verite has hit opponents",
+    "c4Cond": "Opponent marked by Snappy Silhouette or Focused Impression"
+  },
+  "char_Freminet": {
+    "frost_dmgMult_": "Frost DMG Multiplier",
+    "pressure_dmg_": "Shattering Pressure DMG Bonus",
+    "pressure_critRate_": "Shattering Pressure Crit Rate"
+  },
+  "char_Furina": {
+    "fanfarePoints": "Fanfare",
+    "memberMult_": "Salon Members Mult.",
+    "numOffer": "Number of characters who offered HP",
+    "c1Inc": "Max Fanfare Increase",
+    "c1Bonus": "Fanfare on Cast",
+    "a4MemberDmg": "Salon Member DMG Bonus",
+    "a4HealInterval": "Singer of Many Waters Healing Interval",
+    "c2Points": "Fanfare above the limit",
+    "c6Healing": "Ousia Continuous Healing",
+    "c6Pneuma": "In Pneuma alignment"
+  },
+  "char_Navia": {
+    "skillTotalShardDmg": "Rosula Shardshot Total DMG",
+    "shot_dmg_": "Rosula Shardshot DMG Bonus",
+    "shot_mult_": "Rosula Shardshot Multiplier",
+    "shot_critRate_": "Rosula Shardshot CRIT Rate",
+    "shot_critDMG_": "Rosula Shardshot CRIT DMG",
+    "chargesCond": "Crystal Shrapnel charges consumed",
+    "shotsFired": "Rosula Shardshots Fired",
+    "shotsHitCond": "Rosula Shardshots hit"
+  },
+  "char_Neuvillette": {
+    "a1Cond": "Past Draconic Glories",
+    "judgmentSpecialMult_": "Equitable Judgment Mult.",
+    "judgment_critDMG_": "Equitable Judgment CRIT DMG",
+    "currentDmg": "Current DMG"
+  },
+  "char_Wriothesley": {
+    "rebukeDmg": "Rebuke: Vaulting Fist DMG",
+    "a4Cond": "Prosecution Edict",
+    "icicleDmg": "Icicle DMG",
+    "rebuke_critRate_": "Vaulting Fist CRIT Rate",
+    "rebuke_critDMG_": "Vaulting Fist CRIT DMG",
+    "rebuke_dmg_": "Vaulting Fist DMG Bonus"
+  },
+  "weapon_PortablePowerSaw": {
+    "condName": "Stoic's Symbols Consumed"
+  },
+  "weapon_ProspectorsDrill": {
+    "condName": "Unity's Symbols consumed"
+  },
+  "weapon_RangeGauge": {
+    "condName": "Unity's Symbols consumed"
+  },
+  "weapon_TheDockhandsAssistant": {
+    "condName": "Stoic's Symbols Consumed"
+  },
+  "weapon_UltimateOverlordsMegaMagicSword": {
+    "condName": "Melusines helped"
+  },
+  "weapon_Verdict": {
+    "condName": "Seals"
   }
 }

@@ -4,33 +4,22 @@ import {
   allRelicSlotKeys,
 } from '@genshin-optimizer/sr-consts'
 import { deepClone } from '@genshin-optimizer/util'
-import { DataManager } from '../DataManager'
 import type { SroDatabase } from '../Database'
+import { SroDataManager } from '../SroDataManager'
 
 export interface IBuildResult {
   builds: string[][]
   buildDate: number
 }
 
-const storageKey = 'sro_buildResults'
-const storageHash = 'sro_buildResult_'
-export class BuildResultDataManager extends DataManager<
+export class BuildResultDataManager extends SroDataManager<
   CharacterKey,
-  typeof storageKey,
+  'sro_buildResults',
   IBuildResult,
-  IBuildResult,
-  SroDatabase
+  IBuildResult
 > {
   constructor(database: SroDatabase) {
-    super(database, storageKey)
-    for (const key of this.database.storage.keys)
-      if (key.startsWith(storageHash)) {
-        const charKey = key.split(storageHash)[1] as CharacterKey
-        if (!this.set(charKey, {})) this.database.storage.remove(key)
-      }
-  }
-  override toStorageKey(key: string): string {
-    return `${storageHash}${key}`
+    super(database, 'sro_buildResults')
   }
   override validate(obj: unknown, key: CharacterKey): IBuildResult | undefined {
     if (typeof obj !== 'object') return undefined

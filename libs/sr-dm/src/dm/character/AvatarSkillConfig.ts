@@ -1,4 +1,5 @@
 import { dumpFile } from '@genshin-optimizer/pipeline'
+import type { AbilityKey } from '@genshin-optimizer/sr-consts'
 import { objMap } from '@genshin-optimizer/util'
 import { PROJROOT_PATH } from '../../consts'
 import { readDMJSON } from '../../util'
@@ -42,6 +43,13 @@ export type AvatarSkillConfig = {
 }
 
 export type AttackType = 'Normal' | 'BPSkill' | 'Ultra' | 'MazeNormal' | 'Maze'
+export const DmAttackTypeMap: Record<AttackType, AbilityKey> = {
+  Normal: 'basic',
+  BPSkill: 'skill',
+  Ultra: 'ult',
+  MazeNormal: 'talent',
+  Maze: 'technique',
+}
 
 export type SkillEffect =
   | 'SingleAttack'

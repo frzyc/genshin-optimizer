@@ -11,7 +11,6 @@ export const allStatKeys = [
   'def_',
   'crit_',
   'crit_dmg_',
-  'taunt',
   'brEff_',
   'eff_',
   'eff_res_',

@@ -15,25 +15,19 @@ import type {
   ICachedSroCharacter,
   ISroDatabase,
 } from '../../Interfaces'
-import { DataManager } from '../DataManager'
 import type { SroDatabase } from '../Database'
+import { SroDataManager } from '../SroDataManager'
 import type { ImportResult } from '../exim'
 import { initialCharacter } from './CharacterData'
 
-const storageKey = 'sro_lightCones'
-const storageHash = 'sro_lightCone_'
-export class LightConeDataManager extends DataManager<
+export class LightConeDataManager extends SroDataManager<
   string,
-  typeof storageKey,
+  'sro_lightCones',
   ICachedLightCone,
-  ILightCone,
-  SroDatabase
+  ILightCone
 > {
   constructor(database: SroDatabase) {
-    super(database, storageKey)
-    for (const key of this.database.storage.keys)
-      if (key.startsWith(storageHash) && !this.set(key, {}))
-        this.database.storage.remove(key)
+    super(database, 'sro_lightCones')
   }
   override validate(obj: unknown): ILightCone | undefined {
     if (typeof obj !== 'object') return undefined
@@ -108,9 +102,6 @@ export class LightConeDataManager extends DataManager<
     const id = this.generateKey()
     this.set(id, value)
     return id
-  }
-  override toStorageKey(key: string): string {
-    return `${storageHash}${key}`
   }
   override remove(key: string, notify = true) {
     const lc = this.get(key)

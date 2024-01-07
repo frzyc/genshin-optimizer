@@ -1,17 +1,20 @@
-import type { GenStatsExecutorSchema } from './schema'
 import { dumpFile } from '@genshin-optimizer/pipeline'
-import type { CharacterDataGen } from './src/characterData'
+import { workspaceRoot } from '@nx/devkit'
+import type { GenStatsExecutorSchema } from './schema'
+import type {
+  CharacterDataGen,
+  SkillTreeNodeBonusStat,
+} from './src/characterData'
 import characterData from './src/characterData'
 import LightConeData from './src/lightConeData'
 import { main, sub } from './src/relic'
-import { workspaceRoot } from '@nx/devkit'
 
 const proj_path = `${workspaceRoot}/libs/sr-stats`
 const path = `${proj_path}/Data`
 const characterDataDump = characterData()
 const lightConeDataDump = LightConeData()
 
-export type { CharacterDataGen }
+export type { CharacterDataGen, SkillTreeNodeBonusStat }
 
 const allStat = {
   char: characterDataDump,

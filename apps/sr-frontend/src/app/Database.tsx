@@ -1,6 +1,6 @@
 import { SandboxStorage } from '@genshin-optimizer/database'
-import { DatabaseContext } from '@genshin-optimizer/sr-ui'
 import { SroDatabase } from '@genshin-optimizer/sr-db'
+import { useDatabaseContext } from '@genshin-optimizer/sr-ui'
 import { CardThemed, DropdownButton } from '@genshin-optimizer/ui-common'
 import { range } from '@genshin-optimizer/util'
 import {
@@ -12,14 +12,10 @@ import {
   Typography,
 } from '@mui/material'
 import type { ChangeEvent } from 'react'
-import { useCallback, useContext, useEffect, useMemo, useState } from 'react'
+import { useCallback, useEffect, useMemo, useState } from 'react'
 
 export default function Database() {
-  const {
-    database: mainDB,
-    databases,
-    setDatabase,
-  } = useContext(DatabaseContext)
+  const { database: mainDB, databases, setDatabase } = useDatabaseContext()
   const [index, setIndex] = useState(0)
   const database = databases[index]
   const current = database === mainDB
@@ -38,7 +34,6 @@ export default function Database() {
       let parsed: any
       try {
         parsed = JSON.parse(data)
-        console.log(parsed)
         if (typeof parsed !== 'object') {
           return undefined
         }

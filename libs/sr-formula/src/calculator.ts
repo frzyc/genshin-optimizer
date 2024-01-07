@@ -2,6 +2,8 @@ import type { AnyNode, CalcResult } from '@genshin-optimizer/pando'
 import { Calculator as Base, calculation } from '@genshin-optimizer/pando'
 import { assertUnreachable } from '@genshin-optimizer/util'
 import type { Tag } from './data/util'
+import { reader, type Read } from './data/util'
+import { DebugCalculator } from './debug'
 
 const { arithmetic } = calculation
 
@@ -67,5 +69,13 @@ export class Calculator extends Base<Output> {
         if (op === 'custom') throw new Error(`Unsupported operation ${ex}`)
         assertUnreachable(op)
     }
+  }
+  toDebug(): DebugCalculator {
+    return new DebugCalculator(this)
+  }
+  listFormulas(read: Read): Read[] {
+    return this.get(read.tag)
+      .filter((x) => x.val)
+      .map(({ val, meta }) => reader.withTag(meta.tag!)[val as Read['accu']])
   }
 }

@@ -11,6 +11,9 @@ export type CustomNumberInputProps = Omit<InputProps, 'onChange'> & {
   disableNegative?: boolean
 }
 
+/**
+ * @deprecated use `StyledInputBase` in `@genshin-optimizer/ui-common`
+ */
 export const StyledInputBase = styled(InputBase)(
   ({ theme, color = 'primary' }) => ({
     backgroundColor: theme.palette[color].main,
@@ -38,6 +41,9 @@ const Wrapper = styled(Button)(({ theme }) => ({
 }))
 
 // wrap the Input with this when using the input in a buttongroup
+/**
+ * @deprecated use `CustomNumberInputButtonGroupWrapper` in `@genshin-optimizer/ui-common`
+ */
 export function CustomNumberInputButtonGroupWrapper({
   children,
   disableRipple,
@@ -52,6 +58,9 @@ export function CustomNumberInputButtonGroupWrapper({
   )
 }
 
+/**
+ * @deprecated use `CustomNumberInput` in `@genshin-optimizer/ui-common`
+ */
 export default function CustomNumberInput({
   value = 0,
   onChange,

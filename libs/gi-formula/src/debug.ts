@@ -115,6 +115,11 @@ export type DebugMeta = {
   deps: DebugMeta[]
 }
 export class DebugCalculator extends BaseCalculator<DebugMeta> {
+  constructor(calc: Calculator) {
+    super(calc.keys)
+    this.nodes = calc.nodes
+  }
+
   override computeCustom(val: any[], op: string): any {
     if (op == 'res') return res(val[0])
     return super.computeCustom(val, op)
@@ -131,6 +136,7 @@ export class DebugCalculator extends BaseCalculator<DebugMeta> {
       text: '',
       deps: [],
     }
+
     function toStr(
       x: CalcResult<number | string, DebugMeta> | undefined
     ): string {
@@ -138,7 +144,6 @@ export class DebugCalculator extends BaseCalculator<DebugMeta> {
       result.deps.push(...x.meta.deps)
       return x.meta.text
     }
-
     function valStr(val: number | string): string {
       if (typeof val !== 'number') return `"${val}"`
       if (Math.round(val) === val) return `${val}`
@@ -152,18 +157,19 @@ export class DebugCalculator extends BaseCalculator<DebugMeta> {
         break
       case 'read': {
         const args = x as CalcResult<number | string, DebugMeta>[]
+        const text = `read ${tagStr(nTag!, ex)}`
         return {
           valText: result.valText,
-          text: tagStr(nTag!, ex),
+          text,
           deps: [
             {
               valText: result.valText,
-              text: `expand ${tagStr(nTag!, ex)} (${tagStr(tag!)})`,
+              text: `match ${tagStr(tag!, ex)} for ${text}`,
               deps: args.map(({ meta, entryTag }) => ({
                 ...meta,
-                text: `${entryTag?.map((tag) => tagStr(tag)).join(' <- ')} <= ${
-                  meta.text
-                }`,
+                text: `${entryTag
+                  ?.map((tag) => (tag ? tagStr(tag) : '(unknown tag)'))
+                  .join(' <- ')} <= ${meta.text}`,
               })),
             },
           ],
@@ -202,24 +208,38 @@ export class DebugCalculator extends BaseCalculator<DebugMeta> {
     return result
   }
 
-  debug(node: AnyNode): string[] {
+  debugCompute(node: AnyNode): string[] {
     const { meta } = this.compute(node)
     const result: string[] = []
-    const found = new Set<DebugMeta>()
-
-    function print(meta: DebugMeta, level: number) {
-      const indent = Array(2 * level + 1).join(' ')
-      const line = `${meta.valText} ${meta.text}`
-
-      if (found.has(meta)) {
-        result.push(indent + line + ' (Dup)')
-      } else {
-        found.add(meta)
-        result.push(indent + line)
-        meta.deps.forEach((dep) => print(dep, level + 1))
-      }
-    }
-    print(meta, 0)
+    addDebugString(meta, 0, result, new Set())
     return result
+  }
+
+  debugGet(tag: Tag): string[] {
+    const list = this.get(tag)
+    const result: string[] = []
+    const found = new Set<DebugMeta>()
+    for (const { meta } of list) {
+      addDebugString(meta, 0, result, found)
+    }
+    return result
+  }
+}
+
+function addDebugString(
+  meta: DebugMeta,
+  level: number,
+  result: string[],
+  found: Set<DebugMeta>
+) {
+  const indent = Array(2 * level + 1).join(' ')
+  const line = `${meta.valText} ${meta.text}`
+
+  if (found.has(meta)) {
+    result.push(indent + line + ' (Dup)')
+  } else {
+    found.add(meta)
+    result.push(indent + line)
+    meta.deps.forEach((dep) => addDebugString(dep, level + 1, result, found))
   }
 }

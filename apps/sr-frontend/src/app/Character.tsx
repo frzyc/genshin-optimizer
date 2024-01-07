@@ -1,38 +1,32 @@
-import { reread } from '@genshin-optimizer/pando'
 import type { AscensionKey } from '@genshin-optimizer/sr-consts'
+import { convert, selfTag } from '@genshin-optimizer/sr-formula'
 import {
-  self,
-  selfBuff,
-  srCalculatorWithEntries,
-} from '@genshin-optimizer/sr-formula'
-import {
-  CharacterContext,
+  useCalcContext,
   useCharacter,
+  useCharacterContext,
   useCharacterReducer,
 } from '@genshin-optimizer/sr-ui'
 import { CardThemed } from '@genshin-optimizer/ui-common'
-import { Box, CardContent, Stack, TextField, Typography } from '@mui/material'
-import { Container } from '@mui/system'
-import { useContext, useMemo } from 'react'
+import { ExpandMore } from '@mui/icons-material'
+import {
+  Accordion,
+  AccordionDetails,
+  AccordionSummary,
+  Box,
+  CardContent,
+  Container,
+  Stack,
+  TextField,
+  Typography,
+} from '@mui/material'
 
 export default function Character() {
-  const { characterKey } = useContext(CharacterContext)
+  const { characterKey } = useCharacterContext()
   const character = useCharacter(characterKey)
   const charReducer = useCharacterReducer(characterKey)
 
-  const calc = useMemo(
-    () =>
-      character &&
-      srCalculatorWithEntries([
-        selfBuff.char.lvl.add(character.level),
-        selfBuff.char.ascension.add(character?.ascension),
-        {
-          tag: { src: 'char' },
-          value: reread({ src: characterKey }),
-        },
-      ]),
-    [character, characterKey]
-  )
+  const { calc } = useCalcContext()
+  const member0 = convert(selfTag, { member: 'member0', et: 'self' })
 
   return (
     <Container>
@@ -45,7 +39,7 @@ export default function Character() {
               label="Level"
               variant="outlined"
               inputProps={{ min: 1, max: 90 }}
-              value={character?.level}
+              value={character?.level || 0}
               onChange={(e) => charReducer({ level: parseInt(e.target.value) })}
             />
             <TextField
@@ -53,26 +47,63 @@ export default function Character() {
               label="Ascension"
               variant="outlined"
               inputProps={{ min: 0, max: 6 }}
-              value={character?.ascension}
+              value={character?.ascension || 0}
               onChange={(e) =>
                 charReducer({
                   ascension: parseInt(e.target.value) as AscensionKey,
                 })
               }
             />
-            {(
-              [
-                ['ATK', 'atk'],
-                ['DEF', 'def'],
-                ['HP', 'hp'],
-                ['SPD', 'spd'],
-              ] as const
-            ).map(([txt, skey]) => (
-              <Typography key={skey}>
-                {txt}: {calc?.compute(self.stat[skey].src('char')).val}
-              </Typography>
-            ))}
+            <Accordion>
+              <AccordionSummary expandIcon={<ExpandMore />}>
+                Basic stats for all chars
+              </AccordionSummary>
+              <AccordionDetails>
+                {(
+                  [
+                    ['ATK', 'atk'],
+                    ['DEF', 'def'],
+                    ['HP', 'hp'],
+                    ['SPD', 'spd'],
+                  ] as const
+                ).map(([txt, skey]) => (
+                  <Typography key={skey}>
+                    {txt}: {calc?.compute(member0.final[skey]).val}
+                  </Typography>
+                ))}
+              </AccordionDetails>
+            </Accordion>
           </Stack>
+          <Accordion>
+            <AccordionSummary expandIcon={<ExpandMore />}>
+              All target values, if sheet is created
+            </AccordionSummary>
+            <AccordionDetails>
+              <Stack>
+                {calc?.listFormulas(member0.listing.formulas).map((read) => {
+                  const computed = calc.compute(read)
+                  const name = read.tag.name || read.tag.q
+                  return (
+                    <Box>
+                      <Typography key={name}>
+                        {name}: {computed.val}
+                      </Typography>
+                      <Accordion>
+                        <AccordionSummary expandIcon={<ExpandMore />}>
+                          meta for {name}
+                        </AccordionSummary>
+                        <AccordionDetails>
+                          <Typography component="pre">
+                            {JSON.stringify(computed.meta, undefined, 2)}
+                          </Typography>{' '}
+                        </AccordionDetails>
+                      </Accordion>
+                    </Box>
+                  )
+                })}
+              </Stack>
+            </AccordionDetails>
+          </Accordion>
         </CardContent>
       </CardThemed>
     </Container>
