@@ -44,18 +44,18 @@ import useTeamData from '../../../../ReactHooks/useTeamData'
 import type { ICachedArtifact } from '../../../../Types/artifact'
 import type { ICharTC } from '../../../../Types/character'
 import type { ICachedWeapon } from '../../../../Types/weapon'
-import { shouldShowDevComponents } from '../../../../Util/Util'
+import { isDev } from '../../../../Util/Util'
 import { defaultInitialWeaponKey } from '../../../../Util/WeaponUtil'
 import OptimizationTargetSelector from '../TabOptimize/Components/OptimizationTargetSelector'
 import { ArtifactMainStatAndSetEditor } from './ArtifactMainStatAndSetEditor'
 import { ArtifactSubCard } from './ArtifactSubCard'
 import type { SetCharTCAction } from './CharTCContext'
 import { CharTCContext } from './CharTCContext'
+import GcsimButton from './GcsimButton'
 import { WeaponEditorCard } from './WeaponEditorCard'
 import kqmIcon from './kqm.png'
 import { optimizeTc } from './optimizeTc'
 import useCharTC from './useCharTC'
-import GcsimButton from './GcsimButton'
 export default function TabTheorycraft() {
   const { t } = useTranslation('page_character')
   const { database } = useContext(DatabaseContext)
@@ -356,7 +356,7 @@ export default function TabTheorycraft() {
                 </Button>
               </Box>
 
-              {shouldShowDevComponents && (
+              {isDev && (
                 <Button
                   onClick={() => optimizeSubstats(false)}
                   disabled={!optimizationTarget}
