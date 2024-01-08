@@ -31,7 +31,7 @@ export function optimizeTc(
       target: optimizationTarget,
       distributedSubstats,
       maxSubstats: rawMaxSubstats,
-      minTotal: rawMinTotal,
+      minSubstats,
     },
   } = charTC
   if (!optimizationTarget) return {}
@@ -87,12 +87,7 @@ export function optimizeTc(
   )
   const subsArr = [...subs]
   let distributed = distributedSubstats
-
-  const minTotal = objMap(rawMinTotal, (v, k) => {
-    const [node] = optimize([workerData.total[k]], workerData, () => true)
-    return v - (node.operation === 'const' ? node.value : 0)
-  })
-  for (const [k, v] of Object.entries(minTotal)) {
+  for (const [k, v] of Object.entries(minSubstats)) {
     distributed -= Math.ceil(
       v / getSubstatValue(k, rarity, substatsType, false)
     )
@@ -121,7 +116,9 @@ export function optimizeTc(
       charTC.artifact.substats.stats,
       (v, k) =>
         v / comp(k) +
-        Math.ceil(minTotal[k] / getSubstatValue(k, rarity, substatsType, false))
+        Math.ceil(
+          minSubstats[k] / getSubstatValue(k, rarity, substatsType, false)
+        )
     )
     const permute = (toAssign: number, [x, ...xs]: string[]) => {
       if (xs.length === 0) {
