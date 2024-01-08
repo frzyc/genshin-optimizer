@@ -130,9 +130,10 @@ export function cartesian<T>(...q: T[][]): T[][] {
   ] as T[][])
 }
 
+export const isDev = process.env.NODE_ENV === 'development'
+
 /**
  * Boolean indicating if dev components should be shown
  */
 export const shouldShowDevComponents =
-  process.env.NODE_ENV === 'development' ||
-  process.env.NX_SHOW_DEV_COMPONENTS === 'true'
+  isDev || process.env.NX_SHOW_DEV_COMPONENTS === 'true'
