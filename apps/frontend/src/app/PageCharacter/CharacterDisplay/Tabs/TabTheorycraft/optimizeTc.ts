@@ -1,7 +1,7 @@
 import type { SubstatKey } from '@genshin-optimizer/consts'
 import { allSubstatKeys, type CharacterKey } from '@genshin-optimizer/consts'
 import { getSubstatValue } from '@genshin-optimizer/gi-util'
-import { clampLow, objMap } from '@genshin-optimizer/util'
+import { clampLow, objMap, toDecimal } from '@genshin-optimizer/util'
 import type { TeamData } from '../../../../Context/DataContext'
 import { mergeData } from '../../../../Formula/api'
 import { mapFormulas } from '../../../../Formula/internal'
@@ -31,7 +31,7 @@ export function optimizeTc(
       target: optimizationTarget,
       distributedSubstats,
       maxSubstats: rawMaxSubstats,
-      minTotal: rawMinTotal,
+      minTotal,
     },
   } = charTC
   if (!optimizationTarget) return {}
@@ -78,7 +78,6 @@ export function optimizeTc(
     2
   )
 
-  const comp = (statKey: string) => (statKey.endsWith('_') ? 100 : 1)
   const substatValue = (x: string, m: number) =>
     m * getSubstatValue(x as SubstatKey, rarity, substatsType, false)
 
@@ -88,15 +87,18 @@ export function optimizeTc(
   const subsArr = [...subs]
   let distributed = distributedSubstats
 
-  const minTotal = objMap(rawMinTotal, (v, k) => {
+  const minTotalRolls = objMap(minTotal, (v, k) => {
+    if (!v || !distributed) return 0
     const [node] = optimize([workerData.total[k]], workerData, () => true)
-    return v - (node.operation === 'const' ? node.value : 0)
-  })
-  for (const [k, v] of Object.entries(minTotal)) {
-    distributed -= Math.ceil(
-      v / getSubstatValue(k, rarity, substatsType, false)
+    const diff = v - (node.operation === 'const' ? node.value : 0)
+    if (diff <= 0) return 0
+    const rolls = Math.ceil(
+      diff / getSubstatValue(k, rarity, substatsType, false)
     )
-  }
+    const disRolls = Math.min(distributed, rolls)
+    distributed -= disRolls
+    return disRolls
+  })
   const maxSubstats = objMap(rawMaxSubstats, (v, k) => {
     return (
       v -
@@ -119,9 +121,7 @@ export function optimizeTc(
     const buffer = Object.fromEntries([...subs].map((x) => [x, 0]))
     const existingSubs = objMap(
       charTC.artifact.substats.stats,
-      (v, k) =>
-        v / comp(k) +
-        Math.ceil(minTotal[k] / getSubstatValue(k, rarity, substatsType, false))
+      (v, k) => toDecimal(v, k) + minTotalRolls[k]
     )
     const permute = (toAssign: number, [x, ...xs]: string[]) => {
       if (xs.length === 0) {

@@ -171,7 +171,7 @@ function validateCharTcOptimization(
   minTotal = objKeyMap([...allSubstatKeys], (k) =>
     typeof minTotal[k] === 'number' ? minTotal[k] : 0
   )
-  return { target, distributedSubstats, maxSubstats, minTotal: minTotal }
+  return { target, distributedSubstats, maxSubstats, minTotal }
 }
 function initCharTcOptimizationMaxSubstats(): ICharTC['optimization']['maxSubstats'] {
   return objKeyMap(
