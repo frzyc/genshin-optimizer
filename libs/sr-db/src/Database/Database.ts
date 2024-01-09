@@ -30,6 +30,8 @@ export class SroDatabase extends Database {
   dbIndex: 1 | 2 | 3 | 4
   dbVer: number
 
+  keyPrefix = 'sro'
+
   constructor(dbIndex: 1 | 2 | 3 | 4, storage: DBStorage) {
     super(storage)
     migrateStorage(storage)
