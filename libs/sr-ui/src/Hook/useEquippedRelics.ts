@@ -26,14 +26,15 @@ export function useEquippedRelics(
   useEffect(() => {
     setRelics(objMap(relicSlotIds, (id) => database.relics.get(id)))
     const unfollows = Object.values(relicSlotIds).map((relicId) =>
-      database.relics.follow(
-        relicId,
-        (_k, r, v: ICachedRelic) =>
-          (r === 'update' || r === 'remove') &&
-          setRelics((relics) => ({ ...relics, ...{ [v.slotKey]: v } }))
-      )
+      database.relics.follow(relicId, (_k, r, v: ICachedRelic) => {
+        if (r === 'update')
+          setRelics((relics) => ({ ...relics, [v.slotKey]: v }))
+        // remove event returns the deleted obj
+        if (r === 'remove')
+          setRelics((relics) => ({ ...relics, [v.slotKey]: undefined }))
+      })
     )
-    return unfollows.forEach((unfollow) => unfollow())
+    return () => unfollows.forEach((unfollow) => unfollow())
   }, [database, relicSlotIds])
 
   return relics
