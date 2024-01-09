@@ -1,5 +1,9 @@
 import type { SubstatKey } from '@genshin-optimizer/consts'
-import { allSubstatKeys, type CharacterKey } from '@genshin-optimizer/consts'
+import {
+  allSubstatKeys,
+  artSubstatRollData,
+  type CharacterKey,
+} from '@genshin-optimizer/consts'
 import { getSubstatValue } from '@genshin-optimizer/gi-util'
 import { objMap, toDecimal } from '@genshin-optimizer/util'
 import type { TeamData } from '../../../../Context/DataContext'
@@ -25,6 +29,7 @@ export function optimizeTc(
   const startTime = performance.now()
   const {
     artifact: {
+      slots,
       substats: { stats: substats, type: substatsType, rarity },
     },
     optimization: {
@@ -105,23 +110,15 @@ export function optimizeTc(
     Math.ceil(substats[k] / getSubstatValue(k, rarity, substatsType))
   )
   const maxSubsAssignable = objMap(maxSubstats, (v, k) => v - existingRolls[k])
-  // const assignableMaxTot = subsArr.reduce((a, x) => a + maxSubstats[x], 0)
-  // if (assignableMaxTot <= distributedSubstats) {
-  //   distributed = assignableMaxTot
-  //   maxBuffer = Object.fromEntries(
-  //     subsArr.map((x) => [x, substatValue(x, maxSubstats[x])])
-  //   )
-  //   if (shouldShowDevComponents)
-  //     console.log({ maxBuffer, subsArr, maxSubstats, distributed })
-  // } else {
   let max = -Infinity
   const buffer = {} //Object.fromEntries([...subs].map((x) => [x, 0]))
-  const bufferInt = {} // Object.fromEntries([...subs].map((x) => [x, 0]))
+  const bufferInt: Partial<Record<SubstatKey | 'other', number>> = {} // Object.fromEntries([...subs].map((x) => [x, 0]))
   const existingSubs = objMap(
     charTC.artifact.substats.stats,
     (v, k) => toDecimal(v, k) + minTotalRolls[k]
   )
-  const allKeys = [...allSubstatKeys, 'other']
+  const mainStatsCount = getMainStatsCount(slots)
+  const minSubLines = getMinSubLines(slots)
   const permute = (toAssign: number, [x, ...xs]: string[]) => {
     if (xs.length === 0) {
       if (toAssign > maxSubsAssignable[x]) return
@@ -129,11 +126,16 @@ export function optimizeTc(
       if (x !== 'other') buffer[x] = substatValue(x, toAssign)
       bufferInt[x] = toAssign
 
-      const allRolls = allKeys.map((k) => [
+      const allRolls = allSubstatKeys.map((k) => [
         k,
         (existingSubs[k] ?? 0) + (bufferInt[k] ?? 0),
-      ]) as Array<[SubstatKey | 'other', number]>
-      if (!isValid(allRolls)) return
+      ]) as Array<[SubstatKey, number]>
+      const minOtherRolls = getMinOtherRolls(
+        allRolls,
+        mainStatsCount,
+        minSubLines
+      )
+      if ((bufferInt.other ?? 0) < minOtherRolls) return
       const [result] = compute([
         { values: existingSubs },
         { values: buffer },
@@ -171,32 +173,30 @@ export function optimizeTc(
     scalesWith,
   }
 }
+function getMinOtherRolls(
+  subsRolls: Array<[SubstatKey, number]>,
+  mainStatsCountAgainstSubs: Partial<Record<SubstatKey, number>>,
+  minSublines: number = 4 * 5
+) {
+  const maxSubSlots = subsRolls.reduce((accu, [k, v]) => {
+    const maxStatSlot = 5 - (mainStatsCountAgainstSubs[k] ?? 0)
+    return accu + Math.min(v, maxStatSlot)
+  }, 0)
+  return minSublines - maxSubSlots
+}
 
-// assumes the rolls respect mainstat max rolls, and max total rolls, and the distribution will be above the min #rolls for rarity
-function isValid(subsRolls: Array<[SubstatKey | 'other', number]>) {
-  // console.log('isValid')
-  // TODO this check can be done before optimizing
-  // const minRolls = artSubstatRollData[rarity].low * 5
-  // const rolls = entries.reduce((accu, [_, v]) => accu + v, 0)
-  // if (rolls < minRolls) {
-  //   console.log('rolls < minRolls', { subsRolls, minRolls, rolls })
-  //   return false
-  // }
+function getMinSubLines(slots: ICharTC['artifact']['slots']) {
+  return Object.values(slots).reduce((minSubLines, { rarity, level }) => {
+    const { high, low } = artSubstatRollData[rarity]
+    return minSubLines + level >= 4 ? high : low
+  }, 0)
+}
+function getMainStatsCount(slots: ICharTC['artifact']['slots']) {
+  const mainStatsCount: Partial<Record<SubstatKey, number>> = {}
 
-  // A "full roll" is basically the minimal amuont of substat slots to satisfy subsRolls
-  const rollSlots = subsRolls.reduce(
-    (accu, [k, v]) => accu + (k !== 'other' && v ? Math.ceil(v / 6) : 0),
-    0
-  )
-  if (rollSlots) {
-    const totalSubSlots = subsRolls.find(([k]) => k === 'other')[1] + rollSlots
-    if (totalSubSlots < 4 * 5) {
-      // console.log('rollsSmallerThan6 < expectedOtherRolls', {
-      //   rollsSmallerThan6,
-      //   expectedOtherRolls,
-      // })
-      return false
-    }
-  }
-  return true
+  Object.values(slots).forEach(({ statKey }) => {
+    mainStatsCount[statKey as SubstatKey] =
+      (mainStatsCount[statKey as SubstatKey] ?? 0) + 1
+  }, 0)
+  return mainStatsCount
 }
