@@ -24,8 +24,8 @@ export function useDatabaseContext() {
 export function DatabaseProvider({ children }: { children: ReactNode }) {
   const dbIndex = parseInt(localStorage.getItem('sro_dbIndex') || '1')
   const [databases, setDatabases] = useState(() => {
-    localStorage.removeItem('SRONewTabDetection')
-    localStorage.setItem('SRONewTabDetection', 'debug')
+    localStorage.removeItem('sro_newTabDetection')
+    localStorage.setItem('sro_ewTabDetection', 'debug')
     return ([1, 2, 3, 4] as const).map((index) => {
       if (index === dbIndex) {
         return new SroDatabase(index, new DBLocalStorage(localStorage, 'sro'))

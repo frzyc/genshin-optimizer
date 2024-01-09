@@ -40,7 +40,7 @@ export class SroDataManager<
       entries.forEach((ele) => ele.id && this.set(ele.id, ele))
   }
   override get goKeySingle() {
-    const key = this.dataKey.replace('sro_', '')
+    const key = this.dataKey
     if (key.endsWith('s')) return key.slice(0, -1)
     return key
   }
