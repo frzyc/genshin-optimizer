@@ -28,7 +28,6 @@ export function DatabaseProvider({ children }: { children: ReactNode }) {
     localStorage.setItem('sro_newTabDetection', 'debug')
     return ([1, 2, 3, 4] as const).map((index) => {
       if (index === dbIndex) {
-        console.log(localStorage)
         return new SroDatabase(index, new DBLocalStorage(localStorage, 'sro'))
       } else {
         const dbName = `sro_extraDatabase_${index}`
