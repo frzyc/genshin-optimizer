@@ -47,6 +47,7 @@ export class DataManagerBase<
     }
   }
   follow(key: CacheKey, callback: Callback<CacheKey>) {
+    if (!key) return () => {}
     if (this.listeners[key]) this.listeners[key]?.push(callback)
     else this.listeners[key] = [callback]
     return () => {
