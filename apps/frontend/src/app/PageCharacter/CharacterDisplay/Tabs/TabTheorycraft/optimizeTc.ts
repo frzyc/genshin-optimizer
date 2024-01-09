@@ -163,7 +163,7 @@ export function optimizeTc(
       scalesWith,
     })
   }
-  distributed += maxBufferInt.other
+  distributed -= maxBufferInt.other
   // }
   return {
     maxBuffer,
