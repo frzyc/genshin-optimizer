@@ -175,11 +175,11 @@ export function optimizeTc(
 }
 function getMinOtherRolls(
   subsRolls: Array<[SubstatKey, number]>,
-  mainStatsCountAgainstSubs: Partial<Record<SubstatKey, number>>,
+  mainStatsCount: Partial<Record<SubstatKey, number>>,
   minSublines: number = 4 * 5
 ) {
   const maxSubSlots = subsRolls.reduce((accu, [k, v]) => {
-    const maxStatSlot = 5 - (mainStatsCountAgainstSubs[k] ?? 0)
+    const maxStatSlot = 5 - (mainStatsCount[k] ?? 0)
     return accu + Math.min(v, maxStatSlot)
   }, 0)
   return minSublines - maxSubSlots
@@ -188,7 +188,7 @@ function getMinOtherRolls(
 function getMinSubLines(slots: ICharTC['artifact']['slots']) {
   return Object.values(slots).reduce((minSubLines, { rarity, level }) => {
     const { high, low } = artSubstatRollData[rarity]
-    return minSubLines + level >= 4 ? high : low
+    return minSubLines + (level >= 4 ? high : low)
   }, 0)
 }
 function getMainStatsCount(slots: ICharTC['artifact']['slots']) {
