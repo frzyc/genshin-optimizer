@@ -14,12 +14,12 @@ export interface IBuildResult {
 
 export class BuildResultDataManager extends SroDataManager<
   CharacterKey,
-  'sro_buildResults',
+  'buildResults',
   IBuildResult,
   IBuildResult
 > {
   constructor(database: SroDatabase) {
-    super(database, 'sro_buildResults')
+    super(database, 'buildResults')
   }
   override validate(obj: unknown, key: CharacterKey): IBuildResult | undefined {
     if (typeof obj !== 'object') return undefined

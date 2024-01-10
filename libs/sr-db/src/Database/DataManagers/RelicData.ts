@@ -35,12 +35,12 @@ import type { ImportResult } from '../exim'
 
 export class RelicDataManager extends SroDataManager<
   string,
-  'sro_relics',
+  'relics',
   ICachedRelic,
   IRelic
 > {
   constructor(database: SroDatabase) {
-    super(database, 'sro_relics')
+    super(database, 'relics')
   }
   override validate(obj: unknown): IRelic | undefined {
     return validateRelic(obj)

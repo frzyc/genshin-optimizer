@@ -22,13 +22,13 @@ function dbMetaInit(database: Database): IDBMeta {
 }
 
 export class DBMetaEntry extends DataEntry<
-  'sro_dbMeta',
-  'sro_dbMeta',
+  'dbMeta',
+  'dbMeta',
   IDBMeta,
   IDBMeta
 > {
   constructor(database: SroDatabase) {
-    super(database, 'sro_dbMeta', dbMetaInit, 'sro_dbMeta')
+    super(database, 'dbMeta', dbMetaInit, 'dbMeta')
   }
   override validate(obj: any): IDBMeta | undefined {
     if (typeof obj !== 'object') return undefined
@@ -45,7 +45,7 @@ export class DBMetaEntry extends DataEntry<
     sroDb: ISroDatabase & ISrObjectDescription,
     _result: ImportResult
   ): void {
-    const data = sroDb[this.goKey]
+    const data = sroDb[this.prefixedKey]
     if (data) {
       // Don't copy over lastEdit data
       const { lastEdit, ...rest } = data as IDBMeta

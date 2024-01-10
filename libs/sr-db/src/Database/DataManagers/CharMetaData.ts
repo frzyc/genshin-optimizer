@@ -22,12 +22,12 @@ const initCharMeta: ICharMeta = deepFreeze({
 
 export class CharMetaDataManager extends SroDataManager<
   CharacterKey,
-  'sro_charMetas',
+  'charMetas',
   ICharMeta,
   ICharMeta
 > {
   constructor(database: SroDatabase) {
-    super(database, 'sro_charMetas')
+    super(database, 'charMetas')
   }
   override validate(obj: any): ICharMeta | undefined {
     if (typeof obj !== 'object') return undefined

@@ -22,12 +22,12 @@ import { initialCharacter } from './CharacterData'
 
 export class LightConeDataManager extends SroDataManager<
   string,
-  'sro_lightCones',
+  'lightCones',
   ICachedLightCone,
   ILightCone
 > {
   constructor(database: SroDatabase) {
-    super(database, 'sro_lightCones')
+    super(database, 'lightCones')
   }
   override validate(obj: unknown): ILightCone | undefined {
     if (typeof obj !== 'object') return undefined
