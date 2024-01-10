@@ -1,11 +1,7 @@
-import { reread } from '@genshin-optimizer/pando'
 import type { AscensionKey } from '@genshin-optimizer/sr-consts'
+import { convert, selfTag } from '@genshin-optimizer/sr-formula'
 import {
-  self,
-  selfBuff,
-  srCalculatorWithEntries,
-} from '@genshin-optimizer/sr-formula'
-import {
+  useCalcContext,
   useCharacter,
   useCharacterContext,
   useCharacterReducer,
@@ -18,31 +14,19 @@ import {
   AccordionSummary,
   Box,
   CardContent,
+  Container,
   Stack,
   TextField,
   Typography,
 } from '@mui/material'
-import { Container } from '@mui/system'
-import { useMemo } from 'react'
 
 export default function Character() {
   const { characterKey } = useCharacterContext()
   const character = useCharacter(characterKey)
   const charReducer = useCharacterReducer(characterKey)
 
-  const calc = useMemo(
-    () =>
-      character &&
-      srCalculatorWithEntries([
-        selfBuff.char.lvl.add(character.level),
-        selfBuff.char.ascension.add(character?.ascension),
-        {
-          tag: { src: 'char' },
-          value: reread({ src: characterKey }),
-        },
-      ]),
-    [character, characterKey]
-  )
+  const { calc } = useCalcContext()
+  const member0 = convert(selfTag, { member: 'member0', et: 'self' })
 
   return (
     <Container>
@@ -84,12 +68,42 @@ export default function Character() {
                   ] as const
                 ).map(([txt, skey]) => (
                   <Typography key={skey}>
-                    {txt}: {calc?.compute(self.stat[skey].src('char')).val}
+                    {txt}: {calc?.compute(member0.final[skey]).val}
                   </Typography>
                 ))}
               </AccordionDetails>
             </Accordion>
           </Stack>
+          <Accordion>
+            <AccordionSummary expandIcon={<ExpandMore />}>
+              All target values, if sheet is created
+            </AccordionSummary>
+            <AccordionDetails>
+              <Stack>
+                {calc?.listFormulas(member0.listing.formulas).map((read) => {
+                  const computed = calc.compute(read)
+                  const name = read.tag.name || read.tag.q
+                  return (
+                    <Box>
+                      <Typography key={name}>
+                        {name}: {computed.val}
+                      </Typography>
+                      <Accordion>
+                        <AccordionSummary expandIcon={<ExpandMore />}>
+                          meta for {name}
+                        </AccordionSummary>
+                        <AccordionDetails>
+                          <Typography component="pre">
+                            {JSON.stringify(computed.meta, undefined, 2)}
+                          </Typography>{' '}
+                        </AccordionDetails>
+                      </Accordion>
+                    </Box>
+                  )
+                })}
+              </Stack>
+            </AccordionDetails>
+          </Accordion>
         </CardContent>
       </CardThemed>
     </Container>

@@ -8,8 +8,8 @@ import {
   allTrailblazerKeys,
 } from '@genshin-optimizer/sr-consts'
 import { deepFreeze } from '@genshin-optimizer/util'
-import { DataManager } from '../DataManager'
 import type { SroDatabase } from '../Database'
+import { SroDataManager } from '../SroDataManager'
 
 interface ICharMeta {
   rvFilter: RelicSubStatKey[]
@@ -20,23 +20,14 @@ const initCharMeta: ICharMeta = deepFreeze({
   favorite: false,
 })
 
-const storageKey = 'sro_charMetas'
-const storageHash = 'sro_charMeta_'
-export class CharMetaDataManager extends DataManager<
+export class CharMetaDataManager extends SroDataManager<
   CharacterKey,
-  typeof storageKey,
+  'charMetas',
   ICharMeta,
-  ICharMeta,
-  SroDatabase
+  ICharMeta
 > {
   constructor(database: SroDatabase) {
-    super(database, storageKey)
-    for (const key of this.database.storage.keys)
-      if (
-        key.startsWith(storageHash) &&
-        !this.set(key.split(storageHash)[1] as CharacterKey, {})
-      )
-        this.database.storage.remove(key)
+    super(database, 'charMetas')
   }
   override validate(obj: any): ICharMeta | undefined {
     if (typeof obj !== 'object') return undefined
@@ -46,10 +37,6 @@ export class CharMetaDataManager extends DataManager<
     else rvFilter = rvFilter.filter((k) => allRelicSubStatKeys.includes(k))
     if (typeof favorite !== 'boolean') favorite = false
     return { rvFilter, favorite }
-  }
-
-  override toStorageKey(key: CharacterKey): string {
-    return `${storageHash}${key}`
   }
   getTrailblazerCharacterKey(): CharacterKey {
     return (

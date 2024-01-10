@@ -10,8 +10,8 @@ import {
   relicSlotToMainStatKeys,
 } from '@genshin-optimizer/sr-consts'
 import { deepClone, deepFreeze, validateArr } from '@genshin-optimizer/util'
-import { DataManager } from '../DataManager'
 import type { SroDatabase } from '../Database'
+import { SroDataManager } from '../SroDataManager'
 
 export const maxBuildsToShowList = [1, 2, 3, 4, 5, 8, 10] as const
 export const maxBuildsToShowDefault = 5
@@ -58,26 +58,14 @@ export interface BuildSetting {
   levelHigh: number
 }
 
-const storageKey = 'sro_buildSettings'
-const storageHash = 'sro_buildSetting_'
-export class BuildSettingDataManager extends DataManager<
+export class BuildSettingDataManager extends SroDataManager<
   CharacterKey,
-  typeof storageKey,
+  'buildSettings',
   BuildSetting,
-  BuildSetting,
-  SroDatabase
+  BuildSetting
 > {
   constructor(database: SroDatabase) {
-    super(database, storageKey)
-    for (const key of this.database.storage.keys)
-      if (
-        key.startsWith(storageHash) &&
-        !this.set(key.split(storageHash)[1] as CharacterKey, {})
-      )
-        this.database.storage.remove(key)
-  }
-  override toStorageKey(key: string): string {
-    return `${storageHash}${key}`
+    super(database, 'buildSettings')
   }
   override validate(obj: object, key: string): BuildSetting | undefined {
     if (!allCharacterKeys.includes(key as CharacterKey)) return undefined

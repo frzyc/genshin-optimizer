@@ -27,6 +27,9 @@ export class DataManagerBase<
   toStorageKey(key: CacheKey): string {
     return key
   }
+  toCacheKey(key: string): CacheKey {
+    return key as CacheKey
+  }
   validate(obj: unknown, _key: CacheKey): StorageValue | undefined {
     return obj as StorageValue
   }
@@ -44,6 +47,7 @@ export class DataManagerBase<
     }
   }
   follow(key: CacheKey, callback: Callback<CacheKey>) {
+    if (!key) return () => {}
     if (this.listeners[key]) this.listeners[key]?.push(callback)
     else this.listeners[key] = [callback]
     return () => {

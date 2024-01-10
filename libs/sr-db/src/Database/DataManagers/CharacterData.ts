@@ -23,28 +23,18 @@ import type {
   ISroDatabase,
 } from '../../Interfaces'
 import { SroSource } from '../../Interfaces'
-import { DataManager } from '../DataManager'
 import type { SroDatabase } from '../Database'
+import { SroDataManager } from '../SroDataManager'
 import type { ImportResult } from '../exim'
 
-const storageKey = 'sro_characters'
-const storageHash = 'sro_char_'
-export class CharacterDataManager extends DataManager<
+export class CharacterDataManager extends SroDataManager<
   CharacterKey,
-  typeof storageKey,
+  'characters',
   ICachedSroCharacter,
-  ISroCharacter,
-  SroDatabase
+  ISroCharacter
 > {
   constructor(database: SroDatabase) {
-    super(database, storageKey)
-    for (const key of this.database.storage.keys) {
-      if (
-        key.startsWith(storageHash) &&
-        !this.set(key.split(storageHash)[1] as CharacterKey, {})
-      )
-        this.database.storage.remove(key)
-    }
+    super(database, 'characters')
   }
   override validate(obj: unknown): ISroCharacter | undefined {
     if (!obj || typeof obj !== 'object') return undefined
@@ -179,9 +169,6 @@ export class CharacterDataManager extends DataManager<
       compareData,
     }
     return result
-  }
-  override toStorageKey(key: CharacterKey): string {
-    return `${storageHash}${key}`
   }
   getTrailblazerCharacterKey(): CharacterKey {
     return (

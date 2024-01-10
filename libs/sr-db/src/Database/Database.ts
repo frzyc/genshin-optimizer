@@ -30,6 +30,8 @@ export class SroDatabase extends Database {
   dbIndex: 1 | 2 | 3 | 4
   dbVer: number
 
+  keyPrefix = 'sro'
+
   constructor(dbIndex: 1 | 2 | 3 | 4, storage: DBStorage) {
     super(storage)
     migrateStorage(storage)
@@ -42,15 +44,15 @@ export class SroDatabase extends Database {
     // Handle Datamanagers
     this.chars = new CharacterDataManager(this)
 
-    // Weapons needs to be instantiated after character to check for relations
+    // Light cone needs to be instantiated after character to check for relations
     this.lightCones = new LightConeDataManager(this)
 
-    // Artifacts needs to be instantiated after character to check for relations
+    // Relics needs to be instantiated after character to check for relations
     this.relics = new RelicDataManager(this)
 
     this.buildSettings = new BuildSettingDataManager(this)
 
-    // This should be instantiated after artifacts, so that invalid artifacts that persists in build results can be pruned.
+    // This should be instantiated after relics, so that invalid relics that persists in build results can be pruned.
     this.buildResult = new BuildResultDataManager(this)
 
     this.charMeta = new CharMetaDataManager(this)
@@ -70,7 +72,7 @@ export class SroDatabase extends Database {
     })
   }
   get dataManagers() {
-    // IMPORTANT: it must be chars, weapon, arts in order, to respect import order
+    // IMPORTANT: it must be chars, light cones, relics in order, to respect import order
     return [
       this.chars,
       this.lightCones,
@@ -167,7 +169,7 @@ export class SroDatabase extends Database {
     other.saveStorage()
   }
   toExtraLocalDB() {
-    const key = `extraDatabase_${this.storage.getDBIndex()}`
+    const key = `sro_extraDatabase_${this.storage.getDBIndex()}`
     const other = new SandboxStorage(undefined, 'sro')
     const oldstorage = this.storage
     this.storage = other

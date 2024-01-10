@@ -94,21 +94,21 @@ describe('Database', () => {
 
     tryStorage(
       (storage) => {
-        storage['sro_char_x'] = '{ test: "test" }'
+        storage['sro_character_x'] = '{ test: "test" }'
         storage['sro_relic_x'] = '{}'
       },
       (storage) => {
-        expect(storage.getItem('sro_char_x')).toBeNull()
+        expect(storage.getItem('sro_character_x')).toBeNull()
       }
     )
     tryStorage(
       (storage) => {
-        storage['sro_char_x'] = '{ test: "test" }'
+        storage['sro_character_x'] = '{ test: "test" }'
         storage['sro_relic_x'] = '{}'
-        expect(storage.getItem('sro_char_x')).not.toBeNull()
+        expect(storage.getItem('sro_character_x')).not.toBeNull()
       },
       (storage) => {
-        expect(storage.getItem('sro_char_x')).toBeNull()
+        expect(storage.getItem('sro_character_x')).toBeNull()
         expect(storage.getItem('sro_relic_x')).toBeNull()
       }
     )
@@ -422,12 +422,7 @@ describe('Database', () => {
       const oldId2 = database.relics.new(old2)
       const oldId3 = database.relics.new(old3)
       const oldId4 = database.relics.new(old4)
-      expect([oldId1, oldId2, oldId3, oldId4]).toEqual([
-        'relic_0',
-        'relic_1',
-        'relic_2',
-        'relic_3',
-      ])
+      expect([oldId1, oldId2, oldId3, oldId4]).toEqual(['0', '1', '2', '3'])
 
       const srod: ISrObjectDescription = {
         format: 'SROD',
@@ -468,12 +463,7 @@ describe('Database', () => {
       const oldId2 = database.lightCones.new(old2)
       const oldId3 = database.lightCones.new(old3)
       const oldId4 = database.lightCones.new(old4)
-      expect([oldId1, oldId2, oldId3, oldId4]).toEqual([
-        'lightCone_0',
-        'lightCone_1',
-        'lightCone_2',
-        'lightCone_3',
-      ])
+      expect([oldId1, oldId2, oldId3, oldId4]).toEqual(['0', '1', '2', '3'])
 
       const srod: ISrObjectDescription = {
         format: 'SROD',
@@ -516,7 +506,7 @@ describe('Database', () => {
 
       const oldId1 = database.relics.new(old1)
       const oldId2 = database.relics.new(old2)
-      expect([oldId1, oldId2]).toEqual(['relic_0', 'relic_1'])
+      expect([oldId1, oldId2]).toEqual(['0', '1'])
 
       const srod: ISrObjectDescription = {
         format: 'SROD',
@@ -555,7 +545,7 @@ describe('Database', () => {
 
       const oldId1 = database.lightCones.new(old1)
       const oldId2 = database.lightCones.new(old2)
-      expect([oldId1, oldId2]).toEqual(['lightCone_0', 'lightCone_1'])
+      expect([oldId1, oldId2]).toEqual(['0', '1'])
 
       const srod: ISrObjectDescription = {
         format: 'SROD',
