@@ -10,6 +10,7 @@ import Beidou from './Beidou'
 import Bennett from './Bennett'
 import Candace from './Candace'
 import Charlotte from './Charlotte'
+import Chevreuse from './Chevreuse'
 import Chongyun from './Chongyun'
 import Collei from './Collei'
 import Cyno from './Cyno'
@@ -95,6 +96,7 @@ const data = {
   Bennett,
   Candace,
   Charlotte,
+  Chevreuse,
   Chongyun,
   Collei,
   Cyno,

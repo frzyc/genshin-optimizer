@@ -57,6 +57,9 @@
     "skillPress": "After using Elemental Skill (Press)",
     "skillHold": "After using Elemental Skill (Hold)"
   },
+  "reactionOp": {
+    "overload": "After triggering an <overloaded>Overloaded</overloaded> reaction"
+  },
   "afterSprint": "After Sprinting",
   "afterReaction": "After triggering an Elemental Reaction",
   "skillCDRed": "Ele. Skill CD Reduction",
