@@ -38,7 +38,13 @@
     "description": "Description",
     "duplicate": "Duplicate",
     "target_one": "<0>{{count}}</0> Target",
-    "target_other": "<0>{{count}}</0> Targets"
+    "target_other": "<0>{{count}}</0> Targets",
+    "target": {
+      "one": "<0>{{count}}</0> Target",
+      "few": "",
+      "many": "",
+      "other": ""
+    }
   },
   "addStats": {
     "title": "Параметры Врага + Бонусы",
@@ -57,5 +63,11 @@
   "tabTeambuff": {
     "team_reso": "Элементальный резонанс",
     "resonance_tip": "Отряд должен состоять из 4 персонажей, чтобы элементарный резонанс вступил в силу."
+  },
+  "showingNum": {
+    "one": "Showing <1>{{count}}</1> out of {{value}} Character",
+    "few": "",
+    "many": "",
+    "other": ""
   }
 }

@@ -72,5 +72,16 @@
     "base": {
       "atk": "ATT di base"
     }
-  }
+  },
+  "constellationLvl": "Liv. costellazione {{level}}",
+  "talentLvl": "Liv. talento {{level}}",
+  "talents": {
+    "auto": "Attacco normale",
+    "skill": "Abilità elementale",
+    "burst": "Tripudio elementale",
+    "altSprint": "Scatto alternativo"
+  },
+  "unlockPassive1": "Si sblocca dopo aver raggiunto la fase d'ascensione 1",
+  "unlockPassive2": "Si sblocca dopo aver raggiunto la fase d'ascensione 4",
+  "unlockPassive3": "Talento passivo"
 }

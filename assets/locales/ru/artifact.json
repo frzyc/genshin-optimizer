@@ -14,7 +14,13 @@
       "eff": "ЦР: <1></1>",
       "nextRolls": "След. хар-ка:",
       "RollCount_one": "{{count}} Ролл",
-      "RollCount_other": "{{count}} Роллов"
+      "RollCount_other": "{{count}} Роллов",
+      "RollCount": {
+        "one": "{{count}} Roll",
+        "few": "",
+        "many": "",
+        "other": ""
+      }
     },
     "rarity": "Редкость",
     "level": "Уровень",
@@ -99,6 +105,24 @@
   "equippedArt": "Надетые артефакты",
   "artInInv": "Артефакты в инвентаре",
   "locationsTooltip": "Disable \"All Equipped Artifacts\" to filter by specific characters",
-  "showDup": "Show Duplicates",
-  "noDupAlert": "There are no duplicate artifacts in your inventory."
+  "showDup": "Показать Дупликаты",
+  "noDupAlert": "В инвентаре нет задвоенных артефактов",
+  "showingNum": {
+    "one": "Showing <1>{{count}}</1> out of {{value}} Artifact",
+    "few": "",
+    "many": "",
+    "other": ""
+  },
+  "substat": {
+    "one": "{{count}} substat",
+    "few": "",
+    "many": "",
+    "other": ""
+  },
+  "sub": {
+    "one": "{{count}} sub",
+    "few": "",
+    "many": "",
+    "other": ""
+  }
 }

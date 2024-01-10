@@ -14,7 +14,10 @@
       "eff": "评分： <1></1>",
       "nextRolls": "下次升级：",
       "RollCount_one": "{{count}} 升级次数",
-      "RollCount_other": "{{count}} 升级次数"
+      "RollCount_other": "{{count}} 升级次数",
+      "RollCount": {
+        "other": "{{count}} Roll"
+      }
     },
     "rarity": "稀有度",
     "level": "等级",
@@ -98,5 +101,16 @@
   "cantDeleteLock": "无法删除，因为圣遗物已锁定",
   "equippedArt": "已装备的圣遗物",
   "artInInv": "背包中的圣遗物",
-  "locationsTooltip": "关闭\"所有装备的圣遗物\"以使用单个角色的过滤器"
+  "locationsTooltip": "关闭\"所有装备的圣遗物\"以使用单个角色的过滤器",
+  "showDup": "显示重复项",
+  "noDupAlert": "背包中没有重复的圣遗物。",
+  "showingNum": {
+    "other": "Showing <1>{{count}}</1> out of {{value}} Artifact"
+  },
+  "substat": {
+    "other": "{{count}} substat"
+  },
+  "sub": {
+    "other": "{{count}} sub"
+  }
 }

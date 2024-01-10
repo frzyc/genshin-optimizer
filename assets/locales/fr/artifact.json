@@ -11,7 +11,14 @@
       },
       "noRoll": "Aucun Roll",
       "noStat": "Pas de valeur",
-      "eff": "Efficacité: <1></1>"
+      "eff": "Efficacité: <1></1>",
+      "nextRolls": "Prochaines augmentations :",
+      "RollCount_one": "{{count}} Roll",
+      "RollCount_other": "{{count}} Rolls",
+      "RollCount": {
+        "one": "{{count}} Roll",
+        "other": ""
+      }
     },
     "rarity": "Rareté",
     "level": "Niveau",
@@ -29,16 +36,20 @@
     "btnClear": "Effacer",
     "btnRandom": "Randomiser",
     "btnUpdate": "Mettre à jour l'artéfact",
-    "clearPrompt": "Il y a un artéfact dans l'éditeur. Êtes-vous sûr de vouloir effacer l'éditeur?"
+    "clearPrompt": "Il y a un artéfact dans l'éditeur. Êtes-vous sûr de vouloir effacer l'éditeur?",
+    "unknownSetName": "Unknown Set Name"
   },
   "artifactFilter": "Filtre d'artéfact",
   "filterLocation": {
     "inventory": "Inventaire",
-    "currentlyEquipped": "Actuellement équipé"
+    "currentlyEquipped": "Actuellement équipé",
+    "location": "Characters"
   },
   "button": {
     "unequipArtifacts": "Déséquiper les artéfacts",
-    "deleteArtifacts": "Supprimer les artéfacts"
+    "deleteArtifacts": "Supprimer les artéfacts",
+    "lockArtifacts": "Verrouiller les artéfacts",
+    "unlockrtifacts": "Déverrouiller les artéfacts"
   },
   "buttonHint": "Note: les boutons rouges ci-dessus ne s'appliquent qu'aux <1>artéfacts filtrés</1>",
   "tipsOfTheDay": [
@@ -72,5 +83,38 @@
   "efficiencyFilter": {
     "title": "Substats à utiliser dans le calcul de l'efficacité"
   },
-  "resetFilters": "Réinitialiser les filtres"
+  "resetFilters": "Réinitialiser les filtres",
+  "setEffectNum": "{{setNum}}-Set",
+  "showingNum_one": "Showing <1>{{count}}</1> out of {{value}} Artifact",
+  "showingNum_other": "Showing <1>{{count}}</1> out of {{value}} Artifacts",
+  "edit": "Edit Artifact",
+  "autocompleteLabels": {
+    "sets": "Artifact Sets",
+    "mainStats": "Main Stats",
+    "substats": "Sub-Stats",
+    "set": "Artifact Set"
+  },
+  "substat_one": "{{count}} substat",
+  "substat_other": "{{count}} substats",
+  "addNew": "Add New Artifact",
+  "sub_one": "{{count}} sub",
+  "sub_other": "{{count}} subs",
+  "cantDeleteLock": "Cannot delete artifact because it is locked",
+  "equippedArt": "All Equipped Artifacts",
+  "artInInv": "All Unequipped Artifacts",
+  "locationsTooltip": "Disable \"All Equipped Artifacts\" to filter by specific characters",
+  "showDup": "Show Duplicates",
+  "noDupAlert": "There are no duplicate artifacts in your inventory.",
+  "showingNum": {
+    "one": "Showing <1>{{count}}</1> out of {{value}} Artifact",
+    "other": ""
+  },
+  "substat": {
+    "one": "{{count}} substat",
+    "other": ""
+  },
+  "sub": {
+    "one": "{{count}} sub",
+    "other": ""
+  }
 }

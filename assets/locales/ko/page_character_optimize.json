@@ -93,7 +93,10 @@
     "excluded": "이 성유물은 제외되었습니다.",
     "included": "이 성유물은 제외되지 않았습니다.",
     "usingNum": "<1>{{totalStr}}</1>개의 제외된 성유물 사용중",
-    "button_txt": "성유물 제외"
+    "button_txt": "성유물 제외",
+    "excNum": {
+      "other": "<0>{{count}}</0> artifact is excluded"
+    }
   },
   "excludeChar": {
     "title": "착용 중인 성유물 설정",
@@ -112,8 +115,20 @@
       "customList": "사용자 정의 리스트",
       "all": "모든 성유물"
     },
-    "usingState": "선택된 방식"
+    "usingState": "선택된 방식",
+    "usingNumTot": {
+      "other": "Using <1>{{arts}}</1> artifacts from <3>{{count}}</3> character"
+    }
   },
   "buildCompleted": "생성 완료",
-  "notifyTooltip": "생성이 완료되면 소리로 알려줍니다. 또한 탭을 전환한 경우 경고창도 표시합니다."
+  "notifyTooltip": "생성이 완료되면 소리로 알려줍니다. 또한 탭을 전환한 경우 경고창도 표시합니다.",
+  "bonusStats": {
+    "title": "Bonus Stats"
+  },
+  "build": {
+    "other": "<0>{{count}}</0> Build"
+  },
+  "thread": {
+    "other": "<0>{{count}}</0> Thread"
+  }
 }

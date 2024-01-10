@@ -92,7 +92,11 @@
     "excludeArtifactTip": "如果排除了某件圣遗物，则该角色生成配装时不会使用该圣遗物。",
     "excluded": "这件圣遗物已排除。",
     "included": "这件圣遗物未排除。",
-    "usingNum": "使用<1>{{totalStr}}</1>件已排除的圣遗物"
+    "usingNum": "使用<1>{{totalStr}}</1>件已排除的圣遗物",
+    "button_txt": "Exclude Artifacts",
+    "excNum": {
+      "other": "<0>{{count}}</0> artifact is excluded"
+    }
   },
   "excludeChar": {
     "title": "可装备的圣遗物配置",
@@ -111,11 +115,20 @@
       "customList": "自定义列表",
       "all": "所有圣遗物"
     },
-    "usingState": "使用"
+    "usingState": "使用",
+    "usingNumTot": {
+      "other": "Using <1>{{arts}}</1> artifacts from <3>{{count}}</3> character"
+    }
   },
   "buildCompleted": "配装完成",
   "notifyTooltip": "配装完成时发出声音，如果焦点不在本页面，还会显示提示。",
   "bonusStats": {
     "title": "增益状态"
+  },
+  "build": {
+    "other": "<0>{{count}}</0> Build"
+  },
+  "thread": {
+    "other": "<0>{{count}}</0> Thread"
   }
 }

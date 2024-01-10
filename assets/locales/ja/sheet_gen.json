@@ -72,5 +72,16 @@
     "base": {
       "atk": "基礎攻撃力"
     }
-  }
+  },
+  "constellationLvl": "命ノ星座 第{{level}}重",
+  "talentLvl": "天賦Lv.{{level}}",
+  "talents": {
+    "auto": "通常攻撃",
+    "skill": "元素スキル",
+    "burst": "元素爆発",
+    "altSprint": "ダッシュの代わりに発動する"
+  },
+  "unlockPassive1": "突破段階「1」で解放",
+  "unlockPassive2": "突破段階「4」で解放",
+  "unlockPassive3": "固有天賦"
 }

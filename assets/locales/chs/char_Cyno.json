@@ -2,5 +2,8 @@
   "p1Dmg": "渡荒之雷伤害",
   "judication": "触发裁定效果后",
   "burstNormalDmgInc": "启途誓使普通攻击伤害加成",
-  "boltDmgInc": "渡荒之雷伤害加成"
+  "boltDmgInc": "渡荒之雷伤害加成",
+  "duringBurst": "In the <strong>Pactsworn Pathclearer</strong> state",
+  "afterBurstOrJudication": "After using <strong>Sacred Rite: Wolf's Swiftness</strong> or triggering the Judication effect",
+  "a1soulfarer_dmg_": "Chasmic Soulfarer DMG Bonus"
 }

@@ -4,5 +4,12 @@
   "edit": "Редактировать оружие",
   "weaponName": "Название оружия",
   "removeWeapon": "Вы уверены что хотите удалить {{value}}?",
-  "addWeapon": "Добавить Новое Оружие"
+  "addWeapon": "Добавить Новое Оружие",
+  "showingNum": {
+    "one": "Showing <1>{{count}}</1> out of {{value}} Weapon",
+    "few": "",
+    "many": "",
+    "other": ""
+  },
+  "cantDeleteLock": "Cannot delete weapon because it is locked"
 }

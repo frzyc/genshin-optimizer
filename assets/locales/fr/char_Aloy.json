@@ -1,0 +1,9 @@
+{
+  "skill": {
+    "coil": "Bobine",
+    "rush": "Glace précipitée",
+    "rushState": "Time spent in the Rushing Ice state"
+  },
+  "a1CondName": "After receiving the Coil effect",
+  "normCryoInfus": "<cryo>Normal Att. Cryo Infusion</cryo>"
+}

@@ -72,5 +72,16 @@
     "base": {
       "atk": "Base ATK"
     }
-  }
+  },
+  "constellationLvl": "Konstelasi Lv. {{level}}",
+  "talentLvl": "Talent Lv. {{level}}",
+  "talents": {
+    "auto": "Normal Attack",
+    "skill": "Elemental Skill",
+    "burst": "Elemental Burst",
+    "altSprint": "Alternate Sprint"
+  },
+  "unlockPassive1": "Terbuka saat Tahap Ascension Karakter 1",
+  "unlockPassive2": "Terbuka saat Tahap Ascension Karakter 4",
+  "unlockPassive3": "Talenta Pasif"
 }

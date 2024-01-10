@@ -93,7 +93,11 @@
     "excluded": "Este artefato está bloqueado.",
     "included": "Este artefato não está bloqueado.",
     "usingNum": "Usando <1>{{totalStr}}</1> artefato(s) bloqueado(s)",
-    "button_txt": "Bloquear Artefatos"
+    "button_txt": "Bloquear Artefatos",
+    "excNum": {
+      "one": "<0>{{count}}</0> Artefato está bloqueado",
+      "other": "<0>{{count}}</0> Artefatos estão bloqueados"
+    }
   },
   "excludeChar": {
     "title": "Configuração de Artefatos Equipados",
@@ -112,11 +116,23 @@
       "customList": "Lista Personalizada",
       "all": "Todos os Artefatos"
     },
-    "usingState": "Usando"
+    "usingState": "Usando",
+    "usingNumTot": {
+      "one": "Usando <1>{{arts}}</1> Artefatos de <3>{{count}}</3> personagem",
+      "other": "Usando <1>{{arts}}</1> Artefatos de <3>{{count}}</3> personagens"
+    }
   },
   "buildCompleted": "Build Concluída",
   "notifyTooltip": "Toca um som quando a geração de Build terminar. Também mostrará uma notificação caso esteja em outra aba.",
   "bonusStats": {
     "title": "Atributos Bônus"
+  },
+  "build": {
+    "one": "<0>{{count}}</0> Build",
+    "other": "<0>{{count}}</0> Builds"
+  },
+  "thread": {
+    "one": "<0>{{count}}</0> Thread",
+    "other": "<0>{{count}}</0> Threads"
   }
 }

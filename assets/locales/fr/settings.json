@@ -8,6 +8,59 @@
     "title": "Téléverser la base de données",
     "replaceDatabase": "Remplacer la base de données",
     "hint": "Téléverser votre fichier JSON ici...",
-    "hintPaste": "...ou coller vos données ci-dessous."
+    "hintPaste": "...ou coller vos données ci-dessous.",
+    "error": {
+      "jsonParse": "Impossible d'analyser le fichier JSON.",
+      "unknown": "Format de fichier inconnu.",
+      "monaInvalid": "Format Mona-Uranai non valide",
+      "goInvalid": "Format de fichier de sauvegarde GO non valide."
+    },
+    "dbSource": "Source des données :",
+    "goodUpload": {
+      "title": "<strong>Genshin Open Object Description</strong> (GOOD) format"
+    },
+    "buttons": {
+      "open": "Open",
+      "detectDups": "Detect Updates/Dupes",
+      "delNotInImport": "Delete items not in import"
+    },
+    "tooltip": {
+      "detectdup": "Find upgrades/duplicates in the GO inventory and merge the import into GO.",
+      "ignoreDup": "Do not detect upgrades/duplicates. The import will be added on top of existing GO inventory.",
+      "delNotInImport": "Assume the import is your full inventory. Items in the GO Inventory that don't exist in the import will be deleted.",
+      "keepNotInImport": "Assume the import is a partial inventory. Nothing will be deleted."
+    }
+  },
+  "count": {
+    "chars": "Personnages :",
+    "arts": "Artéfacts :",
+    "weapons": "Armes :",
+    "total": "Total:",
+    "new": "Nouveau:",
+    "updated": "Mis-à-jour:",
+    "removed": "Supprimés:",
+    "unchanged": "Inchangés:",
+    "invalid": "Non valide:",
+    "upgraded": "Upgraded:",
+    "dbTotal": "Merged Total:",
+    "notInImport": "Not in Import:"
+  },
+  "DatabaseCard": {
+    "title": "Database",
+    "button": {
+      "download": "Download",
+      "copy": "Clipboard",
+      "delete": "Delete",
+      "upload": "Upload",
+      "swap": "Swap"
+    },
+    "currentDB": "Current Database"
+  },
+  "sillyCard": {
+    "desc": "We <1>stole</1> borrowed (with permission) all the character assets from <strong>Silly Wisher</strong> and gene spliced them into Genshin Optimizer.",
+    "toggle": {
+      "enabled": "Silly Optimizer Enabled",
+      "disabled": "Silly Optimizer Disabled"
+    }
   }
 }

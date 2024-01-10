@@ -4,7 +4,8 @@
     "dance2": "剑舞步二段伤害",
     "whirl1": "旋舞步一段伤害",
     "whirl2": "旋舞步二段伤害",
-    "wheel": "水轮伤害"
+    "wheel": "水轮伤害",
+    "illusion": "Luminous Illusion DMG"
   },
   "passive1": {
     "underChaliceEffect": "金杯的丰馈状态下",
@@ -14,5 +15,8 @@
   },
   "c4": {
     "condName": "<strong>七域舞步</strong>的翩转状态下的第三段舞步命中敌人后"
+  },
+  "c1": {
+    "illusion_dmg_": "Luminous Illusion DMG Bonus"
   }
 }

@@ -72,5 +72,16 @@
     "base": {
       "atk": "พลังโจมตีพื้นฐาน"
     }
-  }
+  },
+  "constellationLvl": "กลุ่มดาว Lv.{{level}}",
+  "talentLvl": "เลเวลพรสวรรค์ {{level}}",
+  "talents": {
+    "auto": "โจมตีปกติ",
+    "skill": "สกิลธาตุ",
+    "burst": "ท่าไม้ตาย",
+    "altSprint": "Alternate Sprint"
+  },
+  "unlockPassive1": "ปลดล็อกเมื่อตัวละครเลื่อนขั้นถึงระดับ 1",
+  "unlockPassive2": "ปลดล็อกเมื่อตัวละครเลื่อนขั้นถึงระดับ 4",
+  "unlockPassive3": "พรสวรรค์ติดตัว"
 }

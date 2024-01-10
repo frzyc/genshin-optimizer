@@ -1,34 +1,34 @@
 {
-  "name": "Somnia",
-  "title": "Creation of Simulated Cognition",
+  "name": "Сомния",
+  "title": "Создание имитированного познания",
   "description": "A combination of an array of concepts. She exists in a variety of states and phases. Is she even real?",
   "constellationName": "Mathematica Felina",
   "auto": {
     "name": "Astral Abacus",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Normal Attack</strong>",
+        "0": "<strong><strong>Обычная Атака</strong>",
         "1": "Performs up to 4 consecutive attacks, launching beads that deal <electro>Electro DMG</electro> from her Astral Abacus."
       },
       "charged": {
         "0": "<strong>Charged Attack</strong>",
         "1": "Consumes a certain amount of Stamina to charge and unleash a continuous stream of Electro beads, dealing <electro>Electro DMG</electro> to up to 4 targets every 0.3s.",
-        "2": "Somnia gains resistance to interruption and is free to move while using her Charged Attack."
+        "2": "Сомния получает сопротивление к прерыванию атак и может свободно двигаться во время использования заряженной атаки."
       },
       "plunging": {
-        "0": "<strong>Plunging Attack</strong>",
+        "0": "<strong>Атака в падении</strong>",
         "1": "Fires Electro beads at the ground, dealing <electro>AoE Electro DMG</electro> upon impact."
       }
     },
     "skillParams": {
-      "0": "1-Hit DMG",
-      "1": "2-Hit DMG",
-      "2": "3-Hit DMG",
-      "3": "4-Hit DMG",
-      "4": "Charged Attack Stream DMG",
-      "5": "Charged Attack Stamina Cost",
-      "6": "Plunge DMG",
-      "7": "Low/High Plunge DMG"
+      "0": "Урон атаки 1",
+      "1": "Урон атаки 2",
+      "2": "Урон атаки 3",
+      "3": "Урон атаки 4",
+      "4": "Урон заряженной атаки",
+      "5": "Потребление выносливости",
+      "6": "Урон в падении",
+      "7": "Урон низкого/высокого удара"
     }
   },
   "skill": {
@@ -42,8 +42,8 @@
       "5": "Schrödinger Superposition expires after Self-Containing Sigil's duration ends or when Somnia leaves the field."
     },
     "skillParams": {
-      "0": "Skill DMG",
-      "1": "Duration",
+      "0": "Урон Навыка",
+      "1": "Длительность",
       "2": "CD"
     }
   },
@@ -62,7 +62,7 @@
       ]
     },
     "skillParams": {
-      "0": "Skill DMG",
+      "0": "Урон Навыка",
       "1": "Elemental Mastery",
       "2": "Celestial Cyclone DoT (Multiplication)",
       "3": "Star Sunder DMG",
@@ -86,13 +86,13 @@
   "passive3": {
     "name": "Insomniac Iteration",
     "description": {
-      "0": "At night (18:00 - 6:00), speeds up Genshin Optimizer build speed by 10%."
+      "0": "В ночное время(18:00 - 6:00) ускоряет работу GO при генерации билдов на 10%"
     }
   },
   "constellation1": {
     "name": "Decimal Point",
     "description": {
-      "0": "Somnia's Normal and Charged Attacks have a 25% chance to deal twice the DMG."
+      "0": "Обычные и заряженные атаки Сомнии имеют 25% шанс нанести двойной урон"
     }
   },
   "constellation2": {
@@ -123,9 +123,9 @@
     }
   },
   "constellation6": {
-    "name": "Golden Ratio",
+    "name": "Золотое Равновесие",
     "description": {
-      "0": "When Somnia's Charged Attack deals damage, her CRIT Rate and CRIT DMG are increased by 3% and 5%, respectively. This effect can be triggered once every 0.2s and stack up to 8 times. All Golden Ratio stacks are cleared 13s after the first stack was obtained."
+      "0": "Когда заряженная атака Сомнии наносит урон, ее Крит.Шанс и Крит.Урон увеличивается на 3% и 5% соответственно. Эффект может возникнуть каждые 0.2сек и складывается до 8раз. Стаки Золотого Равновесия исчезнут спустя 13сек после получения первого стака."
     }
   },
   "c1Key": "Normal and Charged Att. DMG Mult.",

@@ -72,5 +72,16 @@
     "base": {
       "atk": "ATQ Básico"
     }
-  }
+  },
+  "constellationLvl": "Nv. de Constelação {{level}}",
+  "talentLvl": "Talento Nv.{{level}}",
+  "talents": {
+    "auto": "Ataque Normal",
+    "skill": "Habilidade Elemental",
+    "burst": "Supremo",
+    "altSprint": "Arrancada Alternativa"
+  },
+  "unlockPassive1": "Desbloqueia quando nível de Ascensão do personagem alcançar Nv.1",
+  "unlockPassive2": "Desbloqueia quando nível de Ascensão do personagem alcançar Nv.4",
+  "unlockPassive3": "Talento Passivo"
 }

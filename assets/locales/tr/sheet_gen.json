@@ -72,5 +72,16 @@
     "base": {
       "atk": "Temel Saldırı"
     }
-  }
+  },
+  "constellationLvl": "Takımyıldız Sv. {{level}}",
+  "talentLvl": "Yetenek Sv. {{level}}",
+  "talents": {
+    "auto": "Normal Saldırı",
+    "skill": "Element Becerisi",
+    "burst": "Element Patlaması",
+    "altSprint": "Alternatif Depar"
+  },
+  "unlockPassive1": "1. Karakter Yükseltme Aşamasında açılır",
+  "unlockPassive2": "4. Karakter Yükseltme Aşamasında açılır",
+  "unlockPassive3": "Pasif Yetenek"
 }

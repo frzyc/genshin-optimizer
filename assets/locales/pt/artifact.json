@@ -14,7 +14,11 @@
       "eff": "Eficiência: <1></1>",
       "nextRolls": "Próximos rolls:",
       "RollCount_one": "{{count}} Roll",
-      "RollCount_other": "{{count}} Rolls"
+      "RollCount_other": "{{count}} Rolls",
+      "RollCount": {
+        "one": "{{count}} Roll",
+        "other": "{{count}} Rolls"
+      }
     },
     "rarity": "Raridade",
     "level": "Nível",
@@ -100,5 +104,17 @@
   "artInInv": "Artefatos no Inventário",
   "locationsTooltip": "Desative \"Todos os Artefatos Equipados\" para selecionar apenas   os de alguns personagens",
   "showDup": "Mostrar Duplicatas.",
-  "noDupAlert": "Não há artefatos duplicados no seu inventário."
+  "noDupAlert": "Não há artefatos duplicados no seu inventário.",
+  "showingNum": {
+    "one": "Mostrando <1>{{count}}</1> de {{value}} Artefato",
+    "other": "Mostrando <1>{{count}}</1> de {{value}} Artefatos"
+  },
+  "substat": {
+    "one": "{{count}} secundário",
+    "other": "{{count}} secundários"
+  },
+  "sub": {
+    "one": "{{count}} secundário",
+    "other": "{{count}} secundários"
+  }
 }

@@ -72,5 +72,16 @@
     "base": {
       "atk": "Basis-ANG"
     }
-  }
+  },
+  "constellationLvl": "Sternbild Stufe {{level}}",
+  "talentLvl": "Talentstufe {{level}}",
+  "talents": {
+    "auto": "Standardangriff",
+    "skill": "Elementarfähigkeit",
+    "burst": "Spezialfähigkeit",
+    "altSprint": "Ersetzt Rennen"
+  },
+  "unlockPassive1": "Ab Figurenaufstiegsstufe 1 verfügbar",
+  "unlockPassive2": "Ab Figurenaufstiegsstufe 4 verfügbar",
+  "unlockPassive3": "Passives Talent"
 }

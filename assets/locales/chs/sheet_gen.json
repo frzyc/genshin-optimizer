@@ -72,5 +72,16 @@
     "base": {
       "atk": "基础攻击力"
     }
-  }
+  },
+  "constellationLvl": "命之座 第{{level}}层",
+  "talentLvl": "天赋等级{{level}}",
+  "talents": {
+    "auto": "普通攻击",
+    "skill": "元素战技",
+    "burst": "元素爆发",
+    "altSprint": "替代冲刺"
+  },
+  "unlockPassive1": "角色突破等级1解锁",
+  "unlockPassive2": "角色突破等级4解锁",
+  "unlockPassive3": "固有天赋"
 }

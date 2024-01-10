@@ -72,5 +72,16 @@
     "base": {
       "atk": "Base ATK"
     }
-  }
+  },
+  "constellationLvl": "Constellation Lv. {{level}}",
+  "talentLvl": "Talent Lv. {{level}}",
+  "talents": {
+    "auto": "Normal Attack",
+    "skill": "Elemental Skill",
+    "burst": "Elemental Burst",
+    "altSprint": "Alternate Sprint"
+  },
+  "unlockPassive1": "Unlocks at Character Ascension Phase 1",
+  "unlockPassive2": "Unlocks at Character Ascension Phase 4",
+  "unlockPassive3": "Passive Talent"
 }

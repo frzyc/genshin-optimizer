@@ -72,5 +72,16 @@
     "base": {
       "atk": "ATQ Básico"
     }
-  }
+  },
+  "constellationLvl": "Constelación Niv. {{level}}",
+  "talentLvl": "Niv. talento {{level}}",
+  "talents": {
+    "auto": "Ataque Normal",
+    "skill": "Habilidad Elemental",
+    "burst": "Habilidad Definitiva",
+    "altSprint": "Reemplaza a Esprintar"
+  },
+  "unlockPassive1": "Se desbloquea al alcanzar Niv. de ascensión 1",
+  "unlockPassive2": "Se desbloquea al alcanzar Niv. de ascensión 4",
+  "unlockPassive3": "Talento pasivo"
 }

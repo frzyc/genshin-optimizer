@@ -72,5 +72,16 @@
     "base": {
       "atk": "ATQ de base"
     }
-  }
+  },
+  "constellationLvl": "Constellation Niv.{{level}}",
+  "talentLvl": "Niveau d'aptitude {{level}}",
+  "talents": {
+    "auto": "Attaque normale",
+    "skill": "Compétence élémentaire",
+    "burst": "Déchaînement élémentaire",
+    "altSprint": "Sprint alternatif"
+  },
+  "unlockPassive1": "Disponible lorsque le personnage atteint la phase d'élévation 1",
+  "unlockPassive2": "Disponible lorsque le personnage atteint la phase d'élévation 4",
+  "unlockPassive3": "Aptitude passive"
 }
