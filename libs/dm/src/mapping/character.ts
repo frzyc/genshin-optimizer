@@ -141,6 +141,7 @@ export const characterIdMap: Record<
   10000087: 'Neuvillette',
   10000088: 'Charlotte',
   10000089: 'Furina',
+  10000090: 'Chevreuse',
   10000091: 'Navia',
   // 11000008: "TEMPLATE",
   // 11000009: "TEMPLATE",
