@@ -99,7 +99,9 @@
     "cantDeleteLock": "无法删除，因为圣遗物已锁定",
     "equippedArt": "已装备的圣遗物",
     "artInInv": "背包中的圣遗物",
-    "locationsTooltip": "关闭\"所有装备的圣遗物\"以使用单个角色的过滤器"
+    "locationsTooltip": "关闭\"所有装备的圣遗物\"以使用单个角色的过滤器",
+    "showDup": "显示重复项",
+    "noDupAlert": "背包中没有重复的圣遗物。"
   },
   "languages": {
     "chs": "中文（简体）",
@@ -449,7 +451,8 @@
     },
     "getElementalOrbParticle": "获得元素晶球或元素微粒",
     "notProtectedByShield": "不处于护盾庇护下",
-    "percentCurrentHP": "%当前生命值"
+    "percentCurrentHP": "%当前生命值",
+    "interval": "间隔"
   },
   "weapon_SongOfBrokenPines": {
     "name": "获得「千年的大乐章·揭旗之歌」效果"
@@ -1464,5 +1467,12 @@
   "char_Somnia": {
     "title": "模拟认知的造物",
     "description": "一系列概念的集合，她以多种状态存在，或者说她根本不存在？"
+  },
+  "char_Baizhu": {
+    "seamlessDendro": "无郤气护盾草元素伤害吸收量",
+    "a4Cond": "处于「木运之岁」效果中",
+    "c2Dmg": "游丝徵灵·切伤害",
+    "c2Heal": "游丝徵灵·切治疗量",
+    "c6DmgInc": "灵气脉伤害提高"
   }
 }
