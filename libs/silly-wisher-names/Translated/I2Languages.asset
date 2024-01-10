@@ -4421,10 +4421,10 @@ MonoBehaviour:
       TermType: 0
       Description:
       Languages:
-      - Muskateer
-      - 火槍手
-      - 火枪手
-      - 銃士
+      - Purple Pewpew
+      - 紫色槍手
+      - 紫色枪手
+      - 紫の砲手
       - Mousquetaire
       - Moschettiere
       - Musketier
@@ -7202,9 +7202,9 @@ MonoBehaviour:
     Google_WebServiceURL: https://script.google.com/macros/s/AKfycbxu8CXfmubud0lH_ChGOEujDtNdDO6WQ4qtgBUvc3Btn63kZdUdUR3BPVWg3jY53dV4/exec
     Google_SpreadsheetKey: 1oivW_K32Yfaa17IKypH6-q6HTheORm8qqQDc83cyCxo
     Google_SpreadsheetName: I2Loc Silly Wisher Localization
-    Google_LastUpdatedVersion: 1702891057579
+    Google_LastUpdatedVersion: 1704851127785
     GoogleUpdateFrequency: 1
     GoogleInEditorCheckFrequency: 2
     GoogleUpdateDelay: 5
     Assets:
-    - {fileID: 12800000, guid: cf400cda6ebf70c4e9b8e424aec6bb0e, type: 3}
+    - {fileID: 12800000, guid: 00f55e38bb9417045afb177750131fe4, type: 3}
