@@ -230,8 +230,6 @@ export const data = dataObjForCharacterSheet(
         electro_enemyRes_: a1AfterOverload_electro_enemyRes_,
         pyro_dmg_: c6AfterHeal_pyro_dmg_,
         electro_dmg_: c6AfterHeal_electro_dmg_,
-      },
-      total: {
         atk_: a4AfterBall_atk_,
       },
     },
