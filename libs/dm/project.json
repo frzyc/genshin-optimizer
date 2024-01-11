@@ -7,12 +7,7 @@
     "load-dm": {
       "options": {
         "outputPath": "libs/dm/GenshinData"
-      },
-      "inputs": [
-        {
-          "runtime": "git ls-tree --object-only HEAD libs/dm/GenshinData"
-        }
-      ]
+      }
     },
     "gen-file": {},
     "build": {},
