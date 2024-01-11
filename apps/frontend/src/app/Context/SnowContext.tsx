@@ -10,7 +10,7 @@ export const SnowContext = createContext({
   setSnow: () => {},
 } as SnowContextObj)
 
-const lsKey = 'snow_enabled'
+const lsKey = 'snow_effect_enabled'
 
 export function useSnow(): SnowContextObj {
   const [snow, setSnow] = useState(localStorage.getItem(lsKey) === 'on')
