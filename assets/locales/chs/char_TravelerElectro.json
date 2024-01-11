@@ -1,12 +1,7 @@
 {
   "skill": {
     "amuletGenAmt": "丰穰勾玉产生数量",
-    "absorb": "角色吸收丰穰勾玉",
-    "enerRest": {
-      "none": "Energy Regen. per Amulet",
-      "over35": "Energy Regen. per Amulet (over 35% Energy)",
-      "under35": "Energy Regen. per Amulet (below 35% Energy)"
-    }
+    "absorb": "角色吸收丰穰勾玉"
   },
   "burst": {
     "3rd": "第三次威光落雷伤害",

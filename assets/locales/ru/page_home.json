@@ -12,7 +12,6 @@
         "tooltip": "Программы, считавающие ваши вещи в инвентаре"
       },
       "kqm": {
-        "title": "Keqing Mains",
         "tooltip": "Теорикрафт и гайды комьюнити"
       },
       "devDiscord": {
@@ -40,10 +39,7 @@
     "jobTitle": {
       "leadDev": "Главный разработчик",
       "dev": "Разработчик",
-      "mod": "Модератор",
-      "admin": "Admin",
-      "translator": "Translations Manager",
-      "TC": "TC Correspondant"
+      "mod": "Модератор"
     }
   }
 }

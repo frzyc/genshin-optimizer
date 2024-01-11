@@ -38,10 +38,7 @@
     "description": "설명",
     "duplicate": "복제",
     "target_one": "<0>{{count}}</0> 타겟",
-    "target_other": "<0>{{count}}</0> 타겟",
-    "target": {
-      "other": "<0>{{count}}</0> Target"
-    }
+    "target_other": "<0>{{count}}</0> 타겟"
   },
   "addStats": {
     "title": "적 설정 및 스탯 조정",
@@ -60,8 +57,5 @@
   "tabTeambuff": {
     "team_reso": "파티 원소 공명",
     "resonance_tip": "원소 공명을 받기 위해선 파티가 4명으로 가득 차야 합니다."
-  },
-  "showingNum": {
-    "other": "Showing <1>{{count}}</1> out of {{value}} Character"
   }
 }

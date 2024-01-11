@@ -18,12 +18,7 @@
     "skillOrBurst": "Элементальный навык или Элементальный взрыв попадает по противникам",
     "crit": "Крит. попадание по противнику",
     "normalChargedOrPlunging": "Обычные / Заряженные / Атаки в падении попали по врагу",
-    "dendro": "<dendro>Дендро-удар</dendro> попал по врагу",
-    "normalEle": "After dealing Elemental DMG through a Normal Attack",
-    "ele": "After dealing Elemental DMG",
-    "weakSpot": "After hitting an enemy Weak Spot with a Charged Shot",
-    "normalChargedSkillBurst": "After hitting an opponent with a Normal/Charged Att. or Ele. Skill/Burst",
-    "self": "After being hit by an opponent"
+    "dendro": "<dendro>Дендро-удар</dendro> попал по врагу"
   },
   "eleAbsor": "Поглощение стихий",
   "absorDot": "Доп. элементальный урон",
@@ -54,11 +49,8 @@
   "afterSprint": "После рывка",
   "skillCDRed": "Уменьшение времени отката Элe. Навыка",
   "burstCDRed": "Уменьшение времени отката Элe. Взрыва",
-  "triggerCD": "Trigger CD",
   "incInterRes": "Повышается сопротивление к прерыванию",
-  "charges": "Charges",
   "cooldown": "Откат",
-  "addlCharges": "Additional Skill Charges",
   "activeCharField": "Активный персонаж на поле",
   "opponentsField": "Противники на поле",
   "takeDmg": "После получения урона",
@@ -95,25 +87,19 @@
     "dendro": "Поглощение Дендро-урона",
     "geo": "Поглощение Гео-урона",
     "none": "Поглощение урона",
-    "increase": "Shield Absorption Increase",
     "max": {
       "none": "Максимальное поглощение урона",
-      "pyro": "Максимальное поглощение Пиро-урона",
-      "dendro": "Max Shield Dendro DMG Absorption"
+      "pyro": "Максимальное поглощение Пиро-урона"
     }
   },
-  "addlCharge": "Additional Skill Charge",
-  "conditional": "Conditional",
   "maxStacks": "Максимум стаков",
   "1set": "1-Сет",
   "2set": "2-Сет",
   "4set": "4-Сет",
-  "activationStam": "Activation Stamina Consumption",
   "stamDrain": "Расход Стамины",
   "talents": {
     "auto": "Авто",
     "skill": "Навык",
-    "burst": "Burst",
     "passive": "Пассивно",
     "passive1": "Возвышение 1",
     "passive2": "Возвышение 4",
@@ -134,96 +120,17 @@
   },
   "afterReaction": "После воздействия с Элементальной Реакцией",
   "aoeInc": "Увеличивает АоЕ",
-  "elementalReaction": {
-    "hydro": "After triggering a <hydro>Hydro-related</hydro> Elemental Reaction",
-    "electro": "After triggering an <electro>Electro-related</electro> Elemental Reaction",
-    "shatter": "After triggering a <shattered>Shatter</shattered> Elemental Reaction",
-    "cryo": "After triggering a <cryo>Cryo-related</cryo> Elemental Reaction"
-  },
   "bonusScaling": {
-    "skill_": "Увел. Бонуса Элем. Навыка",
-    "atkInc": "ATK Inc. Bonus Scaling",
-    "value": "{{value}}% "
+    "skill_": "Увел. Бонуса Элем. Навыка"
   },
   "energy": "Энергия",
   "teamBuff": "Командный бафф",
   "opponents_one": "{{count}} Оппонент",
   "opponents_other": "{{count}} Оппоненты",
   "dmgMult": {
-    "normal": "Normal Att. DMG Mult.",
-    "charged": "Charged Att. DMG Mult.",
     "skill": "Навык"
   },
   "stamRestored": "Смола Восстановилась",
-  "triggerQuota": "Trigger Quota",
-  "enemyAffected": {
-    "burningOrPyro": "Enemy is affected by <pyro>Burning</pyro> or <pyro>Pyro</pyro>",
-    "frozenOrCryo": "Enemy is <cryo>Frozen</cryo> or affected by <cryo>Cryo</cryo>",
-    "pyroOrElectro": "Enemy is affected by <pyro>Pyro</pyro> or <electro>Electro</electro>",
-    "hydroOrCryo": "Enemy is affected by <hydro>Hydro</hydro> or <cryo>Cryo</cryo>",
-    "hydroOrPyro": "Enemy is affected by <hydro>Hydro</hydro> or <pyro>Pyro</pyro>",
-    "hydroOrElectro": "Enemy is affected by <hydro>Hydro</hydro> or <electro>Electro</electro>",
-    "electro": "Enemy is affected by <electro>Electro</electro>",
-    "cryo": "Enemy is affected by <cryo>Cryo</cryo>",
-    "pyro": "Enemy is affected by <pyro>Pyro</pyro>"
-  },
   "getElementalOrbParticle": "После получения элементальной сферы/частицы",
-  "notProtectedByShield": "While not protected by a shield",
-  "percentCurrentHP": "% текущего HP",
-  "enerRegenPerHit": "Energy Regeneration per Hit",
-  "interval": "Interval",
-  "immuneToElectroCharged": "Immunity to <electrocharged>Electro-Charged</electrocharged>",
-  "charOffField": "Character is off-field",
-  "attackAoeInc": "Larger Attack AoE",
-  "members_one": "{{count}} Member",
-  "members_other": "{{count}} Members",
-  "charOnField": "Character is on-field",
-  "timeOnField": "Time spent on-field",
-  "hpChange": "After HP changes",
-  "afterHeal": "After being healed",
-  "hits": {
-    "one": "{{count}} Hit",
-    "few": "",
-    "many": "",
-    "other": ""
-  },
-  "percentMaxHP": "% Max HP",
-  "stack": {
-    "one": "{{count}} Stack",
-    "few": "",
-    "many": "",
-    "other": ""
-  },
-  "seconds": {
-    "one": "{{count}} Second",
-    "few": "",
-    "many": "",
-    "other": ""
-  },
-  "uses": {
-    "one": "{{count}} Use",
-    "few": "",
-    "many": "",
-    "other": ""
-  },
-  "opponents": {
-    "one": "{{count}} Opponent",
-    "few": "",
-    "many": "",
-    "other": ""
-  },
-  "members": {
-    "one": "{{count}} Member",
-    "few": "",
-    "many": "",
-    "other": ""
-  },
-  "times": {
-    "one": "{{count}} Time",
-    "few": "",
-    "many": "",
-    "other": ""
-  },
-  "activeChar": "Active character",
-  "otherHpChange": "After a teammate's HP changes"
+  "percentCurrentHP": "% текущего HP"
 }

@@ -142,10 +142,8 @@
   },
   "bonusScaling": {
     "skill_": "원소 전투 스킬 피해 증가량",
-    "atkInc": "공격력 증가량",
-    "value": "{{value}}% "
+    "atkInc": "공격력 증가량"
   },
-  "energy": "Energy",
   "teamBuff": "파티 버프",
   "opponents_one": "{{count}} 마리",
   "opponents_other": "{{count}} 마리",
@@ -181,28 +179,6 @@
   "timeOnField": "필드 위에 나온 시간",
   "hpChange": "HP가 증가 혹은 감소 후",
   "afterHeal": "치유를 받은 후",
-  "hits": {
-    "other": "{{count}} Hit"
-  },
-  "percentMaxHP": "% Max HP",
-  "stack": {
-    "other": "{{count}} Stack"
-  },
-  "seconds": {
-    "other": "{{count}} Second"
-  },
-  "uses": {
-    "other": "{{count}} Use"
-  },
-  "opponents": {
-    "other": "{{count}} Opponent"
-  },
-  "members": {
-    "other": "{{count}} Member"
-  },
-  "times": {
-    "other": "{{count}} Time"
-  },
   "activeChar": "필드 위 캐릭터",
   "otherHpChange": "파티원의 HP가 변화한 후"
 }

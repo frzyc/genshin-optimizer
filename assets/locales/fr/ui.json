@@ -5,9 +5,7 @@
     "characters": "Personnages",
     "tools": "Outils",
     "weapons": "Armes",
-    "doc": "Docs",
-    "setting": "Settings",
-    "scanner": "Scanners"
+    "doc": "Docs"
   },
   "social": {
     "paypal": "Paypal",
@@ -33,39 +31,9 @@
     "rarity": "Rareté",
     "efficiency": "Efficacité actuelle",
     "mefficiency": "Efficacité maximum",
-    "artsetkey": "Set d'artéfact",
-    "probability": "Roll Probability"
+    "artsetkey": "Set d'artéfact"
   },
   "link": {
-    "download": "Lien de téléchargement",
-    "discord": "Discord Invite Link"
-  },
-  "sortBy": "Sort By: ",
-  "delete": "Delete",
-  "locked": "Locked",
-  "unlocked": "Unlocked",
-  "refinement": "Refinement {{value}}",
-  "selectlevel": "Select Level",
-  "gender": {
-    "F": "Female",
-    "M": "Male"
-  },
-  "statGroupKey": {
-    "basic_stats": "Basic Stats",
-    "elem_dmg_bonus": "Elemental DMG Bonuses",
-    "enemy_debuffs": "Enemy Debuffs",
-    "self_res": "Self Resistances",
-    "reaction_dmg_bonus": "Reaction DMG Bonuses",
-    "reaction_crit": "Reaction CRIT Bonuses",
-    "elem_dmgInc": "Elemental Damage Increases",
-    "talent_dmgInc": "Talent Damage Increases",
-    "elem_crit": "Elemental CRIT Bonuses",
-    "talent_dmg_bonus": "Talent DMG Bonuses",
-    "talent_crit": "Talent CRIT Bonuses",
-    "talent_level_boost": "Talent Level Boosts",
-    "base_stat_mod": "Base Stat Modifications",
-    "stamina_buffs": "Stamina Buffs",
-    "misc": "Misc. Stats"
-  },
-  "sillyPageTitle": "Silly Optimizer"
+    "download": "Lien de téléchargement"
+  }
 }

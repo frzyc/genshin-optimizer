@@ -1,6 +1,4 @@
 {
   "p4cd": "24s, -1s Tous les 4 coups",
-  "c6duration": "15s, +1s par ennemi vaincu, jusqu'à 10s",
-  "c4dmg": "Breastplate Shatter DMG",
-  "qlarger": "Larger attack AoE"
+  "c6duration": "15s, +1s par ennemi vaincu, jusqu'à 10s"
 }

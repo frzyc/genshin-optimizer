@@ -1,8 +1,3 @@
 {
-  "skillDuration": "Duration per Paw",
-  "holdShield": "Absorption de DGT bouclier maintenu",
-  "a1shielded": "Character is shielded by <strong>Icy Paws</strong>",
-  "holdCryoShield": "Hold Shield Cryo DMG Absorption",
-  "pressShield": "Press Shield DMG Absorption",
-  "pressCryoShield": "Press Shield Cryo DMG Absorption"
+  "holdShield": "Absorption de DGT bouclier maintenu"
 }

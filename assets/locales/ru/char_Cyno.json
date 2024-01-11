@@ -2,8 +2,5 @@
   "p1Dmg": "Урон Молний бедствия",
   "judication": "После активации эффекта Вынесения приговора",
   "burstNormalDmgInc": "Увеличение урона обычной атаки в состоянии Поклявшегося прокладывать путь",
-  "boltDmgInc": "Увеличение урона Молний бедствия",
-  "duringBurst": "In the <strong>Pactsworn Pathclearer</strong> state",
-  "afterBurstOrJudication": "After using <strong>Sacred Rite: Wolf's Swiftness</strong> or triggering the Judication effect",
-  "a1soulfarer_dmg_": "Chasmic Soulfarer DMG Bonus"
+  "boltDmgInc": "Увеличение урона Молний бедствия"
 }

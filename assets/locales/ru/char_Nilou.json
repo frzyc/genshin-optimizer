@@ -4,8 +4,7 @@
     "dance2": "Урон Танца мечей 2",
     "whirl1": "Урон Кружащих шагов 1",
     "whirl2": "Урон Кружащих шагов 2",
-    "wheel": "Урон Водяного колеса",
-    "illusion": "Luminous Illusion DMG"
+    "wheel": "Урон Водяного колеса"
   },
   "passive1": {
     "underChaliceEffect": "Под воздействием Изобилия золотого кубка",
@@ -15,8 +14,5 @@
   },
   "c4": {
     "condName": "Попадание по противникам третьего шага <strong>Танца Хафткаршвар</strong> во время действия Пируэта"
-  },
-  "c1": {
-    "illusion_dmg_": "Luminous Illusion DMG Bonus"
   }
 }

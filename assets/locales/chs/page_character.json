@@ -38,10 +38,7 @@
     "description": "描述",
     "duplicate": "复制",
     "target_one": "<0>{{count}}</0>个目标",
-    "target_other": "<0>{{count}}</0>个目标",
-    "target": {
-      "other": "<0>{{count}}</0> Target"
-    }
+    "target_other": "<0>{{count}}</0>个目标"
   },
   "addStats": {
     "title": "怪物配置与增益状态",
@@ -60,8 +57,5 @@
   "tabTeambuff": {
     "team_reso": "队伍共鸣",
     "resonance_tip": "为了使元素共鸣生效，队伍中必须有4名角色。"
-  },
-  "showingNum": {
-    "other": "Showing <1>{{count}}</1> out of {{value}} Character"
   }
 }

@@ -25,13 +25,7 @@
     "weapons": "Оружия",
     "achievements": "Достижения"
   },
-  "nb": {
-    "title": "Artiscan",
-    "p1": "This web-based scanner can capture your game window, scan from a screenshot, or scan from a video. The screenshot/video capture can be fullscreen and does not need to be cropped.",
-    "p2": "Mobile/PlayStation can only be scanned from screenshots or video."
-  },
   "ak": {
-    "title": "Akasha Scanner",
     "p1": "Автоматически сканирует как артефакты, так и персонажей, и оружие. Позволяет экспортировать предыдущие сканы и сохранить в приложении как историю. Сканирует ТОЛЬКО на Английском языке.",
     "p2": "Приложение способно сканировать достижения для <1>Paimon.moe</1> и <1>Seelie.me</1>."
   },
