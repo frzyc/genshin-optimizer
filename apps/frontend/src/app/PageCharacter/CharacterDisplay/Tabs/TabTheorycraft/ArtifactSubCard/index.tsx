@@ -13,7 +13,7 @@ import DropdownButton from '../../../../../Components/DropdownMenu/DropdownButto
 import { CharTCContext } from '../CharTCContext'
 import { ArtifactAllSubstatEditor } from './ArtifactAllSubstatEditor'
 import { ArtifactSubstatEditor } from './ArtifactSubstatEditor'
-export function ArtifactSubCard() {
+export function ArtifactSubCard({ disabled = false }: { disabled?: boolean }) {
   const { t } = useTranslation('page_character')
   const {
     charTC: {
@@ -58,6 +58,7 @@ export function ArtifactSubCard() {
           <DropdownButton
             sx={{ flexGrow: 1 }}
             title={t(`tabTheorycraft.substatType.${substatsType}`)}
+            disabled={disabled}
           >
             {substatTypeKeys.map((st) => (
               <MenuItem
@@ -73,6 +74,7 @@ export function ArtifactSubCard() {
             rarity={rarity}
             onChange={(r) => setRarity(r)}
             filter={(r) => r !== rarity}
+            disabled={disabled}
           />
           <BootstrapTooltip
             title={<Typography>{t`tabTheorycraft.maxTotalRolls`}</Typography>}
@@ -100,9 +102,9 @@ export function ArtifactSubCard() {
             </CardDark>
           </BootstrapTooltip>
         </Box>
-        <ArtifactAllSubstatEditor />
+        <ArtifactAllSubstatEditor disabled={disabled} />
         {Object.entries(substats).map(([k]) => (
-          <ArtifactSubstatEditor key={k} statKey={k} />
+          <ArtifactSubstatEditor key={k} statKey={k} disabled={disabled} />
         ))}
       </Stack>
     </CardLight>

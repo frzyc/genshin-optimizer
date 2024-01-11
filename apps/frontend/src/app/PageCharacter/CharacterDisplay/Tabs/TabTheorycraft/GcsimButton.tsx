@@ -45,7 +45,7 @@ const GOODtoSRL: Record<MainStatKey | SubstatKey, string> = {
   // "atkspd%",
   // "dmg%",
 }
-export default function GcsimButton() {
+export default function GcsimButton({ disabled }: { disabled: boolean }) {
   const { t } = useTranslation(['page_character', 'settings'])
   const [open, onOpen, onClose] = useBoolState()
 
@@ -126,7 +126,11 @@ ${charKeyLow} add stats ${substatsText};`
 
   return (
     <>
-      <Button onClick={onOpen} startIcon={<ImgIcon src={gcsimIcon} />}>
+      <Button
+        onClick={onOpen}
+        startIcon={<ImgIcon src={gcsimIcon} />}
+        disabled={disabled}
+      >
         gcsim
       </Button>
       <Dialog open={open} onClose={onClose} maxWidth="lg">

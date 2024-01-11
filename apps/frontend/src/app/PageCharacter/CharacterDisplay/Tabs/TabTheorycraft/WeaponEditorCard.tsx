@@ -32,8 +32,10 @@ const WeaponSelectionModal = React.lazy(
 
 export function WeaponEditorCard({
   weaponTypeKey,
+  disabled,
 }: {
   weaponTypeKey: WeaponTypeKey
+  disabled: boolean
 }) {
   const { charTC, setCharTC } = useContext(CharTCContext)
   const setWeapon = useCallback(
@@ -89,11 +91,13 @@ export function WeaponEditorCard({
               color="info"
               sx={{ flexGrow: 1 }}
               onClick={onShow}
+              disabled={disabled}
             >
               <Box sx={{ maxWidth: '10em' }}>{weaponSheet?.name}</Box>
             </Button>
             {weaponSheet.hasRefinement && (
               <RefinementDropdown
+                disabled={disabled}
                 refinement={refinement}
                 setRefinement={(r) => setWeapon({ refinement: r })}
               />
@@ -105,6 +109,7 @@ export function WeaponEditorCard({
           ascension={ascension}
           setBoth={setWeapon}
           useLow={!weaponSheet.hasRefinement}
+          disabled={disabled}
         />
         <CardDark>
           <CardHeader
@@ -131,7 +136,10 @@ export function WeaponEditorCard({
           )}
         </CardDark>
         {data && weaponSheet?.document && (
-          <DocumentDisplay sections={weaponSheet.document} />
+          <DocumentDisplay
+            sections={weaponSheet.document}
+            disabled={disabled}
+          />
         )}
       </Box>
     </CardLight>

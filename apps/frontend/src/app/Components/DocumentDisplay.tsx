@@ -19,6 +19,7 @@ type DocumentDisplayProps = {
   teamBuffOnly?: boolean
   hideDesc?: boolean
   hideHeader?: boolean | ((section: DocumentSection) => boolean)
+  disabled?: boolean
 }
 
 export default function DocumentDisplay({
@@ -26,6 +27,7 @@ export default function DocumentDisplay({
   teamBuffOnly,
   hideDesc = false,
   hideHeader = false,
+  disabled = false,
 }: DocumentDisplayProps) {
   const { data } = useContext(DataContext)
   if (!sections.length) return null
@@ -41,6 +43,7 @@ export default function DocumentDisplay({
           key={i}
           hideDesc={hideDesc}
           hideHeader={hideHeader}
+          disabled={disabled}
         />
       )
     })
@@ -57,10 +60,12 @@ function SectionDisplay({
   section,
   hideDesc = false,
   hideHeader = false,
+  disabled = false,
 }: {
   section: DocumentSection
   hideDesc?: boolean
   hideHeader?: boolean | ((section: DocumentSection) => boolean)
+  disabled?: boolean
 }) {
   if ('fields' in section) {
     return (
@@ -76,6 +81,7 @@ function SectionDisplay({
         conditional={section}
         hideDesc={hideDesc}
         hideHeader={hideHeader}
+        disabled={disabled}
       />
     )
   } /* if ("text" in section) */ else {
