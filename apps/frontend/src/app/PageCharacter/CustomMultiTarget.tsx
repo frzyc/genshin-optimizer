@@ -110,10 +110,7 @@ function validateCustomTarget(ct: unknown): CustomTarget | undefined {
   if (
     !hitMode ||
     typeof hitMode !== 'string' ||
-    (
-      !allHitModeKeys.includes(hitMode as HitModeKey) &&
-      hitMode !== 'global'
-    )
+    (!allHitModeKeys.includes(hitMode as HitModeKey) && hitMode !== 'global')
   )
     hitMode = 'avgHit'
 
@@ -726,15 +723,15 @@ function CustomTargetDisplay({
               </MenuItem>
             ))}
             <MenuItem
-                key='global'
-                value='global'
-                disabled={hitMode === 'global'}
-                onClick={() =>
-                  setCustomTarget({ ...customTarget, hitMode: 'global' })
-                }
-              >
-                {t(`hitmode.global`)}
-              </MenuItem>
+              key="global"
+              value="global"
+              disabled={hitMode === 'global'}
+              onClick={() =>
+                setCustomTarget({ ...customTarget, hitMode: 'global' })
+              }
+            >
+              {t(`hitmode.global`)}
+            </MenuItem>
           </DropdownButton>
         </Box>
         <Grid container columns={{ xs: 1, lg: 2 }} sx={{ pt: 1 }} spacing={1}>
