@@ -18,7 +18,8 @@
   "hitmode": {
     "hit": "Non-CRIT Hit DMG",
     "avgHit": "Avg. DMG",
-    "critHit": "CRIT Hit DMG"
+    "critHit": "CRIT Hit DMG",
+    "global": "Follow Global"
   },
   "noReaction": "No Reactions",
   "tabEquip": {

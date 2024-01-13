@@ -21,7 +21,7 @@ import type { IConditionalValues } from './sheet'
 export interface CustomTarget {
   weight: number
   path: string[]
-  hitMode: HitModeKey
+  hitMode: HitModeKey | 'global'
   reaction?: AmpReactionKey | AdditiveReactionKey
   infusionAura?: InfusionAuraElementKey
   bonusStats: Partial<Record<InputPremodKey, number>>
