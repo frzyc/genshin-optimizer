@@ -1,6 +1,7 @@
-// TODO: We need a different extrapolateFloat for Star Rail
-// https://github.com/users/frzyc/projects/2/views/1?pane=issue&itemId=48937466
-import { extrapolateFloat } from '@genshin-optimizer/pipeline'
+import {
+  extrapolateFloat as exf,
+  roundMantissa,
+} from '@genshin-optimizer/pipeline'
 import {
   allEidolonKeys,
   type AbilityKey,
@@ -66,6 +67,17 @@ export type CharacterDataGen = {
   ascension: Promotion[]
   skillTreeList: SkillTree[]
   rankMap: RankMap
+}
+
+function extrapolateFloat(val: number): number {
+  const int = Math.floor(val)
+  const frac = val - int
+  if (frac != roundMantissa(frac, 32)) {
+    console.warn(`Extrapolation error: unknown SR format for ${val}`)
+    return val
+  }
+  // extrapolaye as float
+  return exf(val, { mantissa_len: 23, forced: true })
 }
 
 export type CharacterDatas = Record<
