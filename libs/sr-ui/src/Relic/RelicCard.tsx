@@ -3,7 +3,7 @@ import { getRelicMainStatDisplayVal } from '@genshin-optimizer/sr-util'
 import { Box, Stack, Typography } from '@mui/material'
 
 export function RelicCard({ relic }: { relic: IRelic }) {
-  console.log({ ...relic })
+  console.log({ relic })
   return (
     <Stack>
       <Box>

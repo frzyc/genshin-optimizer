@@ -27,7 +27,7 @@ export default function Character() {
   const { characterKey } = useCharacterContext()
   const character = useCharacter(characterKey)
   const charReducer = useCharacterReducer(characterKey)
-  const relics = useEquippedRelics(characterKey)
+  const relics = useEquippedRelics(character?.equippedRelics)
 
   const { calc } = useCalcContext()
   const member0 = convert(selfTag, { member: 'member0', et: 'self' })
@@ -67,12 +67,13 @@ export default function Character() {
                   {Object.values(relics).map((relic, index) => {
                     return (
                       <Grid item key={index} xs={1}>
-                        relic ? (
-                        <RelicCard relic={relic} />) : (
-                        <Box>
-                          <Typography>Empty</Typography>
-                        </Box>
-                        )
+                        {relic ? (
+                          <RelicCard relic={relic} />
+                        ) : (
+                          <Box>
+                            <Typography>Empty</Typography>
+                          </Box>
+                        )}
                       </Grid>
                     )
                   })}
