@@ -1,5 +1,5 @@
 type Options = {
-  mantissa_len?: number
+  mantissaLen?: number
   forced?: boolean
 }
 
@@ -23,7 +23,7 @@ export function extrapolateFloat(val: number, options: Options = {}): number {
   if (val < 0) return -extrapolateFloat(-val, options)
   if (val === 0) return 0
 
-  const { mantissa_len: n = 23, forced = false } = options
+  const { mantissaLen: n = 23, forced = false } = options
   if (!forced && roundMantissa(val, n) !== val) {
     console.error(
       `Extrapolation error: ${val} uses more than ${n} bits for mantissa`
