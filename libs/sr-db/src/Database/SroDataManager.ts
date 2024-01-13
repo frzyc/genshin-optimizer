@@ -28,7 +28,7 @@ export class SroDataManager<
       }
   }
   exportSROD(sro: Partial<ISrObjectDescription & ISroDatabase>) {
-    const key = this.dataKey.replace('sro_', '')
+    const key = this.dataKey
     sro[key] = Object.entries(this.data).map(([id, value]) => ({
       ...this.deCache(value),
       id,
@@ -40,9 +40,10 @@ export class SroDataManager<
       entries.forEach((ele) => ele.id && this.set(ele.id, ele))
   }
   override get goKeySingle() {
-    const key = this.dataKey.replace('sro_', '')
-    if (key.endsWith('s')) return key.slice(0, -1)
-    return key
+    const key = this.dataKey
+    if (key.endsWith('s'))
+      return `${this.database.keyPrefix}_${key.slice(0, -1)}`
+    return `${this.database.keyPrefix}_${key}`
   }
   override toStorageKey(key: string): string {
     return `${this.goKeySingle}_${key}`

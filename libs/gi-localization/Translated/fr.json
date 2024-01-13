@@ -12,7 +12,8 @@
         },
         "noRoll": "Aucun Roll",
         "noStat": "Pas de valeur",
-        "eff": "Efficacité: <1></1>"
+        "eff": "Efficacité: <1></1>",
+        "nextRolls": "Prochaines augmentations :"
       },
       "rarity": "Rareté",
       "level": "Niveau",
@@ -39,7 +40,9 @@
     },
     "button": {
       "unequipArtifacts": "Déséquiper les artéfacts",
-      "deleteArtifacts": "Supprimer les artéfacts"
+      "deleteArtifacts": "Supprimer les artéfacts",
+      "lockArtifacts": "Verrouiller les artéfacts",
+      "unlockrtifacts": "Déverrouiller les artéfacts"
     },
     "buttonHint": "Note: les boutons rouges ci-dessus ne s'appliquent qu'aux <1>artéfacts filtrés</1>",
     "tipsOfTheDay": [
@@ -100,7 +103,25 @@
       "title": "Téléverser la base de données",
       "replaceDatabase": "Remplacer la base de données",
       "hint": "Téléverser votre fichier JSON ici...",
-      "hintPaste": "...ou coller vos données ci-dessous."
+      "hintPaste": "...ou coller vos données ci-dessous.",
+      "error": {
+        "jsonParse": "Impossible d'analyser le fichier JSON.",
+        "unknown": "Format de fichier inconnu.",
+        "monaInvalid": "Format Mona-Uranai non valide",
+        "goInvalid": "Format de fichier de sauvegarde GO non valide."
+      },
+      "dbSource": "Source des données :"
+    },
+    "count": {
+      "chars": "Personnages :",
+      "arts": "Artéfacts :",
+      "weapons": "Armes :",
+      "total": "Total:",
+      "new": "Nouveau:",
+      "updated": "Mis-à-jour:",
+      "removed": "Supprimés:",
+      "unchanged": "Inchangés:",
+      "invalid": "Non valide:"
     }
   },
   "ui": {
@@ -108,7 +129,9 @@
     "tabs": {
       "artifacts": "Artéfacts",
       "characters": "Personnages",
-      "tools": "Outils"
+      "tools": "Outils",
+      "weapons": "Armes",
+      "doc": "Docs"
     },
     "social": {
       "paypal": "Paypal",
@@ -123,7 +146,22 @@
     "appVersion": "$t(pageTitle) Version: {{version}}",
     "underConstruction": "En Construction",
     "error": "Erreur",
-    "reset": "Réinitialisation"
+    "reset": "Réinitialisation",
+    "info": "Informations",
+    "inventory": "Inventaire",
+    "close": "Fermer",
+    "sortMap": {
+      "new": "Nouveau",
+      "name": "Nom",
+      "level": "Niveau",
+      "rarity": "Rareté",
+      "efficiency": "Efficacité actuelle",
+      "mefficiency": "Efficacité maximum",
+      "artsetkey": "Set d'artéfact"
+    },
+    "link": {
+      "download": "Lien de téléchargement"
+    }
   },
   "char_Eula": {
     "burstC": {
@@ -161,10 +199,17 @@
       "charged": "Attaque Chargée touche des ennemis",
       "plunging": "Attaque Plongeante touche des ennemis",
       "skill": "Compétence Élémentaire touche des ennemis",
-      "burst": "Déchaînement Élémentaire touche des ennemis"
+      "burst": "Déchaînement Élémentaire touche des ennemis",
+      "geo": "Après avoir infligé <geo>DGT Geo</geo>",
+      "anemo": "Après avoir infligé <anemo>DGT Anemo</anemo>",
+      "hydro": "Après avoir infligé <hydro>DGT Hydro</hydro>"
     },
     "eleAbsor": "Absorption Élémentaire",
     "absorDot": "Absorption DoT",
+    "afterUse": {
+      "skill": "Après avoir utilisé la Compétence élémentaire",
+      "burst": "Après avoir utilisé le Déchaînement élémentaire"
+    },
     "percentCurrentHP": "% de PV actuel"
   },
   "weapon_SongOfBrokenPines": {
@@ -184,8 +229,96 @@
     }
   },
   "char_KamisatoAyaka": {
+    "afterSprintCryo": "Après avoir appliqué <cryo>Cryo</cryo> grâce au sprint",
     "snowflakeDMG": "DGT Tourbillon givré",
+    "dmgBySnowflake": "L'ennemi a été touché par l'<strong>École Kamisato : Givre mortel</strong>",
     "c6Active": "Gracieuseté gelée active"
+  },
+  "weapon_MistsplitterReforged": {
+    "emblem": "Sceau de tranche-brume"
+  },
+  "char_Yoimiya": {
+    "c1": "Après avoir vaincu un ennemi affecté par <strong>Flamme Ryuukin</strong>",
+    "c2": "Après avoir infligé <pyro>DGT Pyro CRIT</pyro>"
+  },
+  "char_RaidenShogun": {
+    "skill": {
+      "eye": "Œil de jugement orageux actif",
+      "partyCost": "Coût en énergie"
+    },
+    "burst": {
+      "resolves": "Cumuls de résolution"
+    },
+    "a4": {
+      "enerRest": "Restauration d'énergie bonus de l'<strong>Harmonie d'idéal</strong>",
+      "eleDMG": "Bonus de DGT Électro"
+    }
+  },
+  "char_Aloy": {
+    "skill": {
+      "coil": "Bobine",
+      "rush": "Glace précipitée"
+    }
+  },
+  "char_KujouSara": {
+    "skill": {
+      "ambush": "Sous l'effet de Tengu Juurai : Embuscade"
+    }
+  },
+  "char_SangonomiyaKokomi": {
+    "c2": "Les personnages possèdent 50% ou moins de leurs PV",
+    "c6": "Après que les attaques normales aient soigné un personnage qui a 80% de PV ou plus."
+  },
+  "weapon_Akuoumaru": {
+    "party": "Cumul d'énergie d'équipe"
+  },
+  "artifact_ArchaicPetra": {
+    "condName": "Après avoir obtenu un crystal d'une Cristallisation"
+  },
+  "artifact_ViridescentVenerer": {
+    "condName": "Élément Dispersé"
+  },
+  "weapon_CinnabarSpindle": {
+    "name": "L'effet est actif"
+  },
+  "weapon_ElegyForTheEnd": {
+    "condName": "Sous l'effet de Concert du millénaire: Chant d'adieu"
+  },
+  "weapon_ThrillingTalesOfDragonSlayers": {
+    "condName": "Après avoir "
+  },
+  "artifact_BlizzardStrayer": {
+    "condName": "L'ennemi est",
+    "condCryo": "Affecté Par Cryo",
+    "condFrozen": "Gelé"
+  },
+  "artifact_HuskOfOpulentDreams": {
+    "condName": "Curiosité"
+  },
+  "artifact_OceanHuedClam": {
+    "condName": "DGT Max Mousse Marine"
+  },
+  "artifact_ShimenawasReminiscence": {
+    "afterUseEnergy": "Après avoir consommé 15 points d'énergie"
+  },
+  "artifact_TinyMiracle": {
+    "condName": "Après avoir pris des dégats élémentaires"
+  },
+  "char_Amber": {
+    "secondArrow": "(seconde flèche)"
+  },
+  "char_Chongyun": {
+    "constellation1": "Dégats de la lame de glace"
+  },
+  "char_Diona": {
+    "holdShield": "Absorption de DGT bouclier maintenu"
+  },
+  "char_Fischl": {
+    "c4AoeDmg": "Dégats de zone additionnels",
+    "c6OzDmg": "DGT d'attaque coordonnée"
+  },
+  "char_Jean": {
+    "c1CondName": "Compétence élémentaire maintenue pendant plus d'1 seconde"
   },
   "char_KukiShinobu": {
     "a4": {

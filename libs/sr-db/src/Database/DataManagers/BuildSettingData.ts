@@ -60,12 +60,12 @@ export interface BuildSetting {
 
 export class BuildSettingDataManager extends SroDataManager<
   CharacterKey,
-  'sro_buildSettings',
+  'buildSettings',
   BuildSetting,
   BuildSetting
 > {
   constructor(database: SroDatabase) {
-    super(database, 'sro_buildSettings')
+    super(database, 'buildSettings')
   }
   override validate(obj: object, key: string): BuildSetting | undefined {
     if (!allCharacterKeys.includes(key as CharacterKey)) return undefined

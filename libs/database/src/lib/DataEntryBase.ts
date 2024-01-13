@@ -6,17 +6,18 @@ export class DataEntryBase<
   Key extends string,
   GOkey extends string,
   CacheValue,
-  StorageValue
+  StorageValue,
+  DatabaseType extends Database = Database
 > {
-  database: Database
-  init: (database: Database) => StorageValue
+  database: DatabaseType
+  init: (database: DatabaseType) => StorageValue
   data: CacheValue
   key: Key
   goKey: GOkey
   constructor(
-    database: Database,
+    database: DatabaseType,
     key: Key,
-    init: (database: Database) => StorageValue,
+    init: (database: DatabaseType) => StorageValue,
     goKey: GOkey
   ) {
     this.database = database

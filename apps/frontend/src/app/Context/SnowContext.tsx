@@ -10,15 +10,13 @@ export const SnowContext = createContext({
   setSnow: () => {},
 } as SnowContextObj)
 
-const lsKey = 'snow_enabled'
+const lsKey = 'snow_effect_enabled'
 
 export function useSnow(): SnowContextObj {
-  const [snow, setSnow] = useState(
-    (localStorage.getItem(lsKey) || 'on') === 'on' // on by default for winter season
-  )
+  const [snow, setSnow] = useState(localStorage.getItem(lsKey) === 'on')
   useEffect(() => {
     if (snow) localStorage.setItem(lsKey, 'on')
-    else localStorage.setItem(lsKey, 'off')
+    else localStorage.removeItem(lsKey)
   }, [snow])
   return useMemo(() => ({ snow, setSnow }), [snow])
 }
