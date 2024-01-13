@@ -1,4 +1,5 @@
 import type { AscensionKey } from '@genshin-optimizer/sr-consts'
+import { allRelicSlotKeys } from '@genshin-optimizer/sr-consts'
 import { convert, selfTag } from '@genshin-optimizer/sr-formula'
 import {
   RelicCard,
@@ -63,16 +64,20 @@ export default function Character() {
                 Relics
               </AccordionSummary>
               <AccordionDetails>
-                <Grid container columns={3}>
-                  {Object.values(relics).map((relic, index) => {
+                <Grid container columns={3} spacing={1}>
+                  {allRelicSlotKeys.map((slot) => {
+                    const relic = relics[slot]
                     return (
-                      <Grid item key={index} xs={1}>
+                      <Grid item key={slot} xs={1}>
                         {relic ? (
                           <RelicCard relic={relic} />
                         ) : (
-                          <Box>
-                            <Typography>Empty</Typography>
-                          </Box>
+                          <CardThemed sx={{ height: '100%' }}>
+                            <CardContent>
+                              <Typography>Slot: {slot}</Typography>
+                              <Typography>Empty</Typography>
+                            </CardContent>
+                          </CardThemed>
                         )}
                       </Grid>
                     )
