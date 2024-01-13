@@ -76,8 +76,8 @@ function extrapolateFloat(val: number): number {
     console.warn(`Extrapolation error: unknown SR format for ${val}`)
     return val
   }
-  // extrapolaye as float
-  return exf(val, { mantissa_len: 23, forced: true })
+  // extrapolate as float
+  return exf(val, { forced: true })
 }
 
 export type CharacterDatas = Record<
