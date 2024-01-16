@@ -104,9 +104,9 @@ async function start({
               worker.postMessage({ command: 'start' })
               break
             case 'results':
-              // TODO: Send message back to solver with progress
               numBuildsComputed += data.builds.length
               results = results.concat(data.builds)
+              // TODO: This is slow, might need to think of something else
               if (results.length > maxResults) {
                 results.sort((a, b) => b.value - a.value)
                 results = results.slice(0, maxResults)

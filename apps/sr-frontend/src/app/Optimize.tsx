@@ -127,7 +127,7 @@ export default function Optimize() {
                 <Typography>Best: {build?.value}</Typography>
                 {progress?.waitingForResults && !build && <CircularProgress />}
                 {build && (
-                  <Grid container columns={5} gap={1}>
+                  <Grid container columns={3} gap={1}>
                     {allRelicSlotKeys.map((slot, index) => {
                       const id = build.ids[slot]
                       const relic = database.relics.get(id)
