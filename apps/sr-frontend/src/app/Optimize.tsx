@@ -1,8 +1,10 @@
 import type { RelicSlotKey } from '@genshin-optimizer/sr-consts'
+import { allRelicSlotKeys } from '@genshin-optimizer/sr-consts'
 import type { ICachedRelic } from '@genshin-optimizer/sr-db'
 import type { Read } from '@genshin-optimizer/sr-formula'
 import { convert, selfTag } from '@genshin-optimizer/sr-formula'
-import { OptimizeForNode } from '@genshin-optimizer/sr-opt'
+import type { BuildResult, ProgressResult } from '@genshin-optimizer/sr-opt'
+import { MAX_BUILDS, optimize } from '@genshin-optimizer/sr-opt'
 import { useCalcContext, useDatabaseContext } from '@genshin-optimizer/sr-ui'
 import { CardThemed, DropdownButton } from '@genshin-optimizer/ui-common'
 import { range } from '@genshin-optimizer/util'
@@ -10,6 +12,7 @@ import {
   Box,
   Button,
   CardContent,
+  CircularProgress,
   Container,
   Grid,
   MenuItem,
@@ -18,17 +21,15 @@ import {
 } from '@mui/material'
 import { useCallback, useMemo, useState } from 'react'
 
-type Build = {
-  value: number
-  relicIds: string[]
-}
-
 export default function Optimize() {
   const { database } = useDatabaseContext()
 
   const { calc } = useCalcContext()
 
   const [numWorkers, setNumWorkers] = useState(8)
+  const [progress, setProgress] = useState<ProgressResult | undefined>(
+    undefined
+  )
 
   // Step 1: Pick formula(s); anything that `calc.compute` can handle will work
   const [optTarget, setOptTarget] = useState<Read | undefined>(undefined)
@@ -52,20 +53,20 @@ export default function Optimize() {
     [database.relics.values]
   )
 
-  const [build, setBuild] = useState<Build | undefined>(undefined)
+  const [build, setBuild] = useState<BuildResult | undefined>(undefined)
 
-  const optimize = useCallback(async () => {
+  const onOptimize = useCallback(async () => {
     if (!optTarget || !calc) return
-    const results = await OptimizeForNode(
+    setProgress(undefined)
+    const results = await optimize(
       calc,
       optTarget,
       relicsBySlot,
-      numWorkers
+      numWorkers,
+      setProgress
     )
-    setBuild({
-      value: results[0].best,
-      relicIds: Object.values(results[0].bestIds),
-    })
+    console.log(results)
+    setBuild(results[0])
   }, [calc, numWorkers, optTarget, relicsBySlot])
 
   const member0 = convert(selfTag, { member: 'member0', et: 'self' })
@@ -82,14 +83,16 @@ export default function Optimize() {
                   optTarget ? `: ${optTarget.tag.name || optTarget.tag.q}` : ''
                 }`}
               >
-                {calc?.listFormulas(member0.listing.formulas).map((read) => (
-                  <MenuItem
-                    key={read.tag.name || read.tag.q}
-                    onClick={() => setOptTarget(read)}
-                  >
-                    {read.tag.name || read.tag.q}
-                  </MenuItem>
-                ))}
+                {calc
+                  ?.listFormulas(member0.listing.formulas)
+                  .map((read, index) => (
+                    <MenuItem
+                      key={`${index}_${read.tag.name || read.tag.q}`}
+                      onClick={() => setOptTarget(read)}
+                    >
+                      {read.tag.name || read.tag.q}
+                    </MenuItem>
+                  ))}
               </DropdownButton>
               <DropdownButton title={`Num Workers: ${numWorkers}`}>
                 {range(1, 16).map((n) => (
@@ -98,21 +101,41 @@ export default function Optimize() {
                   </MenuItem>
                 ))}
               </DropdownButton>
-              <Button onClick={optimize}>Optimize</Button>
+              <Button onClick={onOptimize}>Optimize</Button>
             </Box>
-            <Box>
-              <Typography>Best: {build?.value}</Typography>
-              <Grid container columns={5} gap={1}>
-                {build?.relicIds.map((id) => {
-                  const relic = database.relics.get(id)
-                  return (
-                    <Grid item xs={1} key={id}>
-                      <Relic relic={relic} />
-                    </Grid>
-                  )
-                })}
-              </Grid>
-            </Box>
+            {progress && (
+              <Box>
+                <Typography>
+                  Total Progress: {progress.numBuildsCompute.toLocaleString()} /{' '}
+                  {Object.values(relicsBySlot)
+                    .reduce((total, relics) => total * relics.length, 1)
+                    .toLocaleString()}
+                </Typography>
+                <Typography>
+                  Builds Kept: {progress.numBuilds.toLocaleString()} /{' '}
+                  {MAX_BUILDS.toLocaleString()}
+                </Typography>
+              </Box>
+            )}
+            {(build || progress?.waitingForResults) && (
+              <Box>
+                <Typography>Best: {build?.value}</Typography>
+                {progress?.waitingForResults && !build && <CircularProgress />}
+                {build && (
+                  <Grid container columns={5} gap={1}>
+                    {allRelicSlotKeys.map((slot, index) => {
+                      const id = build.ids[slot]
+                      const relic = database.relics.get(id)
+                      return (
+                        <Grid item xs={1} key={`${index}_${id}`}>
+                          <Relic relic={relic} />
+                        </Grid>
+                      )
+                    })}
+                  </Grid>
+                )}
+              </Box>
+            )}
           </Stack>
         </CardContent>
       </CardThemed>
