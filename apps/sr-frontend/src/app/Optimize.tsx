@@ -1,30 +1,28 @@
 import type { RelicSlotKey } from '@genshin-optimizer/sr-consts'
-import { allRelicSlotKeys } from '@genshin-optimizer/sr-consts'
 import type { ICachedRelic } from '@genshin-optimizer/sr-db'
 import type { Read } from '@genshin-optimizer/sr-formula'
-import { convert, selfTag } from '@genshin-optimizer/sr-formula'
 import type { BuildResult, ProgressResult } from '@genshin-optimizer/sr-opt'
 import { MAX_BUILDS, optimize } from '@genshin-optimizer/sr-opt'
 import {
-  EmptyRelicCard,
-  RelicCard,
+  BuildDisplay,
+  OptimizationTargetSelector,
+  WorkerSelector,
   useCalcContext,
   useDatabaseContext,
 } from '@genshin-optimizer/sr-ui'
-import { CardThemed, DropdownButton } from '@genshin-optimizer/ui-common'
-import { range } from '@genshin-optimizer/util'
+import { CardThemed } from '@genshin-optimizer/ui-common'
 import {
   Box,
   Button,
   CardContent,
   CircularProgress,
   Container,
-  Grid,
-  MenuItem,
+  LinearProgress,
   Stack,
   Typography,
 } from '@mui/material'
 import { useCallback, useMemo, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 
 export default function Optimize() {
   const { database } = useDatabaseContext()
@@ -57,6 +55,10 @@ export default function Optimize() {
       ),
     [database.relics.values]
   )
+  const totalPermutations = Object.values(relicsBySlot).reduce(
+    (total, relics) => total * relics.length,
+    1
+  )
 
   const [build, setBuild] = useState<BuildResult | undefined>(undefined)
 
@@ -74,8 +76,6 @@ export default function Optimize() {
     setBuild(results[0])
   }, [calc, numWorkers, optTarget, relicsBySlot])
 
-  const member0 = convert(selfTag, { member: 'member0', et: 'self' })
-
   return (
     <Container>
       <CardThemed bgt="dark">
@@ -83,71 +83,58 @@ export default function Optimize() {
           <Stack>
             <Typography variant="h5">Optimize</Typography>
             <Box>
-              <DropdownButton
-                title={`Optimization Target${
-                  optTarget ? `: ${optTarget.tag.name || optTarget.tag.q}` : ''
-                }`}
-              >
-                {calc
-                  ?.listFormulas(member0.listing.formulas)
-                  .map((read, index) => (
-                    <MenuItem
-                      key={`${index}_${read.tag.name || read.tag.q}`}
-                      onClick={() => setOptTarget(read)}
-                    >
-                      {read.tag.name || read.tag.q}
-                    </MenuItem>
-                  ))}
-              </DropdownButton>
-              <DropdownButton title={`Num Workers: ${numWorkers}`}>
-                {range(1, 16).map((n) => (
-                  <MenuItem key={n} onClick={() => setNumWorkers(n)}>
-                    {n} worker(s)
-                  </MenuItem>
-                ))}
-              </DropdownButton>
+              <OptimizationTargetSelector
+                optTarget={optTarget}
+                setOptTarget={setOptTarget}
+              />
+              <WorkerSelector
+                numWorkers={numWorkers}
+                setNumWorkers={setNumWorkers}
+              />
               <Button onClick={onOptimize}>Optimize</Button>
             </Box>
             {progress && (
-              <Box>
-                <Typography>
-                  Total Progress: {progress.numBuildsCompute.toLocaleString()} /{' '}
-                  {Object.values(relicsBySlot)
-                    .reduce((total, relics) => total * relics.length, 1)
-                    .toLocaleString()}
-                </Typography>
-                <Typography>
-                  Builds Kept: {progress.numBuilds.toLocaleString()} /{' '}
-                  {MAX_BUILDS.toLocaleString()}
-                </Typography>
-              </Box>
+              <ProgressIndicator
+                progress={progress}
+                totalPermutations={totalPermutations}
+              />
             )}
-            {(build || progress?.waitingForResults) && (
+            {progress?.waitingForResults && !build && <CircularProgress />}
+            {build && (
               <Box>
-                <Typography>Best: {build?.value}</Typography>
-                {progress?.waitingForResults && !build && <CircularProgress />}
-                {build && (
-                  <Grid container columns={3} gap={1}>
-                    {allRelicSlotKeys.map((slot, index) => {
-                      const id = build.ids[slot]
-                      const relic = database.relics.get(id)
-                      return (
-                        <Grid item xs={1} key={`${index}_${id}`}>
-                          {relic ? (
-                            <RelicCard relic={relic} />
-                          ) : (
-                            <EmptyRelicCard slot={slot} />
-                          )}
-                        </Grid>
-                      )
-                    })}
-                  </Grid>
-                )}
+                <Typography>Best: {build.value}</Typography>
+                <BuildDisplay build={build.ids} />
               </Box>
             )}
           </Stack>
         </CardContent>
       </CardThemed>
     </Container>
+  )
+}
+
+function ProgressIndicator({
+  progress,
+  totalPermutations,
+}: {
+  progress: ProgressResult
+  totalPermutations: number
+}) {
+  const { t } = useTranslation('optimize')
+  return (
+    <Box>
+      <Typography>
+        {t('totalProgress')}: {progress.numBuildsCompute.toLocaleString()} /{' '}
+        {totalPermutations.toLocaleString()}
+      </Typography>
+      <Typography>
+        {t('buildsKept')}: {progress.numBuilds.toLocaleString()} /{' '}
+        {MAX_BUILDS.toLocaleString()}
+      </Typography>
+      <LinearProgress
+        variant="determinate"
+        value={(progress.numBuildsCompute / totalPermutations) * 100}
+      />
+    </Box>
   )
 }
