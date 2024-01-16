@@ -13,6 +13,7 @@ import Beidou from './portrait_beidou.png'
 import Bennett from './portrait_bennett.png'
 import Candace from './portrait_candace.png'
 import Charlotte from './portrait_charlotte.png'
+import Chevreuse from './portrait_chevreuse.png'
 import Chongyun from './portrait_chongyun.png'
 import Collei from './portrait_collei.png'
 import Cyno from './portrait_cyno.png'
@@ -89,6 +90,7 @@ const data = {
   Bennett,
   Candace,
   Charlotte,
+  Chevreuse,
   Chongyun,
   Collei,
   Cyno,

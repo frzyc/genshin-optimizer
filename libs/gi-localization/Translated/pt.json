@@ -15,7 +15,11 @@
         "eff": "Eficiência: <1></1>",
         "nextRolls": "Próximos rolls:",
         "RollCount_one": "{{count}} Roll",
-        "RollCount_other": "{{count}} Rolls"
+        "RollCount_other": "{{count}} Rolls",
+        "RollCount": {
+          "one": "{{count}} Roll",
+          "other": "{{count}} Rolls"
+        }
       },
       "rarity": "Raridade",
       "level": "Nível",
@@ -101,7 +105,19 @@
     "artInInv": "Artefatos no Inventário",
     "locationsTooltip": "Desative \"Todos os Artefatos Equipados\" para selecionar apenas   os de alguns personagens",
     "showDup": "Mostrar Duplicatas.",
-    "noDupAlert": "Não há artefatos duplicados no seu inventário."
+    "noDupAlert": "Não há artefatos duplicados no seu inventário.",
+    "showingNum": {
+      "one": "Mostrando <1>{{count}}</1> de {{value}} Artefato",
+      "other": "Mostrando <1>{{count}}</1> de {{value}} Artefatos"
+    },
+    "substat": {
+      "one": "{{count}} secundário",
+      "other": "{{count}} secundários"
+    },
+    "sub": {
+      "one": "{{count}} secundário",
+      "other": "{{count}} secundários"
+    }
   },
   "languages": {
     "chs": "Chinês (Simplificado)",
@@ -277,7 +293,8 @@
   "char_Noelle": {
     "p4cd": "24s, -1s a cada 4 ataques",
     "c6duration": "15s, +1s por inimigo derrotado (máx. 25s)",
-    "c4dmg": "Dano do Rompimento do Guardião do Coração"
+    "c4dmg": "Dano do Rompimento do Guardião do Coração",
+    "qlarger": "Maior área de ataque"
   },
   "char_Venti": {
     "addAimed": "Dano Adicional do Tiro com Mira",
@@ -473,7 +490,38 @@
     "charOnField": "O personagem está em campo",
     "timeOnField": "Tempo passado em campo",
     "hpChange": "Após a Vida mudar",
-    "afterHeal": "Após ser curado"
+    "afterHeal": "Após ser curado",
+    "hits": {
+      "one": "{{count}} Acerto",
+      "other": "{{count}} Acertos"
+    },
+    "percentMaxHP": "% da Vida Máx.",
+    "stack": {
+      "one": "{{count}} Acúmulo",
+      "other": "{{count}} Acúmulos"
+    },
+    "seconds": {
+      "one": "{{count}} Segundo",
+      "other": "{{count}} Segundos"
+    },
+    "uses": {
+      "one": "{{count}} Uso",
+      "other": "{{count}} Usos"
+    },
+    "opponents": {
+      "one": "{{count}} Inimigo",
+      "other": "{{count}} Inimigos"
+    },
+    "members": {
+      "one": "{{count}} Membro",
+      "other": "{{count}} Membros"
+    },
+    "times": {
+      "one": "{{count}} Vez",
+      "other": "{{count}} Vezes"
+    },
+    "activeChar": "Personagem ativo",
+    "otherHpChange": "Após a Vida de um personagem mudar"
   },
   "weapon_SongOfBrokenPines": {
     "name": "Sob o efeito de Concerto Milenar: Música do Levantar da Bandeira"
@@ -604,7 +652,7 @@
     "intro": "<0>Scanners</0><1>Scanners são ferramentas para o Genshin que escaneiam automaticamente as informações do seu jogo a partir de capturas de tela ou lendo diretamente do jogo.</1><2>Abaixo estão diversos scanners que foram testados pelo GO.</2><3>Para fazer o upload do arquivo exportado, vá às <1>Configurações</1> e vá à seção de <strong>Upload de Base de Dados</strong>.</3>",
     "ik": {
       "title": "Inventory Kamera",
-      "p1": "Este aplicativo leve escaneará todos os seus personagens, armas e artefatos e os adicionará aos seus artefatos. Siga as instruções no app para usá-lo."
+      "p1": "Esse aplicativo leve escaneará todos os seus personagens, armas e artefatos e os adicionará aos seus artefatos. Siga as instruções no app para usá-lo."
     },
     "am": {
       "title": "「天目」-- Amenoma",
@@ -612,10 +660,10 @@
     },
     "as": {
       "title": "AdeptiScanner",
-      "p1": "Escaneia todos os artefatos e armas no seu inventário. Possui um modo de leitura manual e também pode importar dados do <1>Enka.Network</1>.",
-      "p2": "Este scanner pode também ser configurado para artefatos em novas versões sem precisar ser atualizado."
+      "p1": "Escaneia todos os artefatos no seu inventário. Possui um modo de leitura manual.",
+      "p2": "Esse scanner pode também ser configurado para artefatos em novas versões sem precisar ser atualizado."
     },
-    "goodeng": "Este scanner lê apenas o idioma Inglês e exporta no formato <1>GOOD</1>.",
+    "goodeng": "Esse scanner lê apenas o idioma inglês e exporta no formato <1>GOOD</1>.",
     "tosWarn": "Assim como qualquer outra ferramenta que interage indiretamente com o jogo, apesar de seu uso ser praticamente indetectável, <1>seu uso pode acarretar algum risco.</1> Sua utilização fica a critério do usuário.",
     "tags": {
       "pc": "PC",
@@ -629,13 +677,13 @@
     },
     "nb": {
       "title": "Artiscan",
-      "p1": "Este scanner localizado no navegador pode obter dados a partir da janela do seu jogo, de uma captura de tela, ou escanear um vídeo.",
+      "p1": "Esse escaneador localizado no navegador pode obter dados a partir da janela do seu jogo, de uma captura de tela, ou escanear um vídeo.",
       "p2": "A captura de tela ou vídeo pode ser em tela cheia e não precisa ser recortada."
     },
     "ak": {
       "title": "Akasha Scanner",
       "p1": "Automaticamente escaneia artefatos e também personagens e armas. Permite a exportação de escaneamentos passados através de um histórico no app. Escaneia apenas em Inglês.",
-      "p2": "Este aplicativo também pode escanear conquistas para o <1>Paimon.moe</1> e <1>Seelie.me</1>."
+      "p2": "Este aplicativo também pode escanear conquistas para o <Paimon.moe</1> e <1>Seelie.me</1>."
     },
     "seelieme": "O aplicativo também pode escanear materiais para o <1>Seelie.me</1>."
   },
@@ -1115,7 +1163,11 @@
       "description": "Descrição",
       "duplicate": "Duplicar",
       "target_one": "<0>{{count}}</0> Objetivo",
-      "target_other": "<0>{{count}}</0> Objetivos"
+      "target_other": "<0>{{count}}</0> Objetivos",
+      "target": {
+        "one": "<0>{{count}}</0> Objetivo",
+        "other": "<0>{{count}}</0> Objetivos"
+      }
     },
     "addStats": {
       "title": "Ajustes do Inimigo + Atributos Bônus",
@@ -1134,6 +1186,10 @@
     "tabTeambuff": {
       "team_reso": "Ressonância da Equipe",
       "resonance_tip": "A equipe deve possuir 4 personagens para que a Ressonância Elemental tenha efeito."
+    },
+    "showingNum": {
+      "one": "Mostrando <1>{{count}}</1> de {{value}} Personagem",
+      "other": "Mostrando <1>{{count}}</1> de {{value}} Personagens"
     }
   },
   "page_weapon": {
@@ -1142,7 +1198,12 @@
     "edit": "Editar Arma",
     "weaponName": "Nome da Arma",
     "removeWeapon": "Tem certeza de que quer excluir {{value}}?",
-    "addWeapon": "Adicionar Arma"
+    "addWeapon": "Adicionar Arma",
+    "showingNum": {
+      "one": "Mostrando <1>{{count}}</1> de {{value}} Arma",
+      "other": "Mostrando <1>{{count}}</1> de {{value}} Armas"
+    },
+    "cantDeleteLock": "Não é possível excluir a arma, pois ela está trancada"
   },
   "weapon_AquaSimulacra": {
     "condName": "Há oponentes próximos"
@@ -1281,7 +1342,11 @@
       "excluded": "Este artefato está bloqueado.",
       "included": "Este artefato não está bloqueado.",
       "usingNum": "Usando <1>{{totalStr}}</1> artefato(s) bloqueado(s)",
-      "button_txt": "Bloquear Artefatos"
+      "button_txt": "Bloquear Artefatos",
+      "excNum": {
+        "one": "<0>{{count}}</0> Artefato está bloqueado",
+        "other": "<0>{{count}}</0> Artefatos estão bloqueados"
+      }
     },
     "excludeChar": {
       "title": "Configuração de Artefatos Equipados",
@@ -1300,12 +1365,24 @@
         "customList": "Lista Personalizada",
         "all": "Todos os Artefatos"
       },
-      "usingState": "Usando"
+      "usingState": "Usando",
+      "usingNumTot": {
+        "one": "Usando <1>{{arts}}</1> Artefatos de <3>{{count}}</3> personagem",
+        "other": "Usando <1>{{arts}}</1> Artefatos de <3>{{count}}</3> personagens"
+      }
     },
     "buildCompleted": "Build Concluída",
     "notifyTooltip": "Toca um som quando a geração de Build terminar. Também mostrará uma notificação caso esteja em outra aba.",
     "bonusStats": {
       "title": "Atributos Bônus"
+    },
+    "build": {
+      "one": "<0>{{count}}</0> Build",
+      "other": "<0>{{count}}</0> Builds"
+    },
+    "thread": {
+      "one": "<0>{{count}}</0> Thread",
+      "other": "<0>{{count}}</0> Threads"
     }
   },
   "weapon_ForestRegalia": {
@@ -1383,7 +1460,8 @@
     "burstNormalDmgInc": "Aum. de Dano dos Ataques Normais no Juramento Desbravador",
     "boltDmgInc": "Aum. de Dano do Raio da Desolação",
     "duringBurst": "No estado de <strong>Juramento Desbravador</strong>",
-    "afterBurstOrJudication": "Após usar <strong>Ritual Sagrado: Agilidade Lupina</strong> ou desencadear o efeito de Adjudicação"
+    "afterBurstOrJudication": "Após usar <strong>Ritual Sagrado: Agilidade Lupina</strong> ou desencadear o efeito de Adjudicação",
+    "a1soulfarer_dmg_": "Bônus de Dano da Travessia Abissal"
   },
   "char_Nilou": {
     "skill": {
@@ -1720,5 +1798,71 @@
       "atk_": "O personagem foi afetado por <pyro>Pyro</pyro>",
       "dmg_": "O personagem foi afetado por <hydro>Hydro</hydro>, <cryo>Cryo</cryo>, ou <electro>Electro</electro>"
     }
+  },
+  "artifact_SongOfDaysPast": {
+    "condName": "Quantidade do efeito Sede de Esperança"
+  },
+  "char_Charlotte": {
+    "c2Cond": "Monsieur Verite atingiu inimigos",
+    "c4Cond": "Inimigo está marcado pela Silhueta Instantânea ou Foco Impressionante"
+  },
+  "char_Freminet": {
+    "frost_dmgMult_": "Mult. do Dano do Gelo Congelante",
+    "pressure_dmg_": "Bônus de Dano da Pressão Esmagadora",
+    "pressure_critRate_": "Taxa Crítica da Pressão Esmagadora"
+  },
+  "char_Furina": {
+    "fanfarePoints": "Fanfarra",
+    "memberMult_": "Mult. dos Membros do Salon",
+    "numOffer": "Número de personagens que sacrificaram Vida",
+    "c1Inc": "Aum. do Máx. de Fanfarra",
+    "c1Bonus": "Fanfarra Inicial",
+    "a4MemberDmg": "Bônus de Dano dos Membros do Salon",
+    "a4HealInterval": "Intervalo de Cura da Cantora das Correntes",
+    "c2Points": "Fanfarra acima do limite",
+    "c6Healing": "Cura Contínua Ousia",
+    "c6Pneuma": "Alinhado com Pneuma"
+  },
+  "char_Navia": {
+    "skillTotalShardDmg": "Dano Total do Projétil Cristalino Rosado",
+    "shot_dmg_": "Bônus de Dano do Projétil Cristalino Rosado",
+    "shot_mult_": "Mult. do Projétil Cristalino Rosado",
+    "shot_critRate_": "Taxa Crítica do Projétil Cristalino Rosado",
+    "shot_critDMG_": "Dano Crítico do Projétil Cristalino Rosado",
+    "chargesCond": "Fragmentos da Rachadura consumidos",
+    "shotsFired": "Projéteis Cristalinos Rosados Atirados",
+    "shotsHitCond": "Projéteis Cristalinos Rosados atingidos"
+  },
+  "char_Neuvillette": {
+    "a1Cond": "Glória do Dragão",
+    "judgmentSpecialMult_": "Mult. da Justiça Igual",
+    "judgment_critDMG_": "Dano Crítico da Justiça Igual",
+    "currentDmg": "Dano da Corrente"
+  },
+  "char_Wriothesley": {
+    "rebukeDmg": "Dano do Soco do Salto Gelado",
+    "a4Cond": "Édito do Processo",
+    "icicleDmg": "Dano da Estalactite",
+    "rebuke_critRate_": "Taxa Crítica do Salto Gelado",
+    "rebuke_critDMG_": "Dano Crítico do Salto Gelado",
+    "rebuke_dmg_": "Bônus de Dano do Salto Gelado"
+  },
+  "weapon_PortablePowerSaw": {
+    "condName": "Sinais da Tenacidade consumidos"
+  },
+  "weapon_ProspectorsDrill": {
+    "condName": "Sinais da União consumidos"
+  },
+  "weapon_RangeGauge": {
+    "condName": "Sinais da União consumidos"
+  },
+  "weapon_TheDockhandsAssistant": {
+    "condName": "Sinais da Tenacidade consumidos"
+  },
+  "weapon_UltimateOverlordsMegaMagicSword": {
+    "condName": "Melusines ajudadas"
+  },
+  "weapon_Verdict": {
+    "condName": "Selos do Juramento"
   }
 }

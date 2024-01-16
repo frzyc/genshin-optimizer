@@ -5,8 +5,8 @@ export const allRelicCavernSlotKeys = ['head', 'hand', 'body', 'feet'] as const
 export type RelicCavernSlotKey = (typeof allRelicSlotKeys)[number]
 
 export const allRelicSlotKeys = [
-  ...allRelicPlanarSlotKeys,
   ...allRelicCavernSlotKeys,
+  ...allRelicPlanarSlotKeys,
 ] as const
 export type RelicSlotKey = (typeof allRelicSlotKeys)[number]
 

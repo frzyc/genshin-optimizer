@@ -30,6 +30,8 @@ export class SroDatabase extends Database {
   dbIndex: 1 | 2 | 3 | 4
   dbVer: number
 
+  keyPrefix = 'sro'
+
   constructor(dbIndex: 1 | 2 | 3 | 4, storage: DBStorage) {
     super(storage)
     migrateStorage(storage)
@@ -167,7 +169,7 @@ export class SroDatabase extends Database {
     other.saveStorage()
   }
   toExtraLocalDB() {
-    const key = `extraDatabase_${this.storage.getDBIndex()}`
+    const key = `sro_extraDatabase_${this.storage.getDBIndex()}`
     const other = new SandboxStorage(undefined, 'sro')
     const oldstorage = this.storage
     this.storage = other
