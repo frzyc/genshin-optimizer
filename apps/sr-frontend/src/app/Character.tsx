@@ -2,6 +2,7 @@ import type { AscensionKey } from '@genshin-optimizer/sr-consts'
 import { allRelicSlotKeys } from '@genshin-optimizer/sr-consts'
 import { convert, selfTag } from '@genshin-optimizer/sr-formula'
 import {
+  EmptyRelicCard,
   RelicCard,
   useCalcContext,
   useCharacter,
@@ -72,12 +73,7 @@ export default function Character() {
                         {relic ? (
                           <RelicCard relic={relic} />
                         ) : (
-                          <CardThemed sx={{ height: '100%' }}>
-                            <CardContent>
-                              <Typography>Slot: {slot}</Typography>
-                              <Typography>Empty</Typography>
-                            </CardContent>
-                          </CardThemed>
+                          <EmptyRelicCard slot={slot} />
                         )}
                       </Grid>
                     )

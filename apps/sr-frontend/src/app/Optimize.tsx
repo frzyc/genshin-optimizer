@@ -5,7 +5,12 @@ import type { Read } from '@genshin-optimizer/sr-formula'
 import { convert, selfTag } from '@genshin-optimizer/sr-formula'
 import type { BuildResult, ProgressResult } from '@genshin-optimizer/sr-opt'
 import { MAX_BUILDS, optimize } from '@genshin-optimizer/sr-opt'
-import { useCalcContext, useDatabaseContext } from '@genshin-optimizer/sr-ui'
+import {
+  EmptyRelicCard,
+  RelicCard,
+  useCalcContext,
+  useDatabaseContext,
+} from '@genshin-optimizer/sr-ui'
 import { CardThemed, DropdownButton } from '@genshin-optimizer/ui-common'
 import { range } from '@genshin-optimizer/util'
 import {
@@ -128,7 +133,11 @@ export default function Optimize() {
                       const relic = database.relics.get(id)
                       return (
                         <Grid item xs={1} key={`${index}_${id}`}>
-                          <Relic relic={relic} />
+                          {relic ? (
+                            <RelicCard relic={relic} />
+                          ) : (
+                            <EmptyRelicCard slot={slot} />
+                          )}
                         </Grid>
                       )
                     })}
@@ -140,26 +149,5 @@ export default function Optimize() {
         </CardContent>
       </CardThemed>
     </Container>
-  )
-}
-
-function Relic({ relic }: { relic: ICachedRelic | undefined }) {
-  return (
-    <Stack>
-      {!relic ? (
-        <Typography>Empty</Typography>
-      ) : (
-        <Box>
-          <Typography>
-            Main: {relic.mainStatKey} - {relic.mainStatVal}
-          </Typography>
-          {relic.substats.map((substat) => (
-            <Typography key={substat.key}>
-              Sub: {substat.key} - {substat.value}
-            </Typography>
-          ))}
-        </Box>
-      )}
-    </Stack>
   )
 }
