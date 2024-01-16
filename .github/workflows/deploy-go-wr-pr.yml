@@ -27,6 +27,7 @@ on:
       - 'libs/sr-db/**'
       - 'libs/sr-dm/**'
       - 'libs/sr-formula/**'
+      - 'libs/sr-opt/**'
       - 'libs/sr-srod/**'
       - 'libs/sr-stats/**'
       - 'libs/sr-ui/**'
