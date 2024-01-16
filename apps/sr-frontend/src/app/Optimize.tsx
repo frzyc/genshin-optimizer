@@ -72,7 +72,6 @@ export default function Optimize() {
       numWorkers,
       setProgress
     )
-    console.log(results)
     setBuild(results[0])
   }, [calc, numWorkers, optTarget, relicsBySlot])
 
