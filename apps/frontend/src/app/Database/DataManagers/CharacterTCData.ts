@@ -3,6 +3,7 @@ import type {
   ArtifactSlotKey,
   CharacterKey,
   MainStatKey,
+  SubstatKey,
   WeaponKey,
 } from '@genshin-optimizer/consts'
 import {
@@ -10,13 +11,24 @@ import {
   allArtifactSlotKeys,
   allSubstatKeys,
   allWeaponKeys,
-  substatTypeKeys,
+  substatTypeKeys
 } from '@genshin-optimizer/consts'
 import { validateLevelAsc } from '@genshin-optimizer/gi-util'
 import { objKeyMap } from '@genshin-optimizer/util'
 import type { ICharTC } from '../../Types/character'
-import type { ArtCharDatabase } from '../Database'
 import { DataManager } from '../DataManager'
+import type { ArtCharDatabase } from '../Database'
+
+export type MinTotalStatKey = Exclude<SubstatKey, 'hp_' | 'atk_' | 'def_'>
+export const minTotalStatKeys: MinTotalStatKey[] = [
+  'atk',
+  'hp',
+  'def',
+  'eleMas',
+  'enerRech_',
+  'critRate_',
+  'critDMG_',
+]
 
 export class CharacterTCDataManager extends DataManager<
   CharacterKey,
@@ -85,7 +97,7 @@ export function initCharTC(weaponKey: WeaponKey): ICharTC {
       target: undefined,
       distributedSubstats: 45,
       maxSubstats: initCharTcOptimizationMaxSubstats(),
-      minTotal: initCharTcOptimizationMinTotal(),
+      minTotal: {},
     },
   }
 }
@@ -166,11 +178,13 @@ function validateCharTcOptimization(
   maxSubstats = objKeyMap([...allSubstatKeys], (k) =>
     typeof maxSubstats[k] === 'number' ? maxSubstats[k] : 0
   )
-  if (typeof minTotal !== 'object')
-    minTotal = initCharTcOptimizationMaxSubstats()
-  minTotal = objKeyMap([...allSubstatKeys], (k) =>
-    typeof minTotal[k] === 'number' ? minTotal[k] : 0
+  if (typeof minTotal !== 'object') minTotal = {}
+  minTotal = Object.fromEntries(
+    Object.entries(minTotal).filter(
+      ([k, v]) => minTotalStatKeys.includes(k) && typeof v === 'number'
+    )
   )
+
   return { target, distributedSubstats, maxSubstats, minTotal }
 }
 function initCharTcOptimizationMaxSubstats(): ICharTC['optimization']['maxSubstats'] {
@@ -178,7 +192,4 @@ function initCharTcOptimizationMaxSubstats(): ICharTC['optimization']['maxSubsta
     allSubstatKeys,
     (k) => 6 * (k === 'hp' || k === 'atk' ? 4 : k === 'atk_' ? 2 : 5)
   )
-}
-function initCharTcOptimizationMinTotal(): ICharTC['optimization']['minTotal'] {
-  return objKeyMap(allSubstatKeys, () => 0)
 }

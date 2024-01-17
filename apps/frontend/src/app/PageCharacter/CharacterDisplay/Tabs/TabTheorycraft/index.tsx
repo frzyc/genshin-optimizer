@@ -1,3 +1,4 @@
+import { BuildAlert, initialBuildStatus } from '@genshin-optimizer/gi-ui'
 import {
   getMainStatDisplayValue,
   getSubstatValue,
@@ -6,6 +7,7 @@ import { useBoolState } from '@genshin-optimizer/react-util'
 import { objMap, toPercent } from '@genshin-optimizer/util'
 import { CopyAll, Refresh } from '@mui/icons-material'
 import CalculateIcon from '@mui/icons-material/Calculate'
+import CloseIcon from '@mui/icons-material/Close'
 import {
   Box,
   Button,
@@ -27,6 +29,7 @@ import {
   useEffect,
   useMemo,
   useRef,
+  useState,
 } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
 import { useLocation } from 'react-router-dom'
@@ -41,6 +44,7 @@ import { DataContext } from '../../../../Context/DataContext'
 import { initCharTC } from '../../../../Database/DataManagers/CharacterTCData'
 import { DatabaseContext } from '../../../../Database/Database'
 import { constant, percent } from '../../../../Formula/utils'
+import useDBMeta from '../../../../ReactHooks/useDBMeta'
 import useTeamData from '../../../../ReactHooks/useTeamData'
 import type { ICachedArtifact } from '../../../../Types/artifact'
 import type { ICharTC } from '../../../../Types/character'
@@ -50,18 +54,20 @@ import { defaultInitialWeaponKey } from '../../../../Util/WeaponUtil'
 import OptimizationTargetSelector from '../TabOptimize/Components/OptimizationTargetSelector'
 import { ArtifactMainStatAndSetEditor } from './ArtifactMainStatAndSetEditor'
 import { ArtifactSubCard } from './ArtifactSubCard'
+import { BuildConstaintCard } from './BuildConstaintCard'
 import type { SetCharTCAction } from './CharTCContext'
 import { CharTCContext } from './CharTCContext'
 import GcsimButton from './GcsimButton'
 import { WeaponEditorCard } from './WeaponEditorCard'
 import kqmIcon from './kqm.png'
+import type { TCWorkerResult } from './optimizeTc'
 import { optimizeTcGetNodes } from './optimizeTc'
 import useCharTC from './useCharTC'
-import CloseIcon from '@mui/icons-material/Close'
 export default function TabTheorycraft() {
   const { t } = useTranslation('page_character')
   const { database } = useContext(DatabaseContext)
   const { data: oldData } = useContext(DataContext)
+  const { gender } = useDBMeta()
   const {
     character,
     character: { key: characterKey, compareData },
@@ -230,42 +236,82 @@ export default function TabTheorycraft() {
     },
     [setCharTC]
   )
-  const [solving, onSolving, onNotSolving] = useBoolState()
-  const workerRef = useRef(
-    new Worker(new URL('./optimizeTcWorker.ts', import.meta.url))
-  )
+  const workerRef = useRef<Worker>(null)
+  if (workerRef.current === null)
+    workerRef.current = new Worker(
+      new URL('./optimizeTcWorker.ts', import.meta.url)
+    )
+
+  const [status, setStatus] = useState(initialBuildStatus())
+  const solving = status.type === 'active'
+
   const terminateWorker = useCallback(() => {
     workerRef.current.terminate()
-    onNotSolving()
-  }, [workerRef, onNotSolving])
+    setStatus(initialBuildStatus())
+  }, [workerRef])
 
   const optimizeSubstats = (apply: boolean) => {
-    // console.log({ teamData, charTC })
-
     const nodes = optimizeTcGetNodes(teamData, characterKey, charTC)
     console.log({ nodes })
     workerRef.current.postMessage({ charTC, ...nodes })
-    onSolving()
-    if (apply) {
-      workerRef.current.onmessage = ({
-        data: { maxBuffer, distributed },
-      }: MessageEvent<{
-        maxBuffer: Record<string, number>
-        distributed: number
-      }>) => {
-        onNotSolving()
-        setCharTC((charTC) => {
-          charTC.artifact.substats.stats = objMap(
-            charTC.artifact.substats.stats,
-            (v, k) => v + toPercent(maxBuffer![k] ?? 0, k)
-          )
-          charTC.optimization.distributedSubstats =
-            distributedSubstats - distributed
-          return charTC
-        })
+    setStatus((s) => ({
+      ...s,
+      type: 'active',
+      startTime: performance.now(),
+      finishTime: undefined,
+    }))
+
+    workerRef.current.onmessage = ({ data }: MessageEvent<TCWorkerResult>) => {
+      const { resultType } = data
+      switch (resultType) {
+        case 'total':
+          setStatus((s) => ({ ...s, total: data.total }))
+          break
+        case 'count':
+          setStatus((s) => ({
+            ...s,
+            tested: data.tested,
+            failed: data.failed,
+          }))
+          break
+        case 'finalize': {
+          const { maxBuffer, distributed, tested, failed, skipped } = data
+          setStatus((s) => ({
+            ...s,
+            type: 'inactive',
+            tested,
+            failed,
+            skipped,
+            finishTime: performance.now(),
+          }))
+
+          if (!apply) {
+            console.log({
+              maxBuffer,
+              distributed,
+              tested,
+              failed,
+              skipped,
+            })
+            break
+          }
+
+          setCharTC((charTC) => {
+            charTC.artifact.substats.stats = objMap(
+              charTC.artifact.substats.stats,
+              (v, k) => v + toPercent(maxBuffer![k] ?? 0, k)
+            )
+            charTC.optimization.distributedSubstats =
+              distributedSubstats - distributed
+            return charTC
+          })
+
+          break
+        }
       }
     }
   }
+
   const kqms = useCallback(() => {
     setCharTC((charTC) => {
       charTC.artifact.substats.type = 'mid'
@@ -330,11 +376,14 @@ export default function TabTheorycraft() {
           <DataContext.Provider value={dataContextValue}>
             <Box>
               <Grid container spacing={1} sx={{ justifyContent: 'center' }}>
-                <Grid item sx={{ flexGrow: -1, maxWidth: '450px' }}>
+                <Grid item sx={{ flexGrow: -1, maxWidth: '350px' }}>
                   <WeaponEditorCard
                     weaponTypeKey={characterSheet.weaponTypeKey}
                     disabled={solving}
                   />
+                  <BuildConstaintCard disabled={solving} />
+                </Grid>
+                <Grid item sx={{ flexGrow: -1 }}>
                   <ArtifactMainStatAndSetEditor disabled={solving} />
                 </Grid>
                 <Grid item sx={{ flexGrow: 1 }}>
@@ -398,6 +447,11 @@ export default function TabTheorycraft() {
                   Log Optimized Substats
                 </Button>
               )}
+              <BuildAlert
+                status={status}
+                characterKey={characterKey}
+                gender={gender}
+              />
             </Box>
           </DataContext.Provider>
         ) : (
