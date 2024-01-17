@@ -1,10 +1,15 @@
 import type { SubstatKey } from '@genshin-optimizer/consts'
-import { allSubstatKeys, type CharacterKey } from '@genshin-optimizer/consts'
+import {
+  allSubstatKeys,
+  artSubstatRollData,
+  type CharacterKey,
+} from '@genshin-optimizer/consts'
 import { getSubstatValue } from '@genshin-optimizer/gi-util'
-import { clampLow, objMap, toDecimal } from '@genshin-optimizer/util'
+import { objMap, toDecimal } from '@genshin-optimizer/util'
 import type { TeamData } from '../../../../Context/DataContext'
 import { mergeData } from '../../../../Formula/api'
 import { mapFormulas } from '../../../../Formula/internal'
+import type { OptNode } from '../../../../Formula/optimization'
 import { optimize, precompute } from '../../../../Formula/optimization'
 import type { NumNode } from '../../../../Formula/type'
 import { constant } from '../../../../Formula/utils'
@@ -12,27 +17,40 @@ import type { ICharTC } from '../../../../Types/character'
 import { objPathValue, shouldShowDevComponents } from '../../../../Util/Util'
 import { dynamicData } from '../TabOptimize/foreground'
 
+export type TCWorkerResult = TotalResult | CountResult | FinalizeResult
+
+export interface TotalResult {
+  resultType: 'total'
+  total: number
+}
+export interface CountResult {
+  resultType: 'count'
+  tested: number // tested, including `failed`
+  failed: number // tested but fail the filter criteria, e.g., not enough EM
+  skipped: number // failed feasibility check
+}
+
+export interface FinalizeResult {
+  resultType: 'finalize'
+  maxBuffer: Partial<Record<SubstatKey, number>>
+  distributed: number
+  tested: number
+  failed: number
+  skipped: number
+}
+
 // This solves
 // $\argmax_{x\in N^k, \sum x <= `distributedSubstats`, x <= `maxSubstats`} `optimizationTarget`(x)$ without assumptions on the properties of `optimizationTarget`
 // where $N$ are the natural numbers and $k$ is the number of `SubstatKey`s
 // We brute force iterate over all substats in the graph and compute the maximum
 // n.b. some substat combinations may not be materializable into real artifacts
-export function optimizeTc(
+export function optimizeTcGetNodes(
   teamDataProp: TeamData,
   characterKey: CharacterKey,
   charTC: ICharTC
 ) {
-  const startTime = performance.now()
   const {
-    artifact: {
-      substats: { stats: substats, type: substatsType, rarity },
-    },
-    optimization: {
-      target: optimizationTarget,
-      distributedSubstats,
-      maxSubstats: rawMaxSubstats,
-      minTotal,
-    },
+    optimization: { target: optimizationTarget, minTotal },
   } = charTC
   if (!optimizationTarget) return {}
   const workerData = teamDataProp[characterKey]?.target.data![0]
@@ -45,9 +63,11 @@ export function optimizeTc(
     optimizationTarget
   ) as NumNode | undefined
   if (!unoptimizedOptimizationTargetNode) return {}
-  const unoptimizedNodes = [unoptimizedOptimizationTargetNode]
+
+  const constraints = Object.keys(minTotal).map((k) => workerData.total[k])
+
   let nodes = optimize(
-    unoptimizedNodes,
+    [unoptimizedOptimizationTargetNode, ...constraints],
     workerData,
     ({ path: [p] }) => p !== 'dyn'
   )
@@ -66,14 +86,33 @@ export function optimizeTc(
     (f) => f
   )
   nodes = optimize(nodes, {}, (_) => false)
+  return {
+    nodes,
+  }
+}
 
-  const subs = new Set<string>()
+export function optimizeTcUsingNodes(
+  nodes: OptNode[],
+  charTC: ICharTC,
+  callback: (r: TCWorkerResult) => void
+) {
+  const startTime = performance.now()
+  const {
+    artifact: {
+      slots,
+      substats: { stats: substats, type: substatsType, rarity },
+    },
+    optimization: { distributedSubstats, maxSubstats, minTotal },
+  } = charTC
+
+  const scalesWith = new Set<string>()
   const compute = precompute(
     nodes,
     {},
     (f) => {
-      subs.add(f.path[1])
-      return f.path[1]
+      const val = f.path[1]
+      scalesWith.add(val)
+      return val
     },
     2
   )
@@ -81,88 +120,171 @@ export function optimizeTc(
   const substatValue = (x: string, m: number) =>
     m * getSubstatValue(x as SubstatKey, rarity, substatsType, false)
 
-  let maxBuffer: Record<string, number> = Object.fromEntries(
-    [...subs].map((x) => [x, 0])
+  const scalesWithSub = [...scalesWith].filter((k) =>
+    allSubstatKeys.includes(k as SubstatKey)
   )
-  const subsArr = [...subs]
-  let distributed = distributedSubstats
 
-  const minTotalRolls = objMap(minTotal, (v, k) => {
-    if (!v || !distributed) return 0
-    const [node] = optimize([workerData.total[k]], workerData, () => true)
-    const diff = v - (node.operation === 'const' ? node.value : 0)
-    if (diff <= 0) return 0
-    const rolls = Math.ceil(
-      diff / getSubstatValue(k, rarity, substatsType, false)
-    )
-    const disRolls = Math.min(distributed, rolls)
-    distributed -= disRolls
-    return disRolls
-  })
-  const maxSubstats = objMap(rawMaxSubstats, (v, k) => {
-    return (
-      v -
-      clampLow(
-        Math.ceil(substats[k] / getSubstatValue(k, rarity, substatsType)),
-        0
+  const existingRolls = objMap(substats, (v, k) =>
+    Math.ceil(substats[k] / getSubstatValue(k, rarity, substatsType))
+  )
+  const maxSubsAssignable = objMap(maxSubstats, (v, k) => v - existingRolls[k])
+  let max = -Infinity
+  const buffer: Record<string, number> = {} //Object.fromEntries([...subs].map((x) => [x, 0]))
+  const bufferRolls: Partial<Record<SubstatKey | 'other', number>> = {
+    other: 0,
+  } // Object.fromEntries([...subs].map((x) => [x, 0]))
+  let maxBuffer: Record<string, number> = structuredClone(buffer)
+  let maxBufferRolls: Partial<Record<SubstatKey | 'other', number>> =
+    structuredClone(bufferRolls)
+  const existingSubs = objMap(charTC.artifact.substats.stats, (v, k) =>
+    toDecimal(v, k)
+  )
+  const mainStatsCount = getMainStatsCount(slots)
+  const minSubLines = getMinSubLines(slots)
+
+  const alreadyFeasible =
+    getMinOtherRolls(
+      Object.entries(existingRolls),
+      mainStatsCount,
+      minSubLines
+    ) <= 0
+
+  callback({
+    resultType: 'total',
+    total: countPerms(
+      distributedSubstats,
+      [...scalesWithSub, 'other'].map((k) =>
+        k === 'other' ? distributedSubstats : maxSubsAssignable[k]
       )
-    )
+    ),
   })
-  const assignableMaxTot = subsArr.reduce((a, x) => a + maxSubstats[x], 0)
-  if (assignableMaxTot <= distributedSubstats) {
-    distributed = assignableMaxTot
-    maxBuffer = Object.fromEntries(
-      subsArr.map((x) => [x, substatValue(x, maxSubstats[x])])
-    )
-    if (shouldShowDevComponents)
-      console.log({ maxBuffer, subsArr, maxSubstats, distributed })
-  } else {
-    let max = -Infinity
-    const buffer = Object.fromEntries([...subs].map((x) => [x, 0]))
-    const existingSubs = objMap(
-      charTC.artifact.substats.stats,
-      (v, k) => toDecimal(v, k) + minTotalRolls[k]
-    )
-    const permute = (toAssign: number, [x, ...xs]: string[]) => {
-      if (xs.length === 0) {
-        if (toAssign > maxSubstats[x]) return
-        buffer[x] = substatValue(x, toAssign)
-        const [result] = compute([
-          { values: existingSubs },
-          { values: buffer },
-        ] as const)
-        if (result > max) {
-          max = result
-          maxBuffer = structuredClone(buffer)
+  let tested = 0
+  let failed = 0
+  let skipped = 0
+  const constraints = Object.entries(minTotal).map(([k, v]) => toDecimal(v, k))
+  const permute = (toAssign: number, [x, ...xs]: string[]) => {
+    if (xs.length === 0) {
+      if (toAssign > maxSubsAssignable[x]) return
+      tested++
+      if (!(tested % 100_000))
+        callback({
+          resultType: 'count',
+          tested,
+          failed,
+          skipped,
+        })
+      if (x !== 'other') buffer[x] = substatValue(x, toAssign)
+      bufferRolls[x] = toAssign
+      if (!alreadyFeasible) {
+        //check for distributed feasibility
+        const allRolls = allSubstatKeys.map((k) => [
+          k,
+          (existingRolls[k] ?? 0) + (bufferRolls[k] ?? 0),
+        ]) as Array<[SubstatKey, number]>
+        const minOtherRolls = getMinOtherRolls(
+          allRolls,
+          mainStatsCount,
+          minSubLines
+        )
+        // not feasible
+        if ((bufferRolls.other ?? 0) < minOtherRolls) {
+          skipped++
+          return
         }
+      }
+      const results = compute([
+        { values: existingSubs },
+        { values: buffer },
+      ] as const)
+      // check constraints
+      if (constraints.some((c, i) => results[i + 1] < c)) {
+        failed++
         return
       }
-      for (let i = 0; i <= Math.min(maxSubstats[x], toAssign); i++) {
-        // TODO: Making sure that i + \sum { maxSubstats[xs] } >= distributedSubstats in each recursion will reduce unnecessary recursion considerably for large problems. It will also tighten the possibilities for the leaf recursion, so you don't need so many checkings.
-        // https://github.com/frzyc/genshin-optimizer/pull/781#discussion_r1138083742
-        buffer[x] = substatValue(x, i)
-        permute(toAssign - i, xs)
+      const result = results[0]
+      if (result > max) {
+        max = result
+        maxBuffer = structuredClone(buffer)
+        maxBufferRolls = structuredClone(bufferRolls)
+      }
+      return
+    }
+    for (let i = 0; i <= Math.min(maxSubsAssignable[x], toAssign); i++) {
+      // TODO: Making sure that i + \sum { maxSubstats[xs] } >= distributedSubstats in each recursion will reduce unnecessary recursion considerably for large problems. It will also tighten the possibilities for the leaf recursion, so you don't need so many checkings.
+      // https://github.com/frzyc/genshin-optimizer/pull/781#discussion_r1138083742
+      buffer[x] = substatValue(x, i)
+      bufferRolls[x] = i
+      permute(toAssign - i, xs)
+    }
+  }
+  permute(distributedSubstats, [...scalesWithSub, 'other'])
+  if (shouldShowDevComponents) {
+    console.log(`Took ${performance.now() - startTime} ms`)
+    console.log({
+      maxBuffer,
+      maxBufferRolls,
+      scalesWith,
+    })
+  }
+  const distributed = Object.entries(maxBufferRolls).reduce(
+    (accu, [k, v]) => accu + (k === 'other' ? 0 : v),
+    0
+  )
+  callback({
+    resultType: 'finalize',
+    distributed,
+    maxBuffer,
+    tested,
+    failed,
+    skipped,
+  })
+  // return {
+  //   maxBuffer,
+  //   distributed,
+  //   scalesWith,
+  // }
+}
+
+function getMinOtherRolls(
+  subsRolls: Array<[SubstatKey, number]>,
+  mainStatsCount: Partial<Record<SubstatKey, number>>,
+  minSublines: number = 4 * 5
+) {
+  const maxSubSlots = subsRolls.reduce((accu, [k, v]) => {
+    const maxStatSlot = 5 - (mainStatsCount[k] ?? 0)
+    return accu + Math.min(v, maxStatSlot)
+  }, 0)
+  return minSublines - maxSubSlots
+}
+
+function getMinSubLines(slots: ICharTC['artifact']['slots']) {
+  return Object.values(slots).reduce((minSubLines, { rarity, level }) => {
+    const { high, low } = artSubstatRollData[rarity]
+    return minSubLines + (level >= 4 ? high : low)
+  }, 0)
+}
+function getMainStatsCount(slots: ICharTC['artifact']['slots']) {
+  const mainStatsCount: Partial<Record<SubstatKey, number>> = {}
+
+  Object.values(slots).forEach(({ statKey }) => {
+    mainStatsCount[statKey as SubstatKey] =
+      (mainStatsCount[statKey as SubstatKey] ?? 0) + 1
+  }, 0)
+  return mainStatsCount
+}
+// Count the number of integer solutions of `a_0 + a_1 + ... + a_(N-1) == sum` (where `N == bounds.length`) such that `0 <= a_i <= bounds[i]`
+function countPerms(sum: number, bounds: number[]): number {
+  // counts[s] = the number of ways to sum to `s`
+  let counts = Array(sum + 1).fill(0)
+  counts[0] = 1
+  for (const bound of bounds) {
+    const new_counts = Array(sum + 1).fill(0)
+    for (let a_i = 0; a_i <= bound; a_i++) {
+      for (let s = a_i; s <= sum; s++) {
+        new_counts[s] += counts[s - a_i]
       }
     }
-    permute(distributedSubstats, subsArr)
-    if (shouldShowDevComponents) {
-      console.log(`Took ${performance.now() - startTime} ms`)
-      console.log({
-        maxBuffer,
-        maxBufferInt: objMap(
-          maxBuffer,
-          (v, k) =>
-            v / getSubstatValue(k as SubstatKey, rarity, substatsType, false)
-        ),
-        subsArr,
-      })
-    }
+    counts = new_counts
   }
-  return {
-    maxBuffer,
-    distributed,
-    scalesWith: subsArr.filter((x) =>
-      (allSubstatKeys as readonly string[]).includes(x)
-    ) as SubstatKey[],
-  }
+  return counts[sum]
 }

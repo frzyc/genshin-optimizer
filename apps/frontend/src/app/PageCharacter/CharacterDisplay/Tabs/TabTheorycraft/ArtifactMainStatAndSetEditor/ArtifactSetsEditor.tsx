@@ -7,7 +7,11 @@ import { getArtSheet } from '../../../../../Data/Artifacts'
 import { ArtifactSetEditor } from './ArtifactSetEditor'
 import { CharTCContext } from '../CharTCContext'
 
-export function ArtifactSetsEditor() {
+export function ArtifactSetsEditor({
+  disabled = false,
+}: {
+  disabled?: boolean
+}) {
   const {
     charTC: {
       artifact: { sets: artSet },
@@ -35,6 +39,7 @@ export function ArtifactSetsEditor() {
           key={setKey}
           setKey={setKey as ArtifactSetKey}
           remaining={remaining}
+          disabled={disabled}
         />
       ))}
       <CardLight sx={{ flexGrow: 1, overflow: 'visible' }}>
@@ -49,6 +54,7 @@ export function ArtifactSetsEditor() {
               (n) => parseInt(n) > remaining
             )
           }
+          disabled={disabled}
         />
       </CardLight>
     </Stack>

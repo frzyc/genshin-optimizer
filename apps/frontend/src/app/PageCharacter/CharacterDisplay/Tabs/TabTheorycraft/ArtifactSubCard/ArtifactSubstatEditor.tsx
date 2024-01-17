@@ -10,7 +10,13 @@ import KeyMap from '../../../../../KeyMap'
 import StatIcon from '../../../../../KeyMap/StatIcon'
 import { CharTCContext } from '../CharTCContext'
 
-export function ArtifactSubstatEditor({ statKey }: { statKey: SubstatKey }) {
+export function ArtifactSubstatEditor({
+  statKey,
+  disabled = false,
+}: {
+  statKey: SubstatKey
+  disabled?: boolean
+}) {
   const { t } = useTranslation('page_character')
   const {
     charTC: {
@@ -80,6 +86,7 @@ export function ArtifactSubstatEditor({ statKey }: { statKey: SubstatKey }) {
           onChange={(v) => v !== undefined && setValue(v)}
           sx={{ borderRadius: 1, px: 1, height: '100%', width: '5em' }}
           inputProps={{ sx: { textAlign: 'right' }, min: 0 }}
+          disabled={disabled}
         />
         <CardDark
           sx={{
@@ -119,6 +126,7 @@ export function ArtifactSubstatEditor({ statKey }: { statKey: SubstatKey }) {
           onChange={(v) => v !== undefined && setValue(v * substatValue)}
           sx={{ borderRadius: 1, px: 1, my: 0, height: '100%', width: '6.5em' }}
           inputProps={{ sx: { textAlign: 'right', pr: 0.5 }, min: 0, step: 1 }}
+          disabled={disabled}
         />
         {/* <BootstrapTooltip title={<Typography>{t(numMains ? `tabTheorycraft.maxRollsMain` : `tabTheorycraft.maxRolls`, { value: maxRolls })}</Typography>} placement="top"> */}
         <CardDark sx={{ textAlign: 'center', p: 0.5, minWidth: '6em' }}>
@@ -155,6 +163,7 @@ export function ArtifactSubstatEditor({ statKey }: { statKey: SubstatKey }) {
             valueLabelDisplay="auto"
             onChange={(e, v) => setRolls(v as number)}
             onChangeCommitted={(e, v) => setRValue(v as number)}
+            disabled={disabled}
           />
         </CardDark>
 
@@ -172,6 +181,7 @@ export function ArtifactSubstatEditor({ statKey }: { statKey: SubstatKey }) {
           }
           sx={{ borderRadius: 1, px: 1, my: 0, height: '100%', width: '6em' }}
           inputProps={{ sx: { textAlign: 'right', pr: 0.5 }, min: 0, step: 1 }}
+          disabled={disabled}
         />
       </Box>
     </Stack>

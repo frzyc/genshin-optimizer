@@ -9,6 +9,7 @@ type Data = {
   setNumKey: SetNum
   hideHeader?: boolean
   conditionalsOnly?: boolean
+  disabled?: boolean
 }
 
 export default function SetEffectDisplay({
@@ -16,6 +17,7 @@ export default function SetEffectDisplay({
   setNumKey,
   hideHeader = false,
   conditionalsOnly = false,
+  disabled = false,
 }: Data) {
   const sheet = getArtSheet(setKey)
 
@@ -27,7 +29,11 @@ export default function SetEffectDisplay({
   return (
     <Box display="flex" flexDirection="column">
       {document ? (
-        <DocumentDisplay sections={document} hideHeader={hideHeader} />
+        <DocumentDisplay
+          sections={document}
+          hideHeader={hideHeader}
+          disabled={disabled}
+        />
       ) : null}
     </Box>
   )

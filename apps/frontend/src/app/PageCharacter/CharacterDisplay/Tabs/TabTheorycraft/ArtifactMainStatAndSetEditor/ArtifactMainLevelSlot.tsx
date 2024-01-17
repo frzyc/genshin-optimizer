@@ -24,8 +24,10 @@ import { CharTCContext } from '../CharTCContext'
 
 export function ArtifactMainLevelSlot({
   slotKey,
+  disabled = false,
 }: {
   slotKey: ArtifactSlotKey
+  disabled?: boolean
 }) {
   const {
     charTC: {
@@ -82,6 +84,7 @@ export function ArtifactMainLevelSlot({
             fullWidth
             title={<StatWithUnit statKey={statKey} />}
             color={KeyMap.getVariant(statKey) ?? 'success'}
+            disabled={disabled}
           >
             {keys.map((msk) => (
               <MenuItem
@@ -102,6 +105,7 @@ export function ArtifactMainLevelSlot({
             {rarity} <StarRoundedIcon fontSize="inherit" />
           </Box>
         }
+        disabled={disabled}
       >
         {[5, 4, 3].map((r) => (
           <MenuItem
@@ -122,6 +126,7 @@ export function ArtifactMainLevelSlot({
         onChange={(l) => l !== undefined && setSlot({ level: l })}
         sx={{ borderRadius: 1, pl: 1, my: 0, height: '100%' }}
         inputProps={{ sx: { pl: 0.5, width: '2em' }, max: 20, min: 0 }}
+        disabled={disabled}
       />
       <CardDark sx={{ height: '100%', minWidth: '4em' }}>
         <Box p={1} textAlign="center">{`${artDisplayValue(

@@ -87,6 +87,8 @@ export type ICharTC = {
      * This includes stats from other sources
      * e.g. `{enerRech_: 0.3}`
      */
-    minTotal: Record<Exclude<SubstatKey, 'hp_' | 'atk_' | 'def_'>, number>
+    minTotal: Partial<
+      Record<Exclude<SubstatKey, 'hp_' | 'atk_' | 'def_'>, number>
+    >
   }
 }
