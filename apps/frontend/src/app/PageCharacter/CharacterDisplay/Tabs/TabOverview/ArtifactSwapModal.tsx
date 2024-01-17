@@ -1,12 +1,13 @@
-import type { ArtifactSlotKey } from '@genshin-optimizer/consts'
+import type { ArtifactSlotKey, SubstatKey } from '@genshin-optimizer/consts'
 import { imgAssets } from '@genshin-optimizer/gi-assets'
 import { useForceUpdate, useMediaQueryUp } from '@genshin-optimizer/react-util'
-import { filterFunction } from '@genshin-optimizer/util'
+import { clamp, filterFunction, sortFunction } from '@genshin-optimizer/util'
 import {
   Box,
   CardContent,
   Divider,
   Grid,
+  Pagination,
   Skeleton,
   Typography,
 } from '@mui/material'
@@ -15,21 +16,28 @@ import {
   Suspense,
   useCallback,
   useContext,
+  useDeferredValue,
   useEffect,
   useMemo,
   useReducer,
+  useRef,
+  useState,
 } from 'react'
-import { useTranslation } from 'react-i18next'
+import { Trans, useTranslation } from 'react-i18next'
 import CardDark from '../../../../Components/Card/CardDark'
 import CloseButton from '../../../../Components/CloseButton'
 import ImgIcon from '../../../../Components/Image/ImgIcon'
 import ModalWrapper from '../../../../Components/ModalWrapper'
 import { DatabaseContext } from '../../../../Database/Database'
+import useDisplayArtifact from '../../../../ReactHooks/useDisplayArtifact'
 import ArtifactCard from '../../../../PageArtifact/ArtifactCard'
 import type { FilterOption } from '../../../../PageArtifact/ArtifactSort'
 import {
   artifactFilterConfigs,
   initialFilterOption,
+  artifactSortConfigs,
+  artifactSortKeys,
+  artifactSortMap,
 } from '../../../../PageArtifact/ArtifactSort'
 import CompareBuildButton from './CompareBuildButton'
 
@@ -86,9 +94,56 @@ export default function ArtifactSwapModal({
       database.arts.values
         .filter(filterFunc)
         .map((art) => art.id)
-        .slice(0, numToShowMap[brPt])
     )
-  }, [dbDirty, database, filterConfigs, filterOption, brPt])
+  }, [dbDirty, database, filterConfigs, filterOption])
+
+  // START OF PAGINATION CODE
+  const maxNumArtifactsToDisplay = numToShowMap[brPt]
+
+  /* const artifactDisplayState = useDisplayArtifact()
+  const { sortType, effFilter, ascending, probabilityFilter } =
+    artifactDisplayState */
+
+  const [pageIdex, setpageIdex] = useState(0)
+  const invScrollRef = useRef<HTMLDivElement>(null)
+  /* const dbDirtyDeferred = useDeferredValue(dbDirty)
+  const effFilterSet = useMemo(
+    () => new Set(effFilter),
+    [effFilter]
+  ) as Set<SubstatKey>
+
+  const showProbability = sortType === 'probability'
+
+  const sortConfigs = useMemo(
+    () => artifactSortConfigs(effFilterSet, probabilityFilter),
+    [effFilterSet, probabilityFilter]
+  )
+
+  const deferredArtifactDisplayState = useDeferredValue(artifactDisplayState) */
+
+  const { artifactIdsToShow, numPages, currentPageIndex } = useMemo(() => {
+    const numPages = Math.ceil(artIdList.length / maxNumArtifactsToDisplay)
+    const currentPageIndex = clamp(pageIdex, 0, numPages - 1)
+    return {
+      artifactIdsToShow: artIdList.slice(
+        currentPageIndex * maxNumArtifactsToDisplay,
+        (currentPageIndex + 1) * maxNumArtifactsToDisplay
+      ),
+      numPages,
+      currentPageIndex,
+    }
+  }, [artIdList, pageIdex, maxNumArtifactsToDisplay])
+
+  //for pagination
+  const totalShowing = artIdList.length
+  const setPage = useCallback(
+    (e, value) => {
+      invScrollRef.current?.scrollIntoView({ behavior: 'smooth' })
+      setpageIdex(value - 1)
+    },
+    [setpageIdex, invScrollRef]
+  )
+  // END OF PAGINATION CODE
 
   return (
     <ModalWrapper
@@ -132,6 +187,20 @@ export default function ArtifactSwapModal({
               }
             >
               <Grid container spacing={1} columns={{ xs: 2, md: 3, lg: 4 }}>
+                <Grid item flexGrow={1}>
+                  <Pagination
+                    count={numPages}
+                    page={currentPageIndex + 1}
+                    onChange={setPage}
+                  />
+                </Grid>
+                <Grid item>
+                  <ShowingArt
+                    numShowing={artifactIdsToShow.length}
+                    total={totalShowing}
+                    t={t}
+                  />
+                </Grid>
                 {artIdList.map((id) => (
                   <Grid item key={id} xs={1}>
                     <ArtifactCard
@@ -147,5 +216,16 @@ export default function ArtifactSwapModal({
         </CardContent>
       </CardDark>
     </ModalWrapper>
+  )
+}
+
+function ShowingArt({ numShowing, total, t }) {
+  return (
+    <Typography color="text.secondary">
+      <Trans t={t} i18nKey="showingNum" count={numShowing} value={total}>
+        Showing <b>{{ count: numShowing } as TransObject}</b> out of{' '}
+        {{ value: total } as TransObject} Artifacts
+      </Trans>
+    </Typography>
   )
 }
