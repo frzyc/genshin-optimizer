@@ -58,6 +58,7 @@ export default function ArtifactSwapModal({
   onClose: () => void
 }) {
   const { t } = useTranslation('page_character')
+  const { t: tk } = useTranslation('artifact')
   const { database } = useContext(DatabaseContext)
   const clickHandler = useCallback(
     (id) => {
@@ -180,6 +181,25 @@ export default function ArtifactSwapModal({
               disableSlotFilter
             />
           </Suspense>
+        </CardContent>
+        <Divider />
+        <CardContent>
+          <Grid container alignItems="center" sx={{ pb: 1 }}>
+            <Grid item flexGrow={1}>
+              <Pagination
+                count={numPages}
+                page={currentPageIndex + 1}
+                onChange={setPage}
+              />
+            </Grid>
+            <Grid item flexGrow={1}>
+              <ShowingArt
+                numShowing={artifactIdsToShow.length}
+                total={totalShowing}
+                t={tk}
+              />
+            </Grid>
+           </Grid>
           <Box mt={1}>
             <Suspense
               fallback={
@@ -187,21 +207,7 @@ export default function ArtifactSwapModal({
               }
             >
               <Grid container spacing={1} columns={{ xs: 2, md: 3, lg: 4 }}>
-                <Grid item flexGrow={1}>
-                  <Pagination
-                    count={numPages}
-                    page={currentPageIndex + 1}
-                    onChange={setPage}
-                  />
-                </Grid>
-                <Grid item>
-                  <ShowingArt
-                    numShowing={artifactIdsToShow.length}
-                    total={totalShowing}
-                    t={t}
-                  />
-                </Grid>
-                {artIdList.map((id) => (
+                {artifactIdsToShow.map((id) => (
                   <Grid item key={id} xs={1}>
                     <ArtifactCard
                       artifactId={id}
@@ -213,6 +219,26 @@ export default function ArtifactSwapModal({
               </Grid>
             </Suspense>
           </Box>
+          {numPages > 1 && (
+            <CardContent>
+              <Grid container>
+                <Grid item flexGrow={1}>
+                  <Pagination
+                    count={numPages}
+                    page={currentPageIndex + 1}
+                    onChange={setPage}
+                  />
+                </Grid>
+                <Grid item>
+                  <ShowingArt
+                    numShowing={artifactIdsToShow.length}
+                    total={totalShowing}
+                    t={tk}
+                  />
+                </Grid>
+              </Grid>
+            </CardContent>
+          )}
         </CardContent>
       </CardDark>
     </ModalWrapper>
