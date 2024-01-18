@@ -11,7 +11,7 @@ import {
   allArtifactSlotKeys,
   allSubstatKeys,
   allWeaponKeys,
-  substatTypeKeys
+  substatTypeKeys,
 } from '@genshin-optimizer/consts'
 import { validateLevelAsc } from '@genshin-optimizer/gi-util'
 import { objKeyMap } from '@genshin-optimizer/util'

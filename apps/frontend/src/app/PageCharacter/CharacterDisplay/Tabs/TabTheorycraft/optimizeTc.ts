@@ -50,6 +50,7 @@ export function optimizeTcGetNodes(
   charTC: ICharTC
 ) {
   const {
+    artifact: { sets: artSets },
     optimization: { target: optimizationTarget, minTotal },
   } = charTC
   if (!optimizationTarget) return {}
@@ -76,7 +77,7 @@ export function optimizeTcGetNodes(
     nodes,
     (f) => {
       if (f.operation === 'read' && f.path[0] === 'dyn') {
-        const a = charTC.artifact.sets[f.path[1]]
+        const a = artSets[f.path[1]]
         if (a) return constant(a)
         if (!(allSubstatKeys as readonly string[]).includes(f.path[1]))
           return constant(0)
@@ -114,7 +115,7 @@ export function optimizeTcUsingNodes(
       scalesWith.add(val)
       return val
     },
-    2
+    1
   )
 
   const substatValue = (x: string, m: number) =>
@@ -136,9 +137,6 @@ export function optimizeTcUsingNodes(
   let maxBuffer: Record<string, number> = structuredClone(buffer)
   let maxBufferRolls: Partial<Record<SubstatKey | 'other', number>> =
     structuredClone(bufferRolls)
-  const existingSubs = objMap(charTC.artifact.substats.stats, (v, k) =>
-    toDecimal(v, k)
-  )
   const mainStatsCount = getMainStatsCount(slots)
   const minSubLines = getMinSubLines(slots)
 
@@ -192,10 +190,7 @@ export function optimizeTcUsingNodes(
           return
         }
       }
-      const results = compute([
-        { values: existingSubs },
-        { values: buffer },
-      ] as const)
+      const results = compute([{ values: buffer }] as const)
       // check constraints
       if (constraints.some((c, i) => results[i + 1] < c)) {
         failed++
