@@ -38,6 +38,6 @@ Caution: if this is part of nx cache replay,
 export const getLocalRepoHash = (cwd: string): string =>
   `${execSync(`git rev-parse HEAD`, { cwd })}`.trimEnd()
 export const getRemoteRepoHash = (cwd: string): string =>
-  `${execSync(`git ls-remote origin HEAD | awk '{print $1}`, {
+  `${execSync(`git ls-remote origin HEAD | awk '{print $1}'`, {
     cwd,
   })}`.trimEnd()
