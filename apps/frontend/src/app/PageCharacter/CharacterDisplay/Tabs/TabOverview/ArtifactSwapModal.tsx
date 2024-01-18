@@ -87,14 +87,13 @@ export default function ArtifactSwapModal({
   const invScrollRef = useRef<HTMLDivElement>(null)
 
   const filterConfigs = useMemo(() => artifactFilterConfigs(), [])
-  const totalArtNum = database.arts.values.filter((s) => s.slotKey === filterOption.slotKeys[0]).length
+  const totalArtNum = database.arts.values.filter(
+    (s) => s.slotKey === filterOption.slotKeys[0]
+  ).length
   const artIdList = useMemo(() => {
     const filterFunc = filterFunction(filterOption, filterConfigs)
     return (
-      dbDirty &&
-      database.arts.values
-        .filter(filterFunc)
-        .map((art) => art.id)
+      dbDirty && database.arts.values.filter(filterFunc).map((art) => art.id)
     )
   }, [dbDirty, database, filterConfigs, filterOption])
 
@@ -114,8 +113,8 @@ export default function ArtifactSwapModal({
   // for pagination
   const totalShowing =
     artIdList.length !== totalArtNum
-    ? `${artIdList.length}/${totalArtNum}`
-    : `${totalArtNum}`
+      ? `${artIdList.length}/${totalArtNum}`
+      : `${totalArtNum}`
   const setPage = useCallback(
     (e, value) => {
       invScrollRef.current?.scrollIntoView({ behavior: 'smooth' })
@@ -177,7 +176,7 @@ export default function ArtifactSwapModal({
                 t={tk}
               />
             </Grid>
-           </Grid>
+          </Grid>
           <Box mt={1}>
             <Suspense
               fallback={

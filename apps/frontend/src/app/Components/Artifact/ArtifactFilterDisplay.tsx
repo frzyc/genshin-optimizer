@@ -118,9 +118,9 @@ export default function ArtifactFilterDisplay({
             ctMap.subStatTotal[subKey].total++
             if (filteredIdMap[id]) ctMap.subStatTotal[subKey].current++
           })
-            ctMap.locationTotal[location].total++
+          ctMap.locationTotal[location].total++
         }
-        
+
         if (filteredIdMap[id]) {
           ctMap.rarityTotal[rarity].current++
           ctMap.slotTotal[slotKey].current++
