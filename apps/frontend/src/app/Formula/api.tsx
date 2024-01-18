@@ -154,6 +154,7 @@ function dataObjForCharacter(char: ICachedCharacter, sheetData?: Data): Data {
             | NumNode
             | undefined
           if (!targetNode) return constant(0)
+          if (hitMode === 'global') hitMode = char.hitMode
 
           return prod(
             constant(weight),
