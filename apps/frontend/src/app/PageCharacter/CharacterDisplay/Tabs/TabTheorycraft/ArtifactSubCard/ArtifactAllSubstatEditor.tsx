@@ -27,7 +27,11 @@ function getMinRoll(charTC: ICharTC) {
 function getMinMax(charTC: ICharTC) {
   return Math.floor(Math.min(...Object.values(charTC.optimization.maxSubstats)))
 }
-export function ArtifactAllSubstatEditor() {
+export function ArtifactAllSubstatEditor({
+  disabled = false,
+}: {
+  disabled?: boolean
+}) {
   const { t } = useTranslation('page_character')
   const { charTC, setCharTC } = useContext(CharTCContext)
   // Encapsulate the values in an array so that changes to the same number still trigger useEffects
@@ -100,6 +104,7 @@ export function ArtifactAllSubstatEditor() {
           valueLabelDisplay="auto"
           onChange={(e, v) => setRolls([v as number])}
           onChangeCommitted={(e, v) => setRolls([v as number])}
+          disabled={disabled}
         />
       </CardDark>
       <CustomNumberInput
@@ -112,6 +117,7 @@ export function ArtifactAllSubstatEditor() {
         onChange={(v) => v !== undefined && setRolls([v])}
         sx={{ borderRadius: 1, px: 1, my: 0, height: '100%', width: '7em' }}
         inputProps={{ sx: { textAlign: 'right', pr: 0.5 }, min: 0, step: 1 }}
+        disabled={disabled}
       />
       <CustomNumberInput
         value={maxSubstat ?? 0}
@@ -122,6 +128,7 @@ export function ArtifactAllSubstatEditor() {
         color={(maxSubstat ?? 0) > maxRolls ? 'warning' : 'primary'}
         sx={{ borderRadius: 1, px: 1, my: 0, height: '100%', width: '6.5em' }}
         inputProps={{ sx: { textAlign: 'right', pr: 0.5 }, min: 0, step: 1 }}
+        disabled={disabled}
       />
     </Box>
   )

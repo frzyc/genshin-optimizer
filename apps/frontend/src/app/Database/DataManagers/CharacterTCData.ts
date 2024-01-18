@@ -3,6 +3,7 @@ import type {
   ArtifactSlotKey,
   CharacterKey,
   MainStatKey,
+  SubstatKey,
   WeaponKey,
 } from '@genshin-optimizer/consts'
 import {
@@ -15,8 +16,19 @@ import {
 import { validateLevelAsc } from '@genshin-optimizer/gi-util'
 import { objKeyMap } from '@genshin-optimizer/util'
 import type { ICharTC } from '../../Types/character'
-import type { ArtCharDatabase } from '../Database'
 import { DataManager } from '../DataManager'
+import type { ArtCharDatabase } from '../Database'
+
+export type MinTotalStatKey = Exclude<SubstatKey, 'hp_' | 'atk_' | 'def_'>
+export const minTotalStatKeys: MinTotalStatKey[] = [
+  'atk',
+  'hp',
+  'def',
+  'eleMas',
+  'enerRech_',
+  'critRate_',
+  'critDMG_',
+]
 
 export class CharacterTCDataManager extends DataManager<
   CharacterKey,
@@ -85,6 +97,7 @@ export function initCharTC(weaponKey: WeaponKey): ICharTC {
       target: undefined,
       distributedSubstats: 45,
       maxSubstats: initCharTcOptimizationMaxSubstats(),
+      minTotal: {},
     },
   }
 }
@@ -156,7 +169,7 @@ function validateCharTcOptimization(
   optimization: unknown
 ): ICharTC['optimization'] | undefined {
   if (typeof optimization !== 'object') return undefined
-  let { target, distributedSubstats, maxSubstats } =
+  let { target, distributedSubstats, maxSubstats, minTotal } =
     optimization as ICharTC['optimization']
   if (!Array.isArray(target)) target = undefined
   if (typeof distributedSubstats !== 'number') distributedSubstats = 20
@@ -165,7 +178,14 @@ function validateCharTcOptimization(
   maxSubstats = objKeyMap([...allSubstatKeys], (k) =>
     typeof maxSubstats[k] === 'number' ? maxSubstats[k] : 0
   )
-  return { target, distributedSubstats, maxSubstats }
+  if (typeof minTotal !== 'object') minTotal = {}
+  minTotal = Object.fromEntries(
+    Object.entries(minTotal).filter(
+      ([k, v]) => minTotalStatKeys.includes(k) && typeof v === 'number'
+    )
+  )
+
+  return { target, distributedSubstats, maxSubstats, minTotal }
 }
 function initCharTcOptimizationMaxSubstats(): ICharTC['optimization']['maxSubstats'] {
   return objKeyMap(

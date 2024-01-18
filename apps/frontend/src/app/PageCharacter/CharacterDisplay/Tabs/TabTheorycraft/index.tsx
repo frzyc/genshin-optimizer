@@ -1,11 +1,13 @@
+import { BuildAlert, initialBuildStatus } from '@genshin-optimizer/gi-ui'
 import {
   getMainStatDisplayValue,
   getSubstatValue,
 } from '@genshin-optimizer/gi-util'
 import { useBoolState } from '@genshin-optimizer/react-util'
-import { objMap } from '@genshin-optimizer/util'
+import { objMap, toPercent } from '@genshin-optimizer/util'
 import { CopyAll, Refresh } from '@mui/icons-material'
 import CalculateIcon from '@mui/icons-material/Calculate'
+import CloseIcon from '@mui/icons-material/Close'
 import {
   Box,
   Button,
@@ -26,6 +28,8 @@ import {
   useDeferredValue,
   useEffect,
   useMemo,
+  useRef,
+  useState,
 } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
 import { useLocation } from 'react-router-dom'
@@ -40,6 +44,7 @@ import { DataContext } from '../../../../Context/DataContext'
 import { initCharTC } from '../../../../Database/DataManagers/CharacterTCData'
 import { DatabaseContext } from '../../../../Database/Database'
 import { constant, percent } from '../../../../Formula/utils'
+import useDBMeta from '../../../../ReactHooks/useDBMeta'
 import useTeamData from '../../../../ReactHooks/useTeamData'
 import type { ICachedArtifact } from '../../../../Types/artifact'
 import type { ICharTC } from '../../../../Types/character'
@@ -49,17 +54,20 @@ import { defaultInitialWeaponKey } from '../../../../Util/WeaponUtil'
 import OptimizationTargetSelector from '../TabOptimize/Components/OptimizationTargetSelector'
 import { ArtifactMainStatAndSetEditor } from './ArtifactMainStatAndSetEditor'
 import { ArtifactSubCard } from './ArtifactSubCard'
+import { BuildConstaintCard } from './BuildConstaintCard'
 import type { SetCharTCAction } from './CharTCContext'
 import { CharTCContext } from './CharTCContext'
 import GcsimButton from './GcsimButton'
 import { WeaponEditorCard } from './WeaponEditorCard'
 import kqmIcon from './kqm.png'
-import { optimizeTc } from './optimizeTc'
+import type { TCWorkerResult } from './optimizeTc'
+import { optimizeTcGetNodes } from './optimizeTc'
 import useCharTC from './useCharTC'
 export default function TabTheorycraft() {
   const { t } = useTranslation('page_character')
   const { database } = useContext(DatabaseContext)
   const { data: oldData } = useContext(DataContext)
+  const { gender } = useDBMeta()
   const {
     character,
     character: { key: characterKey, compareData },
@@ -228,25 +236,82 @@ export default function TabTheorycraft() {
     },
     [setCharTC]
   )
+  const workerRef = useRef<Worker>(null)
+  if (workerRef.current === null)
+    workerRef.current = new Worker(
+      new URL('./optimizeTcWorker.ts', import.meta.url)
+    )
+
+  const [status, setStatus] = useState(initialBuildStatus())
+  const solving = status.type === 'active'
+
+  const terminateWorker = useCallback(() => {
+    workerRef.current.terminate()
+    setStatus(initialBuildStatus())
+  }, [workerRef])
 
   const optimizeSubstats = (apply: boolean) => {
-    const { maxBuffer, distributed = 0 } = optimizeTc(
-      teamData,
-      characterKey,
-      charTC
-    )
-    if (!apply || !maxBuffer || !distributed) return
-    const comp = (statKey: string) => (statKey.endsWith('_') ? 100 : 1)
-    setCharTC((charTC) => {
-      charTC.artifact.substats.stats = objMap(
-        charTC.artifact.substats.stats,
-        (v, k) => v + (maxBuffer![k] ?? 0) * comp(k)
-      )
-      charTC.optimization.distributedSubstats =
-        distributedSubstats - distributed
-      return charTC
-    })
+    const nodes = optimizeTcGetNodes(teamData, characterKey, charTC)
+    console.log({ nodes })
+    workerRef.current.postMessage({ charTC, ...nodes })
+    setStatus((s) => ({
+      ...s,
+      type: 'active',
+      startTime: performance.now(),
+      finishTime: undefined,
+    }))
+
+    workerRef.current.onmessage = ({ data }: MessageEvent<TCWorkerResult>) => {
+      const { resultType } = data
+      switch (resultType) {
+        case 'total':
+          setStatus((s) => ({ ...s, total: data.total }))
+          break
+        case 'count':
+          setStatus((s) => ({
+            ...s,
+            tested: data.tested,
+            failed: data.failed,
+          }))
+          break
+        case 'finalize': {
+          const { maxBuffer, distributed, tested, failed, skipped } = data
+          setStatus((s) => ({
+            ...s,
+            type: 'inactive',
+            tested,
+            failed,
+            skipped,
+            finishTime: performance.now(),
+          }))
+
+          if (!apply) {
+            console.log({
+              maxBuffer,
+              distributed,
+              tested,
+              failed,
+              skipped,
+            })
+            break
+          }
+
+          setCharTC((charTC) => {
+            charTC.artifact.substats.stats = objMap(
+              charTC.artifact.substats.stats,
+              (v, k) => v + toPercent(maxBuffer![k] ?? 0, k)
+            )
+            charTC.optimization.distributedSubstats =
+              distributedSubstats - distributed
+            return charTC
+          })
+
+          break
+        }
+      }
+    }
   }
+
   const kqms = useCallback(() => {
     setCharTC((charTC) => {
       charTC.artifact.substats.type = 'mid'
@@ -284,10 +349,13 @@ export default function TabTheorycraft() {
         <CardLight>
           <Box sx={{ display: 'flex', gap: 1, p: 1 }}>
             <Box sx={{ flexGrow: 1, display: 'flex', gap: 1 }}>
-              <CopyFromEquippedButton action={copyFromEquipped} />
-              <ResetButton action={resetData} />
-              <KQMSButton action={kqms} />
-              <GcsimButton />
+              <CopyFromEquippedButton
+                action={copyFromEquipped}
+                disabled={solving}
+              />
+              <ResetButton action={resetData} disabled={solving} />
+              <KQMSButton action={kqms} disabled={solving} />
+              <GcsimButton disabled={solving} />
             </Box>
             <SolidToggleButtonGroup
               exclusive
@@ -308,26 +376,31 @@ export default function TabTheorycraft() {
           <DataContext.Provider value={dataContextValue}>
             <Box>
               <Grid container spacing={1} sx={{ justifyContent: 'center' }}>
-                <Grid item sx={{ flexGrow: -1, maxWidth: '450px' }}>
+                <Grid item sx={{ flexGrow: -1, maxWidth: '350px' }}>
                   <WeaponEditorCard
                     weaponTypeKey={characterSheet.weaponTypeKey}
+                    disabled={solving}
                   />
-                  <ArtifactMainStatAndSetEditor />
+                  <BuildConstaintCard disabled={solving} />
+                </Grid>
+                <Grid item sx={{ flexGrow: -1 }}>
+                  <ArtifactMainStatAndSetEditor disabled={solving} />
                 </Grid>
                 <Grid item sx={{ flexGrow: 1 }}>
-                  <ArtifactSubCard />
+                  <ArtifactSubCard disabled={solving} />
                 </Grid>
               </Grid>
             </Box>
             <Box display="flex" flexDirection="column" gap={1}>
               <Box display="flex" gap={1}>
                 <OptimizationTargetSelector
+                  disabled={solving}
                   optimizationTarget={optimizationTarget}
                   setTarget={(target) => setOptimizationTarget(target)}
                 />
                 <CustomNumberInput
                   value={distributedSubstats}
-                  disabled={!optimizationTarget}
+                  disabled={!optimizationTarget || solving}
                   onChange={(v) => v !== undefined && setDistributedSubstats(v)}
                   endAdornment={'Substats'}
                   sx={{
@@ -346,24 +419,39 @@ export default function TabTheorycraft() {
                     min: 0,
                   }}
                 />
-                <Button
-                  onClick={() => optimizeSubstats(true)}
-                  disabled={!optimizationTarget || !distributedSubstats}
-                  color="success"
-                  startIcon={<CalculateIcon />}
-                >
-                  {t`tabTheorycraft.distribute`}
-                </Button>
+                {!solving ? (
+                  <Button
+                    onClick={() => optimizeSubstats(true)}
+                    disabled={!optimizationTarget || !distributedSubstats}
+                    color="success"
+                    startIcon={<CalculateIcon />}
+                  >
+                    {t`tabTheorycraft.distribute`}
+                  </Button>
+                ) : (
+                  <Button
+                    onClick={terminateWorker}
+                    color="error"
+                    startIcon={<CloseIcon />}
+                  >
+                    Cancel
+                  </Button>
+                )}
               </Box>
 
               {isDev && (
                 <Button
                   onClick={() => optimizeSubstats(false)}
-                  disabled={!optimizationTarget}
+                  disabled={!optimizationTarget || solving}
                 >
                   Log Optimized Substats
                 </Button>
               )}
+              <BuildAlert
+                status={status}
+                characterKey={characterKey}
+                gender={gender}
+              />
             </Box>
           </DataContext.Provider>
         ) : (
@@ -382,12 +470,23 @@ export default function TabTheorycraft() {
     </CharTCContext.Provider>
   )
 }
-function CopyFromEquippedButton({ action }: { action: () => void }) {
+function CopyFromEquippedButton({
+  action,
+  disabled,
+}: {
+  action: () => void
+  disabled?: boolean
+}) {
   const { t } = useTranslation(['page_character', 'ui'])
   const [open, onOpen, onClose] = useBoolState()
   return (
     <>
-      <Button color="info" onClick={onOpen} startIcon={<CopyAll />}>
+      <Button
+        color="info"
+        onClick={onOpen}
+        startIcon={<CopyAll />}
+        disabled={disabled}
+      >
         {t('tabTheorycraft.copyDialog.copyBtn')}
       </Button>
       <Dialog open={open} onClose={onClose}>
@@ -417,12 +516,23 @@ function CopyFromEquippedButton({ action }: { action: () => void }) {
   )
 }
 
-function ResetButton({ action }: { action: () => void }) {
+function ResetButton({
+  action,
+  disabled,
+}: {
+  action: () => void
+  disabled: boolean
+}) {
   const { t } = useTranslation(['page_character', 'ui'])
   const [open, onOpen, onClose] = useBoolState()
   return (
     <>
-      <Button color="error" onClick={onOpen} startIcon={<Refresh />}>
+      <Button
+        color="error"
+        onClick={onOpen}
+        startIcon={<Refresh />}
+        disabled={disabled}
+      >
         {t('ui:reset')}
       </Button>
       <Dialog open={open} onClose={onClose}>
@@ -452,7 +562,13 @@ function ResetButton({ action }: { action: () => void }) {
   )
 }
 
-function KQMSButton({ action }: { action: () => void }) {
+function KQMSButton({
+  action,
+  disabled,
+}: {
+  action: () => void
+  disabled: boolean
+}) {
   const { t } = useTranslation(['page_character', 'ui'])
   const [open, onOpen, onClose] = useBoolState()
   return (
@@ -461,6 +577,7 @@ function KQMSButton({ action }: { action: () => void }) {
         color="keqing"
         onClick={onOpen}
         startIcon={<ImgIcon src={kqmIcon} />}
+        disabled={disabled}
       >
         {t('tabTheorycraft.kqmsDialog.kqmsBtn')}
       </Button>

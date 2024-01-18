@@ -15,9 +15,11 @@ import { CharTCContext } from '../CharTCContext'
 export function ArtifactSetEditor({
   setKey,
   remaining,
+  disabled = false,
 }: {
   setKey: ArtifactSetKey
   remaining: number
+  disabled?: boolean
 }) {
   const {
     charTC: {
@@ -66,6 +68,7 @@ export function ArtifactSetEditor({
           <DropdownButton
             size="small"
             title={<Box whiteSpace="nowrap">{value}-set</Box>}
+            disabled={disabled}
           >
             {Object.keys(artifactSheet.setEffects)
               .map((setKey) => parseInt(setKey))
@@ -79,7 +82,12 @@ export function ArtifactSetEditor({
                 </MenuItem>
               ))}
           </DropdownButton>
-          <Button color="error" size="small" onClick={deleteValue}>
+          <Button
+            color="error"
+            size="small"
+            onClick={deleteValue}
+            disabled={disabled}
+          >
             <DeleteForever />
           </Button>
         </ButtonGroup>
@@ -93,6 +101,7 @@ export function ArtifactSetEditor({
               setNumKey={parseInt(setNumKey) as SetNum}
               hideHeader
               conditionalsOnly
+              disabled={disabled}
             />
           ))}
         </Stack>
