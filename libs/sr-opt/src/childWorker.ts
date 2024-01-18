@@ -1,17 +1,17 @@
 import type { NumTagFree } from '@genshin-optimizer/pando'
 import { compile } from '@genshin-optimizer/pando'
 import { type RelicSlotKey } from '@genshin-optimizer/sr-consts'
-import type { BuildResult } from './optimize'
+import { MAX_BUILDS, type BuildResult } from './optimize'
 import type { RelicStats } from './parentWorker'
 
-const MAX_BUILDS_TO_SEND = 100_000
+const MAX_BUILDS_TO_SEND = 200_000
 let compiledCalcFunction: (relicStats: RelicStats['stats'][]) => number[]
 let relicStatsBySlot: Record<RelicSlotKey, RelicStats[]>
 
 export interface ChildCommandInit {
   command: 'init'
   relicStatsBySlot: Record<RelicSlotKey, RelicStats[]>
-  combinedNodes: NumTagFree[]
+  detachedNodes: NumTagFree[]
 }
 export interface ChildCommandStart {
   command: 'start'
@@ -24,6 +24,7 @@ export interface ChildMessageInitialized {
 export interface ChildMessaageResults {
   resultType: 'results'
   builds: BuildResult[]
+  numBuildsComputed: number
 }
 export interface ChildMessageDone {
   resultType: 'done'
@@ -68,7 +69,7 @@ async function handleEvent(e: MessageEvent<ChildCommand>): Promise<void> {
 // Create compiledCalcFunction
 async function init({
   relicStatsBySlot: relics,
-  combinedNodes,
+  detachedNodes: combinedNodes,
 }: ChildCommandInit) {
   // Step 4: Compile for quick iteration
   compiledCalcFunction = compile(
@@ -86,7 +87,7 @@ async function init({
 
 // Actually start calculating builds and sending back periodic responses
 async function start() {
-  let buildResults: BuildResult[] = []
+  let builds: BuildResult[] = []
   relicStatsBySlot.head.forEach((head) => {
     relicStatsBySlot.hand.forEach((hand) => {
       relicStatsBySlot.feet.forEach((feet) => {
@@ -103,7 +104,7 @@ async function start() {
                 rope.stats,
               ])
 
-              buildResults.push({
+              builds.push({
                 value: results[0], // We only pass 1 target to calculate, so just grab the 1st result
                 ids: {
                   head: head.id,
@@ -114,12 +115,17 @@ async function start() {
                   rope: rope.id,
                 },
               })
-              if (buildResults.length > MAX_BUILDS_TO_SEND) {
+              // Only sort and slice occasionally
+              if (builds.length > MAX_BUILDS_TO_SEND) {
+                const numBuildsComputed = builds.length
+                builds.sort((a, b) => b.value - a.value)
+                builds = builds.slice(0, MAX_BUILDS)
                 postMessage({
                   resultType: 'results',
-                  builds: buildResults,
+                  builds,
+                  numBuildsComputed,
                 })
-                buildResults = []
+                builds = []
               }
             })
           })
@@ -128,10 +134,16 @@ async function start() {
     })
   })
 
-  if (buildResults.length > 0) {
+  if (builds.length > 0) {
+    const numBuildsComputed = builds.length
+    if (builds.length > MAX_BUILDS) {
+      builds.sort((a, b) => b.value - a.value)
+      builds = builds.slice(0, MAX_BUILDS)
+    }
     postMessage({
       resultType: 'results',
-      builds: buildResults,
+      builds,
+      numBuildsComputed,
     })
   }
 

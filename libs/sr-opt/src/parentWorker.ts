@@ -8,22 +8,20 @@ import type { ICachedRelic } from '@genshin-optimizer/sr-db'
 import { getRelicMainStatVal } from '@genshin-optimizer/sr-util'
 import { objKeyMap, range } from '@genshin-optimizer/util'
 import type { ChildCommand, ChildMessage } from './childWorker'
-import type { BuildResult } from './optimize'
+import type { ProgressResult } from './optimize'
+import { MAX_BUILDS, type BuildResult } from './optimize'
 
 export interface ParentCommandStart {
   command: 'start'
   relicsBySlot: Record<RelicSlotKey, ICachedRelic[]>
   detachedNodes: NumTagFree[]
   numWorkers: number
-  maxResults: number
 }
 export type ParentCommand = ParentCommandStart
 
 export interface ParentMessageProgress {
   resultType: 'progress'
-  numBuilds: number
-  numBuildsComputed: number
-  sendingResults?: boolean
+  progress: ProgressResult
 }
 export interface ParentMessageSending {
   resultType: 'sending'
@@ -72,11 +70,10 @@ async function start({
   relicsBySlot,
   detachedNodes,
   numWorkers,
-  maxResults,
 }: ParentCommandStart) {
   // Step 3: Optimize nodes, as needed
-  const flatNodes = flatten(detachedNodes)
-  const combinedNodes = combineConst(flatNodes)
+  detachedNodes = flatten(detachedNodes)
+  detachedNodes = combineConst(detachedNodes)
 
   const relicStatsBySlot = objKeyMap(allRelicSlotKeys, (slot) =>
     relicsBySlot[slot].map(convertRelicToStats)
@@ -104,18 +101,22 @@ async function start({
               worker.postMessage({ command: 'start' })
               break
             case 'results':
-              numBuildsComputed += data.builds.length
+              numBuildsComputed += data.numBuildsComputed
               results = results.concat(data.builds)
-              // TODO: This is slow, might need to think of something else
-              if (results.length > maxResults) {
+              // Only sort and slice occasionally
+              if (results.length > MAX_BUILDS * 4) {
                 results.sort((a, b) => b.value - a.value)
-                results = results.slice(0, maxResults)
+                results = results.slice(0, MAX_BUILDS)
               }
               postMessage({
                 resultType: 'progress',
-                numBuilds: results.length,
-                numBuildsComputed,
+                progress: {
+                  numBuildsKept: Math.min(results.length, MAX_BUILDS),
+                  numBuildsComputed,
+                },
               })
+              // TODO: Send message to child workers with the lowest build so far.
+              // Then, children can automatically filter out any builds less than that.
               break
             case 'done':
               res()
@@ -139,7 +140,7 @@ async function start({
         const message: ChildCommand = {
           command: 'init',
           relicStatsBySlot: chunkedRelicsBySlot,
-          combinedNodes,
+          detachedNodes,
         }
         worker.postMessage(message)
       })
@@ -147,11 +148,17 @@ async function start({
   )
 
   // Trigger spinner on UI
+  if (results.length > MAX_BUILDS) {
+    results.sort((a, b) => b.value - a.value)
+    results = results.slice(0, MAX_BUILDS)
+  }
   postMessage({
     resultType: 'progress',
-    numBuilds: results.length,
-    numBuildsComputed,
-    sendingResults: true,
+    progress: {
+      numBuildsKept: results.length,
+      numBuildsComputed,
+      resultsSending: true,
+    },
   })
   // Send back results, which can take a few seconds
   postMessage({

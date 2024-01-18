@@ -13,12 +13,12 @@ export interface BuildResult {
 }
 
 export interface ProgressResult {
-  numBuilds: number
-  numBuildsCompute: number
-  waitingForResults?: boolean | undefined
+  numBuildsKept: number
+  numBuildsComputed: number
+  resultsSending?: boolean | undefined
 }
 
-export const MAX_BUILDS = 2_000_000
+export const MAX_BUILDS = 50_000
 
 export async function optimize(
   calc: Calculator,
@@ -32,16 +32,12 @@ export async function optimize(
     type: 'module',
   })
 
-  // Wait for parent worker to report complet
+  // Wait for parent worker to report complete
   const buildResults = await new Promise<BuildResult[]>((res, rej) => {
     worker.onmessage = ({ data }: MessageEvent<ParentMessage>) => {
       switch (data.resultType) {
         case 'progress':
-          setProgress({
-            numBuilds: data.numBuilds,
-            numBuildsCompute: data.numBuildsComputed,
-            waitingForResults: data.sendingResults,
-          })
+          setProgress(data.progress)
           break
         case 'done':
           res(data.buildResults)
@@ -59,7 +55,6 @@ export async function optimize(
       relicsBySlot: relicsBySlot,
       detachedNodes: detachNodes(optTarget, calc),
       numWorkers: numWorkers,
-      maxResults: MAX_BUILDS,
     }
     worker.postMessage(message)
   })

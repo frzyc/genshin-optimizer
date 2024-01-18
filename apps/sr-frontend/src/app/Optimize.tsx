@@ -98,7 +98,7 @@ export default function Optimize() {
                 totalPermutations={totalPermutations}
               />
             )}
-            {progress?.waitingForResults && !build && <CircularProgress />}
+            {progress?.resultsSending && !build && <CircularProgress />}
             {build && (
               <Box>
                 <Typography>Best: {build.value}</Typography>
@@ -123,16 +123,16 @@ function ProgressIndicator({
   return (
     <Box>
       <Typography>
-        {t('totalProgress')}: {progress.numBuildsCompute.toLocaleString()} /{' '}
+        {t('totalProgress')}: {progress.numBuildsComputed.toLocaleString()} /{' '}
         {totalPermutations.toLocaleString()}
       </Typography>
       <Typography>
-        {t('buildsKept')}: {progress.numBuilds.toLocaleString()} /{' '}
+        {t('buildsKept')}: {progress.numBuildsKept.toLocaleString()} /{' '}
         {MAX_BUILDS.toLocaleString()}
       </Typography>
       <LinearProgress
         variant="determinate"
-        value={(progress.numBuildsCompute / totalPermutations) * 100}
+        value={(progress.numBuildsComputed / totalPermutations) * 100}
       />
     </Box>
   )
