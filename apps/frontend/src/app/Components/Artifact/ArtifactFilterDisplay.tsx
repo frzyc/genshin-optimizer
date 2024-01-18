@@ -102,21 +102,25 @@ export default function ArtifactFilterDisplay({
         const lock = art.lock ? 'locked' : 'unlocked'
         const lns = art.substats.filter((s) => s.value).length
         const equipped = location ? 'equipped' : 'unequipped'
-        ctMap.rarityTotal[rarity].total++
-        ctMap.slotTotal[slotKey].total++
-        ctMap.lockedTotal[lock].total++
-        ctMap.linesTotal[lns].total++
-        ctMap.equippedTotal[equipped].total++
-        ctMap.setTotal[setKey].total++
-        ctMap.mainStatTotal[mainStatKey].total++
-        substats.forEach((sub) => {
-          const subKey = sub.key
-          if (!subKey) return
-          ctMap.subStatTotal[subKey].total++
-          if (filteredIdMap[id]) ctMap.subStatTotal[subKey].current++
-        })
-        ctMap.locationTotal[location].total++
-
+        // The slot filter is disabled during artifact swapping, in which case our artifact total displayed by
+        // the filter should reflect only the slot being swapped.
+        if (!disableSlotFilter || art.slotKey === filterOption.slotKeys[0]) {
+          ctMap.rarityTotal[rarity].total++
+          ctMap.slotTotal[slotKey].total++
+          ctMap.lockedTotal[lock].total++
+          ctMap.linesTotal[lns].total++
+          ctMap.equippedTotal[equipped].total++
+          ctMap.setTotal[setKey].total++
+          ctMap.mainStatTotal[mainStatKey].total++
+          substats.forEach((sub) => {
+            const subKey = sub.key
+            if (!subKey) return
+            ctMap.subStatTotal[subKey].total++
+            if (filteredIdMap[id]) ctMap.subStatTotal[subKey].current++
+          })
+            ctMap.locationTotal[location].total++
+        }
+        
         if (filteredIdMap[id]) {
           ctMap.rarityTotal[rarity].current++
           ctMap.slotTotal[slotKey].current++
@@ -130,7 +134,7 @@ export default function ArtifactFilterDisplay({
         }
       })
     )
-  }, [database, filteredIdMap])
+  }, [database, disableSlotFilter, filteredIdMap, filterOption])
 
   return (
     <Grid container spacing={1}>

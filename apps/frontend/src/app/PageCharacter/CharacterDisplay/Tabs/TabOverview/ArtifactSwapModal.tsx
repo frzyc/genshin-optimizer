@@ -1,7 +1,7 @@
-import type { ArtifactSlotKey, SubstatKey } from '@genshin-optimizer/consts'
+import type { ArtifactSlotKey } from '@genshin-optimizer/consts'
 import { imgAssets } from '@genshin-optimizer/gi-assets'
 import { useForceUpdate, useMediaQueryUp } from '@genshin-optimizer/react-util'
-import { clamp, filterFunction, sortFunction } from '@genshin-optimizer/util'
+import { clamp, filterFunction } from '@genshin-optimizer/util'
 import {
   Box,
   CardContent,
@@ -16,7 +16,6 @@ import {
   Suspense,
   useCallback,
   useContext,
-  useDeferredValue,
   useEffect,
   useMemo,
   useReducer,
@@ -29,15 +28,11 @@ import CloseButton from '../../../../Components/CloseButton'
 import ImgIcon from '../../../../Components/Image/ImgIcon'
 import ModalWrapper from '../../../../Components/ModalWrapper'
 import { DatabaseContext } from '../../../../Database/Database'
-import useDisplayArtifact from '../../../../ReactHooks/useDisplayArtifact'
 import ArtifactCard from '../../../../PageArtifact/ArtifactCard'
 import type { FilterOption } from '../../../../PageArtifact/ArtifactSort'
 import {
   artifactFilterConfigs,
   initialFilterOption,
-  artifactSortConfigs,
-  artifactSortKeys,
-  artifactSortMap,
 } from '../../../../PageArtifact/ArtifactSort'
 import CompareBuildButton from './CompareBuildButton'
 
@@ -86,8 +81,13 @@ export default function ArtifactSwapModal({
   }, [database, forceUpdate])
 
   const brPt = useMediaQueryUp()
+  const maxNumArtifactsToDisplay = numToShowMap[brPt]
+
+  const [pageIdex, setpageIdex] = useState(0)
+  const invScrollRef = useRef<HTMLDivElement>(null)
 
   const filterConfigs = useMemo(() => artifactFilterConfigs(), [])
+  const totalArtNum = database.arts.values.filter((s) => s.slotKey === filterOption.slotKeys[0]).length
   const artIdList = useMemo(() => {
     const filterFunc = filterFunction(filterOption, filterConfigs)
     return (
@@ -97,30 +97,6 @@ export default function ArtifactSwapModal({
         .map((art) => art.id)
     )
   }, [dbDirty, database, filterConfigs, filterOption])
-
-  // START OF PAGINATION CODE
-  const maxNumArtifactsToDisplay = numToShowMap[brPt]
-
-  /* const artifactDisplayState = useDisplayArtifact()
-  const { sortType, effFilter, ascending, probabilityFilter } =
-    artifactDisplayState */
-
-  const [pageIdex, setpageIdex] = useState(0)
-  const invScrollRef = useRef<HTMLDivElement>(null)
-  /* const dbDirtyDeferred = useDeferredValue(dbDirty)
-  const effFilterSet = useMemo(
-    () => new Set(effFilter),
-    [effFilter]
-  ) as Set<SubstatKey>
-
-  const showProbability = sortType === 'probability'
-
-  const sortConfigs = useMemo(
-    () => artifactSortConfigs(effFilterSet, probabilityFilter),
-    [effFilterSet, probabilityFilter]
-  )
-
-  const deferredArtifactDisplayState = useDeferredValue(artifactDisplayState) */
 
   const { artifactIdsToShow, numPages, currentPageIndex } = useMemo(() => {
     const numPages = Math.ceil(artIdList.length / maxNumArtifactsToDisplay)
@@ -135,8 +111,11 @@ export default function ArtifactSwapModal({
     }
   }, [artIdList, pageIdex, maxNumArtifactsToDisplay])
 
-  //for pagination
-  const totalShowing = artIdList.length
+  // for pagination
+  const totalShowing =
+    artIdList.length !== totalArtNum
+    ? `${artIdList.length}/${totalArtNum}`
+    : `${totalArtNum}`
   const setPage = useCallback(
     (e, value) => {
       invScrollRef.current?.scrollIntoView({ behavior: 'smooth' })
@@ -144,7 +123,6 @@ export default function ArtifactSwapModal({
     },
     [setpageIdex, invScrollRef]
   )
-  // END OF PAGINATION CODE
 
   return (
     <ModalWrapper
