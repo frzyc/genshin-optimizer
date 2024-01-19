@@ -37,10 +37,10 @@ export async function optimize(
     worker.onmessage = ({ data }: MessageEvent<ParentMessage>) => {
       switch (data.resultType) {
         case 'progress':
-          setProgress({ ...data.progress })
+          setProgress(data.progress)
           break
         case 'done':
-          res([...data.buildResults])
+          res(data.buildResults)
           break
         case 'err':
           console.log(data)
