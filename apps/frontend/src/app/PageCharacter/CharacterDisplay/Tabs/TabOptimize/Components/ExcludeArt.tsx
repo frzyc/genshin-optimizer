@@ -3,7 +3,7 @@ import {
   useForceUpdate,
   useMediaQueryUp,
 } from '@genshin-optimizer/react-util'
-import { filterFunction } from '@genshin-optimizer/util'
+import { clamp, filterFunction } from '@genshin-optimizer/util'
 import AddIcon from '@mui/icons-material/Add'
 import CheckBoxIcon from '@mui/icons-material/CheckBox'
 import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank'
@@ -15,6 +15,7 @@ import {
   CardContent,
   Divider,
   Grid,
+  Pagination,
   Skeleton,
   Typography,
 } from '@mui/material'
@@ -25,6 +26,8 @@ import {
   useEffect,
   useMemo,
   useReducer,
+  useRef,
+  useState,
 } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
 import ArtifactCardNano from '../../../../../Components/Artifact/ArtifactCardNano'
@@ -208,6 +211,7 @@ function ArtifactSelectModal({
   artExclusion: string[]
 }) {
   const { t } = useTranslation('page_character_optimize')
+  const { t: tk } = useTranslation('artifact')
   const { database } = useContext(DatabaseContext)
   const clickHandler = useCallback(
     (id: string) => {
@@ -230,17 +234,46 @@ function ArtifactSelectModal({
   const brPt = useMediaQueryUp()
 
   const filterConfigs = useMemo(() => artifactFilterConfigs(), [])
-  const artIdList = useMemo(() => {
+  const { artIdList, totalArtNum } = useMemo(() => {
     const filterFunc = filterFunction(filterOption, filterConfigs)
-    return (
+    const artIdList = (
       dbDirty &&
       database.arts.values
         .filter(filterFunc)
         .map((art) => art.id)
         .filter((id) => !artExclusion.includes(id))
-        .slice(0, numToShowMap[brPt])
     )
-  }, [dbDirty, database, filterConfigs, filterOption, brPt, artExclusion])
+    return { artIdList, totalArtNum: artIdList.length }
+  }, [dbDirty, database, filterConfigs, filterOption, artExclusion])
+
+  // Pagination
+  const [pageIdex, setpageIdex] = useState(0)
+  const invScrollRef = useRef<HTMLDivElement>(null)
+  const maxNumArtifactsToDisplay = numToShowMap[brPt]
+  const { artifactIdsToShow, numPages, currentPageIndex } = useMemo(() => {
+    const numPages = Math.ceil(artIdList.length / maxNumArtifactsToDisplay)
+    const currentPageIndex = clamp(pageIdex, 0, numPages-1)
+    return {
+      artifactIdsToShow: artIdList.slice(
+        currentPageIndex * maxNumArtifactsToDisplay,
+        (currentPageIndex + 1) * maxNumArtifactsToDisplay
+      ),
+      numPages,
+      currentPageIndex,
+    }
+  }, [artIdList, pageIdex, maxNumArtifactsToDisplay])
+
+  const totalShowing =
+    artIdList.length !== totalArtNum
+      ? `${artIdList.length}/${totalArtNum}`
+      : `${totalArtNum}`
+  const setPage = useCallback(
+    (e, value) => {
+      invScrollRef.current?.scrollIntoView({ behavior: 'smooth' })
+      setpageIdex(value - 1)
+    },
+    [setpageIdex, invScrollRef]
+  )
 
   return (
     <ModalWrapper
@@ -273,14 +306,33 @@ function ArtifactSelectModal({
               filteredIds={artIdList}
             />
           </Suspense>
+        </CardContent>
+        <Divider />
+        <CardContent>
           <Box mt={1}>
             <Suspense
               fallback={
                 <Skeleton variant="rectangular" width="100%" height={300} />
               }
             >
+              <Grid container alignItems="center" sx={{ pb: 1 }}>
+                <Grid item flexGrow={1}>
+                  <Pagination
+                    count={numPages}
+                    page={currentPageIndex + 1}
+                    onChange={setPage}
+                  />
+                </Grid>
+                <Grid item flexGrow={1}>
+                  <ShowingArt
+                    numShowing={artifactIdsToShow.length}
+                    total={totalShowing}
+                    t={tk}
+                  />
+                </Grid>
+              </Grid>
               <Grid container spacing={1} columns={{ xs: 2, md: 3, lg: 4 }}>
-                {artIdList.map((id) => (
+                {artifactIdsToShow.map((id) => (
                   <Grid item key={id} xs={1}>
                     <ArtifactCard artifactId={id} onClick={clickHandler} />
                   </Grid>
@@ -288,8 +340,39 @@ function ArtifactSelectModal({
               </Grid>
             </Suspense>
           </Box>
+          {numPages > 1 && (
+            <CardContent>
+              <Grid container>
+                <Grid item flexGrow={1}>
+                  <Pagination
+                    count={numPages}
+                    page={currentPageIndex + 1}
+                    onChange={setPage}
+                  />
+                </Grid>
+                <Grid item>
+                  <ShowingArt
+                    numShowing={artifactIdsToShow.length}
+                    total={totalShowing}
+                    t={tk}
+                  />
+                </Grid>
+              </Grid>
+            </CardContent>
+          )}
         </CardContent>
       </CardDark>
     </ModalWrapper>
+  )
+}
+
+function ShowingArt({ numShowing, total, t }) {
+  return (
+    <Typography color="text.secondary">
+      <Trans t={t} i18nKey="showingNum" count={numShowing} value={total}>
+        Showing <b>{{ count: numShowing } as TransObject}</b> out of{' '}
+        {{ value: total } as TransObject} Artifacts
+      </Trans>
+    </Typography>
   )
 }
