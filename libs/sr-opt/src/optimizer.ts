@@ -1,8 +1,6 @@
 import { detach } from '@genshin-optimizer/pando'
-import {
-  allRelicSetKeys,
-  type RelicSlotKey,
-} from '@genshin-optimizer/sr-consts'
+import type { RelicSlotKey } from '@genshin-optimizer/sr-consts'
+import { allRelicSetKeys } from '@genshin-optimizer/sr-consts'
 import type { ICachedRelic } from '@genshin-optimizer/sr-db'
 import type { Calculator, Read, Tag } from '@genshin-optimizer/sr-formula'
 import type {
@@ -20,8 +18,6 @@ export interface ProgressResult {
   numBuildsKept: number
   numBuildsComputed: number
 }
-
-export const MAX_BUILDS = 50_000
 
 export class Optimizer {
   private calc: Calculator

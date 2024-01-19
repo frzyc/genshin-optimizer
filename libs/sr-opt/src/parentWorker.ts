@@ -8,8 +8,8 @@ import type { ICachedRelic } from '@genshin-optimizer/sr-db'
 import { getRelicMainStatVal } from '@genshin-optimizer/sr-util'
 import { objKeyMap, range } from '@genshin-optimizer/util'
 import type { ChildCommand, ChildMessage } from './childWorker'
-import type { ProgressResult } from './optimizer'
-import { MAX_BUILDS, type BuildResult } from './optimizer'
+import { MAX_BUILDS } from './common'
+import type { BuildResult, ProgressResult } from './optimizer'
 
 let workers: Worker[]
 
