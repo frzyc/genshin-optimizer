@@ -102,7 +102,7 @@ async function start({
               break
             case 'results':
               numBuildsComputed += data.numBuildsComputed
-              results = results.concat(data.builds)
+              results = results.concat([...data.builds])
               // Only sort and slice occasionally
               if (results.length > MAX_BUILDS * 4) {
                 results.sort((a, b) => b.value - a.value)
@@ -152,6 +152,7 @@ async function start({
     results.sort((a, b) => b.value - a.value)
     results = results.slice(0, MAX_BUILDS)
   }
+  workers.forEach((w) => w.terminate())
   postMessage({
     resultType: 'progress',
     progress: {
