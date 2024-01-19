@@ -89,6 +89,20 @@ async function init({
 // Actually start calculating builds and sending back periodic responses
 async function start() {
   let builds: BuildResult[] = []
+
+  function sliceSortSendBuilds() {
+    const numBuildsComputed = builds.length
+    if (builds.length > MAX_BUILDS) {
+      builds.sort((a, b) => b.value - a.value)
+      builds = builds.slice(0, MAX_BUILDS)
+    }
+    postMessage({
+      resultType: 'results',
+      builds,
+      numBuildsComputed,
+    })
+  }
+
   relicStatsBySlot.head.forEach((head) => {
     relicStatsBySlot.hand.forEach((hand) => {
       relicStatsBySlot.feet.forEach((feet) => {
@@ -116,17 +130,8 @@ async function start() {
                   rope: rope.id,
                 },
               })
-              // Only sort and slice occasionally
               if (builds.length > MAX_BUILDS_TO_SEND) {
-                const numBuildsComputed = builds.length
-                builds.sort((a, b) => b.value - a.value)
-                builds = builds.slice(0, MAX_BUILDS)
-                postMessage({
-                  resultType: 'results',
-                  builds,
-                  numBuildsComputed,
-                })
-                builds = []
+                sliceSortSendBuilds()
               }
             })
           })
@@ -136,16 +141,7 @@ async function start() {
   })
 
   if (builds.length > 0) {
-    const numBuildsComputed = builds.length
-    if (builds.length > MAX_BUILDS) {
-      builds.sort((a, b) => b.value - a.value)
-      builds = builds.slice(0, MAX_BUILDS)
-    }
-    postMessage({
-      resultType: 'results',
-      builds,
-      numBuildsComputed,
-    })
+    sliceSortSendBuilds()
   }
 
   postMessage({
