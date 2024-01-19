@@ -19,7 +19,6 @@ export interface BuildResult {
 export interface ProgressResult {
   numBuildsKept: number
   numBuildsComputed: number
-  resultsSending?: boolean | undefined
 }
 
 export const MAX_BUILDS = 50_000

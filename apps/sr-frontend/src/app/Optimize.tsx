@@ -15,7 +15,6 @@ import {
   Box,
   Button,
   CardContent,
-  CircularProgress,
   Container,
   LinearProgress,
   Stack,
@@ -101,7 +100,6 @@ export default function Optimize() {
                 totalPermutations={totalPermutations}
               />
             )}
-            {progress?.resultsSending && !build && <CircularProgress />}
             {build && (
               <Box>
                 <Typography>Best: {build.value}</Typography>

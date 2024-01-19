@@ -165,14 +165,6 @@ async function start({
     results.sort((a, b) => b.value - a.value)
     results = results.slice(0, MAX_BUILDS)
   }
-  postMessage({
-    resultType: 'progress',
-    progress: {
-      numBuildsKept: results.length,
-      numBuildsComputed,
-      resultsSending: true,
-    },
-  })
   // Send back results, which can take a few seconds
   postMessage({
     resultType: 'done',
