@@ -11,6 +11,7 @@ import {
   useDatabaseContext,
 } from '@genshin-optimizer/sr-ui'
 import { CardThemed } from '@genshin-optimizer/ui-common'
+import { Close, TrendingUp } from '@mui/icons-material'
 import {
   Box,
   Button,
@@ -20,10 +21,11 @@ import {
   Stack,
   Typography,
 } from '@mui/material'
-import { useCallback, useMemo, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
 export default function Optimize() {
+  const { t } = useTranslation('optimize')
   const { database } = useDatabaseContext()
 
   const { calc } = useCalcContext()
@@ -60,10 +62,19 @@ export default function Optimize() {
   )
 
   const [build, setBuild] = useState<BuildResult | undefined>(undefined)
+  const [optimizing, setOptimizing] = useState(false)
+
+  // Provides a function to cancel the work
+  const cancelToken = useRef(() => {})
+  //terminate worker when component unmounts
+  useEffect(() => () => cancelToken.current(), [])
 
   const onOptimize = useCallback(async () => {
     if (!optTarget || !calc) return
+    const cancelled = new Promise<void>((r) => (cancelToken.current = r))
     setProgress(undefined)
+    setOptimizing(true)
+
     const optimizer = new Optimizer(
       calc,
       optTarget,
@@ -71,18 +82,28 @@ export default function Optimize() {
       numWorkers,
       setProgress
     )
+
+    cancelled.then(async () => await optimizer.terminate())
     const results = await optimizer.optimize()
     // Clean up workers
     await optimizer.terminate()
+    cancelToken.current = () => {}
+
+    setOptimizing(false)
     setBuild(results[0])
   }, [calc, numWorkers, optTarget, relicsBySlot])
+
+  const onCancel = useCallback(() => {
+    cancelToken.current()
+    setOptimizing(false)
+  }, [cancelToken])
 
   return (
     <Container>
       <CardThemed bgt="dark">
         <CardContent>
           <Stack>
-            <Typography variant="h5">Optimize</Typography>
+            <Typography variant="h5">{t('optimize')}</Typography>
             <Box>
               <OptimizationTargetSelector
                 optTarget={optTarget}
@@ -92,7 +113,13 @@ export default function Optimize() {
                 numWorkers={numWorkers}
                 setNumWorkers={setNumWorkers}
               />
-              <Button onClick={onOptimize}>Optimize</Button>
+              <Button
+                onClick={optimizing ? onCancel : onOptimize}
+                color={optimizing ? 'error' : 'primary'}
+                startIcon={optimizing ? <Close /> : <TrendingUp />}
+              >
+                {optimizing ? t('cancel') : t('optimize')}
+              </Button>
             </Box>
             {progress && (
               <ProgressIndicator
