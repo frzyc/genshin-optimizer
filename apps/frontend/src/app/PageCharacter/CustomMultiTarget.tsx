@@ -1,13 +1,13 @@
 import type {
   AdditiveReactionKey,
   AmpReactionKey,
-  HitModeKey,
+  MultiOptHitModeKey,
   InfusionAuraElementKey,
 } from '@genshin-optimizer/consts'
 import {
   allAdditiveReactions,
   allAmpReactionKeys,
-  allHitModeKeys,
+  allMultiOptHitModeKeys,
   allInfusionAuraElementKeys,
 } from '@genshin-optimizer/consts'
 import { useBoolState, useTimeout } from '@genshin-optimizer/react-util'
@@ -110,7 +110,7 @@ function validateCustomTarget(ct: unknown): CustomTarget | undefined {
   if (
     !hitMode ||
     typeof hitMode !== 'string' ||
-    !allHitModeKeys.includes(hitMode as HitModeKey)
+    !allMultiOptHitModeKeys.includes(hitMode as MultiOptHitModeKey)
   )
     hitMode = 'avgHit'
 
@@ -710,7 +710,7 @@ function CustomTargetDisplay({
             />
           )}
           <DropdownButton title={t(`hitmode.${hitMode}`)}>
-            {allHitModeKeys.map((hm) => (
+            {allMultiOptHitModeKeys.map((hm) => (
               <MenuItem
                 key={hm}
                 value={hm}

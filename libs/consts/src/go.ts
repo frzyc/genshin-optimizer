@@ -3,6 +3,9 @@
 export const allHitModeKeys = ['hit', 'avgHit', 'critHit'] as const
 export type HitModeKey = (typeof allHitModeKeys)[number]
 
+export const allMultiOptHitModeKeys = [...allHitModeKeys, 'global'] as const
+export type MultiOptHitModeKey = (typeof allMultiOptHitModeKeys)[number]
+
 export const allAdditiveReactions = ['spread', 'aggravate'] as const
 export type AdditiveReactionKey = (typeof allAdditiveReactions)[number]
 
