@@ -4,16 +4,17 @@ import {
   artSubstatRollData,
   type CharacterKey,
 } from '@genshin-optimizer/consts'
-import { getSubstatValue } from '@genshin-optimizer/gi-util'
+import { getMainStatValue, getSubstatValue } from '@genshin-optimizer/gi-util'
 import { objMap, toDecimal } from '@genshin-optimizer/util'
 import type { TeamData } from '../../../../Context/DataContext'
 import { mergeData } from '../../../../Formula/api'
 import { mapFormulas } from '../../../../Formula/internal'
 import type { OptNode } from '../../../../Formula/optimization'
 import { optimize, precompute } from '../../../../Formula/optimization'
-import type { NumNode } from '../../../../Formula/type'
-import { constant } from '../../../../Formula/utils'
+import type { Data, NumNode } from '../../../../Formula/type'
+import { constant, percent } from '../../../../Formula/utils'
 import type { ICharTC } from '../../../../Types/character'
+import type { ICachedWeapon } from '../../../../Types/weapon'
 import { objPathValue, shouldShowDevComponents } from '../../../../Util/Util'
 import { dynamicData } from '../TabOptimize/foreground'
 
@@ -33,6 +34,7 @@ export interface CountResult {
 export interface FinalizeResult {
   resultType: 'finalize'
   maxBuffer: Partial<Record<SubstatKey, number>>
+  maxBufferRolls: Partial<Record<SubstatKey, number>>
   distributed: number
   tested: number
   failed: number
@@ -228,6 +230,7 @@ export function optimizeTcUsingNodes(
   callback({
     resultType: 'finalize',
     distributed,
+    maxBufferRolls,
     maxBuffer,
     tested,
     failed,
@@ -282,4 +285,41 @@ function countPerms(sum: number, bounds: number[]): number {
     counts = new_counts
   }
   return counts[sum]
+}
+
+export function getArtifactData(charTC: ICharTC): Data {
+  const {
+    artifact: {
+      slots,
+      substats: { stats: substats },
+      sets,
+    },
+  } = charTC
+  const allStats = objMap(substats, (v, k) => toDecimal(v, k))
+  Object.values(slots).forEach(
+    ({ statKey, rarity, level }) =>
+      (allStats[statKey] =
+        (allStats[statKey] ?? 0) + getMainStatValue(statKey, rarity, level))
+  )
+  return {
+    art: objMap(allStats, (v, k) =>
+      k.endsWith('_') ? percent(v) : constant(v)
+    ),
+    artSet: objMap(sets, (v) => constant(v)),
+  }
+}
+
+export function getWeaponData(charTC: ICharTC): ICachedWeapon {
+  const {
+    weapon: { key, level, ascension, refinement },
+  } = charTC
+  return {
+    id: '',
+    location: '',
+    key,
+    level,
+    ascension,
+    refinement,
+    lock: false,
+  }
 }

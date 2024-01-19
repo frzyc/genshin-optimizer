@@ -61,7 +61,11 @@ import GcsimButton from './GcsimButton'
 import { WeaponEditorCard } from './WeaponEditorCard'
 import kqmIcon from './kqm.png'
 import type { TCWorkerResult } from './optimizeTc'
-import { optimizeTcGetNodes } from './optimizeTc'
+import {
+  getArtifactData,
+  getWeaponData,
+  optimizeTcGetNodes,
+} from './optimizeTc'
 import useCharTC from './useCharTC'
 export default function TabTheorycraft() {
   const { t } = useTranslation('page_character')
@@ -164,34 +168,15 @@ export default function TabTheorycraft() {
     copyFrom,
   ])
 
-  const deferredData = useDeferredValue(charTC)
-  const overriderArtData = useMemo(() => {
-    const stats = { ...deferredData.artifact.substats.stats }
-    Object.values(deferredData.artifact.slots).forEach(
-      ({ statKey, rarity, level }) =>
-        (stats[statKey] =
-          (stats[statKey] ?? 0) +
-          getMainStatDisplayValue(statKey, rarity, level))
-    )
-    return {
-      art: objMap(stats, (v, k) =>
-        k.endsWith('_') ? percent(v / 100) : constant(v)
-      ),
-      artSet: objMap(deferredData.artifact.sets, (v) => constant(v)),
-    }
-  }, [deferredData])
+  const deferredCharTC = useDeferredValue(charTC)
+  const overriderArtData = useMemo(
+    () => getArtifactData(deferredCharTC),
+    [deferredCharTC]
+  )
 
   const overrideWeapon: ICachedWeapon = useMemo(
-    () => ({
-      id: '',
-      location: '',
-      key: charTC.weapon.key,
-      level: charTC.weapon.level,
-      ascension: charTC.weapon.ascension,
-      refinement: charTC.weapon.refinement,
-      lock: false,
-    }),
-    [charTC]
+    () => getWeaponData(deferredCharTC),
+    [deferredCharTC]
   )
   const teamData = useTeamData(
     characterKey,
