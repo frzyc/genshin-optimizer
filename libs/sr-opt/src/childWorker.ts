@@ -1,7 +1,7 @@
 import type { NumTagFree } from '@genshin-optimizer/pando'
 import { compile } from '@genshin-optimizer/pando'
 import { type RelicSlotKey } from '@genshin-optimizer/sr-consts'
-import { MAX_BUILDS, type BuildResult } from './optimize'
+import { MAX_BUILDS, type BuildResult } from './optimizer'
 import type { RelicStats } from './parentWorker'
 
 const MAX_BUILDS_TO_SEND = 200_000

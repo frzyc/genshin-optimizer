@@ -8,8 +8,10 @@ import type { ICachedRelic } from '@genshin-optimizer/sr-db'
 import { getRelicMainStatVal } from '@genshin-optimizer/sr-util'
 import { objKeyMap, range } from '@genshin-optimizer/util'
 import type { ChildCommand, ChildMessage } from './childWorker'
-import type { ProgressResult } from './optimize'
-import { MAX_BUILDS, type BuildResult } from './optimize'
+import type { ProgressResult } from './optimizer'
+import { MAX_BUILDS, type BuildResult } from './optimizer'
+
+let workers: Worker[]
 
 export interface ParentCommandStart {
   command: 'start'
@@ -17,7 +19,10 @@ export interface ParentCommandStart {
   detachedNodes: NumTagFree[]
   numWorkers: number
 }
-export type ParentCommand = ParentCommandStart
+export interface ParentCommandTerminate {
+  command: 'terminate'
+}
+export type ParentCommand = ParentCommandStart | ParentCommandTerminate
 
 export interface ParentMessageProgress {
   resultType: 'progress'
@@ -30,6 +35,9 @@ export interface ParentMessageDone {
   resultType: 'done'
   buildResults: BuildResult[]
 }
+export interface ParentMessageTerminated {
+  resultType: 'terminated'
+}
 export interface ParentMessageErr {
   resultType: 'err'
   message: string
@@ -37,6 +45,7 @@ export interface ParentMessageErr {
 export type ParentMessage =
   | ParentMessageProgress
   | ParentMessageDone
+  | ParentMessageTerminated
   | ParentMessageErr
 
 export type RelicStats = {
@@ -63,6 +72,10 @@ async function handleEvent(e: MessageEvent<ParentCommand>): Promise<void> {
   switch (command) {
     case 'start':
       await start(data)
+      break
+    case 'terminate':
+      terminate()
+      break
   }
 }
 
@@ -81,7 +94,7 @@ async function start({
 
   const chunkSize = Math.ceil(relicsBySlot.head.length / numWorkers)
   // Spawn child workers to calculate builds
-  const workers = range(1, numWorkers).map(
+  workers = range(1, numWorkers).map(
     () =>
       new Worker(new URL('./childWorker.ts', import.meta.url), {
         type: 'module',
@@ -152,7 +165,6 @@ async function start({
     results.sort((a, b) => b.value - a.value)
     results = results.slice(0, MAX_BUILDS)
   }
-  workers.forEach((w) => w.terminate())
   postMessage({
     resultType: 'progress',
     progress: {
@@ -165,6 +177,13 @@ async function start({
   postMessage({
     resultType: 'done',
     buildResults: results,
+  })
+}
+
+function terminate() {
+  workers.forEach((w) => w.terminate())
+  postMessage({
+    resultType: 'terminated',
   })
 }
 

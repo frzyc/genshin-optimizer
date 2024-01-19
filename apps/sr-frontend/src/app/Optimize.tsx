@@ -2,7 +2,7 @@ import type { RelicSlotKey } from '@genshin-optimizer/sr-consts'
 import type { ICachedRelic } from '@genshin-optimizer/sr-db'
 import type { Read } from '@genshin-optimizer/sr-formula'
 import type { BuildResult, ProgressResult } from '@genshin-optimizer/sr-opt'
-import { MAX_BUILDS, optimize } from '@genshin-optimizer/sr-opt'
+import { MAX_BUILDS, Optimizer } from '@genshin-optimizer/sr-opt'
 import {
   BuildDisplay,
   OptimizationTargetSelector,
@@ -65,13 +65,16 @@ export default function Optimize() {
   const onOptimize = useCallback(async () => {
     if (!optTarget || !calc) return
     setProgress(undefined)
-    const results = await optimize(
+    const optimizer = new Optimizer(
       calc,
       optTarget,
       relicsBySlot,
       numWorkers,
       setProgress
     )
+    const results = await optimizer.optimize()
+    // Clean up workers
+    await optimizer.terminate()
     setBuild(results[0])
   }, [calc, numWorkers, optTarget, relicsBySlot])
 

@@ -1,1 +1,1 @@
-export * from './optimize'
+export * from './optimizer'
