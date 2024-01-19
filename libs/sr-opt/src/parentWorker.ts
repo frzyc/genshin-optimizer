@@ -191,6 +191,7 @@ function convertRelicToStats(relic: ICachedRelic): RelicStats {
       ...Object.fromEntries(
         relic.substats.map((substat) => [substat.key, substat.value])
       ),
+      [relic.setKey]: 1,
     },
   }
 }
