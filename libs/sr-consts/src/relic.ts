@@ -1,4 +1,4 @@
-export const allRelicPlanarSlotKeys = ['rope', 'sphere'] as const
+export const allRelicPlanarSlotKeys = ['sphere', 'rope'] as const
 export type RelicPlanarSlotKey = (typeof allRelicSlotKeys)[number]
 
 export const allRelicCavernSlotKeys = ['head', 'hand', 'body', 'feet'] as const
