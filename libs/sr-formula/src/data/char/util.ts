@@ -6,7 +6,6 @@ import {
   subscript,
   sum,
 } from '@genshin-optimizer/pando'
-import type { ElementalTypeKey } from '@genshin-optimizer/sr-consts'
 import {
   allEidolonKeys,
   type AbilityKey,
@@ -17,7 +16,7 @@ import type {
   SkillTreeNodeBonusStat,
 } from '@genshin-optimizer/sr-stats'
 import { objKeyMap } from '@genshin-optimizer/util'
-import type { DamageType, ElementalType, FormulaArg, Stat } from '../util'
+import type { DmgTag, ElementalType, FormulaArg, Stat } from '../util'
 import {
   TypeKeyToListingType,
   customDmg,
@@ -30,7 +29,11 @@ import {
   type TagMapNodeEntries,
 } from '../util'
 
-type AbilityScalingType = Exclude<AbilityKey, 'technique'>
+type AbilityScalingType = Exclude<AbilityKey, 'technique' | 'overworld'>
+
+export function getBaseTag(data_gen: CharacterDataGen): DmgTag {
+  return { elementalType: TypeKeyToListingType[data_gen.damageType] }
+}
 
 /**
  * Returns simple `number` arrays representing scalings of a character's traces
@@ -59,33 +62,32 @@ export function scalingParams(data_gen: CharacterDataGen) {
 /**
  * Creates an array of TagMapNodeEntries representing a levelable ability's damage instance, and registers their formulas
  * @param name Base name to be used as the key
- * @param elementalType Elemental type of the damage
+ * @param dmgTag Tag object containing damageType1, damageType2 and elementalType
  * @param stat Stat that the damage scales on
  * @param levelScaling Array representing the scaling at different levels of the ability
- * @param abilityScalingType Ability level that the scaling depends on
+ * @param abilityScalingType Ability level that the scaling depends on. This also controls the default damageType1 for dmgTag, if it is not specified already.
  * @param splits Array of decimals that should add up to 1. Each entry represents the percentage of damage that hit deals, for multi-hit moves. We get splits from SRSim devs, see the array at the top of https://github.com/simimpact/srsim/blob/main/internal/character/march7th/ult.go for example.
- * @param overrideDamageType Type of attack damage that is dealt, only need to set if it deals a different damage type than abilityScalingType, or if abilityScalingType is Talent
  * @param arg `{ team: true }` to use `teamBuff` instead of `selfBuff`. `{ cond: <node> }` to hide these instances behind a conditional check.
  * @param extra Buffs that should only apply to this damage instance
  * @returns Array of TagMapNodeEntries representing the damage instance
  */
 export function dmg(
   name: string,
-  elementalType: ElementalTypeKey,
+  dmgTag: DmgTag,
   stat: Stat,
   levelScaling: number[],
   abilityScalingType: AbilityScalingType,
   splits: number[] = [1],
-  overrideDamageType: DamageType | undefined = undefined,
   arg: FormulaArg = {},
   ...extra: TagMapNodeEntries
 ): TagMapNodeEntries[] {
   const multi = percent(subscript(self.char[abilityScalingType], levelScaling))
-  const attackType = overrideDamageType ?? abilityScalingType
+  const attackType = dmgTag.damageType1 ?? abilityScalingType
   if (attackType === 'talent')
     throw new Error(`Cannot infer attack type for Talent-type ability ${name}`)
+  dmgTag.damageType1 = attackType
   const base = prod(self.final[stat], multi)
-  return customDmg(name, elementalType, attackType, base, splits, arg, ...extra)
+  return customDmg(name, dmgTag, base, splits, arg, ...extra)
 }
 
 /**

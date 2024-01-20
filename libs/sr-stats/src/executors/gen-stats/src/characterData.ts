@@ -58,7 +58,7 @@ type Rank = {
   params: number[]
 }
 type SkillTypeAddLevel = Partial<
-  Record<Exclude<AbilityKey, 'technique'>, number>
+  Record<Exclude<AbilityKey, 'technique' | 'overworld'>, number>
 >
 export type CharacterDataGen = {
   rarity: RarityKey
@@ -159,13 +159,14 @@ export default function characterData() {
           return {
             skillTypeAddLevel: Object.fromEntries(
               Object.entries(rankConfig.SkillAddLevelList).map(
-                ([skillId, levelBoost]) => [
-                  // AttackType fallback to Talent if not defined
-                  DmAttackTypeMap[
-                    avatarSkillConfig[skillId][0].AttackType || 'MazeNormal'
-                  ],
-                  levelBoost,
-                ]
+                ([skillId, levelBoost]) => {
+                  const attackType = avatarSkillConfig[skillId][0].AttackType
+                  return [
+                    // AttackType fallback to Talent if not defined
+                    attackType ? DmAttackTypeMap[attackType] : 'talent',
+                    levelBoost,
+                  ]
+                }
               )
             ) as SkillTypeAddLevel,
             params: rankConfig.Param.map((p) => extrapolateFloat(p.Value)),

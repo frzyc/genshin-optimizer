@@ -32,7 +32,8 @@ export const fixedTags = {
   src: srcs,
 
   elementalType: elementalTypes,
-  damageType: damageTypes,
+  damageType1: damageTypes,
+  damageType2: damageTypes,
 }
 export type Tag = {
   [key in keyof typeof fixedTags]?: (typeof fixedTags)[key][number] | null
@@ -92,25 +93,28 @@ export class Read extends TypedRead<Tag, Read> {
 
   // Damage type
   get basicDmg(): Read {
-    return super.with('damageType', 'basic')
+    return super.with('damageType1', 'basic')
   }
   get skillDmg(): Read {
-    return super.with('damageType', 'skill')
+    return super.with('damageType1', 'skill')
   }
   get ultDmg(): Read {
-    return super.with('damageType', 'ult')
+    return super.with('damageType1', 'ult')
   }
   get techniqueDmg(): Read {
-    return super.with('damageType', 'technique')
+    return super.with('damageType1', 'technique')
   }
   get followUpDmg(): Read {
-    return super.with('damageType', 'followUp')
+    return super.with('damageType1', 'followUp')
+  }
+  get dotDmg(): Read {
+    return super.with('damageType1', 'dot')
   }
   get breakDmg(): Read {
-    return super.with('damageType', 'break')
+    return super.with('damageType1', 'break')
   }
   get elementalDmg(): Read {
-    return super.with('damageType', 'elemental')
+    return super.with('damageType1', 'elemental')
   }
 }
 export function tag(v: number | NumNode, tag: Tag): TagOverride<NumNode>
@@ -140,7 +144,8 @@ export function tagStr(tag: Tag, ex?: any): string {
     q,
     qt,
     elementalType,
-    damageType,
+    damageType1,
+    damageType2,
     ...remaining
   } = tag
 
@@ -173,7 +178,8 @@ export function tagStr(tag: Tag, ex?: any): string {
   else if (q) required(`.${q}`)
 
   optional(elementalType)
-  optional(damageType)
+  optional(damageType1)
+  optional(damageType2)
   required(ex && `[${ex}]`)
   return result + '}'
 }
