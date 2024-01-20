@@ -1,6 +1,13 @@
 import { objMap } from '@genshin-optimizer/util'
 import { Masonry } from '@mui/lab'
-import { Box, Divider, ListItem } from '@mui/material'
+import {
+  Accordion,
+  AccordionDetails,
+  AccordionSummary,
+  Box,
+  ListItem,
+  Typography,
+} from '@mui/material'
 import { useContext, useMemo } from 'react'
 import { DataContext } from '../../Context/DataContext'
 import { OptimizationTargetContext } from '../../Context/OptimizationTargetContext'
@@ -10,11 +17,9 @@ import type { DisplaySub } from '../../Formula/type'
 import type { NodeDisplay } from '../../Formula/uiData'
 import { customRead } from '../../Formula/utils'
 import CardDark from '../Card/CardDark'
-import CardHeaderCustom from '../Card/CardHeaderCustom'
 import { FieldDisplayList, NodeFieldDisplay } from '../FieldDisplay'
 import ImgIcon from '../Image/ImgIcon'
 import SqBadge from '../SqBadge'
-
 export default function StatDisplayComponent() {
   const { data } = useContext(DataContext)
   const sections = useMemo(
@@ -61,28 +66,59 @@ function Section({
   const { title, icon, action } = header
   return (
     <CardDark>
-      <CardHeaderCustom
-        avatar={icon && <ImgIcon size={2} src={icon} />}
-        title={title}
-        action={action && <SqBadge>{action}</SqBadge>}
-      />
-      <Divider />
-      <FieldDisplayList sx={{ m: 0 }}>
-        {Object.entries(displayNs).map(([nodeKey, n]) => (
-          <NodeFieldDisplay
-            key={nodeKey}
-            node={n}
-            oldValue={
-              oldData ? oldData.get(displayNsReads[nodeKey]!).value : undefined
-            }
-            component={ListItem}
-            emphasize={
-              JSON.stringify(optimizationTarget) ===
-              JSON.stringify([sectionKey, nodeKey])
-            }
-          />
-        ))}
-      </FieldDisplayList>
+      <Accordion
+        sx={(theme) => ({ bgcolor: theme.palette.contentNormal.main })}
+      >
+        <HeaderContent
+          avatar={icon && <ImgIcon size={2} src={icon} />}
+          title={title}
+          action={action && <SqBadge>{action}</SqBadge>}
+        />
+        {/* TEST
+      <Divider /> */}
+        <AccordionDetails sx={{ p: 0 }}>
+          <FieldDisplayList sx={{ m: 0 }}>
+            {Object.entries(displayNs).map(([nodeKey, n]) => (
+              <NodeFieldDisplay
+                key={nodeKey}
+                node={n}
+                oldValue={
+                  oldData
+                    ? oldData.get(displayNsReads[nodeKey]!).value
+                    : undefined
+                }
+                component={ListItem}
+                emphasize={
+                  JSON.stringify(optimizationTarget) ===
+                  JSON.stringify([sectionKey, nodeKey])
+                }
+              />
+            ))}
+          </FieldDisplayList>
+        </AccordionDetails>
+      </Accordion>
     </CardDark>
+  )
+}
+
+export function HeaderContent({
+  avatar,
+  title,
+  action,
+}: {
+  avatar?: Displayable
+  title: Displayable
+  action?: Displayable
+}) {
+  return (
+    <AccordionSummary>
+      <Box display="flex" gap={1} alignItems="center">
+        {avatar}
+        <Typography variant="subtitle1" sx={{ flexGrow: 1 }}>
+          {title}
+        </Typography>
+        {action && <Typography variant="caption">{action}</Typography>}
+      </Box>
+    </AccordionSummary>
   )
 }
