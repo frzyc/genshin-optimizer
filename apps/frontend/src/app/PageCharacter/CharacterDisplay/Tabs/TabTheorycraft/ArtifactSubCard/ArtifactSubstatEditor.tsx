@@ -1,16 +1,19 @@
 import { artMaxLevel, type SubstatKey } from '@genshin-optimizer/consts'
 import { artDisplayValue, getSubstatValue } from '@genshin-optimizer/gi-util'
+import {
+  BootstrapTooltip,
+  CardThemed,
+  ColorText,
+} from '@genshin-optimizer/ui-common'
 import { clamp } from '@genshin-optimizer/util'
-import { Box, Slider, Stack } from '@mui/material'
+import InfoIcon from '@mui/icons-material/Info'
+import { Box, Slider, Stack, Typography } from '@mui/material'
 import { useCallback, useContext, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import CardDark from '../../../../../Components/Card/CardDark'
-import ColorText from '../../../../../Components/ColoredText'
 import CustomNumberInput from '../../../../../Components/CustomNumberInput'
 import KeyMap from '../../../../../KeyMap'
 import StatIcon from '../../../../../KeyMap/StatIcon'
 import { CharTCContext } from '../CharTCContext'
-
 export function ArtifactSubstatEditor({
   statKey,
   disabled = false,
@@ -103,7 +106,7 @@ export function ArtifactSubstatEditor({
           inputProps={{ sx: { textAlign: 'right' }, min: 0 }}
           disabled={disabled}
         />
-        <CardDark
+        <CardThemed
           sx={{
             p: 0.5,
             minWidth: '11em',
@@ -117,7 +120,7 @@ export function ArtifactSubstatEditor({
           <StatIcon statKey={statKey} iconProps={{ fontSize: 'inherit' }} />
           {KeyMap.getStr(statKey)}
           {KeyMap.unit(statKey)}
-        </CardDark>
+        </CardThemed>
         <CustomNumberInput
           color={value ? (invalid ? 'warning' : 'success') : 'primary'}
           float
@@ -143,13 +146,26 @@ export function ArtifactSubstatEditor({
           inputProps={{ sx: { textAlign: 'right', pr: 0.5 }, min: 0, step: 1 }}
           disabled={disabled}
         />
-        {/* <BootstrapTooltip title={<Typography>{t(numMains ? `tabTheorycraft.maxRollsMain` : `tabTheorycraft.maxRolls`, { value: maxRolls })}</Typography>} placement="top"> */}
-        <CardDark sx={{ textAlign: 'center', p: 0.5, minWidth: '6em' }}>
+        <CardThemed sx={{ textAlign: 'center', p: 0.5, minWidth: '6em' }}>
           <ColorText color={invalid ? 'warning' : undefined}>
             RV: <strong>{rv.toFixed()}%</strong>
+            <BootstrapTooltip
+              title={
+                <Typography>
+                  {t(
+                    numMains
+                      ? `tabTheorycraft.maxRollsMain`
+                      : `tabTheorycraft.maxRolls`,
+                    { value: maxRolls }
+                  )}
+                </Typography>
+              }
+              placement="top"
+            >
+              <InfoIcon fontSize="inherit" sx={{ verticalAlign: '-10%' }} />
+            </BootstrapTooltip>
           </ColorText>
-        </CardDark>
-        {/* </BootstrapTooltip> */}
+        </CardThemed>
       </Box>
       <Box
         display="flex"
@@ -157,7 +173,7 @@ export function ArtifactSubstatEditor({
         justifyContent="space-between"
         alignItems="center"
       >
-        <CardDark
+        <CardThemed
           sx={{
             px: 2,
             flexGrow: 1,
@@ -180,7 +196,7 @@ export function ArtifactSubstatEditor({
             onChangeCommitted={(e, v) => setRValue(v as number)}
             disabled={disabled}
           />
-        </CardDark>
+        </CardThemed>
 
         <CustomNumberInput
           value={maxSubstat}

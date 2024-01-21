@@ -1,4 +1,4 @@
-import type { SubstatKey } from '@genshin-optimizer/consts'
+import { artSubstatRollData, type SubstatKey } from '@genshin-optimizer/consts'
 import { StatIcon } from '@genshin-optimizer/gi-svgicons'
 import { BuildAlert, initialBuildStatus } from '@genshin-optimizer/gi-ui'
 import { getSubstatValue } from '@genshin-optimizer/gi-util'
@@ -239,6 +239,15 @@ export default function TabTheorycraft() {
     () => getMinSubAndOtherRolls(charTC),
     [charTC]
   )
+  const maxTotalRolls = useMemo(
+    () =>
+      Object.values(charTC.artifact.slots).reduce(
+        (accu, { level, rarity }) =>
+          accu + artSubstatRollData[rarity].high + Math.floor(level / 4),
+        0
+      ),
+    [charTC]
+  )
 
   const { nodes, scalesWith } = useMemo(() => {
     const { nodes } = optimizeTcGetNodes(teamData, characterKey, charTC)
@@ -384,7 +393,10 @@ export default function TabTheorycraft() {
                   <ArtifactMainStatAndSetEditor disabled={solving} />
                 </Grid>
                 <Grid item sx={{ flexGrow: 1 }}>
-                  <ArtifactSubCard disabled={solving} />
+                  <ArtifactSubCard
+                    disabled={solving}
+                    maxTotalRolls={maxTotalRolls}
+                  />
                 </Grid>
               </Grid>
             </Box>
@@ -436,7 +448,7 @@ export default function TabTheorycraft() {
                     disabled={
                       !optimizationTarget ||
                       !distributedSubstats ||
-                      distributedSubstats > 45
+                      distributedSubstats > maxTotalRolls
                     }
                     color="success"
                     startIcon={<CalculateIcon />}

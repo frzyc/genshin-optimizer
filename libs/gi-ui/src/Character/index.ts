@@ -1,2 +1,2 @@
-export * from './Trans'
 export * from './BuildAlert'
+export * from './Trans'

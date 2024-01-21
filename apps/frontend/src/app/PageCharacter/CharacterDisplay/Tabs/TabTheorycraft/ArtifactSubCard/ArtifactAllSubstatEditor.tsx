@@ -80,10 +80,10 @@ export function ArtifactAllSubstatEditor({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [setCharTC, maxSubstatDeferred])
 
-  const maxRolls =
+  const maxRollsPerSub =
     (artSubstatRollData[charTC.artifact.substats.rarity].numUpgrades + 1) * 5
   // 0.0001 to nudge float comparasion
-  const invalid = (rolls ?? 0 - 0.0001) > maxRolls
+  const invalid = (rolls ?? 0 - 0.0001) > maxRollsPerSub
 
   return (
     <Box
@@ -106,7 +106,7 @@ export function ArtifactAllSubstatEditor({
         <Slider
           size="small"
           value={rolls ?? 0}
-          max={maxRolls}
+          max={maxRollsPerSub}
           min={0}
           step={1}
           marks
@@ -134,7 +134,7 @@ export function ArtifactAllSubstatEditor({
           <Box sx={{ whiteSpace: 'nowrap' }}>{t`tabTheorycraft.all.max`}</Box>
         }
         onChange={(v) => v !== undefined && setMaxSubstat([v])}
-        color={(maxSubstat ?? 0) > maxRolls ? 'warning' : 'primary'}
+        color={(maxSubstat ?? 0) > maxRollsPerSub ? 'warning' : 'primary'}
         sx={{ borderRadius: 1, px: 1, my: 0, height: '100%', width: '6.5em' }}
         inputProps={{ sx: { textAlign: 'right', pr: 0.5 }, min: 0, step: 1 }}
         disabled={disabled}

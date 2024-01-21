@@ -11,10 +11,11 @@ import {
   allArtifactSlotKeys,
   allSubstatKeys,
   allWeaponKeys,
+  artMaxLevel,
   substatTypeKeys,
 } from '@genshin-optimizer/consts'
 import { validateLevelAsc } from '@genshin-optimizer/gi-util'
-import { objKeyMap } from '@genshin-optimizer/util'
+import { clamp, objKeyMap } from '@genshin-optimizer/util'
 import type { ICharTC } from '../../Types/character'
 import { DataManager } from '../DataManager'
 import type { ArtCharDatabase } from '../Database'
@@ -163,6 +164,14 @@ function validateCharTCArtifactSlots(
     )
   )
     return initCharTCArtifactSlots()
+  allArtifactSlotKeys.forEach((slotKey) => {
+    slots[slotKey].level = clamp(
+      slots[slotKey].level,
+      0,
+      artMaxLevel[slots[slotKey].rarity]
+    )
+  })
+
   return slots as ICharTC['artifact']['slots']
 }
 function validateCharTcOptimization(

@@ -23,8 +23,10 @@ import { ArtifactStatWithUnit } from '../../../../Components/Artifact/ArtifactSt
 import type { MinTotalStatKey } from '../../../../Database/DataManagers/CharacterTCData'
 import { minTotalStatKeys } from '../../../../Database/DataManagers/CharacterTCData'
 import { CharTCContext } from './CharTCContext'
+import { useTranslation } from 'react-i18next'
 
 export function BuildConstaintCard({ disabled }: { disabled: boolean }) {
+  const { t } = useTranslation('page_character')
   const {
     charTC: {
       optimization: { minTotal },
@@ -34,14 +36,17 @@ export function BuildConstaintCard({ disabled }: { disabled: boolean }) {
 
   return (
     <CardThemed bgt="light">
-      <CardHeader title="Stat Constraints" />
+      <CardHeader title={t`tabTheorycraft.constraint.title`} />
       <Divider />
       <Box sx={{ p: 1 }}>
         <Stack spacing={1}>
           {Object.entries(minTotal).map(([k, v]) => (
             <Selector key={k} statKey={k} value={v} disabled={disabled} />
           ))}
-          <DropdownButton disabled={disabled} title={'Add a Stat Constraint'}>
+          <DropdownButton
+            disabled={disabled}
+            title={t`tabTheorycraft.constraint.add`}
+          >
             {minTotalStatKeys.map((k) => (
               <MenuItem
                 key={k}
@@ -83,7 +88,6 @@ function Selector({
       <CustomNumberInputButtonGroupWrapper sx={{ flexBasis: 30, flexGrow: 1 }}>
         <CustomNumberInput
           float={unitStr === '%'}
-          placeholder={`Constraint`}
           value={statKey ? value : undefined}
           onChange={(value) =>
             statKey &&

@@ -1,19 +1,27 @@
 import type { ArtifactRarity, SubstatTypeKey } from '@genshin-optimizer/consts'
 import { artSubstatRollData, substatTypeKeys } from '@genshin-optimizer/consts'
 import { getSubstatValue } from '@genshin-optimizer/gi-util'
+import {
+  BootstrapTooltip,
+  CardThemed,
+  ColorText,
+  DropdownButton,
+} from '@genshin-optimizer/ui-common'
 import { Box, MenuItem, Stack, Typography } from '@mui/material'
 import { useCallback, useContext } from 'react'
 import { useTranslation } from 'react-i18next'
 import ArtifactRarityDropdown from '../../../../../Components/Artifact/ArtifactRarityDropdown'
-import BootstrapTooltip from '../../../../../Components/BootstrapTooltip'
-import CardDark from '../../../../../Components/Card/CardDark'
-import CardLight from '../../../../../Components/Card/CardLight'
-import ColorText from '../../../../../Components/ColoredText'
-import DropdownButton from '../../../../../Components/DropdownMenu/DropdownButton'
 import { CharTCContext } from '../CharTCContext'
 import { ArtifactAllSubstatEditor } from './ArtifactAllSubstatEditor'
 import { ArtifactSubstatEditor } from './ArtifactSubstatEditor'
-export function ArtifactSubCard({ disabled = false }: { disabled?: boolean }) {
+
+export function ArtifactSubCard({
+  maxTotalRolls,
+  disabled = false,
+}: {
+  maxTotalRolls: number
+  disabled?: boolean
+}) {
   const { t } = useTranslation('page_character')
   const {
     charTC: {
@@ -52,7 +60,7 @@ export function ArtifactSubCard({ disabled = false }: { disabled?: boolean }) {
   const { high, numUpgrades } = artSubstatRollData[rarity]
   const maxRolls = (high + numUpgrades) * 5
   return (
-    <CardLight sx={{ p: 1, height: '100%' }}>
+    <CardThemed bgt="light" sx={{ p: 1, height: '100%' }}>
       <Stack spacing={1}>
         <Box sx={{ display: 'flex', gap: 1 }}>
           <DropdownButton
@@ -77,10 +85,14 @@ export function ArtifactSubCard({ disabled = false }: { disabled?: boolean }) {
             disabled={disabled}
           />
           <BootstrapTooltip
-            title={<Typography>{t`tabTheorycraft.maxTotalRolls`}</Typography>}
+            title={
+              <Typography>
+                {t('tabTheorycraft.maxTotalRolls', { value: maxTotalRolls })}
+              </Typography>
+            }
             placement="top"
           >
-            <CardDark
+            <CardThemed
               sx={{
                 textAlign: 'center',
                 py: 0.5,
@@ -99,7 +111,7 @@ export function ArtifactSubCard({ disabled = false }: { disabled?: boolean }) {
               <ColorText color={rolls > maxRolls ? 'error' : undefined}>
                 RV: <strong>{rv.toFixed()}%</strong>
               </ColorText>
-            </CardDark>
+            </CardThemed>
           </BootstrapTooltip>
         </Box>
         <ArtifactAllSubstatEditor disabled={disabled} />
@@ -107,6 +119,6 @@ export function ArtifactSubCard({ disabled = false }: { disabled?: boolean }) {
           <ArtifactSubstatEditor key={k} statKey={k} disabled={disabled} />
         ))}
       </Stack>
-    </CardLight>
+    </CardThemed>
   )
 }
