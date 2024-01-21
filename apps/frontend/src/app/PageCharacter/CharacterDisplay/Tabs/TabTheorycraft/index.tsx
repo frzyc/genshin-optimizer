@@ -1,3 +1,4 @@
+import type { SubstatKey } from '@genshin-optimizer/consts'
 import { StatIcon } from '@genshin-optimizer/gi-svgicons'
 import { BuildAlert, initialBuildStatus } from '@genshin-optimizer/gi-ui'
 import { getSubstatValue } from '@genshin-optimizer/gi-util'
@@ -69,7 +70,6 @@ import {
   optimizeTcGetNodes,
 } from './optimizeTc'
 import useCharTC from './useCharTC'
-import { SubstatKey } from '@genshin-optimizer/consts'
 export default function TabTheorycraft() {
   const { t } = useTranslation('page_character')
   const { database } = useContext(DatabaseContext)
