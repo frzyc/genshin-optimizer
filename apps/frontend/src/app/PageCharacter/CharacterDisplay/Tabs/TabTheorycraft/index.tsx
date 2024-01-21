@@ -490,7 +490,7 @@ export default function TabTheorycraft() {
                     ))
                     .flatMap((value, index, array) => {
                       if (index === array.length - 2)
-                        return [value, <span key="and">', and '</span>]
+                        return [value, <span key="and">, and </span>]
                       if (index === array.length - 1) return value
                       return [value, <span key={index}>, </span>]
                     })}
