@@ -47,7 +47,7 @@ export const DmAttackTypeMap: Record<AttackType, AbilityKey> = {
   Normal: 'basic',
   BPSkill: 'skill',
   Ultra: 'ult',
-  MazeNormal: 'talent',
+  MazeNormal: 'overworld',
   Maze: 'technique',
 }
 

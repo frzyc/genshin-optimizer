@@ -58,11 +58,11 @@ export const damageTypes = [
   'basic',
   'skill',
   'ult',
-  'technique',
-  'followUp',
+  'technique', // MAZE
+  'followUp', // insert
   'dot',
-  'break',
-  'elemental',
+  'break', // elementDamage
+  'elemental', // pursued
 ] as const
 
 export const entryTypes = [

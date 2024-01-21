@@ -11,11 +11,11 @@ import {
   selfBuff,
   target,
 } from '../util'
-import { dmg, entriesForChar, scalingParams, shield } from './util'
+import { dmg, entriesForChar, getBaseTag, scalingParams, shield } from './util'
 
 const key: CharacterKey = 'March7th'
 const data_gen = allStats.char[key]
-const { damageType: type } = data_gen
+const baseTag = getBaseTag(data_gen)
 const { basic, skill, ult, talent, technique, eidolon } =
   scalingParams(data_gen)
 
@@ -77,7 +77,7 @@ const sheet = register(
   entriesForChar(data_gen),
 
   // Formulas
-  ...dmg('basicDmg', type, 'atk', dm.basic.dmg, 'basic'),
+  ...dmg('basicDmg', baseTag, 'atk', dm.basic.dmg, 'basic'),
   shield(
     'skillShield',
     'def',
@@ -85,31 +85,28 @@ const sheet = register(
     dm.skill.shieldBase,
     'skill'
   ),
-  ...dmg('ultDmg', type, 'atk', dm.ult.dmg, 'ult', [0.25, 0.25, 0.25, 0.25]),
+  ...dmg('ultDmg', baseTag, 'atk', dm.ult.dmg, 'ult', [0.25, 0.25, 0.25, 0.25]),
   ...dmg(
     'ultFreeze',
-    type,
+    { damageType1: 'elemental', ...baseTag },
     'atk',
     dm.ult.freezeDmg,
     'ult',
-    undefined,
-    'elemental'
+    undefined
   ),
   ...dmg(
     'talentDmg',
-    type,
+    { damageType1: 'followUp', ...baseTag },
     'atk',
     dm.talent.dmg,
     'talent',
     undefined,
-    'followUp',
     undefined,
     selfBuff.formula.base.add(e4_counter_dmgInc)
   ),
   ...customDmg(
     'techniqueFreeze',
-    type,
-    'elemental',
+    { damageType1: 'elemental', ...baseTag },
     prod(self.final.atk, percent(dm.technique.dmg))
   ),
   // Eidolon formulas

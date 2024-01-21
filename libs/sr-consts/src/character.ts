@@ -96,7 +96,8 @@ export const allAbilityKeys = [
   'skill',
   'ult',
   'talent',
-  'technique',
+  'technique', // MAZE
+  'overworld', // MAZE_NORMAL
 ] as const
 export type AbilityKey = (typeof allAbilityKeys)[number]
 
