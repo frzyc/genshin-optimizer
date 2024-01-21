@@ -1,5 +1,6 @@
 import { artMaxLevel, type SubstatKey } from '@genshin-optimizer/consts'
 import { artDisplayValue, getSubstatValue } from '@genshin-optimizer/gi-util'
+import { clamp } from '@genshin-optimizer/util'
 import { Box, Slider, Stack } from '@mui/material'
 import { useCallback, useContext, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -33,7 +34,21 @@ export function ArtifactSubstatEditor({
   const setValue = useCallback(
     (v: number) => {
       setCharTC((charTC) => {
+        const old = charTC.artifact.substats.stats[statKey]
         charTC.artifact.substats.stats[statKey] = v
+        const statDiff = Math.round(
+          (old - v) /
+            getSubstatValue(
+              statKey,
+              charTC.artifact.substats.rarity,
+              charTC.artifact.substats.type
+            )
+        )
+        charTC.optimization.distributedSubstats = clamp(
+          charTC.optimization.distributedSubstats + statDiff,
+          0,
+          45
+        )
       })
     },
     [setCharTC, statKey]

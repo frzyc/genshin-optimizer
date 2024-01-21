@@ -1,5 +1,5 @@
 import { getSubstatValue } from '@genshin-optimizer/gi-util'
-import { objMap } from '@genshin-optimizer/util'
+import { clamp, objMap } from '@genshin-optimizer/util'
 import { Box, Slider } from '@mui/material'
 import { useContext, useDeferredValue, useEffect, useState } from 'react'
 import CardDark from '../../../../../Components/Card/CardDark'
@@ -50,8 +50,17 @@ export function ArtifactAllSubstatEditor({
         },
       } = charTC
       charTC.artifact.substats.stats = objMap(stats, (val, statKey) => {
+        const old = val
         const substatValue = getSubstatValue(statKey, rarity, type)
-        return substatValue * rollsDeferred[0]
+        const newVal = substatValue * rollsDeferred[0]
+
+        const statDiff = Math.round(old / substatValue - rollsDeferred[0])
+        charTC.optimization.distributedSubstats = clamp(
+          charTC.optimization.distributedSubstats + statDiff,
+          0,
+          45
+        )
+        return newVal
       })
     })
     // disable triggering for isMount

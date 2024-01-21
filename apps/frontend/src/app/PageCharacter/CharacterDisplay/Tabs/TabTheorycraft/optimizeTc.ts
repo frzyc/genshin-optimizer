@@ -94,6 +94,43 @@ export function optimizeTcGetNodes(
   }
 }
 
+export function getScalesWith(nodes: OptNode[]) {
+  const scalesWith = new Set<string>()
+  precompute(
+    nodes,
+    {},
+    (f) => {
+      const val = f.path[1]
+      scalesWith.add(val)
+      return val
+    },
+    1
+  )
+  return scalesWith as Set<SubstatKey>
+}
+
+export function getMinSubAndOtherRolls(charTC: ICharTC) {
+  const {
+    artifact: {
+      slots,
+      substats: { stats: substats, type: substatsType, rarity },
+    },
+  } = charTC
+  const existingRolls = objMap(substats, (v, k) =>
+    Math.ceil(substats[k] / getSubstatValue(k, rarity, substatsType))
+  )
+  const mainStatsCount = getMainStatsCount(slots)
+  const minSubLines = getMinSubLines(slots)
+  return {
+    minSubLines,
+    minOtherRolls: getMinOtherRolls(
+      Object.entries(existingRolls),
+      mainStatsCount,
+      minSubLines
+    ),
+  }
+}
+
 export function optimizeTcUsingNodes(
   nodes: OptNode[],
   charTC: ICharTC,

@@ -1,14 +1,14 @@
+import { StatIcon } from '@genshin-optimizer/gi-svgicons'
 import { BuildAlert, initialBuildStatus } from '@genshin-optimizer/gi-ui'
-import {
-  getMainStatDisplayValue,
-  getSubstatValue,
-} from '@genshin-optimizer/gi-util'
+import { getSubstatValue } from '@genshin-optimizer/gi-util'
 import { useBoolState } from '@genshin-optimizer/react-util'
+import { iconInlineProps } from '@genshin-optimizer/svgicons'
 import { objMap, toPercent } from '@genshin-optimizer/util'
 import { CopyAll, Refresh } from '@mui/icons-material'
 import CalculateIcon from '@mui/icons-material/Calculate'
 import CloseIcon from '@mui/icons-material/Close'
 import {
+  Alert,
   Box,
   Button,
   Dialog,
@@ -33,6 +33,7 @@ import {
 } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
 import { useLocation } from 'react-router-dom'
+import { ArtifactStatWithUnit } from '../../../../Components/Artifact/ArtifactStatKeyDisplay'
 import CardLight from '../../../../Components/Card/CardLight'
 import StatDisplayComponent from '../../../../Components/Character/StatDisplayComponent'
 import CustomNumberInput from '../../../../Components/CustomNumberInput'
@@ -43,7 +44,6 @@ import type { dataContextObj } from '../../../../Context/DataContext'
 import { DataContext } from '../../../../Context/DataContext'
 import { initCharTC } from '../../../../Database/DataManagers/CharacterTCData'
 import { DatabaseContext } from '../../../../Database/Database'
-import { constant, percent } from '../../../../Formula/utils'
 import useDBMeta from '../../../../ReactHooks/useDBMeta'
 import useTeamData from '../../../../ReactHooks/useTeamData'
 import type { ICachedArtifact } from '../../../../Types/artifact'
@@ -63,10 +63,13 @@ import kqmIcon from './kqm.png'
 import type { TCWorkerResult } from './optimizeTc'
 import {
   getArtifactData,
+  getMinSubAndOtherRolls,
+  getScalesWith,
   getWeaponData,
   optimizeTcGetNodes,
 } from './optimizeTc'
 import useCharTC from './useCharTC'
+import { SubstatKey } from '@genshin-optimizer/consts'
 export default function TabTheorycraft() {
   const { t } = useTranslation('page_character')
   const { database } = useContext(DatabaseContext)
@@ -97,45 +100,42 @@ export default function TabTheorycraft() {
   }, [setCharTC, characterSheet])
 
   const copyFrom = useCallback(
-    (eWeapon: ICachedWeapon, build: ICachedArtifact[]) => {
-      const newData = initCharTC(eWeapon.key)
-      newData.artifact.substats.type = charTC.artifact.substats.type
+    (eWeapon: ICachedWeapon, build: ICachedArtifact[]) =>
+      setCharTC((charTC) => {
+        charTC.weapon.level = eWeapon.level
+        charTC.weapon.ascension = eWeapon.ascension
+        charTC.weapon.refinement = eWeapon.refinement
 
-      newData.weapon.level = eWeapon.level
-      newData.weapon.ascension = eWeapon.ascension
-      newData.weapon.refinement = eWeapon.refinement
-
-      const sets = {}
-      build.forEach((art) => {
-        if (!art) return
-        const { slotKey, setKey, substats, mainStatKey, level, rarity } = art
-        newData.artifact.slots[slotKey].level = level
-        newData.artifact.slots[slotKey].statKey = mainStatKey
-        newData.artifact.slots[slotKey].rarity = rarity
-        sets[setKey] = (sets[setKey] ?? 0) + 1
-        substats.forEach((substat) => {
-          if (substat.key)
-            newData.artifact.substats.stats[substat.key] =
-              (newData.artifact.substats.stats[substat.key] ?? 0) +
-              substat.accurateValue
+        const sets = {}
+        build.forEach((art) => {
+          if (!art) return
+          const { slotKey, setKey, substats, mainStatKey, level, rarity } = art
+          charTC.artifact.slots[slotKey].level = level
+          charTC.artifact.slots[slotKey].statKey = mainStatKey
+          charTC.artifact.slots[slotKey].rarity = rarity
+          sets[setKey] = (sets[setKey] ?? 0) + 1
+          substats.forEach((substat) => {
+            if (substat.key)
+              charTC.artifact.substats.stats[substat.key] =
+                (charTC.artifact.substats.stats[substat.key] ?? 0) +
+                substat.accurateValue
+          })
         })
-      })
-      newData.artifact.sets = Object.fromEntries(
-        Object.entries(sets)
-          .map(([key, value]) => [
-            key,
-            value === 3
-              ? 2
-              : value === 5
-              ? 4
-              : value === 1 && !(key as string).startsWith('PrayersFor')
-              ? 0
-              : value,
-          ])
-          .filter(([, value]) => value)
-      )
-      setCharTC(newData)
-    },
+        charTC.artifact.sets = Object.fromEntries(
+          Object.entries(sets)
+            .map(([key, value]) => [
+              key,
+              value === 3
+                ? 2
+                : value === 5
+                ? 4
+                : value === 1 && !(key as string).startsWith('PrayersFor')
+                ? 0
+                : value,
+            ])
+            .filter(([, value]) => value)
+        )
+      }),
     [charTC, setCharTC]
   )
   const location = useLocation()
@@ -235,9 +235,21 @@ export default function TabTheorycraft() {
     setStatus(initialBuildStatus())
   }, [workerRef])
 
+  const { minSubLines, minOtherRolls } = useMemo(
+    () => getMinSubAndOtherRolls(charTC),
+    [charTC]
+  )
+
+  const { nodes, scalesWith } = useMemo(() => {
+    const { nodes } = optimizeTcGetNodes(teamData, characterKey, charTC)
+    const scalesWith = nodes ? getScalesWith(nodes) : new Set<SubstatKey>()
+    return {
+      nodes,
+      scalesWith,
+    }
+  }, [teamData, characterKey, charTC])
+
   const optimizeSubstats = (apply: boolean) => {
-    const nodes = optimizeTcGetNodes(teamData, characterKey, charTC)
-    console.log({ nodes })
     workerRef.current.postMessage({ charTC, ...nodes })
     setStatus((s) => ({
       ...s,
@@ -377,6 +389,14 @@ export default function TabTheorycraft() {
               </Grid>
             </Box>
             <Box display="flex" flexDirection="column" gap={1}>
+              {minOtherRolls > 0 && (
+                <Alert severity="warning" variant="filled">
+                  The current substat distribution requires at least{' '}
+                  <strong>{minSubLines}</strong> lines of substats. Need to
+                  assign <strong>{minOtherRolls}</strong> rolls to other
+                  substats for this solution to be feasible.
+                </Alert>
+              )}
               <Box display="flex" gap={1}>
                 <OptimizationTargetSelector
                   disabled={solving}
@@ -407,7 +427,11 @@ export default function TabTheorycraft() {
                 {!solving ? (
                   <Button
                     onClick={() => optimizeSubstats(true)}
-                    disabled={!optimizationTarget || !distributedSubstats}
+                    disabled={
+                      !optimizationTarget ||
+                      !distributedSubstats ||
+                      distributedSubstats > 45
+                    }
                     color="success"
                     startIcon={<CalculateIcon />}
                   >
@@ -431,6 +455,32 @@ export default function TabTheorycraft() {
                 >
                   Log Optimized Substats
                 </Button>
+              )}
+              {!!scalesWith.size && (
+                <Alert severity="info" variant="filled">
+                  The selected Optimization target and constraints scales with:{' '}
+                  {[...scalesWith]
+                    .map((k) => (
+                      <strong>
+                        <StatIcon statKey={k} iconProps={iconInlineProps} />
+                        <ArtifactStatWithUnit statKey={k} />
+                      </strong>
+                    ))
+                    .flatMap((value, index, array) => {
+                      if (index === array.length - 2)
+                        return [value, <span>', and '</span>]
+                      if (index === array.length - 1) return value
+                      return [value, <span>, </span>]
+                    })}
+                  . The solver will only distribute stats to these substats.{' '}
+                  {minOtherRolls > 0 && (
+                    <span>
+                      There may be additional leftover substats that should be
+                      distributed to non-scaling stats to ensure the solution is
+                      feasible.
+                    </span>
+                  )}
+                </Alert>
               )}
               <BuildAlert
                 status={status}
