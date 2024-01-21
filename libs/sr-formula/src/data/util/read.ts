@@ -13,7 +13,7 @@ import {
   constant,
   reread,
 } from '@genshin-optimizer/pando'
-import type { TagMapNodeEntry } from '.'
+import type { DamageType, TagMapNodeEntry } from '.'
 import {
   damageTypes,
   elementalTypes,
@@ -62,6 +62,12 @@ export class Read extends TypedRead<Tag, Read> {
       value: typeof value === 'object' ? value : constant(value),
     }
   }
+  addWithDmgType(
+    dmgType: DamageType,
+    val: number | string | AnyNode
+  ): TagMapNodeEntry[] {
+    return this[dmgType].map((r) => r.add(val))
+  }
   reread(r: Read): { tag: Tag; value: ReRead } {
     return { tag: this.tag, value: reread(r.tag) }
   }
@@ -92,29 +98,47 @@ export class Read extends TypedRead<Tag, Read> {
   }
 
   // Damage type
-  get basicDmg(): Read {
-    return super.with('damageType1', 'basic')
+  get basic(): Read[] {
+    return [
+      super.with('damageType1', 'basic'),
+      super.with('damageType2', 'basic'),
+    ]
   }
-  get skillDmg(): Read {
-    return super.with('damageType1', 'skill')
+  get skill(): Read[] {
+    return [
+      super.with('damageType1', 'skill'),
+      super.with('damageType2', 'skill'),
+    ]
   }
-  get ultDmg(): Read {
-    return super.with('damageType1', 'ult')
+  get ult(): Read[] {
+    return [super.with('damageType1', 'ult'), super.with('damageType2', 'ult')]
   }
-  get techniqueDmg(): Read {
-    return super.with('damageType1', 'technique')
+  get technique(): Read[] {
+    return [
+      super.with('damageType1', 'technique'),
+      super.with('damageType2', 'technique'),
+    ]
   }
-  get followUpDmg(): Read {
-    return super.with('damageType1', 'followUp')
+  get followUp(): Read[] {
+    return [
+      super.with('damageType1', 'followUp'),
+      super.with('damageType2', 'followUp'),
+    ]
   }
-  get dotDmg(): Read {
-    return super.with('damageType1', 'dot')
+  get dot(): Read[] {
+    return [super.with('damageType1', 'dot'), super.with('damageType2', 'dot')]
   }
-  get breakDmg(): Read {
-    return super.with('damageType1', 'break')
+  get break(): Read[] {
+    return [
+      super.with('damageType1', 'break'),
+      super.with('damageType2', 'break'),
+    ]
   }
-  get elementalDmg(): Read {
-    return super.with('damageType1', 'elemental')
+  get elemental(): Read[] {
+    return [
+      super.with('damageType1', 'elemental'),
+      super.with('damageType2', 'elemental'),
+    ]
   }
 }
 export function tag(v: number | NumNode, tag: Tag): TagOverride<NumNode>
@@ -178,8 +202,8 @@ export function tagStr(tag: Tag, ex?: any): string {
   else if (q) required(`.${q}`)
 
   optional(elementalType)
-  optional(damageType1)
-  optional(damageType2)
+  optional(`damageType1: ${damageType1}`)
+  optional(`damageType2: ${damageType2}`)
   required(ex && `[${ex}]`)
   return result + '}'
 }
