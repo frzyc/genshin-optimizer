@@ -1,5 +1,6 @@
 import { StatIcon } from '@genshin-optimizer/gi-svgicons'
 import {
+  CardThemed,
   CustomNumberInput,
   CustomNumberInputButtonGroupWrapper,
   DropdownButton,
@@ -19,7 +20,6 @@ import {
 } from '@mui/material'
 import { useContext } from 'react'
 import { ArtifactStatWithUnit } from '../../../../Components/Artifact/ArtifactStatKeyDisplay'
-import CardLight from '../../../../Components/Card/CardLight'
 import type { MinTotalStatKey } from '../../../../Database/DataManagers/CharacterTCData'
 import { minTotalStatKeys } from '../../../../Database/DataManagers/CharacterTCData'
 import { CharTCContext } from './CharTCContext'
@@ -33,7 +33,7 @@ export function BuildConstaintCard({ disabled }: { disabled: boolean }) {
   } = useContext(CharTCContext)
 
   return (
-    <CardLight>
+    <CardThemed bgt="light">
       <CardHeader title="Stat Constraints" />
       <Divider />
       <Box sx={{ p: 1 }}>
@@ -63,7 +63,7 @@ export function BuildConstaintCard({ disabled }: { disabled: boolean }) {
           </DropdownButton>
         </Stack>
       </Box>
-    </CardLight>
+    </CardThemed>
   )
 }
 
@@ -77,45 +77,13 @@ function Selector({
   disabled: boolean
 }) {
   const { setCharTC } = useContext(CharTCContext)
-  const unitStr = unit(statKey)
+  const unitStr = unit(statKey) || ' '
   return (
     <ButtonGroup size="small">
-      <DropdownButton
-        disabled={disabled}
-        color="success"
-        startIcon={statKey ? <StatIcon statKey={statKey} /> : undefined}
-        title={
-          statKey ? (
-            <ArtifactStatWithUnit statKey={statKey} />
-          ) : (
-            'Select a Stat Constraint'
-          )
-        }
-      >
-        {minTotalStatKeys.map((k) => (
-          <MenuItem
-            key={k}
-            selected={statKey === k}
-            disabled={statKey === k}
-            onClick={() =>
-              setCharTC((charTC) => {
-                charTC.optimization.minTotal[statKey] = 0
-              })
-            }
-          >
-            <ListItemIcon>
-              <StatIcon statKey={k} />
-            </ListItemIcon>
-            <ListItemText>
-              <ArtifactStatWithUnit statKey={k} />
-            </ListItemText>
-          </MenuItem>
-        ))}
-      </DropdownButton>
       <CustomNumberInputButtonGroupWrapper sx={{ flexBasis: 30, flexGrow: 1 }}>
         <CustomNumberInput
           float={unitStr === '%'}
-          placeholder={`Stat Constraint`}
+          placeholder={`Constraint`}
           value={statKey ? value : undefined}
           onChange={(value) =>
             statKey &&
@@ -123,7 +91,26 @@ function Selector({
               charTC.optimization.minTotal[statKey] = value
             })
           }
-          endAdornment={unitStr || <Box width="1em" component="span" />}
+          endAdornment={
+            <Box width="1em" component="span">
+              {unitStr}
+            </Box>
+          }
+          startAdornment={
+            <Box component="span" sx={{ whiteSpace: 'nowrap' }}>
+              <StatIcon
+                statKey={statKey}
+                iconProps={{
+                  fontSize: 'inherit',
+                  sx: {
+                    verticalAlign: '-10%',
+                    mr: 1,
+                  },
+                }}
+              />
+              <ArtifactStatWithUnit statKey={statKey} />
+            </Box>
+          }
           disabled={!statKey || disabled}
           sx={{
             px: 1,
