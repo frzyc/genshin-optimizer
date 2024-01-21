@@ -83,7 +83,13 @@
     },
     "maxTotalRolls": "A \"valid\" build can only have a maximum of 45 rolls.",
     "maxRolls": "This substat can have a maximum of 30 rolls.",
-    "maxRollsMain": "Because at least one main stat has the same attribute, this substat can have a maximum of {{value}} rolls."
+    "maxRollsMain": "Because at least one main stat has the same attribute, this substat can have a maximum of {{value}} rolls.",
+    "feasibilityAlert": "The current substat distribution requires at least <strong>{{minSubLines}}</strong> lines of substats. Need to assign <strong>{{minOtherRolls}}</strong> rolls to other substats for this solution to be feasible.",
+    "optAlert": {
+      "scalesWith": "The selected Optimization target and constraints scales with: ",
+      "distribute": ". The solver will only distribute stats to these substats.",
+      "feasibilty": "There may be additional leftover substats that should be distributed to non-scaling stats to ensure the solution is feasible."
+    }
   },
   "tabTeambuff": {
     "team_reso": "Team Resonance",

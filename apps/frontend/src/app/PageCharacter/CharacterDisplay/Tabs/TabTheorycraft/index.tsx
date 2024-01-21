@@ -136,7 +136,7 @@ export default function TabTheorycraft() {
             .filter(([, value]) => value)
         )
       }),
-    [charTC, setCharTC]
+    [setCharTC]
   )
   const location = useLocation()
   const { build: locBuild } = (location.state as
@@ -250,7 +250,7 @@ export default function TabTheorycraft() {
   }, [teamData, characterKey, charTC])
 
   const optimizeSubstats = (apply: boolean) => {
-    workerRef.current.postMessage({ charTC, ...nodes })
+    workerRef.current.postMessage({ charTC, nodes })
     setStatus((s) => ({
       ...s,
       type: 'active',
@@ -391,10 +391,16 @@ export default function TabTheorycraft() {
             <Box display="flex" flexDirection="column" gap={1}>
               {minOtherRolls > 0 && (
                 <Alert severity="warning" variant="filled">
-                  The current substat distribution requires at least{' '}
-                  <strong>{minSubLines}</strong> lines of substats. Need to
-                  assign <strong>{minOtherRolls}</strong> rolls to other
-                  substats for this solution to be feasible.
+                  <Trans
+                    t={t}
+                    i18nKey="tabTheorycraft.feasibilityAlert"
+                    values={{ minSubLines, minOtherRolls }}
+                  >
+                    The current substat distribution requires at least{' '}
+                    <strong>{{ minSubLines } as any}</strong> lines of substats.
+                    Need to assign <strong>{{ minOtherRolls } as any}</strong>{' '}
+                    rolls to other substats for this solution to be feasible.
+                  </Trans>
                 </Alert>
               )}
               <Box display="flex" gap={1}>
@@ -458,27 +464,32 @@ export default function TabTheorycraft() {
               )}
               {!!scalesWith.size && (
                 <Alert severity="info" variant="filled">
-                  The selected Optimization target and constraints scales with:{' '}
+                  <Trans t={t} i18nKey="tabTheorycraft.optAlert.scalesWith">
+                    The selected Optimization target and constraints scales
+                    with:{' '}
+                  </Trans>
                   {[...scalesWith]
                     .map((k) => (
-                      <strong>
+                      <strong key={k}>
                         <StatIcon statKey={k} iconProps={iconInlineProps} />
                         <ArtifactStatWithUnit statKey={k} />
                       </strong>
                     ))
                     .flatMap((value, index, array) => {
                       if (index === array.length - 2)
-                        return [value, <span>', and '</span>]
+                        return [value, <span key="and">', and '</span>]
                       if (index === array.length - 1) return value
-                      return [value, <span>, </span>]
+                      return [value, <span key={index}>, </span>]
                     })}
-                  . The solver will only distribute stats to these substats.{' '}
+                  <Trans t={t} i18nKey="tabTheorycraft.optAlert.distribute">
+                    . The solver will only distribute stats to these substats.
+                  </Trans>{' '}
                   {minOtherRolls > 0 && (
-                    <span>
+                    <Trans t={t} i18nKey="tabTheorycraft.optAlert.feasibilty">
                       There may be additional leftover substats that should be
                       distributed to non-scaling stats to ensure the solution is
                       feasible.
-                    </span>
+                    </Trans>
                   )}
                 </Alert>
               )}
