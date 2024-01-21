@@ -232,6 +232,7 @@ export default function TabTheorycraft() {
 
   const terminateWorker = useCallback(() => {
     workerRef.current.terminate()
+    workerRef.current = null
     setStatus(initialBuildStatus())
   }, [workerRef])
 
