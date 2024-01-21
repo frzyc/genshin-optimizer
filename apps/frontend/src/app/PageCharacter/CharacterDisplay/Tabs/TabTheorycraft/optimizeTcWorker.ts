@@ -6,7 +6,7 @@ type WorkerData = {
   nodes: OptNode[]
   charTC: ICharTC
 }
-export {}
+
 onmessage = async (e: MessageEvent<WorkerData>) => {
   const { nodes, charTC } = e.data
   optimizeTcUsingNodes(nodes, charTC, (r) => postMessage(r))
