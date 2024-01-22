@@ -95,6 +95,7 @@ export const selfTag = {
   char: {
     lvl: iso,
     ele: iso,
+    path: iso,
     ascension: iso,
     eidolon: iso,
     basic: agg,
