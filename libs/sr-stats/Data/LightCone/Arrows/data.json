@@ -100,5 +100,42 @@
         "add": 5.760000000707805
       }
     }
+  ],
+  "superimpose": [
+    {
+      "conditionalStats": [
+        0.12000000011175871,
+        3
+      ],
+      "passiveStats": {}
+    },
+    {
+      "conditionalStats": [
+        0.1500000001396984,
+        3
+      ],
+      "passiveStats": {}
+    },
+    {
+      "conditionalStats": [
+        0.18000000016763806,
+        3
+      ],
+      "passiveStats": {}
+    },
+    {
+      "conditionalStats": [
+        0.21000000019557774,
+        3
+      ],
+      "passiveStats": {}
+    },
+    {
+      "conditionalStats": [
+        0.24000000022351742,
+        3
+      ],
+      "passiveStats": {}
+    }
   ]
 }

@@ -1,8 +1,4 @@
-import type {
-  RelicSetKey,
-  RelicSlotKey,
-  StatKey,
-} from '@genshin-optimizer/sr-consts'
+import type { RelicSetKey, RelicSlotKey } from '@genshin-optimizer/sr-consts'
 
 export const relicSetIdMap: Record<string, RelicSetKey> = {
   '101': 'PasserbyOfWanderingCloud',
@@ -85,30 +81,3 @@ export const allRelicStatMainDMKeys = [
 export type RelicStatMainDMKey = (typeof allRelicStatMainDMKeys)[number]
 
 export type RelicStatDMKey = RelicStatSubDMKey | RelicStatMainDMKey
-
-export const statKeyMap: Record<RelicStatDMKey, StatKey> = {
-  HPDelta: 'hp',
-  HPAddedRatio: 'hp_',
-  AttackDelta: 'atk',
-  AttackAddedRatio: 'atk_',
-  DefenceDelta: 'def',
-  DefenceAddedRatio: 'def_',
-  SpeedDelta: 'spd',
-  CriticalChanceBase: 'crit_',
-  CriticalDamageBase: 'crit_dmg_',
-  HealRatioBase: 'heal_',
-
-  PhysicalAddedRatio: 'physical_dmg_',
-  FireAddedRatio: 'fire_dmg_',
-  IceAddedRatio: 'ice_dmg_',
-  WindAddedRatio: 'wind_dmg_',
-  ThunderAddedRatio: 'lightning_dmg_',
-  QuantumAddedRatio: 'quantum_dmg_',
-  ImaginaryAddedRatio: 'imaginary_dmg_',
-
-  StatusProbabilityBase: 'eff_',
-  StatusResistanceBase: 'eff_res_',
-  BreakDamageAddedRatioBase: 'brEff_',
-
-  SPRatioBase: 'enerRegen_',
-} as const

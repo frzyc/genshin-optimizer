@@ -100,5 +100,52 @@
         "add": 6.480000000447035
       }
     }
+  ],
+  "superimpose": [
+    {
+      "conditionalStats": [
+        0.2800000002607703,
+        4
+      ],
+      "passiveStats": {
+        "brEff_": 0.2800000002607703
+      }
+    },
+    {
+      "conditionalStats": [
+        0.3500000003259629,
+        5
+      ],
+      "passiveStats": {
+        "brEff_": 0.3500000003259629
+      }
+    },
+    {
+      "conditionalStats": [
+        0.4200000003911555,
+        6
+      ],
+      "passiveStats": {
+        "brEff_": 0.4200000003911555
+      }
+    },
+    {
+      "conditionalStats": [
+        0.49000000045634806,
+        7
+      ],
+      "passiveStats": {
+        "brEff_": 0.49000000045634806
+      }
+    },
+    {
+      "conditionalStats": [
+        0.5600000005215406,
+        8
+      ],
+      "passiveStats": {
+        "brEff_": 0.5600000005215406
+      }
+    }
   ]
 }

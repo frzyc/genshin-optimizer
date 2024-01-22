@@ -7,6 +7,7 @@ export * from './character/AvatarSkillTreeConfig'
 // export * from './lightCone/ItemConfigEquipment'
 export * from './lightCone/EquipmentConfig'
 export * from './lightCone/EquipmentPromotionConfig'
+export * from './lightCone/EquipmentSkillConfig'
 
 export * from './relic/RelicDataInfo'
 export * from './relic/RelicMainAffixConfig'
