@@ -5,16 +5,21 @@ import { Link as RouterLink } from 'react-router-dom'
 export default function AddArtInfo() {
   const { t } = useTranslation('artifact')
   return (
-    <Trans t={t} i18nKey={"noArtifacts"}>
-      <Alert severity="info" variant="filled">
+    <Alert severity="info" variant="filled">
+      <Trans t={t} i18nKey={'noArtifacts'}>
         {
           "Looks like you haven't added any artifacts yet. If you want, there are "
         }
-        <Link color="warning.main" component={RouterLink} to="/scanner">
+        <Link
+          color="warning.main"
+          component={RouterLink}
+          to="/scanner"
+          fontFamily="inherit"
+        >
           automatic scanners
         </Link>
         {' that can speed up the import process!'}
-      </Alert>
-    </Trans>
+      </Trans>
+    </Alert>
   )
 }
