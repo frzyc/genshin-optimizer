@@ -15,6 +15,7 @@ export type RelicSetSkillConfig = {
   AbilityName: string
   AbilityParamList: Value[]
 }
+// TODO: update these once Dim updates the datamine
 type Property = {
   PBIJEBOGCKM: StatDMKey // PropertyName
   AMMAAKPAKAA: Value // Value
