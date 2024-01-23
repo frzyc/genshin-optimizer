@@ -6,6 +6,7 @@ import type {
   SkillTreeNodeBonusStat,
 } from './src/characterData'
 import characterData from './src/characterData'
+import type { LightConeDataGen } from './src/lightConeData'
 import LightConeData from './src/lightConeData'
 import { main, sub } from './src/relic'
 
@@ -14,7 +15,7 @@ const path = `${proj_path}/Data`
 const characterDataDump = characterData()
 const lightConeDataDump = LightConeData()
 
-export type { CharacterDataGen, SkillTreeNodeBonusStat }
+export type { CharacterDataGen, LightConeDataGen, SkillTreeNodeBonusStat }
 
 const allStat = {
   char: characterDataDump,

@@ -5,6 +5,7 @@ import type { AllStats } from './executors/gen-stats/executor'
 // Importing the executor is quite costly.
 export type {
   CharacterDataGen,
+  LightConeDataGen,
   SkillTreeNodeBonusStat,
 } from './executors/gen-stats/executor'
 
