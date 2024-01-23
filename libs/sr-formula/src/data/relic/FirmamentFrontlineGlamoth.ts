@@ -7,13 +7,14 @@ import { entriesForRelic } from './util'
 const key: RelicSetKey = 'FirmamentFrontlineGlamoth'
 const data_gen = allStats.relic[key]
 
+let t = 0
 const dm = {
   2: {
-    passiveAtk: data_gen.setEffects[0].otherStats[0],
-    spdCutoff1: data_gen.setEffects[0].otherStats[1],
-    spdCutoff2: data_gen.setEffects[0].otherStats[2],
-    dmg1_: data_gen.setEffects[0].otherStats[3],
-    dmg2_: data_gen.setEffects[0].otherStats[4],
+    passiveAtk: data_gen.setEffects[0].otherStats[t++],
+    spdCutoff1: data_gen.setEffects[0].otherStats[t++],
+    spdCutoff2: data_gen.setEffects[0].otherStats[t++],
+    dmg1_: data_gen.setEffects[0].otherStats[t++],
+    dmg2_: data_gen.setEffects[0].otherStats[t++],
   },
 }
 

@@ -7,13 +7,15 @@ import { entriesForRelic } from './util'
 const key: RelicSetKey = 'PrisonerInDeepConfinement'
 const data_gen = allStats.relic[key]
 
+let t = 0,
+  f = 0
 const dm = {
   2: {
-    passiveDmg: data_gen.setEffects[0].otherStats[0],
+    passiveDmg: data_gen.setEffects[0].otherStats[t++],
   },
   4: {
-    defIgn_: data_gen.setEffects[1].otherStats[0],
-    numStacks: data_gen.setEffects[1].otherStats[1],
+    defIgn_: data_gen.setEffects[1].otherStats[f++],
+    numStacks: data_gen.setEffects[1].otherStats[f++],
   },
 }
 

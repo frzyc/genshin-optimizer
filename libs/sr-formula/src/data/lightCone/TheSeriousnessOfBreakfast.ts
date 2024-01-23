@@ -7,10 +7,11 @@ import { entriesForLightCone } from './util'
 const key: LightConeKey = 'TheSeriousnessOfBreakfast'
 const data_gen = allStats.lightCone[key]
 
+let i = 0
 const dm = {
-  passiveDmg: data_gen.superimpose.otherStats[0],
-  atk_: data_gen.superimpose.otherStats[1],
-  numStacks: data_gen.superimpose.otherStats[2][0],
+  passiveDmg: data_gen.superimpose.otherStats[i++],
+  atk_: data_gen.superimpose.otherStats[i++],
+  numStacks: data_gen.superimpose.otherStats[i++][0],
 }
 
 const { superimpose } = self.lightCone
