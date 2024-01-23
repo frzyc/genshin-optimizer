@@ -6,7 +6,7 @@ import {
   DialogContent,
   DialogContentText,
   DialogTitle,
-  Link
+  Link,
 } from '@mui/material'
 import { Trans, useTranslation } from 'react-i18next'
 import ImgIcon from '../../../../Components/Image/ImgIcon'
