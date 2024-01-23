@@ -8,9 +8,9 @@ const key: LightConeKey = 'TheSeriousnessOfBreakfast'
 const data_gen = allStats.lightCone[key]
 
 const dm = {
-  passiveDmg: data_gen.superimpose.conditionalStats[0],
-  atk_: data_gen.superimpose.conditionalStats[1],
-  numStacks: data_gen.superimpose.conditionalStats[2][0],
+  passiveDmg: data_gen.superimpose.otherStats[0],
+  atk_: data_gen.superimpose.otherStats[1],
+  numStacks: data_gen.superimpose.otherStats[2][0],
 }
 
 const { superimpose } = self.lightCone

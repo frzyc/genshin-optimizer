@@ -27,7 +27,7 @@ type Scaling = {
   add: number
 }
 type Superimpose = {
-  conditionalStats: number[][]
+  otherStats: number[][]
   passiveStats: Partial<Record<StatKey, number[]>>
 }
 
@@ -39,7 +39,7 @@ export type LightConeDataGen = {
 }
 
 export type LightConeDatas = Record<LightConeKey, LightConeDataGen>
-export default function LightConeData() {
+export default function LightConeData(): LightConeDatas {
   return Object.fromEntries(
     Object.entries(equipmentConfig).map(
       ([lightConeId, { Rarity, AvatarBaseType }]) => {
@@ -104,7 +104,7 @@ export default function LightConeData() {
             })
           ),
           superimpose: {
-            conditionalStats: expandedConfig.ParamList.map((superimpose) =>
+            otherStats: expandedConfig.ParamList.map((superimpose) =>
               superimpose.map((param) => extrapolateFloat(param.Value))
             ),
             passiveStats: Object.fromEntries(
@@ -119,5 +119,5 @@ export default function LightConeData() {
         return [lightConeKey, result] as const
       }
     )
-  ) as LightConeDatas
+  )
 }
