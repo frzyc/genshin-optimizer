@@ -131,7 +131,7 @@ ${charKeyLow} add stats ${substatsText};`
         startIcon={<ImgIcon src={gcsimIcon} />}
         disabled={disabled}
       >
-        gcsim
+        {t('tabTheorycraft.gcsimDialog.title')}
       </Button>
       <Dialog open={open} onClose={onClose} maxWidth="lg">
         <DialogTitle>{t('tabTheorycraft.gcsimDialog.title')}</DialogTitle>

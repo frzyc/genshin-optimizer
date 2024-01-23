@@ -69,9 +69,7 @@ export default function CustomNumberInput({
   ...props
 }: CustomNumberInputProps) {
   const { inputProps = {}, ...restProps } = props
-  const {
-    inputProps: { min, max },
-  } = props
+  const { min, max } = inputProps
   const [display, setDisplay] = useState(value.toString())
 
   const onInputChange = useCallback(

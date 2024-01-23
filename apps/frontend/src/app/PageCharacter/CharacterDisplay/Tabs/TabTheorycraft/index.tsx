@@ -18,7 +18,6 @@ import {
   DialogContentText,
   DialogTitle,
   Grid,
-  Link,
   Skeleton,
   Stack,
   ToggleButton,
@@ -38,13 +37,12 @@ import { ArtifactStatWithUnit } from '../../../../Components/Artifact/ArtifactSt
 import CardLight from '../../../../Components/Card/CardLight'
 import StatDisplayComponent from '../../../../Components/Character/StatDisplayComponent'
 import CustomNumberInput from '../../../../Components/CustomNumberInput'
-import ImgIcon from '../../../../Components/Image/ImgIcon'
 import SolidToggleButtonGroup from '../../../../Components/SolidToggleButtonGroup'
 import { CharacterContext } from '../../../../Context/CharacterContext'
 import type { dataContextObj } from '../../../../Context/DataContext'
 import { DataContext } from '../../../../Context/DataContext'
-import { initCharTC } from '../../../../Database/DataManagers/CharacterTCData'
 import { DatabaseContext } from '../../../../Database/Database'
+import { initCharTC } from '../../../../Database/DataManagers/CharacterTCData'
 import useDBMeta from '../../../../ReactHooks/useDBMeta'
 import useTeamData from '../../../../ReactHooks/useTeamData'
 import type { ICachedArtifact } from '../../../../Types/artifact'
@@ -59,8 +57,7 @@ import { BuildConstaintCard } from './BuildConstaintCard'
 import type { SetCharTCAction } from './CharTCContext'
 import { CharTCContext } from './CharTCContext'
 import GcsimButton from './GcsimButton'
-import { WeaponEditorCard } from './WeaponEditorCard'
-import kqmIcon from './kqm.png'
+import KQMSButton from './KQMSButton'
 import type { TCWorkerResult } from './optimizeTc'
 import {
   getArtifactData,
@@ -70,6 +67,7 @@ import {
   optimizeTcGetNodes,
 } from './optimizeTc'
 import useCharTC from './useCharTC'
+import { WeaponEditorCard } from './WeaponEditorCard'
 export default function TabTheorycraft() {
   const { t } = useTranslation('page_character')
   const { database } = useContext(DatabaseContext)
@@ -102,6 +100,7 @@ export default function TabTheorycraft() {
   const copyFrom = useCallback(
     (eWeapon: ICachedWeapon, build: ICachedArtifact[]) =>
       setCharTC((charTC) => {
+        charTC.weapon.key = eWeapon.key
         charTC.weapon.level = eWeapon.level
         charTC.weapon.ascension = eWeapon.ascension
         charTC.weapon.refinement = eWeapon.refinement
@@ -614,62 +613,6 @@ function ResetButton({
             autoFocus
           >
             {t('ui:reset')}
-          </Button>
-        </DialogActions>
-      </Dialog>
-    </>
-  )
-}
-
-function KQMSButton({
-  action,
-  disabled,
-}: {
-  action: () => void
-  disabled: boolean
-}) {
-  const { t } = useTranslation(['page_character', 'ui'])
-  const [open, onOpen, onClose] = useBoolState()
-  return (
-    <>
-      <Button
-        color="keqing"
-        onClick={onOpen}
-        startIcon={<ImgIcon src={kqmIcon} />}
-        disabled={disabled}
-      >
-        {t('tabTheorycraft.kqmsDialog.kqmsBtn')}
-      </Button>
-      <Dialog open={open} onClose={onClose}>
-        <DialogTitle>{t('tabTheorycraft.kqmsDialog.title')}</DialogTitle>
-        <DialogContent>
-          <DialogContentText>
-            <Trans t={t} i18nKey="tabTheorycraft.kqmsDialog.content">
-              This will replace your current <strong>substat setup</strong> with
-              one that adheres to the{' '}
-              <Link
-                href="https://compendium.keqingmains.com/kqm-standards"
-                target="_blank"
-              >
-                KQM Standards
-              </Link>
-              .
-            </Trans>
-          </DialogContentText>
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={onClose} color="error">
-            {t('ui:close')}
-          </Button>
-          <Button
-            color="success"
-            onClick={() => {
-              onClose()
-              action()
-            }}
-            autoFocus
-          >
-            {t('tabTheorycraft.kqmsDialog.kqmsBtn')}
           </Button>
         </DialogActions>
       </Dialog>
