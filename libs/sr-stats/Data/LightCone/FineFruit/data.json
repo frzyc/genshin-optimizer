@@ -101,36 +101,16 @@
       }
     }
   ],
-  "superimpose": [
-    {
-      "conditionalStats": [
-        6
-      ],
-      "passiveStats": {}
-    },
-    {
-      "conditionalStats": [
-        7.500000000465661
-      ],
-      "passiveStats": {}
-    },
-    {
-      "conditionalStats": [
-        9
-      ],
-      "passiveStats": {}
-    },
-    {
-      "conditionalStats": [
-        10.500000000465661
-      ],
-      "passiveStats": {}
-    },
-    {
-      "conditionalStats": [
+  "superimpose": {
+    "conditionalStats": [
+      [
+        6,
+        7.500000000465661,
+        9,
+        10.500000000465661,
         12
-      ],
-      "passiveStats": {}
-    }
-  ]
+      ]
+    ],
+    "passiveStats": {}
+  }
 }

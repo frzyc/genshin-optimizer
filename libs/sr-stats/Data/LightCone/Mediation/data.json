@@ -101,41 +101,23 @@
       }
     }
   ],
-  "superimpose": [
-    {
-      "conditionalStats": [
+  "superimpose": {
+    "conditionalStats": [
+      [
         12,
-        1
-      ],
-      "passiveStats": {}
-    },
-    {
-      "conditionalStats": [
         14,
-        1
-      ],
-      "passiveStats": {}
-    },
-    {
-      "conditionalStats": [
         16,
-        1
-      ],
-      "passiveStats": {}
-    },
-    {
-      "conditionalStats": [
         18,
-        1
+        20
       ],
-      "passiveStats": {}
-    },
-    {
-      "conditionalStats": [
-        20,
+      [
+        1,
+        1,
+        1,
+        1,
         1
-      ],
-      "passiveStats": {}
-    }
-  ]
+      ]
+    ],
+    "passiveStats": {}
+  }
 }
