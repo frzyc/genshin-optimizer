@@ -3,7 +3,7 @@ import {
   useForceUpdate,
   useMediaQueryUp,
 } from '@genshin-optimizer/react-util'
-import { clamp, filterFunction } from '@genshin-optimizer/util'
+import { SortConfigs, clamp, filterFunction, sortFunction } from '@genshin-optimizer/util'
 import AddIcon from '@mui/icons-material/Add'
 import CheckBoxIcon from '@mui/icons-material/CheckBox'
 import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank'
@@ -362,12 +362,17 @@ function ArtifactSelectModal({
   const filterConfigs = useMemo(() => artifactFilterConfigs(), [])
   const { artIdList, totalArtNum } = useMemo(() => {
     const filterFunc = filterFunction(filterOption, filterConfigs)
+    const sortFunc = (a: ICachedArtifact, b: ICachedArtifact) => {
+      if (artExclusion.includes(b.id)) return -1
+      if (artExclusion.includes(a.id)) return 1
+      return 0
+    }
     const artIdList = (
       dbDirty &&
       database.arts.values
         .filter(filterFunc)
+        .sort(sortFunc)
         .map((art) => art.id)
-        .filter((id) => !artExclusion.includes(id))
     )
     return { artIdList, totalArtNum: artIdList.length }
   }, [dbDirty, database, filterConfigs, filterOption, artExclusion])
@@ -460,7 +465,7 @@ function ArtifactSelectModal({
               <ExcludeArtRedButtons artifactIds={artIdList}/>
               <Grid container spacing={1} columns={{ xs: 2, md: 3, lg: 4 }} sx={{ pt: 1 }}>
                 {artifactIdsToShow.map((id) => (
-                  <Grid item key={id} xs={1}>
+                  <Grid item key={id} xs={1} sx={{ ...(artExclusion.includes(id) && { opacity: 0.4 }) }}>
                     <ArtifactCard artifactId={id} onClick={clickHandler} />
                   </Grid>
                 ))}
