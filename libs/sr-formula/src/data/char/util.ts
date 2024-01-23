@@ -16,12 +16,13 @@ import type {
   SkillTreeNodeBonusStat,
 } from '@genshin-optimizer/sr-stats'
 import { objKeyMap } from '@genshin-optimizer/util'
-import type { DmgTag, ElementalType, FormulaArg, Stat } from '../util'
+import type { DmgTag, FormulaArg, Stat } from '../util'
 import {
   TypeKeyToListingType,
   customDmg,
   customHeal,
   customShield,
+  getStatFromStatKey,
   listingItem,
   percent,
   self,
@@ -187,26 +188,7 @@ export function entriesForChar(data_gen: CharacterDataGen): TagMapNodeEntries {
     // Small trace stat boosts
     ...statBoosts.flatMap((statBoost) =>
       Object.entries(statBoost).map(([key, amt], index) => {
-        let stat
-        switch (key) {
-          case 'physical_dmg_':
-          case 'fire_dmg_':
-          case 'ice_dmg_':
-          case 'wind_dmg_':
-          case 'lightning_dmg_':
-          case 'quantum_dmg_':
-          case 'imaginary_dmg_':
-            // substring will fetch 'physical' from 'physical_dmg_', for example
-            stat =
-              selfBuff.premod.dmg_[
-                key.substring(0, key.indexOf('_')) as ElementalType
-              ]
-            break
-          default:
-            stat = selfBuff.premod[key]
-            break
-        }
-        return stat.add(
+        return getStatFromStatKey(selfBuff.premod, key).add(
           cmpEq(char[`statBoost${(index + 1) as StatBoostKey}`], 1, amt)
         )
       })

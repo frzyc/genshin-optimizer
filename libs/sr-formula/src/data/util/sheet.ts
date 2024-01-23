@@ -1,4 +1,5 @@
 import { prod, type NumNode, type StrNode } from '@genshin-optimizer/pando'
+import type { StatKey } from '@genshin-optimizer/sr-consts'
 import type { Read, Tag } from '.'
 import {
   percent,
@@ -9,7 +10,7 @@ import {
   type TagMapNodeEntries,
   type TagMapNodeEntry,
 } from '.'
-import type { Source } from './listing'
+import type { ElementalType, Source } from './listing'
 
 export type FormulaArg = {
   team?: boolean // true if applies to every member, and false (default) if applies only to self
@@ -135,4 +136,25 @@ export function customHeal(
     buff.formula.base.add(base),
     ...extra
   )
+}
+
+export function getStatFromStatKey(
+  buff: typeof selfBuff.premod,
+  statKey: StatKey
+) {
+  switch (statKey) {
+    case 'physical_dmg_':
+    case 'fire_dmg_':
+    case 'ice_dmg_':
+    case 'wind_dmg_':
+    case 'lightning_dmg_':
+    case 'quantum_dmg_':
+    case 'imaginary_dmg_':
+      // substring will fetch 'physical' from 'physical_dmg_', for example
+      return buff.dmg_[
+        statKey.substring(0, statKey.indexOf('_')) as ElementalType
+      ]
+    default:
+      return buff[statKey]
+  }
 }
