@@ -8,22 +8,20 @@ import type {
 import CharacterData from './src/characterData'
 import type { LightConeDataGen } from './src/lightConeData'
 import LightConeData from './src/lightConeData'
-import { main, sub } from './src/relic'
+import { RelicData } from './src/relicData'
 
 const proj_path = `${workspaceRoot}/libs/sr-stats`
 const path = `${proj_path}/Data`
 const characterDataDump = CharacterData()
 const lightConeDataDump = LightConeData()
+const relicDataDump = RelicData()
 
 export type { CharacterDataGen, LightConeDataGen, SkillTreeNodeBonusStat }
 
 const allStat = {
   char: characterDataDump,
   lightCone: lightConeDataDump,
-  relic: {
-    sub,
-    main,
-  },
+  relic: relicDataDump,
 } as const
 
 export type AllStats = typeof allStat
@@ -40,8 +38,9 @@ export default async function runExecutor(_options: GenStatsExecutorSchema) {
   )
 
   console.log(`Writing relic data to ${path}/Relic`)
-  dumpFile(`${path}/Relic/sub.json`, sub)
-  dumpFile(`${path}/Relic/main.json`, main)
+  Object.entries(relicDataDump).forEach(([key, data]) =>
+    dumpFile(`${path}/Relic/${key}.json`, data)
+  )
 
   console.log(`Writing combined data to ${proj_path}/src/allStat_gen.json`)
   dumpFile(`${proj_path}/src/allStat_gen.json`, allStat)
