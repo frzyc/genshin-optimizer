@@ -14,6 +14,7 @@ export const relicSetIdMap: Record<string, RelicSetKey> = {
   111: 'ThiefOfShootingMeteor',
   112: 'WastelanderOfBanditryDesert',
   116: 'PrisonerInDeepConfinement',
+
   301: 'SpaceSealingStation',
   302: 'FleetOfTheAgeless',
   303: 'PanGalacticCommercialEnterprise',
@@ -22,6 +23,7 @@ export const relicSetIdMap: Record<string, RelicSetKey> = {
   306: 'InertSalsotto',
   307: 'TaliaKingdomOfBanditry',
   308: 'SprightlyVonwacq',
+  311: 'FirmamentFrontlineGlamoth',
 }
 export type RelicSetId = keyof typeof relicSetIdMap
 

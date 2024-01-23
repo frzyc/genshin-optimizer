@@ -30,6 +30,7 @@ export type RelicCavernSetKey = (typeof allRelicCavernSetKeys)[number]
 export const allRelicPlanarSetKeys = [
   'BelobogOfTheArchitects',
   'CelestialDifferentiator',
+  'FirmamentFrontlineGlamoth',
   'FleetOfTheAgeless',
   'InertSalsotto',
   'PanGalacticCommercialEnterprise',
