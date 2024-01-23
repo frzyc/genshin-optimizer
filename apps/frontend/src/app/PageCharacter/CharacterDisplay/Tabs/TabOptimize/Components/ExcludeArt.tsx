@@ -3,7 +3,7 @@ import {
   useForceUpdate,
   useMediaQueryUp,
 } from '@genshin-optimizer/react-util'
-import { SortConfigs, clamp, filterFunction, sortFunction } from '@genshin-optimizer/util'
+import { clamp, filterFunction } from '@genshin-optimizer/util'
 import AddIcon from '@mui/icons-material/Add'
 import CheckBoxIcon from '@mui/icons-material/CheckBox'
 import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank'
