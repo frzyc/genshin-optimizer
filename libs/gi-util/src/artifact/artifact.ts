@@ -1,10 +1,10 @@
 import type {
+  ArtifactRarity,
   MainStatKey,
-  RarityKey,
   SubstatKey,
 } from '@genshin-optimizer/consts'
 import {
-  allRarityKeys,
+  allArtifactRarityKeys,
   allSubstatKeys,
   artMaxLevel,
   artSubstatRollData,
@@ -38,7 +38,7 @@ export function artDisplayValue(value: number, unit: Unit): string {
 
 export function getSubstatValuesPercent(
   substatKey: SubstatKey,
-  rarity: RarityKey
+  rarity: ArtifactRarity
 ) {
   return allStats.art.sub[rarity][substatKey].map((v) =>
     toPercent(v, substatKey)
@@ -48,7 +48,7 @@ export function getSubstatValuesPercent(
 export function getSubstatRolls(
   substatKey: SubstatKey,
   substatValue: number,
-  rarity: RarityKey
+  rarity: ArtifactRarity
 ): number[][] {
   const rollData = getSubstatValuesPercent(substatKey, rarity)
   const table = allStats.art.subRoll[rarity][substatKey]
@@ -61,7 +61,7 @@ export function getSubstatRolls(
 }
 
 export function getSubstatSummedRolls(
-  rarity: RarityKey,
+  rarity: ArtifactRarity,
   key: SubstatKey
 ): number[] {
   return Object.keys(allStats.art.subRoll[rarity][key]).map((v) =>
@@ -80,7 +80,7 @@ export function getSubstatEfficiency(
 
 export function getSubstatValue(
   substatKey: SubstatKey,
-  rarity: RarityKey = 5,
+  rarity: ArtifactRarity = 5,
   type: 'max' | 'min' | 'mid' = 'max'
 ): number {
   const substats = allStats.art.sub[rarity][substatKey]
@@ -102,7 +102,7 @@ export function getSubstatValue(
  */
 export function getMainStatValue(
   statKey: MainStatKey,
-  rarity: RarityKey,
+  rarity: ArtifactRarity,
   level: number
 ) {
   return allStats.art.main[rarity][statKey][level]
@@ -115,7 +115,7 @@ export function getMainStatValue(
  * @returns
  */
 export function getMainStatDisplayValues(
-  rarity: RarityKey,
+  rarity: ArtifactRarity,
   statKey: MainStatKey
 ): number[] {
   return allStats.art.main[rarity][statKey].map((k: number) =>
@@ -125,7 +125,7 @@ export function getMainStatDisplayValues(
 
 export function getMainStatDisplayValue(
   key: MainStatKey,
-  rarity: RarityKey,
+  rarity: ArtifactRarity,
   level: number
 ): number {
   const val = getMainStatValue(key, rarity, level)
@@ -134,7 +134,7 @@ export function getMainStatDisplayValue(
 
 export function getMainStatDisplayStr(
   key: MainStatKey,
-  rarity: RarityKey,
+  rarity: ArtifactRarity,
   level: number,
   showUnit = true
 ): string {
@@ -144,23 +144,23 @@ export function getMainStatDisplayStr(
   )
 }
 
-export function getSubstatRange(rarity: RarityKey, key: SubstatKey) {
+export function getSubstatRange(rarity: ArtifactRarity, key: SubstatKey) {
   const values = Object.keys(allStats.art.subRoll[rarity][key])
   const low = parseFloat(values[0])
   const high = parseFloat(values[values.length - 1])
   return { low, high }
 }
 
-export function getRollsRemaining(level: number, rarity: RarityKey) {
+export function getRollsRemaining(level: number, rarity: ArtifactRarity) {
   return Math.ceil((artMaxLevel[rarity] - level) / 4)
 }
 
-export function getTotalPossibleRolls(rarity: RarityKey) {
+export function getTotalPossibleRolls(rarity: ArtifactRarity) {
   return (
     artSubstatRollData[rarity].high + artSubstatRollData[rarity].numUpgrades
   )
 }
-const maxSubstatRollEfficiency = objKeyMap(allRarityKeys, (rarity) =>
+const maxSubstatRollEfficiency = objKeyMap(allArtifactRarityKeys, (rarity) =>
   Math.max(
     ...allSubstatKeys.map(
       (substat) => getSubstatValue(substat, rarity) / getSubstatValue(substat)
