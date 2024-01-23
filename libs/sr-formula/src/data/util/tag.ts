@@ -133,7 +133,7 @@ export const enemyTag = {
     lvl: fixed,
     inDmg: fixed,
     defRed_: agg,
-    defIgn: agg,
+    defIgn_: agg,
     res: agg,
   },
 } as const

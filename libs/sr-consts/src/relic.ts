@@ -21,6 +21,7 @@ export const allRelicCavernSetKeys = [
   'KnightOfPurityPalace',
   'MusketeerOfWildWheat',
   'PasserbyOfWanderingCloud',
+  'PrisonerInDeepConfinement',
   'ThiefOfShootingMeteor',
   'WastelanderOfBanditryDesert',
 ] as const
