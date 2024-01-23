@@ -17,6 +17,7 @@ import {
   DmAttackTypeMap,
   avatarBaseTypeMap,
   avatarConfig,
+  avatarDamageTypeMap,
   avatarPromotionConfig,
   avatarRankConfig,
   avatarRarityMap,
@@ -175,7 +176,7 @@ export default function characterData(): CharacterDatas {
 
         const result: CharacterDataGen = {
           rarity: avatarRarityMap[Rarity] as RarityKey,
-          damageType: DamageType,
+          damageType: avatarDamageTypeMap[DamageType],
           path: avatarBaseTypeMap[AvatarBaseType],
           skillTreeList,
           ascension,
