@@ -6,6 +6,7 @@ import type { AllStats } from './executors/gen-stats/executor'
 export type {
   CharacterDataGen,
   LightConeDataGen,
+  RelicSetDataGen,
   SkillTreeNodeBonusStat,
 } from './executors/gen-stats/executor'
 

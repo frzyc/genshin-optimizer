@@ -43,7 +43,7 @@ type RelicStatDataGen = {
   main: MainStatMap
   sub: SubStatMap
 }
-type RelicSetDataGen = {
+export type RelicSetDataGen = {
   setEffects: SetEffect[]
 }
 type RelicSetDatas = Record<RelicSetKey, RelicSetDataGen>
