@@ -35,12 +35,12 @@ export type AllStats = typeof allStat
 export default async function runExecutor(_options: GenStatsExecutorSchema) {
   console.log(`Writing character data to ${path}/Characters`)
   Object.entries(characterDataDump).forEach(([key, data]) =>
-    dumpFile(`${path}/Characters/${key}/data.json`, data)
+    dumpFile(`${path}/Characters/${key}.json`, data)
   )
 
   console.log(`Writing lightCone data to ${path}/LightCone`)
   Object.entries(lightConeDataDump).forEach(([key, data]) =>
-    dumpFile(`${path}/LightCone/${key}/data.json`, data)
+    dumpFile(`${path}/LightCone/${key}.json`, data)
   )
 
   console.log(`Writing relic data to ${path}/Relic`)
