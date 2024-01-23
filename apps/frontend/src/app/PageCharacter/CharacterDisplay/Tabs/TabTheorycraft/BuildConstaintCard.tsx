@@ -19,11 +19,11 @@ import {
   Stack,
 } from '@mui/material'
 import { useContext } from 'react'
+import { useTranslation } from 'react-i18next'
 import { ArtifactStatWithUnit } from '../../../../Components/Artifact/ArtifactStatKeyDisplay'
 import type { MinTotalStatKey } from '../../../../Database/DataManagers/CharacterTCData'
 import { minTotalStatKeys } from '../../../../Database/DataManagers/CharacterTCData'
 import { CharTCContext } from './CharTCContext'
-import { useTranslation } from 'react-i18next'
 
 export function BuildConstaintCard({ disabled }: { disabled: boolean }) {
   const { t } = useTranslation('page_character')
@@ -36,7 +36,10 @@ export function BuildConstaintCard({ disabled }: { disabled: boolean }) {
 
   return (
     <CardThemed bgt="light">
-      <CardHeader title={t`tabTheorycraft.constraint.title`} />
+      <CardHeader
+        titleTypographyProps={{ variant: 'body1', sx: { fontWeight: 'bold' } }}
+        title={t`tabTheorycraft.constraint.title`}
+      />
       <Divider />
       <Box sx={{ p: 1 }}>
         <Stack spacing={1}>

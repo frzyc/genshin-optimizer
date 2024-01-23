@@ -1,5 +1,7 @@
 import type { ArtifactSetKey } from '@genshin-optimizer/consts'
-import { DeleteForever, Info } from '@mui/icons-material'
+import { iconInlineProps } from '@genshin-optimizer/svgicons'
+import ClearIcon from '@mui/icons-material/Clear'
+import InfoIcon from '@mui/icons-material/Info'
 import { Box, Button, ButtonGroup, MenuItem, Stack } from '@mui/material'
 import { useCallback, useContext, useMemo } from 'react'
 import ArtifactSetTooltip from '../../../../../Components/Artifact/ArtifactSetTooltip'
@@ -61,7 +63,7 @@ export function ArtifactSetEditor({
           <Box flexGrow={1} p={1} display="flex" gap={1} alignItems="center">
             <ImgIcon size={2} src={artifactDefIcon(setKey)} />
             <Box>{artifactSheet.setName}</Box>
-            <Info />
+            <InfoIcon {...iconInlineProps} />
           </Box>
         </ArtifactSetTooltip>
         <ButtonGroup>
@@ -88,7 +90,7 @@ export function ArtifactSetEditor({
             onClick={deleteValue}
             disabled={disabled}
           >
-            <DeleteForever />
+            <ClearIcon />
           </Button>
         </ButtonGroup>
       </Box>
