@@ -78,7 +78,7 @@ const sheet = register(
   ...dmg('ultDmg', baseTag, 'atk', dm.ult.dmg, 'ult'),
   ...dmg(
     'talentDmg',
-    { damageType1: 'followUp', ...baseTag },
+    { damageType1: 'elemental', ...baseTag },
     'atk',
     dm.talent.dmg,
     'talent'
@@ -96,7 +96,7 @@ const sheet = register(
   // Eidolon formulas
   ...customDmg(
     'e1Dmg',
-    { damageType1: 'followUp', ...baseTag },
+    { damageType1: 'elemental', ...baseTag },
     prod(self.final.atk, percent(dm.e1.dmg)),
     undefined,
     { cond: cmpGE(char.eidolon, 1, 'unique', '') }
