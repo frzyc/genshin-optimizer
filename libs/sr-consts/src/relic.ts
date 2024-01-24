@@ -19,9 +19,12 @@ export const allRelicCavernSetKeys = [
   'GuardOfWutheringSnow',
   'HunterOfGlacialForest',
   'KnightOfPurityPalace',
+  'LongevousDisciple',
+  'MessengerTraversingHackerspace',
   'MusketeerOfWildWheat',
   'PasserbyOfWanderingCloud',
   'PrisonerInDeepConfinement',
+  'TheAshblazingGrandDuke',
   'ThiefOfShootingMeteor',
   'WastelanderOfBanditryDesert',
 ] as const
@@ -29,11 +32,14 @@ export type RelicCavernSetKey = (typeof allRelicCavernSetKeys)[number]
 
 export const allRelicPlanarSetKeys = [
   'BelobogOfTheArchitects',
+  'BrokenKeel',
   'CelestialDifferentiator',
   'FirmamentFrontlineGlamoth',
   'FleetOfTheAgeless',
   'InertSalsotto',
   'PanGalacticCommercialEnterprise',
+  'PenaconyLandOfTheDreams',
+  'RutilantArena',
   'SpaceSealingStation',
   'SprightlyVonwacq',
   'TaliaKingdomOfBanditry',
