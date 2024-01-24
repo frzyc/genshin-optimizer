@@ -82,7 +82,8 @@ const substatCache = new Map<string, number>()
 export function getSubstatValue(
   substatKey: SubstatKey,
   rarity: ArtifactRarity = 5,
-  type: 'max' | 'min' | 'mid' = 'max'
+  type: 'max' | 'min' | 'mid' = 'max',
+  percent = true
 ): number {
   const cacheKey = `${substatKey},${rarity},${type}`
   let value = substatCache.get(cacheKey)
