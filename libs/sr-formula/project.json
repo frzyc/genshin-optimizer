@@ -10,6 +10,12 @@
         "updateBuildableProjectDepsInPackageJson": true
       }
     },
+    "gen-file": {
+      "executor": "@genshin-optimizer/sr-formula:gen-desc",
+      "options": {
+        "outputPath": "libs/sr-formula/src/meta.ts"
+      }
+    },
     "lint": {},
     "test": {
       "executor": "@nx/vite:test",
