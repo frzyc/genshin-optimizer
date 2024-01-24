@@ -350,6 +350,7 @@ const sheet: ICharacterSheet = {
                 text: stg('cd'),
                 value: datamine.passive2.cd,
                 unit: 's',
+                fixed: 1,
               },
             ],
           },

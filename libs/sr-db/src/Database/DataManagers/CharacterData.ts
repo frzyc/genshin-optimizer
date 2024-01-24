@@ -29,12 +29,12 @@ import type { ImportResult } from '../exim'
 
 export class CharacterDataManager extends SroDataManager<
   CharacterKey,
-  'sro_characters',
+  'characters',
   ICachedSroCharacter,
   ISroCharacter
 > {
   constructor(database: SroDatabase) {
-    super(database, 'sro_characters')
+    super(database, 'characters')
   }
   override validate(obj: unknown): ISroCharacter | undefined {
     if (!obj || typeof obj !== 'object') return undefined

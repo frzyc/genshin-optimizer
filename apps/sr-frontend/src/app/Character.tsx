@@ -1,6 +1,7 @@
 import type { AscensionKey } from '@genshin-optimizer/sr-consts'
 import { convert, selfTag } from '@genshin-optimizer/sr-formula'
 import {
+  BuildDisplay,
   useCalcContext,
   useCharacter,
   useCharacterContext,
@@ -56,6 +57,14 @@ export default function Character() {
             />
             <Accordion>
               <AccordionSummary expandIcon={<ExpandMore />}>
+                Relics
+              </AccordionSummary>
+              <AccordionDetails>
+                <BuildDisplay build={character?.equippedRelics} />
+              </AccordionDetails>
+            </Accordion>
+            <Accordion>
+              <AccordionSummary expandIcon={<ExpandMore />}>
                 Basic stats for all chars
               </AccordionSummary>
               <AccordionDetails>
@@ -80,27 +89,29 @@ export default function Character() {
             </AccordionSummary>
             <AccordionDetails>
               <Stack>
-                {calc?.listFormulas(member0.listing.formulas).map((read) => {
-                  const computed = calc.compute(read)
-                  const name = read.tag.name || read.tag.q
-                  return (
-                    <Box>
-                      <Typography key={name}>
-                        {name}: {computed.val}
-                      </Typography>
-                      <Accordion>
-                        <AccordionSummary expandIcon={<ExpandMore />}>
-                          meta for {name}
-                        </AccordionSummary>
-                        <AccordionDetails>
-                          <Typography component="pre">
-                            {JSON.stringify(computed.meta, undefined, 2)}
-                          </Typography>{' '}
-                        </AccordionDetails>
-                      </Accordion>
-                    </Box>
-                  )
-                })}
+                {calc
+                  ?.listFormulas(member0.listing.formulas)
+                  .map((read, index) => {
+                    const computed = calc.compute(read)
+                    const name = read.tag.name || read.tag.q
+                    return (
+                      <Box key={`${name}${index}`}>
+                        <Typography>
+                          {name}: {computed.val}
+                        </Typography>
+                        <Accordion>
+                          <AccordionSummary expandIcon={<ExpandMore />}>
+                            meta for {name}
+                          </AccordionSummary>
+                          <AccordionDetails>
+                            <Typography component="pre">
+                              {JSON.stringify(computed.meta, undefined, 2)}
+                            </Typography>{' '}
+                          </AccordionDetails>
+                        </Accordion>
+                      </Box>
+                    )
+                  })}
               </Stack>
             </AccordionDetails>
           </Accordion>

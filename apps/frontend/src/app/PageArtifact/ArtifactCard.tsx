@@ -1,6 +1,6 @@
 import type {
+  ArtifactRarity,
   LocationKey,
-  RarityKey,
   SubstatKey,
 } from '@genshin-optimizer/consts'
 import {
@@ -14,6 +14,7 @@ import {
   getSubstatValue,
   getSubstatValuesPercent,
 } from '@genshin-optimizer/gi-util'
+import { iconInlineProps } from '@genshin-optimizer/svgicons'
 import { clamp, clamp01 } from '@genshin-optimizer/util'
 import { Lock, LockOpen } from '@mui/icons-material'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
@@ -29,8 +30,8 @@ import {
   Typography,
 } from '@mui/material'
 import {
-  lazy,
   Suspense,
+  lazy,
   useCallback,
   useContext,
   useMemo,
@@ -54,7 +55,6 @@ import { DatabaseContext } from '../Database/Database'
 import KeyMap from '../KeyMap'
 import StatIcon from '../KeyMap/StatIcon'
 import useArtifact from '../ReactHooks/useArtifact'
-import { iconInlineProps } from '@genshin-optimizer/svgicons'
 import type { ICachedArtifact, ICachedSubstat } from '../Types/artifact'
 import type { ArtifactEditorProps } from './ArtifactEditor'
 
@@ -455,7 +455,7 @@ function SubstatDisplay({
 }: {
   stat: ICachedSubstat
   effFilter: Set<SubstatKey>
-  rarity: RarityKey
+  rarity: ArtifactRarity
 }) {
   const { t: tk } = useTranslation('statKey_gen')
   const numRolls = stat.rolls?.length ?? 0

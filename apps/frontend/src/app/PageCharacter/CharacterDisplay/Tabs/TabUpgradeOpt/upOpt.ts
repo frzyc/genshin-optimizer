@@ -1,23 +1,23 @@
-import type { ArtifactSlotKey, RarityKey } from '@genshin-optimizer/consts'
+import type { ArtifactRarity, ArtifactSlotKey } from '@genshin-optimizer/consts'
 import {
   optimize,
   precompute,
   type OptNode,
 } from '../../../../Formula/optimization'
 
-import type { ICachedArtifact } from '../../../../Types/artifact'
 import { allSubstatKeys, artMaxLevel } from '@genshin-optimizer/consts'
+import type { MainStatKey, SubstatKey } from '@genshin-optimizer/dm'
+import {
+  getMainStatDisplayValue,
+  getRollsRemaining,
+  getSubstatValue,
+} from '@genshin-optimizer/gi-util'
+import { cartesian, range } from '@genshin-optimizer/util'
 import { ddx, zero_deriv } from '../../../../Formula/differentiate'
 import type { ArtifactBuildData, DynStat } from '../../../../Solver/common'
-import {
-  getSubstatValue,
-  getRollsRemaining,
-  getMainStatDisplayValue,
-} from '@genshin-optimizer/gi-util'
-import type { MainStatKey, SubstatKey } from '@genshin-optimizer/dm'
-import { gaussianPE, mvnPE_bad } from './mvncdf'
+import type { ICachedArtifact } from '../../../../Types/artifact'
 import { crawlUpgrades, quadrinomial } from './mathUtil'
-import { cartesian, range } from '@genshin-optimizer/util'
+import { gaussianPE, mvnPE_bad } from './mvncdf'
 
 /**
  * Artifact upgrade distribution math summary.
@@ -129,7 +129,7 @@ const fWeight: StrictDict<SubstatKey, number> = {
 }
 
 /* Gets "0.1x" 1 roll value for a stat w/ the given rarity. */
-function scale(key: SubstatKey, rarity: RarityKey = 5) {
+function scale(key: SubstatKey, rarity: ArtifactRarity = 5) {
   return toDecimal(key, getSubstatValue(key, rarity) / 10)
 }
 

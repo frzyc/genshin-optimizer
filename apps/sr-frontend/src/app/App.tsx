@@ -13,6 +13,7 @@ import {
 import Character from './Character'
 import CharacterSelector from './CharacterSelector'
 import Database from './Database'
+import Optimize from './Optimize'
 import { theme } from './Theme'
 
 export default function App() {
@@ -28,6 +29,7 @@ export default function App() {
                 <CharacterSelector />
                 <Character />
                 <RelicEditor />
+                <Optimize />
                 <Database />
               </Stack>
             </CalcProvider>

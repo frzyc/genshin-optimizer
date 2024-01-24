@@ -15,10 +15,7 @@
         "eff": "评分： <1></1>",
         "nextRolls": "下次升级：",
         "RollCount_one": "{{count}} 升级次数",
-        "RollCount_other": "{{count}} 升级次数",
-        "RollCount": {
-          "other": "{{count}} Roll"
-        }
+        "RollCount_other": "{{count}} 升级次数"
       },
       "rarity": "稀有度",
       "level": "等级",
@@ -104,16 +101,7 @@
     "artInInv": "背包中的圣遗物",
     "locationsTooltip": "关闭\"所有装备的圣遗物\"以使用单个角色的过滤器",
     "showDup": "显示重复项",
-    "noDupAlert": "背包中没有重复的圣遗物。",
-    "showingNum": {
-      "other": "Showing <1>{{count}}</1> out of {{value}} Artifact"
-    },
-    "substat": {
-      "other": "{{count}} substat"
-    },
-    "sub": {
-      "other": "{{count}} sub"
-    }
+    "noDupAlert": "背包中没有重复的圣遗物。"
   },
   "languages": {
     "chs": "中文（简体）",
@@ -289,8 +277,7 @@
   "char_Noelle": {
     "p4cd": "冷却时间24秒，每4次普通攻击或重击减少1秒的冷却",
     "c6duration": "基础持续时间15秒，每打倒1个敌人延长1秒，最多不会超过10秒",
-    "c4dmg": "护心铠破碎伤害",
-    "qlarger": "Larger attack AoE"
+    "c4dmg": "护心铠破碎伤害"
   },
   "char_Venti": {
     "addAimed": "额外瞄准射击伤害",
@@ -327,18 +314,14 @@
       "dendro": "<dendro>草元素伤害</dendro>击中敌人",
       "normalEle": "元素普攻命中敌人后",
       "ele": "造成元素伤害后",
-      "weakSpot": "重击命中敌人弱点后",
-      "normalChargedSkillBurst": "After hitting an opponent with a Normal/Charged Att. or Ele. Skill/Burst",
-      "self": "After being hit by an opponent"
+      "weakSpot": "重击命中敌人弱点后"
     },
     "eleAbsor": "元素转化",
     "absorDot": "元素转化持续伤害",
     "afterUse": {
       "skill": "使用元素战技后",
       "burst": "使用元素爆发后",
-      "skillOrBurst": "释放元素战技或元素爆发后",
-      "skillPress": "After using Elemental Skill (Press)",
-      "skillHold": "After using Elemental Skill (Hold)"
+      "skillOrBurst": "释放元素战技或元素爆发后"
     },
     "hits_one": "命中{{count}}次",
     "hits_other": "命中{{count}}次",
@@ -401,11 +384,9 @@
       "dendro": "草元素伤害吸收量",
       "geo": "岩元素伤害吸收量",
       "none": "伤害吸收",
-      "increase": "Shield Absorption Increase",
       "max": {
         "none": "护盾吸收量上限",
-        "pyro": "护盾对火元素伤害的吸收量上限",
-        "dendro": "Max Shield Dendro DMG Absorption"
+        "pyro": "护盾对火元素伤害的吸收量上限"
       }
     },
     "addlCharge": "额外使用次数",
@@ -442,14 +423,10 @@
     "aoeInc": "影响范围扩大",
     "elementalReaction": {
       "hydro": "触发<hydro>水元素相关</hydro>反应后",
-      "electro": "触发<electro>雷元素相关</electro>反应后",
-      "shatter": "After triggering a <shattered>Shatter</shattered> Elemental Reaction",
-      "cryo": "After triggering a <cryo>Cryo-related</cryo> Elemental Reaction"
+      "electro": "触发<electro>雷元素相关</electro>反应后"
     },
     "bonusScaling": {
-      "skill_": "元素战技额外倍率",
-      "atkInc": "ATK Inc. Bonus Scaling",
-      "value": "{{value}}% "
+      "skill_": "元素战技额外倍率"
     },
     "energy": "能量",
     "teamBuff": "队伍加成",
@@ -470,47 +447,12 @@
       "hydroOrPyro": "敌人处于<hydro>水元素</hydro>或<pyro>火元素</pyro>影响下",
       "hydroOrElectro": "敌人处于<hydro>水元素</hydro>或<electro>雷元素</electro>影响下",
       "electro": "敌人处于<electro>雷元素</electro>影响下",
-      "cryo": "敌人处于<cryo>冰元素</cryo>影响下",
-      "pyro": "Enemy is affected by <pyro>Pyro</pyro>"
+      "cryo": "敌人处于<cryo>冰元素</cryo>影响下"
     },
     "getElementalOrbParticle": "获得元素晶球或元素微粒",
     "notProtectedByShield": "不处于护盾庇护下",
     "percentCurrentHP": "%当前生命值",
-    "enerRegenPerHit": "Energy Regeneration per Hit",
-    "interval": "间隔",
-    "immuneToElectroCharged": "Immunity to <electrocharged>Electro-Charged</electrocharged>",
-    "charOffField": "Character is off-field",
-    "attackAoeInc": "Larger Attack AoE",
-    "members_one": "{{count}} Member",
-    "members_other": "{{count}} Members",
-    "charOnField": "Character is on-field",
-    "timeOnField": "Time spent on-field",
-    "hpChange": "After HP changes",
-    "afterHeal": "After being healed",
-    "hits": {
-      "other": "{{count}} Hit"
-    },
-    "percentMaxHP": "% Max HP",
-    "stack": {
-      "other": "{{count}} Stack"
-    },
-    "seconds": {
-      "other": "{{count}} Second"
-    },
-    "uses": {
-      "other": "{{count}} Use"
-    },
-    "opponents": {
-      "other": "{{count}} Opponent"
-    },
-    "members": {
-      "other": "{{count}} Member"
-    },
-    "times": {
-      "other": "{{count}} Time"
-    },
-    "activeChar": "Active character",
-    "otherHpChange": "After a teammate's HP changes"
+    "interval": "间隔"
   },
   "weapon_SongOfBrokenPines": {
     "name": "获得「千年的大乐章·揭旗之歌」效果"
@@ -553,8 +495,7 @@
       "resolves": "积攒愿力层数",
       "resolveInitial_": "<electro>梦想一刀基础伤害加成</electro",
       "resolveInfused_": "<electro>梦想一心伤害加成</electro>",
-      "burstDmg": "梦想一刀伤害",
-      "active": "In the <strong>Musou Isshin</strong> state"
+      "burstDmg": "梦想一刀伤害"
     },
     "a4": {
       "enerRest": "<strong>梦想一心</strong>恢复的元素能量",
@@ -788,9 +729,7 @@
     "skillDuration": "每个猫爪提供的持续时间",
     "holdShield": "长按护盾吸收量",
     "a1shielded": "处于<strong>猫爪冻冻</strong>的护盾保护下的角色",
-    "holdCryoShield": "长按对冰元素伤害吸收量",
-    "pressShield": "Press Shield DMG Absorption",
-    "pressCryoShield": "Press Shield Cryo DMG Absorption"
+    "holdCryoShield": "长按对冰元素伤害吸收量"
   },
   "char_Fischl": {
     "a1Name": "蓄力完成的瞄准射击命中奥兹所触发的圣裁之雷伤害",
@@ -870,13 +809,7 @@
     "electroSigil": "雷之印",
     "electroSigilAbsorbed": "被清除的雷之印所转化的元素能量",
     "opHitWithClawAndThunder": "被<strong>利爪与苍雷</strong>点按命中的敌人",
-    "electroSigilPerProc": "每次触发的雷之印",
-    "soulCompanion": {
-      "1": "Soul Companion 1-Hit DMG",
-      "2": "Soul Companion 2-Hit DMG",
-      "3": "Soul Companion 3-Hit DMG",
-      "4": "Soul Companion 4-Hit DMG"
-    }
+    "electroSigilPerProc": "每次触发的雷之印"
   },
   "char_Sayu": {
     "burstHits": "不倒貉貉行动次数",
@@ -949,8 +882,7 @@
     }
   },
   "char_YaeMiko": {
-    "c4": "<strong>杀生樱</strong>的落雷命中敌人后",
-    "c6": "Sesshou Sakura Enemy DEF Ignore"
+    "c4": "<strong>杀生樱</strong>的落雷命中敌人后"
   },
   "char_Yanfei": {
     "seals": [
@@ -1152,10 +1084,7 @@
       "description": "描述",
       "duplicate": "复制",
       "target_one": "<0>{{count}}</0>个目标",
-      "target_other": "<0>{{count}}</0>个目标",
-      "target": {
-        "other": "<0>{{count}}</0> Target"
-      }
+      "target_other": "<0>{{count}}</0>个目标"
     },
     "addStats": {
       "title": "怪物配置与增益状态",
@@ -1174,9 +1103,6 @@
     "tabTeambuff": {
       "team_reso": "队伍共鸣",
       "resonance_tip": "为了使元素共鸣生效，队伍中必须有4名角色。"
-    },
-    "showingNum": {
-      "other": "Showing <1>{{count}}</1> out of {{value}} Character"
     }
   },
   "page_weapon": {
@@ -1185,11 +1111,7 @@
     "edit": "编辑武器",
     "weaponName": "武器名称",
     "removeWeapon": "你确定要移除{{value}}吗？",
-    "addWeapon": "添加新武器",
-    "showingNum": {
-      "other": "Showing <1>{{count}}</1> out of {{value}} Weapon"
-    },
-    "cantDeleteLock": "Cannot delete weapon because it is locked"
+    "addWeapon": "添加新武器"
   },
   "weapon_AquaSimulacra": {
     "condName": "周围存在敌人"
@@ -1327,11 +1249,7 @@
       "excludeArtifactTip": "如果排除了某件圣遗物，则该角色生成配装时不会使用该圣遗物。",
       "excluded": "这件圣遗物已排除。",
       "included": "这件圣遗物未排除。",
-      "usingNum": "使用<1>{{totalStr}}</1>件已排除的圣遗物",
-      "button_txt": "Exclude Artifacts",
-      "excNum": {
-        "other": "<0>{{count}}</0> artifact is excluded"
-      }
+      "usingNum": "使用<1>{{totalStr}}</1>件已排除的圣遗物"
     },
     "excludeChar": {
       "title": "可装备的圣遗物配置",
@@ -1350,21 +1268,12 @@
         "customList": "自定义列表",
         "all": "所有圣遗物"
       },
-      "usingState": "使用",
-      "usingNumTot": {
-        "other": "Using <1>{{arts}}</1> artifacts from <3>{{count}}</3> character"
-      }
+      "usingState": "使用"
     },
     "buildCompleted": "配装完成",
     "notifyTooltip": "配装完成时发出声音，如果焦点不在本页面，还会显示提示。",
     "bonusStats": {
       "title": "增益状态"
-    },
-    "build": {
-      "other": "<0>{{count}}</0> Build"
-    },
-    "thread": {
-      "other": "<0>{{count}}</0> Thread"
     }
   },
   "weapon_ForestRegalia": {
@@ -1391,12 +1300,7 @@
   "char_TravelerElectro": {
     "skill": {
       "amuletGenAmt": "丰穰勾玉产生数量",
-      "absorb": "角色吸收丰穰勾玉",
-      "enerRest": {
-        "none": "Energy Regen. per Amulet",
-        "over35": "Energy Regen. per Amulet (over 35% Energy)",
-        "under35": "Energy Regen. per Amulet (below 35% Energy)"
-      }
+      "absorb": "角色吸收丰穰勾玉"
     },
     "burst": {
       "3rd": "第三次威光落雷伤害",
@@ -1440,10 +1344,7 @@
     "p1Dmg": "渡荒之雷伤害",
     "judication": "触发裁定效果后",
     "burstNormalDmgInc": "启途誓使普通攻击伤害加成",
-    "boltDmgInc": "渡荒之雷伤害加成",
-    "duringBurst": "In the <strong>Pactsworn Pathclearer</strong> state",
-    "afterBurstOrJudication": "After using <strong>Sacred Rite: Wolf's Swiftness</strong> or triggering the Judication effect",
-    "a1soulfarer_dmg_": "Chasmic Soulfarer DMG Bonus"
+    "boltDmgInc": "渡荒之雷伤害加成"
   },
   "char_Nilou": {
     "skill": {
@@ -1451,8 +1352,7 @@
       "dance2": "剑舞步二段伤害",
       "whirl1": "旋舞步一段伤害",
       "whirl2": "旋舞步二段伤害",
-      "wheel": "水轮伤害",
-      "illusion": "Luminous Illusion DMG"
+      "wheel": "水轮伤害"
     },
     "passive1": {
       "underChaliceEffect": "金杯的丰馈状态下",
@@ -1462,9 +1362,6 @@
     },
     "c4": {
       "condName": "<strong>七域舞步</strong>的翩转状态下的第三段舞步命中敌人后"
-    },
-    "c1": {
-      "illusion_dmg_": "Luminous Illusion DMG Bonus"
     }
   },
   "char_Nahida": {
@@ -1568,157 +1465,8 @@
     "condName": "镜中水仙"
   },
   "char_Somnia": {
-    "name": "Somnia",
     "title": "模拟认知的造物",
-    "description": "一系列概念的集合，她以多种状态存在，或者说她根本不存在？",
-    "constellationName": "Mathematica Felina",
-    "auto": {
-      "name": "Astral Abacus",
-      "fields": {
-        "normal": {
-          "0": "<strong><strong>Normal Attack</strong>",
-          "1": "Performs up to 4 consecutive attacks, launching beads that deal <electro>Electro DMG</electro> from her Astral Abacus."
-        },
-        "charged": {
-          "0": "<strong>Charged Attack</strong>",
-          "1": "Consumes a certain amount of Stamina to charge and unleash a continuous stream of Electro beads, dealing <electro>Electro DMG</electro> to up to 4 targets every 0.3s.",
-          "2": "Somnia gains resistance to interruption and is free to move while using her Charged Attack."
-        },
-        "plunging": {
-          "0": "<strong>Plunging Attack</strong>",
-          "1": "Fires Electro beads at the ground, dealing <electro>AoE Electro DMG</electro> upon impact."
-        }
-      },
-      "skillParams": {
-        "0": "1-Hit DMG",
-        "1": "2-Hit DMG",
-        "2": "3-Hit DMG",
-        "3": "4-Hit DMG",
-        "4": "Charged Attack Stream DMG",
-        "5": "Charged Attack Stamina Cost",
-        "6": "Plunge DMG",
-        "7": "Low/High Plunge DMG"
-      }
-    },
-    "skill": {
-      "name": "Cosmic Calculator",
-      "description": {
-        "0": "Somnia condenses immense energy from her Astral Abacus to create an explosion that deals <electro>AoE Electro DMG</electro> and create a Self-Containing Sigil with undefinable contents above her head.",
-        "1": "The Self-Containing Sigil grants her the Schrödinger Superposition effect.",
-        "2": "<br/>",
-        "3": "<strong>Schrödinger Superposition</strong>",
-        "4": "DMG dealt by Somnia's Normal and Charged Attacks is increased based on her Elemental Mastery.",
-        "5": "Schrödinger Superposition expires after Self-Containing Sigil's duration ends or when Somnia leaves the field."
-      },
-      "skillParams": {
-        "0": "Skill DMG",
-        "1": "Duration",
-        "2": "CD"
-      }
-    },
-    "burst": {
-      "name": "Parallax Paws",
-      "description": {
-        "0": "Somnia summons a star-shaped Celestial Cyclone around her, unleashing a burst of <electro>Electro DMG</electro> as it expands. The field will linger and deal continuous <electro>AoE Electro DMG</electro> to enemies within every 1s.",
-        "1": "While Celestial Cyclone is active, Somnia's Elemental Mastery will be increased multiplicatively.",
-        "2": "Additionally, while Celestial Cyclone is active, Somnia gains Stellar Statistics. While in this state, Somnia can set her Astral Abacus to the Multiplication, Addition or Subtraction modes, each granting her attacks and Celestial Cyclone different buffs. Only one Abacus mode from Stellar Statistics may be active simultaneously.",
-        "3": "<br/>",
-        "4": "Abacus Modes",
-        "5": [
-          "<strong>Multiplication</strong>: Within Somnia's Celestial Cyclone, all Sword-, Claymore- and Polearm-wielding characters' weapons will be infused with <electro>Electro</electro>. Normal or Charged Attack hits within the field will trigger Star Sunder, a coordinated Electro blast that deals <electro>AoE Electro DMG</electro> based on Somnia's Elemental Mastery. Star Sunder can be triggered once every 1.5s.",
-          "<strong>Addition</strong>: Celestial Cyclone's AoE and DMG are increased. Upon hitting an enemy, Somnia's Normal and Charged attacks will trigger a Supernova that deals <electro>AoE Electro DMG</electro> based on her Elemental Mastery. This effect can be triggered once every 0.75s.",
-          "<strong>Subtraction</strong>: Celestial Cyclone has its AoE and DMG reduced, but applies the \"Less Than Three\" effect to enemies within it. \"Less Than Three\" reduces enemy Elemental and Physical RES based on Somnia's Elemental Mastery. Additionally, Somnia's Normal and Charged Attacks deal increased DMG based on her Elemental Mastery."
-        ]
-      },
-      "skillParams": {
-        "0": "Skill DMG",
-        "1": "Elemental Mastery",
-        "2": "Celestial Cyclone DoT (Multiplication)",
-        "3": "Star Sunder DMG",
-        "4": "Celestial Cyclone DoT (Addition)",
-        "5": "Supernova DMG",
-        "6": "Celestial Cyclone DoT (Subtraction)"
-      }
-    },
-    "passive1": {
-      "name": "Quick Calculation",
-      "description": {
-        "0": "Somnia's Charged Attacks consume 20% less Stamina and charge up 20% faster."
-      }
-    },
-    "passive2": {
-      "name": "Math Whiz",
-      "description": {
-        "0": "For the duration of Celestial Cyclone, Somnia's Elemental Mastery increases by 5% for every hit dealt by Celestial Cyclone, Star Sunder and Supernova, up to a maximum of 25%."
-      }
-    },
-    "passive3": {
-      "name": "Insomniac Iteration",
-      "description": {
-        "0": "At night (18:00 - 6:00), speeds up Genshin Optimizer build speed by 10%."
-      }
-    },
-    "constellation1": {
-      "name": "Decimal Point",
-      "description": {
-        "0": "Somnia's Normal and Charged Attacks have a 25% chance to deal twice the DMG."
-      }
-    },
-    "constellation2": {
-      "name": "Prime Number",
-      "description": {
-        "0": "When Somnia is under the Schrödinger Superposition effect, each Normal or Charged Attack hit will give Somnia a stack of Natural Number. When the amount of Natural Number stacks is prime, Somnia's next Normal or Charged Attack will receive twice the DMG increase from Schrödinger Superposition."
-      }
-    },
-    "constellation3": {
-      "name": "Infinite Series",
-      "description": {
-        "0": "Increases the Level of <strong>Parallax Paws</strong> by 3.",
-        "1": "Maximum upgrade level is 15."
-      }
-    },
-    "constellation4": {
-      "name": "Perfect Square",
-      "description": {
-        "0": "When Somnia triggers an Electro reaction, 4 Elemental Energy is restored to herself and all nearby party members of Elements involved in the reaction.",
-        "1": "This effect can trigger once every 4s."
-      }
-    },
-    "constellation5": {
-      "name": "Catnip Coefficient",
-      "description": {
-        "0": "Increases the Level of <strong>Cosmic Calculator</strong> by 3.",
-        "1": "Maximum upgrade level is 15."
-      }
-    },
-    "constellation6": {
-      "name": "Golden Ratio",
-      "description": {
-        "0": "When Somnia's Charged Attack deals damage, her CRIT Rate and CRIT DMG are increased by 3% and 5%, respectively. This effect can be triggered once every 0.2s and stack up to 8 times. All Golden Ratio stacks are cleared 13s after the first stack was obtained."
-      }
-    },
-    "c1Key": "Normal and Charged Att. DMG Mult.",
-    "superpositionCond": "Under the Schrödinger Superposition effect",
-    "cycloneActiveCond": "Celestial Cyclone is active",
-    "multCond": "In Multiplication mode",
-    "subCond": "In Subtraction mode",
-    "lessThan3Cond": "Enemy is affected by \"Less Than Three\"",
-    "c1Cond": "Decimal Point trigger frequency",
-    "average": "Average",
-    "always": "Always",
-    "c2Cond": "Possesses a prime amount of Natural Number stacks"
-  },
-  "weapon_QuantumCatalyst": {
-    "name": "Quantum Cat-alyst",
-    "description": "This advanced Catalyst weapon is infused with the mysterious power of Quantum Mechanics and bears the likeness of a curious cat, with glowing green eyes, a tail that flickers with Electro energy and the occasional spark arcing between the ears.",
-    "passiveName": "Mewon Meowmentum",
-    "passiveDescription": {
-      "0": "Increases Energy Recharge by <cryo>18%</cryo>. Increases Normal and Charged Attack DMG by <cryo>6%</cryo> of Elemental Mastery. Upon triggering an <electro>Electro-related Elemental Reaction</electro>, gain <cryo>10</cryo> Elemental Mastery for 12 seconds. This effect can stack up to 5 times and stacks have their duration counted independently.",
-      "1": "Increases Energy Recharge by <cryo>22.5%</cryo>. Increases Normal and Charged Attack DMG by <cryo>7.5%</cryo> of Elemental Mastery. Upon triggering an <electro>Electro-related Elemental Reaction</electro>, gain <cryo>12</cryo> Elemental Mastery for 12 seconds. This effect can stack up to 5 times and stacks have their duration counted independently.",
-      "2": "Increases Energy Recharge by <cryo>27%</cryo>. Increases Normal and Charged Attack DMG by <cryo>9%</cryo> of Elemental Mastery. Upon triggering an <electro>Electro-related Elemental Reaction</electro>, gain <cryo>14</cryo> Elemental Mastery for 12 seconds. This effect can stack up to 5 times and stacks have their duration counted independently.",
-      "3": "Increases Energy Recharge by <cryo>31.5%</cryo>. Increases Normal and Charged Attack DMG by <cryo>10.5%</cryo> of Elemental Mastery. Upon triggering an <electro>Electro-related Elemental Reaction</electro>, gain <cryo>16</cryo> Elemental Mastery for 12 seconds. This effect can stack up to 5 times and stacks have their duration counted independently.",
-      "4": "Increases Energy Recharge by <cryo>36%</cryo>. Increases Normal and Charged Attack DMG by <cryo>12%</cryo> of Elemental Mastery. Upon triggering an <electro>Electro-related Elemental Reaction</electro>, gain <cryo>18</cryo> Elemental Mastery for 12 seconds. This effect can stack up to 5 times and stacks have their duration counted independently."
-    }
+    "description": "一系列概念的集合，她以多种状态存在，或者说她根本不存在？"
   },
   "char_Baizhu": {
     "seamlessDendro": "无郤气护盾草元素伤害吸收量",
@@ -1726,125 +1474,5 @@
     "c2Dmg": "游丝徵灵·切伤害",
     "c2Heal": "游丝徵灵·切治疗量",
     "c6DmgInc": "灵气脉伤害提高"
-  },
-  "char_Kaveh": {
-    "c6Dmg": "Pairidaeza's Light DMG"
-  },
-  "char_Kirara": {
-    "extraCardamom": "Extra Cat Grass Cardamoms",
-    "c4Dmg": "Small Cat Grass Cardamom DMG"
-  },
-  "weapon_CalamityQueller": {
-    "effectName": "Consummation",
-    "active": "Active Multiplier",
-    "inactive": "Off-field Multiplier"
-  },
-  "weapon_JadefallsSplendor": {
-    "condName": "Under the Primordial Jade Regalia effect"
-  },
-  "artifact_GildedDreams": {
-    "overrideSameCond": "Override same element teammates",
-    "overrideOtherCond": "Override other element teammates"
-  },
-  "char_Lynette": {
-    "c6CondName": "After using <strong>Enigmatic Feint</strong>'s Enigma Thrust"
-  },
-  "char_Lyney": {
-    "propStacks": "Prop Surplus",
-    "propStacksUsed": "Prop Surplus Consumed",
-    "hatDmgInc": "Pyrotechnic Strike DMG Increase",
-    "a1CondName": "<strong>Prop Arrow</strong> consumed HP",
-    "c6Dmg": "Pyrotechnic Strike: Reprised DMG"
-  },
-  "char_TravelerHydro": {
-    "dewdropDmgInc": "Dewdrop DMG Increase",
-    "a4CondName": "Percentage of Max HP consumed by Suffusion",
-    "surgeDmgInc": "Torrent Surge DMG Inc.",
-    "skillCondName": "In the Suffusion state"
-  },
-  "weapon_FinaleOfTheDeep": {
-    "bondCondName": "After clearing the Bond of Life"
-  },
-  "weapon_FlowingPurity": {
-    "bondCondName": "After clearing the Bond of Life"
-  },
-  "weapon_SacrificialJade": {
-    "condOffField": "Character has/had been off-field for over 5 seconds"
-  },
-  "weapon_ScionOfTheBlazingSun": {
-    "condName": "Opponent has been hit by a Sunfire Arrow",
-    "dmg": "Sunfire Arrow DMG"
-  },
-  "weapon_TalkingStick": {
-    "condName": {
-      "atk_": "Character affected by <pyro>Pyro</pyro>",
-      "dmg_": "Character affected by <hydro>Hydro</hydro>, <cryo>Cryo</cryo>, or <electro>Electro</electro>"
-    }
-  },
-  "artifact_SongOfDaysPast": {
-    "condName": "Yearning effect amount"
-  },
-  "char_Charlotte": {
-    "c2Cond": "Monsieur Verite has hit opponents",
-    "c4Cond": "Opponent marked by Snappy Silhouette or Focused Impression"
-  },
-  "char_Freminet": {
-    "frost_dmgMult_": "Frost DMG Multiplier",
-    "pressure_dmg_": "Shattering Pressure DMG Bonus",
-    "pressure_critRate_": "Shattering Pressure Crit Rate"
-  },
-  "char_Furina": {
-    "fanfarePoints": "Fanfare",
-    "memberMult_": "Salon Members Mult.",
-    "numOffer": "Number of characters who offered HP",
-    "c1Inc": "Max Fanfare Increase",
-    "c1Bonus": "Fanfare on Cast",
-    "a4MemberDmg": "Salon Member DMG Bonus",
-    "a4HealInterval": "Singer of Many Waters Healing Interval",
-    "c2Points": "Fanfare above the limit",
-    "c6Healing": "Ousia Continuous Healing",
-    "c6Pneuma": "In Pneuma alignment"
-  },
-  "char_Navia": {
-    "skillTotalShardDmg": "Rosula Shardshot Total DMG",
-    "shot_dmg_": "Rosula Shardshot DMG Bonus",
-    "shot_mult_": "Rosula Shardshot Multiplier",
-    "shot_critRate_": "Rosula Shardshot CRIT Rate",
-    "shot_critDMG_": "Rosula Shardshot CRIT DMG",
-    "chargesCond": "Crystal Shrapnel charges consumed",
-    "shotsFired": "Rosula Shardshots Fired",
-    "shotsHitCond": "Rosula Shardshots hit"
-  },
-  "char_Neuvillette": {
-    "a1Cond": "Past Draconic Glories",
-    "judgmentSpecialMult_": "Equitable Judgment Mult.",
-    "judgment_critDMG_": "Equitable Judgment CRIT DMG",
-    "currentDmg": "Current DMG"
-  },
-  "char_Wriothesley": {
-    "rebukeDmg": "Rebuke: Vaulting Fist DMG",
-    "a4Cond": "Prosecution Edict",
-    "icicleDmg": "Icicle DMG",
-    "rebuke_critRate_": "Vaulting Fist CRIT Rate",
-    "rebuke_critDMG_": "Vaulting Fist CRIT DMG",
-    "rebuke_dmg_": "Vaulting Fist DMG Bonus"
-  },
-  "weapon_PortablePowerSaw": {
-    "condName": "Stoic's Symbols Consumed"
-  },
-  "weapon_ProspectorsDrill": {
-    "condName": "Unity's Symbols consumed"
-  },
-  "weapon_RangeGauge": {
-    "condName": "Unity's Symbols consumed"
-  },
-  "weapon_TheDockhandsAssistant": {
-    "condName": "Stoic's Symbols Consumed"
-  },
-  "weapon_UltimateOverlordsMegaMagicSword": {
-    "condName": "Melusines helped"
-  },
-  "weapon_Verdict": {
-    "condName": "Seals"
   }
 }

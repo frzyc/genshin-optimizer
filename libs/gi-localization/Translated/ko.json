@@ -15,10 +15,7 @@
         "eff": "효율: <1></1>",
         "nextRolls": "다음 강화:",
         "RollCount_one": "{{count}}회",
-        "RollCount_other": "{{count}}회",
-        "RollCount": {
-          "other": "{{count}} Roll"
-        }
+        "RollCount_other": "{{count}}회"
       },
       "rarity": "등급",
       "level": "레벨",
@@ -104,16 +101,7 @@
     "artInInv": "보관함의 성유물",
     "locationsTooltip": "특정 캐릭터로 필터링 하기 위해선 \"착용 중인 성유물\"을 비활성화 하세요",
     "showDup": "중복 표시",
-    "noDupAlert": "보관함에 중복된 성유물이 없습니다.",
-    "showingNum": {
-      "other": "Showing <1>{{count}}</1> out of {{value}} Artifact"
-    },
-    "substat": {
-      "other": "{{count}} substat"
-    },
-    "sub": {
-      "other": "{{count}} sub"
-    }
+    "noDupAlert": "보관함에 중복된 성유물이 없습니다."
   },
   "languages": {
     "chs": "중국어 (간체)",
@@ -448,10 +436,8 @@
     },
     "bonusScaling": {
       "skill_": "원소 전투 스킬 피해 증가량",
-      "atkInc": "공격력 증가량",
-      "value": "{{value}}% "
+      "atkInc": "공격력 증가량"
     },
-    "energy": "Energy",
     "teamBuff": "파티 버프",
     "opponents_one": "{{count}} 마리",
     "opponents_other": "{{count}} 마리",
@@ -487,28 +473,6 @@
     "timeOnField": "필드 위에 나온 시간",
     "hpChange": "HP가 증가 혹은 감소 후",
     "afterHeal": "치유를 받은 후",
-    "hits": {
-      "other": "{{count}} Hit"
-    },
-    "percentMaxHP": "% Max HP",
-    "stack": {
-      "other": "{{count}} Stack"
-    },
-    "seconds": {
-      "other": "{{count}} Second"
-    },
-    "uses": {
-      "other": "{{count}} Use"
-    },
-    "opponents": {
-      "other": "{{count}} Opponent"
-    },
-    "members": {
-      "other": "{{count}} Member"
-    },
-    "times": {
-      "other": "{{count}} Time"
-    },
     "activeChar": "필드 위 캐릭터",
     "otherHpChange": "파티원의 HP가 변화한 후"
   },
@@ -1146,10 +1110,7 @@
       "description": "설명",
       "duplicate": "복제",
       "target_one": "<0>{{count}}</0> 타겟",
-      "target_other": "<0>{{count}}</0> 타겟",
-      "target": {
-        "other": "<0>{{count}}</0> Target"
-      }
+      "target_other": "<0>{{count}}</0> 타겟"
     },
     "addStats": {
       "title": "적 설정 및 스탯 조정",
@@ -1168,9 +1129,6 @@
     "tabTeambuff": {
       "team_reso": "파티 원소 공명",
       "resonance_tip": "원소 공명을 받기 위해선 파티가 4명으로 가득 차야 합니다."
-    },
-    "showingNum": {
-      "other": "Showing <1>{{count}}</1> out of {{value}} Character"
     }
   },
   "page_weapon": {
@@ -1179,11 +1137,7 @@
     "edit": "무기 편집",
     "weaponName": "무기 이름",
     "removeWeapon": "{{value}}을/를 정말 제거하시겠습니까?",
-    "addWeapon": "새 무기 추가",
-    "showingNum": {
-      "other": "Showing <1>{{count}}</1> out of {{value}} Weapon"
-    },
-    "cantDeleteLock": "Cannot delete weapon because it is locked"
+    "addWeapon": "새 무기 추가"
   },
   "weapon_AquaSimulacra": {
     "condName": "주변에 적 존재"
@@ -1322,10 +1276,7 @@
       "excluded": "이 성유물은 제외되었습니다.",
       "included": "이 성유물은 제외되지 않았습니다.",
       "usingNum": "<1>{{totalStr}}</1>개의 제외된 성유물 사용중",
-      "button_txt": "성유물 제외",
-      "excNum": {
-        "other": "<0>{{count}}</0> artifact is excluded"
-      }
+      "button_txt": "성유물 제외"
     },
     "excludeChar": {
       "title": "착용 중인 성유물 설정",
@@ -1344,22 +1295,10 @@
         "customList": "사용자 정의 리스트",
         "all": "모든 성유물"
       },
-      "usingState": "선택된 방식",
-      "usingNumTot": {
-        "other": "Using <1>{{arts}}</1> artifacts from <3>{{count}}</3> character"
-      }
+      "usingState": "선택된 방식"
     },
     "buildCompleted": "생성 완료",
-    "notifyTooltip": "생성이 완료되면 소리로 알려줍니다. 또한 탭을 전환한 경우 경고창도 표시합니다.",
-    "bonusStats": {
-      "title": "Bonus Stats"
-    },
-    "build": {
-      "other": "<0>{{count}}</0> Build"
-    },
-    "thread": {
-      "other": "<0>{{count}}</0> Thread"
-    }
+    "notifyTooltip": "생성이 완료되면 소리로 알려줍니다. 또한 탭을 전환한 경우 경고창도 표시합니다."
   },
   "weapon_ForestRegalia": {
     "condName": "유식의 잎사귀를 습득"

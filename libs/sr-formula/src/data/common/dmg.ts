@@ -13,7 +13,7 @@ const data: TagMapNodeEntries = [
           sum(
             percent(1),
             prod(-1, enemy.common.defRed_),
-            prod(-1, enemy.common.defIgn)
+            prod(-1, enemy.common.defIgn_)
           )
         )
       ),

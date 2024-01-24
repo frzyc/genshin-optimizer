@@ -4,6 +4,7 @@ import { nonTrailblazerCharacterKeys } from '@genshin-optimizer/sr-consts'
 import { allStats } from '@genshin-optimizer/sr-stats'
 import { register, self, selfBuff, type TagMapNodeEntries } from '../util'
 import March7th from './March7th'
+import Serval from './Serval'
 
 // Attach the base stats from the generated datamine
 function handleCharacterGen(
@@ -38,9 +39,15 @@ function handleCharacterGen(
 }
 
 const data: TagMapNodeEntries[] = [
-  nonTrailblazerCharacterKeys
-    .filter((k) => k !== 'March7th')
-    .flatMap(handleCharacterGen),
-  March7th,
+  nonTrailblazerCharacterKeys.flatMap((key) => {
+    switch (key) {
+      case 'March7th':
+        return March7th
+      case 'Serval':
+        return Serval
+      default:
+        return handleCharacterGen(key)
+    }
+  }),
 ]
 export default data.flat()
