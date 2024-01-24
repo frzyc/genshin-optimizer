@@ -68,7 +68,7 @@ export default function WeaponFullCard({ weaponId }: { weaponId: string }) {
   )
 }
 function WeaponStat({ node }: { node: NodeDisplay }) {
-  return (
+  return Number.isNaN(node.value) ? null : (
     <SqBadge color="secondary">
       {node.info.icon} {nodeVStr(node)}
     </SqBadge>
