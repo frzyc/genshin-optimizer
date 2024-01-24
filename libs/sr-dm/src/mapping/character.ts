@@ -1,10 +1,12 @@
 import type {
+  ElementalTypeKey,
   NonTrailblazerCharacterKey,
   PathKey,
   RarityKey,
   TrailblazerGenderedKey,
 } from '@genshin-optimizer/sr-consts'
 import type { AvatarRarity } from '../dm'
+import type { AvatarDamageType } from '../dm/character/AvatarConfig'
 
 export const characterIdMap: Record<
   string,
@@ -57,4 +59,14 @@ export type AvatarBaseTypeKey = keyof typeof avatarBaseTypeMap
 export const avatarRarityMap: Record<AvatarRarity, RarityKey> = {
   CombatPowerAvatarRarityType4: 4,
   CombatPowerAvatarRarityType5: 5,
+}
+
+export const avatarDamageTypeMap: Record<AvatarDamageType, ElementalTypeKey> = {
+  Physical: 'Physical',
+  Quantum: 'Quantum',
+  Thunder: 'Lightning',
+  Ice: 'Ice',
+  Wind: 'Wind',
+  Fire: 'Fire',
+  Imaginary: 'Imaginary',
 }

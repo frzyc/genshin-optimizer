@@ -17,6 +17,7 @@ import {
   DmAttackTypeMap,
   avatarBaseTypeMap,
   avatarConfig,
+  avatarDamageTypeMap,
   avatarPromotionConfig,
   avatarRankConfig,
   avatarRarityMap,
@@ -84,7 +85,7 @@ export type CharacterDatas = Record<
   NonTrailblazerCharacterKey,
   CharacterDataGen
 >
-export default function characterData() {
+export default function characterData(): CharacterDatas {
   const data = Object.fromEntries(
     Object.entries(avatarConfig).map(
       ([avatarid, { Rarity, DamageType, AvatarBaseType }]) => {
@@ -107,7 +108,7 @@ export default function characterData() {
               StatusAddList.map(({ PropertyType, Value }) => {
                 return [statKeyMap[PropertyType], extrapolateFloat(Value.Value)]
               })
-            ) as Partial<Record<StatKey, number>>
+            )
             return { stats }
           })
 
@@ -168,14 +169,14 @@ export default function characterData() {
                   ]
                 }
               )
-            ) as SkillTypeAddLevel,
+            ),
             params: rankConfig.Param.map((p) => extrapolateFloat(p.Value)),
           }
         })
 
         const result: CharacterDataGen = {
           rarity: avatarRarityMap[Rarity] as RarityKey,
-          damageType: DamageType,
+          damageType: avatarDamageTypeMap[DamageType],
           path: avatarBaseTypeMap[AvatarBaseType],
           skillTreeList,
           ascension,
@@ -185,6 +186,6 @@ export default function characterData() {
         return [charKey, result]
       }
     )
-  ) as CharacterDatas
+  )
   return data
 }
