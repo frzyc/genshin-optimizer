@@ -13,6 +13,9 @@ export const relicSetIdMap: Record<string, RelicSetKey> = {
   110: 'EagleOfTwilightLine',
   111: 'ThiefOfShootingMeteor',
   112: 'WastelanderOfBanditryDesert',
+  113: 'LongevousDisciple',
+  114: 'MessengerTraversingHackerspace',
+  115: 'TheAshblazingGrandDuke',
   116: 'PrisonerInDeepConfinement',
 
   301: 'SpaceSealingStation',
@@ -23,7 +26,10 @@ export const relicSetIdMap: Record<string, RelicSetKey> = {
   306: 'InertSalsotto',
   307: 'TaliaKingdomOfBanditry',
   308: 'SprightlyVonwacq',
+  309: 'RutilantArena',
+  310: 'BrokenKeel',
   311: 'FirmamentFrontlineGlamoth',
+  312: 'PenaconyLandOfTheDreams',
 }
 export type RelicSetId = keyof typeof relicSetIdMap
 
