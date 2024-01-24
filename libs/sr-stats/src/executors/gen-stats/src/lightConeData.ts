@@ -104,13 +104,19 @@ export default function LightConeData(): LightConeDatas {
             })
           ),
           superimpose: {
-            otherStats: expandedConfig.ParamList.map((superimpose) =>
-              superimpose.map((param) => extrapolateFloat(param.Value))
-            ),
+            otherStats: expandedConfig.ParamList.map((superimpose) => [
+              -1,
+              ...superimpose.map((param) => extrapolateFloat(param.Value)),
+            ]),
             passiveStats: Object.fromEntries(
               expandedConfig.AbilityProperty.map((superimpose) => [
                 superimpose[0].key,
-                superimpose.map((prop) => extrapolateFloat(prop.Value.Value)),
+                [
+                  -1,
+                  ...superimpose.map((prop) =>
+                    extrapolateFloat(prop.Value.Value)
+                  ),
+                ],
               ])
             ),
           },
