@@ -18,7 +18,6 @@ import type { ICharacter } from '@genshin-optimizer/gi-good'
 import type { InputPremodKey } from '../Formula'
 import type { EleEnemyResKey } from '../KeyMap'
 import type { IConditionalValues } from './sheet'
-
 export interface CustomTarget {
   weight: number
   path: string[]
@@ -77,7 +76,20 @@ export type ICharTC = {
     substats: {
       type: SubstatTypeKey
       stats: Record<SubstatKey, number>
+      rarity: ArtifactRarity
     }
     sets: Partial<Record<ArtifactSetKey, 1 | 2 | 4>>
+  }
+  optimization: {
+    target?: string[]
+    distributedSubstats: number
+    maxSubstats: Record<SubstatKey, number>
+    /** NB: this is in total raw value, not substat count
+     * This includes stats from other sources
+     * e.g. `{enerRech_: 0.3}`
+     */
+    minTotal: Partial<
+      Record<Exclude<SubstatKey, 'hp_' | 'atk_' | 'def_'>, number>
+    >
   }
 }

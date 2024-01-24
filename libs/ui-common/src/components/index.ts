@@ -1,6 +1,6 @@
-export * from './Card'
-
 export * from './BootstrapTooltip'
+export * from './Card'
+export * from './CodeBlock'
 export * from './ColorText'
 export * from './ConditionalWrapper'
 export * from './CustomNumberInput'

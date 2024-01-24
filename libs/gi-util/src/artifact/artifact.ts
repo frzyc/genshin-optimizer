@@ -78,19 +78,26 @@ export function getSubstatEfficiency(
   return max ? clampPercent((sum / max) * 100) : 0
 }
 
+const substatCache = new Map<string, number>()
 export function getSubstatValue(
   substatKey: SubstatKey,
   rarity: ArtifactRarity = 5,
-  type: 'max' | 'min' | 'mid' = 'max'
+  type: 'max' | 'min' | 'mid' = 'max',
+  percent = true
 ): number {
-  const substats = allStats.art.sub[rarity][substatKey]
-  const value =
-    type === 'max'
-      ? Math.max(...substats)
-      : type === 'min'
-      ? Math.min(...substats)
-      : substats.reduce((a, b) => a + b, 0) / substats.length
-  return toPercent(value, substatKey)
+  const cacheKey = `${substatKey},${rarity},${type}`
+  let value = substatCache.get(cacheKey)
+  if (!value) {
+    const substats = allStats.art.sub[rarity][substatKey]
+    value =
+      type === 'max'
+        ? Math.max(...substats)
+        : type === 'min'
+        ? Math.min(...substats)
+        : substats.reduce((a, b) => a + b, 0) / substats.length
+    substatCache.set(cacheKey, value)
+  }
+  return percent ? toPercent(value, substatKey) : value
 }
 
 /**

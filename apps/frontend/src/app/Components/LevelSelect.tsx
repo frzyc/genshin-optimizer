@@ -23,11 +23,13 @@ export default function LevelSelect({
   ascension,
   setBoth,
   useLow = false,
+  disabled = false,
 }: {
   level: number
   ascension: AscensionKey
   setBoth: (action: { level?: number; ascension?: AscensionKey }) => void
   useLow?: boolean
+  disabled?: boolean
 }) {
   const { t } = useTranslation('ui')
   const ascensionMaxLevels = useLow ? ascensionMaxLevelLow : ascensionMaxLevel
@@ -56,6 +58,7 @@ export default function LevelSelect({
           onChange={setLevel}
           value={level}
           startAdornment="Lv. "
+          disabled={disabled}
           inputProps={{
             min: 1,
             max: 90,
@@ -66,12 +69,18 @@ export default function LevelSelect({
       </CustomNumberInputButtonGroupWrapper>
       <Button
         sx={{ pl: 1, whiteSpace: 'nowrap' }}
-        disabled={!(useLow ? ambiguousLevelLow : ambiguousLevel)(level)}
+        disabled={
+          !(useLow ? ambiguousLevelLow : ambiguousLevel)(level) || disabled
+        }
         onClick={setAscension}
       >
         <strong>/ {ascensionMaxLevel[ascension]}</strong>
       </Button>
-      <DropdownButton title={t('selectlevel')} sx={{ flexGrow: 1 }}>
+      <DropdownButton
+        title={t('selectlevel')}
+        sx={{ flexGrow: 1 }}
+        disabled={disabled}
+      >
         {[...(useLow ? milestoneLevelsLow : milestoneLevels)].map(
           ([lv, as]) => {
             const selected = lv === level && as === ascension

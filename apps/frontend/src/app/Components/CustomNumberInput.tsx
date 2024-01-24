@@ -1,5 +1,6 @@
 import type { ButtonProps, InputProps } from '@mui/material'
 import { Button, InputBase, styled } from '@mui/material'
+import type { ChangeEvent, KeyboardEvent } from 'react'
 import { useCallback, useEffect, useState } from 'react'
 export type CustomNumberInputProps = Omit<InputProps, 'onChange'> & {
   value?: number | undefined
@@ -68,41 +69,46 @@ export default function CustomNumberInput({
   ...props
 }: CustomNumberInputProps) {
   const { inputProps = {}, ...restProps } = props
+  const { min, max } = inputProps
+  const [display, setDisplay] = useState(value.toString())
 
-  const [number, setNumber] = useState(value)
-  const [focused, setFocus] = useState(false)
+  const onInputChange = useCallback(
+    (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
+      setDisplay(e.target.value),
+    []
+  )
+
   const parseFunc = useCallback(
     (val: string) => (float ? parseFloat(val) : parseInt(val)),
     [float]
   )
-  const onBlur = useCallback(() => {
-    onChange(number)
-    setFocus(false)
-  }, [onChange, number, setFocus])
-  const onFocus = useCallback(() => {
-    setFocus(true)
-  }, [setFocus])
-  useEffect(() => setNumber(value), [value, setNumber]) // update value on value change
-  const onInputChange = useCallback(
-    (e) => {
-      const newNum = parseFunc(e.target.value) || 0
-      if (inputProps.min !== undefined && newNum < inputProps.min) return
-      if (inputProps.max !== undefined && newNum > inputProps.max) return
-      setNumber(newNum)
-    },
-    [setNumber, parseFunc, inputProps.min, inputProps.max]
+  const onValidate = useCallback(() => {
+    const change = (v: number) => {
+      setDisplay(v.toString())
+      onChange(v)
+    }
+    const newNum = parseFunc(display) || 0
+    if (min !== undefined && newNum < min) return change(min)
+    if (max !== undefined && newNum > max) return change(max)
+    return change(newNum)
+  }, [min, max, parseFunc, onChange, display])
+
+  useEffect(() => setDisplay(value.toString()), [value, setDisplay]) // update value on value change
+
+  const onKeyDown = useCallback(
+    (e: KeyboardEvent<HTMLInputElement | HTMLTextAreaElement>) =>
+      e.key === 'Enter' && onValidate(),
+    [onValidate]
   )
-  const onKeyDown = useCallback((e) => e.key === 'Enter' && onBlur(), [onBlur])
 
   return (
     <StyledInputBase
-      value={focused && !number ? '' : number}
+      value={display}
       aria-label="custom-input"
       type="number"
       inputProps={{ step: float ? 0.1 : 1, ...inputProps }}
       onChange={onInputChange}
-      onBlur={onBlur}
-      onFocus={onFocus}
+      onBlur={onValidate}
       disabled={disabled}
       onKeyDown={onKeyDown}
       {...restProps}

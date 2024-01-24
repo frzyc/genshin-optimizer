@@ -7,13 +7,18 @@ import DropdownButton from './DropdownMenu/DropdownButton'
 export default function RefinementDropdown({
   refinement,
   setRefinement,
+  disabled = false,
 }: {
   refinement: RefinementKey
   setRefinement: (r: RefinementKey) => void
+  disabled?: boolean
 }) {
   const { t } = useTranslation('ui')
   return (
-    <DropdownButton title={t('refinement', { value: refinement })}>
+    <DropdownButton
+      title={t('refinement', { value: refinement })}
+      disabled={disabled}
+    >
       {allRefinementKeys.map((r) => (
         <MenuItem
           key={r}

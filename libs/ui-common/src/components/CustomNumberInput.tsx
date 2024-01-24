@@ -60,48 +60,46 @@ export function CustomNumberInput({
   ...props
 }: CustomNumberInputProps) {
   const { inputProps = {}, ...restProps } = props
+  const { min, max } = inputProps
+  const [display, setDisplay] = useState(value.toString())
 
-  const [number, setNumber] = useState(value)
-  const [focused, setFocus] = useState(false)
+  const onInputChange = useCallback(
+    (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
+      setDisplay(e.target.value),
+    []
+  )
+
   const parseFunc = useCallback(
     (val: string) => (float ? parseFloat(val) : parseInt(val)),
     [float]
   )
-  const onBlur = useCallback(() => {
-    onChange(number)
-    setFocus(false)
-  }, [onChange, number])
-  const onFocus = useCallback(() => {
-    setFocus(true)
-  }, [])
-  useEffect(() => setNumber(value), [value]) // update value on value change
+  const onValidate = useCallback(() => {
+    const change = (v: number) => {
+      setDisplay(v.toString())
+      onChange(v)
+    }
+    const newNum = parseFunc(display) || 0
+    if (min !== undefined && newNum < min) return change(min)
+    if (max !== undefined && newNum > max) return change(max)
+    return change(newNum)
+  }, [min, max, parseFunc, onChange, display])
 
-  const min = inputProps['min']
-  const max = inputProps['max']
-  const onInputChange = useCallback(
-    (e: ChangeEvent<HTMLInputElement>) => {
-      const newNum = parseFunc(e.target?.value) || 0
-      if (min !== undefined && newNum < min) return
-      if (max !== undefined && newNum > max) return
-      setNumber(newNum)
-    },
-    [parseFunc, min, max]
-    // [setNumber, parseFunc, inputProps['min'], inputProps['max']]
-  )
+  useEffect(() => setDisplay(value.toString()), [value, setDisplay]) // update value on value change
+
   const onKeyDown = useCallback(
-    (e: KeyboardEvent<HTMLInputElement>) => e.key === 'Enter' && onBlur(),
-    [onBlur]
+    (e: KeyboardEvent<HTMLInputElement | HTMLTextAreaElement>) =>
+      e.key === 'Enter' && onValidate(),
+    [onValidate]
   )
 
   return (
     <StyledInputBase
-      value={focused && !number ? '' : number}
+      value={display}
       aria-label="custom-input"
       type="number"
       inputProps={{ step: float ? 0.1 : 1, ...inputProps }}
       onChange={onInputChange}
-      onBlur={onBlur}
-      onFocus={onFocus}
+      onBlur={onValidate}
       disabled={disabled}
       onKeyDown={onKeyDown}
       {...restProps}

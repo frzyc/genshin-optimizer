@@ -12,12 +12,14 @@ type ConditionalDisplayProps = {
   conditional: DocumentConditional
   hideHeader?: boolean | ((section: DocumentSection) => boolean)
   hideDesc?: boolean
+  disabled?: boolean
 }
 
 export default function ConditionalDisplay({
   conditional,
   hideHeader = false,
   hideDesc = false,
+  disabled = false,
 }: ConditionalDisplayProps) {
   const { data } = useContext(DataContext)
   let fields
@@ -38,7 +40,7 @@ export default function ConditionalDisplay({
         <HeaderDisplay header={conditional.header} hideDesc={hideDesc} />
       )}
       <CardContent sx={{ p: 0, '&:last-child': { pb: 0 } }}>
-        <ConditionalSelector conditional={conditional} />
+        <ConditionalSelector conditional={conditional} disabled={disabled} />
       </CardContent>
       {fields && <FieldsDisplay fields={fields} />}
     </CardDark>
