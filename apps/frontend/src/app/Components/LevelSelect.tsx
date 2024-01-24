@@ -1,4 +1,4 @@
-import type { AscensionKey } from '@genshin-optimizer/consts'
+import { talentLimits, type AscensionKey } from '@genshin-optimizer/consts'
 import {
   ambiguousLevel,
   ambiguousLevelLow,
@@ -17,40 +17,76 @@ import CustomNumberInput, {
   CustomNumberInputButtonGroupWrapper,
 } from './CustomNumberInput'
 import DropdownButton from './DropdownMenu/DropdownButton'
+import type { ICharacterTalent } from '@genshin-optimizer/gi-good'
 
 export default function LevelSelect({
   level,
   ascension,
-  setBoth,
+  dispatch,
+  talent,
   useLow = false,
   disabled = false,
 }: {
   level: number
   ascension: AscensionKey
-  setBoth: (action: { level?: number; ascension?: AscensionKey }) => void
+  dispatch: (action: {
+    level?: number
+    ascension?: AscensionKey
+    talent?: ICharacterTalent
+  }) => void
+  talent?: ICharacterTalent
   useLow?: boolean
   disabled?: boolean
 }) {
   const { t } = useTranslation('ui')
   const ascensionMaxLevels = useLow ? ascensionMaxLevelLow : ascensionMaxLevel
+  const setLevelAndAscensionWithTalentClamp = useCallback(
+    (newLevelAndAscension: {
+      level?: number
+      ascension: AscensionKey
+      talent?: ICharacterTalent
+    }) => {
+      const dispatchSettings = newLevelAndAscension
+      // If changing ascension for a Character, clamp their talent levels
+      if (talent) {
+        const clampedTalent = { ...talent }
+        for (const [key, value] of Object.entries(clampedTalent)) {
+          clampedTalent[key] = Math.min(
+            value,
+            talentLimits[newLevelAndAscension.ascension]
+          )
+        }
+        dispatchSettings.talent = clampedTalent
+      }
+      dispatch(dispatchSettings)
+    },
+    [dispatch, talent]
+  )
   const setLevel = useCallback(
     (level = 1) => {
       level = clamp(level, 1, useLow ? maxLevelLow : maxLevel)
       const ascension = ascensionMaxLevels.findIndex(
         (ascenML) => level <= ascenML
       ) as AscensionKey
-      setBoth({ level, ascension })
+      setLevelAndAscensionWithTalentClamp({ level, ascension })
     },
-    [setBoth, ascensionMaxLevels, useLow]
+    [setLevelAndAscensionWithTalentClamp, ascensionMaxLevels, useLow]
   )
   const setAscension = useCallback(() => {
     const lowerAscension = ascensionMaxLevels.findIndex(
       (ascenML) => level !== 90 && level === ascenML
     ) as AscensionKey
     if (ascension === lowerAscension)
-      setBoth({ ascension: (ascension + 1) as AscensionKey })
-    else setBoth({ ascension: lowerAscension })
-  }, [setBoth, ascensionMaxLevels, ascension, level])
+      setLevelAndAscensionWithTalentClamp({
+        ascension: (ascension + 1) as AscensionKey,
+      })
+    else setLevelAndAscensionWithTalentClamp({ ascension: lowerAscension })
+  }, [
+    setLevelAndAscensionWithTalentClamp,
+    ascensionMaxLevels,
+    ascension,
+    level,
+  ])
   return (
     <ButtonGroup sx={{ bgcolor: (t) => t.palette.contentNormal.main }}>
       <CustomNumberInputButtonGroupWrapper>
@@ -89,7 +125,12 @@ export default function LevelSelect({
                 key={`${lv}/${as}`}
                 selected={selected}
                 disabled={selected}
-                onClick={() => setBoth({ level: lv, ascension: as })}
+                onClick={() =>
+                  setLevelAndAscensionWithTalentClamp({
+                    level: lv,
+                    ascension: as,
+                  })
+                }
               >
                 {lv === ascensionMaxLevels[as]
                   ? `Lv. ${lv}`

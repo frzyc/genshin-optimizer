@@ -107,7 +107,7 @@ export function WeaponEditorCard({
         <LevelSelect
           level={level}
           ascension={ascension}
-          setBoth={setWeapon}
+          dispatch={setWeapon}
           useLow={!weaponSheet.hasRefinement}
           disabled={disabled}
         />
