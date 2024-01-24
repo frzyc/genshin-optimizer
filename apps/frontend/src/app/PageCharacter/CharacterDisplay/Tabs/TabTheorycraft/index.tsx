@@ -116,7 +116,6 @@ export default function TabTheorycraft() {
           substats.forEach((substat) => {
             if (substat.key)
               charTC.artifact.substats.stats[substat.key] =
-                (charTC.artifact.substats.stats[substat.key] ?? 0) +
                 substat.accurateValue
           })
         })
