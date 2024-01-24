@@ -51,8 +51,9 @@ export default function LevelSelect({
       if (talent) {
         const clampedTalent = { ...talent }
         for (const [key, value] of Object.entries(clampedTalent)) {
-          clampedTalent[key] = Math.min(
+          clampedTalent[key] = clamp(
             value,
+            1,
             talentLimits[newLevelAndAscension.ascension]
           )
         }

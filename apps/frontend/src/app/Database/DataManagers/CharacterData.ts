@@ -17,8 +17,8 @@ import {
 } from '@genshin-optimizer/consts'
 import type { TriggerString } from '@genshin-optimizer/database'
 import type { IGOOD } from '@genshin-optimizer/gi-good'
-import { validateLevelAsc } from '@genshin-optimizer/gi-util'
-import { clamp, deepClone, objKeyMap } from '@genshin-optimizer/util'
+import { validateLevelAsc, validateTalent } from '@genshin-optimizer/gi-util'
+import { deepClone, objKeyMap } from '@genshin-optimizer/util'
 import { validateCustomMultiTarget } from '../../PageCharacter/CustomMultiTarget'
 import type {
   CustomMultiTarget,
@@ -97,15 +97,7 @@ export class CharacterDataManager extends DataManager<
       constellation = 0
 
     const { level, ascension } = validateLevelAsc(rawLevel, rawAscension)
-
-    if (typeof talent !== 'object') talent = { auto: 1, skill: 1, burst: 1 }
-    else {
-      let { auto, skill, burst } = talent
-      auto = typeof auto !== 'number' ? 1 : clamp(auto, 1, 10)
-      skill = typeof skill !== 'number' ? 1 : clamp(skill, 1, 10)
-      burst = typeof burst !== 'number' ? 1 : clamp(burst, 1, 10)
-      talent = { auto, skill, burst }
-    }
+    talent = validateTalent(ascension, talent)
 
     if (!conditional) conditional = {}
     if (!team || !Array.isArray(team)) team = ['', '', '']
