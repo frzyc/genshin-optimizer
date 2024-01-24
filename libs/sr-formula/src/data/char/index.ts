@@ -39,8 +39,6 @@ import Welt from './Welt'
 import Xueyi from './Xueyi'
 import Yanqing from './Yanqing'
 import Yukong from './Yukong'
-import TrailblazerPhysical from './TrailblazerPhysical'
-import TrailblazerFire from './TrailblazerFire'
 
 const data: TagMapNodeEntries[] = [
   Argenti,
@@ -83,7 +81,5 @@ const data: TagMapNodeEntries[] = [
   Xueyi,
   Yanqing,
   Yukong,
-  TrailblazerPhysical,
-  TrailblazerFire,
 ]
 export default data.flat()

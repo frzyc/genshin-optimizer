@@ -38,7 +38,7 @@ const dm = {
     dmg: talent[ta++],
   },
   technique: {
-    dmg: technique[te++][0],
+    dmg: (technique[te++] ?? [0])[0],
   },
   e1: {
     dmg: eidolon[1][0] ?? 0,

@@ -7,7 +7,10 @@ import type { Tree } from '@nx/devkit'
 import genIndex from './genIndex'
 import genSheet from './genSheet'
 export default async function genSheetGenerator(tree: Tree) {
-  for (const src of allCharacterKeys)
+  // TODO: Add Trailblazer support
+  for (const src of allCharacterKeys.filter(
+    (key) => !key.includes('Trailblazer')
+  ))
     await genSheet(tree, { sheet_type: 'char', src })
   for (const src of allRelicSetKeys)
     await genSheet(tree, { sheet_type: 'relic', src })

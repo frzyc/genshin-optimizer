@@ -25,15 +25,15 @@ export default async function genIndex(tree: Tree, sheet_type: string) {
 
 async function writeCharIndex(path: string) {
   const prettierRc = await prettier.resolveConfig(path)
+  // TODO: Add Trailblazer support
+  const keys = allCharacterKeys.filter((key) => !key.includes('Trailblazer'))
   const index = prettier.format(
     `
 import type { TagMapNodeEntries } from '../util'
-${allCharacterKeys
-  .map((charKey) => `import ${charKey} from './${charKey}'`)
-  .join('\n')}
+${keys.map((charKey) => `import ${charKey} from './${charKey}'`).join('\n')}
 
 const data: TagMapNodeEntries[] = [
-  ${allCharacterKeys.join('\n,  ')}
+  ${keys.join('\n,  ')}
 ]
 export default data.flat()
 
