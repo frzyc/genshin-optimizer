@@ -1,4 +1,5 @@
-import { talentLimits, type AscensionKey } from '@genshin-optimizer/consts'
+import type { AscensionKey } from '@genshin-optimizer/consts'
+import type { ICharacterTalent } from '@genshin-optimizer/gi-good'
 import {
   ambiguousLevel,
   ambiguousLevelLow,
@@ -8,6 +9,7 @@ import {
   maxLevelLow,
   milestoneLevels,
   milestoneLevelsLow,
+  validateTalent,
 } from '@genshin-optimizer/gi-util'
 import { clamp } from '@genshin-optimizer/util'
 import { Button, ButtonGroup, MenuItem } from '@mui/material'
@@ -17,7 +19,6 @@ import CustomNumberInput, {
   CustomNumberInputButtonGroupWrapper,
 } from './CustomNumberInput'
 import DropdownButton from './DropdownMenu/DropdownButton'
-import type { ICharacterTalent } from '@genshin-optimizer/gi-good'
 
 export default function LevelSelect({
   level,
@@ -49,19 +50,11 @@ export default function LevelSelect({
       const dispatchSettings = newLevelAndAscension
       // If changing ascension for a Character, clamp their talent levels
       if (talent) {
-        const clampedTalent = { ...talent }
-        for (const [key, value] of Object.entries(clampedTalent)) {
-          clampedTalent[key] = clamp(
-            value,
-            1,
-            talentLimits[newLevelAndAscension.ascension]
-          )
-        }
-        dispatchSettings.talent = clampedTalent
+        dispatchSettings.talent = validateTalent(ascension, talent)
       }
       dispatch(dispatchSettings)
     },
-    [dispatch, talent]
+    [dispatch, ascension, talent]
   )
   const setLevel = useCallback(
     (level = 1) => {
