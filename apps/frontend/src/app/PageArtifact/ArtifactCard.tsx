@@ -70,6 +70,7 @@ type Data = {
   editorProps?: Partial<ArtifactEditorProps>
   canEquip?: boolean
   extraButtons?: JSX.Element
+  forceLock?: boolean
 }
 const allSubstatFilter = new Set(allSubstatKeys)
 
@@ -83,6 +84,7 @@ export default function ArtifactCard({
   editorProps,
   canEquip = false,
   extraButtons,
+  forceLock = false,
 }: Data): JSX.Element | null {
   const { t } = useTranslation(['artifact', 'ui'])
   const { t: tk } = useTranslation('statKey_gen')
@@ -220,11 +222,11 @@ export default function ArtifactCard({
             className={`grad-${rarity}star`}
             sx={{ position: 'relative', width: '100%' }}
           >
-            {!onClick && (
+            {(!onClick || forceLock) && (
               <IconButton
                 color="primary"
                 disabled={!editable}
-                onClick={() => database.arts.set(id, { lock: !lock })}
+                onClick={(e) => { e.stopPropagation(); database.arts.set(id, { lock: !lock }) }}
                 sx={{ position: 'absolute', right: 0, bottom: 0, zIndex: 2 }}
               >
                 {lock ? <Lock /> : <LockOpen />}

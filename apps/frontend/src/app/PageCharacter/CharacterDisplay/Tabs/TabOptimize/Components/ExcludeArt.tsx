@@ -466,7 +466,7 @@ function ArtifactSelectModal({
               <Grid container spacing={1} columns={{ xs: 2, md: 3, lg: 4 }} sx={{ pt: 1 }}>
                 {artifactIdsToShow.map((id) => (
                   <Grid item key={id} xs={1} sx={{ ...(artExclusion.includes(id) && { opacity: 0.4 }) }}>
-                    <ArtifactCard artifactId={id} onClick={clickHandler} />
+                    <ArtifactCard artifactId={id} onClick={clickHandler} forceLock />
                   </Grid>
                 ))}
               </Grid>
