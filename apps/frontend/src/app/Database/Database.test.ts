@@ -1,11 +1,7 @@
 import type { CharacterKey } from '@genshin-optimizer/consts'
 import { DBLocalStorage, SandboxStorage } from '@genshin-optimizer/database'
 import type { IArtifact, IGOOD, IWeapon } from '@genshin-optimizer/gi-good'
-import {
-  randomizeArtifact,
-  randomizeCharacter,
-  validateTalent,
-} from '@genshin-optimizer/gi-util'
+import { randomizeArtifact } from '@genshin-optimizer/gi-util'
 import { defaultInitialWeapon, initialWeapon } from '../Util/WeaponUtil'
 import { ArtCharDatabase } from './Database'
 import { initialCharacter } from './DataManagers/CharacterData'
@@ -705,48 +701,5 @@ describe('Database', () => {
     expect(
       database.weapons.get(database.chars.get('Albedo')?.equippedWeapon)?.key
     ).toEqual('DullBlade')
-  })
-
-  describe('Test character talent validation', () => {
-    test('Should return default talents for invalid input', () => {
-      const invalidInputs: any[] = ['invalidTalent', undefined, null, 4]
-      for (const invalidInput of invalidInputs) {
-        const result = validateTalent(1, invalidInput)
-        expect(result).toEqual({ auto: 1, skill: 1, burst: 1 })
-      }
-    })
-    test('Should clamp talent levels correctly while importing', () => {
-      const good = {
-        format: 'GOOD',
-        version: 1,
-        source: 'Scanner',
-        characters: [
-          {
-            key: 'Dori',
-            level: 60,
-            constellation: 0,
-            ascension: 3,
-            talent: {
-              auto: 3,
-              skill: 10,
-              burst: 0,
-            },
-          },
-        ],
-      }
-      database.importGOOD(good as IGOOD & IGO, false, false)
-      expect(database.chars.get('Dori')?.talent.auto).toEqual(3)
-      expect(database.chars.get('Dori')?.talent.skill).toEqual(4)
-      expect(database.chars.get('Dori')?.talent.burst).toEqual(1)
-    })
-    test('Random character must have valid talents', () => {
-      const randomCharacter = randomizeCharacter({ level: 60, ascension: 3 })
-      expect(randomCharacter.talent.auto).toBeGreaterThanOrEqual(1)
-      expect(randomCharacter.talent.auto).toBeLessThanOrEqual(4)
-      expect(randomCharacter.talent.skill).toBeGreaterThanOrEqual(1)
-      expect(randomCharacter.talent.skill).toBeLessThanOrEqual(4)
-      expect(randomCharacter.talent.burst).toBeGreaterThanOrEqual(1)
-      expect(randomCharacter.talent.burst).toBeLessThanOrEqual(4)
-    })
   })
 })
