@@ -51,6 +51,7 @@ import { useNavigate } from 'react-router-dom'
 import BootstrapTooltip from '../Components/BootstrapTooltip'
 import CardDark from '../Components/Card/CardDark'
 import CharacterCard from '../Components/Character/CharacterCard'
+import PaginatedDisplay from '../Components/PaginatedDisplay'
 import SortByButton from '../Components/SortByButton'
 import CharacterRarityToggle from '../Components/ToggleButton/CharacterRarityToggle'
 import ElementToggle from '../Components/ToggleButton/ElementToggle'
@@ -296,19 +297,16 @@ export default function PageCharacter() {
             alignItems="flex-end"
             flexWrap="wrap"
           >
-            <Pagination
-              count={numPages}
-              page={currentPageIndex + 1}
-              onChange={setPage}
-            />
-            <ShowingCharacter
-              numShowing={charKeyListToShow.length}
-              total={totalShowing}
+            <PaginatedDisplay // Should maybe group these into objects (pagination and showing items)
+              numPages={numPages}
+              currentPageIndex={currentPageIndex}
+              setPage={setPage}
+              itemIdsToShow={charKeyListToShow}
+              totalShowing={totalShowing}
               t={t}
-            />
-            <SortByButton
+              displaySort={true}
               sortKeys={sortKeys}
-              value={sortType}
+              sortType={sortType}
               onChange={(sortType) =>
                 database.displayCharacter.set({ sortType })
               }
@@ -414,7 +412,7 @@ export default function PageCharacter() {
       </Suspense>
       {numPages > 1 && (
         <CardDark>
-          <CardContent sx={{ display: 'flex', gap: 1 }}>
+          <CardContent sx={{ display: 'flex', flexDirection: 'row', gap: 1 }}>
             <Button
               onClick={() => setnewCharacter(true)}
               color="info"
@@ -422,35 +420,25 @@ export default function PageCharacter() {
             >
               <AddIcon />
             </Button>
-            <Grid container alignItems="flex-end" sx={{ flexGrow: 1 }}>
-              <Grid item flexGrow={1}>
-                <Pagination
-                  count={numPages}
-                  page={currentPageIndex + 1}
-                  onChange={setPage}
-                />
-              </Grid>
-              <Grid item>
-                <ShowingCharacter
-                  numShowing={charKeyListToShow.length}
-                  total={totalShowing}
-                  t={t}
-                />
-              </Grid>
-            </Grid>
+            <Box
+              display="flex"
+              justifyContent="space-between"
+              alignItems="center"
+              flexWrap="wrap"
+              flexGrow={1}
+            >
+              <PaginatedDisplay
+                numPages={numPages}
+                currentPageIndex={currentPageIndex}
+                setPage={setPage}
+                itemIdsToShow={charKeyListToShow}
+                totalShowing={totalShowing}
+                t={t}
+              />
+            </Box>
           </CardContent>
         </CardDark>
       )}
     </Box>
-  )
-}
-function ShowingCharacter({ numShowing, total, t }) {
-  return (
-    <Typography color="text.secondary">
-      <Trans t={t} i18nKey="showingNum" count={numShowing} value={total}>
-        Showing <b>{{ count: numShowing } as TransObject}</b> out of{' '}
-        {{ value: total } as TransObject} Characters
-      </Trans>
-    </Typography>
   )
 }

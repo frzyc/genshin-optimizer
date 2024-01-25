@@ -35,6 +35,7 @@ import React, {
 import ReactGA from 'react-ga4'
 import { Trans, useTranslation } from 'react-i18next'
 import CardDark from '../Components/Card/CardDark'
+import PaginatedDisplay from '../Components/PaginatedDisplay'
 import SortByButton from '../Components/SortByButton'
 import WeaponRarityToggle from '../Components/ToggleButton/WeaponRarityToggle'
 import WeaponToggle from '../Components/ToggleButton/WeaponToggle'
@@ -263,20 +264,16 @@ export default function PageWeapon() {
             alignItems="flex-end"
             flexWrap="wrap"
           >
-            <Pagination
-              count={numPages}
-              page={currentPageIndex + 1}
-              onChange={setPage}
-            />
-            <ShowingWeapon
-              numShowing={weaponIdsToShow.length}
-              total={totalShowing}
+            <PaginatedDisplay
+              numPages={numPages}
+              currentPageIndex={currentPageIndex}
+              setPage={setPage}
+              itemIdsToShow={weaponIdsToShow}
+              totalShowing={totalShowing}
               t={t}
-            />
-            <SortByButton
-              sx={{ height: '100%' }}
+              displaySort={true}
               sortKeys={sortKeys}
-              value={sortType}
+              sortType={sortType}
               onChange={(sortType) => database.displayWeapon.set({ sortType })}
               ascending={ascending}
               onChangeAsc={(ascending) =>
@@ -318,35 +315,24 @@ export default function PageWeapon() {
       {numPages > 1 && (
         <CardDark>
           <CardContent>
-            <Grid container alignItems="flex-end">
-              <Grid item flexGrow={1}>
-                <Pagination
-                  count={numPages}
-                  page={currentPageIndex + 1}
-                  onChange={setPage}
-                />
-              </Grid>
-              <Grid item>
-                <ShowingWeapon
-                  numShowing={weaponIdsToShow.length}
-                  total={totalShowing}
-                  t={t}
-                />
-              </Grid>
-            </Grid>
+            <Box
+              display="flex"
+              justifyContent="space-between"
+              alignItems="center"
+              flexWrap="wrap"
+            >
+              <PaginatedDisplay
+                numPages={numPages}
+                currentPageIndex={currentPageIndex}
+                setPage={setPage}
+                itemIdsToShow={weaponIdsToShow}
+                totalShowing={totalShowing}
+                t={t}
+              />
+            </Box>
           </CardContent>
         </CardDark>
       )}
     </Box>
-  )
-}
-function ShowingWeapon({ numShowing, total, t }) {
-  return (
-    <Typography color="text.secondary">
-      <Trans t={t} i18nKey="showingNum" count={numShowing} value={total}>
-        Showing <b>{{ count: numShowing } as TransObject}</b> out of{' '}
-        {{ value: total }} Weapons
-      </Trans>
-    </Typography>
   )
 }

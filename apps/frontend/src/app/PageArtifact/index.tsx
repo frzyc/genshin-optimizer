@@ -37,7 +37,7 @@ import SubstatToggle from '../Components/Artifact/SubstatToggle'
 import BootstrapTooltip from '../Components/BootstrapTooltip'
 import CardDark from '../Components/Card/CardDark'
 import InfoComponent from '../Components/InfoComponent'
-import SortByButton from '../Components/SortByButton'
+import PaginatedDisplay from '../Components/PaginatedDisplay'
 import { DatabaseContext } from '../Database/Database'
 import useDisplayArtifact from '../ReactHooks/useDisplayArtifact'
 import ArtifactCard from './ArtifactCard'
@@ -76,7 +76,7 @@ export default function PageArtifact() {
     artifactDisplayState
   const showProbability = sortType === 'probability'
 
-  const [pageIdex, setpageIdex] = useState(0)
+  const [pageIndex, setpageIndex] = useState(0)
   const invScrollRef = useRef<HTMLDivElement>(null)
   const [dbDirty, forceUpdate] = useForceUpdate()
   const dbDirtyDeferred = useDeferredValue(dbDirty)
@@ -154,7 +154,7 @@ export default function PageArtifact() {
 
   const { artifactIdsToShow, numPages, currentPageIndex } = useMemo(() => {
     const numPages = Math.ceil(artifactIds.length / maxNumArtifactsToDisplay)
-    const currentPageIndex = clamp(pageIdex, 0, numPages - 1)
+    const currentPageIndex = clamp(pageIndex, 0, numPages - 1)
     return {
       artifactIdsToShow: artifactIds.slice(
         currentPageIndex * maxNumArtifactsToDisplay,
@@ -163,7 +163,7 @@ export default function PageArtifact() {
       numPages,
       currentPageIndex,
     }
-  }, [artifactIds, pageIdex, maxNumArtifactsToDisplay])
+  }, [artifactIds, pageIndex, maxNumArtifactsToDisplay])
 
   //for pagination
   const totalShowing =
@@ -173,9 +173,9 @@ export default function PageArtifact() {
   const setPage = useCallback(
     (e, value) => {
       invScrollRef.current?.scrollIntoView({ behavior: 'smooth' })
-      setpageIdex(value - 1)
+      setpageIndex(value - 1)
     },
-    [setpageIdex, invScrollRef]
+    [setpageIndex, invScrollRef]
   )
 
   return (
@@ -227,36 +227,32 @@ export default function PageArtifact() {
       </CardDark>
       <CardDark>
         <CardContent>
-          <Grid container alignItems="center" sx={{ pb: 2 }}>
-            <Grid item flexGrow={1}>
-              <Pagination
-                count={numPages}
-                page={currentPageIndex + 1}
-                onChange={setPage}
-              />
-            </Grid>
-            <Grid item flexGrow={1}>
-              <ShowingArt
-                numShowing={artifactIdsToShow.length}
-                total={totalShowing}
-                t={t}
-              />
-            </Grid>
-            <Grid item xs={12} sm={6} md={4} lg={4} xl={3} display="flex">
-              <Box flexGrow={1} />
-              <SortByButton
-                sortKeys={[...artifactSortKeys]}
-                value={sortType}
-                onChange={(sortType) =>
-                  database.displayArtifact.set({ sortType })
-                }
-                ascending={ascending}
-                onChangeAsc={(ascending) =>
-                  database.displayArtifact.set({ ascending })
-                }
-              />
-            </Grid>
-          </Grid>
+          <Box
+            pb={2}
+            display="flex"
+            justifyContent="space-between"
+            alignItems="center"
+            flexWrap="wrap"
+          >
+            <PaginatedDisplay // Should maybe group these into objects (pagination and showing items)
+              numPages={numPages}
+              currentPageIndex={currentPageIndex}
+              setPage={setPage}
+              itemIdsToShow={artifactIdsToShow}
+              totalShowing={totalShowing}
+              t={t}
+              displaySort={true}
+              sortKeys={artifactSortKeys}
+              sortType={sortType}
+              onChange={(sortType) =>
+                database.displayArtifact.set({ sortType })
+              }
+              ascending={ascending}
+              onChangeAsc={(ascending) =>
+                database.displayArtifact.set({ ascending })
+              }
+            />
+          </Box>
           <ArtifactRedButtons artifactIds={artifactIds} />
         </CardContent>
       </CardDark>
@@ -309,36 +305,24 @@ export default function PageArtifact() {
       {numPages > 1 && (
         <CardDark>
           <CardContent>
-            <Grid container>
-              <Grid item flexGrow={1}>
-                <Pagination
-                  count={numPages}
-                  page={currentPageIndex + 1}
-                  onChange={setPage}
-                />
-              </Grid>
-              <Grid item>
-                <ShowingArt
-                  numShowing={artifactIdsToShow.length}
-                  total={totalShowing}
-                  t={t}
-                />
-              </Grid>
-            </Grid>
+            <Box
+              display="flex"
+              justifyContent="space-between"
+              alignItems="center"
+              flexWrap="wrap"
+            >
+              <PaginatedDisplay
+                numPages={numPages}
+                currentPageIndex={currentPageIndex}
+                setPage={setPage}
+                itemIdsToShow={artifactIdsToShow}
+                totalShowing={totalShowing}
+                t={t}
+              />
+            </Box>
           </CardContent>
         </CardDark>
       )}
     </Box>
-  )
-}
-
-function ShowingArt({ numShowing, total, t }) {
-  return (
-    <Typography color="text.secondary">
-      <Trans t={t} i18nKey="showingNum" count={numShowing} value={total}>
-        Showing <b>{{ count: numShowing } as TransObject}</b> out of{' '}
-        {{ value: total } as TransObject} Artifacts
-      </Trans>
-    </Typography>
   )
 }
