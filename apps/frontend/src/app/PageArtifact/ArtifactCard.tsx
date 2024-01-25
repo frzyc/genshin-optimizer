@@ -226,7 +226,10 @@ export default function ArtifactCard({
               <IconButton
                 color="primary"
                 disabled={!editable}
-                onClick={(e) => { e.stopPropagation(); database.arts.set(id, { lock: !lock }) }}
+                onClick={(e) => {
+                  e.stopPropagation()
+                  database.arts.set(id, { lock: !lock })
+                }}
                 sx={{ position: 'absolute', right: 0, bottom: 0, zIndex: 2 }}
               >
                 {lock ? <Lock /> : <LockOpen />}

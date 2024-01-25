@@ -202,7 +202,11 @@ export default function ExcludeArt({
   )
 }
 
-export function ExcludeArtRedButtons({ artifactIds }: { artifactIds: string[] }) {
+export function ExcludeArtRedButtons({
+  artifactIds,
+}: {
+  artifactIds: string[]
+}) {
   const { t } = useTranslation(['artifact', 'ui'])
   const { database } = useContext(DatabaseContext)
   const {
@@ -218,20 +222,27 @@ export function ExcludeArtRedButtons({ artifactIds }: { artifactIds: string[] })
     ) as ICachedArtifact[]
     const numUnlock = artifacts.reduce((a, art) => a + (art.lock ? 0 : 1), 0)
     const numLock = artifacts.length - numUnlock
-    const numIncludedArt = artifacts.reduce((a, art) => a + (artExclusion.includes(art.id) ? 0 : 1), 0)
+    const numIncludedArt = artifacts.reduce(
+      (a, art) => a + (artExclusion.includes(art.id) ? 0 : 1),
+      0
+    )
     const numExcludedArt = artifacts.length - numIncludedArt
     return { numExcludedArt, numIncludedArt, numUnlock, numLock }
   }, [artifactIds, artExclusion, database])
 
   const excludeArtifacts = () =>
-    window.confirm(`Are you sure you want to exclude ${numIncludedArt} artifacts?`) &&
+    window.confirm(
+      `Are you sure you want to exclude ${numIncludedArt} artifacts?`
+    ) &&
     buildSettingDispatch({
       artExclusion: [...artExclusion, ...artifactIds],
       useExcludedArts: false,
     })
 
   const includeArtifacts = () =>
-    window.confirm(`Are you sure you want to include ${numExcludedArt} artifacts?`) &&
+    window.confirm(
+      `Are you sure you want to include ${numExcludedArt} artifacts?`
+    ) &&
     buildSettingDispatch({
       artExclusion: artExclusion.filter((i) => !artifactIds.includes(i)),
       useExcludedArts: false,
@@ -290,7 +301,10 @@ export function ExcludeArtRedButtons({ artifactIds }: { artifactIds: string[] })
           <Trans t={t} i18nKey="button.excludeArtifacts">
             Exclude Artifacts
           </Trans>
-          <SqBadge sx={{ ml: 1 }} color={numIncludedArt ? 'success' : 'secondary'}>
+          <SqBadge
+            sx={{ ml: 1 }}
+            color={numIncludedArt ? 'success' : 'secondary'}
+          >
             {numIncludedArt}
           </SqBadge>
         </Button>
@@ -306,7 +320,10 @@ export function ExcludeArtRedButtons({ artifactIds }: { artifactIds: string[] })
           <Trans t={t} i18nKey="button.includeArtifacts">
             Include Artifacts
           </Trans>
-          <SqBadge sx={{ ml: 1 }} color={numExcludedArt ? 'success' : 'secondary'}>
+          <SqBadge
+            sx={{ ml: 1 }}
+            color={numExcludedArt ? 'success' : 'secondary'}
+          >
             {numExcludedArt}
           </SqBadge>
         </Button>
@@ -367,13 +384,12 @@ function ArtifactSelectModal({
       if (artExclusion.includes(a.id)) return 1
       return 0
     }
-    const artIdList = (
+    const artIdList =
       dbDirty &&
       database.arts.values
         .filter(filterFunc)
         .sort(sortFunc)
         .map((art) => art.id)
-    )
     return { artIdList, totalArtNum: artIdList.length }
   }, [dbDirty, database, filterConfigs, filterOption, artExclusion])
 
@@ -383,7 +399,7 @@ function ArtifactSelectModal({
   const maxNumArtifactsToDisplay = numToShowMap[brPt]
   const { artifactIdsToShow, numPages, currentPageIndex } = useMemo(() => {
     const numPages = Math.ceil(artIdList.length / maxNumArtifactsToDisplay)
-    const currentPageIndex = clamp(pageIdex, 0, numPages-1)
+    const currentPageIndex = clamp(pageIdex, 0, numPages - 1)
     return {
       artifactIdsToShow: artIdList.slice(
         currentPageIndex * maxNumArtifactsToDisplay,
@@ -462,11 +478,25 @@ function ArtifactSelectModal({
                   />
                 </Grid>
               </Grid>
-              <ExcludeArtRedButtons artifactIds={artIdList}/>
-              <Grid container spacing={1} columns={{ xs: 2, md: 3, lg: 4 }} sx={{ pt: 1 }}>
+              <ExcludeArtRedButtons artifactIds={artIdList} />
+              <Grid
+                container
+                spacing={1}
+                columns={{ xs: 2, md: 3, lg: 4 }}
+                sx={{ pt: 1 }}
+              >
                 {artifactIdsToShow.map((id) => (
-                  <Grid item key={id} xs={1} sx={{ ...(artExclusion.includes(id) && { opacity: 0.4 }) }}>
-                    <ArtifactCard artifactId={id} onClick={clickHandler} forceLock />
+                  <Grid
+                    item
+                    key={id}
+                    xs={1}
+                    sx={{ ...(artExclusion.includes(id) && { opacity: 0.4 }) }}
+                  >
+                    <ArtifactCard
+                      artifactId={id}
+                      onClick={clickHandler}
+                      forceLock
+                    />
                   </Grid>
                 ))}
               </Grid>
