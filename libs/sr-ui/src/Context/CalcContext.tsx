@@ -1,3 +1,4 @@
+import type { RelicSubStatKey } from '@genshin-optimizer/sr-consts'
 import type { Calculator } from '@genshin-optimizer/sr-formula'
 import {
   charData,
@@ -11,7 +12,7 @@ import {
 } from '@genshin-optimizer/sr-formula'
 import type { ReactNode } from 'react'
 import { createContext, useContext, useMemo } from 'react'
-import { useCharacter } from '../Hook'
+import { useCharacter, useEquippedRelics } from '../Hook'
 import { useLightCone } from '../Hook/useLightCone'
 import { useCharacterContext } from './CharacterContext'
 type CalcContextObj = {
@@ -28,6 +29,7 @@ export function CalcProvider({ children }: { children: ReactNode }) {
   const { characterKey } = useCharacterContext()
   const character = useCharacter(characterKey)
   const lightCone = useLightCone(character?.equippedLightCone)
+  const relics = useEquippedRelics(character?.equippedRelics)
   const calcContextObj: CalcContextObj = useMemo(
     () => ({
       calc:
@@ -38,14 +40,27 @@ export function CalcProvider({ children }: { children: ReactNode }) {
             'member0',
             ...charData(character),
             ...lightConeData(lightCone),
-            ...relicsData([])
+            ...relicsData(
+              Object.values(relics).map((relic) => ({
+                set: relic.setKey,
+                stats: [
+                  ...relic.substats
+                    .filter(({ key }) => key !== '')
+                    .map((substat) => ({
+                      key: substat.key as RelicSubStatKey, // Safe because of the above filter
+                      value: substat.accurateValue,
+                    })),
+                  { key: relic.mainStatKey, value: relic.mainStatVal },
+                ],
+              }))
+            )
           ),
           enemyDebuff.common.lvl.add(80),
           enemyDebuff.common.res.add(0.1),
           selfBuff.common.critMode.add('avg'),
         ]),
     }),
-    [character, lightCone]
+    [character, lightCone, relics]
   )
 
   return (

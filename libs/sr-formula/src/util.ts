@@ -1,12 +1,18 @@
 import { cmpEq, cmpGE } from '@genshin-optimizer/pando'
-import type { RelicSetKey } from '@genshin-optimizer/sr-consts'
+import type { RelicSetKey, StatKey } from '@genshin-optimizer/sr-consts'
 import {
   allBonusAbilityKeys,
   allStatBoostKeys,
 } from '@genshin-optimizer/sr-consts'
 import type { ICharacter, ILightCone } from '@genshin-optimizer/sr-srod'
-import type { Member, Preset, Stat, TagMapNodeEntries } from './data/util'
-import { convert, reader, selfBuff, selfTag } from './data/util'
+import type { Member, Preset, TagMapNodeEntries } from './data/util'
+import {
+  convert,
+  getStatFromStatKey,
+  reader,
+  selfBuff,
+  selfTag,
+} from './data/util'
 
 export function withPreset(
   preset: Preset,
@@ -66,7 +72,7 @@ export function lightConeData(data: ILightCone | undefined): TagMapNodeEntries {
 export function relicsData(
   data: {
     set: RelicSetKey
-    stats: readonly { key: Stat; value: number }[]
+    stats: readonly { key: StatKey; value: number }[]
   }[]
 ): TagMapNodeEntries {
   const {
@@ -74,7 +80,7 @@ export function relicsData(
     premod,
   } = convert(selfTag, { src: 'relic', et: 'self' })
   const sets: Partial<Record<RelicSetKey, number>> = {},
-    stats: Partial<Record<Stat, number>> = {}
+    stats: Partial<Record<StatKey, number>> = {}
   for (const { set: setKey, stats: stat } of data) {
     const set = sets[setKey]
     if (set === undefined) sets[setKey] = 1
@@ -92,7 +98,7 @@ export function relicsData(
     // Add `src:dyn` between the stat and the buff so that we can `detach` them easily
     reader.withTag({ src: 'relic', qt: 'premod' }).reread(reader.src('dyn')),
     ...Object.entries(stats).map(([k, v]) =>
-      premod[k as Stat].src('dyn').add(v)
+      getStatFromStatKey(premod, k).src('dyn').add(v)
     ),
 
     ...Object.entries(sets).map(([k, v]) => count.src(k as RelicSetKey).add(v)),
