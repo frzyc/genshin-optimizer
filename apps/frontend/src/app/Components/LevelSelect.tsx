@@ -48,9 +48,7 @@ export default function LevelSelect({
       (ascenML) => level !== 90 && level === ascenML
     ) as AscensionKey
     if (ascension === lowerAscension)
-      setBoth({
-        ascension: (ascension + 1) as AscensionKey,
-      })
+      setBoth({ ascension: (ascension + 1) as AscensionKey })
     else setBoth({ ascension: lowerAscension })
   }, [setBoth, ascensionMaxLevels, ascension, level])
   return (
@@ -91,12 +89,7 @@ export default function LevelSelect({
                 key={`${lv}/${as}`}
                 selected={selected}
                 disabled={selected}
-                onClick={() =>
-                  setBoth({
-                    level: lv,
-                    ascension: as,
-                  })
-                }
+                onClick={() => setBoth({ level: lv, ascension: as })}
               >
                 {lv === ascensionMaxLevels[as]
                   ? `Lv. ${lv}`

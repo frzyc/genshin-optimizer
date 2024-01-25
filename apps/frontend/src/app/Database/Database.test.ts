@@ -707,7 +707,7 @@ describe('Database', () => {
     ).toEqual('DullBlade')
   })
 
-  describe('Test Character Talent', () => {
+  describe('Test character talent validation', () => {
     test('Should return default talents for invalid input', () => {
       const invalidInputs: any[] = ['invalidTalent', undefined, null, 4]
       for (const invalidInput of invalidInputs) {
