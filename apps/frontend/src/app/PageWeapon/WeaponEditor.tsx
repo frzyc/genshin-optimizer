@@ -185,7 +185,7 @@ export default function WeaponEditor({
                     <LevelSelect
                       level={level}
                       ascension={ascension}
-                      dispatch={weaponDispatch}
+                      setBoth={weaponDispatch}
                       useLow={!weaponSheet.hasRefinement}
                     />
                   )}

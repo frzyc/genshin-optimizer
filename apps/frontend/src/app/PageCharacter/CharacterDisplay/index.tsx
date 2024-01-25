@@ -196,8 +196,7 @@ function CharacterDisplayCard({
                       <LevelSelect
                         level={character.level}
                         ascension={character.ascension}
-                        talent={character.talent}
-                        dispatch={characterDispatch}
+                        setBoth={characterDispatch}
                       />
                     )}
                     <HitModeToggle size="small" />
