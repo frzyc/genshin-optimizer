@@ -1,4 +1,4 @@
-import type { ArtifactBuildData } from '../Solver/common'
+import type { DynStat } from '../Solver/common'
 import { assertUnreachable, objPathValue } from '../Util/Util'
 import { customMapFormula, forEachNodes, mapFormulas } from './internal'
 import type {
@@ -60,17 +60,27 @@ export function optimize(
   opts = constantFold(opts, {})
   return deduplicate(opts)
 }
-export function precompute(
+
+/**
+ * Compile an array of `formulas` into a JS `Function`
+ *
+ * @param formulas
+ * @param initial base stats for the formula
+ * @param binding
+ * @param slotCount the number of slots in the build (usually 5)
+ * @returns
+ */
+export function precompute<C extends number>(
   formulas: OptNode[],
-  initial: ArtifactBuildData['values'],
-  binding: (
-    readNode: ReadNode<number> | ReadNode<string | undefined>
-  ) => string,
-  slotCount: number
-): (_: ArtifactBuildData[]) => number[] {
+  initial: DynStat,
+  binding: (readNode: ReadNode<number>) => string,
+  slotCount: C
+): (
+  _: readonly { readonly values: Readonly<DynStat> }[] & { length: C }
+) => number[] {
+  // res copied from the code above
   let body = `
 "use strict";
-// copied from the code above
 function res(res) {
   if (res < 0) return 1 - res / 2
   else if (res >= 0.75) return 1 / (res * 4 + 1)
@@ -82,7 +92,9 @@ const x0=0` // making sure `const` has at least one entry
   const names = new Map<NumNode | StrNode, string>()
   forEachNodes(
     formulas,
-    (_) => {},
+    (_) => {
+      /* */
+    },
     (f) => {
       const { operation, operands } = f,
         name = `x${i++}`,
@@ -91,13 +103,15 @@ const x0=0` // making sure `const` has at least one entry
       switch (operation) {
         case 'read': {
           const key = binding(f)
-          let arr = new Array(slotCount)
-            .fill(null)
-            .map((x, i) => `(b[${i}].values["${key}"] ?? 0)`)
+          let arr = slotCount
+            ? new Array(slotCount)
+                .fill(null)
+                .map((_, i) => `(b[${i}].values["${key}"] ?? 0)`)
+            : ['0']
           if (initial[key] && initial[key] !== 0) {
             arr = [initial[key].toString(), ...arr]
           }
-          body += `,${name}=${arr.join('+')}`
+          body += `,${name}=${arr.join('+')}\n`
           break
         }
         case 'const':
@@ -107,22 +121,22 @@ const x0=0` // making sure `const` has at least one entry
         case 'mul':
           body += `,${name}=${operandNames.join(
             operation === 'add' ? '+' : '*'
-          )}`
+          )}\n`
           break
         case 'min':
         case 'max':
-          body += `,${name}=Math.${operation}(${operandNames})`
+          body += `,${name}=Math.${operation}(${operandNames})\n`
           break
         case 'threshold': {
           const [value, threshold, pass, fail] = operandNames
-          body += `,${name}=(${value}>=${threshold})?${pass}:${fail}`
+          body += `,${name}=(${value}>=${threshold})?${pass}:${fail}\n`
           break
         }
         case 'res':
-          body += `,${name}=res(${operandNames[0]})`
+          body += `,${name}=res(${operandNames[0]})\n`
           break
         case 'sum_frac':
-          body += `,${name}=${operandNames[0]}/(${operandNames[0]}+${operandNames[1]})`
+          body += `,${name}=${operandNames[0]}/(${operandNames[0]}+${operandNames[1]})\n`
           break
 
         default:

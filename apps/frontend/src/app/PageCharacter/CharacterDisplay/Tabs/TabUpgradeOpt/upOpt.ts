@@ -1,23 +1,23 @@
-import type { ArtifactSlotKey, RarityKey } from '@genshin-optimizer/consts'
+import type { ArtifactRarity, ArtifactSlotKey } from '@genshin-optimizer/consts'
 import {
   optimize,
   precompute,
   type OptNode,
 } from '../../../../Formula/optimization'
 
-import type { ICachedArtifact } from '../../../../Types/artifact'
 import { allSubstatKeys, artMaxLevel } from '@genshin-optimizer/consts'
+import type { MainStatKey, SubstatKey } from '@genshin-optimizer/dm'
+import {
+  getMainStatDisplayValue,
+  getRollsRemaining,
+  getSubstatValue,
+} from '@genshin-optimizer/gi-util'
+import { cartesian, range } from '@genshin-optimizer/util'
 import { ddx, zero_deriv } from '../../../../Formula/differentiate'
 import type { ArtifactBuildData, DynStat } from '../../../../Solver/common'
-import {
-  getSubstatValue,
-  getRollsRemaining,
-  getMainStatDisplayValue,
-} from '@genshin-optimizer/gi-util'
-import type { MainStatKey, SubstatKey } from '@genshin-optimizer/dm'
-import { gaussianPE, mvnPE_bad } from './mvncdf'
+import type { ICachedArtifact } from '../../../../Types/artifact'
 import { crawlUpgrades, quadrinomial } from './mathUtil'
-import { cartesian, range } from '@genshin-optimizer/util'
+import { gaussianPE, mvnPE_bad } from './mvncdf'
 
 /**
  * Artifact upgrade distribution math summary.
@@ -129,7 +129,7 @@ const fWeight: StrictDict<SubstatKey, number> = {
 }
 
 /* Gets "0.1x" 1 roll value for a stat w/ the given rarity. */
-function scale(key: SubstatKey, rarity: RarityKey = 5) {
+function scale(key: SubstatKey, rarity: ArtifactRarity = 5) {
   return toDecimal(key, getSubstatValue(key, rarity) / 10)
 }
 
@@ -186,14 +186,18 @@ export class UpOptCalculator {
     const evalOpt = optimize(toEval, {}, ({ path: [p] }) => p !== 'dyn')
 
     const evalFn = precompute(evalOpt, {}, (f) => f.path[1], 5)
-    thresholds[0] = evalFn(Object.values(build))[0] // dmg threshold is current objective value
+    thresholds[0] = evalFn(
+      Object.values(build) as ArtifactBuildData[] & { length: 5 }
+    )[0] // dmg threshold is current objective value
 
     this.skippableDerivatives = allSubstatKeys.map((sub) =>
       nodes.every((n) => zero_deriv(n, (f) => f.path[1], sub))
     )
     this.eval = (stats: DynStat, slot: ArtifactSlotKey) => {
       const b2 = { ...build, [slot]: { id: '', values: stats } }
-      const out = evalFn(Object.values(b2))
+      const out = evalFn(
+        Object.values(b2) as ArtifactBuildData[] & { length: 5 }
+      )
       return nodes.map((_, i) => {
         const ix = i * (1 + allSubstatKeys.length)
         return {

@@ -20,7 +20,7 @@ import type {
  * `OP` redeclaration here.
  */
 type OP = Exclude<TaggedOP, 'tag' | 'dtag' | 'vtag'>
-type NumTagFree = NumNode<OP>
+export type NumTagFree = NumNode<OP>
 type StrTagFree = StrNode<OP>
 type AnyTagFree = AnyNode<OP>
 

@@ -4,7 +4,6 @@ import { CardThemed } from '@genshin-optimizer/ui-common'
 import { CardContent, Stack, Typography } from '@mui/material'
 
 export function RelicCard({ relic }: { relic: IRelic }) {
-  console.log({ relic })
   return (
     <Stack>
       <CardThemed>

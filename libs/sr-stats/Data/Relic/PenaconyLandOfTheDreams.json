@@ -1,0 +1,14 @@
+{
+  "setEffects": [
+    {
+      "numRequired": 2,
+      "passiveStats": {
+        "enerRegen_": 0.05000000004656613
+      },
+      "otherStats": [
+        0.05000000004656613,
+        0.10000000009313226
+      ]
+    }
+  ]
+}

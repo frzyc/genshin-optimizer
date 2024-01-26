@@ -49,24 +49,26 @@ export default function TabOverview() {
 
   return (
     <Stack spacing={1}>
-      <Grid container spacing={1} sx={{ justifyContent: 'center' }}>
-        <Grid item xs={8} sm={5} md={4} lg={2.3}>
-          <CharacterProfileCard />
+      <Box>
+        <Grid container spacing={1} sx={{ justifyContent: 'center' }}>
+          <Grid item xs={8} sm={5} md={4} lg={2.3}>
+            <CharacterProfileCard />
+          </Grid>
+          <Grid
+            item
+            xs={12}
+            sm={7}
+            md={8}
+            lg={9.7}
+            sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}
+          >
+            <EquipmentRow onClick={onScroll} />
+            <CardLight sx={{ flexGrow: 1, p: 1 }}>
+              <StatDisplayComponent />
+            </CardLight>
+          </Grid>
         </Grid>
-        <Grid
-          item
-          xs={12}
-          sm={7}
-          md={8}
-          lg={9.7}
-          sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}
-        >
-          <EquipmentRow onClick={onScroll} />
-          <CardLight sx={{ flexGrow: 1, p: 1 }}>
-            <StatDisplayComponent />
-          </CardLight>
-        </Grid>
-      </Grid>
+      </Box>
       <Box ref={scrollRef}>
         <EquipmentSection />
       </Box>

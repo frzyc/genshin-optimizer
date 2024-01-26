@@ -1,13 +1,11 @@
 import type { AscensionKey } from '@genshin-optimizer/sr-consts'
-import { allRelicSlotKeys } from '@genshin-optimizer/sr-consts'
 import { convert, selfTag } from '@genshin-optimizer/sr-formula'
 import {
-  RelicCard,
+  BuildDisplay,
   useCalcContext,
   useCharacter,
   useCharacterContext,
   useCharacterReducer,
-  useEquippedRelics,
 } from '@genshin-optimizer/sr-ui'
 import { CardThemed } from '@genshin-optimizer/ui-common'
 import { ExpandMore } from '@mui/icons-material'
@@ -18,7 +16,6 @@ import {
   Box,
   CardContent,
   Container,
-  Grid,
   Stack,
   TextField,
   Typography,
@@ -28,7 +25,6 @@ export default function Character() {
   const { characterKey } = useCharacterContext()
   const character = useCharacter(characterKey)
   const charReducer = useCharacterReducer(characterKey)
-  const relics = useEquippedRelics(character?.equippedRelics)
 
   const { calc } = useCalcContext()
   const member0 = convert(selfTag, { member: 'member0', et: 'self' })
@@ -64,25 +60,7 @@ export default function Character() {
                 Relics
               </AccordionSummary>
               <AccordionDetails>
-                <Grid container columns={3} spacing={1}>
-                  {allRelicSlotKeys.map((slot) => {
-                    const relic = relics[slot]
-                    return (
-                      <Grid item key={slot} xs={1}>
-                        {relic ? (
-                          <RelicCard relic={relic} />
-                        ) : (
-                          <CardThemed sx={{ height: '100%' }}>
-                            <CardContent>
-                              <Typography>Slot: {slot}</Typography>
-                              <Typography>Empty</Typography>
-                            </CardContent>
-                          </CardThemed>
-                        )}
-                      </Grid>
-                    )
-                  })}
-                </Grid>
+                <BuildDisplay build={character?.equippedRelics} />
               </AccordionDetails>
             </Accordion>
             <Accordion>

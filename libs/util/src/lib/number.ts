@@ -3,6 +3,14 @@ export const clamp = (val: number, low: number, high: number) => {
   if (val > high) return high
   return val
 }
+export const clampLow = (val: number, low: number) => {
+  if (val < low) return low
+  return val
+}
+export const clampHigh = (val: number, high: number) => {
+  if (val > high) return high
+  return val
+}
 export const clamp01 = (val: number) => clamp(val, 0, 1)
 export const clampPercent = (val: number) => clamp(val, 0, 100)
 

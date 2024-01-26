@@ -11,6 +11,9 @@ export default defineConfig({
   server: {
     port: 4200,
     host: 'localhost',
+    fs: {
+      allow: ['../../'],
+    },
   },
 
   preview: {
@@ -37,11 +40,11 @@ export default defineConfig({
   },
 
   // Uncomment this if you are using workers.
-  // worker: {
-  //  plugins: [
-  //    viteTsConfigPaths({
-  //      root: '../../',
-  //    }),
-  //  ],
-  // },
+  worker: {
+    plugins: [
+      viteTsConfigPaths({
+        root: '../../',
+      }),
+    ],
+  },
 })

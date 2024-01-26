@@ -1,17 +1,20 @@
 import type {
+  ArtifactRarity,
   ArtifactSetKey,
   ArtifactSlotKey,
   MainStatKey,
-  RarityKey,
   SubstatKey,
 } from '@genshin-optimizer/consts'
-import { allRarityKeys, allSubstatKeys } from '@genshin-optimizer/consts'
+import {
+  allArtifactRarityKeys,
+  allSubstatKeys,
+} from '@genshin-optimizer/consts'
 import { getRollsRemaining, getSubstatValue } from '@genshin-optimizer/gi-util'
 import { objKeyMap } from '@genshin-optimizer/util'
 import type { ICachedArtifact } from '../../Types/artifact'
 import type { RollColorKey } from '../../Types/consts'
 
-const maxStar: RarityKey = 5
+const maxStar: ArtifactRarity = 5
 
 const showPercentKeys = ['hp_', 'def_', 'atk_'] as const
 export function artStatPercent(statkey: MainStatKey | SubstatKey) {
@@ -28,7 +31,7 @@ export default class Artifact {
   }
 
   static maxSubstatRollEfficiency = objKeyMap(
-    allRarityKeys,
+    allArtifactRarityKeys,
     (rarity) =>
       100 *
       Math.max(

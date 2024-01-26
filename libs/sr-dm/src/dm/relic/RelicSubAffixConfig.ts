@@ -1,4 +1,5 @@
 import { dumpFile } from '@genshin-optimizer/pipeline'
+import type { RelicRarityKey } from '@genshin-optimizer/sr-consts'
 import { PROJROOT_PATH } from '../../consts'
 import type { RelicStatSubDMKey } from '../../mapping'
 import { statKeyMap } from '../../mapping'
@@ -16,7 +17,7 @@ export type RelicSubAffixConfig = {
 
 export const relicSubAffixConfig = JSON.parse(
   readDMJSON('ExcelOutput/RelicSubAffixConfig.json')
-) as Record<'2' | '3' | '4' | '5', Record<string, RelicSubAffixConfig>>
+) as Record<RelicRarityKey, Record<string, RelicSubAffixConfig>>
 
 const relicSubAffixConfigFlat = Object.values(relicSubAffixConfig).flatMap(
   (o) => Object.values(o)

@@ -74,7 +74,7 @@ export default function useTeamData(
   return data
 }
 
-function getTeamDataCalc(
+export function getTeamDataCalc(
   database: ArtCharDatabase,
   characterKey: CharacterKey | '',
   mainStatAssumptionLevel = 0,

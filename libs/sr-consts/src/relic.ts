@@ -1,4 +1,4 @@
-export const allRelicPlanarSlotKeys = ['rope', 'sphere'] as const
+export const allRelicPlanarSlotKeys = ['sphere', 'rope'] as const
 export type RelicPlanarSlotKey = (typeof allRelicSlotKeys)[number]
 
 export const allRelicCavernSlotKeys = ['head', 'hand', 'body', 'feet'] as const
@@ -19,8 +19,12 @@ export const allRelicCavernSetKeys = [
   'GuardOfWutheringSnow',
   'HunterOfGlacialForest',
   'KnightOfPurityPalace',
+  'LongevousDisciple',
+  'MessengerTraversingHackerspace',
   'MusketeerOfWildWheat',
   'PasserbyOfWanderingCloud',
+  'PrisonerInDeepConfinement',
+  'TheAshblazingGrandDuke',
   'ThiefOfShootingMeteor',
   'WastelanderOfBanditryDesert',
 ] as const
@@ -28,10 +32,14 @@ export type RelicCavernSetKey = (typeof allRelicCavernSetKeys)[number]
 
 export const allRelicPlanarSetKeys = [
   'BelobogOfTheArchitects',
+  'BrokenKeel',
   'CelestialDifferentiator',
+  'FirmamentFrontlineGlamoth',
   'FleetOfTheAgeless',
   'InertSalsotto',
   'PanGalacticCommercialEnterprise',
+  'PenaconyLandOfTheDreams',
+  'RutilantArena',
   'SpaceSealingStation',
   'SprightlyVonwacq',
   'TaliaKingdomOfBanditry',

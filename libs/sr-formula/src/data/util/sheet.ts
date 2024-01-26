@@ -1,8 +1,7 @@
 import { prod, type NumNode, type StrNode } from '@genshin-optimizer/pando'
-import type { ElementalTypeKey } from '@genshin-optimizer/sr-consts'
-import type { Read } from '.'
+import type { StatKey } from '@genshin-optimizer/sr-consts'
+import type { Read, Tag } from '.'
 import {
-  TypeKeyToListingType,
   percent,
   reader,
   selfBuff,
@@ -11,12 +10,14 @@ import {
   type TagMapNodeEntries,
   type TagMapNodeEntry,
 } from '.'
-import type { DamageType, Source } from './listing'
+import type { ElementalType, Source } from './listing'
 
 export type FormulaArg = {
   team?: boolean // true if applies to every member, and false (default) if applies only to self
   cond?: string | StrNode
 }
+
+export type DmgTag = Pick<Tag, 'damageType1' | 'damageType2' | 'elementalType'>
 
 export function register(
   src: Source,
@@ -53,7 +54,7 @@ export function listingItem(t: Read, cond?: string | StrNode) {
 /**
  * Creates an array of TagMapNodeEntries representing a damage instance split by their multipliers, and registers their formulas
  * @param name Base name to be used as the key
- * @param elementalTypeKey Elemental type of the damage
+ * @param dmgTag Tag object containing damageType1, damageType2 and elementalType
  * @param base Node representing the full damage value
  * @param splits Array of decimals that should add up to 1. Each entry represents the percentage of damage that hit deals, for multi-hit moves. We get splits from SRSim devs, see the array at the top of https://github.com/simimpact/srsim/blob/main/internal/character/march7th/ult.go for example.
  * @param arg `{ team: true }` to use `teamBuff` instead of `selfBuff`, and also show the formula in teammates' listing.
@@ -64,21 +65,19 @@ export function listingItem(t: Read, cond?: string | StrNode) {
  */
 export function customDmg(
   name: string,
-  elementalTypeKey: ElementalTypeKey,
-  damageType: DamageType,
+  dmgTag: DmgTag,
   base: NumNode,
   splits: number[] = [1],
   { team, cond = 'unique' }: FormulaArg = {},
   ...extra: TagMapNodeEntries
 ): TagMapNodeEntries[] {
   const buff = team ? teamBuff : selfBuff
-  const elementalType = TypeKeyToListingType[elementalTypeKey]
   return splits.map((split, index) =>
     registerFormula(
       `${name}_${index}`,
       team,
       'dmg',
-      tag(cond, { damageType, elementalType }),
+      tag(cond, dmgTag),
       buff.formula.base.add(prod(base, percent(split))),
       ...extra
     )
@@ -137,4 +136,25 @@ export function customHeal(
     buff.formula.base.add(base),
     ...extra
   )
+}
+
+export function getStatFromStatKey(
+  buff: typeof selfBuff.premod,
+  statKey: StatKey
+) {
+  switch (statKey) {
+    case 'physical_dmg_':
+    case 'fire_dmg_':
+    case 'ice_dmg_':
+    case 'wind_dmg_':
+    case 'lightning_dmg_':
+    case 'quantum_dmg_':
+    case 'imaginary_dmg_':
+      // substring will fetch 'physical' from 'physical_dmg_', for example
+      return buff.dmg_[
+        statKey.substring(0, statKey.indexOf('_')) as ElementalType
+      ]
+    default:
+      return buff[statKey]
+  }
 }

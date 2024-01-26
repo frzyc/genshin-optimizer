@@ -1,5 +1,4 @@
 import { dumpFile, nameToKey } from '@genshin-optimizer/pipeline'
-import type { ElementalTypeKey } from '@genshin-optimizer/sr-consts'
 import { objFilterKeys } from '@genshin-optimizer/util'
 import { TextMapEN } from '../../TextMapUtil'
 import { PROJROOT_PATH } from '../../consts'
@@ -16,7 +15,7 @@ export type AvatarConfig = {
   AvatarVOTag: string
   Rarity: AvatarRarity
   JsonPath: string
-  DamageType: ElementalTypeKey
+  DamageType: AvatarDamageType
   SPNeed: Value
   ExpGroup: number
   MaxPromotion: number
@@ -59,6 +58,15 @@ export type AIPath = 'Config/ConfigAI/Avatar_ComplexSkilll_AutoFight_AI.json'
 export type AvatarRarity =
   | 'CombatPowerAvatarRarityType4'
   | 'CombatPowerAvatarRarityType5'
+
+export type AvatarDamageType =
+  | 'Physical'
+  | 'Quantum'
+  | 'Thunder'
+  | 'Ice'
+  | 'Wind'
+  | 'Fire'
+  | 'Imaginary'
 
 const avatarConfigSrc = JSON.parse(
   readDMJSON('ExcelOutput/AvatarConfig.json')

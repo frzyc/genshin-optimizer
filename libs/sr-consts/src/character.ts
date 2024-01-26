@@ -2,31 +2,46 @@ export const allGenderKeys = ['F', 'M'] as const
 export type GenderKey = (typeof allGenderKeys)[number]
 
 export const nonTrailblazerCharacterKeys = [
+  'Argenti',
   'Arlan',
   'Asta',
   'Bailu',
+  'Blade',
   'Bronya',
   'Clara',
   'DanHeng',
+  'DanHengImbibitorLunae',
+  'DrRatio',
+  'FuXuan',
   'Gepard',
+  'Guinaifen',
+  'Hanya',
   'Herta',
   'Himeko',
   'Hook',
+  'Huohuo',
   'JingYuan',
+  'Jingliu',
   'Kafka',
+  'Luka',
   'Luocha',
+  'Lynx',
   'March7th',
   'Natasha',
   'Pela',
   'Qingque',
+  'RuanMei',
   'Sampo',
   'Seele',
   'Serval',
   'SilverWolf',
   'Sushang',
   'Tingyun',
+  'TopazAndNumby',
   'Welt',
+  'Xueyi',
   'Yanqing',
+  'Yukong',
 ] as const
 export type NonTrailblazerCharacterKey =
   (typeof nonTrailblazerCharacterKeys)[number]
@@ -96,7 +111,8 @@ export const allAbilityKeys = [
   'skill',
   'ult',
   'talent',
-  'technique',
+  'technique', // MAZE
+  'overworld', // MAZE_NORMAL
 ] as const
 export type AbilityKey = (typeof allAbilityKeys)[number]
 
