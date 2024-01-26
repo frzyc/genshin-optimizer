@@ -12,9 +12,6 @@ declare global {
     entries<K extends string | number, V>(
       o: Partial<Record<K, V>> | Record<string, never>
     ): [`${K}`, V][]
-    fromEntries<K extends string | number, T = any>(
-      entries: Iterable<readonly [K, T]>
-    ): Record<K, T>
   }
 }
 

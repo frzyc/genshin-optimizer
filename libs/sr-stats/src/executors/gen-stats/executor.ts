@@ -2,13 +2,13 @@ import { dumpFile } from '@genshin-optimizer/pipeline'
 import { workspaceRoot } from '@nx/devkit'
 import type { GenStatsExecutorSchema } from './schema'
 import type {
-  CharacterDataGen,
+  CharacterDatum,
   SkillTreeNodeBonusStat,
 } from './src/characterData'
 import CharacterData from './src/characterData'
-import type { LightConeDataGen } from './src/lightConeData'
+import type { LightConeDatum } from './src/lightConeData'
 import LightConeData from './src/lightConeData'
-import type { RelicSetDataGen } from './src/relicData'
+import type { RelicSetDatum } from './src/relicData'
 import { RelicData } from './src/relicData'
 
 const proj_path = `${workspaceRoot}/libs/sr-stats`
@@ -18,9 +18,9 @@ const lightConeDataDump = LightConeData()
 const relicDataDump = RelicData()
 
 export type {
-  CharacterDataGen,
-  LightConeDataGen,
-  RelicSetDataGen,
+  CharacterDatum,
+  LightConeDatum,
+  RelicSetDatum,
   SkillTreeNodeBonusStat,
 }
 

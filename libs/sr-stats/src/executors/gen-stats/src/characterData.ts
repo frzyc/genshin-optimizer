@@ -59,11 +59,9 @@ type Rank = {
   params: number[]
 }
 type SkillTypeAddLevel = Partial<
-  Partial<
-    Record<Exclude<AbilityKey, 'technique' | 'overworld'>, number | undefined>
-  >
+  Record<Exclude<AbilityKey, 'technique' | 'overworld'>, number | undefined>
 >
-export type CharacterDataGen = {
+export type CharacterDatum = {
   rarity: RarityKey
   damageType: ElementalTypeKey
   path: PathKey
@@ -83,11 +81,8 @@ function extrapolateFloat(val: number): number {
   return exf(val, { forced: true })
 }
 
-export type CharacterDatas = Record<
-  NonTrailblazerCharacterKey,
-  CharacterDataGen
->
-export default function characterData(): CharacterDatas {
+export type CharacterData = Record<NonTrailblazerCharacterKey, CharacterDatum>
+export default function characterData(): CharacterData {
   const data = Object.fromEntries(
     Object.entries(avatarConfig).map(
       ([avatarid, { Rarity, DamageType, AvatarBaseType }]) => {
@@ -176,7 +171,7 @@ export default function characterData(): CharacterDatas {
           }
         })
 
-        const result: CharacterDataGen = {
+        const result: CharacterDatum = {
           rarity: avatarRarityMap[Rarity] as RarityKey,
           damageType: avatarDamageTypeMap[DamageType],
           path: avatarBaseTypeMap[AvatarBaseType],
@@ -189,5 +184,5 @@ export default function characterData(): CharacterDatas {
       }
     )
   )
-  return data
+  return data as CharacterData
 }

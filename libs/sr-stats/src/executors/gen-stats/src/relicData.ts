@@ -39,17 +39,17 @@ type SetEffect = {
   otherStats: number[]
 }
 
-type RelicStatDataGen = {
+type RelicStatData = {
   main: MainStatMap
   sub: SubStatMap
 }
-export type RelicSetDataGen = {
+export type RelicSetDatum = {
   setEffects: SetEffect[]
 }
-type RelicSetDatas = Record<RelicSetKey, RelicSetDataGen>
-type RelicDataGen = RelicStatDataGen & RelicSetDatas
+type RelicSetData = Record<RelicSetKey, RelicSetDatum>
+type RelicData = RelicStatData & RelicSetData
 
-export function RelicData(): RelicDataGen {
+export function RelicData(): RelicData {
   const sub = objMap(relicSubAffixConfig, (subsObj) =>
     Object.fromEntries(
       Object.values(subsObj).map(
@@ -124,5 +124,5 @@ export function RelicData(): RelicDataGen {
     sub,
     main,
     ...setEffects,
-  }
+  } as RelicData
 }
