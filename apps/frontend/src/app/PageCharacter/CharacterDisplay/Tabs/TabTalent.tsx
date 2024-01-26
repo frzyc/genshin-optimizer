@@ -1,4 +1,4 @@
-import { maxConstellationCount } from '@genshin-optimizer/consts'
+import { maxConstellationCount, talentLimits } from '@genshin-optimizer/consts'
 import {
   Box,
   CardActionArea,
@@ -201,7 +201,6 @@ function ReactionDisplay() {
   )
 }
 
-const talentLimits = [1, 1, 2, 4, 6, 8, 10]
 type SkillDisplayCardProps = {
   talentKey: TalentSheetElementKey
   subtitle: string
