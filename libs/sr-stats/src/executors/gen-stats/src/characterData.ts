@@ -59,7 +59,9 @@ type Rank = {
   params: number[]
 }
 type SkillTypeAddLevel = Partial<
-  Record<Exclude<AbilityKey, 'technique' | 'overworld'>, number>
+  Partial<
+    Record<Exclude<AbilityKey, 'technique' | 'overworld'>, number | undefined>
+  >
 >
 export type CharacterDataGen = {
   rarity: RarityKey
