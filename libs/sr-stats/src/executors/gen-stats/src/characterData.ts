@@ -2,12 +2,13 @@ import {
   extrapolateFloat as exf,
   roundMantissa,
 } from '@genshin-optimizer/pipeline'
+import type { CharacterDataKey } from '@genshin-optimizer/sr-consts'
 import {
+  allCharacterDataKeys,
   allEidolonKeys,
   type AbilityKey,
   type EidolonKey,
   type ElementalTypeKey,
-  type NonTrailblazerCharacterKey,
   type PathKey,
   type RarityKey,
   type StatKey,
@@ -26,7 +27,13 @@ import {
   characterIdMap,
   statKeyMap,
 } from '@genshin-optimizer/sr-dm'
-import { objKeyMap, transposeArray } from '@genshin-optimizer/util'
+import {
+  extraneousObjKeys,
+  missingObjKeys,
+  objKeyMap,
+  transposeArray,
+  verifyObjKeys,
+} from '@genshin-optimizer/util'
 
 type Promotion = {
   atk: Scaling
@@ -59,7 +66,7 @@ type Rank = {
   params: number[]
 }
 type SkillTypeAddLevel = Partial<
-  Record<Exclude<AbilityKey, 'technique' | 'overworld'>, number | undefined>
+  Record<Exclude<AbilityKey, 'technique' | 'overworld'>, number>
 >
 export type CharacterDatum = {
   rarity: RarityKey
@@ -81,7 +88,7 @@ function extrapolateFloat(val: number): number {
   return exf(val, { forced: true })
 }
 
-export type CharacterData = Record<NonTrailblazerCharacterKey, CharacterDatum>
+export type CharacterData = Record<CharacterDataKey, CharacterDatum>
 export default function characterData(): CharacterData {
   const data = Object.fromEntries(
     Object.entries(avatarConfig).map(
@@ -184,5 +191,14 @@ export default function characterData(): CharacterData {
       }
     )
   )
-  return data as CharacterData
+
+  if (!verifyObjKeys(data, allCharacterDataKeys))
+    throw new Error(
+      `data did not contain all character keys. missing: ${missingObjKeys(
+        data,
+        allCharacterDataKeys
+      )}. extraneous: ${extraneousObjKeys(data, allCharacterDataKeys)}`
+    )
+
+  return data
 }

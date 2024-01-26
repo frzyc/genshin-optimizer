@@ -2,6 +2,7 @@ import { extrapolateFloat } from '@genshin-optimizer/pipeline'
 import type { StatKey } from '@genshin-optimizer/sr-consts'
 import {
   allElementalDamageKeys,
+  allLightConeKeys,
   type LightConeKey,
   type PathKey,
   type RarityKey,
@@ -15,7 +16,12 @@ import {
   lightConeRarityMap,
   statKeyMap,
 } from '@genshin-optimizer/sr-dm'
-import { range } from '@genshin-optimizer/util'
+import {
+  extraneousObjKeys,
+  missingObjKeys,
+  range,
+  verifyObjKeys,
+} from '@genshin-optimizer/util'
 
 type Promotion = {
   atk: Scaling
@@ -40,7 +46,7 @@ export type LightConeDatum = {
 
 export type LightConeData = Record<LightConeKey, LightConeDatum>
 export default function LightConeData(): LightConeData {
-  return Object.fromEntries(
+  const data = Object.fromEntries(
     Object.entries(equipmentConfig).map(
       ([lightConeId, { Rarity, AvatarBaseType }]) => {
         const flatConfig = equipmentSkillConfig_bySuperimpose[lightConeId]
@@ -125,5 +131,15 @@ export default function LightConeData(): LightConeData {
         return [lightConeKey, result] as const
       }
     )
-  ) as LightConeData
+  )
+
+  if (!verifyObjKeys(data, allLightConeKeys))
+    throw new Error(
+      `data did not contain all light cone keys. missing: ${missingObjKeys(
+        data,
+        allLightConeKeys
+      )}. extraneous: ${extraneousObjKeys(data, allLightConeKeys)}`
+    )
+
+  return data
 }

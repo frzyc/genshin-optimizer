@@ -142,3 +142,28 @@ export function deepFreeze<T>(obj: T, layers = 5): T {
     Object.values(Object.freeze(obj)).forEach((o) => deepFreeze(o, layers--))
   return obj
 }
+
+export function verifyObjKeys<K extends string, V>(
+  obj: Partial<Record<K, V>>,
+  keys: readonly K[]
+): obj is Record<K, V> {
+  const anyExtraKeys = extraneousObjKeys(obj, keys).length !== 0
+  const anyMissingKeys = missingObjKeys(obj, keys).length !== 0
+  return !(anyExtraKeys || anyMissingKeys)
+}
+
+export function extraneousObjKeys<K extends string, V>(
+  obj: Partial<Record<K, V>>,
+  keys: readonly K[]
+) {
+  return Object.keys(obj).filter(
+    (k) => !(keys as readonly string[]).includes(k)
+  )
+}
+
+export function missingObjKeys<K extends string, V>(
+  obj: Partial<Record<K, V>>,
+  keys: readonly K[]
+) {
+  return keys.filter((k) => !(Object.keys(obj) as string[]).includes(k))
+}

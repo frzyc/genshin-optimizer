@@ -1,6 +1,8 @@
 import {
   allElementalDamageKeys,
   allRelicRarityKeys,
+  allRelicSetKeys,
+  allRelicSubStatKeys,
   type RelicMainStatKey,
   type RelicRarityKey,
   type RelicSetKey,
@@ -14,7 +16,12 @@ import {
   relicSubAffixConfig,
   statKeyMap,
 } from '@genshin-optimizer/sr-dm'
-import { objMap } from '@genshin-optimizer/util'
+import {
+  extraneousObjKeys,
+  missingObjKeys,
+  objMap,
+  verifyObjKeys,
+} from '@genshin-optimizer/util'
 
 type SubStat = {
   base: number //BaseValue
@@ -96,7 +103,7 @@ export function RelicData(): RelicData {
     ])
   )
 
-  const setEffects = Object.fromEntries(
+  const relicSetData = Object.fromEntries(
     Object.entries(relicSetSkillConfig_bySet).map(([relicId, configs]) => [
       relicSetIdMap[relicId],
       {
@@ -120,9 +127,70 @@ export function RelicData(): RelicData {
     ])
   )
 
-  return {
+  if (!verifyObjKeys(relicSetData, allRelicSetKeys)) {
+    throw new Error(
+      `relicSetData did not contain all relic set keys. missing: ${missingObjKeys(
+        relicSetData,
+        allRelicSetKeys
+      )}. extraneous: ${extraneousObjKeys(relicSetData, allRelicSetKeys)}`
+    )
+  }
+
+  const rarityKeys = allRelicRarityKeys.map((r) => r.toFixed())
+  if (!verifyMainShape(main)) {
+    throw new Error(
+      `main did not contain all relic rarity keys. missing: ${missingObjKeys(
+        main,
+        rarityKeys
+      )}. extraneous: ${extraneousObjKeys(main, rarityKeys)}`
+    )
+  }
+
+  if (!verifySubShape(sub)) {
+    throw new Error() // Already threw an error inside the function
+  }
+
+  const data = {
     sub,
     main,
-    ...setEffects,
-  } as RelicData
+    ...relicSetData,
+  }
+
+  return data
+}
+
+function verifyMainShape(main: Partial<MainStatMap>): main is MainStatMap {
+  return verifyObjKeys(
+    main,
+    allRelicRarityKeys.map((r) => r.toFixed())
+  )
+}
+
+function verifySubShape(
+  sub: Partial<
+    Record<RelicRarityKey, Partial<Record<RelicSubStatKey, SubStat>>>
+  >
+): sub is SubStatMap {
+  if (
+    !Object.values(sub).every((raritySubs) =>
+      verifyObjKeys(raritySubs, allRelicSubStatKeys)
+    )
+  )
+    throw new Error(
+      `sub did not contain all relic sub stat keys for all rarities. ${JSON.stringify(
+        sub
+      )}`
+    )
+
+  const rarityKeys = allRelicRarityKeys.map((r) => r.toFixed())
+  if (!verifyObjKeys(sub, rarityKeys)) {
+    throw new Error(
+      `sub did not contain all relic rarity keys. missing: ${missingObjKeys(
+        sub,
+        rarityKeys
+      )}. extraneous: ${extraneousObjKeys(sub, rarityKeys)}`
+    )
+  }
+
+  return true
 }

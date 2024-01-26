@@ -4,6 +4,7 @@ import {
   layeredAssignment,
   objMultiplication,
   objPathValue,
+  verifyObjKeys,
 } from './object'
 
 test('crawlObject', () => {
@@ -50,4 +51,27 @@ test('objPathValue ', () => {
   expect(objPathValue(obj, ['a', 'b', 'c', 'd'])).toBe(undefined)
   expect(objPathValue(obj, ['a', 'b1'])).toEqual({})
   expect(objPathValue(obj, ['a', 'b1', 'c'])).toBe(undefined)
+})
+
+describe('verifyObjKeys ', () => {
+  test('should fail with extra keys', () => {
+    const obj = { a: '1', b: '2' }
+    const keys = ['a']
+    expect(verifyObjKeys(obj, keys)).toBeFalsy()
+  })
+  test('should fail with missing keys', () => {
+    const obj = { a: '1' }
+    const keys = ['a', 'b']
+    expect(verifyObjKeys(obj, keys)).toBeFalsy()
+  })
+  test('should fail with both missing and extra keys', () => {
+    const obj = { a: '1', c: '2' }
+    const keys = ['a', 'b']
+    expect(verifyObjKeys(obj, keys)).toBeFalsy()
+  })
+  test('should succeed', () => {
+    const obj = { a: '1', c: '2' }
+    const keys = ['a', 'c']
+    expect(verifyObjKeys(obj, keys)).toBeTruthy()
+  })
 })
