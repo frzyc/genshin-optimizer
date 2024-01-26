@@ -17,6 +17,7 @@ import {
   charData,
   enemyDebuff,
   lightConeData,
+  members,
   relicsData,
   selfBuff,
   srCalculatorWithEntries,
@@ -59,10 +60,10 @@ export function CalcProvider({ children }: { children: ReactNode }) {
         mainChar.character &&
         srCalculatorWithEntries([
           ...teamData([
-            'member0',
+            members[0],
             ...mainChar.character.team
               .map((key, index) =>
-                key === '' ? undefined : (`member${index + 1}` as Member)
+                key === '' ? undefined : members[index + 1]
               )
               .filter((m): m is Member => !!m),
           ]),
