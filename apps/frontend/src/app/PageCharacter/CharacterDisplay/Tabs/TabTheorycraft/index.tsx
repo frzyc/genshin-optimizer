@@ -44,7 +44,9 @@ import { DataContext } from '../../../../Context/DataContext'
 import { DatabaseContext } from '../../../../Database/Database'
 import { initCharTC } from '../../../../Database/DataManagers/CharacterTCData'
 import useDBMeta from '../../../../ReactHooks/useDBMeta'
-import useTeamData from '../../../../ReactHooks/useTeamData'
+import useTeamData, {
+  getTeamDataCalc,
+} from '../../../../ReactHooks/useTeamData'
 import type { ICachedArtifact } from '../../../../Types/artifact'
 import type { ICharTC } from '../../../../Types/character'
 import type { ICachedWeapon } from '../../../../Types/weapon'
@@ -249,7 +251,7 @@ export default function TabTheorycraft() {
     [charTC]
   )
 
-  const { nodes, scalesWith } = useMemo(() => {
+  const { scalesWith } = useMemo(() => {
     const { nodes } = optimizeTcGetNodes(teamData, characterKey, charTC)
     const scalesWith = nodes ? getScalesWith(nodes) : new Set<SubstatKey>()
     return {
@@ -259,6 +261,19 @@ export default function TabTheorycraft() {
   }, [teamData, characterKey, charTC])
 
   const optimizeSubstats = (apply: boolean) => {
+    /**
+     * Recalculating teamdata and nodes because the ones in the UI are using deferred,
+     * and can cause issue when people click buttons too fast or loiter in inputs
+     */
+    const tempTeamData = getTeamDataCalc(
+      database,
+      characterKey,
+      0,
+      gender,
+      getArtifactData(charTC),
+      getWeaponData(charTC)
+    )
+    const { nodes } = optimizeTcGetNodes(tempTeamData, characterKey, charTC)
     workerRef.current.postMessage({ charTC, nodes })
     setStatus((s) => ({
       ...s,

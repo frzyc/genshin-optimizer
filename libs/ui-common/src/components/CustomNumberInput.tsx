@@ -99,7 +99,7 @@ export function CustomNumberInput({
       type="number"
       inputProps={{ step: float ? 0.1 : 1, ...inputProps }}
       onChange={onInputChange}
-      onBlur={onValidate}
+      onBlurCapture={onValidate}
       disabled={disabled}
       onKeyDown={onKeyDown}
       {...restProps}
