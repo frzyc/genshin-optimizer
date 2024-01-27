@@ -28,8 +28,6 @@ import {
   statKeyMap,
 } from '@genshin-optimizer/sr-dm'
 import {
-  extraneousObjKeys,
-  missingObjKeys,
   objKeyMap,
   transposeArray,
   verifyObjKeys,
@@ -192,13 +190,7 @@ export default function characterData(): CharacterData {
     )
   )
 
-  if (!verifyObjKeys(data, allCharacterDataKeys))
-    throw new Error(
-      `data did not contain all character keys. missing: ${missingObjKeys(
-        data,
-        allCharacterDataKeys
-      )}. extraneous: ${extraneousObjKeys(data, allCharacterDataKeys)}`
-    )
+  verifyObjKeys(data, allCharacterDataKeys)
 
   return data
 }

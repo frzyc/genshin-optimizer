@@ -16,12 +16,7 @@ import {
   lightConeRarityMap,
   statKeyMap,
 } from '@genshin-optimizer/sr-dm'
-import {
-  extraneousObjKeys,
-  missingObjKeys,
-  range,
-  verifyObjKeys,
-} from '@genshin-optimizer/util'
+import { range, verifyObjKeys } from '@genshin-optimizer/util'
 
 type Promotion = {
   atk: Scaling
@@ -133,13 +128,7 @@ export default function LightConeData(): LightConeData {
     )
   )
 
-  if (!verifyObjKeys(data, allLightConeKeys))
-    throw new Error(
-      `data did not contain all light cone keys. missing: ${missingObjKeys(
-        data,
-        allLightConeKeys
-      )}. extraneous: ${extraneousObjKeys(data, allLightConeKeys)}`
-    )
+  verifyObjKeys(data, allLightConeKeys)
 
   return data
 }
