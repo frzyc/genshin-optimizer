@@ -17,9 +17,9 @@ import {
 } from '../../../Formula/utils'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
+import type { ICharacterSheet } from '../ICharacterSheet.d'
 import { charTemplates } from '../charTemplates'
 import { customDmgNode, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
-import type { ICharacterSheet } from '../ICharacterSheet.d'
 
 const key: CharacterKey = 'RaidenShogun'
 const data_gen = allStats.char.data[key]
@@ -178,14 +178,20 @@ function burstResolve(mvArr: number[], initial = false) {
   )
 }
 
-const a4EnergyRestore_ = greaterEq(
-  input.asc,
-  4,
-  prod(
-    sum(input.total.enerRech_, percent(-dm.passive2.er)),
-    percent(dm.passive2.energyGen),
-    100
-  )
+const a4EnergyRestore_ = infoMut(
+  greaterEq(
+    input.asc,
+    4,
+    prod(
+      sum(input.total.enerRech_, percent(-dm.passive2.er)),
+      percent(dm.passive2.energyGen),
+      100
+    )
+  ),
+  {
+    name: ct.ch('a4.enerRest'),
+    unit: '%',
+  }
 )
 
 const [condC4Path, condC4] = cond(key, 'c4')
@@ -245,14 +251,7 @@ const dmgFormulas = {
         100
       )
     ),
-    energyRestore: greaterEq(
-      input.asc,
-      4,
-      infoMut(a4EnergyRestore_, {
-        name: ct.ch('a4.enerRest'),
-        unit: '%',
-      })
-    ),
+    energyRestore: a4EnergyRestore_,
   },
 }
 const nodeC3 = greaterEq(input.constellation, 3, 3)
