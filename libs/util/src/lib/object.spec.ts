@@ -1,4 +1,5 @@
 import {
+  ObjNotMatchError,
   crawlObject,
   getObjectKeysRecursive,
   layeredAssignment,
@@ -57,21 +58,48 @@ describe('verifyObjKeys ', () => {
   test('should fail with extra keys', () => {
     const obj = { a: '1', b: '2' }
     const keys = ['a']
-    expect(verifyObjKeys(obj, keys)).toBeFalsy()
+    expect.assertions(3)
+    try {
+      verifyObjKeys(obj, keys)
+    } catch (err) {
+      expect(err instanceof ObjNotMatchError).toBeTruthy()
+      if (err instanceof ObjNotMatchError) {
+        expect(err.extraKeys.join()).toBe('b')
+        expect(err.missingKeys.join()).toBe('')
+      }
+    }
   })
   test('should fail with missing keys', () => {
     const obj = { a: '1' }
     const keys = ['a', 'b']
-    expect(verifyObjKeys(obj, keys)).toBeFalsy()
+    expect.assertions(3)
+    try {
+      verifyObjKeys(obj, keys)
+    } catch (err) {
+      expect(err instanceof ObjNotMatchError).toBeTruthy()
+      if (err instanceof ObjNotMatchError) {
+        expect(err.extraKeys.join()).toBe('')
+        expect(err.missingKeys.join()).toBe('b')
+      }
+    }
   })
   test('should fail with both missing and extra keys', () => {
     const obj = { a: '1', c: '2' }
     const keys = ['a', 'b']
-    expect(verifyObjKeys(obj, keys)).toBeFalsy()
+    expect.assertions(3)
+    try {
+      verifyObjKeys(obj, keys)
+    } catch (err) {
+      expect(err instanceof ObjNotMatchError).toBeTruthy()
+      if (err instanceof ObjNotMatchError) {
+        expect(err.extraKeys.join()).toBe('c')
+        expect(err.missingKeys.join()).toBe('b')
+      }
+    }
   })
   test('should succeed', () => {
     const obj = { a: '1', c: '2' }
     const keys = ['a', 'c']
-    expect(verifyObjKeys(obj, keys)).toBeTruthy()
+    expect(() => verifyObjKeys(obj, keys)).not.toThrowError()
   })
 })
