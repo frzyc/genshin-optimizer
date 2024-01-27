@@ -18,7 +18,8 @@
   "hitmode": {
     "hit": "Non-CRIT Hit DMG",
     "avgHit": "Avg. DMG",
-    "critHit": "CRIT Hit DMG"
+    "critHit": "CRIT Hit DMG",
+    "global": "Follow Global"
   },
   "noReaction": "No Reactions",
   "tabEquip": {
@@ -45,14 +46,55 @@
     "info": "You can use these fields to add buffs/debuffs not directly supported in GO, such as food buffs, Abyss cards, or Superconduct. Please refer to the <1>Genshin Impact Wiki</1> for specific values."
   },
   "tabTheorycraft": {
-    "substatType": {
-      "min": "Use minimum substat rolls",
-      "max": "Use maximum substat rolls",
-      "mid": "Use median substat rolls"
+    "distribute": "Distribute",
+    "compareToggle": {
+      "equipped": "Compare vs. equipped",
+      "tc": "Show TC stats"
     },
-    "maxTotalRolls": "A \"valid\" build can only have a maximum of 45 rolls.",
+    "resetDialog": {
+      "title": "Reset TC build configuration?",
+      "content": "This will clear the currently configured TC build you have."
+    },
+    "copyDialog": {
+      "copyBtn": "Copy from equipped",
+      "title": "Copy data from equipped artifacts and weapon?",
+      "content": "This will clear the currently configured TC build you have, with data from the currently equipped build."
+    },
+    "kqmsDialog": {
+      "kqmsBtn": "Use KQMS",
+      "title": "Use KQMS?",
+      "content": "This will replace your current <strong>substat setup</strong> with one that adheres to the <4>KQM Standards</4>."
+    },
+    "gcsimDialog": {
+      "title": "gcsim Export",
+      "content": "Import this build into <2>gcsim</2> by copying the code below.",
+      "copied": "Copied gcsim config to clipboard."
+    },
+    "all": {
+      "rolls": "All Rolls",
+      "max": "All Max"
+    },
+    "substat": {
+      "max": "Max"
+    },
+    "substatType": {
+      "min": "Min substat roll",
+      "max": "Max substat roll",
+      "mid": "Median substat roll"
+    },
+    "maxTotalRolls": "The current build can only have a maximum of <strong>{{value}}</strong> rolls.",
     "maxRolls": "This substat can have a maximum of 30 rolls.",
-    "maxRollsMain": "Because at least one main stat has the same attribute, this substat can have a maximum of {{value}} rolls."
+    "maxRollsMain": "Because at least one main stat has the same attribute, this substat can have a maximum of {{value}} rolls.",
+    "feasibilityAlert": "The current substat distribution requires at least <strong>{{minSubLines}}</strong> lines of substats. Need to assign <strong>{{minOtherRolls}}</strong> rolls to other substats for this solution to be feasible.",
+    "optAlert": {
+      "scalesWith": "The selected Optimization target and constraints scales with: ",
+      "distribute": ". The solver will only distribute stats to these substats.",
+      "feasibilty": "There may be additional leftover substats that should be distributed to non-scaling stats to ensure the solution is feasible."
+    },
+    "constraint": {
+      "title": "Stat Constraints",
+      "add": "Add a Stat Constraint"
+    }
   },
   "tabTeambuff": {
     "team_reso": "Team Resonance",
