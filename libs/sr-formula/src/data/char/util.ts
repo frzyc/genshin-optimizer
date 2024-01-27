@@ -12,7 +12,7 @@ import {
   type StatBoostKey,
 } from '@genshin-optimizer/sr-consts'
 import type {
-  CharacterDataGen,
+  CharacterDatum,
   SkillTreeNodeBonusStat,
 } from '@genshin-optimizer/sr-stats'
 import { objKeyMap } from '@genshin-optimizer/util'
@@ -32,7 +32,7 @@ import {
 
 type AbilityScalingType = Exclude<AbilityKey, 'technique' | 'overworld'>
 
-export function getBaseTag(data_gen: CharacterDataGen): DmgTag {
+export function getBaseTag(data_gen: CharacterDatum): DmgTag {
   return { elementalType: TypeKeyToListingType[data_gen.damageType] }
 }
 
@@ -41,7 +41,7 @@ export function getBaseTag(data_gen: CharacterDataGen): DmgTag {
  * @param data_gen Character's entire `data` object from sr-stats:allStats
  * @returns Object with entry for basic, skill, ult, talent, technique and eidolon scalings. Eidolon contains further entries 1-6 for each eidolon.
  */
-export function scalingParams(data_gen: CharacterDataGen) {
+export function scalingParams(data_gen: CharacterDatum) {
   const [basic, skill, ult, talent, technique] = data_gen.skillTreeList
     .map((s) => s.skillParamList)
     .filter((s): s is number[][] => !!s)
@@ -153,7 +153,7 @@ export function heal(
  * @param data_gen Character's entire `data` object from sr-stats:allStats
  * @returns TagMapNodeEntries representing character stats/buffs
  */
-export function entriesForChar(data_gen: CharacterDataGen): TagMapNodeEntries {
+export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
   const { char } = self
   const { eidolon, ascension, lvl, ele, path } = char
   // The "add" only applies to currLvl - 1, since "base" is stat at lvl 1

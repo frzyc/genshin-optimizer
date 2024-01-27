@@ -94,6 +94,12 @@ export const allCharacterLocationKeys = [
 ] as const
 export type CharacterLocationKey = (typeof allCharacterLocationKeys)[number]
 
+export const allCharacterDataKeys = [
+  ...nonTrailblazerCharacterKeys,
+  ...allTrailblazerGenderedKeys,
+] as const
+export type CharacterDataKey = (typeof allCharacterDataKeys)[number]
+
 export const allLocationKeys = [...allCharacterLocationKeys, ''] as const
 export type LocationKey = (typeof allLocationKeys)[number]
 

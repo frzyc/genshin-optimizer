@@ -54,12 +54,12 @@ export class RelicDataManager extends SroDataManager<
     if (newRelic.location !== oldRelic?.location) {
       const slotKey = newRelic.slotKey
       const prevChar = oldRelic?.location
-        ? this.database.chars.getWithInitWeapon(
+        ? this.database.chars.getOrCreate(
             this.database.chars.LocationToCharacterKey(oldRelic.location)
           )
         : undefined
       const newChar = newRelic.location
-        ? this.database.chars.getWithInitWeapon(
+        ? this.database.chars.getOrCreate(
             this.database.chars.LocationToCharacterKey(newRelic.location)
           )
         : undefined

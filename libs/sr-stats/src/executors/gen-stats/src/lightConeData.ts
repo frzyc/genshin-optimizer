@@ -2,6 +2,7 @@ import { extrapolateFloat } from '@genshin-optimizer/pipeline'
 import type { StatKey } from '@genshin-optimizer/sr-consts'
 import {
   allElementalDamageKeys,
+  allLightConeKeys,
   type LightConeKey,
   type PathKey,
   type RarityKey,
@@ -15,7 +16,7 @@ import {
   lightConeRarityMap,
   statKeyMap,
 } from '@genshin-optimizer/sr-dm'
-import { range } from '@genshin-optimizer/util'
+import { range, verifyObjKeys } from '@genshin-optimizer/util'
 
 type Promotion = {
   atk: Scaling
@@ -31,16 +32,16 @@ type Superimpose = {
   passiveStats: Partial<Record<StatKey, number[]>>
 }
 
-export type LightConeDataGen = {
+export type LightConeDatum = {
   rarity: RarityKey
   path: PathKey
   ascension: Promotion[]
   superimpose: Superimpose
 }
 
-export type LightConeDatas = Record<LightConeKey, LightConeDataGen>
-export default function LightConeData(): LightConeDatas {
-  return Object.fromEntries(
+export type LightConeData = Record<LightConeKey, LightConeDatum>
+export default function LightConeData(): LightConeData {
+  const data = Object.fromEntries(
     Object.entries(equipmentConfig).map(
       ([lightConeId, { Rarity, AvatarBaseType }]) => {
         const flatConfig = equipmentSkillConfig_bySuperimpose[lightConeId]
@@ -77,7 +78,7 @@ export default function LightConeData(): LightConeDatas {
           expandedConfig.AbilityProperty.map((prop) => prop[apIndex])
         )
 
-        const result: LightConeDataGen = {
+        const result: LightConeDatum = {
           rarity: lightConeRarityMap[Rarity],
           path: avatarBaseTypeMap[AvatarBaseType],
           ascension: equipmentPromotionConfig[lightConeId].map(
@@ -126,4 +127,8 @@ export default function LightConeData(): LightConeDatas {
       }
     )
   )
+
+  verifyObjKeys(data, allLightConeKeys)
+
+  return data
 }
