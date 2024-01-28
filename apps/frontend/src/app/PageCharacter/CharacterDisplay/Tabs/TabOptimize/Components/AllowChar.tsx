@@ -103,7 +103,10 @@ export default function AllowChar({
         Array.from(
           new Set(
             Object.entries(database.chars.data)
-              .filter(([ck]) => ck !== characterKey)
+              .filter(
+                ([ck]) =>
+                  charKeyToLocCharKey(ck) !== charKeyToLocCharKey(characterKey)
+              )
               .filter(([ck]) =>
                 filterFunction(
                   {
@@ -130,22 +133,30 @@ export default function AllowChar({
     ]
   )
 
-  const locList = Object.entries(charKeyMap)
-    .sort(([ck1, c1], [ck2, c2]) => {
-      // sort characters by: star => more artifacts equipped
-      const [choosec1, choosec2] = [-1, 1]
-      const c1f = database.charMeta.get(ck1).favorite
-      const c2f = database.charMeta.get(ck2).favorite
-      if (c1f && !c2f) return choosec1
-      else if (c2f && !c1f) return choosec2
+  const locList = Array.from(
+    new Set(
+      Object.entries(charKeyMap)
+        .sort(([ck1, c1], [ck2, c2]) => {
+          // sort characters by: star => more artifacts equipped
+          const [choosec1, choosec2] = [-1, 1]
+          const c1f = database.charMeta.get(ck1).favorite
+          const c2f = database.charMeta.get(ck2).favorite
+          if (c1f && !c2f) return choosec1
+          else if (c2f && !c1f) return choosec2
 
-      const art1 = Object.values(c1.equippedArtifacts).filter((id) => id).length
-      const art2 = Object.values(c2.equippedArtifacts).filter((id) => id).length
-      if (art1 > art2) return choosec1
-      else if (art2 > art1) return choosec2
-      return ck1.localeCompare(ck2)
-    })
-    .map(([ck]) => charKeyToLocCharKey(ck))
+          const art1 = Object.values(c1.equippedArtifacts).filter(
+            (id) => id
+          ).length
+          const art2 = Object.values(c2.equippedArtifacts).filter(
+            (id) => id
+          ).length
+          if (art1 > art2) return choosec1
+          else if (art2 > art1) return choosec2
+          return ck1.localeCompare(ck2)
+        })
+        .map(([ck]) => charKeyToLocCharKey(ck))
+    )
+  )
 
   const {
     elementTotals,
@@ -159,14 +170,25 @@ export default function AllowChar({
       characterRarityTotals: [...allCharacterRarityKeys],
       locListTotals: ['allowed', 'excluded'],
     } as const
+    let travelerProcessed = false
+
     return bulkCatTotal(catKeys, (ctMap) =>
       Object.entries(database.chars.data)
-        .filter(([ck]) => ck !== characterKey)
+        .filter(
+          ([ck]) =>
+            charKeyToLocCharKey(ck) !== charKeyToLocCharKey(characterKey)
+        )
         .forEach(([ck]) => {
           const sheet = getCharSheet(ck, database.gender)
+
           const eleKey = sheet.elementKey
           ctMap.elementTotals[eleKey].total++
           if (charKeyMap[ck]) ctMap.elementTotals[eleKey].current++
+
+          if (charKeyToLocCharKey(ck) === 'Traveler') {
+            if (travelerProcessed) return
+            travelerProcessed = true
+          }
 
           const weaponTypeKey = sheet.weaponTypeKey
           ctMap.weaponTypeTotals[weaponTypeKey].total++
