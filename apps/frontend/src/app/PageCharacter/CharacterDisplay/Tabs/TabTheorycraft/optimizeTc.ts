@@ -212,23 +212,6 @@ export function optimizeTcUsingNodes(
         })
       if (x !== 'other') buffer[x] = substatValue(x, toAssign)
       bufferRolls[x] = toAssign
-      if (!alreadyFeasible) {
-        //check for distributed feasibility
-        const allRolls = allSubstatKeys.map((k) => [
-          k,
-          (existingRolls[k] ?? 0) + (bufferRolls[k] ?? 0),
-        ]) as Array<[SubstatKey, number]>
-        const minOtherRolls = getMinOtherRolls(
-          allRolls,
-          mainStatsCount,
-          minSubLines
-        )
-        // not feasible
-        if ((bufferRolls.other ?? 0) < minOtherRolls) {
-          skipped++
-          return
-        }
-      }
       const results = compute([{ values: buffer }] as const)
       // check constraints
       if (constraints.some((c, i) => results[i + 1] < c)) {
@@ -237,6 +220,23 @@ export function optimizeTcUsingNodes(
       }
       const result = results[0]
       if (result > max) {
+        if (!alreadyFeasible) {
+          //check for distributed feasibility
+          const allRolls = allSubstatKeys.map((k) => [
+            k,
+            (existingRolls[k] ?? 0) + (bufferRolls[k] ?? 0),
+          ]) as Array<[SubstatKey, number]>
+          const minOtherRolls = getMinOtherRolls(
+            allRolls,
+            mainStatsCount,
+            minSubLines
+          )
+          // not feasible
+          if ((bufferRolls.other ?? 0) < minOtherRolls) {
+            skipped++
+            return
+          }
+        }
         max = result
         maxBuffer = structuredClone(buffer)
         maxBufferRolls = structuredClone(bufferRolls)
