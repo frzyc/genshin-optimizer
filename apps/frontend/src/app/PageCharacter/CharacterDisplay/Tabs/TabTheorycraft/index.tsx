@@ -70,6 +70,7 @@ import {
 } from './optimizeTc'
 import useCharTC from './useCharTC'
 import { WeaponEditorCard } from './WeaponEditorCard'
+import { OptimizationTargetContext } from '../../../../Context/OptimizationTargetContext'
 export default function TabTheorycraft() {
   const { t } = useTranslation('page_character')
   const { database } = useContext(DatabaseContext)
@@ -533,13 +534,15 @@ export default function TabTheorycraft() {
           <Skeleton variant="rectangular" width="100%" height={500} />
         )}
         <CardLight sx={{ flexGrow: 1, p: 1 }}>
-          {dataContextValueWithOld ? (
-            <DataContext.Provider value={dataContextValueWithOld}>
-              <StatDisplayComponent />
-            </DataContext.Provider>
-          ) : (
-            <Skeleton variant="rectangular" width="100%" height={500} />
-          )}
+          <OptimizationTargetContext.Provider value={optimizationTarget}>
+            {dataContextValueWithOld ? (
+              <DataContext.Provider value={dataContextValueWithOld}>
+                <StatDisplayComponent />
+              </DataContext.Provider>
+            ) : (
+              <Skeleton variant="rectangular" width="100%" height={500} />
+            )}
+          </OptimizationTargetContext.Provider>
         </CardLight>
       </Stack>
     </CharTCContext.Provider>
