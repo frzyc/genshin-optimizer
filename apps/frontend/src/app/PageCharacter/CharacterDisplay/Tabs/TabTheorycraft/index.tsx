@@ -532,14 +532,14 @@ export default function TabTheorycraft() {
           <Skeleton variant="rectangular" width="100%" height={500} />
         )}
         <CardLight sx={{ flexGrow: 1, p: 1 }}>
-        <OptimizationTargetContext.Provider value={optimizationTarget}>
-          {dataContextValueWithOld ? (
-            <DataContext.Provider value={dataContextValueWithOld}>
-              <StatDisplayComponent />
-            </DataContext.Provider>
-          ) : (
-            <Skeleton variant="rectangular" width="100%" height={500} />
-          )}
+          <OptimizationTargetContext.Provider value={optimizationTarget}>
+            {dataContextValueWithOld ? (
+              <DataContext.Provider value={dataContextValueWithOld}>
+                <StatDisplayComponent />
+              </DataContext.Provider>
+            ) : (
+              <Skeleton variant="rectangular" width="100%" height={500} />
+            )}
           </OptimizationTargetContext.Provider>
         </CardLight>
       </Stack>
