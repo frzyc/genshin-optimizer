@@ -207,6 +207,26 @@ export default function PageWeapon() {
     [database, weaponIdList]
   )
 
+  const paginationProps = {
+    numPages: {numPages},
+    currentPageIndex: {currentPageIndex},
+    setPage: {setPage}
+  }
+
+  const showingTextProps = {
+    itemIdsToShow: {weaponIdsToShow},
+    totalShowing: {totalShowing},
+    t: {t}
+  }
+
+  const sortButtonProps = {
+    sortKeys: {sortKeys},
+    value: {sortType},
+    onChange: (sortType) => database.displayWeapon.set({ sortType }),
+    ascending: {ascending},
+    onChangeAsc:(ascending) => database.displayWeapon.set({ ascending })
+  }
+
   return (
     <Box my={1} display="flex" flexDirection="column" gap={1}>
       <Suspense fallback={false}>
@@ -265,20 +285,10 @@ export default function PageWeapon() {
             flexWrap="wrap"
           >
             <PaginatedDisplay
-              numPages={numPages}
-              currentPageIndex={currentPageIndex}
-              setPage={setPage}
-              itemIdsToShow={weaponIdsToShow}
-              totalShowing={totalShowing}
-              t={t}
+              paginationProps={paginationProps}
+              showingTextProps={showingTextProps}
               displaySort={true}
-              sortKeys={sortKeys}
-              sortType={sortType}
-              onChange={(sortType) => database.displayWeapon.set({ sortType })}
-              ascending={ascending}
-              onChangeAsc={(ascending) =>
-                database.displayWeapon.set({ ascending })
-              }
+              sortButtonProps={sortButtonProps}
             />
           </Box>
         </CardContent>
@@ -322,12 +332,8 @@ export default function PageWeapon() {
               flexWrap="wrap"
             >
               <PaginatedDisplay
-                numPages={numPages}
-                currentPageIndex={currentPageIndex}
-                setPage={setPage}
-                itemIdsToShow={weaponIdsToShow}
-                totalShowing={totalShowing}
-                t={t}
+                paginationProps={paginationProps}
+                showingTextProps={showingTextProps}
               />
             </Box>
           </CardContent>

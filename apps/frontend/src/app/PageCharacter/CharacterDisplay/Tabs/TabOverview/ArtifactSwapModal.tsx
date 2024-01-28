@@ -127,6 +127,18 @@ export default function ArtifactSwapModal({
     [setpageIdex, invScrollRef]
   )
 
+  const paginationProps = {
+    numPages: {numPages},
+    currentPageIndex: {currentPageIndex},
+    setPage: {setPage}
+  }
+
+  const showingTextProps = {
+    itemIdsToShow: {artifactIdsToShow},
+    totalShowing: {totalShowing},
+    t: {t}
+  }
+
   return (
     <ModalWrapper
       open={show}
@@ -173,12 +185,8 @@ export default function ArtifactSwapModal({
             flexWrap="wrap"
           >
             <PaginatedDisplay
-              numPages={numPages}
-              currentPageIndex={currentPageIndex}
-              setPage={setPage}
-              itemIdsToShow={artifactIdsToShow}
-              totalShowing={totalShowing}
-              t={tk}
+              paginationProps={paginationProps}
+              showingTextProps={showingTextProps}
             />
           </Box>
           <Box mt={1}>
@@ -209,12 +217,8 @@ export default function ArtifactSwapModal({
                 flexWrap="wrap"
               >
                 <PaginatedDisplay
-                  numPages={numPages}
-                  currentPageIndex={currentPageIndex}
-                  setPage={setPage}
-                  itemIdsToShow={artifactIdsToShow}
-                  totalShowing={totalShowing}
-                  t={tk}
+                  paginationProps={paginationProps}
+                  showingTextProps={showingTextProps}
                 />
               </Box>
             </CardContent>

@@ -16,9 +16,7 @@ import {
   Button,
   CardContent,
   Grid,
-  Pagination,
   Skeleton,
-  Typography,
 } from '@mui/material'
 import React, {
   Suspense,
@@ -178,6 +176,40 @@ export default function PageArtifact() {
     [setpageIndex, invScrollRef]
   )
 
+  const onChangeSortType = useCallback(
+    (e, sortType) => {
+      database.displayArtifact.set(sortType)
+    },
+    [database]
+  )
+
+  const onChangeSortAsc = useCallback(
+    (ascending) => {
+      database.displayArtifact.set(ascending)
+    },
+    [database]
+  )
+
+  const paginationProps = {
+    count: numPages,
+    page: currentPageIndex,
+    onChange: setPage
+  }
+
+  const showingTextProps = {
+    numShowing: artifactIdsToShow.length,
+    total: totalShowing,
+    t: t
+  }
+
+  const sortButtonProps = {
+    sortKeys: [artifactSortKeys],
+    value: sortType,
+    onChange: onChangeSortType,
+    ascending: ascending,
+    onChangeAsc: onChangeSortAsc
+  }
+
   return (
     <Box display="flex" flexDirection="column" gap={1} my={1}>
       <Suspense fallback={false}>
@@ -234,23 +266,11 @@ export default function PageArtifact() {
             alignItems="center"
             flexWrap="wrap"
           >
-            <PaginatedDisplay // Should maybe group these into objects (pagination and showing items)
-              numPages={numPages}
-              currentPageIndex={currentPageIndex}
-              setPage={setPage}
-              itemIdsToShow={artifactIdsToShow}
-              totalShowing={totalShowing}
-              t={t}
+            <PaginatedDisplay
+              paginationProps={paginationProps}
+              showingTextProps={showingTextProps}
               displaySort={true}
-              sortKeys={artifactSortKeys}
-              sortType={sortType}
-              onChange={(sortType) =>
-                database.displayArtifact.set({ sortType })
-              }
-              ascending={ascending}
-              onChangeAsc={(ascending) =>
-                database.displayArtifact.set({ ascending })
-              }
+              sortButtonProps={sortButtonProps}
             />
           </Box>
           <ArtifactRedButtons artifactIds={artifactIds} />
@@ -312,12 +332,8 @@ export default function PageArtifact() {
               flexWrap="wrap"
             >
               <PaginatedDisplay
-                numPages={numPages}
-                currentPageIndex={currentPageIndex}
-                setPage={setPage}
-                itemIdsToShow={artifactIdsToShow}
-                totalShowing={totalShowing}
-                t={t}
+                paginationProps={paginationProps}
+                showingTextProps={showingTextProps}
               />
             </Box>
           </CardContent>
