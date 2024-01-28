@@ -106,7 +106,9 @@ export default function TabTheorycraft() {
         charTC.weapon.level = eWeapon.level
         charTC.weapon.ascension = eWeapon.ascension
         charTC.weapon.refinement = eWeapon.refinement
+        const oldType = charTC.artifact.substats.type
         charTC.artifact = initCharTC('DullBlade').artifact
+        charTC.artifact.substats.type = oldType
         const sets = {}
         build.forEach((art) => {
           if (!art) return
