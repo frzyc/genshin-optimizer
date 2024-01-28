@@ -5,6 +5,7 @@ import CardDark from '../Components/Card/CardDark'
 import CardLight from '../Components/Card/CardLight'
 import ColorText from '../Components/ColoredText'
 import StatEditorList from '../Components/StatEditorList'
+import { useTranslation } from 'react-i18next'
 const keys = [...allSubstatKeys]
 export default function ProbabilityFilter({
   probabilityFilter: statFilters = {},
@@ -15,6 +16,8 @@ export default function ProbabilityFilter({
   setProbabilityFilter: (object: Dict<SubstatKey, number>) => void
   disabled?: boolean
 }) {
+  const { t } = useTranslation('artifact')
+
   return (
     <CardDark>
       <CardContent sx={{ py: 1 }}>
@@ -53,6 +56,7 @@ export default function ProbabilityFilter({
               statFilters={statFilters}
               setStatFilters={setStatFilters}
               disabled={disabled}
+              label={t('probabilityFilter.label')}
             />
           </Grid>
         </Grid>
