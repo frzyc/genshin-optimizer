@@ -174,30 +174,39 @@ export default function AllowChar({
 
     return bulkCatTotal(catKeys, (ctMap) =>
       Object.entries(database.chars.data)
-        .filter(
-          ([ck]) =>
-            charKeyToLocCharKey(ck) !== charKeyToLocCharKey(characterKey)
-        )
+        .filter(([ck]) => ck !== characterKey)
         .forEach(([ck]) => {
           const sheet = getCharSheet(ck, database.gender)
 
           const eleKey = sheet.elementKey
+          const weaponTypeKey = sheet.weaponTypeKey
+          const characterRarityKey = sheet.rarity
+
           ctMap.elementTotals[eleKey].total++
           if (charKeyMap[ck]) ctMap.elementTotals[eleKey].current++
 
           if (charKeyToLocCharKey(ck) === 'Traveler') {
+            console.log(charKeyMap)
+            if (!charKeyMap[ck] && locList.includes('Traveler')) {
+              ctMap.elementTotals[eleKey].current++
+            }
             if (travelerProcessed) return
+
+            if (!charKeyMap[ck] && locList.includes('Traveler')) {
+              ctMap.weaponTypeTotals[weaponTypeKey].current++
+              ctMap.characterRarityTotals[characterRarityKey].current++
+            }
+
             travelerProcessed = true
           }
 
-          const weaponTypeKey = sheet.weaponTypeKey
           ctMap.weaponTypeTotals[weaponTypeKey].total++
           if (charKeyMap[ck]) ctMap.weaponTypeTotals[weaponTypeKey].current++
 
-          const characterRarityKey = sheet.rarity
           ctMap.characterRarityTotals[characterRarityKey].total++
-          if (charKeyMap[ck])
+          if (charKeyMap[ck]) {
             ctMap.characterRarityTotals[characterRarityKey].current++
+          }
 
           const locKey = charKeyToLocCharKey(ck)
           if (locList.includes(locKey)) {
@@ -272,7 +281,7 @@ export default function AllowChar({
 
   const onMouseUp = useCallback(() => setMouseUpDetected(true), [])
 
-  const total = database.chars.keys.length - 1
+  const total = locList.length
   const useTot = total - excludedLocations.length
   const totalStr = useTot === total ? useTot : `${useTot}/${total}`
   const charactersAllowed =
