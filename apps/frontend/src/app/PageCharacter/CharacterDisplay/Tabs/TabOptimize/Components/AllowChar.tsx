@@ -174,7 +174,10 @@ export default function AllowChar({
 
     return bulkCatTotal(catKeys, (ctMap) =>
       Object.entries(database.chars.data)
-        .filter(([ck]) => ck !== characterKey)
+        .filter(
+          ([ck]) =>
+            charKeyToLocCharKey(ck) !== charKeyToLocCharKey(characterKey)
+        )
         .forEach(([ck]) => {
           const sheet = getCharSheet(ck, database.gender)
 
