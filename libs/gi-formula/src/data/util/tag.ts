@@ -5,7 +5,7 @@ import type { Read, Tag } from './read'
 import { reader, tag } from './read'
 
 export const metaList: {
-  conditionals?: Partial<Record<Source, Record<string, any>>>
+  conditionals?: { tag: Tag; meta: object }[]
 } = {}
 
 export function percent(x: number | NumNode): NumNode {
@@ -230,14 +230,9 @@ function allCustoms<T>(
   transform: (r: Read, q: string) => T
 ): Record<string, T> {
   if (meta && metaList.conditionals) {
-    const entries = metaList.conditionals
-    if (!entries[src]) {
-      entries[src] = {}
-    }
-    const srcEntries = entries[src]!
+    const { conditionals } = metaList
     return reader.withTag({ et: 'self', src, qt }).withAll('q', [], (r, q) => {
-      if (srcEntries[q]) console.error(`Duplicate conditional ${src}:${q}`)
-      srcEntries[q] = meta
+      conditionals.push({ tag: r.tag, meta })
       return transform(r, q)
     })
   }
