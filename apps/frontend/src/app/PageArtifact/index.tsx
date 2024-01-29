@@ -176,23 +176,13 @@ export default function PageArtifact() {
     [setpageIndex, invScrollRef]
   )
 
-  const onChangeSortType = useCallback(
-    (e, sortType) => {
-      database.displayArtifact.set(sortType)
-    },
-    [database]
-  )
-
-  const onChangeSortAsc = useCallback(
-    (ascending) => {
-      database.displayArtifact.set(ascending)
-    },
-    [database]
-  )
+  function onChangeSortType(sortType) {
+    return database.displayArtifact.set(sortType)
+  }
 
   const paginationProps = {
     count: numPages,
-    page: currentPageIndex,
+    page: currentPageIndex + 1,
     onChange: setPage
   }
 
@@ -203,11 +193,11 @@ export default function PageArtifact() {
   }
 
   const sortButtonProps = {
-    sortKeys: [artifactSortKeys],
+    sortKeys: [...artifactSortKeys],
     value: sortType,
-    onChange: onChangeSortType,
+    onChange: (sortType) => database.displayArtifact.set(sortType),
     ascending: ascending,
-    onChangeAsc: onChangeSortAsc
+    onChangeAsc: (ascending) => database.displayArtifact.set(ascending)
   }
 
   return (

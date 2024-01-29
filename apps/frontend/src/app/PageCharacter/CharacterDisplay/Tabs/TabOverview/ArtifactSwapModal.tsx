@@ -128,15 +128,15 @@ export default function ArtifactSwapModal({
   )
 
   const paginationProps = {
-    numPages: {numPages},
-    currentPageIndex: {currentPageIndex},
-    setPage: {setPage}
+    count: numPages,
+    page: currentPageIndex,
+    onChange: setPage
   }
 
   const showingTextProps = {
-    itemIdsToShow: {artifactIdsToShow},
-    totalShowing: {totalShowing},
-    t: {t}
+    numShowing: artifactIdsToShow.length,
+    total: totalShowing,
+    t: tk
   }
 
   return (

@@ -208,23 +208,23 @@ export default function PageWeapon() {
   )
 
   const paginationProps = {
-    numPages: {numPages},
-    currentPageIndex: {currentPageIndex},
-    setPage: {setPage}
+    count: numPages,
+    page: currentPageIndex,
+    onChange: setPage
   }
 
   const showingTextProps = {
-    itemIdsToShow: {weaponIdsToShow},
-    totalShowing: {totalShowing},
-    t: {t}
+    numShowing: weaponIdsToShow.length,
+    total: totalShowing,
+    t: t
   }
 
   const sortButtonProps = {
-    sortKeys: {sortKeys},
-    value: {sortType},
-    onChange: (sortType) => database.displayWeapon.set({ sortType }),
-    ascending: {ascending},
-    onChangeAsc:(ascending) => database.displayWeapon.set({ ascending })
+    sortKeys: [...sortKeys],
+    value: sortType,
+    onChange: (sortType) => database.displayWeapon.set(sortType),
+    ascending: ascending,
+    onChangeAsc:(ascending) => database.displayWeapon.set(ascending)
   }
 
   return (

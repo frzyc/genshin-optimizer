@@ -231,23 +231,23 @@ export default function PageCharacter() {
   )
 
   const paginationProps = {
-    numPages: {numPages},
-    currentPageIndex: {currentPageIndex},
-    setPage: {setPage}
+    count: numPages,
+    page: currentPageIndex,
+    onChange: setPage
   }
 
   const showingTextProps = {
-    itemIdsToShow: {charKeyListToShow},
-    totalShowing: {totalShowing},
-    t: {t}
+    numShowing: charKeyListToShow.length,
+    total: totalShowing,
+    t: t
   }
 
   const sortButtonProps = {
-    sortKeys: {sortKeys},
-    value: {sortType},
-    onChange: (sortType) => database.displayCharacter.set({ sortType }),
-    ascending: {ascending},
-    onChangeAsc:(ascending) => database.displayCharacter.set({ ascending })
+    sortKeys: [...sortKeys],
+    value: sortType,
+    onChange: (sortType) => database.displayCharacter.set(sortType),
+    ascending: ascending,
+    onChangeAsc: (ascending) => database.displayCharacter.set(ascending)
   }
 
   return (
