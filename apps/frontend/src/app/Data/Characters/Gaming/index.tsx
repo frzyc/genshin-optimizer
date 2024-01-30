@@ -386,7 +386,7 @@ const sheet: ICharacterSheet = {
       ct.condTem('constellation2', {
         path: condC2OverhealPath,
         value: condC2Overheal,
-        name: ct.ch('c2Cond'),
+        name: st('afterOverflow'),
         states: {
           on: {
             fields: [

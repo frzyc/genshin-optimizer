@@ -495,17 +495,20 @@ const sheet: ICharacterSheet = {
         fields: [
           {
             node: infoMut(dmgFormulas.constellation4.heal1, {
-              name: ct.ch('c4Heal1'),
+              name: ct.ch('c4Heal'),
+              textSuffix: '(1)',
             }),
           },
           {
             node: infoMut(dmgFormulas.constellation4.heal2, {
-              name: ct.ch('c4Heal2'),
+              name: ct.ch('c4Heal'),
+              textSuffix: '(2)',
             }),
           },
           {
             node: infoMut(dmgFormulas.constellation4.heal3, {
-              name: ct.ch('c4Heal3'),
+              name: ct.ch('c4Heal'),
+              textSuffix: '(3)',
             }),
           },
         ],
