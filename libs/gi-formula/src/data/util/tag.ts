@@ -160,15 +160,24 @@ export const enemyTag = {
 export function convert<V extends Record<string, Record<string, Desc>>>(
   v: V,
   tag: Omit<Tag, 'qt' | 'q'>
-): { [j in keyof V]: { [k in keyof V[j]]: Read } } {
-  return reader.withTag(tag).withAll('qt', Object.keys(v), (r, qt) =>
-    r.withAll('q', Object.keys(v[qt]), (r, q) => {
-      if (!v[qt][q]) console.error(`Invalid { qt:${qt} q:${q} }`)
-      const { src, accu } = v[qt][q]
-      // `tag.src` overrides `Desc`
-      if (src && !tag.src) r = r.src(src)
-      return r[accu]
-    })
+): {
+  [j in 'withTag' | keyof V]: j extends 'withTag'
+    ? (_: Tag) => Read
+    : { [k in keyof V[j]]: Read }
+} {
+  const r = reader.withTag(tag)
+  return r.withAll(
+    'qt',
+    Object.keys(v),
+    (r, qt) =>
+      r.withAll('q', Object.keys(v[qt]), (r, q) => {
+        if (!v[qt][q]) console.error(`Invalid { qt:${qt} q:${q} }`)
+        const { src, accu } = v[qt][q]
+        // `tag.src` overrides `Desc`
+        if (src && !tag.src) r = r.src(src)
+        return r[accu]
+      }),
+    { withTag: (tag: Tag) => r.withTag(tag) }
   ) as any
 }
 
