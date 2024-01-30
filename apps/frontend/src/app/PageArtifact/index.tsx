@@ -35,7 +35,7 @@ import SubstatToggle from '../Components/Artifact/SubstatToggle'
 import BootstrapTooltip from '../Components/BootstrapTooltip'
 import CardDark from '../Components/Card/CardDark'
 import InfoComponent from '../Components/InfoComponent'
-import PaginatedDisplay from '../Components/PaginatedDisplay'
+import PageAndSortOptionSelect from '../Components/PageAndSortOptionSelect'
 import { DatabaseContext } from '../Database/Database'
 import useDisplayArtifact from '../ReactHooks/useDisplayArtifact'
 import ArtifactCard from './ArtifactCard'
@@ -176,10 +176,6 @@ export default function PageArtifact() {
     [setpageIndex, invScrollRef]
   )
 
-  function onChangeSortType(sortType) {
-    return database.displayArtifact.set(sortType)
-  }
-
   const paginationProps = {
     count: numPages,
     page: currentPageIndex + 1,
@@ -192,12 +188,12 @@ export default function PageArtifact() {
     t: t
   }
 
-  const sortButtonProps = {
+  const sortByButtonProps = {
     sortKeys: [...artifactSortKeys],
     value: sortType,
-    onChange: (sortType) => database.displayArtifact.set(sortType),
+    onChange: (sortType) => database.displayArtifact.set({ sortType }),
     ascending: ascending,
-    onChangeAsc: (ascending) => database.displayArtifact.set(ascending)
+    onChangeAsc: (ascending) => database.displayArtifact.set({ ascending })
   }
 
   return (
@@ -256,11 +252,11 @@ export default function PageArtifact() {
             alignItems="center"
             flexWrap="wrap"
           >
-            <PaginatedDisplay
+            <PageAndSortOptionSelect
               paginationProps={paginationProps}
               showingTextProps={showingTextProps}
               displaySort={true}
-              sortButtonProps={sortButtonProps}
+              sortByButtonProps={sortByButtonProps}
             />
           </Box>
           <ArtifactRedButtons artifactIds={artifactIds} />
@@ -321,7 +317,7 @@ export default function PageArtifact() {
               alignItems="center"
               flexWrap="wrap"
             >
-              <PaginatedDisplay
+              <PageAndSortOptionSelect
                 paginationProps={paginationProps}
                 showingTextProps={showingTextProps}
               />

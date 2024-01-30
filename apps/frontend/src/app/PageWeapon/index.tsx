@@ -15,10 +15,8 @@ import {
   Button,
   CardContent,
   Grid,
-  Pagination,
   Skeleton,
   TextField,
-  Typography,
 } from '@mui/material'
 import type { ChangeEvent } from 'react'
 import React, {
@@ -33,10 +31,9 @@ import React, {
   useState,
 } from 'react'
 import ReactGA from 'react-ga4'
-import { Trans, useTranslation } from 'react-i18next'
+import { useTranslation } from 'react-i18next'
 import CardDark from '../Components/Card/CardDark'
-import PaginatedDisplay from '../Components/PaginatedDisplay'
-import SortByButton from '../Components/SortByButton'
+import PageAndSortOptionSelect from '../Components/PageAndSortOptionSelect'
 import WeaponRarityToggle from '../Components/ToggleButton/WeaponRarityToggle'
 import WeaponToggle from '../Components/ToggleButton/WeaponToggle'
 import { getWeaponSheet } from '../Data/Weapons'
@@ -209,7 +206,7 @@ export default function PageWeapon() {
 
   const paginationProps = {
     count: numPages,
-    page: currentPageIndex,
+    page: currentPageIndex + 1,
     onChange: setPage
   }
 
@@ -219,12 +216,12 @@ export default function PageWeapon() {
     t: t
   }
 
-  const sortButtonProps = {
+  const sortByButtonProps = {
     sortKeys: [...sortKeys],
     value: sortType,
-    onChange: (sortType) => database.displayWeapon.set(sortType),
+    onChange: (sortType) => database.displayWeapon.set({ sortType }),
     ascending: ascending,
-    onChangeAsc:(ascending) => database.displayWeapon.set(ascending)
+    onChangeAsc:(ascending) => database.displayWeapon.set({ ascending })
   }
 
   return (
@@ -284,11 +281,11 @@ export default function PageWeapon() {
             alignItems="flex-end"
             flexWrap="wrap"
           >
-            <PaginatedDisplay
+            <PageAndSortOptionSelect
               paginationProps={paginationProps}
               showingTextProps={showingTextProps}
               displaySort={true}
-              sortButtonProps={sortButtonProps}
+              sortByButtonProps={sortByButtonProps}
             />
           </Box>
         </CardContent>
@@ -331,7 +328,7 @@ export default function PageWeapon() {
               alignItems="center"
               flexWrap="wrap"
             >
-              <PaginatedDisplay
+              <PageAndSortOptionSelect
                 paginationProps={paginationProps}
                 showingTextProps={showingTextProps}
               />

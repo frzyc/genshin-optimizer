@@ -10,7 +10,6 @@ import {
   CardContent,
   Divider,
   Grid,
-  Pagination,
   Skeleton,
   Typography,
 } from '@mui/material'
@@ -25,12 +24,12 @@ import {
   useRef,
   useState,
 } from 'react'
-import { Trans, useTranslation } from 'react-i18next'
+import { useTranslation } from 'react-i18next'
 import CardDark from '../../../../Components/Card/CardDark'
 import CloseButton from '../../../../Components/CloseButton'
 import ImgIcon from '../../../../Components/Image/ImgIcon'
 import ModalWrapper from '../../../../Components/ModalWrapper'
-import PaginatedDisplay from '../../../../Components/PaginatedDisplay'
+import PageAndSortOptionSelect from '../../../../Components/PageAndSortOptionSelect'
 import { DatabaseContext } from '../../../../Database/Database'
 import ArtifactCard from '../../../../PageArtifact/ArtifactCard'
 import type { FilterOption } from '../../../../PageArtifact/ArtifactSort'
@@ -129,7 +128,7 @@ export default function ArtifactSwapModal({
 
   const paginationProps = {
     count: numPages,
-    page: currentPageIndex,
+    page: currentPageIndex + 1,
     onChange: setPage
   }
 
@@ -184,7 +183,7 @@ export default function ArtifactSwapModal({
             alignItems="flex-end"
             flexWrap="wrap"
           >
-            <PaginatedDisplay
+            <PageAndSortOptionSelect
               paginationProps={paginationProps}
               showingTextProps={showingTextProps}
             />
@@ -216,7 +215,7 @@ export default function ArtifactSwapModal({
                 alignItems="center"
                 flexWrap="wrap"
               >
-                <PaginatedDisplay
+                <PageAndSortOptionSelect
                   paginationProps={paginationProps}
                   showingTextProps={showingTextProps}
                 />

@@ -2,16 +2,6 @@ import {
   Pagination,
   Typography,
 } from '@mui/material'
-import React, {
-  Suspense,
-  useCallback,
-  useContext,
-  useDeferredValue,
-  useEffect,
-  useMemo,
-  useRef,
-  useState,
-} from 'react'
 import type { TFunction } from 'i18next'
 import { Trans } from 'react-i18next'
 import SortByButton from '../Components/SortByButton'
@@ -36,17 +26,17 @@ type SortByButtonProps = {
   onChangeAsc: (value: boolean) => void
 }
 
-export default function PaginatedDisplay({
+export default function PageAndSortOptionSelect({
   paginationProps,
   showingTextProps,
   displaySort = false,
-  sortButtonProps = undefined,
-} : {
+  sortByButtonProps = undefined,
+}: {
   paginationProps: PaginationProps
   showingTextProps: ShowingItemProps
   displaySort?: boolean
-  sortButtonProps?: SortByButtonProps
-  }) {
+  sortByButtonProps?: SortByButtonProps
+}) {
   return (
     <>
       <Pagination
@@ -61,11 +51,11 @@ export default function PaginatedDisplay({
       />
       {displaySort && (
         <SortByButton
-          sortKeys={sortButtonProps.sortKeys}
-          value={sortButtonProps.value}
-          onChange={(sortType) => sortButtonProps.onChange(sortType)}
-          ascending={sortButtonProps.ascending}
-          onChangeAsc={(ascending) => sortButtonProps.onChangeAsc(ascending)}
+          sortKeys={sortByButtonProps.sortKeys}
+          value={sortByButtonProps.value}
+          onChange={(value) => sortByButtonProps.onChange(value)}
+          ascending={sortByButtonProps.ascending}
+          onChangeAsc={sortByButtonProps.onChangeAsc}
         />
       )}
     </>

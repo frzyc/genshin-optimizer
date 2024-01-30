@@ -29,7 +29,6 @@ import {
   Divider,
   Grid,
   IconButton,
-  Pagination,
   Skeleton,
   TextField,
   Typography,
@@ -46,14 +45,12 @@ import React, {
   useState,
 } from 'react'
 import ReactGA from 'react-ga4'
-import { Trans, useTranslation } from 'react-i18next'
+import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 import BootstrapTooltip from '../Components/BootstrapTooltip'
 import CardDark from '../Components/Card/CardDark'
 import CharacterCard from '../Components/Character/CharacterCard'
-import PaginatedDisplay from '../Components/PaginatedDisplay'
-import SortByButton from '../Components/SortByButton'
-import CharacterRarityToggle from '../Components/ToggleButton/CharacterRarityToggle'
+import PageAndSortOptionSelect from '../Components/PageAndSortOptionSelect'
 import ElementToggle from '../Components/ToggleButton/ElementToggle'
 import WeaponToggle from '../Components/ToggleButton/WeaponToggle'
 import { SillyContext } from '../Context/SillyContext'
@@ -232,7 +229,7 @@ export default function PageCharacter() {
 
   const paginationProps = {
     count: numPages,
-    page: currentPageIndex,
+    page: currentPageIndex + 1,
     onChange: setPage
   }
 
@@ -242,12 +239,12 @@ export default function PageCharacter() {
     t: t
   }
 
-  const sortButtonProps = {
+  const sortByButtonProps = {
     sortKeys: [...sortKeys],
     value: sortType,
-    onChange: (sortType) => database.displayCharacter.set(sortType),
+    onChange: (sortType) => database.displayCharacter.set({ sortType }),
     ascending: ascending,
-    onChangeAsc: (ascending) => database.displayCharacter.set(ascending)
+    onChangeAsc: (ascending) => database.displayCharacter.set({ ascending })
   }
 
   return (
@@ -317,11 +314,11 @@ export default function PageCharacter() {
             alignItems="flex-end"
             flexWrap="wrap"
           >
-            <PaginatedDisplay
+            <PageAndSortOptionSelect
               paginationProps={paginationProps}
               showingTextProps={showingTextProps}
               displaySort={true}
-              sortButtonProps={sortButtonProps}
+              sortByButtonProps={sortByButtonProps}
             />
           </Box>
         </CardContent>
@@ -435,7 +432,7 @@ export default function PageCharacter() {
               flexWrap="wrap"
               flexGrow={1}
             >
-              <PaginatedDisplay
+              <PageAndSortOptionSelect
                 paginationProps={paginationProps}
                 showingTextProps={showingTextProps}
               />
