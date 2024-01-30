@@ -29,12 +29,14 @@ export default function StatEditorList({
   setStatFilters,
   disabled = false,
   wrapperFunc = (ele) => ele,
+  label,
 }: {
   statKeys: InputPremodKey[]
   statFilters: Dict<InputPremodKey, number>
   setStatFilters: (statFilters: Dict<InputPremodKey, number>) => void
   disabled?: boolean
   wrapperFunc?: (ele: JSX.Element, key?: string) => JSX.Element
+  label?: string
 }) {
   const { t: tk } = useTranslation('statKey_gen')
   const statOptions = useMemo(
@@ -133,6 +135,7 @@ export default function StatEditorList({
           delKey={delKey}
           disabled={disabled}
           getOptionDisabled={getOptionDiabled}
+          label={label}
         />
       )}
     </>
@@ -149,6 +152,7 @@ function StatFilterItem({
   setValue,
   disabled = false,
   getOptionDisabled,
+  label,
 }: {
   statKey: InputPremodKey | null
   statKeyOptions: StatOption[]
@@ -158,6 +162,7 @@ function StatFilterItem({
   setValue: (statKey: InputPremodKey, value: number) => void
   disabled?: boolean
   getOptionDisabled: (option: StatOption) => boolean
+  label?: string
 }) {
   const theme = useTheme()
   const { t } = useTranslation('ui')
@@ -228,6 +233,7 @@ function StatFilterItem({
         textFieldProps={{
           sx: { '& .MuiInputBase-root': { borderRadius: '4px 0 0 4px' } },
         }}
+        label={label}
       />
       <CustomNumberInputButtonGroupWrapper
         sx={{ flexBasis: 30, flexGrow: 1, borderRadius: '0 4px 4px 0' }}

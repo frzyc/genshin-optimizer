@@ -43,7 +43,8 @@
   },
   "addStats": {
     "title": "Enemy Config + Bonus Stats",
-    "info": "You can use these fields to add buffs/debuffs not directly supported in GO, such as food buffs, Abyss cards, or Superconduct. Please refer to the <1>Genshin Impact Wiki</1> for specific values."
+    "info": "You can use these fields to add buffs/debuffs not directly supported in GO, such as food buffs, Abyss cards, or Superconduct. Please refer to the <1>Genshin Impact Wiki</1> for specific values.",
+    "label": "New Bonus Stat"
   },
   "tabTheorycraft": {
     "distribute": "Distribute",

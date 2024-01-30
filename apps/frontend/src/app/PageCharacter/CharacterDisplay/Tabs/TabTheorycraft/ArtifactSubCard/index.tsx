@@ -9,7 +9,7 @@ import {
 } from '@genshin-optimizer/ui-common'
 import { Box, MenuItem, Stack, Typography } from '@mui/material'
 import { useCallback, useContext } from 'react'
-import { useTranslation } from 'react-i18next'
+import { Trans, useTranslation } from 'react-i18next'
 import ArtifactRarityDropdown from '../../../../../Components/Artifact/ArtifactRarityDropdown'
 import { CharTCContext } from '../CharTCContext'
 import { ArtifactAllSubstatEditor } from './ArtifactAllSubstatEditor'
@@ -87,7 +87,11 @@ export function ArtifactSubCard({
           <BootstrapTooltip
             title={
               <Typography>
-                {t('tabTheorycraft.maxTotalRolls', { value: maxTotalRolls })}
+                <Trans t={t} i18nKey={'tabTheorycraft.maxTotalRolls'}>
+                  {'The current build can only have a maximum of '}
+                  <strong>{{ value: maxTotalRolls } as TransObject}</strong>
+                  {' rolls.'}
+                </Trans>
               </Typography>
             }
             placement="top"
