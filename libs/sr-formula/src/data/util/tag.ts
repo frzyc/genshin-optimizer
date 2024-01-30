@@ -138,6 +138,12 @@ export const enemyTag = {
   },
 } as const
 
+/**
+ * Convert a Record<qt, Record<q, Desc>> to Record<qt, Record<q, Read>>
+ * @param v Object with qt+q keys to convert
+ * @param tag Other tag categories to include as the base of the Read
+ * @returns Dictionary of Read
+ */
 export function convert<V extends Record<string, Record<string, Desc>>>(
   v: V,
   tag: Omit<Tag, 'qt' | 'q'>
