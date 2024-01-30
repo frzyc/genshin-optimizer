@@ -9,7 +9,7 @@ import type { GenDescExecutorSchema } from './schema'
 import * as prettier from 'prettier'
 import type { data as Data } from '../../data'
 import { metaList } from '../../data/util'
-metaList.conditionals = {}
+metaList.conditionals = []
 
 export default async function runExecutor(
   options: GenDescExecutorSchema
@@ -18,14 +18,16 @@ export default async function runExecutor(
   // eslint-disable-next-line @typescript-eslint/no-var-requires
   const { data } = require('../../data')
   const { outputPath } = options
-  const { conditionals } = metaList
   const formulas: Record<string, Record<string, any>> = {}
 
   // Massage data from `metaList`
-  for (const [src, entries] of Object.entries(conditionals!)) {
-    for (const [name, obj] of Object.entries(entries!)) {
-      entries![name] = { src, name, tag: { src, name }, ...obj }
-    }
+  const conditionals: Record<string, Record<string, any>> = {}
+  for (const { tag, meta } of metaList.conditionals!) {
+    const { src, q } = tag // Conditionals guarantee `src-q` pair uniqueness
+    if (!conditionals[src!]) conditionals[src!] = {}
+    if (!conditionals[src!][q!])
+      conditionals[src!][q!] = { src, name: q, tag, ...meta }
+    else console.log(`Duplicated conditionals for ${src}:${q}`)
   }
 
   // Crawl for formulas in sheet-specific formula listing
