@@ -229,17 +229,17 @@ const dmgFormulas = {
     heal1: greaterEq(
       input.constellation,
       4,
-      healNode('atk', dm.constellation4.heal1, 0)
+      healNode('atk', percent(dm.constellation4.heal1), 0)
     ),
     heal2: greaterEq(
       input.constellation,
       4,
-      healNode('atk', dm.constellation4.heal2, 0)
+      healNode('atk', percent(dm.constellation4.heal2), 0)
     ),
     heal3: greaterEq(
       input.constellation,
       4,
-      healNode('atk', dm.constellation4.heal3, 0)
+      healNode('atk', percent(dm.constellation4.heal3), 0)
     ),
   },
 }
