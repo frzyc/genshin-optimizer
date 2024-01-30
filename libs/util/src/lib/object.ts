@@ -142,3 +142,42 @@ export function deepFreeze<T>(obj: T, layers = 5): T {
     Object.values(Object.freeze(obj)).forEach((o) => deepFreeze(o, layers--))
   return obj
 }
+
+export class ObjNotMatchError extends Error {
+  readonly extraKeys: string[]
+  readonly missingKeys: string[]
+
+  constructor(extraKeys: string[], missingKeys: string[], message?: string) {
+    if (!message)
+      message = `obj did not match keys. missing: ${missingKeys}. extraneous: ${extraKeys}`
+    super(message)
+    this.extraKeys = extraKeys
+    this.missingKeys = missingKeys
+  }
+}
+export function verifyObjKeys<K extends string, V>(
+  obj: Partial<Record<K, V>>,
+  keys: readonly K[]
+): asserts obj is Record<K, V> {
+  const extraKeys = extraneousObjKeys(obj, keys)
+  const missingKeys = missingObjKeys(obj, keys)
+  if (extraKeys.length > 0 || missingKeys.length > 0) {
+    throw new ObjNotMatchError(extraKeys, missingKeys)
+  }
+}
+
+export function extraneousObjKeys<K extends string, V>(
+  obj: Partial<Record<K, V>>,
+  keys: readonly K[]
+) {
+  return Object.keys(obj).filter(
+    (k) => !(keys as readonly string[]).includes(k)
+  )
+}
+
+export function missingObjKeys<K extends string, V>(
+  obj: Partial<Record<K, V>>,
+  keys: readonly K[]
+) {
+  return keys.filter((k) => !(Object.keys(obj) as string[]).includes(k))
+}

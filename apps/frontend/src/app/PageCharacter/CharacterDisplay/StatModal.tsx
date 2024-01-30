@@ -92,6 +92,7 @@ function BonusStatsEditor() {
             statFilters={bonusStats}
             setStatFilters={setFilter}
             wrapperFunc={wrapperFunc}
+            label={t('addStats.label')}
           />
         </Grid>
       </CardContent>

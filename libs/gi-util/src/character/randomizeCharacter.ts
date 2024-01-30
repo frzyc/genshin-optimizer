@@ -5,6 +5,7 @@ import {
   getRandomIntInclusive,
 } from '@genshin-optimizer/util'
 import { validateLevelAsc } from '../level'
+import { validateTalent } from '../talent'
 
 export function randomizeCharacter(base: Partial<ICharacter> = {}): ICharacter {
   const key =
@@ -16,15 +17,12 @@ export function randomizeCharacter(base: Partial<ICharacter> = {}): ICharacter {
   const auto = base.talent?.auto ?? getRandomIntInclusive(0, 10)
   const skill = base.talent?.skill ?? getRandomIntInclusive(0, 10)
   const burst = base.talent?.burst ?? getRandomIntInclusive(0, 10)
+  const talent = validateTalent(ascension, { auto, skill, burst })
   return {
     key,
     level,
     ascension,
     constellation,
-    talent: {
-      auto,
-      skill,
-      burst,
-    },
+    talent,
   }
 }

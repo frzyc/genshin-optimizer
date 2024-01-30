@@ -1,6 +1,8 @@
 import {
   allElementalDamageKeys,
   allRelicRarityKeys,
+  allRelicSetKeys,
+  allRelicSubStatKeys,
   type RelicMainStatKey,
   type RelicRarityKey,
   type RelicSetKey,
@@ -14,7 +16,7 @@ import {
   relicSubAffixConfig,
   statKeyMap,
 } from '@genshin-optimizer/sr-dm'
-import { objMap } from '@genshin-optimizer/util'
+import { objMap, verifyObjKeys } from '@genshin-optimizer/util'
 
 type SubStat = {
   base: number //BaseValue
@@ -39,17 +41,17 @@ type SetEffect = {
   otherStats: number[]
 }
 
-type RelicStatDataGen = {
+type RelicStatData = {
   main: MainStatMap
   sub: SubStatMap
 }
-export type RelicSetDataGen = {
+export type RelicSetDatum = {
   setEffects: SetEffect[]
 }
-type RelicSetDatas = Record<RelicSetKey, RelicSetDataGen>
-type RelicDataGen = RelicStatDataGen & RelicSetDatas
+type RelicSetData = Record<RelicSetKey, RelicSetDatum>
+type RelicData = RelicStatData & RelicSetData
 
-export function RelicData(): RelicDataGen {
+export function RelicData(): RelicData {
   const sub = objMap(relicSubAffixConfig, (subsObj) =>
     Object.fromEntries(
       Object.values(subsObj).map(
@@ -96,7 +98,7 @@ export function RelicData(): RelicDataGen {
     ])
   )
 
-  const setEffects = Object.fromEntries(
+  const relicSetData = Object.fromEntries(
     Object.entries(relicSetSkillConfig_bySet).map(([relicId, configs]) => [
       relicSetIdMap[relicId],
       {
@@ -120,9 +122,39 @@ export function RelicData(): RelicDataGen {
     ])
   )
 
-  return {
+  verifyObjKeys(relicSetData, allRelicSetKeys)
+
+  verifyMainShape(main)
+
+  verifySubShape(sub)
+
+  const data = {
     sub,
     main,
-    ...setEffects,
+    ...relicSetData,
   }
+
+  return data
+}
+
+function verifyMainShape(
+  main: Partial<MainStatMap>
+): asserts main is MainStatMap {
+  verifyObjKeys(
+    main,
+    allRelicRarityKeys.map((r) => r.toFixed())
+  )
+}
+
+function verifySubShape(
+  sub: Partial<
+    Record<RelicRarityKey, Partial<Record<RelicSubStatKey, SubStat>>>
+  >
+): asserts sub is SubStatMap {
+  Object.values(sub).forEach((raritySubs) =>
+    verifyObjKeys(raritySubs, allRelicSubStatKeys)
+  )
+
+  const rarityKeys = allRelicRarityKeys.map((r) => r.toFixed())
+  verifyObjKeys(sub, rarityKeys)
 }

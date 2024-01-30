@@ -661,9 +661,10 @@ function CustomTargetDisplay({
         statFilters={bonusStats}
         setStatFilters={setFilter}
         wrapperFunc={wrapperFunc}
+        label={t('addStats.label')}
       />
     ),
-    [bonusStats, setFilter]
+    [bonusStats, setFilter, t]
   )
 
   const isMeleeAuto =

@@ -265,7 +265,7 @@ export default function ChartCard({
           )}
         </Grid>
       </CardContent>
-      {displayData && displayData.length && <Divider />}
+      {displayData && !!displayData.length && <Divider />}
       {chartData && displayData && !!displayData.length && (
         <CardContent>
           <Collapse in={!!downloadData && showDownload}>

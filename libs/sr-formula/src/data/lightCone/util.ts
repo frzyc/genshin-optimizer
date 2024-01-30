@@ -1,10 +1,10 @@
 import { cmpEq, prod, subscript, sum } from '@genshin-optimizer/pando'
-import type { LightConeDataGen } from '@genshin-optimizer/sr-stats'
+import type { LightConeDatum } from '@genshin-optimizer/sr-stats'
 import type { TagMapNodeEntries } from '../util'
 import { getStatFromStatKey, self, selfBuff } from '../util'
 
 export function entriesForLightCone(
-  dataGen: LightConeDataGen
+  dataGen: LightConeDatum
 ): TagMapNodeEntries {
   const { ascension, superimpose } = self.lightCone
   // The "add" only applies to lvl - 1, since "base" is stat at lvl1

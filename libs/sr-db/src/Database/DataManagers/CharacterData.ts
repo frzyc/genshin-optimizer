@@ -179,7 +179,7 @@ export class CharacterDataManager extends SroDataManager<
   LocationToCharacterKey(key: CharacterLocationKey): CharacterKey {
     return key === 'Trailblazer' ? this.getTrailblazerCharacterKey() : key
   }
-  getWithInitWeapon(key: CharacterKey): ICachedSroCharacter {
+  getOrCreate(key: CharacterKey): ICachedSroCharacter {
     if (!this.keys.includes(key)) {
       this.set(key, initialCharacter(key))
     }
