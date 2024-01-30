@@ -37,9 +37,14 @@ export class TypedRead<T extends Tag, Subclass> implements Read {
   withAll<C extends keyof T, V>(
     cat: C,
     keys: (T[C] & string)[],
-    transform: (r: Subclass, k: T[C] & string) => V,
-    base?: object
+    transform: (r: Subclass, k: T[C] & string) => V
   ): Record<T[C] & string, V>
+  withAll<C extends keyof T, V, Base>(
+    cat: C,
+    keys: (T[C] & string)[],
+    transform: (r: Subclass, k: T[C] & string) => V,
+    base: Base
+  ): { [k in (T[C] & string) | keyof Base]: k extends keyof Base ? Base[k] : V }
   withAll<C extends keyof T, V>(
     cat: C,
     keys: (T[C] & string)[],
