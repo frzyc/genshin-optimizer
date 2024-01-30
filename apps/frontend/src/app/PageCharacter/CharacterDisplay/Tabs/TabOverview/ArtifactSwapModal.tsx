@@ -129,13 +129,13 @@ export default function ArtifactSwapModal({
   const paginationProps = {
     count: numPages,
     page: currentPageIndex + 1,
-    onChange: setPage
+    onChange: setPage,
   }
 
   const showingTextProps = {
     numShowing: artifactIdsToShow.length,
     total: totalShowing,
-    t: tk
+    t: tk,
   }
 
   return (

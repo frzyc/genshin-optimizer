@@ -11,13 +11,7 @@ import {
 import type { SubstatKey } from '@genshin-optimizer/gi/consts'
 import { Add } from '@mui/icons-material'
 import DifferenceIcon from '@mui/icons-material/Difference'
-import {
-  Box,
-  Button,
-  CardContent,
-  Grid,
-  Skeleton,
-} from '@mui/material'
+import { Box, Button, CardContent, Grid, Skeleton } from '@mui/material'
 import React, {
   Suspense,
   useCallback,
@@ -179,13 +173,13 @@ export default function PageArtifact() {
   const paginationProps = {
     count: numPages,
     page: currentPageIndex + 1,
-    onChange: setPage
+    onChange: setPage,
   }
 
   const showingTextProps = {
     numShowing: artifactIdsToShow.length,
     total: totalShowing,
-    t: t
+    t: t,
   }
 
   const sortByButtonProps = {
@@ -193,7 +187,7 @@ export default function PageArtifact() {
     value: sortType,
     onChange: (sortType) => database.displayArtifact.set({ sortType }),
     ascending: ascending,
-    onChangeAsc: (ascending) => database.displayArtifact.set({ ascending })
+    onChangeAsc: (ascending) => database.displayArtifact.set({ ascending }),
   }
 
   return (

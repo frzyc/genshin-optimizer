@@ -1,7 +1,4 @@
-import {
-  Pagination,
-  Typography,
-} from '@mui/material'
+import { Pagination, Typography } from '@mui/material'
 import type { TFunction } from 'i18next'
 import { Trans } from 'react-i18next'
 import SortByButton from '../Components/SortByButton'
@@ -65,8 +62,8 @@ export default function PageAndSortOptionSelect({
 function ShowingItem({
   numShowing,
   total,
-  t
-} : {
+  t,
+}: {
   numShowing: number
   total: string
   t: TFunction<[string, string], undefined>

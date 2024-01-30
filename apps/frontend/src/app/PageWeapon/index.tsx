@@ -207,13 +207,13 @@ export default function PageWeapon() {
   const paginationProps = {
     count: numPages,
     page: currentPageIndex + 1,
-    onChange: setPage
+    onChange: setPage,
   }
 
   const showingTextProps = {
     numShowing: weaponIdsToShow.length,
     total: totalShowing,
-    t: t
+    t: t,
   }
 
   const sortByButtonProps = {
@@ -221,7 +221,7 @@ export default function PageWeapon() {
     value: sortType,
     onChange: (sortType) => database.displayWeapon.set({ sortType }),
     ascending: ascending,
-    onChangeAsc:(ascending) => database.displayWeapon.set({ ascending })
+    onChangeAsc: (ascending) => database.displayWeapon.set({ ascending }),
   }
 
   return (

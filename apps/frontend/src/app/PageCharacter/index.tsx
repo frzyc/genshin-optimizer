@@ -230,13 +230,13 @@ export default function PageCharacter() {
   const paginationProps = {
     count: numPages,
     page: currentPageIndex + 1,
-    onChange: setPage
+    onChange: setPage,
   }
 
   const showingTextProps = {
     numShowing: charKeyListToShow.length,
     total: totalShowing,
-    t: t
+    t: t,
   }
 
   const sortByButtonProps = {
@@ -244,7 +244,7 @@ export default function PageCharacter() {
     value: sortType,
     onChange: (sortType) => database.displayCharacter.set({ sortType }),
     ascending: ascending,
-    onChangeAsc: (ascending) => database.displayCharacter.set({ ascending })
+    onChangeAsc: (ascending) => database.displayCharacter.set({ ascending }),
   }
 
   return (
