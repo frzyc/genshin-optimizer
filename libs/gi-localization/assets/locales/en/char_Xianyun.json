@@ -1,9 +1,7 @@
 {
   "a4Cond": "Starwicker has Adeptal Assistance stacks",
-  "c4Heal1": "Mystery Millet Gorurmet Level 1 Heal",
-  "c4Heal2": "Mystery Millet Gorurmet Level 2 Heal",
-  "c4Heal3": "Mystery Millet Gorurmet Level 3 Heal",
-  "wave_critDMG_": "Driftcloud Wave Crit DMG",
-  "a1Cond": "Storm Pinion stacks",
+  "c4Heal": "Mystery Millet Gourmet Healing",
+  "wave_critDMG_": "Driftcloud Wave CRIT DMG",
+  "a1Cond": "Storm Pinion",
   "c6Cond": "Skyladder uses"
 }

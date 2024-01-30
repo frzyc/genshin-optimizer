@@ -159,16 +159,16 @@ const dmgFormulas = {
   },
   burst: {
     smashDmg: dmgNode('atk', dm.burst.smashDmg, 'burst'),
-    heal: healNode('hp', dm.burst.heal, 0),
+    heal: healNode('hp', percent(dm.burst.heal), 0),
   },
   passive1: {
-    heal: greaterEq(input.asc, 1, healNode('hp', dm.passive1.heal, 0)),
+    heal: greaterEq(input.asc, 1, healNode('hp', percent(dm.passive1.heal), 0)),
   },
   constellation1: {
     heal: greaterEq(
       input.constellation,
       1,
-      healNode('hp', dm.constellation1.heal, 0)
+      healNode('hp', percent(dm.constellation1.heal), 0)
     ),
   },
 }
@@ -386,7 +386,7 @@ const sheet: ICharacterSheet = {
       ct.condTem('constellation2', {
         path: condC2OverhealPath,
         value: condC2Overheal,
-        name: ct.ch('c2Cond'),
+        name: st('afterOverflow'),
         states: {
           on: {
             fields: [
