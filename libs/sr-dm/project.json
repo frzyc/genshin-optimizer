@@ -4,7 +4,7 @@
   "sourceRoot": "libs/sr-dm/src",
   "projectType": "library",
   "targets": {
-    "load-dm": {
+    "update-dm": {
       "options": {
         "outputPath": "libs/sr-dm/StarRailData"
       },
