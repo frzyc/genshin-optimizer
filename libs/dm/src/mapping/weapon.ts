@@ -170,6 +170,7 @@ export const weaponIdMap: Record<number | string, WeaponKey> = {
   14512: 'TulaytullahsRemembrance',
   14513: 'CashflowSupervision',
   14514: 'TomeOfTheEternalFlow',
+  14515: 'CranesEchoingCall',
 
   //bow
   15101: 'HuntersBow',
