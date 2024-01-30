@@ -188,13 +188,21 @@ export default function AllowChar({
           ctMap.elementTotals[eleKey].total++
           if (charKeyMap[ck]) ctMap.elementTotals[eleKey].current++
 
+          // Handle multiple Travelers
           if (charKeyToLocCharKey(ck) === 'Traveler') {
-            console.log(charKeyMap)
+            // Add to each element if Traveler of that element is in the database
+            //
+            // This makes sure that if the Traveler is in the filter,
+            // counts are added to each of their elements in the database
             if (!charKeyMap[ck] && locList.includes('Traveler')) {
               ctMap.elementTotals[eleKey].current++
             }
+
             if (travelerProcessed) return
 
+            // This is needed for the element filters
+            // If a Traveler of different element is rendered than the one in the filter,
+            // the counts should be increased accordingly
             if (!charKeyMap[ck] && locList.includes('Traveler')) {
               ctMap.weaponTypeTotals[weaponTypeKey].current++
               ctMap.characterRarityTotals[characterRarityKey].current++
@@ -207,9 +215,8 @@ export default function AllowChar({
           if (charKeyMap[ck]) ctMap.weaponTypeTotals[weaponTypeKey].current++
 
           ctMap.characterRarityTotals[characterRarityKey].total++
-          if (charKeyMap[ck]) {
+          if (charKeyMap[ck])
             ctMap.characterRarityTotals[characterRarityKey].current++
-          }
 
           const locKey = charKeyToLocCharKey(ck)
           if (locList.includes(locKey)) {
