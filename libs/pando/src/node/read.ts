@@ -37,14 +37,16 @@ export class TypedRead<T extends Tag, Subclass> implements Read {
   withAll<C extends keyof T, V>(
     cat: C,
     keys: (T[C] & string)[],
-    transform: (r: Subclass, k: T[C] & string) => V
+    transform: (r: Subclass, k: T[C] & string) => V,
+    base?: object
   ): Record<T[C] & string, V>
   withAll<C extends keyof T, V>(
     cat: C,
     keys: (T[C] & string)[],
-    transform: (r: Subclass, k: T[C] & string) => V | Subclass = (x) => x
+    transform: (r: Subclass, k: T[C] & string) => V | Subclass = (x) => x,
+    base: object = {}
   ): Record<T[C] & string, V | Subclass> {
-    return new Proxy({} as Record<T[C] & string, V | Subclass>, {
+    return new Proxy(base as Record<T[C] & string, V | Subclass>, {
       ownKeys: (_) => keys,
       get: (old, p: T[C] & string) =>
         old[p] ?? (old[p] = transform(this.with(cat, p), p)),

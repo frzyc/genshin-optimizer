@@ -2,8 +2,8 @@ import type { NumNode } from '@genshin-optimizer/pando'
 import { cmpEq, cmpNE, constant, subscript } from '@genshin-optimizer/pando'
 import { objKeyMap } from '@genshin-optimizer/util'
 import { bonusAbilities, statBoosts, type Source, type Stat } from './listing'
-import type { Tag } from './read'
-import { Read, reader, tag } from './read'
+import type { Read, Tag } from './read'
+import { reader, tag } from './read'
 
 export const metaList: {
   conditionals?: Partial<Record<Source, Record<string, any>>>
@@ -63,15 +63,15 @@ export function priorityTable(
  * include contributions from character and custom values.
  */
 
-type Desc = { src: Source | undefined; accu: Read['ex'] }
-const aggStr: Desc = { src: 'agg', accu: undefined }
+type Desc = { src: Source | undefined; accu: Read['accu'] }
+const aggStr: Desc = { src: 'agg', accu: 'unique' }
 const agg: Desc = { src: 'agg', accu: 'sum' }
-const iso: Desc = { src: 'iso', accu: undefined }
+const iso: Desc = { src: 'iso', accu: 'unique' }
 const isoSum: Desc = { src: 'iso', accu: 'sum' }
 /** `src:`-agnostic calculation */
-const fixed: Desc = { src: 'static', accu: undefined }
+const fixed: Desc = { src: 'static', accu: 'unique' }
 /** The calculation must have a matching `src:` */
-const prep: Desc = { src: undefined, accu: undefined }
+const prep: Desc = { src: undefined, accu: 'unique' }
 
 const stats: Record<Stat, Desc> = {
   hp: agg,
@@ -141,18 +141,24 @@ export const enemyTag = {
 export function convert<V extends Record<string, Record<string, Desc>>>(
   v: V,
   tag: Omit<Tag, 'qt' | 'q'>
-): { [j in keyof V]: { [k in keyof V[j]]: Read } } {
-  return Object.fromEntries(
-    Object.entries(v).map(([qt, v]) => [
-      qt,
-      Object.fromEntries(
-        Object.entries(v).map(([q, { src, accu }]) =>
-          src
-            ? [q, new Read({ src, qt, q, ...tag }, accu)]
-            : [q, new Read({ qt, q, ...tag }, accu)]
-        )
-      ),
-    ])
+): {
+  [j in 'withTag' | keyof V]: j extends 'withTag'
+    ? (_: Tag) => Read
+    : { [k in keyof V[j]]: Read }
+} {
+  const r = reader.withTag(tag)
+  return r.withAll(
+    'qt',
+    Object.keys(v),
+    (r, qt) =>
+      r.withAll('q', Object.keys(v[qt]), (r, q) => {
+        if (!v[qt][q]) console.error(`Invalid { qt:${qt} q:${q} }`)
+        const { src, accu } = v[qt][q]
+        // `tag.src` overrides `Desc`
+        if (src && !tag.src) r = r.src(src)
+        return r[accu]
+      }),
+    { withTag: (tag: Tag) => r.withTag(tag) }
   ) as any
 }
 
