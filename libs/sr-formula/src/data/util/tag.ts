@@ -205,7 +205,7 @@ export const conditionalEntries = (src: Source) => {
   return (name: string, val: string | number) => base[name].add(val)
 }
 
-function allCustoms<T>(
+export function allCustoms<T>(
   src: Source,
   qt: string,
   meta: object | undefined,

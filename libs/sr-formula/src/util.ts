@@ -5,8 +5,9 @@ import {
   allStatBoostKeys,
 } from '@genshin-optimizer/sr-consts'
 import type { ICharacter, ILightCone } from '@genshin-optimizer/sr-srod'
-import type { Member, Preset, TagMapNodeEntries } from './data/util'
+import type { Member, Preset, Source, TagMapNodeEntries } from './data/util'
 import {
+  conditionalEntries,
   convert,
   getStatFromStatKey,
   reader,
@@ -137,4 +138,13 @@ export function teamData(members: readonly Member[]): TagMapNodeEntries {
       teamEntry.add(reader.withTag({ member, et: 'self' }).sum)
     ),
   ].flat()
+}
+
+export function conditionalData(
+  data: Partial<Record<Source, Record<string, string | number>>>
+) {
+  return Object.entries(data).flatMap(([key, entries]) => {
+    const conds = conditionalEntries(key)
+    return Object.entries(entries).map(([k, v]) => conds(k, v))
+  })
 }

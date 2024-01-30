@@ -5,6 +5,7 @@ import { keys, values } from './data'
 export { Calculator } from './calculator'
 export * from './data/util'
 export * from './debug'
+export * from './meta'
 export * from './util'
 
 export function srCalculatorWithValues(extras: TagMapEntries<number>) {

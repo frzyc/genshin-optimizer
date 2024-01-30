@@ -1,13 +1,15 @@
 import type {
-  RelicSlotKey,
   CharacterKey,
   HitModeKey,
+  RelicSlotKey,
 } from '@genshin-optimizer/sr-consts'
 import type { ICharacter } from '@genshin-optimizer/sr-srod'
 
 export interface ISroCharacter extends ICharacter {
   hitMode: HitModeKey
-  // conditional: IConditionalValues
+  // TODO: Take typings from sr-formula
+  // Record<Source, Record< string, string | number>>
+  conditional: Record<string, Record<string, string | number>>
   // bonusStats: Partial<Record<InputPremodKey, number>>
   // enemyOverride: Partial<
   //   Record<

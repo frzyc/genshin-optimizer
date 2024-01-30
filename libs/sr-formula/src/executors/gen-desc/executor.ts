@@ -24,7 +24,7 @@ export default async function runExecutor(
   // Massage data from `metaList`
   for (const [src, entries] of Object.entries(conditionals!)) {
     for (const [name, obj] of Object.entries(entries!)) {
-      entries![name] = { src, name, tag: { src, name }, ...obj }
+      entries![name] = { src, name, tag: { src, q: name }, ...obj }
     }
   }
 

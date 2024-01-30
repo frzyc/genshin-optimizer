@@ -1,5 +1,8 @@
+import type { SetCondCallback } from '@genshin-optimizer/pando-ui'
+import { DocumentDisplay } from '@genshin-optimizer/pando-ui'
 import type { AscensionKey } from '@genshin-optimizer/sr-consts'
 import { convert, selfTag } from '@genshin-optimizer/sr-formula'
+import { uiSheets } from '@genshin-optimizer/sr-formula-ui'
 import {
   BuildDisplay,
   useCalcContext,
@@ -8,6 +11,7 @@ import {
   useCharacterReducer,
 } from '@genshin-optimizer/sr-ui'
 import { CardThemed } from '@genshin-optimizer/ui-common'
+import { deepClone, layeredAssignment } from '@genshin-optimizer/util'
 import { ExpandMore } from '@mui/icons-material'
 import {
   Accordion,
@@ -20,6 +24,7 @@ import {
   TextField,
   Typography,
 } from '@mui/material'
+import { useCallback } from 'react'
 
 export default function Character() {
   const { characterKey } = useCharacterContext()
@@ -28,6 +33,15 @@ export default function Character() {
 
   const { calc } = useCalcContext()
   const member0 = convert(selfTag, { member: 'member0', et: 'self' })
+
+  const setCond = useCallback<SetCondCallback>(
+    (src, name, value) => {
+      const conditional = deepClone(character?.conditional)
+      layeredAssignment(conditional, [src, name], value)
+      charReducer({ conditional })
+    },
+    [charReducer, character?.conditional]
+  )
 
   return (
     <Container>
@@ -115,6 +129,13 @@ export default function Character() {
               </Stack>
             </AccordionDetails>
           </Accordion>
+          {characterKey === 'Serval' ? (
+            <Box>
+              {uiSheets.Serval!.documents.map((doc) => (
+                <DocumentDisplay document={doc} setCond={setCond} />
+              ))}
+            </Box>
+          ) : undefined}
         </CardContent>
       </CardThemed>
     </Container>

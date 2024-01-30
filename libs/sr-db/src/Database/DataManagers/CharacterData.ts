@@ -54,6 +54,7 @@ export class CharacterDataManager extends SroDataManager<
       eidolon,
       team,
       compareData,
+      conditional,
     } = obj as ISroCharacter
 
     if (!allCharacterKeys.includes(characterKey)) return undefined // non-recoverable
@@ -94,6 +95,8 @@ export class CharacterDataManager extends SroDataManager<
           : ''
       ) as ISroCharacter['team']
 
+    if (typeof conditional !== 'object') conditional = {}
+
     if (typeof compareData !== 'boolean') compareData = false
 
     const char: ISroCharacter = {
@@ -110,6 +113,7 @@ export class CharacterDataManager extends SroDataManager<
       eidolon,
       team,
       compareData,
+      conditional,
     }
     return char
   }
@@ -152,6 +156,7 @@ export class CharacterDataManager extends SroDataManager<
       eidolon,
       team,
       compareData,
+      conditional,
     } = char
     const result: ISroCharacter = {
       key,
@@ -167,6 +172,7 @@ export class CharacterDataManager extends SroDataManager<
       eidolon,
       team,
       compareData,
+      conditional,
     }
     return result
   }
@@ -371,6 +377,7 @@ export function initialCharacter(key: CharacterKey): ICachedSroCharacter {
     hitMode: 'avgHit',
     team: ['', '', ''],
     compareData: false,
+    conditional: {},
     equippedRelics: objKeyMap(allRelicSlotKeys, () => ''),
     equippedLightCone: '',
   }
