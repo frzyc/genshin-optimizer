@@ -23,6 +23,7 @@ import CashflowSupervision from './CashflowSupervision'
 import CinnabarSpindle from './CinnabarSpindle'
 import CompoundBow from './CompoundBow'
 import CoolSteel from './CoolSteel'
+import CranesEchoingCall from './CranesEchoingCall'
 import CrescentPike from './CrescentPike'
 import DarkIronSword from './DarkIronSword'
 import Deathmatch from './Deathmatch'
@@ -204,6 +205,7 @@ const data = {
   CinnabarSpindle,
   CompoundBow,
   CoolSteel,
+  CranesEchoingCall,
   CrescentPike,
   DarkIronSword,
   Deathmatch,

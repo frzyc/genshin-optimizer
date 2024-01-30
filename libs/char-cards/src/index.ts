@@ -23,6 +23,7 @@ import Faruzan from './Character_Faruzan_Card.jpg'
 import Fischl from './Character_Fischl_Card.jpg'
 import Freminet from './Character_Freminet_Card.jpg'
 import Furina from './Character_Furina_Card.jpg'
+import Gaming from './Character_Gaming_Card.jpg'
 import Ganyu from './Character_Ganyu_Card.png'
 import Gorou from './Character_Gorou_Card.png'
 import HuTao from './Character_Hu_Tao_Card.png'
@@ -69,6 +70,7 @@ import Xiangling from './Character_Xiangling_Card.jpg'
 import Xiao from './Character_Xiao_Card.jpg'
 import Xingqiu from './Character_Xingqiu_Card.jpg'
 import Xinyan from './Character_Xinyan_Card.jpg'
+import Xianyun from './Character_Xianyun_Card.jpg'
 import YaeMiko from './Character_Yae_Miko_Card.png'
 import Yanfei from './Character_Yanfei_Card.png'
 import Yaoyao from './Character_Yaoyao_Card.jpg'
@@ -104,6 +106,7 @@ const charCards = {
   Fischl,
   Freminet,
   Furina,
+  Gaming,
   Ganyu,
   Gorou,
   HuTao,
@@ -149,6 +152,7 @@ const charCards = {
   Wanderer,
   Wriothesley,
   Xiangling,
+  Xianyun,
   Xiao,
   Xingqiu,
   Xinyan,

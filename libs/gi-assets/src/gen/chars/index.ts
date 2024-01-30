@@ -23,6 +23,7 @@ import Faruzan from './Faruzan'
 import Fischl from './Fischl'
 import Freminet from './Freminet'
 import Furina from './Furina'
+import Gaming from './Gaming'
 import Ganyu from './Ganyu'
 import Gorou from './Gorou'
 import HuTao from './HuTao'
@@ -73,6 +74,7 @@ import Venti from './Venti'
 import Wanderer from './Wanderer'
 import Wriothesley from './Wriothesley'
 import Xiangling from './Xiangling'
+import Xianyun from './Xianyun'
 import Xiao from './Xiao'
 import Xingqiu from './Xingqiu'
 import Xinyan from './Xinyan'
@@ -109,6 +111,7 @@ const data = {
   Fischl,
   Freminet,
   Furina,
+  Gaming,
   Ganyu,
   Gorou,
   HuTao,
@@ -159,6 +162,7 @@ const data = {
   Wanderer,
   Wriothesley,
   Xiangling,
+  Xianyun,
   Xiao,
   Xingqiu,
   Xinyan,
