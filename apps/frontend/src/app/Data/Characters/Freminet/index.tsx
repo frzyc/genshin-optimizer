@@ -19,12 +19,16 @@ import {
   percent,
   prod,
 } from '../../../Formula/utils'
+import KeyMap from '../../../KeyMap'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import type { ICharacterSheet } from '../ICharacterSheet'
 import { charTemplates } from '../charTemplates'
-import { dataObjForCharacterSheet, dmgNode } from '../dataUtil'
-import KeyMap from '../../../KeyMap'
+import {
+  dataObjForCharacterSheet,
+  dmgNode,
+  plungingDmgNodes,
+} from '../dataUtil'
 
 const key: CharacterKey = 'Freminet'
 const data_gen = allStats.char.data[key]
@@ -168,12 +172,7 @@ const dmgFormulas = {
     spinningDmg: dmgNode('atk', dm.charged.spin_dmg, 'charged'),
     finalDmg: dmgNode('atk', dm.charged.final_dmg, 'charged'),
   },
-  plunging: Object.fromEntries(
-    Object.entries(dm.plunging).map(([key, value]) => [
-      key,
-      dmgNode('atk', value, 'plunging'),
-    ])
-  ),
+  plunging: plungingDmgNodes('atk', dm.plunging),
   skill: {
     thrustDmg: dmgNode('atk', dm.skill.thrustDmg, 'skill'),
     frostDmg: dmgNode(

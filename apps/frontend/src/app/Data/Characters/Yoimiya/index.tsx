@@ -1,3 +1,4 @@
+import type { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
 import { allStats } from '@genshin-optimizer/gi-stats'
 import { input } from '../../../Formula'
 import {
@@ -15,14 +16,18 @@ import {
   unequal,
 } from '../../../Formula/utils'
 import KeyMap from '../../../KeyMap'
-import type { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
 import type { INodeFieldDisplay } from '../../../Types/fieldDisplay'
 import { range } from '../../../Util/Util'
-import { cond, stg, st } from '../../SheetUtil'
+import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
-import { charTemplates } from '../charTemplates'
 import type { ICharacterSheet } from '../ICharacterSheet.d'
-import { customDmgNode, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
+import { charTemplates } from '../charTemplates'
+import {
+  customDmgNode,
+  dataObjForCharacterSheet,
+  dmgNode,
+  plungingDmgNodes,
+} from '../dataUtil'
 
 const key: CharacterKey = 'Yoimiya'
 const elementKey: ElementKey = 'pyro'
@@ -216,12 +221,7 @@ export const dmgFormulas = {
       hit: { ele: constant(elementKey) },
     }),
   },
-  plunging: Object.fromEntries(
-    Object.entries(dm.plunging).map(([key, value]) => [
-      key,
-      dmgNode('atk', value, 'plunging'),
-    ])
-  ),
+  plunging: plungingDmgNodes('atk', dm.plunging),
   skill: {},
   burst: {
     dmg: dmgNode('atk', dm.burst.dmg, 'burst', {

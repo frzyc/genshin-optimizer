@@ -1,3 +1,4 @@
+import type { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
 import { allStats } from '@genshin-optimizer/gi-stats'
 import { input, tally } from '../../../Formula/index'
 import {
@@ -11,12 +12,15 @@ import {
   sum,
   unequal,
 } from '../../../Formula/utils'
-import type { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
-import { cond, stg, st } from '../../SheetUtil'
+import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
-import { charTemplates } from '../charTemplates'
 import type { ICharacterSheet } from '../ICharacterSheet.d'
-import { dataObjForCharacterSheet, dmgNode } from '../dataUtil'
+import { charTemplates } from '../charTemplates'
+import {
+  dataObjForCharacterSheet,
+  dmgNode,
+  plungingDmgNodes,
+} from '../dataUtil'
 
 const key: CharacterKey = 'Nilou'
 const elementKey: ElementKey = 'hydro'
@@ -186,12 +190,7 @@ export const dmgFormulas = {
     dmg1: dmgNode('atk', dm.charged.hit1, 'charged'),
     dmg2: dmgNode('atk', dm.charged.hit2, 'charged'),
   },
-  plunging: Object.fromEntries(
-    Object.entries(dm.plunging).map(([key, value]) => [
-      key,
-      dmgNode('atk', value, 'plunging'),
-    ])
-  ),
+  plunging: plungingDmgNodes('atk', dm.plunging),
   skill: {
     skillDmg: dmgNode('hp', dm.skill.skillDmg, 'skill'),
     dance1Dmg: dmgNode('hp', dm.skill.dance1Dmg, 'skill'),

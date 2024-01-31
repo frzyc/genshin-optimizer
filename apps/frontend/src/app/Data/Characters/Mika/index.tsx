@@ -17,7 +17,12 @@ import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import type { ICharacterSheet } from '../ICharacterSheet'
 import { charTemplates } from '../charTemplates'
-import { dataObjForCharacterSheet, dmgNode, healNodeTalent } from '../dataUtil'
+import {
+  dataObjForCharacterSheet,
+  dmgNode,
+  healNodeTalent,
+  plungingDmgNodes,
+} from '../dataUtil'
 
 const key: CharacterKey = 'Mika'
 const elementKey: ElementKey = 'cryo'
@@ -154,12 +159,7 @@ const dmgFormulas = {
   charged: {
     dmg: dmgNode('atk', dm.charged.dmg, 'charged'),
   },
-  plunging: Object.fromEntries(
-    Object.entries(dm.plunging).map(([name, arr]) => [
-      name,
-      dmgNode('atk', arr, 'plunging'),
-    ])
-  ),
+  plunging: plungingDmgNodes('atk', dm.plunging),
   skill: {
     arrowDmg: dmgNode('atk', dm.skill.arrowDmg, 'skill'),
     flareDmg: dmgNode('atk', dm.skill.flareDmg, 'skill'),

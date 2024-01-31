@@ -1,3 +1,4 @@
+import type { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
 import { allStats } from '@genshin-optimizer/gi-stats'
 import { input, target } from '../../../Formula'
 import {
@@ -10,15 +11,15 @@ import {
   sum,
 } from '../../../Formula/utils'
 import KeyMap from '../../../KeyMap'
-import type { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
-import { cond, stg, st } from '../../SheetUtil'
+import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
-import { charTemplates } from '../charTemplates'
 import type { ICharacterSheet } from '../ICharacterSheet.d'
+import { charTemplates } from '../charTemplates'
 import {
   dataObjForCharacterSheet,
   dmgNode,
   healNodeTalent,
+  plungingDmgNodes,
   shieldElement,
   shieldNodeTalent,
 } from '../dataUtil'
@@ -138,12 +139,7 @@ const dmgFormulas = {
       hit: { ele: constant('cryo') },
     }),
   },
-  plunging: Object.fromEntries(
-    Object.entries(dm.plunging).map(([key, value]) => [
-      key,
-      dmgNode('atk', value, 'plunging'),
-    ])
-  ),
+  plunging: plungingDmgNodes('atk', dm.plunging),
   skill: {
     pressShield: nodeSkillShieldPress,
     pressCryoShield: shieldElement(elementKey, nodeSkillShieldPress),

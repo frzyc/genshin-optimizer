@@ -22,6 +22,7 @@ import {
   customShieldNode,
   dataObjForCharacterSheet,
   dmgNode,
+  plungingDmgNodes,
   shieldElement,
 } from '../dataUtil'
 
@@ -148,12 +149,7 @@ const dmgFormulas = {
         : greaterEq(input.constellation, 6, dmgNode('atk', arr, 'charged')),
     ])
   ),
-  plunging: Object.fromEntries(
-    Object.entries(dm.plunging).map(([key, value]) => [
-      key,
-      dmgNode('atk', value, 'plunging'),
-    ])
-  ),
+  plunging: plungingDmgNodes('atk', dm.plunging),
   skill: {
     dmg: dmgNode('atk', dm.skill.dmg, 'skill'),
   },

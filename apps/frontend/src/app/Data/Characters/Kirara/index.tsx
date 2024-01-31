@@ -1,6 +1,7 @@
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
 import { allElementKeys } from '@genshin-optimizer/consts'
 import { allStats } from '@genshin-optimizer/gi-stats'
+import { objKeyMap } from '@genshin-optimizer/util'
 import { input } from '../../../Formula'
 import {
   constant,
@@ -11,7 +12,6 @@ import {
   prod,
   threshold,
 } from '../../../Formula/utils'
-import { objKeyMap } from '@genshin-optimizer/util'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import type { ICharacterSheet } from '../ICharacterSheet'
@@ -20,6 +20,7 @@ import {
   customDmgNode,
   dataObjForCharacterSheet,
   dmgNode,
+  plungingDmgNodes,
   shieldElement,
   shieldNodeTalent,
 } from '../dataUtil'
@@ -145,12 +146,7 @@ const dmgFormulas = {
     dmg1: dmgNode('atk', dm.charged.dmg1, 'charged'),
     dmg2: dmgNode('atk', dm.charged.dmg2, 'charged'),
   },
-  plunging: Object.fromEntries(
-    Object.entries(dm.plunging).map(([name, arr]) => [
-      name,
-      dmgNode('atk', arr, 'plunging'),
-    ])
-  ),
+  plunging: plungingDmgNodes('atk', dm.plunging),
   skill: {
     tailDmg: dmgNode('atk', dm.skill.tailDmg, 'skill'),
     shield: skillShield,

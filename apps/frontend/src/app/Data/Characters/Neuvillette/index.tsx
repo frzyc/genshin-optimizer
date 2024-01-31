@@ -11,11 +11,11 @@ import {
   infoMut,
   lookup,
   naught,
-  unequal,
+  one,
   percent,
   prod,
   threshold,
-  one,
+  unequal,
 } from '../../../Formula/utils'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
@@ -26,6 +26,7 @@ import {
   dataObjForCharacterSheet,
   dmgNode,
   healNode,
+  plungingDmgNodes,
 } from '../dataUtil'
 
 const key: CharacterKey = 'Neuvillette'
@@ -152,12 +153,7 @@ const dmgFormulas = {
     hpRestore: healNode('hp', dm.charged.hpRestore, 0),
     hpLoss: prod(percent(dm.charged.hpCost), input.total.hp),
   },
-  plunging: Object.fromEntries(
-    Object.entries(dm.plunging).map(([key, value]) => [
-      key,
-      dmgNode('atk', value, 'plunging'),
-    ])
-  ),
+  plunging: plungingDmgNodes('atk', dm.plunging),
   skill: {
     skillDmg: dmgNode('hp', dm.skill.skillDmg, 'skill'),
     thornDmg: dmgNode('atk', dm.skill.thornDmg, 'skill'),

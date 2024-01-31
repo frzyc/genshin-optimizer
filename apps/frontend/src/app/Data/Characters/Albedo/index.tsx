@@ -1,3 +1,5 @@
+import type { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
+import { allStats } from '@genshin-optimizer/gi-stats'
 import { input, target } from '../../../Formula'
 import {
   equal,
@@ -8,14 +10,16 @@ import {
   prod,
 } from '../../../Formula/utils'
 import KeyMap from '../../../KeyMap'
-import type { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
 import { range } from '../../../Util/Util'
-import { cond, stg, st } from '../../SheetUtil'
+import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
-import { charTemplates } from '../charTemplates'
 import type { ICharacterSheet } from '../ICharacterSheet'
-import { dataObjForCharacterSheet, dmgNode } from '../dataUtil'
-import { allStats } from '@genshin-optimizer/gi-stats'
+import { charTemplates } from '../charTemplates'
+import {
+  dataObjForCharacterSheet,
+  dmgNode,
+  plungingDmgNodes,
+} from '../dataUtil'
 
 const key: CharacterKey = 'Albedo'
 const elementKey: ElementKey = 'geo'
@@ -155,12 +159,7 @@ const dmgFormulas = {
     dmg1: dmgNode('atk', dm.charged.dmg1, 'charged'),
     dmg2: dmgNode('atk', dm.charged.dmg2, 'charged'),
   },
-  plunging: Object.fromEntries(
-    Object.entries(dm.plunging).map(([key, value]) => [
-      key,
-      dmgNode('atk', value, 'plunging'),
-    ])
-  ),
+  plunging: plungingDmgNodes('atk', dm.plunging),
   skill: {
     dmg: dmgNode('atk', dm.skill.skillDmg, 'skill'),
     blossom: dmgNode('def', dm.skill.blossomDmg, 'skill', {

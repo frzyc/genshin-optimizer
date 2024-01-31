@@ -29,6 +29,7 @@ import {
   dmgNode,
   healNode,
   healNodeTalent,
+  plungingDmgNodes,
 } from '../dataUtil'
 
 const key: CharacterKey = 'Xianyun'
@@ -178,7 +179,7 @@ const leapDmg = (lvlMultiplier: number[]) =>
       subscript(input.total.skillIndex, lvlMultiplier, { unit: '%' }),
       input.total.atk
     ),
-    'plunging',
+    'plunging_impact',
     {
       premod: {
         plunging_critDMG_: c6Wave_critDMG_,
@@ -195,11 +196,7 @@ const dmgFormulas = {
   charged: {
     dmg: dmgNode('atk', dm.charged.dmg, 'charged'),
   },
-  plunging: {
-    dmg: dmgNode('atk', dm.plunging.dmg, 'plunging'),
-    low: dmgNode('atk', dm.plunging.low, 'plunging'),
-    high: dmgNode('atk', dm.plunging.high, 'plunging'),
-  },
+  plunging: plungingDmgNodes('atk', dm.plunging),
   skill: {
     trailDmg: dmgNode('atk', dm.skill.trailDmg, 'skill'),
     firstLeapDmg: leapDmg(dm.skill.firstLeapDmg),
@@ -261,7 +258,7 @@ export const data = dataObjForCharacterSheet(
     },
     teamBuff: {
       premod: {
-        plunging_dmgInc: a4HasStacks_plunging_dmg_inc,
+        plunging_impact_dmgInc: a4HasStacks_plunging_dmg_inc,
         plunging_critRate_: a1_plunging_critRate_,
       },
     },

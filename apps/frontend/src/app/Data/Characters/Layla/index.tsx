@@ -1,3 +1,4 @@
+import type { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
 import { allStats } from '@genshin-optimizer/gi-stats'
 import { input, target } from '../../../Formula'
 import {
@@ -12,15 +13,15 @@ import {
   sum,
 } from '../../../Formula/utils'
 import KeyMap from '../../../KeyMap'
-import type { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
 import { range } from '../../../Util/Util'
-import { cond, stg, st } from '../../SheetUtil'
+import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
-import { charTemplates } from '../charTemplates'
 import type { ICharacterSheet } from '../ICharacterSheet.d'
+import { charTemplates } from '../charTemplates'
 import {
   dataObjForCharacterSheet,
   dmgNode,
+  plungingDmgNodes,
   shieldElement,
   shieldNodeTalent,
 } from '../dataUtil'
@@ -152,12 +153,7 @@ const dmgFormulas = {
     dmg1: dmgNode('atk', dm.charged.dmg1, 'charged'),
     dmg2: dmgNode('atk', dm.charged.dmg2, 'charged'),
   },
-  plunging: Object.fromEntries(
-    Object.entries(dm.plunging).map(([name, arr]) => [
-      name,
-      dmgNode('atk', arr, 'plunging'),
-    ])
-  ),
+  plunging: plungingDmgNodes('atk', dm.plunging),
   skill: {
     skillDmg: dmgNode('atk', dm.skill.skillDmg, 'skill'),
     starDmg: dmgNode('atk', dm.skill.starDmg, 'skill', {

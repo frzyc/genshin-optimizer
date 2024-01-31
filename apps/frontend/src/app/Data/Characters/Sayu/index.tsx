@@ -18,14 +18,15 @@ import { absorbableEle } from '../../../Types/consts'
 import { range } from '../../../Util/Util'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
+import type { ICharacterSheet } from '../ICharacterSheet.d'
 import { charTemplates } from '../charTemplates'
 import {
   customHealNode,
   dataObjForCharacterSheet,
   dmgNode,
   healNodeTalent,
+  plungingDmgNodes,
 } from '../dataUtil'
-import type { ICharacterSheet } from '../ICharacterSheet.d'
 
 const key: CharacterKey = 'Sayu'
 const elementKey: ElementKey = 'anemo'
@@ -164,12 +165,7 @@ const dmgFormulas = {
     spin: dmgNode('atk', dm.charged.spin, 'charged'),
     final: dmgNode('atk', dm.charged.final, 'charged'),
   },
-  plunging: Object.fromEntries(
-    Object.entries(dm.plunging).map(([key, value]) => [
-      key,
-      dmgNode('atk', value, 'plunging'),
-    ])
-  ),
+  plunging: plungingDmgNodes('atk', dm.plunging),
   skill: {
     wheelDmg: dmgNode('atk', dm.skill.wheelDmg, 'skill'),
     kickPressDmg: dmgNode('atk', dm.skill.kickPressDmg, 'skill', {

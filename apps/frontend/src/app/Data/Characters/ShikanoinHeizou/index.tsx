@@ -16,11 +16,16 @@ import {
 import KeyMap from '../../../KeyMap'
 import { absorbableEle } from '../../../Types/consts'
 import { range } from '../../../Util/Util'
-import { cond, stg, st } from '../../SheetUtil'
+import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
-import { charTemplates } from '../charTemplates'
 import type { ICharacterSheet } from '../ICharacterSheet.d'
-import { customDmgNode, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
+import { charTemplates } from '../charTemplates'
+import {
+  customDmgNode,
+  dataObjForCharacterSheet,
+  dmgNode,
+  plungingDmgNodes,
+} from '../dataUtil'
 
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
 
@@ -168,12 +173,7 @@ export const dmgFormulas = {
   charged: {
     dmg: dmgNode('atk', dm.charged.dmg, 'charged'),
   },
-  plunging: Object.fromEntries(
-    Object.entries(dm.plunging).map(([key, value]) => [
-      key,
-      dmgNode('atk', value, 'plunging'),
-    ])
-  ),
+  plunging: plungingDmgNodes('atk', dm.plunging),
   skill: {
     dmg: customDmgNode(
       prod(

@@ -7,6 +7,8 @@ export const hitMoves = {
   normal: 'Normal Att.',
   charged: 'Charged Att.',
   plunging: 'Plunging Att.',
+  plunging_collision: 'Plunging Collision',
+  plunging_impact: 'Plunging Impact',
   elemental: 'Elemental Att.',
   skill: 'Ele. Skill',
   burst: 'Ele. Burst',

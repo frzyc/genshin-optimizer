@@ -1,3 +1,8 @@
+import type {
+  CharacterKey,
+  ElementKey,
+  RegionKey,
+} from '@genshin-optimizer/consts'
 import { allStats } from '@genshin-optimizer/gi-stats'
 import { input } from '../../../Formula'
 import {
@@ -7,16 +12,16 @@ import {
   prod,
   subscript,
 } from '../../../Formula/utils'
-import type {
-  CharacterKey,
-  ElementKey,
-  RegionKey,
-} from '@genshin-optimizer/consts'
 import { stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
-import { charTemplates } from '../charTemplates'
 import type { ICharacterSheet } from '../ICharacterSheet.d'
-import { customDmgNode, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
+import { charTemplates } from '../charTemplates'
+import {
+  customDmgNode,
+  dataObjForCharacterSheet,
+  dmgNode,
+  plungingDmgNodes,
+} from '../dataUtil'
 
 const key: CharacterKey = 'Tartaglia'
 const elementKey: ElementKey = 'hydro'
@@ -107,12 +112,7 @@ const dmgFormulas = {
       hit: { ele: constant('hydro') },
     }),
   },
-  plunging: Object.fromEntries(
-    Object.entries(dm.plunging).map(([key, value]) => [
-      key,
-      dmgNode('atk', value, 'plunging'),
-    ])
-  ),
+  plunging: plungingDmgNodes('atk', dm.plunging),
   skill: {
     stanceDmg: dmgNode('atk', dm.skill.stanceDmg, 'skill'),
     normal1: customDmgNode(

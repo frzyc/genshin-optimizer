@@ -1,24 +1,29 @@
+import type { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
 import { allStats } from '@genshin-optimizer/gi-stats'
 import { input } from '../../../Formula'
 import {
   constant,
   equal,
   greaterEq,
-  unequal,
   infoMut,
   lookup,
   naught,
   percent,
   prod,
   subscript,
+  unequal,
 } from '../../../Formula/utils'
-import type { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
 import { range } from '../../../Util/Util'
-import { cond, stg, st } from '../../SheetUtil'
+import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
-import { charTemplates } from '../charTemplates'
 import type { ICharacterSheet } from '../ICharacterSheet.d'
-import { customDmgNode, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
+import { charTemplates } from '../charTemplates'
+import {
+  customDmgNode,
+  dataObjForCharacterSheet,
+  dmgNode,
+  plungingDmgNodes,
+} from '../dataUtil'
 
 const key: CharacterKey = 'Cyno'
 const elementKey: ElementKey = 'electro'
@@ -156,12 +161,7 @@ const dmgFormulas = {
   charged: {
     dmg: dmgNode('atk', dm.charged.dmg, 'charged'),
   },
-  plunging: Object.fromEntries(
-    Object.entries(dm.plunging).map(([key, value]) => [
-      key,
-      dmgNode('atk', value, 'plunging'),
-    ])
-  ),
+  plunging: plungingDmgNodes('atk', dm.plunging),
   skill: {
     skillDmg: dmgNode('atk', dm.skill.skillDmg, 'skill', {
       premod: { skill_dmg_: a1Judication_soulfarer_dmg_ },
@@ -203,7 +203,7 @@ const dmgFormulas = {
             subscript(input.total.burstIndex, value, { unit: '%' }),
             input.total.atk
           ),
-          'plunging',
+          key === 'dmg' ? 'plunging_collision' : 'plunging_impact',
           { hit: { ele: constant(elementKey) } }
         ),
       ])

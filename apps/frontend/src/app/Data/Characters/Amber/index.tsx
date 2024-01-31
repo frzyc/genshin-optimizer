@@ -1,3 +1,8 @@
+import type {
+  CharacterKey,
+  ElementKey,
+  RegionKey,
+} from '@genshin-optimizer/consts'
 import { allStats } from '@genshin-optimizer/gi-stats'
 import { input } from '../../../Formula'
 import {
@@ -9,16 +14,15 @@ import {
   prod,
   subscript,
 } from '../../../Formula/utils'
-import type {
-  CharacterKey,
-  ElementKey,
-  RegionKey,
-} from '@genshin-optimizer/consts'
-import { cond, stg, st } from '../../SheetUtil'
+import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
-import { charTemplates } from '../charTemplates'
 import type { ICharacterSheet } from '../ICharacterSheet.d'
-import { dataObjForCharacterSheet, dmgNode } from '../dataUtil'
+import { charTemplates } from '../charTemplates'
+import {
+  dataObjForCharacterSheet,
+  dmgNode,
+  plungingDmgNodes,
+} from '../dataUtil'
 
 const key: CharacterKey = 'Amber'
 const elementKey: ElementKey = 'pyro'
@@ -119,12 +123,7 @@ const dmgFormulas = {
       hit: { ele: constant('pyro') },
     }),
   },
-  plunging: Object.fromEntries(
-    Object.entries(dm.plunging).map(([key, value]) => [
-      key,
-      dmgNode('atk', value, 'plunging'),
-    ])
-  ),
+  plunging: plungingDmgNodes('atk', dm.plunging),
   skill: {
     inheritedHp: prod(
       subscript(input.total.skillIndex, dm.skill.inheritedHp),

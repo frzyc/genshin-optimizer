@@ -23,6 +23,7 @@ import {
   dataObjForCharacterSheet,
   dmgNode,
   healNode,
+  plungingDmgNodes,
 } from '../dataUtil'
 
 const key: CharacterKey = 'Gaming'
@@ -132,12 +133,7 @@ const dmgFormulas = {
     cyclicDmg: dmgNode('atk', dm.charged.cyclicDmg, 'charged'),
     finalDmg: dmgNode('atk', dm.charged.finalDmg, 'charged'),
   },
-  plunging: Object.fromEntries(
-    Object.entries(dm.plunging).map(([key, value]) => [
-      key,
-      dmgNode('atk', value, 'plunging'),
-    ])
-  ),
+  plunging: plungingDmgNodes('atk', dm.plunging),
   skill: {
     cloudstriderDmg: customDmgNode(
       prod(
@@ -146,7 +142,7 @@ const dmgFormulas = {
         }),
         input.total.atk
       ),
-      'plunging',
+      'plunging_impact',
       {
         hit: { ele: constant('pyro') },
         premod: {

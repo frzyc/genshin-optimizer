@@ -24,7 +24,12 @@ import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import type { ICharacterSheet } from '../ICharacterSheet.d'
 import { charTemplates } from '../charTemplates'
-import { dataObjForCharacterSheet, dmgNode, healNodeTalent } from '../dataUtil'
+import {
+  dataObjForCharacterSheet,
+  dmgNode,
+  healNodeTalent,
+  plungingDmgNodes,
+} from '../dataUtil'
 
 const key: CharacterKey = 'Lyney'
 const data_gen = allStats.char.data[key]
@@ -186,12 +191,7 @@ const dmgFormulas = {
     pyrotechnic: dmgNode('atk', dm.charged.pyrotechnicDmg, 'charged', hat_addl),
     spiritbreath: dmgNode('atk', dm.charged.thornDmg, 'charged', hit_ele_pyro),
   },
-  plunging: Object.fromEntries(
-    Object.entries(dm.plunging).map(([key, value]) => [
-      key,
-      dmgNode('atk', value, 'plunging'),
-    ])
-  ),
+  plunging: plungingDmgNodes('atk', dm.plunging),
   skill: {
     dmg: dmgNode('atk', dm.skill.dmg, 'skill'),
     skillDmgInc,

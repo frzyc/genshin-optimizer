@@ -1,3 +1,4 @@
+import type { CharacterKey } from '@genshin-optimizer/consts'
 import { allStats } from '@genshin-optimizer/gi-stats'
 import { input, target } from '../../../Formula'
 import {
@@ -10,12 +11,15 @@ import {
   subscript,
 } from '../../../Formula/utils'
 import KeyMap from '../../../KeyMap'
-import type { CharacterKey } from '@genshin-optimizer/consts'
-import { cond, stg, st } from '../../SheetUtil'
+import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
-import { charTemplates } from '../charTemplates'
 import type { ICharacterSheet } from '../ICharacterSheet.d'
-import { dataObjForCharacterSheet, dmgNode } from '../dataUtil'
+import { charTemplates } from '../charTemplates'
+import {
+  dataObjForCharacterSheet,
+  dmgNode,
+  plungingDmgNodes,
+} from '../dataUtil'
 
 const key: CharacterKey = 'KujouSara'
 const data_gen = allStats.char.data[key]
@@ -110,12 +114,7 @@ const dmgFormulas = {
       hit: { ele: constant('electro') },
     }),
   },
-  plunging: Object.fromEntries(
-    Object.entries(dm.plunging).map(([key, value]) => [
-      key,
-      dmgNode('atk', value, 'plunging'),
-    ])
-  ),
+  plunging: plungingDmgNodes('atk', dm.plunging),
   skill: {
     dmg: dmgNode('atk', dm.skill.dmg, 'skill'),
     skillTenguAmbush_,

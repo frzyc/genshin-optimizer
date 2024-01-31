@@ -1,13 +1,18 @@
+import type { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
 import { allStats } from '@genshin-optimizer/gi-stats'
 import { input, target } from '../../../Formula'
 import { equal, greaterEq, infoMut } from '../../../Formula/utils'
 import KeyMap from '../../../KeyMap'
-import type { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
 import { cond, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
-import { charTemplates } from '../charTemplates'
 import type { ICharacterSheet } from '../ICharacterSheet.d'
-import { dataObjForCharacterSheet, dmgNode, healNodeTalent } from '../dataUtil'
+import { charTemplates } from '../charTemplates'
+import {
+  dataObjForCharacterSheet,
+  dmgNode,
+  healNodeTalent,
+  plungingDmgNodes,
+} from '../dataUtil'
 
 const key: CharacterKey = 'Barbara'
 const elementKey: ElementKey = 'hydro'
@@ -105,12 +110,7 @@ const dmgFormulas = {
   charged: {
     dmg: dmgNode('atk', dm.charged.dmg, 'charged'),
   },
-  plunging: Object.fromEntries(
-    Object.entries(dm.plunging).map(([key, value]) => [
-      key,
-      dmgNode('atk', value, 'plunging'),
-    ])
-  ),
+  plunging: plungingDmgNodes('atk', dm.plunging),
   skill: {
     regen: healNodeTalent('hp', dm.skill.regen_hp_, dm.skill.regen_hp, 'skill'),
     cregen: healNodeTalent(

@@ -45,7 +45,8 @@ const allTalents = ['auto', 'skill', 'burst'] as const
 const allMoves = [
   'normal',
   'charged',
-  'plunging',
+  'plunging_collision',
+  'plunging_impact',
   'skill',
   'burst',
   'elemental',
@@ -110,6 +111,7 @@ const allModStats = [
       ...allAmplifying,
       ...allAdditive,
       ...allMoves,
+      'plunging',
       'normalEle',
     ] as const
   ).map((x) => `${x}_dmg_` as const),
@@ -121,7 +123,7 @@ const allNonModStats = [
     `${x}_res_` as const,
   ]),
   ...allTalents.map((x) => `${x}Boost` as const),
-  ...allMoves.flatMap((x) => [
+  ...([...allMoves, 'plunging'] as const).flatMap((x) => [
     `${x}_dmgInc` as const,
     `${x}_critDMG_` as const,
     `${x}_critRate_` as const,
@@ -350,7 +352,12 @@ const common: Data = {
             percent(0.05, { ...info, prefix: 'default' }),
             lookup(
               hit.move,
-              objKeyMap(allMoves, (move) => premod[`${move}_critRate_`]),
+              // Plunging buff applies to both collision and shockwave types
+              objKeyMap(allMoves, (move) =>
+                move.includes('plunging')
+                  ? sum(premod[`${move}_critRate_`], premod.plunging_critRate_)
+                  : premod[`${move}_critRate_`]
+              ),
               0
             )
           )
@@ -365,7 +372,12 @@ const common: Data = {
             ),
             lookup(
               hit.move,
-              objKeyMap(allMoves, (ele) => premod[`${ele}_critDMG_`]),
+              // Plunging buff applies to both collision and shockwave types
+              objKeyMap(allMoves, (move) =>
+                move.includes('plunging')
+                  ? sum(premod[`${move}_critDMG_`], premod.plunging_critDMG_)
+                  : premod[`${move}_critDMG_`]
+              ),
               0
             )
           )
@@ -399,7 +411,12 @@ const common: Data = {
       total.all_dmg_,
       lookup(
         hit.move,
-        objKeyMap(allMoves, (move) => total[`${move}_dmg_`]),
+        // Plunging buff applies to both collision and shockwave types
+        objKeyMap(allMoves, (move) =>
+          move.includes('plunging')
+            ? sum(total[`${move}_dmg_`], total.plunging_dmg_)
+            : total[`${move}_dmg_`]
+        ),
         naught
       ),
       lookup(
@@ -424,7 +441,12 @@ const common: Data = {
           ),
           lookup(
             hit.move,
-            objKeyMap(allMoves, (move) => total[`${move}_dmgInc`]),
+            // Plunging buff applies to both collision and shockwave types
+            objKeyMap(allMoves, (move) =>
+              move.includes('plunging')
+                ? sum(total[`${move}_dmgInc`], total.plunging_dmgInc)
+                : total[`${move}_dmgInc`]
+            ),
             NaN
           )
         ),
@@ -571,4 +593,4 @@ export const infusionNode = stringPrio(
   input.infusion.overridableSelf
 )
 
-export { input, uiInput, common, customBonus, target, tally }
+export { common, customBonus, input, tally, target, uiInput }

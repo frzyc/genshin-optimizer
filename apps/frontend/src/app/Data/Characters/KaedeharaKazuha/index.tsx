@@ -15,11 +15,16 @@ import {
 } from '../../../Formula/utils'
 import KeyMap from '../../../KeyMap'
 import { absorbableEle } from '../../../Types/consts'
-import { cond, condReadNode, stg, st } from '../../SheetUtil'
+import { cond, condReadNode, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
-import { charTemplates } from '../charTemplates'
 import type { ICharacterSheet } from '../ICharacterSheet.d'
-import { customDmgNode, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
+import { charTemplates } from '../charTemplates'
+import {
+  customDmgNode,
+  dataObjForCharacterSheet,
+  dmgNode,
+  plungingDmgNodes,
+} from '../dataUtil'
 
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
 
@@ -171,22 +176,17 @@ const dmgFormulas = {
     dmg1: dmgNode('atk', dm.charged.dmg1, 'charged'),
     dmg2: dmgNode('atk', dm.charged.dmg2, 'charged'),
   },
-  plunging: Object.fromEntries(
-    Object.entries(dm.plunging).map(([key, value]) => [
-      key,
-      dmgNode('atk', value, 'plunging'),
-    ])
-  ),
+  plunging: plungingDmgNodes('atk', dm.plunging),
   skill: {
     press: dmgNode('atk', dm.skill.press, 'skill'),
     hold: dmgNode('atk', dm.skill.hold, 'skill'),
-    pdmg: dmgNode('atk', dm.plunging.dmg, 'plunging', {
+    pdmg: dmgNode('atk', dm.plunging.dmg, 'plunging_collision', {
       hit: { ele: constant('anemo') },
     }),
-    plow: dmgNode('atk', dm.plunging.low, 'plunging', {
+    plow: dmgNode('atk', dm.plunging.low, 'plunging_impact', {
       hit: { ele: constant('anemo') },
     }),
-    phigh: dmgNode('atk', dm.plunging.high, 'plunging', {
+    phigh: dmgNode('atk', dm.plunging.high, 'plunging_impact', {
       hit: { ele: constant('anemo') },
     }),
   },
@@ -210,7 +210,7 @@ const dmgFormulas = {
         undefined,
         customDmgNode(
           prod(input.total.atk, dm.passive1.absorbAdd),
-          'plunging',
+          'plunging_impact',
           {
             hit: { ele: condSkillAbsorption },
           }
