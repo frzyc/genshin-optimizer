@@ -62,9 +62,9 @@ const dm = {
   skill: {
     skillDmg: skillParam_gen.skill[s++],
     thornDmg: skillParam_gen.skill[s++],
-    thornInterval: skillParam_gen.skill[s++][0],
     dropletDuration: skillParam_gen.skill[s++][0],
     cd: skillParam_gen.skill[s++][0],
+    thornInterval: skillParam_gen.skill[s++][0],
   },
   burst: {
     skillDmg: skillParam_gen.burst[b++],
