@@ -1062,6 +1062,18 @@
       "0": "The current President of Spina di Rosula, who is lovely, dutiful, and a great boss."
     }
   },
+  "Gaming": {
+    "name": "Gaming",
+    "description": {
+      "0": "Guard of the Sword and Strongbox Secure Transport Agency, and the head of the \"Mighty Mythical Beasts\" Wushou troupe."
+    }
+  },
+  "Xianyun": {
+    "name": "Xianyun",
+    "description": {
+      "0": "One of the Mighty and Illuminated Adepti of Jueyun, known as \"Cloud Retainer.\" Expert in all kinds of mechanical contraptions, her heart now turns towards the affairs of the mortal world, through which she walks under the name \"Xianyun.\""
+    }
+  },
   "KamisatoAyakasStellaFortuna": {
     "name": "Kamisato Ayaka's Stella Fortuna",
     "description": {
@@ -1528,6 +1540,18 @@
     "name": "Navia's Stella Fortuna",
     "description": {
       "0": "Navia's Constellation Activation Material"
+    }
+  },
+  "GamingsStellaFortuna": {
+    "name": "Gaming's Stella Fortuna",
+    "description": {
+      "0": "Gaming's Constellation Activation Material"
+    }
+  },
+  "XianyunsStellaFortuna": {
+    "name": "Xianyun's Stella Fortuna",
+    "description": {
+      "0": "Xianyun's Constellation Activation Material"
     }
   },
   "GnosticHymnOldNotes": {
@@ -6651,6 +6675,18 @@
       "0": "A limpid drop of dew floating amidst the waters of Morte Region. It is different from other pure water bodies, as though it is a conglomeration of even more pure and primordial Elemental Energy."
     }
   },
+  "ClearwaterJade": {
+    "name": "Clearwater Jade",
+    "description": {
+      "0": "Jade from Chenyu Vale. Named for its cool, refreshing touch, that is much like clear water."
+    }
+  },
+  "ChenyuAdeptea": {
+    "name": "Chenyu Adeptea",
+    "description": {
+      "0": "Tea grown in warm, moist areas in Chenyu Vale. After millennia of careful cultivation, the tea today emits a rich fragrance that can be savored from several streets away."
+    }
+  },
   "BirchWood": {
     "name": "Birch Wood",
     "description": {
@@ -10255,6 +10291,12 @@
       "1": "These Shrines of Depths sealed themselves off when the civilization that built them was lost. Keys lost deep within domains are able to break the seals. Or perhaps that, for a moment, these keys help the seals to forget all that they have lost."
     }
   },
+  "SpiritCarp": {
+    "name": "Spirit Carp",
+    "description": {
+      "0": "A Spirit Carp formed from the condensed adeptal energy, swimming freely amidst mountains and river valleys."
+    }
+  },
   "Dish": {
     "name": "Dish",
     "description": {
@@ -12838,7 +12880,7 @@
   "DeliciousFishWithCreamSauce": {
     "name": "Delicious Fish With Cream Sauce",
     "description": {
-      "0": "A fish dish served in sauce. The translucent fillet lies upon exquisite cream sauce. With only a small mouthful, one might even see fish leaping on the sea surface."
+      "0": "A fish dish served with sauce. The translucent fillet lies upon exquisite cream sauce, offering a burst of freshness reminiscent of fish leaping from water with just one bite."
     }
   },
   "ForestWatchersChoice": {
@@ -13970,6 +14012,252 @@
       "0": "A true blue Fontinalia Festival snack. Its crystalline coloration would not be ashamed if compared to the light scattering off the rippling waves. Its featherweight elegance is like that of falling petals, its airy texture like a snowflake melting in your throat. To eat such a delicacy must surely be the loveliest thing that could happen during the Festival!"
     }
   },
+  "SuspiciousThePalaceJewels": {
+    "name": "Suspicious The Palace Jewels",
+    "description": {
+      "0": "A deliciously fragrant Liyue dish. The roughly processed shrimp and half-cooked crab roe give off an odd smell, reeking of the charnel stench of some brutal crab-shrimp war. Considering that the raw ingredients themselves are still quite fresh, this shambling nightmare could still be classified as food... if one were to ignore the stink, anyway."
+    }
+  },
+  "ThePalaceJewels": {
+    "name": "The Palace Jewels",
+    "description": {
+      "0": "A deliciously fragrant Liyue dish. Shrimp meat is battered and cooked with rich crab roe. The roe is as radiant gold, while the shrimp sparkles like jade, hence the name \"The Palace Jewels.\""
+    }
+  },
+  "DeliciousThePalaceJewels": {
+    "name": "Delicious The Palace Jewels",
+    "description": {
+      "0": "A deliciously fragrant Liyue dish. Soft, smooth crab meat is wrapped in tender, chewy shrimp meat, like a luxurious treasure that people unconsciously reach for. One delicate bite fills your mouth with flavor, like waves billowing across your palate as you float in a delicious river of shrimp and crab."
+    }
+  },
+  "SuspiciousTremblingStringsAndRushingReeds": {
+    "name": "Suspicious Trembling Strings and Rushing Reeds",
+    "description": {
+      "0": "A unique meat dish. The mixed shredded meat was fused from being cooked over far too high a temperature, turning the whole dish into a meat slurry. A single bite — a roused rabble of different flavors — leaves your taste buds in utter turmoil."
+    }
+  },
+  "TremblingStringsAndRushingReeds": {
+    "name": "Trembling Strings and Rushing Reeds",
+    "description": {
+      "0": "A unique meat dish. A variety of shredded meat is kneaded and fried for flavor. The complex ingredients and different textures make this dish quite the test of a chef's skills and is a rarity even in some of the most well-known restaurants."
+    }
+  },
+  "DeliciousTremblingStringsAndRushingReeds": {
+    "name": "Delicious Trembling Strings and Rushing Reeds",
+    "description": {
+      "0": "A unique meat dish. Each type of shredded meat plays its role in an orchestra of flavor, while the delicate seasoning skillfully blends the various tonal tastes. As one critic put it, just as there are myriad modes, nuanced notes, and complex compositional correspondence, so is it with flavor, the apex of which might even transport you to a different realm..."
+    }
+  },
+  "SuspiciousHumblyEnough": {
+    "name": "Suspicious Humbly Enough",
+    "description": {
+      "0": "A spiced tofu dish. The tofu is far too spicy to enjoy as-is, but if you spend some time rinsing the excess seasoning off, you might be able to stomach it..."
+    }
+  },
+  "HumblyEnough": {
+    "name": "Humbly Enough",
+    "description": {
+      "0": "A spiced tofu dish. Sautéed tofu is stir-fried with the sauce until browned and ready to serve. Despite the ordinary ingredients, the resulting dish is particularly mellow and fragrant, a perfect partner for rice. It can be said to be the home cook's dish of choice."
+    }
+  },
+  "DeliciousHumblyEnough": {
+    "name": "Delicious Humbly Enough",
+    "description": {
+      "0": "A spiced tofu dish. The fried tofu comes with a rich soybean sauce as its classy chaperone. A single bite proves spicy with a hint of a meaty aroma, flooding your mouth with its mellow fragrance and long-lasting aftertaste."
+    }
+  },
+  "SuspiciousRightAtHome": {
+    "name": "Suspicious Right at Home",
+    "description": {
+      "0": "A staple dish with many ingredients. Insufficient heat and all-too-abundant moisture have left the taste lackluster, lacking the smoky flavor it should have. Better luck next time, preferably while frying on higher heat..."
+    }
+  },
+  "RightAtHome": {
+    "name": "Right at Home",
+    "description": {
+      "0": "A staple dish made by frying ham, bird eggs, and other ingredients with rice. The wide choice of constituent ingredients that may be chosen and different ways of cooking make it a welcome dish in almost every house in Liyue."
+    }
+  },
+  "DeliciousRightAtHome": {
+    "name": "Delicious Right at Home",
+    "description": {
+      "0": "A staple dish with many ingredients. Golden egg yolk coats each grain of rice, the high heat having infused the rich flavor of the ham within. Such a familiar, home-style flavor will surely make any family or friends who've traveled from afar feel right at home."
+    }
+  },
+  "SuspiciousEightTreasureDuck": {
+    "name": "Suspicious Eight-Treasure Duck",
+    "description": {
+      "0": "A dish that needs true skills to make. Your eyes ache by the time you finish removing all the bones. It seems this dish has proved a test not only for your knife skills but also for your physical endurance and patience. Shame, then, that the duck, so carefully arranged, practically blew apart inside the pan... Forget about trying this again. Just close your eyes and take it easy for a bit."
+    }
+  },
+  "EightTreasureDuck": {
+    "name": "Eight-Treasure Duck",
+    "description": {
+      "0": "A dish that needs true skill to make. Eight kinds of meat and vegetables, known as the eight treasures, are stuffed into a deboned duck. This is then molded into the shape of a gourd, to represent good fortune and auspiciousness. Exquisite ingredients, superb cutting skills, and phenomenal timing are all needed, that the finished dish might be worthy of its place as the final course at any banquet."
+    }
+  },
+  "DeliciousEightTreasureDuck": {
+    "name": "Delicious Eight-Treasure Duck",
+    "description": {
+      "0": "A dish that needs true skill to make. The plump and juicy lucky duck is irresistible as soon as it's out of the pot. Add fragrant gravy and a touch of rosy gloss, and this can be said to be the perfect combination of color, flavor, and shape, every bite a veritable flood of flavor with an enduring aftertaste."
+    }
+  },
+  "SuspiciousDeepFriedDoublecrisp": {
+    "name": "Suspicious Deep-Fried Doublecrisp",
+    "description": {
+      "0": "One of Liyue's famous dishes. One careless flip and the raging fire mercilessly swept all crispness and tenderness aside, leaving naught but charred, blackened chunks in its wake."
+    }
+  },
+  "DeepFriedDoublecrisp": {
+    "name": "Deep-Fried Doublecrisp",
+    "description": {
+      "0": "One of Liyue's famous dishes. Between the fierce heat, the boiling oil, and the sautéing process, this is a stern test of one's skills. Cook for a few seconds too few, and your ingredients might be left raw. Too many, and they will be overcooked and lacking in crispness. As such, this dish is often chosen by experienced Liyue chefs to display their mastery."
+    }
+  },
+  "DeliciousDeepFriedDoublecrisp": {
+    "name": "Delicious Deep-Fried Doublecrisp",
+    "description": {
+      "0": "One of Liyue's famous dishes. Scalloped red and white meat flowers, stir-fried as one, bloom tastiness on the tip of the tongue. Smooth, crispy, salty, and delicious, this is a must-have dish. You won't stop singing its praises even as you lick the plate clean."
+    }
+  },
+  "SuspiciousBraisedMeatball": {
+    "name": "Suspicious Braised Meatball",
+    "description": {
+      "0": "A classic Liyue dish. The round shape and fragrant aroma seem on point, but it proves overly dry once you taste it. Perhaps you used too much lean meat in this one?"
+    }
+  },
+  "BraisedMeatball": {
+    "name": "Braised Meatball",
+    "description": {
+      "0": "A classic Liyue dish. Fatty and lean chunks of meat are mixed with crunchy bamboo shoots before being kneaded into a ball, fried, and then boiled. The finished dish is very popular, finding a place at home meals or banquets alike."
+    }
+  },
+  "DeliciousBraisedMeatball": {
+    "name": "Delicious Braised Meatball",
+    "description": {
+      "0": "A classic Liyue dish. Emerald green onions and the ruby red meatball complement each other perfectly, while exquisite and extraordinary knife skills make for a melt-in-your-mouth meatball, fatty but not greasy, guaranteed to have you praising it all week. Don't forget to clean your plate for good luck!"
+    }
+  },
+  "SuspiciousHoneyCharSiu": {
+    "name": "Suspicious Honey Char Siu",
+    "description": {
+      "0": "A type of roasted meat from Liyue. Overly sweet seasoning makes for cloying torment of the tongue. As the local saying goes, a minute error can make a huge difference, and it seems that this holds true with cooking."
+    }
+  },
+  "HoneyCharSiu": {
+    "name": "Honey Char Siu",
+    "description": {
+      "0": "A type of roasted meat from Liyue. As the name implies, the marinated meat skewered with a special metal fork is hung above the stove and roasted. The taste of freshly roasted Char Siu is a favorite of many a gourmand."
+    }
+  },
+  "DeliciousHoneyCharSiu": {
+    "name": "Delicious Honey Char Siu",
+    "description": {
+      "0": "A type of roasted meat from Liyue. Richly red in color, aromatic, and intensely flavorful. Why, one might even faint from gluttony if one stares at it for too long. Between mouthfuls of delicious meat and rich sauce, one bowl of rice might seem too measly a match for this taste experience!"
+    }
+  },
+  "SuspiciousFineTeaFullMoon": {
+    "name": "Suspicious Fine Tea, Full Moon",
+    "description": {
+      "0": "A tea pastry containing egg yolk. As you pick it up, layers flake away like loose earth in a landslide. The first bite is sticky, sweet, cloying... And uh-oh, something gets stuck in your throat. Get some water to wash it down, then think about what to do with the rest."
+    }
+  },
+  "FineTeaFullMoon": {
+    "name": "Fine Tea, Full Moon",
+    "description": {
+      "0": "A tea pastry containing egg yolk. The salted yolk is first steamed, then stuffed and wrapped in tea powder-infused dough. It's then kneaded into the shape of a full moon before being baked. This results in a crispy, flaky exterior with a salty and sweet interior, the different layers forming a delicious and addictive delicacy."
+    }
+  },
+  "DeliciousFineTeaFullMoon": {
+    "name": "Delicious Fine Tea, Full Moon",
+    "description": {
+      "0": "A tea pastry containing egg yolk. The loose and delicate texture of the grainy egg yolk mingles with a faint fragrance of tea. One small mouthful brings earthy happiness enough to make you swoon. You could pop several in your mouth at once, and woe betide any who should seek to steal a single crumb from the corner of your lips."
+    }
+  },
+  "SuspiciousJadeveinTeaEggs": {
+    "name": "Suspicious Jadevein Tea Eggs",
+    "description": {
+      "0": "A traditional Liyue snack. It tastes no different from a standard boiled egg. Did something go wrong with the tea leaves or the cooking process?"
+    }
+  },
+  "JadeveinTeaEggs": {
+    "name": "Jadevein Tea Eggs",
+    "description": {
+      "0": "A traditional snack that is widely popular in the streets and alleys of Liyue. The flavor of the tea seeps into the egg through cracks in its shell while it is boiling, and the cracks are as beautiful as the fractured patterns of jade."
+    }
+  },
+  "DeliciousJadeveinTeaEggs": {
+    "name": "Delicious Jadevein Tea Eggs",
+    "description": {
+      "0": "A traditional Liyue snack. The aroma of tea finds itself perfectly blended into the eggs. A dollop of deliciousness whether eaten all in one go or savored in small nibbles."
+    }
+  },
+  "SuspiciousTeaSmokedSquab": {
+    "name": "Suspicious Tea-Smoked Squab",
+    "description": {
+      "0": "A very popular dish. The char on the squab's legs and wings show a lack of control over the heat, but with a bit of patience, you might just about get it in your mouth."
+    }
+  },
+  "TeaSmokedSquab": {
+    "name": "Tea-Smoked Squab",
+    "description": {
+      "0": "A very popular dish. Squab is marinated in tea and sauce overnight before being dried and deep-fried, suffusing the meat with the wonderful aroma of tea. This technique has been passed down for many years and is a banquet delicacy."
+    }
+  },
+  "DeliciousTeaSmokedSquab": {
+    "name": "Delicious Tea-Smoked Squab",
+    "description": {
+      "0": "A very popular dish. The translucent squab skin is crispy and thin as a sheet of ochre paper, and the meat is firm and plump. Accompanied by delicate gravy, this dish will capture hearts and stomachs alike."
+    }
+  },
+  "SuspiciousGuhuaFishLambSoup": {
+    "name": "Suspicious Guhua Fish & Lamb Soup",
+    "description": {
+      "0": "An ancient dish, long recorded throughout history. Alas, there's no time to worry about such matters, as the gamey mutton and rank fish vie for dominance within your mouth. Your poor taste buds sure could use an eternity of rinsing after that."
+    }
+  },
+  "GuhuaFishLambSoup": {
+    "name": "Guhua Fish & Lamb Soup",
+    "description": {
+      "0": "An ancient dish, long recorded throughout history. Fresh fish and mutton are stewed together, with the tenderness of the fish and the juiciness of the lamb blending transforming the dish into a true delicacy."
+    }
+  },
+  "DeliciousGuhuaFishLambSoup": {
+    "name": "Delicious Guhua Fish & Lamb Soup",
+    "description": {
+      "0": "An ancient dish, long recorded throughout history. As the milky white soup slides down the throat, you can only wish you had two stomachs. Eat a pot of this in winter, and you'll wish you were still eating it the following spring."
+    }
+  },
+  "SuspiciousChenyuBrew": {
+    "name": "Suspicious Chenyu Brew",
+    "description": {
+      "0": "Common Liyue tea. You find yourself constantly sipping at it doubtfully, only to confirm that yes, this so-called tea still tastes like water. Was the low temperature the problem, or has it not had enough time to steep?"
+    }
+  },
+  "ChenyuBrew": {
+    "name": "Chenyu Brew",
+    "description": {
+      "0": "Common Liyue tea. Sometimes, one might compare life to the sweet aftertaste savored upon sipping a cup of tea."
+    }
+  },
+  "DeliciousChenyuBrew": {
+    "name": "Delicious Chenyu Brew",
+    "description": {
+      "0": "Common Liyue tea. Your initial sip brings forth flavor on an elegant light breeze, the sweet fragrances of Chenyu Vale alighting upon your lips and tongue. Hark — is that the sweet tinkling of the mountain springs singing in your ear?"
+    }
+  },
+  "EncompassingGladness": {
+    "name": "Encompassing Gladness",
+    "description": {
+      "0": "Xianyun's specialty. Before you can even look shocked to see these fragrant meatballs, she says: \"Ah, and you thought such pedestrian culinary work could confound one? Now then, enjoy it while it remains hot — and may one wish you peace, joy, prosperity, and freedom from distress... *cough* What? A little ritual formality now and then could do no ill.\""
+    }
+  },
+  "YummyYumCha": {
+    "name": "Yummy Yum Cha",
+    "description": {
+      "0": "Gaming's specialty. Row upon row of lifelike suanni buns sit pretty within the steamer, bringing the formidable, clever youth leaping amidst the Plum Blossom Pole... \"What's with that dumbfounded expression? Have a cup of tea first, eh?\" With that, the cheerfully smiling fellow passes you another cup."
+    }
+  },
   "RecipeItem": {
     "name": "Recipe Item",
     "description": {
@@ -15039,6 +15327,84 @@
       "0": "A detailed step-by-step recipe for making Fontinalia Mousse."
     }
   },
+  "RecipeThePalaceJewels": {
+    "name": "Recipe: The Palace Jewels",
+    "description": {
+      "0": "A detailed step-by-step recipe for making The Palace Jewels."
+    }
+  },
+  "RecipeTremblingStringsAndRushingReeds": {
+    "name": "Recipe: Trembling Strings and Rushing Reeds",
+    "description": {
+      "0": "A detailed step-by-step recipe for making Trembling Strings and Rushing Reeds."
+    }
+  },
+  "RecipeHumblyEnough": {
+    "name": "Recipe: Humbly Enough",
+    "description": {
+      "0": "A detailed step-by-step recipe for making Humbly Enough."
+    }
+  },
+  "RecipeRightAtHome": {
+    "name": "Recipe: Right at Home",
+    "description": {
+      "0": "A detailed step-by-step recipe for making Right at Home."
+    }
+  },
+  "RecipeEightTreasureDuck": {
+    "name": "Recipe: Eight-Treasure Duck",
+    "description": {
+      "0": "A detailed step-by-step recipe for making Eight-Treasure Duck."
+    }
+  },
+  "RecipeDeepFriedDoublecrisp": {
+    "name": "Recipe: Deep-Fried Doublecrisp",
+    "description": {
+      "0": "A detailed step-by-step recipe for making Deep-Fried Doublecrisp."
+    }
+  },
+  "RecipeBraisedMeatball": {
+    "name": "Recipe: Braised Meatball",
+    "description": {
+      "0": "A detailed step-by-step recipe for making Braised Meatball."
+    }
+  },
+  "RecipeHoneyCharSiu": {
+    "name": "Recipe: Honey Char Siu",
+    "description": {
+      "0": "A detailed step-by-step recipe for making Honey Char Siu."
+    }
+  },
+  "RecipeFineTeaFullMoon": {
+    "name": "Recipe: Fine Tea, Full Moon",
+    "description": {
+      "0": "A detailed step-by-step recipe for making Fine Tea, Full Moon."
+    }
+  },
+  "RecipeJadeveinTeaEggs": {
+    "name": "Recipe: Jadevein Tea Eggs",
+    "description": {
+      "0": "A detailed step-by-step recipe for making Jadevein Tea Eggs."
+    }
+  },
+  "RecipeTeaSmokedSquab": {
+    "name": "Recipe: Tea-Smoked Squab",
+    "description": {
+      "0": "A detailed step-by-step recipe for making Tea-Smoked Squab."
+    }
+  },
+  "RecipeGuhuaFishLambSoup": {
+    "name": "Recipe: Guhua Fish & Lamb Soup",
+    "description": {
+      "0": "A detailed step-by-step recipe for making Guhua Fish & Lamb Soup."
+    }
+  },
+  "RecipeChenyuBrew": {
+    "name": "Recipe: Chenyu Brew",
+    "description": {
+      "0": "A detailed step-by-step recipe for making Chenyu Brew."
+    }
+  },
   "CraftedItems": {
     "name": "Crafted Items",
     "description": {
@@ -15939,6 +16305,27 @@
       "1": "That said, taking it off would not detract from the fact that said Operative has physical abilities far beyond that of ordinary humans, forged through long years of training and combat experience. As for them, they are well-aware that they have sacrificed their past, present, and future upon the altar of the Fatui's ideal paradise, such that the damage they cause themselves on account of using a Delusion's power matters not at all."
     }
   },
+  "FeatheryFin": {
+    "name": "Feathery Fin",
+    "description": {
+      "0": "A fin fragment taken from a defeated Xuanwen Beast's back.",
+      "1": "Even though Xuanwen Beasts can't fly over long distances, these feather-like fins enable them to swiftly pursue their prey."
+    }
+  },
+  "LunarFin": {
+    "name": "Lunar Fin",
+    "description": {
+      "0": "A fin taken from a defeated Xuanwen Beast's back.",
+      "1": "The soft, moonlight-esque glow on the fin gives off a sense of serenity."
+    }
+  },
+  "ChasmlightFin": {
+    "name": "Chasmlight Fin",
+    "description": {
+      "0": "An elegant fin taken from a defeated Xuanwen Beast's back.",
+      "1": "The faint light it reflects contains traces of adeptal energy. In the still of the night, even the most violent beasts briefly sink into a peaceful slumber, reminiscing on times when dreams belonged not only to humans."
+    }
+  },
   "HurricaneSeed": {
     "name": "Hurricane Seed",
     "description": {
@@ -16370,6 +16757,13 @@
     "description": {
       "0": "The only remnants of Hydro Tulpas after their parts are dispersed.",
       "1": "This substance is very similar to the crystals extracted from the bodies of Fontemer Aberrants, but they contain a lot of tiny impurities, like the bubbles in glass crafted by clumsy craftsmen."
+    }
+  },
+  "CloudseamScale": {
+    "name": "Cloudseam Scale",
+    "description": {
+      "0": "Cold and solid scales from a Solitary Suanni. They retain pure adeptal energy even after falling off and cannot be damaged by ordinary weapons.",
+      "1": "Ordinary beasts can sometimes be affected by errant adeptal energy and become more powerful than usual. However, a suanni's adeptal energy originates from within themselves, which is why their leader is often regarded as equal to adepti."
     }
   },
   "TileOfDecarabiansTower": {
@@ -17051,6 +17445,14 @@
     "name": "Resounding Melodies",
     "description": {
       "0": "If you have already used the gift redemption code, repeat purchases will only give Primogems and Furnishings."
+    }
+  },
+  "OutfitOptionBundle": {
+    "name": "Outfit Option Bundle",
+    "description": {
+      "0": "This gift box contains an exquisite outfit. Due to the personal customization that has taken place, its dimensions and qualities only perfectly fit one.",
+      "1": "<br/>",
+      "2": "When used: Select and obtain 1 of the outfits within the gift box."
     }
   },
   "BEP": {
@@ -19266,6 +19668,24 @@
       "0": "A series about conspiracy, revenge, justice, and evil that took Fontaine by storm."
     }
   },
+  "TimeTrekkerI": {
+    "name": "Time Trekker (I)",
+    "description": {
+      "0": "A Fontainian science fiction novel published by The Steambird. It tells the story of an engineer's travels using a time machine."
+    }
+  },
+  "TimeTrekkerII": {
+    "name": "Time Trekker (II)",
+    "description": {
+      "0": "A Fontainian science fiction novel published by The Steambird. It tells the story of an engineer's travels using a time machine."
+    }
+  },
+  "TimeTrekkerIII": {
+    "name": "Time Trekker (III)",
+    "description": {
+      "0": "A Fontainian science fiction novel published by The Steambird. It tells the story of an engineer's travels using a time machine."
+    }
+  },
   "GiftOfParting": {
     "name": "Gift of \"Parting\"",
     "description": {
@@ -19880,6 +20300,36 @@
       "0": "Records the various clues you found during your investigation in the Fortress of Meropide."
     }
   },
+  "PictureLotusPondBeneathTheMoon": {
+    "name": "Picture: Lotus Pond Beneath the Moon",
+    "description": {
+      "0": "A beautiful picture of the Lotus Pond bathing in moonlight."
+    }
+  },
+  "PictureGuestsOfQiaoying": {
+    "name": "Picture: Guests of Qiaoying",
+    "description": {
+      "0": "A beautiful picture of Qiaoying Village."
+    }
+  },
+  "PictureTranquilJademouth": {
+    "name": "Picture: Tranquil Jademouth",
+    "description": {
+      "0": "A beautiful picture of the Jademouth."
+    }
+  },
+  "PictureMtXuanlian": {
+    "name": "Picture: Mt. Xuanlian",
+    "description": {
+      "0": "A beautiful picture of Mt. Xuanlian."
+    }
+  },
+  "ChenyuValeSceneryGuide": {
+    "name": "Chenyu Vale Scenery Guide",
+    "description": {
+      "0": "A tourism guidebook introducing charming scenic spots recommended by locals."
+    }
+  },
   "Notice": {
     "name": "Notice",
     "description": {}
@@ -20207,6 +20657,12 @@
       "1": "It seems to have stopped at a certain instant, the beautiful memory of a moment becoming eternal."
     }
   },
+  "AncientTreeBranch": {
+    "name": "Ancient Tree Branch",
+    "description": {
+      "0": "A branch taken from an ancient tea tree. It emits a faint adeptal energy..."
+    }
+  },
   "AureliesNotesII": {
     "name": "Aurelie's Notes (II)",
     "description": {
@@ -20302,6 +20758,24 @@
       "0": "Strange Message"
     }
   },
+  "WangshanHallBackupKey": {
+    "name": "Wangshan Hall Backup Key",
+    "description": {
+      "0": "A rusted key obtained from Huang the Third."
+    }
+  },
+  "ThePaimonSpecial": {
+    "name": "The Paimon Special",
+    "description": {
+      "0": "According to Huang the Third, when Grand Master Guhua passed on his techniques, he would accept rice and salted meat as payment instead of Mora. Based on this anecdote, Paimon put all her heart (and salt) into this super special dish..."
+    }
+  },
+  "WoliusDrillingDevice": {
+    "name": "Woliu's Drilling Device",
+    "description": {
+      "0": "A box that contains a drilling device. Who knows what it'll dig up, exactly..."
+    }
+  },
   "AutumnsGift": {
     "name": "Autumn's Gift",
     "description": {
@@ -20347,6 +20821,12 @@
     "name": "Storybook",
     "description": {}
   },
+  "CarpSpiritOrb": {
+    "name": "Carp Spirit Orb",
+    "description": {
+      "0": "An orb that was inlaid on the Golden Carp Fish statue. It contains an immense amount of adeptal energy."
+    }
+  },
   "Certificate": {
     "name": "Certificate",
     "description": {}
@@ -20362,6 +20842,42 @@
   "Log": {
     "name": "Log",
     "description": {}
+  },
+  "JadeFragmentLeft": {
+    "name": "Jade Fragment (Left)",
+    "description": {
+      "0": "A jade fragment with adeptal energy lingering around it. In the legends told by the ancestral peoples, all jades originally came from the same stone. If that holds true, it might be possible to join the jade fragments together..."
+    }
+  },
+  "JadeFragmentRight": {
+    "name": "Jade Fragment (Right)",
+    "description": {
+      "0": "A jade fragment with adeptal energy lingering around it. In the legends told by the ancestral peoples, all jades originally came from the same stone. If that holds true, it might be possible to join the jade fragments together..."
+    }
+  },
+  "FragrantWoodHuangcong": {
+    "name": "Fragrant Wood \"Huangcong\"",
+    "description": {
+      "0": "An exquisitely carved piece of fragrant wood that is used in ceremonial rites and exudes a light fragrance. Judging from its shape, there seems to be another piece of fragrant wood to complement this one."
+    }
+  },
+  "FragrantWoodChizhang": {
+    "name": "Fragrant Wood \"Chizhang\"",
+    "description": {
+      "0": "An exquisitely carved piece of fragrant wood that is used in ceremonial rites and gives off the scent of something burnt. Judging from its shape, there seems to be another piece of fragrant wood to complement this one."
+    }
+  },
+  "OurChenyuValeTrekAlbum": {
+    "name": "\"Our Chenyu Vale Trek\" Album",
+    "description": {
+      "0": "A commemorative photo album containing many marvelous pictures. Shockingly, over half were taken by the same person."
+    }
+  },
+  "StrangeKey": {
+    "name": "Strange Key",
+    "description": {
+      "0": "A strange key. Who knows what lock it opens..."
+    }
   },
   "ShootingPracticeOpticalLenses": {
     "name": "Shooting Practice Optical Lenses",
@@ -20382,10 +20898,70 @@
       "0": "Bracari's General Store Receipt"
     }
   },
+  "AncientStoneTablet": {
+    "name": "Ancient Stone Tablet",
+    "description": {
+      "0": "Ancient Stone Tablet"
+    }
+  },
   "PackageForTheLeroyFamily": {
     "name": "Package for the Leroy Family",
     "description": {
       "0": "The newspaper deliveryperson, Pip, has stuffed the papers that the Leroy family has not collected during this time into this package."
+    }
+  },
+  "ForgottenKeyI": {
+    "name": "Forgotten Key (I)",
+    "description": {
+      "0": "A key that seems to have been lost in the wilderness of Chenyu Vale. What could it be used for...?"
+    }
+  },
+  "ForgottenKeyII": {
+    "name": "Forgotten Key (II)",
+    "description": {
+      "0": "A key that seems to have been lost in the wilderness of Chenyu Vale. What could it be used for...?"
+    }
+  },
+  "XuanlianSacredWater": {
+    "name": "Xuanlian Sacred Water",
+    "description": {
+      "0": "If not for its name, this so-called \"sacred water\" sourced from the vicinity of Mt. Xuanlian would never have been regarded as anything special. On the contrary, when looking at it after knowing its name, you feel like you can see some adeptal aura rising from the water."
+    }
+  },
+  "AncientJadeCup": {
+    "name": "Ancient Jade Cup",
+    "description": {
+      "0": "An ancient teacup that seems to have been lost in the wilderness. It seems to exude a faint adeptal aura."
+    }
+  },
+  "SomeonesLedger": {
+    "name": "Someone's Ledger",
+    "description": {
+      "0": "This ledger found in the Wangshan Hall contains detailed records of every last income and expenditure item."
+    }
+  },
+  "VotiveRainjade": {
+    "name": "Votive Rainjade",
+    "description": {
+      "0": "The final gemstone hurled by the Adeptus Fujin in ancient times. Although it looks pretty much the same as other ordinary jade stones, it contains enough adeptal energy to transform the nearby water and land in an instant..."
+    }
+  },
+  "ChizhangMap": {
+    "name": "Chizhang Map",
+    "description": {
+      "0": "The location of the warehouse seems to be recorded on this map the Millelith left behind."
+    }
+  },
+  "AncientCityKey": {
+    "name": "Ancient City Key",
+    "description": {
+      "0": "It seems that this long-rusted key can be used to open a long-abandoned warehouse somewhere along the Chizhang Wall."
+    }
+  },
+  "FishSeizedFromAPelicansMouth": {
+    "name": "Fish Seized From a Pelican's Mouth",
+    "description": {
+      "0": "A fish you managed to retrieve from the mouth of a pelican at the Qiaoying Village docks. It seems to be an item that other creatures treasure greatly, so you might be able to make amends for a certain loss from a certain time by returning this to the daily feeding vessel of certain animals..."
     }
   },
   "TearsAmongTheStars": {
@@ -20851,6 +21427,13 @@
       "0": "Compact assistance meka developed to increase the overall utilization rates of meka groups, providing aid for underwater projects. They were originally designed to remove junk, vegetation, and other underwater debris in order to prevent these from clogging up the vital parts of other clockwork meka, thereby minimizing failure rates. From another point of view, they are undoubtedly benefiting Fontaine's ecosystem greatly as underwater cleaners.",
       "1": "Compared to other mass-produced models, this special \"Gold Leader\" assistance meka utilizes a clear gold outer casing along with special control equipment. The project team designed it to fulfill the role of a command relay station in particularly complex underwater environments, receiving and re-transmitting commands from the controller to all other meka within the group, effectively fulfilling the important role of leader.",
       "2": "However, as the whole maintenance meka project stopped functioning, these leader meka lost their reason for existence. Only their highly recognizable clear golden casing gives them value in the eyes of the anglers who collect them."
+    }
+  },
+  "JadeHeartfeatherBass": {
+    "name": "Jade Heartfeather Bass",
+    "description": {
+      "0": "Peculiar fish that look like a heart from the side, which are said to be related to bass. Their dorsal and ventral fins are comprised of flexible bones that are as slender as feathers, hence the proposed name \"Heartfeather Bass.\"",
+      "1": "Jade Heartfeather Bass are named for the jade-like coloration they take on in the water. Despite their gentle appearances, they possess remarkable resilience and can adapt to diverse aquatic environments. The clear water in Chenyu Vale is especially suitable for them, where they thrive and live a carefree, comfortable life."
     }
   },
   "WingsOfFirstFlight": {
@@ -21619,55 +22202,55 @@
   "RadiantSpincrystal99": {
     "name": "Radiant Spincrystal 99",
     "description": {
-      "0": "This wondrous crystal contains a certain rhythm, like something beautiful woven from delicate silk. These items can be found throughout the mainland or from merchants who collect curios. The tune held within this crystal can be revivified in your Serenitea Pot using either \"Euphonium Unbound: Winding\" or \"Euphonium Unbound: Soaring.\" The tune contained within this Radiant Spincrystal is a mysterious melody from Fontaine."
+      "0": "This wondrous crystal contains a certain rhythm, like something beautiful woven from delicate silk. These items can be found throughout the mainland or from merchants who collect curios. The tune held within this crystal can be revivified in your Serenitea Pot using either \"Euphonium Unbound: Winding\" or \"Euphonium Unbound: Soaring.\" The tune contained within this Radiant Spincrystal is \"Ballad of Many Waters.\""
     }
   },
   "RadiantSpincrystal100": {
     "name": "Radiant Spincrystal 100",
     "description": {
-      "0": "This wondrous crystal contains a certain rhythm, like something beautiful woven from delicate silk. These items can be found throughout the mainland or from merchants who collect curios. The tune held within this crystal can be revivified in your Serenitea Pot using either \"Euphonium Unbound: Winding\" or \"Euphonium Unbound: Soaring.\" The tune contained within this Radiant Spincrystal is a mysterious melody from Fontaine."
+      "0": "This wondrous crystal contains a certain rhythm, like something beautiful woven from delicate silk. These items can be found throughout the mainland or from merchants who collect curios. The tune held within this crystal can be revivified in your Serenitea Pot using either \"Euphonium Unbound: Winding\" or \"Euphonium Unbound: Soaring.\" The tune contained within this Radiant Spincrystal is \"Coruscating Street.\""
     }
   },
   "RadiantSpincrystal101": {
     "name": "Radiant Spincrystal 101",
     "description": {
-      "0": "This wondrous crystal contains a certain rhythm, like something beautiful woven from delicate silk. These items can be found throughout the mainland or from merchants who collect curios. The tune held within this crystal can be revivified in your Serenitea Pot using either \"Euphonium Unbound: Winding\" or \"Euphonium Unbound: Soaring.\" The tune contained within this Radiant Spincrystal is a mysterious melody from Fontaine."
+      "0": "This wondrous crystal contains a certain rhythm, like something beautiful woven from delicate silk. These items can be found throughout the mainland or from merchants who collect curios. The tune held within this crystal can be revivified in your Serenitea Pot using either \"Euphonium Unbound: Winding\" or \"Euphonium Unbound: Soaring.\" The tune contained within this Radiant Spincrystal is \"Throughout the Flow of Years.\""
     }
   },
   "RadiantSpincrystal102": {
     "name": "Radiant Spincrystal 102",
     "description": {
-      "0": "This wondrous crystal contains a certain rhythm, like something beautiful woven from delicate silk. These items can be found throughout the mainland or from merchants who collect curios. The tune held within this crystal can be revivified in your Serenitea Pot using either \"Euphonium Unbound: Winding\" or \"Euphonium Unbound: Soaring.\" The tune contained within this Radiant Spincrystal is a mysterious melody from Fontaine."
+      "0": "This wondrous crystal contains a certain rhythm, like something beautiful woven from delicate silk. These items can be found throughout the mainland or from merchants who collect curios. The tune held within this crystal can be revivified in your Serenitea Pot using either \"Euphonium Unbound: Winding\" or \"Euphonium Unbound: Soaring.\" The tune contained within this Radiant Spincrystal is \"Miraculous Whisper.\""
     }
   },
   "RadiantSpincrystal103": {
     "name": "Radiant Spincrystal 103",
     "description": {
-      "0": "This wondrous crystal contains a certain rhythm, like something beautiful woven from delicate silk. These items can be found throughout the mainland or from merchants who collect curios. The tune held within this crystal can be revivified in your Serenitea Pot using either \"Euphonium Unbound: Winding\" or \"Euphonium Unbound: Soaring.\" The tune contained within this Radiant Spincrystal is a mysterious melody from Fontaine."
+      "0": "This wondrous crystal contains a certain rhythm, like something beautiful woven from delicate silk. These items can be found throughout the mainland or from merchants who collect curios. The tune held within this crystal can be revivified in your Serenitea Pot using either \"Euphonium Unbound: Winding\" or \"Euphonium Unbound: Soaring.\" The tune contained within this Radiant Spincrystal is \"Surging Reminiscence.\""
     }
   },
   "RadiantSpincrystal104": {
     "name": "Radiant Spincrystal 104",
     "description": {
-      "0": "This wondrous crystal contains a certain rhythm, like something beautiful woven from delicate silk. These items can be found throughout the mainland or from merchants who collect curios. The tune held within this crystal can be revivified in your Serenitea Pot using either \"Euphonium Unbound: Winding\" or \"Euphonium Unbound: Soaring.\" The tune contained within this Radiant Spincrystal is a mysterious melody from Fontaine."
+      "0": "This wondrous crystal contains a certain rhythm, like something beautiful woven from delicate silk. These items can be found throughout the mainland or from merchants who collect curios. The tune held within this crystal can be revivified in your Serenitea Pot using either \"Euphonium Unbound: Winding\" or \"Euphonium Unbound: Soaring.\" The tune contained within this Radiant Spincrystal is \"Ann's Quiescent Residence.\""
     }
   },
   "RadiantSpincrystal105": {
     "name": "Radiant Spincrystal 105",
     "description": {
-      "0": "This wondrous crystal contains a certain rhythm, like something beautiful woven from delicate silk. These items can be found throughout the mainland or from merchants who collect curios. The tune held within this crystal can be revivified in your Serenitea Pot using either \"Euphonium Unbound: Winding\" or \"Euphonium Unbound: Soaring.\" The tune contained within this Radiant Spincrystal is a mysterious melody from Fontaine."
+      "0": "This wondrous crystal contains a certain rhythm, like something beautiful woven from delicate silk. These items can be found throughout the mainland or from merchants who collect curios. The tune held within this crystal can be revivified in your Serenitea Pot using either \"Euphonium Unbound: Winding\" or \"Euphonium Unbound: Soaring.\" The tune contained within this Radiant Spincrystal is \"Limpide est le sanglot d'eau.\""
     }
   },
   "RadiantSpincrystal106": {
     "name": "Radiant Spincrystal 106",
     "description": {
-      "0": "This wondrous crystal contains a certain rhythm, like something beautiful woven from delicate silk. These items can be found throughout the mainland or from merchants who collect curios. The tune held within this crystal can be revivified in your Serenitea Pot using either \"Euphonium Unbound: Winding\" or \"Euphonium Unbound: Soaring.\" The tune contained within this Radiant Spincrystal is a mysterious melody from Fontaine."
+      "0": "This wondrous crystal contains a certain rhythm, like something beautiful woven from delicate silk. These items can be found throughout the mainland or from merchants who collect curios. The tune held within this crystal can be revivified in your Serenitea Pot using either \"Euphonium Unbound: Winding\" or \"Euphonium Unbound: Soaring.\" The tune contained within this Radiant Spincrystal is \"Que le vent soit doux.\""
     }
   },
   "RadiantSpincrystal107": {
     "name": "Radiant Spincrystal 107",
     "description": {
-      "0": "This wondrous crystal contains a certain rhythm, like something beautiful woven from delicate silk. These items can be found throughout the mainland or from merchants who collect curios. The tune held within this crystal can be revivified in your Serenitea Pot using either \"Euphonium Unbound: Winding\" or \"Euphonium Unbound: Soaring.\" The tune contained within this Radiant Spincrystal is a mysterious melody from Fontaine."
+      "0": "This wondrous crystal contains a certain rhythm, like something beautiful woven from delicate silk. These items can be found throughout the mainland or from merchants who collect curios. The tune held within this crystal can be revivified in your Serenitea Pot using either \"Euphonium Unbound: Winding\" or \"Euphonium Unbound: Soaring.\" The tune contained within this Radiant Spincrystal is \"Demain, des l'aube.\""
     }
   },
   "RadiantSpincrystal108": {
@@ -21740,6 +22323,42 @@
     "name": "Radiant Spincrystal 119",
     "description": {
       "0": "This wondrous crystal contains a certain rhythm, like something beautiful woven from delicate silk. These items can be found throughout the mainland or from merchants who collect curios. The tune held within this crystal can be revivified in your Serenitea Pot using either \"Euphonium Unbound: Winding\" or \"Euphonium Unbound: Soaring.\" The tune contained within this Radiant Spincrystal is a mysterious melody from Fontaine."
+    }
+  },
+  "RadiantSpincrystal120": {
+    "name": "Radiant Spincrystal 120",
+    "description": {
+      "0": "This wondrous crystal contains a certain rhythm, like something beautiful woven from delicate silk. These items can be found throughout the mainland or from merchants who collect curios. The tune held within this crystal can be revivified in your Serenitea Pot using either \"Euphonium Unbound: Winding\" or \"Euphonium Unbound: Soaring.\" The tune contained within this Radiant Spincrystal is a mysterious melody from Liyue."
+    }
+  },
+  "RadiantSpincrystal121": {
+    "name": "Radiant Spincrystal 121",
+    "description": {
+      "0": "This wondrous crystal contains a certain rhythm, like something beautiful woven from delicate silk. These items can be found throughout the mainland or from merchants who collect curios. The tune held within this crystal can be revivified in your Serenitea Pot using either \"Euphonium Unbound: Winding\" or \"Euphonium Unbound: Soaring.\" The tune contained within this Radiant Spincrystal is a mysterious melody from Liyue."
+    }
+  },
+  "RadiantSpincrystal122": {
+    "name": "Radiant Spincrystal 122",
+    "description": {
+      "0": "This wondrous crystal contains a certain rhythm, like something beautiful woven from delicate silk. These items can be found throughout the mainland or from merchants who collect curios. The tune held within this crystal can be revivified in your Serenitea Pot using either \"Euphonium Unbound: Winding\" or \"Euphonium Unbound: Soaring.\" The tune contained within this Radiant Spincrystal is a mysterious melody from Liyue."
+    }
+  },
+  "RadiantSpincrystal123": {
+    "name": "Radiant Spincrystal 123",
+    "description": {
+      "0": "This wondrous crystal contains a certain rhythm, like something beautiful woven from delicate silk. These items can be found throughout the mainland or from merchants who collect curios. The tune held within this crystal can be revivified in your Serenitea Pot using either \"Euphonium Unbound: Winding\" or \"Euphonium Unbound: Soaring.\" The tune contained within this Radiant Spincrystal is a mysterious melody from Liyue."
+    }
+  },
+  "RadiantSpincrystal124": {
+    "name": "Radiant Spincrystal 124",
+    "description": {
+      "0": "This wondrous crystal contains a certain rhythm, like something beautiful woven from delicate silk. These items can be found throughout the mainland or from merchants who collect curios. The tune held within this crystal can be revivified in your Serenitea Pot using either \"Euphonium Unbound: Winding\" or \"Euphonium Unbound: Soaring.\" The tune contained within this Radiant Spincrystal is a mysterious melody from Liyue."
+    }
+  },
+  "RadiantSpincrystal125": {
+    "name": "Radiant Spincrystal 125",
+    "description": {
+      "0": "This wondrous crystal contains a certain rhythm, like something beautiful woven from delicate silk. These items can be found throughout the mainland or from merchants who collect curios. The tune held within this crystal can be revivified in your Serenitea Pot using either \"Euphonium Unbound: Winding\" or \"Euphonium Unbound: Soaring.\" The tune contained within this Radiant Spincrystal is a mysterious melody from Liyue."
     }
   },
   "LanternFiber": {
@@ -23392,7 +24011,7 @@
     "name": "Travel Notes: Primordial Waters",
     "description": {
       "0": "Namecard style.",
-      "1": "Timepieces accompany the tranquil passing of the years, as fish accompany the swirling of the clear waters of the font. If all that is must one day wither, why are my thoughts as clear as ever?"
+      "1": "Timepieces accompany the tranquil passing of the years, as fish accompany the swirling of the clear waters of the font. If all that is must one day wither, why is my yearning as clear as ever?"
     }
   },
   "NeuvilletteSurge": {
@@ -23484,6 +24103,48 @@
     "description": {
       "0": "Namecard style.",
       "1": "Who knows how long it shall take before film in Teyvat will advance to the point of reinventing the art of \"carving time\"? Still, this scene has indeed frozen the sinful past."
+    }
+  },
+  "XianyunWhiteClouds": {
+    "name": "Xianyun: White Clouds",
+    "description": {
+      "0": "Namecard style.",
+      "1": "Those who the truth tell, commuted shall their sentence be. Be honest. When Cloud Retainer asked you, \"Do you perceive one as merely some larger bird?\", did you also append the thoughts, \"Yes, and you talk, and fiddle with funny machines\"?"
+    }
+  },
+  "GamingManChai": {
+    "name": "Gaming: Man Chai",
+    "description": {
+      "0": "Namecard style.",
+      "1": "\"Don't stop believing, Man Chai. One day, we'll soar high, with nary a patched hole in our trousers.\""
+    }
+  },
+  "AchievementAdeptalValley": {
+    "name": "Achievement: Adeptal Valley",
+    "description": {
+      "0": "Namecard style.",
+      "1": "...After that, the fish sank to the bottom of the lake, and the snake was split into several pieces. The remaining beasts waited on mountains, rivers, and moon, awaiting their silent answer."
+    }
+  },
+  "ChenyuRainjadeRite": {
+    "name": "Chenyu: Rainjade Rite",
+    "description": {
+      "0": "Namecard style.",
+      "1": "Stars flicker brightly above the tranquil sea and rivers. The mountain folk dance in harmony with birds and beasts."
+    }
+  },
+  "TravelNotesVibrantHarriers": {
+    "name": "Travel Notes: Vibrant Harriers",
+    "description": {
+      "0": "Namecard style.",
+      "1": "Harriers and cranes come early in spring. Let the wind rise and the kites soar."
+    }
+  },
+  "AlbumTheStellarMoments": {
+    "name": "Album: The Stellar Moments",
+    "description": {
+      "0": "Namecard style.",
+      "1": "We parted in one melody and reunited in another."
     }
   },
   "AnemoculusResonanceStone": {
@@ -24554,6 +25215,18 @@
       "0": "A card for the tabletop game, Genius Invokation TCG. It is built tough, and some special printing method has been used for the illustration on the card's face, resulting in a truly exquisite appearance."
     }
   },
+  "CryoHypostasis": {
+    "name": "Cryo Hypostasis",
+    "description": {
+      "0": "A card for the tabletop game, Genius Invokation TCG. It is built tough, and some special printing method has been used for the illustration on the card's face, resulting in a truly exquisite appearance."
+    }
+  },
+  "MillennialPearlSeahorse": {
+    "name": "Millennial Pearl Seahorse",
+    "description": {
+      "0": "A card for the tabletop game, Genius Invokation TCG. It is built tough, and some special printing method has been used for the illustration on the card's face, resulting in a truly exquisite appearance."
+    }
+  },
   "UndividedHeart": {
     "name": "Undivided Heart",
     "description": {
@@ -24980,6 +25653,30 @@
       "0": "A card for the tabletop game, Genius Invokation TCG. It is built tough, and some special printing method has been used for the illustration on the card's face, resulting in a truly exquisite appearance."
     }
   },
+  "ASubordinatesSkills": {
+    "name": "A Subordinate's Skills",
+    "description": {
+      "0": "A card for the tabletop game, Genius Invokation TCG. It is built tough, and some special printing method has been used for the illustration on the card's face, resulting in a truly exquisite appearance."
+    }
+  },
+  "SkivingNewAndImproved": {
+    "name": "Skiving: New and Improved",
+    "description": {
+      "0": "A card for the tabletop game, Genius Invokation TCG. It is built tough, and some special printing method has been used for the illustration on the card's face, resulting in a truly exquisite appearance."
+    }
+  },
+  "SternfrostPrism": {
+    "name": "Sternfrost Prism",
+    "description": {
+      "0": "A card for the tabletop game, Genius Invokation TCG. It is built tough, and some special printing method has been used for the illustration on the card's face, resulting in a truly exquisite appearance."
+    }
+  },
+  "PearlSolidification": {
+    "name": "Pearl Solidification",
+    "description": {
+      "0": "A card for the tabletop game, Genius Invokation TCG. It is built tough, and some special printing method has been used for the illustration on the card's face, resulting in a truly exquisite appearance."
+    }
+  },
   "MagicGuide": {
     "name": "Magic Guide",
     "description": {
@@ -25388,6 +26085,18 @@
       "0": "A card for the tabletop game, Genius Invokation TCG. It is built tough, and some special printing method has been used for the illustration on the card's face, resulting in a truly exquisite appearance."
     }
   },
+  "SapwoodBlade": {
+    "name": "Sapwood Blade",
+    "description": {
+      "0": "A card for the tabletop game, Genius Invokation TCG. It is built tough, and some special printing method has been used for the illustration on the card's face, resulting in a truly exquisite appearance."
+    }
+  },
+  "VeteransVisage": {
+    "name": "Veteran's Visage",
+    "description": {
+      "0": "A card for the tabletop game, Genius Invokation TCG. It is built tough, and some special printing method has been used for the illustration on the card's face, resulting in a truly exquisite appearance."
+    }
+  },
   "LiyueHarborWharf": {
     "name": "Liyue Harbor Wharf",
     "description": {
@@ -25618,6 +26327,18 @@
   },
   "Mamere": {
     "name": "Mamere",
+    "description": {
+      "0": "A card for the tabletop game, Genius Invokation TCG. It is built tough, and some special printing method has been used for the illustration on the card's face, resulting in a truly exquisite appearance."
+    }
+  },
+  "Jeht": {
+    "name": "Jeht",
+    "description": {
+      "0": "A card for the tabletop game, Genius Invokation TCG. It is built tough, and some special printing method has been used for the illustration on the card's face, resulting in a truly exquisite appearance."
+    }
+  },
+  "SilverAndMelus": {
+    "name": "Silver and Melus",
     "description": {
       "0": "A card for the tabletop game, Genius Invokation TCG. It is built tough, and some special printing method has been used for the illustration on the card's face, resulting in a truly exquisite appearance."
     }
@@ -25928,6 +26649,18 @@
       "0": "A card for the tabletop game, Genius Invokation TCG. It is built tough, and some special printing method has been used for the illustration on the card's face, resulting in a truly exquisite appearance."
     }
   },
+  "MachineAssemblyLine": {
+    "name": "Machine Assembly Line",
+    "description": {
+      "0": "A card for the tabletop game, Genius Invokation TCG. It is built tough, and some special printing method has been used for the illustration on the card's face, resulting in a truly exquisite appearance."
+    }
+  },
+  "SunyataFlower": {
+    "name": "Sunyata Flower",
+    "description": {
+      "0": "A card for the tabletop game, Genius Invokation TCG. It is built tough, and some special printing method has been used for the illustration on the card's face, resulting in a truly exquisite appearance."
+    }
+  },
   "Origin": {
     "name": "Origin",
     "description": {
@@ -26134,6 +26867,24 @@
     "name": "Sailwind Shadow",
     "description": {
       "0": "Kaeya's outfit from his role as the \"Dagger Bandit\" in the play. Though flamboyant and designed to be as eye-catching as possible, it isn't difficult to put on, though it does take some time to get all the accessories and daggers sorted."
+    }
+  },
+  "FrostflowerDew": {
+    "name": "Frostflower Dew",
+    "description": {
+      "0": "This Lantern Rite gift that Shenhe received is a set of elegant formal attire that her master, Cloud Retainer had commissioned for her. Red ropes still adorn her arms, but the bitter cold in Shenhe's heart has faded."
+    }
+  },
+  "TwilightBlossom": {
+    "name": "Twilight Blossom",
+    "description": {
+      "0": "A light and graceful festive outfit accented mainly in black nightshade and cerulean blue. Its hair accessory is as radiant as the Qingxin — a pairing that Ganyu is most fond of."
+    }
+  },
+  "BambooRain": {
+    "name": "Bamboo Rain",
+    "description": {
+      "0": "Formal wear prepared by the Feiyun Commerce Guild for Xingqiu. The bamboo prints are refined and the cut is most flattering, but Xingqiu's favorite aspect of the outfit is its inner pockets, into which a thinner novel might be stuffed."
     }
   },
   "AdventurerCamp": {
@@ -26423,7 +27174,7 @@
       "2": "A humble and unassuming bedroom alike in many ways to one you might find in Wangshu Inn. This bedroom's mystery is hard to explain in words. Sometimes it will evoke remembrance in those who pass through, like the sunlight poking through the swirling clouds. Yet it will remove the sorrows therein and leave only the marks of happenings past.",
       "3": "We are all adrift in this mortal life, and only by remembering who \"we\" are can we remain steady along our course. Our thoughts are clearest in the interstice between dreaming and waking. No wonder those who visit Wangshu Inn for a night find themselves re-energized a hundred times over, radiant and ready to embark on their journey once more.",
       "4": "After using this item, you can view it in the Placement Screen.",
-      "5": "This Furnishing Set is favored by the following companions: Hu Tao, Yanfei, Ganyu, Keqing, Chongyun"
+      "5": "This Furnishing Set is favored by the following companions: Hu Tao, Yanfei, Ganyu, Keqing, Chongyun, Gaming"
     }
   },
   "SecretResearchLab": {
@@ -26482,9 +27233,9 @@
     "description": {
       "0": "A detailed step-by-step blueprint for making a \"Gathering of Gourmets.\"",
       "1": "A food street with outdoor facilities that replicates the bustle of Chihu Rock.",
-      "2": "To call this a \"gathering of gourmets\" is an understatement, and while it may seem that there aren't too many cooking utensils lying around, there are more than enough to cover all the known specialties of the Liyue region. After all, skilled chefs can make delicious dishes with the simplest of utensils, and it certainly helps that many ingredients that don't require complex preparation have become pillars of some of the most renown dishes.",
+      "2": "To call this a \"gathering of gourmets\" is an understatement, and while it may seem that there aren't too many cooking utensils lying around, there are more than enough to cover all the known specialties of the Liyue region. After all, skilled chefs can make delicious dishes with the simplest of utensils, and it certainly helps that many ingredients that don't require complex preparation have become pillars of some of the most renowned dishes.",
       "3": "After using this item, you can view it in the Placement Screen.",
-      "4": "This Furnishing Set is favored by the following companions: Beidou, Xiangling, Ganyu, Xinyan, Tartaglia, Yelan"
+      "4": "This Furnishing Set is favored by the following companions: Beidou, Xiangling, Ganyu, Xinyan, Tartaglia, Yelan, Gaming, Xianyun"
     }
   },
   "GlitteringStreet": {
@@ -26504,7 +27255,7 @@
       "1": "A mountain hamlet modeled after Qingce Village. It is said that the friendly atmosphere there is infectious and that visitors who enter will find themselves calmed and more appreciative of simple joys that they may have once forgotten.",
       "2": "To head out in pursuit of one's ideals and spend one's years magnificently chasing a career is certainly praiseworthy. But after spending so long on such endeavors, one may eventually tire. When that happens, a quiet and peaceful life out in the countryside remains a good choice. Qingce Village has always maintained its acceptance of young folk who head out to seek their fortunes, and is ready to welcome them back with open arms at any time.",
       "3": "After using this item, you can view it in the Placement Screen.",
-      "4": "This Furnishing Set is favored by the following companions: Xinyan, Xiao, Hu Tao, Qiqi, Shenhe, Yelan, Yaoyao"
+      "4": "This Furnishing Set is favored by the following companions: Xinyan, Xiao, Hu Tao, Qiqi, Shenhe, Yelan, Yaoyao, Xianyun"
     }
   },
   "OfHuntingAndDancing": {
@@ -27207,10 +27958,10 @@
       "1": "After using this item, you can view it in the Creation Screen."
     }
   },
-  "SplendrousNightOverflowingLight": {
-    "name": "Splendrous Night: Overflowing Light",
+  "SplendorousNightOverflowingLight": {
+    "name": "Splendorous Night: Overflowing Light",
     "description": {
-      "0": "A detailed step-by-step blueprint for making Splendrous Night: Overflowing Light.",
+      "0": "A detailed step-by-step blueprint for making Splendorous Night: Overflowing Light.",
       "1": "After using this item, you can view it in the Creation Screen."
     }
   },
@@ -27246,6 +27997,41 @@
     "name": "Forbidden Zone Floor Lamp: Nightlight",
     "description": {
       "0": "A detailed step-by-step blueprint for making a \"Forbidden Zone Floor Lamp: Nightlight.\"",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "ArtisanalFishLanternCarpsWell": {
+    "name": "Artisanal Fish Lantern: Carp's Well",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making Artisanal Fish Lantern: Carp's Well.",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "ArtisanFishLanternSpringProfits": {
+    "name": "Artisan Fish Lantern: Spring Profits",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making Artisan Fish Lantern: Spring Profits.",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "PortFloorLightWispOfFragrance": {
+    "name": "Port Floor Light: Wisp of Fragrance",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making Port Floor Light: Wisp of Fragrance.",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "PortStreetLightGoodThingsComeInPairs": {
+    "name": "Port Street Light: Good Things Come in Pairs",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making Port Street Light: Good Things Come in Pairs.",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "ValleyStoneLampEverbrightLight": {
+    "name": "Valley Stone Lamp: Everbright Light",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making Valley Stone Lamp: Everbright Light.",
       "1": "After using this item, you can view it in the Creation Screen."
     }
   },
@@ -29230,6 +30016,104 @@
       "1": "After using this item, you can view it in the Creation Screen."
     }
   },
+  "ValleyStoreTheLeisureOfTea": {
+    "name": "Valley Store: The Leisure of Tea",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making Valley Store: The Leisure of Tea.",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "ValleyStageBillowingCloudWaves": {
+    "name": "Valley Stage: Billowing Cloud Waves",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making Valley Stage: Billowing Cloud Waves.",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "ValleyVerandaDistantBeginnings": {
+    "name": "Valley Veranda: Distant Beginnings",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making Valley Veranda: Distant Beginnings.",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "ValleyVerandaFromSolidFoundationsToThrive": {
+    "name": "Valley Veranda: From Solid Foundations to Thrive",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making Valley Veranda: From Solid Foundations to Thrive.",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "ValleyPavilionWarmDaylight": {
+    "name": "Valley Pavilion: Warm Daylight",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making Valley Pavilion: Warm Daylight.",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "ValleyStoneArchwayRecurringOmenOfAbundance": {
+    "name": "Valley Stone Archway: Recurring Omen of Abundance",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making Valley Stone Archway: Recurring Omen of Abundance.",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "ValleyPergolaSunAndRain": {
+    "name": "Valley Pergola: Sun and Rain",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making Valley Pergola: Sun and Rain.",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "ValleyWatchtowerVigilance": {
+    "name": "Valley Watchtower: Vigilance",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making Valley Watchtower: Vigilance.",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "ValleyResidenceToweringMountains": {
+    "name": "Valley Residence: Towering Mountains",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making Valley Residence: Towering Mountains.",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "ValleyResidenceTranquility": {
+    "name": "Valley Residence: Tranquility",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making Valley Residence: Tranquility.",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "ValleyResidenceCustomComplexity": {
+    "name": "Valley Residence: Custom Complexity",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making Valley Residence: Custom Complexity.",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "ValleyResidenceTotalFocus": {
+    "name": "Valley Residence: Total Focus",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making Valley Residence: Total Focus.",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "ValleyResidenceTenderCountryside": {
+    "name": "Valley Residence: Tender Countryside",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making Valley Residence: Tender Countryside.",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "ValleyResidenceMeasuredBuilding": {
+    "name": "Valley Residence: Measured Building",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making Valley Residence: Measured Building.",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
   "MultiArchedMondstadtBuilding": {
     "name": "Multi-Arched Mondstadt Building",
     "description": {
@@ -30875,6 +31759,76 @@
       "1": "After using this item, you can view it in the Creation Screen."
     }
   },
+  "ValleyGateBustlingYard": {
+    "name": "Valley Gate: Bustling Yard",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making Valley Gate: Bustling Yard.",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "ValleyGateMountainsBeyondTheGate": {
+    "name": "Valley Gate: Mountains Beyond the Gate",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making Valley Gate: Mountains Beyond the Gate.",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "ValleyCaveTheFansWindingPath": {
+    "name": "Valley Cave: The Fan's Winding Path",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making Valley Cave: The Fan's Winding Path.",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "ValleyWallCornerLikeGatheringWaves": {
+    "name": "Valley Wall Corner: Like Gathering Waves",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making Valley Wall Corner: Like Gathering Waves.",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "ValleyStoneWallJadeBeltRiver": {
+    "name": "Valley Stone Wall: Jade Belt River",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making Valley Stone Wall: Jade Belt River.",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "ValleyStoneWallFlowersAndWillows": {
+    "name": "Valley Stone Wall: Flowers and Willows",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making Valley Stone Wall: Flowers and Willows.",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "ValleyStoneWallCarpAndKite": {
+    "name": "Valley Stone Wall: Carp and Kite",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making Valley Stone Wall: Carp and Kite.",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "ValleyGableWardingWindAndFire": {
+    "name": "Valley Gable: Warding Wind and Fire",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making Valley Gable: Warding Wind and Fire.",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "ValleyGableRainShelter": {
+    "name": "Valley Gable: Rain Shelter",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making Valley Gable: Rain Shelter.",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "ValleyStoneStepsFoundationStone": {
+    "name": "Valley Stone Steps: Foundation Stone",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making Valley Stone Steps: Foundation Stone.",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
   "FoundationsOfStoneFortunateTimes": {
     "name": "Foundations of Stone: Fortunate Times",
     "description": {
@@ -32170,6 +33124,76 @@
       "1": "After using this item, you can view it in the Creation Screen."
     }
   },
+  "StoneDrumSonicReverberation": {
+    "name": "Stone Drum: Sonic Reverberation",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making Stone Drum: Sonic Reverberation.",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "WushouDanceCostumeRoaringSuanni": {
+    "name": "Wushou Dance Costume: Roaring Suanni",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making Wushou Dance Costume: Roaring Suanni.",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "WushouDanceDollSleepySuanni": {
+    "name": "Wushou Dance Doll: Sleepy Suanni",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making Wushou Dance Doll: Sleepy Suanni.",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "BanquetScreenDancingButterfliesAndLeapingFish": {
+    "name": "Banquet Screen: Dancing Butterflies and Leaping Fish",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making Banquet Screen: Dancing Butterflies and Leaping Fish.",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "BanquetScreenCryingSwallowsAndChirpingSparrows": {
+    "name": "Banquet Screen: Crying Swallows and Chirping Sparrows",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making Banquet Screen: Crying Swallows and Chirping Sparrows.",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "CelebratoryKiteSuccessiveProsperity": {
+    "name": "Celebratory Kite: Successive Prosperity",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making Celebratory Kite: Successive Prosperity.",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "CelebratoryKiteAllsWell": {
+    "name": "Celebratory Kite: All's Well",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making Celebratory Kite: All's Well.",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "CelebratoryKiteButterflyDance": {
+    "name": "Celebratory Kite: Butterfly Dance",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making Celebratory Kite: Butterfly Dance.",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "CelebratoryKiteProsperityAndWealth": {
+    "name": "Celebratory Kite: Prosperity and Wealth",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making Celebratory Kite: Prosperity and Wealth.",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "FragrantCedarWoodAnnouncementBoard": {
+    "name": "Fragrant Cedar Wood Announcement Board",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making a Fragrant Cedar Wood Announcement Board.",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
   "BookshelfFreeReading": {
     "name": "Bookshelf: Free Reading",
     "description": {
@@ -32366,6 +33390,13 @@
       "1": "After using this item, you can view it in the Creation Screen."
     }
   },
+  "TeaChairCoolBreeze": {
+    "name": "Tea Chair: Cool Breeze",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making Tea Chair: Cool Breeze.",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
   "TwoStoryHilichurlSentryTower": {
     "name": "Two-Story Hilichurl Sentry Tower",
     "description": {
@@ -32496,6 +33527,13 @@
     "name": "Production Rack: Custom Build",
     "description": {
       "0": "A detailed step-by-step blueprint for making a Production Rack: Custom Build.",
+      "1": "After using this item, you can view it in the Creation Screen."
+    }
+  },
+  "SquareTeaTableFriendlyWelcome": {
+    "name": "Square Tea Table: Friendly Welcome",
+    "description": {
+      "0": "A detailed step-by-step blueprint for making Square Tea Table: Friendly Welcome.",
       "1": "After using this item, you can view it in the Creation Screen."
     }
   },

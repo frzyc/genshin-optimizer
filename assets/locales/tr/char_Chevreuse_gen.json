@@ -42,7 +42,7 @@
     "name": "Kısa Menzilli Seri Tecrit Ateşi",
     "description": {
       "0": "Chevreuse tüfeğiyle hızlı bir şekilde nişan alıp ateş ederek düşmanlarına <pyro>Ateş Alan Hasarı</pyro> verir.",
-      "1": "Chevreuse ateş ettikten sonra kısa bir süre boyunca savaş alanındaki aktif karakter için sürekli Can yeniler. İyileştirme miktarı Chevreuse'ün Maks. Canına bağlıdır.",
+      "1": "Chevreuse ateş ettikten sonra kısa bir süre boyunca savaş alanındaki aktif karakterin için sürekli Can yeniler. İyileştirme miktarı Chevreuse'ün Maks. Canına bağlıdır.",
       "2": "Farklı bir şekilde ateş etmek için Basılı Tut.",
       "3": "<br/>",
       "4": "<strong>Basılı Tut</strong>",

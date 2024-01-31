@@ -1,0 +1,24 @@
+{
+  "name": "Crane's Echoing Call",
+  "description": {
+    "0": "Kipas pusaka yang dibentuk dari giok yang murni, dipenuhi dengan aura Kekuatan Adeptus kuno."
+  },
+  "passiveName": "Cloudfall Axiom",
+  "passiveDescription": {
+    "0": {
+      "0": "Setelah Plunging Attack Karakter yang mengenakan mengenai musuh, akan meningkatkan <cryo>28%</cryo> DMG yang diakibatkan oleh Plunging Attack seluruh anggota party di sekitar selama 20 detik; Saat Plunging Attack anggota party di sekitar mengenai musuh, akan memulihkan <cryo>2,5</cryo> Energy bagi Karakter yang mengenakan. Pemulihan Energy yang bisa didapatkan dengan cara ini adalah sekali setiap 0,7 detik. Saat Karakter yang mengenakan ada di dalam party namun sedang tidak berada di medan pertempuran, pemulihan Energy dengan cara ini tetap bisa terpicu."
+    },
+    "1": {
+      "0": "Setelah Plunging Attack Karakter yang mengenakan mengenai musuh, akan meningkatkan <cryo>41%</cryo> DMG yang diakibatkan oleh Plunging Attack seluruh anggota party di sekitar selama 20 detik; Saat Plunging Attack anggota party di sekitar mengenai musuh, akan memulihkan <cryo>2,75</cryo> Energy bagi Karakter yang mengenakan. Pemulihan Energy yang bisa didapatkan dengan cara ini adalah sekali setiap 0,7 detik. Saat Karakter yang mengenakan ada di dalam party namun sedang tidak berada di medan pertempuran, pemulihan Energy dengan cara ini tetap bisa terpicu."
+    },
+    "2": {
+      "0": "Setelah Plunging Attack Karakter yang mengenakan mengenai musuh, akan meningkatkan <cryo>54%</cryo> DMG yang diakibatkan oleh Plunging Attack seluruh anggota party di sekitar selama 20 detik; Saat Plunging Attack anggota party di sekitar mengenai musuh, akan memulihkan <cryo>3</cryo> Energy bagi Karakter yang mengenakan. Pemulihan Energy yang bisa didapatkan dengan cara ini adalah sekali setiap 0,7 detik. Saat Karakter yang mengenakan ada di dalam party namun sedang tidak berada di medan pertempuran, pemulihan Energy dengan cara ini tetap bisa terpicu."
+    },
+    "3": {
+      "0": "Setelah Plunging Attack Karakter yang mengenakan mengenai musuh, akan meningkatkan <cryo>67%</cryo> DMG yang diakibatkan oleh Plunging Attack seluruh anggota party di sekitar selama 20 detik; Saat Plunging Attack anggota party di sekitar mengenai musuh, akan memulihkan <cryo>3,25</cryo> Energy bagi Karakter yang mengenakan. Pemulihan Energy yang bisa didapatkan dengan cara ini adalah sekali setiap 0,7 detik. Saat Karakter yang mengenakan ada di dalam party namun sedang tidak berada di medan pertempuran, pemulihan Energy dengan cara ini tetap bisa terpicu."
+    },
+    "4": {
+      "0": "Setelah Plunging Attack Karakter yang mengenakan mengenai musuh, akan meningkatkan <cryo>80%</cryo> DMG yang diakibatkan oleh Plunging Attack seluruh anggota party di sekitar selama 20 detik; Saat Plunging Attack anggota party di sekitar mengenai musuh, akan memulihkan <cryo>3,5</cryo> Energy bagi Karakter yang mengenakan. Pemulihan Energy yang bisa didapatkan dengan cara ini adalah sekali setiap 0,7 detik. Saat Karakter yang mengenakan ada di dalam party namun sedang tidak berada di medan pertempuran, pemulihan Energy dengan cara ini tetap bisa terpicu."
+    }
+  }
+}

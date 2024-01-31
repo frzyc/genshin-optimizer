@@ -1,0 +1,160 @@
+{
+  "name": "Gaming",
+  "title": "Avant-garde léonine",
+  "description": "Un mercenaire des Transporteurs des coffres-lames et le meneur de la troupe de wushou « Mythiques bêtes mystiques ».",
+  "constellationName": "Leo Expergiscens",
+  "auto": {
+    "name": "Déchirement stellaire",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attaque normale</strong>",
+        "1": "Enchaîne jusqu'à 4 attaques."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Consomme de l'endurance de façon continue pour exécuter une succession d'attaques tournoyantes contre les ennemis proches.",
+        "2": "L'attaque chargée se termine sur un coup puissant."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis en chemin et des DGT de zone à l'impact."
+      }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT 4e coup",
+      "4": "DGT enchaînement attaque chargée",
+      "5": "DGT coup final attaque chargée",
+      "6": "Coût d'endurance attaque chargée",
+      "7": "Durée max",
+      "8": "DGT durant la chute",
+      "9": "DGT chute basse/élevée",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Ascension bestiale",
+    "description": {
+      "0": "Attaque avec un bond en avant en utilisant l'art du wushou, sautant haut dans les airs après avoir touché une cible ou le terrain.",
+      "1": "Si Gaming utilise une attaque plongeante après s'être élevé dans les airs grâce à sa compétence élémentaire « Ascension bestiale », il déclenche une attaque plongeante particulièrement puissante : Augure nébuleux.",
+      "2": "<br/>",
+      "3": "<strong>Attaque plongeante : Augure nébuleux</strong>",
+      "4": "Lorsqu'une attaque plongeante est déclenchée en utilisant l'effet de la compétence élémentaire « Ascension bestiale », ses DGT sont convertis en <pyro>DGT Pyro</pyro> ne pouvant pas être enchantés et Gaming consomme une certaine quantité de PV à l'atterrissage. Les PV de Gaming peuvent être diminués jusqu'à 10 % de cette manière.",
+      "5": "Les DGT infligés par Augure nébuleux sont considérés comme des DGT d'attaque plongeante.",
+      "6": "<br/>",
+      "7": "<i>« La bête auspicieuse bondit et cueille la verdure, la prospérité tout autour résonne. Que la richesse et la santé nous parviennent... Et puissions-nous tous nous élever au firmament ! »</i>"
+    },
+    "skillParams": {
+      "0": "DGT attaque plongeante « Augure nébuleux »",
+      "1": "Coût de PV",
+      "2": "Temps de recharge",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Danse de félidé enflammé",
+    "description": {
+      "0": "Gaming passe en posture de wushou, <pyro>s'appliquant l'élément Pyro</pyro> temporairement et récupérant une certaine quantité de ses PV, et invoque son compagnon, le suanni Man Chai, pour qu'il écrase les cibles et inflige des <pyro>DGT Pyro de zone</pyro>.",
+      "1": "Après avoir écrasé ses cibles, Man Chai roule à proximité avant de se diriger vers Gaming. En rejoignant Gaming, Man Chai quitte le champ de bataille et réinitialise le TdR de la compétence élémentaire de Gaming, Ascension bestiale.",
+      "2": "Pendant la durée de la posture de wushou, la RÉS à l'interruption de Gaming est augmentée et, lorsque son attaque plongeante « Augure nébuleux » touche le sol ou à la fin du bond en avant d'Ascension bestiale, Gaming peut invoquer à nouveau Man Chai si ses PV sont supérieurs à 50 %.",
+      "3": "Il ne peut exister qu'un seul Man Chai invoqué par Gaming lui-même à la fois.",
+      "4": "Cet effet cesse lorsque Gaming quitte le champ de bataille.",
+      "5": "<br/>",
+      "6": "<i>« La bête dorée apporte fortune, lumières flamboyantes et vues brillantes ! Voilà ce qu'on appelle une vie prospère et abondante ! »</i>"
+    },
+    "skillParams": {
+      "0": "DGT écrasement de Man Chai",
+      "1": "PV récupérés",
+      "2": "Durée de posture de wushou",
+      "3": "Temps de recharge",
+      "4": "Énergie élémentaire",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Danse d'entente",
+    "description": {
+      "0": "Après avoir touché un ennemi avec l'attaque plongeante « Augure nébuleux » d'<strong>Ascension bestiale</strong>, Gaming récupère des PV pour une valeur équivalant à 1,5 % de ses PV max une fois toutes les 0,2 s pendant 0,8 s."
+    }
+  },
+  "passive2": {
+    "name": "Air de prospérité",
+    "description": {
+      "0": "Lorsque les PV de Gaming sont inférieurs à 50 %, il obtient un bonus de soins reçus de 20 %. Lorsque les PV de Gaming sont supérieurs ou égaux à 50 %, les DGT infligés par l'attaque plongeante « Augure nébuleux » augmentent de 20 %."
+    }
+  },
+  "passive3": {
+    "name": "Pas de bestialité",
+    "description": {
+      "0": "Augmente la VIT de déplacement de vos personnages dans l'équipe pendant la journée (06 h 00 - 18 h 00) de 10 %.",
+      "1": "Cet effet ne s'applique ni dans les donjons, ni dans les Donjons de la conquête, ni dans les Profondeurs spiralées, et ne peut être cumulé avec d'autres aptitudes passives aux effets identiques."
+    }
+  },
+  "constellation1": {
+    "name": "Sous la bénédiction radieuse",
+    "description": {
+      "0": "Lorsque le suanni Man Chai de <strong>Danse de félidé enflammé</strong> rejoint Gaming, ce dernier récupère 15 % de PV."
+    }
+  },
+  "constellation2": {
+    "name": "Sur les fleurs de prunier",
+    "description": {
+      "0": "Lorsque Gaming reçoit des soins et que ces derniers dépassent la limite, son ATQ augmente de 20 % pendant 5 s."
+    }
+  },
+  "constellation3": {
+    "name": "Grâce à l'éveil spirituel",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Ascension bestiale</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation4": {
+    "name": "Au-dessus des monts",
+    "description": {
+      "0": "Lorsque l'attaque plongeante « Augure nébuleux » d'<strong>Ascension bestiale</strong> touche un ennemi, Gaming récupère 2 pts d'énergie élémentaire. Cet effet peut être déclenché une fois toutes les 0,2 s."
+    }
+  },
+  "constellation5": {
+    "name": "Par le cri intimidant les démons",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Danse de félidé enflammé</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation6": {
+    "name": "En apprivoisant les bêtes",
+    "description": {
+      "0": "Augmente le taux CRIT de l'attaque plongeante « Augure nébuleux » d'<strong>Ascension bestiale</strong> de 20 % et ses DGT CRIT de 40 %, et améliore sa portée d'attaque."
+    }
+  }
+}

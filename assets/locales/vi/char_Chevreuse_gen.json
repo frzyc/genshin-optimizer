@@ -42,7 +42,7 @@
     "name": "Đánh Chặn Nhanh Tầm Gần",
     "description": {
       "0": "Chevreuse giơ cao súng hỏa mai để bắn kẻ địch, gây <pyro>Sát Thương Phạm Vi Nguyên Tố Hỏa</pyro>.",
-      "1": "Trong một khoảng thời gian sau khi Chevreuse bắn sẽ liên tục hồi phục HP cho nhân vật trong trận hiện tại, lượng hồi phục căn cứ vào giới hạn HP của Chevreuse.",
+      "1": "Trong một khoảng thời gian sau khi Chevreuse bắn sẽ liên tục hồi phục HP cho nhân vật của bản thân trong trận hiện tại, lượng hồi phục căn cứ vào giới hạn HP của Chevreuse.",
       "2": "Khi Nhấn Giữ sẽ thi triển theo cách thức khác.",
       "3": "<br/>",
       "4": "<strong>Nhấn Giữ</strong>",

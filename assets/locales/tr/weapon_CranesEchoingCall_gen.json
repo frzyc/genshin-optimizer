@@ -1,0 +1,24 @@
+{
+  "name": "Turnam Selam Götür",
+  "description": {
+    "0": "Saf yeşimden yapılmış ve etrafında Adeptus enerjisinden kadim esintiler bulunan bir yelpaze."
+  },
+  "passiveName": "Bulutların Çöküşü",
+  "passiveDescription": {
+    "0": {
+      "0": "Kuşanan karakter, düşmana Havadan Saldırı ile saldırdıktan sonra 20sn boyunca yakındaki tüm grup üyelerinin Havadan Saldırıları <cryo>%28</cryo> daha fazla Hasar verir. Yakındaki grup üyeleri düşmana Havadan Saldırı ile vurduğunda kuşanan karakter <cryo>2,5</cryo> Enerji yeniler. Enerji, bu şekilde her 0,7 saniyede bir yenilenebilir. Bu Enerji yenileme etkisi, kuşanan karakter savaş alanında olmasa da tetiklenebilir."
+    },
+    "1": {
+      "0": "Kuşanan karakter, düşmana Havadan Saldırı ile saldırdıktan sonra 20sn boyunca yakındaki tüm grup üyelerinin Havadan Saldırıları <cryo>%41</cryo> daha fazla Hasar verir. Yakındaki grup üyeleri düşmana Havadan Saldırı ile vurduğunda kuşanan karakter <cryo>2,75</cryo> Enerji yeniler. Enerji, bu şekilde her 0,7 saniyede bir yenilenebilir. Bu Enerji yenileme etkisi, kuşanan karakter savaş alanında olmasa da tetiklenebilir."
+    },
+    "2": {
+      "0": "Kuşanan karakter, düşmana Havadan Saldırı ile saldırdıktan sonra 20sn boyunca yakındaki tüm grup üyelerinin Havadan Saldırıları <cryo>%54</cryo> daha fazla Hasar verir. Yakındaki grup üyeleri düşmana Havadan Saldırı ile vurduğunda kuşanan karakter <cryo>3</cryo> Enerji yeniler. Enerji, bu şekilde her 0,7 saniyede bir yenilenebilir. Bu Enerji yenileme etkisi, kuşanan karakter savaş alanında olmasa da tetiklenebilir."
+    },
+    "3": {
+      "0": "Kuşanan karakter, düşmana Havadan Saldırı ile saldırdıktan sonra 20sn boyunca yakındaki tüm grup üyelerinin Havadan Saldırıları <cryo>%67</cryo> daha fazla Hasar verir. Yakındaki grup üyeleri düşmana Havadan Saldırı ile vurduğunda kuşanan karakter <cryo>3,25</cryo> Enerji yeniler. Enerji, bu şekilde her 0,7 saniyede bir yenilenebilir. Bu Enerji yenileme etkisi, kuşanan karakter savaş alanında olmasa da tetiklenebilir."
+    },
+    "4": {
+      "0": "Kuşanan karakter, düşmana Havadan Saldırı ile saldırdıktan sonra 20sn boyunca yakındaki tüm grup üyelerinin Havadan Saldırıları <cryo>%80</cryo> daha fazla Hasar verir. Yakındaki grup üyeleri düşmana Havadan Saldırı ile vurduğunda kuşanan karakter <cryo>3,5</cryo> Enerji yeniler. Enerji, bu şekilde her 0,7 saniyede bir yenilenebilir. Bu Enerji yenileme etkisi, kuşanan karakter savaş alanında olmasa da tetiklenebilir."
+    }
+  }
+}

@@ -131,7 +131,7 @@
     "name": "Camino soleado",
     "description": {
       "0": "La Vel. Movimiento de todos los miembros de tu equipo aumenta en un 10% por el día (06-18 h).",
-      "1": "Este efecto no se activará en dominios, Dominios de la cruzada ni la Espiral del Abismo, y no se puede acumular con otros talentos pasivos que tengan el mismo efecto."
+      "1": "Este efecto no se activará en dominios, Dominios de la cruzada ni en la Espiral del Abismo, y no se puede acumular con otros talentos pasivos que tengan el mismo efecto."
     }
   },
   "constellation1": {

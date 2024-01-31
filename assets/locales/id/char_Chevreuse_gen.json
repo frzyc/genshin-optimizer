@@ -42,7 +42,7 @@
     "name": "Short-Range Rapid Interdiction Fire",
     "description": {
       "0": "Chevreuse mengangkat senapannya dengan cepat untuk menembak musuh dan mengakibatkan <pyro>Pyro DMG Area</pyro>.",
-      "1": "Beberapa saat setelah Chevreuse menembak, dia akan terus memulihkan HP Karakter aktif. Jumlah pemulihan didasarkan pada Max HP Chevreuse.",
+      "1": "Beberapa saat setelah Chevreuse menembak, dia akan terus memulihkan HP Karakter aktif sendiri. Jumlah pemulihan didasarkan pada Max HP Chevreuse.",
       "2": "Saat ditahan, akan melancarkan serangan dengan cara yang berbeda.",
       "3": "<br/>",
       "4": "<strong>Mode Tahan</strong>",

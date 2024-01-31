@@ -1062,6 +1062,18 @@
       "0": "Die amtierende Präsidentin der Spina di Rosula, eine liebenswerte, pflichtbewusste und großartige Chefin."
     }
   },
+  "Gaming": {
+    "name": "Gaming",
+    "description": {
+      "0": "Transportwache der Schwertschachtel, Leiter der renommierten Mächtigen Fabelbestien."
+    }
+  },
+  "Xianyun": {
+    "name": "Xianyun",
+    "description": {
+      "0": "Eine der erleuchteten Adepten von Jueyun, bekannt als „Fürstin der stehenden Wolken und des stillen Windes“. Sie ist Expertin für alle Arten von mechanischen Vorrichtungen, aber ihr Herz wendet sich nun den Angelegenheiten der Welt der Sterblichen zu, durch die sie mit dem Namen „Xianyun“ wandelt."
+    }
+  },
   "KamisatoAyakasStellaFortuna": {
     "name": "Stella Fortuna von Kamisato Ayaka",
     "description": {
@@ -1528,6 +1540,18 @@
     "name": "Stella Fortuna von Navia",
     "description": {
       "0": "Material zum Aktivieren von Navias Sternbild"
+    }
+  },
+  "GamingsStellaFortuna": {
+    "name": "Stella Fortuna von Gaming",
+    "description": {
+      "0": "Material zum Aktivieren von Gamings Sternbild"
+    }
+  },
+  "XianyunsStellaFortuna": {
+    "name": "Stella Fortuna von Xianyun",
+    "description": {
+      "0": "Material zum Aktivieren von Xianyuns Sternbild"
     }
   },
   "GnosticHymnOldNotes": {
@@ -5852,7 +5876,7 @@
   "KeySigil": {
     "name": "Schlüsselmuster",
     "description": {
-      "0": "Ein Siegel, das von Watatsumi und Enkanoiya weitergegeben wird. Solche Bilder werden beim Aufschließen verwendet und deshalb „Schlüsselmuster“ genannt."
+      "0": "Ein Siegel, das von Watatsumi und Enkanomiya weitergegeben wird. Solche Bilder werden beim Aufschließen verwendet und deshalb „Schlüsselmuster“ genannt."
     }
   },
   "BloodbranchCoral": {
@@ -6579,6 +6603,18 @@
     "name": "Quelle des ersten Taus",
     "description": {
       "0": "Dieser klare Tautropfen, der in den Gewässern des Bezirks Morte umherschwebt, scheint sich von anderen Kreationen reinen Wassers zu unterscheiden und mit einer ursprünglicheren und reineren Art der Elementarenergie zu verschmelzen."
+    }
+  },
+  "ClearwaterJade": {
+    "name": "Klarwasserjade",
+    "description": {
+      "0": "Jade aus dem Chenyu-Tal. Sie fühlt sich kühl an wie klares Wasser, daher auch ihr Name."
+    }
+  },
+  "ChenyuAdeptea": {
+    "name": "Adeptentee aus Chenyu",
+    "description": {
+      "0": "Ein Tee, der in den warmen und feuchten Gefilden des Chenyu-Tals gedeiht. Nach Tausenden von Jahren sorgfältiger Auswahl und Kultivierung besitzt dieser Tee heute ein langanhaltendes und reichhaltiges Aroma, das man auch noch mehrere Straßen entfernt wahrnehmen kann."
     }
   },
   "BirchWood": {
@@ -10183,6 +10219,12 @@
       "1": "Diese Schreine versiegelten sich selbst, als die alte Zivilisation, die sie erbaute, unterging. Diese Siegel können mithilfe der Schlüssel, die tief in bestimmten Sphären zu finden sind, gelöst werden. Möglicherweise vergessen die Schreine angesichts der Kraft der Vergangenheit einen Moment lang den Schmerz der Zerstörung."
     }
   },
+  "SpiritCarp": {
+    "name": "Geister-Karpfen",
+    "description": {
+      "0": "Dieser aus entwichener Adeptenkraft kondensierte Karpfen tummelt sich gern in Bergtälern und Flüssen."
+    }
+  },
   "Dish": {
     "name": "Gerichte",
     "description": {
@@ -12766,7 +12808,7 @@
   "DeliciousFishWithCreamSauce": {
     "name": "Leckerer Fisch in Milchsoße",
     "description": {
-      "0": "Fischgericht mit Soße. Das lichtdurchlässige Fischfilet liegt in einer exquisiten Sahnesoße. Wenn man einen kleinen Happen davon nimmt, fühlt man Fische, die über die Meeresoberfläche hüpfen."
+      "0": "Fischgericht mit Soße. Die weißen, auf der cremigen Soße treibenden Stücke lassen deine Geschmacksknospen mit nur einem Bissen eine Frische erleben, wie sie sonst nur der Fisch kennt, wenn er fröhlich aus dem Wasser springt."
     }
   },
   "ForestWatchersChoice": {
@@ -13898,6 +13940,252 @@
       "0": "Eine leuchtend blaue Leckerei der Fontainale. In ihrer kristallklaren Farbe erinnert sie an die funkelnden Wellen auf einer Wasseroberfläche. Federleicht und gleichzeitig so geschmackvoll; wie eine Blüte, die frisch vom Halm gepflückt wurde. So etwas Schönes verspeisen zu dürfen, ist wohl das größte Glück, welches einem auf der Fontainale widerfahren kann!"
     }
   },
+  "SuspiciousThePalaceJewels": {
+    "name": "Misslungenes Reichtum im Überfluss",
+    "description": {
+      "0": "Ein frisches und aromatisches Gericht aus Liyue. Die nicht zubereiteten Garnelen und der halbgare Krebsrogen verströmen eine eigenartige Aura, wie als ob gerade ein brutaler Krieg zwischen Garnelen und Krebsen sein grausiges Ende genommen hätte. Unter Berücksichtigung der Tatsache, dass die Zutaten selbst ziemlich frisch sind und man den Geruch ignoriert, könnte man sich beinahe dazu herablassen, diesen erbärmlichen Teller heillosen Durcheinanders noch gerade so als Essen zu bezeichnen ..."
+    }
+  },
+  "ThePalaceJewels": {
+    "name": "Reichtum im Überfluss",
+    "description": {
+      "0": "Ein frisches und aromatisches Gericht aus Liyue. Erst paniert man die Garnelen, bevor sie mit reichlichem Krebsrogen gebraten werden. Die goldene Farbe des Krebsrogens und die jadeähnliche Struktur der Garnelen gaben ihm dann auch dessen Namen „Reichtum im Überfluss“."
+    }
+  },
+  "DeliciousThePalaceJewels": {
+    "name": "Leckeres Reichtum im Überfluss",
+    "description": {
+      "0": "Ein frisches und aromatisches Gericht aus Liyue. Das glatt-weiche Krebsfleisch, das sich um die zarten Garnelen schmiegt, ergibt einen Teller kunstvoll-filigraner Schätze, die einen die Finger in Vorfreude kribbeln lassen. Probier nur mal; die Frische und das Aroma in deinem Mund werden dich die Wellen fühlen lassen, die auf deinen Geschmacksknospen aufsteigen und dich in den Strom der Köstlichkeit ziehen, voll von Garnelen und Krebsen."
+    }
+  },
+  "SuspiciousTremblingStringsAndRushingReeds": {
+    "name": "Misslungene zitternde Saiten und trillernde Flöten",
+    "description": {
+      "0": "Dieses Gericht zeichnet sich durch seinen einzigartigen Geschmack aus. Beim Braten auf zu heißer Flamme wurden die Fleischstücke miteinander vermanscht und verwandelten das ganze Gericht in eine Pfütze fleischigen Schaumes. Einmal im Mund, werden deine Geschmacksnerven angesichts des sauer-salzig-bitteren Geschmacks nicht mehr wissen, wohin mit sich."
+    }
+  },
+  "TremblingStringsAndRushingReeds": {
+    "name": "Zitternde Saiten und trillernde Flöten",
+    "description": {
+      "0": "Dieses Gericht zeichnet sich durch seinen einzigartigen Geschmack aus, der ihm durch die Verwendung der unterschiedlichen Fleischsorten verliehen wird, die erst zerkleinert, zusammengeknetet und anschließend gebraten werden. Angesichts der Komplexität der Zutaten und der Vielfalt der Aromen stellt es eine echte Herausforderung für den Koch dar und selbst in einigen der traditionsreichsten Restaurants ist es eher selten auf der Speisekarte zu finden."
+    }
+  },
+  "DeliciousTremblingStringsAndRushingReeds": {
+    "name": "Leckere zitternde Saiten und trillernde Flöten",
+    "description": {
+      "0": "Dieses Gericht zeichnet sich durch seinen einzigartigen Geschmack aus. Die unterschiedlichen Texturen des zerkleinerten Fleisches wirken zusammen wie Musikinstrumente ihre Harmonie, während das exquisite Aroma der Gewürze die verschiedenen Geschmacksrichtungen raffiniert miteinander verschmelzen lässt. Wie ein Kritiker einst urteilte, ist es ein Klang der hundert Reime, ein Geschmack tausender Variationen, die seidenen Streifen irrlichtern, alle Geschmäcker im Überfluss, ein wunderbares Wunderland ..."
+    }
+  },
+  "SuspiciousHumblyEnough": {
+    "name": "Misslungenes Genieß das Leben",
+    "description": {
+      "0": "Ein Gericht aus mariniertem Tofu. Der Tofu ist übertrieben gewürzt und nur schwer runterzukriegen. Nimmt man sich die Zeit, jeden einzelnen Happen mit einem ordentlichen Schluck Wasser herunterzuspülen und ihm damit die Würzung zu nehmen, lässt er sich vielleicht noch gerade so die Kehle runterquälen ..."
+    }
+  },
+  "HumblyEnough": {
+    "name": "Genieß das Leben",
+    "description": {
+      "0": "Ein Gericht aus mariniertem Tofu. Der Tofu wird erst gebraten und dann mit der Soße weiter gebraten, wodurch ihm seine Farbe verliehen wird. Obwohl die Zutaten einfach sind, ist der Geschmack lieblich und kräftig zugleich und passt hervorragend zu Reis. Man könnte auch sagen, es handelt sich um gute, alte Hausmannskost."
+    }
+  },
+  "DeliciousHumblyEnough": {
+    "name": "Leckeres Genieß das Leben",
+    "description": {
+      "0": "Ein Gericht aus mariniertem Tofu. Nachdem der Tofu in der Pfanne gebraten wurde, enthält er eine reichhaltige Soßenbrühe, von süchtig-machender Würze, mit einem Hauch von „Fleischaroma“. Ein Bissen reicht, und es entfaltet sich ein weicher Geschmack im Mund, der noch lange nachklingen wird."
+    }
+  },
+  "SuspiciousRightAtHome": {
+    "name": "Misslungenes Zuhause auf Reisen",
+    "description": {
+      "0": "Ein reichhaltiges Hauptgericht mit vielen Zutaten. Fehlende Hitze und überschüssige Flüssigkeit sorgen dafür, dass sich im Mund ein Gefühl einstellt, als wäre irgendwas falsch; ausbleiben tut ein rauchiges Aroma, das man eigentlich erwartet hätte. Vielleicht sollte das nächste Mal einfach die Hitze erhöht werden ..."
+    }
+  },
+  "RightAtHome": {
+    "name": "Zuhause auf Reisen",
+    "description": {
+      "0": "Ein reichhaltiges Hauptgericht mit vielen Zutaten. Zubereitet wird es aus Schinken, Vogeleiern und weiteren Zutaten, die dann mit Reis gebraten werden. Da es bei der Wahl der Zutaten viele Freiheiten lässt, wird es in so gut wie jedem Haushalt Liyues zubereitet."
+    }
+  },
+  "DeliciousRightAtHome": {
+    "name": "Leckeres Zuhause auf Reisen",
+    "description": {
+      "0": "Ein reichhaltiges Hauptgericht mit vielen Zutaten. Jedes einzelne Reiskorn ist überzogen von einer goldenen Schicht aus Ei, während der säuerliche Geschmack des Schinkens perfekt von der Hitze durchdrungen wurde. In dieser geselligen und rauchigen Atmosphäre werden sich alle Freunde und Verwandte, angereist von nah und fern, auch auf Reisen wie zu Hause fühlen."
+    }
+  },
+  "SuspiciousEightTreasureDuck": {
+    "name": "Misslungene Ente der acht Köstlichkeiten",
+    "description": {
+      "0": "Dieses Gericht ist das Ergebnis harter Arbeit, Herzblut und viel Zeit. Die Augen fingen bereits an zu schmerzen, so lange dauerte es, um alle Knochen zu entfernen. Offenbar erfordert dieses Gericht nicht nur Geschick mit dem Messer, sondern auch Muskelschmalz und Geduld. Nur schade, dass die Ente, die so schwierig in Form zu bringen war, auseinanderfiel, sobald sie mit einem lauten Knall in der Pfanne landete ... besser, erst einmal die Augen schließen und entspannen, bevor man sich erneut dieser Herausforderung zu stellen versucht."
+    }
+  },
+  "EightTreasureDuck": {
+    "name": "Ente der acht Köstlichkeiten",
+    "description": {
+      "0": "Dieses Gericht ist das Ergebnis harter Arbeit, Herzblut und viel Zeit. Die Ente wird dabei mit einer Kombination aus Fleisch und Gemüse gefüllt, den namensgebenden acht Köstlichkeiten. Die Kalebassenform des Gerichts soll Glück und Reichtum verheißen. Exquisite Zutaten, herausragende Fertigkeiten mit dem Messer und die genau richtige Temperatur; nichts davon darf vernachlässigt werden. Das fertige Produkt ist dann aber auch dem krönenden Abschluss des Hauptgangs eines jeden Banketts würdig."
+    }
+  },
+  "DeliciousEightTreasureDuck": {
+    "name": "Leckere Ente der acht Köstlichkeiten",
+    "description": {
+      "0": "Dieses Gericht ist das Ergebnis harter Arbeit, Herzblut und viel Zeit. Es reicht schon, dass die vollmundige und pralle Ente aus dem Topf kommt, damit sich Anwesende kaum noch zurückhalten können. Zuletzt noch mit einer würzigen, dicken Soße und einem Spritzer rotem Öl verfeinert, stellt sie eine vollendete Kombination aus Farbe, Geschmack und Form dar. Jeder Bissen ist eine wahre Geschmacksflut mit einem lang anhaltenden Nachgeschmack."
+    }
+  },
+  "SuspiciousDeepFriedDoublecrisp": {
+    "name": "Misslungener frittierter Doppelknusperling",
+    "description": {
+      "0": "Ein berühmtes Gericht aus Liyue. Einmal nicht aufgepasst und schon reichte die Zeit nicht aus, es rechtzeitig zu wenden; gnadenlos fegte das Feuer über die eigentlich knusprige Oberfläche hinweg und hinterließ nichts als eine verkohlte Rußschicht. So wurde aus dem „frittierten Doppelknusperling“ das „frittierte Doppelkohlebrikett“."
+    }
+  },
+  "DeepFriedDoublecrisp": {
+    "name": "Frittierter Doppelknusperling",
+    "description": {
+      "0": "Bei diesem in Liyue berühmten Gericht werden besonders die Kontrolle des Feuers beim Kochen des Öls bei starker Hitze, das Schwenken des Topfes und das Wenden mit Kelle auf eine harte Probe gestellt. Bei zu wenig Kochzeit ist das Gericht zwar knusprig, aber nicht gar; wird es zu lange gekocht, ist es zwar gar, aber zu trocken. Erfahrene Köche aus der Gegend wählen dieses Gericht deshalb gern, um damit ihr Können unter Beweis zu stellen."
+    }
+  },
+  "DeliciousDeepFriedDoublecrisp": {
+    "name": "Leckerer frittierter Doppelknusperling",
+    "description": {
+      "0": "Ein berühmtes Gericht aus Liyue. Das Aroma zweier Sorten Fleisch, rot und weiß, breitet sich sanft über die Zungenspitze aus. Zart und gleichzeitig knusprig, salzig und vollmundig, einfach einzigartig. Ratzfatz ist der Teller leergegessen und lautstark wird verkündet, wie köstlich es doch war."
+    }
+  },
+  "SuspiciousBraisedMeatball": {
+    "name": "Misslungenes geschmortes Fleischklößchen",
+    "description": {
+      "0": "Ein Klassiker der Liyuer Küche. Die Form ist rund, das Aroma würzig, auf den ersten Blick ist also alles mit diesem Gericht in Ordnung. Allerdings enthüllt der erste Bissen eine gewisse Trockenheit; kann es sein, dass vielleicht zu viele Stücke mageren Fleisches gewählt wurden?"
+    }
+  },
+  "BraisedMeatball": {
+    "name": "Geschmortes Fleischklößchen",
+    "description": {
+      "0": "Ein Klassiker der Liyuer Küche. Stücke fetten und mageren Fleisches werden zunächst zusammen mit knackigen Bambussprossen kleingehackt, anschließend wird alles zu Bällchen verknetet, die dann gekocht werden. Das fertige Gericht erfreut sich großer Beliebtheit, sei es nun als klassische Hausmannskost, als auch als gereichte Speise auf Banketten."
+    }
+  },
+  "DeliciousBraisedMeatball": {
+    "name": "Leckeres geschmortes Fleischklößchen",
+    "description": {
+      "0": "Ein Klassiker der Liyuer Küche. Das Zartgrün der Zwiebeln und das Tiefrot des Fleisches bilden einen perfekten Kontrast, während die Konsistenz des Klößchens durch die exquisite Messertechnik bei der Zubereitung dieses butterweich im Mund zergehen lässt, wobei es saftig, aber nicht fettig ist. Man kommt nicht umhin, nach nur einem Bissen ins Schwärmen zu geraten. Und wenn man erst einmal alles aufgegessen hat, schwebt man sicher im siebten Himmel."
+    }
+  },
+  "SuspiciousHoneyCharSiu": {
+    "name": "Misslungenes gegrilltes Schwein mit Honig",
+    "description": {
+      "0": "Eine Grillspezialität aus Liyue. Die übertriebene Süße sorgt für einen schwer erträglichen Geschmack. Ein Liyuer Sprichwort besagt, dass kleine Fehler große Konsequenzen nach sich ziehen können. Dies scheint wohl auch beim Kochen zuzutreffen."
+    }
+  },
+  "HoneyCharSiu": {
+    "name": "Gegrilltes Schwein mit Honig",
+    "description": {
+      "0": "Eine Grillspezialität aus Liyue, bei der mariniertes Fleisch auf einer speziellen Eisengabel über einer Feuerstelle gegart wird. Unter zahlreichen Feinschmeckern erfreut sich der Geschmack von frisch gegrilltem Schweinefleisch großer Beliebtheit."
+    }
+  },
+  "DeliciousHoneyCharSiu": {
+    "name": "Leckeres gegrilltes Schwein mit Honig",
+    "description": {
+      "0": "Eine Grillspezialität aus Liyue. Die Farbe rot und kräftig, das Aroma duftend und reichhaltig. Man befürchtet, dass nur ein weiterer Blick darauf genügt, um schwach zu werden. Und dann das süße Fleisch im Mund, aus dem der Saft quillt; seien wir ehrlich, eine Schüssel Reis ist wirklich nicht genug!"
+    }
+  },
+  "SuspiciousFineTeaFullMoon": {
+    "name": "Misslungener mundender Tee, voller Mond",
+    "description": {
+      "0": "Ein mit Eigelb gefülltes Teegebäck. Schon wenn man ihn in die Hand nimmt, blättert die Außenschale erdrutschgleich von ihm herab. Und der erste Bissen erst: Schleimig, süß und fettig ... verdammt, irgendwas scheint da in der Kehle festzukleben. Erstmal ein Schluck Wasser und danach überlegen, was mit dem Rest geschehen soll."
+    }
+  },
+  "FineTeaFullMoon": {
+    "name": "Mundender Tee, voller Mond",
+    "description": {
+      "0": "Ein mit Eigelb gefülltes Teegebäck. Zuerst wird das gesalzene Eigelb gedämpft, dann mit einer Füllung umhüllt und anschließend mit einem Teig aus Teepulver eingewickelt. Das Ganze wird anschließend in die Form eines Vollmondes gebracht und gebacken. Während die Außenhülle knusprig-knackig ist, bleibt das Innere herzhaft und süß zugleich. Eine reichhaltige und faszinierende Leckerei."
+    }
+  },
+  "DeliciousFineTeaFullMoon": {
+    "name": "Leckerer mundender Tee, voller Mond",
+    "description": {
+      "0": "Ein mit Eigelb gefülltes Teegebäck. Das sandfarbene Eigelb mit seiner lockeren und zarten Textur, durchzogen von dem zarten Aroma der Tees, gewachsen in den Tälern der Berge. Nur ein kleiner Bissen genügt, um sich in einem wohligen Gefühl des Glücks zu verlieren. Man will gleich mehrere auf einmal essen und nicht einmal auf die knusprigen Krümel der Hülle verzichten, die an den Mundwinkeln kleben bleiben."
+    }
+  },
+  "SuspiciousJadeveinTeaEggs": {
+    "name": "Misslungene jadegemusterte Tee-Eier",
+    "description": {
+      "0": "Eine traditionelle Leckerei aus Liyue. Vom Geschmack her nicht anders als ein gewöhnliches gekochtes Ei. Liegt es an der Wahl der Teeblätter oder wurde bei der Zubereitung etwas falsch gemacht?"
+    }
+  },
+  "JadeveinTeaEggs": {
+    "name": "Jadegemusterte Tee-Eier",
+    "description": {
+      "0": "Eine traditionelle Leckerei aus Liyue. Bei der in den Gassen der Stadt weit verbreiteten Zubereitung dringt das Teearoma durch die Risse der Eierschale ins Ei ein und verleiht dem fertigen Gericht dann diese besondere Eleganz von rissiger Jade."
+    }
+  },
+  "DeliciousJadeveinTeaEggs": {
+    "name": "Leckere jadegemusterte Tee-Eier",
+    "description": {
+      "0": "Eine traditionelle Leckerei aus Liyue. Das Aroma des Tees hat das Ei perfekt durchzogen. Egal, ob ein großer oder ein kleiner Bissen, der Geschmack ist fantastisch."
+    }
+  },
+  "SuspiciousTeaSmokedSquab": {
+    "name": "Misslungenes teegeräuchertes Täubchen",
+    "description": {
+      "0": "Dieses Gericht ist weithin sehr beliebt. Die verkohlten Täubchenbeine und Flügel zeugen davon, wie wenig Sorgfalt auf das Feuer aufgewendet wurde. Nur mit genügend Geduld lässt es sich gerade noch so verzehren."
+    }
+  },
+  "TeaSmokedSquab": {
+    "name": "Teegeräuchertes Täubchen",
+    "description": {
+      "0": "Dieses Gericht ist weithin sehr beliebt. Zuerst wird die Taube über Nacht in einer Soße aus Tee mariniert, bevor sie dann getrocknet und gebraten wird, was dem Fleisch sein unverkennbares Teearoma verleiht. Diese Zubereitungsmethode dieses Essens hat eine lange Tradition und es ist insbesondere bei Festessen eine gerngesehene Delikatesse."
+    }
+  },
+  "DeliciousTeaSmokedSquab": {
+    "name": "Leckeres teegeräuchertes Täubchen",
+    "description": {
+      "0": "Dieses Gericht ist weithin sehr beliebt. Die durchscheinende Haut ist knusprig und dünn wie ockerfarbenes glasiertes Papier. Das feste und vollmundige Täubchenfleisch, begleitet von einer milden Bratensoße, begeistert nicht nur die Mägen, sondern auch die Herzen der Esser."
+    }
+  },
+  "SuspiciousGuhuaFishLambSoup": {
+    "name": "Misslungener Guhua-Fisch mit Lammsuppe",
+    "description": {
+      "0": "Ein altes Gericht, festgehalten in handschriftlichen Notizen. Es ist, als würden die beiden Aromen, das des Lamms und das des Fischs, getrennte Wege gehen und jedes für sich unbedacht den Gaumen überrumpeln. Zu spät, es bleibt keine Zeit, sich noch um etwas anderes zu kümmern, außer sich schleunigst den Mund auszuspülen, um die Geschmacksknospen von diesem Ansturm zu erlösen."
+    }
+  },
+  "GuhuaFishLambSoup": {
+    "name": "Guhua-Fisch mit Lammsuppe",
+    "description": {
+      "0": "Ein altes Gericht, festgehalten in handschriftlichen Notizen. Eine Kombination aus frischem Fisch und Lammfleisch, die in einem Topf geschmort werden, wodurch die Fischstücke besonders zart und das Lammfleisch besonders köstlich werden."
+    }
+  },
+  "DeliciousGuhuaFishLambSoup": {
+    "name": "Leckerer Guhua-Fisch mit Lammsuppe",
+    "description": {
+      "0": "Ein altes Gericht, festgehalten in handschriftlichen Notizen. Die cremige Brühe, Frische in Vollendung, gleitet die Kehle hinunter, man möchte sich glatt einen zweiten Magen wachsen lassen. Wenn man sie im Winter genießt, denkt man noch im Frühling daran zurück und möchte sie erneut verkosten."
+    }
+  },
+  "SuspiciousChenyuBrew": {
+    "name": "Misslungener Chenyu-Aufguss",
+    "description": {
+      "0": "Ein in Liyue weit verbreiteter Tee. Geschmacklich so aufregend wie lauwarmes Wasser. Man kann nicht anders, als hinzuschauen und sich immer wieder zu vergewissern, dass es tatsächlich Tee ist, der sich da im Becher befindet. Tja, was war jetzt das Problem? War das Wasser nicht heiß genug oder hat man ihn nicht lange genug ziehen lassen?"
+    }
+  },
+  "ChenyuBrew": {
+    "name": "Chenyu-Aufguss",
+    "description": {
+      "0": "Ein in Liyue weit verbreiteter Tee. Vielleicht verhält es sich ja hin und wieder doch mit dem Leben selbst wie mit dem süßen Nachgeschmack, den man nach einem Schlückchen guten Tees genießt."
+    }
+  },
+  "DeliciousChenyuBrew": {
+    "name": "Leckerer Chenyu-Aufguss",
+    "description": {
+      "0": "Ein in Liyue weit verbreiteter Tee. Leicht und elegant wie eine Brise trägt dieser Tee das Aroma der Berge des Chenyu-Tals zwischen die Lippen, während das Geräusch der plätschernden Quellen des Teebergs in den Ohren klingt."
+    }
+  },
+  "EncompassingGladness": {
+    "name": "Allumfassende Freude",
+    "description": {
+      "0": "Xianyuns Spezialzubereitung. Der Duft der Fleischbällchen steigt dir in die Nase und noch bevor du dich von deiner Überraschung erholen kannst, als deine Augen sie das erste Mal erblicken, setzt Xianyun auch schon an: „Wie sollte auch diese weltliche Küche mir eine Last aufbürden? Iss schnell, solange sie noch heiß sind. Möge dir Friede und Glück zuteilwerden und dir alles gelingen. *räusper* Hin und wieder ein kleines Ritual kann doch nicht schaden, oder?“"
+    }
+  },
+  "YummyYumCha": {
+    "name": "Zeit für ein Tässchen Tee",
+    "description": {
+      "0": "Gamings Spezialzubereitung. Hübsch aufgereiht sitzen sie da in Reih und Glied im Dämpfer, die beinahe lebensecht wirkenden Dampfbrötchen in Form von Suanni. Ein Blick auf sie und man kommt nicht umhin, an den wendigen Jungen erinnert zu werden, wie er auf den Pflaumenholz-Pfählen herumspringt ... „Warum das lange Gesicht? Hier, trink erstmal einen Tee“, sagt der heitere Junge mit breitem Lachen, während er dir die Tasse reicht."
+    }
+  },
   "RecipeItem": {
     "name": "Objekt für Rezepte",
     "description": {
@@ -14967,6 +15255,84 @@
       "0": "Rezept mit detaillierten Schritten zur Zubereitung von „Fontainale-Mousse“."
     }
   },
+  "RecipeThePalaceJewels": {
+    "name": "Rezept: Reichtum im Überfluss",
+    "description": {
+      "0": "Rezept mit detaillierten Schritten zur Zubereitung von „Reichtum im Überfluss“."
+    }
+  },
+  "RecipeTremblingStringsAndRushingReeds": {
+    "name": "Rezept: Zitternde Saiten und trillernde Flöten",
+    "description": {
+      "0": "Rezept mit detaillierten Schritten zur Zubereitung von „Zitternde Saiten und trillernde Flöten“."
+    }
+  },
+  "RecipeHumblyEnough": {
+    "name": "Rezept: Genieß das Leben",
+    "description": {
+      "0": "Rezept mit detaillierten Schritten zur Zubereitung von „Genieß das Leben“."
+    }
+  },
+  "RecipeRightAtHome": {
+    "name": "Rezept: Zuhause auf Reisen",
+    "description": {
+      "0": "Rezept mit detaillierten Schritten zur Zubereitung von „Zuhause auf Reisen“."
+    }
+  },
+  "RecipeEightTreasureDuck": {
+    "name": "Rezept: Ente der acht Köstlichkeiten",
+    "description": {
+      "0": "Rezept mit detaillierten Schritten zur Zubereitung von „Ente der acht Köstlichkeiten“."
+    }
+  },
+  "RecipeDeepFriedDoublecrisp": {
+    "name": "Rezept: Frittierter Doppelknusperling",
+    "description": {
+      "0": "Rezept mit detaillierten Schritten zur Zubereitung von „Frittierter Doppelknusperling“."
+    }
+  },
+  "RecipeBraisedMeatball": {
+    "name": "Rezept: Geschmortes Fleischklößchen",
+    "description": {
+      "0": "Rezept mit detaillierten Schritten zur Zubereitung von „geschmortes Fleischklößchen“."
+    }
+  },
+  "RecipeHoneyCharSiu": {
+    "name": "Rezept: Gegrilltes Schwein mit Honig",
+    "description": {
+      "0": "Rezept mit detaillierten Schritten zur Zubereitung von „gegrilltes Schwein mit Honig“."
+    }
+  },
+  "RecipeFineTeaFullMoon": {
+    "name": "Rezept: Mundender Tee, voller Mond",
+    "description": {
+      "0": "Rezept mit detaillierten Schritten zur Zubereitung von „mundender Tee, voller Mond“."
+    }
+  },
+  "RecipeJadeveinTeaEggs": {
+    "name": "Rezept: Jadegemusterte Tee-Eier",
+    "description": {
+      "0": "Rezept mit detaillierten Schritten zur Zubereitung von „jadegemusterte Tee-Eier“."
+    }
+  },
+  "RecipeTeaSmokedSquab": {
+    "name": "Rezept: Teegeräuchertes Täubchen",
+    "description": {
+      "0": "Rezept mit detaillierten Schritten zur Zubereitung von „teegeräuchertes Täubchen“."
+    }
+  },
+  "RecipeGuhuaFishLambSoup": {
+    "name": "Rezept: Guhua-Fisch mit Lammsuppe",
+    "description": {
+      "0": "Rezept mit detaillierten Schritten zur Zubereitung von „Guhua-Fisch mit Lammsuppe“."
+    }
+  },
+  "RecipeChenyuBrew": {
+    "name": "Rezept: Chenyu-Aufguss",
+    "description": {
+      "0": "Rezept mit detaillierten Schritten zur Zubereitung von „Chenyu-Aufguss“."
+    }
+  },
   "CraftedItems": {
     "name": "Hergestelltes Produkt",
     "description": {
@@ -15867,6 +16233,27 @@
       "1": "Aber selbst ohne dieses verfügen die Dienerinnen über eine Stärke, die weit über die eines normalen Menschen hinausgeht und auf jahrelangem Training und Erfahrung im Kampf beruht. Sie sind sich darüber im Klaren, dass ihre Vergangenheit, Gegenwart und Zukunft ganz der Utopie der Fatui verschrieben sind. Verluste, die mit der Macht des Teuflischen Auges einhergehen, sind also unbedeutend."
     }
   },
+  "FeatheryFin": {
+    "name": "Federflosse",
+    "description": {
+      "0": "Das Fragment einer Flosse vom Rücken einer besiegten Xuanwen-Bestie.",
+      "1": "Obwohl sie nicht in der Lage ist, fliegend weite Strecken zurückzulegen, ermöglichen diese vogelartigen Flossen der Bestie, mittels schneller Fortbewegung ihrer Beute nachzujagen."
+    }
+  },
+  "LunarFin": {
+    "name": "Mondlichtflosse",
+    "description": {
+      "0": "Die Flosse vom Rücken einer besiegten Xuanwen-Bestie.",
+      "1": "Das vage von ihr ausgehende ätherische Licht ist so warm wie die Farbe des Mondes und vermag ein Gefühl der Ruhe zu vermitteln."
+    }
+  },
+  "ChasmlightFin": {
+    "name": "Abgrundlichtflosse",
+    "description": {
+      "0": "Die prunkvolle Flosse vom Rücken einer besiegten Xuanwen-Bestie.",
+      "1": "Ein tief schimmerndes Licht in ihrem Inneren lässt die Spuren der Adeptenkraft schwach spürbar werden. In tiefster, stiller Nacht fällt selbst die wildeste Bestie in einen friedlichen Schlaf und erinnert sich an die Jahre, in denen „Träume“ nicht nur den Menschen vorbehalten waren."
+    }
+  },
   "HurricaneSeed": {
     "name": "Orkansamen",
     "description": {
@@ -16300,6 +16687,13 @@
     "description": {
       "0": "Die einzigen Überbleibsel, die nach dem Zerschlagen des Hydro-Imitators zurückblieben.",
       "1": "Ähneln in ihrer Beschaffenheit sehr den Kristallen, die den Körpern der Fontemer-Mutanten entnommen werden, enthalten aber eine Menge feiner Trübungen, ähnlich den winzigen Luftblasen, die in den Glasarbeiten mittelmäßiger Handwerker erstarrt sind."
+    }
+  },
+  "CloudseamScale": {
+    "name": "Wolkennaht-Schuppenpanzer",
+    "description": {
+      "0": "Die kalten und harten Panzerschuppen der ausgestiegenen Suanni. Selbst von ihrer früheren Besitzerin entfernt, bleibt die reine Adeptenkraft an ihnen haften, sodass gewöhnliche Waffen ihnen nur schwer etwas anhaben können.",
+      "1": "Es soll vorkommen, dass gewöhnliche Bestien von entweichender Adeptenkraft beeinflusst werden und so noch mächtiger werden als sonst. Das Besondere an einer Suanni ist jedoch, dass ihre Adeptenkraft kein Produkt äußerer Umstände ist, sondern von ihr selbst ausgeht. Dies ist auch der Grund, warum ihr Anführer gerne mal mit den Adepten gleichgesetzt wird."
     }
   },
   "TileOfDecarabiansTower": {
@@ -16977,6 +17371,14 @@
     "name": "Wohlklingende Melodien",
     "description": {
       "0": "Wenn du den Paket-Gutscheincode bereits verwendet hast, erhältst du für einen weiteren Kauf lediglich Urgestein und Dekorationen."
+    }
+  },
+  "OutfitOptionBundle": {
+    "name": "Kleidungsauswahlpaket",
+    "description": {
+      "0": "Ein Paket mit einer Auswahl exquisiter Kleidungsstücke. Da sie individuell angefertigt wurden, werden sie auch nur demjenigen passen, dessen Maße und Temperament in perfekter Harmonie mit ihnen stehen.",
+      "1": "<br/>",
+      "2": "Beim Anwenden dieses Pakets kannst du eines der Kleidungsstücke wählen, welches du dann erhältst."
     }
   },
   "BEP": {
@@ -19175,6 +19577,24 @@
       "0": "Diese in Fontaine so beliebte Bestseller-Reihe erzählt eine Geschichte von Intrigen und Rache und davon, wie Gut und Böse miteinander verwoben sind."
     }
   },
+  "TimeTrekkerI": {
+    "name": "Zeitreisender – Band I",
+    "description": {
+      "0": "Ein vom Dampfvogel herausgegebener Science-Fiction-Roman aus Fontaine über einen Ingenieur, der mithilfe einer Zeitmaschine durch die Zeit reist."
+    }
+  },
+  "TimeTrekkerII": {
+    "name": "Zeitreisender – Band II",
+    "description": {
+      "0": "Ein vom Dampfvogel herausgegebener Science-Fiction-Roman aus Fontaine über einen Ingenieur, der mithilfe einer Zeitmaschine durch die Zeit reist."
+    }
+  },
+  "TimeTrekkerIII": {
+    "name": "Zeitreisender – Band III",
+    "description": {
+      "0": "Ein vom Dampfvogel herausgegebener Science-Fiction-Roman aus Fontaine über einen Ingenieur, der mithilfe einer Zeitmaschine durch die Zeit reist."
+    }
+  },
   "GiftOfParting": {
     "name": "Geschenk des „Abschieds“",
     "description": {
@@ -19789,6 +20209,36 @@
       "0": "Aufzeichnungen zahlreicher Hinweise, denen ihr im Fort Méropide nachgegangen seid."
     }
   },
+  "PictureLotusPondBeneathTheMoon": {
+    "name": "Bild: Lotosteich im Vollmond",
+    "description": {
+      "0": "Ein wunderschönes Bild, das den Lotosteich im Licht des Mondes zeigt."
+    }
+  },
+  "PictureGuestsOfQiaoying": {
+    "name": "Bild: Zu Gast in Qiaoying",
+    "description": {
+      "0": "Ein Bild, das die Schönheit Qiaoyings darstellt."
+    }
+  },
+  "PictureTranquilJademouth": {
+    "name": "Bild: Beschaulicher Jademund",
+    "description": {
+      "0": "Ein Bild, das die Schönheit des Jademunds darstellt."
+    }
+  },
+  "PictureMtXuanlian": {
+    "name": "Bild: Berg Xuanlian",
+    "description": {
+      "0": "Ein Bild, das die Schönheit des Berges Xuanlian darstellt."
+    }
+  },
+  "ChenyuValeSceneryGuide": {
+    "name": "Landschaftsführer für das Chenyu-Tal",
+    "description": {
+      "0": "Ein Reiseführer für Touristen mit Sehenswürdigkeiten, die von Einheimischen empfohlen werden."
+    }
+  },
   "Notice": {
     "name": "Bekanntmachung",
     "description": {}
@@ -20116,6 +20566,12 @@
       "1": "Die Zeit bleibt in einem besonderen Moment stehen und schöne Erinnerungen werden unvergänglich."
     }
   },
+  "AncientTreeBranch": {
+    "name": "Zweig eines uralten Baums",
+    "description": {
+      "0": "Ein Zweig eines uralten Teebaums. Er strahlt eine schwache Adeptenkraft aus ..."
+    }
+  },
   "AureliesNotesII": {
     "name": "Aurélies Notizen II",
     "description": {
@@ -20211,6 +20667,24 @@
       "0": "Seltsame Nachricht"
     }
   },
+  "WangshanHallBackupKey": {
+    "name": "Ersatzschlüssel für die Wangshan-Halle",
+    "description": {
+      "0": "Ein Schlüssel von Huang der Dritte. Scheint etwas verrostet zu sein ..."
+    }
+  },
+  "ThePaimonSpecial": {
+    "name": "Paimons Spezialgericht",
+    "description": {
+      "0": "Laut Huang dem Dritten hat Großmeister Guhua, als er damals noch seine Kampfkünste lehrte, Reis und gesalzenes Fleisch als Bezahlung den klimpernden Mora vorgezogen. Aus diesem Grund hat Paimon ihr ganzes Herzblut (und alles Salz, das sie finden konnte) in dieses besondere Gericht gesteckt ..."
+    }
+  },
+  "WoliusDrillingDevice": {
+    "name": "Wolius Bohrer",
+    "description": {
+      "0": "Eine Schachtel mit einem Bohrer. Was damit wohl gebohrt werden soll ..."
+    }
+  },
   "AutumnsGift": {
     "name": "Autumns Geschenk",
     "description": {
@@ -20256,6 +20730,12 @@
     "name": "Geschichtenbuch",
     "description": {}
   },
+  "CarpSpiritOrb": {
+    "name": "Karpfen-Seelenperle",
+    "description": {
+      "0": "Eine Seelenperle, die ursprünglich auf der goldenen Karpfenstatue angebracht war. Sie enthält eine starke Adeptenkraft."
+    }
+  },
   "Certificate": {
     "name": "Zertifikat",
     "description": {}
@@ -20271,6 +20751,42 @@
   "Log": {
     "name": "Protokoll",
     "description": {}
+  },
+  "JadeFragmentLeft": {
+    "name": "Jade-Bruchstück – Links",
+    "description": {
+      "0": "Ein Jadefragment, das von Adeptenkraft umgeben ist. Die alten Legenden der Vorfahren besagen, dass alle Jade ursprünglich aus ein und demselben Brocken stammt; wenn dem so wäre, müssten sich ja die verschiedenen Bruchstücke auch zusammensetzen lassen ..."
+    }
+  },
+  "JadeFragmentRight": {
+    "name": "Jade-Bruchstück – Rechts",
+    "description": {
+      "0": "Ein Jadefragment, das von Adeptenkraft umgeben ist. Die alten Legenden der Vorfahren besagen, dass alle Jade ursprünglich aus ein und demselben Brocken stammt; wenn dem so wäre, müssten sich ja die verschiedenen Bruchstücke auch zusammensetzen lassen ..."
+    }
+  },
+  "FragrantWoodHuangcong": {
+    "name": "Duftendes Holz „Huangcong“",
+    "description": {
+      "0": "Ein wunderschön geschnitztes Stück zeremoniellen Holzes, dem ein leichter Duft anhaftet. Der Form nach zu urteilen, scheint es ein Pendant zu einem anderen Stück duftenden Holzes zu sein."
+    }
+  },
+  "FragrantWoodChizhang": {
+    "name": "Duftendes Holz „Chizhang“",
+    "description": {
+      "0": "Ein wunderschön geschnitztes Stück zeremoniellen Holzes, dem ein Duft anhaftet, als wäre etwas verbrannt. Der Form nach zu urteilen, scheint es ein Pendant zu einem anderen Stück duftenden Holzes zu sein."
+    }
+  },
+  "OurChenyuValeTrekAlbum": {
+    "name": "Gedenkalbum zu „Reisen in Chenyu“",
+    "description": {
+      "0": "Dieses Album enthält eine Vielzahl wunderschöner Motive. Überraschenderweise stammt die Hälfte davon wohl von derselben Person."
+    }
+  },
+  "StrangeKey": {
+    "name": "Eigenartiger Schlüssel",
+    "description": {
+      "0": "Ein seltsamer Schlüssel, der irgendwo ein Schloss öffnet ..."
+    }
   },
   "ShootingPracticeOpticalLenses": {
     "name": "„Optische Linse der Schusspraxis“",
@@ -20291,10 +20807,70 @@
       "0": "Bestätigung von Bracaris Gemischtwarenladen"
     }
   },
+  "AncientStoneTablet": {
+    "name": "Uralte Steintafel",
+    "description": {
+      "0": "Uralte Steintafel"
+    }
+  },
   "PackageForTheLeroyFamily": {
     "name": "Paket für die Leroy-Familie",
     "description": {
       "0": "Pip, der Zeitungsausträger, hat das Paket mit all den Zeitungen gefüllt, die die Familie Leroy schon eine Weile nicht mehr abgeholt hat."
+    }
+  },
+  "ForgottenKeyI": {
+    "name": "Zurückgelassener Schlüssel I",
+    "description": {
+      "0": "Dieser Schlüssel wurde scheinbar von jemandem im Chenyu-Tal zurückgelassen. Wofür er wohl verwendet wird ..."
+    }
+  },
+  "ForgottenKeyII": {
+    "name": "Zurückgelassener Schlüssel II",
+    "description": {
+      "0": "Dieser Schlüssel wurde scheinbar von jemandem im Chenyu-Tal zurückgelassen. Wofür er wohl verwendet wird ..."
+    }
+  },
+  "XuanlianSacredWater": {
+    "name": "„Gesegnetes Wasser des Bergs Xuanlian“",
+    "description": {
+      "0": "Das aus dem Berg Xuanlian entnommene sogenannte „gesegnete Wasser“. Ohne seinen Namen würde man wohl nicht darauf kommen, wie mysteriös es eigentlich ist. Andererseits scheint von ihm schon eine Art gesegneter Aura auszugehen, wenn man es betrachtet. Es heißt ja schließlich auch „gesegnetes Wasser“."
+    }
+  },
+  "AncientJadeCup": {
+    "name": "Uralter Jadebecher",
+    "description": {
+      "0": "Ein uralter Teebecher, den jemand in der Wildnis zurückgelassen hat. Von ihm scheint eine schwache adeptische Aura auszugehen ..."
+    }
+  },
+  "SomeonesLedger": {
+    "name": "Jemandes Geschäftsbuch",
+    "description": {
+      "0": "Dieses in der Wangshan-Halle gefundene Geschäftsbuch enthält genaueste Angaben zu allen Einnahmen und Ausgaben."
+    }
+  },
+  "VotiveRainjade": {
+    "name": "„Regenjade“",
+    "description": {
+      "0": "Die letzte Jade, die Fujin niedergeworfen hat. Obwohl sie sich nicht allzu sehr von einem gewöhnlichen Schmuckstück unterscheidet, scheint die darin enthaltene Adeptenkraft auszureichen, um die Form des nahen Wassers und des Bodens in nur einem Atemzug zu verändern ..."
+    }
+  },
+  "ChizhangMap": {
+    "name": "Chizhang-Landkarte",
+    "description": {
+      "0": "Eine von Millelithen zurückgelassene Karte. Der Standort des Lagers scheint darauf vermerkt zu sein."
+    }
+  },
+  "AncientCityKey": {
+    "name": "Schlüssel der antiken Mauer",
+    "description": {
+      "0": "Dieser anscheinend schon lange verrostete Schlüssel kann dazu verwendet werden, ein längst verlassenes Lager irgendwo bei der Chizhang-Mauer zu öffnen."
+    }
+  },
+  "FishSeizedFromAPelicansMouth": {
+    "name": "Aus Pelikanschnabel ergatterter „Fisch“",
+    "description": {
+      "0": "Ein aus dem Schnabel eines Pelikans an der Qiaoying-Anlegestelle ergatterter Fisch. Andere Tiere scheinen ihn als echte Delikatesse anzusehen. Wer weiß, vielleicht gelingt es dir ja, einen gewissen Verlust auszugleichen, wenn du ihn in das Futtergefäß von einigen von ihnen legst ..."
     }
   },
   "TearsAmongTheStars": {
@@ -20760,6 +21336,13 @@
       "0": "Eine kompakte Hilfsvorrichtung, die zur Unterstützung von unter Wasser operierenden Uhrwerk-Mecha und zur Erhöhung der Einsatzquote der Flotte entwickelt wurde. Das ursprüngliche Ziel des Entwurfs war es, Rückstände wie Abfall und Pflanzenreste unter Wasser zu entfernen, sodass sich diese nicht in Schlüsselkomponenten von Uhrwerk-Mecha festsetzen können, um so deren Ausfallrate möglichst gering zu halten. Aus einem anderen Blickwinkel betrachtet haben sie zweifelsohne die Rolle von „Unterwasser-Reinigungskräften“ übernommen, was für das Ökosystem von Fontaine äußerst förderlich ist.",
       "1": "Im Vergleich zu anderen Serienmodellen, zeichnet sich dieser spezielle Unterstützungs-Mecha „Goldener Anführer“ durch ein kristallklares, goldfarbenes Gehäuse und ein einzigartiges Steuergerät aus. Den Erwartungen der Entwicklergruppe zufolge sollte dieser Unterstützungs-Mecha bei Einsätzen in komplexen Unterwassergeländen als leistungsstarker „Relais-Kommandant“ die Anweisungen vom Kontrolleur entgegennehmen und an die umliegenden Unterstützungs-Mecha weitergeben. Somit wäre dieser Mecha in der Rolle eines „Anführers“ unentbehrlich gewesen.",
       "2": "Mit der Einstellung des gesamten Unterstützungs-Mecha-Projekts verloren jedoch diese „Anführer-Mecha“ ihre Bedeutung. Lediglich ihre markante Persönlichkeit und ihr kristallklares, goldfarbenes Aussehen machen sie in den Augen einiger Fischer noch zu begehrten Sammlerstücken."
+    }
+  },
+  "JadeHeartfeatherBass": {
+    "name": "Jade-Herzfederbarsch",
+    "description": {
+      "0": "Dieser skurrile herzförmige Fisch soll angeblich der Gattung der Barsche angehören und wurde von den Gelehrten aufgrund seiner federartigen Rücken- und Bauchflossen aus langem, dünnem Knorpel fantasievoll „Herzfederbarsch“ genannt.",
+      "1": "Die Farbe des „Jade-Herzfederbarschs“ sticht besonders hervor, da sie an Jade erinnert, die im Wasser schwimmt; daher halt auch sein Name. Trotz ihres ruhigen Aussehens sind diese Fische äußerst zäh und können in einer Vielzahl von Gewässern unter den verschiedensten Bedingungen überleben. Das frische und saubere Wasser des Chenyu-Tals ist optimal für sie, denn dort, wo der Name schöner Jade weit verbreitet ist, führen sie ein sorgenfreies und gesundes Leben."
     }
   },
   "WingsOfFirstFlight": {
@@ -21528,55 +22111,55 @@
   "RadiantSpincrystal99": {
     "name": "Strahlender Drehkristall XCIX",
     "description": {
-      "0": "Dieser wundersame Kristall hat einen gewissen Rhythmus, wie etwas Schönes, das aus zarter Seide gewebt ist. Diese Gegenstände kannst du überall auf dem Festland oder bei Händlern finden, die Einzigartiges sammeln. Die Melodie, die in diesem Kristall enthalten ist, kann in deiner Kanne der Vergänglichkeit durch „Höchste Euphonie – Musik in der Luft“ oder „Höchste Euphonie – Verflochtene Klänge“ wieder zum Leben erweckt werden. In diesem strahlenden Drehkristall ist eine mysteriöse Melodie aus Fontaine enthalten."
+      "0": "Dieser wundersame Kristall hat einen gewissen Rhythmus, wie etwas Schönes, das aus zarter Seide gewebt ist. Diese Gegenstände kannst du überall auf dem Festland oder bei Händlern finden, die Einzigartiges sammeln. Die Melodie, die in diesem Kristall enthalten ist, kann in deiner Kanne der Vergänglichkeit durch „Höchste Euphonie – Musik in der Luft“ oder „Höchste Euphonie – Verflochtene Klänge“ wieder zum Leben erweckt werden. Die Melodie, die in diesem strahlenden Drehkristall enthalten ist, lautet „Ballad of Many Waters“."
     }
   },
   "RadiantSpincrystal100": {
     "name": "Strahlender Drehkristall C",
     "description": {
-      "0": "Dieser wundersame Kristall hat einen gewissen Rhythmus, wie etwas Schönes, das aus zarter Seide gewebt ist. Diese Gegenstände kannst du überall auf dem Festland oder bei Händlern finden, die Einzigartiges sammeln. Die Melodie, die in diesem Kristall enthalten ist, kann in deiner Kanne der Vergänglichkeit durch „Höchste Euphonie – Musik in der Luft“ oder „Höchste Euphonie – Verflochtene Klänge“ wieder zum Leben erweckt werden. In diesem strahlenden Drehkristall ist eine mysteriöse Melodie aus Fontaine enthalten."
+      "0": "Dieser wundersame Kristall hat einen gewissen Rhythmus, wie etwas Schönes, das aus zarter Seide gewebt ist. Diese Gegenstände kannst du überall auf dem Festland oder bei Händlern finden, die Einzigartiges sammeln. Die Melodie, die in diesem Kristall enthalten ist, kann in deiner Kanne der Vergänglichkeit durch „Höchste Euphonie – Musik in der Luft“ oder „Höchste Euphonie – Verflochtene Klänge“ wieder zum Leben erweckt werden. Die Melodie, die in diesem strahlenden Drehkristall enthalten ist, lautet „Coruscating Street“."
     }
   },
   "RadiantSpincrystal101": {
     "name": "Strahlender Drehkristall CI",
     "description": {
-      "0": "Dieser wundersame Kristall hat einen gewissen Rhythmus, wie etwas Schönes, das aus zarter Seide gewebt ist. Diese Gegenstände kannst du überall auf dem Festland oder bei Händlern finden, die Einzigartiges sammeln. Die Melodie, die in diesem Kristall enthalten ist, kann in deiner Kanne der Vergänglichkeit durch „Höchste Euphonie – Musik in der Luft“ oder „Höchste Euphonie – Verflochtene Klänge“ wieder zum Leben erweckt werden. In diesem strahlenden Drehkristall ist eine mysteriöse Melodie aus Fontaine enthalten."
+      "0": "Dieser wundersame Kristall hat einen gewissen Rhythmus, wie etwas Schönes, das aus zarter Seide gewebt ist. Diese Gegenstände kannst du überall auf dem Festland oder bei Händlern finden, die Einzigartiges sammeln. Die Melodie, die in diesem Kristall enthalten ist, kann in deiner Kanne der Vergänglichkeit durch „Höchste Euphonie – Musik in der Luft“ oder „Höchste Euphonie – Verflochtene Klänge“ wieder zum Leben erweckt werden. Die Melodie, die in diesem strahlenden Drehkristall enthalten ist, lautet „Throughout the Flow of Years“."
     }
   },
   "RadiantSpincrystal102": {
     "name": "Strahlender Drehkristall CII",
     "description": {
-      "0": "Dieser wundersame Kristall hat einen gewissen Rhythmus, wie etwas Schönes, das aus zarter Seide gewebt ist. Diese Gegenstände kannst du überall auf dem Festland oder bei Händlern finden, die Einzigartiges sammeln. Die Melodie, die in diesem Kristall enthalten ist, kann in deiner Kanne der Vergänglichkeit durch „Höchste Euphonie – Musik in der Luft“ oder „Höchste Euphonie – Verflochtene Klänge“ wieder zum Leben erweckt werden. In diesem strahlenden Drehkristall ist eine mysteriöse Melodie aus Fontaine enthalten."
+      "0": "Dieser wundersame Kristall hat einen gewissen Rhythmus, wie etwas Schönes, das aus zarter Seide gewebt ist. Diese Gegenstände kannst du überall auf dem Festland oder bei Händlern finden, die Einzigartiges sammeln. Die Melodie, die in diesem Kristall enthalten ist, kann in deiner Kanne der Vergänglichkeit durch „Höchste Euphonie – Musik in der Luft“ oder „Höchste Euphonie – Verflochtene Klänge“ wieder zum Leben erweckt werden. Die Melodie, die in diesem strahlenden Drehkristall enthalten ist, lautet „Miraculous Whisper“."
     }
   },
   "RadiantSpincrystal103": {
     "name": "Strahlender Drehkristall CIII",
     "description": {
-      "0": "Dieser wundersame Kristall hat einen gewissen Rhythmus, wie etwas Schönes, das aus zarter Seide gewebt ist. Diese Gegenstände kannst du überall auf dem Festland oder bei Händlern finden, die Einzigartiges sammeln. Die Melodie, die in diesem Kristall enthalten ist, kann in deiner Kanne der Vergänglichkeit durch „Höchste Euphonie – Musik in der Luft“ oder „Höchste Euphonie – Verflochtene Klänge“ wieder zum Leben erweckt werden. In diesem strahlenden Drehkristall ist eine mysteriöse Melodie aus Fontaine enthalten."
+      "0": "Dieser wundersame Kristall hat einen gewissen Rhythmus, wie etwas Schönes, das aus zarter Seide gewebt ist. Diese Gegenstände kannst du überall auf dem Festland oder bei Händlern finden, die Einzigartiges sammeln. Die Melodie, die in diesem Kristall enthalten ist, kann in deiner Kanne der Vergänglichkeit durch „Höchste Euphonie – Musik in der Luft“ oder „Höchste Euphonie – Verflochtene Klänge“ wieder zum Leben erweckt werden. Die Melodie, die in diesem strahlenden Drehkristall enthalten ist, lautet „Surging Reminiscence“."
     }
   },
   "RadiantSpincrystal104": {
     "name": "Strahlender Drehkristall CIV",
     "description": {
-      "0": "Dieser wundersame Kristall hat einen gewissen Rhythmus, wie etwas Schönes, das aus zarter Seide gewebt ist. Diese Gegenstände kannst du überall auf dem Festland oder bei Händlern finden, die Einzigartiges sammeln. Die Melodie, die in diesem Kristall enthalten ist, kann in deiner Kanne der Vergänglichkeit durch „Höchste Euphonie – Musik in der Luft“ oder „Höchste Euphonie – Verflochtene Klänge“ wieder zum Leben erweckt werden. In diesem strahlenden Drehkristall ist eine mysteriöse Melodie aus Fontaine enthalten."
+      "0": "Dieser wundersame Kristall hat einen gewissen Rhythmus, wie etwas Schönes, das aus zarter Seide gewebt ist. Diese Gegenstände kannst du überall auf dem Festland oder bei Händlern finden, die Einzigartiges sammeln. Die Melodie, die in diesem Kristall enthalten ist, kann in deiner Kanne der Vergänglichkeit durch „Höchste Euphonie – Musik in der Luft“ oder „Höchste Euphonie – Verflochtene Klänge“ wieder zum Leben erweckt werden. Die Melodie, die in diesem strahlenden Drehkristall enthalten ist, lautet „Ann’s Quiescent Residence“."
     }
   },
   "RadiantSpincrystal105": {
     "name": "Strahlender Drehkristall CV",
     "description": {
-      "0": "Dieser wundersame Kristall hat einen gewissen Rhythmus, wie etwas Schönes, das aus zarter Seide gewebt ist. Diese Gegenstände kannst du überall auf dem Festland oder bei Händlern finden, die Einzigartiges sammeln. Die Melodie, die in diesem Kristall enthalten ist, kann in deiner Kanne der Vergänglichkeit durch „Höchste Euphonie – Musik in der Luft“ oder „Höchste Euphonie – Verflochtene Klänge“ wieder zum Leben erweckt werden. In diesem strahlenden Drehkristall ist eine mysteriöse Melodie aus Fontaine enthalten."
+      "0": "Dieser wundersame Kristall hat einen gewissen Rhythmus, wie etwas Schönes, das aus zarter Seide gewebt ist. Diese Gegenstände kannst du überall auf dem Festland oder bei Händlern finden, die Einzigartiges sammeln. Die Melodie, die in diesem Kristall enthalten ist, kann in deiner Kanne der Vergänglichkeit durch „Höchste Euphonie – Musik in der Luft“ oder „Höchste Euphonie – Verflochtene Klänge“ wieder zum Leben erweckt werden. Die Melodie, die in diesem strahlenden Drehkristall enthalten ist, lautet „Limpide est le sanglot d'eau“."
     }
   },
   "RadiantSpincrystal106": {
     "name": "Strahlender Drehkristall CVI",
     "description": {
-      "0": "Dieser wundersame Kristall hat einen gewissen Rhythmus, wie etwas Schönes, das aus zarter Seide gewebt ist. Diese Gegenstände kannst du überall auf dem Festland oder bei Händlern finden, die Einzigartiges sammeln. Die Melodie, die in diesem Kristall enthalten ist, kann in deiner Kanne der Vergänglichkeit durch „Höchste Euphonie – Musik in der Luft“ oder „Höchste Euphonie – Verflochtene Klänge“ wieder zum Leben erweckt werden. In diesem strahlenden Drehkristall ist eine mysteriöse Melodie aus Fontaine enthalten."
+      "0": "Dieser wundersame Kristall hat einen gewissen Rhythmus, wie etwas Schönes, das aus zarter Seide gewebt ist. Diese Gegenstände kannst du überall auf dem Festland oder bei Händlern finden, die Einzigartiges sammeln. Die Melodie, die in diesem Kristall enthalten ist, kann in deiner Kanne der Vergänglichkeit durch „Höchste Euphonie – Musik in der Luft“ oder „Höchste Euphonie – Verflochtene Klänge“ wieder zum Leben erweckt werden. Die Melodie, die in diesem strahlenden Drehkristall enthalten ist, lautet „Que le vent soit doux“."
     }
   },
   "RadiantSpincrystal107": {
     "name": "Strahlender Drehkristall CVII",
     "description": {
-      "0": "Dieser wundersame Kristall hat einen gewissen Rhythmus, wie etwas Schönes, das aus zarter Seide gewebt ist. Diese Gegenstände kannst du überall auf dem Festland oder bei Händlern finden, die Einzigartiges sammeln. Die Melodie, die in diesem Kristall enthalten ist, kann in deiner Kanne der Vergänglichkeit durch „Höchste Euphonie – Musik in der Luft“ oder „Höchste Euphonie – Verflochtene Klänge“ wieder zum Leben erweckt werden. In diesem strahlenden Drehkristall ist eine mysteriöse Melodie aus Fontaine enthalten."
+      "0": "Dieser wundersame Kristall hat einen gewissen Rhythmus, wie etwas Schönes, das aus zarter Seide gewebt ist. Diese Gegenstände kannst du überall auf dem Festland oder bei Händlern finden, die Einzigartiges sammeln. Die Melodie, die in diesem Kristall enthalten ist, kann in deiner Kanne der Vergänglichkeit durch „Höchste Euphonie – Musik in der Luft“ oder „Höchste Euphonie – Verflochtene Klänge“ wieder zum Leben erweckt werden. Die Melodie, die in diesem strahlenden Drehkristall enthalten ist, lautet „Demain, dès l'aube“."
     }
   },
   "RadiantSpincrystal108": {
@@ -21649,6 +22232,42 @@
     "name": "Strahlender Drehkristall CXIX",
     "description": {
       "0": "Dieser wundersame Kristall hat einen gewissen Rhythmus, wie etwas Schönes, das aus zarter Seide gewebt ist. Diese Gegenstände kannst du überall auf dem Festland oder bei Händlern finden, die Einzigartiges sammeln. Die Melodie, die in diesem Kristall enthalten ist, kann in deiner Kanne der Vergänglichkeit durch „Höchste Euphonie – Musik in der Luft“ oder „Höchste Euphonie – Verflochtene Klänge“ wieder zum Leben erweckt werden. In diesem strahlenden Drehkristall ist eine mysteriöse Melodie aus Fontaine enthalten."
+    }
+  },
+  "RadiantSpincrystal120": {
+    "name": "Strahlender Drehkristall CXX",
+    "description": {
+      "0": "Dieser wundersame Kristall hat einen gewissen Rhythmus, wie etwas Schönes, das aus zarter Seide gewebt ist. Diese Gegenstände kannst du überall auf dem Festland oder bei Händlern finden, die Einzigartiges sammeln. Die Melodie, die in diesem Kristall enthalten ist, kann in deiner Kanne der Vergänglichkeit durch „Höchste Euphonie – Musik in der Luft“ oder „Höchste Euphonie – Verflochtene Klänge“ wieder zum Leben erweckt werden. In diesem strahlenden Drehkristall ist eine mysteriöse Melodie aus Liyue enthalten."
+    }
+  },
+  "RadiantSpincrystal121": {
+    "name": "Strahlender Drehkristall CXXI",
+    "description": {
+      "0": "Dieser wundersame Kristall hat einen gewissen Rhythmus, wie etwas Schönes, das aus zarter Seide gewebt ist. Diese Gegenstände kannst du überall auf dem Festland oder bei Händlern finden, die Einzigartiges sammeln. Die Melodie, die in diesem Kristall enthalten ist, kann in deiner Kanne der Vergänglichkeit durch „Höchste Euphonie – Musik in der Luft“ oder „Höchste Euphonie – Verflochtene Klänge“ wieder zum Leben erweckt werden. In diesem strahlenden Drehkristall ist eine mysteriöse Melodie aus Liyue enthalten."
+    }
+  },
+  "RadiantSpincrystal122": {
+    "name": "Strahlender Drehkristall CXXII",
+    "description": {
+      "0": "Dieser wundersame Kristall hat einen gewissen Rhythmus, wie etwas Schönes, das aus zarter Seide gewebt ist. Diese Gegenstände kannst du überall auf dem Festland oder bei Händlern finden, die Einzigartiges sammeln. Die Melodie, die in diesem Kristall enthalten ist, kann in deiner Kanne der Vergänglichkeit durch „Höchste Euphonie – Musik in der Luft“ oder „Höchste Euphonie – Verflochtene Klänge“ wieder zum Leben erweckt werden. In diesem strahlenden Drehkristall ist eine mysteriöse Melodie aus Liyue enthalten."
+    }
+  },
+  "RadiantSpincrystal123": {
+    "name": "Strahlender Drehkristall CXXIII",
+    "description": {
+      "0": "Dieser wundersame Kristall hat einen gewissen Rhythmus, wie etwas Schönes, das aus zarter Seide gewebt ist. Diese Gegenstände kannst du überall auf dem Festland oder bei Händlern finden, die Einzigartiges sammeln. Die Melodie, die in diesem Kristall enthalten ist, kann in deiner Kanne der Vergänglichkeit durch „Höchste Euphonie – Musik in der Luft“ oder „Höchste Euphonie – Verflochtene Klänge“ wieder zum Leben erweckt werden. In diesem strahlenden Drehkristall ist eine mysteriöse Melodie aus Liyue enthalten."
+    }
+  },
+  "RadiantSpincrystal124": {
+    "name": "Strahlender Drehkristall CXXIV",
+    "description": {
+      "0": "Dieser wundersame Kristall hat einen gewissen Rhythmus, wie etwas Schönes, das aus zarter Seide gewebt ist. Diese Gegenstände kannst du überall auf dem Festland oder bei Händlern finden, die Einzigartiges sammeln. Die Melodie, die in diesem Kristall enthalten ist, kann in deiner Kanne der Vergänglichkeit durch „Höchste Euphonie – Musik in der Luft“ oder „Höchste Euphonie – Verflochtene Klänge“ wieder zum Leben erweckt werden. In diesem strahlenden Drehkristall ist eine mysteriöse Melodie aus Liyue enthalten."
+    }
+  },
+  "RadiantSpincrystal125": {
+    "name": "Strahlender Drehkristall CXXV",
+    "description": {
+      "0": "Dieser wundersame Kristall hat einen gewissen Rhythmus, wie etwas Schönes, das aus zarter Seide gewebt ist. Diese Gegenstände kannst du überall auf dem Festland oder bei Händlern finden, die Einzigartiges sammeln. Die Melodie, die in diesem Kristall enthalten ist, kann in deiner Kanne der Vergänglichkeit durch „Höchste Euphonie – Musik in der Luft“ oder „Höchste Euphonie – Verflochtene Klänge“ wieder zum Leben erweckt werden. In diesem strahlenden Drehkristall ist eine mysteriöse Melodie aus Liyue enthalten."
     }
   },
   "LanternFiber": {
@@ -23397,6 +24016,48 @@
       "1": "Wer weiß, wie lange es noch dauert, bis die Filmkunst Teyvats das „Gravieren der Zeit“ erneut erfinden wird. Aber wie dem auch sei, diese Szene hat fürwahr die sündige Vergangenheit festgehalten."
     }
   },
+  "XianyunWhiteClouds": {
+    "name": "Xianyun – Weiße Wolken",
+    "description": {
+      "0": "Ein Motiv für Namenskärtchen.",
+      "1": "So sprich die Wahrheit. Würde die Fürstin dich fragen: „Hast du wirklich geglaubt, ich sei nichts weiter als ein überdurchschnittlich großer Vogel?“, so würdest du denken: „Ja, und dazu einer, der gern an Maschinen tüftelt.“"
+    }
+  },
+  "GamingManChai": {
+    "name": "Gaming – Man Chai",
+    "description": {
+      "0": "Ein Motiv für Namenskärtchen.",
+      "1": "„Hör nicht auf zu glauben, Man Chai. Eines Tages werden wir hoch aufsteigen, ohne ein einziges flickendes Loch in unseren Hosen.“"
+    }
+  },
+  "AchievementAdeptalValley": {
+    "name": "Errungenschaft – Adeptental",
+    "description": {
+      "0": "Ein Motiv für Namenskärtchen.",
+      "1": "... Dann sank der Fisch auf den Grund des Sees, die Schlange zerfiel in ihre Einzelteile, und die zurückgebliebenen Tiere warteten auf die Berge, auf den Fluss und auf den Mond, warteten auf deren stumme Antwort."
+    }
+  },
+  "ChenyuRainjadeRite": {
+    "name": "Chenyu – Regenjade-Ritus",
+    "description": {
+      "0": "Ein Motiv für Namenskärtchen.",
+      "1": "Das Meer ist ruhig, der Fluss ist beständig, und die Sterne strahlen hell. Die Menschen in den Bergen, die Vögel und Bestien, zusammen tanzen sie und erfreuen sich der Harmonie."
+    }
+  },
+  "TravelNotesVibrantHarriers": {
+    "name": "Erlebnispass – Drachenpracht",
+    "description": {
+      "0": "Ein Motiv für Namenskärtchen.",
+      "1": "Die Rohrweihen und Kraniche kommen früh im Frühling. Lass den Wind wehen und lass die Drachen aufsteigen."
+    }
+  },
+  "AlbumTheStellarMoments": {
+    "name": "Album – The Stellar Moments",
+    "description": {
+      "0": "Ein Motiv für Namenskärtchen.",
+      "1": "In der einen Melodie, da trennen sich unsere Wege für eine Weile, auf dass wir uns wiedersehen in einer anderen."
+    }
+  },
   "AnemoculusResonanceStone": {
     "name": "Anemoculus-Resonanzstein",
     "description": {
@@ -24460,6 +25121,18 @@
       "0": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
     }
   },
+  "CryoHypostasis": {
+    "name": "Kryo-Hypostase",
+    "description": {
+      "0": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+    }
+  },
+  "MillennialPearlSeahorse": {
+    "name": "Millenniums-Perlenseepferd",
+    "description": {
+      "0": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+    }
+  },
   "UndividedHeart": {
     "name": "Eintracht",
     "description": {
@@ -24886,6 +25559,30 @@
       "0": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
     }
   },
+  "ASubordinatesSkills": {
+    "name": "Beflissener Assistent",
+    "description": {
+      "0": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+    }
+  },
+  "SkivingNewAndImproved": {
+    "name": "Profischwänzen",
+    "description": {
+      "0": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+    }
+  },
+  "SternfrostPrism": {
+    "name": "Wildfrost-Prisma",
+    "description": {
+      "0": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+    }
+  },
+  "PearlSolidification": {
+    "name": "Perlenverhärtung",
+    "description": {
+      "0": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+    }
+  },
   "MagicGuide": {
     "name": "Magieführer",
     "description": {
@@ -25294,6 +25991,18 @@
       "0": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
     }
   },
+  "SapwoodBlade": {
+    "name": "Stammklinge",
+    "description": {
+      "0": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+    }
+  },
+  "VeteransVisage": {
+    "name": "Antlitz eines Veteranen",
+    "description": {
+      "0": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+    }
+  },
   "LiyueHarborWharf": {
     "name": "Hafen von Liyue",
     "description": {
@@ -25524,6 +26233,18 @@
   },
   "Mamere": {
     "name": "Mamère",
+    "description": {
+      "0": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+    }
+  },
+  "Jeht": {
+    "name": "Jeht",
+    "description": {
+      "0": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+    }
+  },
+  "SilverAndMelus": {
+    "name": "Silver und Melus",
     "description": {
       "0": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
     }
@@ -25834,6 +26555,18 @@
       "0": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
     }
   },
+  "MachineAssemblyLine": {
+    "name": "Maschinelle Fertigungsstrecke",
+    "description": {
+      "0": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+    }
+  },
+  "SunyataFlower": {
+    "name": "Sunyata-Blume",
+    "description": {
+      "0": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+    }
+  },
   "Origin": {
     "name": "Anbeginn",
     "description": {
@@ -26040,6 +26773,24 @@
     "name": "Schatten flatternder Segel",
     "description": {
       "0": "Kaeyas Kostüm aus seiner Darbietung als „Großer Räuber Kurzklinge“. Ein prächtiges Kleidungsstück, das als absoluter „Hingucker“ entworfen wurde. Das Kostüm selbst ist nicht aufwendig anzuziehen; ganz anders sieht es da allerdings mit den Accessoires und dem Messer aus."
+    }
+  },
+  "FrostflowerDew": {
+    "name": "Frostblütentau",
+    "description": {
+      "0": "Dieses Geschenk vom Laternenritual, das Shenhe erhalten hat, ist eine elegante Festkleidung, die ihre Meisterin, die Fürstin der stehenden Wolken und des stillen Windes, für sie in Auftrag gegeben hatte. Rote Seile zieren noch immer ihre Arme, doch die Kälte in Shenhes Herzen wurde gelindert."
+    }
+  },
+  "TwilightBlossom": {
+    "name": "Zwielichtblüte",
+    "description": {
+      "0": "Ein leichtes und anmutiges Festtagsgewand, bei dem vor allem in dunklem Violett und Himmelblau Akzente gesetzt worden sind. Der Haarschmuck ist ebenso strahlend wie eine Qingxin, eine Kombination, die Ganyu am liebsten hat."
+    }
+  },
+  "BambooRain": {
+    "name": "Bambusregen",
+    "description": {
+      "0": "Eine formelle Kleidung, die die Händlergilde Feiyun für Xingqiu hat anfertigen lassen. Die Bambusdrucke sind raffiniert und der Schnitt ist sehr schmeichelhaft, aber Xingqius Lieblingsaspekt dieser Kleidung sind die Innentaschen, in die man einen dünnen Roman stecken kann."
     }
   },
   "AdventurerCamp": {
@@ -26325,7 +27076,7 @@
       "2": "Verglichen mit solchen, die man im Gasthaus Wangshu finden könnte, ein bescheidenes Schlafzimmer. Das Geheimnis dieses Schlafzimmers ist schwierig in Worte zu fassen. Manchmal wird es bei denen, die hindurchgehen, Erinnerungen wecken wie Sonnenstrahlen, die durch die treibenden Wolken scheinen, doch es wird das Leid aus ihnen herausnehmen und nur die vergangenen Geschehnisse festhalten.",
       "3": "Wir alle treiben durch dieses vergängliche Leben und nur indem wir uns daran erinnern, wer „wir“ sind, können wir unseren Kurs halten. Unsere Gedanken sind in dem Spalt zwischen Wachen und Schlafen am klarsten. Kein Wunder, dass die, die eine Nacht im Gasthaus Wangshu verbringen, sich am nächsten Tag hundertfach energiegeladener fühlen, strahlen und bereit sind, sich wieder auf ihre Reise zu begeben.",
       "4": "Nach der Anwendung im Platzierungsmenü zu finden.",
-      "5": "Dieses Set wird von den folgenden Kameraden bevorzugt: Hu Tao, Yanfei, Ganyu, Keqing und Chongyun"
+      "5": "Dieses Set wird von den folgenden Kameraden bevorzugt: Hu Tao, Yanfei, Ganyu, Keqing, Chongyun und Gaming."
     }
   },
   "SecretResearchLab": {
@@ -26386,7 +27137,7 @@
       "1": "Eine Straße mit vielen Restaurants und Imbissen mit Außenbereich, die an die Geschäftigkeit des Chihu-Felsens erinnert.",
       "2": "Dies eine „Versammlung der Gourmets“ zu nennen, ist eine Untertreibung. Obwohl es scheint, dass es hier nur wenige Kochutensilien gibt, so sind es doch mehr als genug, um alle bekannten Spezialitäten der Liyue-Region abzudecken. Begabte Köche können mit den einfachsten Utensilien köstliche Gerichte zubereiten und es ist auch hilfreich, dass Gerichte, die keine speziellen Utensilien zur Zubereitung benötigen, sich schnell verbreiten.",
       "3": "Nach der Anwendung im Platzierungsmenü zu finden.",
-      "4": "Dieses Set wird von den folgenden Kameraden bevorzugt: Beidou, Xiangling, Ganyu, Xinyan, Tartaglia und Yelan"
+      "4": "Dieses Set wird von den folgenden Kameraden bevorzugt: Beidou, Xiangling, Ganyu, Xinyan, Tartaglia, Yelan, Gaming und Xianyun."
     }
   },
   "GlitteringStreet": {
@@ -26406,7 +27157,7 @@
       "1": "Ein Bergdorf, das dem Qingce-Dorf nachempfunden wurde. Man sagt, dass die freundliche Atmosphäre dort ansteckend ist und dass Besucher, die eintreten, sich viel ruhiger fühlen und ihre Freude für die einfachen Dinge des Lebens, die sie einst verloren haben, wiederentdecken.",
       "2": "Sich auf die Jagd nach den eigenen Idealen zu machen und jahrelang einer Karriere nachzujagen ist sicherlich rühmlich. Doch nachdem man lange Zeit damit verbracht hat, wird man irgendwann müde, und wenn das passiert, dann ist ein friedliches Leben auf dem Land vielleicht eine gute Idee. Das Qingce-Dorf hat es immer akzeptiert, dass die jungen Menschen auf der Suche nach ihrem Glück aufgebrochen sind, und es ist stets bereit, sie jederzeit mit offenen Armen wieder zu empfangen.",
       "3": "Nach der Anwendung im Platzierungsmenü zu finden.",
-      "4": "Dieses Set wird von den folgenden Kameraden bevorzugt: Xinyan, Xiao, Hu Tao, Qiqi, Shenhe, Yelan und Yaoyao."
+      "4": "Dieses Set wird von den folgenden Kameraden bevorzugt: Xinyan, Xiao, Hu Tao, Qiqi, Shenhe, Yelan, Yaoyao und Xianyun."
     }
   },
   "OfHuntingAndDancing": {
@@ -27110,7 +27861,7 @@
       "1": "Nach der Anwendung im Herstellungsmenü zu finden."
     }
   },
-  "SplendrousNightOverflowingLight": {
+  "SplendorousNightOverflowingLight": {
     "name": "Prachtvoller Leuchter – „Fließendes Licht“",
     "description": {
       "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Prachtvoller Leuchter – ‚Fließendes Licht‘“.",
@@ -27149,6 +27900,41 @@
     "name": "Lampe des verbotenen Ortes – „Dunkles Licht“",
     "description": {
       "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Lampe des verbotenen Ortes – ‚Dunkles Licht‘“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "ArtisanalFishLanternCarpsWell": {
+    "name": "Kunstvolle Fischlaterne – „Wie ein Fisch im Wasser“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Kunstvolle Fischlaterne – ‚Wie ein Fisch im Wasser‘“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "ArtisanFishLanternSpringProfits": {
+    "name": "Kunstvolle Fischlaterne – „Frühlingsgewinne“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Kunstvolle Fischlaterne – ‚Frühlingsgewinne‘“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "PortFloorLightWispOfFragrance": {
+    "name": "Hafen-Bodenlampe – „Ein zarter Duft“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Hafen-Bodenlampe – ‚Ein zarter Duft‘“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "PortStreetLightGoodThingsComeInPairs": {
+    "name": "Hafen-Straßenlaterne – „Gutes kommt selten allein“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Hafen-Straßenlaterne – ‚Gutes kommt selten allein‘“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "ValleyStoneLampEverbrightLight": {
+    "name": "Tal-Steinlampe – „Immerwährendes Licht“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Tal-Steinlampe – ‚Immerwährendes Licht‘“.",
       "1": "Nach der Anwendung im Herstellungsmenü zu finden."
     }
   },
@@ -29133,6 +29919,104 @@
       "1": "Nach der Anwendung im Herstellungsmenü zu finden."
     }
   },
+  "ValleyStoreTheLeisureOfTea": {
+    "name": "Tal-Laden – „Die Muße des Tees“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Tal-Laden – ‚Die Muße des Tees‘“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "ValleyStageBillowingCloudWaves": {
+    "name": "Tal-Bühne – „Aufsteigende Wolkenwellen“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Tal-Bühne – ‚Aufsteigende Wolkenwellen‘“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "ValleyVerandaDistantBeginnings": {
+    "name": "Tal-Veranda – „Entfernte Anfänge“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Tal-Veranda – ‚Entfernte Anfänge‘“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "ValleyVerandaFromSolidFoundationsToThrive": {
+    "name": "Tal-Veranda – „Feste Wurzeln, gedeihende Zweige“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Tal-Veranda – ‚Feste Wurzeln, gedeihende Zweige‘“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "ValleyPavilionWarmDaylight": {
+    "name": "Tal-Pavillon – „Warmes Tageslicht“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Tal-Pavillon – ‚Warmes Tageslicht‘“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "ValleyStoneArchwayRecurringOmenOfAbundance": {
+    "name": "Tal-Steinbogen – „Wiederkehr des Überflusses“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Tal-Steinbogen – ‚Wiederkehr des Überflusses‘“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "ValleyPergolaSunAndRain": {
+    "name": "Tal-Pergola – „Für Sonne und Regen“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Tal-Pergola – ‚Für Sonne und Regen‘“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "ValleyWatchtowerVigilance": {
+    "name": "Tal-Wachturm – „Warten und Beobachten“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Tal-Wachturm – ‚Warten und Beobachten‘“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "ValleyResidenceToweringMountains": {
+    "name": "Tal-Wohnsitz – „Hoch aufragende Berge“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Tal-Wohnsitz – ‚Hoch aufragende Berge‘“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "ValleyResidenceTranquility": {
+    "name": "Tal-Wohnsitz – „Des Tals Beschaulichkeit“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Tal-Wohnsitz – ‚Des Tals Beschaulichkeit‘“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "ValleyResidenceCustomComplexity": {
+    "name": "Tal-Wohnsitz – „Simple Komplexität“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Tal-Wohnsitz – ‚Simple Komplexität‘“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "ValleyResidenceTotalFocus": {
+    "name": "Tal-Wohnsitz – „Zielstrebigkeit“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Tal-Wohnsitz – ‚Zielstrebigkeit‘“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "ValleyResidenceTenderCountryside": {
+    "name": "Tal-Wohnsitz – „Beschauliches Landleben“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Tal-Wohnsitz – ‚Beschauliches Landleben‘“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "ValleyResidenceMeasuredBuilding": {
+    "name": "Tal-Wohnsitz – „Genau vermessenes Gebäude“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Tal-Wohnsitz – ‚Genau vermessenes Gebäude‘“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
   "MultiArchedMondstadtBuilding": {
     "name": "Gebäude mit mehreren Bögen (Mondstadt)",
     "description": {
@@ -30778,6 +31662,76 @@
       "1": "Nach der Anwendung im Herstellungsmenü zu finden."
     }
   },
+  "ValleyGateBustlingYard": {
+    "name": "Tal-Tor – „Lebendiger Hof“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Tal-Tor – ‚Lebendiger Hof‘“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "ValleyGateMountainsBeyondTheGate": {
+    "name": "Tal-Tor – „Berge jenseits des Durchgangs“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Tal-Tor – ‚Berge jenseits des Durchgangs‘“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "ValleyCaveTheFansWindingPath": {
+    "name": "Tal-Mondhöhle – „Des Fächers gewundener Pfad“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Tal-Mondhöhle – ‚Des Fächers gewundener Pfad‘“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "ValleyWallCornerLikeGatheringWaves": {
+    "name": "Tal-Mauerecke – „Wie der Wellengang“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Tal-Mauerecke – ‚Wie der Wellengang‘“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "ValleyStoneWallJadeBeltRiver": {
+    "name": "Tal-Steinmauer – „Jadegürtelfluss“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Tal-Steinmauer – ‚Jadegürtelfluss‘“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "ValleyStoneWallFlowersAndWillows": {
+    "name": "Tal-Steinmauer – „Blumen in der Dunkelheit“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Tal-Steinmauer – ‚Blumen in der Dunkelheit‘“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "ValleyStoneWallCarpAndKite": {
+    "name": "Tal-Steinmauer – „Von Karpfen und Schwalben“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Tal-Steinmauer – ‚Von Karpfen und Schwalben‘“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "ValleyGableWardingWindAndFire": {
+    "name": "Tal-Giebel – „Schutz vor Wind und Feuer“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Tal-Giebel – ‚Schutz vor Wind und Feuer‘“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "ValleyGableRainShelter": {
+    "name": "Tal-Giebel – „Schutz vor Regen“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Tal-Giebel – ‚Schutz vor Regen‘“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "ValleyStoneStepsFoundationStone": {
+    "name": "Tal-Steintreppe – „Des Grundsteins Arbeit“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Tal-Steintreppe – ‚Des Grundsteins Arbeit‘“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
   "FoundationsOfStoneFortunateTimes": {
     "name": "Steinbodenbelag – „Glückliche Zeiten“",
     "description": {
@@ -32073,6 +33027,76 @@
       "1": "Nach der Anwendung im Herstellungsmenü zu finden."
     }
   },
+  "StoneDrumSonicReverberation": {
+    "name": "Steintrommel – „Erhabener Nachhall“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Steintrommel – ‚Erhabener Nachhall‘“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "WushouDanceCostumeRoaringSuanni": {
+    "name": "Wushou-Kostüm – „Brüllende Suanni“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Wushou-Kostüm – ‚Brüllende Suanni‘“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "WushouDanceDollSleepySuanni": {
+    "name": "Wushou-Puppe – „Schläfrige Suanni“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Wushou-Puppe – ‚Schläfrige Suanni‘“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "BanquetScreenDancingButterfliesAndLeapingFish": {
+    "name": "Bankett-Wandschirm – „Tanzende Schmetterlinge und springende Fische“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Bankett-Wandschirm – ‚Tanzende Schmetterlinge und springende Fische‘“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "BanquetScreenCryingSwallowsAndChirpingSparrows": {
+    "name": "Bankett-Wandschirm – „Kreischende Schwalben und zwitschernde Spatzen“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Bankett-Wandschirm – ‚Kreischende Schwalben und zwitschernde Spatzen‘“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "CelebratoryKiteSuccessiveProsperity": {
+    "name": "Festlicher Papierdrachen – „Steigender Wohlstand“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Festlicher Papierdrachen – ‚Steigender Wohlstand‘“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "CelebratoryKiteAllsWell": {
+    "name": "Festlicher Papierdrachen – „Alles läuft reibungslos“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Festlicher Papierdrachen – ‚Alles läuft reibungslos‘“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "CelebratoryKiteButterflyDance": {
+    "name": "Festlicher Papierdrachen – „Koketter Schmetterlingstanz“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Festlicher Papierdrachen – ‚Koketter Schmetterlingstanz‘“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "CelebratoryKiteProsperityAndWealth": {
+    "name": "Festlicher Papierdrachen – „Reichtum und Wohlstand“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Festlicher Papierdrachen – ‚Reichtum und Wohlstand‘“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "FragrantCedarWoodAnnouncementBoard": {
+    "name": "Anschlagtafel mit Regengiebel aus duftendem Zedernholz",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Anschlagtafel mit Regengiebel aus duftendem Zedernholz“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
   "BookshelfFreeReading": {
     "name": "Bücher- und Zeitschriftenregal – „Zur freien Verfügung“",
     "description": {
@@ -32269,6 +33293,13 @@
       "1": "Nach der Anwendung im Herstellungsmenü zu finden."
     }
   },
+  "TeaChairCoolBreeze": {
+    "name": "Teestuhl – „Ein angenehmes Lüftchen“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Teestuhl – ‚Ein angenehmes Lüftchen‘“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
   "TwoStoryHilichurlSentryTower": {
     "name": "Zweistöckiger Hilichurl-Wachturm",
     "description": {
@@ -32399,6 +33430,13 @@
     "name": "Produktionsregal – „Umgebaut“",
     "description": {
       "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Produktionsregal – ‚Umgebaut‘“.",
+      "1": "Nach der Anwendung im Herstellungsmenü zu finden."
+    }
+  },
+  "SquareTeaTableFriendlyWelcome": {
+    "name": "Ecktisch für duftenden Tee – „Herzliches Willkommen“",
+    "description": {
+      "0": "Bauplan mit detaillierten Schritten zur Herstellung von „Ecktisch für duftenden Tee – ‚Herzliches Willkommen‘“.",
       "1": "Nach der Anwendung im Herstellungsmenü zu finden."
     }
   },

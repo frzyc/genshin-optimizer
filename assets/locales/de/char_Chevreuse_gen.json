@@ -42,7 +42,7 @@
     "name": "Schnelles Unterdrückungsfeuer auf kurze Distanz",
     "description": {
       "0": "Chevreuse hebt schnell ihre Muskete an die Schulter und feuert auf ihre Gegner, wobei sie <pyro>Pyro-Flächenschaden</pyro> verursacht.",
-      "1": "Nachdem Chevreuse einen Schuss abgefeuert hat, stellt sie der aktuellen Figur auf dem Feld für kurze Zeit fortlaufend LP basierend auf Chevreuses max. LP wieder her.",
+      "1": "Nachdem Chevreuse einen Schuss abgefeuert hat, stellt sie der aktuellen eigenen Figur auf dem Feld für kurze Zeit fortlaufend LP basierend auf Chevreuses max. LP wieder her.",
       "2": "Beim Gedrückthalten nimmt diese Fähigkeit einen anderen Modus an.",
       "3": "<br/>",
       "4": "<strong>Gedrückt halten</strong>",

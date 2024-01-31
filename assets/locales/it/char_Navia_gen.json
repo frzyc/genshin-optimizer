@@ -157,7 +157,7 @@
   "constellation6": {
     "name": "Flessibile finezza della Presidentessa",
     "description": {
-      "0": "Durante l'uso di <strong>Salva cristallina</strong>, se vengono consumati più di 3 accumuli di Bossolo di cristallo, ogni accumulo consumato successivo al terzo aumenta i DAN da CRIT di Salva cristallina di un 45%, e ciascun accumulo consumato dopo i prime 3 viene restituito a Navia."
+      "0": "Durante l'uso di <strong>Salva cristallina</strong>, se vengono consumati più di 3 accumuli di Bossolo di cristallo, ogni accumulo consumato successivo al terzo aumenta i DAN da CRIT di Salva cristallina di un 45%, e ciascun accumulo consumato dopo i primi 3 viene restituito a Navia."
     }
   }
 }

@@ -42,7 +42,7 @@
     "name": "Fuoco d'interdizione rapido a corto raggio",
     "description": {
       "0": "Chevreuse imbraccia il suo moschetto e spara agli avversari per infliggere <pyro>DAN da Pyro ad area</pyro>.",
-      "1": "Per un breve lasso di tempo dopo lo sparo, i PS del personaggio attivo presente in campo vengono rigenerati costantemente in base ai PS max di Chevreuse. La pressione prolungata dell'abilità permette di effettuare un tiro alternativo.",
+      "1": "Per un breve lasso di tempo dopo lo sparo, i PS del tuo personaggio attivo presente in campo vengono rigenerati costantemente in base ai PS max di Chevreuse. La pressione prolungata dell'abilità permette di effettuare un tiro alternativo.",
       "2": "<br/>",
       "3": "<strong>Pressione prolungata</strong>",
       "4": "Entra in modalità di mira, agganciando un bersaglio nella sua linea di tiro per sparare un colpo d'interdizione ad alta precisione. Se è in possesso di una Pallottola sovraccarica, Chevreuse spara quest'ultima infliggendo <pyro>DAN da Pyro</pyro> aumentati in un'area d'effetto di ampiezza maggiore.",

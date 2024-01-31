@@ -42,7 +42,7 @@
     "name": "Combate Próximo Rápido",
     "description": {
       "0": "Chevreuse apoia rapidamente seu rifle no seu ombro e dispara contra os inimigos, causando <pyro>Dano Pyro em AdE</pyro>.",
-      "1": "Um certo tempo após Chevreuse atingir seu disparo, regenerará Vida continuamente para o personagem ativo. A Vida regenerada é baseada na Vida Máxima de Chevreuse.",
+      "1": "Um certo tempo após Chevreuse atingir seu disparo, regenerará Vida continuamente para o próprio personagem ativo. A Vida regenerada é baseada na Vida Máxima de Chevreuse.",
       "2": "Ao Manter Pressionado, lança de uma maneira diferente.",
       "3": "<br/>",
       "4": "<strong>Manter Pressionado</strong>",

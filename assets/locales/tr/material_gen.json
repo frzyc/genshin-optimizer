@@ -1062,6 +1062,18 @@
       "0": "Spina di Rosula'nın şu anki Başkanı. Cana yakın, görevine bağlı ve takdire şayan bir patron."
     }
   },
+  "Gaming": {
+    "name": "Gaming",
+    "description": {
+      "0": "Kılıç ve Kasa Güvenli Teslimat Bürosu muhafızı ve \"Kudretli Efsanevi Canavarlar\" Wushou dans ekibinin lideri."
+    }
+  },
+  "Xianyun": {
+    "name": "Xianyun",
+    "description": {
+      "0": "\"Bulutlar Hakimi\" olarak bilinen, Jueyun'un Kudretli ve Aydınlanmış Adeptuslarından biri. Mekanizmalar konusunda uzmandır ve şimdilerde ölümlüler dünyasında \"Xianyun\" adıyla dolaşmaktadır."
+    }
+  },
   "KamisatoAyakasStellaFortuna": {
     "name": "Kamisato Ayaka'nın Yaşam Yıldızı",
     "description": {
@@ -1528,6 +1540,18 @@
     "name": "Navia'nın Yaşam Yıldızı",
     "description": {
       "0": "Navia'nın Takımyıldız Etkinleştirme Malzemesi"
+    }
+  },
+  "GamingsStellaFortuna": {
+    "name": "Gaming'in Yaşam Yıldızı",
+    "description": {
+      "0": "Gaming'in Takımyıldız Etkinleştirme Malzemesi"
+    }
+  },
+  "XianyunsStellaFortuna": {
+    "name": "Xianyun'un Yaşam Yıldızı",
+    "description": {
+      "0": "Xianyun'un Takımyıldız Etkinleştirme Malzemesi"
     }
   },
   "GnosticHymnOldNotes": {
@@ -6563,6 +6587,18 @@
       "0": "Morte Bölgesi'nin sularına karışmış saf bir çiy damlası. Diğer saf su kütlelerinden farklıdır, sanki daha saf ve ilkel Element Enerjisinin birikimiyle oluşmuş gibidir."
     }
   },
+  "ClearwaterJade": {
+    "name": "Berrak Su Yeşimi",
+    "description": {
+      "0": "Chenyu Vadisi'nden bir yeşim. İsmini, berrak suları anımsatan soğuk ve iç ferahlatıcı görünüşünden alır."
+    }
+  },
+  "ChenyuAdeptea": {
+    "name": "Chenyu Adeptus Çayı",
+    "description": {
+      "0": "Chenyu Vadisi'nin sıcak ve nemli bölgelerinde yetişen çay. Binlerce yıllık özenli yetiştirme sayesinde, çayın o zengin kokusunu birkaç sokak öteden bile almak mümkündür."
+    }
+  },
   "BirchWood": {
     "name": "Huş Ağacı Kütüğü",
     "description": {
@@ -7495,7 +7531,7 @@
   "YueChuansDriftingBottle": {
     "name": "Yue Chuan'ın Sürüklenen Şişesi",
     "description": {
-      "0": "Yue Chuan'ın Minik Meng'e verdiği cevabın bulunduğu sürüklenen bir şişe. Acaba ona ulaşacak mı?..."
+      "0": "Yue Chuan'ın Minik Meng'e verdiği cevabın bulunduğu sürüklenen bir şişe. Acaba ona ulaşacak mı..."
     }
   },
   "HiraizumisGoods": {
@@ -10167,6 +10203,12 @@
       "1": "Derinlikler Tapınaklarını inşa eden medeniyet yok olup gidince tapınaklar kendilerini mühürledi. Zindanların derinliklerinde bulunabilen anahtarlar bu mühürleri kırabilir. Belki de bu anahtarlar, mühürlerin kaybettiklerini unutmasına yardımcı oluyordur."
     }
   },
+  "SpiritCarp": {
+    "name": "Ruh Sazanı",
+    "description": {
+      "0": "Dağlar, vadiler ve derelerde özgürce yüzen, yoğunlaşmış Adeptus enerjisinden oluşan bir Ruh Sazanı."
+    }
+  },
   "Dish": {
     "name": "Yemek",
     "description": {
@@ -12750,7 +12792,7 @@
   "DeliciousFishWithCreamSauce": {
     "name": "Krema Soslu Balık (Lezzetli)",
     "description": {
-      "0": "Sosla servis edilen bir balık yemeği. Enfes kremalı sosun üzerinde yarı saydam bir fileto. Sadece küçücük bir lokmada bile, taptaze balığın o muhteşem lezzetini alabilirsin."
+      "0": "Sosla birlikte servis edilen bir balık yemeği. Krema sosuna bandırılmış ışıl ışıl balık filetoları, daha ilk ısırıkta sanki denizden yeni çıkmış gibi taptaze bir tat sunar."
     }
   },
   "ForestWatchersChoice": {
@@ -13882,6 +13924,252 @@
       "0": "Masmavi bir Fontinalia Festivali atıştırmalığı. Üzerinde billur gibi parlayan renkleri, dalgalarda kırılan ışıklara benzetmek abartı olmaz. Kuş tüyü misali düşen yapraklar gibi zarif ve dilde eriyen kar tanesi kadar hafif bir dokusu var. Böyle bir lezzeti tatmak şüphesiz insanın festivalde başına gelebilecek en güzel şeylerden biri!"
     }
   },
+  "SuspiciousThePalaceJewels": {
+    "name": "Saray Mücevherleri (Tuhaf)",
+    "description": {
+      "0": "Enfes kokulu bir Liyue yemeği. Düzgün ayıklanmamış karides ve yarı pişmiş yengeç yumurtaları, sanki aralarında ölümcül bir savaş çıkmış gibi etrafa korkunç kokular yayıyor. Çiğ malzemelerin hâlâ çok taze olduğu düşünüldüğünde, bu feci kabus bir yemek olarak kabul edilebilir... Kokuyu görmezden gelebilirsen tabii."
+    }
+  },
+  "ThePalaceJewels": {
+    "name": "Saray Mücevherleri",
+    "description": {
+      "0": "Enfes kokulu bir Liyue yemeği. Sosa bulanan karidesler, zengin yengeç yumurtası ile birlikte pişirilir. Altın gibi göz kamaştıran yengeç yumurtaları ile yeşim gibi parlayan karidesten ötürü yemek \"Saray Mücevherleri\" adını almıştır."
+    }
+  },
+  "DeliciousThePalaceJewels": {
+    "name": "Saray Mücevherleri (Lezzetli)",
+    "description": {
+      "0": "Lezzetli bir Liyue yemeği. İncecik karides etine sarılmış yumuşacık ve pürüzsüz yengeç etini görenler, sanki muhteşem bir hazineymiş gibi istemsizce tabağa doğru uzanır. Küçücük bir ısırıkta dahi ağzının içinde lezzet dalgaları oluşur, kendini karides ve yengeçten bir nehre kapılmış süzülürken bulursun."
+    }
+  },
+  "SuspiciousTremblingStringsAndRushingReeds": {
+    "name": "Çalsın Sazlar Üflensin Kavallar (Tuhaf)",
+    "description": {
+      "0": "Oldukça değişik bir et yemeği. Kıyılmış etler çok yüksek ateşte pişirildiği için bütünleşmiş ve resmen cıvık bir et bulamacına dönüşmüş. Tek bir ısırık bile, damağının bu tat karmaşasından irkilmesi için yeterli."
+    }
+  },
+  "TremblingStringsAndRushingReeds": {
+    "name": "Çalsın Sazlar Üflensin Kavallar",
+    "description": {
+      "0": "Oldukça değişik bir et yemeği. Çeşitli etlerin kıyılıp yoğrulması ve ardından kızartılmasıyla her birinin lezzeti ortaya çıkarılır. Zorlu malzemeler ve farklı dokular şefin yeteneklerinin sınırlarını zorlar, bu yüzden en meşhur restoranlarda bile nadiren bulunur."
+    }
+  },
+  "DeliciousTremblingStringsAndRushingReeds": {
+    "name": "Çalsın Sazlar Üflensin Kavallar (Lezzetli)",
+    "description": {
+      "0": "Oldukça değişik bir et yemeği. Bu lezzet orkestrasında her bir çeşit kıyılmış et farklı bir rol oynarken, hafifçe kullanılan baharatlar da değişik tonlardaki tatları ustaca bir araya getiriyor. Bir eleştirmenin de söylediği gibi, nasıl ki müzikte sayısız makam, çeşitli tınılar ve karmaşık besteler varsa lezzette de aynı şeyler geçerlidir. Lezzet sanatını zirvede icra edenler, seni bambaşka diyarlara alıp götürebilir..."
+    }
+  },
+  "SuspiciousHumblyEnough": {
+    "name": "Sıcacık Aşım (Tuhaf)",
+    "description": {
+      "0": "Baharatlı bir tofu yemeği. Tofu, mevcut haliyle yenemeyecek derecede acı ama eğer üzerindeki fazla baharatı almak için biraz uğraşırsan belki miden kaldırabilir..."
+    }
+  },
+  "HumblyEnough": {
+    "name": "Sıcacık Aşım",
+    "description": {
+      "0": "Baharatlı bir tofu yemeği. Sotelenen tofu, sosu karamelize olana kadar tavada pişirilir ve ardından servis edilir. Sıradan malzemelerle yapılmasına rağmen ortaya pilavın yanına çok yakışan, enfes kokulu ve hoş bir yemek çıkar."
+    }
+  },
+  "DeliciousHumblyEnough": {
+    "name": "Sıcacık Aşım (Lezzetli)",
+    "description": {
+      "0": "Baharatlı bir tofu yemeği. Kızarmış tofu, yanında zengin ve şık bir soya sosu ile gelir. Daha ilk ısırıkta kendini hissettiren acıya hafif bir et tadı eşlik eder ve damağında hoş bir lezzet ile uzun süren bir tat kalır."
+    }
+  },
+  "SuspiciousRightAtHome": {
+    "name": "Gurbetteki Yuva (Tuhaf)",
+    "description": {
+      "0": "Bol malzemeli bir yemek. Yetersiz ısıdan ve aşırı nemden dolayı tadı yavan ve normalde olması gereken o isli tattan eser yok. Bir dahaki sefere artık, mümkünse malzemeleri daha yüksek ateşte kızartarak..."
+    }
+  },
+  "RightAtHome": {
+    "name": "Gurbetteki Yuva",
+    "description": {
+      "0": "Jambon, kuş yumurtası ve diğer malzemelerin pirinçle birlikte kızartılarak yapıldığı Liyue'nin başlıca yemeklerinden biri. Envai çeşit malzeme ve farklı pişirme yöntemlerinden dolayı Liyue'deki hemen hemen her evde afiyetle yenir."
+    }
+  },
+  "DeliciousRightAtHome": {
+    "name": "Gurbetteki Yuva (Lezzetli)",
+    "description": {
+      "0": "Bol malzemeli bir yemek. Altın renkli yumurta sarısı her bir pirinç tanesinin üzerini kaplamış ve yüksek ateşte jambonun tadı bütün yemeğe sinmiş. İnsana kendi evini hatırlatan o tanıdık lezzetin, uzaklardan gelen dostlara ve akrabalara kendilerini evlerinde gibi hissettireceği kesin."
+    }
+  },
+  "SuspiciousEightTreasureDuck": {
+    "name": "Sekiz Hazine Ördeği (Tuhaf)",
+    "description": {
+      "0": "Yapımı gerçekten maharet isteyen bir yemek. Kemikleri ayıklamaktan neredeyse gözlerin bozuldu. Tam anlamıyla bir sabır, dayanıklılık ve aynı zamanda bıçak kullanma becerisi sınavı oldu bu yemek. O kadar özenle hazırladığın ördeğin tavada pişerken resmen patlamış olması da çok yazık oldu... Şimdi gözlerini kapat, sakinleş ve bu yemeği tekrar yapmayı aklından çıkar."
+    }
+  },
+  "EightTreasureDuck": {
+    "name": "Sekiz Hazine Ördeği",
+    "description": {
+      "0": "Yapımı gerçekten maharet isteyen bir yemek. Adına sekiz hazine denen sekiz farklı çeşit et ve sebze, kemikleri ayıklanmış bir ördeğin içine doldurulur. Daha sonra ördeğe şans ve uğur sembolü olan asma kabağı şekli verilir. Seçkin malzemeler, üstün bir kesim tekniği ve muhteşem bir zamanlama gerektiren bu yemek, son tabak olarak sunulduğu tüm ziyafet sofralarındaki yerini hak ediyor."
+    }
+  },
+  "DeliciousEightTreasureDuck": {
+    "name": "Sekiz Hazine Ördeği (Lezzetli)",
+    "description": {
+      "0": "Yapımı gerçekten maharet isteyen bir yemek. Tombul ve lezzetli görünen şanslı ördeği daha tavadan aldığın an yememek için kendini zor tutarsın. Enfes kokulu sosu eklediğinde oluşan gül rengi parlaklık ile birlikte yemek mükemmel bir görüntü, tat ve şekil bütününe kavuşur. Her ısırık, ağızda gerçek bir lezzet patlaması yaşatırken ardında uzun süren ve hoş bir tat bırakır."
+    }
+  },
+  "SuspiciousDeepFriedDoublecrisp": {
+    "name": "Çifte Çıtır Kızartması (Tuhaf)",
+    "description": {
+      "0": "Liyue'nin meşhur yemeklerinden biri. Yemeği tavada sadece bir kez dikkatsizce çevirmenle yükselen alevler, acımasızca tüm çıtırlığı ve yumuşaklığı alıp götürdü ve yerine yanmış, kararmış parçalardan başka bir şey kalmadı."
+    }
+  },
+  "DeepFriedDoublecrisp": {
+    "name": "Çifte Çıtır Kızartması",
+    "description": {
+      "0": "Liyue'nin meşhur yemeklerinden biri. Harlı ateş, kızgın yağ ve soteleme işlemi gerektiren bu yemek, şefin yetenekleri için zorlu bir testtir. Birkaç saniye az pişse malzeme çiğ kalır, çok pişse bu sefer de çıtırlığı gider. Bu sebepten ötürü tecrübeli Liyue aşçıları becerilerini göstermek için sık sık bu yemeği seçer."
+    }
+  },
+  "DeliciousDeepFriedDoublecrisp": {
+    "name": "Çifte Çıtır Kızartması (Lezzetli)",
+    "description": {
+      "0": "Liyue'nin meşhur yemeklerinden biri. Sosla kaplanan kırmızı ve beyaz etler, tavada birlikte kızartılır ve damak bahçesinde çiçek açarlar adeta. Bu pürüzsüz, gevrek, tuzlu ve enfes yemeği herkes mutlaka tatmalı. Tabağı silip süpürdükten sonra dahi yemeği övmeyi bırakamazsın."
+    }
+  },
+  "SuspiciousBraisedMeatball": {
+    "name": "Köfte Kavurma (Tuhaf)",
+    "description": {
+      "0": "Klasik bir Liyue yemeği. Yuvarlak şekli ve aroması sanki yerinde ama tadına baktığında biraz fazla kuru olduğunu fark ediyorsun. Belki de kullandığın et biraz fazla yağsızdı."
+    }
+  },
+  "BraisedMeatball": {
+    "name": "Köfte Kavurma",
+    "description": {
+      "0": "Klasik bir Liyue yemeği. Yağlı ve yağsız et parçaları, çıtır bambu filizleriyle karıştırılıp köfte haline getirilir. Köfteler önce kızartılıp sonra haşlanır. Hem evlerde hem de ziyafetlerde kendine yer bulan popüler bir yemektir."
+    }
+  },
+  "DeliciousBraisedMeatball": {
+    "name": "Köfte Kavurma (Lezzetli)",
+    "description": {
+      "0": "Klasik bir Liyue yemeği. Zümrüt yeşili taze soğan ve yakut kırmızısı köfte birbirini mükemmel şekilde tamamlarken, hassas ve olağanüstü bir bıçak işçiliğiyle hazırlanan köfte ağızda eriyor. Tam kıvamında yağlı olan bu yemeğin haftalarca dillerden düşmeyeceği garanti. Şans getirmesi için tabağındakileri bitirdiğinden emin ol!"
+    }
+  },
+  "SuspiciousHoneyCharSiu": {
+    "name": "Ballı Char Siu (Tuhaf)",
+    "description": {
+      "0": "Liyue'den bir çeşit kızarmış et yemeği. Aşırı derecede tatlı sosu, damak için usandırıcı bir işkenceden farksız. Yerlilerin de söylediği gibi küçük hatalar büyük sorunlara yol açar ve belli ki yemek yaparken de aynı durum geçerli."
+    }
+  },
+  "HoneyCharSiu": {
+    "name": "Ballı Char Siu",
+    "description": {
+      "0": "Liyue'den bir çeşit kızarmış et yemeği. Marine edilen et, metalden özel bir şişe takılarak ateşin üstüne asılır ve bu şekilde pişirilir. Taze kızarmış Char Siu, birçok gurmenin favori lezzetlerinden biridir."
+    }
+  },
+  "DeliciousHoneyCharSiu": {
+    "name": "Ballı Char Siu (Lezzetli)",
+    "description": {
+      "0": "Liyue'den bir çeşit kızarmış et yemeği. Zengin kırmızı rengi, kokusu ve yoğun lezzetiyle harika bir bütün olmuş. Daha bakarken aşırı yemekten bayılacağını hissediyor insan. Bir parça et, biraz da zengin sostan derken bu lezzet deneyimi için bir kase pilav yetmeyecek gibi."
+    }
+  },
+  "SuspiciousFineTeaFullMoon": {
+    "name": "Çaylı Dolunay (Tuhaf)",
+    "description": {
+      "0": "Çayla birlikte yenilen ve yumurta sarısından yapılan bir hamur işi. Daha eline aldığın anda hamurun katmanları heyelan gibi dökülmeye başlıyor. İlk ısırıkta da yapış yapış, şekerli ve boğucu geliyor... Tam o sırada boğazına takılan parçayı yutmak için su içerken, tatlının kalanıyla ne yapacağını düşünüyorsun."
+    }
+  },
+  "FineTeaFullMoon": {
+    "name": "Çaylı Dolunay",
+    "description": {
+      "0": "Çayla birlikte yenilen ve yumurta sarısından yapılan bir hamur işi. Tuz eklenen yumurta sarısı önce buharda pişirilir, daha sonra içinde çay tozu bulunan hamura sarılır ve dolunay şekli verilerek fırına gönderilir. Bu sayede dışı çıtır çıtır ve gevrek, içi hem tuzlu hem tatlı olur. Böylece bağımlılık yaratan, farklı lezzet katmanlarının olduğu bir tat haline gelir."
+    }
+  },
+  "DeliciousFineTeaFullMoon": {
+    "name": "Çaylı Dolunay (Lezzetli)",
+    "description": {
+      "0": "Çayla birlikte yenilen ve yumurta sarısından yapılan bir hamur işi. Yumurta sarısının akışkan ve narin yapısı çayın hafif kokusuna karışmış. Küçücük bir lokma bile insanın başını döndüren, içten bir mutlulukla sarmalanmasını sağlıyor. İstersen art arda hepsini ağzına at, senden kırıntısını bile almaya çalışanın vay haline."
+    }
+  },
+  "SuspiciousJadeveinTeaEggs": {
+    "name": "Yeşim Desenli Çay Yumurtası (Tuhaf)",
+    "description": {
+      "0": "Geleneksel bir Liyue atıştırmalığı. Tadının normal bir haşlanmış yumurtadan hiçbir farkı yok. Acaba çay yapraklarında mı sorun vardı, yoksa pişirirken mi bir şeyler oldu?"
+    }
+  },
+  "JadeveinTeaEggs": {
+    "name": "Yeşim Desenli Çay Yumurtası",
+    "description": {
+      "0": "Liyue sokaklarında epey popüler olan geleneksel bir atıştırmalık. Yumurta haşlanırken kabuğundaki çatlaklardan içeri çayın tadı sızar ve yumurtanın üzerinde yeşimlerde görülen parçalı, hoş desenler oluşur."
+    }
+  },
+  "DeliciousJadeveinTeaEggs": {
+    "name": "Yeşim Desenli Çay Yumurtası (Lezzetli)",
+    "description": {
+      "0": "Geleneksel bir Liyue atıştırmalığı. Çayın aroması yumurtaya mükemmel bir şekilde karışmış. Lokma lokma ya da tek bir seferde de yesen, adeta bir lezzet yumağı."
+    }
+  },
+  "SuspiciousTeaSmokedSquab": {
+    "name": "Çay Tütsülü Güvercin (Tuhaf)",
+    "description": {
+      "0": "Son derece sevilen bir yemek. Güvercinin yanık butları ve kanatları, pişirirken ateşin doğru kontrol edilemediğinin göstergesi. Biraz sabırlı olursan belki yiyebilirsin."
+    }
+  },
+  "TeaSmokedSquab": {
+    "name": "Çay Tütsülü Güvercin",
+    "description": {
+      "0": "Son derece sevilen bir yemek. Güvercin eti bir gece önceden çay ve sosla marine edilir, ardından kurutulur. Daha sonra yağda kızartıldığında çayın o muhteşem aroması eti kaplar. Ziyafetlerde sunulan bu lezzetin elde edildiği teknik, yıllardan beri şefler arasında aktarılarak bugüne kadar gelmiştir."
+    }
+  },
+  "DeliciousTeaSmokedSquab": {
+    "name": "Çay Tütsülü Güvercin (Lezzetli)",
+    "description": {
+      "0": "Son derece sevilen bir yemek. Saydamlaşmış güvercinin derisi kağıt gibi incecik ve gevrek, eti ise sıkı ve dolgundur. Enfes bir sosun eşlik ettiği bu yemek hem kalpleri hem de mideyi fetheder."
+    }
+  },
+  "SuspiciousGuhuaFishLambSoup": {
+    "name": "Guhua Kuzu Balık Çorbası (Tuhaf)",
+    "description": {
+      "0": "Tarih boyunca izlerine rastlanan eski bir yemek. Ancak ağır kokulu et ile kokuşmuş balık, ağzında resmen bir savaş verirken bunları düşünmeye fırsat olmuyor. Zavallı ağzını bundan sonra sonsuza dek yıkasan yeridir."
+    }
+  },
+  "GuhuaFishLambSoup": {
+    "name": "Guhua Kuzu Balık Çorbası",
+    "description": {
+      "0": "Tarih boyunca izlerine rastlanan eski bir yemek. Taze balıkla kuzu eti birlikte haşlanır ve balığın yumuşak dokusu ile kuzunun lezzeti birleşerek ortaya harika bir lezzet çıkarır."
+    }
+  },
+  "DeliciousGuhuaFishLambSoup": {
+    "name": "Guhua Kuzu Balık Çorbası (Lezzetli)",
+    "description": {
+      "0": "Tarih boyunca izlerine rastlanan eski bir yemek. Süt kıvamındaki beyaz çorba boğazından akarken, iki tane midem olsa da daha fazla yesem diye düşünürsün. Kışın koca bir tencere içsen, bahar geldiğinde keşke hâlâ içiyor olsam dersin."
+    }
+  },
+  "SuspiciousChenyuBrew": {
+    "name": "Chenyu Çayı (Tuhaf)",
+    "description": {
+      "0": "Liyue'de çok yaygın olan bir çay. Çay diye verdikleri bu şeyin tadının hâlâ su gibi olduğunu doğrulamak için sürekli şüpheyle bir yudum daha alırken buluyorsun kendini. Acaba su mu sıcak değildi, yoksa çay mı yeterince demlenmedi?"
+    }
+  },
+  "ChenyuBrew": {
+    "name": "Chenyu Çayı",
+    "description": {
+      "0": "Liyue'de çok yaygın olan bir çay. Bazen hayat, bir yudum çaydan sonra ağızda kalan tat gibidir."
+    }
+  },
+  "DeliciousChenyuBrew": {
+    "name": "Chenyu Çayı (Lezzetli)",
+    "description": {
+      "0": "Liyue'de çok yaygın olan bir çay. İlk yudumunla birlikte zarif ve hafif bir esinti kaplar bedenini, Chenyu Vadisi'nden gelen o lezzetli aroma dudaklarından ve dilinden süzülüp aşağı iner. Dinle, kulaklarında çalan bu ses dağ pınarlarının tatlı şırıltısı değil mi?"
+    }
+  },
+  "EncompassingGladness": {
+    "name": "Dört Köşe Keyif",
+    "description": {
+      "0": "Xianyun'un özel tarifi. Enfes kokulu köfteleri gördüğün anda yaşadığın şoku daha üzerinden atamadan Xianyun şunları söylüyor: \"Ah, böyle sıradan bir yemeğin şahsımı zorlayacağını mı sanmıştın? Soğumadan yesen iyi olur, ben de senin için huzur, mutluluk ve bereket dolu, sıkıntıdan uzak bir hayat dileyebilirim... *öksürür* Ne var yani? Formaliteden de olsa arada bir ayin ciddiyeti takınmaktan kimseye zarar gelmez.\""
+    }
+  },
+  "YummyYumCha": {
+    "name": "Yumulmalık Yum Cha",
+    "description": {
+      "0": "Gaming'in özel tarifi. Gerçeğinin bire bir aynısı Suanni somunları, buharda pişmesi için sıra sıra hasır sepete dizilmiş. Erik Çiçeği Direkleri arasında hoplayan o zeki genç çocukları anımsatıyor adeta... \"O yüzündeki şaşkın ifade de ne öyle? Gel önce bir çay içelim.\" diyen genç adam, neşeyle gülümseyerek fincanı sana uzatır."
+    }
+  },
   "RecipeItem": {
     "name": "Yemek Malzemesi",
     "description": {
@@ -14951,6 +15239,84 @@
       "0": "Fontinalia Musu yapımını adım adım anlatan detaylı bir tarif."
     }
   },
+  "RecipeThePalaceJewels": {
+    "name": "Tarif: Saray Mücevherleri",
+    "description": {
+      "0": "Saray Mücevherleri yapımını adım adım anlatan detaylı bir tarif."
+    }
+  },
+  "RecipeTremblingStringsAndRushingReeds": {
+    "name": "Tarif: Çalsın Sazlar Üflensin Kavallar",
+    "description": {
+      "0": "Çalsın Sazlar Üflensin Kavallar yapımını adım adım anlatan detaylı bir tarif."
+    }
+  },
+  "RecipeHumblyEnough": {
+    "name": "Tarif: Sıcacık Aşım",
+    "description": {
+      "0": "Sıcacık Aşım yapımını adım adım anlatan detaylı bir tarif."
+    }
+  },
+  "RecipeRightAtHome": {
+    "name": "Tarif: Gurbetteki Yuva",
+    "description": {
+      "0": "Gurbetteki Yuva yapımını adım adım anlatan detaylı bir tarif."
+    }
+  },
+  "RecipeEightTreasureDuck": {
+    "name": "Tarif: Sekiz Hazine Ördeği",
+    "description": {
+      "0": "Sekiz Hazine Ördeği yapımını adım adım anlatan detaylı bir tarif."
+    }
+  },
+  "RecipeDeepFriedDoublecrisp": {
+    "name": "Tarif: Çifte Çıtır Kızartması",
+    "description": {
+      "0": "Çifte Çıtır Kızartması yapımını adım adım anlatan detaylı bir tarif."
+    }
+  },
+  "RecipeBraisedMeatball": {
+    "name": "Tarif: Köfte Kavurma",
+    "description": {
+      "0": "Köfte Kavurma yapımını adım adım anlatan detaylı bir tarif."
+    }
+  },
+  "RecipeHoneyCharSiu": {
+    "name": "Tarif: Ballı Char Siu",
+    "description": {
+      "0": "Ballı Char Siu yapımını adım adım anlatan detaylı bir tarif."
+    }
+  },
+  "RecipeFineTeaFullMoon": {
+    "name": "Tarif: Çaylı Dolunay",
+    "description": {
+      "0": "Çaylı Dolunay yapımını adım adım anlatan detaylı bir tarif."
+    }
+  },
+  "RecipeJadeveinTeaEggs": {
+    "name": "Tarif: Yeşim Desenli Çay Yumurtası",
+    "description": {
+      "0": "Yeşim Desenli Çay Yumurtası yapımını adım adım anlatan detaylı bir tarif."
+    }
+  },
+  "RecipeTeaSmokedSquab": {
+    "name": "Tarif: Çay Tütsülü Güvercin",
+    "description": {
+      "0": "Çay Tütsülü Güvercin yapımını adım adım anlatan detaylı bir tarif."
+    }
+  },
+  "RecipeGuhuaFishLambSoup": {
+    "name": "Tarif: Guhua Kuzu Balık Çorbası",
+    "description": {
+      "0": "Guhua Kuzu Balık Çorbası yapımını adım adım anlatan detaylı bir tarif."
+    }
+  },
+  "RecipeChenyuBrew": {
+    "name": "Tarif: Chenyu Çayı",
+    "description": {
+      "0": "Chenyu Çayı yapımını adım adım anlatan detaylı bir tarif."
+    }
+  },
   "CraftedItems": {
     "name": "Üretilen Malzemeler",
     "description": {
@@ -15851,6 +16217,27 @@
       "1": "Yine de bu aksesuarı çıkarmak, bir Ajanın uzun yıllar idmanlarla ve savaş tecrübesiyle elde ettiği ve onu sıradan insanlardan ayıran fiziksel özelliklerini azaltmaz. Onlar dünlerini, bugünlerini ve yarınlarını Fatui'nin idealleri uğruna feda ettiklerinin gayet farkındadırlar, bu yüzden Sanrının gücünü kullanarak kendilerine zarar vermiş olmaları da onları hiç tedirgin etmez."
     }
   },
+  "FeatheryFin": {
+    "name": "Sırt Tüyü",
+    "description": {
+      "0": "Yenilen bir Xuanwen Canavarının sırtından alınmış bir tüy parçası.",
+      "1": "Xuanwen Canavarları uzun mesafeler uçamaz fakat bu tüyler sayesinde avlarının peşinden hızla gidebilirler."
+    }
+  },
+  "LunarFin": {
+    "name": "Ay Işığı Sırt Tüyü",
+    "description": {
+      "0": "Yenilen bir Xuanwen Canavarının sırtından alınmış bir tüy parçası.",
+      "1": "Tüylerin saçtığı ay ışığını andıran hafif parıltının sakinleştirici bir etkisi var."
+    }
+  },
+  "ChasmlightFin": {
+    "name": "Kanyon Işığı Sırt Tüyü",
+    "description": {
+      "0": "Yenilen bir Xuanwen Canavarının sırtından alınmış zarif bir tüy parçası.",
+      "1": "Saçtığı soluk ışık Adeptus enerjisi izleri taşır. Gecenin sessizliğinde, yaratıkların en vahşileri bile bir anlığına da olsa huzurlu bir uykuya dalar ve rüya görmenin yalnızca insanlara mahsus olmadığı zamanları anımsar."
+    }
+  },
   "HurricaneSeed": {
     "name": "Kasırga Tohumu",
     "description": {
@@ -16284,6 +16671,13 @@
       "1": "Bu madde, Fontemer Sapkınlarının bedeninden çıkan kristallere çok benzer ancak acemi bir zanaatkarın yaptığı camın içindeki kabarcıklar gibi içinde çok fazla küçük kirlilik bulunmaktadır."
     }
   },
+  "CloudseamScale": {
+    "name": "Bulut Pulu",
+    "description": {
+      "0": "Bir Yalnız Suanni'nin sert ve soğuk pulları. Kopmuş olmalarına rağmen saf Adeptus enerjisini muhafaza eder ve normal silahlar ile hasar verilemez.",
+      "1": "Sıradan yaratıklar bazen yanlışlıkla Adeptus enerjisine maruz kalıp normalden daha güçlü olabilirler. Ancak bir Suanni'nin Adeptus enerjisi kendi içinden gelir, bu sebeple liderleri de Adeptuslarla eşit seviyede görülür."
+    }
+  },
   "TileOfDecarabiansTower": {
     "name": "Decarabian'ın Kırık Çinisi",
     "description": {
@@ -16407,7 +16801,7 @@
     "name": "Sis Kaplı Kurşun Cevher",
     "description": {
       "0": "Silah Yükseltme Malzemesi.",
-      "1": "Jueyun Gölü, kudretli ve göz kamaştıran Adeptusların diyarıdır. Dünyanın elementlerini kontrol etme yeteneğinin dışında Jueyun Gölü üç sırrı daha bünyesinde barındırır: Simya, Mühürler ve Alt Uzay Yaratma."
+      "1": "Jueyun Gölü, kudretli ve aydınlanmış Adeptusların diyarıdır. Dünyanın elementlerini kontrol etme yeteneğinin dışında Jueyun Gölü üç sırrı daha bünyesinde barındırır: Simya, Mühürler ve Alt Uzay Yaratma."
     }
   },
   "MistVeiledMercuryElixir": {
@@ -16963,6 +17357,14 @@
     "name": "Yankılanan Melodiler",
     "description": {
       "0": "Hediye etkinleştirme kodunu çoktan kullandıysan tekrar satın alımda sadece Köken Taşı ile Dekorasyon elde edebilirsin."
+    }
+  },
+  "OutfitOptionBundle": {
+    "name": "Giysi Seçki Paketi",
+    "description": {
+      "0": "Bu hediye kutusunda seçkin bir giysi bulunur. Kişiye özel yapılmış olduğu için ebat ve yapı olarak sadece hediye sahibine uyar.",
+      "1": "<br/>",
+      "2": "Kullanıldığında kutudaki bir giysi seçilip alınabilir."
     }
   },
   "BEP": {
@@ -19178,6 +19580,24 @@
       "0": "Komplo, intikam, adalet ve kötülükle ilgili, Fontaine'i kasıp kavuran bir kitap serisi."
     }
   },
+  "TimeTrekkerI": {
+    "name": "Zaman Yolcusu (I)",
+    "description": {
+      "0": "Buğukuş'un yayınladığı bir bilim kurgu romanı. Bir mühendisin zaman makinası ile yaptığı yolculukları anlatır."
+    }
+  },
+  "TimeTrekkerII": {
+    "name": "Zaman Yolcusu (II)",
+    "description": {
+      "0": "Buğukuş'un yayınladığı bir bilim kurgu romanı. Bir mühendisin zaman makinası ile yaptığı yolculukları anlatır."
+    }
+  },
+  "TimeTrekkerIII": {
+    "name": "Zaman Yolcusu (III)",
+    "description": {
+      "0": "Buğukuş'un yayınladığı bir bilim kurgu romanı. Bir mühendisin zaman makinası ile yaptığı yolculukları anlatır."
+    }
+  },
   "GiftOfParting": {
     "name": "\"Veda\" Hediyesi",
     "description": {
@@ -19792,6 +20212,36 @@
       "0": "Meropide Kalesi araştırman sırasında bulduğun çeşitli ipuçlarının kaydı."
     }
   },
+  "PictureLotusPondBeneathTheMoon": {
+    "name": "Resim: Ay Işığındaki Nilüfer Göleti",
+    "description": {
+      "0": "Ay ışığının aydınlattığı Nilüfer Göletinin güzel bir resmi."
+    }
+  },
+  "PictureGuestsOfQiaoying": {
+    "name": "Resim: Qiaoying Misafirleri",
+    "description": {
+      "0": "Qiaoying Köyü'nün güzel bir resmi."
+    }
+  },
+  "PictureTranquilJademouth": {
+    "name": "Resim: Yeşimağzı Sessizliği",
+    "description": {
+      "0": "Yeşimağzı'nın güzel bir resmi."
+    }
+  },
+  "PictureMtXuanlian": {
+    "name": "Resim: Xuanlian Dağı",
+    "description": {
+      "0": "Xuanlian Dağı'nın güzel bir resmi."
+    }
+  },
+  "ChenyuValeSceneryGuide": {
+    "name": "Chenyu Vadisi Gezi Rehberi",
+    "description": {
+      "0": "Yerlilerin tavsiyelerine göre hazırlanmış, bölgedeki büyüleyici manzaraları tanıtan turistik bir rehber."
+    }
+  },
   "Notice": {
     "name": "Bildiri",
     "description": {}
@@ -20119,6 +20569,12 @@
       "1": "Belirli bir anda durmuş ve güzel bir anıyı ölümsüzleştirmiş gibi görünüyor."
     }
   },
+  "AncientTreeBranch": {
+    "name": "Kadim Bitki Dalı",
+    "description": {
+      "0": "Kadim bir çay bitkisinden alınan bir dal. Zayıf bir Adeptus enerjisi yayar..."
+    }
+  },
   "AureliesNotesII": {
     "name": "Aurelie'nin Notları (II)",
     "description": {
@@ -20214,6 +20670,24 @@
       "0": "Tuhaf Mesaj"
     }
   },
+  "WangshanHallBackupKey": {
+    "name": "Wangshan Konağı Yedek Anahtarı",
+    "description": {
+      "0": "Üçüncü Huang'dan aldığın paslı bir anahtar."
+    }
+  },
+  "ThePaimonSpecial": {
+    "name": "Paimon'un Spesiyali",
+    "description": {
+      "0": "Üçüncü Huang'ın anlattığına göre Büyük Usta Guhua, tekniklerini aktarırken ödeme olarak Mora yerine pirinç ve tuzlanmış et kabul edermiş. Bu hikayeden yola çıkarak Paimon da tüm kalbini (ve tuzunu) bu süper özel yemeğe koydu..."
+    }
+  },
+  "WoliusDrillingDevice": {
+    "name": "Woliu'nun Kazı Ekipmanı",
+    "description": {
+      "0": "İçinde kazı ekipmanı olan bir kutu. Bununla ne kazılıp çıkartılacak kim bilir..."
+    }
+  },
   "AutumnsGift": {
     "name": "Autumn'ın Hediyesi",
     "description": {
@@ -20259,6 +20733,12 @@
     "name": "Hikaye Kitabı",
     "description": {}
   },
+  "CarpSpiritOrb": {
+    "name": "Sazan Ruh Küresi",
+    "description": {
+      "0": "Altın Sazan heykeline işlenmiş bir küre. Muazzam bir Adeptus enerjisi barındırıyor."
+    }
+  },
   "Certificate": {
     "name": "Sertifika",
     "description": {}
@@ -20274,6 +20754,42 @@
   "Log": {
     "name": "Günlük",
     "description": {}
+  },
+  "JadeFragmentLeft": {
+    "name": "Yeşim Parçası (Sol)",
+    "description": {
+      "0": "Çevresinde Adeptus enerjisi dolaşan yeşim parçası. Kadim halkın anlattığı efsanelerde, tüm yeşimlerin aslında aynı taştan geldiği söylenir. Eğer bu doğruysa tüm yeşim parçalarını bir araya getirmek mümkün olabilir..."
+    }
+  },
+  "JadeFragmentRight": {
+    "name": "Yeşim Parçası (Sağ)",
+    "description": {
+      "0": "Çevresinde Adeptus enerjisi dolaşan yeşim parçası. Kadim halkın anlattığı efsanelerde, tüm yeşimlerin aslında aynı taştan geldiği söylenir. Eğer bu doğruysa tüm yeşim parçalarını bir araya getirmek mümkün olabilir..."
+    }
+  },
+  "FragrantWoodHuangcong": {
+    "name": "Kokulu Odun \"Huangcong\"",
+    "description": {
+      "0": "Ayin seremonilerinde kullanılan ve hafif bir kokusu olan, zarifçe oyulmuş kokulu bir odun parçası. Şekline bakılacak olursa başka bir kokulu odun parçası ile birleşerek tamamlanması gerek."
+    }
+  },
+  "FragrantWoodChizhang": {
+    "name": "Kokulu Odun: \"Chizhang\"",
+    "description": {
+      "0": "Ayin seremonilerinde kullanılan ve yanık bir kokusu olan, zarifçe oyulmuş kokulu bir odun parçası. Şekline bakılacak olursa başka bir kokulu odun parçası ile birleşerek tamamlanması gerek."
+    }
+  },
+  "OurChenyuValeTrekAlbum": {
+    "name": "\"Chenyu Vadisi Yürüyüşümüz\" Albümü",
+    "description": {
+      "0": "Birçok harika fotoğraf içeren bir anı albümü. Şaşırtıcı bir şekilde fotoğrafların yarısından çoğunu aynı kişi çekmiş."
+    }
+  },
+  "StrangeKey": {
+    "name": "Garip Anahtar",
+    "description": {
+      "0": "Garip görünümlü bir anahtar. Kim bilir hangi kilidi açıyor..."
+    }
   },
   "ShootingPracticeOpticalLenses": {
     "name": "Atış Talimi Optik Lensi",
@@ -20294,10 +20810,70 @@
       "0": "Bracari'nin Dükkan Fişi"
     }
   },
+  "AncientStoneTablet": {
+    "name": "Kadim Taş Tablet",
+    "description": {
+      "0": "Kadim Taş Tablet"
+    }
+  },
   "PackageForTheLeroyFamily": {
     "name": "Leroy Ailesine Paket",
     "description": {
       "0": "Gazete kuryesi Pip, Leroy ailesinin yakın zamanda almadığı gazeteleri bu paketin içine doldurmuş."
+    }
+  },
+  "ForgottenKeyI": {
+    "name": "Unutulmuş Anahtar (I)",
+    "description": {
+      "0": "Chenyu Vadisi'nin vahşi doğasında kaybolmuş bir anahtar. Ne işe yarıyor acaba?"
+    }
+  },
+  "ForgottenKeyII": {
+    "name": "Unutulmuş Anahtar (II)",
+    "description": {
+      "0": "Chenyu Vadisi'nin vahşi doğasında kaybolmuş bir anahtar. Ne işe yarıyor acaba?"
+    }
+  },
+  "XuanlianSacredWater": {
+    "name": "Kutsal Xuanlian Suyu",
+    "description": {
+      "0": "İsmi \"kutsal\" olmasa Xuanlian Dağı yakınlarından gelen bu suyun hiç de özel bir yanı yok. Aksine, ismini öğrendikten sonra baktığında sanki sudan yükselen bir Adeptus havası sezmeye başlıyorsun."
+    }
+  },
+  "AncientJadeCup": {
+    "name": "Kadim Yeşim Bardak",
+    "description": {
+      "0": "Vahşi doğada kaybolmuş eski bir çay bardağı. Adeptuslara özgü hafif bir hava yayıyor."
+    }
+  },
+  "SomeonesLedger": {
+    "name": "Birinin Muhasebe Defteri",
+    "description": {
+      "0": "Wangshan Konağı'nda bulduğun bu muhasebe defterinde her bir gelir ve gider için detaylı kayıtlar girilmiş."
+    }
+  },
+  "VotiveRainjade": {
+    "name": "Kutsal Yağmur Yeşimi",
+    "description": {
+      "0": "Adeptus Fujin'in kadim zamanlarda attığı son değerli taş. Diğer sıradan yeşim taşlardan bir farkı varmış gibi görünmese de yakındaki toprak ve suları dönüştürmeye yetecek kadar Adeptus enerjisi barındırıyor..."
+    }
+  },
+  "ChizhangMap": {
+    "name": "Chizhang Haritası",
+    "description": {
+      "0": "Deponun yeri, Taşordu'nun geride bıraktığı bu haritada gösterilmiş."
+    }
+  },
+  "AncientCityKey": {
+    "name": "Eski Şehir Anahtarı",
+    "description": {
+      "0": "Epeydir paslı olduğu anlaşılan bu anahtar, Chizhang Seddi üzerindeki bir deponun kapısını açmaya yarıyor."
+    }
+  },
+  "FishSeizedFromAPelicansMouth": {
+    "name": "Pelikanın Ağzından Kaptığın Balık",
+    "description": {
+      "0": "Qiaoying Köyü rıhtımındaki bir pelikanın ağzından almayı başardığın balık. Kimi canlılar için bir hazine değerinde olan bu balığı, bazı hayvanların her gün yemek yediği kaba koyarsan bir zamanlar kaybolmuş bazı şeyler için gönül alman mümkün olabilir..."
     }
   },
   "TearsAmongTheStars": {
@@ -20762,6 +21338,13 @@
       "0": "Su altı projeleri için yardım sunan, Meka gruplarının kullanım oranını artırmak için geliştirilen kompakt bir yardım Mekası. Aslında diğer Kurmalı Mekaların önemli parçaları tıkanmasın ve arıza yaşanmasın diye su altında çöp, ot ve diğer atıkları toplamak üzere tasarlanmıştır. Bir başka bakış açısına göre Fontaine ekosistemine su altı temizlikçileri olarak büyük katkıda bulunmaktadırlar.",
       "1": "Diğer seri üretim modellere kıyasla bu özel \"Altın Lider\" yardımcı meka, şeffaf altın bir kasaya ve özel kontrol ekipmanına sahiptir. Proje ekibi bunu özellikle karmaşık su altı ortamlarında komut iletim istasyonu olarak çalışması, komutları kontrol biriminden alıp gruptaki mekalara tekrar iletmesi ve son derece önemli olan liderlik görevini üstlenmesi için tasarlamıştır.",
       "2": "Ancak tüm teknisyen meka projesinin durdurulmasıyla birlikte bu lider mekanın da bir anlamı kalmamıştır. Yalnızca oldukça ayırt edici olan altın kasaları, onları toplayan balıkçıların gözünde bu mekaları oldukça değerli kılar."
+    }
+  },
+  "JadeHeartfeatherBass": {
+    "name": "Yeşim Kalp Tüylü Levrek",
+    "description": {
+      "0": "Yandan bakıldığında kalp şekline benzeyen, levreğin akrabası olduğu söylenen tuhaf bir balık. Sırt ve karın kısmında bulunan tüy inceliğindeki esnek kılçıklardan oluşan yüzgeçlerinden ötürü araştırmacılar bu balık için \"Kalp Tüylü Levrek\" ismini önermişlerdir.",
+      "1": "Yeşim Kalp Tüylü Levrek, ismini sudayken büründüğü yeşime benzeyen renkten alır. Nazik görüntüsünün aksine oldukça dayanıklı ve farklı su çevrelerine uyum sağlayabilen bir yapısı vardır. Chenyu Vadisi'nin temiz suları, bu balığın kaygıdan uzak ve rahat bir hayat yaşayıp gelişmesi için son derece uygun bir ortamdır."
     }
   },
   "WingsOfFirstFlight": {
@@ -21530,55 +22113,55 @@
   "RadiantSpincrystal99": {
     "name": "Parlak Burgu Kristal 99",
     "description": {
-      "0": "Bu harikulade kristal, narin ipekten güzel bir örgü misali çok hoş bir melodi çalar. Bu eşyayı ana karanın farklı yerlerinden veya nadir nesne toplayan tüccarlardan bulabilirsin. Kristalin içinde çalan ezgiyi, Dinginçay Çaydanlığındaki \"Ebedi Ahenk: Dingin Yankılar\" veya \"Ebedi Ahenk: Rüzgarın Ezgileri\" eşyalarını kullanarak dinleyebilirsin. Bu Parlak Burgu Kristalde Fontaine'den gelen gizemli bir müzik vardır."
+      "0": "Bu harikulade kristal, narin ipekten güzel bir örgü misali çok hoş bir melodi çalar. Bu eşyayı ana karanın farklı yerlerinden veya nadir nesne toplayan tüccarlardan bulabilirsin. Kristalin içinde çalan ezgiyi, Dinginçay Çaydanlığındaki \"Ebedi Ahenk: Dingin Yankılar\" veya \"Ebedi Ahenk: Rüzgarın Ezgileri\" eşyalarını kullanarak dinleyebilirsin. Bu Parlak Burgu Kristalde \"Ballad of Many Waters\" müziği vardır."
     }
   },
   "RadiantSpincrystal100": {
     "name": "Parlak Burgu Kristal 100",
     "description": {
-      "0": "Bu harikulade kristal, narin ipekten güzel bir örgü misali çok hoş bir melodi çalar. Bu eşyayı ana karanın farklı yerlerinden veya nadir nesne toplayan tüccarlardan bulabilirsin. Kristalin içinde çalan ezgiyi, Dinginçay Çaydanlığındaki \"Ebedi Ahenk: Dingin Yankılar\" veya \"Ebedi Ahenk: Rüzgarın Ezgileri\" eşyalarını kullanarak dinleyebilirsin. Bu Parlak Burgu Kristalde Fontaine'den gelen gizemli bir müzik vardır."
+      "0": "Bu harikulade kristal, narin ipekten güzel bir örgü misali çok hoş bir melodi çalar. Bu eşyayı ana karanın farklı yerlerinden veya nadir nesne toplayan tüccarlardan bulabilirsin. Kristalin içinde çalan ezgiyi, Dinginçay Çaydanlığındaki \"Ebedi Ahenk: Dingin Yankılar\" veya \"Ebedi Ahenk: Rüzgarın Ezgileri\" eşyalarını kullanarak dinleyebilirsin. Bu Parlak Burgu Kristalde \"Coruscating Street\" müziği vardır."
     }
   },
   "RadiantSpincrystal101": {
     "name": "Parlak Burgu Kristal 101",
     "description": {
-      "0": "Bu harikulade kristal, narin ipekten güzel bir örgü misali çok hoş bir melodi çalar. Bu eşyayı ana karanın farklı yerlerinden veya nadir nesne toplayan tüccarlardan bulabilirsin. Kristalin içinde çalan ezgiyi, Dinginçay Çaydanlığındaki \"Ebedi Ahenk: Dingin Yankılar\" veya \"Ebedi Ahenk: Rüzgarın Ezgileri\" eşyalarını kullanarak dinleyebilirsin. Bu Parlak Burgu Kristalde Fontaine'den gelen gizemli bir müzik vardır."
+      "0": "Bu harikulade kristal, narin ipekten güzel bir örgü misali çok hoş bir melodi çalar. Bu eşyayı ana karanın farklı yerlerinden veya nadir nesne toplayan tüccarlardan bulabilirsin. Kristalin içinde çalan ezgiyi, Dinginçay Çaydanlığındaki \"Ebedi Ahenk: Dingin Yankılar\" veya \"Ebedi Ahenk: Rüzgarın Ezgileri\" eşyalarını kullanarak dinleyebilirsin. Bu Parlak Burgu Kristalde \"Throughout the Flow of Years\" müziği vardır."
     }
   },
   "RadiantSpincrystal102": {
     "name": "Parlak Burgu Kristal 102",
     "description": {
-      "0": "Bu harikulade kristal, narin ipekten güzel bir örgü misali çok hoş bir melodi çalar. Bu eşyayı ana karanın farklı yerlerinden veya nadir nesne toplayan tüccarlardan bulabilirsin. Kristalin içinde çalan ezgiyi, Dinginçay Çaydanlığındaki \"Ebedi Ahenk: Dingin Yankılar\" veya \"Ebedi Ahenk: Rüzgarın Ezgileri\" eşyalarını kullanarak dinleyebilirsin. Bu Parlak Burgu Kristalde Fontaine'den gelen gizemli bir müzik vardır."
+      "0": "Bu harikulade kristal, narin ipekten güzel bir örgü misali çok hoş bir melodi çalar. Bu eşyayı ana karanın farklı yerlerinden veya nadir nesne toplayan tüccarlardan bulabilirsin. Kristalin içinde çalan ezgiyi, Dinginçay Çaydanlığındaki \"Ebedi Ahenk: Dingin Yankılar\" veya \"Ebedi Ahenk: Rüzgarın Ezgileri\" eşyalarını kullanarak dinleyebilirsin. Bu Parlak Burgu Kristalde \"Miraculous Whisper\" müziği vardır."
     }
   },
   "RadiantSpincrystal103": {
     "name": "Parlak Burgu Kristal 103",
     "description": {
-      "0": "Bu harikulade kristal, narin ipekten güzel bir örgü misali çok hoş bir melodi çalar. Bu eşyayı ana karanın farklı yerlerinden veya nadir nesne toplayan tüccarlardan bulabilirsin. Kristalin içinde çalan ezgiyi, Dinginçay Çaydanlığındaki \"Ebedi Ahenk: Dingin Yankılar\" veya \"Ebedi Ahenk: Rüzgarın Ezgileri\" eşyalarını kullanarak dinleyebilirsin. Bu Parlak Burgu Kristalde Fontaine'den gelen gizemli bir müzik vardır."
+      "0": "Bu harikulade kristal, narin ipekten güzel bir örgü misali çok hoş bir melodi çalar. Bu eşyayı ana karanın farklı yerlerinden veya nadir nesne toplayan tüccarlardan bulabilirsin. Kristalin içinde çalan ezgiyi, Dinginçay Çaydanlığındaki \"Ebedi Ahenk: Dingin Yankılar\" veya \"Ebedi Ahenk: Rüzgarın Ezgileri\" eşyalarını kullanarak dinleyebilirsin. Bu Parlak Burgu Kristalde \"Surging Reminiscence\" müziği vardır."
     }
   },
   "RadiantSpincrystal104": {
     "name": "Parlak Burgu Kristal 104",
     "description": {
-      "0": "Bu harikulade kristal, narin ipekten güzel bir örgü misali çok hoş bir melodi çalar. Bu eşyayı ana karanın farklı yerlerinden veya nadir nesne toplayan tüccarlardan bulabilirsin. Kristalin içinde çalan ezgiyi, Dinginçay Çaydanlığındaki \"Ebedi Ahenk: Dingin Yankılar\" veya \"Ebedi Ahenk: Rüzgarın Ezgileri\" eşyalarını kullanarak dinleyebilirsin. Bu Parlak Burgu Kristalde Fontaine'den gelen gizemli bir müzik vardır."
+      "0": "Bu harikulade kristal, narin ipekten güzel bir örgü misali çok hoş bir melodi çalar. Bu eşyayı ana karanın farklı yerlerinden veya nadir nesne toplayan tüccarlardan bulabilirsin. Kristalin içinde çalan ezgiyi, Dinginçay Çaydanlığındaki \"Ebedi Ahenk: Dingin Yankılar\" veya \"Ebedi Ahenk: Rüzgarın Ezgileri\" eşyalarını kullanarak dinleyebilirsin. Bu Parlak Burgu Kristalde \"Ann's Quiescent Residence\" müziği vardır."
     }
   },
   "RadiantSpincrystal105": {
     "name": "Parlak Burgu Kristal 105",
     "description": {
-      "0": "Bu harikulade kristal, narin ipekten güzel bir örgü misali çok hoş bir melodi çalar. Bu eşyayı ana karanın farklı yerlerinden veya nadir nesne toplayan tüccarlardan bulabilirsin. Kristalin içinde çalan ezgiyi, Dinginçay Çaydanlığındaki \"Ebedi Ahenk: Dingin Yankılar\" veya \"Ebedi Ahenk: Rüzgarın Ezgileri\" eşyalarını kullanarak dinleyebilirsin. Bu Parlak Burgu Kristalde Fontaine'den gelen gizemli bir müzik vardır."
+      "0": "Bu harikulade kristal, narin ipekten güzel bir örgü misali çok hoş bir melodi çalar. Bu eşyayı ana karanın farklı yerlerinden veya nadir nesne toplayan tüccarlardan bulabilirsin. Kristalin içinde çalan ezgiyi, Dinginçay Çaydanlığındaki \"Ebedi Ahenk: Dingin Yankılar\" veya \"Ebedi Ahenk: Rüzgarın Ezgileri\" eşyalarını kullanarak dinleyebilirsin. Bu Parlak Burgu Kristalde \"Limpide est le sanglot d'eau\" müziği vardır."
     }
   },
   "RadiantSpincrystal106": {
     "name": "Parlak Burgu Kristal 106",
     "description": {
-      "0": "Bu harikulade kristal, narin ipekten güzel bir örgü misali çok hoş bir melodi çalar. Bu eşyayı ana karanın farklı yerlerinden veya nadir nesne toplayan tüccarlardan bulabilirsin. Kristalin içinde çalan ezgiyi, Dinginçay Çaydanlığındaki \"Ebedi Ahenk: Dingin Yankılar\" veya \"Ebedi Ahenk: Rüzgarın Ezgileri\" eşyalarını kullanarak dinleyebilirsin. Bu Parlak Burgu Kristalde Fontaine'den gelen gizemli bir müzik vardır."
+      "0": "Bu harikulade kristal, narin ipekten güzel bir örgü misali çok hoş bir melodi çalar. Bu eşyayı ana karanın farklı yerlerinden veya nadir nesne toplayan tüccarlardan bulabilirsin. Kristalin içinde çalan ezgiyi, Dinginçay Çaydanlığındaki \"Ebedi Ahenk: Dingin Yankılar\" veya \"Ebedi Ahenk: Rüzgarın Ezgileri\" eşyalarını kullanarak dinleyebilirsin. Bu Parlak Burgu Kristalde \"Que le vent soit doux\" müziği vardır."
     }
   },
   "RadiantSpincrystal107": {
     "name": "Parlak Burgu Kristal 107",
     "description": {
-      "0": "Bu harikulade kristal, narin ipekten güzel bir örgü misali çok hoş bir melodi çalar. Bu eşyayı ana karanın farklı yerlerinden veya nadir nesne toplayan tüccarlardan bulabilirsin. Kristalin içinde çalan ezgiyi, Dinginçay Çaydanlığındaki \"Ebedi Ahenk: Dingin Yankılar\" veya \"Ebedi Ahenk: Rüzgarın Ezgileri\" eşyalarını kullanarak dinleyebilirsin. Bu Parlak Burgu Kristalde Fontaine'den gelen gizemli bir müzik vardır."
+      "0": "Bu harikulade kristal, narin ipekten güzel bir örgü misali çok hoş bir melodi çalar. Bu eşyayı ana karanın farklı yerlerinden veya nadir nesne toplayan tüccarlardan bulabilirsin. Kristalin içinde çalan ezgiyi, Dinginçay Çaydanlığındaki \"Ebedi Ahenk: Dingin Yankılar\" veya \"Ebedi Ahenk: Rüzgarın Ezgileri\" eşyalarını kullanarak dinleyebilirsin. Bu Parlak Burgu Kristalde \"Demain, des l'aube\" müziği vardır."
     }
   },
   "RadiantSpincrystal108": {
@@ -21651,6 +22234,42 @@
     "name": "Parlak Burgu Kristal 119",
     "description": {
       "0": "Bu harikulade kristal, narin ipekten güzel bir örgü misali çok hoş bir melodi çalar. Bu eşyayı ana karanın farklı yerlerinden veya nadir nesne toplayan tüccarlardan bulabilirsin. Kristalin içinde çalan ezgiyi, Dinginçay Çaydanlığındaki \"Ebedi Ahenk: Dingin Yankılar\" veya \"Ebedi Ahenk: Rüzgarın Ezgileri\" eşyalarını kullanarak dinleyebilirsin. Bu Parlak Burgu Kristalde Fontaine'den gelen gizemli bir müzik vardır."
+    }
+  },
+  "RadiantSpincrystal120": {
+    "name": "Parlak Burgu Kristal 120",
+    "description": {
+      "0": "Bu harikulade kristal, narin ipekten güzel bir örgü misali çok hoş bir melodi çalar. Bu eşyayı ana karanın farklı yerlerinden veya nadir nesne toplayan tüccarlardan bulabilirsin. Kristalin içinde çalan ezgiyi, Dinginçay Çaydanlığındaki \"Ebedi Ahenk: Dingin Yankılar\" veya \"Ebedi Ahenk: Rüzgarın Ezgileri\" eşyalarını kullanarak dinleyebilirsin. Bu Parlak Burgu Kristalde Liyue'den gelen gizemli bir müzik vardır."
+    }
+  },
+  "RadiantSpincrystal121": {
+    "name": "Parlak Burgu Kristal 121",
+    "description": {
+      "0": "Bu harikulade kristal, narin ipekten güzel bir örgü misali çok hoş bir melodi çalar. Bu eşyayı ana karanın farklı yerlerinden veya nadir nesne toplayan tüccarlardan bulabilirsin. Kristalin içinde çalan ezgiyi, Dinginçay Çaydanlığındaki \"Ebedi Ahenk: Dingin Yankılar\" veya \"Ebedi Ahenk: Rüzgarın Ezgileri\" eşyalarını kullanarak dinleyebilirsin. Bu Parlak Burgu Kristalde Liyue'den gelen gizemli bir müzik vardır."
+    }
+  },
+  "RadiantSpincrystal122": {
+    "name": "Parlak Burgu Kristal 122",
+    "description": {
+      "0": "Bu harikulade kristal, narin ipekten güzel bir örgü misali çok hoş bir melodi çalar. Bu eşyayı ana karanın farklı yerlerinden veya nadir nesne toplayan tüccarlardan bulabilirsin. Kristalin içinde çalan ezgiyi, Dinginçay Çaydanlığındaki \"Ebedi Ahenk: Dingin Yankılar\" veya \"Ebedi Ahenk: Rüzgarın Ezgileri\" eşyalarını kullanarak dinleyebilirsin. Bu Parlak Burgu Kristalde Liyue'den gelen gizemli bir müzik vardır."
+    }
+  },
+  "RadiantSpincrystal123": {
+    "name": "Parlak Burgu Kristal 123",
+    "description": {
+      "0": "Bu harikulade kristal, narin ipekten güzel bir örgü misali çok hoş bir melodi çalar. Bu eşyayı ana karanın farklı yerlerinden veya nadir nesne toplayan tüccarlardan bulabilirsin. Kristalin içinde çalan ezgiyi, Dinginçay Çaydanlığındaki \"Ebedi Ahenk: Dingin Yankılar\" veya \"Ebedi Ahenk: Rüzgarın Ezgileri\" eşyalarını kullanarak dinleyebilirsin. Bu Parlak Burgu Kristalde Liyue'den gelen gizemli bir müzik vardır."
+    }
+  },
+  "RadiantSpincrystal124": {
+    "name": "Parlak Burgu Kristal 124",
+    "description": {
+      "0": "Bu harikulade kristal, narin ipekten güzel bir örgü misali çok hoş bir melodi çalar. Bu eşyayı ana karanın farklı yerlerinden veya nadir nesne toplayan tüccarlardan bulabilirsin. Kristalin içinde çalan ezgiyi, Dinginçay Çaydanlığındaki \"Ebedi Ahenk: Dingin Yankılar\" veya \"Ebedi Ahenk: Rüzgarın Ezgileri\" eşyalarını kullanarak dinleyebilirsin. Bu Parlak Burgu Kristalde Liyue'den gelen gizemli bir müzik vardır."
+    }
+  },
+  "RadiantSpincrystal125": {
+    "name": "Parlak Burgu Kristal 125",
+    "description": {
+      "0": "Bu harikulade kristal, narin ipekten güzel bir örgü misali çok hoş bir melodi çalar. Bu eşyayı ana karanın farklı yerlerinden veya nadir nesne toplayan tüccarlardan bulabilirsin. Kristalin içinde çalan ezgiyi, Dinginçay Çaydanlığındaki \"Ebedi Ahenk: Dingin Yankılar\" veya \"Ebedi Ahenk: Rüzgarın Ezgileri\" eşyalarını kullanarak dinleyebilirsin. Bu Parlak Burgu Kristalde Liyue'den gelen gizemli bir müzik vardır."
     }
   },
   "LanternFiber": {
@@ -23303,7 +23922,7 @@
     "name": "Gezi Notları: Ezeli Sular",
     "description": {
       "0": "İsim Kartı arka planı.",
-      "1": "Saatler, yılların sessizce akıp gitmesine tanıklık ederken balıklar da kaynaktan dökülen berrak suların akışına eşlik eder. Eğer bir gün solup gitmeye mahkumsa her şey, düşüncelerim neden hiç olmadığı kadar berrak?"
+      "1": "Saatler, yılların sessizce akıp gitmesine tanıklık ederken balıklar da kaynaktan dökülen berrak suların akışına eşlik eder. Eğer bir gün solup gitmeye mahkumsa her şey, hasretlerim neden hiç olmadığı kadar berrak?"
     }
   },
   "NeuvilletteSurge": {
@@ -23395,6 +24014,48 @@
     "description": {
       "0": "İsim Kartı arka planı.",
       "1": "Teyvat'ın film sektörünün \"zaman kazıma\" sanatını yeniden keşfetmesi için ne kadar zamana ihtiyacı olduğu meçhul. Yine de bu sahnenin günah dolu geçmişi ölümsüzleştirdiği açık."
+    }
+  },
+  "XianyunWhiteClouds": {
+    "name": "Xianyun: Beyaz Bulutlar",
+    "description": {
+      "0": "İsim Kartı arka planı.",
+      "1": "Doğruyu söyleyenlerin cezası hafifletilir. Dürüst ol. Bulutlar Hakimi sana \"Şahsımın büyükçe bir kuştan ibaret olduğunu mu düşünmüştün?\" diye sorduğunda, \"Evet, bir de konuşuyorsun ve garip cihazlarla oynuyorsun.\" diye aklından geçti mi hiç?"
+    }
+  },
+  "GamingManChai": {
+    "name": "Gaming: Man Chai",
+    "description": {
+      "0": "İsim Kartı arka planı.",
+      "1": "\"Umudunu yitirme Man Chai. Bir gün öyle bir yükseleceğiz ki artık meteliğe kurşun atmak zorunda kalmayacağız.\""
+    }
+  },
+  "AchievementAdeptalValley": {
+    "name": "Başarım: Adeptus Vadisi",
+    "description": {
+      "0": "İsim Kartı arka planı",
+      "1": "... Ondan sonra balık gölün dibini boyladı ve yılan bir sürü parçaya bölündü. Geride kalan yaratıklar dağların, nehirlerin ve ayın sessiz tepkisini bekledi."
+    }
+  },
+  "ChenyuRainjadeRite": {
+    "name": "Chenyu: Yağmur Yeşimi Ayini",
+    "description": {
+      "0": "İsim Kartı arka planı.",
+      "1": "Sessiz deniz ve nehirlerin üstünde parlak yıldızlar göz kırpıyor, dağ halkı kuşlar ve hayvanlarla uyum içinde dans ediyor."
+    }
+  },
+  "TravelNotesVibrantHarriers": {
+    "name": "Gezi Notları: Rengarenk Atmacalar",
+    "description": {
+      "0": "İsim Kartı arka planı.",
+      "1": "Atmacalar ve turnalar baharda erkenden gelir. Rüzgar essin, uçurtmalar yükselsin."
+    }
+  },
+  "AlbumTheStellarMoments": {
+    "name": "Albüm: Yıldızlar Gibi Parlak Anlar",
+    "description": {
+      "0": "İsim Kartı arka planı.",
+      "1": "Bir melodide ayrıldı yollarımız, ötekinde yeniden kavuştuk."
     }
   },
   "AnemoculusResonanceStone": {
@@ -24463,6 +25124,18 @@
       "0": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
     }
   },
+  "CryoHypostasis": {
+    "name": "Buz Hipostazı",
+    "description": {
+      "0": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    }
+  },
+  "MillennialPearlSeahorse": {
+    "name": "Bin Yıllık İnci Denizatı",
+    "description": {
+      "0": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    }
+  },
   "UndividedHeart": {
     "name": "Tek Yürek",
     "description": {
@@ -24889,6 +25562,30 @@
       "0": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
     }
   },
+  "ASubordinatesSkills": {
+    "name": "Bir Yaverin Becerileri",
+    "description": {
+      "0": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    }
+  },
+  "SkivingNewAndImproved": {
+    "name": "Yeni Bir Kaytarma Yöntemi",
+    "description": {
+      "0": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    }
+  },
+  "SternfrostPrism": {
+    "name": "Sert Buzul Prizması",
+    "description": {
+      "0": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    }
+  },
+  "PearlSolidification": {
+    "name": "Katılaşmış İnci",
+    "description": {
+      "0": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    }
+  },
   "MagicGuide": {
     "name": "Büyü Rehberi",
     "description": {
@@ -25297,6 +25994,18 @@
       "0": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
     }
   },
+  "SapwoodBlade": {
+    "name": "İç Kabuk Kılıcı",
+    "description": {
+      "0": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    }
+  },
+  "VeteransVisage": {
+    "name": "Gazinin Çehresi",
+    "description": {
+      "0": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    }
+  },
   "LiyueHarborWharf": {
     "name": "Liyue Limanı Rıhtımı",
     "description": {
@@ -25527,6 +26236,18 @@
   },
   "Mamere": {
     "name": "Mamere",
+    "description": {
+      "0": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    }
+  },
+  "Jeht": {
+    "name": "Jeht",
+    "description": {
+      "0": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    }
+  },
+  "SilverAndMelus": {
+    "name": "Silver ile Melus",
     "description": {
       "0": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
     }
@@ -25837,6 +26558,18 @@
       "0": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
     }
   },
+  "MachineAssemblyLine": {
+    "name": "Makina Montaj Hattı",
+    "description": {
+      "0": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    }
+  },
+  "SunyataFlower": {
+    "name": "Sunyata Çiçeği",
+    "description": {
+      "0": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    }
+  },
   "Origin": {
     "name": "Köken",
     "description": {
@@ -26043,6 +26776,24 @@
     "name": "Yelkenli Gölgesi",
     "description": {
       "0": "Kaeya'nın \"Hırsız Hançer\" oyunundaki giysisi. Olabildiğince dikkat çekici şekilde tasarlanmış göz alıcı bir giysidir. Her ne kadar üstündeki aksesuarlar ve hançerler biraz uğraştırsa da giymesi zor değildir."
+    }
+  },
+  "FrostflowerDew": {
+    "name": "Kırağı Çiçeği Çiyi",
+    "description": {
+      "0": "Shenhe'nin Fener Şenliğinde hediye olarak aldığı giysi. Bu zarif ve resmi takımı ona ustası Bulutlar Hakimi yaptırmıştır. Kırmızı ipler hâlâ kollarını süslüyor, ancak Shenhe'nin yüreğindeki acı artık geçmeye başlamıştır."
+    }
+  },
+  "TwilightBlossom": {
+    "name": "Alacakaranlık Çiçeği",
+    "description": {
+      "0": "Koyu mor ve gök mavisi renklerin hakim olduğu hafif ve zarif bir şenlik giysisi. Adeta Qingxin çiçekleri gibi parıldayan saç aksesuarı da Ganyu'ya muhteşem bir hava katıyor."
+    }
+  },
+  "BambooRain": {
+    "name": "Bambu Yağmuru",
+    "description": {
+      "0": "Feiyun Ticaret Loncasının Xingqiu için hazırladığı resmi bir giysi. Zarif bambu baskıları vardır ve oldukça hoş bir kesime sahiptir ancak Xingqiu'nun bu giyside en sevdiği özellik, içine ince romanlarını koyabileceği iç cepleridir."
     }
   },
   "AdventurerCamp": {
@@ -26329,10 +27080,10 @@
     "description": {
       "0": "Sisli Rüyalar Köşkü yapımını adım adım anlatan detaylı bir taslak.",
       "1": "\"Düşlere dalan sislerden.\"",
-      "2": "Wangshu Hanındakilere birçok açıdan benzeyen mütevazı ve gösterişsiz bir yatak odası. Bu yatak odasının gizemini anlatmaya kelimeler yetmez. Bazen süzülen bulutların arasından sızan gün ışığı misali yanından geçen insanların anılarını canlandırır. Hatta mutsuz anılar geride kalır ve geçmiş mazide kalır.",
+      "2": "Wangshu Hanındakilere birçok açıdan benzeyen mütevazı ve gösterişsiz bir yatak odası. Bu yatak odasının gizemini anlatmaya kelimeler yetmez. Bazen süzülen bulutların arasından sızan gün ışığı misali yanından geçen insanların anılarını canlandırır. Hatta orada yaşanan kederleri unutturur ve geriye sadece mazi kalır.",
       "3": "Akışına bırakıp yaşadığımız bu fani hayatta \"kim\" olduğunu hatırlayanlar yoluna istikrarlı bir şekilde devam edebilir. Düşüncelerimizin en berrak olduğu an, rüya görmek ve uyanmak arasındaki kısa andır. İnsanların neden Wangshu Hanında bir gece geçirip neşeli, yeni yolculuklara atılmaya hazır, yüz kat daha enerjik uyandığına şaşırmamak gerek.",
       "4": "Bu eşyayı kullandıktan sonra Yerleştirme Ekranında görüntüleyebilirsin.",
-      "5": "Yoldaşların arasından Hu Tao, Yanfei, Ganyu, Keqing ve Chongyun bu Dekorasyon Setini tercih eder."
+      "5": "Yoldaşların arasından Hu Tao, Yanfei, Ganyu, Keqing, Chongyun ve Gaming bu Dekorasyon Setini tercih eder."
     }
   },
   "SecretResearchLab": {
@@ -26390,10 +27141,10 @@
     "name": "Gurme Toplantısı",
     "description": {
       "0": "Gurme Toplantısı yapımını adım adım anlatan detaylı bir taslak.",
-      "1": "Chihu Kayalığı'nın curcunasını aratmayan, dış tesisleri bulunan bir lezzet durağı.",
-      "2": "Buna \"gurme toplantısı\" demek yetersiz kalır. Ortada çok fazla mutfak aleti olmasa da Liyue bölgesine özgü yöresel yemekleri sunmak için yeter de artar bile. Sonuçta yetenekli şefler en basit mutfak eşyalarıyla bile lezzetli yemekler pişirebilir. Kolay hazırlanan birçok malzemenin meşhur bazı yemeklerin temelini oluşturması da işi kolaylaştırır elbette.",
+      "1": "Chihu Kayalığı'nın curcunasını aratmayan, açık alanlara sahip bir lezzet durağı.",
+      "2": "Buna \"gurme toplantısı\" demek yetersiz kalır. Ortada çok fazla mutfak aleti yokmuş gibi görünse de Liyue bölgesine özgü yöresel yemekleri sunmak için yeter de artar bile. Sonuçta yetenekli şefler, en basit mutfak eşyalarıyla bile lezzetli yemekler pişirebilir. Kolay hazırlanan birçok malzemenin, meşhur bazı yemeklerin temelini oluşturması da işi kolaylaştırır elbette.",
       "3": "Bu eşyayı kullandıktan sonra Yerleştirme Ekranında görüntüleyebilirsin.",
-      "4": "Yoldaşların arasından Beidou, Xiangling, Ganyu, Xinyan, Tartaglia ve Yelan bu Dekorasyon Setini tercih eder."
+      "4": "Yoldaşların arasından Beidou, Xiangling, Ganyu, Xinyan, Tartaglia, Yelan, Gaming ve Xianyun bu Dekorasyon Setini tercih eder."
     }
   },
   "GlitteringStreet": {
@@ -26410,10 +27161,10 @@
     "name": "Qingce Bulut Köşkü",
     "description": {
       "0": "Qingce Bulut Köşkü yapımını adım adım anlatan detaylı bir taslak.",
-      "1": "Qingce Köyü'nden esinlenerek tasarlanmış bir dağ evi. Dostane atmosferinin bulaşıcı olduğu, oraya giren ziyaretçilerin rahatladıkları ve unuttukları basit eğlencelerin değerini anladıkları söylenir.",
-      "2": "Hedeflerinin peşine düşmek ve yıllarını muhteşem bir şekilde kariyer kovalayarak geçirmek kesinlikle takdire şayan bir durumdur. Ancak bunca gayretin ardından yorgun düşebilirsin. Bu durumda taşrada sessiz ve huzurlu bir hayat yaşamak iyi bir seçenektir. Qingce Köyü servet peşine düşüp köyü terk eden gençlere her zaman hoşgörülü davranmıştır. Döndüklerinde de onlara seve seve kucak açar.",
+      "1": "Qingce Köyü'nden esinlenerek tasarlanmış bir dağ evi. Oradaki samimi ortamın bulaşıcı olduğu, gelip giden ziyaretçilerin rahatladıkları ve bir zamanlar unuttukları basit mutlulukların değerini anladıkları söylenir.",
+      "2": "İdeallerinin peşinden gitmek ve yıllarını bir kariyer peşinde koşmaya adamak elbette takdire şayan bir durumdur, ancak bunca gayretin ardından yorgun düşebilirsin. Bu durumda taşrada sessiz ve huzurlu bir hayat yaşamak iyi bir seçenektir. Qingce Köyü, servet peşine düşüp köyü terk eden gençlere her zaman hoşgörülü davranmıştır. Döndüklerinde de onlara seve seve kucak açar.",
       "3": "Bu eşyayı kullandıktan sonra Yerleştirme Ekranında görüntüleyebilirsin.",
-      "4": "Yoldaşların arasından Xinyan, Xiao, Hu Tao, Qiqi, Shenhe, Yelan ve Yaoyao bu Dekorasyon Setini tercih eder."
+      "4": "Yoldaşların arasından Xinyan, Xiao, Hu Tao, Qiqi, Shenhe, Yelan, Yaoyao ve Xianyun bu Dekorasyon Setini tercih eder."
     }
   },
   "OfHuntingAndDancing": {
@@ -27116,7 +27867,7 @@
       "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
     }
   },
-  "SplendrousNightOverflowingLight": {
+  "SplendorousNightOverflowingLight": {
     "name": "Görkemli Gece: Işık Taşkını",
     "description": {
       "0": "Görkemli Gece: Işık Taşkını yapımını adım adım anlatan detaylı bir taslak.",
@@ -27155,6 +27906,41 @@
     "name": "Yasak Bölge Lambaderi: Gece Işığı",
     "description": {
       "0": "\"Yasak Bölge Lambaderi: Gece Işığı\" yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
+  "ArtisanalFishLanternCarpsWell": {
+    "name": "El Yapımı Balık Feneri: Uçan Sazan",
+    "description": {
+      "0": "El Yapımı Balık Feneri: Uçan Sazan yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
+  "ArtisanFishLanternSpringProfits": {
+    "name": "El Yapımı Balık Feneri: Bereketli Bahar",
+    "description": {
+      "0": "El Yapımı Balık Feneri: Bereketli Bahar yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
+  "PortFloorLightWispOfFragrance": {
+    "name": "Liman Yer Aydınlatması: Hoş Koku",
+    "description": {
+      "0": "Liman Yer Aydınlatması: Hoş Koku yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
+  "PortStreetLightGoodThingsComeInPairs": {
+    "name": "Liman Sokak Aydınlatması: Çifte Şans",
+    "description": {
+      "0": "Liman Sokak Aydınlatması: Çifte Şans yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
+  "ValleyStoneLampEverbrightLight": {
+    "name": "Vadi Taş Lambası: Daima Parlak",
+    "description": {
+      "0": "Vadi Taş Lambası: Daima Parlak yapımını adım adım anlatan detaylı bir taslak.",
       "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
     }
   },
@@ -29139,6 +29925,104 @@
       "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
     }
   },
+  "ValleyStoreTheLeisureOfTea": {
+    "name": "Vadi Dükkanı: Çay Keyfi",
+    "description": {
+      "0": "Vadi Dükkanı: Çay Keyfi yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
+  "ValleyStageBillowingCloudWaves": {
+    "name": "Vadi Sahnesi: Dalgalı Bulutlar",
+    "description": {
+      "0": "Vadi Sahnesi: Dalgalı Bulutlar yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
+  "ValleyVerandaDistantBeginnings": {
+    "name": "Vadi Verandası: Uzak Başlangıçlar",
+    "description": {
+      "0": "Vadi Verandası: Uzak Başlangıçlar yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
+  "ValleyVerandaFromSolidFoundationsToThrive": {
+    "name": "Vadi Verandası: Sağlam Temel",
+    "description": {
+      "0": "Vadi Verandası: Sağlam Temel yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
+  "ValleyPavilionWarmDaylight": {
+    "name": "Vadi Köşkü: Sıcak Gün Işığı",
+    "description": {
+      "0": "Vadi Köşkü: Sıcak Gün Işığı yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
+  "ValleyStoneArchwayRecurringOmenOfAbundance": {
+    "name": "Vadi Taş Kemeri: Bolluk Alameti",
+    "description": {
+      "0": "Vadi Taş Kemeri: Bolluk Alameti yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
+  "ValleyPergolaSunAndRain": {
+    "name": "Vadi Çardağı: İster Güneş İster Yağmur",
+    "description": {
+      "0": "Vadi Çardağı: İster Güneş İster Yağmur yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
+  "ValleyWatchtowerVigilance": {
+    "name": "Vadi Gözetleme Kulesi: Nöbet",
+    "description": {
+      "0": "Vadi Gözetleme Kulesi: Nöbet yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
+  "ValleyResidenceToweringMountains": {
+    "name": "Vadi Konutu: Yüksek Dağlar",
+    "description": {
+      "0": "Vadi Konutu: Yüksek Dağlar yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
+  "ValleyResidenceTranquility": {
+    "name": "Vadi Konutu: Sükunet",
+    "description": {
+      "0": "Vadi Konutu: Sükunet yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
+  "ValleyResidenceCustomComplexity": {
+    "name": "Vadi Konutu: Özel Yapım Karmaşa",
+    "description": {
+      "0": "Vadi Konutu: Özel Yapım Karmaşa yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
+  "ValleyResidenceTotalFocus": {
+    "name": "Vadi Konutu: Tam Odaklanma",
+    "description": {
+      "0": "Vadi Konutu: Tam Odaklanma yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
+  "ValleyResidenceTenderCountryside": {
+    "name": "Vadi Konutu: Taşranın Sakinliği",
+    "description": {
+      "0": "Vadi Konutu: Taşranın Sakinliği yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
+  "ValleyResidenceMeasuredBuilding": {
+    "name": "Vadi Konutu: Ölçülü Yapı",
+    "description": {
+      "0": "Vadi Konutu: Ölçülü Yapı yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
   "MultiArchedMondstadtBuilding": {
     "name": "Kemerli Mondstadt Binası",
     "description": {
@@ -30784,6 +31668,76 @@
       "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
     }
   },
+  "ValleyGateBustlingYard": {
+    "name": "Vadi Kapısı: Kalabalık Avlu",
+    "description": {
+      "0": "Vadi Kapısı: Kalabalık Avlu yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
+  "ValleyGateMountainsBeyondTheGate": {
+    "name": "Vadi Kapısı: Kapının Ötesindeki Dağlar",
+    "description": {
+      "0": "Vadi Kapısı: Kapının Ötesindeki Dağlar yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
+  "ValleyCaveTheFansWindingPath": {
+    "name": "Vadi Mağarası: Yelpazenin Dolambaçlı Yolu",
+    "description": {
+      "0": "Vadi Mağarası: Yelpazenin Dolambaçlı Yolu yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
+  "ValleyWallCornerLikeGatheringWaves": {
+    "name": "Vadi Duvar Köşesi: Yükselen Dalgalar",
+    "description": {
+      "0": "Vadi Duvar Köşesi: Yükselen Dalgalar yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
+  "ValleyStoneWallJadeBeltRiver": {
+    "name": "Vadi Taş Duvarı: Yeşim Kemeri Nehri",
+    "description": {
+      "0": "Vadi Taş Duvarı: Yeşim Kemeri Nehri yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
+  "ValleyStoneWallFlowersAndWillows": {
+    "name": "Vadi Taş Duvarı: Çiçekler ve Söğütler",
+    "description": {
+      "0": "Vadi Taş Duvarı: Çiçekler ve Söğütler yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
+  "ValleyStoneWallCarpAndKite": {
+    "name": "Vadi Taş Duvarı: Sazan ve Uçurtma",
+    "description": {
+      "0": "Vadi Taş Duvarı: Sazan ve Uçurtma yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
+  "ValleyGableWardingWindAndFire": {
+    "name": "Vadi Kalkan Duvarı: Rüzgar ve Ateşe Karşı Koruma",
+    "description": {
+      "0": "Vadi Kalkan Duvarı: Rüzgar ve Ateşe Karşı Koruma yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
+  "ValleyGableRainShelter": {
+    "name": "Vadi Kalkan Duvarı: Yağmur Sığınağı",
+    "description": {
+      "0": "Vadi Kalkan Duvarı: Yağmur Sığınağı yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
+  "ValleyStoneStepsFoundationStone": {
+    "name": "Vadi Taş Basamaklar: Temel Taşı",
+    "description": {
+      "0": "Vadi Taş Basamaklar: Temel Taşı yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
   "FoundationsOfStoneFortunateTimes": {
     "name": "Taş Zemin: Mutlu Zamanlar",
     "description": {
@@ -32079,6 +33033,76 @@
       "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
     }
   },
+  "StoneDrumSonicReverberation": {
+    "name": "Taş Davul: Ses Yankısı",
+    "description": {
+      "0": "Taş Davul: Ses Yankısı yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
+  "WushouDanceCostumeRoaringSuanni": {
+    "name": "Wushou Dansı Kostümü: Kükreyen Suanni",
+    "description": {
+      "0": "Wushou Dansı Kostümü: Kükreyen Suanni yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
+  "WushouDanceDollSleepySuanni": {
+    "name": "Wushou Dansı Oyuncağı: Uykucu Suanni",
+    "description": {
+      "0": "Wushou Dansı Oyuncağı: Uykucu Suanni yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
+  "BanquetScreenDancingButterfliesAndLeapingFish": {
+    "name": "Ziyafet Paravanı: Dans Eden Kelebekler ve Atlayan Balıklar",
+    "description": {
+      "0": "Ziyafet Paravanı: Dans Eden Kelebekler ve Atlayan Balıklar yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
+  "BanquetScreenCryingSwallowsAndChirpingSparrows": {
+    "name": "Ziyafet Paravanı: Çığıran Kırlangıçlar ve Ötüşen Serçeler",
+    "description": {
+      "0": "Ziyafet Paravanı: Çığıran Kırlangıçlar ve Ötüşen Serçeler yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
+  "CelebratoryKiteSuccessiveProsperity": {
+    "name": "Kutlama Uçurtması: Her Sene Bolluk",
+    "description": {
+      "0": "Kutlama Uçurtması: Her Sene Bolluk yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
+  "CelebratoryKiteAllsWell": {
+    "name": "Kutlama Uçurtması: Her Şey Yolunda",
+    "description": {
+      "0": "Kutlama Uçurtması: Her Şey Yolunda yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
+  "CelebratoryKiteButterflyDance": {
+    "name": "Kutlama Uçurtması: Kelebeğin Dansı",
+    "description": {
+      "0": "Kutlama Uçurtması: Kelebeğin Dansı yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
+  "CelebratoryKiteProsperityAndWealth": {
+    "name": "Kutlama Uçurtması: Refah ve Bolluk",
+    "description": {
+      "0": "Kutlama Uçurtması: Refah ve Bolluk yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
+  "FragrantCedarWoodAnnouncementBoard": {
+    "name": "Kokulu Sedir Kütüğü Duyuru Panosu",
+    "description": {
+      "0": "Kokulu Sedir Kütüğü Duyuru Panosu yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
   "BookshelfFreeReading": {
     "name": "Kitaplık: Serbest Okuma",
     "description": {
@@ -32275,6 +33299,13 @@
       "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
     }
   },
+  "TeaChairCoolBreeze": {
+    "name": "Çay Sandalyesi: Serin Meltem",
+    "description": {
+      "0": "Çay Sandalyesi: Serin Meltem yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
   "TwoStoryHilichurlSentryTower": {
     "name": "İki Katlı Dağ Yabanisi Nöbet Kulesi",
     "description": {
@@ -32405,6 +33436,13 @@
     "name": "Üretim Rafı: Özel Yapım",
     "description": {
       "0": "Üretim Rafı: Özel Yapım yapımını adım adım anlatan detaylı bir taslak.",
+      "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    }
+  },
+  "SquareTeaTableFriendlyWelcome": {
+    "name": "Kare Çay Masası: Dostça Karşılama",
+    "description": {
+      "0": "Kare Çay Masası: Dostça Karşılama yapımını adım adım anlatan detaylı bir taslak.",
       "1": "Eşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
     }
   },

@@ -42,7 +42,7 @@
     "name": "Short-Range Rapid Interdiction Fire",
     "description": {
       "0": "Chevreuse quickly shoulders her musket and fires at her opponent(s), dealing <pyro>AoE Pyro DMG</pyro>.",
-      "1": "For a short duration after Chevreuse fires a shot, she will continuously restore HP to the active character on the field. The amount healed is based on her Max HP.",
+      "1": "For a short duration after Chevreuse fires a shot, she will continuously restore HP to your active character on the field. The amount healed is based on her Max HP.",
       "2": "Hold to fire in a different fashion.",
       "3": "<br/>",
       "4": "<strong>Hold</strong>",
@@ -79,7 +79,7 @@
       "0": "Chevreuse fires an explosive grenade at opponents with her musket, dealing <pyro>AoE Pyro DMG.</pyro> After the projectile hits, it will split into many secondary explosive shells.",
       "1": "The secondary explosive shells will burst after a short interval, dealing <pyro>Pyro DMG</pyro> to nearby opponents.",
       "2": "<br/>",
-      "3": "<i>\"Theoretically, a rectangular blast would be most efficient at destroying enemy formations. Unfortunately, the cross-section of an explosive shock wave is round, like most cakes. So, the secondary explosive shells can only be arranged like the fruit on a cake, forming a ring around the edge.</i>"
+      "3": "<i>\"Theoretically, a rectangular blast would be most efficient at destroying enemy formations. Unfortunately, the cross-section of an explosive shock wave is round, like most cakes. So, the secondary explosive shells can only be arranged like the fruit on a cake, forming a ring around the edge.\"</i>"
     },
     "skillParams": {
       "0": "Explosive Grenade DMG",

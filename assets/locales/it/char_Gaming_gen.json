@@ -1,0 +1,160 @@
+{
+  "name": "Gaming",
+  "title": "Avanguardia leonina",
+  "description": "Una guardia dell'Agenzia di trasporti sicuri Cassa e spada, nonché capo del gruppo di Wushou \"Potenti creature mistiche\".",
+  "constellationName": "Leo Expergiscens",
+  "auto": {
+    "name": "Lacerazione stellare",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attacco normale</strong>",
+        "1": "Sferra fino a 4 colpi consecutivi."
+      },
+      "charged": {
+        "0": "<strong>Attacco caricato</strong>",
+        "1": "Consuma vigore nel tempo per sferrare attacchi rotanti contro tutti gli avversari vicini.",
+        "2": "Al termine della sequenza, sferra un fendente più potente."
+      },
+      "plunging": {
+        "0": "<strong>Attacco in picchiata</strong>",
+        "1": "Attacca scagliandosi contro il suolo da mezz'aria, infliggendo DAN agli avversari lungo la traiettoria e DAN ad area all'impatto."
+      }
+    },
+    "skillParams": {
+      "0": "DAN da 1º colpo",
+      "1": "DAN da 2º colpo",
+      "2": "DAN da 3º colpo",
+      "3": "DAN da 4º colpo",
+      "4": "DAN da ATT caricato ciclico",
+      "5": "DAN da ATT caricato finali",
+      "6": "Costo vigore ATT caricato",
+      "7": "Durata max",
+      "8": "DAN da ATT in picchiata",
+      "9": "DAN da ATT in picchiata basso/alto",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Ascensione selvaggia",
+    "description": {
+      "0": "Si proietta in avanti sfruttando le sue arti Wushou, compiendo un lungo balzo verso l'alto dopo aver colpito un bersaglio o una superficie.",
+      "1": "Quando Gaming usa Ascensione selvaggia per elevarsi, sferra il suo potente attacco Cavalcanubi propizio quando usa un attacco in picchiata.",
+      "2": "<br/>",
+      "3": "<strong>Attacco in picchiata: Cavalcanubi propizio</strong>",
+      "4": "I DAN da attacco in picchiata derivanti da Ascensione selvaggia vengono convertiti in <pyro>DAN da Pyro</pyro> che non possono essere contrastati da altre infusioni elementali. All'impatto col suolo, Gaming consuma una certa quantità di PS. Con questo metodo, i PS di Gaming non possono calare al di sotto di un 10% dei suoi PS max.",
+      "5": "I DAN da Cavalcanubi propizio sono considerati DAN da attacco in picchiata.",
+      "6": "<br/>",
+      "7": "<i>\"Le bestie propizie balzano in alto per strappare le foglie: sono simbolo di buona fortuna e di buoni guadagni in arrivo, sai? Significa che tutti noi possiamo raggiungere nuove vette, un passo dopo l'altro!\"</i>"
+    },
+    "skillParams": {
+      "0": "DAN da Attacco in picchiata: Cavalcanubi propizio",
+      "1": "Costo PS",
+      "2": "TdR",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Danza dorata del Suanni",
+    "description": {
+      "0": "Gaming assume la Posizione Wushou ottenendo una breve applicazione di <pyro>Pyro</pyro>, ripristina una data quantità di PS ed evoca il suo alleato, il Suanni Man Chai, che assalta il bersaglio infliggendo <pyro>DAN da Pyro ad area</pyro>.",
+      "1": "Dopo aver attaccato il bersaglio, Man Chai rotola verso una posizione vicina per poi sfrecciare in direzione di Gaming. Quando si riunisce a quest'ultimo, Man Chai abbandona il campo e annulla il TdR dell'abilità elementale di Gaming, Ascensione selvaggia.",
+      "2": "Mentre la Posizione Wushou è attiva, la resistenza all'interruzione di Gaming è aumentata; inoltre, se Gaming ha più di un 50% di PS quando atterra compiendo un attacco Cavalcanubi propizio o si proietta con successo contro l'avversario eseguendo Ascensione selvaggia, evoca nuovamente Man Chai.",
+      "3": "Ciascun Gaming non può avere più di 1 Man Chai in campo contemporaneamente.",
+      "4": "Questo effetto si annulla quando Gaming lascia il campo.",
+      "5": "<br/>",
+      "6": "<i>\"Il suanni dorato sputa fortuna come in uno spettacolo pirotecnico. Ehi! Se ci pensi, si parla di 'prosperità' quando gli affari 'esplodono'!\"</i>"
+    },
+    "skillParams": {
+      "0": "DAN da assalto Suanni Man Chai",
+      "1": "Guarigione da abilità",
+      "2": "Durata Posizione Wushou",
+      "3": "TdR",
+      "4": "Costo energia",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Danza della concordia",
+    "description": {
+      "0": "Quando Attacco in picchiata: Cavalcanubi propizio di <strong>Ascensione selvaggia</strong> colpisce un avversario, i PS di Gaming si ripristinano di un 1,5% dei suoi PS max ogni 0,2 s per 0,8 s."
+    }
+  },
+  "passive2": {
+    "name": "Aria di prosperità",
+    "description": {
+      "0": "Quando Gaming ha meno di un 50% di PS, ottiene un 20% di bonus di guarigione ricevuta. Quando ha un 50% o più di PS, Attacco in picchiata: Cavalcanubi propizio infligge un 20% di DAN in più."
+    }
+  },
+  "passive3": {
+    "name": "Bestia dal grande passo",
+    "description": {
+      "0": "Aumenta la VEL di movimento dei membri del tuo gruppo di un 10% durante il giorno (06:00-18:00).",
+      "1": "Non ha effetto nei domini, nei Domini della conquista o nell'Abisso a spirale. Non è cumulabile con talenti passivi che conferiscono gli stessi effetti."
+    }
+  },
+  "constellation1": {
+    "name": "Portatore di buona sorte",
+    "description": {
+      "0": "Quando il Suanni Man Chai di <strong>Danza dorata del Suanni</strong> si riunisce a Gaming, ripristina un 15% dei PS di quest'ultimo."
+    }
+  },
+  "constellation2": {
+    "name": "Passi tra i fiori di pruno",
+    "description": {
+      "0": "Quando Gaming riceve un effetto di guarigione che supera il limite massimo, il suo ATT aumenta di un 20% per 5 s."
+    }
+  },
+  "constellation3": {
+    "name": "Risveglio spiritico",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Ascensione selvaggia</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation4": {
+    "name": "In volo tra i monti",
+    "description": {
+      "0": "Quando Attacco in picchiata: Cavalcanubi propizio di <strong>Ascensione selvaggia</strong> colpisce un avversario, l'energia di Gaming si ripristina di 2. Quest'effetto può attivarsi una volta ogni 0,2 s."
+    }
+  },
+  "constellation5": {
+    "name": "Ruggito benedetto",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Danza dorata del Suanni</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation6": {
+    "name": "Domatore infallibile",
+    "description": {
+      "0": "Il tasso di CRIT e i DAN da CRIT di Attacco in picchiata: Cavalcanubi propizio di <strong>Ascensione selvaggia</strong> aumentano rispettivamente di un 20% e di un 40%, e il relativo raggio d'attacco si espande."
+    }
+  }
+}
