@@ -213,35 +213,35 @@ export function optimizeTcUsingNodes(
       if (x !== 'other') buffer[x] = substatValue(x, toAssign)
       bufferRolls[x] = toAssign
       const results = compute([{ values: buffer }] as const)
+      const result = results[0]
+      if (result <= max) {
+        return
+      }
       // check constraints
       if (constraints.some((c, i) => results[i + 1] < c)) {
         failed++
         return
       }
-      const result = results[0]
-      if (result > max) {
-        if (!alreadyFeasible) {
-          //check for distributed feasibility
-          const allRolls = allSubstatKeys.map((k) => [
-            k,
-            (existingRolls[k] ?? 0) + (bufferRolls[k] ?? 0),
-          ]) as Array<[SubstatKey, number]>
-          const minOtherRolls = getMinOtherRolls(
-            allRolls,
-            mainStatsCount,
-            minSubLines
-          )
-          // not feasible
-          if ((bufferRolls.other ?? 0) < minOtherRolls) {
-            skipped++
-            return
-          }
+      if (!alreadyFeasible) {
+        //check for distributed feasibility
+        const allRolls = allSubstatKeys.map((k) => [
+          k,
+          (existingRolls[k] ?? 0) + (bufferRolls[k] ?? 0),
+        ]) as Array<[SubstatKey, number]>
+        const minOtherRolls = getMinOtherRolls(
+          allRolls,
+          mainStatsCount,
+          minSubLines
+        )
+        // not feasible
+        if ((bufferRolls.other ?? 0) < minOtherRolls) {
+          skipped++
+          return
         }
-        max = result
-        maxBuffer = structuredClone(buffer)
-        maxBufferRolls = structuredClone(bufferRolls)
       }
-      return
+      max = result
+      maxBuffer = structuredClone(buffer)
+      maxBufferRolls = structuredClone(bufferRolls)
     }
     for (let i = 0; i <= Math.min(maxSubsAssignable[x], toAssign); i++) {
       // TODO: Making sure that i + \sum { maxSubstats[xs] } >= distributedSubstats in each recursion will reduce unnecessary recursion considerably for large problems. It will also tighten the possibilities for the leaf recursion, so you don't need so many checkings.
