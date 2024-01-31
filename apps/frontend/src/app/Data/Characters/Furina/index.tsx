@@ -266,12 +266,7 @@ const c6Pneuma_plunging_impact_dmgInc = infoMut(
 const dmgFormulas = {
   normal: {
     ...Object.fromEntries(
-      dm.normal.hitArr.map((arr, i) => [
-        i,
-        dmgNode('atk', arr, 'normal', {
-          premod: { normal_dmgInc: c6Pneuma_normal_dmgInc },
-        }),
-      ])
+      dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
     ),
     thornBladeDmg: dmgNode('atk', dm.normal.bladeThornDmg, 'normal', {
       hit: { ele: constant(data_gen.ele) },
