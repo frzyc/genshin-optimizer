@@ -17,7 +17,11 @@ import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import type { ICharacterSheet } from '../ICharacterSheet.d'
 import { charTemplates } from '../charTemplates'
-import { dataObjForCharacterSheet, dmgNode } from '../dataUtil'
+import {
+  dataObjForCharacterSheet,
+  dmgNode,
+  plungingDmgNodes,
+} from '../dataUtil'
 
 const key: CharacterKey = 'Diluc'
 const elementKey: ElementKey = 'pyro'
@@ -168,16 +172,7 @@ const dmgFormulas = {
     spinningDmg: dmgNode('atk', dm.charged.spinningDmg, 'charged'),
     finalDmg: dmgNode('atk', dm.charged.finalDmg, 'charged'),
   },
-  plunging: Object.fromEntries(
-    Object.entries(dm.plunging).map(([name, arr]) => [
-      name,
-      dmgNode(
-        'atk',
-        arr,
-        name === 'dmg' ? 'plunging_collision' : 'plunging_impact'
-      ),
-    ])
-  ),
+  plunging: plungingDmgNodes('atk', dm.plunging),
   skill: {
     firstHit: dmgNode('atk', dm.skill.firstHit, 'skill'),
     secondHit: dmgNode('atk', dm.skill.secondHit, 'skill'),

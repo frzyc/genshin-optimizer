@@ -21,7 +21,11 @@ import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import type { ICharacterSheet } from '../ICharacterSheet.d'
 import { charTemplates } from '../charTemplates'
-import { dataObjForCharacterSheet, dmgNode } from '../dataUtil'
+import {
+  dataObjForCharacterSheet,
+  dmgNode,
+  plungingDmgNodes,
+} from '../dataUtil'
 
 const key: CharacterKey = 'AratakiItto'
 const elementKey: ElementKey = 'geo'
@@ -174,16 +178,7 @@ const dmgFormulas = {
       premod: { charged_dmgInc: nodeA4Bonus },
     }),
   },
-  plunging: Object.fromEntries(
-    Object.entries(dm.plunging).map(([name, arr]) => [
-      name,
-      dmgNode(
-        'atk',
-        arr,
-        name === 'dmg' ? 'plunging_collision' : 'plunging_impact'
-      ),
-    ])
-  ),
+  plunging: plungingDmgNodes('atk', dm.plunging),
   skill: {
     dmg: dmgNode('atk', dm.skill.dmg, 'skill'),
     hp: nodeSkillHP,

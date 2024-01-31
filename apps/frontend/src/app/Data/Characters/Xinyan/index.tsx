@@ -17,6 +17,7 @@ import { charTemplates } from '../charTemplates'
 import {
   dataObjForCharacterSheet,
   dmgNode,
+  plungingDmgNodes,
   shieldElement,
   shieldNodeTalent,
 } from '../dataUtil'
@@ -154,16 +155,7 @@ const dmgFormulas = {
     spin: dmgNode('atk', dm.charged.spin, 'charged'),
     final: dmgNode('atk', dm.charged.final, 'charged'),
   },
-  plunging: Object.fromEntries(
-    Object.entries(dm.plunging).map(([key, value]) => [
-      key,
-      dmgNode(
-        'atk',
-        value,
-        key === 'dmg' ? 'plunging_collision' : 'plunging_impact'
-      ),
-    ])
-  ),
+  plunging: plungingDmgNodes('atk', dm.plunging),
   skill: {
     dmg: dmgNode('atk', dm.skill.dmg, 'skill'),
     ...Object.fromEntries(

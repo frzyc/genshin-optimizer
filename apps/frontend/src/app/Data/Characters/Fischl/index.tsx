@@ -23,6 +23,7 @@ import {
   customHealNode,
   dataObjForCharacterSheet,
   dmgNode,
+  plungingDmgNodes,
 } from '../dataUtil'
 
 const key: CharacterKey = 'Fischl'
@@ -99,16 +100,7 @@ const dmgFormulas = {
       hit: { ele: constant('electro') },
     }),
   },
-  plunging: Object.fromEntries(
-    Object.entries(dm.plunging).map(([key, value]) => [
-      key,
-      dmgNode(
-        'atk',
-        value,
-        key === 'dmg' ? 'plunging_collision' : 'plunging_impact'
-      ),
-    ])
-  ),
+  plunging: plungingDmgNodes('atk', dm.plunging),
   skill: {
     ozDmg: dmgNode('atk', dm.skill.ozDmg, 'skill'),
     summonDmg: customDmgNode(

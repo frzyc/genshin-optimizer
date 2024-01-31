@@ -19,7 +19,12 @@ import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import type { ICharacterSheet } from '../ICharacterSheet.d'
 import { charTemplates } from '../charTemplates'
-import { customHealNode, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
+import {
+  customHealNode,
+  dataObjForCharacterSheet,
+  dmgNode,
+  plungingDmgNodes,
+} from '../dataUtil'
 
 const key: CharacterKey = 'Xingqiu'
 const elementKey: ElementKey = 'hydro'
@@ -118,16 +123,7 @@ export const dmgFormulas = {
     dmg1: dmgNode('atk', dm.charged.hit1, 'charged'),
     dmg2: dmgNode('atk', dm.charged.hit2, 'charged'),
   },
-  plunging: Object.fromEntries(
-    Object.entries(dm.plunging).map(([key, value]) => [
-      key,
-      dmgNode(
-        'atk',
-        value,
-        key === 'dmg' ? 'plunging_collision' : 'plunging_impact'
-      ),
-    ])
-  ),
+  plunging: plungingDmgNodes('atk', dm.plunging),
   skill: {
     press1: dmgNode('atk', dm.skill.hit1, 'skill', undefined, nodeC4),
     press2: dmgNode('atk', dm.skill.hit2, 'skill', undefined, nodeC4),

@@ -29,6 +29,7 @@ import {
   dataObjForCharacterSheet,
   dmgNode,
   healNodeTalent,
+  plungingDmgNodes,
 } from '../dataUtil'
 
 const key: CharacterKey = 'Dori'
@@ -141,16 +142,7 @@ const dmgFormulas = {
     spinningDmg: dmgNode('atk', dm.charged.spinningDmg, 'charged'),
     finalDmg: dmgNode('atk', dm.charged.finalDmg, 'charged'),
   },
-  plunging: Object.fromEntries(
-    Object.entries(dm.plunging).map(([key, value]) => [
-      key,
-      dmgNode(
-        'atk',
-        value,
-        key === 'dmg' ? 'plunging_collision' : 'plunging_impact'
-      ),
-    ])
-  ),
+  plunging: plungingDmgNodes('atk', dm.plunging),
   skill: {
     shotDmg: dmgNode('atk', dm.skill.shotDmg, 'skill'),
     roundDmg: dmgNode('atk', dm.skill.roundDmg, 'skill'),

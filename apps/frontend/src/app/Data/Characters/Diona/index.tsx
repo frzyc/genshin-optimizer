@@ -19,6 +19,7 @@ import {
   dataObjForCharacterSheet,
   dmgNode,
   healNodeTalent,
+  plungingDmgNodes,
   shieldElement,
   shieldNodeTalent,
 } from '../dataUtil'
@@ -138,16 +139,7 @@ const dmgFormulas = {
       hit: { ele: constant('cryo') },
     }),
   },
-  plunging: Object.fromEntries(
-    Object.entries(dm.plunging).map(([key, value]) => [
-      key,
-      dmgNode(
-        'atk',
-        value,
-        key === 'dmg' ? 'plunging_collision' : 'plunging_impact'
-      ),
-    ])
-  ),
+  plunging: plungingDmgNodes('atk', dm.plunging),
   skill: {
     pressShield: nodeSkillShieldPress,
     pressCryoShield: shieldElement(elementKey, nodeSkillShieldPress),

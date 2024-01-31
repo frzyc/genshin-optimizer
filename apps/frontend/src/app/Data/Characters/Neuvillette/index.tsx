@@ -26,6 +26,7 @@ import {
   dataObjForCharacterSheet,
   dmgNode,
   healNode,
+  plungingDmgNodes,
 } from '../dataUtil'
 
 const key: CharacterKey = 'Neuvillette'
@@ -152,16 +153,7 @@ const dmgFormulas = {
     hpRestore: healNode('hp', dm.charged.hpRestore, 0),
     hpLoss: prod(percent(dm.charged.hpCost), input.total.hp),
   },
-  plunging: Object.fromEntries(
-    Object.entries(dm.plunging).map(([key, value]) => [
-      key,
-      dmgNode(
-        'atk',
-        value,
-        key === 'dmg' ? 'plunging_collision' : 'plunging_impact'
-      ),
-    ])
-  ),
+  plunging: plungingDmgNodes('atk', dm.plunging),
   skill: {
     skillDmg: dmgNode('hp', dm.skill.skillDmg, 'skill'),
     thornDmg: dmgNode('atk', dm.skill.thornDmg, 'skill'),

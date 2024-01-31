@@ -35,6 +35,7 @@ import {
   dmgNode,
   healNode,
   healNodeTalent,
+  plungingDmgNodes,
 } from '../dataUtil'
 
 const key: CharacterKey = 'Furina'
@@ -279,11 +280,7 @@ const dmgFormulas = {
   charged: {
     dmg: dmgNode('atk', dm.charged.dmg, 'charged'),
   },
-  plunging: {
-    dmg: dmgNode('atk', dm.plunging.dmg, 'plunging_collision'),
-    low: dmgNode('atk', dm.plunging.low, 'plunging_impact'),
-    high: dmgNode('atk', dm.plunging.high, 'plunging_impact'),
-  },
+  plunging: plungingDmgNodes('atk', dm.plunging),
   skill: {
     bubbleDmg: dmgNode('hp', dm.skill.bubbleDmg, 'skill'),
     usherDmg: dmgNode(

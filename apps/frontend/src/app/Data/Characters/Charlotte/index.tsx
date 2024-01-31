@@ -27,6 +27,7 @@ import {
   dmgNode,
   healNode,
   healNodeTalent,
+  plungingDmgNodes,
 } from '../dataUtil'
 import type { ICharacterSheet } from '../ICharacterSheet'
 
@@ -166,16 +167,7 @@ const dmgFormulas = {
     dmg: dmgNode('atk', dm.charged.dmg, 'charged'),
     thornDmg: dmgNode('atk', dm.charged.thornDmg, 'normal'),
   },
-  plunging: Object.fromEntries(
-    Object.entries(dm.plunging).map(([key, value]) => [
-      key,
-      dmgNode(
-        'atk',
-        value,
-        key === 'dmg' ? 'plunging_collision' : 'plunging_impact'
-      ),
-    ])
-  ),
+  plunging: plungingDmgNodes('atk', dm.plunging),
   skill: {
     photoPressDmg: dmgNode('atk', dm.skill.photoPressDmg, 'skill'),
     photoHoldDmg: dmgNode('atk', dm.skill.photoHoldDmg, 'skill'),

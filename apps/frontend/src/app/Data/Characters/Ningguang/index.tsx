@@ -14,7 +14,11 @@ import { cond, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import type { ICharacterSheet } from '../ICharacterSheet.d'
 import { charTemplates } from '../charTemplates'
-import { dataObjForCharacterSheet, dmgNode } from '../dataUtil'
+import {
+  dataObjForCharacterSheet,
+  dmgNode,
+  plungingDmgNodes,
+} from '../dataUtil'
 
 const key: CharacterKey = 'Ningguang'
 const elementKey: ElementKey = 'geo'
@@ -81,16 +85,7 @@ const dmgFormulas = {
     baseDmg: dmgNode('atk', dm.charged.dmg, 'charged'),
     jadeDmg: dmgNode('atk', dm.charged.jadeDmg, 'charged'),
   },
-  plunging: Object.fromEntries(
-    Object.entries(dm.plunging).map(([key, value]) => [
-      key,
-      dmgNode(
-        'atk',
-        value,
-        key === 'dmg' ? 'plunging_collision' : 'plunging_impact'
-      ),
-    ])
-  ),
+  plunging: plungingDmgNodes('atk', dm.plunging),
   skill: {
     screenHp: prod(
       subscript(input.total.skillIndex, dm.skill.screenHp, { unit: '%' }),
