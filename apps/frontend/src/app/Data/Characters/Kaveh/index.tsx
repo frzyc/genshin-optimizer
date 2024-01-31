@@ -1,5 +1,6 @@
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
 import { allStats } from '@genshin-optimizer/gi-stats'
+import { objKeyMap, range } from '@genshin-optimizer/util'
 import ColorText from '../../../Components/ColoredText'
 import { input } from '../../../Formula'
 import {
@@ -14,9 +15,9 @@ import {
   prod,
   subscript,
 } from '../../../Formula/utils'
-import { objKeyMap, range } from '@genshin-optimizer/util'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
+import type { ICharacterSheet } from '../ICharacterSheet'
 import { charTemplates } from '../charTemplates'
 import {
   customDmgNode,
@@ -24,7 +25,6 @@ import {
   dataObjForCharacterSheet,
   dmgNode,
 } from '../dataUtil'
-import type { ICharacterSheet } from '../ICharacterSheet'
 
 const key: CharacterKey = 'Kaveh'
 const elementKey: ElementKey = 'dendro'
@@ -147,7 +147,11 @@ const dmgFormulas = {
   plunging: Object.fromEntries(
     Object.entries(dm.plunging).map(([key, value]) => [
       key,
-      dmgNode('atk', value, 'plunging'),
+      dmgNode(
+        'atk',
+        value,
+        key === 'dmg' ? 'plunging_collision' : 'plunging_impact'
+      ),
     ])
   ),
   skill: {

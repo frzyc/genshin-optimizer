@@ -1,15 +1,15 @@
-import { allStats } from '@genshin-optimizer/gi-stats'
-import { input } from '../../../Formula'
-import { equal, greaterEq, infoMut, percent } from '../../../Formula/utils'
 import type {
   CharacterKey,
   ElementKey,
   RegionKey,
 } from '@genshin-optimizer/consts'
-import { cond, stg, st } from '../../SheetUtil'
+import { allStats } from '@genshin-optimizer/gi-stats'
+import { input } from '../../../Formula'
+import { equal, greaterEq, infoMut, percent } from '../../../Formula/utils'
+import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
-import { charTemplates } from '../charTemplates'
 import type { ICharacterSheet } from '../ICharacterSheet.d'
+import { charTemplates } from '../charTemplates'
 import {
   dataObjForCharacterSheet,
   dmgNode,
@@ -82,7 +82,11 @@ const dmgFormulas = {
   plunging: Object.fromEntries(
     Object.entries(dm.plunging).map(([key, value]) => [
       key,
-      dmgNode('atk', value, 'plunging'),
+      dmgNode(
+        'atk',
+        value,
+        key === 'dmg' ? 'plunging_collision' : 'plunging_impact'
+      ),
     ])
   ),
   skill: {

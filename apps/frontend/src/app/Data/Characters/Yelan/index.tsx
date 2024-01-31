@@ -1,3 +1,4 @@
+import type { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
 import { allStats } from '@genshin-optimizer/gi-stats'
 import { input, tally, target } from '../../../Formula'
 import {
@@ -13,12 +14,11 @@ import {
   sum,
 } from '../../../Formula/utils'
 import KeyMap from '../../../KeyMap'
-import type { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
 import { range } from '../../../Util/Util'
-import { cond, stg, st } from '../../SheetUtil'
+import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
-import { charTemplates } from '../charTemplates'
 import type { ICharacterSheet } from '../ICharacterSheet.d'
+import { charTemplates } from '../charTemplates'
 import { customDmgNode, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
 
 const key: CharacterKey = 'Yelan'
@@ -144,7 +144,11 @@ const dmgFormulas = {
   plunging: Object.fromEntries(
     Object.entries(dm.plunging).map(([key, value]) => [
       key,
-      dmgNode('atk', value, 'plunging'),
+      dmgNode(
+        'atk',
+        value,
+        key === 'dmg' ? 'plunging_collision' : 'plunging_impact'
+      ),
     ])
   ),
   skill: {

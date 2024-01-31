@@ -1,4 +1,6 @@
+import type { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
 import { allStats } from '@genshin-optimizer/gi-stats'
+import { range } from '@genshin-optimizer/util'
 import { input, target } from '../../../Formula'
 import type { Data } from '../../../Formula/type'
 import {
@@ -13,13 +15,11 @@ import {
   subscript,
 } from '../../../Formula/utils'
 import KeyMap from '../../../KeyMap'
-import type { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
-import { cond, stg, st } from '../../SheetUtil'
+import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
-import { charTemplates } from '../charTemplates'
 import type { ICharacterSheet } from '../ICharacterSheet.d'
+import { charTemplates } from '../charTemplates'
 import { customDmgNode, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
-import { range } from '@genshin-optimizer/util'
 
 const key: CharacterKey = 'KamisatoAyato'
 const elementKey: ElementKey = 'hydro'
@@ -188,7 +188,11 @@ const dmgFormulas = {
   plunging: Object.fromEntries(
     Object.entries(dm.plunging).map(([key, value]) => [
       key,
-      dmgNode('atk', value, 'plunging'),
+      dmgNode(
+        'atk',
+        value,
+        key === 'dmg' ? 'plunging_collision' : 'plunging_impact'
+      ),
     ])
   ),
   skill: {

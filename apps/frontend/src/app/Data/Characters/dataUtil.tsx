@@ -55,12 +55,19 @@ const inferredHitEle = stringPrio(
 )
 
 function getTalentType(
-  move: 'normal' | 'charged' | 'plunging' | 'skill' | 'burst'
+  move:
+    | 'normal'
+    | 'charged'
+    | 'plunging_collision'
+    | 'plunging_impact'
+    | 'skill'
+    | 'burst'
 ) {
   switch (move) {
     case 'normal':
     case 'charged':
-    case 'plunging':
+    case 'plunging_collision':
+    case 'plunging_impact':
       return 'auto'
     case 'skill':
       return 'skill'
@@ -72,7 +79,14 @@ function getTalentType(
 /** Note: `additional` applies only to this formula */
 export function customDmgNode(
   base: NumNode,
-  move: 'normal' | 'charged' | 'plunging' | 'skill' | 'burst' | 'elemental',
+  move:
+    | 'normal'
+    | 'charged'
+    | 'plunging_collision'
+    | 'plunging_impact'
+    | 'skill'
+    | 'burst'
+    | 'elemental',
   additional: Data = {}
 ): NumNode {
   return data(
@@ -108,7 +122,13 @@ export function customHealNode(base: NumNode, additional?: Data): NumNode {
 export function dmgNode(
   base: MainStatKey | SubstatKey,
   lvlMultiplier: number[],
-  move: 'normal' | 'charged' | 'plunging' | 'skill' | 'burst',
+  move:
+    | 'normal'
+    | 'charged'
+    | 'plunging_collision'
+    | 'plunging_impact'
+    | 'skill'
+    | 'burst',
   additional: Data = {},
   specialMultiplier?: NumNode
 ): NumNode {
@@ -129,7 +149,13 @@ export function dmgNode(
 export function splitScaleDmgNode(
   bases: (MainStatKey | SubstatKey)[],
   lvlMultipliers: number[][],
-  move: 'normal' | 'charged' | 'plunging' | 'skill' | 'burst',
+  move:
+    | 'normal'
+    | 'charged'
+    | 'plunging_collision'
+    | 'plunging_impact'
+    | 'skill'
+    | 'burst',
   additional: Data = {}
 ): NumNode {
   const talentType = getTalentType(move)
@@ -174,7 +200,13 @@ export function shieldNodeTalent(
   base: MainStatKey | SubstatKey,
   baseMultiplier: number[],
   flat: number[],
-  move: 'normal' | 'charged' | 'plunging' | 'skill' | 'burst',
+  move:
+    | 'normal'
+    | 'charged'
+    | 'plunging_collision'
+    | 'plunging_impact'
+    | 'skill'
+    | 'burst',
   additional?: Data,
   multiplier?: NumNode | number
 ): NumNode {
@@ -205,7 +237,13 @@ export function healNodeTalent(
   base: MainStatKey | SubstatKey,
   baseMultiplier: number[],
   flat: number[],
-  move: 'normal' | 'charged' | 'plunging' | 'skill' | 'burst',
+  move:
+    | 'normal'
+    | 'charged'
+    | 'plunging_collision'
+    | 'plunging_impact'
+    | 'skill'
+    | 'burst',
   additional?: Data,
   multiplier?: NumNode | number
 ): NumNode {

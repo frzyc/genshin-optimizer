@@ -157,7 +157,11 @@ const dmgFormulas = {
   plunging: Object.fromEntries(
     Object.entries(dm.plunging).map(([name, arr]) => [
       name,
-      dmgNode('atk', arr, 'plunging'),
+      dmgNode(
+        'atk',
+        arr,
+        name === 'dmg' ? 'plunging_collision' : 'plunging_impact'
+      ),
     ])
   ),
   skill: {

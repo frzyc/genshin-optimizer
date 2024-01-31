@@ -178,7 +178,7 @@ const leapDmg = (lvlMultiplier: number[]) =>
       subscript(input.total.skillIndex, lvlMultiplier, { unit: '%' }),
       input.total.atk
     ),
-    'plunging',
+    'plunging_impact',
     {
       premod: {
         plunging_critDMG_: c6Wave_critDMG_,
@@ -196,9 +196,9 @@ const dmgFormulas = {
     dmg: dmgNode('atk', dm.charged.dmg, 'charged'),
   },
   plunging: {
-    dmg: dmgNode('atk', dm.plunging.dmg, 'plunging'),
-    low: dmgNode('atk', dm.plunging.low, 'plunging'),
-    high: dmgNode('atk', dm.plunging.high, 'plunging'),
+    dmg: dmgNode('atk', dm.plunging.dmg, 'plunging_collision'),
+    low: dmgNode('atk', dm.plunging.low, 'plunging_impact'),
+    high: dmgNode('atk', dm.plunging.high, 'plunging_impact'),
   },
   skill: {
     trailDmg: dmgNode('atk', dm.skill.trailDmg, 'skill'),
@@ -261,7 +261,7 @@ export const data = dataObjForCharacterSheet(
     },
     teamBuff: {
       premod: {
-        plunging_dmgInc: a4HasStacks_plunging_dmg_inc,
+        plunging_impact_dmgInc: a4HasStacks_plunging_dmg_inc,
         plunging_critRate_: a1_plunging_critRate_,
       },
     },

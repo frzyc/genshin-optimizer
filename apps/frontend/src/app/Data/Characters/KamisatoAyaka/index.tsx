@@ -13,9 +13,9 @@ import {
 import KeyMap from '../../../KeyMap'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
+import type { ICharacterSheet } from '../ICharacterSheet.d'
 import { charTemplates } from '../charTemplates'
 import { dataObjForCharacterSheet, dmgNode } from '../dataUtil'
-import type { ICharacterSheet } from '../ICharacterSheet.d'
 
 const key: CharacterKey = 'KamisatoAyaka'
 const elementKey: ElementKey = 'cryo'
@@ -141,7 +141,11 @@ const dmgFormulas = {
   plunging: Object.fromEntries(
     Object.entries(dm.plunging).map(([key, value]) => [
       key,
-      dmgNode('atk', value, 'plunging'),
+      dmgNode(
+        'atk',
+        value,
+        key === 'dmg' ? 'plunging_collision' : 'plunging_impact'
+      ),
     ])
   ),
   skill: {

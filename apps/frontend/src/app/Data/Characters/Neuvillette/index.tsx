@@ -11,11 +11,11 @@ import {
   infoMut,
   lookup,
   naught,
-  unequal,
+  one,
   percent,
   prod,
   threshold,
-  one,
+  unequal,
 } from '../../../Formula/utils'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
@@ -155,7 +155,11 @@ const dmgFormulas = {
   plunging: Object.fromEntries(
     Object.entries(dm.plunging).map(([key, value]) => [
       key,
-      dmgNode('atk', value, 'plunging'),
+      dmgNode(
+        'atk',
+        value,
+        key === 'dmg' ? 'plunging_collision' : 'plunging_impact'
+      ),
     ])
   ),
   skill: {

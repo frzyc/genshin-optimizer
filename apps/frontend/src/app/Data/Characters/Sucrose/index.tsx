@@ -1,4 +1,5 @@
 import { allStats } from '@genshin-optimizer/gi-stats'
+import { objKeyMap } from '@genshin-optimizer/util'
 import ColorText from '../../../Components/ColoredText'
 import { input, target } from '../../../Formula/index'
 import {
@@ -13,11 +14,10 @@ import {
 } from '../../../Formula/utils'
 import KeyMap from '../../../KeyMap'
 import { absorbableEle } from '../../../Types/consts'
-import { objKeyMap } from '@genshin-optimizer/util'
 import { cond, condReadNode, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
-import { charTemplates } from '../charTemplates'
 import type { ICharacterSheet } from '../ICharacterSheet.d'
+import { charTemplates } from '../charTemplates'
 import { dataObjForCharacterSheet, dmgNode } from '../dataUtil'
 
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
@@ -124,7 +124,11 @@ export const dmgFormulas = {
   plunging: Object.fromEntries(
     Object.entries(dm.plunging).map(([key, value]) => [
       key,
-      dmgNode('atk', value, 'plunging'),
+      dmgNode(
+        'atk',
+        value,
+        key === 'dmg' ? 'plunging_collision' : 'plunging_impact'
+      ),
     ])
   ),
   skill: {
