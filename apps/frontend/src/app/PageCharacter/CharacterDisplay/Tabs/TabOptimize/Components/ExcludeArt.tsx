@@ -209,7 +209,8 @@ export default function ExcludeArt({
   )
 }
 
-export function ExcludeArtRedButtons({
+// TODO: Refactor this with ArtifactFilter.tsx:ExcludeArtRedButtons
+function ExcludeArtRedButtons({
   artifactIds,
 }: {
   artifactIds: string[]
