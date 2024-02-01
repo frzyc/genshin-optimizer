@@ -43,6 +43,8 @@ import {
   parseSubstats,
 } from './parse'
 
+import { processEntryML } from './processImgML'
+
 export type Processed = {
   fileName: string
   imageURL: string
@@ -68,6 +70,21 @@ export async function processEntry(
   const imageData = await urlToImageData(imageURL)
 
   const debugImgs = debug ? ({} as Record<string, string>) : undefined
+  if (true) {
+    const { artifact, texts, imageURL } = await processEntryML(
+      imageData,
+      textsFromImage,
+      debugImgs
+    )
+    return {
+      fileName: fName,
+      imageURL,
+      artifact,
+      texts,
+      debugImgs,
+    }
+  }
+
   const artifactCardImageData = verticallyCropArtifactCard(imageData, debugImgs)
   const artifactCardCanvas = imageDataToCanvas(artifactCardImageData)
 
@@ -335,7 +352,7 @@ function verticallyCropArtifactCard(
   return cropped
 }
 
-function parseRarity(
+export function parseRarity(
   headerData: ImageData,
   debugImgs?: Record<string, string>
 ) {
