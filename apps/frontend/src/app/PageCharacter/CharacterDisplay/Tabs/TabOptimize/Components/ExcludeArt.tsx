@@ -72,10 +72,17 @@ export default function ExcludeArt({
   const [showSel, onOpenSel, onCloseSel] = useBoolState(false)
   const onSelect = useCallback(
     (id: string) => {
-      buildSettingDispatch({
-        artExclusion: [...artExclusion, id],
-        useExcludedArts: false,
-      })
+      if (artExclusion.includes(id)) {
+        buildSettingDispatch({
+          artExclusion: artExclusion.filter((i) => i !== id),
+          useExcludedArts: false,
+        })
+      } else {
+        buildSettingDispatch({
+          artExclusion: [...artExclusion, id],
+          useExcludedArts: false,
+        })
+      }
     },
     [buildSettingDispatch, artExclusion]
   )
