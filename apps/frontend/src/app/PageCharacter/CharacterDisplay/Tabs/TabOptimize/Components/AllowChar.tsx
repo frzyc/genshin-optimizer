@@ -196,14 +196,9 @@ export default function AllowChar({
             // counts are added to each of their elements in the database
             if (!charKeyMap[ck] && locList.includes('Traveler')) {
               ctMap.elementTotals[eleKey].current++
-            }
 
-            if (travelerProcessed) return
-
-            // This is needed for the element filters
-            // If a Traveler of different element is rendered than the one in the filter,
-            // the counts should be increased accordingly
-            if (!charKeyMap[ck] && locList.includes('Traveler')) {
+              // Only count the traveler once for rarity and weapon type totals
+              if (travelerProcessed) return
               ctMap.weaponTypeTotals[weaponTypeKey].current++
               ctMap.characterRarityTotals[characterRarityKey].current++
             }
