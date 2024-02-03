@@ -1,10 +1,14 @@
-import type { SubstatKey } from '@genshin-optimizer/consts'
 import {
   useBoolState,
   useForceUpdate,
   useMediaQueryUp,
-} from '@genshin-optimizer/react-util'
-import { clamp, filterFunction, sortFunction } from '@genshin-optimizer/util'
+} from '@genshin-optimizer/common_react-util'
+import {
+  clamp,
+  filterFunction,
+  sortFunction,
+} from '@genshin-optimizer/common_util'
+import type { SubstatKey } from '@genshin-optimizer/gi_consts'
 import { Add } from '@mui/icons-material'
 import DifferenceIcon from '@mui/icons-material/Difference'
 import {

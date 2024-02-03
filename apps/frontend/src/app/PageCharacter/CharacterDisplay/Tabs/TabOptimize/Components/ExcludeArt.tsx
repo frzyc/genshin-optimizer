@@ -2,8 +2,8 @@ import {
   useBoolState,
   useForceUpdate,
   useMediaQueryUp,
-} from '@genshin-optimizer/react-util'
-import { filterFunction } from '@genshin-optimizer/util'
+} from '@genshin-optimizer/common_react-util'
+import { filterFunction } from '@genshin-optimizer/common_util'
 import AddIcon from '@mui/icons-material/Add'
 import CheckBoxIcon from '@mui/icons-material/CheckBox'
 import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank'

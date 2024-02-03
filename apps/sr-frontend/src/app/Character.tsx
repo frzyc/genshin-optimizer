@@ -1,13 +1,13 @@
-import type { AscensionKey } from '@genshin-optimizer/sr-consts'
-import { convert, selfTag } from '@genshin-optimizer/sr-formula'
+import { CardThemed } from '@genshin-optimizer/common_ui'
+import type { AscensionKey } from '@genshin-optimizer/sr_consts'
+import { convert, selfTag } from '@genshin-optimizer/sr_formula'
 import {
   BuildDisplay,
   useCalcContext,
   useCharacter,
   useCharacterContext,
   useCharacterReducer,
-} from '@genshin-optimizer/sr-ui'
-import { CardThemed } from '@genshin-optimizer/ui-common'
+} from '@genshin-optimizer/sr_ui'
 import { ExpandMore } from '@mui/icons-material'
 import {
   Accordion,

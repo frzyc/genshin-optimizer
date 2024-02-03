@@ -1,4 +1,4 @@
-import { theme } from '@genshin-optimizer/gi-ui'
+import { theme } from '@genshin-optimizer/gi_ui'
 import { DynamicFeed, Refresh } from '@mui/icons-material'
 import {
   Box,

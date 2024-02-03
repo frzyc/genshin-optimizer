@@ -1,4 +1,4 @@
-import type { ElementWithPhyKey, WeaponKey } from '@genshin-optimizer/consts'
+import type { ElementWithPhyKey, WeaponKey } from '@genshin-optimizer/gi_consts'
 import type { KeyMapPrefix, Unit } from '../KeyMap'
 import type {
   AdditiveReactionsKey,

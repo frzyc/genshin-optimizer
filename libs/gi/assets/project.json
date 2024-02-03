@@ -1,0 +1,16 @@
+{
+  "name": "gi_assets",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/gi/assets/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "gen-file": {
+      "executor": "@genshin-optimizer/gi_assets:gen-assets",
+      "outputs": ["{workspaceRoot}/${projectRoot}/src/gen/**/*"]
+    },
+    "lint": {},
+    "build": {},
+    "build-vite": {}
+  }
+}

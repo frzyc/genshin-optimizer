@@ -1,7 +1,7 @@
 import type { ButtonProps } from '@mui/material'
 import { MenuItem } from '@mui/material'
 import { useTranslation } from 'react-i18next'
-import type { ArtifactRarity } from '@genshin-optimizer/consts'
+import type { ArtifactRarity } from '@genshin-optimizer/gi_consts'
 import DropdownButton from '../DropdownMenu/DropdownButton'
 import { StarsDisplay } from '../StarDisplay'
 

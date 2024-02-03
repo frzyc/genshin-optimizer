@@ -21,7 +21,7 @@
   },
   "targetDefaults": {
     "update-dm": {
-      "executor": "@genshin-optimizer/plugin:sync-repo",
+      "executor": "@genshin-optimizer/common_plugin:sync-repo",
       "outputs": ["{workspaceRoot}/{options.outputPath}.hash"]
     },
     "gen-file": {

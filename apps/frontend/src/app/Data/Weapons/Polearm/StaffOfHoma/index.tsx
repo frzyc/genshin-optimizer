@@ -1,12 +1,12 @@
+import type { WeaponKey } from '@genshin-optimizer/gi_consts'
+import { allStats } from '@genshin-optimizer/gi_stats'
 import { input } from '../../../../Formula'
 import { equal, infoMut, prod, subscript, sum } from '../../../../Formula/utils'
 import KeyMap from '../../../../KeyMap'
-import type { WeaponKey } from '@genshin-optimizer/consts'
-import { allStats } from '@genshin-optimizer/gi-stats'
 import { cond, st } from '../../../SheetUtil'
-import { dataObjForWeaponSheet } from '../../util'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
+import { dataObjForWeaponSheet } from '../../util'
 
 const key: WeaponKey = 'StaffOfHoma'
 const data_gen = allStats.weapon.data[key]

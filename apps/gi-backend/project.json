@@ -62,5 +62,5 @@
     }
   },
   "tags": [],
-  "implicitDependencies": ["gi-prisma-schema"]
+  "implicitDependencies": ["gi_prisma-schema"]
 }

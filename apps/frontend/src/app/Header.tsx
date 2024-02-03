@@ -1,5 +1,6 @@
-import { FlowerIcon } from '@genshin-optimizer/gi-svgicons'
-import { AnvilIcon } from '@genshin-optimizer/svgicons'
+import { useForceUpdate } from '@genshin-optimizer/common_react-util'
+import { AnvilIcon } from '@genshin-optimizer/common_svgicons'
+import { FlowerIcon } from '@genshin-optimizer/gi_svgicons'
 import {
   Article,
   Construction,
@@ -35,9 +36,8 @@ import { Link as RouterLink, useMatch } from 'react-router-dom'
 import { SillyContext } from './Context/SillyContext'
 import { DatabaseContext } from './Database/Database'
 import useDBMeta from './ReactHooks/useDBMeta'
-import { useForceUpdate } from '@genshin-optimizer/react-util'
-import silly_icon from './silly_icon.png'
 import { shouldShowDevComponents } from './Util/Util'
+import silly_icon from './silly_icon.png'
 type ITab = {
   i18Key: string
   icon: Displayable

@@ -1,11 +1,11 @@
-import { StatIcon } from '@genshin-optimizer/gi-svgicons'
 import {
   CardThemed,
   CustomNumberInput,
   CustomNumberInputButtonGroupWrapper,
   DropdownButton,
-} from '@genshin-optimizer/ui-common'
-import { unit } from '@genshin-optimizer/util'
+} from '@genshin-optimizer/common_ui'
+import { unit } from '@genshin-optimizer/common_util'
+import { StatIcon } from '@genshin-optimizer/gi_svgicons'
 import ClearIcon from '@mui/icons-material/Clear'
 import {
   Box,

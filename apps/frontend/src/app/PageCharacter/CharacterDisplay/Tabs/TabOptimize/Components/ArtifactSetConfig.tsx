@@ -1,11 +1,14 @@
-import type { ArtifactSetKey, ArtifactSlotKey } from '@genshin-optimizer/consts'
+import { useForceUpdate } from '@genshin-optimizer/common_react-util'
+import { iconInlineProps } from '@genshin-optimizer/common_svgicons'
+import { deepClone, objKeyMap } from '@genshin-optimizer/common_util'
+import type {
+  ArtifactSetKey,
+  ArtifactSlotKey,
+} from '@genshin-optimizer/gi_consts'
 import {
   allArtifactSetKeys,
   allArtifactSlotKeys,
-} from '@genshin-optimizer/consts'
-import { useForceUpdate } from '@genshin-optimizer/react-util'
-import { iconInlineProps } from '@genshin-optimizer/svgicons'
-import { deepClone, objKeyMap } from '@genshin-optimizer/util'
+} from '@genshin-optimizer/gi_consts'
 import { CheckBox, CheckBoxOutlineBlank, Replay } from '@mui/icons-material'
 import BlockIcon from '@mui/icons-material/Block'
 import SettingsIcon from '@mui/icons-material/Settings'

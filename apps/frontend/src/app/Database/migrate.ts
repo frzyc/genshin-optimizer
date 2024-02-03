@@ -1,17 +1,17 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import type { DBStorage } from '@genshin-optimizer/common_database'
 import type {
   ElementKey,
   LocationCharacterKey,
   TravelerKey,
-} from '@genshin-optimizer/consts'
+} from '@genshin-optimizer/gi_consts'
 import {
   allLocationCharacterKeys,
   travelerElements,
-} from '@genshin-optimizer/consts'
+} from '@genshin-optimizer/gi_consts'
+import type { ICharacter, IGOOD } from '@genshin-optimizer/gi_good'
 import type { CustomMultiTarget } from '../Types/character'
-import type { DBStorage } from '@genshin-optimizer/database'
 import type { IGO } from './exim'
-import type { ICharacter, IGOOD } from '@genshin-optimizer/gi-good'
 
 // MIGRATION STEP
 // 0. DO NOT change old `migrateVersion` calls

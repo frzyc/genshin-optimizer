@@ -1,9 +1,9 @@
-import type { LocationCharacterKey } from '@genshin-optimizer/consts'
+import type { LocationCharacterKey } from '@genshin-optimizer/gi_consts'
 import {
   allLocationCharacterKeys,
   allTravelerKeys,
   charKeyToLocGenderedCharKey,
-} from '@genshin-optimizer/consts'
+} from '@genshin-optimizer/gi_consts'
 import { Chip, Skeleton } from '@mui/material'
 import { Suspense, useCallback, useContext, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'

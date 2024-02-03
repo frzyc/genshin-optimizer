@@ -18,7 +18,7 @@ export type DropdownButtonProps = Omit<ButtonProps, 'title'> & {
 }
 
 /**
- * @deprecated use @go/ui-common
+ * @deprecated use @go/common_ui
  * @param param0
  * @returns
  */

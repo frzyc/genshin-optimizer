@@ -1,5 +1,5 @@
-import type { WeaponKey } from '@genshin-optimizer/consts'
-import { allStats } from '@genshin-optimizer/gi-stats'
+import type { WeaponKey } from '@genshin-optimizer/gi_consts'
+import { allStats } from '@genshin-optimizer/gi_stats'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'

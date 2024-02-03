@@ -1,8 +1,8 @@
-import { SandboxStorage } from '@genshin-optimizer/database'
-import { SroDatabase } from '@genshin-optimizer/sr-db'
-import { useDatabaseContext } from '@genshin-optimizer/sr-ui'
-import { CardThemed, DropdownButton } from '@genshin-optimizer/ui-common'
-import { range } from '@genshin-optimizer/util'
+import { SandboxStorage } from '@genshin-optimizer/common_database'
+import { CardThemed, DropdownButton } from '@genshin-optimizer/common_ui'
+import { range } from '@genshin-optimizer/common_util'
+import { SroDatabase } from '@genshin-optimizer/sr_db'
+import { useDatabaseContext } from '@genshin-optimizer/sr_ui'
 import {
   Button,
   CardContent,

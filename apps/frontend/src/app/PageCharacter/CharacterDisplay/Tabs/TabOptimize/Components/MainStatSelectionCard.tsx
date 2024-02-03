@@ -1,10 +1,14 @@
-import { allElementWithPhyKeys, artSlotsData } from '@genshin-optimizer/consts'
+import { iconInlineProps } from '@genshin-optimizer/common_svgicons'
+import {
+  allElementWithPhyKeys,
+  artSlotsData,
+} from '@genshin-optimizer/gi_consts'
 import {
   AtkIcon,
   FlowerIcon,
   HpIcon,
   PlumeIcon,
-} from '@genshin-optimizer/gi-svgicons'
+} from '@genshin-optimizer/gi_svgicons'
 import {
   Box,
   Button,
@@ -22,7 +26,6 @@ import { StatColoredWithUnit } from '../../../../../Components/StatDisplay'
 import { CharacterContext } from '../../../../../Context/CharacterContext'
 import { DatabaseContext } from '../../../../../Database/Database'
 import StatIcon from '../../../../../KeyMap/StatIcon'
-import { iconInlineProps } from '@genshin-optimizer/svgicons'
 import { handleMultiSelect } from '../../../../../Util/MultiSelect'
 import { bulkCatTotal } from '../../../../../Util/totalUtils'
 import useBuildSetting from '../useBuildSetting'

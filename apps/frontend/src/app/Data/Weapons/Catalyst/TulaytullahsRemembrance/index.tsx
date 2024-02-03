@@ -9,8 +9,8 @@ import {
   sum,
 } from '../../../../Formula/utils'
 import KeyMap from '../../../../KeyMap'
-import type { WeaponKey } from '@genshin-optimizer/consts'
-import { allStats } from '@genshin-optimizer/gi-stats'
+import type { WeaponKey } from '@genshin-optimizer/gi_consts'
+import { allStats } from '@genshin-optimizer/gi_stats'
 import { range } from '../../../../Util/Util'
 import { cond, st, stg } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'

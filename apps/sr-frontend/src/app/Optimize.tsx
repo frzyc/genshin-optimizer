@@ -1,16 +1,16 @@
-import type { RelicSlotKey } from '@genshin-optimizer/sr-consts'
-import type { ICachedRelic } from '@genshin-optimizer/sr-db'
-import type { Read } from '@genshin-optimizer/sr-formula'
-import type { BuildResult, ProgressResult } from '@genshin-optimizer/sr-opt'
-import { MAX_BUILDS, Optimizer } from '@genshin-optimizer/sr-opt'
+import { CardThemed } from '@genshin-optimizer/common_ui'
+import type { RelicSlotKey } from '@genshin-optimizer/sr_consts'
+import type { ICachedRelic } from '@genshin-optimizer/sr_db'
+import type { Read } from '@genshin-optimizer/sr_formula'
+import type { BuildResult, ProgressResult } from '@genshin-optimizer/sr_opt'
+import { MAX_BUILDS, Optimizer } from '@genshin-optimizer/sr_opt'
 import {
   BuildDisplay,
   OptimizationTargetSelector,
   WorkerSelector,
   useCalcContext,
   useDatabaseContext,
-} from '@genshin-optimizer/sr-ui'
-import { CardThemed } from '@genshin-optimizer/ui-common'
+} from '@genshin-optimizer/sr_ui'
 import { Close, TrendingUp } from '@mui/icons-material'
 import {
   Box,

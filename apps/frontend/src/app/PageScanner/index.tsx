@@ -1,5 +1,5 @@
-import { AnvilIcon, DiscordIcon } from '@genshin-optimizer/svgicons'
-import { CardThemed, SqBadge } from '@genshin-optimizer/ui-common'
+import { AnvilIcon, DiscordIcon } from '@genshin-optimizer/common_svgicons'
+import { CardThemed, SqBadge } from '@genshin-optimizer/common_ui'
 import {
   Backpack,
   Computer,

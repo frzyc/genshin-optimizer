@@ -1,6 +1,6 @@
-import type { ArtifactSetKey } from '@genshin-optimizer/consts'
-import { allArtifactSlotKeys } from '@genshin-optimizer/consts'
-import { objKeyMap } from '@genshin-optimizer/util'
+import { objKeyMap } from '@genshin-optimizer/common_util'
+import type { ArtifactSetKey } from '@genshin-optimizer/gi_consts'
+import { allArtifactSlotKeys } from '@genshin-optimizer/gi_consts'
 import { cartesian } from '../../../Util/Util'
 import {
   computeFullArtRange,

@@ -1,5 +1,5 @@
-import type { CharacterKey, GenderKey } from '@genshin-optimizer/consts'
-import { ascensionMaxLevel } from '@genshin-optimizer/gi-util'
+import type { CharacterKey, GenderKey } from '@genshin-optimizer/gi_consts'
+import { ascensionMaxLevel } from '@genshin-optimizer/gi_util'
 import type { Data } from '../../Formula/type'
 import type { ICharacterSheet, TalentSheetElementKey } from './ICharacterSheet'
 

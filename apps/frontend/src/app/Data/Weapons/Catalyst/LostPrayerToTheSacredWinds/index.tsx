@@ -1,3 +1,7 @@
+import { objKeyMap, range } from '@genshin-optimizer/common_util'
+import type { WeaponKey } from '@genshin-optimizer/gi_consts'
+import { allElementKeys } from '@genshin-optimizer/gi_consts'
+import { allStats } from '@genshin-optimizer/gi_stats'
 import { input } from '../../../../Formula'
 import {
   lookup,
@@ -6,14 +10,10 @@ import {
   prod,
   subscript,
 } from '../../../../Formula/utils'
-import type { WeaponKey } from '@genshin-optimizer/consts'
-import { allStats } from '@genshin-optimizer/gi-stats'
-import { allElementKeys } from '@genshin-optimizer/consts'
-import { objKeyMap, range } from '@genshin-optimizer/util'
 import { cond, st } from '../../../SheetUtil'
-import { dataObjForWeaponSheet } from '../../util'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
+import { dataObjForWeaponSheet } from '../../util'
 
 const key: WeaponKey = 'LostPrayerToTheSacredWinds'
 const data_gen = allStats.weapon.data[key]

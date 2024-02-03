@@ -1,4 +1,5 @@
-import type { ArtifactSetKey } from '@genshin-optimizer/consts'
+import { objKeyMap, range } from '@genshin-optimizer/common_util'
+import type { ArtifactSetKey } from '@genshin-optimizer/gi_consts'
 import { input } from '../../../Formula'
 import type { Data } from '../../../Formula/type'
 import {
@@ -9,11 +10,10 @@ import {
   sum,
 } from '../../../Formula/utils'
 import KeyMap from '../../../KeyMap'
-import { objKeyMap, range } from '@genshin-optimizer/util'
 import { cond, st, stg, trans } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
-import { dataObjForArtifactSheet } from '../dataUtil'
 import type { IArtifactSheet } from '../IArtifactSheet'
+import { dataObjForArtifactSheet } from '../dataUtil'
 
 const key: ArtifactSetKey = 'NymphsDream'
 const setHeader = setHeaderTemplate(key)

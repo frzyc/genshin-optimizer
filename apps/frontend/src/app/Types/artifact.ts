@@ -1,4 +1,4 @@
-import type { IArtifact, ISubstat } from '@genshin-optimizer/gi-good'
+import type { IArtifact, ISubstat } from '@genshin-optimizer/gi_good'
 export interface ICachedArtifact extends IArtifact {
   id: string
   mainStatVal: number

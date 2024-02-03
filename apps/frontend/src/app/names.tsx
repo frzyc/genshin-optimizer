@@ -1,4 +1,4 @@
-import type { ArtifactSetKey } from '@genshin-optimizer/consts'
+import type { ArtifactSetKey } from '@genshin-optimizer/gi_consts'
 import { Translate } from './Components/Translate'
 
 export function artifactTr(setKey: ArtifactSetKey) {

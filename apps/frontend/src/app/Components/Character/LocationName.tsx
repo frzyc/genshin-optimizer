@@ -1,4 +1,4 @@
-import type { LocationKey } from '@genshin-optimizer/consts'
+import type { LocationKey } from '@genshin-optimizer/gi_consts'
 import { BusinessCenter } from '@mui/icons-material'
 import type { TypographyProps } from '@mui/material'
 import { Box, Typography } from '@mui/material'

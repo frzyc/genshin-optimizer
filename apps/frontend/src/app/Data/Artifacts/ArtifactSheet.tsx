@@ -1,10 +1,10 @@
+import { artifactAsset } from '@genshin-optimizer/gi_assets'
 import type {
   ArtifactRarity,
   ArtifactSetKey,
   ArtifactSlotKey,
-} from '@genshin-optimizer/consts'
-import { allArtifactSlotKeys } from '@genshin-optimizer/consts'
-import { artifactAsset } from '@genshin-optimizer/gi-assets'
+} from '@genshin-optimizer/gi_consts'
+import { allArtifactSlotKeys } from '@genshin-optimizer/gi_consts'
 import artifactSheets from '.'
 import ImgIcon from '../../Components/Image/ImgIcon'
 import SqBadge from '../../Components/SqBadge'

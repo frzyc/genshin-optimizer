@@ -1,6 +1,6 @@
-import type { CharacterKey } from '@genshin-optimizer/consts'
-import { charKeyToLocGenderedCharKey } from '@genshin-optimizer/consts'
-import { useBoolState } from '@genshin-optimizer/react-util'
+import { useBoolState } from '@genshin-optimizer/common_react-util'
+import type { CharacterKey } from '@genshin-optimizer/gi_consts'
+import { charKeyToLocGenderedCharKey } from '@genshin-optimizer/gi_consts'
 import {
   BarChart,
   Calculate,
@@ -21,9 +21,9 @@ import {
 } from 'react'
 import { useTranslation } from 'react-i18next'
 import {
-  Link as RouterLink,
   Navigate,
   Route,
+  Link as RouterLink,
   Routes,
   useMatch,
   useNavigate,
@@ -57,19 +57,19 @@ import useCharacterReducer from '../../ReactHooks/useCharacterReducer'
 import useDBMeta from '../../ReactHooks/useDBMeta'
 import useTeamData from '../../ReactHooks/useTeamData'
 import useTitle from '../../ReactHooks/useTitle'
+import { shouldShowDevComponents } from '../../Util/Util'
 import { CustomMultiTargetButton } from '../CustomMultiTarget'
 import CharSelectButton from './CharSelectButton'
 import FormulaModal from './FormulaModal'
 import StatModal from './StatModal'
 import TabBuild from './Tabs/TabOptimize'
-import TabUpopt from './Tabs/TabUpgradeOpt'
 import TabOverview from './Tabs/TabOverview'
 import TabTalent from './Tabs/TabTalent'
 import TabTeambuffs from './Tabs/TabTeambuffs'
 import TabTheorycraft from './Tabs/TabTheorycraft'
+import TabUpopt from './Tabs/TabUpgradeOpt'
 import TravelerElementSelect from './TravelerElementSelect'
 import TravelerGenderSelect from './TravelerGenderSelect'
-import { shouldShowDevComponents } from '../../Util/Util'
 
 export default function CharacterDisplay() {
   const navigate = useNavigate()

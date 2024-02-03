@@ -1,12 +1,12 @@
+import type { WeaponKey } from '@genshin-optimizer/gi_consts'
+import { allStats } from '@genshin-optimizer/gi_stats'
 import { input, target } from '../../../../Formula'
 import { equal, infoMut, subscript } from '../../../../Formula/utils'
 import KeyMap from '../../../../KeyMap'
-import type { WeaponKey } from '@genshin-optimizer/consts'
-import { allStats } from '@genshin-optimizer/gi-stats'
-import { cond, stg, st, trans } from '../../../SheetUtil'
-import { dataObjForWeaponSheet } from '../../util'
+import { cond, st, stg, trans } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
+import { dataObjForWeaponSheet } from '../../util'
 
 const key: WeaponKey = 'SapwoodBlade'
 const data_gen = allStats.weapon.data[key]

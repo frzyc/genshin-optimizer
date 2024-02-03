@@ -1,5 +1,5 @@
-import { DataEntryBase } from '@genshin-optimizer/database'
-import type { IGOOD } from '@genshin-optimizer/gi-good'
+import { DataEntryBase } from '@genshin-optimizer/common_database'
+import type { IGOOD } from '@genshin-optimizer/gi_good'
 import type { IGO, ImportResult } from './exim'
 
 export class DataEntry<

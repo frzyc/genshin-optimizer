@@ -1,5 +1,5 @@
-import { imgAssets, weaponAsset } from '@genshin-optimizer/gi-assets'
-import { ascensionMaxLevel } from '@genshin-optimizer/gi-util'
+import { imgAssets, weaponAsset } from '@genshin-optimizer/gi_assets'
+import { ascensionMaxLevel } from '@genshin-optimizer/gi_util'
 import { Lock, LockOpen } from '@mui/icons-material'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import EditIcon from '@mui/icons-material/Edit'

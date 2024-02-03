@@ -1,7 +1,10 @@
-import type { ArtifactSlotKey } from '@genshin-optimizer/consts'
-import { imgAssets } from '@genshin-optimizer/gi-assets'
-import { useForceUpdate, useMediaQueryUp } from '@genshin-optimizer/react-util'
-import { clamp, filterFunction } from '@genshin-optimizer/util'
+import {
+  useForceUpdate,
+  useMediaQueryUp,
+} from '@genshin-optimizer/common_react-util'
+import { clamp, filterFunction } from '@genshin-optimizer/common_util'
+import { imgAssets } from '@genshin-optimizer/gi_assets'
+import type { ArtifactSlotKey } from '@genshin-optimizer/gi_consts'
 import {
   Box,
   CardContent,
@@ -12,8 +15,8 @@ import {
   Typography,
 } from '@mui/material'
 import {
-  lazy,
   Suspense,
+  lazy,
   useCallback,
   useContext,
   useEffect,

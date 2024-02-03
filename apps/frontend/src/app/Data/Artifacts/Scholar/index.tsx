@@ -1,7 +1,7 @@
+import type { ArtifactSetKey } from '@genshin-optimizer/gi_consts'
 import { input } from '../../../Formula'
 import type { Data } from '../../../Formula/type'
 import { greaterEq, percent } from '../../../Formula/utils'
-import type { ArtifactSetKey } from '@genshin-optimizer/consts'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
 import type { IArtifactSheet } from '../IArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'

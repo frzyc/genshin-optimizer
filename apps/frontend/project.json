@@ -25,17 +25,17 @@
           "apps/frontend/src/notification.mp3",
           "apps/frontend/src/assets",
           {
-            "input": "libs/gi-localization/assets",
+            "input": "libs/gi/localization/assets",
             "glob": "**/*",
             "output": "assets"
           },
           {
-            "input": "libs/gi-dm-localization/assets",
+            "input": "libs/gi/dm-localization/assets",
             "glob": "**/*",
             "output": "assets"
           },
           {
-            "input": "libs/silly-wisher-names/assets",
+            "input": "libs/gi/silly-wisher-names/assets",
             "glob": "**/*",
             "output": "assets"
           }
@@ -93,8 +93,8 @@
   },
   "tags": [],
   "implicitDependencies": [
-    "gi-localization",
-    "gi-dm-localization",
+    "gi_localization",
+    "gi_dm-localization",
     "silly-wisher-names"
   ]
 }

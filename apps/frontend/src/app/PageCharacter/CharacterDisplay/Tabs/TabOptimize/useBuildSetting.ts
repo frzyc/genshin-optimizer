@@ -1,4 +1,4 @@
-import type { CharacterKey } from '@genshin-optimizer/consts'
+import type { CharacterKey } from '@genshin-optimizer/gi_consts'
 import { useCallback, useContext, useEffect, useState } from 'react'
 import { DatabaseContext } from '../../../../Database/Database'
 import type { BuildSetting } from '../../../../Database/DataManagers/BuildSettingData'

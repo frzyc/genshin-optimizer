@@ -3,13 +3,13 @@ import type {
   AmplifyingReactionKey,
   ElementKey,
   LocationCharacterKey,
-} from '@genshin-optimizer/consts'
-import { nonTravelerCharacterKeys } from '@genshin-optimizer/consts'
+} from '@genshin-optimizer/gi_consts'
+import { nonTravelerCharacterKeys } from '@genshin-optimizer/gi_consts'
 
 export const allArtifactSetCount = [1, 2, 3, 4, 5] as const
 
 /**
- * @deprecated use `allRollColorKeys` in `@genshin-optimizer/gi-ui`
+ * @deprecated use `allRollColorKeys` in `@genshin-optimizer/gi_ui`
  */
 export const allRollColorKeys = [
   'roll1',
@@ -45,7 +45,7 @@ export type SetNum = (typeof allArtifactSetCount)[number]
 export type CharacterSheetKey = (typeof allCharacterSheetKeys)[number]
 
 /**
- * @deprecated use `RollColorKey` in `@genshin-optimizer/gi-ui`
+ * @deprecated use `RollColorKey` in `@genshin-optimizer/gi_ui`
  */
 export type RollColorKey = (typeof allRollColorKeys)[number]
 

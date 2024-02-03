@@ -1,5 +1,5 @@
-import { useBoolState } from '@genshin-optimizer/react-util'
-import { getRandomElementFromArray } from '@genshin-optimizer/util'
+import { useBoolState } from '@genshin-optimizer/common_react-util'
+import { getRandomElementFromArray } from '@genshin-optimizer/common_util'
 import HelpIcon from '@mui/icons-material/Help'
 import {
   Button,

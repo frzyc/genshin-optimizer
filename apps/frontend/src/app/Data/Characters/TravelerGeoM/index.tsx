@@ -1,4 +1,4 @@
-import type { CharacterKey } from '@genshin-optimizer/consts'
+import type { CharacterKey } from '@genshin-optimizer/gi_consts'
 import type { CharacterSheetKey } from '../../../Types/consts'
 import { travelerSheet } from '../Traveler'
 import geo from '../TravelerGeoF/geo'

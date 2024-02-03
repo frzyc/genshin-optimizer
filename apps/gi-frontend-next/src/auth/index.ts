@@ -1,4 +1,5 @@
 import { PrismaAdapter } from '@auth/prisma-adapter'
+import { PrismaClient } from '@prisma/client/gi' // Using the client generated from libs\gi_prisma-schema
 import type {
   GetServerSidePropsContext,
   NextApiRequest,
@@ -7,7 +8,6 @@ import type {
 import type { NextAuthOptions } from 'next-auth'
 import { getServerSession } from 'next-auth'
 import GoogleProvider from 'next-auth/providers/google'
-import { PrismaClient } from '@prisma/client/gi' // Using the client generated from libs\gi-prisma-schema
 import { signJwt } from './jwt'
 
 const prisma = new PrismaClient()

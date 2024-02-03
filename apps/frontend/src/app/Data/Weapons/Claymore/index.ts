@@ -1,4 +1,4 @@
-import type { WeaponClaymoreKey } from '@genshin-optimizer/consts'
+import type { WeaponClaymoreKey } from '@genshin-optimizer/gi_consts'
 import type WeaponSheet from '../WeaponSheet'
 import Akuoumaru from './Akuoumaru'
 import BeaconOfTheReedSea from './BeaconOfTheReedSea'
@@ -32,8 +32,8 @@ import TidalShadow from './TidalShadow'
 import UltimateOverlordsMegaMagicSword from './UltimateOverlordsMegaMagicSword'
 import Verdict from './Verdict'
 import WasterGreatsword from './WasterGreatsword'
-import Whiteblind from './Whiteblind'
 import WhiteIronGreatsword from './WhiteIronGreatsword'
+import Whiteblind from './Whiteblind'
 import WolfsGravestone from './WolfsGravestone'
 const claymore: Record<WeaponClaymoreKey, WeaponSheet> = {
   Akuoumaru,

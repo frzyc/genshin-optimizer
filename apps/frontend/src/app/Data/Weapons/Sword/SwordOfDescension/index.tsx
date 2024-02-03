@@ -1,6 +1,7 @@
-import type { WeaponKey } from '@genshin-optimizer/consts'
-import { allStats } from '@genshin-optimizer/gi-stats'
-import { allTravelerKeys } from '@genshin-optimizer/consts'
+import { objKeyMap } from '@genshin-optimizer/common_util'
+import type { WeaponKey } from '@genshin-optimizer/gi_consts'
+import { allTravelerKeys } from '@genshin-optimizer/gi_consts'
+import { allStats } from '@genshin-optimizer/gi_stats'
 import { input } from '../../../../Formula'
 import {
   constant,
@@ -11,12 +12,11 @@ import {
   percent,
   prod,
 } from '../../../../Formula/utils'
-import { objKeyMap } from '@genshin-optimizer/util'
 import { customDmgNode } from '../../../Characters/dataUtil'
 import { st } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
-import { dataObjForWeaponSheet } from '../../util'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
+import { dataObjForWeaponSheet } from '../../util'
 
 const key: WeaponKey = 'SwordOfDescension'
 const data_gen = allStats.weapon.data[key]

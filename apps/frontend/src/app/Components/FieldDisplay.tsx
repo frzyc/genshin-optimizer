@@ -1,6 +1,6 @@
-import type { AmpReactionKey } from '@genshin-optimizer/consts'
-import { allAmpReactionKeys } from '@genshin-optimizer/consts'
-import { valueString } from '@genshin-optimizer/util'
+import { valueString } from '@genshin-optimizer/common_util'
+import type { AmpReactionKey } from '@genshin-optimizer/gi_consts'
+import { allAmpReactionKeys } from '@genshin-optimizer/gi_consts'
 import { Groups } from '@mui/icons-material'
 import HelpIcon from '@mui/icons-material/Help'
 import type { ListProps, Palette, PaletteColor } from '@mui/material'
@@ -10,8 +10,8 @@ import {
   List,
   ListItem,
   Skeleton,
-  styled,
   Typography,
+  styled,
 } from '@mui/material'
 import React, { Suspense, useCallback, useContext, useMemo } from 'react'
 import { DataContext } from '../Context/DataContext'

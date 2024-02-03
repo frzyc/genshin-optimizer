@@ -1,18 +1,18 @@
-import type { ArtifactSlotKey } from '@genshin-optimizer/consts'
-import { allElementWithPhyKeys } from '@genshin-optimizer/consts'
-import { artifactAsset, imgAssets } from '@genshin-optimizer/gi-assets'
+import { clamp, unit } from '@genshin-optimizer/common_util'
+import type { ArtifactSlotKey } from '@genshin-optimizer/gi_consts'
+import { allElementWithPhyKeys } from '@genshin-optimizer/gi_consts'
+import { artifactAsset, imgAssets } from '@genshin-optimizer/gi_assets'
 import {
   artDisplayValue,
   getMainStatDisplayStr,
-} from '@genshin-optimizer/gi-util'
-import { clamp, unit } from '@genshin-optimizer/util'
+} from '@genshin-optimizer/gi_util'
 import { BusinessCenter } from '@mui/icons-material'
 import {
-  alpha,
   Box,
   CardActionArea,
   Chip,
   Typography,
+  alpha,
   useTheme,
 } from '@mui/material'
 import { useCallback, useContext } from 'react'

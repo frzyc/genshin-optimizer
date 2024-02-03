@@ -1,11 +1,11 @@
-import type { ArtifactSetKey } from '@genshin-optimizer/consts'
+import { getRandomElementFromArray } from '@genshin-optimizer/common_util'
+import type { ArtifactSetKey } from '@genshin-optimizer/gi_consts'
 import {
   GetAllUserArtifactDocument,
   useAddArtifactMutation,
-} from '@genshin-optimizer/gi-frontend-gql'
-import { IArtifactToArtifact, UserContext } from '@genshin-optimizer/gi-ui-next'
-import { randomizeArtifact } from '@genshin-optimizer/gi-util'
-import { getRandomElementFromArray } from '@genshin-optimizer/util'
+} from '@genshin-optimizer/gi_frontend-gql'
+import { IArtifactToArtifact, UserContext } from '@genshin-optimizer/gi_ui-next'
+import { randomizeArtifact } from '@genshin-optimizer/gi_util'
 import { Button } from '@mui/material'
 import { useContext } from 'react'
 
@@ -20,7 +20,7 @@ export default function AddArtButton() {
       artifact: IArtifactToArtifact(
         randomizeArtifact({
           slotKey: 'goblet',
-          // Only a small subset of artifacts have been added to gi-formula
+          // Only a small subset of artifacts have been added to gi_formula
           setKey: getRandomElementFromArray([
             'NoblesseOblige',
           ] as ArtifactSetKey[]),

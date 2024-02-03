@@ -1,4 +1,4 @@
-import { weaponAsset } from '@genshin-optimizer/gi-assets'
+import { weaponAsset } from '@genshin-optimizer/gi_assets'
 import { Box, Typography } from '@mui/material'
 import { useMemo } from 'react'
 import { getWeaponSheet } from '../../Data/Weapons'

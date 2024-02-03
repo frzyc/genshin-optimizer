@@ -1,16 +1,16 @@
+import { objKeyMap } from '@genshin-optimizer/common_util'
 import type {
   ArtifactRarity,
   ArtifactSetKey,
   ArtifactSlotKey,
   MainStatKey,
   SubstatKey,
-} from '@genshin-optimizer/consts'
+} from '@genshin-optimizer/gi_consts'
 import {
   allArtifactRarityKeys,
   allSubstatKeys,
-} from '@genshin-optimizer/consts'
-import { getRollsRemaining, getSubstatValue } from '@genshin-optimizer/gi-util'
-import { objKeyMap } from '@genshin-optimizer/util'
+} from '@genshin-optimizer/gi_consts'
+import { getRollsRemaining, getSubstatValue } from '@genshin-optimizer/gi_util'
 import type { ICachedArtifact } from '../../Types/artifact'
 import type { RollColorKey } from '../../Types/consts'
 

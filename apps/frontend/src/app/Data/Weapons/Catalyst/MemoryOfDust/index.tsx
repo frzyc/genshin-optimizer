@@ -7,8 +7,8 @@ import {
   subscript,
   sum,
 } from '../../../../Formula/utils'
-import type { WeaponKey } from '@genshin-optimizer/consts'
-import { allStats } from '@genshin-optimizer/gi-stats'
+import type { WeaponKey } from '@genshin-optimizer/gi_consts'
+import { allStats } from '@genshin-optimizer/gi_stats'
 import { range } from '../../../../Util/Util'
 import { cond, stg, st, trans } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'

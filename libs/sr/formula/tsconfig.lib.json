@@ -1,0 +1,9 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../../../dist/out-tsc",
+    "types": ["node", "object-overrides"]
+  },
+  "include": ["src/**/*.ts", "src/generators/**/*.ts", "src/executors/**/*.ts"],
+  "exclude": ["vitest.config.ts", "src/**/*.spec.ts", "src/**/*.test.ts"]
+}

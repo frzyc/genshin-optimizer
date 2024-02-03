@@ -1,18 +1,18 @@
+import type { FilterConfigs, SortConfigs } from '@genshin-optimizer/common_util'
 import type {
   CharacterKey,
+  CharacterRarityKey,
   ElementKey,
   WeaponTypeKey,
-  CharacterRarityKey,
-} from '@genshin-optimizer/consts'
+} from '@genshin-optimizer/gi_consts'
 import {
+  allCharacterRarityKeys,
   allElementKeys,
   allWeaponTypeKeys,
-  allCharacterRarityKeys,
   charKeyToLocCharKey,
   charKeyToLocGenderedCharKey,
-} from '@genshin-optimizer/consts'
-import { allStats, getCharEle } from '@genshin-optimizer/gi-stats'
-import type { FilterConfigs, SortConfigs } from '@genshin-optimizer/util'
+} from '@genshin-optimizer/gi_consts'
+import { allStats, getCharEle } from '@genshin-optimizer/gi_stats'
 import type { ArtCharDatabase } from '../Database/Database'
 import i18n from '../i18n'
 export const characterSortKeys = [

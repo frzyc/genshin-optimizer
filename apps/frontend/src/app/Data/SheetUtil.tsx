@@ -3,7 +3,7 @@ import type {
   ArtifactSetKey,
   CharacterKey,
   WeaponKey,
-} from '@genshin-optimizer/consts'
+} from '@genshin-optimizer/gi_consts'
 import { Translate } from '../Components/Translate'
 import { SillyContext } from '../Context/SillyContext'
 import type { ReadNode } from '../Formula/type'

@@ -7,7 +7,7 @@ import {
   percent,
   prod,
 } from '../../../Formula/utils'
-import type { ArtifactSetKey } from '@genshin-optimizer/consts'
+import type { ArtifactSetKey } from '@genshin-optimizer/gi_consts'
 import { cond, trans } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
 import type { IArtifactSheet } from '../IArtifactSheet'

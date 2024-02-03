@@ -1,7 +1,7 @@
-import type { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
-import { allElementKeys } from '@genshin-optimizer/consts'
-import { allStats } from '@genshin-optimizer/gi-stats'
-import { objKeyMap } from '@genshin-optimizer/util'
+import { objKeyMap } from '@genshin-optimizer/common_util'
+import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi_consts'
+import { allElementKeys } from '@genshin-optimizer/gi_consts'
+import { allStats } from '@genshin-optimizer/gi_stats'
 import { input } from '../../../Formula'
 import {
   constant,

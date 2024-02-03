@@ -1,11 +1,12 @@
+import { useForceUpdate } from '@genshin-optimizer/common_react-util'
+import { filterFunction, sortFunction } from '@genshin-optimizer/common_util'
+import { imgAssets } from '@genshin-optimizer/gi_assets'
 import type {
   RarityKey,
   WeaponKey,
   WeaponTypeKey,
-} from '@genshin-optimizer/consts'
-import { allRarityKeys } from '@genshin-optimizer/consts'
-import { imgAssets } from '@genshin-optimizer/gi-assets'
-import { filterFunction, sortFunction } from '@genshin-optimizer/util'
+} from '@genshin-optimizer/gi_consts'
+import { allRarityKeys } from '@genshin-optimizer/gi_consts'
 import { Add } from '@mui/icons-material'
 import StarRoundedIcon from '@mui/icons-material/StarRounded'
 import {
@@ -38,7 +39,6 @@ import WeaponSelectionModal from '../../../../Components/Weapon/WeaponSelectionM
 import { DatabaseContext } from '../../../../Database/Database'
 import WeaponCard from '../../../../PageWeapon/WeaponCard'
 import WeaponEditor from '../../../../PageWeapon/WeaponEditor'
-import { useForceUpdate } from '@genshin-optimizer/react-util'
 import { handleMultiSelect } from '../../../../Util/MultiSelect'
 import {
   weaponFilterConfigs,

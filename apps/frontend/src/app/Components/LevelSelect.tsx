@@ -1,4 +1,5 @@
-import type { AscensionKey } from '@genshin-optimizer/consts'
+import { clamp } from '@genshin-optimizer/common_util'
+import type { AscensionKey } from '@genshin-optimizer/gi_consts'
 import {
   ambiguousLevel,
   ambiguousLevelLow,
@@ -8,8 +9,7 @@ import {
   maxLevelLow,
   milestoneLevels,
   milestoneLevelsLow,
-} from '@genshin-optimizer/gi-util'
-import { clamp } from '@genshin-optimizer/util'
+} from '@genshin-optimizer/gi_util'
 import { Button, ButtonGroup, MenuItem } from '@mui/material'
 import { useCallback } from 'react'
 import { useTranslation } from 'react-i18next'

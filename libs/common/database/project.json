@@ -1,0 +1,24 @@
+{
+  "name": "database",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/common/database/src",
+  "projectType": "library",
+  "targets": {
+    "build": {},
+    "build-ts": {
+      "options": {
+        "updateBuildableProjectDepsInPackageJson": true
+      }
+    },
+    "lint": {},
+    "test": {
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
+    }
+  },
+  "tags": []
+}

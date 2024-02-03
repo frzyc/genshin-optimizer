@@ -2,10 +2,10 @@ import type {
   RarityKey,
   WeaponKey,
   WeaponTypeKey,
-} from '@genshin-optimizer/consts'
-import { weaponAsset } from '@genshin-optimizer/gi-assets'
-import type { WeaponData } from '@genshin-optimizer/gi-stats'
-import { getLevelString } from '@genshin-optimizer/gi-util'
+} from '@genshin-optimizer/gi_consts'
+import { weaponAsset } from '@genshin-optimizer/gi_assets'
+import type { WeaponData } from '@genshin-optimizer/gi_stats'
+import { getLevelString } from '@genshin-optimizer/gi_util'
 import { displayDataMap } from '.'
 import ImgIcon from '../../Components/Image/ImgIcon'
 import SqBadge from '../../Components/SqBadge'

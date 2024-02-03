@@ -1,22 +1,23 @@
-import type { ArtifactRarity, ArtifactSetKey } from '@genshin-optimizer/consts'
+import { useForceUpdate } from '@genshin-optimizer/common_react-util'
+import { CardThemed } from '@genshin-optimizer/common_ui'
+import { clamp, deepClone } from '@genshin-optimizer/common_util'
+import type { Processed } from '@genshin-optimizer/gi_art-scanner'
+import { ScanningQueue } from '@genshin-optimizer/gi_art-scanner'
+import { artifactAsset } from '@genshin-optimizer/gi_assets'
+import type {
+  ArtifactRarity,
+  ArtifactSetKey,
+} from '@genshin-optimizer/gi_consts'
 import {
   allElementWithPhyKeys,
   allSubstatKeys,
   artSlotMainKeys,
-} from '@genshin-optimizer/consts'
-import type { Processed } from '@genshin-optimizer/gi-art-scanner'
-import { ScanningQueue } from '@genshin-optimizer/gi-art-scanner'
-import { artifactAsset } from '@genshin-optimizer/gi-assets'
-import type { IArtifact, ISubstat } from '@genshin-optimizer/gi-good'
+} from '@genshin-optimizer/gi_consts'
+import type { IArtifact, ISubstat } from '@genshin-optimizer/gi_good'
 import {
   getMainStatDisplayStr,
   randomizeArtifact,
-} from '@genshin-optimizer/gi-util'
-import LockIcon from '@mui/icons-material/Lock'
-import LockOpenIcon from '@mui/icons-material/LockOpen'
-import { useForceUpdate } from '@genshin-optimizer/react-util'
-import { CardThemed } from '@genshin-optimizer/ui-common'
-import { clamp, deepClone } from '@genshin-optimizer/util'
+} from '@genshin-optimizer/gi_util'
 import {
   Add,
   ChevronRight,
@@ -26,6 +27,8 @@ import {
   Update,
 } from '@mui/icons-material'
 import HelpIcon from '@mui/icons-material/Help'
+import LockIcon from '@mui/icons-material/Lock'
+import LockOpenIcon from '@mui/icons-material/LockOpen'
 import {
   Alert,
   Box,
@@ -63,6 +66,7 @@ import {
   ArtifactColoredIconStatWithUnit,
   ArtifactStatWithUnit,
 } from '../Components/Artifact/ArtifactStatKeyDisplay'
+import { LocationAutocomplete } from '../Components/Character/LocationAutocomplete'
 import CloseButton from '../Components/CloseButton'
 import CustomNumberTextField from '../Components/CustomNumberTextField'
 import DropdownButton from '../Components/DropdownMenu/DropdownButton'
@@ -77,13 +81,12 @@ import {
 import { DatabaseContext } from '../Database/Database'
 import StatIcon from '../KeyMap/StatIcon'
 import type { ICachedArtifact } from '../Types/artifact'
+import { shouldShowDevComponents } from '../Util/Util'
 import ArtifactCard from './ArtifactCard'
 import SubstatEfficiencyDisplayCard from './ArtifactEditor/Components/SubstatEfficiencyDisplayCard'
 import SubstatInput from './ArtifactEditor/Components/SubstatInput'
 import UploadExplainationModal from './ArtifactEditor/Components/UploadExplainationModal'
 import { textsFromImage } from './ScanningUtil'
-import { LocationAutocomplete } from '../Components/Character/LocationAutocomplete'
-import { shouldShowDevComponents } from '../Util/Util'
 
 const allSubstatFilter = new Set(allSubstatKeys)
 type ResetMessage = { type: 'reset' }

@@ -1,7 +1,9 @@
+import { iconInlineProps } from '@genshin-optimizer/common_svgicons'
+import { objKeyValMap } from '@genshin-optimizer/common_util'
 import {
   allElementKeys,
   allElementWithPhyKeys,
-} from '@genshin-optimizer/consts'
+} from '@genshin-optimizer/gi_consts'
 import {
   AnemoIcon,
   CryoIcon,
@@ -10,9 +12,7 @@ import {
   GeoIcon,
   HydroIcon,
   PyroIcon,
-} from '@genshin-optimizer/gi-svgicons'
-import { iconInlineProps } from '@genshin-optimizer/svgicons'
-import { objKeyValMap } from '@genshin-optimizer/util'
+} from '@genshin-optimizer/gi_svgicons'
 import ElementCycle from '../Components/ElementCycle'
 import { Translate } from '../Components/Translate'
 import { input, tally } from '../Formula'

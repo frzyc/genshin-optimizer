@@ -1,3 +1,4 @@
+import type { ArtifactSetKey } from '@genshin-optimizer/gi_consts'
 import { input } from '../../../Formula'
 import type { Data } from '../../../Formula/type'
 import {
@@ -9,7 +10,6 @@ import {
   sum,
 } from '../../../Formula/utils'
 import KeyMap from '../../../KeyMap'
-import type { ArtifactSetKey } from '@genshin-optimizer/consts'
 import { range } from '../../../Util/Util'
 import { cond, st } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'

@@ -1,9 +1,9 @@
-import type { GenderKey } from '@genshin-optimizer/consts'
-import { allGenderKeys } from '@genshin-optimizer/consts'
-import type { Database } from '@genshin-optimizer/database'
-import type { IGOOD } from '@genshin-optimizer/gi-good'
-import type { ArtCharDatabase } from '../Database'
+import type { Database } from '@genshin-optimizer/common_database'
+import type { GenderKey } from '@genshin-optimizer/gi_consts'
+import { allGenderKeys } from '@genshin-optimizer/gi_consts'
+import type { IGOOD } from '@genshin-optimizer/gi_good'
 import { DataEntry } from '../DataEntry'
+import type { ArtCharDatabase } from '../Database'
 import type { IGO, ImportResult } from '../exim'
 
 interface IDBMeta {

@@ -27,56 +27,73 @@
     "allowSyntheticDefaultImports": false,
     "typeRoots": ["./node_modules/@types", "./node_modules", "./types"],
     "paths": {
-      "@genshin-optimizer/char-cards": ["libs/char-cards/src/index.ts"],
-      "@genshin-optimizer/consts": ["libs/consts/src/index.ts"],
-      "@genshin-optimizer/database": ["libs/database/src/index.ts"],
-      "@genshin-optimizer/database-ui": ["libs/database-ui/src/index.ts"],
-      "@genshin-optimizer/dm": ["libs/dm/src/index.ts"],
-      "@genshin-optimizer/gi-art-scanner": ["libs/gi-art-scanner/src/index.ts"],
-      "@genshin-optimizer/gi-assets": ["libs/gi-assets/src/index.ts"],
-      "@genshin-optimizer/gi-dm-localization": [
-        "libs/gi-dm-localization/src/index.ts"
+      "@genshin-optimizer/common_database": [
+        "libs/common/database/src/index.ts"
       ],
-      "@genshin-optimizer/gi-formula": ["libs/gi-formula/src/index.ts"],
-      "@genshin-optimizer/gi-formula-ui": ["libs/gi-formula-ui/src/index.ts"],
-      "@genshin-optimizer/gi-frontend-gql": [
-        "libs/gi-frontend-gql/src/index.ts"
+      "@genshin-optimizer/common_database-ui": [
+        "libs/common/database-ui/src/index.ts"
       ],
-      "@genshin-optimizer/gi-good": ["libs/gi-good/src/index.ts"],
-      "@genshin-optimizer/gi-localization": [
-        "libs/gi-localization/src/index.ts"
+      "@genshin-optimizer/common_img-util": [
+        "libs/common/img-util/src/index.ts"
       ],
-      "@genshin-optimizer/gi-prisma-schema": [
-        "libs/gi-prisma-schema/src/index.ts"
+      "@genshin-optimizer/common_pipeline": [
+        "libs/common/pipeline/src/index.ts"
       ],
-      "@genshin-optimizer/gi-stats": ["libs/gi-stats/src/index.ts"],
-      "@genshin-optimizer/gi-svgicons": ["libs/gi-svgicons/src/index.ts"],
-      "@genshin-optimizer/gi-ui": ["libs/gi-ui/src/index.ts"],
-      "@genshin-optimizer/gi-ui-next": ["libs/gi-ui-next/src/index.ts"],
-      "@genshin-optimizer/gi-ui-next/server": ["libs/gi-ui-next/src/server.ts"],
-      "@genshin-optimizer/gi-util": ["libs/gi-util/src/index.ts"],
-      "@genshin-optimizer/img-util": ["libs/img-util/src/index.ts"],
-      "@genshin-optimizer/pando": ["libs/pando/src/index.ts"],
-      "@genshin-optimizer/pipeline": ["libs/pipeline/src/index.ts"],
-      "@genshin-optimizer/plugin": ["libs/plugin/src/index.ts"],
-      "@genshin-optimizer/react-util": ["libs/react-util/src/index.ts"],
-      "@genshin-optimizer/silly-wisher": ["libs/silly-wisher/src/index.ts"],
-      "@genshin-optimizer/silly-wisher-names": [
-        "libs/silly-wisher-names/src/index.ts"
+      "@genshin-optimizer/common_plugin": ["libs/common/plugin/src/index.ts"],
+      "@genshin-optimizer/common_react-util": [
+        "libs/common/react-util/src/index.ts"
       ],
-      "@genshin-optimizer/sr-assets": ["libs/sr-assets/src/index.ts"],
-      "@genshin-optimizer/sr-consts": ["libs/sr-consts/src/index.ts"],
-      "@genshin-optimizer/sr-db": ["libs/sr-db/src/index.ts"],
-      "@genshin-optimizer/sr-dm": ["libs/sr-dm/src/index.ts"],
-      "@genshin-optimizer/sr-formula": ["libs/sr-formula/src/index.ts"],
-      "@genshin-optimizer/sr-opt": ["libs/sr-opt/src/index.ts"],
-      "@genshin-optimizer/sr-srod": ["libs/sr-srod/src/index.ts"],
-      "@genshin-optimizer/sr-stats": ["libs/sr-stats/src/index.ts"],
-      "@genshin-optimizer/sr-ui": ["libs/sr-ui/src/index.tsx"],
-      "@genshin-optimizer/sr-util": ["libs/sr-util/src/index.ts"],
-      "@genshin-optimizer/svgicons": ["libs/svgicons/src/index.ts"],
-      "@genshin-optimizer/ui-common": ["libs/ui-common/src/index.ts"],
-      "@genshin-optimizer/util": ["libs/util/src/index.ts"]
+      "@genshin-optimizer/common_svgicons": [
+        "libs/common/svgicons/src/index.ts"
+      ],
+      "@genshin-optimizer/common_ui": ["libs/common/ui/src/index.ts"],
+      "@genshin-optimizer/common_util": ["libs/common/util/src/index.ts"],
+
+      "@genshin-optimizer/gi_art-scanner": ["libs/gi/art-scanner/src/index.ts"],
+      "@genshin-optimizer/gi_assets": ["libs/gi/assets/src/index.ts"],
+      "@genshin-optimizer/gi_char-cards": ["libs/gi/char-cards/src/index.ts"],
+      "@genshin-optimizer/gi_consts": ["libs/gi/consts/src/index.ts"],
+      "@genshin-optimizer/gi_dm": ["libs/gi/dm/src/index.ts"],
+      "@genshin-optimizer/gi_dm-localization": [
+        "libs/gi/dm-localization/src/index.ts"
+      ],
+      "@genshin-optimizer/gi_formula": ["libs/gi/formula/src/index.ts"],
+      "@genshin-optimizer/gi_formula-ui": ["libs/gi/formula-ui/src/index.ts"],
+      "@genshin-optimizer/gi_frontend-gql": [
+        "libs/gi/frontend-gql/src/index.ts"
+      ],
+      "@genshin-optimizer/gi_good": ["libs/gi/good/src/index.ts"],
+      "@genshin-optimizer/gi_localization": [
+        "libs/gi/localization/src/index.ts"
+      ],
+      "@genshin-optimizer/gi_prisma-schema": [
+        "libs/gi/prisma-schema/src/index.ts"
+      ],
+      "@genshin-optimizer/gi_stats": ["libs/gi/stats/src/index.ts"],
+      "@genshin-optimizer/gi_svgicons": ["libs/gi/svgicons/src/index.ts"],
+      "@genshin-optimizer/gi_ui": ["libs/gi/ui/src/index.ts"],
+      "@genshin-optimizer/gi_ui-next": ["libs/gi/ui-next/src/index.ts"],
+      "@genshin-optimizer/gi_ui-next/server": ["libs/gi/ui-next/src/server.ts"],
+      "@genshin-optimizer/gi_util": ["libs/gi/util/src/index.ts"],
+      "@genshin-optimizer/gi_silly-wisher": [
+        "libs/gi/silly-wisher/src/index.ts"
+      ],
+      "@genshin-optimizer/gi_silly-wisher-names": [
+        "libs/gi/silly-wisher-names/src/index.ts"
+      ],
+
+      "@genshin-optimizer/pando_engine": ["libs/pando/engine/src/index.ts"],
+
+      "@genshin-optimizer/sr_assets": ["libs/sr/assets/src/index.ts"],
+      "@genshin-optimizer/sr_consts": ["libs/sr/consts/src/index.ts"],
+      "@genshin-optimizer/sr_db": ["libs/sr/db/src/index.ts"],
+      "@genshin-optimizer/sr_dm": ["libs/sr/dm/src/index.ts"],
+      "@genshin-optimizer/sr_formula": ["libs/sr/formula/src/index.ts"],
+      "@genshin-optimizer/sr_opt": ["libs/sr/opt/src/index.ts"],
+      "@genshin-optimizer/sr_srod": ["libs/sr/srod/src/index.ts"],
+      "@genshin-optimizer/sr_stats": ["libs/sr/stats/src/index.ts"],
+      "@genshin-optimizer/sr_ui": ["libs/sr/ui/src/index.tsx"],
+      "@genshin-optimizer/sr_util": ["libs/sr/util/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

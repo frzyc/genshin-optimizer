@@ -1,5 +1,5 @@
-import type { SubstatKey } from '@genshin-optimizer/consts'
-import { allSubstatKeys } from '@genshin-optimizer/consts'
+import type { SubstatKey } from '@genshin-optimizer/gi_consts'
+import { allSubstatKeys } from '@genshin-optimizer/gi_consts'
 import { Chip } from '@mui/material'
 import { useCallback, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'

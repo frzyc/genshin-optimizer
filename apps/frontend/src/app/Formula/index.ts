@@ -1,10 +1,14 @@
 import {
+  crawlObject,
+  objKeyMap,
+  objKeyValMap,
+} from '@genshin-optimizer/common_util'
+import {
   allArtifactSetKeys,
   allArtifactSlotKeys,
   allElementWithPhyKeys,
   allRegionKeys,
-} from '@genshin-optimizer/consts'
-import { crawlObject, objKeyMap, objKeyValMap } from '@genshin-optimizer/util'
+} from '@genshin-optimizer/gi_consts'
 import KeyMap, { allEleEnemyResKeys } from '../KeyMap'
 import {
   crittableTransformativeReactions,

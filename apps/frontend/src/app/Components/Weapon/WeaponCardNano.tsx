@@ -1,4 +1,4 @@
-import { weaponAsset } from '@genshin-optimizer/gi-assets'
+import { weaponAsset } from '@genshin-optimizer/gi_assets'
 import { BusinessCenter } from '@mui/icons-material'
 import { Box, CardActionArea, Chip, Skeleton, Typography } from '@mui/material'
 import { useCallback, useContext, useMemo } from 'react'

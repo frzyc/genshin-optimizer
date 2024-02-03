@@ -1,4 +1,4 @@
-import type { ArtifactSetKey } from '@genshin-optimizer/consts'
+import type { ArtifactSetKey } from '@genshin-optimizer/gi_consts'
 import { inferInfoMut, mergeData } from '../../Formula/api'
 import type { Data, DisplaySub } from '../../Formula/type'
 

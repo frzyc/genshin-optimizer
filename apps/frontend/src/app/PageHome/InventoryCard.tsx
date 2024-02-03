@@ -1,12 +1,12 @@
+import { AnvilIcon } from '@genshin-optimizer/common_svgicons'
+import { objKeyMap } from '@genshin-optimizer/common_util'
 import {
   allArtifactSlotKeys,
   allElementKeys,
   allWeaponTypeKeys,
-} from '@genshin-optimizer/consts'
-import { imgAssets } from '@genshin-optimizer/gi-assets'
-import { FlowerIcon } from '@genshin-optimizer/gi-svgicons'
-import { AnvilIcon } from '@genshin-optimizer/svgicons'
-import { objKeyMap } from '@genshin-optimizer/util'
+} from '@genshin-optimizer/gi_consts'
+import { imgAssets } from '@genshin-optimizer/gi_assets'
+import { FlowerIcon } from '@genshin-optimizer/gi_svgicons'
 import { BusinessCenter, People } from '@mui/icons-material'
 import {
   CardActionArea,

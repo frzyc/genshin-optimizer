@@ -1,5 +1,5 @@
-import type { MainStatKey, SubstatKey } from '@genshin-optimizer/consts'
-import { iconInlineProps } from '@genshin-optimizer/svgicons'
+import { iconInlineProps } from '@genshin-optimizer/common_svgicons'
+import type { MainStatKey, SubstatKey } from '@genshin-optimizer/gi_consts'
 import { Box } from '@mui/material'
 import { useTranslation } from 'react-i18next'
 import { artStatPercent } from '../../Data/Artifacts/Artifact'

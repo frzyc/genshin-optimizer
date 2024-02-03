@@ -1,4 +1,4 @@
-import { objMap } from '@genshin-optimizer/util'
+import { objMap } from '@genshin-optimizer/common_util'
 type Entry = {
   total: number
   current: number

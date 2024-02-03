@@ -1,5 +1,5 @@
-import type { WeaponKey, WeaponTypeKey } from '@genshin-optimizer/consts'
-import { allWeaponTypeKeys } from '@genshin-optimizer/consts'
+import type { WeaponKey, WeaponTypeKey } from '@genshin-optimizer/gi_consts'
+import { allWeaponTypeKeys } from '@genshin-optimizer/gi_consts'
 import { mergeData } from '../../Formula/api'
 import type { Data } from '../../Formula/type'
 import bow from './Bow'

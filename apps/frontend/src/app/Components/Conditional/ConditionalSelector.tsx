@@ -3,7 +3,7 @@ import {
   deletePropPath,
   evalIfFunc,
   layeredAssignment,
-} from '@genshin-optimizer/util'
+} from '@genshin-optimizer/common_util'
 import { CheckBox, CheckBoxOutlineBlank } from '@mui/icons-material'
 import type { ButtonProps } from '@mui/material'
 import { Button, ButtonGroup, Divider, MenuItem } from '@mui/material'

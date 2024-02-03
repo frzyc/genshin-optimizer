@@ -1,4 +1,4 @@
-import type { WeaponBowKey } from '@genshin-optimizer/consts'
+import type { WeaponBowKey } from '@genshin-optimizer/gi_consts'
 import type WeaponSheet from '../WeaponSheet'
 
 import AlleyHunter from './AlleyHunter'

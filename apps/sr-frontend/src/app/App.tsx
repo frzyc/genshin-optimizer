@@ -3,7 +3,7 @@ import {
   CharacterProvider,
   DatabaseProvider,
   RelicEditor,
-} from '@genshin-optimizer/sr-ui'
+} from '@genshin-optimizer/sr_ui'
 import {
   CssBaseline,
   Stack,

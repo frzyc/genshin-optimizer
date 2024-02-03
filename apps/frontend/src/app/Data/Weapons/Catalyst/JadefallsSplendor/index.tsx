@@ -1,12 +1,12 @@
-import type { WeaponKey } from '@genshin-optimizer/consts'
-import { allElementKeys } from '@genshin-optimizer/consts'
-import { allStats } from '@genshin-optimizer/gi-stats'
+import type { WeaponKey } from '@genshin-optimizer/gi_consts'
+import { allElementKeys } from '@genshin-optimizer/gi_consts'
+import { allStats } from '@genshin-optimizer/gi_stats'
 import { input } from '../../../../Formula'
 import { equal, min, prod, subscript } from '../../../../Formula/utils'
 import { cond, st, stg, trans } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
-import { dataObjForWeaponSheet } from '../../util'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
+import { dataObjForWeaponSheet } from '../../util'
 
 const key: WeaponKey = 'JadefallsSplendor'
 const data_gen = allStats.weapon.data[key]

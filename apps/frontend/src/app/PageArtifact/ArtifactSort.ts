@@ -1,3 +1,4 @@
+import type { FilterConfigs, SortConfigs } from '@genshin-optimizer/common_util'
 import type {
   ArtifactRarity,
   ArtifactSetKey,
@@ -5,13 +6,12 @@ import type {
   LocationCharacterKey,
   MainStatKey,
   SubstatKey,
-} from '@genshin-optimizer/consts'
+} from '@genshin-optimizer/gi_consts'
 import {
   allArtifactRarityKeys,
   allArtifactSlotKeys,
   allSubstatKeys,
-} from '@genshin-optimizer/consts'
-import type { FilterConfigs, SortConfigs } from '@genshin-optimizer/util'
+} from '@genshin-optimizer/gi_consts'
 import Artifact from '../Data/Artifacts/Artifact'
 import type { ICachedArtifact } from '../Types/artifact'
 import { probability } from './RollProbability'

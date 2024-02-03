@@ -1,4 +1,4 @@
-import type { CharacterKey } from '@genshin-optimizer/consts'
+import type { CharacterKey } from '@genshin-optimizer/gi_consts'
 import { createContext } from 'react'
 import type CharacterSheet from '../Data/Characters/CharacterSheet'
 import type WeaponSheet from '../Data/Weapons/WeaponSheet'

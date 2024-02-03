@@ -1,5 +1,5 @@
-import type { AmpReactionKey } from '@genshin-optimizer/consts'
-import { allAmpReactionKeys } from '@genshin-optimizer/consts'
+import type { AmpReactionKey } from '@genshin-optimizer/gi_consts'
+import { allAmpReactionKeys } from '@genshin-optimizer/gi_consts'
 import { ExpandMore } from '@mui/icons-material'
 import {
   Accordion,

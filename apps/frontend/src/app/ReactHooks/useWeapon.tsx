@@ -1,4 +1,4 @@
-import { useDataManagerBase } from '@genshin-optimizer/database-ui'
+import { useDataManagerBase } from '@genshin-optimizer/common_database-ui'
 import { useContext } from 'react'
 import { DatabaseContext } from '../Database/Database'
 

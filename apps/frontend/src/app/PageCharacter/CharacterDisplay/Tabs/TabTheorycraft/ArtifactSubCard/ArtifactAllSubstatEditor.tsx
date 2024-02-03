@@ -1,14 +1,14 @@
-import { getSubstatValue } from '@genshin-optimizer/gi-util'
-import { clamp, objMap } from '@genshin-optimizer/util'
+import { useIsMount } from '@genshin-optimizer/common_ui'
+import { clamp, objMap } from '@genshin-optimizer/common_util'
+import { artSubstatRollData } from '@genshin-optimizer/gi_consts'
+import { getSubstatValue } from '@genshin-optimizer/gi_util'
 import { Box, Slider } from '@mui/material'
 import { useContext, useDeferredValue, useEffect, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import CardDark from '../../../../../Components/Card/CardDark'
 import CustomNumberInput from '../../../../../Components/CustomNumberInput'
 import type { ICharTC } from '../../../../../Types/character'
 import { CharTCContext } from '../CharTCContext'
-import { artSubstatRollData } from '@genshin-optimizer/consts'
-import { useIsMount } from '@genshin-optimizer/ui-common'
-import { useTranslation } from 'react-i18next'
 
 function getMinRoll(charTC: ICharTC) {
   const {

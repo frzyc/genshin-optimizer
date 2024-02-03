@@ -1,10 +1,10 @@
-import type { NumNode, ReadNode } from '../Formula/type'
-import type { UIData } from '../Formula/uiData'
 import type {
   ArtifactSetKey,
   CharacterKey,
   WeaponKey,
-} from '@genshin-optimizer/consts'
+} from '@genshin-optimizer/gi_consts'
+import type { NumNode, ReadNode } from '../Formula/type'
+import type { UIData } from '../Formula/uiData'
 import type { IFieldDisplay } from './fieldDisplay'
 
 interface IDocumentBase {
