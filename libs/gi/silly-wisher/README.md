@@ -1,4 +1,4 @@
-# silly-wisher
+# gi_silly-wisher
 
 This library was generated with [Nx](https://nx.dev).
 

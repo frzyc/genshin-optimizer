@@ -1,10 +1,10 @@
-# silly-wisher-names
+# gi_silly-wisher-names
 
 This library was generated with [Nx](https://nx.dev).
 
 ## Building
 
-Run `nx build silly-wisher-names` to build the library.
+Run `nx build gi_silly-wisher-names` to build the library.
 
 ## Updating the translation file
 

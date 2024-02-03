@@ -1,8 +1,8 @@
 overwrite: true
 schema: 'apps/gi-backend/src/app/schema_gen.graphql'
 generates:
-  libs/gi/gi-frontend-gql/src/lib/generated/generated.tsx:
-    documents: 'libs/gi/gi-frontend-gql/src/lib/**/*.graphql'
+  libs/gi/frontend-gql/src/lib/generated/generated.tsx:
+    documents: 'libs/gi/frontend-gql/src/lib/**/*.graphql'
     plugins:
       - 'typescript'
       - 'typescript-operations'
