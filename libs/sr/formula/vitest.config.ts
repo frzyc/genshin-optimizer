@@ -1,3 +1,4 @@
+import { resolve } from 'path'
 import { defineConfig } from 'vitest/config'
 
 export default defineConfig({
@@ -10,8 +11,11 @@ export default defineConfig({
   },
   resolve: {
     alias: [
-      // e.g. Resolves '@genshin-optimizer/pando_engine' -> 'libs/pando/src'
-"../../../tsconf
+      // e.g. Resolves '@genshin-optimizer/pando_engine' -> 'libs/pando/engine/src'
+      {
+        find: /@genshin-optimizer\/([a-z-]*)_([a-z-]*)/,
+        replacement: resolve('libs/$1/$2/src'),
+      },
     ],
   },
 })
