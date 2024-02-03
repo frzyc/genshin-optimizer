@@ -12,9 +12,9 @@ Run `nx run gi-formula:gen-file` to generate the `meta.ts` descriptor file.
 
 ## Generating template sheets
 
-Run `nx generate @genshin-optimizer/gi/formula:gen-sheet <char|weapon|artifact> <name>` to generate single template.
+Run `nx generate @genshin-optimizer/gi-formula:gen-sheet <char|weapon|artifact> <name>` to generate single template.
 
-Run `nx generate @genshin-optimizer/gi/formula:gen-all-sheets` to generate all missing templates.
+Run `nx generate @genshin-optimizer/gi-formula:gen-all-sheets` to generate all missing templates.
 
 ## Running unit tests
 
