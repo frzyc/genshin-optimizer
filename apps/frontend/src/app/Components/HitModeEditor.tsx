@@ -4,7 +4,10 @@ import type {
   AmpReactionKey,
   ElementKey,
 } from '@genshin-optimizer/gi_consts'
-import { allAmpReactionKeys, allHitModeKeys } from '@genshin-optimizer/gi_consts'
+import {
+  allAmpReactionKeys,
+  allHitModeKeys,
+} from '@genshin-optimizer/gi_consts'
 import {
   CryoIcon,
   ElectroIcon,

@@ -1,4 +1,7 @@
-import type { ArtifactSetKey, ArtifactSlotKey } from '@genshin-optimizer/gi_consts'
+import type {
+  ArtifactSetKey,
+  ArtifactSlotKey,
+} from '@genshin-optimizer/gi_consts'
 import { Translate } from '../Translate'
 
 export function ArtifactSetSlotName({

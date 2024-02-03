@@ -1,7 +1,10 @@
 import { useBoolState } from '@genshin-optimizer/common_react-util'
 import { iconInlineProps } from '@genshin-optimizer/common_svgicons'
 import { objMap, toPercent } from '@genshin-optimizer/common_util'
-import { artSubstatRollData, type SubstatKey } from '@genshin-optimizer/gi_consts'
+import {
+  artSubstatRollData,
+  type SubstatKey,
+} from '@genshin-optimizer/gi_consts'
 import { StatIcon } from '@genshin-optimizer/gi_svgicons'
 import { BuildAlert, initialBuildStatus } from '@genshin-optimizer/gi_ui'
 import { getSubstatValue } from '@genshin-optimizer/gi_util'

@@ -1,4 +1,7 @@
-import type { ArtifactRarity, ArtifactSlotKey } from '@genshin-optimizer/gi_consts'
+import type {
+  ArtifactRarity,
+  ArtifactSlotKey,
+} from '@genshin-optimizer/gi_consts'
 import {
   optimize,
   precompute,

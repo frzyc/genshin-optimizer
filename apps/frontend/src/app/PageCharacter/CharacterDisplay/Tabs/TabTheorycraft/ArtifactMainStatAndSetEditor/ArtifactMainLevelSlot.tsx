@@ -1,5 +1,8 @@
 import { iconInlineProps } from '@genshin-optimizer/common_svgicons'
-import type { ArtifactRarity, ArtifactSlotKey } from '@genshin-optimizer/gi_consts'
+import type {
+  ArtifactRarity,
+  ArtifactSlotKey,
+} from '@genshin-optimizer/gi_consts'
 import { artMaxLevel, artSlotMainKeys } from '@genshin-optimizer/gi_consts'
 import {
   artDisplayValue,

@@ -6,7 +6,10 @@ import {
 } from '@genshin-optimizer/common_ui'
 import { clamp, unit as getUnit } from '@genshin-optimizer/common_util'
 import type { RarityKey } from '@genshin-optimizer/gi_consts'
-import { allSubstatKeys, artSubstatRollData } from '@genshin-optimizer/gi_consts'
+import {
+  allSubstatKeys,
+  artSubstatRollData,
+} from '@genshin-optimizer/gi_consts'
 import type { Artifact, Substat } from '@genshin-optimizer/gi_frontend-gql'
 import { allStats } from '@genshin-optimizer/gi_stats'
 import { StatIcon } from '@genshin-optimizer/gi_svgicons'

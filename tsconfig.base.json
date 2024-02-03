@@ -48,7 +48,6 @@
       ],
       "@genshin-optimizer/common_ui": ["libs/common/ui/src/index.ts"],
       "@genshin-optimizer/common_util": ["libs/common/util/src/index.ts"],
-
       "@genshin-optimizer/gi_art-scanner": ["libs/gi/art-scanner/src/index.ts"],
       "@genshin-optimizer/gi_assets": ["libs/gi/assets/src/index.ts"],
       "@genshin-optimizer/gi_char-cards": ["libs/gi/char-cards/src/index.ts"],
@@ -69,21 +68,19 @@
       "@genshin-optimizer/gi_prisma-schema": [
         "libs/gi/prisma-schema/src/index.ts"
       ],
-      "@genshin-optimizer/gi_stats": ["libs/gi/stats/src/index.ts"],
-      "@genshin-optimizer/gi_svgicons": ["libs/gi/svgicons/src/index.ts"],
-      "@genshin-optimizer/gi_ui": ["libs/gi/ui/src/index.ts"],
-      "@genshin-optimizer/gi_ui-next": ["libs/gi/ui-next/src/index.ts"],
-      "@genshin-optimizer/gi_ui-next/server": ["libs/gi/ui-next/src/server.ts"],
-      "@genshin-optimizer/gi_util": ["libs/gi/util/src/index.ts"],
       "@genshin-optimizer/gi_silly-wisher": [
         "libs/gi/silly-wisher/src/index.ts"
       ],
       "@genshin-optimizer/gi_silly-wisher-names": [
         "libs/gi/silly-wisher-names/src/index.ts"
       ],
-
+      "@genshin-optimizer/gi_stats": ["libs/gi/stats/src/index.ts"],
+      "@genshin-optimizer/gi_svgicons": ["libs/gi/svgicons/src/index.ts"],
+      "@genshin-optimizer/gi_ui": ["libs/gi/ui/src/index.ts"],
+      "@genshin-optimizer/gi_ui-next": ["libs/gi/ui-next/src/index.ts"],
+      "@genshin-optimizer/gi_ui-next/server": ["libs/gi/ui-next/src/server.ts"],
+      "@genshin-optimizer/gi_util": ["libs/gi/util/src/index.ts"],
       "@genshin-optimizer/pando_engine": ["libs/pando/engine/src/index.ts"],
-
       "@genshin-optimizer/sr_assets": ["libs/sr/assets/src/index.ts"],
       "@genshin-optimizer/sr_consts": ["libs/sr/consts/src/index.ts"],
       "@genshin-optimizer/sr_db": ["libs/sr/db/src/index.ts"],

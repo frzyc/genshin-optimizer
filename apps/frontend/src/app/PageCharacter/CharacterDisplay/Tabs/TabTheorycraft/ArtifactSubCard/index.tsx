@@ -4,8 +4,14 @@ import {
   ColorText,
   DropdownButton,
 } from '@genshin-optimizer/common_ui'
-import type { ArtifactRarity, SubstatTypeKey } from '@genshin-optimizer/gi_consts'
-import { artSubstatRollData, substatTypeKeys } from '@genshin-optimizer/gi_consts'
+import type {
+  ArtifactRarity,
+  SubstatTypeKey,
+} from '@genshin-optimizer/gi_consts'
+import {
+  artSubstatRollData,
+  substatTypeKeys,
+} from '@genshin-optimizer/gi_consts'
 import { getSubstatValue } from '@genshin-optimizer/gi_util'
 import { Box, MenuItem, Stack, Typography } from '@mui/material'
 import { useCallback, useContext } from 'react'

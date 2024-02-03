@@ -1,4 +1,7 @@
-import type { GenderKey, LocationCharacterKey } from '@genshin-optimizer/gi_consts'
+import type {
+  GenderKey,
+  LocationCharacterKey,
+} from '@genshin-optimizer/gi_consts'
 import type { ICharacter } from '@genshin-optimizer/gi_good'
 import { CharacterName } from '@genshin-optimizer/gi_ui'
 import BusinessCenterIcon from '@mui/icons-material/BusinessCenter'
