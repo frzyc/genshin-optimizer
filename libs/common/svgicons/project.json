@@ -1,5 +1,5 @@
 {
-  "name": "svgicons",
+  "name": "common_svgicons",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/common/svgicons/src",
   "projectType": "library",

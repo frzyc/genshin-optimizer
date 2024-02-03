@@ -1,5 +1,5 @@
 {
-  "name": "silly-wisher",
+  "name": "gi_silly-wisher",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/gi/silly-wisher/src",
   "projectType": "library",

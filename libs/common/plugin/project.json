@@ -1,5 +1,5 @@
 {
-  "name": "plugin",
+  "name": "common_plugin",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/common/plugin/src",
   "projectType": "library",

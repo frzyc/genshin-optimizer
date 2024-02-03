@@ -1,5 +1,5 @@
 {
-  "name": "database-ui",
+  "name": "common_database-ui",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/common/database-ui/src",
   "projectType": "library",
