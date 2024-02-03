@@ -1,22 +1,22 @@
 {
-  "name": "gi-frontend-gql",
+  "name": "gi_frontend-gql",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "libs/gi/gi-frontend-gql/src",
+  "sourceRoot": "libs/gi/frontend-gql/src",
   "projectType": "library",
   "tags": [],
   "targets": {
     "gen-file": {
-      "command": "npx graphql-codegen --config libs/gi/gi-frontend-gql/codegen.yml",
+      "command": "npx graphql-codegen --config libs/gi/frontend-gql/codegen.yml",
       "inputs": ["production", "^production", "gqlschema"]
     },
     "codegen": {
-      "command": "npx graphql-codegen --config libs/gi/gi-frontend-gql/codegen.yml"
+      "command": "npx graphql-codegen --config libs/gi/frontend-gql/codegen.yml"
     },
     "lint": {
       "executor": "@nx/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["libs/gi/gi-frontend-gql/**/*.{ts,tsx,js,jsx}"]
+        "lintFilePatterns": ["libs/gi/frontend-gql/**/*.{ts,tsx,js,jsx}"]
       }
     }
   },
