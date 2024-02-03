@@ -7,12 +7,7 @@
     "update-dm": {
       "options": {
         "outputPath": "libs/sr/dm/StarRailData"
-      },
-      "inputs": [
-        {
-          "runtime": "git ls-tree --object-only HEAD libs/sr/dm/StarRailData"
-        }
-      ]
+      }
     },
     "gen-file": {},
     "build": {},
