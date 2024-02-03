@@ -1,5 +1,5 @@
 {
-  "name": "common_util",
+  "name": "common-util",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/common/util/src",
   "projectType": "library",

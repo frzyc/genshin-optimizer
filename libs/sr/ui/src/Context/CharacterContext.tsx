@@ -1,4 +1,4 @@
-import type { CharacterKey } from '@genshin-optimizer/sr_consts'
+import type { CharacterKey } from '@genshin-optimizer/sr/consts'
 import type { ReactNode } from 'react'
 import { createContext, useContext, useMemo, useState } from 'react'
 type CharacterContextObj = {

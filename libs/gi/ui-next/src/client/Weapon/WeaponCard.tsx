@@ -1,35 +1,35 @@
-import { iconInlineProps } from '@genshin-optimizer/common_svgicons'
+import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
 import {
   BootstrapTooltip,
   CardThemed,
   StarsDisplay,
-} from '@genshin-optimizer/common_ui'
-import { toPercent, unit } from '@genshin-optimizer/common_util'
-import { imgAssets, weaponAsset } from '@genshin-optimizer/gi_assets'
-import type { RarityKey } from '@genshin-optimizer/gi_consts'
+} from '@genshin-optimizer/common/ui'
+import { toPercent, unit } from '@genshin-optimizer/common/util'
+import { imgAssets, weaponAsset } from '@genshin-optimizer/gi/assets'
+import type { RarityKey } from '@genshin-optimizer/gi/consts'
 import {
   type LocationCharacterKey,
   type MainStatKey,
   type SubstatKey,
   type WeaponTypeKey,
-} from '@genshin-optimizer/gi_consts'
+} from '@genshin-optimizer/gi/consts'
 import {
   convert,
   genshinCalculatorWithEntries,
   selfTag,
   weaponData,
-} from '@genshin-optimizer/gi_formula'
-import type { Weapon } from '@genshin-optimizer/gi_frontend-gql'
+} from '@genshin-optimizer/gi/formula'
+import type { Weapon } from '@genshin-optimizer/gi/frontend-gql'
 import {
   GetAllUserWeaponDocument,
   useRemoveWeaponMutation,
   useUpdateWeaponMutation,
-} from '@genshin-optimizer/gi_frontend-gql'
-import type { IWeapon } from '@genshin-optimizer/gi_good'
-import { allStats } from '@genshin-optimizer/gi_stats'
-import { StatIcon } from '@genshin-optimizer/gi_svgicons'
-import { WeaponName } from '@genshin-optimizer/gi_ui'
-import { artDisplayValue, ascensionMaxLevel } from '@genshin-optimizer/gi_util'
+} from '@genshin-optimizer/gi/frontend-gql'
+import type { IWeapon } from '@genshin-optimizer/gi/good'
+import { allStats } from '@genshin-optimizer/gi/stats'
+import { StatIcon } from '@genshin-optimizer/gi/svgicons'
+import { WeaponName } from '@genshin-optimizer/gi/ui'
+import { artDisplayValue, ascensionMaxLevel } from '@genshin-optimizer/gi/util'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import LockIcon from '@mui/icons-material/Lock'
 import LockOpenIcon from '@mui/icons-material/LockOpen'

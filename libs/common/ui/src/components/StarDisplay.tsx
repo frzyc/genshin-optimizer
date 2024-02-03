@@ -1,4 +1,4 @@
-import type { RarityKey } from '@genshin-optimizer/gi_consts'
+import type { RarityKey } from '@genshin-optimizer/gi/consts'
 import StarRoundedIcon from '@mui/icons-material/StarRounded'
 import { ColorText } from './ColorText'
 

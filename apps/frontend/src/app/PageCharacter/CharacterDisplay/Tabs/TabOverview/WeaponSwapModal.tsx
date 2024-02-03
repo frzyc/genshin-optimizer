@@ -1,12 +1,12 @@
-import { useForceUpdate } from '@genshin-optimizer/common_react-util'
-import { filterFunction, sortFunction } from '@genshin-optimizer/common_util'
-import { imgAssets } from '@genshin-optimizer/gi_assets'
+import { useForceUpdate } from '@genshin-optimizer/common/react-util'
+import { filterFunction, sortFunction } from '@genshin-optimizer/common/util'
+import { imgAssets } from '@genshin-optimizer/gi/assets'
 import type {
   RarityKey,
   WeaponKey,
   WeaponTypeKey,
-} from '@genshin-optimizer/gi_consts'
-import { allRarityKeys } from '@genshin-optimizer/gi_consts'
+} from '@genshin-optimizer/gi/consts'
+import { allRarityKeys } from '@genshin-optimizer/gi/consts'
 import { Add } from '@mui/icons-material'
 import StarRoundedIcon from '@mui/icons-material/StarRounded'
 import {

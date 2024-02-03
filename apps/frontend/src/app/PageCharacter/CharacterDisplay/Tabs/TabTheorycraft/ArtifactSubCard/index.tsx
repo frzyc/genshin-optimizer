@@ -3,16 +3,16 @@ import {
   CardThemed,
   ColorText,
   DropdownButton,
-} from '@genshin-optimizer/common_ui'
+} from '@genshin-optimizer/common/ui'
 import type {
   ArtifactRarity,
   SubstatTypeKey,
-} from '@genshin-optimizer/gi_consts'
+} from '@genshin-optimizer/gi/consts'
 import {
   artSubstatRollData,
   substatTypeKeys,
-} from '@genshin-optimizer/gi_consts'
-import { getSubstatValue } from '@genshin-optimizer/gi_util'
+} from '@genshin-optimizer/gi/consts'
+import { getSubstatValue } from '@genshin-optimizer/gi/util'
 import { Box, MenuItem, Stack, Typography } from '@mui/material'
 import { useCallback, useContext } from 'react'
 import { Trans, useTranslation } from 'react-i18next'

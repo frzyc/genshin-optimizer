@@ -1,4 +1,4 @@
-import { objKeyMap } from '@genshin-optimizer/common_util'
+import { objKeyMap } from '@genshin-optimizer/common/util'
 import KeyMap from '../KeyMap'
 import {
   crystallizeLevelMultipliers,

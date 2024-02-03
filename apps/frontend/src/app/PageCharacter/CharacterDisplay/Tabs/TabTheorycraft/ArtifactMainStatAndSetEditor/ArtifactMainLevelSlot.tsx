@@ -1,13 +1,13 @@
-import { iconInlineProps } from '@genshin-optimizer/common_svgicons'
+import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
 import type {
   ArtifactRarity,
   ArtifactSlotKey,
-} from '@genshin-optimizer/gi_consts'
-import { artMaxLevel, artSlotMainKeys } from '@genshin-optimizer/gi_consts'
+} from '@genshin-optimizer/gi/consts'
+import { artMaxLevel, artSlotMainKeys } from '@genshin-optimizer/gi/consts'
 import {
   artDisplayValue,
   getMainStatDisplayValue,
-} from '@genshin-optimizer/gi_util'
+} from '@genshin-optimizer/gi/util'
 import StarRoundedIcon from '@mui/icons-material/StarRounded'
 import { Box, MenuItem } from '@mui/material'
 import { useCallback, useContext } from 'react'

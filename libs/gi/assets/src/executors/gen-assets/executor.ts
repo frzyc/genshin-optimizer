@@ -1,15 +1,15 @@
-import { generateIndexFromObj } from '@genshin-optimizer/common_pipeline'
-import { crawlObject, layeredAssignment } from '@genshin-optimizer/common_util'
+import { generateIndexFromObj } from '@genshin-optimizer/common/pipeline'
+import { crawlObject, layeredAssignment } from '@genshin-optimizer/common/util'
 import type {
   ArtifactSetKey,
   ArtifactSlotKey,
   WeaponKey,
-} from '@genshin-optimizer/gi_consts'
+} from '@genshin-optimizer/gi/consts'
 import type {
   AvatarSkillDepotExcelConfigData,
   CharacterId,
   WeaponId,
-} from '@genshin-optimizer/gi_dm'
+} from '@genshin-optimizer/gi/dm'
 import {
   DM2D_PATH,
   artifactIdMap,
@@ -27,7 +27,7 @@ import {
   rewardExcelConfigData,
   weaponExcelConfigData,
   weaponIdMap,
-} from '@genshin-optimizer/gi_dm'
+} from '@genshin-optimizer/gi/dm'
 import { workspaceRoot } from '@nx/devkit'
 import * as fs from 'fs'
 import * as path from 'path'

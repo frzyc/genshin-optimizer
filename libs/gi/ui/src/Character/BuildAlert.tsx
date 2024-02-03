@@ -1,5 +1,5 @@
-import { timeStringMs } from '@genshin-optimizer/common_util'
-import type { CharacterKey, GenderKey } from '@genshin-optimizer/gi_consts'
+import { timeStringMs } from '@genshin-optimizer/common/util'
+import type { CharacterKey, GenderKey } from '@genshin-optimizer/gi/consts'
 import { Alert, Grid, LinearProgress, Typography, styled } from '@mui/material'
 import type { ReactNode } from 'react'
 import { CharacterName } from './Trans'

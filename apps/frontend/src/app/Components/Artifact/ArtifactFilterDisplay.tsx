@@ -1,4 +1,4 @@
-import { objKeyMap } from '@genshin-optimizer/common_util'
+import { objKeyMap } from '@genshin-optimizer/common/util'
 import {
   allArtifactRarityKeys,
   allArtifactSetKeys,
@@ -6,7 +6,7 @@ import {
   allLocationCharacterKeys,
   allMainStatKeys,
   allSubstatKeys,
-} from '@genshin-optimizer/gi_consts'
+} from '@genshin-optimizer/gi/consts'
 import BusinessCenterIcon from '@mui/icons-material/BusinessCenter'
 import LockIcon from '@mui/icons-material/Lock'
 import LockOpenIcon from '@mui/icons-material/LockOpen'

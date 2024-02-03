@@ -1,5 +1,5 @@
 {
-  "name": "sr_opt",
+  "name": "sr-opt",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/sr/opt/src",
   "projectType": "library",

@@ -1,4 +1,4 @@
-import { SillyContext } from '@genshin-optimizer/gi_ui-next'
+import { SillyContext } from '@genshin-optimizer/gi/ui-next'
 import MenuIcon from '@mui/icons-material/Menu'
 import {
   AppBar,

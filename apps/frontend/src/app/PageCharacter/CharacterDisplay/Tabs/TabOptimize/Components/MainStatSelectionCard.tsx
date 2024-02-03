@@ -1,14 +1,14 @@
-import { iconInlineProps } from '@genshin-optimizer/common_svgicons'
+import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
 import {
   allElementWithPhyKeys,
   artSlotsData,
-} from '@genshin-optimizer/gi_consts'
+} from '@genshin-optimizer/gi/consts'
 import {
   AtkIcon,
   FlowerIcon,
   HpIcon,
   PlumeIcon,
-} from '@genshin-optimizer/gi_svgicons'
+} from '@genshin-optimizer/gi/svgicons'
 import {
   Box,
   Button,

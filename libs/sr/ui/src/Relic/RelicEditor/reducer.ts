@@ -1,5 +1,5 @@
-import { validateRelic } from '@genshin-optimizer/sr_db'
-import type { IRelic, ISubstat } from '@genshin-optimizer/sr_srod'
+import { validateRelic } from '@genshin-optimizer/sr/db'
+import type { IRelic, ISubstat } from '@genshin-optimizer/sr/srod'
 
 type ResetMessage = { type: 'reset' }
 type SubstatMessage = { type: 'substat'; index: number; substat: ISubstat }

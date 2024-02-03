@@ -1,5 +1,5 @@
-import { iconInlineProps } from '@genshin-optimizer/common_svgicons'
-import type { AmpReactionKey } from '@genshin-optimizer/gi_consts'
+import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
+import type { AmpReactionKey } from '@genshin-optimizer/gi/consts'
 import { Box } from '@mui/material'
 import { useTranslation } from 'react-i18next'
 import { ElementIcon } from '../KeyMap/StatIcon'

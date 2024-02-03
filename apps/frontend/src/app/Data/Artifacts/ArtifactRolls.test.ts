@@ -1,6 +1,6 @@
-import { extrapolateFloat } from '@genshin-optimizer/common_pipeline'
-import type { SubstatKey } from '@genshin-optimizer/gi_consts'
-import { allStats } from '@genshin-optimizer/gi_stats'
+import { extrapolateFloat } from '@genshin-optimizer/common/pipeline'
+import type { SubstatKey } from '@genshin-optimizer/gi/consts'
+import { allStats } from '@genshin-optimizer/gi/stats'
 
 /**
  * Known rarity-5 rolls

@@ -1,15 +1,15 @@
-import type { ArtifactSlotKey } from '@genshin-optimizer/gi_consts'
+import type { ArtifactSlotKey } from '@genshin-optimizer/gi/consts'
 import {
   CircletIcon,
   FlowerIcon,
   GobletIcon,
   PlumeIcon,
   SandsIcon,
-} from '@genshin-optimizer/gi_svgicons'
+} from '@genshin-optimizer/gi/svgicons'
 import type { SvgIconProps } from '@mui/material'
 
 /**
- * @deprecated use SlotIcon in @genshin-optimizer/gi_svgicons
+ * @deprecated use SlotIcon in @genshin-optimizer/gi/svgicons
  */
 export default function SlotIcon({
   slotKey,

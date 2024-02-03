@@ -4,16 +4,16 @@ import {
   objKeyMap,
   objPathValue,
   toDecimal,
-} from '@genshin-optimizer/common_util'
+} from '@genshin-optimizer/common/util'
 import type {
   ArtifactSetKey,
   CharacterKey,
   GenderKey,
   MainStatKey,
   SubstatKey,
-} from '@genshin-optimizer/gi_consts'
-import { allElementWithPhyKeys } from '@genshin-optimizer/gi_consts'
-import { getMainStatValue } from '@genshin-optimizer/gi_util'
+} from '@genshin-optimizer/gi/consts'
+import { allElementWithPhyKeys } from '@genshin-optimizer/gi/consts'
+import { getMainStatValue } from '@genshin-optimizer/gi/util'
 import type { ICachedArtifact } from '../Types/artifact'
 import type { ICachedCharacter } from '../Types/character'
 import type { ICachedWeapon } from '../Types/weapon'

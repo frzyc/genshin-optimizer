@@ -3,24 +3,24 @@ import {
   DropdownButton,
   SqBadge,
   TextButton,
-} from '@genshin-optimizer/common_ui'
-import { clamp, unit as getUnit } from '@genshin-optimizer/common_util'
-import type { RarityKey } from '@genshin-optimizer/gi_consts'
+} from '@genshin-optimizer/common/ui'
+import { clamp, unit as getUnit } from '@genshin-optimizer/common/util'
+import type { RarityKey } from '@genshin-optimizer/gi/consts'
 import {
   allSubstatKeys,
   artSubstatRollData,
-} from '@genshin-optimizer/gi_consts'
-import type { Artifact, Substat } from '@genshin-optimizer/gi_frontend-gql'
-import { allStats } from '@genshin-optimizer/gi_stats'
-import { StatIcon } from '@genshin-optimizer/gi_svgicons'
-import type { RollColorKey } from '@genshin-optimizer/gi_ui'
-import { PercentBadge } from '@genshin-optimizer/gi_ui'
-import type { ArtifactMeta } from '@genshin-optimizer/gi_util'
+} from '@genshin-optimizer/gi/consts'
+import type { Artifact, Substat } from '@genshin-optimizer/gi/frontend-gql'
+import { allStats } from '@genshin-optimizer/gi/stats'
+import { StatIcon } from '@genshin-optimizer/gi/svgicons'
+import type { RollColorKey } from '@genshin-optimizer/gi/ui'
+import { PercentBadge } from '@genshin-optimizer/gi/ui'
+import type { ArtifactMeta } from '@genshin-optimizer/gi/util'
 import {
   artDisplayValue,
   getSubstatSummedRolls,
   getSubstatValuesPercent,
-} from '@genshin-optimizer/gi_util'
+} from '@genshin-optimizer/gi/util'
 import {
   Box,
   Button,

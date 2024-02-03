@@ -1,5 +1,5 @@
 {
-  "name": "@genshin-optimizer/pando_engine",
+  "name": "@genshin-optimizer/pando/engine",
   "version": "0.0.1",
   "type": "commonjs"
 }

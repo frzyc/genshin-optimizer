@@ -3,8 +3,8 @@ import type {
   Artifact,
   Character,
   Weapon,
-} from '@genshin-optimizer/gi_frontend-gql'
-import { useGetAllDataLazyQuery } from '@genshin-optimizer/gi_frontend-gql'
+} from '@genshin-optimizer/gi/frontend-gql'
+import { useGetAllDataLazyQuery } from '@genshin-optimizer/gi/frontend-gql'
 import type { ReactNode } from 'react'
 import { createContext, useContext, useEffect, useMemo } from 'react'
 import { UserContext } from './UserDataWrapper'

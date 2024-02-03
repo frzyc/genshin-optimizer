@@ -1,5 +1,5 @@
 {
-  "name": "sr_formula",
+  "name": "sr-formula",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/sr/formula/src",
   "projectType": "library",
@@ -11,7 +11,7 @@
       }
     },
     "gen-file": {
-      "executor": "@genshin-optimizer/sr_formula:gen-desc",
+      "executor": "@genshin-optimizer/sr/formula:gen-desc",
       "options": {
         "outputPath": "libs/sr/formula/src/meta.ts"
       }

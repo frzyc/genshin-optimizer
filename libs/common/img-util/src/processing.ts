@@ -1,4 +1,4 @@
-import { within } from '@genshin-optimizer/common_util'
+import { within } from '@genshin-optimizer/common/util'
 import type { Color } from './color'
 import { colorWithin } from './color'
 

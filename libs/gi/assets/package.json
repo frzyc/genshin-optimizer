@@ -1,5 +1,5 @@
 {
-  "name": "@genshin-optimizer/gi_assets",
+  "name": "@genshin-optimizer/gi/assets",
   "version": "0.0.1",
   "main": "./index.js",
   "types": "./index.d.ts",

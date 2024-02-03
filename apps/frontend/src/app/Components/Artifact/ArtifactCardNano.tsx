@@ -1,11 +1,11 @@
-import { clamp, unit } from '@genshin-optimizer/common_util'
-import type { ArtifactSlotKey } from '@genshin-optimizer/gi_consts'
-import { allElementWithPhyKeys } from '@genshin-optimizer/gi_consts'
-import { artifactAsset, imgAssets } from '@genshin-optimizer/gi_assets'
+import { clamp, unit } from '@genshin-optimizer/common/util'
+import { artifactAsset, imgAssets } from '@genshin-optimizer/gi/assets'
+import type { ArtifactSlotKey } from '@genshin-optimizer/gi/consts'
+import { allElementWithPhyKeys } from '@genshin-optimizer/gi/consts'
 import {
   artDisplayValue,
   getMainStatDisplayStr,
-} from '@genshin-optimizer/gi_util'
+} from '@genshin-optimizer/gi/util'
 import { BusinessCenter } from '@mui/icons-material'
 import {
   Box,

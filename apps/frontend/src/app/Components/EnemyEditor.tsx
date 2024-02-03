@@ -1,6 +1,6 @@
-import { iconInlineProps } from '@genshin-optimizer/common_svgicons'
-import type { ElementWithPhyKey } from '@genshin-optimizer/gi_consts'
-import { allElementWithPhyKeys } from '@genshin-optimizer/gi_consts'
+import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
+import type { ElementWithPhyKey } from '@genshin-optimizer/gi/consts'
+import { allElementWithPhyKeys } from '@genshin-optimizer/gi/consts'
 import {
   CheckBox,
   CheckBoxOutlineBlank,

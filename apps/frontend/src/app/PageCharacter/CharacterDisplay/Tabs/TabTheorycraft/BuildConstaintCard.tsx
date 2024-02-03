@@ -3,9 +3,9 @@ import {
   CustomNumberInput,
   CustomNumberInputButtonGroupWrapper,
   DropdownButton,
-} from '@genshin-optimizer/common_ui'
-import { unit } from '@genshin-optimizer/common_util'
-import { StatIcon } from '@genshin-optimizer/gi_svgicons'
+} from '@genshin-optimizer/common/ui'
+import { unit } from '@genshin-optimizer/common/util'
+import { StatIcon } from '@genshin-optimizer/gi/svgicons'
 import ClearIcon from '@mui/icons-material/Clear'
 import {
   Box,

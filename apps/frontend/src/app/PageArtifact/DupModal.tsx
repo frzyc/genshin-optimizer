@@ -1,4 +1,4 @@
-import { useForceUpdate } from '@genshin-optimizer/common_react-util'
+import { useForceUpdate } from '@genshin-optimizer/common/react-util'
 import DifferenceIcon from '@mui/icons-material/Difference'
 import {
   Alert,

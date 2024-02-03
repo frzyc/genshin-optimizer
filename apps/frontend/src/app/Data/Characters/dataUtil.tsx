@@ -2,17 +2,17 @@ import {
   layeredAssignment,
   objKeyMap,
   verifyObjKeys,
-} from '@genshin-optimizer/common_util'
+} from '@genshin-optimizer/common/util'
 import type {
   CharacterKey,
   ElementKey,
   MainStatKey,
   RegionKey,
   SubstatKey,
-} from '@genshin-optimizer/gi_consts'
-import { allMainStatKeys } from '@genshin-optimizer/gi_consts'
-import type { CharacterDataGen } from '@genshin-optimizer/gi_stats'
-import { allStats } from '@genshin-optimizer/gi_stats'
+} from '@genshin-optimizer/gi/consts'
+import { allMainStatKeys } from '@genshin-optimizer/gi/consts'
+import type { CharacterDataGen } from '@genshin-optimizer/gi/stats'
+import { allStats } from '@genshin-optimizer/gi/stats'
 import { infusionNode, input } from '../../Formula'
 import { inferInfoMut, mergeData } from '../../Formula/api'
 import { reactions } from '../../Formula/reaction'

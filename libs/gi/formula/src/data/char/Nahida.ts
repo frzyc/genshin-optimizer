@@ -1,5 +1,5 @@
-import type { CharacterKey } from '@genshin-optimizer/gi_consts'
-import { allStats } from '@genshin-optimizer/gi_stats'
+import type { CharacterKey } from '@genshin-optimizer/gi/consts'
+import { allStats } from '@genshin-optimizer/gi/stats'
 import {
   cmpEq,
   cmpGE,
@@ -9,7 +9,7 @@ import {
   prod,
   subscript,
   sum,
-} from '@genshin-optimizer/pando_engine'
+} from '@genshin-optimizer/pando/engine'
 import {
   activeCharBuff,
   allBoolConditionals,

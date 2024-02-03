@@ -1,13 +1,13 @@
+import { deepFreeze } from '@genshin-optimizer/common/util'
 import type {
   CharacterKey,
   CharacterLocationKey,
   RelicSubStatKey,
-} from '@genshin-optimizer/sr_consts'
+} from '@genshin-optimizer/sr/consts'
 import {
   allRelicSubStatKeys,
   allTrailblazerKeys,
-} from '@genshin-optimizer/sr_consts'
-import { deepFreeze } from '@genshin-optimizer/common_util'
+} from '@genshin-optimizer/sr/consts'
 import type { SroDatabase } from '../Database'
 import { SroDataManager } from '../SroDataManager'
 

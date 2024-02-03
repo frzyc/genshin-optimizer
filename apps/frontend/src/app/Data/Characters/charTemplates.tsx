@@ -1,5 +1,5 @@
-import { characterAsset, imgAssets } from '@genshin-optimizer/gi_assets'
-import type { CharacterKey, WeaponTypeKey } from '@genshin-optimizer/gi_consts'
+import { characterAsset, imgAssets } from '@genshin-optimizer/gi/assets'
+import type { CharacterKey, WeaponTypeKey } from '@genshin-optimizer/gi/consts'
 import ImgIcon from '../../Components/Image/ImgIcon'
 import SqBadge from '../../Components/SqBadge'
 import { input } from '../../Formula'

@@ -1,9 +1,9 @@
-import { toggleArr } from '@genshin-optimizer/common_util'
-import type { LocationCharacterKey } from '@genshin-optimizer/gi_consts'
+import { toggleArr } from '@genshin-optimizer/common/util'
+import type { LocationCharacterKey } from '@genshin-optimizer/gi/consts'
 import {
   allArtifactSlotKeys,
   charKeyToLocCharKey,
-} from '@genshin-optimizer/gi_consts'
+} from '@genshin-optimizer/gi/consts'
 import { Checkroom, ChevronRight } from '@mui/icons-material'
 import BlockIcon from '@mui/icons-material/Block'
 import CheckBoxIcon from '@mui/icons-material/CheckBox'

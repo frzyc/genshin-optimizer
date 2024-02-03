@@ -1,5 +1,5 @@
 {
-  "name": "@genshin-optimizer/sr_consts",
+  "name": "@genshin-optimizer/sr/consts",
   "version": "0.0.1",
   "type": "commonjs"
 }

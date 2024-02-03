@@ -1,11 +1,12 @@
-import type { TriggerString } from '@genshin-optimizer/common_database'
-import { validateLevelAsc } from '@genshin-optimizer/gi_util'
+import type { TriggerString } from '@genshin-optimizer/common/database'
+import { clamp, deepClone, objKeyMap } from '@genshin-optimizer/common/util'
+import { validateLevelAsc } from '@genshin-optimizer/gi/util'
 import type {
   CharacterKey,
   CharacterLocationKey,
   RelicSlotKey,
   TrailblazerKey,
-} from '@genshin-optimizer/sr_consts'
+} from '@genshin-optimizer/sr/consts'
 import {
   allBonusAbilityKeys,
   allCharacterKeys,
@@ -14,9 +15,8 @@ import {
   allStatBoostKeys,
   allTrailblazerKeys,
   charKeyToCharLocKey,
-} from '@genshin-optimizer/sr_consts'
-import type { ISrObjectDescription } from '@genshin-optimizer/sr_srod'
-import { clamp, deepClone, objKeyMap } from '@genshin-optimizer/common_util'
+} from '@genshin-optimizer/sr/consts'
+import type { ISrObjectDescription } from '@genshin-optimizer/sr/srod'
 import type {
   ICachedSroCharacter,
   ISroCharacter,

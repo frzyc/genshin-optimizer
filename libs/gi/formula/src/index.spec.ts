@@ -1,4 +1,4 @@
-import { compileTagMapValues } from '@genshin-optimizer/pando_engine'
+import { compileTagMapValues } from '@genshin-optimizer/pando/engine'
 import { Calculator } from './calculator'
 import { entries, keys, values } from './data'
 import type { Member, Source, TagMapNodeEntries } from './data/util'

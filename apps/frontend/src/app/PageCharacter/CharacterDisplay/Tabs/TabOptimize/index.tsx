@@ -1,10 +1,10 @@
 import {
   useForceUpdate,
   useMediaQueryUp,
-} from '@genshin-optimizer/common_react-util'
-import { objKeyMap, objPathValue, range } from '@genshin-optimizer/common_util'
-import type { CharacterKey } from '@genshin-optimizer/gi_consts'
-import { charKeyToLocCharKey } from '@genshin-optimizer/gi_consts'
+} from '@genshin-optimizer/common/react-util'
+import { objKeyMap, objPathValue, range } from '@genshin-optimizer/common/util'
+import type { CharacterKey } from '@genshin-optimizer/gi/consts'
+import { charKeyToLocCharKey } from '@genshin-optimizer/gi/consts'
 import {
   CheckBox,
   CheckBoxOutlineBlank,

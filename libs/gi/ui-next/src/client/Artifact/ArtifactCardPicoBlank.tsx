@@ -1,6 +1,6 @@
-import { CardThemed } from '@genshin-optimizer/common_ui'
-import type { ArtifactSlotKey } from '@genshin-optimizer/gi_consts'
-import { imgAssets } from '@genshin-optimizer/gi_assets'
+import { CardThemed } from '@genshin-optimizer/common/ui'
+import { imgAssets } from '@genshin-optimizer/gi/assets'
+import type { ArtifactSlotKey } from '@genshin-optimizer/gi/consts'
 import { Box } from '@mui/material'
 import { assetWrapper } from '../util'
 

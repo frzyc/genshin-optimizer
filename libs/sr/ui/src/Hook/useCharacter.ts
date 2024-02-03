@@ -1,4 +1,4 @@
-import type { CharacterKey } from '@genshin-optimizer/sr_consts'
+import type { CharacterKey } from '@genshin-optimizer/sr/consts'
 import { useEffect, useState } from 'react'
 import { useDatabaseContext } from '../Context'
 

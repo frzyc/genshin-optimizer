@@ -1,10 +1,10 @@
-import { ReadOnlyTextArea } from '@genshin-optimizer/common_react-util'
+import { ReadOnlyTextArea } from '@genshin-optimizer/common/react-util'
 import {
   objKeyMap,
   objPathValue,
   valueString,
-} from '@genshin-optimizer/common_util'
-import { allArtifactSlotKeys } from '@genshin-optimizer/gi_consts'
+} from '@genshin-optimizer/common/util'
+import { allArtifactSlotKeys } from '@genshin-optimizer/gi/consts'
 import {
   CheckBox,
   CheckBoxOutlineBlank,

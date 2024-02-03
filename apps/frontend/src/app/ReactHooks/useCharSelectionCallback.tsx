@@ -1,4 +1,4 @@
-import type { CharacterKey } from '@genshin-optimizer/gi_consts'
+import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import { useCallback, useContext } from 'react'
 import { useMatch, useNavigate } from 'react-router-dom'
 import { DatabaseContext } from '../Database/Database'

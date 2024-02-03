@@ -1,4 +1,4 @@
-import { DiscordIcon } from '@genshin-optimizer/common_svgicons'
+import { DiscordIcon } from '@genshin-optimizer/common/svgicons'
 import { Android as AndroidIcon, Apple as AppleIcon } from '@mui/icons-material'
 import CheckBoxIcon from '@mui/icons-material/CheckBox'
 import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank'

@@ -1,6 +1,6 @@
-import { objKeyMap, range } from '@genshin-optimizer/common_util'
-import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi_consts'
-import { allStats } from '@genshin-optimizer/gi_stats'
+import { objKeyMap, range } from '@genshin-optimizer/common/util'
+import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
+import { allStats } from '@genshin-optimizer/gi/stats'
 import { input } from '../../../Formula'
 import {
   equal,

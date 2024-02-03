@@ -1,7 +1,7 @@
 import type {
   DataManagerBase,
   Database,
-} from '@genshin-optimizer/common_database'
+} from '@genshin-optimizer/common/database'
 import { useEffect, useState } from 'react'
 export function useDataManagerBase<
   A extends string,

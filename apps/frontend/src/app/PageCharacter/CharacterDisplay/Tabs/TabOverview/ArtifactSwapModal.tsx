@@ -1,10 +1,10 @@
 import {
   useForceUpdate,
   useMediaQueryUp,
-} from '@genshin-optimizer/common_react-util'
-import { clamp, filterFunction } from '@genshin-optimizer/common_util'
-import { imgAssets } from '@genshin-optimizer/gi_assets'
-import type { ArtifactSlotKey } from '@genshin-optimizer/gi_consts'
+} from '@genshin-optimizer/common/react-util'
+import { clamp, filterFunction } from '@genshin-optimizer/common/util'
+import { imgAssets } from '@genshin-optimizer/gi/assets'
+import type { ArtifactSlotKey } from '@genshin-optimizer/gi/consts'
 import {
   Box,
   CardContent,

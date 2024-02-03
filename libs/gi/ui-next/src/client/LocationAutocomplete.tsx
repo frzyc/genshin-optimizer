@@ -1,17 +1,17 @@
-import type { GeneralAutocompleteOption } from '@genshin-optimizer/common_ui'
-import { GeneralAutocomplete } from '@genshin-optimizer/common_ui'
-import { getRandBool } from '@genshin-optimizer/common_util'
+import type { GeneralAutocompleteOption } from '@genshin-optimizer/common/ui'
+import { GeneralAutocomplete } from '@genshin-optimizer/common/ui'
+import { getRandBool } from '@genshin-optimizer/common/util'
 import type {
   GenderKey,
   LocationCharacterKey,
   LocationKey,
-} from '@genshin-optimizer/gi_consts'
+} from '@genshin-optimizer/gi/consts'
 import {
   allLocationCharacterKeys,
   charKeyToLocCharKey,
   charKeyToLocGenderedCharKey,
-} from '@genshin-optimizer/gi_consts'
-import type { ICharacter } from '@genshin-optimizer/gi_good'
+} from '@genshin-optimizer/gi/consts'
+import type { ICharacter } from '@genshin-optimizer/gi/good'
 import BusinessCenterIcon from '@mui/icons-material/BusinessCenter'
 import type { AutocompleteProps, Palette } from '@mui/material'
 import { Box, Skeleton } from '@mui/material'

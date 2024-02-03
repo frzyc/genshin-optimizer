@@ -1,18 +1,18 @@
-import { levenshteinDistance, unit } from '@genshin-optimizer/common_util'
+import { levenshteinDistance, unit } from '@genshin-optimizer/common/util'
 import type {
   ArtifactSetKey,
   ArtifactSlotKey,
   LocationCharacterKey,
   MainStatKey,
-} from '@genshin-optimizer/gi_consts'
+} from '@genshin-optimizer/gi/consts'
 import {
   allArtifactSetKeys,
   allArtifactSlotKeys,
   allLocationCharacterKeys,
   allMainStatKeys,
   allSubstatKeys,
-} from '@genshin-optimizer/gi_consts'
-import type { ISubstat } from '@genshin-optimizer/gi_good'
+} from '@genshin-optimizer/gi/consts'
+import type { ISubstat } from '@genshin-optimizer/gi/good'
 import { artSlotNames, statMap } from './enStringMap'
 
 /** small utility function used by most string parsing functions below */

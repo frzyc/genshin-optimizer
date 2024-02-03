@@ -1,7 +1,7 @@
-import { artifactAsset } from '@genshin-optimizer/gi_assets'
-import type { ArtifactSetKey } from '@genshin-optimizer/gi_consts'
-import type { Artifact, Substat } from '@genshin-optimizer/gi_frontend-gql'
-import type { IArtifact } from '@genshin-optimizer/gi_good'
+import { artifactAsset } from '@genshin-optimizer/gi/assets'
+import type { ArtifactSetKey } from '@genshin-optimizer/gi/consts'
+import type { Artifact, Substat } from '@genshin-optimizer/gi/frontend-gql'
+import type { IArtifact } from '@genshin-optimizer/gi/good'
 
 export function artifactDefIcon(setKey: ArtifactSetKey) {
   return artifactAsset(setKey, 'flower') || artifactAsset(setKey, 'circlet')

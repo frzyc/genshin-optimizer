@@ -1,5 +1,5 @@
-import { dumpFile } from '@genshin-optimizer/common_pipeline'
-import type { RelicRarityKey } from '@genshin-optimizer/sr_consts'
+import { dumpFile } from '@genshin-optimizer/common/pipeline'
+import type { RelicRarityKey } from '@genshin-optimizer/sr/consts'
 import { PROJROOT_PATH } from '../../consts'
 import type { RelicStatSubDMKey } from '../../mapping'
 import { statKeyMap } from '../../mapping'

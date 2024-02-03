@@ -1,5 +1,5 @@
 {
-  "name": "gi_frontend-gql",
+  "name": "gi-frontend-gql",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/gi/frontend-gql/src",
   "projectType": "library",

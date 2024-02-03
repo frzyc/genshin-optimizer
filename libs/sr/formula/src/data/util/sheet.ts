@@ -2,8 +2,8 @@ import {
   prod,
   type NumNode,
   type StrNode,
-} from '@genshin-optimizer/pando_engine'
-import type { StatKey } from '@genshin-optimizer/sr_consts'
+} from '@genshin-optimizer/pando/engine'
+import type { StatKey } from '@genshin-optimizer/sr/consts'
 import type { Read, Tag } from '.'
 import {
   percent,

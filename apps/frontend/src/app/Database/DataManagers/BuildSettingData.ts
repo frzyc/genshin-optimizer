@@ -2,19 +2,19 @@ import {
   deepClone,
   deepFreeze,
   validateArr,
-} from '@genshin-optimizer/common_util'
+} from '@genshin-optimizer/common/util'
 import type {
   ArtifactSetKey,
   CharacterKey,
   LocationCharacterKey,
   MainStatKey,
-} from '@genshin-optimizer/gi_consts'
+} from '@genshin-optimizer/gi/consts'
 import {
   allArtifactSetKeys,
   allCharacterKeys,
   allLocationCharacterKeys,
   artSlotsData,
-} from '@genshin-optimizer/gi_consts'
+} from '@genshin-optimizer/gi/consts'
 import { DataManager } from '../DataManager'
 import type { ArtCharDatabase } from '../Database'
 

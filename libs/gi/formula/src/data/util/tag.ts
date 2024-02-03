@@ -1,10 +1,10 @@
-import type { NumNode } from '@genshin-optimizer/pando_engine'
+import type { NumNode } from '@genshin-optimizer/pando/engine'
 import {
   cmpEq,
   cmpNE,
   constant,
   subscript,
-} from '@genshin-optimizer/pando_engine'
+} from '@genshin-optimizer/pando/engine'
 import type { Source, Stat } from './listing'
 import type { Read, Tag } from './read'
 import { reader, tag } from './read'

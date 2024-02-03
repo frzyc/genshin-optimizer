@@ -1,4 +1,4 @@
-import type { NonTravelerCharacterKey } from '@genshin-optimizer/gi_consts'
+import type { NonTravelerCharacterKey } from '@genshin-optimizer/gi/consts'
 
 export type InternalElement =
   | 'Fire'

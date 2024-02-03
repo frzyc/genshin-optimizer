@@ -1,4 +1,4 @@
-import type { AscensionKey } from '@genshin-optimizer/gi_consts'
+import type { AscensionKey } from '@genshin-optimizer/gi/consts'
 
 export const ascensionMaxLevelLow = [20, 40, 50, 60, 70] as const
 export const maxLevel = 90

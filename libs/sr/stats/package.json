@@ -1,5 +1,5 @@
 {
-  "name": "@genshin-optimizer/sr_stats",
+  "name": "@genshin-optimizer/sr/stats",
   "version": "0.0.1",
   "type": "commonjs",
   "executors": "./executors.json"

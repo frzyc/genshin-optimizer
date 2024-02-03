@@ -1,9 +1,9 @@
-import { isIn } from '@genshin-optimizer/common_util'
+import { isIn } from '@genshin-optimizer/common/util'
 import {
   allArtifactSetKeys,
   allCharacterKeys,
   allWeaponKeys,
-} from '@genshin-optimizer/gi_consts'
+} from '@genshin-optimizer/gi/consts'
 import type { Tree } from '@nx/devkit'
 import genIndex from './genIndex'
 import genSheet from './genSheet'

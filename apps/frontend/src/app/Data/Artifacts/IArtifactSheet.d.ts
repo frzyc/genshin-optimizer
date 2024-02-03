@@ -1,4 +1,4 @@
-import type { ArtifactRarity } from '@genshin-optimizer/gi_consts'
+import type { ArtifactRarity } from '@genshin-optimizer/gi/consts'
 import type { SetNum } from '../../Types/consts'
 import type { DocumentSection } from '../../Types/sheet'
 export interface IArtifactSheet {

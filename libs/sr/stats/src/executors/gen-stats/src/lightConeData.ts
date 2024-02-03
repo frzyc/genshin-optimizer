@@ -1,13 +1,13 @@
-import { extrapolateFloat } from '@genshin-optimizer/common_pipeline'
-import { range, verifyObjKeys } from '@genshin-optimizer/common_util'
-import type { StatKey } from '@genshin-optimizer/sr_consts'
+import { extrapolateFloat } from '@genshin-optimizer/common/pipeline'
+import { range, verifyObjKeys } from '@genshin-optimizer/common/util'
+import type { StatKey } from '@genshin-optimizer/sr/consts'
 import {
   allElementalDamageKeys,
   allLightConeKeys,
   type LightConeKey,
   type PathKey,
   type RarityKey,
-} from '@genshin-optimizer/sr_consts'
+} from '@genshin-optimizer/sr/consts'
 import {
   avatarBaseTypeMap,
   equipmentConfig,
@@ -16,7 +16,7 @@ import {
   lightConeIdMap,
   lightConeRarityMap,
   statKeyMap,
-} from '@genshin-optimizer/sr_dm'
+} from '@genshin-optimizer/sr/dm'
 
 type Promotion = {
   atk: Scaling

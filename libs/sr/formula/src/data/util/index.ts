@@ -3,7 +3,7 @@ import type {
   ReRead,
   TagMapEntries,
   TagMapEntry,
-} from '@genshin-optimizer/pando_engine'
+} from '@genshin-optimizer/pando/engine'
 import type { Tag } from './read'
 
 export * from './listing'

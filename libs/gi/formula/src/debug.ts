@@ -3,13 +3,13 @@ import type {
   CalcResult,
   ReRead,
   TagMapSubsetCache,
-} from '@genshin-optimizer/pando_engine'
+} from '@genshin-optimizer/pando/engine'
 import {
   Calculator as BaseCalculator,
   TagMapExactValues,
   TagMapKeys,
   traverse,
-} from '@genshin-optimizer/pando_engine'
+} from '@genshin-optimizer/pando/engine'
 import { res, type Calculator } from './calculator'
 import { keys } from './data'
 import { tagStr, type Read, type Tag, type TagMapNodeEntry } from './data/util'

@@ -3,8 +3,8 @@ import type {
   LocationCharacterKey,
   RegionKey,
   WeaponTypeKey,
-} from '@genshin-optimizer/gi_consts'
-import type { CharacterId, StatKey } from '@genshin-optimizer/gi_dm'
+} from '@genshin-optimizer/gi/consts'
+import type { CharacterId, StatKey } from '@genshin-optimizer/gi/dm'
 import {
   QualityTypeMap,
   ascensionData,
@@ -17,7 +17,7 @@ import {
   propTypeMap,
   regionMap,
   weaponMap,
-} from '@genshin-optimizer/gi_dm'
+} from '@genshin-optimizer/gi/dm'
 import * as somniaData from './Somnia/data.json'
 
 export type CharacterGrowCurveKey =

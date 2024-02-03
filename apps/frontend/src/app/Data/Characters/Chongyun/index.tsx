@@ -2,8 +2,8 @@ import type {
   CharacterKey,
   ElementKey,
   WeaponTypeKey,
-} from '@genshin-optimizer/gi_consts'
-import { allStats } from '@genshin-optimizer/gi_stats'
+} from '@genshin-optimizer/gi/consts'
+import { allStats } from '@genshin-optimizer/gi/stats'
 import { input, target } from '../../../Formula'
 import {
   constant,

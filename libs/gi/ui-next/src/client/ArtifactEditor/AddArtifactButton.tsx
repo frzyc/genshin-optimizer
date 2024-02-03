@@ -1,8 +1,8 @@
-import type { Artifact } from '@genshin-optimizer/gi_frontend-gql'
+import type { Artifact } from '@genshin-optimizer/gi/frontend-gql'
 import {
   GetAllUserArtifactDocument,
   useAddArtifactMutation,
-} from '@genshin-optimizer/gi_frontend-gql'
+} from '@genshin-optimizer/gi/frontend-gql'
 import type { ButtonProps } from '@mui/material'
 import { Button } from '@mui/material'
 import { UserContext } from '../UserDataWrapper'

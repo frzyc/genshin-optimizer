@@ -1,4 +1,4 @@
-import { iconInlineProps } from '@genshin-optimizer/common_svgicons'
+import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
 import { Box } from '@mui/material'
 import type { StatKey } from '../KeyMap'
 import KeyMap from '../KeyMap'

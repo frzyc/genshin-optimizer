@@ -1,4 +1,4 @@
-import { HOUR_MS } from '@genshin-optimizer/common_util'
+import { HOUR_MS } from '@genshin-optimizer/common/util'
 import { DataEntry } from '../DataEntry'
 import type { ArtCharDatabase } from '../Database'
 

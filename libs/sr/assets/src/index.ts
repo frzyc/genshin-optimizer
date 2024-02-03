@@ -1,4 +1,4 @@
-import type { CharacterKey, LightConeKey } from '@genshin-optimizer/sr_consts'
+import type { CharacterKey, LightConeKey } from '@genshin-optimizer/sr/consts'
 // import artifacts from './gen/artifacts'
 // import chars from './gen/chars'
 // import lightCones from './gen/lightCones'

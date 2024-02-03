@@ -2,15 +2,15 @@ import {
   clamp,
   validateArr,
   validateObject,
-} from '@genshin-optimizer/common_util'
-import type { SubstatKey } from '@genshin-optimizer/gi_consts'
+} from '@genshin-optimizer/common/util'
+import type { SubstatKey } from '@genshin-optimizer/gi/consts'
 import {
   allArtifactRarityKeys,
   allArtifactSetKeys,
   allArtifactSlotKeys,
   allLocationCharacterKeys,
   allSubstatKeys,
-} from '@genshin-optimizer/gi_consts'
+} from '@genshin-optimizer/gi/consts'
 import type {
   ArtifactSortKey,
   FilterOption,

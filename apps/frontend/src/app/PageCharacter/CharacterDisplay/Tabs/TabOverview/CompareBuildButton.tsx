@@ -1,5 +1,5 @@
-import { useBoolState } from '@genshin-optimizer/common_react-util'
-import { objMap } from '@genshin-optimizer/common_util'
+import { useBoolState } from '@genshin-optimizer/common/react-util'
+import { objMap } from '@genshin-optimizer/common/util'
 import { Close, Difference } from '@mui/icons-material'
 import { Button, Skeleton, Tooltip, Typography } from '@mui/material'
 import { Suspense, useContext, useMemo } from 'react'

@@ -1,4 +1,4 @@
-import { useGetUserQuery } from '@genshin-optimizer/gi_frontend-gql'
+import { useGetUserQuery } from '@genshin-optimizer/gi/frontend-gql'
 import { Stack, Typography } from '@mui/material'
 import type { Session } from 'next-auth'
 import UIDForm from './UIDForm'

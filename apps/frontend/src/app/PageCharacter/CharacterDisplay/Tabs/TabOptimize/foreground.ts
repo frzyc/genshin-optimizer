@@ -1,10 +1,10 @@
-import { deepClone, objKeyMap, objMap } from '@genshin-optimizer/common_util'
+import { deepClone, objKeyMap, objMap } from '@genshin-optimizer/common/util'
 import {
   allMainStatKeys,
   allSubstatKeys,
   artMaxLevel,
-} from '@genshin-optimizer/gi_consts'
-import { getMainStatDisplayValue } from '@genshin-optimizer/gi_util'
+} from '@genshin-optimizer/gi/consts'
+import { getMainStatDisplayValue } from '@genshin-optimizer/gi/util'
 import { input } from '../../../../Formula'
 import { computeUIData } from '../../../../Formula/api'
 import { formulaString } from '../../../../Formula/debug'

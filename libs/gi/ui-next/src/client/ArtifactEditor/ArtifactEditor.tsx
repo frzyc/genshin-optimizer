@@ -2,29 +2,29 @@ import {
   CardThemed,
   DropdownButton,
   ModalWrapper,
-} from '@genshin-optimizer/common_ui'
-import { clamp, range } from '@genshin-optimizer/common_util'
-import type { RarityKey } from '@genshin-optimizer/gi_consts'
+} from '@genshin-optimizer/common/ui'
+import { clamp, range } from '@genshin-optimizer/common/util'
+import type { Processed } from '@genshin-optimizer/gi/art-scanner'
+import { ScanningQueue } from '@genshin-optimizer/gi/art-scanner'
+import { artifactAsset } from '@genshin-optimizer/gi/assets'
+import type { RarityKey } from '@genshin-optimizer/gi/consts'
 import {
   allElementWithPhyKeys,
   artMaxLevel,
   artSlotMainKeys,
   type ArtifactRarity,
   type ArtifactSetKey,
-} from '@genshin-optimizer/gi_consts'
-import type { Processed } from '@genshin-optimizer/gi_art-scanner'
-import { ScanningQueue } from '@genshin-optimizer/gi_art-scanner'
-import { artifactAsset } from '@genshin-optimizer/gi_assets'
-import type { Artifact } from '@genshin-optimizer/gi_frontend-gql'
-import type { IArtifact } from '@genshin-optimizer/gi_good'
-import { allStats } from '@genshin-optimizer/gi_stats'
-import { StatIcon } from '@genshin-optimizer/gi_svgicons'
-import { ArtifactSetSlotName } from '@genshin-optimizer/gi_ui'
+} from '@genshin-optimizer/gi/consts'
+import type { Artifact } from '@genshin-optimizer/gi/frontend-gql'
+import type { IArtifact } from '@genshin-optimizer/gi/good'
+import { allStats } from '@genshin-optimizer/gi/stats'
+import { StatIcon } from '@genshin-optimizer/gi/svgicons'
+import { ArtifactSetSlotName } from '@genshin-optimizer/gi/ui'
 import {
   getArtifactEfficiency,
   getArtifactMeta,
   getMainStatDisplayStr,
-} from '@genshin-optimizer/gi_util'
+} from '@genshin-optimizer/gi/util'
 import AddIcon from '@mui/icons-material/Add'
 import LockIcon from '@mui/icons-material/Lock'
 import LockOpenIcon from '@mui/icons-material/LockOpen'

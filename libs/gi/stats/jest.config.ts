@@ -1,6 +1,6 @@
 /* eslint-disable */
 export default {
-  displayName: 'gi_stats',
+  displayName: 'gi-stats',
   preset: '../../../jest.preset.js',
   globals: {
     'ts-jest': {

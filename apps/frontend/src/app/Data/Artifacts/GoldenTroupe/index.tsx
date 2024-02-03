@@ -1,4 +1,4 @@
-import type { ArtifactSetKey } from '@genshin-optimizer/gi_consts'
+import type { ArtifactSetKey } from '@genshin-optimizer/gi/consts'
 import { input } from '../../../Formula'
 import type { Data } from '../../../Formula/type'
 import { equal, greaterEq, sum } from '../../../Formula/utils'

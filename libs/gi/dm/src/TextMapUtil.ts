@@ -1,4 +1,4 @@
-import type { Language } from '@genshin-optimizer/common_pipeline'
+import type { Language } from '@genshin-optimizer/common/pipeline'
 import { readDMJSON } from './util'
 
 export const TextMapCHS = JSON.parse(readDMJSON('TextMap/TextMapCHS.json'))

@@ -1,11 +1,11 @@
-import { objKeyMap } from '@genshin-optimizer/common_util'
-import type { NumNode } from '@genshin-optimizer/pando_engine'
+import { objKeyMap } from '@genshin-optimizer/common/util'
+import type { NumNode } from '@genshin-optimizer/pando/engine'
 import {
   cmpEq,
   cmpNE,
   constant,
   subscript,
-} from '@genshin-optimizer/pando_engine'
+} from '@genshin-optimizer/pando/engine'
 import { bonusAbilities, statBoosts, type Source, type Stat } from './listing'
 import type { Read, Tag } from './read'
 import { reader, tag } from './read'

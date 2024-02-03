@@ -1,5 +1,5 @@
-import { useForceUpdate } from '@genshin-optimizer/common_react-util'
-import type { CharacterKey, GenderKey } from '@genshin-optimizer/gi_consts'
+import { useForceUpdate } from '@genshin-optimizer/common/react-util'
+import type { CharacterKey, GenderKey } from '@genshin-optimizer/gi/consts'
 import { useContext, useDeferredValue, useEffect, useMemo } from 'react'
 import type { TeamData } from '../Context/DataContext'
 import { allArtifactData } from '../Data/Artifacts'

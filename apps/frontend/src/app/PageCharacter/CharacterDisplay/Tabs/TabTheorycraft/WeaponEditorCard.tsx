@@ -1,6 +1,6 @@
-import { useBoolState } from '@genshin-optimizer/common_react-util'
-import { weaponAsset } from '@genshin-optimizer/gi_assets'
-import type { WeaponTypeKey } from '@genshin-optimizer/gi_consts'
+import { useBoolState } from '@genshin-optimizer/common/react-util'
+import { weaponAsset } from '@genshin-optimizer/gi/assets'
+import type { WeaponTypeKey } from '@genshin-optimizer/gi/consts'
 import {
   Box,
   Button,

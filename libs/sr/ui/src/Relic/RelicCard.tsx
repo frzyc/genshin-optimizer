@@ -1,6 +1,6 @@
-import { CardThemed } from '@genshin-optimizer/common_ui'
-import type { IRelic } from '@genshin-optimizer/sr_srod'
-import { getRelicMainStatDisplayVal } from '@genshin-optimizer/sr_util'
+import { CardThemed } from '@genshin-optimizer/common/ui'
+import type { IRelic } from '@genshin-optimizer/sr/srod'
+import { getRelicMainStatDisplayVal } from '@genshin-optimizer/sr/util'
 import { CardContent, Stack, Typography } from '@mui/material'
 
 export function RelicCard({ relic }: { relic: IRelic }) {

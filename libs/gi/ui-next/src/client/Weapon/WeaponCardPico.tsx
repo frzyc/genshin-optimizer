@@ -1,17 +1,17 @@
-import { CardThemed, SqBadge } from '@genshin-optimizer/common_ui'
-import { toPercent } from '@genshin-optimizer/common_util'
+import { CardThemed, SqBadge } from '@genshin-optimizer/common/ui'
+import { toPercent } from '@genshin-optimizer/common/util'
+import { weaponAsset } from '@genshin-optimizer/gi/assets'
 import type {
   AscensionKey,
   MainStatKey,
   SubstatKey,
-} from '@genshin-optimizer/gi_consts'
-import { weaponAsset } from '@genshin-optimizer/gi_assets'
-import { convert, selfTag } from '@genshin-optimizer/gi_formula'
-import { CalcContext } from '@genshin-optimizer/gi_formula-ui'
-import type { Weapon } from '@genshin-optimizer/gi_frontend-gql'
-import { allStats } from '@genshin-optimizer/gi_stats'
-import { IconStatDisplay } from '@genshin-optimizer/gi_ui'
-import { getLevelString } from '@genshin-optimizer/gi_util'
+} from '@genshin-optimizer/gi/consts'
+import { convert, selfTag } from '@genshin-optimizer/gi/formula'
+import { CalcContext } from '@genshin-optimizer/gi/formula-ui'
+import type { Weapon } from '@genshin-optimizer/gi/frontend-gql'
+import { allStats } from '@genshin-optimizer/gi/stats'
+import { IconStatDisplay } from '@genshin-optimizer/gi/ui'
+import { getLevelString } from '@genshin-optimizer/gi/util'
 import { Box, Typography } from '@mui/material'
 import Image from 'next/image'
 import { useContext } from 'react'

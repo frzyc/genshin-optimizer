@@ -1,5 +1,5 @@
-import { CardThemed } from '@genshin-optimizer/common_ui'
-import type { Artifact } from '@genshin-optimizer/gi_frontend-gql'
+import { CardThemed } from '@genshin-optimizer/common/ui'
+import type { Artifact } from '@genshin-optimizer/gi/frontend-gql'
 import ChevronRightIcon from '@mui/icons-material/ChevronRight'
 import { Grid, Typography, useMediaQuery, useTheme } from '@mui/material'
 import type { TFunction } from 'i18next'

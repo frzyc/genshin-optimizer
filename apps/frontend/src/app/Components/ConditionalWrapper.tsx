@@ -8,7 +8,7 @@ type Prop = {
 }
 // Wrap children with element provided by wrapper func when condition is true.
 /**
- * @deprecated use `ConditionalWrapper` in `@genshin-optimizer/common_ui`
+ * @deprecated use `ConditionalWrapper` in `@genshin-optimizer/common/ui`
  */
 export default function ConditionalWrapper({
   condition,

@@ -1,6 +1,6 @@
-import { useForceUpdate } from '@genshin-optimizer/common_react-util'
-import { AnvilIcon } from '@genshin-optimizer/common_svgicons'
-import { FlowerIcon } from '@genshin-optimizer/gi_svgicons'
+import { useForceUpdate } from '@genshin-optimizer/common/react-util'
+import { AnvilIcon } from '@genshin-optimizer/common/svgicons'
+import { FlowerIcon } from '@genshin-optimizer/gi/svgicons'
 import {
   Article,
   Construction,

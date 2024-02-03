@@ -1,12 +1,12 @@
 import type {
   ArtifactSetKey,
   ArtifactSlotKey,
-} from '@genshin-optimizer/gi_consts'
+} from '@genshin-optimizer/gi/consts'
 import {
   artifactIdMap,
   reliquaryCodexExcelConfigData,
   reliquarySetExcelConfigData,
-} from '@genshin-optimizer/gi_dm'
+} from '@genshin-optimizer/gi/dm'
 
 export type ArtifactDataGen = {
   setNum: number[]

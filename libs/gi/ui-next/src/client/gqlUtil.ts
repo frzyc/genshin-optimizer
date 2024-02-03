@@ -1,4 +1,4 @@
-import type { Artifact, Weapon } from '@genshin-optimizer/gi_frontend-gql'
+import type { Artifact, Weapon } from '@genshin-optimizer/gi/frontend-gql'
 
 // TODO: unit test
 export function updateArtifactList(

@@ -1,10 +1,10 @@
-import { cmpEq, cmpGE } from '@genshin-optimizer/pando_engine'
-import type { RelicSetKey, StatKey } from '@genshin-optimizer/sr_consts'
+import { cmpEq, cmpGE } from '@genshin-optimizer/pando/engine'
+import type { RelicSetKey, StatKey } from '@genshin-optimizer/sr/consts'
 import {
   allBonusAbilityKeys,
   allStatBoostKeys,
-} from '@genshin-optimizer/sr_consts'
-import type { ICharacter, ILightCone } from '@genshin-optimizer/sr_srod'
+} from '@genshin-optimizer/sr/consts'
+import type { ICharacter, ILightCone } from '@genshin-optimizer/sr/srod'
 import type { Member, Preset, TagMapNodeEntries } from './data/util'
 import {
   convert,

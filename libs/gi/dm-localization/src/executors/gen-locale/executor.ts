@@ -1,13 +1,13 @@
-import type { Language } from '@genshin-optimizer/common_pipeline'
-import { dumpFile, nameToKey } from '@genshin-optimizer/common_pipeline'
-import { crawlObject, layeredAssignment } from '@genshin-optimizer/common_util'
+import type { Language } from '@genshin-optimizer/common/pipeline'
+import { dumpFile, nameToKey } from '@genshin-optimizer/common/pipeline'
+import { crawlObject, layeredAssignment } from '@genshin-optimizer/common/util'
 import type {
   ElementKey,
   LocationGenderedCharacterKey,
   WeaponKey,
-} from '@genshin-optimizer/gi_consts'
-import { allGenderKeys } from '@genshin-optimizer/gi_consts'
-import type { AvatarSkillDepotExcelConfigData } from '@genshin-optimizer/gi_dm'
+} from '@genshin-optimizer/gi/consts'
+import { allGenderKeys } from '@genshin-optimizer/gi/consts'
+import type { AvatarSkillDepotExcelConfigData } from '@genshin-optimizer/gi/dm'
 import {
   TextMapEN,
   artifactIdMap,
@@ -26,7 +26,7 @@ import {
   reliquarySetExcelConfigData,
   weaponExcelConfigData,
   weaponIdMap,
-} from '@genshin-optimizer/gi_dm'
+} from '@genshin-optimizer/gi/dm'
 import { mapHashData, mapHashDataOverride } from './lib/Data'
 import { parsingFunctions, preprocess } from './lib/parseUtil'
 import type { GenLocaleExecutorSchema } from './schema'

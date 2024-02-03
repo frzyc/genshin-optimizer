@@ -1,4 +1,4 @@
-import type { IRelic, ISubstat } from '@genshin-optimizer/sr_srod'
+import type { IRelic, ISubstat } from '@genshin-optimizer/sr/srod'
 
 export interface ICachedRelic extends IRelic {
   id: string

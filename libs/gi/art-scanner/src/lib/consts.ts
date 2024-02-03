@@ -1,4 +1,4 @@
-import type { Color } from '@genshin-optimizer/common_img-util'
+import type { Color } from '@genshin-optimizer/common/img-util'
 
 /**
  * "golden" title

@@ -1,4 +1,4 @@
-import { allArtifactSlotKeys } from '@genshin-optimizer/gi_consts'
+import { allArtifactSlotKeys } from '@genshin-optimizer/gi/consts'
 import type { Interim, Setup } from '..'
 import { assertUnreachable } from '../../Util/Util'
 import type { ArtifactsBySlot, RequestFilter } from '../common'

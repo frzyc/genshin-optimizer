@@ -1,11 +1,11 @@
-import { objMap, toDecimal } from '@genshin-optimizer/common_util'
-import type { SubstatKey } from '@genshin-optimizer/gi_consts'
+import { objMap, toDecimal } from '@genshin-optimizer/common/util'
+import type { SubstatKey } from '@genshin-optimizer/gi/consts'
 import {
   allSubstatKeys,
   artSubstatRollData,
   type CharacterKey,
-} from '@genshin-optimizer/gi_consts'
-import { getMainStatValue, getSubstatValue } from '@genshin-optimizer/gi_util'
+} from '@genshin-optimizer/gi/consts'
+import { getMainStatValue, getSubstatValue } from '@genshin-optimizer/gi/util'
 import type { TeamData } from '../../../../Context/DataContext'
 import { mergeData } from '../../../../Formula/api'
 import { mapFormulas } from '../../../../Formula/internal'

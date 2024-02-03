@@ -1,5 +1,5 @@
-import { CardThemed, ModalWrapper } from '@genshin-optimizer/common_ui'
-import type { Processed } from '@genshin-optimizer/gi_art-scanner'
+import { CardThemed, ModalWrapper } from '@genshin-optimizer/common/ui'
+import type { Processed } from '@genshin-optimizer/gi/art-scanner'
 import HelpIcon from '@mui/icons-material/Help'
 import PhotoCameraIcon from '@mui/icons-material/PhotoCamera'
 import {

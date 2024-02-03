@@ -1,5 +1,5 @@
-import type { MainStatKey } from '@genshin-optimizer/gi_consts'
-import { allMainStatKeys } from '@genshin-optimizer/gi_consts'
+import type { MainStatKey } from '@genshin-optimizer/gi/consts'
+import { allMainStatKeys } from '@genshin-optimizer/gi/consts'
 import { Chip } from '@mui/material'
 import { useCallback, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'

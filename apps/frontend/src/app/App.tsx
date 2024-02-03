@@ -1,8 +1,8 @@
 import {
   DBLocalStorage,
   SandboxStorage,
-} from '@genshin-optimizer/common_database'
-import { theme } from '@genshin-optimizer/gi_ui'
+} from '@genshin-optimizer/common/database'
+import { theme } from '@genshin-optimizer/gi/ui'
 import { KeyboardArrowUp } from '@mui/icons-material'
 import {
   Box,

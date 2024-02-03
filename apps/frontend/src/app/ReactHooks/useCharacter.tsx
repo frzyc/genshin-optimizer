@@ -1,8 +1,8 @@
-import type { CharacterKey } from '@genshin-optimizer/gi_consts'
+import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import { useContext } from 'react'
 import { DatabaseContext } from '../Database/Database'
 
-import { useDataManagerBase } from '@genshin-optimizer/common_database-ui'
+import { useDataManagerBase } from '@genshin-optimizer/common/database-ui'
 
 export default function useCharacter(characterKey: CharacterKey) {
   const { database } = useContext(DatabaseContext)

@@ -1,4 +1,4 @@
-import { DBLocalStorage } from '@genshin-optimizer/common_database'
+import { DBLocalStorage } from '@genshin-optimizer/common/database'
 import { ArtCharDatabase } from './Database'
 
 const dbStorage = new DBLocalStorage(localStorage)

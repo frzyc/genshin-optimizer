@@ -5,21 +5,21 @@ import {
   allMoveKeys,
   allRegionKeys,
   allTransformativeReactionKeys,
-} from '@genshin-optimizer/gi_consts'
+} from '@genshin-optimizer/gi/consts'
 import type {
   AnyNode,
   NumNode,
   StrNode,
   TagOverride,
   TagValRead,
-} from '@genshin-optimizer/pando_engine'
+} from '@genshin-optimizer/pando/engine'
 import {
   TypedRead,
   tag as baseTag,
   tagVal as baseTagVal,
   constant,
   reread,
-} from '@genshin-optimizer/pando_engine'
+} from '@genshin-optimizer/pando/engine'
 import type { Source } from './listing'
 import { entryTypes, members, presets, srcs } from './listing'
 import type { TagMapNodeEntry } from './tagMapType'

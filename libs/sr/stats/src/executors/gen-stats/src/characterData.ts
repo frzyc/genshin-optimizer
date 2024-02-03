@@ -1,13 +1,13 @@
 import {
   extrapolateFloat as exf,
   roundMantissa,
-} from '@genshin-optimizer/common_pipeline'
+} from '@genshin-optimizer/common/pipeline'
 import {
   objKeyMap,
   transposeArray,
   verifyObjKeys,
-} from '@genshin-optimizer/common_util'
-import type { CharacterDataKey } from '@genshin-optimizer/sr_consts'
+} from '@genshin-optimizer/common/util'
+import type { CharacterDataKey } from '@genshin-optimizer/sr/consts'
 import {
   allCharacterDataKeys,
   allEidolonKeys,
@@ -17,8 +17,8 @@ import {
   type PathKey,
   type RarityKey,
   type StatKey,
-} from '@genshin-optimizer/sr_consts'
-import type { Anchor } from '@genshin-optimizer/sr_dm'
+} from '@genshin-optimizer/sr/consts'
+import type { Anchor } from '@genshin-optimizer/sr/dm'
 import {
   DmAttackTypeMap,
   avatarBaseTypeMap,
@@ -31,7 +31,7 @@ import {
   avatarSkillTreeConfig,
   characterIdMap,
   statKeyMap,
-} from '@genshin-optimizer/sr_dm'
+} from '@genshin-optimizer/sr/dm'
 
 type Promotion = {
   atk: Scaling

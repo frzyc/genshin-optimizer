@@ -1,9 +1,9 @@
-import type { CharacterKey } from '@genshin-optimizer/sr_consts'
+import { deepClone } from '@genshin-optimizer/common/util'
+import type { CharacterKey } from '@genshin-optimizer/sr/consts'
 import {
   allCharacterKeys,
   allRelicSlotKeys,
-} from '@genshin-optimizer/sr_consts'
-import { deepClone } from '@genshin-optimizer/common_util'
+} from '@genshin-optimizer/sr/consts'
 import type { SroDatabase } from '../Database'
 import { SroDataManager } from '../SroDataManager'
 

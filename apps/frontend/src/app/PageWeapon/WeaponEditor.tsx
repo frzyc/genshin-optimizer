@@ -1,6 +1,6 @@
-import { useBoolState } from '@genshin-optimizer/common_react-util'
-import { weaponAsset } from '@genshin-optimizer/gi_assets'
-import { milestoneLevelsLow } from '@genshin-optimizer/gi_util'
+import { useBoolState } from '@genshin-optimizer/common/react-util'
+import { weaponAsset } from '@genshin-optimizer/gi/assets'
+import { milestoneLevelsLow } from '@genshin-optimizer/gi/util'
 import { Lock, LockOpen } from '@mui/icons-material'
 import {
   Box,

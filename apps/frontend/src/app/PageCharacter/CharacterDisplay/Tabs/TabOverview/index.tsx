@@ -1,9 +1,9 @@
-import { imgAssets } from '@genshin-optimizer/gi_assets'
-import { charCard } from '@genshin-optimizer/gi_char-cards'
-import type { AscensionKey, CharacterKey } from '@genshin-optimizer/gi_consts'
-import { allArtifactSlotKeys } from '@genshin-optimizer/gi_consts'
-import { splash } from '@genshin-optimizer/gi_silly-wisher'
-import { getLevelString } from '@genshin-optimizer/gi_util'
+import { imgAssets } from '@genshin-optimizer/gi/assets'
+import { charCard } from '@genshin-optimizer/gi/char-cards'
+import type { AscensionKey, CharacterKey } from '@genshin-optimizer/gi/consts'
+import { allArtifactSlotKeys } from '@genshin-optimizer/gi/consts'
+import { splash } from '@genshin-optimizer/gi/silly-wisher'
+import { getLevelString } from '@genshin-optimizer/gi/util'
 import { Favorite, FavoriteBorder } from '@mui/icons-material'
 import {
   Badge,

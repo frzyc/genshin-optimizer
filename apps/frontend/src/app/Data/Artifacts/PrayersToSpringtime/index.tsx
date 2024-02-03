@@ -1,4 +1,4 @@
-import type { ArtifactSetKey } from '@genshin-optimizer/gi_consts'
+import type { ArtifactSetKey } from '@genshin-optimizer/gi/consts'
 import type { Data } from '../../../Formula/type'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
 import type { IArtifactSheet } from '../IArtifactSheet'

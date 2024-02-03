@@ -1,6 +1,6 @@
-import { subscript } from '@genshin-optimizer/pando_engine'
-import type { LightConeKey } from '@genshin-optimizer/sr_consts'
-import { allStats } from '@genshin-optimizer/sr_stats'
+import { subscript } from '@genshin-optimizer/pando/engine'
+import type { LightConeKey } from '@genshin-optimizer/sr/consts'
+import { allStats } from '@genshin-optimizer/sr/stats'
 import {
   allBoolConditionals,
   allListConditionals,

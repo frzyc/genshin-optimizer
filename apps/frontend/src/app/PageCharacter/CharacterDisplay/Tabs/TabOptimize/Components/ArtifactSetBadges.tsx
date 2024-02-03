@@ -1,8 +1,8 @@
-import { iconInlineProps } from '@genshin-optimizer/common_svgicons'
+import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
 import type {
   ArtifactSetKey,
   ArtifactSlotKey,
-} from '@genshin-optimizer/gi_consts'
+} from '@genshin-optimizer/gi/consts'
 import { Box, Typography } from '@mui/material'
 import { useMemo } from 'react'
 import ArtifactSetTooltip from '../../../../../Components/Artifact/ArtifactSetTooltip'

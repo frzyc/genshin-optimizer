@@ -1,4 +1,4 @@
-import { layeredAssignment } from '@genshin-optimizer/common_util'
+import { layeredAssignment } from '@genshin-optimizer/common/util'
 import type { PropTypeKey } from '../../mapping'
 import { readDMJSON } from '../../util'
 type WeaponPromoteExcelConfigData = {

@@ -1,12 +1,12 @@
-import { range } from '@genshin-optimizer/common_util'
+import { range } from '@genshin-optimizer/common/util'
+import { characterAsset } from '@genshin-optimizer/gi/assets'
 import type {
   ArtifactSlotKey,
   CharacterKey,
   ElementKey,
-} from '@genshin-optimizer/gi_consts'
-import { allArtifactSlotKeys } from '@genshin-optimizer/gi_consts'
-import { characterAsset } from '@genshin-optimizer/gi_assets'
-import { ascensionMaxLevel } from '@genshin-optimizer/gi_util'
+} from '@genshin-optimizer/gi/consts'
+import { allArtifactSlotKeys } from '@genshin-optimizer/gi/consts'
+import { ascensionMaxLevel } from '@genshin-optimizer/gi/util'
 import { Favorite, FavoriteBorder } from '@mui/icons-material'
 import {
   Box,

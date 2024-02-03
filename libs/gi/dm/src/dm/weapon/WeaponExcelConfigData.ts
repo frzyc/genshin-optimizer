@@ -1,4 +1,4 @@
-import { dumpFile, nameToKey } from '@genshin-optimizer/common_pipeline'
+import { dumpFile, nameToKey } from '@genshin-optimizer/common/pipeline'
 import { TextMapEN } from '../../TextMapUtil'
 import type { DWeaponTypeKey, WeaponId } from '../../mapping'
 import { weaponIdMap } from '../../mapping'

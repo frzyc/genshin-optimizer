@@ -2,10 +2,10 @@ import {
   getRandBool,
   getRandomElementFromArray,
   getRandomIntInclusive,
-} from '@genshin-optimizer/common_util'
-import type { RefinementKey } from '@genshin-optimizer/gi_consts'
-import { allWeaponKeys } from '@genshin-optimizer/gi_consts'
-import type { IWeapon } from '@genshin-optimizer/gi_good'
+} from '@genshin-optimizer/common/util'
+import type { RefinementKey } from '@genshin-optimizer/gi/consts'
+import { allWeaponKeys } from '@genshin-optimizer/gi/consts'
+import type { IWeapon } from '@genshin-optimizer/gi/good'
 import { validateLevelAsc } from '../level'
 
 const weaponKeys = allWeaponKeys.filter(

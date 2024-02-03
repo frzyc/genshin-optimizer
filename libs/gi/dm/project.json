@@ -1,5 +1,5 @@
 {
-  "name": "gi_dm",
+  "name": "gi-dm",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/gi/dm/src",
   "projectType": "library",

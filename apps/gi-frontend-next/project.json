@@ -85,9 +85,9 @@
   },
   "tags": [],
   "implicitDependencies": [
-    "gi_prisma-schema",
-    "gi_localization",
-    "gi_dm-localization",
-    "gi_silly-wisher-names"
+    "gi-prisma-schema",
+    "gi-localization",
+    "gi-dm-localization",
+    "gi-silly-wisher-names"
   ]
 }

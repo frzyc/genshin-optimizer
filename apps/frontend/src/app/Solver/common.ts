@@ -3,12 +3,12 @@ import {
   objKeyMap,
   objMap,
   range,
-} from '@genshin-optimizer/common_util'
+} from '@genshin-optimizer/common/util'
 import {
   allArtifactSlotKeys,
   type ArtifactSetKey,
   type ArtifactSlotKey,
-} from '@genshin-optimizer/gi_consts'
+} from '@genshin-optimizer/gi/consts'
 import type {
   ArtSetExclusion,
   ArtSetExclusionKey,

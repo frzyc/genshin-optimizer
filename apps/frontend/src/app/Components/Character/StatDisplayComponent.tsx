@@ -1,4 +1,4 @@
-import { objMap } from '@genshin-optimizer/common_util'
+import { objMap } from '@genshin-optimizer/common/util'
 import { Masonry } from '@mui/lab'
 import { Box, Divider, ListItem } from '@mui/material'
 import { useContext, useMemo } from 'react'

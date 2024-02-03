@@ -20,16 +20,16 @@ import BonusStatsCard from '../TabOptimize/Components/BonusStatsCard'
 import OptimizationTargetSelector from '../TabOptimize/Components/OptimizationTargetSelector'
 import StatFilterCard from '../TabOptimize/Components/StatFilterCard'
 
-import { useForceUpdate } from '@genshin-optimizer/common_react-util'
-import { clamp } from '@genshin-optimizer/common_util'
+import { useForceUpdate } from '@genshin-optimizer/common/react-util'
+import { clamp } from '@genshin-optimizer/common/util'
 import type {
   ArtifactSlotKey,
   CharacterKey,
-} from '@genshin-optimizer/gi_consts'
+} from '@genshin-optimizer/gi/consts'
 import {
   allArtifactSlotKeys,
   charKeyToLocCharKey,
-} from '@genshin-optimizer/gi_consts'
+} from '@genshin-optimizer/gi/consts'
 import {
   Suspense,
   useCallback,

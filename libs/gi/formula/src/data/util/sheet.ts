@@ -3,10 +3,10 @@ import type {
   ElementKey,
   ElementWithPhyKey,
   MoveKey,
-} from '@genshin-optimizer/gi_consts'
-import type { StatKey } from '@genshin-optimizer/gi_dm'
-import type { NumNode, StrNode } from '@genshin-optimizer/pando_engine'
-import { prod } from '@genshin-optimizer/pando_engine'
+} from '@genshin-optimizer/gi/consts'
+import type { StatKey } from '@genshin-optimizer/gi/dm'
+import type { NumNode, StrNode } from '@genshin-optimizer/pando/engine'
+import { prod } from '@genshin-optimizer/pando/engine'
 import type { Source, Stat } from './listing'
 import type { Read } from './read'
 import { reader, tag } from './read'

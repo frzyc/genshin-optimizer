@@ -1,5 +1,5 @@
-import type { WeaponKey } from '@genshin-optimizer/gi_consts'
-import {} from '@genshin-optimizer/pando_engine'
+import type { WeaponKey } from '@genshin-optimizer/gi/consts'
+import {} from '@genshin-optimizer/pando/engine'
 import {
   allBoolConditionals,
   allListConditionals,

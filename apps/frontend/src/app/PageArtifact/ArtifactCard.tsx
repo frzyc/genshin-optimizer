@@ -1,21 +1,21 @@
-import { iconInlineProps } from '@genshin-optimizer/common_svgicons'
-import { clamp, clamp01 } from '@genshin-optimizer/common_util'
+import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
+import { clamp, clamp01 } from '@genshin-optimizer/common/util'
+import { artifactAsset } from '@genshin-optimizer/gi/assets'
 import type {
   ArtifactRarity,
   LocationKey,
   SubstatKey,
-} from '@genshin-optimizer/gi_consts'
+} from '@genshin-optimizer/gi/consts'
 import {
   allElementWithPhyKeys,
   allSubstatKeys,
-} from '@genshin-optimizer/gi_consts'
-import { artifactAsset } from '@genshin-optimizer/gi_assets'
+} from '@genshin-optimizer/gi/consts'
 import {
   artDisplayValue,
   getMainStatDisplayStr,
   getSubstatValue,
   getSubstatValuesPercent,
-} from '@genshin-optimizer/gi_util'
+} from '@genshin-optimizer/gi/util'
 import { Lock, LockOpen } from '@mui/icons-material'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import EditIcon from '@mui/icons-material/Edit'

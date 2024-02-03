@@ -1,5 +1,5 @@
-import { SqBadge } from '@genshin-optimizer/common_ui'
-import { clamp } from '@genshin-optimizer/common_util'
+import { SqBadge } from '@genshin-optimizer/common/ui'
+import { clamp } from '@genshin-optimizer/common/util'
 import type { ButtonProps } from '@mui/material'
 import type { RollColorKey } from './util'
 

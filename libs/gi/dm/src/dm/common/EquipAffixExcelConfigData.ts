@@ -1,7 +1,7 @@
-import { dumpFile, nameToKey } from '@genshin-optimizer/common_pipeline'
-import { layeredAssignment } from '@genshin-optimizer/common_util'
-import type { PropTypeKey, WeaponId } from '../../mapping'
+import { dumpFile, nameToKey } from '@genshin-optimizer/common/pipeline'
+import { layeredAssignment } from '@genshin-optimizer/common/util'
 import { TextMapEN } from '../../TextMapUtil'
+import type { PropTypeKey, WeaponId } from '../../mapping'
 import { readDMJSON } from '../../util'
 
 type EquipAffixExcelConfigData = {

@@ -1,5 +1,5 @@
-import { DropdownButton, StarsDisplay } from '@genshin-optimizer/common_ui'
-import type { ArtifactRarity } from '@genshin-optimizer/gi_consts'
+import { DropdownButton, StarsDisplay } from '@genshin-optimizer/common/ui'
+import type { ArtifactRarity } from '@genshin-optimizer/gi/consts'
 import type { ButtonProps } from '@mui/material'
 import { MenuItem } from '@mui/material'
 import { useTranslation } from 'react-i18next'

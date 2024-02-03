@@ -1,5 +1,5 @@
 import { PrismaAdapter } from '@auth/prisma-adapter'
-import { PrismaClient } from '@prisma/client/gi' // Using the client generated from libs\gi_prisma-schema
+import { PrismaClient } from '@prisma/client/gi' // Using the client generated from libs\gi-prisma-schema
 import type {
   GetServerSidePropsContext,
   NextApiRequest,

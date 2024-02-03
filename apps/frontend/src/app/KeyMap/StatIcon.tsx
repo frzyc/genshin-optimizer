@@ -1,5 +1,5 @@
-import type { ElementWithPhyKey } from '@genshin-optimizer/gi_consts'
-import { allElementWithPhyKeys } from '@genshin-optimizer/gi_consts'
+import type { ElementWithPhyKey } from '@genshin-optimizer/gi/consts'
+import { allElementWithPhyKeys } from '@genshin-optimizer/gi/consts'
 import {
   AnemoIcon,
   AtkIcon,
@@ -21,11 +21,11 @@ import {
   PyroIcon,
   ShieldStrIcon,
   StaminaIcon,
-} from '@genshin-optimizer/gi_svgicons'
+} from '@genshin-optimizer/gi/svgicons'
 import type { SvgIconProps } from '@mui/material'
 
 /**
- * @deprecated use StatIcon in @genshin-optimizer/gi_svgicons
+ * @deprecated use StatIcon in @genshin-optimizer/gi/svgicons
  */
 export default function StatIcon({
   statKey,
@@ -74,7 +74,7 @@ export default function StatIcon({
 }
 
 /**
- * @deprecated use ElementIcon in @genshin-optimizer/gi_svgicons
+ * @deprecated use ElementIcon in @genshin-optimizer/gi/svgicons
  */
 export function ElementIcon({
   ele,

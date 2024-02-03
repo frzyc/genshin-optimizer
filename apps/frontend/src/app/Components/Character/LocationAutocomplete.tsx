@@ -1,14 +1,14 @@
-import { useForceUpdate } from '@genshin-optimizer/common_react-util'
+import { useForceUpdate } from '@genshin-optimizer/common/react-util'
 import type {
   LocationCharacterKey,
   LocationKey,
-} from '@genshin-optimizer/gi_consts'
+} from '@genshin-optimizer/gi/consts'
 import {
   allLocationCharacterKeys,
   allTravelerKeys,
   charKeyToLocCharKey,
   charKeyToLocGenderedCharKey,
-} from '@genshin-optimizer/gi_consts'
+} from '@genshin-optimizer/gi/consts'
 import { BusinessCenter } from '@mui/icons-material'
 import type { AutocompleteProps } from '@mui/material'
 import { Box, Skeleton } from '@mui/material'

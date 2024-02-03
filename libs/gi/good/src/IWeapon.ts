@@ -3,7 +3,7 @@ import type {
   LocationKey,
   RefinementKey,
   WeaponKey,
-} from '@genshin-optimizer/gi_consts'
+} from '@genshin-optimizer/gi/consts'
 
 export interface IWeapon {
   key: WeaponKey // "CrescentPike"

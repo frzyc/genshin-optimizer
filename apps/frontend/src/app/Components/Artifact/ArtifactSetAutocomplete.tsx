@@ -1,7 +1,7 @@
 import type {
   ArtifactRarity,
   ArtifactSetKey,
-} from '@genshin-optimizer/gi_consts'
+} from '@genshin-optimizer/gi/consts'
 import type { AutocompleteRenderGroupParams } from '@mui/material'
 import { Box, List, ListSubheader } from '@mui/material'
 import { useCallback, useMemo } from 'react'

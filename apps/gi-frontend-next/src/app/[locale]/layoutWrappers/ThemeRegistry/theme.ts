@@ -1,6 +1,6 @@
 'use client'
 import { Roboto } from 'next/font/google'
-import { theme as commonTheme } from '@genshin-optimizer/gi_ui'
+import { theme as commonTheme } from '@genshin-optimizer/gi/ui'
 import { createTheme } from '@mui/material'
 
 const roboto = Roboto({

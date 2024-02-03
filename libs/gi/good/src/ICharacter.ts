@@ -1,4 +1,4 @@
-import type { AscensionKey, CharacterKey } from '@genshin-optimizer/gi_consts'
+import type { AscensionKey, CharacterKey } from '@genshin-optimizer/gi/consts'
 
 export interface ICharacterTalent {
   auto: number

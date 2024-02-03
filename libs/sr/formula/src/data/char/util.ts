@@ -1,4 +1,4 @@
-import { objKeyMap } from '@genshin-optimizer/common_util'
+import { objKeyMap } from '@genshin-optimizer/common/util'
 import {
   cmpEq,
   cmpGE,
@@ -6,16 +6,16 @@ import {
   prod,
   subscript,
   sum,
-} from '@genshin-optimizer/pando_engine'
+} from '@genshin-optimizer/pando/engine'
 import {
   allEidolonKeys,
   type AbilityKey,
   type StatBoostKey,
-} from '@genshin-optimizer/sr_consts'
+} from '@genshin-optimizer/sr/consts'
 import type {
   CharacterDatum,
   SkillTreeNodeBonusStat,
-} from '@genshin-optimizer/sr_stats'
+} from '@genshin-optimizer/sr/stats'
 import type { DmgTag, FormulaArg, Stat } from '../util'
 import {
   TypeKeyToListingType,
@@ -38,7 +38,7 @@ export function getBaseTag(data_gen: CharacterDatum): DmgTag {
 
 /**
  * Returns simple `number` arrays representing scalings of a character's traces
- * @param data_gen Character's entire `data` object from sr_stats:allStats
+ * @param data_gen Character's entire `data` object from sr-stats:allStats
  * @returns Object with entry for basic, skill, ult, talent, technique and eidolon scalings. Eidolon contains further entries 1-6 for each eidolon.
  */
 export function scalingParams(data_gen: CharacterDatum) {
@@ -150,7 +150,7 @@ export function heal(
  * - Base stats
  * - Stat boost traces
  * - Eidolon 3 and 5
- * @param data_gen Character's entire `data` object from sr_stats:allStats
+ * @param data_gen Character's entire `data` object from sr-stats:allStats
  * @returns TagMapNodeEntries representing character stats/buffs
  */
 export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {

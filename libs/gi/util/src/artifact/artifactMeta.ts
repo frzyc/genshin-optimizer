@@ -1,6 +1,6 @@
-import type { SubstatKey } from '@genshin-optimizer/gi_consts'
-import { artSubstatRollData } from '@genshin-optimizer/gi_consts'
-import type { IArtifact } from '@genshin-optimizer/gi_good'
+import type { SubstatKey } from '@genshin-optimizer/gi/consts'
+import { artSubstatRollData } from '@genshin-optimizer/gi/consts'
+import type { IArtifact } from '@genshin-optimizer/gi/good'
 import {
   getMainStatDisplayValue,
   getSubstatRolls,

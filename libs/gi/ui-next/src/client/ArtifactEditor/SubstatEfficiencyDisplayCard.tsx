@@ -1,5 +1,5 @@
-import { CardThemed, InfoTooltip } from '@genshin-optimizer/common_ui'
-import { PercentBadge } from '@genshin-optimizer/gi_ui'
+import { CardThemed, InfoTooltip } from '@genshin-optimizer/common/ui'
+import { PercentBadge } from '@genshin-optimizer/gi/ui'
 import { Grid, Typography } from '@mui/material'
 import type { TFunction } from 'i18next'
 import { Trans } from 'react-i18next'

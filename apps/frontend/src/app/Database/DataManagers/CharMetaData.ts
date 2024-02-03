@@ -1,10 +1,10 @@
-import { deepFreeze } from '@genshin-optimizer/common_util'
+import { deepFreeze } from '@genshin-optimizer/common/util'
 import type {
   CharacterKey,
   LocationCharacterKey,
   SubstatKey,
-} from '@genshin-optimizer/gi_consts'
-import { allSubstatKeys, allTravelerKeys } from '@genshin-optimizer/gi_consts'
+} from '@genshin-optimizer/gi/consts'
+import { allSubstatKeys, allTravelerKeys } from '@genshin-optimizer/gi/consts'
 import { DataManager } from '../DataManager'
 import type { ArtCharDatabase } from '../Database'
 

@@ -1,9 +1,9 @@
-import { clamp } from '@genshin-optimizer/common_util'
+import { clamp } from '@genshin-optimizer/common/util'
 import type {
   ArtifactRarity,
   MainStatKey,
   SubstatKey,
-} from '@genshin-optimizer/gi_consts'
+} from '@genshin-optimizer/gi/consts'
 import {
   allArtifactRarityKeys,
   allArtifactSetKeys,
@@ -15,15 +15,15 @@ import {
   artSlotsData,
   artSubstatRollData,
   charKeyToLocCharKey,
-} from '@genshin-optimizer/gi_consts'
-import type { IArtifact, IGOOD, ISubstat } from '@genshin-optimizer/gi_good'
-import { allStats } from '@genshin-optimizer/gi_stats'
+} from '@genshin-optimizer/gi/consts'
+import type { IArtifact, IGOOD, ISubstat } from '@genshin-optimizer/gi/good'
+import { allStats } from '@genshin-optimizer/gi/stats'
 import {
   getMainStatDisplayValue,
   getSubstatRange,
   getSubstatRolls,
   getSubstatValue,
-} from '@genshin-optimizer/gi_util'
+} from '@genshin-optimizer/gi/util'
 import KeyMap from '../../KeyMap'
 import type { ICachedArtifact, ICachedSubstat } from '../../Types/artifact'
 import { DataManager } from '../DataManager'

@@ -1,15 +1,15 @@
 import {
   DBLocalStorage,
   SandboxStorage,
-} from '@genshin-optimizer/common_database'
-import { objKeyMap, range } from '@genshin-optimizer/common_util'
-import type { LightConeKey } from '@genshin-optimizer/sr_consts'
+} from '@genshin-optimizer/common/database'
+import { objKeyMap, range } from '@genshin-optimizer/common/util'
+import type { LightConeKey } from '@genshin-optimizer/sr/consts'
 import type {
   ILightCone,
   IRelic,
   ISrObjectDescription,
-} from '@genshin-optimizer/sr_srod'
-import { randomizeRelic } from '@genshin-optimizer/sr_util'
+} from '@genshin-optimizer/sr/srod'
+import { randomizeRelic } from '@genshin-optimizer/sr/util'
 import type { ICachedLightCone, ISroDatabase } from '../Interfaces'
 import { SroSource } from '../Interfaces'
 import { initialCharacter } from './DataManagers/CharacterData'

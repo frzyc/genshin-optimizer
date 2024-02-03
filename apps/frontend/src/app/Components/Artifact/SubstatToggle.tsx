@@ -1,5 +1,5 @@
-import { iconInlineProps } from '@genshin-optimizer/common_svgicons'
-import { allSubstatKeys } from '@genshin-optimizer/gi_consts'
+import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
+import { allSubstatKeys } from '@genshin-optimizer/gi/consts'
 import { Box, ToggleButton } from '@mui/material'
 import StatIcon from '../../KeyMap/StatIcon'
 import { handleMultiSelect } from '../../Util/MultiSelect'

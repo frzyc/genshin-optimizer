@@ -1,5 +1,5 @@
 {
-  "name": "gi_ui",
+  "name": "gi-ui",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/gi/ui/src",
   "projectType": "library",

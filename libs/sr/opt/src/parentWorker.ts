@@ -1,12 +1,12 @@
-import { objKeyMap, range } from '@genshin-optimizer/common_util'
-import type { NumTagFree } from '@genshin-optimizer/pando_engine'
-import { combineConst, flatten } from '@genshin-optimizer/pando_engine'
+import { objKeyMap, range } from '@genshin-optimizer/common/util'
+import type { NumTagFree } from '@genshin-optimizer/pando/engine'
+import { combineConst, flatten } from '@genshin-optimizer/pando/engine'
 import {
   allRelicSlotKeys,
   type RelicSlotKey,
-} from '@genshin-optimizer/sr_consts'
-import type { ICachedRelic } from '@genshin-optimizer/sr_db'
-import { getRelicMainStatVal } from '@genshin-optimizer/sr_util'
+} from '@genshin-optimizer/sr/consts'
+import type { ICachedRelic } from '@genshin-optimizer/sr/db'
+import { getRelicMainStatVal } from '@genshin-optimizer/sr/util'
 import type { ChildCommand, ChildMessage } from './childWorker'
 import { MAX_BUILDS } from './common'
 import type { BuildResult, ProgressResult } from './optimizer'

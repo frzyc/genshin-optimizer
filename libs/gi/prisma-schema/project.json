@@ -1,5 +1,5 @@
 {
-  "name": "gi_prisma-schema",
+  "name": "gi-prisma-schema",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/gi/prisma-schema/src",
   "projectType": "library",

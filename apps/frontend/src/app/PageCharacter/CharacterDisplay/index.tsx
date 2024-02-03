@@ -1,6 +1,6 @@
-import { useBoolState } from '@genshin-optimizer/common_react-util'
-import type { CharacterKey } from '@genshin-optimizer/gi_consts'
-import { charKeyToLocGenderedCharKey } from '@genshin-optimizer/gi_consts'
+import { useBoolState } from '@genshin-optimizer/common/react-util'
+import type { CharacterKey } from '@genshin-optimizer/gi/consts'
+import { charKeyToLocGenderedCharKey } from '@genshin-optimizer/gi/consts'
 import {
   BarChart,
   Calculate,

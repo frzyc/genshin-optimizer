@@ -1,4 +1,4 @@
-import { deepFreeze } from '@genshin-optimizer/common_util'
+import { deepFreeze } from '@genshin-optimizer/common/util'
 import type { Database } from './Database'
 import type { TriggerString } from './common'
 

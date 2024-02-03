@@ -4,7 +4,7 @@ import {
   lookup,
   prod,
   sum,
-} from '@genshin-optimizer/pando_engine'
+} from '@genshin-optimizer/pando/engine'
 import type { TagMapNodeEntries } from '../util'
 import { enemy, percent, self, selfBuff, tagVal } from '../util'
 

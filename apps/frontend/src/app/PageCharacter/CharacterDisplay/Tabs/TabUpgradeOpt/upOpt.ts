@@ -1,21 +1,21 @@
 import type {
   ArtifactRarity,
   ArtifactSlotKey,
-} from '@genshin-optimizer/gi_consts'
+} from '@genshin-optimizer/gi/consts'
 import {
   optimize,
   precompute,
   type OptNode,
 } from '../../../../Formula/optimization'
 
-import { cartesian, range } from '@genshin-optimizer/common_util'
-import { allSubstatKeys, artMaxLevel } from '@genshin-optimizer/gi_consts'
-import type { MainStatKey, SubstatKey } from '@genshin-optimizer/gi_dm'
+import { cartesian, range } from '@genshin-optimizer/common/util'
+import { allSubstatKeys, artMaxLevel } from '@genshin-optimizer/gi/consts'
+import type { MainStatKey, SubstatKey } from '@genshin-optimizer/gi/dm'
 import {
   getMainStatDisplayValue,
   getRollsRemaining,
   getSubstatValue,
-} from '@genshin-optimizer/gi_util'
+} from '@genshin-optimizer/gi/util'
 import { ddx, zero_deriv } from '../../../../Formula/differentiate'
 import type { ArtifactBuildData, DynStat } from '../../../../Solver/common'
 import type { ICachedArtifact } from '../../../../Types/artifact'

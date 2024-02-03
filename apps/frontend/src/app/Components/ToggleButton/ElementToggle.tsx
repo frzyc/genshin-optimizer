@@ -1,5 +1,5 @@
-import type { ElementKey } from '@genshin-optimizer/gi_consts'
-import { allElementKeys } from '@genshin-optimizer/gi_consts'
+import type { ElementKey } from '@genshin-optimizer/gi/consts'
+import { allElementKeys } from '@genshin-optimizer/gi/consts'
 import { Chip, ToggleButtonGroup, useMediaQuery, useTheme } from '@mui/material'
 import { ElementIcon } from '../../KeyMap/StatIcon'
 import { handleMultiSelect } from '../../Util/MultiSelect'

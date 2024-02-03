@@ -2,7 +2,7 @@ import type {
   CharacterKey,
   GenderKey,
   LocationGenderedCharacterKey,
-} from '@genshin-optimizer/gi_consts'
+} from '@genshin-optimizer/gi/consts'
 import { Translate } from '../Translate'
 
 export function CharacterName({

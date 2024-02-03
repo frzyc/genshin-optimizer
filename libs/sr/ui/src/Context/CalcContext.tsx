@@ -2,17 +2,17 @@ import type {
   CharacterKey,
   RelicSlotKey,
   RelicSubStatKey,
-} from '@genshin-optimizer/sr_consts'
+} from '@genshin-optimizer/sr/consts'
 import type {
   ICachedLightCone,
   ICachedRelic,
   ICachedSroCharacter,
-} from '@genshin-optimizer/sr_db'
+} from '@genshin-optimizer/sr/db'
 import type {
   Calculator,
   Member,
   TagMapNodeEntries,
-} from '@genshin-optimizer/sr_formula'
+} from '@genshin-optimizer/sr/formula'
 import {
   charData,
   enemyDebuff,
@@ -23,7 +23,7 @@ import {
   srCalculatorWithEntries,
   teamData,
   withMember,
-} from '@genshin-optimizer/sr_formula'
+} from '@genshin-optimizer/sr/formula'
 import type { ReactNode } from 'react'
 import { createContext, useContext, useMemo } from 'react'
 import { useCharacter, useEquippedRelics } from '../Hook'

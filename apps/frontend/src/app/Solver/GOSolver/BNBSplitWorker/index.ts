@@ -3,8 +3,8 @@ import { optimize, type OptNode } from '../../../Formula/optimization'
 import type {
   ArtifactSetKey,
   ArtifactSlotKey,
-} from '@genshin-optimizer/gi_consts'
-import { allArtifactSetKeys } from '@genshin-optimizer/gi_consts'
+} from '@genshin-optimizer/gi/consts'
+import { allArtifactSetKeys } from '@genshin-optimizer/gi/consts'
 import { objectKeyValueMap, objectMap } from '../../../Util/Util'
 import type {
   ArtifactBuildData,

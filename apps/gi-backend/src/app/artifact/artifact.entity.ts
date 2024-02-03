@@ -10,8 +10,8 @@ import {
   registerEnumType,
 } from '@nestjs/graphql'
 
-import { objKeyMap } from '@genshin-optimizer/common_util'
-import type { LocationCharacterKey } from '@genshin-optimizer/gi_consts'
+import { objKeyMap } from '@genshin-optimizer/common/util'
+import type { LocationCharacterKey } from '@genshin-optimizer/gi/consts'
 import {
   ArtifactSetKey,
   ArtifactSlotKey,
@@ -21,7 +21,7 @@ import {
   allArtifactSlotKeys,
   allMainStatKeys,
   allSubstatKeys,
-} from '@genshin-optimizer/gi_consts'
+} from '@genshin-optimizer/gi/consts'
 import { LocationEnum } from '../common.entity'
 
 const ArtifactSetEnum = objKeyMap(allArtifactSetKeys, (k) => k)

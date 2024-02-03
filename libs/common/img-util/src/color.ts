@@ -1,4 +1,4 @@
-import { clamp, within } from '@genshin-optimizer/common_util'
+import { clamp, within } from '@genshin-optimizer/common/util'
 
 export type Color = {
   r: number

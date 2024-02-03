@@ -1,4 +1,4 @@
-import type { WeaponClaymoreKey } from '@genshin-optimizer/gi_consts'
+import type { WeaponClaymoreKey } from '@genshin-optimizer/gi/consts'
 import type WeaponSheet from '../WeaponSheet'
 import Akuoumaru from './Akuoumaru'
 import BeaconOfTheReedSea from './BeaconOfTheReedSea'

@@ -1,15 +1,15 @@
 import type { StaticImageData } from 'next/image'
 
-import type { TravelerKey } from '@genshin-optimizer/gi_consts'
+import type { TravelerKey } from '@genshin-optimizer/gi/consts'
 import {
   allTravelerKeys,
   type CharacterKey,
   type GenderKey,
   type LocationCharacterKey,
-} from '@genshin-optimizer/gi_consts'
-import { characterAsset } from '@genshin-optimizer/gi_assets'
-import type { ICharacter } from '@genshin-optimizer/gi_good'
-import { portrait } from '@genshin-optimizer/gi_silly-wisher'
+} from '@genshin-optimizer/gi/consts'
+import { characterAsset } from '@genshin-optimizer/gi/assets'
+import type { ICharacter } from '@genshin-optimizer/gi/good'
+import { portrait } from '@genshin-optimizer/gi/silly-wisher'
 
 export function iconAsset(
   cKey: CharacterKey,

@@ -1,5 +1,5 @@
-import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi_consts'
-import { allStats } from '@genshin-optimizer/gi_stats'
+import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
+import { allStats } from '@genshin-optimizer/gi/stats'
 import { input, target } from '../../../Formula'
 import type { UIData } from '../../../Formula/uiData'
 import {

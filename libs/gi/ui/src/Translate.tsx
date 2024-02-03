@@ -1,5 +1,5 @@
 'use client'
-import { ColorText, SqBadge } from '@genshin-optimizer/common_ui'
+import { ColorText, SqBadge } from '@genshin-optimizer/common/ui'
 import { Skeleton, Typography } from '@mui/material'
 import type { TFunction } from 'i18next'
 import type { ReactNode } from 'react'

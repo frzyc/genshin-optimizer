@@ -1,4 +1,4 @@
-import type { StatKey } from '@genshin-optimizer/sr_consts'
+import type { StatKey } from '@genshin-optimizer/sr/consts'
 
 export const allStatDMKeys = [
   'HPDelta',

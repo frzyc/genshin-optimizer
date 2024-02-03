@@ -1,9 +1,9 @@
-import { assertUnreachable } from '@genshin-optimizer/common_util'
-import type { AnyNode, CalcResult } from '@genshin-optimizer/pando_engine'
+import { assertUnreachable } from '@genshin-optimizer/common/util'
+import type { AnyNode, CalcResult } from '@genshin-optimizer/pando/engine'
 import {
   Calculator as Base,
   calculation,
-} from '@genshin-optimizer/pando_engine'
+} from '@genshin-optimizer/pando/engine'
 import type { Tag } from './data/util'
 import { reader, type Read } from './data/util'
 import { DebugCalculator } from './debug'

@@ -1,4 +1,4 @@
-import type { RelicSetKey, RelicSlotKey } from '@genshin-optimizer/sr_consts'
+import type { RelicSetKey, RelicSlotKey } from '@genshin-optimizer/sr/consts'
 
 export const relicSetIdMap: Record<string, RelicSetKey> = {
   101: 'PasserbyOfWanderingCloud',

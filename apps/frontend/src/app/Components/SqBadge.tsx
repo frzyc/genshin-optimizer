@@ -7,7 +7,7 @@ interface ColorTextProps extends HTMLAttributes<HTMLSpanElement> {
 }
 
 /**
- * @deprecated use SqBadge in `@genshin-optimizer/common_ui`
+ * @deprecated use SqBadge in `@genshin-optimizer/common/ui`
  */
 const SqBadge = styled('span', {
   name: 'SqBadge',

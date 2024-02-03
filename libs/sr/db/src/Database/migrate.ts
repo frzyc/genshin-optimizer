@@ -5,8 +5,8 @@
 // 3. Update `currentDBVersion`
 // 4. Test on import, and also on version update
 
-import type { DBStorage } from '@genshin-optimizer/common_database'
-import type { ISrObjectDescription } from '@genshin-optimizer/sr_srod'
+import type { DBStorage } from '@genshin-optimizer/common/database'
+import type { ISrObjectDescription } from '@genshin-optimizer/sr/srod'
 import type { ISroDatabase } from '../Interfaces'
 
 export const currentDBVersion = 1

@@ -1,4 +1,4 @@
-import { useBoolState } from '@genshin-optimizer/common_react-util'
+import { useBoolState } from '@genshin-optimizer/common/react-util'
 import { Delete, Download, ImportExport, Upload } from '@mui/icons-material'
 import ContentPasteIcon from '@mui/icons-material/ContentPaste'
 import {

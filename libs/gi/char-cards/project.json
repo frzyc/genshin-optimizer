@@ -1,5 +1,5 @@
 {
-  "name": "gi_char-cards",
+  "name": "gi-char-cards",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/gi/char-cards/src",
   "projectType": "library",

@@ -1,5 +1,5 @@
 {
-  "name": "common_img-util",
+  "name": "common-img-util",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/common/img-util/src",
   "projectType": "library",

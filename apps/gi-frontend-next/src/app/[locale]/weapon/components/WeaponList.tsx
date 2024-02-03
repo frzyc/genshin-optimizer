@@ -1,6 +1,6 @@
-import { useGetAllUserWeaponQuery } from '@genshin-optimizer/gi_frontend-gql'
-import type { IWeapon } from '@genshin-optimizer/gi_good'
-import { WeaponCard } from '@genshin-optimizer/gi_ui-next'
+import { useGetAllUserWeaponQuery } from '@genshin-optimizer/gi/frontend-gql'
+import type { IWeapon } from '@genshin-optimizer/gi/good'
+import { WeaponCard } from '@genshin-optimizer/gi/ui-next'
 import { Grid } from '@mui/material'
 const columns = { xs: 1, sm: 2, md: 3, lg: 3, xl: 4 }
 export default function WeaponList({

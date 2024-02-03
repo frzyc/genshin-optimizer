@@ -1,5 +1,5 @@
-import type { RarityKey } from '@genshin-optimizer/gi_consts'
-import { allRarityKeys } from '@genshin-optimizer/gi_consts'
+import type { RarityKey } from '@genshin-optimizer/gi/consts'
+import { allRarityKeys } from '@genshin-optimizer/gi/consts'
 import StarRoundedIcon from '@mui/icons-material/StarRounded'
 import { Box, Chip, ToggleButton, useMediaQuery, useTheme } from '@mui/material'
 import { handleMultiSelect } from '../../Util/MultiSelect'

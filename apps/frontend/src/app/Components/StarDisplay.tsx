@@ -1,9 +1,9 @@
-import type { RarityKey } from '@genshin-optimizer/gi_consts'
+import type { RarityKey } from '@genshin-optimizer/gi/consts'
 import StarRoundedIcon from '@mui/icons-material/StarRounded'
 import ColorText from './ColoredText'
 
 /**
- * @deprecated use `StarsDisplay` in `@genshin-optimizer/common_ui`
+ * @deprecated use `StarsDisplay` in `@genshin-optimizer/common/ui`
  */
 export const StarsDisplay = ({
   stars = 1,

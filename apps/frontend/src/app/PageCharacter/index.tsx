@@ -1,19 +1,19 @@
 import {
   useForceUpdate,
   useMediaQueryUp,
-} from '@genshin-optimizer/common_react-util'
+} from '@genshin-optimizer/common/react-util'
 import {
   clamp,
   filterFunction,
   sortFunction,
-} from '@genshin-optimizer/common_util'
-import type { CharacterKey } from '@genshin-optimizer/gi_consts'
+} from '@genshin-optimizer/common/util'
+import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import {
   allCharacterRarityKeys,
   allElementKeys,
   allWeaponTypeKeys,
   charKeyToLocGenderedCharKey,
-} from '@genshin-optimizer/gi_consts'
+} from '@genshin-optimizer/gi/consts'
 import {
   DeleteForever,
   FactCheck,

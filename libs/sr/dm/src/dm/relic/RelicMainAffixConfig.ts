@@ -1,4 +1,4 @@
-import { dumpFile } from '@genshin-optimizer/common_pipeline'
+import { dumpFile } from '@genshin-optimizer/common/pipeline'
 import { PROJROOT_PATH } from '../../consts'
 import type { RelicStatMainDMKey } from '../../mapping'
 import { statKeyMap } from '../../mapping'

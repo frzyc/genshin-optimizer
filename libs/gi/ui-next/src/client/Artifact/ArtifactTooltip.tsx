@@ -1,21 +1,21 @@
-import { iconInlineProps } from '@genshin-optimizer/common_svgicons'
+import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
 import {
   BootstrapTooltip,
   SqBadge,
   StarsDisplay,
-} from '@genshin-optimizer/common_ui'
-import { clamp } from '@genshin-optimizer/common_util'
-import type { RarityKey } from '@genshin-optimizer/gi_consts'
-import type { Artifact } from '@genshin-optimizer/gi_frontend-gql'
-import { SlotIcon, StatIcon } from '@genshin-optimizer/gi_svgicons'
+} from '@genshin-optimizer/common/ui'
+import { clamp } from '@genshin-optimizer/common/util'
+import type { RarityKey } from '@genshin-optimizer/gi/consts'
+import type { Artifact } from '@genshin-optimizer/gi/frontend-gql'
+import { SlotIcon, StatIcon } from '@genshin-optimizer/gi/svgicons'
 import {
   ArtifactSetName,
   ArtifactSetSlotName,
   IconStatDisplay,
   artifactLevelVariant,
   getVariant,
-} from '@genshin-optimizer/gi_ui'
-import { getMainStatDisplayStr } from '@genshin-optimizer/gi_util'
+} from '@genshin-optimizer/gi/ui'
+import { getMainStatDisplayStr } from '@genshin-optimizer/gi/util'
 import type { Palette } from '@mui/material'
 import { Box, Skeleton, Typography } from '@mui/material'
 import { Suspense } from 'react'

@@ -1,5 +1,5 @@
-import { SECOND_MS } from '@genshin-optimizer/common_util'
-import { imgAssets } from '@genshin-optimizer/gi_assets'
+import { SECOND_MS } from '@genshin-optimizer/common/util'
+import { imgAssets } from '@genshin-optimizer/gi/assets'
 import { AccessTimeFilled } from '@mui/icons-material'
 import {
   CardActionArea,

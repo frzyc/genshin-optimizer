@@ -1,4 +1,4 @@
-# gi_frontend-gql
+# gi-frontend-gql
 
 This library was generated with [Nx](https://nx.dev).
 
@@ -9,9 +9,9 @@ The intention of this lib is to provide generated types/apis generated from the 
 From project root:
 
 ```
-nx codegen gi_frontend-gql
+nx codegen gi-frontend-gql
 ```
 
 ## Running unit tests
 
-Run `nx test gi_frontend-gql` to execute the unit tests via [Jest](https://jestjs.io).
+Run `nx test gi-frontend-gql` to execute the unit tests via [Jest](https://jestjs.io).

@@ -3,7 +3,7 @@ import {
   MINUTE_MS,
   SECOND_MS,
   timeString,
-} from '@genshin-optimizer/common_util'
+} from '@genshin-optimizer/common/util'
 import AccessTimeFilledIcon from '@mui/icons-material/AccessTimeFilled'
 import { CardContent, Divider, Grid, MenuItem, Typography } from '@mui/material'
 import { useCallback, useContext, useEffect, useState } from 'react'

@@ -1,4 +1,4 @@
-import { allStats } from '@genshin-optimizer/gi_stats'
+import { allStats } from '@genshin-optimizer/gi/stats'
 import ColorText from '../../../Components/ColoredText'
 import { input, target } from '../../../Formula'
 import {
@@ -27,7 +27,7 @@ import {
   plungingDmgNodes,
 } from '../dataUtil'
 
-import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi_consts'
+import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
 
 const key: CharacterKey = 'Venti'
 const elementKey: ElementKey = 'anemo'

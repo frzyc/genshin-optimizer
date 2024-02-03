@@ -3,20 +3,20 @@ import {
   ColorText,
   SqBadge,
   StarsDisplay,
-} from '@genshin-optimizer/common_ui'
-import { getRandBool, objKeyMap } from '@genshin-optimizer/common_util'
-import { characterAsset } from '@genshin-optimizer/gi_assets'
+} from '@genshin-optimizer/common/ui'
+import { getRandBool, objKeyMap } from '@genshin-optimizer/common/util'
+import { characterAsset } from '@genshin-optimizer/gi/assets'
 import type {
   ArtifactSlotKey,
   ElementKey,
   GenderKey,
   LocationKey,
-} from '@genshin-optimizer/gi_consts'
+} from '@genshin-optimizer/gi/consts'
 import {
   allArtifactSlotKeys,
   type CharacterKey,
-} from '@genshin-optimizer/gi_consts'
-import type { Calculator } from '@genshin-optimizer/gi_formula'
+} from '@genshin-optimizer/gi/consts'
+import type { Calculator } from '@genshin-optimizer/gi/formula'
 import {
   artifactsData,
   charData,
@@ -29,8 +29,8 @@ import {
   teamData,
   weaponData,
   withMember,
-} from '@genshin-optimizer/gi_formula'
-import { ascensionMaxLevel } from '@genshin-optimizer/gi_util'
+} from '@genshin-optimizer/gi/formula'
+import { ascensionMaxLevel } from '@genshin-optimizer/gi/util'
 import FavoriteIcon from '@mui/icons-material/Favorite'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
 import {
@@ -43,11 +43,11 @@ import {
 } from '@mui/material'
 import { Suspense, useContext, useMemo, useState } from 'react'
 
-import { CalcContext, NodeFieldDisplay } from '@genshin-optimizer/gi_formula-ui'
-import type { Character } from '@genshin-optimizer/gi_frontend-gql'
-import { getCharData } from '@genshin-optimizer/gi_stats'
-import type { RollColorKey } from '@genshin-optimizer/gi_ui'
-import { CharacterName } from '@genshin-optimizer/gi_ui'
+import { CalcContext, NodeFieldDisplay } from '@genshin-optimizer/gi/formula-ui'
+import type { Character } from '@genshin-optimizer/gi/frontend-gql'
+import { getCharData } from '@genshin-optimizer/gi/stats'
+import type { RollColorKey } from '@genshin-optimizer/gi/ui'
+import { CharacterName } from '@genshin-optimizer/gi/ui'
 import Image from 'next/image'
 import { ArtifactCardPico, ArtifactCardPicoBlank } from './Artifact'
 import { GenshinUserContext } from './GenshinUserDataWrapper'

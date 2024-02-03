@@ -1,14 +1,14 @@
-import { validateArr } from '@genshin-optimizer/common_util'
+import { validateArr } from '@genshin-optimizer/common/util'
 import type {
   CharacterRarityKey,
   ElementKey,
   WeaponTypeKey,
-} from '@genshin-optimizer/gi_consts'
+} from '@genshin-optimizer/gi/consts'
 import {
   allCharacterRarityKeys,
   allElementKeys,
   allWeaponTypeKeys,
-} from '@genshin-optimizer/gi_consts'
+} from '@genshin-optimizer/gi/consts'
 import type { CharacterSortKey } from '../../Util/CharacterSort'
 import { characterSortKeys } from '../../Util/CharacterSort'
 import { DataEntry } from '../DataEntry'

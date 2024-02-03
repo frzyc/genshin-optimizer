@@ -1,12 +1,12 @@
-import { clamp } from '@genshin-optimizer/common_util'
+import { clamp } from '@genshin-optimizer/common/util'
 import type {
   ArtifactSetKey,
   ArtifactSlotKey,
   RarityKey,
-} from '@genshin-optimizer/gi_consts'
-import { artMaxLevel, artSlotMainKeys } from '@genshin-optimizer/gi_consts'
-import type { Artifact, Substat } from '@genshin-optimizer/gi_frontend-gql'
-import { allStats } from '@genshin-optimizer/gi_stats'
+} from '@genshin-optimizer/gi/consts'
+import { artMaxLevel, artSlotMainKeys } from '@genshin-optimizer/gi/consts'
+import type { Artifact, Substat } from '@genshin-optimizer/gi/frontend-gql'
+import { allStats } from '@genshin-optimizer/gi/stats'
 
 type ResetMessage = { type: 'reset' }
 type SubstatMessage = { type: 'substat'; index: number; substat?: Substat }

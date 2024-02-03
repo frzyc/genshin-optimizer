@@ -1,5 +1,5 @@
-import type { CharacterKey } from '@genshin-optimizer/gi_consts'
-import { charKeyToLocCharKey } from '@genshin-optimizer/gi_consts'
+import type { CharacterKey } from '@genshin-optimizer/gi/consts'
+import { charKeyToLocCharKey } from '@genshin-optimizer/gi/consts'
 import * as allStat_gen from './allStat_gen.json'
 import type { AllStats } from './executors/gen-stats/executor'
 

@@ -1,5 +1,5 @@
-import type { WeaponKey } from '@genshin-optimizer/gi_consts'
-import { prod, subscript } from '@genshin-optimizer/pando_engine'
+import type { WeaponKey } from '@genshin-optimizer/gi/consts'
+import { prod, subscript } from '@genshin-optimizer/pando/engine'
 import { customHeal, register, self, target } from '../util'
 import { entriesForWeapon } from './util'
 

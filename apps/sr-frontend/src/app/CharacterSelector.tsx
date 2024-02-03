@@ -1,8 +1,8 @@
-import { CardThemed } from '@genshin-optimizer/common_ui'
+import { CardThemed } from '@genshin-optimizer/common/ui'
 import {
   CharacterAutocomplete,
   useCharacterContext,
-} from '@genshin-optimizer/sr_ui'
+} from '@genshin-optimizer/sr/ui'
 import { CardContent, Container } from '@mui/material'
 
 export default function CharacterSelector() {

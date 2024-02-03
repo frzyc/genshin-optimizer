@@ -1,6 +1,6 @@
-import type { Database } from '@genshin-optimizer/common_database'
-import { DataManagerBase } from '@genshin-optimizer/common_database'
-import type { IGOOD } from '@genshin-optimizer/gi_good'
+import type { Database } from '@genshin-optimizer/common/database'
+import { DataManagerBase } from '@genshin-optimizer/common/database'
+import type { IGOOD } from '@genshin-optimizer/gi/good'
 import type { IGO, ImportResult } from './exim'
 export class DataManager<
   CacheKey extends string,

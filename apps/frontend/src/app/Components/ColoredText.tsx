@@ -6,7 +6,7 @@ interface ColorTextProps extends HTMLAttributes<HTMLSpanElement> {
   variant?: string
 }
 /**
- * @deprecated use ColorText in `@genshin-optimizer/common_ui`
+ * @deprecated use ColorText in `@genshin-optimizer/common/ui`
  */
 const ColorText = styled('span')<ColorTextProps>(
   ({ theme, color, variant = 'main' }) => {

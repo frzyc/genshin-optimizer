@@ -1,4 +1,4 @@
-import type { ElementWithPhyKey } from '@genshin-optimizer/gi_consts'
+import type { ElementWithPhyKey } from '@genshin-optimizer/gi/consts'
 
 /**
  * @deprecated use the translated element keys

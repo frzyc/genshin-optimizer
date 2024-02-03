@@ -1,12 +1,12 @@
-import { objKeyMap, objMap } from '@genshin-optimizer/common_util'
+import { objKeyMap, objMap } from '@genshin-optimizer/common/util'
 import {
   allRelicSlotKeys,
   type RelicSlotKey,
-} from '@genshin-optimizer/sr_consts'
+} from '@genshin-optimizer/sr/consts'
 import type {
   ICachedRelic,
   ICachedSroCharacter,
-} from '@genshin-optimizer/sr_db'
+} from '@genshin-optimizer/sr/db'
 import { useEffect, useMemo, useState } from 'react'
 import { useDatabaseContext } from '../Context'
 

@@ -1,4 +1,4 @@
-import type { AscensionKey } from '@genshin-optimizer/sr_consts'
+import type { AscensionKey } from '@genshin-optimizer/sr/consts'
 export const ascensionMaxLevel = [20, 30, 40, 50, 60, 70, 80] as const
 
 export function validateLevelAsc(

@@ -1,5 +1,5 @@
-import type { CharacterKey } from '@genshin-optimizer/sr_consts'
-import type { ICachedSroCharacter } from '@genshin-optimizer/sr_db'
+import type { CharacterKey } from '@genshin-optimizer/sr/consts'
+import type { ICachedSroCharacter } from '@genshin-optimizer/sr/db'
 import { useCallback } from 'react'
 import { useDatabaseContext } from '../Context'
 

@@ -1,39 +1,39 @@
 'use client'
-import { iconInlineProps } from '@genshin-optimizer/common_svgicons'
+import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
 import {
   BootstrapTooltip,
   CardThemed,
   ColorText,
   InfoTooltip,
   StarsDisplay,
-} from '@genshin-optimizer/common_ui'
-import type { Unit } from '@genshin-optimizer/common_util'
-import { clamp, clamp01 } from '@genshin-optimizer/common_util'
-import { artifactAsset } from '@genshin-optimizer/gi_assets'
+} from '@genshin-optimizer/common/ui'
+import type { Unit } from '@genshin-optimizer/common/util'
+import { clamp, clamp01 } from '@genshin-optimizer/common/util'
+import { artifactAsset } from '@genshin-optimizer/gi/assets'
 import type {
   LocationCharacterKey,
   RarityKey,
   SubstatKey,
-} from '@genshin-optimizer/gi_consts'
+} from '@genshin-optimizer/gi/consts'
 import {
   allElementWithPhyKeys,
   allSubstatKeys,
-} from '@genshin-optimizer/gi_consts'
-import type { Artifact, Substat } from '@genshin-optimizer/gi_frontend-gql'
+} from '@genshin-optimizer/gi/consts'
+import type { Artifact, Substat } from '@genshin-optimizer/gi/frontend-gql'
 import {
   GetAllUserArtifactDocument,
   useRemoveArtifactMutation,
   useUpdateArtifactMutation,
-} from '@genshin-optimizer/gi_frontend-gql'
-import type { IArtifact } from '@genshin-optimizer/gi_good'
-import { SlotIcon, StatIcon } from '@genshin-optimizer/gi_svgicons'
+} from '@genshin-optimizer/gi/frontend-gql'
+import type { IArtifact } from '@genshin-optimizer/gi/good'
+import { SlotIcon, StatIcon } from '@genshin-optimizer/gi/svgicons'
 import {
   ArtifactSetSlotDesc,
   ArtifactSetSlotName,
   PercentBadge,
   artifactLevelVariant,
-} from '@genshin-optimizer/gi_ui'
-import type { SubstatMeta } from '@genshin-optimizer/gi_util'
+} from '@genshin-optimizer/gi/ui'
+import type { SubstatMeta } from '@genshin-optimizer/gi/util'
 import {
   artDisplayValue,
   getArtifactEfficiency,
@@ -41,7 +41,7 @@ import {
   getMainStatDisplayStr,
   getSubstatValue,
   getSubstatValuesPercent,
-} from '@genshin-optimizer/gi_util'
+} from '@genshin-optimizer/gi/util'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import EditIcon from '@mui/icons-material/Edit'
 import LockIcon from '@mui/icons-material/Lock'

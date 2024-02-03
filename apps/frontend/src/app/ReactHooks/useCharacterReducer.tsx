@@ -1,5 +1,5 @@
-import { deepClone } from '@genshin-optimizer/common_util'
-import type { CharacterKey } from '@genshin-optimizer/gi_consts'
+import { deepClone } from '@genshin-optimizer/common/util'
+import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import { useCallback, useContext } from 'react'
 import { DatabaseContext } from '../Database/Database'
 import type { ICachedCharacter } from '../Types/character'

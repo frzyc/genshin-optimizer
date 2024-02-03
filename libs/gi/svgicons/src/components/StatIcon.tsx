@@ -1,5 +1,5 @@
-import type { ElementWithPhyKey } from '@genshin-optimizer/gi_consts'
-import { allElementWithPhyKeys } from '@genshin-optimizer/gi_consts'
+import type { ElementWithPhyKey } from '@genshin-optimizer/gi/consts'
+import { allElementWithPhyKeys } from '@genshin-optimizer/gi/consts'
 import type { SvgIconProps } from '@mui/material'
 import {
   AnemoIcon,

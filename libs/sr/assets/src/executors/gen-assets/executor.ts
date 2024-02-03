@@ -1,11 +1,11 @@
-import { generateIndexFromObj } from '@genshin-optimizer/common_pipeline'
-import { crawlObject } from '@genshin-optimizer/common_util'
+import { generateIndexFromObj } from '@genshin-optimizer/common/pipeline'
+import { crawlObject } from '@genshin-optimizer/common/util'
 import type {
   CharacterKey,
   LightConeKey,
   RelicCavernSetKey,
   RelicPlanarSetKey,
-} from '@genshin-optimizer/sr_consts'
+} from '@genshin-optimizer/sr/consts'
 import {
   DM2D_PATH,
   avatarConfig,
@@ -15,7 +15,7 @@ import {
   relicDataInfo,
   relicSetIdMap,
   relicSlotMap,
-} from '@genshin-optimizer/sr_dm'
+} from '@genshin-optimizer/sr/dm'
 import { workspaceRoot } from '@nx/devkit'
 import * as fs from 'fs'
 import * as path from 'path'

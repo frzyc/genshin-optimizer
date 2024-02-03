@@ -1,6 +1,6 @@
-import type { Character } from '@genshin-optimizer/gi_frontend-gql'
-import { useGetAllUserCharacterQuery } from '@genshin-optimizer/gi_frontend-gql'
-import { CharacterCard } from '@genshin-optimizer/gi_ui-next'
+import type { Character } from '@genshin-optimizer/gi/frontend-gql'
+import { useGetAllUserCharacterQuery } from '@genshin-optimizer/gi/frontend-gql'
+import { CharacterCard } from '@genshin-optimizer/gi/ui-next'
 import { Box, Grid, Skeleton } from '@mui/material'
 
 const columns = { xs: 1, sm: 2, md: 3, lg: 4, xl: 4 }

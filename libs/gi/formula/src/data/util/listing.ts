@@ -2,7 +2,7 @@ import {
   allArtifactSetKeys,
   allCharacterKeys,
   allWeaponKeys,
-} from '@genshin-optimizer/gi_consts'
+} from '@genshin-optimizer/gi/consts'
 
 const stats = [
   'hp',

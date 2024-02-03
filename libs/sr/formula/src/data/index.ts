@@ -1,7 +1,7 @@
 import {
   compileTagMapKeys,
   compileTagMapValues,
-} from '@genshin-optimizer/pando_engine'
+} from '@genshin-optimizer/pando/engine'
 import {
   fixedTags,
   queryTypes,

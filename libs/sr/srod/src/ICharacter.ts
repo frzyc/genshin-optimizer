@@ -3,7 +3,7 @@ import type {
   BonusAbilityKey,
   CharacterKey,
   StatBoostKey,
-} from '@genshin-optimizer/sr_consts'
+} from '@genshin-optimizer/sr/consts'
 
 export interface ICharacter {
   key: CharacterKey

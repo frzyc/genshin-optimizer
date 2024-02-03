@@ -1,4 +1,4 @@
-import { iconInlineProps } from '@genshin-optimizer/common_svgicons'
+import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
 import SettingsIcon from '@mui/icons-material/Settings'
 import StarRoundedIcon from '@mui/icons-material/StarRounded'
 import { Box, Grid, Link, Typography } from '@mui/material'

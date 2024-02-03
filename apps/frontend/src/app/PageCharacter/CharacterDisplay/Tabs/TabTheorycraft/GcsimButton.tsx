@@ -1,8 +1,8 @@
-import { useBoolState } from '@genshin-optimizer/common_react-util'
-import { CardThemed, CodeBlock } from '@genshin-optimizer/common_ui'
-import { toDecimal } from '@genshin-optimizer/common_util'
-import type { MainStatKey, SubstatKey } from '@genshin-optimizer/gi_consts'
-import { ascensionMaxLevel, getMainStatValue } from '@genshin-optimizer/gi_util'
+import { useBoolState } from '@genshin-optimizer/common/react-util'
+import { CardThemed, CodeBlock } from '@genshin-optimizer/common/ui'
+import { toDecimal } from '@genshin-optimizer/common/util'
+import type { MainStatKey, SubstatKey } from '@genshin-optimizer/gi/consts'
+import { ascensionMaxLevel, getMainStatValue } from '@genshin-optimizer/gi/util'
 import ContentPasteIcon from '@mui/icons-material/ContentPaste'
 import {
   Button,

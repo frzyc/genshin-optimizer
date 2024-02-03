@@ -1,5 +1,5 @@
-import { allArtifactSetKeys } from '@genshin-optimizer/gi_consts'
-import type { ICharacter, IWeapon } from '@genshin-optimizer/gi_good'
+import { allArtifactSetKeys } from '@genshin-optimizer/gi/consts'
+import type { ICharacter, IWeapon } from '@genshin-optimizer/gi/good'
 import {
   combineConst,
   compile,
@@ -7,7 +7,7 @@ import {
   detach,
   flatten,
   setDebugMode,
-} from '@genshin-optimizer/pando_engine'
+} from '@genshin-optimizer/pando/engine'
 import { entries, keys, values } from './data'
 import type { Tag, TagMapNodeEntries } from './data/util'
 import {

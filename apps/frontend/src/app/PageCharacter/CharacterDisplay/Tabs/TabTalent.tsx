@@ -1,7 +1,7 @@
 import {
   maxConstellationCount,
   talentLimits,
-} from '@genshin-optimizer/gi_consts'
+} from '@genshin-optimizer/gi/consts'
 import {
   Box,
   CardActionArea,

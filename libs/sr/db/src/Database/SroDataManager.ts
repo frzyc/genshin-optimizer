@@ -1,5 +1,5 @@
-import { DataManagerBase } from '@genshin-optimizer/common_database'
-import type { ISrObjectDescription } from '@genshin-optimizer/sr_srod'
+import { DataManagerBase } from '@genshin-optimizer/common/database'
+import type { ISrObjectDescription } from '@genshin-optimizer/sr/srod'
 import type { ISroDatabase, SroDatabase } from '..'
 import type { ImportResult } from './exim'
 export class SroDataManager<

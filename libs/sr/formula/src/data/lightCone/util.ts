@@ -1,5 +1,5 @@
-import { cmpEq, prod, subscript, sum } from '@genshin-optimizer/pando_engine'
-import type { LightConeDatum } from '@genshin-optimizer/sr_stats'
+import { cmpEq, prod, subscript, sum } from '@genshin-optimizer/pando/engine'
+import type { LightConeDatum } from '@genshin-optimizer/sr/stats'
 import type { TagMapNodeEntries } from '../util'
 import { getStatFromStatKey, self, selfBuff } from '../util'
 

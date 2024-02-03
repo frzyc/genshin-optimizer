@@ -5,7 +5,7 @@ import type {
   LocationCharacterKey,
   MainStatKey,
   SubstatKey,
-} from '@genshin-optimizer/gi_consts'
+} from '@genshin-optimizer/gi/consts'
 
 export interface IArtifact {
   setKey: ArtifactSetKey

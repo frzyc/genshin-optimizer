@@ -1,11 +1,11 @@
-import { objKeyMap, range } from '@genshin-optimizer/common_util'
+import { objKeyMap, range } from '@genshin-optimizer/common/util'
 import {
   allRegionKeys,
   type CharacterKey,
   type ElementKey,
   type RegionKey,
-} from '@genshin-optimizer/gi_consts'
-import { allStats } from '@genshin-optimizer/gi_stats'
+} from '@genshin-optimizer/gi/consts'
+import { allStats } from '@genshin-optimizer/gi/stats'
 import { input, tally } from '../../../Formula'
 import {
   constant,

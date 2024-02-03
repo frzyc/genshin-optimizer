@@ -1,5 +1,5 @@
 {
-  "name": "gi_art-scanner",
+  "name": "gi-art-scanner",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/gi/art-scanner/src",
   "projectType": "library",

@@ -1,5 +1,5 @@
-import { objKeyMap, objKeyValMap } from '@genshin-optimizer/common_util'
-import type { ArtifactSetKey } from '@genshin-optimizer/gi_consts'
+import { objKeyMap, objKeyValMap } from '@genshin-optimizer/common/util'
+import type { ArtifactSetKey } from '@genshin-optimizer/gi/consts'
 import { input } from '../../../Formula'
 import type { Data } from '../../../Formula/type'
 import { equal, greaterEq, percent } from '../../../Formula/utils'

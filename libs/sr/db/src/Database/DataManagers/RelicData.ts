@@ -1,8 +1,9 @@
+import { clamp } from '@genshin-optimizer/common/util'
 import type {
   RelicMainStatKey,
   RelicRarityKey,
   RelicSubStatKey,
-} from '@genshin-optimizer/sr_consts'
+} from '@genshin-optimizer/sr/consts'
 import {
   allCharacterLocationKeys,
   allRelicMainStatKeys,
@@ -13,17 +14,16 @@ import {
   charKeyToCharLocKey,
   relicMaxLevel,
   relicSlotToMainStatKeys,
-} from '@genshin-optimizer/sr_consts'
+} from '@genshin-optimizer/sr/consts'
 import type {
   IRelic,
   ISrObjectDescription,
   ISubstat,
-} from '@genshin-optimizer/sr_srod'
+} from '@genshin-optimizer/sr/srod'
 import {
   getRelicMainStatDisplayVal,
   getSubstatRange,
-} from '@genshin-optimizer/sr_util'
-import { clamp } from '@genshin-optimizer/common_util'
+} from '@genshin-optimizer/sr/util'
 import type {
   ICachedRelic,
   ICachedSubstat,

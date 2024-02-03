@@ -1,4 +1,4 @@
-import type { WeaponKey } from '@genshin-optimizer/gi_consts'
+import type { WeaponKey } from '@genshin-optimizer/gi/consts'
 
 export const weaponIdMap: Record<number | string, WeaponKey> = {
   //swords

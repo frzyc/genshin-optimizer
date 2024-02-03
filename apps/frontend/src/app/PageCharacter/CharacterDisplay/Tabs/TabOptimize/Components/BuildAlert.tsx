@@ -1,4 +1,4 @@
-import { timeStringMs } from '@genshin-optimizer/common_util'
+import { timeStringMs } from '@genshin-optimizer/common/util'
 import { Alert, Grid, LinearProgress, styled, Typography } from '@mui/material'
 import type { ReactNode } from 'react'
 

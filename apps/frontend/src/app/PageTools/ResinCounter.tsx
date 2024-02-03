@@ -1,5 +1,5 @@
-import { MINUTE_MS, timeString } from '@genshin-optimizer/common_util'
-import { imgAssets } from '@genshin-optimizer/gi_assets'
+import { MINUTE_MS, timeString } from '@genshin-optimizer/common/util'
+import { imgAssets } from '@genshin-optimizer/gi/assets'
 import {
   Button,
   ButtonGroup,

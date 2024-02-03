@@ -1,15 +1,15 @@
-import type { CharacterLocationKey } from '@genshin-optimizer/sr_consts'
+import type { CharacterLocationKey } from '@genshin-optimizer/sr/consts'
 import {
   allCharacterLocationKeys,
   allLightConeKeys,
   charKeyToCharLocKey,
   lightConeMaxLevel,
-} from '@genshin-optimizer/sr_consts'
+} from '@genshin-optimizer/sr/consts'
 import type {
   ILightCone,
   ISrObjectDescription,
-} from '@genshin-optimizer/sr_srod'
-import { validateLevelAsc } from '@genshin-optimizer/sr_util'
+} from '@genshin-optimizer/sr/srod'
+import { validateLevelAsc } from '@genshin-optimizer/sr/util'
 import type {
   ICachedLightCone,
   ICachedSroCharacter,

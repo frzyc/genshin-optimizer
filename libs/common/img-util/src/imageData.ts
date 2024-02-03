@@ -1,4 +1,4 @@
-import { clamp } from '@genshin-optimizer/common_util'
+import { clamp } from '@genshin-optimizer/common/util'
 
 export function cropCanvas(
   srcCanvas: HTMLCanvasElement,

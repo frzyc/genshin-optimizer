@@ -1,11 +1,11 @@
-import { extrapolateFloat } from '@genshin-optimizer/common_pipeline'
-import { layeredAssignment } from '@genshin-optimizer/common_util'
-import type { NonTravelerCharacterKey } from '@genshin-optimizer/gi_consts'
+import { extrapolateFloat } from '@genshin-optimizer/common/pipeline'
+import { layeredAssignment } from '@genshin-optimizer/common/util'
+import type { NonTravelerCharacterKey } from '@genshin-optimizer/gi/consts'
 import type {
   AvatarSkillDepotExcelConfigData,
   CharacterId,
   ProudSkillExcelConfigData,
-} from '@genshin-optimizer/gi_dm'
+} from '@genshin-optimizer/gi/dm'
 import {
   avatarExcelConfigData,
   avatarSkillDepotExcelConfigData,
@@ -13,7 +13,7 @@ import {
   avatarTalentExcelConfigData,
   characterIdMap,
   proudSkillExcelConfigData,
-} from '@genshin-optimizer/gi_dm'
+} from '@genshin-optimizer/gi/dm'
 import * as somniaData from './Somnia/skillParam.json'
 
 type CharacterSkillParams = {

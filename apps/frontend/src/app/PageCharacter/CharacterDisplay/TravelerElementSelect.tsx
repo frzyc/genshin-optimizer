@@ -2,7 +2,7 @@ import {
   allElementKeys,
   travelerElement,
   travelerElements,
-} from '@genshin-optimizer/gi_consts'
+} from '@genshin-optimizer/gi/consts'
 import { MenuItem } from '@mui/material'
 import { useContext } from 'react'
 import ColorText from '../../Components/ColoredText'

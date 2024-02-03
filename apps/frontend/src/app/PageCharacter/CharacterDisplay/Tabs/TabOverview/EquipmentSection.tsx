@@ -1,14 +1,14 @@
-import { useBoolState } from '@genshin-optimizer/common_react-util'
-import { iconInlineProps } from '@genshin-optimizer/common_svgicons'
+import { useBoolState } from '@genshin-optimizer/common/react-util'
+import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
 import type {
   ArtifactSlotKey,
   WeaponTypeKey,
-} from '@genshin-optimizer/gi_consts'
+} from '@genshin-optimizer/gi/consts'
 import {
   allArtifactSlotKeys,
   allSubstatKeys,
   charKeyToLocCharKey,
-} from '@genshin-optimizer/gi_consts'
+} from '@genshin-optimizer/gi/consts'
 import { Settings, SwapHoriz } from '@mui/icons-material'
 import {
   Box,

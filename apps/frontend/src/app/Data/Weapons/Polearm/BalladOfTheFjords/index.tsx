@@ -1,5 +1,5 @@
-import type { WeaponKey } from '@genshin-optimizer/gi_consts'
-import { allStats } from '@genshin-optimizer/gi_stats'
+import type { WeaponKey } from '@genshin-optimizer/gi/consts'
+import { allStats } from '@genshin-optimizer/gi/stats'
 import { input, tally } from '../../../../Formula'
 import { greaterEq, subscript, unequal } from '../../../../Formula/utils'
 import { st } from '../../../SheetUtil'

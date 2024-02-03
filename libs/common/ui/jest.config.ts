@@ -1,6 +1,6 @@
 /* eslint-disable */
 export default {
-  displayName: 'common_ui',
+  displayName: 'common-ui',
   preset: '../../../jest.preset.js',
   transform: {
     '^(?!.*\\.(js|jsx|ts|tsx|css|json)$)': '@nx/react/plugins/jest',

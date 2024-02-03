@@ -1,5 +1,5 @@
-import { dumpFile } from '@genshin-optimizer/common_pipeline'
-import { objFilterKeys, objMap } from '@genshin-optimizer/common_util'
+import { dumpFile } from '@genshin-optimizer/common/pipeline'
+import { objFilterKeys, objMap } from '@genshin-optimizer/common/util'
 import { PROJROOT_PATH } from '../../consts'
 import type { StatDMKey } from '../../mapping'
 import type { LightConeId } from '../../mapping/lightCone'

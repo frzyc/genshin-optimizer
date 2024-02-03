@@ -1,15 +1,15 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import type { DBStorage } from '@genshin-optimizer/common_database'
+import type { DBStorage } from '@genshin-optimizer/common/database'
 import type {
   ElementKey,
   LocationCharacterKey,
   TravelerKey,
-} from '@genshin-optimizer/gi_consts'
+} from '@genshin-optimizer/gi/consts'
 import {
   allLocationCharacterKeys,
   travelerElements,
-} from '@genshin-optimizer/gi_consts'
-import type { ICharacter, IGOOD } from '@genshin-optimizer/gi_good'
+} from '@genshin-optimizer/gi/consts'
+import type { ICharacter, IGOOD } from '@genshin-optimizer/gi/good'
 import type { CustomMultiTarget } from '../Types/character'
 import type { IGO } from './exim'
 

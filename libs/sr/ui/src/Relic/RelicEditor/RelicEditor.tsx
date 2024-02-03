@@ -1,19 +1,19 @@
-import { useForceUpdate } from '@genshin-optimizer/common_react-util'
+import { useForceUpdate } from '@genshin-optimizer/common/react-util'
+import { CardThemed, DropdownButton } from '@genshin-optimizer/common/ui'
+import { clamp, deepClone } from '@genshin-optimizer/common/util'
 import type {
   RelicRarityKey,
   RelicSetKey,
   RelicSlotKey,
-} from '@genshin-optimizer/sr_consts'
+} from '@genshin-optimizer/sr/consts'
 import {
   allRelicSetKeys,
   allRelicSlotKeys,
   relicSlotToMainStatKeys,
-} from '@genshin-optimizer/sr_consts'
-import { cachedRelic } from '@genshin-optimizer/sr_db'
-import type { IRelic, ISubstat } from '@genshin-optimizer/sr_srod'
-import { getRelicMainStatDisplayVal } from '@genshin-optimizer/sr_util'
-import { CardThemed, DropdownButton } from '@genshin-optimizer/common_ui'
-import { clamp, deepClone } from '@genshin-optimizer/common_util'
+} from '@genshin-optimizer/sr/consts'
+import { cachedRelic } from '@genshin-optimizer/sr/db'
+import type { IRelic, ISubstat } from '@genshin-optimizer/sr/srod'
+import { getRelicMainStatDisplayVal } from '@genshin-optimizer/sr/util'
 import { Add } from '@mui/icons-material'
 import LockIcon from '@mui/icons-material/Lock'
 import LockOpenIcon from '@mui/icons-material/LockOpen'

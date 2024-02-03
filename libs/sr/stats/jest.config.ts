@@ -1,6 +1,6 @@
 /* eslint-disable */
 export default {
-  displayName: 'sr_stats',
+  displayName: 'sr-stats',
   preset: '../../../jest.preset.js',
   globals: {
     'ts-jest': {

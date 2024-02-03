@@ -1,5 +1,5 @@
-import type { RelicSlotKey } from '@genshin-optimizer/sr_consts'
-import { allRelicSlotKeys } from '@genshin-optimizer/sr_consts'
+import type { RelicSlotKey } from '@genshin-optimizer/sr/consts'
+import { allRelicSlotKeys } from '@genshin-optimizer/sr/consts'
 import { Grid } from '@mui/material'
 import { useEquippedRelics } from '../Hook'
 import { EmptyRelicCard, RelicCard } from '../Relic'

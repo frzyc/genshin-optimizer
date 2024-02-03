@@ -1,4 +1,4 @@
-import { useBoolState } from '@genshin-optimizer/common_react-util'
+import { useBoolState } from '@genshin-optimizer/common/react-util'
 import { Box, Button, Divider, Stack } from '@mui/material'
 import { useCallback, useContext, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'

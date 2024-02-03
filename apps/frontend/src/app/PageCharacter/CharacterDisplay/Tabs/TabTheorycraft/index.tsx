@@ -1,13 +1,13 @@
-import { useBoolState } from '@genshin-optimizer/common_react-util'
-import { iconInlineProps } from '@genshin-optimizer/common_svgicons'
-import { objMap, toPercent } from '@genshin-optimizer/common_util'
+import { useBoolState } from '@genshin-optimizer/common/react-util'
+import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
+import { objMap, toPercent } from '@genshin-optimizer/common/util'
 import {
   artSubstatRollData,
   type SubstatKey,
-} from '@genshin-optimizer/gi_consts'
-import { StatIcon } from '@genshin-optimizer/gi_svgicons'
-import { BuildAlert, initialBuildStatus } from '@genshin-optimizer/gi_ui'
-import { getSubstatValue } from '@genshin-optimizer/gi_util'
+} from '@genshin-optimizer/gi/consts'
+import { StatIcon } from '@genshin-optimizer/gi/svgicons'
+import { BuildAlert, initialBuildStatus } from '@genshin-optimizer/gi/ui'
+import { getSubstatValue } from '@genshin-optimizer/gi/util'
 import { CopyAll, Refresh } from '@mui/icons-material'
 import CalculateIcon from '@mui/icons-material/Calculate'
 import CloseIcon from '@mui/icons-material/Close'

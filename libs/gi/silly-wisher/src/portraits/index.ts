@@ -1,5 +1,5 @@
-import type { CharacterKey, GenderKey } from '@genshin-optimizer/gi_consts'
-import { charKeyToLocGenderedCharKey } from '@genshin-optimizer/gi_consts'
+import type { CharacterKey, GenderKey } from '@genshin-optimizer/gi/consts'
+import { charKeyToLocGenderedCharKey } from '@genshin-optimizer/gi/consts'
 import TravelerM from './portrait_aether.png'
 import Albedo from './portrait_albedo.png'
 import Alhaitham from './portrait_alhaitham.png'

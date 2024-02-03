@@ -1,9 +1,9 @@
-import { objKeyMap } from '@genshin-optimizer/common_util'
+import { objKeyMap } from '@genshin-optimizer/common/util'
 import {
   allArtifactSlotKeys,
   type ArtifactSetKey,
   type ArtifactSlotKey,
-} from '@genshin-optimizer/gi_consts'
+} from '@genshin-optimizer/gi/consts'
 import type { ArtSetExclusion } from '../Database/DataManagers/BuildSettingData'
 import type { OptNode } from '../Formula/optimization'
 import { precompute } from '../Formula/optimization'

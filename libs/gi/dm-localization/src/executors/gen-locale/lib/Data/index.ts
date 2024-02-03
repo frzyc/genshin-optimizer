@@ -2,7 +2,7 @@ import type {
   ArtifactSetKey,
   LocationGenderedCharacterKey,
   WeaponKey,
-} from '@genshin-optimizer/gi_consts'
+} from '@genshin-optimizer/gi/consts'
 import char from './Characters'
 import sheet from './sheet'
 export const mapHashData = {

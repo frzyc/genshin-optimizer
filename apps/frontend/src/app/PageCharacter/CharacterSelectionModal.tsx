@@ -1,16 +1,16 @@
 import {
   useBoolState,
   useForceUpdate,
-} from '@genshin-optimizer/common_react-util'
-import { filterFunction, sortFunction } from '@genshin-optimizer/common_util'
-import type { CharacterKey } from '@genshin-optimizer/gi_consts'
+} from '@genshin-optimizer/common/react-util'
+import { filterFunction, sortFunction } from '@genshin-optimizer/common/util'
+import { characterAsset } from '@genshin-optimizer/gi/assets'
+import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import {
   allCharacterKeys,
   allElementKeys,
   allWeaponTypeKeys,
-} from '@genshin-optimizer/gi_consts'
-import { characterAsset } from '@genshin-optimizer/gi_assets'
-import { ascensionMaxLevel } from '@genshin-optimizer/gi_util'
+} from '@genshin-optimizer/gi/consts'
+import { ascensionMaxLevel } from '@genshin-optimizer/gi/util'
 import { Favorite, FavoriteBorder } from '@mui/icons-material'
 import type { TooltipProps } from '@mui/material'
 import {

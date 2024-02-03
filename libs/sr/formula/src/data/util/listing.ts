@@ -1,9 +1,9 @@
-import type { ElementalTypeKey } from '@genshin-optimizer/sr_consts'
+import type { ElementalTypeKey } from '@genshin-optimizer/sr/consts'
 import {
   allCharacterKeys,
   allLightConeKeys,
   allRelicSetKeys,
-} from '@genshin-optimizer/sr_consts'
+} from '@genshin-optimizer/sr/consts'
 
 const stats = [
   'hp',

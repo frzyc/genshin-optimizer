@@ -1,5 +1,5 @@
 {
-  "name": "common_database",
+  "name": "common-database",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/common/database/src",
   "projectType": "library",

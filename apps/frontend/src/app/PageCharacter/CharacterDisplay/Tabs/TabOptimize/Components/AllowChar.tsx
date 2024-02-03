@@ -1,20 +1,20 @@
 import {
   useBoolState,
   useForceUpdate,
-} from '@genshin-optimizer/common_react-util'
-import { iconInlineProps } from '@genshin-optimizer/common_svgicons'
-import { filterFunction } from '@genshin-optimizer/common_util'
+} from '@genshin-optimizer/common/react-util'
+import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
+import { filterFunction } from '@genshin-optimizer/common/util'
 import type {
   CharacterKey,
   LocationCharacterKey,
-} from '@genshin-optimizer/gi_consts'
+} from '@genshin-optimizer/gi/consts'
 import {
   allArtifactSlotKeys,
   allCharacterRarityKeys,
   allElementKeys,
   allWeaponTypeKeys,
   charKeyToLocCharKey,
-} from '@genshin-optimizer/gi_consts'
+} from '@genshin-optimizer/gi/consts'
 import SettingsIcon from '@mui/icons-material/Settings'
 import ShowChartIcon from '@mui/icons-material/ShowChart'
 import {

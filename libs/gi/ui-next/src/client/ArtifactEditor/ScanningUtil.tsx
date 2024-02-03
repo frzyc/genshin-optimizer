@@ -1,5 +1,5 @@
-import { imageDataToCanvas } from '@genshin-optimizer/common_img-util'
-import { BorrowManager } from '@genshin-optimizer/common_util'
+import { imageDataToCanvas } from '@genshin-optimizer/common/img-util'
+import { BorrowManager } from '@genshin-optimizer/common/util'
 import type { RecognizeResult, Scheduler } from 'tesseract.js'
 import { createScheduler, createWorker } from 'tesseract.js'
 

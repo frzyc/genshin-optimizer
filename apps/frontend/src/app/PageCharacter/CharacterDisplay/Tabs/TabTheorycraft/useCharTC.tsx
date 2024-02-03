@@ -1,4 +1,4 @@
-import type { CharacterKey, WeaponKey } from '@genshin-optimizer/gi_consts'
+import type { CharacterKey, WeaponKey } from '@genshin-optimizer/gi/consts'
 import { useContext, useEffect, useState } from 'react'
 import { DatabaseContext } from '../../../../Database/Database'
 

@@ -1,9 +1,9 @@
-import { compileTagMapValues } from '@genshin-optimizer/pando_engine'
+import { compileTagMapValues } from '@genshin-optimizer/pando/engine'
 import type {
   AscensionKey,
   CharacterKey,
   LightConeKey,
-} from '@genshin-optimizer/sr_consts'
+} from '@genshin-optimizer/sr/consts'
 import { charData, lightConeData, withMember } from '.'
 import { Calculator } from './calculator'
 import { keys, values } from './data'

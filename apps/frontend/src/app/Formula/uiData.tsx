@@ -4,9 +4,9 @@ import {
   layeredAssignment,
   objPathValue,
   valueString,
-} from '@genshin-optimizer/common_util'
-import type { ArtifactSetKey, WeaponKey } from '@genshin-optimizer/gi_consts'
-import { allArtifactSetKeys, allWeaponKeys } from '@genshin-optimizer/gi_consts'
+} from '@genshin-optimizer/common/util'
+import type { ArtifactSetKey, WeaponKey } from '@genshin-optimizer/gi/consts'
+import { allArtifactSetKeys, allWeaponKeys } from '@genshin-optimizer/gi/consts'
 import { useContext } from 'react'
 import { uiInput } from '.'
 import ColorText from '../Components/ColoredText'

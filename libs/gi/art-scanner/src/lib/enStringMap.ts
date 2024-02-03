@@ -1,4 +1,4 @@
-import type { ElementWithPhyKey } from '@genshin-optimizer/gi_consts'
+import type { ElementWithPhyKey } from '@genshin-optimizer/gi/consts'
 
 // Store the english translations to use with artifact scanner
 

@@ -1,4 +1,4 @@
-import type { Calculator } from '@genshin-optimizer/gi_formula'
+import type { Calculator } from '@genshin-optimizer/gi/formula'
 import { createContext } from 'react'
 
 export type CalcContextObj = {

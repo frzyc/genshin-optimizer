@@ -4,7 +4,7 @@ import type {
   PathKey,
   RarityKey,
   TrailblazerGenderedKey,
-} from '@genshin-optimizer/sr_consts'
+} from '@genshin-optimizer/sr/consts'
 import type { AvatarRarity } from '../dm'
 import type { AvatarDamageType } from '../dm/character/AvatarConfig'
 

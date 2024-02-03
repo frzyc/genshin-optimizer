@@ -5,14 +5,14 @@ import type {
   StrNode,
   TagOverride,
   TagValRead,
-} from '@genshin-optimizer/pando_engine'
+} from '@genshin-optimizer/pando/engine'
 import {
   TypedRead,
   tag as baseTag,
   tagVal as baseTagVal,
   constant,
   reread,
-} from '@genshin-optimizer/pando_engine'
+} from '@genshin-optimizer/pando/engine'
 import type { DamageType, TagMapNodeEntry } from '.'
 import {
   damageTypes,

@@ -1,9 +1,9 @@
-# gi_stats
+# gi-stats
 
 This library was generated with [Nx](https://nx.dev).
 
-The `gi_pipeline` module dumps data into this module.
+The `gi-pipeline` module dumps data into this module.
 
 ## Building
 
-Run `nx build gi_stats` to build the library.
+Run `nx build gi-stats` to build the library.

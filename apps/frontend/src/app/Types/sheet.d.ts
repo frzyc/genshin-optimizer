@@ -2,7 +2,7 @@ import type {
   ArtifactSetKey,
   CharacterKey,
   WeaponKey,
-} from '@genshin-optimizer/gi_consts'
+} from '@genshin-optimizer/gi/consts'
 import type { NumNode, ReadNode } from '../Formula/type'
 import type { UIData } from '../Formula/uiData'
 import type { IFieldDisplay } from './fieldDisplay'

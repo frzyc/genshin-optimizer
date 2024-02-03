@@ -1,5 +1,5 @@
 {
-  "name": "gi_util",
+  "name": "gi-util",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/gi/util/src",
   "projectType": "library",

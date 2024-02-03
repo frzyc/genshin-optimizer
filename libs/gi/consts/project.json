@@ -1,5 +1,5 @@
 {
-  "name": "gi_consts",
+  "name": "gi-consts",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/gi/consts/src",
   "projectType": "library",
@@ -13,7 +13,7 @@
     "publish": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "node tools/scripts/publish.mjs gi_consts {args.ver} {args.tag}"
+        "command": "node tools/scripts/publish.mjs gi-consts {args.ver} {args.tag}"
       }
     },
     "lint": {}

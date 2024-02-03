@@ -1,5 +1,5 @@
-import type { ElementWithPhyKey } from '@genshin-optimizer/gi_consts'
-import { allElementWithPhyKeys } from '@genshin-optimizer/gi_consts'
+import type { ElementWithPhyKey } from '@genshin-optimizer/gi/consts'
+import { allElementWithPhyKeys } from '@genshin-optimizer/gi/consts'
 import type { Info } from '../Formula/type'
 import elementalData from './ElementalData'
 import type {
@@ -301,7 +301,7 @@ export default class KeyMap {
     return allElementWithPhyKeys.find((e) => key.startsWith(e))
   }
   /**
-   * @deprecated use @genshin-optimizer/common_util/numDisplay/unit
+   * @deprecated use @genshin-optimizer/common/util/numDisplay/unit
    * @param key
    * @returns
    */

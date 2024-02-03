@@ -1,5 +1,5 @@
-import { SandboxStorage } from '@genshin-optimizer/common_database'
-import { iconInlineProps } from '@genshin-optimizer/common_svgicons'
+import { SandboxStorage } from '@genshin-optimizer/common/database'
+import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
 import { CheckBox, CheckBoxOutlineBlank, FileOpen } from '@mui/icons-material'
 import ArrowBackIcon from '@mui/icons-material/ArrowBack'
 import TextSnippetIcon from '@mui/icons-material/TextSnippet'

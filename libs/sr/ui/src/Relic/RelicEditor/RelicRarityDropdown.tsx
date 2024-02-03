@@ -1,8 +1,8 @@
-import { DropdownButton, StarsDisplay } from '@genshin-optimizer/common_ui'
+import { DropdownButton, StarsDisplay } from '@genshin-optimizer/common/ui'
 import {
   allRelicRarityKeys,
   type RelicRarityKey,
-} from '@genshin-optimizer/sr_consts'
+} from '@genshin-optimizer/sr/consts'
 import type { ButtonProps } from '@mui/material'
 import { MenuItem } from '@mui/material'
 import { useTranslation } from 'react-i18next'

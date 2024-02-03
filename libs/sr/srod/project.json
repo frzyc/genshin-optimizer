@@ -1,5 +1,5 @@
 {
-  "name": "sr_srod",
+  "name": "sr-srod",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/sr/srod/src",
   "projectType": "library",

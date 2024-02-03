@@ -1,15 +1,3 @@
-import type { RelicSubStatKey } from '@genshin-optimizer/sr_consts'
-import {
-  allRelicSubStatKeys,
-  relicSubstatRollData,
-} from '@genshin-optimizer/sr_consts'
-import type { ICachedRelic } from '@genshin-optimizer/sr_db'
-import type { ISubstat } from '@genshin-optimizer/sr_srod'
-import {
-  getSubstatSummedRolls,
-  getSubstatValuesPercent,
-  roundStat,
-} from '@genshin-optimizer/sr_util'
 import {
   CardThemed,
   CustomNumberInput,
@@ -17,8 +5,20 @@ import {
   DropdownButton,
   SqBadge,
   TextButton,
-} from '@genshin-optimizer/common_ui'
-import { clamp, toPercent, unit } from '@genshin-optimizer/common_util'
+} from '@genshin-optimizer/common/ui'
+import { clamp, toPercent, unit } from '@genshin-optimizer/common/util'
+import type { RelicSubStatKey } from '@genshin-optimizer/sr/consts'
+import {
+  allRelicSubStatKeys,
+  relicSubstatRollData,
+} from '@genshin-optimizer/sr/consts'
+import type { ICachedRelic } from '@genshin-optimizer/sr/db'
+import type { ISubstat } from '@genshin-optimizer/sr/srod'
+import {
+  getSubstatSummedRolls,
+  getSubstatValuesPercent,
+  roundStat,
+} from '@genshin-optimizer/sr/util'
 import {
   Box,
   ButtonGroup,

@@ -1,6 +1,6 @@
 'use client'
-import { CardThemed } from '@genshin-optimizer/common_ui'
-import type { Artifact } from '@genshin-optimizer/gi_frontend-gql'
+import { CardThemed } from '@genshin-optimizer/common/ui'
+import type { Artifact } from '@genshin-optimizer/gi/frontend-gql'
 import {
   Box,
   Button,
@@ -15,7 +15,7 @@ import AddArtButton from './components/AddArtButton'
 import ArtifactList from './components/ArtifactList'
 import { columns } from './util'
 
-import { ArtifactEditor } from '@genshin-optimizer/gi_ui-next'
+import { ArtifactEditor } from '@genshin-optimizer/gi/ui-next'
 import AddIcon from '@mui/icons-material/Add'
 import { useTranslation } from 'react-i18next'
 

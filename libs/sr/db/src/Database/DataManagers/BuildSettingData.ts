@@ -1,19 +1,19 @@
+import {
+  deepClone,
+  deepFreeze,
+  validateArr,
+} from '@genshin-optimizer/common/util'
 import type {
   CharacterKey,
   CharacterLocationKey,
   RelicMainStatKey,
-} from '@genshin-optimizer/sr_consts'
+} from '@genshin-optimizer/sr/consts'
 import {
   allCharacterKeys,
   allCharacterLocationKeys,
   allRelicSetKeys,
   relicSlotToMainStatKeys,
-} from '@genshin-optimizer/sr_consts'
-import {
-  deepClone,
-  deepFreeze,
-  validateArr,
-} from '@genshin-optimizer/common_util'
+} from '@genshin-optimizer/sr/consts'
 import type { SroDatabase } from '../Database'
 import { SroDataManager } from '../SroDataManager'
 

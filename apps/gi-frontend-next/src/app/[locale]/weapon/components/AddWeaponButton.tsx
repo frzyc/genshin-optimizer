@@ -1,10 +1,10 @@
-import { getRandomElementFromArray } from '@genshin-optimizer/common_util'
-import type { WeaponKey } from '@genshin-optimizer/gi_consts'
+import { getRandomElementFromArray } from '@genshin-optimizer/common/util'
+import type { WeaponKey } from '@genshin-optimizer/gi/consts'
 import {
   GetAllUserWeaponDocument,
   useAddWeaponMutation,
-} from '@genshin-optimizer/gi_frontend-gql'
-import { randomizeWeapon } from '@genshin-optimizer/gi_util'
+} from '@genshin-optimizer/gi/frontend-gql'
+import { randomizeWeapon } from '@genshin-optimizer/gi/util'
 import { Button } from '@mui/material'
 
 export default function AddWeaponButton({
@@ -20,7 +20,7 @@ export default function AddWeaponButton({
       genshinUserId,
       weapon: {
         ...randomizeWeapon({
-          // Only a small subset of weapons have been added to gi_formula
+          // Only a small subset of weapons have been added to gi-formula
           key: getRandomElementFromArray([
             'CalamityQueller',
             'KeyOfKhajNisut',

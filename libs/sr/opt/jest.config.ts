@@ -1,6 +1,6 @@
 /* eslint-disable */
 export default {
-  displayName: 'sr_opt',
+  displayName: 'sr-opt',
   preset: '../../../jest.preset.js',
   testEnvironment: 'node',
   transform: {

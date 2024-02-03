@@ -1,7 +1,7 @@
 import type {
   LocationCharacterKey,
   LocationGenderedCharacterKey,
-} from '@genshin-optimizer/gi_consts'
+} from '@genshin-optimizer/gi/consts'
 import type { Translatable } from '../common'
 
 type CharData = Record<

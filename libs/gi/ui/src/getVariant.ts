@@ -1,4 +1,4 @@
-import { allElementWithPhyKeys } from '@genshin-optimizer/gi_consts'
+import { allElementWithPhyKeys } from '@genshin-optimizer/gi/consts'
 import type { Palette } from '@mui/material'
 
 export function getVariant(key = ''): keyof Palette | undefined {
