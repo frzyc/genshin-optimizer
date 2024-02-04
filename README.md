@@ -89,6 +89,8 @@ Install `yarn` ([link](https://yarnpkg.com/getting-started/install)).
 
 Run `yarn` to install dependencies.
 
+Run `yarn run reload-dm` to fetch the datamine for Genshin Impact and Star Rail.
+
 ## Development server
 
 Run `nx serve {frontend | sr-frontend}` for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
