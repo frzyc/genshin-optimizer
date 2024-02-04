@@ -1,3 +1,4 @@
+import { ArtifactSetKey, allArtifactSlotKeys } from '@genshin-optimizer/consts'
 import type { WorkerCommand, WorkerResult } from '..'
 import { assertUnreachable } from '../../Util/Util'
 import type { RequestFilter } from '../common'
@@ -10,6 +11,7 @@ import {
 import { BNBSplitWorker } from './BNBSplitWorker'
 import { ComputeWorker } from './ComputeWorker'
 import { DefaultSplitWorker } from './DefaultSplitWorker'
+import { objKeyMap } from '@genshin-optimizer/util'
 
 declare function postMessage(command: WorkerCommand | WorkerResult): void
 
@@ -51,14 +53,23 @@ async function handleEvent(e: MessageEvent<WorkerCommand>): Promise<void> {
     case 'count': {
       const { exclusion, maxIterateSize } = data,
         arts = computeWorker.arts
-      const perms = filterFeasiblePerm(
-        artSetPerm(exclusion, [
-          ...new Set(
-            Object.values(arts.values).flatMap((x) => x.map((x) => x.set!))
-          ),
-        ]),
-        arts
-      )
+      // PRE-SPLIT SEARCH SETS SO ALL BUILDS OBEY SET EXCLUSION
+      // const perms = filterFeasiblePerm(
+      //   artSetPerm(exclusion, [
+      //     ...new Set(
+      //       Object.values(arts.values).flatMap((x) => x.map((x) => x.set!))
+      //     ),
+      //   ]),
+      //   arts
+      // )
+      // NO PRE-SPLITS; SET EXCLUSION CHECKED DURING RUNTIME
+      const noFilter = {
+        kind: 'exclude' as const,
+        sets: new Set<ArtifactSetKey>(),
+      }
+      const perms: RequestFilter[] = [
+        objKeyMap(allArtifactSlotKeys, (_) => noFilter),
+      ]
       let count = 0
       for (const filter of perms) {
         postMessage({ command: 'split', filter, maxIterateSize })

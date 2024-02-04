@@ -47,6 +47,7 @@ export type ArtSetExclusionKey =
     >
   | 'rainbow'
 export type ArtSetExclusion = Partial<Record<ArtSetExclusionKey, (2 | 4)[]>>
+export type ArtSetExclusionFull = Partial<Record<ArtSetExclusionKey, number[]>>
 
 export interface StatFilterSetting {
   value: number

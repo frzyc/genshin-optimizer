@@ -1,3 +1,4 @@
+import type { ArtSetExclusionFull } from '../../Database/DataManagers/BuildSettingData'
 import type { Interim, Setup } from '..'
 import type { OptNode } from '../../Formula/optimization'
 import { optimize, precompute } from '../../Formula/optimization'
@@ -5,10 +6,27 @@ import type {
   ArtifactBuildData,
   ArtifactsBySlot,
   Build,
+  DynStat,
   PlotData,
   RequestFilter,
 } from '../common'
 import { countBuilds, filterArts, mergePlot, pruneAll } from '../common'
+
+function checkArtSetExclusion(
+  setKeyCounts: DynStat,
+  excl: ArtSetExclusionFull
+) {
+  const pass = Object.entries(setKeyCounts).every(([setKey, num]) => {
+    if (!excl[setKey]) return true
+    return !excl[setKey].includes(num)
+  })
+  if (!pass) return false
+
+  if (!excl['rainbow']) return true
+
+  const nRainbow = Object.values(setKeyCounts).reduce((a, b) => a + (b % 2), 0)
+  return !excl['rainbow'].includes(nRainbow)
+}
 
 export class ComputeWorker {
   builds: Build[] = []
@@ -19,12 +37,13 @@ export class ComputeWorker {
   min: number[]
 
   arts: ArtifactsBySlot
+  exclusion: ArtSetExclusionFull
   nodes: OptNode[]
 
   callback: (interim: Interim) => void
 
   constructor(
-    { arts, optTarget, constraints, plotBase, topN }: Setup,
+    { arts, optTarget, constraints, plotBase, topN, exclusion }: Setup,
     callback: (interim: Interim) => void
   ) {
     this.arts = arts
@@ -33,6 +52,7 @@ export class ComputeWorker {
     this.callback = callback
     this.nodes = constraints.map((x) => x.value)
     this.nodes.push(optTarget)
+    this.exclusion = exclusion
     if (plotBase) {
       this.plotData = {}
       this.nodes.push(plotBase)
@@ -78,38 +98,47 @@ export class ComputeWorker {
       skipped: totalCount - countBuilds(preArts),
     }
 
-    const permute = (i: number) => {
+    const permute = (i: number, setKeyCounts: DynStat) => {
       if (i < 0) {
         const result = compute(buffer)
-        if (min.every((m, i) => m <= result[i])) {
-          const value = result[min.length],
-            { builds, plotData } = this
-          let build: Build | undefined
-          if (value >= this.threshold) {
-            build = {
-              value,
-              artifactIds: buffer.map((x) => x.id).filter((id) => id),
-            }
-            builds.push(build)
+        if (
+          min.some((m, i) => m > result[i]) ||
+          !checkArtSetExclusion(setKeyCounts, this.exclusion)
+        ) {
+          count.failed += 1
+          return
+        }
+        const value = result[min.length],
+          { builds, plotData } = this
+        let build: Build | undefined
+        if (value >= this.threshold) {
+          build = {
+            value,
+            artifactIds: buffer.map((x) => x.id).filter((id) => id),
           }
-          if (plotData) {
-            const x = result[min.length + 1]
-            if (!plotData[x] || plotData[x]!.value < value) {
-              if (!build)
-                build = {
-                  value,
-                  artifactIds: buffer.map((x) => x.id).filter((id) => id),
-                }
-              build.plot = x
-              plotData[x] = build
-            }
+          builds.push(build)
+        }
+        if (plotData) {
+          const x = result[min.length + 1]
+          if (!plotData[x] || plotData[x]!.value < value) {
+            if (!build)
+              build = {
+                value,
+                artifactIds: buffer.map((x) => x.id).filter((id) => id),
+              }
+            build.plot = x
+            plotData[x] = build
           }
-        } else count.failed += 1
+        }
         return
       }
       arts[i].forEach((art) => {
         buffer[i] = art
-        permute(i - 1)
+        setKeyCounts[art.set ?? ''] = 1 + (setKeyCounts[art.set ?? ''] ?? 0)
+        permute(i - 1, setKeyCounts)
+        setKeyCounts[art.set ?? ''] -= 1
+        if (setKeyCounts[art.set ?? ''] === 0)
+          delete setKeyCounts[art.set ?? '']
       })
       if (i === 0) {
         count.tested += arts[0].length
@@ -117,7 +146,7 @@ export class ComputeWorker {
       }
     }
 
-    permute(arts.length - 1)
+    permute(arts.length - 1, {})
     this.interimReport(count, this.builds.length > oldMaxBuildCount)
   }
 

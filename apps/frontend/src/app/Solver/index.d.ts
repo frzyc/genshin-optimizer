@@ -1,4 +1,4 @@
-import type { ArtSetExclusion } from '../Database/DataManagers/BuildSettingData'
+import type { ArtSetExclusion, ArtSetExclusionFull } from '../Database/DataManagers/BuildSettingData'
 import type { OptNode } from '../Formula/optimization'
 import type { ArtifactsBySlot, Build, PlotData, RequestFilter } from './common'
 
@@ -25,6 +25,7 @@ export interface Setup {
   command: 'setup'
 
   arts: ArtifactsBySlot
+  exclusion: ArtSetExclusionFull
 
   optTarget: OptNode
   constraints: { value: OptNode; min: number }[]

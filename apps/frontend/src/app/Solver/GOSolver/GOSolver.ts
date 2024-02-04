@@ -1,3 +1,4 @@
+import { objKeyValMap } from '@genshin-optimizer/util'
 import type {
   Count,
   FinalizeResult,
@@ -92,9 +93,18 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
     if (plotBase) plotBase = nodes.pop()
     const optTarget = nodes.pop()!
 
+    const artSetExclFull = objKeyValMap(
+      Object.entries(exclusion),
+      ([setKey, v]) => {
+        if (setKey === 'rainbow') return ['rainbow', v.map((v) => v + 1)]
+        return [setKey, v.flatMap((v) => (v === 2 ? [2, 3] : [4, 5]))]
+      }
+    )
+
     return {
       command: 'setup',
       arts,
+      exclusion: artSetExclFull,
       optTarget,
       plotBase,
       topN,
