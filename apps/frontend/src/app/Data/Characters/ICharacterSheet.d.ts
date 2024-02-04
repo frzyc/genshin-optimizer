@@ -3,7 +3,7 @@ import type {
   ElementKey,
   RarityKey,
   WeaponTypeKey,
-} from '@genshin-optimizer/consts'
+} from '@genshin-optimizer/gi/consts'
 import type { DocumentSection } from '../../Types/sheet'
 
 export interface TalentSheetElement {

@@ -1,0 +1,7 @@
+{
+  "name": "@genshin-optimizer/sr/formula",
+  "version": "0.0.1",
+  "executors": "./executors.json",
+  "generators": "./generators.json",
+  "type": "commonjs"
+}

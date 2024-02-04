@@ -1,5 +1,5 @@
-import { allArtifactSlotKeys } from '@genshin-optimizer/consts'
-import { valueString } from '@genshin-optimizer/util'
+import { valueString } from '@genshin-optimizer/common/util'
+import { allArtifactSlotKeys } from '@genshin-optimizer/gi/consts'
 import {
   Button,
   CardContent,

@@ -1,10 +1,10 @@
+import { objKeyMap, range } from '@genshin-optimizer/common/util'
 import type {
   CharacterKey,
   ElementKey,
   RegionKey,
-} from '@genshin-optimizer/consts'
-import { allStats } from '@genshin-optimizer/gi-stats'
-import { objKeyMap, range } from '@genshin-optimizer/util'
+} from '@genshin-optimizer/gi/consts'
+import { allStats } from '@genshin-optimizer/gi/stats'
 import { input } from '../../../Formula'
 import {
   greaterEq,
@@ -22,7 +22,12 @@ import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import type { ICharacterSheet } from '../ICharacterSheet'
 import { charTemplates } from '../charTemplates'
-import { dataObjForCharacterSheet, dmgNode, healNode } from '../dataUtil'
+import {
+  dataObjForCharacterSheet,
+  dmgNode,
+  healNode,
+  plungingDmgNodes,
+} from '../dataUtil'
 
 const key: CharacterKey = 'Wriothesley'
 const data_gen = allStats.char.data[key]
@@ -162,12 +167,7 @@ const dmgFormulas = {
     dmg: dmgNode('atk', dm.charged.dmg, 'charged'),
     rebukeDmg,
   },
-  plunging: Object.fromEntries(
-    Object.entries(dm.plunging).map(([key, value]) => [
-      key,
-      dmgNode('atk', value, 'plunging'),
-    ])
-  ),
+  plunging: plungingDmgNodes('atk', dm.plunging),
   skill: {
     ...Object.fromEntries(
       dm.normal.hitArr.map((arr, i) => [

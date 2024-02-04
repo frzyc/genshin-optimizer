@@ -1,5 +1,5 @@
-import { imgAssets } from '@genshin-optimizer/gi-assets'
-import { MINUTE_MS, timeString } from '@genshin-optimizer/util'
+import { MINUTE_MS, timeString } from '@genshin-optimizer/common/util'
+import { imgAssets } from '@genshin-optimizer/gi/assets'
 import {
   Button,
   ButtonGroup,
@@ -12,8 +12,8 @@ import {
 import { useContext, useEffect, useRef, useState } from 'react'
 import CardDark from '../Components/Card/CardDark'
 import ImgIcon from '../Components/Image/ImgIcon'
-import { DatabaseContext } from '../Database/Database'
 import { RESIN_MAX } from '../Database/DataEntries/DisplayTool'
+import { DatabaseContext } from '../Database/Database'
 
 export const RESIN_RECH_MS = 8 * MINUTE_MS
 

@@ -1,8 +1,8 @@
+import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
 import { Box } from '@mui/material'
 import type { StatKey } from '../KeyMap'
 import KeyMap from '../KeyMap'
 import StatIcon from '../KeyMap/StatIcon'
-import { iconInlineProps } from '@genshin-optimizer/svgicons'
 import ColorText from './ColoredText'
 
 export function StatWithUnit({

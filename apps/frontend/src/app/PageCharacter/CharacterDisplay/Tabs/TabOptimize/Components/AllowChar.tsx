@@ -1,17 +1,20 @@
+import {
+  useBoolState,
+  useForceUpdate,
+} from '@genshin-optimizer/common/react-util'
+import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
+import { filterFunction } from '@genshin-optimizer/common/util'
 import type {
   CharacterKey,
   LocationCharacterKey,
-} from '@genshin-optimizer/consts'
+} from '@genshin-optimizer/gi/consts'
 import {
   allArtifactSlotKeys,
+  allCharacterRarityKeys,
   allElementKeys,
   allWeaponTypeKeys,
-  allCharacterRarityKeys,
   charKeyToLocCharKey,
-} from '@genshin-optimizer/consts'
-import { useBoolState, useForceUpdate } from '@genshin-optimizer/react-util'
-import { iconInlineProps } from '@genshin-optimizer/svgicons'
-import { filterFunction } from '@genshin-optimizer/util'
+} from '@genshin-optimizer/gi/consts'
 import SettingsIcon from '@mui/icons-material/Settings'
 import ShowChartIcon from '@mui/icons-material/ShowChart'
 import {
@@ -44,15 +47,15 @@ import InfoTooltip from '../../../../../Components/InfoTooltip'
 import ModalWrapper from '../../../../../Components/ModalWrapper'
 import SolidToggleButtonGroup from '../../../../../Components/SolidToggleButtonGroup'
 import SqBadge from '../../../../../Components/SqBadge'
+import CharacterRarityToggle from '../../../../../Components/ToggleButton/CharacterRarityToggle'
 import ElementToggle from '../../../../../Components/ToggleButton/ElementToggle'
 import WeaponToggle from '../../../../../Components/ToggleButton/WeaponToggle'
-import CharacterRarityToggle from '../../../../../Components/ToggleButton/CharacterRarityToggle'
 import { CharacterContext } from '../../../../../Context/CharacterContext'
 import { SillyContext } from '../../../../../Context/SillyContext'
 import { getCharSheet } from '../../../../../Data/Characters'
-import { DatabaseContext } from '../../../../../Database/Database'
 import type { AllowLocationsState } from '../../../../../Database/DataManagers/BuildSettingData'
 import { allAllowLocationsState } from '../../../../../Database/DataManagers/BuildSettingData'
+import { DatabaseContext } from '../../../../../Database/Database'
 import type { ICachedCharacter } from '../../../../../Types/character'
 import { characterFilterConfigs } from '../../../../../Util/CharacterSort'
 import { bulkCatTotal } from '../../../../../Util/totalUtils'

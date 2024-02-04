@@ -1,5 +1,5 @@
-import type { ArtifactSetKey } from '@genshin-optimizer/consts'
-import { objKeyMap, range } from '@genshin-optimizer/util'
+import { objKeyMap, range } from '@genshin-optimizer/common/util'
+import type { ArtifactSetKey } from '@genshin-optimizer/gi/consts'
 import { input } from '../../../Formula'
 import type { Data } from '../../../Formula/type'
 import { constant, greaterEq, lookup, naught } from '../../../Formula/utils'

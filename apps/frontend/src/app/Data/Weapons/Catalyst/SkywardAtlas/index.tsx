@@ -6,9 +6,9 @@ import {
   prod,
   subscript,
 } from '../../../../Formula/utils'
-import type { WeaponKey } from '@genshin-optimizer/consts'
-import { allStats } from '@genshin-optimizer/gi-stats'
-import { allElementKeys } from '@genshin-optimizer/consts'
+import type { WeaponKey } from '@genshin-optimizer/gi/consts'
+import { allStats } from '@genshin-optimizer/gi/stats'
+import { allElementKeys } from '@genshin-optimizer/gi/consts'
 import { customDmgNode } from '../../../Characters/dataUtil'
 import { st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'

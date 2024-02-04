@@ -1,10 +1,11 @@
-import type { WeaponCatalystKey } from '@genshin-optimizer/consts'
+import type { WeaponCatalystKey } from '@genshin-optimizer/gi/consts'
 import type WeaponSheet from '../WeaponSheet'
-import ApprenticesNotes from './ApprenticesNotes'
 import AThousandFloatingDreams from './AThousandFloatingDreams'
+import ApprenticesNotes from './ApprenticesNotes'
 import BalladOfTheBoundlessBlue from './BalladOfTheBoundlessBlue'
 import BlackcliffAgate from './BlackcliffAgate'
 import CashflowSupervision from './CashflowSupervision'
+import CranesEchoingCall from './CranesEchoingCall'
 import DodocoTales from './DodocoTales'
 import EmeraldOrb from './EmeraldOrb'
 import EverlastingMoonglow from './EverlastingMoonglow'
@@ -43,6 +44,7 @@ const catalyst: Record<WeaponCatalystKey, WeaponSheet> = {
   BalladOfTheBoundlessBlue,
   BlackcliffAgate,
   CashflowSupervision,
+  CranesEchoingCall,
   DodocoTales,
   EmeraldOrb,
   EverlastingMoonglow,

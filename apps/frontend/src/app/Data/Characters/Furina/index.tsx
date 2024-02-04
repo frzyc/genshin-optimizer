@@ -1,11 +1,11 @@
+import { ColorText } from '@genshin-optimizer/common/ui'
+import { objKeyMap, range } from '@genshin-optimizer/common/util'
 import type {
   CharacterKey,
   ElementKey,
   RegionKey,
-} from '@genshin-optimizer/consts'
-import { allStats } from '@genshin-optimizer/gi-stats'
-import { ColorText } from '@genshin-optimizer/ui-common'
-import { objKeyMap, range } from '@genshin-optimizer/util'
+} from '@genshin-optimizer/gi/consts'
+import { allStats } from '@genshin-optimizer/gi/stats'
 import { input } from '../../../Formula'
 import type { Data } from '../../../Formula/type'
 import {
@@ -35,6 +35,7 @@ import {
   dmgNode,
   healNode,
   healNodeTalent,
+  plungingDmgNodes,
 } from '../dataUtil'
 
 const key: CharacterKey = 'Furina'
@@ -257,7 +258,7 @@ const c6Pneuma_charged_dmgInc = infoMut(
   { ...c6Pneuma_auto_dmgInc },
   KeyMap.info('charged_dmgInc')
 )
-const c6Pneuma_plunging_dmgInc = infoMut(
+const c6Pneuma_plunging_impact_dmgInc = infoMut(
   { ...c6Pneuma_auto_dmgInc },
   KeyMap.info('plunging_dmgInc')
 )
@@ -265,12 +266,7 @@ const c6Pneuma_plunging_dmgInc = infoMut(
 const dmgFormulas = {
   normal: {
     ...Object.fromEntries(
-      dm.normal.hitArr.map((arr, i) => [
-        i,
-        dmgNode('atk', arr, 'normal', {
-          premod: { normal_dmgInc: c6Pneuma_normal_dmgInc },
-        }),
-      ])
+      dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
     ),
     thornBladeDmg: dmgNode('atk', dm.normal.bladeThornDmg, 'normal', {
       hit: { ele: constant(data_gen.ele) },
@@ -279,15 +275,7 @@ const dmgFormulas = {
   charged: {
     dmg: dmgNode('atk', dm.charged.dmg, 'charged'),
   },
-  plunging: {
-    dmg: dmgNode('atk', dm.plunging.dmg, 'plunging'),
-    low: dmgNode('atk', dm.plunging.low, 'plunging', {
-      premod: { plunging_dmgInc: c6Pneuma_plunging_dmgInc },
-    }),
-    high: dmgNode('atk', dm.plunging.high, 'plunging', {
-      premod: { plunging_dmgInc: c6Pneuma_plunging_dmgInc },
-    }),
-  },
+  plunging: plungingDmgNodes('atk', dm.plunging),
   skill: {
     bubbleDmg: dmgNode('hp', dm.skill.bubbleDmg, 'skill'),
     usherDmg: dmgNode(
@@ -352,9 +340,10 @@ export const data = dataObjForCharacterSheet(
       skillBoost: skillC5,
       burstBoost: burstC3,
       hp_: c2Overstack_hp_,
-      normal_dmgInc: c6_normal_dmgInc,
-      plunging_dmgInc: c6_plunging_dmgInc,
+      normal_dmgInc: sum(c6_normal_dmgInc, c6Pneuma_normal_dmgInc),
       charged_dmgInc: sum(c6_charged_dmgInc, c6Pneuma_charged_dmgInc),
+      plunging_dmgInc: c6_plunging_dmgInc,
+      plunging_impact_dmgInc: c6Pneuma_plunging_impact_dmgInc,
     },
     infusion: {
       nonOverridableSelf: c6_infusion,
@@ -484,7 +473,7 @@ const sheet: ICharacterSheet = {
                 node: c6Pneuma_charged_dmgInc,
               },
               {
-                node: c6Pneuma_plunging_dmgInc,
+                node: c6Pneuma_plunging_impact_dmgInc,
               },
             ],
           },

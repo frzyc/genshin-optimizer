@@ -1,6 +1,6 @@
 'use client'
-import { useGetUserQuery } from '@genshin-optimizer/gi-frontend-gql'
-import { CardThemed } from '@genshin-optimizer/ui-common'
+import { CardThemed } from '@genshin-optimizer/common/ui'
+import { useGetUserQuery } from '@genshin-optimizer/gi/frontend-gql'
 import { CardContent, CardHeader, Divider, Stack } from '@mui/material'
 import { useSession } from 'next-auth/react'
 import AddCharacterButton from './components/AddCharacterButton'

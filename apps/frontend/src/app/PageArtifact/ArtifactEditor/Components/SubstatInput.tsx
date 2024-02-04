@@ -1,12 +1,15 @@
-import { allSubstatKeys, artSubstatRollData } from '@genshin-optimizer/consts'
-import type { ISubstat } from '@genshin-optimizer/gi-good'
-import { allStats } from '@genshin-optimizer/gi-stats'
+import { clamp } from '@genshin-optimizer/common/util'
+import {
+  allSubstatKeys,
+  artSubstatRollData,
+} from '@genshin-optimizer/gi/consts'
+import type { ISubstat } from '@genshin-optimizer/gi/good'
+import { allStats } from '@genshin-optimizer/gi/stats'
 import {
   artDisplayValue,
   getSubstatSummedRolls,
   getSubstatValuesPercent,
-} from '@genshin-optimizer/gi-util'
-import { clamp } from '@genshin-optimizer/util'
+} from '@genshin-optimizer/gi/util'
 import {
   Box,
   Button,

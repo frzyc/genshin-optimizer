@@ -1,3 +1,4 @@
+import { useBoolState } from '@genshin-optimizer/common/react-util'
 import { Delete, Download, ImportExport, Upload } from '@mui/icons-material'
 import ContentPasteIcon from '@mui/icons-material/ContentPaste'
 import {
@@ -16,7 +17,6 @@ import CardLight from '../Components/Card/CardLight'
 import { StyledInputBase } from '../Components/CustomNumberInput'
 import ModalWrapper from '../Components/ModalWrapper'
 import { DatabaseContext } from '../Database/Database'
-import { useBoolState } from '@genshin-optimizer/react-util'
 import { range } from '../Util/Util'
 import UploadCard from './UploadCard'
 

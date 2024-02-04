@@ -1,12 +1,12 @@
-import type { ArtifactSetKey, WeaponKey } from '@genshin-optimizer/consts'
-import { allArtifactSetKeys, allWeaponKeys } from '@genshin-optimizer/consts'
 import {
   assertUnreachable,
   crawlObject,
   layeredAssignment,
   objPathValue,
   valueString,
-} from '@genshin-optimizer/util'
+} from '@genshin-optimizer/common/util'
+import type { ArtifactSetKey, WeaponKey } from '@genshin-optimizer/gi/consts'
+import { allArtifactSetKeys, allWeaponKeys } from '@genshin-optimizer/gi/consts'
 import { useContext } from 'react'
 import { uiInput } from '.'
 import ColorText from '../Components/ColoredText'

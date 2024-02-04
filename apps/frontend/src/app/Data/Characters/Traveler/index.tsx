@@ -2,20 +2,20 @@ import type {
   CharacterKey,
   ElementKey,
   WeaponTypeKey,
-} from '@genshin-optimizer/consts'
-import { allStats } from '@genshin-optimizer/gi-stats'
+} from '@genshin-optimizer/gi/consts'
+import { allStats } from '@genshin-optimizer/gi/stats'
+import type { Data, DisplaySub } from '../../../Formula/type'
 import { infoMut } from '../../../Formula/utils'
 import type { CharacterSheetKey } from '../../../Types/consts'
 import { stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
-import { charTemplates } from '../charTemplates'
 import type {
   ICharacterSheet,
   TalentSheetElement,
   TalentSheetElementKey,
 } from '../ICharacterSheet.d'
+import { charTemplates } from '../charTemplates'
 import { dmgNode } from '../dataUtil'
-import type { Data, DisplaySub } from '../../../Formula/type'
 
 type TravelerTalentFunc = (
   key: CharacterSheetKey,
@@ -67,7 +67,11 @@ export function travelerSheet(
     plunging: Object.fromEntries(
       Object.entries(dm.plunging).map(([key, value]) => [
         key,
-        dmgNode('atk', value, 'plunging'),
+        dmgNode(
+          'atk',
+          value,
+          key === 'dmg' ? 'plunging_collision' : 'plunging_impact'
+        ),
       ])
     ),
   } as const

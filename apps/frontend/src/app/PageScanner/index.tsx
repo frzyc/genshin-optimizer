@@ -1,5 +1,5 @@
-import { AnvilIcon, DiscordIcon } from '@genshin-optimizer/svgicons'
-import { CardThemed, SqBadge } from '@genshin-optimizer/ui-common'
+import { AnvilIcon, DiscordIcon } from '@genshin-optimizer/common/svgicons'
+import { CardThemed, SqBadge } from '@genshin-optimizer/common/ui'
 import {
   Backpack,
   Computer,
@@ -96,7 +96,7 @@ export default function PageScanner() {
                   sx={{ display: 'flex', alignItems: 'center' }}
                 >
                   <Gamepad sx={{ pr: 0.5 }} />
-                  4.3
+                  4.4
                 </SqBadge>
                 <SqBadge sx={{ display: 'flex', alignItems: 'center' }}>
                   <Computer sx={{ pr: 0.5 }} />
@@ -154,7 +154,7 @@ export default function PageScanner() {
                   sx={{ display: 'flex', alignItems: 'center' }}
                 >
                   <Gamepad sx={{ pr: 0.5 }} />
-                  4.3
+                  4.4
                 </SqBadge>
                 <SqBadge sx={{ display: 'flex', alignItems: 'center' }}>
                   <Computer sx={{ pr: 0.5 }} />
@@ -241,7 +241,7 @@ export default function PageScanner() {
                   sx={{ display: 'flex', alignItems: 'center' }}
                 >
                   <Gamepad sx={{ pr: 0.5 }} />
-                  4.3
+                  4.4
                 </SqBadge>
                 <SqBadge sx={{ display: 'flex', alignItems: 'center' }}>
                   <Computer sx={{ pr: 0.5 }} />

@@ -1,6 +1,6 @@
+import { clamp } from '@genshin-optimizer/common/util'
 import { Card, Slider } from '@mui/material'
 import { useCallback, useEffect, useState } from 'react'
-import { clamp } from '@genshin-optimizer/util'
 import CustomNumberInput from '../CustomNumberInput'
 
 export default function ArtifactLevelSlider({

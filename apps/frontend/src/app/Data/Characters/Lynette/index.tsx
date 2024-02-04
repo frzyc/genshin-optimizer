@@ -1,10 +1,10 @@
+import { objKeyMap } from '@genshin-optimizer/common/util'
 import type {
   CharacterKey,
   ElementKey,
   RegionKey,
-} from '@genshin-optimizer/consts'
-import { allStats } from '@genshin-optimizer/gi-stats'
-import { objKeyMap } from '@genshin-optimizer/util'
+} from '@genshin-optimizer/gi/consts'
+import { allStats } from '@genshin-optimizer/gi/stats'
 import ColorText from '../../../Components/ColoredText'
 import { input, tally } from '../../../Formula'
 import {
@@ -23,7 +23,12 @@ import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import type { ICharacterSheet } from '../ICharacterSheet'
 import { charTemplates } from '../charTemplates'
-import { dataObjForCharacterSheet, dmgNode, healNode } from '../dataUtil'
+import {
+  dataObjForCharacterSheet,
+  dmgNode,
+  healNode,
+  plungingDmgNodes,
+} from '../dataUtil'
 
 const key: CharacterKey = 'Lynette'
 const data_gen = allStats.char.data[key]
@@ -125,12 +130,7 @@ const dmgFormulas = {
     dmg1: dmgNode('atk', dm.charged.dmg1, 'charged'),
     dmg2: dmgNode('atk', dm.charged.dmg2, 'charged'),
   },
-  plunging: Object.fromEntries(
-    Object.entries(dm.plunging).map(([key, value]) => [
-      key,
-      dmgNode('atk', value, 'plunging'),
-    ])
-  ),
+  plunging: plungingDmgNodes('atk', dm.plunging),
   skill: {
     thrustDmg: dmgNode('atk', dm.skill.thrustDmg, 'skill'),
     bladeDmg: dmgNode('atk', dm.skill.bladeDmg, 'skill'),

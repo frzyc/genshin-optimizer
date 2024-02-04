@@ -1,4 +1,4 @@
-import type { ArtifactSetKey } from '@genshin-optimizer/consts'
+import type { ArtifactSetKey } from '@genshin-optimizer/gi/consts'
 import { Box } from '@mui/material'
 import { getArtSheet } from '../../Data/Artifacts'
 import type { SetNum } from '../../Types/consts'

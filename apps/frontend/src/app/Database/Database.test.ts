@@ -1,10 +1,13 @@
-import type { CharacterKey } from '@genshin-optimizer/consts'
-import { DBLocalStorage, SandboxStorage } from '@genshin-optimizer/database'
-import type { IArtifact, IGOOD, IWeapon } from '@genshin-optimizer/gi-good'
-import { randomizeArtifact } from '@genshin-optimizer/gi-util'
+import {
+  DBLocalStorage,
+  SandboxStorage,
+} from '@genshin-optimizer/common/database'
+import type { CharacterKey } from '@genshin-optimizer/gi/consts'
+import type { IArtifact, IGOOD, IWeapon } from '@genshin-optimizer/gi/good'
+import { randomizeArtifact } from '@genshin-optimizer/gi/util'
 import { defaultInitialWeapon, initialWeapon } from '../Util/WeaponUtil'
-import { ArtCharDatabase } from './Database'
 import { initialCharacter } from './DataManagers/CharacterData'
+import { ArtCharDatabase } from './Database'
 import type { IGO } from './exim'
 
 const dbStorage = new DBLocalStorage(localStorage)

@@ -1,4 +1,4 @@
-import { imgAssets } from '@genshin-optimizer/gi-assets'
+import { imgAssets } from '@genshin-optimizer/gi/assets'
 import { Skeleton, Typography } from '@mui/material'
 import type { ReactElement, ReactNode } from 'react'
 import { Suspense } from 'react'

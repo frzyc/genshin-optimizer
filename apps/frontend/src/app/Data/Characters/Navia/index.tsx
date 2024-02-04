@@ -1,11 +1,11 @@
+import { ColorText } from '@genshin-optimizer/common/ui'
+import { objKeyMap, range } from '@genshin-optimizer/common/util'
 import type {
   CharacterKey,
   ElementKey,
   RegionKey,
-} from '@genshin-optimizer/consts'
-import { allStats } from '@genshin-optimizer/gi-stats'
-import { ColorText } from '@genshin-optimizer/ui-common'
-import { objKeyMap, range } from '@genshin-optimizer/util'
+} from '@genshin-optimizer/gi/consts'
+import { allStats } from '@genshin-optimizer/gi/stats'
 import { input, tally } from '../../../Formula'
 import {
   constant,
@@ -26,7 +26,11 @@ import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import type { ICharacterSheet } from '../ICharacterSheet'
 import { charTemplates } from '../charTemplates'
-import { dataObjForCharacterSheet, dmgNode } from '../dataUtil'
+import {
+  dataObjForCharacterSheet,
+  dmgNode,
+  plungingDmgNodes,
+} from '../dataUtil'
 
 const key: CharacterKey = 'Navia'
 const data_gen = allStats.char.data[key]
@@ -213,12 +217,7 @@ const dmgFormulas = {
     cyclicDmg: dmgNode('atk', dm.charged.cyclicDmg, 'charged'),
     finalDmg: dmgNode('atk', dm.charged.finalDmg, 'charged'),
   },
-  plunging: Object.fromEntries(
-    Object.entries(dm.plunging).map(([key, value]) => [
-      key,
-      dmgNode('atk', value, 'plunging'),
-    ])
-  ),
+  plunging: plungingDmgNodes('atk', dm.plunging),
   skill: {
     totalShardDmg: dmgNode(
       'atk',

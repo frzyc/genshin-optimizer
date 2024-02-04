@@ -74,7 +74,7 @@ export function objectKeyValueMap<T, K extends string | number, V>(
 }
 
 /**
- * @deprecated use the @genshin-optimizer/util `objMap` function.
+ * @deprecated use the @genshin-optimizer/common/util `objMap` function.
  * @param obj
  * @param fn
  */
@@ -96,7 +96,7 @@ export function objectMap<K extends string, V, T>(
 }
 
 /**
- * @deprecated use the @genshin-optimizer/util `rangeGen` function.
+ * @deprecated use the @genshin-optimizer/common/util `rangeGen` function.
  * @param from
  * @param to
  */
@@ -106,7 +106,7 @@ const rangeGen = function* (from: number, to: number): Iterable<number> {
 
 /**
  * range of [from, to], inclusive
- * @deprecated use the @genshin-optimizer/util `range` function.
+ * @deprecated use the @genshin-optimizer/common/util `range` function.
  * @param from
  * @param to
  */
@@ -120,7 +120,7 @@ export function assertUnreachable(value: never): never {
 
 /**
  * cartesian product of list of arrays
- * @deprecated use the @genshin-optimizer/util `cartesian` function.
+ * @deprecated use the @genshin-optimizer/common/util `cartesian` function.
  * @param q
  * @returns
  */

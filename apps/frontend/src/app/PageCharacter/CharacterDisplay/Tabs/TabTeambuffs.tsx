@@ -1,5 +1,5 @@
-import type { CharacterKey } from '@genshin-optimizer/consts'
-import { charKeyToLocGenderedCharKey } from '@genshin-optimizer/consts'
+import type { CharacterKey } from '@genshin-optimizer/gi/consts'
+import { charKeyToLocGenderedCharKey } from '@genshin-optimizer/gi/consts'
 import { PersonAdd } from '@mui/icons-material'
 import type { AutocompleteProps } from '@mui/material'
 import {

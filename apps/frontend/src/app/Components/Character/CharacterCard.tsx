@@ -1,12 +1,12 @@
+import { range } from '@genshin-optimizer/common/util'
+import { characterAsset } from '@genshin-optimizer/gi/assets'
 import type {
   ArtifactSlotKey,
   CharacterKey,
   ElementKey,
-} from '@genshin-optimizer/consts'
-import { allArtifactSlotKeys } from '@genshin-optimizer/consts'
-import { characterAsset } from '@genshin-optimizer/gi-assets'
-import { ascensionMaxLevel } from '@genshin-optimizer/gi-util'
-import { range } from '@genshin-optimizer/util'
+} from '@genshin-optimizer/gi/consts'
+import { allArtifactSlotKeys } from '@genshin-optimizer/gi/consts'
+import { ascensionMaxLevel } from '@genshin-optimizer/gi/util'
 import { Favorite, FavoriteBorder } from '@mui/icons-material'
 import {
   Box,
@@ -27,9 +27,9 @@ import { SillyContext } from '../../Context/SillyContext'
 import { getCharSheet } from '../../Data/Characters'
 import { DatabaseContext } from '../../Database/Database'
 import { uiInput as input } from '../../Formula'
+import useCharMeta from '../../ReactHooks/useCharMeta'
 import useCharacter from '../../ReactHooks/useCharacter'
 import useCharacterReducer from '../../ReactHooks/useCharacterReducer'
-import useCharMeta from '../../ReactHooks/useCharMeta'
 import useDBMeta from '../../ReactHooks/useDBMeta'
 import useTeamData from '../../ReactHooks/useTeamData'
 import type { ICachedArtifact } from '../../Types/artifact'
