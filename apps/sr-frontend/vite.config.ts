@@ -34,8 +34,11 @@ export default defineConfig({
   // Resolve aliases. If we ever alias to non-libs folder, need to update this
   resolve: {
     alias: [
-      // e.g. Resolves '@genshin-optimizer/pando' -> 'libs/pando/src'
-      { find: /@genshin-optimizer\/(.*)/, replacement: resolve('libs/$1/src') },
+      // e.g. Resolves '@genshin-optimizer/pando/engine' -> 'libs/pando/engine/src'
+      {
+        find: /@genshin-optimizer\/([a-z-]*)\/([a-z-]*)/,
+        replacement: resolve('libs/$1/$2/src'),
+      },
     ],
   },
 

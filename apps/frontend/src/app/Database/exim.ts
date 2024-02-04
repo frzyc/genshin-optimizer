@@ -1,4 +1,4 @@
-import type { IArtifact, IWeapon } from '@genshin-optimizer/gi-good'
+import type { IArtifact, IWeapon } from '@genshin-optimizer/gi/good'
 import type { IGOCharacter } from '../Types/character'
 import type { BuildSetting } from './DataManagers/BuildSettingData'
 

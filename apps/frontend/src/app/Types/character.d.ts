@@ -13,8 +13,8 @@ import type {
   SubstatKey,
   SubstatTypeKey,
   WeaponKey,
-} from '@genshin-optimizer/consts'
-import type { ICharacter } from '@genshin-optimizer/gi-good'
+} from '@genshin-optimizer/gi/consts'
+import type { ICharacter } from '@genshin-optimizer/gi/good'
 import type { InputPremodKey } from '../Formula'
 import type { EleEnemyResKey } from '../KeyMap'
 import type { IConditionalValues } from './sheet'

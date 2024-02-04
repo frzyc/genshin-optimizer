@@ -1,0 +1,16 @@
+{
+  "name": "sr-util",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/sr/util/src",
+  "projectType": "library",
+  "targets": {
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/sr/util/**/*.ts"]
+      }
+    }
+  },
+  "tags": []
+}

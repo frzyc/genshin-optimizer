@@ -1,16 +1,19 @@
+import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
 import type {
   AdditiveReactionKey,
   AmpReactionKey,
   ElementKey,
-} from '@genshin-optimizer/consts'
-import { allAmpReactionKeys, allHitModeKeys } from '@genshin-optimizer/consts'
+} from '@genshin-optimizer/gi/consts'
+import {
+  allAmpReactionKeys,
+  allHitModeKeys,
+} from '@genshin-optimizer/gi/consts'
 import {
   CryoIcon,
   ElectroIcon,
   HydroIcon,
   PyroIcon,
-} from '@genshin-optimizer/gi-svgicons'
-import { iconInlineProps } from '@genshin-optimizer/svgicons'
+} from '@genshin-optimizer/gi/svgicons'
 import type { ToggleButtonGroupProps } from '@mui/material'
 import { MenuItem, ToggleButton } from '@mui/material'
 import { useContext } from 'react'

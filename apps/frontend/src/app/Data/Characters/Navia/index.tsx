@@ -1,11 +1,11 @@
+import { ColorText } from '@genshin-optimizer/common/ui'
+import { objKeyMap, range } from '@genshin-optimizer/common/util'
 import type {
   CharacterKey,
   ElementKey,
   RegionKey,
-} from '@genshin-optimizer/consts'
-import { allStats } from '@genshin-optimizer/gi-stats'
-import { ColorText } from '@genshin-optimizer/ui-common'
-import { objKeyMap, range } from '@genshin-optimizer/util'
+} from '@genshin-optimizer/gi/consts'
+import { allStats } from '@genshin-optimizer/gi/stats'
 import { input, tally } from '../../../Formula'
 import {
   constant,

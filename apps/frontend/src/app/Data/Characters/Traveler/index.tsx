@@ -2,8 +2,8 @@ import type {
   CharacterKey,
   ElementKey,
   WeaponTypeKey,
-} from '@genshin-optimizer/consts'
-import { allStats } from '@genshin-optimizer/gi-stats'
+} from '@genshin-optimizer/gi/consts'
+import { allStats } from '@genshin-optimizer/gi/stats'
 import type { Data, DisplaySub } from '../../../Formula/type'
 import { infoMut } from '../../../Formula/utils'
 import type { CharacterSheetKey } from '../../../Types/consts'

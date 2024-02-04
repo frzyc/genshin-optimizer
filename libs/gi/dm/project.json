@@ -1,0 +1,22 @@
+{
+  "name": "gi-dm",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/gi/dm/src",
+  "projectType": "library",
+  "targets": {
+    "update-dm": {
+      "options": {
+        "outputPath": "libs/gi/dm/GenshinData"
+      }
+    },
+    "gen-file": {},
+    "build": {},
+    "build-ts": {
+      "options": {
+        "updateBuildableProjectDepsInPackageJson": true
+      }
+    },
+    "lint": {}
+  },
+  "tags": []
+}

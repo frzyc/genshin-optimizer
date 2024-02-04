@@ -69,19 +69,19 @@ The dependencies to the apps are in [/libs](/libs/)
 
 ### Notable Libs
 
-[gi-good](/libs/gi-good/) - Interface for the Genshin Open Object Description (GOOD). An import format for Genshin scanners.
+[gi-good](/libs/gi/good/) - Interface for the Genshin Open Object Description (GOOD). An import format for Genshin scanners.
 
-[sr-srod](/libs/sr-srod/) - Interface for the Star Rail Object Description (SROD). An import format for Star Rail scanners.
+[sr-srod](/libs/sr/srod/) - Interface for the Star Rail Object Description (SROD). An import format for Star Rail scanners.
 
-[pando](/libs/pando/) - The new Optimizer calculation engine.
+[pando](/libs/pando/engine/) - The new Optimizer calculation engine.
 
-[gi-formula](/libs/gi-formula/) - The Genshin implementation of Pando.
+[gi-formula](/libs/gi/formula/) - The Genshin implementation of Pando.
 
-[sr-formula](/libs/sr-formula/) - The Star Rail implementation of Pando.
+[sr-formula](/libs/sr/formula/) - The Star Rail implementation of Pando.
 
-[gi-stats](/libs/gi-stats/) - Extracted Genshin numbers and values from the datamine, using Optimizer pipeline.
+[gi-stats](/libs/gi/stats/) - Extracted Genshin numbers and values from the datamine, using Optimizer pipeline.
 
-[sr-stats](/libs/sr-stats/) - Extracted Star Rail numbers and values from the datamine, using Optimizer pipeline.
+[sr-stats](/libs/sr/stats/) - Extracted Star Rail numbers and values from the datamine, using Optimizer pipeline.
 
 ## Basic Setup
 

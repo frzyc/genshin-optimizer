@@ -1,11 +1,11 @@
-import type { CharacterSheetKey } from '../../Types/consts'
-import type CharacterSheet from './CharacterSheet'
 import type {
   CharacterKey,
   GenderKey,
   TravelerKey,
-} from '@genshin-optimizer/consts'
-import { allTravelerKeys } from '@genshin-optimizer/consts'
+} from '@genshin-optimizer/gi/consts'
+import { allTravelerKeys } from '@genshin-optimizer/gi/consts'
+import type { CharacterSheetKey } from '../../Types/consts'
+import type CharacterSheet from './CharacterSheet'
 
 import Albedo from './Albedo'
 import Alhaitham from './Alhaitham'

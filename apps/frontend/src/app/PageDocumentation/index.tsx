@@ -1,11 +1,11 @@
+import { CodeBlock } from '@genshin-optimizer/common/ui'
 import {
   allArtifactSetKeys,
   allLocationCharacterKeys,
   allWeaponKeys,
   charKeyToLocGenderedCharKey,
-} from '@genshin-optimizer/consts'
-import { allStats } from '@genshin-optimizer/gi-stats'
-import { CodeBlock } from '@genshin-optimizer/ui-common'
+} from '@genshin-optimizer/gi/consts'
+import { allStats } from '@genshin-optimizer/gi/stats'
 import { ArrowRightAlt } from '@mui/icons-material'
 import {
   Box,

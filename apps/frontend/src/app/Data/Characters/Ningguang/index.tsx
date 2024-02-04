@@ -1,6 +1,6 @@
-import type { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
-import { allElementKeys } from '@genshin-optimizer/consts'
-import { allStats } from '@genshin-optimizer/gi-stats'
+import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
+import { allElementKeys } from '@genshin-optimizer/gi/consts'
+import { allStats } from '@genshin-optimizer/gi/stats'
 import { input } from '../../../Formula'
 import {
   equal,

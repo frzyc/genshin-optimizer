@@ -1,10 +1,10 @@
+import { objKeyMap } from '@genshin-optimizer/common/util'
 import type {
   CharacterKey,
   ElementKey,
   RegionKey,
-} from '@genshin-optimizer/consts'
-import { allStats } from '@genshin-optimizer/gi-stats'
-import { objKeyMap } from '@genshin-optimizer/util'
+} from '@genshin-optimizer/gi/consts'
+import { allStats } from '@genshin-optimizer/gi/stats'
 import ColorText from '../../../Components/ColoredText'
 import { input, tally } from '../../../Formula'
 import {

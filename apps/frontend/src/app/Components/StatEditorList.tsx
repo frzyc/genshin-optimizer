@@ -1,5 +1,5 @@
-import type { MainStatKey, SubstatKey } from '@genshin-optimizer/consts'
-import { allMainStatKeys, allSubstatKeys } from '@genshin-optimizer/consts'
+import type { MainStatKey, SubstatKey } from '@genshin-optimizer/gi/consts'
+import { allMainStatKeys, allSubstatKeys } from '@genshin-optimizer/gi/consts'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import {
   Box,

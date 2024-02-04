@@ -1,4 +1,4 @@
-import type { CharacterKey } from '@genshin-optimizer/consts'
+import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import { Typography } from '@mui/material'
 import { getCharSheet } from '../../Data/Characters'
 import useDBMeta from '../../ReactHooks/useDBMeta'

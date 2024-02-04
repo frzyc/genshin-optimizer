@@ -1,5 +1,5 @@
-import type { ArtifactSetKey } from '@genshin-optimizer/consts'
-import { iconInlineProps } from '@genshin-optimizer/svgicons'
+import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
+import type { ArtifactSetKey } from '@genshin-optimizer/gi/consts'
 import ClearIcon from '@mui/icons-material/Clear'
 import InfoIcon from '@mui/icons-material/Info'
 import { Box, Button, ButtonGroup, MenuItem, Stack } from '@mui/material'

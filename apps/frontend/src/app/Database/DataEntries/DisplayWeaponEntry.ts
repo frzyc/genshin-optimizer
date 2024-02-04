@@ -1,5 +1,5 @@
-import type { RarityKey, WeaponTypeKey } from '@genshin-optimizer/consts'
-import { allRarityKeys, allWeaponTypeKeys } from '@genshin-optimizer/consts'
+import type { RarityKey, WeaponTypeKey } from '@genshin-optimizer/gi/consts'
+import { allRarityKeys, allWeaponTypeKeys } from '@genshin-optimizer/gi/consts'
 import { weaponSortKeys } from '../../Util/WeaponSort'
 import type { ArtCharDatabase } from '../Database'
 import { DataEntry } from '../DataEntry'

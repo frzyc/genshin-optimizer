@@ -1,11 +1,11 @@
-import type { CharacterKey } from '@genshin-optimizer/consts'
-import type { Character } from '@genshin-optimizer/gi-frontend-gql'
+import { getRandomElementFromArray } from '@genshin-optimizer/common/util'
+import type { CharacterKey } from '@genshin-optimizer/gi/consts'
+import type { Character } from '@genshin-optimizer/gi/frontend-gql'
 import {
   GetAllUserCharacterDocument,
   useAddCharacterMutation,
-} from '@genshin-optimizer/gi-frontend-gql'
-import { randomizeCharacter } from '@genshin-optimizer/gi-util'
-import { getRandomElementFromArray } from '@genshin-optimizer/util'
+} from '@genshin-optimizer/gi/frontend-gql'
+import { randomizeCharacter } from '@genshin-optimizer/gi/util'
 import { Button } from '@mui/material'
 
 export default function AddCharacterButton({

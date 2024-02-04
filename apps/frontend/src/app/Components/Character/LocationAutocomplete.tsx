@@ -1,13 +1,14 @@
+import { useForceUpdate } from '@genshin-optimizer/common/react-util'
 import type {
   LocationCharacterKey,
   LocationKey,
-} from '@genshin-optimizer/consts'
+} from '@genshin-optimizer/gi/consts'
 import {
   allLocationCharacterKeys,
   allTravelerKeys,
   charKeyToLocCharKey,
   charKeyToLocGenderedCharKey,
-} from '@genshin-optimizer/consts'
+} from '@genshin-optimizer/gi/consts'
 import { BusinessCenter } from '@mui/icons-material'
 import type { AutocompleteProps } from '@mui/material'
 import { Box, Skeleton } from '@mui/material'
@@ -17,12 +18,11 @@ import { SillyContext } from '../../Context/SillyContext'
 import { getCharSheet } from '../../Data/Characters'
 import type CharacterSheet from '../../Data/Characters/CharacterSheet'
 import { DatabaseContext } from '../../Database/Database'
+import type { Variant } from '../../Formula/type'
 import useDBMeta from '../../ReactHooks/useDBMeta'
 import type { GeneralAutocompleteOption } from '../GeneralAutocomplete'
 import { GeneralAutocomplete } from '../GeneralAutocomplete'
 import CharIconSide from '../Image/CharIconSide'
-import { useForceUpdate } from '@genshin-optimizer/react-util'
-import type { Variant } from '../../Formula/type'
 type LocationAutocompleteProps = {
   location: LocationKey
   setLocation: (v: LocationKey) => void

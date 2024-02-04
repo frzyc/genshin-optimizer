@@ -1,4 +1,4 @@
-import type { ArtifactSetKey } from '@genshin-optimizer/consts'
+import type { ArtifactSetKey } from '@genshin-optimizer/gi/consts'
 import { Stack } from '@mui/material'
 import { useCallback, useContext } from 'react'
 import ArtifactSetAutocomplete from '../../../../../Components/Artifact/ArtifactSetAutocomplete'

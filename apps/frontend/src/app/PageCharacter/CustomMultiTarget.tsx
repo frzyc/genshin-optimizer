@@ -1,22 +1,22 @@
-import type {
-  AdditiveReactionKey,
-  AmpReactionKey,
-  MultiOptHitModeKey,
-  InfusionAuraElementKey,
-} from '@genshin-optimizer/consts'
-import {
-  allAdditiveReactions,
-  allAmpReactionKeys,
-  allMultiOptHitModeKeys,
-  allInfusionAuraElementKeys,
-} from '@genshin-optimizer/consts'
-import { useBoolState, useTimeout } from '@genshin-optimizer/react-util'
+import { useBoolState, useTimeout } from '@genshin-optimizer/common/react-util'
 import {
   arrayMove,
   clamp,
   deepClone,
   objPathValue,
-} from '@genshin-optimizer/util'
+} from '@genshin-optimizer/common/util'
+import type {
+  AdditiveReactionKey,
+  AmpReactionKey,
+  InfusionAuraElementKey,
+  MultiOptHitModeKey,
+} from '@genshin-optimizer/gi/consts'
+import {
+  allAdditiveReactions,
+  allAmpReactionKeys,
+  allInfusionAuraElementKeys,
+  allMultiOptHitModeKeys,
+} from '@genshin-optimizer/gi/consts'
 import AddIcon from '@mui/icons-material/Add'
 import ContentCopyIcon from '@mui/icons-material/ContentCopy'
 import ContentPasteIcon from '@mui/icons-material/ContentPaste'

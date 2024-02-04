@@ -1,11 +1,11 @@
-import { artMaxLevel, type SubstatKey } from '@genshin-optimizer/consts'
-import { artDisplayValue, getSubstatValue } from '@genshin-optimizer/gi-util'
 import {
   BootstrapTooltip,
   CardThemed,
   ColorText,
-} from '@genshin-optimizer/ui-common'
-import { clamp } from '@genshin-optimizer/util'
+} from '@genshin-optimizer/common/ui'
+import { clamp } from '@genshin-optimizer/common/util'
+import { artMaxLevel, type SubstatKey } from '@genshin-optimizer/gi/consts'
+import { artDisplayValue, getSubstatValue } from '@genshin-optimizer/gi/util'
 import InfoIcon from '@mui/icons-material/Info'
 import { Box, Slider, Stack, Typography } from '@mui/material'
 import { useCallback, useContext, useEffect, useState } from 'react'

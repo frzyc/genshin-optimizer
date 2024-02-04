@@ -1,6 +1,6 @@
-import type { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
-import { allStats } from '@genshin-optimizer/gi-stats'
-import { objKeyMap, range } from '@genshin-optimizer/util'
+import { objKeyMap, range } from '@genshin-optimizer/common/util'
+import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
+import { allStats } from '@genshin-optimizer/gi/stats'
 import ColorText from '../../../Components/ColoredText'
 import { input } from '../../../Formula'
 import {

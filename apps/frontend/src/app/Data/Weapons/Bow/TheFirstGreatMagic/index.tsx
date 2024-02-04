@@ -1,6 +1,6 @@
-import type { WeaponKey } from '@genshin-optimizer/consts'
-import { allElementKeys } from '@genshin-optimizer/consts'
-import { allStats } from '@genshin-optimizer/gi-stats'
+import type { WeaponKey } from '@genshin-optimizer/gi/consts'
+import { allElementKeys } from '@genshin-optimizer/gi/consts'
+import { allStats } from '@genshin-optimizer/gi/stats'
 import { input, tally } from '../../../../Formula'
 import {
   compareEq,

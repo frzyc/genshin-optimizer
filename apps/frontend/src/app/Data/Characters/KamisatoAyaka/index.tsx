@@ -1,5 +1,5 @@
-import type { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
-import { allStats } from '@genshin-optimizer/gi-stats'
+import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
+import { allStats } from '@genshin-optimizer/gi/stats'
 import ColorText from '../../../Components/ColoredText'
 import { input } from '../../../Formula'
 import {

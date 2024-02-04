@@ -1,4 +1,5 @@
-import type { CharacterKey, GenderKey } from '@genshin-optimizer/consts'
+import { useForceUpdate } from '@genshin-optimizer/common/react-util'
+import type { CharacterKey, GenderKey } from '@genshin-optimizer/gi/consts'
 import { useContext, useDeferredValue, useEffect, useMemo } from 'react'
 import type { TeamData } from '../Context/DataContext'
 import { allArtifactData } from '../Data/Artifacts'
@@ -24,7 +25,6 @@ import type { ICachedWeapon } from '../Types/weapon'
 import { objectMap } from '../Util/Util'
 import { defaultInitialWeapon } from '../Util/WeaponUtil'
 import useDBMeta from './useDBMeta'
-import { useForceUpdate } from '@genshin-optimizer/react-util'
 
 type TeamDataBundle = {
   teamData: Dict<CharacterKey, Data[]>

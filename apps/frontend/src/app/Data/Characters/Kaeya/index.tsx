@@ -2,8 +2,8 @@ import type {
   CharacterKey,
   ElementKey,
   RegionKey,
-} from '@genshin-optimizer/consts'
-import { allStats } from '@genshin-optimizer/gi-stats'
+} from '@genshin-optimizer/gi/consts'
+import { allStats } from '@genshin-optimizer/gi/stats'
 import { input } from '../../../Formula'
 import { equal, greaterEq, infoMut, percent } from '../../../Formula/utils'
 import { cond, st, stg } from '../../SheetUtil'

@@ -4,12 +4,12 @@
 /coverage
 /.yarn
 
-/libs/dm/GenshinData
-/libs/sr-dm/StarRailData
+/libs/gi/dm/GenshinData
+/libs/sr/dm/StarRailData
 *_gen.json
 
-/libs/gi-stats/Data
-/libs/sr-stats/Data
+/libs/gi/stats/Data
+/libs/sr/stats/Data
 
 # generated from backend
 apps/gi-backend/src/app/graphql_gen.ts

@@ -1,10 +1,10 @@
-import type { WeaponKey, WeaponTypeKey } from '@genshin-optimizer/consts'
+import type { WeaponKey, WeaponTypeKey } from '@genshin-optimizer/gi/consts'
 import {
   allRarityKeys,
   allWeaponKeys,
   allWeaponTypeKeys,
-} from '@genshin-optimizer/consts'
-import { imgAssets, weaponAsset } from '@genshin-optimizer/gi-assets'
+} from '@genshin-optimizer/gi/consts'
+import { imgAssets, weaponAsset } from '@genshin-optimizer/gi/assets'
 import {
   Box,
   CardActionArea,

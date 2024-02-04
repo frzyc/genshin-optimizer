@@ -1,12 +1,12 @@
+import { deepFreeze } from '@genshin-optimizer/common/util'
 import type {
   CharacterKey,
   LocationCharacterKey,
   SubstatKey,
-} from '@genshin-optimizer/consts'
-import { allSubstatKeys, allTravelerKeys } from '@genshin-optimizer/consts'
-import { deepFreeze } from '@genshin-optimizer/util'
-import type { ArtCharDatabase } from '../Database'
+} from '@genshin-optimizer/gi/consts'
+import { allSubstatKeys, allTravelerKeys } from '@genshin-optimizer/gi/consts'
 import { DataManager } from '../DataManager'
+import type { ArtCharDatabase } from '../Database'
 
 interface ICharMeta {
   rvFilter: SubstatKey[]

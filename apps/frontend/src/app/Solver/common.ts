@@ -1,14 +1,14 @@
 import {
-  allArtifactSlotKeys,
-  type ArtifactSetKey,
-  type ArtifactSlotKey,
-} from '@genshin-optimizer/consts'
-import {
   assertUnreachable,
   objKeyMap,
   objMap,
   range,
-} from '@genshin-optimizer/util'
+} from '@genshin-optimizer/common/util'
+import {
+  allArtifactSlotKeys,
+  type ArtifactSetKey,
+  type ArtifactSlotKey,
+} from '@genshin-optimizer/gi/consts'
 import type {
   ArtSetExclusion,
   ArtSetExclusionKey,

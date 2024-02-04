@@ -1,4 +1,4 @@
-import { allStats } from '@genshin-optimizer/gi-stats'
+import { allStats } from '@genshin-optimizer/gi/stats'
 import { input, target } from '../../../Formula/index'
 import {
   constant,
@@ -27,7 +27,7 @@ import {
   plungingDmgNodes,
 } from '../dataUtil'
 
-import type { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
+import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
 
 const key: CharacterKey = 'ShikanoinHeizou'
 const elementKey: ElementKey = 'anemo'

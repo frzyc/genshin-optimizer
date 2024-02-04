@@ -1,16 +1,16 @@
 import type {
   CharacterKey,
   LocationCharacterKey,
-} from '@genshin-optimizer/consts'
+} from '@genshin-optimizer/gi/consts'
 import {
   allLocationCharacterKeys,
   allWeaponKeys,
   charKeyToLocCharKey,
   weaponMaxLevel,
-} from '@genshin-optimizer/consts'
-import type { IGOOD, IWeapon } from '@genshin-optimizer/gi-good'
-import { allStats } from '@genshin-optimizer/gi-stats'
-import { validateLevelAsc } from '@genshin-optimizer/gi-util'
+} from '@genshin-optimizer/gi/consts'
+import type { IGOOD, IWeapon } from '@genshin-optimizer/gi/good'
+import { allStats } from '@genshin-optimizer/gi/stats'
+import { validateLevelAsc } from '@genshin-optimizer/gi/util'
 import type { ICachedCharacter } from '../../Types/character'
 import type { ICachedWeapon } from '../../Types/weapon'
 import { defaultInitialWeapon } from '../../Util/WeaponUtil'

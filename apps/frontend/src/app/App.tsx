@@ -1,5 +1,8 @@
-import { DBLocalStorage, SandboxStorage } from '@genshin-optimizer/database'
-import { theme } from '@genshin-optimizer/gi-ui'
+import {
+  DBLocalStorage,
+  SandboxStorage,
+} from '@genshin-optimizer/common/database'
+import { theme } from '@genshin-optimizer/gi/ui'
 import { KeyboardArrowUp } from '@mui/icons-material'
 import {
   Box,
@@ -18,6 +21,7 @@ import { useTranslation } from 'react-i18next'
 import { HashRouter, Route, Routes, useMatch } from 'react-router-dom'
 import './App.scss'
 import { SillyContext, useSilly } from './Context/SillyContext'
+import { SnowContext, useSnow } from './Context/SnowContext'
 import { ArtCharDatabase, DatabaseContext } from './Database/Database'
 import ErrorBoundary from './ErrorBoundary'
 import Footer from './Footer'
@@ -25,7 +29,6 @@ import Header from './Header'
 import useTitle from './ReactHooks/useTitle'
 import Snow from './Snow'
 import './i18n'
-import { SnowContext, useSnow } from './Context/SnowContext'
 
 const PageHome = lazy(() => import('./PageHome'))
 const PageArtifact = lazy(() => import('./PageArtifact'))

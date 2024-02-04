@@ -1,18 +1,18 @@
+import { validateArr } from '@genshin-optimizer/common/util'
 import type {
   CharacterRarityKey,
   ElementKey,
   WeaponTypeKey,
-} from '@genshin-optimizer/consts'
+} from '@genshin-optimizer/gi/consts'
 import {
+  allCharacterRarityKeys,
   allElementKeys,
   allWeaponTypeKeys,
-  allCharacterRarityKeys,
-} from '@genshin-optimizer/consts'
-import { validateArr } from '@genshin-optimizer/util'
+} from '@genshin-optimizer/gi/consts'
 import type { CharacterSortKey } from '../../Util/CharacterSort'
 import { characterSortKeys } from '../../Util/CharacterSort'
-import type { ArtCharDatabase } from '../Database'
 import { DataEntry } from '../DataEntry'
+import type { ArtCharDatabase } from '../Database'
 
 export interface IDisplayCharacterEntry {
   sortType: CharacterSortKey
