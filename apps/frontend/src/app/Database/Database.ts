@@ -20,6 +20,9 @@ import { WeaponDataManager } from './DataManagers/WeaponData'
 import type { IGO, ImportResult } from './exim'
 import { GOSource, newImportResult } from './exim'
 import { currentDBVersion, migrate, migrateGOOD } from './migrate'
+import { TeamDataManager } from './DataManagers/TeamDataManager'
+import { TeamCharacterDataManager } from './DataManagers/TeamCharacterDataManager'
+import { BuildDataManager } from './DataManagers/BuildDataManager'
 export class ArtCharDatabase extends Database {
   arts: ArtifactDataManager
   chars: CharacterDataManager
@@ -28,6 +31,12 @@ export class ArtCharDatabase extends Database {
   buildSettings: BuildSettingDataManager
   buildResult: BuildResultDataManager
   charMeta: CharMetaDataManager
+  builds: BuildDataManager
+  teamChars: TeamCharacterDataManager
+  teams: TeamDataManager
+  /**
+   * @deprecated
+   */
   teamData: Partial<Record<CharacterKey, TeamData>> = {}
 
   dbMeta: DBMetaEntry
@@ -67,6 +76,13 @@ export class ArtCharDatabase extends Database {
     this.charTCs = new CharacterTCDataManager(this)
     this.charMeta = new CharMetaDataManager(this)
 
+    this.builds = new BuildDataManager(this)
+    // Depends on builds
+    this.teamChars = new TeamCharacterDataManager(this)
+
+    // Depends on TeamChar
+    this.teams = new TeamDataManager(this)
+
     // Handle DataEntries
     this.dbMeta = new DBMetaEntry(this)
     this.displayWeapon = new DisplayWeaponEntry(this)
@@ -97,6 +113,9 @@ export class ArtCharDatabase extends Database {
       this.buildResult,
       this.charTCs,
       this.charMeta,
+      this.builds,
+      this.teamChars,
+      this.teams
     ] as const
   }
   get dataEntries() {

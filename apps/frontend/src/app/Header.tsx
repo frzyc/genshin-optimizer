@@ -9,6 +9,7 @@ import {
   Scanner,
   Settings,
 } from '@mui/icons-material'
+import GroupsIcon from '@mui/icons-material/Groups'
 import {
   AppBar,
   Avatar,
@@ -65,6 +66,13 @@ const characters: ITab = {
   to: '/characters',
   value: 'characters',
   textSuffix: <CharacterChip key="charAdd" />,
+}
+const teams: ITab = {
+  i18Key: 'tabs.teams',
+  icon: <GroupsIcon />,
+  to: '/teams',
+  value: 'teams',
+  textSuffix: <TeamChip key="charAdd" />,
 }
 const tools: ITab = {
   i18Key: 'tabs.tools',
@@ -123,6 +131,19 @@ function CharacterChip() {
   )
   return <Chip label={<strong>{total}</strong>} size="small" />
 }
+function TeamChip() {
+  const { database } = useContext(DatabaseContext)
+  const [dirty, setDirty] = useForceUpdate()
+  useEffect(
+    () => database.teams.followAny(() => setDirty()),
+    [database, setDirty]
+  )
+  const total = useMemo(
+    () => dirty && database.teams.keys.length,
+    [dirty, database]
+  )
+  return <Chip label={<strong>{total}</strong>} size="small" />
+}
 function WeaponChip() {
   const { database } = useContext(DatabaseContext)
   const [dirty, setDirty] = useForceUpdate()
@@ -149,6 +170,7 @@ const maincontent = [
   artifacts,
   weapons,
   characters,
+  teams,
   tools,
   scanner,
   doc,

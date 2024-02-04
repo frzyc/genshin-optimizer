@@ -38,6 +38,8 @@ const PageWeapon = lazy(() => import('./PageWeapon'))
 const PageDocumentation = lazy(() => import('./PageDocumentation'))
 const PageScanner = lazy(() => import('./PageScanner'))
 const PageCharacter = lazy(() => import('./PageCharacter'))
+const PageTeams = lazy(() => import('./PageTeams'))
+const PageTeam = lazy(() => import('./PageTeam'))
 const CharacterDisplay = lazy(() => import('./PageCharacter/CharacterDisplay'))
 
 function ScrollTop({ children }: { children: React.ReactElement }) {
@@ -161,6 +163,10 @@ function Content() {
             <Route path="/characters/*">
               <Route index element={<PageCharacter />} />
               <Route path=":characterKey/*" element={<CharacterDisplay />} />
+            </Route>
+            <Route path="/teams/*">
+              <Route index element={<PageTeams />} />
+              <Route path=":teamId/*" element={<PageTeam />} />
             </Route>
             <Route path="/tools" element={<PageTools />} />
             <Route path="/setting" element={<PageSettings />} />

@@ -32,26 +32,56 @@ export interface CustomMultiTarget {
   targets: CustomTarget[]
 }
 
+/**
+ * @deprecated use ICharacter
+ */
 export interface IGOCharacter extends ICharacter {
   // GO-specific
   hitMode: HitModeKey
+  /**
+   * @deprecated
+   */
   reaction?: AmpReactionKey | AdditiveReactionKey
+  /**
+   * @deprecated
+   */
   conditional: IConditionalValues
+  /**
+   * @deprecated
+   */
   bonusStats: Partial<Record<InputPremodKey, number>>
+  /**
+   * @deprecated
+   */
   enemyOverride: Partial<
     Record<
       EleEnemyResKey | 'enemyLevel' | 'enemyDefRed_' | 'enemyDefIgn_',
       number
     >
   >
+  /**
+   * @deprecated
+   */
   infusionAura: InfusionAuraElementKey | ''
+  /**
+   * @deprecated
+   */
   compareData: boolean
+  /**
+   * @deprecated
+   */
   customMultiTarget: CustomMultiTarget[]
+  /**
+   * @deprecated
+   */
   team: [
     teammate1: CharacterKey | '',
     teammate2: CharacterKey | '',
     teammate3: CharacterKey | ''
   ]
+  /**
+   * @deprecated
+   */
   teamConditional: Partial<Record<CharacterKey, IConditionalValues>>
 }
 export interface ICachedCharacter extends IGOCharacter {
