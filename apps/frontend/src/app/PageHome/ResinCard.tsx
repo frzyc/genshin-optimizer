@@ -1,5 +1,5 @@
-import { imgAssets } from '@genshin-optimizer/gi-assets'
-import { SECOND_MS } from '@genshin-optimizer/util'
+import { SECOND_MS } from '@genshin-optimizer/common/util'
+import { imgAssets } from '@genshin-optimizer/gi/assets'
 import { AccessTimeFilled } from '@mui/icons-material'
 import {
   CardActionArea,
@@ -13,8 +13,8 @@ import { Link as RouterLink } from 'react-router-dom'
 import CardDark from '../Components/Card/CardDark'
 import CardLight from '../Components/Card/CardLight'
 import ImgIcon from '../Components/Image/ImgIcon'
-import { DatabaseContext } from '../Database/Database'
 import { RESIN_MAX, timeZones } from '../Database/DataEntries/DisplayTool'
+import { DatabaseContext } from '../Database/Database'
 import { RESIN_RECH_MS } from '../PageTools/ResinCounter'
 
 export default function ResinCard() {

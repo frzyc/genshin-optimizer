@@ -1,4 +1,4 @@
-import { FIFO } from '@genshin-optimizer/util'
+import { FIFO } from '@genshin-optimizer/common/util'
 
 export class WorkerCoordinator<
   Command extends { command: string; resultType?: never },

@@ -1,5 +1,5 @@
-import type { MainStatKey, SubstatKey } from '@genshin-optimizer/consts'
-import { allMainStatKeys, allSubstatKeys } from '@genshin-optimizer/consts'
+import type { MainStatKey, SubstatKey } from '@genshin-optimizer/gi/consts'
+import { allMainStatKeys, allSubstatKeys } from '@genshin-optimizer/gi/consts'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import {
   Box,
@@ -319,6 +319,8 @@ const inputPremodKeyToGroupMap: Record<InputPremodKey, GroupKey> = {
   normal_dmg_: 'talent_dmg_bonus',
   charged_dmg_: 'talent_dmg_bonus',
   plunging_dmg_: 'talent_dmg_bonus',
+  plunging_collision_dmg_: 'talent_dmg_bonus',
+  plunging_impact_dmg_: 'talent_dmg_bonus',
   skill_dmg_: 'talent_dmg_bonus',
   burst_dmg_: 'talent_dmg_bonus',
   elemental_dmg_: 'talent_dmg_bonus',
@@ -359,6 +361,12 @@ const inputPremodKeyToGroupMap: Record<InputPremodKey, GroupKey> = {
   plunging_dmgInc: 'talent_dmgInc',
   plunging_critDMG_: 'talent_crit',
   plunging_critRate_: 'talent_crit',
+  plunging_collision_dmgInc: 'talent_dmgInc',
+  plunging_collision_critDMG_: 'talent_crit',
+  plunging_collision_critRate_: 'talent_crit',
+  plunging_impact_dmgInc: 'talent_dmgInc',
+  plunging_impact_critDMG_: 'talent_crit',
+  plunging_impact_critRate_: 'talent_crit',
   skill_dmgInc: 'talent_dmgInc',
   skill_critDMG_: 'talent_crit',
   skill_critRate_: 'talent_crit',

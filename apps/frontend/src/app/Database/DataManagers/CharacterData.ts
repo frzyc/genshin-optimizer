@@ -1,10 +1,12 @@
+import type { TriggerString } from '@genshin-optimizer/common/database'
+import { deepClone, objKeyMap } from '@genshin-optimizer/common/util'
 import type {
   ArtifactSlotKey,
   CharacterKey,
   InfusionAuraElementKey,
   LocationCharacterKey,
   TravelerKey,
-} from '@genshin-optimizer/consts'
+} from '@genshin-optimizer/gi/consts'
 import {
   allAdditiveReactions,
   allAmpReactionKeys,
@@ -14,11 +16,9 @@ import {
   allInfusionAuraElementKeys,
   allTravelerKeys,
   charKeyToLocCharKey,
-} from '@genshin-optimizer/consts'
-import type { TriggerString } from '@genshin-optimizer/database'
-import type { IGOOD } from '@genshin-optimizer/gi-good'
-import { validateLevelAsc, validateTalent } from '@genshin-optimizer/gi-util'
-import { deepClone, objKeyMap } from '@genshin-optimizer/util'
+} from '@genshin-optimizer/gi/consts'
+import type { IGOOD } from '@genshin-optimizer/gi/good'
+import { validateLevelAsc, validateTalent } from '@genshin-optimizer/gi/util'
 import { validateCustomMultiTarget } from '../../PageCharacter/CustomMultiTarget'
 import type {
   CustomMultiTarget,

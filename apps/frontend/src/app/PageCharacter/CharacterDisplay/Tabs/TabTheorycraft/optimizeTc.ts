@@ -1,11 +1,11 @@
-import type { SubstatKey } from '@genshin-optimizer/consts'
+import { objMap, toDecimal } from '@genshin-optimizer/common/util'
+import type { SubstatKey } from '@genshin-optimizer/gi/consts'
 import {
   allSubstatKeys,
   artSubstatRollData,
   type CharacterKey,
-} from '@genshin-optimizer/consts'
-import { getMainStatValue, getSubstatValue } from '@genshin-optimizer/gi-util'
-import { objMap, toDecimal } from '@genshin-optimizer/util'
+} from '@genshin-optimizer/gi/consts'
+import { getMainStatValue, getSubstatValue } from '@genshin-optimizer/gi/util'
 import type { TeamData } from '../../../../Context/DataContext'
 import { mergeData } from '../../../../Formula/api'
 import { mapFormulas } from '../../../../Formula/internal'
@@ -212,6 +212,16 @@ export function optimizeTcUsingNodes(
         })
       if (x !== 'other') buffer[x] = substatValue(x, toAssign)
       bufferRolls[x] = toAssign
+      const results = compute([{ values: buffer }] as const)
+      const result = results[0]
+      if (result <= max) {
+        return
+      }
+      // check constraints
+      if (constraints.some((c, i) => results[i + 1] < c)) {
+        failed++
+        return
+      }
       if (!alreadyFeasible) {
         //check for distributed feasibility
         const allRolls = allSubstatKeys.map((k) => [
@@ -229,19 +239,9 @@ export function optimizeTcUsingNodes(
           return
         }
       }
-      const results = compute([{ values: buffer }] as const)
-      // check constraints
-      if (constraints.some((c, i) => results[i + 1] < c)) {
-        failed++
-        return
-      }
-      const result = results[0]
-      if (result > max) {
-        max = result
-        maxBuffer = structuredClone(buffer)
-        maxBufferRolls = structuredClone(bufferRolls)
-      }
-      return
+      max = result
+      maxBuffer = structuredClone(buffer)
+      maxBufferRolls = structuredClone(bufferRolls)
     }
     for (let i = 0; i <= Math.min(maxSubsAssignable[x], toAssign); i++) {
       // TODO: Making sure that i + \sum { maxSubstats[xs] } >= distributedSubstats in each recursion will reduce unnecessary recursion considerably for large problems. It will also tighten the possibilities for the leaf recursion, so you don't need so many checkings.

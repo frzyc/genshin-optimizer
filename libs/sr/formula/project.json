@@ -1,0 +1,28 @@
+{
+  "name": "sr-formula",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/sr/formula/src",
+  "projectType": "library",
+  "targets": {
+    "build": {},
+    "build-ts": {
+      "options": {
+        "updateBuildableProjectDepsInPackageJson": true
+      }
+    },
+    "gen-file": {
+      "executor": "@genshin-optimizer/sr/formula:gen-desc",
+      "options": {
+        "outputPath": "libs/sr/formula/src/meta.ts"
+      }
+    },
+    "lint": {},
+    "test": {
+      "executor": "@nx/vite:test",
+      "options": {
+        "config": "libs/sr/formula/vitest.config.ts"
+      }
+    }
+  },
+  "tags": []
+}

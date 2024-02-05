@@ -1,4 +1,4 @@
-import type { WeaponPoleArmKey } from '@genshin-optimizer/consts'
+import type { WeaponPoleArmKey } from '@genshin-optimizer/gi/consts'
 import type WeaponSheet from '../WeaponSheet'
 import BalladOfTheFjords from './BalladOfTheFjords'
 import BeginnersProtector from './BeginnersProtector'

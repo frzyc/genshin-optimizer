@@ -4,7 +4,7 @@ import {
   PatreonIcon,
   PaypalIcon,
   TwitchIcon,
-} from '@genshin-optimizer/svgicons'
+} from '@genshin-optimizer/common/svgicons'
 import {
   Article,
   Description,

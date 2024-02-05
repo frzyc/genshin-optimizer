@@ -1,10 +1,10 @@
-import type { WeaponKey } from '@genshin-optimizer/consts'
+import { getRandomElementFromArray } from '@genshin-optimizer/common/util'
+import type { WeaponKey } from '@genshin-optimizer/gi/consts'
 import {
   GetAllUserWeaponDocument,
   useAddWeaponMutation,
-} from '@genshin-optimizer/gi-frontend-gql'
-import { randomizeWeapon } from '@genshin-optimizer/gi-util'
-import { getRandomElementFromArray } from '@genshin-optimizer/util'
+} from '@genshin-optimizer/gi/frontend-gql'
+import { randomizeWeapon } from '@genshin-optimizer/gi/util'
 import { Button } from '@mui/material'
 
 export default function AddWeaponButton({

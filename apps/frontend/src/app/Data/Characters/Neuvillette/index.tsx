@@ -1,21 +1,21 @@
+import { objKeyMap, range } from '@genshin-optimizer/common/util'
 import type {
   CharacterKey,
   ElementKey,
   RegionKey,
-} from '@genshin-optimizer/consts'
-import { allStats } from '@genshin-optimizer/gi-stats'
-import { objKeyMap, range } from '@genshin-optimizer/util'
+} from '@genshin-optimizer/gi/consts'
+import { allStats } from '@genshin-optimizer/gi/stats'
 import { input } from '../../../Formula'
 import {
   greaterEq,
   infoMut,
   lookup,
   naught,
-  unequal,
+  one,
   percent,
   prod,
   threshold,
-  one,
+  unequal,
 } from '../../../Formula/utils'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
@@ -26,6 +26,7 @@ import {
   dataObjForCharacterSheet,
   dmgNode,
   healNode,
+  plungingDmgNodes,
 } from '../dataUtil'
 
 const key: CharacterKey = 'Neuvillette'
@@ -61,9 +62,9 @@ const dm = {
   skill: {
     skillDmg: skillParam_gen.skill[s++],
     thornDmg: skillParam_gen.skill[s++],
-    thornInterval: skillParam_gen.skill[s++][0],
     dropletDuration: skillParam_gen.skill[s++][0],
     cd: skillParam_gen.skill[s++][0],
+    thornInterval: skillParam_gen.skill[s++][0],
   },
   burst: {
     skillDmg: skillParam_gen.burst[b++],
@@ -152,12 +153,7 @@ const dmgFormulas = {
     hpRestore: healNode('hp', dm.charged.hpRestore, 0),
     hpLoss: prod(percent(dm.charged.hpCost), input.total.hp),
   },
-  plunging: Object.fromEntries(
-    Object.entries(dm.plunging).map(([key, value]) => [
-      key,
-      dmgNode('atk', value, 'plunging'),
-    ])
-  ),
+  plunging: plungingDmgNodes('atk', dm.plunging),
   skill: {
     skillDmg: dmgNode('hp', dm.skill.skillDmg, 'skill'),
     thornDmg: dmgNode('atk', dm.skill.thornDmg, 'skill'),

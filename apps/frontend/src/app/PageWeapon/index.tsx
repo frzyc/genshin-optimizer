@@ -1,7 +1,14 @@
-import type { WeaponKey } from '@genshin-optimizer/consts'
-import { allRarityKeys, allWeaponTypeKeys } from '@genshin-optimizer/consts'
-import { useForceUpdate, useMediaQueryUp } from '@genshin-optimizer/react-util'
-import { clamp, filterFunction, sortFunction } from '@genshin-optimizer/util'
+import {
+  useForceUpdate,
+  useMediaQueryUp,
+} from '@genshin-optimizer/common/react-util'
+import {
+  clamp,
+  filterFunction,
+  sortFunction,
+} from '@genshin-optimizer/common/util'
+import type { WeaponKey } from '@genshin-optimizer/gi/consts'
+import { allRarityKeys, allWeaponTypeKeys } from '@genshin-optimizer/gi/consts'
 import { Add } from '@mui/icons-material'
 import {
   Box,
@@ -15,8 +22,8 @@ import {
 } from '@mui/material'
 import type { ChangeEvent } from 'react'
 import React, {
-  lazy,
   Suspense,
+  lazy,
   useCallback,
   useContext,
   useDeferredValue,
@@ -33,13 +40,13 @@ import WeaponRarityToggle from '../Components/ToggleButton/WeaponRarityToggle'
 import WeaponToggle from '../Components/ToggleButton/WeaponToggle'
 import { getWeaponSheet } from '../Data/Weapons'
 import { DatabaseContext } from '../Database/Database'
-import { catTotal } from '../Util/totalUtils'
 import {
   weaponFilterConfigs,
   weaponSortConfigs,
   weaponSortMap,
 } from '../Util/WeaponSort'
 import { initialWeapon } from '../Util/WeaponUtil'
+import { catTotal } from '../Util/totalUtils'
 import WeaponCard from './WeaponCard'
 const WeaponSelectionModal = React.lazy(
   () => import('../Components/Weapon/WeaponSelectionModal')

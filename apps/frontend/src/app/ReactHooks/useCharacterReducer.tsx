@@ -1,9 +1,9 @@
-import type { CharacterKey } from '@genshin-optimizer/consts'
+import { deepClone } from '@genshin-optimizer/common/util'
+import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import { useCallback, useContext } from 'react'
 import { DatabaseContext } from '../Database/Database'
 import type { ICachedCharacter } from '../Types/character'
 import type { IConditionalValues } from '../Types/sheet'
-import { deepClone } from '@genshin-optimizer/util'
 
 type characterReducerBonusStatsAction = {
   type: 'editStats'

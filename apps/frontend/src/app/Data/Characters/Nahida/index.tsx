@@ -1,4 +1,5 @@
-import { allStats } from '@genshin-optimizer/gi-stats'
+import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
+import { allStats } from '@genshin-optimizer/gi/stats'
 import { input, tally, target } from '../../../Formula'
 import {
   compareEq,
@@ -17,16 +18,16 @@ import {
   unequal,
 } from '../../../Formula/utils'
 import KeyMap from '../../../KeyMap'
-import type { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
 import { range } from '../../../Util/Util'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
-import { charTemplates } from '../charTemplates'
 import type { ICharacterSheet } from '../ICharacterSheet.d'
+import { charTemplates } from '../charTemplates'
 import {
   customDmgNode,
   dataObjForCharacterSheet,
   dmgNode,
+  plungingDmgNodes,
   splitScaleDmgNode,
 } from '../dataUtil'
 
@@ -275,12 +276,7 @@ const dmgFormulas = {
   charged: {
     dmg: dmgNode('atk', dm.charged.dmg, 'charged'),
   },
-  plunging: Object.fromEntries(
-    Object.entries(dm.plunging).map(([key, value]) => [
-      key,
-      dmgNode('atk', value, 'plunging'),
-    ])
-  ),
+  plunging: plungingDmgNodes('atk', dm.plunging),
   skill: {
     pressDmg: dmgNode('atk', dm.skill.pressDmg, 'skill'),
     holdDmg: dmgNode('atk', dm.skill.holdDmg, 'skill'),

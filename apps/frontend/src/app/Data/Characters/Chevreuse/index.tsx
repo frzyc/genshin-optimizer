@@ -1,10 +1,10 @@
+import { objKeyMap, range } from '@genshin-optimizer/common/util'
 import type {
   CharacterKey,
   ElementKey,
   RegionKey,
-} from '@genshin-optimizer/consts'
-import { allStats } from '@genshin-optimizer/gi-stats'
-import { objKeyMap, range } from '@genshin-optimizer/util'
+} from '@genshin-optimizer/gi/consts'
+import { allStats } from '@genshin-optimizer/gi/stats'
 import { input, tally, target } from '../../../Formula'
 import {
   constant,
@@ -29,6 +29,7 @@ import {
   dmgNode,
   healNode,
   healNodeTalent,
+  plungingDmgNodes,
 } from '../dataUtil'
 
 const key: CharacterKey = 'Chevreuse'
@@ -171,12 +172,7 @@ const dmgFormulas = {
   charged: {
     dmg: dmgNode('atk', dm.charged.dmg, 'charged'),
   },
-  plunging: Object.fromEntries(
-    Object.entries(dm.plunging).map(([key, value]) => [
-      key,
-      dmgNode('atk', value, 'plunging'),
-    ])
-  ),
+  plunging: plungingDmgNodes('atk', dm.plunging),
   skill: {
     pressDmg: dmgNode('atk', dm.skill.pressDmg, 'skill'),
     holdDmg: dmgNode('atk', dm.skill.holdDmg, 'skill'),

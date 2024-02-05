@@ -1,19 +1,20 @@
-import { allStats } from '@genshin-optimizer/gi-stats'
-import { input } from '../../../Formula'
-import { equal, greaterEq, infoMut, percent } from '../../../Formula/utils'
 import type {
   CharacterKey,
   ElementKey,
   RegionKey,
-} from '@genshin-optimizer/consts'
-import { cond, stg, st } from '../../SheetUtil'
+} from '@genshin-optimizer/gi/consts'
+import { allStats } from '@genshin-optimizer/gi/stats'
+import { input } from '../../../Formula'
+import { equal, greaterEq, infoMut, percent } from '../../../Formula/utils'
+import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
-import { charTemplates } from '../charTemplates'
 import type { ICharacterSheet } from '../ICharacterSheet.d'
+import { charTemplates } from '../charTemplates'
 import {
   dataObjForCharacterSheet,
   dmgNode,
   healNode,
+  plungingDmgNodes,
   shieldElement,
   shieldNode,
 } from '../dataUtil'
@@ -79,12 +80,7 @@ const dmgFormulas = {
     dmg1: dmgNode('atk', dm.charged.dmg1, 'charged'),
     dmg2: dmgNode('atk', dm.charged.dmg2, 'charged'),
   },
-  plunging: Object.fromEntries(
-    Object.entries(dm.plunging).map(([key, value]) => [
-      key,
-      dmgNode('atk', value, 'plunging'),
-    ])
-  ),
+  plunging: plungingDmgNodes('atk', dm.plunging),
   skill: {
     dmg: dmgNode('atk', dm.skill.dmg, 'skill'),
   },

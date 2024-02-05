@@ -1,4 +1,5 @@
-import { allStats } from '@genshin-optimizer/gi-stats'
+import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
+import { allStats } from '@genshin-optimizer/gi/stats'
 import ColorText from '../../../Components/ColoredText'
 import { input } from '../../../Formula'
 import {
@@ -11,13 +12,16 @@ import {
   prod,
   subscript,
 } from '../../../Formula/utils'
-import type { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
 import { range } from '../../../Util/Util'
-import { cond, stg, st } from '../../SheetUtil'
+import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
-import { charTemplates } from '../charTemplates'
 import type { ICharacterSheet } from '../ICharacterSheet.d'
-import { dataObjForCharacterSheet, dmgNode } from '../dataUtil'
+import { charTemplates } from '../charTemplates'
+import {
+  dataObjForCharacterSheet,
+  dmgNode,
+  plungingDmgNodes,
+} from '../dataUtil'
 
 const key: CharacterKey = 'Xiao'
 const elementKey: ElementKey = 'anemo'
@@ -88,12 +92,7 @@ const dmgFormulas = {
   charged: {
     dmg1: dmgNode('atk', dm.charged.dmg1, 'charged'),
   },
-  plunging: Object.fromEntries(
-    Object.entries(dm.plunging).map(([key, value]) => [
-      key,
-      dmgNode('atk', value, 'plunging'),
-    ])
-  ),
+  plunging: plungingDmgNodes('atk', dm.plunging),
   skill: {
     press: dmgNode('atk', dm.skill.press, 'skill'),
   },

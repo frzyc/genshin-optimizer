@@ -2,8 +2,8 @@ import type {
   ArtifactSetKey,
   CharacterKey,
   WeaponKey,
-} from '@genshin-optimizer/consts'
-import { weaponAsset } from '@genshin-optimizer/gi-assets'
+} from '@genshin-optimizer/gi/consts'
+import { weaponAsset } from '@genshin-optimizer/gi/assets'
 import { input } from '.'
 import ColorText from '../Components/ColoredText'
 import { getArtSheet } from '../Data/Artifacts'

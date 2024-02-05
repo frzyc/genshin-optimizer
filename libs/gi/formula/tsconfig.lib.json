@@ -1,0 +1,13 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../../../dist/out-tsc",
+    "types": ["node"]
+  },
+  "include": [
+    "src/index.ts",
+    "src/generators/**/*.ts",
+    "src/executors/**/*.ts"
+  ],
+  "exclude": ["**/*.spec.ts", "vitest.config.ts", "src/example/test.json"]
+}

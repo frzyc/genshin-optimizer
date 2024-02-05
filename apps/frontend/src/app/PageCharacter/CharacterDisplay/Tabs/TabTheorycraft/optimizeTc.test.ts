@@ -1,5 +1,5 @@
-import type { CharacterKey } from '@genshin-optimizer/consts'
-import { SandboxStorage } from '@genshin-optimizer/database'
+import { SandboxStorage } from '@genshin-optimizer/common/database'
+import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import { ArtCharDatabase } from '../../../../Database/Database'
 import { getTeamDataCalc } from '../../../../ReactHooks/useTeamData'
 import type { ICharTC } from '../../../../Types/character'

@@ -1,11 +1,11 @@
-import type { CharacterKey } from '@genshin-optimizer/consts'
+import { deepClone } from '@genshin-optimizer/common/util'
+import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import {
   allArtifactSlotKeys,
   allCharacterKeys,
-} from '@genshin-optimizer/consts'
+} from '@genshin-optimizer/gi/consts'
 import { DataManager } from '../DataManager'
 import type { ArtCharDatabase } from '../Database'
-import { deepClone } from '@genshin-optimizer/util'
 
 export interface IBuildResult {
   builds: string[][]

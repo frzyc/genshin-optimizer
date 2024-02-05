@@ -1,5 +1,6 @@
-import type { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
-import { allStats } from '@genshin-optimizer/gi-stats'
+import { objKeyMap, range } from '@genshin-optimizer/common/util'
+import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
+import { allStats } from '@genshin-optimizer/gi/stats'
 import { input } from '../../../Formula'
 import {
   equal,
@@ -11,17 +12,17 @@ import {
   prod,
   subscript,
 } from '../../../Formula/utils'
-import { objKeyMap, range } from '@genshin-optimizer/util'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
+import type { ICharacterSheet } from '../ICharacterSheet'
 import { charTemplates } from '../charTemplates'
 import {
   customHealNode,
   dataObjForCharacterSheet,
   dmgNode,
+  plungingDmgNodes,
   splitScaleDmgNode,
 } from '../dataUtil'
-import type { ICharacterSheet } from '../ICharacterSheet'
 
 const key: CharacterKey = 'Dehya'
 const elementKey: ElementKey = 'pyro'
@@ -148,12 +149,7 @@ const dmgFormulas = {
     spin: dmgNode('atk', dm.charged.spin, 'charged'),
     final: dmgNode('atk', dm.charged.final, 'charged'),
   },
-  plunging: Object.fromEntries(
-    Object.entries(dm.plunging).map(([key, value]) => [
-      key,
-      dmgNode('atk', value, 'plunging'),
-    ])
-  ),
+  plunging: plungingDmgNodes('atk', dm.plunging),
   skill: {
     indomitableDmg: dmgNode('atk', dm.skill.indomitableDmg, 'skill'),
     rangingDmg: dmgNode('atk', dm.skill.rangingDmg, 'skill'),

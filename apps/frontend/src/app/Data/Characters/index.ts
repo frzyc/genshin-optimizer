@@ -1,11 +1,11 @@
-import type { CharacterSheetKey } from '../../Types/consts'
-import type CharacterSheet from './CharacterSheet'
 import type {
   CharacterKey,
   GenderKey,
   TravelerKey,
-} from '@genshin-optimizer/consts'
-import { allTravelerKeys } from '@genshin-optimizer/consts'
+} from '@genshin-optimizer/gi/consts'
+import { allTravelerKeys } from '@genshin-optimizer/gi/consts'
+import type { CharacterSheetKey } from '../../Types/consts'
+import type CharacterSheet from './CharacterSheet'
 
 import Albedo from './Albedo'
 import Alhaitham from './Alhaitham'
@@ -31,6 +31,7 @@ import Faruzan from './Faruzan'
 import Fischl from './Fischl'
 import Freminet from './Freminet'
 import Furina from './Furina'
+import Gaming from './Gaming'
 import Ganyu from './Ganyu'
 import Gorou from './Gorou'
 import HuTao from './HuTao'
@@ -84,6 +85,7 @@ import Venti from './Venti'
 import Wanderer from './Wanderer'
 import Wriothesley from './Wriothesley'
 import Xiangling from './Xiangling'
+import Xianyun from './Xianyun'
 import Xiao from './Xiao'
 import Xingqiu from './Xingqiu'
 import Xinyan from './Xinyan'
@@ -120,6 +122,7 @@ const characters: Record<CharacterSheetKey, CharacterSheet> = {
   Fischl,
   Freminet,
   Furina,
+  Gaming,
   Ganyu,
   Gorou,
   HuTao,
@@ -173,6 +176,7 @@ const characters: Record<CharacterSheetKey, CharacterSheet> = {
   Wanderer,
   Wriothesley,
   Xiangling,
+  Xianyun,
   Xiao,
   Xingqiu,
   Xinyan,

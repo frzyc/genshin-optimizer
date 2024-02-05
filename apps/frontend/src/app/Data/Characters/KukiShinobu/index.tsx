@@ -1,4 +1,5 @@
-import { allStats } from '@genshin-optimizer/gi-stats'
+import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
+import { allStats } from '@genshin-optimizer/gi/stats'
 import { input } from '../../../Formula'
 import {
   constant,
@@ -8,16 +9,16 @@ import {
   percent,
   prod,
 } from '../../../Formula/utils'
-import type { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
-import { cond, stg, st } from '../../SheetUtil'
+import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
-import { charTemplates } from '../charTemplates'
 import type { ICharacterSheet } from '../ICharacterSheet.d'
+import { charTemplates } from '../charTemplates'
 import {
   customDmgNode,
   dataObjForCharacterSheet,
   dmgNode,
   healNodeTalent,
+  plungingDmgNodes,
 } from '../dataUtil'
 
 const key: CharacterKey = 'KukiShinobu'
@@ -128,12 +129,7 @@ const dmgFormulas = {
     dmg1: dmgNode('atk', dm.charged.dmg1, 'charged'),
     dmg2: dmgNode('atk', dm.charged.dmg2, 'charged'),
   },
-  plunging: Object.fromEntries(
-    Object.entries(dm.plunging).map(([name, arr]) => [
-      name,
-      dmgNode('atk', arr, 'plunging'),
-    ])
-  ),
+  plunging: plungingDmgNodes('atk', dm.plunging),
   skill: {
     pressDmg: dmgNode('atk', dm.skill.pressDmg, 'skill'),
     ringHeal: healNodeTalent(

@@ -12,7 +12,7 @@ export type CustomNumberInputProps = Omit<InputProps, 'onChange'> & {
 }
 
 /**
- * @deprecated use `StyledInputBase` in `@genshin-optimizer/ui-common`
+ * @deprecated use `StyledInputBase` in `@genshin-optimizer/common/ui`
  */
 export const StyledInputBase = styled(InputBase)(
   ({ theme, color = 'primary' }) => ({
@@ -42,7 +42,7 @@ const Wrapper = styled(Button)(({ theme }) => ({
 
 // wrap the Input with this when using the input in a buttongroup
 /**
- * @deprecated use `CustomNumberInputButtonGroupWrapper` in `@genshin-optimizer/ui-common`
+ * @deprecated use `CustomNumberInputButtonGroupWrapper` in `@genshin-optimizer/common/ui`
  */
 export function CustomNumberInputButtonGroupWrapper({
   children,
@@ -59,7 +59,7 @@ export function CustomNumberInputButtonGroupWrapper({
 }
 
 /**
- * @deprecated use `CustomNumberInput` in `@genshin-optimizer/ui-common`
+ * @deprecated use `CustomNumberInput` in `@genshin-optimizer/common/ui`
  */
 export default function CustomNumberInput({
   value = 0,

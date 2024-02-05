@@ -1,4 +1,5 @@
-import { allStats } from '@genshin-optimizer/gi-stats'
+import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
+import { allStats } from '@genshin-optimizer/gi/stats'
 import { input } from '../../../Formula'
 import {
   constant,
@@ -10,15 +11,15 @@ import {
   subscript,
 } from '../../../Formula/utils'
 import KeyMap from '../../../KeyMap'
-import type { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
-import { cond, stg, st } from '../../SheetUtil'
+import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
-import { charTemplates } from '../charTemplates'
 import type { ICharacterSheet } from '../ICharacterSheet.d'
+import { charTemplates } from '../charTemplates'
 import {
   customDmgNode,
   dataObjForCharacterSheet,
   dmgNode,
+  plungingDmgNodes,
   shieldElement,
   shieldNode,
   shieldNodeTalent,
@@ -147,12 +148,7 @@ const dmgFormulas = {
     spinningDmg: dmgNode('atk', dm.charged.spinningDmg, 'charged'),
     finalDmg: dmgNode('atk', dm.charged.finalDmg, 'charged'),
   },
-  plunging: Object.fromEntries(
-    Object.entries(dm.plunging).map(([key, value]) => [
-      key,
-      dmgNode('atk', value, 'plunging'),
-    ])
-  ),
+  plunging: plungingDmgNodes('atk', dm.plunging),
   skill: {
     shield: skillShieldNode,
     electroShield: shieldElement('electro', skillShieldNode),

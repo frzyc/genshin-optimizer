@@ -1,3 +1,4 @@
+import { clamp, objKeyMap } from '@genshin-optimizer/common/util'
 import type {
   ArtifactRarity,
   ArtifactSlotKey,
@@ -5,7 +6,7 @@ import type {
   MainStatKey,
   SubstatKey,
   WeaponKey,
-} from '@genshin-optimizer/consts'
+} from '@genshin-optimizer/gi/consts'
 import {
   allArtifactRarityKeys,
   allArtifactSlotKeys,
@@ -13,9 +14,8 @@ import {
   allWeaponKeys,
   artMaxLevel,
   substatTypeKeys,
-} from '@genshin-optimizer/consts'
-import { validateLevelAsc } from '@genshin-optimizer/gi-util'
-import { clamp, objKeyMap } from '@genshin-optimizer/util'
+} from '@genshin-optimizer/gi/consts'
+import { validateLevelAsc } from '@genshin-optimizer/gi/util'
 import type { ICharTC } from '../../Types/character'
 import { DataManager } from '../DataManager'
 import type { ArtCharDatabase } from '../Database'

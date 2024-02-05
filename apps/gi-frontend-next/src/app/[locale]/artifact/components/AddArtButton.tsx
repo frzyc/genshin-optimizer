@@ -1,11 +1,11 @@
-import type { ArtifactSetKey } from '@genshin-optimizer/consts'
+import { getRandomElementFromArray } from '@genshin-optimizer/common/util'
+import type { ArtifactSetKey } from '@genshin-optimizer/gi/consts'
 import {
   GetAllUserArtifactDocument,
   useAddArtifactMutation,
-} from '@genshin-optimizer/gi-frontend-gql'
-import { IArtifactToArtifact, UserContext } from '@genshin-optimizer/gi-ui-next'
-import { randomizeArtifact } from '@genshin-optimizer/gi-util'
-import { getRandomElementFromArray } from '@genshin-optimizer/util'
+} from '@genshin-optimizer/gi/frontend-gql'
+import { IArtifactToArtifact, UserContext } from '@genshin-optimizer/gi/ui-next'
+import { randomizeArtifact } from '@genshin-optimizer/gi/util'
 import { Button } from '@mui/material'
 import { useContext } from 'react'
 

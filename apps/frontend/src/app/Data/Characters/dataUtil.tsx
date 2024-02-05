@@ -1,14 +1,18 @@
+import {
+  layeredAssignment,
+  objKeyMap,
+  verifyObjKeys,
+} from '@genshin-optimizer/common/util'
 import type {
   CharacterKey,
   ElementKey,
   MainStatKey,
   RegionKey,
   SubstatKey,
-} from '@genshin-optimizer/consts'
-import { allMainStatKeys } from '@genshin-optimizer/consts'
-import type { CharacterDataGen } from '@genshin-optimizer/gi-stats'
-import { allStats } from '@genshin-optimizer/gi-stats'
-import { layeredAssignment, objKeyMap } from '@genshin-optimizer/util'
+} from '@genshin-optimizer/gi/consts'
+import { allMainStatKeys } from '@genshin-optimizer/gi/consts'
+import type { CharacterDataGen } from '@genshin-optimizer/gi/stats'
+import { allStats } from '@genshin-optimizer/gi/stats'
 import { infusionNode, input } from '../../Formula'
 import { inferInfoMut, mergeData } from '../../Formula/api'
 import { reactions } from '../../Formula/reaction'
@@ -55,12 +59,19 @@ const inferredHitEle = stringPrio(
 )
 
 function getTalentType(
-  move: 'normal' | 'charged' | 'plunging' | 'skill' | 'burst'
+  move:
+    | 'normal'
+    | 'charged'
+    | 'plunging_collision'
+    | 'plunging_impact'
+    | 'skill'
+    | 'burst'
 ) {
   switch (move) {
     case 'normal':
     case 'charged':
-    case 'plunging':
+    case 'plunging_collision':
+    case 'plunging_impact':
       return 'auto'
     case 'skill':
       return 'skill'
@@ -72,7 +83,14 @@ function getTalentType(
 /** Note: `additional` applies only to this formula */
 export function customDmgNode(
   base: NumNode,
-  move: 'normal' | 'charged' | 'plunging' | 'skill' | 'burst' | 'elemental',
+  move:
+    | 'normal'
+    | 'charged'
+    | 'plunging_collision'
+    | 'plunging_impact'
+    | 'skill'
+    | 'burst'
+    | 'elemental',
   additional: Data = {}
 ): NumNode {
   return data(
@@ -108,7 +126,13 @@ export function customHealNode(base: NumNode, additional?: Data): NumNode {
 export function dmgNode(
   base: MainStatKey | SubstatKey,
   lvlMultiplier: number[],
-  move: 'normal' | 'charged' | 'plunging' | 'skill' | 'burst',
+  move:
+    | 'normal'
+    | 'charged'
+    | 'plunging_collision'
+    | 'plunging_impact'
+    | 'skill'
+    | 'burst',
   additional: Data = {},
   specialMultiplier?: NumNode
 ): NumNode {
@@ -129,7 +153,13 @@ export function dmgNode(
 export function splitScaleDmgNode(
   bases: (MainStatKey | SubstatKey)[],
   lvlMultipliers: number[][],
-  move: 'normal' | 'charged' | 'plunging' | 'skill' | 'burst',
+  move:
+    | 'normal'
+    | 'charged'
+    | 'plunging_collision'
+    | 'plunging_impact'
+    | 'skill'
+    | 'burst',
   additional: Data = {}
 ): NumNode {
   const talentType = getTalentType(move)
@@ -148,6 +178,30 @@ export function splitScaleDmgNode(
     additional
   )
 }
+const allPlungingDmgKeys = ['dmg', 'low', 'high'] as const
+type PlungingDmgKey = (typeof allPlungingDmgKeys)[number]
+export function plungingDmgNodes(
+  base: MainStatKey | SubstatKey,
+  lvlMultipliers: Record<PlungingDmgKey, number[]>,
+  additional: Data = {},
+  specialMultiplier?: NumNode
+): Record<PlungingDmgKey, NumNode> {
+  const nodes = Object.fromEntries(
+    Object.entries(lvlMultipliers).map(([key, multi]) => [
+      key,
+      dmgNode(
+        base,
+        multi,
+        key === 'dmg' ? 'plunging_collision' : 'plunging_impact',
+        additional,
+        specialMultiplier
+      ),
+    ])
+  )
+  verifyObjKeys(nodes, allPlungingDmgKeys)
+  return nodes
+}
+
 /** Note: `additional` applies only to this formula */
 export function shieldNode(
   base: MainStatKey | SubstatKey,
@@ -174,7 +228,13 @@ export function shieldNodeTalent(
   base: MainStatKey | SubstatKey,
   baseMultiplier: number[],
   flat: number[],
-  move: 'normal' | 'charged' | 'plunging' | 'skill' | 'burst',
+  move:
+    | 'normal'
+    | 'charged'
+    | 'plunging_collision'
+    | 'plunging_impact'
+    | 'skill'
+    | 'burst',
   additional?: Data,
   multiplier?: NumNode | number
 ): NumNode {
@@ -205,7 +265,13 @@ export function healNodeTalent(
   base: MainStatKey | SubstatKey,
   baseMultiplier: number[],
   flat: number[],
-  move: 'normal' | 'charged' | 'plunging' | 'skill' | 'burst',
+  move:
+    | 'normal'
+    | 'charged'
+    | 'plunging_collision'
+    | 'plunging_impact'
+    | 'skill'
+    | 'burst',
   additional?: Data,
   multiplier?: NumNode | number
 ): NumNode {

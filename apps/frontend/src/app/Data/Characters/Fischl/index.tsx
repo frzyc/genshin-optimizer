@@ -1,4 +1,9 @@
-import { allStats } from '@genshin-optimizer/gi-stats'
+import type {
+  CharacterKey,
+  ElementKey,
+  RegionKey,
+} from '@genshin-optimizer/gi/consts'
+import { allStats } from '@genshin-optimizer/gi/stats'
 import { input } from '../../../Formula'
 import {
   constant,
@@ -9,20 +14,16 @@ import {
   subscript,
   sum,
 } from '../../../Formula/utils'
-import type {
-  CharacterKey,
-  ElementKey,
-  RegionKey,
-} from '@genshin-optimizer/consts'
 import { st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
-import { charTemplates } from '../charTemplates'
 import type { ICharacterSheet } from '../ICharacterSheet.d'
+import { charTemplates } from '../charTemplates'
 import {
   customDmgNode,
   customHealNode,
   dataObjForCharacterSheet,
   dmgNode,
+  plungingDmgNodes,
 } from '../dataUtil'
 
 const key: CharacterKey = 'Fischl'
@@ -99,12 +100,7 @@ const dmgFormulas = {
       hit: { ele: constant('electro') },
     }),
   },
-  plunging: Object.fromEntries(
-    Object.entries(dm.plunging).map(([key, value]) => [
-      key,
-      dmgNode('atk', value, 'plunging'),
-    ])
-  ),
+  plunging: plungingDmgNodes('atk', dm.plunging),
   skill: {
     ozDmg: dmgNode('atk', dm.skill.ozDmg, 'skill'),
     summonDmg: customDmgNode(

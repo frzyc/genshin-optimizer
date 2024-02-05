@@ -1,5 +1,5 @@
-import type { ArtifactSlotKey } from '@genshin-optimizer/consts'
-import { allArtifactSlotKeys } from '@genshin-optimizer/consts'
+import type { ArtifactSlotKey } from '@genshin-optimizer/gi/consts'
+import { allArtifactSlotKeys } from '@genshin-optimizer/gi/consts'
 import { Replay } from '@mui/icons-material'
 import type { ButtonProps } from '@mui/material'
 import { Divider, ListItemIcon, ListItemText, MenuItem } from '@mui/material'
