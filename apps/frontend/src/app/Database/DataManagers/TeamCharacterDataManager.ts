@@ -57,9 +57,9 @@ export class TeamCharacterDataManager extends DataManager<
     return validateTeamCharater(obj)
   }
 
-  new(value: TeamCharacter): string {
+  new(key: CharacterKey): string {
     const id = this.generateKey()
-    this.set(id, value)
+    this.set(id, { key })
     return id
   }
   override clear(): void {

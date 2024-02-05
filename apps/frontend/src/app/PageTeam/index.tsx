@@ -1,7 +1,6 @@
 import { CardThemed } from '@genshin-optimizer/common/ui'
-import { range } from '@genshin-optimizer/common/util'
 import { charKeyToLocGenderedCharKey } from '@genshin-optimizer/gi/consts'
-import { Box, CardContent, Grid, Skeleton } from '@mui/material'
+import { Box, CardContent, Skeleton } from '@mui/material'
 import { Suspense, useCallback, useContext, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Navigate, useMatch, useNavigate, useParams } from 'react-router-dom'
@@ -18,7 +17,6 @@ import {
 } from '../Context/GraphContext'
 import { SillyContext } from '../Context/SillyContext'
 import { getCharSheet } from '../Data/Characters'
-import type { Team } from '../Database/DataManagers/TeamDataManager'
 import { DatabaseContext } from '../Database/Database'
 import Content from '../PageCharacter/CharacterDisplay/Context'
 import useCharacter from '../ReactHooks/useCharacter'
@@ -26,6 +24,7 @@ import useCharacterReducer from '../ReactHooks/useCharacterReducer'
 import useDBMeta from '../ReactHooks/useDBMeta'
 import useTeamDataNew from '../ReactHooks/useTeamDataNew'
 import useTitle from '../ReactHooks/useTitle'
+import TeamCharacterSelector from './TeamCharacterSelector'
 export default function PageTeam() {
   const navigate = useNavigate()
   const { database } = useContext(DatabaseContext)
@@ -127,7 +126,10 @@ function Page({ teamId, onClose }: { teamId: string; onClose?: () => void }) {
   return (
     <CardThemed>
       <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
-        <CharSelector characterIds={characterIds} />
+        <TeamCharacterSelector
+          teamId={teamId}
+          currentCharIndex={currentCharIndex}
+        />
         {dataContextValue && characterContextValue && graphContextValue ? (
           <CharacterContext.Provider value={characterContextValue}>
             <DataContext.Provider value={dataContextValue}>
@@ -143,31 +145,5 @@ function Page({ teamId, onClose }: { teamId: string; onClose?: () => void }) {
         )}
       </CardContent>
     </CardThemed>
-  )
-}
-function CharSelector({
-  characterIds,
-}: {
-  characterIds: Team['characterIds']
-}) {
-  const { database } = useContext(DatabaseContext)
-
-  return (
-    <Box>
-      <Grid container columns={4} spacing={1}>
-        {characterIds.map((id) => (
-          <Grid item key={id} xs={1}>
-            {JSON.stringify(database.teamChars.get(id))}
-          </Grid>
-        ))}
-        {range(0, 3).map((id) => (
-          <Grid item key={id} xs={1}>
-            <CardThemed bgt="light">
-              <CardContent>+ Add Character</CardContent>
-            </CardThemed>
-          </Grid>
-        ))}
-      </Grid>
-    </Box>
   )
 }
