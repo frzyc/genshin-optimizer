@@ -3,17 +3,17 @@
     {
       "numRequired": 2,
       "passiveStats": {
-        "def_": 0.1500000001396984
+        "def_": 0.15
       },
       "otherStats": [
-        0.1500000001396984
+        0.15
       ]
     },
     {
       "numRequired": 4,
       "passiveStats": {},
       "otherStats": [
-        0.20000000018626451
+        0.2
       ]
     }
   ]

@@ -3,18 +3,18 @@
     {
       "numRequired": 2,
       "passiveStats": {
-        "fire_dmg_": 0.10000000009313226
+        "fire_dmg_": 0.1
       },
       "otherStats": [
-        0.10000000009313226
+        0.1
       ]
     },
     {
       "numRequired": 4,
       "passiveStats": {},
       "otherStats": [
-        0.12000000011175871,
-        0.12000000011175871
+        0.12,
+        0.12
       ]
     }
   ]

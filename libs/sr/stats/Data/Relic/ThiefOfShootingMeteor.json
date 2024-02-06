@@ -3,19 +3,19 @@
     {
       "numRequired": 2,
       "passiveStats": {
-        "brEff_": 0.1600000001490116
+        "brEff_": 0.16
       },
       "otherStats": [
-        0.1600000001490116
+        0.16
       ]
     },
     {
       "numRequired": 4,
       "passiveStats": {
-        "brEff_": 0.1600000001490116
+        "brEff_": 0.16
       },
       "otherStats": [
-        0.1600000001490116,
+        0.16,
         3
       ]
     }

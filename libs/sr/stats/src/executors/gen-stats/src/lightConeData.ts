@@ -1,4 +1,3 @@
-import { extrapolateFloat } from '@genshin-optimizer/common/pipeline'
 import { range, verifyObjKeys } from '@genshin-optimizer/common/util'
 import type { StatKey } from '@genshin-optimizer/sr/consts'
 import {
@@ -91,33 +90,28 @@ export default function LightConeData(): LightConeData {
               BaseDefenceAdd,
             }) => ({
               atk: {
-                base: extrapolateFloat(BaseAttack.Value),
-                add: extrapolateFloat(BaseAttackAdd.Value),
+                base: BaseAttack.Value,
+                add: BaseAttackAdd.Value,
               },
               def: {
-                base: extrapolateFloat(BaseDefence.Value),
-                add: extrapolateFloat(BaseDefenceAdd.Value),
+                base: BaseDefence.Value,
+                add: BaseDefenceAdd.Value,
               },
               hp: {
-                base: extrapolateFloat(BaseHP.Value),
-                add: extrapolateFloat(BaseHPAdd.Value),
+                base: BaseHP.Value,
+                add: BaseHPAdd.Value,
               },
             })
           ),
           superimpose: {
             otherStats: expandedConfig.ParamList.map((superimpose) => [
               -1,
-              ...superimpose.map((param) => extrapolateFloat(param.Value)),
+              ...superimpose.map((param) => param.Value),
             ]),
             passiveStats: Object.fromEntries(
               expandedConfig.AbilityProperty.map((superimpose) => [
                 superimpose[0].key,
-                [
-                  -1,
-                  ...superimpose.map((prop) =>
-                    extrapolateFloat(prop.Value.Value)
-                  ),
-                ],
+                [-1, ...superimpose.map((prop) => prop.Value.Value)],
               ])
             ),
           },
