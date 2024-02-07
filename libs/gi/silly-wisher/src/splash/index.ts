@@ -25,6 +25,7 @@ import Faruzan from './splash_faruzan.png'
 import Fischl from './splash_fischl.png'
 import Freminet from './splash_freminet.png'
 import Furina from './splash_furina.png'
+import Gaming from './splash_gaming.png'
 import Ganyu from './splash_ganyu.png'
 import Gorou from './splash_gorou.png'
 import ShikanoinHeizou from './splash_heizou.png'
@@ -67,6 +68,7 @@ import Venti from './splash_venti.png'
 import Wanderer from './splash_wanderer.png'
 import Wriothesley from './splash_wriothesley.png'
 import Xiangling from './splash_xiangling.png'
+import Xianyun from './splash_xiangyun.png'
 import Xiao from './splash_xiao.png'
 import Xingqiu from './splash_xingqiu.png'
 import Xinyan from './splash_xinyan.png'
@@ -102,6 +104,7 @@ const charCards = {
   Fischl,
   Freminet,
   Furina,
+  Gaming,
   Ganyu,
   Gorou,
   HuTao,
@@ -146,6 +149,7 @@ const charCards = {
   Wanderer,
   Wriothesley,
   Xiangling,
+  Xianyun,
   Xiao,
   Xingqiu,
   Xinyan,
