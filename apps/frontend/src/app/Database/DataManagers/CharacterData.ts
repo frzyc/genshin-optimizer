@@ -19,7 +19,6 @@ import {
 } from '@genshin-optimizer/gi/consts'
 import type { IGOOD } from '@genshin-optimizer/gi/good'
 import { validateLevelAsc, validateTalent } from '@genshin-optimizer/gi/util'
-import { validateCustomMultiTarget } from '../../PageCharacter/CustomMultiTarget'
 import type {
   CustomMultiTarget,
   ICachedCharacter,
@@ -29,6 +28,7 @@ import { DataManager } from '../DataManager'
 import type { ArtCharDatabase } from '../Database'
 import type { IGO, ImportResult } from '../exim'
 import { GOSource } from '../exim'
+import { validateCustomMultiTarget } from './CustomMultiTarget'
 
 export class CharacterDataManager extends DataManager<
   CharacterKey,

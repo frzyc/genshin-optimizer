@@ -6,7 +6,7 @@ import { CharacterContext } from '../../Context/CharacterContext'
 import useCharSelectionCallback from '../../ReactHooks/useCharSelectionCallback'
 
 const CharacterSelectionModal = React.lazy(
-  () => import('../CharacterSelectionModal')
+  () => import('../../Components/Character/CharacterSelectionModal')
 )
 
 export default function CharSelectButton() {

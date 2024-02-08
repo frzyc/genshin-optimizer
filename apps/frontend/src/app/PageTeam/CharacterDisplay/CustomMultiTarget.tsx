@@ -9,12 +9,9 @@ import type {
   AdditiveReactionKey,
   AmpReactionKey,
   InfusionAuraElementKey,
-  MultiOptHitModeKey,
 } from '@genshin-optimizer/gi/consts'
 import {
-  allAdditiveReactions,
   allAmpReactionKeys,
-  allInfusionAuraElementKeys,
   allMultiOptHitModeKeys,
 } from '@genshin-optimizer/gi/consts'
 import AddIcon from '@mui/icons-material/Add'
@@ -51,107 +48,40 @@ import {
   useState,
 } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
-import AdditiveReactionModeText from '../Components/AdditiveReactionModeText'
-import AmpReactionModeText from '../Components/AmpReactionModeText'
-import CardDark from '../Components/Card/CardDark'
-import CloseButton from '../Components/CloseButton'
-import ColorText from '../Components/ColoredText'
+import AdditiveReactionModeText from '../../Components/AdditiveReactionModeText'
+import AmpReactionModeText from '../../Components/AmpReactionModeText'
+import CardDark from '../../Components/Card/CardDark'
+import CloseButton from '../../Components/CloseButton'
+import ColorText from '../../Components/ColoredText'
 import CustomNumberInput, {
   CustomNumberInputButtonGroupWrapper,
-} from '../Components/CustomNumberInput'
-import DropdownButton from '../Components/DropdownMenu/DropdownButton'
-import { infusionVals } from '../Components/HitModeEditor'
-import InfoTooltip from '../Components/InfoTooltip'
-import ModalWrapper from '../Components/ModalWrapper'
-import StatEditorList from '../Components/StatEditorList'
-import { CharacterContext } from '../Context/CharacterContext'
-import { DataContext } from '../Context/DataContext'
-import type { InputPremodKey } from '../Formula'
-import { allInputPremodKeys } from '../Formula'
-import type { NodeDisplay } from '../Formula/uiData'
-import { UIData } from '../Formula/uiData'
-import type { CustomMultiTarget, CustomTarget } from '../Types/character'
-import { allowedAdditiveReactions, allowedAmpReactions } from '../Types/consts'
-import OptimizationTargetSelector from './CharacterDisplay/Tabs/TabOptimize/Components/OptimizationTargetSelector'
-import { TargetSelectorModal } from './CharacterDisplay/Tabs/TabOptimize/Components/TargetSelectorModal'
+} from '../../Components/CustomNumberInput'
+import DropdownButton from '../../Components/DropdownMenu/DropdownButton'
+import { infusionVals } from '../../Components/HitModeEditor'
+import InfoTooltip from '../../Components/InfoTooltip'
+import ModalWrapper from '../../Components/ModalWrapper'
+import StatEditorList from '../../Components/StatEditorList'
+import { CharacterContext } from '../../Context/CharacterContext'
+import { DataContext } from '../../Context/DataContext'
+import {
+  MAX_DESC_LENGTH,
+  MAX_NAME_LENGTH,
+  initCustomMultiTarget,
+  initCustomTarget,
+  validateCustomMultiTarget,
+} from '../../Database/DataManagers/CustomMultiTarget'
+import { allInputPremodKeys } from '../../Formula'
+import type { NodeDisplay } from '../../Formula/uiData'
+import { UIData } from '../../Formula/uiData'
+import type { CustomMultiTarget, CustomTarget } from '../../Types/character'
+import {
+  allowedAdditiveReactions,
+  allowedAmpReactions,
+} from '../../Types/consts'
+import OptimizationTargetSelector from './Tabs/TabOptimize/Components/OptimizationTargetSelector'
+import { TargetSelectorModal } from './Tabs/TabOptimize/Components/TargetSelectorModal'
 
-const MAX_NAME_LENGTH = 200
-const MAX_DESC_LENGTH = 2000
 const MAX_DESC_TOOLTIP_LENGTH = 300
-function initCustomMultiTarget() {
-  return {
-    name: 'New Custom Target',
-    targets: [],
-  }
-}
-function initCustomTarget(path: string[], multi = 1): CustomTarget {
-  return {
-    weight: multi,
-    path,
-    hitMode: 'avgHit',
-    bonusStats: {},
-  }
-}
-function validateOptTarget(path: string[]): string[] {
-  // TODO: validate path. This function will probably need to be async
-  return path
-}
-function validateCustomTarget(ct: unknown): CustomTarget | undefined {
-  if (typeof ct !== 'object') return undefined
-  let { weight, path, hitMode, reaction, infusionAura, bonusStats } =
-    ct as CustomTarget
-
-  if (typeof weight !== 'number' || weight <= 0) weight = 1
-
-  if (!Array.isArray(path) || path[0] === 'custom') return undefined
-
-  path = validateOptTarget(path)
-
-  if (
-    !hitMode ||
-    typeof hitMode !== 'string' ||
-    !allMultiOptHitModeKeys.includes(hitMode as MultiOptHitModeKey)
-  )
-    hitMode = 'avgHit'
-
-  if (
-    reaction &&
-    !(allAmpReactionKeys as readonly string[]).includes(reaction) &&
-    !(allAdditiveReactions as readonly string[]).includes(reaction)
-  )
-    reaction = undefined
-
-  if (infusionAura && !allInfusionAuraElementKeys.includes(infusionAura))
-    infusionAura = undefined
-
-  if (!bonusStats) bonusStats = {}
-
-  bonusStats = Object.fromEntries(
-    Object.entries(bonusStats).filter(
-      ([key, value]) =>
-        allInputPremodKeys.includes(key as InputPremodKey) &&
-        typeof value == 'number'
-    )
-  )
-
-  return { weight, path, hitMode, reaction, infusionAura, bonusStats }
-}
-export function validateCustomMultiTarget(
-  cmt: unknown
-): CustomMultiTarget | undefined {
-  if (typeof cmt !== 'object') return undefined
-  let { name, description, targets } = cmt as CustomMultiTarget
-  if (typeof name !== 'string') name = 'New Custom Target'
-  else if (name.length > MAX_NAME_LENGTH) name = name.slice(0, MAX_NAME_LENGTH)
-  if (typeof description !== 'string') description = undefined
-  else if (description.length > MAX_DESC_LENGTH)
-    description = description.slice(0, MAX_DESC_LENGTH)
-  if (!Array.isArray(targets)) return undefined
-  targets = targets
-    .map((t) => validateCustomTarget(t))
-    .filter((t): t is NonNullable<CustomTarget> => t !== undefined)
-  return { name, description, targets }
-}
 
 export function CustomMultiTargetButton() {
   const { t } = useTranslation('page_character')

@@ -1,9 +1,10 @@
-import { BootstrapTooltip, CardThemed } from '@genshin-optimizer/common/ui'
+import { CardThemed } from '@genshin-optimizer/common/ui'
 import { charKeyToLocGenderedCharKey } from '@genshin-optimizer/gi/consts'
-import { Box, CardContent, Skeleton, Typography } from '@mui/material'
+import { Box, CardContent, Skeleton } from '@mui/material'
 import { Suspense, useCallback, useContext, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Navigate, useMatch, useNavigate, useParams } from 'react-router-dom'
+import CloseButton from '../Components/CloseButton'
 import {
   CharacterContext,
   type CharacterContextObj,
@@ -18,17 +19,15 @@ import {
 import { SillyContext } from '../Context/SillyContext'
 import { getCharSheet } from '../Data/Characters'
 import { DatabaseContext } from '../Database/Database'
-import Content from '../PageCharacter/CharacterDisplay/Context'
+import Content from './CharacterDisplay/Context'
 import useCharacter from '../ReactHooks/useCharacter'
 import useCharacterReducer from '../ReactHooks/useCharacterReducer'
 import useDBMeta from '../ReactHooks/useDBMeta'
 import useTeamDataNew from '../ReactHooks/useTeamDataNew'
 import useTitle from '../ReactHooks/useTitle'
 import TeamCharacterSelector from './TeamCharacterSelector'
-import CloseButton from '../Components/CloseButton'
-import TeamSettingBtn from './TeamSettingBtn'
-import InfoIcon from '@mui/icons-material/Info'
-import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
+import TeamSettingElement from './TeamSettingElement'
+
 export default function PageTeam() {
   const navigate = useNavigate()
   const { database } = useContext(DatabaseContext)
@@ -130,16 +129,13 @@ function Page({ teamId, onClose }: { teamId: string; onClose?: () => void }) {
   return (
     <CardThemed>
       <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
-        <Box display="flex" gap={1} alignItems="center">
-          <BootstrapTooltip title={<Typography>{team.description}</Typography>}>
-            <Typography sx={{ marginRight: 'auto' }} variant="h6">
-              {team.name}
-              <InfoIcon {...iconInlineProps} />
-            </Typography>
-          </BootstrapTooltip>
-          <TeamSettingBtn teamId={teamId} />
+        <Box sx={{ display: 'flex', gap: 1 }}>
+          <Box flexGrow={1}>
+            <TeamSettingElement teamId={teamId} />
+          </Box>
           <CloseButton onClick={onClose} />
         </Box>
+
         <TeamCharacterSelector
           teamId={teamId}
           currentCharIndex={currentCharIndex}

@@ -35,7 +35,7 @@ import {
   Typography,
 } from '@mui/material'
 import type { ChangeEvent } from 'react'
-import React, {
+import {
   Suspense,
   useCallback,
   useContext,
@@ -51,6 +51,7 @@ import { useNavigate } from 'react-router-dom'
 import BootstrapTooltip from '../Components/BootstrapTooltip'
 import CardDark from '../Components/Card/CardDark'
 import CharacterCard from '../Components/Character/CharacterCard'
+import CharacterSelectionModal from '../Components/Character/CharacterSelectionModal'
 import SortByButton from '../Components/SortByButton'
 import CharacterRarityToggle from '../Components/ToggleButton/CharacterRarityToggle'
 import ElementToggle from '../Components/ToggleButton/ElementToggle'
@@ -67,9 +68,6 @@ import {
   characterSortMap,
 } from '../Util/CharacterSort'
 import { catTotal } from '../Util/totalUtils'
-const CharacterSelectionModal = React.lazy(
-  () => import('./CharacterSelectionModal')
-)
 const columns = { xs: 1, sm: 2, md: 3, lg: 4, xl: 4 }
 const numToShowMap = { xs: 6, sm: 8, md: 12, lg: 16, xl: 16 }
 const sortKeys = Object.keys(characterSortMap)

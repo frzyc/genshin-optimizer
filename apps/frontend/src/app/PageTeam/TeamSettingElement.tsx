@@ -1,16 +1,24 @@
-import { CardThemed, ModalWrapper } from '@genshin-optimizer/common/ui'
+import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
+import {
+  BootstrapTooltip,
+  CardThemed,
+  ModalWrapper,
+} from '@genshin-optimizer/common/ui'
+import DriveFileRenameOutlineIcon from '@mui/icons-material/DriveFileRenameOutline'
 import SettingsIcon from '@mui/icons-material/Settings'
 import {
+  Box,
   Button,
   CardContent,
   CardHeader,
   Divider,
   TextField,
+  Typography,
 } from '@mui/material'
 import { useContext, useDeferredValue, useEffect, useState } from 'react'
-import { DatabaseContext } from '../Database/Database'
 import CloseButton from '../Components/CloseButton'
-export default function TeamSettingBtn({ teamId }: { teamId: string }) {
+import { DatabaseContext } from '../Database/Database'
+export default function TeamSettingElement({ teamId }: { teamId: string }) {
   const [open, setOpen] = useState(false)
   const { database } = useContext(DatabaseContext)
   const team = database.teams.get(teamId)
@@ -44,13 +52,17 @@ export default function TeamSettingBtn({ teamId }: { teamId: string }) {
   }, [database, descDeferred])
   return (
     <>
-      <Button
-        color="info"
-        onClick={() => setOpen((open) => !open)}
-        sx={{ p: 1, minWidth: 0 }}
-      >
-        <SettingsIcon />
-      </Button>
+      <Box display="flex" gap={1} alignItems="center">
+        <BootstrapTooltip title={<Typography>{team.description}</Typography>}>
+          <Button
+            endIcon={<DriveFileRenameOutlineIcon />}
+            onClick={() => setOpen((open) => !open)}
+          >
+            <Typography variant="h6">{team.name}</Typography>
+          </Button>
+        </BootstrapTooltip>
+      </Box>
+
       <ModalWrapper open={open} onClose={() => setOpen(false)}>
         <CardThemed>
           <CardHeader
@@ -59,7 +71,7 @@ export default function TeamSettingBtn({ teamId }: { teamId: string }) {
           />
           <Divider />
           <CardContent
-            sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}
+            sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}
           >
             <TextField
               fullWidth

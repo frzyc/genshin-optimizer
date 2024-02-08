@@ -7,8 +7,8 @@ import { Box, Button, ButtonGroup, Grid } from '@mui/material'
 import { Suspense, useContext, useState } from 'react'
 import CharIconSide from '../Components/Image/CharIconSide'
 import { DatabaseContext } from '../Database/Database'
-import CharacterSelectionModal from '../PageCharacter/CharacterSelectionModal'
 import useDBMeta from '../ReactHooks/useDBMeta'
+import CharacterSelectionModal from '../Components/Character/CharacterSelectionModal'
 export default function TeamCharacterSelector({
   teamId,
   currentCharIndex,

@@ -1,6 +1,5 @@
 import { CardThemed } from '@genshin-optimizer/common/ui'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
-import { charKeyToLocGenderedCharKey } from '@genshin-optimizer/gi/consts'
 import { Box, CardContent, Skeleton } from '@mui/material'
 import {
   Suspense,
@@ -11,7 +10,7 @@ import {
   useState,
 } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Navigate, useMatch, useNavigate, useParams } from 'react-router-dom'
+import { Navigate, useNavigate, useParams } from 'react-router-dom'
 import type { CharacterContextObj } from '../../Context/CharacterContext'
 import { CharacterContext } from '../../Context/CharacterContext'
 import type { dataContextObj } from '../../Context/DataContext'
@@ -26,7 +25,6 @@ import useCharacter from '../../ReactHooks/useCharacter'
 import useCharacterReducer from '../../ReactHooks/useCharacterReducer'
 import useDBMeta from '../../ReactHooks/useDBMeta'
 import useTeamData from '../../ReactHooks/useTeamData'
-import useTitle from '../../ReactHooks/useTitle'
 import Content from './Context'
 
 export default function CharacterDisplay() {
@@ -68,28 +66,12 @@ function CharacterDisplayCard({
   const characterSheet = getCharSheet(characterKey, gender)
   const teamData = useTeamData(characterKey)
   const { target: charUIData } = teamData?.[characterKey] ?? {}
-  const {
-    params: { tab = 'overview' },
-  } = useMatch({ path: '/characters/:charKey/:tab', end: false }) ?? {
-    params: { tab: 'overview' },
-  }
+
   const { t } = useTranslation([
     'sillyWisher_charNames',
     'charNames_gen',
     'page_character',
   ])
-
-  useTitle(
-    useMemo(
-      () =>
-        `${t(
-          `${
-            silly ? 'sillyWisher_charNames' : 'charNames_gen'
-          }:${charKeyToLocGenderedCharKey(characterKey, gender)}`
-        )} - ${t(`page_character:tabs.${tab}`)}`,
-      [t, silly, characterKey, gender, tab]
-    )
-  )
 
   const characterDispatch = useCharacterReducer(character?.key ?? '')
 
@@ -136,7 +118,7 @@ function CharacterDisplayCard({
             <DataContext.Provider value={dataContextValue}>
               <GraphContext.Provider value={graphContextValue}>
                 <FormulaDataWrapper>
-                  <Content character={character} tab={tab} onClose={onClose} />
+                  <Content character={character} onClose={onClose} />
                 </FormulaDataWrapper>
               </GraphContext.Provider>
             </DataContext.Provider>

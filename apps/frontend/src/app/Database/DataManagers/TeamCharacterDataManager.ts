@@ -8,11 +8,12 @@ import {
   allInfusionAuraElementKeys,
 } from '@genshin-optimizer/gi/consts'
 import type { InputPremodKey } from '../../Formula'
-import { validateCustomMultiTarget } from '../../PageCharacter/CustomMultiTarget'
 import type { IConditionalValues } from '../../Types/sheet'
 import { DataManager } from '../DataManager'
 import type { ArtCharDatabase } from '../Database'
-
+import { validateCustomMultiTarget } from './CustomMultiTarget'
+const buildTypeKeys = ['equipped', 'real', 'tc'] as const
+type buildTypeKey = (typeof buildTypeKeys)[number]
 export interface TeamCharacter {
   key: CharacterKey
 
@@ -22,8 +23,11 @@ export interface TeamCharacter {
   bonusStats: Partial<Record<InputPremodKey, number>>
   infusionAura?: InfusionAuraElementKey | ''
   // TODO builds
-  buildId: string
-  buildIds: string[]
+  buildType: buildTypeKey
+  buildRealId: string
+  buildRealIds: string[]
+  buildTcId: string
+  buildTcIds: string[]
 }
 
 export interface CustomTarget {
@@ -74,8 +78,12 @@ function validateTeamCharater(obj: unknown = {}): TeamCharacter | undefined {
     conditional,
     bonusStats,
     infusionAura,
-    buildId,
-    buildIds,
+
+    buildType,
+    buildRealId,
+    buildRealIds,
+    buildTcId,
+    buildTcIds,
   } = obj as TeamCharacter
   if (!allCharacterKeys.includes(characterKey)) return undefined // non-recoverable
 
@@ -99,16 +107,26 @@ function validateTeamCharater(obj: unknown = {}): TeamCharacter | undefined {
   )
     infusionAura = undefined
 
-  // TODO hookup
-  buildId = 'Test'
-  buildIds = []
+  if (!buildTypeKeys.includes(buildType)) buildType = 'equipped'
+
+  //TODO
+  buildRealId = ''
+  buildRealIds = []
+  buildTcId = ''
+  buildTcIds = []
+
+  if (!buildRealId && !buildTcId) buildType = 'equipped'
+
   return {
     key: characterKey,
     customMultiTargets,
     conditional,
     bonusStats,
     infusionAura,
-    buildId,
-    buildIds,
+    buildType,
+    buildRealId,
+    buildRealIds,
+    buildTcId,
+    buildTcIds,
   }
 }

@@ -12,7 +12,9 @@ import ModalWrapper from '../../../../Components/ModalWrapper'
 import { CharacterContext } from '../../../../Context/CharacterContext'
 import { DataContext } from '../../../../Context/DataContext'
 import { DatabaseContext } from '../../../../Database/Database'
-// import BuildDisplayItem from '../TabOptimize/Components/BuildDisplayItem'
+import useTeamData from '../../../../ReactHooks/useTeamData'
+import BuildDisplayItem from '../TabOptimize/Components/BuildDisplayItem'
+import useBuildSetting from '../TabOptimize/useBuildSetting'
 
 export default function CompareBuildButton({
   artId,
@@ -58,6 +60,9 @@ function CompareContent({
   const {
     character: { key: characterKey, equippedArtifacts },
   } = useContext(CharacterContext)
+  const {
+    buildSetting: { mainStatAssumptionLevel },
+  } = useBuildSetting(characterKey)
   const { data: oldData } = useContext(DataContext)
   const build = useMemo(() => {
     const newArt = database.arts.get(artId ?? '')
@@ -66,40 +71,39 @@ function CompareContent({
     )
     return Object.values(artmap).filter((a) => a)
   }, [database, equippedArtifacts, artId])
-  // const teamData = useTeamData(
-  //   characterKey,
-  //   mainStatAssumptionLevel,
-  //   build,
-  //   weaponId ? database.weapons.get(weaponId) : undefined
-  // )
-
-  // const dataProviderValue = useMemo(
-  //   () =>
-  //     teamData && { data: teamData[characterKey]!.target, teamData, oldData },
-  //   [characterKey, teamData, oldData]
-  // )
+  const teamData = useTeamData(
+    characterKey,
+    mainStatAssumptionLevel,
+    build,
+    weaponId ? database.weapons.get(weaponId) : undefined
+  )
+  const dataProviderValue = useMemo(
+    () =>
+      teamData && { data: teamData[characterKey]!.target, teamData, oldData },
+    [characterKey, teamData, oldData]
+  )
   return (
     <Suspense
       fallback={<Skeleton variant="rectangular" width="100%" height={600} />}
     >
-      {/* {dataProviderValue && (
-        <DataContext.Provider value={dataProviderValue}> */}
-      {/* <BuildDisplayItem
-        compareBuild={true}
-        extraButtonsLeft={
-          <>
-            <HitModeToggle size="small" />
-            <ReactionToggle size="small" />
-          </>
-        }
-        extraButtonsRight={
-          <Button size="small" color="error" onClick={onHide}>
-            <Close />
-          </Button>
-        }
-      /> */}
-      {/* </DataContext.Provider>
-      )} */}
+      {dataProviderValue && (
+        <DataContext.Provider value={dataProviderValue}>
+          <BuildDisplayItem
+            compareBuild={true}
+            extraButtonsLeft={
+              <>
+                <HitModeToggle size="small" />
+                <ReactionToggle size="small" />
+              </>
+            }
+            extraButtonsRight={
+              <Button size="small" color="error" onClick={onHide}>
+                <Close />
+              </Button>
+            }
+          />
+        </DataContext.Provider>
+      )}
     </Suspense>
   )
 }
