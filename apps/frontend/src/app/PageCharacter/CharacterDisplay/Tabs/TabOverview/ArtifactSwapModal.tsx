@@ -10,7 +10,6 @@ import {
   CardContent,
   Divider,
   Grid,
-  Pagination,
   Skeleton,
   Typography,
 } from '@mui/material'
@@ -25,11 +24,12 @@ import {
   useRef,
   useState,
 } from 'react'
-import { Trans, useTranslation } from 'react-i18next'
+import { useTranslation } from 'react-i18next'
 import CardDark from '../../../../Components/Card/CardDark'
 import CloseButton from '../../../../Components/CloseButton'
 import ImgIcon from '../../../../Components/Image/ImgIcon'
 import ModalWrapper from '../../../../Components/ModalWrapper'
+import PageAndSortOptionSelect from '../../../../Components/PageAndSortOptionSelect'
 import { DatabaseContext } from '../../../../Database/Database'
 import ArtifactCard from '../../../../PageArtifact/ArtifactCard'
 import type { FilterOption } from '../../../../PageArtifact/ArtifactSort'
@@ -126,6 +126,18 @@ export default function ArtifactSwapModal({
     [setpageIdex, invScrollRef]
   )
 
+  const paginationProps = {
+    count: numPages,
+    page: currentPageIndex + 1,
+    onChange: setPage,
+  }
+
+  const showingTextProps = {
+    numShowing: artifactIdsToShow.length,
+    total: totalShowing,
+    t: tk,
+  }
+
   return (
     <ModalWrapper
       open={show}
@@ -164,22 +176,18 @@ export default function ArtifactSwapModal({
         </CardContent>
         <Divider />
         <CardContent>
-          <Grid container alignItems="center" sx={{ pb: 1 }}>
-            <Grid item flexGrow={1}>
-              <Pagination
-                count={numPages}
-                page={currentPageIndex + 1}
-                onChange={setPage}
-              />
-            </Grid>
-            <Grid item flexGrow={1}>
-              <ShowingArt
-                numShowing={artifactIdsToShow.length}
-                total={totalShowing}
-                t={tk}
-              />
-            </Grid>
-          </Grid>
+          <Box
+            pb={1}
+            display="flex"
+            justifyContent="space-between"
+            alignItems="flex-end"
+            flexWrap="wrap"
+          >
+            <PageAndSortOptionSelect
+              paginationProps={paginationProps}
+              showingTextProps={showingTextProps}
+            />
+          </Box>
           <Box mt={1}>
             <Suspense
               fallback={
@@ -201,37 +209,21 @@ export default function ArtifactSwapModal({
           </Box>
           {numPages > 1 && (
             <CardContent>
-              <Grid container>
-                <Grid item flexGrow={1}>
-                  <Pagination
-                    count={numPages}
-                    page={currentPageIndex + 1}
-                    onChange={setPage}
-                  />
-                </Grid>
-                <Grid item>
-                  <ShowingArt
-                    numShowing={artifactIdsToShow.length}
-                    total={totalShowing}
-                    t={tk}
-                  />
-                </Grid>
-              </Grid>
+              <Box
+                display="flex"
+                justifyContent="space-between"
+                alignItems="center"
+                flexWrap="wrap"
+              >
+                <PageAndSortOptionSelect
+                  paginationProps={paginationProps}
+                  showingTextProps={showingTextProps}
+                />
+              </Box>
             </CardContent>
           )}
         </CardContent>
       </CardDark>
     </ModalWrapper>
-  )
-}
-
-function ShowingArt({ numShowing, total, t }) {
-  return (
-    <Typography color="text.secondary">
-      <Trans t={t} i18nKey="showingNum" count={numShowing} value={total}>
-        Showing <b>{{ count: numShowing } as TransObject}</b> out of{' '}
-        {{ value: total } as TransObject} Artifacts
-      </Trans>
-    </Typography>
   )
 }

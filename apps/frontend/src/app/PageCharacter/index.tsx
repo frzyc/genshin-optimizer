@@ -29,7 +29,6 @@ import {
   Divider,
   Grid,
   IconButton,
-  Pagination,
   Skeleton,
   TextField,
   Typography,
@@ -46,12 +45,12 @@ import React, {
   useState,
 } from 'react'
 import ReactGA from 'react-ga4'
-import { Trans, useTranslation } from 'react-i18next'
+import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 import BootstrapTooltip from '../Components/BootstrapTooltip'
 import CardDark from '../Components/Card/CardDark'
 import CharacterCard from '../Components/Character/CharacterCard'
-import SortByButton from '../Components/SortByButton'
+import PageAndSortOptionSelect from '../Components/PageAndSortOptionSelect'
 import CharacterRarityToggle from '../Components/ToggleButton/CharacterRarityToggle'
 import ElementToggle from '../Components/ToggleButton/ElementToggle'
 import WeaponToggle from '../Components/ToggleButton/WeaponToggle'
@@ -229,6 +228,26 @@ export default function PageCharacter() {
     [database, charKeyList]
   )
 
+  const paginationProps = {
+    count: numPages,
+    page: currentPageIndex + 1,
+    onChange: setPage,
+  }
+
+  const showingTextProps = {
+    numShowing: charKeyListToShow.length,
+    total: totalShowing,
+    t: t,
+  }
+
+  const sortByButtonProps = {
+    sortKeys: [...sortKeys],
+    value: sortType,
+    onChange: (sortType) => database.displayCharacter.set({ sortType }),
+    ascending: ascending,
+    onChangeAsc: (ascending) => database.displayCharacter.set({ ascending }),
+  }
+
   return (
     <Box my={1} display="flex" flexDirection="column" gap={1}>
       <Suspense fallback={false}>
@@ -296,26 +315,11 @@ export default function PageCharacter() {
             alignItems="flex-end"
             flexWrap="wrap"
           >
-            <Pagination
-              count={numPages}
-              page={currentPageIndex + 1}
-              onChange={setPage}
-            />
-            <ShowingCharacter
-              numShowing={charKeyListToShow.length}
-              total={totalShowing}
-              t={t}
-            />
-            <SortByButton
-              sortKeys={sortKeys}
-              value={sortType}
-              onChange={(sortType) =>
-                database.displayCharacter.set({ sortType })
-              }
-              ascending={ascending}
-              onChangeAsc={(ascending) =>
-                database.displayCharacter.set({ ascending })
-              }
+            <PageAndSortOptionSelect
+              paginationProps={paginationProps}
+              showingTextProps={showingTextProps}
+              displaySort={true}
+              sortByButtonProps={sortByButtonProps}
             />
           </Box>
         </CardContent>
@@ -414,7 +418,7 @@ export default function PageCharacter() {
       </Suspense>
       {numPages > 1 && (
         <CardDark>
-          <CardContent sx={{ display: 'flex', gap: 1 }}>
+          <CardContent sx={{ display: 'flex', flexDirection: 'row', gap: 1 }}>
             <Button
               onClick={() => setnewCharacter(true)}
               color="info"
@@ -422,35 +426,21 @@ export default function PageCharacter() {
             >
               <AddIcon />
             </Button>
-            <Grid container alignItems="flex-end" sx={{ flexGrow: 1 }}>
-              <Grid item flexGrow={1}>
-                <Pagination
-                  count={numPages}
-                  page={currentPageIndex + 1}
-                  onChange={setPage}
-                />
-              </Grid>
-              <Grid item>
-                <ShowingCharacter
-                  numShowing={charKeyListToShow.length}
-                  total={totalShowing}
-                  t={t}
-                />
-              </Grid>
-            </Grid>
+            <Box
+              display="flex"
+              justifyContent="space-between"
+              alignItems="center"
+              flexWrap="wrap"
+              flexGrow={1}
+            >
+              <PageAndSortOptionSelect
+                paginationProps={paginationProps}
+                showingTextProps={showingTextProps}
+              />
+            </Box>
           </CardContent>
         </CardDark>
       )}
     </Box>
-  )
-}
-function ShowingCharacter({ numShowing, total, t }) {
-  return (
-    <Typography color="text.secondary">
-      <Trans t={t} i18nKey="showingNum" count={numShowing} value={total}>
-        Showing <b>{{ count: numShowing } as TransObject}</b> out of{' '}
-        {{ value: total } as TransObject} Characters
-      </Trans>
-    </Typography>
   )
 }
