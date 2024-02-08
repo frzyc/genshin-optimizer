@@ -6,6 +6,6 @@ This library was generated with [Nx](https://nx.dev).
 
 Run `nx build dm` to build the library.
 
-## Updating repo
+## Update Datamine
 
-Run `nx run dm:update-dm` to update the underlying git submodule, such as for new game data.
+To update the datamine to a new commit, run `yarn run update-dm`. This will update both the Genshin and Star Rail datamines.
