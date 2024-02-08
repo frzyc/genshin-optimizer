@@ -12,9 +12,11 @@ import useDBMeta from '../ReactHooks/useDBMeta'
 export default function TeamCharacterSelector({
   teamId,
   currentCharIndex,
+  setCurrentCharIndex,
 }: {
   teamId: string
   currentCharIndex: number
+  setCurrentCharIndex: (ind: number) => void
 }) {
   const { database } = useContext(DatabaseContext)
   const team = database.teams.get(teamId)
@@ -30,9 +32,11 @@ export default function TeamCharacterSelector({
     })
   }
   const onDel = (index: number) => () => {
+    const oldId = characterIds[index]
     database.teams.set(teamId, (team) => {
       team.characterIds[index] = undefined
     })
+    database.teamChars.remove(oldId)
   }
   const charsInTeam = characterIds.map((id) => database.teamChars.get(id).key)
   return (
@@ -54,7 +58,7 @@ export default function TeamCharacterSelector({
               <CharSelButton
                 teamCharId={characterIds[ind]}
                 active={currentCharIndex === ind}
-                onClick={() => setCharSelectIndex(ind)}
+                onClick={() => setCurrentCharIndex(ind)}
                 onClose={onDel(ind)}
               />
             ) : (
