@@ -439,6 +439,6 @@ export {
   dataObjForWeapon,
   inferInfoMut,
   mergeData,
-  uiDataForTeam
+  uiDataForTeam,
 }
 export type { NodeDisplay, UIData }

@@ -2,7 +2,7 @@ import type {
   AdditiveReactionKey,
   AmpReactionKey,
   InfusionAuraElementKey,
-  MultiOptHitModeKey
+  MultiOptHitModeKey,
 } from '@genshin-optimizer/gi/consts'
 export interface CustomTarget {
   weight: number

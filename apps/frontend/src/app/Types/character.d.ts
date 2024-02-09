@@ -23,5 +23,5 @@ export {
    * @deprecated
    * use gi/db
    */
-  ICharTCArtifactSlot
+  ICharTCArtifactSlot,
 }

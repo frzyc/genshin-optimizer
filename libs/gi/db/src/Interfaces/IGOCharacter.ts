@@ -5,7 +5,7 @@ import {
   type CharacterKey,
   type HitModeKey,
   type InfusionAuraElementKey,
-  type WeaponKey
+  type WeaponKey,
 } from '@genshin-optimizer/gi/consts'
 import type { ICharacter } from '@genshin-optimizer/gi/good'
 import type { EleEnemyResKey, InputPremodKey } from '../legacy/keys'

@@ -7,7 +7,7 @@ import type {
   RefinementKey,
   SubstatKey,
   SubstatTypeKey,
-  WeaponKey
+  WeaponKey,
 } from '@genshin-optimizer/gi/consts'
 export type ICharTCArtifactSlot = {
   level: number

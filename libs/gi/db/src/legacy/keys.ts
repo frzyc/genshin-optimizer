@@ -14,7 +14,6 @@ export const allEleEnemyResKeys = allElementWithPhyKeys.map(
   (e) => `${e}_enemyRes_`
 ) as EleEnemyResKey[]
 
-
 /**
  * @deprecated
  * Below was copied from KeyMap/StatConstants
