@@ -1,8 +1,7 @@
 import { ArtCharDatabase } from '@genshin-optimizer/gi/db'
-import {
-  DatabaseContext,
-  DatabaseContextObj,
-} from '@genshin-optimizer/gi/db-ui'
+import { DatabaseContext } from '@genshin-optimizer/gi/db-ui'
+
+import type { DatabaseContextObj } from '@genshin-optimizer/gi/db-ui'
 
 export {
   /**
@@ -13,6 +12,8 @@ export {
    * @deprecated use genshin-optimizer/gi/db lib
    */
   DatabaseContext,
+}
+export type {
   /**
    * @deprecated use genshin-optimizer/gi/db lib
    */

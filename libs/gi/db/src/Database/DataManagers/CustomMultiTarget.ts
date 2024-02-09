@@ -6,11 +6,12 @@ import {
   allMultiOptHitModeKeys,
 } from '@genshin-optimizer/gi/consts'
 
-import {
+import type {
   CustomMultiTarget,
   CustomTarget,
 } from '../../Interfaces/CustomMultiTarget'
-import { InputPremodKey, allInputPremodKeys } from '../../legacy/keys'
+import type { InputPremodKey } from '../../legacy/keys'
+import { allInputPremodKeys } from '../../legacy/keys'
 
 const MAX_NAME_LENGTH = 200
 const MAX_DESC_LENGTH = 2000
