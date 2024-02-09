@@ -4461,6 +4461,50 @@ MonoBehaviour:
       - Balina Atıcı
       Flags: 00000000000000000000000000000000
       Languages_Touch: []
+    - Term: CharMemNames/xianyun
+      TermType: 0
+      Description:
+      Languages:
+      - Mommy Bird
+      - 鳥媽媽
+      - 鸟妈妈
+      - 母鳥
+      - Mère Oiseau
+      - Mamma Uccello
+      - Mama Vogel
+      - Mamá Pájaro
+      - 엄마 새
+      - แม่เบิร์ด
+      - Ibu Burung
+      - Mamãe Pássaro
+      - Мама Птица
+      - Chim mẹ
+      - Mamo Ptak
+      - Anne Kuş
+      Flags: 00000000000000000000000000000000
+      Languages_Touch: []
+    - Term: CharMemNames/gaming
+      TermType: 0
+      Description:
+      Languages:
+      - Gamer
+      - 舞獅者
+      - 舞狮者
+      - 獅子舞
+      - Gamer
+      - Gamer
+      - Gamer
+      - Gamer
+      - Gamer
+      - Gamer
+      - Gamer
+      - Gamer
+      - Gamer
+      - Gamer
+      - Gamer
+      - Gamer
+      Flags: 00000000000000000000000000000000
+      Languages_Touch: []
     - Term: CharMemDescShort/albedo
       TermType: 0
       Description:
@@ -5209,6 +5253,28 @@ MonoBehaviour:
       - Sulu gözler
       Flags: 00000000000000000000000000000000
       Languages_Touch: []
+    - Term: CharMemDescShort/xianyun
+      TermType: 0
+      Description:
+      Languages:
+      - Sexy Glasses
+      - 性感近視
+      - 性感近视
+      - セクシーな近視
+      - Lunettes sexy
+      - Occhiali sexy
+      - Sexy Brille
+      - gafas sexys
+      - 섹시한 안경
+      - แว่นเซ็กซี่
+      - Kacamata Seksi
+      - Óculos Sexy
+      - сексуальные очки
+      - Kính gợi cảm
+      - Seksowne okulary
+      - Seksi Gözlük
+      Flags: 00000000000000000000000000000000
+      Languages_Touch: []
     - Term: CharMemDescLong/albedo
       TermType: 0
       Description:
@@ -5522,8 +5588,8 @@ MonoBehaviour:
       Description:
       Languages:
       - The [Dookdook] Enlightenment
-      - The [Dookdook] Enlightenment
-      - The [Dookdook] Enlightenment
+      - '[便便]就是對的'
+      - '[便便]就是对的'
       - The [Dookdook] Enlightenment
       - Je suis [Punie dans ma Chambre]
       - The [Dookdook] Enlightenment
@@ -5955,6 +6021,28 @@ MonoBehaviour:
       - Luôn sẵn sàng cho [Tiệc trà]
       - Zawsze gotowy na [Czas na herbatę]
       - '[Çay vakti] için her zaman hazır'
+      Flags: 00000000000000000000000000000000
+      Languages_Touch: []
+    - Term: CharMemDescLong/xianyun
+      TermType: 0
+      Description:
+      Languages:
+      - Let me tell you another [Embarrassing Story]...
+      - 再講個[難為情的故事]...
+      - 再讲个[难为情的故事]...
+      - もうひとつ[恥ずかしい話]をさせてください…
+      - Laissez-moi vous raconter une autre [Histoire embarrassante]...
+      - Lascia che ti racconti un'altra [storia imbarazzante]...
+      - Lass mich dir noch eine weitere [peinliche Geschichte] erzählen ...
+      - Déjame contarte otra [Historia embarazosa]...
+      - 또 다른 [부끄러운 이야기]를 말씀드리겠습니다...
+      - ขอเล่า [เรื่องน่าอาย] อีกเรื่องครับ...
+      - Izinkan saya menceritakan kepada Anda [Kisah Memalukan] lainnya...
+      - Deixe-me contar outra [história embaraçosa]...
+      - Позвольте мне рассказать вам еще одну [неловкую историю]...
+      - Để tôi kể cho bạn nghe một [Câu chuyện đáng xấu hổ] khác...
+      - Pozwól, że opowiem ci inną [żenującą historię]...
+      - Size başka bir [Utanç verici Hikaye] anlatayım...
       Flags: 00000000000000000000000000000000
       Languages_Touch: []
     - Term: WepNames/rust
@@ -7145,6 +7233,72 @@ MonoBehaviour:
       - Wavestick
       Flags: 00000000000000000000000000000000
       Languages_Touch: []
+    - Term: WepNames/lithicspear
+      TermType: 0
+      Description:
+      Languages:
+      - Asian Powerup Stick
+      - 華人升級棍
+      - 华人升级棍
+      - アジアンスティック
+      - AsiatiqueBâton
+      - Asian Powerup Stick
+      - Asian Powerup Stick
+      - Asian Powerup Stick
+      - Asian Powerup Stick
+      - Asian Powerup Stick
+      - Asian Powerup Stick
+      - Asian Powerup Stick
+      - Asian Powerup Stick
+      - Asian Powerup Stick
+      - Asian Powerup Stick
+      - Asian Powerup Stick
+      Flags: 00000000000000000000000000000000
+      Languages_Touch: []
+    - Term: WepNames/athousandfloatingdreams
+      TermType: 0
+      Description:
+      Languages:
+      - Fancy Leaf Lamp
+      - 花式葉燈
+      - 花式叶灯
+      - ファンシーリーフランプ
+      - Fancy Leaf Lamp
+      - Fancy Leaf Lamp
+      - Fancy Leaf Lamp
+      - Fancy Leaf Lamp
+      - Fancy Leaf Lamp
+      - Fancy Leaf Lamp
+      - Fancy Leaf Lamp
+      - Fancy Leaf Lamp
+      - Fancy Leaf Lamp
+      - Fancy Leaf Lamp
+      - Fancy Leaf Lamp
+      - Fancy Leaf Lamp
+      Flags: 00000000000000000000000000000000
+      Languages_Touch: []
+    - Term: WepNames/cranesechoingcall
+      TermType: 0
+      Description:
+      Languages:
+      - Fancy Birb Fan
+      - 花式鳥扇
+      - 花式鸟扇
+      - ファンシーバードファン
+      - Fancy Birb Fan
+      - Fancy Birb Fan
+      - Fancy Birb Fan
+      - Fancy Birb Fan
+      - Fancy Birb Fan
+      - Fancy Birb Fan
+      - Fancy Birb Fan
+      - Fancy Birb Fan
+      - Fancy Birb Fan
+      - Fancy Birb Fan
+      - Fancy Birb Fan
+      - Fancy Birb Fan
+      Flags: 00000000000000000000000000000000
+      Languages_Touch: []
     CaseInsensitiveTerms: 0
     OnMissingTranslation: 1
     mTerm_AppName: GooglePlay_Title
@@ -7202,9 +7356,9 @@ MonoBehaviour:
     Google_WebServiceURL: https://script.google.com/macros/s/AKfycbxu8CXfmubud0lH_ChGOEujDtNdDO6WQ4qtgBUvc3Btn63kZdUdUR3BPVWg3jY53dV4/exec
     Google_SpreadsheetKey: 1oivW_K32Yfaa17IKypH6-q6HTheORm8qqQDc83cyCxo
     Google_SpreadsheetName: I2Loc Silly Wisher Localization
-    Google_LastUpdatedVersion: 1704851127785
+    Google_LastUpdatedVersion: 1706598848494
     GoogleUpdateFrequency: 1
     GoogleInEditorCheckFrequency: 2
     GoogleUpdateDelay: 5
     Assets:
-    - {fileID: 12800000, guid: 00f55e38bb9417045afb177750131fe4, type: 3}
+    - {fileID: 12800000, guid: 3c25795cf1d30c64a97b5b877bb0f820, type: 3}
