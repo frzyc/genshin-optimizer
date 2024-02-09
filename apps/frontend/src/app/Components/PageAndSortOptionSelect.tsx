@@ -13,6 +13,7 @@ type ShowingItemProps = {
   numShowing: number
   total: string
   t: TFunction<[string, string], undefined>
+  namespace: string
 }
 
 type SortByButtonProps = {
@@ -45,6 +46,7 @@ export default function PageAndSortOptionSelect({
         numShowing={showingTextProps.numShowing}
         total={showingTextProps.total}
         t={showingTextProps.t}
+        namespace={showingTextProps.namespace}
       />
       {displaySort && (
         <SortByButton
@@ -63,14 +65,16 @@ function ShowingItem({
   numShowing,
   total,
   t,
+  namespace,
 }: {
   numShowing: number
   total: string
   t: TFunction<[string, string], undefined>
+  namespace: string
 }) {
   return (
     <Typography color="text.secondary">
-      <Trans t={t} i18nKey="showingNum" count={numShowing} value={total}>
+      <Trans t={t} ns={namespace} i18nKey="showingNum" count={numShowing} value={total}>
         Showing <b>{{ count: numShowing } as TransObject}</b> out of{' '}
         {{ value: total } as TransObject} Items
       </Trans>
