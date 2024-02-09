@@ -1,5 +1,5 @@
 import type { ICachedArtifact, ICachedSubstat } from '@genshin-optimizer/gi/db'
-export {
+export type {
   /**
    * @deprecated
    * use gi/db

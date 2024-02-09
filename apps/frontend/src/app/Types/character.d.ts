@@ -1,4 +1,4 @@
-import {
+import type {
   ICachedCharacter,
   ICharTC,
   ICharTCArtifactSlot,
@@ -8,7 +8,7 @@ import {
  * @deprecated
  * use gi/db
  */
-export {
+export type {
   /**
    * @deprecated
    * use gi/db
