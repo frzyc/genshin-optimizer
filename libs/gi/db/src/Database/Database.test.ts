@@ -8,7 +8,10 @@ import { randomizeArtifact } from '@genshin-optimizer/gi/util'
 import { initialCharacter } from './DataManagers/CharacterDataManager'
 import { ArtCharDatabase } from './ArtCharDatabase'
 import type { IGO } from './exim'
-import { defaultInitialWeapon, initialWeapon } from './DataManagers/WeaponDataManager'
+import {
+  defaultInitialWeapon,
+  initialWeapon,
+} from './DataManagers/WeaponDataManager'
 
 const dbStorage = new DBLocalStorage(localStorage)
 const dbIndex = 1
