@@ -2,7 +2,11 @@ import {
   useForceUpdate,
   useMediaQueryUp,
 } from '@genshin-optimizer/common/react-util'
-import { clamp, filterFunction, sortFunction } from '@genshin-optimizer/common/util'
+import {
+  clamp,
+  filterFunction,
+  sortFunction,
+} from '@genshin-optimizer/common/util'
 import { imgAssets } from '@genshin-optimizer/gi/assets'
 import type {
   RarityKey,
@@ -239,11 +243,11 @@ export default function WeaponSwapModal({
             </Grid>
           </Grid>
           <Box
-                display="flex"
-                justifyContent="space-between"
-                alignItems="center"
-                flexWrap="wrap"
-              >
+            display="flex"
+            justifyContent="space-between"
+            alignItems="center"
+            flexWrap="wrap"
+          >
             <PageAndSortOptionSelect
               paginationProps={paginationProps}
               showingTextProps={showingTextProps}

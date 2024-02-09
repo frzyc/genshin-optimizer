@@ -74,7 +74,13 @@ function ShowingItem({
 }) {
   return (
     <Typography color="text.secondary">
-      <Trans t={t} ns={namespace} i18nKey="showingNum" count={numShowing} value={total}>
+      <Trans
+        t={t}
+        ns={namespace}
+        i18nKey="showingNum"
+        count={numShowing}
+        value={total}
+      >
         Showing <b>{{ count: numShowing } as TransObject}</b> out of{' '}
         {{ value: total } as TransObject} Items
       </Trans>
