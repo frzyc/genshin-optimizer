@@ -1,6 +1,6 @@
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
-import { useContext, useEffect, useState } from 'react'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
+import { useEffect, useState } from 'react'
 
 export default function useCharMeta(key: CharacterKey) {
   const database = useDatabase()

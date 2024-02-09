@@ -5,6 +5,7 @@ import {
   allWeaponKeys,
   charKeyToLocGenderedCharKey,
 } from '@genshin-optimizer/gi/consts'
+import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { allStats } from '@genshin-optimizer/gi/stats'
 import { ArrowRightAlt } from '@mui/icons-material'
 import {
@@ -18,7 +19,7 @@ import {
   Tabs,
   Typography,
 } from '@mui/material'
-import { Suspense, useContext } from 'react'
+import { Suspense } from 'react'
 import ReactGA from 'react-ga4'
 import { useTranslation } from 'react-i18next'
 import { Link, Route, Routes, useMatch } from 'react-router-dom'
@@ -26,7 +27,6 @@ import CardDark from '../Components/Card/CardDark'
 import CardLight from '../Components/Card/CardLight'
 import SqBadge from '../Components/SqBadge'
 import { artStatPercent } from '../Data/Artifacts/Artifact'
-import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import useDBMeta from '../ReactHooks/useDBMeta'
 
 export default function PageDocumentation() {

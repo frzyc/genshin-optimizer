@@ -1,5 +1,5 @@
-import { cachedArtifact, validateArtifact } from './ArtifactData'
-import type { IBuildResult } from './BuildResult'
+import { cachedArtifact, validateArtifact } from './ArtifactDataManager'
+import type { IBuildResult } from './BuildResultDataManager'
 import type {
   AllowLocationsState,
   ArtSetExclusion,
@@ -7,15 +7,15 @@ import type {
   BuildSetting,
   StatFilterSetting,
   StatFilters,
-} from './BuildSettingData'
+} from './BuildSettingDataManager'
 import {
   allAllowLocationsState,
   allArtifactSetExclusionKeys,
   handleArtSetExclusion,
   maxBuildsToShowList,
-} from './BuildSettingData'
-import type { MinTotalStatKey } from './CharacterTCData'
-import { initCharTC, minTotalStatKeys } from './CharacterTCData'
+} from './BuildSettingDataManager'
+import type { MinTotalStatKey } from './CharacterTCDataManager'
+import { initCharTC, minTotalStatKeys } from './CharacterTCDataManager'
 
 export type {
   IBuildResult,

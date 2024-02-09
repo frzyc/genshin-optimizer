@@ -7,6 +7,7 @@ import type {
   WeaponTypeKey,
 } from '@genshin-optimizer/gi/consts'
 import { allRarityKeys } from '@genshin-optimizer/gi/consts'
+import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { Add } from '@mui/icons-material'
 import StarRoundedIcon from '@mui/icons-material/StarRounded'
 import {
@@ -23,7 +24,6 @@ import type { ChangeEvent } from 'react'
 import {
   Suspense,
   useCallback,
-  useContext,
   useDeferredValue,
   useEffect,
   useMemo,
@@ -36,7 +36,6 @@ import ImgIcon from '../../../../Components/Image/ImgIcon'
 import ModalWrapper from '../../../../Components/ModalWrapper'
 import SolidToggleButtonGroup from '../../../../Components/SolidToggleButtonGroup'
 import WeaponSelectionModal from '../../../../Components/Weapon/WeaponSelectionModal'
-import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import WeaponCard from '../../../../PageWeapon/WeaponCard'
 import WeaponEditor from '../../../../PageWeapon/WeaponEditor'
 import { handleMultiSelect } from '../../../../Util/MultiSelect'

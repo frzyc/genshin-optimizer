@@ -1,6 +1,7 @@
 import { useBoolState } from '@genshin-optimizer/common/react-util'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import { charKeyToLocGenderedCharKey } from '@genshin-optimizer/gi/consts'
+import { useCharacter, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import {
   BarChart,
   Calculate,
@@ -51,8 +52,6 @@ import type { ChartData, GraphContextObj } from '../../Context/GraphContext'
 import { GraphContext } from '../../Context/GraphContext'
 import { SillyContext } from '../../Context/SillyContext'
 import { getCharSheet } from '../../Data/Characters'
-import { useDatabase } from '@genshin-optimizer/gi/db-ui'
-import useCharacter from '../../ReactHooks/useCharacter'
 import useCharacterReducer from '../../ReactHooks/useCharacterReducer'
 import useDBMeta from '../../ReactHooks/useDBMeta'
 import useTeamData from '../../ReactHooks/useTeamData'

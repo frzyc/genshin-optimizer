@@ -5,10 +5,10 @@ import {
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import type { IArtifact, IGOOD, IWeapon } from '@genshin-optimizer/gi/good'
 import { randomizeArtifact } from '@genshin-optimizer/gi/util'
-import { initialCharacter } from './DataManagers/CharacterData'
+import { initialCharacter } from './DataManagers/CharacterDataManager'
 import { ArtCharDatabase } from './ArtCharDatabase'
 import type { IGO } from './exim'
-import { defaultInitialWeapon, initialWeapon } from './DataManagers/WeaponData'
+import { defaultInitialWeapon, initialWeapon } from './DataManagers/WeaponDataManager'
 
 const dbStorage = new DBLocalStorage(localStorage)
 const dbIndex = 1

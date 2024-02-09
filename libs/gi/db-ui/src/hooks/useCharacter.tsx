@@ -1,8 +1,8 @@
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
-import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { useDataManagerBase } from '@genshin-optimizer/common/database-ui'
+import { useDatabase } from './useDatabase'
 
-export default function useCharacter(characterKey: CharacterKey) {
+export function useCharacter(characterKey: CharacterKey) {
   const database = useDatabase()
   return useDataManagerBase(database.chars, characterKey)
 }

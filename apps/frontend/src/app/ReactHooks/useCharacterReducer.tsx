@@ -1,7 +1,7 @@
 import { deepClone } from '@genshin-optimizer/common/util'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
-import { useCallback, useContext } from 'react'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
+import { useCallback } from 'react'
 import type { ICachedCharacter } from '../Types/character'
 import type { IConditionalValues } from '../Types/sheet'
 

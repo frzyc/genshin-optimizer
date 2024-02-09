@@ -16,7 +16,7 @@ import { validateLevelAsc } from '@genshin-optimizer/gi/util'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
 import { DataManager } from '../DataManager'
 import type { IGO, ImportResult } from '../exim'
-import { initialCharacter } from './CharacterData'
+import { initialCharacter } from './CharacterDataManager'
 import type { ICachedWeapon } from '../../Interfaces/ICachedWeapon'
 import type { ICachedCharacter } from '../../Interfaces/ICachedCharacter'
 

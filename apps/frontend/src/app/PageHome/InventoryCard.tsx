@@ -6,6 +6,7 @@ import {
   allElementKeys,
   allWeaponTypeKeys,
 } from '@genshin-optimizer/gi/consts'
+import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { FlowerIcon } from '@genshin-optimizer/gi/svgicons'
 import { BusinessCenter, People } from '@mui/icons-material'
 import {
@@ -18,7 +19,7 @@ import {
   useMediaQuery,
   useTheme,
 } from '@mui/material'
-import { useContext, useMemo } from 'react'
+import { useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Link as RouterLink } from 'react-router-dom'
 import SlotIcon from '../Components/Artifact/SlotIcon'
@@ -27,7 +28,6 @@ import CardLight from '../Components/Card/CardLight'
 import ImgIcon from '../Components/Image/ImgIcon'
 import { getCharSheet } from '../Data/Characters'
 import { getWeaponSheet } from '../Data/Weapons'
-import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { ElementIcon } from '../KeyMap/StatIcon'
 import useDBMeta from '../ReactHooks/useDBMeta'
 

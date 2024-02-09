@@ -10,6 +10,7 @@ import {
   allElementWithPhyKeys,
   allSubstatKeys,
 } from '@genshin-optimizer/gi/consts'
+import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import {
   artDisplayValue,
   getMainStatDisplayStr,
@@ -29,14 +30,7 @@ import {
   Skeleton,
   Typography,
 } from '@mui/material'
-import {
-  Suspense,
-  lazy,
-  useCallback,
-  useContext,
-  useMemo,
-  useState,
-} from 'react'
+import { Suspense, lazy, useCallback, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { ArtifactSetTooltipContent } from '../Components/Artifact/ArtifactSetTooltip'
 import SlotIcon from '../Components/Artifact/SlotIcon'
@@ -51,7 +45,6 @@ import PercentBadge from '../Components/PercentBadge'
 import { StarsDisplay } from '../Components/StarDisplay'
 import { getArtSheet } from '../Data/Artifacts'
 import Artifact from '../Data/Artifacts/Artifact'
-import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import KeyMap from '../KeyMap'
 import StatIcon from '../KeyMap/StatIcon'
 import useArtifact from '../ReactHooks/useArtifact'

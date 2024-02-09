@@ -6,7 +6,7 @@ import type {
   ElementKey,
 } from '@genshin-optimizer/gi/consts'
 import { allArtifactSlotKeys } from '@genshin-optimizer/gi/consts'
-import { useDatabase } from '@genshin-optimizer/gi/db-ui'
+import { useCharacter, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { ascensionMaxLevel } from '@genshin-optimizer/gi/util'
 import { Favorite, FavoriteBorder } from '@mui/icons-material'
 import {
@@ -28,7 +28,6 @@ import { SillyContext } from '../../Context/SillyContext'
 import { getCharSheet } from '../../Data/Characters'
 import { uiInput as input } from '../../Formula'
 import useCharMeta from '../../ReactHooks/useCharMeta'
-import useCharacter from '../../ReactHooks/useCharacter'
 import useCharacterReducer from '../../ReactHooks/useCharacterReducer'
 import useDBMeta from '../../ReactHooks/useDBMeta'
 import useTeamData from '../../ReactHooks/useTeamData'

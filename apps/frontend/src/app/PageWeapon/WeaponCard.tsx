@@ -1,4 +1,5 @@
 import { imgAssets, weaponAsset } from '@genshin-optimizer/gi/assets'
+import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { ascensionMaxLevel } from '@genshin-optimizer/gi/util'
 import { Lock, LockOpen } from '@mui/icons-material'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
@@ -13,7 +14,7 @@ import {
   Tooltip,
   Typography,
 } from '@mui/material'
-import { Suspense, useCallback, useContext, useMemo } from 'react'
+import { Suspense, useCallback, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import CardLight from '../Components/Card/CardLight'
 import { LocationAutocomplete } from '../Components/Character/LocationAutocomplete'
@@ -23,7 +24,6 @@ import ImgIcon from '../Components/Image/ImgIcon'
 import { StarsDisplay } from '../Components/StarDisplay'
 import type CharacterSheet from '../Data/Characters/CharacterSheet'
 import { getWeaponSheet } from '../Data/Weapons'
-import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { uiInput as input } from '../Formula'
 import { computeUIData, dataObjForWeapon } from '../Formula/api'
 import { nodeVStr } from '../Formula/uiData'
