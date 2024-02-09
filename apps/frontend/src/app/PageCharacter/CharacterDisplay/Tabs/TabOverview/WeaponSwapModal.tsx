@@ -258,7 +258,7 @@ export default function WeaponSwapModal({
             {t('page_weapon:addWeapon')}
           </Button>
           <Grid container spacing={1}>
-            {weaponIdList.map((weaponId) => (
+            {weaponIdsToShow.map((weaponId) => (
               <Grid item key={weaponId} xs={6} sm={6} md={4} lg={3}>
                 <WeaponCard
                   weaponId={weaponId}
