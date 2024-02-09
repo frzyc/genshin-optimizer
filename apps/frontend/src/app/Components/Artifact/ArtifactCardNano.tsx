@@ -2,6 +2,7 @@ import { clamp, unit } from '@genshin-optimizer/common/util'
 import { artifactAsset, imgAssets } from '@genshin-optimizer/gi/assets'
 import type { ArtifactSlotKey } from '@genshin-optimizer/gi/consts'
 import { allElementWithPhyKeys } from '@genshin-optimizer/gi/consts'
+import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import {
   artDisplayValue,
   getMainStatDisplayStr,
@@ -15,9 +16,8 @@ import {
   alpha,
   useTheme,
 } from '@mui/material'
-import { useCallback, useContext } from 'react'
+import { useCallback } from 'react'
 import Artifact from '../../Data/Artifacts/Artifact'
-import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import StatIcon from '../../KeyMap/StatIcon'
 import useArtifact from '../../ReactHooks/useArtifact'
 import type { ICachedSubstat } from '../../Types/artifact'
