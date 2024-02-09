@@ -51,7 +51,7 @@ import PercentBadge from '../Components/PercentBadge'
 import { StarsDisplay } from '../Components/StarDisplay'
 import { getArtSheet } from '../Data/Artifacts'
 import Artifact from '../Data/Artifacts/Artifact'
-import { DatabaseContext } from '../Database/Database'
+import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import KeyMap from '../KeyMap'
 import StatIcon from '../KeyMap/StatIcon'
 import useArtifact from '../ReactHooks/useArtifact'
@@ -86,7 +86,7 @@ export default function ArtifactCard({
 }: Data): JSX.Element | null {
   const { t } = useTranslation(['artifact', 'ui'])
   const { t: tk } = useTranslation('statKey_gen')
-  const { database } = useContext(DatabaseContext)
+  const database = useDatabase()
   const databaseArtifact = useArtifact(artifactId)
   const artSetKey = (artifactObj ?? databaseArtifact)?.setKey
   const sheet = artSetKey && getArtSheet(artSetKey)

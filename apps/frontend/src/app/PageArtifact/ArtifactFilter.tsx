@@ -8,7 +8,7 @@ import { lazy, Suspense, useCallback, useContext, useMemo } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
 import CardDark from '../Components/Card/CardDark'
 import SqBadge from '../Components/SqBadge'
-import { DatabaseContext } from '../Database/Database'
+import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import useDisplayArtifact from '../ReactHooks/useDisplayArtifact'
 import type { ICachedArtifact } from '../Types/artifact'
 import type { FilterOption } from './ArtifactSort'
@@ -26,7 +26,7 @@ export default function ArtifactFilter({
   artifactIds: string[]
 }) {
   const { t } = useTranslation(['artifact', 'ui'])
-  const { database } = useContext(DatabaseContext)
+  const database = useDatabase()
   const { filterOption } = useDisplayArtifact()
   const filterOptionDispatch = useCallback(
     (option: Partial<FilterOption>) =>
@@ -95,7 +95,7 @@ export default function ArtifactFilter({
 
 export function ArtifactRedButtons({ artifactIds }: { artifactIds: string[] }) {
   const { t } = useTranslation(['artifact', 'ui'])
-  const { database } = useContext(DatabaseContext)
+  const database = useDatabase()
   const { numDelete, numUnequip, numUnlock, numLock } = useMemo(() => {
     const artifacts = artifactIds.map((id) =>
       database.arts.get(id)

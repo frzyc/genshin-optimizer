@@ -31,7 +31,7 @@ import { dataSetEffects, getArtSheet } from '../../../Data/Artifacts'
 import { getCharSheet } from '../../../Data/Characters'
 import type CharacterSheet from '../../../Data/Characters/CharacterSheet'
 import { resonanceSheets } from '../../../Data/Resonance'
-import { DatabaseContext } from '../../../Database/Database'
+import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import type { NodeDisplay } from '../../../Formula/uiData'
 import useCharSelectionCallback from '../../../ReactHooks/useCharSelectionCallback'
 import useDBMeta from '../../../ReactHooks/useDBMeta'
@@ -315,7 +315,7 @@ function TeammateAutocomplete({
     'sheet_gen',
     'charNames_gen',
   ])
-  const { database } = useContext(DatabaseContext)
+  const database = useDatabase()
   const { gender } = useDBMeta()
   const { silly } = useContext(SillyContext)
   const namesCB = useCallback(

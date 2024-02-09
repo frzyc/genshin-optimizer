@@ -7,14 +7,14 @@ import {
   allMainStatKeys,
   allSubstatKeys,
 } from '@genshin-optimizer/gi/consts'
+import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import BusinessCenterIcon from '@mui/icons-material/BusinessCenter'
 import LockIcon from '@mui/icons-material/Lock'
 import LockOpenIcon from '@mui/icons-material/LockOpen'
 import PersonSearchIcon from '@mui/icons-material/PersonSearch'
 import { Box, Button, Chip, Grid, ToggleButton } from '@mui/material'
-import { Suspense, useContext, useMemo } from 'react'
+import { Suspense, useMemo } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
-import { DatabaseContext } from '../../Database/Database'
 import type { FilterOption } from '../../PageArtifact/ArtifactSort'
 import { handleMultiSelect } from '../../Util/MultiSelect'
 import { bulkCatTotal } from '../../Util/totalUtils'
@@ -72,7 +72,7 @@ export default function ArtifactFilterDisplay({
     lines = [],
   } = filterOption
 
-  const { database } = useContext(DatabaseContext)
+  const database = useDatabase()
 
   const {
     rarityTotal,

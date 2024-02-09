@@ -3,12 +3,12 @@ import { Button } from '@mui/material'
 import { useCallback, useContext } from 'react'
 import { useTranslation } from 'react-i18next'
 import { CharacterContext } from '../../Context/CharacterContext'
-import { DatabaseContext } from '../../Database/Database'
+import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import useDBMeta from '../../ReactHooks/useDBMeta'
 
 export default function TravelerGenderSelect() {
   const { t } = useTranslation('ui')
-  const { database } = useContext(DatabaseContext)
+  const database = useDatabase()
   const { character } = useContext(CharacterContext)
   const { key } = character
   const { gender } = useDBMeta()

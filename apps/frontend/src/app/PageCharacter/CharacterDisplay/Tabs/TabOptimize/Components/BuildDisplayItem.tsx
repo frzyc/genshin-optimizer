@@ -36,7 +36,7 @@ import WeaponCardNano from '../../../../../Components/Weapon/WeaponCardNano'
 import { CharacterContext } from '../../../../../Context/CharacterContext'
 import { DataContext } from '../../../../../Context/DataContext'
 import { getCharSheet } from '../../../../../Data/Characters'
-import { DatabaseContext } from '../../../../../Database/Database'
+import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { uiInput as input } from '../../../../../Formula'
 import ArtifactCard from '../../../../../PageArtifact/ArtifactCard'
 import useArtifact from '../../../../../ReactHooks/useArtifact'
@@ -71,7 +71,7 @@ export default function BuildDisplayItem({
   const {
     buildSetting: { mainStatAssumptionLevel, allowLocationsState },
   } = useBuildSetting(characterKey)
-  const { database } = useContext(DatabaseContext)
+  const database = useDatabase()
   const dataContext = useContext(DataContext)
 
   const { data, oldData } = dataContext
@@ -232,7 +232,7 @@ function CompareArtifactModal({
   onClose: () => void
   allowLocationsState: AllowLocationsState
 }) {
-  const { database } = useContext(DatabaseContext)
+  const database = useDatabase()
   const {
     character: { key: characterKey },
   } = useContext(CharacterContext)
@@ -358,7 +358,7 @@ function ExcludeEquipButton({
   const {
     character: { key: characterKey },
   } = useContext(CharacterContext)
-  const { database } = useContext(DatabaseContext)
+  const database = useDatabase()
   const characterSheet = getCharSheet(
     database.chars.LocationToCharacterKey(locationKey)
   )

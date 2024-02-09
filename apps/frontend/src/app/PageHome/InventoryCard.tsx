@@ -27,13 +27,13 @@ import CardLight from '../Components/Card/CardLight'
 import ImgIcon from '../Components/Image/ImgIcon'
 import { getCharSheet } from '../Data/Characters'
 import { getWeaponSheet } from '../Data/Weapons'
-import { DatabaseContext } from '../Database/Database'
+import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { ElementIcon } from '../KeyMap/StatIcon'
 import useDBMeta from '../ReactHooks/useDBMeta'
 
 export default function InventoryCard() {
   const { t } = useTranslation(['page_home', 'ui'])
-  const { database } = useContext(DatabaseContext)
+  const database = useDatabase()
   const { gender } = useDBMeta()
   const { characterTally, characterTotal } = useMemo(() => {
     const chars = database.chars.keys

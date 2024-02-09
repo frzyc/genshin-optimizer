@@ -38,7 +38,7 @@ import BootstrapTooltip from '../Components/BootstrapTooltip'
 import CardDark from '../Components/Card/CardDark'
 import InfoComponent from '../Components/InfoComponent'
 import SortByButton from '../Components/SortByButton'
-import { DatabaseContext } from '../Database/Database'
+import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import useDisplayArtifact from '../ReactHooks/useDisplayArtifact'
 import ArtifactCard from './ArtifactCard'
 import ArtifactFilter, { ArtifactRedButtons } from './ArtifactFilter'
@@ -62,7 +62,7 @@ const numToShowMap = { xs: 10, sm: 12, md: 24, lg: 24, xl: 24 }
 
 export default function PageArtifact() {
   const { t } = useTranslation(['artifact', 'ui'])
-  const { database } = useContext(DatabaseContext)
+  const database = useDatabase()
   const artifactDisplayState = useDisplayArtifact()
 
   const [showEditor, onShowEditor, onHideEditor] = useBoolState(false)

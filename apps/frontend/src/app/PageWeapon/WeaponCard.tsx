@@ -23,7 +23,7 @@ import ImgIcon from '../Components/Image/ImgIcon'
 import { StarsDisplay } from '../Components/StarDisplay'
 import type CharacterSheet from '../Data/Characters/CharacterSheet'
 import { getWeaponSheet } from '../Data/Weapons'
-import { DatabaseContext } from '../Database/Database'
+import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { uiInput as input } from '../Formula'
 import { computeUIData, dataObjForWeapon } from '../Formula/api'
 import { nodeVStr } from '../Formula/uiData'
@@ -47,7 +47,7 @@ export default function WeaponCard({
   extraButtons,
 }: WeaponCardProps) {
   const { t } = useTranslation(['page_weapon', 'ui'])
-  const { database } = useContext(DatabaseContext)
+  const database = useDatabase()
   const databaseWeapon = useWeapon(weaponId)
   const weapon = databaseWeapon
   const weaponSheet = weapon?.key ? getWeaponSheet(weapon.key) : undefined

@@ -18,7 +18,7 @@ import CardDark from '../../../../../../Components/Card/CardDark'
 import CloseButton from '../../../../../../Components/CloseButton'
 import SqBadge from '../../../../../../Components/SqBadge'
 import { DataContext } from '../../../../../../Context/DataContext'
-import { DatabaseContext } from '../../../../../../Database/Database'
+import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { input } from '../../../../../../Formula'
 import type { Unit } from '../../../../../../KeyMap'
 import type { ICachedArtifact } from '../../../../../../Types/artifact'
@@ -44,7 +44,7 @@ export default function CustomTooltip({
   addBuildToList,
   ...tooltipProps
 }: CustomTooltipProps) {
-  const { database } = useContext(DatabaseContext)
+  const database = useDatabase()
   const { data } = useContext(DataContext)
   const { t } = useTranslation('page_character_optimize')
 

@@ -17,7 +17,7 @@ import { useTranslation } from 'react-i18next'
 import { SillyContext } from '../../Context/SillyContext'
 import { getCharSheet } from '../../Data/Characters'
 import type CharacterSheet from '../../Data/Characters/CharacterSheet'
-import { DatabaseContext } from '../../Database/Database'
+import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import type { Variant } from '../../Formula/type'
 import useDBMeta from '../../ReactHooks/useDBMeta'
 import type { GeneralAutocompleteOption } from '../GeneralAutocomplete'
@@ -50,7 +50,7 @@ export function LocationAutocomplete({
     'charNames_gen',
   ])
   const { silly } = useContext(SillyContext)
-  const { database } = useContext(DatabaseContext)
+  const database = useDatabase()
   const { gender } = useDBMeta()
   const toText = useCallback(
     (silly: boolean) =>

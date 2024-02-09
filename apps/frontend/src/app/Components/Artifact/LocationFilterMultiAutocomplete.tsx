@@ -9,7 +9,7 @@ import { Suspense, useCallback, useContext, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { SillyContext } from '../../Context/SillyContext'
 import { getCharSheet } from '../../Data/Characters'
-import { DatabaseContext } from '../../Database/Database'
+import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import useDBMeta from '../../ReactHooks/useDBMeta'
 import type { GeneralAutocompleteOption } from '../GeneralAutocomplete'
 import { GeneralAutocompleteMulti } from '../GeneralAutocomplete'
@@ -31,7 +31,7 @@ export default function LocationFilterMultiAutocomplete({
     'sillyWisher_charNames',
     'charNames_gen',
   ])
-  const { database } = useContext(DatabaseContext)
+  const database = useDatabase()
   const { gender } = useDBMeta()
   const { silly } = useContext(SillyContext)
   const namesCB = useCallback(

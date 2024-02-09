@@ -47,7 +47,7 @@ import type { dataContextObj } from '../../../../Context/DataContext'
 import { DataContext } from '../../../../Context/DataContext'
 import { OptimizationTargetContext } from '../../../../Context/OptimizationTargetContext'
 import { initCharTC } from '@genshin-optimizer/gi/db'
-import { DatabaseContext } from '../../../../Database/Database'
+import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import useDBMeta from '../../../../ReactHooks/useDBMeta'
 import useTeamData, {
   getTeamDataCalc,
@@ -76,7 +76,7 @@ import {
 import useCharTC from './useCharTC'
 export default function TabTheorycraft() {
   const { t } = useTranslation('page_character')
-  const { database } = useContext(DatabaseContext)
+  const database = useDatabase()
   const { data: oldData } = useContext(DataContext)
   const { gender } = useDBMeta()
   const {

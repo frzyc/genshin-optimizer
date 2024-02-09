@@ -17,7 +17,7 @@ import {
 } from '@mui/material'
 import { useCallback, useContext } from 'react'
 import Artifact from '../../Data/Artifacts/Artifact'
-import { DatabaseContext } from '../../Database/Database'
+import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import StatIcon from '../../KeyMap/StatIcon'
 import useArtifact from '../../ReactHooks/useArtifact'
 import type { ICachedSubstat } from '../../Types/artifact'
@@ -47,7 +47,7 @@ export default function ArtifactCardNano({
   BGComponent = CardDark,
 }: Data) {
   const art = useArtifact(artifactId)
-  const { database } = useContext(DatabaseContext)
+  const database = useDatabase()
   const actionWrapperFunc = useCallback(
     (children) => (
       <CardActionArea onClick={onClick} sx={{ height: '100%' }}>

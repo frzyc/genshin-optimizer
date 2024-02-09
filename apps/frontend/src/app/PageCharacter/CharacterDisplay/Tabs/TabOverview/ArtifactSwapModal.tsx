@@ -30,7 +30,7 @@ import CardDark from '../../../../Components/Card/CardDark'
 import CloseButton from '../../../../Components/CloseButton'
 import ImgIcon from '../../../../Components/Image/ImgIcon'
 import ModalWrapper from '../../../../Components/ModalWrapper'
-import { DatabaseContext } from '../../../../Database/Database'
+import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import ArtifactCard from '../../../../PageArtifact/ArtifactCard'
 import type { FilterOption } from '../../../../PageArtifact/ArtifactSort'
 import {
@@ -57,7 +57,7 @@ export default function ArtifactSwapModal({
 }) {
   const { t } = useTranslation('page_character')
   const { t: tk } = useTranslation('artifact')
-  const { database } = useContext(DatabaseContext)
+  const database = useDatabase()
   const clickHandler = useCallback(
     (id) => {
       onChangeId(id)

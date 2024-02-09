@@ -26,7 +26,7 @@ import CardDark from '../Components/Card/CardDark'
 import CardLight from '../Components/Card/CardLight'
 import SqBadge from '../Components/SqBadge'
 import { artStatPercent } from '../Data/Artifacts/Artifact'
-import { DatabaseContext } from '../Database/Database'
+import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import useDBMeta from '../ReactHooks/useDBMeta'
 
 export default function PageDocumentation() {
@@ -347,7 +347,7 @@ function ArtifactSetKeyPane() {
 }
 function CharacterKeyPane() {
   const { t } = useTranslation('charNames_gen')
-  const { database } = useContext(DatabaseContext)
+  const database = useDatabase()
   const { gender } = useDBMeta()
   const charKeysCode = `type CharacterKey\n  = ${[
     ...new Set(allLocationCharacterKeys),

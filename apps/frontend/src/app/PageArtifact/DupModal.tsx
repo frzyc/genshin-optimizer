@@ -14,7 +14,7 @@ import CardDark from '../Components/Card/CardDark'
 import CardLight from '../Components/Card/CardLight'
 import CloseButton from '../Components/CloseButton'
 import ModalWrapper from '../Components/ModalWrapper'
-import { DatabaseContext } from '../Database/Database'
+import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import ArtifactCard from './ArtifactCard'
 export default function DupModal({ show, onHide }) {
   const { t } = useTranslation('artifact')
@@ -38,7 +38,7 @@ export default function DupModal({ show, onHide }) {
 }
 function DupContent() {
   const { t } = useTranslation('artifact')
-  const { database } = useContext(DatabaseContext)
+  const database = useDatabase()
   const [dbDirty, setDBDirty] = useForceUpdate()
   useEffect(() => database.arts.followAny(setDBDirty), [setDBDirty, database])
 

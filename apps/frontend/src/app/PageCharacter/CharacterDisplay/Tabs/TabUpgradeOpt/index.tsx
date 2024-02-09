@@ -44,7 +44,7 @@ import ArtifactLevelSlider from '../../../../Components/Artifact/ArtifactLevelSl
 import { CharacterContext } from '../../../../Context/CharacterContext'
 import type { dataContextObj } from '../../../../Context/DataContext'
 import { DataContext } from '../../../../Context/DataContext'
-import { DatabaseContext } from '../../../../Database/Database'
+import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { mergeData, uiDataForTeam } from '../../../../Formula/api'
 import { optimize } from '../../../../Formula/optimization'
 import type { NumNode } from '../../../../Formula/type'
@@ -68,7 +68,7 @@ export default function TabUpopt() {
   const {
     character: { key: characterKey },
   } = useContext(CharacterContext)
-  const { database } = useContext(DatabaseContext)
+  const database = useDatabase()
   const { gender } = useDBMeta()
 
   const onClickTeammate = useCharSelectionCallback()

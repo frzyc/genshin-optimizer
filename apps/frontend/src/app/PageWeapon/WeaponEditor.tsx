@@ -28,7 +28,7 @@ import { DataContext } from '../Context/DataContext'
 import { getCharSheet } from '../Data/Characters'
 import type CharacterSheet from '../Data/Characters/CharacterSheet'
 import { getWeaponSheet } from '../Data/Weapons'
-import { DatabaseContext } from '../Database/Database'
+import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { uiInput as input } from '../Formula'
 import { computeUIData, dataObjForWeapon } from '../Formula/api'
 import useDBMeta from '../ReactHooks/useDBMeta'
@@ -52,7 +52,7 @@ export default function WeaponEditor({
 }: WeaponStatsEditorCardProps) {
   const { data } = useContext(DataContext)
 
-  const { database } = useContext(DatabaseContext)
+  const database = useDatabase()
   const weapon = useWeapon(propWeaponId)
   const {
     key = '',

@@ -5,7 +5,7 @@ import { Box, Typography } from '@mui/material'
 import { useContext, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { getCharSheet } from '../../Data/Characters'
-import { DatabaseContext } from '../../Database/Database'
+import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import useDBMeta from '../../ReactHooks/useDBMeta'
 import CharIconSide from '../Image/CharIconSide'
 
@@ -14,7 +14,7 @@ export default function LocationName({
   ...props
 }: { location: LocationKey } & TypographyProps) {
   const { t } = useTranslation('ui')
-  const { database } = useContext(DatabaseContext)
+  const database = useDatabase()
   const { gender } = useDBMeta()
   const characterSheet = useMemo(
     () =>

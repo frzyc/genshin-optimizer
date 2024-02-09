@@ -31,7 +31,7 @@ import { CharacterContext } from '../../../../Context/CharacterContext'
 import { DataContext } from '../../../../Context/DataContext'
 import { SillyContext } from '../../../../Context/SillyContext'
 import type { TalentSheetElementKey } from '../../../../Data/Characters/ICharacterSheet'
-import { DatabaseContext } from '../../../../Database/Database'
+import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { uiInput as input } from '../../../../Formula'
 import { ElementIcon } from '../../../../KeyMap/StatIcon'
 import useCharMeta from '../../../../ReactHooks/useCharMeta'
@@ -345,7 +345,7 @@ function FavoriteButton() {
   const {
     character: { key: characterKey },
   } = useContext(CharacterContext)
-  const { database } = useContext(DatabaseContext)
+  const database = useDatabase()
   const { favorite } = useCharMeta(characterKey)
   return (
     <Box sx={{ position: 'absolute', left: 0, top: 0 }}>

@@ -1,12 +1,12 @@
 import type { CharacterKey, WeaponKey } from '@genshin-optimizer/gi/consts'
 import { useContext, useEffect, useState } from 'react'
-import { DatabaseContext } from '../../../../Database/Database'
+import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 
 export default function useCharTC(
   characterKey: CharacterKey,
   defWeapon: WeaponKey
 ) {
-  const { database } = useContext(DatabaseContext)
+  const database = useDatabase()
   const [charTC, setCharTC] = useState(() =>
     database.charTCs.getWithInit(characterKey, defWeapon)
   )

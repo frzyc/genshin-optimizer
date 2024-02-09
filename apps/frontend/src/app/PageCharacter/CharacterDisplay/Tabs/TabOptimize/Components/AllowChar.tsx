@@ -55,7 +55,7 @@ import WeaponToggle from '../../../../../Components/ToggleButton/WeaponToggle'
 import { CharacterContext } from '../../../../../Context/CharacterContext'
 import { SillyContext } from '../../../../../Context/SillyContext'
 import { getCharSheet } from '../../../../../Data/Characters'
-import { DatabaseContext } from '../../../../../Database/Database'
+import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import type { ICachedCharacter } from '../../../../../Types/character'
 import { characterFilterConfigs } from '../../../../../Util/CharacterSort'
 import { bulkCatTotal } from '../../../../../Util/totalUtils'
@@ -83,7 +83,7 @@ export default function AllowChar({
     buildSetting: { excludedLocations, allowLocationsState },
     buildSettingDispatch,
   } = useBuildSetting(characterKey)
-  const { database } = useContext(DatabaseContext)
+  const database = useDatabase()
   const [show, onOpen, onClose] = useBoolState(false)
   const [dbDirty, forceUpdate] = useForceUpdate()
   const deferredDbDirty = useDeferredValue(dbDirty)
@@ -527,7 +527,7 @@ function SelectItem({
   setCharList: (list: Set<LocationCharacterKey>) => void
   setCharListMode: (mode?: CharListMode) => void
 }) {
-  const { database } = useContext(DatabaseContext)
+  const database = useDatabase()
   const char = database.chars.get(database.chars.LocationToCharacterKey(locKey))
   const onMouseEnter = useCallback(
     (e: MouseEvent) =>

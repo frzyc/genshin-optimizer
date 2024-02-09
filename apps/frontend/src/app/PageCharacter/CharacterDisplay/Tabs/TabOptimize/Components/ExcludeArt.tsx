@@ -36,7 +36,7 @@ import InfoTooltip from '../../../../../Components/InfoTooltip'
 import ModalWrapper from '../../../../../Components/ModalWrapper'
 import SqBadge from '../../../../../Components/SqBadge'
 import { CharacterContext } from '../../../../../Context/CharacterContext'
-import { DatabaseContext } from '../../../../../Database/Database'
+import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import ArtifactCard from '../../../../../PageArtifact/ArtifactCard'
 import {
   artifactFilterConfigs,
@@ -208,7 +208,7 @@ function ArtifactSelectModal({
   artExclusion: string[]
 }) {
   const { t } = useTranslation('page_character_optimize')
-  const { database } = useContext(DatabaseContext)
+  const database = useDatabase()
   const clickHandler = useCallback(
     (id: string) => {
       onSelect(id)

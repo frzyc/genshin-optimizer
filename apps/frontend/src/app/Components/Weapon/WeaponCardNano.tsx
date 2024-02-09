@@ -4,7 +4,7 @@ import { Box, CardActionArea, Chip, Skeleton, Typography } from '@mui/material'
 import { useCallback, useContext, useMemo } from 'react'
 import { getWeaponSheet } from '../../Data/Weapons'
 import WeaponSheet from '../../Data/Weapons/WeaponSheet'
-import { DatabaseContext } from '../../Database/Database'
+import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { input } from '../../Formula'
 import { computeUIData, dataObjForWeapon } from '../../Formula/api'
 import type { NodeDisplay } from '../../Formula/uiData'
@@ -29,7 +29,7 @@ export default function WeaponCardNano({
   onClick,
   BGComponent = CardDark,
 }: Data) {
-  const { database } = useContext(DatabaseContext)
+  const database = useDatabase()
   const weapon = useWeapon(weaponId)
   const weaponSheet = weapon?.key && getWeaponSheet(weapon.key)
   const actionWrapperFunc = useCallback(
