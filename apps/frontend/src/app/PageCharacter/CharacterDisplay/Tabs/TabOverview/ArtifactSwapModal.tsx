@@ -22,7 +22,7 @@ import {
   useMemo,
   useReducer,
   useRef,
-  useState
+  useState,
 } from 'react'
 import { useTranslation } from 'react-i18next'
 import CardDark from '../../../../Components/Card/CardDark'
