@@ -74,10 +74,7 @@ import ImgIcon from '../Components/Image/ImgIcon'
 import ModalWrapper from '../Components/ModalWrapper'
 import { getArtSheet } from '../Data/Artifacts'
 import Artifact from '../Data/Artifacts/Artifact'
-import {
-  cachedArtifact,
-  validateArtifact,
-} from '../Database/DataManagers/ArtifactData'
+import { cachedArtifact, validateArtifact } from '@genshin-optimizer/gi/db'
 import { DatabaseContext } from '../Database/Database'
 import StatIcon from '../KeyMap/StatIcon'
 import type { ICachedArtifact } from '../Types/artifact'

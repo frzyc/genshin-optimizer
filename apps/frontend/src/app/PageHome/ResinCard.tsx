@@ -13,7 +13,7 @@ import { Link as RouterLink } from 'react-router-dom'
 import CardDark from '../Components/Card/CardDark'
 import CardLight from '../Components/Card/CardLight'
 import ImgIcon from '../Components/Image/ImgIcon'
-import { RESIN_MAX, timeZones } from '../Database/DataEntries/DisplayTool'
+import { RESIN_MAX, timeZones } from '@genshin-optimizer/gi/db'
 import { DatabaseContext } from '../Database/Database'
 import { RESIN_RECH_MS } from '../PageTools/ResinCounter'
 

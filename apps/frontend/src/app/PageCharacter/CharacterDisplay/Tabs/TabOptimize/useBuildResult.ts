@@ -1,7 +1,7 @@
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import { useCallback, useContext, useEffect, useState } from 'react'
 import { DatabaseContext } from '../../../../Database/Database'
-import type { IBuildResult } from '../../../../Database/DataManagers/BuildResult'
+import type { IBuildResult } from '@genshin-optimizer/gi/db'
 
 export default function useBuildResult(characterKey: CharacterKey) {
   const { database } = useContext(DatabaseContext)

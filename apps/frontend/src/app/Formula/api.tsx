@@ -13,10 +13,10 @@ import type {
   SubstatKey,
 } from '@genshin-optimizer/gi/consts'
 import { allElementWithPhyKeys } from '@genshin-optimizer/gi/consts'
+import type { ICachedWeapon } from '@genshin-optimizer/gi/db'
 import { getMainStatValue } from '@genshin-optimizer/gi/util'
 import type { ICachedArtifact } from '../Types/artifact'
 import type { ICachedCharacter } from '../Types/character'
-import type { ICachedWeapon } from '../Types/weapon'
 import { objectMap } from '../Util/Util'
 import { input, tally } from './index'
 import { deepNodeClone } from './internal'
@@ -439,6 +439,6 @@ export {
   dataObjForWeapon,
   inferInfoMut,
   mergeData,
-  uiDataForTeam,
+  uiDataForTeam
 }
 export type { NodeDisplay, UIData }

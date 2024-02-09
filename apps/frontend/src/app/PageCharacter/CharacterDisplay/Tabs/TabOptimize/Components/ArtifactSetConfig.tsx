@@ -9,6 +9,11 @@ import {
   allArtifactSetKeys,
   allArtifactSlotKeys,
 } from '@genshin-optimizer/gi/consts'
+import type { ArtSetExclusionKey } from '@genshin-optimizer/gi/db'
+import {
+  allArtifactSetExclusionKeys,
+  handleArtSetExclusion,
+} from '@genshin-optimizer/gi/db'
 import { CheckBox, CheckBoxOutlineBlank, Replay } from '@mui/icons-material'
 import BlockIcon from '@mui/icons-material/Block'
 import SettingsIcon from '@mui/icons-material/Settings'
@@ -40,11 +45,6 @@ import type { dataContextObj } from '../../../../../Context/DataContext'
 import { DataContext } from '../../../../../Context/DataContext'
 import { getArtSheet, setKeysByRarities } from '../../../../../Data/Artifacts'
 import { artifactDefIcon } from '../../../../../Data/Artifacts/ArtifactSheet'
-import type { ArtSetExclusionKey } from '../../../../../Database/DataManagers/BuildSettingData'
-import {
-  allArtifactSetExclusionKeys,
-  handleArtSetExclusion,
-} from '../../../../../Database/DataManagers/BuildSettingData'
 import { DatabaseContext } from '../../../../../Database/Database'
 import { UIData } from '../../../../../Formula/uiData'
 import { constant } from '../../../../../Formula/utils'

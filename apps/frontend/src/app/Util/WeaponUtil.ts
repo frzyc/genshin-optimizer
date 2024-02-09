@@ -1,5 +1,5 @@
 import type { WeaponKey, WeaponTypeKey } from '@genshin-optimizer/gi/consts'
-import type { ICachedWeapon } from '../Types/weapon'
+import type { ICachedWeapon } from '@genshin-optimizer/gi/db'
 
 export function defaultInitialWeaponKey(type: WeaponTypeKey): WeaponKey {
   switch (type) {

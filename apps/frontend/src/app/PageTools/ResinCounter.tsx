@@ -12,7 +12,7 @@ import {
 import { useContext, useEffect, useRef, useState } from 'react'
 import CardDark from '../Components/Card/CardDark'
 import ImgIcon from '../Components/Image/ImgIcon'
-import { RESIN_MAX } from '../Database/DataEntries/DisplayTool'
+import { RESIN_MAX } from '@genshin-optimizer/gi/db'
 import { DatabaseContext } from '../Database/Database'
 
 export const RESIN_RECH_MS = 8 * MINUTE_MS

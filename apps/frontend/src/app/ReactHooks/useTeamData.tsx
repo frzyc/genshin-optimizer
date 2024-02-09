@@ -21,7 +21,7 @@ import {
 import type { Data } from '../Formula/type'
 import type { ICachedArtifact } from '../Types/artifact'
 import type { ICachedCharacter } from '../Types/character'
-import type { ICachedWeapon } from '../Types/weapon'
+import type { ICachedWeapon } from '@genshin-optimizer/gi/db'
 import { objectMap } from '../Util/Util'
 import { defaultInitialWeapon } from '../Util/WeaponUtil'
 import useDBMeta from './useDBMeta'
@@ -87,7 +87,7 @@ export function getTeamDataCalc(
   // Retrive from cache
   if (!mainStatAssumptionLevel && !overrideArt && !overrideWeapon) {
     const cache = database._getTeamData(characterKey)
-    if (cache) return cache
+    if (cache) return cache as TeamData
   }
   const { teamData, teamBundle } =
     getTeamData(

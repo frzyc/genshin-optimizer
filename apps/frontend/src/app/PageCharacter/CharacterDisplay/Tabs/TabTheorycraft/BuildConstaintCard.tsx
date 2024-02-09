@@ -21,8 +21,8 @@ import {
 import { useContext } from 'react'
 import { useTranslation } from 'react-i18next'
 import { ArtifactStatWithUnit } from '../../../../Components/Artifact/ArtifactStatKeyDisplay'
-import type { MinTotalStatKey } from '../../../../Database/DataManagers/CharacterTCData'
-import { minTotalStatKeys } from '../../../../Database/DataManagers/CharacterTCData'
+import type { MinTotalStatKey } from '@genshin-optimizer/gi/db'
+import { minTotalStatKeys } from '@genshin-optimizer/gi/db'
 import { CharTCContext } from './CharTCContext'
 
 export function BuildConstaintCard({ disabled }: { disabled: boolean }) {

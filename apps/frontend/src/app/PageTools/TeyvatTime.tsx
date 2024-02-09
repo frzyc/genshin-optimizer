@@ -9,8 +9,8 @@ import { CardContent, Divider, Grid, MenuItem, Typography } from '@mui/material'
 import { useCallback, useContext, useEffect, useState } from 'react'
 import CardDark from '../Components/Card/CardDark'
 import DropdownButton from '../Components/DropdownMenu/DropdownButton'
-import type { TimeZoneKey } from '../Database/DataEntries/DisplayTool'
-import { timeZones } from '../Database/DataEntries/DisplayTool'
+import type { TimeZoneKey } from '@genshin-optimizer/gi/db'
+import { timeZones } from '@genshin-optimizer/gi/db'
 import { DatabaseContext } from '../Database/Database'
 
 export function initToolsDisplayTimezone() {

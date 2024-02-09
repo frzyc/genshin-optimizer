@@ -1,3 +1,4 @@
+import type { StatFilterSetting, StatFilters } from '@genshin-optimizer/gi/db'
 import {
   CheckBox,
   CheckBoxOutlineBlank,
@@ -10,10 +11,6 @@ import CustomNumberInput, {
   CustomNumberInputButtonGroupWrapper,
 } from '../../../../../Components/CustomNumberInput'
 import { DataContext } from '../../../../../Context/DataContext'
-import type {
-  StatFilters,
-  StatFilterSetting,
-} from '../../../../../Database/DataManagers/BuildSettingData'
 import type { NodeDisplay } from '../../../../../Formula/uiData'
 import { objPathValue } from '../../../../../Util/Util'
 import OptimizationTargetSelector from './OptimizationTargetSelector'

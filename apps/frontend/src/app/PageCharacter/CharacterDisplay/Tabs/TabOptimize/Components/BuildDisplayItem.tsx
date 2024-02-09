@@ -4,6 +4,11 @@ import {
   allArtifactSlotKeys,
   charKeyToLocCharKey,
 } from '@genshin-optimizer/gi/consts'
+import type {
+  AllowLocationsState,
+  ArtSetExclusionKey,
+} from '@genshin-optimizer/gi/db'
+import { allArtifactSetExclusionKeys } from '@genshin-optimizer/gi/db'
 import { Checkroom, ChevronRight } from '@mui/icons-material'
 import BlockIcon from '@mui/icons-material/Block'
 import CheckBoxIcon from '@mui/icons-material/CheckBox'
@@ -31,11 +36,6 @@ import WeaponCardNano from '../../../../../Components/Weapon/WeaponCardNano'
 import { CharacterContext } from '../../../../../Context/CharacterContext'
 import { DataContext } from '../../../../../Context/DataContext'
 import { getCharSheet } from '../../../../../Data/Characters'
-import type {
-  AllowLocationsState,
-  ArtSetExclusionKey,
-} from '../../../../../Database/DataManagers/BuildSettingData'
-import { allArtifactSetExclusionKeys } from '../../../../../Database/DataManagers/BuildSettingData'
 import { DatabaseContext } from '../../../../../Database/Database'
 import { uiInput as input } from '../../../../../Formula'
 import ArtifactCard from '../../../../../PageArtifact/ArtifactCard'

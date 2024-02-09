@@ -1,6 +1,7 @@
 import { useBoolState } from '@genshin-optimizer/common/react-util'
 import { weaponAsset } from '@genshin-optimizer/gi/assets'
 import type { WeaponTypeKey } from '@genshin-optimizer/gi/consts'
+import type { ICachedWeapon } from '@genshin-optimizer/gi/db'
 import {
   Box,
   Button,
@@ -24,7 +25,6 @@ import { getWeaponSheet } from '../../../../Data/Weapons'
 import { uiInput as input } from '../../../../Formula'
 import { computeUIData, dataObjForWeapon } from '../../../../Formula/api'
 import type { ICharTC } from '../../../../Types/character'
-import type { ICachedWeapon } from '../../../../Types/weapon'
 import { CharTCContext } from './CharTCContext'
 const WeaponSelectionModal = React.lazy(
   () => import('../../../../Components/Weapon/WeaponSelectionModal')

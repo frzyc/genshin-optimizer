@@ -8,7 +8,7 @@ import { computeUIData, dataObjForWeapon } from '../../Formula/api'
 import type { NodeDisplay } from '../../Formula/uiData'
 import { nodeVStr } from '../../Formula/uiData'
 import useWeapon from '../../ReactHooks/useWeapon'
-import type { ICachedWeapon } from '../../Types/weapon'
+import type { ICachedWeapon } from '@genshin-optimizer/gi/db'
 import CardDark from '../Card/CardDark'
 import SqBadge from '../SqBadge'
 

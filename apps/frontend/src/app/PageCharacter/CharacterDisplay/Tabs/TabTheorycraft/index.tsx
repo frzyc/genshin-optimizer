@@ -5,6 +5,7 @@ import {
   artSubstatRollData,
   type SubstatKey,
 } from '@genshin-optimizer/gi/consts'
+import type { ICachedWeapon } from '@genshin-optimizer/gi/db'
 import { StatIcon } from '@genshin-optimizer/gi/svgicons'
 import { BuildAlert, initialBuildStatus } from '@genshin-optimizer/gi/ui'
 import { getSubstatValue } from '@genshin-optimizer/gi/util'
@@ -45,7 +46,7 @@ import { CharacterContext } from '../../../../Context/CharacterContext'
 import type { dataContextObj } from '../../../../Context/DataContext'
 import { DataContext } from '../../../../Context/DataContext'
 import { OptimizationTargetContext } from '../../../../Context/OptimizationTargetContext'
-import { initCharTC } from '../../../../Database/DataManagers/CharacterTCData'
+import { initCharTC } from '@genshin-optimizer/gi/db'
 import { DatabaseContext } from '../../../../Database/Database'
 import useDBMeta from '../../../../ReactHooks/useDBMeta'
 import useTeamData, {
@@ -53,7 +54,6 @@ import useTeamData, {
 } from '../../../../ReactHooks/useTeamData'
 import type { ICachedArtifact } from '../../../../Types/artifact'
 import type { ICharTC } from '../../../../Types/character'
-import type { ICachedWeapon } from '../../../../Types/weapon'
 import { isDev } from '../../../../Util/Util'
 import { defaultInitialWeaponKey } from '../../../../Util/WeaponUtil'
 import OptimizationTargetSelector from '../TabOptimize/Components/OptimizationTargetSelector'

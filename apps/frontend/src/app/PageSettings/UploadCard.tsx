@@ -1,5 +1,9 @@
 import { SandboxStorage } from '@genshin-optimizer/common/database'
 import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
+import type {
+  ImportResult,
+  ImportResultCounter,
+} from '@genshin-optimizer/gi/db'
 import { CheckBox, CheckBoxOutlineBlank, FileOpen } from '@mui/icons-material'
 import ArrowBackIcon from '@mui/icons-material/ArrowBack'
 import TextSnippetIcon from '@mui/icons-material/TextSnippet'
@@ -19,7 +23,6 @@ import { Trans, useTranslation } from 'react-i18next'
 import CardDark from '../Components/Card/CardDark'
 import CardLight from '../Components/Card/CardLight'
 import { ArtCharDatabase, DatabaseContext } from '../Database/Database'
-import type { ImportResult, ImportResultCounter } from '../Database/exim'
 
 const InvisInput = styled('input')({
   display: 'none',

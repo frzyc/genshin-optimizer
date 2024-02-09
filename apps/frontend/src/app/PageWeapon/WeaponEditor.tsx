@@ -34,7 +34,7 @@ import { computeUIData, dataObjForWeapon } from '../Formula/api'
 import useDBMeta from '../ReactHooks/useDBMeta'
 import useWeapon from '../ReactHooks/useWeapon'
 import type { LocationKey } from '../Types/consts'
-import type { ICachedWeapon } from '../Types/weapon'
+import type { ICachedWeapon } from '@genshin-optimizer/gi/db'
 const WeaponSelectionModal = React.lazy(
   () => import('../Components/Weapon/WeaponSelectionModal')
 )

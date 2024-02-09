@@ -5,6 +5,7 @@ import {
 import { objKeyMap, objPathValue, range } from '@genshin-optimizer/common/util'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import { charKeyToLocCharKey } from '@genshin-optimizer/gi/consts'
+import { defThreads, maxBuildsToShowList } from '@genshin-optimizer/gi/db'
 import {
   CheckBox,
   CheckBoxOutlineBlank,
@@ -57,8 +58,6 @@ import type { dataContextObj } from '../../../../Context/DataContext'
 import { DataContext } from '../../../../Context/DataContext'
 import { GraphContext } from '../../../../Context/GraphContext'
 import { OptimizationTargetContext } from '../../../../Context/OptimizationTargetContext'
-import { defThreads } from '../../../../Database/DataEntries/DisplayOptimizeEntry'
-import { maxBuildsToShowList } from '../../../../Database/DataManagers/BuildSettingData'
 import { DatabaseContext } from '../../../../Database/Database'
 import { mergeData, uiDataForTeam } from '../../../../Formula/api'
 import { optimize } from '../../../../Formula/optimization'

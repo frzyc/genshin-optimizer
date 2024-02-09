@@ -1,7 +1,7 @@
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
+import type { BuildSetting } from '@genshin-optimizer/gi/db'
 import { useCallback, useContext, useEffect, useState } from 'react'
 import { DatabaseContext } from '../../../../Database/Database'
-import type { BuildSetting } from '../../../../Database/DataManagers/BuildSettingData'
 
 export default function useBuildSetting(characterKey: CharacterKey) {
   const { database } = useContext(DatabaseContext)
