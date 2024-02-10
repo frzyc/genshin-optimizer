@@ -1,7 +1,14 @@
 import { useForceUpdate } from '@genshin-optimizer/common/react-util'
 import { objMap } from '@genshin-optimizer/common/util'
 import type { CharacterKey, GenderKey } from '@genshin-optimizer/gi/consts'
-import { useContext, useDeferredValue, useEffect, useMemo } from 'react'
+import type {
+  ArtCharDatabase,
+  ICachedArtifact,
+  ICachedCharacter,
+  ICachedWeapon,
+} from '@genshin-optimizer/gi/db'
+import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
+import { useDeferredValue, useEffect, useMemo } from 'react'
 import type { TeamData } from '../Context/DataContext'
 import { allArtifactData } from '../Data/Artifacts'
 import { getCharSheet } from '../Data/Characters'
@@ -9,8 +16,6 @@ import type CharacterSheet from '../Data/Characters/CharacterSheet'
 import { resonanceData } from '../Data/Resonance'
 import { getWeaponSheet } from '../Data/Weapons'
 import WeaponSheet from '../Data/Weapons/WeaponSheet'
-import type { ArtCharDatabase } from '../Database/Database'
-import { DatabaseContext } from '../Database/Database'
 import { common } from '../Formula'
 import type { CharInfo } from '../Formula/api'
 import {
@@ -21,12 +26,8 @@ import {
   uiDataForTeam,
 } from '../Formula/api'
 import type { Data } from '../Formula/type'
-import type { ICachedArtifact } from '../Types/artifact'
-import type { ICachedCharacter } from '../Types/character'
-import type { ICachedWeapon } from '../Types/weapon'
 import { objectMap } from '../Util/Util'
 import { defaultInitialWeapon } from '../Util/WeaponUtil'
-import useDBMeta from './useDBMeta'
 
 type TeamDataBundle = {
   teamData: Dict<CharacterKey, Data[]>
@@ -39,7 +40,7 @@ export default function useTeamDataNew(
   overrideArt?: ICachedArtifact[] | Data,
   overrideWeapon?: ICachedWeapon
 ): TeamData | undefined {
-  const { database } = useContext(DatabaseContext)
+  const database = useDatabase()
   const [dbDirty, setDbDirty] = useForceUpdate()
   const dbDirtyDeferred = useDeferredValue(dbDirty)
   const { gender } = useDBMeta()

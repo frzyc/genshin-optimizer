@@ -9,23 +9,21 @@ import {
 } from '@genshin-optimizer/common/util'
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
 import { allRarityKeys, allWeaponTypeKeys } from '@genshin-optimizer/gi/consts'
+import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { Add } from '@mui/icons-material'
 import {
   Box,
   Button,
   CardContent,
   Grid,
-  Pagination,
   Skeleton,
   TextField,
-  Typography,
 } from '@mui/material'
 import type { ChangeEvent } from 'react'
 import React, {
   Suspense,
   lazy,
   useCallback,
-  useContext,
   useDeferredValue,
   useEffect,
   useMemo,
@@ -33,13 +31,12 @@ import React, {
   useState,
 } from 'react'
 import ReactGA from 'react-ga4'
-import { Trans, useTranslation } from 'react-i18next'
+import { useTranslation } from 'react-i18next'
 import CardDark from '../Components/Card/CardDark'
-import SortByButton from '../Components/SortByButton'
+import PageAndSortOptionSelect from '../Components/PageAndSortOptionSelect'
 import WeaponRarityToggle from '../Components/ToggleButton/WeaponRarityToggle'
 import WeaponToggle from '../Components/ToggleButton/WeaponToggle'
 import { getWeaponSheet } from '../Data/Weapons'
-import { DatabaseContext } from '../Database/Database'
 import {
   weaponFilterConfigs,
   weaponSortConfigs,
@@ -60,7 +57,7 @@ const numToShowMap = { xs: 10, sm: 12, md: 24, lg: 24, xl: 24 }
 const sortKeys = Object.keys(weaponSortMap)
 export default function PageWeapon() {
   const { t } = useTranslation(['page_weapon', 'ui', 'weaponNames_gen'])
-  const { database } = useContext(DatabaseContext)
+  const database = useDatabase()
   const [state, setState] = useState(database.displayWeapon.get())
   useEffect(
     () => database.displayWeapon.follow((r, dbMeta) => setState(dbMeta)),
@@ -206,6 +203,26 @@ export default function PageWeapon() {
     [database, weaponIdList]
   )
 
+  const paginationProps = {
+    count: numPages,
+    page: currentPageIndex + 1,
+    onChange: setPage,
+  }
+
+  const showingTextProps = {
+    numShowing: weaponIdsToShow.length,
+    total: totalShowing,
+    t: t,
+  }
+
+  const sortByButtonProps = {
+    sortKeys: [...sortKeys],
+    value: sortType,
+    onChange: (sortType) => database.displayWeapon.set({ sortType }),
+    ascending: ascending,
+    onChangeAsc: (ascending) => database.displayWeapon.set({ ascending }),
+  }
+
   return (
     <Box my={1} display="flex" flexDirection="column" gap={1}>
       <Suspense fallback={false}>
@@ -263,25 +280,11 @@ export default function PageWeapon() {
             alignItems="flex-end"
             flexWrap="wrap"
           >
-            <Pagination
-              count={numPages}
-              page={currentPageIndex + 1}
-              onChange={setPage}
-            />
-            <ShowingWeapon
-              numShowing={weaponIdsToShow.length}
-              total={totalShowing}
-              t={t}
-            />
-            <SortByButton
-              sx={{ height: '100%' }}
-              sortKeys={sortKeys}
-              value={sortType}
-              onChange={(sortType) => database.displayWeapon.set({ sortType })}
-              ascending={ascending}
-              onChangeAsc={(ascending) =>
-                database.displayWeapon.set({ ascending })
-              }
+            <PageAndSortOptionSelect
+              paginationProps={paginationProps}
+              showingTextProps={showingTextProps}
+              displaySort={true}
+              sortByButtonProps={sortByButtonProps}
             />
           </Box>
         </CardContent>
@@ -318,35 +321,20 @@ export default function PageWeapon() {
       {numPages > 1 && (
         <CardDark>
           <CardContent>
-            <Grid container alignItems="flex-end">
-              <Grid item flexGrow={1}>
-                <Pagination
-                  count={numPages}
-                  page={currentPageIndex + 1}
-                  onChange={setPage}
-                />
-              </Grid>
-              <Grid item>
-                <ShowingWeapon
-                  numShowing={weaponIdsToShow.length}
-                  total={totalShowing}
-                  t={t}
-                />
-              </Grid>
-            </Grid>
+            <Box
+              display="flex"
+              justifyContent="space-between"
+              alignItems="center"
+              flexWrap="wrap"
+            >
+              <PageAndSortOptionSelect
+                paginationProps={paginationProps}
+                showingTextProps={showingTextProps}
+              />
+            </Box>
           </CardContent>
         </CardDark>
       )}
     </Box>
-  )
-}
-function ShowingWeapon({ numShowing, total, t }) {
-  return (
-    <Typography color="text.secondary">
-      <Trans t={t} i18nKey="showingNum" count={numShowing} value={total}>
-        Showing <b>{{ count: numShowing } as TransObject}</b> out of{' '}
-        {{ value: total }} Weapons
-      </Trans>
-    </Typography>
   )
 }

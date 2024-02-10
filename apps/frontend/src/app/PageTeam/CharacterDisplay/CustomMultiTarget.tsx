@@ -14,6 +14,13 @@ import {
   allAmpReactionKeys,
   allMultiOptHitModeKeys,
 } from '@genshin-optimizer/gi/consts'
+import {
+  MAX_DESC_LENGTH,
+  MAX_NAME_LENGTH,
+  initCustomMultiTarget,
+  initCustomTarget,
+  validateCustomMultiTarget,
+} from '@genshin-optimizer/gi/db'
 import AddIcon from '@mui/icons-material/Add'
 import ContentCopyIcon from '@mui/icons-material/ContentCopy'
 import ContentPasteIcon from '@mui/icons-material/ContentPaste'
@@ -63,17 +70,10 @@ import ModalWrapper from '../../Components/ModalWrapper'
 import StatEditorList from '../../Components/StatEditorList'
 import { CharacterContext } from '../../Context/CharacterContext'
 import { DataContext } from '../../Context/DataContext'
-import {
-  MAX_DESC_LENGTH,
-  MAX_NAME_LENGTH,
-  initCustomMultiTarget,
-  initCustomTarget,
-  validateCustomMultiTarget,
-} from '../../Database/DataManagers/CustomMultiTarget'
 import { allInputPremodKeys } from '../../Formula'
 import type { NodeDisplay } from '../../Formula/uiData'
 import { UIData } from '../../Formula/uiData'
-import type { CustomMultiTarget, CustomTarget } from '../../Types/character'
+import type { CustomMultiTarget, CustomTarget } from '@genshin-optimizer/gi/db'
 import {
   allowedAdditiveReactions,
   allowedAmpReactions,

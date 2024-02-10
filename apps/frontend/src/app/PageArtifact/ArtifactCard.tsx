@@ -10,6 +10,8 @@ import {
   allElementWithPhyKeys,
   allSubstatKeys,
 } from '@genshin-optimizer/gi/consts'
+import type { ICachedArtifact, ICachedSubstat } from '@genshin-optimizer/gi/db'
+import { useArtifact, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import {
   artDisplayValue,
   getMainStatDisplayStr,
@@ -29,14 +31,7 @@ import {
   Skeleton,
   Typography,
 } from '@mui/material'
-import {
-  Suspense,
-  lazy,
-  useCallback,
-  useContext,
-  useMemo,
-  useState,
-} from 'react'
+import { Suspense, lazy, useCallback, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { ArtifactSetTooltipContent } from '../Components/Artifact/ArtifactSetTooltip'
 import SlotIcon from '../Components/Artifact/SlotIcon'
@@ -51,11 +46,8 @@ import PercentBadge from '../Components/PercentBadge'
 import { StarsDisplay } from '../Components/StarDisplay'
 import { getArtSheet } from '../Data/Artifacts'
 import Artifact from '../Data/Artifacts/Artifact'
-import { DatabaseContext } from '../Database/Database'
 import KeyMap from '../KeyMap'
 import StatIcon from '../KeyMap/StatIcon'
-import useArtifact from '../ReactHooks/useArtifact'
-import type { ICachedArtifact, ICachedSubstat } from '../Types/artifact'
 import type { ArtifactEditorProps } from './ArtifactEditor'
 
 const ArtifactEditor = lazy(() => import('./ArtifactEditor'))
@@ -86,7 +78,7 @@ export default function ArtifactCard({
 }: Data): JSX.Element | null {
   const { t } = useTranslation(['artifact', 'ui'])
   const { t: tk } = useTranslation('statKey_gen')
-  const { database } = useContext(DatabaseContext)
+  const database = useDatabase()
   const databaseArtifact = useArtifact(artifactId)
   const artSetKey = (artifactObj ?? databaseArtifact)?.setKey
   const sheet = artSetKey && getArtSheet(artSetKey)

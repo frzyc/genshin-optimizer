@@ -5,6 +5,13 @@ import {
   artSubstatRollData,
   type SubstatKey,
 } from '@genshin-optimizer/gi/consts'
+import type {
+  ICachedArtifact,
+  ICachedWeapon,
+  ICharTC,
+} from '@genshin-optimizer/gi/db'
+import { initCharTC } from '@genshin-optimizer/gi/db'
+import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { StatIcon } from '@genshin-optimizer/gi/svgicons'
 import { BuildAlert, initialBuildStatus } from '@genshin-optimizer/gi/ui'
 import { getSubstatValue } from '@genshin-optimizer/gi/util'
@@ -45,15 +52,9 @@ import { CharacterContext } from '../../../../Context/CharacterContext'
 import type { dataContextObj } from '../../../../Context/DataContext'
 import { DataContext } from '../../../../Context/DataContext'
 import { OptimizationTargetContext } from '../../../../Context/OptimizationTargetContext'
-import { initCharTC } from '../../../../Database/DataManagers/CharacterTCData'
-import { DatabaseContext } from '../../../../Database/Database'
-import useDBMeta from '../../../../ReactHooks/useDBMeta'
 import useTeamData, {
   getTeamDataCalc,
 } from '../../../../ReactHooks/useTeamData'
-import type { ICachedArtifact } from '../../../../Types/artifact'
-import type { ICharTC } from '../../../../Types/character'
-import type { ICachedWeapon } from '../../../../Types/weapon'
 import { isDev } from '../../../../Util/Util'
 import { defaultInitialWeaponKey } from '../../../../Util/WeaponUtil'
 import OptimizationTargetSelector from '../TabOptimize/Components/OptimizationTargetSelector'
@@ -76,7 +77,7 @@ import {
 import useCharTC from './useCharTC'
 export default function TabTheorycraft() {
   const { t } = useTranslation('page_character')
-  const { database } = useContext(DatabaseContext)
+  const database = useDatabase()
   const { data: oldData } = useContext(DataContext)
   const { gender } = useDBMeta()
   const {

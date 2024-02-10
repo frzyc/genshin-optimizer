@@ -1,5 +1,10 @@
 import { CardThemed } from '@genshin-optimizer/common/ui'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
+import {
+  useCharacter,
+  useDBMeta,
+  useDatabase,
+} from '@genshin-optimizer/gi/db-ui'
 import { Box, CardContent, Skeleton } from '@mui/material'
 import {
   Suspense,
@@ -20,16 +25,13 @@ import type { ChartData, GraphContextObj } from '../../Context/GraphContext'
 import { GraphContext } from '../../Context/GraphContext'
 import { SillyContext } from '../../Context/SillyContext'
 import { getCharSheet } from '../../Data/Characters'
-import { DatabaseContext } from '../../Database/Database'
-import useCharacter from '../../ReactHooks/useCharacter'
 import useCharacterReducer from '../../ReactHooks/useCharacterReducer'
-import useDBMeta from '../../ReactHooks/useDBMeta'
 import useTeamData from '../../ReactHooks/useTeamData'
 import Content from './Context'
 
 export default function CharacterDisplay() {
   const navigate = useNavigate()
-  const { database } = useContext(DatabaseContext)
+  const database = useDatabase()
   const onClose = useCallback(() => navigate('/characters'), [navigate])
   const { characterKey } = useParams<{ characterKey?: CharacterKey }>()
   const invalidKey = !database.chars.keys.includes(characterKey as CharacterKey)

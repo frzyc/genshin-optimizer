@@ -10,8 +10,8 @@ import {
   allArtifactRarityKeys,
   allSubstatKeys,
 } from '@genshin-optimizer/gi/consts'
+import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
 import { getRollsRemaining, getSubstatValue } from '@genshin-optimizer/gi/util'
-import type { ICachedArtifact } from '../../Types/artifact'
 import type { RollColorKey } from '../../Types/consts'
 
 const maxStar: ArtifactRarity = 5

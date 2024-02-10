@@ -3,6 +3,7 @@ import {
   allSubstatKeys,
   artSubstatRollData,
 } from '@genshin-optimizer/gi/consts'
+import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
 import type { ISubstat } from '@genshin-optimizer/gi/good'
 import { allStats } from '@genshin-optimizer/gi/stats'
 import {
@@ -34,7 +35,6 @@ import SqBadge from '../../../Components/SqBadge'
 import TextButton from '../../../Components/TextButton'
 import KeyMap from '../../../KeyMap'
 import StatIcon from '../../../KeyMap/StatIcon'
-import type { ICachedArtifact } from '../../../Types/artifact'
 import type { RollColorKey } from '../../../Types/consts'
 
 export default function SubstatInput({

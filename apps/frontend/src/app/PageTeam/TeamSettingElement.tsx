@@ -1,11 +1,10 @@
-import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
 import {
   BootstrapTooltip,
   CardThemed,
   ModalWrapper,
 } from '@genshin-optimizer/common/ui'
+import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import DriveFileRenameOutlineIcon from '@mui/icons-material/DriveFileRenameOutline'
-import SettingsIcon from '@mui/icons-material/Settings'
 import {
   Box,
   Button,
@@ -15,12 +14,11 @@ import {
   TextField,
   Typography,
 } from '@mui/material'
-import { useContext, useDeferredValue, useEffect, useState } from 'react'
+import { useDeferredValue, useEffect, useState } from 'react'
 import CloseButton from '../Components/CloseButton'
-import { DatabaseContext } from '../Database/Database'
 export default function TeamSettingElement({ teamId }: { teamId: string }) {
   const [open, setOpen] = useState(false)
-  const { database } = useContext(DatabaseContext)
+  const database = useDatabase()
   const team = database.teams.get(teamId)
 
   const [name, setName] = useState(team.name)

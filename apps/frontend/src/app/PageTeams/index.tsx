@@ -1,14 +1,14 @@
 import { useForceUpdate } from '@genshin-optimizer/common/react-util'
+import type { Team } from '@genshin-optimizer/gi/db'
+import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import AddIcon from '@mui/icons-material/Add'
 import { Box, Button, Grid, Skeleton } from '@mui/material'
-import { Suspense, useContext, useEffect, useMemo } from 'react'
-import type { Team } from '../Database/DataManagers/TeamDataManager'
-import { DatabaseContext } from '../Database/Database'
-import TeamCard from './TeamCard'
+import { Suspense, useEffect, useMemo } from 'react'
 import { useNavigate } from 'react-router-dom'
+import TeamCard from './TeamCard'
 const columns = { xs: 1, sm: 2, md: 3, lg: 4, xl: 4 }
 export default function PageTeams() {
-  const { database } = useContext(DatabaseContext)
+  const database = useDatabase()
   const [dbDirty, forceUpdate] = useForceUpdate()
   const teamIds = useMemo(
     () => dbDirty && database.teams.keys,

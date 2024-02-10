@@ -9,6 +9,7 @@ import {
   allSubstatKeys,
   charKeyToLocCharKey,
 } from '@genshin-optimizer/gi/consts'
+import { useCharMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { Settings, SwapHoriz } from '@mui/icons-material'
 import {
   Box,
@@ -50,11 +51,9 @@ import { CharacterContext } from '../../../../Context/CharacterContext'
 import { DataContext } from '../../../../Context/DataContext'
 import { dataSetEffects } from '../../../../Data/Artifacts'
 import Artifact from '../../../../Data/Artifacts/Artifact'
-import { DatabaseContext } from '../../../../Database/Database'
 import { uiInput as input } from '../../../../Formula'
 import ArtifactCard from '../../../../PageArtifact/ArtifactCard'
 import WeaponCard from '../../../../PageWeapon/WeaponCard'
-import useCharMeta from '../../../../ReactHooks/useCharMeta'
 import type { IFieldDisplay } from '../../../../Types/fieldDisplay'
 import ArtifactSwapModal from './ArtifactSwapModal'
 import WeaponSwapModal from './WeaponSwapModal'
@@ -192,7 +191,7 @@ function ArtSwapCard({ slotKey }: { slotKey: ArtifactSlotKey }) {
   const {
     character: { key: characterKey },
   } = useContext(CharacterContext)
-  const { database } = useContext(DatabaseContext)
+  const database = useDatabase()
   const [show, onOpen, onClose] = useBoolState()
   const { t } = useTranslation('artifact')
   return (
@@ -242,7 +241,7 @@ function WeaponSwapButton({ weaponTypeKey }: { weaponTypeKey: WeaponTypeKey }) {
   const {
     character: { key: characterKey },
   } = useContext(CharacterContext)
-  const { database } = useContext(DatabaseContext)
+  const database = useDatabase()
   const [show, onOpen, onClose] = useBoolState()
   return (
     <>
@@ -277,7 +276,7 @@ function LargeWeaponSwapButton({
   const {
     character: { key: characterKey },
   } = useContext(CharacterContext)
-  const { database } = useContext(DatabaseContext)
+  const database = useDatabase()
   const [show, onOpen, onClose] = useBoolState()
   return (
     <>
@@ -304,7 +303,7 @@ function ArtifactSwapButton({ slotKey }: { slotKey: ArtifactSlotKey }) {
   const {
     character: { key: characterKey },
   } = useContext(CharacterContext)
-  const { database } = useContext(DatabaseContext)
+  const database = useDatabase()
   const [show, onOpen, onClose] = useBoolState()
   return (
     <>
@@ -330,7 +329,7 @@ function ArtifactSwapButton({ slotKey }: { slotKey: ArtifactSlotKey }) {
 }
 function ArtifactSectionCard() {
   const { t } = useTranslation(['page_character', 'artifact'])
-  const { database } = useContext(DatabaseContext)
+  const database = useDatabase()
   const {
     character,
     character: { key: characterKey, equippedArtifacts },

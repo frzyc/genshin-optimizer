@@ -1,9 +1,10 @@
+import { weaponAsset } from '@genshin-optimizer/gi/assets'
 import type {
   RarityKey,
   WeaponKey,
   WeaponTypeKey,
 } from '@genshin-optimizer/gi/consts'
-import { weaponAsset } from '@genshin-optimizer/gi/assets'
+import type { ICachedWeapon } from '@genshin-optimizer/gi/db'
 import type { WeaponData } from '@genshin-optimizer/gi/stats'
 import { getLevelString } from '@genshin-optimizer/gi/util'
 import { displayDataMap } from '.'
@@ -12,9 +13,8 @@ import SqBadge from '../../Components/SqBadge'
 import { input } from '../../Formula'
 import type { Data } from '../../Formula/type'
 import type { IDocumentHeader } from '../../Types/sheet'
-import type { ICachedWeapon } from '../../Types/weapon'
-import type { IWeaponSheet } from './IWeaponSheet'
 import { trans } from '../SheetUtil'
+import type { IWeaponSheet } from './IWeaponSheet'
 
 export default class WeaponSheet {
   readonly key: WeaponKey

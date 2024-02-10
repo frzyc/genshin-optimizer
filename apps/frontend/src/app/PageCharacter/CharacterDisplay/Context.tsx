@@ -1,3 +1,4 @@
+import type { ICachedCharacter } from '@genshin-optimizer/gi/db'
 import { Box } from '@mui/material'
 import CloseButton from '../../Components/CloseButton'
 import {
@@ -7,7 +8,6 @@ import {
 } from '../../Components/HitModeEditor'
 import LevelSelect from '../../Components/LevelSelect'
 import useCharacterReducer from '../../ReactHooks/useCharacterReducer'
-import type { ICachedCharacter } from '../../Types/character'
 import TabOverview from './Tabs/TabOverview'
 import TravelerElementSelect from './TravelerElementSelect'
 import TravelerGenderSelect from './TravelerGenderSelect'

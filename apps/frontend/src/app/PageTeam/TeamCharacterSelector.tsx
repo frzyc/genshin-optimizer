@@ -1,14 +1,13 @@
 import { range } from '@genshin-optimizer/common/util'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
+import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { CharacterName } from '@genshin-optimizer/gi/ui'
 import AddIcon from '@mui/icons-material/Add'
 import CloseIcon from '@mui/icons-material/Close'
 import { Box, Button, ButtonGroup, Grid } from '@mui/material'
-import { Suspense, useContext, useState } from 'react'
-import CharIconSide from '../Components/Image/CharIconSide'
-import { DatabaseContext } from '../Database/Database'
-import useDBMeta from '../ReactHooks/useDBMeta'
+import { Suspense, useState } from 'react'
 import CharacterSelectionModal from '../Components/Character/CharacterSelectionModal'
+import CharIconSide from '../Components/Image/CharIconSide'
 export default function TeamCharacterSelector({
   teamId,
   currentCharIndex,
@@ -18,7 +17,7 @@ export default function TeamCharacterSelector({
   currentCharIndex: number
   setCurrentCharIndex: (ind: number) => void
 }) {
-  const { database } = useContext(DatabaseContext)
+  const database = useDatabase()
   const team = database.teams.get(teamId)
   const { characterIds } = team
   const [charSelectIndex, setCharSelectIndex] = useState(
@@ -89,7 +88,7 @@ function CharSelButton({
   onClose: () => void
   active: boolean
 }) {
-  const { database } = useContext(DatabaseContext)
+  const database = useDatabase()
   const { key: characterKey } = database.teamChars.get(teamCharId)
   const { gender } = useDBMeta()
   return (

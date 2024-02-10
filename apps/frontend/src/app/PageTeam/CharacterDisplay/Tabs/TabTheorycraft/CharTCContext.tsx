@@ -1,5 +1,5 @@
+import type { ICharTC } from '@genshin-optimizer/gi/db'
 import { createContext } from 'react'
-import type { ICharTC } from '../../../../Types/character'
 export type SetCharTCAction =
   | Partial<ICharTC>
   | ((v: ICharTC) => Partial<ICharTC> | void)

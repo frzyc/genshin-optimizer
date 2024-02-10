@@ -1,12 +1,11 @@
 import type { LocationKey } from '@genshin-optimizer/gi/consts'
+import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { BusinessCenter } from '@mui/icons-material'
 import type { TypographyProps } from '@mui/material'
 import { Box, Typography } from '@mui/material'
-import { useContext, useMemo } from 'react'
+import { useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { getCharSheet } from '../../Data/Characters'
-import { DatabaseContext } from '../../Database/Database'
-import useDBMeta from '../../ReactHooks/useDBMeta'
 import CharIconSide from '../Image/CharIconSide'
 
 export default function LocationName({
@@ -14,7 +13,7 @@ export default function LocationName({
   ...props
 }: { location: LocationKey } & TypographyProps) {
   const { t } = useTranslation('ui')
-  const { database } = useContext(DatabaseContext)
+  const database = useDatabase()
   const { gender } = useDBMeta()
   const characterSheet = useMemo(
     () =>

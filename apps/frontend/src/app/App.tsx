@@ -2,6 +2,8 @@ import {
   DBLocalStorage,
   SandboxStorage,
 } from '@genshin-optimizer/common/database'
+import { ArtCharDatabase } from '@genshin-optimizer/gi/db'
+import { DatabaseContext } from '@genshin-optimizer/gi/db-ui'
 import { theme } from '@genshin-optimizer/gi/ui'
 import { KeyboardArrowUp } from '@mui/icons-material'
 import {
@@ -22,7 +24,6 @@ import { HashRouter, Route, Routes, useMatch } from 'react-router-dom'
 import './App.scss'
 import { SillyContext, useSilly } from './Context/SillyContext'
 import { SnowContext, useSnow } from './Context/SnowContext'
-import { ArtCharDatabase, DatabaseContext } from './Database/Database'
 import ErrorBoundary from './ErrorBoundary'
 import Footer from './Footer'
 import Header from './Header'

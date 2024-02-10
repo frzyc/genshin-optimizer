@@ -26,6 +26,7 @@ import Faruzan from './portrait_faruzan.png'
 import Fischl from './portrait_fischl.png'
 import Freminet from './portrait_freminet.png'
 import Furina from './portrait_furina.png'
+import Gaming from './portrait_gaming.png'
 import Ganyu from './portrait_ganyu.png'
 import Gorou from './portrait_gorou.png'
 import HuTao from './portrait_hutao.png'
@@ -67,6 +68,7 @@ import Venti from './portrait_venti.png'
 import Wanderer from './portrait_wanderer.png'
 import Wriothesley from './portrait_wriothesley.png'
 import Xiangling from './portrait_xiangling.png'
+import Xianyun from './portrait_xianyun.png'
 import Xiao from './portrait_xiao.png'
 import Xingqiu from './portrait_xingqiu.png'
 import Xinyan from './portrait_xinyan.png'
@@ -104,6 +106,7 @@ const data = {
   Freminet,
   Furina,
   Ganyu,
+  Gaming,
   Gorou,
   HuTao,
   Jean,
@@ -147,6 +150,7 @@ const data = {
   Wanderer,
   Wriothesley,
   Xiangling,
+  Xianyun,
   Xiao,
   Xingqiu,
   Xinyan,

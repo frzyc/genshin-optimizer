@@ -1,7 +1,6 @@
 import { CardThemed } from '@genshin-optimizer/common/ui'
-import { DatabaseContext } from '../Database/Database'
-import { useContext } from 'react'
 import { Box, CardContent } from '@mui/material'
+import { useTeam } from '@genshin-optimizer/gi/db-ui'
 
 export default function TeamCard({
   teamId,
@@ -10,8 +9,7 @@ export default function TeamCard({
   teamId: string
   onClick: () => void
 }) {
-  const { database } = useContext(DatabaseContext)
-  const team = database.teams.get(teamId)
+  const team = useTeam(teamId)
   if (!team) return null
   return (
     <CardThemed onClick={onClick}>

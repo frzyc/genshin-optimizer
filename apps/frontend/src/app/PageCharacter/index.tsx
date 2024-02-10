@@ -14,6 +14,7 @@ import {
   allWeaponTypeKeys,
   charKeyToLocGenderedCharKey,
 } from '@genshin-optimizer/gi/consts'
+import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import {
   DeleteForever,
   FactCheck,
@@ -29,7 +30,6 @@ import {
   Divider,
   Grid,
   IconButton,
-  Pagination,
   Skeleton,
   TextField,
   Typography,
@@ -46,22 +46,20 @@ import {
   useState,
 } from 'react'
 import ReactGA from 'react-ga4'
-import { Trans, useTranslation } from 'react-i18next'
+import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 import BootstrapTooltip from '../Components/BootstrapTooltip'
 import CardDark from '../Components/Card/CardDark'
 import CharacterCard from '../Components/Character/CharacterCard'
 import CharacterSelectionModal from '../Components/Character/CharacterSelectionModal'
-import SortByButton from '../Components/SortByButton'
+import PageAndSortOptionSelect from '../Components/PageAndSortOptionSelect'
 import CharacterRarityToggle from '../Components/ToggleButton/CharacterRarityToggle'
 import ElementToggle from '../Components/ToggleButton/ElementToggle'
 import WeaponToggle from '../Components/ToggleButton/WeaponToggle'
 import { SillyContext } from '../Context/SillyContext'
 import { getCharSheet } from '../Data/Characters'
 import { getWeaponSheet } from '../Data/Weapons'
-import { DatabaseContext } from '../Database/Database'
 import useCharSelectionCallback from '../ReactHooks/useCharSelectionCallback'
-import useDBMeta from '../ReactHooks/useDBMeta'
 import {
   characterFilterConfigs,
   characterSortConfigs,
@@ -80,7 +78,7 @@ export default function PageCharacter() {
     'charNames_gen',
   ])
   const { silly } = useContext(SillyContext)
-  const { database } = useContext(DatabaseContext)
+  const database = useDatabase()
   const [state, setState] = useState(() => database.displayCharacter.get())
   useEffect(
     () => database.displayCharacter.follow((r, s) => setState(s)),
@@ -227,6 +225,26 @@ export default function PageCharacter() {
     [database, charKeyList]
   )
 
+  const paginationProps = {
+    count: numPages,
+    page: currentPageIndex + 1,
+    onChange: setPage,
+  }
+
+  const showingTextProps = {
+    numShowing: charKeyListToShow.length,
+    total: totalShowing,
+    t: t,
+  }
+
+  const sortByButtonProps = {
+    sortKeys: [...sortKeys],
+    value: sortType,
+    onChange: (sortType) => database.displayCharacter.set({ sortType }),
+    ascending: ascending,
+    onChangeAsc: (ascending) => database.displayCharacter.set({ ascending }),
+  }
+
   return (
     <Box my={1} display="flex" flexDirection="column" gap={1}>
       <Suspense fallback={false}>
@@ -294,26 +312,11 @@ export default function PageCharacter() {
             alignItems="flex-end"
             flexWrap="wrap"
           >
-            <Pagination
-              count={numPages}
-              page={currentPageIndex + 1}
-              onChange={setPage}
-            />
-            <ShowingCharacter
-              numShowing={charKeyListToShow.length}
-              total={totalShowing}
-              t={t}
-            />
-            <SortByButton
-              sortKeys={sortKeys}
-              value={sortType}
-              onChange={(sortType) =>
-                database.displayCharacter.set({ sortType })
-              }
-              ascending={ascending}
-              onChangeAsc={(ascending) =>
-                database.displayCharacter.set({ ascending })
-              }
+            <PageAndSortOptionSelect
+              paginationProps={paginationProps}
+              showingTextProps={showingTextProps}
+              displaySort={true}
+              sortByButtonProps={sortByButtonProps}
             />
           </Box>
         </CardContent>
@@ -412,7 +415,7 @@ export default function PageCharacter() {
       </Suspense>
       {numPages > 1 && (
         <CardDark>
-          <CardContent sx={{ display: 'flex', gap: 1 }}>
+          <CardContent sx={{ display: 'flex', flexDirection: 'row', gap: 1 }}>
             <Button
               onClick={() => setnewCharacter(true)}
               color="info"
@@ -420,35 +423,21 @@ export default function PageCharacter() {
             >
               <AddIcon />
             </Button>
-            <Grid container alignItems="flex-end" sx={{ flexGrow: 1 }}>
-              <Grid item flexGrow={1}>
-                <Pagination
-                  count={numPages}
-                  page={currentPageIndex + 1}
-                  onChange={setPage}
-                />
-              </Grid>
-              <Grid item>
-                <ShowingCharacter
-                  numShowing={charKeyListToShow.length}
-                  total={totalShowing}
-                  t={t}
-                />
-              </Grid>
-            </Grid>
+            <Box
+              display="flex"
+              justifyContent="space-between"
+              alignItems="center"
+              flexWrap="wrap"
+              flexGrow={1}
+            >
+              <PageAndSortOptionSelect
+                paginationProps={paginationProps}
+                showingTextProps={showingTextProps}
+              />
+            </Box>
           </CardContent>
         </CardDark>
       )}
     </Box>
-  )
-}
-function ShowingCharacter({ numShowing, total, t }) {
-  return (
-    <Typography color="text.secondary">
-      <Trans t={t} i18nKey="showingNum" count={numShowing} value={total}>
-        Showing <b>{{ count: numShowing } as TransObject}</b> out of{' '}
-        {{ value: total } as TransObject} Characters
-      </Trans>
-    </Typography>
   )
 }

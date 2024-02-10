@@ -4,7 +4,7 @@ import { Box, Divider, ListItem } from '@mui/material'
 import { useContext, useMemo } from 'react'
 import { DataContext } from '../../Context/DataContext'
 import { OptimizationTargetContext } from '../../Context/OptimizationTargetContext'
-import { DatabaseContext } from '../../Database/Database'
+import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { getDisplayHeader, getDisplaySections } from '../../Formula/DisplayUtil'
 import type { DisplaySub } from '../../Formula/type'
 import type { NodeDisplay } from '../../Formula/uiData'
@@ -44,7 +44,7 @@ function Section({
 }) {
   const optimizationTarget = useContext(OptimizationTargetContext)
   const { data, oldData } = useContext(DataContext)
-  const { database } = useContext(DatabaseContext)
+  const database = useDatabase()
   const header = useMemo(
     () => getDisplayHeader(data, sectionKey, database),
     [database, data, sectionKey]

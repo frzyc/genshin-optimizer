@@ -4,6 +4,7 @@ import type {
   ArtifactSlotKey,
 } from '@genshin-optimizer/gi/consts'
 import { artMaxLevel, artSlotMainKeys } from '@genshin-optimizer/gi/consts'
+import type { ICharTCArtifactSlot } from '@genshin-optimizer/gi/db'
 import {
   artDisplayValue,
   getMainStatDisplayValue,
@@ -22,7 +23,6 @@ import {
 import Artifact from '../../../../../Data/Artifacts/Artifact'
 import KeyMap from '../../../../../KeyMap'
 import StatIcon from '../../../../../KeyMap/StatIcon'
-import type { ICharTCArtifactSlot } from '../../../../../Types/character'
 import { CharTCContext } from '../CharTCContext'
 
 export function ArtifactMainLevelSlot({

@@ -1,4 +1,5 @@
 import { imgAssets, weaponAsset } from '@genshin-optimizer/gi/assets'
+import { useDatabase, useWeapon } from '@genshin-optimizer/gi/db-ui'
 import { ascensionMaxLevel } from '@genshin-optimizer/gi/util'
 import { Lock, LockOpen } from '@mui/icons-material'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
@@ -13,7 +14,7 @@ import {
   Tooltip,
   Typography,
 } from '@mui/material'
-import { Suspense, useCallback, useContext, useMemo } from 'react'
+import { Suspense, useCallback, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import CardLight from '../Components/Card/CardLight'
 import { LocationAutocomplete } from '../Components/Character/LocationAutocomplete'
@@ -23,11 +24,9 @@ import ImgIcon from '../Components/Image/ImgIcon'
 import { StarsDisplay } from '../Components/StarDisplay'
 import type CharacterSheet from '../Data/Characters/CharacterSheet'
 import { getWeaponSheet } from '../Data/Weapons'
-import { DatabaseContext } from '../Database/Database'
 import { uiInput as input } from '../Formula'
 import { computeUIData, dataObjForWeapon } from '../Formula/api'
 import { nodeVStr } from '../Formula/uiData'
-import useWeapon from '../ReactHooks/useWeapon'
 import type { LocationKey } from '../Types/consts'
 
 type WeaponCardProps = {
@@ -47,7 +46,7 @@ export default function WeaponCard({
   extraButtons,
 }: WeaponCardProps) {
   const { t } = useTranslation(['page_weapon', 'ui'])
-  const { database } = useContext(DatabaseContext)
+  const database = useDatabase()
   const databaseWeapon = useWeapon(weaponId)
   const weapon = databaseWeapon
   const weaponSheet = weapon?.key ? getWeaponSheet(weapon.key) : undefined

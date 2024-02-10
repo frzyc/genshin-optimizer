@@ -10,6 +10,7 @@ import {
 
 import { cartesian, range } from '@genshin-optimizer/common/util'
 import { allSubstatKeys, artMaxLevel } from '@genshin-optimizer/gi/consts'
+import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
 import type { MainStatKey, SubstatKey } from '@genshin-optimizer/gi/dm'
 import {
   getMainStatDisplayValue,
@@ -18,7 +19,6 @@ import {
 } from '@genshin-optimizer/gi/util'
 import { ddx, zero_deriv } from '../../../../Formula/differentiate'
 import type { ArtifactBuildData, DynStat } from '../../../../Solver/common'
-import type { ICachedArtifact } from '../../../../Types/artifact'
 import { crawlUpgrades, quadrinomial } from './mathUtil'
 import { gaussianPE, mvnPE_bad } from './mvncdf'
 

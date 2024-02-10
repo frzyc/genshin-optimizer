@@ -13,13 +13,14 @@ import type {
   SubstatKey,
 } from '@genshin-optimizer/gi/consts'
 import { allElementWithPhyKeys } from '@genshin-optimizer/gi/consts'
-import type { ICharacter } from '@genshin-optimizer/gi/good'
+import type {
+  ICachedArtifact,
+  ICachedCharacter,
+  ICachedWeapon,
+  Team,
+  TeamCharacter,
+} from '@genshin-optimizer/gi/db'
 import { getMainStatValue } from '@genshin-optimizer/gi/util'
-import type { TeamCharacter } from '../Database/DataManagers/TeamCharacterDataManager'
-import type { Team } from '../Database/DataManagers/TeamDataManager'
-import type { ICachedArtifact } from '../Types/artifact'
-import type { ICachedCharacter } from '../Types/character'
-import type { ICachedWeapon } from '../Types/weapon'
 import { objectMap } from '../Util/Util'
 import { input, tally } from './index'
 import { deepNodeClone } from './internal'
@@ -38,6 +39,7 @@ import {
   setReadNodeKeys,
   sum,
 } from './utils'
+import { ICharacter } from '@genshin-optimizer/gi/good'
 const asConst = true as const,
   pivot = true as const
 

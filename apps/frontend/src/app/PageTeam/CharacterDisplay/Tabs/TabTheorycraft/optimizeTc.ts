@@ -5,6 +5,7 @@ import {
   artSubstatRollData,
   type CharacterKey,
 } from '@genshin-optimizer/gi/consts'
+import type { ICachedWeapon, ICharTC } from '@genshin-optimizer/gi/db'
 import { getMainStatValue, getSubstatValue } from '@genshin-optimizer/gi/util'
 import type { TeamData } from '../../../../Context/DataContext'
 import { mergeData } from '../../../../Formula/api'
@@ -13,8 +14,6 @@ import type { OptNode } from '../../../../Formula/optimization'
 import { optimize, precompute } from '../../../../Formula/optimization'
 import type { Data, NumNode } from '../../../../Formula/type'
 import { constant, percent } from '../../../../Formula/utils'
-import type { ICharTC } from '../../../../Types/character'
-import type { ICachedWeapon } from '../../../../Types/weapon'
 import { objPathValue, shouldShowDevComponents } from '../../../../Util/Util'
 import { dynamicData } from '../TabOptimize/foreground'
 

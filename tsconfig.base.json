@@ -52,6 +52,8 @@
       "@genshin-optimizer/gi/assets": ["libs/gi/assets/src/index.ts"],
       "@genshin-optimizer/gi/char-cards": ["libs/gi/char-cards/src/index.ts"],
       "@genshin-optimizer/gi/consts": ["libs/gi/consts/src/index.ts"],
+      "@genshin-optimizer/gi/db": ["libs/gi/db/src/index.ts"],
+      "@genshin-optimizer/gi/db-ui": ["libs/gi/db-ui/src/index.ts"],
       "@genshin-optimizer/gi/dm": ["libs/gi/dm/src/index.ts"],
       "@genshin-optimizer/gi/dm-localization": [
         "libs/gi/dm-localization/src/index.ts"

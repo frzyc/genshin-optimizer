@@ -9,6 +9,11 @@ import {
   allArtifactSetKeys,
   allArtifactSlotKeys,
 } from '@genshin-optimizer/gi/consts'
+import type { ArtSetExclusionKey } from '@genshin-optimizer/gi/db'
+import {
+  allArtifactSetExclusionKeys,
+  handleArtSetExclusion,
+} from '@genshin-optimizer/gi/db'
 import { CheckBox, CheckBoxOutlineBlank, Replay } from '@mui/icons-material'
 import BlockIcon from '@mui/icons-material/Block'
 import SettingsIcon from '@mui/icons-material/Settings'
@@ -40,12 +45,7 @@ import type { dataContextObj } from '../../../../../Context/DataContext'
 import { DataContext } from '../../../../../Context/DataContext'
 import { getArtSheet, setKeysByRarities } from '../../../../../Data/Artifacts'
 import { artifactDefIcon } from '../../../../../Data/Artifacts/ArtifactSheet'
-import type { ArtSetExclusionKey } from '../../../../../Database/DataManagers/BuildSettingData'
-import {
-  allArtifactSetExclusionKeys,
-  handleArtSetExclusion,
-} from '../../../../../Database/DataManagers/BuildSettingData'
-import { DatabaseContext } from '../../../../../Database/Database'
+import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { UIData } from '../../../../../Formula/uiData'
 import { constant } from '../../../../../Formula/utils'
 import type { SetNum } from '../../../../../Types/consts'
@@ -60,7 +60,7 @@ export default function ArtifactSetConfig({
 }) {
   const { t } = useTranslation(['page_character_optimize', 'sheet'])
   const dataContext = useContext(DataContext)
-  const { database } = useContext(DatabaseContext)
+  const database = useDatabase()
   const {
     character: { key: characterKey, conditional },
     characterDispatch,

@@ -1,4 +1,5 @@
 import { useBoolState } from '@genshin-optimizer/common/react-util'
+import type { ICachedCharacter } from '@genshin-optimizer/gi/db'
 import {
   BarChart,
   Calculate,
@@ -9,16 +10,9 @@ import {
   TrendingUp,
 } from '@mui/icons-material'
 import { Box, Button, Skeleton, Tab, Tabs } from '@mui/material'
-import {
-  Suspense,
-  useContext
-} from 'react'
+import { Suspense, useContext } from 'react'
 import { useTranslation } from 'react-i18next'
-import {
-  Route,
-  Link as RouterLink,
-  Routes
-} from 'react-router-dom'
+import { Route, Link as RouterLink, Routes } from 'react-router-dom'
 import CardLight from '../../Components/Card/CardLight'
 import CloseButton from '../../Components/CloseButton'
 import {
@@ -29,14 +23,11 @@ import {
 import LevelSelect from '../../Components/LevelSelect'
 import SqBadge from '../../Components/SqBadge'
 import { CharacterContext } from '../../Context/CharacterContext'
-import {
-  FormulaDataContext
-} from '../../Context/FormulaDataContext'
+import { FormulaDataContext } from '../../Context/FormulaDataContext'
 import useCharacterReducer from '../../ReactHooks/useCharacterReducer'
-import type { ICachedCharacter } from '../../Types/character'
 import { shouldShowDevComponents } from '../../Util/Util'
-import { CustomMultiTargetButton } from './CustomMultiTarget'
 import CharSelectButton from './CharSelectButton'
+import { CustomMultiTargetButton } from './CustomMultiTarget'
 import FormulaModal from './FormulaModal'
 import StatModal from './StatModal'
 import TabBuild from './Tabs/TabOptimize'

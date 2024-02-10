@@ -1,18 +1,13 @@
 import { useBoolState } from '@genshin-optimizer/common/react-util'
 import { objMap } from '@genshin-optimizer/common/util'
-import { Close, Difference } from '@mui/icons-material'
+import { useDatabase } from '@genshin-optimizer/gi/db-ui'
+import { Difference } from '@mui/icons-material'
 import { Button, Skeleton, Tooltip, Typography } from '@mui/material'
 import { Suspense, useContext, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
-import {
-  HitModeToggle,
-  ReactionToggle,
-} from '../../../../Components/HitModeEditor'
 import ModalWrapper from '../../../../Components/ModalWrapper'
 import { CharacterContext } from '../../../../Context/CharacterContext'
 import { DataContext } from '../../../../Context/DataContext'
-import { DatabaseContext } from '../../../../Database/Database'
-// import BuildDisplayItem from '../TabOptimize/Components/BuildDisplayItem'
 
 export default function CompareBuildButton({
   artId,
@@ -54,7 +49,7 @@ function CompareContent({
   weaponId?: string
   onHide: () => void
 }) {
-  const { database } = useContext(DatabaseContext)
+  const database = useDatabase()
   const {
     character: { key: characterKey, equippedArtifacts },
   } = useContext(CharacterContext)

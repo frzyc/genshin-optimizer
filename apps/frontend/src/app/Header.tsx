@@ -1,5 +1,6 @@
 import { useForceUpdate } from '@genshin-optimizer/common/react-util'
 import { AnvilIcon } from '@genshin-optimizer/common/svgicons'
+import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { FlowerIcon } from '@genshin-optimizer/gi/svgicons'
 import {
   Article,
@@ -35,8 +36,6 @@ import { Suspense, useContext, useEffect, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Link as RouterLink, useMatch } from 'react-router-dom'
 import { SillyContext } from './Context/SillyContext'
-import { DatabaseContext } from './Database/Database'
-import useDBMeta from './ReactHooks/useDBMeta'
 import { shouldShowDevComponents } from './Util/Util'
 import silly_icon from './silly_icon.png'
 type ITab = {
@@ -106,7 +105,7 @@ function DBChip() {
 }
 
 function ArtifactChip() {
-  const { database } = useContext(DatabaseContext)
+  const database = useDatabase()
   const [dirty, setDirty] = useForceUpdate()
   useEffect(
     () => database.arts.followAny(() => setDirty()),
@@ -119,7 +118,7 @@ function ArtifactChip() {
   return <Chip label={<strong>{total}</strong>} size="small" />
 }
 function CharacterChip() {
-  const { database } = useContext(DatabaseContext)
+  const database = useDatabase()
   const [dirty, setDirty] = useForceUpdate()
   useEffect(
     () => database.chars.followAny(() => setDirty()),
@@ -132,7 +131,7 @@ function CharacterChip() {
   return <Chip label={<strong>{total}</strong>} size="small" />
 }
 function TeamChip() {
-  const { database } = useContext(DatabaseContext)
+  const database = useDatabase()
   const [dirty, setDirty] = useForceUpdate()
   useEffect(
     () => database.teams.followAny(() => setDirty()),
@@ -145,7 +144,7 @@ function TeamChip() {
   return <Chip label={<strong>{total}</strong>} size="small" />
 }
 function WeaponChip() {
-  const { database } = useContext(DatabaseContext)
+  const database = useDatabase()
   const [dirty, setDirty] = useForceUpdate()
   useEffect(
     () => database.weapons.followAny(() => setDirty()),
