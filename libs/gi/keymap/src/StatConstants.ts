@@ -98,9 +98,6 @@ export const additiveReactions = {
   aggravate: { name: 'Aggravate', multi: 1.15 },
 }
 export type AdditiveReactionsKey = keyof typeof additiveReactions
-export const otherReactions = {
-  crystallize: 'Crystallize',
-} as const
 //
 // PlayerElementLevelCo
 export const transformativeReactionLevelMultipliers = [

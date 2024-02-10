@@ -8,7 +8,8 @@ import {
   type WeaponKey,
 } from '@genshin-optimizer/gi/consts'
 import type { ICharacter } from '@genshin-optimizer/gi/good'
-import type { EleEnemyResKey, InputPremodKey } from '../legacy/keys'
+import type { EleEnemyResKey } from '@genshin-optimizer/gi/keymap'
+import type { InputPremodKey } from '../legacy/keys'
 import type { CustomMultiTarget } from './CustomMultiTarget'
 
 type CondKey = CharacterKey | ArtifactSetKey | WeaponKey

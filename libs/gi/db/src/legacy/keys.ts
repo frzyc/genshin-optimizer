@@ -1,30 +1,11 @@
-import type { ElementWithPhyKey } from '@genshin-optimizer/gi/consts'
 import { allElementWithPhyKeys } from '@genshin-optimizer/gi/consts'
-
+import {
+  allEleEnemyResKeys,
+  crittableTransformativeReactions,
+} from '@genshin-optimizer/gi/keymap'
 /**
- * @deprecated
- * This was copied from KeyMap
+ * Copied from Formula
  */
-export type EleEnemyResKey = `${ElementWithPhyKey}_enemyRes_`
-/**
- * @deprecated
- * This was copied from KeyMap
- */
-export const allEleEnemyResKeys = allElementWithPhyKeys.map(
-  (e) => `${e}_enemyRes_`
-) as EleEnemyResKey[]
-
-/**
- * @deprecated
- * Below was copied from KeyMap/StatConstants
- */
-const crittableTransformativeReactions = [
-  'burning',
-  'bloom',
-  'burgeon',
-  'hyperbloom',
-] as const
-
 const allElements = allElementWithPhyKeys
 const allTalents = ['auto', 'skill', 'burst'] as const
 const allMoves = [
