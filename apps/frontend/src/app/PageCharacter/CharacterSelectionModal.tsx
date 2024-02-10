@@ -10,6 +10,13 @@ import {
   allElementKeys,
   allWeaponTypeKeys,
 } from '@genshin-optimizer/gi/consts'
+import type { ICachedCharacter } from '@genshin-optimizer/gi/db'
+import {
+  useCharMeta,
+  useCharacter,
+  useDBMeta,
+  useDatabase,
+} from '@genshin-optimizer/gi/db-ui'
 import { ascensionMaxLevel } from '@genshin-optimizer/gi/util'
 import { Favorite, FavoriteBorder } from '@mui/icons-material'
 import type { TooltipProps } from '@mui/material'
@@ -49,11 +56,6 @@ import { DataContext } from '../Context/DataContext'
 import { SillyContext } from '../Context/SillyContext'
 import { getCharSheet } from '../Data/Characters'
 import type CharacterSheet from '../Data/Characters/CharacterSheet'
-import { DatabaseContext } from '../Database/Database'
-import useCharMeta from '../ReactHooks/useCharMeta'
-import useCharacter from '../ReactHooks/useCharacter'
-import useDBMeta from '../ReactHooks/useDBMeta'
-import type { ICachedCharacter } from '../Types/character'
 import { iconAsset } from '../Util/AssetUtil'
 import type { CharacterSortKey } from '../Util/CharacterSort'
 import {
@@ -90,7 +92,7 @@ export default function CharacterSelectionModal({
     'charNames_gen',
   ])
   const { silly } = useContext(SillyContext)
-  const { database } = useContext(DatabaseContext)
+  const database = useDatabase()
   const [state, setState] = useState(() => database.displayCharacter.get())
   useEffect(
     () => database.displayCharacter.follow((r, s) => setState(s)),
@@ -280,7 +282,7 @@ function SelectionCard({
   const characterSheet = getCharSheet(characterKey, gender)
   const character = useCharacter(characterKey)
   const { favorite } = useCharMeta(characterKey)
-  const { database } = useContext(DatabaseContext)
+  const database = useDatabase()
   const { silly } = useContext(SillyContext)
 
   const [open, onOpen, onClose] = useBoolState()

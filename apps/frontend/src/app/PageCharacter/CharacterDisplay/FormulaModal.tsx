@@ -33,7 +33,7 @@ import ModalWrapper from '../../Components/ModalWrapper'
 import SqBadge from '../../Components/SqBadge'
 import { DataContext } from '../../Context/DataContext'
 import { FormulaDataContext } from '../../Context/FormulaDataContext'
-import { DatabaseContext } from '../../Database/Database'
+import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { getDisplayHeader, getDisplaySections } from '../../Formula/DisplayUtil'
 import type { DisplaySub } from '../../Formula/type'
 import type { NodeDisplay } from '../../Formula/uiData'
@@ -85,7 +85,7 @@ function FormulaCalc({
   sectionKey: string
 }) {
   const { data } = useContext(DataContext)
-  const { database } = useContext(DatabaseContext)
+  const database = useDatabase()
   const { data: contextData } = useContext(FormulaDataContext)
   const header = useMemo(
     () => getDisplayHeader(contextData ?? data, sectionKey, database),

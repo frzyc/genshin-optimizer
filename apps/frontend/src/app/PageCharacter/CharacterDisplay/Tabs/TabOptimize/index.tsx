@@ -5,6 +5,9 @@ import {
 import { objKeyMap, objPathValue, range } from '@genshin-optimizer/common/util'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import { charKeyToLocCharKey } from '@genshin-optimizer/gi/consts'
+import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
+import { defThreads, maxBuildsToShowList } from '@genshin-optimizer/gi/db'
+import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import {
   CheckBox,
   CheckBoxOutlineBlank,
@@ -57,23 +60,18 @@ import type { dataContextObj } from '../../../../Context/DataContext'
 import { DataContext } from '../../../../Context/DataContext'
 import { GraphContext } from '../../../../Context/GraphContext'
 import { OptimizationTargetContext } from '../../../../Context/OptimizationTargetContext'
-import { defThreads } from '../../../../Database/DataEntries/DisplayOptimizeEntry'
-import { maxBuildsToShowList } from '../../../../Database/DataManagers/BuildSettingData'
-import { DatabaseContext } from '../../../../Database/Database'
 import { mergeData, uiDataForTeam } from '../../../../Formula/api'
 import { optimize } from '../../../../Formula/optimization'
 import type { NumNode } from '../../../../Formula/type'
 import type { UIData } from '../../../../Formula/uiData'
 import useCharSelectionCallback from '../../../../ReactHooks/useCharSelectionCallback'
 import useCharacterReducer from '../../../../ReactHooks/useCharacterReducer'
-import useDBMeta from '../../../../ReactHooks/useDBMeta'
 import useGlobalError from '../../../../ReactHooks/useGlobalError'
 import useTeamData, { getTeamData } from '../../../../ReactHooks/useTeamData'
 import type { OptProblemInput } from '../../../../Solver'
 import { GOSolver } from '../../../../Solver/GOSolver/GOSolver'
 import type { Build } from '../../../../Solver/common'
 import { mergeBuilds, mergePlot } from '../../../../Solver/common'
-import type { ICachedArtifact } from '../../../../Types/artifact'
 import { bulkCatTotal } from '../../../../Util/totalUtils'
 import AllowChar from './Components/AllowChar'
 import ArtifactSetConfig from './Components/ArtifactSetConfig'
@@ -97,7 +95,7 @@ export default function TabBuild() {
   const {
     character: { key: characterKey, compareData },
   } = useContext(CharacterContext)
-  const { database } = useContext(DatabaseContext)
+  const database = useDatabase()
   const { setChartData, graphBuilds, setGraphBuilds } = useContext(GraphContext)
   const { gender } = useDBMeta()
 
@@ -968,7 +966,7 @@ type Prop = {
   oldData: UIData
 }
 function DataContextWrapper({ children, characterKey, build, oldData }: Prop) {
-  const { database } = useContext(DatabaseContext)
+  const database = useDatabase()
   const {
     buildSetting: { mainStatAssumptionLevel },
   } = useBuildSetting(characterKey)

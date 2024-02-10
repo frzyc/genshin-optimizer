@@ -1,5 +1,10 @@
 import { imgAssets } from '@genshin-optimizer/gi/assets'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
+import {
+  useCharMeta,
+  useCharacter,
+  useDBMeta,
+} from '@genshin-optimizer/gi/db-ui'
 import { ascensionMaxLevel } from '@genshin-optimizer/gi/util'
 import FavoriteIcon from '@mui/icons-material/Favorite'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
@@ -9,9 +14,6 @@ import { Suspense, useCallback, useContext, useEffect, useState } from 'react'
 import { SillyContext } from '../../Context/SillyContext'
 import { getCharSheet } from '../../Data/Characters'
 import { ElementIcon } from '../../KeyMap/StatIcon'
-import useCharMeta from '../../ReactHooks/useCharMeta'
-import useCharacter from '../../ReactHooks/useCharacter'
-import useDBMeta from '../../ReactHooks/useDBMeta'
 import { iconAsset } from '../../Util/AssetUtil'
 import BootstrapTooltip from '../BootstrapTooltip'
 import CardDark from '../Card/CardDark'

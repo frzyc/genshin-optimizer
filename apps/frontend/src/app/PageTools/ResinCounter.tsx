@@ -1,5 +1,7 @@
 import { MINUTE_MS, timeString } from '@genshin-optimizer/common/util'
 import { imgAssets } from '@genshin-optimizer/gi/assets'
+import { RESIN_MAX } from '@genshin-optimizer/gi/db'
+import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import {
   Button,
   ButtonGroup,
@@ -9,16 +11,14 @@ import {
   InputBase,
   Typography,
 } from '@mui/material'
-import { useContext, useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import CardDark from '../Components/Card/CardDark'
 import ImgIcon from '../Components/Image/ImgIcon'
-import { RESIN_MAX } from '../Database/DataEntries/DisplayTool'
-import { DatabaseContext } from '../Database/Database'
 
 export const RESIN_RECH_MS = 8 * MINUTE_MS
 
 export default function ResinCounter() {
-  const { database } = useContext(DatabaseContext)
+  const database = useDatabase()
   const [{ resin, resinDate }, setState] = useState(() =>
     database.displayTool.get()
   )

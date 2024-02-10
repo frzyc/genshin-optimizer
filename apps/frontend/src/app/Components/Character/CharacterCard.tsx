@@ -6,6 +6,16 @@ import type {
   ElementKey,
 } from '@genshin-optimizer/gi/consts'
 import { allArtifactSlotKeys } from '@genshin-optimizer/gi/consts'
+import type {
+  ICachedArtifact,
+  ICachedCharacter,
+} from '@genshin-optimizer/gi/db'
+import {
+  useCharMeta,
+  useCharacter,
+  useDBMeta,
+  useDatabase,
+} from '@genshin-optimizer/gi/db-ui'
 import { ascensionMaxLevel } from '@genshin-optimizer/gi/util'
 import { Favorite, FavoriteBorder } from '@mui/icons-material'
 import {
@@ -25,15 +35,9 @@ import type { dataContextObj } from '../../Context/DataContext'
 import { DataContext } from '../../Context/DataContext'
 import { SillyContext } from '../../Context/SillyContext'
 import { getCharSheet } from '../../Data/Characters'
-import { DatabaseContext } from '../../Database/Database'
 import { uiInput as input } from '../../Formula'
-import useCharMeta from '../../ReactHooks/useCharMeta'
-import useCharacter from '../../ReactHooks/useCharacter'
 import useCharacterReducer from '../../ReactHooks/useCharacterReducer'
-import useDBMeta from '../../ReactHooks/useDBMeta'
 import useTeamData from '../../ReactHooks/useTeamData'
-import type { ICachedArtifact } from '../../Types/artifact'
-import type { ICachedCharacter } from '../../Types/character'
 import type { RollColorKey } from '../../Types/consts'
 import { iconAsset } from '../../Util/AssetUtil'
 import ArtifactCardPico from '../Artifact/ArtifactCardPico'
@@ -46,7 +50,6 @@ import { StarsDisplay } from '../StarDisplay'
 import WeaponCardPico from '../Weapon/WeaponCardPico'
 import WeaponFullCard from '../Weapon/WeaponFullCard'
 import CharacterCardPico, { BlankCharacterCardPico } from './CharacterCardPico'
-
 type CharacterCardProps = {
   characterKey: CharacterKey
   onClick?: (characterKey: CharacterKey) => void
@@ -71,7 +74,7 @@ export default function CharacterCard({
   hideStats,
   isTeammateCard,
 }: CharacterCardProps) {
-  const { database } = useContext(DatabaseContext)
+  const database = useDatabase()
   const teamData = useTeamData(characterKey)
   const character = useCharacter(characterKey)
   const { gender } = useDBMeta()
@@ -451,7 +454,7 @@ function HeaderContentNew({ characterKey }: { characterKey: CharacterKey }) {
 }
 
 function Artifacts() {
-  const { database } = useContext(DatabaseContext)
+  const database = useDatabase()
   const { data } = useContext(DataContext)
   const artifacts = useMemo(
     () =>

@@ -1,4 +1,5 @@
 import { useForceUpdate } from '@genshin-optimizer/common/react-util'
+import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import DifferenceIcon from '@mui/icons-material/Difference'
 import {
   Alert,
@@ -8,13 +9,12 @@ import {
   Stack,
   Typography,
 } from '@mui/material'
-import { useContext, useEffect, useMemo } from 'react'
+import { useEffect, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import CardDark from '../Components/Card/CardDark'
 import CardLight from '../Components/Card/CardLight'
 import CloseButton from '../Components/CloseButton'
 import ModalWrapper from '../Components/ModalWrapper'
-import { DatabaseContext } from '../Database/Database'
 import ArtifactCard from './ArtifactCard'
 export default function DupModal({ show, onHide }) {
   const { t } = useTranslation('artifact')
@@ -38,7 +38,7 @@ export default function DupModal({ show, onHide }) {
 }
 function DupContent() {
   const { t } = useTranslation('artifact')
-  const { database } = useContext(DatabaseContext)
+  const database = useDatabase()
   const [dbDirty, setDBDirty] = useForceUpdate()
   useEffect(() => database.arts.followAny(setDBDirty), [setDBDirty, database])
 

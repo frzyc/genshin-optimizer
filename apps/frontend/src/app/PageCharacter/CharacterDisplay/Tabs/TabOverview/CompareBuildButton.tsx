@@ -11,7 +11,7 @@ import {
 import ModalWrapper from '../../../../Components/ModalWrapper'
 import { CharacterContext } from '../../../../Context/CharacterContext'
 import { DataContext } from '../../../../Context/DataContext'
-import { DatabaseContext } from '../../../../Database/Database'
+import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import useTeamData from '../../../../ReactHooks/useTeamData'
 import BuildDisplayItem from '../TabOptimize/Components/BuildDisplayItem'
 import useBuildSetting from '../TabOptimize/useBuildSetting'
@@ -56,7 +56,7 @@ function CompareContent({
   weaponId?: string
   onHide: () => void
 }) {
-  const { database } = useContext(DatabaseContext)
+  const database = useDatabase()
   const {
     character: { key: characterKey, equippedArtifacts },
   } = useContext(CharacterContext)

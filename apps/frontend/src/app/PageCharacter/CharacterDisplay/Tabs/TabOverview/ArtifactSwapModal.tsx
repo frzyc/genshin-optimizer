@@ -5,6 +5,7 @@ import {
 import { clamp, filterFunction } from '@genshin-optimizer/common/util'
 import { imgAssets } from '@genshin-optimizer/gi/assets'
 import type { ArtifactSlotKey } from '@genshin-optimizer/gi/consts'
+import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import {
   Box,
   CardContent,
@@ -17,7 +18,6 @@ import {
   Suspense,
   lazy,
   useCallback,
-  useContext,
   useEffect,
   useMemo,
   useReducer,
@@ -30,7 +30,6 @@ import CloseButton from '../../../../Components/CloseButton'
 import ImgIcon from '../../../../Components/Image/ImgIcon'
 import ModalWrapper from '../../../../Components/ModalWrapper'
 import PageAndSortOptionSelect from '../../../../Components/PageAndSortOptionSelect'
-import { DatabaseContext } from '../../../../Database/Database'
 import ArtifactCard from '../../../../PageArtifact/ArtifactCard'
 import type { FilterOption } from '../../../../PageArtifact/ArtifactSort'
 import {
@@ -56,7 +55,7 @@ export default function ArtifactSwapModal({
   onClose: () => void
 }) {
   const { t } = useTranslation('page_character')
-  const { database } = useContext(DatabaseContext)
+  const database = useDatabase()
   const clickHandler = useCallback(
     (id) => {
       onChangeId(id)

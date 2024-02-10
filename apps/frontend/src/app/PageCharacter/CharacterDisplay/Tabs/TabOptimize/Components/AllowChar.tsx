@@ -15,6 +15,12 @@ import {
   allWeaponTypeKeys,
   charKeyToLocCharKey,
 } from '@genshin-optimizer/gi/consts'
+import type {
+  AllowLocationsState,
+  ICachedCharacter,
+} from '@genshin-optimizer/gi/db'
+import { allAllowLocationsState } from '@genshin-optimizer/gi/db'
+import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import SettingsIcon from '@mui/icons-material/Settings'
 import ShowChartIcon from '@mui/icons-material/ShowChart'
 import {
@@ -53,10 +59,6 @@ import WeaponToggle from '../../../../../Components/ToggleButton/WeaponToggle'
 import { CharacterContext } from '../../../../../Context/CharacterContext'
 import { SillyContext } from '../../../../../Context/SillyContext'
 import { getCharSheet } from '../../../../../Data/Characters'
-import type { AllowLocationsState } from '../../../../../Database/DataManagers/BuildSettingData'
-import { allAllowLocationsState } from '../../../../../Database/DataManagers/BuildSettingData'
-import { DatabaseContext } from '../../../../../Database/Database'
-import type { ICachedCharacter } from '../../../../../Types/character'
 import { characterFilterConfigs } from '../../../../../Util/CharacterSort'
 import { bulkCatTotal } from '../../../../../Util/totalUtils'
 import useBuildSetting from '../useBuildSetting'
@@ -83,7 +85,7 @@ export default function AllowChar({
     buildSetting: { excludedLocations, allowLocationsState },
     buildSettingDispatch,
   } = useBuildSetting(characterKey)
-  const { database } = useContext(DatabaseContext)
+  const database = useDatabase()
   const [show, onOpen, onClose] = useBoolState(false)
   const [dbDirty, forceUpdate] = useForceUpdate()
   const deferredDbDirty = useDeferredValue(dbDirty)
@@ -527,7 +529,7 @@ function SelectItem({
   setCharList: (list: Set<LocationCharacterKey>) => void
   setCharListMode: (mode?: CharListMode) => void
 }) {
-  const { database } = useContext(DatabaseContext)
+  const database = useDatabase()
   const char = database.chars.get(database.chars.LocationToCharacterKey(locKey))
   const onMouseEnter = useCallback(
     (e: MouseEvent) =>

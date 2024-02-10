@@ -1,10 +1,11 @@
+import { imgAssets, weaponAsset } from '@genshin-optimizer/gi/assets'
 import type { WeaponKey, WeaponTypeKey } from '@genshin-optimizer/gi/consts'
 import {
   allRarityKeys,
   allWeaponKeys,
   allWeaponTypeKeys,
 } from '@genshin-optimizer/gi/consts'
-import { imgAssets, weaponAsset } from '@genshin-optimizer/gi/assets'
+import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import {
   Box,
   CardActionArea,
@@ -15,17 +16,10 @@ import {
   Typography,
 } from '@mui/material'
 import type { ChangeEvent } from 'react'
-import {
-  useContext,
-  useDeferredValue,
-  useEffect,
-  useMemo,
-  useState,
-} from 'react'
+import { useDeferredValue, useEffect, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { getWeaponSheet } from '../../Data/Weapons'
 import type WeaponSheet from '../../Data/Weapons/WeaponSheet'
-import { DatabaseContext } from '../../Database/Database'
 import { catTotal } from '../../Util/totalUtils'
 import CardDark from '../Card/CardDark'
 import CardLight from '../Card/CardLight'
@@ -58,7 +52,7 @@ export default function WeaponSelectionModal({
     weaponTypeFilter ? [weaponTypeFilter] : [...allWeaponTypeKeys]
   )
 
-  const { database } = useContext(DatabaseContext)
+  const database = useDatabase()
   const [state, setState] = useState(database.displayWeapon.get())
   useEffect(
     () => database.displayWeapon.follow((r, dbMeta) => setState(dbMeta)),

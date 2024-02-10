@@ -3,13 +3,13 @@ import type {
   ArtifactSetKey,
   ArtifactSlotKey,
 } from '@genshin-optimizer/gi/consts'
+import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
 import { Box, Typography } from '@mui/material'
 import { useMemo } from 'react'
 import ArtifactSetTooltip from '../../../../../Components/Artifact/ArtifactSetTooltip'
 import SlotIcon from '../../../../../Components/Artifact/SlotIcon'
 import SqBadge from '../../../../../Components/SqBadge'
 import { getArtSheet } from '../../../../../Data/Artifacts'
-import type { ICachedArtifact } from '../../../../../Types/artifact'
 
 type ArtifactSetBadgesProps = {
   artifacts: ICachedArtifact[]

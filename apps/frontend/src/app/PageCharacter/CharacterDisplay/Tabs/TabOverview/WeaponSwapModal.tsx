@@ -14,6 +14,7 @@ import type {
   WeaponTypeKey,
 } from '@genshin-optimizer/gi/consts'
 import { allRarityKeys } from '@genshin-optimizer/gi/consts'
+import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { Add } from '@mui/icons-material'
 import StarRoundedIcon from '@mui/icons-material/StarRounded'
 import {
@@ -30,7 +31,6 @@ import type { ChangeEvent } from 'react'
 import {
   Suspense,
   useCallback,
-  useContext,
   useDeferredValue,
   useEffect,
   useMemo,
@@ -45,7 +45,6 @@ import ModalWrapper from '../../../../Components/ModalWrapper'
 import PageAndSortOptionSelect from '../../../../Components/PageAndSortOptionSelect'
 import SolidToggleButtonGroup from '../../../../Components/SolidToggleButtonGroup'
 import WeaponSelectionModal from '../../../../Components/Weapon/WeaponSelectionModal'
-import { DatabaseContext } from '../../../../Database/Database'
 import WeaponCard from '../../../../PageWeapon/WeaponCard'
 import WeaponEditor from '../../../../PageWeapon/WeaponEditor'
 import { handleMultiSelect } from '../../../../Util/MultiSelect'
@@ -76,7 +75,7 @@ export default function WeaponSwapModal({
     'page_weapon',
     'weaponNames_gen',
   ])
-  const { database } = useContext(DatabaseContext)
+  const database = useDatabase()
   const [newWeaponModalShow, setnewWeaponModalShow] = useState(false)
   const clickHandler = useCallback(
     (id: string) => {

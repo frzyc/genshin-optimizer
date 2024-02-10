@@ -13,6 +13,9 @@ import {
   allSubstatKeys,
   artSlotMainKeys,
 } from '@genshin-optimizer/gi/consts'
+import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
+import { cachedArtifact, validateArtifact } from '@genshin-optimizer/gi/db'
+import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import type { IArtifact, ISubstat } from '@genshin-optimizer/gi/good'
 import {
   getMainStatDisplayStr,
@@ -51,7 +54,6 @@ import type { ChangeEvent } from 'react'
 import {
   Suspense,
   useCallback,
-  useContext,
   useEffect,
   useMemo,
   useReducer,
@@ -74,13 +76,7 @@ import ImgIcon from '../Components/Image/ImgIcon'
 import ModalWrapper from '../Components/ModalWrapper'
 import { getArtSheet } from '../Data/Artifacts'
 import Artifact from '../Data/Artifacts/Artifact'
-import {
-  cachedArtifact,
-  validateArtifact,
-} from '../Database/DataManagers/ArtifactData'
-import { DatabaseContext } from '../Database/Database'
 import StatIcon from '../KeyMap/StatIcon'
-import type { ICachedArtifact } from '../Types/artifact'
 import { shouldShowDevComponents } from '../Util/Util'
 import ArtifactCard from './ArtifactCard'
 import SubstatEfficiencyDisplayCard from './ArtifactEditor/Components/SubstatEfficiencyDisplayCard'
@@ -153,7 +149,7 @@ export default function ArtifactEditor({
   const queue = queueRef.current
   const { t } = useTranslation('artifact')
 
-  const { database } = useContext(DatabaseContext)
+  const database = useDatabase()
 
   const [show, setShow] = useState(false)
 

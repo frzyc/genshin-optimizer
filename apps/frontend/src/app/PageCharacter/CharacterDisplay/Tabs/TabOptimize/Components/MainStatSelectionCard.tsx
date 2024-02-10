@@ -24,7 +24,7 @@ import BootstrapTooltip from '../../../../../Components/BootstrapTooltip'
 import SqBadge from '../../../../../Components/SqBadge'
 import { StatColoredWithUnit } from '../../../../../Components/StatDisplay'
 import { CharacterContext } from '../../../../../Context/CharacterContext'
-import { DatabaseContext } from '../../../../../Database/Database'
+import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import StatIcon from '../../../../../KeyMap/StatIcon'
 import { handleMultiSelect } from '../../../../../Util/MultiSelect'
 import { bulkCatTotal } from '../../../../../Util/totalUtils'
@@ -51,7 +51,7 @@ export default function MainStatSelectionCard({
     buildSetting: { mainStatKeys },
     buildSettingDispatch,
   } = useBuildSetting(characterKey)
-  const { database } = useContext(DatabaseContext)
+  const database = useDatabase()
   const { mainStatSlotTots, slotTots } = useMemo(() => {
     const catKeys = {
       flowerMainStatTots: artSlotsData['flower'].stats,

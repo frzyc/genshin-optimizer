@@ -1,8 +1,8 @@
-import { useContext, useEffect, useState } from 'react'
-import { DatabaseContext } from '../Database/Database'
+import { useDatabase } from '@genshin-optimizer/gi/db-ui'
+import { useEffect, useState } from 'react'
 
 export default function useDisplayArtifact() {
-  const { database } = useContext(DatabaseContext)
+  const database = useDatabase()
   const [artifactDisplayState, setArtifactDisplayState] = useState(
     database.displayArtifact.get()
   )
