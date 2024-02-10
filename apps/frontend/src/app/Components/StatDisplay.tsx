@@ -1,7 +1,7 @@
 import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
+import type { StatKey } from '@genshin-optimizer/gi/keymap'
+import { KeyMap } from '@genshin-optimizer/gi/keymap'
 import { Box } from '@mui/material'
-import type { StatKey } from '../KeyMap'
-import KeyMap from '../KeyMap'
 import StatIcon from '../KeyMap/StatIcon'
 import ColorText from './ColoredText'
 

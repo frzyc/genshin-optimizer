@@ -5,6 +5,7 @@ import {
 } from '@genshin-optimizer/gi/consts'
 import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
 import type { ISubstat } from '@genshin-optimizer/gi/good'
+import { KeyMap } from '@genshin-optimizer/gi/keymap'
 import { allStats } from '@genshin-optimizer/gi/stats'
 import {
   artDisplayValue,
@@ -33,7 +34,6 @@ import DropdownButton from '../../../Components/DropdownMenu/DropdownButton'
 import PercentBadge from '../../../Components/PercentBadge'
 import SqBadge from '../../../Components/SqBadge'
 import TextButton from '../../../Components/TextButton'
-import KeyMap from '../../../KeyMap'
 import StatIcon from '../../../KeyMap/StatIcon'
 import type { RollColorKey } from '../../../Types/consts'
 

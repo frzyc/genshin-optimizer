@@ -1,12 +1,13 @@
+import { allEleDmgKeys, allEleResKeys } from '@genshin-optimizer/gi/keymap'
 import {
+  Alert,
+  Box,
   CardContent,
   CardHeader,
   Grid,
   ListItem,
   Stack,
   Typography,
-  Box,
-  Alert,
 } from '@mui/material'
 import { useCallback, useContext, useMemo } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
@@ -26,7 +27,6 @@ import { DataContext } from '../../Context/DataContext'
 import { allInputPremodKeys, uiInput as input } from '../../Formula'
 import type { ReadNode } from '../../Formula/type'
 import { nodeVStr } from '../../Formula/uiData'
-import { allEleDmgKeys, allEleResKeys } from '../../KeyMap'
 
 const cols = {
   xs: 1,

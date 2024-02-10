@@ -12,7 +12,6 @@ import { uiInput } from '.'
 import ColorText from '../Components/ColoredText'
 import { Translate } from '../Components/Translate'
 import { SillyContext } from '../Context/SillyContext'
-import KeyMap from '../KeyMap'
 import type { CharacterSheetKey } from '../Types/consts'
 import { allCharacterSheetKeys } from '../Types/consts'
 import { allOperations } from './optimization'
@@ -535,6 +534,28 @@ function computeNodeDisplay<V>(node: ContextNodeDisplay<V>): NodeDisplay<V> {
   }
 }
 
+export type KeyMapPrefix =
+  | 'default'
+  | 'base'
+  | 'total'
+  | 'uncapped'
+  | 'custom'
+  | 'char'
+  | 'art'
+  | 'weapon'
+  | 'teamBuff'
+const subKeyMap: Record<KeyMapPrefix, string> = {
+  default: 'Default',
+  base: 'Base',
+  total: 'Total',
+  uncapped: 'Uncapped',
+  custom: 'Custom',
+  char: 'Char.',
+  art: 'Art.',
+  weapon: 'Weapon',
+  teamBuff: 'Team',
+}
+
 function createDisplay(node: ContextNodeDisplay<number | string | undefined>) {
   /**
    * TODO Fetch these `Displayable` from `node.field` instead
@@ -551,8 +572,7 @@ function createDisplay(node: ContextNodeDisplay<number | string | undefined>) {
     <ColorText color="info">{valueString(value, unit, fixed)}</ColorText>
   )
   if (name) {
-    const prefixDisplay =
-      prefix && !source ? <>{KeyMap.getPrefixStr(prefix)} </> : null
+    const prefixDisplay = prefix && !source ? <>{subKeyMap[prefix]} </> : null
     const sourceDisplay = <SourceDisplay source={source} />
     node.name = (
       <>
