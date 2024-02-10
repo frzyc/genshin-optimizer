@@ -46,7 +46,7 @@ import PercentBadge from '../Components/PercentBadge'
 import { StarsDisplay } from '../Components/StarDisplay'
 import { getArtSheet } from '../Data/Artifacts'
 import Artifact from '../Data/Artifacts/Artifact'
-import KeyMap from '../KeyMap'
+import { KeyMap } from '@genshin-optimizer/gi/keymap'
 import StatIcon from '../KeyMap/StatIcon'
 import type { ArtifactEditorProps } from './ArtifactEditor'
 

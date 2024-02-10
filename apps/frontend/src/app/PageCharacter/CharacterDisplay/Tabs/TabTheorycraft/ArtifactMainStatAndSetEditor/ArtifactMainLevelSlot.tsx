@@ -5,6 +5,7 @@ import type {
 } from '@genshin-optimizer/gi/consts'
 import { artMaxLevel, artSlotMainKeys } from '@genshin-optimizer/gi/consts'
 import type { ICharTCArtifactSlot } from '@genshin-optimizer/gi/db'
+import { KeyMap } from '@genshin-optimizer/gi/keymap'
 import {
   artDisplayValue,
   getMainStatDisplayValue,
@@ -21,7 +22,6 @@ import {
   StatWithUnit,
 } from '../../../../../Components/StatDisplay'
 import Artifact from '../../../../../Data/Artifacts/Artifact'
-import KeyMap from '../../../../../KeyMap'
 import StatIcon from '../../../../../KeyMap/StatIcon'
 import { CharTCContext } from '../CharTCContext'
 
