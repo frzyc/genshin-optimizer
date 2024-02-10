@@ -1,5 +1,7 @@
 import { useBoolState } from '@genshin-optimizer/common/react-util'
 import { weaponAsset } from '@genshin-optimizer/gi/assets'
+import type { ICachedWeapon } from '@genshin-optimizer/gi/db'
+import { useDBMeta, useDatabase, useWeapon } from '@genshin-optimizer/gi/db-ui'
 import { milestoneLevelsLow } from '@genshin-optimizer/gi/util'
 import { Lock, LockOpen } from '@mui/icons-material'
 import {
@@ -28,13 +30,9 @@ import { DataContext } from '../Context/DataContext'
 import { getCharSheet } from '../Data/Characters'
 import type CharacterSheet from '../Data/Characters/CharacterSheet'
 import { getWeaponSheet } from '../Data/Weapons'
-import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { uiInput as input } from '../Formula'
 import { computeUIData, dataObjForWeapon } from '../Formula/api'
-import useDBMeta from '../ReactHooks/useDBMeta'
-import useWeapon from '../ReactHooks/useWeapon'
 import type { LocationKey } from '../Types/consts'
-import type { ICachedWeapon } from '@genshin-optimizer/gi/db'
 const WeaponSelectionModal = React.lazy(
   () => import('../Components/Weapon/WeaponSelectionModal')
 )

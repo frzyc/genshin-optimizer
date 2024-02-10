@@ -6,6 +6,8 @@ import {
   type SubstatKey,
 } from '@genshin-optimizer/gi/consts'
 import type { ICachedWeapon } from '@genshin-optimizer/gi/db'
+import { initCharTC } from '@genshin-optimizer/gi/db'
+import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { StatIcon } from '@genshin-optimizer/gi/svgicons'
 import { BuildAlert, initialBuildStatus } from '@genshin-optimizer/gi/ui'
 import { getSubstatValue } from '@genshin-optimizer/gi/util'
@@ -46,9 +48,6 @@ import { CharacterContext } from '../../../../Context/CharacterContext'
 import type { dataContextObj } from '../../../../Context/DataContext'
 import { DataContext } from '../../../../Context/DataContext'
 import { OptimizationTargetContext } from '../../../../Context/OptimizationTargetContext'
-import { initCharTC } from '@genshin-optimizer/gi/db'
-import { useDatabase } from '@genshin-optimizer/gi/db-ui'
-import useDBMeta from '../../../../ReactHooks/useDBMeta'
 import useTeamData, {
   getTeamDataCalc,
 } from '../../../../ReactHooks/useTeamData'

@@ -2,6 +2,11 @@ import { imgAssets } from '@genshin-optimizer/gi/assets'
 import { charCard } from '@genshin-optimizer/gi/char-cards'
 import type { AscensionKey, CharacterKey } from '@genshin-optimizer/gi/consts'
 import { allArtifactSlotKeys } from '@genshin-optimizer/gi/consts'
+import {
+  useCharMeta,
+  useDBMeta,
+  useDatabase,
+} from '@genshin-optimizer/gi/db-ui'
 import { splash } from '@genshin-optimizer/gi/silly-wisher'
 import { getLevelString } from '@genshin-optimizer/gi/util'
 import { Favorite, FavoriteBorder } from '@mui/icons-material'
@@ -31,12 +36,9 @@ import { CharacterContext } from '../../../../Context/CharacterContext'
 import { DataContext } from '../../../../Context/DataContext'
 import { SillyContext } from '../../../../Context/SillyContext'
 import type { TalentSheetElementKey } from '../../../../Data/Characters/ICharacterSheet'
-import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { uiInput as input } from '../../../../Formula'
 import { ElementIcon } from '../../../../KeyMap/StatIcon'
-import useCharMeta from '../../../../ReactHooks/useCharMeta'
 import useCharacterReducer from '../../../../ReactHooks/useCharacterReducer'
-import useDBMeta from '../../../../ReactHooks/useDBMeta'
 import { range } from '../../../../Util/Util'
 import EquipmentSection from './EquipmentSection'
 

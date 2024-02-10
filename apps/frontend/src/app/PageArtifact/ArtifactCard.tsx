@@ -10,7 +10,7 @@ import {
   allElementWithPhyKeys,
   allSubstatKeys,
 } from '@genshin-optimizer/gi/consts'
-import { useDatabase } from '@genshin-optimizer/gi/db-ui'
+import { useArtifact, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import {
   artDisplayValue,
   getMainStatDisplayStr,
@@ -47,7 +47,6 @@ import { getArtSheet } from '../Data/Artifacts'
 import Artifact from '../Data/Artifacts/Artifact'
 import KeyMap from '../KeyMap'
 import StatIcon from '../KeyMap/StatIcon'
-import useArtifact from '../ReactHooks/useArtifact'
 import type { ICachedArtifact, ICachedSubstat } from '../Types/artifact'
 import type { ArtifactEditorProps } from './ArtifactEditor'
 

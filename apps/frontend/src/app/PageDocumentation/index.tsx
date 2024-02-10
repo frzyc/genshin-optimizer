@@ -5,7 +5,7 @@ import {
   allWeaponKeys,
   charKeyToLocGenderedCharKey,
 } from '@genshin-optimizer/gi/consts'
-import { useDatabase } from '@genshin-optimizer/gi/db-ui'
+import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { allStats } from '@genshin-optimizer/gi/stats'
 import { ArrowRightAlt } from '@mui/icons-material'
 import {
@@ -27,7 +27,6 @@ import CardDark from '../Components/Card/CardDark'
 import CardLight from '../Components/Card/CardLight'
 import SqBadge from '../Components/SqBadge'
 import { artStatPercent } from '../Data/Artifacts/Artifact'
-import useDBMeta from '../ReactHooks/useDBMeta'
 
 export default function PageDocumentation() {
   // const { t } = useTranslation("documentation")

@@ -10,7 +10,12 @@ import {
   allElementKeys,
   allWeaponTypeKeys,
 } from '@genshin-optimizer/gi/consts'
-import { useCharacter, useDatabase } from '@genshin-optimizer/gi/db-ui'
+import {
+  useCharMeta,
+  useCharacter,
+  useDBMeta,
+  useDatabase,
+} from '@genshin-optimizer/gi/db-ui'
 import { ascensionMaxLevel } from '@genshin-optimizer/gi/util'
 import { Favorite, FavoriteBorder } from '@mui/icons-material'
 import type { TooltipProps } from '@mui/material'
@@ -50,8 +55,6 @@ import { DataContext } from '../Context/DataContext'
 import { SillyContext } from '../Context/SillyContext'
 import { getCharSheet } from '../Data/Characters'
 import type CharacterSheet from '../Data/Characters/CharacterSheet'
-import useCharMeta from '../ReactHooks/useCharMeta'
-import useDBMeta from '../ReactHooks/useDBMeta'
 import type { ICachedCharacter } from '../Types/character'
 import { iconAsset } from '../Util/AssetUtil'
 import type { CharacterSortKey } from '../Util/CharacterSort'

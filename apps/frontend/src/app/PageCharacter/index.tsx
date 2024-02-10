@@ -14,6 +14,7 @@ import {
   allWeaponTypeKeys,
   charKeyToLocGenderedCharKey,
 } from '@genshin-optimizer/gi/consts'
+import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import {
   DeleteForever,
   FactCheck,
@@ -57,9 +58,7 @@ import WeaponToggle from '../Components/ToggleButton/WeaponToggle'
 import { SillyContext } from '../Context/SillyContext'
 import { getCharSheet } from '../Data/Characters'
 import { getWeaponSheet } from '../Data/Weapons'
-import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import useCharSelectionCallback from '../ReactHooks/useCharSelectionCallback'
-import useDBMeta from '../ReactHooks/useDBMeta'
 import {
   characterFilterConfigs,
   characterSortConfigs,

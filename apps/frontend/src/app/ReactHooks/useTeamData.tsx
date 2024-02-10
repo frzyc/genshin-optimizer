@@ -1,7 +1,7 @@
 import { useForceUpdate } from '@genshin-optimizer/common/react-util'
 import type { CharacterKey, GenderKey } from '@genshin-optimizer/gi/consts'
 import type { ArtCharDatabase, ICachedWeapon } from '@genshin-optimizer/gi/db'
-import { useDatabase } from '@genshin-optimizer/gi/db-ui'
+import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { useDeferredValue, useEffect, useMemo } from 'react'
 import type { TeamData } from '../Context/DataContext'
 import { allArtifactData } from '../Data/Artifacts'
@@ -23,7 +23,6 @@ import type { ICachedArtifact } from '../Types/artifact'
 import type { ICachedCharacter } from '../Types/character'
 import { objectMap } from '../Util/Util'
 import { defaultInitialWeapon } from '../Util/WeaponUtil'
-import useDBMeta from './useDBMeta'
 
 type TeamDataBundle = {
   teamData: Dict<CharacterKey, Data[]>

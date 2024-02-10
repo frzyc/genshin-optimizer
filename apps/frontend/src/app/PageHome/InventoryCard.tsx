@@ -6,7 +6,7 @@ import {
   allElementKeys,
   allWeaponTypeKeys,
 } from '@genshin-optimizer/gi/consts'
-import { useDatabase } from '@genshin-optimizer/gi/db-ui'
+import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { FlowerIcon } from '@genshin-optimizer/gi/svgicons'
 import { BusinessCenter, People } from '@mui/icons-material'
 import {
@@ -29,7 +29,6 @@ import ImgIcon from '../Components/Image/ImgIcon'
 import { getCharSheet } from '../Data/Characters'
 import { getWeaponSheet } from '../Data/Weapons'
 import { ElementIcon } from '../KeyMap/StatIcon'
-import useDBMeta from '../ReactHooks/useDBMeta'
 
 export default function InventoryCard() {
   const { t } = useTranslation(['page_home', 'ui'])

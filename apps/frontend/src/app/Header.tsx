@@ -1,5 +1,6 @@
 import { useForceUpdate } from '@genshin-optimizer/common/react-util'
 import { AnvilIcon } from '@genshin-optimizer/common/svgicons'
+import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { FlowerIcon } from '@genshin-optimizer/gi/svgicons'
 import {
   Article,
@@ -34,8 +35,6 @@ import { Suspense, useContext, useEffect, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Link as RouterLink, useMatch } from 'react-router-dom'
 import { SillyContext } from './Context/SillyContext'
-import { useDatabase } from '@genshin-optimizer/gi/db-ui'
-import useDBMeta from './ReactHooks/useDBMeta'
 import { shouldShowDevComponents } from './Util/Util'
 import silly_icon from './silly_icon.png'
 type ITab = {

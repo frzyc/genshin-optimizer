@@ -9,6 +9,7 @@ import {
   allSubstatKeys,
   charKeyToLocCharKey,
 } from '@genshin-optimizer/gi/consts'
+import { useCharMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { Settings, SwapHoriz } from '@mui/icons-material'
 import {
   Box,
@@ -50,11 +51,9 @@ import { CharacterContext } from '../../../../Context/CharacterContext'
 import { DataContext } from '../../../../Context/DataContext'
 import { dataSetEffects } from '../../../../Data/Artifacts'
 import Artifact from '../../../../Data/Artifacts/Artifact'
-import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { uiInput as input } from '../../../../Formula'
 import ArtifactCard from '../../../../PageArtifact/ArtifactCard'
 import WeaponCard from '../../../../PageWeapon/WeaponCard'
-import useCharMeta from '../../../../ReactHooks/useCharMeta'
 import type { IFieldDisplay } from '../../../../Types/fieldDisplay'
 import ArtifactSwapModal from './ArtifactSwapModal'
 import WeaponSwapModal from './WeaponSwapModal'

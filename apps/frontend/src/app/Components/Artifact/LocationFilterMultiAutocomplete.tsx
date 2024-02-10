@@ -4,13 +4,12 @@ import {
   allTravelerKeys,
   charKeyToLocGenderedCharKey,
 } from '@genshin-optimizer/gi/consts'
+import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { Chip, Skeleton } from '@mui/material'
 import { Suspense, useCallback, useContext, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { SillyContext } from '../../Context/SillyContext'
 import { getCharSheet } from '../../Data/Characters'
-import { useDatabase } from '@genshin-optimizer/gi/db-ui'
-import useDBMeta from '../../ReactHooks/useDBMeta'
 import type { GeneralAutocompleteOption } from '../GeneralAutocomplete'
 import { GeneralAutocompleteMulti } from '../GeneralAutocomplete'
 import CharIconSide from '../Image/CharIconSide'

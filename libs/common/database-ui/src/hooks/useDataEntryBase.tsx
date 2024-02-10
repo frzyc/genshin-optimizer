@@ -1,14 +1,8 @@
-import type {
-  DataEntryBase,
-  Database,
-} from '@genshin-optimizer/common/database'
+import type { DataEntryBase } from '@genshin-optimizer/common/database'
 import { useEffect, useState } from 'react'
-export function useDataEntryBase<
-  A extends string,
-  B extends string,
-  C,
-  D extends Database
->(entry: DataEntryBase<A, B, C, D>) {
+export function useDataEntryBase<A extends string, B extends string, C, D>(
+  entry: DataEntryBase<A, B, C, D>
+) {
   const [data, setData] = useState(() => entry.get())
 
   useEffect(() => {
