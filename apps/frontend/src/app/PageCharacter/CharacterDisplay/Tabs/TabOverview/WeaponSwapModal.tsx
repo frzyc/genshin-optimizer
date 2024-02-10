@@ -1,5 +1,12 @@
-import { useForceUpdate } from '@genshin-optimizer/common/react-util'
-import { filterFunction, sortFunction } from '@genshin-optimizer/common/util'
+import {
+  useForceUpdate,
+  useMediaQueryUp,
+} from '@genshin-optimizer/common/react-util'
+import {
+  clamp,
+  filterFunction,
+  sortFunction,
+} from '@genshin-optimizer/common/util'
 import { imgAssets } from '@genshin-optimizer/gi/assets'
 import type {
   RarityKey,
@@ -27,6 +34,7 @@ import {
   useDeferredValue,
   useEffect,
   useMemo,
+  useRef,
   useState,
 } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -34,6 +42,7 @@ import CardDark from '../../../../Components/Card/CardDark'
 import CloseButton from '../../../../Components/CloseButton'
 import ImgIcon from '../../../../Components/Image/ImgIcon'
 import ModalWrapper from '../../../../Components/ModalWrapper'
+import PageAndSortOptionSelect from '../../../../Components/PageAndSortOptionSelect'
 import SolidToggleButtonGroup from '../../../../Components/SolidToggleButtonGroup'
 import WeaponSelectionModal from '../../../../Components/Weapon/WeaponSelectionModal'
 import WeaponCard from '../../../../PageWeapon/WeaponCard'
@@ -47,6 +56,7 @@ import {
 import { initialWeapon } from '../../../../Util/WeaponUtil'
 import CompareBuildButton from './CompareBuildButton'
 
+const numToShowMap = { xs: 2 * 3, sm: 2 * 3, md: 3 * 3, lg: 4 * 3, xl: 4 * 3 }
 const rarityHandler = handleMultiSelect([...allRarityKeys])
 
 export default function WeaponSwapModal({
@@ -90,6 +100,12 @@ export default function WeaponSwapModal({
     [forceUpdate, database]
   )
 
+  const brPt = useMediaQueryUp()
+  const maxNumWeaponsToDisplay = numToShowMap[brPt]
+
+  const [pageIndex, setpageIndex] = useState(0)
+  const invScrollRef = useRef<HTMLDivElement>(null)
+
   const [rarity, setRarity] = useState<RarityKey[]>([5, 4, 3])
   const [searchTerm, setSearchTerm] = useState('')
   const deferredSearchTerm = useDeferredValue(searchTerm)
@@ -115,6 +131,42 @@ export default function WeaponSwapModal({
       [],
     [dbDirty, database, rarity, weaponTypeKey, deferredSearchTerm]
   )
+
+  const { weaponIdsToShow, numPages, currentPageIndex } = useMemo(() => {
+    const numPages = Math.ceil(weaponIdList.length / maxNumWeaponsToDisplay)
+    const currentPageIndex = clamp(pageIndex, 0, numPages - 1)
+    return {
+      weaponIdsToShow: weaponIdList.slice(
+        currentPageIndex * maxNumWeaponsToDisplay,
+        (currentPageIndex + 1) * maxNumWeaponsToDisplay
+      ),
+      numPages,
+      currentPageIndex,
+    }
+  }, [weaponIdList, pageIndex, maxNumWeaponsToDisplay])
+
+  // for pagination
+  const totalShowing = `${weaponIdList.length}`
+  const setPage = useCallback(
+    (e, value) => {
+      invScrollRef.current?.scrollIntoView({ behavior: 'smooth' })
+      setpageIndex(value - 1)
+    },
+    [setpageIndex, invScrollRef]
+  )
+
+  const paginationProps = {
+    count: numPages,
+    page: currentPageIndex + 1,
+    onChange: setPage,
+  }
+
+  const showingTextProps = {
+    numShowing: weaponIdsToShow.length,
+    total: totalShowing,
+    t: t,
+    namespace: 'page_weapon',
+  }
 
   return (
     <ModalWrapper open={show} onClose={onClose}>
@@ -189,6 +241,17 @@ export default function WeaponSwapModal({
               />
             </Grid>
           </Grid>
+          <Box
+            display="flex"
+            justifyContent="space-between"
+            alignItems="center"
+            flexWrap="wrap"
+          >
+            <PageAndSortOptionSelect
+              paginationProps={paginationProps}
+              showingTextProps={showingTextProps}
+            />
+          </Box>
           <Button
             fullWidth
             onClick={() => setnewWeaponModalShow(true)}
@@ -198,7 +261,7 @@ export default function WeaponSwapModal({
             {t('page_weapon:addWeapon')}
           </Button>
           <Grid container spacing={1}>
-            {weaponIdList.map((weaponId) => (
+            {weaponIdsToShow.map((weaponId) => (
               <Grid item key={weaponId} xs={6} sm={6} md={4} lg={3}>
                 <WeaponCard
                   weaponId={weaponId}
@@ -208,6 +271,20 @@ export default function WeaponSwapModal({
               </Grid>
             ))}
           </Grid>
+          {numPages > 1 && (
+            <Box
+              pt={1}
+              display="flex"
+              justifyContent="space-between"
+              alignItems="center"
+              flexWrap="wrap"
+            >
+              <PageAndSortOptionSelect
+                paginationProps={paginationProps}
+                showingTextProps={showingTextProps}
+              />
+            </Box>
+          )}
         </CardContent>
       </CardDark>
     </ModalWrapper>
