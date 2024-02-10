@@ -20,7 +20,7 @@ import {
 import ArtifactCardPico from '../../../../Components/Artifact/ArtifactCardPico'
 import CardLight from '../../../../Components/Card/CardLight'
 import { DataContext } from '../../../../Context/DataContext'
-import { DatabaseContext } from '../../../../Database/Database'
+import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { uiInput as input } from '../../../../Formula'
 import ArtifactCard from '../../../../PageArtifact/ArtifactCard'
 import { erf } from './mathUtil'
@@ -64,7 +64,7 @@ function UpgradeOptChartCardGraph({
   objMax,
   calcExactCallback,
 }: Props) {
-  const { database } = useContext(DatabaseContext)
+  const database = useDatabase()
   const bla = database.arts.get(upgradeOpt.id)
   if (!bla) {
     throw new Error(`artifact ${upgradeOpt.id} not found.`)
@@ -269,7 +269,7 @@ function UpgradeOptChartCardGraph({
 }
 
 function EquippedArtifact({ slotKey }: { slotKey: ArtifactSlotKey }) {
-  const { database } = useContext(DatabaseContext)
+  const database = useDatabase()
   const { data } = useContext(DataContext)
   const artifact = useMemo(
     () => database.arts.get(data.get(input.art[slotKey].id).value),

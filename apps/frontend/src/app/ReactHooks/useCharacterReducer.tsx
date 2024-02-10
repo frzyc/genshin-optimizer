@@ -1,8 +1,8 @@
 import { deepClone } from '@genshin-optimizer/common/util'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
-import { useCallback, useContext } from 'react'
-import { DatabaseContext } from '../Database/Database'
-import type { ICachedCharacter } from '../Types/character'
+import type { ICachedCharacter } from '@genshin-optimizer/gi/db'
+import { useDatabase } from '@genshin-optimizer/gi/db-ui'
+import { useCallback } from 'react'
 import type { IConditionalValues } from '../Types/sheet'
 
 type characterReducerBonusStatsAction = {
@@ -38,7 +38,7 @@ export type characterReducerAction =
   | Partial<ICachedCharacter>
 
 export default function useCharacterReducer(characterKey: CharacterKey | '') {
-  const { database } = useContext(DatabaseContext)
+  const database = useDatabase()
 
   return useCallback(
     (action: characterReducerAction): void => {

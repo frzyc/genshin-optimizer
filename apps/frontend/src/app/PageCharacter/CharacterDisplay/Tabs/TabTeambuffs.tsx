@@ -1,5 +1,6 @@
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import { charKeyToLocGenderedCharKey } from '@genshin-optimizer/gi/consts'
+import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { PersonAdd } from '@mui/icons-material'
 import type { AutocompleteProps } from '@mui/material'
 import {
@@ -31,10 +32,8 @@ import { dataSetEffects, getArtSheet } from '../../../Data/Artifacts'
 import { getCharSheet } from '../../../Data/Characters'
 import type CharacterSheet from '../../../Data/Characters/CharacterSheet'
 import { resonanceSheets } from '../../../Data/Resonance'
-import { DatabaseContext } from '../../../Database/Database'
 import type { NodeDisplay } from '../../../Formula/uiData'
 import useCharSelectionCallback from '../../../ReactHooks/useCharSelectionCallback'
-import useDBMeta from '../../../ReactHooks/useDBMeta'
 import { objPathValue, range } from '../../../Util/Util'
 
 export default function TabTeambuffs() {
@@ -315,7 +314,7 @@ function TeammateAutocomplete({
     'sheet_gen',
     'charNames_gen',
   ])
-  const { database } = useContext(DatabaseContext)
+  const database = useDatabase()
   const { gender } = useDBMeta()
   const { silly } = useContext(SillyContext)
   const namesCB = useCallback(

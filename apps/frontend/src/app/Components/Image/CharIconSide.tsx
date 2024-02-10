@@ -1,10 +1,10 @@
-import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import { characterAsset } from '@genshin-optimizer/gi/assets'
+import type { CharacterKey } from '@genshin-optimizer/gi/consts'
+import { useDBMeta } from '@genshin-optimizer/gi/db-ui'
 import { portrait } from '@genshin-optimizer/gi/silly-wisher'
 import { styled } from '@mui/material'
 import { useContext } from 'react'
 import { SillyContext } from '../../Context/SillyContext'
-import useDBMeta from '../../ReactHooks/useDBMeta'
 interface ImgIconProps {
   size?: number
   sideMargin?: boolean

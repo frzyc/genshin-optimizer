@@ -1,3 +1,4 @@
+import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { CheckBox, CheckBoxOutlineBlank, Upgrade } from '@mui/icons-material'
 import {
   Box,
@@ -14,7 +15,6 @@ import {
   HitModeToggle,
   ReactionToggle,
 } from '../../../../Components/HitModeEditor'
-import useDBMeta from '../../../../ReactHooks/useDBMeta'
 import ArtifactSetConfig from '../TabOptimize/Components/ArtifactSetConfig'
 import BonusStatsCard from '../TabOptimize/Components/BonusStatsCard'
 import OptimizationTargetSelector from '../TabOptimize/Components/OptimizationTargetSelector'
@@ -30,6 +30,7 @@ import {
   allArtifactSlotKeys,
   charKeyToLocCharKey,
 } from '@genshin-optimizer/gi/consts'
+import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
 import {
   Suspense,
   useCallback,
@@ -44,14 +45,12 @@ import ArtifactLevelSlider from '../../../../Components/Artifact/ArtifactLevelSl
 import { CharacterContext } from '../../../../Context/CharacterContext'
 import type { dataContextObj } from '../../../../Context/DataContext'
 import { DataContext } from '../../../../Context/DataContext'
-import { DatabaseContext } from '../../../../Database/Database'
 import { mergeData, uiDataForTeam } from '../../../../Formula/api'
 import { optimize } from '../../../../Formula/optimization'
 import type { NumNode } from '../../../../Formula/type'
 import useCharSelectionCallback from '../../../../ReactHooks/useCharSelectionCallback'
 import useTeamData, { getTeamData } from '../../../../ReactHooks/useTeamData'
 import type { DynStat } from '../../../../Solver/common'
-import type { ICachedArtifact } from '../../../../Types/artifact'
 import { objPathValue, shouldShowDevComponents } from '../../../../Util/Util'
 import MainStatSelectionCard from '../TabOptimize/Components/MainStatSelectionCard'
 import { dynamicData } from '../TabOptimize/foreground'
@@ -62,13 +61,13 @@ import { Stack } from '@mui/system'
 import AddArtInfo from '../../../../Components/AddArtInfo'
 import NoArtWarning from '../../../../Components/NoArtWarning'
 import type { UpOptBuild } from './upOpt'
-import { toArtifact, UpOptCalculator } from './upOpt'
+import { UpOptCalculator, toArtifact } from './upOpt'
 
 export default function TabUpopt() {
   const {
     character: { key: characterKey },
   } = useContext(CharacterContext)
-  const { database } = useContext(DatabaseContext)
+  const database = useDatabase()
   const { gender } = useDBMeta()
 
   const onClickTeammate = useCharSelectionCallback()

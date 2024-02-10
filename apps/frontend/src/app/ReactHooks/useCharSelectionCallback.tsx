@@ -1,14 +1,14 @@
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
-import { useCallback, useContext } from 'react'
+import { useDatabase } from '@genshin-optimizer/gi/db-ui'
+import { useCallback } from 'react'
 import { useMatch, useNavigate } from 'react-router-dom'
-import { DatabaseContext } from '../Database/Database'
 
 /**
  * Basically a history hook to go to the dedicated character page. Will create the character if it doesn't exist.
  * @returns
  */
 export default function useCharSelectionCallback() {
-  const { database } = useContext(DatabaseContext)
+  const database = useDatabase()
   const navigate = useNavigate()
   // Used to maintain the previous tab, if there is one
   const {

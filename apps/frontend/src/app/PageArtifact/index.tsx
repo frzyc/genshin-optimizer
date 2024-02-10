@@ -9,13 +9,13 @@ import {
   sortFunction,
 } from '@genshin-optimizer/common/util'
 import type { SubstatKey } from '@genshin-optimizer/gi/consts'
+import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { Add } from '@mui/icons-material'
 import DifferenceIcon from '@mui/icons-material/Difference'
 import { Box, Button, CardContent, Grid, Skeleton } from '@mui/material'
 import React, {
   Suspense,
   useCallback,
-  useContext,
   useDeferredValue,
   useEffect,
   useMemo,
@@ -30,7 +30,6 @@ import BootstrapTooltip from '../Components/BootstrapTooltip'
 import CardDark from '../Components/Card/CardDark'
 import InfoComponent from '../Components/InfoComponent'
 import PageAndSortOptionSelect from '../Components/PageAndSortOptionSelect'
-import { DatabaseContext } from '../Database/Database'
 import useDisplayArtifact from '../ReactHooks/useDisplayArtifact'
 import ArtifactCard from './ArtifactCard'
 import ArtifactFilter, { ArtifactRedButtons } from './ArtifactFilter'
@@ -54,7 +53,7 @@ const numToShowMap = { xs: 10, sm: 12, md: 24, lg: 24, xl: 24 }
 
 export default function PageArtifact() {
   const { t } = useTranslation(['artifact', 'ui'])
-  const { database } = useContext(DatabaseContext)
+  const database = useDatabase()
   const artifactDisplayState = useDisplayArtifact()
 
   const [showEditor, onShowEditor, onHideEditor] = useBoolState(false)

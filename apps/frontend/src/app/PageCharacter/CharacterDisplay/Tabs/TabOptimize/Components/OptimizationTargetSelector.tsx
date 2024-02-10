@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next'
 import ImgIcon from '../../../../../Components/Image/ImgIcon'
 import SqBadge from '../../../../../Components/SqBadge'
 import { DataContext } from '../../../../../Context/DataContext'
-import { DatabaseContext } from '../../../../../Database/Database'
+import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { getDisplayHeader } from '../../../../../Formula/DisplayUtil'
 import type { NodeDisplay } from '../../../../../Formula/uiData'
 import { objPathValue } from '../../../../../Util/Util'
@@ -38,7 +38,7 @@ export default function OptimizationTargetSelector({
     [onClose, setTarget]
   )
   const { data } = useContext(DataContext)
-  const { database } = useContext(DatabaseContext)
+  const database = useDatabase()
   const displayHeader = useMemo(
     () =>
       optimizationTarget &&

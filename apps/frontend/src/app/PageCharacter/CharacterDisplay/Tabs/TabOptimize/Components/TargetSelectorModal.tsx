@@ -14,7 +14,7 @@ import ImgIcon from '../../../../../Components/Image/ImgIcon'
 import ModalWrapper from '../../../../../Components/ModalWrapper'
 import SqBadge from '../../../../../Components/SqBadge'
 import { DataContext } from '../../../../../Context/DataContext'
-import { DatabaseContext } from '../../../../../Database/Database'
+import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import {
   getDisplayHeader,
   getDisplaySections,
@@ -97,7 +97,7 @@ function SelectorSection({
   flatOnly?: boolean
 }) {
   const { data } = useContext(DataContext)
-  const { database } = useContext(DatabaseContext)
+  const database = useDatabase()
   const header = useMemo(
     () => getDisplayHeader(data, sectionKey, database),
     [data, sectionKey, database]

@@ -9,6 +9,7 @@ import {
 } from '@genshin-optimizer/common/util'
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
 import { allRarityKeys, allWeaponTypeKeys } from '@genshin-optimizer/gi/consts'
+import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { Add } from '@mui/icons-material'
 import {
   Box,
@@ -23,7 +24,6 @@ import React, {
   Suspense,
   lazy,
   useCallback,
-  useContext,
   useDeferredValue,
   useEffect,
   useMemo,
@@ -37,7 +37,6 @@ import PageAndSortOptionSelect from '../Components/PageAndSortOptionSelect'
 import WeaponRarityToggle from '../Components/ToggleButton/WeaponRarityToggle'
 import WeaponToggle from '../Components/ToggleButton/WeaponToggle'
 import { getWeaponSheet } from '../Data/Weapons'
-import { DatabaseContext } from '../Database/Database'
 import {
   weaponFilterConfigs,
   weaponSortConfigs,
@@ -58,7 +57,7 @@ const numToShowMap = { xs: 10, sm: 12, md: 24, lg: 24, xl: 24 }
 const sortKeys = Object.keys(weaponSortMap)
 export default function PageWeapon() {
   const { t } = useTranslation(['page_weapon', 'ui', 'weaponNames_gen'])
-  const { database } = useContext(DatabaseContext)
+  const database = useDatabase()
   const [state, setState] = useState(database.displayWeapon.get())
   useEffect(
     () => database.displayWeapon.follow((r, dbMeta) => setState(dbMeta)),

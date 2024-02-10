@@ -4,20 +4,20 @@ import {
   SECOND_MS,
   timeString,
 } from '@genshin-optimizer/common/util'
+import type { TimeZoneKey } from '@genshin-optimizer/gi/db'
+import { timeZones } from '@genshin-optimizer/gi/db'
+import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import AccessTimeFilledIcon from '@mui/icons-material/AccessTimeFilled'
 import { CardContent, Divider, Grid, MenuItem, Typography } from '@mui/material'
-import { useCallback, useContext, useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import CardDark from '../Components/Card/CardDark'
 import DropdownButton from '../Components/DropdownMenu/DropdownButton'
-import type { TimeZoneKey } from '../Database/DataEntries/DisplayTool'
-import { timeZones } from '../Database/DataEntries/DisplayTool'
-import { DatabaseContext } from '../Database/Database'
 
 export function initToolsDisplayTimezone() {
   return { timeZoneKey: Object.keys(timeZones)[0] as TimeZoneKey }
 }
 export default function TeyvatTime() {
-  const { database } = useContext(DatabaseContext)
+  const database = useDatabase()
   const [{ timeZoneKey }, setState] = useState(() => database.displayTool.get())
   useEffect(
     () => database.displayTool.follow((r, s) => setState(s)),

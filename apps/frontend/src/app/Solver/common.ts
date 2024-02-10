@@ -12,7 +12,7 @@ import {
 import type {
   ArtSetExclusion,
   ArtSetExclusionKey,
-} from '../Database/DataManagers/BuildSettingData'
+} from '@genshin-optimizer/gi/db'
 import { forEachNodes, mapFormulas } from '../Formula/internal'
 import type { OptNode } from '../Formula/optimization'
 import { allOperations, constantFold } from '../Formula/optimization'

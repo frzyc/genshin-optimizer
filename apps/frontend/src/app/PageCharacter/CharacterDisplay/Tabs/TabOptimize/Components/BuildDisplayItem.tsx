@@ -4,6 +4,13 @@ import {
   allArtifactSlotKeys,
   charKeyToLocCharKey,
 } from '@genshin-optimizer/gi/consts'
+import type {
+  AllowLocationsState,
+  ArtSetExclusionKey,
+  ICachedArtifact,
+} from '@genshin-optimizer/gi/db'
+import { allArtifactSetExclusionKeys } from '@genshin-optimizer/gi/db'
+import { useArtifact, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { Checkroom, ChevronRight } from '@mui/icons-material'
 import BlockIcon from '@mui/icons-material/Block'
 import CheckBoxIcon from '@mui/icons-material/CheckBox'
@@ -31,16 +38,8 @@ import WeaponCardNano from '../../../../../Components/Weapon/WeaponCardNano'
 import { CharacterContext } from '../../../../../Context/CharacterContext'
 import { DataContext } from '../../../../../Context/DataContext'
 import { getCharSheet } from '../../../../../Data/Characters'
-import type {
-  AllowLocationsState,
-  ArtSetExclusionKey,
-} from '../../../../../Database/DataManagers/BuildSettingData'
-import { allArtifactSetExclusionKeys } from '../../../../../Database/DataManagers/BuildSettingData'
-import { DatabaseContext } from '../../../../../Database/Database'
 import { uiInput as input } from '../../../../../Formula'
 import ArtifactCard from '../../../../../PageArtifact/ArtifactCard'
-import useArtifact from '../../../../../ReactHooks/useArtifact'
-import type { ICachedArtifact } from '../../../../../Types/artifact'
 import useBuildSetting from '../useBuildSetting'
 import { ArtifactSetBadges } from './ArtifactSetBadges'
 import SetInclusionButton from './SetInclusionButton'
@@ -71,7 +70,7 @@ export default function BuildDisplayItem({
   const {
     buildSetting: { mainStatAssumptionLevel, allowLocationsState },
   } = useBuildSetting(characterKey)
-  const { database } = useContext(DatabaseContext)
+  const database = useDatabase()
   const dataContext = useContext(DataContext)
 
   const { data, oldData } = dataContext
@@ -232,7 +231,7 @@ function CompareArtifactModal({
   onClose: () => void
   allowLocationsState: AllowLocationsState
 }) {
-  const { database } = useContext(DatabaseContext)
+  const database = useDatabase()
   const {
     character: { key: characterKey },
   } = useContext(CharacterContext)
@@ -358,7 +357,7 @@ function ExcludeEquipButton({
   const {
     character: { key: characterKey },
   } = useContext(CharacterContext)
-  const { database } = useContext(DatabaseContext)
+  const database = useDatabase()
   const characterSheet = getCharSheet(
     database.chars.LocationToCharacterKey(locationKey)
   )

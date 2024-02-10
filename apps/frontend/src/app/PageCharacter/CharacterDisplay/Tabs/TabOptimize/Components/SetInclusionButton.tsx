@@ -1,3 +1,5 @@
+import type { ArtSetExclusionKey } from '@genshin-optimizer/gi/db'
+import { handleArtSetExclusion } from '@genshin-optimizer/gi/db'
 import { CheckBox, CheckBoxOutlineBlank } from '@mui/icons-material'
 import BlockIcon from '@mui/icons-material/Block'
 import ShowChartIcon from '@mui/icons-material/ShowChart'
@@ -6,8 +8,6 @@ import { Button, ButtonGroup } from '@mui/material'
 import { useContext } from 'react'
 import { useTranslation } from 'react-i18next'
 import { CharacterContext } from '../../../../../Context/CharacterContext'
-import type { ArtSetExclusionKey } from '../../../../../Database/DataManagers/BuildSettingData'
-import { handleArtSetExclusion } from '../../../../../Database/DataManagers/BuildSettingData'
 import useBuildSetting from '../useBuildSetting'
 
 export default function SetInclusionButton({

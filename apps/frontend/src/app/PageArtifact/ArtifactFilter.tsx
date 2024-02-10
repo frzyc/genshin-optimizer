@@ -1,16 +1,16 @@
-import ReplayIcon from '@mui/icons-material/Replay'
+import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
+import { useDatabase } from '@genshin-optimizer/gi/db-ui'
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import LockIcon from '@mui/icons-material/Lock'
 import LockOpenIcon from '@mui/icons-material/LockOpen'
-import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import PersonOffIcon from '@mui/icons-material/PersonOff'
+import ReplayIcon from '@mui/icons-material/Replay'
 import { Button, CardContent, Grid, Skeleton, Typography } from '@mui/material'
-import { lazy, Suspense, useCallback, useContext, useMemo } from 'react'
+import { Suspense, lazy, useCallback, useMemo } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
 import CardDark from '../Components/Card/CardDark'
 import SqBadge from '../Components/SqBadge'
-import { DatabaseContext } from '../Database/Database'
 import useDisplayArtifact from '../ReactHooks/useDisplayArtifact'
-import type { ICachedArtifact } from '../Types/artifact'
 import type { FilterOption } from './ArtifactSort'
 const ArtifactFilterDisplay = lazy(
   () => import('../Components/Artifact/ArtifactFilterDisplay')
@@ -26,7 +26,7 @@ export default function ArtifactFilter({
   artifactIds: string[]
 }) {
   const { t } = useTranslation(['artifact', 'ui'])
-  const { database } = useContext(DatabaseContext)
+  const database = useDatabase()
   const { filterOption } = useDisplayArtifact()
   const filterOptionDispatch = useCallback(
     (option: Partial<FilterOption>) =>
@@ -95,7 +95,7 @@ export default function ArtifactFilter({
 
 export function ArtifactRedButtons({ artifactIds }: { artifactIds: string[] }) {
   const { t } = useTranslation(['artifact', 'ui'])
-  const { database } = useContext(DatabaseContext)
+  const database = useDatabase()
   const { numDelete, numUnequip, numUnlock, numLock } = useMemo(() => {
     const artifacts = artifactIds.map((id) =>
       database.arts.get(id)

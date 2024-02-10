@@ -12,8 +12,8 @@ import {
   allArtifactSlotKeys,
   allSubstatKeys,
 } from '@genshin-optimizer/gi/consts'
+import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
 import Artifact from '../Data/Artifacts/Artifact'
-import type { ICachedArtifact } from '../Types/artifact'
 import { probability } from './RollProbability'
 export const artifactSortKeys = [
   'rarity',
