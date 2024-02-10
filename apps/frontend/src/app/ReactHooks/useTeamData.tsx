@@ -110,7 +110,9 @@ export function getTeamDataCalc(
     database.cacheTeamData(characterKey, data)
   return data
 }
-
+/**
+ * This is now used more for getting basic stat for a single char with some basic assumptions
+ */
 export function getTeamData(
   database: ArtCharDatabase,
   characterKey: CharacterKey | '',
@@ -142,24 +144,24 @@ export function getTeamData(
     [characterKey]: char1DataBundle.data,
   }
 
-  char1DataBundle.character.team.forEach((ck) => {
-    if (!ck) return
-    const tchar = database.chars.get(ck)
-    if (!tchar) return
-    const databundle = getCharDataBundle(
-      database,
-      false,
-      0,
-      { ...tchar, conditional: character.teamConditional[ck] ?? {} },
-      database.weapons.get(tchar.equippedWeapon) ?? defaultInitialWeapon(),
-      Object.values(tchar.equippedArtifacts)
-        .map((a) => database.arts.get(a))
-        .filter((a) => a) as ICachedArtifact[]
-    )
-    if (!databundle) return
-    teamBundle[ck] = databundle
-    teamData[ck] = databundle.data
-  })
+  // char1DataBundle.character.team.forEach((ck) => {
+  //   if (!ck) return
+  //   const tchar = database.chars.get(ck)
+  //   if (!tchar) return
+  //   const databundle = getCharDataBundle(
+  //     database,
+  //     false,
+  //     0,
+  //     { ...tchar, conditional: character.teamConditional[ck] ?? {} },
+  //     database.weapons.get(tchar.equippedWeapon) ?? defaultInitialWeapon(),
+  //     Object.values(tchar.equippedArtifacts)
+  //       .map((a) => database.arts.get(a))
+  //       .filter((a) => a) as ICachedArtifact[]
+  //   )
+  //   if (!databundle) return
+  //   teamBundle[ck] = databundle
+  //   teamData[ck] = databundle.data
+  // })
 
   return { teamData, teamBundle }
 }
@@ -206,7 +208,7 @@ function getCharDataBundle(
     : [artifacts]
   const data = [
     ...artifactData,
-    dataObjForCharacter(character, useCustom ? sheetData : undefined),
+    dataObjForCharacter(character),
     dataObjForWeapon(weapon),
     sheetData,
     common, // NEED TO PUT THIS AT THE END

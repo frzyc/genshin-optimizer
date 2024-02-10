@@ -22,7 +22,7 @@ import {
 } from '../../Components/HitModeEditor'
 import LevelSelect from '../../Components/LevelSelect'
 import SqBadge from '../../Components/SqBadge'
-import { CharacterContext } from '../../Context/CharacterContext'
+import { TeamCharacterContext } from '../../Context/TeamCharacterContext'
 import { FormulaDataContext } from '../../Context/FormulaDataContext'
 import useCharacterReducer from '../../ReactHooks/useCharacterReducer'
 import { shouldShowDevComponents } from '../../Util/Util'
@@ -179,8 +179,8 @@ function DetailStatButton() {
   const { t } = useTranslation('page_character')
   const [open, onOpen, onClose] = useBoolState()
   const {
-    character: { bonusStats },
-  } = useContext(CharacterContext)
+    teamChar: { bonusStats },
+  } = useContext(TeamCharacterContext)
   const bStatsNum = Object.keys(bonusStats).length
   return (
     <>

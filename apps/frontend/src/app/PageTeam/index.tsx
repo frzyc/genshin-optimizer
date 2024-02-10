@@ -4,6 +4,7 @@ import {
   useCharacter,
   useDBMeta,
   useDatabase,
+  useTeam,
 } from '@genshin-optimizer/gi/db-ui'
 import { Box, CardContent, Skeleton } from '@mui/material'
 import { Suspense, useCallback, useContext, useMemo, useState } from 'react'
@@ -11,9 +12,9 @@ import { useTranslation } from 'react-i18next'
 import { Navigate, useMatch, useNavigate, useParams } from 'react-router-dom'
 import CloseButton from '../Components/CloseButton'
 import {
-  CharacterContext,
-  type CharacterContextObj,
-} from '../Context/CharacterContext'
+  TeamCharacterContext,
+  type TeamCharacterContextObj,
+} from '../Context/TeamCharacterContext'
 import { DataContext, type dataContextObj } from '../Context/DataContext'
 import { FormulaDataWrapper } from '../Context/FormulaDataContext'
 import {
@@ -23,7 +24,6 @@ import {
 } from '../Context/GraphContext'
 import { SillyContext } from '../Context/SillyContext'
 import { getCharSheet } from '../Data/Characters'
-import useCharacterReducer from '../ReactHooks/useCharacterReducer'
 import useTeamDataNew from '../ReactHooks/useTeamDataNew'
 import useTitle from '../ReactHooks/useTitle'
 import Content from './CharacterDisplay/Context'
@@ -54,17 +54,16 @@ function Page({ teamId, onClose }: { teamId: string; onClose?: () => void }) {
   const { gender } = useDBMeta()
   const database = useDatabase()
   const [currentCharIndex, setCurrentCharIndex] = useState(0)
-  const team = database.teams.get(teamId)
+  const team = useTeam(teamId)
   const { characterIds } = team
   const {
     params: { tab = 'overview' },
   } = useMatch({ path: '/teams/:teamId/:tab', end: false }) ?? {
     params: { tab: 'overview' },
   }
-
-  const characterKey = database.teamChars.get(
-    characterIds[currentCharIndex]
-  )?.key
+  const teamCharId = characterIds[currentCharIndex]
+  const teamChar = database.teamChars.get(teamCharId)
+  const characterKey = teamChar?.key
 
   const { t } = useTranslation([
     'sillyWisher_charNames',
@@ -90,8 +89,6 @@ function Page({ teamId, onClose }: { teamId: string; onClose?: () => void }) {
   const character = useCharacter(characterKey)
   const { target: charUIData } = teamData?.[characterKey] ?? {}
 
-  const characterDispatch = useCharacterReducer(character?.key ?? '')
-
   const dataContextValue: dataContextObj | undefined = useMemo(() => {
     if (!teamData || !charUIData) return undefined
     return {
@@ -101,14 +98,17 @@ function Page({ teamId, onClose }: { teamId: string; onClose?: () => void }) {
     }
   }, [charUIData, teamData])
 
-  const characterContextValue: CharacterContextObj | undefined = useMemo(() => {
+  const characterContextValue: TeamCharacterContextObj | undefined = useMemo(() => {
     if (!character || !characterSheet) return undefined
     return {
+      teamId,
+      team,
+      teamCharId,
+      teamChar,
       character,
       characterSheet,
-      characterDispatch,
     }
-  }, [character, characterSheet, characterDispatch])
+  }, [teamId, team, teamCharId, teamChar, character, characterSheet])
 
   const [chartData, setChartData] = useState(undefined as ChartData | undefined)
   const [graphBuilds, setGraphBuilds] = useState<string[][]>()
@@ -143,7 +143,7 @@ function Page({ teamId, onClose }: { teamId: string; onClose?: () => void }) {
           setCurrentCharIndex={setCurrentCharIndex}
         />
         {dataContextValue && characterContextValue && graphContextValue ? (
-          <CharacterContext.Provider value={characterContextValue}>
+          <TeamCharacterContext.Provider value={characterContextValue}>
             <DataContext.Provider value={dataContextValue}>
               <GraphContext.Provider value={graphContextValue}>
                 <FormulaDataWrapper>
@@ -151,7 +151,7 @@ function Page({ teamId, onClose }: { teamId: string; onClose?: () => void }) {
                 </FormulaDataWrapper>
               </GraphContext.Provider>
             </DataContext.Provider>
-          </CharacterContext.Provider>
+          </TeamCharacterContext.Provider>
         ) : (
           <Skeleton variant="rectangular" width="100%" height={1000} />
         )}

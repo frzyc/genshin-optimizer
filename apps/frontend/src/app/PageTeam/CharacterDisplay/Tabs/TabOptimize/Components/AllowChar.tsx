@@ -56,7 +56,7 @@ import SqBadge from '../../../../../Components/SqBadge'
 import CharacterRarityToggle from '../../../../../Components/ToggleButton/CharacterRarityToggle'
 import ElementToggle from '../../../../../Components/ToggleButton/ElementToggle'
 import WeaponToggle from '../../../../../Components/ToggleButton/WeaponToggle'
-import { CharacterContext } from '../../../../../Context/CharacterContext'
+import { TeamCharacterContext } from '../../../../../Context/TeamCharacterContext'
 import { SillyContext } from '../../../../../Context/SillyContext'
 import { getCharSheet } from '../../../../../Data/Characters'
 import { characterFilterConfigs } from '../../../../../Util/CharacterSort'
@@ -79,7 +79,7 @@ export default function AllowChar({
   const { t: t_pc } = useTranslation('page_character')
   const {
     character: { key: characterKey },
-  } = useContext(CharacterContext)
+  } = useContext(TeamCharacterContext)
   const { silly } = useContext(SillyContext)
   const {
     buildSetting: { excludedLocations, allowLocationsState },

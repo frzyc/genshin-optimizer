@@ -35,7 +35,7 @@ import ColorText from '../../../../../Components/ColoredText'
 import ModalWrapper from '../../../../../Components/ModalWrapper'
 import SqBadge from '../../../../../Components/SqBadge'
 import WeaponCardNano from '../../../../../Components/Weapon/WeaponCardNano'
-import { CharacterContext } from '../../../../../Context/CharacterContext'
+import { TeamCharacterContext } from '../../../../../Context/TeamCharacterContext'
 import { DataContext } from '../../../../../Context/DataContext'
 import { getCharSheet } from '../../../../../Data/Characters'
 import { uiInput as input } from '../../../../../Formula'
@@ -66,7 +66,7 @@ export default function BuildDisplayItem({
 }: BuildDisplayItemProps) {
   const {
     character: { key: characterKey, equippedArtifacts },
-  } = useContext(CharacterContext)
+  } = useContext(TeamCharacterContext)
   const {
     buildSetting: { mainStatAssumptionLevel, allowLocationsState },
   } = useBuildSetting(characterKey)
@@ -234,7 +234,7 @@ function CompareArtifactModal({
   const database = useDatabase()
   const {
     character: { key: characterKey },
-  } = useContext(CharacterContext)
+  } = useContext(TeamCharacterContext)
   const onEquip = useCallback(() => {
     if (
       !window.confirm('Do you want to equip this artifact to this character?')
@@ -312,7 +312,7 @@ function ExcludeButton({ id }: { id: string }) {
   const { t } = useTranslation('page_character_optimize')
   const {
     character: { key: characterKey },
-  } = useContext(CharacterContext)
+  } = useContext(TeamCharacterContext)
   const {
     buildSetting: { artExclusion },
     buildSettingDispatch,
@@ -356,7 +356,7 @@ function ExcludeEquipButton({
   const { t } = useTranslation('page_character_optimize')
   const {
     character: { key: characterKey },
-  } = useContext(CharacterContext)
+  } = useContext(TeamCharacterContext)
   const database = useDatabase()
   const characterSheet = getCharSheet(
     database.chars.LocationToCharacterKey(locationKey)

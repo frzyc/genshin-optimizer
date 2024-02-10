@@ -104,15 +104,14 @@ function dataObjForArtifact(
 
 /**
  * @deprecated
- * when sheetData is supplied, then it is assumed that the data is in "Custom Multi-target" mode
  */
-function dataObjForCharacter(char: ICachedCharacter, sheetData?: Data): Data {
+function dataObjForCharacter(char: ICachedCharacter): Data {
   const result: Data = {
     lvl: constant(char.level),
     constellation: constant(char.constellation),
     asc: constant(char.ascension),
     infusion: {
-      team: char.infusionAura ? constant(char.infusionAura) : undefined,
+      team: undefined,
     },
     premod: {
       auto: constant(char.talent.auto),
@@ -122,76 +121,14 @@ function dataObjForCharacter(char: ICachedCharacter, sheetData?: Data): Data {
     enemy: {
       ...objKeyMap(
         allElementWithPhyKeys.map((ele) => `${ele}_res_`),
-        (ele) =>
-          percent(
-            (char.enemyOverride[`${ele.slice(0, -5)}_enemyRes_`] ?? 10) / 100
-          )
+        (ele) => percent(10 / 100)
       ),
-      level: constant(char.enemyOverride.enemyLevel ?? char.level),
+      level: constant(100),
     },
     hit: {
-      hitMode: constant(char.hitMode),
-      reaction: constant(char.reaction),
+      hitMode: constant('avgHit'),
     },
     customBonus: {},
-  }
-
-  for (const [key, value] of Object.entries(char.bonusStats))
-    result.customBonus![key] = key.endsWith('_')
-      ? percent(value / 100)
-      : constant(value)
-
-  if (char.enemyOverride.enemyDefRed_)
-    result.premod!.enemyDefRed_ = percent(char.enemyOverride.enemyDefRed_ / 100)
-  if (char.enemyOverride.enemyDefIgn_)
-    result.enemy!.defIgn = percent(char.enemyOverride.enemyDefIgn_ / 100)
-
-  crawlObject(
-    char.conditional,
-    ['conditional'],
-    (x: any) => typeof x === 'string',
-    (x: string, keys: string[]) => layeredAssignment(result, keys, constant(x))
-  )
-
-  if (sheetData?.display) {
-    sheetData.display.custom = {}
-    const customMultiTarget = char.customMultiTarget
-    customMultiTarget.forEach(({ name, targets }, i) => {
-      const targetNodes = targets.map(
-        ({ weight, path, hitMode, reaction, infusionAura, bonusStats }) => {
-          const targetNode = objPathValue(sheetData.display, path) as
-            | NumNode
-            | undefined
-          if (!targetNode) return constant(0)
-          if (hitMode === 'global') hitMode = char.hitMode
-
-          return prod(
-            constant(weight),
-            infoMut(
-              data(targetNode, {
-                premod: objectMap(bonusStats, (v, k) =>
-                  k.endsWith('_') ? percent(v / 100) : constant(v)
-                ),
-                hit: {
-                  hitMode: constant(hitMode),
-                  reaction: reaction ? constant(reaction) : none,
-                },
-                infusion: {
-                  team: infusionAura ? constant(infusionAura) : none,
-                },
-              }),
-              { pivot: true }
-            )
-          )
-        }
-      )
-      // Make the variant "invalid" because its not easy to determine variants in multitarget
-      const multiTargetNode = infoMut(sum(...targetNodes), {
-        name,
-        variant: 'invalid',
-      })
-      sheetData.display!.custom[i] = multiTargetNode
-    })
   }
   return result
 }

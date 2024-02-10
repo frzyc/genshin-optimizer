@@ -14,6 +14,7 @@ import {
   allArtifactSetExclusionKeys,
   handleArtSetExclusion,
 } from '@genshin-optimizer/gi/db'
+import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { CheckBox, CheckBoxOutlineBlank, Replay } from '@mui/icons-material'
 import BlockIcon from '@mui/icons-material/Block'
 import SettingsIcon from '@mui/icons-material/Settings'
@@ -40,12 +41,11 @@ import { InfoTooltipInline } from '../../../../../Components/InfoTooltip'
 import ModalWrapper from '../../../../../Components/ModalWrapper'
 import SqBadge from '../../../../../Components/SqBadge'
 import { Translate } from '../../../../../Components/Translate'
-import { CharacterContext } from '../../../../../Context/CharacterContext'
+import { TeamCharacterContext } from '../../../../../Context/TeamCharacterContext'
 import type { dataContextObj } from '../../../../../Context/DataContext'
 import { DataContext } from '../../../../../Context/DataContext'
 import { getArtSheet, setKeysByRarities } from '../../../../../Data/Artifacts'
 import { artifactDefIcon } from '../../../../../Data/Artifacts/ArtifactSheet'
-import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { UIData } from '../../../../../Formula/uiData'
 import { constant } from '../../../../../Formula/utils'
 import type { SetNum } from '../../../../../Types/consts'
@@ -62,9 +62,10 @@ export default function ArtifactSetConfig({
   const dataContext = useContext(DataContext)
   const database = useDatabase()
   const {
-    character: { key: characterKey, conditional },
-    characterDispatch,
-  } = useContext(CharacterContext)
+    character: { key: characterKey },
+    teamChar: { conditional },
+    teamCharId,
+  } = useContext(TeamCharacterContext)
   const {
     buildSetting: { artSetExclusion },
     buildSettingDispatch,
@@ -146,8 +147,10 @@ export default function ArtifactSetConfig({
         ([k]) => !allArtifactSetKeys.includes(k as any)
       )
     )
-    characterDispatch({ conditional: tconditional })
-  }, [conditional, characterDispatch])
+    database.teamChars.set(teamCharId, (teamChar) => {
+      teamChar.conditional = tconditional
+    })
+  }, [database, teamCharId, conditional])
   const setAllExclusion = useCallback(
     (setnum: number, exclude = true) => {
       const artSetExclusion_ = deepClone(artSetExclusion)
@@ -547,7 +550,7 @@ function ArtifactSetCard({
   const { t } = useTranslation('sheet')
   const {
     character: { key: characterKey },
-  } = useContext(CharacterContext)
+  } = useContext(TeamCharacterContext)
   const { buildSetting } = useBuildSetting(characterKey)
   const { artSetExclusion } = buildSetting
   const setExclusionSet = artSetExclusion?.[setKey] ?? []

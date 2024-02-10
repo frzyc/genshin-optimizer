@@ -35,7 +35,7 @@ import CloseButton from '../../../../../Components/CloseButton'
 import InfoTooltip from '../../../../../Components/InfoTooltip'
 import ModalWrapper from '../../../../../Components/ModalWrapper'
 import SqBadge from '../../../../../Components/SqBadge'
-import { CharacterContext } from '../../../../../Context/CharacterContext'
+import { TeamCharacterContext } from '../../../../../Context/TeamCharacterContext'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import ArtifactCard from '../../../../../PageArtifact/ArtifactCard'
 import {
@@ -54,7 +54,7 @@ export default function ExcludeArt({
   const { t } = useTranslation('page_character_optimize')
   const {
     character: { key: characterKey },
-  } = useContext(CharacterContext)
+  } = useContext(TeamCharacterContext)
   const {
     buildSetting: { artExclusion, useExcludedArts },
     buildSettingDispatch,

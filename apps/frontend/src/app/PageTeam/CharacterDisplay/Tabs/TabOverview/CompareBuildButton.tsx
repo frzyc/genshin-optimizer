@@ -10,7 +10,7 @@ import {
   ReactionToggle,
 } from '../../../../Components/HitModeEditor'
 import ModalWrapper from '../../../../Components/ModalWrapper'
-import { CharacterContext } from '../../../../Context/CharacterContext'
+import { TeamCharacterContext } from '../../../../Context/TeamCharacterContext'
 import { DataContext } from '../../../../Context/DataContext'
 import useTeamData from '../../../../ReactHooks/useTeamData'
 import BuildDisplayItem from '../TabOptimize/Components/BuildDisplayItem'
@@ -59,7 +59,7 @@ function CompareContent({
   const database = useDatabase()
   const {
     character: { key: characterKey, equippedArtifacts },
-  } = useContext(CharacterContext)
+  } = useContext(TeamCharacterContext)
   const {
     buildSetting: { mainStatAssumptionLevel },
   } = useBuildSetting(characterKey)

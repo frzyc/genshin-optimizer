@@ -1,6 +1,6 @@
 import { imgAssets } from '@genshin-optimizer/gi/assets'
 import { charCard } from '@genshin-optimizer/gi/char-cards'
-import type { AscensionKey, CharacterKey } from '@genshin-optimizer/gi/consts'
+import type { AscensionKey } from '@genshin-optimizer/gi/consts'
 import { allArtifactSlotKeys } from '@genshin-optimizer/gi/consts'
 import {
   useCharMeta,
@@ -24,9 +24,6 @@ import { useCallback, useContext, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 import ArtifactCardNano from '../../../../Components/Artifact/ArtifactCardNano'
 import CardLight from '../../../../Components/Card/CardLight'
-import CharacterCardPico, {
-  BlankCharacterCardPico,
-} from '../../../../Components/Character/CharacterCardPico'
 import StatDisplayComponent from '../../../../Components/Character/StatDisplayComponent'
 import ImgIcon from '../../../../Components/Image/ImgIcon'
 import SqBadge from '../../../../Components/SqBadge'
@@ -110,7 +107,7 @@ function CharacterProfileCard() {
   const { silly } = useContext(SillyContext)
   const {
     characterSheet,
-    character: { key: characterKey, team },
+    character: { key: characterKey },
   } = useContext(CharacterContext)
   const { gender } = useDBMeta()
   const { data } = useContext(DataContext)
@@ -209,19 +206,6 @@ function CharacterProfileCard() {
             </Grid>
           ))}
         </Grid>
-        <CardActionArea sx={{ p: 1 }} onClick={() => navigate('teambuffs')}>
-          <Grid container columns={3} spacing={1}>
-            {range(0, 2).map((i) => (
-              <Grid key={i} item xs={1} height="100%">
-                {team[i] ? (
-                  <CharacterCardPico characterKey={team[i] as CharacterKey} />
-                ) : (
-                  <BlankCharacterCardPico index={i} />
-                )}
-              </Grid>
-            ))}
-          </Grid>
-        </CardActionArea>
       </Box>
     </CardLight>
   )

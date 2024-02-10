@@ -1,6 +1,11 @@
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import { charKeyToLocGenderedCharKey } from '@genshin-optimizer/gi/consts'
-import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
+import {
+  useCharacter,
+  useDBMeta,
+  useDatabase,
+  useTeamChar,
+} from '@genshin-optimizer/gi/db-ui'
 import { PersonAdd } from '@mui/icons-material'
 import type { AutocompleteProps } from '@mui/material'
 import {
@@ -23,8 +28,8 @@ import type { GeneralAutocompleteOption } from '../../../Components/GeneralAutoc
 import { GeneralAutocomplete } from '../../../Components/GeneralAutocomplete'
 import CharIconSide from '../../../Components/Image/CharIconSide'
 import { InfoTooltipInline } from '../../../Components/InfoTooltip'
-import type { CharacterContextObj } from '../../../Context/CharacterContext'
-import { CharacterContext } from '../../../Context/CharacterContext'
+import type { TeamCharacterContextObj } from '../../../Context/TeamCharacterContext'
+import { TeamCharacterContext } from '../../../Context/TeamCharacterContext'
 import type { dataContextObj } from '../../../Context/DataContext'
 import { DataContext } from '../../../Context/DataContext'
 import { SillyContext } from '../../../Context/SillyContext'
@@ -34,6 +39,7 @@ import type CharacterSheet from '../../../Data/Characters/CharacterSheet'
 import { resonanceSheets } from '../../../Data/Resonance'
 import type { NodeDisplay } from '../../../Formula/uiData'
 import useCharSelectionCallback from '../../../ReactHooks/useCharSelectionCallback'
+import useCharacterReducer from '../../../ReactHooks/useCharacterReducer'
 import { objPathValue, range } from '../../../Util/Util'
 
 export default function TabTeambuffs() {
@@ -107,9 +113,9 @@ function ResonanceDisplay() {
   const { t } = useTranslation('page_character')
   const { data } = useContext(DataContext)
   const {
-    character: { team },
-  } = useContext(CharacterContext)
-  const teamCount = team.reduce((a, t) => a + (t ? 1 : 0), 1)
+    team: { characterIds },
+  } = useContext(TeamCharacterContext)
+  const teamCount = characterIds.reduce((a, t) => a + (t ? 1 : 0), 1)
   return (
     <>
       <CardLight>
@@ -158,46 +164,26 @@ function ResonanceDisplay() {
 function TeammateDisplay({ index }: { index: number }) {
   const { teamData } = useContext(DataContext)
   const { t } = useTranslation('page_character')
-  const {
-    character: active,
-    character: { key: activeCharacterKey },
-    characterDispatch,
-  } = useContext(CharacterContext)
-  const teamMateKey = active.team[index]
-  const team = useMemo(
-    () =>
-      [activeCharacterKey, ...active.team].filter((t, i) => i - 1 !== index),
-    [active.team, activeCharacterKey, index]
-  )
+  const { teamId, team } = useContext(TeamCharacterContext)
+  const teamCharId = team.characterIds[index]
+  const teamChar = useTeamChar(teamCharId)
+  const teamMateKey = teamChar.key
+  const character = useCharacter(teamMateKey)
+
   const onClickHandler = useCharSelectionCallback()
-  const setTeammate = useCallback(
-    (charKey: CharacterKey | '') =>
-      characterDispatch({ type: 'team', index, charKey }),
-    [index, characterDispatch]
-  )
 
   const dataBundle = teamData[teamMateKey]
-  const teammateCharacterContext: CharacterContextObj | undefined = useMemo(
+  const teammateCharacterContext: TeamCharacterContextObj | undefined = useMemo(
     () =>
       dataBundle && {
-        character: {
-          ...dataBundle.character,
-          conditional: active.teamConditional[teamMateKey] ?? {},
-        },
+        teamId,
+        team,
+        teamCharId,
+        teamChar,
+        character,
         characterSheet: dataBundle.characterSheet,
-        characterDispatch: (state) => {
-          if (!teamMateKey) return
-          if (!('conditional' in state)) return
-          const { conditional } = state
-          if (!conditional) return
-          characterDispatch({
-            type: 'teamConditional',
-            teamMateKey: teamMateKey,
-            conditional,
-          })
-        },
       },
-    [active, teamMateKey, dataBundle, characterDispatch]
+    [teamId, team, teamCharId, teamChar, character, dataBundle]
   )
   const teamMateDataContext: dataContextObj | undefined = useMemo(
     () =>
@@ -209,14 +195,14 @@ function TeammateDisplay({ index }: { index: number }) {
   )
   return (
     <CardLight sx={{ overflow: 'visible' }}>
-      <TeammateAutocomplete
+      {/* <TeammateAutocomplete
         characterKey={teamMateKey}
         team={team}
         setChar={setTeammate}
         label={t('teammate', { count: index + 1 })}
-      />
+      /> */}
       {teamMateKey && teammateCharacterContext && (
-        <CharacterContext.Provider value={teammateCharacterContext}>
+        <TeamCharacterContext.Provider value={teammateCharacterContext}>
           {teamMateDataContext && (
             <DataContext.Provider value={teamMateDataContext}>
               <CharacterCard
@@ -224,31 +210,37 @@ function TeammateDisplay({ index }: { index: number }) {
                 onClickHeader={onClickHandler}
                 // Need to wrap these elements with the providers for them to use the correct functions.
                 artifactChildren={
-                  <CharacterContext.Provider value={teammateCharacterContext}>
+                  <TeamCharacterContext.Provider
+                    value={teammateCharacterContext}
+                  >
                     <DataContext.Provider value={teamMateDataContext}>
                       <CharArtifactCondDisplay />
                     </DataContext.Provider>
-                  </CharacterContext.Provider>
+                  </TeamCharacterContext.Provider>
                 }
                 weaponChildren={
-                  <CharacterContext.Provider value={teammateCharacterContext}>
+                  <TeamCharacterContext.Provider
+                    value={teammateCharacterContext}
+                  >
                     <DataContext.Provider value={teamMateDataContext}>
                       <CharWeaponCondDisplay />
                     </DataContext.Provider>
-                  </CharacterContext.Provider>
+                  </TeamCharacterContext.Provider>
                 }
                 characterChildren={
-                  <CharacterContext.Provider value={teammateCharacterContext}>
+                  <TeamCharacterContext.Provider
+                    value={teammateCharacterContext}
+                  >
                     <DataContext.Provider value={teamMateDataContext}>
                       <CharTalentCondDisplay />
                     </DataContext.Provider>
-                  </CharacterContext.Provider>
+                  </TeamCharacterContext.Provider>
                 }
                 isTeammateCard
               />
             </DataContext.Provider>
           )}
-        </CharacterContext.Provider>
+        </TeamCharacterContext.Provider>
       )}
     </CardLight>
   )
@@ -268,7 +260,7 @@ function CharArtifactCondDisplay() {
 function CharWeaponCondDisplay() {
   const {
     character: { key: charKey },
-  } = useContext(CharacterContext)
+  } = useContext(TeamCharacterContext)
   const { teamData } = useContext(DataContext)
   const weaponSheet = teamData[charKey]!.weaponSheet
   if (!weaponSheet.document) return null
@@ -277,7 +269,7 @@ function CharWeaponCondDisplay() {
 function CharTalentCondDisplay() {
   const {
     character: { key: charKey },
-  } = useContext(CharacterContext)
+  } = useContext(TeamCharacterContext)
   const { teamData } = useContext(DataContext)
   const characterSheet = teamData[charKey]!.characterSheet as CharacterSheet
   const sections = Object.values(characterSheet.talent).flatMap(
@@ -286,7 +278,7 @@ function CharTalentCondDisplay() {
   if (!sections) return null
   return <DocumentDisplay sections={sections} teamBuffOnly={true} />
 }
-
+// TODO: can probably be used for team selector above? not sure
 function TeammateAutocomplete({
   characterKey,
   team,

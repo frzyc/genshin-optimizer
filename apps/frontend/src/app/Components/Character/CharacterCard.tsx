@@ -1,4 +1,3 @@
-import { range } from '@genshin-optimizer/common/util'
 import { characterAsset } from '@genshin-optimizer/gi/assets'
 import type {
   ArtifactSlotKey,
@@ -49,7 +48,6 @@ import SqBadge from '../SqBadge'
 import { StarsDisplay } from '../StarDisplay'
 import WeaponCardPico from '../Weapon/WeaponCardPico'
 import WeaponFullCard from '../Weapon/WeaponFullCard'
-import CharacterCardPico, { BlankCharacterCardPico } from './CharacterCardPico'
 type CharacterCardProps = {
   characterKey: CharacterKey
   onClick?: (characterKey: CharacterKey) => void
@@ -69,7 +67,6 @@ export default function CharacterCard({
   characterChildren,
   onClick,
   onClickHeader,
-  onClickTeammate,
   footer,
   hideStats,
   isTeammateCard,
@@ -158,7 +155,6 @@ export default function CharacterCard({
               onClickHeader={onClickHeader}
               isTeammateCard={isTeammateCard}
               character={character}
-              onClickTeammate={onClickTeammate}
               hideStats={hideStats}
               weaponChildren={weaponChildren}
               artifactChildren={artifactChildren}
@@ -182,7 +178,6 @@ type ExistingCharacterCardContentProps = {
   onClickHeader?: (characterKey: CharacterKey) => void
   isTeammateCard?: boolean
   character: ICachedCharacter
-  onClickTeammate?: (characterKey: CharacterKey) => void
   hideStats?: boolean
   weaponChildren?: Displayable
   artifactChildren?: Displayable
@@ -196,7 +191,6 @@ function ExistingCharacterCardContent({
   onClickHeader,
   isTeammateCard,
   character,
-  onClickTeammate,
   hideStats,
   weaponChildren,
   artifactChildren,
@@ -211,8 +205,9 @@ function ExistingCharacterCardContent({
         >
           <HeaderContent />
         </Header>
-        <CardContent
+        <Box
           sx={(theme) => ({
+            p: 1,
             width: '100%',
             display: 'flex',
             flexDirection: 'column',
@@ -221,27 +216,17 @@ function ExistingCharacterCardContent({
             padding: hideStats ? `${theme.spacing(1)}!important` : undefined,
           })}
         >
-          <Artifacts />
-          {!isTeammateCard && (
-            <Grid container columns={4} spacing={0.75}>
-              <Grid item xs={1} height="100%">
-                <WeaponCardPico weaponId={character.equippedWeapon} />
-              </Grid>
-              {range(0, 2).map((i) => (
-                <Grid key={i} item xs={1} height="100%">
-                  {character.team[i] ? (
-                    <CharacterCardPico
-                      simpleTooltip={hideStats}
-                      characterKey={character.team[i] as CharacterKey}
-                      onClick={!onClick ? onClickTeammate : undefined}
-                    />
-                  ) : (
-                    <BlankCharacterCardPico index={i} />
-                  )}
+          <Box>
+            <Grid container columns={isTeammateCard ? 5 : 6} spacing={0.5}>
+              {!isTeammateCard && (
+                <Grid item xs={1} height="100%">
+                  <WeaponCardPico weaponId={character.equippedWeapon} />
                 </Grid>
-              ))}
+              )}
+              <Artifacts />
             </Grid>
-          )}
+          </Box>
+
           {isTeammateCard && (
             <WeaponFullCard weaponId={character.equippedWeapon} />
           )}
@@ -249,7 +234,7 @@ function ExistingCharacterCardContent({
           {weaponChildren}
           {artifactChildren}
           {characterChildren}
-        </CardContent>
+        </Box>
       </DataContext.Provider>
     </CharacterContext.Provider>
   )
@@ -466,7 +451,7 @@ function Artifacts() {
   ) as Array<[ArtifactSlotKey, ICachedArtifact | undefined]>
 
   return (
-    <Grid direction="row" container spacing={0.75} columns={5}>
+    <>
       {artifacts.map(
         ([key, art]: [ArtifactSlotKey, ICachedArtifact | undefined]) => (
           <Grid item key={key} xs={1}>
@@ -474,7 +459,7 @@ function Artifacts() {
           </Grid>
         )
       )}
-    </Grid>
+    </>
   )
 }
 

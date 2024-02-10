@@ -47,7 +47,7 @@ import {
 } from '../../../../Components/FieldDisplay'
 import ModalWrapper from '../../../../Components/ModalWrapper'
 import PercentBadge from '../../../../Components/PercentBadge'
-import { CharacterContext } from '../../../../Context/CharacterContext'
+import { TeamCharacterContext } from '../../../../Context/TeamCharacterContext'
 import { DataContext } from '../../../../Context/DataContext'
 import { dataSetEffects } from '../../../../Data/Artifacts'
 import Artifact from '../../../../Data/Artifacts/Artifact'
@@ -64,7 +64,7 @@ export default function EquipmentSection() {
   const {
     character: { equippedWeapon, key: characterKey },
     characterSheet,
-  } = useContext(CharacterContext)
+  } = useContext(TeamCharacterContext)
   const { teamData, data } = useContext(DataContext)
   const weaponSheet = teamData[characterKey]?.weaponSheet
   const [weaponId, setweaponId] = useState('')
@@ -190,7 +190,7 @@ export default function EquipmentSection() {
 function ArtSwapCard({ slotKey }: { slotKey: ArtifactSlotKey }) {
   const {
     character: { key: characterKey },
-  } = useContext(CharacterContext)
+  } = useContext(TeamCharacterContext)
   const database = useDatabase()
   const [show, onOpen, onClose] = useBoolState()
   const { t } = useTranslation('artifact')
@@ -240,7 +240,7 @@ function WeaponSwapButton({ weaponTypeKey }: { weaponTypeKey: WeaponTypeKey }) {
   const { t } = useTranslation('page_character')
   const {
     character: { key: characterKey },
-  } = useContext(CharacterContext)
+  } = useContext(TeamCharacterContext)
   const database = useDatabase()
   const [show, onOpen, onClose] = useBoolState()
   return (
@@ -275,7 +275,7 @@ function LargeWeaponSwapButton({
   const { t } = useTranslation('page_character')
   const {
     character: { key: characterKey },
-  } = useContext(CharacterContext)
+  } = useContext(TeamCharacterContext)
   const database = useDatabase()
   const [show, onOpen, onClose] = useBoolState()
   return (
@@ -302,7 +302,7 @@ function ArtifactSwapButton({ slotKey }: { slotKey: ArtifactSlotKey }) {
   const { t } = useTranslation('page_character')
   const {
     character: { key: characterKey },
-  } = useContext(CharacterContext)
+  } = useContext(TeamCharacterContext)
   const database = useDatabase()
   const [show, onOpen, onClose] = useBoolState()
   return (
@@ -333,7 +333,7 @@ function ArtifactSectionCard() {
   const {
     character,
     character: { key: characterKey, equippedArtifacts },
-  } = useContext(CharacterContext)
+  } = useContext(TeamCharacterContext)
   const { data } = useContext(DataContext)
   const hasEquipped = useMemo(
     () => !!Object.values(equippedArtifacts).filter((i) => i).length,

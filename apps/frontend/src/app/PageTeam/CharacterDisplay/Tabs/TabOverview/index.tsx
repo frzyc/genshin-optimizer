@@ -1,6 +1,6 @@
 import { imgAssets } from '@genshin-optimizer/gi/assets'
 import { charCard } from '@genshin-optimizer/gi/char-cards'
-import type { AscensionKey, CharacterKey } from '@genshin-optimizer/gi/consts'
+import type { AscensionKey } from '@genshin-optimizer/gi/consts'
 import { allArtifactSlotKeys } from '@genshin-optimizer/gi/consts'
 import { useCharMeta, useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { splash } from '@genshin-optimizer/gi/silly-wisher'
@@ -20,17 +20,14 @@ import { useCallback, useContext, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 import ArtifactCardNano from '../../../../Components/Artifact/ArtifactCardNano'
 import CardLight from '../../../../Components/Card/CardLight'
-import CharacterCardPico, {
-  BlankCharacterCardPico,
-} from '../../../../Components/Character/CharacterCardPico'
 import StatDisplayComponent from '../../../../Components/Character/StatDisplayComponent'
 import ImgIcon from '../../../../Components/Image/ImgIcon'
 import SqBadge from '../../../../Components/SqBadge'
 import { StarsDisplay } from '../../../../Components/StarDisplay'
 import WeaponCardNano from '../../../../Components/Weapon/WeaponCardNano'
-import { CharacterContext } from '../../../../Context/CharacterContext'
 import { DataContext } from '../../../../Context/DataContext'
 import { SillyContext } from '../../../../Context/SillyContext'
+import { TeamCharacterContext } from '../../../../Context/TeamCharacterContext'
 import type { TalentSheetElementKey } from '../../../../Data/Characters/ICharacterSheet'
 import { uiInput as input } from '../../../../Formula'
 import { ElementIcon } from '../../../../KeyMap/StatIcon'
@@ -76,7 +73,7 @@ export default function TabOverview() {
 function EquipmentRow({ onClick }: { onClick: () => void }) {
   const {
     character: { equippedWeapon },
-  } = useContext(CharacterContext)
+  } = useContext(TeamCharacterContext)
   const { data } = useContext(DataContext)
 
   return (
@@ -106,8 +103,8 @@ function CharacterProfileCard() {
   const { silly } = useContext(SillyContext)
   const {
     characterSheet,
-    character: { key: characterKey, team },
-  } = useContext(CharacterContext)
+    character: { key: characterKey },
+  } = useContext(TeamCharacterContext)
   const { gender } = useDBMeta()
   const { data } = useContext(DataContext)
   const characterDispatch = useCharacterReducer(characterKey)
@@ -205,7 +202,7 @@ function CharacterProfileCard() {
             </Grid>
           ))}
         </Grid>
-        <CardActionArea sx={{ p: 1 }} onClick={() => navigate('teambuffs')}>
+        {/* <CardActionArea sx={{ p: 1 }} onClick={() => navigate('teambuffs')}>
           <Grid container columns={3} spacing={1}>
             {range(0, 2).map((i) => (
               <Grid key={i} item xs={1} height="100%">
@@ -217,13 +214,13 @@ function CharacterProfileCard() {
               </Grid>
             ))}
           </Grid>
-        </CardActionArea>
+        </CardActionArea> */}
       </Box>
     </CardLight>
   )
 }
 function SillyCoverArea({ src, level, ascension }) {
-  const { characterSheet } = useContext(CharacterContext)
+  const { characterSheet } = useContext(TeamCharacterContext)
 
   return (
     <Box sx={{ position: 'relative' }}>
@@ -258,7 +255,7 @@ function SillyCoverArea({ src, level, ascension }) {
 }
 
 function CoverArea({ src, level, ascension }) {
-  const { characterSheet } = useContext(CharacterContext)
+  const { characterSheet } = useContext(TeamCharacterContext)
 
   return (
     <Box sx={{ position: 'relative' }}>
@@ -301,7 +298,7 @@ function CoverArea({ src, level, ascension }) {
 }
 
 function CharChip() {
-  const { characterSheet } = useContext(CharacterContext)
+  const { characterSheet } = useContext(TeamCharacterContext)
   const charEle = characterSheet.elementKey
   return (
     <Chip
@@ -342,7 +339,7 @@ function LevelBadge({
 function FavoriteButton() {
   const {
     character: { key: characterKey },
-  } = useContext(CharacterContext)
+  } = useContext(TeamCharacterContext)
   const database = useDatabase()
   const { favorite } = useCharMeta(characterKey)
   return (

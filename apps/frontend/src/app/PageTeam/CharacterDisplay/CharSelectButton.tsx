@@ -2,7 +2,7 @@ import { Button } from '@mui/material'
 import React, { Suspense, useContext, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import CharIconSide from '../../Components/Image/CharIconSide'
-import { CharacterContext } from '../../Context/CharacterContext'
+import { TeamCharacterContext } from '../../Context/TeamCharacterContext'
 import useCharSelectionCallback from '../../ReactHooks/useCharSelectionCallback'
 
 const CharacterSelectionModal = React.lazy(
@@ -14,7 +14,7 @@ export default function CharSelectButton() {
   const {
     characterSheet,
     character: { key: characterKey },
-  } = useContext(CharacterContext)
+  } = useContext(TeamCharacterContext)
   const [showModal, setshowModal] = useState(false)
   const setCharacter = useCharSelectionCallback()
   return (

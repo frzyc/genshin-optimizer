@@ -21,8 +21,6 @@ import {
   Stack,
   Tooltip,
   Typography,
-  useMediaQuery,
-  useTheme,
 } from '@mui/material'
 import {
   Suspense,
@@ -40,7 +38,6 @@ import SlotIcon from '../../../../Components/Artifact/SlotIcon'
 import SubstatToggle from '../../../../Components/Artifact/SubstatToggle'
 import CardDark from '../../../../Components/Card/CardDark'
 import CardLight from '../../../../Components/Card/CardLight'
-import DocumentDisplay from '../../../../Components/DocumentDisplay'
 import {
   BasicFieldDisplay,
   FieldDisplayList,
@@ -65,8 +62,7 @@ export default function EquipmentSection() {
     character: { equippedWeapon, key: characterKey },
     characterSheet,
   } = useContext(CharacterContext)
-  const { teamData, data } = useContext(DataContext)
-  const weaponSheet = teamData[characterKey]?.weaponSheet
+  const { data } = useContext(DataContext)
   const [weaponId, setweaponId] = useState('')
   const showWeapon = useCallback(
     () => setweaponId(equippedWeapon),
@@ -79,21 +75,6 @@ export default function EquipmentSection() {
     if (weaponId && weaponId !== equippedWeapon) setweaponId(equippedWeapon)
   }, [weaponId, equippedWeapon])
 
-  const theme = useTheme()
-  const breakpoint = useMediaQuery(theme.breakpoints.up('lg'))
-
-  const weaponDoc = useMemo(
-    () =>
-      weaponSheet &&
-      weaponSheet.document.length > 0 && (
-        <CardLight>
-          <Box p={1}>
-            <DocumentDisplay sections={weaponSheet.document} />
-          </Box>
-        </CardLight>
-      ),
-    [weaponSheet]
-  )
   const { rvFilter } = useCharMeta(characterKey)
   const deferredRvFilter = useDeferredValue(rvFilter)
   const deferredRvSet = useMemo(
@@ -115,19 +96,6 @@ export default function EquipmentSection() {
         />
       </Suspense>
       <Grid container spacing={1}>
-        {breakpoint && (
-          <Grid
-            item
-            xs={12}
-            md={12}
-            lg={3}
-            xl={3}
-            sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}
-          >
-            {weaponDoc && weaponDoc}
-            <ArtifactSectionCard />
-          </Grid>
-        )}
         <Grid item xs={12} md={12} lg={9} xl={9} container spacing={1}>
           <Grid
             item
@@ -165,24 +133,6 @@ export default function EquipmentSection() {
             </Grid>
           ))}
         </Grid>
-        {!breakpoint && (
-          <Grid item xs={12} md={12} xl={3} container spacing={1}>
-            {weaponDoc && (
-              <Grid item xs={12} md={6} lg={4}>
-                {weaponDoc}
-              </Grid>
-            )}
-            <Grid
-              item
-              xs={12}
-              md={6}
-              lg={4}
-              sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}
-            >
-              <ArtifactSectionCard />
-            </Grid>
-          </Grid>
-        )}
       </Grid>
     </Box>
   )

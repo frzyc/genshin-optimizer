@@ -42,7 +42,7 @@ import {
 } from 'react'
 import { Trans } from 'react-i18next'
 import ArtifactLevelSlider from '../../../../Components/Artifact/ArtifactLevelSlider'
-import { CharacterContext } from '../../../../Context/CharacterContext'
+import { TeamCharacterContext } from '../../../../Context/TeamCharacterContext'
 import type { dataContextObj } from '../../../../Context/DataContext'
 import { DataContext } from '../../../../Context/DataContext'
 import { mergeData, uiDataForTeam } from '../../../../Formula/api'
@@ -66,7 +66,7 @@ import { UpOptCalculator, toArtifact } from './upOpt'
 export default function TabUpopt() {
   const {
     character: { key: characterKey },
-  } = useContext(CharacterContext)
+  } = useContext(TeamCharacterContext)
   const database = useDatabase()
   const { gender } = useDBMeta()
 

@@ -1,11 +1,6 @@
 import type { ICachedCharacter } from '@genshin-optimizer/gi/db'
 import { Box } from '@mui/material'
 import CloseButton from '../../Components/CloseButton'
-import {
-  HitModeToggle,
-  InfusionAuraDropdown,
-  ReactionToggle,
-} from '../../Components/HitModeEditor'
 import LevelSelect from '../../Components/LevelSelect'
 import useCharacterReducer from '../../ReactHooks/useCharacterReducer'
 import TabOverview from './Tabs/TabOverview'
@@ -22,14 +17,9 @@ export default function Content({
   const characterDispatch = useCharacterReducer(character?.key ?? '')
   return (
     <>
-      <Box display="flex">
-        <Box display="flex" gap={1} flexWrap="wrap" flexGrow={1}>
-          <TravelerElementSelect />
-          <TravelerGenderSelect />
-        </Box>
-        {!!onClose && <CloseButton onClick={onClose} />}
-      </Box>
-      <Box display="flex" gap={1} flexWrap="wrap">
+      <Box display="flex" gap={1}>
+        <TravelerElementSelect />
+        <TravelerGenderSelect />
         {character && (
           <LevelSelect
             level={character.level}
@@ -37,9 +27,9 @@ export default function Content({
             setBoth={characterDispatch}
           />
         )}
-        <HitModeToggle size="small" />
-        <InfusionAuraDropdown />
-        <ReactionToggle size="small" />
+        {!!onClose && (
+          <CloseButton onClick={onClose} sx={{ marginLeft: 'auto' }} />
+        )}
       </Box>
       <TabOverview />
     </>

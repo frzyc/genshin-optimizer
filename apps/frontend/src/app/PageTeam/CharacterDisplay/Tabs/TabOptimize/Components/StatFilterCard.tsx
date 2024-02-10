@@ -3,7 +3,7 @@ import { useCallback, useContext } from 'react'
 import { useTranslation } from 'react-i18next'
 import CardLight from '../../../../../Components/Card/CardLight'
 import InfoTooltip from '../../../../../Components/InfoTooltip'
-import { CharacterContext } from '../../../../../Context/CharacterContext'
+import { TeamCharacterContext } from '../../../../../Context/TeamCharacterContext'
 import type { StatFilters } from '@genshin-optimizer/gi/db'
 import useBuildSetting from '../useBuildSetting'
 import OptimizationTargetEditorList from './OptimizationTargetEditorList'
@@ -16,7 +16,7 @@ export default function StatFilterCard({
   const { t } = useTranslation('page_character_optimize')
   const {
     character: { key: characterKey },
-  } = useContext(CharacterContext)
+  } = useContext(TeamCharacterContext)
   const {
     buildSetting: { statFilters },
     buildSettingDispatch,

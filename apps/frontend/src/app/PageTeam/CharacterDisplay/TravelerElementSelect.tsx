@@ -7,12 +7,12 @@ import { MenuItem } from '@mui/material'
 import { useContext } from 'react'
 import ColorText from '../../Components/ColoredText'
 import DropdownButton from '../../Components/DropdownMenu/DropdownButton'
-import { CharacterContext } from '../../Context/CharacterContext'
+import { TeamCharacterContext } from '../../Context/TeamCharacterContext'
 import { stg } from '../../Data/SheetUtil'
 import useCharSelectionCallback from '../../ReactHooks/useCharSelectionCallback'
 
 export default function TravelerElementSelect() {
-  const { character } = useContext(CharacterContext)
+  const { character } = useContext(TeamCharacterContext)
   const { key } = character
   const setCharacter = useCharSelectionCallback()
   if (!key.startsWith('Traveler')) return null

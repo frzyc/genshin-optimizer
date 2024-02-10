@@ -40,7 +40,7 @@ import BootstrapTooltip from '../../../../../../Components/BootstrapTooltip'
 import CardDark from '../../../../../../Components/Card/CardDark'
 import CardLight from '../../../../../../Components/Card/CardLight'
 import InfoTooltip from '../../../../../../Components/InfoTooltip'
-import { CharacterContext } from '../../../../../../Context/CharacterContext'
+import { TeamCharacterContext } from '../../../../../../Context/TeamCharacterContext'
 import { DataContext } from '../../../../../../Context/DataContext'
 import { GraphContext } from '../../../../../../Context/GraphContext'
 import { input } from '../../../../../../Formula'
@@ -77,7 +77,7 @@ export default function ChartCard({
   const { graphBuilds } = useContext(GraphContext)
   const {
     character: { key: characterKey },
-  } = useContext(CharacterContext)
+  } = useContext(TeamCharacterContext)
   const {
     buildResult: { builds: generatedBuilds },
   } = useBuildResult(characterKey)

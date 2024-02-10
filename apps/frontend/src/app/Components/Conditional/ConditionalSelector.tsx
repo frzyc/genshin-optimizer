@@ -4,11 +4,12 @@ import {
   evalIfFunc,
   layeredAssignment,
 } from '@genshin-optimizer/common/util'
+import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { CheckBox, CheckBoxOutlineBlank } from '@mui/icons-material'
 import type { ButtonProps } from '@mui/material'
 import { Button, ButtonGroup, Divider, MenuItem } from '@mui/material'
 import { useCallback, useContext } from 'react'
-import { CharacterContext } from '../../Context/CharacterContext'
+import { TeamCharacterContext } from '../../Context/TeamCharacterContext'
 import { DataContext } from '../../Context/DataContext'
 import type {
   DocumentConditional,
@@ -62,19 +63,22 @@ function SimpleConditionalSelector({
   conditional,
   disabled,
 }: SimpleConditionalSelectorProps) {
-  const { character, characterDispatch } = useContext(CharacterContext)
+  const { teamCharId } = useContext(TeamCharacterContext)
   const { data } = useContext(DataContext)
+  const database = useDatabase()
   const setConditional = useCallback(
     (v?: string) => {
-      const conditionalValues = deepClone(character.conditional)
-      if (v) {
-        layeredAssignment(conditionalValues, conditional.path, v)
-      } else {
-        deletePropPath(conditionalValues, conditional.path)
-      }
-      characterDispatch({ conditional: conditionalValues })
+      database.teamChars.set(teamCharId, (teamChar) => {
+        const conditionalValues = deepClone(teamChar.conditional)
+        if (v) {
+          layeredAssignment(conditionalValues, conditional.path, v)
+        } else {
+          deletePropPath(conditionalValues, conditional.path)
+        }
+        teamChar.conditional = conditionalValues
+      })
     },
-    [conditional, character, characterDispatch]
+    [database, conditional.path, teamCharId]
   )
 
   const conditionalValue = data.get(conditional.value).value
@@ -104,19 +108,22 @@ function ExclusiveConditionalSelector({
   conditional,
   disabled,
 }: ExclusiveConditionalSelectorProps) {
-  const { character, characterDispatch } = useContext(CharacterContext)
+  const { teamCharId } = useContext(TeamCharacterContext)
   const { data } = useContext(DataContext)
+  const database = useDatabase()
   const setConditional = useCallback(
     (v?: string) => {
-      const conditionalValues = deepClone(character.conditional)
-      if (v) {
-        layeredAssignment(conditionalValues, conditional.path, v)
-      } else {
-        deletePropPath(conditionalValues, conditional.path)
-      }
-      characterDispatch({ conditional: conditionalValues })
+      database.teamChars.set(teamCharId, (teamChar) => {
+        const conditionalValues = deepClone(teamChar.conditional)
+        if (v) {
+          layeredAssignment(conditionalValues, conditional.path, v)
+        } else {
+          deletePropPath(conditionalValues, conditional.path)
+        }
+        teamChar.conditional = conditionalValues
+      })
     },
-    [conditional, character, characterDispatch]
+    [database, conditional.path, teamCharId]
   )
 
   const conditionalValue = data.get(conditional.value).value
@@ -171,19 +178,22 @@ function MultipleConditionalSelector({
   conditional,
   disabled,
 }: MultipleConditionalSelectorProps) {
-  const { character, characterDispatch } = useContext(CharacterContext)
+  const { teamCharId } = useContext(TeamCharacterContext)
   const { data } = useContext(DataContext)
+  const database = useDatabase()
   const setConditional = useCallback(
     (path: readonly string[], v?: string) => {
-      const conditionalValues = deepClone(character.conditional)
-      if (v) {
-        layeredAssignment(conditionalValues, path, v)
-      } else {
-        deletePropPath(conditionalValues, path)
-      }
-      characterDispatch({ conditional: conditionalValues })
+      database.teamChars.set(teamCharId, (teamChar) => {
+        const conditionalValues = deepClone(teamChar.conditional)
+        if (v) {
+          layeredAssignment(conditionalValues, path, v)
+        } else {
+          deletePropPath(conditionalValues, path)
+        }
+        teamChar.conditional = conditionalValues
+      })
     },
-    [character, characterDispatch]
+    [database, teamCharId]
   )
 
   return (

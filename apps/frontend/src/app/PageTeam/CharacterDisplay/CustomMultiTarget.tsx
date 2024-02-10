@@ -14,6 +14,7 @@ import {
   allAmpReactionKeys,
   allMultiOptHitModeKeys,
 } from '@genshin-optimizer/gi/consts'
+import type { CustomMultiTarget, CustomTarget } from '@genshin-optimizer/gi/db'
 import {
   MAX_DESC_LENGTH,
   MAX_NAME_LENGTH,
@@ -21,6 +22,7 @@ import {
   initCustomTarget,
   validateCustomMultiTarget,
 } from '@genshin-optimizer/gi/db'
+import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import AddIcon from '@mui/icons-material/Add'
 import ContentCopyIcon from '@mui/icons-material/ContentCopy'
 import ContentPasteIcon from '@mui/icons-material/ContentPaste'
@@ -68,12 +70,11 @@ import { infusionVals } from '../../Components/HitModeEditor'
 import InfoTooltip from '../../Components/InfoTooltip'
 import ModalWrapper from '../../Components/ModalWrapper'
 import StatEditorList from '../../Components/StatEditorList'
-import { CharacterContext } from '../../Context/CharacterContext'
+import { TeamCharacterContext } from '../../Context/TeamCharacterContext'
 import { DataContext } from '../../Context/DataContext'
 import { allInputPremodKeys } from '../../Formula'
 import type { NodeDisplay } from '../../Formula/uiData'
 import { UIData } from '../../Formula/uiData'
-import type { CustomMultiTarget, CustomTarget } from '@genshin-optimizer/gi/db'
 import {
   allowedAdditiveReactions,
   allowedAmpReactions,
@@ -84,71 +85,74 @@ import { TargetSelectorModal } from './Tabs/TabOptimize/Components/TargetSelecto
 const MAX_DESC_TOOLTIP_LENGTH = 300
 
 export function CustomMultiTargetButton() {
+  const database = useDatabase()
   const { t } = useTranslation('page_character')
   const [show, onShow, onCloseModal] = useBoolState()
-  const { character, characterDispatch } = useContext(CharacterContext)
-  const [customMultiTarget, setCustomTargets] = useState(
-    () => character.customMultiTarget
+  const { teamChar, teamCharId } = useContext(TeamCharacterContext)
+  const [customMultiTargets, setCustomTargets] = useState(
+    () => teamChar.customMultiTargets
   )
 
   useEffect(
-    () => setCustomTargets(character.customMultiTarget),
-    [setCustomTargets, character.customMultiTarget]
+    () => setCustomTargets(teamChar.customMultiTargets),
+    [setCustomTargets, teamChar.customMultiTargets]
   )
 
   const [expandedInd, setExpandedInd] = useState<number | false>(false)
 
   const addNewCustomMultiTarget = useCallback(() => {
-    setCustomTargets([...customMultiTarget, initCustomMultiTarget()])
-    setExpandedInd(customMultiTarget.length)
-  }, [customMultiTarget, setCustomTargets, setExpandedInd])
+    setCustomTargets([...customMultiTargets, initCustomMultiTarget()])
+    setExpandedInd(customMultiTargets.length)
+  }, [customMultiTargets, setCustomTargets, setExpandedInd])
   const setCustomMultiTarget = useCallback(
     (ind: number) => (newTarget: CustomMultiTarget) => {
-      const customTargets_ = [...customMultiTarget]
+      const customTargets_ = [...customMultiTargets]
       customTargets_[ind] = newTarget
       setCustomTargets(customTargets_)
     },
-    [customMultiTarget, setCustomTargets]
+    [customMultiTargets, setCustomTargets]
   )
   const deleteCustomMultiTarget = useCallback(
     (ind: number) => () => {
       if (
-        customMultiTarget[ind].targets.length &&
+        customMultiTargets[ind].targets.length &&
         !window.confirm(
-          `Are you sure you want to delete "${customMultiTarget[ind].name}"?`
+          `Are you sure you want to delete "${customMultiTargets[ind].name}"?`
         )
       )
         return
-      const customTargets_ = [...customMultiTarget]
+      const customTargets_ = [...customMultiTargets]
       customTargets_.splice(ind, 1)
       setCustomTargets(customTargets_)
     },
-    [customMultiTarget, setCustomTargets]
+    [customMultiTargets, setCustomTargets]
   )
   const dupCustomMultiTarget = useCallback(
     (ind: number) => () => {
-      const customTargets_ = [...customMultiTarget]
-      customTargets_.splice(ind, 0, customMultiTarget[ind])
+      const customTargets_ = [...customMultiTargets]
+      customTargets_.splice(ind, 0, customMultiTargets[ind])
       setCustomTargets(customTargets_)
     },
-    [customMultiTarget, setCustomTargets]
+    [customMultiTargets, setCustomTargets]
   )
   const setOrder = useCallback(
     (fromIndex: number) => (toIndex: number) => {
-      toIndex = clamp(toIndex - 1, 0, customMultiTarget.length - 1)
+      toIndex = clamp(toIndex - 1, 0, customMultiTargets.length - 1)
       if (fromIndex === toIndex) return
-      const arr = [...customMultiTarget]
+      const arr = [...customMultiTargets]
       const element = arr[fromIndex]
       arr.splice(fromIndex, 1)
       arr.splice(toIndex, 0, element)
       setCustomTargets(arr)
     },
-    [customMultiTarget, setCustomTargets]
+    [customMultiTargets, setCustomTargets]
   )
   const onClose = useCallback(() => {
     onCloseModal()
-    characterDispatch({ customMultiTarget })
-  }, [customMultiTarget, onCloseModal, characterDispatch])
+    database.teamChars.set(teamCharId, {
+      customMultiTargets,
+    })
+  }, [database, teamCharId, customMultiTargets, onCloseModal])
   const onExpand = useCallback(
     (i: number) => () => setExpandedInd(i === expandedInd ? false : i),
     [expandedInd]
@@ -175,7 +179,7 @@ export function CustomMultiTargetButton() {
 
   const customMultiTargetDisplays = useMemo(
     () =>
-      customMultiTarget.map((ctar, i) => (
+      customMultiTargets.map((ctar, i) => (
         <CustomMultiTargetDisplay
           // Use a unique key, because indices dont allow for swapping very well.
           key={`${i}${ctar.name}`}
@@ -187,11 +191,11 @@ export function CustomMultiTargetButton() {
           onDelete={deleteCustomMultiTarget(i)}
           onDup={dupCustomMultiTarget(i)}
           onOrder={setOrder(i)}
-          nTargets={customMultiTarget.length}
+          nTargets={customMultiTargets.length}
         />
       )),
     [
-      customMultiTarget,
+      customMultiTargets,
       deleteCustomMultiTarget,
       dupCustomMultiTarget,
       expandedInd,
@@ -570,7 +574,7 @@ function CustomTargetDisplay({
   onDup: () => void
 }) {
   const { t } = useTranslation('page_character')
-  const { characterSheet } = useContext(CharacterContext)
+  const { characterSheet } = useContext(TeamCharacterContext)
   const { data } = useContext(DataContext)
   const { path, weight, hitMode, reaction, infusionAura, bonusStats } =
     customTarget

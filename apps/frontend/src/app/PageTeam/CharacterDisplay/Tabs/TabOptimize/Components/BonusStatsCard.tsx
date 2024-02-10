@@ -1,6 +1,6 @@
 import { CardContent, Divider, Typography } from '@mui/material'
 import { useContext } from 'react'
-import { CharacterContext } from '../../../../../Context/CharacterContext'
+import { TeamCharacterContext } from '../../../../../Context/TeamCharacterContext'
 import CardLight from '../../../../../Components/Card/CardLight'
 import { NodeFieldDisplay } from '../../../../../Components/FieldDisplay'
 import { DataContext } from '../../../../../Context/DataContext'
@@ -11,8 +11,8 @@ import { useTranslation } from 'react-i18next'
 export default function BonusStatsCard() {
   const { t } = useTranslation('page_character_optimize')
   const {
-    character: { bonusStats },
-  } = useContext(CharacterContext)
+    teamChar: { bonusStats },
+  } = useContext(TeamCharacterContext)
   const { data } = useContext(DataContext)
   const bonusStatsKeys = Object.keys(bonusStats)
   if (!bonusStatsKeys.length) return null

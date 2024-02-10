@@ -7,7 +7,7 @@ import type { SxProps, Theme } from '@mui/material'
 import { Button, ButtonGroup } from '@mui/material'
 import { useContext } from 'react'
 import { useTranslation } from 'react-i18next'
-import { CharacterContext } from '../../../../../Context/CharacterContext'
+import { TeamCharacterContext } from '../../../../../Context/TeamCharacterContext'
 import useBuildSetting from '../useBuildSetting'
 
 export default function SetInclusionButton({
@@ -20,7 +20,7 @@ export default function SetInclusionButton({
   const { t } = useTranslation('sheet')
   const {
     character: { key: characterKey },
-  } = useContext(CharacterContext)
+  } = useContext(TeamCharacterContext)
   const {
     buildSetting: { artSetExclusion },
     buildSettingDispatch,

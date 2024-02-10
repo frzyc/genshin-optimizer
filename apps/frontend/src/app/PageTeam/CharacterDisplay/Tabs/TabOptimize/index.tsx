@@ -55,7 +55,7 @@ import InfoTooltip from '../../../../Components/InfoTooltip'
 import NoArtWarning from '../../../../Components/NoArtWarning'
 import SolidToggleButtonGroup from '../../../../Components/SolidToggleButtonGroup'
 import SqBadge from '../../../../Components/SqBadge'
-import { CharacterContext } from '../../../../Context/CharacterContext'
+import { TeamCharacterContext } from '../../../../Context/TeamCharacterContext'
 import type { dataContextObj } from '../../../../Context/DataContext'
 import { DataContext } from '../../../../Context/DataContext'
 import { GraphContext } from '../../../../Context/GraphContext'
@@ -93,8 +93,10 @@ const audio = new Audio('notification.mp3')
 export default function TabBuild() {
   const { t } = useTranslation('page_character_optimize')
   const {
-    character: { key: characterKey, compareData },
-  } = useContext(CharacterContext)
+    teamId,
+    team: { compareData },
+    character: { key: characterKey },
+  } = useContext(TeamCharacterContext)
   const database = useDatabase()
   const { setChartData, graphBuilds, setGraphBuilds } = useContext(GraphContext)
   const { gender } = useDBMeta()
@@ -130,7 +132,6 @@ export default function TabBuild() {
     [database]
   )
 
-  const characterDispatch = useCharacterReducer(characterKey)
   const onClickTeammate = useCharSelectionCallback()
 
   // Clear state when changing characters
@@ -793,7 +794,9 @@ export default function TabBuild() {
                   <SolidToggleButtonGroup
                     exclusive
                     value={compareData}
-                    onChange={(_e, v) => characterDispatch({ compareData: v })}
+                    onChange={(_e, compareData) =>
+                      database.teams.set(teamId, { compareData })
+                    }
                     size="small"
                   >
                     <ToggleButton value={false} disabled={!compareData}>

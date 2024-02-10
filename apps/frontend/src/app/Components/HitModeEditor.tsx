@@ -8,6 +8,7 @@ import {
   allAmpReactionKeys,
   allHitModeKeys,
 } from '@genshin-optimizer/gi/consts'
+import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import {
   CryoIcon,
   ElectroIcon,
@@ -18,7 +19,7 @@ import type { ToggleButtonGroupProps } from '@mui/material'
 import { MenuItem, ToggleButton } from '@mui/material'
 import { useContext } from 'react'
 import { useTranslation } from 'react-i18next'
-import { CharacterContext } from '../Context/CharacterContext'
+import { TeamCharacterContext } from '../Context/TeamCharacterContext'
 import { DataContext } from '../Context/DataContext'
 import { infusionNode, uiInput as input } from '../Formula'
 import { allowedAdditiveReactions, allowedAmpReactions } from '../Types/consts'
@@ -63,9 +64,10 @@ type InfusionAuraDropdownProps = Omit<
 export function InfusionAuraDropdown(props: InfusionAuraDropdownProps) {
   const {
     characterSheet,
-    character: { infusionAura },
-    characterDispatch,
-  } = useContext(CharacterContext)
+    teamCharId,
+    teamChar: { infusionAura },
+  } = useContext(TeamCharacterContext)
+  const database = useDatabase()
   if (!characterSheet?.isMelee()) return null
   return (
     <DropdownButton
@@ -80,7 +82,9 @@ export function InfusionAuraDropdown(props: InfusionAuraDropdownProps) {
           sx={key ? { color: `${key}.main` } : undefined}
           selected={key === infusionAura}
           disabled={key === infusionAura}
-          onClick={() => characterDispatch({ infusionAura: key })}
+          onClick={() =>
+            database.teamChars.set(teamCharId, { infusionAura: key })
+          }
         >
           {text}
         </MenuItem>
@@ -93,9 +97,10 @@ type ReactionToggleProps = Omit<ToggleButtonGroupProps, 'color'>
 export function ReactionToggle(props: ReactionToggleProps) {
   const { t } = useTranslation('page_character')
   const {
-    character: { reaction },
-    characterDispatch,
-  } = useContext(CharacterContext)
+    teamId,
+    team: { reaction },
+  } = useContext(TeamCharacterContext)
+  const database = useDatabase()
   const { data } = useContext(DataContext)
   const charEleKey = data.get(input.charEle).value as ElementKey
   const infusion = data.get(infusionNode).value as ElementKey
@@ -112,7 +117,7 @@ export function ReactionToggle(props: ReactionToggleProps) {
       exclusive
       baseColor="secondary"
       value={reaction}
-      onChange={(_, reaction) => characterDispatch({ reaction })}
+      onChange={(_, reaction) => database.teams.set(teamId, { reaction })}
       {...props}
     >
       <ToggleButton value="" disabled={!reaction}>{t`noReaction`}</ToggleButton>
@@ -132,15 +137,16 @@ type HitModeToggleProps = Omit<ToggleButtonGroupProps, 'color'>
 export function HitModeToggle(props: HitModeToggleProps) {
   const { t } = useTranslation('page_character')
   const {
-    character: { hitMode },
-    characterDispatch,
-  } = useContext(CharacterContext)
+    teamId,
+    team: { hitMode },
+  } = useContext(TeamCharacterContext)
+  const database = useDatabase()
   return (
     <SolidToggleButtonGroup
       exclusive
       baseColor="secondary"
       value={hitMode}
-      onChange={(_, hitMode) => characterDispatch({ hitMode })}
+      onChange={(_, hitMode) => database.teams.set(teamId, { hitMode })}
       {...props}
     >
       {allHitModeKeys.map((hm) => (

@@ -48,7 +48,7 @@ import CardLight from '../../../../Components/Card/CardLight'
 import StatDisplayComponent from '../../../../Components/Character/StatDisplayComponent'
 import CustomNumberInput from '../../../../Components/CustomNumberInput'
 import SolidToggleButtonGroup from '../../../../Components/SolidToggleButtonGroup'
-import { CharacterContext } from '../../../../Context/CharacterContext'
+import { TeamCharacterContext } from '../../../../Context/TeamCharacterContext'
 import type { dataContextObj } from '../../../../Context/DataContext'
 import { DataContext } from '../../../../Context/DataContext'
 import { OptimizationTargetContext } from '../../../../Context/OptimizationTargetContext'
@@ -81,11 +81,12 @@ export default function TabTheorycraft() {
   const { data: oldData } = useContext(DataContext)
   const { gender } = useDBMeta()
   const {
+    teamId,
+    team: { compareData },
     character,
-    character: { key: characterKey, compareData },
+    character: { key: characterKey },
     characterSheet,
-    characterDispatch,
-  } = useContext(CharacterContext)
+  } = useContext(TeamCharacterContext)
   const charTC = useCharTC(
     characterKey,
     defaultInitialWeaponKey(characterSheet.weaponTypeKey)
@@ -388,7 +389,9 @@ export default function TabTheorycraft() {
             <SolidToggleButtonGroup
               exclusive
               value={compareData}
-              onChange={(e, v) => characterDispatch({ compareData: v })}
+              onChange={(e, compareData) =>
+                database.teams.set(teamId, { compareData })
+              }
               size="small"
             >
               <ToggleButton value={false} disabled={!compareData}>

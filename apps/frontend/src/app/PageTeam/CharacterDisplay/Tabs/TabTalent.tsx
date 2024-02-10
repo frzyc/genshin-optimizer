@@ -20,7 +20,7 @@ import ConditionalWrapper from '../../../Components/ConditionalWrapper'
 import DocumentDisplay from '../../../Components/DocumentDisplay'
 import DropdownButton from '../../../Components/DropdownMenu/DropdownButton'
 import { NodeFieldDisplay } from '../../../Components/FieldDisplay'
-import { CharacterContext } from '../../../Context/CharacterContext'
+import { TeamCharacterContext } from '../../../Context/TeamCharacterContext'
 import { DataContext } from '../../../Context/DataContext'
 import type { TalentSheetElementKey } from '../../../Data/Characters/ICharacterSheet'
 import { uiInput as input } from '../../../Formula'
@@ -38,7 +38,7 @@ const talentSpacing = {
 
 export default function CharacterTalentPane() {
   const { t } = useTranslation('sheet_gen')
-  const { character, characterSheet } = useContext(CharacterContext)
+  const { character, characterSheet } = useContext(TeamCharacterContext)
   const { data } = useContext(DataContext)
   const characterDispatch = useCharacterReducer(character.key)
   const skillBurstList = [
@@ -216,12 +216,11 @@ function SkillDisplayCard({
 }: SkillDisplayCardProps) {
   const { t } = useTranslation('sheet_gen')
   const {
-    character: { talent },
+    character: { talent, key: characterKey },
     characterSheet,
-    characterDispatch,
-  } = useContext(CharacterContext)
+  } = useContext(TeamCharacterContext)
   const { data } = useContext(DataContext)
-
+  const characterDispatch = useCharacterReducer(characterKey)
   const actionWrapperFunc = useCallback(
     (children) => (
       <CardActionArea onClick={onClickTitle}>{children}</CardActionArea>

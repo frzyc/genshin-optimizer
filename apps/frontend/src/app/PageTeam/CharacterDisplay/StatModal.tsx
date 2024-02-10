@@ -1,14 +1,16 @@
+import type { TeamCharacter } from '@genshin-optimizer/gi/db'
+import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import {
+  Alert,
+  Box,
   CardContent,
   CardHeader,
   Grid,
   ListItem,
   Stack,
   Typography,
-  Box,
-  Alert,
 } from '@mui/material'
-import { useCallback, useContext, useMemo } from 'react'
+import { useContext, useMemo } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
 import CardDark from '../../Components/Card/CardDark'
 import CardLight from '../../Components/Card/CardLight'
@@ -21,7 +23,7 @@ import {
 } from '../../Components/FieldDisplay'
 import ModalWrapper from '../../Components/ModalWrapper'
 import StatEditorList from '../../Components/StatEditorList'
-import { CharacterContext } from '../../Context/CharacterContext'
+import { TeamCharacterContext } from '../../Context/TeamCharacterContext'
 import { DataContext } from '../../Context/DataContext'
 import { allInputPremodKeys, uiInput as input } from '../../Formula'
 import type { ReadNode } from '../../Formula/type'
@@ -62,14 +64,14 @@ const wrapperFunc = (e: JSX.Element, key?: string) => (
 )
 function BonusStatsEditor() {
   const { t } = useTranslation('page_character')
+  const database = useDatabase()
   const {
-    character: { bonusStats },
-    characterDispatch,
-  } = useContext(CharacterContext)
-  const setFilter = useCallback(
-    (bonusStats) => characterDispatch({ bonusStats }),
-    [characterDispatch]
-  )
+    teamCharId,
+    teamChar: { bonusStats },
+  } = useContext(TeamCharacterContext)
+  const setFilter = (bonusStats: TeamCharacter['bonusStats']) =>
+    database.teamChars.set(teamCharId, { bonusStats })
+
   return (
     <CardLight>
       <CardContent sx={{ display: 'flex' }}>
@@ -160,7 +162,7 @@ function StatDisplayContent({
 }
 
 function MainStatsCards() {
-  const { characterSheet } = useContext(CharacterContext)
+  const { characterSheet } = useContext(TeamCharacterContext)
   const { data } = useContext(DataContext)
   const specialNode = data.get(input.special)
   const charEle = characterSheet.elementKey

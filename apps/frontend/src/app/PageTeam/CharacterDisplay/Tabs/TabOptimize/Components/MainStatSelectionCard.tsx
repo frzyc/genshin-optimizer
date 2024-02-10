@@ -23,7 +23,7 @@ import SlotIcon from '../../../../../Components/Artifact/SlotIcon'
 import BootstrapTooltip from '../../../../../Components/BootstrapTooltip'
 import SqBadge from '../../../../../Components/SqBadge'
 import { StatColoredWithUnit } from '../../../../../Components/StatDisplay'
-import { CharacterContext } from '../../../../../Context/CharacterContext'
+import { TeamCharacterContext } from '../../../../../Context/TeamCharacterContext'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import StatIcon from '../../../../../KeyMap/StatIcon'
 import { handleMultiSelect } from '../../../../../Util/MultiSelect'
@@ -46,7 +46,7 @@ export default function MainStatSelectionCard({
   const { t } = useTranslation('artifact')
   const {
     character: { key: characterKey },
-  } = useContext(CharacterContext)
+  } = useContext(TeamCharacterContext)
   const {
     buildSetting: { mainStatKeys },
     buildSettingDispatch,
