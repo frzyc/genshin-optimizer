@@ -42,14 +42,14 @@ import {
 } from 'react'
 import { Trans } from 'react-i18next'
 import ArtifactLevelSlider from '../../../../Components/Artifact/ArtifactLevelSlider'
-import { TeamCharacterContext } from '../../../../Context/TeamCharacterContext'
 import type { dataContextObj } from '../../../../Context/DataContext'
 import { DataContext } from '../../../../Context/DataContext'
+import { TeamCharacterContext } from '../../../../Context/TeamCharacterContext'
 import { mergeData, uiDataForTeam } from '../../../../Formula/api'
 import { optimize } from '../../../../Formula/optimization'
 import type { NumNode } from '../../../../Formula/type'
+import { getTeamData } from '../../../../ReactHooks/useCharData'
 import useCharSelectionCallback from '../../../../ReactHooks/useCharSelectionCallback'
-import useTeamData, { getTeamData } from '../../../../ReactHooks/useTeamData'
 import type { DynStat } from '../../../../Solver/common'
 import { objPathValue, shouldShowDevComponents } from '../../../../Util/Util'
 import MainStatSelectionCard from '../TabOptimize/Components/MainStatSelectionCard'
@@ -60,11 +60,13 @@ import UpgradeOptChartCard from './UpgradeOptChartCard'
 import { Stack } from '@mui/system'
 import AddArtInfo from '../../../../Components/AddArtInfo'
 import NoArtWarning from '../../../../Components/NoArtWarning'
+import useTeamData from '../../../../ReactHooks/useTeamData'
 import type { UpOptBuild } from './upOpt'
 import { UpOptCalculator, toArtifact } from './upOpt'
 
 export default function TabUpopt() {
   const {
+    teamId,
     character: { key: characterKey },
   } = useContext(TeamCharacterContext)
   const database = useDatabase()
@@ -76,7 +78,7 @@ export default function TabUpopt() {
 
   const { buildSetting, buildSettingDispatch } = useBuildSetting(characterKey)
   const { optimizationTarget, levelLow, levelHigh } = buildSetting
-  const teamData = useTeamData(characterKey)
+  const teamData = useTeamData(teamId)
   const { target: data } = teamData?.[characterKey as CharacterKey] ?? {}
 
   const [artsDirty] = useForceUpdate()

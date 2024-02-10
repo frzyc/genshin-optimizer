@@ -5,16 +5,13 @@ import {
   useDBMeta,
   useDatabase,
   useTeam,
+  useTeamChar,
 } from '@genshin-optimizer/gi/db-ui'
 import { Box, CardContent, Skeleton } from '@mui/material'
 import { Suspense, useCallback, useContext, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Navigate, useMatch, useNavigate, useParams } from 'react-router-dom'
 import CloseButton from '../Components/CloseButton'
-import {
-  TeamCharacterContext,
-  type TeamCharacterContextObj,
-} from '../Context/TeamCharacterContext'
 import { DataContext, type dataContextObj } from '../Context/DataContext'
 import { FormulaDataWrapper } from '../Context/FormulaDataContext'
 import {
@@ -23,8 +20,12 @@ import {
   type GraphContextObj,
 } from '../Context/GraphContext'
 import { SillyContext } from '../Context/SillyContext'
+import {
+  TeamCharacterContext,
+  type TeamCharacterContextObj,
+} from '../Context/TeamCharacterContext'
 import { getCharSheet } from '../Data/Characters'
-import useTeamDataNew from '../ReactHooks/useTeamDataNew'
+import useTeamData from '../ReactHooks/useTeamData'
 import useTitle from '../ReactHooks/useTitle'
 import Content from './CharacterDisplay/Context'
 import TeamCharacterSelector from './TeamCharacterSelector'
@@ -52,7 +53,6 @@ export default function PageTeam() {
 function Page({ teamId, onClose }: { teamId: string; onClose?: () => void }) {
   const { silly } = useContext(SillyContext)
   const { gender } = useDBMeta()
-  const database = useDatabase()
   const [currentCharIndex, setCurrentCharIndex] = useState(0)
   const team = useTeam(teamId)
   const { characterIds } = team
@@ -62,7 +62,7 @@ function Page({ teamId, onClose }: { teamId: string; onClose?: () => void }) {
     params: { tab: 'overview' },
   }
   const teamCharId = characterIds[currentCharIndex]
-  const teamChar = database.teamChars.get(teamCharId)
+  const teamChar = useTeamChar(teamCharId)
   const characterKey = teamChar?.key
 
   const { t } = useTranslation([
@@ -83,7 +83,7 @@ function Page({ teamId, onClose }: { teamId: string; onClose?: () => void }) {
     )
   )
 
-  const teamData = useTeamDataNew(teamId)
+  const teamData = useTeamData(teamId)
 
   const characterSheet = getCharSheet(characterKey, gender)
   const character = useCharacter(characterKey)
@@ -98,17 +98,18 @@ function Page({ teamId, onClose }: { teamId: string; onClose?: () => void }) {
     }
   }, [charUIData, teamData])
 
-  const characterContextValue: TeamCharacterContextObj | undefined = useMemo(() => {
-    if (!character || !characterSheet) return undefined
-    return {
-      teamId,
-      team,
-      teamCharId,
-      teamChar,
-      character,
-      characterSheet,
-    }
-  }, [teamId, team, teamCharId, teamChar, character, characterSheet])
+  const characterContextValue: TeamCharacterContextObj | undefined =
+    useMemo(() => {
+      if (!character || !characterSheet) return undefined
+      return {
+        teamId,
+        team,
+        teamCharId,
+        teamChar,
+        character,
+        characterSheet,
+      }
+    }, [teamId, team, teamCharId, teamChar, character, characterSheet])
 
   const [chartData, setChartData] = useState(undefined as ChartData | undefined)
   const [graphBuilds, setGraphBuilds] = useState<string[][]>()

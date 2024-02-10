@@ -48,13 +48,12 @@ import CardLight from '../../../../Components/Card/CardLight'
 import StatDisplayComponent from '../../../../Components/Character/StatDisplayComponent'
 import CustomNumberInput from '../../../../Components/CustomNumberInput'
 import SolidToggleButtonGroup from '../../../../Components/SolidToggleButtonGroup'
-import { TeamCharacterContext } from '../../../../Context/TeamCharacterContext'
 import type { dataContextObj } from '../../../../Context/DataContext'
 import { DataContext } from '../../../../Context/DataContext'
 import { OptimizationTargetContext } from '../../../../Context/OptimizationTargetContext'
-import useTeamData, {
-  getTeamDataCalc,
-} from '../../../../ReactHooks/useTeamData'
+import { TeamCharacterContext } from '../../../../Context/TeamCharacterContext'
+import { getTeamDataCalc } from '../../../../ReactHooks/useCharData'
+import useTeamData from '../../../../ReactHooks/useTeamData'
 import { isDev } from '../../../../Util/Util'
 import { defaultInitialWeaponKey } from '../../../../Util/WeaponUtil'
 import OptimizationTargetSelector from '../TabOptimize/Components/OptimizationTargetSelector'
@@ -187,12 +186,7 @@ export default function TabTheorycraft() {
     () => getWeaponData(deferredCharTC),
     [deferredCharTC]
   )
-  const teamData = useTeamData(
-    characterKey,
-    0,
-    overriderArtData,
-    overrideWeapon
-  )
+  const teamData = useTeamData(teamId, 0, overriderArtData, overrideWeapon)
 
   const { target: charUIData } = teamData?.[characterKey] ?? {}
 

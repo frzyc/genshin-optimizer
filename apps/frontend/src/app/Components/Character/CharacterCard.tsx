@@ -36,7 +36,7 @@ import { SillyContext } from '../../Context/SillyContext'
 import { getCharSheet } from '../../Data/Characters'
 import { uiInput as input } from '../../Formula'
 import useCharacterReducer from '../../ReactHooks/useCharacterReducer'
-import useTeamData from '../../ReactHooks/useTeamData'
+import useCharData from '../../ReactHooks/useCharData'
 import type { RollColorKey } from '../../Types/consts'
 import { iconAsset } from '../../Util/AssetUtil'
 import ArtifactCardPico from '../Artifact/ArtifactCardPico'
@@ -72,7 +72,7 @@ export default function CharacterCard({
   isTeammateCard,
 }: CharacterCardProps) {
   const database = useDatabase()
-  const teamData = useTeamData(characterKey)
+  const teamData = useCharData(characterKey)
   const character = useCharacter(characterKey)
   const { gender } = useDBMeta()
   const characterSheet = getCharSheet(characterKey, gender)

@@ -1,3 +1,4 @@
+import { range } from '@genshin-optimizer/common/util'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import { charKeyToLocGenderedCharKey } from '@genshin-optimizer/gi/consts'
 import {
@@ -28,19 +29,18 @@ import type { GeneralAutocompleteOption } from '../../../Components/GeneralAutoc
 import { GeneralAutocomplete } from '../../../Components/GeneralAutocomplete'
 import CharIconSide from '../../../Components/Image/CharIconSide'
 import { InfoTooltipInline } from '../../../Components/InfoTooltip'
-import type { TeamCharacterContextObj } from '../../../Context/TeamCharacterContext'
-import { TeamCharacterContext } from '../../../Context/TeamCharacterContext'
 import type { dataContextObj } from '../../../Context/DataContext'
 import { DataContext } from '../../../Context/DataContext'
 import { SillyContext } from '../../../Context/SillyContext'
+import type { TeamCharacterContextObj } from '../../../Context/TeamCharacterContext'
+import { TeamCharacterContext } from '../../../Context/TeamCharacterContext'
 import { dataSetEffects, getArtSheet } from '../../../Data/Artifacts'
 import { getCharSheet } from '../../../Data/Characters'
 import type CharacterSheet from '../../../Data/Characters/CharacterSheet'
 import { resonanceSheets } from '../../../Data/Resonance'
 import type { NodeDisplay } from '../../../Formula/uiData'
 import useCharSelectionCallback from '../../../ReactHooks/useCharSelectionCallback'
-import useCharacterReducer from '../../../ReactHooks/useCharacterReducer'
-import { objPathValue, range } from '../../../Util/Util'
+import { objPathValue } from '../../../Util/Util'
 
 export default function TabTeambuffs() {
   return (
@@ -165,9 +165,9 @@ function TeammateDisplay({ index }: { index: number }) {
   const { teamData } = useContext(DataContext)
   const { t } = useTranslation('page_character')
   const { teamId, team } = useContext(TeamCharacterContext)
-  const teamCharId = team.characterIds[index]
+  const teamCharId = team.characterIds[index + 1]
   const teamChar = useTeamChar(teamCharId)
-  const teamMateKey = teamChar.key
+  const teamMateKey = teamChar?.key
   const character = useCharacter(teamMateKey)
 
   const onClickHandler = useCharSelectionCallback()

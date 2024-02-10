@@ -55,19 +55,19 @@ import InfoTooltip from '../../../../Components/InfoTooltip'
 import NoArtWarning from '../../../../Components/NoArtWarning'
 import SolidToggleButtonGroup from '../../../../Components/SolidToggleButtonGroup'
 import SqBadge from '../../../../Components/SqBadge'
-import { TeamCharacterContext } from '../../../../Context/TeamCharacterContext'
 import type { dataContextObj } from '../../../../Context/DataContext'
 import { DataContext } from '../../../../Context/DataContext'
 import { GraphContext } from '../../../../Context/GraphContext'
 import { OptimizationTargetContext } from '../../../../Context/OptimizationTargetContext'
+import { TeamCharacterContext } from '../../../../Context/TeamCharacterContext'
 import { mergeData, uiDataForTeam } from '../../../../Formula/api'
 import { optimize } from '../../../../Formula/optimization'
 import type { NumNode } from '../../../../Formula/type'
 import type { UIData } from '../../../../Formula/uiData'
+import { getTeamData } from '../../../../ReactHooks/useCharData'
 import useCharSelectionCallback from '../../../../ReactHooks/useCharSelectionCallback'
-import useCharacterReducer from '../../../../ReactHooks/useCharacterReducer'
 import useGlobalError from '../../../../ReactHooks/useGlobalError'
-import useTeamData, { getTeamData } from '../../../../ReactHooks/useTeamData'
+import useTeamData from '../../../../ReactHooks/useTeamData'
 import type { OptProblemInput } from '../../../../Solver'
 import { GOSolver } from '../../../../Solver/GOSolver/GOSolver'
 import type { Build } from '../../../../Solver/common'
@@ -161,7 +161,7 @@ export default function TabBuild() {
     buildResult: { builds, buildDate },
     buildResultDispatch,
   } = useBuildResult(characterKey)
-  const teamData = useTeamData(characterKey, mainStatAssumptionLevel)
+  const teamData = useTeamData(teamId, mainStatAssumptionLevel)
   const { characterSheet, target: data } =
     teamData?.[characterKey as CharacterKey] ?? {}
   const optimizationTargetNode =
@@ -816,6 +816,7 @@ export default function TabBuild() {
               <BuildList
                 builds={graphBuilds}
                 characterKey={characterKey}
+                teamId={teamId}
                 data={data}
                 compareData={compareData}
                 disabled={!!generatingBuilds}
@@ -826,6 +827,7 @@ export default function TabBuild() {
             <BuildList
               builds={builds}
               characterKey={characterKey}
+              teamId={teamId}
               data={data}
               compareData={compareData}
               disabled={!!generatingBuilds}
@@ -841,6 +843,7 @@ export default function TabBuild() {
 function BuildList({
   builds,
   setBuilds,
+  teamId,
   characterKey,
   data,
   compareData,
@@ -849,6 +852,7 @@ function BuildList({
 }: {
   builds: string[][]
   setBuilds?: (builds: string[][] | undefined) => void
+  teamId: string
   characterKey?: '' | CharacterKey
   data?: UIData
   compareData: boolean
@@ -877,6 +881,7 @@ function BuildList({
             data && (
               <DataContextWrapper
                 key={index + build.join()}
+                teamId={teamId}
                 characterKey={characterKey}
                 build={build}
                 oldData={data}
@@ -897,6 +902,7 @@ function BuildList({
     [
       builds,
       characterKey,
+      teamId,
       data,
       compareData,
       disabled,
@@ -964,11 +970,18 @@ function BuildItemWrapper({
 
 type Prop = {
   children: React.ReactNode
+  teamId: string
   characterKey: CharacterKey
   build: string[]
   oldData: UIData
 }
-function DataContextWrapper({ children, characterKey, build, oldData }: Prop) {
+function DataContextWrapper({
+  children,
+  teamId,
+  characterKey,
+  build,
+  oldData,
+}: Prop) {
   const database = useDatabase()
   const {
     buildSetting: { mainStatAssumptionLevel },
@@ -987,11 +1000,7 @@ function DataContextWrapper({ children, characterKey, build, oldData }: Prop) {
         .filter((a) => a) as ICachedArtifact[]),
     [dirty, build, database]
   )
-  const teamData = useTeamData(
-    characterKey,
-    mainStatAssumptionLevel,
-    buildsArts
-  )
+  const teamData = useTeamData(teamId, mainStatAssumptionLevel, buildsArts)
   const providerValue = useMemo(() => {
     const tdc = teamData?.[characterKey]
     if (!tdc) return undefined

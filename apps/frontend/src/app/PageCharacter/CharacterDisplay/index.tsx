@@ -25,8 +25,8 @@ import type { ChartData, GraphContextObj } from '../../Context/GraphContext'
 import { GraphContext } from '../../Context/GraphContext'
 import { SillyContext } from '../../Context/SillyContext'
 import { getCharSheet } from '../../Data/Characters'
+import useCharData from '../../ReactHooks/useCharData'
 import useCharacterReducer from '../../ReactHooks/useCharacterReducer'
-import useTeamData from '../../ReactHooks/useTeamData'
 import Content from './Context'
 
 export default function CharacterDisplay() {
@@ -66,7 +66,7 @@ function CharacterDisplayCard({
   const character = useCharacter(characterKey)
   const { gender } = useDBMeta()
   const characterSheet = getCharSheet(characterKey, gender)
-  const teamData = useTeamData(characterKey)
+  const teamData = useCharData(characterKey)
   const { target: charUIData } = teamData?.[characterKey] ?? {}
 
   const { t } = useTranslation([

@@ -10,8 +10,8 @@ import {
   ReactionToggle,
 } from '../../../../Components/HitModeEditor'
 import ModalWrapper from '../../../../Components/ModalWrapper'
-import { TeamCharacterContext } from '../../../../Context/TeamCharacterContext'
 import { DataContext } from '../../../../Context/DataContext'
+import { TeamCharacterContext } from '../../../../Context/TeamCharacterContext'
 import useTeamData from '../../../../ReactHooks/useTeamData'
 import BuildDisplayItem from '../TabOptimize/Components/BuildDisplayItem'
 import useBuildSetting from '../TabOptimize/useBuildSetting'
@@ -58,6 +58,7 @@ function CompareContent({
 }) {
   const database = useDatabase()
   const {
+    teamId,
     character: { key: characterKey, equippedArtifacts },
   } = useContext(TeamCharacterContext)
   const {
@@ -72,7 +73,7 @@ function CompareContent({
     return Object.values(artmap).filter((a) => a)
   }, [database, equippedArtifacts, artId])
   const teamData = useTeamData(
-    characterKey,
+    teamId,
     mainStatAssumptionLevel,
     build,
     weaponId ? database.weapons.get(weaponId) : undefined
