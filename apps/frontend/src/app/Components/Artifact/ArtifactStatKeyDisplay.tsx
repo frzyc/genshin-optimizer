@@ -1,9 +1,9 @@
 import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
 import type { MainStatKey, SubstatKey } from '@genshin-optimizer/gi/consts'
+import { KeyMap } from '@genshin-optimizer/gi/keymap'
 import { Box } from '@mui/material'
 import { useTranslation } from 'react-i18next'
 import { artStatPercent } from '../../Data/Artifacts/Artifact'
-import KeyMap from '../../KeyMap'
 import StatIcon from '../../KeyMap/StatIcon'
 import ColorText from '../ColoredText'
 

@@ -6,7 +6,7 @@ import {
   type AmpReactionKey,
   type HitModeKey,
 } from '@genshin-optimizer/gi/consts'
-import type { EleEnemyResKey } from '../../legacy/keys'
+import type { EleEnemyResKey } from '@genshin-optimizer/gi/keymap'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
 import { DataManager } from '../DataManager'
 export interface Team {

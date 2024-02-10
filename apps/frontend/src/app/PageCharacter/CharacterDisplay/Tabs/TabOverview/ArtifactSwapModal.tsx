@@ -55,7 +55,6 @@ export default function ArtifactSwapModal({
   onClose: () => void
 }) {
   const { t } = useTranslation('page_character')
-  const { t: tk } = useTranslation('artifact')
   const database = useDatabase()
   const clickHandler = useCallback(
     (id) => {
@@ -134,7 +133,8 @@ export default function ArtifactSwapModal({
   const showingTextProps = {
     numShowing: artifactIdsToShow.length,
     total: totalShowing,
-    t: tk,
+    t: t,
+    namespace: 'artifact',
   }
 
   return (
@@ -207,19 +207,18 @@ export default function ArtifactSwapModal({
             </Suspense>
           </Box>
           {numPages > 1 && (
-            <CardContent>
-              <Box
-                display="flex"
-                justifyContent="space-between"
-                alignItems="center"
-                flexWrap="wrap"
-              >
-                <PageAndSortOptionSelect
-                  paginationProps={paginationProps}
-                  showingTextProps={showingTextProps}
-                />
-              </Box>
-            </CardContent>
+            <Box
+              pt={2}
+              display="flex"
+              justifyContent="space-between"
+              alignItems="center"
+              flexWrap="wrap"
+            >
+              <PageAndSortOptionSelect
+                paginationProps={paginationProps}
+                showingTextProps={showingTextProps}
+              />
+            </Box>
           )}
         </CardContent>
       </CardDark>

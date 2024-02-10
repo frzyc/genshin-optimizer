@@ -2,6 +2,7 @@ import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
 import type { ElementWithPhyKey } from '@genshin-optimizer/gi/consts'
 import { allElementWithPhyKeys } from '@genshin-optimizer/gi/consts'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
+import { KeyMap } from '@genshin-optimizer/gi/keymap'
 import {
   CheckBox,
   CheckBoxOutlineBlank,
@@ -23,7 +24,6 @@ import { TeamCharacterContext } from '../Context/TeamCharacterContext'
 import { DataContext } from '../Context/DataContext'
 import { uiInput as input } from '../Formula'
 import { nodeVStr } from '../Formula/uiData'
-import KeyMap from '../KeyMap'
 import { ElementIcon } from '../KeyMap/StatIcon'
 import CardLight from './Card/CardLight'
 import ColorText from './ColoredText'

@@ -1,5 +1,6 @@
 import type { TeamCharacter } from '@genshin-optimizer/gi/db'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
+import { allEleDmgKeys, allEleResKeys } from '@genshin-optimizer/gi/keymap'
 import {
   Alert,
   Box,
@@ -23,12 +24,11 @@ import {
 } from '../../Components/FieldDisplay'
 import ModalWrapper from '../../Components/ModalWrapper'
 import StatEditorList from '../../Components/StatEditorList'
-import { TeamCharacterContext } from '../../Context/TeamCharacterContext'
 import { DataContext } from '../../Context/DataContext'
+import { TeamCharacterContext } from '../../Context/TeamCharacterContext'
 import { allInputPremodKeys, uiInput as input } from '../../Formula'
 import type { ReadNode } from '../../Formula/type'
 import { nodeVStr } from '../../Formula/uiData'
-import { allEleDmgKeys, allEleResKeys } from '../../KeyMap'
 
 const cols = {
   xs: 1,

@@ -9,11 +9,12 @@ import {
   allElementWithPhyKeys,
   allRegionKeys,
 } from '@genshin-optimizer/gi/consts'
-import KeyMap, { allEleEnemyResKeys } from '../KeyMap'
 import {
+  allEleEnemyResKeys,
   crittableTransformativeReactions,
   transformativeReactionLevelMultipliers,
-} from '../KeyMap/StatConstants'
+} from '@genshin-optimizer/gi/keymap'
+import KeyMap from '../KeyMap'
 import { artifactTr } from '../names'
 import { deepNodeClone } from './internal'
 import type { Data, Info, NodeData, NumNode, ReadNode, StrNode } from './type'

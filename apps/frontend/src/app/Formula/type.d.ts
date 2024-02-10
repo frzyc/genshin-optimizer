@@ -1,10 +1,11 @@
 import type { ElementWithPhyKey, WeaponKey } from '@genshin-optimizer/gi/consts'
-import type { KeyMapPrefix, Unit } from '../KeyMap'
 import type {
   AdditiveReactionsKey,
   AmplifyingReactionsKey,
+  KeyMapPrefix,
   TransformativeReactionsKey,
-} from '../KeyMap/StatConstants'
+  Unit,
+} from '@genshin-optimizer/gi/keymap'
 import type { ArtifactSetKey, CharacterSheetKey } from '../Types/consts'
 import type { input, uiInput } from './index'
 

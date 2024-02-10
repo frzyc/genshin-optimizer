@@ -1,10 +1,10 @@
 import { objKeyMap } from '@genshin-optimizer/common/util'
-import KeyMap from '../KeyMap'
 import {
   crystallizeLevelMultipliers,
   transformativeReactionLevelMultipliers,
   transformativeReactions,
-} from '../KeyMap/StatConstants'
+} from '@genshin-optimizer/gi/keymap'
+import KeyMap from '../KeyMap'
 import { absorbableEle } from '../Types/consts'
 import { infusionNode, input } from './index'
 import {

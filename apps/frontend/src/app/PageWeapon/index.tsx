@@ -213,6 +213,7 @@ export default function PageWeapon() {
     numShowing: weaponIdsToShow.length,
     total: totalShowing,
     t: t,
+    namespace: 'page_weapon',
   }
 
   const sortByButtonProps = {

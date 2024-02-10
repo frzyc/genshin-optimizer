@@ -1,5 +1,6 @@
 import { objKeyMap } from '@genshin-optimizer/common/util'
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
+import { KeyMap } from '@genshin-optimizer/gi/keymap'
 import { allStats } from '@genshin-optimizer/gi/stats'
 import { input } from '../../../Formula'
 import type { DisplaySub } from '../../../Formula/type'
@@ -14,7 +15,6 @@ import {
   prod,
   subscript,
 } from '../../../Formula/utils'
-import KeyMap from '../../../KeyMap'
 import type { CharacterSheetKey } from '../../../Types/consts'
 import { cond, st, stg, trans } from '../../SheetUtil'
 import type { TalentSheet } from '../ICharacterSheet'

@@ -3,7 +3,7 @@ import type { ElementWithPhyKey } from '@genshin-optimizer/gi/consts'
 /**
  * @deprecated use the translated element keys
  */
-const elementalData: StrictDict<ElementWithPhyKey, { name: string }> = {
+const elementalData: Record<ElementWithPhyKey, { name: string }> = {
   physical: { name: 'Physical' },
   anemo: { name: 'Anemo' },
   geo: { name: 'Geo' },

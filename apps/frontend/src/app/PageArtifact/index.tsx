@@ -179,6 +179,7 @@ export default function PageArtifact() {
     numShowing: artifactIdsToShow.length,
     total: totalShowing,
     t: t,
+    namespace: 'artifact',
   }
 
   const sortByButtonProps = {

@@ -64,6 +64,7 @@
         "libs/gi/frontend-gql/src/index.ts"
       ],
       "@genshin-optimizer/gi/good": ["libs/gi/good/src/index.ts"],
+      "@genshin-optimizer/gi/keymap": ["libs/gi/keymap/src/index.ts"],
       "@genshin-optimizer/gi/localization": [
         "libs/gi/localization/src/index.ts"
       ],
