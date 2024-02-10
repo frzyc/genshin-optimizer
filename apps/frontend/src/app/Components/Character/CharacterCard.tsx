@@ -6,6 +6,10 @@ import type {
   ElementKey,
 } from '@genshin-optimizer/gi/consts'
 import { allArtifactSlotKeys } from '@genshin-optimizer/gi/consts'
+import type {
+  ICachedArtifact,
+  ICachedCharacter,
+} from '@genshin-optimizer/gi/db'
 import {
   useCharMeta,
   useCharacter,
@@ -34,8 +38,6 @@ import { getCharSheet } from '../../Data/Characters'
 import { uiInput as input } from '../../Formula'
 import useCharacterReducer from '../../ReactHooks/useCharacterReducer'
 import useTeamData from '../../ReactHooks/useTeamData'
-import type { ICachedArtifact } from '../../Types/artifact'
-import type { ICachedCharacter } from '../../Types/character'
 import type { RollColorKey } from '../../Types/consts'
 import { iconAsset } from '../../Util/AssetUtil'
 import ArtifactCardPico from '../Artifact/ArtifactCardPico'

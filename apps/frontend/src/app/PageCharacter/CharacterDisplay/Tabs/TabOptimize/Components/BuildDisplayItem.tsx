@@ -7,6 +7,7 @@ import {
 import type {
   AllowLocationsState,
   ArtSetExclusionKey,
+  ICachedArtifact,
 } from '@genshin-optimizer/gi/db'
 import { allArtifactSetExclusionKeys } from '@genshin-optimizer/gi/db'
 import { useArtifact, useDatabase } from '@genshin-optimizer/gi/db-ui'
@@ -39,7 +40,6 @@ import { DataContext } from '../../../../../Context/DataContext'
 import { getCharSheet } from '../../../../../Data/Characters'
 import { uiInput as input } from '../../../../../Formula'
 import ArtifactCard from '../../../../../PageArtifact/ArtifactCard'
-import type { ICachedArtifact } from '../../../../../Types/artifact'
 import useBuildSetting from '../useBuildSetting'
 import { ArtifactSetBadges } from './ArtifactSetBadges'
 import SetInclusionButton from './SetInclusionButton'

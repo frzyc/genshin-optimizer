@@ -15,8 +15,12 @@ import {
   allWeaponTypeKeys,
   charKeyToLocCharKey,
 } from '@genshin-optimizer/gi/consts'
-import type { AllowLocationsState } from '@genshin-optimizer/gi/db'
+import type {
+  AllowLocationsState,
+  ICachedCharacter,
+} from '@genshin-optimizer/gi/db'
 import { allAllowLocationsState } from '@genshin-optimizer/gi/db'
+import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import SettingsIcon from '@mui/icons-material/Settings'
 import ShowChartIcon from '@mui/icons-material/ShowChart'
 import {
@@ -55,8 +59,6 @@ import WeaponToggle from '../../../../../Components/ToggleButton/WeaponToggle'
 import { CharacterContext } from '../../../../../Context/CharacterContext'
 import { SillyContext } from '../../../../../Context/SillyContext'
 import { getCharSheet } from '../../../../../Data/Characters'
-import { useDatabase } from '@genshin-optimizer/gi/db-ui'
-import type { ICachedCharacter } from '../../../../../Types/character'
 import { characterFilterConfigs } from '../../../../../Util/CharacterSort'
 import { bulkCatTotal } from '../../../../../Util/totalUtils'
 import useBuildSetting from '../useBuildSetting'

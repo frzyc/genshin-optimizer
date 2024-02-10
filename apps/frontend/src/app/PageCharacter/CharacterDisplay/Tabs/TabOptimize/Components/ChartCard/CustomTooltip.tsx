@@ -1,5 +1,7 @@
 import { valueString } from '@genshin-optimizer/common/util'
 import { allArtifactSlotKeys } from '@genshin-optimizer/gi/consts'
+import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
+import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import {
   Button,
   CardContent,
@@ -18,10 +20,8 @@ import CardDark from '../../../../../../Components/Card/CardDark'
 import CloseButton from '../../../../../../Components/CloseButton'
 import SqBadge from '../../../../../../Components/SqBadge'
 import { DataContext } from '../../../../../../Context/DataContext'
-import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { input } from '../../../../../../Formula'
 import type { Unit } from '../../../../../../KeyMap'
-import type { ICachedArtifact } from '../../../../../../Types/artifact'
 import { ArtifactSetBadges } from '../ArtifactSetBadges'
 import type EnhancedPoint from './EnhancedPoint'
 

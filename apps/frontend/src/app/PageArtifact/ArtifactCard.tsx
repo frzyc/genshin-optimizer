@@ -10,6 +10,7 @@ import {
   allElementWithPhyKeys,
   allSubstatKeys,
 } from '@genshin-optimizer/gi/consts'
+import type { ICachedArtifact, ICachedSubstat } from '@genshin-optimizer/gi/db'
 import { useArtifact, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import {
   artDisplayValue,
@@ -47,7 +48,6 @@ import { getArtSheet } from '../Data/Artifacts'
 import Artifact from '../Data/Artifacts/Artifact'
 import KeyMap from '../KeyMap'
 import StatIcon from '../KeyMap/StatIcon'
-import type { ICachedArtifact, ICachedSubstat } from '../Types/artifact'
 import type { ArtifactEditorProps } from './ArtifactEditor'
 
 const ArtifactEditor = lazy(() => import('./ArtifactEditor'))

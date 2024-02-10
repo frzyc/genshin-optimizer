@@ -1,10 +1,9 @@
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
-import type { ICachedWeapon } from '@genshin-optimizer/gi/db'
+import type { ICachedCharacter, ICachedWeapon } from '@genshin-optimizer/gi/db'
 import { createContext } from 'react'
 import type CharacterSheet from '../Data/Characters/CharacterSheet'
 import type WeaponSheet from '../Data/Weapons/WeaponSheet'
 import type { UIData } from '../Formula/uiData'
-import type { ICachedCharacter } from '../Types/character'
 export type TeamData = Partial<
   Record<
     CharacterKey,

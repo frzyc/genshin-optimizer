@@ -10,6 +10,7 @@ import {
   allElementKeys,
   allWeaponTypeKeys,
 } from '@genshin-optimizer/gi/consts'
+import type { ICachedCharacter } from '@genshin-optimizer/gi/db'
 import {
   useCharMeta,
   useCharacter,
@@ -55,7 +56,6 @@ import { DataContext } from '../Context/DataContext'
 import { SillyContext } from '../Context/SillyContext'
 import { getCharSheet } from '../Data/Characters'
 import type CharacterSheet from '../Data/Characters/CharacterSheet'
-import type { ICachedCharacter } from '../Types/character'
 import { iconAsset } from '../Util/AssetUtil'
 import type { CharacterSortKey } from '../Util/CharacterSort'
 import {

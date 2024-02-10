@@ -30,6 +30,7 @@ import {
   allArtifactSlotKeys,
   charKeyToLocCharKey,
 } from '@genshin-optimizer/gi/consts'
+import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
 import {
   Suspense,
   useCallback,
@@ -50,7 +51,6 @@ import type { NumNode } from '../../../../Formula/type'
 import useCharSelectionCallback from '../../../../ReactHooks/useCharSelectionCallback'
 import useTeamData, { getTeamData } from '../../../../ReactHooks/useTeamData'
 import type { DynStat } from '../../../../Solver/common'
-import type { ICachedArtifact } from '../../../../Types/artifact'
 import { objPathValue, shouldShowDevComponents } from '../../../../Util/Util'
 import MainStatSelectionCard from '../TabOptimize/Components/MainStatSelectionCard'
 import { dynamicData } from '../TabOptimize/foreground'

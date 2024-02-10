@@ -13,6 +13,7 @@ import {
   allSubstatKeys,
   artSlotMainKeys,
 } from '@genshin-optimizer/gi/consts'
+import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
 import { cachedArtifact, validateArtifact } from '@genshin-optimizer/gi/db'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import type { IArtifact, ISubstat } from '@genshin-optimizer/gi/good'
@@ -76,7 +77,6 @@ import ModalWrapper from '../Components/ModalWrapper'
 import { getArtSheet } from '../Data/Artifacts'
 import Artifact from '../Data/Artifacts/Artifact'
 import StatIcon from '../KeyMap/StatIcon'
-import type { ICachedArtifact } from '../Types/artifact'
 import { shouldShowDevComponents } from '../Util/Util'
 import ArtifactCard from './ArtifactCard'
 import SubstatEfficiencyDisplayCard from './ArtifactEditor/Components/SubstatEfficiencyDisplayCard'

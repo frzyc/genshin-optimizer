@@ -1,3 +1,4 @@
+import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import LockIcon from '@mui/icons-material/Lock'
@@ -10,7 +11,6 @@ import { Trans, useTranslation } from 'react-i18next'
 import CardDark from '../Components/Card/CardDark'
 import SqBadge from '../Components/SqBadge'
 import useDisplayArtifact from '../ReactHooks/useDisplayArtifact'
-import type { ICachedArtifact } from '../Types/artifact'
 import type { FilterOption } from './ArtifactSort'
 const ArtifactFilterDisplay = lazy(
   () => import('../Components/Artifact/ArtifactFilterDisplay')

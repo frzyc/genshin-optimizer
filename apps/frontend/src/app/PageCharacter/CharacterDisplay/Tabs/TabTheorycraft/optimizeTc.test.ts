@@ -1,8 +1,8 @@
 import { SandboxStorage } from '@genshin-optimizer/common/database'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
+import type { ICharTC } from '@genshin-optimizer/gi/db'
 import { ArtCharDatabase } from '@genshin-optimizer/gi/db'
 import { getTeamDataCalc } from '../../../../ReactHooks/useTeamData'
-import type { ICharTC } from '../../../../Types/character'
 import {
   getArtifactData,
   getWeaponData,
