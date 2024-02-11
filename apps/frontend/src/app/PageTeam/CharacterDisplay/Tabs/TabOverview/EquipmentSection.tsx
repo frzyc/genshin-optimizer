@@ -55,8 +55,8 @@ import { uiInput as input } from '../../../../Formula'
 import ArtifactCard from '../../../../PageArtifact/ArtifactCard'
 import WeaponCard from '../../../../PageWeapon/WeaponCard'
 import type { IFieldDisplay } from '../../../../Types/fieldDisplay'
-import ArtifactSwapModal from './ArtifactSwapModal'
-import WeaponSwapModal from './WeaponSwapModal'
+import ArtifactSwapModal from '../../../../Components/Artifact/ArtifactSwapModal'
+import WeaponSwapModal from '../../../../Components/Weapon/WeaponSwapModal'
 
 const WeaponEditor = lazy(() => import('../../../../PageWeapon/WeaponEditor'))
 

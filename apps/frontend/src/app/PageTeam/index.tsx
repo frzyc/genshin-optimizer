@@ -148,7 +148,7 @@ function Page({ teamId, onClose }: { teamId: string; onClose?: () => void }) {
             <DataContext.Provider value={dataContextValue}>
               <GraphContext.Provider value={graphContextValue}>
                 <FormulaDataWrapper>
-                  <Content character={character} tab={tab} />
+                  <Content tab={tab} />
                 </FormulaDataWrapper>
               </GraphContext.Provider>
             </DataContext.Provider>

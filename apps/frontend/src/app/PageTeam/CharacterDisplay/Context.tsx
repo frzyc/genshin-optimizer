@@ -20,13 +20,10 @@ import {
   InfusionAuraDropdown,
   ReactionToggle,
 } from '../../Components/HitModeEditor'
-import LevelSelect from '../../Components/LevelSelect'
 import SqBadge from '../../Components/SqBadge'
-import { TeamCharacterContext } from '../../Context/TeamCharacterContext'
 import { FormulaDataContext } from '../../Context/FormulaDataContext'
-import useCharacterReducer from '../../ReactHooks/useCharacterReducer'
+import { TeamCharacterContext } from '../../Context/TeamCharacterContext'
 import { shouldShowDevComponents } from '../../Util/Util'
-import CharSelectButton from './CharSelectButton'
 import { CustomMultiTargetButton } from './CustomMultiTarget'
 import FormulaModal from './FormulaModal'
 import StatModal from './StatModal'
@@ -36,26 +33,20 @@ import TabTalent from './Tabs/TabTalent'
 import TabTeambuffs from './Tabs/TabTeambuffs'
 import TabTheorycraft from './Tabs/TabTheorycraft'
 import TabUpopt from './Tabs/TabUpgradeOpt'
-import TravelerElementSelect from './TravelerElementSelect'
-import TravelerGenderSelect from './TravelerGenderSelect'
+import LoadoutBtn from './LoadoutBtn'
 
 export default function Content({
-  character,
   tab,
   onClose,
 }: {
-  character: ICachedCharacter
   tab: string
   onClose?: () => void
 }) {
-  const characterDispatch = useCharacterReducer(character?.key ?? '')
   return (
     <>
       <Box display="flex">
         <Box display="flex" gap={1} flexWrap="wrap" flexGrow={1}>
-          <CharSelectButton />
-          <TravelerElementSelect />
-          <TravelerGenderSelect />
+          <LoadoutBtn />
           <DetailStatButton />
           <CustomMultiTargetButton />
           <FormulasButton />
@@ -63,13 +54,6 @@ export default function Content({
         {!!onClose && <CloseButton onClick={onClose} />}
       </Box>
       <Box display="flex" gap={1} flexWrap="wrap">
-        {character && (
-          <LevelSelect
-            level={character.level}
-            ascension={character.ascension}
-            setBoth={characterDispatch}
-          />
-        )}
         <HitModeToggle size="small" />
         <InfusionAuraDropdown />
         <ReactionToggle size="small" />

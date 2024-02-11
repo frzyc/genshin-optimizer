@@ -33,6 +33,7 @@ import {
   useState,
 } from 'react'
 import { useTranslation } from 'react-i18next'
+import ArtifactSwapModal from '../../../../Components/Artifact/ArtifactSwapModal'
 import SetEffectDisplay from '../../../../Components/Artifact/SetEffectDisplay'
 import SlotIcon from '../../../../Components/Artifact/SlotIcon'
 import SubstatToggle from '../../../../Components/Artifact/SubstatToggle'
@@ -52,8 +53,7 @@ import { uiInput as input } from '../../../../Formula'
 import ArtifactCard from '../../../../PageArtifact/ArtifactCard'
 import WeaponCard from '../../../../PageWeapon/WeaponCard'
 import type { IFieldDisplay } from '../../../../Types/fieldDisplay'
-import ArtifactSwapModal from './ArtifactSwapModal'
-import WeaponSwapModal from './WeaponSwapModal'
+import WeaponSwapModal from '../../../../Components/Weapon/WeaponSwapModal'
 
 const WeaponEditor = lazy(() => import('../../../../PageWeapon/WeaponEditor'))
 

@@ -49,18 +49,16 @@ function CompareContent({
   weaponId?: string
   onHide: () => void
 }) {
-  const database = useDatabase()
-  const {
-    character: { key: characterKey, equippedArtifacts },
-  } = useContext(CharacterContext)
-  const { data: oldData } = useContext(DataContext)
-  const build = useMemo(() => {
-    const newArt = database.arts.get(artId ?? '')
-    const artmap = objMap(equippedArtifacts, (id, slot) =>
-      slot === newArt?.slotKey ? newArt : database.arts.get(id)
-    )
-    return Object.values(artmap).filter((a) => a)
-  }, [database, equippedArtifacts, artId])
+  // const database = useDatabase()
+
+  // const { data: oldData } = useContext(DataContext)
+  // const build = useMemo(() => {
+  //   const newArt = database.arts.get(artId ?? '')
+  //   const artmap = objMap(equippedArtifacts, (id, slot) =>
+  //     slot === newArt?.slotKey ? newArt : database.arts.get(id)
+  //   )
+  //   return Object.values(artmap).filter((a) => a)
+  // }, [database, equippedArtifacts, artId])
   // const teamData = useTeamData(
   //   characterKey,
   //   mainStatAssumptionLevel,

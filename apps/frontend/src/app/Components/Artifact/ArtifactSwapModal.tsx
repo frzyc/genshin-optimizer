@@ -25,23 +25,21 @@ import {
   useState,
 } from 'react'
 import { useTranslation } from 'react-i18next'
-import CardDark from '../../../../Components/Card/CardDark'
-import CloseButton from '../../../../Components/CloseButton'
-import ImgIcon from '../../../../Components/Image/ImgIcon'
-import ModalWrapper from '../../../../Components/ModalWrapper'
-import PageAndSortOptionSelect from '../../../../Components/PageAndSortOptionSelect'
-import ArtifactCard from '../../../../PageArtifact/ArtifactCard'
-import type { FilterOption } from '../../../../PageArtifact/ArtifactSort'
+import ArtifactCard from '../../PageArtifact/ArtifactCard'
+import type { FilterOption } from '../../PageArtifact/ArtifactSort'
 import {
   artifactFilterConfigs,
   initialFilterOption,
-} from '../../../../PageArtifact/ArtifactSort'
-import CompareBuildButton from './CompareBuildButton'
+} from '../../PageArtifact/ArtifactSort'
+import CardDark from '../Card/CardDark'
+import CloseButton from '../CloseButton'
+import ImgIcon from '../Image/ImgIcon'
+import ModalWrapper from '../ModalWrapper'
+import PageAndSortOptionSelect from '../PageAndSortOptionSelect'
+import CompareBuildButton from '../CompareBuildButton'
 
 const numToShowMap = { xs: 2 * 3, sm: 2 * 3, md: 3 * 3, lg: 4 * 3, xl: 4 * 3 }
-const ArtifactFilterDisplay = lazy(
-  () => import('../../../../Components/Artifact/ArtifactFilterDisplay')
-)
+const ArtifactFilterDisplay = lazy(() => import('./ArtifactFilterDisplay'))
 
 export default function ArtifactSwapModal({
   onChangeId,
@@ -198,7 +196,12 @@ export default function ArtifactSwapModal({
                   <Grid item key={id} xs={1}>
                     <ArtifactCard
                       artifactId={id}
-                      extraButtons={<CompareBuildButton artId={id} />}
+                      extraButtons={
+                        <CompareBuildButton>
+                          {/* TODO: add content to compare modal with build comparasion artId={id} */}
+                          <Box>TODO</Box>
+                        </CompareBuildButton>
+                      }
                       onClick={clickHandler}
                     />
                   </Grid>

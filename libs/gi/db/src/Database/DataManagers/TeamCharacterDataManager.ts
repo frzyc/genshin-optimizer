@@ -1,6 +1,4 @@
-import type {
-  ArtifactSetKey,
-  WeaponKey} from '@genshin-optimizer/gi/consts';
+import type { ArtifactSetKey, WeaponKey } from '@genshin-optimizer/gi/consts'
 import {
   allCharacterKeys,
   allInfusionAuraElementKeys,
@@ -13,6 +11,7 @@ import {
 import type { InputPremodKey } from '../../legacy/keys'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
 import { DataManager } from '../DataManager'
+import type { Build } from './BuildDataManager'
 import { validateCustomMultiTarget } from './CustomMultiTarget'
 const buildTypeKeys = ['equipped', 'real', 'tc'] as const
 type buildTypeKey = (typeof buildTypeKeys)[number]
@@ -30,8 +29,8 @@ export interface TeamCharacter {
   infusionAura?: InfusionAuraElementKey | ''
   // TODO builds
   buildType: buildTypeKey
-  buildRealId: string
-  buildRealIds: string[]
+  buildId: string
+  buildIds: string[]
   buildTcId: string
   buildTcIds: string[]
 }
@@ -64,7 +63,7 @@ export class TeamCharacterDataManager extends DataManager<
         this.database.storage.remove(key)
   }
   override validate(obj: unknown): TeamCharacter | undefined {
-    return validateTeamCharater(obj)
+    return validateTeamCharater(obj, this.database)
   }
 
   new(key: CharacterKey): string {
@@ -75,9 +74,20 @@ export class TeamCharacterDataManager extends DataManager<
   override clear(): void {
     super.clear()
   }
+  newBuild(teamcharId: string, build: Partial<Build> = {}) {
+    if (!this.get(teamcharId)) return
+    const id = this.database.builds.new(build)
+    if (!id) return
+    this.set(teamcharId, (teamChar) => {
+      teamChar.buildIds.unshift(id)
+    })
+  }
 }
 
-function validateTeamCharater(obj: unknown = {}): TeamCharacter | undefined {
+function validateTeamCharater(
+  obj: unknown = {},
+  database: ArtCharDatabase
+): TeamCharacter | undefined {
   const { key: characterKey } = obj as TeamCharacter
   let {
     customMultiTargets,
@@ -86,8 +96,8 @@ function validateTeamCharater(obj: unknown = {}): TeamCharacter | undefined {
     infusionAura,
 
     buildType,
-    buildRealId,
-    buildRealIds,
+    buildId,
+    buildIds,
     buildTcId,
     buildTcIds,
   } = obj as TeamCharacter
@@ -115,13 +125,15 @@ function validateTeamCharater(obj: unknown = {}): TeamCharacter | undefined {
 
   if (!buildTypeKeys.includes(buildType)) buildType = 'equipped'
 
-  //TODO
-  buildRealId = ''
-  buildRealIds = []
-  buildTcId = ''
-  buildTcIds = []
-
-  if (!buildRealId && !buildTcId) buildType = 'equipped'
+  if (typeof buildId !== 'string') buildId = ''
+  if (!Array.isArray(buildIds)) buildIds = []
+  buildIds = buildIds.filter((buildId) =>
+    database.builds.keys.includes(buildId)
+  )
+  if (typeof buildTcId !== 'string') buildTcId = ''
+  if (!Array.isArray(buildTcIds)) buildTcIds = []
+  // TODO: validate against valid buildTcIds
+  if (!buildId && !buildTcId) buildType = 'equipped'
 
   return {
     key: characterKey,
@@ -130,8 +142,8 @@ function validateTeamCharater(obj: unknown = {}): TeamCharacter | undefined {
     bonusStats,
     infusionAura,
     buildType,
-    buildRealId,
-    buildRealIds,
+    buildId,
+    buildIds,
     buildTcId,
     buildTcIds,
   }

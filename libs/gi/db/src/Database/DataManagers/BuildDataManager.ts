@@ -1,8 +1,8 @@
 import { objKeyMap } from '@genshin-optimizer/common/util'
 import type { ArtifactSlotKey } from '@genshin-optimizer/gi/consts'
 import { allArtifactSlotKeys } from '@genshin-optimizer/gi/consts'
+import type { ArtCharDatabase } from '../ArtCharDatabase'
 import { DataManager } from '../DataManager'
-import { ArtCharDatabase } from '../ArtCharDatabase'
 export interface Build {
   name: string
   description: string
@@ -28,9 +28,9 @@ export class BuildDataManager extends DataManager<
     return validateBuild(obj, this.database)
   }
 
-  new(value: Build): string {
+  new(build: Partial<Build> = {}): string {
     const id = this.generateKey()
-    this.set(id, value)
+    this.set(id, build)
     return id
   }
   override clear(): void {

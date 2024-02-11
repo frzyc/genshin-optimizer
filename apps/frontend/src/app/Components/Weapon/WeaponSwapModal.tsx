@@ -38,23 +38,23 @@ import {
   useState,
 } from 'react'
 import { useTranslation } from 'react-i18next'
-import CardDark from '../../../../Components/Card/CardDark'
-import CloseButton from '../../../../Components/CloseButton'
-import ImgIcon from '../../../../Components/Image/ImgIcon'
-import ModalWrapper from '../../../../Components/ModalWrapper'
-import PageAndSortOptionSelect from '../../../../Components/PageAndSortOptionSelect'
-import SolidToggleButtonGroup from '../../../../Components/SolidToggleButtonGroup'
-import WeaponSelectionModal from '../../../../Components/Weapon/WeaponSelectionModal'
-import WeaponCard from '../../../../PageWeapon/WeaponCard'
-import WeaponEditor from '../../../../PageWeapon/WeaponEditor'
-import { handleMultiSelect } from '../../../../Util/MultiSelect'
+import CardDark from '../Card/CardDark'
+import CloseButton from '../CloseButton'
+import ImgIcon from '../Image/ImgIcon'
+import ModalWrapper from '../ModalWrapper'
+import PageAndSortOptionSelect from '../PageAndSortOptionSelect'
+import SolidToggleButtonGroup from '../SolidToggleButtonGroup'
+import WeaponSelectionModal from './WeaponSelectionModal'
+import WeaponCard from '../../PageWeapon/WeaponCard'
+import WeaponEditor from '../../PageWeapon/WeaponEditor'
+import { handleMultiSelect } from '../../Util/MultiSelect'
 import {
   weaponFilterConfigs,
   weaponSortConfigs,
   weaponSortMap,
-} from '../../../../Util/WeaponSort'
-import { initialWeapon } from '../../../../Util/WeaponUtil'
-import CompareBuildButton from './CompareBuildButton'
+} from '../../Util/WeaponSort'
+import { initialWeapon } from '../../Util/WeaponUtil'
+import CompareBuildButton from '../CompareBuildButton'
 
 const numToShowMap = { xs: 2 * 3, sm: 2 * 3, md: 3 * 3, lg: 4 * 3, xl: 4 * 3 }
 const rarityHandler = handleMultiSelect([...allRarityKeys])
@@ -266,7 +266,12 @@ export default function WeaponSwapModal({
                 <WeaponCard
                   weaponId={weaponId}
                   onClick={clickHandler}
-                  extraButtons={<CompareBuildButton weaponId={weaponId} />}
+                  extraButtons={
+                    <CompareBuildButton>
+                      {/* TODO: add content to compare modal with build comparasion weaponId={weaponId} */}
+                      <Box>TODO</Box>
+                    </CompareBuildButton>
+                  }
                 />
               </Grid>
             ))}

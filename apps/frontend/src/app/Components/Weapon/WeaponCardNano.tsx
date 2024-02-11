@@ -1,4 +1,4 @@
-import { weaponAsset } from '@genshin-optimizer/gi/assets'
+import { imgAssets, weaponAsset } from '@genshin-optimizer/gi/assets'
 import { useDatabase, useWeapon } from '@genshin-optimizer/gi/db-ui'
 import { BusinessCenter } from '@mui/icons-material'
 import { Box, CardActionArea, Chip, Skeleton, Typography } from '@mui/material'
@@ -14,12 +14,14 @@ import CardDark from '../Card/CardDark'
 import LocationIcon from '../Character/LocationIcon'
 import ConditionalWrapper from '../ConditionalWrapper'
 import WeaponNameTooltip from './WeaponNameTooltip'
+import type { WeaponTypeKey } from '@genshin-optimizer/gi/consts'
 
 type Data = {
   weaponId?: string
   onClick?: () => void
   showLocation?: boolean
   BGComponent?: React.ElementType
+  weaponTypeKey?: WeaponTypeKey
 }
 
 export default function WeaponCardNano({
@@ -27,6 +29,7 @@ export default function WeaponCardNano({
   showLocation = false,
   onClick,
   BGComponent = CardDark,
+  weaponTypeKey = 'sword',
 }: Data) {
   const database = useDatabase()
   const weapon = useWeapon(weaponId)
@@ -48,10 +51,18 @@ export default function WeaponCardNano({
   )
   if (!weapon || !weaponSheet || !UIData)
     return (
-      <BGComponent sx={{ height: '100%' }}>
-        <Skeleton
-          variant="rectangular"
-          sx={{ width: '100%', height: '100%' }}
+      <BGComponent
+        sx={{
+          display: 'flex',
+          height: '100%',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+      >
+        <Box
+          component="img"
+          src={imgAssets.weaponTypes[weaponTypeKey]}
+          sx={{ width: '25%', height: 'auto', opacity: 0.7 }}
         />
       </BGComponent>
     )
