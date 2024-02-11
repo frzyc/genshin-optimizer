@@ -1,5 +1,11 @@
-import type { ArtifactSetKey, WeaponKey } from '@genshin-optimizer/gi/consts'
+import { objKeyMap, objMap } from '@genshin-optimizer/common/util'
+import type {
+  ArtifactSetKey,
+  ArtifactSlotKey,
+  WeaponKey,
+} from '@genshin-optimizer/gi/consts'
 import {
+  allArtifactSlotKeys,
   allCharacterKeys,
   allInfusionAuraElementKeys,
   type AdditiveReactionKey,
@@ -8,11 +14,14 @@ import {
   type InfusionAuraElementKey,
   type MultiOptHitModeKey,
 } from '@genshin-optimizer/gi/consts'
+import type { ICachedWeapon } from '../../Interfaces'
 import type { InputPremodKey } from '../../legacy/keys'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
 import { DataManager } from '../DataManager'
+import type { ICachedArtifact } from './ArtifactDataManager'
 import type { Build } from './BuildDataManager'
 import { validateCustomMultiTarget } from './CustomMultiTarget'
+import { defaultInitialWeapon } from './WeaponDataManager'
 const buildTypeKeys = ['equipped', 'real', 'tc'] as const
 type buildTypeKey = (typeof buildTypeKeys)[number]
 type CondKey = CharacterKey | ArtifactSetKey | WeaponKey
@@ -81,6 +90,59 @@ export class TeamCharacterDataManager extends DataManager<
     this.set(teamcharId, (teamChar) => {
       teamChar.buildIds.unshift(id)
     })
+  }
+  /**
+   *
+   * @param teamCharId
+   * @returns a ICached weapon, because in WR a lack of a weapon can have strange effects
+   */
+  getLoadoutWeapon(teamCharId: string): ICachedWeapon {
+    const teamChar = this.get(teamCharId)
+    if (!teamChar) return defaultInitialWeapon()
+    const { key: characterKey, buildType, buildId, buildTcId } = teamChar
+    switch (buildType) {
+      case 'equipped': {
+        const char = this.database.chars.get(characterKey)
+        if (!char) return defaultInitialWeapon()
+        return (
+          this.database.weapons.get(char.equippedWeapon) ??
+          defaultInitialWeapon()
+        )
+      }
+      case 'real': {
+        const build = this.database.builds.get(buildId)
+        if (!build) return defaultInitialWeapon()
+        return (
+          this.database.weapons.get(build.weaponId) ?? defaultInitialWeapon()
+        )
+      }
+      //TODO case 'TC'
+    }
+    return defaultInitialWeapon()
+  }
+
+  getLoadoutArtifacts(
+    teamCharId: string
+  ): Record<ArtifactSlotKey, ICachedArtifact | undefined> {
+    const teamChar = this.get(teamCharId)
+    if (!teamChar) return objKeyMap(allArtifactSlotKeys, () => undefined)
+    const { key: characterKey, buildType, buildId, buildTcId } = teamChar
+    switch (buildType) {
+      case 'equipped': {
+        const char = this.database.chars.get(characterKey)
+        if (!char) return objKeyMap(allArtifactSlotKeys, () => undefined)
+        return objMap(char.equippedArtifacts, (id) =>
+          this.database.arts.get(id)
+        )
+      }
+      case 'real': {
+        const build = this.database.builds.get(buildId)
+        if (!build) return objKeyMap(allArtifactSlotKeys, () => undefined)
+        return objMap(build.artifactIds, (id) => this.database.arts.get(id))
+      }
+      //TODO case 'TC'
+    }
+    return objKeyMap(allArtifactSlotKeys, () => undefined)
   }
 }
 

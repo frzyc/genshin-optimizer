@@ -1,6 +1,8 @@
 import type { WeaponKey, WeaponTypeKey } from '@genshin-optimizer/gi/consts'
 import type { ICachedWeapon } from '@genshin-optimizer/gi/db'
-
+/**
+ * @deprecated use go/db
+ */
 export function defaultInitialWeaponKey(type: WeaponTypeKey): WeaponKey {
   switch (type) {
     case 'sword':
@@ -17,10 +19,15 @@ export function defaultInitialWeaponKey(type: WeaponTypeKey): WeaponKey {
       return 'DullBlade'
   }
 }
+/**
+ * @deprecated use go/db
+ */
 export const defaultInitialWeapon = (
   type: WeaponTypeKey = 'sword'
 ): ICachedWeapon => initialWeapon(defaultInitialWeaponKey(type))
-
+/**
+ * @deprecated use go/db
+ */
 export const initialWeapon = (key: WeaponKey): ICachedWeapon => ({
   id: '',
   key,

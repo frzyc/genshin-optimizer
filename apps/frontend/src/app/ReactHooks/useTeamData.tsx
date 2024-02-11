@@ -73,12 +73,26 @@ export default function useTeamData(
   )
 
   useEffect(() => {
-    const unfollows = characterIds.map((teamCharId) =>
+    const unfollowTeamChars = characterIds.map((teamCharId) =>
       database.teamChars.follow(teamCharId, (_k, r, v) => {
         if (r === 'update') setDbDirty()
       })
     )
-    return () => unfollows.forEach((unfollow) => unfollow())
+    const unfollowBuilds = characterIds.map((teamCharId) => {
+      const teamChar = database.teamChars.get(teamCharId)
+      if (!teamChar) return () => {}
+      if (teamChar.buildType === 'equipped')
+        return database.chars.follow(teamChar.key, () => setDbDirty())
+      else if (teamChar.buildType === 'real')
+        return database.builds.follow(teamChar.buildId, () => setDbDirty())
+      else if (teamChar.buildType === 'tc') return () => {} // TODO: TC BUILD
+      return () => {}
+    })
+
+    return () => {
+      unfollowTeamChars.forEach((unfollow) => unfollow())
+      unfollowBuilds.forEach((unfollow) => unfollow())
+    }
   }, [database, characterIds, setDbDirty])
 
   return data
@@ -157,15 +171,13 @@ export function getTeamData(
         hitMode,
         reaction,
       },
-      // TODO instead of using equipped, should use the teamChar.buildId build
       ind === 0 && overrideWeapon
         ? overrideWeapon
-        : database.weapons.get(character.equippedWeapon) ??
-            defaultInitialWeapon(),
+        : database.teamChars.getLoadoutWeapon(id),
       (ind === 0 && overrideArt) ??
-        (Object.values(character.equippedArtifacts)
-          .map((a) => database.arts.get(a))
-          .filter((a) => a) as ICachedArtifact[])
+        (Object.values(database.teamChars.getLoadoutArtifacts(id)).filter(
+          (a) => a
+        ) as ICachedArtifact[])
     )
   })
   const teamBundle = Object.fromEntries(
