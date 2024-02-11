@@ -55,7 +55,7 @@ export default function GcsimButton({ disabled }: { disabled: boolean }) {
       level,
       ascension,
       constellation,
-      talent: { auto, burst, skill },
+      talent: { auto, skill, burst },
     },
   } = useContext(CharacterContext)
   const {
@@ -103,7 +103,7 @@ export default function GcsimButton({ disabled }: { disabled: boolean }) {
 # Character
 ${charKeyLow} char lvl=${level}/${
     ascensionMaxLevel[ascension]
-  } cons=${constellation} talent=${auto},${burst},${skill};
+  } cons=${constellation} talent=${auto},${skill},${burst};
 
 # Weapon
 ${charKeyLow} add weapon="${weaponKey.toLowerCase()}" refine=${wRefinement} lvl=${wLevel}/${
