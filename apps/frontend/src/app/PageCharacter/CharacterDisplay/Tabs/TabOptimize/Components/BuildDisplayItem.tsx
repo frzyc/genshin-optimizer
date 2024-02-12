@@ -246,6 +246,11 @@ function CompareArtifactModal({
   const newLoc = database.arts.get(newId)?.location ?? ''
   const newArtifact = useArtifact(newId)
 
+  const deleteArtifact = useCallback(
+    (id: string) => database.arts.remove(id),
+    [database]
+  )
+
   return (
     <ModalWrapper
       open={!!newId}
@@ -262,14 +267,15 @@ function CompareArtifactModal({
           }}
         >
           {oldId && (
-            <Box minWidth={320}>
+            <Box minWidth={320} display="flex" flexDirection="column" gap={1}>
               <ArtifactCard
                 artifactId={oldId}
+                onDelete={deleteArtifact}
                 mainStatAssumptionLevel={mainStatAssumptionLevel}
                 canEquip
                 editorProps={{ disableSet: true, disableSlot: true }}
-                extraButtons={<ExcludeButton id={oldId} />}
               />
+              <ExcludeButton id={oldId} />
             </Box>
           )}
           {oldId && <Box display="flex" flexGrow={1} />}
@@ -284,11 +290,12 @@ function CompareArtifactModal({
           <Box minWidth={320} display="flex" flexDirection="column" gap={1}>
             <ArtifactCard
               artifactId={newId}
+              onDelete={deleteArtifact}
               mainStatAssumptionLevel={mainStatAssumptionLevel}
               canEquip
               editorProps={{ disableSet: true, disableSlot: true }}
-              extraButtons={<ExcludeButton id={newId} />}
             />
+            <ExcludeButton id={newId} />
             {newLoc &&
               newLoc !== charKeyToLocCharKey(characterKey) &&
               allowLocationsState !== 'all' && (
