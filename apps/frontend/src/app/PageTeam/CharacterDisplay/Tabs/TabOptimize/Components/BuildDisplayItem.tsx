@@ -10,7 +10,11 @@ import type {
   ICachedArtifact,
 } from '@genshin-optimizer/gi/db'
 import { allArtifactSetExclusionKeys } from '@genshin-optimizer/gi/db'
-import { useArtifact, useDatabase } from '@genshin-optimizer/gi/db-ui'
+import {
+  useArtifact,
+  useDatabase,
+  useOptConfig,
+} from '@genshin-optimizer/gi/db-ui'
 import { Checkroom, ChevronRight } from '@mui/icons-material'
 import BlockIcon from '@mui/icons-material/Block'
 import CheckBoxIcon from '@mui/icons-material/CheckBox'
@@ -35,12 +39,11 @@ import ColorText from '../../../../../Components/ColoredText'
 import ModalWrapper from '../../../../../Components/ModalWrapper'
 import SqBadge from '../../../../../Components/SqBadge'
 import WeaponCardNano from '../../../../../Components/Weapon/WeaponCardNano'
-import { TeamCharacterContext } from '../../../../../Context/TeamCharacterContext'
 import { DataContext } from '../../../../../Context/DataContext'
+import { TeamCharacterContext } from '../../../../../Context/TeamCharacterContext'
 import { getCharSheet } from '../../../../../Data/Characters'
 import { uiInput as input } from '../../../../../Formula'
 import ArtifactCard from '../../../../../PageArtifact/ArtifactCard'
-import useBuildSetting from '../useBuildSetting'
 import { ArtifactSetBadges } from './ArtifactSetBadges'
 import SetInclusionButton from './SetInclusionButton'
 
@@ -65,11 +68,11 @@ export default function BuildDisplayItem({
   disabled,
 }: BuildDisplayItemProps) {
   const {
+    teamChar: { optConfigId },
     character: { key: characterKey, equippedArtifacts },
   } = useContext(TeamCharacterContext)
-  const {
-    buildSetting: { mainStatAssumptionLevel, allowLocationsState },
-  } = useBuildSetting(characterKey)
+  const { mainStatAssumptionLevel, allowLocationsState } =
+    useOptConfig(optConfigId)
   const database = useDatabase()
   const dataContext = useContext(DataContext)
 
@@ -311,16 +314,17 @@ function CompareArtifactModal({
 function ExcludeButton({ id }: { id: string }) {
   const { t } = useTranslation('page_character_optimize')
   const {
-    character: { key: characterKey },
+    teamChar: { optConfigId },
   } = useContext(TeamCharacterContext)
-  const {
-    buildSetting: { artExclusion },
-    buildSettingDispatch,
-  } = useBuildSetting(characterKey)
+  const database = useDatabase()
+  const { artExclusion } = useOptConfig(optConfigId)
   const excluded = artExclusion.includes(id)
   const toggle = useCallback(
-    () => buildSettingDispatch({ artExclusion: toggleArr(artExclusion, id) }),
-    [id, artExclusion, buildSettingDispatch]
+    () =>
+      database.optConfigs.set(optConfigId, {
+        artExclusion: toggleArr(artExclusion, id),
+      }),
+    [id, artExclusion, database, optConfigId]
   )
 
   return (
@@ -355,23 +359,20 @@ function ExcludeEquipButton({
 }) {
   const { t } = useTranslation('page_character_optimize')
   const {
-    character: { key: characterKey },
+    teamChar: { optConfigId },
   } = useContext(TeamCharacterContext)
   const database = useDatabase()
   const characterSheet = getCharSheet(
     database.chars.LocationToCharacterKey(locationKey)
   )
-  const {
-    buildSetting: { excludedLocations },
-    buildSettingDispatch,
-  } = useBuildSetting(characterKey)
+  const { excludedLocations } = useOptConfig(optConfigId)
   const excluded = excludedLocations.includes(locationKey)
   const toggle = useCallback(
     () =>
-      buildSettingDispatch({
+      database.optConfigs.set(optConfigId, {
         excludedLocations: toggleArr(excludedLocations, locationKey),
       }),
-    [locationKey, excludedLocations, buildSettingDispatch]
+    [locationKey, excludedLocations, database, optConfigId]
   )
 
   return (

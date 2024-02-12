@@ -11,10 +11,10 @@ import { DisplayWeaponEntry } from './DataEntries/DisplayWeaponEntry'
 import { ArtifactDataManager } from './DataManagers/ArtifactDataManager'
 import { BuildDataManager } from './DataManagers/BuildDataManager'
 import { BuildResultDataManager } from './DataManagers/BuildResultDataManager'
-import { BuildSettingDataManager } from './DataManagers/BuildSettingDataManager'
 import { CharMetaDataManager } from './DataManagers/CharMetaDataManager'
 import { CharacterDataManager } from './DataManagers/CharacterDataManager'
 import { CharacterTCDataManager } from './DataManagers/CharacterTCDataManager'
+import { OptConfigDataManager } from './DataManagers/OptConfigDataManager'
 import { TeamCharacterDataManager } from './DataManagers/TeamCharacterDataManager'
 import { TeamDataManager } from './DataManagers/TeamDataManager'
 import { WeaponDataManager } from './DataManagers/WeaponDataManager'
@@ -26,7 +26,7 @@ export class ArtCharDatabase extends Database {
   chars: CharacterDataManager
   charTCs: CharacterTCDataManager
   weapons: WeaponDataManager
-  buildSettings: BuildSettingDataManager
+  optConfigs: OptConfigDataManager
   buildResult: BuildResultDataManager
   charMeta: CharMetaDataManager
   builds: BuildDataManager
@@ -62,7 +62,7 @@ export class ArtCharDatabase extends Database {
 
     this.weapons.ensureEquipments()
 
-    this.buildSettings = new BuildSettingDataManager(this)
+    this.optConfigs = new OptConfigDataManager(this)
 
     // This should be instantiated after artifacts, so that invalid artifacts that persists in build results can be pruned.
     this.buildResult = new BuildResultDataManager(this)
@@ -71,7 +71,8 @@ export class ArtCharDatabase extends Database {
     this.charMeta = new CharMetaDataManager(this)
 
     this.builds = new BuildDataManager(this)
-    // Depends on builds
+
+    // Depends on builds and optConfigs
     this.teamChars = new TeamCharacterDataManager(this)
 
     // Depends on TeamChar
@@ -102,7 +103,7 @@ export class ArtCharDatabase extends Database {
       this.chars,
       this.weapons,
       this.arts,
-      this.buildSettings,
+      this.optConfigs,
       this.buildResult,
       this.charTCs,
       this.charMeta,

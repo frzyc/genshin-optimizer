@@ -1,5 +1,6 @@
 import type { ArtSetExclusionKey } from '@genshin-optimizer/gi/db'
 import { handleArtSetExclusion } from '@genshin-optimizer/gi/db'
+import { useDatabase, useOptConfig } from '@genshin-optimizer/gi/db-ui'
 import { CheckBox, CheckBoxOutlineBlank } from '@mui/icons-material'
 import BlockIcon from '@mui/icons-material/Block'
 import ShowChartIcon from '@mui/icons-material/ShowChart'
@@ -8,7 +9,6 @@ import { Button, ButtonGroup } from '@mui/material'
 import { useContext } from 'react'
 import { useTranslation } from 'react-i18next'
 import { TeamCharacterContext } from '../../../../../Context/TeamCharacterContext'
-import useBuildSetting from '../useBuildSetting'
 
 export default function SetInclusionButton({
   setKey,
@@ -19,22 +19,20 @@ export default function SetInclusionButton({
 }) {
   const { t } = useTranslation('sheet')
   const {
-    character: { key: characterKey },
+    teamChar: { optConfigId },
   } = useContext(TeamCharacterContext)
-  const {
-    buildSetting: { artSetExclusion },
-    buildSettingDispatch,
-  } = useBuildSetting(characterKey)
+  const { artSetExclusion } = useOptConfig(optConfigId)
   const setExclusionSet = artSetExclusion?.[setKey] ?? []
   const exclude2 = setExclusionSet.includes(2)
   const exclude4 = setExclusionSet.includes(4)
+  const database = useDatabase()
 
   return (
     <ButtonGroup sx={buttonGroupSx} fullWidth>
       <Button
         startIcon={exclude2 ? <CheckBoxOutlineBlank /> : <CheckBox />}
         onClick={() =>
-          buildSettingDispatch({
+          database.optConfigs.set(optConfigId, {
             artSetExclusion: handleArtSetExclusion(artSetExclusion, setKey, 2),
           })
         }
@@ -44,7 +42,7 @@ export default function SetInclusionButton({
       <Button
         startIcon={exclude4 ? <CheckBoxOutlineBlank /> : <CheckBox />}
         onClick={() =>
-          buildSettingDispatch({
+          database.optConfigs.set(optConfigId, {
             artSetExclusion: handleArtSetExclusion(artSetExclusion, setKey, 4),
           })
         }

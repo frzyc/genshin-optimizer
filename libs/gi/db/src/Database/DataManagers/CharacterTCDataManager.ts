@@ -63,10 +63,10 @@ export class CharacterTCDataManager extends DataManager<
   override toStorageKey(key: CharacterKey): string {
     return `charTC_${key}`
   }
-  override remove(key: CharacterKey) {
+  override remove(key: CharacterKey): ICharTC | undefined {
     const char = this.get(key)
-    if (!char) return
-    super.remove(key)
+    if (!char) return undefined
+    return super.remove(key)
   }
   getWithInit(key: CharacterKey, weaponKey: WeaponKey): ICharTC {
     const charTc = this.get(key)

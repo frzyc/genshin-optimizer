@@ -1,4 +1,8 @@
-import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
+import {
+  useDBMeta,
+  useDatabase,
+  useOptConfig,
+} from '@genshin-optimizer/gi/db-ui'
 import { CheckBox, CheckBoxOutlineBlank, Upgrade } from '@mui/icons-material'
 import {
   Box,
@@ -53,7 +57,6 @@ import type { DynStat } from '../../../../Solver/common'
 import { objPathValue, shouldShowDevComponents } from '../../../../Util/Util'
 import MainStatSelectionCard from '../TabOptimize/Components/MainStatSelectionCard'
 import { dynamicData } from '../TabOptimize/foreground'
-import useBuildSetting from '../TabOptimize/useBuildSetting'
 import UpgradeOptChartCard from './UpgradeOptChartCard'
 
 import { CardThemed } from '@genshin-optimizer/common/ui'
@@ -73,6 +76,7 @@ import { UpOptCalculator, toArtifact } from './upOpt'
 export default function TabUpopt() {
   const {
     teamId,
+    teamChar: { optConfigId },
     character: { key: characterKey },
   } = useContext(TeamCharacterContext)
   const database = useDatabase()
@@ -82,7 +86,7 @@ export default function TabUpopt() {
 
   const noArtifact = useMemo(() => !database.arts.values.length, [database])
 
-  const { buildSetting, buildSettingDispatch } = useBuildSetting(characterKey)
+  const buildSetting = useOptConfig(optConfigId)
   const { optimizationTarget, levelLow, levelHigh } = buildSetting
   const teamData = useTeamData(teamId)
   const { target: data } = teamData?.[characterKey as CharacterKey] ?? {}
@@ -445,7 +449,7 @@ export default function TabUpopt() {
                             <OptimizationTargetSelector
                               optimizationTarget={optimizationTarget}
                               setTarget={(target) =>
-                                buildSettingDispatch({
+                                database.optConfigs.set(optConfigId, {
                                   optimizationTarget: target,
                                 })
                               }
@@ -468,13 +472,18 @@ export default function TabUpopt() {
                             levelLow={levelLow}
                             levelHigh={levelHigh}
                             setLow={(levelLow) =>
-                              buildSettingDispatch({ levelLow })
+                              database.optConfigs.set(optConfigId, { levelLow })
                             }
                             setHigh={(levelHigh) =>
-                              buildSettingDispatch({ levelHigh })
+                              database.optConfigs.set(optConfigId, {
+                                levelHigh,
+                              })
                             }
                             setBoth={(levelLow, levelHigh) =>
-                              buildSettingDispatch({ levelLow, levelHigh })
+                              database.optConfigs.set(optConfigId, {
+                                levelLow,
+                                levelHigh,
+                              })
                             }
                             disabled={false}
                           />

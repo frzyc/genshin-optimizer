@@ -152,12 +152,12 @@ export class ArtifactDataManager extends DataManager<
     this.set(id, value)
     return id
   }
-  override remove(key: string, notify = true) {
-    const art = this.get(key)
-    if (!art) return
-    art.location &&
-      this.database.chars.setEquippedArtifact(art.location, art.slotKey, '')
-    super.remove(key, notify)
+  override remove(key: string, notify?: boolean): ICachedArtifact | undefined {
+    const art = super.remove(key, notify)
+    if (art)
+      art.location &&
+        this.database.chars.setEquippedArtifact(art.location, art.slotKey, '')
+    return art
   }
   setProbability(id: string, probability?: number) {
     const art = this.get(id)

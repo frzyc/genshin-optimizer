@@ -4,6 +4,7 @@ import {
   useMediaQueryUp,
 } from '@genshin-optimizer/common/react-util'
 import { filterFunction } from '@genshin-optimizer/common/util'
+import { useDatabase, useOptConfig } from '@genshin-optimizer/gi/db-ui'
 import AddIcon from '@mui/icons-material/Add'
 import CheckBoxIcon from '@mui/icons-material/CheckBox'
 import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank'
@@ -36,13 +37,11 @@ import InfoTooltip from '../../../../../Components/InfoTooltip'
 import ModalWrapper from '../../../../../Components/ModalWrapper'
 import SqBadge from '../../../../../Components/SqBadge'
 import { TeamCharacterContext } from '../../../../../Context/TeamCharacterContext'
-import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import ArtifactCard from '../../../../../PageArtifact/ArtifactCard'
 import {
   artifactFilterConfigs,
   initialFilterOption,
 } from '../../../../../PageArtifact/ArtifactSort'
-import useBuildSetting from '../useBuildSetting'
 
 export default function ExcludeArt({
   disabled = false,
@@ -52,37 +51,38 @@ export default function ExcludeArt({
   excludedTotal: string
 }) {
   const { t } = useTranslation('page_character_optimize')
+  const database = useDatabase()
   const {
-    character: { key: characterKey },
+    teamChar: { optConfigId },
   } = useContext(TeamCharacterContext)
-  const {
-    buildSetting: { artExclusion, useExcludedArts },
-    buildSettingDispatch,
-  } = useBuildSetting(characterKey)
+  const { artExclusion, useExcludedArts } = useOptConfig(optConfigId)
   const [show, onOpen, onClose] = useBoolState(false)
   const numExcludedArt = artExclusion.length
   const [showSel, onOpenSel, onCloseSel] = useBoolState(false)
   const onSelect = useCallback(
     (id: string) => {
-      buildSettingDispatch({
+      database.optConfigs.set(optConfigId, {
         artExclusion: [...artExclusion, id],
         useExcludedArts: false,
       })
     },
-    [buildSettingDispatch, artExclusion]
+    [database, optConfigId, artExclusion]
   )
   const onDelSelect = useCallback(
     (id: string) => {
-      buildSettingDispatch({
+      database.optConfigs.set(optConfigId, {
         artExclusion: artExclusion.filter((i) => i !== id),
         useExcludedArts: false,
       })
     },
-    [buildSettingDispatch, artExclusion]
+    [database, optConfigId, artExclusion]
   )
   const toggleArtExclusion = useCallback(
-    () => buildSettingDispatch({ useExcludedArts: !useExcludedArts }),
-    [buildSettingDispatch, useExcludedArts]
+    () =>
+      database.optConfigs.set(optConfigId, {
+        useExcludedArts: !useExcludedArts,
+      }),
+    [database, optConfigId, useExcludedArts]
   )
   return (
     <>

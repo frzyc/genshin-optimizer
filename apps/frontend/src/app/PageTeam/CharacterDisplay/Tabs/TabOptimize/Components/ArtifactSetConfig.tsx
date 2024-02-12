@@ -14,7 +14,7 @@ import {
   allArtifactSetExclusionKeys,
   handleArtSetExclusion,
 } from '@genshin-optimizer/gi/db'
-import { useDatabase } from '@genshin-optimizer/gi/db-ui'
+import { useDatabase, useOptConfig } from '@genshin-optimizer/gi/db-ui'
 import { CheckBox, CheckBoxOutlineBlank, Replay } from '@mui/icons-material'
 import BlockIcon from '@mui/icons-material/Block'
 import SettingsIcon from '@mui/icons-material/Settings'
@@ -41,16 +41,15 @@ import { InfoTooltipInline } from '../../../../../Components/InfoTooltip'
 import ModalWrapper from '../../../../../Components/ModalWrapper'
 import SqBadge from '../../../../../Components/SqBadge'
 import { Translate } from '../../../../../Components/Translate'
-import { TeamCharacterContext } from '../../../../../Context/TeamCharacterContext'
 import type { dataContextObj } from '../../../../../Context/DataContext'
 import { DataContext } from '../../../../../Context/DataContext'
+import { TeamCharacterContext } from '../../../../../Context/TeamCharacterContext'
 import { getArtSheet, setKeysByRarities } from '../../../../../Data/Artifacts'
 import { artifactDefIcon } from '../../../../../Data/Artifacts/ArtifactSheet'
 import { UIData } from '../../../../../Formula/uiData'
 import { constant } from '../../../../../Formula/utils'
 import type { SetNum } from '../../../../../Types/consts'
 import { bulkCatTotal } from '../../../../../Util/totalUtils'
-import useBuildSetting from '../useBuildSetting'
 import SetInclusionButton from './SetInclusionButton'
 
 export default function ArtifactSetConfig({
@@ -62,14 +61,10 @@ export default function ArtifactSetConfig({
   const dataContext = useContext(DataContext)
   const database = useDatabase()
   const {
-    character: { key: characterKey },
-    teamChar: { conditional },
+    teamChar: { conditional, optConfigId },
     teamCharId,
   } = useContext(TeamCharacterContext)
-  const {
-    buildSetting: { artSetExclusion },
-    buildSettingDispatch,
-  } = useBuildSetting(characterKey)
+  const { artSetExclusion } = useOptConfig(optConfigId)
   const [open, setOpen] = useState(false)
   const onOpen = useCallback(() => setOpen(true), [setOpen])
   const onClose = useCallback(() => setOpen(false), [setOpen])
@@ -160,9 +155,11 @@ export default function ArtifactSetConfig({
         else if (artSetExclusion_[k])
           artSetExclusion_[k] = artSetExclusion_[k].filter((n) => n !== setnum)
       })
-      buildSettingDispatch({ artSetExclusion: artSetExclusion_ })
+      database.optConfigs.set(optConfigId, {
+        artSetExclusion: artSetExclusion_,
+      })
     },
-    [artKeysByRarity, artSetExclusion, buildSettingDispatch]
+    [artKeysByRarity, artSetExclusion, database, optConfigId]
   )
 
   return (
@@ -424,7 +421,7 @@ export default function ArtifactSetConfig({
                       <Button
                         fullWidth
                         onClick={() =>
-                          buildSettingDispatch({
+                          database.optConfigs.set(optConfigId, {
                             artSetExclusion: handleArtSetExclusion(
                               artSetExclusion,
                               'rainbow',
@@ -447,7 +444,7 @@ export default function ArtifactSetConfig({
                       <Button
                         fullWidth
                         onClick={() =>
-                          buildSettingDispatch({
+                          database.optConfigs.set(optConfigId, {
                             artSetExclusion: handleArtSetExclusion(
                               artSetExclusion,
                               'rainbow',
@@ -549,10 +546,9 @@ function ArtifactSetCard({
 }) {
   const { t } = useTranslation('sheet')
   const {
-    character: { key: characterKey },
+    teamChar: { optConfigId },
   } = useContext(TeamCharacterContext)
-  const { buildSetting } = useBuildSetting(characterKey)
-  const { artSetExclusion } = buildSetting
+  const { artSetExclusion } = useOptConfig(optConfigId)
   const setExclusionSet = artSetExclusion?.[setKey] ?? []
   const allow4 = !setExclusionSet.includes(4)
   const slots = getNumSlots(slotCount)

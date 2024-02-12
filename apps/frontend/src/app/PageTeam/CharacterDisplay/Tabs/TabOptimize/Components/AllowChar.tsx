@@ -20,7 +20,7 @@ import type {
   ICachedCharacter,
 } from '@genshin-optimizer/gi/db'
 import { allAllowLocationsState } from '@genshin-optimizer/gi/db'
-import { useDatabase } from '@genshin-optimizer/gi/db-ui'
+import { useDatabase, useOptConfig } from '@genshin-optimizer/gi/db-ui'
 import SettingsIcon from '@mui/icons-material/Settings'
 import ShowChartIcon from '@mui/icons-material/ShowChart'
 import {
@@ -56,12 +56,11 @@ import SqBadge from '../../../../../Components/SqBadge'
 import CharacterRarityToggle from '../../../../../Components/ToggleButton/CharacterRarityToggle'
 import ElementToggle from '../../../../../Components/ToggleButton/ElementToggle'
 import WeaponToggle from '../../../../../Components/ToggleButton/WeaponToggle'
-import { TeamCharacterContext } from '../../../../../Context/TeamCharacterContext'
 import { SillyContext } from '../../../../../Context/SillyContext'
+import { TeamCharacterContext } from '../../../../../Context/TeamCharacterContext'
 import { getCharSheet } from '../../../../../Data/Characters'
 import { characterFilterConfigs } from '../../../../../Util/CharacterSort'
 import { bulkCatTotal } from '../../../../../Util/totalUtils'
-import useBuildSetting from '../useBuildSetting'
 
 enum CharListMode {
   ToggleToAllow,
@@ -78,13 +77,11 @@ export default function AllowChar({
   const { t } = useTranslation('page_character_optimize')
   const { t: t_pc } = useTranslation('page_character')
   const {
+    teamChar: { optConfigId },
     character: { key: characterKey },
   } = useContext(TeamCharacterContext)
   const { silly } = useContext(SillyContext)
-  const {
-    buildSetting: { excludedLocations, allowLocationsState },
-    buildSettingDispatch,
-  } = useBuildSetting(characterKey)
+  const { excludedLocations, allowLocationsState } = useOptConfig(optConfigId)
   const database = useDatabase()
   const [show, onOpen, onClose] = useBoolState(false)
   const [dbDirty, forceUpdate] = useForceUpdate()
@@ -250,29 +247,29 @@ export default function AllowChar({
 
   const allowAll = useCallback(
     () =>
-      buildSettingDispatch({
+      database.optConfigs.set(optConfigId, {
         excludedLocations: excludedLocations.filter(
           (key) => !locList.includes(key)
         ),
         allowLocationsState: 'customList',
       }),
-    [buildSettingDispatch, excludedLocations, locList]
+    [database, optConfigId, excludedLocations, locList]
   )
   const disallowAll = useCallback(
     () =>
-      buildSettingDispatch({
+      database.optConfigs.set(optConfigId, {
         excludedLocations: Array.from(
           new Set(excludedLocations.concat(locList))
         ),
         allowLocationsState: 'customList',
       }),
-    [buildSettingDispatch, excludedLocations, locList]
+    [database, optConfigId, excludedLocations, locList]
   )
 
   const setState = useCallback(
     (_e: MouseEvent, state: AllowLocationsState) =>
-      buildSettingDispatch({ allowLocationsState: state }),
-    [buildSettingDispatch]
+      database.optConfigs.set(optConfigId, { allowLocationsState: state }),
+    [database, optConfigId]
   )
 
   const toggleList = useCallback(
@@ -281,12 +278,12 @@ export default function AllowChar({
       const newExcludedLocations = lkArray
         .filter((lk) => !excludedLocations.includes(lk))
         .concat(excludedLocations.filter((lk) => !lkArray.includes(lk)))
-      buildSettingDispatch({
+      database.optConfigs.set(optConfigId, {
         excludedLocations: newExcludedLocations,
         allowLocationsState: 'customList',
       })
     },
-    [excludedLocations, buildSettingDispatch]
+    [database, optConfigId, excludedLocations]
   )
 
   const onMouseUp = useCallback(() => setMouseUpDetected(true), [])

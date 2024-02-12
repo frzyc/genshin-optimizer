@@ -3,6 +3,7 @@ import {
   allElementWithPhyKeys,
   artSlotsData,
 } from '@genshin-optimizer/gi/consts'
+import { useDatabase, useOptConfig } from '@genshin-optimizer/gi/db-ui'
 import {
   AtkIcon,
   FlowerIcon,
@@ -24,11 +25,9 @@ import BootstrapTooltip from '../../../../../Components/BootstrapTooltip'
 import SqBadge from '../../../../../Components/SqBadge'
 import { StatColoredWithUnit } from '../../../../../Components/StatDisplay'
 import { TeamCharacterContext } from '../../../../../Context/TeamCharacterContext'
-import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import StatIcon from '../../../../../KeyMap/StatIcon'
 import { handleMultiSelect } from '../../../../../Util/MultiSelect'
 import { bulkCatTotal } from '../../../../../Util/totalUtils'
-import useBuildSetting from '../useBuildSetting'
 
 export const artifactsSlotsToSelectMainStats = [
   'sands',
@@ -45,12 +44,9 @@ export default function MainStatSelectionCard({
 }) {
   const { t } = useTranslation('artifact')
   const {
-    character: { key: characterKey },
+    teamChar: { optConfigId },
   } = useContext(TeamCharacterContext)
-  const {
-    buildSetting: { mainStatKeys },
-    buildSettingDispatch,
-  } = useBuildSetting(characterKey)
+  const { mainStatKeys } = useOptConfig(optConfigId)
   const database = useDatabase()
   const { mainStatSlotTots, slotTots } = useMemo(() => {
     const catKeys = {
@@ -192,7 +188,7 @@ export default function MainStatSelectionCard({
                           }}
                           startIcon={<StatIcon statKey={mainStatKey} />}
                           onClick={() =>
-                            buildSettingDispatch({
+                            database.optConfigs.set(optConfigId, {
                               mainStatKeys: {
                                 ...mainStatKeys,
                                 [slotKey]: mainKeysHandler(

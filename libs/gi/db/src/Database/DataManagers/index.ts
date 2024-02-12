@@ -1,19 +1,5 @@
 import { cachedArtifact, validateArtifact } from './ArtifactDataManager'
 import type { IBuildResult } from './BuildResultDataManager'
-import type {
-  AllowLocationsState,
-  ArtSetExclusion,
-  ArtSetExclusionKey,
-  BuildSetting,
-  StatFilterSetting,
-  StatFilters,
-} from './BuildSettingDataManager'
-import {
-  allAllowLocationsState,
-  allArtifactSetExclusionKeys,
-  handleArtSetExclusion,
-  maxBuildsToShowList,
-} from './BuildSettingDataManager'
 import type { MinTotalStatKey } from './CharacterTCDataManager'
 import { initCharTC, minTotalStatKeys } from './CharacterTCDataManager'
 import {
@@ -23,6 +9,19 @@ import {
   initCustomTarget,
   validateCustomMultiTarget,
 } from './CustomMultiTarget'
+import type {
+  AllowLocationsState,
+  ArtSetExclusion,
+  ArtSetExclusionKey,
+  StatFilterSetting,
+  StatFilters
+} from './OptConfigDataManager'
+import {
+  allAllowLocationsState,
+  allArtifactSetExclusionKeys,
+  handleArtSetExclusion,
+  maxBuildsToShowList,
+} from './OptConfigDataManager'
 import type { TeamCharacter } from './TeamCharacterDataManager'
 import type { Team } from './TeamDataManager'
 import {
@@ -46,17 +45,16 @@ export {
   maxBuildsToShowList,
   minTotalStatKeys,
   validateArtifact,
-  validateCustomMultiTarget,
+  validateCustomMultiTarget
 }
 export type {
   AllowLocationsState,
   ArtSetExclusion,
   ArtSetExclusionKey,
-  BuildSetting,
   IBuildResult,
   MinTotalStatKey,
   StatFilterSetting,
   StatFilters,
   Team,
-  TeamCharacter,
+  TeamCharacter
 }

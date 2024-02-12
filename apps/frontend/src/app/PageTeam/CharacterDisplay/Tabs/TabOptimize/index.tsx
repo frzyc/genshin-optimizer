@@ -8,7 +8,11 @@ import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import { charKeyToLocCharKey } from '@genshin-optimizer/gi/consts'
 import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
 import { defThreads, maxBuildsToShowList } from '@genshin-optimizer/gi/db'
-import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
+import {
+  useDBMeta,
+  useDatabase,
+  useOptConfig,
+} from '@genshin-optimizer/gi/db-ui'
 import {
   CheckBox,
   CheckBoxOutlineBlank,
@@ -93,12 +97,12 @@ import OptimizationTargetSelector from './Components/OptimizationTargetSelector'
 import StatFilterCard from './Components/StatFilterCard'
 import { compactArtifacts, dynamicData } from './foreground'
 import useBuildResult from './useBuildResult'
-import useBuildSetting from './useBuildSetting'
 
 const audio = new Audio('notification.mp3')
 export default function TabBuild() {
   const { t } = useTranslation('page_character_optimize')
   const {
+    teamChar: { optConfigId },
     teamId,
     team: { compareData },
     character: { key: characterKey },
@@ -153,7 +157,7 @@ export default function TabBuild() {
 
   const noArtifact = useMemo(() => !database.arts.values.length, [database])
 
-  const { buildSetting, buildSettingDispatch } = useBuildSetting(characterKey)
+  const buildSetting = useOptConfig(optConfigId)
   const {
     plotBase,
     optimizationTarget,
@@ -480,10 +484,10 @@ export default function TabBuild() {
 
   const setPlotBase = useCallback(
     (plotBase: string[] | undefined) => {
-      buildSettingDispatch({ plotBase })
+      database.optConfigs.set(optConfigId, { plotBase })
       setChartData(undefined)
     },
-    [buildSettingDispatch, setChartData]
+    [database, optConfigId, setChartData]
   )
   const dataContext: dataContextObj | undefined = useMemo(() => {
     return data && teamData && { data, teamData }
@@ -493,7 +497,7 @@ export default function TabBuild() {
     <OptimizationTargetSelector
       optimizationTarget={optimizationTarget}
       setTarget={(target) =>
-        buildSettingDispatch({ optimizationTarget: target })
+        database.optConfigs.set(optConfigId, { optimizationTarget: target })
       }
       disabled={!!generatingBuilds}
     />
@@ -577,10 +581,17 @@ export default function TabBuild() {
                   <ArtifactLevelSlider
                     levelLow={levelLow}
                     levelHigh={levelHigh}
-                    setLow={(levelLow) => buildSettingDispatch({ levelLow })}
-                    setHigh={(levelHigh) => buildSettingDispatch({ levelHigh })}
+                    setLow={(levelLow) =>
+                      database.optConfigs.set(optConfigId, { levelLow })
+                    }
+                    setHigh={(levelHigh) =>
+                      database.optConfigs.set(optConfigId, { levelHigh })
+                    }
                     setBoth={(levelLow, levelHigh) =>
-                      buildSettingDispatch({ levelLow, levelHigh })
+                      database.optConfigs.set(optConfigId, {
+                        levelLow,
+                        levelHigh,
+                      })
                     }
                     disabled={generatingBuilds}
                   />
@@ -601,7 +612,11 @@ export default function TabBuild() {
                       mainStatAssumptionLevel={mainStatAssumptionLevel}
                       setmainStatAssumptionLevel={(
                         mainStatAssumptionLevel: number
-                      ) => buildSettingDispatch({ mainStatAssumptionLevel })}
+                      ) =>
+                        database.optConfigs.set(optConfigId, {
+                          mainStatAssumptionLevel,
+                        })
+                      }
                       disabled={generatingBuilds}
                     />
                     <InfoTooltip
@@ -647,7 +662,9 @@ export default function TabBuild() {
                 }
                 color={allowPartial ? 'success' : 'secondary'}
                 onClick={() =>
-                  buildSettingDispatch({ allowPartial: !allowPartial })
+                  database.optConfigs.set(optConfigId, {
+                    allowPartial: !allowPartial,
+                  })
                 }
                 disabled={generatingBuilds}
               >
@@ -685,7 +702,9 @@ export default function TabBuild() {
               {maxBuildsToShowList.map((v) => (
                 <MenuItem
                   key={v}
-                  onClick={() => buildSettingDispatch({ maxBuildsToShow: v })}
+                  onClick={() =>
+                    database.optConfigs.set(optConfigId, { maxBuildsToShow: v })
+                  }
                 >
                   <Trans t={t} i18nKey="build" count={v}>
                     {{ count: v }} Builds
@@ -847,6 +866,7 @@ export default function TabBuild() {
                 disabled={!!generatingBuilds}
                 getLabel={getGraphBuildLabel}
                 setBuilds={setGraphBuilds}
+                mainStatAssumptionLevel={mainStatAssumptionLevel}
               />
             )}
             <BuildList
@@ -857,6 +877,7 @@ export default function TabBuild() {
               compareData={compareData}
               disabled={!!generatingBuilds}
               getLabel={getNormBuildLabel}
+              mainStatAssumptionLevel={mainStatAssumptionLevel}
             />
           </OptimizationTargetContext.Provider>
         </DataContext.Provider>
@@ -874,6 +895,7 @@ function BuildList({
   compareData,
   disabled,
   getLabel,
+  mainStatAssumptionLevel,
 }: {
   builds: string[][]
   setBuilds?: (builds: string[][] | undefined) => void
@@ -883,6 +905,7 @@ function BuildList({
   compareData: boolean
   disabled: boolean
   getLabel: (index: number) => Displayable
+  mainStatAssumptionLevel: number
 }) {
   const deleteBuild = useCallback(
     (index: number) => {
@@ -910,6 +933,7 @@ function BuildList({
                 characterKey={characterKey}
                 build={build}
                 oldData={data}
+                mainStatAssumptionLevel={mainStatAssumptionLevel}
               >
                 <BuildItemWrapper
                   index={index}
@@ -999,6 +1023,7 @@ type Prop = {
   characterKey: CharacterKey
   build: string[]
   oldData: UIData
+  mainStatAssumptionLevel: number
 }
 function DataContextWrapper({
   children,
@@ -1006,11 +1031,9 @@ function DataContextWrapper({
   characterKey,
   build,
   oldData,
+  mainStatAssumptionLevel,
 }: Prop) {
   const database = useDatabase()
-  const {
-    buildSetting: { mainStatAssumptionLevel },
-  } = useBuildSetting(characterKey)
   // Update the build when the build artifacts are changed.
   const [dirty, setDirty] = useForceUpdate()
   useEffect(

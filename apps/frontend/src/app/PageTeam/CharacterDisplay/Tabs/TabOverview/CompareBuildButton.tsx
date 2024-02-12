@@ -1,6 +1,6 @@
 import { useBoolState } from '@genshin-optimizer/common/react-util'
 import { objMap } from '@genshin-optimizer/common/util'
-import { useDatabase } from '@genshin-optimizer/gi/db-ui'
+import { useDatabase, useOptConfig } from '@genshin-optimizer/gi/db-ui'
 import { Close, Difference } from '@mui/icons-material'
 import { Button, Skeleton, Tooltip, Typography } from '@mui/material'
 import { Suspense, useContext, useMemo } from 'react'
@@ -14,7 +14,6 @@ import { DataContext } from '../../../../Context/DataContext'
 import { TeamCharacterContext } from '../../../../Context/TeamCharacterContext'
 import useTeamData from '../../../../ReactHooks/useTeamData'
 import BuildDisplayItem from '../TabOptimize/Components/BuildDisplayItem'
-import useBuildSetting from '../TabOptimize/useBuildSetting'
 
 export default function CompareBuildButton({
   artId,
@@ -59,11 +58,10 @@ function CompareContent({
   const database = useDatabase()
   const {
     teamId,
+    teamChar: { optConfigId },
     character: { key: characterKey, equippedArtifacts },
   } = useContext(TeamCharacterContext)
-  const {
-    buildSetting: { mainStatAssumptionLevel },
-  } = useBuildSetting(characterKey)
+  const { mainStatAssumptionLevel } = useOptConfig(optConfigId)
   const { data: oldData } = useContext(DataContext)
   const build = useMemo(() => {
     const newArt = database.arts.get(artId ?? '')

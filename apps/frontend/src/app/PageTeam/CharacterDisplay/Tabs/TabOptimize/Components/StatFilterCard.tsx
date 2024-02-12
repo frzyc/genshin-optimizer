@@ -1,11 +1,11 @@
+import type { StatFilters } from '@genshin-optimizer/gi/db'
+import { useDatabase, useOptConfig } from '@genshin-optimizer/gi/db-ui'
 import { Box, CardContent, Divider, Typography } from '@mui/material'
 import { useCallback, useContext } from 'react'
 import { useTranslation } from 'react-i18next'
 import CardLight from '../../../../../Components/Card/CardLight'
 import InfoTooltip from '../../../../../Components/InfoTooltip'
 import { TeamCharacterContext } from '../../../../../Context/TeamCharacterContext'
-import type { StatFilters } from '@genshin-optimizer/gi/db'
-import useBuildSetting from '../useBuildSetting'
 import OptimizationTargetEditorList from './OptimizationTargetEditorList'
 
 export default function StatFilterCard({
@@ -15,15 +15,14 @@ export default function StatFilterCard({
 }) {
   const { t } = useTranslation('page_character_optimize')
   const {
-    character: { key: characterKey },
+    teamChar: { optConfigId },
   } = useContext(TeamCharacterContext)
-  const {
-    buildSetting: { statFilters },
-    buildSettingDispatch,
-  } = useBuildSetting(characterKey)
+  const { statFilters } = useOptConfig(optConfigId)
+  const database = useDatabase()
   const setStatFilters = useCallback(
-    (statFilters: StatFilters) => buildSettingDispatch({ statFilters }),
-    [buildSettingDispatch]
+    (statFilters: StatFilters) =>
+      database.optConfigs.set(optConfigId, { statFilters }),
+    [database, optConfigId]
   )
 
   return (

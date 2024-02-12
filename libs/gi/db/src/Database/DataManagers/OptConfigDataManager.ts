@@ -5,18 +5,16 @@ import {
 } from '@genshin-optimizer/common/util'
 import type {
   ArtifactSetKey,
-  CharacterKey,
   LocationCharacterKey,
   MainStatKey,
 } from '@genshin-optimizer/gi/consts'
 import {
   allArtifactSetKeys,
-  allCharacterKeys,
   allLocationCharacterKeys,
   artSlotsData,
 } from '@genshin-optimizer/gi/consts'
-import { DataManager } from '../DataManager'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
+import { DataManager } from '../DataManager'
 
 export const maxBuildsToShowList = [1, 2, 3, 4, 5, 8, 10] as const
 export const maxBuildsToShowDefault = 5
@@ -57,7 +55,7 @@ export interface StatFilterSetting {
   disabled: boolean
 }
 export type StatFilters = Record<string, StatFilterSetting[]>
-export interface BuildSetting {
+export interface OptConfig {
   artSetExclusion: ArtSetExclusion
   statFilters: StatFilters
   mainStatKeys: {
@@ -81,27 +79,20 @@ export interface BuildSetting {
   levelHigh: number
 }
 
-export class BuildSettingDataManager extends DataManager<
-  CharacterKey,
-  'buildSettings',
-  BuildSetting,
-  BuildSetting,
+export class OptConfigDataManager extends DataManager<
+  string,
+  'optConfigs',
+  OptConfig,
+  OptConfig,
   ArtCharDatabase
 > {
   constructor(database: ArtCharDatabase) {
-    super(database, 'buildSettings')
+    super(database, 'optConfigs')
     for (const key of this.database.storage.keys)
-      if (
-        key.startsWith('buildSetting_') &&
-        !this.set(key.split('buildSetting_')[1] as CharacterKey, {})
-      )
+      if (key.startsWith('optConfig_') && !this.set(key, {}))
         this.database.storage.remove(key)
   }
-  override toStorageKey(key: string): string {
-    return `buildSetting_${key}`
-  }
-  override validate(obj: object, key: string): BuildSetting | undefined {
-    if (!allCharacterKeys.includes(key as CharacterKey)) return undefined
+  override validate(obj: object, key: string): OptConfig | undefined {
     if (typeof obj !== 'object') return undefined
     let {
       artSetExclusion,
@@ -119,7 +110,7 @@ export class BuildSettingDataManager extends DataManager<
       compareBuild,
       levelLow,
       levelHigh,
-    } = obj as BuildSetting
+    } = obj as OptConfig
 
     if (typeof statFilters !== 'object') statFilters = {}
 
@@ -199,12 +190,14 @@ export class BuildSettingDataManager extends DataManager<
       levelHigh,
     }
   }
-  override get(key: CharacterKey) {
-    return super.get(key) ?? initialBuildSettings
+  new() {
+    const id = this.generateKey()
+    this.set(id, initialBuildSettings)
+    return id
   }
 }
 
-const initialBuildSettings: BuildSetting = deepFreeze({
+const initialBuildSettings: OptConfig = deepFreeze({
   artSetExclusion: {},
   artExclusion: [],
   useExcludedArts: false,

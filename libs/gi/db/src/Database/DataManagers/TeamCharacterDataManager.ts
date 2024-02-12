@@ -42,6 +42,7 @@ export interface TeamCharacter {
   buildIds: string[]
   buildTcId: string
   buildTcIds: string[]
+  optConfigId: string
 }
 
 export interface CustomTarget {
@@ -70,15 +71,28 @@ export class TeamCharacterDataManager extends DataManager<
     for (const key of this.database.storage.keys)
       if (key.startsWith('teamchar_') && !this.set(key, {}))
         this.database.storage.remove(key)
+
+    // Since this and optConfig have a 1:1 relationship, validate whether there are any orphaned optConfigs
+    // const optConfigKeys = new Set(this.database.optConfigs.keys)
+    // this.values.forEach(({ optConfigId }) => optConfigKeys.delete(optConfigId))
+    // Array.from(optConfigKeys).forEach((optConfigId) =>
+    //   this.database.optConfigs.remove(optConfigId)
+    // )
   }
   override validate(obj: unknown): TeamCharacter | undefined {
     return validateTeamCharater(obj, this.database)
   }
 
   new(key: CharacterKey): string {
+    const optConfigId = this.database.optConfigs.new()
     const id = this.generateKey()
-    this.set(id, { key })
+    this.set(id, { key, optConfigId })
     return id
+  }
+  override remove(key: string, notify?: boolean): TeamCharacter | undefined {
+    const rem = super.remove(key, notify)
+    if (rem?.optConfigId) this.database.optConfigs.remove(rem.optConfigId)
+    return rem
   }
   override clear(): void {
     super.clear()
@@ -162,6 +176,7 @@ function validateTeamCharater(
     buildIds,
     buildTcId,
     buildTcIds,
+    optConfigId,
   } = obj as TeamCharacter
   if (!allCharacterKeys.includes(characterKey)) return undefined // non-recoverable
 
@@ -197,6 +212,8 @@ function validateTeamCharater(
   // TODO: validate against valid buildTcIds
   if (!buildId && !buildTcId) buildType = 'equipped'
 
+  if (!optConfigId || !database.optConfigs.keys.includes(optConfigId))
+    optConfigId = database.optConfigs.new()
   return {
     key: characterKey,
     customMultiTargets,
@@ -208,5 +225,6 @@ function validateTeamCharater(
     buildIds,
     buildTcId,
     buildTcIds,
+    optConfigId,
   }
 }

@@ -68,10 +68,7 @@ export class CharacterDataManager extends DataManager<
     }
     return char
   }
-  override toCache(
-    storageObj: ICharacter,
-    id: CharacterKey
-  ): ICachedCharacter {
+  override toCache(storageObj: ICharacter, id: CharacterKey): ICachedCharacter {
     const oldChar = this.get(id)
     return {
       equippedArtifacts: oldChar
@@ -122,9 +119,9 @@ export class CharacterDataManager extends DataManager<
     return this.get(key) as ICachedCharacter
   }
 
-  override remove(key: CharacterKey) {
+  override remove(key: CharacterKey): ICachedCharacter | undefined {
     const char = this.get(key)
-    if (!char) return
+    if (!char) return undefined
     for (const artKey of Object.values(char.equippedArtifacts)) {
       const art = this.database.arts.get(artKey)
       // Only unequip from artifact from traveler if there are no more "Travelers" in the database
@@ -150,7 +147,7 @@ export class CharacterDataManager extends DataManager<
         ...weapon,
         location: '',
       })
-    super.remove(key)
+    return super.remove(key)
   }
 
   /**
