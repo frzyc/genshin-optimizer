@@ -8,7 +8,14 @@ import {
   useTeamChar,
 } from '@genshin-optimizer/gi/db-ui'
 import { Box, CardContent, Skeleton } from '@mui/material'
-import { Suspense, useCallback, useContext, useMemo, useState } from 'react'
+import {
+  Suspense,
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+} from 'react'
 import { useTranslation } from 'react-i18next'
 import { Navigate, useMatch, useNavigate, useParams } from 'react-router-dom'
 import CloseButton from '../Components/CloseButton'
@@ -51,19 +58,34 @@ export default function PageTeam() {
 }
 
 function Page({ teamId, onClose }: { teamId: string; onClose?: () => void }) {
+  const navigate = useNavigate()
   const { silly } = useContext(SillyContext)
+  const database = useDatabase()
   const { gender } = useDBMeta()
   const [currentCharIndex, setCurrentCharIndex] = useState(0)
   const team = useTeam(teamId)
   const { characterIds } = team
   const {
-    params: { tab = 'overview' },
-  } = useMatch({ path: '/teams/:teamId/:tab', end: false }) ?? {
-    params: { tab: 'overview' },
+    params: { tab = 'overview', characterKey: tabCharacterKey },
+  } = useMatch({ path: '/teams/:teamId/:characterKey/:tab', end: false }) ?? {
+    params: { tab: 'overview', characterKey: '' },
   }
   const teamCharId = characterIds[currentCharIndex]
   const teamChar = useTeamChar(teamCharId)
   const characterKey = teamChar?.key
+  useEffect(() => {
+    if (!characterKey) return
+    if (tabCharacterKey !== characterKey)
+      navigate(`/teams/${teamId}/${characterKey}/${tab}`)
+  })
+  useEffect(() => {
+    if (!tabCharacterKey) return
+    const ind = characterIds.find(
+      (cid) => database.teamChars.get(cid)?.key === tabCharacterKey
+    )
+    console.log({ ind, tabCharacterKey })
+    if (typeof ind === 'number') setCurrentCharIndex(ind)
+  }, [database, characterIds, tabCharacterKey])
 
   const { t } = useTranslation([
     'sillyWisher_charNames',
@@ -148,7 +170,7 @@ function Page({ teamId, onClose }: { teamId: string; onClose?: () => void }) {
             <DataContext.Provider value={dataContextValue}>
               <GraphContext.Provider value={graphContextValue}>
                 <FormulaDataWrapper>
-                  <Content tab={tab} />
+                  <Content tab={tab} characterKey={characterKey} />
                 </FormulaDataWrapper>
               </GraphContext.Provider>
             </DataContext.Provider>

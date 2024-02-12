@@ -2,6 +2,7 @@ import {
   useForceUpdate,
   useMediaQueryUp,
 } from '@genshin-optimizer/common/react-util'
+import { CardThemed } from '@genshin-optimizer/common/ui'
 import { objKeyMap, objPathValue, range } from '@genshin-optimizer/common/util'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import { charKeyToLocCharKey } from '@genshin-optimizer/gi/consts'
@@ -45,7 +46,12 @@ import { useLocation, useNavigate } from 'react-router-dom'
 import ArtifactLevelSlider from '../../../../Components/Artifact/ArtifactLevelSlider'
 import BootstrapTooltip from '../../../../Components/BootstrapTooltip'
 import CardLight from '../../../../Components/Card/CardLight'
-import CharacterCard from '../../../../Components/Character/CharacterCard'
+import { CharacterCardEquipmentRow } from '../../../../Components/Character/CharacterCard/CharacterCardEquipmentRow'
+import {
+  CharacterCardHeader,
+  CharacterCardHeaderContent,
+} from '../../../../Components/Character/CharacterCard/CharacterCardHeader'
+import { CharacterCardStats } from '../../../../Components/Character/CharacterCard/CharacterCardStats'
 import DropdownButton from '../../../../Components/DropdownMenu/DropdownButton'
 import {
   HitModeToggle,
@@ -521,10 +527,29 @@ export default function TabBuild() {
             >
               {/* character card */}
               <Box>
-                <CharacterCard
-                  characterKey={characterKey}
-                  onClickTeammate={onClickTeammate}
-                />
+                <Suspense
+                  fallback={
+                    <Skeleton variant="rectangular" width="100%" height={600} />
+                  }
+                >
+                  <CardThemed bgt="light">
+                    <CharacterCardHeader characterKey={characterKey}>
+                      <CharacterCardHeaderContent characterKey={characterKey} />
+                    </CharacterCardHeader>
+                    <Box
+                      sx={{
+                        p: 1,
+                        width: '100%',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        gap: 1,
+                      }}
+                    >
+                      <CharacterCardEquipmentRow />
+                      <CharacterCardStats />
+                    </Box>
+                  </CardThemed>
+                </Suspense>
               </Box>
               <BonusStatsCard />
             </Grid>

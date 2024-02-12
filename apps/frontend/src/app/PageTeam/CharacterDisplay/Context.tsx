@@ -1,5 +1,5 @@
 import { useBoolState } from '@genshin-optimizer/common/react-util'
-import type { ICachedCharacter } from '@genshin-optimizer/gi/db'
+import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import {
   BarChart,
   Calculate,
@@ -26,6 +26,7 @@ import { TeamCharacterContext } from '../../Context/TeamCharacterContext'
 import { shouldShowDevComponents } from '../../Util/Util'
 import { CustomMultiTargetButton } from './CustomMultiTarget'
 import FormulaModal from './FormulaModal'
+import LoadoutBtn from './LoadoutBtn'
 import StatModal from './StatModal'
 import TabBuild from './Tabs/TabOptimize'
 import TabOverview from './Tabs/TabOverview'
@@ -33,13 +34,14 @@ import TabTalent from './Tabs/TabTalent'
 import TabTeambuffs from './Tabs/TabTeambuffs'
 import TabTheorycraft from './Tabs/TabTheorycraft'
 import TabUpopt from './Tabs/TabUpgradeOpt'
-import LoadoutBtn from './LoadoutBtn'
 
 export default function Content({
   tab,
+  characterKey,
   onClose,
 }: {
   tab: string
+  characterKey: CharacterKey
   onClose?: () => void
 }) {
   return (
@@ -59,11 +61,11 @@ export default function Content({
         <ReactionToggle size="small" />
       </Box>
       <CardLight>
-        <TabNav tab={tab} />
+        <TabNav tab={tab} characterKey={characterKey} />
       </CardLight>
       <CharacterPanel />
       <CardLight>
-        <TabNav tab={tab} />
+        <TabNav tab={tab} characterKey={characterKey} />
       </CardLight>
     </>
   )
@@ -76,19 +78,25 @@ function CharacterPanel() {
     >
       <Routes>
         {/* Character Panel */}
-        <Route index element={<TabOverview />} />
-        <Route path="/talent" element={<TabTalent />} />
-        <Route path="/teambuffs" element={<TabTeambuffs />} />
-        <Route path="/optimize" element={<TabBuild />} />
-        <Route path="/theorycraft" element={<TabTheorycraft />} />
+        <Route path="/:characterKey/*" element={<TabOverview />} />
+        <Route path="/:characterKey/talent" element={<TabTalent />} />
+        <Route path="/:characterKey/teambuffs" element={<TabTeambuffs />} />
+        <Route path="/:characterKey/optimize" element={<TabBuild />} />
+        <Route path="/:characterKey/theorycraft" element={<TabTheorycraft />} />
         {shouldShowDevComponents && (
-          <Route path="/upopt" element={<TabUpopt />} />
+          <Route path="/:characterKey/upopt" element={<TabUpopt />} />
         )}
       </Routes>
     </Suspense>
   )
 }
-function TabNav({ tab }: { tab: string }) {
+function TabNav({
+  tab,
+  characterKey,
+}: {
+  tab: string
+  characterKey: CharacterKey
+}) {
   const { t } = useTranslation('page_character')
   const tabSx = shouldShowDevComponents
     ? { minWidth: '16.6%' }
@@ -111,7 +119,7 @@ function TabNav({ tab }: { tab: string }) {
         label={t('tabs.overview')}
         icon={<Person />}
         component={RouterLink}
-        to=""
+        to={`${characterKey}/`}
       />
       <Tab
         sx={tabSx}
@@ -119,7 +127,7 @@ function TabNav({ tab }: { tab: string }) {
         label={t('tabs.talent')}
         icon={<FactCheck />}
         component={RouterLink}
-        to="talent"
+        to={`${characterKey}/talent`}
       />
       <Tab
         sx={tabSx}
@@ -127,7 +135,7 @@ function TabNav({ tab }: { tab: string }) {
         label={t('tabs.teambuffs')}
         icon={<Groups />}
         component={RouterLink}
-        to="teambuffs"
+        to={`${characterKey}/teambuffs`}
       />
       <Tab
         sx={tabSx}
@@ -135,7 +143,7 @@ function TabNav({ tab }: { tab: string }) {
         label={t('tabs.optimize')}
         icon={<TrendingUp />}
         component={RouterLink}
-        to="optimize"
+        to={`${characterKey}/optimize`}
       />
       <Tab
         sx={tabSx}
@@ -143,7 +151,7 @@ function TabNav({ tab }: { tab: string }) {
         label={t('tabs.theorycraft')}
         icon={<Science />}
         component={RouterLink}
-        to="theorycraft"
+        to={`${characterKey}/theorycraft`}
       />
       {shouldShowDevComponents && (
         <Tab
@@ -152,7 +160,7 @@ function TabNav({ tab }: { tab: string }) {
           label={t('tabs.upgradeopt')}
           icon={<TrendingUp />}
           component={RouterLink}
-          to="upopt"
+          to={`${characterKey}/upopt`}
         />
       )}
     </Tabs>

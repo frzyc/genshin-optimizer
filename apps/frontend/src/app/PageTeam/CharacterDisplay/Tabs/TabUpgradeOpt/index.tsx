@@ -10,7 +10,6 @@ import {
   Typography,
 } from '@mui/material'
 import CardLight from '../../../../Components/Card/CardLight'
-import CharacterCard from '../../../../Components/Character/CharacterCard'
 import {
   HitModeToggle,
   ReactionToggle,
@@ -57,8 +56,15 @@ import { dynamicData } from '../TabOptimize/foreground'
 import useBuildSetting from '../TabOptimize/useBuildSetting'
 import UpgradeOptChartCard from './UpgradeOptChartCard'
 
+import { CardThemed } from '@genshin-optimizer/common/ui'
 import { Stack } from '@mui/system'
 import AddArtInfo from '../../../../Components/AddArtInfo'
+import { CharacterCardEquipmentRow } from '../../../../Components/Character/CharacterCard/CharacterCardEquipmentRow'
+import {
+  CharacterCardHeader,
+  CharacterCardHeaderContent,
+} from '../../../../Components/Character/CharacterCard/CharacterCardHeader'
+import { CharacterCardStats } from '../../../../Components/Character/CharacterCard/CharacterCardStats'
 import NoArtWarning from '../../../../Components/NoArtWarning'
 import useTeamData from '../../../../ReactHooks/useTeamData'
 import type { UpOptBuild } from './upOpt'
@@ -367,157 +373,190 @@ export default function TabUpopt() {
       {dataContext && (
         <DataContext.Provider value={dataContext}>
           <Stack spacing={1}>
-            <Grid container spacing={1}>
-              {/* 1*/}
-              <Grid
-                item
-                xs={12}
-                sm={6}
-                lg={3}
-                display="flex"
-                flexDirection="column"
-                gap={1}
-              >
-                {/* character card */}
-                <Box>
-                  <CharacterCard
-                    characterKey={characterKey}
-                    onClickTeammate={onClickTeammate}
-                  />
-                </Box>
-                <BonusStatsCard />
-              </Grid>
+            <Box>
+              <Grid container spacing={1}>
+                {/* 1*/}
+                <Grid
+                  item
+                  xs={12}
+                  sm={6}
+                  lg={3}
+                  display="flex"
+                  flexDirection="column"
+                  gap={1}
+                >
+                  {/* character card */}
+                  <Box>
+                    <Suspense
+                      fallback={
+                        <Skeleton
+                          variant="rectangular"
+                          width="100%"
+                          height={600}
+                        />
+                      }
+                    >
+                      <CardThemed bgt="light">
+                        <CharacterCardHeader characterKey={characterKey}>
+                          <CharacterCardHeaderContent
+                            characterKey={characterKey}
+                          />
+                        </CharacterCardHeader>
+                        <Box
+                          sx={{
+                            p: 1,
+                            width: '100%',
+                            display: 'flex',
+                            flexDirection: 'column',
+                            gap: 1,
+                          }}
+                        >
+                          <CharacterCardEquipmentRow />
+                          <CharacterCardStats />
+                        </Box>
+                      </CardThemed>
+                    </Suspense>
+                  </Box>
+                  <BonusStatsCard />
+                </Grid>
 
-              {/* 2 */}
-              <Grid
-                item
-                xs={12}
-                sm={6}
-                lg={9}
-                display="flex"
-                flexDirection="column"
-                gap={1}
-              >
-                <Grid container spacing={1}>
-                  <Grid
-                    item
-                    lg={4}
-                    display="flex"
-                    flexDirection="column"
-                    gap={1}
-                  >
-                    <CardLight>
-                      <CardContent>
-                        <span>Optimization Target: </span>
-                        {
-                          <OptimizationTargetSelector
-                            optimizationTarget={optimizationTarget}
-                            setTarget={(target) =>
-                              buildSettingDispatch({
-                                optimizationTarget: target,
-                              })
+                {/* 2 */}
+                <Grid
+                  item
+                  xs={12}
+                  sm={6}
+                  lg={9}
+                  display="flex"
+                  flexDirection="column"
+                  gap={1}
+                >
+                  <Grid container spacing={1}>
+                    <Grid
+                      item
+                      lg={4}
+                      display="flex"
+                      flexDirection="column"
+                      gap={1}
+                    >
+                      <CardLight>
+                        <CardContent>
+                          <span>Optimization Target: </span>
+                          {
+                            <OptimizationTargetSelector
+                              optimizationTarget={optimizationTarget}
+                              setTarget={(target) =>
+                                buildSettingDispatch({
+                                  optimizationTarget: target,
+                                })
+                              }
+                              disabled={false}
+                            />
+                          }
+                        </CardContent>
+                      </CardLight>
+                      <CardLight>
+                        <CardContent>
+                          <StatFilterCard disabled={false} />
+                        </CardContent>
+                      </CardLight>
+                      {useFilters && (
+                        <CardLight>
+                          <CardContent sx={{ py: 1 }}>
+                            Artifact Level Filter
+                          </CardContent>
+                          <ArtifactLevelSlider
+                            levelLow={levelLow}
+                            levelHigh={levelHigh}
+                            setLow={(levelLow) =>
+                              buildSettingDispatch({ levelLow })
+                            }
+                            setHigh={(levelHigh) =>
+                              buildSettingDispatch({ levelHigh })
+                            }
+                            setBoth={(levelLow, levelHigh) =>
+                              buildSettingDispatch({ levelLow, levelHigh })
                             }
                             disabled={false}
                           />
-                        }
-                      </CardContent>
-                    </CardLight>
-                    <CardLight>
-                      <CardContent>
-                        <StatFilterCard disabled={false} />
-                      </CardContent>
-                    </CardLight>
-                    {useFilters && (
+                          <CardContent>
+                            <MainStatSelectionCard
+                              disabled={false}
+                              filteredArtIdMap={filteredArtIdMap}
+                            />
+                          </CardContent>
+                        </CardLight>
+                      )}
+                    </Grid>
+                    <Grid
+                      item
+                      lg={8}
+                      display="flex"
+                      flexDirection="column"
+                      gap={1}
+                    >
                       <CardLight>
-                        <CardContent sx={{ py: 1 }}>
-                          Artifact Level Filter
-                        </CardContent>
-                        <ArtifactLevelSlider
-                          levelLow={levelLow}
-                          levelHigh={levelHigh}
-                          setLow={(levelLow) =>
-                            buildSettingDispatch({ levelLow })
-                          }
-                          setHigh={(levelHigh) =>
-                            buildSettingDispatch({ levelHigh })
-                          }
-                          setBoth={(levelLow, levelHigh) =>
-                            buildSettingDispatch({ levelLow, levelHigh })
-                          }
-                          disabled={false}
-                        />
                         <CardContent>
-                          <MainStatSelectionCard
-                            disabled={false}
-                            filteredArtIdMap={filteredArtIdMap}
-                          />
+                          <ArtifactSetConfig disabled={false} />
                         </CardContent>
                       </CardLight>
-                    )}
-                  </Grid>
-                  <Grid
-                    item
-                    lg={8}
-                    display="flex"
-                    flexDirection="column"
-                    gap={1}
-                  >
-                    <CardLight>
-                      <CardContent>
-                        <ArtifactSetConfig disabled={false} />
-                      </CardContent>
-                    </CardLight>
-                    <CardLight>
-                      <CardContent>
-                        <Grid container spacing={1}>
-                          <Grid item>
-                            <Button
-                              startIcon={
-                                show20 ? <CheckBox /> : <CheckBoxOutlineBlank />
-                              }
-                              color={show20 ? 'success' : 'secondary'}
-                              onClick={() => setShow20(!show20)}
-                            >
-                              show lvl 20
-                            </Button>
+                      <CardLight>
+                        <CardContent>
+                          <Grid container spacing={1}>
+                            <Grid item>
+                              <Button
+                                startIcon={
+                                  show20 ? (
+                                    <CheckBox />
+                                  ) : (
+                                    <CheckBoxOutlineBlank />
+                                  )
+                                }
+                                color={show20 ? 'success' : 'secondary'}
+                                onClick={() => setShow20(!show20)}
+                              >
+                                show lvl 20
+                              </Button>
+                            </Grid>
+                            <Grid item>
+                              <Button
+                                startIcon={
+                                  check4th ? (
+                                    <CheckBox />
+                                  ) : (
+                                    <CheckBoxOutlineBlank />
+                                  )
+                                }
+                                color={check4th ? 'success' : 'secondary'}
+                                onClick={() => setCheck4th(!check4th)}
+                              >
+                                compute 4th sub
+                              </Button>
+                            </Grid>
+                            <Grid item>
+                              <Button
+                                startIcon={
+                                  useFilters ? (
+                                    <CheckBox />
+                                  ) : (
+                                    <CheckBoxOutlineBlank />
+                                  )
+                                }
+                                color={useFilters ? 'success' : 'secondary'}
+                                onClick={() =>
+                                  setUseMainStatFilter(!useFilters)
+                                }
+                              >
+                                enable filters
+                              </Button>
+                            </Grid>
                           </Grid>
-                          <Grid item>
-                            <Button
-                              startIcon={
-                                check4th ? (
-                                  <CheckBox />
-                                ) : (
-                                  <CheckBoxOutlineBlank />
-                                )
-                              }
-                              color={check4th ? 'success' : 'secondary'}
-                              onClick={() => setCheck4th(!check4th)}
-                            >
-                              compute 4th sub
-                            </Button>
-                          </Grid>
-                          <Grid item>
-                            <Button
-                              startIcon={
-                                useFilters ? (
-                                  <CheckBox />
-                                ) : (
-                                  <CheckBoxOutlineBlank />
-                                )
-                              }
-                              color={useFilters ? 'success' : 'secondary'}
-                              onClick={() => setUseMainStatFilter(!useFilters)}
-                            >
-                              enable filters
-                            </Button>
-                          </Grid>
-                        </Grid>
-                      </CardContent>
-                    </CardLight>
+                        </CardContent>
+                      </CardLight>
+                    </Grid>
                   </Grid>
                 </Grid>
               </Grid>
-            </Grid>
+            </Box>
             <CardLight>
               <CardContent>
                 <Grid container spacing={1}>
