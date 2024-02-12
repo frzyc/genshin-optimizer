@@ -27,6 +27,9 @@ export const StyledInputBase = styled(InputBase)(
     '&.Mui-disabled': {
       backgroundColor: theme.palette[color].dark,
     },
+    '.MuiInputBase-input::selection': {
+      backgroundColor: "red",
+    },
   })
 )
 
@@ -40,6 +43,9 @@ const Wrapper = styled(Button)(({ theme }) => ({
   },
 }))
 
+function handleOnFocus(this: GlobalEventHandlers/* , e: FocusEvent */) {
+  (this as HTMLInputElement).select()
+}
 // wrap the Input with this when using the input in a buttongroup
 /**
  * @deprecated use `CustomNumberInputButtonGroupWrapper` in `@genshin-optimizer/common/ui`
@@ -92,8 +98,14 @@ export default function CustomNumberInput({
     if (max !== undefined && newNum > max) return change(max)
     return change(newNum)
   }, [min, max, parseFunc, onChange, display])
+  const inputRef = useRef<HTMLInputElement | HTMLTextAreaElement>(null)
 
-  useEffect(() => setDisplay(value.toString()), [value, setDisplay]) // update value on value change
+  useEffect(() => {
+    setDisplay(value.toString())
+    if (inputRef.current) {
+      inputRef.current.onfocus = disabled? null: handleOnFocus
+    }
+  }, [value, setDisplay, disabled]) // update value on value change
 
   const onKeyDown = useCallback(
     (e: KeyboardEvent<HTMLInputElement | HTMLTextAreaElement>) =>
@@ -103,6 +115,7 @@ export default function CustomNumberInput({
 
   return (
     <StyledInputBase
+      inputRef={inputRef}
       value={display}
       aria-label="custom-input"
       type="number"
