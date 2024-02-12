@@ -1,6 +1,6 @@
 import type { DBStorage } from '@genshin-optimizer/common/database'
 import { Database, SandboxStorage } from '@genshin-optimizer/common/database'
-import type { CharacterKey, GenderKey } from '@genshin-optimizer/gi/consts'
+import type { GenderKey } from '@genshin-optimizer/gi/consts'
 import type { IGOOD } from '@genshin-optimizer/gi/good'
 import { DBMetaEntry } from './DataEntries/DBMetaEntry'
 import { DisplayArtifactEntry } from './DataEntries/DisplayArtifactEntry'
@@ -9,18 +9,18 @@ import { DisplayOptimizeEntry } from './DataEntries/DisplayOptimizeEntry'
 import { DisplayToolEntry } from './DataEntries/DisplayTool'
 import { DisplayWeaponEntry } from './DataEntries/DisplayWeaponEntry'
 import { ArtifactDataManager } from './DataManagers/ArtifactDataManager'
+import { BuildDataManager } from './DataManagers/BuildDataManager'
 import { BuildResultDataManager } from './DataManagers/BuildResultDataManager'
 import { BuildSettingDataManager } from './DataManagers/BuildSettingDataManager'
 import { CharMetaDataManager } from './DataManagers/CharMetaDataManager'
 import { CharacterDataManager } from './DataManagers/CharacterDataManager'
 import { CharacterTCDataManager } from './DataManagers/CharacterTCDataManager'
+import { TeamCharacterDataManager } from './DataManagers/TeamCharacterDataManager'
+import { TeamDataManager } from './DataManagers/TeamDataManager'
 import { WeaponDataManager } from './DataManagers/WeaponDataManager'
 import type { IGO, ImportResult } from './exim'
 import { GOSource, newImportResult } from './exim'
 import { currentDBVersion, migrate, migrateGOOD } from './migrate'
-import { TeamDataManager } from './DataManagers/TeamDataManager'
-import { TeamCharacterDataManager } from './DataManagers/TeamCharacterDataManager'
-import { BuildDataManager } from './DataManagers/BuildDataManager'
 export class ArtCharDatabase extends Database {
   arts: ArtifactDataManager
   chars: CharacterDataManager
@@ -32,13 +32,6 @@ export class ArtCharDatabase extends Database {
   builds: BuildDataManager
   teamChars: TeamCharacterDataManager
   teams: TeamDataManager
-  /**
-   * @deprecated
-   * TODO: Partial<Record<CharacterKey, TeamData>> = {}
-   */
-  teamData: Partial<
-    Record<CharacterKey, Partial<Record<CharacterKey, object>>>
-  > = {}
 
   dbMeta: DBMetaEntry
   displayWeapon: DisplayWeaponEntry
@@ -93,8 +86,7 @@ export class ArtCharDatabase extends Database {
     this.displayTool = new DisplayToolEntry(this)
 
     // invalidates character when things change.
-    this.chars.followAny((key) => {
-      this.invalidateTeamData(key)
+    this.chars.followAny(() => {
       this.dbMeta.set({ lastEdit: Date.now() })
     })
     this.arts.followAny(() => {
@@ -130,22 +122,8 @@ export class ArtCharDatabase extends Database {
     ] as const
   }
 
-  _getTeamData(key: CharacterKey) {
-    return this.teamData[key]
-  }
-  cacheTeamData(key: CharacterKey, data: object) {
-    this.teamData[key] = data
-  }
-  invalidateTeamData(key: CharacterKey | '') {
-    if (!key) return
-    delete this.teamData[key]
-    Object.entries(this.teamData).forEach(
-      ([k, teamData]) => teamData[key] && delete this.teamData[k]
-    )
-  }
   clear() {
     this.dataManagers.map((dm) => dm.clear())
-    this.teamData = {}
     this.dataEntries.map((de) => de.clear())
   }
   get gender() {

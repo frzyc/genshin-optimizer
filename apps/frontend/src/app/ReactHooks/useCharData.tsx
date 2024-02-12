@@ -6,6 +6,7 @@ import type {
   ICachedCharacter,
   ICachedWeapon,
 } from '@genshin-optimizer/gi/db'
+import { defaultInitialWeapon } from '@genshin-optimizer/gi/db'
 import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { useDeferredValue, useEffect, useMemo } from 'react'
 import type { TeamData } from '../Context/DataContext'
@@ -25,7 +26,6 @@ import {
 } from '../Formula/api'
 import type { Data } from '../Formula/type'
 import { objectMap } from '../Util/Util'
-import { defaultInitialWeapon } from '../Util/WeaponUtil'
 
 type TeamDataBundle = {
   teamData: Dict<CharacterKey, Data[]>
@@ -77,6 +77,32 @@ export default function useCharData(
 
   return data
 }
+class CharCalcCache {
+  data: Partial<Record<CharacterKey, TeamData>>
+  constructor(database: ArtCharDatabase) {
+    this.data = {}
+    database.chars.followAny((a) => {
+      this.removeData(a)
+    })
+  }
+  getData(ck: CharacterKey) {
+    return this.data[ck]
+  }
+  cacheData(ck: CharacterKey, data: TeamData) {
+    this.data[ck] = data
+  }
+  removeData(ck: CharacterKey) {
+    delete this.data[ck]
+  }
+}
+// cache are mapped per database
+const cacheMap: Map<ArtCharDatabase, CharCalcCache> = new Map()
+const getCache = (database: ArtCharDatabase) => {
+  if (cacheMap.has(database)) return cacheMap.get(database)
+  const cache = new CharCalcCache(database)
+  cacheMap.set(database, cache)
+  return cache
+}
 
 export function getTeamDataCalc(
   database: ArtCharDatabase,
@@ -90,7 +116,7 @@ export function getTeamDataCalc(
 
   // Retrive from cache
   if (!mainStatAssumptionLevel && !overrideArt && !overrideWeapon) {
-    const cache = database._getTeamData(characterKey)
+    const cache = getCache(database).getData(characterKey)
     if (cache) return cache as TeamData
   }
   const { teamData, teamBundle } =
@@ -110,7 +136,7 @@ export function getTeamDataCalc(
     return { ...obj, ...rest }
   })
   if (!mainStatAssumptionLevel && !overrideArt && !overrideWeapon)
-    database.cacheTeamData(characterKey, data)
+    getCache(database).cacheData(characterKey, data)
   return data
 }
 /**

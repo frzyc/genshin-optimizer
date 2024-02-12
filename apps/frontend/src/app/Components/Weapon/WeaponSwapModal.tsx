@@ -14,6 +14,7 @@ import type {
   WeaponTypeKey,
 } from '@genshin-optimizer/gi/consts'
 import { allRarityKeys } from '@genshin-optimizer/gi/consts'
+import { initialWeapon } from '@genshin-optimizer/gi/db'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { Add } from '@mui/icons-material'
 import StarRoundedIcon from '@mui/icons-material/StarRounded'
@@ -38,13 +39,6 @@ import {
   useState,
 } from 'react'
 import { useTranslation } from 'react-i18next'
-import CardDark from '../Card/CardDark'
-import CloseButton from '../CloseButton'
-import ImgIcon from '../Image/ImgIcon'
-import ModalWrapper from '../ModalWrapper'
-import PageAndSortOptionSelect from '../PageAndSortOptionSelect'
-import SolidToggleButtonGroup from '../SolidToggleButtonGroup'
-import WeaponSelectionModal from './WeaponSelectionModal'
 import WeaponCard from '../../PageWeapon/WeaponCard'
 import WeaponEditor from '../../PageWeapon/WeaponEditor'
 import { handleMultiSelect } from '../../Util/MultiSelect'
@@ -53,8 +47,14 @@ import {
   weaponSortConfigs,
   weaponSortMap,
 } from '../../Util/WeaponSort'
-import { initialWeapon } from '../../Util/WeaponUtil'
+import CardDark from '../Card/CardDark'
+import CloseButton from '../CloseButton'
 import CompareBuildButton from '../CompareBuildButton'
+import ImgIcon from '../Image/ImgIcon'
+import ModalWrapper from '../ModalWrapper'
+import PageAndSortOptionSelect from '../PageAndSortOptionSelect'
+import SolidToggleButtonGroup from '../SolidToggleButtonGroup'
+import WeaponSelectionModal from './WeaponSelectionModal'
 
 const numToShowMap = { xs: 2 * 3, sm: 2 * 3, md: 3 * 3, lg: 4 * 3, xl: 4 * 3 }
 const rarityHandler = handleMultiSelect([...allRarityKeys])

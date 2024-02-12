@@ -25,16 +25,24 @@ import {
 } from './CustomMultiTarget'
 import type { TeamCharacter } from './TeamCharacterDataManager'
 import type { Team } from './TeamDataManager'
+import {
+  defaultInitialWeapon,
+  defaultInitialWeaponKey,
+  initialWeapon,
+} from './WeaponDataManager'
 export {
   MAX_DESC_LENGTH,
   MAX_NAME_LENGTH,
   allAllowLocationsState,
   allArtifactSetExclusionKeys,
   cachedArtifact,
+  defaultInitialWeapon,
+  defaultInitialWeaponKey,
   handleArtSetExclusion,
   initCharTC,
   initCustomMultiTarget,
   initCustomTarget,
+  initialWeapon,
   maxBuildsToShowList,
   minTotalStatKeys,
   validateArtifact,

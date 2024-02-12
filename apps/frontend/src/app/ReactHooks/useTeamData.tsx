@@ -27,7 +27,6 @@ import {
 } from '../Formula/api'
 import type { Data } from '../Formula/type'
 import { objectMap } from '../Util/Util'
-import { defaultInitialWeapon } from '../Util/WeaponUtil'
 
 type TeamDataBundle = {
   teamData: Dict<CharacterKey, Data[]>
