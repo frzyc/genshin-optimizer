@@ -19,6 +19,8 @@ import {
 import { useTranslation } from 'react-i18next'
 import { Navigate, useMatch, useNavigate, useParams } from 'react-router-dom'
 import CloseButton from '../Components/CloseButton'
+import type { CharacterContextObj } from '../Context/CharacterContext'
+import { CharacterContext } from '../Context/CharacterContext'
 import { DataContext, type dataContextObj } from '../Context/DataContext'
 import { FormulaDataWrapper } from '../Context/FormulaDataContext'
 import {
@@ -120,7 +122,7 @@ function Page({ teamId, onClose }: { teamId: string; onClose?: () => void }) {
     }
   }, [charUIData, teamData])
 
-  const characterContextValue: TeamCharacterContextObj | undefined =
+  const teamCharacterContextValue: TeamCharacterContextObj | undefined =
     useMemo(() => {
       if (!character || !characterSheet) return undefined
       return {
@@ -132,7 +134,15 @@ function Page({ teamId, onClose }: { teamId: string; onClose?: () => void }) {
         characterSheet,
       }
     }, [teamId, team, teamCharId, teamChar, character, characterSheet])
-
+  const CharacterContextValue: CharacterContextObj | undefined = useMemo(
+    () =>
+      character &&
+      characterSheet && {
+        character,
+        characterSheet,
+      },
+    [character, characterSheet]
+  )
   const [chartData, setChartData] = useState(undefined as ChartData | undefined)
   const [graphBuilds, setGraphBuilds] = useState<string[][]>()
   const graphContextValue: GraphContextObj | undefined = useMemo(() => {
@@ -165,15 +175,20 @@ function Page({ teamId, onClose }: { teamId: string; onClose?: () => void }) {
           currentCharIndex={currentCharIndex}
           setCurrentCharIndex={setCurrentCharIndex}
         />
-        {dataContextValue && characterContextValue && graphContextValue ? (
-          <TeamCharacterContext.Provider value={characterContextValue}>
-            <DataContext.Provider value={dataContextValue}>
-              <GraphContext.Provider value={graphContextValue}>
-                <FormulaDataWrapper>
-                  <Content tab={tab} characterKey={characterKey} />
-                </FormulaDataWrapper>
-              </GraphContext.Provider>
-            </DataContext.Provider>
+        {dataContextValue &&
+        teamCharacterContextValue &&
+        graphContextValue &&
+        CharacterContextValue ? (
+          <TeamCharacterContext.Provider value={teamCharacterContextValue}>
+            <CharacterContext.Provider value={CharacterContextValue}>
+              <DataContext.Provider value={dataContextValue}>
+                <GraphContext.Provider value={graphContextValue}>
+                  <FormulaDataWrapper>
+                    <Content tab={tab} characterKey={characterKey} />
+                  </FormulaDataWrapper>
+                </GraphContext.Provider>
+              </DataContext.Provider>
+            </CharacterContext.Provider>
           </TeamCharacterContext.Provider>
         ) : (
           <Skeleton variant="rectangular" width="100%" height={1000} />

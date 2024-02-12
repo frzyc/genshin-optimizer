@@ -17,7 +17,6 @@ import {
   Chip,
   Grid,
   IconButton,
-  Stack,
   Typography,
 } from '@mui/material'
 import { useCallback, useContext, useRef } from 'react'
@@ -47,31 +46,29 @@ export default function TabOverview() {
   )
 
   return (
-    <Stack spacing={1}>
-      <Box>
-        <Grid container spacing={1} sx={{ justifyContent: 'center' }}>
-          <Grid item xs={8} sm={5} md={4} lg={2.3}>
-            <CharacterProfileCard />
-          </Grid>
-          <Grid
-            item
-            xs={12}
-            sm={7}
-            md={8}
-            lg={9.7}
-            sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}
-          >
-            <EquipmentRow onClick={onScroll} />
-            <CardLight sx={{ flexGrow: 1, p: 1 }}>
-              <StatDisplayComponent />
-            </CardLight>
-          </Grid>
+    <Box>
+      <Grid container spacing={1} sx={{ justifyContent: 'center' }}>
+        <Grid item xs={8} sm={5} md={4} lg={2.3}>
+          <CharacterProfileCard />
         </Grid>
-      </Box>
-      <Box ref={scrollRef}>
-        <EquipmentSection />
-      </Box>
-    </Stack>
+        <Grid
+          item
+          xs={12}
+          sm={7}
+          md={8}
+          lg={9.7}
+          sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}
+        >
+          <EquipmentRow onClick={onScroll} />
+          <CardLight sx={{ flexGrow: 1, p: 1 }}>
+            <StatDisplayComponent />
+          </CardLight>
+          <Box ref={scrollRef}>
+            <EquipmentSection />
+          </Box>
+        </Grid>
+      </Grid>
+    </Box>
   )
 }
 function EquipmentRow({ onClick }: { onClick: () => void }) {

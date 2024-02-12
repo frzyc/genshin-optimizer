@@ -1,4 +1,4 @@
-import { toggleArr } from '@genshin-optimizer/common/util'
+import { objKeyMap, toggleArr } from '@genshin-optimizer/common/util'
 import type { LocationCharacterKey } from '@genshin-optimizer/gi/consts'
 import {
   allArtifactSlotKeys,
@@ -39,6 +39,7 @@ import ColorText from '../../../../../Components/ColoredText'
 import ModalWrapper from '../../../../../Components/ModalWrapper'
 import SqBadge from '../../../../../Components/SqBadge'
 import WeaponCardNano from '../../../../../Components/Weapon/WeaponCardNano'
+import { CharacterContext } from '../../../../../Context/CharacterContext'
 import { DataContext } from '../../../../../Context/DataContext'
 import { TeamCharacterContext } from '../../../../../Context/TeamCharacterContext'
 import { getCharSheet } from '../../../../../Data/Characters'
@@ -46,6 +47,7 @@ import { uiInput as input } from '../../../../../Formula'
 import ArtifactCard from '../../../../../PageArtifact/ArtifactCard'
 import { ArtifactSetBadges } from './ArtifactSetBadges'
 import SetInclusionButton from './SetInclusionButton'
+import { CardThemed } from '@genshin-optimizer/common/ui'
 
 type NewOld = {
   newId: string
@@ -68,21 +70,35 @@ export default function BuildDisplayItem({
   disabled,
 }: BuildDisplayItemProps) {
   const {
-    teamChar: { optConfigId },
-    character: { key: characterKey, equippedArtifacts },
+    teamChar: { optConfigId, buildType, buildId },
   } = useContext(TeamCharacterContext)
-  const { mainStatAssumptionLevel, allowLocationsState } =
-    useOptConfig(optConfigId)
+  const {
+    character: { key: characterKey },
+  } = useContext(CharacterContext)
+  const { mainStatAssumptionLevel, allowLocationsState } = useOptConfig(
+    optConfigId
+  ) ?? { mainStatAssumptionLevel: 0, allowLocationsState: 'all' }
   const database = useDatabase()
   const dataContext = useContext(DataContext)
 
   const { data, oldData } = dataContext
   const [newOld, setNewOld] = useState(undefined as NewOld | undefined)
   const close = useCallback(() => setNewOld(undefined), [setNewOld])
-
+  const loadoutEquip = buildId && buildType === 'real'
   const equipBuild = useCallback(() => {
-    if (!window.confirm('Do you want to equip this build to this character?'))
+    const confirmMsg = loadoutEquip
+      ? 'Do you want to equip this build to this loadout?'
+      : 'Do you want to equip this build to this character?'
+    if (!window.confirm(confirmMsg)) return
+    if (loadoutEquip && buildId) {
+      database.builds.set(buildId, {
+        weaponId: data.get(input.weapon.id).value,
+        artifactIds: objKeyMap(allArtifactSlotKeys, (s) =>
+          data.get(input.art[s].id).value?.toString()
+        ),
+      })
       return
+    }
     const char = database.chars.get(characterKey)
     if (!char) return
     allArtifactSlotKeys.forEach((s) => {
@@ -100,7 +116,7 @@ export default function BuildDisplayItem({
       database.weapons.set(weapon, {
         location: charKeyToLocCharKey(characterKey),
       })
-  }, [characterKey, data, database])
+  }, [characterKey, loadoutEquip, buildId, data, database])
 
   const statProviderContext = useMemo(() => {
     const dataContext_ = { ...dataContext }
@@ -138,14 +154,14 @@ export default function BuildDisplayItem({
             artifactId={artifactIdsBySlot[slotKey]}
             mainStatAssumptionLevel={mainStatAssumptionLevel}
             onClick={() => {
-              const oldId = equippedArtifacts[slotKey]
+              const oldId = oldData.get(input.art[slotKey].id).value?.toString()
               const newId = artifactIdsBySlot[slotKey]!
               setNewOld({ oldId: oldId !== newId ? oldId : undefined, newId })
             }}
           />
         </Grid>
       )),
-    [setNewOld, equippedArtifacts, mainStatAssumptionLevel, artifactIdsBySlot]
+    [setNewOld, oldData, mainStatAssumptionLevel, artifactIdsBySlot]
   )
 
   if (!oldData) return null
@@ -236,16 +252,27 @@ function CompareArtifactModal({
 }) {
   const database = useDatabase()
   const {
-    character: { key: characterKey },
+    teamChar: { buildType, buildId },
   } = useContext(TeamCharacterContext)
+  const loadoutEquip = buildId && buildType === 'real'
+  const {
+    character: { key: characterKey },
+  } = useContext(CharacterContext)
   const onEquip = useCallback(() => {
-    if (
-      !window.confirm('Do you want to equip this artifact to this character?')
-    )
-      return
-    database.arts.set(newId, { location: charKeyToLocCharKey(characterKey) })
+    const confirmMsg = loadoutEquip
+      ? 'Do you want to equip this artifact to this loadout?'
+      : 'Do you want to equip this artifact to this character?'
+    if (!window.confirm(confirmMsg)) return
+    if (loadoutEquip) {
+      const art = database.arts.get(newId)
+      if (art.slotKey)
+        database.builds.set(buildId, (build) => {
+          build.artifactIds[art.slotKey] = newId
+        })
+    } else
+      database.arts.set(newId, { location: charKeyToLocCharKey(characterKey) })
     onClose()
-  }, [newId, database, characterKey, onClose])
+  }, [newId, loadoutEquip, buildId, database, characterKey, onClose])
   const newLoc = database.arts.get(newId)?.location ?? ''
   const newArtifact = useArtifact(newId)
 
@@ -265,11 +292,16 @@ function CompareArtifactModal({
           }}
         >
           {oldId && (
-            <Box minWidth={320}>
+            <Box minWidth={320} display="flex" flexDirection="column" gap={1}>
+              <CardThemed bgt="light" sx={{ p: 1 }}>
+                <Typography variant="h6" textAlign="center">
+                  Old Artifact
+                </Typography>
+              </CardThemed>
               <ArtifactCard
                 artifactId={oldId}
                 mainStatAssumptionLevel={mainStatAssumptionLevel}
-                canEquip
+                canEquip={!loadoutEquip}
                 editorProps={{ disableSet: true, disableSlot: true }}
                 extraButtons={<ExcludeButton id={oldId} />}
               />
@@ -285,10 +317,15 @@ function CompareArtifactModal({
           )}
           {oldId && <Box display="flex" flexGrow={1} />}
           <Box minWidth={320} display="flex" flexDirection="column" gap={1}>
+            <CardThemed bgt="light" sx={{ p: 1 }}>
+              <Typography variant="h6" textAlign="center">
+                New Artifact
+              </Typography>
+            </CardThemed>
             <ArtifactCard
               artifactId={newId}
               mainStatAssumptionLevel={mainStatAssumptionLevel}
-              canEquip
+              canEquip={!loadoutEquip}
               editorProps={{ disableSet: true, disableSlot: true }}
               extraButtons={<ExcludeButton id={newId} />}
             />
@@ -326,7 +363,7 @@ function ExcludeButton({ id }: { id: string }) {
       }),
     [id, artExclusion, database, optConfigId]
   )
-
+  if (!optConfigId) return null
   return (
     <BootstrapTooltip
       title={
@@ -365,7 +402,9 @@ function ExcludeEquipButton({
   const characterSheet = getCharSheet(
     database.chars.LocationToCharacterKey(locationKey)
   )
-  const { excludedLocations } = useOptConfig(optConfigId)
+  const { excludedLocations } = useOptConfig(optConfigId) ?? {
+    excludedLocations: [],
+  }
   const excluded = excludedLocations.includes(locationKey)
   const toggle = useCallback(
     () =>
@@ -374,7 +413,7 @@ function ExcludeEquipButton({
       }),
     [locationKey, excludedLocations, database, optConfigId]
   )
-
+  if (!optConfigId) return null
   return (
     <Button
       onClick={toggle}

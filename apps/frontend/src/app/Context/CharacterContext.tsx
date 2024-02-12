@@ -4,7 +4,6 @@ import type CharacterSheet from '../Data/Characters/CharacterSheet'
 export type CharacterContextObj = {
   character: ICachedCharacter
   characterSheet: CharacterSheet
-  characterDispatch: (action: Partial<ICachedCharacter>) => void
 }
 
 // If using this context without a Provider, then stuff will crash...

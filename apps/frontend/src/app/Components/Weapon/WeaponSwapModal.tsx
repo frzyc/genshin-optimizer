@@ -266,12 +266,7 @@ export default function WeaponSwapModal({
                 <WeaponCard
                   weaponId={weaponId}
                   onClick={clickHandler}
-                  extraButtons={
-                    <CompareBuildButton>
-                      {/* TODO: add content to compare modal with build comparasion weaponId={weaponId} */}
-                      <Box>TODO</Box>
-                    </CompareBuildButton>
-                  }
+                  extraButtons={<CompareBuildButton weaponId={weaponId} />}
                 />
               </Grid>
             ))}

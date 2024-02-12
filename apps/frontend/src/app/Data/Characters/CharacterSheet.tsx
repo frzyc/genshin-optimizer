@@ -31,7 +31,10 @@ export default class CharacterSheet {
   get constellationName() {
     return this.sheet.constellationName
   }
-
+  /**
+   * @deprecated use isCharMelee from go/gi-stats
+   * @returns
+   */
   isMelee = () => {
     const weaponTypeKey = this.sheet.weaponTypeKey
     return (

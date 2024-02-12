@@ -1,6 +1,7 @@
 import { useBoolState } from '@genshin-optimizer/common/react-util'
 import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
 import { CardThemed } from '@genshin-optimizer/common/ui'
+import { imgAssets } from '@genshin-optimizer/gi/assets'
 import type {
   ArtifactSlotKey,
   WeaponTypeKey,
@@ -17,13 +18,14 @@ import {
   Tooltip,
   Typography,
 } from '@mui/material'
+import { useCallback, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import ArtifactCard from '../../PageArtifact/ArtifactCard'
 import WeaponCard from '../../PageWeapon/WeaponCard'
+import WeaponEditor from '../../PageWeapon/WeaponEditor'
 import ArtifactSwapModal from '../Artifact/ArtifactSwapModal'
-import WeaponSwapModal from '../Weapon/WeaponSwapModal'
 import ImgIcon from '../Image/ImgIcon'
-import { imgAssets } from '@genshin-optimizer/gi/assets'
+import WeaponSwapModal from '../Weapon/WeaponSwapModal'
 
 const columns = {
   xs: 1,
@@ -46,49 +48,74 @@ export default function EquippedGrid({
   setArtifact: (slotKey: ArtifactSlotKey, id: string) => void
 }) {
   const database = useDatabase()
+
+  const [editorWeaponId, setEditorWeaponId] = useState('')
+
+  //triggers when character swap weapons
+  useEffect(() => {
+    if (editorWeaponId && editorWeaponId !== weaponId)
+      setEditorWeaponId(weaponId)
+  }, [editorWeaponId, weaponId])
+
+  const showWeapon = useCallback(() => setEditorWeaponId(weaponId), [weaponId])
+  const hideWeapon = useCallback(() => setEditorWeaponId(''), [])
+
   return (
-    <Grid item columns={columns} container spacing={1}>
-      <Grid item xs={1} display="flex" flexDirection="column">
-        {database.weapons.keys.includes(weaponId) ? (
-          <WeaponCard
-            weaponId={weaponId}
-            onEdit={setWeapon}
-            extraButtons={
-              <WeaponSwapButton
-                weaponTypeKey={weaponTypeKey}
-                onChangeId={setWeapon}
-              />
-            }
-          />
-        ) : (
-          <WeaponSwapCard
+    <Box>
+      <WeaponEditor
+        weaponId={editorWeaponId}
+        footer
+        onClose={hideWeapon}
+        extraButtons={
+          <LargeWeaponSwapButton
             weaponTypeKey={weaponTypeKey}
             onChangeId={setWeapon}
           />
-        )}
-      </Grid>
-      {Object.entries(artifactIds).map(([slotKey, id]) => (
-        <Grid item xs={1} key={id || slotKey}>
-          {database.arts.keys.includes(id) ? (
-            <ArtifactCard
-              artifactId={id}
+        }
+      />
+      <Grid item columns={columns} container spacing={1}>
+        <Grid item xs={1} display="flex" flexDirection="column">
+          {database.weapons.keys.includes(weaponId) ? (
+            <WeaponCard
+              weaponId={weaponId}
+              onEdit={showWeapon}
               extraButtons={
-                <ArtifactSwapButton
-                  slotKey={slotKey}
-                  onChangeId={(id) => setArtifact(slotKey, id)}
+                <WeaponSwapButton
+                  weaponTypeKey={weaponTypeKey}
+                  onChangeId={setWeapon}
                 />
               }
-              editorProps={{}}
             />
           ) : (
-            <ArtSwapCard
-              slotKey={slotKey}
-              onChangeId={(id) => setArtifact(slotKey, id)}
+            <WeaponSwapCard
+              weaponTypeKey={weaponTypeKey}
+              onChangeId={setWeapon}
             />
           )}
         </Grid>
-      ))}
-    </Grid>
+        {Object.entries(artifactIds).map(([slotKey, id]) => (
+          <Grid item xs={1} key={id || slotKey}>
+            {database.arts.keys.includes(id) ? (
+              <ArtifactCard
+                artifactId={id}
+                extraButtons={
+                  <ArtifactSwapButton
+                    slotKey={slotKey}
+                    onChangeId={(id) => setArtifact(slotKey, id)}
+                  />
+                }
+                editorProps={{}}
+              />
+            ) : (
+              <ArtSwapCard
+                slotKey={slotKey}
+                onChangeId={(id) => setArtifact(slotKey, id)}
+              />
+            )}
+          </Grid>
+        ))}
+      </Grid>
+    </Box>
   )
 }
 export function WeaponSwapCard({
@@ -239,6 +266,31 @@ function WeaponSwapButton({
           <SwapHorizIcon />
         </Button>
       </Tooltip>
+      <WeaponSwapModal
+        weaponTypeKey={weaponTypeKey}
+        onChangeId={onChangeId}
+        show={show}
+        onClose={onClose}
+      />
+    </>
+  )
+}
+function LargeWeaponSwapButton({
+  weaponTypeKey,
+  onChangeId,
+}: {
+  weaponTypeKey: WeaponTypeKey
+  onChangeId: (id: string) => void
+}) {
+  const { t } = useTranslation('page_character')
+  const [show, onOpen, onClose] = useBoolState()
+  return (
+    <>
+      <Button
+        color="info"
+        onClick={onOpen}
+        startIcon={<SwapHorizIcon />}
+      >{t`tabEquip.swapWeapon`}</Button>
       <WeaponSwapModal
         weaponTypeKey={weaponTypeKey}
         onChangeId={onChangeId}

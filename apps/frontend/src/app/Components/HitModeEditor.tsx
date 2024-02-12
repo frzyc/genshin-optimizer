@@ -9,6 +9,7 @@ import {
   allHitModeKeys,
 } from '@genshin-optimizer/gi/consts'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
+import { isCharMelee } from '@genshin-optimizer/gi/stats'
 import {
   CryoIcon,
   ElectroIcon,
@@ -19,8 +20,9 @@ import type { ToggleButtonGroupProps } from '@mui/material'
 import { MenuItem, ToggleButton } from '@mui/material'
 import { useContext } from 'react'
 import { useTranslation } from 'react-i18next'
-import { TeamCharacterContext } from '../Context/TeamCharacterContext'
+import { CharacterContext } from '../Context/CharacterContext'
 import { DataContext } from '../Context/DataContext'
+import { TeamCharacterContext } from '../Context/TeamCharacterContext'
 import { infusionNode, uiInput as input } from '../Formula'
 import { allowedAdditiveReactions, allowedAmpReactions } from '../Types/consts'
 import AdditiveReactionModeText from './AdditiveReactionModeText'
@@ -63,17 +65,20 @@ type InfusionAuraDropdownProps = Omit<
 >
 export function InfusionAuraDropdown(props: InfusionAuraDropdownProps) {
   const {
-    characterSheet,
     teamCharId,
     teamChar: { infusionAura },
   } = useContext(TeamCharacterContext)
+  const {
+    character: { key: characterKey },
+  } = useContext(CharacterContext)
   const database = useDatabase()
-  if (!characterSheet?.isMelee()) return null
+  if (!isCharMelee(characterKey)) return null
   return (
     <DropdownButton
-      title={infusionVals[infusionAura]}
+      title={infusionVals[infusionAura || '']}
       color={infusionAura || 'secondary'}
       disableElevation
+      disabled={!teamCharId}
       {...props}
     >
       {Object.entries(infusionVals).map(([key, text]) => (
@@ -118,6 +123,7 @@ export function ReactionToggle(props: ReactionToggleProps) {
       baseColor="secondary"
       value={reaction}
       onChange={(_, reaction) => database.teams.set(teamId, { reaction })}
+      disabled={!teamId}
       {...props}
     >
       <ToggleButton value="" disabled={!reaction}>{t`noReaction`}</ToggleButton>
@@ -138,7 +144,7 @@ export function HitModeToggle(props: HitModeToggleProps) {
   const { t } = useTranslation('page_character')
   const {
     teamId,
-    team: { hitMode },
+    team: { hitMode = 'avgHit' },
   } = useContext(TeamCharacterContext)
   const database = useDatabase()
   return (
@@ -147,6 +153,7 @@ export function HitModeToggle(props: HitModeToggleProps) {
       baseColor="secondary"
       value={hitMode}
       onChange={(_, hitMode) => database.teams.set(teamId, { hitMode })}
+      disabled={!teamId}
       {...props}
     >
       {allHitModeKeys.map((hm) => (

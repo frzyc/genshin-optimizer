@@ -196,12 +196,7 @@ export default function ArtifactSwapModal({
                   <Grid item key={id} xs={1}>
                     <ArtifactCard
                       artifactId={id}
-                      extraButtons={
-                        <CompareBuildButton>
-                          {/* TODO: add content to compare modal with build comparasion artId={id} */}
-                          <Box>TODO</Box>
-                        </CompareBuildButton>
-                      }
+                      extraButtons={<CompareBuildButton artId={id} />}
                       onClick={clickHandler}
                     />
                   </Grid>

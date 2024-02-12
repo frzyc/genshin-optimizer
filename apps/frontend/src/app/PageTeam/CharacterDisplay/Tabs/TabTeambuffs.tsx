@@ -35,6 +35,8 @@ import { GeneralAutocomplete } from '../../../Components/GeneralAutocomplete'
 import CharIconSide from '../../../Components/Image/CharIconSide'
 import { InfoTooltipInline } from '../../../Components/InfoTooltip'
 import WeaponFullCard from '../../../Components/Weapon/WeaponFullCard'
+import type { CharacterContextObj } from '../../../Context/CharacterContext'
+import { CharacterContext } from '../../../Context/CharacterContext'
 import type { dataContextObj } from '../../../Context/DataContext'
 import { DataContext } from '../../../Context/DataContext'
 import { SillyContext } from '../../../Context/SillyContext'
@@ -204,6 +206,14 @@ function TeammateDisplay({ teamCharId }: { teamCharId: string }) {
       },
     [teamId, team, teamCharId, teamChar, character, dataBundle]
   )
+  const characterContext: CharacterContextObj = useMemo(
+    () =>
+      dataBundle && {
+        character,
+        characterSheet: dataBundle.characterSheet,
+      },
+    [character, dataBundle]
+  )
   const teamMateDataContext: dataContextObj | undefined = useMemo(
     () =>
       dataBundle && {
@@ -224,36 +234,46 @@ function TeammateDisplay({ teamCharId }: { teamCharId: string }) {
         <TeamCharacterContext.Provider value={teammateCharacterContext}>
           {teamMateDataContext && (
             <DataContext.Provider value={teamMateDataContext}>
-              <Suspense
-                fallback={
-                  <Skeleton variant="rectangular" width="100%" height={600} />
-                }
-              >
-                <CardThemed bgt="light">
-                  <CharacterCardHeader
-                    characterKey={characterKey}
-                    onClick={onClick}
+              {characterContext && (
+                <CharacterContext.Provider value={characterContext}>
+                  <Suspense
+                    fallback={
+                      <Skeleton
+                        variant="rectangular"
+                        width="100%"
+                        height={600}
+                      />
+                    }
                   >
-                    <CharacterCardHeaderContent characterKey={characterKey} />
-                  </CharacterCardHeader>
-                  <Box
-                    sx={{
-                      p: 1,
-                      width: '100%',
-                      display: 'flex',
-                      flexDirection: 'column',
-                      gap: 1,
-                      flexGrow: 1,
-                    }}
-                  >
-                    <CharacterCardEquipmentRow hideWeapon />
-                    <CharArtifactCondDisplay />
-                    <CharacterCardWeaponFull />
-                    <CharWeaponCondDisplay />
-                    <CharTalentCondDisplay />
-                  </Box>
-                </CardThemed>
-              </Suspense>
+                    <CardThemed bgt="light">
+                      <CharacterCardHeader
+                        characterKey={characterKey}
+                        onClick={onClick}
+                      >
+                        <CharacterCardHeaderContent
+                          characterKey={characterKey}
+                        />
+                      </CharacterCardHeader>
+                      <Box
+                        sx={{
+                          p: 1,
+                          width: '100%',
+                          display: 'flex',
+                          flexDirection: 'column',
+                          gap: 1,
+                          flexGrow: 1,
+                        }}
+                      >
+                        <CharacterCardEquipmentRow hideWeapon />
+                        <CharArtifactCondDisplay />
+                        <CharacterCardWeaponFull />
+                        <CharWeaponCondDisplay />
+                        <CharTalentCondDisplay />
+                      </Box>
+                    </CardThemed>
+                  </Suspense>
+                </CharacterContext.Provider>
+              )}
             </DataContext.Provider>
           )}
         </TeamCharacterContext.Provider>

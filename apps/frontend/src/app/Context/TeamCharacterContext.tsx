@@ -10,10 +10,19 @@ export type TeamCharacterContextObj = {
   team: Team
   teamCharId: string
   teamChar: TeamCharacter
+  /**
+   * @deprecated, should be provided from CharacterContext
+   */
   character: ICachedCharacter
+  /**
+   * @deprecated, should be provided from CharacterContext
+   */
   characterSheet: CharacterSheet
 }
 
 // If using this context without a Provider, then stuff will crash...
 // In theory, none of the components that uses this context should work without a provider...
-export const TeamCharacterContext = createContext({} as TeamCharacterContextObj)
+export const TeamCharacterContext = createContext({
+  teamChar: {},
+  team: {},
+} as TeamCharacterContextObj)
