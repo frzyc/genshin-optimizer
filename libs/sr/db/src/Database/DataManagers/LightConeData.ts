@@ -103,7 +103,7 @@ export class LightConeDataManager extends SroDataManager<
     this.set(id, value)
     return id
   }
-  override remove(key: string, notify = true): ILightCone | undefined {
+  override remove(key: string, notify = true): ICachedLightCone | undefined {
     const lc = super.remove(key, notify)
     if (lc)
       lc.location && this.database.chars.setEquippedLightCone(lc.location, '')
