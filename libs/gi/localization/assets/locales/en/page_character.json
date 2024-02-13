@@ -10,7 +10,7 @@
   "formulas": "Formulas",
   "calculations": "Calculations",
   "selectCharacter": "Select a Character",
-  "removeCharacter": "Are you sure you want to remove {{value}}?",
+  "removeCharacter": "Are you sure you want to remove {{value}}? This will also remove this character from any teams this character is assigned to.",
   "delete": "Delete Character",
   "teammates": "Teammates",
   "showingNum_one": "Showing <1>{{count}}</1> out of {{value}} Character",

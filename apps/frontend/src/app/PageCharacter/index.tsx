@@ -354,58 +354,14 @@ export default function PageCharacter() {
                         justifyContent: 'space-between',
                       }}
                     >
-                      <BootstrapTooltip
-                        placement="top"
-                        title={<Typography>{t('tabs.talent')}</Typography>}
+                      <Button
+                        fullWidth
+                        color="error"
+                        onClick={() => deleteCharacter(charKey)}
+                        startIcon={<DeleteForever />}
                       >
-                        <IconButton
-                          onClick={() => navigate(`${charKey}/talent`)}
-                        >
-                          <FactCheck />
-                        </IconButton>
-                      </BootstrapTooltip>
-                      <BootstrapTooltip
-                        placement="top"
-                        title={<Typography>{t('tabs.teambuffs')}</Typography>}
-                      >
-                        <IconButton
-                          onClick={() => navigate(`${charKey}/teambuffs`)}
-                        >
-                          <Groups />
-                        </IconButton>
-                      </BootstrapTooltip>
-                      <BootstrapTooltip
-                        placement="top"
-                        title={<Typography>{t('tabs.optimize')}</Typography>}
-                      >
-                        <IconButton
-                          onClick={() => navigate(`${charKey}/optimize`)}
-                        >
-                          <TrendingUp />
-                        </IconButton>
-                      </BootstrapTooltip>
-                      <BootstrapTooltip
-                        placement="top"
-                        title={<Typography>{t('tabs.theorycraft')}</Typography>}
-                      >
-                        <IconButton
-                          onClick={() => navigate(`${charKey}/theorycraft`)}
-                        >
-                          <Science />
-                        </IconButton>
-                      </BootstrapTooltip>
-                      <Divider orientation="vertical" />
-                      <BootstrapTooltip
-                        placement="top"
-                        title={<Typography>{t('delete')}</Typography>}
-                      >
-                        <IconButton
-                          color="error"
-                          onClick={() => deleteCharacter(charKey)}
-                        >
-                          <DeleteForever />
-                        </IconButton>
-                      </BootstrapTooltip>
+                        {t('delete')}
+                      </Button>
                     </Box>
                   </>
                 }
