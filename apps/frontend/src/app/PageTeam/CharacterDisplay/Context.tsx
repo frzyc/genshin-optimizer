@@ -26,7 +26,7 @@ import { TeamCharacterContext } from '../../Context/TeamCharacterContext'
 import { shouldShowDevComponents } from '../../Util/Util'
 import { CustomMultiTargetButton } from './CustomMultiTarget'
 import FormulaModal from './FormulaModal'
-import LoadoutBtn from './LoadoutBtn'
+import LoadoutBtn from './Loadout/LoadoutBtn'
 import StatModal from './StatModal'
 import TabBuild from './Tabs/TabOptimize'
 import TabOverview from './Tabs/TabOverview'
@@ -89,7 +89,9 @@ function CharacterPanel() {
         )}
         <Route path="/:characterKey/talent" element={<TabTalent />} />
         <Route path="/:characterKey/teambuffs" element={<TabTeambuffs />} />
-        <Route path="/:characterKey/optimize" element={<TabBuild />} />
+        {!isTCBuild && (
+          <Route path="/:characterKey/optimize" element={<TabBuild />} />
+        )}
 
         {shouldShowDevComponents && (
           <Route path="/:characterKey/upopt" element={<TabUpopt />} />
@@ -128,11 +130,11 @@ function TabNav({
       {isTCBuild ? (
         <Tab
           sx={tabSx}
-          value="theorycraft"
+          value="overview"
           label={t('tabs.theorycraft')}
           icon={<Science />}
           component={RouterLink}
-          to={`${characterKey}/theorycraft`}
+          to={`${characterKey}/`}
         />
       ) : (
         <Tab

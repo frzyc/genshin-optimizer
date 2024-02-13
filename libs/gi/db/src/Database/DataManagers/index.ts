@@ -1,5 +1,4 @@
 import { cachedArtifact, validateArtifact } from './ArtifactDataManager'
-import type { IBuildResult } from './BuildResultDataManager'
 import type { MinTotalStatKey } from './BuildTcDataManager'
 import { initCharTC, minTotalStatKeys, toBuildTc } from './BuildTcDataManager'
 import {
@@ -52,7 +51,6 @@ export type {
   AllowLocationsState,
   ArtSetExclusion,
   ArtSetExclusionKey,
-  IBuildResult,
   MinTotalStatKey,
   StatFilterSetting,
   StatFilters,

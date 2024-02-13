@@ -1,11 +1,15 @@
 import {
+  useBoolState,
   useForceUpdate,
   useMediaQueryUp,
 } from '@genshin-optimizer/common/react-util'
-import { CardThemed } from '@genshin-optimizer/common/ui'
+import { CardThemed, ModalWrapper } from '@genshin-optimizer/common/ui'
 import { objKeyMap, objPathValue, range } from '@genshin-optimizer/common/util'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
-import { charKeyToLocCharKey } from '@genshin-optimizer/gi/consts'
+import {
+  allArtifactSlotKeys,
+  charKeyToLocCharKey,
+} from '@genshin-optimizer/gi/consts'
 import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
 import { defThreads, maxBuildsToShowList } from '@genshin-optimizer/gi/db'
 import {
@@ -13,6 +17,7 @@ import {
   useDatabase,
   useOptConfig,
 } from '@genshin-optimizer/gi/db-ui'
+import { getCharData } from '@genshin-optimizer/gi/stats'
 import {
   CheckBox,
   CheckBoxOutlineBlank,
@@ -21,6 +26,7 @@ import {
   Science,
   TrendingUp,
 } from '@mui/icons-material'
+import CheckroomIcon from '@mui/icons-material/Checkroom'
 import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive'
 import NotificationsOffIcon from '@mui/icons-material/NotificationsOff'
 import {
@@ -28,12 +34,14 @@ import {
   Button,
   ButtonGroup,
   CardContent,
+  CardHeader,
   Divider,
   Grid,
   MenuItem,
   Skeleton,
+  TextField,
   ToggleButton,
-  Typography,
+  Typography
 } from '@mui/material'
 import React, {
   Suspense,
@@ -46,7 +54,6 @@ import React, {
   useState,
 } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
-import { useLocation, useNavigate } from 'react-router-dom'
 import ArtifactLevelSlider from '../../../../Components/Artifact/ArtifactLevelSlider'
 import BootstrapTooltip from '../../../../Components/BootstrapTooltip'
 import CardLight from '../../../../Components/Card/CardLight'
@@ -56,6 +63,7 @@ import {
   CharacterCardHeaderContent,
 } from '../../../../Components/Character/CharacterCard/CharacterCardHeader'
 import { CharacterCardStats } from '../../../../Components/Character/CharacterCard/CharacterCardStats'
+import CloseButton from '../../../../Components/CloseButton'
 import DropdownButton from '../../../../Components/DropdownMenu/DropdownButton'
 import {
   HitModeToggle,
@@ -955,6 +963,7 @@ function BuildList({
       getLabel,
       deleteBuild,
       setBuilds,
+      mainStatAssumptionLevel,
     ]
   )
   return list
@@ -975,13 +984,6 @@ function BuildItemWrapper({
   deleteBuild?: (index: number) => void
 }) {
   const { t } = useTranslation('page_character_optimize')
-  const location = useLocation()
-  const navigate = useNavigate()
-  const toTC = useCallback(() => {
-    const paths = location.pathname.split('/')
-    paths.pop()
-    navigate(`${paths.join('/')}/theorycraft`, { state: { build } })
-  }, [navigate, build, location.pathname])
 
   return (
     <BuildDisplayItem
@@ -990,14 +992,8 @@ function BuildItemWrapper({
       disabled={disabled}
       extraButtonsLeft={
         <>
-          <Button
-            color="info"
-            size="small"
-            startIcon={<Science />}
-            onClick={toTC}
-          >
-            {t('theorycraftButton')}
-          </Button>
+          <CopyTcButton build={build} />
+          <CopyLoadoutButton build={build} />
           {deleteBuild && (
             <Button
               color="error"
@@ -1011,6 +1007,142 @@ function BuildItemWrapper({
         </>
       }
     />
+  )
+}
+function CopyTcButton({ build }: { build: string[] }) {
+  const { t } = useTranslation('page_character_optimize')
+  const [name, setName] = useState('')
+  const [showTcPrompt, onShowTcPrompt, OnHideTcPrompt] = useBoolState()
+
+  const database = useDatabase()
+  const {
+    teamCharId,
+    teamChar: { key: characterKey },
+  } = useContext(TeamCharacterContext)
+
+  const toTc = () => {
+    const weaponTypeKey = getCharData(characterKey).weaponType
+    const weapon = database.teamChars.getLoadoutWeapon(teamCharId)
+    const buildTcId = database.teamChars.newBuildTcFromBuild(
+      teamCharId,
+      weaponTypeKey,
+      weapon,
+      build.map((id) => database.arts.get(id))
+    )
+    database.buildTcs.set(buildTcId, {
+      name,
+    })
+
+    setName('')
+    OnHideTcPrompt()
+  }
+  return (
+    <>
+      <Button
+        color="info"
+        size="small"
+        startIcon={<Science />}
+        onClick={onShowTcPrompt}
+      >
+        {t('theorycraftButton')}
+      </Button>
+      {/* Wanted to use a Dialog here, but was having some weird issues with closing out of it */}
+      {/* TODO: translation */}
+      <ModalWrapper open={showTcPrompt} onClose={OnHideTcPrompt}>
+        <CardThemed>
+          <CardHeader
+            title="New Theorycraft Build"
+            action={<CloseButton onClick={OnHideTcPrompt} />}
+          />
+          <Divider />
+          <CardContent
+            sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}
+          >
+            <Typography>Copy over this build to a new TC Build</Typography>
+            <TextField
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              autoFocus
+              margin="dense"
+              label="TC Loadout Name"
+              fullWidth
+            />
+            <Box sx={{ display: 'flex', justifyContent: 'flex-end', gap: 1 }}>
+              <Button onClick={OnHideTcPrompt}>Cancel</Button>
+              <Button color="success" disabled={!name} onClick={toTc}>
+                Create
+              </Button>
+            </Box>
+          </CardContent>
+        </CardThemed>
+      </ModalWrapper>
+    </>
+  )
+}
+function CopyLoadoutButton({ build }: { build: string[] }) {
+  const [name, setName] = useState('')
+  const [showTcPrompt, onShowTcPrompt, OnHideTcPrompt] = useBoolState()
+
+  const database = useDatabase()
+  const { teamCharId } = useContext(TeamCharacterContext)
+
+  const toLoadout = () => {
+    const weapon = database.teamChars.getLoadoutWeapon(teamCharId)
+    const artifactIds = objKeyMap(allArtifactSlotKeys, () => undefined)
+    build.forEach((id) => {
+      const art = database.arts.get(id)
+      artifactIds[art.slotKey] = id
+    })
+    database.teamChars.newBuild(teamCharId, {
+      name,
+      weaponId: weapon.id,
+      artifactIds,
+    })
+
+    setName('')
+    OnHideTcPrompt()
+  }
+  return (
+    <>
+      <Button
+        color="info"
+        size="small"
+        startIcon={<CheckroomIcon />}
+        onClick={onShowTcPrompt}
+      >
+        Loadout
+      </Button>
+      {/* Wanted to use a Dialog here, but was having some weird issues with closing out of it */}
+      {/* TODO: translation */}
+      <ModalWrapper open={showTcPrompt} onClose={OnHideTcPrompt}>
+        <CardThemed>
+          <CardHeader
+            title="New Build Loadout"
+            action={<CloseButton onClick={OnHideTcPrompt} />}
+          />
+          <Divider />
+          <CardContent
+            sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}
+          >
+            <Typography>Copy over this build to a new Loadout Build</Typography>
+            <TextField
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              autoFocus
+              margin="dense"
+              label="Loadout Name"
+              fullWidth
+            />
+            <Box sx={{ display: 'flex', justifyContent: 'flex-end', gap: 1 }}>
+              <Button onClick={OnHideTcPrompt}>Cancel</Button>
+              <Button color="success" disabled={!name} onClick={toLoadout}>
+                Create
+              </Button>
+            </Box>
+          </CardContent>
+        </CardThemed>
+      </ModalWrapper>
+    </>
   )
 }
 
