@@ -1,45 +1,29 @@
-import { useBoolState } from '@genshin-optimizer/common/react-util'
 import { objKeyMap } from '@genshin-optimizer/common/util'
 import {
   allArtifactSlotKeys,
-  allSubstatKeys,
   charKeyToLocCharKey,
 } from '@genshin-optimizer/gi/consts'
-import { useCharMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
+import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { getCharData } from '@genshin-optimizer/gi/stats'
-import { Settings } from '@mui/icons-material'
 import {
   Box,
   Button,
-  CardContent,
   Grid,
-  ListItem,
   Stack,
-  Typography,
   useMediaQuery,
   useTheme,
 } from '@mui/material'
-import { useCallback, useContext, useDeferredValue, useMemo } from 'react'
+import { useCallback, useContext, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import SetEffectDisplay from '../../../../Components/Artifact/SetEffectDisplay'
-import SubstatToggle from '../../../../Components/Artifact/SubstatToggle'
-import CardDark from '../../../../Components/Card/CardDark'
 import CardLight from '../../../../Components/Card/CardLight'
 import EquippedGrid from '../../../../Components/Character/EquippedGrid'
 import DocumentDisplay from '../../../../Components/DocumentDisplay'
-import {
-  BasicFieldDisplay,
-  FieldDisplayList,
-} from '../../../../Components/FieldDisplay'
-import ModalWrapper from '../../../../Components/ModalWrapper'
-import PercentBadge from '../../../../Components/PercentBadge'
 import { CharacterContext } from '../../../../Context/CharacterContext'
 import { DataContext } from '../../../../Context/DataContext'
 import { TeamCharacterContext } from '../../../../Context/TeamCharacterContext'
 import { dataSetEffects } from '../../../../Data/Artifacts'
-import Artifact from '../../../../Data/Artifacts/Artifact'
 import { uiInput as input } from '../../../../Formula'
-import type { IFieldDisplay } from '../../../../Types/fieldDisplay'
 
 export default function EquipmentSection() {
   const {
@@ -146,7 +130,7 @@ function ArtifactSectionCard() {
   const database = useDatabase()
   const {
     character,
-    character: { key: characterKey, equippedArtifacts },
+    character: { equippedArtifacts },
   } = useContext(CharacterContext)
   const { data } = useContext(DataContext)
   const hasEquipped = useMemo(
@@ -167,70 +151,6 @@ function ArtifactSectionCard() {
   }, [character, database, equippedArtifacts])
 
   const setEffects = useMemo(() => dataSetEffects(data), [data])
-  const { rvFilter } = useCharMeta(characterKey)
-  const setRVFilter = useCallback(
-    (rvFilter) => database.charMeta.set(characterKey, { rvFilter }),
-    [database, characterKey]
-  )
-
-  const [show, onShow, onHide] = useBoolState()
-  const deferredrvFilter = useDeferredValue(rvFilter)
-  const { rvField, rvmField } = useMemo(() => {
-    const {
-      currentEfficiency,
-      currentEfficiency_,
-      maxEfficiency,
-      maxEfficiency_,
-    } = Object.values(equippedArtifacts).reduce(
-      (a, artid) => {
-        const art = database.arts.get(artid)
-        if (art) {
-          const { currentEfficiency, maxEfficiency } =
-            Artifact.getArtifactEfficiency(art, new Set(deferredrvFilter))
-          const {
-            currentEfficiency: currentEfficiency_,
-            maxEfficiency: maxEfficiency_,
-          } = Artifact.getArtifactEfficiency(art, new Set(allSubstatKeys))
-          a.currentEfficiency = a.currentEfficiency + currentEfficiency
-          a.maxEfficiency = a.maxEfficiency + maxEfficiency
-
-          a.currentEfficiency_ = a.currentEfficiency_ + currentEfficiency_
-          a.maxEfficiency_ = a.maxEfficiency_ + maxEfficiency_
-        }
-        return a
-      },
-      {
-        currentEfficiency: 0,
-        currentEfficiency_: 0,
-        maxEfficiency: 0,
-        maxEfficiency_: 0,
-      }
-    )
-    const rvField: IFieldDisplay = {
-      text: t`artifact:editor.curSubEff`,
-      value: !(currentEfficiency - currentEfficiency_) ? (
-        <PercentBadge value={currentEfficiency} max={4500} valid />
-      ) : (
-        <span>
-          <PercentBadge value={currentEfficiency} max={4500} valid /> /{' '}
-          <PercentBadge value={currentEfficiency_} max={4500} valid />
-        </span>
-      ),
-    }
-    const rvmField: IFieldDisplay = {
-      text: t`artifact:editor.maxSubEff`,
-      canShow: () => !!(currentEfficiency_ - maxEfficiency_),
-      value: !(maxEfficiency - maxEfficiency_) ? (
-        <PercentBadge value={maxEfficiency} max={4500} valid />
-      ) : (
-        <span>
-          <PercentBadge value={maxEfficiency} max={4500} valid /> /{' '}
-          <PercentBadge value={maxEfficiency_} max={4500} valid />
-        </span>
-      ),
-    }
-    return { rvField, rvmField }
-  }, [t, deferredrvFilter, equippedArtifacts, database])
 
   return (
     <CardLight>
@@ -244,38 +164,6 @@ function ArtifactSectionCard() {
       )}
       <Box p={1}>
         <Stack spacing={1}>
-          <CardDark>
-            <Button
-              fullWidth
-              color="info"
-              startIcon={<Settings />}
-              sx={{ borderBottomLeftRadius: 0, borderBottomRightRadius: 0 }}
-              onClick={onShow}
-            >
-              RV Filter
-            </Button>
-            <ModalWrapper open={show} onClose={onHide}>
-              <CardDark>
-                <CardContent>
-                  <Typography
-                    textAlign="center"
-                    gutterBottom
-                    variant="h6"
-                  >{t`artifact:efficiencyFilter.title`}</Typography>
-                  <SubstatToggle
-                    selectedKeys={rvFilter}
-                    onChange={setRVFilter}
-                  />
-                </CardContent>
-              </CardDark>
-            </ModalWrapper>
-            <FieldDisplayList>
-              <BasicFieldDisplay field={rvField} component={ListItem} />
-              {rvmField?.canShow?.(data) && (
-                <BasicFieldDisplay field={rvmField} component={ListItem} />
-              )}
-            </FieldDisplayList>
-          </CardDark>
           {setEffects &&
             Object.entries(setEffects).flatMap(([setKey, setNumKeyArr]) =>
               setNumKeyArr.map((setNumKey) => (
