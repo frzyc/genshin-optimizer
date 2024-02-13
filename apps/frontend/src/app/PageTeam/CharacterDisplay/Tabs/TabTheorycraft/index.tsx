@@ -4,7 +4,7 @@ import {
   artSubstatRollData,
   type SubstatKey,
 } from '@genshin-optimizer/gi/consts'
-import type { BuildTc, ICachedWeapon } from '@genshin-optimizer/gi/db'
+import type { BuildTc } from '@genshin-optimizer/gi/db'
 import { useBuildTc, useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { getCharData } from '@genshin-optimizer/gi/stats'
 import { StatIcon } from '@genshin-optimizer/gi/svgicons'
@@ -21,14 +21,7 @@ import {
   Stack,
   ToggleButton,
 } from '@mui/material'
-import {
-  useCallback,
-  useContext,
-  useDeferredValue,
-  useMemo,
-  useRef,
-  useState,
-} from 'react'
+import { useCallback, useContext, useMemo, useRef, useState } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
 import { ArtifactStatWithUnit } from '../../../../Components/Artifact/ArtifactStatKeyDisplay'
 import CardLight from '../../../../Components/Card/CardLight'
@@ -40,7 +33,6 @@ import { DataContext } from '../../../../Context/DataContext'
 import { OptimizationTargetContext } from '../../../../Context/OptimizationTargetContext'
 import { TeamCharacterContext } from '../../../../Context/TeamCharacterContext'
 import { getTeamDataCalc } from '../../../../ReactHooks/useCharData'
-import useTeamData from '../../../../ReactHooks/useTeamData'
 import { isDev } from '../../../../Util/Util'
 import OptimizationTargetSelector from '../TabOptimize/Components/OptimizationTargetSelector'
 import { ArtifactMainStatAndSetEditor } from './ArtifactMainStatAndSetEditor'
@@ -82,27 +74,8 @@ export default function TabTheorycraft() {
   )
   const weaponTypeKey = getCharData(characterKey).weaponType
 
-  const deferredBuildTc = useDeferredValue(buildTc)
-  const overriderArtData = useMemo(
-    () => getArtifactData(deferredBuildTc),
-    [deferredBuildTc]
-  )
+  const dataContextValue = useContext(DataContext)
 
-  const overrideWeapon: ICachedWeapon = useMemo(
-    () => getWeaponData(deferredBuildTc),
-    [deferredBuildTc]
-  )
-  const teamData = useTeamData(teamId, 0, overriderArtData, overrideWeapon)
-
-  const { target: charUIData } = teamData?.[characterKey] ?? {}
-
-  const dataContextValue: dataContextObj | undefined = useMemo(() => {
-    if (!teamData || !charUIData) return undefined
-    return {
-      data: charUIData,
-      teamData,
-    }
-  }, [charUIData, teamData])
   const dataContextValueWithOld: dataContextObj | undefined = useMemo(() => {
     if (!dataContextValue) return undefined
     return {
@@ -160,13 +133,17 @@ export default function TabTheorycraft() {
   )
 
   const { scalesWith } = useMemo(() => {
-    const { nodes } = optimizeTcGetNodes(teamData, characterKey, buildTc)
+    const { nodes } = optimizeTcGetNodes(
+      dataContextValue.teamData,
+      characterKey,
+      buildTc
+    )
     const scalesWith = nodes ? getScalesWith(nodes) : new Set<SubstatKey>()
     return {
       nodes,
       scalesWith,
     }
-  }, [teamData, characterKey, buildTc])
+  }, [dataContextValue.teamData, characterKey, buildTc])
 
   const optimizeSubstats = (apply: boolean) => {
     /**

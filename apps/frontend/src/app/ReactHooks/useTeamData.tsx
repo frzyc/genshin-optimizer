@@ -88,7 +88,8 @@ export default function useTeamData(
         return database.chars.follow(teamChar.key, () => setDbDirty())
       else if (teamChar.buildType === 'real')
         return database.builds.follow(teamChar.buildId, () => setDbDirty())
-      else if (teamChar.buildType === 'tc') return () => {} // TODO: TC BUILD
+      else if (teamChar.buildType === 'tc')
+        return database.buildTcs.follow(teamChar.buildTcId, () => setDbDirty())
       return () => {}
     })
 
