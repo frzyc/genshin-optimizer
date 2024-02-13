@@ -12,7 +12,6 @@ import { useBuildTc, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { SlotIcon } from '@genshin-optimizer/gi/svgicons'
 import { ArtifactSetName } from '@genshin-optimizer/gi/ui'
 import { artDisplayValue } from '@genshin-optimizer/gi/util'
-import CheckroomIcon from '@mui/icons-material/Checkroom'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import EditIcon from '@mui/icons-material/Edit'
 import InfoIcon from '@mui/icons-material/Info'
@@ -70,7 +69,7 @@ export default function BuildTc({
           boxShadow: active ? '0px 0px 0px 2px green inset' : undefined,
         }}
       >
-        <Box sx={{ p: 1, display: 'flex', flexDirection: 'column', gap: 1 }}>
+        <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
           <Box sx={{ display: 'flex', gap: 1 }}>
             <CardThemed sx={{ flexGrow: 1 }}>
               <BootstrapTooltip title={<Typography>{description}</Typography>}>
@@ -94,7 +93,7 @@ export default function BuildTc({
           </Box>
 
           <TcEquip buildTcId={buildTcId} />
-        </Box>
+        </CardContent>
       </CardThemed>
     </>
   )

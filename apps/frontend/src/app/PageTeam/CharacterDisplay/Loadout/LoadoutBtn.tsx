@@ -3,12 +3,20 @@ import { CardThemed, ModalWrapper } from '@genshin-optimizer/common/ui'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { getCharData } from '@genshin-optimizer/gi/stats'
 import CheckroomIcon from '@mui/icons-material/Checkroom'
-import { Button, CardContent, CardHeader, Divider } from '@mui/material'
+import {
+  Box,
+  Button,
+  CardContent,
+  CardHeader,
+  Divider,
+  Typography,
+} from '@mui/material'
 import { Suspense, useContext, useMemo } from 'react'
 import { TeamCharacterContext } from '../../../Context/TeamCharacterContext'
 import { Build } from './Build'
 import BuildTc from './BuildTc'
 import { BuildEquipped } from './BuildEquipped'
+import AddIcon from '@mui/icons-material/Add'
 export default function LoadoutBtn() {
   const database = useDatabase()
   const [open, onOpen, onClose] = useBoolState()
@@ -47,20 +55,24 @@ export default function LoadoutBtn() {
       <Suspense fallback={null}>
         <ModalWrapper open={open} onClose={onClose}>
           <CardThemed>
-            <CardHeader title="Loadouts" />
+            <CardHeader title="Loadout Management" />
             <Divider />
             <CardContent
-              sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}
+              sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}
             >
               <BuildEquipped active={buildType === 'equipped'} />
-              <Button
-                fullWidth
-                color="info"
-                size="small"
-                onClick={() => database.teamChars.newBuild(teamCharId)}
-              >
-                New Loadout
-              </Button>
+              <Box sx={{ display: 'flex', gap: 2 }}>
+                <Typography variant="h6">Loadouts</Typography>
+                <Button
+                  startIcon={<AddIcon />}
+                  color="info"
+                  size="small"
+                  onClick={() => database.teamChars.newBuild(teamCharId)}
+                >
+                  New Loadout
+                </Button>
+              </Box>
+
               {buildIds.map((id) => (
                 <Build
                   key={id}
@@ -68,19 +80,22 @@ export default function LoadoutBtn() {
                   active={buildType === 'real' && buildId === id}
                 />
               ))}
-              <Button
-                fullWidth
-                color="info"
-                size="small"
-                onClick={() =>
-                  database.teamChars.newBuildTcFromBuild(
-                    teamCharId,
-                    weaponTypeKey
-                  )
-                }
-              >
-                New TC Loadout
-              </Button>
+              <Box sx={{ display: 'flex', gap: 2 }}>
+                <Typography variant="h6">TC Loadouts</Typography>
+                <Button
+                  startIcon={<AddIcon />}
+                  color="info"
+                  size="small"
+                  onClick={() =>
+                    database.teamChars.newBuildTcFromBuild(
+                      teamCharId,
+                      weaponTypeKey
+                    )
+                  }
+                >
+                  New TC Loadout
+                </Button>
+              </Box>
               {buildTcIds.map((id) => (
                 <BuildTc
                   key={id}

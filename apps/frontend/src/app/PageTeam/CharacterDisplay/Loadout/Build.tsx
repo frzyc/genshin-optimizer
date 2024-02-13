@@ -52,7 +52,7 @@ export function Build({
     if (!weaponId) return
     if (
       !window.confirm(
-        `Do you want to equip all gear in this loadout to this character?`
+        `Do you want to equip all gear in this loadout to this character? The currently equipped build will be overwritten.`
       )
     )
       return
@@ -104,7 +104,7 @@ export function Build({
           boxShadow: active ? '0px 0px 0px 2px green inset' : undefined,
         }}
       >
-        <Box sx={{ p: 1, display: 'flex', flexDirection: 'column', gap: 1 }}>
+        <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
           <Box sx={{ display: 'flex', gap: 1 }}>
             <CardThemed sx={{ flexGrow: 1 }}>
               <BootstrapTooltip title={<Typography>{description}</Typography>}>
@@ -142,7 +142,7 @@ export function Build({
           </Box>
 
           <BuildEquip weaponId={weaponId} artifactIds={artifactIds} />
-        </Box>
+        </CardContent>
       </CardThemed>
     </>
   )

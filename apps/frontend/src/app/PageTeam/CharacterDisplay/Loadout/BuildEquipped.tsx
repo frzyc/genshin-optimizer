@@ -2,7 +2,13 @@ import { CardThemed } from '@genshin-optimizer/common/ui'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import ContentCopyIcon from '@mui/icons-material/ContentCopy'
 import EditIcon from '@mui/icons-material/Edit'
-import { Box, Button, CardActionArea, Typography } from '@mui/material'
+import {
+  Box,
+  Button,
+  CardActionArea,
+  CardContent,
+  Typography,
+} from '@mui/material'
 import { useContext } from 'react'
 import { CharacterContext } from '../../../Context/CharacterContext'
 import { TeamCharacterContext } from '../../../Context/TeamCharacterContext'
@@ -30,7 +36,7 @@ export function BuildEquipped({ active = false }: { active: boolean }) {
         boxShadow: active ? '0px 0px 0px 2px green inset' : undefined,
       }}
     >
-      <Box sx={{ p: 1, display: 'flex', flexDirection: 'column', gap: 1 }}>
+      <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
         <Box sx={{ display: 'flex', gap: 1 }}>
           <CardThemed sx={{ flexGrow: 1 }}>
             <CardActionArea disabled={active} onClick={onActive} sx={{ p: 1 }}>
@@ -46,7 +52,7 @@ export function BuildEquipped({ active = false }: { active: boolean }) {
         </Box>
 
         <BuildEquip weaponId={equippedWeapon} artifactIds={equippedArtifacts} />
-      </Box>
+      </CardContent>
     </CardThemed>
   )
 }

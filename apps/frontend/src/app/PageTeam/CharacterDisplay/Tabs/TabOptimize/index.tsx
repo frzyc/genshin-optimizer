@@ -1046,8 +1046,8 @@ function CopyTcButton({ build }: { build: string[] }) {
       >
         {t('theorycraftButton')}
       </Button>
-      {/* Wanted to use a Dialog here, but was having some weird issues with closing out of it */}
-      {/* TODO: translation */}
+      {/* TODO: Dialog Wanted to use a Dialog here, but was having some weird issues with closing out of it */}
+      {/* TODO: Translation */}
       <ModalWrapper open={showTcPrompt} onClose={OnHideTcPrompt}>
         <CardThemed>
           <CardHeader
@@ -1112,8 +1112,8 @@ function CopyLoadoutButton({ build }: { build: string[] }) {
       >
         Loadout
       </Button>
-      {/* Wanted to use a Dialog here, but was having some weird issues with closing out of it */}
-      {/* TODO: translation */}
+      {/* TODO: Dialog Wanted to use a Dialog here, but was having some weird issues with closing out of it */}
+      {/* TODO: Translation */}
       <ModalWrapper open={showTcPrompt} onClose={OnHideTcPrompt}>
         <CardThemed>
           <CardHeader
