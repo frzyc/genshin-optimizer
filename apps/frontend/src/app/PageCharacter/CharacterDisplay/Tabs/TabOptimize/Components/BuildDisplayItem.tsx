@@ -31,7 +31,6 @@ import BootstrapTooltip from '../../../../../Components/BootstrapTooltip'
 import CardDark from '../../../../../Components/Card/CardDark'
 import CardLight from '../../../../../Components/Card/CardLight'
 import StatDisplayComponent from '../../../../../Components/Character/StatDisplayComponent'
-import ColorText from '../../../../../Components/ColoredText'
 import ModalWrapper from '../../../../../Components/ModalWrapper'
 import SqBadge from '../../../../../Components/SqBadge'
 import WeaponCardNano from '../../../../../Components/Weapon/WeaponCardNano'
@@ -295,7 +294,7 @@ function CompareArtifactModal({
               canEquip
               editorProps={{ disableSet: true, disableSlot: true }}
             />
-            <ExcludeButton id={newId} />
+            {newLoc && <ExcludeButton id={newId} />}
             {newLoc &&
               newLoc !== charKeyToLocCharKey(characterKey) &&
               allowLocationsState !== 'all' && (
@@ -335,11 +334,6 @@ function ExcludeButton({ id }: { id: string }) {
       title={
         <Box>
           <Typography>{t`excludeArt.excludeArtifactTip`}</Typography>
-          <Typography>
-            <ColorText color={excluded ? 'error' : 'success'}>
-              {t(excluded ? 'excludeArt.excluded' : 'excludeArt.included')}
-            </ColorText>
-          </Typography>
         </Box>
       }
       placement="top"
@@ -351,6 +345,9 @@ function ExcludeButton({ id }: { id: string }) {
         size="small"
       >
         {excluded ? <BlockIcon /> : <ShowChartIcon />}
+        <span>
+          {t(excluded ? 'excludeArt.excluded' : 'excludeArt.included')}
+        </span>
       </Button>
     </BootstrapTooltip>
   )
