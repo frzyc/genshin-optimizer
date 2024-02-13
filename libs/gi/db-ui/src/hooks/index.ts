@@ -1,5 +1,6 @@
 export * from './useArtifact'
 export * from './useBuild'
+export * from './useBuildTc'
 export * from './useCharMeta'
 export * from './useCharacter'
 export * from './useDBMeta'

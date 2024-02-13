@@ -1,16 +1,16 @@
 import { useIsMount } from '@genshin-optimizer/common/ui'
 import { clamp, objMap } from '@genshin-optimizer/common/util'
 import { artSubstatRollData } from '@genshin-optimizer/gi/consts'
-import type { ICharTC } from '@genshin-optimizer/gi/db'
+import type { BuildTc } from '@genshin-optimizer/gi/db'
 import { getSubstatValue } from '@genshin-optimizer/gi/util'
 import { Box, Slider } from '@mui/material'
 import { useContext, useDeferredValue, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import CardDark from '../../../../../Components/Card/CardDark'
 import CustomNumberInput from '../../../../../Components/CustomNumberInput'
-import { CharTCContext } from '../CharTCContext'
+import { BuildTcContext } from '../BuildTcContext'
 
-function getMinRoll(charTC: ICharTC) {
+function getMinRoll(charTC: BuildTc) {
   const {
     artifact: {
       substats: { stats, rarity, type },
@@ -24,8 +24,10 @@ function getMinRoll(charTC: ICharTC) {
     )
   )
 }
-function getMinMax(charTC: ICharTC) {
-  return Math.floor(Math.min(...Object.values(charTC.optimization.maxSubstats)))
+function getMinMax(buildTc: BuildTc) {
+  return Math.floor(
+    Math.min(...Object.values(buildTc.optimization.maxSubstats))
+  )
 }
 export function ArtifactAllSubstatEditor({
   disabled = false,
@@ -33,30 +35,30 @@ export function ArtifactAllSubstatEditor({
   disabled?: boolean
 }) {
   const { t } = useTranslation('page_character')
-  const { charTC, setCharTC } = useContext(CharTCContext)
+  const { buildTc, setBuildTc } = useContext(BuildTcContext)
   // Encapsulate the values in an array so that changes to the same number still trigger useEffects
-  const [rollsData, setRolls] = useState(() => [getMinRoll(charTC)])
-  const [maxSubstatData, setMaxSubstat] = useState(() => [getMinMax(charTC)])
+  const [rollsData, setRolls] = useState(() => [getMinRoll(buildTc)])
+  const [maxSubstatData, setMaxSubstat] = useState(() => [getMinMax(buildTc)])
   const [rolls] = rollsData
   const [maxSubstat] = maxSubstatData
   const rollsDeferred = useDeferredValue(rollsData)
   const isMount = useIsMount()
   useEffect(() => {
     if (isMount) return
-    setCharTC((charTC) => {
+    setBuildTc((buildTc) => {
       const {
         artifact: {
           substats: { stats, type, rarity },
         },
-      } = charTC
-      charTC.artifact.substats.stats = objMap(stats, (val, statKey) => {
+      } = buildTc
+      buildTc.artifact.substats.stats = objMap(stats, (val, statKey) => {
         const old = val
         const substatValue = getSubstatValue(statKey, rarity, type)
         const newVal = substatValue * rollsDeferred[0]
 
         const statDiff = Math.round(old / substatValue - rollsDeferred[0])
-        charTC.optimization.distributedSubstats = clamp(
-          charTC.optimization.distributedSubstats + statDiff,
+        buildTc.optimization.distributedSubstats = clamp(
+          buildTc.optimization.distributedSubstats + statDiff,
           0,
           45
         )
@@ -65,12 +67,12 @@ export function ArtifactAllSubstatEditor({
     })
     // disable triggering for isMount
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [setCharTC, rollsDeferred])
+  }, [setBuildTc, rollsDeferred])
 
   const maxSubstatDeferred = useDeferredValue(maxSubstatData)
   useEffect(() => {
     if (isMount) return
-    setCharTC((charTC) => {
+    setBuildTc((charTC) => {
       charTC.optimization.maxSubstats = objMap(
         charTC.optimization.maxSubstats,
         (_val, _statKey) => maxSubstatDeferred[0]
@@ -78,10 +80,10 @@ export function ArtifactAllSubstatEditor({
     })
     // disable triggering for isMount
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [setCharTC, maxSubstatDeferred])
+  }, [setBuildTc, maxSubstatDeferred])
 
   const maxRollsPerSub =
-    (artSubstatRollData[charTC.artifact.substats.rarity].numUpgrades + 1) * 5
+    (artSubstatRollData[buildTc.artifact.substats.rarity].numUpgrades + 1) * 5
   // 0.0001 to nudge float comparasion
   const invalid = (rolls ?? 0 - 0.0001) > maxRollsPerSub
 

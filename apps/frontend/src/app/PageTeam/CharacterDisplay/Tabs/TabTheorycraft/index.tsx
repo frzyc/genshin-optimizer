@@ -1,32 +1,21 @@
-import { useBoolState } from '@genshin-optimizer/common/react-util'
 import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
 import { objMap, toPercent } from '@genshin-optimizer/common/util'
 import {
   artSubstatRollData,
   type SubstatKey,
 } from '@genshin-optimizer/gi/consts'
-import type {
-  ICachedArtifact,
-  ICachedWeapon,
-  ICharTC,
-} from '@genshin-optimizer/gi/db'
-import { defaultInitialWeaponKey, initCharTC } from '@genshin-optimizer/gi/db'
-import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
+import type { BuildTc, ICachedWeapon } from '@genshin-optimizer/gi/db'
+import { useBuildTc, useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
+import { getCharData } from '@genshin-optimizer/gi/stats'
 import { StatIcon } from '@genshin-optimizer/gi/svgicons'
 import { BuildAlert, initialBuildStatus } from '@genshin-optimizer/gi/ui'
 import { getSubstatValue } from '@genshin-optimizer/gi/util'
-import { CopyAll, Refresh } from '@mui/icons-material'
 import CalculateIcon from '@mui/icons-material/Calculate'
 import CloseIcon from '@mui/icons-material/Close'
 import {
   Alert,
   Box,
   Button,
-  Dialog,
-  DialogActions,
-  DialogContent,
-  DialogContentText,
-  DialogTitle,
   Grid,
   Skeleton,
   Stack,
@@ -36,13 +25,11 @@ import {
   useCallback,
   useContext,
   useDeferredValue,
-  useEffect,
   useMemo,
   useRef,
   useState,
 } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
-import { useLocation } from 'react-router-dom'
 import { ArtifactStatWithUnit } from '../../../../Components/Artifact/ArtifactStatKeyDisplay'
 import CardLight from '../../../../Components/Card/CardLight'
 import StatDisplayComponent from '../../../../Components/Character/StatDisplayComponent'
@@ -59,8 +46,8 @@ import OptimizationTargetSelector from '../TabOptimize/Components/OptimizationTa
 import { ArtifactMainStatAndSetEditor } from './ArtifactMainStatAndSetEditor'
 import { ArtifactSubCard } from './ArtifactSubCard'
 import { BuildConstaintCard } from './BuildConstaintCard'
-import type { SetCharTCAction } from './CharTCContext'
-import { CharTCContext } from './CharTCContext'
+import type { SetBuildTcAction } from './BuildTcContext'
+import { BuildTcContext } from './BuildTcContext'
 import GcsimButton from './GcsimButton'
 import KQMSButton from './KQMSButton'
 import { WeaponEditorCard } from './WeaponEditorCard'
@@ -72,7 +59,6 @@ import {
   getWeaponData,
   optimizeTcGetNodes,
 } from './optimizeTc'
-import useCharTC from './useCharTC'
 export default function TabTheorycraft() {
   const { t } = useTranslation('page_character')
   const database = useDatabase()
@@ -80,110 +66,31 @@ export default function TabTheorycraft() {
   const { gender } = useDBMeta()
   const {
     teamId,
+    teamChar: { key: characterKey, buildTcId },
     team: { compareData },
-    character,
-    character: { key: characterKey },
-    characterSheet,
   } = useContext(TeamCharacterContext)
-  const charTC = useCharTC(
-    characterKey,
-    defaultInitialWeaponKey(characterSheet.weaponTypeKey)
-  )
-  const setCharTC = useCallback(
-    (data: SetCharTCAction) => {
-      database.charTCs.set(characterKey, data)
+  const buildTc = useBuildTc(buildTcId)
+  const setBuildTc = useCallback(
+    (data: SetBuildTcAction) => {
+      database.buildTcs.set(buildTcId, data)
     },
-    [characterKey, database]
+    [buildTcId, database]
   )
-  const valueCharTCContext = useMemo(
-    () => ({ charTC, setCharTC }),
-    [charTC, setCharTC]
+  const buildTCContextObj = useMemo(
+    () => ({ buildTc, setBuildTc }),
+    [buildTc, setBuildTc]
   )
-  const resetData = useCallback(() => {
-    setCharTC(initCharTC(defaultInitialWeaponKey(characterSheet.weaponTypeKey)))
-  }, [setCharTC, characterSheet])
+  const weaponTypeKey = getCharData(characterKey).weaponType
 
-  const copyFrom = useCallback(
-    (eWeapon: ICachedWeapon, build: ICachedArtifact[]) =>
-      setCharTC((charTC) => {
-        charTC.weapon.key = eWeapon.key
-        charTC.weapon.level = eWeapon.level
-        charTC.weapon.ascension = eWeapon.ascension
-        charTC.weapon.refinement = eWeapon.refinement
-        const oldType = charTC.artifact.substats.type
-        charTC.artifact = initCharTC('DullBlade').artifact
-        charTC.artifact.substats.type = oldType
-        const sets = {}
-        build.forEach((art) => {
-          if (!art) return
-          const { slotKey, setKey, substats, mainStatKey, level, rarity } = art
-          charTC.artifact.slots[slotKey].level = level
-          charTC.artifact.slots[slotKey].statKey = mainStatKey
-          charTC.artifact.slots[slotKey].rarity = rarity
-          sets[setKey] = (sets[setKey] ?? 0) + 1
-          substats.forEach((substat) => {
-            if (substat.key)
-              charTC.artifact.substats.stats[substat.key] =
-                (charTC.artifact.substats.stats[substat.key] ?? 0) +
-                substat.accurateValue
-          })
-        })
-        charTC.artifact.sets = Object.fromEntries(
-          Object.entries(sets)
-            .map(([key, value]) => [
-              key,
-              value === 3
-                ? 2
-                : value === 5
-                ? 4
-                : value === 1 && !(key as string).startsWith('PrayersFor')
-                ? 0
-                : value,
-            ])
-            .filter(([, value]) => value)
-        )
-      }),
-    [setCharTC]
-  )
-  const location = useLocation()
-  const { build: locBuild } = (location.state as
-    | { build: string[] }
-    | undefined) ?? { build: undefined }
-  useEffect(() => {
-    if (!locBuild) return
-    const eWeapon = database.weapons.get(character.equippedWeapon)!
-    copyFrom(
-      eWeapon,
-      locBuild.map((i) => database.arts.get(i)!)
-    )
-    // WARNING: if copyFrom is included, it will cause a render loop due to its setData <---> data
-    // eslint-disable-next-line
-  }, [locBuild, database])
-
-  const copyFromEquipped = useCallback(() => {
-    const eWeapon = database.weapons.get(character.equippedWeapon)!
-    copyFrom(
-      eWeapon,
-      Object.values(character.equippedArtifacts)
-        .map((a) => database.arts.get(a)!)
-        .filter((a) => a)
-    )
-  }, [
-    database,
-    character.equippedArtifacts,
-    character.equippedWeapon,
-    copyFrom,
-  ])
-
-  const deferredCharTC = useDeferredValue(charTC)
+  const deferredBuildTc = useDeferredValue(buildTc)
   const overriderArtData = useMemo(
-    () => getArtifactData(deferredCharTC),
-    [deferredCharTC]
+    () => getArtifactData(deferredBuildTc),
+    [deferredBuildTc]
   )
 
   const overrideWeapon: ICachedWeapon = useMemo(
-    () => getWeaponData(deferredCharTC),
-    [deferredCharTC]
+    () => getWeaponData(deferredBuildTc),
+    [deferredBuildTc]
   )
   const teamData = useTeamData(teamId, 0, overriderArtData, overrideWeapon)
 
@@ -204,24 +111,24 @@ export default function TabTheorycraft() {
     }
   }, [dataContextValue, compareData, oldData])
 
-  const optimizationTarget = charTC.optimization.target
+  const optimizationTarget = buildTc.optimization.target
   const setOptimizationTarget = useCallback(
-    (optimizationTarget: ICharTC['optimization']['target']) => {
-      const data_ = structuredClone(charTC)
+    (optimizationTarget: BuildTc['optimization']['target']) => {
+      const data_ = structuredClone(buildTc)
       data_.optimization.target = optimizationTarget
-      setCharTC(data_)
+      setBuildTc(data_)
     },
-    [charTC, setCharTC]
+    [buildTc, setBuildTc]
   )
 
-  const distributedSubstats = charTC.optimization.distributedSubstats
+  const distributedSubstats = buildTc.optimization.distributedSubstats
   const setDistributedSubstats = useCallback(
-    (distributedSubstats: ICharTC['optimization']['distributedSubstats']) => {
-      setCharTC((data_) => {
+    (distributedSubstats: BuildTc['optimization']['distributedSubstats']) => {
+      setBuildTc((data_) => {
         data_.optimization.distributedSubstats = distributedSubstats
       })
     },
-    [setCharTC]
+    [setBuildTc]
   )
   const workerRef = useRef<Worker>(null)
   if (workerRef.current === null)
@@ -239,27 +146,27 @@ export default function TabTheorycraft() {
   }, [workerRef])
 
   const { minSubLines, minOtherRolls } = useMemo(
-    () => getMinSubAndOtherRolls(charTC),
-    [charTC]
+    () => getMinSubAndOtherRolls(buildTc),
+    [buildTc]
   )
   const maxTotalRolls = useMemo(
     () =>
-      Object.values(charTC.artifact.slots).reduce(
+      Object.values(buildTc.artifact.slots).reduce(
         (accu, { level, rarity }) =>
           accu + artSubstatRollData[rarity].high + Math.floor(level / 4),
         0
       ),
-    [charTC]
+    [buildTc]
   )
 
   const { scalesWith } = useMemo(() => {
-    const { nodes } = optimizeTcGetNodes(teamData, characterKey, charTC)
+    const { nodes } = optimizeTcGetNodes(teamData, characterKey, buildTc)
     const scalesWith = nodes ? getScalesWith(nodes) : new Set<SubstatKey>()
     return {
       nodes,
       scalesWith,
     }
-  }, [teamData, characterKey, charTC])
+  }, [teamData, characterKey, buildTc])
 
   const optimizeSubstats = (apply: boolean) => {
     /**
@@ -271,11 +178,11 @@ export default function TabTheorycraft() {
       characterKey,
       0,
       gender,
-      getArtifactData(charTC),
-      getWeaponData(charTC)
+      getArtifactData(buildTc),
+      getWeaponData(buildTc)
     )
-    const { nodes } = optimizeTcGetNodes(tempTeamData, characterKey, charTC)
-    workerRef.current.postMessage({ charTC, nodes })
+    const { nodes } = optimizeTcGetNodes(tempTeamData, characterKey, buildTc)
+    workerRef.current.postMessage({ buildTc, nodes })
     setStatus((s) => ({
       ...s,
       type: 'active',
@@ -318,14 +225,14 @@ export default function TabTheorycraft() {
             break
           }
 
-          setCharTC((charTC) => {
-            charTC.artifact.substats.stats = objMap(
-              charTC.artifact.substats.stats,
+          setBuildTc((buildTc) => {
+            buildTc.artifact.substats.stats = objMap(
+              buildTc.artifact.substats.stats,
               (v, k) => v + toPercent(maxBuffer![k] ?? 0, k)
             )
-            charTC.optimization.distributedSubstats =
+            buildTc.optimization.distributedSubstats =
               distributedSubstats - distributed
-            return charTC
+            return buildTc
           })
 
           break
@@ -335,23 +242,23 @@ export default function TabTheorycraft() {
   }
 
   const kqms = useCallback(() => {
-    setCharTC((charTC) => {
-      charTC.artifact.substats.type = 'mid'
+    setBuildTc((buildTc) => {
+      buildTc.artifact.substats.type = 'mid'
 
       const {
         artifact: {
           slots,
           substats: { stats, type, rarity },
         },
-      } = charTC
-      charTC.optimization.distributedSubstats =
+      } = buildTc
+      buildTc.optimization.distributedSubstats =
         20 - (rarity === 5 ? 0 : rarity === 4 ? 10 : 15)
-      charTC.artifact.substats.stats = objMap(stats, (val, statKey) => {
+      buildTc.artifact.substats.stats = objMap(stats, (val, statKey) => {
         const substatValue = getSubstatValue(statKey, rarity, type)
         return substatValue * 2
       })
-      charTC.optimization.maxSubstats = objMap(
-        charTC.optimization.maxSubstats,
+      buildTc.optimization.maxSubstats = objMap(
+        buildTc.optimization.maxSubstats,
         (_val, statKey) => {
           const rollsPerSlot = 2
           const diffSlot = 5
@@ -363,19 +270,14 @@ export default function TabTheorycraft() {
         }
       )
     })
-  }, [setCharTC])
+  }, [setBuildTc])
 
   return (
-    <CharTCContext.Provider value={valueCharTCContext}>
+    <BuildTcContext.Provider value={buildTCContextObj}>
       <Stack spacing={1}>
         <CardLight>
           <Box sx={{ display: 'flex', gap: 1, p: 1 }}>
             <Box sx={{ flexGrow: 1, display: 'flex', gap: 1 }}>
-              <CopyFromEquippedButton
-                action={copyFromEquipped}
-                disabled={solving}
-              />
-              <ResetButton action={resetData} disabled={solving} />
               <KQMSButton action={kqms} disabled={solving} />
               <GcsimButton disabled={solving} />
             </Box>
@@ -402,7 +304,7 @@ export default function TabTheorycraft() {
               <Grid container spacing={1} sx={{ justifyContent: 'center' }}>
                 <Grid item sx={{ flexGrow: -1, maxWidth: '350px' }}>
                   <WeaponEditorCard
-                    weaponTypeKey={characterSheet.weaponTypeKey}
+                    weaponTypeKey={weaponTypeKey}
                     disabled={solving}
                   />
                   <BuildConstaintCard disabled={solving} />
@@ -545,97 +447,6 @@ export default function TabTheorycraft() {
           </OptimizationTargetContext.Provider>
         </CardLight>
       </Stack>
-    </CharTCContext.Provider>
-  )
-}
-function CopyFromEquippedButton({
-  action,
-  disabled,
-}: {
-  action: () => void
-  disabled?: boolean
-}) {
-  const { t } = useTranslation(['page_character', 'ui'])
-  const [open, onOpen, onClose] = useBoolState()
-  return (
-    <>
-      <Button
-        color="info"
-        onClick={onOpen}
-        startIcon={<CopyAll />}
-        disabled={disabled}
-      >
-        {t('tabTheorycraft.copyDialog.copyBtn')}
-      </Button>
-      <Dialog open={open} onClose={onClose}>
-        <DialogTitle>{t('tabTheorycraft.copyDialog.title')}</DialogTitle>
-        <DialogContent>
-          <DialogContentText>
-            {t('tabTheorycraft.copyDialog.content')}
-          </DialogContentText>
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={onClose} color="error">
-            {t('ui:close')}
-          </Button>
-          <Button
-            color="success"
-            onClick={() => {
-              onClose()
-              action()
-            }}
-            autoFocus
-          >
-            {t('tabTheorycraft.copyDialog.copyBtn')}
-          </Button>
-        </DialogActions>
-      </Dialog>
-    </>
-  )
-}
-
-function ResetButton({
-  action,
-  disabled,
-}: {
-  action: () => void
-  disabled: boolean
-}) {
-  const { t } = useTranslation(['page_character', 'ui'])
-  const [open, onOpen, onClose] = useBoolState()
-  return (
-    <>
-      <Button
-        color="error"
-        onClick={onOpen}
-        startIcon={<Refresh />}
-        disabled={disabled}
-      >
-        {t('ui:reset')}
-      </Button>
-      <Dialog open={open} onClose={onClose}>
-        <DialogTitle>{t('tabTheorycraft.resetDialog.title')}</DialogTitle>
-        <DialogContent>
-          <DialogContentText>
-            {t('tabTheorycraft.resetDialog.content')}
-          </DialogContentText>
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={onClose} color="error">
-            {t('ui:close')}
-          </Button>
-          <Button
-            color="success"
-            onClick={() => {
-              onClose()
-              action()
-            }}
-            autoFocus
-          >
-            {t('ui:reset')}
-          </Button>
-        </DialogActions>
-      </Dialog>
-    </>
+    </BuildTcContext.Provider>
   )
 }

@@ -3,15 +3,22 @@ import {
   BootstrapTooltip,
   CardThemed,
   ModalWrapper,
+  SqBadge,
 } from '@genshin-optimizer/common/ui'
-import type { ArtifactSlotKey } from '@genshin-optimizer/gi/consts'
-import { useBuild, useDatabase } from '@genshin-optimizer/gi/db-ui'
+import { unit } from '@genshin-optimizer/common/util'
+import { artifactAsset } from '@genshin-optimizer/gi/assets'
+import { type ArtifactSlotKey } from '@genshin-optimizer/gi/consts'
+import type { ICachedWeapon } from '@genshin-optimizer/gi/db'
+import { useBuild, useBuildTc, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { getCharData } from '@genshin-optimizer/gi/stats'
+import { SlotIcon } from '@genshin-optimizer/gi/svgicons'
+import { ArtifactSetName } from '@genshin-optimizer/gi/ui'
 import CheckroomIcon from '@mui/icons-material/Checkroom'
 import ContentCopyIcon from '@mui/icons-material/ContentCopy'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import EditIcon from '@mui/icons-material/Edit'
 import InfoIcon from '@mui/icons-material/Info'
+import ScienceIcon from '@mui/icons-material/Science'
 import {
   Box,
   Button,
@@ -26,15 +33,30 @@ import { useContext, useDeferredValue, useEffect, useState } from 'react'
 import ArtifactCardNano from '../../Components/Artifact/ArtifactCardNano'
 import EquippedGrid from '../../Components/Character/EquippedGrid'
 import CloseButton from '../../Components/CloseButton'
-import WeaponCardNano from '../../Components/Weapon/WeaponCardNano'
+import ImgIcon from '../../Components/Image/ImgIcon'
+import { StatWithUnit } from '../../Components/StatDisplay'
+import WeaponCardNano, {
+  WeaponCardNanoObj,
+} from '../../Components/Weapon/WeaponCardNano'
+import { DataContext } from '../../Context/DataContext'
 import { TeamCharacterContext } from '../../Context/TeamCharacterContext'
+import { getWeaponSheet } from '../../Data/Weapons'
+import { artDisplayValue } from '@genshin-optimizer/gi/util'
 export default function LoadoutBtn() {
   const database = useDatabase()
   const [open, onOpen, onClose] = useBoolState()
   const {
     teamCharId,
-    teamChar: { buildType, buildId, buildIds, buildTcId, buildTcIds },
+    teamChar: {
+      key: characterKey,
+      buildType,
+      buildId,
+      buildIds,
+      buildTcId,
+      buildTcIds,
+    },
   } = useContext(TeamCharacterContext)
+  const weaponTypeKey = getCharData(characterKey).weaponType
   return (
     <>
       <Button
@@ -66,6 +88,26 @@ export default function LoadoutBtn() {
                 key={id}
                 buildId={id}
                 active={buildType === 'real' && buildId === id}
+              />
+            ))}
+            <Button
+              fullWidth
+              color="info"
+              size="small"
+              onClick={() =>
+                database.teamChars.newBuildTcFromBuild(
+                  teamCharId,
+                  weaponTypeKey
+                )
+              }
+            >
+              New TC Loadout
+            </Button>
+            {buildTcIds.map((id) => (
+              <BuildTc
+                key={id}
+                buildTcId={id}
+                active={buildType === 'tc' && buildTcId === id}
               />
             ))}
           </CardContent>
@@ -133,7 +175,10 @@ function Build({
   active: boolean
 }) {
   const [open, onOpen, onClose] = useBoolState()
-  const { teamCharId } = useContext(TeamCharacterContext)
+  const {
+    teamCharId,
+    teamChar: { key: characterKey },
+  } = useContext(TeamCharacterContext)
   const database = useDatabase()
   const { name, description, weaponId, artifactIds } = useBuild(buildId)
   const onEquip = () =>
@@ -143,6 +188,20 @@ function Build({
     database.builds.remove(buildId)
     // trigger validation
     database.teamChars.set(teamCharId, {})
+  }
+  const weaponTypeKey = getCharData(characterKey).weaponType
+  const copyToTc = () => {
+    const newBuildTcId = database.teamChars.newBuildTcFromBuild(
+      teamCharId,
+      weaponTypeKey,
+      database.weapons.get(weaponId),
+      Object.values(artifactIds).map((id) => database.arts.get(id))
+    )
+    // copy over name/desc
+    database.buildTcs.set(newBuildTcId, {
+      name: `${name} - Copied`,
+      description,
+    })
   }
 
   return (
@@ -172,6 +231,9 @@ function Build({
             </CardThemed>
             <Button color="info" size="small" onClick={onOpen}>
               <EditIcon />
+            </Button>
+            <Button color="info" size="small" onClick={copyToTc}>
+              <ScienceIcon />
             </Button>
             <Button
               color="success"
@@ -298,5 +360,186 @@ function BuildEditor({
         </Box>
       </CardContent>
     </CardThemed>
+  )
+}
+
+function BuildTc({
+  buildTcId,
+  active = false,
+}: {
+  buildTcId: string
+  active: boolean
+}) {
+  const [open, onOpen, onClose] = useBoolState()
+  const {
+    teamCharId,
+    teamChar: { key: characterKey },
+  } = useContext(TeamCharacterContext)
+  const database = useDatabase()
+  const { name, description } = useBuildTc(buildTcId)
+  const onEquip = () =>
+    database.teamChars.set(teamCharId, {
+      buildType: 'tc',
+      buildTcId,
+    })
+  const onRemove = () => {
+    //TODO: prompt user for removal
+    database.buildTcs.remove(buildTcId)
+    // trigger validation
+    database.teamChars.set(teamCharId, {})
+  }
+  const weaponTypeKey = getCharData(characterKey).weaponType
+
+  return (
+    <>
+      <ModalWrapper open={open} onClose={onClose}>
+        <BuildEditor buildId={buildTcId} onClose={onClose} />
+      </ModalWrapper>
+      <CardThemed
+        bgt="light"
+        sx={{
+          undefined,
+          boxShadow: active ? '0px 0px 0px 2px green inset' : undefined,
+        }}
+      >
+        <Box sx={{ p: 1, display: 'flex', flexDirection: 'column', gap: 1 }}>
+          <Box sx={{ display: 'flex', gap: 1 }}>
+            <CardThemed sx={{ p: 1, flexGrow: 1 }}>
+              <BootstrapTooltip title={<Typography>{description}</Typography>}>
+                <Box
+                  component="span"
+                  sx={{ display: 'flex', gap: 1, alignItems: 'center' }}
+                >
+                  <Typography variant="h6">{name}</Typography>
+                  <InfoIcon />
+                </Box>
+              </BootstrapTooltip>
+            </CardThemed>
+            <Button color="info" size="small" onClick={onOpen}>
+              <EditIcon />
+            </Button>
+            <Button
+              color="success"
+              size="small"
+              disabled={active}
+              onClick={onEquip}
+            >
+              <CheckroomIcon />
+            </Button>
+            <Button color="error" size="small" onClick={onRemove}>
+              <DeleteForeverIcon />
+            </Button>
+          </Box>
+
+          <TcEquip buildTcId={buildTcId} />
+        </Box>
+      </CardThemed>
+    </>
+  )
+}
+function TcEquip({ buildTcId }: { buildTcId: string }) {
+  const {
+    weapon,
+    artifact: {
+      slots,
+      substats: { stats: substats },
+      sets,
+    },
+  } = useBuildTc(buildTcId)
+  const weaponSheet = getWeaponSheet(weapon.key)
+  const substatsArr = Object.entries(substats)
+  const substatsArr1 = substatsArr.slice(0, 5)
+  const substatsArr2 = substatsArr.slice(5)
+  return (
+    <Grid container spacing={1} columns={{ xs: 2, sm: 2, md: 3, lg: 6, xl: 6 }}>
+      <Grid item xs={1}>
+        <WeaponCardNanoObj
+          weapon={weapon as ICachedWeapon}
+          weaponSheet={weaponSheet}
+        />
+      </Grid>
+      <Grid item xs={2} sm={2} md={2} lg={5}>
+        <Box
+          sx={{
+            display: 'flex',
+            gap: 1,
+            alignItems: 'stretch',
+            height: '100%',
+          }}
+        >
+          {!!Object.keys(sets).length && (
+            <CardThemed sx={{ flexGrow: 1 }}>
+              <Box
+                sx={{
+                  p: 1,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: 1,
+                }}
+              >
+                {Object.entries(sets).map(([setKey, number]) => (
+                  <Box
+                    key={setKey}
+                    sx={{ display: 'flex', alignItems: 'center', gap: 1 }}
+                  >
+                    <ImgIcon size={2} src={artifactAsset(setKey, 'flower')} />
+                    <span>
+                      <ArtifactSetName setKey={setKey} />
+                    </span>
+                    <SqBadge>x{number}</SqBadge>
+                  </Box>
+                ))}
+              </Box>
+            </CardThemed>
+          )}
+          <CardThemed sx={{ flexGrow: 1 }}>
+            <Box
+              sx={{ p: 1, display: 'flex', flexDirection: 'column', gap: 1 }}
+            >
+              {Object.entries(slots).map(([sk, { level, statKey }]) => (
+                <Box
+                  key={sk}
+                  sx={{ display: 'flex', alignItems: 'center', gap: 1 }}
+                >
+                  <SlotIcon slotKey={sk} />
+                  <SqBadge>+{level}</SqBadge>
+                  <StatWithUnit statKey={statKey} />
+                </Box>
+              ))}
+            </Box>
+          </CardThemed>
+          {[substatsArr1, substatsArr2].map((arr, i) => (
+            <CardThemed key={i} sx={{ flexGrow: 1 }}>
+              <Box
+                sx={{
+                  p: 1,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: 1,
+                }}
+              >
+                {arr.map(([sk, number]) => (
+                  <Box
+                    key={sk}
+                    sx={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: 1,
+                      justifyContent: 'space-between',
+                    }}
+                  >
+                    <StatWithUnit statKey={sk} />
+                    <span>
+                      {artDisplayValue(number, unit(sk))}
+                      {unit(sk)}
+                    </span>
+                  </Box>
+                ))}
+              </Box>
+            </CardThemed>
+          ))}
+        </Box>
+      </Grid>
+    </Grid>
   )
 }

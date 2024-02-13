@@ -23,16 +23,16 @@ import { useTranslation } from 'react-i18next'
 import { ArtifactStatWithUnit } from '../../../../Components/Artifact/ArtifactStatKeyDisplay'
 import type { MinTotalStatKey } from '@genshin-optimizer/gi/db'
 import { minTotalStatKeys } from '@genshin-optimizer/gi/db'
-import { CharTCContext } from './CharTCContext'
+import { BuildTcContext } from './BuildTcContext'
 
 export function BuildConstaintCard({ disabled }: { disabled: boolean }) {
   const { t } = useTranslation('page_character')
   const {
-    charTC: {
+    buildTc: {
       optimization: { minTotal },
     },
-    setCharTC,
-  } = useContext(CharTCContext)
+    setBuildTc,
+  } = useContext(BuildTcContext)
 
   return (
     <CardThemed bgt="light">
@@ -55,7 +55,7 @@ export function BuildConstaintCard({ disabled }: { disabled: boolean }) {
                 key={k}
                 disabled={Object.keys(minTotal).includes(k)}
                 onClick={() =>
-                  setCharTC((charTC) => {
+                  setBuildTc((charTC) => {
                     charTC.optimization.minTotal[k] = 0
                   })
                 }
@@ -84,7 +84,7 @@ function Selector({
   value?: number
   disabled: boolean
 }) {
-  const { setCharTC } = useContext(CharTCContext)
+  const { setBuildTc } = useContext(BuildTcContext)
   const unitStr = unit(statKey) || ' '
   return (
     <ButtonGroup size="small">
@@ -94,7 +94,7 @@ function Selector({
           value={statKey ? value : undefined}
           onChange={(value) =>
             statKey &&
-            setCharTC((charTC) => {
+            setBuildTc((charTC) => {
               charTC.optimization.minTotal[statKey] = value
             })
           }
@@ -133,7 +133,7 @@ function Selector({
           disabled={disabled}
           size="small"
           onClick={() =>
-            setCharTC((charTC) => {
+            setBuildTc((charTC) => {
               delete charTC.optimization.minTotal[statKey]
             })
           }

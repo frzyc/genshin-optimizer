@@ -17,7 +17,7 @@ import { Box, MenuItem, Stack, Typography } from '@mui/material'
 import { useCallback, useContext } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
 import ArtifactRarityDropdown from '../../../../../Components/Artifact/ArtifactRarityDropdown'
-import { CharTCContext } from '../CharTCContext'
+import { BuildTcContext } from '../BuildTcContext'
 import { ArtifactAllSubstatEditor } from './ArtifactAllSubstatEditor'
 import { ArtifactSubstatEditor } from './ArtifactSubstatEditor'
 
@@ -30,28 +30,28 @@ export function ArtifactSubCard({
 }) {
   const { t } = useTranslation('page_character')
   const {
-    charTC: {
+    buildTc: {
       artifact: {
         substats: { type: substatsType, stats: substats, rarity },
       },
     },
-    setCharTC,
-  } = useContext(CharTCContext)
+    setBuildTc,
+  } = useContext(BuildTcContext)
   const setSubstatsType = useCallback(
     (t: SubstatTypeKey) => {
-      setCharTC((charTC) => {
+      setBuildTc((charTC) => {
         charTC.artifact.substats.type = t
       })
     },
-    [setCharTC]
+    [setBuildTc]
   )
   const setRarity = useCallback(
     (r: ArtifactRarity) => {
-      setCharTC((charTC) => {
+      setBuildTc((charTC) => {
         charTC.artifact.substats.rarity = r
       })
     },
-    [setCharTC]
+    [setBuildTc]
   )
 
   const rv =

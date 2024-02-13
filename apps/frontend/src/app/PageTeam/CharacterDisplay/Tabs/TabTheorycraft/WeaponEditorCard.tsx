@@ -1,7 +1,7 @@
 import { useBoolState } from '@genshin-optimizer/common/react-util'
 import { weaponAsset } from '@genshin-optimizer/gi/assets'
 import type { WeaponTypeKey } from '@genshin-optimizer/gi/consts'
-import type { ICachedWeapon, ICharTC } from '@genshin-optimizer/gi/db'
+import type { ICachedWeapon, BuildTc } from '@genshin-optimizer/gi/db'
 import {
   Box,
   Button,
@@ -24,7 +24,7 @@ import { DataContext } from '../../../../Context/DataContext'
 import { getWeaponSheet } from '../../../../Data/Weapons'
 import { uiInput as input } from '../../../../Formula'
 import { computeUIData, dataObjForWeapon } from '../../../../Formula/api'
-import { CharTCContext } from './CharTCContext'
+import { BuildTcContext } from './BuildTcContext'
 const WeaponSelectionModal = React.lazy(
   () => import('../../../../Components/Weapon/WeaponSelectionModal')
 )
@@ -36,9 +36,9 @@ export function WeaponEditorCard({
   weaponTypeKey: WeaponTypeKey
   disabled: boolean
 }) {
-  const { charTC, setCharTC } = useContext(CharTCContext)
+  const { buildTc, setBuildTc: setCharTC } = useContext(BuildTcContext)
   const setWeapon = useCallback(
-    (weapon: Partial<ICharTC['weapon']>) => {
+    (weapon: Partial<BuildTc['weapon']>) => {
       setCharTC((charTC) => {
         charTC.weapon = { ...charTC.weapon, ...weapon }
       })
@@ -47,12 +47,12 @@ export function WeaponEditorCard({
   )
   const weapon: ICachedWeapon = useMemo(
     () => ({
-      ...charTC.weapon,
+      ...buildTc.weapon,
       location: '',
       lock: false,
       id: '',
     }),
-    [charTC]
+    [buildTc]
   )
   const { key, level = 0, refinement = 1, ascension = 0 } = weapon
   const weaponSheet = getWeaponSheet(key)

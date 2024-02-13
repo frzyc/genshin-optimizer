@@ -1,7 +1,7 @@
 import { cachedArtifact, validateArtifact } from './ArtifactDataManager'
 import type { IBuildResult } from './BuildResultDataManager'
-import type { MinTotalStatKey } from './CharacterTCDataManager'
-import { initCharTC, minTotalStatKeys } from './CharacterTCDataManager'
+import type { MinTotalStatKey } from './BuildTcDataManager'
+import { initCharTC, minTotalStatKeys, toBuildTc } from './BuildTcDataManager'
 import {
   MAX_DESC_LENGTH,
   MAX_NAME_LENGTH,
@@ -14,7 +14,7 @@ import type {
   ArtSetExclusion,
   ArtSetExclusionKey,
   StatFilterSetting,
-  StatFilters
+  StatFilters,
 } from './OptConfigDataManager'
 import {
   allAllowLocationsState,
@@ -44,8 +44,9 @@ export {
   initialWeapon,
   maxBuildsToShowList,
   minTotalStatKeys,
+  toBuildTc,
   validateArtifact,
-  validateCustomMultiTarget
+  validateCustomMultiTarget,
 }
 export type {
   AllowLocationsState,
@@ -56,5 +57,5 @@ export type {
   StatFilterSetting,
   StatFilters,
   Team,
-  TeamCharacter
+  TeamCharacter,
 }

@@ -12,7 +12,7 @@ import ImgIcon from '../../../../../Components/Image/ImgIcon'
 import { getArtSheet } from '../../../../../Data/Artifacts'
 import { artifactDefIcon } from '../../../../../Data/Artifacts/ArtifactSheet'
 import type { SetNum } from '../../../../../Types/consts'
-import { CharTCContext } from '../CharTCContext'
+import { BuildTcContext } from '../BuildTcContext'
 
 export function ArtifactSetEditor({
   setKey,
@@ -24,26 +24,26 @@ export function ArtifactSetEditor({
   disabled?: boolean
 }) {
   const {
-    charTC: {
+    buildTc: {
       artifact: { sets },
     },
-    setCharTC,
-  } = useContext(CharTCContext)
+    setBuildTc,
+  } = useContext(BuildTcContext)
   const value = sets[setKey]
   const setValue = useCallback(
     (value: 1 | 2 | 4) => {
-      setCharTC((charTC) => {
-        charTC.artifact.sets[setKey] = value
+      setBuildTc((buildTc) => {
+        buildTc.artifact.sets[setKey] = value
       })
     },
-    [setCharTC, setKey]
+    [setBuildTc, setKey]
   )
   const deleteValue = useCallback(() => {
-    setCharTC((charTC) => {
-      const { [setKey]: _, ...rest } = charTC.artifact.sets
-      charTC.artifact.sets = rest
+    setBuildTc((buildTc) => {
+      const { [setKey]: _, ...rest } = buildTc.artifact.sets
+      buildTc.artifact.sets = rest
     })
-  }, [setCharTC, setKey])
+  }, [setBuildTc, setKey])
   const artifactSheet = getArtSheet(setKey)
 
   /* Assumes that all conditionals are from 4-Set. needs to change if there are 2-Set conditionals */

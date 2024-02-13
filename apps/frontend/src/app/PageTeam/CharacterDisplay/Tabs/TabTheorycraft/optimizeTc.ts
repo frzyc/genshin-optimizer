@@ -5,7 +5,7 @@ import {
   artSubstatRollData,
   type CharacterKey,
 } from '@genshin-optimizer/gi/consts'
-import type { ICachedWeapon, ICharTC } from '@genshin-optimizer/gi/db'
+import type { ICachedWeapon, BuildTc } from '@genshin-optimizer/gi/db'
 import { getMainStatValue, getSubstatValue } from '@genshin-optimizer/gi/util'
 import type { TeamData } from '../../../../Context/DataContext'
 import { mergeData } from '../../../../Formula/api'
@@ -48,12 +48,12 @@ export interface FinalizeResult {
 export function optimizeTcGetNodes(
   teamDataProp: TeamData,
   characterKey: CharacterKey,
-  charTC: ICharTC
+  buildTc: BuildTc
 ) {
   const {
     artifact: { sets: artSets },
     optimization: { target: optimizationTarget, minTotal },
-  } = charTC
+  } = buildTc
   if (!optimizationTarget) return {}
   const workerData = teamDataProp[characterKey]?.target.data![0]
   if (!workerData) return {}
@@ -108,7 +108,7 @@ export function getScalesWith(nodes: OptNode[]) {
   return scalesWith as Set<SubstatKey>
 }
 
-export function getMinSubAndOtherRolls(charTC: ICharTC) {
+export function getMinSubAndOtherRolls(charTC: BuildTc) {
   const {
     artifact: {
       slots,
@@ -132,7 +132,7 @@ export function getMinSubAndOtherRolls(charTC: ICharTC) {
 
 export function optimizeTcUsingNodes(
   nodes: OptNode[],
-  charTC: ICharTC,
+  charTC: BuildTc,
   callback: (r: TCWorkerResult) => void
 ) {
   const startTime = performance.now()
@@ -291,13 +291,13 @@ function getMinOtherRolls(
   return minSublines - maxSubSlots
 }
 
-function getMinSubLines(slots: ICharTC['artifact']['slots']) {
+function getMinSubLines(slots: BuildTc['artifact']['slots']) {
   return Object.values(slots).reduce((minSubLines, { rarity, level }) => {
     const { high, low } = artSubstatRollData[rarity]
     return minSubLines + (level >= 4 ? high : low)
   }, 0)
 }
-function getMainStatsCount(slots: ICharTC['artifact']['slots']) {
+function getMainStatsCount(slots: BuildTc['artifact']['slots']) {
   const mainStatsCount: Partial<Record<SubstatKey, number>> = {}
 
   Object.values(slots).forEach(({ statKey }) => {
@@ -323,14 +323,14 @@ function countPerms(sum: number, bounds: number[]): number {
   return counts[sum]
 }
 
-export function getArtifactData(charTC: ICharTC): Data {
+export function getArtifactData(buildTc: BuildTc): Data {
   const {
     artifact: {
       slots,
       substats: { stats: substats },
       sets,
     },
-  } = charTC
+  } = buildTc
   const allStats = objMap(substats, (v, k) => toDecimal(v, k))
   Object.values(slots).forEach(
     ({ statKey, rarity, level }) =>
@@ -345,10 +345,10 @@ export function getArtifactData(charTC: ICharTC): Data {
   }
 }
 
-export function getWeaponData(charTC: ICharTC): ICachedWeapon {
+export function getWeaponData(buildTc: BuildTc): ICachedWeapon {
   const {
     weapon: { key, level, ascension, refinement },
-  } = charTC
+  } = buildTc
   return {
     id: '',
     location: '',

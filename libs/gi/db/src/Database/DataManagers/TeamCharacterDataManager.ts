@@ -3,6 +3,7 @@ import type {
   ArtifactSetKey,
   ArtifactSlotKey,
   WeaponKey,
+  WeaponTypeKey,
 } from '@genshin-optimizer/gi/consts'
 import {
   allArtifactSlotKeys,
@@ -14,14 +15,17 @@ import {
   type InfusionAuraElementKey,
   type MultiOptHitModeKey,
 } from '@genshin-optimizer/gi/consts'
-import type { ICachedWeapon } from '../../Interfaces'
+import type { ICachedArtifact, ICachedWeapon } from '../../Interfaces'
 import type { InputPremodKey } from '../../legacy/keys'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
 import { DataManager } from '../DataManager'
-import type { ICachedArtifact } from './ArtifactDataManager'
 import type { Build } from './BuildDataManager'
 import { validateCustomMultiTarget } from './CustomMultiTarget'
-import { defaultInitialWeapon } from './WeaponDataManager'
+import {
+  defaultInitialWeapon,
+  defaultInitialWeaponKey,
+} from './WeaponDataManager'
+import { initCharTC, toBuildTc } from './BuildTcDataManager'
 const buildTypeKeys = ['equipped', 'real', 'tc'] as const
 type buildTypeKey = (typeof buildTypeKeys)[number]
 type CondKey = CharacterKey | ArtifactSetKey | WeaponKey
@@ -99,11 +103,29 @@ export class TeamCharacterDataManager extends DataManager<
   }
   newBuild(teamcharId: string, build: Partial<Build> = {}) {
     if (!this.get(teamcharId)) return
-    const id = this.database.builds.new(build)
-    if (!id) return
+    const buildId = this.database.builds.new(build)
+    if (!buildId) return
     this.set(teamcharId, (teamChar) => {
-      teamChar.buildIds.unshift(id)
+      teamChar.buildIds.unshift(buildId)
     })
+  }
+  newBuildTcFromBuild(
+    teamcharId: string,
+    weaponTypeKey: WeaponTypeKey,
+    weapon?: ICachedWeapon,
+    arts: Array<ICachedArtifact | undefined> = []
+  ): string | undefined {
+    if (!this.get(teamcharId)) return undefined
+    const buildTc = initCharTC(
+      weapon?.key ?? defaultInitialWeaponKey(weaponTypeKey)
+    )
+    toBuildTc(buildTc, weapon, arts)
+    const buildTcId = this.database.buildTcs.new(buildTc)
+    if (!buildTcId) return undefined
+    this.set(teamcharId, (teamChar) => {
+      teamChar.buildTcIds.unshift(buildTcId)
+    })
+    return buildTcId
   }
   /**
    *
@@ -113,7 +135,7 @@ export class TeamCharacterDataManager extends DataManager<
   getLoadoutWeapon(teamCharId: string): ICachedWeapon {
     const teamChar = this.get(teamCharId)
     if (!teamChar) return defaultInitialWeapon()
-    const { key: characterKey, buildType, buildId, buildTcId } = teamChar
+    const { key: characterKey, buildType, buildId } = teamChar
     switch (buildType) {
       case 'equipped': {
         const char = this.database.chars.get(characterKey)
@@ -140,7 +162,7 @@ export class TeamCharacterDataManager extends DataManager<
   ): Record<ArtifactSlotKey, ICachedArtifact | undefined> {
     const teamChar = this.get(teamCharId)
     if (!teamChar) return objKeyMap(allArtifactSlotKeys, () => undefined)
-    const { key: characterKey, buildType, buildId, buildTcId } = teamChar
+    const { key: characterKey, buildType, buildId } = teamChar
     switch (buildType) {
       case 'equipped': {
         const char = this.database.chars.get(characterKey)
@@ -202,15 +224,28 @@ function validateTeamCharater(
 
   if (!buildTypeKeys.includes(buildType)) buildType = 'equipped'
 
-  if (typeof buildId !== 'string') buildId = ''
+  if (typeof buildId !== 'string' || !database.builds.keys.includes(buildId))
+    buildId = ''
   if (!Array.isArray(buildIds)) buildIds = []
   buildIds = buildIds.filter((buildId) =>
     database.builds.keys.includes(buildId)
   )
-  if (typeof buildTcId !== 'string') buildTcId = ''
+
+  if (
+    typeof buildTcId !== 'string' ||
+    !database.buildTcs.keys.includes(buildTcId)
+  )
+    buildTcId = ''
   if (!Array.isArray(buildTcIds)) buildTcIds = []
-  // TODO: validate against valid buildTcIds
-  if (!buildId && !buildTcId) buildType = 'equipped'
+  buildTcIds = buildTcIds.filter((buildTcId) =>
+    database.buildTcs.keys.includes(buildTcId)
+  )
+  if (
+    (!buildId && !buildTcId) ||
+    (buildType === 'real' && !buildId) ||
+    (buildType === 'tc' && !buildTcId)
+  )
+    buildType = 'equipped'
 
   if (!optConfigId || !database.optConfigs.keys.includes(optConfigId))
     optConfigId = database.optConfigs.new()

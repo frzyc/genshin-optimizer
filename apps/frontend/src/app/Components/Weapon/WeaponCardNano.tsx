@@ -1,7 +1,9 @@
 import { imgAssets, weaponAsset } from '@genshin-optimizer/gi/assets'
+import type { WeaponTypeKey } from '@genshin-optimizer/gi/consts'
+import type { ICachedWeapon } from '@genshin-optimizer/gi/db'
 import { useDatabase, useWeapon } from '@genshin-optimizer/gi/db-ui'
 import { BusinessCenter } from '@mui/icons-material'
-import { Box, CardActionArea, Chip, Skeleton, Typography } from '@mui/material'
+import { Box, CardActionArea, Chip, Typography } from '@mui/material'
 import { useCallback, useMemo } from 'react'
 import { getWeaponSheet } from '../../Data/Weapons'
 import WeaponSheet from '../../Data/Weapons/WeaponSheet'
@@ -14,7 +16,6 @@ import CardDark from '../Card/CardDark'
 import LocationIcon from '../Character/LocationIcon'
 import ConditionalWrapper from '../ConditionalWrapper'
 import WeaponNameTooltip from './WeaponNameTooltip'
-import type { WeaponTypeKey } from '@genshin-optimizer/gi/consts'
 
 type Data = {
   weaponId?: string
@@ -31,25 +32,10 @@ export default function WeaponCardNano({
   BGComponent = CardDark,
   weaponTypeKey = 'sword',
 }: Data) {
-  const database = useDatabase()
   const weapon = useWeapon(weaponId)
   const weaponSheet = weapon?.key && getWeaponSheet(weapon.key)
-  const actionWrapperFunc = useCallback(
-    (children) => (
-      <CardActionArea sx={{ height: '100%' }} onClick={onClick}>
-        {children}
-      </CardActionArea>
-    ),
-    [onClick]
-  )
-  const UIData = useMemo(
-    () =>
-      weaponSheet &&
-      weapon &&
-      computeUIData([weaponSheet.data, dataObjForWeapon(weapon)]),
-    [weaponSheet, weapon]
-  )
-  if (!weapon || !weaponSheet || !UIData)
+
+  if (!weapon || !weaponSheet)
     return (
       <BGComponent
         sx={{
@@ -66,7 +52,47 @@ export default function WeaponCardNano({
         />
       </BGComponent>
     )
+
+  return (
+    <WeaponCardNanoObj
+      weapon={weapon}
+      weaponSheet={weaponSheet}
+      onClick={onClick}
+      showLocation={showLocation}
+      BGComponent={BGComponent}
+    />
+  )
+}
+export function WeaponCardNanoObj({
+  weapon,
+  weaponSheet,
+  showLocation = false,
+  onClick,
+  BGComponent = CardDark,
+}: {
+  weapon: ICachedWeapon
+  weaponSheet: WeaponSheet
+  BGComponent?: React.ElementType
+  onClick?: () => void
+  showLocation?: boolean
+}) {
+  const database = useDatabase()
   const { refinement, location } = weapon
+  const actionWrapperFunc = useCallback(
+    (children) => (
+      <CardActionArea sx={{ height: '100%' }} onClick={onClick}>
+        {children}
+      </CardActionArea>
+    ),
+    [onClick]
+  )
+  const UIData = useMemo(
+    () =>
+      weaponSheet &&
+      weapon &&
+      computeUIData([weaponSheet.data, dataObjForWeapon(weapon)]),
+    [weaponSheet, weapon]
+  )
   return (
     <BGComponent sx={{ height: '100%' }}>
       <ConditionalWrapper condition={!!onClick} wrapper={actionWrapperFunc}>

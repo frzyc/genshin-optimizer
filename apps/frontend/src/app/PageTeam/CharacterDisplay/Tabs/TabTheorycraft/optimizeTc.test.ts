@@ -1,6 +1,6 @@
 import { SandboxStorage } from '@genshin-optimizer/common/database'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
-import type { ICharTC } from '@genshin-optimizer/gi/db'
+import type { BuildTc } from '@genshin-optimizer/gi/db'
 import { ArtCharDatabase } from '@genshin-optimizer/gi/db'
 import { getTeamDataCalc } from '../../../../ReactHooks/useTeamData'
 import {
@@ -12,7 +12,7 @@ import {
 
 describe('A general optimizeTC usecase', () => {
   it('generate correct distribution', () => {
-    const charTC: ICharTC = {
+    const buildTc: BuildTc = {
       artifact: {
         slots: {
           flower: { level: 20, rarity: 5, statKey: 'hp' },
@@ -116,8 +116,8 @@ describe('A general optimizeTC usecase', () => {
       customMultiTarget: [],
     })
 
-    const overrideArt = getArtifactData(charTC)
-    const overrideWeapon = getWeaponData(charTC)
+    const overrideArt = getArtifactData(buildTc)
+    const overrideWeapon = getWeaponData(buildTc)
     const teamData = getTeamDataCalc(
       database,
       characterKey,
@@ -127,9 +127,9 @@ describe('A general optimizeTC usecase', () => {
       overrideWeapon
     )
 
-    const { nodes } = optimizeTcGetNodes(teamData, characterKey, charTC)
+    const { nodes } = optimizeTcGetNodes(teamData, characterKey, buildTc)
 
-    optimizeTcUsingNodes(nodes, charTC, (data) => {
+    optimizeTcUsingNodes(nodes, buildTc, (data) => {
       if (data.resultType !== 'finalize') return
       console.log('TEST')
       expect(data.maxBufferRolls).toEqual({

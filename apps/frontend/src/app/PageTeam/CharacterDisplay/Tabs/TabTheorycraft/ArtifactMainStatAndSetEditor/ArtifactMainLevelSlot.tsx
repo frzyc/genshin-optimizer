@@ -4,7 +4,7 @@ import type {
   ArtifactSlotKey,
 } from '@genshin-optimizer/gi/consts'
 import { artMaxLevel, artSlotMainKeys } from '@genshin-optimizer/gi/consts'
-import type { ICharTCArtifactSlot } from '@genshin-optimizer/gi/db'
+import type { BuildTcArtifactSlot } from '@genshin-optimizer/gi/db'
 import { KeyMap } from '@genshin-optimizer/gi/keymap'
 import {
   artDisplayValue,
@@ -23,7 +23,7 @@ import {
 } from '../../../../../Components/StatDisplay'
 import Artifact from '../../../../../Data/Artifacts/Artifact'
 import StatIcon from '../../../../../KeyMap/StatIcon'
-import { CharTCContext } from '../CharTCContext'
+import { BuildTcContext } from '../BuildTcContext'
 
 export function ArtifactMainLevelSlot({
   slotKey,
@@ -33,21 +33,21 @@ export function ArtifactMainLevelSlot({
   disabled?: boolean
 }) {
   const {
-    charTC: {
+    buildTc: {
       artifact: { slots },
     },
-    setCharTC,
-  } = useContext(CharTCContext)
+    setBuildTc,
+  } = useContext(BuildTcContext)
   const { level, statKey, rarity } = slots[slotKey]
   const keys = artSlotMainKeys[slotKey]
   const setSlot = useCallback(
-    (action: Partial<ICharTCArtifactSlot>) => {
-      setCharTC((charTC) => {
-        const slot = charTC.artifact.slots[slotKey]
-        charTC.artifact.slots[slotKey] = { ...slot, ...action }
+    (action: Partial<BuildTcArtifactSlot>) => {
+      setBuildTc((buildTc) => {
+        const slot = buildTc.artifact.slots[slotKey]
+        buildTc.artifact.slots[slotKey] = { ...slot, ...action }
       })
     },
-    [setCharTC, slotKey]
+    [setBuildTc, slotKey]
   )
   const setRarity = useCallback(
     (r: ArtifactRarity) => {

@@ -9,12 +9,14 @@ import type {
   SubstatTypeKey,
   WeaponKey,
 } from '@genshin-optimizer/gi/consts'
-export type ICharTCArtifactSlot = {
+export type BuildTcArtifactSlot = {
   level: number
   statKey: MainStatKey
   rarity: ArtifactRarity
 }
-export type ICharTC = {
+export type BuildTc = {
+  name: string
+  description: string
   weapon: {
     key: WeaponKey
     level: number
@@ -22,7 +24,7 @@ export type ICharTC = {
     refinement: RefinementKey
   }
   artifact: {
-    slots: Record<ArtifactSlotKey, ICharTCArtifactSlot>
+    slots: Record<ArtifactSlotKey, BuildTcArtifactSlot>
     substats: {
       type: SubstatTypeKey
       stats: Record<SubstatKey, number>

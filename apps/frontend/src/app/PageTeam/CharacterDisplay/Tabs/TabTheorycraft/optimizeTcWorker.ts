@@ -1,13 +1,13 @@
-import type { ICharTC } from '@genshin-optimizer/gi/db'
+import type { BuildTc } from '@genshin-optimizer/gi/db'
 import type { OptNode } from '../../../../Formula/optimization'
 import { optimizeTcUsingNodes } from './optimizeTc'
 
 type WorkerData = {
   nodes: OptNode[]
-  charTC: ICharTC
+  buildTc: BuildTc
 }
 
 onmessage = async (e: MessageEvent<WorkerData>) => {
-  const { nodes, charTC } = e.data
-  optimizeTcUsingNodes(nodes, charTC, (r) => postMessage(r))
+  const { nodes, buildTc } = e.data
+  optimizeTcUsingNodes(nodes, buildTc, (r) => postMessage(r))
 }

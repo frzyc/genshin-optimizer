@@ -27,6 +27,10 @@ import {
 } from '../Formula/api'
 import type { Data } from '../Formula/type'
 import { objectMap } from '../Util/Util'
+import {
+  getArtifactData,
+  getWeaponData,
+} from '../PageTeam/CharacterDisplay/Tabs/TabTheorycraft/optimizeTc'
 
 type TeamDataBundle = {
   teamData: Dict<CharacterKey, Data[]>
@@ -145,15 +149,31 @@ export function getTeamData(
 
   const teamBundleArr = characterIds.map((id, ind) => {
     const teamChar = database.teamChars.get(id)
-    const { key: characterKey } = teamChar
+    const {
+      key: characterKey,
+      buildType,
+      buildTcId,
+      infusionAura,
+      customMultiTargets,
+      conditional,
+      bonusStats,
+    } = teamChar
     const character = database.chars.get(characterKey)
     const { key, level, constellation, ascension, talent } = character
-    const { infusionAura, customMultiTargets, conditional, bonusStats } =
-      teamChar
+    if (ind !== 0) {
+      overrideWeapon = undefined
+      overrideWeapon = undefined
+      mainStatAssumptionLevel = 0
+    }
+    if (buildType === 'tc' && buildTcId) {
+      const buildTc = database.buildTcs.get(buildTcId)
+      overrideArt = getArtifactData(buildTc)
+      overrideWeapon = getWeaponData(buildTc)
+    }
     return getCharDataBundle(
       database,
       ind === 0, // only true for the "main character"?
-      ind === 0 ? mainStatAssumptionLevel : 0, // only used for the "main character"
+      mainStatAssumptionLevel, // only used for the "main character"
       {
         key,
         level,
@@ -170,10 +190,8 @@ export function getTeamData(
         hitMode,
         reaction,
       },
-      ind === 0 && overrideWeapon
-        ? overrideWeapon
-        : database.teamChars.getLoadoutWeapon(id),
-      (ind === 0 && overrideArt) ??
+      overrideWeapon ? overrideWeapon : database.teamChars.getLoadoutWeapon(id),
+      overrideArt ??
         (Object.values(database.teamChars.getLoadoutArtifacts(id)).filter(
           (a) => a
         ) as ICachedArtifact[])

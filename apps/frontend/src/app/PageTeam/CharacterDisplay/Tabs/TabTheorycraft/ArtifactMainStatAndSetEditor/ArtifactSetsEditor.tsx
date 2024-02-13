@@ -4,8 +4,8 @@ import { useCallback, useContext } from 'react'
 import ArtifactSetAutocomplete from '../../../../../Components/Artifact/ArtifactSetAutocomplete'
 import CardLight from '../../../../../Components/Card/CardLight'
 import { getArtSheet } from '../../../../../Data/Artifacts'
+import { BuildTcContext } from '../BuildTcContext'
 import { ArtifactSetEditor } from './ArtifactSetEditor'
-import { CharTCContext } from '../CharTCContext'
 
 export function ArtifactSetsEditor({
   disabled = false,
@@ -13,21 +13,21 @@ export function ArtifactSetsEditor({
   disabled?: boolean
 }) {
   const {
-    charTC: {
+    buildTc: {
       artifact: { sets: artSet },
     },
-    setCharTC,
-  } = useContext(CharTCContext)
+    setBuildTc,
+  } = useContext(BuildTcContext)
   const setSet = useCallback(
     (setKey: ArtifactSetKey | '') => {
       if (!setKey) return
-      setCharTC((charTC) => {
-        charTC.artifact.sets[setKey] = parseInt(
+      setBuildTc((buildTc) => {
+        buildTc.artifact.sets[setKey] = parseInt(
           Object.keys(getArtSheet(setKey).setEffects)[0]
         ) as 1 | 2 | 4
       })
     },
-    [setCharTC]
+    [setBuildTc]
   )
 
   const remaining = 5 - Object.values(artSet).reduce((a, b) => a + b, 0)

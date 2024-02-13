@@ -13,7 +13,7 @@ import { useCallback, useContext, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import CustomNumberInput from '../../../../../Components/CustomNumberInput'
 import StatIcon from '../../../../../KeyMap/StatIcon'
-import { CharTCContext } from '../CharTCContext'
+import { BuildTcContext } from '../BuildTcContext'
 export function ArtifactSubstatEditor({
   statKey,
   disabled = false,
@@ -23,20 +23,20 @@ export function ArtifactSubstatEditor({
 }) {
   const { t } = useTranslation('page_character')
   const {
-    charTC: {
+    buildTc: {
       artifact: {
         slots,
         substats: { type: substatsType, stats: substats, rarity },
       },
       optimization: { maxSubstats },
     },
-    setCharTC,
-  } = useContext(CharTCContext)
+    setBuildTc,
+  } = useContext(BuildTcContext)
   const mainStatKeys = Object.values(slots).map((s) => s.statKey)
   const value = substats[statKey]
   const setValue = useCallback(
     (v: number) => {
-      setCharTC((charTC) => {
+      setBuildTc((charTC) => {
         const old = charTC.artifact.substats.stats[statKey]
         charTC.artifact.substats.stats[statKey] = v
         const statDiff = Math.round(
@@ -54,16 +54,16 @@ export function ArtifactSubstatEditor({
         )
       })
     },
-    [setCharTC, statKey]
+    [setBuildTc, statKey]
   )
   const maxSubstat = maxSubstats[statKey]
   const setMaxSubstat = useCallback(
     (v: number) => {
-      setCharTC((charTC) => {
+      setBuildTc((charTC) => {
         charTC.optimization.maxSubstats[statKey] = v
       })
     },
-    [setCharTC, statKey]
+    [setBuildTc, statKey]
   )
   // const { t } = useTranslation('page_character')
   const substatValue = getSubstatValue(statKey, rarity, substatsType)

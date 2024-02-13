@@ -1,8 +1,8 @@
 import { clamp, objKeyMap } from '@genshin-optimizer/common/util'
 import type {
   ArtifactRarity,
+  ArtifactSetKey,
   ArtifactSlotKey,
-  CharacterKey,
   MainStatKey,
   SubstatKey,
   WeaponKey,
@@ -16,7 +16,8 @@ import {
   substatTypeKeys,
 } from '@genshin-optimizer/gi/consts'
 import { validateLevelAsc } from '@genshin-optimizer/gi/util'
-import type { ICharTC } from '../../Interfaces/ICharTC'
+import type { ICachedArtifact, ICachedWeapon } from '../../Interfaces'
+import type { BuildTc } from '../../Interfaces/BuildTc'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
 import { DataManager } from '../DataManager'
 
@@ -31,26 +32,27 @@ export const minTotalStatKeys: MinTotalStatKey[] = [
   'critDMG_',
 ]
 
-export class CharacterTCDataManager extends DataManager<
-  CharacterKey,
-  'charTCs',
-  ICharTC,
-  ICharTC,
+export class BuildTcDataManager extends DataManager<
+  string,
+  'buildTcs',
+  BuildTc,
+  BuildTc,
   ArtCharDatabase
 > {
   constructor(database: ArtCharDatabase) {
-    super(database, 'charTCs')
+    super(database, 'buildTcs')
     for (const key of this.database.storage.keys) {
-      if (
-        key.startsWith('charTC_') &&
-        !this.set(key.split('charTC_')[1] as CharacterKey, {})
-      )
+      if (key.startsWith('buildTc_') && !this.set(key, {}))
         database.storage.remove(key)
     }
   }
-  override validate(obj: unknown): ICharTC | undefined {
+  override validate(obj: unknown): BuildTc | undefined {
     if (typeof obj !== 'object') return undefined
-    const { weapon, artifact, optimization } = obj as ICharTC
+    let { name, description } = obj as BuildTc
+    const { weapon, artifact, optimization } = obj as BuildTc
+
+    if (typeof name !== 'string') name = 'Build(TC) Name'
+    if (typeof description !== 'string') description = 'Build(TC) Description'
     const _weapon = validateCharTCWeapon(weapon)
     if (!_weapon) return undefined
 
@@ -58,27 +60,33 @@ export class CharacterTCDataManager extends DataManager<
     if (!_artifact) return undefined
     const _optimization = validateCharTcOptimization(optimization)
     if (!_optimization) return undefined
-    return { artifact: _artifact, weapon: _weapon, optimization: _optimization }
+    return {
+      name,
+      description,
+      artifact: _artifact,
+      weapon: _weapon,
+      optimization: _optimization,
+    }
   }
-  override toStorageKey(key: CharacterKey): string {
-    return `charTC_${key}`
+  new(data: BuildTc) {
+    const id = this.generateKey()
+    this.set(id, data)
+    return id
   }
-  override remove(key: CharacterKey): ICharTC | undefined {
-    const char = this.get(key)
-    if (!char) return undefined
-    return super.remove(key)
-  }
-  getWithInit(key: CharacterKey, weaponKey: WeaponKey): ICharTC {
-    const charTc = this.get(key)
-    if (charTc) return charTc
-    const set = this.set(key, initCharTC(weaponKey))
-    if (!set) throw new Error(`can't set ${key} with ${charTc}`)
-    return this.get(key)!
+  override remove(key: string, notify?: boolean): BuildTc | undefined {
+    const buildTc = super.remove(key, notify)
+    this.database.teamChars.keys.map((teamCharId) => {
+      const { buildTcId } = this.database.teamChars.get(teamCharId)!
+      if (buildTcId === key) this.database.teamChars.set(teamCharId, {}) // trigger a validation
+    })
+    return buildTc
   }
 }
 
-export function initCharTC(weaponKey: WeaponKey): ICharTC {
+export function initCharTC(weaponKey: WeaponKey): BuildTc {
   return {
+    name: 'Build(TC) Name',
+    description: 'Build(TC) Description',
     weapon: {
       key: weaponKey,
       level: 1,
@@ -114,10 +122,10 @@ function initCharTCArtifactSlots() {
   }))
 }
 
-function validateCharTCWeapon(weapon: unknown): ICharTC['weapon'] | undefined {
+function validateCharTCWeapon(weapon: unknown): BuildTc['weapon'] | undefined {
   if (typeof weapon !== 'object') return undefined
-  const { key } = weapon as ICharTC['weapon']
-  let { level, ascension, refinement } = weapon as ICharTC['weapon']
+  const { key } = weapon as BuildTc['weapon']
+  let { level, ascension, refinement } = weapon as BuildTc['weapon']
   if (!allWeaponKeys.includes(key)) return undefined
   if (typeof refinement !== 'number' || refinement < 1 || refinement > 5)
     refinement = 1
@@ -130,13 +138,13 @@ function validateCharTCWeapon(weapon: unknown): ICharTC['weapon'] | undefined {
 }
 function validateCharTCArtifact(
   artifact: unknown
-): ICharTC['artifact'] | undefined {
+): BuildTc['artifact'] | undefined {
   if (typeof artifact !== 'object') return undefined
   let {
     slots,
     substats: { type, stats, rarity },
     sets,
-  } = artifact as ICharTC['artifact']
+  } = artifact as BuildTc['artifact']
   const _slots = validateCharTCArtifactSlots(slots)
   if (!_slots) return undefined
   slots = _slots
@@ -154,32 +162,33 @@ function validateCharTCArtifact(
 }
 function validateCharTCArtifactSlots(
   slots: unknown
-): ICharTC['artifact']['slots'] | undefined {
+): BuildTc['artifact']['slots'] | undefined {
   if (typeof slots !== 'object') return initCharTCArtifactSlots()
+
   if (
-    Object.keys(slots as ICharTC['artifact']['slots']).length !==
+    Object.keys(slots as BuildTc['artifact']['slots']).length !==
       allArtifactSlotKeys.length ||
-    Object.keys(slots as ICharTC['artifact']['slots']).some(
+    Object.keys(slots as BuildTc['artifact']['slots']).some(
       (s) => !allArtifactSlotKeys.includes(s as ArtifactSlotKey)
     )
   )
     return initCharTCArtifactSlots()
   allArtifactSlotKeys.forEach((slotKey) => {
-    slots[slotKey].level = clamp(
-      slots[slotKey].level,
+    ;(slots as BuildTc['artifact']['slots'])[slotKey].level = clamp(
+      (slots as BuildTc['artifact']['slots'])[slotKey].level,
       0,
-      artMaxLevel[slots[slotKey].rarity]
+      artMaxLevel[(slots as BuildTc['artifact']['slots'])[slotKey].rarity]
     )
   })
 
-  return slots as ICharTC['artifact']['slots']
+  return slots as BuildTc['artifact']['slots']
 }
 function validateCharTcOptimization(
   optimization: unknown
-): ICharTC['optimization'] | undefined {
+): BuildTc['optimization'] | undefined {
   if (typeof optimization !== 'object') return undefined
   let { target, distributedSubstats, maxSubstats, minTotal } =
-    optimization as ICharTC['optimization']
+    optimization as BuildTc['optimization']
   if (!Array.isArray(target)) target = undefined
   if (typeof distributedSubstats !== 'number') distributedSubstats = 20
   if (typeof maxSubstats !== 'object')
@@ -196,9 +205,56 @@ function validateCharTcOptimization(
 
   return { target, distributedSubstats, maxSubstats, minTotal }
 }
-function initCharTcOptimizationMaxSubstats(): ICharTC['optimization']['maxSubstats'] {
+function initCharTcOptimizationMaxSubstats(): BuildTc['optimization']['maxSubstats'] {
   return objKeyMap(
     allSubstatKeys,
     (k) => 6 * (k === 'hp' || k === 'atk' ? 4 : k === 'atk_' ? 2 : 5)
   )
+}
+export function toBuildTc(
+  charTC: BuildTc,
+  eWeapon: ICachedWeapon | undefined = undefined,
+  artifacts: Array<ICachedArtifact | undefined> = []
+) {
+  if (eWeapon) {
+    charTC.weapon.key = eWeapon.key
+    charTC.weapon.level = eWeapon.level
+    charTC.weapon.ascension = eWeapon.ascension
+    charTC.weapon.refinement = eWeapon.refinement
+  }
+
+  const oldType = charTC.artifact.substats.type
+  charTC.artifact.substats.type = oldType
+  charTC.artifact.slots = initCharTCArtifactSlots()
+  charTC.artifact.substats.stats = objKeyMap(allSubstatKeys, () => 0)
+  const sets: Partial<Record<ArtifactSetKey, number>> = {}
+  artifacts.forEach((art) => {
+    if (!art) return
+    const { slotKey, setKey, substats, mainStatKey, level, rarity } = art
+    charTC.artifact.slots[slotKey].level = level
+    charTC.artifact.slots[slotKey].statKey = mainStatKey
+    charTC.artifact.slots[slotKey].rarity = rarity
+    sets[setKey] = (sets[setKey] ?? 0) + 1
+    substats.forEach((substat) => {
+      if (substat.key)
+        charTC.artifact.substats.stats[substat.key] =
+          (charTC.artifact.substats.stats[substat.key] ?? 0) +
+          substat.accurateValue
+    })
+  })
+  charTC.artifact.sets = Object.fromEntries(
+    Object.entries(sets)
+      .map(([key, value]) => [
+        key,
+        value === 3
+          ? 2
+          : value === 5
+          ? 4
+          : value === 1 && !(key as string).startsWith('PrayersFor')
+          ? 0
+          : value,
+      ])
+      .filter(([, value]) => value)
+  )
+  return charTC
 }

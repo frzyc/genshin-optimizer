@@ -18,7 +18,7 @@ import { useContext } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
 import ImgIcon from '../../../../Components/Image/ImgIcon'
 import { TeamCharacterContext } from '../../../../Context/TeamCharacterContext'
-import { CharTCContext } from './CharTCContext'
+import { BuildTcContext } from './BuildTcContext'
 import gcsimIcon from './gcsim.png'
 
 // From https://github.com/genshinsim/gcsim/blob/68874fb693c4e959b336d106f201c29d100fc2c8/pkg/core/attributes/stats.go#L72
@@ -59,7 +59,7 @@ export default function GcsimButton({ disabled }: { disabled: boolean }) {
     },
   } = useContext(TeamCharacterContext)
   const {
-    charTC: {
+    buildTc: {
       weapon: {
         key: weaponKey,
         level: wLevel,
@@ -72,7 +72,7 @@ export default function GcsimButton({ disabled }: { disabled: boolean }) {
         sets,
       },
     },
-  } = useContext(CharTCContext)
+  } = useContext(BuildTcContext)
 
   const charKeyLow = characterKey.toLowerCase()
 

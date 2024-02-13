@@ -72,17 +72,25 @@ export default function Content({
 }
 
 function CharacterPanel() {
+  const {
+    teamChar: { buildType, buildTcId },
+  } = useContext(TeamCharacterContext)
+  const isTCBuild = buildTcId && buildType === 'tc'
   return (
     <Suspense
       fallback={<Skeleton variant="rectangular" width="100%" height={500} />}
     >
       <Routes>
         {/* Character Panel */}
-        <Route path="/:characterKey/*" element={<TabOverview />} />
+        {isTCBuild ? (
+          <Route path="/:characterKey/*" element={<TabTheorycraft />} />
+        ) : (
+          <Route path="/:characterKey/*" element={<TabOverview />} />
+        )}
         <Route path="/:characterKey/talent" element={<TabTalent />} />
         <Route path="/:characterKey/teambuffs" element={<TabTeambuffs />} />
         <Route path="/:characterKey/optimize" element={<TabBuild />} />
-        <Route path="/:characterKey/theorycraft" element={<TabTheorycraft />} />
+
         {shouldShowDevComponents && (
           <Route path="/:characterKey/upopt" element={<TabUpopt />} />
         )}
@@ -101,6 +109,10 @@ function TabNav({
   const tabSx = shouldShowDevComponents
     ? { minWidth: '16.6%' }
     : { minWidth: '20%' }
+  const {
+    teamChar: { buildType, buildTcId },
+  } = useContext(TeamCharacterContext)
+  const isTCBuild = buildTcId && buildType === 'tc'
   return (
     <Tabs
       value={tab}
@@ -113,14 +125,25 @@ function TabNav({
         },
       }}
     >
-      <Tab
-        sx={tabSx}
-        value="overview"
-        label={t('tabs.overview')}
-        icon={<Person />}
-        component={RouterLink}
-        to={`${characterKey}/`}
-      />
+      {isTCBuild ? (
+        <Tab
+          sx={tabSx}
+          value="theorycraft"
+          label={t('tabs.theorycraft')}
+          icon={<Science />}
+          component={RouterLink}
+          to={`${characterKey}/theorycraft`}
+        />
+      ) : (
+        <Tab
+          sx={tabSx}
+          value="overview"
+          label={t('tabs.overview')}
+          icon={<Person />}
+          component={RouterLink}
+          to={`${characterKey}/`}
+        />
+      )}
       <Tab
         sx={tabSx}
         value="talent"
@@ -137,23 +160,18 @@ function TabNav({
         component={RouterLink}
         to={`${characterKey}/teambuffs`}
       />
-      <Tab
-        sx={tabSx}
-        value="optimize"
-        label={t('tabs.optimize')}
-        icon={<TrendingUp />}
-        component={RouterLink}
-        to={`${characterKey}/optimize`}
-      />
-      <Tab
-        sx={tabSx}
-        value="theorycraft"
-        label={t('tabs.theorycraft')}
-        icon={<Science />}
-        component={RouterLink}
-        to={`${characterKey}/theorycraft`}
-      />
-      {shouldShowDevComponents && (
+      {!isTCBuild && (
+        <Tab
+          sx={tabSx}
+          value="optimize"
+          label={t('tabs.optimize')}
+          icon={<TrendingUp />}
+          component={RouterLink}
+          to={`${characterKey}/optimize`}
+        />
+      )}
+
+      {!isTCBuild && shouldShowDevComponents && (
         <Tab
           sx={tabSx}
           value="upopt"
