@@ -294,7 +294,7 @@ function CompareArtifactModal({
               canEquip
               editorProps={{ disableSet: true, disableSlot: true }}
             />
-            {newLoc && <ExcludeButton id={newId} />}
+            {newArtifact && <ExcludeButton id={newId} />}
             {newLoc &&
               newLoc !== charKeyToLocCharKey(characterKey) &&
               allowLocationsState !== 'all' && (
@@ -343,8 +343,8 @@ function ExcludeButton({ id }: { id: string }) {
         onClick={toggle}
         color={excluded ? 'error' : 'success'}
         size="small"
+        startIcon={excluded ? <BlockIcon /> : <ShowChartIcon />}
       >
-        {excluded ? <BlockIcon /> : <ShowChartIcon />}
         <span>
           {t(excluded ? 'excludeArt.excluded' : 'excludeArt.included')}
         </span>
