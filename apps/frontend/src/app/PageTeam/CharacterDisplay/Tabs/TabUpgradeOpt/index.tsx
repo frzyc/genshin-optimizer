@@ -52,7 +52,6 @@ import { mergeData, uiDataForTeam } from '../../../../Formula/api'
 import { optimize } from '../../../../Formula/optimization'
 import type { NumNode } from '../../../../Formula/type'
 import { getTeamData } from '../../../../ReactHooks/useCharData'
-import useCharSelectionCallback from '../../../../ReactHooks/useCharSelectionCallback'
 import type { DynStat } from '../../../../Solver/common'
 import { objPathValue, shouldShowDevComponents } from '../../../../Util/Util'
 import MainStatSelectionCard from '../TabOptimize/Components/MainStatSelectionCard'
@@ -75,20 +74,16 @@ import { UpOptCalculator, toArtifact } from './upOpt'
 
 export default function TabUpopt() {
   const {
-    teamId,
-    teamChar: { optConfigId },
-    character: { key: characterKey },
+    teamChar: { optConfigId, key: characterKey },
   } = useContext(TeamCharacterContext)
   const database = useDatabase()
   const { gender } = useDBMeta()
-
-  const onClickTeammate = useCharSelectionCallback()
 
   const noArtifact = useMemo(() => !database.arts.values.length, [database])
 
   const buildSetting = useOptConfig(optConfigId)
   const { optimizationTarget, levelLow, levelHigh } = buildSetting
-  const teamData = useTeamData(teamId)
+  const teamData = useTeamData()
   const { target: data } = teamData?.[characterKey as CharacterKey] ?? {}
 
   const [artsDirty] = useForceUpdate()

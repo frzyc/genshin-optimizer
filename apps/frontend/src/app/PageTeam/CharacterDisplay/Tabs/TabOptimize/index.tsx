@@ -41,7 +41,7 @@ import {
   Skeleton,
   TextField,
   ToggleButton,
-  Typography
+  Typography,
 } from '@mui/material'
 import React, {
   Suspense,
@@ -108,10 +108,10 @@ const audio = new Audio('notification.mp3')
 export default function TabBuild() {
   const { t } = useTranslation('page_character_optimize')
   const {
-    teamChar: { optConfigId },
+    teamCharId,
+    teamChar: { optConfigId, key: characterKey },
     teamId,
     team: { compareData },
-    character: { key: characterKey },
   } = useContext(TeamCharacterContext)
   const database = useDatabase()
   const { setChartData, graphBuilds, setGraphBuilds } = useContext(GraphContext)
@@ -173,7 +173,7 @@ export default function TabBuild() {
     builds,
     buildDate,
   } = buildSetting
-  const teamData = useTeamData(teamId, mainStatAssumptionLevel)
+  const teamData = useTeamData(mainStatAssumptionLevel)
   const { characterSheet, target: data } =
     teamData?.[characterKey as CharacterKey] ?? {}
   const optimizationTargetNode =
@@ -865,7 +865,6 @@ export default function TabBuild() {
               <BuildList
                 builds={graphBuilds}
                 characterKey={characterKey}
-                teamId={teamId}
                 data={data}
                 compareData={compareData}
                 disabled={!!generatingBuilds}
@@ -877,7 +876,6 @@ export default function TabBuild() {
             <BuildList
               builds={builds}
               characterKey={characterKey}
-              teamId={teamId}
               data={data}
               compareData={compareData}
               disabled={!!generatingBuilds}
@@ -894,7 +892,6 @@ export default function TabBuild() {
 function BuildList({
   builds,
   setBuilds,
-  teamId,
   characterKey,
   data,
   compareData,
@@ -904,7 +901,7 @@ function BuildList({
 }: {
   builds: string[][]
   setBuilds?: (builds: string[][] | undefined) => void
-  teamId: string
+
   characterKey?: '' | CharacterKey
   data?: UIData
   compareData: boolean
@@ -922,41 +919,45 @@ function BuildList({
     },
     [builds, setBuilds]
   )
+  // retrive this value because inner calcs depends on this
+  const teamCharacterContextValue = useContext(TeamCharacterContext)
   // Memoize the build list because calculating/rendering the build list is actually very expensive, which will cause longer optimization times.
   const list = useMemo(
-    () => (
-      <Suspense
-        fallback={<Skeleton variant="rectangular" width="100%" height={600} />}
-      >
-        {builds?.map(
-          (build, index) =>
-            characterKey &&
-            data && (
-              <DataContextWrapper
-                key={index + build.join()}
-                teamId={teamId}
-                characterKey={characterKey}
-                build={build}
-                oldData={data}
-                mainStatAssumptionLevel={mainStatAssumptionLevel}
-              >
-                <BuildItemWrapper
-                  index={index}
-                  label={getLabel(index)}
+    () =>
+      !!teamCharacterContextValue && (
+        <Suspense
+          fallback={
+            <Skeleton variant="rectangular" width="100%" height={600} />
+          }
+        >
+          {builds?.map(
+            (build, index) =>
+              characterKey &&
+              data && (
+                <DataContextWrapper
+                  key={index + build.join()}
+                  characterKey={characterKey}
                   build={build}
-                  compareData={compareData}
-                  disabled={disabled}
-                  deleteBuild={setBuilds ? deleteBuild : undefined}
-                />
-              </DataContextWrapper>
-            )
-        )}
-      </Suspense>
-    ),
+                  oldData={data}
+                  mainStatAssumptionLevel={mainStatAssumptionLevel}
+                >
+                  <BuildItemWrapper
+                    index={index}
+                    label={getLabel(index)}
+                    build={build}
+                    compareData={compareData}
+                    disabled={disabled}
+                    deleteBuild={setBuilds ? deleteBuild : undefined}
+                  />
+                </DataContextWrapper>
+              )
+          )}
+        </Suspense>
+      ),
     [
+      teamCharacterContextValue,
       builds,
       characterKey,
-      teamId,
       data,
       compareData,
       disabled,
@@ -1148,7 +1149,6 @@ function CopyLoadoutButton({ build }: { build: string[] }) {
 
 type Prop = {
   children: React.ReactNode
-  teamId: string
   characterKey: CharacterKey
   build: string[]
   oldData: UIData
@@ -1156,7 +1156,6 @@ type Prop = {
 }
 function DataContextWrapper({
   children,
-  teamId,
   characterKey,
   build,
   oldData,
@@ -1177,7 +1176,7 @@ function DataContextWrapper({
         .filter((a) => a) as ICachedArtifact[]),
     [dirty, build, database]
   )
-  const teamData = useTeamData(teamId, mainStatAssumptionLevel, buildsArts)
+  const teamData = useTeamData(mainStatAssumptionLevel, buildsArts)
   const providerValue = useMemo(() => {
     const tdc = teamData?.[characterKey]
     if (!tdc) return undefined

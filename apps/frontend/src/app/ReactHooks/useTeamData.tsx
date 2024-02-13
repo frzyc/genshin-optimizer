@@ -8,7 +8,7 @@ import type {
   ICachedWeapon,
 } from '@genshin-optimizer/gi/db'
 import { useDBMeta, useDatabase, useTeam } from '@genshin-optimizer/gi/db-ui'
-import { useDeferredValue, useEffect, useMemo } from 'react'
+import { useContext, useDeferredValue, useEffect, useMemo } from 'react'
 import type { TeamData } from '../Context/DataContext'
 import { allArtifactData } from '../Data/Artifacts'
 import { getCharSheet } from '../Data/Characters'
@@ -31,6 +31,7 @@ import {
   getArtifactData,
   getWeaponData,
 } from '../PageTeam/CharacterDisplay/Tabs/TabTheorycraft/optimizeTc'
+import { TeamCharacterContext } from '../Context/TeamCharacterContext'
 
 type TeamDataBundle = {
   teamData: Dict<CharacterKey, Data[]>
@@ -38,11 +39,12 @@ type TeamDataBundle = {
 }
 
 export default function useTeamData(
-  teamId: string | '',
   mainStatAssumptionLevel = 0,
   overrideArt?: ICachedArtifact[] | Data,
   overrideWeapon?: ICachedWeapon
 ): TeamData | undefined {
+  const { teamId, teamCharId: overrideTeamCharId } =
+    useContext(TeamCharacterContext)
   const database = useDatabase()
   const [dbDirty, setDbDirty] = useForceUpdate()
   const dbDirtyDeferred = useDeferredValue(dbDirty)
@@ -54,8 +56,9 @@ export default function useTeamData(
       getTeamDataCalc(
         database,
         teamId,
-        mainStatAssumptionLevel,
         gender,
+        overrideTeamCharId,
+        mainStatAssumptionLevel,
         overrideArt,
         overrideWeapon
       ),
@@ -65,6 +68,7 @@ export default function useTeamData(
       teamId,
       database,
       mainStatAssumptionLevel,
+      overrideTeamCharId,
       overrideArt,
       overrideWeapon,
     ]
@@ -105,8 +109,9 @@ export default function useTeamData(
 function getTeamDataCalc(
   database: ArtCharDatabase,
   teamId: string | '',
-  mainStatAssumptionLevel = 0,
   gender: GenderKey,
+  overrideTeamCharId: string,
+  mainStatAssumptionLevel = 0,
   overrideArt?: ICachedArtifact[] | Data,
   overrideWeapon?: ICachedWeapon
 ): TeamData | undefined {
@@ -121,6 +126,7 @@ function getTeamDataCalc(
     getTeamData(
       database,
       teamId,
+      overrideTeamCharId,
       mainStatAssumptionLevel,
       overrideArt,
       overrideWeapon
@@ -139,6 +145,7 @@ function getTeamDataCalc(
 export function getTeamData(
   database: ArtCharDatabase,
   teamId: string | '',
+  overrideTeamCharId: string,
   mainStatAssumptionLevel = 0,
   overrideArt?: ICachedArtifact[] | Data,
   overrideWeapon?: ICachedWeapon
@@ -161,20 +168,23 @@ export function getTeamData(
     } = teamChar
     const character = database.chars.get(characterKey)
     const { key, level, constellation, ascension, talent } = character
-    if (ind !== 0) {
-      overrideWeapon = undefined
-      overrideWeapon = undefined
-      mainStatAssumptionLevel = 0
+    let tempOverrideWeapon = overrideWeapon
+    let tempOverrideArt = overrideArt
+    let tempMainStatAssumptionLevel = mainStatAssumptionLevel
+    if (id !== overrideTeamCharId) {
+      tempOverrideWeapon = undefined
+      tempOverrideArt = undefined
+      tempMainStatAssumptionLevel = 0
     }
     if (buildType === 'tc' && buildTcId) {
       const buildTc = database.buildTcs.get(buildTcId)
-      overrideArt = getArtifactData(buildTc)
-      overrideWeapon = getWeaponData(buildTc)
+      tempOverrideArt = getArtifactData(buildTc)
+      tempOverrideWeapon = getWeaponData(buildTc)
     }
     return getCharDataBundle(
       database,
-      ind === 0, // only true for the "main character"?
-      mainStatAssumptionLevel, // only used for the "main character"
+      id === overrideTeamCharId, // only true for the "main character"?
+      tempMainStatAssumptionLevel,
       {
         key,
         level,
@@ -191,8 +201,10 @@ export function getTeamData(
         hitMode,
         reaction,
       },
-      overrideWeapon ? overrideWeapon : database.teamChars.getLoadoutWeapon(id),
-      overrideArt ??
+      tempOverrideWeapon
+        ? tempOverrideWeapon
+        : database.teamChars.getLoadoutWeapon(id),
+      tempOverrideArt ??
         (Object.values(database.teamChars.getLoadoutArtifacts(id)).filter(
           (a) => a
         ) as ICachedArtifact[])

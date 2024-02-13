@@ -69,7 +69,6 @@ function TeamWrapper({ artId, weaponId, onHide }: WrapperProps) {
     character: { key: characterKey },
   } = useContext(CharacterContext)
   const {
-    teamId,
     teamCharId,
     teamChar: { optConfigId },
   } = useContext(TeamCharacterContext)
@@ -84,7 +83,6 @@ function TeamWrapper({ artId, weaponId, onHide }: WrapperProps) {
     return Object.values(artmap).filter((a) => a)
   }, [database, teamCharId, artId])
   const teamData = useTeamData(
-    teamId,
     mainStatAssumptionLevel,
     build,
     weaponId ? database.weapons.get(weaponId) : undefined

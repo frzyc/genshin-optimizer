@@ -107,20 +107,8 @@ function Page({ teamId, onClose }: { teamId: string; onClose?: () => void }) {
     )
   )
 
-  const teamData = useTeamData(teamId)
-
   const characterSheet = getCharSheet(characterKey, gender)
   const character = useCharacter(characterKey)
-  const { target: charUIData } = teamData?.[characterKey] ?? {}
-
-  const dataContextValue: dataContextObj | undefined = useMemo(() => {
-    if (!teamData || !charUIData) return undefined
-    return {
-      data: charUIData,
-      teamData,
-      oldData: undefined,
-    }
-  }, [charUIData, teamData])
 
   const teamCharacterContextValue: TeamCharacterContextObj | undefined =
     useMemo(() => {
@@ -175,19 +163,18 @@ function Page({ teamId, onClose }: { teamId: string; onClose?: () => void }) {
           currentCharIndex={currentCharIndex}
           setCurrentCharIndex={setCurrentCharIndex}
         />
-        {dataContextValue &&
-        teamCharacterContextValue &&
+        {teamCharacterContextValue &&
         graphContextValue &&
         CharacterContextValue ? (
           <TeamCharacterContext.Provider value={teamCharacterContextValue}>
             <CharacterContext.Provider value={CharacterContextValue}>
-              <DataContext.Provider value={dataContextValue}>
+              <DataContextWrapper>
                 <GraphContext.Provider value={graphContextValue}>
                   <FormulaDataWrapper>
-                    <Content tab={tab} characterKey={characterKey} />
+                    <Content tab={tab} />
                   </FormulaDataWrapper>
                 </GraphContext.Provider>
-              </DataContext.Provider>
+              </DataContextWrapper>
             </CharacterContext.Provider>
           </TeamCharacterContext.Provider>
         ) : (
@@ -195,5 +182,28 @@ function Page({ teamId, onClose }: { teamId: string; onClose?: () => void }) {
         )}
       </CardContent>
     </CardThemed>
+  )
+}
+function DataContextWrapper({ children }: { children: React.ReactNode }) {
+  const {
+    teamChar: { key: characterKey },
+  } = useContext(TeamCharacterContext)
+  const teamData = useTeamData()
+  const { target: charUIData } = teamData?.[characterKey] ?? {}
+
+  const dataContextValue: dataContextObj | undefined = useMemo(() => {
+    if (!teamData || !charUIData) return undefined
+    return {
+      data: charUIData,
+      teamData,
+      oldData: undefined,
+    }
+  }, [charUIData, teamData])
+  if (!dataContextValue)
+    return <Skeleton variant="rectangular" width="100%" height={1000} />
+  return (
+    <DataContext.Provider value={dataContextValue}>
+      {children}
+    </DataContext.Provider>
   )
 }

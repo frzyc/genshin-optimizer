@@ -191,6 +191,7 @@ function TeammateDisplay({ teamCharId }: { teamCharId: string }) {
     params: { tab: '' },
   }
 
+  // FIXME: this doesnt work.
   const onClick = () => navigate(`/teams/${teamId}/${characterKey}/${tab}`)
 
   const dataBundle = teamData[teamMateKey]

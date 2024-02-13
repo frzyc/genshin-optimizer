@@ -37,13 +37,14 @@ import TabUpopt from './Tabs/TabUpgradeOpt'
 
 export default function Content({
   tab,
-  characterKey,
   onClose,
 }: {
   tab: string
-  characterKey: CharacterKey
   onClose?: () => void
 }) {
+  const {
+    teamChar: { key: characterKey },
+  } = useContext(TeamCharacterContext)
   return (
     <>
       <Box display="flex">
