@@ -75,7 +75,6 @@ import { optimize } from '../../../../Formula/optimization'
 import type { NumNode } from '../../../../Formula/type'
 import type { UIData } from '../../../../Formula/uiData'
 import { getTeamData } from '../../../../ReactHooks/useCharData'
-import useCharSelectionCallback from '../../../../ReactHooks/useCharSelectionCallback'
 import useGlobalError from '../../../../ReactHooks/useGlobalError'
 import useTeamData from '../../../../ReactHooks/useTeamData'
 import type { OptProblemInput } from '../../../../Solver'
@@ -96,7 +95,6 @@ import MainStatSelectionCard from './Components/MainStatSelectionCard'
 import OptimizationTargetSelector from './Components/OptimizationTargetSelector'
 import StatFilterCard from './Components/StatFilterCard'
 import { compactArtifacts, dynamicData } from './foreground'
-import useBuildResult from './useBuildResult'
 
 const audio = new Audio('notification.mp3')
 export default function TabBuild() {
@@ -142,8 +140,6 @@ export default function TabBuild() {
     [database]
   )
 
-  const onClickTeammate = useCharSelectionCallback()
-
   // Clear state when changing characters
   useEffect(() => {
     setBuildStatus({
@@ -166,11 +162,9 @@ export default function TabBuild() {
     maxBuildsToShow,
     levelLow,
     levelHigh,
+    builds,
+    buildDate,
   } = buildSetting
-  const {
-    buildResult: { builds, buildDate },
-    buildResultDispatch,
-  } = useBuildResult(characterKey)
   const teamData = useTeamData(teamId, mainStatAssumptionLevel)
   const { characterSheet, target: data } =
     teamData?.[characterKey as CharacterKey] ?? {}
@@ -433,7 +427,7 @@ export default function TabBuild() {
       if (process.env.NODE_ENV === 'development')
         console.log('Build Result', builds)
 
-      buildResultDispatch({
+      database.optConfigs.set(optConfigId, {
         builds: builds.map((build) => build.artifactIds),
         buildDate: Date.now(),
       })
@@ -475,7 +469,7 @@ export default function TabBuild() {
     gender,
     setChartData,
     maxWorkers,
-    buildResultDispatch,
+    optConfigId,
     t,
     throwGlobalError,
   ])
@@ -820,7 +814,10 @@ export default function TabBuild() {
                   color="error"
                   onClick={() => {
                     setGraphBuilds(undefined)
-                    buildResultDispatch({ builds: [], buildDate: 0 })
+                    database.optConfigs.set(optConfigId, {
+                      builds: [],
+                      buildDate: 0,
+                    })
                   }}
                 >
                   Clear Builds

@@ -10,10 +10,9 @@ import { DisplayToolEntry } from './DataEntries/DisplayTool'
 import { DisplayWeaponEntry } from './DataEntries/DisplayWeaponEntry'
 import { ArtifactDataManager } from './DataManagers/ArtifactDataManager'
 import { BuildDataManager } from './DataManagers/BuildDataManager'
-import { BuildResultDataManager } from './DataManagers/BuildResultDataManager'
+import { BuildTcDataManager } from './DataManagers/BuildTcDataManager'
 import { CharMetaDataManager } from './DataManagers/CharMetaDataManager'
 import { CharacterDataManager } from './DataManagers/CharacterDataManager'
-import { BuildTcDataManager } from './DataManagers/BuildTcDataManager'
 import { OptConfigDataManager } from './DataManagers/OptConfigDataManager'
 import { TeamCharacterDataManager } from './DataManagers/TeamCharacterDataManager'
 import { TeamDataManager } from './DataManagers/TeamDataManager'
@@ -27,7 +26,6 @@ export class ArtCharDatabase extends Database {
   buildTcs: BuildTcDataManager
   weapons: WeaponDataManager
   optConfigs: OptConfigDataManager
-  buildResult: BuildResultDataManager
   charMeta: CharMetaDataManager
   builds: BuildDataManager
   teamChars: TeamCharacterDataManager
@@ -62,10 +60,8 @@ export class ArtCharDatabase extends Database {
 
     this.weapons.ensureEquipments()
 
+    // Depends on arts
     this.optConfigs = new OptConfigDataManager(this)
-
-    // This should be instantiated after artifacts, so that invalid artifacts that persists in build results can be pruned.
-    this.buildResult = new BuildResultDataManager(this)
 
     this.buildTcs = new BuildTcDataManager(this)
     this.charMeta = new CharMetaDataManager(this)
@@ -104,7 +100,6 @@ export class ArtCharDatabase extends Database {
       this.weapons,
       this.arts,
       this.optConfigs,
-      this.buildResult,
       this.buildTcs,
       this.charMeta,
       this.builds,

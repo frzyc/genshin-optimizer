@@ -10,6 +10,7 @@ import type {
 } from '@genshin-optimizer/gi/consts'
 import {
   allArtifactSetKeys,
+  allArtifactSlotKeys,
   allLocationCharacterKeys,
   artSlotsData,
 } from '@genshin-optimizer/gi/consts'
@@ -77,6 +78,10 @@ export interface OptConfig {
   compareBuild: boolean
   levelLow: number
   levelHigh: number
+
+  //generated opt builds
+  builds: string[][]
+  buildDate: number
 }
 
 export class OptConfigDataManager extends DataManager<
@@ -110,6 +115,8 @@ export class OptConfigDataManager extends DataManager<
       compareBuild,
       levelLow,
       levelHigh,
+      builds,
+      buildDate,
     } = obj as OptConfig
 
     if (typeof statFilters !== 'object') statFilters = {}
@@ -172,6 +179,31 @@ export class OptConfigDataManager extends DataManager<
         .map(([k, a]) => [k, [...new Set(a)]])
         .filter(([_, a]) => a.length)
     )
+
+    if (!Array.isArray(builds)) {
+      builds = []
+      buildDate = 0
+    } else {
+      builds = builds
+        .map((build) => {
+          if (!Array.isArray(build)) return []
+          const filteredBuild = build.filter((id) => this.database.arts.get(id))
+          // Check that builds has only 1 artifact of each slot
+          if (
+            allArtifactSlotKeys.some(
+              (s) =>
+                filteredBuild.filter(
+                  (id) => this.database.arts.get(id)?.slotKey === s
+                ).length > 1
+            )
+          )
+            return []
+          return filteredBuild
+        })
+        .filter((x) => x.length)
+      if (!Number.isInteger(buildDate)) buildDate = 0
+    }
+
     return {
       artSetExclusion,
       artExclusion,
@@ -188,6 +220,8 @@ export class OptConfigDataManager extends DataManager<
       compareBuild,
       levelLow,
       levelHigh,
+      builds,
+      buildDate,
     }
   }
   new() {
@@ -217,6 +251,9 @@ const initialBuildSettings: OptConfig = deepFreeze({
   compareBuild: true,
   levelLow: 0,
   levelHigh: 20,
+
+  builds: [],
+  buildDate: 0,
 })
 
 export function handleArtSetExclusion(

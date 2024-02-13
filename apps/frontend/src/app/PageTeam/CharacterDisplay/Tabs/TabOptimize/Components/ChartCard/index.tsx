@@ -5,6 +5,7 @@ import {
   valueString,
 } from '@genshin-optimizer/common/util'
 import { allArtifactSlotKeys } from '@genshin-optimizer/gi/consts'
+import { useOptConfig } from '@genshin-optimizer/gi/db-ui'
 import {
   CheckBox,
   CheckBoxOutlineBlank,
@@ -40,12 +41,11 @@ import BootstrapTooltip from '../../../../../../Components/BootstrapTooltip'
 import CardDark from '../../../../../../Components/Card/CardDark'
 import CardLight from '../../../../../../Components/Card/CardLight'
 import InfoTooltip from '../../../../../../Components/InfoTooltip'
-import { TeamCharacterContext } from '../../../../../../Context/TeamCharacterContext'
 import { DataContext } from '../../../../../../Context/DataContext'
 import { GraphContext } from '../../../../../../Context/GraphContext'
+import { TeamCharacterContext } from '../../../../../../Context/TeamCharacterContext'
 import { input } from '../../../../../../Formula'
 import type { NumNode } from '../../../../../../Formula/type'
-import useBuildResult from '../../useBuildResult'
 import OptimizationTargetSelector from '../OptimizationTargetSelector'
 import CustomDot from './CustomDot'
 import CustomTooltip from './CustomTooltip'
@@ -76,11 +76,9 @@ export default function ChartCard({
   const [showMin, setshowMin] = useState(true)
   const { graphBuilds } = useContext(GraphContext)
   const {
-    character: { key: characterKey },
+    teamChar: { optConfigId },
   } = useContext(TeamCharacterContext)
-  const {
-    buildResult: { builds: generatedBuilds },
-  } = useBuildResult(characterKey)
+  const { builds: generatedBuilds } = useOptConfig(optConfigId)
 
   const [sliderLow, setSliderLow] = useState(-Infinity)
   const [sliderHigh, setSliderHigh] = useState(Infinity)
