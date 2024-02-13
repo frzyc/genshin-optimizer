@@ -66,13 +66,13 @@ function Page({ teamId, onClose }: { teamId: string; onClose?: () => void }) {
   const { gender } = useDBMeta()
   const [currentCharIndex, setCurrentCharIndex] = useState(0)
   const team = useTeam(teamId)
-  const { characterIds } = team
+  const { teamCharIds } = team
   const {
     params: { tab = 'overview', characterKey: tabCharacterKey },
   } = useMatch({ path: '/teams/:teamId/:characterKey/:tab', end: false }) ?? {
     params: { tab: 'overview', characterKey: '' },
   }
-  const teamCharId = characterIds[currentCharIndex]
+  const teamCharId = teamCharIds[currentCharIndex]
   const teamChar = useTeamChar(teamCharId)
   const characterKey = teamChar?.key
   useEffect(() => {
@@ -82,12 +82,12 @@ function Page({ teamId, onClose }: { teamId: string; onClose?: () => void }) {
   })
   useEffect(() => {
     if (!tabCharacterKey) return
-    const ind = characterIds.find(
+    const ind = teamCharIds.find(
       (cid) => database.teamChars.get(cid)?.key === tabCharacterKey
     )
     console.log({ ind, tabCharacterKey })
     if (typeof ind === 'number') setCurrentCharIndex(ind)
-  }, [database, characterIds, tabCharacterKey])
+  }, [database, teamCharIds, tabCharacterKey])
 
   const { t } = useTranslation([
     'sillyWisher_charNames',

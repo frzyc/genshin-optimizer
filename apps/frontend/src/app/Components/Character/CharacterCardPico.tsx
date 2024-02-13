@@ -214,7 +214,7 @@ export function BlankCharacterCardPico({ index }: { index: number }) {
     >
       <Box
         component="img"
-        src={imgAssets.team[`team${index + 2}`]}
+        src={imgAssets.team[`team${index + 1}`]}
         sx={{ width: '75%', height: 'auto', opacity: 0.7 }}
       />
     </CardDark>

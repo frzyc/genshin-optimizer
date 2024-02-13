@@ -24,7 +24,7 @@ export interface Team {
   >
 
   compareData: boolean
-  characterIds: string[] // ids to TeamCharacters
+  teamCharIds: string[]
 }
 
 export class TeamDataManager extends DataManager<
@@ -49,6 +49,13 @@ export class TeamDataManager extends DataManager<
     this.set(id, value)
     return id
   }
+  override remove(key: string, notify?: boolean): Team | undefined {
+    const team = super.remove(key, notify)
+    if (!team) return team
+    const { teamCharIds } = team
+    teamCharIds.map((teamCharId) => this.database.teamChars.remove(teamCharId))
+    return team
+  }
   override clear(): void {
     super.clear()
   }
@@ -69,7 +76,7 @@ function validateTeam(
     reaction,
     enemyOverride,
     compareData,
-    characterIds,
+    teamCharIds,
   } = obj as Team
   if (typeof name !== 'string') name = 'Team Name'
   if (typeof description !== 'string') description = 'Team Description'
@@ -87,12 +94,12 @@ function validateTeam(
     enemyOverride = {}
 
   if (typeof compareData !== 'boolean') compareData = false
-  if (!Array.isArray(characterIds)) characterIds = []
+  if (!Array.isArray(teamCharIds)) teamCharIds = []
   else {
     const charIds = database.teamChars.keys
-    characterIds = characterIds.filter((id) => charIds.includes(id))
+    teamCharIds = teamCharIds.filter((id) => charIds.includes(id))
     // only allow 4 people per team
-    characterIds = characterIds.slice(0, 4)
+    teamCharIds = teamCharIds.slice(0, 4)
   }
   return {
     name,
@@ -101,6 +108,6 @@ function validateTeam(
     reaction,
     enemyOverride,
     compareData,
-    characterIds,
+    teamCharIds,
   }
 }

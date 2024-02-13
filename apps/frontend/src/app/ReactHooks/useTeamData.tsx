@@ -47,7 +47,7 @@ export default function useTeamData(
   const [dbDirty, setDbDirty] = useForceUpdate()
   const dbDirtyDeferred = useDeferredValue(dbDirty)
   const { gender } = useDBMeta()
-  const { characterIds } = useTeam(teamId) ?? { characterIds: [] }
+  const { teamCharIds } = useTeam(teamId) ?? { teamCharIds: [] }
   const data = useMemo(
     () =>
       dbDirtyDeferred &&
@@ -76,12 +76,12 @@ export default function useTeamData(
   )
 
   useEffect(() => {
-    const unfollowTeamChars = characterIds.map((teamCharId) =>
+    const unfollowTeamChars = teamCharIds.map((teamCharId) =>
       database.teamChars.follow(teamCharId, (_k, r, v) => {
         if (r === 'update') setDbDirty()
       })
     )
-    const unfollowBuilds = characterIds.map((teamCharId) => {
+    const unfollowBuilds = teamCharIds.map((teamCharId) => {
       const teamChar = database.teamChars.get(teamCharId)
       if (!teamChar) return () => {}
       if (teamChar.buildType === 'equipped')
@@ -97,7 +97,7 @@ export default function useTeamData(
       unfollowTeamChars.forEach((unfollow) => unfollow())
       unfollowBuilds.forEach((unfollow) => unfollow())
     }
-  }, [database, characterIds, setDbDirty])
+  }, [database, teamCharIds, setDbDirty])
 
   return data
 }
@@ -113,8 +113,8 @@ function getTeamDataCalc(
   if (!teamId) return undefined
   const team = database.teams.get(teamId)
   if (!team) return undefined
-  const { characterIds } = team
-  const active = database.teamChars.get(characterIds[0])
+  const { teamCharIds } = team
+  const active = database.teamChars.get(teamCharIds[0])
   if (!active) return undefined
 
   const { teamData, teamBundle } =
@@ -146,9 +146,9 @@ export function getTeamData(
   if (!teamId) return undefined
   const team = database.teams.get(teamId)
   if (!team) return undefined
-  const { characterIds, enemyOverride, hitMode, reaction } = team
+  const { teamCharIds, enemyOverride, hitMode, reaction } = team
 
-  const teamBundleArr = characterIds.map((id, ind) => {
+  const teamBundleArr = teamCharIds.map((id, ind) => {
     const teamChar = database.teamChars.get(id)
     const {
       key: characterKey,

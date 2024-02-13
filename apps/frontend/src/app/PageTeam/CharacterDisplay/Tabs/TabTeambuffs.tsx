@@ -52,7 +52,7 @@ import { objPathValue } from '../../../Util/Util'
 
 export default function TabTeambuffs() {
   const {
-    team: { characterIds },
+    team: { teamCharIds },
     teamCharId,
   } = useContext(TeamCharacterContext)
   return (
@@ -68,7 +68,7 @@ export default function TabTeambuffs() {
           <TeamBuffDisplay />
           <ResonanceDisplay />
         </Grid>
-        {characterIds
+        {teamCharIds
           .filter((id) => id && id !== teamCharId)
           .map((id) => (
             <Grid item xs={12} md={6} lg={3} key={id}>
@@ -127,9 +127,9 @@ function ResonanceDisplay() {
   const { t } = useTranslation('page_character')
   const { data } = useContext(DataContext)
   const {
-    team: { characterIds },
+    team: { teamCharIds },
   } = useContext(TeamCharacterContext)
-  const teamCount = characterIds.reduce((a, t) => a + (t ? 1 : 0), 1)
+  const teamCount = teamCharIds.reduce((a, t) => a + (t ? 1 : 0), 1)
   return (
     <>
       <CardLight>

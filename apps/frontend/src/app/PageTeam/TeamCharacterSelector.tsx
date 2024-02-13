@@ -19,7 +19,7 @@ export default function TeamCharacterSelector({
 }) {
   const database = useDatabase()
   const team = database.teams.get(teamId)
-  const { characterIds } = team
+  const { teamCharIds } = team
   const [charSelectIndex, setCharSelectIndex] = useState(
     undefined as number | undefined
   )
@@ -27,17 +27,17 @@ export default function TeamCharacterSelector({
     if (charSelectIndex === undefined) return
     const teamCharId = database.teamChars.new(cKey)
     database.teams.set(teamId, (team) => {
-      team.characterIds[charSelectIndex] = teamCharId
+      team.teamCharIds[charSelectIndex] = teamCharId
     })
   }
   const onDel = (index: number) => () => {
-    const oldId = characterIds[index]
+    const oldId = teamCharIds[index]
     database.teams.set(teamId, (team) => {
-      team.characterIds[index] = undefined
+      team.teamCharIds[index] = undefined
     })
     database.teamChars.remove(oldId)
   }
-  const charsInTeam = characterIds.map((id) => database.teamChars.get(id).key)
+  const charsInTeam = teamCharIds.map((id) => database.teamChars.get(id).key)
   return (
     <Box>
       <Suspense fallback={false}>
@@ -53,9 +53,9 @@ export default function TeamCharacterSelector({
       <Grid container columns={4} spacing={1}>
         {range(0, 3).map((ind) => (
           <Grid item key={ind} xs={1}>
-            {characterIds[ind] ? (
+            {teamCharIds[ind] ? (
               <CharSelButton
-                teamCharId={characterIds[ind]}
+                teamCharId={teamCharIds[ind]}
                 active={currentCharIndex === ind}
                 onClick={() => setCurrentCharIndex(ind)}
                 onClose={onDel(ind)}
@@ -65,7 +65,7 @@ export default function TeamCharacterSelector({
                 onClick={() => setCharSelectIndex(ind)}
                 fullWidth
                 sx={{ height: '100%' }}
-                disabled={ind !== characterIds.length}
+                disabled={ind !== teamCharIds.length}
                 startIcon={<AddIcon />}
               >
                 Add Character
