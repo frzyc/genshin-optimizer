@@ -272,7 +272,7 @@ function CompareArtifactModal({
                 canEquip
                 editorProps={{ disableSet: true, disableSlot: true }}
               />
-              <ExcludeButton id={oldId} />
+              <ArtInclusionButton id={oldId} />
             </Box>
           )}
           {oldId && <Box display="flex" flexGrow={1} />}
@@ -292,7 +292,7 @@ function CompareArtifactModal({
               canEquip
               editorProps={{ disableSet: true, disableSlot: true }}
             />
-            {newArtifact && <ExcludeButton id={newId} />}
+            {newArtifact && <ArtInclusionButton id={newId} />}
             {newLoc &&
               newLoc !== charKeyToLocCharKey(characterKey) &&
               allowLocationsState !== 'all' && (
@@ -312,7 +312,7 @@ function CompareArtifactModal({
     </ModalWrapper>
   )
 }
-function ExcludeButton({ id }: { id: string }) {
+function ArtInclusionButton({ id }: { id: string }) {
   const { t } = useTranslation('page_character_optimize')
   const {
     character: { key: characterKey },
@@ -331,7 +331,7 @@ function ExcludeButton({ id }: { id: string }) {
     <BootstrapTooltip
       title={
         <Box>
-          <Typography>{t`excludeArt.excludeArtifactTip`}</Typography>
+          <Typography>{t`excludeArt.includeArtifactTip`}</Typography>
         </Box>
       }
       placement="top"
@@ -343,7 +343,7 @@ function ExcludeButton({ id }: { id: string }) {
         size="small"
         startIcon={excluded ? <CheckBoxOutlineBlankIcon /> : <CheckBoxIcon />}
       >
-        <span>{t`excludeArt.included`}</span>
+        {t`excludeArt.includeArtifactButton`}
       </Button>
     </BootstrapTooltip>
   )
