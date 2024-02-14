@@ -1,5 +1,7 @@
 import { CardThemed } from '@genshin-optimizer/common/ui'
+import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import { charKeyToLocGenderedCharKey } from '@genshin-optimizer/gi/consts'
+import type { Team, TeamCharacter } from '@genshin-optimizer/gi/db'
 import {
   useCharacter,
   useDBMeta,
@@ -36,6 +38,7 @@ import {
 import { getCharSheet } from '../Data/Characters'
 import useTeamData from '../ReactHooks/useTeamData'
 import useTitle from '../ReactHooks/useTitle'
+import { shouldShowDevComponents } from '../Util/Util'
 import Content from './CharacterDisplay/Content'
 import TeamCharacterSelector from './TeamCharacterSelector'
 import TeamSettingElement from './TeamSettingElement'
@@ -58,36 +61,71 @@ export default function PageTeam() {
     </Box>
   )
 }
+const tabs = ['overview', 'talent', 'teambuffs', 'optimize']
+if (shouldShowDevComponents) tabs.push('upopt')
+const tabsTc = ['overview', 'talent', 'teambuffs']
 
 function Page({ teamId, onClose }: { teamId: string; onClose?: () => void }) {
   const navigate = useNavigate()
   const { silly } = useContext(SillyContext)
   const database = useDatabase()
   const { gender } = useDBMeta()
-  const [currentCharIndex, setCurrentCharIndex] = useState(0)
+
+  // const [currentCharIndex, setCurrentCharIndex] = useState(0)
   const team = useTeam(teamId)
   const { teamCharIds } = team
+
+  // use the current URL as the "source of truth" for characterKey and tab.
   const {
-    params: { tab = 'overview', characterKey: tabCharacterKey },
-  } = useMatch({ path: '/teams/:teamId/:characterKey/:tab', end: false }) ?? {
-    params: { tab: 'overview', characterKey: '' },
+    params: { characterKey: characterKeyRaw },
+  } = useMatch({ path: '/teams/:teamId/:characterKey', end: false }) ?? {
+    params: {},
   }
-  const teamCharId = teamCharIds[currentCharIndex]
+
+  const {
+    params: { tab: tabRaw },
+  } = useMatch({ path: '/teams/:teamId/:characterKey/:tab', end: false }) ?? {
+    params: {},
+  }
+
+  // validate characterKey
+  const { characterKey, teamCharId } = useMemo(() => {
+    const teamCharId =
+      teamCharIds.find(
+        (teamCharId) =>
+          database.teamChars.get(teamCharId)?.key === characterKeyRaw
+      ) ?? teamCharIds[0]
+    const characterKey = database.teamChars.get(teamCharId)?.key
+    return { characterKey, teamCharId }
+  }, [teamCharIds, characterKeyRaw, database])
+
   const teamChar = useTeamChar(teamCharId)
-  const characterKey = teamChar?.key
+
+  // validate tab value
+  const tab = useMemo(() => {
+    if (!teamChar) return 'overview'
+    if (teamChar.buildType === 'tc') {
+      if (!tabsTc.includes(tabRaw)) return 'overview'
+    } else {
+      if (!tabs.includes(tabRaw)) return 'overview'
+    }
+    return tabRaw
+  }, [teamChar, tabRaw])
+  // Enforce validated routing for tabs and character
   useEffect(() => {
     if (!characterKey) return
-    if (tabCharacterKey !== characterKey)
+    if (characterKeyRaw !== characterKey || tab !== tabRaw)
       navigate(`/teams/${teamId}/${characterKey}/${tab}`)
-  })
-  useEffect(() => {
-    if (!tabCharacterKey) return
-    const ind = teamCharIds.find(
-      (cid) => database.teamChars.get(cid)?.key === tabCharacterKey
-    )
-    console.log({ ind, tabCharacterKey })
-    if (typeof ind === 'number') setCurrentCharIndex(ind)
-  }, [database, teamCharIds, tabCharacterKey])
+  }, [
+    database,
+    characterKey,
+    characterKeyRaw,
+    navigate,
+    teamCharIds,
+    tab,
+    teamId,
+    tabRaw,
+  ])
 
   const { t } = useTranslation([
     'sillyWisher_charNames',
@@ -107,9 +145,55 @@ function Page({ teamId, onClose }: { teamId: string; onClose?: () => void }) {
     )
   )
 
+  // Clear state when switching characters?
+  // useEffect(() => {
+  //   setChartData(undefined)
+  //   setGraphBuilds(undefined)
+  // }, [characterKey])
+
+  return (
+    <CardThemed>
+      <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
+        <Box sx={{ display: 'flex', gap: 1 }}>
+          <Box flexGrow={1}>
+            <TeamSettingElement teamId={teamId} />
+          </Box>
+          <CloseButton onClick={onClose} />
+        </Box>
+
+        <TeamCharacterSelector />
+        {characterKey && (
+          <PageContent
+            characterKey={characterKey}
+            teamCharId={teamCharId}
+            teamId={teamId}
+            team={team}
+            teamChar={teamChar}
+            tab={tab}
+          />
+        )}
+      </CardContent>
+    </CardThemed>
+  )
+}
+function PageContent({
+  characterKey,
+  teamCharId,
+  teamChar,
+  teamId,
+  team,
+  tab,
+}: {
+  characterKey: CharacterKey
+  teamCharId: string
+  teamChar: TeamCharacter
+  teamId: string
+  team: Team
+  tab: string
+}) {
+  const { gender } = useDBMeta()
   const characterSheet = getCharSheet(characterKey, gender)
   const character = useCharacter(characterKey)
-
   const teamCharacterContextValue: TeamCharacterContextObj | undefined =
     useMemo(() => {
       if (!character || !characterSheet) return undefined
@@ -141,47 +225,22 @@ function Page({ teamId, onClose }: { teamId: string; onClose?: () => void }) {
       setGraphBuilds,
     }
   }, [chartData, graphBuilds])
-
-  // Clear state when switching characters?
-  // useEffect(() => {
-  //   setChartData(undefined)
-  //   setGraphBuilds(undefined)
-  // }, [characterKey])
-
-  return (
-    <CardThemed>
-      <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
-        <Box sx={{ display: 'flex', gap: 1 }}>
-          <Box flexGrow={1}>
-            <TeamSettingElement teamId={teamId} />
-          </Box>
-          <CloseButton onClick={onClose} />
-        </Box>
-
-        <TeamCharacterSelector
-          teamId={teamId}
-          currentCharIndex={currentCharIndex}
-          setCurrentCharIndex={setCurrentCharIndex}
-        />
-        {teamCharacterContextValue &&
-        graphContextValue &&
-        CharacterContextValue ? (
-          <TeamCharacterContext.Provider value={teamCharacterContextValue}>
-            <CharacterContext.Provider value={CharacterContextValue}>
-              <DataContextWrapper>
-                <GraphContext.Provider value={graphContextValue}>
-                  <FormulaDataWrapper>
-                    <Content tab={tab} />
-                  </FormulaDataWrapper>
-                </GraphContext.Provider>
-              </DataContextWrapper>
-            </CharacterContext.Provider>
-          </TeamCharacterContext.Provider>
-        ) : (
-          <Skeleton variant="rectangular" width="100%" height={1000} />
-        )}
-      </CardContent>
-    </CardThemed>
+  return teamCharacterContextValue &&
+    graphContextValue &&
+    CharacterContextValue ? (
+    <TeamCharacterContext.Provider value={teamCharacterContextValue}>
+      <CharacterContext.Provider value={CharacterContextValue}>
+        <DataContextWrapper>
+          <GraphContext.Provider value={graphContextValue}>
+            <FormulaDataWrapper>
+              <Content tab={tab} />
+            </FormulaDataWrapper>
+          </GraphContext.Provider>
+        </DataContextWrapper>
+      </CharacterContext.Provider>
+    </TeamCharacterContext.Provider>
+  ) : (
+    <Skeleton variant="rectangular" width="100%" height={1000} />
   )
 }
 function DataContextWrapper({ children }: { children: React.ReactNode }) {

@@ -78,7 +78,7 @@ export default function EquipmentSection() {
             <ArtifactSectionCard />
           </Grid>
         )}
-        <Grid item xs={12} md={12} lg={9} xl={9} spacing={1}>
+        <Grid item xs={12} md={12} lg={9} xl={9}>
           <EquippedGrid
             weaponTypeKey={weaponTypeKey}
             weaponId={weaponId}

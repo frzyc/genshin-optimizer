@@ -4,26 +4,27 @@ import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { CharacterName } from '@genshin-optimizer/gi/ui'
 import PersonIcon from '@mui/icons-material/Person'
 import { Box, Tab, Tabs } from '@mui/material'
+import { useMatch, useNavigate } from 'react-router-dom'
 import CharIconSide from '../Components/Image/CharIconSide'
-export default function TeamCharacterSelector({
-  teamId,
-  currentCharIndex,
-  setCurrentCharIndex,
-}: {
-  teamId: string
-  currentCharIndex: number
-  setCurrentCharIndex: (ind: number) => void
-}) {
+export default function TeamCharacterSelector() {
+  const navigate = useNavigate()
   const database = useDatabase()
-  const team = database.teams.get(teamId)
+
+  const {
+    params: { teamId, tab = 'overview', characterKey: characterKeyRaw },
+  } = useMatch({ path: '/teams/:teamId/:characterKey/:tab', end: false }) ?? {
+    params: { teamId: '', tab: 'overview', characterKey: '' },
+  }
+  const team = database.teams.get(teamId) ?? { teamCharIds: [] }
   const { teamCharIds } = team
   const { gender } = useDBMeta()
+
   return (
     <Box>
       <CardThemed bgt="light">
         <Tabs
           variant="fullWidth"
-          value={currentCharIndex}
+          value={characterKeyRaw}
           sx={{
             '& .MuiTab-root:hover': {
               transition: 'background-color 0.25s ease',
@@ -43,7 +44,7 @@ export default function TeamCharacterSelector({
                   )
                 }
                 iconPosition="start"
-                value={ind}
+                value={characterKey ?? ind}
                 key={ind}
                 disabled={!teamCharIds[ind]}
                 label={
@@ -56,7 +57,9 @@ export default function TeamCharacterSelector({
                     `Character ${ind + 1}`
                   )
                 }
-                onClick={() => setCurrentCharIndex(ind)}
+                onClick={() =>
+                  navigate(`/teams/${teamId}/${characterKey}/${tab}`)
+                }
               />
             )
           })}
