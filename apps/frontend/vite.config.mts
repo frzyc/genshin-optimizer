@@ -3,6 +3,8 @@ import { resolve } from 'path'
 import { defineConfig, normalizePath } from 'vite'
 
 import react from '@vitejs/plugin-react'
+// viteStaticCopy contains some `require`, so we need to have our config as .mts instead of .ts.
+// https://vitejs.dev/guide/troubleshooting.html#this-package-is-esm-only
 import { viteStaticCopy } from 'vite-plugin-static-copy'
 import viteTsConfigPaths from 'vite-tsconfig-paths'
 
@@ -13,6 +15,7 @@ export default defineConfig({
   server: {
     port: 4200,
     host: 'localhost',
+    // Allows workers to fetch the needed .ts file
     fs: {
       allow: ['../../'],
     },
@@ -27,9 +30,12 @@ export default defineConfig({
     viteTsConfigPaths({
       root: '../../',
     }),
+    // Enables proper hot module reloading
     react({
       include: '**/*.tsx',
     }),
+    // Nx executor for vite does not support `assets` prop for copying files.
+    // So we need to do it with this plugin. This works for both `build` and `serve`.
     viteStaticCopy({
       targets: [
         {
@@ -47,6 +53,7 @@ export default defineConfig({
           dest: 'assets',
         },
       ],
+      // Force page to reload if we change any of the above files
       watch: {
         reloadPageOnChange: true,
       },

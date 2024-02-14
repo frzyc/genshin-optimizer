@@ -11,30 +11,7 @@
         "outputPath": "dist/apps/frontend",
         "index": "apps/frontend/index.html",
         "main": "apps/frontend/src/main.tsx",
-        "tsConfig": "apps/frontend/tsconfig.app.json",
-        "assets": [
-          "apps/frontend/favicon.ico",
-          "apps/frontend/logo192.png",
-          "apps/frontend/logo512.png",
-          "apps/frontend/src/manifest.json",
-          "apps/frontend/src/robots.txt",
-          "apps/frontend/src/assets",
-          {
-            "input": "libs/gi/localization/assets",
-            "glob": "**/*",
-            "output": "assets"
-          },
-          {
-            "input": "libs/gi/dm-localization/assets",
-            "glob": "**/*",
-            "output": "assets"
-          },
-          {
-            "input": "libs/gi/silly-wisher-names/assets",
-            "glob": "**/*",
-            "output": "assets"
-          }
-        ]
+        "tsConfig": "apps/frontend/tsconfig.app.json"
       }
     },
     "serve": {
