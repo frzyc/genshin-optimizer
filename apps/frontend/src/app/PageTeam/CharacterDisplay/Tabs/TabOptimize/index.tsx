@@ -82,9 +82,8 @@ import { mergeData, uiDataForTeam } from '../../../../Formula/api'
 import { optimize } from '../../../../Formula/optimization'
 import type { NumNode } from '../../../../Formula/type'
 import type { UIData } from '../../../../Formula/uiData'
-import { getTeamData } from '../../../../ReactHooks/useCharData'
 import useGlobalError from '../../../../ReactHooks/useGlobalError'
-import useTeamData from '../../../../ReactHooks/useTeamData'
+import useTeamData, { getTeamData } from '../../../../ReactHooks/useTeamData'
 import type { OptProblemInput } from '../../../../Solver'
 import { GOSolver } from '../../../../Solver/GOSolver/GOSolver'
 import type { Build } from '../../../../Solver/common'
@@ -316,7 +315,8 @@ export default function TabBuild() {
 
     const teamData = getTeamData(
       database,
-      characterKey,
+      teamId,
+      teamCharId,
       mainStatAssumptionLevel,
       []
     )
@@ -470,6 +470,8 @@ export default function TabBuild() {
       })
     }
   }, [
+    teamCharId,
+    teamId,
     buildSetting,
     characterKey,
     filteredArts,
