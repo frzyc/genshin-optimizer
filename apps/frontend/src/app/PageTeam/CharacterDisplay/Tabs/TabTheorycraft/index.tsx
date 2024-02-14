@@ -25,6 +25,7 @@ import { useCallback, useContext, useMemo, useRef, useState } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
 import { ArtifactStatWithUnit } from '../../../../Components/Artifact/ArtifactStatKeyDisplay'
 import CardLight from '../../../../Components/Card/CardLight'
+import CharacterProfileCard from '../../../../Components/Character/CharacterProfileCard'
 import StatDisplayComponent from '../../../../Components/Character/StatDisplayComponent'
 import CustomNumberInput from '../../../../Components/CustomNumberInput'
 import SolidToggleButtonGroup from '../../../../Components/SolidToggleButtonGroup'
@@ -252,6 +253,33 @@ export default function TabTheorycraft() {
   return (
     <BuildTcContext.Provider value={buildTCContextObj}>
       <Stack spacing={1}>
+        <Box>
+          <Grid container spacing={1} sx={{ justifyContent: 'center' }}>
+            <Grid item xs={8} sm={5} md={4} lg={2.3}>
+              <CharacterProfileCard />
+            </Grid>
+            <Grid
+              item
+              xs={12}
+              sm={7}
+              md={8}
+              lg={9.7}
+              sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}
+            >
+              <CardLight sx={{ flexGrow: 1, p: 1 }}>
+                <OptimizationTargetContext.Provider value={optimizationTarget}>
+                  {dataContextValueWithOld ? (
+                    <DataContext.Provider value={dataContextValueWithOld}>
+                      <StatDisplayComponent />
+                    </DataContext.Provider>
+                  ) : (
+                    <Skeleton variant="rectangular" width="100%" height={500} />
+                  )}
+                </OptimizationTargetContext.Provider>
+              </CardLight>
+            </Grid>
+          </Grid>
+        </Box>
         <CardLight>
           <Box sx={{ display: 'flex', gap: 1, p: 1 }}>
             <Box sx={{ flexGrow: 1, display: 'flex', gap: 1 }}>
@@ -412,17 +440,6 @@ export default function TabTheorycraft() {
         ) : (
           <Skeleton variant="rectangular" width="100%" height={500} />
         )}
-        <CardLight sx={{ flexGrow: 1, p: 1 }}>
-          <OptimizationTargetContext.Provider value={optimizationTarget}>
-            {dataContextValueWithOld ? (
-              <DataContext.Provider value={dataContextValueWithOld}>
-                <StatDisplayComponent />
-              </DataContext.Provider>
-            ) : (
-              <Skeleton variant="rectangular" width="100%" height={500} />
-            )}
-          </OptimizationTargetContext.Provider>
-        </CardLight>
       </Stack>
     </BuildTcContext.Provider>
   )

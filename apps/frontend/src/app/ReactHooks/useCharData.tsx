@@ -120,7 +120,7 @@ export function getTeamDataCalc(
     if (cache) return cache as TeamData
   }
   const { teamData, teamBundle } =
-    getTeamData(
+    getCharData(
       database,
       characterKey,
       mainStatAssumptionLevel,
@@ -142,7 +142,7 @@ export function getTeamDataCalc(
 /**
  * This is now used more for getting basic stat for a single char with some basic assumptions
  */
-export function getTeamData(
+function getCharData(
   database: ArtCharDatabase,
   characterKey: CharacterKey | '',
   mainStatAssumptionLevel = 0,

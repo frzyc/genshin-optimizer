@@ -129,7 +129,7 @@ function ResonanceDisplay() {
   const {
     team: { teamCharIds },
   } = useContext(TeamCharacterContext)
-  const teamCount = teamCharIds.reduce((a, t) => a + (t ? 1 : 0), 1)
+  const teamCount = teamCharIds.reduce((a, t) => a + (t ? 1 : 0), 0)
   return (
     <>
       <CardLight>
