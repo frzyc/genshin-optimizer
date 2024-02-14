@@ -71,7 +71,10 @@
     },
     "lint": {},
     "test": {
-      "executor": "@nx/vite:test"
+      "executor": "@nx/vite:test",
+      "options": {
+        "config": "apps/frontend/vitest.config.mts"
+      }
     }
   },
   "tags": [],
