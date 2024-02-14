@@ -8,9 +8,9 @@ import condensed from './Item_Condensed_Resin.png'
 import fragile from './Item_Fragile_Resin.png'
 
 //EXP BOOKS
-import experience from "./Item_Adventurer's_Experience.png"
-import wit from "./Item_Hero's_Wit.png"
-import advice from "./Item_Wanderer's_Advice.png"
+import experience from './Item_Adventurers_Experience.png'
+import wit from './Item_Heros_Wit.png'
+import advice from './Item_Wanderers_Advice.png'
 
 import team1 from './icon_team_1.png'
 import team2 from './icon_team_2.png'
