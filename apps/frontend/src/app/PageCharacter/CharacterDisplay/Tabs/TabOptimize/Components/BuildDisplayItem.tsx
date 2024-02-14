@@ -12,10 +12,8 @@ import type {
 import { allArtifactSetExclusionKeys } from '@genshin-optimizer/gi/db'
 import { useArtifact, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { Checkroom, ChevronRight } from '@mui/icons-material'
-import BlockIcon from '@mui/icons-material/Block'
 import CheckBoxIcon from '@mui/icons-material/CheckBox'
 import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank'
-import ShowChartIcon from '@mui/icons-material/ShowChart'
 import {
   Box,
   Button,
@@ -345,9 +343,7 @@ function ExcludeButton({ id }: { id: string }) {
         size="small"
         startIcon={excluded ? <CheckBoxOutlineBlankIcon /> : <CheckBoxIcon />}
       >
-        <span>
-          {t`excludeArt.included`}
-        </span>
+        <span>{t`excludeArt.included`}</span>
       </Button>
     </BootstrapTooltip>
   )
