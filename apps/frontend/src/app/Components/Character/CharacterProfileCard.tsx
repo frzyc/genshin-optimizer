@@ -16,7 +16,7 @@ import {
   Chip,
   Grid,
   IconButton,
-  Typography
+  Typography,
 } from '@mui/material'
 import { useContext } from 'react'
 import { useNavigate } from 'react-router-dom'

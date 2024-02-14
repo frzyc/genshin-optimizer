@@ -1,16 +1,10 @@
 import { type ArtifactSlotKey } from '@genshin-optimizer/gi/consts'
 import { getCharData } from '@genshin-optimizer/gi/stats'
-import {
-  Grid
-} from '@mui/material'
-import {
-  useContext
-} from 'react'
+import { Grid } from '@mui/material'
+import { useContext } from 'react'
 import ArtifactCardNano from '../../../Components/Artifact/ArtifactCardNano'
 import WeaponCardNano from '../../../Components/Weapon/WeaponCardNano'
 import { TeamCharacterContext } from '../../../Context/TeamCharacterContext'
-
-
 
 export default function BuildEquip({
   weaponId,

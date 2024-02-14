@@ -18,7 +18,7 @@ import {
   CardHeader,
   Divider,
   TextField,
-  Typography
+  Typography,
 } from '@mui/material'
 import { Suspense, useDeferredValue, useEffect, useState } from 'react'
 import CharacterSelectionModal from '../Components/Character/CharacterSelectionModal'
@@ -167,9 +167,7 @@ function TeamCharacterSelector({ teamId }: { teamId: string }) {
     <>
       <Suspense fallback={false}>
         <CharacterSelectionModal
-          filter={(c) =>
-            !!database.chars.get(c?.key) && charKeyAtIndex !== c?.key
-          }
+          filter={(c) => charKeyAtIndex !== c?.key}
           show={charSelectIndex !== undefined}
           onHide={() => setCharSelectIndex(undefined)}
           onSelect={onSelect}

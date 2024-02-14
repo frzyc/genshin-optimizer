@@ -15,9 +15,7 @@ import {
   charKeyToLocGenderedCharKey,
 } from '@genshin-optimizer/gi/consts'
 import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
-import {
-  DeleteForever
-} from '@mui/icons-material'
+import { DeleteForever } from '@mui/icons-material'
 import AddIcon from '@mui/icons-material/Add'
 import {
   Box,
@@ -26,7 +24,7 @@ import {
   Divider,
   Grid,
   Skeleton,
-  TextField
+  TextField,
 } from '@mui/material'
 import type { ChangeEvent } from 'react'
 import {

@@ -1,9 +1,5 @@
 import { allArtifactSlotKeys } from '@genshin-optimizer/gi/consts'
-import {
-  Box,
-  Grid,
-  Stack
-} from '@mui/material'
+import { Box, Grid, Stack } from '@mui/material'
 import { useCallback, useContext, useRef } from 'react'
 import ArtifactCardNano from '../../../../Components/Artifact/ArtifactCardNano'
 import CardLight from '../../../../Components/Card/CardLight'
