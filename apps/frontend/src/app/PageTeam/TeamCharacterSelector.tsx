@@ -1,13 +1,10 @@
+import { CardThemed } from '@genshin-optimizer/common/ui'
 import { range } from '@genshin-optimizer/common/util'
-import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { CharacterName } from '@genshin-optimizer/gi/ui'
-import AddIcon from '@mui/icons-material/Add'
-import CloseIcon from '@mui/icons-material/Close'
-import { Box, Button, ButtonGroup, Grid } from '@mui/material'
-import { Suspense, useState } from 'react'
-import CharacterSelectionModal from '../Components/Character/CharacterSelectionModal'
+import { Box, Tab, Tabs } from '@mui/material'
 import CharIconSide from '../Components/Image/CharIconSide'
+import PersonIcon from '@mui/icons-material/Person'
 export default function TeamCharacterSelector({
   teamId,
   currentCharIndex,
@@ -20,95 +17,51 @@ export default function TeamCharacterSelector({
   const database = useDatabase()
   const team = database.teams.get(teamId)
   const { teamCharIds } = team
-  const [charSelectIndex, setCharSelectIndex] = useState(
-    undefined as number | undefined
-  )
-  const onSelect = (cKey: CharacterKey) => {
-    if (charSelectIndex === undefined) return
-    const teamCharId = database.teamChars.new(cKey)
-    database.teams.set(teamId, (team) => {
-      team.teamCharIds[charSelectIndex] = teamCharId
-    })
-  }
-  const onDel = (index: number) => () => {
-    const oldId = teamCharIds[index]
-    database.teams.set(teamId, (team) => {
-      team.teamCharIds[index] = undefined
-    })
-    database.teamChars.remove(oldId)
-  }
-  const charsInTeam = teamCharIds.map((id) => database.teamChars.get(id).key)
-  return (
-    <Box>
-      <Suspense fallback={false}>
-        <CharacterSelectionModal
-          filter={(c) =>
-            !!database.chars.get(c?.key) && !charsInTeam.includes(c?.key)
-          }
-          show={charSelectIndex !== undefined}
-          onHide={() => setCharSelectIndex(undefined)}
-          onSelect={onSelect}
-        />
-      </Suspense>
-      <Grid container columns={4} spacing={1}>
-        {range(0, 3).map((ind) => (
-          <Grid item key={ind} xs={1}>
-            {teamCharIds[ind] ? (
-              <CharSelButton
-                teamCharId={teamCharIds[ind]}
-                active={currentCharIndex === ind}
-                onClick={() => setCurrentCharIndex(ind)}
-                onClose={onDel(ind)}
-              />
-            ) : (
-              <Button
-                onClick={() => setCharSelectIndex(ind)}
-                fullWidth
-                sx={{ height: '100%' }}
-                disabled={ind !== teamCharIds.length}
-                startIcon={<AddIcon />}
-              >
-                Add Character
-              </Button>
-            )}
-          </Grid>
-        ))}
-      </Grid>
-    </Box>
-  )
-}
-function CharSelButton({
-  teamCharId,
-  onClick,
-  onClose,
-  active = false,
-}: {
-  teamCharId: string
-  onClick: () => void
-  onClose: () => void
-  active: boolean
-}) {
-  const database = useDatabase()
-  const { key: characterKey } = database.teamChars.get(teamCharId)
   const { gender } = useDBMeta()
   return (
-    <ButtonGroup fullWidth sx={{ height: '100%' }}>
-      <Button
-        onClick={onClick}
-        sx={{ height: '100%' }}
-        color={active ? 'success' : 'primary'}
-        startIcon={<CharIconSide characterKey={characterKey} />}
-      >
-        <CharacterName characterKey={characterKey} gender={gender} />
-      </Button>
-      <Button
-        onClick={onClose}
-        color="error"
-        sx={{ flexBasis: '0', height: '100%' }}
-        size="small"
-      >
-        <CloseIcon />
-      </Button>
-    </ButtonGroup>
+    <Box>
+      <CardThemed bgt="light">
+        <Tabs
+          variant="fullWidth"
+          value={currentCharIndex}
+          sx={{
+            '& .MuiTab-root:hover': {
+              transition: 'background-color 0.25s ease',
+              backgroundColor: 'rgba(255,255,255,0.1)',
+            },
+          }}
+        >
+          {range(0, 3).map((ind) => {
+            const characterKey = database.teamChars.get(teamCharIds[ind])?.key
+            return (
+              <Tab
+                icon={
+                  characterKey ? (
+                    <CharIconSide characterKey={characterKey} sideMargin />
+                  ) : (
+                    <PersonIcon />
+                  )
+                }
+                iconPosition="start"
+                value={ind}
+                key={ind}
+                disabled={!teamCharIds[ind]}
+                label={
+                  characterKey ? (
+                    <CharacterName
+                      characterKey={characterKey}
+                      gender={gender}
+                    />
+                  ) : (
+                    `Character ${ind + 1}`
+                  )
+                }
+                onClick={() => setCurrentCharIndex(ind)}
+              />
+            )
+          })}
+        </Tabs>
+      </CardThemed>
+    </Box>
   )
 }

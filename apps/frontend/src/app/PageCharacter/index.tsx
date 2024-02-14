@@ -16,11 +16,7 @@ import {
 } from '@genshin-optimizer/gi/consts'
 import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import {
-  DeleteForever,
-  FactCheck,
-  Groups,
-  Science,
-  TrendingUp,
+  DeleteForever
 } from '@mui/icons-material'
 import AddIcon from '@mui/icons-material/Add'
 import {
@@ -29,10 +25,8 @@ import {
   CardContent,
   Divider,
   Grid,
-  IconButton,
   Skeleton,
-  TextField,
-  Typography,
+  TextField
 } from '@mui/material'
 import type { ChangeEvent } from 'react'
 import {
@@ -48,7 +42,6 @@ import {
 import ReactGA from 'react-ga4'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
-import BootstrapTooltip from '../Components/BootstrapTooltip'
 import CardDark from '../Components/Card/CardDark'
 import CharacterCard from '../Components/Character/CharacterCard'
 import CharacterSelectionModal from '../Components/Character/CharacterSelectionModal'

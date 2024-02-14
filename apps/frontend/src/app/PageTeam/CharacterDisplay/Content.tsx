@@ -109,9 +109,6 @@ function TabNav({
   characterKey: CharacterKey
 }) {
   const { t } = useTranslation('page_character')
-  const tabSx = shouldShowDevComponents
-    ? { minWidth: '16.6%' }
-    : { minWidth: '20%' }
   const {
     teamChar: { buildType, buildTcId },
   } = useContext(TeamCharacterContext)
@@ -119,7 +116,7 @@ function TabNav({
   return (
     <Tabs
       value={tab}
-      variant="scrollable"
+      variant="fullWidth"
       allowScrollButtonsMobile
       sx={{
         '& .MuiTab-root:hover': {
@@ -130,7 +127,6 @@ function TabNav({
     >
       {isTCBuild ? (
         <Tab
-          sx={tabSx}
           value="overview"
           label={t('tabs.theorycraft')}
           icon={<Science />}
@@ -139,7 +135,6 @@ function TabNav({
         />
       ) : (
         <Tab
-          sx={tabSx}
           value="overview"
           label={t('tabs.overview')}
           icon={<Person />}
@@ -148,7 +143,6 @@ function TabNav({
         />
       )}
       <Tab
-        sx={tabSx}
         value="talent"
         label={t('tabs.talent')}
         icon={<FactCheck />}
@@ -156,7 +150,6 @@ function TabNav({
         to={`${characterKey}/talent`}
       />
       <Tab
-        sx={tabSx}
         value="teambuffs"
         label={t('tabs.teambuffs')}
         icon={<Groups />}
@@ -165,7 +158,6 @@ function TabNav({
       />
       {!isTCBuild && (
         <Tab
-          sx={tabSx}
           value="optimize"
           label={t('tabs.optimize')}
           icon={<TrendingUp />}
@@ -176,7 +168,6 @@ function TabNav({
 
       {!isTCBuild && shouldShowDevComponents && (
         <Tab
-          sx={tabSx}
           value="upopt"
           label={t('tabs.upgradeopt')}
           icon={<TrendingUp />}

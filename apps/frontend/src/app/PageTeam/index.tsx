@@ -36,7 +36,7 @@ import {
 import { getCharSheet } from '../Data/Characters'
 import useTeamData from '../ReactHooks/useTeamData'
 import useTitle from '../ReactHooks/useTitle'
-import Content from './CharacterDisplay/Context'
+import Content from './CharacterDisplay/Content'
 import TeamCharacterSelector from './TeamCharacterSelector'
 import TeamSettingElement from './TeamSettingElement'
 
