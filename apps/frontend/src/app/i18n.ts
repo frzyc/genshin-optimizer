@@ -42,7 +42,6 @@ i18n
     // Use English strings by default, if the current language does not include
     // the specified string.
     fallbackLng: 'en',
-    debug: true,
     // fallbackLng: 'dev', // Switch to this to force the fallback value on missing strings.
 
     // List all translation namespaces.

@@ -10,7 +10,6 @@
       "options": {
         "outputPath": "dist/apps/frontend",
         "index": "apps/frontend/index.html",
-        "baseHref": "/",
         "main": "apps/frontend/src/main.tsx",
         "tsConfig": "apps/frontend/tsconfig.app.json",
         "assets": [
@@ -47,12 +46,10 @@
       },
       "configurations": {
         "development": {
-          "buildTarget": "frontend:build-vite:development",
-          "hmr": false
+          "buildTarget": "frontend:build-vite:development"
         },
         "production": {
-          "buildTarget": "frontend:build-vite:production",
-          "hmr": false
+          "buildTarget": "frontend:build-vite:production"
         }
       },
       "dependsOn": ["^gen-file"]

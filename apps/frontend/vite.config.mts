@@ -2,6 +2,7 @@
 import { resolve } from 'path'
 import { defineConfig, normalizePath } from 'vite'
 
+import react from '@vitejs/plugin-react'
 import { viteStaticCopy } from 'vite-plugin-static-copy'
 import viteTsConfigPaths from 'vite-tsconfig-paths'
 
@@ -26,13 +27,29 @@ export default defineConfig({
     viteTsConfigPaths({
       root: '../../',
     }),
+    react({
+      include: '**/*.tsx',
+    }),
     viteStaticCopy({
       targets: [
         {
           src: normalizePath(resolve('libs/gi/localization/assets/locales')),
           dest: 'assets',
         },
+        {
+          src: normalizePath(resolve('libs/gi/dm-localization/assets/locales')),
+          dest: 'assets',
+        },
+        {
+          src: normalizePath(
+            resolve('libs/gi/silly-wisher-names/assets/locales')
+          ),
+          dest: 'assets',
+        },
       ],
+      watch: {
+        reloadPageOnChange: true,
+      },
     }),
   ],
 
