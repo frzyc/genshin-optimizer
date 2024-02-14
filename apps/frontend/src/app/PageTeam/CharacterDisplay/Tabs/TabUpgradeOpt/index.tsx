@@ -51,7 +51,6 @@ import { TeamCharacterContext } from '../../../../Context/TeamCharacterContext'
 import { mergeData, uiDataForTeam } from '../../../../Formula/api'
 import { optimize } from '../../../../Formula/optimization'
 import type { NumNode } from '../../../../Formula/type'
-import { getTeamData } from '../../../../ReactHooks/useCharData'
 import type { DynStat } from '../../../../Solver/common'
 import { objPathValue, shouldShowDevComponents } from '../../../../Util/Util'
 import MainStatSelectionCard from '../TabOptimize/Components/MainStatSelectionCard'
@@ -68,12 +67,14 @@ import {
 } from '../../../../Components/Character/CharacterCard/CharacterCardHeader'
 import { CharacterCardStats } from '../../../../Components/Character/CharacterCard/CharacterCardStats'
 import NoArtWarning from '../../../../Components/NoArtWarning'
-import useTeamData from '../../../../ReactHooks/useTeamData'
+import useTeamData, { getTeamData } from '../../../../ReactHooks/useTeamData'
 import type { UpOptBuild } from './upOpt'
 import { UpOptCalculator, toArtifact } from './upOpt'
 
 export default function TabUpopt() {
   const {
+    teamId,
+    teamCharId,
     teamChar: { optConfigId, key: characterKey },
   } = useContext(TeamCharacterContext)
   const database = useDatabase()
@@ -207,7 +208,7 @@ export default function TabUpopt() {
 
     if (!shouldShowDevComponents) return
     if (!characterKey || !optimizationTarget) return
-    const teamData = getTeamData(database, characterKey, 0, [])
+    const teamData = getTeamData(database, teamId, teamCharId, 0, [])
     if (!teamData) return
     const workerData = uiDataForTeam(teamData.teamData, gender, characterKey)[
       characterKey
