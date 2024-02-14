@@ -43,8 +43,8 @@ const Wrapper = styled(Button)(({ theme }) => ({
   },
 }))
 
-function handleOnFocus(this: GlobalEventHandlers/* , e: FocusEvent */) {
-  (this as HTMLInputElement).select()
+function handleOnFocus(this: GlobalEventHandlers /* , e: FocusEvent */) {
+  ;(this as HTMLInputElement).select()
 }
 // wrap the Input with this when using the input in a buttongroup
 /**
@@ -103,7 +103,7 @@ export default function CustomNumberInput({
   useEffect(() => {
     setDisplay(value.toString())
     if (inputRef.current) {
-      inputRef.current.onfocus = disabled? null: handleOnFocus
+      inputRef.current.onfocus = disabled ? null : handleOnFocus
     }
   }, [value, setDisplay, disabled]) // update value on value change
 
