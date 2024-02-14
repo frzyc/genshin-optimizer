@@ -57,7 +57,7 @@ i18n
 
     backend: {
       // Path to load localization data from.
-      loadPath: '/assets/locales/{{lng}}/{{ns}}.json',
+      loadPath: './assets/locales/{{lng}}/{{ns}}.json',
     },
     interpolation: {
       escapeValue: false, //react does interlopation already
