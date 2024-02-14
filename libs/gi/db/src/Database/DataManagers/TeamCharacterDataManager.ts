@@ -14,6 +14,7 @@ import {
   type CharacterKey,
   type InfusionAuraElementKey,
   type MultiOptHitModeKey,
+  charKeyToLocCharKey,
 } from '@genshin-optimizer/gi/consts'
 import type { ICachedArtifact, ICachedWeapon } from '../../Interfaces'
 import type { InputPremodKey } from '../../legacy/keys'
@@ -135,7 +136,7 @@ export class TeamCharacterDataManager extends DataManager<
   getLoadoutWeapon(teamCharId: string): ICachedWeapon {
     const teamChar = this.get(teamCharId)
     if (!teamChar) return defaultInitialWeapon()
-    const { key: characterKey, buildType, buildId } = teamChar
+    const { key: characterKey, buildType, buildId, buildTcId } = teamChar
     switch (buildType) {
       case 'equipped': {
         const char = this.database.chars.get(characterKey)
@@ -152,7 +153,16 @@ export class TeamCharacterDataManager extends DataManager<
           this.database.weapons.get(build.weaponId) ?? defaultInitialWeapon()
         )
       }
-      //TODO case 'TC'
+      case 'tc': {
+        const buildTc = this.database.buildTcs.get(buildTcId)
+        if (!buildTc) return defaultInitialWeapon()
+        return {
+          ...buildTc.weapon,
+          location: charKeyToLocCharKey(teamChar.key),
+          lock: false,
+          id: 'invalid',
+        }
+      }
     }
     return defaultInitialWeapon()
   }

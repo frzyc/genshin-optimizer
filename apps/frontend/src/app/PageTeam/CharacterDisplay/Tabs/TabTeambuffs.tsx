@@ -1,12 +1,15 @@
-import { CardThemed } from '@genshin-optimizer/common/ui'
+import { CardThemed, SqBadge } from '@genshin-optimizer/common/ui'
+import { artifactAsset } from '@genshin-optimizer/gi/assets'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import { charKeyToLocGenderedCharKey } from '@genshin-optimizer/gi/consts'
 import {
+  useBuildTc,
   useCharacter,
   useDBMeta,
   useDatabase,
   useTeamChar,
 } from '@genshin-optimizer/gi/db-ui'
+import { ArtifactSetName } from '@genshin-optimizer/gi/ui'
 import { PersonAdd } from '@mui/icons-material'
 import type { AutocompleteProps } from '@mui/material'
 import {
@@ -33,8 +36,9 @@ import { NodeFieldDisplay } from '../../../Components/FieldDisplay'
 import type { GeneralAutocompleteOption } from '../../../Components/GeneralAutocomplete'
 import { GeneralAutocomplete } from '../../../Components/GeneralAutocomplete'
 import CharIconSide from '../../../Components/Image/CharIconSide'
+import ImgIcon from '../../../Components/Image/ImgIcon'
 import { InfoTooltipInline } from '../../../Components/InfoTooltip'
-import WeaponFullCard from '../../../Components/Weapon/WeaponFullCard'
+import { WeaponFullCardObj } from '../../../Components/Weapon/WeaponFullCard'
 import type { CharacterContextObj } from '../../../Context/CharacterContext'
 import { CharacterContext } from '../../../Context/CharacterContext'
 import type { dataContextObj } from '../../../Context/DataContext'
@@ -265,7 +269,7 @@ function TeammateDisplay({ teamCharId }: { teamCharId: string }) {
                           flexGrow: 1,
                         }}
                       >
-                        <CharacterCardEquipmentRow hideWeapon />
+                        <EquipmentRow />
                         <CharArtifactCondDisplay />
                         <CharacterCardWeaponFull />
                         <CharWeaponCondDisplay />
@@ -282,13 +286,57 @@ function TeammateDisplay({ teamCharId }: { teamCharId: string }) {
     </CardLight>
   )
 }
+function EquipmentRow() {
+  const {
+    teamChar: { buildType },
+  } = useContext(TeamCharacterContext)
+  if (buildType !== 'tc') return <CharacterCardEquipmentRow hideWeapon />
+  else return <TcEquipmentRow />
+}
+function TcEquipmentRow() {
+  const {
+    teamChar: { buildTcId },
+  } = useContext(TeamCharacterContext)
+  const {
+    artifact: { sets },
+  } = useBuildTc(buildTcId)
+  return (
+    <CardThemed sx={{ flexGrow: 1 }}>
+      <Box
+        sx={{
+          p: 1,
+          display: 'flex',
+          flexDirection: 'column',
+          gap: 1,
+        }}
+      >
+        <SqBadge color="info">TC Loadout</SqBadge>
+        {Object.entries(sets).map(([setKey, number]) => (
+          <Box
+            key={setKey}
+            sx={{ display: 'flex', alignItems: 'center', gap: 1 }}
+          >
+            <ImgIcon size={2} src={artifactAsset(setKey, 'flower')} />
+            <span>
+              <ArtifactSetName setKey={setKey} />
+            </span>
+            <SqBadge>x{number}</SqBadge>
+          </Box>
+        ))}
+      </Box>
+    </CardThemed>
+  )
+}
 function CharacterCardWeaponFull() {
   const { data } = useContext(DataContext)
-  return (
-    <WeaponFullCard
-      weaponId={data.get(input.weapon.id).value?.toString() ?? ''}
-    />
-  )
+  const { teamCharId } = useContext(TeamCharacterContext)
+  const database = useDatabase()
+  const weapon = useMemo(() => {
+    const weaponId = data.get(input.weapon.id).value?.toString() ?? ''
+    if (weaponId) return database.weapons.get(weaponId)
+    else return database.teamChars.getLoadoutWeapon(teamCharId) // TC build
+  }, [database, data, teamCharId])
+  return <WeaponFullCardObj weapon={weapon} />
 }
 function CharArtifactCondDisplay() {
   const { data } = useContext(DataContext)
