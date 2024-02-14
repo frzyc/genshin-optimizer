@@ -85,7 +85,90 @@ export class TeamCharacterDataManager extends DataManager<
     // )
   }
   override validate(obj: unknown): TeamCharacter | undefined {
-    return validateTeamCharater(obj, this.database)
+    const { key: characterKey } = obj as TeamCharacter
+    let {
+      customMultiTargets,
+      conditional,
+      bonusStats,
+      infusionAura,
+
+      buildType,
+      buildId,
+      buildIds,
+      buildTcId,
+      buildTcIds,
+      optConfigId,
+    } = obj as TeamCharacter
+    if (!allCharacterKeys.includes(characterKey)) return undefined // non-recoverable
+
+    // create a character if it doesnt exist
+    if (!this.database.chars.keys.includes(characterKey))
+      this.database.chars.getWithInitWeapon(characterKey)
+    if (!customMultiTargets) customMultiTargets = []
+    customMultiTargets = customMultiTargets
+      .map((cmt) => validateCustomMultiTarget(cmt))
+      .filter((t) => t) as CustomMultiTarget[]
+
+    if (!conditional) conditional = {}
+
+    // TODO: validate bonusStats
+    if (
+      typeof bonusStats !== 'object' ||
+      !Object.entries(bonusStats).map(([_, num]) => typeof num === 'number')
+    )
+      bonusStats = {}
+
+    if (
+      infusionAura &&
+      !allInfusionAuraElementKeys.includes(
+        infusionAura as InfusionAuraElementKey
+      )
+    )
+      infusionAura = undefined
+
+    if (!buildTypeKeys.includes(buildType)) buildType = 'equipped'
+
+    if (
+      typeof buildId !== 'string' ||
+      !this.database.builds.keys.includes(buildId)
+    )
+      buildId = ''
+    if (!Array.isArray(buildIds)) buildIds = []
+    buildIds = buildIds.filter((buildId) =>
+      this.database.builds.keys.includes(buildId)
+    )
+
+    if (
+      typeof buildTcId !== 'string' ||
+      !this.database.buildTcs.keys.includes(buildTcId)
+    )
+      buildTcId = ''
+    if (!Array.isArray(buildTcIds)) buildTcIds = []
+    buildTcIds = buildTcIds.filter((buildTcId) =>
+      this.database.buildTcs.keys.includes(buildTcId)
+    )
+    if (
+      (!buildId && !buildTcId) ||
+      (buildType === 'real' && !buildId) ||
+      (buildType === 'tc' && !buildTcId)
+    )
+      buildType = 'equipped'
+
+    if (!optConfigId || !this.database.optConfigs.keys.includes(optConfigId))
+      optConfigId = this.database.optConfigs.new()
+    return {
+      key: characterKey,
+      customMultiTargets,
+      conditional,
+      bonusStats,
+      infusionAura,
+      buildType,
+      buildId,
+      buildIds,
+      buildTcId,
+      buildTcIds,
+      optConfigId,
+    }
   }
 
   new(key: CharacterKey): string {
@@ -190,86 +273,41 @@ export class TeamCharacterDataManager extends DataManager<
     }
     return objKeyMap(allArtifactSlotKeys, () => undefined)
   }
-}
+  export(teamCharId: string): object {
+    const teamChar = this.database.teamChars.get(teamCharId)
+    if (!teamChar) return {}
+    const {
+      buildType,
+      buildId,
+      buildIds,
+      buildTcId,
+      buildTcIds,
+      optConfigId,
+      ...rest
+    } = teamChar
+    return {
+      ...rest,
+      buildTcs: buildTcIds.map((buildTcId) =>
+        this.database.buildTcs.export(buildTcId)
+      ),
+      optConfig: this.database.optConfigs.export(optConfigId),
+    }
+  }
+  import(data: object): string {
+    const { buildTcs, optConfig, ...rest } = data as TeamCharacter & {
+      buildTcs: object[]
+      optConfig: object
+    }
+    const id = this.generateKey()
 
-function validateTeamCharater(
-  obj: unknown = {},
-  database: ArtCharDatabase
-): TeamCharacter | undefined {
-  const { key: characterKey } = obj as TeamCharacter
-  let {
-    customMultiTargets,
-    conditional,
-    bonusStats,
-    infusionAura,
-
-    buildType,
-    buildId,
-    buildIds,
-    buildTcId,
-    buildTcIds,
-    optConfigId,
-  } = obj as TeamCharacter
-  if (!allCharacterKeys.includes(characterKey)) return undefined // non-recoverable
-
-  if (!customMultiTargets) customMultiTargets = []
-  customMultiTargets = customMultiTargets
-    .map((cmt) => validateCustomMultiTarget(cmt))
-    .filter((t) => t) as CustomMultiTarget[]
-
-  if (!conditional) conditional = {}
-
-  // TODO: validate bonusStats
-  if (
-    typeof bonusStats !== 'object' ||
-    !Object.entries(bonusStats).map(([_, num]) => typeof num === 'number')
-  )
-    bonusStats = {}
-
-  if (
-    infusionAura &&
-    !allInfusionAuraElementKeys.includes(infusionAura as InfusionAuraElementKey)
-  )
-    infusionAura = undefined
-
-  if (!buildTypeKeys.includes(buildType)) buildType = 'equipped'
-
-  if (typeof buildId !== 'string' || !database.builds.keys.includes(buildId))
-    buildId = ''
-  if (!Array.isArray(buildIds)) buildIds = []
-  buildIds = buildIds.filter((buildId) =>
-    database.builds.keys.includes(buildId)
-  )
-
-  if (
-    typeof buildTcId !== 'string' ||
-    !database.buildTcs.keys.includes(buildTcId)
-  )
-    buildTcId = ''
-  if (!Array.isArray(buildTcIds)) buildTcIds = []
-  buildTcIds = buildTcIds.filter((buildTcId) =>
-    database.buildTcs.keys.includes(buildTcId)
-  )
-  if (
-    (!buildId && !buildTcId) ||
-    (buildType === 'real' && !buildId) ||
-    (buildType === 'tc' && !buildTcId)
-  )
-    buildType = 'equipped'
-
-  if (!optConfigId || !database.optConfigs.keys.includes(optConfigId))
-    optConfigId = database.optConfigs.new()
-  return {
-    key: characterKey,
-    customMultiTargets,
-    conditional,
-    bonusStats,
-    infusionAura,
-    buildType,
-    buildId,
-    buildIds,
-    buildTcId,
-    buildTcIds,
-    optConfigId,
+    if (
+      !this.set(id, {
+        ...rest,
+        buildTcIds: buildTcs.map((obj) => this.database.buildTcs.import(obj)),
+        optConfigId: this.database.optConfigs.import(optConfig),
+      })
+    )
+      return ''
+    return id
   }
 }

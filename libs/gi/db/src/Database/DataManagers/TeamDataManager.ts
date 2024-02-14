@@ -59,6 +59,33 @@ export class TeamDataManager extends DataManager<
   override clear(): void {
     super.clear()
   }
+
+  export(teamId: string): object {
+    const team = this.database.teams.get(teamId)
+    if (!team) return {}
+    const { teamCharIds, ...rest } = team
+    return {
+      ...rest,
+      teamChars: teamCharIds.map((teamCharId) =>
+        this.database.teamChars.export(teamCharId)
+      ),
+    }
+  }
+  import(data: object): string {
+    const { teamChars, ...rest } = data as Team & { teamChars: object[] }
+    const id = this.generateKey()
+    if (
+      !this.set(id, {
+        ...rest,
+        name: `${rest.name ?? ''} (Imported)`,
+        teamCharIds: teamChars.map((obj) =>
+          this.database.teamChars.import(obj)
+        ),
+      } as Team)
+    )
+      return ''
+    return id
+  }
 }
 
 const validReactionKeys = [

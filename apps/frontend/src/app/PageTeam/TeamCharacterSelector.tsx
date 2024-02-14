@@ -2,9 +2,9 @@ import { CardThemed } from '@genshin-optimizer/common/ui'
 import { range } from '@genshin-optimizer/common/util'
 import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { CharacterName } from '@genshin-optimizer/gi/ui'
+import PersonIcon from '@mui/icons-material/Person'
 import { Box, Tab, Tabs } from '@mui/material'
 import CharIconSide from '../Components/Image/CharIconSide'
-import PersonIcon from '@mui/icons-material/Person'
 export default function TeamCharacterSelector({
   teamId,
   currentCharIndex,

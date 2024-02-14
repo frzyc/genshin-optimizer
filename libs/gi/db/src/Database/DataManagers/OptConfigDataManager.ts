@@ -229,6 +229,26 @@ export class OptConfigDataManager extends DataManager<
     this.set(id, initialBuildSettings)
     return id
   }
+  export(optConfigId: string): object {
+    const optConfig = this.database.optConfigs.get(optConfigId)
+    if (!optConfig) return {}
+    const {
+      // remove user-specific data
+      useExcludedArts,
+      excludedLocations,
+      allowLocationsState,
+      artExclusion,
+      buildDate,
+      builds,
+      ...rest
+    } = optConfig
+    return rest
+  }
+  import(data: object): string {
+    const id = this.generateKey()
+    if (!this.set(id, data)) return ''
+    return id
+  }
 }
 
 const initialBuildSettings: OptConfig = deepFreeze({

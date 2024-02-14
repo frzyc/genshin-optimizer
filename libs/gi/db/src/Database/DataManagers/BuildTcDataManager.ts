@@ -81,6 +81,16 @@ export class BuildTcDataManager extends DataManager<
     })
     return buildTc
   }
+  export(buildTcId: string): object {
+    const buildTc = this.database.buildTcs.get(buildTcId)
+    if (!buildTc) return {}
+    return buildTc
+  }
+  import(data: object): string {
+    const id = this.generateKey()
+    if (!this.set(id, data)) return ''
+    return id
+  }
 }
 
 export function initCharTC(weaponKey: WeaponKey): BuildTc {

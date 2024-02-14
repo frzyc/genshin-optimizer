@@ -19,8 +19,17 @@ export default function TeamCard({
   const { name, description, teamCharIds } = team
   const database = useDatabase()
   const onDel = () => {
-    // TODO: prompt for deletion
+    if (!window.confirm(`Do you want to remote this team?`)) return
     database.teams.remove(teamId)
+  }
+  const onExport = () => {
+    const data = database.teams.export(teamId)
+    const dataStr = JSON.stringify(data)
+    console.log({ data, dataStr })
+    navigator.clipboard
+      .writeText(dataStr)
+      .then(() => alert('Copied team data to clipboard.'))
+      .catch(console.error)
   }
   return (
     <CardThemed
@@ -67,6 +76,8 @@ export default function TeamCard({
           color="info"
           sx={{ flexGrow: 1 }}
           startIcon={<ContentPasteIcon />}
+          disabled={teamCharIds.every((id) => !id)}
+          onClick={onExport}
         >
           Export
         </Button>
