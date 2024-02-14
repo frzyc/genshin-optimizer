@@ -341,12 +341,12 @@ function ExcludeButton({ id }: { id: string }) {
     >
       <Button
         onClick={toggle}
-        color={excluded ? 'error' : 'success'}
+        color={excluded ? 'secondary' : 'success'}
         size="small"
-        startIcon={excluded ? <BlockIcon /> : <ShowChartIcon />}
+        startIcon={excluded ? <CheckBoxOutlineBlankIcon /> : <CheckBoxIcon />}
       >
         <span>
-          {t(excluded ? 'excludeArt.excluded' : 'excludeArt.included')}
+          {t`excludeArt.included`}
         </span>
       </Button>
     </BootstrapTooltip>
