@@ -162,7 +162,7 @@ function Page({ teamId, onClose }: { teamId: string; onClose?: () => void }) {
         </Box>
 
         <TeamCharacterSelector />
-        {characterKey && (
+        {characterKey && team && teamChar && (
           <PageContent
             characterKey={characterKey}
             teamCharId={teamCharId}
