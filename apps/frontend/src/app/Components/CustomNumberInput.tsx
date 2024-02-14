@@ -28,7 +28,7 @@ export const StyledInputBase = styled(InputBase)(
       backgroundColor: theme.palette[color].dark,
     },
     '.MuiInputBase-input::selection': {
-      backgroundColor: "red",
+      backgroundColor: theme.palette[color].light,
     },
   })
 )
