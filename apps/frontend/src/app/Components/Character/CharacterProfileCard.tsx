@@ -35,18 +35,9 @@ import { StarsDisplay } from '../StarDisplay'
 
 /* Image card with star and name and level */
 export default function CharacterProfileCard() {
-  const { silly } = useContext(SillyContext)
-  const {
-    characterSheet,
-    character: { key: characterKey },
-  } = useContext(CharacterContext)
-  const { gender } = useDBMeta()
+  const { characterSheet } = useContext(CharacterContext)
   const { data } = useContext(DataContext)
-  const characterDispatch = useCharacterReducer(characterKey)
   const navigate = useNavigate()
-  const level = data.get(input.lvl).value
-  const ascension = data.get(input.asc).value as AscensionKey
-  const constellation = data.get(input.constellation).value
   const tlvl = {
     auto: data.get(input.total.auto).value,
     skill: data.get(input.total.skill).value,
@@ -57,16 +48,10 @@ export default function CharacterProfileCard() {
     skill: data.get(input.total.skillBoost).value,
     burst: data.get(input.total.burstBoost).value,
   }
-  const sillySplash = splash(characterKey, gender)
-  const card = charCard(characterKey, gender)
 
   return (
     <CardLight sx={{ height: '100%' }}>
-      {silly && sillySplash ? (
-        <SillyCoverArea src={sillySplash} level={level} ascension={ascension} />
-      ) : (
-        <CoverArea src={card} level={level} ascension={ascension} />
-      )}
+      <CharacterCoverArea />
       <Box>
         <CardActionArea sx={{ p: 1 }} onClick={() => navigate('talent')}>
           <Grid container spacing={1} mt={-1}>
@@ -108,35 +93,7 @@ export default function CharacterProfileCard() {
         <Typography sx={{ textAlign: 'center', mt: 1 }} variant="h6">
           {characterSheet.constellationName}
         </Typography>
-        <Grid container spacing={1}>
-          {range(1, 6).map((i) => (
-            <Grid item xs={4} key={i}>
-              <CardActionArea
-                onClick={() =>
-                  characterDispatch({
-                    constellation: i === constellation ? i - 1 : i,
-                  })
-                }
-              >
-                <Box
-                  component="img"
-                  src={
-                    characterSheet.getTalentOfKey(
-                      `constellation${i}` as TalentSheetElementKey
-                    )?.img
-                  }
-                  sx={{
-                    ...(constellation >= i
-                      ? {}
-                      : { filter: 'brightness(50%)' }),
-                  }}
-                  width="100%"
-                  height="auto"
-                />
-              </CardActionArea>
-            </Grid>
-          ))}
-        </Grid>
+        <CharacterCompactConstSelector />
         {/* <CardActionArea sx={{ p: 1 }} onClick={() => navigate('teambuffs')}>
           <Grid container columns={3} spacing={1}>
             {range(0, 2).map((i) => (
@@ -152,6 +109,66 @@ export default function CharacterProfileCard() {
         </CardActionArea> */}
       </Box>
     </CardLight>
+  )
+}
+
+export function CharacterCompactConstSelector() {
+  const {
+    characterSheet,
+    character: { key: characterKey },
+  } = useContext(CharacterContext)
+  const { data } = useContext(DataContext)
+  const characterDispatch = useCharacterReducer(characterKey)
+
+  const constellation = data.get(input.constellation).value
+
+  return (
+    <Grid container spacing={1}>
+      {range(1, 6).map((i) => (
+        <Grid item xs={4} key={i}>
+          <CardActionArea
+            onClick={() =>
+              characterDispatch({
+                constellation: i === constellation ? i - 1 : i,
+              })
+            }
+          >
+            <Box
+              component="img"
+              src={
+                characterSheet.getTalentOfKey(
+                  `constellation${i}` as TalentSheetElementKey
+                )?.img
+              }
+              sx={{
+                ...(constellation >= i ? {} : { filter: 'brightness(50%)' }),
+              }}
+              width="100%"
+              height="auto"
+            />
+          </CardActionArea>
+        </Grid>
+      ))}
+    </Grid>
+  )
+}
+
+export function CharacterCoverArea() {
+  const { silly } = useContext(SillyContext)
+  const {
+    character: { key: characterKey },
+  } = useContext(CharacterContext)
+  const { gender } = useDBMeta()
+  const { data } = useContext(DataContext)
+  const level = data.get(input.lvl).value
+  const ascension = data.get(input.asc).value as AscensionKey
+  const sillySplash = splash(characterKey, gender)
+  const card = charCard(characterKey, gender)
+
+  return silly && sillySplash ? (
+    <SillyCoverArea src={sillySplash} level={level} ascension={ascension} />
+  ) : (
+    <CoverArea src={card} level={level} ascension={ascension} />
   )
 }
 function SillyCoverArea({ src, level, ascension }) {

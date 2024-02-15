@@ -39,7 +39,7 @@ import {
   setReadNodeKeys,
   sum,
 } from './utils'
-import { ICharacter } from '@genshin-optimizer/gi/good'
+import type { ICharacter } from '@genshin-optimizer/gi/good'
 const asConst = true as const,
   pivot = true as const
 
@@ -103,7 +103,7 @@ function dataObjForArtifact(
 }
 
 /**
- * @deprecated
+ * Only used for calculating character-specific. do not use for team.
  */
 function dataObjForCharacter(char: ICachedCharacter): Data {
   const result: Data = {
@@ -121,7 +121,7 @@ function dataObjForCharacter(char: ICachedCharacter): Data {
     enemy: {
       ...objKeyMap(
         allElementWithPhyKeys.map((ele) => `${ele}_res_`),
-        (ele) => percent(10 / 100)
+        () => percent(10 / 100)
       ),
       level: constant(100),
     },

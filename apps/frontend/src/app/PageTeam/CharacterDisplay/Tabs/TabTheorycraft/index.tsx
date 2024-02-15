@@ -12,14 +12,7 @@ import { BuildAlert, initialBuildStatus } from '@genshin-optimizer/gi/ui'
 import { getSubstatValue } from '@genshin-optimizer/gi/util'
 import CalculateIcon from '@mui/icons-material/Calculate'
 import CloseIcon from '@mui/icons-material/Close'
-import {
-  Alert,
-  Box,
-  Button,
-  Grid,
-  Skeleton,
-  Stack
-} from '@mui/material'
+import { Alert, Box, Button, Grid, Skeleton, Stack } from '@mui/material'
 import { useCallback, useContext, useMemo, useRef, useState } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
 import { ArtifactStatWithUnit } from '../../../../Components/Artifact/ArtifactStatKeyDisplay'

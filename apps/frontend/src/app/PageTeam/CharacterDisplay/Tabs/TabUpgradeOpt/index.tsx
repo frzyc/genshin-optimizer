@@ -331,6 +331,8 @@ export default function TabUpopt() {
     upoptCalc.calcSlowToIndex(5)
     setUpOptCalc(upoptCalc)
   }, [
+    teamCharId,
+    teamId,
     buildSetting,
     characterKey,
     database,

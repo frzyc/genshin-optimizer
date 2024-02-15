@@ -40,8 +40,7 @@ import {
   MenuItem,
   Skeleton,
   TextField,
-  ToggleButton,
-  Typography,
+  Typography
 } from '@mui/material'
 import React, {
   Suspense,
@@ -71,10 +70,8 @@ import {
 } from '../../../../Components/HitModeEditor'
 import InfoTooltip from '../../../../Components/InfoTooltip'
 import NoArtWarning from '../../../../Components/NoArtWarning'
-import SolidToggleButtonGroup from '../../../../Components/SolidToggleButtonGroup'
 import SqBadge from '../../../../Components/SqBadge'
 import { CharacterContext } from '../../../../Context/CharacterContext'
-import type { dataContextObj } from '../../../../Context/DataContext'
 import { DataContext } from '../../../../Context/DataContext'
 import { GraphContext } from '../../../../Context/GraphContext'
 import { OptimizationTargetContext } from '../../../../Context/OptimizationTargetContext'

@@ -303,7 +303,7 @@ export class TeamCharacterDataManager extends DataManager<
     }
     return objKeyMap(allArtifactSlotKeys, () => undefined)
   }
-export(teamCharId: string): object {
+  export(teamCharId: string): object {
     const teamChar = this.database.teamChars.get(teamCharId)
     if (!teamChar) return {}
     const {

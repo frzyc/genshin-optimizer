@@ -1,56 +1,40 @@
-import { CardThemed } from '@genshin-optimizer/common/ui'
+import { CardThemed, ModalWrapper } from '@genshin-optimizer/common/ui'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
-import {
-  useCharacter,
-  useDBMeta,
-  useDatabase,
-} from '@genshin-optimizer/gi/db-ui'
-import { Box, CardContent, Skeleton } from '@mui/material'
-import {
-  Suspense,
-  useCallback,
-  useContext,
-  useEffect,
-  useMemo,
-  useState,
-} from 'react'
-import { useTranslation } from 'react-i18next'
-import { Navigate, useNavigate, useParams } from 'react-router-dom'
-import type { CharacterContextObj } from '../../Context/CharacterContext'
-import { CharacterContext } from '../../Context/CharacterContext'
-import type { dataContextObj } from '../../Context/DataContext'
-import { DataContext } from '../../Context/DataContext'
-import { FormulaDataWrapper } from '../../Context/FormulaDataContext'
-import type { ChartData, GraphContextObj } from '../../Context/GraphContext'
-import { GraphContext } from '../../Context/GraphContext'
-import { SillyContext } from '../../Context/SillyContext'
-import { getCharSheet } from '../../Data/Characters'
-import useCharData from '../../ReactHooks/useCharData'
-import useCharacterReducer from '../../ReactHooks/useCharacterReducer'
-import Content from './Context'
+import { useCharacter, useDBMeta } from '@genshin-optimizer/gi/db-ui'
+import { CardContent, Skeleton } from '@mui/material'
+import { Suspense, useEffect, useMemo, useState } from 'react'
+import type { CharacterContextObj } from '../../../Context/CharacterContext'
+import { CharacterContext } from '../../../Context/CharacterContext'
+import type { dataContextObj } from '../../../Context/DataContext'
+import { DataContext } from '../../../Context/DataContext'
+import type { ChartData, GraphContextObj } from '../../../Context/GraphContext'
+import { GraphContext } from '../../../Context/GraphContext'
+import { getCharSheet } from '../../../Data/Characters'
+import useCharData from '../../../ReactHooks/useCharData'
+import useCharacterReducer from '../../../ReactHooks/useCharacterReducer'
+import Content from './Content'
 
-export default function CharacterDisplay() {
-  const navigate = useNavigate()
-  const database = useDatabase()
-  const onClose = useCallback(() => navigate('/characters'), [navigate])
-  const { characterKey } = useParams<{ characterKey?: CharacterKey }>()
-  const invalidKey = !database.chars.keys.includes(characterKey as CharacterKey)
-  if (invalidKey) return <Navigate to="/characters" />
-
+export default function CharacterEditor({
+  characterKey,
+  onClose,
+}: {
+  characterKey?: CharacterKey
+  onClose: () => void
+}) {
   return (
-    <Box my={1} display="flex" flexDirection="column" gap={1}>
+    <ModalWrapper open={!!characterKey} onClose={onClose}>
       <Suspense
         fallback={<Skeleton variant="rectangular" width="100%" height={1000} />}
       >
         {characterKey && (
-          <CharacterDisplayCard
+          <CharacterEditorContent
             key={characterKey}
             characterKey={characterKey}
             onClose={onClose}
           />
         )}
       </Suspense>
-    </Box>
+    </ModalWrapper>
   )
 }
 
@@ -58,22 +42,15 @@ type CharacterDisplayCardProps = {
   characterKey: CharacterKey
   onClose?: () => void
 }
-function CharacterDisplayCard({
+function CharacterEditorContent({
   characterKey,
   onClose,
 }: CharacterDisplayCardProps) {
-  const { silly } = useContext(SillyContext)
   const character = useCharacter(characterKey)
   const { gender } = useDBMeta()
   const characterSheet = getCharSheet(characterKey, gender)
   const teamData = useCharData(characterKey)
   const { target: charUIData } = teamData?.[characterKey] ?? {}
-
-  const { t } = useTranslation([
-    'sillyWisher_charNames',
-    'charNames_gen',
-    'page_character',
-  ])
 
   const characterDispatch = useCharacterReducer(character?.key ?? '')
 
@@ -119,9 +96,7 @@ function CharacterDisplayCard({
           <CharacterContext.Provider value={characterContextValue}>
             <DataContext.Provider value={dataContextValue}>
               <GraphContext.Provider value={graphContextValue}>
-                <FormulaDataWrapper>
-                  <Content character={character} onClose={onClose} />
-                </FormulaDataWrapper>
+                <Content onClose={onClose} />
               </GraphContext.Provider>
             </DataContext.Provider>
           </CharacterContext.Provider>

@@ -126,7 +126,6 @@ export function WeaponSwapCard({
   onChangeId: (id: string) => void
 }) {
   const [show, onOpen, onClose] = useBoolState()
-  const { t } = useTranslation('weapon')
   return (
     <CardThemed
       bgt="light"

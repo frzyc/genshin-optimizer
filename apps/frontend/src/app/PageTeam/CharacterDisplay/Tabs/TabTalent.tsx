@@ -1,13 +1,10 @@
-import {
-  maxConstellationCount,
-  talentLimits,
-} from '@genshin-optimizer/gi/consts'
+import { maxConstellationCount } from '@genshin-optimizer/gi/consts'
+import type { ICharacter } from '@genshin-optimizer/gi/good'
 import {
   Box,
   CardActionArea,
   CardContent,
   Grid,
-  MenuItem,
   Typography,
   useMediaQuery,
   useTheme,
@@ -16,15 +13,16 @@ import { useCallback, useContext, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import CardDark from '../../../Components/Card/CardDark'
 import CardLight from '../../../Components/Card/CardLight'
+import ConstellationDropdown from '../../../Components/Character/ConstellationDropdown'
+import TalentDropdown from '../../../Components/Character/TalentDropdown'
 import ConditionalWrapper from '../../../Components/ConditionalWrapper'
 import DocumentDisplay from '../../../Components/DocumentDisplay'
-import DropdownButton from '../../../Components/DropdownMenu/DropdownButton'
 import { NodeFieldDisplay } from '../../../Components/FieldDisplay'
-import { TeamCharacterContext } from '../../../Context/TeamCharacterContext'
+import { CharacterContext } from '../../../Context/CharacterContext'
 import { DataContext } from '../../../Context/DataContext'
+import { TeamCharacterContext } from '../../../Context/TeamCharacterContext'
 import type { TalentSheetElementKey } from '../../../Data/Characters/ICharacterSheet'
 import { uiInput as input } from '../../../Formula'
-import type { NumNode } from '../../../Formula/type'
 import type { NodeDisplay } from '../../../Formula/uiData'
 import useCharacterReducer from '../../../ReactHooks/useCharacterReducer'
 import type { DocumentSection } from '../../../Types/sheet'
@@ -75,29 +73,6 @@ export default function CharacterTalentPane() {
       )),
     [t, constellation, characterDispatch]
   )
-  const constellationHeader = (
-    <DropdownButton
-      fullWidth
-      title={t('constellationLvl', { level: constellation })}
-      color="primary"
-      sx={{ borderRadius: 0 }}
-    >
-      {range(0, maxConstellationCount).map((i) => (
-        <MenuItem
-          key={i}
-          selected={constellation === i}
-          disabled={constellation === i}
-          onClick={() =>
-            characterDispatch({
-              constellation: i,
-            })
-          }
-        >
-          {t(`constellationLvl`, { level: i })}
-        </MenuItem>
-      ))}
-    </DropdownButton>
-  )
 
   return (
     <>
@@ -112,7 +87,7 @@ export default function CharacterTalentPane() {
             lg={3}
             sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}
           >
-            <CardLight>{constellationHeader}</CardLight>
+            <ConstellationDropdown />
             {constellationCards.map((c, i) => (
               <Box key={i} sx={{ opacity: constellation >= i + 1 ? 1 : 0.5 }}>
                 {c}
@@ -160,7 +135,7 @@ export default function CharacterTalentPane() {
         {!grlg && (
           <Grid item xs={12} md={12} lg={3} container spacing={1}>
             <Grid item xs={12}>
-              <CardLight>{constellationHeader}</CardLight>
+              <ConstellationDropdown />
             </Grid>
             {constellationCards.map((c, i) => (
               <Grid
@@ -214,13 +189,10 @@ function SkillDisplayCard({
   subtitle,
   onClickTitle,
 }: SkillDisplayCardProps) {
-  const { t } = useTranslation('sheet_gen')
   const {
-    character: { talent, key: characterKey },
+    character: { talent },
     characterSheet,
-  } = useContext(TeamCharacterContext)
-  const { data } = useContext(DataContext)
-  const characterDispatch = useCharacterReducer(characterKey)
+  } = useContext(CharacterContext)
   const actionWrapperFunc = useCallback(
     (children) => (
       <CardActionArea onClick={onClickTitle}>{children}</CardActionArea>
@@ -228,39 +200,14 @@ function SkillDisplayCard({
     [onClickTitle]
   )
 
-  const setTalentLevel = useCallback(
-    (tKey: TalentSheetElementKey, newTalentLevelKey: number) =>
-      characterDispatch({ talent: { ...talent, [tKey]: newTalentLevelKey } }),
-    [talent, characterDispatch]
-  )
-
   let header: Displayable | null = null
 
   if (talentKey in talent) {
-    const levelBoost = data.get(
-      input.total[`${talentKey}Boost`] as NumNode
-    ).value
-    const level = data.get(input.total[talentKey]).value
-    const asc = data.get(input.asc).value
-
     header = (
-      <DropdownButton
-        fullWidth
-        title={t('talentLvl', { level: level })}
-        color={levelBoost ? 'info' : 'primary'}
-        sx={{ borderRadius: 0 }}
-      >
-        {range(1, talentLimits[asc]).map((i) => (
-          <MenuItem
-            key={i}
-            selected={talent[talentKey] === i}
-            disabled={talent[talentKey] === i}
-            onClick={() => setTalentLevel(talentKey, i)}
-          >
-            {t('talentLvl', { level: i + levelBoost })}
-          </MenuItem>
-        ))}
-      </DropdownButton>
+      <TalentDropdown
+        talentKey={talentKey as keyof ICharacter['talent']}
+        dropDownButtonProps={{ sx: { borderRadius: 0 } }}
+      />
     )
   }
   const talentSheet = characterSheet.getTalentOfKey(talentKey)

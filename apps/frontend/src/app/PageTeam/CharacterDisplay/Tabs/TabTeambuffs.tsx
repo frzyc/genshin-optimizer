@@ -182,7 +182,6 @@ function ResonanceDisplay() {
 function TeammateDisplay({ teamCharId }: { teamCharId: string }) {
   const { teamData } = useContext(DataContext)
   const navigate = useNavigate()
-  const { t } = useTranslation('page_character')
   const { teamId, team } = useContext(TeamCharacterContext)
   const teamChar = useTeamChar(teamCharId)
   const teamMateKey = teamChar?.key
