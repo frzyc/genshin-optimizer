@@ -67,7 +67,7 @@ export function ArtifactAllSubstatEditor({
     })
     // disable triggering for isMount
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [setBuildTc, rollsDeferred])
+  }, [rollsDeferred])
 
   const maxSubstatDeferred = useDeferredValue(maxSubstatData)
   useEffect(() => {
@@ -80,7 +80,7 @@ export function ArtifactAllSubstatEditor({
     })
     // disable triggering for isMount
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [setBuildTc, maxSubstatDeferred])
+  }, [maxSubstatDeferred])
 
   const maxRollsPerSub =
     (artSubstatRollData[buildTc.artifact.substats.rarity].numUpgrades + 1) * 5

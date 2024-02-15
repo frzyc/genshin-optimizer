@@ -1,7 +1,9 @@
 import { CardThemed } from '@genshin-optimizer/common/ui'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
+import { getCharData } from '@genshin-optimizer/gi/stats'
 import ContentCopyIcon from '@mui/icons-material/ContentCopy'
 import EditIcon from '@mui/icons-material/Edit'
+import ScienceIcon from '@mui/icons-material/Science'
 import {
   Box,
   Button,
@@ -13,11 +15,10 @@ import { useContext } from 'react'
 import { CharacterContext } from '../../../Context/CharacterContext'
 import { TeamCharacterContext } from '../../../Context/TeamCharacterContext'
 import BuildEquip from './BuildEquip'
-
 export function BuildEquipped({ active = false }: { active: boolean }) {
   const { teamCharId } = useContext(TeamCharacterContext)
   const {
-    character: { equippedArtifacts, equippedWeapon },
+    character: { key: characterKey, equippedArtifacts, equippedWeapon },
   } = useContext(CharacterContext)
   const database = useDatabase()
   const onActive = () =>
@@ -28,6 +29,20 @@ export function BuildEquipped({ active = false }: { active: boolean }) {
       artifactIds: equippedArtifacts,
       weaponId: equippedWeapon,
     })
+  const weaponTypeKey = getCharData(characterKey).weaponType
+  const copyToTc = () => {
+    const newBuildTcId = database.teamChars.newBuildTcFromBuild(
+      teamCharId,
+      weaponTypeKey,
+      database.weapons.get(equippedWeapon),
+      Object.values(equippedArtifacts).map((id) => database.arts.get(id))
+    )
+    // copy over name
+    database.buildTcs.set(newBuildTcId, {
+      name: `Equipped - Copied`,
+      description: 'Copied from Equipped Build',
+    })
+  }
   return (
     <CardThemed
       bgt="light"
@@ -45,6 +60,9 @@ export function BuildEquipped({ active = false }: { active: boolean }) {
           </CardThemed>
           <Button disabled color="info" size="small">
             <EditIcon />
+          </Button>
+          <Button color="info" size="small" onClick={copyToTc}>
+            <ScienceIcon />
           </Button>
           <Button color="info" size="small" onClick={onDupe}>
             <ContentCopyIcon />

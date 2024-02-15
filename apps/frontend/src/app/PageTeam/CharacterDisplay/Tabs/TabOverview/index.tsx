@@ -1,6 +1,6 @@
 import { allArtifactSlotKeys } from '@genshin-optimizer/gi/consts'
 import { Box, Grid, Stack } from '@mui/material'
-import { useCallback, useContext, useRef } from 'react'
+import { useCallback, useContext, useMemo, useRef } from 'react'
 import ArtifactCardNano from '../../../../Components/Artifact/ArtifactCardNano'
 import CardLight from '../../../../Components/Card/CardLight'
 import CharacterProfileCard from '../../../../Components/Character/CharacterProfileCard'
@@ -10,6 +10,8 @@ import { DataContext } from '../../../../Context/DataContext'
 import { TeamCharacterContext } from '../../../../Context/TeamCharacterContext'
 import { uiInput as input } from '../../../../Formula'
 import EquipmentSection from './EquipmentSection'
+import CompareBtn from '../../CompareBtn'
+import useOldData from '../../../useOldData'
 
 export default function TabOverview() {
   const scrollRef = useRef<HTMLDivElement>()
@@ -18,6 +20,15 @@ export default function TabOverview() {
     [scrollRef]
   )
 
+  const data = useContext(DataContext)
+  const oldData = useOldData()
+  const dataContextObj = useMemo(
+    () => ({
+      ...data,
+      oldData,
+    }),
+    [data, oldData]
+  )
   return (
     <Stack spacing={1}>
       <Box>
@@ -34,8 +45,21 @@ export default function TabOverview() {
             sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}
           >
             <EquipmentRow onClick={onScroll} />
-            <CardLight sx={{ flexGrow: 1, p: 1 }}>
-              <StatDisplayComponent />
+            <CardLight
+              sx={{
+                flexGrow: 1,
+                p: 1,
+                display: 'flex',
+                flexDirection: 'column',
+                gap: 1,
+              }}
+            >
+              <DataContext.Provider value={dataContextObj}>
+                <StatDisplayComponent />
+              </DataContext.Provider>
+              <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
+                <CompareBtn />
+              </Box>
             </CardLight>
           </Grid>
         </Grid>

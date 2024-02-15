@@ -90,11 +90,10 @@ export default function EquipmentSection() {
                   location: charKeyToLocCharKey(characterKey),
                 })
             }}
-            setArtifact={(id) => {
+            setArtifact={(slotKey, id) => {
               if (loadoutEquip)
                 database.builds.set(buildId, (build) => {
-                  const art = database.arts.get(id)
-                  if (art?.slotKey) build.artifactIds[art.slotKey] = id
+                  build.artifactIds[slotKey] = id
                 })
               else
                 database.arts.set(id, {

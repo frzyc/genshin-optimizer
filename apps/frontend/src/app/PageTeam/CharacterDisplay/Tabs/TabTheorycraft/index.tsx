@@ -18,8 +18,7 @@ import {
   Button,
   Grid,
   Skeleton,
-  Stack,
-  ToggleButton,
+  Stack
 } from '@mui/material'
 import { useCallback, useContext, useMemo, useRef, useState } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
@@ -28,13 +27,14 @@ import CardLight from '../../../../Components/Card/CardLight'
 import CharacterProfileCard from '../../../../Components/Character/CharacterProfileCard'
 import StatDisplayComponent from '../../../../Components/Character/StatDisplayComponent'
 import CustomNumberInput from '../../../../Components/CustomNumberInput'
-import SolidToggleButtonGroup from '../../../../Components/SolidToggleButtonGroup'
 import type { dataContextObj } from '../../../../Context/DataContext'
 import { DataContext } from '../../../../Context/DataContext'
 import { OptimizationTargetContext } from '../../../../Context/OptimizationTargetContext'
 import { TeamCharacterContext } from '../../../../Context/TeamCharacterContext'
 import { getTeamDataCalc } from '../../../../ReactHooks/useCharData'
 import { isDev } from '../../../../Util/Util'
+import useOldData from '../../../useOldData'
+import CompareBtn from '../../CompareBtn'
 import OptimizationTargetSelector from '../TabOptimize/Components/OptimizationTargetSelector'
 import { ArtifactMainStatAndSetEditor } from './ArtifactMainStatAndSetEditor'
 import { ArtifactSubCard } from './ArtifactSubCard'
@@ -55,12 +55,9 @@ import {
 export default function TabTheorycraft() {
   const { t } = useTranslation('page_character')
   const database = useDatabase()
-  const { data: oldData } = useContext(DataContext)
   const { gender } = useDBMeta()
   const {
-    teamId,
     teamChar: { key: characterKey, buildTcId },
-    team: { compareData },
   } = useContext(TeamCharacterContext)
   const buildTc = useBuildTc(buildTcId)
   const setBuildTc = useCallback(
@@ -76,14 +73,14 @@ export default function TabTheorycraft() {
   const weaponTypeKey = getCharData(characterKey).weaponType
 
   const dataContextValue = useContext(DataContext)
-
+  const oldData = useOldData()
   const dataContextValueWithOld: dataContextObj | undefined = useMemo(() => {
     if (!dataContextValue) return undefined
     return {
       ...dataContextValue,
-      oldData: compareData ? oldData : undefined,
+      oldData,
     }
-  }, [dataContextValue, compareData, oldData])
+  }, [dataContextValue, oldData])
 
   const optimizationTarget = buildTc.optimization.target
   const setOptimizationTarget = useCallback(
@@ -286,21 +283,7 @@ export default function TabTheorycraft() {
               <KQMSButton action={kqms} disabled={solving} />
               <GcsimButton disabled={solving} />
             </Box>
-            <SolidToggleButtonGroup
-              exclusive
-              value={compareData}
-              onChange={(e, compareData) =>
-                database.teams.set(teamId, { compareData })
-              }
-              size="small"
-            >
-              <ToggleButton value={false} disabled={!compareData}>
-                {t`tabTheorycraft.compareToggle.tc`}
-              </ToggleButton>
-              <ToggleButton value={true} disabled={compareData}>
-                {t`tabTheorycraft.compareToggle.equipped`}
-              </ToggleButton>
-            </SolidToggleButtonGroup>
+            <CompareBtn />
           </Box>
         </CardLight>
         {dataContextValue ? (

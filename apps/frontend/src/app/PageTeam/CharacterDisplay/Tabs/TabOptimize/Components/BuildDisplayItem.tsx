@@ -1,5 +1,9 @@
+import { CardThemed } from '@genshin-optimizer/common/ui'
 import { objKeyMap, toggleArr } from '@genshin-optimizer/common/util'
-import type { LocationCharacterKey } from '@genshin-optimizer/gi/consts'
+import type {
+  ArtifactSlotKey,
+  LocationCharacterKey,
+} from '@genshin-optimizer/gi/consts'
 import {
   allArtifactSlotKeys,
   charKeyToLocCharKey,
@@ -44,7 +48,6 @@ import { uiInput as input } from '../../../../../Formula'
 import ArtifactCard from '../../../../../PageArtifact/ArtifactCard'
 import { ArtifactSetBadges } from './ArtifactSetBadges'
 import SetInclusionButton from './SetInclusionButton'
-import { CardThemed } from '@genshin-optimizer/common/ui'
 
 type NewOld = {
   newId: string
@@ -53,7 +56,6 @@ type NewOld = {
 
 type BuildDisplayItemProps = {
   label?: Displayable
-  compareBuild: boolean
   disabled?: boolean
   extraButtonsRight?: JSX.Element
   extraButtonsLeft?: JSX.Element
@@ -61,24 +63,28 @@ type BuildDisplayItemProps = {
 //for displaying each artifact build
 export default function BuildDisplayItem({
   label,
-  compareBuild,
   extraButtonsRight,
   extraButtonsLeft,
   disabled,
 }: BuildDisplayItemProps) {
   const {
-    teamChar: { optConfigId, buildType, buildId },
+    teamChar: {
+      optConfigId,
+      buildType,
+      buildId,
+      compare,
+      compareType,
+      compareBuildId,
+    },
   } = useContext(TeamCharacterContext)
   const {
-    character: { key: characterKey },
+    character: { key: characterKey, equippedArtifacts, equippedWeapon },
   } = useContext(CharacterContext)
   const { mainStatAssumptionLevel, allowLocationsState } = useOptConfig(
     optConfigId
   ) ?? { mainStatAssumptionLevel: 0, allowLocationsState: 'all' }
   const database = useDatabase()
-  const dataContext = useContext(DataContext)
-
-  const { data, oldData } = dataContext
+  const { data } = useContext(DataContext)
   const [newOld, setNewOld] = useState(undefined as NewOld | undefined)
   const close = useCallback(() => setNewOld(undefined), [setNewOld])
   const loadoutEquip = buildId && buildType === 'real'
@@ -115,12 +121,6 @@ export default function BuildDisplayItem({
       })
   }, [characterKey, loadoutEquip, buildId, data, database])
 
-  const statProviderContext = useMemo(() => {
-    const dataContext_ = { ...dataContext }
-    if (!compareBuild) dataContext_.oldData = undefined
-    return dataContext_
-  }, [dataContext, compareBuild])
-
   const artifactIdsBySlot = useMemo(
     () =>
       Object.fromEntries(
@@ -140,6 +140,43 @@ export default function BuildDisplayItem({
     [artifactIdsBySlot, database.arts]
   )
 
+  const loadoutEquippedArtifactIds: Record<ArtifactSlotKey, string> =
+    useMemo(() => {
+      if (buildType === 'tc') return objKeyMap(allArtifactSlotKeys, () => 'tc')
+      if (buildType === 'equipped') return equippedArtifacts
+      if (buildType === 'real') return database.builds.get(buildId).artifactIds
+
+      // default
+      return objKeyMap(allArtifactSlotKeys, () => '')
+    }, [buildType, buildId, database, equippedArtifacts])
+
+  const compareEquippedArtifactIds: Record<ArtifactSlotKey, string> =
+    useMemo(() => {
+      if (!compare) return loadoutEquippedArtifactIds
+      if (compareType === 'tc')
+        return objKeyMap(allArtifactSlotKeys, () => 'tc')
+      if (compareType === 'equipped') return equippedArtifacts
+      if (compareType === 'real')
+        return database.builds.get(compareBuildId).artifactIds
+
+      // default
+      return objKeyMap(allArtifactSlotKeys, () => '')
+    }, [
+      compareType,
+      compare,
+      compareBuildId,
+      database,
+      equippedArtifacts,
+      loadoutEquippedArtifactIds,
+    ])
+
+  const loadoutEquippedWeaponId: string = useMemo(() => {
+    if (buildType === 'tc') return 'tc'
+    if (buildType === 'equipped') return equippedWeapon
+    if (buildType === 'real') return database.builds.get(buildId).weaponId
+    // default
+    return ''
+  }, [buildType, buildId, database, equippedWeapon])
   // Memoize Arts because of its dynamic onClick
   const artNanos = useMemo(
     () =>
@@ -151,23 +188,26 @@ export default function BuildDisplayItem({
             artifactId={artifactIdsBySlot[slotKey]}
             mainStatAssumptionLevel={mainStatAssumptionLevel}
             onClick={() => {
-              const oldId = oldData.get(input.art[slotKey].id).value?.toString()
+              const oldId = compareEquippedArtifactIds[slotKey]
               const newId = artifactIdsBySlot[slotKey]!
               setNewOld({ oldId: oldId !== newId ? oldId : undefined, newId })
             }}
           />
         </Grid>
       )),
-    [setNewOld, oldData, mainStatAssumptionLevel, artifactIdsBySlot]
+    [
+      setNewOld,
+      compareEquippedArtifactIds,
+      mainStatAssumptionLevel,
+      artifactIdsBySlot,
+    ]
   )
 
-  if (!oldData) return null
   const currentlyEquipped =
     allArtifactSlotKeys.every(
       (slotKey) =>
-        artifactIdsBySlot[slotKey] ===
-        oldData.get(input.art[slotKey].id).value?.toString()
-    ) && data.get(input.weapon.id).value === oldData.get(input.weapon.id).value
+        artifactIdsBySlot[slotKey] === loadoutEquippedArtifactIds[slotKey]
+    ) && data.get(input.weapon.id).value === loadoutEquippedWeaponId
 
   return (
     <CardLight>
@@ -227,9 +267,7 @@ export default function BuildDisplayItem({
             </Grid>
             {artNanos}
           </Grid>
-          <DataContext.Provider value={statProviderContext}>
-            <StatDisplayComponent />
-          </DataContext.Provider>
+          <StatDisplayComponent />
         </CardContent>
       </Suspense>
     </CardLight>
@@ -300,20 +338,31 @@ function CompareArtifactModal({
                   Old Artifact
                 </Typography>
               </CardThemed>
-              <ArtifactCard
-                artifactId={oldId}
-                onDelete={deleteArtifact}
-                mainStatAssumptionLevel={mainStatAssumptionLevel}
-                canEquip={!loadoutEquip}
-                editorProps={{ disableSet: true, disableSlot: true }}
-              />
-              <ArtInclusionButton id={oldId} />
+              {oldId === 'tc' ? (
+                <Typography variant="h6" textAlign="center" color="info">
+                  <SqBadge>TC Artifact</SqBadge>
+                </Typography>
+              ) : (
+                <ArtifactCard
+                  artifactId={oldId}
+                  onDelete={deleteArtifact}
+                  mainStatAssumptionLevel={mainStatAssumptionLevel}
+                  canEquip={!loadoutEquip}
+                  editorProps={{ disableSet: true, disableSlot: true }}
+                />
+              )}
+
+              {oldId !== 'tc' && <ArtInclusionButton id={oldId} />}
             </Box>
           )}
           {oldId && <Box display="flex" flexGrow={1} />}
           {oldId && (
             <Box display="flex" alignItems="center" justifyContent="center">
-              <Button onClick={onEquip} sx={{ display: 'flex' }}>
+              <Button
+                onClick={onEquip}
+                sx={{ display: 'flex' }}
+                disabled={oldId === 'tc'}
+              >
                 <ChevronRight sx={{ fontSize: 40 }} />
               </Button>
             </Box>

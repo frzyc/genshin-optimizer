@@ -135,7 +135,6 @@ function BuildDisplay({
       {dataProviderValue && (
         <DataContext.Provider value={dataProviderValue}>
           <BuildDisplayItem
-            compareBuild={true}
             extraButtonsLeft={
               <>
                 <HitModeToggle size="small" />

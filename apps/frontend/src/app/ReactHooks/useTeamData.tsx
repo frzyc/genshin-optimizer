@@ -10,6 +10,7 @@ import type {
 import { useDBMeta, useDatabase, useTeam } from '@genshin-optimizer/gi/db-ui'
 import { useContext, useDeferredValue, useEffect, useMemo } from 'react'
 import type { TeamData } from '../Context/DataContext'
+import { TeamCharacterContext } from '../Context/TeamCharacterContext'
 import { allArtifactData } from '../Data/Artifacts'
 import { getCharSheet } from '../Data/Characters'
 import type CharacterSheet from '../Data/Characters/CharacterSheet'
@@ -26,12 +27,8 @@ import {
   uiDataForTeam,
 } from '../Formula/api'
 import type { Data } from '../Formula/type'
+import { getArtifactData } from '../PageTeam/CharacterDisplay/Tabs/TabTheorycraft/optimizeTc'
 import { objectMap } from '../Util/Util'
-import {
-  getArtifactData,
-  getWeaponData,
-} from '../PageTeam/CharacterDisplay/Tabs/TabTheorycraft/optimizeTc'
-import { TeamCharacterContext } from '../Context/TeamCharacterContext'
 
 type TeamDataBundle = {
   teamData: Dict<CharacterKey, Data[]>
@@ -106,7 +103,7 @@ export default function useTeamData(
   return data
 }
 
-function getTeamDataCalc(
+export function getTeamDataCalc(
   database: ArtCharDatabase,
   teamId: string | '',
   gender: GenderKey,
@@ -154,9 +151,8 @@ export function getTeamData(
   const team = database.teams.get(teamId)
   if (!team) return undefined
   const { teamCharIds, enemyOverride, hitMode, reaction } = team
-
-  const teamBundleArr = teamCharIds.map((id, ind) => {
-    const teamChar = database.teamChars.get(id)
+  const teamBundleArr = teamCharIds.map((teamCharId) => {
+    const teamChar = database.teamChars.get(teamCharId)
     const {
       key: characterKey,
       buildType,
@@ -168,23 +164,29 @@ export function getTeamData(
     } = teamChar
     const character = database.chars.get(characterKey)
     const { key, level, constellation, ascension, talent } = character
-    let tempOverrideWeapon = overrideWeapon
-    let tempOverrideArt = overrideArt
-    let tempMainStatAssumptionLevel = mainStatAssumptionLevel
-    if (id !== overrideTeamCharId) {
-      tempOverrideWeapon = undefined
-      tempOverrideArt = undefined
-      tempMainStatAssumptionLevel = 0
-    }
-    if (buildType === 'tc' && buildTcId) {
-      const buildTc = database.buildTcs.get(buildTcId)
-      tempOverrideArt = getArtifactData(buildTc)
-      tempOverrideWeapon = getWeaponData(buildTc)
-    }
+    const isOVerrideTeamChar = teamCharId === overrideTeamCharId
+    const weapon = (() => {
+      if (overrideWeapon && isOVerrideTeamChar) return overrideWeapon
+      return database.teamChars.getLoadoutWeapon(teamCharId)
+    })()
+    const arts = (() => {
+      if (overrideArt && isOVerrideTeamChar) return overrideArt
+      if (buildType === 'tc' && buildTcId)
+        return getArtifactData(database.buildTcs.get(buildTcId))
+      return Object.values(
+        database.teamChars.getLoadoutArtifacts(teamCharId)
+      ).filter((a) => a) as ICachedArtifact[]
+    })()
+    const mainLevel = (() => {
+      if (mainStatAssumptionLevel && isOVerrideTeamChar)
+        return mainStatAssumptionLevel
+      return 0
+    })()
+
     return getCharDataBundle(
       database,
-      id === overrideTeamCharId, // only true for the "main character"?
-      tempMainStatAssumptionLevel,
+      isOVerrideTeamChar, // only true for the "main character"?
+      mainLevel,
       {
         key,
         level,
@@ -201,13 +203,8 @@ export function getTeamData(
         hitMode,
         reaction,
       },
-      tempOverrideWeapon
-        ? tempOverrideWeapon
-        : database.teamChars.getLoadoutWeapon(id),
-      tempOverrideArt ??
-        (Object.values(database.teamChars.getLoadoutArtifacts(id)).filter(
-          (a) => a
-        ) as ICachedArtifact[])
+      weapon,
+      arts
     )
   })
   const teamBundle = Object.fromEntries(

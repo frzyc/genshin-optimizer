@@ -23,7 +23,6 @@ export interface Team {
     >
   >
 
-  compareData: boolean
   teamCharIds: string[]
 }
 
@@ -96,15 +95,8 @@ function validateTeam(
   obj: unknown = {},
   database: ArtCharDatabase
 ): Team | undefined {
-  let {
-    name,
-    description,
-    hitMode,
-    reaction,
-    enemyOverride,
-    compareData,
-    teamCharIds,
-  } = obj as Team
+  let { name, description, hitMode, reaction, enemyOverride, teamCharIds } =
+    obj as Team
   if (typeof name !== 'string') name = 'Team Name'
   if (typeof description !== 'string') description = 'Team Description'
   if (!allHitModeKeys.includes(hitMode)) hitMode = 'avgHit'
@@ -120,7 +112,6 @@ function validateTeam(
   )
     enemyOverride = {}
 
-  if (typeof compareData !== 'boolean') compareData = false
   if (!Array.isArray(teamCharIds)) teamCharIds = []
   else {
     const charIds = database.teamChars.keys
@@ -134,7 +125,6 @@ function validateTeam(
     hitMode,
     reaction,
     enemyOverride,
-    compareData,
     teamCharIds,
   }
 }

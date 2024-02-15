@@ -41,13 +41,18 @@ export interface TeamCharacter {
 
   bonusStats: Partial<Record<InputPremodKey, number>>
   infusionAura?: InfusionAuraElementKey | ''
-  // TODO builds
+
   buildType: buildTypeKey
   buildId: string
   buildIds: string[]
   buildTcId: string
   buildTcIds: string[]
   optConfigId: string
+
+  compare: boolean
+  compareType: buildTypeKey
+  compareBuildId: string
+  compareBuildTcId: string
 }
 
 export interface CustomTarget {
@@ -98,6 +103,11 @@ export class TeamCharacterDataManager extends DataManager<
       buildTcId,
       buildTcIds,
       optConfigId,
+
+      compare,
+      compareType,
+      compareBuildId,
+      compareBuildTcId,
     } = obj as TeamCharacter
     if (!allCharacterKeys.includes(characterKey)) return undefined // non-recoverable
 
@@ -156,6 +166,22 @@ export class TeamCharacterDataManager extends DataManager<
 
     if (!optConfigId || !this.database.optConfigs.keys.includes(optConfigId))
       optConfigId = this.database.optConfigs.new()
+
+    if (typeof compare !== 'boolean') compare = false
+    if (!buildTypeKeys.includes(compareType)) compareType = 'equipped'
+
+    if (
+      typeof compareBuildId !== 'string' ||
+      !this.database.builds.keys.includes(compareBuildId)
+    )
+      compareBuildId = ''
+
+    if (
+      typeof compareBuildTcId !== 'string' ||
+      !this.database.buildTcs.keys.includes(compareBuildTcId)
+    )
+      compareBuildTcId = ''
+
     return {
       key: characterKey,
       customMultiTargets,
@@ -168,6 +194,10 @@ export class TeamCharacterDataManager extends DataManager<
       buildTcId,
       buildTcIds,
       optConfigId,
+      compare,
+      compareType,
+      compareBuildId,
+      compareBuildTcId,
     }
   }
 
@@ -273,7 +303,7 @@ export class TeamCharacterDataManager extends DataManager<
     }
     return objKeyMap(allArtifactSlotKeys, () => undefined)
   }
-  export(teamCharId: string): object {
+export(teamCharId: string): object {
     const teamChar = this.database.teamChars.get(teamCharId)
     if (!teamChar) return {}
     const {
@@ -283,6 +313,9 @@ export class TeamCharacterDataManager extends DataManager<
       buildTcId,
       buildTcIds,
       optConfigId,
+      compareType,
+      compareBuildId: comareBuildId,
+      compareBuildTcId,
       ...rest
     } = teamChar
     return {
