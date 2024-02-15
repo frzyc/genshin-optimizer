@@ -145,12 +145,6 @@ function Page({ teamId, onClose }: { teamId: string; onClose?: () => void }) {
     )
   )
 
-  // Clear state when switching characters?
-  // useEffect(() => {
-  //   setChartData(undefined)
-  //   setGraphBuilds(undefined)
-  // }, [characterKey])
-
   return (
     <CardThemed>
       <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
@@ -176,6 +170,9 @@ function Page({ teamId, onClose }: { teamId: string; onClose?: () => void }) {
     </CardThemed>
   )
 }
+// Stored per teamCharId
+const chartDataAll: Record<string, ChartData> = {}
+const graphBuildAll: Record<string, string[][]> = {}
 function PageContent({
   characterKey,
   teamCharId,
@@ -215,16 +212,36 @@ function PageContent({
       },
     [character, characterSheet]
   )
-  const [chartData, setChartData] = useState(undefined as ChartData | undefined)
-  const [graphBuilds, setGraphBuilds] = useState<string[][]>()
+  const [chartData, setChartDataState] = useState<ChartData | undefined>(
+    chartDataAll[teamCharId]
+  )
+  const [graphBuilds, setGraphBuildState] = useState<string[][] | undefined>(
+    graphBuildAll[teamCharId]
+  )
+  useEffect(() => {
+    setChartDataState(chartDataAll[teamCharId])
+    setGraphBuildState(graphBuildAll[teamCharId])
+  }, [teamCharId, setChartDataState, setGraphBuildState])
   const graphContextValue: GraphContextObj | undefined = useMemo(() => {
     return {
       chartData,
-      setChartData,
+      setChartData: (data) => {
+        chartDataAll[teamCharId] = data
+        setChartDataState(data)
+      },
       graphBuilds,
-      setGraphBuilds,
+      setGraphBuilds: (data) => {
+        graphBuildAll[teamCharId] = data
+        setGraphBuildState(data)
+      },
     }
-  }, [chartData, graphBuilds])
+  }, [
+    teamCharId,
+    chartData,
+    graphBuilds,
+    setChartDataState,
+    setGraphBuildState,
+  ])
   return teamCharacterContextValue &&
     graphContextValue &&
     CharacterContextValue ? (
