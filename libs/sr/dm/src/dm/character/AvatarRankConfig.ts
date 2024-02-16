@@ -7,7 +7,7 @@ import { avatarConfig } from './AvatarConfig'
 // Eidolon information
 export type AvatarRankConfig = {
   RankID: number // Internal Eidolon ID
-  Rank: number // Eidolon #1-6
+  Rank: Rank // Eidolon #1-6
   Trigger: HashId
   Name: string
   Desc: string
@@ -17,6 +17,8 @@ export type AvatarRankConfig = {
   UnlockCost: MaterialValue
   Param: Value[] // Scalings, if any
 }
+export const allRanks = [1, 2, 3, 4, 5, 6] as const
+export type Rank = typeof allRanks[number]
 // { <skillId>: <# of levels increased> }
 type SkillAddLevelList = Partial<Record<string, number>>
 
