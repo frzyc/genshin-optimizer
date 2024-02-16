@@ -28,6 +28,9 @@ export default class CharacterSheet {
   get weaponTypeKey() {
     return this.sheet.weaponTypeKey
   }
+  /**
+   * @deprecated use <CharacterConstellationName/>
+   */
   get constellationName() {
     return this.sheet.constellationName
   }

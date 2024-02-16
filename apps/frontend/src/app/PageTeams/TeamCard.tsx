@@ -11,9 +11,13 @@ import ContentPasteIcon from '@mui/icons-material/ContentPaste'
 export default function TeamCard({
   teamId,
   onClick,
+  bgt,
+  disableButtons = false,
 }: {
   teamId: string
+  bgt?: 'light' | 'dark'
   onClick: () => void
+  disableButtons?: boolean
 }) {
   const team = useTeam(teamId)
   const { name, description, teamCharIds } = team
@@ -33,6 +37,7 @@ export default function TeamCard({
   }
   return (
     <CardThemed
+      bgt={bgt}
       sx={{
         height: '100%',
         p: 1,
@@ -48,6 +53,7 @@ export default function TeamCard({
           flexDirection: 'column',
           gap: 1,
           alignItems: 'stretch',
+          flexGrow: 1,
         }}
       >
         <BootstrapTooltip title={<Typography>{description}</Typography>}>
@@ -55,7 +61,7 @@ export default function TeamCard({
             <span>{name}</span> <InfoIcon />
           </Typography>
         </BootstrapTooltip>
-        <Box>
+        <Box sx={{ marginTop: 'auto' }}>
           <Grid container columns={4} spacing={1}>
             {range(0, 3).map((i) => (
               <Grid key={i} item xs={1} height="100%">
@@ -71,20 +77,22 @@ export default function TeamCard({
           </Grid>
         </Box>
       </CardActionArea>
-      <Box sx={{ display: 'flex', gap: 1, marginTop: 'auto' }}>
-        <Button
-          color="info"
-          sx={{ flexGrow: 1 }}
-          startIcon={<ContentPasteIcon />}
-          disabled={teamCharIds.every((id) => !id)}
-          onClick={onExport}
-        >
-          Export
-        </Button>
-        <Button color="error" size="small" onClick={onDel}>
-          <DeleteForeverIcon />
-        </Button>
-      </Box>
+      {!disableButtons && (
+        <Box sx={{ display: 'flex', gap: 1, marginTop: 'auto' }}>
+          <Button
+            color="info"
+            sx={{ flexGrow: 1 }}
+            startIcon={<ContentPasteIcon />}
+            disabled={teamCharIds.every((id) => !id)}
+            onClick={onExport}
+          >
+            Export
+          </Button>
+          <Button color="error" size="small" onClick={onDel}>
+            <DeleteForeverIcon />
+          </Button>
+        </Box>
+      )}
     </CardThemed>
   )
 }

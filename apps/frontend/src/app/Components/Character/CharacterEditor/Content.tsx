@@ -4,23 +4,26 @@ import {
   allArtifactSlotKeys,
   charKeyToLocCharKey,
 } from '@genshin-optimizer/gi/consts'
-import { useDatabase } from '@genshin-optimizer/gi/db-ui'
+import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { getCharData } from '@genshin-optimizer/gi/stats'
+import { CharacterName } from '@genshin-optimizer/gi/ui'
 import { Box, Grid, Typography } from '@mui/material'
 import { useContext, useMemo } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { CharacterContext } from '../../../Context/CharacterContext'
 import { DataContext } from '../../../Context/DataContext'
 import { uiInput as input } from '../../../Formula'
+import TeamCard from '../../../PageTeams/TeamCard'
 import CloseButton from '../../CloseButton'
 import LevelSelect from '../../LevelSelect'
 import { CharacterCardStats } from '../CharacterCard/CharacterCardStats'
 import {
   CharacterCompactConstSelector,
   CharacterCoverArea,
-} from '../CharacterProfileCard'
+} from '../CharacterProfilePieces'
 import EquippedGrid from '../EquippedGrid'
-import TravelerGenderSelect from './TravelerGenderSelect'
 import TalentDropdown from '../TalentDropdown'
+import TravelerGenderSelect from './TravelerGenderSelect'
 
 export default function Content({ onClose }: { onClose?: () => void }) {
   const database = useDatabase()
@@ -84,6 +87,7 @@ export default function Content({ onClose }: { onClose?: () => void }) {
               </Grid>
             </Box>
             <EquipmentSection />
+            <InTeam />
           </Grid>
         </Grid>
       </Box>
@@ -126,6 +130,55 @@ function EquipmentSection() {
           })
         }}
       />
+    </Box>
+  )
+}
+const columns = {
+  xs: 1,
+  sm: 2,
+  md: 3,
+  lg: 3,
+  xl: 3,
+} as const
+function InTeam() {
+  const navigate = useNavigate()
+
+  const {
+    character: { key: characterKey },
+  } = useContext(CharacterContext)
+  const database = useDatabase()
+  const { gender } = useDBMeta()
+  const teamIds = useMemo(
+    () =>
+      database.teams.keys.filter((teamId) =>
+        database.teams
+          .get(teamId)
+          .teamCharIds.some(
+            (teamCharId) =>
+              database.teamChars.get(teamCharId).key === characterKey
+          )
+      ),
+    [characterKey, database]
+  )
+  if (!teamIds.length) return null
+
+  return (
+    <Box>
+      <Typography variant={'h6'}>
+        Teams with <CharacterName characterKey={characterKey} gender={gender} />
+      </Typography>
+      <Grid container columns={columns} spacing={1}>
+        {teamIds.map((teamId) => (
+          <Grid item key={teamId} xs={1}>
+            <TeamCard
+              bgt="light"
+              teamId={teamId}
+              onClick={() => navigate(`/teams/${teamId}`)}
+              disableButtons
+            />
+          </Grid>
+        ))}
+      </Grid>
     </Box>
   )
 }

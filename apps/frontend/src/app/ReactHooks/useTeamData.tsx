@@ -83,6 +83,13 @@ export default function useTeamData(
         if (r === 'update') setDbDirty()
       })
     )
+    const unfollowChars = teamCharIds.map((teamCharId) => {
+      const teamChar = database.teamChars.get(teamCharId)
+      if (!teamChar) return () => {}
+      return database.chars.follow(teamChar.key, (_k, r) => {
+        if (r === 'update') setDbDirty()
+      })
+    })
     const unfollowBuilds = teamCharIds.map((teamCharId) => {
       const teamChar = database.teamChars.get(teamCharId)
       if (!teamChar) return () => {}
@@ -97,6 +104,7 @@ export default function useTeamData(
 
     return () => {
       unfollowTeamChars.forEach((unfollow) => unfollow())
+      unfollowChars.forEach((unfollow) => unfollow())
       unfollowBuilds.forEach((unfollow) => unfollow())
     }
   }, [dbDirty, database, teamCharIds, setDbDirty])

@@ -97,6 +97,11 @@ export default function TeamSettingElement({ teamId }: { teamId: string }) {
               multiline
               rows={4}
             />
+            <Typography variant="h6">Team Editor</Typography>
+            <Typography>
+              The first character in the team received any "active on-field"
+              character buffs.
+            </Typography>
             <TeamCharacterSelector teamId={teamId} />
           </CardContent>
         </CardThemed>

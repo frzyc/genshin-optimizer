@@ -3,7 +3,6 @@ import { Box, Grid, Stack } from '@mui/material'
 import { useCallback, useContext, useMemo, useRef } from 'react'
 import ArtifactCardNano from '../../../../Components/Artifact/ArtifactCardNano'
 import CardLight from '../../../../Components/Card/CardLight'
-import CharacterProfileCard from '../../../../Components/Character/CharacterProfileCard'
 import StatDisplayComponent from '../../../../Components/Character/StatDisplayComponent'
 import WeaponCardNano from '../../../../Components/Weapon/WeaponCardNano'
 import { DataContext } from '../../../../Context/DataContext'
@@ -11,6 +10,7 @@ import { uiInput as input } from '../../../../Formula'
 import useOldData from '../../../useOldData'
 import CompareBtn from '../../CompareBtn'
 import EquipmentSection from './EquipmentSection'
+import CharacterProfileCard from '../../../CharProfileCard'
 
 export default function TabOverview() {
   const scrollRef = useRef<HTMLDivElement>()
