@@ -232,9 +232,10 @@ export class TeamCharacterDataManager extends DataManager<
       const weaponTypeKey = getCharData(teamChar.key).weaponType
       const defWeaponKey = defaultInitialWeaponKey(weaponTypeKey)
 
-      build.weaponId = this.database.weapons.keys.find(
-        (weaponId) => this.database.weapons.get(weaponId)!.key === defWeaponKey
-      )
+      build.weaponId = this.database.weapons.keys.find((weaponId) => {
+        const { key, location } = this.database.weapons.get(weaponId)!
+        return !location && key === defWeaponKey
+      })
       if (!build.weaponId)
         build.weaponId = this.database.weapons.new(initialWeapon(defWeaponKey))
     }

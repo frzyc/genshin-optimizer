@@ -36,9 +36,10 @@ export class BuildDataManager extends DataManager<
       // something is broken, so we get a dullblade as default
       const defWeaponKey = defaultInitialWeaponKey('sword')
 
-      weaponId = this.database.weapons.keys.find(
-        (weaponId) => this.database.weapons.get(weaponId)!.key === defWeaponKey
-      )
+      weaponId = this.database.weapons.keys.find((weaponId) => {
+        const { key, location } = this.database.weapons.get(weaponId)!
+        return !location && key === defWeaponKey
+      })
       if (!weaponId)
         weaponId = this.database.weapons.new(initialWeapon(defWeaponKey))
     }
