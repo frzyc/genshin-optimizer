@@ -175,7 +175,8 @@ export default function ArtifactEditor({
   const queueTotal = processedNum + outstandingNum + scanningNum
   const disableEditSlot =
     (!['new', ''].includes(artifactIdToEdit) && !!artifact?.location) ||
-    disableSlot
+    disableSlot ||
+    !!artifactIdToEdit // Disable editing slot of existing artifacts
 
   const uploadFiles = useCallback(
     (files?: FileList | null) => {

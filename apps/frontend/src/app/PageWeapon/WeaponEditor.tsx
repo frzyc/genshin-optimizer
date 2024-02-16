@@ -69,16 +69,6 @@ export default function WeaponEditor({
     },
     [propWeaponId, database]
   )
-  const { gender } = useDBMeta()
-  const characterSheet = useMemo(
-    () =>
-      location
-        ? getCharSheet(database.chars.LocationToCharacterKey(location), gender)
-        : undefined,
-    [database, gender, location]
-  )
-
-  const initialWeaponFilter = characterSheet && characterSheet.weaponTypeKey
 
   const setLocation = useCallback(
     (k: LocationKey) => id && database.weapons.set(id, { location: k }),
@@ -121,7 +111,8 @@ export default function WeaponEditor({
           show={showModal}
           onHide={onHideModal}
           onSelect={(k) => weaponDispatch({ key: k })}
-          weaponTypeFilter={initialWeaponFilter}
+          // can only swap to a weapon of the same type, to accomodate loadout
+          weaponTypeFilter={weaponSheet && weaponSheet.weaponType}
         />
         <CardContent>
           {weaponSheet && weaponUIData && (
