@@ -252,7 +252,13 @@ export default function ArtifactEditor({
           newSheet.rarity,
           Math.max(...newSheet.rarity) as ArtifactRarity
         )
-        newValue.slotKey = pick(artifact?.slotKey, newSheet.slots)
+        // If we're updating an existing artifact, then slotKey should immediately be set to the artifact's slot.
+        // Otherwise, if slot selection is disabled but a key has been provided in fixedSlotKey, we assign that
+        // value (e.g. when creating a new artifact from the artifact swap UI). If neither, then we default to
+        // 'flower'.
+        newValue.slotKey =
+          artifact?.slotKey ??
+          (disableSlot && fixedSlotKey !== '' ? fixedSlotKey : 'flower')
       }
       if (newValue.rarity) newValue.level = artifact?.level ?? 0
       if (newValue.level)
@@ -276,7 +282,7 @@ export default function ArtifactEditor({
       }
       artifactDispatch({ type: 'update', artifact: newValue })
     },
-    [artifact, sheet, artifactDispatch]
+    [artifact, sheet, artifactDispatch, disableSlot, fixedSlotKey]
   )
   const setSubstat = useCallback(
     (index: number, substat: ISubstat) => {
@@ -288,12 +294,12 @@ export default function ArtifactEditor({
   const canClearArtifact = (): boolean =>
     window.confirm(t`editor.clearPrompt` as string)
   const { rarity = 5, level = 0 } = artifact ?? {}
-  // If we're editing an existing artifact, then slotKey should immediately be set to the artifact's slot.
-  // Otherwise, if the slot buttons are disabled (i.e. creating a new artifact from the artifact swap UI),
-  // then we check if a slot has been specified in fixedSlotKey and either assign that or assign a default
-  // value of 'flower'.
+  // Same as above when assigning newValue.slotKey in update.
   const slotKey = useMemo(() => {
-    return (artifact?.slotKey ?? (disableSlot && fixedSlotKey !== '' ? fixedSlotKey : 'flower'))
+    return (
+      artifact?.slotKey ??
+      (disableSlot && fixedSlotKey !== '' ? fixedSlotKey : 'flower')
+    )
   }, [disableSlot, fixedSlotKey, artifact])
   const { currentEfficiency = 0, maxEfficiency = 0 } = cArtifact
     ? Artifact.getArtifactEfficiency(cArtifact, allSubstatFilter)
