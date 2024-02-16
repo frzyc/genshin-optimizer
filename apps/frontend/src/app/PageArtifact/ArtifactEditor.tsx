@@ -7,6 +7,7 @@ import { artifactAsset } from '@genshin-optimizer/gi/assets'
 import type {
   ArtifactRarity,
   ArtifactSetKey,
+  ArtifactSlotKey,
 } from '@genshin-optimizer/gi/consts'
 import {
   allElementWithPhyKeys,
@@ -134,6 +135,7 @@ export type ArtifactEditorProps = {
   allowEmpty?: boolean
   disableSet?: boolean
   disableSlot?: boolean
+  fixedSlotKey?: ArtifactSlotKey | ''
 }
 export default function ArtifactEditor({
   artifactIdToEdit = '',
@@ -142,6 +144,7 @@ export default function ArtifactEditor({
   allowEmpty = false,
   disableSet = false,
   disableSlot = false,
+  fixedSlotKey = '',
 }: ArtifactEditorProps) {
   const queueRef = useRef(
     new ScanningQueue(textsFromImage, shouldShowDevComponents)
@@ -284,7 +287,14 @@ export default function ArtifactEditor({
   const isValid = !errors.length
   const canClearArtifact = (): boolean =>
     window.confirm(t`editor.clearPrompt` as string)
-  const { rarity = 5, level = 0, slotKey = 'flower' } = artifact ?? {}
+  const { rarity = 5, level = 0 } = artifact ?? {}
+  // If we're editing an existing artifact, then slotKey should immediately be set to the artifact's slot.
+  // Otherwise, if the slot buttons are disabled (i.e. creating a new artifact from the artifact swap UI),
+  // then we check if a slot has been specified in fixedSlotKey and either assign that or assign a default
+  // value of 'flower'.
+  const slotKey = useMemo(() => {
+    return (artifact?.slotKey ?? (disableSlot && fixedSlotKey !== '' ? fixedSlotKey : 'flower'))
+  }, [disableSlot, fixedSlotKey, artifact])
   const { currentEfficiency = 0, maxEfficiency = 0 } = cArtifact
     ? Artifact.getArtifactEfficiency(cArtifact, allSubstatFilter)
     : {}

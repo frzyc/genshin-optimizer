@@ -159,6 +159,7 @@ export default function ArtifactSwapModal({
             allowUpload
             allowEmpty
             disableSlot
+            fixedSlotKey={filterOption.slotKeys[0]}
           />
         </Suspense>
         <CardContent
