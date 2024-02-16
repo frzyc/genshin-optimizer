@@ -93,7 +93,7 @@ export default function BuildDisplayItem({
       ? 'Do you want to equip this build to this loadout?'
       : 'Do you want to equip this build to this character?'
     if (!window.confirm(confirmMsg)) return
-    if (loadoutEquip && buildId) {
+    if (loadoutEquip) {
       database.builds.set(buildId, {
         weaponId: data.get(input.weapon.id).value,
         artifactIds: objKeyMap(allArtifactSlotKeys, (s) =>

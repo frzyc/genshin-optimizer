@@ -147,7 +147,7 @@ function ArtifactSectionCard() {
 
     if (loadoutEquip)
       database.builds.set(buildId, {
-        artifactIds: objKeyMap(allArtifactSlotKeys, (s) => undefined),
+        artifactIds: objKeyMap(allArtifactSlotKeys, () => undefined),
       })
     else
       Object.values(equippedArtifacts).forEach((aid) =>

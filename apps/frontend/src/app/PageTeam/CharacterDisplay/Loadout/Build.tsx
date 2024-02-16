@@ -107,20 +107,19 @@ export function Build({
         <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
           <Box sx={{ display: 'flex', gap: 1 }}>
             <CardThemed sx={{ flexGrow: 1 }}>
-              <BootstrapTooltip title={<Typography>{description}</Typography>}>
-                <CardActionArea
-                  disabled={!weaponId || active}
-                  onClick={onActive}
+              <CardActionArea disabled={!weaponId || active} onClick={onActive}>
+                <Box
+                  component="span"
+                  sx={{ p: 1, display: 'flex', gap: 1, alignItems: 'center' }}
                 >
-                  <Box
-                    component="span"
-                    sx={{ p: 1, display: 'flex', gap: 1, alignItems: 'center' }}
+                  <Typography variant="h6">{name}</Typography>
+                  <BootstrapTooltip
+                    title={<Typography>{description}</Typography>}
                   >
-                    <Typography variant="h6">{name}</Typography>
                     <InfoIcon />
-                  </Box>
-                </CardActionArea>
-              </BootstrapTooltip>
+                  </BootstrapTooltip>
+                </Box>
+              </CardActionArea>
             </CardThemed>
             <Button color="info" size="small" onClick={onOpen}>
               <EditIcon />
