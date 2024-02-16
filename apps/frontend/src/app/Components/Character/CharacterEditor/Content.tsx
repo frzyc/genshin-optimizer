@@ -24,6 +24,7 @@ import {
 import EquippedGrid from '../EquippedGrid'
 import TalentDropdown from '../TalentDropdown'
 import TravelerGenderSelect from './TravelerGenderSelect'
+import ImgIcon from '../../Image/ImgIcon'
 
 export default function Content({ onClose }: { onClose?: () => void }) {
   const database = useDatabase()
@@ -81,7 +82,19 @@ export default function Content({ onClose }: { onClose?: () => void }) {
               <Grid container columns={3} spacing={1}>
                 {(['auto', 'skill', 'burst'] as const).map((talentKey) => (
                   <Grid item xs={1}>
-                    <TalentDropdown key={talentKey} talentKey={talentKey} />
+                    <TalentDropdown
+                      key={talentKey}
+                      talentKey={talentKey}
+                      dropDownButtonProps={{
+                        startIcon: (
+                          <ImgIcon
+                            src={characterSheet.getTalentOfKey(talentKey).img}
+                            size={1.75}
+                            sideMargin
+                          />
+                        ),
+                      }}
+                    />
                   </Grid>
                 ))}
               </Grid>
