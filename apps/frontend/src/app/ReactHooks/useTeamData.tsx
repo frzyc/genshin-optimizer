@@ -77,6 +77,7 @@ export default function useTeamData(
   )
 
   useEffect(() => {
+    if (!dbDirty) return () => {}
     const unfollowTeamChars = teamCharIds.map((teamCharId) =>
       database.teamChars.follow(teamCharId, (_k, r) => {
         if (r === 'update') setDbDirty()
@@ -98,7 +99,7 @@ export default function useTeamData(
       unfollowTeamChars.forEach((unfollow) => unfollow())
       unfollowBuilds.forEach((unfollow) => unfollow())
     }
-  }, [database, teamCharIds, setDbDirty])
+  }, [dbDirty, database, teamCharIds, setDbDirty])
 
   return data
 }
