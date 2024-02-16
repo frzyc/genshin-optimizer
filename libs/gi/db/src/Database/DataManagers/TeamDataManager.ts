@@ -43,7 +43,7 @@ export class TeamDataManager extends DataManager<
     return validateTeam(obj, this.database)
   }
 
-  new(value: Team): string {
+  new(value: Partial<Team> = {}): string {
     const id = this.generateKey()
     this.set(id, value)
     return id

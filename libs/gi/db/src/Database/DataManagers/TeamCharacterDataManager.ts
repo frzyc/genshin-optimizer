@@ -201,10 +201,10 @@ export class TeamCharacterDataManager extends DataManager<
     }
   }
 
-  new(key: CharacterKey): string {
+  new(key: CharacterKey, data: Partial<TeamCharacter> = {}): string {
     const optConfigId = this.database.optConfigs.new()
     const id = this.generateKey()
-    this.set(id, { key, optConfigId })
+    this.set(id, { key, optConfigId, ...data })
     return id
   }
   override remove(key: string, notify?: boolean): TeamCharacter | undefined {

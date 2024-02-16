@@ -12,7 +12,10 @@ import {
 
 describe('A general optimizeTC usecase', () => {
   it('generate correct distribution', () => {
-    const buildTc: BuildTc = {
+    const database = new ArtCharDatabase(1, new SandboxStorage({}))
+    const buildTcId = database.buildTcs.new({
+      name: 'test',
+      description: 'test',
       artifact: {
         slots: {
           flower: { level: 20, rarity: 5, statKey: 'hp' },
@@ -57,9 +60,11 @@ describe('A general optimizeTC usecase', () => {
         },
         minTotal: { enerRech_: 150 },
       },
-    }
+    })
+    const buildTc: BuildTc = database.buildTcs.get(buildTcId)
+    expect(buildTc).toBeTruthy()
     const characterKey: CharacterKey = 'HuTao'
-    const database = new ArtCharDatabase(1, new SandboxStorage({}))
+
     database.weapons.new({
       key: 'StaffOfHoma',
       level: 90,
@@ -72,8 +77,32 @@ describe('A general optimizeTC usecase', () => {
       key: 'HuTao',
       level: 89,
       ascension: 6,
-      hitMode: 'avgHit',
-      reaction: 'vaporize',
+
+      talent: { auto: 9, skill: 9, burst: 9 },
+    })
+    database.chars.set('Xingqiu', {
+      key: 'Xingqiu',
+      level: 89,
+      ascension: 6,
+      talent: { auto: 9, skill: 9, burst: 9 },
+      constellation: 0,
+    })
+    database.chars.set('Yelan', {
+      key: 'Yelan',
+      level: 89,
+      ascension: 6,
+      talent: { auto: 9, skill: 9, burst: 9 },
+      constellation: 0,
+    })
+    database.chars.set('Xiangling', {
+      key: 'Xiangling',
+      level: 89,
+      ascension: 6,
+      talent: { auto: 9, skill: 9, burst: 9 },
+      constellation: 0,
+    })
+    const HuTaoTeamCharId = database.teamChars.new(characterKey, {
+      bonusStats: {},
       conditional: {
         StaffOfHoma: { RecklessCinnabar: 'on' },
         HuTao: { GuideToAfterlifeVoyage: 'on', SanguineRouge: 'on' },
@@ -83,46 +112,43 @@ describe('A general optimizeTC usecase', () => {
         DesertPavilionChronicle: { set4: 'on' },
         DragonsBane: { BaneOfFlameAndWater: 'on' },
       },
-      bonusStats: {},
-      enemyOverride: {},
-      talent: { auto: 9, skill: 9, burst: 9 },
       infusionAura: '',
-      constellation: 0,
-      team: ['Xingqiu', 'Yelan', 'Xiangling'],
-      teamConditional: {
-        Xiangling: {
+    })
+    const teamCharIds = [
+      HuTaoTeamCharId,
+      database.teamChars.new('Xingqiu', {
+        conditional: {
+          NoblesseOblige: { set4: 'on' },
+          Xingqiu: { c2: 'on', skill: 'on' },
+        },
+      }),
+      database.teamChars.new('Yelan', {
+        conditional: { Yelan: { a4Stacks: '9' } },
+      }),
+      database.teamChars.new('Xiangling', {
+        conditional: {
           Xiangling: {
             afterGuobaHit: 'afterGuobaHit',
             afterPyronado: 'duringPyronado',
             afterChili: 'afterChili',
           },
         },
-        Xingqiu: {
-          NoblesseOblige: { set4: 'on' },
-          Xingqiu: { c2: 'on', skill: 'on' },
-        },
-        Yelan: { Yelan: { a4Stacks: '9' } },
-        Zhongli: { Zhongli: { skill: 'on', p1: '5' } },
-        KaedeharaKazuha: {
-          ViridescentVenerer: { swirlpyro: 'pyro' },
-          KaedeharaKazuha: { swirlpyro: 'pyro' },
-        },
-        Diona: {
-          NoblesseOblige: { set4: 'on' },
-          Diona: { Ascension1: 'on', Constellation6: 'higher' },
-        },
-      },
-      compareData: false,
-      customMultiTarget: [],
+      }),
+    ]
+    const teamId = database.teams.new({
+      teamCharIds,
+      hitMode: 'avgHit',
+      reaction: 'vaporize',
     })
-
+    expect(teamId).toBeTruthy()
     const overrideArt = getArtifactData(buildTc)
     const overrideWeapon = getWeaponData(buildTc)
     const teamData = getTeamDataCalc(
       database,
-      characterKey,
-      0,
+      teamId,
       'F',
+      HuTaoTeamCharId,
+      0,
       overrideArt,
       overrideWeapon
     )
@@ -131,7 +157,6 @@ describe('A general optimizeTC usecase', () => {
 
     optimizeTcUsingNodes(nodes, buildTc, (data) => {
       if (data.resultType !== 'finalize') return
-      console.log('TEST')
       expect(data.maxBufferRolls).toEqual({
         atk: 0,
         atk_: 0,

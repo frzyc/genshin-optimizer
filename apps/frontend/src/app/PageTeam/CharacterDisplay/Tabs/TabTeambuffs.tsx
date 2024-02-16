@@ -1,17 +1,12 @@
 import { CardThemed, SqBadge } from '@genshin-optimizer/common/ui'
 import { artifactAsset } from '@genshin-optimizer/gi/assets'
-import type { CharacterKey } from '@genshin-optimizer/gi/consts'
-import { charKeyToLocGenderedCharKey } from '@genshin-optimizer/gi/consts'
 import {
   useBuildTc,
   useCharacter,
-  useDBMeta,
   useDatabase,
   useTeamChar,
 } from '@genshin-optimizer/gi/db-ui'
 import { ArtifactSetName } from '@genshin-optimizer/gi/ui'
-import { PersonAdd } from '@mui/icons-material'
-import type { AutocompleteProps } from '@mui/material'
 import {
   Box,
   CardContent,
@@ -21,7 +16,7 @@ import {
   Skeleton,
   Typography,
 } from '@mui/material'
-import { Suspense, useCallback, useContext, useMemo } from 'react'
+import { Suspense, useContext, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useMatch, useNavigate } from 'react-router-dom'
 import CardLight from '../../../Components/Card/CardLight'
@@ -33,9 +28,6 @@ import {
 import ColorText from '../../../Components/ColoredText'
 import DocumentDisplay from '../../../Components/DocumentDisplay'
 import { NodeFieldDisplay } from '../../../Components/FieldDisplay'
-import type { GeneralAutocompleteOption } from '../../../Components/GeneralAutocomplete'
-import { GeneralAutocomplete } from '../../../Components/GeneralAutocomplete'
-import CharIconSide from '../../../Components/Image/CharIconSide'
 import ImgIcon from '../../../Components/Image/ImgIcon'
 import { InfoTooltipInline } from '../../../Components/InfoTooltip'
 import { WeaponFullCardObj } from '../../../Components/Weapon/WeaponFullCard'
@@ -43,11 +35,9 @@ import type { CharacterContextObj } from '../../../Context/CharacterContext'
 import { CharacterContext } from '../../../Context/CharacterContext'
 import type { dataContextObj } from '../../../Context/DataContext'
 import { DataContext } from '../../../Context/DataContext'
-import { SillyContext } from '../../../Context/SillyContext'
 import type { TeamCharacterContextObj } from '../../../Context/TeamCharacterContext'
 import { TeamCharacterContext } from '../../../Context/TeamCharacterContext'
 import { dataSetEffects, getArtSheet } from '../../../Data/Artifacts'
-import { getCharSheet } from '../../../Data/Characters'
 import type CharacterSheet from '../../../Data/Characters/CharacterSheet'
 import { resonanceSheets } from '../../../Data/Resonance'
 import { input } from '../../../Formula'
@@ -369,98 +359,4 @@ function CharTalentCondDisplay() {
   )
   if (!sections) return null
   return <DocumentDisplay sections={sections} teamBuffOnly={true} />
-}
-// TODO: can probably be used for team selector above? not sure
-function TeammateAutocomplete({
-  characterKey,
-  team,
-  label,
-  setChar,
-  autoCompleteProps = {},
-}: {
-  characterKey: CharacterKey | ''
-  team: Array<CharacterKey | ''>
-  label: string
-  setChar: (k: CharacterKey | '') => void
-  autoCompleteProps?: Omit<
-    AutocompleteProps<
-      GeneralAutocompleteOption<CharacterKey | ''>,
-      false,
-      false,
-      false
-    >,
-    'renderInput' | 'onChange' | 'options'
-  >
-}) {
-  const { t } = useTranslation([
-    'sillyWisher_charNames',
-    'page_character',
-    'sheet_gen',
-    'charNames_gen',
-  ])
-  const database = useDatabase()
-  const { gender } = useDBMeta()
-  const { silly } = useContext(SillyContext)
-  const namesCB = useCallback(
-    (key: CharacterKey, silly: boolean): string =>
-      key.startsWith('Traveler')
-        ? `${t(
-            `${
-              silly ? 'sillyWisher_charNames' : 'charNames_gen'
-            }:${charKeyToLocGenderedCharKey(key, gender)}`
-          )} (${t(
-            `sheet_gen:element.${getCharSheet(key, gender)?.elementKey}`
-          )})`
-        : t(`${silly ? 'sillyWisher_charNames' : 'charNames_gen'}:${key}`),
-    [t, gender]
-  )
-
-  const toImg = useCallback(
-    (key: CharacterKey | '') =>
-      key ? <CharIconSide characterKey={key} /> : <PersonAdd />,
-    []
-  ) //
-  const isFavorite = useCallback(
-    (key: CharacterKey) => database.charMeta.get(key).favorite,
-    [database]
-  )
-  const onDisable = useCallback(
-    ({ key }: { key: CharacterKey | '' }) =>
-      team.filter((t) => t && t !== characterKey).includes(key) ||
-      (key.startsWith('Traveler') &&
-        team.some((t) => t.startsWith('Traveler'))),
-    [team, characterKey]
-  )
-  const values = useMemo(
-    () =>
-      database.chars.keys
-        .map(
-          (v): GeneralAutocompleteOption<CharacterKey> => ({
-            key: v,
-            label: namesCB(v, silly),
-            favorite: isFavorite(v),
-            alternateNames: [namesCB(v, false)],
-          })
-        )
-        .sort((a, b) => {
-          if (a.favorite && !b.favorite) return -1
-          if (!a.favorite && b.favorite) return 1
-          return a.label.localeCompare(b.label)
-        }),
-    [database.chars.keys, namesCB, isFavorite, silly]
-  )
-  return (
-    <Suspense fallback={<Skeleton variant="text" width={100} />}>
-      <GeneralAutocomplete
-        size="small"
-        label={label}
-        options={values}
-        valueKey={characterKey}
-        onChange={(k) => setChar(k ?? '')}
-        getOptionDisabled={onDisable}
-        toImg={toImg}
-        {...autoCompleteProps}
-      />
-    </Suspense>
-  )
 }

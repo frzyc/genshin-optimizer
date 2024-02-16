@@ -2,9 +2,10 @@ import {
   useBoolState,
   useForceUpdate,
 } from '@genshin-optimizer/common/react-util'
-import type { Team } from '@genshin-optimizer/gi/db'
+import { CardThemed, ModalWrapper } from '@genshin-optimizer/common/ui'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import AddIcon from '@mui/icons-material/Add'
+import UploadIcon from '@mui/icons-material/Upload'
 import {
   Box,
   Button,
@@ -19,8 +20,6 @@ import {
 import { Suspense, useEffect, useMemo, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import TeamCard from './TeamCard'
-import UploadIcon from '@mui/icons-material/Upload'
-import { CardThemed, ModalWrapper } from '@genshin-optimizer/common/ui'
 const columns = { xs: 1, sm: 2, md: 3, lg: 4, xl: 4 }
 
 export default function PageTeams() {
@@ -39,7 +38,7 @@ export default function PageTeams() {
   }, [forceUpdate, database])
 
   const onAdd = () => {
-    const newid = database.teams.new({} as Team)
+    const newid = database.teams.new()
     navigate(newid)
   }
   const [showImport, onShowImport, onHideImport] = useBoolState()
