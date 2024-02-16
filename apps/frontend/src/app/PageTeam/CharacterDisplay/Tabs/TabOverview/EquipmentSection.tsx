@@ -13,7 +13,7 @@ import {
   useMediaQuery,
   useTheme,
 } from '@mui/material'
-import { useCallback, useContext, useMemo } from 'react'
+import { useContext, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import SetEffectDisplay from '../../../../Components/Artifact/SetEffectDisplay'
 import CardLight from '../../../../Components/Card/CardLight'
@@ -128,26 +128,32 @@ function ArtifactSectionCard() {
   const { t } = useTranslation(['page_character', 'artifact'])
   const database = useDatabase()
   const {
-    character,
     character: { equippedArtifacts },
   } = useContext(CharacterContext)
+  const {
+    teamChar: { buildType, buildId },
+  } = useContext(TeamCharacterContext)
   const { data } = useContext(DataContext)
   const hasEquipped = useMemo(
     () => !!Object.values(equippedArtifacts).filter((i) => i).length,
     [equippedArtifacts]
   )
-  const unequipArts = useCallback(() => {
-    if (!character) return
-    if (
-      !window.confirm(
-        'Do you want to move all currently equipped artifacts to inventory?'
+  const loadoutEquip = buildId && buildType === 'real'
+  const unequipArts = () => {
+    const confirmMsg = loadoutEquip
+      ? 'Do you want to unequip all artifacts in this loadout?'
+      : 'Do you want to move all currently equipped artifacts to inventory?'
+    if (!window.confirm(confirmMsg)) return
+
+    if (loadoutEquip)
+      database.builds.set(buildId, {
+        artifactIds: objKeyMap(allArtifactSlotKeys, (s) => undefined),
+      })
+    else
+      Object.values(equippedArtifacts).forEach((aid) =>
+        database.arts.set(aid, { location: '' })
       )
-    )
-      return
-    Object.values(equippedArtifacts).forEach((aid) =>
-      database.arts.set(aid, { location: '' })
-    )
-  }, [character, database, equippedArtifacts])
+  }
 
   const setEffects = useMemo(() => dataSetEffects(data), [data])
 
