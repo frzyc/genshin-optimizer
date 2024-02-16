@@ -7,11 +7,10 @@ import CharacterProfileCard from '../../../../Components/Character/CharacterProf
 import StatDisplayComponent from '../../../../Components/Character/StatDisplayComponent'
 import WeaponCardNano from '../../../../Components/Weapon/WeaponCardNano'
 import { DataContext } from '../../../../Context/DataContext'
-import { TeamCharacterContext } from '../../../../Context/TeamCharacterContext'
 import { uiInput as input } from '../../../../Formula'
-import EquipmentSection from './EquipmentSection'
-import CompareBtn from '../../CompareBtn'
 import useOldData from '../../../useOldData'
+import CompareBtn from '../../CompareBtn'
+import EquipmentSection from './EquipmentSection'
 
 export default function TabOverview() {
   const scrollRef = useRef<HTMLDivElement>()
@@ -71,16 +70,13 @@ export default function TabOverview() {
   )
 }
 function EquipmentRow({ onClick }: { onClick: () => void }) {
-  const {
-    character: { equippedWeapon },
-  } = useContext(TeamCharacterContext)
   const { data } = useContext(DataContext)
 
   return (
     <Grid container spacing={1} columns={{ xs: 2, sm: 2, md: 3, lg: 6, xl: 6 }}>
       <Grid item xs={1}>
         <WeaponCardNano
-          weaponId={equippedWeapon}
+          weaponId={data.get(input.weapon.id).value}
           BGComponent={CardLight}
           onClick={onClick}
         />
