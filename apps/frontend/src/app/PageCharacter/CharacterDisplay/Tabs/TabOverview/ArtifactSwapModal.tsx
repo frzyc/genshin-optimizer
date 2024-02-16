@@ -211,7 +211,7 @@ export default function ArtifactSwapModal({
             color="info"
             startIcon={<Add />}
           >
-            {t('addNew', { ns: 'artifact' })}
+            {t('artifact:addNew')}
           </Button>
           <Box mt={1}>
             <Suspense
