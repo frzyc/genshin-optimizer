@@ -9,6 +9,7 @@ import {
   useTeam,
   useTeamChar,
 } from '@genshin-optimizer/gi/db-ui'
+import { SillyContext } from '@genshin-optimizer/gi/ui'
 import { Box, CardContent, Skeleton } from '@mui/material'
 import {
   Suspense,
@@ -30,7 +31,6 @@ import {
   type ChartData,
   type GraphContextObj,
 } from '../Context/GraphContext'
-import { SillyContext } from '../Context/SillyContext'
 import {
   TeamCharacterContext,
   type TeamCharacterContextObj,

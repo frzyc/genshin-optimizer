@@ -43,9 +43,9 @@ export default function useOldData(): undefined | UIData {
         case 'real': {
           const build = database.builds.get(compareBuildId)
           return {
-            overrideArt: Object.keys(build.artifactIds).map((id) =>
-              database.arts.get(id)
-            ),
+            overrideArt: Object.keys(build.artifactIds)
+              .map((id) => database.arts.get(id))
+              .filter((a) => a),
             overrideWeapon: database.weapons.get(build.weaponId),
           }
         }

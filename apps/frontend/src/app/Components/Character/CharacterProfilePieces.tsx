@@ -7,6 +7,7 @@ import {
   useDatabase,
 } from '@genshin-optimizer/gi/db-ui'
 import { splash } from '@genshin-optimizer/gi/silly-wisher'
+import { SillyContext } from '@genshin-optimizer/gi/ui'
 import { getLevelString } from '@genshin-optimizer/gi/util'
 import { Favorite, FavoriteBorder } from '@mui/icons-material'
 import {
@@ -21,7 +22,6 @@ import {
 import { useContext } from 'react'
 import { CharacterContext } from '../../Context/CharacterContext'
 import { DataContext } from '../../Context/DataContext'
-import { SillyContext } from '../../Context/SillyContext'
 import type { TalentSheetElementKey } from '../../Data/Characters/ICharacterSheet'
 import { uiInput as input } from '../../Formula'
 import { ElementIcon } from '../../KeyMap/StatIcon'

@@ -1,15 +1,15 @@
-import { useContext } from 'react'
 import type {
   ArtifactSetKey,
   CharacterKey,
   WeaponKey,
 } from '@genshin-optimizer/gi/consts'
+import { SillyContext } from '@genshin-optimizer/gi/ui'
+import { useContext } from 'react'
+import { useTranslation } from 'react-i18next'
 import { Translate } from '../Components/Translate'
-import { SillyContext } from '../Context/SillyContext'
 import type { ReadNode } from '../Formula/type'
 import { customStringRead } from '../Formula/utils'
 import type { CharacterSheetKey } from '../Types/consts'
-import { useTranslation } from 'react-i18next'
 
 export const st = (strKey: string, values?: object) => (
   <Translate ns="sheet" key18={strKey} values={values} />

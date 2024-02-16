@@ -17,6 +17,7 @@ import {
   useDBMeta,
   useDatabase,
 } from '@genshin-optimizer/gi/db-ui'
+import { SillyContext } from '@genshin-optimizer/gi/ui'
 import { ascensionMaxLevel } from '@genshin-optimizer/gi/util'
 import { Favorite, FavoriteBorder } from '@mui/icons-material'
 import type { TooltipProps } from '@mui/material'
@@ -43,7 +44,6 @@ import {
 } from 'react'
 import { useTranslation } from 'react-i18next'
 import { DataContext } from '../../Context/DataContext'
-import { SillyContext } from '../../Context/SillyContext'
 import { getCharSheet } from '../../Data/Characters'
 import type CharacterSheet from '../../Data/Characters/CharacterSheet'
 import { iconAsset } from '../../Util/AssetUtil'

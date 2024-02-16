@@ -3,6 +3,7 @@ import type { ArtifactSlotKey } from '@genshin-optimizer/gi/consts'
 import { allArtifactSlotKeys } from '@genshin-optimizer/gi/consts'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
 import { DataManager } from '../DataManager'
+import { defaultInitialWeaponKey, initialWeapon } from './WeaponDataManager'
 export interface Build {
   name: string
   description: string
@@ -25,7 +26,40 @@ export class BuildDataManager extends DataManager<
         this.database.storage.remove(key)
   }
   override validate(obj: unknown): Build | undefined {
-    return validateBuild(obj, this.database)
+    let { name, description, weaponId, artifactIds } = obj as Build
+    if (typeof name !== 'string') name = 'Build Name'
+    if (typeof description !== 'string') description = 'Build Description'
+    if (weaponId && !this.database.weapons.get(weaponId)) weaponId = undefined
+
+    // force the loadout to have a valid weapon
+    if (!weaponId) {
+      // something is broken, so we get a dullblade as default
+      const defWeaponKey = defaultInitialWeaponKey('sword')
+
+      weaponId = this.database.weapons.keys.find(
+        (weaponId) => this.database.weapons.get(weaponId)!.key === defWeaponKey
+      )
+      if (!weaponId)
+        weaponId = this.database.weapons.new(initialWeapon(defWeaponKey))
+    }
+
+    if (typeof artifactIds !== 'object')
+      artifactIds = objKeyMap(allArtifactSlotKeys, () => undefined)
+    else
+      artifactIds = objKeyMap(allArtifactSlotKeys, (sk) => {
+        const id = artifactIds[sk]
+        if (!id) return undefined
+        const art = this.database.arts.get(id)
+        if (!art) return undefined
+        if (art.slotKey !== sk) return undefined
+        return id
+      })
+    return {
+      name,
+      description,
+      weaponId,
+      artifactIds,
+    }
   }
 
   new(build: Partial<Build> = {}): string {
@@ -35,32 +69,5 @@ export class BuildDataManager extends DataManager<
   }
   override clear(): void {
     super.clear()
-  }
-}
-
-function validateBuild(
-  obj: unknown = {},
-  database: ArtCharDatabase
-): Build | undefined {
-  let { name, description, weaponId, artifactIds } = obj as Build
-  if (typeof name !== 'string') name = 'Build Name'
-  if (typeof description !== 'string') description = 'Build Description'
-  if (weaponId && !database.weapons.get(weaponId)) weaponId = undefined
-  if (typeof artifactIds !== 'object')
-    artifactIds = objKeyMap(allArtifactSlotKeys, () => undefined)
-  else
-    artifactIds = objKeyMap(allArtifactSlotKeys, (sk) => {
-      const id = artifactIds[sk]
-      if (!id) return undefined
-      const art = database.arts.get(id)
-      if (!art) return undefined
-      if (art.slotKey !== sk) return undefined
-      return id
-    })
-  return {
-    name,
-    description,
-    weaponId,
-    artifactIds,
   }
 }

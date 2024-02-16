@@ -16,7 +16,9 @@ export default function CompareBtn() {
     teamCharId,
     teamChar: {
       buildType,
+      buildId,
       buildIds,
+      buildTcId,
       buildTcIds,
       compare,
       compareType,
@@ -38,6 +40,14 @@ export default function CompareBtn() {
     ) : (
       'Equipped'
     )
+  const current =
+    (compareType === 'equipped' && buildType === 'equipped') ||
+    (compareType === 'real' &&
+      buildType === 'real' &&
+      buildId === compareBuildId) ||
+    (compareType === 'tc' &&
+      buildType === 'tc' &&
+      buildTcId === compareBuildTcId)
   return (
     <ButtonGroup disabled={disabled}>
       <Button
@@ -49,7 +59,14 @@ export default function CompareBtn() {
       >
         Compare
       </Button>
-      <DropdownButton title={selectedLabel} disabled={!compare}>
+      <DropdownButton
+        title={
+          <>
+            {selectedLabel} {current && <SqBadge color="info">Current</SqBadge>}
+          </>
+        }
+        disabled={!compare}
+      >
         <MenuItem
           onClick={() =>
             database.teamChars.set(teamCharId, {
@@ -62,6 +79,7 @@ export default function CompareBtn() {
         </MenuItem>
         {buildIds.map((buildId) => (
           <MenuItem
+            disabled={!database.builds.get(buildId).weaponId}
             key={buildId}
             onClick={() =>
               database.teamChars.set(teamCharId, {

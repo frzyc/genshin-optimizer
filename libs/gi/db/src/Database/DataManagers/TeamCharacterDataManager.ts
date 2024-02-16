@@ -25,8 +25,10 @@ import { validateCustomMultiTarget } from './CustomMultiTarget'
 import {
   defaultInitialWeapon,
   defaultInitialWeaponKey,
+  initialWeapon,
 } from './WeaponDataManager'
 import { initCharTC, toBuildTc } from './BuildTcDataManager'
+import { getCharData } from '@genshin-optimizer/gi/stats'
 const buildTypeKeys = ['equipped', 'real', 'tc'] as const
 type buildTypeKey = (typeof buildTypeKeys)[number]
 type CondKey = CharacterKey | ArtifactSetKey | WeaponKey
@@ -172,15 +174,20 @@ export class TeamCharacterDataManager extends DataManager<
 
     if (
       typeof compareBuildId !== 'string' ||
-      !this.database.builds.keys.includes(compareBuildId)
-    )
+      !this.database.builds.keys.includes(compareBuildId) ||
+      !this.database.builds.get(compareBuildId)?.weaponId
+    ) {
       compareBuildId = ''
+      if (compareType === 'real') compareType = 'equipped'
+    }
 
     if (
       typeof compareBuildTcId !== 'string' ||
       !this.database.buildTcs.keys.includes(compareBuildTcId)
-    )
+    ) {
       compareBuildTcId = ''
+      if (compareType === 'tc') compareType = 'equipped'
+    }
 
     return {
       key: characterKey,
@@ -217,6 +224,21 @@ export class TeamCharacterDataManager extends DataManager<
   }
   newBuild(teamcharId: string, build: Partial<Build> = {}) {
     if (!this.get(teamcharId)) return
+
+    // force the loadout to have a valid weapon
+    if (!build.weaponId) {
+      const teamChar = this.database.teamChars.get(teamcharId)
+      if (!teamChar) return
+      const weaponTypeKey = getCharData(teamChar.key).weaponType
+      const defWeaponKey = defaultInitialWeaponKey(weaponTypeKey)
+
+      build.weaponId = this.database.weapons.keys.find(
+        (weaponId) => this.database.weapons.get(weaponId)!.key === defWeaponKey
+      )
+      if (!build.weaponId)
+        build.weaponId = this.database.weapons.new(initialWeapon(defWeaponKey))
+    }
+
     const buildId = this.database.builds.new(build)
     if (!buildId) return
     this.set(teamcharId, (teamChar) => {

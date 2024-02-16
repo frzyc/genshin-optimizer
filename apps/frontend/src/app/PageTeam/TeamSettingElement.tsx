@@ -11,6 +11,7 @@ import AddIcon from '@mui/icons-material/Add'
 import CloseIcon from '@mui/icons-material/Close'
 import DriveFileRenameOutlineIcon from '@mui/icons-material/DriveFileRenameOutline'
 import {
+  Alert,
   Box,
   Button,
   ButtonGroup,
@@ -98,10 +99,10 @@ export default function TeamSettingElement({ teamId }: { teamId: string }) {
               rows={4}
             />
             <Typography variant="h6">Team Editor</Typography>
-            <Typography>
+            <Alert severity="info" variant="filled">
               The first character in the team received any "active on-field"
               character buffs.
-            </Typography>
+            </Alert>
             <TeamCharacterSelector teamId={teamId} />
           </CardContent>
         </CardThemed>

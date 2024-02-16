@@ -16,6 +16,7 @@ import {
   charKeyToLocGenderedCharKey,
 } from '@genshin-optimizer/gi/consts'
 import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
+import { SillyContext } from '@genshin-optimizer/gi/ui'
 import { DeleteForever } from '@mui/icons-material'
 import AddIcon from '@mui/icons-material/Add'
 import {
@@ -43,12 +44,12 @@ import { useTranslation } from 'react-i18next'
 import { useMatch, useNavigate } from 'react-router-dom'
 import CardDark from '../Components/Card/CardDark'
 import CharacterCard from '../Components/Character/CharacterCard'
+import CharacterEditor from '../Components/Character/CharacterEditor'
 import CharacterSelectionModal from '../Components/Character/CharacterSelectionModal'
 import PageAndSortOptionSelect from '../Components/PageAndSortOptionSelect'
 import CharacterRarityToggle from '../Components/ToggleButton/CharacterRarityToggle'
 import ElementToggle from '../Components/ToggleButton/ElementToggle'
 import WeaponToggle from '../Components/ToggleButton/WeaponToggle'
-import { SillyContext } from '../Context/SillyContext'
 import { getCharSheet } from '../Data/Characters'
 import { getWeaponSheet } from '../Data/Weapons'
 import useCharSelectionCallback from '../ReactHooks/useCharSelectionCallback'
@@ -58,7 +59,6 @@ import {
   characterSortMap,
 } from '../Util/CharacterSort'
 import { catTotal } from '../Util/totalUtils'
-import CharacterEditor from '../Components/Character/CharacterEditor'
 const columns = { xs: 1, sm: 2, md: 3, lg: 4, xl: 4 }
 const numToShowMap = { xs: 6, sm: 8, md: 12, lg: 16, xl: 16 }
 const sortKeys = Object.keys(characterSortMap)

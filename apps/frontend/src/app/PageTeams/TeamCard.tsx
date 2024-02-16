@@ -1,13 +1,13 @@
 import { BootstrapTooltip, CardThemed } from '@genshin-optimizer/common/ui'
 import { range } from '@genshin-optimizer/common/util'
 import { useDatabase, useTeam } from '@genshin-optimizer/gi/db-ui'
+import ContentPasteIcon from '@mui/icons-material/ContentPaste'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import InfoIcon from '@mui/icons-material/Info'
 import { Box, Button, CardActionArea, Grid, Typography } from '@mui/material'
 import CharacterCardPico, {
   BlankCharacterCardPico,
 } from '../Components/Character/CharacterCardPico'
-import ContentPasteIcon from '@mui/icons-material/ContentPaste'
 export default function TeamCard({
   teamId,
   onClick,
@@ -56,11 +56,13 @@ export default function TeamCard({
           flexGrow: 1,
         }}
       >
-        <BootstrapTooltip title={<Typography>{description}</Typography>}>
-          <Typography sx={{ display: 'flex', gap: 1 }}>
-            <span>{name}</span> <InfoIcon />
-          </Typography>
-        </BootstrapTooltip>
+        <Typography sx={{ display: 'flex', gap: 1 }}>
+          <span>{name}</span>{' '}
+          <BootstrapTooltip title={<Typography>{description}</Typography>}>
+            <InfoIcon />
+          </BootstrapTooltip>
+        </Typography>
+
         <Box sx={{ marginTop: 'auto' }}>
           <Grid container columns={4} spacing={1}>
             {range(0, 3).map((i) => (
