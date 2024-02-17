@@ -1,4 +1,4 @@
-import { objKeyMap } from '@genshin-optimizer/common/util'
+import { objKeyMap, objMap } from '@genshin-optimizer/common/util'
 import {
   cmpEq,
   cmpGE,
@@ -28,7 +28,6 @@ import {
   selfBuff,
   type TagMapNodeEntries,
 } from '../util'
-import { allRanks } from '@genshin-optimizer/sr/dm'
 
 type AbilityScalingType = Exclude<AbilityKey, 'technique' | 'overworld'>
 
@@ -45,10 +44,7 @@ export function scalingParams(data_gen: CharacterDatum) {
   const [basic, skill, ult, talent, technique] = data_gen.skillTreeList
     .map((s) => s.skillParamList)
     .filter((s): s is number[][] => !!s)
-  const eidolon = objKeyMap(
-    allRanks,
-    (eidolon) => data_gen.rankMap[eidolon].params
-  )
+  const eidolon = objMap(data_gen.rankMap, rankInfo => rankInfo.params)
 
   return {
     basic,
