@@ -11,10 +11,12 @@ import LongevousDisciple from './LongevousDisciple'
 import MessengerTraversingHackerspace from './MessengerTraversingHackerspace'
 import MusketeerOfWildWheat from './MusketeerOfWildWheat'
 import PasserbyOfWanderingCloud from './PasserbyOfWanderingCloud'
+import PioneerDiverOfDeadWaters from './PioneerDiverOfDeadWaters'
 import PrisonerInDeepConfinement from './PrisonerInDeepConfinement'
 import TheAshblazingGrandDuke from './TheAshblazingGrandDuke'
 import ThiefOfShootingMeteor from './ThiefOfShootingMeteor'
 import WastelanderOfBanditryDesert from './WastelanderOfBanditryDesert'
+import WatchmakerMasterOfDreamMachinations from './WatchmakerMasterOfDreamMachinations'
 import BelobogOfTheArchitects from './BelobogOfTheArchitects'
 import BrokenKeel from './BrokenKeel'
 import CelestialDifferentiator from './CelestialDifferentiator'
@@ -41,10 +43,12 @@ const data: TagMapNodeEntries[] = [
   MessengerTraversingHackerspace,
   MusketeerOfWildWheat,
   PasserbyOfWanderingCloud,
+  PioneerDiverOfDeadWaters,
   PrisonerInDeepConfinement,
   TheAshblazingGrandDuke,
   ThiefOfShootingMeteor,
   WastelanderOfBanditryDesert,
+  WatchmakerMasterOfDreamMachinations,
   BelobogOfTheArchitects,
   BrokenKeel,
   CelestialDifferentiator,

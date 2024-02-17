@@ -23,10 +23,12 @@ export const allRelicCavernSetKeys = [
   'MessengerTraversingHackerspace',
   'MusketeerOfWildWheat',
   'PasserbyOfWanderingCloud',
+  'PioneerDiverOfDeadWaters',
   'PrisonerInDeepConfinement',
   'TheAshblazingGrandDuke',
   'ThiefOfShootingMeteor',
   'WastelanderOfBanditryDesert',
+  'WatchmakerMasterOfDreamMachinations',
 ] as const
 export type RelicCavernSetKey = (typeof allRelicCavernSetKeys)[number]
 

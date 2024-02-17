@@ -17,6 +17,8 @@ export const relicSetIdMap: Record<string, RelicSetKey> = {
   114: 'MessengerTraversingHackerspace',
   115: 'TheAshblazingGrandDuke',
   116: 'PrisonerInDeepConfinement',
+  117: 'PioneerDiverOfDeadWaters',
+  118: 'WatchmakerMasterOfDreamMachinations',
 
   301: 'SpaceSealingStation',
   302: 'FleetOfTheAgeless',

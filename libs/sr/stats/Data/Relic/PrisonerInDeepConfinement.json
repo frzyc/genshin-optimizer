@@ -3,17 +3,17 @@
     {
       "numRequired": 2,
       "passiveStats": {
-        "atk_": 0.12000000011175871
+        "atk_": 0.12
       },
       "otherStats": [
-        0.12000000011175871
+        0.12
       ]
     },
     {
       "numRequired": 4,
       "passiveStats": {},
       "otherStats": [
-        0.060000000055879354,
+        0.06,
         3
       ]
     }

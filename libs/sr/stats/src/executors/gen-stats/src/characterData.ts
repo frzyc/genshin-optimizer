@@ -1,8 +1,4 @@
 import {
-  extrapolateFloat as exf,
-  roundMantissa,
-} from '@genshin-optimizer/common/pipeline'
-import {
   objKeyMap,
   transposeArray,
   verifyObjKeys,
@@ -74,17 +70,6 @@ export type CharacterDatum = {
   rankMap: RankInfoMap
 }
 
-function extrapolateFloat(val: number): number {
-  const int = Math.floor(val)
-  const frac = val - int
-  if (frac != roundMantissa(frac, 32)) {
-    console.warn(`Extrapolation error: unknown SR format for ${val}`)
-    return val
-  }
-  // extrapolate as float
-  return exf(val, { forced: true })
-}
-
 export type CharacterData = Record<CharacterDataKey, CharacterDatum>
 export default function characterData(): CharacterData {
   const data = Object.fromEntries(
@@ -98,7 +83,7 @@ export default function characterData(): CharacterData {
           const skillParamList = skillId
             ? transposeArray(
                 avatarSkillConfig[skillId]!.map(({ ParamList }) =>
-                  ParamList.map(({ Value }) => extrapolateFloat(Value))
+                  ParamList.map(({ Value }) => Value)
                 )
               )
             : undefined
@@ -107,7 +92,7 @@ export default function characterData(): CharacterData {
             if (!StatusAddList.length) return {}
             const stats = Object.fromEntries(
               StatusAddList.map(({ PropertyType, Value }) => {
-                return [statKeyMap[PropertyType], extrapolateFloat(Value.Value)]
+                return [statKeyMap[PropertyType], Value.Value]
               })
             )
             return { stats }
@@ -138,21 +123,21 @@ export default function characterData(): CharacterData {
             BaseAggro,
           }) => ({
             atk: {
-              base: extrapolateFloat(AttackBase.Value),
-              add: extrapolateFloat(AttackAdd.Value),
+              base: AttackBase.Value,
+              add: AttackAdd.Value,
             },
             def: {
-              base: extrapolateFloat(DefenceBase.Value),
-              add: extrapolateFloat(DefenceAdd.Value),
+              base: DefenceBase.Value,
+              add: DefenceAdd.Value,
             },
             hp: {
-              base: extrapolateFloat(HPBase.Value),
-              add: extrapolateFloat(HPAdd.Value),
+              base: HPBase.Value,
+              add: HPAdd.Value,
             },
-            spd: extrapolateFloat(SpeedBase.Value),
-            crit_: extrapolateFloat(CriticalChance.Value),
-            crit_dmg_: extrapolateFloat(CriticalDamage.Value),
-            taunt: extrapolateFloat(BaseAggro.Value),
+            spd: SpeedBase.Value,
+            crit_: CriticalChance.Value,
+            crit_dmg_: CriticalDamage.Value,
+            taunt: BaseAggro.Value,
           })
         )
 
@@ -171,7 +156,7 @@ export default function characterData(): CharacterData {
                 }
               )
             ),
-            params: rankConfig.Param.map((p) => extrapolateFloat(p.Value)),
+            params: rankConfig.Param.map((p) => p.Value),
           }
         })
 
