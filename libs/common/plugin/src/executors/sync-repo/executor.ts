@@ -22,7 +22,7 @@ Caution: if this is part of nx cache replay,
     // Fetch & reset
     const localHash = getLocalRepoHash(cwd)
     if (remoteHash !== localHash) {
-      execSync(`git submodule update ${cwd}`)
+      execSync(`git submodule update --init ${cwd}`)
     } else console.log('Repo already existed with the latest commit')
   }
 
