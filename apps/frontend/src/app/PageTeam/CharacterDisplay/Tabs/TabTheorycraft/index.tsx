@@ -97,7 +97,10 @@ export default function TabTheorycraft() {
   const workerRef = useRef<Worker>(null)
   if (workerRef.current === null)
     workerRef.current = new Worker(
-      new URL('./optimizeTcWorker.ts', import.meta.url)
+      new URL('./optimizeTcWorker.ts', import.meta.url),
+      {
+        type: 'module',
+      }
     )
 
   const [status, setStatus] = useState(initialBuildStatus())

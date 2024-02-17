@@ -1,5 +1,5 @@
 import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
-import { objKeyValMap } from '@genshin-optimizer/common/util'
+import { objKeyValMap, objMap } from '@genshin-optimizer/common/util'
 import {
   allElementKeys,
   allElementWithPhyKeys,
@@ -21,7 +21,7 @@ import type { UIData } from '../Formula/uiData'
 import { equal, greaterEq, infoMut, percent, sum } from '../Formula/utils'
 import KeyMap from '../KeyMap'
 import type { DocumentSection } from '../Types/sheet'
-import { condReadNode, st, stg } from './SheetUtil'
+import { activeCharBuff, condReadNode, st, stg } from './SheetUtil'
 const tr = (strKey: string) => (
   <Translate ns="elementalResonance_gen" key18={strKey} />
 )
@@ -42,10 +42,10 @@ const teamSize = sum(...allElementKeys.map((ele) => tally[ele]))
 // Protective Canopy
 const pcNodes = objKeyValMap(allElementWithPhyKeys, (e) => [
   `${e}_res_`,
-  equal(
-    input.activeCharKey,
+  activeCharBuff(
     input.charKey,
-    greaterEq(tally.ele, 4, percent(0.15))
+    greaterEq(tally.ele, 4, percent(0.15)),
+    KeyMap.info(`${e}_res_`)
   ),
 ])
 
@@ -57,21 +57,20 @@ const protectiveCanopy: IResonance = {
       <ElementCycle iconProps={iconInlineProps} /> x4
     </span>
   ),
-  canShow: (data: UIData) =>
-    allElementKeys.filter((e) => data.get(tally[e]).value >= 1).length === 4,
+  canShow: (data: UIData) => data.get(tally.ele).value >= 4,
   sections: [
     {
       teamBuff: true,
-      fields: Object.values(pcNodes).map((node) => ({ node })),
+      fields: Object.values(pcNodes).map(([_n, node]) => ({ node })),
     },
   ],
 }
 
 // Fervent Flames
-const ffNode = equal(
-  input.activeCharKey,
+const [ffNodeDisp, ffNode] = activeCharBuff(
   input.charKey,
-  greaterEq(teamSize, 4, greaterEq(tally.pyro, 2, percent(0.25)))
+  greaterEq(teamSize, 4, greaterEq(tally.pyro, 2, percent(0.25))),
+  KeyMap.info('atk_')
 )
 const ferventFlames: IResonance = {
   name: tr('FerventFlames.name'),
@@ -93,7 +92,7 @@ const ferventFlames: IResonance = {
           unit: '%',
         },
         {
-          node: ffNode,
+          node: ffNodeDisp,
         },
       ],
     },
@@ -101,10 +100,10 @@ const ferventFlames: IResonance = {
 }
 
 // Soothing Waters
-const swNode = equal(
-  input.activeCharKey,
+const [swNodeDisp, swNode] = activeCharBuff(
   input.charKey,
-  greaterEq(teamSize, 4, greaterEq(tally.hydro, 2, percent(0.25)))
+  greaterEq(teamSize, 4, greaterEq(tally.hydro, 2, percent(0.25))),
+  KeyMap.info('hp_')
 )
 const soothingWaters: IResonance = {
   name: tr('SoothingWater.name'),
@@ -126,7 +125,7 @@ const soothingWaters: IResonance = {
           unit: '%',
         },
         {
-          node: swNode,
+          node: swNodeDisp,
         },
       ],
     },
@@ -136,14 +135,14 @@ const soothingWaters: IResonance = {
 //ShatteringIce
 const condSIPath = ['resonance', 'ShatteringIce']
 const condSI = condReadNode(condSIPath)
-const siNode = equal(
-  input.activeCharKey,
+const [siNodeDisp, siNode] = activeCharBuff(
   input.charKey,
   greaterEq(
     teamSize,
     4,
     greaterEq(tally.cryo, 2, equal(condSI, 'on', percent(0.15)))
-  )
+  ),
+  KeyMap.info('critRate_')
 )
 const shatteringIce: IResonance = {
   name: tr('ShatteringIce.name'),
@@ -179,7 +178,7 @@ const shatteringIce: IResonance = {
         on: {
           fields: [
             {
-              node: siNode,
+              node: siNodeDisp,
             },
           ],
         },
@@ -214,20 +213,20 @@ const highVoltage: IResonance = {
 }
 
 // Impetuous Winds
-const iwNodeStam = equal(
-  input.activeCharKey,
+const [iwNodeStamDisp, iwNodeStam] = activeCharBuff(
   input.charKey,
-  greaterEq(teamSize, 4, greaterEq(tally.anemo, 2, percent(-0.15)))
+  greaterEq(teamSize, 4, greaterEq(tally.anemo, 2, percent(-0.15))),
+  KeyMap.info('staminaDec_')
 )
-const iwNodeMove = equal(
-  input.activeCharKey,
+const [iwNodeMoveDisp, iwNodeMove] = activeCharBuff(
   input.charKey,
-  greaterEq(teamSize, 4, greaterEq(tally.anemo, 2, percent(0.1)))
+  greaterEq(teamSize, 4, greaterEq(tally.anemo, 2, percent(0.1))),
+  KeyMap.info('moveSPD_')
 )
-const iwNodeCD = equal(
-  input.activeCharKey,
+const [iwNodeCDDisp, iwNodeCD] = activeCharBuff(
   input.charKey,
-  greaterEq(teamSize, 4, greaterEq(tally.anemo, 2, percent(-0.05)))
+  greaterEq(teamSize, 4, greaterEq(tally.anemo, 2, percent(-0.05))),
+  KeyMap.info('cdRed_')
 )
 const impetuousWinds: IResonance = {
   name: tr('ImpetuousWinds.name'),
@@ -244,13 +243,13 @@ const impetuousWinds: IResonance = {
       teamBuff: true,
       fields: [
         {
-          node: iwNodeStam,
+          node: iwNodeStamDisp,
         },
         {
-          node: iwNodeMove,
+          node: iwNodeMoveDisp,
         },
         {
-          node: iwNodeCD,
+          node: iwNodeCDDisp,
         },
       ],
     },
@@ -262,28 +261,28 @@ const condERShieldPath = ['resonance', 'EnduringRock']
 const condERShield = condReadNode(condERShieldPath)
 const condERHitPath = ['resonance', 'EnduringRockHit']
 const condERHit = condReadNode(condERHitPath)
-const erNodeshield_ = equal(
-  input.activeCharKey,
+const [erNodeshield_disp, erNodeshield_] = activeCharBuff(
   input.charKey,
-  greaterEq(teamSize, 4, greaterEq(tally.geo, 2, percent(0.15)))
+  greaterEq(teamSize, 4, greaterEq(tally.geo, 2, percent(0.15))),
+  KeyMap.info('shield_')
 )
-const erNodeDMG_ = equal(
-  input.activeCharKey,
+const [erNodeDMG_disp, erNodeDMG_] = activeCharBuff(
   input.charKey,
   greaterEq(
     teamSize,
     4,
     greaterEq(tally.geo, 2, equal(condERShield, 'on', percent(0.15)))
-  )
+  ),
+  KeyMap.info('all_dmg_')
 )
-const erNodeRes_ = equal(
-  input.activeCharKey,
+const [erNodeRes_disp, erNodeRes_] = activeCharBuff(
   input.charKey,
   greaterEq(
     teamSize,
     4,
     greaterEq(tally.geo, 2, equal(condERHit, 'on', percent(-0.2)))
-  )
+  ),
+  KeyMap.info('geo_enemyRes_')
 )
 const enduringRock: IResonance = {
   name: tr('EnduringRock.name'),
@@ -301,7 +300,7 @@ const enduringRock: IResonance = {
       text: tr('EnduringRock.desc'),
       fields: [
         {
-          node: erNodeshield_,
+          node: erNodeshield_disp,
         },
       ],
     },
@@ -318,7 +317,7 @@ const enduringRock: IResonance = {
         on: {
           fields: [
             {
-              node: erNodeDMG_,
+              node: erNodeDMG_disp,
             },
           ],
         },
@@ -337,7 +336,7 @@ const enduringRock: IResonance = {
         on: {
           fields: [
             {
-              node: erNodeRes_,
+              node: erNodeRes_disp,
             },
             {
               text: stg('duration'),
@@ -356,49 +355,28 @@ const condSG2elePath = ['resonance', 'SprawlingCanopy2ele']
 const condSG2ele = condReadNode(condSG2elePath)
 const condSG3elePath = ['resonance', 'SprawlingCanopy3ele']
 const condSG3ele = condReadNode(condSG3elePath)
-const sgBase_eleMas = equal(
-  input.activeCharKey,
+const [sgBase_eleMasDisp, sgBase_eleMas] = activeCharBuff(
   input.charKey,
-  greaterEq(
-    teamSize,
-    4,
-    greaterEq(tally.dendro, 2, 50, {
-      ...KeyMap.info('eleMas'),
-      isTeamBuff: true,
-    })
-  )
+  greaterEq(teamSize, 4, greaterEq(tally.dendro, 2, 50)),
+  KeyMap.info('eleMas')
 )
-const sg2ele_eleMas = equal(
-  input.activeCharKey,
+const [sg2ele_eleMasDisp, sg2ele_eleMas] = activeCharBuff(
   input.charKey,
   greaterEq(
     teamSize,
     4,
-    greaterEq(
-      tally.dendro,
-      2,
-      equal(condSG2ele, 'on', 30, {
-        ...KeyMap.info('eleMas'),
-        isTeamBuff: true,
-      })
-    )
-  )
+    greaterEq(tally.dendro, 2, equal(condSG2ele, 'on', 30))
+  ),
+  KeyMap.info('eleMas')
 )
-const sg3ele_eleMas = equal(
-  input.activeCharKey,
+const [sg3ele_eleMasDisp, sg3ele_eleMas] = activeCharBuff(
   input.charKey,
   greaterEq(
     teamSize,
     4,
-    greaterEq(
-      tally.dendro,
-      2,
-      equal(condSG3ele, 'on', 20, {
-        ...KeyMap.info('eleMas'),
-        isTeamBuff: true,
-      })
-    )
-  )
+    greaterEq(tally.dendro, 2, equal(condSG3ele, 'on', 20))
+  ),
+  KeyMap.info('eleMas')
 )
 const sprawlingGreenery: IResonance = {
   name: tr('SprawlingGreenery.name'),
@@ -414,7 +392,7 @@ const sprawlingGreenery: IResonance = {
     {
       teamBuff: true,
       text: tr('SprawlingGreenery.desc'),
-      fields: [{ node: sgBase_eleMas }],
+      fields: [{ node: sgBase_eleMasDisp }],
     },
     {
       teamBuff: true,
@@ -429,7 +407,7 @@ const sprawlingGreenery: IResonance = {
         on: {
           fields: [
             {
-              node: sg2ele_eleMas,
+              node: sg2ele_eleMasDisp,
             },
             {
               text: stg('duration'),
@@ -453,7 +431,7 @@ const sprawlingGreenery: IResonance = {
         on: {
           fields: [
             {
-              node: sg3ele_eleMas,
+              node: sg3ele_eleMasDisp,
             },
             {
               text: stg('duration'),
@@ -481,7 +459,7 @@ export const resonanceSheets: IResonance[] = [
 export const resonanceData = inferInfoMut({
   teamBuff: {
     premod: {
-      ...pcNodes,
+      ...objMap(pcNodes, ([_nodeDisp, node]) => node),
       atk_: ffNode,
       hp_: swNode,
       staminaDec_: iwNodeStam,

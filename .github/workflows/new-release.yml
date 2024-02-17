@@ -55,7 +55,7 @@ jobs:
       - name: Build genshin-optimizer
         run: |
           NX_URL_GITHUB_GO_CURRENT_VERSION="https://github.com/${{ github.repository }}/commit/$(git rev-parse HEAD)" \
-          yarn run nx run frontend:build-webpack:production
+          yarn run nx run frontend:build-vite:production
       - name: Deploy to Github Pages
         run: |
           git fetch origin gh-pages --depth=1

@@ -3,11 +3,11 @@
     {
       "numRequired": 2,
       "passiveStats": {
-        "enerRegen_": 0.05000000004656613
+        "enerRegen_": 0.05
       },
       "otherStats": [
-        0.05000000004656613,
-        0.10000000009313226
+        0.05,
+        0.1
       ]
     }
   ]

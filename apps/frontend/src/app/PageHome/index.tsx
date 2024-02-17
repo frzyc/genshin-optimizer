@@ -10,6 +10,7 @@ import {
   useMediaQuery,
   useTheme,
 } from '@mui/material'
+import package_json from 'package.json'
 import { useEffect, useState } from 'react'
 import ReactGA from 'react-ga4'
 import { Trans, useTranslation } from 'react-i18next'
@@ -21,7 +22,6 @@ import QuickLinksCard from './QuickLinksCard'
 import ResinCard from './ResinCard'
 import TeamCard from './TeamCard'
 import VidGuideCard from './VidGuideCard'
-import package_json from 'package.json'
 
 export default function PageHome() {
   const theme = useTheme()

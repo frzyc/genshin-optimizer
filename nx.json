@@ -9,7 +9,6 @@
           "load-dm",
           "gen-file",
           "build",
-          "build-webpack",
           "build-vite",
           "build-ts",
           "lint",
@@ -31,11 +30,7 @@
     },
     "build": {
       "executor": "nx:noop",
-      "dependsOn": ["build-webpack", "build-vite", "build-ts"],
-      "inputs": ["production", "^production"]
-    },
-    "build-webpack": {
-      "dependsOn": ["gen-file", "^gen-file"],
+      "dependsOn": ["build-vite", "build-ts"],
       "inputs": ["production", "^production"]
     },
     "build-vite": {

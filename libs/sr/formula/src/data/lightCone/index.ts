@@ -19,10 +19,15 @@ import DartingArrow from './DartingArrow'
 import DataBank from './DataBank'
 import DayOneOfMyNewLife from './DayOneOfMyNewLife'
 import Defense from './Defense'
+import DestinysThreadsForewoven from './DestinysThreadsForewoven'
+import DreamvilleAdventure from './DreamvilleAdventure'
+import EarthlyEscapade from './EarthlyEscapade'
 import EchoesOfTheCoffin from './EchoesOfTheCoffin'
 import EyesOfThePrey from './EyesOfThePrey'
 import Fermata from './Fermata'
+import FinalVictor from './FinalVictor'
 import FineFruit from './FineFruit'
+import FlamesAfar from './FlamesAfar'
 import GeniusesRepose from './GeniusesRepose'
 import GoodNightAndSleepWell from './GoodNightAndSleepWell'
 import HeyOverHere from './HeyOverHere'
@@ -31,6 +36,8 @@ import IShallBeMyOwnSword from './IShallBeMyOwnSword'
 import InTheNameOfTheWorld from './InTheNameOfTheWorld'
 import InTheNight from './InTheNight'
 import IncessantRain from './IncessantRain'
+import IndeliblePromise from './IndeliblePromise'
+import ItsShowtime from './ItsShowtime'
 import LandausChoice from './LandausChoice'
 import Loop from './Loop'
 import MakeTheWorldClamor from './MakeTheWorldClamor'
@@ -46,14 +53,15 @@ import NowhereToRun from './NowhereToRun'
 import OnTheFallOfAnAeon from './OnTheFallOfAnAeon'
 import OnlySilenceRemains from './OnlySilenceRemains'
 import Passkey from './Passkey'
-import PastSelfInMirror from './PastSelfInMirror'
 import PastAndFuture from './PastAndFuture'
+import PastSelfInMirror from './PastSelfInMirror'
 import PatienceIsAllYouNeed from './PatienceIsAllYouNeed'
 import PerfectTiming from './PerfectTiming'
 import Pioneering from './Pioneering'
 import PlanetaryRendezvous from './PlanetaryRendezvous'
 import PostOpConversation from './PostOpConversation'
 import QuidProQuo from './QuidProQuo'
+import ReforgedRemembrance from './ReforgedRemembrance'
 import ResolutionShinesAsPearlsOfSweat from './ResolutionShinesAsPearlsOfSweat'
 import ReturnToDarkness from './ReturnToDarkness'
 import RiverFlowsInSpring from './RiverFlowsInSpring'
@@ -68,6 +76,7 @@ import SubscribeForMore from './SubscribeForMore'
 import Swordplay from './Swordplay'
 import TextureOfMemories from './TextureOfMemories'
 import TheBirthOfTheSelf from './TheBirthOfTheSelf'
+import TheDayTheCosmosFell from './TheDayTheCosmosFell'
 import TheMolesWelcomeYou from './TheMolesWelcomeYou'
 import TheSeriousnessOfBreakfast from './TheSeriousnessOfBreakfast'
 import TheUnreachableSide from './TheUnreachableSide'
@@ -80,6 +89,7 @@ import Void from './Void'
 import WarmthShortensColdNights from './WarmthShortensColdNights'
 import WeAreWildfire from './WeAreWildfire'
 import WeWillMeetAgain from './WeWillMeetAgain'
+import WhatIsReal from './WhatIsReal'
 import WoofWalkTime from './WoofWalkTime'
 import WorrisomeBlissful from './WorrisomeBlissful'
 
@@ -104,10 +114,15 @@ const data: TagMapNodeEntries[] = [
   DataBank,
   DayOneOfMyNewLife,
   Defense,
+  DestinysThreadsForewoven,
+  DreamvilleAdventure,
+  EarthlyEscapade,
   EchoesOfTheCoffin,
   EyesOfThePrey,
   Fermata,
+  FinalVictor,
   FineFruit,
+  FlamesAfar,
   GeniusesRepose,
   GoodNightAndSleepWell,
   HeyOverHere,
@@ -116,6 +131,8 @@ const data: TagMapNodeEntries[] = [
   InTheNameOfTheWorld,
   InTheNight,
   IncessantRain,
+  IndeliblePromise,
+  ItsShowtime,
   LandausChoice,
   Loop,
   MakeTheWorldClamor,
@@ -131,14 +148,15 @@ const data: TagMapNodeEntries[] = [
   OnTheFallOfAnAeon,
   OnlySilenceRemains,
   Passkey,
-  PastSelfInMirror,
   PastAndFuture,
+  PastSelfInMirror,
   PatienceIsAllYouNeed,
   PerfectTiming,
   Pioneering,
   PlanetaryRendezvous,
   PostOpConversation,
   QuidProQuo,
+  ReforgedRemembrance,
   ResolutionShinesAsPearlsOfSweat,
   ReturnToDarkness,
   RiverFlowsInSpring,
@@ -153,6 +171,7 @@ const data: TagMapNodeEntries[] = [
   Swordplay,
   TextureOfMemories,
   TheBirthOfTheSelf,
+  TheDayTheCosmosFell,
   TheMolesWelcomeYou,
   TheSeriousnessOfBreakfast,
   TheUnreachableSide,
@@ -165,6 +184,7 @@ const data: TagMapNodeEntries[] = [
   WarmthShortensColdNights,
   WeAreWildfire,
   WeWillMeetAgain,
+  WhatIsReal,
   WoofWalkTime,
   WorrisomeBlissful,
 ]

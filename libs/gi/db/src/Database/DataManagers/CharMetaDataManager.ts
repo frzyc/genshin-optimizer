@@ -7,7 +7,7 @@ import { allTravelerKeys } from '@genshin-optimizer/gi/consts'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
 import { DataManager } from '../DataManager'
 
-interface ICharMeta {
+export interface ICharMeta {
   favorite: boolean
 }
 const initCharMeta: ICharMeta = deepFreeze({

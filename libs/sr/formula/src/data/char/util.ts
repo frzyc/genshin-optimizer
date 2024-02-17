@@ -1,4 +1,4 @@
-import { objKeyMap } from '@genshin-optimizer/common/util'
+import { objMap } from '@genshin-optimizer/common/util'
 import {
   cmpEq,
   cmpGE,
@@ -8,7 +8,6 @@ import {
   sum,
 } from '@genshin-optimizer/pando/engine'
 import {
-  allEidolonKeys,
   type AbilityKey,
   type StatBoostKey,
 } from '@genshin-optimizer/sr/consts'
@@ -45,10 +44,7 @@ export function scalingParams(data_gen: CharacterDatum) {
   const [basic, skill, ult, talent, technique] = data_gen.skillTreeList
     .map((s) => s.skillParamList)
     .filter((s): s is number[][] => !!s)
-  const eidolon = objKeyMap(
-    allEidolonKeys,
-    (eidolon) => data_gen.rankMap[eidolon].params
-  )
+  const eidolon = objMap(data_gen.rankMap, (rankInfo) => rankInfo.params)
 
   return {
     basic,

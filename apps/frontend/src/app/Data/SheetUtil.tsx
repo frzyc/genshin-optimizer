@@ -7,8 +7,9 @@ import { SillyContext } from '@genshin-optimizer/gi/ui'
 import { useContext } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Translate } from '../Components/Translate'
-import type { ReadNode } from '../Formula/type'
-import { customStringRead } from '../Formula/utils'
+import { input } from '../Formula'
+import type { Info, NumNode, ReadNode, StrNode } from '../Formula/type'
+import { customStringRead, equal, infoMut } from '../Formula/utils'
 import type { CharacterSheetKey } from '../Types/consts'
 
 export const st = (strKey: string, values?: object) => (
@@ -82,4 +83,15 @@ function NameTrans({
   if (silly && i18n.exists(`sillyWisher_charNames:${cKey}`))
     return <Translate ns={`sillyWisher_charNames`} key18={cKey} />
   else return chg('name') as JSX.Element
+}
+
+export function activeCharBuff(
+  key: string | StrNode,
+  node: NumNode,
+  info: Info
+) {
+  return [
+    infoMut(node, { ...info, isTeamBuff: true }),
+    equal(input.activeCharKey, key, node),
+  ]
 }
