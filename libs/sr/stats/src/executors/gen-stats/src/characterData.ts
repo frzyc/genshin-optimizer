@@ -14,7 +14,7 @@ import {
   type ElementalTypeKey,
   type PathKey,
   type RarityKey,
-  type StatKey
+  type StatKey,
 } from '@genshin-optimizer/sr/consts'
 import type { Anchor, Rank } from '@genshin-optimizer/sr/dm'
 import {

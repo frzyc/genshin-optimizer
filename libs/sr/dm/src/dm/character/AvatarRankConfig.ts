@@ -18,7 +18,7 @@ export type AvatarRankConfig = {
   Param: Value[] // Scalings, if any
 }
 export const allRanks = [1, 2, 3, 4, 5, 6] as const
-export type Rank = typeof allRanks[number]
+export type Rank = (typeof allRanks)[number]
 // { <skillId>: <# of levels increased> }
 type SkillAddLevelList = Partial<Record<string, number>>
 
