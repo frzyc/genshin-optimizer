@@ -8,7 +8,6 @@ import {
   sum,
 } from '@genshin-optimizer/pando/engine'
 import {
-  allEidolonKeys,
   type AbilityKey,
   type StatBoostKey,
 } from '@genshin-optimizer/sr/consts'
