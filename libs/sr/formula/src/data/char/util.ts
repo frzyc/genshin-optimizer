@@ -29,6 +29,7 @@ import {
   selfBuff,
   type TagMapNodeEntries,
 } from '../util'
+import { allRanks } from '@genshin-optimizer/sr/dm'
 
 type AbilityScalingType = Exclude<AbilityKey, 'technique' | 'overworld'>
 
@@ -46,7 +47,7 @@ export function scalingParams(data_gen: CharacterDatum) {
     .map((s) => s.skillParamList)
     .filter((s): s is number[][] => !!s)
   const eidolon = objKeyMap(
-    allEidolonKeys,
+    allRanks,
     (eidolon) => data_gen.rankMap[eidolon].params
   )
 
