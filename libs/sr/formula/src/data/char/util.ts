@@ -44,7 +44,7 @@ export function scalingParams(data_gen: CharacterDatum) {
   const [basic, skill, ult, talent, technique] = data_gen.skillTreeList
     .map((s) => s.skillParamList)
     .filter((s): s is number[][] => !!s)
-  const eidolon = objMap(data_gen.rankMap, rankInfo => rankInfo.params)
+  const eidolon = objMap(data_gen.rankMap, (rankInfo) => rankInfo.params)
 
   return {
     basic,
