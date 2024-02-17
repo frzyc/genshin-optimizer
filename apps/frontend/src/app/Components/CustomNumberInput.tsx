@@ -1,7 +1,7 @@
 import type { ButtonProps, InputProps } from '@mui/material'
 import { Button, InputBase, styled } from '@mui/material'
 import type { ChangeEvent, KeyboardEvent } from 'react'
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useState, useRef } from 'react'
 export type CustomNumberInputProps = Omit<InputProps, 'onChange'> & {
   value?: number | undefined
   onChange: (newValue: number | undefined) => void
