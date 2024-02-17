@@ -8,7 +8,8 @@
     "exactOptionalPropertyTypes": false,
     "strictNullChecks": false,
     "allowSyntheticDefaultImports": true,
-    "jsxImportSource": "@emotion/react"
+    "jsxImportSource": "@emotion/react",
+    "types": ["vite/client", "vitest"]
   },
   "files": [],
   "include": [],

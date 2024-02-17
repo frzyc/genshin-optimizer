@@ -4,7 +4,7 @@ import App from './App'
 test.skip('Check for Header', async () => {
   const { container, getByText } = render(<App />)
   await waitFor(() => {
-    expect(container.querySelector('#mainContainer')).toBeInTheDocument()
+    expect(container.querySelector('#mainContainer')).toBeDefined()
   })
-  expect(getByText(/^Genshin Optimizer$/i)).toBeInTheDocument()
+  expect(getByText(/^Genshin Optimizer$/i)).toBeDefined()
 })

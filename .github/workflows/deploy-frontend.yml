@@ -87,15 +87,7 @@ jobs:
             [${{ inputs.frontend_name }}] [${{ steps.output-date.outputs.date }}] - Building version ${{ steps.output-ref.outputs.ref }}
           body-include: '<!-- Created by actions-cool/maintain-one-comment -->'
           update-mode: 'append'
-      - name: Build genshin-optimizer (Webpack)
-        if: inputs.frontend_name == 'frontend'
-        run: |
-          NX_URL_GITHUB_GO_CURRENT_VERSION="https://github.com/${{ inputs.repo_full_name }}/commit/$(git rev-parse HEAD)" \
-          NX_DAEMON="false" \
-          NX_SHOW_DEV_COMPONENTS="${{inputs.show_dev_components}}" \
-          yarn run nx run ${{inputs.frontend_name}}:build-webpack:production --base-href=""
-      - name: Build genshin-optimizer (Vite)
-        if: inputs.frontend_name == 'sr-frontend'
+      - name: Build genshin-optimizer
         run: |
           NX_URL_GITHUB_GO_CURRENT_VERSION="https://github.com/${{ inputs.repo_full_name }}/commit/$(git rev-parse HEAD)" \
           NX_DAEMON="false" \
