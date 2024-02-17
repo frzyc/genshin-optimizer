@@ -10,17 +10,16 @@ import {
 import type { CharacterDataKey } from '@genshin-optimizer/sr/consts'
 import {
   allCharacterDataKeys,
-  allEidolonKeys,
   type AbilityKey,
-  type EidolonKey,
   type ElementalTypeKey,
   type PathKey,
   type RarityKey,
   type StatKey,
 } from '@genshin-optimizer/sr/consts'
-import type { Anchor } from '@genshin-optimizer/sr/dm'
+import type { Anchor, Rank } from '@genshin-optimizer/sr/dm'
 import {
   DmAttackTypeMap,
+  allRanks,
   avatarBaseTypeMap,
   avatarConfig,
   avatarDamageTypeMap,
@@ -58,8 +57,8 @@ type SkillTreeNode = {
   //TODO: MaterialList
 }
 export type SkillTreeNodeBonusStat = Partial<Record<StatKey, number>>
-type RankMap = Record<EidolonKey, Rank>
-type Rank = {
+type RankInfoMap = Record<Rank, RankInfo>
+type RankInfo = {
   skillTypeAddLevel: SkillTypeAddLevel
   params: number[]
 }
@@ -72,7 +71,7 @@ export type CharacterDatum = {
   path: PathKey
   ascension: Promotion[]
   skillTreeList: SkillTree[]
-  rankMap: RankMap
+  rankMap: RankInfoMap
 }
 
 function extrapolateFloat(val: number): number {
@@ -157,7 +156,7 @@ export default function characterData(): CharacterData {
           })
         )
 
-        const rankMap = objKeyMap(allEidolonKeys, (eidolon): Rank => {
+        const rankMap = objKeyMap(allRanks, (eidolon): RankInfo => {
           const rankConfig = avatarRankConfig[avatarid][eidolon]
           return {
             skillTypeAddLevel: Object.fromEntries(
