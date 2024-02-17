@@ -1,4 +1,5 @@
 import {
+  useBoolState,
   useForceUpdate,
   useMediaQueryUp,
 } from '@genshin-optimizer/common/react-util'
@@ -6,8 +7,10 @@ import { clamp, filterFunction } from '@genshin-optimizer/common/util'
 import { imgAssets } from '@genshin-optimizer/gi/assets'
 import type { ArtifactSlotKey } from '@genshin-optimizer/gi/consts'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
+import { Add } from '@mui/icons-material'
 import {
   Box,
+  Button,
   CardContent,
   Divider,
   Grid,
@@ -39,6 +42,9 @@ import {
 import CompareBuildButton from './CompareBuildButton'
 
 const numToShowMap = { xs: 2 * 3, sm: 2 * 3, md: 3 * 3, lg: 4 * 3, xl: 4 * 3 }
+const ArtifactEditor = lazy(
+  () => import('../../../../PageArtifact/ArtifactEditor')
+)
 const ArtifactFilterDisplay = lazy(
   () => import('../../../../Components/Artifact/ArtifactFilterDisplay')
 )
@@ -54,7 +60,7 @@ export default function ArtifactSwapModal({
   show: boolean
   onClose: () => void
 }) {
-  const { t } = useTranslation('page_character')
+  const { t } = useTranslation(['page_character', 'artifact'])
   const database = useDatabase()
   const clickHandler = useCallback(
     (id) => {
@@ -67,6 +73,8 @@ export default function ArtifactSwapModal({
     (state, action) => ({ ...state, ...action, slotKeys: [slotKey] }),
     [slotKey]
   )
+
+  const [showEditor, onShowEditor, onHideEditor] = useBoolState(false)
 
   const [filterOption, filterOptionDispatch]: [
     FilterOption,
@@ -144,6 +152,16 @@ export default function ArtifactSwapModal({
       containerProps={{ maxWidth: 'xl' }}
     >
       <CardDark>
+        <Suspense fallback={false}>
+          <ArtifactEditor
+            artifactIdToEdit={showEditor ? 'new' : ''}
+            cancelEdit={onHideEditor}
+            allowUpload
+            allowEmpty
+            disableSlot
+            fixedSlotKey={filterOption.slotKeys[0]}
+          />
+        </Suspense>
         <CardContent
           sx={{
             py: 1,
@@ -187,6 +205,14 @@ export default function ArtifactSwapModal({
               showingTextProps={showingTextProps}
             />
           </Box>
+          <Button
+            fullWidth
+            onClick={onShowEditor}
+            color="info"
+            startIcon={<Add />}
+          >
+            {t('artifact:addNew')}
+          </Button>
           <Box mt={1}>
             <Suspense
               fallback={
