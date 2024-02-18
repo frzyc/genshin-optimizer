@@ -1,8 +1,9 @@
 import { CardThemed } from '@genshin-optimizer/common/ui'
-import type { AscensionKey } from '@genshin-optimizer/sr/consts'
+import type { AscensionKey, EidolonKey } from '@genshin-optimizer/sr/consts'
 import { convert, selfTag } from '@genshin-optimizer/sr/formula'
 import {
   BuildDisplay,
+  EidolonAutocomplete,
   useCalcContext,
   useCharacter,
   useCharacterContext,
@@ -54,6 +55,10 @@ export default function Character() {
                   ascension: parseInt(e.target.value) as AscensionKey,
                 })
               }
+            />
+            <EidolonAutocomplete
+              eidolonKey={(character?.eidolon as EidolonKey) ?? 0}
+              setEidolonKey={(eidolon) => charReducer({ eidolon })}
             />
             <Accordion>
               <AccordionSummary expandIcon={<ExpandMore />}>
