@@ -4,7 +4,7 @@ import {
   allTravelerKeys,
   charKeyToLocGenderedCharKey,
 } from '@genshin-optimizer/gi/consts'
-import { useDatabase,useDBMeta } from '@genshin-optimizer/gi/db-ui'
+import { useDatabase, useDBMeta } from '@genshin-optimizer/gi/db-ui'
 import { Chip, Skeleton } from '@mui/material'
 import { Suspense, useCallback, useContext, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'

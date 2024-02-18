@@ -15,7 +15,7 @@ import type {
 } from '../../common'
 import { countBuilds, filterArts, pruneAll } from '../../common'
 import type { SplitWorker } from '../BackgroundWorker'
-import { pickSplitKey, splitAtValue,splitOnSet } from './heuristicSplitting'
+import { pickSplitKey, splitAtValue, splitOnSet } from './heuristicSplitting'
 import type { Linear } from './linearUB'
 import { linearUB } from './linearUB'
 

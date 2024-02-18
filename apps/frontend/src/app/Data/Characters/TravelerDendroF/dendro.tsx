@@ -16,7 +16,7 @@ import {
 import KeyMap from '../../../KeyMap'
 import type { CharacterSheetKey } from '../../../Types/consts'
 import { range } from '../../../Util/Util'
-import { cond, st,stg } from '../../SheetUtil'
+import { cond, st, stg } from '../../SheetUtil'
 import { charTemplates } from '../charTemplates'
 import { dataObjForCharacterSheet, dmgNode } from '../dataUtil'
 import type { TalentSheet } from '../ICharacterSheet.d'

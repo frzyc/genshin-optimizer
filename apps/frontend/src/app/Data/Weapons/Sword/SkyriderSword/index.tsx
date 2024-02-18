@@ -3,7 +3,7 @@ import { allStats } from '@genshin-optimizer/gi/stats'
 
 import { input } from '../../../../Formula'
 import { equal, subscript } from '../../../../Formula/utils'
-import { cond, st,stg } from '../../../SheetUtil'
+import { cond, st, stg } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'

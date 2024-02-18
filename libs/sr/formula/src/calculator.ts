@@ -6,7 +6,7 @@ import {
 } from '@genshin-optimizer/pando/engine'
 
 import type { Tag } from './data/util'
-import { type Read,reader } from './data/util'
+import { type Read, reader } from './data/util'
 import { DebugCalculator } from './debug'
 
 const { arithmetic } = calculation

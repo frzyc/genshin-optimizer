@@ -1,5 +1,5 @@
 import { BootstrapTooltip } from '@genshin-optimizer/common/ui'
-import { type CalcMeta,translate } from '@genshin-optimizer/gi/formula'
+import { type CalcMeta, translate } from '@genshin-optimizer/gi/formula'
 import type { CalcResult } from '@genshin-optimizer/pando/engine'
 import HelpIcon from '@mui/icons-material/Help'
 import { Box, Skeleton, Typography } from '@mui/material'

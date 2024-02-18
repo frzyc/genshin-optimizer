@@ -5,7 +5,7 @@ import {
   allWeaponKeys,
   charKeyToLocGenderedCharKey,
 } from '@genshin-optimizer/gi/consts'
-import { useDatabase,useDBMeta } from '@genshin-optimizer/gi/db-ui'
+import { useDatabase, useDBMeta } from '@genshin-optimizer/gi/db-ui'
 import { allStats } from '@genshin-optimizer/gi/stats'
 import { ArrowRightAlt } from '@mui/icons-material'
 import {

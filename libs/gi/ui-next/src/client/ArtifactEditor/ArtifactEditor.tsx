@@ -56,7 +56,7 @@ import {
 } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
 
-import { findDupArtifact,IArtifactToArtifact } from '../artifactUtil'
+import { findDupArtifact, IArtifactToArtifact } from '../artifactUtil'
 import CloseButton from '../CloseButton'
 import { GenshinUserContext } from '../GenshinUserDataWrapper'
 import { ImageIcon } from '../ImageIcon'

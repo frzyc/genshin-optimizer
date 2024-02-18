@@ -1,4 +1,4 @@
-import { Box,Typography } from '@mui/material'
+import { Box, Typography } from '@mui/material'
 
 import { initTranslation } from '../../i18n'
 import { HomeClient } from './HomeClient'

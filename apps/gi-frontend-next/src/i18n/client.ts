@@ -11,7 +11,7 @@ import {
   useTranslation as useTranslationOrg,
 } from 'react-i18next'
 
-import { cookieName,getOptions, languages } from './settings'
+import { cookieName, getOptions, languages } from './settings'
 
 const runsOnServerSide = typeof window === 'undefined'
 

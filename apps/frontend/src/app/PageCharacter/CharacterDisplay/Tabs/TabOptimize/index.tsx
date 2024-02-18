@@ -7,7 +7,7 @@ import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import { charKeyToLocCharKey } from '@genshin-optimizer/gi/consts'
 import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
 import { defThreads, maxBuildsToShowList } from '@genshin-optimizer/gi/db'
-import { useDatabase,useDBMeta } from '@genshin-optimizer/gi/db-ui'
+import { useDatabase, useDBMeta } from '@genshin-optimizer/gi/db-ui'
 import {
   CheckBox,
   CheckBoxOutlineBlank,

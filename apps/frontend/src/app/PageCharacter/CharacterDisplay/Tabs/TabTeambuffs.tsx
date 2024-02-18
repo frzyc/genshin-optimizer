@@ -1,6 +1,6 @@
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import { charKeyToLocGenderedCharKey } from '@genshin-optimizer/gi/consts'
-import { useDatabase,useDBMeta } from '@genshin-optimizer/gi/db-ui'
+import { useDatabase, useDBMeta } from '@genshin-optimizer/gi/db-ui'
 import { PersonAdd } from '@mui/icons-material'
 import type { AutocompleteProps } from '@mui/material'
 import {

@@ -9,7 +9,7 @@ import {
   charKeyToLocCharKey,
 } from '@genshin-optimizer/gi/consts'
 import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
-import { useDatabase,useDBMeta } from '@genshin-optimizer/gi/db-ui'
+import { useDatabase, useDBMeta } from '@genshin-optimizer/gi/db-ui'
 import { CheckBox, CheckBoxOutlineBlank, Upgrade } from '@mui/icons-material'
 import {
   Box,
@@ -60,7 +60,7 @@ import { dynamicData } from '../TabOptimize/foreground'
 import useBuildSetting from '../TabOptimize/useBuildSetting'
 import UpgradeOptChartCard from './UpgradeOptChartCard'
 import type { UpOptBuild } from './upOpt'
-import { toArtifact,UpOptCalculator } from './upOpt'
+import { toArtifact, UpOptCalculator } from './upOpt'
 
 export default function TabUpopt() {
   const {

@@ -6,7 +6,7 @@ import type {
   ICachedCharacter,
   ICachedWeapon,
 } from '@genshin-optimizer/gi/db'
-import { useDatabase,useDBMeta } from '@genshin-optimizer/gi/db-ui'
+import { useDatabase, useDBMeta } from '@genshin-optimizer/gi/db-ui'
 import { useDeferredValue, useEffect, useMemo } from 'react'
 
 import type { TeamData } from '../Context/DataContext'

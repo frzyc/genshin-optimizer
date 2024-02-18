@@ -11,7 +11,7 @@ import type {
   ICharTC,
 } from '@genshin-optimizer/gi/db'
 import { initCharTC } from '@genshin-optimizer/gi/db'
-import { useDatabase,useDBMeta } from '@genshin-optimizer/gi/db-ui'
+import { useDatabase, useDBMeta } from '@genshin-optimizer/gi/db-ui'
 import { StatIcon } from '@genshin-optimizer/gi/svgicons'
 import { BuildAlert, initialBuildStatus } from '@genshin-optimizer/gi/ui'
 import { getSubstatValue } from '@genshin-optimizer/gi/util'

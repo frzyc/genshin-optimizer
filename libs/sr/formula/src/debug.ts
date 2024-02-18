@@ -13,7 +13,7 @@ import {
 
 import { type Calculator } from './calculator'
 import { keys } from './data'
-import { type Read, type Tag, type TagMapNodeEntry,tagStr } from './data/util'
+import { type Read, type Tag, type TagMapNodeEntry, tagStr } from './data/util'
 
 const tagKeys = new TagMapKeys(keys)
 export const debugKey = Symbol('tagSource')

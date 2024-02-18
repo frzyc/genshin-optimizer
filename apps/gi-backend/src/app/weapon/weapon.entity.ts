@@ -1,6 +1,6 @@
 import { objKeyMap } from '@genshin-optimizer/common/util'
 import type { LocationCharacterKey } from '@genshin-optimizer/gi/consts'
-import { allWeaponKeys,WeaponKey } from '@genshin-optimizer/gi/consts'
+import { allWeaponKeys, WeaponKey } from '@genshin-optimizer/gi/consts'
 import {
   Field,
   ID,

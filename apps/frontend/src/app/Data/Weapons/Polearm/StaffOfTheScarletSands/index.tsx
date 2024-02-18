@@ -12,7 +12,7 @@ import {
 } from '../../../../Formula/utils'
 import KeyMap from '../../../../KeyMap'
 import { range } from '../../../../Util/Util'
-import { cond, st,stg } from '../../../SheetUtil'
+import { cond, st, stg } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'

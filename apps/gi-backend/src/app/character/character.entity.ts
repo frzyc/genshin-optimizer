@@ -1,5 +1,5 @@
 import { objKeyMap } from '@genshin-optimizer/common/util'
-import { allCharacterKeys,CharacterKey } from '@genshin-optimizer/gi/consts'
+import { allCharacterKeys, CharacterKey } from '@genshin-optimizer/gi/consts'
 import {
   Field,
   ID,

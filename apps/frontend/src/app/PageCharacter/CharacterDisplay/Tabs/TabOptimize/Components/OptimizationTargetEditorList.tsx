@@ -1,4 +1,4 @@
-import type { StatFilters,StatFilterSetting } from '@genshin-optimizer/gi/db'
+import type { StatFilters, StatFilterSetting } from '@genshin-optimizer/gi/db'
 import {
   CheckBox,
   CheckBoxOutlineBlank,

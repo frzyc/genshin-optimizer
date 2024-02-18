@@ -10,7 +10,7 @@ import {
   subscript,
 } from '../../../../Formula/utils'
 import { customDmgNode } from '../../../Characters/dataUtil'
-import { st,stg } from '../../../SheetUtil'
+import { st, stg } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'

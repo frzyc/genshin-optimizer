@@ -1,5 +1,5 @@
 'use client'
-import { Box, useScrollTrigger,Zoom } from '@mui/material'
+import { Box, useScrollTrigger, Zoom } from '@mui/material'
 import { useMemo } from 'react'
 
 export default function ScrollTop({

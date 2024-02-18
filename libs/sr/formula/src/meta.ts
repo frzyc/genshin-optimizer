@@ -511,30 +511,6 @@ export const conditionals = {
       max: 2,
     },
   },
-  JingYuan: {
-    boolConditional: {
-      src: 'JingYuan',
-      name: 'boolConditional',
-      tag: { et: 'self', src: 'JingYuan', qt: 'cond', q: 'boolConditional' },
-      type: 'bool',
-    },
-    listConditional: {
-      src: 'JingYuan',
-      name: 'listConditional',
-      tag: { et: 'self', src: 'JingYuan', qt: 'cond', q: 'listConditional' },
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      src: 'JingYuan',
-      name: 'numConditional',
-      tag: { et: 'self', src: 'JingYuan', qt: 'cond', q: 'numConditional' },
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
   Jingliu: {
     boolConditional: {
       src: 'Jingliu',
@@ -553,6 +529,30 @@ export const conditionals = {
       src: 'Jingliu',
       name: 'numConditional',
       tag: { et: 'self', src: 'Jingliu', qt: 'cond', q: 'numConditional' },
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+  JingYuan: {
+    boolConditional: {
+      src: 'JingYuan',
+      name: 'boolConditional',
+      tag: { et: 'self', src: 'JingYuan', qt: 'cond', q: 'boolConditional' },
+      type: 'bool',
+    },
+    listConditional: {
+      src: 'JingYuan',
+      name: 'listConditional',
+      tag: { et: 'self', src: 'JingYuan', qt: 'cond', q: 'listConditional' },
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      src: 'JingYuan',
+      name: 'numConditional',
+      tag: { et: 'self', src: 'JingYuan', qt: 'cond', q: 'numConditional' },
       type: 'num',
       int_only: true,
       min: 0,
@@ -1078,30 +1078,6 @@ export const conditionals = {
       max: 2,
     },
   },
-  ASecretVow: {
-    boolConditional: {
-      src: 'ASecretVow',
-      name: 'boolConditional',
-      tag: { et: 'self', src: 'ASecretVow', qt: 'cond', q: 'boolConditional' },
-      type: 'bool',
-    },
-    listConditional: {
-      src: 'ASecretVow',
-      name: 'listConditional',
-      tag: { et: 'self', src: 'ASecretVow', qt: 'cond', q: 'listConditional' },
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      src: 'ASecretVow',
-      name: 'numConditional',
-      tag: { et: 'self', src: 'ASecretVow', qt: 'cond', q: 'numConditional' },
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
   Adversarial: {
     boolConditional: {
       src: 'Adversarial',
@@ -1207,6 +1183,30 @@ export const conditionals = {
       src: 'Arrows',
       name: 'numConditional',
       tag: { et: 'self', src: 'Arrows', qt: 'cond', q: 'numConditional' },
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+  ASecretVow: {
+    boolConditional: {
+      src: 'ASecretVow',
+      name: 'boolConditional',
+      tag: { et: 'self', src: 'ASecretVow', qt: 'cond', q: 'boolConditional' },
+      type: 'bool',
+    },
+    listConditional: {
+      src: 'ASecretVow',
+      name: 'listConditional',
+      tag: { et: 'self', src: 'ASecretVow', qt: 'cond', q: 'listConditional' },
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      src: 'ASecretVow',
+      name: 'numConditional',
+      tag: { et: 'self', src: 'ASecretVow', qt: 'cond', q: 'numConditional' },
       type: 'num',
       int_only: true,
       min: 0,
@@ -2145,24 +2145,24 @@ export const conditionals = {
       max: 2,
     },
   },
-  IShallBeMyOwnSword: {
+  IncessantRain: {
     boolConditional: {
-      src: 'IShallBeMyOwnSword',
+      src: 'IncessantRain',
       name: 'boolConditional',
       tag: {
         et: 'self',
-        src: 'IShallBeMyOwnSword',
+        src: 'IncessantRain',
         qt: 'cond',
         q: 'boolConditional',
       },
       type: 'bool',
     },
     listConditional: {
-      src: 'IShallBeMyOwnSword',
+      src: 'IncessantRain',
       name: 'listConditional',
       tag: {
         et: 'self',
-        src: 'IShallBeMyOwnSword',
+        src: 'IncessantRain',
         qt: 'cond',
         q: 'listConditional',
       },
@@ -2170,11 +2170,50 @@ export const conditionals = {
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'IShallBeMyOwnSword',
+      src: 'IncessantRain',
       name: 'numConditional',
       tag: {
         et: 'self',
-        src: 'IShallBeMyOwnSword',
+        src: 'IncessantRain',
+        qt: 'cond',
+        q: 'numConditional',
+      },
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+  IndeliblePromise: {
+    boolConditional: {
+      src: 'IndeliblePromise',
+      name: 'boolConditional',
+      tag: {
+        et: 'self',
+        src: 'IndeliblePromise',
+        qt: 'cond',
+        q: 'boolConditional',
+      },
+      type: 'bool',
+    },
+    listConditional: {
+      src: 'IndeliblePromise',
+      name: 'listConditional',
+      tag: {
+        et: 'self',
+        src: 'IndeliblePromise',
+        qt: 'cond',
+        q: 'listConditional',
+      },
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      src: 'IndeliblePromise',
+      name: 'numConditional',
+      tag: {
+        et: 'self',
+        src: 'IndeliblePromise',
         qt: 'cond',
         q: 'numConditional',
       },
@@ -2247,24 +2286,24 @@ export const conditionals = {
       max: 2,
     },
   },
-  IncessantRain: {
+  IShallBeMyOwnSword: {
     boolConditional: {
-      src: 'IncessantRain',
+      src: 'IShallBeMyOwnSword',
       name: 'boolConditional',
       tag: {
         et: 'self',
-        src: 'IncessantRain',
+        src: 'IShallBeMyOwnSword',
         qt: 'cond',
         q: 'boolConditional',
       },
       type: 'bool',
     },
     listConditional: {
-      src: 'IncessantRain',
+      src: 'IShallBeMyOwnSword',
       name: 'listConditional',
       tag: {
         et: 'self',
-        src: 'IncessantRain',
+        src: 'IShallBeMyOwnSword',
         qt: 'cond',
         q: 'listConditional',
       },
@@ -2272,50 +2311,11 @@ export const conditionals = {
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'IncessantRain',
+      src: 'IShallBeMyOwnSword',
       name: 'numConditional',
       tag: {
         et: 'self',
-        src: 'IncessantRain',
-        qt: 'cond',
-        q: 'numConditional',
-      },
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
-  IndeliblePromise: {
-    boolConditional: {
-      src: 'IndeliblePromise',
-      name: 'boolConditional',
-      tag: {
-        et: 'self',
-        src: 'IndeliblePromise',
-        qt: 'cond',
-        q: 'boolConditional',
-      },
-      type: 'bool',
-    },
-    listConditional: {
-      src: 'IndeliblePromise',
-      name: 'listConditional',
-      tag: {
-        et: 'self',
-        src: 'IndeliblePromise',
-        qt: 'cond',
-        q: 'listConditional',
-      },
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      src: 'IndeliblePromise',
-      name: 'numConditional',
-      tag: {
-        et: 'self',
-        src: 'IndeliblePromise',
+        src: 'IShallBeMyOwnSword',
         qt: 'cond',
         q: 'numConditional',
       },
@@ -2762,45 +2762,6 @@ export const conditionals = {
       max: 2,
     },
   },
-  OnTheFallOfAnAeon: {
-    boolConditional: {
-      src: 'OnTheFallOfAnAeon',
-      name: 'boolConditional',
-      tag: {
-        et: 'self',
-        src: 'OnTheFallOfAnAeon',
-        qt: 'cond',
-        q: 'boolConditional',
-      },
-      type: 'bool',
-    },
-    listConditional: {
-      src: 'OnTheFallOfAnAeon',
-      name: 'listConditional',
-      tag: {
-        et: 'self',
-        src: 'OnTheFallOfAnAeon',
-        qt: 'cond',
-        q: 'listConditional',
-      },
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      src: 'OnTheFallOfAnAeon',
-      name: 'numConditional',
-      tag: {
-        et: 'self',
-        src: 'OnTheFallOfAnAeon',
-        qt: 'cond',
-        q: 'numConditional',
-      },
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
   OnlySilenceRemains: {
     boolConditional: {
       src: 'OnlySilenceRemains',
@@ -2831,6 +2792,45 @@ export const conditionals = {
       tag: {
         et: 'self',
         src: 'OnlySilenceRemains',
+        qt: 'cond',
+        q: 'numConditional',
+      },
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+  OnTheFallOfAnAeon: {
+    boolConditional: {
+      src: 'OnTheFallOfAnAeon',
+      name: 'boolConditional',
+      tag: {
+        et: 'self',
+        src: 'OnTheFallOfAnAeon',
+        qt: 'cond',
+        q: 'boolConditional',
+      },
+      type: 'bool',
+    },
+    listConditional: {
+      src: 'OnTheFallOfAnAeon',
+      name: 'listConditional',
+      tag: {
+        et: 'self',
+        src: 'OnTheFallOfAnAeon',
+        qt: 'cond',
+        q: 'listConditional',
+      },
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      src: 'OnTheFallOfAnAeon',
+      name: 'numConditional',
+      tag: {
+        et: 'self',
+        src: 'OnTheFallOfAnAeon',
         qt: 'cond',
         q: 'numConditional',
       },
