@@ -34,11 +34,12 @@ import {
 } from '@mui/material'
 import { Suspense, useCallback, useEffect, useMemo, useReducer } from 'react'
 import { useTranslation } from 'react-i18next'
+
 import { LocationAutocomplete } from '../../Character'
 import { useDatabaseContext } from '../../Context'
+import { relicReducer } from './reducer'
 import RelicRarityDropdown from './RelicRarityDropdown'
 import SubstatInput from './SubstatInput'
-import { relicReducer } from './reducer'
 
 // TODO: temporary until relic sheet is implemented
 interface IRelicSheet {

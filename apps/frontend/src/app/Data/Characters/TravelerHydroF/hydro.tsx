@@ -2,6 +2,7 @@ import { objKeyMap } from '@genshin-optimizer/common/util'
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
 import { KeyMap } from '@genshin-optimizer/gi/keymap'
 import { allStats } from '@genshin-optimizer/gi/stats'
+
 import { input } from '../../../Formula'
 import type { DisplaySub } from '../../../Formula/type'
 import {
@@ -17,8 +18,6 @@ import {
 } from '../../../Formula/utils'
 import type { CharacterSheetKey } from '../../../Types/consts'
 import { cond, st, stg, trans } from '../../SheetUtil'
-import type { TalentSheet } from '../ICharacterSheet'
-import Traveler from '../Traveler'
 import { charTemplates } from '../charTemplates'
 import {
   dataObjForCharacterSheet,
@@ -27,6 +26,8 @@ import {
   shieldElement,
   shieldNode,
 } from '../dataUtil'
+import type { TalentSheet } from '../ICharacterSheet'
+import Traveler from '../Traveler'
 
 export default function dendro(
   key: CharacterSheetKey,

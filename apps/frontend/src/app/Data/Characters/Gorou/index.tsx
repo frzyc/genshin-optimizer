@@ -1,5 +1,6 @@
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
+
 import { input, tally, target } from '../../../Formula'
 import {
   constant,
@@ -13,7 +14,6 @@ import {
 import KeyMap from '../../../KeyMap'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
-import type { ICharacterSheet } from '../ICharacterSheet.d'
 import { charTemplates } from '../charTemplates'
 import {
   dataObjForCharacterSheet,
@@ -21,6 +21,7 @@ import {
   healNode,
   plungingDmgNodes,
 } from '../dataUtil'
+import type { ICharacterSheet } from '../ICharacterSheet.d'
 
 const key: CharacterKey = 'Gorou'
 const elementKey: ElementKey = 'geo'

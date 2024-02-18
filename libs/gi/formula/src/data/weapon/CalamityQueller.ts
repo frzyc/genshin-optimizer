@@ -1,6 +1,7 @@
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
 import { allElementKeys } from '@genshin-optimizer/gi/consts'
 import { cmpEq, prod, subscript } from '@genshin-optimizer/pando/engine'
+
 import { allNumConditionals, register, self, selfBuff } from '../util'
 import { entriesForWeapon } from './util'
 

@@ -6,6 +6,7 @@ import {
 } from '@genshin-optimizer/gi/consts'
 import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
 import { getMainStatDisplayValue } from '@genshin-optimizer/gi/util'
+
 import { input } from '../../../../Formula'
 import { computeUIData } from '../../../../Formula/api'
 import { formulaString } from '../../../../Formula/debug'

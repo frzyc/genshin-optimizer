@@ -1,11 +1,12 @@
-import { input } from '../../../../Formula'
-import { constant, infoMut, prod, subscript } from '../../../../Formula/utils'
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
+
+import { input } from '../../../../Formula'
+import { constant, infoMut, prod, subscript } from '../../../../Formula/utils'
 import { customDmgNode } from '../../../Characters/dataUtil'
 import { st } from '../../../SheetUtil'
-import { dataObjForWeaponSheet } from '../../util'
 import type { IWeaponSheet } from '../../IWeaponSheet'
+import { dataObjForWeaponSheet } from '../../util'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
 
 const key: WeaponKey = 'DebateClub'

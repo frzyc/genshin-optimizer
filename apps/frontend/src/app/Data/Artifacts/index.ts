@@ -6,13 +6,13 @@ import {
   allArtifactRarityKeys,
   allArtifactSetKeys,
 } from '@genshin-optimizer/gi/consts'
+
 import type { UIData } from '../../Formula/api'
 import { mergeData } from '../../Formula/api'
 import type { SetNum } from '../../Types/consts'
-import type { ArtifactSheet } from './ArtifactSheet'
-
 import Adventurer from './Adventurer'
 import ArchaicPetra from './ArchaicPetra'
+import type { ArtifactSheet } from './ArtifactSheet'
 import Berserker from './Berserker'
 import BlizzardStrayer from './BlizzardStrayer'
 import BloodstainedChivalry from './BloodstainedChivalry'

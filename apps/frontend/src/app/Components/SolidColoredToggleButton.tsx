@@ -1,5 +1,5 @@
 import type { ButtonProps, ToggleButtonProps } from '@mui/material'
-import { ToggleButton, styled } from '@mui/material'
+import { styled,ToggleButton } from '@mui/material'
 
 type SolidColoredToggleButtonPartial = {
   baseColor?: ButtonProps['color']

@@ -1,6 +1,6 @@
 import {
-  characterSortKeys,
   type CharacterSortKey,
+  characterSortKeys,
 } from './DisplayCharacterEntry'
 import type { TimeZoneKey } from './DisplayTool'
 import { RESIN_MAX, timeZones } from './DisplayTool'

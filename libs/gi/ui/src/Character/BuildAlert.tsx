@@ -1,7 +1,8 @@
 import { timeStringMs } from '@genshin-optimizer/common/util'
 import type { CharacterKey, GenderKey } from '@genshin-optimizer/gi/consts'
-import { Alert, Grid, LinearProgress, Typography, styled } from '@mui/material'
+import { Alert, Grid, LinearProgress, styled,Typography } from '@mui/material'
 import type { ReactNode } from 'react'
+
 import { CharacterName } from './Trans'
 
 export const warningBuildNumber = 10000000

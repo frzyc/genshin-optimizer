@@ -2,13 +2,12 @@
 import {
   ApolloClient,
   ApolloProvider,
-  InMemoryCache,
   createHttpLink,
+  InMemoryCache,
 } from '@apollo/client'
 import { setContext } from '@apollo/client/link/context'
 import { useSession } from 'next-auth/react'
-
-import { useMemo, type ReactNode } from 'react'
+import { type ReactNode,useMemo } from 'react'
 
 /**
  * This needs to be within the `SessionProviderWrapper` because it sends the JWT in the header of the request for authentication.

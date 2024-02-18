@@ -1,11 +1,11 @@
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
+
 import { input, target } from '../../../Formula'
 import { equal, greaterEq, infoMut } from '../../../Formula/utils'
 import KeyMap from '../../../KeyMap'
 import { cond, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
-import type { ICharacterSheet } from '../ICharacterSheet.d'
 import { charTemplates } from '../charTemplates'
 import {
   dataObjForCharacterSheet,
@@ -13,6 +13,7 @@ import {
   healNodeTalent,
   plungingDmgNodes,
 } from '../dataUtil'
+import type { ICharacterSheet } from '../ICharacterSheet.d'
 
 const key: CharacterKey = 'Barbara'
 const elementKey: ElementKey = 'hydro'

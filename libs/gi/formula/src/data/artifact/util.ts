@@ -1,5 +1,6 @@
 import type { ArtifactSetKey } from '@genshin-optimizer/gi/consts'
 import type { NumNode } from '@genshin-optimizer/pando/engine'
+
 import type { TagMapNodeEntries, TagMapNodeEntry } from '../util'
 import { self, tag } from '../util'
 

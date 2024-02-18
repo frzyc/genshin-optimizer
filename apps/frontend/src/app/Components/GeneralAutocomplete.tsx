@@ -15,6 +15,7 @@ import {
   useTheme,
 } from '@mui/material'
 import { Suspense, useMemo } from 'react'
+
 import type { Variant } from '../Formula/type'
 import ColorText from './ColoredText'
 /**

@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common'
 import type { Weapon } from '@prisma/client/gi'
 import { GraphQLError } from 'graphql'
+
 import { PrismaService } from '../prisma/prisma.service'
 import type { UpdateWeapon } from './weapon.entity'
 

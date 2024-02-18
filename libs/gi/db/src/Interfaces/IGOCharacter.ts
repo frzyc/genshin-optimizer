@@ -9,6 +9,7 @@ import {
 } from '@genshin-optimizer/gi/consts'
 import type { ICharacter } from '@genshin-optimizer/gi/good'
 import type { EleEnemyResKey } from '@genshin-optimizer/gi/keymap'
+
 import type { InputPremodKey } from '../legacy/keys'
 import type { CustomMultiTarget } from './CustomMultiTarget'
 

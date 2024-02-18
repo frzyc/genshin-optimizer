@@ -16,6 +16,7 @@ import { getSubstatValue } from '@genshin-optimizer/gi/util'
 import { Box, MenuItem, Stack, Typography } from '@mui/material'
 import { useCallback, useContext } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
+
 import ArtifactRarityDropdown from '../../../../../Components/Artifact/ArtifactRarityDropdown'
 import { CharTCContext } from '../CharTCContext'
 import { ArtifactAllSubstatEditor } from './ArtifactAllSubstatEditor'

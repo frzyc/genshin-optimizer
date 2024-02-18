@@ -1,6 +1,7 @@
 import { Skeleton, Typography } from '@mui/material'
 import { Suspense } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
+
 import ColorText from './ColoredText'
 import SqBadge from './SqBadge'
 const textComponents = {

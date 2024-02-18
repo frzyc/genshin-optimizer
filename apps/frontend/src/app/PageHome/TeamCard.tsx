@@ -1,3 +1,4 @@
+import { Groups } from '@mui/icons-material'
 import {
   Box,
   CardContent,
@@ -7,22 +8,21 @@ import {
   Link,
   Typography,
 } from '@mui/material'
+import { useTranslation } from 'react-i18next'
+
 import CardDark from '../Components/Card/CardDark'
 import CardLight from '../Components/Card/CardLight'
+import d1 from './teamIcons/d1.png'
 import frzyc from './teamIcons/frzyc.png'
 import lantua from './teamIcons/lantua.png'
-import van from './teamIcons/van.webp'
-import stain from './teamIcons/stain.png'
-import sin from './teamIcons/sin.png'
 import polomo from './teamIcons/polomo.png'
 import qbe from './teamIcons/qbe.png'
 import reens from './teamIcons/reens.png'
+import sin from './teamIcons/sin.png'
+import stain from './teamIcons/stain.png'
 import toofless from './teamIcons/toofless.png'
+import van from './teamIcons/van.webp'
 import yae from './teamIcons/yae.png'
-import d1 from './teamIcons/d1.png'
-
-import { Groups } from '@mui/icons-material'
-import { useTranslation } from 'react-i18next'
 const team = [
   {
     name: 'frzyc',

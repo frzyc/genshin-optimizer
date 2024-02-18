@@ -24,6 +24,7 @@ import React, {
 } from 'react'
 import ReactGA from 'react-ga4'
 import { Trans, useTranslation } from 'react-i18next'
+
 import AddArtInfo from '../Components/AddArtInfo'
 import SubstatToggle from '../Components/Artifact/SubstatToggle'
 import BootstrapTooltip from '../Components/BootstrapTooltip'

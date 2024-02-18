@@ -3,6 +3,7 @@ import { allSubstatKeys } from '@genshin-optimizer/gi/consts'
 import { Chip } from '@mui/material'
 import { useCallback, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
+
 import { artStatPercent } from '../../Data/Artifacts/Artifact'
 import StatIcon from '../../KeyMap/StatIcon'
 import { GeneralAutocompleteMulti } from '../GeneralAutocomplete'

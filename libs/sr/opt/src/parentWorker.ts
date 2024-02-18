@@ -7,6 +7,7 @@ import {
 } from '@genshin-optimizer/sr/consts'
 import type { ICachedRelic } from '@genshin-optimizer/sr/db'
 import { getRelicMainStatVal } from '@genshin-optimizer/sr/util'
+
 import type { ChildCommand, ChildMessage } from './childWorker'
 import { MAX_BUILDS } from './common'
 import type { BuildResult, ProgressResult } from './optimizer'

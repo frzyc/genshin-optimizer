@@ -1,6 +1,7 @@
 import { dumpFile } from '@genshin-optimizer/common/pipeline'
 import { objMap } from '@genshin-optimizer/common/util'
 import type { AbilityKey } from '@genshin-optimizer/sr/consts'
+
 import { PROJROOT_PATH } from '../../consts'
 import { readDMJSON } from '../../util'
 import type { HashId, Value } from '../common'

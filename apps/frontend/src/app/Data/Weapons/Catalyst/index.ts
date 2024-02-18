@@ -1,7 +1,8 @@
 import type { WeaponCatalystKey } from '@genshin-optimizer/gi/consts'
+
 import type WeaponSheet from '../WeaponSheet'
-import AThousandFloatingDreams from './AThousandFloatingDreams'
 import ApprenticesNotes from './ApprenticesNotes'
+import AThousandFloatingDreams from './AThousandFloatingDreams'
 import BalladOfTheBoundlessBlue from './BalladOfTheBoundlessBlue'
 import BlackcliffAgate from './BlackcliffAgate'
 import CashflowSupervision from './CashflowSupervision'

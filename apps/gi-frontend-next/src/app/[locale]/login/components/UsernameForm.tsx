@@ -4,7 +4,6 @@ import {
   useCreateUsernameMutation,
 } from '@genshin-optimizer/gi/frontend-gql'
 import LoadingButton from '@mui/lab/LoadingButton'
-
 import { CardContent, Stack, TextField, Typography } from '@mui/material'
 import { useState } from 'react'
 export default function UsernameForm({ userId }: { userId: string }) {

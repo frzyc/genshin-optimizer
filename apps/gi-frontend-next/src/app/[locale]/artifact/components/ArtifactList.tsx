@@ -1,8 +1,9 @@
+import type { Artifact } from '@genshin-optimizer/gi/frontend-gql'
 import { ArtifactCard, GenshinUserContext } from '@genshin-optimizer/gi/ui-next'
 import { Box, Grid } from '@mui/material'
 import { useContext } from 'react'
+
 import { columns } from '../util'
-import type { Artifact } from '@genshin-optimizer/gi/frontend-gql'
 
 export default function ArtifactList({
   setEditArt,

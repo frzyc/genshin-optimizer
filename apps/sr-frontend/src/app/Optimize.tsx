@@ -7,9 +7,9 @@ import { MAX_BUILDS, Optimizer } from '@genshin-optimizer/sr/opt'
 import {
   BuildDisplay,
   OptimizationTargetSelector,
-  WorkerSelector,
   useCalcContext,
   useDatabaseContext,
+  WorkerSelector,
 } from '@genshin-optimizer/sr/ui'
 import { Close, TrendingUp } from '@mui/icons-material'
 import {

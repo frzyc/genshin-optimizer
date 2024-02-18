@@ -7,10 +7,10 @@ import type {
   AnyNode,
   Const,
   NumNode,
-  ReRead,
-  Read,
-  StrNode,
   OP as TaggedOP,
+  Read,
+  ReRead,
+  StrNode,
 } from './type'
 
 /**

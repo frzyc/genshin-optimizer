@@ -5,6 +5,7 @@ import {
   allStatBoostKeys,
 } from '@genshin-optimizer/sr/consts'
 import type { ICharacter, ILightCone } from '@genshin-optimizer/sr/srod'
+
 import type { Member, Preset, TagMapNodeEntries } from './data/util'
 import {
   convert,

@@ -1,6 +1,6 @@
 import type { WeaponBowKey } from '@genshin-optimizer/gi/consts'
-import type WeaponSheet from '../WeaponSheet'
 
+import type WeaponSheet from '../WeaponSheet'
 import AlleyHunter from './AlleyHunter'
 import AmosBow from './AmosBow'
 import AquaSimulacra from './AquaSimulacra'

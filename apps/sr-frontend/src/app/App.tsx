@@ -10,6 +10,7 @@ import {
   StyledEngineProvider,
   ThemeProvider,
 } from '@mui/material'
+
 import Character from './Character'
 import CharacterSelector from './CharacterSelector'
 import Database from './Database'

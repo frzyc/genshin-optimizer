@@ -1,6 +1,6 @@
 import { objKeyMap } from '@genshin-optimizer/common/util'
 import type { LocationCharacterKey } from '@genshin-optimizer/gi/consts'
-import { WeaponKey, allWeaponKeys } from '@genshin-optimizer/gi/consts'
+import { allWeaponKeys,WeaponKey } from '@genshin-optimizer/gi/consts'
 import {
   Field,
   ID,
@@ -11,6 +11,7 @@ import {
   PartialType,
   registerEnumType,
 } from '@nestjs/graphql'
+
 import { LocationEnum } from '../common.entity'
 
 const WeaponKeyEnum = objKeyMap(allWeaponKeys, (k) => k)

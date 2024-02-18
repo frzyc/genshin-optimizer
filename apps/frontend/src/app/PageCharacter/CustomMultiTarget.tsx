@@ -17,6 +17,7 @@ import {
   allInfusionAuraElementKeys,
   allMultiOptHitModeKeys,
 } from '@genshin-optimizer/gi/consts'
+import type { CustomMultiTarget, CustomTarget } from '@genshin-optimizer/gi/db'
 import AddIcon from '@mui/icons-material/Add'
 import ContentCopyIcon from '@mui/icons-material/ContentCopy'
 import ContentPasteIcon from '@mui/icons-material/ContentPaste'
@@ -36,10 +37,10 @@ import {
   Grid,
   MenuItem,
   Skeleton,
+  styled,
   TextField,
   Tooltip,
   Typography,
-  styled,
 } from '@mui/material'
 import type { ChangeEvent, FocusEvent } from 'react'
 import {
@@ -51,6 +52,7 @@ import {
   useState,
 } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
+
 import AdditiveReactionModeText from '../Components/AdditiveReactionModeText'
 import AmpReactionModeText from '../Components/AmpReactionModeText'
 import CardDark from '../Components/Card/CardDark'
@@ -70,7 +72,6 @@ import type { InputPremodKey } from '../Formula'
 import { allInputPremodKeys } from '../Formula'
 import type { NodeDisplay } from '../Formula/uiData'
 import { UIData } from '../Formula/uiData'
-import type { CustomMultiTarget, CustomTarget } from '@genshin-optimizer/gi/db'
 import { allowedAdditiveReactions, allowedAmpReactions } from '../Types/consts'
 import OptimizationTargetSelector from './CharacterDisplay/Tabs/TabOptimize/Components/OptimizationTargetSelector'
 import { TargetSelectorModal } from './CharacterDisplay/Tabs/TabOptimize/Components/TargetSelectorModal'

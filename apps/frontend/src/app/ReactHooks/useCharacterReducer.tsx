@@ -3,6 +3,7 @@ import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import type { ICachedCharacter } from '@genshin-optimizer/gi/db'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { useCallback } from 'react'
+
 import type { IConditionalValues } from '../Types/sheet'
 
 type characterReducerBonusStatsAction = {

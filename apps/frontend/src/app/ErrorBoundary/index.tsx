@@ -19,6 +19,7 @@ import type { ErrorInfo, ReactNode } from 'react'
 import { Component, Suspense } from 'react'
 import type { WithTranslation } from 'react-i18next'
 import { Trans, withTranslation } from 'react-i18next'
+
 import CardLight from '../Components/Card/CardLight'
 import DatabaseCard from '../PageSettings/DatabaseCard'
 import SpaghettiCode from './SpaghettiCode.png'

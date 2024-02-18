@@ -4,6 +4,7 @@ import type {
   RegionKey,
 } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
+
 import { input } from '../../../Formula'
 import {
   constant,
@@ -16,9 +17,9 @@ import {
 } from '../../../Formula/utils'
 import { cond, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
-import type { ICharacterSheet } from '../ICharacterSheet.d'
 import { charTemplates } from '../charTemplates'
 import { dataObjForCharacterSheet, dmgNode } from '../dataUtil'
+import type { ICharacterSheet } from '../ICharacterSheet.d'
 
 const key: CharacterKey = 'Faruzan'
 const elementKey: ElementKey = 'anemo'

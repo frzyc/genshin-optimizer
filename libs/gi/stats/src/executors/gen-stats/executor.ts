@@ -6,6 +6,7 @@ import {
   artifactSubstatRollData,
 } from '@genshin-optimizer/gi/dm'
 import { workspaceRoot } from '@nx/devkit'
+
 import type { GenStatsExecutorSchema } from './schema'
 import artifactData from './src/artifactData'
 import type { CharacterDataGen } from './src/characterData'

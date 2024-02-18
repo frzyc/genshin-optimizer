@@ -1,3 +1,6 @@
+import type { WeaponKey } from '@genshin-optimizer/gi/consts'
+import { allStats } from '@genshin-optimizer/gi/stats'
+
 import { input } from '../../../../Formula'
 import {
   lookup,
@@ -6,12 +9,10 @@ import {
   prod,
   subscript,
 } from '../../../../Formula/utils'
-import type { WeaponKey } from '@genshin-optimizer/gi/consts'
-import { allStats } from '@genshin-optimizer/gi/stats'
 import { range } from '../../../../Util/Util'
 import { cond, st, trans } from '../../../SheetUtil'
-import { dataObjForWeaponSheet } from '../../util'
 import type { IWeaponSheet } from '../../IWeaponSheet'
+import { dataObjForWeaponSheet } from '../../util'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
 
 const key: WeaponKey = 'FruitOfFulfillment'

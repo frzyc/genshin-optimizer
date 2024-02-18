@@ -1,4 +1,5 @@
 import type { DotProps } from 'recharts'
+
 import type EnhancedPoint from './EnhancedPoint'
 
 type CustomShapeType = 'circle' | 'diamond' | 'square'

@@ -9,7 +9,6 @@ import type {
 import { allGenderKeys } from '@genshin-optimizer/gi/consts'
 import type { AvatarSkillDepotExcelConfigData } from '@genshin-optimizer/gi/dm'
 import {
-  TextMapEN,
   artifactIdMap,
   artifactSlotMap,
   avatarExcelConfigData,
@@ -24,9 +23,11 @@ import {
   proudSkillExcelConfigData,
   reliquaryExcelConfigData,
   reliquarySetExcelConfigData,
+  TextMapEN,
   weaponExcelConfigData,
   weaponIdMap,
 } from '@genshin-optimizer/gi/dm'
+
 import { mapHashData, mapHashDataOverride } from './lib/Data'
 import { parsingFunctions, preprocess } from './lib/parseUtil'
 import type { GenLocaleExecutorSchema } from './schema'

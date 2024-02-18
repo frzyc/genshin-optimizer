@@ -7,13 +7,14 @@ import type {
 import type { ICachedWeapon } from '@genshin-optimizer/gi/db'
 import type { WeaponData } from '@genshin-optimizer/gi/stats'
 import { getLevelString } from '@genshin-optimizer/gi/util'
-import { displayDataMap } from '.'
+
 import ImgIcon from '../../Components/Image/ImgIcon'
 import SqBadge from '../../Components/SqBadge'
 import { input } from '../../Formula'
 import type { Data } from '../../Formula/type'
 import type { IDocumentHeader } from '../../Types/sheet'
 import { trans } from '../SheetUtil'
+import { displayDataMap } from '.'
 import type { IWeaponSheet } from './IWeaponSheet'
 
 export default class WeaponSheet {

@@ -1,5 +1,6 @@
 import { DataEntryBase } from '@genshin-optimizer/common/database'
 import type { ISrObjectDescription } from '@genshin-optimizer/sr/srod'
+
 import type { ISroDatabase } from '../Interfaces'
 import type { SroDatabase } from './Database'
 import type { ImportResult } from './exim'

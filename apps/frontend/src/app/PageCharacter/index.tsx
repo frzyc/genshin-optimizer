@@ -14,7 +14,7 @@ import {
   allWeaponTypeKeys,
   charKeyToLocGenderedCharKey,
 } from '@genshin-optimizer/gi/consts'
-import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
+import { useDatabase,useDBMeta } from '@genshin-optimizer/gi/db-ui'
 import {
   DeleteForever,
   FactCheck,
@@ -48,6 +48,7 @@ import React, {
 import ReactGA from 'react-ga4'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
+
 import BootstrapTooltip from '../Components/BootstrapTooltip'
 import CardDark from '../Components/Card/CardDark'
 import CharacterCard from '../Components/Character/CharacterCard'

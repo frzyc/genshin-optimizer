@@ -3,8 +3,8 @@ import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import { charKeyToLocGenderedCharKey } from '@genshin-optimizer/gi/consts'
 import {
   useCharacter,
-  useDBMeta,
   useDatabase,
+  useDBMeta,
 } from '@genshin-optimizer/gi/db-ui'
 import {
   BarChart,
@@ -26,14 +26,15 @@ import {
 } from 'react'
 import { useTranslation } from 'react-i18next'
 import {
+  Link as RouterLink,
   Navigate,
   Route,
-  Link as RouterLink,
   Routes,
   useMatch,
   useNavigate,
   useParams,
 } from 'react-router-dom'
+
 import CardDark from '../../Components/Card/CardDark'
 import CardLight from '../../Components/Card/CardLight'
 import CloseButton from '../../Components/CloseButton'

@@ -25,8 +25,8 @@ import {
   useTheme,
 } from '@mui/material'
 import {
-  Suspense,
   lazy,
+  Suspense,
   useCallback,
   useContext,
   useDeferredValue,
@@ -35,6 +35,7 @@ import {
   useState,
 } from 'react'
 import { useTranslation } from 'react-i18next'
+
 import SetEffectDisplay from '../../../../Components/Artifact/SetEffectDisplay'
 import SlotIcon from '../../../../Components/Artifact/SlotIcon'
 import SubstatToggle from '../../../../Components/Artifact/SubstatToggle'

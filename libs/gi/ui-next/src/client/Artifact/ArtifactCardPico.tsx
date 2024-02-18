@@ -5,6 +5,7 @@ import type { Artifact } from '@genshin-optimizer/gi/frontend-gql'
 import { StatIcon } from '@genshin-optimizer/gi/svgicons'
 import { artifactLevelVariant } from '@genshin-optimizer/gi/ui'
 import { Box, Typography } from '@mui/material'
+
 import { assetWrapper } from '../util'
 import ArtifactTooltip from './ArtifactTooltip'
 

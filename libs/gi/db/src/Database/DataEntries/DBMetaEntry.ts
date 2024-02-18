@@ -2,6 +2,7 @@ import type { Database } from '@genshin-optimizer/common/database'
 import type { GenderKey } from '@genshin-optimizer/gi/consts'
 import { allGenderKeys } from '@genshin-optimizer/gi/consts'
 import type { IGOOD } from '@genshin-optimizer/gi/good'
+
 import type { ArtCharDatabase } from '../ArtCharDatabase'
 import { DataEntry } from '../DataEntry'
 import type { IGO, ImportResult } from '../exim'

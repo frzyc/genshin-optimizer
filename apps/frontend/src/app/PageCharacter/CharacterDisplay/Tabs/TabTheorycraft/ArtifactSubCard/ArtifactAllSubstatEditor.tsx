@@ -6,6 +6,7 @@ import { getSubstatValue } from '@genshin-optimizer/gi/util'
 import { Box, Slider } from '@mui/material'
 import { useContext, useDeferredValue, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
+
 import CardDark from '../../../../../Components/Card/CardDark'
 import CustomNumberInput from '../../../../../Components/CustomNumberInput'
 import { CharTCContext } from '../CharTCContext'

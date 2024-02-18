@@ -3,6 +3,7 @@ import { CardThemed } from '@genshin-optimizer/common/ui'
 import { useGetUserQuery } from '@genshin-optimizer/gi/frontend-gql'
 import { CardContent, CardHeader, Divider, Stack } from '@mui/material'
 import { useSession } from 'next-auth/react'
+
 import AddCharacterButton from './components/AddCharacterButton'
 import CharacterList from './components/CharacterList'
 

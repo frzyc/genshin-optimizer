@@ -1,6 +1,7 @@
 import { CardContent, Divider, Typography } from '@mui/material'
 import ReactGA from 'react-ga4'
 import { Trans, useTranslation } from 'react-i18next'
+
 import CardDark from '../Components/Card/CardDark'
 import DatabaseCard from './DatabaseCard'
 import LanguageCard from './LanguageCard'

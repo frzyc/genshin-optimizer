@@ -15,9 +15,9 @@ import type {
   CharacterDatum,
   SkillTreeNodeBonusStat,
 } from '@genshin-optimizer/sr/stats'
+
 import type { DmgTag, FormulaArg, Stat } from '../util'
 import {
-  TypeKeyToListingType,
   customDmg,
   customHeal,
   customShield,
@@ -27,6 +27,7 @@ import {
   self,
   selfBuff,
   type TagMapNodeEntries,
+  TypeKeyToListingType,
 } from '../util'
 
 type AbilityScalingType = Exclude<AbilityKey, 'technique' | 'overworld'>

@@ -28,10 +28,10 @@ import {
 import type { IArtifact } from '@genshin-optimizer/gi/good'
 import { SlotIcon, StatIcon } from '@genshin-optimizer/gi/svgicons'
 import {
+  artifactLevelVariant,
   ArtifactSetSlotDesc,
   ArtifactSetSlotName,
   PercentBadge,
-  artifactLevelVariant,
 } from '@genshin-optimizer/gi/ui'
 import type { SubstatMeta } from '@genshin-optimizer/gi/util'
 import {
@@ -59,10 +59,11 @@ import Image from 'next/image'
 import type { ReactNode } from 'react'
 import { Suspense, useContext, useEffect, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
+
+import { updateArtifactList } from './gqlUtil'
 import { LocationAutocomplete } from './LocationAutocomplete'
 import LocationName from './LocationName'
 import { UserContext } from './UserDataWrapper'
-import { updateArtifactList } from './gqlUtil'
 import { assetWrapper } from './util'
 const allSubstatFilter = new Set(allSubstatKeys)
 

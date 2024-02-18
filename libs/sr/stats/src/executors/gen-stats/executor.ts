@@ -1,5 +1,6 @@
 import { dumpFile } from '@genshin-optimizer/common/pipeline'
 import { workspaceRoot } from '@nx/devkit'
+
 import type { GenStatsExecutorSchema } from './schema'
 import type {
   CharacterDatum,

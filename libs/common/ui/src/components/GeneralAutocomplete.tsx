@@ -19,6 +19,7 @@ import {
 } from '@mui/material'
 import type { ReactNode } from 'react'
 import { Suspense, useMemo } from 'react'
+
 import { ColorText } from './ColorText'
 /**
  * NOTE: the rationale behind toImg/toExlabel/toExItemLabel, is because `options` needs to be serializable, and having JSX in there will disrupt seralizability.

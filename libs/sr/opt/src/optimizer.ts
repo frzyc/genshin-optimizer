@@ -3,6 +3,7 @@ import type { RelicSlotKey } from '@genshin-optimizer/sr/consts'
 import { allRelicSetKeys } from '@genshin-optimizer/sr/consts'
 import type { ICachedRelic } from '@genshin-optimizer/sr/db'
 import type { Calculator, Read, Tag } from '@genshin-optimizer/sr/formula'
+
 import type {
   ParentCommand,
   ParentCommandTerminate,

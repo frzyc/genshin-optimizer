@@ -5,6 +5,7 @@ import { allCharacterKeys } from '@genshin-optimizer/sr/consts'
 import { Skeleton } from '@mui/material'
 import { Suspense, useCallback, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
+
 import { useDatabaseContext } from '../Context'
 
 type CharacterAutocompleteProps = {

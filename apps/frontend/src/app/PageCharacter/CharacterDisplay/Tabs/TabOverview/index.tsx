@@ -4,8 +4,8 @@ import type { AscensionKey, CharacterKey } from '@genshin-optimizer/gi/consts'
 import { allArtifactSlotKeys } from '@genshin-optimizer/gi/consts'
 import {
   useCharMeta,
-  useDBMeta,
   useDatabase,
+  useDBMeta,
 } from '@genshin-optimizer/gi/db-ui'
 import { splash } from '@genshin-optimizer/gi/silly-wisher'
 import { getLevelString } from '@genshin-optimizer/gi/util'
@@ -22,6 +22,7 @@ import {
 } from '@mui/material'
 import { useCallback, useContext, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
+
 import ArtifactCardNano from '../../../../Components/Artifact/ArtifactCardNano'
 import CardLight from '../../../../Components/Card/CardLight'
 import CharacterCardPico, {

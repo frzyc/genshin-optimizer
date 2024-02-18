@@ -24,8 +24,9 @@ import {
   getSubstatRolls,
   getSubstatValue,
 } from '@genshin-optimizer/gi/util'
-import { DataManager } from '../DataManager'
+
 import type { ArtCharDatabase } from '../ArtCharDatabase'
+import { DataManager } from '../DataManager'
 import type { IGO, ImportResult } from '../exim'
 
 export interface ICachedArtifact extends IArtifact {

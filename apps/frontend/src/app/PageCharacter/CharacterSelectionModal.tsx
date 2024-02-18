@@ -12,10 +12,10 @@ import {
 } from '@genshin-optimizer/gi/consts'
 import type { ICachedCharacter } from '@genshin-optimizer/gi/db'
 import {
-  useCharMeta,
   useCharacter,
-  useDBMeta,
+  useCharMeta,
   useDatabase,
+  useDBMeta,
 } from '@genshin-optimizer/gi/db-ui'
 import { ascensionMaxLevel } from '@genshin-optimizer/gi/util'
 import { Favorite, FavoriteBorder } from '@mui/icons-material'
@@ -27,11 +27,11 @@ import {
   Divider,
   Grid,
   IconButton,
+  styled,
   TextField,
   Tooltip,
-  Typography,
-  styled,
   tooltipClasses,
+  Typography,
 } from '@mui/material'
 import type { ChangeEvent } from 'react'
 import {
@@ -42,6 +42,7 @@ import {
   useState,
 } from 'react'
 import { useTranslation } from 'react-i18next'
+
 import CardDark from '../Components/Card/CardDark'
 import CardLight from '../Components/Card/CardLight'
 import CharacterCard from '../Components/Character/CharacterCard'

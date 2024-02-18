@@ -1,12 +1,13 @@
 import { objKeyValMap } from '@genshin-optimizer/common/util'
 import type { ArtifactSetKey } from '@genshin-optimizer/gi/consts'
 import { allElementKeys } from '@genshin-optimizer/gi/consts'
+
 import { input, tally } from '../../../Formula/index'
 import type { Data } from '../../../Formula/type'
 import { greaterEq, percent } from '../../../Formula/utils'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
-import type { IArtifactSheet } from '../IArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
+import type { IArtifactSheet } from '../IArtifactSheet'
 
 const key: ArtifactSetKey = 'DefendersWill'
 const setHeader = setHeaderTemplate(key)

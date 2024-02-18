@@ -1,6 +1,6 @@
-import type { Interim, Setup } from '..'
 import type { OptNode } from '../../Formula/optimization'
 import { optimize, precompute } from '../../Formula/optimization'
+import type { Interim, Setup } from '..'
 import type {
   ArtifactBuildData,
   ArtifactsBySlot,

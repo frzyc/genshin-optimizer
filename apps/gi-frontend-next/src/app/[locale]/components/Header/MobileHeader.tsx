@@ -17,8 +17,9 @@ import {
 import Link from 'next/link'
 import { useContext, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { mobileContent } from './TabsData'
+
 import silly_icon from './silly_icon.png'
+import { mobileContent } from './TabsData'
 
 export default function MobileHeader({
   anchor,

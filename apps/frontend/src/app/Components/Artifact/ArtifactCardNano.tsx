@@ -10,14 +10,15 @@ import {
 } from '@genshin-optimizer/gi/util'
 import { BusinessCenter } from '@mui/icons-material'
 import {
+  alpha,
   Box,
   CardActionArea,
   Chip,
   Typography,
-  alpha,
   useTheme,
 } from '@mui/material'
 import { useCallback } from 'react'
+
 import Artifact from '../../Data/Artifacts/Artifact'
 import StatIcon from '../../KeyMap/StatIcon'
 import BootstrapTooltip from '../BootstrapTooltip'

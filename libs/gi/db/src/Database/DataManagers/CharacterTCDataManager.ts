@@ -16,6 +16,7 @@ import {
   substatTypeKeys,
 } from '@genshin-optimizer/gi/consts'
 import { validateLevelAsc } from '@genshin-optimizer/gi/util'
+
 import type { ICharTC } from '../../Interfaces/ICharTC'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
 import { DataManager } from '../DataManager'

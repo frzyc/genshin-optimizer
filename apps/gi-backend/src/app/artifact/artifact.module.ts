@@ -1,4 +1,5 @@
 import { Module } from '@nestjs/common'
+
 import { GenshinUserModule } from '../genshinUser/genshinUser.module'
 import { ArtifactResolver } from './artifact.resolver'
 import { ArtifactService } from './artifact.service'

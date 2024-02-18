@@ -1,4 +1,5 @@
 import type { ArtSetExclusion } from '@genshin-optimizer/gi/db'
+
 import type { OptNode } from '../Formula/optimization'
 import type { ArtifactsBySlot, Build, PlotData, RequestFilter } from './common'
 

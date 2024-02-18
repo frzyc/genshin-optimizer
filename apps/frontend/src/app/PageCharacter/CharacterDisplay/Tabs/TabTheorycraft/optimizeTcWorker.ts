@@ -1,4 +1,5 @@
 import type { ICharTC } from '@genshin-optimizer/gi/db'
+
 import type { OptNode } from '../../../../Formula/optimization'
 import { optimizeTcUsingNodes } from './optimizeTc'
 

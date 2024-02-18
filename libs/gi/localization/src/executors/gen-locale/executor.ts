@@ -1,10 +1,11 @@
 import {
   existsSync,
   mkdirSync,
-  readFileSync,
   readdirSync,
+  readFileSync,
   writeFileSync,
 } from 'fs'
+
 import type { GenLocaleExecutorSchema } from './schema'
 
 export const PROJROOT_PATH = `${process.env['NX_WORKSPACE_ROOT']}/libs/gi/localization`

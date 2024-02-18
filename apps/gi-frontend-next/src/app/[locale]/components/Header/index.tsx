@@ -2,6 +2,7 @@
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp'
 import { Fab, useMediaQuery, useTheme } from '@mui/material'
 import { usePathname } from 'next/navigation'
+
 import DesktopHeader from './DesktopHeader'
 import MobileHeader from './MobileHeader'
 import ScrollTop from './ScrollTop'

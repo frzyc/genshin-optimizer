@@ -1,5 +1,6 @@
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
+
 import { input } from '../../../Formula'
 import {
   compareEq,
@@ -17,9 +18,9 @@ import {
 } from '../../../Formula/utils'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
-import type { ICharacterSheet } from '../ICharacterSheet.d'
 import { charTemplates } from '../charTemplates'
 import { customDmgNode, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
+import type { ICharacterSheet } from '../ICharacterSheet.d'
 
 const key: CharacterKey = 'Wanderer'
 const elementKey: ElementKey = 'anemo'

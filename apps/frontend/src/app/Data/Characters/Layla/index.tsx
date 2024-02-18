@@ -1,5 +1,6 @@
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
+
 import { input, target } from '../../../Formula'
 import {
   equal,
@@ -16,7 +17,6 @@ import KeyMap from '../../../KeyMap'
 import { range } from '../../../Util/Util'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
-import type { ICharacterSheet } from '../ICharacterSheet.d'
 import { charTemplates } from '../charTemplates'
 import {
   dataObjForCharacterSheet,
@@ -25,6 +25,7 @@ import {
   shieldElement,
   shieldNodeTalent,
 } from '../dataUtil'
+import type { ICharacterSheet } from '../ICharacterSheet.d'
 
 const key: CharacterKey = 'Layla'
 const elementKey: ElementKey = 'cryo'

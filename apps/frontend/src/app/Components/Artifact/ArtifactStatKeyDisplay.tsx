@@ -3,6 +3,7 @@ import type { MainStatKey, SubstatKey } from '@genshin-optimizer/gi/consts'
 import { KeyMap } from '@genshin-optimizer/gi/keymap'
 import { Box } from '@mui/material'
 import { useTranslation } from 'react-i18next'
+
 import { artStatPercent } from '../../Data/Artifacts/Artifact'
 import StatIcon from '../../KeyMap/StatIcon'
 import ColorText from '../ColoredText'

@@ -1,6 +1,9 @@
 import { Box, Container, Stack } from '@mui/material'
 import { dir } from 'i18next'
 import * as React from 'react'
+
+import { auth } from '../../auth'
+import { languages } from '../../i18n/settings'
 import DataWrapper from './components/DataWrapper'
 import Footer from './components/Footer'
 import Header from './components/Header'
@@ -8,8 +11,6 @@ import ApolloProviderWrapper from './layoutWrappers/ApolloProviderWrapper'
 import { SessionProviderWrapper } from './layoutWrappers/SessionProviderWrapper'
 import ThemeRegistry from './layoutWrappers/ThemeRegistry/ThemeRegistry'
 import TransClientUpdate from './layoutWrappers/TransClientUpdate'
-import { auth } from '../../auth'
-import { languages } from '../../i18n/settings'
 
 export const metadata = {
   title: 'Genshin Optimizer',

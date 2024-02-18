@@ -7,6 +7,7 @@
 
 import type { DBStorage } from '@genshin-optimizer/common/database'
 import type { ISrObjectDescription } from '@genshin-optimizer/sr/srod'
+
 import type { ISroDatabase } from '../Interfaces'
 
 export const currentDBVersion = 1

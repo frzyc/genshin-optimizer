@@ -3,6 +3,7 @@ import type { Artifact } from '@genshin-optimizer/gi/frontend-gql'
 import ChevronRightIcon from '@mui/icons-material/ChevronRight'
 import { Grid, Typography, useMediaQuery, useTheme } from '@mui/material'
 import type { TFunction } from 'i18next'
+
 import { ArtifactCard } from '../ArtifactCard'
 
 export default function ExistingArtDisplay({

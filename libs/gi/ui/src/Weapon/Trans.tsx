@@ -1,4 +1,5 @@
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
+
 import { Translate } from '../Translate'
 
 export function WeaponName({ weaponKey }: { weaponKey: WeaponKey }) {

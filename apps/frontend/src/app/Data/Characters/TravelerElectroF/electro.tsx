@@ -1,5 +1,6 @@
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
+
 import { input, target } from '../../../Formula'
 import type { DisplaySub } from '../../../Formula/type'
 import {

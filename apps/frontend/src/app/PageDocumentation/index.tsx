@@ -5,7 +5,7 @@ import {
   allWeaponKeys,
   charKeyToLocGenderedCharKey,
 } from '@genshin-optimizer/gi/consts'
-import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
+import { useDatabase,useDBMeta } from '@genshin-optimizer/gi/db-ui'
 import { allStats } from '@genshin-optimizer/gi/stats'
 import { ArrowRightAlt } from '@mui/icons-material'
 import {
@@ -23,6 +23,7 @@ import { Suspense } from 'react'
 import ReactGA from 'react-ga4'
 import { useTranslation } from 'react-i18next'
 import { Link, Route, Routes, useMatch } from 'react-router-dom'
+
 import CardDark from '../Components/Card/CardDark'
 import CardLight from '../Components/Card/CardLight'
 import SqBadge from '../Components/SqBadge'

@@ -15,6 +15,7 @@ import {
 import { Suspense, useCallback, useContext, useMemo } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
 import type { TooltipProps } from 'recharts'
+
 import ArtifactCardPico from '../../../../../../Components/Artifact/ArtifactCardPico'
 import BootstrapTooltip from '../../../../../../Components/BootstrapTooltip'
 import CardDark from '../../../../../../Components/Card/CardDark'

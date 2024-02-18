@@ -1,5 +1,6 @@
 import { extrapolateFloat } from '@genshin-optimizer/common/pipeline'
 import { layeredAssignment } from '@genshin-optimizer/common/util'
+
 import type { MainStatKey, PropTypeKey } from '../../mapping'
 import { MainPropMap, propTypeMap } from '../../mapping'
 import { readDMJSON } from '../../util'

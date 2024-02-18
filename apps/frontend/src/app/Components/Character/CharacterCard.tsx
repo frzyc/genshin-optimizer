@@ -11,10 +11,10 @@ import type {
   ICachedCharacter,
 } from '@genshin-optimizer/gi/db'
 import {
-  useCharMeta,
   useCharacter,
-  useDBMeta,
+  useCharMeta,
   useDatabase,
+  useDBMeta,
 } from '@genshin-optimizer/gi/db-ui'
 import { ascensionMaxLevel } from '@genshin-optimizer/gi/util'
 import { Favorite, FavoriteBorder } from '@mui/icons-material'
@@ -29,6 +29,7 @@ import {
   Typography,
 } from '@mui/material'
 import { Suspense, useCallback, useContext, useMemo } from 'react'
+
 import type { CharacterContextObj } from '../../Context/CharacterContext'
 import { CharacterContext } from '../../Context/CharacterContext'
 import type { dataContextObj } from '../../Context/DataContext'

@@ -10,8 +10,9 @@ import type { AutocompleteRenderGroupParams } from '@mui/material'
 import { Box, List, ListSubheader } from '@mui/material'
 import { useCallback, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
-import { ImageIcon } from '../ImageIcon'
+
 import { artifactDefIcon } from '../artifactUtil'
+import { ImageIcon } from '../ImageIcon'
 import { assetWrapper } from '../util'
 
 export default function ArtifactSetAutocomplete({

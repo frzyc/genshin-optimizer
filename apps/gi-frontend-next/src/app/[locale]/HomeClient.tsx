@@ -1,6 +1,7 @@
 'use client'
 
 import { Typography } from '@mui/material'
+
 import { useTranslation } from '../../i18n/client'
 
 export function HomeClient({ locale }: { locale: string }) {

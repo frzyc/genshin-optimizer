@@ -1,9 +1,10 @@
 import { dumpFile, nameToKey } from '@genshin-optimizer/common/pipeline'
 import { objFilterKeys } from '@genshin-optimizer/common/util'
-import { TextMapEN } from '../../TextMapUtil'
+
 import { PROJROOT_PATH } from '../../consts'
 import type { AvatarBaseTypeKey, AvatarId } from '../../mapping'
 import { characterIdMap } from '../../mapping'
+import { TextMapEN } from '../../TextMapUtil'
 import { readDMJSON } from '../../util'
 import type { HashId, MaterialValue, Value } from '../common'
 

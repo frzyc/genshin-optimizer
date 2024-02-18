@@ -15,6 +15,7 @@ import { getLevelString } from '@genshin-optimizer/gi/util'
 import { Box, Typography } from '@mui/material'
 import Image from 'next/image'
 import { useContext } from 'react'
+
 import { assetWrapper } from '../util'
 import WeaponNameTooltip from './WeaponNameTooltip'
 

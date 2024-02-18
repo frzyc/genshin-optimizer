@@ -1,5 +1,6 @@
 import { DBLocalStorage } from '@genshin-optimizer/common/database'
 import { randomizeRelic } from '@genshin-optimizer/sr/util'
+
 import { SroDatabase } from './Database'
 
 const dbStorage = new DBLocalStorage(localStorage, 'sro')

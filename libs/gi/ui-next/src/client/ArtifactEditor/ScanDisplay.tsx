@@ -10,8 +10,8 @@ import {
   LinearProgress,
   Skeleton,
   Stack,
-  Typography,
   styled,
+  Typography,
 } from '@mui/material'
 import type { ChangeEvent } from 'react'
 import { Suspense, useState } from 'react'

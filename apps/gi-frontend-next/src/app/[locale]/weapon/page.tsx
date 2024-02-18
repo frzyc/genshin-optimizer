@@ -3,6 +3,7 @@ import { CardThemed } from '@genshin-optimizer/common/ui'
 import { useGetUserQuery } from '@genshin-optimizer/gi/frontend-gql'
 import { CardContent, CardHeader, Divider } from '@mui/material'
 import { useSession } from 'next-auth/react'
+
 import AddWeaponButton from './components/AddWeaponButton'
 import WeaponList from './components/WeaponList'
 

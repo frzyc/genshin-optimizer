@@ -5,6 +5,7 @@ import {
   allRelicSetKeys,
 } from '@genshin-optimizer/sr/consts'
 import type { Tree } from '@nx/devkit'
+
 import genIndex from './genIndex'
 import genSheet from './genSheet'
 import type { GenSheetGeneratorSchema } from './schema'

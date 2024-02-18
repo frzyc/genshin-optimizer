@@ -1,5 +1,6 @@
 import { DBLocalStorage } from '@genshin-optimizer/common/database'
 import { randomizeArtifact } from '@genshin-optimizer/gi/util'
+
 import { ArtCharDatabase } from './ArtCharDatabase'
 
 const dbStorage = new DBLocalStorage(localStorage)

@@ -1,3 +1,6 @@
+import './App.scss'
+import './i18n'
+
 import {
   DBLocalStorage,
   SandboxStorage,
@@ -15,13 +18,13 @@ import {
   Skeleton,
   StyledEngineProvider,
   ThemeProvider,
-  Zoom,
   useScrollTrigger,
+  Zoom,
 } from '@mui/material'
-import React, { Suspense, lazy, useCallback, useMemo, useState } from 'react'
+import React, { lazy, Suspense, useCallback, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { HashRouter, Route, Routes, useMatch } from 'react-router-dom'
-import './App.scss'
+
 import { SillyContext, useSilly } from './Context/SillyContext'
 import { SnowContext, useSnow } from './Context/SnowContext'
 import ErrorBoundary from './ErrorBoundary'
@@ -29,7 +32,6 @@ import Footer from './Footer'
 import Header from './Header'
 import useTitle from './ReactHooks/useTitle'
 import Snow from './Snow'
-import './i18n'
 
 const PageHome = lazy(() => import('./PageHome'))
 const PageArtifact = lazy(() => import('./PageArtifact'))

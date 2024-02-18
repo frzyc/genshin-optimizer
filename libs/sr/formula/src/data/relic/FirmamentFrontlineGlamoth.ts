@@ -1,6 +1,7 @@
 import { cmpGE } from '@genshin-optimizer/pando/engine'
 import type { RelicSetKey } from '@genshin-optimizer/sr/consts'
 import { allStats } from '@genshin-optimizer/sr/stats'
+
 import { register, self, selfBuff } from '../util'
 import { entriesForRelic } from './util'
 

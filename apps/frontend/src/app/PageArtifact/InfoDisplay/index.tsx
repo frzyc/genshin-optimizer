@@ -4,6 +4,7 @@ import StarRoundedIcon from '@mui/icons-material/StarRounded'
 import { Box, Grid, Link, Typography } from '@mui/material'
 import { Trans, useTranslation } from 'react-i18next'
 import { Link as RouterLink } from 'react-router-dom'
+
 import ImgFullwidth from '../../Components/Image/ImgFullwidth'
 import SqBadge from '../../Components/SqBadge'
 import { range } from '../../Util/Util'

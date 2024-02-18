@@ -26,6 +26,7 @@ import {
 } from '@genshin-optimizer/sr/formula'
 import type { ReactNode } from 'react'
 import { createContext, useContext, useMemo } from 'react'
+
 import { useCharacter, useEquippedRelics } from '../Hook'
 import { useLightCone } from '../Hook/useLightCone'
 import { useCharacterContext } from './CharacterContext'

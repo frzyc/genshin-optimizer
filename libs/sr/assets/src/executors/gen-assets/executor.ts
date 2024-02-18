@@ -7,9 +7,9 @@ import type {
   RelicPlanarSetKey,
 } from '@genshin-optimizer/sr/consts'
 import {
-  DM2D_PATH,
   avatarConfig,
   characterIdMap,
+  DM2D_PATH,
   equipmentConfig,
   lightConeIdMap,
   relicDataInfo,
@@ -19,6 +19,7 @@ import {
 import { workspaceRoot } from '@nx/devkit'
 import * as fs from 'fs'
 import * as path from 'path'
+
 import type { GenAssetsExecutorSchema } from './schema'
 
 const DEST_PROJ_PATH = `${workspaceRoot}/libs/sr/assets/src` as const

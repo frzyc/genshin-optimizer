@@ -46,8 +46,8 @@ import {
   MenuItem,
   Skeleton,
   Stack,
-  Typography,
   styled,
+  Typography,
   useMediaQuery,
   useTheme,
 } from '@mui/material'
@@ -62,6 +62,7 @@ import {
   useState,
 } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
+
 import ArtifactRarityDropdown from '../Components/Artifact/ArtifactRarityDropdown'
 import ArtifactSetAutocomplete from '../Components/Artifact/ArtifactSetAutocomplete'
 import ArtifactSlotDropdown from '../Components/Artifact/ArtifactSlotDropdown'

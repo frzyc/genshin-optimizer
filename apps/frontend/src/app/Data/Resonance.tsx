@@ -13,6 +13,7 @@ import {
   HydroIcon,
   PyroIcon,
 } from '@genshin-optimizer/gi/svgicons'
+
 import ElementCycle from '../Components/ElementCycle'
 import { Translate } from '../Components/Translate'
 import { input, tally } from '../Formula'

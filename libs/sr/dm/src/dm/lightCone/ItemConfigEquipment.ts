@@ -1,9 +1,10 @@
 import { dumpFile, nameToKey } from '@genshin-optimizer/common/pipeline'
 import { objFilterKeys } from '@genshin-optimizer/common/util'
-import { TextMapEN } from '../../TextMapUtil'
+
 import { PROJROOT_PATH } from '../../consts'
 import type { LightConeId } from '../../mapping/lightCone'
 import { lightConeIdMap } from '../../mapping/lightCone'
+import { TextMapEN } from '../../TextMapUtil'
 import { readDMJSON } from '../../util'
 import type { HashId } from '../common'
 

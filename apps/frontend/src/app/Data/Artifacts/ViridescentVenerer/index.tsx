@@ -1,13 +1,14 @@
 import { objKeyMap, objKeyValMap } from '@genshin-optimizer/common/util'
 import type { ArtifactSetKey } from '@genshin-optimizer/gi/consts'
+
 import { input } from '../../../Formula'
 import type { Data } from '../../../Formula/type'
 import { equal, greaterEq, percent } from '../../../Formula/utils'
 import { absorbableEle } from '../../../Types/consts'
 import { condReadNode, st } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
-import type { IArtifactSheet } from '../IArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
+import type { IArtifactSheet } from '../IArtifactSheet'
 
 const key: ArtifactSetKey = 'ViridescentVenerer'
 const setHeader = setHeaderTemplate(key)

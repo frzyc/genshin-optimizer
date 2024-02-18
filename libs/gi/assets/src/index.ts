@@ -6,6 +6,7 @@ import type {
   WeaponKey,
 } from '@genshin-optimizer/gi/consts'
 import { charKeyToLocGenderedCharKey } from '@genshin-optimizer/gi/consts'
+
 import artifacts from './gen/artifacts'
 import chars from './gen/chars'
 import weapons from './gen/weapons'

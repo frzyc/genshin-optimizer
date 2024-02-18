@@ -14,6 +14,7 @@ import {
   characterIdMap,
   proudSkillExcelConfigData,
 } from '@genshin-optimizer/gi/dm'
+
 import * as somniaData from './Somnia/skillParam.json'
 
 type CharacterSkillParams = {

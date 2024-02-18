@@ -5,8 +5,8 @@ import {
 } from '@genshin-optimizer/common/util'
 import type { CharacterDataKey } from '@genshin-optimizer/sr/consts'
 import {
-  allCharacterDataKeys,
   type AbilityKey,
+  allCharacterDataKeys,
   type ElementalTypeKey,
   type PathKey,
   type RarityKey,
@@ -14,7 +14,6 @@ import {
 } from '@genshin-optimizer/sr/consts'
 import type { Anchor, Rank } from '@genshin-optimizer/sr/dm'
 import {
-  DmAttackTypeMap,
   allRanks,
   avatarBaseTypeMap,
   avatarConfig,
@@ -25,6 +24,7 @@ import {
   avatarSkillConfig,
   avatarSkillTreeConfig,
   characterIdMap,
+  DmAttackTypeMap,
   statKeyMap,
 } from '@genshin-optimizer/sr/dm'
 

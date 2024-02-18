@@ -1,13 +1,14 @@
+import type { ArtifactSetKey } from '@genshin-optimizer/gi/consts'
+
 import { input } from '../../../Formula'
 import type { Data, Info } from '../../../Formula/type'
 import { greaterEq, lookup, naught, percent, sum } from '../../../Formula/utils'
 import KeyMap from '../../../KeyMap'
-import type { ArtifactSetKey } from '@genshin-optimizer/gi/consts'
 import { range } from '../../../Util/Util'
 import { cond, st, trans } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
-import type { IArtifactSheet } from '../IArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
+import type { IArtifactSheet } from '../IArtifactSheet'
 
 const key: ArtifactSetKey = 'HuskOfOpulentDreams'
 const setHeader = setHeaderTemplate(key)

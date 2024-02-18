@@ -5,7 +5,7 @@ import type {
   ArtifactSlotKey,
 } from '@genshin-optimizer/gi/consts'
 import { allArtifactSlotKeys } from '@genshin-optimizer/gi/consts'
-import artifactSheets from '.'
+
 import ImgIcon from '../../Components/Image/ImgIcon'
 import SqBadge from '../../Components/SqBadge'
 import { Translate } from '../../Components/Translate'
@@ -15,6 +15,7 @@ import type { UIData } from '../../Formula/uiData'
 import type { SetNum } from '../../Types/consts'
 import type { IDocumentHeader } from '../../Types/sheet'
 import { st } from '../SheetUtil'
+import artifactSheets from '.'
 import type { IArtifactSheet, SetEffectEntry } from './IArtifactSheet'
 
 export class ArtifactSheet {

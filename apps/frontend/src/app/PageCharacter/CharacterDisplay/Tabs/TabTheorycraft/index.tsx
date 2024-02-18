@@ -11,7 +11,7 @@ import type {
   ICharTC,
 } from '@genshin-optimizer/gi/db'
 import { initCharTC } from '@genshin-optimizer/gi/db'
-import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
+import { useDatabase,useDBMeta } from '@genshin-optimizer/gi/db-ui'
 import { StatIcon } from '@genshin-optimizer/gi/svgicons'
 import { BuildAlert, initialBuildStatus } from '@genshin-optimizer/gi/ui'
 import { getSubstatValue } from '@genshin-optimizer/gi/util'
@@ -43,6 +43,7 @@ import {
 } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
 import { useLocation } from 'react-router-dom'
+
 import { ArtifactStatWithUnit } from '../../../../Components/Artifact/ArtifactStatKeyDisplay'
 import CardLight from '../../../../Components/Card/CardLight'
 import StatDisplayComponent from '../../../../Components/Character/StatDisplayComponent'
@@ -65,7 +66,6 @@ import type { SetCharTCAction } from './CharTCContext'
 import { CharTCContext } from './CharTCContext'
 import GcsimButton from './GcsimButton'
 import KQMSButton from './KQMSButton'
-import { WeaponEditorCard } from './WeaponEditorCard'
 import type { TCWorkerResult } from './optimizeTc'
 import {
   getArtifactData,
@@ -75,6 +75,7 @@ import {
   optimizeTcGetNodes,
 } from './optimizeTc'
 import useCharTC from './useCharTC'
+import { WeaponEditorCard } from './WeaponEditorCard'
 export default function TabTheorycraft() {
   const { t } = useTranslation('page_character')
   const database = useDatabase()

@@ -12,6 +12,7 @@ import {
 } from '@mui/material'
 import { useContext } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
+
 import CardLight from '../Components/Card/CardLight'
 import { SillyContext } from '../Context/SillyContext'
 import silly_icon from '../silly_icon.png'

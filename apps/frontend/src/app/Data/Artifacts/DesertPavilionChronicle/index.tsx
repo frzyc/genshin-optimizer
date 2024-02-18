@@ -1,11 +1,12 @@
+import type { ArtifactSetKey } from '@genshin-optimizer/gi/consts'
+
 import { input } from '../../../Formula'
 import type { Data } from '../../../Formula/type'
 import { equal, greaterEq, percent } from '../../../Formula/utils'
-import type { ArtifactSetKey } from '@genshin-optimizer/gi/consts'
-import { cond, stg, st } from '../../SheetUtil'
+import { cond, st,stg } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
-import type { IArtifactSheet } from '../IArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
+import type { IArtifactSheet } from '../IArtifactSheet'
 
 const key: ArtifactSetKey = 'DesertPavilionChronicle'
 const setHeader = setHeaderTemplate(key)

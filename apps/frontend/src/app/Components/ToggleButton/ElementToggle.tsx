@@ -1,6 +1,7 @@
 import type { ElementKey } from '@genshin-optimizer/gi/consts'
 import { allElementKeys } from '@genshin-optimizer/gi/consts'
 import { Chip, ToggleButtonGroup, useMediaQuery, useTheme } from '@mui/material'
+
 import { ElementIcon } from '../../KeyMap/StatIcon'
 import { handleMultiSelect } from '../../Util/MultiSelect'
 import SolidColoredToggleButton from '../SolidColoredToggleButton'

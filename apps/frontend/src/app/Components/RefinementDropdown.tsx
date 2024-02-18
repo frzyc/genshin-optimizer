@@ -2,6 +2,7 @@ import type { RefinementKey } from '@genshin-optimizer/gi/consts'
 import { allRefinementKeys } from '@genshin-optimizer/gi/consts'
 import { MenuItem } from '@mui/material'
 import { useTranslation } from 'react-i18next'
+
 import DropdownButton from './DropdownMenu/DropdownButton'
 
 export default function RefinementDropdown({

@@ -11,7 +11,6 @@ import type {
   WeaponId,
 } from '@genshin-optimizer/gi/dm'
 import {
-  DM2D_PATH,
   artifactIdMap,
   artifactSlotMap,
   avatarExcelConfigData,
@@ -19,6 +18,7 @@ import {
   avatarSkillExcelConfigData,
   avatarTalentExcelConfigData,
   characterIdMap,
+  DM2D_PATH,
   fetterCharacterCardExcelConfigData,
   materialExcelConfigData,
   proudSkillExcelConfigData,
@@ -31,6 +31,7 @@ import {
 import { workspaceRoot } from '@nx/devkit'
 import * as fs from 'fs'
 import * as path from 'path'
+
 import type { GenAssetsExecutorSchema } from './schema'
 
 export const DEST_PROJ_PATH = `${workspaceRoot}/libs/gi/assets/src` as const

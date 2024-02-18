@@ -1,25 +1,3 @@
-import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
-import { CheckBox, CheckBoxOutlineBlank, Upgrade } from '@mui/icons-material'
-import {
-  Box,
-  Button,
-  CardContent,
-  Grid,
-  Pagination,
-  Skeleton,
-  Typography,
-} from '@mui/material'
-import CardLight from '../../../../Components/Card/CardLight'
-import CharacterCard from '../../../../Components/Character/CharacterCard'
-import {
-  HitModeToggle,
-  ReactionToggle,
-} from '../../../../Components/HitModeEditor'
-import ArtifactSetConfig from '../TabOptimize/Components/ArtifactSetConfig'
-import BonusStatsCard from '../TabOptimize/Components/BonusStatsCard'
-import OptimizationTargetSelector from '../TabOptimize/Components/OptimizationTargetSelector'
-import StatFilterCard from '../TabOptimize/Components/StatFilterCard'
-
 import { useForceUpdate } from '@genshin-optimizer/common/react-util'
 import { clamp } from '@genshin-optimizer/common/util'
 import type {
@@ -31,6 +9,18 @@ import {
   charKeyToLocCharKey,
 } from '@genshin-optimizer/gi/consts'
 import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
+import { useDatabase,useDBMeta } from '@genshin-optimizer/gi/db-ui'
+import { CheckBox, CheckBoxOutlineBlank, Upgrade } from '@mui/icons-material'
+import {
+  Box,
+  Button,
+  CardContent,
+  Grid,
+  Pagination,
+  Skeleton,
+  Typography,
+} from '@mui/material'
+import { Stack } from '@mui/system'
 import {
   Suspense,
   useCallback,
@@ -41,7 +31,16 @@ import {
   useState,
 } from 'react'
 import { Trans } from 'react-i18next'
+
+import AddArtInfo from '../../../../Components/AddArtInfo'
 import ArtifactLevelSlider from '../../../../Components/Artifact/ArtifactLevelSlider'
+import CardLight from '../../../../Components/Card/CardLight'
+import CharacterCard from '../../../../Components/Character/CharacterCard'
+import {
+  HitModeToggle,
+  ReactionToggle,
+} from '../../../../Components/HitModeEditor'
+import NoArtWarning from '../../../../Components/NoArtWarning'
 import { CharacterContext } from '../../../../Context/CharacterContext'
 import type { dataContextObj } from '../../../../Context/DataContext'
 import { DataContext } from '../../../../Context/DataContext'
@@ -52,16 +51,16 @@ import useCharSelectionCallback from '../../../../ReactHooks/useCharSelectionCal
 import useTeamData, { getTeamData } from '../../../../ReactHooks/useTeamData'
 import type { DynStat } from '../../../../Solver/common'
 import { objPathValue, shouldShowDevComponents } from '../../../../Util/Util'
+import ArtifactSetConfig from '../TabOptimize/Components/ArtifactSetConfig'
+import BonusStatsCard from '../TabOptimize/Components/BonusStatsCard'
 import MainStatSelectionCard from '../TabOptimize/Components/MainStatSelectionCard'
+import OptimizationTargetSelector from '../TabOptimize/Components/OptimizationTargetSelector'
+import StatFilterCard from '../TabOptimize/Components/StatFilterCard'
 import { dynamicData } from '../TabOptimize/foreground'
 import useBuildSetting from '../TabOptimize/useBuildSetting'
 import UpgradeOptChartCard from './UpgradeOptChartCard'
-
-import { Stack } from '@mui/system'
-import AddArtInfo from '../../../../Components/AddArtInfo'
-import NoArtWarning from '../../../../Components/NoArtWarning'
 import type { UpOptBuild } from './upOpt'
-import { UpOptCalculator, toArtifact } from './upOpt'
+import { toArtifact,UpOptCalculator } from './upOpt'
 
 export default function TabUpopt() {
   const {

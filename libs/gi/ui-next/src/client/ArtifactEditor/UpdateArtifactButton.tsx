@@ -6,8 +6,9 @@ import {
 import type { ButtonProps } from '@mui/material'
 import { Button } from '@mui/material'
 import { useContext } from 'react'
-import { UserContext } from '../UserDataWrapper'
+
 import { updateArtifactList } from '../gqlUtil'
+import { UserContext } from '../UserDataWrapper'
 
 type Prop = {
   artifact?: Artifact

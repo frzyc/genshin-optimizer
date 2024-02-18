@@ -6,6 +6,7 @@ import { WeaponName } from '@genshin-optimizer/gi/ui'
 import { Skeleton, Typography } from '@mui/material'
 import type { ReactElement, ReactNode } from 'react'
 import { Suspense } from 'react'
+
 import { ImageIcon } from '../ImageIcon'
 import { assetWrapper } from '../util'
 

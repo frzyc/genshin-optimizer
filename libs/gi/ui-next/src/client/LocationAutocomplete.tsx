@@ -17,6 +17,7 @@ import type { AutocompleteProps, Palette } from '@mui/material'
 import { Box, Skeleton } from '@mui/material'
 import { Suspense, useCallback, useContext, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
+
 import { CharIconSide } from './CharIconSide'
 import { GenshinUserContext } from './GenshinUserDataWrapper'
 import { SillyContext } from './SillyContext'

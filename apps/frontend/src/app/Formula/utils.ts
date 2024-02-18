@@ -1,4 +1,5 @@
 import { objKeyMap } from '@genshin-optimizer/common/util'
+
 import type { OptNode } from './optimization'
 import type {
   ComputeNode,

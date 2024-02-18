@@ -8,6 +8,7 @@ import type {
   ICachedSroCharacter,
 } from '@genshin-optimizer/sr/db'
 import { useEffect, useMemo, useState } from 'react'
+
 import { useDatabaseContext } from '../Context'
 
 export function useEquippedRelics(

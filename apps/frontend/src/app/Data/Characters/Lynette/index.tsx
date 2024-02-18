@@ -5,6 +5,7 @@ import type {
   RegionKey,
 } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
+
 import ColorText from '../../../Components/ColoredText'
 import { input, tally } from '../../../Formula'
 import {
@@ -21,7 +22,6 @@ import {
 import { absorbableEle } from '../../../Types/consts'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
-import type { ICharacterSheet } from '../ICharacterSheet'
 import { charTemplates } from '../charTemplates'
 import {
   dataObjForCharacterSheet,
@@ -29,6 +29,7 @@ import {
   healNode,
   plungingDmgNodes,
 } from '../dataUtil'
+import type { ICharacterSheet } from '../ICharacterSheet'
 
 const key: CharacterKey = 'Lynette'
 const data_gen = allStats.char.data[key]

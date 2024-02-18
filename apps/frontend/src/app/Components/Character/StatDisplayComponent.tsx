@@ -1,10 +1,11 @@
 import { objMap } from '@genshin-optimizer/common/util'
+import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { Masonry } from '@mui/lab'
 import { Box, Divider, ListItem } from '@mui/material'
 import { useContext, useMemo } from 'react'
+
 import { DataContext } from '../../Context/DataContext'
 import { OptimizationTargetContext } from '../../Context/OptimizationTargetContext'
-import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { getDisplayHeader, getDisplaySections } from '../../Formula/DisplayUtil'
 import type { DisplaySub } from '../../Formula/type'
 import type { NodeDisplay } from '../../Formula/uiData'

@@ -14,6 +14,7 @@ import {
 } from '@mui/material'
 import { useCallback, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
+
 import { artStatPercent } from '../Data/Artifacts/Artifact'
 import type { InputPremodKey } from '../Formula'
 import StatIcon from '../KeyMap/StatIcon'

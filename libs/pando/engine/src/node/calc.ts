@@ -5,14 +5,14 @@ import type {
   TagMapSubsetCache,
 } from '../tag'
 import {
+  mergeTagMapValues,
   TagMapExactValues,
   TagMapKeys,
   TagMapSubsetValues,
-  mergeTagMapValues,
 } from '../tag'
 import { assertUnreachable, extract, isDebug, tagString } from '../util'
 import { arithmetic, branching } from './formula'
-import type { AnyNode, NumNode, ReRead, Read, StrNode } from './type'
+import type { AnyNode, NumNode, Read, ReRead, StrNode } from './type'
 
 type TagCache = TagMapSubsetCache<AnyNode | ReRead>
 type PreRead<M> = {

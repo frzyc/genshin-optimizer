@@ -14,6 +14,7 @@ import {
   allRelicSetKeys,
   relicSlotToMainStatKeys,
 } from '@genshin-optimizer/sr/consts'
+
 import type { SroDatabase } from '../Database'
 import { SroDataManager } from '../SroDataManager'
 

@@ -1,5 +1,6 @@
 import { Box, Divider, Typography } from '@mui/material'
 import { useContext } from 'react'
+
 import { DataContext } from '../Context/DataContext'
 import type {
   DocumentSection,

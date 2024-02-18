@@ -6,7 +6,8 @@ import {
   constant,
   subscript,
 } from '@genshin-optimizer/pando/engine'
-import { bonusAbilities, statBoosts, type Source, type Stat } from './listing'
+
+import { bonusAbilities, type Source, type Stat,statBoosts } from './listing'
 import type { Read, Tag } from './read'
 import { reader, tag } from './read'
 

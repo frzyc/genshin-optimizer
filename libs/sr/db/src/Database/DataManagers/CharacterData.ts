@@ -17,6 +17,7 @@ import {
   charKeyToCharLocKey,
 } from '@genshin-optimizer/sr/consts'
 import type { ISrObjectDescription } from '@genshin-optimizer/sr/srod'
+
 import type {
   ICachedSroCharacter,
   ISroCharacter,
@@ -24,8 +25,8 @@ import type {
 } from '../../Interfaces'
 import { SroSource } from '../../Interfaces'
 import type { SroDatabase } from '../Database'
-import { SroDataManager } from '../SroDataManager'
 import type { ImportResult } from '../exim'
+import { SroDataManager } from '../SroDataManager'
 
 export class CharacterDataManager extends SroDataManager<
   CharacterKey,

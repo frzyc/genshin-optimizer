@@ -1,10 +1,11 @@
 import type { LocationKey } from '@genshin-optimizer/gi/consts'
-import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
+import { useDatabase,useDBMeta } from '@genshin-optimizer/gi/db-ui'
 import { BusinessCenter } from '@mui/icons-material'
 import type { TypographyProps } from '@mui/material'
 import { Box, Typography } from '@mui/material'
 import { useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
+
 import { getCharSheet } from '../../Data/Characters'
 import CharIconSide from '../Image/CharIconSide'
 

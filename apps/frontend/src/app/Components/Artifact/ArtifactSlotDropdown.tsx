@@ -4,6 +4,7 @@ import { Replay } from '@mui/icons-material'
 import type { ButtonProps } from '@mui/material'
 import { Divider, ListItemIcon, ListItemText, MenuItem } from '@mui/material'
 import { useTranslation } from 'react-i18next'
+
 import DropdownButton from '../DropdownMenu/DropdownButton'
 import SlotIcon from './SlotIcon'
 

@@ -9,17 +9,18 @@ import type { RarityKey } from '@genshin-optimizer/gi/consts'
 import type { Artifact } from '@genshin-optimizer/gi/frontend-gql'
 import { SlotIcon, StatIcon } from '@genshin-optimizer/gi/svgicons'
 import {
+  artifactLevelVariant,
   ArtifactSetName,
   ArtifactSetSlotName,
-  IconStatDisplay,
-  artifactLevelVariant,
   getVariant,
+  IconStatDisplay,
 } from '@genshin-optimizer/gi/ui'
 import { getMainStatDisplayStr } from '@genshin-optimizer/gi/util'
 import type { Palette } from '@mui/material'
 import { Box, Skeleton, Typography } from '@mui/material'
 import { Suspense } from 'react'
 import { useTranslation } from 'react-i18next'
+
 import LocationName from '../LocationName'
 
 export default function ArtifactTooltip({

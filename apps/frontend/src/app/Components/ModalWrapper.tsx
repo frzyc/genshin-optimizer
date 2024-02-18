@@ -1,6 +1,7 @@
 import type { ContainerProps, ModalProps } from '@mui/material'
 import { CardContent, Container, Modal, Skeleton, styled } from '@mui/material'
 import { Suspense } from 'react'
+
 import CardLight from './Card/CardLight'
 
 const ScrollModal = styled(Modal)(({ theme }) => ({

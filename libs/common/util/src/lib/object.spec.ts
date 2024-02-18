@@ -1,9 +1,9 @@
 import {
-  ObjNotMatchError,
   crawlObject,
   getObjectKeysRecursive,
   layeredAssignment,
   objMultiplication,
+  ObjNotMatchError,
   objPathValue,
   verifyObjKeys,
 } from './object'

@@ -1,11 +1,12 @@
 import { assertUnreachable } from '@genshin-optimizer/common/util'
 import type { AnyNode, CalcResult } from '@genshin-optimizer/pando/engine'
 import {
-  Calculator as Base,
   calculation,
+  Calculator as Base,
 } from '@genshin-optimizer/pando/engine'
+
 import type { Tag } from './data/util'
-import { reader, type Read } from './data/util'
+import { type Read,reader } from './data/util'
 import { DebugCalculator } from './debug'
 
 const { arithmetic } = calculation

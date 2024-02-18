@@ -1,4 +1,5 @@
 import type { ArtifactSetKey } from '@genshin-optimizer/gi/consts'
+
 import { inferInfoMut, mergeData } from '../../Formula/api'
 import type { Data, DisplaySub } from '../../Formula/type'
 

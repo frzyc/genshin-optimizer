@@ -13,6 +13,7 @@ import {
   allSubstatKeys,
 } from '@genshin-optimizer/gi/consts'
 import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
+
 import Artifact from '../Data/Artifacts/Artifact'
 import { probability } from './RollProbability'
 export const artifactSortKeys = [

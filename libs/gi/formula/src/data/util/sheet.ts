@@ -7,6 +7,7 @@ import type {
 import type { StatKey } from '@genshin-optimizer/gi/dm'
 import type { NumNode, StrNode } from '@genshin-optimizer/pando/engine'
 import { prod } from '@genshin-optimizer/pando/engine'
+
 import type { Source, Stat } from './listing'
 import type { Read } from './read'
 import { reader, tag } from './read'

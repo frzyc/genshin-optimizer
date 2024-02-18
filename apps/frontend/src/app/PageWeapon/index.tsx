@@ -21,8 +21,8 @@ import {
 } from '@mui/material'
 import type { ChangeEvent } from 'react'
 import React, {
-  Suspense,
   lazy,
+  Suspense,
   useCallback,
   useDeferredValue,
   useEffect,
@@ -32,18 +32,19 @@ import React, {
 } from 'react'
 import ReactGA from 'react-ga4'
 import { useTranslation } from 'react-i18next'
+
 import CardDark from '../Components/Card/CardDark'
 import PageAndSortOptionSelect from '../Components/PageAndSortOptionSelect'
 import WeaponRarityToggle from '../Components/ToggleButton/WeaponRarityToggle'
 import WeaponToggle from '../Components/ToggleButton/WeaponToggle'
 import { getWeaponSheet } from '../Data/Weapons'
+import { catTotal } from '../Util/totalUtils'
 import {
   weaponFilterConfigs,
   weaponSortConfigs,
   weaponSortMap,
 } from '../Util/WeaponSort'
 import { initialWeapon } from '../Util/WeaponUtil'
-import { catTotal } from '../Util/totalUtils'
 import WeaponCard from './WeaponCard'
 const WeaponSelectionModal = React.lazy(
   () => import('../Components/Weapon/WeaponSelectionModal')

@@ -10,6 +10,7 @@ import {
   Typography,
 } from '@mui/material'
 import { Suspense, useCallback, useState } from 'react'
+
 import CardDark from './Card/CardDark'
 import CloseButton from './CloseButton'
 import ModalWrapper from './ModalWrapper'

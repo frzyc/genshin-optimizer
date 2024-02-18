@@ -2,6 +2,7 @@ import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import { allElementKeys } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
 import { cmpGE, prod, sum } from '@genshin-optimizer/pando/engine'
+
 import { infusionPrio } from '../common/dmg'
 import {
   allBoolConditionals,

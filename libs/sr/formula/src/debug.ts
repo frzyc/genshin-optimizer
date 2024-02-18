@@ -10,9 +10,10 @@ import {
   TagMapKeys,
   traverse,
 } from '@genshin-optimizer/pando/engine'
+
 import { type Calculator } from './calculator'
 import { keys } from './data'
-import { tagStr, type Read, type Tag, type TagMapNodeEntry } from './data/util'
+import { type Read, type Tag, type TagMapNodeEntry,tagStr } from './data/util'
 
 const tagKeys = new TagMapKeys(keys)
 export const debugKey = Symbol('tagSource')

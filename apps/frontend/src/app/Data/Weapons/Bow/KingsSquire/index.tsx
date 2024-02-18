@@ -1,12 +1,13 @@
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
+
 import { input } from '../../../../Formula'
 import { equal, infoMut, prod, subscript } from '../../../../Formula/utils'
 import { customDmgNode } from '../../../Characters/dataUtil'
 import { cond, st, stg } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
-import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
+import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
 
 const key: WeaponKey = 'KingsSquire'
 const data_gen = allStats.weapon.data[key]

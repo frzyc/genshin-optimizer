@@ -7,6 +7,7 @@ import {
 } from '@genshin-optimizer/gi/consts'
 import type { ICachedWeapon, ICharTC } from '@genshin-optimizer/gi/db'
 import { getMainStatValue, getSubstatValue } from '@genshin-optimizer/gi/util'
+
 import type { TeamData } from '../../../../Context/DataContext'
 import { mergeData } from '../../../../Formula/api'
 import { mapFormulas } from '../../../../Formula/internal'

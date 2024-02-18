@@ -1,6 +1,7 @@
 import type { NumTagFree } from '@genshin-optimizer/pando/engine'
 import { compile } from '@genshin-optimizer/pando/engine'
 import type { RelicSlotKey } from '@genshin-optimizer/sr/consts'
+
 import { MAX_BUILDS } from './common'
 import type { BuildResult } from './optimizer'
 import type { RelicStats } from './parentWorker'

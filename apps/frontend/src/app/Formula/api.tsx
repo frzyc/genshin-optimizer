@@ -19,6 +19,7 @@ import type {
   ICachedWeapon,
 } from '@genshin-optimizer/gi/db'
 import { getMainStatValue } from '@genshin-optimizer/gi/util'
+
 import { objectMap } from '../Util/Util'
 import { input, tally } from './index'
 import { deepNodeClone } from './internal'

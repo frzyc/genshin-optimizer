@@ -1,11 +1,12 @@
-import { input } from '../../../../Formula'
-import { lookup, min, naught, prod, subscript } from '../../../../Formula/utils'
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
+
+import { input } from '../../../../Formula'
+import { lookup, min, naught, prod, subscript } from '../../../../Formula/utils'
 import { range } from '../../../../Util/Util'
 import { cond, trans } from '../../../SheetUtil'
-import { dataObjForWeaponSheet } from '../../util'
 import type { IWeaponSheet } from '../../IWeaponSheet'
+import { dataObjForWeaponSheet } from '../../util'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
 
 const key: WeaponKey = 'WavebreakersFin'

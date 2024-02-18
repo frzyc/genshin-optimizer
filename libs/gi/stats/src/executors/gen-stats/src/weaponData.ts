@@ -13,6 +13,7 @@ import {
   weaponMap,
   weaponPromoteExcelConfigData,
 } from '@genshin-optimizer/gi/dm'
+
 import * as quantumCatalystData from './QuantumCatalyst/data.json'
 
 type WeaponProp = {

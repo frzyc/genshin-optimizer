@@ -5,8 +5,8 @@ import type {
   ArtSetExclusion,
   ArtSetExclusionKey,
   BuildSetting,
-  StatFilterSetting,
   StatFilters,
+  StatFilterSetting,
 } from './BuildSettingDataManager'
 import {
   allAllowLocationsState,

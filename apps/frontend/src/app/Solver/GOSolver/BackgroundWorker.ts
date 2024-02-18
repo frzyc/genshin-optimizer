@@ -1,5 +1,5 @@
-import type { WorkerCommand, WorkerResult } from '..'
 import { assertUnreachable } from '../../Util/Util'
+import type { WorkerCommand, WorkerResult } from '..'
 import type { RequestFilter } from '../common'
 import {
   artSetPerm,

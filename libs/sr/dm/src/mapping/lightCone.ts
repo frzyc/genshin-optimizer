@@ -1,4 +1,5 @@
 import type { LightConeKey } from '@genshin-optimizer/sr/consts'
+
 import type { EquipmentConfig } from '../dm'
 
 export const lightConeIdMap: Record<string, LightConeKey> = {

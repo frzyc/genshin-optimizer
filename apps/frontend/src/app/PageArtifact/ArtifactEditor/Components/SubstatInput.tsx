@@ -25,6 +25,7 @@ import {
 } from '@mui/material'
 import { useEffect, useMemo, useState } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
+
 import { ArtifactStatWithUnit } from '../../../Components/Artifact/ArtifactStatKeyDisplay'
 import CardLight from '../../../Components/Card/CardLight'
 import CustomNumberInput, {

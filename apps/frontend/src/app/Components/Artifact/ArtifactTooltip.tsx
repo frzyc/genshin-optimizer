@@ -8,6 +8,7 @@ import { getMainStatDisplayStr } from '@genshin-optimizer/gi/util'
 import { Box, Skeleton, Typography } from '@mui/material'
 import { Suspense } from 'react'
 import { useTranslation } from 'react-i18next'
+
 import { getArtSheet } from '../../Data/Artifacts'
 import Artifact from '../../Data/Artifacts/Artifact'
 import StatIcon from '../../KeyMap/StatIcon'

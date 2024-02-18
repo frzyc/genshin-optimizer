@@ -1,6 +1,7 @@
 import { allElementKeys } from '@genshin-optimizer/gi/consts'
 import type { SvgIconProps } from '@mui/material'
 import { useEffect, useState } from 'react'
+
 import { ElementIcon } from '../KeyMap/StatIcon'
 
 export default function ElementCycle({

@@ -1,5 +1,6 @@
 import InfoIcon from '@mui/icons-material/Info'
 import type { TooltipProps } from '@mui/material'
+
 import BootstrapTooltip from './BootstrapTooltip'
 /**
  * @deprecated use `InfoTooltip` in `@genshin-optimizer/common/ui`

@@ -3,6 +3,7 @@ import type { ICachedWeapon } from '@genshin-optimizer/gi/db'
 import { useWeapon } from '@genshin-optimizer/gi/db-ui'
 import { Box, Typography } from '@mui/material'
 import { useMemo } from 'react'
+
 import { getWeaponSheet } from '../../Data/Weapons'
 import WeaponSheet from '../../Data/Weapons/WeaponSheet'
 import { uiInput as input } from '../../Formula'

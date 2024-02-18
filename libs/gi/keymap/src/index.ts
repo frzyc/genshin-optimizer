@@ -1,14 +1,14 @@
 import type { EleEnemyResKey, StatKey, Unit } from './KeyMap'
 import {
-  KeyMap,
   allEleDmgKeys,
   allEleEnemyResKeys,
   allEleResKeys,
+  KeyMap,
 } from './KeyMap'
 import type {
-  TransformativeReactionsKey,
   AdditiveReactionsKey,
   AmplifyingReactionsKey,
+  TransformativeReactionsKey,
 } from './StatConstants'
 import {
   crittableTransformativeReactions,

@@ -24,14 +24,15 @@ import {
   getRelicMainStatDisplayVal,
   getSubstatRange,
 } from '@genshin-optimizer/sr/util'
+
 import type {
   ICachedRelic,
   ICachedSubstat,
   ISroDatabase,
 } from '../../Interfaces'
 import type { SroDatabase } from '../Database'
-import { SroDataManager } from '../SroDataManager'
 import type { ImportResult } from '../exim'
+import { SroDataManager } from '../SroDataManager'
 
 export class RelicDataManager extends SroDataManager<
   string,

@@ -2,9 +2,10 @@ import type { Database } from '@genshin-optimizer/common/database'
 import type { GenderKey } from '@genshin-optimizer/sr/consts'
 import { allGenderKeys } from '@genshin-optimizer/sr/consts'
 import type { ISrObjectDescription } from '@genshin-optimizer/sr/srod'
+
 import type { ISroDatabase } from '../../Interfaces'
-import { DataEntry } from '../DataEntry'
 import type { SroDatabase } from '../Database'
+import { DataEntry } from '../DataEntry'
 import type { ImportResult } from '../exim'
 
 interface IDBMeta {

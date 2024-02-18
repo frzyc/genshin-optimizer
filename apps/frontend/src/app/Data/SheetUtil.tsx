@@ -5,6 +5,7 @@ import type {
 } from '@genshin-optimizer/gi/consts'
 import { useContext } from 'react'
 import { useTranslation } from 'react-i18next'
+
 import { Translate } from '../Components/Translate'
 import { SillyContext } from '../Context/SillyContext'
 import { input } from '../Formula'

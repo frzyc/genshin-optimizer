@@ -9,6 +9,7 @@ import type { TypographyProps } from '@mui/material'
 import { Box, Typography } from '@mui/material'
 import { useContext } from 'react'
 import { useTranslation } from 'react-i18next'
+
 import { CharIconSide } from './CharIconSide'
 import { GenshinUserContext } from './GenshinUserDataWrapper'
 import { locationCharacterKeyToCharacterKey } from './util'

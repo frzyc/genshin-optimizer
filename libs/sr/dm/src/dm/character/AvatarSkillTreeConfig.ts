@@ -1,5 +1,6 @@
 import { dumpFile } from '@genshin-optimizer/common/pipeline'
 import { objKeyMap } from '@genshin-optimizer/common/util'
+
 import { PROJROOT_PATH } from '../../consts'
 import type { AvatarId } from '../../mapping'
 import { characterIdMap } from '../../mapping'

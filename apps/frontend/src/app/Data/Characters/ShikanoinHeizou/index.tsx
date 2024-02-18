@@ -1,4 +1,6 @@
+import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
+
 import { input, target } from '../../../Formula/index'
 import {
   constant,
@@ -18,7 +20,6 @@ import { absorbableEle } from '../../../Types/consts'
 import { range } from '../../../Util/Util'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
-import type { ICharacterSheet } from '../ICharacterSheet.d'
 import { charTemplates } from '../charTemplates'
 import {
   customDmgNode,
@@ -26,8 +27,7 @@ import {
   dmgNode,
   plungingDmgNodes,
 } from '../dataUtil'
-
-import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
+import type { ICharacterSheet } from '../ICharacterSheet.d'
 
 const key: CharacterKey = 'ShikanoinHeizou'
 const elementKey: ElementKey = 'anemo'

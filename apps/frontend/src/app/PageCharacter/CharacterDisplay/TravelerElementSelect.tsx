@@ -5,6 +5,7 @@ import {
 } from '@genshin-optimizer/gi/consts'
 import { MenuItem } from '@mui/material'
 import { useContext } from 'react'
+
 import ColorText from '../../Components/ColoredText'
 import DropdownButton from '../../Components/DropdownMenu/DropdownButton'
 import { CharacterContext } from '../../Context/CharacterContext'

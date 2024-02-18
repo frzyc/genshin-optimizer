@@ -13,12 +13,12 @@ import {
   allRelicRarityKeys,
   allRelicSetKeys,
   allRelicSubStatKeys,
-  relicMaxLevel,
-  relicSlotToMainStatKeys,
-  relicSubstatRollData,
   type RelicMainStatKey,
+  relicMaxLevel,
   type RelicRarityKey,
+  relicSlotToMainStatKeys,
   type RelicSubStatKey,
+  relicSubstatRollData,
 } from '@genshin-optimizer/sr/consts'
 import type { IRelic, ISubstat } from '@genshin-optimizer/sr/srod'
 import { allStats } from '@genshin-optimizer/sr/stats'

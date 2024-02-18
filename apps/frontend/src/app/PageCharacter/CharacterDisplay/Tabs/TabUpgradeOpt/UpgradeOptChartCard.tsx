@@ -1,6 +1,7 @@
 import { useTimeout } from '@genshin-optimizer/common/react-util'
 import { linspace } from '@genshin-optimizer/common/util'
 import type { ArtifactSlotKey } from '@genshin-optimizer/gi/consts'
+import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { Box, CardContent, Grid, Typography } from '@mui/material'
 import { useCallback, useContext, useMemo } from 'react'
 import type { TooltipProps } from 'recharts'
@@ -17,10 +18,10 @@ import {
   XAxis,
   YAxis,
 } from 'recharts'
+
 import ArtifactCardPico from '../../../../Components/Artifact/ArtifactCardPico'
 import CardLight from '../../../../Components/Card/CardLight'
 import { DataContext } from '../../../../Context/DataContext'
-import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { uiInput as input } from '../../../../Formula'
 import ArtifactCard from '../../../../PageArtifact/ArtifactCard'
 import { erf } from './mathUtil'

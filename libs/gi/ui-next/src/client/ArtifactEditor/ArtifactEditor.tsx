@@ -10,10 +10,10 @@ import { artifactAsset } from '@genshin-optimizer/gi/assets'
 import type { RarityKey } from '@genshin-optimizer/gi/consts'
 import {
   allElementWithPhyKeys,
-  artMaxLevel,
-  artSlotMainKeys,
   type ArtifactRarity,
   type ArtifactSetKey,
+  artMaxLevel,
+  artSlotMainKeys,
 } from '@genshin-optimizer/gi/consts'
 import type { Artifact } from '@genshin-optimizer/gi/frontend-gql'
 import type { IArtifact } from '@genshin-optimizer/gi/good'
@@ -55,11 +55,12 @@ import {
   useState,
 } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
+
+import { findDupArtifact,IArtifactToArtifact } from '../artifactUtil'
 import CloseButton from '../CloseButton'
 import { GenshinUserContext } from '../GenshinUserDataWrapper'
 import { ImageIcon } from '../ImageIcon'
 import { LocationAutocomplete } from '../LocationAutocomplete'
-import { IArtifactToArtifact, findDupArtifact } from '../artifactUtil'
 import { assetWrapper } from '../util'
 import { AddArtifactButton } from './AddArtifactButton'
 import ArtifactRarityDropdown from './ArtifactRarityDropdown'
@@ -70,12 +71,12 @@ import {
   ArtifactStatWithUnit,
 } from './ArtifactStatKeyDisplay'
 import ExistingArtDisplay from './ExistingArtDisplay'
+import { artifactReducer } from './reducer'
 import { ScanDisplay, ScannedTextCard } from './ScanDisplay'
 import { textsFromImage } from './ScanningUtil'
 import SubstatEfficiencyDisplayCard from './SubstatEfficiencyDisplayCard'
 import SubstatInput from './SubstatInput'
 import { UpdateArtifactButton } from './UpdateArtifactButton'
-import { artifactReducer } from './reducer'
 const queue = new ScanningQueue(
   textsFromImage,
   process.env.NODE_ENV === 'development'

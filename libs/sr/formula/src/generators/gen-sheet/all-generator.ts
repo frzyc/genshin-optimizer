@@ -4,6 +4,7 @@ import {
   allRelicSetKeys,
 } from '@genshin-optimizer/sr/consts'
 import type { Tree } from '@nx/devkit'
+
 import genIndex from './genIndex'
 import genSheet from './genSheet'
 export default async function genSheetGenerator(tree: Tree) {

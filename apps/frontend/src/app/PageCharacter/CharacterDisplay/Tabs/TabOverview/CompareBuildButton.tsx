@@ -1,9 +1,11 @@
 import { useBoolState } from '@genshin-optimizer/common/react-util'
 import { objMap } from '@genshin-optimizer/common/util'
+import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { Close, Difference } from '@mui/icons-material'
 import { Button, Skeleton, Tooltip, Typography } from '@mui/material'
 import { Suspense, useContext, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
+
 import {
   HitModeToggle,
   ReactionToggle,
@@ -11,7 +13,6 @@ import {
 import ModalWrapper from '../../../../Components/ModalWrapper'
 import { CharacterContext } from '../../../../Context/CharacterContext'
 import { DataContext } from '../../../../Context/DataContext'
-import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import useTeamData from '../../../../ReactHooks/useTeamData'
 import BuildDisplayItem from '../TabOptimize/Components/BuildDisplayItem'
 import useBuildSetting from '../TabOptimize/useBuildSetting'

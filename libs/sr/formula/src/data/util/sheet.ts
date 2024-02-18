@@ -1,18 +1,19 @@
 import {
-  prod,
   type NumNode,
+  prod,
   type StrNode,
 } from '@genshin-optimizer/pando/engine'
 import type { StatKey } from '@genshin-optimizer/sr/consts'
+
 import type { Read, Tag } from '.'
 import {
   percent,
   reader,
   selfBuff,
   tag,
-  teamBuff,
   type TagMapNodeEntries,
   type TagMapNodeEntry,
+  teamBuff,
 } from '.'
 import type { ElementalType, Source } from './listing'
 

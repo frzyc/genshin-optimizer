@@ -30,6 +30,11 @@ import {
   weaponData,
   withMember,
 } from '@genshin-optimizer/gi/formula'
+import { CalcContext, NodeFieldDisplay } from '@genshin-optimizer/gi/formula-ui'
+import type { Character } from '@genshin-optimizer/gi/frontend-gql'
+import { getCharData } from '@genshin-optimizer/gi/stats'
+import type { RollColorKey } from '@genshin-optimizer/gi/ui'
+import { CharacterName } from '@genshin-optimizer/gi/ui'
 import { ascensionMaxLevel } from '@genshin-optimizer/gi/util'
 import FavoriteIcon from '@mui/icons-material/Favorite'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
@@ -41,19 +46,14 @@ import {
   Skeleton,
   Typography,
 } from '@mui/material'
+import Image from 'next/image'
 import { Suspense, useContext, useMemo, useState } from 'react'
 
-import { CalcContext, NodeFieldDisplay } from '@genshin-optimizer/gi/formula-ui'
-import type { Character } from '@genshin-optimizer/gi/frontend-gql'
-import { getCharData } from '@genshin-optimizer/gi/stats'
-import type { RollColorKey } from '@genshin-optimizer/gi/ui'
-import { CharacterName } from '@genshin-optimizer/gi/ui'
-import Image from 'next/image'
 import { ArtifactCardPico, ArtifactCardPicoBlank } from './Artifact'
 import { GenshinUserContext } from './GenshinUserDataWrapper'
 import { SillyContext } from './SillyContext'
-import { WeaponCardPico } from './Weapon'
 import { assetWrapper, iconAsset } from './util'
+import { WeaponCardPico } from './Weapon'
 
 export function CharacterCard({ character }: { character: Character }) {
   const favorite = getRandBool() //TODO:

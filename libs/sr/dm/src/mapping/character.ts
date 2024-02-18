@@ -5,6 +5,7 @@ import type {
   RarityKey,
   TrailblazerGenderedKey,
 } from '@genshin-optimizer/sr/consts'
+
 import type { AvatarRarity } from '../dm'
 import type { AvatarDamageType } from '../dm/character/AvatarConfig'
 

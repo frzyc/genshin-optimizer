@@ -34,6 +34,7 @@ import {
 } from '@mui/material'
 import { useEffect, useMemo, useState } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
+
 import { ArtifactStatWithUnit } from './ArtifactStatKeyDisplay'
 
 export default function SubstatInput({

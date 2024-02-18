@@ -1,5 +1,4 @@
-import type { StaticImageData } from 'next/image'
-
+import { characterAsset } from '@genshin-optimizer/gi/assets'
 import type { TravelerKey } from '@genshin-optimizer/gi/consts'
 import {
   allTravelerKeys,
@@ -7,9 +6,9 @@ import {
   type GenderKey,
   type LocationCharacterKey,
 } from '@genshin-optimizer/gi/consts'
-import { characterAsset } from '@genshin-optimizer/gi/assets'
 import type { ICharacter } from '@genshin-optimizer/gi/good'
 import { portrait } from '@genshin-optimizer/gi/silly-wisher'
+import type { StaticImageData } from 'next/image'
 
 export function iconAsset(
   cKey: CharacterKey,

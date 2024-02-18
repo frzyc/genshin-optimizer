@@ -7,12 +7,13 @@ import type {
   TagValRead,
 } from '@genshin-optimizer/pando/engine'
 import {
-  TypedRead,
-  tag as baseTag,
-  tagVal as baseTagVal,
   constant,
   reread,
+  tag as baseTag,
+  tagVal as baseTagVal,
+  TypedRead,
 } from '@genshin-optimizer/pando/engine'
+
 import type { DamageType, TagMapNodeEntry } from '.'
 import {
   damageTypes,
@@ -20,8 +21,8 @@ import {
   entryTypes,
   members,
   presets,
-  srcs,
   type Source,
+  srcs,
 } from './listing'
 
 export const fixedTags = {

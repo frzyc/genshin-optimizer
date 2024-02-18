@@ -1,6 +1,6 @@
 import type {
-  DataManagerBase,
   Database,
+  DataManagerBase,
 } from '@genshin-optimizer/common/database'
 import { useEffect, useState } from 'react'
 export function useDataManagerBase<

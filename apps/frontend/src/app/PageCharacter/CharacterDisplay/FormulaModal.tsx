@@ -1,5 +1,6 @@
 import type { AmpReactionKey } from '@genshin-optimizer/gi/consts'
 import { allAmpReactionKeys } from '@genshin-optimizer/gi/consts'
+import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { ExpandMore } from '@mui/icons-material'
 import {
   Accordion,
@@ -22,6 +23,7 @@ import {
   useRef,
   useState,
 } from 'react'
+
 import AmpReactionModeText from '../../Components/AmpReactionModeText'
 import CardDark from '../../Components/Card/CardDark'
 import CardHeaderCustom from '../../Components/Card/CardHeaderCustom'
@@ -33,7 +35,6 @@ import ModalWrapper from '../../Components/ModalWrapper'
 import SqBadge from '../../Components/SqBadge'
 import { DataContext } from '../../Context/DataContext'
 import { FormulaDataContext } from '../../Context/FormulaDataContext'
-import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { getDisplayHeader, getDisplaySections } from '../../Formula/DisplayUtil'
 import type { DisplaySub } from '../../Formula/type'
 import type { NodeDisplay } from '../../Formula/uiData'

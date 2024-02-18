@@ -1,7 +1,6 @@
 /// <reference types="vitest" />
 import { resolve } from 'path'
 import { defineConfig } from 'vite'
-
 import viteTsConfigPaths from 'vite-tsconfig-paths'
 
 export default defineConfig({

@@ -18,6 +18,7 @@ import {
 } from '@genshin-optimizer/gi/consts'
 import type { IArtifact } from '@genshin-optimizer/gi/good'
 import { allStats } from '@genshin-optimizer/gi/stats'
+
 import type { ArtifactMeta } from './artifactMeta'
 
 const showPercentKeys = ['hp_', 'def_', 'atk_'] as const

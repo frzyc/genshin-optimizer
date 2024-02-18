@@ -2,6 +2,7 @@ import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
 import type { AmpReactionKey } from '@genshin-optimizer/gi/consts'
 import { Box } from '@mui/material'
 import { useTranslation } from 'react-i18next'
+
 import { ElementIcon } from '../KeyMap/StatIcon'
 import ColorText from './ColoredText'
 import SqBadge from './SqBadge'

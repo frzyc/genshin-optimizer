@@ -1,6 +1,6 @@
 import type {
-  DBStorage,
   DbIndexKey,
+  DBStorage,
   DbVersionKey,
   StorageType,
 } from './DBStorage'

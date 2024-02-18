@@ -8,12 +8,13 @@ import {
 import type { ArtifactSetKey, WeaponKey } from '@genshin-optimizer/gi/consts'
 import { allArtifactSetKeys, allWeaponKeys } from '@genshin-optimizer/gi/consts'
 import { useContext } from 'react'
-import { uiInput } from '.'
+
 import ColorText from '../Components/ColoredText'
 import { Translate } from '../Components/Translate'
 import { SillyContext } from '../Context/SillyContext'
 import type { CharacterSheetKey } from '../Types/consts'
 import { allCharacterSheetKeys } from '../Types/consts'
+import { uiInput } from '.'
 import { allOperations } from './optimization'
 import type {
   ComputeNode,

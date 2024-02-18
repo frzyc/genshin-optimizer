@@ -4,6 +4,7 @@ import type {
   CharacterKey,
   LightConeKey,
 } from '@genshin-optimizer/sr/consts'
+
 import { charData, lightConeData, withMember } from '.'
 import { Calculator } from './calculator'
 import { keys, values } from './data'

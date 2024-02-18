@@ -1,5 +1,6 @@
 import type { ArtifactSetKey } from '@genshin-optimizer/gi/consts'
 import { cmpGE } from '@genshin-optimizer/pando/engine'
+
 import {
   allBoolConditionals,
   allListConditionals,

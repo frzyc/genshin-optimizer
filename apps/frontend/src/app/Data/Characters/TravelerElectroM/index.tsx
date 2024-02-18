@@ -1,4 +1,5 @@
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
+
 import type { CharacterSheetKey } from '../../../Types/consts'
 import { travelerSheet } from '../Traveler'
 import electro from '../TravelerElectroF/electro'

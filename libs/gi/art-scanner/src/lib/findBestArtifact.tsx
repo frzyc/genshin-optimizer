@@ -23,6 +23,7 @@ import {
   getSubstatRolls,
 } from '@genshin-optimizer/gi/util'
 import type { ReactNode } from 'react'
+
 import { statMap } from './enStringMap'
 
 export type TextKey =

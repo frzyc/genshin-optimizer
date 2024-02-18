@@ -1,8 +1,9 @@
-import type { Data } from '../../../Formula/type'
 import type { ArtifactSetKey } from '@genshin-optimizer/gi/consts'
+
+import type { Data } from '../../../Formula/type'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
-import type { IArtifactSheet } from '../IArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
+import type { IArtifactSheet } from '../IArtifactSheet'
 
 const key: ArtifactSetKey = 'PrayersForDestiny'
 const setHeader = setHeaderTemplate(key)

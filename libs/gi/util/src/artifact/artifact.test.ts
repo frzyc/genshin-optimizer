@@ -1,5 +1,6 @@
 import { artSubstatRollData } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
+
 import { getSubstatEfficiency, getSubstatRolls } from './artifact'
 
 const artifactSubstatRoll = allStats.art.subRoll

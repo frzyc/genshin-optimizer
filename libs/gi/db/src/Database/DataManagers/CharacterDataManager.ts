@@ -19,6 +19,7 @@ import {
 } from '@genshin-optimizer/gi/consts'
 import type { IGOOD } from '@genshin-optimizer/gi/good'
 import { validateLevelAsc, validateTalent } from '@genshin-optimizer/gi/util'
+
 import type { CustomMultiTarget } from '../../Interfaces/CustomMultiTarget'
 import type { ICachedCharacter } from '../../Interfaces/ICachedCharacter'
 import type { IGOCharacter } from '../../Interfaces/IGOCharacter'

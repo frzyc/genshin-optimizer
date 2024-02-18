@@ -1,8 +1,9 @@
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
+
 import type { IWeaponSheet } from '../../IWeaponSheet'
-import WeaponSheet from '../../WeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
+import WeaponSheet from '../../WeaponSheet'
 
 const key: WeaponKey = 'SeasonedHuntersBow'
 const data_gen = allStats.weapon.data[key]

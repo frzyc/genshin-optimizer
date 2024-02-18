@@ -1,4 +1,4 @@
-import type { StatFilterSetting, StatFilters } from '@genshin-optimizer/gi/db'
+import type { StatFilters,StatFilterSetting } from '@genshin-optimizer/gi/db'
 import {
   CheckBox,
   CheckBoxOutlineBlank,
@@ -7,6 +7,7 @@ import {
 import { Button, ButtonGroup } from '@mui/material'
 import { useCallback, useContext } from 'react'
 import { useTranslation } from 'react-i18next'
+
 import CustomNumberInput, {
   CustomNumberInputButtonGroupWrapper,
 } from '../../../../../Components/CustomNumberInput'

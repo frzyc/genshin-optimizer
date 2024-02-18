@@ -15,6 +15,7 @@ import PersonSearchIcon from '@mui/icons-material/PersonSearch'
 import { Box, Button, Chip, Grid, ToggleButton } from '@mui/material'
 import { Suspense, useMemo } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
+
 import type { FilterOption } from '../../PageArtifact/ArtifactSort'
 import { handleMultiSelect } from '../../Util/MultiSelect'
 import { bulkCatTotal } from '../../Util/totalUtils'

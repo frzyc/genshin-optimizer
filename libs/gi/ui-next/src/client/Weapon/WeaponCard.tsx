@@ -45,11 +45,12 @@ import Image from 'next/image'
 import type { ReactNode } from 'react'
 import { Suspense, useContext, useEffect, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
+
+import { updateWeaponList } from '../gqlUtil'
 import { ImageIcon } from '../ImageIcon'
 import { LocationAutocomplete } from '../LocationAutocomplete'
 import LocationName from '../LocationName'
 import { UserContext } from '../UserDataWrapper'
-import { updateWeaponList } from '../gqlUtil'
 import { assetWrapper } from '../util'
 
 type WeaponCardProps = {

@@ -1,11 +1,12 @@
-import { input } from '../../../../Formula'
-import { equal, infoMut, prod, subscript } from '../../../../Formula/utils'
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
+
+import { input } from '../../../../Formula'
+import { equal, infoMut, prod, subscript } from '../../../../Formula/utils'
 import { customHealNode } from '../../../Characters/dataUtil'
-import { stg, st } from '../../../SheetUtil'
-import { dataObjForWeaponSheet } from '../../util'
+import { st,stg } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
+import { dataObjForWeaponSheet } from '../../util'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
 
 const key: WeaponKey = 'TravelersHandySword'

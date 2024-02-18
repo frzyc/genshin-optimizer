@@ -1,4 +1,5 @@
 import { dumpFile, nameToKey } from '@genshin-optimizer/common/pipeline'
+
 import { TextMapEN } from '../../TextMapUtil'
 import { readDMJSON } from '../../util'
 

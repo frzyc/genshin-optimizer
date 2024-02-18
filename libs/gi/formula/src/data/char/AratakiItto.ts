@@ -1,6 +1,7 @@
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
 import { cmpGE } from '@genshin-optimizer/pando/engine'
+
 import {
   activeCharBuff,
   allBoolConditionals,

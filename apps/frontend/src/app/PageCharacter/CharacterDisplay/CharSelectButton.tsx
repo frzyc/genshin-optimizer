@@ -1,6 +1,7 @@
 import { Button } from '@mui/material'
 import React, { Suspense, useContext, useState } from 'react'
 import { useTranslation } from 'react-i18next'
+
 import CharIconSide from '../../Components/Image/CharIconSide'
 import { CharacterContext } from '../../Context/CharacterContext'
 import useCharSelectionCallback from '../../ReactHooks/useCharSelectionCallback'

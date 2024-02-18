@@ -4,9 +4,8 @@ import type {
   TravelerKey,
 } from '@genshin-optimizer/gi/consts'
 import { allTravelerKeys } from '@genshin-optimizer/gi/consts'
-import type { CharacterSheetKey } from '../../Types/consts'
-import type CharacterSheet from './CharacterSheet'
 
+import type { CharacterSheetKey } from '../../Types/consts'
 import Albedo from './Albedo'
 import Alhaitham from './Alhaitham'
 import Aloy from './Aloy'
@@ -17,6 +16,7 @@ import Barbara from './Barbara'
 import Beidou from './Beidou'
 import Bennett from './Bennett'
 import Candace from './Candace'
+import type CharacterSheet from './CharacterSheet'
 import Charlotte from './Charlotte'
 import Chevreuse from './Chevreuse'
 import Chongyun from './Chongyun'

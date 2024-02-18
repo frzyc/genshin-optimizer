@@ -3,6 +3,7 @@ import type { AdditiveReactionKey } from '@genshin-optimizer/gi/consts'
 import { DendroIcon, ElectroIcon } from '@genshin-optimizer/gi/svgicons'
 import { Box } from '@mui/material'
 import { useTranslation } from 'react-i18next'
+
 import { ElementIcon } from '../KeyMap/StatIcon'
 import ColorText from './ColoredText'
 import SqBadge from './SqBadge'

@@ -1,9 +1,8 @@
 'use client'
+import { CardThemed } from '@genshin-optimizer/common/ui'
 import { CardContent, CardHeader, Divider } from '@mui/material'
-
 import { useSession } from 'next-auth/react'
 
-import { CardThemed } from '@genshin-optimizer/common/ui'
 import LoginButton from './components/LoginButton'
 import SignOutButton from './components/SignOutButton'
 import User from './components/User'

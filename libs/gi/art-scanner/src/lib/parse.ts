@@ -13,6 +13,7 @@ import {
   allSubstatKeys,
 } from '@genshin-optimizer/gi/consts'
 import type { ISubstat } from '@genshin-optimizer/gi/good'
+
 import { artSlotNames, statMap } from './enStringMap'
 
 /** small utility function used by most string parsing functions below */

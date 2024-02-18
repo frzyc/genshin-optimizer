@@ -18,8 +18,8 @@ import {
   Typography,
 } from '@mui/material'
 import {
-  Suspense,
   lazy,
+  Suspense,
   useCallback,
   useEffect,
   useMemo,
@@ -28,6 +28,7 @@ import {
   useState,
 } from 'react'
 import { useTranslation } from 'react-i18next'
+
 import CardDark from '../../../../Components/Card/CardDark'
 import CloseButton from '../../../../Components/CloseButton'
 import ImgIcon from '../../../../Components/Image/ImgIcon'

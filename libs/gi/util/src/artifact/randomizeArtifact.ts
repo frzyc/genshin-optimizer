@@ -20,6 +20,7 @@ import {
 } from '@genshin-optimizer/gi/consts'
 import type { IArtifact, ISubstat } from '@genshin-optimizer/gi/good'
 import { allStats } from '@genshin-optimizer/gi/stats'
+
 import { artDisplayValue, getSubstatValuesPercent } from './artifact'
 
 // do not randomize Prayers since they don't have all slots

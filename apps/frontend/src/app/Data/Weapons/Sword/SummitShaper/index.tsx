@@ -1,3 +1,6 @@
+import type { WeaponKey } from '@genshin-optimizer/gi/consts'
+import { allStats } from '@genshin-optimizer/gi/stats'
+
 import { input } from '../../../../Formula'
 import {
   equal,
@@ -7,12 +10,10 @@ import {
   subscript,
   sum,
 } from '../../../../Formula/utils'
-import type { WeaponKey } from '@genshin-optimizer/gi/consts'
-import { allStats } from '@genshin-optimizer/gi/stats'
 import { range } from '../../../../Util/Util'
-import { cond, stg, st, trans } from '../../../SheetUtil'
-import { dataObjForWeaponSheet } from '../../util'
+import { cond, st, stg, trans } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
+import { dataObjForWeaponSheet } from '../../util'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
 
 const key: WeaponKey = 'SummitShaper'

@@ -6,7 +6,7 @@ import {
   allElementKeys,
   allWeaponTypeKeys,
 } from '@genshin-optimizer/gi/consts'
-import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
+import { useDatabase,useDBMeta } from '@genshin-optimizer/gi/db-ui'
 import { FlowerIcon } from '@genshin-optimizer/gi/svgicons'
 import { BusinessCenter, People } from '@mui/icons-material'
 import {
@@ -22,6 +22,7 @@ import {
 import { useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Link as RouterLink } from 'react-router-dom'
+
 import SlotIcon from '../Components/Artifact/SlotIcon'
 import CardDark from '../Components/Card/CardDark'
 import CardLight from '../Components/Card/CardLight'

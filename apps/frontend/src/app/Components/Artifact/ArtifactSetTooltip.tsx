@@ -1,6 +1,7 @@
 import { Box, Skeleton, Stack, Typography } from '@mui/material'
 import { Suspense } from 'react'
 import { useTranslation } from 'react-i18next'
+
 import type { ArtifactSheet } from '../../Data/Artifacts/ArtifactSheet'
 import BootstrapTooltip from '../BootstrapTooltip'
 import SqBadge from '../SqBadge'

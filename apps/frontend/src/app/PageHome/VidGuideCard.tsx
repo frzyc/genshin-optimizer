@@ -9,6 +9,7 @@ import {
   Typography,
 } from '@mui/material'
 import { useTranslation } from 'react-i18next'
+
 import CardDark from '../Components/Card/CardDark'
 
 const embeds = JSON.parse(process.env.NX_URLS_GUIDES ?? '[]') as string[]

@@ -6,6 +6,7 @@ import type { AutocompleteRenderGroupParams } from '@mui/material'
 import { Box, Chip, List, ListSubheader } from '@mui/material'
 import { useCallback, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
+
 import { setKeysByRarities } from '../../Data/Artifacts'
 import { artifactDefIcon } from '../../Data/Artifacts/ArtifactSheet'
 import { GeneralAutocompleteMulti } from '../GeneralAutocomplete'

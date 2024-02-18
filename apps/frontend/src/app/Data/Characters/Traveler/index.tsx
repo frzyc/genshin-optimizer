@@ -4,18 +4,19 @@ import type {
   WeaponTypeKey,
 } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
+
 import type { Data, DisplaySub } from '../../../Formula/type'
 import { infoMut } from '../../../Formula/utils'
 import type { CharacterSheetKey } from '../../../Types/consts'
 import { stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
+import { charTemplates } from '../charTemplates'
+import { dmgNode } from '../dataUtil'
 import type {
   ICharacterSheet,
   TalentSheetElement,
   TalentSheetElementKey,
 } from '../ICharacterSheet.d'
-import { charTemplates } from '../charTemplates'
-import { dmgNode } from '../dataUtil'
 
 type TravelerTalentFunc = (
   key: CharacterSheetKey,

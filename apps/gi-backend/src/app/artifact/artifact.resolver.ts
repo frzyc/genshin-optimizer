@@ -1,4 +1,5 @@
 import { Args, Mutation, Query, Resolver } from '@nestjs/graphql'
+
 import { JWTUser } from '../_decorator/jwtuser.decorator'
 import { GenshinUserService } from '../genshinUser/genshinUser.service'
 import { Artifact, InputArtifact, UpdateArtifact } from './artifact.entity'

@@ -14,8 +14,9 @@ import {
 import Link from 'next/link'
 import { useContext } from 'react'
 import { useTranslation } from 'react-i18next'
-import { maincontent } from './TabsData'
+
 import silly_icon from './silly_icon.png'
+import { maincontent } from './TabsData'
 
 export default function DesktopHeader({
   anchor,

@@ -18,6 +18,7 @@ import {
 import type { ChangeEvent } from 'react'
 import { useDeferredValue, useEffect, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
+
 import { getWeaponSheet } from '../../Data/Weapons'
 import type WeaponSheet from '../../Data/Weapons/WeaponSheet'
 import { catTotal } from '../../Util/totalUtils'

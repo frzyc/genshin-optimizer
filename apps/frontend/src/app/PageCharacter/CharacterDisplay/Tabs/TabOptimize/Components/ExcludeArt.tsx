@@ -4,6 +4,7 @@ import {
   useMediaQueryUp,
 } from '@genshin-optimizer/common/react-util'
 import { filterFunction } from '@genshin-optimizer/common/util'
+import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import AddIcon from '@mui/icons-material/Add'
 import CheckBoxIcon from '@mui/icons-material/CheckBox'
 import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank'
@@ -27,6 +28,7 @@ import {
   useReducer,
 } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
+
 import ArtifactCardNano from '../../../../../Components/Artifact/ArtifactCardNano'
 import ArtifactFilterDisplay from '../../../../../Components/Artifact/ArtifactFilterDisplay'
 import CardDark from '../../../../../Components/Card/CardDark'
@@ -36,7 +38,6 @@ import InfoTooltip from '../../../../../Components/InfoTooltip'
 import ModalWrapper from '../../../../../Components/ModalWrapper'
 import SqBadge from '../../../../../Components/SqBadge'
 import { CharacterContext } from '../../../../../Context/CharacterContext'
-import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import ArtifactCard from '../../../../../PageArtifact/ArtifactCard'
 import {
   artifactFilterConfigs,

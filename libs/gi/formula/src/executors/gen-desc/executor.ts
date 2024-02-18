@@ -1,14 +1,14 @@
 import { workspaceRoot } from '@nx/devkit'
 import { writeFileSync } from 'fs'
 import * as path from 'path'
-import type { GenDescExecutorSchema } from './schema'
-
 // Note:
 // It is important that `data` has NOT been loaded at this point
 // as we are injecting `conditionals` to "collect" the metadata
 import * as prettier from 'prettier'
+
 import type { entries as Entries } from '../../data'
 import { metaList } from '../../data/util'
+import type { GenDescExecutorSchema } from './schema'
 metaList.conditionals = []
 
 export default async function runExecutor(

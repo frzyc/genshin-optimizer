@@ -5,6 +5,7 @@ import {
   type ArtifactSlotKey,
 } from '@genshin-optimizer/gi/consts'
 import type { ArtSetExclusion } from '@genshin-optimizer/gi/db'
+
 import type { OptNode } from '../Formula/optimization'
 import { precompute } from '../Formula/optimization'
 import { dynRead, prod, sum, threshold } from '../Formula/utils'

@@ -3,6 +3,7 @@ import { useDatabase, useWeapon } from '@genshin-optimizer/gi/db-ui'
 import { BusinessCenter } from '@mui/icons-material'
 import { Box, CardActionArea, Chip, Skeleton, Typography } from '@mui/material'
 import { useCallback, useMemo } from 'react'
+
 import { getWeaponSheet } from '../../Data/Weapons'
 import WeaponSheet from '../../Data/Weapons/WeaponSheet'
 import { input } from '../../Formula'

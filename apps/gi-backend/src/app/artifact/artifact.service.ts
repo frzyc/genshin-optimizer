@@ -1,7 +1,8 @@
 import { Injectable } from '@nestjs/common'
 import type { Artifact } from '@prisma/client/gi'
-import { PrismaService } from '../prisma/prisma.service'
 import { GraphQLError } from 'graphql'
+
+import { PrismaService } from '../prisma/prisma.service'
 import type { UpdateArtifact } from './artifact.entity'
 
 @Injectable()

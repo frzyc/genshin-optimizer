@@ -5,6 +5,7 @@ import type {
   SubstatKey,
 } from '@genshin-optimizer/gi/consts'
 import { allSubstatKeys, allTravelerKeys } from '@genshin-optimizer/gi/consts'
+
 import type { ArtCharDatabase } from '../ArtCharDatabase'
 import { DataManager } from '../DataManager'
 

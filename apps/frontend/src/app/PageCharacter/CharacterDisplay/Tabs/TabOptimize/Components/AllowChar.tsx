@@ -44,6 +44,7 @@ import {
   useState,
 } from 'react'
 import { useTranslation } from 'react-i18next'
+
 import SlotIcon from '../../../../../Components/Artifact/SlotIcon'
 import CardDark from '../../../../../Components/Card/CardDark'
 import CardLight from '../../../../../Components/Card/CardLight'

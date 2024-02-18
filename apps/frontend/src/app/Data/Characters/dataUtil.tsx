@@ -13,6 +13,7 @@ import type {
 import { allMainStatKeys } from '@genshin-optimizer/gi/consts'
 import type { CharacterDataGen } from '@genshin-optimizer/gi/stats'
 import { allStats } from '@genshin-optimizer/gi/stats'
+
 import { infusionNode, input } from '../../Formula'
 import { inferInfoMut, mergeData } from '../../Formula/api'
 import { reactions } from '../../Formula/reaction'

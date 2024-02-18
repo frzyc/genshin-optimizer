@@ -1,4 +1,5 @@
 import { existsSync, readFileSync } from 'fs'
+
 import { DM_PATH } from './consts'
 
 export function readDMJSON(path: string) {

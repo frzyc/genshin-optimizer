@@ -2,6 +2,7 @@ import { imgAssets } from '@genshin-optimizer/gi/assets'
 import type { WeaponTypeKey } from '@genshin-optimizer/gi/consts'
 import { allWeaponTypeKeys } from '@genshin-optimizer/gi/consts'
 import { Chip, ToggleButton, useMediaQuery, useTheme } from '@mui/material'
+
 import { handleMultiSelect } from '../../Util/MultiSelect'
 import ImgIcon from '../Image/ImgIcon'
 import type { SolidToggleButtonGroupProps } from '../SolidToggleButtonGroup'

@@ -3,6 +3,7 @@ import {
   allElementWithPhyKeys,
   artSlotsData,
 } from '@genshin-optimizer/gi/consts'
+import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import {
   AtkIcon,
   FlowerIcon,
@@ -19,12 +20,12 @@ import {
 } from '@mui/material'
 import { useContext, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
+
 import SlotIcon from '../../../../../Components/Artifact/SlotIcon'
 import BootstrapTooltip from '../../../../../Components/BootstrapTooltip'
 import SqBadge from '../../../../../Components/SqBadge'
 import { StatColoredWithUnit } from '../../../../../Components/StatDisplay'
 import { CharacterContext } from '../../../../../Context/CharacterContext'
-import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import StatIcon from '../../../../../KeyMap/StatIcon'
 import { handleMultiSelect } from '../../../../../Util/MultiSelect'
 import { bulkCatTotal } from '../../../../../Util/totalUtils'

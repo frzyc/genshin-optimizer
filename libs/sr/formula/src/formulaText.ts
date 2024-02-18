@@ -1,4 +1,5 @@
 import type { CalcResult } from '@genshin-optimizer/pando/engine'
+
 import type { Tag } from './data/util'
 
 type Output = {

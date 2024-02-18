@@ -10,6 +10,7 @@ import { locCharKeyToCharKey } from '@genshin-optimizer/gi/consts'
 import type { CharacterDataGen } from '@genshin-optimizer/gi/stats'
 import type { NumNode } from '@genshin-optimizer/pando/engine'
 import { prod, subscript, sum } from '@genshin-optimizer/pando/engine'
+
 import type { FormulaArg, Stat, TagMapNodeEntries } from '../util'
 import {
   allStatics,

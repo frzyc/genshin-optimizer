@@ -4,6 +4,7 @@ import {
 } from '@genshin-optimizer/common/util'
 import { allCharacterKeys } from '@genshin-optimizer/gi/consts'
 import type { ICharacter } from '@genshin-optimizer/gi/good'
+
 import { validateLevelAsc } from '../level'
 import { validateTalent } from '../talent'
 

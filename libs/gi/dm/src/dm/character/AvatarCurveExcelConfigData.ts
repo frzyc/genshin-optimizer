@@ -1,4 +1,5 @@
 import { extrapolateFloat } from '@genshin-optimizer/common/pipeline'
+
 import { readDMJSON } from '../../util'
 
 //exp curve

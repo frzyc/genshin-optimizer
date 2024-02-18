@@ -10,14 +10,15 @@ import type {
   ISrObjectDescription,
 } from '@genshin-optimizer/sr/srod'
 import { validateLevelAsc } from '@genshin-optimizer/sr/util'
+
 import type {
   ICachedLightCone,
   ICachedSroCharacter,
   ISroDatabase,
 } from '../../Interfaces'
 import type { SroDatabase } from '../Database'
-import { SroDataManager } from '../SroDataManager'
 import type { ImportResult } from '../exim'
+import { SroDataManager } from '../SroDataManager'
 import { initialCharacter } from './CharacterData'
 
 export class LightConeDataManager extends SroDataManager<

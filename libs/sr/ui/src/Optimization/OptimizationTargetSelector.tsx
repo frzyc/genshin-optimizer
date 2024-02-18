@@ -3,6 +3,7 @@ import type { Read } from '@genshin-optimizer/sr/formula'
 import { convert, selfTag } from '@genshin-optimizer/sr/formula'
 import { MenuItem } from '@mui/material'
 import { useTranslation } from 'react-i18next'
+
 import { useCalcContext } from '../Context'
 
 export function OptimizationTargetSelector({

@@ -1,6 +1,7 @@
 import { objKeyValMap } from '@genshin-optimizer/common/util'
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
+
 import ColorText from '../../../Components/ColoredText'
 import { input } from '../../../Formula'
 import type { Data, DisplaySub } from '../../../Formula/type'
@@ -17,8 +18,6 @@ import KeyMap from '../../../KeyMap'
 import type { CharacterSheetKey } from '../../../Types/consts'
 import { absorbableEle } from '../../../Types/consts'
 import { cond, st, stg, trans } from '../../SheetUtil'
-import type { TalentSheet } from '../ICharacterSheet'
-import Traveler from '../Traveler'
 import { charTemplates } from '../charTemplates'
 import {
   customDmgNode,
@@ -26,6 +25,8 @@ import {
   dataObjForCharacterSheet,
   dmgNode,
 } from '../dataUtil'
+import type { TalentSheet } from '../ICharacterSheet'
+import Traveler from '../Traveler'
 
 export default function anemo(
   key: CharacterSheetKey,

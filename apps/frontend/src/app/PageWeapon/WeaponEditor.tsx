@@ -1,7 +1,7 @@
 import { useBoolState } from '@genshin-optimizer/common/react-util'
 import { weaponAsset } from '@genshin-optimizer/gi/assets'
 import type { ICachedWeapon } from '@genshin-optimizer/gi/db'
-import { useDBMeta, useDatabase, useWeapon } from '@genshin-optimizer/gi/db-ui'
+import { useDatabase, useDBMeta, useWeapon } from '@genshin-optimizer/gi/db-ui'
 import { milestoneLevelsLow } from '@genshin-optimizer/gi/util'
 import { Lock, LockOpen } from '@mui/icons-material'
 import {
@@ -16,6 +16,7 @@ import {
   Typography,
 } from '@mui/material'
 import React, { useCallback, useContext, useEffect, useMemo } from 'react'
+
 import CardDark from '../Components/Card/CardDark'
 import CardLight from '../Components/Card/CardLight'
 import { LocationAutocomplete } from '../Components/Character/LocationAutocomplete'
