@@ -2,6 +2,7 @@ import { objKeyMap, objMap } from '@genshin-optimizer/common/util'
 import type {
   ArtifactSetKey,
   ArtifactSlotKey,
+  HitModeKey,
   WeaponKey,
   WeaponTypeKey,
 } from '@genshin-optimizer/gi/consts'
@@ -15,6 +16,9 @@ import {
   type InfusionAuraElementKey,
   type MultiOptHitModeKey,
   charKeyToLocCharKey,
+  allHitModeKeys,
+  allAmpReactionKeys,
+  allAdditiveReactions,
 } from '@genshin-optimizer/gi/consts'
 import type { ICachedArtifact, ICachedWeapon } from '../../Interfaces'
 import type { InputPremodKey } from '../../legacy/keys'
@@ -35,6 +39,10 @@ type CondKey = CharacterKey | ArtifactSetKey | WeaponKey
 export type IConditionalValues = Partial<
   Record<CondKey, { [key: string]: string }>
 >
+const validReactionKeys = [
+  ...allAmpReactionKeys,
+  ...allAdditiveReactions,
+] as const
 export interface TeamCharacter {
   key: CharacterKey
 
@@ -43,6 +51,9 @@ export interface TeamCharacter {
 
   bonusStats: Partial<Record<InputPremodKey, number>>
   infusionAura?: InfusionAuraElementKey | ''
+
+  hitMode: HitModeKey
+  reaction?: AmpReactionKey | AdditiveReactionKey
 
   buildType: buildTypeKey
   buildId: string
@@ -99,6 +110,9 @@ export class TeamCharacterDataManager extends DataManager<
       bonusStats,
       infusionAura,
 
+      hitMode,
+      reaction,
+
       buildType,
       buildId,
       buildIds,
@@ -137,6 +151,15 @@ export class TeamCharacterDataManager extends DataManager<
       )
     )
       infusionAura = undefined
+
+    if (!allHitModeKeys.includes(hitMode)) hitMode = 'avgHit'
+    if (
+      reaction &&
+      !validReactionKeys.includes(
+        reaction as (typeof validReactionKeys)[number]
+      )
+    )
+      reaction = undefined
 
     if (!buildTypeKeys.includes(buildType)) buildType = 'equipped'
 
@@ -195,6 +218,8 @@ export class TeamCharacterDataManager extends DataManager<
       conditional,
       bonusStats,
       infusionAura,
+      hitMode,
+      reaction,
       buildType,
       buildId,
       buildIds,

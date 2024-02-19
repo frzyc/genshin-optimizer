@@ -159,7 +159,7 @@ export function getTeamData(
   if (!teamId) return undefined
   const team = database.teams.get(teamId)
   if (!team) return undefined
-  const { teamCharIds, enemyOverride, hitMode, reaction } = team
+  const { teamCharIds, enemyOverride } = team
   const teamBundleArr = teamCharIds.map((teamCharId) => {
     const teamChar = database.teamChars.get(teamCharId)
     const {
@@ -170,6 +170,8 @@ export function getTeamData(
       customMultiTargets,
       conditional,
       bonusStats,
+      hitMode,
+      reaction,
     } = teamChar
     const character = database.chars.get(characterKey)
     const { key, level, constellation, ascension, talent } = character

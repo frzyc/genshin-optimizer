@@ -1,20 +1,9 @@
-import {
-  allAdditiveReactions,
-  allAmpReactionKeys,
-  allHitModeKeys,
-  type AdditiveReactionKey,
-  type AmpReactionKey,
-  type HitModeKey,
-} from '@genshin-optimizer/gi/consts'
 import type { EleEnemyResKey } from '@genshin-optimizer/gi/keymap'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
 import { DataManager } from '../DataManager'
 export interface Team {
   name: string
   description: string
-
-  hitMode: HitModeKey
-  reaction?: AmpReactionKey | AdditiveReactionKey
 
   enemyOverride: Partial<
     Record<
@@ -87,24 +76,13 @@ export class TeamDataManager extends DataManager<
   }
 }
 
-const validReactionKeys = [
-  ...allAmpReactionKeys,
-  ...allAdditiveReactions,
-] as const
 function validateTeam(
   obj: unknown = {},
   database: ArtCharDatabase
 ): Team | undefined {
-  let { name, description, hitMode, reaction, enemyOverride, teamCharIds } =
-    obj as Team
+  let { name, description, enemyOverride, teamCharIds } = obj as Team
   if (typeof name !== 'string') name = 'Team Name'
   if (typeof description !== 'string') description = 'Team Description'
-  if (!allHitModeKeys.includes(hitMode)) hitMode = 'avgHit'
-  if (
-    reaction &&
-    !validReactionKeys.includes(reaction as (typeof validReactionKeys)[number])
-  )
-    reaction = undefined
 
   if (
     typeof enemyOverride !== 'object' ||
@@ -122,8 +100,6 @@ function validateTeam(
   return {
     name,
     description,
-    hitMode,
-    reaction,
     enemyOverride,
     teamCharIds,
   }

@@ -102,8 +102,8 @@ type ReactionToggleProps = Omit<ToggleButtonGroupProps, 'color'>
 export function ReactionToggle(props: ReactionToggleProps) {
   const { t } = useTranslation('page_character')
   const {
-    teamId,
-    team: { reaction },
+    teamCharId,
+    teamChar: { reaction },
   } = useContext(TeamCharacterContext)
   const database = useDatabase()
   const { data } = useContext(DataContext)
@@ -122,8 +122,10 @@ export function ReactionToggle(props: ReactionToggleProps) {
       exclusive
       baseColor="secondary"
       value={reaction}
-      onChange={(_, reaction) => database.teams.set(teamId, { reaction })}
-      disabled={!teamId}
+      onChange={(_, reaction) =>
+        database.teamChars.set(teamCharId, { reaction })
+      }
+      disabled={!teamCharId}
       {...props}
     >
       <ToggleButton value="" disabled={!reaction}>{t`noReaction`}</ToggleButton>
@@ -143,8 +145,8 @@ type HitModeToggleProps = Omit<ToggleButtonGroupProps, 'color'>
 export function HitModeToggle(props: HitModeToggleProps) {
   const { t } = useTranslation('page_character')
   const {
-    teamId,
-    team: { hitMode = 'avgHit' },
+    teamCharId,
+    teamChar: { hitMode = 'avgHit' },
   } = useContext(TeamCharacterContext)
   const database = useDatabase()
   return (
@@ -152,8 +154,8 @@ export function HitModeToggle(props: HitModeToggleProps) {
       exclusive
       baseColor="secondary"
       value={hitMode}
-      onChange={(_, hitMode) => database.teams.set(teamId, { hitMode })}
-      disabled={!teamId}
+      onChange={(_, hitMode) => database.teamChars.set(teamCharId, { hitMode })}
+      disabled={!teamCharId}
       {...props}
     >
       {allHitModeKeys.map((hm) => (

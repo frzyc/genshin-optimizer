@@ -139,8 +139,8 @@ export interface CharInfo extends ICharacter {
   conditional: TeamCharacter['conditional']
   bonusStats: TeamCharacter['bonusStats']
   enemyOverride: Team['enemyOverride']
-  hitMode: Team['hitMode']
-  reaction: Team['reaction']
+  hitMode: TeamCharacter['hitMode']
+  reaction: TeamCharacter['reaction']
 }
 /**
  * when sheetData is supplied, then it is assumed that the data is in "Custom Multi-target" mode
