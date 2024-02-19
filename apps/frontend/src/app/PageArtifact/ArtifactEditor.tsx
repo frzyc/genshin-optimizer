@@ -134,7 +134,6 @@ export type ArtifactEditorProps = {
   allowUpload?: boolean
   allowEmpty?: boolean
   disableSet?: boolean
-  disableSlot?: boolean
   fixedSlotKey?: ArtifactSlotKey | ''
 }
 export default function ArtifactEditor({
@@ -143,7 +142,6 @@ export default function ArtifactEditor({
   allowUpload = false,
   allowEmpty = false,
   disableSet = false,
-  disableSlot = false,
   fixedSlotKey = '',
 }: ArtifactEditorProps) {
   const queueRef = useRef(
@@ -178,7 +176,7 @@ export default function ArtifactEditor({
   const queueTotal = processedNum + outstandingNum + scanningNum
   const disableEditSlot =
     (!['new', ''].includes(artifactIdToEdit) && !!artifact?.location) ||
-    disableSlot
+    fixedSlotKey !== ''
 
   const uploadFiles = useCallback(
     (files?: FileList | null) => {
@@ -258,7 +256,7 @@ export default function ArtifactEditor({
         // 'flower'.
         newValue.slotKey =
           artifact?.slotKey ??
-          (disableSlot && fixedSlotKey !== '' ? fixedSlotKey : 'flower')
+          (fixedSlotKey !== '' ? fixedSlotKey : 'flower')
       }
       if (newValue.rarity) newValue.level = artifact?.level ?? 0
       if (newValue.level)
@@ -282,7 +280,7 @@ export default function ArtifactEditor({
       }
       artifactDispatch({ type: 'update', artifact: newValue })
     },
-    [artifact, sheet, artifactDispatch, disableSlot, fixedSlotKey]
+    [artifact, sheet, artifactDispatch, fixedSlotKey]
   )
   const setSubstat = useCallback(
     (index: number, substat: ISubstat) => {
@@ -298,9 +296,9 @@ export default function ArtifactEditor({
   const slotKey = useMemo(() => {
     return (
       artifact?.slotKey ??
-      (disableSlot && fixedSlotKey !== '' ? fixedSlotKey : 'flower')
+      (fixedSlotKey !== '' ? fixedSlotKey : 'flower')
     )
-  }, [disableSlot, fixedSlotKey, artifact])
+  }, [fixedSlotKey, artifact])
   const { currentEfficiency = 0, maxEfficiency = 0 } = cArtifact
     ? Artifact.getArtifactEfficiency(cArtifact, allSubstatFilter)
     : {}
