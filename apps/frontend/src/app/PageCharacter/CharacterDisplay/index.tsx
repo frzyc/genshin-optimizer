@@ -249,7 +249,7 @@ function TabNav({ tab }: { tab: string }) {
   const { t } = useTranslation('page_character')
   const tabSx = shouldShowDevComponents
     ? { minWidth: '14.28%' }
-    : { minWidth: '16.%' }
+    : { minWidth: '16.66%' }
   return (
     <Tabs
       value={tab}
