@@ -1,4 +1,5 @@
 import { useForceUpdate } from '@genshin-optimizer/common/react-util'
+import { InfoTooltip } from '@genshin-optimizer/common/ui'
 import { objPathValue, range } from '@genshin-optimizer/common/util'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import { charKeyToLocCharKey } from '@genshin-optimizer/gi/consts'
@@ -598,6 +599,10 @@ export default function TabBuild() {
           >
             <AccordionSummary expandIcon={<ExpandMore />}>
               {t('tcGraph.summary')}
+              <InfoTooltip
+                placement="top"
+                title={t('page_character_optimize:tcGraph.desc')}
+              />
             </AccordionSummary>
             <AccordionDetails>
               <ChartCard

@@ -1,5 +1,5 @@
 import { ReadOnlyTextArea } from '@genshin-optimizer/common/react-util'
-import { CardThemed } from '@genshin-optimizer/common/ui'
+import { BootstrapTooltip, CardThemed } from '@genshin-optimizer/common/ui'
 import {
   objKeyMap,
   objPathValue,
@@ -37,9 +37,6 @@ import {
   XAxis,
   YAxis,
 } from 'recharts'
-import BootstrapTooltip from '../../../../../../Components/BootstrapTooltip'
-import CardDark from '../../../../../../Components/Card/CardDark'
-import InfoTooltip from '../../../../../../Components/InfoTooltip'
 import { CharacterContext } from '../../../../../../Context/CharacterContext'
 import { DataContext } from '../../../../../../Context/DataContext'
 import { GraphContext } from '../../../../../../Context/GraphContext'
@@ -225,7 +222,7 @@ export default function ChartCard({
               </span>
             </BootstrapTooltip>
           </Grid>
-          <Grid item>
+          <Grid item flexGrow={1}>
             <BootstrapTooltip
               title={!plotBase ? '' : t('ui:reset')}
               placement="top"
@@ -240,12 +237,6 @@ export default function ChartCard({
                 </Button>
               </span>
             </BootstrapTooltip>
-          </Grid>
-          <Grid item flexGrow={1}>
-            <InfoTooltip
-              placement="top"
-              title={t('page_character_optimize:tcGraph.desc')}
-            />
           </Grid>
           {!!downloadData && (
             <Grid item>
@@ -273,7 +264,7 @@ export default function ChartCard({
       {chartData && displayData && !!displayData.length && (
         <CardContent>
           <Collapse in={!!downloadData && showDownload}>
-            <CardDark sx={{ mb: 2 }}>
+            <CardThemed bgt="dark" sx={{ mb: 2 }}>
               <CardContent>
                 <Typography>Min Data</Typography>
                 <ReadOnlyTextArea
@@ -284,7 +275,7 @@ export default function ChartCard({
                   value={JSON.stringify(downloadData?.allData)}
                 />
               </CardContent>
-            </CardDark>
+            </CardThemed>
           </Collapse>
           <Chart
             displayData={displayData}
