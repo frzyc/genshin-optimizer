@@ -113,6 +113,8 @@ describe('A general optimizeTC usecase', () => {
         DragonsBane: { BaneOfFlameAndWater: 'on' },
       },
       infusionAura: '',
+      hitMode: 'avgHit',
+      reaction: 'vaporize',
     })
     const teamCharIds = [
       HuTaoTeamCharId,
@@ -137,8 +139,6 @@ describe('A general optimizeTC usecase', () => {
     ]
     const teamId = database.teams.new({
       teamCharIds,
-      hitMode: 'avgHit',
-      reaction: 'vaporize',
     })
     expect(teamId).toBeTruthy()
     const overrideArt = getArtifactData(buildTc)
