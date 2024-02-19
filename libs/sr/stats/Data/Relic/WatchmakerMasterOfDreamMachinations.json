@@ -1,0 +1,21 @@
+{
+  "setEffects": [
+    {
+      "numRequired": 2,
+      "passiveStats": {
+        "brEff_": 0.16
+      },
+      "otherStats": [
+        0.16
+      ]
+    },
+    {
+      "numRequired": 4,
+      "passiveStats": {},
+      "otherStats": [
+        0.3,
+        2
+      ]
+    }
+  ]
+}

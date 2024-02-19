@@ -5,91 +5,53 @@
   "projectType": "application",
   "targets": {
     "build": {},
-    "build-webpack": {
-      "executor": "@nx/webpack:webpack",
+    "build-vite": {
       "outputs": ["{options.outputPath}"],
-      "defaultConfiguration": "production",
       "options": {
-        "compiler": "babel",
         "outputPath": "dist/apps/frontend",
-        "index": "apps/frontend/src/index.html",
-        "baseHref": "/",
+        "index": "apps/frontend/index.html",
         "main": "apps/frontend/src/main.tsx",
-        "tsConfig": "apps/frontend/tsconfig.app.json",
-        "assets": [
-          "apps/frontend/src/favicon.ico",
-          "apps/frontend/src/logo192.png",
-          "apps/frontend/src/logo512.png",
-          "apps/frontend/src/manifest.json",
-          "apps/frontend/src/robots.txt",
-          "apps/frontend/src/notification.mp3",
-          "apps/frontend/src/assets",
-          {
-            "input": "libs/gi/localization/assets",
-            "glob": "**/*",
-            "output": "assets"
-          },
-          {
-            "input": "libs/gi/dm-localization/assets",
-            "glob": "**/*",
-            "output": "assets"
-          },
-          {
-            "input": "libs/gi/silly-wisher-names/assets",
-            "glob": "**/*",
-            "output": "assets"
-          }
-        ],
-        "styles": [],
-        "scripts": [],
-        "isolatedConfig": true,
-        "webpackConfig": "apps/frontend/webpack.config.js"
-      },
-      "configurations": {
-        "development": {
-          "extractLicenses": false,
-          "optimization": false,
-          "sourceMap": true,
-          "vendorChunk": true,
-          "statsJson": true
-        },
-        "production": {
-          "fileReplacements": [
-            {
-              "replace": "apps/frontend/src/environments/environment.ts",
-              "with": "apps/frontend/src/environments/environment.prod.ts"
-            }
-          ],
-          "optimization": true,
-          "outputHashing": "all",
-          "sourceMap": false,
-          "namedChunks": false,
-          "extractLicenses": true,
-          "vendorChunk": false,
-          "baseHref": "/genshin-optimizer/"
-        }
+        "tsConfig": "apps/frontend/tsconfig.app.json"
       }
     },
     "serve": {
-      "executor": "@nx/webpack:dev-server",
+      "executor": "@nx/vite:dev-server",
       "defaultConfiguration": "development",
       "options": {
-        "buildTarget": "frontend:build-webpack",
-        "hmr": true
+        "buildTarget": "frontend:build-vite"
       },
       "configurations": {
         "development": {
-          "buildTarget": "frontend:build-webpack:development"
+          "buildTarget": "frontend:build-vite:development"
         },
         "production": {
-          "buildTarget": "frontend:build-webpack:production",
-          "hmr": false
+          "buildTarget": "frontend:build-vite:production"
         }
       },
       "dependsOn": ["^gen-file"]
     },
+    "preview": {
+      "executor": "@nx/vite:preview-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "frontend:build-vite"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "frontend:build-vite:development"
+        },
+        "production": {
+          "buildTarget": "frontend:build-vite:production"
+        }
+      }
+    },
     "lint": {},
-    "test": {}
+    "test": {
+      "executor": "@nx/vite:test",
+      "options": {
+        "config": "apps/frontend/vitest.config.mts"
+      }
+    }
   },
   "tags": [],
   "implicitDependencies": [

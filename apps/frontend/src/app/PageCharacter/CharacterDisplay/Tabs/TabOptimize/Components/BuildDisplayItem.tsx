@@ -12,10 +12,8 @@ import type {
 import { allArtifactSetExclusionKeys } from '@genshin-optimizer/gi/db'
 import { useArtifact, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { Checkroom, ChevronRight } from '@mui/icons-material'
-import BlockIcon from '@mui/icons-material/Block'
 import CheckBoxIcon from '@mui/icons-material/CheckBox'
 import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank'
-import ShowChartIcon from '@mui/icons-material/ShowChart'
 import {
   Box,
   Button,
@@ -31,7 +29,6 @@ import BootstrapTooltip from '../../../../../Components/BootstrapTooltip'
 import CardDark from '../../../../../Components/Card/CardDark'
 import CardLight from '../../../../../Components/Card/CardLight'
 import StatDisplayComponent from '../../../../../Components/Character/StatDisplayComponent'
-import ColorText from '../../../../../Components/ColoredText'
 import ModalWrapper from '../../../../../Components/ModalWrapper'
 import SqBadge from '../../../../../Components/SqBadge'
 import WeaponCardNano from '../../../../../Components/Weapon/WeaponCardNano'
@@ -246,6 +243,11 @@ function CompareArtifactModal({
   const newLoc = database.arts.get(newId)?.location ?? ''
   const newArtifact = useArtifact(newId)
 
+  const deleteArtifact = useCallback(
+    (id: string) => database.arts.remove(id),
+    [database]
+  )
+
   return (
     <ModalWrapper
       open={!!newId}
@@ -262,14 +264,15 @@ function CompareArtifactModal({
           }}
         >
           {oldId && (
-            <Box minWidth={320}>
+            <Box minWidth={320} display="flex" flexDirection="column" gap={1}>
               <ArtifactCard
                 artifactId={oldId}
+                onDelete={deleteArtifact}
                 mainStatAssumptionLevel={mainStatAssumptionLevel}
                 canEquip
                 editorProps={{ disableSet: true, disableSlot: true }}
-                extraButtons={<ExcludeButton id={oldId} />}
               />
+              <ArtInclusionButton id={oldId} />
             </Box>
           )}
           {oldId && <Box display="flex" flexGrow={1} />}
@@ -284,11 +287,12 @@ function CompareArtifactModal({
           <Box minWidth={320} display="flex" flexDirection="column" gap={1}>
             <ArtifactCard
               artifactId={newId}
+              onDelete={deleteArtifact}
               mainStatAssumptionLevel={mainStatAssumptionLevel}
               canEquip
               editorProps={{ disableSet: true, disableSlot: true }}
-              extraButtons={<ExcludeButton id={newId} />}
             />
+            {newArtifact && <ArtInclusionButton id={newId} />}
             {newLoc &&
               newLoc !== charKeyToLocCharKey(characterKey) &&
               allowLocationsState !== 'all' && (
@@ -308,7 +312,7 @@ function CompareArtifactModal({
     </ModalWrapper>
   )
 }
-function ExcludeButton({ id }: { id: string }) {
+function ArtInclusionButton({ id }: { id: string }) {
   const { t } = useTranslation('page_character_optimize')
   const {
     character: { key: characterKey },
@@ -327,12 +331,7 @@ function ExcludeButton({ id }: { id: string }) {
     <BootstrapTooltip
       title={
         <Box>
-          <Typography>{t`excludeArt.excludeArtifactTip`}</Typography>
-          <Typography>
-            <ColorText color={excluded ? 'error' : 'success'}>
-              {t(excluded ? 'excludeArt.excluded' : 'excludeArt.included')}
-            </ColorText>
-          </Typography>
+          <Typography>{t`excludeArt.includeArtifactTip`}</Typography>
         </Box>
       }
       placement="top"
@@ -340,10 +339,11 @@ function ExcludeButton({ id }: { id: string }) {
     >
       <Button
         onClick={toggle}
-        color={excluded ? 'error' : 'success'}
+        color={excluded ? 'secondary' : 'success'}
         size="small"
+        startIcon={excluded ? <CheckBoxOutlineBlankIcon /> : <CheckBoxIcon />}
       >
-        {excluded ? <BlockIcon /> : <ShowChartIcon />}
+        {t`excludeArt.includeArtifactButton`}
       </Button>
     </BootstrapTooltip>
   )

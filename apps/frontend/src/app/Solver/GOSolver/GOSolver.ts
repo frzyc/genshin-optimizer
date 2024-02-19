@@ -26,7 +26,12 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
   ) {
     const workers = Array(numWorker)
       .fill(NaN)
-      .map((_) => new Worker(new URL('./BackgroundWorker.ts', import.meta.url)))
+      .map(
+        (_) =>
+          new Worker(new URL('./BackgroundWorker.ts', import.meta.url), {
+            type: 'module',
+          })
+      )
     super(workers, ['iterate', 'split', 'count'], (r, w) => {
       switch (r.resultType) {
         case 'interim':

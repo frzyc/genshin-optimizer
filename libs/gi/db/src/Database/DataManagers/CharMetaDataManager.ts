@@ -5,10 +5,10 @@ import type {
   SubstatKey,
 } from '@genshin-optimizer/gi/consts'
 import { allSubstatKeys, allTravelerKeys } from '@genshin-optimizer/gi/consts'
-import { DataManager } from '../DataManager'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
+import { DataManager } from '../DataManager'
 
-interface ICharMeta {
+export interface ICharMeta {
   rvFilter: SubstatKey[]
   favorite: boolean
 }

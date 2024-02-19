@@ -3,6 +3,7 @@ import Argenti from './Argenti'
 import Arlan from './Arlan'
 import Asta from './Asta'
 import Bailu from './Bailu'
+import BlackSwan from './BlackSwan'
 import Blade from './Blade'
 import Bronya from './Bronya'
 import Clara from './Clara'
@@ -24,6 +25,7 @@ import Luka from './Luka'
 import Luocha from './Luocha'
 import Lynx from './Lynx'
 import March7th from './March7th'
+import Misha from './Misha'
 import Natasha from './Natasha'
 import Pela from './Pela'
 import Qingque from './Qingque'
@@ -32,6 +34,7 @@ import Sampo from './Sampo'
 import Seele from './Seele'
 import Serval from './Serval'
 import SilverWolf from './SilverWolf'
+import Sparkle from './Sparkle'
 import Sushang from './Sushang'
 import Tingyun from './Tingyun'
 import TopazAndNumby from './TopazAndNumby'
@@ -45,6 +48,7 @@ const data: TagMapNodeEntries[] = [
   Arlan,
   Asta,
   Bailu,
+  BlackSwan,
   Blade,
   Bronya,
   Clara,
@@ -66,6 +70,7 @@ const data: TagMapNodeEntries[] = [
   Luocha,
   Lynx,
   March7th,
+  Misha,
   Natasha,
   Pela,
   Qingque,
@@ -74,6 +79,7 @@ const data: TagMapNodeEntries[] = [
   Seele,
   Serval,
   SilverWolf,
+  Sparkle,
   Sushang,
   Tingyun,
   TopazAndNumby,

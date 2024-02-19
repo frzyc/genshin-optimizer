@@ -3,18 +3,18 @@
     {
       "numRequired": 2,
       "passiveStats": {
-        "quantum_dmg_": 0.10000000009313226
+        "quantum_dmg_": 0.1
       },
       "otherStats": [
-        0.10000000009313226
+        0.1
       ]
     },
     {
       "numRequired": 4,
       "passiveStats": {},
       "otherStats": [
-        0.10000000009313226,
-        0.10000000009313226
+        0.1,
+        0.1
       ]
     }
   ]

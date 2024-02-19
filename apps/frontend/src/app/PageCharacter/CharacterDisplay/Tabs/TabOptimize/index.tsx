@@ -89,7 +89,7 @@ import { compactArtifacts, dynamicData } from './foreground'
 import useBuildResult from './useBuildResult'
 import useBuildSetting from './useBuildSetting'
 
-const audio = new Audio('notification.mp3')
+const audio = new Audio('assets/notification.mp3')
 export default function TabBuild() {
   const { t } = useTranslation('page_character_optimize')
   const {

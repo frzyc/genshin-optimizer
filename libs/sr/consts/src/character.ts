@@ -6,6 +6,7 @@ export const nonTrailblazerCharacterKeys = [
   'Arlan',
   'Asta',
   'Bailu',
+  'BlackSwan',
   'Blade',
   'Bronya',
   'Clara',
@@ -27,6 +28,7 @@ export const nonTrailblazerCharacterKeys = [
   'Luocha',
   'Lynx',
   'March7th',
+  'Misha',
   'Natasha',
   'Pela',
   'Qingque',
@@ -35,6 +37,7 @@ export const nonTrailblazerCharacterKeys = [
   'Seele',
   'Serval',
   'SilverWolf',
+  'Sparkle',
   'Sushang',
   'Tingyun',
   'TopazAndNumby',
@@ -109,7 +112,7 @@ export type BonusAbilityKey = (typeof allBonusAbilityKeys)[number]
 export const allStatBoostKeys = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] as const
 export type StatBoostKey = (typeof allStatBoostKeys)[number]
 
-export const allEidolonKeys = [1, 2, 3, 4, 5, 6] as const
+export const allEidolonKeys = [0, 1, 2, 3, 4, 5, 6] as const
 export type EidolonKey = (typeof allEidolonKeys)[number]
 
 export const allAbilityKeys = [

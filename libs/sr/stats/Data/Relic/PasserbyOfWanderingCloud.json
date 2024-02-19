@@ -3,10 +3,10 @@
     {
       "numRequired": 2,
       "passiveStats": {
-        "heal_": 0.10000000009313226
+        "heal_": 0.1
       },
       "otherStats": [
-        0.10000000009313226
+        0.1
       ]
     },
     {

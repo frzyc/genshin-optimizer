@@ -136,6 +136,30 @@ export const conditionals = {
       max: 2,
     },
   },
+  BlackSwan: {
+    boolConditional: {
+      src: 'BlackSwan',
+      name: 'boolConditional',
+      tag: { et: 'self', src: 'BlackSwan', qt: 'cond', q: 'boolConditional' },
+      type: 'bool',
+    },
+    listConditional: {
+      src: 'BlackSwan',
+      name: 'listConditional',
+      tag: { et: 'self', src: 'BlackSwan', qt: 'cond', q: 'listConditional' },
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      src: 'BlackSwan',
+      name: 'numConditional',
+      tag: { et: 'self', src: 'BlackSwan', qt: 'cond', q: 'numConditional' },
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
   Blade: {
     boolConditional: {
       src: 'Blade',
@@ -631,6 +655,30 @@ export const conditionals = {
       max: 2,
     },
   },
+  Misha: {
+    boolConditional: {
+      src: 'Misha',
+      name: 'boolConditional',
+      tag: { et: 'self', src: 'Misha', qt: 'cond', q: 'boolConditional' },
+      type: 'bool',
+    },
+    listConditional: {
+      src: 'Misha',
+      name: 'listConditional',
+      tag: { et: 'self', src: 'Misha', qt: 'cond', q: 'listConditional' },
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      src: 'Misha',
+      name: 'numConditional',
+      tag: { et: 'self', src: 'Misha', qt: 'cond', q: 'numConditional' },
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
   Natasha: {
     boolConditional: {
       src: 'Natasha',
@@ -817,6 +865,30 @@ export const conditionals = {
       src: 'SilverWolf',
       name: 'numConditional',
       tag: { et: 'self', src: 'SilverWolf', qt: 'cond', q: 'numConditional' },
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+  Sparkle: {
+    boolConditional: {
+      src: 'Sparkle',
+      name: 'boolConditional',
+      tag: { et: 'self', src: 'Sparkle', qt: 'cond', q: 'boolConditional' },
+      type: 'bool',
+    },
+    listConditional: {
+      src: 'Sparkle',
+      name: 'listConditional',
+      tag: { et: 'self', src: 'Sparkle', qt: 'cond', q: 'listConditional' },
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      src: 'Sparkle',
+      name: 'numConditional',
+      tag: { et: 'self', src: 'Sparkle', qt: 'cond', q: 'numConditional' },
       type: 'num',
       int_only: true,
       min: 0,
@@ -1646,6 +1718,123 @@ export const conditionals = {
       max: 2,
     },
   },
+  DestinysThreadsForewoven: {
+    boolConditional: {
+      src: 'DestinysThreadsForewoven',
+      name: 'boolConditional',
+      tag: {
+        et: 'self',
+        src: 'DestinysThreadsForewoven',
+        qt: 'cond',
+        q: 'boolConditional',
+      },
+      type: 'bool',
+    },
+    listConditional: {
+      src: 'DestinysThreadsForewoven',
+      name: 'listConditional',
+      tag: {
+        et: 'self',
+        src: 'DestinysThreadsForewoven',
+        qt: 'cond',
+        q: 'listConditional',
+      },
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      src: 'DestinysThreadsForewoven',
+      name: 'numConditional',
+      tag: {
+        et: 'self',
+        src: 'DestinysThreadsForewoven',
+        qt: 'cond',
+        q: 'numConditional',
+      },
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+  DreamvilleAdventure: {
+    boolConditional: {
+      src: 'DreamvilleAdventure',
+      name: 'boolConditional',
+      tag: {
+        et: 'self',
+        src: 'DreamvilleAdventure',
+        qt: 'cond',
+        q: 'boolConditional',
+      },
+      type: 'bool',
+    },
+    listConditional: {
+      src: 'DreamvilleAdventure',
+      name: 'listConditional',
+      tag: {
+        et: 'self',
+        src: 'DreamvilleAdventure',
+        qt: 'cond',
+        q: 'listConditional',
+      },
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      src: 'DreamvilleAdventure',
+      name: 'numConditional',
+      tag: {
+        et: 'self',
+        src: 'DreamvilleAdventure',
+        qt: 'cond',
+        q: 'numConditional',
+      },
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+  EarthlyEscapade: {
+    boolConditional: {
+      src: 'EarthlyEscapade',
+      name: 'boolConditional',
+      tag: {
+        et: 'self',
+        src: 'EarthlyEscapade',
+        qt: 'cond',
+        q: 'boolConditional',
+      },
+      type: 'bool',
+    },
+    listConditional: {
+      src: 'EarthlyEscapade',
+      name: 'listConditional',
+      tag: {
+        et: 'self',
+        src: 'EarthlyEscapade',
+        qt: 'cond',
+        q: 'listConditional',
+      },
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      src: 'EarthlyEscapade',
+      name: 'numConditional',
+      tag: {
+        et: 'self',
+        src: 'EarthlyEscapade',
+        qt: 'cond',
+        q: 'numConditional',
+      },
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
   EchoesOfTheCoffin: {
     boolConditional: {
       src: 'EchoesOfTheCoffin',
@@ -1748,6 +1937,30 @@ export const conditionals = {
       max: 2,
     },
   },
+  FinalVictor: {
+    boolConditional: {
+      src: 'FinalVictor',
+      name: 'boolConditional',
+      tag: { et: 'self', src: 'FinalVictor', qt: 'cond', q: 'boolConditional' },
+      type: 'bool',
+    },
+    listConditional: {
+      src: 'FinalVictor',
+      name: 'listConditional',
+      tag: { et: 'self', src: 'FinalVictor', qt: 'cond', q: 'listConditional' },
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      src: 'FinalVictor',
+      name: 'numConditional',
+      tag: { et: 'self', src: 'FinalVictor', qt: 'cond', q: 'numConditional' },
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
   FineFruit: {
     boolConditional: {
       src: 'FineFruit',
@@ -1766,6 +1979,30 @@ export const conditionals = {
       src: 'FineFruit',
       name: 'numConditional',
       tag: { et: 'self', src: 'FineFruit', qt: 'cond', q: 'numConditional' },
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+  FlamesAfar: {
+    boolConditional: {
+      src: 'FlamesAfar',
+      name: 'boolConditional',
+      tag: { et: 'self', src: 'FlamesAfar', qt: 'cond', q: 'boolConditional' },
+      type: 'bool',
+    },
+    listConditional: {
+      src: 'FlamesAfar',
+      name: 'listConditional',
+      tag: { et: 'self', src: 'FlamesAfar', qt: 'cond', q: 'listConditional' },
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      src: 'FlamesAfar',
+      name: 'numConditional',
+      tag: { et: 'self', src: 'FlamesAfar', qt: 'cond', q: 'numConditional' },
       type: 'num',
       int_only: true,
       min: 0,
@@ -2043,6 +2280,69 @@ export const conditionals = {
         qt: 'cond',
         q: 'numConditional',
       },
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+  IndeliblePromise: {
+    boolConditional: {
+      src: 'IndeliblePromise',
+      name: 'boolConditional',
+      tag: {
+        et: 'self',
+        src: 'IndeliblePromise',
+        qt: 'cond',
+        q: 'boolConditional',
+      },
+      type: 'bool',
+    },
+    listConditional: {
+      src: 'IndeliblePromise',
+      name: 'listConditional',
+      tag: {
+        et: 'self',
+        src: 'IndeliblePromise',
+        qt: 'cond',
+        q: 'listConditional',
+      },
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      src: 'IndeliblePromise',
+      name: 'numConditional',
+      tag: {
+        et: 'self',
+        src: 'IndeliblePromise',
+        qt: 'cond',
+        q: 'numConditional',
+      },
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+  ItsShowtime: {
+    boolConditional: {
+      src: 'ItsShowtime',
+      name: 'boolConditional',
+      tag: { et: 'self', src: 'ItsShowtime', qt: 'cond', q: 'boolConditional' },
+      type: 'bool',
+    },
+    listConditional: {
+      src: 'ItsShowtime',
+      name: 'listConditional',
+      tag: { et: 'self', src: 'ItsShowtime', qt: 'cond', q: 'listConditional' },
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      src: 'ItsShowtime',
+      name: 'numConditional',
+      tag: { et: 'self', src: 'ItsShowtime', qt: 'cond', q: 'numConditional' },
       type: 'num',
       int_only: true,
       min: 0,
@@ -2564,45 +2864,6 @@ export const conditionals = {
       max: 2,
     },
   },
-  PastSelfInMirror: {
-    boolConditional: {
-      src: 'PastSelfInMirror',
-      name: 'boolConditional',
-      tag: {
-        et: 'self',
-        src: 'PastSelfInMirror',
-        qt: 'cond',
-        q: 'boolConditional',
-      },
-      type: 'bool',
-    },
-    listConditional: {
-      src: 'PastSelfInMirror',
-      name: 'listConditional',
-      tag: {
-        et: 'self',
-        src: 'PastSelfInMirror',
-        qt: 'cond',
-        q: 'listConditional',
-      },
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      src: 'PastSelfInMirror',
-      name: 'numConditional',
-      tag: {
-        et: 'self',
-        src: 'PastSelfInMirror',
-        qt: 'cond',
-        q: 'numConditional',
-      },
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
   PastAndFuture: {
     boolConditional: {
       src: 'PastAndFuture',
@@ -2633,6 +2894,45 @@ export const conditionals = {
       tag: {
         et: 'self',
         src: 'PastAndFuture',
+        qt: 'cond',
+        q: 'numConditional',
+      },
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+  PastSelfInMirror: {
+    boolConditional: {
+      src: 'PastSelfInMirror',
+      name: 'boolConditional',
+      tag: {
+        et: 'self',
+        src: 'PastSelfInMirror',
+        qt: 'cond',
+        q: 'boolConditional',
+      },
+      type: 'bool',
+    },
+    listConditional: {
+      src: 'PastSelfInMirror',
+      name: 'listConditional',
+      tag: {
+        et: 'self',
+        src: 'PastSelfInMirror',
+        qt: 'cond',
+        q: 'listConditional',
+      },
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      src: 'PastSelfInMirror',
+      name: 'numConditional',
+      tag: {
+        et: 'self',
+        src: 'PastSelfInMirror',
         qt: 'cond',
         q: 'numConditional',
       },
@@ -2840,6 +3140,45 @@ export const conditionals = {
       src: 'QuidProQuo',
       name: 'numConditional',
       tag: { et: 'self', src: 'QuidProQuo', qt: 'cond', q: 'numConditional' },
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+  ReforgedRemembrance: {
+    boolConditional: {
+      src: 'ReforgedRemembrance',
+      name: 'boolConditional',
+      tag: {
+        et: 'self',
+        src: 'ReforgedRemembrance',
+        qt: 'cond',
+        q: 'boolConditional',
+      },
+      type: 'bool',
+    },
+    listConditional: {
+      src: 'ReforgedRemembrance',
+      name: 'listConditional',
+      tag: {
+        et: 'self',
+        src: 'ReforgedRemembrance',
+        qt: 'cond',
+        q: 'listConditional',
+      },
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      src: 'ReforgedRemembrance',
+      name: 'numConditional',
+      tag: {
+        et: 'self',
+        src: 'ReforgedRemembrance',
+        qt: 'cond',
+        q: 'numConditional',
+      },
       type: 'num',
       int_only: true,
       min: 0,
@@ -3362,6 +3701,45 @@ export const conditionals = {
       max: 2,
     },
   },
+  TheDayTheCosmosFell: {
+    boolConditional: {
+      src: 'TheDayTheCosmosFell',
+      name: 'boolConditional',
+      tag: {
+        et: 'self',
+        src: 'TheDayTheCosmosFell',
+        qt: 'cond',
+        q: 'boolConditional',
+      },
+      type: 'bool',
+    },
+    listConditional: {
+      src: 'TheDayTheCosmosFell',
+      name: 'listConditional',
+      tag: {
+        et: 'self',
+        src: 'TheDayTheCosmosFell',
+        qt: 'cond',
+        q: 'listConditional',
+      },
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      src: 'TheDayTheCosmosFell',
+      name: 'numConditional',
+      tag: {
+        et: 'self',
+        src: 'TheDayTheCosmosFell',
+        qt: 'cond',
+        q: 'numConditional',
+      },
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
   TheMolesWelcomeYou: {
     boolConditional: {
       src: 'TheMolesWelcomeYou',
@@ -3777,6 +4155,30 @@ export const conditionals = {
       max: 2,
     },
   },
+  WhatIsReal: {
+    boolConditional: {
+      src: 'WhatIsReal',
+      name: 'boolConditional',
+      tag: { et: 'self', src: 'WhatIsReal', qt: 'cond', q: 'boolConditional' },
+      type: 'bool',
+    },
+    listConditional: {
+      src: 'WhatIsReal',
+      name: 'listConditional',
+      tag: { et: 'self', src: 'WhatIsReal', qt: 'cond', q: 'listConditional' },
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      src: 'WhatIsReal',
+      name: 'numConditional',
+      tag: { et: 'self', src: 'WhatIsReal', qt: 'cond', q: 'numConditional' },
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
   WoofWalkTime: {
     boolConditional: {
       src: 'WoofWalkTime',
@@ -3900,6 +4302,19 @@ export const formulas = {
         qt: 'formula',
         q: 'dmg',
         src: 'Bailu',
+        name: 'basicDmg_0',
+      },
+    },
+  },
+  BlackSwan: {
+    basicDmg_0: {
+      src: 'BlackSwan',
+      name: 'basicDmg_0',
+      tag: {
+        et: 'self',
+        qt: 'formula',
+        q: 'dmg',
+        src: 'BlackSwan',
         name: 'basicDmg_0',
       },
     },
@@ -4287,6 +4702,19 @@ export const formulas = {
       },
     },
   },
+  Misha: {
+    basicDmg_0: {
+      src: 'Misha',
+      name: 'basicDmg_0',
+      tag: {
+        et: 'self',
+        qt: 'formula',
+        q: 'dmg',
+        src: 'Misha',
+        name: 'basicDmg_0',
+      },
+    },
+  },
   Natasha: {
     basicDmg_0: {
       src: 'Natasha',
@@ -4387,6 +4815,19 @@ export const formulas = {
         qt: 'formula',
         q: 'dmg',
         src: 'SilverWolf',
+        name: 'basicDmg_0',
+      },
+    },
+  },
+  Sparkle: {
+    basicDmg_0: {
+      src: 'Sparkle',
+      name: 'basicDmg_0',
+      tag: {
+        et: 'self',
+        qt: 'formula',
+        q: 'dmg',
+        src: 'Sparkle',
         name: 'basicDmg_0',
       },
     },

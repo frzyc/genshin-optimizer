@@ -1,8 +1,4 @@
 import {
-  extrapolateFloat as exf,
-  roundMantissa,
-} from '@genshin-optimizer/common/pipeline'
-import {
   objKeyMap,
   transposeArray,
   verifyObjKeys,
@@ -10,17 +6,16 @@ import {
 import type { CharacterDataKey } from '@genshin-optimizer/sr/consts'
 import {
   allCharacterDataKeys,
-  allEidolonKeys,
   type AbilityKey,
-  type EidolonKey,
   type ElementalTypeKey,
   type PathKey,
   type RarityKey,
   type StatKey,
 } from '@genshin-optimizer/sr/consts'
-import type { Anchor } from '@genshin-optimizer/sr/dm'
+import type { Anchor, Rank } from '@genshin-optimizer/sr/dm'
 import {
   DmAttackTypeMap,
+  allRanks,
   avatarBaseTypeMap,
   avatarConfig,
   avatarDamageTypeMap,
@@ -58,8 +53,8 @@ type SkillTreeNode = {
   //TODO: MaterialList
 }
 export type SkillTreeNodeBonusStat = Partial<Record<StatKey, number>>
-type RankMap = Record<EidolonKey, Rank>
-type Rank = {
+type RankInfoMap = Record<Rank, RankInfo>
+type RankInfo = {
   skillTypeAddLevel: SkillTypeAddLevel
   params: number[]
 }
@@ -72,18 +67,7 @@ export type CharacterDatum = {
   path: PathKey
   ascension: Promotion[]
   skillTreeList: SkillTree[]
-  rankMap: RankMap
-}
-
-function extrapolateFloat(val: number): number {
-  const int = Math.floor(val)
-  const frac = val - int
-  if (frac != roundMantissa(frac, 32)) {
-    console.warn(`Extrapolation error: unknown SR format for ${val}`)
-    return val
-  }
-  // extrapolate as float
-  return exf(val, { forced: true })
+  rankMap: RankInfoMap
 }
 
 export type CharacterData = Record<CharacterDataKey, CharacterDatum>
@@ -99,7 +83,7 @@ export default function characterData(): CharacterData {
           const skillParamList = skillId
             ? transposeArray(
                 avatarSkillConfig[skillId]!.map(({ ParamList }) =>
-                  ParamList.map(({ Value }) => extrapolateFloat(Value))
+                  ParamList.map(({ Value }) => Value)
                 )
               )
             : undefined
@@ -108,7 +92,7 @@ export default function characterData(): CharacterData {
             if (!StatusAddList.length) return {}
             const stats = Object.fromEntries(
               StatusAddList.map(({ PropertyType, Value }) => {
-                return [statKeyMap[PropertyType], extrapolateFloat(Value.Value)]
+                return [statKeyMap[PropertyType], Value.Value]
               })
             )
             return { stats }
@@ -139,25 +123,25 @@ export default function characterData(): CharacterData {
             BaseAggro,
           }) => ({
             atk: {
-              base: extrapolateFloat(AttackBase.Value),
-              add: extrapolateFloat(AttackAdd.Value),
+              base: AttackBase.Value,
+              add: AttackAdd.Value,
             },
             def: {
-              base: extrapolateFloat(DefenceBase.Value),
-              add: extrapolateFloat(DefenceAdd.Value),
+              base: DefenceBase.Value,
+              add: DefenceAdd.Value,
             },
             hp: {
-              base: extrapolateFloat(HPBase.Value),
-              add: extrapolateFloat(HPAdd.Value),
+              base: HPBase.Value,
+              add: HPAdd.Value,
             },
-            spd: extrapolateFloat(SpeedBase.Value),
-            crit_: extrapolateFloat(CriticalChance.Value),
-            crit_dmg_: extrapolateFloat(CriticalDamage.Value),
-            taunt: extrapolateFloat(BaseAggro.Value),
+            spd: SpeedBase.Value,
+            crit_: CriticalChance.Value,
+            crit_dmg_: CriticalDamage.Value,
+            taunt: BaseAggro.Value,
           })
         )
 
-        const rankMap = objKeyMap(allEidolonKeys, (eidolon): Rank => {
+        const rankMap = objKeyMap(allRanks, (eidolon): RankInfo => {
           const rankConfig = avatarRankConfig[avatarid][eidolon]
           return {
             skillTypeAddLevel: Object.fromEntries(
@@ -172,7 +156,7 @@ export default function characterData(): CharacterData {
                 }
               )
             ),
-            params: rankConfig.Param.map((p) => extrapolateFloat(p.Value)),
+            params: rankConfig.Param.map((p) => p.Value),
           }
         })
 

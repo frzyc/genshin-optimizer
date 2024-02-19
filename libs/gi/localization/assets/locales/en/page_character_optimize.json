@@ -33,9 +33,8 @@
     "addExc": "Add artifact to this character's exclusion list",
     "selExc": "Select artifact to add to this character's exclusion list",
     "deSelectExc": "Click on an artifact to remove it from the exclusion list",
-    "excludeArtifactTip": "Excluding an artifact will prevent the build generator from using it for this character.",
-    "excluded": "This artifact is excluded.",
-    "included": "This artifact is not excluded."
+    "includeArtifactTip": "Including an artifact will allow the build generator to use it for this character.",
+    "includeArtifactButton": "Include this artifact in optimization"
   },
   "excludeChar": {
     "title": "Equipped Artifact Configuration",
