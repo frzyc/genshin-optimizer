@@ -6,6 +6,7 @@ import {
   useDBMeta,
   useDatabase,
 } from '@genshin-optimizer/gi/db-ui'
+import { FlowerIcon } from '@genshin-optimizer/gi/svgicons'
 import {
   BarChart,
   Calculate,
@@ -64,6 +65,7 @@ import { CustomMultiTargetButton } from '../CustomMultiTarget'
 import CharSelectButton from './CharSelectButton'
 import FormulaModal from './FormulaModal'
 import StatModal from './StatModal'
+import TabArtifacts from './Tabs/TabArtifacts'
 import TabBuild from './Tabs/TabOptimize'
 import TabOverview from './Tabs/TabOverview'
 import TabTalent from './Tabs/TabTalent'
@@ -233,6 +235,7 @@ function CharacterPanel() {
         <Route index element={<TabOverview />} />
         <Route path="/talent" element={<TabTalent />} />
         <Route path="/teambuffs" element={<TabTeambuffs />} />
+        <Route path="/artifacts" element={<TabArtifacts />} />
         <Route path="/optimize" element={<TabBuild />} />
         <Route path="/theorycraft" element={<TabTheorycraft />} />
         {shouldShowDevComponents && (
@@ -245,8 +248,8 @@ function CharacterPanel() {
 function TabNav({ tab }: { tab: string }) {
   const { t } = useTranslation('page_character')
   const tabSx = shouldShowDevComponents
-    ? { minWidth: '16.6%' }
-    : { minWidth: '20%' }
+    ? { minWidth: '14.28%' }
+    : { minWidth: '16.%' }
   return (
     <Tabs
       value={tab}
@@ -282,6 +285,14 @@ function TabNav({ tab }: { tab: string }) {
         icon={<Groups />}
         component={RouterLink}
         to="teambuffs"
+      />
+      <Tab
+        sx={tabSx}
+        value="artifacts"
+        label={t('tabs.artifacts')}
+        icon={<FlowerIcon />}
+        component={RouterLink}
+        to="artifacts"
       />
       <Tab
         sx={tabSx}

@@ -1,20 +1,24 @@
 import { useForceUpdate } from '@genshin-optimizer/common/react-util'
 import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
+import {
+  CardThemed,
+  ColorText,
+  InfoTooltipInline,
+  SqBadge,
+} from '@genshin-optimizer/common/ui'
 import { deepClone, objKeyMap } from '@genshin-optimizer/common/util'
 import type {
   ArtifactSetKey,
   ArtifactSlotKey,
 } from '@genshin-optimizer/gi/consts'
-import {
-  allArtifactSetKeys,
-  allArtifactSlotKeys,
-} from '@genshin-optimizer/gi/consts'
+import { allArtifactSlotKeys } from '@genshin-optimizer/gi/consts'
 import type { ArtSetExclusionKey } from '@genshin-optimizer/gi/db'
 import {
   allArtifactSetExclusionKeys,
   handleArtSetExclusion,
 } from '@genshin-optimizer/gi/db'
-import { CheckBox, CheckBoxOutlineBlank, Replay } from '@mui/icons-material'
+import { useDatabase } from '@genshin-optimizer/gi/db-ui'
+import { CheckBox, CheckBoxOutlineBlank } from '@mui/icons-material'
 import BlockIcon from '@mui/icons-material/Block'
 import SettingsIcon from '@mui/icons-material/Settings'
 import ShowChartIcon from '@mui/icons-material/ShowChart'
@@ -30,25 +34,13 @@ import {
 } from '@mui/material'
 import { useCallback, useContext, useEffect, useMemo, useState } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
-import SetEffectDisplay from '../../../../../Components/Artifact/SetEffectDisplay'
 import SlotIcon from '../../../../../Components/Artifact/SlotIcon'
-import CardDark from '../../../../../Components/Card/CardDark'
-import CardLight from '../../../../../Components/Card/CardLight'
 import CloseButton from '../../../../../Components/CloseButton'
-import ColorText from '../../../../../Components/ColoredText'
-import { InfoTooltipInline } from '../../../../../Components/InfoTooltip'
 import ModalWrapper from '../../../../../Components/ModalWrapper'
-import SqBadge from '../../../../../Components/SqBadge'
 import { Translate } from '../../../../../Components/Translate'
 import { CharacterContext } from '../../../../../Context/CharacterContext'
-import type { dataContextObj } from '../../../../../Context/DataContext'
-import { DataContext } from '../../../../../Context/DataContext'
 import { getArtSheet, setKeysByRarities } from '../../../../../Data/Artifacts'
 import { artifactDefIcon } from '../../../../../Data/Artifacts/ArtifactSheet'
-import { useDatabase } from '@genshin-optimizer/gi/db-ui'
-import { UIData } from '../../../../../Formula/uiData'
-import { constant } from '../../../../../Formula/utils'
-import type { SetNum } from '../../../../../Types/consts'
 import { bulkCatTotal } from '../../../../../Util/totalUtils'
 import useBuildSetting from '../useBuildSetting'
 import SetInclusionButton from './SetInclusionButton'
@@ -59,11 +51,9 @@ export default function ArtifactSetConfig({
   disabled?: boolean
 }) {
   const { t } = useTranslation(['page_character_optimize', 'sheet'])
-  const dataContext = useContext(DataContext)
   const database = useDatabase()
   const {
-    character: { key: characterKey, conditional },
-    characterDispatch,
+    character: { key: characterKey },
   } = useContext(CharacterContext)
   const {
     buildSetting: { artSetExclusion },
@@ -118,36 +108,6 @@ export default function ArtifactSetConfig({
       })
     )
   }, [artKeysByRarity, artSetExclusion])
-  const artifactCondCount = useMemo(
-    () =>
-      Object.keys(conditional).filter(
-        (k) =>
-          allArtifactSetKeys.includes(k as ArtifactSetKey) &&
-          !!Object.keys(conditional[k] ?? {}).length
-      ).length,
-    [conditional]
-  )
-  const fakeDataContextObj = useMemo(
-    () => ({
-      ...dataContext,
-      data: new UIData(
-        {
-          ...dataContext.data.data[0],
-          artSet: objKeyMap(allArtifactSetKeys, (_) => constant(4)),
-        },
-        undefined
-      ),
-    }),
-    [dataContext]
-  )
-  const resetArtConds = useCallback(() => {
-    const tconditional = Object.fromEntries(
-      Object.entries(conditional).filter(
-        ([k]) => !allArtifactSetKeys.includes(k as any)
-      )
-    )
-    characterDispatch({ conditional: tconditional })
-  }, [conditional, characterDispatch])
   const setAllExclusion = useCallback(
     (setnum: number, exclude = true) => {
       const artSetExclusion_ = deepClone(artSetExclusion)
@@ -165,18 +125,12 @@ export default function ArtifactSetConfig({
   return (
     <>
       {/* Button to open modal */}
-      <CardLight sx={{ display: 'flex', width: '100%' }}>
+      <CardThemed bgt="light" sx={{ display: 'flex', width: '100%' }}>
         <CardContent sx={{ flexGrow: 1 }}>
           <Typography>
             <strong>{t`artSetConfig.title`}</strong>
           </Typography>
           <Stack spacing={1}>
-            <Typography>
-              {t`artSetConfig.setEffCond`}{' '}
-              <SqBadge color={artifactCondCount ? 'success' : 'warning'}>
-                {artifactCondCount} {t('artSetConfig.enabled')}
-              </SqBadge>
-            </Typography>
             <Typography>
               {t`sheet:2set`}{' '}
               <SqBadge color="success">
@@ -223,11 +177,11 @@ export default function ArtifactSetConfig({
         >
           <SettingsIcon />
         </Button>
-      </CardLight>
+      </CardThemed>
 
       {/* Begin modal */}
       <ModalWrapper open={open} onClose={onClose}>
-        <CardDark>
+        <CardThemed bgt="dark">
           <CardContent
             sx={{ display: 'flex', gap: 1, justifyContent: 'space-between' }}
           >
@@ -236,28 +190,7 @@ export default function ArtifactSetConfig({
           </CardContent>
           <Divider />
           <CardContent>
-            <CardLight sx={{ mb: 1 }}>
-              <CardContent>
-                <Box display="flex" gap={1}>
-                  <Typography>
-                    <strong>{t`artSetConfig.modal.setCond.title`}</strong>
-                  </Typography>
-                  <Typography sx={{ flexGrow: 1 }}>
-                    <SqBadge color={artifactCondCount ? 'success' : 'warning'}>
-                      {artifactCondCount} {t('artSetConfig.selected')}
-                    </SqBadge>
-                  </Typography>
-                  <Button
-                    size="small"
-                    onClick={resetArtConds}
-                    color="error"
-                    startIcon={<Replay />}
-                  >{t`artSetConfig.modal.setCond.reset`}</Button>
-                </Box>
-                <Typography>{t`artSetConfig.modal.setCond.text`}</Typography>
-              </CardContent>
-            </CardLight>
-            <CardLight sx={{ mb: 1 }}>
+            <CardThemed bgt="light" sx={{ mb: 1 }}>
               <CardContent>
                 <Typography sx={{ flexGrow: 1 }}>
                   <strong>
@@ -377,7 +310,7 @@ export default function ArtifactSetConfig({
                   </Trans>
                 </Typography>
               </CardContent>
-            </CardLight>
+            </CardThemed>
             <Grid
               container
               columns={{ xs: 2, lg: 3 }}
@@ -399,7 +332,7 @@ export default function ArtifactSetConfig({
                 />
               </Grid>
               <Grid item xs={1}>
-                <CardLight>
+                <CardThemed bgt="light">
                   <CardContent>
                     <Typography gutterBottom>
                       <strong>
@@ -466,7 +399,7 @@ export default function ArtifactSetConfig({
                       >{t`artSetConfig.4rainbow`}</Button>
                     </Box>
                   </CardContent>
-                </CardLight>
+                </CardThemed>
               </Grid>
             </Grid>
             <Grid container spacing={1} columns={{ xs: 2, lg: 3 }}>
@@ -474,7 +407,6 @@ export default function ArtifactSetConfig({
                 <ArtifactSetCard
                   key={setKey}
                   setKey={setKey}
-                  fakeDataContextObj={fakeDataContextObj}
                   slotCount={artSlotCount[setKey]}
                 />
               ))}
@@ -484,7 +416,7 @@ export default function ArtifactSetConfig({
           <CardContent sx={{ py: 1 }}>
             <CloseButton large onClick={onClose} />
           </CardContent>
-        </CardDark>
+        </CardThemed>
       </ModalWrapper>
     </>
   )
@@ -500,7 +432,7 @@ function AllSetAllowExcludeCard({
 }) {
   const { t } = useTranslation(['page_character_optimize', 'sheet'])
   return (
-    <CardLight>
+    <CardThemed bgt="light">
       <CardContent>
         <Typography gutterBottom>
           <strong>{t(`sheet:${setNum}set`)}</strong>{' '}
@@ -532,16 +464,14 @@ function AllSetAllowExcludeCard({
           </Button>
         </Box>
       </CardContent>
-    </CardLight>
+    </CardThemed>
   )
 }
 function ArtifactSetCard({
   setKey,
-  fakeDataContextObj,
   slotCount,
 }: {
   setKey: ArtifactSetKey
-  fakeDataContextObj: dataContextObj
   slotCount: Record<ArtifactSlotKey, number>
 }) {
   const { t } = useTranslation('sheet')
@@ -551,23 +481,16 @@ function ArtifactSetCard({
   const { buildSetting } = useBuildSetting(characterKey)
   const { artSetExclusion } = buildSetting
   const setExclusionSet = artSetExclusion?.[setKey] ?? []
-  const allow4 = !setExclusionSet.includes(4)
   const slots = getNumSlots(slotCount)
   const sheet = getArtSheet(setKey)
-  /* Assumes that all conditionals are from 4-Set. needs to change if there are 2-Set conditionals */
-  const set4CondNums = useMemo(() => {
-    if (!allow4) return []
-    return Object.keys(sheet.setEffects).filter((setNumKey) =>
-      sheet.setEffects[setNumKey]?.document.some((doc) => 'states' in doc)
-    )
-  }, [sheet.setEffects, allow4])
   return (
     <Grid item key={setKey} xs={1}>
-      <CardLight
+      <CardThemed
+        bgt="light"
         sx={{ height: '100%', opacity: slots < 2 ? '50%' : undefined }}
       >
         <Box
-          className={`grad-${sheet.rarity[0]}star`}
+          className={`grad-${sheet.rarity[1] ?? sheet.rarity[0]}star`}
           width="100%"
           sx={{ display: 'flex' }}
         >
@@ -587,7 +510,6 @@ function ArtifactSetCard({
           >
             <Typography variant="h6">{sheet.name ?? ''}</Typography>
             <Box>
-              {/* If there is ever a 2-Set conditional, we will need to change this */}
               <Typography variant="subtitle1">
                 {sheet.rarity.map((ns, i) => (
                   <Box
@@ -655,25 +577,7 @@ function ArtifactSetCard({
             buttonGroupSx={{ '.MuiButton-root': { borderRadius: 0 } }}
           />
         )}
-
-        {!!set4CondNums.length && (
-          <DataContext.Provider value={fakeDataContextObj}>
-            <CardContent
-              sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}
-            >
-              {set4CondNums.map((setNumKey) => (
-                <SetEffectDisplay
-                  key={setNumKey}
-                  setKey={setKey}
-                  setNumKey={parseInt(setNumKey) as SetNum}
-                  hideHeader
-                  conditionalsOnly
-                />
-              ))}
-            </CardContent>
-          </DataContext.Provider>
-        )}
-      </CardLight>
+      </CardThemed>
     </Grid>
   )
 }

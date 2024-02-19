@@ -1,11 +1,12 @@
 import { useBoolState } from '@genshin-optimizer/common/react-util'
+import { useDatabase } from '@genshin-optimizer/gi/db-ui'
+import type { SxProps } from '@mui/material'
 import { Box, Button, Divider, Stack } from '@mui/material'
 import { useCallback, useContext, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import ImgIcon from '../../../../../Components/Image/ImgIcon'
 import SqBadge from '../../../../../Components/SqBadge'
 import { DataContext } from '../../../../../Context/DataContext'
-import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { getDisplayHeader } from '../../../../../Formula/DisplayUtil'
 import type { NodeDisplay } from '../../../../../Formula/uiData'
 import { objPathValue } from '../../../../../Util/Util'
@@ -19,6 +20,7 @@ export default function OptimizationTargetSelector({
   showEmptyTargets = false,
   defaultText,
   targetSelectorModalProps = {},
+  buttonSx = {},
 }: {
   optimizationTarget?: string[]
   setTarget: (target: string[]) => void
@@ -26,6 +28,7 @@ export default function OptimizationTargetSelector({
   showEmptyTargets?: boolean
   defaultText?: string
   targetSelectorModalProps?: Partial<TargetSelectorModalProps>
+  buttonSx?: SxProps
 }) {
   const { t } = useTranslation('page_character_optimize')
   const [show, onShow, onClose] = useBoolState(false)
@@ -72,7 +75,7 @@ export default function OptimizationTargetSelector({
         color="info"
         onClick={onShow}
         disabled={disabled}
-        sx={{ flexGrow: 1 }}
+        sx={{ flexGrow: 1, ...buttonSx }}
       >
         {invalidTarget ? (
           <strong>{defaultText}</strong>

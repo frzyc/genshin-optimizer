@@ -1,4 +1,5 @@
 import { ReadOnlyTextArea } from '@genshin-optimizer/common/react-util'
+import { CardThemed } from '@genshin-optimizer/common/ui'
 import {
   objKeyMap,
   objPathValue,
@@ -38,7 +39,6 @@ import {
 } from 'recharts'
 import BootstrapTooltip from '../../../../../../Components/BootstrapTooltip'
 import CardDark from '../../../../../../Components/Card/CardDark'
-import CardLight from '../../../../../../Components/Card/CardLight'
 import InfoTooltip from '../../../../../../Components/InfoTooltip'
 import { CharacterContext } from '../../../../../../Context/CharacterContext'
 import { DataContext } from '../../../../../../Context/DataContext'
@@ -200,7 +200,7 @@ export default function ChartCard({
     : t('page_character_optimize:targetSelector.selectGraphTarget')
 
   return (
-    <CardLight>
+    <CardThemed bgt="dark">
       <CardContent>
         <Grid container spacing={1} alignItems="center">
           <Grid item>
@@ -313,7 +313,7 @@ export default function ChartCard({
           )}
         </CardContent>
       )}
-    </CardLight>
+    </CardThemed>
   )
 }
 

@@ -20,7 +20,8 @@
     "desc": "Using data from the builder, this will generate a graph to visualize Optimization Target vs. the selected Graph Target. The graph will show the maximum Optimization Target value per 0.01 of the selected Graph Target. Enabling this is optional, and doing so will slow down build times",
     "currentBuild": "Current Build",
     "highlightedBuilds": "Highlighted Builds",
-    "buildAlreadyInList": "Build is already in the list"
+    "buildAlreadyInList": "Build is already in the list",
+    "summary": "Optimization Target Graphing"
   },
   "levelFilter": "Artifact Level Filter",
   "excludeArt": {
@@ -117,5 +118,8 @@
   "addBuildToList": "Add build to list",
   "graphBuildLabel": "Graph #<1>{{count}}</1>",
   "buildCompleted": "Build Completed",
-  "notifyTooltip": "Play a sound when builds finish generating. Will also show an alarm prompt when tabbed out."
+  "notifyTooltip": "Play a sound when builds finish generating. Will also show an alarm prompt when tabbed out.",
+  "optFilters": {
+    "title": "Optimization Filters"
+  }
 }
