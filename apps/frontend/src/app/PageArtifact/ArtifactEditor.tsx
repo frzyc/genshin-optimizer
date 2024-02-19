@@ -255,8 +255,7 @@ export default function ArtifactEditor({
         // value (e.g. when creating a new artifact from the artifact swap UI). If neither, then we default to
         // 'flower'.
         newValue.slotKey =
-          artifact?.slotKey ??
-          (fixedSlotKey !== '' ? fixedSlotKey : 'flower')
+          artifact?.slotKey ?? (fixedSlotKey !== '' ? fixedSlotKey : 'flower')
       }
       if (newValue.rarity) newValue.level = artifact?.level ?? 0
       if (newValue.level)
@@ -294,10 +293,7 @@ export default function ArtifactEditor({
   const { rarity = 5, level = 0 } = artifact ?? {}
   // Same as above when assigning newValue.slotKey in update.
   const slotKey = useMemo(() => {
-    return (
-      artifact?.slotKey ??
-      (fixedSlotKey !== '' ? fixedSlotKey : 'flower')
-    )
+    return artifact?.slotKey ?? (fixedSlotKey !== '' ? fixedSlotKey : 'flower')
   }, [fixedSlotKey, artifact])
   const { currentEfficiency = 0, maxEfficiency = 0 } = cArtifact
     ? Artifact.getArtifactEfficiency(cArtifact, allSubstatFilter)

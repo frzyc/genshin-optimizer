@@ -271,7 +271,10 @@ function CompareArtifactModal({
                 onDelete={deleteArtifact}
                 mainStatAssumptionLevel={mainStatAssumptionLevel}
                 canEquip
-                editorProps={{ disableSet: true, fixedSlotKey: oldArtifact.slotKey }}
+                editorProps={{
+                  disableSet: true,
+                  fixedSlotKey: oldArtifact.slotKey,
+                }}
               />
               <ArtInclusionButton id={oldId} />
             </Box>
@@ -291,7 +294,10 @@ function CompareArtifactModal({
               onDelete={deleteArtifact}
               mainStatAssumptionLevel={mainStatAssumptionLevel}
               canEquip
-              editorProps={{ disableSet: true, fixedSlotKey: newArtifact?.slotKey ?? '' }}
+              editorProps={{
+                disableSet: true,
+                fixedSlotKey: newArtifact?.slotKey ?? '',
+              }}
             />
             {newArtifact && <ArtInclusionButton id={newId} />}
             {newLoc &&
