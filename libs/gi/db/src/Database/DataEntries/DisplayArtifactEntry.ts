@@ -46,6 +46,8 @@ export type FilterOption = {
   locked: Array<'locked' | 'unlocked'>
   rvLow: number
   rvHigh: number
+  mrvLow: number
+  mrvHigh: number
   lines: Array<1 | 2 | 3 | 4>
 }
 
@@ -72,6 +74,8 @@ export function initialFilterOption(): FilterOption {
     locked: ['locked', 'unlocked'],
     rvLow: 0,
     rvHigh: 900,
+    mrvLow: 0,
+    mrvHigh: 900,
     lines: [1, 2, 3, 4],
   }
 }
@@ -116,6 +120,8 @@ export class DisplayArtifactEntry extends DataEntry<
         locked,
         rvLow,
         rvHigh,
+        mrvLow,
+        mrvHigh,
         lines,
       } = filterOption
       artSetKeys = validateArr(artSetKeys, allArtifactSetKeys, [])
@@ -137,6 +143,9 @@ export class DisplayArtifactEntry extends DataEntry<
       if (typeof rvLow !== 'number') rvLow = 0
       if (typeof rvHigh !== 'number') rvHigh = 900
 
+      if (typeof mrvLow !== 'number') mrvLow = 0
+      if (typeof mrvHigh !== 'number') mrvHigh = 900
+
       lines = validateArr(lines, [1, 2, 3, 4])
 
       filterOption = {
@@ -153,6 +162,8 @@ export class DisplayArtifactEntry extends DataEntry<
         locked,
         rvLow,
         rvHigh,
+        mrvLow,
+        mrvHigh,
         lines,
       } as FilterOption
     }

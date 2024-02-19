@@ -39,6 +39,8 @@ export type FilterOption = {
   locked: Array<'locked' | 'unlocked'>
   rvLow: number
   rvHigh: number
+  mrvLow: number
+  mrvHigh: number
   lines: Array<1 | 2 | 3 | 4>
 }
 
@@ -57,6 +59,8 @@ export function initialFilterOption(): FilterOption {
     locked: ['locked', 'unlocked'],
     rvLow: 0,
     rvHigh: 900,
+    mrvLow: 0,
+    mrvHigh: 900,
     lines: [1, 2, 3, 4],
   }
 }
@@ -114,6 +118,16 @@ export function artifactFilterConfigs(
         ? true
         : filter >=
           Artifact.getArtifactEfficiency(art, effFilterSet).currentEfficiency,
+    mrvLow: (art, filter) =>
+      filter === 0
+        ? true
+        : filter <=
+          Artifact.getArtifactEfficiency(art, effFilterSet).maxEfficiency,
+    mrvHigh: (art, filter) =>
+      filter === 900
+        ? true
+        : filter >=
+          Artifact.getArtifactEfficiency(art, effFilterSet).maxEfficiency,
     rarity: (art, filter) => filter.includes(art.rarity),
     substats: (art, filter) => {
       for (const filterKey of filter)

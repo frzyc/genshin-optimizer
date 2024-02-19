@@ -69,6 +69,8 @@ export default function ArtifactFilterDisplay({
     locked = [...lockedValues],
     rvLow = 0,
     rvHigh = 900,
+    mrvLow = 0, // Max Roll Value Low
+    mrvHigh = 0, // Max Roll Value High
     lines = [],
   } = filterOption
 
@@ -254,6 +256,16 @@ export default function ArtifactFilterDisplay({
           setLow={(rvLow) => filterOptionDispatch({ rvLow })}
           setHigh={(rvHigh) => filterOptionDispatch({ rvHigh })}
           setBoth={(rvLow, rvHigh) => filterOptionDispatch({ rvLow, rvHigh })}
+        />
+        <RVSlide
+          showLevelText
+          levelLow={mrvLow}
+          levelHigh={mrvHigh}
+          setLow={(mrvLow) => filterOptionDispatch({ mrvLow })}
+          setHigh={(mrvHigh) => filterOptionDispatch({ mrvHigh })}
+          setBoth={(mrvLow, mrvHigh) =>
+            filterOptionDispatch({ mrvLow, mrvHigh })
+          }
         />
       </Grid>
       {/* right */}
