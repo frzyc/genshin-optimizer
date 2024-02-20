@@ -1,8 +1,8 @@
 // This is a generated index file.
-import circlet from './UI_RelicIcon_15033_3.png'
-import flower from './UI_RelicIcon_15033_4.png'
 import goblet from './UI_RelicIcon_15033_1.png'
 import plume from './UI_RelicIcon_15033_2.png'
+import circlet from './UI_RelicIcon_15033_3.png'
+import flower from './UI_RelicIcon_15033_4.png'
 import sands from './UI_RelicIcon_15033_5.png'
 
 const data = {

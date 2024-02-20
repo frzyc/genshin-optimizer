@@ -4,8 +4,8 @@ import {
   allArtifactSlotKeys,
   allCharacterKeys,
 } from '@genshin-optimizer/gi/consts'
-import { DataManager } from '../DataManager'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
+import { DataManager } from '../DataManager'
 
 export interface IBuildResult {
   builds: string[][]

@@ -1,10 +1,10 @@
+import type { StatFilters } from '@genshin-optimizer/gi/db'
 import { Box, CardContent, Divider, Typography } from '@mui/material'
 import { useCallback, useContext } from 'react'
 import { useTranslation } from 'react-i18next'
 import CardLight from '../../../../../Components/Card/CardLight'
 import InfoTooltip from '../../../../../Components/InfoTooltip'
 import { CharacterContext } from '../../../../../Context/CharacterContext'
-import type { StatFilters } from '@genshin-optimizer/gi/db'
 import useBuildSetting from '../useBuildSetting'
 import OptimizationTargetEditorList from './OptimizationTargetEditorList'
 

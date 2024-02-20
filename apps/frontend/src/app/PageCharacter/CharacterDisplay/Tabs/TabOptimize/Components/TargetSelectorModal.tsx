@@ -1,3 +1,4 @@
+import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { Masonry } from '@mui/lab'
 import {
   CardContent,
@@ -14,7 +15,6 @@ import ImgIcon from '../../../../../Components/Image/ImgIcon'
 import ModalWrapper from '../../../../../Components/ModalWrapper'
 import SqBadge from '../../../../../Components/SqBadge'
 import { DataContext } from '../../../../../Context/DataContext'
-import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import {
   getDisplayHeader,
   getDisplaySections,

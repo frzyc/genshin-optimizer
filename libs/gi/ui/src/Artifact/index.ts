@@ -1,4 +1,4 @@
-export * from './PercentBadge'
-export * from './util'
-export * from './Trans'
 export * from './IconStatDisplay'
+export * from './PercentBadge'
+export * from './Trans'
+export * from './util'

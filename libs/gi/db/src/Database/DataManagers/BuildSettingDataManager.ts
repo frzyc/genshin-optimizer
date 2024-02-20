@@ -15,8 +15,8 @@ import {
   allLocationCharacterKeys,
   artSlotsData,
 } from '@genshin-optimizer/gi/consts'
-import { DataManager } from '../DataManager'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
+import { DataManager } from '../DataManager'
 
 export const maxBuildsToShowList = [1, 2, 3, 4, 5, 8, 10] as const
 export const maxBuildsToShowDefault = 5

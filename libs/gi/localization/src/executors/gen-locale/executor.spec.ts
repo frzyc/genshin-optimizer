@@ -1,5 +1,5 @@
-import type { GenLocaleExecutorSchema } from './schema'
 import executor from './executor'
+import type { GenLocaleExecutorSchema } from './schema'
 
 const options: GenLocaleExecutorSchema = {}
 

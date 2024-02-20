@@ -4,8 +4,8 @@ import { input } from '../../../../Formula'
 import { equal, subscript } from '../../../../Formula/utils'
 import { cond, st, stg, trans } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
-import { dataObjForWeaponSheet } from '../../util'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
+import { dataObjForWeaponSheet } from '../../util'
 
 const key: WeaponKey = 'MailedFlower'
 const data_gen = allStats.weapon.data[key]

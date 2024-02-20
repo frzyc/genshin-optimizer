@@ -17,23 +17,23 @@ import {
 import type { MinTotalStatKey } from './CharacterTCDataManager'
 import { initCharTC, minTotalStatKeys } from './CharacterTCDataManager'
 
+export {
+  allAllowLocationsState,
+  allArtifactSetExclusionKeys,
+  cachedArtifact,
+  handleArtSetExclusion,
+  initCharTC,
+  maxBuildsToShowList,
+  minTotalStatKeys,
+  validateArtifact,
+}
 export type {
-  IBuildResult,
-  MinTotalStatKey,
+  AllowLocationsState,
+  ArtSetExclusion,
   ArtSetExclusionKey,
   BuildSetting,
-  StatFilters,
+  IBuildResult,
+  MinTotalStatKey,
   StatFilterSetting,
-  ArtSetExclusion,
-  AllowLocationsState,
-}
-export {
-  cachedArtifact,
-  validateArtifact,
-  initCharTC,
-  minTotalStatKeys,
-  handleArtSetExclusion,
-  allArtifactSetExclusionKeys,
-  allAllowLocationsState,
-  maxBuildsToShowList,
+  StatFilters,
 }

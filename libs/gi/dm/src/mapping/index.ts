@@ -1,6 +1,6 @@
+export * from './artifact'
 export * from './character'
 export * from './weapon'
-export * from './artifact'
 
 export const tagColor = {
   FFD780FF: 'strong',

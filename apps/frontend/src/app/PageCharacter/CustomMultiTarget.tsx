@@ -17,6 +17,7 @@ import {
   allInfusionAuraElementKeys,
   allMultiOptHitModeKeys,
 } from '@genshin-optimizer/gi/consts'
+import type { CustomMultiTarget, CustomTarget } from '@genshin-optimizer/gi/db'
 import AddIcon from '@mui/icons-material/Add'
 import ContentCopyIcon from '@mui/icons-material/ContentCopy'
 import ContentPasteIcon from '@mui/icons-material/ContentPaste'
@@ -70,7 +71,6 @@ import type { InputPremodKey } from '../Formula'
 import { allInputPremodKeys } from '../Formula'
 import type { NodeDisplay } from '../Formula/uiData'
 import { UIData } from '../Formula/uiData'
-import type { CustomMultiTarget, CustomTarget } from '@genshin-optimizer/gi/db'
 import { allowedAdditiveReactions, allowedAmpReactions } from '../Types/consts'
 import OptimizationTargetSelector from './CharacterDisplay/Tabs/TabOptimize/Components/OptimizationTargetSelector'
 import { TargetSelectorModal } from './CharacterDisplay/Tabs/TabOptimize/Components/TargetSelectorModal'

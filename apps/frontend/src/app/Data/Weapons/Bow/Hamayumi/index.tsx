@@ -1,12 +1,12 @@
+import type { WeaponKey } from '@genshin-optimizer/gi/consts'
+import { allStats } from '@genshin-optimizer/gi/stats'
 import { input } from '../../../../Formula'
 import { equal, subscript, sum } from '../../../../Formula/utils'
 import KeyMap from '../../../../KeyMap'
-import type { WeaponKey } from '@genshin-optimizer/gi/consts'
-import { allStats } from '@genshin-optimizer/gi/stats'
 import { cond, st, trans } from '../../../SheetUtil'
-import { dataObjForWeaponSheet } from '../../util'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
+import { dataObjForWeaponSheet } from '../../util'
 
 const key: WeaponKey = 'Hamayumi'
 const data_gen = allStats.weapon.data[key]
