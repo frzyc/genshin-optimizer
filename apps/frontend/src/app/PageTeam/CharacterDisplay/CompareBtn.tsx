@@ -28,7 +28,6 @@ export default function CompareBtn() {
       buildTcId: teamCharBuildTcId,
     },
   } = useContext(TeamCharacterContext)
-  const disabled = !buildIds.length && !buildTcIds.length
   const selectedLabel =
     compareType === 'real' ? (
       database.builds.get(compareBuildId).name
@@ -49,7 +48,7 @@ export default function CompareBtn() {
       buildType === 'tc' &&
       buildTcId === compareBuildTcId)
   return (
-    <ButtonGroup disabled={disabled}>
+    <ButtonGroup>
       <Button
         startIcon={compare ? <CheckBoxIcon /> : <CheckBoxOutlineBlankIcon />}
         color={compare ? 'success' : 'secondary'}
@@ -65,7 +64,7 @@ export default function CompareBtn() {
             {selectedLabel} {current && <SqBadge color="info">Current</SqBadge>}
           </>
         }
-        disabled={!compare}
+        disabled={!compare || (!buildIds.length && !buildTcIds.length)}
       >
         <MenuItem
           onClick={() =>

@@ -1,6 +1,7 @@
 import type { EleEnemyResKey } from '@genshin-optimizer/gi/keymap'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
 import { DataManager } from '../DataManager'
+import { deepClone } from '@genshin-optimizer/common/util'
 export interface Team {
   name: string
   description: string
@@ -48,6 +49,16 @@ export class TeamDataManager extends DataManager<
     super.clear()
   }
 
+  duplicate(teamId: string): string {
+    const teamRaw = this.database.teams.get(teamId)
+    if (!teamRaw) return ''
+    const team = deepClone(teamRaw)
+    team.teamCharIds = team.teamCharIds.map((teamCharId) =>
+      this.database.teamChars.duplicate(teamCharId)
+    )
+    team.name = `${team.name} (duplicated)`
+    return this.new(team)
+  }
   export(teamId: string): object {
     const team = this.database.teams.get(teamId)
     if (!team) return {}

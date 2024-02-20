@@ -400,8 +400,8 @@ export function migrate(storage: DBStorage) {
           })
         }
         const team: Team = {
-          name: `Team (migrated from ${characterKey})`,
-          description: `Generated team due to database migration`,
+          name: `Migrated from ${characterKey}`,
+          description: `Generated team due to database migration for GO version 10`,
           enemyOverride,
           teamCharIds,
         }

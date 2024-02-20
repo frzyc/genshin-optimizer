@@ -224,10 +224,15 @@ export class OptConfigDataManager extends DataManager<
       buildDate,
     }
   }
-  new() {
+  new(data: Partial<OptConfig> = {}) {
     const id = this.generateKey()
-    this.set(id, initialBuildSettings)
+    this.set(id, { ...initialBuildSettings, ...data })
     return id
+  }
+  duplicate(optConfigId: string): string {
+    const optConfig = this.get(optConfigId)
+    if (!optConfig) return ''
+    return this.new(structuredClone(optConfig))
   }
   export(optConfigId: string): object {
     const optConfig = this.database.optConfigs.get(optConfigId)

@@ -73,6 +73,11 @@ export class BuildTcDataManager extends DataManager<
     this.set(id, data)
     return id
   }
+  duplicate(buildTcId: string): string {
+    const buildTc = this.get(buildTcId)
+    if (!buildTc) return ''
+    return this.new(structuredClone(buildTc))
+  }
   override remove(key: string, notify?: boolean): BuildTc | undefined {
     const buildTc = super.remove(key, notify)
     this.database.teamChars.keys.map((teamCharId) => {

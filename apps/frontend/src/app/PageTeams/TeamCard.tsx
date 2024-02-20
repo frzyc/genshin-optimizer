@@ -1,6 +1,7 @@
 import { BootstrapTooltip, CardThemed } from '@genshin-optimizer/common/ui'
 import { range } from '@genshin-optimizer/common/util'
 import { useDatabase, useTeam } from '@genshin-optimizer/gi/db-ui'
+import ContentCopyIcon from '@mui/icons-material/ContentCopy'
 import ContentPasteIcon from '@mui/icons-material/ContentPaste'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import InfoIcon from '@mui/icons-material/Info'
@@ -29,12 +30,13 @@ export default function TeamCard({
   const onExport = () => {
     const data = database.teams.export(teamId)
     const dataStr = JSON.stringify(data)
-    console.log({ data, dataStr })
     navigator.clipboard
       .writeText(dataStr)
       .then(() => alert('Copied team data to clipboard.'))
       .catch(console.error)
   }
+  const onDup = () => database.teams.duplicate(teamId)
+
   return (
     <CardThemed
       bgt={bgt}
@@ -89,6 +91,13 @@ export default function TeamCard({
             onClick={onExport}
           >
             Export
+          </Button>
+          <Button
+            color="info"
+            disabled={teamCharIds.every((id) => !id)}
+            onClick={onDup}
+          >
+            <ContentCopyIcon />
           </Button>
           <Button color="error" size="small" onClick={onDel}>
             <DeleteForeverIcon />

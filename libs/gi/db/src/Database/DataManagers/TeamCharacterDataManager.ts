@@ -1,4 +1,4 @@
-import { objKeyMap, objMap } from '@genshin-optimizer/common/util'
+import { deepClone, objKeyMap, objMap } from '@genshin-optimizer/common/util'
 import type {
   ArtifactSetKey,
   ArtifactSlotKey,
@@ -197,7 +197,7 @@ export class TeamCharacterDataManager extends DataManager<
 
     if (
       typeof compareBuildId !== 'string' ||
-      !this.database.builds.keys.includes(compareBuildId) ||
+      !buildIds.includes(compareBuildId) ||
       !this.database.builds.get(compareBuildId)?.weaponId
     ) {
       compareBuildId = ''
@@ -206,7 +206,7 @@ export class TeamCharacterDataManager extends DataManager<
 
     if (
       typeof compareBuildTcId !== 'string' ||
-      !this.database.buildTcs.keys.includes(compareBuildTcId)
+      !buildTcIds.includes(compareBuildTcId)
     ) {
       compareBuildTcId = ''
       if (compareType === 'tc') compareType = 'equipped'
@@ -246,6 +246,33 @@ export class TeamCharacterDataManager extends DataManager<
   }
   override clear(): void {
     super.clear()
+  }
+  duplicate(teamcharId: string): string {
+    const teamCharRaw = this.get(teamcharId)
+    if (!teamCharRaw) return ''
+    const teamChar = deepClone(teamCharRaw)
+    const buildIdInd = teamChar.buildIds.findIndex(
+      (buildId) => buildId === teamChar.buildId
+    )
+    teamChar.buildIds = teamChar.buildIds.map((buildId) =>
+      this.database.builds.duplicate(buildId)
+    )
+    if (buildIdInd >= 0) teamChar.buildId = teamChar.buildIds[buildIdInd]
+
+    const buildTcIdInd = teamChar.buildTcIds.findIndex(
+      (buildTcId) => buildTcId === teamChar.buildTcId
+    )
+    teamChar.buildTcIds = teamChar.buildTcIds.map((buildTcId) =>
+      this.database.buildTcs.duplicate(buildTcId)
+    )
+    if (buildTcIdInd >= 0)
+      teamChar.buildTcId = teamChar.buildTcIds[buildTcIdInd]
+
+    teamChar.optConfigId = this.database.optConfigs.duplicate(
+      teamChar.optConfigId
+    )
+
+    return this.new(teamChar.key, teamChar)
   }
   newBuild(teamcharId: string, build: Partial<Build> = {}) {
     if (!this.get(teamcharId)) return

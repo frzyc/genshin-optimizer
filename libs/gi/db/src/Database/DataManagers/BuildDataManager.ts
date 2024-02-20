@@ -68,7 +68,9 @@ export class BuildDataManager extends DataManager<
     this.set(id, build)
     return id
   }
-  override clear(): void {
-    super.clear()
+  duplicate(buildId: string): string {
+    const build = this.get(buildId)
+    if (!build) return ''
+    return this.new(structuredClone(build))
   }
 }
