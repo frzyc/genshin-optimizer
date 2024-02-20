@@ -1,7 +1,7 @@
 'use client'
 import type { Palette, PaletteColor } from '@mui/material'
-import type { HTMLAttributes } from 'react'
 import { styled } from '@mui/material'
+import type { HTMLAttributes } from 'react'
 
 interface ColorTextProps extends HTMLAttributes<HTMLSpanElement> {
   color?: keyof Palette

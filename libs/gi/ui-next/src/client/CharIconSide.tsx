@@ -1,5 +1,5 @@
-import type { CharacterKey, GenderKey } from '@genshin-optimizer/gi/consts'
 import { characterAsset } from '@genshin-optimizer/gi/assets'
+import type { CharacterKey, GenderKey } from '@genshin-optimizer/gi/consts'
 import { portrait } from '@genshin-optimizer/gi/silly-wisher'
 import { Box } from '@mui/material'
 import Image from 'next/image'

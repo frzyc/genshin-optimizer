@@ -5,7 +5,7 @@ import {
   artSubstatRollData,
   type CharacterKey,
 } from '@genshin-optimizer/gi/consts'
-import type { ICachedWeapon, BuildTc } from '@genshin-optimizer/gi/db'
+import type { BuildTc, ICachedWeapon } from '@genshin-optimizer/gi/db'
 import { getMainStatValue, getSubstatValue } from '@genshin-optimizer/gi/util'
 import type { TeamData } from '../../../../Context/DataContext'
 import { mergeData } from '../../../../Formula/api'

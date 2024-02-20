@@ -1,11 +1,11 @@
-import { useContext } from 'react'
-import { CharacterContext } from '../../Context/CharacterContext'
 import { DropdownButton } from '@genshin-optimizer/common/ui'
-import { useTranslation } from 'react-i18next'
-import { maxConstellationCount } from '@genshin-optimizer/gi/consts'
 import { range } from '@genshin-optimizer/common/util'
-import { MenuItem } from '@mui/material'
+import { maxConstellationCount } from '@genshin-optimizer/gi/consts'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
+import { MenuItem } from '@mui/material'
+import { useContext } from 'react'
+import { useTranslation } from 'react-i18next'
+import { CharacterContext } from '../../Context/CharacterContext'
 
 export default function ConstellationDropdown() {
   const {

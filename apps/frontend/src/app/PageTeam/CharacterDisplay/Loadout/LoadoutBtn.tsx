@@ -2,6 +2,7 @@ import { useBoolState } from '@genshin-optimizer/common/react-util'
 import { CardThemed, ModalWrapper } from '@genshin-optimizer/common/ui'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { getCharData } from '@genshin-optimizer/gi/stats'
+import AddIcon from '@mui/icons-material/Add'
 import CheckroomIcon from '@mui/icons-material/Checkroom'
 import {
   Box,
@@ -14,9 +15,8 @@ import {
 import { Suspense, useContext, useMemo } from 'react'
 import { TeamCharacterContext } from '../../../Context/TeamCharacterContext'
 import { Build } from './Build'
-import BuildTc from './BuildTc'
 import { BuildEquipped } from './BuildEquipped'
-import AddIcon from '@mui/icons-material/Add'
+import BuildTc from './BuildTc'
 export default function LoadoutBtn() {
   const database = useDatabase()
   const [open, onOpen, onClose] = useBoolState()

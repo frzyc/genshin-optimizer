@@ -9,8 +9,8 @@ import { CheckBox, CheckBoxOutlineBlank } from '@mui/icons-material'
 import type { ButtonProps } from '@mui/material'
 import { Button, ButtonGroup, Divider, MenuItem } from '@mui/material'
 import { useCallback, useContext } from 'react'
-import { TeamCharacterContext } from '../../Context/TeamCharacterContext'
 import { DataContext } from '../../Context/DataContext'
+import { TeamCharacterContext } from '../../Context/TeamCharacterContext'
 import type {
   DocumentConditional,
   IDocumentConditionalExclusive,

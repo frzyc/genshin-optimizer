@@ -1,3 +1,6 @@
+import type { WeaponKey } from '@genshin-optimizer/gi/consts'
+import { allElementKeys } from '@genshin-optimizer/gi/consts'
+import { allStats } from '@genshin-optimizer/gi/stats'
 import { input, tally, target } from '../../../../Formula'
 import {
   equal,
@@ -10,13 +13,10 @@ import {
   unequal,
 } from '../../../../Formula/utils'
 import KeyMap from '../../../../KeyMap'
-import type { WeaponKey } from '@genshin-optimizer/gi/consts'
-import { allStats } from '@genshin-optimizer/gi/stats'
-import { allElementKeys } from '@genshin-optimizer/gi/consts'
 import { st } from '../../../SheetUtil'
-import { dataObjForWeaponSheet } from '../../util'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
+import { dataObjForWeaponSheet } from '../../util'
 
 const key: WeaponKey = 'AThousandFloatingDreams'
 const data_gen = allStats.weapon.data[key]
