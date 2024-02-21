@@ -88,6 +88,7 @@ export default function ChartCard({
     (_e: unknown, value: number | number[]) => {
       if (typeof value === 'number') throw new TypeError()
       const [l, h] = value
+      if (l >= h) return
       setSliderLow(l)
       setSliderHigh(h)
     },
