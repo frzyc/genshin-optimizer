@@ -52,9 +52,7 @@ export default function RVSlide({
         overflow: 'visible',
       }}
     >
-      <Box
-        sx={{ width: 100, height: 32, display: 'flex'}}
-      >
+      <Box sx={{ width: 100, height: 32, display: 'flex' }}>
         <Button
           onClick={() => switchFilter(!useMaxRV)}
           sx={{
@@ -67,7 +65,7 @@ export default function RVSlide({
             fontSize: '16px',
             display: 'inline',
             textAlign: 'left',
-            color: 'rgba(255,255,255,0.9)'
+            color: 'rgba(255,255,255,0.9)',
           }}
         >
           {MRV_RV ? 'MRV' : 'RV'}
