@@ -296,7 +296,7 @@ function CompareArtifactModal({
               canEquip
               editorProps={{
                 disableSet: true,
-                fixedSlotKey: newArtifact?.slotKey ?? '',
+                fixedSlotKey: newArtifact?.slotKey,
               }}
             />
             {newArtifact && <ArtInclusionButton id={newId} />}

@@ -134,7 +134,7 @@ export type ArtifactEditorProps = {
   allowUpload?: boolean
   allowEmpty?: boolean
   disableSet?: boolean
-  fixedSlotKey?: ArtifactSlotKey | ''
+  fixedSlotKey?: ArtifactSlotKey
 }
 export default function ArtifactEditor({
   artifactIdToEdit = '',
@@ -142,7 +142,7 @@ export default function ArtifactEditor({
   allowUpload = false,
   allowEmpty = false,
   disableSet = false,
-  fixedSlotKey = '',
+  fixedSlotKey = undefined,
 }: ArtifactEditorProps) {
   const queueRef = useRef(
     new ScanningQueue(textsFromImage, shouldShowDevComponents)
@@ -176,7 +176,7 @@ export default function ArtifactEditor({
   const queueTotal = processedNum + outstandingNum + scanningNum
   const disableEditSlot =
     (!['new', ''].includes(artifactIdToEdit) && !!artifact?.location) ||
-    fixedSlotKey !== ''
+    !!fixedSlotKey
 
   const uploadFiles = useCallback(
     (files?: FileList | null) => {
@@ -254,8 +254,7 @@ export default function ArtifactEditor({
         // Otherwise, if slot selection is disabled but a key has been provided in fixedSlotKey, we assign that
         // value (e.g. when creating a new artifact from the artifact swap UI). If neither, then we default to
         // 'flower'.
-        newValue.slotKey =
-          artifact?.slotKey ?? (fixedSlotKey !== '' ? fixedSlotKey : 'flower')
+        newValue.slotKey = artifact?.slotKey ?? fixedSlotKey ?? 'flower'
       }
       if (newValue.rarity) newValue.level = artifact?.level ?? 0
       if (newValue.level)
@@ -293,7 +292,7 @@ export default function ArtifactEditor({
   const { rarity = 5, level = 0 } = artifact ?? {}
   // Same as above when assigning newValue.slotKey in update.
   const slotKey = useMemo(() => {
-    return artifact?.slotKey ?? (fixedSlotKey !== '' ? fixedSlotKey : 'flower')
+    return artifact?.slotKey ?? fixedSlotKey ?? 'flower'
   }, [fixedSlotKey, artifact])
   const { currentEfficiency = 0, maxEfficiency = 0 } = cArtifact
     ? Artifact.getArtifactEfficiency(cArtifact, allSubstatFilter)
