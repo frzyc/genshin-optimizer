@@ -142,7 +142,7 @@ export default function ArtifactEditor({
   allowUpload = false,
   allowEmpty = false,
   disableSet = false,
-  fixedSlotKey = undefined,
+  fixedSlotKey,
 }: ArtifactEditorProps) {
   const queueRef = useRef(
     new ScanningQueue(textsFromImage, shouldShowDevComponents)
