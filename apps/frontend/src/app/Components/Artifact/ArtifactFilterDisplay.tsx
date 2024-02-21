@@ -69,8 +69,7 @@ export default function ArtifactFilterDisplay({
     locked = [...lockedValues],
     rvLow = 0,
     rvHigh = 900,
-    mrvLow = 0, // Max Roll Value Low
-    mrvHigh = 900, // Max Roll Value High
+    useMaxRV = false,
     lines = [],
   } = filterOption
 
@@ -253,29 +252,11 @@ export default function ArtifactFilterDisplay({
           showLevelText
           rvLow={rvLow}
           rvHigh={rvHigh}
-          mrvLow={mrvLow}
-          mrvHigh={mrvHigh}
-          reset={() => {
-            filterOptionDispatch({
-              rvLow: 0,
-              rvHigh: 900,
-              mrvLow: 0,
-              mrvHigh: 900,
-            })
-          }}
-          setLow={(low, useMax) => {
-            const key = useMax ? 'mrvLow' : 'rvLow'
-            filterOptionDispatch({ [key]: low })
-          }}
-          setHigh={(high, useMax) => {
-            const key = useMax ? 'mrvHigh' : 'rvHigh'
-            filterOptionDispatch({ [key]: high })
-          }}
-          setBoth={(low, high, useMax) => {
-            const keyLow = useMax ? 'mrvLow' : 'rvLow'
-            const keyHigh = useMax ? 'mrvHigh' : 'rvHigh'
-            filterOptionDispatch({ [keyLow]: low, [keyHigh]: high })
-          }}
+          useMaxRV={useMaxRV}
+          switchFilter={(useMaxRV) => filterOptionDispatch({ useMaxRV })}
+          setLow={(rvLow) => filterOptionDispatch({ rvLow })}
+          setHigh={(rvHigh) => filterOptionDispatch({ rvHigh })}
+          setBoth={(rvLow, rvHigh) => filterOptionDispatch({ rvLow, rvHigh })}
         />
       </Grid>
       {/* right */}
