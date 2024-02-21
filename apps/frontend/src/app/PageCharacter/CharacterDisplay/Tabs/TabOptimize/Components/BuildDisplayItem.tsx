@@ -242,6 +242,7 @@ function CompareArtifactModal({
   }, [newId, database, characterKey, onClose])
   const newLoc = database.arts.get(newId)?.location ?? ''
   const newArtifact = useArtifact(newId)
+  const oldArtifact = useArtifact(oldId)
 
   const deleteArtifact = useCallback(
     (id: string) => database.arts.remove(id),
@@ -270,7 +271,10 @@ function CompareArtifactModal({
                 onDelete={deleteArtifact}
                 mainStatAssumptionLevel={mainStatAssumptionLevel}
                 canEquip
-                editorProps={{ disableSet: true, disableSlot: true }}
+                editorProps={{
+                  disableSet: true,
+                  fixedSlotKey: oldArtifact.slotKey,
+                }}
               />
               <ArtInclusionButton id={oldId} />
             </Box>
@@ -290,7 +294,10 @@ function CompareArtifactModal({
               onDelete={deleteArtifact}
               mainStatAssumptionLevel={mainStatAssumptionLevel}
               canEquip
-              editorProps={{ disableSet: true, disableSlot: true }}
+              editorProps={{
+                disableSet: true,
+                fixedSlotKey: newArtifact?.slotKey,
+              }}
             />
             {newArtifact && <ArtInclusionButton id={newId} />}
             {newLoc &&
