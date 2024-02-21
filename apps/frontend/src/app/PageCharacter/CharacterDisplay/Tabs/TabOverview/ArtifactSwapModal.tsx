@@ -158,7 +158,6 @@ export default function ArtifactSwapModal({
             cancelEdit={onHideEditor}
             allowUpload
             allowEmpty
-            disableSlot
             fixedSlotKey={filterOption.slotKeys[0]}
           />
         </Suspense>
