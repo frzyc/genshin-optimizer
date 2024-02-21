@@ -53,16 +53,21 @@ export default function RVSlide({
       }}
     >
       <Box
-        sx={{ width: 100, height: 30, display: 'flex', alignItems: 'center' }}
+        sx={{ width: 100, height: 32, display: 'flex'}}
       >
         <Button
           onClick={() => switchFilter(!useMaxRV)}
           sx={{
             p: 0,
+            pl: 2,
             minWidth: 0,
-            width: '45%',
-            height: '100%',
+            width: '55%',
             borderRadius: '4px 0 0 4px',
+            fontWeight: 400,
+            fontSize: '16px',
+            display: 'inline',
+            textAlign: 'left',
+            color: 'rgba(255,255,255,0.9)'
           }}
         >
           {MRV_RV ? 'MRV' : 'RV'}
@@ -75,9 +80,7 @@ export default function RVSlide({
           onChange={(val) => setLow(clamp(val ?? 0, 0, sliderHigh))}
           sx={{
             pr: 1,
-            pl: 2,
-            width: '55%',
-            height: '100%',
+            width: '45%',
           }}
           inputProps={{ sx: { textAlign: 'right' } }}
           disabled={disabled}
