@@ -137,7 +137,7 @@ function EquipmentSection() {
             location: charKeyToLocCharKey(characterKey),
           })
         }}
-        setArtifact={(id) => {
+        setArtifact={(_, id) => {
           database.arts.set(id, {
             location: charKeyToLocCharKey(characterKey),
           })
