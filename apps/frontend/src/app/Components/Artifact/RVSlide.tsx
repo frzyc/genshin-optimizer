@@ -57,14 +57,13 @@ export default function RVSlide({
           onClick={() => switchFilter(!useMaxRV)}
           sx={{
             p: 0,
-            pl: 2,
             minWidth: 0,
             width: '55%',
             borderRadius: '4px 0 0 4px',
             fontWeight: 400,
             fontSize: '16px',
             display: 'inline',
-            textAlign: 'left',
+            textAlign: 'center',
             color: 'rgba(255,255,255,0.9)',
           }}
         >
