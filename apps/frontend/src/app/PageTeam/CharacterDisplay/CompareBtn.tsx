@@ -10,6 +10,8 @@ import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank'
  * The UI component that modifies the compare data in a TeamChar.
  * This is used in conjuction with useOldData hook to supply a oldData to the compare UI.
  */
+
+// TODO: Translation
 export default function CompareBtn() {
   const database = useDatabase()
   const {
@@ -34,7 +36,9 @@ export default function CompareBtn() {
     ) : compareType === 'tc' ? (
       <span>
         {database.buildTcs.get(compareBuildTcId).name}{' '}
-        <SqBadge color="info">TC</SqBadge>
+        <SqBadge color="info" sx={{ ml: 1 }}>
+          TC
+        </SqBadge>
       </span>
     ) : (
       'Equipped'
@@ -61,7 +65,12 @@ export default function CompareBtn() {
       <DropdownButton
         title={
           <>
-            {selectedLabel} {current && <SqBadge color="info">Current</SqBadge>}
+            {selectedLabel}{' '}
+            {current && (
+              <SqBadge color="info" sx={{ ml: 1 }}>
+                Current
+              </SqBadge>
+            )}
           </>
         }
         disabled={!compare || (!buildIds.length && !buildTcIds.length)}
@@ -74,7 +83,11 @@ export default function CompareBtn() {
           }
         >
           Equipped{' '}
-          {buildType === 'equipped' && <SqBadge color="info">Current</SqBadge>}
+          {buildType === 'equipped' && (
+            <SqBadge color="info" sx={{ ml: 1 }}>
+              Current
+            </SqBadge>
+          )}
         </MenuItem>
         {buildIds.map((buildId) => (
           <MenuItem
@@ -89,7 +102,9 @@ export default function CompareBtn() {
           >
             {database.builds.get(buildId).name}{' '}
             {buildType === 'real' && buildId === teamCharBuildId && (
-              <SqBadge color="info">Current</SqBadge>
+              <SqBadge color="info" sx={{ ml: 1 }}>
+                Current
+              </SqBadge>
             )}
           </MenuItem>
         ))}
@@ -104,9 +119,13 @@ export default function CompareBtn() {
             }
           >
             {database.buildTcs.get(buildTcId).name}{' '}
-            <SqBadge color="info">TC</SqBadge>
+            <SqBadge color="info" sx={{ ml: 1 }}>
+              TC
+            </SqBadge>
             {buildType === 'tc' && buildTcId === teamCharBuildTcId && (
-              <SqBadge color="info">Current</SqBadge>
+              <SqBadge color="info" sx={{ ml: 1 }}>
+                Current
+              </SqBadge>
             )}
           </MenuItem>
         ))}

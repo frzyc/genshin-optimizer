@@ -184,7 +184,6 @@ function TeammateDisplay({ teamCharId }: { teamCharId: string }) {
     params: { tab: '' },
   }
 
-  // FIXME: this doesnt work.
   const onClick = () => navigate(`/teams/${teamId}/${characterKey}/${tab}`)
 
   const dataBundle = teamData[teamMateKey]
@@ -218,12 +217,6 @@ function TeammateDisplay({ teamCharId }: { teamCharId: string }) {
   )
   return (
     <CardLight sx={{ overflow: 'visible' }}>
-      {/* <TeammateAutocomplete
-        characterKey={teamMateKey}
-        team={team}
-        setChar={setTeammate}
-        label={t('teammate', { count: index + 1 })}
-      /> */}
       {teamMateKey && teammateCharacterContext && (
         <TeamCharacterContext.Provider value={teammateCharacterContext}>
           {teamMateDataContext && (
@@ -299,6 +292,7 @@ function TcEquipmentRow() {
           gap: 1,
         }}
       >
+        {/* TODO: Translation */}
         <SqBadge color="info">TC Loadout</SqBadge>
         {Object.entries(sets).map(([setKey, number]) => (
           <Box
@@ -342,7 +336,7 @@ function CharArtifactCondDisplay() {
 function CharWeaponCondDisplay() {
   const {
     character: { key: charKey },
-  } = useContext(TeamCharacterContext)
+  } = useContext(CharacterContext)
   const { teamData } = useContext(DataContext)
   const weaponSheet = teamData[charKey]!.weaponSheet
   if (!weaponSheet.document) return null
@@ -351,7 +345,7 @@ function CharWeaponCondDisplay() {
 function CharTalentCondDisplay() {
   const {
     character: { key: charKey },
-  } = useContext(TeamCharacterContext)
+  } = useContext(CharacterContext)
   const { teamData } = useContext(DataContext)
   const characterSheet = teamData[charKey]!.characterSheet as CharacterSheet
   const sections = Object.values(characterSheet.talent).flatMap(

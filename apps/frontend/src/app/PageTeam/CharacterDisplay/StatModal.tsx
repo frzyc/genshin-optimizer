@@ -24,6 +24,7 @@ import {
 } from '../../Components/FieldDisplay'
 import ModalWrapper from '../../Components/ModalWrapper'
 import StatEditorList from '../../Components/StatEditorList'
+import { CharacterContext } from '../../Context/CharacterContext'
 import { DataContext } from '../../Context/DataContext'
 import { TeamCharacterContext } from '../../Context/TeamCharacterContext'
 import { allInputPremodKeys, uiInput as input } from '../../Formula'
@@ -162,7 +163,7 @@ function StatDisplayContent({
 }
 
 function MainStatsCards() {
-  const { characterSheet } = useContext(TeamCharacterContext)
+  const { characterSheet } = useContext(CharacterContext)
   const { data } = useContext(DataContext)
   const specialNode = data.get(input.special)
   const charEle = characterSheet.elementKey

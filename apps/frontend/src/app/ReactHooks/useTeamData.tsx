@@ -151,8 +151,9 @@ export function getTeamDataCalc(
 export function getTeamData(
   database: ArtCharDatabase,
   teamId: string | '',
-  overrideTeamCharId: string,
+  activeTeamCharId: string,
   mainStatAssumptionLevel = 0,
+  // OverrideArt/overrideWeapon is only applied to the teamchar of activeTeamCharId
   overrideArt?: ICachedArtifact[] | Data,
   overrideWeapon?: ICachedWeapon
 ): TeamDataBundle | undefined {
@@ -175,13 +176,13 @@ export function getTeamData(
     } = teamChar
     const character = database.chars.get(characterKey)
     const { key, level, constellation, ascension, talent } = character
-    const isOVerrideTeamChar = teamCharId === overrideTeamCharId
+    const isActiveTeamChar = teamCharId === activeTeamCharId
     const weapon = (() => {
-      if (overrideWeapon && isOVerrideTeamChar) return overrideWeapon
+      if (overrideWeapon && isActiveTeamChar) return overrideWeapon
       return database.teamChars.getLoadoutWeapon(teamCharId)
     })()
     const arts = (() => {
-      if (overrideArt && isOVerrideTeamChar) return overrideArt
+      if (overrideArt && isActiveTeamChar) return overrideArt
       if (buildType === 'tc' && buildTcId)
         return getArtifactData(database.buildTcs.get(buildTcId))
       return Object.values(
@@ -189,14 +190,14 @@ export function getTeamData(
       ).filter((a) => a) as ICachedArtifact[]
     })()
     const mainLevel = (() => {
-      if (mainStatAssumptionLevel && isOVerrideTeamChar)
+      if (mainStatAssumptionLevel && isActiveTeamChar)
         return mainStatAssumptionLevel
       return 0
     })()
 
     return getCharDataBundle(
       database,
-      isOVerrideTeamChar, // only true for the "main character"?
+      isActiveTeamChar, // only true for the "main character"?
       mainLevel,
       {
         key,

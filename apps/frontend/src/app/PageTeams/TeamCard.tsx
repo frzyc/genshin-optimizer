@@ -9,6 +9,9 @@ import { Box, Button, CardActionArea, Grid, Typography } from '@mui/material'
 import CharacterCardPico, {
   BlankCharacterCardPico,
 } from '../Components/Character/CharacterCardPico'
+
+// TODO: Translation
+
 export default function TeamCard({
   teamId,
   onClick,
@@ -24,7 +27,12 @@ export default function TeamCard({
   const { name, description, teamCharIds } = team
   const database = useDatabase()
   const onDel = () => {
-    if (!window.confirm(`Do you want to remote this team?`)) return
+    if (
+      !window.confirm(
+        `Do you want to remove this team? This will delete all loadouts and data (such as multi-opts) in this team as well.`
+      )
+    )
+      return
     database.teams.remove(teamId)
   }
   const onExport = () => {

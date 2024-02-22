@@ -17,7 +17,7 @@ import {
 import { useContext } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
 import ImgIcon from '../../../../Components/Image/ImgIcon'
-import { TeamCharacterContext } from '../../../../Context/TeamCharacterContext'
+import { CharacterContext } from '../../../../Context/CharacterContext'
 import { BuildTcContext } from './BuildTcContext'
 import gcsimIcon from './gcsim.png'
 
@@ -57,7 +57,7 @@ export default function GcsimButton({ disabled }: { disabled: boolean }) {
       constellation,
       talent: { auto, skill, burst },
     },
-  } = useContext(TeamCharacterContext)
+  } = useContext(CharacterContext)
   const {
     buildTc: {
       weapon: {

@@ -134,10 +134,8 @@ function ArtifactSectionCard() {
     teamChar: { buildType, buildId },
   } = useContext(TeamCharacterContext)
   const { data } = useContext(DataContext)
-  const hasEquipped = useMemo(
-    () => !!Object.values(equippedArtifacts).filter((i) => i).length,
-    [equippedArtifacts]
-  )
+  const hasEquipped = !!Object.values(equippedArtifacts).filter((i) => i).length
+
   const loadoutEquip = buildId && buildType === 'real'
   const unequipArts = () => {
     const confirmMsg = loadoutEquip

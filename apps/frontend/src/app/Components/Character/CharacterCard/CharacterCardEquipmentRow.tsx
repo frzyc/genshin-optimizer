@@ -3,7 +3,7 @@ import { allArtifactSlotKeys } from '@genshin-optimizer/gi/consts'
 import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { Box, Grid } from '@mui/material'
-import { useContext, useMemo } from 'react'
+import { useContext } from 'react'
 import { DataContext } from '../../../Context/DataContext'
 import { input } from '../../../Formula'
 import ArtifactCardPico from '../../Artifact/ArtifactCardPico'
@@ -33,14 +33,11 @@ export function CharacterCardEquipmentRow({
 function Artifacts() {
   const database = useDatabase()
   const { data } = useContext(DataContext)
-  const artifacts = useMemo(
-    () =>
-      allArtifactSlotKeys.map((k) => [
-        k,
-        database.arts.get(data.get(input.art[k].id).value?.toString() ?? ''),
-      ]),
-    [data, database]
-  ) as Array<[ArtifactSlotKey, ICachedArtifact | undefined]>
+  const artifacts: Array<[ArtifactSlotKey, ICachedArtifact | undefined]> =
+    allArtifactSlotKeys.map((k) => [
+      k,
+      database.arts.get(data.get(input.art[k].id).value?.toString() ?? ''),
+    ])
 
   return (
     <>

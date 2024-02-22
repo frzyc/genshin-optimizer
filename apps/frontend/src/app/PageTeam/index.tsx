@@ -71,7 +71,6 @@ function Page({ teamId, onClose }: { teamId: string; onClose?: () => void }) {
   const database = useDatabase()
   const { gender } = useDBMeta()
 
-  // const [currentCharIndex, setCurrentCharIndex] = useState(0)
   const team = useTeam(teamId)
   const { teamCharIds } = team
 

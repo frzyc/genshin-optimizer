@@ -34,7 +34,7 @@ export function CharacterCardHeader({
   const actionWrapperFunc = useCallback(
     (children) => (
       <CardActionArea
-        onClick={() => onClick?.()}
+        onClick={onClick}
         sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column' }}
       >
         {children}

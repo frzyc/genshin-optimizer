@@ -8,6 +8,9 @@ import type { UIData } from '../Formula/uiData'
 import { getTeamDataCalc } from '../ReactHooks/useTeamData'
 import { getArtifactData } from './CharacterDisplay/Tabs/TabTheorycraft/optimizeTc'
 
+/**
+ * generate data for the "compare loadout function", usually used in conjunction with `DataContext.oldData`
+ */
 export default function useOldData(): undefined | UIData {
   const database = useDatabase()
   const {

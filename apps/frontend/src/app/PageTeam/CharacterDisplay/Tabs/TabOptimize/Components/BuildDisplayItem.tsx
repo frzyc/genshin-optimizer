@@ -60,6 +60,8 @@ type BuildDisplayItemProps = {
   extraButtonsRight?: JSX.Element
   extraButtonsLeft?: JSX.Element
 }
+
+// TODO: Translation for loadout UI
 //for displaying each artifact build
 export default function BuildDisplayItem({
   label,

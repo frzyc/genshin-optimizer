@@ -94,7 +94,7 @@ function CharacterPanel() {
           <Route path="/:characterKey/optimize" element={<TabBuild />} />
         )}
 
-        {shouldShowDevComponents && (
+        {!isTCBuild && shouldShowDevComponents && (
           <Route path="/:characterKey/upopt" element={<TabUpopt />} />
         )}
       </Routes>

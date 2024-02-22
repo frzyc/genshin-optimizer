@@ -175,6 +175,7 @@ function InTeam() {
   )
   if (!teamIds.length) return null
 
+  // TODO: Translation
   return (
     <Box>
       <Typography variant={'h6'}>

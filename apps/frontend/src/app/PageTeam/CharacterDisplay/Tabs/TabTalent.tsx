@@ -20,7 +20,6 @@ import DocumentDisplay from '../../../Components/DocumentDisplay'
 import { NodeFieldDisplay } from '../../../Components/FieldDisplay'
 import { CharacterContext } from '../../../Context/CharacterContext'
 import { DataContext } from '../../../Context/DataContext'
-import { TeamCharacterContext } from '../../../Context/TeamCharacterContext'
 import type { TalentSheetElementKey } from '../../../Data/Characters/ICharacterSheet'
 import { uiInput as input } from '../../../Formula'
 import type { NodeDisplay } from '../../../Formula/uiData'
@@ -36,7 +35,7 @@ const talentSpacing = {
 
 export default function CharacterTalentPane() {
   const { t } = useTranslation('sheet_gen')
-  const { character, characterSheet } = useContext(TeamCharacterContext)
+  const { character, characterSheet } = useContext(CharacterContext)
   const { data } = useContext(DataContext)
   const characterDispatch = useCharacterReducer(character.key)
   const skillBurstList = [

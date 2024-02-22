@@ -4,7 +4,7 @@ import { Grid } from '@mui/material'
 import { useContext } from 'react'
 import ArtifactCardNano from '../../../Components/Artifact/ArtifactCardNano'
 import WeaponCardNano from '../../../Components/Weapon/WeaponCardNano'
-import { TeamCharacterContext } from '../../../Context/TeamCharacterContext'
+import { CharacterContext } from '../../../Context/CharacterContext'
 
 export default function BuildEquip({
   weaponId,
@@ -15,7 +15,7 @@ export default function BuildEquip({
 }) {
   const {
     character: { key: characterKey },
-  } = useContext(TeamCharacterContext)
+  } = useContext(CharacterContext)
   const weaponTypeKey = getCharData(characterKey).weaponType
   return (
     <Grid container spacing={1} columns={{ xs: 2, sm: 2, md: 3, lg: 6, xl: 6 }}>

@@ -22,6 +22,8 @@ import { useNavigate } from 'react-router-dom'
 import TeamCard from './TeamCard'
 const columns = { xs: 1, sm: 2, md: 3, lg: 4, xl: 4 }
 
+// TODO: Translation
+
 export default function PageTeams() {
   const database = useDatabase()
   const [dbDirty, forceUpdate] = useForceUpdate()

@@ -28,9 +28,10 @@ import {
 import { useContext, useDeferredValue, useEffect, useState } from 'react'
 import EquippedGrid from '../../../Components/Character/EquippedGrid'
 import CloseButton from '../../../Components/CloseButton'
+import { CharacterContext } from '../../../Context/CharacterContext'
 import { TeamCharacterContext } from '../../../Context/TeamCharacterContext'
 import BuildEquip from './BuildEquip'
-
+// TODO: Translation
 export function Build({
   buildId,
   active = false,
@@ -156,7 +157,7 @@ function BuildEditor({
 }) {
   const {
     character: { key: characterKey },
-  } = useContext(TeamCharacterContext)
+  } = useContext(CharacterContext)
   const weaponTypeKey = getCharData(characterKey).weaponType
   const database = useDatabase()
   const build = useBuild(buildId)

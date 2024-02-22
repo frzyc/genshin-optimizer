@@ -81,6 +81,7 @@ import {
 } from '../../Types/consts'
 import OptimizationTargetSelector from './Tabs/TabOptimize/Components/OptimizationTargetSelector'
 import { TargetSelectorModal } from './Tabs/TabOptimize/Components/TargetSelectorModal'
+import { CharacterContext } from '../../Context/CharacterContext'
 
 const MAX_DESC_TOOLTIP_LENGTH = 300
 
@@ -574,7 +575,7 @@ function CustomTargetDisplay({
   onDup: () => void
 }) {
   const { t } = useTranslation('page_character')
-  const { characterSheet } = useContext(TeamCharacterContext)
+  const { characterSheet } = useContext(CharacterContext)
   const { data } = useContext(DataContext)
   const { path, weight, hitMode, reaction, infusionAura, bonusStats } =
     customTarget

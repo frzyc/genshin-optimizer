@@ -173,25 +173,6 @@ function getCharData(
     [characterKey]: char1DataBundle.data,
   }
 
-  // char1DataBundle.character.team.forEach((ck) => {
-  //   if (!ck) return
-  //   const tchar = database.chars.get(ck)
-  //   if (!tchar) return
-  //   const databundle = getCharDataBundle(
-  //     database,
-  //     false,
-  //     0,
-  //     { ...tchar, conditional: character.teamConditional[ck] ?? {} },
-  //     database.weapons.get(tchar.equippedWeapon) ?? defaultInitialWeapon(),
-  //     Object.values(tchar.equippedArtifacts)
-  //       .map((a) => database.arts.get(a))
-  //       .filter((a) => a) as ICachedArtifact[]
-  //   )
-  //   if (!databundle) return
-  //   teamBundle[ck] = databundle
-  //   teamData[ck] = databundle.data
-  // })
-
   return { teamData, teamBundle }
 }
 type CharBundle = {

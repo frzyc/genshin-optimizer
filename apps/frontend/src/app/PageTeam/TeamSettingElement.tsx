@@ -25,6 +25,9 @@ import { Suspense, useDeferredValue, useEffect, useState } from 'react'
 import CharacterSelectionModal from '../Components/Character/CharacterSelectionModal'
 import CloseButton from '../Components/CloseButton'
 import CharIconSide from '../Components/Image/CharIconSide'
+
+// TODO: Translation
+
 export default function TeamSettingElement({ teamId }: { teamId: string }) {
   const database = useDatabase()
   const team = database.teams.get(teamId)
@@ -100,8 +103,8 @@ export default function TeamSettingElement({ teamId }: { teamId: string }) {
             />
             <Typography variant="h6">Team Editor</Typography>
             <Alert severity="info" variant="filled">
-              The first character in the team received any "active on-field"
-              character buffs.
+              The first character in the team receives any "active on-field
+              character" buffs
             </Alert>
             <TeamCharacterSelector teamId={teamId} />
           </CardContent>
@@ -128,7 +131,7 @@ function TeamCharacterSelector({ teamId }: { teamId: string }) {
         // Already have a teamChar at destination, prompt for deletion
         if (
           !window.confirm(
-            `Do you want to replace existing character with a new character? The loadouts and data on this existing character will be deleted.`
+            `Do you want to replace existing character with a new character? The loadouts and data (such as multi-opts) on this existing character will be deleted.`
           )
         )
           return
@@ -156,7 +159,7 @@ function TeamCharacterSelector({ teamId }: { teamId: string }) {
   const onDel = (index: number) => () => {
     if (
       !window.confirm(
-        `Do you want to delete this character? The loadouts and data on this character will be deleted.`
+        `Do you want to delete this character? The loadouts and data (such as multi-opts) on this character will be deleted.`
       )
     )
       return

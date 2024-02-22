@@ -122,7 +122,7 @@ export function migrateGOOD(good: IGOOD & IGO): IGOOD & IGO {
     }
   })
 
-  // 9.5.3 - Present
+  // 9.5.3 - 9.22.2
   migrateVersion(23, () => {
     const buildSettings = (good as any).buildSettings
     if (buildSettings) {
@@ -142,6 +142,7 @@ export function migrateGOOD(good: IGOOD & IGO): IGOOD & IGO {
     }
   })
 
+  // 10.0.0 - present
   migrateVersion(24, () => {
     const chars = (good as any).characters
     const buildSettings = (good as any).buildSettings
@@ -323,7 +324,7 @@ export function migrate(storage: DBStorage) {
     }
   })
 
-  // 9.5.3 - 9.22.1
+  // 9.5.3 - 9.22.2
   migrateVersion(23, () => {
     for (const key of storage.keys) {
       if (key.startsWith('buildSetting_')) {
