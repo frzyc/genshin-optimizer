@@ -2,6 +2,7 @@ import { useForceUpdate } from '@genshin-optimizer/common/react-util'
 import { AnvilIcon } from '@genshin-optimizer/common/svgicons'
 import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { FlowerIcon } from '@genshin-optimizer/gi/svgicons'
+import { SillyContext } from '@genshin-optimizer/gi/ui'
 import {
   Article,
   Construction,
@@ -10,6 +11,7 @@ import {
   Scanner,
   Settings,
 } from '@mui/icons-material'
+import GroupsIcon from '@mui/icons-material/Groups'
 import {
   AppBar,
   Avatar,
@@ -34,7 +36,6 @@ import {
 import { Suspense, useContext, useEffect, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Link as RouterLink, useMatch } from 'react-router-dom'
-import { SillyContext } from './Context/SillyContext'
 import { shouldShowDevComponents } from './Util/Util'
 import silly_icon from './silly_icon.png'
 type ITab = {
@@ -64,6 +65,13 @@ const characters: ITab = {
   to: '/characters',
   value: 'characters',
   textSuffix: <CharacterChip key="charAdd" />,
+}
+const teams: ITab = {
+  i18Key: 'tabs.teams',
+  icon: <GroupsIcon />,
+  to: '/teams',
+  value: 'teams',
+  textSuffix: <TeamChip key="charAdd" />,
 }
 const tools: ITab = {
   i18Key: 'tabs.tools',
@@ -122,6 +130,19 @@ function CharacterChip() {
   )
   return <Chip label={<strong>{total}</strong>} size="small" />
 }
+function TeamChip() {
+  const database = useDatabase()
+  const [dirty, setDirty] = useForceUpdate()
+  useEffect(
+    () => database.teams.followAny(() => setDirty()),
+    [database, setDirty]
+  )
+  const total = useMemo(
+    () => dirty && database.teams.keys.length,
+    [dirty, database]
+  )
+  return <Chip label={<strong>{total}</strong>} size="small" />
+}
 function WeaponChip() {
   const database = useDatabase()
   const [dirty, setDirty] = useForceUpdate()
@@ -148,6 +169,7 @@ const maincontent = [
   artifacts,
   weapons,
   characters,
+  teams,
   tools,
   scanner,
   doc,

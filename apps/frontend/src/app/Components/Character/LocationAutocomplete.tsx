@@ -10,12 +10,12 @@ import {
   charKeyToLocGenderedCharKey,
 } from '@genshin-optimizer/gi/consts'
 import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
+import { SillyContext } from '@genshin-optimizer/gi/ui'
 import { BusinessCenter } from '@mui/icons-material'
 import type { AutocompleteProps } from '@mui/material'
 import { Box, Skeleton } from '@mui/material'
 import { Suspense, useCallback, useContext, useEffect, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
-import { SillyContext } from '../../Context/SillyContext'
 import { getCharSheet } from '../../Data/Characters'
 import type CharacterSheet from '../../Data/Characters/CharacterSheet'
 import type { Variant } from '../../Formula/type'

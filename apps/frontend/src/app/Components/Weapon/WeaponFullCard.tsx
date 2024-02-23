@@ -11,15 +11,21 @@ import type { NodeDisplay } from '../../Formula/uiData'
 import { nodeVStr } from '../../Formula/uiData'
 import CardDark from '../Card/CardDark'
 import SqBadge from '../SqBadge'
-
+import type { IWeapon } from '@genshin-optimizer/gi/good'
 export default function WeaponFullCard({ weaponId }: { weaponId: string }) {
   const weapon = useWeapon(weaponId)
+  return <WeaponFullCardObj weapon={weapon} />
+}
+export function WeaponFullCardObj({ weapon }: { weapon: IWeapon }) {
   const weaponSheet = weapon?.key && getWeaponSheet(weapon.key)
   const UIData = useMemo(
     () =>
       weaponSheet &&
       weapon &&
-      computeUIData([weaponSheet.data, dataObjForWeapon(weapon)]),
+      computeUIData([
+        weaponSheet.data,
+        dataObjForWeapon(weapon as ICachedWeapon),
+      ]),
     [weaponSheet, weapon]
   )
   if (!weapon || !weaponSheet || !UIData) return null

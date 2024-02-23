@@ -9,6 +9,7 @@ import {
 } from '@genshin-optimizer/common/util'
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
 import { allRarityKeys, allWeaponTypeKeys } from '@genshin-optimizer/gi/consts'
+import { initialWeapon } from '@genshin-optimizer/gi/db'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { Add } from '@mui/icons-material'
 import {
@@ -42,7 +43,6 @@ import {
   weaponSortConfigs,
   weaponSortMap,
 } from '../Util/WeaponSort'
-import { initialWeapon } from '../Util/WeaponUtil'
 import { catTotal } from '../Util/totalUtils'
 import WeaponCard from './WeaponCard'
 const WeaponSelectionModal = React.lazy(

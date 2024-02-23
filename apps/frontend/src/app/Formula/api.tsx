@@ -17,6 +17,8 @@ import type {
   ICachedArtifact,
   ICachedCharacter,
   ICachedWeapon,
+  Team,
+  TeamCharacter,
 } from '@genshin-optimizer/gi/db'
 import { getMainStatValue } from '@genshin-optimizer/gi/util'
 import { objectMap } from '../Util/Util'
@@ -37,6 +39,7 @@ import {
   setReadNodeKeys,
   sum,
 } from './utils'
+import type { ICharacter } from '@genshin-optimizer/gi/good'
 const asConst = true as const,
   pivot = true as const
 
@@ -98,14 +101,17 @@ function dataObjForArtifact(
     },
   }
 }
-// when sheetData is supplied, then it is assumed that the data is in "Custom Multi-target" mode
-function dataObjForCharacter(char: ICachedCharacter, sheetData?: Data): Data {
+
+/**
+ * Only used for calculating character-specific. do not use for team.
+ */
+function dataObjForCharacter(char: ICachedCharacter): Data {
   const result: Data = {
     lvl: constant(char.level),
     constellation: constant(char.constellation),
     asc: constant(char.ascension),
     infusion: {
-      team: char.infusionAura ? constant(char.infusionAura) : undefined,
+      team: undefined,
     },
     premod: {
       auto: constant(char.talent.auto),
@@ -115,32 +121,86 @@ function dataObjForCharacter(char: ICachedCharacter, sheetData?: Data): Data {
     enemy: {
       ...objKeyMap(
         allElementWithPhyKeys.map((ele) => `${ele}_res_`),
-        (ele) =>
-          percent(
-            (char.enemyOverride[`${ele.slice(0, -5)}_enemyRes_`] ?? 10) / 100
-          )
+        () => percent(10 / 100)
       ),
-      level: constant(char.enemyOverride.enemyLevel ?? char.level),
+      level: constant(100),
     },
     hit: {
-      hitMode: constant(char.hitMode),
-      reaction: constant(char.reaction),
+      hitMode: constant('avgHit'),
+    },
+    customBonus: {},
+  }
+  return result
+}
+
+export interface CharInfo extends ICharacter {
+  infusionAura: TeamCharacter['infusionAura']
+  customMultiTargets: TeamCharacter['customMultiTargets']
+  conditional: TeamCharacter['conditional']
+  bonusStats: TeamCharacter['bonusStats']
+  enemyOverride: Team['enemyOverride']
+  hitMode: TeamCharacter['hitMode']
+  reaction: TeamCharacter['reaction']
+}
+/**
+ * when sheetData is supplied, then it is assumed that the data is in "Custom Multi-target" mode
+ */
+export function dataObjForCharacterNew(
+  {
+    level,
+    constellation,
+    ascension,
+    talent,
+
+    infusionAura,
+    customMultiTargets,
+    conditional,
+    bonusStats,
+    enemyOverride,
+    hitMode: globalHitMode,
+    reaction,
+  }: CharInfo,
+  sheetData?: Data
+): Data {
+  const result: Data = {
+    lvl: constant(level),
+    constellation: constant(constellation),
+    asc: constant(ascension),
+    infusion: {
+      team: infusionAura ? constant(infusionAura) : undefined,
+    },
+    premod: {
+      auto: constant(talent.auto),
+      skill: constant(talent.skill),
+      burst: constant(talent.burst),
+    },
+    enemy: {
+      ...objKeyMap(
+        allElementWithPhyKeys.map((ele) => `${ele}_res_`),
+        (ele) =>
+          percent((enemyOverride[`${ele.slice(0, -5)}_enemyRes_`] ?? 10) / 100)
+      ),
+      level: constant(enemyOverride.enemyLevel ?? level),
+    },
+    hit: {
+      hitMode: constant(globalHitMode),
+      reaction: constant(reaction),
     },
     customBonus: {},
   }
 
-  for (const [key, value] of Object.entries(char.bonusStats))
+  for (const [key, value] of Object.entries(bonusStats))
     result.customBonus![key] = key.endsWith('_')
       ? percent(value / 100)
       : constant(value)
 
-  if (char.enemyOverride.enemyDefRed_)
-    result.premod!.enemyDefRed_ = percent(char.enemyOverride.enemyDefRed_ / 100)
-  if (char.enemyOverride.enemyDefIgn_)
-    result.enemy!.defIgn = percent(char.enemyOverride.enemyDefIgn_ / 100)
+  if (enemyOverride.enemyDefRed_)
+    result.premod!.enemyDefRed_ = percent(enemyOverride.enemyDefRed_ / 100)
+  if (enemyOverride.enemyDefIgn_)
+    result.enemy!.defIgn = percent(enemyOverride.enemyDefIgn_ / 100)
 
   crawlObject(
-    char.conditional,
+    conditional,
     ['conditional'],
     (x: any) => typeof x === 'string',
     (x: string, keys: string[]) => layeredAssignment(result, keys, constant(x))
@@ -148,15 +208,14 @@ function dataObjForCharacter(char: ICachedCharacter, sheetData?: Data): Data {
 
   if (sheetData?.display) {
     sheetData.display.custom = {}
-    const customMultiTarget = char.customMultiTarget
-    customMultiTarget.forEach(({ name, targets }, i) => {
+    customMultiTargets.forEach(({ name, targets }, i) => {
       const targetNodes = targets.map(
         ({ weight, path, hitMode, reaction, infusionAura, bonusStats }) => {
           const targetNode = objPathValue(sheetData.display, path) as
             | NumNode
             | undefined
           if (!targetNode) return constant(0)
-          if (hitMode === 'global') hitMode = char.hitMode
+          if (hitMode === 'global') hitMode = globalHitMode
 
           return prod(
             constant(weight),
@@ -178,6 +237,7 @@ function dataObjForCharacter(char: ICachedCharacter, sheetData?: Data): Data {
           )
         }
       )
+
       // Make the variant "invalid" because its not easy to determine variants in multitarget
       const multiTargetNode = infoMut(sum(...targetNodes), {
         name,

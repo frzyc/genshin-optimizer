@@ -4,7 +4,7 @@ import type {
   WeaponKey,
   WeaponTypeKey,
 } from '@genshin-optimizer/gi/consts'
-import type { ICachedWeapon } from '@genshin-optimizer/gi/db'
+import type { IWeapon } from '@genshin-optimizer/gi/good'
 import type { WeaponData } from '@genshin-optimizer/gi/stats'
 import { getLevelString } from '@genshin-optimizer/gi/util'
 import { displayDataMap } from '.'
@@ -54,7 +54,7 @@ export default class WeaponSheet {
         ([_, sheet]) => (sheet as WeaponSheet).weaponType === weaponType
       )
     )
-  static getLevelString = (weapon: ICachedWeapon) =>
+  static getLevelString = (weapon: IWeapon) =>
     getLevelString(weapon.level, weapon.ascension)
   get tr() {
     return WeaponSheet.tr(this.key)

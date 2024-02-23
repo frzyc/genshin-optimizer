@@ -2,18 +2,15 @@ import { deepFreeze } from '@genshin-optimizer/common/util'
 import type {
   CharacterKey,
   LocationCharacterKey,
-  SubstatKey,
 } from '@genshin-optimizer/gi/consts'
-import { allSubstatKeys, allTravelerKeys } from '@genshin-optimizer/gi/consts'
+import { allTravelerKeys } from '@genshin-optimizer/gi/consts'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
 import { DataManager } from '../DataManager'
 
 export interface ICharMeta {
-  rvFilter: SubstatKey[]
   favorite: boolean
 }
 const initCharMeta: ICharMeta = deepFreeze({
-  rvFilter: [...allSubstatKeys],
   favorite: false,
 })
 const storageHash = 'charMeta_'
@@ -36,11 +33,10 @@ export class CharMetaDataManager extends DataManager<
   override validate(obj: any): ICharMeta | undefined {
     if (typeof obj !== 'object') return undefined
 
-    let { rvFilter, favorite } = obj
-    if (!Array.isArray(rvFilter)) rvFilter = []
-    else rvFilter = rvFilter.filter((k) => allSubstatKeys.includes(k))
+    let { favorite } = obj
+
     if (typeof favorite !== 'boolean') favorite = false
-    return { rvFilter, favorite }
+    return { favorite }
   }
 
   override toStorageKey(key: CharacterKey): string {
