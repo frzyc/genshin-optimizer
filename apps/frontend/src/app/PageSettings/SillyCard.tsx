@@ -1,4 +1,5 @@
 import { DiscordIcon } from '@genshin-optimizer/common/svgicons'
+import { SillyContext } from '@genshin-optimizer/gi/ui'
 import { Android as AndroidIcon, Apple as AppleIcon } from '@mui/icons-material'
 import CheckBoxIcon from '@mui/icons-material/CheckBox'
 import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank'
@@ -13,7 +14,6 @@ import {
 import { useContext } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
 import CardLight from '../Components/Card/CardLight'
-import { SillyContext } from '../Context/SillyContext'
 import silly_icon from '../silly_icon.png'
 export default function SillyCard() {
   const { silly, setSilly } = useContext(SillyContext)

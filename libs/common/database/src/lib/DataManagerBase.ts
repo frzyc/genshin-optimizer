@@ -109,11 +109,13 @@ export class DataManagerBase<
   }
   remove(key: CacheKey, notify = true) {
     const rem = this.data[key]
+    if (!rem) return rem
     delete this.data[key]
     this.removeStorageEntry(key)
 
     if (notify) this.trigger(key, 'remove', rem)
     delete this.listeners[key]
+    return rem
   }
   /**
    * change the id of the entry in `oldKey` to a `newKey`.

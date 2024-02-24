@@ -24,22 +24,10 @@ import {
   getSubstatRolls,
   getSubstatValue,
 } from '@genshin-optimizer/gi/util'
+import type { ICachedArtifact, ICachedSubstat } from '../../Interfaces'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
 import { DataManager } from '../DataManager'
 import type { IGO, ImportResult } from '../exim'
-
-export interface ICachedArtifact extends IArtifact {
-  id: string
-  mainStatVal: number
-  substats: ICachedSubstat[]
-  probability?: number
-}
-
-export interface ICachedSubstat extends ISubstat {
-  rolls: number[]
-  efficiency: number
-  accurateValue: number
-}
 
 const statMap = {
   hp: 'HP',
@@ -152,12 +140,12 @@ export class ArtifactDataManager extends DataManager<
     this.set(id, value)
     return id
   }
-  override remove(key: string, notify = true) {
-    const art = this.get(key)
-    if (!art) return
-    art.location &&
-      this.database.chars.setEquippedArtifact(art.location, art.slotKey, '')
-    super.remove(key, notify)
+  override remove(key: string, notify?: boolean): ICachedArtifact | undefined {
+    const art = super.remove(key, notify)
+    if (art)
+      art.location &&
+        this.database.chars.setEquippedArtifact(art.location, art.slotKey, '')
+    return art
   }
   setProbability(id: string, probability?: number) {
     const art = this.get(id)

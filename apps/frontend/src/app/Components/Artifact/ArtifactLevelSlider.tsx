@@ -1,5 +1,5 @@
 import { clamp } from '@genshin-optimizer/common/util'
-import { Card, Slider } from '@mui/material'
+import { Box, Card, Divider, Slider } from '@mui/material'
 import { useCallback, useEffect, useState } from 'react'
 import CustomNumberInput from '../CustomNumberInput'
 
@@ -46,19 +46,41 @@ export default function ArtifactLevelSlider({
         overflow: 'visible',
       }}
     >
-      <CustomNumberInput
-        value={sliderLow}
-        onChange={(val) => setLow(clamp(val ?? 0, 0, levelHigh))}
-        sx={{
-          px: 1,
-          pl: showLevelText ? 2 : undefined,
-          width: showLevelText ? 100 : 50,
-          borderRadius: '4px 0 0 4px',
-        }}
-        inputProps={{ sx: { textAlign: showLevelText ? 'right' : 'center' } }}
-        startAdornment={showLevelText ? 'Level: ' : undefined}
-        disabled={disabled}
-      />
+      <Box
+        sx={{ width: showLevelText ? 100 : 55, height: 32, display: 'flex' }}
+      >
+        {showLevelText ? (
+          <>
+            <span
+              style={{
+                padding: 0,
+                width: '55%',
+                borderRadius: '4px 0 0 4px',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                color: 'rgba(255,255,255,0.9)',
+                backgroundColor: 'rgb(30,120,200)',
+              }}
+            >
+              Level
+            </span>
+            <Divider orientation="vertical" flexItem />
+          </>
+        ) : undefined}
+
+        <CustomNumberInput
+          value={sliderLow}
+          onChange={(val) => setLow(clamp(val ?? 0, 0, levelHigh))}
+          sx={{
+            px: 1,
+            width: showLevelText ? '45%' : '100%',
+            borderRadius: showLevelText ? 0 : '4px 0 0 4px',
+          }}
+          inputProps={{ sx: { textAlign: showLevelText ? 'right' : 'center' } }}
+          disabled={disabled}
+        />
+      </Box>
       <Slider
         sx={{ width: 100, flexGrow: 1, mx: 2 }}
         getAriaLabel={() => 'Arifact Level Range'}

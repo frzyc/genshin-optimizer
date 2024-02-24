@@ -143,10 +143,10 @@ export class WeaponDataManager extends DataManager<
     this.set(id, value)
     return id
   }
-  override remove(key: string, notify = true) {
+  override remove(key: string, notify?: boolean): ICachedWeapon | undefined {
     const weapon = this.get(key)
-    if (!weapon || weapon.location) return // Can't delete equipped weapon here
-    super.remove(key, notify)
+    if (!weapon || weapon.location) return undefined // Can't delete equipped weapon here
+    return super.remove(key, notify)
   }
   override importGOOD(good: IGOOD & IGO, result: ImportResult) {
     result.weapons.beforeMerge = this.values.length

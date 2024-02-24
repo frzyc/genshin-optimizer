@@ -1,4 +1,5 @@
 import { useForceUpdate } from '@genshin-optimizer/common/react-util'
+import { objMap } from '@genshin-optimizer/common/util'
 import type { CharacterKey, GenderKey } from '@genshin-optimizer/gi/consts'
 import type {
   ArtCharDatabase,
@@ -6,9 +7,10 @@ import type {
   ICachedCharacter,
   ICachedWeapon,
 } from '@genshin-optimizer/gi/db'
-import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
-import { useDeferredValue, useEffect, useMemo } from 'react'
+import { useDBMeta, useDatabase, useTeam } from '@genshin-optimizer/gi/db-ui'
+import { useContext, useDeferredValue, useEffect, useMemo } from 'react'
 import type { TeamData } from '../Context/DataContext'
+import { TeamCharacterContext } from '../Context/TeamCharacterContext'
 import { allArtifactData } from '../Data/Artifacts'
 import { getCharSheet } from '../Data/Characters'
 import type CharacterSheet from '../Data/Characters/CharacterSheet'
@@ -16,16 +18,17 @@ import { resonanceData } from '../Data/Resonance'
 import { getWeaponSheet } from '../Data/Weapons'
 import WeaponSheet from '../Data/Weapons/WeaponSheet'
 import { common } from '../Formula'
+import type { CharInfo } from '../Formula/api'
 import {
   dataObjForArtifact,
-  dataObjForCharacter,
+  dataObjForCharacterNew,
   dataObjForWeapon,
   mergeData,
   uiDataForTeam,
 } from '../Formula/api'
 import type { Data } from '../Formula/type'
+import { getArtifactData } from '../PageTeam/CharacterDisplay/Tabs/TabTheorycraft/optimizeTc'
 import { objectMap } from '../Util/Util'
-import { defaultInitialWeapon } from '../Util/WeaponUtil'
 
 type TeamDataBundle = {
   teamData: Dict<CharacterKey, Data[]>
@@ -33,134 +36,193 @@ type TeamDataBundle = {
 }
 
 export default function useTeamData(
-  characterKey: CharacterKey | '',
   mainStatAssumptionLevel = 0,
   overrideArt?: ICachedArtifact[] | Data,
   overrideWeapon?: ICachedWeapon
 ): TeamData | undefined {
+  const { teamId, teamCharId: overrideTeamCharId } =
+    useContext(TeamCharacterContext)
   const database = useDatabase()
   const [dbDirty, setDbDirty] = useForceUpdate()
   const dbDirtyDeferred = useDeferredValue(dbDirty)
   const { gender } = useDBMeta()
+  const { teamCharIds } = useTeam(teamId) ?? { teamCharIds: [] }
   const data = useMemo(
     () =>
       dbDirtyDeferred &&
       getTeamDataCalc(
         database,
-        characterKey,
-        mainStatAssumptionLevel,
+        teamId,
         gender,
+        overrideTeamCharId,
+        mainStatAssumptionLevel,
         overrideArt,
         overrideWeapon
       ),
     [
       dbDirtyDeferred,
       gender,
-      characterKey,
+      teamId,
       database,
       mainStatAssumptionLevel,
+      overrideTeamCharId,
       overrideArt,
       overrideWeapon,
     ]
   )
 
   useEffect(
-    () =>
-      characterKey
-        ? database.chars.follow(characterKey, setDbDirty)
-        : undefined,
-    [characterKey, setDbDirty, database]
+    () => (teamId ? database.teams.follow(teamId, setDbDirty) : undefined),
+    [teamId, setDbDirty, database]
   )
+
+  useEffect(() => {
+    if (!dbDirty) return () => {}
+    const unfollowTeamChars = teamCharIds.map((teamCharId) =>
+      database.teamChars.follow(teamCharId, (_k, r) => {
+        if (r === 'update') setDbDirty()
+      })
+    )
+    const unfollowChars = teamCharIds.map((teamCharId) => {
+      const teamChar = database.teamChars.get(teamCharId)
+      if (!teamChar) return () => {}
+      return database.chars.follow(teamChar.key, (_k, r) => {
+        if (r === 'update') setDbDirty()
+      })
+    })
+    const unfollowBuilds = teamCharIds.map((teamCharId) => {
+      const teamChar = database.teamChars.get(teamCharId)
+      if (!teamChar) return () => {}
+      if (teamChar.buildType === 'equipped')
+        return database.chars.follow(teamChar.key, () => setDbDirty())
+      else if (teamChar.buildType === 'real')
+        return database.builds.follow(teamChar.buildId, () => setDbDirty())
+      else if (teamChar.buildType === 'tc')
+        return database.buildTcs.follow(teamChar.buildTcId, () => setDbDirty())
+      return () => {}
+    })
+
+    return () => {
+      unfollowTeamChars.forEach((unfollow) => unfollow())
+      unfollowChars.forEach((unfollow) => unfollow())
+      unfollowBuilds.forEach((unfollow) => unfollow())
+    }
+  }, [dbDirty, database, teamCharIds, setDbDirty])
 
   return data
 }
 
 export function getTeamDataCalc(
   database: ArtCharDatabase,
-  characterKey: CharacterKey | '',
-  mainStatAssumptionLevel = 0,
+  teamId: string | '',
   gender: GenderKey,
+  overrideTeamCharId: string,
+  mainStatAssumptionLevel = 0,
   overrideArt?: ICachedArtifact[] | Data,
   overrideWeapon?: ICachedWeapon
 ): TeamData | undefined {
-  if (!characterKey) return undefined
+  if (!teamId) return undefined
+  const team = database.teams.get(teamId)
+  if (!team) return undefined
+  const { teamCharIds } = team
+  const active = database.teamChars.get(teamCharIds[0])
+  if (!active) return undefined
 
-  // Retrive from cache
-  if (!mainStatAssumptionLevel && !overrideArt && !overrideWeapon) {
-    const cache = database._getTeamData(characterKey)
-    if (cache) return cache as TeamData
-  }
   const { teamData, teamBundle } =
     getTeamData(
       database,
-      characterKey,
+      teamId,
+      overrideTeamCharId,
       mainStatAssumptionLevel,
       overrideArt,
       overrideWeapon
     ) ?? {}
   if (!teamData || !teamBundle) return undefined
 
-  const calcData = uiDataForTeam(teamData, gender, characterKey)
+  const calcData = uiDataForTeam(teamData, gender, active.key)
 
   const data = objectMap(calcData, (obj, ck) => {
     const { data: _, ...rest } = teamBundle[ck]!
     return { ...obj, ...rest }
   })
-  if (!mainStatAssumptionLevel && !overrideArt && !overrideWeapon)
-    database.cacheTeamData(characterKey, data)
   return data
 }
 
 export function getTeamData(
   database: ArtCharDatabase,
-  characterKey: CharacterKey | '',
+  teamId: string | '',
+  activeTeamCharId: string,
   mainStatAssumptionLevel = 0,
+  // OverrideArt/overrideWeapon is only applied to the teamchar of activeTeamCharId
   overrideArt?: ICachedArtifact[] | Data,
   overrideWeapon?: ICachedWeapon
 ): TeamDataBundle | undefined {
-  if (!characterKey) return undefined
-  const character = database.chars.get(characterKey)
-  if (!character) return undefined
+  if (!teamId) return undefined
+  const team = database.teams.get(teamId)
+  if (!team) return undefined
+  const { teamCharIds, enemyOverride } = team
+  const teamBundleArr = teamCharIds.map((teamCharId) => {
+    const teamChar = database.teamChars.get(teamCharId)
+    const {
+      key: characterKey,
+      buildType,
+      buildTcId,
+      infusionAura,
+      customMultiTargets,
+      conditional,
+      bonusStats,
+      hitMode,
+      reaction,
+    } = teamChar
+    const character = database.chars.get(characterKey)
+    const { key, level, constellation, ascension, talent } = character
+    const isActiveTeamChar = teamCharId === activeTeamCharId
+    const weapon = (() => {
+      if (overrideWeapon && isActiveTeamChar) return overrideWeapon
+      return database.teamChars.getLoadoutWeapon(teamCharId)
+    })()
+    const arts = (() => {
+      if (overrideArt && isActiveTeamChar) return overrideArt
+      if (buildType === 'tc' && buildTcId)
+        return getArtifactData(database.buildTcs.get(buildTcId))
+      return Object.values(
+        database.teamChars.getLoadoutArtifacts(teamCharId)
+      ).filter((a) => a) as ICachedArtifact[]
+    })()
+    const mainLevel = (() => {
+      if (mainStatAssumptionLevel && isActiveTeamChar)
+        return mainStatAssumptionLevel
+      return 0
+    })()
 
-  const char1DataBundle = getCharDataBundle(
-    database,
-    true,
-    mainStatAssumptionLevel,
-    character,
-    overrideWeapon
-      ? overrideWeapon
-      : database.weapons.get(character.equippedWeapon) ??
-          defaultInitialWeapon(),
-    overrideArt ??
-      (Object.values(character.equippedArtifacts)
-        .map((a) => database.arts.get(a))
-        .filter((a) => a) as ICachedArtifact[])
-  )
-  if (!char1DataBundle) return undefined
-  const teamBundle = { [characterKey]: char1DataBundle }
-  const teamData: Dict<CharacterKey, Data[]> = {
-    [characterKey]: char1DataBundle.data,
-  }
-
-  char1DataBundle.character.team.forEach((ck) => {
-    if (!ck) return
-    const tchar = database.chars.get(ck)
-    if (!tchar) return
-    const databundle = getCharDataBundle(
+    return getCharDataBundle(
       database,
-      false,
-      0,
-      { ...tchar, conditional: character.teamConditional[ck] ?? {} },
-      database.weapons.get(tchar.equippedWeapon) ?? defaultInitialWeapon(),
-      Object.values(tchar.equippedArtifacts)
-        .map((a) => database.arts.get(a))
-        .filter((a) => a) as ICachedArtifact[]
-    )
-    if (!databundle) return
-    teamBundle[ck] = databundle
-    teamData[ck] = databundle.data
-  })
+      isActiveTeamChar, // only true for the "main character"?
+      mainLevel,
+      {
+        key,
+        level,
+        constellation,
+        ascension,
+        talent,
 
+        infusionAura,
+        customMultiTargets,
+        conditional,
+        bonusStats,
+
+        enemyOverride,
+        hitMode,
+        reaction,
+      },
+      weapon,
+      arts
+    )
+  })
+  const teamBundle = Object.fromEntries(
+    teamBundleArr.map((bundle) => [bundle.character.key, bundle])
+  )
+  const teamData = objMap(teamBundle, ({ data }) => data)
   return { teamData, teamBundle }
 }
 type CharBundle = {
@@ -175,11 +237,12 @@ function getCharDataBundle(
   database: ArtCharDatabase,
   useCustom = false,
   mainStatAssumptionLevel: number,
-  character: ICachedCharacter,
+  charInfo: CharInfo,
   weapon: ICachedWeapon,
   artifacts: ICachedArtifact[] | Data
 ): CharBundle | undefined {
-  const characterSheet = getCharSheet(character.key, database.gender)
+  const character = database.chars.get(charInfo.key)
+  const characterSheet = getCharSheet(charInfo.key, database.gender)
   if (!characterSheet) return undefined
   const weaponSheet = getWeaponSheet(weapon.key)
   if (!weaponSheet) return undefined
@@ -206,7 +269,7 @@ function getCharDataBundle(
     : [artifacts]
   const data = [
     ...artifactData,
-    dataObjForCharacter(character, useCustom ? sheetData : undefined),
+    dataObjForCharacterNew(charInfo, useCustom ? sheetData : undefined),
     dataObjForWeapon(weapon),
     sheetData,
     common, // NEED TO PUT THIS AT THE END

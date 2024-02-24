@@ -1,6 +1,7 @@
 import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
 import type { ElementWithPhyKey } from '@genshin-optimizer/gi/consts'
 import { allElementWithPhyKeys } from '@genshin-optimizer/gi/consts'
+import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { KeyMap } from '@genshin-optimizer/gi/keymap'
 import {
   CheckBox,
@@ -19,8 +20,8 @@ import {
 } from '@mui/material'
 import { useCallback, useContext, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { CharacterContext } from '../Context/CharacterContext'
 import { DataContext } from '../Context/DataContext'
+import { TeamCharacterContext } from '../Context/TeamCharacterContext'
 import { uiInput as input } from '../Formula'
 import { nodeVStr } from '../Formula/uiData'
 import { ElementIcon } from '../KeyMap/StatIcon'
@@ -31,7 +32,8 @@ import StatInput from './StatInput'
 
 export function EnemyExpandCard() {
   const { t } = useTranslation('ui')
-  const { characterDispatch } = useContext(CharacterContext)
+  const { teamId } = useContext(TeamCharacterContext)
+  const database = useDatabase()
   const { data } = useContext(DataContext)
   const [expanded, setexpanded] = useState(false)
   const toggle = useCallback(
@@ -42,8 +44,8 @@ export function EnemyExpandCard() {
   const eDefRed = data.get(input.enemy.defRed)
   const eDefIgn = data.get(input.enemy.defIgn)
   const onReset = useCallback(
-    () => characterDispatch({ enemyOverride: {} }),
-    [characterDispatch]
+    () => database.teams.set(teamId, { enemyOverride: {} }),
+    [database, teamId]
   )
 
   return (
@@ -116,9 +118,10 @@ export function EnemyEditor({
   bsProps?: object
 }) {
   const {
-    character: { enemyOverride },
-    characterDispatch,
-  } = useContext(CharacterContext)
+    teamId,
+    team: { enemyOverride },
+  } = useContext(TeamCharacterContext)
+  const database = useDatabase()
   const { data } = useContext(DataContext)
   const defaultVal = 10
 
@@ -150,17 +153,13 @@ export function EnemyEditor({
           placeholder={KeyMap.getStr('enemyLevel')}
           defaultValue={data.get(input.lvl).value}
           onValueChange={(value) =>
-            characterDispatch({
-              type: 'enemyOverride',
-              statKey: 'enemyLevel',
-              value,
+            database.teams.set(teamId, (team) => {
+              team.enemyOverride.enemyLevel = value
             })
           }
           onReset={() =>
-            characterDispatch({
-              type: 'enemyOverride',
-              statKey: 'enemyLevel',
-              value: undefined,
+            database.teams.set(teamId, (team) => {
+              delete team.enemyOverride.enemyLevel
             })
           }
         />
@@ -187,7 +186,9 @@ export function EnemyEditor({
               placeholder={elementImmunity ? '∞ ' : KeyMap.getStr(statKey)}
               defaultValue={defaultVal}
               onValueChange={(value) =>
-                characterDispatch({ type: 'enemyOverride', statKey, value })
+                database.teams.set(teamId, (team) => {
+                  team.enemyOverride[statKey] = value
+                })
               }
               disabled={elementImmunity}
               percent
@@ -195,10 +196,10 @@ export function EnemyEditor({
               <Button
                 color={eleKey}
                 onClick={() =>
-                  characterDispatch({
-                    type: 'enemyOverride',
-                    statKey,
-                    value: elementImmunity ? defaultVal : Number.MAX_VALUE,
+                  database.teams.set(teamId, (team) => {
+                    team.enemyOverride[statKey] = elementImmunity
+                      ? defaultVal
+                      : Number.MAX_VALUE
                   })
                 }
                 startIcon={
@@ -219,10 +220,8 @@ export function EnemyEditor({
           placeholder={KeyMap.getStr('enemyDefIgn_')}
           defaultValue={0}
           onValueChange={(value) =>
-            characterDispatch({
-              type: 'enemyOverride',
-              statKey: 'enemyDefIgn_',
-              value,
+            database.teams.set(teamId, (team) => {
+              team.enemyOverride.enemyDefIgn_ = value
             })
           }
           percent
@@ -236,10 +235,8 @@ export function EnemyEditor({
           placeholder={KeyMap.getStr('enemyDefRed_')}
           defaultValue={0}
           onValueChange={(value) =>
-            characterDispatch({
-              type: 'enemyOverride',
-              statKey: 'enemyDefRed_',
-              value,
+            database.teams.set(teamId, (team) => {
+              team.enemyOverride.enemyDefRed_ = value
             })
           }
           percent
