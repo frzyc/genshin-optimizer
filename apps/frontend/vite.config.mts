@@ -53,9 +53,7 @@ export default defineConfig({
           dest: 'assets',
         },
         {
-          src: normalizePath(
-            resolve('apps/frontend/assets')
-          ),
+          src: normalizePath(resolve('apps/frontend/assets')),
           dest: '',
         },
       ],
