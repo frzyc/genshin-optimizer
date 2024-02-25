@@ -7,32 +7,32 @@ import type {
   WeaponTypeKey,
 } from '@genshin-optimizer/gi/consts'
 import {
+  allAdditiveReactions,
+  allAmpReactionKeys,
   allArtifactSlotKeys,
   allCharacterKeys,
+  allHitModeKeys,
   allInfusionAuraElementKeys,
+  charKeyToLocCharKey,
   type AdditiveReactionKey,
   type AmpReactionKey,
   type CharacterKey,
   type InfusionAuraElementKey,
   type MultiOptHitModeKey,
-  charKeyToLocCharKey,
-  allHitModeKeys,
-  allAmpReactionKeys,
-  allAdditiveReactions,
 } from '@genshin-optimizer/gi/consts'
+import { getCharData } from '@genshin-optimizer/gi/stats'
 import type { ICachedArtifact, ICachedWeapon } from '../../Interfaces'
 import type { InputPremodKey } from '../../legacy/keys'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
 import { DataManager } from '../DataManager'
 import type { Build } from './BuildDataManager'
+import { initCharTC, toBuildTc } from './BuildTcDataManager'
 import { validateCustomMultiTarget } from './CustomMultiTarget'
 import {
   defaultInitialWeapon,
   defaultInitialWeaponKey,
   initialWeapon,
 } from './WeaponDataManager'
-import { initCharTC, toBuildTc } from './BuildTcDataManager'
-import { getCharData } from '@genshin-optimizer/gi/stats'
 const buildTypeKeys = ['equipped', 'real', 'tc'] as const
 type buildTypeKey = (typeof buildTypeKeys)[number]
 type CondKey = CharacterKey | ArtifactSetKey | WeaponKey

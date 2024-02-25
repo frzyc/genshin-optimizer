@@ -1,12 +1,12 @@
 import { CardContent, Divider, Typography } from '@mui/material'
 import { useContext } from 'react'
-import { TeamCharacterContext } from '../../../../../Context/TeamCharacterContext'
+import { useTranslation } from 'react-i18next'
 import CardLight from '../../../../../Components/Card/CardLight'
 import { NodeFieldDisplay } from '../../../../../Components/FieldDisplay'
 import { DataContext } from '../../../../../Context/DataContext'
+import { TeamCharacterContext } from '../../../../../Context/TeamCharacterContext'
 import { uiInput as input } from '../../../../../Formula'
 import type { NumNode } from '../../../../../Formula/type'
-import { useTranslation } from 'react-i18next'
 
 export default function BonusStatsCard() {
   const { t } = useTranslation('page_character_optimize')

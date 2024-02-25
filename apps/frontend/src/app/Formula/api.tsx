@@ -20,6 +20,7 @@ import type {
   Team,
   TeamCharacter,
 } from '@genshin-optimizer/gi/db'
+import type { ICharacter } from '@genshin-optimizer/gi/good'
 import { getMainStatValue } from '@genshin-optimizer/gi/util'
 import { objectMap } from '../Util/Util'
 import { input, tally } from './index'
@@ -39,7 +40,6 @@ import {
   setReadNodeKeys,
   sum,
 } from './utils'
-import type { ICharacter } from '@genshin-optimizer/gi/good'
 const asConst = true as const,
   pivot = true as const
 

@@ -6,9 +6,9 @@ import {
   allEleResKeys,
 } from './KeyMap'
 import type {
-  TransformativeReactionsKey,
   AdditiveReactionsKey,
   AmplifyingReactionsKey,
+  TransformativeReactionsKey,
 } from './StatConstants'
 import {
   crittableTransformativeReactions,
@@ -27,10 +27,10 @@ export {
   transformativeReactions,
 }
 export type {
+  AdditiveReactionsKey,
+  AmplifyingReactionsKey,
   EleEnemyResKey,
   StatKey,
   TransformativeReactionsKey,
   Unit,
-  AdditiveReactionsKey,
-  AmplifyingReactionsKey,
 }

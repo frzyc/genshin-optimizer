@@ -1,6 +1,7 @@
 import { weaponAsset } from '@genshin-optimizer/gi/assets'
 import type { ICachedWeapon } from '@genshin-optimizer/gi/db'
 import { useWeapon } from '@genshin-optimizer/gi/db-ui'
+import type { IWeapon } from '@genshin-optimizer/gi/good'
 import { Box, Typography } from '@mui/material'
 import { useMemo } from 'react'
 import { getWeaponSheet } from '../../Data/Weapons'
@@ -11,7 +12,6 @@ import type { NodeDisplay } from '../../Formula/uiData'
 import { nodeVStr } from '../../Formula/uiData'
 import CardDark from '../Card/CardDark'
 import SqBadge from '../SqBadge'
-import type { IWeapon } from '@genshin-optimizer/gi/good'
 export default function WeaponFullCard({ weaponId }: { weaponId: string }) {
   const weapon = useWeapon(weaponId)
   return <WeaponFullCardObj weapon={weapon} />

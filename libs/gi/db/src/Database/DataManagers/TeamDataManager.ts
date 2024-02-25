@@ -1,7 +1,7 @@
+import { deepClone } from '@genshin-optimizer/common/util'
 import type { EleEnemyResKey } from '@genshin-optimizer/gi/keymap'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
 import { DataManager } from '../DataManager'
-import { deepClone } from '@genshin-optimizer/common/util'
 export interface Team {
   name: string
   description: string

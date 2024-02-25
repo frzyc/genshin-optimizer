@@ -1,5 +1,5 @@
-import type { GenStatsExecutorSchema } from './schema'
 import executor from './executor'
+import type { GenStatsExecutorSchema } from './schema'
 
 const options: GenStatsExecutorSchema = {}
 

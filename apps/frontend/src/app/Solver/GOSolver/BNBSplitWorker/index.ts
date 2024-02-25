@@ -1,10 +1,10 @@
-import type { Interim, Setup } from '../..'
-import { optimize, type OptNode } from '../../../Formula/optimization'
 import type {
   ArtifactSetKey,
   ArtifactSlotKey,
 } from '@genshin-optimizer/gi/consts'
 import { allArtifactSetKeys } from '@genshin-optimizer/gi/consts'
+import type { Interim, Setup } from '../..'
+import { optimize, type OptNode } from '../../../Formula/optimization'
 import { objectKeyValueMap, objectMap } from '../../../Util/Util'
 import type {
   ArtifactBuildData,
@@ -14,9 +14,9 @@ import type {
 } from '../../common'
 import { countBuilds, filterArts, pruneAll } from '../../common'
 import type { SplitWorker } from '../BackgroundWorker'
+import { pickSplitKey, splitAtValue, splitOnSet } from './heuristicSplitting'
 import type { Linear } from './linearUB'
 import { linearUB } from './linearUB'
-import { pickSplitKey, splitOnSet, splitAtValue } from './heuristicSplitting'
 
 type Approximation = {
   base: number
