@@ -13,7 +13,7 @@ import {
 } from '../util'
 import { entriesForRelic } from './util'
 
-const key: RelicSetKey = 'PanGalacticCommercialEnterprise'
+const key: RelicSetKey = 'PanCosmicCommercialEnterprise'
 const data_gen = allStats.relic[key]
 
 let t = 0,

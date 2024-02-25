@@ -22,7 +22,7 @@ export const relicSetIdMap: Record<string, RelicSetKey> = {
 
   301: 'SpaceSealingStation',
   302: 'FleetOfTheAgeless',
-  303: 'PanGalacticCommercialEnterprise',
+  303: 'PanCosmicCommercialEnterprise',
   304: 'BelobogOfTheArchitects',
   305: 'CelestialDifferentiator',
   306: 'InertSalsotto',
