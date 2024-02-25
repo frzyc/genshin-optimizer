@@ -16,7 +16,7 @@ import KnightOfPurityPalace from './KnightOfPurityPalace'
 import LongevousDisciple from './LongevousDisciple'
 import MessengerTraversingHackerspace from './MessengerTraversingHackerspace'
 import MusketeerOfWildWheat from './MusketeerOfWildWheat'
-import PanGalacticCommercialEnterprise from './PanGalacticCommercialEnterprise'
+import PanCosmicCommercialEnterprise from './PanCosmicCommercialEnterprise'
 import PasserbyOfWanderingCloud from './PasserbyOfWanderingCloud'
 import PenaconyLandOfTheDreams from './PenaconyLandOfTheDreams'
 import PioneerDiverOfDeadWaters from './PioneerDiverOfDeadWaters'
@@ -55,7 +55,7 @@ const data: TagMapNodeEntries[] = [
   FirmamentFrontlineGlamoth,
   FleetOfTheAgeless,
   InertSalsotto,
-  PanGalacticCommercialEnterprise,
+  PanCosmicCommercialEnterprise,
   PenaconyLandOfTheDreams,
   RutilantArena,
   SpaceSealingStation,
