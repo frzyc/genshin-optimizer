@@ -52,6 +52,10 @@ export default defineConfig({
           ),
           dest: 'assets',
         },
+        {
+          src: normalizePath(resolve('apps/frontend/assets')),
+          dest: '',
+        },
       ],
       // Force page to reload if we change any of the above files
       watch: {
