@@ -277,7 +277,7 @@ export class TeamCharacterDataManager extends DataManager<
   newBuild(teamcharId: string, build: Partial<Build> = {}) {
     if (!this.get(teamcharId)) return
 
-    // force the loadout to have a valid weapon
+    // force the build to have a valid weapon
     if (!build.weaponId) {
       const teamChar = this.database.teamChars.get(teamcharId)
       if (!teamChar) return

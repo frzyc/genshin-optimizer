@@ -31,7 +31,7 @@ export class BuildDataManager extends DataManager<
     if (typeof description !== 'string') description = 'Build Description'
     if (weaponId && !this.database.weapons.get(weaponId)) weaponId = undefined
 
-    // force the loadout to have a valid weapon
+    // force the build to have a valid weapon
     if (!weaponId) {
       // something is broken, so we get a dullblade as default
       const defWeaponKey = defaultInitialWeaponKey('sword')

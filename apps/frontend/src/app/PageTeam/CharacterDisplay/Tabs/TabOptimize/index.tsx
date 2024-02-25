@@ -953,7 +953,7 @@ function BuildItemWrapper({
       extraButtonsLeft={
         <>
           <CopyTcButton build={build} />
-          <CopyLoadoutButton build={build} />
+          <CopyBuildButton build={build} />
           {deleteBuild && (
             <Button
               color="error"
@@ -1004,7 +1004,7 @@ function CopyTcButton({ build }: { build: string[] }) {
         startIcon={<Science />}
         onClick={onShowTcPrompt}
       >
-        {t('theorycraftButton')}
+        New TC Build
       </Button>
       {/* TODO: Dialog Wanted to use a Dialog here, but was having some weird issues with closing out of it */}
       {/* TODO: Translation */}
@@ -1024,7 +1024,7 @@ function CopyTcButton({ build }: { build: string[] }) {
               onChange={(e) => setName(e.target.value)}
               autoFocus
               margin="dense"
-              label="TC Loadout Name"
+              label="TC Build Name"
               fullWidth
             />
             <Box sx={{ display: 'flex', justifyContent: 'flex-end', gap: 1 }}>
@@ -1039,7 +1039,7 @@ function CopyTcButton({ build }: { build: string[] }) {
     </>
   )
 }
-function CopyLoadoutButton({ build }: { build: string[] }) {
+function CopyBuildButton({ build }: { build: string[] }) {
   const [name, setName] = useState('')
   const [showTcPrompt, onShowTcPrompt, OnHideTcPrompt] = useBoolState()
 
@@ -1070,27 +1070,27 @@ function CopyLoadoutButton({ build }: { build: string[] }) {
         startIcon={<CheckroomIcon />}
         onClick={onShowTcPrompt}
       >
-        Loadout
+        New Build
       </Button>
       {/* TODO: Dialog Wanted to use a Dialog here, but was having some weird issues with closing out of it */}
       {/* TODO: Translation */}
       <ModalWrapper open={showTcPrompt} onClose={OnHideTcPrompt}>
         <CardThemed>
           <CardHeader
-            title="New Build Loadout"
+            title="New Build"
             action={<CloseButton onClick={OnHideTcPrompt} />}
           />
           <Divider />
           <CardContent
             sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}
           >
-            <Typography>Copy over this build to a new Loadout Build</Typography>
+            <Typography>Copy over this build to a new build</Typography>
             <TextField
               value={name}
               onChange={(e) => setName(e.target.value)}
               autoFocus
               margin="dense"
-              label="Loadout Name"
+              label="Build Name"
               fullWidth
             />
             <Box sx={{ display: 'flex', justifyContent: 'flex-end', gap: 1 }}>

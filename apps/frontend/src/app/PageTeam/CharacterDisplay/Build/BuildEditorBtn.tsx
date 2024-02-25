@@ -19,7 +19,7 @@ import { BuildEquipped } from './BuildEquipped'
 import BuildTc from './BuildTc'
 
 // TODO: Translation
-export default function LoadoutBtn() {
+export default function BuildEditorBtn() {
   const database = useDatabase()
   const [open, onOpen, onClose] = useBoolState()
   const {
@@ -52,26 +52,26 @@ export default function LoadoutBtn() {
           open ? onClose() : onOpen()
         }}
       >
-        Loadout: <strong>{name}</strong>
+        Build: <strong>{name}</strong>
       </Button>
       <Suspense fallback={null}>
         <ModalWrapper open={open} onClose={onClose}>
           <CardThemed>
-            <CardHeader title="Loadout Management" />
+            <CardHeader title="Build Management" />
             <Divider />
             <CardContent
               sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}
             >
               <BuildEquipped active={buildType === 'equipped'} />
               <Box sx={{ display: 'flex', gap: 2 }}>
-                <Typography variant="h6">Loadouts</Typography>
+                <Typography variant="h6">Builds</Typography>
                 <Button
                   startIcon={<AddIcon />}
                   color="info"
                   size="small"
                   onClick={() => database.teamChars.newBuild(teamCharId)}
                 >
-                  New Loadout
+                  New Build
                 </Button>
               </Box>
 
@@ -83,7 +83,7 @@ export default function LoadoutBtn() {
                 />
               ))}
               <Box sx={{ display: 'flex', gap: 2 }}>
-                <Typography variant="h6">TC Loadouts</Typography>
+                <Typography variant="h6">TC Builds</Typography>
                 <Button
                   startIcon={<AddIcon />}
                   color="info"
@@ -95,7 +95,7 @@ export default function LoadoutBtn() {
                     )
                   }
                 >
-                  New TC Loadout
+                  New TC Build
                 </Button>
               </Box>
               {buildTcIds.map((id) => (
