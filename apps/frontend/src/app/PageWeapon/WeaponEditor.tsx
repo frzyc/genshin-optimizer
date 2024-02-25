@@ -110,7 +110,7 @@ export default function WeaponEditor({
           show={showModal}
           onHide={onHideModal}
           onSelect={(k) => weaponDispatch({ key: k })}
-          // can only swap to a weapon of the same type, to accomodate loadout
+          // can only swap to a weapon of the same type
           weaponTypeFilter={weaponSheet && weaponSheet.weaponType}
         />
         <CardContent>

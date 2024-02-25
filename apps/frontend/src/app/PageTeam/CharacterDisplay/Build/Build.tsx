@@ -49,11 +49,11 @@ export function Build({
   const onActive = () =>
     database.teamChars.set(teamCharId, { buildType: 'real', buildId })
   const onEquip = () => {
-    // Cannot equip a loadout without weapon
+    // Cannot equip a build without weapon
     if (!weaponId) return
     if (
       !window.confirm(
-        `Do you want to equip all gear in this loadout to this character? The currently equipped build will be overwritten.`
+        `Do you want to equip all gear in this build to this character? The currently equipped build will be overwritten.`
       )
     )
       return

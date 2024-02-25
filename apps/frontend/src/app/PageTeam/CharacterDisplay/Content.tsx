@@ -26,7 +26,7 @@ import { TeamCharacterContext } from '../../Context/TeamCharacterContext'
 import { shouldShowDevComponents } from '../../Util/Util'
 import { CustomMultiTargetButton } from './CustomMultiTarget'
 import FormulaModal from './FormulaModal'
-import LoadoutBtn from './Loadout/LoadoutBtn'
+import BuildEditorBtn from './Build/BuildEditorBtn'
 import StatModal from './StatModal'
 import TabBuild from './Tabs/TabOptimize'
 import TabOverview from './Tabs/TabOverview'
@@ -49,7 +49,7 @@ export default function Content({
     <>
       <Box display="flex">
         <Box display="flex" gap={1} flexWrap="wrap" flexGrow={1}>
-          <LoadoutBtn />
+          <BuildEditorBtn />
           <DetailStatButton />
           <CustomMultiTargetButton />
           <FormulasButton />
