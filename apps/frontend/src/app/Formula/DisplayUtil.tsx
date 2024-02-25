@@ -1,16 +1,16 @@
+import { weaponAsset } from '@genshin-optimizer/gi/assets'
 import type {
   ArtifactSetKey,
   CharacterKey,
   WeaponKey,
 } from '@genshin-optimizer/gi/consts'
-import { weaponAsset } from '@genshin-optimizer/gi/assets'
+import type { ArtCharDatabase } from '@genshin-optimizer/gi/db'
 import { input } from '.'
 import ColorText from '../Components/ColoredText'
 import { getArtSheet } from '../Data/Artifacts'
 import { artifactDefIcon } from '../Data/Artifacts/ArtifactSheet'
 import { getCharSheet } from '../Data/Characters'
 import { getWeaponSheet } from '../Data/Weapons'
-import type { ArtCharDatabase } from '@genshin-optimizer/gi/db'
 import { range } from '../Util/Util'
 import type { DisplaySub } from './type'
 import type { NodeDisplay, UIData } from './uiData'

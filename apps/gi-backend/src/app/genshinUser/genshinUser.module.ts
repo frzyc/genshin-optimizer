@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common'
+import { UserModule } from '../user/user.module'
 import { GenshinUserResolver } from './genshinUser.resolver'
 import { GenshinUserService } from './genshinUser.service'
-import { UserModule } from '../user/user.module'
 
 @Module({
   imports: [UserModule],

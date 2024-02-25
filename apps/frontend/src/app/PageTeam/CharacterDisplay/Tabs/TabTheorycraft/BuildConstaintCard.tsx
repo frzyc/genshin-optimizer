@@ -5,6 +5,8 @@ import {
   DropdownButton,
 } from '@genshin-optimizer/common/ui'
 import { unit } from '@genshin-optimizer/common/util'
+import type { MinTotalStatKey } from '@genshin-optimizer/gi/db'
+import { minTotalStatKeys } from '@genshin-optimizer/gi/db'
 import { StatIcon } from '@genshin-optimizer/gi/svgicons'
 import ClearIcon from '@mui/icons-material/Clear'
 import {
@@ -21,8 +23,6 @@ import {
 import { useContext } from 'react'
 import { useTranslation } from 'react-i18next'
 import { ArtifactStatWithUnit } from '../../../../Components/Artifact/ArtifactStatKeyDisplay'
-import type { MinTotalStatKey } from '@genshin-optimizer/gi/db'
-import { minTotalStatKeys } from '@genshin-optimizer/gi/db'
 import { BuildTcContext } from './BuildTcContext'
 
 export function BuildConstaintCard({ disabled }: { disabled: boolean }) {

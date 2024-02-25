@@ -70,8 +70,9 @@ import { infusionVals } from '../../Components/HitModeEditor'
 import InfoTooltip from '../../Components/InfoTooltip'
 import ModalWrapper from '../../Components/ModalWrapper'
 import StatEditorList from '../../Components/StatEditorList'
-import { TeamCharacterContext } from '../../Context/TeamCharacterContext'
+import { CharacterContext } from '../../Context/CharacterContext'
 import { DataContext } from '../../Context/DataContext'
+import { TeamCharacterContext } from '../../Context/TeamCharacterContext'
 import { allInputPremodKeys } from '../../Formula'
 import type { NodeDisplay } from '../../Formula/uiData'
 import { UIData } from '../../Formula/uiData'
@@ -81,7 +82,6 @@ import {
 } from '../../Types/consts'
 import OptimizationTargetSelector from './Tabs/TabOptimize/Components/OptimizationTargetSelector'
 import { TargetSelectorModal } from './Tabs/TabOptimize/Components/TargetSelectorModal'
-import { CharacterContext } from '../../Context/CharacterContext'
 
 const MAX_DESC_TOOLTIP_LENGTH = 300
 

@@ -7,10 +7,10 @@ import StatDisplayComponent from '../../../../Components/Character/StatDisplayCo
 import WeaponCardNano from '../../../../Components/Weapon/WeaponCardNano'
 import { DataContext } from '../../../../Context/DataContext'
 import { uiInput as input } from '../../../../Formula'
+import CharacterProfileCard from '../../../CharProfileCard'
 import useOldData from '../../../useOldData'
 import CompareBtn from '../../CompareBtn'
 import EquipmentSection from './EquipmentSection'
-import CharacterProfileCard from '../../../CharProfileCard'
 
 export default function TabOverview() {
   const scrollRef = useRef<HTMLDivElement>()
