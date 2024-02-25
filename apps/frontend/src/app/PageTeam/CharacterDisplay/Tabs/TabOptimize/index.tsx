@@ -970,7 +970,6 @@ function BuildItemWrapper({
   )
 }
 function CopyTcButton({ build }: { build: string[] }) {
-  const { t } = useTranslation('page_character_optimize')
   const [name, setName] = useState('')
   const [showTcPrompt, onShowTcPrompt, OnHideTcPrompt] = useBoolState()
 
