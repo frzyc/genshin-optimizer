@@ -109,7 +109,11 @@ export default function PageTeams() {
         <Grid container spacing={1} columns={columns}>
           {teamIds.map((tid) => (
             <Grid item xs={1} key={tid}>
-              <TeamCard teamId={tid} onClick={() => navigate(`${tid}`)} />
+              <TeamCard
+                teamId={tid}
+                bgt="light"
+                onClick={() => navigate(`${tid}`)}
+              />
             </Grid>
           ))}
         </Grid>
