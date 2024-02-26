@@ -84,7 +84,7 @@ export class ArtCharDatabase extends Database {
     this.displayCharacter = new DisplayCharacterEntry(this)
     this.displayTool = new DisplayToolEntry(this)
     this.displayTeam = new DisplayTeamEntry(this)
-    
+
     // invalidates character when things change.
     this.chars.followAny(() => {
       this.dbMeta.set({ lastEdit: Date.now() })
