@@ -8,6 +8,7 @@ import { DisplayCharacterEntry } from './DataEntries/DisplayCharacterEntry'
 import { DisplayOptimizeEntry } from './DataEntries/DisplayOptimizeEntry'
 import { DisplayToolEntry } from './DataEntries/DisplayTool'
 import { DisplayWeaponEntry } from './DataEntries/DisplayWeaponEntry'
+import { DisplayTeamEntry } from './DataEntries/DisplayTeamEntry'
 import { ArtifactDataManager } from './DataManagers/ArtifactDataManager'
 import { BuildDataManager } from './DataManagers/BuildDataManager'
 import { BuildTcDataManager } from './DataManagers/BuildTcDataManager'
@@ -37,6 +38,7 @@ export class ArtCharDatabase extends Database {
   displayOptimize: DisplayOptimizeEntry
   displayCharacter: DisplayCharacterEntry
   displayTool: DisplayToolEntry
+  displayTeam: DisplayTeamEntry
   dbIndex: 1 | 2 | 3 | 4
   dbVer: number
 
@@ -81,7 +83,8 @@ export class ArtCharDatabase extends Database {
     this.displayOptimize = new DisplayOptimizeEntry(this)
     this.displayCharacter = new DisplayCharacterEntry(this)
     this.displayTool = new DisplayToolEntry(this)
-
+    this.displayTeam = new DisplayTeamEntry(this)
+    
     // invalidates character when things change.
     this.chars.followAny(() => {
       this.dbMeta.set({ lastEdit: Date.now() })
@@ -115,6 +118,7 @@ export class ArtCharDatabase extends Database {
       this.displayOptimize,
       this.displayCharacter,
       this.displayTool,
+      this.displayTeam,
     ] as const
   }
 
