@@ -51,6 +51,9 @@ export default function PageTeam() {
   const invalidKey = !database.teams.keys.includes(teamId)
   if (invalidKey) return <Navigate to="/characters" />
 
+  // An edit is triggered whenever a team gets opened even if no edits are done
+  database.teams.set(teamId, { lastEdit: Date.now() })
+
   return (
     <Box my={1} display="flex" flexDirection="column" gap={1}>
       <Suspense
