@@ -5,7 +5,15 @@ import ContentCopyIcon from '@mui/icons-material/ContentCopy'
 import ContentPasteIcon from '@mui/icons-material/ContentPaste'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import InfoIcon from '@mui/icons-material/Info'
-import { Box, Button, CardActionArea, Grid, Typography } from '@mui/material'
+import {
+  Box,
+  Button,
+  CardActionArea,
+  Divider,
+  Grid,
+  IconButton,
+  Typography,
+} from '@mui/material'
 import CharacterCardPico, {
   BlankCharacterCardPico,
 } from '../Components/Character/CharacterCardPico'
@@ -50,10 +58,8 @@ export default function TeamCard({
       bgt={bgt}
       sx={{
         height: '100%',
-        p: 1,
         display: 'flex',
         flexDirection: 'column',
-        gap: 1,
       }}
     >
       <CardActionArea
@@ -66,33 +72,44 @@ export default function TeamCard({
           flexGrow: 1,
         }}
       >
-        <Typography sx={{ display: 'flex', gap: 1 }}>
-          <span>{name}</span>{' '}
-          <BootstrapTooltip title={<Typography>{description}</Typography>}>
-            <InfoIcon />
-          </BootstrapTooltip>
-        </Typography>
+        <Box
+          sx={{
+            height: '100%',
+            p: 1,
+            display: 'flex',
+            flexDirection: 'column',
+            gap: 1,
+          }}
+        >
+          <Typography sx={{ display: 'flex', gap: 1 }}>
+            <span>{name}</span>{' '}
+            <BootstrapTooltip title={<Typography>{description}</Typography>}>
+              <InfoIcon />
+            </BootstrapTooltip>
+          </Typography>
 
-        <Box sx={{ marginTop: 'auto' }}>
-          <Grid container columns={4} spacing={1}>
-            {range(0, 3).map((i) => (
-              <Grid key={i} item xs={1} height="100%">
-                {teamCharIds[i] ? (
-                  <CharacterCardPico
-                    characterKey={database.teamChars.get(teamCharIds[i]).key}
-                  />
-                ) : (
-                  <BlankCharacterCardPico index={i} />
-                )}
-              </Grid>
-            ))}
-          </Grid>
+          <Box sx={{ marginTop: 'auto' }}>
+            <Grid container columns={4} spacing={1}>
+              {range(0, 3).map((i) => (
+                <Grid key={i} item xs={1} height="100%">
+                  {teamCharIds[i] ? (
+                    <CharacterCardPico
+                      characterKey={database.teamChars.get(teamCharIds[i]).key}
+                    />
+                  ) : (
+                    <BlankCharacterCardPico index={i} />
+                  )}
+                </Grid>
+              ))}
+            </Grid>
+          </Box>
         </Box>
       </CardActionArea>
       {!disableButtons && (
-        <Box sx={{ display: 'flex', gap: 1, marginTop: 'auto' }}>
+        <Box sx={{ display: 'flex', gap: 1, marginTop: 'auto', p: 1 }}>
           <Button
             color="info"
+            variant="text"
             sx={{ flexGrow: 1 }}
             startIcon={<ContentPasteIcon />}
             disabled={teamCharIds.every((id) => !id)}
@@ -100,16 +117,18 @@ export default function TeamCard({
           >
             Export
           </Button>
-          <Button
+          <Divider orientation="vertical" />
+          <IconButton
             color="info"
             disabled={teamCharIds.every((id) => !id)}
             onClick={onDup}
           >
             <ContentCopyIcon />
-          </Button>
-          <Button color="error" size="small" onClick={onDel}>
+          </IconButton>
+          <Divider orientation="vertical" />
+          <IconButton color="error" size="small" onClick={onDel}>
             <DeleteForeverIcon />
-          </Button>
+          </IconButton>
         </Box>
       )}
     </CardThemed>
