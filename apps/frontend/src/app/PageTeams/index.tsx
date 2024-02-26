@@ -21,6 +21,9 @@ import { Suspense, useEffect, useMemo, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import TeamCard from './TeamCard'
 import SortByButton from '../Components/SortByButton'
+import { teamSortConfigs, teamSortMap } from './TeamSort'
+import { teamSortKeys } from '@genshin-optimizer/gi/db'
+import { sortFunction } from '@genshin-optimizer/common/util'
 const columns = { xs: 1, sm: 2, md: 3, lg: 4, xl: 4 }
 
 // TODO: Translation
@@ -28,10 +31,6 @@ const columns = { xs: 1, sm: 2, md: 3, lg: 4, xl: 4 }
 export default function PageTeams() {
   const database = useDatabase()
   const [dbDirty, forceUpdate] = useForceUpdate()
-  const teamIds = useMemo(
-    () => dbDirty && database.teams.keys,
-    [dbDirty, database]
-  )
   const navigate = useNavigate()
   // Set follow, should run only once
   useEffect(() => {
@@ -57,13 +56,44 @@ export default function PageTeams() {
       return
     }
   }
+  const [teamDisplayState, setteamDisplayState] = useState(
+    database.displayTeam.get()
+  )
+
+  // I can't process why thid is not working
+  // useEffect(
+  //   () => setteamDisplayState(database.displayTeam.get()),
+  //   [database.displayTeam]
+  // )
+
+  const { sortType, ascending } = teamDisplayState
+
+  // Currently using the BD key as an ID maybe later will need to add an ID entry to Team
+  const teamIds = useMemo(
+    () =>
+      dbDirty &&
+      database.teams.keys.sort((k1, k2) => {
+        return sortFunction(
+          teamSortMap[sortType],
+          ascending,
+          teamSortConfigs()
+        )(database.teams.get(k1), database.teams.get(k2))
+      }),
+    [dbDirty, database.teams, sortType, ascending]
+  )
 
   const sortByButtonProps = {
-    sortKeys: [],
-    value: 'NA',
-    onChange: (value) => value,
-    ascending: true,
-    onChangeAsc: (value) => value,
+    sortKeys: [...teamSortKeys],
+    value: sortType,
+    onChange: (sortType) => {
+      database.displayTeam.set({ sortType })
+      setteamDisplayState(database.displayTeam.get())
+    },
+    ascending: ascending,
+    onChangeAsc: (ascending) => {
+      database.displayTeam.set({ ascending })
+      setteamDisplayState(database.displayTeam.get())
+    },
   }
 
   return (
@@ -79,7 +109,7 @@ export default function PageTeams() {
         <SortByButton
           sortKeys={sortByButtonProps.sortKeys}
           value={sortByButtonProps.value}
-          onChange={(value) => sortByButtonProps.onChange(value)}
+          onChange={sortByButtonProps.onChange}
           ascending={sortByButtonProps.ascending}
           onChangeAsc={sortByButtonProps.onChangeAsc}
         />
