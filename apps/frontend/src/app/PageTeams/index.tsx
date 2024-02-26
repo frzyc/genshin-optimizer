@@ -20,6 +20,7 @@ import {
 import { Suspense, useEffect, useMemo, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import TeamCard from './TeamCard'
+import SortByButton from '../Components/SortByButton'
 const columns = { xs: 1, sm: 2, md: 3, lg: 4, xl: 4 }
 
 // TODO: Translation
@@ -56,8 +57,33 @@ export default function PageTeams() {
       return
     }
   }
+
+  const sortByButtonProps = {
+    sortKeys: [],
+    value: 'NA',
+    onChange: (value) => value,
+    ascending: true,
+    onChangeAsc: (value) => value,
+  }
+
   return (
     <Box my={1} display="flex" flexDirection="column" gap={1}>
+      <Box
+        sx={{
+          display: 'flex',
+          justifyContent: 'flex-end',
+          alignItems: 'center',
+        }}
+      >
+        {/* May use `PageAndSortOptionSelect` to add multiple pages and filter count later */}
+        <SortByButton
+          sortKeys={sortByButtonProps.sortKeys}
+          value={sortByButtonProps.value}
+          onChange={(value) => sortByButtonProps.onChange(value)}
+          ascending={sortByButtonProps.ascending}
+          onChangeAsc={sortByButtonProps.onChangeAsc}
+        />
+      </Box>
       <Box sx={{ display: 'flex', gap: 1 }}>
         <Button fullWidth onClick={onAdd} color="info" startIcon={<AddIcon />}>
           Add Team
