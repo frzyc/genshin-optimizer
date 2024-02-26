@@ -131,7 +131,7 @@ export function Build({
             <Button
               color="success"
               size="small"
-              disabled={!weaponId || active}
+              disabled={!weaponId} // disabling equip of outfit with invalid weaponId
               onClick={onEquip}
             >
               <CheckroomIcon />
