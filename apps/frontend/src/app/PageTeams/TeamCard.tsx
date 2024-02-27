@@ -29,7 +29,7 @@ export default function TeamCard({
 }: {
   teamId: string
   bgt?: 'light' | 'dark'
-  onClick: (cid: CharacterKey) => void
+  onClick: (cid?: CharacterKey) => void
   disableButtons?: boolean
 }) {
   const team = useTeam(teamId)
@@ -94,7 +94,9 @@ export default function TeamCard({
                     />
                   </CardActionArea>
                 ) : (
-                  <BlankCharacterCardPico index={i} />
+                  <CardActionArea onClick={() => onClick()}>
+                    <BlankCharacterCardPico index={i} />
+                  </CardActionArea>
                 )}
               </Grid>
             ))}

@@ -112,7 +112,7 @@ export default function PageTeams() {
               <TeamCard
                 teamId={tid}
                 bgt="light"
-                onClick={(cid) => navigate(`${tid}/${cid}`)}
+                onClick={(cid) => navigate(`${tid}${cid ? `/${cid}` : ''}`)}
               />
             </Grid>
           ))}
