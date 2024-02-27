@@ -3,6 +3,8 @@ import {
   useForceUpdate,
 } from '@genshin-optimizer/common/react-util'
 import { CardThemed, ModalWrapper } from '@genshin-optimizer/common/ui'
+import { sortFunction } from '@genshin-optimizer/common/util'
+import { teamSortKeys } from '@genshin-optimizer/gi/db'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import AddIcon from '@mui/icons-material/Add'
 import UploadIcon from '@mui/icons-material/Upload'
@@ -19,11 +21,10 @@ import {
 } from '@mui/material'
 import { Suspense, useEffect, useMemo, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import TeamCard from './TeamCard'
 import SortByButton from '../Components/SortByButton'
+import TeamCard from './TeamCard'
 import { teamSortConfigs, teamSortMap } from './TeamSort'
-import { teamSortKeys } from '@genshin-optimizer/gi/db'
-import { sortFunction } from '@genshin-optimizer/common/util'
+import { useDataEntryBase } from '@genshin-optimizer/common/database-ui'
 const columns = { xs: 1, sm: 2, md: 3, lg: 4, xl: 4 }
 
 // TODO: Translation
@@ -35,7 +36,8 @@ export default function PageTeams() {
   // Set follow, should run only once
   useEffect(() => {
     return database.teams.followAny(
-      (k, r) => (r === 'new' || r === 'remove') && forceUpdate()
+      (k, r) =>
+        (r === 'new' || r === 'remove' || r === 'update') && forceUpdate()
     )
   }, [forceUpdate, database])
 
@@ -56,17 +58,7 @@ export default function PageTeams() {
       return
     }
   }
-  const [teamDisplayState, setteamDisplayState] = useState(
-    database.displayTeam.get()
-  )
-
-  // I can't process why thid is not working
-  // useEffect(
-  //   () => setteamDisplayState(database.displayTeam.get()),
-  //   [database.displayTeam]
-  // )
-
-  const { sortType, ascending } = teamDisplayState
+  const { sortType, ascending } = useDataEntryBase(database.displayTeam)
 
   // Currently using the BD key as an ID maybe later will need to add an ID entry to Team
   const teamIds = useMemo(
@@ -85,15 +77,9 @@ export default function PageTeams() {
   const sortByButtonProps = {
     sortKeys: [...teamSortKeys],
     value: sortType,
-    onChange: (sortType) => {
-      database.displayTeam.set({ sortType })
-      setteamDisplayState(database.displayTeam.get())
-    },
+    onChange: (sortType) => database.displayTeam.set({ sortType }),
     ascending: ascending,
-    onChangeAsc: (ascending) => {
-      database.displayTeam.set({ ascending })
-      setteamDisplayState(database.displayTeam.get())
-    },
+    onChangeAsc: (ascending) => database.displayTeam.set({ ascending }),
   }
 
   return (
@@ -106,13 +92,7 @@ export default function PageTeams() {
         }}
       >
         {/* May use `PageAndSortOptionSelect` to add multiple pages and filter count later */}
-        <SortByButton
-          sortKeys={sortByButtonProps.sortKeys}
-          value={sortByButtonProps.value}
-          onChange={sortByButtonProps.onChange}
-          ascending={sortByButtonProps.ascending}
-          onChangeAsc={sortByButtonProps.onChangeAsc}
-        />
+        <SortByButton {...sortByButtonProps} />
       </Box>
       <Box sx={{ display: 'flex', gap: 1 }}>
         <Button fullWidth onClick={onAdd} color="info" startIcon={<AddIcon />}>
