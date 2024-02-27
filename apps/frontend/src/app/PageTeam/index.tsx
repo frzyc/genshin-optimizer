@@ -49,10 +49,14 @@ export default function PageTeam() {
   const onClose = useCallback(() => navigate('/teams'), [navigate])
   const { teamId } = useParams<{ teamId?: string }>()
   const invalidKey = !database.teams.keys.includes(teamId)
-  if (invalidKey) return <Navigate to="/characters" />
 
   // An edit is triggered whenever a team gets opened even if no edits are done
-  database.teams.set(teamId, { lastEdit: Date.now() })
+  useEffect(() => {
+    if (invalidKey) return
+    database.teams.set(teamId, { lastEdit: Date.now() })
+  }, [teamId, database.teams, invalidKey])
+
+  if (invalidKey) return <Navigate to="/characters" />
 
   return (
     <Box my={1} display="flex" flexDirection="column" gap={1}>
