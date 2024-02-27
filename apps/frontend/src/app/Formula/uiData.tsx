@@ -7,7 +7,7 @@ import {
 } from '@genshin-optimizer/common/util'
 import type { ArtifactSetKey, WeaponKey } from '@genshin-optimizer/gi/consts'
 import { allArtifactSetKeys, allWeaponKeys } from '@genshin-optimizer/gi/consts'
-import { SillyContext } from '@genshin-optimizer/gi/ui'
+import { SillyContext } from '@genshin-optimizer/gi/ui/Context/SillyContext'
 import { useContext } from 'react'
 import { uiInput } from '.'
 import ColorText from '../Components/ColoredText'
