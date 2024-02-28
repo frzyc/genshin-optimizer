@@ -30,6 +30,7 @@ import {
   Divider,
   Grid,
   TextField,
+  Tooltip,
   Typography,
   styled,
 } from '@mui/material'
@@ -161,26 +162,56 @@ export function Build({
                 </Box>
               </CardActionArea>
             </CardThemed>
-            <Button color="info" size="small" onClick={onOpen}>
-              <EditIcon />
-            </Button>
-            <Button color="info" size="small" onClick={copyToTc}>
-              <ScienceIcon />
-            </Button>
-            <Button color="info" size="small" onClick={onDupe}>
-              <ContentCopyIcon />
-            </Button>
-            <Button
-              color="success"
-              size="small"
-              disabled={!weaponId} // disabling equip of outfit with invalid weaponId
-              onClick={onEquip}
+            <Tooltip
+              title={<Typography>Edit Build Settings</Typography>}
+              placement="top"
+              arrow
             >
-              <CheckroomIcon />
-            </Button>
-            <Button color="error" size="small" onClick={onRemove}>
-              <DeleteForeverIcon />
-            </Button>
+              <Button color="info" size="small" onClick={onOpen}>
+                <EditIcon />
+              </Button>
+            </Tooltip>
+            <Tooltip
+              title={<Typography>Copy to TC Builds</Typography>}
+              placement="top"
+              arrow
+            >
+              <Button color="info" size="small" onClick={copyToTc}>
+                <ScienceIcon />
+              </Button>
+            </Tooltip>
+            <Tooltip
+              title={<Typography>Duplicate Build</Typography>}
+              placement="top"
+              arrow
+            >
+              <Button color="info" size="small" onClick={onDupe}>
+                <ContentCopyIcon />
+              </Button>
+            </Tooltip>
+            <Tooltip
+              title={<Typography>Equip Build</Typography>}
+              placement="top"
+              arrow
+            >
+              <Button
+                color="success"
+                size="small"
+                disabled={!weaponId} // disabling equip of outfit with invalid weaponId
+                onClick={onEquip}
+              >
+                <CheckroomIcon />
+              </Button>
+            </Tooltip>
+            <Tooltip
+              title={<Typography>Delete Build</Typography>}
+              placement="top"
+              arrow
+            >
+              <Button color="error" size="small" onClick={onRemove}>
+                <DeleteForeverIcon />
+              </Button>
+            </Tooltip>
           </Box>
 
           <Grid

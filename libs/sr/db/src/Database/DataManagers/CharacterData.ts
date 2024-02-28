@@ -1,6 +1,6 @@
 import type { TriggerString } from '@genshin-optimizer/common/database'
 import { clamp, deepClone, objKeyMap } from '@genshin-optimizer/common/util'
-import { validateLevelAsc } from '@genshin-optimizer/gi/util'
+import { validateLevelAsc } from '@genshin-optimizer/sr/util'
 import type {
   CharacterKey,
   CharacterLocationKey,
