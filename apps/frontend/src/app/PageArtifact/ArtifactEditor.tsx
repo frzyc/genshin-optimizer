@@ -175,9 +175,10 @@ export default function ArtifactEditor({
 
   const queueTotal = processedNum + outstandingNum + scanningNum
   const disableEditSlot =
-    (!['new', ''].includes(artifactIdToEdit) && !!artifact?.location) ||
-    !!fixedSlotKey ||
-    !!artifactIdToEdit // Disable editing slot of existing artifacts
+    (!['new', ''].includes(artifactIdToEdit) && !!artifact?.location) || // Disable slot for equipped artifact
+    !!fixedSlotKey || // Disable slot if its fixed
+    // Disable editing slot of existing artifacts // TODO: disable slot only for artifacts that are in a build?
+    (!!artifactIdToEdit && artifactIdToEdit !== 'new')
 
   const uploadFiles = useCallback(
     (files?: FileList | null) => {
