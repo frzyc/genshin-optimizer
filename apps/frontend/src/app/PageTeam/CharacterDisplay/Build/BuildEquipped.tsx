@@ -9,6 +9,7 @@ import {
   Button,
   CardActionArea,
   CardContent,
+  Tooltip,
   Typography,
 } from '@mui/material'
 import { useContext } from 'react'
@@ -58,15 +59,33 @@ export function BuildEquipped({ active = false }: { active: boolean }) {
               <Typography variant="h6">Equipped</Typography>
             </CardActionArea>
           </CardThemed>
-          <Button disabled color="info" size="small">
-            <EditIcon />
-          </Button>
-          <Button color="info" size="small" onClick={copyToTc}>
-            <ScienceIcon />
-          </Button>
-          <Button color="info" size="small" onClick={onDupe}>
-            <ContentCopyIcon />
-          </Button>
+          <Tooltip
+            title={<Typography>Edit Build Settings</Typography>}
+            placement="top"
+            arrow
+          >
+            <Button disabled color="info" size="small">
+              <EditIcon />
+            </Button>
+          </Tooltip>
+          <Tooltip
+            title={<Typography>Copy to TC Builds</Typography>}
+            placement="top"
+            arrow
+          >
+            <Button color="info" size="small" onClick={copyToTc}>
+              <ScienceIcon />
+            </Button>
+          </Tooltip>
+          <Tooltip
+            title={<Typography>Duplicate Build</Typography>}
+            placement="top"
+            arrow
+          >
+            <Button color="info" size="small" onClick={onDupe}>
+              <ContentCopyIcon />
+            </Button>
+          </Tooltip>
         </Box>
 
         <BuildEquip weaponId={equippedWeapon} artifactIds={equippedArtifacts} />
