@@ -56,7 +56,7 @@ export default function PageTeam() {
     database.teams.set(teamId, { lastEdit: Date.now() })
   }, [teamId, database.teams, invalidKey])
 
-  if (invalidKey) return <Navigate to="/characters" />
+  if (invalidKey) return <Navigate to="/teams" />
 
   return (
     <Box my={1} display="flex" flexDirection="column" gap={1}>
