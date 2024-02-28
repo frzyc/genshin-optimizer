@@ -205,11 +205,13 @@ function InTeam() {
         <Grid item xs={1}>
           <Button
             fullWidth
-            sx={{height: '100%'}}
+            sx={{ height: '100%' }}
             onClick={() => onAddTeam()}
             color="info"
             startIcon={<AddIcon />}
-          >Add Team</Button>
+          >
+            Add Team
+          </Button>
         </Grid>
       </Grid>
     </Box>
