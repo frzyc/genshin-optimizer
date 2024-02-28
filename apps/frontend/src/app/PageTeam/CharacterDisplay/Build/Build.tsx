@@ -14,6 +14,7 @@ import { useBuild, useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { getCharData } from '@genshin-optimizer/gi/stats'
 import { ArtifactSlotName, CharacterName } from '@genshin-optimizer/gi/ui'
 import CheckroomIcon from '@mui/icons-material/Checkroom'
+import ContentCopyIcon from '@mui/icons-material/ContentCopy'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import EditIcon from '@mui/icons-material/Edit'
 import InfoIcon from '@mui/icons-material/Info'
@@ -106,6 +107,12 @@ export function Build({
       description,
     })
   }
+  const onDupe = () =>
+    database.teamChars.newBuild(teamCharId, {
+      name: `Duplicate of ${name}`,
+      artifactIds: artifactIds,
+      weaponId: weaponId,
+    })
   const weaponUsedInTeamCharId = teamCharIds.find(
     (tcId) =>
       tcId !== teamCharId &&
@@ -159,6 +166,9 @@ export function Build({
             </Button>
             <Button color="info" size="small" onClick={copyToTc}>
               <ScienceIcon />
+            </Button>
+            <Button color="info" size="small" onClick={onDupe}>
+              <ContentCopyIcon />
             </Button>
             <Button
               color="success"
