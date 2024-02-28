@@ -24,6 +24,7 @@ import {
   Divider,
   Grid,
   TextField,
+  Tooltip,
   Typography,
 } from '@mui/material'
 import { useContext, useDeferredValue, useEffect, useState } from 'react'
@@ -86,12 +87,24 @@ export default function BuildTc({
                 </Box>
               </CardActionArea>
             </CardThemed>
-            <Button color="info" size="small" onClick={onOpen}>
-              <EditIcon />
-            </Button>
-            <Button color="error" size="small" onClick={onRemove}>
-              <DeleteForeverIcon />
-            </Button>
+            <Tooltip
+              title={<Typography>Edit Build Settings</Typography>}
+              placement="top"
+              arrow
+            >
+              <Button color="info" size="small" onClick={onOpen}>
+                <EditIcon />
+              </Button>
+            </Tooltip>
+            <Tooltip
+              title={<Typography>Delete Build</Typography>}
+              placement="top"
+              arrow
+            >
+              <Button color="error" size="small" onClick={onRemove}>
+                <DeleteForeverIcon />
+              </Button>
+            </Tooltip>
           </Box>
 
           <TcEquip buildTcId={buildTcId} />
