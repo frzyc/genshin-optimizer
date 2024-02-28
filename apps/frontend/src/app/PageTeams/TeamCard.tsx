@@ -1,5 +1,6 @@
 import { BootstrapTooltip, CardThemed } from '@genshin-optimizer/common/ui'
 import { range } from '@genshin-optimizer/common/util'
+import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import { useDatabase, useTeam } from '@genshin-optimizer/gi/db-ui'
 import ContentCopyIcon from '@mui/icons-material/ContentCopy'
 import ContentPasteIcon from '@mui/icons-material/ContentPaste'
@@ -28,7 +29,7 @@ export default function TeamCard({
 }: {
   teamId: string
   bgt?: 'light' | 'dark'
-  onClick: () => void
+  onClick: (cid?: CharacterKey) => void
   disableButtons?: boolean
 }) {
   const team = useTeam(teamId)
@@ -62,49 +63,46 @@ export default function TeamCard({
         flexDirection: 'column',
       }}
     >
-      <CardActionArea
-        onClick={onClick}
+      <Box
         sx={{
+          height: '100%',
+          p: 1,
           display: 'flex',
           flexDirection: 'column',
           gap: 1,
-          alignItems: 'stretch',
-          flexGrow: 1,
         }}
       >
-        <Box
-          sx={{
-            height: '100%',
-            p: 1,
-            display: 'flex',
-            flexDirection: 'column',
-            gap: 1,
-          }}
-        >
-          <Typography sx={{ display: 'flex', gap: 1 }}>
-            <span>{name}</span>{' '}
-            <BootstrapTooltip title={<Typography>{description}</Typography>}>
-              <InfoIcon />
-            </BootstrapTooltip>
-          </Typography>
+        <Typography sx={{ display: 'flex', gap: 1 }}>
+          <span>{name}</span>{' '}
+          <BootstrapTooltip title={<Typography>{description}</Typography>}>
+            <InfoIcon />
+          </BootstrapTooltip>
+        </Typography>
 
-          <Box sx={{ marginTop: 'auto' }}>
-            <Grid container columns={4} spacing={1}>
-              {range(0, 3).map((i) => (
-                <Grid key={i} item xs={1} height="100%">
-                  {teamCharIds[i] ? (
+        <Box sx={{ marginTop: 'auto' }}>
+          <Grid container columns={4} spacing={1}>
+            {range(0, 3).map((i) => (
+              <Grid key={i} item xs={1} height="100%">
+                {teamCharIds[i] ? (
+                  <CardActionArea
+                    onClick={() =>
+                      onClick(database.teamChars.get(teamCharIds[i]).key)
+                    }
+                  >
                     <CharacterCardPico
                       characterKey={database.teamChars.get(teamCharIds[i]).key}
                     />
-                  ) : (
+                  </CardActionArea>
+                ) : (
+                  <CardActionArea onClick={() => onClick()}>
                     <BlankCharacterCardPico index={i} />
-                  )}
-                </Grid>
-              ))}
-            </Grid>
-          </Box>
+                  </CardActionArea>
+                )}
+              </Grid>
+            ))}
+          </Grid>
         </Box>
-      </CardActionArea>
+      </Box>
       {!disableButtons && (
         <Box sx={{ display: 'flex', gap: 1, marginTop: 'auto', p: 1 }}>
           <Button

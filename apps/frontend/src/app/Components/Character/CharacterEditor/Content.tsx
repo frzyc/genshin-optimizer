@@ -7,7 +7,8 @@ import {
 import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { getCharData } from '@genshin-optimizer/gi/stats'
 import { CharacterName } from '@genshin-optimizer/gi/ui'
-import { Box, Grid, Typography } from '@mui/material'
+import AddIcon from '@mui/icons-material/Add'
+import { Box, Button, Grid, Typography } from '@mui/material'
 import { useContext, useMemo } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { CharacterContext } from '../../../Context/CharacterContext'
@@ -175,6 +176,15 @@ function InTeam() {
   )
   if (!teamIds.length) return null
 
+  const onAddTeam = () => {
+    const teamId = database.teams.new()
+    const teamCharId = database.teamChars.new(characterKey)
+    database.teams.set(teamId, (team) => {
+      team.teamCharIds[0] = teamCharId
+    })
+    navigate(`/teams/${teamId}`)
+  }
+
   // TODO: Translation
   return (
     <Box>
@@ -192,6 +202,17 @@ function InTeam() {
             />
           </Grid>
         ))}
+        <Grid item xs={1}>
+          <Button
+            fullWidth
+            sx={{ height: '100%' }}
+            onClick={() => onAddTeam()}
+            color="info"
+            startIcon={<AddIcon />}
+          >
+            Add Team
+          </Button>
+        </Grid>
       </Grid>
     </Box>
   )
