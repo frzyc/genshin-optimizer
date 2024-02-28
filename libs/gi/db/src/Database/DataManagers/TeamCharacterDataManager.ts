@@ -356,6 +356,9 @@ export class TeamCharacterDataManager extends DataManager<
     return defaultInitialWeapon()
   }
 
+  /**
+   * Note: this doesnt return any artifacts(all undefined) when the current teamchar is using a TC Build.
+   */
   getLoadoutArtifacts(
     teamCharId: string
   ): Record<ArtifactSlotKey, ICachedArtifact | undefined> {
@@ -375,7 +378,6 @@ export class TeamCharacterDataManager extends DataManager<
         if (!build) return objKeyMap(allArtifactSlotKeys, () => undefined)
         return objMap(build.artifactIds, (id) => this.database.arts.get(id))
       }
-      //TODO case 'TC'
     }
     return objKeyMap(allArtifactSlotKeys, () => undefined)
   }

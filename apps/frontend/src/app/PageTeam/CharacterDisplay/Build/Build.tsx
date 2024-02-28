@@ -4,33 +4,45 @@ import {
   CardThemed,
   ModalWrapper,
 } from '@genshin-optimizer/common/ui'
+import { objKeyMap } from '@genshin-optimizer/common/util'
 import {
+  allArtifactSlotKeys,
   charKeyToLocCharKey,
   type ArtifactSlotKey,
 } from '@genshin-optimizer/gi/consts'
-import { useBuild, useDatabase } from '@genshin-optimizer/gi/db-ui'
+import { useBuild, useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { getCharData } from '@genshin-optimizer/gi/stats'
+import { ArtifactSlotName, CharacterName } from '@genshin-optimizer/gi/ui'
 import CheckroomIcon from '@mui/icons-material/Checkroom'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import EditIcon from '@mui/icons-material/Edit'
 import InfoIcon from '@mui/icons-material/Info'
 import ScienceIcon from '@mui/icons-material/Science'
 import {
+  Alert,
   Box,
   Button,
+  Card,
   CardActionArea,
   CardContent,
   CardHeader,
   Divider,
+  Grid,
   TextField,
   Typography,
+  styled,
 } from '@mui/material'
 import { useContext, useDeferredValue, useEffect, useState } from 'react'
+import ArtifactCardNano from '../../../Components/Artifact/ArtifactCardNano'
 import EquippedGrid from '../../../Components/Character/EquippedGrid'
 import CloseButton from '../../../Components/CloseButton'
+import WeaponCardNano from '../../../Components/Weapon/WeaponCardNano'
 import { CharacterContext } from '../../../Context/CharacterContext'
 import { TeamCharacterContext } from '../../../Context/TeamCharacterContext'
-import BuildEquip from './BuildEquip'
+
+const UsedCard = styled(Card)(() => ({
+  boxShadow: '0px 0px 0px 2px red',
+}))
 // TODO: Translation
 export function Build({
   buildId,
@@ -43,7 +55,9 @@ export function Build({
   const {
     teamCharId,
     teamChar: { key: characterKey },
+    team: { teamCharIds },
   } = useContext(TeamCharacterContext)
+  const { gender } = useDBMeta()
   const database = useDatabase()
   const { name, description, weaponId, artifactIds } = useBuild(buildId)
   const onActive = () =>
@@ -92,7 +106,25 @@ export function Build({
       description,
     })
   }
+  const weaponUsedInTeamCharId = teamCharIds.find(
+    (tcId) =>
+      tcId !== teamCharId &&
+      database.teamChars.getLoadoutWeapon(tcId).id === weaponId
+  )
+  const weaponUsedInTeamCharKey =
+    weaponUsedInTeamCharId &&
+    database.teamChars.get(weaponUsedInTeamCharId)!.key
 
+  const artUsedInTeamCharKeys = objKeyMap(allArtifactSlotKeys, (slotKey) => {
+    const artId = artifactIds[slotKey]
+    if (!artId) return undefined
+    const tcId = teamCharIds.find(
+      (tcId) =>
+        tcId !== teamCharId &&
+        database.teamChars.getLoadoutArtifacts(tcId)[slotKey]?.id === artId
+    )
+    return tcId && database.teamChars.get(tcId)!.key
+  })
   return (
     <>
       <ModalWrapper open={open} onClose={onClose}>
@@ -141,7 +173,55 @@ export function Build({
             </Button>
           </Box>
 
-          <BuildEquip weaponId={weaponId} artifactIds={artifactIds} />
+          <Grid
+            container
+            spacing={1}
+            columns={{ xs: 2, sm: 2, md: 3, lg: 6, xl: 6 }}
+          >
+            <Grid item xs={1}>
+              <WeaponCardNano
+                weaponId={weaponId}
+                weaponTypeKey={weaponTypeKey}
+                BGComponent={weaponUsedInTeamCharKey ? UsedCard : undefined}
+              />
+            </Grid>
+            {Object.entries(artifactIds).map(([slotKey, id]) => (
+              <Grid item key={id || slotKey} xs={1}>
+                <ArtifactCardNano
+                  artifactId={id}
+                  slotKey={slotKey}
+                  BGComponent={
+                    artUsedInTeamCharKeys[slotKey] ? UsedCard : undefined
+                  }
+                />
+              </Grid>
+            ))}
+          </Grid>
+          {(weaponUsedInTeamCharKey ||
+            Object.values(artUsedInTeamCharKeys).some((ck) => ck)) && (
+            <Alert variant="outlined" severity="warning">
+              {weaponUsedInTeamCharKey && (
+                <Typography>
+                  Teammate{' '}
+                  <CharacterName
+                    characterKey={weaponUsedInTeamCharKey}
+                    gender={gender}
+                  />{' '}
+                  is already using this weapon.
+                </Typography>
+              )}
+              {Object.entries(artUsedInTeamCharKeys).map(
+                ([slotKey, ck]) =>
+                  ck && (
+                    <Typography>
+                      Teammate{' '}
+                      <CharacterName characterKey={ck} gender={gender} /> is
+                      already using this <ArtifactSlotName slotKey={slotKey} />.
+                    </Typography>
+                  )
+              )}
+            </Alert>
+          )}
         </CardContent>
       </CardThemed>
     </>
