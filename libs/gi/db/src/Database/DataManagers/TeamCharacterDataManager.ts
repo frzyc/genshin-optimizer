@@ -1,3 +1,4 @@
+import type { DataManagerCallback } from '@genshin-optimizer/common/database'
 import { deepClone, objKeyMap, objMap } from '@genshin-optimizer/common/util'
 import type {
   ArtifactSetKey,
@@ -417,5 +418,63 @@ export class TeamCharacterDataManager extends DataManager<
     )
       return ''
     return id
+  }
+  followChar(teamCharId: string, callback: DataManagerCallback<CharacterKey>) {
+    const teamChar = this.database.teamChars.get(teamCharId)
+    if (!teamChar) return () => {}
+    return this.database.chars.follow(teamChar.key, callback)
+  }
+  followBuild(teamCharId: string, callback: () => void) {
+    const teamChar = this.database.teamChars.get(teamCharId)
+    if (!teamChar) return () => {}
+    // in the case of buildType ==='equipped', that is covered by following the char with `followChar`
+    if (teamChar.buildType === 'real') {
+      const build = this.database.builds.get(teamChar.buildId)
+      if (!build) return () => {}
+      const unfollowBuild = this.database.builds.follow(
+        teamChar.buildId,
+        callback
+      )
+      const unfollowWeapon = build.weaponId
+        ? this.database.weapons.follow(build.weaponId, callback)
+        : () => {}
+      const unfollowArts = Object.values(build.artifactIds).map((id) =>
+        id ? this.database.arts.follow(id, callback) : () => {}
+      )
+      return () => {
+        unfollowBuild()
+        unfollowWeapon()
+        unfollowArts.forEach((unfollow) => unfollow())
+      }
+    } else if (teamChar.buildType === 'tc')
+      return this.database.buildTcs.follow(teamChar.buildTcId, callback)
+    return () => {}
+  }
+  followCompareBuild(teamCharId: string, callback: () => void) {
+    const teamChar = this.database.teamChars.get(teamCharId)
+    if (!teamChar) return () => {}
+    if (!teamChar.compare) return () => {}
+    // in the case of teamChar.compareType ==='equipped', that is covered by following the char with `followChar`
+    if (teamChar.compareType === 'real') {
+      const build = this.database.builds.get(teamChar.compareBuildId)
+      if (!build) return () => {}
+      const unfollowBuild = this.database.builds.follow(
+        teamChar.compareBuildId,
+        callback
+      )
+      const unfollowWeapon = build.weaponId
+        ? this.database.weapons.follow(build.weaponId, callback)
+        : () => {}
+      const unfollowArts = Object.values(build.artifactIds).map((id) =>
+        id ? this.database.arts.follow(id, callback) : () => {}
+      )
+      return () => {
+        unfollowBuild()
+        unfollowWeapon()
+        unfollowArts.forEach((unfollow) => unfollow())
+      }
+    } else if (teamChar.buildType === 'tc')
+      return this.database.buildTcs.follow(teamChar.compareBuildTcId, callback)
+    return () => {}
   }
 }
