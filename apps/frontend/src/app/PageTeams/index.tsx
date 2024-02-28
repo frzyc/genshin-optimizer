@@ -3,6 +3,8 @@ import {
   useForceUpdate,
 } from '@genshin-optimizer/common/react-util'
 import { CardThemed, ModalWrapper } from '@genshin-optimizer/common/ui'
+import { sortFunction } from '@genshin-optimizer/common/util'
+import { teamSortKeys } from '@genshin-optimizer/gi/db'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import AddIcon from '@mui/icons-material/Add'
 import UploadIcon from '@mui/icons-material/Upload'
@@ -19,7 +21,10 @@ import {
 } from '@mui/material'
 import { Suspense, useEffect, useMemo, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import SortByButton from '../Components/SortByButton'
 import TeamCard from './TeamCard'
+import { teamSortConfigs, teamSortMap } from './TeamSort'
+import { useDataEntryBase } from '@genshin-optimizer/common/database-ui'
 const columns = { xs: 1, sm: 2, md: 3, lg: 4, xl: 4 }
 
 // TODO: Translation
@@ -27,15 +32,12 @@ const columns = { xs: 1, sm: 2, md: 3, lg: 4, xl: 4 }
 export default function PageTeams() {
   const database = useDatabase()
   const [dbDirty, forceUpdate] = useForceUpdate()
-  const teamIds = useMemo(
-    () => dbDirty && database.teams.keys,
-    [dbDirty, database]
-  )
   const navigate = useNavigate()
   // Set follow, should run only once
   useEffect(() => {
     return database.teams.followAny(
-      (k, r) => (r === 'new' || r === 'remove') && forceUpdate()
+      (k, r) =>
+        (r === 'new' || r === 'remove' || r === 'update') && forceUpdate()
     )
   }, [forceUpdate, database])
 
@@ -56,8 +58,42 @@ export default function PageTeams() {
       return
     }
   }
+  const { sortType, ascending } = useDataEntryBase(database.displayTeam)
+
+  // Currently using the BD key as an ID maybe later will need to add an ID entry to Team
+  const teamIds = useMemo(
+    () =>
+      dbDirty &&
+      database.teams.keys.sort((k1, k2) => {
+        return sortFunction(
+          teamSortMap[sortType],
+          ascending,
+          teamSortConfigs()
+        )(database.teams.get(k1), database.teams.get(k2))
+      }),
+    [dbDirty, database.teams, sortType, ascending]
+  )
+
+  const sortByButtonProps = {
+    sortKeys: [...teamSortKeys],
+    value: sortType,
+    onChange: (sortType) => database.displayTeam.set({ sortType }),
+    ascending: ascending,
+    onChangeAsc: (ascending) => database.displayTeam.set({ ascending }),
+  }
+
   return (
     <Box my={1} display="flex" flexDirection="column" gap={1}>
+      <Box
+        sx={{
+          display: 'flex',
+          justifyContent: 'flex-end',
+          alignItems: 'center',
+        }}
+      >
+        {/* May use `PageAndSortOptionSelect` to add multiple pages and filter count later */}
+        <SortByButton {...sortByButtonProps} />
+      </Box>
       <Box sx={{ display: 'flex', gap: 1 }}>
         <Button fullWidth onClick={onAdd} color="info" startIcon={<AddIcon />}>
           Add Team
