@@ -21,8 +21,8 @@ jobs:
       - name: Setup variables
         id: vars
         run: |
-          echo "deployment_name=$(cat deployment_name)" >> $GITHUB_OUTPUT
-          echo "frontend_name=$(cat frontend_name)" >> $GITHUB_OUTPUT
+          echo "deployment_name=$(cat frontend_build/deployment_name)" >> $GITHUB_OUTPUT
+          echo "frontend_name=$(cat frontend_build/frontend_name)" >> $GITHUB_OUTPUT
       - name: Checkout external gh-pages
         uses: actions/checkout@v4
         with:
@@ -34,7 +34,7 @@ jobs:
         run: |
           mkdir --parents "gh-pages/${{ steps.vars.outputs.deployment_name }}/${{ steps.vars.outputs.frontend_name }}"
           rm -rfv "gh-pages/${{ steps.vars.outputs.deployment_name }}/${{ steps.vars.outputs.frontend_name }}" || true
-          mv "dist/apps/${{ steps.vars.outputs.frontend_name }}" "gh-pages/${{ steps.vars.outputs.deployment_name }}/${{ steps.vars.outputs.frontend_name }}"
+          mv "frontend_build/dist/apps/${{ steps.vars.outputs.frontend_name }}" "gh-pages/${{ steps.vars.outputs.deployment_name }}/${{ steps.vars.outputs.frontend_name }}"
       - name: Make commit to deploy
         run: |
           git config user.name "github-actions[bot]"

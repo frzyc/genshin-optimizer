@@ -61,7 +61,7 @@ jobs:
       - name: Archive build
         uses: actions/upload-artifact@v4
         with:
-          name: ${{inputs.frontend_name}}
+          name: frontend_build
           path: |
             dist/apps/${{inputs.frontend_name}}
             frontend_name
