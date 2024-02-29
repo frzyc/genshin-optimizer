@@ -13,58 +13,66 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
-      - name: Dump GitHub context
-        env:
-          GITHUB_CONTEXT: ${{ toJSON(github) }}
-        run: echo "$GITHUB_CONTEXT"
-      # - name: Download SR build artifact
-      #   uses: actions/download-artifact@v4
-      #   with:
-      #     name: sr-frontend
-      #     run-id: ${{ github.event.workflow_run.id }}
-      # - name: Checkout external gh-pages
-      #   uses: actions/checkout@v4
-      #   with:
-      #     repository: ${{ inputs.pr_repo }}
-      #     ssh-key: ${{ secrets.PR_REPO_SSH_KEY }}
-      #     ref: gh-pages
-      #     path: gh-pages
-      # - name: Move to external gh-pages
-      #   run: |
-      #     mkdir --parents "gh-pages/${{ inputs.deployment_name }}/${{ inputs.frontend_name }}"
-      #     rm -rfv "gh-pages/${{ inputs.deployment_name }}/${{ inputs.frontend_name }}" || true
-      #     mv "dist/apps/${{ inputs.frontend_name }}" "gh-pages/${{ inputs.deployment_name }}/${{ inputs.frontend_name }}"
-      # - name: Make commit to deploy
-      #   run: |
-      #     git config user.name "github-actions[bot]"
-      #     git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-      #     git config pull.rebase false
-      #     git add ./${{ inputs.deployment_name }}/${{ inputs.frontend_name }}
-      #     git commit --allow-empty -m "build ${{ inputs.deployment_name }}/${{ inputs.frontend_name }} ${{ inputs.repo_full_name }}@$(cd .. && git rev-parse HEAD)"
-      #   working-directory: gh-pages
-      # - name: Push commit
-      #   uses: nick-fields/retry@v2
-      #   with:
-      #     max_attempts: 4
-      #     timeout_minutes: 4
-      #     command: |
-      #       cd gh-pages
-      #       git pull origin gh-pages
-      #       git push origin gh-pages
-      # - name: Export url
-      #   id: export-url
-      #   # First line splits the full repo name (frzyc/genshin-optimizer) into $account (frzyc) and $repo (genshin-optimizer)
-      #   run: |
-      #     IFS=/ read -r account repo <<< ${{ inputs.pr_repo }}
-      #     echo "url=Deployed $(git rev-parse HEAD) to https://$account.github.io/$repo/${{ inputs.deployment_name }}/${{ inputs.frontend_name }} (Takes 3-5 minutes after this completes to be available)" >> $GITHUB_OUTPUT
-      #     echo "Deployed $(git rev-parse HEAD) to https://$account.github.io/$repo/${{ inputs.deployment_name }}/${{ inputs.frontend_name }} (Takes 3-5 minutes after this completes to be available)"
-      # - name: Output date
-      #   id: output-date2
-      #   run: echo "date=$(date -u)" >> $GITHUB_OUTPUT
-      # - name: Maintain comment
-      #   uses: actions-cool/maintain-one-comment@v3
-      #   with:
-      #     body: |
-      #       [${{ inputs.frontend_name }}] [${{ steps.output-date2.outputs.date }}] - ${{ steps.export-url.outputs.url }}
-      #     body-include: '<!-- Created by actions-cool/maintain-one-comment -->'
-      #     update-mode: 'append'
+      - name: Download SRO build artifact
+        uses: actions/download-artifact@v4
+        if: ${{ github.event.workflow_run.path == '.github/workflows/build-sro-pr.yml' }}
+        with:
+          name: sr-frontend
+          run-id: ${{ github.event.workflow_run.id }}
+      - name: Download GO build artifact
+        uses: actions/download-artifact@v4
+        if: ${{ github.event.workflow_run.path == '.github/workflows/build-go-wr-pr.yml' }}
+        with:
+          name: frontend
+          run-id: ${{ github.event.workflow_run.id }}
+      - name: Setup variables
+        id: vars
+        run: |
+          echo "deployment_name=$(cat deployment_name)" >> $GITHUB_OUTPUT
+          echo "frontend_name=$(cat frontend_name)" >> $GITHUB_OUTPUT
+      - name: Checkout external gh-pages
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ vars.pr_repo }}
+          ssh-key: ${{ secrets.PR_REPO_SSH_KEY }}
+          ref: gh-pages
+          path: gh-pages
+      - name: Move to external gh-pages
+        run: |
+          mkdir --parents "gh-pages/${{ steps.vars.outputs.deployment_name }}/${{ steps.vars.outputs.frontend_name }}"
+          rm -rfv "gh-pages/${{ steps.vars.outputs.deployment_name }}/${{ steps.vars.outputs.frontend_name }}" || true
+          mv "dist/apps/${{ steps.vars.outputs.frontend_name }}" "gh-pages/${{ steps.vars.outputs.deployment_name }}/${{ steps.vars.outputs.frontend_name }}"
+      - name: Make commit to deploy
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config pull.rebase false
+          git add ./${{ steps.vars.outputs.deployment_name }}/${{ steps.vars.outputs.frontend_name }}
+          git commit --allow-empty -m "build ${{ steps.vars.outputs.deployment_name }}/${{ steps.vars.outputs.frontend_name }} $(cd .. && git rev-parse HEAD)"
+        working-directory: gh-pages
+      - name: Push commit
+        uses: nick-fields/retry@v2
+        with:
+          max_attempts: 4
+          timeout_minutes: 4
+          command: |
+            cd gh-pages
+            git pull origin gh-pages
+            git push origin gh-pages
+      - name: Export url
+        id: export-url
+        # First line splits the full repo name (frzyc/genshin-optimizer) into $account (frzyc) and $repo (genshin-optimizer)
+        run: |
+          IFS=/ read -r account repo <<< ${{ vars.pr_repo }}
+          echo "url=Deployed $(git rev-parse HEAD) to https://$account.github.io/$repo/${{ steps.vars.outputs.deployment_name }}/${{ steps.vars.outputs.frontend_name }} (Takes 3-5 minutes after this completes to be available)" >> $GITHUB_OUTPUT
+          echo "Deployed $(git rev-parse HEAD) to https://$account.github.io/$repo/${{ steps.vars.outputs.deployment_name }}/${{ steps.vars.outputs.frontend_name }} (Takes 3-5 minutes after this completes to be available)"
+      - name: Output date
+        id: output-date2
+        run: echo "date=$(date -u)" >> $GITHUB_OUTPUT
+      - name: Maintain comment
+        uses: actions-cool/maintain-one-comment@v3
+        with:
+          body: |
+            [${{ steps.vars.outputs.frontend_name }} [${{ steps.output-date2.outputs.date }}] - ${{ steps.export-url.outputs.url }}
+          body-include: '<!-- Created by actions-cool/maintain-one-comment -->'
+          update-mode: 'append'
