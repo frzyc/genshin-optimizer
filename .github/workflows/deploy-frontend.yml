@@ -1,4 +1,5 @@
-name: Deploy frontend from artifact
+name: Deploy frontend for artifact
+run-name: Deploy frontend for artifact from ${{ github.event.workflow_run.display_title }}
 
 on:
   workflow_run:
