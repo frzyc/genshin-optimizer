@@ -1,117 +1,49 @@
-name: Deploy Frontend
-run-name: Deploy frontend of ${{ inputs.frontend_name }} for ${{ inputs.deployment_name }} - ${{ github.event.inputs.ref }}
+name: Deploy frontend from artifact
+run-name: Deploy frontend from artifact created by "${{ github.event.workflow_run.display_title }}"
 
 on:
-  workflow_dispatch:
-    inputs:
-      frontend_name:
-        description: 'Frontend type to build. Can be `frontend`, or `sr-frontend`'
-        type: string
-      repo_full_name:
-        description: 'Full repository name to build from.'
-        type: string
-        default: 'frzyc/genshin-optimizer'
-      ref:
-        description: 'Ref to build from. Can be a commit hash.'
-        type: string
-        default: 'master'
-      deployment_name:
-        description: 'Name for the deployment. This will determine the URL. If you choose a name that is already deployed, it will overwrite that deployment.'
-        type: string
-        default: 'master'
-      pr_repo:
-        description: 'Name of the repo to create the deployment on'
-        type: string
-      show_dev_components:
-        description: 'Flag to show components typically only shown in development mode, for experimental or in-progress features.'
-        type: boolean
-        default: false
-  workflow_call:
-    inputs:
-      frontend_name:
-        description: 'Frontend type to build. Can be `frontend`, or `sr-frontend`'
-        type: string
-      repo_full_name:
-        description: 'Full repository name to build from.'
-        type: string
-        default: 'frzyc/genshin-optimizer'
-      ref:
-        description: 'Ref to build from. Can be a commit hash.'
-        type: string
-        default: 'master'
-      deployment_name:
-        description: 'Name for the deployment. This will determine the URL. If you choose a name that is already deployed, it will overwrite that deployment.'
-        type: string
-        default: 'master'
-      pr_repo:
-        description: 'Name of the repo to create the deployment on'
-        type: string
-      show_dev_components:
-        description: 'Flag to show components typically only shown in development mode, for experimental or in-progress features.'
-        type: boolean
-        default: false
+  workflow_run:
+    workflows:
+      - Build GO (WR) PR
+      - Build SRO PR
+    types:
+      - completed
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - name: Download build artifact
+        uses: actions/download-artifact@v4
         with:
-          repository: ${{ inputs.repo_full_name }}
-          ref: ${{ inputs.ref }}
-          submodules: true
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: 'yarn'
-      - name: Yarn install
+          run-id: ${{ github.event.workflow_run.id }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Setup variables
+        id: vars
         run: |
-          yarn install --immutable --immutable-cache
-      - name: Setup .env
-        run: |
-          printf '%s' "$ENVFILE" > apps/frontend/.env.local
-        env:
-          ENVFILE: ${{ secrets.ENVFILE }}
-      - name: Output date
-        id: output-date
-        run: echo "date=$(date -u)" >> $GITHUB_OUTPUT
-      - name: Output ref
-        id: output-ref
-        run: echo "ref=$(git rev-parse HEAD)" >> $GITHUB_OUTPUT
-      - name: Maintain comment
-        uses: actions-cool/maintain-one-comment@v3
-        with:
-          body: |
-            [${{ inputs.frontend_name }}] [${{ steps.output-date.outputs.date }}] - Building version ${{ steps.output-ref.outputs.ref }}
-          body-include: '<!-- Created by actions-cool/maintain-one-comment -->'
-          update-mode: 'append'
-      - name: Build genshin-optimizer
-        run: |
-          NX_URL_GITHUB_GO_CURRENT_VERSION="https://github.com/${{ inputs.repo_full_name }}/commit/$(git rev-parse HEAD)" \
-          NX_DAEMON="false" \
-          NX_SHOW_DEV_COMPONENTS="${{inputs.show_dev_components}}" \
-          yarn run nx run ${{inputs.frontend_name}}:build-vite:production --base-href=""
+          echo "deployment_name=$(cat frontend_build/deployment_name)" >> $GITHUB_OUTPUT
+          echo "frontend_name=$(cat frontend_build/frontend_name)" >> $GITHUB_OUTPUT
+          echo "ref=$(cat frontend_build/ref)" >> $GITHUB_OUTPUT
       - name: Checkout external gh-pages
         uses: actions/checkout@v4
         with:
-          repository: ${{ inputs.pr_repo }}
+          repository: ${{ vars.pr_repo }}
           ssh-key: ${{ secrets.PR_REPO_SSH_KEY }}
           ref: gh-pages
           path: gh-pages
       - name: Move to external gh-pages
         run: |
-          mkdir --parents "gh-pages/${{ inputs.deployment_name }}/${{ inputs.frontend_name }}"
-          rm -rfv "gh-pages/${{ inputs.deployment_name }}/${{ inputs.frontend_name }}" || true
-          mv "dist/apps/${{ inputs.frontend_name }}" "gh-pages/${{ inputs.deployment_name }}/${{ inputs.frontend_name }}"
+          mkdir --parents "gh-pages/${{ steps.vars.outputs.deployment_name }}/${{ steps.vars.outputs.frontend_name }}"
+          rm -rfv "gh-pages/${{ steps.vars.outputs.deployment_name }}/${{ steps.vars.outputs.frontend_name }}" || true
+          mv "frontend_build/dist/apps/${{ steps.vars.outputs.frontend_name }}" "gh-pages/${{ steps.vars.outputs.deployment_name }}/${{ steps.vars.outputs.frontend_name }}"
       - name: Make commit to deploy
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config pull.rebase false
-          git add ./${{ inputs.deployment_name }}/${{ inputs.frontend_name }}
-          git commit --allow-empty -m "build ${{ inputs.deployment_name }}/${{ inputs.frontend_name }} ${{ inputs.repo_full_name }}@$(cd .. && git rev-parse HEAD)"
+          git add ./${{ steps.vars.outputs.deployment_name }}/${{ steps.vars.outputs.frontend_name }}
+          git commit --allow-empty -m "build ${{ steps.vars.outputs.deployment_name }}/${{ steps.vars.outputs.frontend_name }} ${{ steps.vars.outputs.ref }}"
         working-directory: gh-pages
       - name: Push commit
         uses: nick-fields/retry@v2
@@ -126,16 +58,17 @@ jobs:
         id: export-url
         # First line splits the full repo name (frzyc/genshin-optimizer) into $account (frzyc) and $repo (genshin-optimizer)
         run: |
-          IFS=/ read -r account repo <<< ${{ inputs.pr_repo }}
-          echo "url=Deployed $(git rev-parse HEAD) to https://$account.github.io/$repo/${{ inputs.deployment_name }}/${{ inputs.frontend_name }} (Takes 3-5 minutes after this completes to be available)" >> $GITHUB_OUTPUT
-          echo "Deployed $(git rev-parse HEAD) to https://$account.github.io/$repo/${{ inputs.deployment_name }}/${{ inputs.frontend_name }} (Takes 3-5 minutes after this completes to be available)"
+          IFS=/ read -r account repo <<< ${{ vars.pr_repo }}
+          echo "url=Deployed ${{ steps.vars.outputs.ref }} to https://$account.github.io/$repo/${{ steps.vars.outputs.deployment_name }}/${{ steps.vars.outputs.frontend_name }} (Takes 3-5 minutes after this completes to be available)" >> $GITHUB_OUTPUT
       - name: Output date
         id: output-date2
         run: echo "date=$(date -u)" >> $GITHUB_OUTPUT
       - name: Maintain comment
         uses: actions-cool/maintain-one-comment@v3
         with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          number: ${{ steps.vars.outputs.deployment_name }}
           body: |
-            [${{ inputs.frontend_name }}] [${{ steps.output-date2.outputs.date }}] - ${{ steps.export-url.outputs.url }}
+            [${{ steps.vars.outputs.frontend_name }}] [${{ steps.output-date2.outputs.date }}] - ${{ steps.export-url.outputs.url }}
           body-include: '<!-- Created by actions-cool/maintain-one-comment -->'
           update-mode: 'append'
