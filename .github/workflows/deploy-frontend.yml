@@ -69,6 +69,6 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           number: ${{ steps.vars.outputs.deployment_name }}
           body: |
-            [${{ steps.vars.outputs.frontend_name }} [${{ steps.output-date2.outputs.date }}] - ${{ steps.export-url.outputs.url }}
+            [${{ steps.vars.outputs.frontend_name }}] [${{ steps.output-date2.outputs.date }}] - ${{ steps.export-url.outputs.url }}
           body-include: '<!-- Created by actions-cool/maintain-one-comment -->'
           update-mode: 'append'
