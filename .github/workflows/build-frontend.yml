@@ -46,7 +46,7 @@ jobs:
         run: |
           printf '%s' "$ENVFILE" > apps/frontend/.env.local
         env:
-          ENVFILE: ${{ secrets.ENVFILE }}
+          ENVFILE: ${{ vars.ENVFILE }}
       - name: Build genshin-optimizer
         run: |
           NX_URL_GITHUB_GO_CURRENT_VERSION="https://github.com/${{ inputs.repo_full_name }}/commit/$(git rev-parse HEAD)" \
