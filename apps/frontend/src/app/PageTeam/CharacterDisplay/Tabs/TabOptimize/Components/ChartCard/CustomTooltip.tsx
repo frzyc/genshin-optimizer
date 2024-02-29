@@ -1,11 +1,11 @@
-import { valueString } from '@genshin-optimizer/common/util'
+import { objMap, valueString } from '@genshin-optimizer/common/util'
 import { allArtifactSlotKeys } from '@genshin-optimizer/gi/consts'
-import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
+import type { GeneratedBuild, ICachedArtifact } from '@genshin-optimizer/gi/db'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import type { Unit } from '@genshin-optimizer/gi/keymap'
 import {
+  Box,
   Button,
-  CardContent,
   ClickAwayListener,
   Grid,
   Skeleton,
@@ -20,6 +20,7 @@ import BootstrapTooltip from '../../../../../../Components/BootstrapTooltip'
 import CardDark from '../../../../../../Components/Card/CardDark'
 import CloseButton from '../../../../../../Components/CloseButton'
 import SqBadge from '../../../../../../Components/SqBadge'
+import WeaponCardPico from '../../../../../../Components/Weapon/WeaponCardPico'
 import { DataContext } from '../../../../../../Context/DataContext'
 import { input } from '../../../../../../Formula'
 import { ArtifactSetBadges } from '../ArtifactSetBadges'
@@ -32,7 +33,7 @@ type CustomTooltipProps = TooltipProps<number, string> & {
   yUnit: Unit | undefined
   selectedPoint: EnhancedPoint | undefined
   setSelectedPoint: (pt: EnhancedPoint | undefined) => void
-  addBuildToList: (build: string[]) => void
+  addBuildToList: (build: GeneratedBuild) => void
 }
 export default function CustomTooltip({
   xLabel,
@@ -51,15 +52,8 @@ export default function CustomTooltip({
   const artifactsBySlot: { [slot: string]: ICachedArtifact } = useMemo(
     () =>
       selectedPoint &&
-      selectedPoint.artifactIds &&
-      Object.fromEntries(
-        selectedPoint.artifactIds
-          .map((id) => {
-            const artiObj = database.arts.get(id)
-            return [artiObj?.slotKey, artiObj]
-          })
-          .filter((arti) => arti)
-      ),
+      selectedPoint.build.artifactIds &&
+      objMap(selectedPoint.build.artifactIds, (id) => database.arts.get(id)),
     [database.arts, selectedPoint]
   )
   const clickAwayHandler = useCallback(
@@ -77,6 +71,8 @@ export default function CustomTooltip({
   )
 
   const currentlyEquipped =
+    data.get(input.weapon.id).value?.toString() ===
+      selectedPoint.build?.weaponId &&
     artifactsBySlot &&
     allArtifactSlotKeys.every(
       (slotKey) =>
@@ -108,10 +104,10 @@ export default function CustomTooltip({
     return (
       <ClickAwayListener onClickAway={clickAwayHandler}>
         <CardDark
-          sx={{ minWidth: '400px', maxWidth: '400px' }}
+          sx={{ minWidth: '400px', maxWidth: '400px', p: 1 }}
           onClick={(e) => e.stopPropagation()}
         >
-          <CardContent>
+          <Box>
             <Stack gap={1}>
               <Stack direction="row" alignItems="start" gap={1}>
                 <Stack spacing={0.5} flexGrow={99}>
@@ -132,7 +128,14 @@ export default function CustomTooltip({
                 <Grid item flexGrow={1} />
                 <CloseButton onClick={() => setSelectedPoint(undefined)} />
               </Stack>
-              <Grid container direction="row" spacing={0.75} columns={5}>
+              <Grid container direction="row" spacing={0.75} columns={6}>
+                {selectedPoint.build?.weaponId && (
+                  <Grid item xs={1}>
+                    <Suspense fallback={<Skeleton width={75} height={75} />}>
+                      <WeaponCardPico weaponId={selectedPoint.build.weaponId} />
+                    </Suspense>
+                  </Grid>
+                )}
                 {allArtifactSlotKeys.map((key) => (
                   <Grid item key={key} xs={1}>
                     <Suspense fallback={<Skeleton width={75} height={75} />}>
@@ -171,14 +174,17 @@ export default function CustomTooltip({
                     sx={{ width: '100%' }}
                     disabled={selectedPoint?.graphBuildNumber !== undefined}
                     color="info"
-                    onClick={() => addBuildToList(selectedPoint.artifactIds)}
+                    onClick={() =>
+                      selectedPoint.build &&
+                      addBuildToList(structuredClone(selectedPoint.build))
+                    }
                   >
                     {t('addBuildToList')}
                   </Button>
                 </span>
               </BootstrapTooltip>
             </Stack>
-          </CardContent>
+          </Box>
         </CardDark>
       </ClickAwayListener>
     )

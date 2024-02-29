@@ -1,10 +1,12 @@
 import {
   deepClone,
   deepFreeze,
+  objKeyMap,
   validateArr,
 } from '@genshin-optimizer/common/util'
 import type {
   ArtifactSetKey,
+  ArtifactSlotKey,
   LocationCharacterKey,
   MainStatKey,
 } from '@genshin-optimizer/gi/consts'
@@ -56,6 +58,11 @@ export interface StatFilterSetting {
   disabled: boolean
 }
 export type StatFilters = Record<string, StatFilterSetting[]>
+
+export type GeneratedBuild = {
+  weaponId?: string
+  artifactIds: Record<ArtifactSlotKey, string | undefined>
+}
 export interface OptConfig {
   artSetExclusion: ArtSetExclusion
   statFilters: StatFilters
@@ -80,7 +87,7 @@ export interface OptConfig {
   levelHigh: number
 
   //generated opt builds
-  builds: string[][]
+  builds: Array<GeneratedBuild>
   buildDate: number
 }
 
@@ -186,21 +193,19 @@ export class OptConfigDataManager extends DataManager<
     } else {
       builds = builds
         .map((build) => {
-          if (!Array.isArray(build)) return []
-          const filteredBuild = build.filter((id) => this.database.arts.get(id))
-          // Check that builds has only 1 artifact of each slot
-          if (
-            allArtifactSlotKeys.some(
-              (s) =>
-                filteredBuild.filter(
-                  (id) => this.database.arts.get(id)?.slotKey === s
-                ).length > 1
-            )
+          if (typeof build !== 'object') return undefined
+          const { weaponId, artifactIds: artifactIdsRaw } =
+            build as GeneratedBuild
+          if (!this.database.weapons.get(weaponId)) return undefined
+          const artifactIds = objKeyMap(allArtifactSlotKeys, (slotKey) =>
+            this.database.arts.get(artifactIdsRaw[slotKey])?.slotKey === slotKey
+              ? artifactIdsRaw[slotKey]
+              : undefined
           )
-            return []
-          return filteredBuild
+
+          return { artifactIds, weaponId }
         })
-        .filter((x) => x.length)
+        .filter((b) => b) as GeneratedBuild[]
       if (!Number.isInteger(buildDate)) buildDate = 0
     }
 
