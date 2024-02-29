@@ -2,7 +2,7 @@ name: Build Frontend
 run-name: Build frontend of ${{ inputs.frontend_name }} for ${{ inputs.deployment_name }} - ${{ github.event.inputs.ref }}
 
 on:
-  workflow_dispatch:
+  workflow_call:
     inputs:
       frontend_name:
         description: 'Frontend type to build. Can be `frontend`, or `sr-frontend`'
