@@ -19,9 +19,6 @@ on:
         description: 'Name for the deployment. This will determine the URL. If you choose a name that is already deployed, it will overwrite that deployment.'
         type: string
         default: 'master'
-      pr_repo:
-        description: 'Name of the repo to create the deployment on'
-        type: string
       show_dev_components:
         description: 'Flag to show components typically only shown in development mode, for experimental or in-progress features.'
         type: boolean
@@ -58,6 +55,7 @@ jobs:
           yarn run nx run ${{inputs.frontend_name}}:build-vite:production --base-href=""
           echo ${{inputs.frontend_name}} > frontend_name
           echo ${{inputs.deployment_name}} > deployment_name
+          echo $(git rev-parse HEAD) > ref
       - name: Archive build
         uses: actions/upload-artifact@v4
         with:

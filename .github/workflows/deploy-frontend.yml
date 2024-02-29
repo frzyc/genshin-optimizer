@@ -23,6 +23,7 @@ jobs:
         run: |
           echo "deployment_name=$(cat frontend_build/deployment_name)" >> $GITHUB_OUTPUT
           echo "frontend_name=$(cat frontend_build/frontend_name)" >> $GITHUB_OUTPUT
+          echo "ref=$(cat frontend_build/ref)" >> $GITHUB_OUTPUT
       - name: Checkout external gh-pages
         uses: actions/checkout@v4
         with:
@@ -41,7 +42,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config pull.rebase false
           git add ./${{ steps.vars.outputs.deployment_name }}/${{ steps.vars.outputs.frontend_name }}
-          git commit --allow-empty -m "build ${{ steps.vars.outputs.deployment_name }}/${{ steps.vars.outputs.frontend_name }} $(cd .. && git rev-parse HEAD)"
+          git commit --allow-empty -m "build ${{ steps.vars.outputs.deployment_name }}/${{ steps.vars.outputs.frontend_name }} ${{ steps.vars.outputs.ref }}"
         working-directory: gh-pages
       - name: Push commit
         uses: nick-fields/retry@v2
@@ -65,6 +66,8 @@ jobs:
       - name: Maintain comment
         uses: actions-cool/maintain-one-comment@v3
         with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          number: ${{ steps.vars.outputs.deployment_name }}
           body: |
             [${{ steps.vars.outputs.frontend_name }} [${{ steps.output-date2.outputs.date }}] - ${{ steps.export-url.outputs.url }}
           body-include: '<!-- Created by actions-cool/maintain-one-comment -->'
