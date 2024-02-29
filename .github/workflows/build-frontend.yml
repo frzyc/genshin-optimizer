@@ -1,0 +1,68 @@
+name: Build Frontend
+run-name: Build frontend of ${{ inputs.frontend_name }} for ${{ inputs.deployment_name }} - ${{ github.event.inputs.ref }}
+
+on:
+  workflow_dispatch:
+    inputs:
+      frontend_name:
+        description: 'Frontend type to build. Can be `frontend`, or `sr-frontend`'
+        type: string
+      repo_full_name:
+        description: 'Full repository name to build from.'
+        type: string
+        default: 'frzyc/genshin-optimizer'
+      ref:
+        description: 'Ref to build from. Can be a commit hash.'
+        type: string
+        default: 'master'
+      deployment_name:
+        description: 'Name for the deployment. This will determine the URL. If you choose a name that is already deployed, it will overwrite that deployment.'
+        type: string
+        default: 'master'
+      pr_repo:
+        description: 'Name of the repo to create the deployment on'
+        type: string
+      show_dev_components:
+        description: 'Flag to show components typically only shown in development mode, for experimental or in-progress features.'
+        type: boolean
+        default: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ inputs.repo_full_name }}
+          ref: ${{ inputs.ref }}
+          submodules: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'yarn'
+      - name: Yarn install
+        run: |
+          yarn install --immutable --immutable-cache
+      - name: Setup .env
+        run: |
+          printf '%s' "$ENVFILE" > apps/frontend/.env.local
+        env:
+          ENVFILE: ${{ secrets.ENVFILE }}
+      - name: Build genshin-optimizer
+        run: |
+          NX_URL_GITHUB_GO_CURRENT_VERSION="https://github.com/${{ inputs.repo_full_name }}/commit/$(git rev-parse HEAD)" \
+          NX_DAEMON="false" \
+          NX_SHOW_DEV_COMPONENTS="${{inputs.show_dev_components}}" \
+          yarn run nx run ${{inputs.frontend_name}}:build-vite:production --base-href=""
+          echo ${{inputs.frontend_name}} > frontend_name
+          echo ${{inputs.deployment_name}} > deployment_name
+      - name: Archive build
+        uses: action/upload-artifact@v4
+        with:
+          name: ${{inputs.frontend_name}}
+          path: |
+            dist/apps/${{inputs.frontend_name}}
+            frontend_name
+            deployment_name
