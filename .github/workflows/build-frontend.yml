@@ -59,7 +59,7 @@ jobs:
           echo ${{inputs.frontend_name}} > frontend_name
           echo ${{inputs.deployment_name}} > deployment_name
       - name: Archive build
-        uses: action/upload-artifact@v4
+        uses: actions/upload-artifact@v4
         with:
           name: ${{inputs.frontend_name}}
           path: |
