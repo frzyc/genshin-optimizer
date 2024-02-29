@@ -2,12 +2,12 @@ name: Clean PR Deployment
 run-name: Clean deployment ${{ github.event.number }}${{ github.event.inputs.deployment_name }} - ${{ github.event.pull_request.title }}
 
 on:
-  pull_request:
+  pull_request_target:
     types: [closed]
   workflow_dispatch:
     inputs:
       deployment_name:
-        description: 'Name for the deployment. This will determine the URL. If you choose a name that is already deployed, it will overwrite that deployment.'
+        description: 'Name for the deployment'
         type: string
         default: 'master'
 
@@ -15,9 +15,6 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     timeout-minutes: 15
-    if: |
-      (github.event_name == 'workflow_dispatch')
-      || (github.event.pull_request.head.repo.full_name == github.repository)
     steps:
       - name: Determine build information
         id: build-info
