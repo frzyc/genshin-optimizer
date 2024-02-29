@@ -64,3 +64,4 @@ jobs:
             dist/apps/${{inputs.frontend_name}}
             frontend_name
             deployment_name
+            ref
