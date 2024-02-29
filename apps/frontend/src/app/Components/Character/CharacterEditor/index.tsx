@@ -1,5 +1,6 @@
 import { CardThemed, ModalWrapper } from '@genshin-optimizer/common/ui'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
+import type { GeneratedBuild } from '@genshin-optimizer/gi/db'
 import { useCharacter, useDBMeta } from '@genshin-optimizer/gi/db-ui'
 import { CardContent, Skeleton } from '@mui/material'
 import { Suspense, useEffect, useMemo, useState } from 'react'
@@ -72,8 +73,8 @@ function CharacterEditorContent({
     }
   }, [character, characterSheet, characterDispatch])
 
-  const [chartData, setChartData] = useState(undefined as ChartData | undefined)
-  const [graphBuilds, setGraphBuilds] = useState<string[][]>()
+  const [chartData, setChartData] = useState<ChartData | undefined>()
+  const [graphBuilds, setGraphBuilds] = useState<GeneratedBuild[] | undefined>()
   const graphContextValue: GraphContextObj | undefined = useMemo(() => {
     return {
       chartData,
