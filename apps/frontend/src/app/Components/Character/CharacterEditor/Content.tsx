@@ -174,7 +174,6 @@ function InTeam() {
       ),
     [characterKey, database]
   )
-  if (!teamIds.length) return null
 
   const onAddTeam = () => {
     const teamId = database.teams.new()
