@@ -67,6 +67,7 @@ jobs:
         run: echo "date=$(date -u)" >> $GITHUB_OUTPUT
       - name: Maintain comment
         uses: actions-cool/maintain-one-comment@v3
+        if: ${{ steps.vars.outputs.deployment_name != 'beta' }}
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           number: ${{ steps.vars.outputs.deployment_name }}
