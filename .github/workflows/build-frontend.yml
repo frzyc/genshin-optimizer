@@ -1,5 +1,5 @@
 name: Build Frontend
-run-name: Build frontend of ${{ inputs.frontend_name }} for ${{ inputs.deployment_name }} - ${{ github.event.inputs.ref }}
+run-name: Build frontend of ${{ inputs.frontend_name }} for ${{ inputs.deployment_name }} - ${{ github.event.pull_request.merge_commit_sha }}
 
 on:
   workflow_call:
@@ -7,14 +7,6 @@ on:
       frontend_name:
         description: 'Frontend type to build. Can be `frontend`, or `sr-frontend`'
         type: string
-      repo_full_name:
-        description: 'Full repository name to build from.'
-        type: string
-        default: 'frzyc/genshin-optimizer'
-      ref:
-        description: 'Ref to build from. Can be a commit hash.'
-        type: string
-        default: 'master'
       deployment_name:
         description: 'Name for the deployment. This will determine the URL. If you choose a name that is already deployed, it will overwrite that deployment.'
         type: string
@@ -32,8 +24,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          repository: ${{ inputs.repo_full_name }}
-          ref: ${{ inputs.ref }}
           submodules: true
       - uses: actions/setup-node@v4
         with:
@@ -49,7 +39,7 @@ jobs:
           ENVFILE: ${{ vars.ENVFILE }}
       - name: Build genshin-optimizer
         run: |
-          NX_URL_GITHUB_GO_CURRENT_VERSION="https://github.com/${{ inputs.repo_full_name }}/commit/$(git rev-parse HEAD)" \
+          NX_URL_GITHUB_GO_CURRENT_VERSION="https://github.com/${{ github.repository }}/commit/$(git rev-parse HEAD)" \
           NX_DAEMON="false" \
           NX_SHOW_DEV_COMPONENTS="${{inputs.show_dev_components}}" \
           yarn run nx run ${{inputs.frontend_name}}:build-vite:production --base-href=""
