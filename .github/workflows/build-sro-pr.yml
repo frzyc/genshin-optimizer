@@ -12,6 +12,8 @@ on:
       - 'apps/gi-backend-e2e/**'
       - 'apps/gi-frontend-next-e2e/**'
       - 'apps/gi-frontend-next-e2e/**'
+      - 'apps/frontend/**'
+      - 'apps/frontend-e2e/**'
       - 'libs/gi/**'
     types: [opened, reopened, synchronize, labeled]
 
