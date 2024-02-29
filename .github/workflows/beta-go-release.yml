@@ -11,13 +11,12 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  call-deploy-frontend:
-    uses: ./.github/workflows/deploy-frontend.yml
+  call-build-frontend:
+    uses: ./.github/workflows/build-frontend.yml
     with:
       frontend_name: 'frontend'
       repo_full_name: ${{ github.repository }}
       ref: ${{ github.ref }}
       deployment_name: 'beta'
-      pr_repo: ${{ vars.PR_REPO }}
       show_dev_components: true
     secrets: inherit
