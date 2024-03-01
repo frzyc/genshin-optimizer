@@ -51,8 +51,7 @@ export default function CustomTooltip({
 
   const artifactsBySlot: { [slot: string]: ICachedArtifact } = useMemo(
     () =>
-      selectedPoint &&
-      selectedPoint.build.artifactIds &&
+      selectedPoint?.build?.artifactIds &&
       objMap(selectedPoint.build.artifactIds, (id) => database.arts.get(id)),
     [database.arts, selectedPoint]
   )
@@ -72,7 +71,7 @@ export default function CustomTooltip({
 
   const currentlyEquipped =
     data.get(input.weapon.id).value?.toString() ===
-      selectedPoint.build?.weaponId &&
+      selectedPoint?.build?.weaponId &&
     artifactsBySlot &&
     allArtifactSlotKeys.every(
       (slotKey) =>
@@ -100,95 +99,90 @@ export default function CustomTooltip({
     [selectedPoint, t]
   )
 
-  if (tooltipProps.active && selectedPoint) {
-    return (
-      <ClickAwayListener onClickAway={clickAwayHandler}>
-        <CardDark
-          sx={{ minWidth: '400px', maxWidth: '400px', p: 1 }}
-          onClick={(e) => e.stopPropagation()}
-        >
-          <Box>
-            <Stack gap={1}>
-              <Stack direction="row" alignItems="start" gap={1}>
-                <Stack spacing={0.5} flexGrow={99}>
-                  {currentlyEquipped && (
-                    <SqBadge color="info">
-                      <strong>{t('currentlyEquippedBuild')}</strong>
-                    </SqBadge>
-                  )}
-                  {generLabel && <SqBadge color="info">{generLabel}</SqBadge>}
-                  {graphLabel && <SqBadge color="info">{graphLabel}</SqBadge>}
-                  <Suspense fallback={<Skeleton width={300} height={50} />}>
-                    <ArtifactSetBadges
-                      artifacts={Object.values(artifactsBySlot)}
-                      currentlyEquipped={currentlyEquipped}
+  if (!tooltipProps.active || !selectedPoint) return null
+  return (
+    <ClickAwayListener onClickAway={clickAwayHandler}>
+      <CardDark
+        sx={{ minWidth: '400px', maxWidth: '400px', p: 1 }}
+        onClick={(e) => e.stopPropagation()}
+      >
+        <Box>
+          <Stack gap={1}>
+            <Stack direction="row" alignItems="start" gap={1}>
+              <Stack spacing={0.5} flexGrow={99}>
+                {currentlyEquipped && (
+                  <SqBadge color="info">
+                    <strong>{t('currentlyEquippedBuild')}</strong>
+                  </SqBadge>
+                )}
+                {generLabel && <SqBadge color="info">{generLabel}</SqBadge>}
+                {graphLabel && <SqBadge color="info">{graphLabel}</SqBadge>}
+                <Suspense fallback={<Skeleton width={300} height={50} />}>
+                  <ArtifactSetBadges
+                    artifacts={Object.values(artifactsBySlot)}
+                    currentlyEquipped={currentlyEquipped}
+                  />
+                </Suspense>
+              </Stack>
+              <Grid item flexGrow={1} />
+              <CloseButton onClick={() => setSelectedPoint(undefined)} />
+            </Stack>
+            <Grid container direction="row" spacing={0.75} columns={6}>
+              {selectedPoint.build?.weaponId && (
+                <Grid item xs={1}>
+                  <Suspense fallback={<Skeleton width={75} height={75} />}>
+                    <WeaponCardPico weaponId={selectedPoint.build.weaponId} />
+                  </Suspense>
+                </Grid>
+              )}
+              {allArtifactSlotKeys.map((key) => (
+                <Grid item key={key} xs={1}>
+                  <Suspense fallback={<Skeleton width={75} height={75} />}>
+                    <ArtifactCardPico
+                      artifactObj={artifactsBySlot[key]}
+                      slotKey={key}
                     />
                   </Suspense>
-                </Stack>
-                <Grid item flexGrow={1} />
-                <CloseButton onClick={() => setSelectedPoint(undefined)} />
-              </Stack>
-              <Grid container direction="row" spacing={0.75} columns={6}>
-                {selectedPoint.build?.weaponId && (
-                  <Grid item xs={1}>
-                    <Suspense fallback={<Skeleton width={75} height={75} />}>
-                      <WeaponCardPico weaponId={selectedPoint.build.weaponId} />
-                    </Suspense>
-                  </Grid>
-                )}
-                {allArtifactSlotKeys.map((key) => (
-                  <Grid item key={key} xs={1}>
-                    <Suspense fallback={<Skeleton width={75} height={75} />}>
-                      <ArtifactCardPico
-                        artifactObj={artifactsBySlot[key]}
-                        slotKey={key}
-                      />
-                    </Suspense>
-                  </Grid>
-                ))}
-              </Grid>
-              <Typography>
-                <strong>{xLabel}</strong>:{' '}
-                {valueString(
-                  xUnit === '%' ? selectedPoint.x / 100 : selectedPoint.x,
-                  xUnit
-                )}
-              </Typography>
-              <Typography>
-                <strong>{yLabel}</strong>:{' '}
-                {valueString(
-                  yUnit === '%' ? selectedPoint.y / 100 : selectedPoint.y,
-                  yUnit
-                )}
-              </Typography>
-              <BootstrapTooltip
-                title={
-                  selectedPoint.highlighted
-                    ? t('tcGraph.buildAlreadyInList')
-                    : ''
-                }
-                placement="top"
-              >
-                <span>
-                  <Button
-                    sx={{ width: '100%' }}
-                    disabled={selectedPoint?.graphBuildNumber !== undefined}
-                    color="info"
-                    onClick={() =>
-                      selectedPoint.build &&
-                      addBuildToList(structuredClone(selectedPoint.build))
-                    }
-                  >
-                    {t('addBuildToList')}
-                  </Button>
-                </span>
-              </BootstrapTooltip>
-            </Stack>
-          </Box>
-        </CardDark>
-      </ClickAwayListener>
-    )
-  }
-
-  return null
+                </Grid>
+              ))}
+            </Grid>
+            <Typography>
+              <strong>{xLabel}</strong>:{' '}
+              {valueString(
+                xUnit === '%' ? selectedPoint.x / 100 : selectedPoint.x,
+                xUnit
+              )}
+            </Typography>
+            <Typography>
+              <strong>{yLabel}</strong>:{' '}
+              {valueString(
+                yUnit === '%' ? selectedPoint.y / 100 : selectedPoint.y,
+                yUnit
+              )}
+            </Typography>
+            <BootstrapTooltip
+              title={
+                selectedPoint.highlighted ? t('tcGraph.buildAlreadyInList') : ''
+              }
+              placement="top"
+            >
+              <span>
+                <Button
+                  sx={{ width: '100%' }}
+                  disabled={selectedPoint?.graphBuildNumber !== undefined}
+                  color="info"
+                  onClick={() =>
+                    selectedPoint.build &&
+                    addBuildToList(structuredClone(selectedPoint.build))
+                  }
+                >
+                  {t('addBuildToList')}
+                </Button>
+              </span>
+            </BootstrapTooltip>
+          </Stack>
+        </Box>
+      </CardDark>
+    </ClickAwayListener>
+  )
 }
