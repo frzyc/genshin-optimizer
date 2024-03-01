@@ -4,14 +4,14 @@ import { optimize, precompute } from '../../Formula/optimization'
 import type {
   ArtifactBuildData,
   ArtifactsBySlot,
-  Build,
+  SolverBuild,
   PlotData,
   RequestFilter,
 } from '../common'
 import { countBuilds, filterArts, mergePlot, pruneAll } from '../common'
 
 export class ComputeWorker {
-  builds: Build[] = []
+  builds: SolverBuild[] = []
   buildValues: number[] | undefined = undefined
   plotData: PlotData | undefined
   threshold = -Infinity
@@ -84,7 +84,7 @@ export class ComputeWorker {
         if (min.every((m, i) => m <= result[i])) {
           const value = result[min.length],
             { builds, plotData } = this
-          let build: Build | undefined
+          let build: SolverBuild | undefined
           if (value >= this.threshold) {
             build = {
               value,
