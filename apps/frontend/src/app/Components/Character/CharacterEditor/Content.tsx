@@ -252,7 +252,11 @@ function InTeam() {
                 <SqBadge color={buildTcIds.length ? 'primary' : 'secondary'}>
                   {buildTcIds.length} TC Builds
                 </SqBadge>
-                <Button color="error" onClick={() => onDelete(teamCharId)}>
+                <Button
+                  color="error"
+                  onClick={() => onDelete(teamCharId)}
+                  sx={{ ml: 'auto' }}
+                >
                   <DeleteForeverIcon />
                 </Button>
               </Box>
