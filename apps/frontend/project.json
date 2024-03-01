@@ -51,6 +51,15 @@
       "options": {
         "config": "apps/frontend/vitest.config.mts"
       }
+    },
+    "typecheck": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "apps/frontend",
+        "commands": ["tsc -p tsconfig.app.json --noEmit"],
+        "forwardAllArgs": false,
+        "description": "Type check with tsc"
+      }
     }
   },
   "tags": [],

@@ -159,7 +159,7 @@ export default function TabBuild() {
 
   const noArtifact = useMemo(() => !database.arts.values.length, [database])
 
-  const buildSetting = useOptConfig(optConfigId)
+  const buildSetting = useOptConfig(optConfigId)!
   const {
     plotBase,
     optimizationTarget,
@@ -442,7 +442,7 @@ export default function TabBuild() {
         builds: builds.map((build) => ({
           artifactIds: objKeyMap(allArtifactSlotKeys, (slotKey) =>
             build.artifactIds.find(
-              (aId) => database.arts.get(aId).slotKey === slotKey
+              (aId) => database.arts.get(aId)?.slotKey === slotKey
             )
           ),
           weaponId,
@@ -999,9 +999,10 @@ function CopyTcButton({ build }: { build: GeneratedBuild }) {
       weapon,
       Object.values(build.artifactIds).map((id) => database.arts.get(id))
     )
-    database.buildTcs.set(buildTcId, {
-      name,
-    })
+    if (buildTcId)
+      database.buildTcs.set(buildTcId, {
+        name,
+      })
 
     setName('')
     OnHideTcPrompt()
@@ -1118,7 +1119,7 @@ type Prop = {
   children: React.ReactNode
   characterKey: CharacterKey
   build: GeneratedBuild
-  oldData: UIData
+  oldData?: UIData
   mainStatAssumptionLevel: number
 }
 function DataContextWrapper({
@@ -1141,7 +1142,8 @@ function DataContextWrapper({
     }
   }, [database, artifactIds, setDirty])
   useEffect(
-    () => database.weapons.follow(weaponId, () => setDirty()),
+    () =>
+      weaponId ? database.weapons.follow(weaponId, () => setDirty()) : () => {},
     [database, weaponId, setDirty]
   )
   const buildsArts = useMemo(

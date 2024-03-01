@@ -21,7 +21,7 @@ export default function SetInclusionButton({
   const {
     teamChar: { optConfigId },
   } = useContext(TeamCharacterContext)
-  const { artSetExclusion } = useOptConfig(optConfigId)
+  const { artSetExclusion } = useOptConfig(optConfigId)!
   const setExclusionSet = artSetExclusion?.[setKey] ?? []
   const exclude2 = setExclusionSet.includes(2)
   const exclude4 = setExclusionSet.includes(4)

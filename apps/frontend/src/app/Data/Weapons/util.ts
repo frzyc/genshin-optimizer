@@ -41,7 +41,7 @@ export function dataObjForWeaponSheet(
         mainStat.base,
         subscript(input.weapon.lvl, allStats.weapon.expCurve[mainStat.curve])
       ),
-      subscript(input.weapon.asc, gen.ascensionBonus['atk'])
+      subscript(input.weapon.asc, gen.ascensionBonus['atk'] ?? [])
     ),
     KeyMap.info(mainStat.type)
   )

@@ -82,7 +82,7 @@ export default function TabUpopt() {
 
   const noArtifact = useMemo(() => !database.arts.values.length, [database])
 
-  const buildSetting = useOptConfig(optConfigId)
+  const buildSetting = useOptConfig(optConfigId)!
   const { optimizationTarget, levelLow, levelHigh } = buildSetting
   const teamData = useTeamData()
   const { target: data } = teamData?.[characterKey as CharacterKey] ?? {}
