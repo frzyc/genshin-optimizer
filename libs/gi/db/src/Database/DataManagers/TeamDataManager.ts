@@ -1,4 +1,4 @@
-import { deepClone } from '@genshin-optimizer/common/util'
+import { deepClone, range } from '@genshin-optimizer/common/util'
 import type { EleEnemyResKey } from '@genshin-optimizer/gi/keymap'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
 import { DataManager } from '../DataManager'
@@ -13,7 +13,7 @@ export interface Team {
     >
   >
 
-  teamCharIds: string[]
+  teamCharIds: Array<string | undefined>
   lastEdit: number
 }
 
@@ -30,21 +30,61 @@ export class TeamDataManager extends DataManager<
       if (key.startsWith('team_') && !this.set(key, {}))
         this.database.storage.remove(key)
   }
+  newName() {
+    const existing = this.values
+    for (let num = existing.length + 1; num < existing.length + 100; num++) {
+      const name = `Team Name ${existing.length + 1}`
+      if (existing.some((tc) => tc.name !== name)) return name
+    }
+    return `Team Name`
+  }
   override validate(obj: unknown): Team | undefined {
-    return validateTeam(obj, this.database)
+    let { name, description, enemyOverride, teamCharIds, lastEdit } =
+      obj as Team
+    if (typeof name !== 'string') name = this.newName()
+    if (typeof description !== 'string') description = 'Team Description'
+
+    if (
+      typeof enemyOverride !== 'object' ||
+      !Object.entries(enemyOverride).map(([_, num]) => typeof num === 'number')
+    )
+      enemyOverride = {}
+
+    {
+      // validate teamCharIds
+      if (!Array.isArray(teamCharIds))
+        teamCharIds = range(0, 3).map(() => undefined)
+
+      const charIds = this.database.teamChars.keys
+      teamCharIds = range(0, 3).map((ind) => {
+        const id = teamCharIds[ind]
+        if (id && charIds.includes(id)) return id
+        return undefined
+      })
+
+      // make sure there isnt a team without "Active" character, by shifting characters forward.
+      if (!teamCharIds[0] && teamCharIds.some((tcid) => tcid)) {
+        const index = teamCharIds.findIndex((tcid) => !!tcid)
+        teamCharIds[0] = teamCharIds[index]
+        teamCharIds[index] = undefined
+      }
+    }
+
+    if (typeof lastEdit !== 'number') lastEdit = Date.now()
+
+    return {
+      name,
+      description,
+      enemyOverride,
+      teamCharIds,
+      lastEdit,
+    }
   }
 
   new(value: Partial<Team> = {}): string {
     const id = this.generateKey()
     this.set(id, value)
     return id
-  }
-  override remove(key: string, notify?: boolean): Team | undefined {
-    const team = super.remove(key, notify)
-    if (!team) return team
-    const { teamCharIds } = team
-    teamCharIds.map((teamCharId) => this.database.teamChars.remove(teamCharId))
-    return team
   }
   override clear(): void {
     super.clear()
@@ -54,9 +94,6 @@ export class TeamDataManager extends DataManager<
     const teamRaw = this.database.teams.get(teamId)
     if (!teamRaw) return ''
     const team = deepClone(teamRaw)
-    team.teamCharIds = team.teamCharIds.map((teamCharId) =>
-      this.database.teamChars.duplicate(teamCharId)
-    )
     team.name = `${team.name} (duplicated)`
     return this.new(team)
   }
@@ -66,8 +103,8 @@ export class TeamDataManager extends DataManager<
     const { teamCharIds, ...rest } = team
     return {
       ...rest,
-      teamChars: teamCharIds.map((teamCharId) =>
-        this.database.teamChars.export(teamCharId)
+      teamChars: teamCharIds.map(
+        (teamCharId) => teamCharId && this.database.teamChars.export(teamCharId)
       ),
     }
   }
@@ -85,37 +122,5 @@ export class TeamDataManager extends DataManager<
     )
       return ''
     return id
-  }
-}
-
-function validateTeam(
-  obj: unknown = {},
-  database: ArtCharDatabase
-): Team | undefined {
-  let { name, description, enemyOverride, teamCharIds, lastEdit } = obj as Team
-  if (typeof name !== 'string') name = 'Team Name'
-  if (typeof description !== 'string') description = 'Team Description'
-
-  if (
-    typeof enemyOverride !== 'object' ||
-    !Object.entries(enemyOverride).map(([_, num]) => typeof num === 'number')
-  )
-    enemyOverride = {}
-
-  if (!Array.isArray(teamCharIds)) teamCharIds = []
-
-  if (typeof lastEdit !== 'number') lastEdit = Date.now()
-  else {
-    const charIds = database.teamChars.keys
-    teamCharIds = teamCharIds.filter((id) => charIds.includes(id))
-    // only allow 4 people per team
-    teamCharIds = teamCharIds.slice(0, 4)
-  }
-  return {
-    name,
-    description,
-    enemyOverride,
-    teamCharIds,
-    lastEdit,
   }
 }

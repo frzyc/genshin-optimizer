@@ -66,6 +66,7 @@ import WeaponToggle from '../ToggleButton/WeaponToggle'
 import CharacterCard from './CharacterCard'
 
 type characterFilter = (
+  characterKey: CharacterKey,
   character: ICachedCharacter | undefined,
   sheet: CharacterSheet
 ) => boolean
@@ -123,7 +124,7 @@ export default function CharacterSelectionModal({
       deferredDbDirty &&
       allCharacterKeys
         .filter((key) =>
-          filter(database.chars.get(key), getCharSheet(key, gender))
+          filter(key, database.chars.get(key), getCharSheet(key, gender))
         )
         .filter(
           filterFunction(

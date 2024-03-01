@@ -47,6 +47,9 @@ const validReactionKeys = [
 export interface TeamCharacter {
   key: CharacterKey
 
+  name: string
+  description: string
+
   customMultiTargets: CustomMultiTarget[]
   conditional: IConditionalValues
 
@@ -103,9 +106,26 @@ export class TeamCharacterDataManager extends DataManager<
     //   this.database.optConfigs.remove(optConfigId)
     // )
   }
+  newName(characterKey: CharacterKey) {
+    const existingUndercKey = this.values.filter(
+      ({ key }) => key === characterKey
+    )
+    for (
+      let num = existingUndercKey.length + 1;
+      num < existingUndercKey.length + 100;
+      num++
+    ) {
+      const name = `Loadout Name ${existingUndercKey.length + 1}`
+      if (existingUndercKey.some((tc) => tc.name !== name)) return name
+    }
+    return `Loadout Name`
+  }
   override validate(obj: unknown): TeamCharacter | undefined {
     const { key: characterKey } = obj as TeamCharacter
     let {
+      name,
+      description,
+
       customMultiTargets,
       conditional,
       bonusStats,
@@ -127,6 +147,10 @@ export class TeamCharacterDataManager extends DataManager<
       compareBuildTcId,
     } = obj as TeamCharacter
     if (!allCharacterKeys.includes(characterKey)) return undefined // non-recoverable
+
+    if (typeof name !== 'string') name = this.newName(characterKey)
+
+    if (typeof description !== 'string') description = 'Loadout Description'
 
     // create a character if it doesnt exist
     if (!this.database.chars.keys.includes(characterKey))
@@ -215,6 +239,8 @@ export class TeamCharacterDataManager extends DataManager<
 
     return {
       key: characterKey,
+      name,
+      description,
       customMultiTargets,
       conditional,
       bonusStats,
@@ -243,6 +269,10 @@ export class TeamCharacterDataManager extends DataManager<
   override remove(key: string, notify?: boolean): TeamCharacter | undefined {
     const rem = super.remove(key, notify)
     if (rem?.optConfigId) this.database.optConfigs.remove(rem.optConfigId)
+    this.database.teams.keys.forEach((teamId) => {
+      if (this.database.teams.get(teamId)!.teamCharIds.includes(key))
+        this.database.teams.set(teamId, {}) // use validator to remove teamCharId entries
+    })
     return rem
   }
   override clear(): void {

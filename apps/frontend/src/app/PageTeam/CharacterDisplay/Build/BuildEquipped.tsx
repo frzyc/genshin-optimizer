@@ -40,7 +40,7 @@ export function BuildEquipped({ active = false }: { active: boolean }) {
     )
     // copy over name
     database.buildTcs.set(newBuildTcId, {
-      name: `Equipped - Copied`,
+      name: `Equipped Build - Copied`,
       description: 'Copied from Equipped Build',
     })
   }
@@ -56,7 +56,7 @@ export function BuildEquipped({ active = false }: { active: boolean }) {
         <Box sx={{ display: 'flex', gap: 1 }}>
           <CardThemed sx={{ flexGrow: 1 }}>
             <CardActionArea disabled={active} onClick={onActive} sx={{ p: 1 }}>
-              <Typography variant="h6">Equipped</Typography>
+              <Typography variant="h6">Equipped Build</Typography>
             </CardActionArea>
           </CardThemed>
           <Tooltip

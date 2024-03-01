@@ -1,5 +1,5 @@
 import { useBoolState } from '@genshin-optimizer/common/react-util'
-import { CardThemed, ModalWrapper } from '@genshin-optimizer/common/ui'
+import { CardThemed, ModalWrapper, SqBadge } from '@genshin-optimizer/common/ui'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { getCharData } from '@genshin-optimizer/gi/stats'
 import AddIcon from '@mui/icons-material/Add'
@@ -37,7 +37,7 @@ export default function BuildEditorBtn() {
   const name = useMemo(() => {
     switch (buildType) {
       case 'equipped':
-        return 'Equipped'
+        return 'Equipped Build'
       case 'real':
         return database.builds.get(buildId).name
       case 'tc':
@@ -52,7 +52,18 @@ export default function BuildEditorBtn() {
           open ? onClose() : onOpen()
         }}
       >
-        Build: <strong>{name}</strong>
+        <Box sx={{ display: 'flex', gap: 1 }}>
+          <strong>{name}</strong>
+          <SqBadge
+            color={buildIds.length ? 'primary' : 'secondary'}
+            sx={{ marginLeft: 'auto' }}
+          >
+            {buildIds.length} Builds
+          </SqBadge>
+          <SqBadge color={buildTcIds.length ? 'primary' : 'secondary'}>
+            {buildTcIds.length} TC Builds
+          </SqBadge>
+        </Box>
       </Button>
       <Suspense fallback={null}>
         <ModalWrapper open={open} onClose={onClose}>

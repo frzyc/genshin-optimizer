@@ -14,7 +14,6 @@ import { Suspense, useContext } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Route, Link as RouterLink, Routes } from 'react-router-dom'
 import CardLight from '../../Components/Card/CardLight'
-import CloseButton from '../../Components/CloseButton'
 import {
   HitModeToggle,
   InfusionAuraDropdown,
@@ -24,9 +23,10 @@ import SqBadge from '../../Components/SqBadge'
 import { FormulaDataContext } from '../../Context/FormulaDataContext'
 import { TeamCharacterContext } from '../../Context/TeamCharacterContext'
 import { shouldShowDevComponents } from '../../Util/Util'
+import BuildEditorBtn from './Build/BuildEditorBtn'
 import { CustomMultiTargetButton } from './CustomMultiTarget'
 import FormulaModal from './FormulaModal'
-import BuildEditorBtn from './Build/BuildEditorBtn'
+import LoadoutSettingElement from './LoadoutSettingElement'
 import StatModal from './StatModal'
 import TabBuild from './Tabs/TabOptimize'
 import TabOverview from './Tabs/TabOverview'
@@ -35,13 +35,7 @@ import TabTeambuffs from './Tabs/TabTeambuffs'
 import TabTheorycraft from './Tabs/TabTheorycraft'
 import TabUpopt from './Tabs/TabUpgradeOpt'
 
-export default function Content({
-  tab,
-  onClose,
-}: {
-  tab: string
-  onClose?: () => void
-}) {
+export default function Content({ tab }: { tab: string }) {
   const {
     teamChar: { key: characterKey },
   } = useContext(TeamCharacterContext)
@@ -49,12 +43,12 @@ export default function Content({
     <>
       <Box display="flex">
         <Box display="flex" gap={1} flexWrap="wrap" flexGrow={1}>
+          <LoadoutSettingElement />
           <BuildEditorBtn />
           <DetailStatButton />
           <CustomMultiTargetButton />
           <FormulasButton />
         </Box>
-        {!!onClose && <CloseButton onClick={onClose} />}
       </Box>
       <Box display="flex" gap={1} flexWrap="wrap">
         <HitModeToggle size="small" />

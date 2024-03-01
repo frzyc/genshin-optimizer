@@ -3,7 +3,6 @@ import {
   CardThemed,
   ModalWrapper,
 } from '@genshin-optimizer/common/ui'
-import { range } from '@genshin-optimizer/common/util'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { CharacterName } from '@genshin-optimizer/gi/ui'
@@ -14,7 +13,6 @@ import {
   Alert,
   Box,
   Button,
-  ButtonGroup,
   CardContent,
   CardHeader,
   Divider,
@@ -25,6 +23,7 @@ import { Suspense, useDeferredValue, useEffect, useState } from 'react'
 import CharacterSelectionModal from '../Components/Character/CharacterSelectionModal'
 import CloseButton from '../Components/CloseButton'
 import CharIconSide from '../Components/Image/CharIconSide'
+import { LoadoutDropdown } from './LoadoutDropdown'
 
 // TODO: Translation
 
@@ -104,7 +103,7 @@ export default function TeamSettingElement({ teamId }: { teamId: string }) {
             <Typography variant="h6">Team Editor</Typography>
             <Alert severity="info" variant="filled">
               The first character in the team receives any "active on-field
-              character" buffs
+              character" buffs, and cannot be empty.
             </Alert>
             <TeamCharacterSelector teamId={teamId} />
           </CardContent>
@@ -123,23 +122,19 @@ function TeamCharacterSelector({ teamId }: { teamId: string }) {
   const onSelect = (cKey: CharacterKey) => {
     if (charSelectIndex === undefined) return
 
+    // Make sure character exists
+    database.chars.getWithInitWeapon(cKey)
+
     const existingIndex = teamCharIds.findIndex(
-      (teamCharId) => database.teamChars.get(teamCharId).key === cKey
+      (teamCharId) => database.teamChars.get(teamCharId)?.key === cKey
     )
     if (existingIndex < 0) {
-      if (teamCharIds[charSelectIndex]) {
-        // Already have a teamChar at destination, prompt for deletion
-        if (
-          !window.confirm(
-            `Do you want to replace existing character with a new character? The loadouts and data (such as multi-opts) on this existing character will be deleted.`
-          )
-        )
-          return
-        // delete destination character
-        const existingTeamCharId = teamCharIds[charSelectIndex]
-        database.teamChars.remove(existingTeamCharId)
-      }
-      const teamCharId = database.teamChars.new(cKey)
+      //find the first available teamchar
+      let teamCharId = database.teamChars.keys.find(
+        (k) => database.teamChars.get(k)!.key === cKey
+      )
+      // if there is no teamchar, create one.
+      if (!teamCharId) teamCharId = database.teamChars.new(cKey)
       database.teams.set(teamId, (team) => {
         team.teamCharIds[charSelectIndex] = teamCharId
       })
@@ -156,39 +151,38 @@ function TeamCharacterSelector({ teamId }: { teamId: string }) {
       }
     }
   }
-  const onDel = (index: number) => () => {
-    if (
-      !window.confirm(
-        `Do you want to delete this character? The loadouts and data (such as multi-opts) on this character will be deleted.`
-      )
-    )
-      return
-    const oldId = teamCharIds[index]
+  const onDel = (index: number) => () =>
     database.teams.set(teamId, (team) => {
       team.teamCharIds[index] = undefined
     })
-    database.teamChars.remove(oldId)
-  }
+
   const charKeyAtIndex = database.teamChars.get(
     teamCharIds[charSelectIndex]
   )?.key
+
+  const onChangeTeamCharId = (index: number) => (teamCharId: string) => {
+    database.teams.set(teamId, (team) => {
+      team.teamCharIds[index] = teamCharId
+    })
+  }
   return (
     <>
       <Suspense fallback={false}>
         <CharacterSelectionModal
-          filter={(c) => charKeyAtIndex !== c?.key}
+          filter={(c) => c !== charKeyAtIndex}
           show={charSelectIndex !== undefined}
           onHide={() => setCharSelectIndex(undefined)}
           onSelect={onSelect}
         />
       </Suspense>
-      {range(0, 3).map((ind) =>
-        teamCharIds[ind] ? (
+      {teamCharIds.map((teamCharId, ind) =>
+        teamCharId ? (
           <CharSelButton
-            key={ind}
-            teamCharId={teamCharIds[ind]}
+            key={teamCharId}
+            teamCharId={teamCharId}
             onClick={() => setCharSelectIndex(ind)}
             onClose={onDel(ind)}
+            onChangeTeamCharId={onChangeTeamCharId(ind)}
           />
         ) : (
           <Button
@@ -196,7 +190,7 @@ function TeamCharacterSelector({ teamId }: { teamId: string }) {
             onClick={() => setCharSelectIndex(ind)}
             fullWidth
             sx={{ height: '100%' }}
-            disabled={ind !== teamCharIds.length}
+            disabled={ind && !teamCharIds.some((id) => id)}
             startIcon={<AddIcon />}
           >
             Add Character
@@ -210,31 +204,41 @@ function CharSelButton({
   teamCharId,
   onClick,
   onClose,
+  onChangeTeamCharId,
 }: {
   teamCharId: string
   onClick: () => void
   onClose: () => void
+  onChangeTeamCharId: (teamCharId: string) => void
 }) {
   const database = useDatabase()
   const { key: characterKey } = database.teamChars.get(teamCharId)
   const { gender } = useDBMeta()
   return (
-    <ButtonGroup fullWidth sx={{ height: '100%', alignItems: 'stretch' }}>
-      <Button
-        onClick={onClick}
-        color={'success'}
-        startIcon={<CharIconSide characterKey={characterKey} />}
-      >
-        <CharacterName characterKey={characterKey} gender={gender} />
-      </Button>
-      <Button
-        onClick={onClose}
-        color="error"
-        sx={{ flexBasis: '0' }}
-        // size="small"
-      >
-        <CloseIcon />
-      </Button>
-    </ButtonGroup>
+    <CardThemed bgt="light">
+      <CardContent>
+        <Box sx={{ display: 'flex', gap: 1 }}>
+          <Button
+            onClick={onClick}
+            color={'success'}
+            startIcon={<CharIconSide characterKey={characterKey} />}
+          >
+            <CharacterName characterKey={characterKey} gender={gender} />
+          </Button>
+          <LoadoutDropdown
+            teamCharId={teamCharId}
+            onChangeTeamCharId={onChangeTeamCharId}
+          />
+          <Button
+            onClick={onClose}
+            color="error"
+            sx={{ flexBasis: '0' }}
+            // size="small"
+          >
+            <CloseIcon />
+          </Button>
+        </Box>
+      </CardContent>
+    </CardThemed>
   )
 }

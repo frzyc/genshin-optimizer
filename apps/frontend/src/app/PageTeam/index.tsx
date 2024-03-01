@@ -165,7 +165,11 @@ function Page({ teamId, onClose }: { teamId: string; onClose?: () => void }) {
           <CloseButton onClick={onClose} />
         </Box>
 
-        <TeamCharacterSelector />
+        <TeamCharacterSelector
+          teamId={teamId}
+          characterKey={characterKey}
+          tab={tab}
+        />
         {characterKey && team && teamChar && (
           <PageContent
             characterKey={characterKey}
