@@ -85,6 +85,8 @@ export interface OptConfig {
   compareBuild: boolean
   levelLow: number
   levelHigh: number
+  useLoadoutExclusion: boolean // teammates loadout exclusion flag
+  loadoutExclusion: string[]
 
   //generated opt builds
   builds: Array<GeneratedBuild>
@@ -124,6 +126,8 @@ export class OptConfigDataManager extends DataManager<
       levelHigh,
       builds,
       buildDate,
+      useLoadoutExclusion,
+      loadoutExclusion,
     } = obj as OptConfig
 
     if (typeof statFilters !== 'object') statFilters = {}
@@ -208,6 +212,9 @@ export class OptConfigDataManager extends DataManager<
         .filter((b) => b) as GeneratedBuild[]
       if (!Number.isInteger(buildDate)) buildDate = 0
     }
+    if (typeof useLoadoutExclusion !== 'boolean') useLoadoutExclusion = false
+    if (!loadoutExclusion || !Array.isArray(loadoutExclusion))
+      loadoutExclusion = []
 
     return {
       artSetExclusion,
@@ -227,6 +234,8 @@ export class OptConfigDataManager extends DataManager<
       levelHigh,
       builds,
       buildDate,
+      useLoadoutExclusion,
+      loadoutExclusion,
     }
   }
   new(data: Partial<OptConfig> = {}) {
@@ -281,6 +290,8 @@ const initialBuildSettings: OptConfig = deepFreeze({
   compareBuild: true,
   levelLow: 0,
   levelHigh: 20,
+  useLoadoutExclusion: false,
+  loadoutExclusion: [],
 
   builds: [],
   buildDate: 0,

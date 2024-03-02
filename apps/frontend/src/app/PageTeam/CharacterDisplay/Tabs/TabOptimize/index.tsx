@@ -101,6 +101,7 @@ import MainStatSelectionCard from './Components/MainStatSelectionCard'
 import OptimizationTargetSelector from './Components/OptimizationTargetSelector'
 import StatFilterCard from './Components/StatFilterCard'
 import { compactArtifacts, dynamicData } from './foreground'
+import ExcludeLoadout from './Components/ExcludeLoadout'
 
 const audio = new Audio('assets/notification.mp3')
 export default function TabBuild() {
@@ -194,10 +195,15 @@ export default function TabBuild() {
       levelHigh,
       allowLocationsState,
       useExcludedArts,
+      useLoadoutExclusion,
+      loadoutExclusion,
     } = deferredArtsDirty && deferredBuildSetting
 
+    console.log('Run Filter')
     return database.arts.values.filter((art) => {
       if (!useExcludedArts && artExclusion.includes(art.id)) return false
+      if (!useLoadoutExclusion && loadoutExclusion.includes(art.id))
+        return false
       if (art.level < levelLow) return false
       if (art.level > levelHigh) return false
       const mainStats = mainStatKeys[art.slotKey]
@@ -664,6 +670,7 @@ export default function TabBuild() {
             excludedTotal={excludedTotal.in}
           />
 
+          <ExcludeLoadout disabled={generatingBuilds} />
           <Button
             fullWidth
             startIcon={allowPartial ? <CheckBox /> : <CheckBoxOutlineBlank />}
