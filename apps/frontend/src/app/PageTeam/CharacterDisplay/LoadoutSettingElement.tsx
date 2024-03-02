@@ -19,7 +19,7 @@ import { useContext, useDeferredValue, useEffect, useState } from 'react'
 import CloseButton from '../../Components/CloseButton'
 import { TeamCharacterContext } from '../../Context/TeamCharacterContext'
 import { LoadoutDropdown } from '../LoadoutDropdown'
-
+import PersonIcon from '@mui/icons-material/Person'
 // TODO: Translation
 
 export default function LoadoutSettingElement() {
@@ -75,7 +75,9 @@ export default function LoadoutSettingElement() {
           title={<Typography>{teamChar.description}</Typography>}
         >
           <Button
+            startIcon={<PersonIcon />}
             endIcon={<DriveFileRenameOutlineIcon />}
+            color="info"
             onClick={() => setOpen((o) => !o)}
           >
             <Typography variant="h6">{teamChar.name}</Typography>
@@ -86,7 +88,12 @@ export default function LoadoutSettingElement() {
       <ModalWrapper open={open} onClose={() => setOpen(false)}>
         <CardThemed>
           <CardHeader
-            title="Loadout Settings"
+            title={
+              <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
+                <PersonIcon />
+                <span>Loadout Settings</span>
+              </Box>
+            }
             action={<CloseButton onClick={() => setOpen(false)} />}
           />
           <Divider />

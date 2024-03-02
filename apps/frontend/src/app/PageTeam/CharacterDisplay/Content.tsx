@@ -1,14 +1,14 @@
 import { useBoolState } from '@genshin-optimizer/common/react-util'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
-import {
-  BarChart,
-  Calculate,
-  FactCheck,
-  Groups,
-  Person,
-  Science,
-  TrendingUp,
-} from '@mui/icons-material'
+
+import BarChartIcon from '@mui/icons-material/BarChart'
+import CalculateIcon from '@mui/icons-material/Calculate'
+import FactCheckIcon from '@mui/icons-material/FactCheck'
+import GroupsIcon from '@mui/icons-material/Groups'
+import PersonIcon from '@mui/icons-material/Person'
+import ScienceIcon from '@mui/icons-material/Science'
+import TrendingUpIcon from '@mui/icons-material/TrendingUp'
+
 import { Box, Button, Skeleton, Tab, Tabs } from '@mui/material'
 import { Suspense, useContext } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -41,16 +41,32 @@ export default function Content({ tab }: { tab: string }) {
   } = useContext(TeamCharacterContext)
   return (
     <>
-      <Box display="flex">
-        <Box display="flex" gap={1} flexWrap="wrap" flexGrow={1}>
-          <LoadoutSettingElement />
-          <BuildEditorBtn />
-          <DetailStatButton />
-          <CustomMultiTargetButton />
-          <FormulasButton />
-        </Box>
+      <Box
+        sx={{
+          display: 'flex',
+          gap: 1,
+          flexWrap: 'wrap',
+          '& button': {
+            flexGrow: 1,
+          },
+        }}
+      >
+        <LoadoutSettingElement />
+        <BuildEditorBtn />
+        <DetailStatButton />
+        <CustomMultiTargetButton />
+        <FormulasButton />
       </Box>
-      <Box display="flex" gap={1} flexWrap="wrap">
+      <Box
+        sx={{
+          display: 'flex',
+          gap: 1,
+          flexWrap: 'wrap',
+          '& button,.MuiToggleButtonGroup-root': {
+            flexGrow: 1,
+          },
+        }}
+      >
         <HitModeToggle size="small" />
         <InfusionAuraDropdown />
         <ReactionToggle size="small" />
@@ -123,7 +139,7 @@ function TabNav({
         <Tab
           value="overview"
           label={t('tabs.theorycraft')}
-          icon={<Science />}
+          icon={<ScienceIcon />}
           component={RouterLink}
           to={`${characterKey}/`}
         />
@@ -131,7 +147,7 @@ function TabNav({
         <Tab
           value="overview"
           label={t('tabs.overview')}
-          icon={<Person />}
+          icon={<PersonIcon />}
           component={RouterLink}
           to={`${characterKey}/`}
         />
@@ -139,14 +155,14 @@ function TabNav({
       <Tab
         value="talent"
         label={t('tabs.talent')}
-        icon={<FactCheck />}
+        icon={<FactCheckIcon />}
         component={RouterLink}
         to={`${characterKey}/talent`}
       />
       <Tab
         value="teambuffs"
         label={t('tabs.teambuffs')}
-        icon={<Groups />}
+        icon={<GroupsIcon />}
         component={RouterLink}
         to={`${characterKey}/teambuffs`}
       />
@@ -154,7 +170,7 @@ function TabNav({
         <Tab
           value="optimize"
           label={t('tabs.optimize')}
-          icon={<TrendingUp />}
+          icon={<TrendingUpIcon />}
           component={RouterLink}
           to={`${characterKey}/optimize`}
         />
@@ -164,7 +180,7 @@ function TabNav({
         <Tab
           value="upopt"
           label={t('tabs.upgradeopt')}
-          icon={<TrendingUp />}
+          icon={<TrendingUpIcon />}
           component={RouterLink}
           to={`${characterKey}/upopt`}
         />
@@ -182,7 +198,7 @@ function DetailStatButton() {
   const bStatsNum = Object.keys(bonusStats).length
   return (
     <>
-      <Button color="info" startIcon={<BarChart />} onClick={onOpen}>
+      <Button color="info" startIcon={<BarChartIcon />} onClick={onOpen}>
         {t`addStats.title`}
         {!!bStatsNum && (
           <SqBadge sx={{ ml: 1 }} color="success">
@@ -198,7 +214,7 @@ function FormulasButton() {
   const { onModalOpen } = useContext(FormulaDataContext)
   return (
     <>
-      <Button color="info" startIcon={<Calculate />} onClick={onModalOpen}>
+      <Button color="info" startIcon={<CalculateIcon />} onClick={onModalOpen}>
         Formulas {'&'} Calcs
       </Button>
       <FormulaModal />

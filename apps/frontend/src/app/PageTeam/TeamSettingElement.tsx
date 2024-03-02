@@ -25,6 +25,7 @@ import CloseButton from '../Components/CloseButton'
 import CharIconSide from '../Components/Image/CharIconSide'
 import { LoadoutDropdown } from './LoadoutDropdown'
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward'
+import GroupsIcon from '@mui/icons-material/Groups'
 // TODO: Translation
 
 export default function TeamSettingElement({ teamId }: { teamId: string }) {
@@ -63,21 +64,27 @@ export default function TeamSettingElement({ teamId }: { teamId: string }) {
   }, [database, descDeferred])
   return (
     <>
-      <Box display="flex" gap={1} alignItems="center">
-        <BootstrapTooltip title={<Typography>{team.description}</Typography>}>
-          <Button
-            endIcon={<DriveFileRenameOutlineIcon />}
-            onClick={() => setOpen((open) => !open)}
-          >
-            <Typography variant="h6">{team.name}</Typography>
-          </Button>
-        </BootstrapTooltip>
-      </Box>
+      <BootstrapTooltip title={<Typography>{team.description}</Typography>}>
+        <Button
+          color="info"
+          sx={{ flexGrow: 1 }}
+          startIcon={<GroupsIcon />}
+          endIcon={<DriveFileRenameOutlineIcon />}
+          onClick={() => setOpen((open) => !open)}
+        >
+          <Typography variant="h6">{team.name}</Typography>
+        </Button>
+      </BootstrapTooltip>
 
       <ModalWrapper open={open} onClose={() => setOpen(false)}>
         <CardThemed>
           <CardHeader
-            title="Team Settings"
+            title={
+              <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
+                <GroupsIcon />
+                <span>Team Settings</span>
+              </Box>
+            }
             action={<CloseButton onClick={() => setOpen(false)} />}
           />
           <Divider />

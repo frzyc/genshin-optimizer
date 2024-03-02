@@ -2,6 +2,7 @@ import { deepClone, range } from '@genshin-optimizer/common/util'
 import type { EleEnemyResKey } from '@genshin-optimizer/gi/keymap'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
 import { DataManager } from '../DataManager'
+import { allElementWithPhyKeys } from '@genshin-optimizer/gi/consts'
 export interface Team {
   name: string
   description: string
@@ -44,11 +45,24 @@ export class TeamDataManager extends DataManager<
     if (typeof name !== 'string') name = this.newName()
     if (typeof description !== 'string') description = 'Team Description'
 
-    if (
-      typeof enemyOverride !== 'object' ||
-      !Object.entries(enemyOverride).map(([_, num]) => typeof num === 'number')
-    )
-      enemyOverride = {}
+    {
+      // validate enemyOverride
+      if (typeof enemyOverride !== 'object') enemyOverride = {}
+
+      if (typeof enemyOverride.enemyLevel !== 'number')
+        enemyOverride.enemyLevel = 100
+
+      if (typeof enemyOverride.enemyDefRed_ !== 'number')
+        enemyOverride.enemyDefRed_ = 0
+
+      if (typeof enemyOverride.enemyDefIgn_ !== 'number')
+        enemyOverride.enemyDefIgn_ = 0
+
+      allElementWithPhyKeys.map((ele) => {
+        const key = `${ele}_enemyRes_` as EleEnemyResKey
+        if (typeof enemyOverride[key] !== 'number') enemyOverride[key] = 10
+      })
+    }
 
     {
       // validate teamCharIds

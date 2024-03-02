@@ -46,6 +46,7 @@ import { shouldShowDevComponents } from '../Util/Util'
 import Content from './CharacterDisplay/Content'
 import TeamCharacterSelector from './TeamCharacterSelector'
 import TeamSettingElement from './TeamSettingElement'
+import { EnemyEditorElement } from './EnemyEditorElement'
 
 export default function PageTeam() {
   const navigate = useNavigate()
@@ -159,10 +160,9 @@ function Page({ teamId, onClose }: { teamId: string; onClose?: () => void }) {
     <CardThemed>
       <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
         <Box sx={{ display: 'flex', gap: 1 }}>
-          <Box flexGrow={1}>
-            <TeamSettingElement teamId={teamId} />
-          </Box>
-          <CloseButton onClick={onClose} />
+          <TeamSettingElement teamId={teamId} />
+          <EnemyEditorElement teamId={teamId} />
+          <CloseButton sx={{ ml: 'auto' }} onClick={onClose} />
         </Box>
 
         <TeamCharacterSelector

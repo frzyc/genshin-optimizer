@@ -49,6 +49,7 @@ export default function BuildEditorBtn() {
     <>
       <Button
         startIcon={<CheckroomIcon />}
+        color="info"
         onClick={() => {
           open ? onClose() : onOpen()
         }}
@@ -69,7 +70,14 @@ export default function BuildEditorBtn() {
       <Suspense fallback={null}>
         <ModalWrapper open={open} onClose={onClose}>
           <CardThemed>
-            <CardHeader title="Build Management" />
+            <CardHeader
+              title={
+                <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
+                  <CheckroomIcon />
+                  <span>Build Management</span>
+                </Box>
+              }
+            />
             <Divider />
             <CardContent
               sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}
