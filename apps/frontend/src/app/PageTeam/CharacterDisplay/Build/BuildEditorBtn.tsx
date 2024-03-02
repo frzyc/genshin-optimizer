@@ -5,6 +5,7 @@ import { getCharData } from '@genshin-optimizer/gi/stats'
 import AddIcon from '@mui/icons-material/Add'
 import CheckroomIcon from '@mui/icons-material/Checkroom'
 import {
+  Alert,
   Box,
   Button,
   CardContent,
@@ -55,12 +56,12 @@ export default function BuildEditorBtn() {
         <Box sx={{ display: 'flex', gap: 1 }}>
           <strong>{name}</strong>
           <SqBadge
-            color={buildIds.length ? 'primary' : 'secondary'}
+            color={buildIds.length ? 'success' : 'secondary'}
             sx={{ marginLeft: 'auto' }}
           >
             {buildIds.length} Builds
           </SqBadge>
-          <SqBadge color={buildTcIds.length ? 'primary' : 'secondary'}>
+          <SqBadge color={buildTcIds.length ? 'success' : 'secondary'}>
             {buildTcIds.length} TC Builds
           </SqBadge>
         </Box>
@@ -73,6 +74,11 @@ export default function BuildEditorBtn() {
             <CardContent
               sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}
             >
+              <Alert variant="filled" severity="info">
+                A <strong>Build</strong> is comprised of a weapon and 5
+                artifacts. A <strong>TC Build</strong> allows the artifacts to
+                be created from its stats.
+              </Alert>
               <BuildEquipped active={buildType === 'equipped'} />
               <Box sx={{ display: 'flex', gap: 2 }}>
                 <Typography variant="h6">Builds</Typography>

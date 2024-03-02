@@ -2,7 +2,6 @@ import { CardThemed } from '@genshin-optimizer/common/ui'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { getCharData } from '@genshin-optimizer/gi/stats'
 import ContentCopyIcon from '@mui/icons-material/ContentCopy'
-import EditIcon from '@mui/icons-material/Edit'
 import ScienceIcon from '@mui/icons-material/Science'
 import {
   Box,
@@ -59,15 +58,6 @@ export function BuildEquipped({ active = false }: { active: boolean }) {
               <Typography variant="h6">Equipped Build</Typography>
             </CardActionArea>
           </CardThemed>
-          <Tooltip
-            title={<Typography>Edit Build Settings</Typography>}
-            placement="top"
-            arrow
-          >
-            <Button disabled color="info" size="small">
-              <EditIcon />
-            </Button>
-          </Tooltip>
           <Tooltip
             title={<Typography>Copy to TC Builds</Typography>}
             placement="top"

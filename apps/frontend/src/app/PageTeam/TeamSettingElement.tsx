@@ -24,7 +24,7 @@ import CharacterSelectionModal from '../Components/Character/CharacterSelectionM
 import CloseButton from '../Components/CloseButton'
 import CharIconSide from '../Components/Image/CharIconSide'
 import { LoadoutDropdown } from './LoadoutDropdown'
-
+import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward'
 // TODO: Translation
 
 export default function TeamSettingElement({ teamId }: { teamId: string }) {
@@ -84,6 +84,12 @@ export default function TeamSettingElement({ teamId }: { teamId: string }) {
           <CardContent
             sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}
           >
+            <Alert variant="filled" severity="info">
+              <strong>Teams</strong> are a container for 4 character loadouts.
+              It provides a way for characters to apply team buffs, and
+              configuration of enemy stats. Loadouts can be shared between
+              teams.
+            </Alert>
             <TextField
               fullWidth
               label="Team Name"
@@ -151,20 +157,11 @@ function TeamCharacterSelector({ teamId }: { teamId: string }) {
       }
     }
   }
-  const onDel = (index: number) => () =>
-    database.teams.set(teamId, (team) => {
-      team.teamCharIds[index] = undefined
-    })
 
   const charKeyAtIndex = database.teamChars.get(
     teamCharIds[charSelectIndex]
   )?.key
 
-  const onChangeTeamCharId = (index: number) => (teamCharId: string) => {
-    database.teams.set(teamId, (team) => {
-      team.teamCharIds[index] = teamCharId
-    })
-  }
   return (
     <>
       <Suspense fallback={false}>
@@ -178,11 +175,11 @@ function TeamCharacterSelector({ teamId }: { teamId: string }) {
       {teamCharIds.map((teamCharId, ind) =>
         teamCharId ? (
           <CharSelButton
+            index={ind}
             key={teamCharId}
+            teamId={teamId}
             teamCharId={teamCharId}
-            onClick={() => setCharSelectIndex(ind)}
-            onClose={onDel(ind)}
-            onChangeTeamCharId={onChangeTeamCharId(ind)}
+            onClickChar={() => setCharSelectIndex(ind)}
           />
         ) : (
           <Button
@@ -201,25 +198,43 @@ function TeamCharacterSelector({ teamId }: { teamId: string }) {
   )
 }
 function CharSelButton({
+  index,
+  teamId,
   teamCharId,
-  onClick,
-  onClose,
-  onChangeTeamCharId,
+  onClickChar,
 }: {
+  index: number
+  teamId: string
   teamCharId: string
-  onClick: () => void
-  onClose: () => void
-  onChangeTeamCharId: (teamCharId: string) => void
+  onClickChar: () => void
 }) {
   const database = useDatabase()
   const { key: characterKey } = database.teamChars.get(teamCharId)
   const { gender } = useDBMeta()
+  const onChangeTeamCharId = (teamCharId: string) => {
+    database.teams.set(teamId, (team) => {
+      team.teamCharIds[index] = teamCharId
+    })
+  }
+  const onActive = () => {
+    // Swap the active with current loadout
+    database.teams.set(teamId, (team) => {
+      const oldActive = team.teamCharIds[0]
+      team.teamCharIds[0] = teamCharId
+      team.teamCharIds[index] = oldActive
+    })
+  }
+
+  const onDel = () =>
+    database.teams.set(teamId, (team) => {
+      team.teamCharIds[index] = undefined
+    })
   return (
     <CardThemed bgt="light">
       <CardContent>
         <Box sx={{ display: 'flex', gap: 1 }}>
           <Button
-            onClick={onClick}
+            onClick={onClickChar}
             color={'success'}
             startIcon={<CharIconSide characterKey={characterKey} />}
           >
@@ -228,13 +243,18 @@ function CharSelButton({
           <LoadoutDropdown
             teamCharId={teamCharId}
             onChangeTeamCharId={onChangeTeamCharId}
+            dropdownBtnProps={{ sx: { flexGrow: 1 } }}
           />
-          <Button
-            onClick={onClose}
-            color="error"
-            sx={{ flexBasis: '0' }}
-            // size="small"
-          >
+          {!!index && (
+            <Button
+              onClick={onActive}
+              startIcon={<ArrowUpwardIcon />}
+              color="info"
+            >
+              Active
+            </Button>
+          )}
+          <Button onClick={onDel} color="error" sx={{ flexBasis: '0' }}>
             <CloseIcon />
           </Button>
         </Box>

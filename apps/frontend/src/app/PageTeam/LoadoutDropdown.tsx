@@ -1,4 +1,5 @@
 import { useBoolState } from '@genshin-optimizer/common/react-util'
+import type { DropdownButtonProps } from '@genshin-optimizer/common/ui'
 import {
   CardThemed,
   DropdownButton,
@@ -22,9 +23,11 @@ import { useState } from 'react'
 export function LoadoutDropdown({
   teamCharId,
   onChangeTeamCharId,
+  dropdownBtnProps = {},
 }: {
   teamCharId: string
   onChangeTeamCharId: (teamCharId: string) => void
+  dropdownBtnProps?: Omit<DropdownButtonProps, 'children' | 'title'>
 }) {
   const database = useDatabase()
   const {
@@ -100,7 +103,6 @@ export function LoadoutDropdown({
         </CardThemed>
       </ModalWrapper>
       <DropdownButton
-        fullWidth
         title={
           <Box sx={{ display: 'flex', gap: 1 }}>
             <span>{name}</span>
@@ -115,6 +117,7 @@ export function LoadoutDropdown({
             </SqBadge>
           </Box>
         }
+        {...dropdownBtnProps}
       >
         <MenuItem onClick={() => onShow()}>Create a new Loadout</MenuItem>
         {/* TODO: new loadout */}

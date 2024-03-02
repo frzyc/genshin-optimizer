@@ -93,7 +93,7 @@ export default function LoadoutSettingElement() {
           <CardContent
             sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}
           >
-            <Alert variant="outlined" severity="info">
+            <Alert variant="filled" severity="info">
               <strong>Loadouts</strong> provides character context data,
               including bonus stats, conditionals, multi-tagets, optimization
               config, and stores builds. A single <strong>Loadout</strong> can
@@ -102,6 +102,7 @@ export default function LoadoutSettingElement() {
             <LoadoutDropdown
               teamCharId={teamCharId}
               onChangeTeamCharId={onChangeTeamCharId}
+              dropdownBtnProps={{ fullWidth: true }}
             />
             <TextField
               fullWidth
