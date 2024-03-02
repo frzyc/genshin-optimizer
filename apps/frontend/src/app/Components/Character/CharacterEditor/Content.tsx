@@ -179,6 +179,11 @@ function InTeam() {
   const [dbDirty, setDbDirty] = useForceUpdate()
   const loadoutTeamMap = useMemo(() => {
     const loadoutTeamMap: Record<string, string[]> = {}
+    database.teamChars.keys.forEach((teamCharId) => {
+      const teamChar = database.teamChars.get(teamCharId)!
+      if (teamChar.key !== characterKey) return
+      if (!loadoutTeamMap[teamCharId]) loadoutTeamMap[teamCharId] = []
+    })
     database.teams.keys.forEach((teamId) => {
       const teamCharIdWithCKey = database.teams
         .get(teamId)!
