@@ -11,6 +11,7 @@ export default function ExcludeLoadout({
 }) {
   const database = useDatabase()
   const {
+    teamCharId,
     teamChar: { optConfigId },
     team,
   } = useContext(TeamCharacterContext)
@@ -18,7 +19,9 @@ export default function ExcludeLoadout({
 
   useEffect(() => {
     console.log('Update ExcludeLoadout')
-    const chars = team.teamCharIds.map((id) => database.teamChars.get(id))
+    const chars = team.teamCharIds
+      .filter((id) => id !== teamCharId)
+      .map((id) => database.teamChars.get(id))
     const buildIds = chars.map((char) => char.buildIds).flat()
     const builds = buildIds.map((id) => database.builds.get(id))
     const artifactIds = Array.from(
@@ -31,7 +34,7 @@ export default function ExcludeLoadout({
       )
     ) as string[]
     database.optConfigs.set(optConfigId, { loadoutExclusion: artifactIds })
-  }, [database, optConfigId, team.teamCharIds])
+  }, [database, optConfigId, team.teamCharIds, teamCharId])
 
   return (
     <Button
