@@ -291,7 +291,8 @@ export default function AllowChar({
 
   const onMouseUp = useCallback(() => setMouseUpDetected(true), [])
 
-  const total = locList.length
+  // `total` shouldn't rely on `locList.length` because it gets filtered
+  const total = database.chars.keys.length - 1
   const useTot = total - excludedLocations.length
   const totalStr = useTot === total ? useTot : `${useTot}/${total}`
   const charactersAllowed =
