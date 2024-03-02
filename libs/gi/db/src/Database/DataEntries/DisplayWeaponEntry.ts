@@ -1,9 +1,9 @@
 import type { RarityKey, WeaponTypeKey } from '@genshin-optimizer/gi/consts'
 import { allRarityKeys, allWeaponTypeKeys } from '@genshin-optimizer/gi/consts'
 
+import { weaponSortKeys } from '../../Interfaces'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
 import { DataEntry } from '../DataEntry'
-import { weaponSortKeys } from '../../Interfaces'
 
 export interface IDisplayWeapon {
   editWeaponId: string

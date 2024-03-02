@@ -1,5 +1,5 @@
-import type { BestupidExecutorSchema } from './schema'
 import executor from './executor'
+import type { BestupidExecutorSchema } from './schema'
 
 const options: BestupidExecutorSchema = {}
 

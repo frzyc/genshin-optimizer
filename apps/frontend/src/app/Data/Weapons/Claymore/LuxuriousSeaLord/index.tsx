@@ -11,8 +11,8 @@ import {
 import { customDmgNode } from '../../../Characters/dataUtil'
 import { st, stg } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
-import { dataObjForWeaponSheet } from '../../util'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
+import { dataObjForWeaponSheet } from '../../util'
 
 const key: WeaponKey = 'LuxuriousSeaLord'
 const data_gen = allStats.weapon.data[key]

@@ -123,12 +123,12 @@ export class RelicDataManager extends SroDataManager<
     this.set(id, value)
     return id
   }
-  override remove(key: string, notify = true) {
-    const relic = this.get(key)
-    if (!relic) return
-    relic.location &&
-      this.database.chars.setEquippedRelic(relic.location, relic.slotKey, '')
-    super.remove(key, notify)
+  override remove(key: string, notify = true): ICachedRelic | undefined {
+    const relic = super.remove(key, notify)
+    if (relic)
+      relic.location &&
+        this.database.chars.setEquippedRelic(relic.location, relic.slotKey, '')
+    return relic
   }
   override importSROD(
     srod: ISrObjectDescription & ISroDatabase,

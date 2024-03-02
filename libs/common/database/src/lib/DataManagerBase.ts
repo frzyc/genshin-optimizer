@@ -21,8 +21,8 @@ export class DataManagerBase<
   }
 
   data: Partial<Record<CacheKey, CacheValue>> = {}
-  listeners: Partial<Record<CacheKey, Callback<CacheKey>[]>> = {}
-  anyListeners: Callback<CacheKey>[] = []
+  listeners: Partial<Record<CacheKey, DataManagerCallback<CacheKey>[]>> = {}
+  anyListeners: DataManagerCallback<CacheKey>[] = []
 
   toStorageKey(key: CacheKey): string {
     return key
@@ -40,13 +40,13 @@ export class DataManagerBase<
     const { id, ...storageObj } = cacheObj as any
     return storageObj
   }
-  followAny(callback: Callback<CacheKey>): () => void {
+  followAny(callback: DataManagerCallback<CacheKey>): () => void {
     this.anyListeners.push(callback)
     return () => {
       this.anyListeners = this.anyListeners.filter((cb) => cb !== callback)
     }
   }
-  follow(key: CacheKey, callback: Callback<CacheKey>) {
+  follow(key: CacheKey, callback: DataManagerCallback<CacheKey>) {
     if (!key) return () => {}
     if (this.listeners[key]) this.listeners[key]?.push(callback)
     else this.listeners[key] = [callback]
@@ -109,11 +109,13 @@ export class DataManagerBase<
   }
   remove(key: CacheKey, notify = true) {
     const rem = this.data[key]
+    if (!rem) return rem
     delete this.data[key]
     this.removeStorageEntry(key)
 
     if (notify) this.trigger(key, 'remove', rem)
     delete this.listeners[key]
+    return rem
   }
   /**
    * change the id of the entry in `oldKey` to a `newKey`.
@@ -169,4 +171,8 @@ export class DataManagerBase<
     )
   }
 }
-type Callback<Arg> = (key: Arg, reason: TriggerString, object: any) => void
+export type DataManagerCallback<Arg> = (
+  key: Arg,
+  reason: TriggerString,
+  object: any
+) => void

@@ -1,19 +1,19 @@
 // This is a generated index file.
-import banner from './UI_NameCardPic_Sucrose_P.png'
-import bar from './UI_NameCardPic_Sucrose_Alpha.png'
 import burst from './Skill_E_Sucrose_01_HD.png'
+import skill from './Skill_S_Sucrose_01.png'
+import iconSide from './UI_AvatarIcon_Side_Sucrose.png'
+import icon from './UI_AvatarIcon_Sucrose.png'
+import bar from './UI_NameCardPic_Sucrose_Alpha.png'
+import banner from './UI_NameCardPic_Sucrose_P.png'
+import passive3 from './UI_Talent_Combine_Material.png'
 import constellation1 from './UI_Talent_S_Sucrose_01.png'
 import constellation2 from './UI_Talent_S_Sucrose_02.png'
-import constellation3 from './UI_Talent_U_Sucrose_01.png'
 import constellation4 from './UI_Talent_S_Sucrose_03.png'
-import constellation5 from './UI_Talent_U_Sucrose_02.png'
 import constellation6 from './UI_Talent_S_Sucrose_04.png'
-import icon from './UI_AvatarIcon_Sucrose.png'
-import iconSide from './UI_AvatarIcon_Side_Sucrose.png'
 import passive1 from './UI_Talent_S_Sucrose_05.png'
 import passive2 from './UI_Talent_S_Sucrose_06.png'
-import passive3 from './UI_Talent_Combine_Material.png'
-import skill from './Skill_S_Sucrose_01.png'
+import constellation3 from './UI_Talent_U_Sucrose_01.png'
+import constellation5 from './UI_Talent_U_Sucrose_02.png'
 
 const data = {
   banner,

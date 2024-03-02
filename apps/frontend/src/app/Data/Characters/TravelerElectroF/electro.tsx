@@ -15,10 +15,10 @@ import {
 import KeyMap from '../../../KeyMap'
 import type { CharacterSheetKey } from '../../../Types/consts'
 import { cond, stg, trans } from '../../SheetUtil'
-import { charTemplates } from '../charTemplates'
-import { customDmgNode, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
 import type { TalentSheet } from '../ICharacterSheet.d'
 import Traveler from '../Traveler'
+import { charTemplates } from '../charTemplates'
+import { customDmgNode, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
 
 export default function electro(
   key: CharacterSheetKey,

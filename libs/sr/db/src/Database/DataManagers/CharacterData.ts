@@ -1,6 +1,6 @@
 import type { TriggerString } from '@genshin-optimizer/common/database'
 import { clamp, deepClone, objKeyMap } from '@genshin-optimizer/common/util'
-import { validateLevelAsc } from '@genshin-optimizer/gi/util'
+import { validateLevelAsc } from '@genshin-optimizer/sr/util'
 import type {
   CharacterKey,
   CharacterLocationKey,
@@ -186,9 +186,9 @@ export class CharacterDataManager extends SroDataManager<
     return this.get(key) as ICachedSroCharacter
   }
 
-  override remove(key: CharacterKey) {
+  override remove(key: CharacterKey): ICachedSroCharacter | undefined {
     const char = this.get(key)
-    if (!char) return
+    if (!char) return undefined
     for (const relicKey of Object.values(char.equippedRelics)) {
       const relic = this.database.relics.get(relicKey)
       // Only unequip relic from Trailblazer if there are no more "Trailblazer"s in the database
@@ -219,7 +219,7 @@ export class CharacterDataManager extends SroDataManager<
         ...lightCone,
         location: '',
       })
-    super.remove(key)
+    return super.remove(key)
   }
 
   /**

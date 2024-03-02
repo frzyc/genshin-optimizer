@@ -36,3 +36,13 @@ export function getCharData(ck: CharacterKey) {
   const locCharKey = charKeyToLocCharKey(ck)
   return allStats.char.data[locCharKey]
 }
+
+export function isCharMelee(ck: CharacterKey) {
+  const data = getCharData(ck)
+  const weaponTypeKey = data.weaponType
+  return (
+    weaponTypeKey === 'sword' ||
+    weaponTypeKey === 'polearm' ||
+    weaponTypeKey === 'claymore'
+  )
+}

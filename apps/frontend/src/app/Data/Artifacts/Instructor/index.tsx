@@ -4,8 +4,8 @@ import type { Data } from '../../../Formula/type'
 import { equal, greaterEq } from '../../../Formula/utils'
 import { cond, st, stg } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
-import { dataObjForArtifactSheet } from '../dataUtil'
 import type { IArtifactSheet } from '../IArtifactSheet'
+import { dataObjForArtifactSheet } from '../dataUtil'
 
 const key: ArtifactSetKey = 'Instructor'
 const setHeader = setHeaderTemplate(key)

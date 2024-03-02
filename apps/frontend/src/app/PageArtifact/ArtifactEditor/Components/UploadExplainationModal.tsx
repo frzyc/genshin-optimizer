@@ -9,8 +9,8 @@ import {
 import CardDark from '../../../Components/Card/CardDark'
 import CloseButton from '../../../Components/CloseButton'
 import ModalWrapper from '../../../Components/ModalWrapper'
-import scan_art_main from './imgs/scanned.png'
 import Snippet from './imgs/fullscreen.png'
+import scan_art_main from './imgs/scanned.png'
 export default function UploadExplainationModal({
   modalShow,
   hide,

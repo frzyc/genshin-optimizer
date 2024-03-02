@@ -533,7 +533,10 @@ export function filterArts(
   }
 }
 
-export function mergeBuilds(builds: Build[][], maxNum: number): Build[] {
+export function mergeBuilds(
+  builds: SolverBuild[][],
+  maxNum: number
+): SolverBuild[] {
   return builds
     .flatMap((x) => x)
     .sort((a, b) => b.value - a.value)
@@ -812,8 +815,8 @@ export type ArtifactsBySlot = {
   values: StrictDict<ArtifactSlotKey, ArtifactBuildData[]>
 }
 
-export type PlotData = Dict<number, Build>
-export interface Build {
+export type PlotData = Dict<number, SolverBuild>
+export interface SolverBuild {
   value: number
   plot?: number
   artifactIds: string[]

@@ -1,11 +1,11 @@
-import { input, tally } from '../../../../Formula'
-import { prod, subscript } from '../../../../Formula/utils'
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
+import { input, tally } from '../../../../Formula'
+import { prod, subscript } from '../../../../Formula/utils'
 import { st } from '../../../SheetUtil'
-import { dataObjForWeaponSheet } from '../../util'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
+import { dataObjForWeaponSheet } from '../../util'
 
 const key: WeaponKey = 'LithicBlade'
 const data_gen = allStats.weapon.data[key]
