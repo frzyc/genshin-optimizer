@@ -302,7 +302,7 @@ export class TeamCharacterDataManager extends DataManager<
     teamChar.optConfigId = this.database.optConfigs.duplicate(
       teamChar.optConfigId
     )
-
+    teamChar.name = `${teamChar.name} (duplicated)`
     return this.new(teamChar.key, teamChar)
   }
   newBuild(teamcharId: string, build: Partial<Build> = {}) {

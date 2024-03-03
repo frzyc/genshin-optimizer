@@ -13,6 +13,7 @@ import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { getCharData } from '@genshin-optimizer/gi/stats'
 import { CharacterName } from '@genshin-optimizer/gi/ui'
 import AddIcon from '@mui/icons-material/Add'
+import ContentCopyIcon from '@mui/icons-material/ContentCopy'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import InfoIcon from '@mui/icons-material/Info'
 import {
@@ -230,6 +231,10 @@ function InTeam() {
       return
     database.teamChars.remove(teamCharId)
   }
+  const onDup = (teamCharId: string) => {
+    const newTeamCharId = database.teamChars.duplicate(teamCharId)
+    if (!newTeamCharId) return
+  }
   // TODO: Translation
   return (
     <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
@@ -258,10 +263,13 @@ function InTeam() {
                   {buildTcIds.length} TC Builds
                 </SqBadge>
                 <Button
-                  color="error"
-                  onClick={() => onDelete(teamCharId)}
+                  color="info"
+                  onClick={() => onDup(teamCharId)}
                   sx={{ ml: 'auto' }}
                 >
+                  <ContentCopyIcon />
+                </Button>
+                <Button color="error" onClick={() => onDelete(teamCharId)}>
                   <DeleteForeverIcon />
                 </Button>
               </Box>
