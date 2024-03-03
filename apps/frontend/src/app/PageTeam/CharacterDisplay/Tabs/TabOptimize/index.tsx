@@ -11,7 +11,11 @@ import {
   charKeyToLocCharKey,
 } from '@genshin-optimizer/gi/consts'
 import type { GeneratedBuild, ICachedArtifact } from '@genshin-optimizer/gi/db'
-import { defThreads, getActiveTeamCharId, maxBuildsToShowList } from '@genshin-optimizer/gi/db'
+import {
+  defThreads,
+  getActiveTeamCharId,
+  maxBuildsToShowList,
+} from '@genshin-optimizer/gi/db'
 import {
   useDBMeta,
   useDatabase,
@@ -109,7 +113,7 @@ export default function TabBuild() {
     teamCharId,
     teamChar: { optConfigId, key: characterKey },
     teamId,
-    team
+    team,
   } = useContext(TeamCharacterContext)
   const { characterSheet } = useContext(CharacterContext)
   const database = useDatabase()
