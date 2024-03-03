@@ -119,3 +119,7 @@ function validateTeam(
     lastEdit,
   }
 }
+
+export function getActiveTeamCharId(team: Team) {
+  return team.teamCharIds[0]
+}

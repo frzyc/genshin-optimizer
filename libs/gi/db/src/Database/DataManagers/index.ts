@@ -24,6 +24,7 @@ import {
 } from './OptConfigDataManager'
 import type { TeamCharacter } from './TeamCharacterDataManager'
 import type { Team } from './TeamDataManager'
+import { getActiveTeamCharId } from './TeamDataManager'
 import {
   defaultInitialWeapon,
   defaultInitialWeaponKey,
@@ -37,6 +38,7 @@ export {
   cachedArtifact,
   defaultInitialWeapon,
   defaultInitialWeaponKey,
+  getActiveTeamCharId,
   handleArtSetExclusion,
   initCharTC,
   initCustomMultiTarget,

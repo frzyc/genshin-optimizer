@@ -11,7 +11,7 @@ import {
   charKeyToLocCharKey,
 } from '@genshin-optimizer/gi/consts'
 import type { GeneratedBuild, ICachedArtifact } from '@genshin-optimizer/gi/db'
-import { defThreads, maxBuildsToShowList } from '@genshin-optimizer/gi/db'
+import { defThreads, getActiveTeamCharId, maxBuildsToShowList } from '@genshin-optimizer/gi/db'
 import {
   useDBMeta,
   useDatabase,
@@ -109,11 +109,15 @@ export default function TabBuild() {
     teamCharId,
     teamChar: { optConfigId, key: characterKey },
     teamId,
+    team
   } = useContext(TeamCharacterContext)
   const { characterSheet } = useContext(CharacterContext)
   const database = useDatabase()
   const { setChartData, graphBuilds, setGraphBuilds } = useContext(GraphContext)
   const { gender } = useDBMeta()
+
+  const activeTeamCharId = getActiveTeamCharId(team)
+  const activeCharKey = database.teamChars.get(activeTeamCharId).key
 
   const [notification, setnotification] = useState(false)
   const notificationRef = useRef(false)
@@ -319,7 +323,7 @@ export default function TabBuild() {
       []
     )
     if (!teamData) return
-    const workerData = uiDataForTeam(teamData.teamData, gender, characterKey)[
+    const workerData = uiDataForTeam(teamData.teamData, gender, activeCharKey)[
       characterKey
     ]?.target.data![0]
     if (!workerData) return
@@ -480,13 +484,14 @@ export default function TabBuild() {
       })
     }
   }, [
-    teamCharId,
-    teamId,
     buildSetting,
     characterKey,
     filteredArts,
     database,
+    teamId,
+    teamCharId,
     gender,
+    activeCharKey,
     setChartData,
     maxWorkers,
     optConfigId,
