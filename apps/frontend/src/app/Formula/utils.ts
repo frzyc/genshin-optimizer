@@ -17,7 +17,7 @@ import type {
 } from './type'
 
 type Opt = number | OptNode
-type Num = number | NumNode
+type Num = number | undefined | NumNode
 type Str = string | undefined | StrNode
 type N_S = Num | Str
 type AnyNode = NumNode | StrNode

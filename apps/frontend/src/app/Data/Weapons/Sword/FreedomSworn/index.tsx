@@ -14,10 +14,10 @@ const [, trm] = trans('weapon', key)
 const [condPassivePath, condPassive] = cond(key, 'MillennialMovement')
 const autoSrc = [-1, 0.16, 0.2, 0.24, 0.28, 0.32]
 const atk_Src = [-1, 0.2, 0.25, 0.3, 0.35, 0.4]
-const dmg_ = subscript(
-  input.weapon.refinement,
-  data_gen.refinementBonus['dmg_']
-)
+const dmg_arr = data_gen.refinementBonus.dmg_
+if (!dmg_arr)
+  throw new Error(`data_gen.refinementBonus.dmg_ for ${key} was undefined`)
+const dmg_ = subscript(input.weapon.refinement, dmg_arr)
 // TODO: These should not stack, similar to NO. But I don't want to copy NO's
 // solution, since then these nodes won't show in the team buff panel. And it's
 // a bit unlikely people will try to stack this buff

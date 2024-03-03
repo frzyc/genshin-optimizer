@@ -16,8 +16,8 @@ export type NumNode =
   | LookupNode<NumNode>
   | MatchNode<NumNode>
   | SubscriptNode<number>
-  | ReadNode<number>
-  | ConstantNode<number>
+  | ReadNode<number | undefined>
+  | ConstantNode<number | undefined>
 export type StrNode =
   | StrPrioNode
   | SmallestNode
