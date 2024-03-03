@@ -296,7 +296,7 @@ function InTeam() {
                     color="info"
                     startIcon={<AddIcon />}
                   >
-                    Add new Team with this loadout
+                    Add new Team
                   </Button>
                 </Grid>
               </Grid>
@@ -311,10 +311,7 @@ function InTeam() {
         color="info"
         startIcon={<AddIcon />}
       >
-        Add new Team with a new loadout for
-        <strong>
-          <CharacterName characterKey={characterKey} gender={gender} />
-        </strong>
+        Add new loadout+team
       </Button>
       <CardThemed bgt="light"></CardThemed>
     </Box>
