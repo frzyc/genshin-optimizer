@@ -80,7 +80,7 @@ export default function TabUpopt() {
   const database = useDatabase()
   const { gender } = useDBMeta()
 
-  const activeCharKey = database.teams.getActiveTeamChar(teamId).key
+  const activeCharKey = database.teams.getActiveTeamChar(teamId)!.key
 
   const noArtifact = useMemo(() => !database.arts.values.length, [database])
 

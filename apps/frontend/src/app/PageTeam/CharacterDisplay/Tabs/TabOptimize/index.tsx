@@ -115,7 +115,7 @@ export default function TabBuild() {
   const { setChartData, graphBuilds, setGraphBuilds } = useContext(GraphContext)
   const { gender } = useDBMeta()
 
-  const activeCharKey = database.teams.getActiveTeamChar(teamId).key
+  const activeCharKey = database.teams.getActiveTeamChar(teamId)!.key
 
   const [notification, setnotification] = useState(false)
   const notificationRef = useRef(false)
