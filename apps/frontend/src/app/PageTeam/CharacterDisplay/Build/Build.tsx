@@ -431,10 +431,10 @@ function EquipBuildButton({
               }}
             >
               <Button color="error" onClick={OnHidePrompt}>
-                No
+                Cancel
               </Button>
               <Button color="success" onClick={toEquip}>
-                Yes
+                Equip
               </Button>
             </Box>
           </CardContent>
