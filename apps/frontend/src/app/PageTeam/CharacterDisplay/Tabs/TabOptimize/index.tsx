@@ -101,7 +101,6 @@ import MainStatSelectionCard from './Components/MainStatSelectionCard'
 import OptimizationTargetSelector from './Components/OptimizationTargetSelector'
 import StatFilterCard from './Components/StatFilterCard'
 import { compactArtifacts, dynamicData } from './foreground'
-import ExcludeLoadout from './Components/ExcludeLoadout'
 
 const audio = new Audio('assets/notification.mp3')
 export default function TabBuild() {
@@ -110,6 +109,7 @@ export default function TabBuild() {
     teamCharId,
     teamChar: { optConfigId, key: characterKey },
     teamId,
+    team,
   } = useContext(TeamCharacterContext)
   const { characterSheet } = useContext(CharacterContext)
   const database = useDatabase()
@@ -173,6 +173,7 @@ export default function TabBuild() {
     levelHigh,
     builds,
     buildDate,
+    useLoadoutExclusion,
   } = buildSetting
   const { data } = useContext(DataContext)
   const oldData = useOldData()
@@ -198,13 +199,22 @@ export default function TabBuild() {
       allowLocationsState,
       useExcludedArts,
       useLoadoutExclusion,
-      loadoutExclusion,
     } = deferredArtsDirty && deferredBuildSetting
+
+    const artifactIds = Array.from(
+      new Set(
+        team.teamCharIds
+          .filter((id) => id !== teamCharId)
+          .map((id) => database.teamChars.getLoadoutArtifacts(id))
+          .flatMap((artSet) => Object.values(artSet))
+          .filter((id) => !!id)
+          .map(({ id }) => id)
+      )
+    )
 
     return database.arts.values.filter((art) => {
       if (!useExcludedArts && artExclusion.includes(art.id)) return false
-      if (!useLoadoutExclusion && loadoutExclusion.includes(art.id))
-        return false
+      if (!useLoadoutExclusion && artifactIds.includes(art.id)) return false
       if (art.level < levelLow) return false
       if (art.level > levelHigh) return false
       const mainStats = mainStatKeys[art.slotKey]
@@ -226,7 +236,15 @@ export default function TabBuild() {
 
       return true
     })
-  }, [database, characterKey, deferredArtsDirty, deferredBuildSetting])
+  }, [
+    characterKey,
+    database.arts.values,
+    database.teamChars,
+    deferredArtsDirty,
+    deferredBuildSetting,
+    team.teamCharIds,
+    teamCharId,
+  ])
 
   const filteredArtIdMap = useMemo(
     () =>
@@ -672,7 +690,22 @@ export default function TabBuild() {
             excludedTotal={excludedTotal.in}
           />
 
-          <ExcludeLoadout disabled={generatingBuilds} />
+          <Button
+            fullWidth
+            startIcon={
+              useLoadoutExclusion ? <CheckBox /> : <CheckBoxOutlineBlank />
+            }
+            color={useLoadoutExclusion ? 'success' : 'secondary'}
+            onClick={() => {
+              database.optConfigs.set(optConfigId, {
+                useLoadoutExclusion: !useLoadoutExclusion,
+              })
+            }}
+            disabled={generatingBuilds}
+          >
+            {/* TODO: Translation */}
+            Use artifacts in teammates' builds
+          </Button>
           <Button
             fullWidth
             startIcon={allowPartial ? <CheckBox /> : <CheckBoxOutlineBlank />}
