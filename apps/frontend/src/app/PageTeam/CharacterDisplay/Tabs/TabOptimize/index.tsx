@@ -115,6 +115,8 @@ export default function TabBuild() {
   const { setChartData, graphBuilds, setGraphBuilds } = useContext(GraphContext)
   const { gender } = useDBMeta()
 
+  const activeCharKey = database.teams.getActiveTeamChar(teamId).key
+
   const [notification, setnotification] = useState(false)
   const notificationRef = useRef(false)
   useEffect(() => {
@@ -319,7 +321,7 @@ export default function TabBuild() {
       []
     )
     if (!teamData) return
-    const workerData = uiDataForTeam(teamData.teamData, gender, characterKey)[
+    const workerData = uiDataForTeam(teamData.teamData, gender, activeCharKey)[
       characterKey
     ]?.target.data![0]
     if (!workerData) return
@@ -480,13 +482,14 @@ export default function TabBuild() {
       })
     }
   }, [
-    teamCharId,
-    teamId,
     buildSetting,
     characterKey,
     filteredArts,
     database,
+    teamId,
+    teamCharId,
     gender,
+    activeCharKey,
     setChartData,
     maxWorkers,
     optConfigId,

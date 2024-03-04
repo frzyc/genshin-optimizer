@@ -23,7 +23,7 @@ import type { dataContextObj } from '../../../../Context/DataContext'
 import { DataContext } from '../../../../Context/DataContext'
 import { OptimizationTargetContext } from '../../../../Context/OptimizationTargetContext'
 import { TeamCharacterContext } from '../../../../Context/TeamCharacterContext'
-import { getTeamDataCalc } from '../../../../ReactHooks/useCharData'
+import { getTeamDataCalc } from '../../../../ReactHooks/useTeamData'
 import { isDev } from '../../../../Util/Util'
 import CharacterProfileCard from '../../../CharProfileCard'
 import useOldData from '../../../useOldData'
@@ -50,6 +50,8 @@ export default function TabTheorycraft() {
   const database = useDatabase()
   const { gender } = useDBMeta()
   const {
+    teamId,
+    teamCharId,
     teamChar: { key: characterKey, buildTcId },
   } = useContext(TeamCharacterContext)
   const buildTc = useBuildTc(buildTcId)!
@@ -147,9 +149,10 @@ export default function TabTheorycraft() {
      */
     const tempTeamData = getTeamDataCalc(
       database,
-      characterKey,
-      0,
+      teamId,
       gender,
+      teamCharId,
+      0,
       getArtifactData(buildTc),
       getWeaponData(buildTc)
     )

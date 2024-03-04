@@ -11,8 +11,21 @@ on:
 jobs:
   lint:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 20
     steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Get Cache Key
+        id: get-cache-key
+        run: |
+          echo "key=$(git ls-tree -r HEAD | grep '^160000' | sha256sum | cut -d " " -f 1)" >> $GITHUB_OUTPUT
+      - uses: actions/cache/restore@v4
+        with:
+          path: .git/modules
+          key: submodule-${{ steps.get-cache-key.outputs.key }}
+          restore-keys: |
+            submodule-
       - uses: actions/checkout@v4
         with:
           persist-credentials: false
@@ -35,6 +48,19 @@ jobs:
       - uses: actions/checkout@v4
         with:
           persist-credentials: false
+      - name: Get Cache Key
+        id: get-cache-key
+        run: |
+          echo "key=$(git ls-tree -r HEAD | grep '^160000' | sha256sum | cut -d " " -f 1)" >> $GITHUB_OUTPUT
+      - uses: actions/cache/restore@v4
+        with:
+          path: .git/modules
+          key: submodule-${{ steps.get-cache-key.outputs.key }}
+          restore-keys: |
+            submodule-
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
           submodules: true
       - uses: actions/setup-node@v4
         with:
@@ -54,7 +80,24 @@ jobs:
       - uses: actions/checkout@v4
         with:
           persist-credentials: false
+      - name: Get Cache Key
+        id: get-cache-key
+        run: |
+          echo "key=$(git ls-tree -r HEAD | grep '^160000' | sha256sum | cut -d " " -f 1)" >> $GITHUB_OUTPUT
+      - uses: actions/cache@v4
+        with:
+          path: .git/modules
+          key: submodule-${{ steps.get-cache-key.outputs.key }}
+          restore-keys: |
+            submodule-
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
           submodules: true
+      - name: Sparse Checkout
+        run: |
+          $(cd libs/gi/dm/GenshinData  && git sparse-checkout set TextMap ExcelBinOutput)
+          $(cd libs/sr/dm/StarRailData && git sparse-checkout set TextMap ExcelOutput)
       - uses: actions/setup-node@v4
         with:
           node-version: 20
