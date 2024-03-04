@@ -199,7 +199,6 @@ export default function TabBuild() {
       loadoutExclusion,
     } = deferredArtsDirty && deferredBuildSetting
 
-    console.log('Run Filter')
     return database.arts.values.filter((art) => {
       if (!useExcludedArts && artExclusion.includes(art.id)) return false
       if (!useLoadoutExclusion && loadoutExclusion.includes(art.id))
