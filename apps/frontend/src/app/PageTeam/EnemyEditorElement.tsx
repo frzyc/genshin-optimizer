@@ -135,7 +135,7 @@ export function EnemyEditor({
   const database = useDatabase()
   const defaultVal = 10
 
-  const eLvl = enemyOverride.enemyLevel
+  const eLvl = enemyOverride.enemyLevel ?? 100
   const eDefRed = enemyOverride.enemyDefIgn_ ?? 0
   const eDefIgn = enemyOverride.enemyDefRed_ ?? 0
   return (

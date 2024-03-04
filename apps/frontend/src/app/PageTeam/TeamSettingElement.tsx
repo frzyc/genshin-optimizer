@@ -195,7 +195,7 @@ function TeamCharacterSelector({ teamId }: { teamId: string }) {
             onClick={() => setCharSelectIndex(ind)}
             fullWidth
             sx={{ height: '100%' }}
-            disabled={ind && !teamCharIds.some((id) => id)}
+            disabled={!!ind && !teamCharIds.some((id) => id)}
             startIcon={<AddIcon />}
           >
             Add Character

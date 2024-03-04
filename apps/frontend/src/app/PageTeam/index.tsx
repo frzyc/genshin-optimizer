@@ -110,7 +110,7 @@ function Page({ teamId, onClose }: { teamId: string; onClose?: () => void }) {
     return { characterKey, teamCharId }
   }, [teamCharIds, characterKeyRaw, database])
 
-  const teamChar = useTeamChar(teamCharId)
+  const teamChar = useTeamChar(teamCharId ?? '')
 
   // validate tab value
   const tab = useMemo(() => {
@@ -172,7 +172,7 @@ function Page({ teamId, onClose }: { teamId: string; onClose?: () => void }) {
           characterKey={characterKey}
           tab={tab}
         />
-        {characterKey && team && teamChar && (
+        {characterKey && team && teamChar && teamCharId && (
           <PageContent
             characterKey={characterKey}
             teamCharId={teamCharId}

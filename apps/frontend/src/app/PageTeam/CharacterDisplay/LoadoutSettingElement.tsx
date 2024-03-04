@@ -26,7 +26,7 @@ export default function LoadoutSettingElement() {
   const { teamId, teamCharId } = useContext(TeamCharacterContext)
 
   const database = useDatabase()
-  const teamChar = database.teamChars.get(teamCharId)
+  const teamChar = database.teamChars.get(teamCharId)!
   const [open, setOpen] = useState(false)
 
   const [name, setName] = useState(teamChar.name)

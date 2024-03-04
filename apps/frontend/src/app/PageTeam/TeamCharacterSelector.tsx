@@ -12,7 +12,7 @@ export default function TeamCharacterSelector({
   tab,
 }: {
   teamId: string
-  characterKey: CharacterKey
+  characterKey?: CharacterKey
   tab: string
 }) {
   const navigate = useNavigate()
@@ -25,7 +25,7 @@ export default function TeamCharacterSelector({
       <CardThemed bgt="light">
         <Tabs
           variant="fullWidth"
-          value={characterKey}
+          value={characterKey ?? 0}
           sx={{
             '& .MuiTab-root:hover': {
               transition: 'background-color 0.25s ease',

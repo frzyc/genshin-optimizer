@@ -35,7 +35,7 @@ export function LoadoutDropdown({
     name,
     buildIds,
     buildTcIds,
-  } = database.teamChars.get(teamCharId)
+  } = database.teamChars.get(teamCharId)!
   const { gender } = useDBMeta()
   const teamCharIds = database.teamChars.keys.filter(
     (teamCharId) => database.teamChars.get(teamCharId)!.key === characterKey

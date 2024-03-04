@@ -62,13 +62,13 @@ export default function TabTeambuffs() {
           <TeamBuffDisplay />
           <ResonanceDisplay />
         </Grid>
-        {teamCharIds
-          .filter((id) => id && id !== teamCharId)
-          .map((id) => (
+        {(teamCharIds.filter((id) => id && id !== teamCharId) as string[]).map(
+          (id) => (
             <Grid item xs={12} md={6} lg={3} key={id}>
               <TeammateDisplay teamCharId={id} />
             </Grid>
-          ))}
+          )
+        )}
       </Grid>
     </Box>
   )
