@@ -19,8 +19,8 @@ import { constant } from './utils'
 export type OptNode =
   | ComputeNode<OptNode, OptNode>
   | ThresholdNode<OptNode, OptNode, OptNode>
-  | ReadNode<number | undefined>
-  | ConstantNode<number | undefined>
+  | ReadNode<number>
+  | ConstantNode<number>
 
 const allCommutativeMonoidOperations: StrictDict<
   CommutativeMonoidOperation,
