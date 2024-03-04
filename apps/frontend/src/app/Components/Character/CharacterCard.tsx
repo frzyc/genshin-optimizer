@@ -125,7 +125,7 @@ export default function CharacterCard({
               dataContextObj={dataContextObj}
               characterKey={characterKey}
               onClick={onClick}
-              onClickHeader={() => onClickHeader(characterKey)}
+              onClickHeader={() => onClickHeader?.(characterKey)}
               hideStats={hideStats}
             />
           ) : (

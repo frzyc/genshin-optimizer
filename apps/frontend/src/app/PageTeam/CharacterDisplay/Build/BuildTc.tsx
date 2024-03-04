@@ -45,7 +45,7 @@ export default function BuildTc({
   const [open, onOpen, onClose] = useBoolState()
   const { teamCharId } = useContext(TeamCharacterContext)
   const database = useDatabase()
-  const { name, description } = useBuildTc(buildTcId)
+  const { name, description } = useBuildTc(buildTcId)!
   const onActive = () =>
     database.teamChars.set(teamCharId, {
       buildType: 'tc',
@@ -121,7 +121,7 @@ function TcEquip({ buildTcId }: { buildTcId: string }) {
       substats: { stats: substats },
       sets,
     },
-  } = useBuildTc(buildTcId)
+  } = useBuildTc(buildTcId)!
   const weaponSheet = getWeaponSheet(weapon.key)
   const substatsArr = Object.entries(substats)
   const substatsArr1 = substatsArr.slice(0, 5)
@@ -228,7 +228,7 @@ function BuildTcEditor({
   onClose: () => void
 }) {
   const database = useDatabase()
-  const build = useBuildTc(buildTcId)
+  const build = useBuildTc(buildTcId)!
 
   const [name, setName] = useState(build.name)
   const nameDeferred = useDeferredValue(name)
@@ -237,7 +237,9 @@ function BuildTcEditor({
 
   // trigger on buildId change, to use the new team's name/desc
   useEffect(() => {
-    const { name, description } = database.buildTcs.get(buildTcId)
+    const newBuild = database.buildTcs.get(buildTcId)
+    if (!newBuild) return
+    const { name, description } = newBuild
     setName(name)
     setDesc(description)
   }, [database, buildTcId])

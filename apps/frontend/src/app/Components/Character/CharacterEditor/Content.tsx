@@ -89,7 +89,7 @@ export default function Content({ onClose }: { onClose?: () => void }) {
                       dropDownButtonProps={{
                         startIcon: (
                           <ImgIcon
-                            src={characterSheet.getTalentOfKey(talentKey).img}
+                            src={characterSheet.getTalentOfKey(talentKey)?.img}
                             size={1.75}
                             sideMargin
                           />
@@ -166,10 +166,10 @@ function InTeam() {
     () =>
       database.teams.keys.filter((teamId) =>
         database.teams
-          .get(teamId)
+          .get(teamId)!
           .teamCharIds.some(
             (teamCharId) =>
-              database.teamChars.get(teamCharId).key === characterKey
+              database.teamChars.get(teamCharId)?.key === characterKey
           )
       ),
     [characterKey, database]
