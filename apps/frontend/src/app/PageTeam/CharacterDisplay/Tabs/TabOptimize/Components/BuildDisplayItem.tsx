@@ -18,6 +18,7 @@ import {
   useArtifact,
   useDatabase,
   useOptConfig,
+  useWeapon,
 } from '@genshin-optimizer/gi/db-ui'
 import { Checkroom, ChevronRight } from '@mui/icons-material'
 import CheckBoxIcon from '@mui/icons-material/CheckBox'
@@ -48,6 +49,7 @@ import { uiInput as input } from '../../../../../Formula'
 import ArtifactCard from '../../../../../PageArtifact/ArtifactCard'
 import { ArtifactSetBadges } from './ArtifactSetBadges'
 import SetInclusionButton from './SetInclusionButton'
+import WeaponCard from '../../../../../PageWeapon/WeaponCard'
 
 type NewOld = {
   newId: string
@@ -87,8 +89,10 @@ export default function BuildDisplayItem({
   ) ?? { mainStatAssumptionLevel: 0, allowLocationsState: 'all' }
   const database = useDatabase()
   const { data } = useContext(DataContext)
-  const [newOld, setNewOld] = useState(undefined as NewOld | undefined)
-  const close = useCallback(() => setNewOld(undefined), [setNewOld])
+  const [weapNewOld, setWeapNewOld] = useState(undefined as NewOld | undefined)
+  const [artNewOld, setArtNewOld] = useState(undefined as NewOld | undefined)
+  const closeWeap = useCallback(() => setWeapNewOld(undefined), [setWeapNewOld])
+  const closeArt = useCallback(() => setArtNewOld(undefined), [setArtNewOld])
   const buildEquip = buildId && buildType === 'real'
   const equipBuild = useCallback(() => {
     const confirmMsg = buildEquip
@@ -181,6 +185,44 @@ export default function BuildDisplayItem({
     // default
     return ''
   }, [buildType, buildId, database, equippedWeapon])
+
+  const compareEquippedWeaponId: string = useMemo(() => {
+    if (!compare) return buildEquippedWeaponId
+    if (compareType === 'tc') return 'tc'
+    if (compareType === 'equipped') return equippedWeapon
+    if (compareType === 'real') return database.builds.get(compareBuildId).weaponId
+    // default
+    return ''
+  }, [
+    compareType,
+    compare,
+    compareBuildId,
+    database,
+    equippedWeapon,
+    buildEquippedWeaponId,
+  ])
+
+  const weapNano = useMemo(
+    () => {
+      return (
+        <Grid item xs={1}>
+          <WeaponCardNano
+            showLocation
+            weaponId={data.get(input.weapon.id).value!}
+            onClick={() => {
+              const oldId = compareEquippedWeaponId
+              const newId = data.get(input.weapon.id).value!
+              setWeapNewOld({ oldId: oldId !== newId ? oldId : undefined, newId })
+            }}
+          />
+        </Grid>
+      )}, [
+      data,
+      setWeapNewOld,
+      compareEquippedWeaponId,
+    ]
+  )
+
   // Memoize Arts because of its dynamic onClick
   const artNanos = useMemo(
     () =>
@@ -194,13 +236,13 @@ export default function BuildDisplayItem({
             onClick={() => {
               const oldId = compareEquippedArtifactIds[slotKey]
               const newId = artifactIdsBySlot[slotKey]!
-              setNewOld({ oldId: oldId !== newId ? oldId : undefined, newId })
+              setArtNewOld({ oldId: oldId !== newId ? oldId : undefined, newId })
             }}
           />
         </Grid>
       )),
     [
-      setNewOld,
+      setArtNewOld,
       compareEquippedArtifactIds,
       mainStatAssumptionLevel,
       artifactIdsBySlot,
@@ -218,11 +260,17 @@ export default function BuildDisplayItem({
       <Suspense
         fallback={<Skeleton variant="rectangular" width="100%" height={600} />}
       >
-        {newOld && (
+        {weapNewOld && (
+          <CompareWeaponModal
+            newOld={weapNewOld}
+            onClose={closeWeap}
+          />
+        )}
+        {artNewOld && (
           <CompareArtifactModal
-            newOld={newOld}
+            newOld={artNewOld}
             mainStatAssumptionLevel={mainStatAssumptionLevel}
-            onClose={close}
+            onClose={closeArt}
             allowLocationsState={allowLocationsState}
           />
         )}
@@ -263,18 +311,119 @@ export default function BuildDisplayItem({
             sx={{ pb: 1 }}
             columns={{ xs: 2, sm: 3, md: 4, lg: 6 }}
           >
-            <Grid item xs={1}>
-              <WeaponCardNano
-                showLocation
-                weaponId={data.get(input.weapon.id).value!}
-              />
-            </Grid>
+            {weapNano}
             {artNanos}
           </Grid>
           <StatDisplayComponent />
         </CardContent>
       </Suspense>
     </CardLight>
+  )
+}
+
+function CompareWeaponModal({
+  newOld: {newId, oldId},
+  onClose,
+}: {
+  newOld: NewOld
+  onClose: () => void
+}) {
+  const database = useDatabase()
+  const {
+    teamChar: { buildType, buildId },
+  } = useContext(TeamCharacterContext)
+  const buildEquip = buildId && buildType === 'real'
+
+  const {
+    character: { key: characterKey },
+  } = useContext(CharacterContext)
+  const onEquip = useCallback(() => {
+    const confirmMsg = buildEquip
+      ? 'Do you want to equip this weapon to this build?'
+      : 'Do you want to equip this weapon to this character?'
+    if (!window.confirm(confirmMsg)) return
+    if (buildEquip) {
+      const weap = database.weapons.get(newId)
+      database.weapons.set(newId, { location: charKeyToLocCharKey(characterKey) })
+      if (weap)
+        database.builds.set(buildId, (build) => {
+          build.weaponId = newId
+        })
+    } else
+      database.weapons.set(newId, { location: charKeyToLocCharKey(characterKey) })
+    onClose()
+  }, [newId, buildEquip, buildId, database, characterKey, onClose])
+
+  const oldWeapon = useWeapon(oldId)
+
+  const deleteWeapon = useCallback(
+    (id: string) => database.weapons.remove(id),
+    [database]
+  )
+
+  return (
+    <ModalWrapper
+      open={!!newId}
+      onClose={onClose}
+      containerProps={{ maxWidth: oldId ? 'md' : 'xs' }}
+    >
+      <CardDark>
+        <CardContent
+          sx={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'stretch',
+            gap: 2,
+          }}
+        >
+          {oldWeapon && (
+            <Box minWidth={320} display="flex" flexDirection="column" gap={1}>
+              <CardThemed bgt="light" sx={{ p: 1 }}>
+                <Typography variant="h6" textAlign="center">
+                  Old Weapon
+                </Typography>
+              </CardThemed>
+              {oldId === 'tc' ? (
+                <Typography variant="h6" textAlign="center" color="info">
+                  <SqBadge>TC Weapon</SqBadge>
+                </Typography>
+              ) : (
+                <WeaponCard
+                  weaponId={oldId}
+                  onDelete={deleteWeapon}
+                  canEquip={!buildEquip}
+                />
+              )}
+            </Box>
+          )}
+          {oldWeapon && <Box display="flex" flexGrow={1} />}
+          {oldWeapon && (
+            <Box display="flex" alignItems="center" justifyContent="center">
+              <Button
+                onClick={onEquip}
+                sx={{ display: 'flex' }}
+                disabled={oldId === 'tc'}
+              >
+                <ChevronRight sx={{ fontSize: 40 }} />
+              </Button>
+            </Box>
+          )}
+          {oldWeapon && <Box display="flex" flexGrow={1} />}
+          <Box minWidth={320} display="flex" flexDirection="column" gap={1}>
+            <CardThemed bgt="light" sx={{ p: 1 }}>
+              <Typography variant="h6" textAlign="center">
+                New Weapon
+              </Typography>
+            </CardThemed>
+            <WeaponCard
+              weaponId={newId}
+              onDelete={deleteWeapon}
+              canEquip={!buildEquip}
+            />
+          </Box>
+        </CardContent>
+      </CardDark>
+    </ModalWrapper>
   )
 }
 
