@@ -32,10 +32,10 @@ export default function CompareBtn() {
   } = useContext(TeamCharacterContext)
   const selectedLabel =
     compareType === 'real' ? (
-      database.builds.get(compareBuildId).name
+      database.builds.get(compareBuildId)?.name ?? ''
     ) : compareType === 'tc' ? (
       <span>
-        {database.buildTcs.get(compareBuildTcId).name}{' '}
+        {database.buildTcs.get(compareBuildTcId)?.name ?? ''}{' '}
         <SqBadge color="info" sx={{ ml: 1 }}>
           TC
         </SqBadge>
@@ -91,7 +91,7 @@ export default function CompareBtn() {
         </MenuItem>
         {buildIds.map((buildId) => (
           <MenuItem
-            disabled={!database.builds.get(buildId).weaponId}
+            disabled={!database.builds.get(buildId)?.weaponId}
             key={buildId}
             onClick={() =>
               database.teamChars.set(teamCharId, {
@@ -100,7 +100,7 @@ export default function CompareBtn() {
               })
             }
           >
-            {database.builds.get(buildId).name}{' '}
+            {database.builds.get(buildId)!.name}{' '}
             {buildType === 'real' && buildId === teamCharBuildId && (
               <SqBadge color="info" sx={{ ml: 1 }}>
                 Current
@@ -118,7 +118,7 @@ export default function CompareBtn() {
               })
             }
           >
-            {database.buildTcs.get(buildTcId).name}{' '}
+            {database.buildTcs.get(buildTcId)?.name ?? ''}{' '}
             <SqBadge color="info" sx={{ ml: 1 }}>
               TC
             </SqBadge>

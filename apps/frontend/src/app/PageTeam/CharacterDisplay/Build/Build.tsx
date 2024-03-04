@@ -19,6 +19,7 @@ import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import EditIcon from '@mui/icons-material/Edit'
 import InfoIcon from '@mui/icons-material/Info'
 import ScienceIcon from '@mui/icons-material/Science'
+import type { ButtonProps } from '@mui/material'
 import {
   Alert,
   Box,
@@ -27,7 +28,9 @@ import {
   CardActionArea,
   CardContent,
   CardHeader,
+  Checkbox,
   Divider,
+  FormControlLabel,
   Grid,
   TextField,
   Tooltip,
@@ -61,19 +64,13 @@ export function Build({
   } = useContext(TeamCharacterContext)
   const { gender } = useDBMeta()
   const database = useDatabase()
-  const { name, description, weaponId, artifactIds } = useBuild(buildId)
+  const { name, description, weaponId, artifactIds } = useBuild(buildId)!
   const onActive = () =>
     database.teamChars.set(teamCharId, { buildType: 'real', buildId })
   const onEquip = () => {
     // Cannot equip a build without weapon
     if (!weaponId) return
-    if (
-      !window.confirm(
-        `Do you want to equip all gear in this build to this character? The currently equipped build will be overwritten.`
-      )
-    )
-      return
-    const char = database.chars.get(characterKey)
+    const char = database.chars.get(characterKey)!
     Object.entries(artifactIds).forEach(([slotKey, id]) => {
       if (id)
         database.arts.set(id, { location: charKeyToLocCharKey(characterKey) })
@@ -102,6 +99,7 @@ export function Build({
       database.weapons.get(weaponId),
       Object.values(artifactIds).map((id) => database.arts.get(id))
     )
+    if (!newBuildTcId) return
     // copy over name/desc
     database.buildTcs.set(newBuildTcId, {
       name: `${name} - Copied`,
@@ -194,14 +192,14 @@ export function Build({
               placement="top"
               arrow
             >
-              <Button
+              <EquipBuildButton
                 color="success"
                 size="small"
                 disabled={!weaponId} // disabling equip of outfit with invalid weaponId
-                onClick={onEquip}
+                onEquip={onEquip}
               >
                 <CheckroomIcon />
-              </Button>
+              </EquipBuildButton>
             </Tooltip>
             <Tooltip
               title={<Typography>Delete Build</Typography>}
@@ -281,7 +279,7 @@ function BuildEditor({
   } = useContext(CharacterContext)
   const weaponTypeKey = getCharData(characterKey).weaponType
   const database = useDatabase()
-  const build = useBuild(buildId)
+  const build = useBuild(buildId)!
 
   const [name, setName] = useState(build.name)
   const nameDeferred = useDeferredValue(name)
@@ -290,7 +288,9 @@ function BuildEditor({
 
   // trigger on buildId change, to use the new team's name/desc
   useEffect(() => {
-    const { name, description } = database.builds.get(buildId)
+    const newBuild = database.builds.get(buildId)
+    if (!newBuild) return
+    const { name, description } = newBuild
     setName(name)
     setDesc(description)
   }, [database, buildId])
@@ -351,5 +351,95 @@ function BuildEditor({
         </Box>
       </CardContent>
     </CardThemed>
+  )
+}
+
+type EquipBuildButtonProps = ButtonProps & { onEquip: () => void }
+function EquipBuildButton({
+  onEquip,
+  children,
+  ...props
+}: EquipBuildButtonProps) {
+  const [name, setName] = useState('')
+  const [copyEquipped, setCopyEquipped] = useState(false)
+  const [showPrompt, onShowPrompt, OnHidePrompt] = useBoolState()
+
+  const database = useDatabase()
+  const { teamCharId } = useContext(TeamCharacterContext)
+  const {
+    character: { equippedArtifacts, equippedWeapon },
+  } = useContext(CharacterContext)
+
+  const toEquip = () => {
+    if (copyEquipped) {
+      database.teamChars.newBuild(teamCharId, {
+        name: name !== '' ? name : 'Duplicate of Equipped',
+        artifactIds: equippedArtifacts,
+        weaponId: equippedWeapon,
+      })
+    }
+
+    onEquip()
+    setName('')
+    setCopyEquipped(false)
+    OnHidePrompt()
+  }
+  return (
+    <>
+      <Button {...props} onClick={onShowPrompt}>
+        {children}
+      </Button>
+      {/* TODO: Dialog Wanted to use a Dialog here, but was having some weird issues with closing out of it */}
+      {/* TODO: Translation */}
+      <ModalWrapper
+        open={showPrompt}
+        onClose={OnHidePrompt}
+        containerProps={{ maxWidth: 'md' }}
+      >
+        <CardThemed>
+          <CardHeader
+            title="Do you want to equip all gear in this build to this character?"
+            action={<CloseButton onClick={OnHidePrompt} />}
+          />
+          <CardContent sx={{ display: 'flex', flexDirection: 'column' }}>
+            <FormControlLabel
+              label="Copy my current equipment to a new build. Otherwise, the currently equipped build will be overwritten."
+              control={
+                <Checkbox
+                  checked={copyEquipped}
+                  onChange={(event) => setCopyEquipped(event.target.checked)}
+                  color={copyEquipped ? 'success' : 'secondary'}
+                />
+              }
+            />
+            {copyEquipped && (
+              <TextField
+                label="Build Name"
+                placeholder="Duplicate of Equipped"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                size="small"
+                sx={{ width: '75%', marginX: 4 }}
+              />
+            )}
+            <Box
+              sx={{
+                display: 'flex',
+                justifyContent: 'flex-end',
+                gap: 1,
+                marginTop: 8,
+              }}
+            >
+              <Button color="error" onClick={OnHidePrompt}>
+                Cancel
+              </Button>
+              <Button color="success" onClick={toEquip}>
+                Equip
+              </Button>
+            </Box>
+          </CardContent>
+        </CardThemed>
+      </ModalWrapper>
+    </>
   )
 }

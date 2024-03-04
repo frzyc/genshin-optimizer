@@ -14,6 +14,7 @@ import CardDark from '../Card/CardDark'
 import SqBadge from '../SqBadge'
 export default function WeaponFullCard({ weaponId }: { weaponId: string }) {
   const weapon = useWeapon(weaponId)
+  if (!weapon) return null
   return <WeaponFullCardObj weapon={weapon} />
 }
 export function WeaponFullCardObj({ weapon }: { weapon: IWeapon }) {

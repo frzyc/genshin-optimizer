@@ -1,4 +1,5 @@
-import { objMap, valueString } from '@genshin-optimizer/common/util'
+import { objKeyMap, objMap, valueString } from '@genshin-optimizer/common/util'
+import type { ArtifactSlotKey } from '@genshin-optimizer/gi/consts'
 import { allArtifactSlotKeys } from '@genshin-optimizer/gi/consts'
 import type { GeneratedBuild, ICachedArtifact } from '@genshin-optimizer/gi/db'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
@@ -49,12 +50,13 @@ export default function CustomTooltip({
   const { data } = useContext(DataContext)
   const { t } = useTranslation('page_character_optimize')
 
-  const artifactsBySlot: { [slot: string]: ICachedArtifact } = useMemo(
-    () =>
-      selectedPoint?.build?.artifactIds &&
-      objMap(selectedPoint.build.artifactIds, (id) => database.arts.get(id)),
-    [database.arts, selectedPoint]
-  )
+  const artifactsBySlot: Record<ArtifactSlotKey, ICachedArtifact | undefined> =
+    useMemo(
+      () =>
+        selectedPoint?.build?.artifactIds &&
+        objMap(selectedPoint.build.artifactIds, (id) => database.arts.get(id)),
+      [database.arts, selectedPoint]
+    ) ?? objKeyMap(allArtifactSlotKeys, () => undefined)
   const clickAwayHandler = useCallback(
     (e) => {
       if (

@@ -342,7 +342,8 @@ function uiDataForTeam(
             (x: ReadNode<number | string>) => {
               if (x.path[0] === 'targetBuff') return // Ignore teamBuff access
 
-              let readNode: ReadNode<number | string> | undefined, data: Data
+              let readNode: ReadNode<number> | ReadNode<string> | undefined,
+                data: Data
               if (x.path[0] === 'target') {
                 // Link the node to target data
                 readNode = getReadNode(x.path.slice(1))

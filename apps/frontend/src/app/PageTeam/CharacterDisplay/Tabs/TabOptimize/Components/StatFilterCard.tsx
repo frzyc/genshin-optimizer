@@ -17,7 +17,7 @@ export default function StatFilterCard({
   const {
     teamChar: { optConfigId },
   } = useContext(TeamCharacterContext)
-  const { statFilters } = useOptConfig(optConfigId)
+  const { statFilters } = useOptConfig(optConfigId)!
   const database = useDatabase()
   const setStatFilters = useCallback(
     (statFilters: StatFilters) =>

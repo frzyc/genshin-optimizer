@@ -87,6 +87,14 @@
       "dependsOn": ["gen-file", "^gen-file"],
       "inputs": ["default", "^production", "{workspaceRoot}/jest.preset.js"]
     },
+    "typecheck": {
+      "executor": "nx:run-commands",
+      "options": {
+        "forwardAllArgs": false,
+        "description": "Type check with tsc"
+      },
+      "dependsOn": ["gen-file", "^gen-file"]
+    },
     "publish": {
       "dependsOn": ["build"]
     }
