@@ -311,7 +311,7 @@ function InTeam() {
         color="info"
         startIcon={<AddIcon />}
       >
-        Add new loadout+team
+        Add new Loadout+Team
       </Button>
       <CardThemed bgt="light"></CardThemed>
     </Box>
