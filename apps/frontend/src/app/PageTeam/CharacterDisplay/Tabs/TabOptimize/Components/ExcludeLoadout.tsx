@@ -15,14 +15,14 @@ export default function ExcludeLoadout({
     teamChar: { optConfigId },
     team,
   } = useContext(TeamCharacterContext)
-  const { useLoadoutExclusion } = useOptConfig(optConfigId)
+  const { useLoadoutExclusion } = useOptConfig(optConfigId)!
 
   useEffect(() => {
     const artifactIds = Array.from(
       new Set(
         team.teamCharIds
           .filter((id) => id !== teamCharId)
-          .map(database.teamChars.getLoadoutArtifacts)
+          .map((id) => database.teamChars.getLoadoutArtifacts(id))
           .flatMap((artSet) => Object.values(artSet))
           .filter((id) => !!id)
           .map(({ id }) => id)
