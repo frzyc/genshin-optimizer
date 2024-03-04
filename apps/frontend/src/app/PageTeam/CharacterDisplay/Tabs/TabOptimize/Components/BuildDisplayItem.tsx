@@ -354,8 +354,6 @@ function CompareWeaponModal({
     onClose()
   }, [newId, buildEquip, buildId, database, characterKey, onClose])
 
-  const oldWeapon = useWeapon(oldId)
-
   const deleteWeapon = useCallback(
     (id: string) => database.weapons.remove(id),
     [database]
@@ -376,7 +374,7 @@ function CompareWeaponModal({
             gap: 2,
           }}
         >
-          {oldWeapon && (
+          {oldId && (
             <Box minWidth={320} display="flex" flexDirection="column" gap={1}>
               <CardThemed bgt="light" sx={{ p: 1 }}>
                 <Typography variant="h6" textAlign="center">
@@ -396,8 +394,8 @@ function CompareWeaponModal({
               )}
             </Box>
           )}
-          {oldWeapon && <Box display="flex" flexGrow={1} />}
-          {oldWeapon && (
+          {oldId && <Box display="flex" flexGrow={1} />}
+          {oldId && (
             <Box display="flex" alignItems="center" justifyContent="center">
               <Button
                 onClick={onEquip}
@@ -408,7 +406,7 @@ function CompareWeaponModal({
               </Button>
             </Box>
           )}
-          {oldWeapon && <Box display="flex" flexGrow={1} />}
+          {oldId && <Box display="flex" flexGrow={1} />}
           <Box minWidth={320} display="flex" flexDirection="column" gap={1}>
             <CardThemed bgt="light" sx={{ p: 1 }}>
               <Typography variant="h6" textAlign="center">
