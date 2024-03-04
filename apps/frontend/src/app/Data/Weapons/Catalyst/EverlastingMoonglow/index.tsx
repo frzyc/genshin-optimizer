@@ -20,10 +20,10 @@ const normal_dmgInc = equal(
     input.premod.hp
   )
 )
-const heal_ = subscript(
-  input.weapon.refinement,
-  data_gen.refinementBonus['heal_']
-)
+const heal_arr = data_gen.refinementBonus.heal_
+if (!heal_arr)
+  throw new Error(`data_gen.refinementBonus.heal_ for ${key} was undefined`)
+const heal_ = subscript(input.weapon.refinement, heal_arr)
 export const data = dataObjForWeaponSheet(
   key,
   data_gen,

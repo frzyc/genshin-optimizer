@@ -9,11 +9,11 @@ import {
 } from '@genshin-optimizer/common/util'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import {
-  allCharacterKeys,
   allCharacterRarityKeys,
   allElementKeys,
   allWeaponTypeKeys,
   charKeyToLocGenderedCharKey,
+  isCharacterKey,
 } from '@genshin-optimizer/gi/consts'
 import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { SillyContext } from '@genshin-optimizer/gi/ui'
@@ -73,14 +73,12 @@ export default function PageCharacter() {
   }
   const characterKey = useMemo(() => {
     if (!characterKeyRaw) return null
-    if (!allCharacterKeys.includes(characterKeyRaw as CharacterKey)) {
+    if (!isCharacterKey(characterKeyRaw)) {
       navigate('/characters')
       return null
     }
-    const character = database.chars.get(characterKeyRaw as CharacterKey)
-    if (!character) {
-      database.chars.getWithInitWeapon(characterKey)
-    }
+    const character = database.chars.get(characterKeyRaw)
+    if (!character) database.chars.getWithInitWeapon(characterKeyRaw)
     return characterKeyRaw as CharacterKey
   }, [characterKeyRaw, navigate, database])
 
@@ -261,10 +259,12 @@ export default function PageCharacter() {
 
   return (
     <Box my={1} display="flex" flexDirection="column" gap={1}>
-      <CharacterEditor
-        characterKey={characterKey}
-        onClose={() => navigate('/characters')}
-      />
+      {characterKey && (
+        <CharacterEditor
+          characterKey={characterKey}
+          onClose={() => navigate('/characters')}
+        />
+      )}
       <Suspense fallback={false}>
         <CharacterSelectionModal
           newFirst

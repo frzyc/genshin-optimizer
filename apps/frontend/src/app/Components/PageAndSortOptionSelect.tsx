@@ -48,7 +48,7 @@ export default function PageAndSortOptionSelect({
         t={showingTextProps.t}
         namespace={showingTextProps.namespace}
       />
-      {displaySort && (
+      {displaySort && sortByButtonProps && (
         <SortByButton
           sortKeys={sortByButtonProps.sortKeys}
           value={sortByButtonProps.value}

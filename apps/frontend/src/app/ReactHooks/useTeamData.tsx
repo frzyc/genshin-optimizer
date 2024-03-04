@@ -147,7 +147,7 @@ export function getTeamData(
   if (!team) return undefined
   const { teamCharIds, enemyOverride } = team
   const teamBundleArr = teamCharIds.map((teamCharId) => {
-    const teamChar = database.teamChars.get(teamCharId)
+    const teamChar = database.teamChars.get(teamCharId)!
     const {
       key: characterKey,
       buildType,
@@ -159,7 +159,7 @@ export function getTeamData(
       hitMode,
       reaction,
     } = teamChar
-    const character = database.chars.get(characterKey)
+    const character = database.chars.get(characterKey)!
     const { key, level, constellation, ascension, talent } = character
     const isCurrentTeamChar = teamCharId === activeTeamCharId
     const weapon = (() => {
@@ -169,7 +169,7 @@ export function getTeamData(
     const arts = (() => {
       if (overrideArt && isCurrentTeamChar) return overrideArt
       if (buildType === 'tc' && buildTcId)
-        return getArtifactData(database.buildTcs.get(buildTcId))
+        return getArtifactData(database.buildTcs.get(buildTcId)!)
       return Object.values(
         database.teamChars.getLoadoutArtifacts(teamCharId)
       ).filter((a) => a) as ICachedArtifact[]
@@ -205,7 +205,10 @@ export function getTeamData(
     )
   })
   const teamBundle = Object.fromEntries(
-    teamBundleArr.map((bundle) => [bundle.character.key, bundle])
+    (teamBundleArr.filter((b) => b) as CharBundle[]).map((bundle) => [
+      bundle.character.key,
+      bundle,
+    ])
   )
   const teamData = objMap(teamBundle, ({ data }) => data)
   return { teamData, teamBundle }
@@ -226,7 +229,7 @@ function getCharDataBundle(
   weapon: ICachedWeapon,
   artifacts: ICachedArtifact[] | Data
 ): CharBundle | undefined {
-  const character = database.chars.get(charInfo.key)
+  const character = database.chars.get(charInfo.key)!
   const characterSheet = getCharSheet(charInfo.key, database.gender)
   if (!characterSheet) return undefined
   const weaponSheet = getWeaponSheet(weapon.key)

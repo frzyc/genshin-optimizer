@@ -66,25 +66,25 @@ export default function useOldData(): undefined | UIData {
     } => {
       switch (compareType) {
         case 'equipped': {
-          const char = database.chars.get(characterKey)
+          const char = database.chars.get(characterKey)!
           return {
             overrideArt: Object.values(char.equippedArtifacts)
               .map((id) => database.arts.get(id))
-              .filter((a) => a),
-            overrideWeapon: database.weapons.get(char.equippedWeapon),
+              .filter((a) => a) as ICachedArtifact[],
+            overrideWeapon: database.weapons.get(char.equippedWeapon)!,
           }
         }
         case 'real': {
-          const build = database.builds.get(compareBuildId)
+          const build = database.builds.get(compareBuildId)!
           return {
             overrideArt: Object.values(build.artifactIds)
               .map((id) => database.arts.get(id))
-              .filter((a) => a),
-            overrideWeapon: database.weapons.get(build.weaponId),
+              .filter((a) => a) as ICachedArtifact[],
+            overrideWeapon: database.weapons.get(build.weaponId)!,
           }
         }
         case 'tc': {
-          const buildTc = database.buildTcs.get(compareBuildTcId)
+          const buildTc = database.buildTcs.get(compareBuildTcId)!
           return {
             overrideArt: getArtifactData(buildTc),
             overrideWeapon: {
@@ -105,7 +105,7 @@ export default function useOldData(): undefined | UIData {
       overrideWeapon
     )
     if (!teamData) return undefined
-    const charUIData = teamData[characterKey].target
+    const charUIData = teamData[characterKey]!.target
     return charUIData
   }, [
     dbDirtyDeferred,

@@ -54,7 +54,7 @@ export default function TabTheorycraft() {
     teamCharId,
     teamChar: { key: characterKey, buildTcId },
   } = useContext(TeamCharacterContext)
-  const buildTc = useBuildTc(buildTcId)
+  const buildTc = useBuildTc(buildTcId)!
   const setBuildTc = useCallback(
     (data: SetBuildTcAction) => {
       database.buildTcs.set(buildTcId, data)
@@ -96,7 +96,7 @@ export default function TabTheorycraft() {
     },
     [setBuildTc]
   )
-  const workerRef = useRef<Worker>(null)
+  const workerRef = useRef<Worker | null>(null)
   if (workerRef.current === null)
     workerRef.current = new Worker(
       new URL('./optimizeTcWorker.ts', import.meta.url),
@@ -109,7 +109,7 @@ export default function TabTheorycraft() {
   const solving = status.type === 'active'
 
   const terminateWorker = useCallback(() => {
-    workerRef.current.terminate()
+    workerRef.current?.terminate()
     workerRef.current = null
     setStatus(initialBuildStatus())
   }, [workerRef])
@@ -142,6 +142,7 @@ export default function TabTheorycraft() {
   }, [dataContextValue.teamData, characterKey, buildTc])
 
   const optimizeSubstats = (apply: boolean) => {
+    if (!workerRef.current) return
     /**
      * Recalculating teamdata and nodes because the ones in the UI are using deferred,
      * and can cause issue when people click buttons too fast or loiter in inputs
@@ -155,6 +156,7 @@ export default function TabTheorycraft() {
       getArtifactData(buildTc),
       getWeaponData(buildTc)
     )
+    if (!tempTeamData) return
     const { nodes } = optimizeTcGetNodes(tempTeamData, characterKey, buildTc)
     workerRef.current.postMessage({ buildTc, nodes })
     setStatus((s) => ({
