@@ -69,7 +69,7 @@ export default function PageTeams() {
           teamSortMap[sortType],
           ascending,
           teamSortConfigs()
-        )(database.teams.get(k1), database.teams.get(k2))
+        )(database.teams.get(k1)!, database.teams.get(k2)!)
       }),
     [dbDirty, database.teams, sortType, ascending]
   )

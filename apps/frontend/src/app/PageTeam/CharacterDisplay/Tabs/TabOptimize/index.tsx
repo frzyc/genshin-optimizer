@@ -116,6 +116,8 @@ export default function TabBuild() {
   const { setChartData, graphBuilds, setGraphBuilds } = useContext(GraphContext)
   const { gender } = useDBMeta()
 
+  const activeCharKey = database.teams.getActiveTeamChar(teamId)!.key
+
   const [notification, setnotification] = useState(false)
   const notificationRef = useRef(false)
   useEffect(() => {
@@ -160,7 +162,7 @@ export default function TabBuild() {
 
   const noArtifact = useMemo(() => !database.arts.values.length, [database])
 
-  const buildSetting = useOptConfig(optConfigId)
+  const buildSetting = useOptConfig(optConfigId)!
   const {
     plotBase,
     optimizationTarget,
@@ -324,7 +326,7 @@ export default function TabBuild() {
       []
     )
     if (!teamData) return
-    const workerData = uiDataForTeam(teamData.teamData, gender, characterKey)[
+    const workerData = uiDataForTeam(teamData.teamData, gender, activeCharKey)[
       characterKey
     ]?.target.data![0]
     if (!workerData) return
@@ -447,7 +449,7 @@ export default function TabBuild() {
         builds: builds.map((build) => ({
           artifactIds: objKeyMap(allArtifactSlotKeys, (slotKey) =>
             build.artifactIds.find(
-              (aId) => database.arts.get(aId).slotKey === slotKey
+              (aId) => database.arts.get(aId)?.slotKey === slotKey
             )
           ),
           weaponId,
@@ -485,13 +487,14 @@ export default function TabBuild() {
       })
     }
   }, [
-    teamCharId,
-    teamId,
     buildSetting,
     characterKey,
     filteredArts,
     database,
+    teamId,
+    teamCharId,
     gender,
+    activeCharKey,
     setChartData,
     maxWorkers,
     optConfigId,
@@ -1005,9 +1008,10 @@ function CopyTcButton({ build }: { build: GeneratedBuild }) {
       weapon,
       Object.values(build.artifactIds).map((id) => database.arts.get(id))
     )
-    database.buildTcs.set(buildTcId, {
-      name,
-    })
+    if (buildTcId)
+      database.buildTcs.set(buildTcId, {
+        name,
+      })
 
     setName('')
     OnHideTcPrompt()
@@ -1124,7 +1128,7 @@ type Prop = {
   children: React.ReactNode
   characterKey: CharacterKey
   build: GeneratedBuild
-  oldData: UIData
+  oldData?: UIData
   mainStatAssumptionLevel: number
 }
 function DataContextWrapper({
@@ -1147,7 +1151,8 @@ function DataContextWrapper({
     }
   }, [database, artifactIds, setDirty])
   useEffect(
-    () => database.weapons.follow(weaponId, () => setDirty()),
+    () =>
+      weaponId ? database.weapons.follow(weaponId, () => setDirty()) : () => {},
     [database, weaponId, setDirty]
   )
   const buildsArts = useMemo(

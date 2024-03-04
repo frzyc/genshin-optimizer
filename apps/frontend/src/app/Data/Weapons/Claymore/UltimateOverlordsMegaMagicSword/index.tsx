@@ -21,6 +21,8 @@ const data_gen = allStats.weapon.data[key]
 const [, trm] = trans('weapon', key)
 
 const atk_arr = data_gen.refinementBonus.atk_
+if (!atk_arr)
+  throw new Error(`data_gen.refinementBonus.atk_ for ${key} was undefined`)
 const atk2_arr = [-1, 0.01, 0.0125, 0.015, 0.0175, 0.02]
 
 const atk_ = equal(

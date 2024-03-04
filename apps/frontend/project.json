@@ -51,6 +51,12 @@
       "options": {
         "config": "apps/frontend/vitest.config.mts"
       }
+    },
+    "typecheck": {
+      "options": {
+        "cwd": "apps/frontend",
+        "commands": ["tsc -p tsconfig.app.json --noEmit"]
+      }
     }
   },
   "tags": [],

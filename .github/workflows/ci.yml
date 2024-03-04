@@ -109,3 +109,22 @@ jobs:
       - name: Check Formatting
         run: |
           yarn run nx format:check
+  typecheck:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          submodules: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'yarn'
+          cache-dependency-path: yarn.lock
+      - name: Yarn Install
+        run: |
+          yarn install --immutable --immutable-cache
+      - name: Check types
+        run: |
+          yarn run nx run-many --target=typecheck

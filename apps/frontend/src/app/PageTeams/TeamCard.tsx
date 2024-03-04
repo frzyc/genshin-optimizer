@@ -32,7 +32,7 @@ export default function TeamCard({
   onClick: (cid?: CharacterKey) => void
   disableButtons?: boolean
 }) {
-  const team = useTeam(teamId)
+  const team = useTeam(teamId)!
   const { name, description, teamCharIds } = team
   const database = useDatabase()
   const onDel = () => {
@@ -86,11 +86,11 @@ export default function TeamCard({
                 {teamCharIds[i] ? (
                   <CardActionArea
                     onClick={() =>
-                      onClick(database.teamChars.get(teamCharIds[i]).key)
+                      onClick(database.teamChars.get(teamCharIds[i])!.key)
                     }
                   >
                     <CharacterCardPico
-                      characterKey={database.teamChars.get(teamCharIds[i]).key}
+                      characterKey={database.teamChars.get(teamCharIds[i])!.key}
                     />
                   </CardActionArea>
                 ) : (

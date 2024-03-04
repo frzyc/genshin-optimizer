@@ -19,10 +19,10 @@ const data_gen = allStats.weapon.data[key]
 
 const atkDealt = [-1, 2, 2.3, 2.6, 2.9, 3.2]
 const hpRegen = [-1, 1, 1.15, 1.3, 1.45, 1.6]
-const atk_ = subscript(
-  input.weapon.refinement,
-  data_gen.refinementBonus['atk_']
-)
+const atk_arr = data_gen.refinementBonus.atk_
+if (!atk_arr)
+  throw new Error(`data_gen.refinementBonus.atk_ for ${key} was undefined`)
+const atk_ = subscript(input.weapon.refinement, atk_arr)
 const heal = equal(
   input.weapon.key,
   key,

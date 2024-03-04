@@ -42,8 +42,8 @@ export default function EquippedGrid({
   setArtifact,
 }: {
   weaponTypeKey: WeaponTypeKey
-  weaponId: string
-  artifactIds: Record<ArtifactSlotKey, string>
+  weaponId?: string
+  artifactIds?: Record<ArtifactSlotKey, string | undefined>
   setWeapon: (id: string) => void
   setArtifact: (slotKey: ArtifactSlotKey, id: string) => void
 }) {
@@ -53,11 +53,14 @@ export default function EquippedGrid({
 
   //triggers when character swap weapons
   useEffect(() => {
-    if (editorWeaponId && editorWeaponId !== weaponId)
+    if (weaponId && editorWeaponId && editorWeaponId !== weaponId)
       setEditorWeaponId(weaponId)
   }, [editorWeaponId, weaponId])
 
-  const showWeapon = useCallback(() => setEditorWeaponId(weaponId), [weaponId])
+  const showWeapon = useCallback(
+    () => weaponId && setEditorWeaponId(weaponId),
+    [weaponId]
+  )
   const hideWeapon = useCallback(() => setEditorWeaponId(''), [])
 
   return (
@@ -75,7 +78,7 @@ export default function EquippedGrid({
       />
       <Grid item columns={columns} container spacing={1}>
         <Grid item xs={1} display="flex" flexDirection="column">
-          {database.weapons.keys.includes(weaponId) ? (
+          {weaponId && database.weapons.keys.includes(weaponId) ? (
             <WeaponCard
               weaponId={weaponId}
               onEdit={showWeapon}
@@ -93,27 +96,28 @@ export default function EquippedGrid({
             />
           )}
         </Grid>
-        {Object.entries(artifactIds).map(([slotKey, id]) => (
-          <Grid item xs={1} key={id || slotKey}>
-            {database.arts.keys.includes(id) ? (
-              <ArtifactCard
-                artifactId={id}
-                extraButtons={
-                  <ArtifactSwapButton
-                    slotKey={slotKey}
-                    onChangeId={(id) => setArtifact(slotKey, id)}
-                  />
-                }
-                editorProps={{}}
-              />
-            ) : (
-              <ArtSwapCard
-                slotKey={slotKey}
-                onChangeId={(id) => setArtifact(slotKey, id)}
-              />
-            )}
-          </Grid>
-        ))}
+        {!!artifactIds &&
+          Object.entries(artifactIds).map(([slotKey, id]) => (
+            <Grid item xs={1} key={id || slotKey}>
+              {database.arts.keys.includes(id) ? (
+                <ArtifactCard
+                  artifactId={id}
+                  extraButtons={
+                    <ArtifactSwapButton
+                      slotKey={slotKey}
+                      onChangeId={(id) => setArtifact(slotKey, id)}
+                    />
+                  }
+                  editorProps={{}}
+                />
+              ) : (
+                <ArtSwapCard
+                  slotKey={slotKey}
+                  onChangeId={(id) => setArtifact(slotKey, id)}
+                />
+              )}
+            </Grid>
+          ))}
       </Grid>
     </Box>
   )

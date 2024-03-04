@@ -173,9 +173,9 @@ function TeammateDisplay({ teamCharId }: { teamCharId: string }) {
   const { teamData } = useContext(DataContext)
   const navigate = useNavigate()
   const { teamId, team } = useContext(TeamCharacterContext)
-  const teamChar = useTeamChar(teamCharId)
+  const teamChar = useTeamChar(teamCharId)!
   const teamMateKey = teamChar?.key
-  const character = useCharacter(teamMateKey)
+  const character = useCharacter(teamMateKey)!
   const { key: characterKey } = character
 
   const {
@@ -199,7 +199,7 @@ function TeammateDisplay({ teamCharId }: { teamCharId: string }) {
       },
     [teamId, team, teamCharId, teamChar, character, dataBundle]
   )
-  const characterContext: CharacterContextObj = useMemo(
+  const characterContext: CharacterContextObj | undefined = useMemo(
     () =>
       dataBundle && {
         character,
@@ -281,7 +281,7 @@ function TcEquipmentRow() {
   } = useContext(TeamCharacterContext)
   const {
     artifact: { sets },
-  } = useBuildTc(buildTcId)
+  } = useBuildTc(buildTcId)!
   return (
     <CardThemed sx={{ flexGrow: 1 }}>
       <Box
@@ -319,6 +319,7 @@ function CharacterCardWeaponFull() {
     if (weaponId) return database.weapons.get(weaponId)
     else return database.teamChars.getLoadoutWeapon(teamCharId) // TC build
   }, [database, data, teamCharId])
+  if (!weapon) return null
   return <WeaponFullCardObj weapon={weapon} />
 }
 function CharArtifactCondDisplay() {

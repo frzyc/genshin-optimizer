@@ -142,40 +142,42 @@ export default function BuildDisplayItem({
     [artifactIdsBySlot, database.arts]
   )
 
-  const buildEquippedArtifactIds: Record<ArtifactSlotKey, string> =
+  const buildEquippedArtifactIds: Record<ArtifactSlotKey, string | undefined> =
     useMemo(() => {
       if (buildType === 'tc') return objKeyMap(allArtifactSlotKeys, () => 'tc')
       if (buildType === 'equipped') return equippedArtifacts
-      if (buildType === 'real') return database.builds.get(buildId).artifactIds
+      if (buildType === 'real') return database.builds.get(buildId)!.artifactIds
 
       // default
       return objKeyMap(allArtifactSlotKeys, () => '')
     }, [buildType, buildId, database, equippedArtifacts])
 
-  const compareEquippedArtifactIds: Record<ArtifactSlotKey, string> =
-    useMemo(() => {
-      if (!compare) return buildEquippedArtifactIds
-      if (compareType === 'tc')
-        return objKeyMap(allArtifactSlotKeys, () => 'tc')
-      if (compareType === 'equipped') return equippedArtifacts
-      if (compareType === 'real')
-        return database.builds.get(compareBuildId).artifactIds
+  const compareEquippedArtifactIds: Record<
+    ArtifactSlotKey,
+    string | undefined
+  > = useMemo(() => {
+    if (!compare) return buildEquippedArtifactIds
+    if (compareType === 'tc') return objKeyMap(allArtifactSlotKeys, () => 'tc')
+    if (compareType === 'equipped') return equippedArtifacts
+    if (compareType === 'real')
+      return database.builds.get(compareBuildId)!.artifactIds
 
-      // default
-      return objKeyMap(allArtifactSlotKeys, () => '')
-    }, [
-      compareType,
-      compare,
-      compareBuildId,
-      database,
-      equippedArtifacts,
-      buildEquippedArtifactIds,
-    ])
+    // default
+    return objKeyMap(allArtifactSlotKeys, () => '')
+  }, [
+    compareType,
+    compare,
+    compareBuildId,
+    database,
+    equippedArtifacts,
+    buildEquippedArtifactIds,
+  ])
 
   const buildEquippedWeaponId: string = useMemo(() => {
     if (buildType === 'tc') return 'tc'
     if (buildType === 'equipped') return equippedWeapon
-    if (buildType === 'real') return database.builds.get(buildId).weaponId
+    if (buildType === 'real')
+      return database.builds.get(buildId)!.weaponId ?? ''
     // default
     return ''
   }, [buildType, buildId, database, equippedWeapon])
@@ -302,6 +304,7 @@ function CompareArtifactModal({
     if (!window.confirm(confirmMsg)) return
     if (buildEquip) {
       const art = database.arts.get(newId)
+      if (!art) return
       if (art.slotKey)
         database.builds.set(buildId, (build) => {
           build.artifactIds[art.slotKey] = newId
@@ -353,7 +356,7 @@ function CompareArtifactModal({
                   canEquip={!buildEquip}
                   editorProps={{
                     disableSet: true,
-                    fixedSlotKey: oldArtifact.slotKey,
+                    fixedSlotKey: oldArtifact?.slotKey,
                   }}
                 />
               )}
@@ -416,7 +419,7 @@ function ArtInclusionButton({ id }: { id: string }) {
     teamChar: { optConfigId },
   } = useContext(TeamCharacterContext)
   const database = useDatabase()
-  const { artExclusion } = useOptConfig(optConfigId)
+  const { artExclusion } = useOptConfig(optConfigId)!
   const excluded = artExclusion.includes(id)
   const toggle = useCallback(
     () =>
@@ -461,7 +464,7 @@ function ExcludeEquipButton({
     database.chars.LocationToCharacterKey(locationKey)
   )
   const { excludedLocations } = useOptConfig(optConfigId) ?? {
-    excludedLocations: [],
+    excludedLocations: [] as LocationCharacterKey[],
   }
   const excluded = excludedLocations.includes(locationKey)
   const toggle = useCallback(

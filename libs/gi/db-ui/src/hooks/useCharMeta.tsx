@@ -4,5 +4,6 @@ import { useDatabase } from './useDatabase'
 
 export function useCharMeta(key: CharacterKey) {
   const database = useDatabase()
-  return useDataManagerBase(database.charMeta, key)
+  // charMeta will always exist for any character key.
+  return useDataManagerBase(database.charMeta, key)!
 }

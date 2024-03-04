@@ -39,9 +39,9 @@ export default function BuildEditorBtn() {
       case 'equipped':
         return 'Equipped'
       case 'real':
-        return database.builds.get(buildId).name
+        return database.builds.get(buildId)?.name ?? ''
       case 'tc':
-        return database.buildTcs.get(buildTcId).name
+        return database.buildTcs.get(buildTcId)?.name ?? ''
     }
   }, [database, buildType, buildId, buildTcId])
   return (
