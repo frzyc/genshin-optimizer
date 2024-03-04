@@ -190,7 +190,7 @@ export default function BuildDisplayItem({
     if (compareType === 'tc') return 'tc'
     if (compareType === 'equipped') return equippedWeapon
     if (compareType === 'real')
-      return database.builds.get(compareBuildId).weaponId
+      return database.builds.get(compareBuildId)!.weaponId ?? ''
     // default
     return ''
   }, [
