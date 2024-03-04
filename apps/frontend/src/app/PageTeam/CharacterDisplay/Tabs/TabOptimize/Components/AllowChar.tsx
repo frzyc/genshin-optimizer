@@ -138,6 +138,20 @@ export default function AllowChar({
     ]
   )
 
+  const locListLength = useMemo(
+    () =>
+      deferredDbDirty &&
+      new Set(
+        Object.keys(database.chars.data)
+          .filter(
+            (ck) =>
+              charKeyToLocCharKey(ck) !== charKeyToLocCharKey(characterKey)
+          )
+          .map(charKeyToLocCharKey)
+      ).size,
+    [characterKey, database.chars.data, deferredDbDirty]
+  )
+
   const locList = Array.from(
     new Set(
       Object.entries(charKeyMap)
@@ -292,7 +306,7 @@ export default function AllowChar({
   const onMouseUp = useCallback(() => setMouseUpDetected(true), [])
 
   // `total` shouldn't rely on `locList.length` because it gets filtered
-  const total = database.chars.keys.length - 1
+  const total = locListLength
   const useTot = total - excludedLocations.length
   const totalStr = useTot === total ? useTot : `${useTot}/${total}`
   const charactersAllowed =
