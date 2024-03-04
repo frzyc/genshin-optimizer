@@ -324,10 +324,6 @@ function CompareWeaponModal({
   onClose: () => void
 }) {
   const database = useDatabase()
-  const {
-    teamChar: { buildType, buildId },
-  } = useContext(TeamCharacterContext)
-  const buildEquip = buildId && buildType === 'real'
 
   const deleteWeapon = useCallback(
     (id: string) => database.weapons.remove(id),
@@ -361,11 +357,7 @@ function CompareWeaponModal({
                   <SqBadge>TC Weapon</SqBadge>
                 </Typography>
               ) : (
-                <WeaponCard
-                  weaponId={oldId}
-                  onDelete={deleteWeapon}
-                  canEquip={!buildEquip}
-                />
+                <WeaponCard weaponId={oldId} onDelete={deleteWeapon} />
               )}
             </Box>
           )}
@@ -382,11 +374,7 @@ function CompareWeaponModal({
                 New Weapon
               </Typography>
             </CardThemed>
-            <WeaponCard
-              weaponId={newId}
-              onDelete={deleteWeapon}
-              canEquip={!buildEquip}
-            />
+            <WeaponCard weaponId={newId} onDelete={deleteWeapon} />
           </Box>
         </CardContent>
       </CardDark>
@@ -406,10 +394,6 @@ function CompareArtifactModal({
   allowLocationsState: AllowLocationsState
 }) {
   const database = useDatabase()
-  const {
-    teamChar: { buildType, buildId },
-  } = useContext(TeamCharacterContext)
-  const buildEquip = buildId && buildType === 'real'
   const {
     character: { key: characterKey },
   } = useContext(CharacterContext)
@@ -454,7 +438,6 @@ function CompareArtifactModal({
                   artifactId={oldId}
                   onDelete={deleteArtifact}
                   mainStatAssumptionLevel={mainStatAssumptionLevel}
-                  canEquip={!buildEquip}
                   editorProps={{
                     disableSet: true,
                     fixedSlotKey: oldArtifact?.slotKey,
@@ -482,7 +465,6 @@ function CompareArtifactModal({
               artifactId={newId}
               onDelete={deleteArtifact}
               mainStatAssumptionLevel={mainStatAssumptionLevel}
-              canEquip={!buildEquip}
               editorProps={{
                 disableSet: true,
                 fixedSlotKey: newArtifact?.slotKey,
