@@ -2,7 +2,6 @@ import { useForceUpdate } from '@genshin-optimizer/common/react-util'
 import { objMap } from '@genshin-optimizer/common/util'
 import type { CharacterKey, GenderKey } from '@genshin-optimizer/gi/consts'
 import {
-  getActiveTeamCharId,
   type ArtCharDatabase,
   type ICachedArtifact,
   type ICachedCharacter,
@@ -111,9 +110,7 @@ export function getTeamDataCalc(
   overrideWeapon?: ICachedWeapon
 ): TeamData | undefined {
   if (!teamId) return undefined
-  const team = database.teams.get(teamId)
-  if (!team) return undefined
-  const activeChar = database.teamChars.get(getActiveTeamCharId(team))
+  const activeChar = database.teams.getActiveTeamChar(teamId)
   if (!activeChar) return undefined
 
   const { teamData, teamBundle } =

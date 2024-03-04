@@ -33,10 +33,7 @@ import {
   allArtifactSlotKeys,
   charKeyToLocCharKey,
 } from '@genshin-optimizer/gi/consts'
-import {
-  getActiveTeamCharId,
-  type ICachedArtifact,
-} from '@genshin-optimizer/gi/db'
+import { type ICachedArtifact } from '@genshin-optimizer/gi/db'
 import {
   Suspense,
   useCallback,
@@ -79,13 +76,11 @@ export default function TabUpopt() {
     teamId,
     teamCharId,
     teamChar: { optConfigId, key: characterKey },
-    team,
   } = useContext(TeamCharacterContext)
   const database = useDatabase()
   const { gender } = useDBMeta()
 
-  const activeTeamCharId = getActiveTeamCharId(team)
-  const activeCharKey = database.teamChars.get(activeTeamCharId).key
+  const activeCharKey = database.teams.getActiveTeamChar(teamId).key
 
   const noArtifact = useMemo(() => !database.arts.values.length, [database])
 

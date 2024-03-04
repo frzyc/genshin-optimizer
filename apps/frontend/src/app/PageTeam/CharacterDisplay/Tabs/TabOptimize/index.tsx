@@ -13,8 +13,7 @@ import {
 import type { GeneratedBuild, ICachedArtifact } from '@genshin-optimizer/gi/db'
 import {
   defThreads,
-  getActiveTeamCharId,
-  maxBuildsToShowList,
+  maxBuildsToShowList
 } from '@genshin-optimizer/gi/db'
 import {
   useDBMeta,
@@ -113,15 +112,13 @@ export default function TabBuild() {
     teamCharId,
     teamChar: { optConfigId, key: characterKey },
     teamId,
-    team,
   } = useContext(TeamCharacterContext)
   const { characterSheet } = useContext(CharacterContext)
   const database = useDatabase()
   const { setChartData, graphBuilds, setGraphBuilds } = useContext(GraphContext)
   const { gender } = useDBMeta()
 
-  const activeTeamCharId = getActiveTeamCharId(team)
-  const activeCharKey = database.teamChars.get(activeTeamCharId).key
+  const activeCharKey = database.teams.getActiveTeamChar(teamId).key
 
   const [notification, setnotification] = useState(false)
   const notificationRef = useRef(false)

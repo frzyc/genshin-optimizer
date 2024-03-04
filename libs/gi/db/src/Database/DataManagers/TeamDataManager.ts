@@ -86,6 +86,15 @@ export class TeamDataManager extends DataManager<
       return ''
     return id
   }
+
+  getActiveTeamCharId(teamId: string) {
+    const team = this.database.teams.get(teamId)
+    return team?.teamCharIds[0]
+  }
+  getActiveTeamChar(teamId: string) {
+    const teamCharId = this.getActiveTeamCharId(teamId)
+    return this.database.teamChars.get(teamCharId)
+  }
 }
 
 function validateTeam(
@@ -118,8 +127,4 @@ function validateTeam(
     teamCharIds,
     lastEdit,
   }
-}
-
-export function getActiveTeamCharId(team: Team) {
-  return team.teamCharIds[0]
 }
