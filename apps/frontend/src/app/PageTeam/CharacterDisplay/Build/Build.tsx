@@ -403,7 +403,7 @@ function EquipBuildButton({
           />
           <CardContent sx={{ display: 'flex', flexDirection: 'column' }}>
             <FormControlLabel
-              label="Copy my current equipment to a new loadout. Otherwise, the currently equipped build will be overwritten."
+              label="Copy my current equipment to a new build. Otherwise, the currently equipped build will be overwritten."
               control={
                 <Checkbox
                   checked={copyEquipped}
