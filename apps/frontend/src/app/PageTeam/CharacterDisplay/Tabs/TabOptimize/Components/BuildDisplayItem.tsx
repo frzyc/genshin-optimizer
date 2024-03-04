@@ -18,7 +18,6 @@ import {
   useArtifact,
   useDatabase,
   useOptConfig,
-  useWeapon,
 } from '@genshin-optimizer/gi/db-ui'
 import { Checkroom, ChevronRight } from '@mui/icons-material'
 import CheckBoxIcon from '@mui/icons-material/CheckBox'
@@ -47,9 +46,9 @@ import { TeamCharacterContext } from '../../../../../Context/TeamCharacterContex
 import { getCharSheet } from '../../../../../Data/Characters'
 import { uiInput as input } from '../../../../../Formula'
 import ArtifactCard from '../../../../../PageArtifact/ArtifactCard'
+import WeaponCard from '../../../../../PageWeapon/WeaponCard'
 import { ArtifactSetBadges } from './ArtifactSetBadges'
 import SetInclusionButton from './SetInclusionButton'
-import WeaponCard from '../../../../../PageWeapon/WeaponCard'
 
 type NewOld = {
   newId: string
@@ -190,7 +189,8 @@ export default function BuildDisplayItem({
     if (!compare) return buildEquippedWeaponId
     if (compareType === 'tc') return 'tc'
     if (compareType === 'equipped') return equippedWeapon
-    if (compareType === 'real') return database.builds.get(compareBuildId).weaponId
+    if (compareType === 'real')
+      return database.builds.get(compareBuildId).weaponId
     // default
     return ''
   }, [
@@ -202,26 +202,21 @@ export default function BuildDisplayItem({
     buildEquippedWeaponId,
   ])
 
-  const weapNano = useMemo(
-    () => {
-      return (
-        <Grid item xs={1}>
-          <WeaponCardNano
-            showLocation
-            weaponId={data.get(input.weapon.id).value!}
-            onClick={() => {
-              const oldId = compareEquippedWeaponId
-              const newId = data.get(input.weapon.id).value!
-              setWeapNewOld({ oldId: oldId !== newId ? oldId : undefined, newId })
-            }}
-          />
-        </Grid>
-      )}, [
-      data,
-      setWeapNewOld,
-      compareEquippedWeaponId,
-    ]
-  )
+  const weapNano = useMemo(() => {
+    return (
+      <Grid item xs={1}>
+        <WeaponCardNano
+          showLocation
+          weaponId={data.get(input.weapon.id).value!}
+          onClick={() => {
+            const oldId = compareEquippedWeaponId
+            const newId = data.get(input.weapon.id).value!
+            setWeapNewOld({ oldId: oldId !== newId ? oldId : undefined, newId })
+          }}
+        />
+      </Grid>
+    )
+  }, [data, setWeapNewOld, compareEquippedWeaponId])
 
   // Memoize Arts because of its dynamic onClick
   const artNanos = useMemo(
@@ -236,7 +231,10 @@ export default function BuildDisplayItem({
             onClick={() => {
               const oldId = compareEquippedArtifactIds[slotKey]
               const newId = artifactIdsBySlot[slotKey]!
-              setArtNewOld({ oldId: oldId !== newId ? oldId : undefined, newId })
+              setArtNewOld({
+                oldId: oldId !== newId ? oldId : undefined,
+                newId,
+              })
             }}
           />
         </Grid>
@@ -261,10 +259,7 @@ export default function BuildDisplayItem({
         fallback={<Skeleton variant="rectangular" width="100%" height={600} />}
       >
         {weapNewOld && (
-          <CompareWeaponModal
-            newOld={weapNewOld}
-            onClose={closeWeap}
-          />
+          <CompareWeaponModal newOld={weapNewOld} onClose={closeWeap} />
         )}
         {artNewOld && (
           <CompareArtifactModal
@@ -322,7 +317,7 @@ export default function BuildDisplayItem({
 }
 
 function CompareWeaponModal({
-  newOld: {newId, oldId},
+  newOld: { newId, oldId },
   onClose,
 }: {
   newOld: NewOld
@@ -344,13 +339,17 @@ function CompareWeaponModal({
     if (!window.confirm(confirmMsg)) return
     if (buildEquip) {
       const weap = database.weapons.get(newId)
-      database.weapons.set(newId, { location: charKeyToLocCharKey(characterKey) })
+      database.weapons.set(newId, {
+        location: charKeyToLocCharKey(characterKey),
+      })
       if (weap)
         database.builds.set(buildId, (build) => {
           build.weaponId = newId
         })
     } else
-      database.weapons.set(newId, { location: charKeyToLocCharKey(characterKey) })
+      database.weapons.set(newId, {
+        location: charKeyToLocCharKey(characterKey),
+      })
     onClose()
   }, [newId, buildEquip, buildId, database, characterKey, onClose])
 
