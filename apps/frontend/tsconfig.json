@@ -6,7 +6,6 @@
     "noPropertyAccessFromIndexSignature": false,
     "noImplicitAny": false,
     "exactOptionalPropertyTypes": false,
-    "strictNullChecks": false,
     "allowSyntheticDefaultImports": true,
     "jsxImportSource": "@emotion/react",
     "types": ["vite/client", "vitest"]

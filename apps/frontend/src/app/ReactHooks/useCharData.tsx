@@ -98,13 +98,13 @@ class CharCalcCache {
 // cache are mapped per database
 const cacheMap: Map<ArtCharDatabase, CharCalcCache> = new Map()
 const getCache = (database: ArtCharDatabase) => {
-  if (cacheMap.has(database)) return cacheMap.get(database)
+  if (cacheMap.has(database)) return cacheMap.get(database)!
   const cache = new CharCalcCache(database)
   cacheMap.set(database, cache)
   return cache
 }
 
-export function getTeamDataCalc(
+function getTeamDataCalc(
   database: ArtCharDatabase,
   characterKey: CharacterKey | '',
   mainStatAssumptionLevel = 0,

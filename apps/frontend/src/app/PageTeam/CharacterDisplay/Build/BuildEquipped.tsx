@@ -37,6 +37,7 @@ export function BuildEquipped({ active = false }: { active: boolean }) {
       database.weapons.get(equippedWeapon),
       Object.values(equippedArtifacts).map((id) => database.arts.get(id))
     )
+    if (!newBuildTcId) return
     // copy over name
     database.buildTcs.set(newBuildTcId, {
       name: `Equipped Build - Copied`,

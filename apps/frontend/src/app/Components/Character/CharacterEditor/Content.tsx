@@ -104,7 +104,7 @@ export default function Content({ onClose }: { onClose?: () => void }) {
                       dropDownButtonProps={{
                         startIcon: (
                           <ImgIcon
-                            src={characterSheet.getTalentOfKey(talentKey).img}
+                            src={characterSheet.getTalentOfKey(talentKey)?.img}
                             size={1.75}
                             sideMargin
                           />

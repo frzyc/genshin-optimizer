@@ -84,7 +84,7 @@ export default function AllowChar({
     character: { key: characterKey },
   } = useContext(CharacterContext)
   const { silly } = useContext(SillyContext)
-  const { excludedLocations, allowLocationsState } = useOptConfig(optConfigId)
+  const { excludedLocations, allowLocationsState } = useOptConfig(optConfigId)!
   const database = useDatabase()
   const [show, onOpen, onClose] = useBoolState(false)
   const [dbDirty, forceUpdate] = useForceUpdate()

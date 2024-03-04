@@ -61,7 +61,7 @@ export function Build({
   } = useContext(TeamCharacterContext)
   const { gender } = useDBMeta()
   const database = useDatabase()
-  const { name, description, weaponId, artifactIds } = useBuild(buildId)
+  const { name, description, weaponId, artifactIds } = useBuild(buildId)!
   const onActive = () =>
     database.teamChars.set(teamCharId, { buildType: 'real', buildId })
   const onEquip = () => {
@@ -73,7 +73,7 @@ export function Build({
       )
     )
       return
-    const char = database.chars.get(characterKey)
+    const char = database.chars.get(characterKey)!
     Object.entries(artifactIds).forEach(([slotKey, id]) => {
       if (id)
         database.arts.set(id, { location: charKeyToLocCharKey(characterKey) })
@@ -102,6 +102,7 @@ export function Build({
       database.weapons.get(weaponId),
       Object.values(artifactIds).map((id) => database.arts.get(id))
     )
+    if (!newBuildTcId) return
     // copy over name/desc
     database.buildTcs.set(newBuildTcId, {
       name: `${name} - Copied`,
@@ -281,7 +282,7 @@ function BuildEditor({
   } = useContext(CharacterContext)
   const weaponTypeKey = getCharData(characterKey).weaponType
   const database = useDatabase()
-  const build = useBuild(buildId)
+  const build = useBuild(buildId)!
 
   const [name, setName] = useState(build.name)
   const nameDeferred = useDeferredValue(name)
@@ -290,7 +291,9 @@ function BuildEditor({
 
   // trigger on buildId change, to use the new team's name/desc
   useEffect(() => {
-    const { name, description } = database.builds.get(buildId)
+    const newBuild = database.builds.get(buildId)
+    if (!newBuild) return
+    const { name, description } = newBuild
     setName(name)
     setDesc(description)
   }, [database, buildId])

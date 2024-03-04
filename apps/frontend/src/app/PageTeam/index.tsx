@@ -53,11 +53,11 @@ export default function PageTeam() {
   const database = useDatabase()
   const onClose = useCallback(() => navigate('/teams'), [navigate])
   const { teamId } = useParams<{ teamId?: string }>()
-  const invalidKey = !database.teams.keys.includes(teamId)
+  const invalidKey = !teamId || !database.teams.keys.includes(teamId)
 
   // An edit is triggered whenever a team gets opened even if no edits are done
   useEffect(() => {
-    if (invalidKey) return
+    if (invalidKey || !teamId) return
     database.teams.set(teamId, { lastEdit: Date.now() })
   }, [teamId, database.teams, invalidKey])
 
@@ -83,7 +83,7 @@ function Page({ teamId, onClose }: { teamId: string; onClose?: () => void }) {
   const database = useDatabase()
   const { gender } = useDBMeta()
 
-  const team = useTeam(teamId)
+  const team = useTeam(teamId)!
   const { teamCharIds } = team
 
   // use the current URL as the "source of truth" for characterKey and tab.
@@ -116,9 +116,9 @@ function Page({ teamId, onClose }: { teamId: string; onClose?: () => void }) {
   const tab = useMemo(() => {
     if (!teamChar) return 'overview'
     if (teamChar.buildType === 'tc') {
-      if (!tabsTc.includes(tabRaw)) return 'overview'
+      if (!tabRaw || !tabsTc.includes(tabRaw)) return 'overview'
     } else {
-      if (!tabs.includes(tabRaw)) return 'overview'
+      if (!tabRaw || !tabs.includes(tabRaw)) return 'overview'
     }
     return tabRaw
   }, [teamChar, tabRaw])
@@ -148,9 +148,11 @@ function Page({ teamId, onClose }: { teamId: string; onClose?: () => void }) {
     useMemo(
       () =>
         `${team.name} - ${t(
-          `${
-            silly ? 'sillyWisher_charNames' : 'charNames_gen'
-          }:${charKeyToLocGenderedCharKey(characterKey, gender)}`
+          `${silly ? 'sillyWisher_charNames' : 'charNames_gen'}:${
+            characterKey
+              ? charKeyToLocGenderedCharKey(characterKey, gender)
+              : 'Character'
+          }`
         )} - ${t(`page_character:tabs.${tab}`)}`,
       [t, team.name, silly, characterKey, gender, tab]
     )
@@ -240,12 +242,12 @@ function PageContent({
     return {
       chartData,
       setChartData: (data) => {
-        chartDataAll[teamCharId] = data
+        if (data) chartDataAll[teamCharId] = data
         setChartDataState(data)
       },
       graphBuilds,
       setGraphBuilds: (data) => {
-        graphBuildAll[teamCharId] = data
+        if (data) graphBuildAll[teamCharId] = data
         setGraphBuildState(data)
       },
     }

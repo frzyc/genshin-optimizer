@@ -55,7 +55,7 @@ export default function ExcludeArt({
   const {
     teamChar: { optConfigId },
   } = useContext(TeamCharacterContext)
-  const { artExclusion, useExcludedArts } = useOptConfig(optConfigId)
+  const { artExclusion, useExcludedArts } = useOptConfig(optConfigId)!
   const [show, onOpen, onClose] = useBoolState(false)
   const numExcludedArt = artExclusion.length
   const [showSel, onOpenSel, onCloseSel] = useBoolState(false)
