@@ -18,6 +18,8 @@ const key: WeaponKey = 'TomeOfTheEternalFlow'
 const data_gen = allStats.weapon.data[key]
 
 const hp_arr = data_gen.refinementBonus.hp_
+if (!hp_arr)
+  throw new Error(`data_gen.refinementBonus.hp_ for ${key} was undefined`)
 const charged_dmg_arr = [-1, 0.14, 0.18, 0.22, 0.26, 0.3]
 
 const hp_ = equal(
