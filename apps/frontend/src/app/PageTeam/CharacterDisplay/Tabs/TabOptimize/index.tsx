@@ -173,7 +173,7 @@ export default function TabBuild() {
     levelHigh,
     builds,
     buildDate,
-    useLoadoutExclusion,
+    useTeammateBuild,
   } = buildSetting
   const { data } = useContext(DataContext)
   const oldData = useOldData()
@@ -198,7 +198,7 @@ export default function TabBuild() {
       levelHigh,
       allowLocationsState,
       useExcludedArts,
-      useLoadoutExclusion,
+      useTeammateBuild,
     } = deferredArtsDirty && deferredBuildSetting
 
     const artifactIds = Array.from(
@@ -214,7 +214,7 @@ export default function TabBuild() {
 
     return database.arts.values.filter((art) => {
       if (!useExcludedArts && artExclusion.includes(art.id)) return false
-      if (!useLoadoutExclusion && artifactIds.includes(art.id)) return false
+      if (!useTeammateBuild && artifactIds.includes(art.id)) return false
       if (art.level < levelLow) return false
       if (art.level > levelHigh) return false
       const mainStats = mainStatKeys[art.slotKey]
@@ -693,12 +693,12 @@ export default function TabBuild() {
           <Button
             fullWidth
             startIcon={
-              useLoadoutExclusion ? <CheckBox /> : <CheckBoxOutlineBlank />
+              useTeammateBuild ? <CheckBox /> : <CheckBoxOutlineBlank />
             }
-            color={useLoadoutExclusion ? 'success' : 'secondary'}
+            color={useTeammateBuild ? 'success' : 'secondary'}
             onClick={() => {
               database.optConfigs.set(optConfigId, {
-                useLoadoutExclusion: !useLoadoutExclusion,
+                useTeammateBuild: !useTeammateBuild,
               })
             }}
             disabled={generatingBuilds}
