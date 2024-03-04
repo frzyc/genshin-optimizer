@@ -27,7 +27,7 @@ const sheet: IWeaponSheet = {
   document: [
     {
       header: headerTemplate(key, st('talents.passive')),
-      canShow: unequal(eleMas, undefined, 1),
+      canShow: unequal(eleMas, 0, 1),
       fields: [
         {
           node: eleMas,
