@@ -329,30 +329,6 @@ function CompareWeaponModal({
   } = useContext(TeamCharacterContext)
   const buildEquip = buildId && buildType === 'real'
 
-  const {
-    character: { key: characterKey },
-  } = useContext(CharacterContext)
-  const onEquip = useCallback(() => {
-    const confirmMsg = buildEquip
-      ? 'Do you want to equip this weapon to this build?'
-      : 'Do you want to equip this weapon to this character?'
-    if (!window.confirm(confirmMsg)) return
-    if (buildEquip) {
-      const weap = database.weapons.get(newId)
-      database.weapons.set(newId, {
-        location: charKeyToLocCharKey(characterKey),
-      })
-      if (weap)
-        database.builds.set(buildId, (build) => {
-          build.weaponId = newId
-        })
-    } else
-      database.weapons.set(newId, {
-        location: charKeyToLocCharKey(characterKey),
-      })
-    onClose()
-  }, [newId, buildEquip, buildId, database, characterKey, onClose])
-
   const deleteWeapon = useCallback(
     (id: string) => database.weapons.remove(id),
     [database]
@@ -396,13 +372,7 @@ function CompareWeaponModal({
           {oldId && <Box display="flex" flexGrow={1} />}
           {oldId && (
             <Box display="flex" alignItems="center" justifyContent="center">
-              <Button
-                onClick={onEquip}
-                sx={{ display: 'flex' }}
-                disabled={oldId === 'tc'}
-              >
-                <ChevronRight sx={{ fontSize: 40 }} />
-              </Button>
+              <ChevronRight sx={{ fontSize: 40 }} />
             </Box>
           )}
           {oldId && <Box display="flex" flexGrow={1} />}
@@ -443,22 +413,7 @@ function CompareArtifactModal({
   const {
     character: { key: characterKey },
   } = useContext(CharacterContext)
-  const onEquip = useCallback(() => {
-    const confirmMsg = buildEquip
-      ? 'Do you want to equip this artifact to this build?'
-      : 'Do you want to equip this artifact to this character?'
-    if (!window.confirm(confirmMsg)) return
-    if (buildEquip) {
-      const art = database.arts.get(newId)
-      if (!art) return
-      if (art.slotKey)
-        database.builds.set(buildId, (build) => {
-          build.artifactIds[art.slotKey] = newId
-        })
-    } else
-      database.arts.set(newId, { location: charKeyToLocCharKey(characterKey) })
-    onClose()
-  }, [newId, buildEquip, buildId, database, characterKey, onClose])
+
   const newLoc = database.arts.get(newId)?.location ?? ''
   const newArtifact = useArtifact(newId)
   const oldArtifact = useArtifact(oldId)
@@ -513,13 +468,7 @@ function CompareArtifactModal({
           {oldId && <Box display="flex" flexGrow={1} />}
           {oldId && (
             <Box display="flex" alignItems="center" justifyContent="center">
-              <Button
-                onClick={onEquip}
-                sx={{ display: 'flex' }}
-                disabled={oldId === 'tc'}
-              >
-                <ChevronRight sx={{ fontSize: 40 }} />
-              </Button>
+              <ChevronRight sx={{ fontSize: 40 }} />
             </Box>
           )}
           {oldId && <Box display="flex" flexGrow={1} />}
