@@ -19,8 +19,8 @@ import { constant } from './utils'
 export type OptNode =
   | ComputeNode<OptNode, OptNode>
   | ThresholdNode<OptNode, OptNode, OptNode>
-  | ReadNode<number | undefined>
-  | ConstantNode<number | undefined>
+  | ReadNode<number>
+  | ConstantNode<number>
 
 const allCommutativeMonoidOperations: StrictDict<
   CommutativeMonoidOperation,
@@ -238,7 +238,7 @@ function deduplicate(formulas: OptNode[]): OptNode[] {
     switch (op1) {
       case 'const':
         if (op1 !== op2) throw Error('ily jslint')
-        return (n1.value ?? NaN) - (n2.value ?? NaN)
+        return n1.value - n2.value
       case 'read':
         if (op1 !== op2) throw Error('ily jslint')
         return arrayCompare(n1.path, n2.path, (s1, s2) => s1.localeCompare(s2))
@@ -344,7 +344,7 @@ export function constantFold(
             .filter((formula) => {
               const folded = fold(formula, context)
               return folded.operation === 'const'
-                ? (numericOperands.push(folded.value ?? NaN), false)
+                ? (numericOperands.push(folded.value), false)
                 : true
             })
             .map((x) => fold(x, context))
@@ -456,8 +456,7 @@ export function constantFold(
             value.operation === 'const' &&
             threshold.operation === 'const'
           )
-            result =
-              (value.value ?? NaN) >= (threshold.value ?? NaN) ? pass : fail
+            result = value.value >= threshold.value ? pass : fail
           else result = { ...formula, operands: [value, threshold, pass, fail] }
           break
         }
@@ -465,8 +464,6 @@ export function constantFold(
           const index = fold(formula.operands[0], context)
           if (index.operation !== 'const')
             throw new Error('Found non-constant subscript node while folding')
-          if (index.value === undefined)
-            throw new Error('Found undefined index during subscript')
           result = constant(formula.list[index.value])
           break
         }
