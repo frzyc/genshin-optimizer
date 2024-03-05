@@ -1,6 +1,7 @@
 import { useBoolState } from '@genshin-optimizer/common/react-util'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
-import { Box, Button, Divider, Stack, SxProps } from '@mui/material'
+import type { SxProps } from '@mui/material'
+import { Box, Button, Divider, Stack } from '@mui/material'
 import { useCallback, useContext, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import ImgIcon from '../../../../../Components/Image/ImgIcon'

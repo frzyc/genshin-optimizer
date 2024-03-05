@@ -22,16 +22,15 @@ import {
 import { useCallback, useContext, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import SetEffectDisplay from '../../../../../Components/Artifact/SetEffectDisplay'
-import { DataContext, dataContextObj } from '../../../../../Context/DataContext'
+import type { dataContextObj } from '../../../../../Context/DataContext'
+import { DataContext } from '../../../../../Context/DataContext'
 import { TeamCharacterContext } from '../../../../../Context/TeamCharacterContext'
 import { getArtSheet } from '../../../../../Data/Artifacts'
-import {
-  ArtifactSheet,
-  artifactDefIcon,
-} from '../../../../../Data/Artifacts/ArtifactSheet'
+import type { ArtifactSheet } from '../../../../../Data/Artifacts/ArtifactSheet'
+import { artifactDefIcon } from '../../../../../Data/Artifacts/ArtifactSheet'
 import { UIData } from '../../../../../Formula/uiData'
 import { constant } from '../../../../../Formula/utils'
-import { SetNum } from '../../../../../Types/consts'
+import type { SetNum } from '../../../../../Types/consts'
 
 export default function ArtifactConditionalConfig({
   disabled,
@@ -102,15 +101,15 @@ export default function ArtifactConditionalConfig({
               {artifactCondCount} {t('artSetConfig.enabled')}
             </SqBadge>
           </Typography>
-          <Button
-            onClick={onShow}
-            disabled={disabled}
-            color="info"
-            sx={{ borderRadius: 0, flexShrink: 1, minWidth: 40 }}
-          >
-            <Settings />
-          </Button>
         </CardContent>
+        <Button
+          onClick={onShow}
+          disabled={disabled}
+          color="info"
+          sx={{ borderRadius: 0, flexShrink: 1, minWidth: 40 }}
+        >
+          <Settings />
+        </Button>
       </CardThemed>
 
       <ModalWrapper open={show} onClose={onClose}>
