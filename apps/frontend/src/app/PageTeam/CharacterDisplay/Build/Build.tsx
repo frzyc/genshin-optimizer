@@ -19,6 +19,7 @@ import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import EditIcon from '@mui/icons-material/Edit'
 import InfoIcon from '@mui/icons-material/Info'
 import ScienceIcon from '@mui/icons-material/Science'
+import type { ButtonProps } from '@mui/material'
 import {
   Alert,
   Box,
@@ -27,7 +28,9 @@ import {
   CardActionArea,
   CardContent,
   CardHeader,
+  Checkbox,
   Divider,
+  FormControlLabel,
   Grid,
   TextField,
   Tooltip,
@@ -67,12 +70,6 @@ export function Build({
   const onEquip = () => {
     // Cannot equip a build without weapon
     if (!weaponId) return
-    if (
-      !window.confirm(
-        `Do you want to equip all gear in this build to this character? The currently equipped build will be overwritten.`
-      )
-    )
-      return
     const char = database.chars.get(characterKey)!
     Object.entries(artifactIds).forEach(([slotKey, id]) => {
       if (id)
@@ -136,6 +133,15 @@ export function Build({
     )
     return tcId && database.teamChars.get(tcId)!.key
   })
+  const canActivate = !active && !!weaponId
+  const titleElement = (
+    <Box sx={{ p: 1, display: 'flex', gap: 1, alignItems: 'center' }}>
+      <Typography variant="h6">{name}</Typography>
+      <BootstrapTooltip title={<Typography>{description}</Typography>}>
+        <InfoIcon />
+      </BootstrapTooltip>
+    </Box>
+  )
   return (
     <>
       <ModalWrapper open={open} onClose={onClose}>
@@ -148,23 +154,32 @@ export function Build({
           boxShadow: active ? '0px 0px 0px 2px green inset' : undefined,
         }}
       >
-        <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
+        <CardContent
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: 1,
+            alignItems: 'stretch',
+          }}
+        >
           <Box sx={{ display: 'flex', gap: 1 }}>
-            <CardThemed sx={{ flexGrow: 1 }}>
-              <CardActionArea disabled={!weaponId || active} onClick={onActive}>
-                <Box
-                  component="span"
-                  sx={{ p: 1, display: 'flex', gap: 1, alignItems: 'center' }}
-                >
-                  <Typography variant="h6">{name}</Typography>
-                  <BootstrapTooltip
-                    title={<Typography>{description}</Typography>}
-                  >
-                    <InfoIcon />
-                  </BootstrapTooltip>
-                </Box>
-              </CardActionArea>
-            </CardThemed>
+            {canActivate ? (
+              <Button
+                onClick={onActive}
+                color="info"
+                sx={{
+                  flexGrow: 1,
+                  p: 0,
+                  textAlign: 'left',
+                  justifyContent: 'flex-start',
+                }}
+              >
+                {titleElement}
+              </Button>
+            ) : (
+              <CardThemed sx={{ flexGrow: 1 }}>{titleElement}</CardThemed>
+            )}
+
             <Tooltip
               title={<Typography>Edit Build Settings</Typography>}
               placement="top"
@@ -197,14 +212,14 @@ export function Build({
               placement="top"
               arrow
             >
-              <Button
+              <EquipBuildButton
                 color="success"
                 size="small"
                 disabled={!weaponId} // disabling equip of outfit with invalid weaponId
-                onClick={onEquip}
+                onEquip={onEquip}
               >
                 <CheckroomIcon />
-              </Button>
+              </EquipBuildButton>
             </Tooltip>
             <Tooltip
               title={<Typography>Delete Build</Typography>}
@@ -356,5 +371,95 @@ function BuildEditor({
         </Box>
       </CardContent>
     </CardThemed>
+  )
+}
+
+type EquipBuildButtonProps = ButtonProps & { onEquip: () => void }
+function EquipBuildButton({
+  onEquip,
+  children,
+  ...props
+}: EquipBuildButtonProps) {
+  const [name, setName] = useState('')
+  const [copyEquipped, setCopyEquipped] = useState(false)
+  const [showPrompt, onShowPrompt, OnHidePrompt] = useBoolState()
+
+  const database = useDatabase()
+  const { teamCharId } = useContext(TeamCharacterContext)
+  const {
+    character: { equippedArtifacts, equippedWeapon },
+  } = useContext(CharacterContext)
+
+  const toEquip = () => {
+    if (copyEquipped) {
+      database.teamChars.newBuild(teamCharId, {
+        name: name !== '' ? name : 'Duplicate of Equipped',
+        artifactIds: equippedArtifacts,
+        weaponId: equippedWeapon,
+      })
+    }
+
+    onEquip()
+    setName('')
+    setCopyEquipped(false)
+    OnHidePrompt()
+  }
+  return (
+    <>
+      <Button {...props} onClick={onShowPrompt}>
+        {children}
+      </Button>
+      {/* TODO: Dialog Wanted to use a Dialog here, but was having some weird issues with closing out of it */}
+      {/* TODO: Translation */}
+      <ModalWrapper
+        open={showPrompt}
+        onClose={OnHidePrompt}
+        containerProps={{ maxWidth: 'md' }}
+      >
+        <CardThemed>
+          <CardHeader
+            title="Do you want to equip all gear in this build to this character?"
+            action={<CloseButton onClick={OnHidePrompt} />}
+          />
+          <CardContent sx={{ display: 'flex', flexDirection: 'column' }}>
+            <FormControlLabel
+              label="Copy my current equipment to a new build. Otherwise, the currently equipped build will be overwritten."
+              control={
+                <Checkbox
+                  checked={copyEquipped}
+                  onChange={(event) => setCopyEquipped(event.target.checked)}
+                  color={copyEquipped ? 'success' : 'secondary'}
+                />
+              }
+            />
+            {copyEquipped && (
+              <TextField
+                label="Build Name"
+                placeholder="Duplicate of Equipped"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                size="small"
+                sx={{ width: '75%', marginX: 4 }}
+              />
+            )}
+            <Box
+              sx={{
+                display: 'flex',
+                justifyContent: 'flex-end',
+                gap: 1,
+                marginTop: 8,
+              }}
+            >
+              <Button color="error" onClick={OnHidePrompt}>
+                Cancel
+              </Button>
+              <Button color="success" onClick={toEquip}>
+                Equip
+              </Button>
+            </Box>
+          </CardContent>
+        </CardThemed>
+      </ModalWrapper>
+    </>
   )
 }
