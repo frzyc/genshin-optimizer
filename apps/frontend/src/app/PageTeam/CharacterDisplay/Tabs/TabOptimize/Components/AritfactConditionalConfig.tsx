@@ -1,3 +1,4 @@
+import { useBoolState } from '@genshin-optimizer/common/react-util'
 import {
   CardThemed,
   InfoTooltipInline,
@@ -7,6 +8,7 @@ import {
 import { objKeyMap } from '@genshin-optimizer/common/util'
 import type { ArtifactSetKey } from '@genshin-optimizer/gi/consts'
 import { allArtifactSetKeys } from '@genshin-optimizer/gi/consts'
+import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { Translate } from '@genshin-optimizer/gi/ui'
 import { Replay, Settings, StarRounded } from '@mui/icons-material'
 import {
@@ -20,7 +22,6 @@ import {
 import { useCallback, useContext, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import SetEffectDisplay from '../../../../../Components/Artifact/SetEffectDisplay'
-import CardLight from '../../../../../Components/Card/CardLight'
 import { DataContext, dataContextObj } from '../../../../../Context/DataContext'
 import { TeamCharacterContext } from '../../../../../Context/TeamCharacterContext'
 import { getArtSheet } from '../../../../../Data/Artifacts'
@@ -31,10 +32,12 @@ import {
 import { UIData } from '../../../../../Formula/uiData'
 import { constant } from '../../../../../Formula/utils'
 import { SetNum } from '../../../../../Types/consts'
-import { useDatabase } from '@genshin-optimizer/gi/db-ui'
-import { useBoolState } from '@genshin-optimizer/common/react-util'
 
-export default function ArtifactConditionalConfig({ disabled }: { disabled: boolean }) {
+export default function ArtifactConditionalConfig({
+  disabled,
+}: {
+  disabled: boolean
+}) {
   const { t } = useTranslation(['page_character_optimize', 'sheet'])
   const dataContext = useContext(DataContext)
   const database = useDatabase()
@@ -87,83 +90,83 @@ export default function ArtifactConditionalConfig({ disabled }: { disabled: bool
 
   return (
     <>
-    {/* Button to open modal */}
-    <CardThemed bgt="light" sx={{ display: 'flex', width: '100%' }}>
-      <CardContent sx={{ flexGrow: 1 }}>
-        <Typography>
-          <strong>{t`artSetConfig.modal.setCond.title`}</strong>
-        </Typography>
-        <Typography>
-          {t`artSetConfig.setEffCond`}{' '}
-          <SqBadge color={artifactCondCount ? 'success' : 'warning'}>
-            {artifactCondCount} {t('artSetConfig.enabled')}
-          </SqBadge>
-        </Typography>
-      <Button
-        onClick={onShow}
-        disabled={disabled}
-        color="info"
-        sx={{ borderRadius: 0, flexShrink: 1, minWidth: 40 }}
-      >
-        <Settings />
-      </Button>
-      </CardContent>
-    </CardThemed>
+      {/* Button to open modal */}
+      <CardThemed bgt="light" sx={{ display: 'flex', width: '100%' }}>
+        <CardContent sx={{ flexGrow: 1 }}>
+          <Typography>
+            <strong>{t`artSetConfig.modal.setCond.title`}</strong>
+          </Typography>
+          <Typography>
+            {t`artSetConfig.setEffCond`}{' '}
+            <SqBadge color={artifactCondCount ? 'success' : 'warning'}>
+              {artifactCondCount} {t('artSetConfig.enabled')}
+            </SqBadge>
+          </Typography>
+          <Button
+            onClick={onShow}
+            disabled={disabled}
+            color="info"
+            sx={{ borderRadius: 0, flexShrink: 1, minWidth: 40 }}
+          >
+            <Settings />
+          </Button>
+        </CardContent>
+      </CardThemed>
 
       <ModalWrapper open={show} onClose={onClose}>
-      <CardThemed bgt="dark">
-      <CardContent
-        sx={{ display: 'flex', gap: 1, justifyContent: 'space-between' }}
-      >
-        <Typography variant="h6">{t`artSetConfig.title`}</Typography>
-      </CardContent>
-      <Divider />
-      <CardContent>
-        <CardThemed bgt='light' sx={{ mb: 1 }}>
-          <CardContent>
-            <Box display="flex" gap={1}>
-              <Typography>
-                <strong>{t`artSetConfig.modal.setCond.title`}</strong>
-              </Typography>
-              <Typography sx={{ flexGrow: 1 }}>
-                <SqBadge color={artifactCondCount ? 'success' : 'warning'}>
-                  {artifactCondCount} {t('artSetConfig.selected')}
-                </SqBadge>
-              </Typography>
-              <Button
-                size="small"
-                onClick={resetArtConds}
-                color="error"
-                startIcon={<Replay />}
-              >{t`artSetConfig.modal.setCond.reset`}</Button>
-            </Box>
-            <Typography>{t`artSetConfig.modal.setCond.text`}</Typography>
+        <CardThemed bgt="dark">
+          <CardContent
+            sx={{ display: 'flex', gap: 1, justifyContent: 'space-between' }}
+          >
+            <Typography variant="h6">{t`artSetConfig.title`}</Typography>
           </CardContent>
+          <Divider />
+          <CardContent>
+            <CardThemed bgt="light" sx={{ mb: 1 }}>
+              <CardContent>
+                <Box display="flex" gap={1}>
+                  <Typography>
+                    <strong>{t`artSetConfig.modal.setCond.title`}</strong>
+                  </Typography>
+                  <Typography sx={{ flexGrow: 1 }}>
+                    <SqBadge color={artifactCondCount ? 'success' : 'warning'}>
+                      {artifactCondCount} {t('artSetConfig.selected')}
+                    </SqBadge>
+                  </Typography>
+                  <Button
+                    size="small"
+                    onClick={resetArtConds}
+                    color="error"
+                    startIcon={<Replay />}
+                  >{t`artSetConfig.modal.setCond.reset`}</Button>
+                </Box>
+                <Typography>{t`artSetConfig.modal.setCond.text`}</Typography>
+              </CardContent>
+            </CardThemed>
+            <Grid container spacing={1} columns={{ xs: 3, lg: 4 }}>
+              {artSheetsWithCond
+                .sort((a, b) => {
+                  if (a.rarity[0] !== b.rarity[0]) {
+                    return b.rarity[0] - a.rarity[0]
+                  }
+                  if (a.key < b.key) {
+                    return -1
+                  }
+                  // Assume names aren't duplicated
+                  return 1
+                })
+                .map((sheet) => (
+                  <ArtifactSetCard
+                    artifactSheet={sheet}
+                    fakeDataContextObj={fakeDataContextObj}
+                    key={sheet.key}
+                  />
+                ))}
+            </Grid>
+          </CardContent>
+          <Divider />
         </CardThemed>
-        <Grid container spacing={1} columns={{ xs: 3, lg: 4 }}>
-          {artSheetsWithCond
-            .sort((a, b) => {
-              if (a.rarity[0] !== b.rarity[0]) {
-                return b.rarity[0] - a.rarity[0]
-              }
-              if (a.key < b.key) {
-                return -1
-              }
-              // Assume names aren't duplicated
-              return 1
-            })
-            .map((sheet) => (
-              <ArtifactSetCard
-                artifactSheet={sheet}
-                fakeDataContextObj={fakeDataContextObj}
-                key={sheet.key}
-              />
-            ))}
-        </Grid>
-      </CardContent>
-      <Divider />
-    </CardThemed>
-    </ModalWrapper>
+      </ModalWrapper>
     </>
   )
 }

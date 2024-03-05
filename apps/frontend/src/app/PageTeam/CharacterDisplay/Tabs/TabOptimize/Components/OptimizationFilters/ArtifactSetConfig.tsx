@@ -39,7 +39,10 @@ import CloseButton from '../../../../../../Components/CloseButton'
 import ModalWrapper from '../../../../../../Components/ModalWrapper'
 import { Translate } from '../../../../../../Components/Translate'
 import { TeamCharacterContext } from '../../../../../../Context/TeamCharacterContext'
-import { getArtSheet, setKeysByRarities } from '../../../../../../Data/Artifacts'
+import {
+  getArtSheet,
+  setKeysByRarities,
+} from '../../../../../../Data/Artifacts'
 import { artifactDefIcon } from '../../../../../../Data/Artifacts/ArtifactSheet'
 import { bulkCatTotal } from '../../../../../../Util/totalUtils'
 import SetInclusionButton from './SetInclusionButton'
