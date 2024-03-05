@@ -44,16 +44,16 @@ export default function LoadoutSettingElement() {
   }, [database, teamCharId])
 
   useEffect(() => {
-    database.teamChars.set(teamCharId, (team) => {
-      team.name = nameDeferred
+    database.teamChars.set(teamCharId, (teamChar) => {
+      teamChar.name = nameDeferred
     })
     // Don't need to trigger when teamCharId is changed, only when the name is changed.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [database, nameDeferred])
 
   useEffect(() => {
-    database.teamChars.set(teamCharId, (team) => {
-      team.description = descDeferred
+    database.teamChars.set(teamCharId, (teamChar) => {
+      teamChar.description = descDeferred
     })
     // Don't need to trigger when teamCharId is changed, only when the name is changed.
     // eslint-disable-next-line react-hooks/exhaustive-deps
