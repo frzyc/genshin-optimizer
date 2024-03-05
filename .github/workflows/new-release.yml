@@ -13,12 +13,12 @@ jobs:
     timeout-minutes: 15
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           submodules: true
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 20
           cache: 'yarn'
       - name: Get version # TODO(eeeqeee) add option to increment from current version
         id: get-version
@@ -51,7 +51,7 @@ jobs:
         run: |
           printf '%s' "$ENVFILE" > apps/frontend/.env.local
         env:
-          ENVFILE: ${{ secrets.ENVFILE }}
+          ENVFILE: ${{ vars.ENVFILE }}
       - name: Build genshin-optimizer
         run: |
           NX_URL_GITHUB_GO_CURRENT_VERSION="https://github.com/${{ github.repository }}/commit/$(git rev-parse HEAD)" \

@@ -1,8 +1,8 @@
 import { assertUnreachable } from '../Util/Util'
 import { forEachNodes } from './internal'
-import { constant, sum, prod, threshold, frac, max, min } from './utils'
-import type { ReadNode } from './type'
 import type { OptNode } from './optimization'
+import type { ReadNode } from './type'
+import { constant, frac, max, min, prod, sum, threshold } from './utils'
 
 /** Checks whether a formula `f` is constant with respect to variable `x`. */
 export function zero_deriv(

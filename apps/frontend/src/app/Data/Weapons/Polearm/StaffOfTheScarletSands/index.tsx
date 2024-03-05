@@ -1,3 +1,5 @@
+import type { WeaponKey } from '@genshin-optimizer/gi/consts'
+import { allStats } from '@genshin-optimizer/gi/stats'
 import { input } from '../../../../Formula'
 import {
   equal,
@@ -8,13 +10,11 @@ import {
   sum,
 } from '../../../../Formula/utils'
 import KeyMap from '../../../../KeyMap'
-import type { WeaponKey } from '@genshin-optimizer/gi/consts'
-import { allStats } from '@genshin-optimizer/gi/stats'
 import { range } from '../../../../Util/Util'
-import { cond, stg, st } from '../../../SheetUtil'
-import { dataObjForWeaponSheet } from '../../util'
+import { cond, st, stg } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
+import { dataObjForWeaponSheet } from '../../util'
 
 const key: WeaponKey = 'StaffOfTheScarletSands'
 const data_gen = allStats.weapon.data[key]

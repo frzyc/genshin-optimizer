@@ -1,39 +1,61 @@
 import { cachedArtifact, validateArtifact } from './ArtifactDataManager'
-import type { IBuildResult } from './BuildResultDataManager'
+import type { MinTotalStatKey } from './BuildTcDataManager'
+import { initCharTC, minTotalStatKeys, toBuildTc } from './BuildTcDataManager'
+import {
+  MAX_DESC_LENGTH,
+  MAX_NAME_LENGTH,
+  initCustomMultiTarget,
+  initCustomTarget,
+  validateCustomMultiTarget,
+} from './CustomMultiTarget'
 import type {
   AllowLocationsState,
   ArtSetExclusion,
   ArtSetExclusionKey,
-  BuildSetting,
+  GeneratedBuild,
   StatFilterSetting,
   StatFilters,
-} from './BuildSettingDataManager'
+} from './OptConfigDataManager'
 import {
   allAllowLocationsState,
   allArtifactSetExclusionKeys,
   handleArtSetExclusion,
   maxBuildsToShowList,
-} from './BuildSettingDataManager'
-import type { MinTotalStatKey } from './CharacterTCDataManager'
-import { initCharTC, minTotalStatKeys } from './CharacterTCDataManager'
-
-export type {
-  IBuildResult,
-  MinTotalStatKey,
-  ArtSetExclusionKey,
-  BuildSetting,
-  StatFilters,
-  StatFilterSetting,
-  ArtSetExclusion,
-  AllowLocationsState,
-}
+} from './OptConfigDataManager'
+import type { TeamCharacter } from './TeamCharacterDataManager'
+import type { Team } from './TeamDataManager'
+import {
+  defaultInitialWeapon,
+  defaultInitialWeaponKey,
+  initialWeapon,
+} from './WeaponDataManager'
 export {
-  cachedArtifact,
-  validateArtifact,
-  initCharTC,
-  minTotalStatKeys,
-  handleArtSetExclusion,
-  allArtifactSetExclusionKeys,
+  MAX_DESC_LENGTH,
+  MAX_NAME_LENGTH,
   allAllowLocationsState,
+  allArtifactSetExclusionKeys,
+  cachedArtifact,
+  defaultInitialWeapon,
+  defaultInitialWeaponKey,
+  handleArtSetExclusion,
+  initCharTC,
+  initCustomMultiTarget,
+  initCustomTarget,
+  initialWeapon,
   maxBuildsToShowList,
+  minTotalStatKeys,
+  toBuildTc,
+  validateArtifact,
+  validateCustomMultiTarget,
+}
+export type {
+  AllowLocationsState,
+  ArtSetExclusion,
+  ArtSetExclusionKey,
+  GeneratedBuild,
+  MinTotalStatKey,
+  StatFilterSetting,
+  StatFilters,
+  Team,
+  TeamCharacter,
 }

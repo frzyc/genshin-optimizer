@@ -3,13 +3,13 @@ import { precompute } from '../../../Formula/optimization'
 import {
   constant,
   customRead,
+  frac,
   max,
   min,
   prod,
   res,
   sum,
   threshold,
-  frac,
 } from '../../../Formula/utils'
 import { cartesian } from '../../../Util/Util'
 import type { ArtifactsBySlot, DynStat } from '../../common'

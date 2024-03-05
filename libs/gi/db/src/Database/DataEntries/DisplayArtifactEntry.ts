@@ -19,8 +19,8 @@ import {
   allSubstatKeys,
 } from '@genshin-optimizer/gi/consts'
 
-import { DataEntry } from '../DataEntry'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
+import { DataEntry } from '../DataEntry'
 
 export const artifactSortKeys = [
   'rarity',
@@ -46,6 +46,7 @@ export type FilterOption = {
   locked: Array<'locked' | 'unlocked'>
   rvLow: number
   rvHigh: number
+  useMaxRV: boolean
   lines: Array<1 | 2 | 3 | 4>
 }
 
@@ -72,6 +73,7 @@ export function initialFilterOption(): FilterOption {
     locked: ['locked', 'unlocked'],
     rvLow: 0,
     rvHigh: 900,
+    useMaxRV: false,
     lines: [1, 2, 3, 4],
   }
 }
@@ -116,6 +118,7 @@ export class DisplayArtifactEntry extends DataEntry<
         locked,
         rvLow,
         rvHigh,
+        useMaxRV,
         lines,
       } = filterOption
       artSetKeys = validateArr(artSetKeys, allArtifactSetKeys, [])
@@ -137,6 +140,8 @@ export class DisplayArtifactEntry extends DataEntry<
       if (typeof rvLow !== 'number') rvLow = 0
       if (typeof rvHigh !== 'number') rvHigh = 900
 
+      if (typeof useMaxRV !== 'boolean') useMaxRV = false
+
       lines = validateArr(lines, [1, 2, 3, 4])
 
       filterOption = {
@@ -153,6 +158,7 @@ export class DisplayArtifactEntry extends DataEntry<
         locked,
         rvLow,
         rvHigh,
+        useMaxRV,
         lines,
       } as FilterOption
     }

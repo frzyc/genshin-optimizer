@@ -1,3 +1,5 @@
+import type { WeaponKey } from '@genshin-optimizer/gi/consts'
+import { allStats } from '@genshin-optimizer/gi/stats'
 import { input } from '../../../../Formula'
 import {
   constant,
@@ -6,23 +8,21 @@ import {
   prod,
   subscript,
 } from '../../../../Formula/utils'
-import type { WeaponKey } from '@genshin-optimizer/gi/consts'
-import { allStats } from '@genshin-optimizer/gi/stats'
 import { customDmgNode } from '../../../Characters/dataUtil'
-import { stg, st } from '../../../SheetUtil'
-import { dataObjForWeaponSheet } from '../../util'
+import { st, stg } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
+import { dataObjForWeaponSheet } from '../../util'
 
 const key: WeaponKey = 'AquilaFavonia'
 const data_gen = allStats.weapon.data[key]
 
 const atkDealt = [-1, 2, 2.3, 2.6, 2.9, 3.2]
 const hpRegen = [-1, 1, 1.15, 1.3, 1.45, 1.6]
-const atk_ = subscript(
-  input.weapon.refinement,
-  data_gen.refinementBonus['atk_']
-)
+const atk_arr = data_gen.refinementBonus.atk_
+if (!atk_arr)
+  throw new Error(`data_gen.refinementBonus.atk_ for ${key} was undefined`)
+const atk_ = subscript(input.weapon.refinement, atk_arr)
 const heal = equal(
   input.weapon.key,
   key,

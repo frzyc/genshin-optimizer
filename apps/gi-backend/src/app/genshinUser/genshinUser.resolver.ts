@@ -7,9 +7,9 @@ import {
   Query,
   Resolver,
 } from '@nestjs/graphql'
-import { GenshinUserService } from './genshinUser.service'
 import { JWTUser } from '../_decorator/jwtuser.decorator'
 import { UserService } from '../user/user.service'
+import { GenshinUserService } from './genshinUser.service'
 
 @ObjectType()
 export class GenshinUser {

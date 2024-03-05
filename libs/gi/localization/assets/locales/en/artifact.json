@@ -104,5 +104,11 @@
   "noArtifacts": "Looks like you haven't added any artifacts yet. If you want, there are <1>automatic scanners</1> that can speed up the import process!",
   "probabilityFilter": {
     "label": "New Substat Probability"
+  },
+  "subheadings": {
+    "general": "General",
+    "substats": "Sub-Stats",
+    "inventory": "Inventory",
+    "rollvalue": "Roll Value"
   }
 }

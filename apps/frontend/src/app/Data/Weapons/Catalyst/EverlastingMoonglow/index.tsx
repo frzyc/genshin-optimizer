@@ -1,11 +1,11 @@
-import { input } from '../../../../Formula'
-import { equal, prod, subscript } from '../../../../Formula/utils'
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
+import { input } from '../../../../Formula'
+import { equal, prod, subscript } from '../../../../Formula/utils'
 import { st, trans } from '../../../SheetUtil'
-import { dataObjForWeaponSheet } from '../../util'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
+import { dataObjForWeaponSheet } from '../../util'
 
 const key: WeaponKey = 'EverlastingMoonglow'
 const data_gen = allStats.weapon.data[key]
@@ -20,10 +20,10 @@ const normal_dmgInc = equal(
     input.premod.hp
   )
 )
-const heal_ = subscript(
-  input.weapon.refinement,
-  data_gen.refinementBonus['heal_']
-)
+const heal_arr = data_gen.refinementBonus.heal_
+if (!heal_arr)
+  throw new Error(`data_gen.refinementBonus.heal_ for ${key} was undefined`)
+const heal_ = subscript(input.weapon.refinement, heal_arr)
 export const data = dataObjForWeaponSheet(
   key,
   data_gen,

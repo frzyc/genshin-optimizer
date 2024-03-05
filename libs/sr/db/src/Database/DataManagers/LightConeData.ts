@@ -103,11 +103,11 @@ export class LightConeDataManager extends SroDataManager<
     this.set(id, value)
     return id
   }
-  override remove(key: string, notify = true) {
-    const lc = this.get(key)
-    if (!lc) return
-    lc.location && this.database.chars.setEquippedLightCone(lc.location, '')
-    super.remove(key, notify)
+  override remove(key: string, notify = true): ICachedLightCone | undefined {
+    const lc = super.remove(key, notify)
+    if (lc)
+      lc.location && this.database.chars.setEquippedLightCone(lc.location, '')
+    return lc
   }
   override importSROD(
     srod: ISrObjectDescription & ISroDatabase,

@@ -13,15 +13,11 @@ import {
   allElementKeys,
   allWeaponTypeKeys,
   charKeyToLocGenderedCharKey,
+  isCharacterKey,
 } from '@genshin-optimizer/gi/consts'
 import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
-import {
-  DeleteForever,
-  FactCheck,
-  Groups,
-  Science,
-  TrendingUp,
-} from '@mui/icons-material'
+import { SillyContext } from '@genshin-optimizer/gi/ui'
+import { DeleteForever } from '@mui/icons-material'
 import AddIcon from '@mui/icons-material/Add'
 import {
   Box,
@@ -29,13 +25,11 @@ import {
   CardContent,
   Divider,
   Grid,
-  IconButton,
   Skeleton,
   TextField,
-  Typography,
 } from '@mui/material'
 import type { ChangeEvent } from 'react'
-import React, {
+import {
   Suspense,
   useCallback,
   useContext,
@@ -47,15 +41,15 @@ import React, {
 } from 'react'
 import ReactGA from 'react-ga4'
 import { useTranslation } from 'react-i18next'
-import { useNavigate } from 'react-router-dom'
-import BootstrapTooltip from '../Components/BootstrapTooltip'
+import { useMatch, useNavigate } from 'react-router-dom'
 import CardDark from '../Components/Card/CardDark'
 import CharacterCard from '../Components/Character/CharacterCard'
+import CharacterEditor from '../Components/Character/CharacterEditor'
+import CharacterSelectionModal from '../Components/Character/CharacterSelectionModal'
 import PageAndSortOptionSelect from '../Components/PageAndSortOptionSelect'
 import CharacterRarityToggle from '../Components/ToggleButton/CharacterRarityToggle'
 import ElementToggle from '../Components/ToggleButton/ElementToggle'
 import WeaponToggle from '../Components/ToggleButton/WeaponToggle'
-import { SillyContext } from '../Context/SillyContext'
 import { getCharSheet } from '../Data/Characters'
 import { getWeaponSheet } from '../Data/Weapons'
 import useCharSelectionCallback from '../ReactHooks/useCharSelectionCallback'
@@ -65,14 +59,29 @@ import {
   characterSortMap,
 } from '../Util/CharacterSort'
 import { catTotal } from '../Util/totalUtils'
-const CharacterSelectionModal = React.lazy(
-  () => import('./CharacterSelectionModal')
-)
 const columns = { xs: 1, sm: 2, md: 3, lg: 4, xl: 4 }
 const numToShowMap = { xs: 6, sm: 8, md: 12, lg: 16, xl: 16 }
 const sortKeys = Object.keys(characterSortMap)
 
 export default function PageCharacter() {
+  const database = useDatabase()
+  const navigate = useNavigate()
+  const {
+    params: { characterKey: characterKeyRaw },
+  } = useMatch({ path: '/characters/:characterKey', end: false }) ?? {
+    params: {},
+  }
+  const characterKey = useMemo(() => {
+    if (!characterKeyRaw) return null
+    if (!isCharacterKey(characterKeyRaw)) {
+      navigate('/characters')
+      return null
+    }
+    const character = database.chars.get(characterKeyRaw)
+    if (!character) database.chars.getWithInitWeapon(characterKeyRaw)
+    return characterKeyRaw as CharacterKey
+  }, [characterKeyRaw, navigate, database])
+
   const { t } = useTranslation([
     'page_character',
     // Always load these 2 so character names are loaded for searching/sorting
@@ -80,11 +89,13 @@ export default function PageCharacter() {
     'charNames_gen',
   ])
   const { silly } = useContext(SillyContext)
-  const database = useDatabase()
-  const [state, setState] = useState(() => database.displayCharacter.get())
+
+  const [displayCharacter, setDisplayCharacter] = useState(() =>
+    database.displayCharacter.get()
+  )
   useEffect(
-    () => database.displayCharacter.follow((r, s) => setState(s)),
-    [database, setState]
+    () => database.displayCharacter.follow((r, s) => setDisplayCharacter(s)),
+    [database, setDisplayCharacter]
   )
   const [searchTerm, setSearchTerm] = useState('')
   const deferredSearchTerm = useDeferredValue(searchTerm)
@@ -136,9 +147,7 @@ export default function PageCharacter() {
 
   const editCharacter = useCharSelectionCallback()
 
-  const navigate = useNavigate()
-
-  const deferredState = useDeferredValue(state)
+  const deferredState = useDeferredValue(displayCharacter)
   const deferredDbDirty = useDeferredValue(dbDirty)
   const { charKeyList, totalCharNum } = useMemo(() => {
     const chars = database.chars.keys
@@ -169,7 +178,7 @@ export default function PageCharacter() {
     sortType,
     ascending,
     pageIndex = 0,
-  } = state
+  } = displayCharacter
 
   const { charKeyListToShow, numPages, currentPageIndex } = useMemo(() => {
     const numPages = Math.ceil(charKeyList.length / maxNumToDisplay)
@@ -250,6 +259,12 @@ export default function PageCharacter() {
 
   return (
     <Box my={1} display="flex" flexDirection="column" gap={1}>
+      {characterKey && (
+        <CharacterEditor
+          characterKey={characterKey}
+          onClose={() => navigate('/characters')}
+        />
+      )}
       <Suspense fallback={false}>
         <CharacterSelectionModal
           newFirst
@@ -356,58 +371,14 @@ export default function PageCharacter() {
                         justifyContent: 'space-between',
                       }}
                     >
-                      <BootstrapTooltip
-                        placement="top"
-                        title={<Typography>{t('tabs.talent')}</Typography>}
+                      <Button
+                        fullWidth
+                        color="error"
+                        onClick={() => deleteCharacter(charKey)}
+                        startIcon={<DeleteForever />}
                       >
-                        <IconButton
-                          onClick={() => navigate(`${charKey}/talent`)}
-                        >
-                          <FactCheck />
-                        </IconButton>
-                      </BootstrapTooltip>
-                      <BootstrapTooltip
-                        placement="top"
-                        title={<Typography>{t('tabs.teambuffs')}</Typography>}
-                      >
-                        <IconButton
-                          onClick={() => navigate(`${charKey}/teambuffs`)}
-                        >
-                          <Groups />
-                        </IconButton>
-                      </BootstrapTooltip>
-                      <BootstrapTooltip
-                        placement="top"
-                        title={<Typography>{t('tabs.optimize')}</Typography>}
-                      >
-                        <IconButton
-                          onClick={() => navigate(`${charKey}/optimize`)}
-                        >
-                          <TrendingUp />
-                        </IconButton>
-                      </BootstrapTooltip>
-                      <BootstrapTooltip
-                        placement="top"
-                        title={<Typography>{t('tabs.theorycraft')}</Typography>}
-                      >
-                        <IconButton
-                          onClick={() => navigate(`${charKey}/theorycraft`)}
-                        >
-                          <Science />
-                        </IconButton>
-                      </BootstrapTooltip>
-                      <Divider orientation="vertical" />
-                      <BootstrapTooltip
-                        placement="top"
-                        title={<Typography>{t('delete')}</Typography>}
-                      >
-                        <IconButton
-                          color="error"
-                          onClick={() => deleteCharacter(charKey)}
-                        >
-                          <DeleteForever />
-                        </IconButton>
-                      </BootstrapTooltip>
+                        {t('delete')}
+                      </Button>
                     </Box>
                   </>
                 }

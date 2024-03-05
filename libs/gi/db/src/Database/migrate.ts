@@ -1,7 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import type { DBStorage } from '@genshin-optimizer/common/database'
 import type {
+  CharacterKey,
   ElementKey,
+  HitModeKey,
   LocationCharacterKey,
   TravelerKey,
 } from '@genshin-optimizer/gi/consts'
@@ -11,6 +13,7 @@ import {
 } from '@genshin-optimizer/gi/consts'
 import type { ICharacter, IGOOD } from '@genshin-optimizer/gi/good'
 import type { CustomMultiTarget } from '../Interfaces/CustomMultiTarget'
+import type { Team, TeamCharacter } from './DataManagers'
 import type { IGO } from './exim'
 
 // MIGRATION STEP
@@ -20,7 +23,7 @@ import type { IGO } from './exim'
 // 3. Update `currentDBVersion`
 // 4. Test on import, and also on version update
 
-export const currentDBVersion = 23
+export const currentDBVersion = 24
 
 export function migrateGOOD(good: IGOOD & IGO): IGOOD & IGO {
   const version = good.dbVersion ?? 0
@@ -92,14 +95,14 @@ export function migrateGOOD(good: IGOOD & IGO): IGOOD & IGO {
 
     const buildSettings = (good as any).buildSettings
     if (buildSettings)
-      good.buildSettings = buildSettings.map((b) => ({ ...b, id: b.key }))
+      good.buildSettings = buildSettings.map((b: any) => ({ ...b, id: b.key }))
   })
 
   // 8.28.0 - 9.5.2
   migrateVersion(22, () => {
     const buildSettings = (good as any).buildSettings
     if (buildSettings) {
-      good.buildSettings = buildSettings.map((b) => {
+      good.buildSettings = buildSettings.map((b: any) => {
         const statFilters = (b as any).statFilters
         const newStatFilters = Object.fromEntries(
           Object.entries(statFilters)
@@ -119,11 +122,11 @@ export function migrateGOOD(good: IGOOD & IGO): IGOOD & IGO {
     }
   })
 
-  // 9.5.3 - Present
+  // 9.5.3 - 9.22.2
   migrateVersion(23, () => {
     const buildSettings = (good as any).buildSettings
     if (buildSettings) {
-      good.buildSettings = buildSettings.map((b) => {
+      good.buildSettings = buildSettings.map((b: any) => {
         const allowLocations: LocationCharacterKey[] = b.allowLocations
         if (allowLocations) {
           // Invert the list; should be all location keys that are not in allowLocations
@@ -137,6 +140,79 @@ export function migrateGOOD(good: IGOOD & IGO): IGOOD & IGO {
         return b
       })
     }
+  })
+
+  // 10.0.0 - present
+  migrateVersion(24, () => {
+    const chars = (good as any).characters
+    const buildSettings = (good as any).buildSettings
+    if (!chars || !buildSettings) return
+
+    if (!good['teams']) good['teams'] = []
+    if (!good['teamchars']) good['teamchars'] = []
+    if (!good['optConfigs']) good['optConfigs'] = []
+
+    let teamInd = ((good['teams'] as Array<any>) ?? []).length
+    let teamCharInd = ((good['teamchars'] as Array<any>) ?? []).length
+    let optConfigInd = ((good['optConfigs'] as Array<any>) ?? []).length
+    console.log({ chars, buildSettings })
+    chars.forEach((char: any) => {
+      const {
+        key: characterKey,
+        hitMode,
+        reaction,
+        conditional,
+        bonusStats,
+        enemyOverride,
+        infusionAura,
+        customMultiTarget,
+        team: charTeam,
+        teamConditional,
+      } = char as IGOCharacter
+      const optConfig =
+        buildSettings.find(({ id }: { id: string }) => id === characterKey) ??
+        {}
+      const optConfigId = `optConfig_${optConfigInd++}`
+      ;(good as any).optConfigs.push({ ...optConfig, id: optConfigId })
+
+      const teamCharIds: string[] = []
+
+      const teamCharMain: TeamCharacter = {
+        key: characterKey,
+        customMultiTargets: customMultiTarget,
+        conditional,
+        bonusStats,
+        hitMode,
+        reaction,
+        infusionAura,
+        optConfigId,
+      } as TeamCharacter
+      const teamCharMainId = `teamchar_${teamCharInd++}`
+      ;(good as any).teamchars.push({ ...teamCharMain, id: teamCharMainId })
+      teamCharIds.push(teamCharMainId)
+      if (charTeam) {
+        ;(charTeam.filter((c) => c) as CharacterKey[]).forEach((charK) => {
+          const teamChar: TeamCharacter = {
+            key: charK,
+            conditional: teamConditional[charK] as any,
+            bonusStats,
+            hitMode,
+          } as TeamCharacter
+          const teamCharId = `teamchar_${teamCharInd++}`
+          ;(good as any).teamchars.push({ ...teamChar, id: teamCharId })
+          teamCharIds.push(teamCharId)
+        })
+      }
+      const team: Team = {
+        name: `Migrated from ${characterKey}`,
+        description: `Generated team due to database migration for GO version 10`,
+        enemyOverride,
+        teamCharIds,
+        lastEdit: 0,
+      }
+      const teamId = `team_${teamInd++}`
+      ;(good as any).teams.push({ ...team, id: teamId })
+    })
   })
 
   good.dbVersion = currentDBVersion
@@ -249,7 +325,7 @@ export function migrate(storage: DBStorage) {
     }
   })
 
-  // 9.5.3 - Present
+  // 9.5.3 - 9.22.2
   migrateVersion(23, () => {
     for (const key of storage.keys) {
       if (key.startsWith('buildSetting_')) {
@@ -272,7 +348,91 @@ export function migrate(storage: DBStorage) {
     }
   })
 
+  // 10.0.0 - present
+  migrateVersion(24, () => {
+    const keys = storage.keys
+    let teamInd = keys.filter((k) => k.startsWith(`team_`)).length
+    let teamCharInd = keys.filter((k) => k.startsWith(`teamchar_`)).length
+    let optConfigInd = keys.filter((k) => k.startsWith(`optConfig_`)).length
+    for (const key of keys) {
+      // convert character to a Team
+      if (key.startsWith('char_')) {
+        const {
+          key: characterKey,
+          hitMode,
+          reaction,
+          conditional,
+          bonusStats,
+          enemyOverride,
+          infusionAura,
+          customMultiTarget,
+          team: charTeam,
+          teamConditional,
+        } = storage.get(key) as IGOCharacter
+        const optConfig = storage.get(`buildSetting_${characterKey}`) ?? {}
+        const optConfigId = `optConfig_${optConfigInd++}`
+        storage.set(optConfigId, optConfig)
+
+        const teamCharIds: string[] = []
+
+        const teamCharMain: TeamCharacter = {
+          key: characterKey,
+          customMultiTargets: customMultiTarget,
+          conditional,
+          bonusStats,
+          hitMode,
+          reaction,
+          infusionAura,
+          optConfigId,
+        } as TeamCharacter
+        const teamCharMainId = `teamchar_${teamCharInd++}`
+        storage.set(teamCharMainId, teamCharMain)
+        teamCharIds.push(teamCharMainId)
+        if (charTeam) {
+          ;(charTeam.filter((c) => c) as CharacterKey[]).forEach((charK) => {
+            const teamChar: TeamCharacter = {
+              key: charK,
+              conditional: teamConditional[charK] as any,
+              bonusStats,
+              hitMode,
+            } as TeamCharacter
+            const teamCharId = `teamchar_${teamCharInd++}`
+            storage.set(teamCharId, teamChar)
+            teamCharIds.push(teamCharId)
+          })
+        }
+        const team: Team = {
+          name: `Migrated from ${characterKey}`,
+          description: `Generated team due to database migration for GO version 10`,
+          enemyOverride,
+          teamCharIds,
+          lastEdit: 0,
+        }
+        storage.set(`team_${teamInd++}`, team)
+      }
+    }
+  })
+
   storage.setDBVersion(currentDBVersion)
   if (version > currentDBVersion)
     throw new Error(`Database version ${version} is not supported`)
+}
+
+// used to migrate version 24
+interface IGOCharacter extends ICharacter {
+  // GO-specific
+  hitMode: HitModeKey
+  reaction?: string
+  conditional: object
+  bonusStats: Record<string, number>
+  enemyOverride: Partial<Record<string, number>>
+  infusionAura: string
+  compareData: boolean
+  customMultiTarget: CustomMultiTarget[]
+  team: [
+    teammate1: CharacterKey | '',
+    teammate2: CharacterKey | '',
+    teammate3: CharacterKey | ''
+  ]
+  teamConditional: Partial<Record<CharacterKey, object>>
 }

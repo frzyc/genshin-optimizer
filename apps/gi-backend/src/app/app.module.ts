@@ -7,14 +7,14 @@ import { JwtModule } from '@nestjs/jwt'
 import { join } from 'path'
 import { AppController } from './app.controller'
 import { AppService } from './app.service'
+import { ArtifactModule } from './artifact/artifact.module'
+import { CharacterModule } from './character/character.module'
+import { GenshinUserModule } from './genshinUser/genshinUser.module'
 import { JwtAuthGuard } from './jwt-auth.guard'
 import { JwtStrategy } from './jwt.strategy'
 import { PrismaModule } from './prisma/prisma.module'
 import { UserModule } from './user/user.module'
-import { GenshinUserModule } from './genshinUser/genshinUser.module'
-import { ArtifactModule } from './artifact/artifact.module'
 import { WeaponModule } from './weapon/weapon.module'
-import { CharacterModule } from './character/character.module'
 
 @Module({
   imports: [

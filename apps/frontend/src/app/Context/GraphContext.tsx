@@ -1,16 +1,21 @@
+import type { GeneratedBuild } from '@genshin-optimizer/gi/db'
 import { createContext } from 'react'
 import type { NumNode } from '../Formula/type'
-import type { Build } from '../Solver/common'
+
+type Data = GeneratedBuild & {
+  value: number
+  plot?: number
+}
 
 export type ChartData = {
   valueNode: NumNode
   plotNode: NumNode
-  data: Build[]
+  data: Data[]
 }
 export type GraphContextObj = {
   chartData?: ChartData
   setChartData: (data: ChartData | undefined) => void
-  graphBuilds: string[][] | undefined
-  setGraphBuilds: (builds: string[][] | undefined) => void
+  graphBuilds: GeneratedBuild[] | undefined
+  setGraphBuilds: (builds: GeneratedBuild[] | undefined) => void
 }
 export const GraphContext = createContext({} as GraphContextObj)

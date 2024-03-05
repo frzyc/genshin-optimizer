@@ -1,19 +1,22 @@
 import type { DBStorage } from '@genshin-optimizer/common/database'
 import { Database, SandboxStorage } from '@genshin-optimizer/common/database'
-import type { CharacterKey, GenderKey } from '@genshin-optimizer/gi/consts'
+import type { GenderKey } from '@genshin-optimizer/gi/consts'
 import type { IGOOD } from '@genshin-optimizer/gi/good'
 import { DBMetaEntry } from './DataEntries/DBMetaEntry'
 import { DisplayArtifactEntry } from './DataEntries/DisplayArtifactEntry'
 import { DisplayCharacterEntry } from './DataEntries/DisplayCharacterEntry'
 import { DisplayOptimizeEntry } from './DataEntries/DisplayOptimizeEntry'
+import { DisplayTeamEntry } from './DataEntries/DisplayTeamEntry'
 import { DisplayToolEntry } from './DataEntries/DisplayTool'
 import { DisplayWeaponEntry } from './DataEntries/DisplayWeaponEntry'
 import { ArtifactDataManager } from './DataManagers/ArtifactDataManager'
-import { BuildResultDataManager } from './DataManagers/BuildResultDataManager'
-import { BuildSettingDataManager } from './DataManagers/BuildSettingDataManager'
+import { BuildDataManager } from './DataManagers/BuildDataManager'
+import { BuildTcDataManager } from './DataManagers/BuildTcDataManager'
 import { CharMetaDataManager } from './DataManagers/CharMetaDataManager'
 import { CharacterDataManager } from './DataManagers/CharacterDataManager'
-import { CharacterTCDataManager } from './DataManagers/CharacterTCDataManager'
+import { OptConfigDataManager } from './DataManagers/OptConfigDataManager'
+import { TeamCharacterDataManager } from './DataManagers/TeamCharacterDataManager'
+import { TeamDataManager } from './DataManagers/TeamDataManager'
 import { WeaponDataManager } from './DataManagers/WeaponDataManager'
 import type { IGO, ImportResult } from './exim'
 import { GOSource, newImportResult } from './exim'
@@ -21,15 +24,13 @@ import { currentDBVersion, migrate, migrateGOOD } from './migrate'
 export class ArtCharDatabase extends Database {
   arts: ArtifactDataManager
   chars: CharacterDataManager
-  charTCs: CharacterTCDataManager
+  buildTcs: BuildTcDataManager
   weapons: WeaponDataManager
-  buildSettings: BuildSettingDataManager
-  buildResult: BuildResultDataManager
+  optConfigs: OptConfigDataManager
   charMeta: CharMetaDataManager
-  // TODO: Partial<Record<CharacterKey, TeamData>> = {}
-  teamData: Partial<
-    Record<CharacterKey, Partial<Record<CharacterKey, object>>>
-  > = {}
+  builds: BuildDataManager
+  teamChars: TeamCharacterDataManager
+  teams: TeamDataManager
 
   dbMeta: DBMetaEntry
   displayWeapon: DisplayWeaponEntry
@@ -37,6 +38,7 @@ export class ArtCharDatabase extends Database {
   displayOptimize: DisplayOptimizeEntry
   displayCharacter: DisplayCharacterEntry
   displayTool: DisplayToolEntry
+  displayTeam: DisplayTeamEntry
   dbIndex: 1 | 2 | 3 | 4
   dbVer: number
 
@@ -60,13 +62,19 @@ export class ArtCharDatabase extends Database {
 
     this.weapons.ensureEquipments()
 
-    this.buildSettings = new BuildSettingDataManager(this)
+    // Depends on arts
+    this.optConfigs = new OptConfigDataManager(this)
 
-    // This should be instantiated after artifacts, so that invalid artifacts that persists in build results can be pruned.
-    this.buildResult = new BuildResultDataManager(this)
-
-    this.charTCs = new CharacterTCDataManager(this)
+    this.buildTcs = new BuildTcDataManager(this)
     this.charMeta = new CharMetaDataManager(this)
+
+    this.builds = new BuildDataManager(this)
+
+    // Depends on builds, buildTcs, and optConfigs
+    this.teamChars = new TeamCharacterDataManager(this)
+
+    // Depends on TeamChar
+    this.teams = new TeamDataManager(this)
 
     // Handle DataEntries
     this.dbMeta = new DBMetaEntry(this)
@@ -75,10 +83,10 @@ export class ArtCharDatabase extends Database {
     this.displayOptimize = new DisplayOptimizeEntry(this)
     this.displayCharacter = new DisplayCharacterEntry(this)
     this.displayTool = new DisplayToolEntry(this)
+    this.displayTeam = new DisplayTeamEntry(this)
 
     // invalidates character when things change.
-    this.chars.followAny((key) => {
-      this.invalidateTeamData(key)
+    this.chars.followAny(() => {
       this.dbMeta.set({ lastEdit: Date.now() })
     })
     this.arts.followAny(() => {
@@ -94,10 +102,12 @@ export class ArtCharDatabase extends Database {
       this.chars,
       this.weapons,
       this.arts,
-      this.buildSettings,
-      this.buildResult,
-      this.charTCs,
+      this.optConfigs,
+      this.buildTcs,
       this.charMeta,
+      this.builds,
+      this.teamChars,
+      this.teams,
     ] as const
   }
   get dataEntries() {
@@ -108,25 +118,12 @@ export class ArtCharDatabase extends Database {
       this.displayOptimize,
       this.displayCharacter,
       this.displayTool,
+      this.displayTeam,
     ] as const
   }
 
-  _getTeamData(key: CharacterKey) {
-    return this.teamData[key]
-  }
-  cacheTeamData(key: CharacterKey, data: object) {
-    this.teamData[key] = data
-  }
-  invalidateTeamData(key: CharacterKey | '') {
-    if (!key) return
-    delete this.teamData[key]
-    Object.entries(this.teamData).forEach(
-      ([k, teamData]) => teamData[key] && delete this.teamData[k]
-    )
-  }
   clear() {
     this.dataManagers.map((dm) => dm.clear())
-    this.teamData = {}
     this.dataEntries.map((de) => de.clear())
   }
   get gender() {
@@ -172,10 +169,10 @@ export class ArtCharDatabase extends Database {
         if (ind < 0) arr.push(value)
         else arr[ind] = value
       }),
-      this.arts.followAny((key, reason, value) =>
+      this.arts.followAny((_key, reason, value) =>
         result.artifacts[reason].push(value)
       ),
-      this.weapons.followAny((key, reason, value) =>
+      this.weapons.followAny((_key, reason, value) =>
         result.weapons[reason].push(value)
       ),
     ]

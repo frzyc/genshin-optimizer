@@ -1,6 +1,5 @@
-import type { IArtifact, IWeapon } from '@genshin-optimizer/gi/good'
-import type { IGOCharacter } from '../Interfaces/IGOCharacter'
-import type { BuildSetting } from './DataManagers/BuildSettingDataManager'
+import type { IArtifact, ICharacter, IWeapon } from '@genshin-optimizer/gi/good'
+import type { OptConfig } from './DataManagers/OptConfigDataManager'
 
 export const GOSource = 'Genshin Optimizer' as const
 
@@ -36,7 +35,7 @@ export function newImportResult(
 export type IGO = {
   dbVersion: number
   source: typeof GOSource
-  buildSettings?: Array<BuildSetting & { id: string }>
+  buildSettings?: Array<OptConfig & { id: string }>
   [gokey: string]: unknown
 }
 
@@ -56,7 +55,7 @@ export type ImportResult = {
   source: string
   artifacts: ImportResultCounter<IArtifact>
   weapons: ImportResultCounter<IWeapon>
-  characters: ImportResultCounter<IGOCharacter>
+  characters: ImportResultCounter<ICharacter>
   keepNotInImport: boolean
   ignoreDups: boolean
 }

@@ -15,11 +15,11 @@ import {
 import KeyMap from '../../../KeyMap'
 import type { CharacterSheetKey } from '../../../Types/consts'
 import { range } from '../../../Util/Util'
-import { cond, stg, st } from '../../SheetUtil'
-import { charTemplates } from '../charTemplates'
-import { dataObjForCharacterSheet, dmgNode } from '../dataUtil'
+import { cond, st, stg } from '../../SheetUtil'
 import type { TalentSheet } from '../ICharacterSheet.d'
 import Traveler from '../Traveler'
+import { charTemplates } from '../charTemplates'
+import { dataObjForCharacterSheet, dmgNode } from '../dataUtil'
 
 export default function dendro(
   key: CharacterSheetKey,
