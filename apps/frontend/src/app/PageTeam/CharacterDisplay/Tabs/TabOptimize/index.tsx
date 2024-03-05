@@ -102,6 +102,7 @@ import OptimizationFilters from './Components/OptimizationFilters/OptimizationFi
 import StatFilterCard from './Components/OptimizationFilters/StatFilterCard'
 import OptimizationTargetSelector from './Components/OptimizationTargetSelector'
 import { compactArtifacts, dynamicData } from './foreground'
+import ArtifactConditionalConfig from './Components/ArtifactConditionalConfig'
 
 const audio = new Audio('assets/notification.mp3')
 export default function TabBuild() {
@@ -537,6 +538,7 @@ export default function TabBuild() {
           flexDirection="column"
           gap={1}
         >
+          <ArtifactConditionalConfig disabled={generatingBuilds} />
           <OptimizationFilters disabled={generatingBuilds} />
           {/* Minimum Final Stat Filter */}
           <StatFilterCard disabled={generatingBuilds} />
