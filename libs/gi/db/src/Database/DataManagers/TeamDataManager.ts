@@ -33,7 +33,7 @@ export class TeamDataManager extends DataManager<
   }
   newName() {
     const existing = this.values
-    for (let num = existing.length + 1; num <= existing.length + 100; num++) {
+    for (let num = existing.length + 1; num <= existing.length * 2; num++) {
       const name = `Team Name ${num}`
       if (existing.some((tc) => tc.name !== name)) return name
     }

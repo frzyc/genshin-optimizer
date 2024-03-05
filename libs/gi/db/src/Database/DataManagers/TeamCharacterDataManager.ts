@@ -112,7 +112,7 @@ export class TeamCharacterDataManager extends DataManager<
     )
     for (
       let num = existingUndercKey.length + 1;
-      num <= existingUndercKey.length + 100;
+      num <= existingUndercKey.length * 2;
       num++
     ) {
       const name = `Loadout Name ${num}`
