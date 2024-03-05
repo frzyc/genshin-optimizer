@@ -4,7 +4,12 @@ import {
   useMediaQueryUp,
 } from '@genshin-optimizer/common/react-util'
 import { CardThemed, ModalWrapper } from '@genshin-optimizer/common/ui'
-import { objKeyMap, objPathValue, range } from '@genshin-optimizer/common/util'
+import {
+  notEmpty,
+  objKeyMap,
+  objPathValue,
+  range,
+} from '@genshin-optimizer/common/util'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import {
   allArtifactSlotKeys,
@@ -204,10 +209,11 @@ export default function TabBuild() {
     const artifactIds = Array.from(
       new Set(
         team.teamCharIds
+          .filter(notEmpty)
           .filter((tcId) => tcId !== teamCharId)
           .map((tcId) => database.teamChars.getLoadoutArtifacts(tcId))
           .flatMap((arts) => Object.values(arts))
-          .filter((arts) => !!arts)
+          .filter(notEmpty)
           .map(({ id }) => id)
       )
     )
