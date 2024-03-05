@@ -9,11 +9,11 @@ import { useCallback, useContext } from 'react'
 import { useTranslation } from 'react-i18next'
 import CustomNumberInput, {
   CustomNumberInputButtonGroupWrapper,
-} from '../../../../../Components/CustomNumberInput'
-import { DataContext } from '../../../../../Context/DataContext'
-import type { NodeDisplay } from '../../../../../Formula/uiData'
-import { objPathValue } from '../../../../../Util/Util'
-import OptimizationTargetSelector from './OptimizationTargetSelector'
+} from '../../../../../../Components/CustomNumberInput'
+import { DataContext } from '../../../../../../Context/DataContext'
+import type { NodeDisplay } from '../../../../../../Formula/uiData'
+import { objPathValue } from '../../../../../../Util/Util'
+import OptimizationTargetSelector from '../OptimizationTargetSelector'
 
 type OptimizationTargetEditorListProps = {
   statFilters: StatFilters

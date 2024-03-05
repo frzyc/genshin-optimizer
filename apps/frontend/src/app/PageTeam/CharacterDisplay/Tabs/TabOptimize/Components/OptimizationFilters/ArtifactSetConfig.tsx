@@ -34,14 +34,14 @@ import {
 } from '@mui/material'
 import { useCallback, useContext, useEffect, useMemo, useState } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
-import SlotIcon from '../../../../../Components/Artifact/SlotIcon'
-import CloseButton from '../../../../../Components/CloseButton'
-import ModalWrapper from '../../../../../Components/ModalWrapper'
-import { Translate } from '../../../../../Components/Translate'
-import { TeamCharacterContext } from '../../../../../Context/TeamCharacterContext'
-import { getArtSheet, setKeysByRarities } from '../../../../../Data/Artifacts'
-import { artifactDefIcon } from '../../../../../Data/Artifacts/ArtifactSheet'
-import { bulkCatTotal } from '../../../../../Util/totalUtils'
+import SlotIcon from '../../../../../../Components/Artifact/SlotIcon'
+import CloseButton from '../../../../../../Components/CloseButton'
+import ModalWrapper from '../../../../../../Components/ModalWrapper'
+import { Translate } from '../../../../../../Components/Translate'
+import { TeamCharacterContext } from '../../../../../../Context/TeamCharacterContext'
+import { getArtSheet, setKeysByRarities } from '../../../../../../Data/Artifacts'
+import { artifactDefIcon } from '../../../../../../Data/Artifacts/ArtifactSheet'
+import { bulkCatTotal } from '../../../../../../Util/totalUtils'
 import SetInclusionButton from './SetInclusionButton'
 
 export default function ArtifactSetConfig({
@@ -52,8 +52,7 @@ export default function ArtifactSetConfig({
   const { t } = useTranslation(['page_character_optimize', 'sheet'])
   const database = useDatabase()
   const {
-    teamChar: { conditional, optConfigId },
-    teamCharId,
+    teamChar: { optConfigId },
   } = useContext(TeamCharacterContext)
   const { artSetExclusion } = useOptConfig(optConfigId)!
   const [open, setOpen] = useState(false)

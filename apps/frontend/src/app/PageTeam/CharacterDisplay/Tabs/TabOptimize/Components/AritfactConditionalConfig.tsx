@@ -1,8 +1,14 @@
-import { CardThemed, InfoTooltipInline } from '@genshin-optimizer/common/ui'
+import {
+  CardThemed,
+  InfoTooltipInline,
+  ModalWrapper,
+  SqBadge,
+} from '@genshin-optimizer/common/ui'
 import { objKeyMap } from '@genshin-optimizer/common/util'
 import type { ArtifactSetKey } from '@genshin-optimizer/gi/consts'
 import { allArtifactSetKeys } from '@genshin-optimizer/gi/consts'
-import { Replay, StarRounded } from '@mui/icons-material'
+import { Translate } from '@genshin-optimizer/gi/ui'
+import { Replay, Settings, StarRounded } from '@mui/icons-material'
 import {
   Box,
   Button,
@@ -13,27 +19,31 @@ import {
 } from '@mui/material'
 import { useCallback, useContext, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
-import SetEffectDisplay from '../../../Components/Artifact/SetEffectDisplay'
-import CardLight from '../../../Components/Card/CardLight'
-import SqBadge from '../../../Components/SqBadge'
-import { Translate } from '../../../Components/Translate'
-import { CharacterContext } from '../../../Context/CharacterContext'
-import type { dataContextObj } from '../../../Context/DataContext'
-import { DataContext } from '../../../Context/DataContext'
-import { getArtSheet } from '../../../Data/Artifacts'
-import type { ArtifactSheet } from '../../../Data/Artifacts/ArtifactSheet'
-import { artifactDefIcon } from '../../../Data/Artifacts/ArtifactSheet'
-import { UIData } from '../../../Formula/uiData'
-import { constant } from '../../../Formula/utils'
-import type { SetNum } from '../../../Types/consts'
+import SetEffectDisplay from '../../../../../Components/Artifact/SetEffectDisplay'
+import CardLight from '../../../../../Components/Card/CardLight'
+import { DataContext, dataContextObj } from '../../../../../Context/DataContext'
+import { TeamCharacterContext } from '../../../../../Context/TeamCharacterContext'
+import { getArtSheet } from '../../../../../Data/Artifacts'
+import {
+  ArtifactSheet,
+  artifactDefIcon,
+} from '../../../../../Data/Artifacts/ArtifactSheet'
+import { UIData } from '../../../../../Formula/uiData'
+import { constant } from '../../../../../Formula/utils'
+import { SetNum } from '../../../../../Types/consts'
+import { useDatabase } from '@genshin-optimizer/gi/db-ui'
+import { useBoolState } from '@genshin-optimizer/common/react-util'
 
-export default function TabArtifacts() {
+export default function ArtifactConditionalConfig({ disabled }: { disabled: boolean }) {
   const { t } = useTranslation(['page_character_optimize', 'sheet'])
   const dataContext = useContext(DataContext)
+  const database = useDatabase()
   const {
-    character: { conditional },
-    characterDispatch,
-  } = useContext(CharacterContext)
+    teamChar: { conditional },
+    teamCharId,
+  } = useContext(TeamCharacterContext)
+  const [show, onShow, onClose] = useBoolState(false)
+
   const artSheetsWithCond = allArtifactSetKeys
     .map((k) => getArtSheet(k))
     .filter((sheet) =>
@@ -70,11 +80,38 @@ export default function TabArtifacts() {
         ([k]) => !allArtifactSetKeys.includes(k as any)
       )
     )
-    characterDispatch({ conditional: tconditional })
-  }, [conditional, characterDispatch])
+    database.teamChars.set(teamCharId, (teamChar) => {
+      teamChar.conditional = tconditional
+    })
+  }, [conditional, database, teamCharId])
 
   return (
-    <CardThemed bgt="dark">
+    <>
+    {/* Button to open modal */}
+    <CardThemed bgt="light" sx={{ display: 'flex', width: '100%' }}>
+      <CardContent sx={{ flexGrow: 1 }}>
+        <Typography>
+          <strong>{t`artSetConfig.modal.setCond.title`}</strong>
+        </Typography>
+        <Typography>
+          {t`artSetConfig.setEffCond`}{' '}
+          <SqBadge color={artifactCondCount ? 'success' : 'warning'}>
+            {artifactCondCount} {t('artSetConfig.enabled')}
+          </SqBadge>
+        </Typography>
+      <Button
+        onClick={onShow}
+        disabled={disabled}
+        color="info"
+        sx={{ borderRadius: 0, flexShrink: 1, minWidth: 40 }}
+      >
+        <Settings />
+      </Button>
+      </CardContent>
+    </CardThemed>
+
+      <ModalWrapper open={show} onClose={onClose}>
+      <CardThemed bgt="dark">
       <CardContent
         sx={{ display: 'flex', gap: 1, justifyContent: 'space-between' }}
       >
@@ -82,7 +119,7 @@ export default function TabArtifacts() {
       </CardContent>
       <Divider />
       <CardContent>
-        <CardLight sx={{ mb: 1 }}>
+        <CardThemed bgt='light' sx={{ mb: 1 }}>
           <CardContent>
             <Box display="flex" gap={1}>
               <Typography>
@@ -102,7 +139,7 @@ export default function TabArtifacts() {
             </Box>
             <Typography>{t`artSetConfig.modal.setCond.text`}</Typography>
           </CardContent>
-        </CardLight>
+        </CardThemed>
         <Grid container spacing={1} columns={{ xs: 3, lg: 4 }}>
           {artSheetsWithCond
             .sort((a, b) => {
@@ -126,6 +163,8 @@ export default function TabArtifacts() {
       </CardContent>
       <Divider />
     </CardThemed>
+    </ModalWrapper>
+    </>
   )
 }
 

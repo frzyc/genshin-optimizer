@@ -11,7 +11,7 @@ import {
 } from '@genshin-optimizer/common/ui'
 import { objKeyMap } from '@genshin-optimizer/common/util'
 import { charKeyToLocCharKey } from '@genshin-optimizer/gi/consts'
-import { useDatabase } from '@genshin-optimizer/gi/db-ui'
+import { useDatabase, useOptConfig } from '@genshin-optimizer/gi/db-ui'
 import {
   CheckBox,
   CheckBoxOutlineBlank,
@@ -30,10 +30,9 @@ import {
 } from '@mui/material'
 import { useContext, useDeferredValue, useEffect, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
-import ArtifactLevelSlider from '../../../../../Components/Artifact/ArtifactLevelSlider'
-import { CharacterContext } from '../../../../../Context/CharacterContext'
-import { bulkCatTotal } from '../../../../../Util/totalUtils'
-import useBuildSetting from '../useBuildSetting'
+import ArtifactLevelSlider from '../../../../../../Components/Artifact/ArtifactLevelSlider'
+import { TeamCharacterContext } from '../../../../../../Context/TeamCharacterContext'
+import { bulkCatTotal } from '../../../../../../Util/totalUtils'
 import AllowChar from './AllowChar'
 import ArtifactSetConfig from './ArtifactSetConfig'
 import AssumeFullLevelToggle from './AssumeFullLevelToggle'
@@ -50,9 +49,9 @@ export default function OptimizationFilters({
 
   const database = useDatabase()
   const {
-    character: { key: characterKey },
-  } = useContext(CharacterContext)
-  const { buildSetting, buildSettingDispatch } = useBuildSetting(characterKey)
+    teamChar: { optConfigId, key: characterKey },
+  } = useContext(TeamCharacterContext)
+  const buildSetting = useOptConfig(optConfigId)!
   const { mainStatAssumptionLevel, allowPartial, levelLow, levelHigh } =
     buildSetting
 
@@ -208,12 +207,17 @@ export default function OptimizationFilters({
                     <ArtifactLevelSlider
                       levelLow={levelLow}
                       levelHigh={levelHigh}
-                      setLow={(levelLow) => buildSettingDispatch({ levelLow })}
+                      setLow={(levelLow) =>
+                        database.optConfigs.set(optConfigId, { levelLow })
+                      }
                       setHigh={(levelHigh) =>
-                        buildSettingDispatch({ levelHigh })
+                        database.optConfigs.set(optConfigId, { levelHigh })
                       }
                       setBoth={(levelLow, levelHigh) =>
-                        buildSettingDispatch({ levelLow, levelHigh })
+                        database.optConfigs.set(optConfigId, {
+                          levelLow,
+                          levelHigh,
+                        })
                       }
                       disabled={disabled}
                     />
@@ -233,7 +237,11 @@ export default function OptimizationFilters({
                         mainStatAssumptionLevel={mainStatAssumptionLevel}
                         setmainStatAssumptionLevel={(
                           mainStatAssumptionLevel: number
-                        ) => buildSettingDispatch({ mainStatAssumptionLevel })}
+                        ) =>
+                          database.optConfigs.set(optConfigId, {
+                            mainStatAssumptionLevel,
+                          })
+                        }
                         disabled={disabled}
                       />
                       <InfoTooltip
@@ -272,7 +280,9 @@ export default function OptimizationFilters({
                   }
                   color={allowPartial ? 'success' : 'secondary'}
                   onClick={() =>
-                    buildSettingDispatch({ allowPartial: !allowPartial })
+                    database.optConfigs.set(optConfigId, {
+                      allowPartial: !allowPartial,
+                    })
                   }
                   disabled={disabled}
                 >

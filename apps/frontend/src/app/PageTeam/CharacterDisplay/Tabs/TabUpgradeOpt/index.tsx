@@ -18,10 +18,10 @@ import {
   HitModeToggle,
   ReactionToggle,
 } from '../../../../Components/HitModeEditor'
-import ArtifactSetConfig from '../TabOptimize/Components/ArtifactSetConfig'
+import ArtifactSetConfig from '../TabOptimize/Components/OptimizationFilters/ArtifactSetConfig'
 import BonusStatsCard from '../TabOptimize/Components/BonusStatsCard'
 import OptimizationTargetSelector from '../TabOptimize/Components/OptimizationTargetSelector'
-import StatFilterCard from '../TabOptimize/Components/StatFilterCard'
+import StatFilterCard from '../TabOptimize/Components/OptimizationFilters/StatFilterCard'
 
 import { useForceUpdate } from '@genshin-optimizer/common/react-util'
 import { clamp } from '@genshin-optimizer/common/util'
@@ -53,7 +53,7 @@ import { optimize } from '../../../../Formula/optimization'
 import type { NumNode } from '../../../../Formula/type'
 import type { DynStat } from '../../../../Solver/common'
 import { objPathValue, shouldShowDevComponents } from '../../../../Util/Util'
-import MainStatSelectionCard from '../TabOptimize/Components/MainStatSelectionCard'
+import MainStatSelectionCard from '../TabOptimize/Components/OptimizationFilters/MainStatSelectionCard'
 import { dynamicData } from '../TabOptimize/foreground'
 import UpgradeOptChartCard from './UpgradeOptChartCard'
 

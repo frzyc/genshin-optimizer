@@ -49,7 +49,7 @@ import { uiInput as input } from '../../../../../Formula'
 import ArtifactCard from '../../../../../PageArtifact/ArtifactCard'
 import WeaponCard from '../../../../../PageWeapon/WeaponCard'
 import { ArtifactSetBadges } from './ArtifactSetBadges'
-import SetInclusionButton from './SetInclusionButton'
+import SetInclusionButton from './OptimizationFilters/SetInclusionButton'
 
 type NewOld = {
   newId: string

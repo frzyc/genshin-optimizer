@@ -8,7 +8,7 @@ import type { SxProps, Theme } from '@mui/material'
 import { Button, ButtonGroup } from '@mui/material'
 import { useContext } from 'react'
 import { useTranslation } from 'react-i18next'
-import { TeamCharacterContext } from '../../../../../Context/TeamCharacterContext'
+import { TeamCharacterContext } from '../../../../../../Context/TeamCharacterContext'
 
 export default function SetInclusionButton({
   setKey,
