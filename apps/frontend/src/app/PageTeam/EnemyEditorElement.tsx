@@ -32,11 +32,11 @@ export function EnemyEditorElement({ teamId }: { teamId: string }) {
   const database = useDatabase()
   const [show, onShow, onHide] = useBoolState()
 
-  const { enemyOverride } = useTeam(teamId)!
+  const {
+    enemyOverride,
+    enemyOverride: { enemyLevel, enemyDefRed_, enemyDefIgn_ },
+  } = useTeam(teamId)!
 
-  const enemyLevel = enemyOverride.enemyLevel
-  const eDefRed = enemyOverride.enemyDefRed_
-  const eDefIgn = enemyOverride.enemyDefIgn_
   const onReset = useCallback(
     () => database.teams.set(teamId, { enemyOverride: {} }),
     [database, teamId]
@@ -66,8 +66,8 @@ export function EnemyEditorElement({ teamId }: { teamId: string }) {
                     />
                   </Typography>
                 ))}
-                <Typography>DEF Red. {eDefRed}%</Typography>
-                <Typography>DEF Ignore {eDefIgn}%</Typography>
+                <Typography>DEF Red. {enemyDefRed_}%</Typography>
+                <Typography>DEF Ignore {enemyDefIgn_}%</Typography>
               </Box>
             }
             action={

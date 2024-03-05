@@ -5,6 +5,7 @@ import {
 } from '@genshin-optimizer/common/ui'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import DriveFileRenameOutlineIcon from '@mui/icons-material/DriveFileRenameOutline'
+import PersonIcon from '@mui/icons-material/Person'
 import {
   Alert,
   Box,
@@ -19,7 +20,6 @@ import { useContext, useDeferredValue, useEffect, useState } from 'react'
 import CloseButton from '../../Components/CloseButton'
 import { TeamCharacterContext } from '../../Context/TeamCharacterContext'
 import { LoadoutDropdown } from '../LoadoutDropdown'
-import PersonIcon from '@mui/icons-material/Person'
 // TODO: Translation
 
 export default function LoadoutSettingElement() {
@@ -34,7 +34,7 @@ export default function LoadoutSettingElement() {
   const [desc, setDesc] = useState(teamChar.description)
   const descDeferred = useDeferredValue(desc)
 
-  // trigger on teamId change, to use the new team's name/desc
+  // trigger on teamCharId change, to use the new team's name/desc
   useEffect(() => {
     const newTeamChar = database.teamChars.get(teamCharId)
     if (!newTeamChar) return
@@ -47,7 +47,7 @@ export default function LoadoutSettingElement() {
     database.teamChars.set(teamCharId, (team) => {
       team.name = nameDeferred
     })
-    // Don't need to trigger when teamId is changed, only when the name is changed.
+    // Don't need to trigger when teamCharId is changed, only when the name is changed.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [database, nameDeferred])
 
@@ -55,7 +55,7 @@ export default function LoadoutSettingElement() {
     database.teamChars.set(teamCharId, (team) => {
       team.description = descDeferred
     })
-    // Don't need to trigger when teamId is changed, only when the name is changed.
+    // Don't need to trigger when teamCharId is changed, only when the name is changed.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [database, descDeferred])
 

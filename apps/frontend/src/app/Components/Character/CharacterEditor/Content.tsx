@@ -180,22 +180,15 @@ function InTeam() {
   const [dbDirty, setDbDirty] = useForceUpdate()
   const loadoutTeamMap = useMemo(() => {
     const loadoutTeamMap: Record<string, string[]> = {}
-    database.teamChars.keys.forEach((teamCharId) => {
-      const teamChar = database.teamChars.get(teamCharId)!
+    database.teamChars.entries.map(([teamCharId, teamChar]) => {
       if (teamChar.key !== characterKey) return
       if (!loadoutTeamMap[teamCharId]) loadoutTeamMap[teamCharId] = []
     })
-    database.teams.keys.forEach((teamId) => {
-      const teamCharIdWithCKey = database.teams
-        .get(teamId)!
-        .teamCharIds.find(
-          (teamCharId) =>
-            database.teamChars.get(teamCharId)?.key === characterKey
-        )
-      if (teamCharIdWithCKey)
-        if (!loadoutTeamMap[teamCharIdWithCKey])
-          loadoutTeamMap[teamCharIdWithCKey] = [teamId]
-        else loadoutTeamMap[teamCharIdWithCKey].push(teamId)
+    database.teams.entries.forEach(([teamId, team]) => {
+      const teamCharIdWithCKey = team.teamCharIds.find(
+        (teamCharId) => database.teamChars.get(teamCharId)?.key === characterKey
+      )
+      if (teamCharIdWithCKey) loadoutTeamMap[teamCharIdWithCKey].push(teamId)
     })
     return dbDirty && loadoutTeamMap
   }, [dbDirty, characterKey, database])
@@ -306,7 +299,6 @@ function InTeam() {
       })}
       <Button
         fullWidth
-        // sx={{ height: '100%' }}
         onClick={() => onAddNewTeam()}
         color="info"
         startIcon={<AddIcon />}
