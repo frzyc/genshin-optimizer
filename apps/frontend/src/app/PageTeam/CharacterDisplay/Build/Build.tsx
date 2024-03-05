@@ -131,6 +131,15 @@ export function Build({
     )
     return tcId && database.teamChars.get(tcId)!.key
   })
+  const canActivate = !active && !!weaponId
+  const titleElement = (
+    <Box sx={{ p: 1, display: 'flex', gap: 1, alignItems: 'center' }}>
+      <Typography variant="h6">{name}</Typography>
+      <BootstrapTooltip title={<Typography>{description}</Typography>}>
+        <InfoIcon />
+      </BootstrapTooltip>
+    </Box>
+  )
   return (
     <>
       <ModalWrapper open={open} onClose={onClose}>
@@ -143,23 +152,32 @@ export function Build({
           boxShadow: active ? '0px 0px 0px 2px green inset' : undefined,
         }}
       >
-        <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
+        <CardContent
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: 1,
+            alignItems: 'stretch',
+          }}
+        >
           <Box sx={{ display: 'flex', gap: 1 }}>
-            <CardThemed sx={{ flexGrow: 1 }}>
-              <CardActionArea disabled={!weaponId || active} onClick={onActive}>
-                <Box
-                  component="span"
-                  sx={{ p: 1, display: 'flex', gap: 1, alignItems: 'center' }}
-                >
-                  <Typography variant="h6">{name}</Typography>
-                  <BootstrapTooltip
-                    title={<Typography>{description}</Typography>}
-                  >
-                    <InfoIcon />
-                  </BootstrapTooltip>
-                </Box>
-              </CardActionArea>
-            </CardThemed>
+            {canActivate ? (
+              <Button
+                onClick={onActive}
+                color="info"
+                sx={{
+                  flexGrow: 1,
+                  p: 0,
+                  textAlign: 'left',
+                  justifyContent: 'flex-start',
+                }}
+              >
+                {titleElement}
+              </Button>
+            ) : (
+              <CardThemed sx={{ flexGrow: 1 }}>{titleElement}</CardThemed>
+            )}
+
             <Tooltip
               title={<Typography>Edit Build Settings</Typography>}
               placement="top"
