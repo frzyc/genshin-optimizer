@@ -268,11 +268,16 @@ export class TeamCharacterDataManager extends DataManager<
   }
   override remove(key: string, notify?: boolean): TeamCharacter | undefined {
     const rem = super.remove(key, notify)
-    if (rem?.optConfigId) this.database.optConfigs.remove(rem.optConfigId)
+    if (!rem) return
+    const { optConfigId, buildIds, buildTcIds } = rem
+    this.database.optConfigs.remove(optConfigId)
     this.database.teams.keys.forEach((teamId) => {
       if (this.database.teams.get(teamId)!.teamCharIds.includes(key))
         this.database.teams.set(teamId, {}) // use validator to remove teamCharId entries
     })
+
+    buildIds.forEach((buildId) => this.database.builds.remove(buildId))
+    buildTcIds.forEach((buildTcId) => this.database.buildTcs.remove(buildTcId))
     return rem
   }
   override clear(): void {

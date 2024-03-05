@@ -147,6 +147,12 @@ export class CharacterDataManager extends DataManager<
         ...weapon,
         location: '',
       })
+
+    this.database.teamChars.entries.forEach(([teamCharId, teamChar]) => {
+      if (teamChar.key !== key) return
+      this.database.teamChars.remove(teamCharId)
+    })
+
     return super.remove(key)
   }
 
