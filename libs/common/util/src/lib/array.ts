@@ -56,3 +56,8 @@ export function linspace(
   const step = (stop - start) / (inclusiveEnd ? num - 1 : num)
   return range(0, num - 1).map((i) => start + step * i)
 }
+
+/** Intended to use with array.filter function to type check against Array<TValue|undefined> -> Array<TValue> */
+export function notEmpty<T>(value: T | null | undefined): value is T {
+  return value !== null && value !== undefined
+}

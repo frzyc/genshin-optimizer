@@ -146,64 +146,70 @@ export function getTeamData(
   const team = database.teams.get(teamId)
   if (!team) return undefined
   const { teamCharIds, enemyOverride } = team
-  const teamBundleArr = teamCharIds.map((teamCharId) => {
-    const teamChar = database.teamChars.get(teamCharId)!
-    const {
-      key: characterKey,
-      buildType,
-      buildTcId,
-      infusionAura,
-      customMultiTargets,
-      conditional,
-      bonusStats,
-      hitMode,
-      reaction,
-    } = teamChar
-    const character = database.chars.get(characterKey)!
-    const { key, level, constellation, ascension, talent } = character
-    const isCurrentTeamChar = teamCharId === activeTeamCharId
-    const weapon = (() => {
-      if (overrideWeapon && isCurrentTeamChar) return overrideWeapon
-      return database.teamChars.getLoadoutWeapon(teamCharId)
-    })()
-    const arts = (() => {
-      if (overrideArt && isCurrentTeamChar) return overrideArt
-      if (buildType === 'tc' && buildTcId)
-        return getArtifactData(database.buildTcs.get(buildTcId)!)
-      return Object.values(
-        database.teamChars.getLoadoutArtifacts(teamCharId)
-      ).filter((a) => a) as ICachedArtifact[]
-    })()
-    const mainLevel = (() => {
-      if (mainStatAssumptionLevel && isCurrentTeamChar)
-        return mainStatAssumptionLevel
-      return 0
-    })()
-
-    return getCharDataBundle(
-      database,
-      isCurrentTeamChar, // only true for the "main character"?
-      mainLevel,
-      {
-        key,
-        level,
-        constellation,
-        ascension,
-        talent,
-
+  const teamBundleArr = teamCharIds
+    .map((teamCharId) => {
+      if (!teamCharId) return undefined
+      const teamChar = database.teamChars.get(teamCharId)
+      if (!teamChar) return undefined
+      const {
+        key: characterKey,
+        buildType,
+        buildTcId,
         infusionAura,
         customMultiTargets,
         conditional,
         bonusStats,
-
-        enemyOverride,
         hitMode,
         reaction,
-      },
-      weapon,
-      arts
-    )
-  })
+      } = teamChar
+      const character = database.chars.get(characterKey)
+      if (!character) return undefined
+      const { key, level, constellation, ascension, talent } = character
+      const isActiveTeamChar = teamCharId === activeTeamCharId
+      const weapon = (() => {
+        if (overrideWeapon && isActiveTeamChar) return overrideWeapon
+        return database.teamChars.getLoadoutWeapon(teamCharId)
+      })()
+      const arts = (() => {
+        if (overrideArt && isActiveTeamChar) return overrideArt
+        if (buildType === 'tc' && buildTcId)
+          return getArtifactData(database.buildTcs.get(buildTcId)!)
+        return Object.values(
+          database.teamChars.getLoadoutArtifacts(teamCharId)
+        ).filter((a) => a) as ICachedArtifact[]
+      })()
+      const mainLevel = (() => {
+        if (mainStatAssumptionLevel && isActiveTeamChar)
+          return mainStatAssumptionLevel
+        return 0
+      })()
+
+      return getCharDataBundle(
+        database,
+        isActiveTeamChar, // only true for the "main character"?
+        mainLevel,
+        {
+          key,
+          level,
+          constellation,
+          ascension,
+          talent,
+
+          infusionAura,
+          customMultiTargets,
+          conditional,
+          bonusStats,
+
+          enemyOverride,
+          hitMode,
+          reaction,
+        },
+        weapon,
+        arts
+      )
+    })
+    .filter((bundle) => bundle) as CharBundle[]
+
   const teamBundle = Object.fromEntries(
     (teamBundleArr.filter((b) => b) as CharBundle[]).map((bundle) => [
       bundle.character.key,

@@ -1,20 +1,19 @@
 import { useBoolState } from '@genshin-optimizer/common/react-util'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
-import {
-  BarChart,
-  Calculate,
-  FactCheck,
-  Groups,
-  Person,
-  Science,
-  TrendingUp,
-} from '@mui/icons-material'
+
+import BarChartIcon from '@mui/icons-material/BarChart'
+import CalculateIcon from '@mui/icons-material/Calculate'
+import FactCheckIcon from '@mui/icons-material/FactCheck'
+import GroupsIcon from '@mui/icons-material/Groups'
+import PersonIcon from '@mui/icons-material/Person'
+import ScienceIcon from '@mui/icons-material/Science'
+import TrendingUpIcon from '@mui/icons-material/TrendingUp'
+
 import { Box, Button, Skeleton, Tab, Tabs } from '@mui/material'
 import { Suspense, useContext } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Route, Link as RouterLink, Routes } from 'react-router-dom'
 import CardLight from '../../Components/Card/CardLight'
-import CloseButton from '../../Components/CloseButton'
 import {
   HitModeToggle,
   InfusionAuraDropdown,
@@ -24,9 +23,10 @@ import SqBadge from '../../Components/SqBadge'
 import { FormulaDataContext } from '../../Context/FormulaDataContext'
 import { TeamCharacterContext } from '../../Context/TeamCharacterContext'
 import { shouldShowDevComponents } from '../../Util/Util'
+import BuildEditorBtn from './Build/BuildEditorBtn'
 import { CustomMultiTargetButton } from './CustomMultiTarget'
 import FormulaModal from './FormulaModal'
-import BuildEditorBtn from './Build/BuildEditorBtn'
+import LoadoutSettingElement from './LoadoutSettingElement'
 import StatModal from './StatModal'
 import TabBuild from './Tabs/TabOptimize'
 import TabOverview from './Tabs/TabOverview'
@@ -35,28 +35,38 @@ import TabTeambuffs from './Tabs/TabTeambuffs'
 import TabTheorycraft from './Tabs/TabTheorycraft'
 import TabUpopt from './Tabs/TabUpgradeOpt'
 
-export default function Content({
-  tab,
-  onClose,
-}: {
-  tab: string
-  onClose?: () => void
-}) {
+export default function Content({ tab }: { tab: string }) {
   const {
     teamChar: { key: characterKey },
   } = useContext(TeamCharacterContext)
   return (
     <>
-      <Box display="flex">
-        <Box display="flex" gap={1} flexWrap="wrap" flexGrow={1}>
-          <BuildEditorBtn />
-          <DetailStatButton />
-          <CustomMultiTargetButton />
-          <FormulasButton />
-        </Box>
-        {!!onClose && <CloseButton onClick={onClose} />}
+      <Box
+        sx={{
+          display: 'flex',
+          gap: 1,
+          flexWrap: 'wrap',
+          '& button': {
+            flexGrow: 1,
+          },
+        }}
+      >
+        <LoadoutSettingElement />
+        <BuildEditorBtn />
+        <DetailStatButton />
+        <CustomMultiTargetButton />
+        <FormulasButton />
       </Box>
-      <Box display="flex" gap={1} flexWrap="wrap">
+      <Box
+        sx={{
+          display: 'flex',
+          gap: 1,
+          flexWrap: 'wrap',
+          '& button,.MuiToggleButtonGroup-root': {
+            flexGrow: 1,
+          },
+        }}
+      >
         <HitModeToggle size="small" />
         <InfusionAuraDropdown />
         <ReactionToggle size="small" />
@@ -129,7 +139,7 @@ function TabNav({
         <Tab
           value="overview"
           label={t('tabs.theorycraft')}
-          icon={<Science />}
+          icon={<ScienceIcon />}
           component={RouterLink}
           to={`${characterKey}/`}
         />
@@ -137,7 +147,7 @@ function TabNav({
         <Tab
           value="overview"
           label={t('tabs.overview')}
-          icon={<Person />}
+          icon={<PersonIcon />}
           component={RouterLink}
           to={`${characterKey}/`}
         />
@@ -145,14 +155,14 @@ function TabNav({
       <Tab
         value="talent"
         label={t('tabs.talent')}
-        icon={<FactCheck />}
+        icon={<FactCheckIcon />}
         component={RouterLink}
         to={`${characterKey}/talent`}
       />
       <Tab
         value="teambuffs"
         label={t('tabs.teambuffs')}
-        icon={<Groups />}
+        icon={<GroupsIcon />}
         component={RouterLink}
         to={`${characterKey}/teambuffs`}
       />
@@ -160,7 +170,7 @@ function TabNav({
         <Tab
           value="optimize"
           label={t('tabs.optimize')}
-          icon={<TrendingUp />}
+          icon={<TrendingUpIcon />}
           component={RouterLink}
           to={`${characterKey}/optimize`}
         />
@@ -170,7 +180,7 @@ function TabNav({
         <Tab
           value="upopt"
           label={t('tabs.upgradeopt')}
-          icon={<TrendingUp />}
+          icon={<TrendingUpIcon />}
           component={RouterLink}
           to={`${characterKey}/upopt`}
         />
@@ -188,7 +198,7 @@ function DetailStatButton() {
   const bStatsNum = Object.keys(bonusStats).length
   return (
     <>
-      <Button color="info" startIcon={<BarChart />} onClick={onOpen}>
+      <Button color="info" startIcon={<BarChartIcon />} onClick={onOpen}>
         {t`addStats.title`}
         {!!bStatsNum && (
           <SqBadge sx={{ ml: 1 }} color="success">
@@ -204,7 +214,7 @@ function FormulasButton() {
   const { onModalOpen } = useContext(FormulaDataContext)
   return (
     <>
-      <Button color="info" startIcon={<Calculate />} onClick={onModalOpen}>
+      <Button color="info" startIcon={<CalculateIcon />} onClick={onModalOpen}>
         Formulas {'&'} Calcs
       </Button>
       <FormulaModal />

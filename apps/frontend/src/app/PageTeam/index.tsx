@@ -46,6 +46,7 @@ import { shouldShowDevComponents } from '../Util/Util'
 import Content from './CharacterDisplay/Content'
 import TeamCharacterSelector from './TeamCharacterSelector'
 import TeamSettingElement from './TeamSettingElement'
+import { EnemyEditorElement } from './EnemyEditorElement'
 
 export default function PageTeam() {
   const navigate = useNavigate()
@@ -109,7 +110,7 @@ function Page({ teamId, onClose }: { teamId: string; onClose?: () => void }) {
     return { characterKey, teamCharId }
   }, [teamCharIds, characterKeyRaw, database])
 
-  const teamChar = useTeamChar(teamCharId)
+  const teamChar = useTeamChar(teamCharId ?? '')
 
   // validate tab value
   const tab = useMemo(() => {
@@ -161,14 +162,17 @@ function Page({ teamId, onClose }: { teamId: string; onClose?: () => void }) {
     <CardThemed>
       <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
         <Box sx={{ display: 'flex', gap: 1 }}>
-          <Box flexGrow={1}>
-            <TeamSettingElement teamId={teamId} />
-          </Box>
-          <CloseButton onClick={onClose} />
+          <TeamSettingElement teamId={teamId} />
+          <EnemyEditorElement teamId={teamId} />
+          <CloseButton sx={{ ml: 'auto' }} onClick={onClose} />
         </Box>
 
-        <TeamCharacterSelector />
-        {characterKey && team && teamChar && (
+        <TeamCharacterSelector
+          teamId={teamId}
+          characterKey={characterKey}
+          tab={tab}
+        />
+        {characterKey && team && teamChar && teamCharId && (
           <PageContent
             characterKey={characterKey}
             teamCharId={teamCharId}

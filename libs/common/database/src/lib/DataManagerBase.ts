@@ -62,6 +62,9 @@ export class DataManagerBase<
   get values() {
     return Object.values(this.data) as CacheValue[]
   }
+  get entries() {
+    return Object.entries(this.data) as Array<[CacheKey, CacheValue]>
+  }
   get(key: CacheKey | '' | undefined): CacheValue | undefined {
     return key ? this.data[key] : undefined
   }

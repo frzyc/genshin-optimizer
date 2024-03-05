@@ -36,12 +36,6 @@ export default function TeamCard({
   const { name, description, teamCharIds } = team
   const database = useDatabase()
   const onDel = () => {
-    if (
-      !window.confirm(
-        `Do you want to remove this team? This will delete all loadouts and data (such as multi-opts) in this team as well.`
-      )
-    )
-      return
     database.teams.remove(teamId)
   }
   const onExport = () => {
