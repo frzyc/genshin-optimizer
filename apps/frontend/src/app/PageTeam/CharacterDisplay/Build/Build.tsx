@@ -25,7 +25,6 @@ import {
   Box,
   Button,
   Card,
-  CardActionArea,
   CardContent,
   CardHeader,
   Checkbox,
