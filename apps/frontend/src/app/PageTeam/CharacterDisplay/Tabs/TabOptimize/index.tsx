@@ -1,9 +1,13 @@
 import {
   useBoolState,
   useForceUpdate,
-  useMediaQueryUp,
 } from '@genshin-optimizer/common/react-util'
-import { CardThemed, ModalWrapper } from '@genshin-optimizer/common/ui'
+import {
+  BootstrapTooltip,
+  CardThemed,
+  DropdownButton,
+  ModalWrapper,
+} from '@genshin-optimizer/common/ui'
 import {
   notEmpty,
   objKeyMap,
@@ -24,10 +28,9 @@ import {
 } from '@genshin-optimizer/gi/db-ui'
 import { getCharData } from '@genshin-optimizer/gi/stats'
 import {
-  CheckBox,
-  CheckBoxOutlineBlank,
   Close,
   DeleteForever,
+  ExpandMore,
   Science,
   TrendingUp,
 } from '@mui/icons-material'
@@ -35,6 +38,9 @@ import CheckroomIcon from '@mui/icons-material/Checkroom'
 import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive'
 import NotificationsOffIcon from '@mui/icons-material/NotificationsOff'
 import {
+  Accordion,
+  AccordionDetails,
+  AccordionSummary,
   Box,
   Button,
   ButtonGroup,
@@ -58,9 +64,6 @@ import React, {
   useState,
 } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
-import ArtifactLevelSlider from '../../../../Components/Artifact/ArtifactLevelSlider'
-import BootstrapTooltip from '../../../../Components/BootstrapTooltip'
-import CardLight from '../../../../Components/Card/CardLight'
 import { CharacterCardEquipmentRow } from '../../../../Components/Character/CharacterCard/CharacterCardEquipmentRow'
 import {
   CharacterCardHeader,
@@ -68,14 +71,12 @@ import {
 } from '../../../../Components/Character/CharacterCard/CharacterCardHeader'
 import { CharacterCardStats } from '../../../../Components/Character/CharacterCard/CharacterCardStats'
 import CloseButton from '../../../../Components/CloseButton'
-import DropdownButton from '../../../../Components/DropdownMenu/DropdownButton'
 import {
   HitModeToggle,
   ReactionToggle,
 } from '../../../../Components/HitModeEditor'
 import InfoTooltip from '../../../../Components/InfoTooltip'
 import NoArtWarning from '../../../../Components/NoArtWarning'
-import SqBadge from '../../../../Components/SqBadge'
 import { CharacterContext } from '../../../../Context/CharacterContext'
 import { DataContext } from '../../../../Context/DataContext'
 import { GraphContext } from '../../../../Context/GraphContext'
@@ -90,21 +91,16 @@ import useTeamData, { getTeamData } from '../../../../ReactHooks/useTeamData'
 import type { OptProblemInput } from '../../../../Solver'
 import { GOSolver } from '../../../../Solver/GOSolver/GOSolver'
 import { mergeBuilds, mergePlot } from '../../../../Solver/common'
-import { bulkCatTotal } from '../../../../Util/totalUtils'
 import useOldData from '../../../useOldData'
 import CompareBtn from '../../CompareBtn'
-import AllowChar from './Components/OptimizationFilters/AllowChar'
-import ArtifactSetConfig from './Components/OptimizationFilters/ArtifactSetConfig'
-import AssumeFullLevelToggle from './Components/OptimizationFilters/AssumeFullLevelToggle'
 import BonusStatsCard from './Components/BonusStatsCard'
 import type { BuildStatus } from './Components/BuildAlert'
 import BuildAlert from './Components/BuildAlert'
 import BuildDisplayItem from './Components/BuildDisplayItem'
 import ChartCard from './Components/ChartCard'
-import ExcludeArt from './Components/OptimizationFilters/ExcludeArt'
-import MainStatSelectionCard from './Components/OptimizationFilters/MainStatSelectionCard'
-import OptimizationTargetSelector from './Components/OptimizationTargetSelector'
+import OptimizationFilters from './Components/OptimizationFilters/OptimizationFilters'
 import StatFilterCard from './Components/OptimizationFilters/StatFilterCard'
+import OptimizationTargetSelector from './Components/OptimizationTargetSelector'
 import { compactArtifacts, dynamicData } from './foreground'
 
 const audio = new Audio('assets/notification.mp3')
@@ -172,19 +168,14 @@ export default function TabBuild() {
     plotBase,
     optimizationTarget,
     mainStatAssumptionLevel,
-    allowPartial,
     maxBuildsToShow,
-    levelLow,
-    levelHigh,
     builds,
     buildDate,
-    useTeammateBuild,
   } = buildSetting
   const { data } = useContext(DataContext)
   const oldData = useOldData()
   const optimizationTargetNode =
     optimizationTarget && objPathValue(data?.getDisplay(), optimizationTarget)
-  const isSM = ['xs', 'sm'].includes(useMediaQueryUp())
 
   //register changes in artifact database
   useEffect(
@@ -250,60 +241,6 @@ export default function TabBuild() {
     deferredBuildSetting,
     team.teamCharIds,
     teamCharId,
-  ])
-
-  const filteredArtIdMap = useMemo(
-    () =>
-      objKeyMap(
-        filteredArts.map(({ id }) => id),
-        (_) => true
-      ),
-    [filteredArts]
-  )
-  const { levelTotal, allowListTotal, excludedTotal } = useMemo(() => {
-    const catKeys = {
-      levelTotal: ['in'],
-      allowListTotal: ['in'],
-      excludedTotal: ['in'],
-    } as const
-    return bulkCatTotal(catKeys, (ctMap) =>
-      Object.entries(database.arts.data).forEach(([id, art]) => {
-        const { level, location } = art
-        const {
-          levelLow,
-          levelHigh,
-          excludedLocations,
-          allowLocationsState,
-          artExclusion,
-        } = deferredArtsDirty && deferredBuildSetting
-        if (level >= levelLow && level <= levelHigh) {
-          ctMap.levelTotal.in.total++
-          if (filteredArtIdMap[id]) ctMap.levelTotal.in.current++
-        }
-        const locKey = charKeyToLocCharKey(characterKey)
-        const allStateAndEquippedSomewhereElse =
-          allowLocationsState === 'all' && location && location !== locKey
-        const customListStateAndNotOnList =
-          allowLocationsState === 'customList' &&
-          location &&
-          location !== locKey &&
-          !excludedLocations.includes(location)
-        if (allStateAndEquippedSomewhereElse || customListStateAndNotOnList) {
-          ctMap.allowListTotal.in.total++
-          if (filteredArtIdMap[id]) ctMap.allowListTotal.in.current++
-        }
-        if (artExclusion.includes(id)) {
-          ctMap.excludedTotal.in.total++
-          if (filteredArtIdMap[id]) ctMap.excludedTotal.in.current++
-        }
-      })
-    )
-  }, [
-    characterKey,
-    database.arts.data,
-    deferredArtsDirty,
-    deferredBuildSetting,
-    filteredArtIdMap,
   ])
 
   const tabFocused = useRef(true)
@@ -536,16 +473,6 @@ export default function TabBuild() {
     [database, optConfigId, setChartData]
   )
 
-  const targetSelector = (
-    <OptimizationTargetSelector
-      optimizationTarget={optimizationTarget}
-      setTarget={(target) =>
-        database.optConfigs.set(optConfigId, { optimizationTarget: target })
-      }
-      disabled={!!generatingBuilds}
-    />
-  )
-
   const getGraphBuildLabel = useCallback(
     (index: number) => (
       <Trans t={t} i18nKey="graphBuildLabel" count={index + 1}>
@@ -555,6 +482,7 @@ export default function TabBuild() {
     [t]
   )
   const getNormBuildLabel = useCallback((index: number) => `#${index + 1}`, [])
+
   return (
     <Box display="flex" flexDirection="column" gap={1}>
       {noArtifact && <NoArtWarning />}
@@ -609,242 +537,154 @@ export default function TabBuild() {
           flexDirection="column"
           gap={1}
         >
-          {/* Level Filter */}
-          <CardLight>
-            <CardContent sx={{ display: 'flex', gap: 1 }}>
-              <Typography
-                sx={{ fontWeight: 'bold' }}
-              >{t`levelFilter`}</Typography>
-              <SqBadge color="info">{levelTotal.in}</SqBadge>
-            </CardContent>
-            <Divider />
-            <CardContent>
-              <ArtifactLevelSlider
-                levelLow={levelLow}
-                levelHigh={levelHigh}
-                setLow={(levelLow) =>
-                  database.optConfigs.set(optConfigId, { levelLow })
-                }
-                setHigh={(levelHigh) =>
-                  database.optConfigs.set(optConfigId, { levelHigh })
-                }
-                setBoth={(levelLow, levelHigh) =>
-                  database.optConfigs.set(optConfigId, {
-                    levelLow,
-                    levelHigh,
-                  })
-                }
-                disabled={generatingBuilds}
-              />
-            </CardContent>
-          </CardLight>
-
-          {/* Main Stat Filters */}
-          <CardLight>
-            <CardContent>
-              <Typography
-                sx={{ fontWeight: 'bold' }}
-              >{t`mainStat.title`}</Typography>
-            </CardContent>
-            <Divider />
-            <CardContent>
-              <Box display="flex" alignItems="center" gap={1}>
-                <AssumeFullLevelToggle
-                  mainStatAssumptionLevel={mainStatAssumptionLevel}
-                  setmainStatAssumptionLevel={(
-                    mainStatAssumptionLevel: number
-                  ) =>
-                    database.optConfigs.set(optConfigId, {
-                      mainStatAssumptionLevel,
-                    })
-                  }
-                  disabled={generatingBuilds}
-                />
-                <InfoTooltip
-                  title={
-                    <Box>
-                      <Typography variant="h6">{t`mainStat.levelAssTooltip.title`}</Typography>
-                      <Typography>{t`mainStat.levelAssTooltip.desc`}</Typography>
-                    </Box>
-                  }
-                />
-              </Box>
-            </CardContent>
-            {/* main stat selector */}
-            <MainStatSelectionCard
-              disabled={generatingBuilds}
-              filteredArtIdMap={filteredArtIdMap}
-            />
-          </CardLight>
+          <OptimizationFilters disabled={generatingBuilds} />
+          {/* Minimum Final Stat Filter */}
+          <StatFilterCard disabled={generatingBuilds} />
         </Grid>
 
         {/* 3 */}
-        <Grid
-          item
-          xs={12}
-          sm={6}
-          lg={5}
-          display="flex"
-          flexDirection="column"
-          gap={1}
-        >
-          <ArtifactSetConfig disabled={generatingBuilds} />
-
-          {/* use excluded */}
-          <ExcludeArt
-            disabled={generatingBuilds}
-            excludedTotal={excludedTotal.in}
-          />
-
-          <Button
-            fullWidth
-            startIcon={
-              useTeammateBuild ? <CheckBox /> : <CheckBoxOutlineBlank />
-            }
-            color={useTeammateBuild ? 'success' : 'secondary'}
-            onClick={() => {
+        <Grid item xs={12} sm={6} lg={5} display="flex" flexDirection="column">
+          <OptimizationTargetSelector
+            optimizationTarget={optimizationTarget}
+            setTarget={(target) =>
               database.optConfigs.set(optConfigId, {
-                useTeammateBuild: !useTeammateBuild,
+                optimizationTarget: target,
               })
+            }
+            disabled={!!generatingBuilds}
+            buttonSx={{
+              borderRadius: '4px 4px 0px 0px',
+              maxHeight: '5em',
             }}
-            disabled={generatingBuilds}
-          >
-            {/* TODO: Translation */}
-            Use artifacts in teammates' builds
-          </Button>
-          <Button
-            fullWidth
-            startIcon={allowPartial ? <CheckBox /> : <CheckBoxOutlineBlank />}
-            color={allowPartial ? 'success' : 'secondary'}
-            onClick={() =>
-              database.optConfigs.set(optConfigId, {
-                allowPartial: !allowPartial,
-              })
-            }
-            disabled={generatingBuilds}
-          >
-            {t`allowPartial`}
-          </Button>
-
-          {/* use equipped */}
-          <AllowChar
-            disabled={generatingBuilds}
-            allowListTotal={allowListTotal.in}
           />
-
-          {/*Minimum Final Stat Filter */}
-          <StatFilterCard disabled={generatingBuilds} />
+          <ButtonGroup>
+            <DropdownButton
+              disabled={generatingBuilds || !characterKey}
+              sx={{ borderRadius: 0 }}
+              fullWidth
+              title={
+                <Trans t={t} i18nKey="build" count={maxBuildsToShow}>
+                  {{ count: maxBuildsToShow }} Builds
+                </Trans>
+              }
+            >
+              <MenuItem>
+                <Typography variant="caption" color="info.main">
+                  {t('buildDropdownDesc')}
+                </Typography>
+              </MenuItem>
+              <Divider />
+              {maxBuildsToShowList.map((v) => (
+                <MenuItem
+                  key={v}
+                  onClick={() =>
+                    database.optConfigs.set(optConfigId, { maxBuildsToShow: v })
+                  }
+                >
+                  <Trans t={t} i18nKey="build" count={v}>
+                    {{ count: v }} Builds
+                  </Trans>
+                </MenuItem>
+              ))}
+            </DropdownButton>
+            <DropdownButton
+              disabled={generatingBuilds || !characterKey}
+              sx={{ borderRadius: 0 }}
+              fullWidth
+              title={
+                <Trans t={t} i18nKey="thread" count={maxWorkers}>
+                  {{ count: maxWorkers }} Threads
+                </Trans>
+              }
+            >
+              <MenuItem>
+                <Typography variant="caption" color="info.main">
+                  {t('threadDropdownDesc')}
+                </Typography>
+              </MenuItem>
+              <Divider />
+              {range(1, defThreads)
+                .reverse()
+                .map((v) => (
+                  <MenuItem key={v} onClick={() => setMaxWorkers(v)}>
+                    <Trans t={t} i18nKey="thread" count={v}>
+                      {{ count: v }} Threads
+                    </Trans>
+                  </MenuItem>
+                ))}
+            </DropdownButton>
+            <BootstrapTooltip placement="top" title={t`notifyTooltip`}>
+              <Button
+                sx={{ borderRadius: 0 }}
+                color="warning"
+                onClick={() => setnotification((n) => !n)}
+              >
+                {notification ? (
+                  <NotificationsActiveIcon />
+                ) : (
+                  <NotificationsOffIcon />
+                )}
+              </Button>
+            </BootstrapTooltip>
+          </ButtonGroup>
+          <BootstrapTooltip
+            placement="top"
+            title={
+              !optimizationTargetNode || optimizationTargetNode.isEmpty
+                ? t('selectTargetFirst')
+                : ''
+            }
+          >
+            <Box display="flex" flexGrow={1} maxHeight="5em">
+              <Button
+                disabled={
+                  !characterKey ||
+                  !optimizationTarget ||
+                  !optimizationTargetNode ||
+                  optimizationTargetNode.isEmpty
+                }
+                color={generatingBuilds ? 'error' : 'success'}
+                onClick={
+                  generatingBuilds
+                    ? () => cancelToken.current()
+                    : generateBuilds
+                }
+                startIcon={generatingBuilds ? <Close /> : <TrendingUp />}
+                sx={{ borderRadius: '0px 0px 4px 4px' }}
+                fullWidth
+              >
+                {generatingBuilds
+                  ? t('generateButton.cancel')
+                  : t('generateButton.generateBuilds')}
+              </Button>
+            </Box>
+          </BootstrapTooltip>
         </Grid>
       </Grid>
       {/* Footer */}
-      {isSM && targetSelector}
-      <ButtonGroup>
-        {!isSM && targetSelector}
-        <DropdownButton
-          disabled={generatingBuilds || !characterKey}
-          title={
-            <Trans t={t} i18nKey="build" count={maxBuildsToShow}>
-              {{ count: maxBuildsToShow }} Builds
-            </Trans>
-          }
-        >
-          <MenuItem>
-            <Typography variant="caption" color="info.main">
-              {t('buildDropdownDesc')}
-            </Typography>
-          </MenuItem>
-          <Divider />
-          {maxBuildsToShowList.map((v) => (
-            <MenuItem
-              key={v}
-              onClick={() =>
-                database.optConfigs.set(optConfigId, { maxBuildsToShow: v })
-              }
-            >
-              <Trans t={t} i18nKey="build" count={v}>
-                {{ count: v }} Builds
-              </Trans>
-            </MenuItem>
-          ))}
-        </DropdownButton>
-        <DropdownButton
-          disabled={generatingBuilds || !characterKey}
-          sx={{ borderRadius: '4px 0px 0px 4px' }}
-          title={
-            <Trans t={t} i18nKey="thread" count={maxWorkers}>
-              {{ count: maxWorkers }} Threads
-            </Trans>
-          }
-        >
-          <MenuItem>
-            <Typography variant="caption" color="info.main">
-              {t('threadDropdownDesc')}
-            </Typography>
-          </MenuItem>
-          <Divider />
-          {range(1, defThreads)
-            .reverse()
-            .map((v) => (
-              <MenuItem key={v} onClick={() => setMaxWorkers(v)}>
-                <Trans t={t} i18nKey="thread" count={v}>
-                  {{ count: v }} Threads
-                </Trans>
-              </MenuItem>
-            ))}
-        </DropdownButton>
-        <BootstrapTooltip placement="top" title={t`notifyTooltip`}>
-          <Button
-            sx={{ borderRadius: 0 }}
-            color="warning"
-            onClick={() => setnotification((n) => !n)}
-          >
-            {notification ? (
-              <NotificationsActiveIcon />
-            ) : (
-              <NotificationsOffIcon />
-            )}
-          </Button>
-        </BootstrapTooltip>
-        <BootstrapTooltip
-          placement="top"
-          title={!optimizationTarget ? t('selectTargetFirst') : ''}
-        >
-          <span>
-            <Button
-              disabled={
-                !characterKey ||
-                !optimizationTarget ||
-                !optimizationTargetNode ||
-                optimizationTargetNode.isEmpty
-              }
-              color={generatingBuilds ? 'error' : 'success'}
-              onClick={
-                generatingBuilds ? () => cancelToken.current() : generateBuilds
-              }
-              startIcon={generatingBuilds ? <Close /> : <TrendingUp />}
-              sx={{ borderRadius: '0px 4px 4px 0px' }}
-            >
-              {generatingBuilds
-                ? t('generateButton.cancel')
-                : t('generateButton.generateBuilds')}
-            </Button>
-          </span>
-        </BootstrapTooltip>
-      </ButtonGroup>
       {!!characterKey && (
         <BuildAlert
           {...{ status: buildStatus, characterName, maxBuildsToShow }}
         />
       )}
-      <Box>
-        <ChartCard
-          disabled={generatingBuilds || !optimizationTarget}
-          plotBase={plotBase}
-          setPlotBase={setPlotBase}
-          showTooltip={!optimizationTarget}
-        />
-      </Box>
-      <CardLight>
+      <Accordion sx={(theme) => ({ bgcolor: theme.palette.contentLight.main })}>
+        <AccordionSummary expandIcon={<ExpandMore />}>
+          {t('tcGraph.summary')}
+          <InfoTooltip
+            placement="top"
+            title={t('page_character_optimize:tcGraph.desc')}
+          />
+        </AccordionSummary>
+        <AccordionDetails>
+          <ChartCard
+            disabled={generatingBuilds || !optimizationTarget}
+            plotBase={plotBase}
+            setPlotBase={setPlotBase}
+            showTooltip={!optimizationTarget}
+          />
+        </AccordionDetails>
+      </Accordion>
+      <CardThemed bgt="light">
         <CardContent>
           <Box display="flex" alignItems="center" gap={1} mb={1}>
             <Typography sx={{ flexGrow: 1 }}>
@@ -893,7 +733,7 @@ export default function TabBuild() {
             </Grid>
           </Grid>
         </CardContent>
-      </CardLight>
+      </CardThemed>
 
       <OptimizationTargetContext.Provider value={optimizationTarget}>
         {graphBuilds && (
