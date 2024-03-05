@@ -39,10 +39,6 @@ import {
   XAxis,
   YAxis,
 } from 'recharts'
-import BootstrapTooltip from '../../../../../../Components/BootstrapTooltip'
-import CardDark from '../../../../../../Components/Card/CardDark'
-import CardLight from '../../../../../../Components/Card/CardLight'
-import InfoTooltip from '../../../../../../Components/InfoTooltip'
 import { DataContext } from '../../../../../../Context/DataContext'
 import { GraphContext } from '../../../../../../Context/GraphContext'
 import { TeamCharacterContext } from '../../../../../../Context/TeamCharacterContext'
