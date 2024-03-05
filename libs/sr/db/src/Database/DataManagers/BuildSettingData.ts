@@ -190,7 +190,7 @@ const initialBuildSettings: BuildSetting = deepFreeze({
   optimizationTarget: undefined,
   mainStatAssumptionLevel: 0,
   excludedLocations: [],
-  allowLocationsState: 'customList',
+  allowLocationsState: 'unequippedOnly',
   allowPartial: false,
   maxBuildsToShow: 5,
   plotBase: undefined,
