@@ -204,10 +204,10 @@ export default function TabBuild() {
     const artifactIds = Array.from(
       new Set(
         team.teamCharIds
-          .filter((id) => id !== teamCharId)
-          .map((id) => database.teamChars.getLoadoutArtifacts(id))
-          .flatMap((artSet) => Object.values(artSet))
-          .filter((id) => !!id)
+          .filter((tcId) => tcId !== teamCharId)
+          .map((tcId) => database.teamChars.getLoadoutArtifacts(tcId))
+          .flatMap((arts) => Object.values(arts))
+          .filter((arts) => !!arts)
           .map(({ id }) => id)
       )
     )
