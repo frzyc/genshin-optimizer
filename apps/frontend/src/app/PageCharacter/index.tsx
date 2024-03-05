@@ -12,18 +12,15 @@ import {
   allCharacterRarityKeys,
   allElementKeys,
   allWeaponTypeKeys,
-  charKeyToLocGenderedCharKey,
   isCharacterKey,
 } from '@genshin-optimizer/gi/consts'
-import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
+import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { SillyContext } from '@genshin-optimizer/gi/ui'
-import { DeleteForever } from '@mui/icons-material'
 import AddIcon from '@mui/icons-material/Add'
 import {
   Box,
   Button,
   CardContent,
-  Divider,
   Grid,
   Skeleton,
   TextField,
@@ -60,7 +57,7 @@ import {
 } from '../Util/CharacterSort'
 import { catTotal } from '../Util/totalUtils'
 const columns = { xs: 1, sm: 2, md: 3, lg: 4, xl: 4 }
-const numToShowMap = { xs: 6, sm: 8, md: 12, lg: 16, xl: 16 }
+const numToShowMap = { xs: 10, sm: 16, md: 24, lg: 32, xl: 32 }
 const sortKeys = Object.keys(characterSortMap)
 
 export default function PageCharacter() {
@@ -125,24 +122,6 @@ export default function PageCharacter() {
   useEffect(
     () => database.charMeta.followAny((_s) => forceUpdate()),
     [forceUpdate, database]
-  )
-
-  const { gender } = useDBMeta()
-  const deleteCharacter = useCallback(
-    async (cKey: CharacterKey) => {
-      let name = getCharSheet(cKey, gender).name
-      // Use translated string
-      if (typeof name === 'object')
-        name = t(
-          `${
-            silly ? 'sillyWisher_charNames' : 'charNames_gen'
-          }:${charKeyToLocGenderedCharKey(cKey, gender)}`
-        )
-
-      if (!window.confirm(t('removeCharacter', { value: name }))) return
-      database.chars.remove(cKey)
-    },
-    [database.chars, gender, silly, t]
   )
 
   const editCharacter = useCharSelectionCallback()
@@ -359,29 +338,7 @@ export default function PageCharacter() {
               <CharacterCard
                 characterKey={charKey}
                 onClick={() => navigate(`${charKey}`)}
-                footer={
-                  <>
-                    <Divider />
-                    <Box
-                      sx={{
-                        py: 1,
-                        px: 2,
-                        display: 'flex',
-                        gap: 1,
-                        justifyContent: 'space-between',
-                      }}
-                    >
-                      <Button
-                        fullWidth
-                        color="error"
-                        onClick={() => deleteCharacter(charKey)}
-                        startIcon={<DeleteForever />}
-                      >
-                        {t('delete')}
-                      </Button>
-                    </Box>
-                  </>
-                }
+                hideStats
               />
             </Grid>
           ))}
