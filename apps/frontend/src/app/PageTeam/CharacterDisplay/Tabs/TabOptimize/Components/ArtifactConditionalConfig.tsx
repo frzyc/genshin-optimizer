@@ -12,6 +12,8 @@ import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { Translate } from '@genshin-optimizer/gi/ui'
 import { Replay, Settings, StarRounded } from '@mui/icons-material'
 import {
+  Alert,
+  AlertTitle,
   Box,
   Button,
   CardContent,
@@ -22,6 +24,7 @@ import {
 import { useCallback, useContext, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import SetEffectDisplay from '../../../../../Components/Artifact/SetEffectDisplay'
+import CloseButton from '../../../../../Components/CloseButton'
 import type { dataContextObj } from '../../../../../Context/DataContext'
 import { DataContext } from '../../../../../Context/DataContext'
 import { TeamCharacterContext } from '../../../../../Context/TeamCharacterContext'
@@ -114,34 +117,34 @@ export default function ArtifactConditionalConfig({
 
       <ModalWrapper open={show} onClose={onClose}>
         <CardThemed bgt="dark">
-          <CardContent
-            sx={{ display: 'flex', gap: 1, justifyContent: 'space-between' }}
-          >
+          {/* Header */}
+          <CardContent sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
             <Typography variant="h6">{t`artSetConfig.title`}</Typography>
+            <Typography>
+              <SqBadge color={artifactCondCount ? 'success' : 'warning'}>
+                {artifactCondCount} {t('artSetConfig.selected')}
+              </SqBadge>
+            </Typography>
+            <Button
+              size="small"
+              onClick={resetArtConds}
+              color="error"
+              startIcon={<Replay />}
+            >{t`artSetConfig.modal.setCond.reset`}</Button>
+
+            <Box flexGrow={1} />
+
+            <CloseButton onClick={onClose} />
           </CardContent>
+
           <Divider />
+
+          {/* Main content */}
           <CardContent>
-            <CardThemed bgt="light" sx={{ mb: 1 }}>
-              <CardContent>
-                <Box display="flex" gap={1}>
-                  <Typography>
-                    <strong>{t`artSetConfig.modal.setCond.title`}</strong>
-                  </Typography>
-                  <Typography sx={{ flexGrow: 1 }}>
-                    <SqBadge color={artifactCondCount ? 'success' : 'warning'}>
-                      {artifactCondCount} {t('artSetConfig.selected')}
-                    </SqBadge>
-                  </Typography>
-                  <Button
-                    size="small"
-                    onClick={resetArtConds}
-                    color="error"
-                    startIcon={<Replay />}
-                  >{t`artSetConfig.modal.setCond.reset`}</Button>
-                </Box>
-                <Typography>{t`artSetConfig.modal.setCond.text`}</Typography>
-              </CardContent>
-            </CardThemed>
+            <Alert variant="filled" severity="info" sx={{ mb: 2 }}>
+              <AlertTitle>{t`artSetConfig.modal.setCond.title`}</AlertTitle>
+              <Typography>{t`artSetConfig.modal.setCond.text`}</Typography>
+            </Alert>
 
             <Grid container spacing={1} columns={{ xs: 3, lg: 4 }}>
               {artSheetsWithCond
