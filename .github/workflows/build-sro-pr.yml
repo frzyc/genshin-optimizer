@@ -2,7 +2,6 @@ name: Build SRO PR
 run-name: Build SRO for ${{ github.event.number }} - ${{ github.event.pull_request.title }}
 
 permissions:
-  actions: read
   contents: read
 
 on:
