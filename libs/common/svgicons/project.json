@@ -6,7 +6,6 @@
   "tags": [],
   "targets": {
     "lint": {},
-    "build": {},
-    "build-vite": {}
+    "build": {}
   }
 }

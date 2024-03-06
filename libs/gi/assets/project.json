@@ -10,7 +10,6 @@
       "outputs": ["{workspaceRoot}/${projectRoot}/src/gen/**/*"]
     },
     "lint": {},
-    "build": {},
-    "build-vite": {}
+    "build": {}
   }
 }
