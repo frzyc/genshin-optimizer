@@ -48,8 +48,8 @@ import { getCharSheet } from '../../../../../Data/Characters'
 import { uiInput as input } from '../../../../../Formula'
 import ArtifactCard from '../../../../../PageArtifact/ArtifactCard'
 import WeaponCard from '../../../../../PageWeapon/WeaponCard'
+import SetInclusionButton from './ArtifactFilters/SetInclusionButton'
 import { ArtifactSetBadges } from './ArtifactSetBadges'
-import SetInclusionButton from './OptimizationFilters/SetInclusionButton'
 
 type NewOld = {
   newId: string

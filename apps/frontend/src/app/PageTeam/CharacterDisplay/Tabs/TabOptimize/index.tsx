@@ -94,13 +94,13 @@ import { mergeBuilds, mergePlot } from '../../../../Solver/common'
 import useOldData from '../../../useOldData'
 import CompareBtn from '../../CompareBtn'
 import ArtifactConditionalConfig from './Components/ArtifactConditionalConfig'
+import ArtifactFilters from './Components/ArtifactFilters/ArtifactFilters'
+import StatFilterCard from './Components/ArtifactFilters/StatFilterCard'
 import BonusStatsCard from './Components/BonusStatsCard'
 import type { BuildStatus } from './Components/BuildAlert'
 import BuildAlert from './Components/BuildAlert'
 import BuildDisplayItem from './Components/BuildDisplayItem'
 import ChartCard from './Components/ChartCard'
-import OptimizationFilters from './Components/OptimizationFilters/OptimizationFilters'
-import StatFilterCard from './Components/OptimizationFilters/StatFilterCard'
 import OptimizationTargetSelector from './Components/OptimizationTargetSelector'
 import { compactArtifacts, dynamicData } from './foreground'
 
@@ -539,7 +539,7 @@ export default function TabBuild() {
           gap={1}
         >
           <ArtifactConditionalConfig disabled={generatingBuilds} />
-          <OptimizationFilters disabled={generatingBuilds} />
+          <ArtifactFilters disabled={generatingBuilds} />
           {/* Minimum Final Stat Filter */}
           <StatFilterCard disabled={generatingBuilds} />
         </Grid>

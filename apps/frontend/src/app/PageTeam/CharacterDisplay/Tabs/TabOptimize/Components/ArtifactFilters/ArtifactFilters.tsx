@@ -22,7 +22,6 @@ import {
   Box,
   Button,
   CardContent,
-  CardHeader,
   Divider,
   Grid,
   Stack,
@@ -31,6 +30,7 @@ import {
 import { useContext, useDeferredValue, useEffect, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import ArtifactLevelSlider from '../../../../../../Components/Artifact/ArtifactLevelSlider'
+import CloseButton from '../../../../../../Components/CloseButton'
 import { TeamCharacterContext } from '../../../../../../Context/TeamCharacterContext'
 import { bulkCatTotal } from '../../../../../../Util/totalUtils'
 import AllowChar from './AllowChar'
@@ -39,11 +39,7 @@ import AssumeFullLevelToggle from './AssumeFullLevelToggle'
 import ExcludeArt from './ExcludeArt'
 import MainStatSelectionCard from './MainStatSelectionCard'
 
-export default function OptimizationFilters({
-  disabled,
-}: {
-  disabled?: boolean
-}) {
+export default function ArtifactFilters({ disabled }: { disabled?: boolean }) {
   const { t } = useTranslation('page_character_optimize')
   const [show, onShow, onClose] = useBoolState(false)
 
@@ -164,7 +160,7 @@ export default function OptimizationFilters({
       <CardThemed bgt="light" sx={{ display: 'flex', width: '100%' }}>
         <CardContent sx={{ flexGrow: 1 }}>
           <Typography>
-            <strong>{t`optFilters.title`}</strong>
+            <strong>{t`artFilters.title`}</strong>
           </Typography>
           <Stack spacing={1}>
             <Typography>
@@ -188,7 +184,17 @@ export default function OptimizationFilters({
 
       <ModalWrapper open={show} onClose={onClose}>
         <CardThemed bgt="dark">
-          <CardHeader title={t('optFilters.title')} />
+          <CardContent sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
+            <Typography variant="h6">{t('artFilters.title')}</Typography>
+            <SqBadge color="success">
+              {total.in}
+              <ShowChart {...iconInlineProps} /> {t`artSetConfig.allowed`}
+            </SqBadge>
+
+            <Box flexGrow={1} />
+
+            <CloseButton onClick={onClose} />
+          </CardContent>
           <Divider />
           <CardContent>
             <Grid container spacing={1} columns={12}>

@@ -119,7 +119,7 @@
   "graphBuildLabel": "Graph #<1>{{count}}</1>",
   "buildCompleted": "Build Completed",
   "notifyTooltip": "Play a sound when builds finish generating. Will also show an alarm prompt when tabbed out.",
-  "optFilters": {
-    "title": "Optimization Filters"
+  "artFilters": {
+    "title": "Artifact Filters"
   }
 }

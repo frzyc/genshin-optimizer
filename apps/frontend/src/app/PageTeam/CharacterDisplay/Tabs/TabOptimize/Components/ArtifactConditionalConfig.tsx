@@ -265,6 +265,7 @@ function ArtifactSetCard({
                 key={setNumKey}
                 setKey={setKey}
                 setNumKey={parseInt(setNumKey) as SetNum}
+                // Get rid of the rounded corners from the default Card component
                 component={Box}
                 hideHeader
                 conditionalsOnly
