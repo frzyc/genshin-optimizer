@@ -93,7 +93,7 @@ jobs:
             submodule-
       - uses: actions/checkout@v4
         with:
-          ref: ${{ github.sha }}
+          ref: ${{ github.sha }} # Force checking of the whole repo when running on pushes to master
           persist-credentials: false
           submodules: true
       - name: Fetch master
