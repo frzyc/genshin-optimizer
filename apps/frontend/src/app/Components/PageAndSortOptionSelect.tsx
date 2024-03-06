@@ -30,18 +30,20 @@ export default function PageAndSortOptionSelect({
   displaySort = false,
   sortByButtonProps = undefined,
 }: {
-  paginationProps: PaginationProps
+  paginationProps?: PaginationProps
   showingTextProps: ShowingItemProps
   displaySort?: boolean
   sortByButtonProps?: SortByButtonProps
 }) {
   return (
     <>
-      <Pagination
-        count={paginationProps.count}
-        page={paginationProps.page}
-        onChange={paginationProps.onChange}
-      />
+      {paginationProps && (
+        <Pagination
+          count={paginationProps.count}
+          page={paginationProps.page}
+          onChange={paginationProps.onChange}
+        />
+      )}
       <ShowingItem
         numShowing={showingTextProps.numShowing}
         total={showingTextProps.total}
