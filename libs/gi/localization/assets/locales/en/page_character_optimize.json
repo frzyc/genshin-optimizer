@@ -21,7 +21,7 @@
     "currentBuild": "Current Build",
     "highlightedBuilds": "Highlighted Builds",
     "buildAlreadyInList": "Build is already in the list",
-    "summary": "Optimization Target Graphing"
+    "summary": "Optimization Target Graph"
   },
   "levelFilter": "Artifact Level Filter",
   "excludeArt": {
