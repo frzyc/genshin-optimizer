@@ -93,6 +93,7 @@ import { GOSolver } from '../../../../Solver/GOSolver/GOSolver'
 import { mergeBuilds, mergePlot } from '../../../../Solver/common'
 import useOldData from '../../../useOldData'
 import CompareBtn from '../../CompareBtn'
+import ArtifactConditionalConfig from './Components/ArtifactConditionalConfig'
 import BonusStatsCard from './Components/BonusStatsCard'
 import type { BuildStatus } from './Components/BuildAlert'
 import BuildAlert from './Components/BuildAlert'
@@ -102,7 +103,6 @@ import OptimizationFilters from './Components/OptimizationFilters/OptimizationFi
 import StatFilterCard from './Components/OptimizationFilters/StatFilterCard'
 import OptimizationTargetSelector from './Components/OptimizationTargetSelector'
 import { compactArtifacts, dynamicData } from './foreground'
-import ArtifactConditionalConfig from './Components/ArtifactConditionalConfig'
 
 const audio = new Audio('assets/notification.mp3')
 export default function TabBuild() {
@@ -669,7 +669,16 @@ export default function TabBuild() {
           {...{ status: buildStatus, characterName, maxBuildsToShow }}
         />
       )}
-      <Accordion sx={(theme) => ({ bgcolor: theme.palette.contentLight.main })}>
+      <Accordion
+        sx={(theme) => ({
+          bgcolor: theme.palette.contentLight.main,
+          borderRadius: '4px',
+          '&:before': {
+            display: 'none',
+          },
+        })}
+        disableGutters
+      >
         <AccordionSummary expandIcon={<ExpandMore />}>
           {t('tcGraph.summary')}
           <InfoTooltip
