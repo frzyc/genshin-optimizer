@@ -4,12 +4,13 @@ import { getArtSheet } from '../../Data/Artifacts'
 import type { SetNum } from '../../Types/consts'
 import DocumentDisplay from '../DocumentDisplay'
 
-type Data = {
+type SetEffectDisplayProps = {
   setKey: ArtifactSetKey
   setNumKey: SetNum
   hideHeader?: boolean
   conditionalsOnly?: boolean
   disabled?: boolean
+  component?: React.ElementType
 }
 
 export default function SetEffectDisplay({
@@ -18,7 +19,8 @@ export default function SetEffectDisplay({
   hideHeader = false,
   conditionalsOnly = false,
   disabled = false,
-}: Data) {
+  component,
+}: SetEffectDisplayProps) {
   const sheet = getArtSheet(setKey)
 
   const document = conditionalsOnly
@@ -33,6 +35,7 @@ export default function SetEffectDisplay({
           sections={document}
           hideHeader={hideHeader}
           disabled={disabled}
+          component={component}
         />
       ) : null}
     </Box>

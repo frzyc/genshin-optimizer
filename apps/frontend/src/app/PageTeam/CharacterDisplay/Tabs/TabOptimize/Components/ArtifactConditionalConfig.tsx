@@ -142,6 +142,7 @@ export default function ArtifactConditionalConfig({
                 <Typography>{t`artSetConfig.modal.setCond.text`}</Typography>
               </CardContent>
             </CardThemed>
+
             <Grid container spacing={1} columns={{ xs: 3, lg: 4 }}>
               {artSheetsWithCond
                 .sort((a, b) => {
@@ -209,7 +210,7 @@ function ArtifactSetCard({
           >
             <Typography variant="h6">{artifactSheet.name ?? ''}</Typography>
             <Box>
-              {/* If there is ever a 2-Set conditional, we will need to change this */}
+              {/* Rarity info */}
               <Typography variant="subtitle1">
                 {artifactSheet.rarity.map((ns, i) => (
                   <Box
@@ -221,6 +222,7 @@ function ArtifactSetCard({
                     {i < artifactSheet.rarity.length - 1 ? '/ ' : null}
                   </Box>
                 ))}{' '}
+                {/* Tooltip for set effect */}
                 <InfoTooltipInline
                   title={
                     <Box>
@@ -254,19 +256,17 @@ function ArtifactSetCard({
 
         {!!set4CondNums.length && (
           <DataContext.Provider value={fakeDataContextObj}>
-            <CardContent
-              sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}
-            >
-              {set4CondNums.map((setNumKey) => (
-                <SetEffectDisplay
-                  key={setNumKey}
-                  setKey={setKey}
-                  setNumKey={parseInt(setNumKey) as SetNum}
-                  hideHeader
-                  conditionalsOnly
-                />
-              ))}
-            </CardContent>
+            {/* If there is ever a 2-Set conditional, we will need to change this */}
+            {set4CondNums.map((setNumKey) => (
+              <SetEffectDisplay
+                key={setNumKey}
+                setKey={setKey}
+                setNumKey={parseInt(setNumKey) as SetNum}
+                component={Box}
+                hideHeader
+                conditionalsOnly
+              />
+            ))}
           </DataContext.Provider>
         )}
       </CardThemed>
