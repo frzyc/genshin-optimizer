@@ -36,7 +36,6 @@ import TeamCard from '../../../PageTeams/TeamCard'
 import CloseButton from '../../CloseButton'
 import ImgIcon from '../../Image/ImgIcon'
 import LevelSelect from '../../LevelSelect'
-import { CharacterCardStats } from '../CharacterCard/CharacterCardStats'
 import {
   CharacterCompactConstSelector,
   CharacterCoverArea,
@@ -91,7 +90,12 @@ export default function Content({ onClose }: { onClose?: () => void }) {
         {!!onClose && <CloseButton onClick={onClose} />}
       </Box>
       <Box>
-        <Grid container spacing={1} sx={{ justifyContent: 'center' }}>
+        <Grid
+          container
+          spacing={1}
+          justifyContent="center"
+          alignItems="flex-start"
+        >
           <Grid item xs={8} sm={5} md={4} lg={3}>
             <CardThemed
               bgt="light"
@@ -109,9 +113,6 @@ export default function Content({ onClose }: { onClose?: () => void }) {
                   ascension={character.ascension}
                   setBoth={(data) => database.chars.set(characterKey, data)}
                 />
-              </Box>
-              <Box sx={{ px: 2 }}>
-                <CharacterCardStats />
               </Box>
               <Typography sx={{ textAlign: 'center', pb: -1 }} variant="h6">
                 {characterSheet.constellationName}
@@ -148,7 +149,6 @@ export default function Content({ onClose }: { onClose?: () => void }) {
                 ))}
               </Grid>
             </Box>
-            <EquipmentSection />
             <InTeam />
           </Grid>
         </Grid>
@@ -197,9 +197,9 @@ function EquipmentSection() {
 }
 const columns = {
   xs: 1,
-  sm: 2,
-  md: 3,
-  lg: 3,
+  sm: 1,
+  md: 2,
+  lg: 2,
   xl: 3,
 } as const
 function InTeam() {
@@ -302,7 +302,14 @@ function InTeam() {
             </CardContent>
             <Divider />
             <CardContent>
-              <Grid container columns={columns} spacing={2}>
+              <Grid
+                container
+                direction="row"
+                justifyContent="flex-start"
+                alignItems="flex-start"
+                columns={columns}
+                spacing={2}
+              >
                 {teamIds.map((teamId) => (
                   <Grid item xs={1} key={teamId}>
                     <TeamCard
@@ -311,10 +318,11 @@ function InTeam() {
                         navigate(`/teams/${teamId}${cid ? `/${cid}` : ''}`)
                       }
                       disableButtons
+                      showMore
                     />
                   </Grid>
                 ))}
-                <Grid item xs={1}>
+                <Grid item {...columns}>
                   <Button
                     fullWidth
                     sx={{ height: '100%' }}
