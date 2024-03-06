@@ -9,7 +9,7 @@ import {
   ModalWrapper,
   SqBadge,
 } from '@genshin-optimizer/common/ui'
-import { objKeyMap } from '@genshin-optimizer/common/util'
+import { notEmpty, objKeyMap } from '@genshin-optimizer/common/util'
 import { charKeyToLocCharKey } from '@genshin-optimizer/gi/consts'
 import { useDatabase, useOptConfig } from '@genshin-optimizer/gi/db-ui'
 import {
@@ -46,10 +46,17 @@ export default function ArtifactFilters({ disabled }: { disabled?: boolean }) {
   const database = useDatabase()
   const {
     teamChar: { optConfigId, key: characterKey },
+    team,
+    teamCharId,
   } = useContext(TeamCharacterContext)
   const buildSetting = useOptConfig(optConfigId)!
-  const { mainStatAssumptionLevel, allowPartial, levelLow, levelHigh } =
-    buildSetting
+  const {
+    mainStatAssumptionLevel,
+    allowPartial,
+    levelLow,
+    levelHigh,
+    useTeammateBuild,
+  } = buildSetting
 
   //register changes in artifact database
   const [artsDirty, setArtsDirty] = useForceUpdate()
@@ -69,10 +76,24 @@ export default function ArtifactFilters({ disabled }: { disabled?: boolean }) {
       levelHigh,
       allowLocationsState,
       useExcludedArts,
+      useTeammateBuild,
     } = deferredArtsDirty && deferredBuildSetting
+
+    const artifactIds = Array.from(
+      new Set(
+        team.teamCharIds
+          .filter((tcId) => tcId !== teamCharId)
+          .filter(notEmpty)
+          .map((tcId) => database.teamChars.getLoadoutArtifacts(tcId))
+          .flatMap((arts) => Object.values(arts))
+          .filter(notEmpty)
+          .map(({ id }) => id)
+      )
+    )
 
     return database.arts.values.filter((art) => {
       if (!useExcludedArts && artExclusion.includes(art.id)) return false
+      if (!useTeammateBuild && artifactIds.includes(art.id)) return false
       if (art.level < levelLow) return false
       if (art.level > levelHigh) return false
       const mainStats = mainStatKeys[art.slotKey]
@@ -94,7 +115,15 @@ export default function ArtifactFilters({ disabled }: { disabled?: boolean }) {
 
       return true
     })
-  }, [database, characterKey, deferredArtsDirty, deferredBuildSetting])
+  }, [
+    deferredArtsDirty,
+    deferredBuildSetting,
+    team.teamCharIds,
+    database.arts.values,
+    database.teamChars,
+    teamCharId,
+    characterKey,
+  ])
 
   const filteredArtIdMap = useMemo(
     () =>
@@ -279,6 +308,23 @@ export default function ArtifactFilters({ disabled }: { disabled?: boolean }) {
                   disabled={disabled}
                   excludedTotal={excludedTotal.in}
                 />
+                {/* Use teammates build */}
+                <Button
+                  fullWidth
+                  startIcon={
+                    useTeammateBuild ? <CheckBox /> : <CheckBoxOutlineBlank />
+                  }
+                  color={useTeammateBuild ? 'success' : 'secondary'}
+                  onClick={() => {
+                    database.optConfigs.set(optConfigId, {
+                      useTeammateBuild: !useTeammateBuild,
+                    })
+                  }}
+                  disabled={disabled}
+                >
+                  {t('useTeammateBuilds')}
+                </Button>
+                {/* Allow partial */}
                 <Button
                   fullWidth
                   startIcon={

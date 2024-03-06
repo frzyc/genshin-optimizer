@@ -121,5 +121,6 @@
   "notifyTooltip": "Play a sound when builds finish generating. Will also show an alarm prompt when tabbed out.",
   "artFilters": {
     "title": "Artifact Filters"
-  }
+  },
+  "useTeammateBuilds": "Use artifacts in teammates' builds"
 }
