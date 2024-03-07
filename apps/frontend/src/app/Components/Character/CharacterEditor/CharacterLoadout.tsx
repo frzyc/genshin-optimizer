@@ -1,7 +1,7 @@
 import {
+  BootstrapTooltip,
   CardThemed,
   SqBadge,
-  BootstrapTooltip,
 } from '@genshin-optimizer/common/ui'
 import { unit } from '@genshin-optimizer/common/util'
 import { artifactAsset, weaponAsset } from '@genshin-optimizer/gi/assets'
@@ -12,6 +12,7 @@ import { useBuildTc, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { StatIcon } from '@genshin-optimizer/gi/svgicons'
 import { ArtifactSetName } from '@genshin-optimizer/gi/ui'
 import { artDisplayValue } from '@genshin-optimizer/gi/util'
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import InfoIcon from '@mui/icons-material/Info'
 import {
   Avatar,
@@ -22,6 +23,7 @@ import {
   IconButton,
   Typography,
 } from '@mui/material'
+import { useState } from 'react'
 import { getWeaponSheet } from '../../../Data/Weapons'
 import ArtifactCardPico from '../../Artifact/ArtifactCardPico'
 import SlotIcon from '../../Artifact/SlotIcon'
@@ -29,8 +31,6 @@ import ImgIcon from '../../Image/ImgIcon'
 import { StatWithUnit } from '../../StatDisplay'
 import WeaponCardPico from '../../Weapon/WeaponCardPico'
 import WeaponNameTooltip from '../../Weapon/WeaponNameTooltip'
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
-import { useState } from 'react'
 
 export function CharacterLoadout({ activeCharId }: { activeCharId: string }) {
   const database = useDatabase()
@@ -291,7 +291,7 @@ function LoadoutTitle({
   name,
   description,
   showMore = false,
-  expanded=false,
+  expanded = false,
   onClick,
 }: {
   name: string
@@ -300,7 +300,6 @@ function LoadoutTitle({
   expanded?: boolean
   onClick?: () => void
 }) {
-
   return (
     <Typography
       sx={{
