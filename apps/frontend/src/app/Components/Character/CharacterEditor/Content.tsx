@@ -42,6 +42,7 @@ import {
 } from '../CharacterProfilePieces'
 import EquippedGrid from '../EquippedGrid'
 import TalentDropdown from '../TalentDropdown'
+import { CharacterLoadout } from './CharacterLoadout'
 import TravelerGenderSelect from './TravelerGenderSelect'
 
 export default function Content({ onClose }: { onClose?: () => void }) {
@@ -197,9 +198,9 @@ function EquipmentSection() {
 }
 const columns = {
   xs: 1,
-  sm: 1,
-  md: 2,
-  lg: 2,
+  sm: 2,
+  md: 3,
+  lg: 3,
   xl: 3,
 } as const
 function InTeam() {
@@ -310,6 +311,7 @@ function InTeam() {
                 columns={columns}
                 spacing={2}
               >
+                <CharacterLoadout activeCharId={teamCharId} />
                 {teamIds.map((teamId) => (
                   <Grid item xs={1} key={teamId}>
                     <TeamCard
@@ -318,7 +320,6 @@ function InTeam() {
                         navigate(`/teams/${teamId}${cid ? `/${cid}` : ''}`)
                       }
                       disableButtons
-                      showMore
                     />
                   </Grid>
                 ))}
