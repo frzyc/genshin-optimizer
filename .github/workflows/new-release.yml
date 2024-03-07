@@ -69,16 +69,20 @@ jobs:
           git add --all .
           git commit -m "${{ steps.get-commit-msg.outputs.msg }}"
           if ! git push origin; then
-            git push origin gh-pages:actions/deploy-gh-pages --force
+            git push origin HEAD:actions/deploy-gh-pages --force
             gh pr create --base gh-pages --head actions/deploy-gh-pages --title '${{ steps.get-commit-msg.outputs.title }}' --body ''
           fi
-      - name: Try push to master
+        env:
+          GH_TOKEN: ${{ github.token }}
+      - name: Try push
         run: |
           git status
           if ! git push origin; then
-            git push origin master:actions/new-release --force
-            gh pr create --base master --head actions/new-release --title '${{ steps.get-commit-msg.outputs.title-master }}' --body ''
+            git push origin HEAD:actions/new-release --force
+            gh pr create --base $(git rev-parse --abbrev-ref HEAD) --head actions/new-release --title '${{ steps.get-commit-msg.outputs.title-master }}' --body ''
           fi
+        env:
+          GH_TOKEN: ${{ github.token }}
       - name: Make release
         if: steps.get-version.outputs.version != ''
         run: |
