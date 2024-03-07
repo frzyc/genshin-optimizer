@@ -3,14 +3,7 @@ import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { getCharData } from '@genshin-optimizer/gi/stats'
 import ContentCopyIcon from '@mui/icons-material/ContentCopy'
 import ScienceIcon from '@mui/icons-material/Science'
-import {
-  Box,
-  Button,
-  CardActionArea,
-  CardContent,
-  Tooltip,
-  Typography,
-} from '@mui/material'
+import { Box, Button, CardContent, Tooltip, Typography } from '@mui/material'
 import { useContext } from 'react'
 import { CharacterContext } from '../../../Context/CharacterContext'
 import { TeamCharacterContext } from '../../../Context/TeamCharacterContext'
