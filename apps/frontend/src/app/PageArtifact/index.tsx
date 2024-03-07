@@ -23,7 +23,7 @@ import { useTranslation } from 'react-i18next'
 import AddArtInfo from '../Components/AddArtInfo'
 import CardDark from '../Components/Card/CardDark'
 import InfoComponent from '../Components/InfoComponent'
-import PageAndSortOptionSelect from '../Components/PageAndSortOptionSelect'
+import ShowingAndSortOptionSelect from '../Components/ShowingAndSortOptionSelect'
 import useDisplayArtifact from '../ReactHooks/useDisplayArtifact'
 import ArtifactCard from './ArtifactCard'
 import ArtifactFilter, { ArtifactRedButtons } from './ArtifactFilter'
@@ -209,9 +209,8 @@ export default function PageArtifact() {
             alignItems="center"
             flexWrap="wrap"
           >
-            <PageAndSortOptionSelect
+            <ShowingAndSortOptionSelect
               showingTextProps={showingTextProps}
-              displaySort={true}
               sortByButtonProps={sortByButtonProps}
             />
           </Box>
