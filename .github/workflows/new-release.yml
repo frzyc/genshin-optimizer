@@ -41,8 +41,12 @@ jobs:
         run: |
           if [[ -z "${{ steps.get-version.outputs.version }}" ]]; then
             echo "msg=deploy: $(git rev-parse HEAD)" >> $GITHUB_OUTPUT
+            echo "title=Deploy $(git rev-parse HEAD)" >> $GITHUB_OUTPUT
+            echo "title-master=Release $(git rev-parse HEAD)" >> $GITHUB_OUTPUT
           else
             echo "msg=deploy: version ${{ steps.get-version.outputs.version }} $(git rev-parse HEAD)" >> $GITHUB_OUTPUT
+            echo "title=Deploy version ${{ steps.get-version.outputs.version }} $(git rev-parse HEAD)" >> $GITHUB_OUTPUT
+            echo "title-master=Release version ${{ steps.get-version.outputs.version }} $(git rev-parse HEAD)" >> $GITHUB_OUTPUT
           fi
       - name: Yarn install
         run: |
@@ -56,7 +60,7 @@ jobs:
         run: |
           NX_URL_GITHUB_GO_CURRENT_VERSION="https://github.com/${{ github.repository }}/commit/$(git rev-parse HEAD)" \
           yarn run nx run frontend:build-vite:production
-      - name: Deploy to Github Pages
+      - name: Try deploy to Github Pages
         run: |
           git fetch origin gh-pages --depth=1
           git worktree add ../gh-pages gh-pages --no-checkout
@@ -64,11 +68,17 @@ jobs:
           cd ../gh-pages
           git add --all .
           git commit -m "${{ steps.get-commit-msg.outputs.msg }}"
-          git push
-      - name: Push
+          if ! git push origin; then
+            git push origin gh-pages:actions/deploy-gh-pages --force
+            gh pr create --base gh-pages --head actions/deploy-gh-pages --title '${{ steps.get-commit-msg.outputs.title }}' --body ''
+          fi
+      - name: Try push to master
         run: |
           git status
-          git push
+          if ! git push origin; then
+            git push origin master:actions/new-release --force
+            gh pr create --base master --head actions/new-release --title '${{ steps.get-commit-msg.outputs.title-master }}' --body ''
+          fi
       - name: Make release
         if: steps.get-version.outputs.version != ''
         run: |
