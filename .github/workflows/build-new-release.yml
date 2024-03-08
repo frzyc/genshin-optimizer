@@ -8,7 +8,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     timeout-minutes: 15
-    if: ${{ github.event.pull_request.merged == true && contains(github.env.pull_request.labels.*.name, 'release') }}
+    if: ${{ github.event.pull_request.merged == true && contains(github.event.pull_request.labels.*.name, 'release') }}
     steps:
       - uses: actions/checkout@v4
         with:
