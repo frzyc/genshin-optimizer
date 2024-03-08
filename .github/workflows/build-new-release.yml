@@ -20,7 +20,7 @@ jobs:
       - name: Get version
         id: get-version
         run: |
-          echo "version=$(${{ github.event.pull_request.title }} | awk '{print $3}')" >> $GITHUB_OUTPUT
+          echo "version=$(printf '%s' '${{ github.event.pull_request.title }}' | awk '{print $3}')" >> $GITHUB_OUTPUT
       - name: Set git config
         run: |
           git config user.name "github-actions[bot]"
