@@ -20,6 +20,7 @@ type DocumentDisplayProps = {
   hideDesc?: boolean
   hideHeader?: boolean | ((section: DocumentSection) => boolean)
   disabled?: boolean
+  component?: React.ElementType
 }
 
 export default function DocumentDisplay({
@@ -28,6 +29,7 @@ export default function DocumentDisplay({
   hideDesc = false,
   hideHeader = false,
   disabled = false,
+  component,
 }: DocumentDisplayProps) {
   const { data } = useContext(DataContext)
   if (!sections.length) return null
@@ -44,6 +46,7 @@ export default function DocumentDisplay({
           hideDesc={hideDesc}
           hideHeader={hideHeader}
           disabled={disabled}
+          component={component}
         />
       )
     })
@@ -61,11 +64,13 @@ function SectionDisplay({
   hideDesc = false,
   hideHeader = false,
   disabled = false,
+  component,
 }: {
   section: DocumentSection
   hideDesc?: boolean
   hideHeader?: boolean | ((section: DocumentSection) => boolean)
   disabled?: boolean
+  component?: React.ElementType
 }) {
   if ('fields' in section) {
     return (
@@ -82,6 +87,7 @@ function SectionDisplay({
         hideDesc={hideDesc}
         hideHeader={hideHeader}
         disabled={disabled}
+        component={component}
       />
     )
   } /* if ("text" in section) */ else {

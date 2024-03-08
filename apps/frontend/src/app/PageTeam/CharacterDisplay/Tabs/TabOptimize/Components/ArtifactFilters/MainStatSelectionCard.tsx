@@ -20,14 +20,14 @@ import {
 } from '@mui/material'
 import { useContext, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
-import SlotIcon from '../../../../../Components/Artifact/SlotIcon'
-import BootstrapTooltip from '../../../../../Components/BootstrapTooltip'
-import SqBadge from '../../../../../Components/SqBadge'
-import { StatColoredWithUnit } from '../../../../../Components/StatDisplay'
-import { TeamCharacterContext } from '../../../../../Context/TeamCharacterContext'
-import StatIcon from '../../../../../KeyMap/StatIcon'
-import { handleMultiSelect } from '../../../../../Util/MultiSelect'
-import { bulkCatTotal } from '../../../../../Util/totalUtils'
+import SlotIcon from '../../../../../../Components/Artifact/SlotIcon'
+import BootstrapTooltip from '../../../../../../Components/BootstrapTooltip'
+import SqBadge from '../../../../../../Components/SqBadge'
+import { StatColoredWithUnit } from '../../../../../../Components/StatDisplay'
+import { TeamCharacterContext } from '../../../../../../Context/TeamCharacterContext'
+import StatIcon from '../../../../../../KeyMap/StatIcon'
+import { handleMultiSelect } from '../../../../../../Util/MultiSelect'
+import { bulkCatTotal } from '../../../../../../Util/totalUtils'
 
 export const artifactsSlotsToSelectMainStats = [
   'sands',

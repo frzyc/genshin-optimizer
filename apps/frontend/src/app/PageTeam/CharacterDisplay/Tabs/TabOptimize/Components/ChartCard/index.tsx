@@ -1,4 +1,5 @@
 import { ReadOnlyTextArea } from '@genshin-optimizer/common/react-util'
+import { BootstrapTooltip, CardThemed } from '@genshin-optimizer/common/ui'
 import {
   objKeyMap,
   objPathValue,
@@ -38,10 +39,6 @@ import {
   XAxis,
   YAxis,
 } from 'recharts'
-import BootstrapTooltip from '../../../../../../Components/BootstrapTooltip'
-import CardDark from '../../../../../../Components/Card/CardDark'
-import CardLight from '../../../../../../Components/Card/CardLight'
-import InfoTooltip from '../../../../../../Components/InfoTooltip'
 import { DataContext } from '../../../../../../Context/DataContext'
 import { GraphContext } from '../../../../../../Context/GraphContext'
 import { TeamCharacterContext } from '../../../../../../Context/TeamCharacterContext'
@@ -206,7 +203,7 @@ export default function ChartCard({
     : t('page_character_optimize:targetSelector.selectGraphTarget')
 
   return (
-    <CardLight>
+    <CardThemed bgt="dark">
       <CardContent>
         <Grid container spacing={1} alignItems="center">
           <Grid item>
@@ -231,7 +228,7 @@ export default function ChartCard({
               </span>
             </BootstrapTooltip>
           </Grid>
-          <Grid item>
+          <Grid item flexGrow={1}>
             <BootstrapTooltip
               title={!plotBase ? '' : t('ui:reset')}
               placement="top"
@@ -246,12 +243,6 @@ export default function ChartCard({
                 </Button>
               </span>
             </BootstrapTooltip>
-          </Grid>
-          <Grid item flexGrow={1}>
-            <InfoTooltip
-              placement="top"
-              title={t('page_character_optimize:tcGraph.desc')}
-            />
           </Grid>
           {!!downloadData && (
             <Grid item>
@@ -279,7 +270,7 @@ export default function ChartCard({
       {chartData && !!chartData.data.length && displayData && (
         <CardContent>
           <Collapse in={!!downloadData && showDownload}>
-            <CardDark sx={{ mb: 2 }}>
+            <CardThemed bgt="dark" sx={{ mb: 2 }}>
               <CardContent>
                 <Typography>Min Data</Typography>
                 <ReadOnlyTextArea
@@ -290,7 +281,7 @@ export default function ChartCard({
                   value={JSON.stringify(downloadData?.allData)}
                 />
               </CardContent>
-            </CardDark>
+            </CardThemed>
           </Collapse>
           <Chart
             displayData={displayData}
@@ -319,7 +310,7 @@ export default function ChartCard({
           )}
         </CardContent>
       )}
-    </CardLight>
+    </CardThemed>
   )
 }
 

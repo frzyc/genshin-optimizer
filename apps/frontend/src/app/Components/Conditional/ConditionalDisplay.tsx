@@ -1,5 +1,5 @@
 import { CardContent } from '@mui/material'
-import { useContext } from 'react'
+import React, { useContext } from 'react'
 import { DataContext } from '../../Context/DataContext'
 import type { DocumentConditional, DocumentSection } from '../../Types/sheet'
 import { evalIfFunc } from '../../Util/Util'
@@ -13,6 +13,7 @@ type ConditionalDisplayProps = {
   hideHeader?: boolean | ((section: DocumentSection) => boolean)
   hideDesc?: boolean
   disabled?: boolean
+  component?: React.ElementType
 }
 
 export default function ConditionalDisplay({
@@ -20,6 +21,7 @@ export default function ConditionalDisplay({
   hideHeader = false,
   hideDesc = false,
   disabled = false,
+  component = CardDark,
 }: ConditionalDisplayProps) {
   const { data } = useContext(DataContext)
   let fields
@@ -34,8 +36,9 @@ export default function ConditionalDisplay({
       return stateVal ? state.fields : []
     })
   }
-  return (
-    <CardDark>
+
+  const children = (
+    <>
       {!evalIfFunc(hideHeader, conditional) && (
         <HeaderDisplay header={conditional.header} hideDesc={hideDesc} />
       )}
@@ -43,6 +46,8 @@ export default function ConditionalDisplay({
         <ConditionalSelector conditional={conditional} disabled={disabled} />
       </CardContent>
       {fields && <FieldsDisplay fields={fields} />}
-    </CardDark>
+    </>
   )
+
+  return React.createElement(component, { children })
 }

@@ -3,9 +3,9 @@ import { useDatabase, useOptConfig } from '@genshin-optimizer/gi/db-ui'
 import { Box, CardContent, Divider, Typography } from '@mui/material'
 import { useCallback, useContext } from 'react'
 import { useTranslation } from 'react-i18next'
-import CardLight from '../../../../../Components/Card/CardLight'
-import InfoTooltip from '../../../../../Components/InfoTooltip'
-import { TeamCharacterContext } from '../../../../../Context/TeamCharacterContext'
+import CardLight from '../../../../../../Components/Card/CardLight'
+import InfoTooltip from '../../../../../../Components/InfoTooltip'
+import { TeamCharacterContext } from '../../../../../../Context/TeamCharacterContext'
 import OptimizationTargetEditorList from './OptimizationTargetEditorList'
 
 export default function StatFilterCard({

@@ -28,20 +28,20 @@ import {
   useReducer,
 } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
-import ArtifactCardNano from '../../../../../Components/Artifact/ArtifactCardNano'
-import ArtifactFilterDisplay from '../../../../../Components/Artifact/ArtifactFilterDisplay'
-import CardDark from '../../../../../Components/Card/CardDark'
-import CardLight from '../../../../../Components/Card/CardLight'
-import CloseButton from '../../../../../Components/CloseButton'
-import InfoTooltip from '../../../../../Components/InfoTooltip'
-import ModalWrapper from '../../../../../Components/ModalWrapper'
-import SqBadge from '../../../../../Components/SqBadge'
-import { TeamCharacterContext } from '../../../../../Context/TeamCharacterContext'
-import ArtifactCard from '../../../../../PageArtifact/ArtifactCard'
+import ArtifactCardNano from '../../../../../../Components/Artifact/ArtifactCardNano'
+import ArtifactFilterDisplay from '../../../../../../Components/Artifact/ArtifactFilterDisplay'
+import CardDark from '../../../../../../Components/Card/CardDark'
+import CardLight from '../../../../../../Components/Card/CardLight'
+import CloseButton from '../../../../../../Components/CloseButton'
+import InfoTooltip from '../../../../../../Components/InfoTooltip'
+import ModalWrapper from '../../../../../../Components/ModalWrapper'
+import SqBadge from '../../../../../../Components/SqBadge'
+import { TeamCharacterContext } from '../../../../../../Context/TeamCharacterContext'
+import ArtifactCard from '../../../../../../PageArtifact/ArtifactCard'
 import {
   artifactFilterConfigs,
   initialFilterOption,
-} from '../../../../../PageArtifact/ArtifactSort'
+} from '../../../../../../PageArtifact/ArtifactSort'
 
 export default function ExcludeArt({
   disabled = false,
