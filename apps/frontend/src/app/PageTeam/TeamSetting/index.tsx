@@ -8,8 +8,8 @@ import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { CharacterName } from '@genshin-optimizer/gi/ui'
 import AddIcon from '@mui/icons-material/Add'
 import CloseIcon from '@mui/icons-material/Close'
-import DriveFileRenameOutlineIcon from '@mui/icons-material/DriveFileRenameOutline'
 import GroupsIcon from '@mui/icons-material/Groups'
+import SettingsIcon from '@mui/icons-material/Settings'
 import {
   Alert,
   Box,
@@ -84,7 +84,7 @@ export default function TeamSetting({
           color="info"
           sx={{ flexGrow: 1 }}
           startIcon={<GroupsIcon />}
-          endIcon={<DriveFileRenameOutlineIcon />}
+          endIcon={<SettingsIcon />}
           onClick={() => setOpen((open) => !open)}
         >
           <Typography variant="h6">{team.name}</Typography>
