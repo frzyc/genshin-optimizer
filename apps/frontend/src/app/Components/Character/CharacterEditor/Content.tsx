@@ -4,14 +4,8 @@ import {
   CardThemed,
   SqBadge,
 } from '@genshin-optimizer/common/ui'
-import { objKeyMap } from '@genshin-optimizer/common/util'
-import {
-  allArtifactSlotKeys,
-  charKeyToLocCharKey,
-  charKeyToLocGenderedCharKey,
-} from '@genshin-optimizer/gi/consts'
+import { charKeyToLocGenderedCharKey } from '@genshin-optimizer/gi/consts'
 import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
-import { getCharData } from '@genshin-optimizer/gi/stats'
 import { CharacterName, SillyContext } from '@genshin-optimizer/gi/ui'
 import AddIcon from '@mui/icons-material/Add'
 import ContentCopyIcon from '@mui/icons-material/ContentCopy'
@@ -29,9 +23,7 @@ import { useCallback, useContext, useEffect, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 import { CharacterContext } from '../../../Context/CharacterContext'
-import { DataContext } from '../../../Context/DataContext'
 import { getCharSheet } from '../../../Data/Characters'
-import { uiInput as input } from '../../../Formula'
 import TeamCard from '../../../PageTeams/TeamCard'
 import CloseButton from '../../CloseButton'
 import ImgIcon from '../../Image/ImgIcon'
@@ -40,7 +32,6 @@ import {
   CharacterCompactConstSelector,
   CharacterCoverArea,
 } from '../CharacterProfilePieces'
-import EquippedGrid from '../EquippedGrid'
 import TalentDropdown from '../TalentDropdown'
 import { CharacterLoadout } from './CharacterLoadout'
 import TravelerGenderSelect from './TravelerGenderSelect'
@@ -158,44 +149,6 @@ export default function Content({ onClose }: { onClose?: () => void }) {
   )
 }
 
-function EquipmentSection() {
-  const {
-    character: { key: characterKey },
-  } = useContext(CharacterContext)
-  const { data } = useContext(DataContext)
-
-  const database = useDatabase()
-
-  const weaponTypeKey = getCharData(characterKey).weaponType
-  const weaponId = data.get(input.weapon.id).value
-  const artifactIds = useMemo(
-    () =>
-      objKeyMap(
-        allArtifactSlotKeys,
-        (slotKey) => data.get(input.art[slotKey].id).value
-      ),
-    [data]
-  )
-  return (
-    <Box>
-      <EquippedGrid
-        weaponTypeKey={weaponTypeKey}
-        weaponId={weaponId}
-        artifactIds={artifactIds}
-        setWeapon={(id) => {
-          database.weapons.set(id, {
-            location: charKeyToLocCharKey(characterKey),
-          })
-        }}
-        setArtifact={(_, id) => {
-          database.arts.set(id, {
-            location: charKeyToLocCharKey(characterKey),
-          })
-        }}
-      />
-    </Box>
-  )
-}
 const columns = {
   xs: 1,
   sm: 2,
