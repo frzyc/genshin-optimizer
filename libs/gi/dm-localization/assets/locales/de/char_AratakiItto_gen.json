@@ -1,0 +1,184 @@
+{
+  "name": "Arataki Itto",
+  "title": "Held von Hanamizaka",
+  "description": "Der erste und größte Anführer der Arataki-Bande, berühmt in ganz Hanamizaka im Gebiet von Inazuma ... Wie bitte? Du hast noch nie von der Arataki-Bande gehört? Ernsthaft?",
+  "constellationName": "Taurus Iracundus",
+  "auto": {
+    "name": "Lärmende Legende",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Standardangriff</strong>",
+        "1": "Führt bis zu 4 Schwünge mit dem Schwert hintereinander aus.",
+        "2": "Gibt Itto beim Treffen von Gegnern mit den Angriffen Phase 2 und Phase 4 1 bzw. 2 Stapelungen des Effekts „superstarke Superkraft“.",
+        "3": "5-fach stapelbar. Erneuert die Wirkungsdauer der superstarken Superkraft bei jedem Auslösen.",
+        "4": "<br/>",
+        "5": "Setzt die Kombozahl des Standardangriffs darüber hinaus kurze Zeit nach Anwendung der Elementarfähigkeit „Masatsu Zetsugi – Akaushi-Wurf!“ oder nach dem Rennen nicht zurück."
+      },
+      "charged": {
+        "0": "<strong>Heftiger Schlag</strong>",
+        "1": "Führt, wenn „superstarke Superkraft“ vorhanden ist, nach dem Gedrückthalten zum Ausführen eines heftiges Schlags „Arataki Kesagiri“ aus, wofür keine Ausdauer verbraucht wird. Bei jedem Angriff mit Arataki Kesagiri wird eine Stapelung superstarke Superkraft verbraucht. Beim Verbrauchen der letzten Stapelung wird ein besonders starker Schlag ausgelöst.",
+        "2": "Ohne superstarke Superkraft wird Ausdauer verbraucht, um einen einzelnen Saichimonji-Hieb auszulösen."
+      },
+      "plunging": {
+        "0": "<strong>Angriff aus dem Fall</strong>",
+        "1": "Schlägt beim Fallen aus der Luft auf den Boden, greift alle Gegner in der Bahn an und verursacht beim Aufkommen Flächenschaden."
+      }
+    },
+    "skillParams": {
+      "0": "SCH Phase 1",
+      "1": "SCH Phase 2",
+      "2": "SCH Phase 3",
+      "3": "SCH Phase 4",
+      "4": "Kombo-SCH von Arataki Kesagiri",
+      "5": "End-SCH von Arataki Kesagiri",
+      "6": "Dauer der superstarken Superkraft",
+      "7": "SCH des Saichimonji-Hiebs",
+      "8": "Ausdauerverbrauch für Saichimonji-Hiebe",
+      "9": "SCH beim Fallen",
+      "10": "SCH beim Fallen aus niedriger/großer Höhe",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Masatsu Zetsugi – Akaushi-Wurf!",
+    "description": {
+      "0": "Schleudert Ushi, einen jungen Akaushi-Bullen und ein loses Mitglied der Arataki-Bande, mit hoher Geschwindigkeit auf Gegner und fügt getroffenen Gegnern <geo>Geo-Schaden</geo> zu! Verleiht Arataki Itto, wenn Ushi Gegner trifft, 1 Stapelung des Effekts „superstarke Superkraft“.",
+      "1": "<br/>",
+      "2": "Ushi bleibt nach dem Wurf auf dem Feld und bietet folgende Unterstützung:",
+      "3": [
+        " Verspottet Gegner in der Umgebung fortlaufend und zieht ihre Angriffe auf sich.",
+        " Beständigkeit hängt von Arataki Ittos max. LP ab.",
+        " Gibt Arataki Itto beim Erleiden von Schaden 1 Stapelung des Effekts „superstarke Superkraft“. Alle 2 s 1 Stapelung auf diese Weise möglich.",
+        " Flieht bei aufgebrauchter Beständigkeit oder nach Ablaufen der Wirkungsdauer und gibt Arataki Itto dabei 1 Stapelung des Effekts „superstarke Superkraft“."
+      ],
+      "4": "<br/>",
+      "5": "<strong>Gedrückt halten</strong>",
+      "6": "Anpassung der Wurfrichtung.",
+      "7": "<br/>",
+      "8": "Ushi gilt als <geo>Geo-Objekt</geo>. Zu einem Zeitpunkt kann nur ein von Arataki Itto selbst beschworener Ushi existieren.",
+      "9": "<br/>",
+      "10": "<i>Der Name dieser Technik leitet sich von „Onibudou“, einem Roman von Junkichi, ab. Es würde jedoch wahrscheinlich eine Urheberrechtsverletzung darstellen, sie „Onisatsu Zetsugi“ zu nennen, mal ganz davon abgesehen, dass Itto selbst ein Oni ist.</i>"
+    },
+    "skillParams": {
+      "0": "Fähigkeits-SCH",
+      "1": "Erhaltene LP",
+      "2": "Dauer",
+      "3": "Abklingzeit",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Schrecklicher Oni-König – Itto bricht vor!",
+    "description": {
+      "0": "Es wird Zeit, die Macht von Itto aus der Arataki-Bande zur Schau zu stellen! Bringt Ittos inneren „wütenden Oni-König“ hervor und verwendet dessen Kanabou zum Kampf.",
+      "1": "Merkmale:",
+      "2": [
+        " Verursacht mit Standardangriffen, heftigen Schlägen und Angriffen aus dem Fall <geo>Geo-Schaden</geo>, wobei diese Elementarumwandlung nicht von anderen Elementen überdeckt werden kann.",
+        " Erhöht die Angriffs-GSW von Arataki Ittos Standardangriff und erhöht seinen ANG basierend auf seiner VTD.",
+        " Verleiht Arataki Itto selbst beim Treffen von Gegnern mit den Angriffen von Phase 1 und Phase 3 1 Stapelung des Effekts „superstarke Superkraft“.",
+        " Verringert Arataki Ittos WDS gegen alle Elemente sowie seinen physischen WDS um 20 %."
+      ],
+      "3": "<br/>",
+      "4": "Der Zustand „wütender Oni-König“ erlischt, wenn Arataki Itto ausgewechselt wird.",
+      "5": "<br/>",
+      "6": "<i>Dies ist Ittos größte ultimative Supertechnik, zumindest behauptet er das. Für Arataki Itto bringt es nichts, andere nachzuahmen, um stärker zu werden, weil er ja schon der stärkste und schrecklichste Oni überhaupt ist.</i>",
+      "7": "<i>Shouta findet ihn echt klasse.</i>"
+    },
+    "skillParams": {
+      "0": "ANG-Bonus",
+      "1": "Angriffs-GSW-Bonus",
+      "2": "Dauer",
+      "3": "Abklingzeit",
+      "4": "Elementarenergie",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Arataki Ichiban",
+    "description": {
+      "0": "Verleiht Arataki Itto bei Anwendung aufeinanderfolgender Angriffe mit „Arataki Kesagiri“ folgende Effekte:",
+      "1": [
+        " Jeder Hieb erhöht die Angriffs-GSW des nächsten Hiebs um 10 %, insgesamt auf diese Weise um bis zu 30 %.",
+        " Erhöht den Unterbrechungs-WDS."
+      ],
+      "2": "<br/>",
+      "3": "Diese Effekte erlöschen beim Ende der aufeinanderfolgenden Angriffe."
+    }
+  },
+  "passive2": {
+    "name": "Blut des roten Oni",
+    "description": {
+      "0": "Erhöht den mit „Arataki Kesagiri“ verursachten Schaden basierend auf 35 % von Arataki Ittos VTD."
+    }
+  },
+  "passive3": {
+    "name": "Holzspalter",
+    "description": {
+      "0": "Erhält beim Sammeln von Holz durch Angriffe auf Bäume mit eigenen Figuren in der Truppe mit einer Wahrscheinlichkeit von 25 % zusätzliches Holz."
+    }
+  },
+  "constellation1": {
+    "name": "Hör gut zu!",
+    "description": {
+      "0": "Verleiht Arataki Itto nach Anwendung von <strong>Schrecklicher Oni-König – Itto bricht vor!</strong> 2 Stapelungen des Effekts „superstarke Superkraft“. Verleiht Arataki Itto 1 s später 1,5 s lang alle 0,5 s jeweils 1 Stapelung des Effekts „superstarke Superkraft“."
+    }
+  },
+  "constellation2": {
+    "name": "Sieh gut her!",
+    "description": {
+      "0": "Verkürzt die Abklingzeit von <strong>Schrecklicher Oni-König – Itto bricht vor!</strong> nach dem Auslösen dieser Fähigkeit für jede Figur in der Truppe, die die <geo>Geo-Kraft</geo> beherrscht, um 1,5 s und stellt Arataki Itto 6 Punkte Elementarenergie wieder her.",
+      "1": "Verkürzt die Abklingzeit auf diese Weise um bis zu 4,5 s und stellt bis zu 18 Punkte Elementarenergie wieder her."
+    }
+  },
+  "constellation3": {
+    "name": "Bulle im Anmarsch",
+    "description": {
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Masatsu Zetsugi – Akaushi-Wurf!</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation4": {
+    "name": "Brot und Wasser",
+    "description": {
+      "0": "Erhöht nach dem Ende des durch <strong>Schrecklicher Oni-König – Itto bricht vor!</strong> entstandenen Zustands „wütender Oni-König“ die VTD aller Truppenmitglieder in der Nähe 10 s lang um 20 % und ihren ANG um 20 %."
+    }
+  },
+  "constellation5": {
+    "name": "Jahrzehnte des Ruhms in Hanamizaka",
+    "description": {
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Schrecklicher Oni-König – Itto bricht vor!</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation6": {
+    "name": "Arataki Itto, höchstpersönlich!",
+    "description": {
+      "0": "Erhöht den KSCH von heftigen Schlägen von Arataki Itto um 70 %. Verbraucht außerdem bei Anwendung von „Arataki Kesagiri“ mit einer Wahrscheinlichkeit von 50 % keine „superstarke Superkraft“."
+    }
+  }
+}

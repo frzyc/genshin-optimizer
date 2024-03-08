@@ -1,0 +1,157 @@
+{
+  "name": "Kaveh",
+  "title": "El Espejo del Empíreo",
+  "description": "Un célebre arquitecto de Sumeru que se preocupa demasiado por las cosas. Es un fanático de la estética, pero está atrapado por la realidad.",
+  "constellationName": "Paradisaea",
+  "auto": {
+    "name": "Boceto esquemático",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Ataque Normal</strong>",
+        "1": "Usa a Mehrak para realizar hasta 4 tajos de espada consecutivos."
+      },
+      "charged": {
+        "0": "<strong>Ataque Cargado</strong>",
+        "1": "Consume Aguante de manera constante para realizar golpes de espada continuos.",
+        "2": "Cuando termina el Ataque Cargado, hará un golpe aún más poderoso."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Descendente</strong>",
+        "1": "Se lanza desde el aire para golpear el suelo, dañando a los enemigos cercanos e infligiendo Daño en el AdE en el momento del impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Daño de 1er golpe",
+      "1": "Daño de 2.º golpe",
+      "2": "Daño de 3er golpe",
+      "3": "Daño de 4.º golpe",
+      "4": "Daño de ATQ Cargado en ciclo",
+      "5": "Daño final de Ataque Cargado",
+      "6": "Coste de Aguante de ATQ Cargado",
+      "7": "Duración máx.",
+      "8": "Daño de Caída",
+      "9": "Daño de impacto de caída baja/alta",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Genio de la arquitectura",
+    "description": {
+      "0": "Usa la habilidad de elaborar planos de Mehrak para atacar y ejecutar un escaneo radial que inflige <dendro>Daño Dendro en el AdE</dendro> y provoca la explosión inmediata de todos los núcleos Dendro que se encuentren en el área de escaneo.",
+      "1": "<br/>",
+      "2": "<i>A Mehrak lo modificaron basándose en la tecnología antigua. Es por eso que, además de elaborar planos, quizá también posea otras funciones...</i>"
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "TdE",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Bóveda policromada",
+    "description": {
+      "0": "Libera toda la energía de Mehrak para crear un espacio cúbico de escaneo que inflige <dendro>Daño Dendro en el AdE</dendro> contra los enemigos situados en él, provoca la explosión inmediata de todos los núcleos Dendro dentro de dicha área y fortalece las habilidades de combate de Kaveh durante un tiempo determinado:",
+      "1": [
+        "Aumenta el alcance de los Ataques Normales, Cargados y Descendentes de Kaveh y transforma el daño de dichos ataques en <dendro>Daño Dendro</dendro>, el cual no puede sustituirse imbuyéndose de otro elemento.",
+        "Aumenta el daño de explosión de los núcleos Dendro creados por tus personajes del equipo con la reacción de Florecimiento.",
+        "Aumenta la RES a interrupción de Kaveh."
+      ],
+      "2": "Estos efectos se eliminarán cuando Kaveh abandone el combate.",
+      "3": "<br/>",
+      "4": "<i>“Toda creación arquitectónica revela la visión única que su creador tiene del mundo. Desde esta perspectiva, podría decirse que los edificios son la encarnación de los recuerdos de las personas”.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "Duración",
+      "2": "Bono de daño de explosión de núcleo Dendro",
+      "3": "TdE",
+      "4": "Energía Elemental",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Deber arquitectónico",
+    "description": {
+      "0": "Cuando Kaveh es golpeado por el daño que infligen los núcleos Dendro (incluyendo el daño infligido con Crepitar y Sobreflorecimiento), recuperará Vida en una cantidad equivalente al 300% de su Maestría Elemental. Este efecto solo se puede activar una vez cada 0.5 s."
+    }
+  },
+  "passive2": {
+    "name": "Ideas curiosas de un alarife",
+    "description": {
+      "0": "Mientras <strong>Bóveda policromada</strong> está activa, cuando Kaveh golpea a un enemigo con un Ataque Normal, Cargado o Descendente, su Maestría Elemental aumenta en 25 pts. Esto solo puede activarse una vez cada 0.1 s y acumularse un máximo de 4 veces.",
+      "1": "Este efecto se anulará una vez terminada la duración de Bóveda policromada."
+    }
+  },
+  "passive3": {
+    "name": "El arte de la presupuestación",
+    "description": {
+      "0": "Al fabricar edificios, patios y decoraciones de paisaje, se recuperan parte de los materiales usados."
+    }
+  },
+  "constellation1": {
+    "name": "Modales pudientes",
+    "description": {
+      "0": "Durante 3 s tras usar <strong>Genio de la arquitectura</strong>, la <dendro>RES Dendro</dendro> de Kaveh aumenta en un 50% y el Bono de Curación recibida, en un 25%."
+    }
+  },
+  "constellation2": {
+    "name": "Camino del Gran Tronco",
+    "description": {
+      "0": "Mientras <strong>Bóveda policromada</strong> esté activa, la Vel. de Ataque Normal de Kaveh aumenta en un 15%."
+    }
+  },
+  "constellation3": {
+    "name": "Oblación de Dur Untash",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Bóveda policromada</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Festín hipóstilo",
+    "description": {
+      "0": "Aumenta en un 60% el daño de explosión de los núcleos Dendro creados por Kaveh con la reacción de Florecimiento."
+    }
+  },
+  "constellation5": {
+    "name": "Galería sagrada",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Genio de la arquitectura</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Canon del paraíso",
+    "description": {
+      "0": "Mientras <strong>Bóveda policromada</strong> está activa, cuando Kaveh golpea a un enemigo con un Ataque Normal, Cargado o Descendente, libera una luz empírea en la ubicación de dicho enemigo que inflige <dendro>Daño Dendro en el AdE</dendro> en una cantidad equivalente al 61.8% del ATQ de Kaveh y hace explotar todos los núcleos Dendro activos en dicha AdE. Este efecto solo puede activarse una vez cada 3 s."
+    }
+  }
+}

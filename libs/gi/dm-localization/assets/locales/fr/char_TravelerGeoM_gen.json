@@ -1,0 +1,148 @@
+{
+  "auto": {
+    "name": "Lame de roche",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attaque normale</strong>",
+        "1": "Enchaîne jusqu'à 5 coups d'épée."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Consomme de l'endurance pour déclencher deux coups d'épée rapides."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis en chemin et des DGT de zone à l'impact."
+      }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT 4e coup",
+      "4": "DGT 5e coup",
+      "5": "DGT attaque chargée",
+      "6": "Coût d'endurance attaque chargée",
+      "7": "DGT durant la chute",
+      "8": "DGT chute basse/élevée",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Épée d'étoile déchue",
+    "description": {
+      "0": "Vous faites jaillir des profondeurs de la terre une météorite qui explose et inflige des <geo>DGT Géo de zone</geo>.",
+      "1": "La météorite est une <geo>construction Géo</geo> qui bloque les attaques et peut être escaladée.",
+      "2": "<br/>",
+      "3": "<strong>Appui long</strong>",
+      "4": "Ajuste la zone où la compétence sera lancée.",
+      "5": "<br/>",
+      "6": "<i>Vous avez parlé avec Paimon de la destination finale des étoiles filantes.</i>"
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "Durée de météorite",
+      "2": "Temps de recharge",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Réveil de la terre",
+    "description": {
+      "0": "Réveille les éléments Géo qu'abritent les profondeurs de la terre, provoquant une vague d'ondes de choc.",
+      "1": "Repousse les ennemis proches et inflige des <geo>DGT Géo de zone</geo>.",
+      "2": "Un mur de roche s'érige ensuite autour des ondes de choc.",
+      "3": "Le mur de roche est une <geo>construction Géo</geo> qui bloque les attaques et peut être escaladé.",
+      "4": "<br/>",
+      "5": "<i>Paimon et vous avez étudié le pouls qui anime les montagnes...</i>"
+    },
+    "skillParams": {
+      "0": "DGT par secousse",
+      "1": "Durée du mur de roche",
+      "2": "Temps de recharge",
+      "3": "Énergie élémentaire",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Roche brisée",
+    "description": {
+      "0": "Diminue le TdR d'<strong>Épée d'étoile déchue</strong> de 2 s."
+    }
+  },
+  "passive2": {
+    "name": "Roche turbulente",
+    "description": {
+      "0": "Le dernier coup d'attaque normale provoque un effondrement, qui inflige une quantité de <geo>DGT Géo</geo> équivalant à 60 % de l'ATQ aux ennemis dans la zone."
+    }
+  },
+  "constellation1": {
+    "name": "Mur de roche incassable",
+    "description": {
+      "0": "Le taux CRIT des personnages de l'équipe se trouvant entourés par le mur de roche de <strong>Réveil de la terre</strong> augmente de 10 %, leur RÉS à l'interruption augmentant également."
+    }
+  },
+  "constellation2": {
+    "name": "Effondrement de lave",
+    "description": {
+      "0": "La météorite d'<strong>Épée d'étoile déchue</strong> explose lorsqu'elle est détruite, et inflige un bonus de <geo>DGT Géo de zone</geo> équivalant aux DGT d'Épée d'étoile déchue."
+    }
+  },
+  "constellation3": {
+    "name": "Volonté de roche",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Réveil de la terre</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation4": {
+    "name": "Force de réaction",
+    "description": {
+      "0": "Chaque onde de choc de <strong>Réveil de la terre</strong> restaure 5 pts d'énergie élémentaire à chaque ennemi touché.",
+      "1": "Un maximum de 25 pts d'énergie élémentaire peut être restauré de cette manière."
+    }
+  },
+  "constellation5": {
+    "name": "Impact de météorite",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Épée d'étoile déchue</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation6": {
+    "name": "Roche de l'éternité",
+    "description": {
+      "0": "Prolonge la durée du mur de roche de <strong>Réveil de la terre</strong> de 5 s.",
+      "1": "Prolonge la durée de la météorite d'<strong>Épée d'étoile déchue</strong> de 10 s."
+    }
+  }
+}

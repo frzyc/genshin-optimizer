@@ -1,0 +1,171 @@
+{
+  "name": "Bennett",
+  "title": "Thử Thách Của Vận Mệnh",
+  "description": "Nhà mạo hiểm trẻ tuổi của Mondstadt, có vận đen luôn đi cùng sự lương thiện của anh ấy.",
+  "constellationName": "Cung Hiểm Lộ",
+  "auto": {
+    "name": "Kiếm May Mắn",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Tấn Công Thường</strong>",
+        "1": "Thực hiện tối đa 5 lần đánh kiếm liên tiếp."
+      },
+      "charged": {
+        "0": "<strong>Trọng Kích</strong>",
+        "1": "Tiêu hao thể lực nhất định, đánh ra hai kiếm về phía trước trong chớp mắt."
+      },
+      "plunging": {
+        "0": "<strong>Tấn Công Khi Đáp</strong>",
+        "1": "Đáp xuống đất từ trên không, tấn công kẻ địch trên đường và gây sát thương phạm vi khi chạm đất."
+      }
+    },
+    "skillParams": {
+      "0": "Sát Thương Lần 1",
+      "1": "Sát Thương Lần 2",
+      "2": "Sát Thương Lần 3",
+      "3": "Sát Thương Lần 4",
+      "4": "Sát Thương Lần 5",
+      "5": "Sát Thương Trọng Kích",
+      "6": "Thể lực Trọng Kích tiêu hao",
+      "7": "Sát Thương Khi Đáp",
+      "8": "ST Khi Rơi Từ Độ Cao Thấp/Cao",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Nhiệt Tình Quá Độ",
+    "description": {
+      "0": "Bennett ngưng tụ Nguyên Tố Hỏa và nhiệt huyết mạo hiểm trên kiếm. Dựa vào mức độ nhiệt tình ngưng tụ, sẽ gây ra hiệu quả khác nhau...",
+      "1": "<br/>",
+      "2": "<strong>Nhấn</strong>",
+      "3": "Nhanh chóng vung ra đòn đánh rực lửa về phía trước, gây <pyro>Sát Thương Nguyên Tố Hỏa</pyro>.",
+      "4": "<br/>",
+      "5": "<strong>Nhấn giữ</strong>",
+      "6": "Nhấn giữ để thực hiện tụ lực, khi thi triển sẽ gây ra hiệu quả khác nhau tùy theo số lần tụ lực.",
+      "7": [
+        "Tụ lực lần 1: Tấn công 2 lần, gây <pyro>Sát Thương Nguyên Tố Hỏa</pyro> và đánh bay địch;",
+        "Tụ lực lần 2: Tấn công liên tiếp 3 lần, gây <pyro>Sát Thương Nguyên Tố Hỏa</pyro>. Chiêu cuối sẽ gây nổ, đánh bay Bennett và kẻ địch. Khi bị đánh bay, Bennett sẽ không chịu sát thương."
+      ],
+      "8": "<br/>",
+      "9": "<i>Tụ hợp nhiệt huyết và đam mê vào đòn đánh Nguyên Tố Hỏa. Thế nhưng có lúc nhiệt huyết quá mức, Nguyên Tố Hỏa sẽ bùng nổ.</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Nhấn",
+      "1": "Sát Thương Tụ Lực Lần 1",
+      "2": "Sát Thương Tụ Lực Lần 2",
+      "3": "Sát Thương Nổ",
+      "4": "CD",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Hành Trình Kỳ Diệu",
+    "description": {
+      "0": "Bennett lao nhanh nã đạn, gây <pyro>sát thương nguyên tố hỏa</pyro> và tạo thành vùng đất cổ vũ.",
+      "1": "<br/>",
+      "2": "<strong>Vùng Đất Cổ Vũ</strong>",
+      "3": [
+        "Nhân vật đứng trong vùng đất này, nếu HP dưới hoặc bằng 70%, HP tối đa sẽ liên tục được hồi, lượng hồi phụ thuộc vào giới hạn HP của Bennett.",
+        "Nếu nhân vật trong vùng đất có HP cao hơn 70% HP tối đa, nhân vật ở trong đó sẽ nhận buff tấn công, giá trị bằng với tấn công cơ bản của Bennett, tăng tấn công với tỷ lệ nhất định.",
+        "Gán <pyro>ấn nguyên tố Hỏa</pyro> cho nhân vật trong đó."
+      ],
+      "4": "<br/>",
+      "5": "<i>Đoàn mạo hiểm Benny mỗi lần bắt đầu hành trình mạo hiểm đều đầy sự rủi ro. Chỉ duy nhất Bennett lại cho rằng đây là \"hành trình tuyệt vời, kịch tính và kì diệu\".</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Kỹ Năng",
+      "1": "Trị liệu kéo dài",
+      "2": "Tỷ Lệ Tăng Tấn Công",
+      "3": "Thời Gian Kéo Dài",
+      "4": "CD",
+      "5": "Năng Lượng Nguyên Tố",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Nhiệt Tình Rực Lửa",
+    "description": {
+      "0": "Giảm CD <strong>Nhiệt Tình Quá Độ</strong> 20%"
+    }
+  },
+  "passive2": {
+    "name": "Nhiệt Huyết Can Đảm",
+    "description": {
+      "0": "Ở trong khu vực <strong>Hành Trình Kỳ Diệu</strong>, <strong>Nhiệt Tình Quá Độ</strong> có hiệu quả như sau:",
+      "1": [
+        "CD giảm 50%;",
+        "Tụ lực lần 2 sẽ không tự đánh bay Bennett."
+      ]
+    }
+  },
+  "passive3": {
+    "name": "Có Thể An Toàn",
+    "description": {
+      "0": "Khi làm nhiệm vụ Phái Đi thám Hiểm ở Mondstadt, thời gian tiêu hao rút ngắn 25%."
+    }
+  },
+  "constellation1": {
+    "name": "Tầm Nhìn Phiêu Lưu",
+    "description": {
+      "0": "Buff hiệu quả tấn công của <strong>Hành Trình Kỳ Diệu</strong> sẽ không bị giới hạn bởi HP, tăng thêm 20% tấn công cơ bản của Bennett vào chỉ số."
+    }
+  },
+  "constellation2": {
+    "name": "Vượt Qua Nghịch Cảnh",
+    "description": {
+      "0": "Khi HP của Bennett dưới 70%, tăng 30% hiệu quả nạp Nguyên Tố."
+    }
+  },
+  "constellation3": {
+    "name": "Đam Mê Rực Cháy",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Nhiệt Tình Quá Độ</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation4": {
+    "name": "Nhiệt Huyết Bất Diệt",
+    "description": {
+      "0": "Khi thi triển <strong>Nhiệt Tình Quá Độ</strong> tụ lực lần 1, sẽ tấn công thường trong lúc tấn công kỹ năng lần 2, kèm theo truy kích.",
+      "1": "Sát thương truy kích bằng 135% của tấn công lần 2."
+    }
+  },
+  "constellation5": {
+    "name": "Mở Rộng Tâm Hồn",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Hành Trình Kỳ Diệu</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation6": {
+    "name": "Lửa Và Can Đảm",
+    "description": {
+      "0": "Nhân vật sử dụng kiếm đơn, trọng kiếm, vũ khí cán dài trong đội hiện đang trong trận ở khu vực <strong>Hành Trình Kỳ Diệu</strong> được nhận 15% <pyro>Buff Sát Thương Nguyên Tố Hỏa</pyro> và nhận <pyro>đính kèm Nguyên Tố Hỏa</pyro>."
+    }
+  }
+}

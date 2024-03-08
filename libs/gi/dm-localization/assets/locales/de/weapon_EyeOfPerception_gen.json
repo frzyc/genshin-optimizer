@@ -1,0 +1,24 @@
+{
+  "name": "Herzensblick",
+  "description": {
+    "0": "Eine dunkle Kristallkugel, die angeblich erkennen kann, ob das Herz eines Menschen rein ist."
+  },
+  "passiveName": "Widerhall",
+  "passiveDescription": {
+    "0": {
+      "0": "Schießt bei Treffern mit Standardangriffen und heftigen Schlägen mit einer Wahrscheinlichkeit von 50 % eine Kugel des Herzensblicks ab und verursacht Schaden in Höhe von <cryo>240 %</cryo> ANG. Geht bis zu 4-mal auf Gegner in der Nähe über. <cryo>12</cryo> s Abklingzeit."
+    },
+    "1": {
+      "0": "Schießt bei Treffern mit Standardangriffen und heftigen Schlägen mit einer Wahrscheinlichkeit von 50 % eine Kugel des Herzensblicks ab und verursacht Schaden in Höhe von <cryo>270 %</cryo> ANG. Geht bis zu 4-mal auf Gegner in der Nähe über. <cryo>11</cryo> s Abklingzeit."
+    },
+    "2": {
+      "0": "Schießt bei Treffern mit Standardangriffen und heftigen Schlägen mit einer Wahrscheinlichkeit von 50 % eine Kugel des Herzensblicks ab und verursacht Schaden in Höhe von <cryo>300 %</cryo> ANG. Geht bis zu 4-mal auf Gegner in der Nähe über. <cryo>10</cryo> s Abklingzeit."
+    },
+    "3": {
+      "0": "Schießt bei Treffern mit Standardangriffen und heftigen Schlägen mit einer Wahrscheinlichkeit von 50 % eine Kugel des Herzensblicks ab und verursacht Schaden in Höhe von <cryo>330 %</cryo> ANG. Geht bis zu 4-mal auf Gegner in der Nähe über. <cryo>9</cryo> s Abklingzeit."
+    },
+    "4": {
+      "0": "Schießt bei Treffern mit Standardangriffen und heftigen Schlägen mit einer Wahrscheinlichkeit von 50 % eine Kugel des Herzensblicks ab und verursacht Schaden in Höhe von <cryo>360 %</cryo> ANG. Geht bis zu 4-mal auf Gegner in der Nähe über. <cryo>8</cryo> s Abklingzeit."
+    }
+  }
+}

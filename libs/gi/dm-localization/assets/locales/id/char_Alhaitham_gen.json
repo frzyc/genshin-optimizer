@@ -1,0 +1,176 @@
+{
+  "name": "Alhaitham",
+  "title": "Admonishing Instruction",
+  "description": "Panitera Akademiya Sumeru saat ini, memiliki kecerdasan dan bakat yang luar biasa. Dia seseorang yang mencintai kebebasan, dan tidak bisa ditemukan kecuali bila dia sendiri ingin ditemukan.",
+  "constellationName": "Vultur Volans",
+  "auto": {
+    "name": "Abductive Reasoning",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Attack</strong>",
+        "1": "Melancarkan hingga 5 serangan pedang berturut-turut."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Mengonsumsi sejumlah Stamina untuk melancarkan dua tebasan pedang."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Menerjang dari udara untuk menghantam tanah di bawahnya, menyerang musuh di jalurnya dan mengakibatkan DMG area saat mendarat."
+      }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Tahap 4",
+      "4": "DMG Tahap 5",
+      "5": "DMG Charged Attack",
+      "6": "Konsumsi Stamina Charged Attack",
+      "7": "DMG Selama Plunging",
+      "8": "DMG Plunging Attack Rendah/Tinggi",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Universality: An Elaboration on Form",
+    "description": {
+      "0": "Menerjang dengan cepat, dan mengakibatkan <dendro>Dendro DMG</dendro> terhadap musuh di sekitar saat terjangan berakhir dan membentuk Chisel-Light Mirror.",
+      "1": "Saat ditahan, akan melancarkan serangan dengan cara yang berbeda.",
+      "2": "<br/>",
+      "3": "<strong>Mode Tahan</strong>",
+      "4": "Memasuki Mode Membidik untuk menyesuaikan arah terjangan.",
+      "5": "<br/>",
+      "6": "<strong>Chisel-Light Mirror</strong>",
+      "7": "Saat dilancarkan, Alhaitham akan menghasilkan 1 buah Chisel-Light Mirror. Jika pada saat ini masih belum ada Chisel-Light Mirror, maka dia akan menghasilkan 1 Chisel-Light Mirror tambahan. Chisel-Light Mirror memiliki efek sebagai berikut:",
+      "8": [
+        "Saat memiliki Chisel-Light Mirror, Normal Attack, Charged Attack, dan Plunging Attack Alhaitham akan dikonversi menjadi <dendro>Dendro DMG</dendro> yang tidak bisa ditimpa Elemental Infusion lainnya;",
+        "Saat serangan dengan efek di atas mengenai musuh, Chisel-Light Mirror akan melancarkan Serangan Proyektil dan mengakibatkan <dendro>Dendro DMG Area</dendro> berdasarkan jumlah Chisel-Light Mirror;",
+        "Jumlah maksimum Chisel-Light Mirror yang bisa dimiliki adalah 3 pada saat yang bersamaan;",
+        "Chisel-Light Mirror akan hilang secara bertahap seiring berjalannya waktu dan akan hilang sepenuhnya saat Alhaitham keluar dari medan pertempuran."
+      ],
+      "9": "<br/>",
+      "10": "<i>\"Kebenaran mutlak berada di tengah ketidakpastian. Bahkan peneliti paling agung pun tidak terlepas dari kesalahan.\"</i>"
+    },
+    "skillParams": {
+      "0": "DMG Serangan Menusuk",
+      "1": "Jeda Serangan Proyektil",
+      "2": "DMG Serangan Proyektil 1 Mirror",
+      "3": "DMG Serangan Proyektil 2 Mirror",
+      "4": "DMG Serangan Proyektil 3 Mirror",
+      "5": "Jeda hilangnya Chisel-Light Mirror",
+      "6": "Cooldown",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Particular Field: Fetters of Phenomena",
+    "description": {
+      "0": "Menciptakan Particular Binding Field dan mengakibatkan <dendro>Dendro DMG Area</dendro> beberapa kali.",
+      "1": "Saat dilancarkan, jika memiliki Chisel-Light Mirror, maka akan menggunakan seluruh Chisel-Light Mirror dan meningkatkan jumlah frekuensi DMG yang diakibatkan.",
+      "2": "Dalam 2 detik setelah melancarkan skill ini, Alhaitham akan mendapatkan 3/2/1/0 buah Chisel-Light Mirror jika Alhaitham mengonsumsi 0/1/2/3 buah Chisel-Light Mirror saat skill ini dilancarkan.",
+      "3": "<br/>",
+      "4": "<i>\"Jika peneliti menjadikan kebijaksanaan sebagai tujuan akhirnya, maka ia harus siap untuk bermusuhan dengan setiap kata yang dibacanya. Hanya dengan cara seperti itulah, dia bisa menghindari penyimpangan.\"</i>"
+    },
+    "skillParams": {
+      "0": "DMG Instan Tunggal",
+      "1": "Frekuensi Serangan Dasar",
+      "2": "Frekuensi Serangan 1 Mirror",
+      "3": "Frekuensi Serangan 2 Mirror",
+      "4": "Frekuensi Serangan 3 Mirror",
+      "5": "Cooldown",
+      "6": "Konsumsi Energy",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Four-Causal Correction",
+    "description": {
+      "0": "Saat Charged Attack atau Plunging Attack Alhaitham mengenai musuh, akan menghasilkan satu Chisel-Light Mirror. Efek ini bisa terpicu setiap 12 detik sekali."
+    }
+  },
+  "passive2": {
+    "name": "Mysteries Laid Bare",
+    "description": {
+      "0": "Untuk setiap Elemental Mastery yang dimiliki Alhaitham, DMG Serangan Proyektil dan <strong>Particular Field: Fetters of Phenomena</strong> akan meningkat 0,1%.",
+      "1": "Maksimum bonus DMG Serangan Proyektil dan Particular Field: Fetters of Phenomena yang bisa diperoleh dengan cara ini adalah 100%."
+    }
+  },
+  "passive3": {
+    "name": "Law of Reductive Overdetermination",
+    "description": {
+      "0": "Saat membuat Material Ascension Senjata, memiliki 10% kemungkinan untuk mendapatkan hasil 2 kali lipat."
+    }
+  },
+  "constellation1": {
+    "name": "Intuition",
+    "description": {
+      "0": "Saat Serangan Proyektil mengenai musuh, akan membuat CD <strong>Universality: An Elaboration on Form</strong> berkurang 1,2 detik.",
+      "1": "Efek ini bisa terpicu 1 detik sekali."
+    }
+  },
+  "constellation2": {
+    "name": "Debate",
+    "description": {
+      "0": "Saat Alhaitham menghasilkan Chisel-Light Mirror, untuk setiap 1 Chisel-Light Mirror yang dihasilkan, Elemental Mastery-nya akan meningkat 50 poin selama 8 detik. Efek ini dapat ditumpuk sampai 4 lapis, dan durasi setiap tumpuknya akan dihitung secara terpisah. Efek ini tetap bisa terpicu saat jumlah Chisel-Light Mirror sudah mencapai batas maksimumnya."
+    }
+  },
+  "constellation3": {
+    "name": "Negation",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Universality: An Elaboration on Form</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Elucidation",
+    "description": {
+      "0": "Saat melancarkan <strong>Particular Field: Fetters of Phenomena</strong>, akan menghasilkan efek berikut berdasarkan jumlah Chisel-Light Mirror yang terpakai dan yang dihasilkan pada saat melancarkan skill kali ini:",
+      "1": [
+        "Untuk setiap 1 Chisel-Light Mirror yang terpakai, Elemental Mastery anggota party lain di sekitar meningkat 30 poin selama 15 detik;",
+        "Untuk setiap 1 Chisel-Light Mirror yang dihasilkan, Alhaitham akan memperoleh 10% <dendro>Dendro DMG Bonus</dendro> selama 15 detik."
+      ],
+      "2": "<br/>",
+      "3": "Jika melancarkan Particular Field: Fetters of Phenomena selama durasi efek di atas masih berlangsung, maka akan menghapus efek awal yang dimiliki."
+    }
+  },
+  "constellation5": {
+    "name": "Sagacity",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Particular Field: Fetters of Phenomena</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Structuration",
+    "description": {
+      "0": "Alhaitham akan mendapatkan efek sebagai berikut:",
+      "1": [
+        "2 detik setelah <strong>Particular Field: Fetters of Phenomena</strong> selesai dilancarkan, akan tetap menghasilkan 3 Chisel-Light Mirror terlepas dari berapa pun Chisel Light Mirror yang terpakai;"
+      ],
+      "2": "Saat Alhaitham menghasilkan Chisel-Light Mirror dan sudah mencapai batas maksimumnya, CRIT Rate Alhaitham akan meningkat 10% dan CRIT DMG Alhaitham akan meningkat 70%, masing-masing selama 6 detik. Jika efek ini terpicu kembali saat durasi awalnya masih berlangsung, akan menambahkan durasi buff selama 6 detik."
+    }
+  }
+}

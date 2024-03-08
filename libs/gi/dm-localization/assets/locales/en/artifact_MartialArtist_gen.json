@@ -1,0 +1,29 @@
+{
+  "setName": "Martial Artist",
+  "setEffects": {
+    "2": "Normal and Charged Attack DMG +15%",
+    "4": "After using Elemental Skill, increases Normal Attack and Charged Attack DMG by 25% for 8s."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Martial Artist's Red Flower",
+      "desc": "This particular kind of red flower was the only thing that could alleviate the Martial Artist's pain."
+    },
+    "plume": {
+      "name": "Martial Artist's Feather Accessory",
+      "desc": "A common bird feather. Experts use it to practice strength control, while rookies use it to make fans."
+    },
+    "sands": {
+      "name": "Martial Artist's Water Hourglass",
+      "desc": "A tool to keep track of time in endurance training. It is more accurate and reliable than a regular hourglass."
+    },
+    "goblet": {
+      "name": "Martial Artist's Wine Cup",
+      "desc": "A rather exquisite wine cup used in pre-combat rituals."
+    },
+    "circlet": {
+      "name": "Martial Artist's Bandana",
+      "desc": "The first lesson as an apprentice: Vigor, Strength, Will. These words are written on the bandana so you'll never forget them."
+    }
+  }
+}

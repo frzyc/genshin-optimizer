@@ -1,0 +1,12 @@
+{
+  "setName": "Sacrifieur Cryo",
+  "setEffects": {
+    "1": "Diminue la durée des effets Cryo subis de 40 %."
+  },
+  "pieces": {
+    "circlet": {
+      "name": "Couronne rituelle Cryo",
+      "desc": "Une couronne portée par les prêtres lors de cérémonies dans les temps anciens. Son exposition prolongée au gel et au froid lui a conféré une merveilleuse résistance."
+    }
+  }
+}

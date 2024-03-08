@@ -1,0 +1,24 @@
+{
+  "name": "Kiếm Lữ Hành",
+  "description": {
+    "0": "Kiếm làm bằng gang thép rất chắc tay, trên thanh kiếm có ẩn giấu kéo, kính lúp, dây dẫn lửa v.v, rất tiện lợi cho việc lữ hành."
+  },
+  "passiveName": "Hành Trình",
+  "passiveDescription": {
+    "0": {
+      "0": "Khi nhận được Nguyên Tố Tinh Cầu hoặc Nguyên Tố Hạt Nhân, hồi phục <cryo>1%</cryo>HP"
+    },
+    "1": {
+      "0": "Khi nhận được Nguyên Tố Tinh Cầu hoặc Nguyên Tố Hạt Nhân, hồi phục <cryo>1.25%</cryo>HP"
+    },
+    "2": {
+      "0": "Khi nhận được Nguyên Tố Tinh Cầu hoặc Nguyên Tố Hạt Nhân, hồi phục <cryo>1.5%</cryo>HP"
+    },
+    "3": {
+      "0": "Khi nhận được Nguyên Tố Tinh Cầu hoặc Nguyên Tố Hạt Nhân, hồi phục <cryo>1.75%</cryo>HP"
+    },
+    "4": {
+      "0": "Khi nhận được Nguyên Tố Tinh Cầu hoặc Nguyên Tố Hạt Nhân, hồi phục <cryo>2%</cryo>HP"
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Arco de Favonius",
+  "description": {
+    "0": "Un arco recurvo estándar de los Caballeros de Favonius. Solo los mejores arqueros pueden aprovechar todo su potencial."
+  },
+  "passiveName": "Avanza con el viento",
+  "passiveDescription": {
+    "0": {
+      "0": "Los Golpes CRIT tienen un <cryo>60%</cryo> de probabilidad de generar una pequeña cantidad de partículas elementales, las cuales regenerarán 6 pts. de Energía para el personaje. Solo puede ocurrir una vez cada <cryo>12</cryo> s."
+    },
+    "1": {
+      "0": "Los Golpes CRIT tienen un <cryo>70%</cryo> de probabilidad de generar una pequeña cantidad de partículas elementales, las cuales regenerarán 6 pts. de Energía para el personaje. Solo puede ocurrir una vez cada <cryo>10.5</cryo> s."
+    },
+    "2": {
+      "0": "Los Golpes CRIT tienen un <cryo>80%</cryo> de probabilidad de generar una pequeña cantidad de partículas elementales, las cuales regenerarán 6 pts. de Energía para el personaje. Solo puede ocurrir una vez cada <cryo>9</cryo> s."
+    },
+    "3": {
+      "0": "Los Golpes CRIT tienen un <cryo>90%</cryo> de probabilidad de generar una pequeña cantidad de partículas elementales, las cuales regenerarán 6 pts. de Energía para el personaje. Solo puede ocurrir una vez cada <cryo>7.5</cryo> s."
+    },
+    "4": {
+      "0": "Los Golpes CRIT tienen un <cryo>100%</cryo> de probabilidad de generar una pequeña cantidad de partículas elementales, las cuales regenerarán 6 pts. de Energía para el personaje. Solo puede ocurrir una vez cada <cryo>6</cryo> s."
+    }
+  }
+}

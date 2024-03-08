@@ -1,0 +1,24 @@
+{
+  "name": "„Der Fang“",
+  "description": {
+    "0": "In der fernen Vergangenheit war dies der geliebte Speer eines berühmten Banditen aus Inazuma."
+  },
+  "passiveName": "Seemannslied",
+  "passiveDescription": {
+    "0": {
+      "0": "Erhöht den mit Spezialfähigkeiten verursachten Schaden um <cryo>16 %</cryo> und die KT von Spezialfähigkeiten um <cryo>6 %</cryo>."
+    },
+    "1": {
+      "0": "Erhöht den mit Spezialfähigkeiten verursachten Schaden um <cryo>20 %</cryo> und die KT von Spezialfähigkeiten um <cryo>7,5 %</cryo>."
+    },
+    "2": {
+      "0": "Erhöht den mit Spezialfähigkeiten verursachten Schaden um <cryo>24 %</cryo> und die KT von Spezialfähigkeiten um <cryo>9 %</cryo>."
+    },
+    "3": {
+      "0": "Erhöht den mit Spezialfähigkeiten verursachten Schaden um <cryo>28 %</cryo> und die KT von Spezialfähigkeiten um <cryo>10,5 %</cryo>."
+    },
+    "4": {
+      "0": "Erhöht den mit Spezialfähigkeiten verursachten Schaden um <cryo>32 %</cryo> und die KT von Spezialfähigkeiten um <cryo>12 %</cryo>."
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Gậy Đàm Phán",
+  "description": {
+    "0": "Một cây gậy lớn có khảm đá đen nặng trịch, có sức thuyết phục khá mạnh mẽ."
+  },
+  "passiveName": "\"Miệng Mồm Lanh Lợi\"",
+  "passiveDescription": {
+    "0": {
+      "0": "Trong 15s khi bị gán ấn nguyên tố Hỏa, tấn công tăng <cryo>16%</cryo>, mỗi 12s tối đa kích hoạt một lần; Trong 15s khi bị gán ấn nguyên tố Thủy, Băng, Lôi hoặc Thảo, buff sát thương tất cả nguyên tố tăng <cryo>12%</cryo>, mỗi 12s tối đa kích hoạt một lần."
+    },
+    "1": {
+      "0": "Trong 15s khi bị gán ấn nguyên tố Hỏa, tấn công tăng <cryo>20%</cryo>, mỗi 12s tối đa kích hoạt một lần; Trong 15s khi bị gán ấn nguyên tố Thủy, Băng, Lôi hoặc Thảo, buff sát thương tất cả nguyên tố tăng <cryo>15%</cryo>, mỗi 12s tối đa kích hoạt một lần."
+    },
+    "2": {
+      "0": "Trong 15s khi bị gán ấn nguyên tố Hỏa, tấn công tăng <cryo>24%</cryo>, mỗi 12s tối đa kích hoạt một lần; Trong 15s khi bị gán ấn nguyên tố Thủy, Băng, Lôi hoặc Thảo, buff sát thương tất cả nguyên tố tăng <cryo>18%</cryo>, mỗi 12s tối đa kích hoạt một lần."
+    },
+    "3": {
+      "0": "Trong 15s khi bị gán ấn nguyên tố Hỏa, tấn công tăng <cryo>28%</cryo>, mỗi 12s tối đa kích hoạt một lần; Trong 15s khi bị gán ấn nguyên tố Thủy, Băng, Lôi hoặc Thảo, buff sát thương tất cả nguyên tố tăng <cryo>21%</cryo>, mỗi 12s tối đa kích hoạt một lần."
+    },
+    "4": {
+      "0": "Trong 15s khi bị gán ấn nguyên tố Hỏa, tấn công tăng <cryo>32%</cryo>, mỗi 12s tối đa kích hoạt một lần; Trong 15s khi bị gán ấn nguyên tố Thủy, Băng, Lôi hoặc Thảo, buff sát thương tất cả nguyên tố tăng <cryo>24%</cryo>, mỗi 12s tối đa kích hoạt một lần."
+    }
+  }
+}

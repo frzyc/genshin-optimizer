@@ -1,0 +1,24 @@
+{
+  "name": "Auge des Gelöbnisses",
+  "description": {
+    "0": "Ein Nationalschatz von Byakuyakoku, der im Dainichi Mikoshi aufbewahrt wird. Mit dem Erscheinen des Schlangengottes wurde dieser Gegenstand verwendet, um große Eide und Wünsche zu beglaubigen."
+  },
+  "passiveName": "Bewohner der dunklen Tiefe",
+  "passiveDescription": {
+    "0": {
+      "0": "Erhöht bei Anwendung von Elementarfähigkeiten die Aufladerate 10 s lang um <cryo>24 %</cryo>."
+    },
+    "1": {
+      "0": "Erhöht bei Anwendung von Elementarfähigkeiten die Aufladerate 10 s lang um <cryo>30 %</cryo>."
+    },
+    "2": {
+      "0": "Erhöht bei Anwendung von Elementarfähigkeiten die Aufladerate 10 s lang um <cryo>36 %</cryo>."
+    },
+    "3": {
+      "0": "Erhöht bei Anwendung von Elementarfähigkeiten die Aufladerate 10 s lang um <cryo>42 %</cryo>."
+    },
+    "4": {
+      "0": "Erhöht bei Anwendung von Elementarfähigkeiten die Aufladerate 10 s lang um <cryo>48 %</cryo>."
+    }
+  }
+}

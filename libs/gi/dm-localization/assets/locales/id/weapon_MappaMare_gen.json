@@ -1,0 +1,24 @@
+{
+  "name": "Mappa Mare",
+  "description": {
+    "0": "Grafik petunjuk untuk berlayar di laut, menunjukkan arus dan iklim di sekitar, mencapai Liyue melalui tangan para pedagang."
+  },
+  "passiveName": "Infusion Scroll",
+  "passiveDescription": {
+    "0": {
+      "0": "Memicu Elemental reaction akan meningkatkan Elemental DMG sebanyak <cryo>8%</cryo> selama 10 detik. Efek ini dapat ditumpuk maksimum 2 lapis."
+    },
+    "1": {
+      "0": "Memicu Reaksi Elemental akan meningkatkan Elemental DMG sebanyak <cryo>10%</cryo> selama 10 detik. Efek ini dapat ditumpuk maksimum 2 lapis."
+    },
+    "2": {
+      "0": "Memicu Reaksi Elemental akan meningkatkan Elemental DMG sebanyak <cryo>12%</cryo> selama 10 detik. Efek ini dapat ditumpuk maksimum 2 lapis."
+    },
+    "3": {
+      "0": "Memicu Reaksi Elemental akan meningkatkan Elemental DMG sebanyak <cryo>14%</cryo> selama 10 detik. Efek ini dapat ditumpuk maksimum 2 lapis."
+    },
+    "4": {
+      "0": "Memicu Reaksi Elemental akan meningkatkan Elemental DMG sebanyak <cryo>16%</cryo> selama 10 detik. Efek ini dapat ditumpuk maksimum 2 lapis."
+    }
+  }
+}

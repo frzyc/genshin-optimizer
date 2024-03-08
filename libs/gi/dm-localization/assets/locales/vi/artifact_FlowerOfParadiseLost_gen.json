@@ -1,0 +1,29 @@
+{
+  "setName": "Đóa Hoa Trang Viên Thất Lạc",
+  "setEffects": {
+    "2": "Tăng 80 điểm Tinh Thông Nguyên Tố.",
+    "4": "Sát thương gây ra từ phản ứng Sum Suê, Nở Rộ, Bung Tỏa của người trang bị tăng 40%. Ngoài ra, người trang bị sau khi kích hoạt phản ứng Sum Suê, Nở Rộ, Bung Tỏa sẽ tăng 25% hiệu ứng nêu trên, duy trì 10s, tối đa cộng dồn 4 lần, mỗi 1s tối đa kích hoạt một lần. Người trang bị khi không ra trận vẫn có thể kích hoạt hiệu quả này."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Muôn Sắc Của Ay-Khanoum",
+      "desc": "Hoa pha lê tím được điêu khắc tinh xảo, hình dáng có vẻ như khắc họa từ một loài hoa đã tuyệt chủng từ thời cổ đại."
+    },
+    "plume": {
+      "name": "Tiệc Rượu Suy Tàn",
+      "desc": "Lông vũ từ loài chim đã tuyệt chủng từ lâu, được tín đồ Hoa Thần thời xưa khảm vàng và đá quý vào."
+    },
+    "sands": {
+      "name": "Thời Khắc Ngưng Kết",
+      "desc": "Đồng hồ cát đã ngưng hoạt động, dù đảo thế nào cũng không thể tái hiện lại dòng thời gian."
+    },
+    "goblet": {
+      "name": "Bình Ma Trấn Giữ Bí Mật",
+      "desc": "Chiếc bình nhỏ điêu khắc bằng pha lê tím, được đậy kín bằng chiếc nắp màu lục bảo."
+    },
+    "circlet": {
+      "name": "Vương Miện Tử Tinh",
+      "desc": "Vương miện khảm pha lê tím và ngọc lục bảo, có vẻ như là trang sức của tư tế Hoa Thần thời cổ đại."
+    }
+  }
+}

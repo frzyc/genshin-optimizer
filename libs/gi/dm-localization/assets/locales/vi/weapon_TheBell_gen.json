@@ -1,0 +1,24 @@
+{
+  "name": "Kiếm Chuông",
+  "description": {
+    "0": "Kiếm lớn và nặng có gắn thêm đồng hồ, nhưng cơ quan tính giờ của nó đã bị phá hoại."
+  },
+  "passiveName": "Kẻ Bảo Vệ Phản Nghịch",
+  "passiveDescription": {
+    "0": {
+      "0": "Khi nhận sát thương sẽ tạo ra khiên có lượng hấp thụ sát thương bằng <cryo>20%</cryo> giới hạn HP, kéo dài 10s hoặc đến khi khiên mất hiệu lực, mỗi <cryo>45</cryo>s chỉ thi triển 1 lần. Khi nhân vật được khiên bảo vệ, sát thương tạo thành tăng <cryo>12%</cryo>."
+    },
+    "1": {
+      "0": "Khi nhận sát thương sẽ tạo ra khiên có lượng hấp thụ sát thương bằng <cryo>23%</cryo> giới hạn HP, kéo dài 10s hoặc đến khi khiên mất hiệu lực, mỗi <cryo>45</cryo>s chỉ thi triển 1 lần. Khi nhân vật được khiên bảo vệ, sát thương tạo thành tăng <cryo>15%</cryo>."
+    },
+    "2": {
+      "0": "Khi nhận sát thương sẽ tạo ra khiên có lượng hấp thụ sát thương bằng <cryo>26%</cryo> giới hạn HP, kéo dài 10s hoặc đến khi khiên mất hiệu lực, mỗi <cryo>45</cryo>s chỉ thi triển 1 lần. Khi nhân vật được khiên bảo vệ, sát thương tạo thành tăng <cryo>18%</cryo>."
+    },
+    "3": {
+      "0": "Khi nhận sát thương sẽ tạo ra khiên có lượng hấp thụ sát thương bằng <cryo>29%</cryo> giới hạn HP, kéo dài 10s hoặc đến khi khiên mất hiệu lực, mỗi <cryo>45</cryo>s chỉ thi triển 1 lần. Khi nhân vật được khiên bảo vệ, sát thương tạo thành tăng <cryo>21%</cryo>."
+    },
+    "4": {
+      "0": "Khi nhận sát thương sẽ tạo ra khiên có lượng hấp thụ sát thương bằng <cryo>32%</cryo> giới hạn HP, kéo dài 10s hoặc đến khi khiên mất hiệu lực, mỗi <cryo>45</cryo>s chỉ thi triển 1 lần. Khi nhân vật được khiên bảo vệ, sát thương tạo thành tăng <cryo>24%</cryo>."
+    }
+  }
+}

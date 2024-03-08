@@ -1,0 +1,24 @@
+{
+  "name": "Espada Real del Bosque",
+  "description": {
+    "0": "Un arma obtenida a través de una de las historias de los aranara. Tiene forma de mandoble y es capaz de aplastar a cualquier enemigo del bosque."
+  },
+  "passiveName": "Gracia del bosque",
+  "passiveDescription": {
+    "0": {
+      "0": "Al causar una reacción de Quemadura, Aceleración, Intensificación, Propagación, Florecimiento, Sobreflorecimiento o Crepitar, se crea cerca del personaje una hoja alayavijñana que existirá durante 10 s. La Maestría Elemental del personaje que la recoja aumentará en <cryo>60</cryo> pts. durante 12 s. Solo se puede crear una hoja alayavijñana cada 20 s de esta manera. Este efecto también se puede activar cuando el personaje está en tu equipo pero no en uso, y no se puede acumular."
+    },
+    "1": {
+      "0": "Al causar una reacción de Quemadura, Aceleración, Intensificación, Propagación, Florecimiento, Sobreflorecimiento o Crepitar, se crea cerca del personaje una hoja alayavijñana que existirá durante 10 s. La Maestría Elemental del personaje que la recoja aumentará en <cryo>75</cryo> pts. durante 12 s. Solo se puede crear una hoja alayavijñana cada 20 s de esta manera. Este efecto también se puede activar cuando el personaje está en tu equipo pero no en uso, y no se puede acumular."
+    },
+    "2": {
+      "0": "Al causar una reacción de Quemadura, Aceleración, Intensificación, Propagación, Florecimiento, Sobreflorecimiento o Crepitar, se crea cerca del personaje una hoja alayavijñana que existirá durante 10 s. La Maestría Elemental del personaje que la recoja aumentará en <cryo>90</cryo> pts. durante 12 s. Solo se puede crear una hoja alayavijñana cada 20 s de esta manera. Este efecto también se puede activar cuando el personaje está en tu equipo pero no en uso, y no se puede acumular."
+    },
+    "3": {
+      "0": "Al causar una reacción de Quemadura, Aceleración, Intensificación, Propagación, Florecimiento, Sobreflorecimiento o Crepitar, se crea cerca del personaje una hoja alayavijñana que existirá durante 10 s. La Maestría Elemental del personaje que la recoja aumentará en <cryo>105</cryo> pts. durante 12 s. Solo se puede crear una hoja alayavijñana cada 20 s de esta manera. Este efecto también se puede activar cuando el personaje está en tu equipo pero no en uso, y no se puede acumular."
+    },
+    "4": {
+      "0": "Al causar una reacción de Quemadura, Aceleración, Intensificación, Propagación, Florecimiento, Sobreflorecimiento o Crepitar, se crea cerca del personaje una hoja alayavijñana que existirá durante 10 s. La Maestría Elemental del personaje que la recoja aumentará en <cryo>120</cryo> pts. durante 12 s. Solo se puede crear una hoja alayavijñana cada 20 s de esta manera. Este efecto también se puede activar cuando el personaje está en tu equipo pero no en uso, y no se puede acumular."
+    }
+  }
+}

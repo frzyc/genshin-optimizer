@@ -48,7 +48,6 @@
           "mode": "production"
         }
       },
-      "dependsOn": ["gen-file", "^gen-file", "^build"],
       "inputs": ["production", "^production"]
     },
     "build-ts": {
@@ -59,7 +58,6 @@
         "main": "{projectRoot}/src/index.ts",
         "tsConfig": "{projectRoot}/tsconfig.lib.json"
       },
-      "dependsOn": ["gen-file", "^gen-file", "^build"],
       "inputs": ["production", "^production"]
     },
     "e2e": {
@@ -72,8 +70,7 @@
         "lintFilePatterns": ["{projectRoot}/**/*.{ts,tsx,js,jsx}"],
         "fix": true
       },
-      "inputs": ["default", "{workspaceRoot}/.eslintrc.json"],
-      "dependsOn": ["gen-file", "^gen-file"]
+      "inputs": ["default", "{workspaceRoot}/.eslintrc.json"]
     },
     "test": {
       "executor": "@nx/jest:jest",

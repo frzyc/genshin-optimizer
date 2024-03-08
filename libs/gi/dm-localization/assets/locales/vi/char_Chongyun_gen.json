@@ -1,0 +1,154 @@
+{
+  "name": "Chongyun",
+  "title": "Bóng Hình Băng Giá",
+  "description": "Phương sĩ trẻ tuổi thuộc gia đình danh giá chuyên trừ tà, luôn cố gắng hết sức để khống chế \"thuần dương chi thể\" của bản thân.",
+  "constellationName": "Cung Càn Khôn Phong",
+  "auto": {
+    "name": "Bốn Cách Diệt Tà",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Tấn Công Thường</strong>",
+        "1": "Thực hiện tối đa 4 lần chém liên tiếp."
+      },
+      "charged": {
+        "0": "<strong>Trọng Kích</strong>",
+        "1": "Tiêu hao thể lực để xoay kiếm tấn công địch xung quanh.",
+        "2": "Khi ngừng quay, sẽ bổ một nhát cực mạnh."
+      },
+      "plunging": {
+        "0": "<strong>Tấn Công Khi Đáp</strong>",
+        "1": "Đáp xuống đất từ trên không, tấn công kẻ địch trên đường và gây sát thương phạm vi khi chạm đất."
+      }
+    },
+    "skillParams": {
+      "0": "Sát Thương Lần 1",
+      "1": "Sát Thương Lần 2",
+      "2": "Sát Thương Lần 3",
+      "3": "Sát Thương Lần 4",
+      "4": "Sát Thương Trọng Kích Tuần Hoàn",
+      "5": "Sát Thương Trọng Kích Chí Mạng",
+      "6": "Thể lực Trọng Kích tiêu hao",
+      "7": "Thời Gian Kéo Dài Tối Đa",
+      "8": "Sát Thương Khi Đáp",
+      "9": "ST Khi Rơi Từ Độ Cao Thấp/Cao",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Linh Đao - Sương Bạc Trùng Điệp",
+    "description": {
+      "0": "Chongyun vung cự kiếm đập mạnh xuống mặt đất, gây ra vụ nổ băng ở phạm vi hình tròn phía trước và gây cho địch <cryo>sát thương Nguyên Tố Băng</cryo>.",
+      "1": "Sau khi gây ngưng trệ ngắn hạn, hàn khí tích tụ thành khu vực Sương Bạc Trùng Điệp, khiến cho nhân vật dùng kiếm đơn, đại kiếm, vũ khí cán dài nhận <cryo>đính kèm Nguyên Tố Băng</cryo>.",
+      "2": "<br/>",
+      "3": "<i>\"Ngọc vỡ chấn động, bốn bề im ắng. Sông nước bất động, mây trời ngưng tụ. Lập đàn thi pháp, tà ác rút lui.\"</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Kỹ Năng",
+      "1": "Thời Gian Đính Kèm Kéo Dài",
+      "2": "Thời Gian Khu Vực Kéo Dài",
+      "3": "CD",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Linh Đao - Vân Khai Tinh Lạc",
+    "description": {
+      "0": "Chongyun kết ấn, triệu hồi liên tục ba thanh linh kiếm ở khoảng không phía trước, rồi lần lượt rơi xuống mặt đất và nổ tung.",
+      "1": "Khi linh kiếm nổ sẽ gây <cryo>sát thương phạm vi nguyên tố băng</cryo> đồng thời đánh bay kẻ địch.",
+      "2": "<br/>",
+      "3": "<i>\"Trác kiếm thiên địa động, băng lăng sương hàn sinh. Như luật lệnh!\"</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Kỹ Năng",
+      "1": "CD",
+      "2": "Năng Lượng Nguyên Tố",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Hơi Thở Bình Yên",
+    "description": {
+      "0": "Tất cả nhân vật dùng kiếm đơn, trọng kiếm, vũ khí cán dài đứng trong <strong>Linh Đao - Sương Bạc Trùng Điệp</strong> tăng 8% tốc độ tấn công của các đòn tấn công thường."
+    }
+  },
+  "passive2": {
+    "name": "Truy Băng Kiếm Quyết",
+    "description": {
+      "0": "Khi khu vực <strong>Linh Đao - Sương Bạc Trùng Điệp</strong> biến mất, sẽ gọi ra 1 thanh Linh Đao tự động tấn công địch xung quanh, tạo thành 100% <cryo>sát thương phạm vi Nguyên Tố Băng</cryo> tương đương với kỹ năng sát thương của Linh Đao - Sương Bạc Trùng Điệp. Địch bị đánh trúng <cryo>kháng Nguyên Tố Băng</cryo> giảm 10%, kéo dài 8s."
+    }
+  },
+  "passive3": {
+    "name": "Chu Du Sông Núi",
+    "description": {
+      "0": "Khi làm nhiệm vụ Phái Đi thám Hiểm ở Liyue, thời gian tiêu hao rút ngắn 25%."
+    }
+  },
+  "constellation1": {
+    "name": "Phóng Thích Đao Băng",
+    "description": {
+      "0": "Lần đánh cuối trong tấn công thường sẽ phóng ra 3 đạo băng đao về phía trước, mỗi đao băng sẽ gây ra <cryo>sát thương Nguyên Tố Băng</cryo> bằng tấn công 50% của Chongyun cho kẻ địch trên đường đi."
+    }
+  },
+  "constellation2": {
+    "name": "Nghịch Chuyển Đất Trời",
+    "description": {
+      "0": "CD của kỹ năng nguyên tố và kỹ năng nộ khi thi triển trong khu vực <strong>Linh Đao - Sương Bạc Trùng Điệp</strong> giảm 15%"
+    }
+  },
+  "constellation3": {
+    "name": "Vân Tận Quang Sinh",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Linh Đao - Vân Khai Tinh Lạc</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation4": {
+    "name": "Phù Vân Sương Thiên",
+    "description": {
+      "0": "Khi Chongyun tấn công địch bị <cryo>Nguyên Tố Băng</cryo> ảnh hưởng, bản thân sẽ được hồi 1 điểm Năng Lượng Nguyên Tố.",
+      "1": "Hiệu quả này tối đa mỗi 2s thi triển một lần."
+    }
+  },
+  "constellation5": {
+    "name": "Chính Đạo Chân Lý",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Linh Đao - Sương Bạc Trùng Điệp</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation6": {
+    "name": "Tứ Linh Bổng Thánh",
+    "description": {
+      "0": "<strong>Linh Đao - Vân Khai Tinh Lạc</strong> khi gây sát thương cho kẻ địch có tỷ lệ HP thấp hơn Chongyun, sát thương tăng 15%;",
+      "1": "Ngoài ra, khi thi triển sẽ triệu hồi thêm một linh đao."
+    }
+  }
+}

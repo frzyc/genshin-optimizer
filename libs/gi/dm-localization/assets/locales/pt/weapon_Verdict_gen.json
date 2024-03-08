@@ -1,0 +1,24 @@
+{
+  "name": "Veredito",
+  "description": {
+    "0": "Uma espada usada por uma jovem dama que abandonou o nome de sua família, manchado com o sangue de inimigos e de familiares."
+  },
+  "passiveName": "Juramento dos Reinos e Crepúsculos",
+  "passiveDescription": {
+    "0": {
+      "0": "Aumenta o ATQ em <cryo>20%</cryo>. Quando o personagem da equipe obtém um Fragmento gerado por Cristalização, concede ao personagem que está com essa arma equipada 1 \"Selo do Juramento\", aumentando o Dano causado por sua Habilidade Elemental em <cryo>18%</cryo>. O Selo do Juramento dura 15s e pode ser acumulado até duas vezes. Todos os Selos do Juramento serão removidos 0.2s após o personagem que está com essa arma equipada causar Dano de Habilidade Elemental."
+    },
+    "1": {
+      "0": "Aumenta o ATQ em <cryo>25%</cryo>. Quando o personagem da equipe obtém um Fragmento gerado por Cristalização, concede ao personagem que está com essa arma equipada 1 \"Selo do Juramento\", aumentando o Dano causado por sua Habilidade Elemental em <cryo>22.5%</cryo>. O Selo do Juramento dura 15s e pode ser acumulado até duas vezes. Todos os Selos do Juramento serão removidos 0.2s após o personagem que está com essa arma equipada causar Dano de Habilidade Elemental."
+    },
+    "2": {
+      "0": "Aumenta o ATQ em <cryo>30%</cryo>. Quando o personagem da equipe obtém um Fragmento gerado por Cristalização, concede ao personagem que está com essa arma equipada 1 \"Selo do Juramento\", aumentando o Dano causado por sua Habilidade Elemental em <cryo>27%</cryo>. O Selo do Juramento dura 15s e pode ser acumulado até duas vezes. Todos os Selos do Juramento serão removidos 0.2s após o personagem que está com essa arma equipada causar Dano de Habilidade Elemental."
+    },
+    "3": {
+      "0": "Aumenta o ATQ em <cryo>35%</cryo>. Quando o personagem da equipe obtém um Fragmento gerado por Cristalização, concede ao personagem que está com essa arma equipada 1 \"Selo do Juramento\", aumentando o Dano causado por sua Habilidade Elemental em <cryo>31.5%</cryo>. O Selo do Juramento dura 15s e pode ser acumulado até duas vezes. Todos os Selos do Juramento serão removidos 0.2s após o personagem que está com essa arma equipada causar Dano de Habilidade Elemental."
+    },
+    "4": {
+      "0": "Aumenta o ATQ em <cryo>40%</cryo>. Quando o personagem da equipe obtém um Fragmento gerado por Cristalização, concede ao personagem que está com essa arma equipada 1 \"Selo do Juramento\", aumentando o Dano causado por sua Habilidade Elemental em <cryo>36%</cryo>. O Selo do Juramento dura 15s e pode ser acumulado até duas vezes. Todos os Selos do Juramento serão removidos 0.2s após o personagem que está com essa arma equipada causar Dano de Habilidade Elemental."
+    }
+  }
+}

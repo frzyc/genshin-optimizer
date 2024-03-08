@@ -1,0 +1,161 @@
+{
+  "name": "Yae Miko",
+  "title": "Verhöhnung der Sterblichen",
+  "description": "Die Guuji des Großen Narukami-Schreins und Chefredakteurin des „Verlagshauses Yae“. Hinter ihrem schönen Aussehen verbergen sich unerwartete Intelligenz und Gerissenheit.",
+  "constellationName": "Divina Vulpes",
+  "auto": {
+    "name": "Sündenverschlinger",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Standardangriff</strong>",
+        "1": "Beschwört Kitsune-Geister hervor, führt bis zu 3 Angriffe aus und verursacht <electro>Elektro-Schaden</electro>."
+      },
+      "charged": {
+        "0": "<strong>Heftiger Schlag</strong>",
+        "1": "Verbraucht eine gewisse Menge Ausdauer und verursacht nach kurzer Aufladezeit <electro>Elektro-Flächenschaden</electro>."
+      },
+      "plunging": {
+        "0": "<strong>Angriff aus dem Fall</strong>",
+        "1": "Konzentriert die Kraft des Donners, schlägt beim Fallen aus der Luft auf den Boden, greift alle Gegner in der Bahn an und verursacht beim Aufkommen <electro>Elektro-Flächenschaden</electro>."
+      }
+    },
+    "skillParams": {
+      "0": "SCH Phase 1",
+      "1": "SCH Phase 2",
+      "2": "SCH Phase 3",
+      "3": "SCH heftiger Schläge",
+      "4": "Ausdauerverbrauch heftiger Schläge",
+      "5": "SCH beim Fallen",
+      "6": "SCH beim Fallen aus niedriger/großer Höhe",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Yakan-Kriegszauber – Sesshou-Sakura",
+    "description": {
+      "0": "Für Yae ist es nicht nötig, selbst tätig zu werden, wenn Geister ausgetrieben werden müssen.",
+      "1": "Bewegt sich mit hoher Geschwindigkeit und hinterlässt eine „Sesshou-Sakura“.",
+      "2": "<br/>",
+      "3": "<strong>Sesshou-Sakura</strong>",
+      "4": "Merkmale:",
+      "5": [
+        " Schlägt in gewissen zeitlichen Abständen einen Gegner in der Umgebung mit einem Blitz und fügt ihm <electro>Elektro-Schaden</electro> zu.",
+        " Geht bei Anwesenheit weiterer Sesshou-Sakura in der Nähe in eine höhere Phase und erhöht damit den mit dem oben beschriebenen Angriff verursachten Schaden."
+      ],
+      "6": "<br/>",
+      "7": "Diese Fähigkeit kann 3-mal eingesetzt werden.",
+      "8": "Zu einem Zeitpunkt können bis zu 3 Sesshou-Sakura existieren. Die anfängliche Phase für Sesshou-Sakura ist 1, während die anfängliche Höchstphase 3 beträgt. Sollte sich eine neu erzeugte Sesshou-Sakura zu nah an einer vorhandenen befinden, wird die Letztere zerstört.",
+      "9": "<br/>",
+      "10": "<i>„Die Kitsune-Geister, die in den Zweigen versiegelt sind, sind allesamt Yakan, die sich auf die Jagd nach Menschen begeben haben. Die Yakan stehen zwei Stufen niedriger als wir Himmelsfüchse und daher sehe ich kaum ein Problem darin, sie zu bitten, meine Befehle auszuführen. Das heißt aber nicht, dass ihr Menschen von unserer Einteilung lernen solltet. Und was die Frage angeht, wer von uns, Kitsune oder Mensch, auf der höheren Stufe steht ... Tja, das würdest du gern wissen.“</i>"
+    },
+    "skillParams": {
+      "0": "Sesshou-Sakura-SCH Phase 1",
+      "1": "Sesshou-Sakura-SCH Phase 2",
+      "2": "Sesshou-Sakura-SCH Phase 3",
+      "3": "Sesshou-Sakura-SCH Phase 4",
+      "4": "Dauer",
+      "5": "Abklingzeit",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Große Geheimkunst – Tenko Kenshin",
+    "description": {
+      "0": "Die Legende des „Kitsunetsuki“, der Heimsuchung durch eine Kitsune, gehört zu den Volksmärchen von Inazuma. Unter ihnen gilt die der Himmelsfüchse als etwas Besonderes, die in Form eines Blitzes auf die Feinde des Großen Narukami-Schreins herabfallen, wobei <electro>Elektro-Flächenschaden</electro> verursacht wird.",
+      "1": "Yae Miko aktiviert die Sesshou-Sakura in der Nähe beim Auslösen der Fähigkeit, zerstört ihre äußere Form und verwandelt sie in Tenko-Blitzschläge, die herunterprasseln und <electro>Elektro-Flächenschaden</electro> verursachen. Für jede zerstörte Sesshou-Sakura wird ein Tenko-Blitzschlag erzeugt.",
+      "2": "<br/>",
+      "3": "<i>Yae benutzt nur in solchen Zeiten das Zeichen der Himmelsfüchse, um Blitze zu beschwören. Alle, die bisher die Schwänze der Guuji gesehen haben, sind zu Asche zerfallen. Also vergiss nicht, Yae hat keine Schwänze.</i>"
+    },
+    "skillParams": {
+      "0": "Fähigkeits-SCH",
+      "1": "Tenko-Blitzschlag-SCH",
+      "2": "Abklingzeit",
+      "3": "Elementarenergie",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Heiliger Schatten des Schreins",
+    "description": {
+      "0": "Überspringt beim Auslösen von <strong>Große Geheimkunst – Tenko Kenshin</strong> für jede zerstörte Sesshou-Sakura einmal die Abklingzeit von <strong>Yakan-Kriegszauber – Sesshou-Sakura</strong>."
+    }
+  },
+  "passive2": {
+    "name": "Segnung der Erleuchtung",
+    "description": {
+      "0": "Erhöht den mit <strong>Sesshou-Sakura</strong> verursachten Schaden für jeden Punkt Elementarkunde um 0,15 %."
+    }
+  },
+  "passive3": {
+    "name": "Yako-Meditation",
+    "description": {
+      "0": "Erschafft mit einer Wahrscheinlichkeit von 25 % extra ein anderes zufälliges Material für Talente aus demselben Gebiet mit einer dem verbrauchten Material entsprechenden Stufe."
+    }
+  },
+  "constellation1": {
+    "name": "Yakan-Opfer",
+    "description": {
+      "0": "Stellt Yae Miko selbst bei jedem Tenko-Blitzschlag von <strong>Große Geheimkunst – Tenko Kenshin</strong> 8 Punkte Elementarenergie wieder her."
+    }
+  },
+  "constellation2": {
+    "name": "Mondgesang der Kitsune",
+    "description": {
+      "0": "<strong>Sesshou-Sakura</strong> sind bei der Entstehung anfänglich in Phase 2 und können höchstens Phase 4 erreichen. Außerdem wird ihr Angriffsradius um 60 % erhöht."
+    }
+  },
+  "constellation3": {
+    "name": "Sieben wunderbare Variationen",
+    "description": {
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Yakan-Kriegszauber – Sesshou-Sakura</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation4": {
+    "name": "Rosarote Blitzleiter",
+    "description": {
+      "0": "Erhöht beim Treffen von Gegnern mit den Blitzschlägen von <strong>Sesshou-Sakura</strong> den <electro>Elektro-Schaden</electro> aller Truppenmitglieder in der Nähe 5 s lang um 20 %."
+    }
+  },
+  "constellation5": {
+    "name": "Unerbittlicher Spott",
+    "description": {
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Große Geheimkunst – Tenko Kenshin</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation6": {
+    "name": "Daisesshou-Fluch",
+    "description": {
+      "0": "<strong>Sesshou-Sakura</strong> ignorieren beim Angriff 60 % der VTD des Gegners."
+    }
+  }
+}

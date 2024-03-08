@@ -1,0 +1,170 @@
+{
+  "name": "Hu Tao",
+  "title": "Erik Çiçeği",
+  "description": "Wangsheng Cenaze Evinin 77. Müdürü. Bu görevi oldukça genç yaşta devraldı.",
+  "constellationName": "Ölüm Kelebeği",
+  "auto": {
+    "name": "Wangsheng'in Gizli Mızrağı",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Saldırı</strong>",
+        "1": "Arka arkaya en fazla 6 mızrak saldırısı yapar."
+      },
+      "charged": {
+        "0": "<strong>Yüklü Saldırı</strong>",
+        "1": "İleri atılırken belirli miktarda Dayanıklılık harcar ve önündeki düşmanlara hasar verir."
+      },
+      "plunging": {
+        "0": "<strong>Havadan Saldırı</strong>",
+        "1": "Havadayken dalışa geçerek yere vurur ve yoluna çıkan düşmanlara Alan Hasarı verir."
+      }
+    },
+    "skillParams": {
+      "0": "1 Vuruş Hasarı",
+      "1": "2 Vuruş Hasarı",
+      "2": "3 Vuruş Hasarı",
+      "3": "4 Vuruş Hasarı",
+      "4": "5 Vuruş Hasarı",
+      "5": "6 Vuruş Hasarı",
+      "6": "Yüklü Saldırı",
+      "7": "Yüklü Saldırı Dayanıklılık Maliyeti",
+      "8": "Havadan Saldırı Hasarı",
+      "9": "Havadan Saldırı Hasarı (Alçaktan/Yüksekten)",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Öbür Dünya Rehberi",
+    "description": {
+      "0": "Anca sönmeyen bir ateşle bu dünyayı günahlarından arındırabiliriz.",
+      "1": "Hu Tao, Canının belirli bir kısmını harcayarak etrafındaki düşmanları geri iter ve Ölüm Kelebeğinin Dansı durumuna girer.",
+      "2": "<br/>",
+      "3": "<strong>Ölüm Kelebeğinin Dansı</strong>",
+      "4": [
+        "Hu Tao bu duruma girdiğinde Maks. Canına bağlı olarak Saldırısını artırır. Bu şekilde kazanılan Saldırı Bonusu, Hu Tao'nun Temel Saldırısının %400'ünü geçemez.",
+        "Saldırı Hasarını, farklı herhangi bir element tesiriyle değişmeyecek şekilde <pyro>Ateş Hasarına</pyro> dönüştürür.",
+        "Yüklü Saldırılar, isabet alan düşmanlara Kan Çiçeği etkisi uygular.",
+        "Hu Tao'nun müdahaleye karşı direnci artar."
+      ],
+      "5": "<br/>",
+      "6": "<strong>Kan Çiçeği</strong>",
+      "7": "Kan Çiçeği etkisindeki düşmanlar 4 saniyede bir <pyro>Ateş Hasarı</pyro> alır. Bu Hasar, Element Becerisi Hasarı olarak sayılır.",
+      "8": "Her düşman tek seferde en fazla bir Kan Çiçeği etkisine sahip olabilir. Bu etkinin süresini sadece Hu Tao yenileyebilir.",
+      "9": "<br/>",
+      "10": "<strong>Ölüm Kelebeğinin Dansı</strong> süresi bittiğinde, Hu Tao savaş alanından ayrıldığında ya da yenildiğinde sona erer.",
+      "11": "<br/>",
+      "12": "<i>Hu Tao'nun Gizli Mızrak tekniği birkaç temel üzerine kurulmuştur. Bunlardan ilki şöyle: \"Mızrak ölümden sonraki yaşamın yolunu açar, kelebekler ise bu dünya ile sonraki dünya arasında köprü kurar.\"</i>"
+    },
+    "skillParams": {
+      "0": "Etkinleştirme Maliyeti",
+      "1": "Saldırı Artışı",
+      "2": "Kan Çiçeği Hasarı",
+      "3": "Kan Çiçeği Süresi",
+      "4": "Süre",
+      "5": "BS",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Ruh Terbiyecisi",
+    "description": {
+      "0": "Alevli bir ruhla saldırır ve geniş bir etki alanı içinde <pyro>Ateş Hasarı</pyro> verir.",
+      "1": "Hu Tao, düşmana vurduğunda Maks. Canının bir kısmını yeniler. Bu etki, isabet alan düşmanların sayısına göre en fazla 5 defa tetiklenebilir.",
+      "2": "Düşman vurulduğunda Hu Tao'nun Canı %50 veya daha azsa hem Hasar hem de Yenilenen Can artar.",
+      "3": "<br/>",
+      "4": "<i>Wangsheng Cenaze Evi, bu dünyadan ayrılanların sebep olduğu doğaüstü olaylardan muzdarip. Böyle durumlarda ölülerin yakılması Hu Tao'nun içini rahatlatır. Hu Tao ne kadar gergin olursa alev de o kadar güçlü olur.</i>"
+    },
+    "skillParams": {
+      "0": "Beceri Hasarı",
+      "1": "Beceri Hasarı (Düşük Can)",
+      "2": "Beceri Can Yenilemesi",
+      "3": "Beceri Can Yenilemesi (Düşük Can)",
+      "4": "BS",
+      "5": "Enerji Maliyeti",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Saklı Kelebek",
+    "description": {
+      "0": "<strong>Öbür Dünya Rehberi</strong> tarafından etkinleştirilen <strong>Ölüm Kelebeğinin Dansı</strong> durumu sona erdiğinde (Hu Tao hariç) 8 saniyeliğine tüm grup üyelerinin Kritik Oranı %12 artar."
+    }
+  },
+  "passive2": {
+    "name": "Kanlı Canlı",
+    "description": {
+      "0": "Hu Tao'nun Canı %50 veya altındayken <pyro>Ateş Hasarı Bonusu</pyro> %33 artar."
+    }
+  },
+  "passive3": {
+    "name": "Nerede Hareket Orada Bereket",
+    "description": {
+      "0": "Hu Tao, bir yemeği mükemmel pişirdiğinde %18 ihtimalle ek olarak aynı yemeğin \"Tuhaf\" türünü de pişirir."
+    }
+  },
+  "constellation1": {
+    "name": "Kızıl Buket",
+    "description": {
+      "0": "<strong>Öbür Dünya Rehberi</strong> kullanılarak <strong>Ölüm Kelebeğinin Dansı</strong> durumu etkinleştirildiğinde Hu Tao'nun Yüklü Saldırıları Dayanıklılık tüketmez."
+    }
+  },
+  "constellation2": {
+    "name": "Uğursuz Yağmur",
+    "description": {
+      "0": "<strong>Kan Çiçeği</strong> becerisinin verdiği Hasarı, Hu Tao'nun etkinin uygulandığı zamanki Maks. Canının %10'u kadar artırır.",
+      "1": "Buna ek olarak <strong>Ruh Terbiyecisi</strong> becerisi de <strong>Kan Çiçeği</strong> etkisini uygular."
+    }
+  },
+  "constellation3": {
+    "name": "Kan Ayini",
+    "description": {
+      "0": "<strong>Öbür Dünya Rehberi</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation4": {
+    "name": "Ebedi Uykunun Bahçesi",
+    "description": {
+      "0": "Hu Tao, kendi uyguladığı <strong>Kan Çiçeği</strong> etkisindeki bir düşmanı yendiğinde 15 saniyeliğine yakındaki (Hu Tao hariç) tüm grup üyelerinin Kritik Oranı %12 artar."
+    }
+  },
+  "constellation5": {
+    "name": "Çiçek Kokulu Tütsü",
+    "description": {
+      "0": "<strong>Ruh Terbiyecisi</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation6": {
+    "name": "Son Nefes",
+    "description": {
+      "0": "Hu Tao ölümcül bir darbe aldığında veya Canı %25'in altına düştüğünde şu etkiler tetiklenir:",
+      "1": "Hu Tao aldığı Hasar ile saf dışı kalmaz. Buna ek olarak sonraki 10 saniye boyunca Hu Tao'nun Tüm Element ve Fiziksel Direnci %200, Kritik Oranı %100 ve müdahaleye direnci büyük ölçüde artar.",
+      "2": "Bu etki, Hu Tao'nun 1 Canı kaldığında otomatik olarak tetiklenir.",
+      "3": "Sadece 60 saniyede bir uygulanabilir."
+    }
+  }
+}

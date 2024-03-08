@@ -1,0 +1,24 @@
+{
+  "name": "Fließende Reinheit",
+  "description": {
+    "0": "Eine seltsam geformte Sammlung von Stücken. Enthält unter anderem alle von Coppelius verfasste Werke."
+  },
+  "passiveName": "Unvollendetes Meisterwerk",
+  "passiveDescription": {
+    "0": {
+      "0": "Erhöht beim Auslösen der Elementarfähigkeit den Elementar-SCH-Bonus aller Elemente um <cryo>8 %</cryo>, hält 15 s. Es entsteht gleichzeitig ein Eid des Lebens mit einem Basiswert in Höhe von 24 % der max. LP. 10 s Abklingzeit. Wenn der Eid des Lebens entfernt wird, wird der Elementar-SCH-Bonus aller Elemente pro 1.000 Punkte entfernter Summe um jeweils <cryo>2 %</cryo>, max. <cryo>12 %</cryo>, erhöht. Hält 15 s."
+    },
+    "1": {
+      "0": "Erhöht beim Auslösen der Elementarfähigkeit den Elementar-SCH-Bonus aller Elemente um <cryo>10 %</cryo>, hält 15 s. Es entsteht gleichzeitig ein Eid des Lebens mit einem Basiswert in Höhe von 24 % der max. LP. 10 s Abklingzeit. Wenn der Eid des Lebens entfernt wird, wird der Elementar-SCH-Bonus aller Elemente pro 1.000 Punkte entfernter Summe um jeweils <cryo>2,5 %</cryo>, max. <cryo>15 %</cryo>, erhöht. Hält 15 s."
+    },
+    "2": {
+      "0": "Erhöht beim Auslösen der Elementarfähigkeit den Elementar-SCH-Bonus aller Elemente um <cryo>12 %</cryo>, hält 15 s. Es entsteht gleichzeitig ein Eid des Lebens mit einem Basiswert in Höhe von 24 % der max. LP. 10 s Abklingzeit. Wenn der Eid des Lebens entfernt wird, wird der Elementar-SCH-Bonus aller Elemente pro 1.000 Punkte entfernter Summe um jeweils <cryo>3 %</cryo>, max. <cryo>18 %</cryo>, erhöht. Hält 15 s."
+    },
+    "3": {
+      "0": "Erhöht beim Auslösen der Elementarfähigkeit den Elementar-SCH-Bonus aller Elemente um <cryo>14 %</cryo>, hält 15 s. Es entsteht gleichzeitig ein Eid des Lebens mit einem Basiswert in Höhe von 24 % der max. LP. 10 s Abklingzeit. Wenn der Eid des Lebens entfernt wird, wird der Elementar-SCH-Bonus aller Elemente pro 1.000 Punkte entfernter Summe um jeweils <cryo>3,5 %</cryo>, max. <cryo>21 %</cryo>, erhöht. Hält 15 s."
+    },
+    "4": {
+      "0": "Erhöht beim Auslösen der Elementarfähigkeit den Elementar-SCH-Bonus aller Elemente um <cryo>16 %</cryo>, hält 15 s. Es entsteht gleichzeitig ein Eid des Lebens mit einem Basiswert in Höhe von 24 % der max. LP. 10 s Abklingzeit. Wenn der Eid des Lebens entfernt wird, wird der Elementar-SCH-Bonus aller Elemente pro 1.000 Punkte entfernter Summe um jeweils <cryo>4 %</cryo>, max. <cryo>24 %</cryo>, erhöht. Hält 15 s."
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "setName": "Tief im Herzen",
+  "setEffects": {
+    "2": "Erhöht den Hydro-Schaden um 15 %.",
+    "4": "Erhöht den mit Standardangriffen und heftigen Schlägen verursachten Schaden nach Anwendung von Elementarfähigkeiten 15 s lang um 30 %."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Vergoldete Brosche",
+      "desc": "Eine sehr mitgenommene Brosche, deren Vergoldung längst von der rauen See abgeschmirgelt worden ist."
+    },
+    "plume": {
+      "name": "Nostalgische Brise",
+      "desc": "Eine Feder, die mit dem sausenden Wind des Meeres und den tobenden Wellen gereist ist. Sie ist so alt, dass sich ihre Form und ihre Farbe verändert haben."
+    },
+    "sands": {
+      "name": "Kupferkompass",
+      "desc": "Ein alter kupferner Kompass, dessen Nadel in Richtung eines unerreichbaren Ufers, eines nicht vorhandenen Hafens zeigt."
+    },
+    "goblet": {
+      "name": "Kelch der hohen Wellen",
+      "desc": "Ein aus den tiefen Gewässern gefischter Weinkelch mit verblichenen Farben, die davon zeugen, wie lange der Kelch schon in der Tiefe herumgetrieben sein muss."
+    },
+    "circlet": {
+      "name": "Weinverschmierte Kapitänsmütze",
+      "desc": "Der alte Hut eines Kapitäns, der noch immer nach dem Alkohol riecht, in dem er vor langer Zeit gelegen haben muss."
+    }
+  }
+}

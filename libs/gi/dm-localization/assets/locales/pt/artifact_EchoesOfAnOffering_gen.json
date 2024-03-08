@@ -1,0 +1,29 @@
+{
+  "setName": "Eco do Sacrifício",
+  "setEffects": {
+    "2": "ATQ +18%.",
+    "4": "Quando o Ataque Normal atinge um inimigo, tem 36% de chance de ativar o Rito do Vale, que aumenta o Dano do Ataque Normal em 70% do ATQ. Esse efeito desaparece 0.05s após um Ataque Normal causar dano. Quando o Ataque Normal não ativar o Rito do Vale, aumenta a probabilidade de ativação em 20% na próxima vez. Essa ativação pode ocorrer 1 vez a cada 0.2s."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Flor da Fragrância Espiritual",
+      "desc": "Uma escultura de jade na forma de flor. O cheiro sutil da fragrância espiritual parece lhe arrodear."
+    },
+    "plume": {
+      "name": "Folha de Jade",
+      "desc": "Um pingente de jade similar a uma folha. No passado ele tinha um significado especial para certos amigos."
+    },
+    "sands": {
+      "name": "Símbolo da Oferenda",
+      "desc": "Um pingente de jade circular. Ele era em alguma lenda uma prova para a abertura de um sacrifício em algum local."
+    },
+    "goblet": {
+      "name": "Cálice da Fonte",
+      "desc": "Um cálice de chá que ininterruptamente jorra um fluxo de água cristalina. Não se sabe se ele é um presente, uma relíquia ou um objeto perdido dos Adepti."
+    },
+    "circlet": {
+      "name": "Jades da Torrente",
+      "desc": "Um belo par de brincos de jade. Possui uma sensação de gentileza incomparável."
+    }
+  }
+}

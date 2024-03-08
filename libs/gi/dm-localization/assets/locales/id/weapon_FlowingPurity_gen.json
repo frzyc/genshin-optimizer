@@ -1,0 +1,24 @@
+{
+  "name": "Flowing Purity",
+  "description": {
+    "0": "Koleksi naskah dengan bentuk aneh yang berisi semua naskah ciptaan Coppelius."
+  },
+  "passiveName": "Unfinished Masterpiece",
+  "passiveDescription": {
+    "0": {
+      "0": "Saat melancarkan Elemental Skill, akan meningkatkan Elemental DMG Bonus seluruh elemen sebesar <cryo>8%</cryo> selama 15 detik dan memberikan Bond of Life sebesar 24% dari Max HP. Efek ini dapat terpicu sekali setiap 10 detik. Saat Bond of Life hilang, akan meningkatkan <cryo>2%</cryo> Elemental DMG Bonus seluruh elemen untuk setiap 1.000 poin HP yang dibersihkan. Peningkatan Elemental DMG Bonus seluruh elemen yang diperoleh dengan cara ini adalah maksimum <cryo>12%</cryo> dan berlangsung selama 15 detik."
+    },
+    "1": {
+      "0": "Saat melancarkan Elemental Skill, akan meningkatkan Elemental DMG Bonus seluruh elemen sebesar <cryo>10%</cryo> selama 15 detik dan memberikan Bond of Life sebesar 24% dari Max HP. Efek ini dapat terpicu sekali setiap 10 detik. Saat Bond of Life hilang, akan meningkatkan <cryo>2,5%</cryo> Elemental DMG Bonus seluruh elemen untuk setiap 1.000 poin HP yang dibersihkan. Peningkatan Elemental DMG Bonus seluruh elemen yang diperoleh dengan cara ini adalah maksimum <cryo>15%</cryo> dan berlangsung selama 15 detik."
+    },
+    "2": {
+      "0": "Saat melancarkan Elemental Skill, akan meningkatkan Elemental DMG Bonus seluruh elemen sebesar <cryo>12%</cryo> selama 15 detik dan memberikan Bond of Life sebesar 24% dari Max HP. Efek ini dapat terpicu sekali setiap 10 detik. Saat Bond of Life hilang, akan meningkatkan <cryo>3%</cryo> Elemental DMG Bonus seluruh elemen untuk setiap 1.000 poin HP yang dibersihkan. Peningkatan Elemental DMG Bonus seluruh elemen yang diperoleh dengan cara ini adalah maksimum <cryo>18%</cryo> dan berlangsung selama 15 detik."
+    },
+    "3": {
+      "0": "Saat melancarkan Elemental Skill, akan meningkatkan Elemental DMG Bonus seluruh elemen sebesar <cryo>14%</cryo> selama 15 detik dan memberikan Bond of Life sebesar 24% dari Max HP. Efek ini dapat terpicu sekali setiap 10 detik. Saat Bond of Life hilang, akan meningkatkan <cryo>3,5%</cryo> Elemental DMG Bonus seluruh elemen untuk setiap 1.000 poin HP yang dibersihkan. Peningkatan Elemental DMG Bonus seluruh elemen yang diperoleh dengan cara ini adalah maksimum <cryo>21%</cryo> dan berlangsung selama 15 detik."
+    },
+    "4": {
+      "0": "Saat melancarkan Elemental Skill, akan meningkatkan Elemental DMG Bonus seluruh elemen sebesar <cryo>16%</cryo> selama 15 detik dan memberikan Bond of Life sebesar 24% dari Max HP. Efek ini dapat terpicu sekali setiap 10 detik. Saat Bond of Life hilang, akan meningkatkan <cryo>4%</cryo> Elemental DMG Bonus seluruh elemen untuk setiap 1.000 poin HP yang dibersihkan. Peningkatan Elemental DMG Bonus seluruh elemen yang diperoleh dengan cara ini adalah maksimum <cryo>24%</cryo> dan berlangsung selama 15 detik."
+    }
+  }
+}

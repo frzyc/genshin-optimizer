@@ -1,0 +1,24 @@
+{
+  "name": "Canção dos Pinhos",
+  "description": {
+    "0": "Uma espada grande tão leve quanto o suspiro de grama na brisa, mas tão impiedosa para os corruptos quanto um tufão."
+  },
+  "passiveName": "Música de Rebelião da Bandeira",
+  "passiveDescription": {
+    "0": {
+      "0": "Uma parte do Concerto Milenar que flutua no vento. Aumenta o ATQ em <cryo>16%</cryo>. Quando Ataque Normal ou Ataque Carregado atingir os inimigos, o personagem obterá um Símbolo dos Sussurros, que pode ser ativado uma vez a cada 0.3s. Possuir 4 Símbolos dos Sussurrosfaz consumir todos eles, e faz todos os personagens da equipe obterem o efeito de \"Concerto Milenar: Música do Levantar da Bandeira\" por 12s: A Vel. de Ataque Normal será aumentada em <cryo>12%</cryo>, além disso o ATQ será aumentado em <cryo>20%</cryo>. Dentro de 20s depois da ativação, não é possível obter os Símbolos dos Sussurros de novo. Entre todos os efeitos de vários valores, os efeitos do mesmo valor não podem ser acumulados."
+    },
+    "1": {
+      "0": "Uma parte do Concerto Milenar que flutua no vento. Aumenta o ATQ em <cryo>20%</cryo>. Quando Ataque Normal ou Ataque Carregado atingir os inimigos, o personagem obterá um Símbolo dos Sussurros, que pode ser ativado uma vez a cada 0.3s. Possuir 4 Símbolos dos Sussurros faz consumir todos eles, e faz todos os personagens da equipe obterem o efeito de \"Concerto Milenar: Música do Levantar da Bandeira\" por 12s: A Vel. de Ataque Normal será aumentada em <cryo>15%</cryo>, além disso o ATQ será aumentado em <cryo>25%</cryo>. Dentro de 20s depois da ativação, não é possível obter os Símbolos dos Sussurros de novo. Entre todos os efeitos de vários valores, os efeitos do mesmo valor não podem ser acumulados."
+    },
+    "2": {
+      "0": "Uma parte do Concerto Milenar que flutua no vento. Aumenta o ATQ em <cryo>24%</cryo>. Quando Ataque Normal ou Ataque Carregado atingir os inimigos, o personagem obterá um Símbolo dos Sussurros, que pode ser ativado uma vez a cada 0.3s. Possuir 4 Símbolos dos Sussurros faz consumir todos eles, e faz todos os personagens da equipe obterem o efeito de \"Concerto Milenar: Música do Levantar da Bandeira\" por 12s: A Vel. de Ataque Normal será aumentada em <cryo>18%</cryo>, além disso o ATQ será aumentado em <cryo>30%</cryo>. Dentro de 20s depois da ativação, não é possível obter os Símbolos dos Sussurros de novo. Entre todos os efeitos de vários valores, os efeitos do mesmo valor não podem ser acumulados."
+    },
+    "3": {
+      "0": "Uma parte do Concerto Milenar que flutua no vento. Aumenta o Ataque Comum em <cryo>28%</cryo>. Quando a Ataque Normal ou Ataque Carregado atingir os inimigos, o personagem obterá um Símbolo dos Sussurros, que pode ser ativado uma vez a cada 0.3s. Possuir 4 Símbolos dos Sussurros faz consumir todos eles, e faz todos os personagens da equipe obterem o efeito de \"Concerto Milenar: Música do Levantar da Bandeira\" por 12s: A Vel. de Ataque Normal será aumentada em <cryo>21%</cryo>, além disso o ATQ será aumentado em <cryo>35%</cryo>. Dentro de 20s depois da ativação, não é possível obter os Símbolos dos Sussurros de novo. Entre todos os efeitos de vários valores, os efeitos do mesmo valor não podem ser acumulados."
+    },
+    "4": {
+      "0": "Uma parte do Concerto Milenar que flutua no vento. Aumenta o ATQ em <cryo>32%</cryo>. Quando Ataque Normal ou Ataque Carregado atingir os inimigos, o personagem obterá um Símbolo dos Sussurros, que pode ser ativado uma vez a cada 0.3s. Possuir 4 Símbolos dos Sussurros faz consumir todos eles, e faz todos os personagens da equipe obterem o efeito de \"Concerto Milenar: Música do Levantar da Bandeira\" por 12s: A Vel. de Ataque Normal será aumentada em <cryo>24%</cryo>, além disso o ATQ será aumentado em <cryo>40%</cryo>. Dentro de 20s depois da ativação, não é possível obter os Símbolos dos Sussurros de novo. Entre todos os efeitos de vários valores, os efeitos do mesmo valor não podem ser acumulados."
+    }
+  }
+}

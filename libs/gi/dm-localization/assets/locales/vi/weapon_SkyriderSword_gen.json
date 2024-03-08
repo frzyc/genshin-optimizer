@@ -1,0 +1,24 @@
+{
+  "name": "Kiếm Phi Thiên",
+  "description": {
+    "0": "Kiếm bằng gang, truyền thuyết nói rằng \"Ngự Kiếm Công Tử\" từng muốn dùng nó để bay lên trời."
+  },
+  "passiveName": "Quyết Tâm",
+  "passiveDescription": {
+    "0": {
+      "0": "Sau khi thi triển Kỹ Năng Nộ, tăng <cryo>12%</cryo> tấn công và tốc độ di chuyển, kéo dài 15s."
+    },
+    "1": {
+      "0": "Sau khi thi triển Kỹ Năng Nộ, tăng <cryo>15%</cryo> tấn công và tốc độ di chuyển, kéo dài 15s."
+    },
+    "2": {
+      "0": "Sau khi thi triển kỹ năng nộ, tăng <cryo>18%</cryo> tấn công và tốc độ di chuyển, kéo dài 15s."
+    },
+    "3": {
+      "0": "Sau khi thi triển Kỹ Năng Nộ, tăng <cryo>21%</cryo> tấn công và tốc độ di chuyển, kéo dài 15s."
+    },
+    "4": {
+      "0": "Sau khi thi triển Kỹ Năng Nộ, tăng <cryo>24%</cryo> tấn công và tốc độ di chuyển, kéo dài 15s."
+    }
+  }
+}

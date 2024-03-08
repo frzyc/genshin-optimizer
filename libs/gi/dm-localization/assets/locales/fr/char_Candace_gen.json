@@ -1,0 +1,166 @@
+{
+  "name": "Candace",
+  "title": "Serment doré",
+  "description": "Descendante du roi Deshret avec un œil gauche de couleur ambre, c'est la protectrice du Village d'Aaru.",
+  "constellationName": "Sagitta Scutum",
+  "auto": {
+    "name": "Lance étincelante (Posture protectrice)",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attaque normale</strong>",
+        "1": "Enchaîne jusqu'à 4 coups de lance."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Consomme de l'endurance pour charger en ligne droite et infliger des DGT aux ennemis sur la route."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis sur la route et des DGT de zone à l'impact."
+      }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT 4e coup",
+      "4": "DGT attaque chargée",
+      "5": "Coût d'endurance attaque chargée",
+      "6": "DGT durant la chute",
+      "7": "DGT chute basse/élevée",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Liturgie : Sanctuaire de la héronne",
+    "description": {
+      "0": "Le style de combat de Candace est capable de repousser toute une marée d'ennemis.",
+      "1": "<br/>",
+      "2": "<strong>Appui simple</strong>",
+      "3": "Se précipite avec son bouclier, infligeant des <hydro>DGT Hydro</hydro>.",
+      "4": "<br/>",
+      "5": "<strong>Appui long</strong>",
+      "6": "Brandit son bouclier pour bloquer les attaques des ennemis proches, formant un bouclier qui absorbe les DGT selon ses PV max et est efficace à 250 % contre les <hydro>DGT Hydro</hydro>. Le bouclier dure jusqu'à ce qu'elle finisse de libérer sa compétence élémentaire.",
+      "7": "Candace se charge après avoir appuyé pendant un certain temps, puis effectue une frappe bondissante qui inflige des <hydro>DGT Hydro</hydro> aux ennemis en face lorsque vous relâchez la compétence, que la durée prend fin ou que le bouclier est détruit.",
+      "8": "<br/>",
+      "9": "<i>Le serment des protecteurs est encore plus solide que les boucliers dont ils héritent.</i>"
+    },
+    "skillParams": {
+      "0": "PV du bouclier",
+      "1": "DGT de base",
+      "2": "DGT charge complète",
+      "3": "TdR appui simple",
+      "4": "TdR appui long",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Liturgie : Marée de la bergeronnette",
+    "description": {
+      "0": "Brandissant son arme en l'air, Candace invoque une bénédiction divine qui inflige des <hydro>DGT Hydro de zone</hydro> selon ses PV max et confère l'état Prière de couronne cramoisie à votre personnage déployé.",
+      "1": "<br/>",
+      "2": "<strong>Prière de couronne cramoisie</strong>",
+      "3": "Les caractéristiques suivantes s'appliquent :",
+      "4": [
+        " Lorsque l'attaque normale d'un personnage inflige des DGT élémentaires à un ennemi, les DGT infligés augmentent.",
+        " Lorsqu'un personnage est déployé au combat, un impact hydrique est déclenché, infligeant des <hydro>DGT Hydro</hydro> aux ennemis proches. Le nombre d'impacts pouvant être déclenchés pendant la durée de cette compétence est limité.",
+        " Sous l'effet de cet état, les personnages armés d'une épée à une main, à deux mains ou d'une arme d'hast obtiennent un <hydro>enchantement Hydro</hydro>."
+      ],
+      "5": "<br/>",
+      "6": "<i>Ce rite secret a été transmis à travers le clan de Candace de génération en génération. Bien que les anciennes croyances se soient perdues au fil des ans, les sables protègent toujours les héritiers de l'ancien royaume.</i>"
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "Durée",
+      "2": "Bonus DGT",
+      "3": "DGT impact hydrique",
+      "4": "Max d'activations Impact hydrique",
+      "5": "Temps de recharge",
+      "6": "Énergie élémentaire",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Égide des flèches croisées",
+    "description": {
+      "0": "Si Candace est touchée par une attaque pendant l'appui long de <strong>Liturgie : Sanctuaire de la héronne</strong>, la charge se complète immédiatement."
+    }
+  },
+  "passive2": {
+    "name": "Dôme céleste de sable",
+    "description": {
+      "0": "Lorsqu'un personnage affecté par l'état Prière de couronne cramoisie de <strong>Liturgie : Marée de la bergeronnette</strong> inflige des DGT élémentaires à un ennemi avec une attaque normale, les DGT augmentent de 0,5 % pour chaque tranche de 1 000 PV max de Candace."
+    }
+  },
+  "passive3": {
+    "name": "Aux premières lueurs de l'aube",
+    "description": {
+      "0": "Diminue la consommation d'endurance de vos personnages dans l'équipe de 20 % lors de l'escalade.",
+      "1": "Ne peut pas être cumulé avec d'autres aptitudes passives aux effets identiques."
+    }
+  },
+  "constellation1": {
+    "name": "Retour de l'héritière des sables écarlates",
+    "description": {
+      "0": "La durée de l'état Prière de couronne cramoisie de <strong>Liturgie : Marée de la bergeronnette</strong> augmente de 3 s."
+    }
+  },
+  "constellation2": {
+    "name": "Brillance perçant la lune",
+    "description": {
+      "0": "Lorsque <strong>Liturgie : Sanctuaire de la héronne</strong> touche un ennemi, les PV max de Candace augmentent de 20 % pendant 15 s."
+    }
+  },
+  "constellation3": {
+    "name": "Supplication du chasseur",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Liturgie : Marée de la bergeronnette</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation4": {
+    "name": "Serment de la sentinelle",
+    "description": {
+      "0": "Diminue le TdR de l'appui long de <strong>Liturgie : Sanctuaire de la héronne</strong> pour correspondre à celui de l'appui simple."
+    }
+  },
+  "constellation5": {
+    "name": "Regard hétérochromatique",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Liturgie : Sanctuaire de la héronne</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation6": {
+    "name": "Débordement",
+    "description": {
+      "0": "Lorsqu'un personnage déployé (hormis Candace) affecté par l'état Prière de couronne cramoisie de <strong>Liturgie : Marée de la bergeronnette</strong> inflige des DGT élémentaires à un ennemi avec une attaque normale, il déclenche une marée d'impact, infligeant des <hydro>DGT Hydro de zone</hydro> d'une valeur équivalant à 15 % des PV max de Candace.",
+      "1": "Cet effet peut être déclenché une fois toutes les 2,3 s. Les DGT infligés sont considérés comme des DGT de déchaînement élémentaire."
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Sacrificial Fragments",
+  "description": {
+    "0": "Naskah yang sudah tua dan lapuk, tulisannya tidak lagi dapat dibaca. Benda terkutuk yang telah terkikis oleh angin waktu."
+  },
+  "passiveName": "Composed",
+  "passiveDescription": {
+    "0": {
+      "0": "Setelah Elemental Skill mengakibatkan DMG, terdapat <cryo>40%</cryo> persentase CD Skill langsung selesai. Dapat terpicu setiap <cryo>30 detik</cryo>."
+    },
+    "1": {
+      "0": "Setelah Elemental Skill mengakibatkan DMG, terdapat <cryo>50%</cryo> persentase CD Skill langsung selesai. Dapat terpicu setiap <cryo>26 detik</cryo>."
+    },
+    "2": {
+      "0": "Setelah Elemental Skill mengakibatkan DMG, terdapat <cryo>60%</cryo> persentase CD Skill langsung selesai. Dapat terpicu setiap <cryo>22 detik</cryo>."
+    },
+    "3": {
+      "0": "Setelah Elemental Skill mengakibatkan DMG, terdapat <cryo>70%</cryo> persentase CD Skill langsung selesai. Dapat terpicu setiap <cryo>19 detik</cryo>."
+    },
+    "4": {
+      "0": "Setelah Elemental Skill mengakibatkan DMG, terdapat <cryo>80%</cryo> persentase CD Skill langsung selesai. Dapat terpicu setiap <cryo>16 detik</cryo>."
+    }
+  }
+}

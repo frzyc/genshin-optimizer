@@ -1,0 +1,168 @@
+{
+  "name": "Kamisato Ayato",
+  "title": "El Vigoroso Estratega",
+  "description": "Joven promesa y actual líder del clan Kamisato de la Comisión Yashiro. Refinado y educado, siempre tiene una forma de solucionar las cosas.",
+  "constellationName": "Cypressus Custos",
+  "auto": {
+    "name": "Estilo Kamisato - Marobashi",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Ataque Normal</strong>",
+        "1": "Realiza hasta 5 ataques consecutivos con espada."
+      },
+      "charged": {
+        "0": "<strong>Ataque Cargado</strong>",
+        "1": "Consume una cierta cantidad de Aguante para arremeter hacia delante y golpear con su espada."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Descendente</strong>",
+        "1": "Se lanza desde el aire para golpear el suelo, dañando a los enemigos cercanos e infligiendo Daño en el AdE en el momento del impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Daño de 1er golpe",
+      "1": "Daño de 2.º golpe",
+      "2": "Daño de 3er golpe",
+      "3": "Daño de 4.º golpe",
+      "4": "Daño de 5.º golpe",
+      "5": "Daño de ATQ Cargado",
+      "6": "Coste de Aguante de ATQ Cargado",
+      "7": "Daño de Caída",
+      "8": "Daño de impacto de caída baja/alta",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Estilo Kamisato: Belleza reflejada",
+    "description": {
+      "0": "Kamisato Ayato se mueve de posición y entra en el estado de “reflejo torrencial”.",
+      "1": "Tras hacer este movimiento, deja en su ubicación original una ilusión de agua. Al ser formada, la ilusión explotará si se encuentra cerca de un enemigo o cuando termine su duración, tras lo que inflige <hydro>Daño Hydro en el AdE</hydro>.",
+      "2": "<br/>",
+      "3": "<strong>Reflejo torrencial</strong>",
+      "4": "En este estado, Kamisato Ayato ataca rápidamente con una hidroespada y el daño de sus Ataques Normales se transforma en <hydro>Daño Hydro en el AdE</hydro>, el cual no puede sustituirse imbuyéndose de otro elemento.",
+      "5": "Además, este estado tiene las siguientes características:",
+      "6": [
+        "Al golpear a un enemigo con la hidroespada, Kamisato Ayato obtiene el efecto de “oleaje centelleante”, el cual aumenta el daño de la hidroespada en proporción su Vida Máx. actual. Inicialmente, oleaje centelleante puede acumularse hasta 4 veces y obtenerse una vez cada 0.1 s por cada ataque realizado con la hidroespada. Este efecto desaparece cuando termina la duración del estado de reflejo torrencial.",
+        "Aumenta la RES a interrupción de Kamisato Ayato.",
+        "Mientras dure este estado, no podrá ejecutar ni Ataques Cargados ni Descendentes."
+      ],
+      "7": "<br/>",
+      "8": "El estado de reflejo torrencial se anulará cuando Kamisato Ayato sea retirado de combate. Si vuelve a usar Estilo Kamisato: Belleza reflejada mientras dicho estado está activo, el estado anterior terminará y la duración del nuevo estado se reiniciará.",
+      "9": "<br/>",
+      "10": "<i>“¿Exactamente en qué momento pensaste que llevabas la ventaja?”</i>",
+      "11": "<i>Ayato se comporta así tanto en las artes marciales como en la estrategia política. Sin embargo, para no dañar la reputación de los otros dos Comisionados, nunca les dice esto a la cara. Por eso, solo Thoma, Itto y Ayaka le han escuchado alguna vez decir estas palabras.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de 1er golpe de hidroespada",
+      "1": "Daño de 2.º golpe de hidroespada",
+      "2": "Daño de 3er golpe de hidroespada",
+      "3": "Duración de reflejo torrencial",
+      "4": "Aumento de daño de oleaje centelleante",
+      "5": "Daño de ilusión de agua",
+      "6": "Duración de ilusión de agua",
+      "7": "TdE",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Estilo Kamisato: Jardín ácueo",
+    "description": {
+      "0": "Crea un jardín de paz en el que ningún ruido tiene cabida.",
+      "1": "Mientras está activo, en el jardín caerán continuamente filos de agua que atacarán a los enemigos en su interior, les infligirán <hydro>Daño Hydro</hydro> y aumentarán el daño de los Ataques Normales de los personajes dentro del área.",
+      "2": "<br/>",
+      "3": "<i>Puedo ver las ondulaciones del latido de tu corazón en estas aguas calmas.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de filos de agua",
+      "1": "Aumento de daño de ATQ Normal",
+      "2": "Duración",
+      "3": "TdE",
+      "4": "Energía Elemental",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Estilo Kamisato: Corriente montañosa",
+    "description": {
+      "0": "<strong>Estilo Kamisato: Belleza reflejada</strong> obtiene las siguientes características:",
+      "1": [
+        "Al activar la habilidad, Kamisato Ayato obtiene 2 acumulaciones de oleaje centelleante.",
+        "Cuando la ilusión de agua se destruye, Kamisato Ayato obtiene el efecto de oleaje centelleante con la máxima cantidad de acumulaciones posibles."
+      ]
+    }
+  },
+  "passive2": {
+    "name": "Estilo Kamisato: Crecida de la luna",
+    "description": {
+      "0": "Cuando Kamisato Ayato está en tu equipo pero no en uso y su Energía Elemental es menor a 40 pts., recuperará 2 pts. de Energía por segundo."
+    }
+  },
+  "passive3": {
+    "name": "Estilo Kamisato: Cocina diaria",
+    "description": {
+      "0": "Al lograr un “Perfecto” al cocinar un plato, hay una probabilidad del 18% de obtener ese mismo plato con calidad “extraña”."
+    }
+  },
+  "constellation1": {
+    "name": "Reflejo grácil",
+    "description": {
+      "0": "Aumenta en un 40% el daño infligido por la <strong>hidroespada</strong> contra los enemigos cuya vida es igual o inferior al 50%."
+    }
+  },
+  "constellation2": {
+    "name": "Manantial de la tierra",
+    "description": {
+      "0": "<strong>Oleaje centelleante</strong> puede acumularse hasta un máximo de 5 veces. Cuando Kamisato Ayato tiene al menos 3 acumulaciones de este efecto, su Vida Máx. aumenta en un 50%."
+    }
+  },
+  "constellation3": {
+    "name": "Admiración floral",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Estilo Kamisato: Belleza reflejada</strong>  +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Flujo inagotable",
+    "description": {
+      "0": "Tras usar <strong>Estilo Kamisato: Jardín ácueo</strong>, la Vel. de Ataque Normal de los miembros del equipo cercanos aumenta en un 15% durante 15 s."
+    }
+  },
+  "constellation5": {
+    "name": "Rocío pluvial",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Estilo Kamisato: Jardín ácueo</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Fuente infinita",
+    "description": {
+      "0": "Tras usar <strong>Estilo Kamisato: Belleza reflejada</strong>, cuando Kamisato Ayato golpea a un enemigo con el siguiente ataque de hidroespada, se liberarán dos ataques de hidroespada adicionales que infligen cada uno un daño equivalente al 450% del ATQ de Kamisato Ayato.",
+      "1": "Estos dos ataques no pueden beneficiarse de los efectos de oleaje centelleante."
+    }
+  }
+}

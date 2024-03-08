@@ -1,0 +1,11 @@
+{
+  "electro": {
+    "skill": {
+      "enerRegen": "Pemulihan Energy",
+      "enerRechInc": "Peningkatan Energy Recharge"
+    },
+    "burst": {
+      "thunderDMG": "DMG Falling Thunder"
+    }
+  }
+}

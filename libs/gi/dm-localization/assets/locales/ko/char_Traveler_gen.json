@@ -1,0 +1,11 @@
+{
+  "electro": {
+    "skill": {
+      "enerRegen": "원소 에너지 회복",
+      "enerRechInc": "원소 충전 효율 증가"
+    },
+    "burst": {
+      "thunderDMG": "위광의 낙뢰 피해"
+    }
+  }
+}

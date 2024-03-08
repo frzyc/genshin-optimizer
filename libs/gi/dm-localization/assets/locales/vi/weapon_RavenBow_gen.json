@@ -1,0 +1,24 @@
+{
+  "name": "Cung Lông Quạ",
+  "description": {
+    "0": "Nghe nói quạ đen là sứ giả báo tử. Đem lông quạ gắn lên cung, mỗi mũi tên bắn ra đều là lời tuyên cáo cuối cùng của con mồi."
+  },
+  "passiveName": "Diệt Hỏa Ngưng Thủy",
+  "passiveDescription": {
+    "0": {
+      "0": "Sát thương tạo ra cho kẻ địch bị ảnh hưởng bởi nguyên tố Thủy hoặc Hỏa tăng <cryo>12%</cryo>."
+    },
+    "1": {
+      "0": "Sát thương tạo ra cho kẻ địch bị ảnh hưởng bởi nguyên tố Thủy hoặc Hỏa tăng <cryo>15%</cryo>."
+    },
+    "2": {
+      "0": "Sát thương tạo ra cho kẻ địch bị ảnh hưởng bởi nguyên tố Thủy hoặc Hỏa tăng <cryo>18%</cryo>."
+    },
+    "3": {
+      "0": "Sát thương tạo ra cho kẻ địch bị ảnh hưởng bởi nguyên tố Thủy hoặc Hỏa tăng <cryo>21%</cryo>."
+    },
+    "4": {
+      "0": "Sát thương tạo ra cho kẻ địch bị ảnh hưởng bởi nguyên tố Thủy hoặc Hỏa tăng <cryo>24%</cryo>."
+    }
+  }
+}

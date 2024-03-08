@@ -1,0 +1,155 @@
+{
+  "name": "Kaeya",
+  "title": "Frostwind Swordsman",
+  "description": "Seorang kesatria pedang yang ulung dan ahli strategi di dalam Knights of Favonius, dikabarkan berasal dari luar Mondstadt.",
+  "constellationName": "Pavo Ocellus",
+  "auto": {
+    "name": "Ceremonial Bladework",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Attack</strong>",
+        "1": "Melancarkan hingga 5 serangan berturut-turut."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Mengonsumsi sejumlah Stamina untuk melancarkan dua tebasan pedang."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Menerjang dari udara untuk menghantam tanah, menyerang musuh di jalur terjangan dan mengakibatkan DMG area saat mendarat."
+      }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Tahap 4",
+      "4": "DMG Tahap 5",
+      "5": "DMG Charged Attack",
+      "6": "Konsumsi Stamina Charged Attack",
+      "7": "DMG Selama Plunging",
+      "8": "DMG Plunging Attack Rendah/Tinggi",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Frostgnaw",
+    "description": {
+      "0": "Mengerahkan sebuah ledakan dingin yang mengakibatkan <cryo>Cryo DMG</cryo> ke musuh di depan Kaeya.",
+      "1": "<br/>",
+      "2": "<i>Kaeya tampaknya ramah, tapi sifatnya seperti es tak dapat dicairkan.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "Cooldown",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Glacial Waltz",
+    "description": {
+      "0": "Dengan menggabungkan es di udara, Kaeya membuat 3 pilar es di sekitar dia.",
+      "1": "Pilar-pilar ini akan mengikuti karakter dan mengakibatkan <cryo>Cryo DMG</cryo> ke musuh di jalurnya.",
+      "2": "<br/>",
+      "3": "<i>Senyum yang menawan, kata-kata ramah, dan embun beku tanpa ampun yang berada di balik itu semua... ini semua adalah senjata Kaeya.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "Cooldown",
+      "2": "Durasi",
+      "3": "Konsumsi Energy",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Cold-Blooded Strike",
+    "description": {
+      "0": "Setiap kali skill <strong>Frostgnaw</strong> mengenai satu musuh, memulihkan HP Kaeya sebesar 15% ATK."
+    }
+  },
+  "passive2": {
+    "name": "Glacial Heart",
+    "description": {
+      "0": "Musuh yang terkena efek <cryo>Frozen</cryo> dari skill <strong>Frostgnaw</strong> akan menjatuhkan Elemental Particle tambahan.",
+      "1": "Maksimum menjatuhkan 2 Elemental Particle tambahan setiap kalinya."
+    }
+  },
+  "passive3": {
+    "name": "Hidden Strength",
+    "description": {
+      "0": "Mengurangi 20% konsumsi Stamina semua Karakter di party sendiri saat berlari.",
+      "1": "Efek ini tidak dapat ditumpuk dengan Talenta Pasif lain dengan efek yang sama persis."
+    }
+  },
+  "constellation1": {
+    "name": "Excellent Blood",
+    "description": {
+      "0": "CRIT Rate dari Normal dan Charged Attack milik Kaeya terhadap musuh yang terkena efek <cryo>Cryo</cryo> meningkat sebesar 15%."
+    }
+  },
+  "constellation2": {
+    "name": "Never-Ending Performance",
+    "description": {
+      "0": "Setiap kali sebuah musuh dikalahkan dalam durasi <strong>Glacial Waltz</strong>, durasinya meningkat 2,5 detik, sampai maksimum 15 detik."
+    }
+  },
+  "constellation3": {
+    "name": "Dance of Frost",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Frostgnaw</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Frozen Kiss",
+    "description": {
+      "0": "Terpicu secara otomatis saat HP Kaeya kurang dari 20%:",
+      "1": "Membuat perisai yang menahan DMG setara dengan 30% Max HP Kaeya. Berlangsung selama 20 detik.",
+      "2": "Perisai ini memiliki 250% pertahanan terhadap <cryo>Cryo DMG</cryo>.",
+      "3": "Terpicu setiap 60 detik."
+    }
+  },
+  "constellation5": {
+    "name": "Frostbiting Embrace",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Glacial Waltz</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Glacial Whirlwind",
+    "description": {
+      "0": "<strong>Glacial Waltz</strong> mengeluarkan 1 es tambahan, dan memulihkan 15 Energy saat skill digunakan."
+    }
+  }
+}

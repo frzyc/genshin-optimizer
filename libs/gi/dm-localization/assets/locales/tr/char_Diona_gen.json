@@ -1,0 +1,171 @@
+{
+  "name": "Diona",
+  "title": "Kätzlein Kokteyli",
+  "description": "İnsan dışı türlerin kanını taşıyan genç bir kadın. Kedi Kuyruğu Hanının son derece popüler barmeni.",
+  "constellationName": "Kedicik",
+  "auto": {
+    "name": "Kätzlein Tarzı",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Saldırı</strong>",
+        "1": "Arka arkaya en fazla 5 ok atar."
+      },
+      "charged": {
+        "0": "<strong>Yüklü Saldırı</strong>",
+        "1": "Daha isabetli ve daha yüksek Hasar veren bir <strong>Hedefli Atış</strong> yapar.",
+        "2": "Nişan alırken okun ucunda dondurucu soğuk birikir. Tam yüklü bu buz oku <cryo>Buz Hasarı</cryo> verir."
+      },
+      "plunging": {
+        "0": "<strong>Havadan Saldırı</strong>",
+        "1": "Havadayken yaylım ok atışı yapar ve dalışa geçerek yere vurur. Yere vurduğunda Alan Hasarı verir."
+      }
+    },
+    "skillParams": {
+      "0": "1 Vuruş Hasarı",
+      "1": "2 Vuruş Hasarı",
+      "2": "3 Vuruş Hasarı",
+      "3": "4 Vuruş Hasarı",
+      "4": "5 Vuruş Hasarı",
+      "5": "Hedefli Atış",
+      "6": "Tam Yüklü Hedefli Atış",
+      "7": "Havadan Saldırı Hasarı",
+      "8": "Havadan Saldırı Hasarı (Alçaktan/Yüksekten)",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Buz Patisi",
+    "description": {
+      "0": "Düşmanlara <cryo>Buz Hasarı</cryo> veren ve isabet ettiğinde kalkan oluşturan bir Buz Patisi fırlatır.",
+      "1": "Kalkanın Hasar Emilimi, Diona'nın Maks. Canına göre değişir. Süresi ise hedefini vuran Buz Patilerinin sayısına bağlıdır.",
+      "2": "<br/>",
+      "3": "<strong>Bas</strong>",
+      "4": "Hızla 2 Buz Patisi fırlatır.",
+      "5": "<br/>",
+      "6": "<strong>Basılı Tut</strong>",
+      "7": "Hızla geriye atılarak 5 Buz Patisi fırlatır.",
+      "8": "Basılı Tutma saldırısıyla oluşan kalkan %75 Hasar Emilimi Bonusu kazanır.",
+      "9": "<br/>",
+      "10": "Kalkan %250 <cryo>Buz Hasarı</cryo> Emilim Bonusuna sahiptir ve aktif karakterine kalkanın oluştuğu bölgede kısa süreliğine <cryo>Buz</cryo> etkisi verir.",
+      "11": "<br/>",
+      "12": "<i>Diona, barmenlik yapmaya ilk başladığında kokteyllerine ne kadar buz koyarsa koysun sarhoşların durumdan şikayetçi olmadığını fark etti. Önsezi kazandığında bu durum değişti. Artık korkunç bir şekilde baş ağrısı yapacak kadar soğuk buzlar yapabiliyor. Sıkıntılardan uzaklaşmak için harika!</i>"
+    },
+    "skillParams": {
+      "0": "Buz Patisi Hasarı",
+      "1": "Kalkan Temel Hasar Emilimi",
+      "2": "Süre",
+      "3": "Basma BS",
+      "4": "BS (Basılı Tutma)",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Özel Karışım",
+    "description": {
+      "0": "<cryo>Buz Alan Hasarı</cryo> veren ve etki alanında Sarhoşluk Buharı oluşturan özel bir soğuk içecek fırlatır.",
+      "1": "<br/>",
+      "2": "<strong>Sarhoşluk Buharı</strong>",
+      "3": [
+        "Etki alanındaki düşmanlara sürekli <cryo>Buz Hasarı</cryo> verir.",
+        "Etki alanındaki karakterlerin Canını sürekli yeniler."
+      ],
+      "4": "<br/>",
+      "5": "<i>Diona'nın bile insanlık dışı olduğunu düşündüğü korkunç bir karışım. İlk yudumda aldığın iğrenç tat tam düşmanlara layık. Ağızda sert bir tat bırakır ama sadece burunda ve ciltte hissedilir.</i>"
+    },
+    "skillParams": {
+      "0": "Beceri Hasarı",
+      "1": "Sürekli Alan Hasarı",
+      "2": "Süreli Can Yenilenmesi",
+      "3": "Süre",
+      "4": "BS",
+      "5": "Enerji Maliyeti",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Kedi Kuyruğu'nun Gizli Menüsü",
+    "description": {
+      "0": "<strong>Buz Patisi</strong> kalkanı ile korunan karakterlerin Hareket Hızı %10 artar ve Dayanıklılık Tüketimi %10 azalır."
+    }
+  },
+  "passive2": {
+    "name": "Sarhoşların Maskaralığı",
+    "description": {
+      "0": "15 saniyeliğine <strong>Özel Karışım</strong> becerisinin Etki Alanına giren düşmanların Saldırısı %10 azalır."
+    }
+  },
+  "passive3": {
+    "name": "İkramımız Olsun",
+    "description": {
+      "0": "Yenileyici etkide olan bir yemek Mükemmel Pişirildiğinde elde edilen ürün %12 ihtimalle iki katına çıkar."
+    }
+  },
+  "constellation1": {
+    "name": "Ağızda Kalan Bir Tat",
+    "description": {
+      "0": "<strong>Özel Karışım</strong> becerisinin etkileri sona erdikten sonra Diona 15 Enerji yeniler."
+    }
+  },
+  "constellation2": {
+    "name": "Buzul Mırlama",
+    "description": {
+      "0": "<strong>Buz Patisi</strong> becerisinin verdiği Hasarı ve oluşan kalkanın Hasar Emilimini %15 artırır.",
+      "1": "Buna ek olarak patiler, hedefe isabet ettiğinde yakındaki diğer karakterler için 5 saniyeliğine kalkan oluşturur. Bu kalkanın Hasar Emilimi, <strong>Buz Patisi</strong> kalkanının Hasar Emiliminin %50'si kadardır."
+    }
+  },
+  "constellation3": {
+    "name": "N-Ne Demek Bir Tane Daha?",
+    "description": {
+      "0": "<strong>Özel Karışım</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation4": {
+    "name": "Şarap Endüstrisi Katili",
+    "description": {
+      "0": "<strong>Özel Karışım</strong> alanındayken Diona'nın Hedefli Atışlarının yüklenme süresi %60 azalır."
+    }
+  },
+  "constellation5": {
+    "name": "Buzunu Bol Koy",
+    "description": {
+      "0": "<strong>Buz Patisi</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation6": {
+    "name": "Kedi Kuyruğu Kapanış Saati",
+    "description": {
+      "0": "<strong>Özel Karışım</strong> alanındaki karakterler, sahip oldukları Can miktarına göre aşağıdaki etkileri kazanır:",
+      "1": [
+        "Can %50 veya altındayken Gelen İyileştirme Bonusu %30 artar.",
+        "Can %50'nin üzerindeyken Element Ustalığı 200 artar."
+      ]
+    }
+  }
+}

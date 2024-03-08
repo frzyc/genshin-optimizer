@@ -1,0 +1,29 @@
+{
+  "setName": "Göçebe Kumpanyası",
+  "setEffects": {
+    "2": "Element Ustalığını 80 artırır.",
+    "4": "Karakter bir Katalizör veya Yay kullanıyorsa Yüklü Saldırı Hasarını %35 artırır."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Kumpanyanın Şafağı",
+      "desc": "Küçük çiçek şekilli bir nişan. Eğer dikkatli bir şekilde dinlersen neredeyse çalan flütü ve şarkıları duyabilirsin."
+    },
+    "plume": {
+      "name": "Ozanın Ok Tüyü",
+      "desc": "Zamanın yıpratıcı etkisine rağmen rengini ve sağlamlığını koruyan mavi bir ok tüyü. Çevresinde sanki akan bir suyun sesi duyuluyor."
+    },
+    "sands": {
+      "name": "Konserin Son Saati",
+      "desc": "Performans sırasında zamanı takip etmek için kullanılan bir kum saati. Bir zamanlar tellerinden çıkan sesler, performansın sona ermesiyle sessizliğe bürünmüşler."
+    },
+    "goblet": {
+      "name": "Göçebenin Matarası",
+      "desc": "Eski ve garip şekilli bir matara. İçine lir telleri işlendiği için su aktıkça muhteşem bir ezgiye dönüşüyor."
+    },
+    "circlet": {
+      "name": "Orkestra Şefinin Şapkası",
+      "desc": "Elementlere karşı uzunca bir süre direnmesine rağmen parlaklığını yitirmemiş bir şapka. Kadim bir ezgi hâlâ içinde yankılanıyor."
+    }
+  }
+}

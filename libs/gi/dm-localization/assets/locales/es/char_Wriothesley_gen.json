@@ -1,0 +1,174 @@
+{
+  "name": "Wriothesley",
+  "title": "El Emisario de los Culpables",
+  "description": "El duque del Fuerte Merópide y gobernante oculto del oscuro fondo marino.",
+  "constellationName": "Cerberus",
+  "auto": {
+    "name": "Combo glaciodemoledor",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Ataque Normal</strong>",
+        "1": "Acumula hielo en los puños para ejecutar hasta 5 potentes <strong>puñetazos expeledores</strong> que infligen <cryo>Daño Cryo</cryo>.",
+        "2": "Además, al usar la Habilidad Elemental, “Envite ateridor”, o durante un breve periodo de tiempo después de esprintar, la secuencia de los Ataques Normales no se reiniciará."
+      },
+      "charged": {
+        "0": "<strong>Ataque Cargado</strong>",
+        "1": "Consume cierta cantidad de Aguante para dar un salto y ejecutar un <strong>gancho alto</strong> que inflige <cryo>Daño Cryo en el AdE</cryo>."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Descendente</strong>",
+        "1": "Se lanza desde el aire para golpear el suelo, dañando a los enemigos cercanos e infligiendo <cryo>Daño Cryo en el AdE</cryo> en el momento del impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Daño de 1er golpe",
+      "1": "Daño de 2.º golpe",
+      "2": "Daño de 3er golpe",
+      "3": "Daño de 4.º golpe",
+      "4": "Daño de 5.º golpe",
+      "5": "Daño de ATQ Cargado",
+      "6": "Coste de Aguante de ATQ Cargado",
+      "7": "Daño de Caída",
+      "8": "Daño de impacto de caída baja/alta",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Envite ateridor",
+    "description": {
+      "0": "Regula la respiración y el ritmo, avanza ligeramente hacia delante y entra en el estado de “<strong>sentencia gélida</strong>” para ejecutar ataques más potentes.",
+      "1": "<br/>",
+      "2": "<strong>Sentencia gélida</strong>",
+      "3": [
+        "Aumenta la RES a interrupción de Wriothesley.",
+        "Cuando la Vida de Wriothesley está por encima del 50%, los puñetazos expeledores de su <strong>Ataque Normal: Combo glaciodemoledor</strong> se fortalecen, de modo que infligen más daño y, al golpear al objetivo, Wriothesley pierde cierta cantidad de Vida. Solo podrá perder Vida una vez cada 0.1 s de esta manera."
+      ],
+      "4": "Este efecto se anula cuando Wriothesley se retira del campo de batalla.",
+      "5": "<br/>",
+      "6": "<i>Las sentencias del pasado pertenecen al pasado, pero en nuestras manos está decidir el futuro.",
+      "7": "Si no deseas que las ofensas acaben con tu destino, será mejor que aprecies el presente.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de puñetazo expeledor fortalecido",
+      "1": "Consumo de Vida",
+      "2": "Duración",
+      "3": "TdE",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Devoración aureosombría",
+    "description": {
+      "0": "Ejecuta un puñetazo de escarcha directo y, después, crea un carámbano apisonador enfrente de sí mismo, el cual inflige varias veces <cryo>Daño Cryo en el AdE</cryo>.",
+      "1": "<br/>",
+      "2": "<strong>Arjé: ousía</strong>",
+      "3": "Tras liberar el carámbano apisonador, en la ubicación del enemigo caerá un filo fluyente que inflige <cryo>Daño Cryo</cryo> cargado de energía ousía.",
+      "4": "<br/>",
+      "5": "<i>Hay cosas que sacan de quicio hasta al mismísimo duque del Fuerte Merópide, como por ejemplo, la tediosa burocracia, el trabajo de vigilancia o... la insistencia de ciertas criaturas de baja estatura en pegar en los guantes de combate del duque unas calcomanías muy difíciles de despegar.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "Daño de filo fluyente",
+      "2": "TdE",
+      "3": "TdE de filo fluyente",
+      "4": "Energía Elemental",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Refutación del dogma",
+    "description": {
+      "0": "Cuando la Vida de Wriothesley está por debajo del 60%, obtiene el efecto de “merced reprensora”, el cual fortalece su siguiente Ataque Cargado de <strong>Ataque Normal: Combo glaciodemoledor</strong> para convertirlo en un gancho alto disciplinario que no consume Aguante, inflige un 50% más de daño y, al golpear al enemigo, restaura Vida a Wriothesley en una cantidad equivalente al 30% de su propia Vida Máx.",
+      "1": "Como máximo, el efecto de merced reprensora solo se puede obtener una vez cada 5 s de esta forma."
+    }
+  },
+  "passive2": {
+    "name": "Redención del pecado",
+    "description": {
+      "0": "Cuando la Vida de Wriothesley aumenta o disminuye, si se encuentra en el estado de sentencia gélida de <strong>Envite ateridor</strong>, dicho estado obtiene el efecto de “decreto punitivo”. Este puede acumularse hasta 5 veces y cada acumulación aumenta el ATQ de Wriothesley en un 6%."
+    }
+  },
+  "passive3": {
+    "name": "Dádiva ducal",
+    "description": {
+      "0": "Al crear materiales de ascensión de arma, hay una probabilidad del 10% de recibir el doble."
+    }
+  },
+  "constellation1": {
+    "name": "Aterrorizar a los facinerosos",
+    "description": {
+      "0": "Cambia el efecto merced reprensora del talento pasivo “Refutación del dogma”:",
+      "1": "Cuando la Vida de Wriothesley está por debajo del 60% o cuando se encuentra en el estado de sentencia gélida de <strong>Envite ateridor</strong>, golpear al enemigo con el quinto puñetazo expeledor otorga a Wriothesley el efecto de merced reprensora. Solo podrá obtener este efecto una vez cada 2.5 s.",
+      "2": "<br/>",
+      "3": "Además, el gancho alto disciplinario obtiene los siguientes fortalecimientos:",
+      "4": [
+        "El aumento de daño puede llegar hasta un 200%.",
+        "Si Wriothesley se encuentra en el estado de sentencia gélida al golpear a un enemigo con el gancho alto, la duración de dicho estado se prolonga en 4 s. Esto solo puede ocurrir una vez por cada vez que se active sentencia gélida."
+      ],
+      "5": "<br/>",
+      "6": "Es necesario desbloquear el talento pasivo “Refutación del dogma”."
+    }
+  },
+  "constellation2": {
+    "name": "Engrilletar a los arrogantes",
+    "description": {
+      "0": "Al usar <strong>Devoración aureosombría</strong>, cada carga del efecto decreto punitivo del talento pasivo “Redención del pecado” aumenta el daño infligido en un 40%.",
+      "1": "Es necesario desbloquear el talento pasivo “Redención del pecado”."
+    }
+  },
+  "constellation3": {
+    "name": "Condenar a los embaucadores",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Ataque Normal: Combo glaciodemoledor</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Redimir a los diligentes",
+    "description": {
+      "0": "La Vida que el gancho alto disciplinario restaura a Wriothesley aumenta hasta un 50% de su Vida Máx. (es necesario desbloquear el talento pasivo “Refutación del dogma”).",
+      "1": "Además, cuando Wriothesley recibe curación, si su Vida está al máximo, obtendrá distintos efectos dependiendo de si es el personaje en uso o no al recibir dicha curación. Si estaba en uso, su Vel. de Ataque aumenta en un 20% durante 4 s; si estaba en tu equipo pero no en uso, la Vel. de Ataque de todos tus personajes del equipo aumenta en un 10% durante 6 s. Estos dos aumentos de Vel. de Ataque no se pueden acumular."
+    }
+  },
+  "constellation5": {
+    "name": "Exculpar a los inculpados",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Devoración aureosombría</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Confortar a los inocentes",
+    "description": {
+      "0": "La Prob. CRIT del gancho alto disciplinario aumenta en un 10%, su Daño CRIT aumenta en un 80% y crea un carámbano adicional que inflige un 100% del <cryo>Daño Cryo</cryo> del carámbano original. El daño infligido de esta manera se considera daño de Ataque Cargado.",
+      "1": "Es necesario desbloquear el talento pasivo “Refutación del dogma”."
+    }
+  }
+}

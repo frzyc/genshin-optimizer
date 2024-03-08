@@ -1,0 +1,29 @@
+{
+  "setName": "Học Sĩ",
+  "setEffects": {
+    "2": "Hiệu Quả Nạp Nguyên Tố tăng 20%",
+    "4": "Khi nhận Nguyên Tố Hạt Nhân hoặc Nguyên Tố Tinh Cầu, tất cả nhân vật dùng cung tên và Pháp Khí trong đội sẽ hồi thêm 3 Năng Lượng Nguyên Tố. Mỗi 3s mới thi triển 1 lần."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Kẹp Sách Học Sĩ",
+      "desc": "Hoa khô dùng thay cho kẹp sách, đã hấp thu hết hương thơm của sách."
+    },
+    "plume": {
+      "name": "Bút Lông Học Sĩ",
+      "desc": "Lông chim dùng làm bút viết, đã bị nhuốm màu đen không rửa sạch được."
+    },
+    "sands": {
+      "name": "Đồng Hồ Học Sĩ",
+      "desc": "Đồng hồ nhỏ thích hợp đặt trên bàn, là vật để xem thời gian duy nhất đối với những mọt sách."
+    },
+    "goblet": {
+      "name": "Ly Mực Học Sĩ",
+      "desc": "Vốn là vật đựng nước uống, nhưng bị dùng để rửa bút lông nên đã biến thành màu đen."
+    },
+    "circlet": {
+      "name": "Mảnh Kính Học Sĩ",
+      "desc": "Đọc quá nhiều sẽ ảnh hưởng tới mắt, đạo cụ này có thể giảm bớt tác hại cho mắt."
+    }
+  }
+}

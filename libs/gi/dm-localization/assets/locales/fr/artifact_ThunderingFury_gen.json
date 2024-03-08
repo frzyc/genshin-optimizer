@@ -1,0 +1,29 @@
+{
+  "setName": "Colère de tonnerre",
+  "setEffects": {
+    "2": "Confère un bonus de DGT Électro de 15 %.",
+    "4": "Augmente les DGT infligés par Surcharge, Électrocution, Supraconduction et Exubérance de 40 % et le bonus de DGT accordée par Suractivation de 20 %. Au déclenchement de ces réactions élémentaires ou d'une réaction de Stimulation, le TdR de la compétence élémentaire diminue de 1 s. Cet effet peut être déclenché une fois toutes les 0,8 s."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Compassion de l'Oiselle du tonnerre",
+      "desc": "Une fleur imprégnée de foudre, qui réussit à survivre aux piétinements et à la furie du feu violet, en faisant la seule survivante d'une certaine catastrophe."
+    },
+    "plume": {
+      "name": "Survivant de la catastrophe",
+      "desc": "Une plume électrique qui scelle le jugement cruel de l'Oiselle du tonnerre. On peut encore sentir sa colère en émaner."
+    },
+    "sands": {
+      "name": "Sablier de tonnerre",
+      "desc": "Un sablier utilisé autrefois pour compter le temps séparant de l'arrivée de l'Oiselle du tonnerre. Il est désormais silencieux, le clan auquel il appartenait ayant disparu."
+    },
+    "goblet": {
+      "name": "Présage de tombée du tonnerre",
+      "desc": "Un calice de cérémonie servant à contenir le sang des innocents. Le rugissement d'innombrables prières s'en dégage."
+    },
+    "circlet": {
+      "name": "Diadème de l'Invocateur de tonnerre",
+      "desc": "Un diadème porté autrefois par un shaman adorateur de l'Oiselle du tonnerre. L'oiseau maléfique demeura insensible à la dévotion du shaman."
+    }
+  }
+}

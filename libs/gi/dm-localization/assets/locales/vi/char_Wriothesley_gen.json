@@ -1,0 +1,174 @@
+{
+  "name": "Wriothesley",
+  "title": "Sứ Giả Tội Danh Ẩn Mật",
+  "description": "Công tước của Pháo Đài Meropide, là vị chúa tể ẩn mình trong biển tối.",
+  "constellationName": "Cung Thủ Ngục Khuyển",
+  "auto": {
+    "name": "Liệt Sương Quyền",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Tấn Công Thường</strong>",
+        "1": "Tích tụ băng giá vào nắm đấm để tung ra <strong>Cú Đấm Bài Xích</strong> mạnh mẽ, tiến hành tối đa 5 lần tấn công nhanh, gây <cryo>Sát Thương Nguyên Tố Băng</cryo>.",
+        "2": "Ngoài ra, trong một thời gian ngắn sau khi thi triển kỹ năng \"Nanh Băng Càn Quét\" hoặc xung kích, số lần liên kích tấn công thường sẽ không bị tái lập."
+      },
+      "charged": {
+        "0": "<strong>Trọng Kích</strong>",
+        "1": "Tiêu hao một lượng thể lực để nhảy lên và tung ra <strong>Cú Đấm Vòm Cung</strong>, gây <cryo>Sát Thương Phạm Vi Nguyên Tố Băng</cryo>."
+      },
+      "plunging": {
+        "0": "<strong>Tấn Công Khi Đáp</strong>",
+        "1": "Đáp xuống đất từ trên không, tấn công kẻ địch trên đường và gây <cryo>Sát Thương Phạm Vi Nguyên Tố Băng</cryo>."
+      }
+    },
+    "skillParams": {
+      "0": "Sát Thương Lần 1",
+      "1": "Sát Thương Lần 2",
+      "2": "Sát Thương Lần 3",
+      "3": "Sát Thương Lần 4",
+      "4": "Sát Thương Lần 5",
+      "5": "Sát Thương Trọng Kích",
+      "6": "Thể lực Trọng Kích tiêu hao",
+      "7": "Sát Thương Khi Đáp",
+      "8": "ST Khi Rơi Từ Độ Cao Thấp/Cao",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Nanh Băng Càn Quét",
+    "description": {
+      "0": "Nhanh chóng điều chỉnh hơi thở, tiết tấu và bước chân. Xung kích một đoạn ngắn về phía trước, vào trạng thái <strong>Hàn Băng Phán Quyết</strong> để phát động cuộc tiến công mạnh mẽ.",
+      "1": "<br/>",
+      "2": "<strong>Hàn Băng Phán Quyết</strong>",
+      "3": [
+        "Tăng khả năng kháng gián đoạn của Wriothesley;",
+        "Khi HP cao hơn 50% sẽ cường hóa Cú Đấm Bài Xích từ <strong>Tấn Công Thường - Liệt Sương Quyền</strong>, tăng sát thương gây ra; Khi đánh trúng, Wriothesley sẽ tiêu hao một lượng HP nhất định, mỗi 0.1s tối đa tiêu hao HP một lần bằng phương thức này."
+      ],
+      "4": "Hiệu quả này sẽ bị hủy khi Wriothesley rời trận.",
+      "5": "<br/>",
+      "6": "<i>\"Phán quyết trong quá khứ đã qua, lựa chọn của tương lai nằm trong lòng bàn tay.\"",
+      "7": "\"Nếu không muốn vận mệnh bị tội ác nhất thời hủy diệt, thì hãy trân trọng khoảnh khắc của hiện tại.\"</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Cú Đấm Bài Xích Cường Hóa",
+      "1": "HP Tiêu Hao",
+      "2": "Thời Gian Kéo Dài",
+      "3": "CD",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Hắc Kim Lang Cắn Xé",
+    "description": {
+      "0": "Tung cú đấm trực diện tích tụ hàn băng, đồng thời triệu hồi Nhũ Băng Xung Kích về phía trước, gây nhiều lần <cryo>Sát Thương Phạm Vi Nguyên Tố Băng</cryo>.",
+      "1": "<br/>",
+      "2": "<strong>Sức Mạnh Nền Tảng: Ousia</strong>",
+      "3": "Nhũ Băng Xung Kích sau khi kết thúc, sẽ giáng xuống Lưỡi Dao Nổi Sóng ở vị trí kẻ địch, gây <cryo>Sát Thương Nguyên Tố Băng</cryo> thuộc tính Ousia.",
+      "4": "<br/>",
+      "5": "<i>Luôn có vài chuyện khiến công tước của Pháo Đài Meropide phải bó tay, như công việc giấy tờ phức tạp, nhiệm vụ giám sát nhỏ nhặt, hay những đứa trẻ dán cả đống nhãn dán dễ thương nhưng khó gỡ trên găng tay của mình.</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Kỹ Năng",
+      "1": "Sát Thương Lưỡi Dao Nổi Sóng",
+      "2": "CD",
+      "3": "CD Lưỡi Dao Nổi Sóng",
+      "4": "Năng Lượng Nguyên Tố",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Ngày Biện Hộ Cho Công Lý",
+    "description": {
+      "0": "Khi HP của Wriothesley thấp hơn 60% sẽ nhận được \"Ân Điển Trách Phạt\", cường hóa đòn Trọng Kích của <strong>Tấn Công Thường - Liệt Sương Quyền</strong> lần sau thành Cú Đấm Trừng Phạt: Không tiêu hao thể lực, sát thương gây ra tăng 50%. Sau khi đánh trúng sẽ hồi phục một lượng HP tương đương 30% HP tối đa cho Wriothesley.",
+      "1": "Mỗi 5s tối đa nhận được một lần \"Ân Điển Trách Phạt\" thông qua cách này."
+    }
+  },
+  "passive2": {
+    "name": "Giờ Đền Đáp Cho Tội Lỗi",
+    "description": {
+      "0": "Khi HP hiện tại của Wriothesley tăng lên hay giảm xuống, nếu anh ta ở trong trạng thái Hàn Băng Phán Quyết của kỹ năng <strong>Nanh Băng Càn Quét</strong>, thì Hàn Băng Phán Quyết sẽ nhận được một tầng \"Sắc Lệnh Truy Tố\". Hiệu quả này tối đa cộng dồn 5 tầng, mỗi tầng tăng cho Wriothesley 6% tấn công."
+    }
+  },
+  "passive3": {
+    "name": "Ẩn Điển Của Công Tước",
+    "description": {
+      "0": "Khi ghép nguyên liệu đột phá vũ khí sẽ có 10% tỷ lệ nhận x2 thành phẩm."
+    }
+  },
+  "constellation1": {
+    "name": "Trừng Trị Kẻ Hành Ác",
+    "description": {
+      "0": "\"Ân Điển Trách Phạt\" của thiên phú \"Ngày Biện Hộ Cho Công Lý\" chuyển thành:",
+      "1": "Khi HP của Wriothesley thấp hơn 60% hoặc đang trong thời gian duy trì trạng thái Hàn Băng Phán Quyết của kỹ năng <strong>Nanh Băng Càn Quét</strong>, khi đòn tấn công thứ năm của Cú Đấm Bài Xích trúng đích, sẽ nhận được \"Ân Điển Trách Phạt\", mỗi 2.5s tối đa nhận một lần hiệu ứng \"Ân Điển Trách Phạt\".",
+      "2": "<br/>",
+      "3": "Ngoài ra, Cú Đấm Trừng Phạt sẽ được cường hóa sau:",
+      "4": [
+        "Mức tăng sát thương gây ra sẽ tăng thêm tới 200%;",
+        "Khi trúng đích, nếu đang ở trong trạng thái Hàn Băng Phán Quyết, thời gian duy trì của trạng thái này kéo dài thêm 4s. Trong một lần duy trì Hàn Băng Phán Quyết tối đa chỉ kéo dài thêm một lần thông qua phương thức này."
+      ],
+      "5": "<br/>",
+      "6": "Cần mở khóa thiên phú cố định \"Ngày Biện Hộ Cho Công Lý\"."
+    }
+  },
+  "constellation2": {
+    "name": "Bắt Trói Kẻ Hung Bạo",
+    "description": {
+      "0": "Khi thi triển <strong>Hắc Kim Lang Cắn Xé</strong>, mỗi tầng \"Sắc Lệnh Truy Tố\" của thiên phú cố định \"Giờ Đền Đáp Cho Tội Lỗi\" sẽ khiến sát thương gây ra tăng 40%.",
+      "1": "Cần mở khóa thiên phú cố định \"Giờ Đền Đáp Cho Tội Lỗi\"."
+    }
+  },
+  "constellation3": {
+    "name": "Khiển Trách Kẻ Dối Gian",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Tấn Công Thường - Liệt Sương Quyền</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation4": {
+    "name": "Cứu Rỗi Người Khốn Khổ",
+    "description": {
+      "0": "Lượng HP hồi phục của Cú Đấm Trừng Phạt sẽ tăng thành 50% giới hạn HP, cần mở khóa thiên phú cố định \"Ngày Biện Hộ Cho Công Lý\".",
+      "1": "Ngoài ra, khi Wriothesley nhận được trị liệu, nếu lượng trị liệu hồi phục lần đó bị dư ra, thì sẽ căn cứ vào trạng thái của Wriothesley để sản sinh hiệu ứng khác nhau: Nếu Wriothesley ở trong trận, tốc độ tấn công của anh ấy tăng 20% trong 4s; Nếu Wriothesley không ở trong trận, tốc độ tấn công của tất cả nhân vật trong đội bản thân tăng 10% trong 6s. Hai loại hiệu quả tăng tốc độ tấn công kể trên sẽ không thể cộng dồn."
+    }
+  },
+  "constellation5": {
+    "name": "Thương Xót Người Oan Ức",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Hắc Kim Lang Cắn Xé</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation6": {
+    "name": "Trân Trọng Người Vô Tội",
+    "description": {
+      "0": "Tỉ lệ bạo kích của Cú Đấm Trừng Phạt tăng 10%, sát thương bạo kích tăng 80%, đồng thời sản sinh thêm nhũ băng, gây <cryo>Sát Thương Nguyên Tố Băng</cryo> bằng 100% sát thương vốn có của Cú Đấm Trừng Phạt. Sát thương gây ra bằng phương thức này sẽ được tính là sát thương trọng kích.",
+      "1": "Cần mở khóa thiên phú cố định \"Ngày Biện Hộ Cho Công Lý\"."
+    }
+  }
+}

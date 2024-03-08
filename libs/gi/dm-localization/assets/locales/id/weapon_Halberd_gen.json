@@ -1,0 +1,24 @@
+{
+  "name": "Halberd",
+  "description": {
+    "0": "Sebuah polearm dengan sebilah kapak terpasang di atasnya yang bisa mengakibatkan kerusakan hebat. Senjata yang sangat disukai oleh prajurit Millelith."
+  },
+  "passiveName": "Heavy",
+  "passiveDescription": {
+    "0": {
+      "0": "Normal Attack mengakibatkan serangan tambahan sebesar <cryo>160%</cryo> ATK pada musuh. Hanya dapat terpicu setiap 10 detik."
+    },
+    "1": {
+      "0": "Normal Attack mengakibatkan serangan tambahan sebesar <cryo>200%</cryo> ATK pada musuh. Hanya dapat terpicu setiap 10 detik."
+    },
+    "2": {
+      "0": "Normal Attack mengakibatkan serangan tambahan sebesar <cryo>240%</cryo> ATK pada musuh. Hanya dapat terpicu setiap 10 detik."
+    },
+    "3": {
+      "0": "Normal Attack mengakibatkan serangan tambahan sebesar <cryo>280%</cryo> ATK pada musuh. Hanya dapat terpicu setiap 10 detik."
+    },
+    "4": {
+      "0": "Normal Attack mengakibatkan serangan tambahan sebesar <cryo>320%</cryo> ATK pada musuh. Hanya dapat terpicu setiap 10 detik."
+    }
+  }
+}

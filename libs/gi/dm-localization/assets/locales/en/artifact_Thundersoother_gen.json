@@ -1,0 +1,29 @@
+{
+  "setName": "Thundersoother",
+  "setEffects": {
+    "2": "Electro RES increased by 40%.",
+    "4": "Increases DMG against opponents affected by Electro by 35%."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Thundersoother's Heart",
+      "desc": "A flower that blooms even amidst ferocious thunder and lightning. To this day, it still grants courage to travelers in thunderstorms."
+    },
+    "plume": {
+      "name": "Thundersoother's Plume",
+      "desc": "The feather of a predatory bird that soars through lightning storms. It was said to have been adopted as an insignia by the legendary hero who pacified thunder and lightning."
+    },
+    "sands": {
+      "name": "Hour of Soothing Thunder",
+      "desc": "A timepiece kept by the hero who conquered thunder and lightning. The tiny shards of Electro crystal within flow back and forth with the passing of time."
+    },
+    "goblet": {
+      "name": "Thundersoother's Goblet",
+      "desc": "The wine goblet from which the Thundersoother, who defeated the Beast of Thunder, once drank violet lightning."
+    },
+    "circlet": {
+      "name": "Thundersoother's Diadem",
+      "desc": "The crown given to the Thundersoother for defeating the Beast of Thunder that had been wreaking havoc upon the land."
+    }
+  }
+}

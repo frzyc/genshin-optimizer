@@ -1,0 +1,157 @@
+{
+  "name": "Kaveh",
+  "title": "Reflet empyréen",
+  "description": "Un célèbre architecte de Sumeru, excessivement préoccupé par bon nombre de choses. Prônant l'esthétisme, il est troublé par la réalité.",
+  "constellationName": "Paradisaea",
+  "auto": {
+    "name": "Configuration schématique",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attaque normale</strong>",
+        "1": "Utilise Mehrak pour enchaîner jusqu'à 4 attaques."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Consomme de l'endurance de façon continue pour exécuter une succession d'entailles aussi rapides que tranchantes.",
+        "2": "L'attaque chargée se termine sur un coup puissant."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis en chemin et des DGT de zone à l'impact."
+      }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT 4e coup",
+      "4": "DGT enchaînement attaque chargée",
+      "5": "DGT coup final attaque chargée",
+      "6": "Coût d'endurance attaque chargée",
+      "7": "Durée max",
+      "8": "DGT durant la chute",
+      "9": "DGT chute basse/élevée",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Ingéniosité artistique",
+    "description": {
+      "0": "Utilise l'énergie de cartographie de Mehrak à des fins offensives, déclenchant un balayage radial qui inflige des <dendro>DGT Dendro de zone</dendro> et scanne tous les noyaux Dendro dans sa zone d'effet pour les faire éclater immédiatement.",
+      "1": "<br/>",
+      "2": "<i>Mehrak a été créé en modifiant une technologie ancienne et peut avoir d'autres fonctions en dehors de la cartographie...</i>"
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "Temps de recharge",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Dôme peint",
+    "description": {
+      "0": "Libère complètement l'énergie de Mehrak et crée un carroyage de topographie, infligeant des <dendro>DGT Dendro de zone</dendro> aux ennemis à l'intérieur, faisant éclater immédiatement tous les noyaux Dendro dans la zone d'effet et renforçant les capacités de combat de Kaveh pendant un certain temps :",
+      "1": [
+        " Augmente la portée des attaques normales, chargées et plongeantes de Kaveh et convertit ses DGT d'attaque en <dendro>DGT Dendro</dendro> ne pouvant pas être enchantés.",
+        " Augmente les DGT infligés lors de l'éclatement des noyaux Dendro créés par vos personnages dans l'équipe grâce aux réactions de Fleurissement.",
+        " Augmente la RÉS à l'interruption de Kaveh."
+      ],
+      "2": "Ces effets cessent lorsque Kaveh quitte le champ de bataille.",
+      "3": "<br/>",
+      "4": "<i>« Chaque style de construction comprend la vision du monde unique de l'architecte, et sous cet angle, on peut dire que les bâtiments eux-mêmes sont des coalescences de souvenirs humains. »</i>"
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "Durée",
+      "2": "Bonus DGT éclatement de noyau Dendro",
+      "3": "Temps de recharge",
+      "4": "Énergie élémentaire",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Responsabilité d'un créateur",
+    "description": {
+      "0": "Lorsque des DGT infligés par un noyau Dendro (incluant Bourgeonnement et Exubérance) touchent Kaveh, il récupère des PV d'une valeur équivalant à 300 % de sa maîtrise élémentaire. Cet effet peut être déclenché une fois toutes les 0,5 s."
+    }
+  },
+  "passive2": {
+    "name": "Extravagance d'un artisan",
+    "description": {
+      "0": "Pendant la durée de <strong>Dôme peint</strong>, la maîtrise élémentaire de Kaveh augmente de 25 pts après avoir touché un ennemi avec une attaque normale, chargée ou plongeante. Cet effet peut être déclenché une fois toutes les 0,1 s et cumulé 4 fois maximum.",
+      "1": "Cet effet est annulé lorsque les effets de Dôme peint prennent fin."
+    }
+  },
+  "passive3": {
+    "name": "Finesse d'un financier",
+    "description": {
+      "0": "Lors de la fabrication de décorations de type paysage, bâtiment ou enceinte, une partie des matériaux est récupérée."
+    }
+  },
+  "constellation1": {
+    "name": "Salutation de la grande porte",
+    "description": {
+      "0": "Pendant 3 s après avoir utilisé <strong>Ingéniosité artistique</strong>, la <dendro>RÉS Dendro</dendro> de Kaveh augmente de 50 % et son bonus de soins reçus de 25 %."
+    }
+  },
+  "constellation2": {
+    "name": "Grâce du sentier royal",
+    "description": {
+      "0": "La VIT d'attaque des attaques normales de Kaveh augmente de 15 % pendant la durée de <strong>Dôme peint</strong>."
+    }
+  },
+  "constellation3": {
+    "name": "Encens de la tour d'or",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Dôme peint</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation4": {
+    "name": "Banquet des cent piliers",
+    "description": {
+      "0": "Les DGT infligés par l'éclatement des noyaux Dendro générés lorsque Kaveh déclenche une réaction de Fleurissement augmentent de 60 %."
+    }
+  },
+  "constellation5": {
+    "name": "Entreposage du saint ancien",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Ingéniosité artistique</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation6": {
+    "name": "Idéal du jardin céleste",
+    "description": {
+      "0": "Pendant la durée de <strong>Dôme peint</strong>, lorsque Kaveh touche un ennemi avec une attaque normale, chargée ou plongeante, une lumière du pairidaeza est libérée à l'emplacement de ce dernier, infligeant des <dendro>DGT Dendro de zone</dendro> d'une valeur équivalant à 61,8 % de l'ATQ de Kaveh et faisant éclater tous les noyaux Dendro dans la zone d'effet. Cet effet peut être déclenché une fois toutes les 3 s."
+    }
+  }
+}

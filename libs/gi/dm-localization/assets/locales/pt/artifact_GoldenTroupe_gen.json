@@ -1,0 +1,29 @@
+{
+  "setName": "Trupe Dourada",
+  "setEffects": {
+    "2": "Aumenta o dano da Habilidade Elemental em 20%.",
+    "4": "Aumenta o Dano da Habilidade Elemental em 25%. Além disso, quando o personagem não está no campo de batalha, o Dano da Habilidade Elemental aumenta em mais 25%. Este efeito será removido 2s após o personagem entrar no campo de batalha."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Variação da Composição Dourada",
+      "desc": "Uma flor feita cuidadosamente de conchas, moluscos e folhas de ouro. Desabrocha orgulhosamente."
+    },
+    "plume": {
+      "name": "Pena Caída do Pássaro Dourado",
+      "desc": "Um pingente pena feita de tiras de ouro e prata, e com uma gema azul incrustada em sua superfície."
+    },
+    "sands": {
+      "name": "Abertura da Era Dourada",
+      "desc": "Um intrincado relógio solar feito com ouro e prata incrustada. Parece que parou de girar na sua placa superior."
+    },
+    "goblet": {
+      "name": "Clamor da Noite Dourada",
+      "desc": "Um recipiente de prata antigo. No passado estava cheio de vinho vermelho, mas hoje só contém água amarga do mar."
+    },
+    "circlet": {
+      "name": "Recompensa da Trupe Dourada",
+      "desc": "Uma coroa antiga. Parece mais parte de um figurino teatral do que um ornamento para o rei."
+    }
+  }
+}

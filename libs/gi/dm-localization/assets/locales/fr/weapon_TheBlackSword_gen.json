@@ -1,0 +1,24 @@
+{
+  "name": "Épée noire",
+  "description": {
+    "0": "Une épée qui a soif de violence et de conflit. Cette arme aurait le pouvoir d'exciter la soif de sang de son propriétaire."
+  },
+  "passiveName": "Justice",
+  "passiveDescription": {
+    "0": {
+      "0": "Augmente les DGT infligés par les attaques normales et chargées de <cryo>20 %</cryo> et restaure <cryo>60 %</cryo> de l'ATQ sous forme de PV en cas de coup CRIT. Cet effet peut être déclenché une fois toutes les 5 s."
+    },
+    "1": {
+      "0": "Augmente les DGT infligés par les attaques normales et chargées de <cryo>25 %</cryo> et restaure <cryo>70 %</cryo> de l'ATQ sous forme de PV en cas de coup CRIT. Cet effet peut être déclenché une fois toutes les 5 s."
+    },
+    "2": {
+      "0": "Augmente les DGT infligés par les attaques normales et chargées de <cryo>30 %</cryo> et restaure <cryo>80 %</cryo> de l'ATQ en PV en cas de coup CRIT. Cet effet peut être déclenché une fois toutes les 5 s."
+    },
+    "3": {
+      "0": "Augmente les DGT infligés par les attaques normales et chargées de <cryo>35 %</cryo> et restaure <cryo>90 %</cryo> de l'ATQ sous forme de PV en cas de coup CRIT. Cet effet peut être déclenché une fois toutes les 5 s."
+    },
+    "4": {
+      "0": "Augmente les DGT infligés par les attaques normales et chargées de <cryo>40 %</cryo> et restaure <cryo>100 %</cryo> de l'ATQ sous forme de PV en cas de coup CRIT. Cet effet peut être déclenché une fois toutes les 5 s."
+    }
+  }
+}

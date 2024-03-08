@@ -1,0 +1,21 @@
+{
+  "hp": "LP",
+  "hp_": "LP",
+  "atk": "ANG",
+  "atk_": "ANG",
+  "def": "VTD",
+  "def_": "VTD",
+  "eleMas": "Elementarkunde",
+  "enerRech_": "Aufladerate",
+  "critRate_": "KT",
+  "critDMG_": "KSCH",
+  "heal_": "Heilungsbonus",
+  "physical_dmg_": "Physischer SCH-Bonus",
+  "anemo_dmg_": "Anemo-SCH-Bonus",
+  "geo_dmg_": "Geo-SCH-Bonus",
+  "electro_dmg_": "Elektro-SCH-Bonus",
+  "hydro_dmg_": "Hydro-SCH-Bonus",
+  "pyro_dmg_": "Pyro-SCH-Bonus",
+  "cryo_dmg_": "Kryo-SCH-Bonus",
+  "dendro_dmg_": "Dendro-SCH-Bonus"
+}

@@ -1,0 +1,194 @@
+{
+  "name": "Mona",
+  "title": "Riflesso astrale",
+  "description": "Una giovane astrologa che si fa chiamare Mona Megistus e che possiede delle abilità degne del suo titolo. Erudita ma orgogliosa.",
+  "constellationName": "Astrolabos",
+  "auto": {
+    "name": "Increspatura del fato",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attacco normale</strong>",
+        "1": "Sferra fino a 4 attacchi d'acqua che infliggono <hydro>DAN da Hydro</hydro>."
+      },
+      "charged": {
+        "0": "<strong>Attacco caricato</strong>",
+        "1": "Consuma una determinata quantità di vigore per infliggere <hydro>DAN da Hydro ad area</hydro> dopo un breve periodo di lancio."
+      },
+      "plunging": {
+        "0": "<strong>Attacco in picchiata</strong>",
+        "1": "Accumulando la forza di Hydro, Mona si scaglia contro il suolo da mezz'aria, danneggiando tutti gli avversari lungo la sua traiettoria. Infligge <hydro>DAN da Hydro ad area</hydro> all'impatto col suolo."
+      }
+    },
+    "skillParams": {
+      "0": "DAN da 1º colpo",
+      "1": "DAN da 2º colpo",
+      "2": "DAN da 3º colpo",
+      "3": "DAN da 4º colpo",
+      "4": "DAN da ATT caricato",
+      "5": "Costo vigore ATT caricato",
+      "6": "DAN da ATT in picchiata",
+      "7": "DAN da ATT in picchiata basso/alto",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Condanna riflessa",
+    "description": {
+      "0": "Crea un Fantasma del fato illusorio d'acqua condensata.",
+      "1": "<br/>",
+      "2": "<strong>Fantasma</strong>",
+      "3": "Possiede le seguenti proprietà speciali:",
+      "4": [
+        " provoca continuamente gli avversari vicini, attirando i loro colpi;",
+        " infligge continuamente <hydro>DAN da Hydro</hydro> agli avversari vicini;",
+        " al termine della sua durata, il Fantasma esplode infliggendo <hydro>DAN da Hydro ad area</hydro>."
+      ],
+      "5": "<br/>",
+      "6": "<strong>Pressione prolungata</strong>",
+      "7": "Usa le correnti d'acqua per andare indietro prima di evocare un Fantasma.",
+      "8": "<br/>",
+      "9": "Condanna riflessa può generare solo un Fantasma alla volta.",
+      "10": "<br/>",
+      "11": "<i>Gli astrologi esperti hanno sempre sognato di usare una replica fantasma di loro stessi per scacciare la malasorte imminente, ma Mona deve essere stata la prima in tutta Teyvat a prendersi gioco del fato in questo modo.</i>"
+    },
+    "skillParams": {
+      "0": "DAN nel tempo",
+      "1": "DAN da esplosione",
+      "2": "TdR",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Fantasma stellaris",
+    "description": {
+      "0": "Mona evoca onde scintillanti e crea un riflesso del cielo stellato, applicando lo stato di Bolla illusoria agli avversari in un'ampia area d'effetto.",
+      "1": "<br/>",
+      "2": "<strong>Bolla illusoria</strong>",
+      "3": "Intrappola i nemici applicando lo stato di <hydro>Umidità</hydro>. Gli avversari più deboli vengono immobilizzati.",
+      "4": "Quando un avversario affetto da Bolla illusoria subisce DAN, si attivano i seguenti effetti:",
+      "5": [
+        " applica un Presagio all'avversario, che conferisce un bonus DAN e aumenta i DAN dell'attacco che li causa;",
+        " rimuove la Bolla illusoria, infliggendo al contempo DAN da <hydro>Hydro</hydro>."
+      ],
+      "6": "<br/>",
+      "7": "<strong>Presagio</strong>",
+      "8": "Finché è attivo, aumenta i DAN subiti dagli avversari.",
+      "9": "<br/>",
+      "10": "<i>Il concetto di fato nacque quando gli dèi incastonarono con lo sguardo le luci nella volta celeste.</i>"
+    },
+    "skillParams": {
+      "0": "Durata Bolla illusoria",
+      "1": "DAN da esplosione Bolla illusoria",
+      "2": "Bonus DAN",
+      "3": "Durata Presagio",
+      "4": "TdR",
+      "5": "Costo energia",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "sprint": {
+    "name": "Torrente illusorio",
+    "description": {
+      "0": "<strong>Scatto alternativo</strong>",
+      "1": "Mona avvolge sé stessa in un flusso d'acqua, consumando vigore per muoversi rapidamente.",
+      "2": "<br/>",
+      "3": "Quando è sotto l'effetto Torrente illusorio, Mona può muoversi ad alta velocità sull'acqua.",
+      "4": "Infligge lo stato di <hydro>Umidità</hydro> agli avversari vicini quando riemerge.",
+      "5": "<br/>",
+      "6": "<i>Questa è una cosa che Mona è in grado di fare, ma la sua insegnante no. Beh, non che la sua insegnante abbia alcun interesse verso qualsiasi cosa avente a che fare con le Visioni di Hydro...</i>"
+    }
+  },
+  "passive1": {
+    "name": "\"Prova a prendermi, vecchia megera!\"",
+    "description": {
+      "0": "Dopo aver usato <strong>Torrente illusorio</strong> per 2 s, se ci sono avversari nelle vicinanze Mona genererà automaticamente un Fantasma.",
+      "1": "La durata del Fantasma è di 2 s, e i suoi DAN da esplosione sono pari a un 50% di <strong>Condanna riflessa</strong>."
+    }
+  },
+  "passive2": {
+    "name": "Destino acquatile",
+    "description": {
+      "0": "Aumenta il <hydro>bonus DAN da Hydro</hydro> di Mona di una quantità pari a un 20% del suo tasso di ricarica d'energia."
+    }
+  },
+  "passive3": {
+    "name": "Principio di astrologia",
+    "description": {
+      "0": "Quando Mona crea materiali d'ascensione delle armi, ha un 25% di probabilità di restituire una parte dei materiali per la creazione utilizzati."
+    }
+  },
+  "constellation1": {
+    "name": "Profezia sommersa",
+    "description": {
+      "0": "Quando un membro del tuo gruppo colpisce un avversario sotto l'effetto di un Presagio, gli effetti delle <hydro>reazioni elementali di Hydro</hydro> sono potenziati per 8 s.",
+      "1": [
+        " I DAN da Electrocarica aumentano di un 15%.",
+        " I DAN da Vaporizzazione aumentano di un 15%.",
+        " I DAN da Turbinio di Hydro aumentano di un 15%.",
+        " La durata di Congelamento si estende di un 15%."
+      ]
+    }
+  },
+  "constellation2": {
+    "name": "Catena lunare",
+    "description": {
+      "0": "Dopo che un attacco normale va a segno, c'è un 20% di probabilità che venga effettuato un attacco caricato.",
+      "1": "Si può verificare una sola volta ogni 5 s."
+    }
+  },
+  "constellation3": {
+    "name": "Rotazione costante",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Fantasma stellaris</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation4": {
+    "name": "Profezia dell'oblio",
+    "description": {
+      "0": "Quando un membro del gruppo attacca un avversario sotto l'effetto di un Presagio, il suo tasso di CRIT aumenta di un 15%."
+    }
+  },
+  "constellation5": {
+    "name": "Beffa del destino",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Condanna riflessa</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation6": {
+    "name": "Retorica delle calamità",
+    "description": {
+      "0": "Quando entra in <strong>Torrente illusorio</strong>, Mona ottiene un 60% di aumento dei DAN del suo prossimo attacco caricato per ogni secondo in movimento.",
+      "1": "In questo modo è possibile ottenere fino a un 180% di bonus DAN. Quest'effetto non dura più di 8 s."
+    }
+  }
+}

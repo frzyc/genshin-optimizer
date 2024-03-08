@@ -1,0 +1,24 @@
+{
+  "name": "Key of Khaj-Nisut",
+  "description": {
+    "0": "Salah satu dari sepasang tongkat yang dibuat dari obsidian. Legenda mengatakan, tongkat ini bisa digunakan sebagai kunci untuk membuka pintu tanah kebahagiaan yang tersembunyi di ujung lautan pasir."
+  },
+  "passiveName": "Sunken Song of the Sands",
+  "passiveDescription": {
+    "0": {
+      "0": "HP meningkat <cryo>20%</cryo>. Saat Elemental Skill mengenai musuh, akan menghasilkan efek Grand Hymn yang berlangsung selama 20 detik: Mendapatkan peningkatan Elemental Mastery berdasarkan <cryo>0,12%</cryo> Max HP Karakter yang mengenakan, efek ini bisa terpicu setiap 0,3 detik dan dapat ditumpuk sampai 3 lapis. Saat efek ini ditumpuk sampai 3 lapis atau durasi 3 lapis diperbarui, akan meningkatkan Elemental Mastery seluruh Karakter party di sekitar sebesar <cryo>0,2%</cryo> Max HP Karakter yang mengenakan, berlangsung 20 detik."
+    },
+    "1": {
+      "0": "HP meningkat <cryo>25%</cryo>. Saat Elemental Skill mengenai musuh, akan menghasilkan efek Grand Hymn yang berlangsung selama 20 detik: Mendapatkan peningkatan Elemental Mastery berdasarkan <cryo>0.15%</cryo> Max HP Karakter yang mengenakan, efek ini bisa terpicu setiap 0.3 detik dan dapat ditumpuk sampai 3 lapis. Saat efek ini ditumpuk sampai 3 lapis atau durasi 3 lapis diperbarui, akan meningkatkan Elemental Mastery seluruh Karakter party di sekitar sebesar <cryo>0.25%</cryo> Max HP Karakter yang mengenakan, berlangsung 20 detik."
+    },
+    "2": {
+      "0": "HP meningkat <cryo>30%</cryo>. Saat Elemental Skill mengenai musuh, akan menghasilkan efek Grand Hymn yang berlangsung selama 20 detik: Mendapatkan peningkatan Elemental Mastery berdasarkan <cryo>0,18%</cryo> Max HP Karakter yang mengenakan, efek ini bisa terpicu setiap 0,3 detik dan dapat ditumpuk sampai 3 lapis. Saat efek ini ditumpuk sampai 3 lapis atau durasi 3 lapis diperbarui, akan meningkatkan Elemental Mastery seluruh Karakter party di sekitar sebesar <cryo>0,3%</cryo> Max HP Karakter yang mengenakan, berlangsung 20 detik."
+    },
+    "3": {
+      "0": "HP meningkat <cryo>35%</cryo>. Saat Elemental Skill mengenai musuh, akan menghasilkan efek Grand Hymn yang berlangsung selama 20 detik: Mendapatkan peningkatan Elemental Mastery berdasarkan <cryo>0,21%</cryo> Max HP Karakter yang mengenakan, efek ini bisa terpicu setiap 0,3 detik dan dapat ditumpuk sampai 3 lapis. Saat efek ini ditumpuk sampai 3 lapis atau durasi 3 lapis diperbarui, akan meningkatkan Elemental Mastery seluruh Karakter party di sekitar sebesar <cryo>0,35%</cryo> Max HP Karakter yang mengenakan, berlangsung 20 detik."
+    },
+    "4": {
+      "0": "HP meningkat <cryo>40%</cryo>. Saat Elemental Skill mengenai musuh, akan menghasilkan efek Grand Hymn yang berlangsung selama 20 detik: Mendapatkan peningkatan Elemental Mastery berdasarkan <cryo>0,24%</cryo> Max HP Karakter yang mengenakan, efek ini bisa terpicu setiap 0,3 detik dan dapat ditumpuk sampai 3 lapis. Saat efek ini ditumpuk sampai 3 lapis atau durasi 3 lapis diperbarui, akan meningkatkan Elemental Mastery seluruh Karakter party di sekitar sebesar <cryo>0,4%</cryo> Max HP Karakter yang mengenakan, berlangsung 20 detik."
+    }
+  }
+}

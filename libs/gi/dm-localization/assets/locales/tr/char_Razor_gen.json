@@ -1,0 +1,175 @@
+{
+  "name": "Razor",
+  "title": "Kurt Çocuk",
+  "description": "Mondstadt'ın Kurtlar Diyarı'nda, uygarlıktan uzakta, kurtlar arasında yaşayan bir çocuk. Şimşek gibi çevik.",
+  "constellationName": "Küçük Kurt",
+  "auto": {
+    "name": "Çelik Diş",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Saldırı</strong>",
+        "1": "Arka arkaya en fazla 4 saldırı yapar."
+      },
+      "charged": {
+        "0": "<strong>Yüklü Saldırı</strong>",
+        "1": "Zamanla Dayanıklılık harcar ve yakındaki tüm düşmanlara dönerek saldırır.",
+        "2": "Saldırıları daha güçlü bir darbeyle bitirir. "
+      },
+      "plunging": {
+        "0": "<strong>Havadan Saldırı</strong>",
+        "1": "Havadayken dalışa geçerek yere vurur ve yoluna çıkan düşmanlara Alan Hasarı verir."
+      }
+    },
+    "skillParams": {
+      "0": "1 Vuruş Hasarı",
+      "1": "2 Vuruş Hasarı",
+      "2": "3 Vuruş Hasarı",
+      "3": "4 Vuruş Hasarı",
+      "4": "Yüklü Saldırı Döngüsel Hasarı",
+      "5": "Yüklü Saldırı Son Vuruş Hasarı",
+      "6": "Yüklü Saldırı Dayanıklılık Maliyeti",
+      "7": "Maks. Süre",
+      "8": "Havadan Saldırı Hasarı",
+      "9": "Havadan Saldırı Hasarı (Alçaktan/Yüksekten)",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Pençe ve Yıldırım",
+    "description": {
+      "0": "Ustasından ve Lupical'ından öğrendiği tekniklerle avını yakalar.",
+      "1": "<br/>",
+      "2": "<strong>Bas</strong>",
+      "3": "Yıldırım Kurt Pençesini savurarak Razor'ın önündeki düşmanlara <electro>Elektrik Hasarı</electro> verir.",
+      "4": "Razor, bir düşmana vurduğunda Elektrik Mührü kazanır, böylece Enerji Yükleme oranı artar.",
+      "5": "Razor, aynı anda en fazla 3 Elektrik Mührüne sahip olabilir. Fazladan bir Elektrik Mührü kazanırsa mevcut olanların süresi yenilenir.",
+      "6": "<br/>",
+      "7": "<strong>Basılı Tut</strong>",
+      "8": "Elektrik enerjisi toplayarak küçük bir etki alanına şimşek fırtınası indirir ve büyük miktarda <electro>Elektrik Hasarı</electro> vererek Razor'ın tüm Elektrik Mühürlerini kaldırır.",
+      "9": "Bu şekilde kaldırılan her bir Elektrik Mührü, Razor için Enerjiye dönüşür.",
+      "10": "<br/>",
+      "11": "<i>Yıldırımın çarptığı an Razor bazen avını süzen bir avcı gibi bakar.</i>"
+    },
+    "skillParams": {
+      "0": "Basma Beceri Hasarı",
+      "1": "Basılı Tutma Beceri Hasarı",
+      "2": "Enerji Yüklemesi Bonusu",
+      "3": "Yenilenen Enerji",
+      "4": "Elektrik Mührü Süresi",
+      "5": "Basma BS",
+      "6": "BS (Basılı Tutma)",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Şimşek Diş",
+    "description": {
+      "0": "Yakındaki tüm düşmanlara <electro>Elektrik Hasarı</electro> veren Kurt Yoldaş ortaya çıkar. Bu etki, Razor'ın tüm Elektrik Mühürlerini kaldırıp Razor için Element Enerjisine dönüştürür.",
+      "1": "Kurt Yoldaş, beceri süresi boyunca Razor'ın yanında savaşır.",
+      "2": "<br/>",
+      "3": "<strong>Kurt Yoldaş</strong>",
+      "4": [
+        "Razor normal saldırı yaparken Kurt Yoldaş yanında savaşır ve <electro>Elektrik Hasarı</electro> verir.",
+        "Razor'ın Saldırı Hızını ve <electro>Elektrik Direncini</electro> artırır.",
+        "Razor'ın <electro>Elektrik Yüklü</electro> durum etkisinden Hasar almamasını sağlar.",
+        "Razor, Yüklü Saldırılarını kullanamaz.",
+        "Razor'ın müdahaleye karşı direnci artar."
+      ],
+      "5": "<br/>",
+      "6": "Bu etkiler, Razor savaş alanından ayrılınca sona erer.",
+      "7": "Razor, savaş alanından ayrılınca becerisinin kalan süresine bağlı olarak Razor'a en fazla 10 Enerji geri verilir.",
+      "8": "<br/>",
+      "9": "<i>Kurt uyandı. Av başlasın.</i>"
+    },
+    "skillParams": {
+      "0": "Patlama Hasarı",
+      "1": "Ruh Yoldaşı Hasarı",
+      "2": "Normal Saldırı Hızı Bonusu",
+      "3": "Elektrik Direnci Bonusu",
+      "4": "Süre",
+      "5": "BS",
+      "6": "Enerji Maliyeti",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Uyanış",
+    "description": {
+      "0": "<strong>Pençe ve Yıldırım</strong> becerisinin Bekleme Süresi %18 kısalır.",
+      "1": "<strong>Şimşek Diş</strong> kullanıldığında <strong>Pençe ve Yıldırım</strong> becerisinin Bekleme Süresi sıfırlanır."
+    }
+  },
+  "passive2": {
+    "name": "Açlık",
+    "description": {
+      "0": "Razor'ın Enerjisi %50'nin altındaysa Enerji Yüklemesini %30 artırır."
+    }
+  },
+  "passive3": {
+    "name": "Kurt Hücumu",
+    "description": {
+      "0": "Kendi grup üyelerinin depar esnasında harcadığı Dayanıklılık %20 azalır.",
+      "1": "Aynı etkiyi veren Pasif Yeteneklerle birikmez."
+    }
+  },
+  "constellation1": {
+    "name": "Kurdun İçgüdüsü",
+    "description": {
+      "0": "Bir Element Küresi veya Parçacığı aldığında 8 saniyeliğine Razor'ın verdiği Hasar %10 artar."
+    }
+  },
+  "constellation2": {
+    "name": "Ezici Güç",
+    "description": {
+      "0": "Can oranı %30'un altında olan düşmanlara karşı Kritik Oranı %10 artırır."
+    }
+  },
+  "constellation3": {
+    "name": "Ruh Yoldaşı",
+    "description": {
+      "0": "<strong>Şimşek Diş</strong> seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation4": {
+    "name": "Isırık",
+    "description": {
+      "0": "<strong>Pençe ve Yıldırım</strong> becerisi kullanıldığında (Basma) 7 saniyeliğine isabet alan düşmanların Savunması %15 azalır."
+    }
+  },
+  "constellation5": {
+    "name": "Sivri Pençeler",
+    "description": {
+      "0": "<strong>Pençe ve Yıldırım</strong> seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation6": {
+    "name": "Şimşek Kurdu",
+    "description": {
+      "0": "Razor'ın kılıcı her 10 saniyede bir yük biriktirir. Yapılan bir sonraki Normal Saldırı, Razor'ın Saldırısının %100'ü kadar <electro>Elektrik Hasarı</electro> veren bir yıldırım çakar.",
+      "1": "Razor, <strong>Şimşek Diş</strong> becerisini kullanmıyorken düşmana çarpan bir şimşek Razor'a <strong>Pençe ve Yıldırım</strong> becerisi için Elektrik Mührü kazandırır."
+    }
+  }
+}

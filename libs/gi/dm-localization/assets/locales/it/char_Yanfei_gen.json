@@ -1,0 +1,162 @@
+{
+  "name": "Yanfei",
+  "title": "Saggia innocenza",
+  "description": "Una consulente legale rinomata del Porto di Liyue. Una fanciulla geniale nelle cui vene scorre il sangue di una bestia illuminata.",
+  "constellationName": "Bestia Iustitia",
+  "auto": {
+    "name": "Sigillo d'approvazione",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attacco normale</strong>",
+        "1": "Lancia sfere di fuoco che infliggono <pyro>DAN da Pyro</pyro> fino a 3 volte.",
+        "2": "Quando gli attacchi normali di Yanfei colpiscono i nemici, le conferiscono un singolo Sigillo scarlatto. Yanfei può possedere un massimo di 3 Sigilli scarlatti e, ogni volta che questo effetto si attiva, la durata dei Sigilli scarlatti posseduti in quel momento si ripristina.",
+        "3": "Ogni Sigillo scarlatto riduce il consumo di vigore di Yanfei e svanisce quando lei lascia il campo di battaglia."
+      },
+      "charged": {
+        "0": "<strong>Attacco caricato</strong>",
+        "1": "Consuma vigore e tutti i Sigilli scarlatti per infliggere <pyro>DAN da Pyro ad area</pyro> agli avversari dopo un breve periodo di lancio.",
+        "2": "L'area d'effetto e i DAN di questo attacco caricato aumentano in base alla quantità di Sigilli scarlatti consumati."
+      },
+      "plunging": {
+        "0": "<strong>Attacco in picchiata</strong>",
+        "1": "Convogliando la forza di Pyro, Yanfei si scaglia contro il suolo da mezz'aria, danneggiando tutti gli avversari lungo la sua traiettoria. Infligge <pyro>DAN da Pyro ad area</pyro> all'impatto col suolo."
+      }
+    },
+    "skillParams": {
+      "0": "DAN da 1º colpo",
+      "1": "DAN da 2º colpo",
+      "2": "DAN da 3º colpo",
+      "3": "ATT caricato",
+      "4": "Costo vigore ATT caricato",
+      "5": "Riduzione consumo vigore Sigillo scarlatto",
+      "6": "Durata Sigillo scarlatto",
+      "7": "DAN da ATT in picchiata",
+      "8": "DAN da ATT in picchiata basso/alto",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Editto firmato",
+    "description": {
+      "0": "Evoca fiamme scoppiettanti che infliggono <pyro>DAN da Pyro ad area</pyro>.",
+      "1": "Gli avversari colpiti dalle fiamme conferiscono a Yanfei il numero massimo di Sigilli scarlatti.",
+      "2": "<br/>",
+      "3": "<i>Oltre a svolgere una funzione legale, i Sigilli di Yanfei riportano anche dei termini e condizioni aggiuntivi personalizzati. Beh, non è che il Ministero degli Affari Civili possa cambiare le leggi della natura.</i>"
+    },
+    "skillParams": {
+      "0": "DAN da abilità",
+      "1": "TdR",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Affare fatto",
+    "description": {
+      "0": "Innesca una fiammata intensa che si scaglia sugli avversari vicini, infliggendo <pyro>DAN da Pyro ad area</pyro>, conferendo a Yanfei il numero massimo di Sigilli scarlatti e applicandole Fulgore.",
+      "1": "<br/>",
+      "2": "<strong>Fulgore</strong>",
+      "3": "Ha i seguenti effetti:",
+      "4": [
+        " conferisce a Yanfei un Sigillo scarlatto a intervalli regolari;",
+        " aumenta i DAN inflitti dai suoi attacchi caricati."
+      ],
+      "5": "L'effetto Fulgore termina se Yanfei lascia il campo di battaglia o se fuori combattimento.",
+      "6": "<br/>",
+      "7": "<i>\"Qui troverai i termini completi sulla suddetta questione di vita o di morte, ossia la mia vita e la tua morte!\"</i>"
+    },
+    "skillParams": {
+      "0": "DAN da abilità",
+      "1": "",
+      "2": "Intervallo Sigillo scarlatto",
+      "3": "Bonus DAN da ATT caricato",
+      "4": "Durata",
+      "5": "TdR",
+      "6": "Costo energia",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Clausola condizionale",
+    "description": {
+      "0": "Quando Yanfei consuma Sigilli scarlatti usando un attacco caricato, ciascuno di essi aumenta il suo <pyro>bonus DAN da Pyro</pyro> di un 5%. Quest'effetto dura per 6 s. Quando un attacco caricato viene usato di nuovo mentre l'effetto è attivo, l'effetto precedente svanirà."
+    }
+  },
+  "passive2": {
+    "name": "Sguardo di fuoco",
+    "description": {
+      "0": "Quando l'attacco caricato di Yanfei infligge un colpo CRIT agli avversari, infliggerà <pyro>DAN da Pyro ad area</pyro> aggiuntivi pari a un 80% del suo ATT, che vengono considerati come DAN da attacco caricato."
+    }
+  },
+  "passive3": {
+    "name": "Conoscenza enciclopedica",
+    "description": {
+      "0": "Mostra sulla minimappa la posizione delle <strong>risorse uniche di Liyue</strong>."
+    }
+  },
+  "constellation1": {
+    "name": "La legge non perdona",
+    "description": {
+      "0": "Quando Yanfei usa un attacco caricato, ogni Sigillo scarlatto riduce di un ulteriore 10% il costo di vigore dell'attacco e aumenta la resistenza all'interruzione mentre viene sprigionato."
+    }
+  },
+  "constellation2": {
+    "name": "Verdetto finale",
+    "description": {
+      "0": "Aumenta di un 20% il tasso di CRIT dell'attacco caricato di Yanfei contro gli avversari i cui PS sono inferiori a un 50%."
+    }
+  },
+  "constellation3": {
+    "name": "Verità sigillata sul fuoco",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Editto firmato</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation4": {
+    "name": "Assoluzione suprema",
+    "description": {
+      "0": "Quando <strong>Affare fatto</strong> viene usato, genera uno scudo che assorbe fino a un 45% dei PS max di Yanfei per 15 s.",
+      "1": "Lo scudo assorbe <pyro>DAN da Pyro</pyro> con un'efficacia superiore di un 250%."
+    }
+  },
+  "constellation5": {
+    "name": "Dichiarazione sotto giuramento",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Affare fatto</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation6": {
+    "name": "Clausola aggiuntiva",
+    "description": {
+      "0": "Aumenta di 1 il numero massimo di Sigilli scarlatti."
+    }
+  }
+}

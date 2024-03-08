@@ -1,0 +1,171 @@
+{
+  "name": "Diona",
+  "title": "Kätzlein Cocktail",
+  "description": "A young lady who has inherited trace amounts of non-human blood. She is the incredibly popular bartender of the Cat's Tail tavern.",
+  "constellationName": "Feles",
+  "auto": {
+    "name": "Kätzlein Style",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Attack</strong>",
+        "1": "Performs up to 5 consecutive shots with a bow."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Performs a more precise <strong>Aimed Shot</strong> with increased DMG.",
+        "2": "While aiming, biting frost will accumulate on the arrowhead. A fully charged frost arrow will deal <cryo>Cryo DMG</cryo>."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Fires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact."
+      }
+    },
+    "skillParams": {
+      "0": "1-Hit DMG",
+      "1": "2-Hit DMG",
+      "2": "3-Hit DMG",
+      "3": "4-Hit DMG",
+      "4": "5-Hit DMG",
+      "5": "Aimed Shot",
+      "6": "Fully-Charged Aimed Shot",
+      "7": "Plunge DMG",
+      "8": "Low/High Plunge DMG",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Icy Paws",
+    "description": {
+      "0": "Fires an Icy Paw that deals <cryo>Cryo DMG</cryo> to opponents and forms a shield on hit.",
+      "1": "The shield's DMG Absorption scales based on Diona's Max HP, and its duration scales off the number of Icy Paws that hit their target.",
+      "2": "<br/>",
+      "3": "<strong>Press</strong>",
+      "4": "Rapidly fires off 2 Icy Paws.",
+      "5": "<br/>",
+      "6": "<strong>Hold</strong>",
+      "7": "Dashes back quickly before firing 5 Icy Paws.",
+      "8": "The shield created by a Hold attack will gain a 75% DMG Absorption Bonus.",
+      "9": "<br/>",
+      "10": "The shield has a 250% <cryo>Cryo DMG</cryo> Absorption Bonus, and will cause your active character to become affected by <cryo>Cryo</cryo> at the point of formation for a short duration.",
+      "11": "<br/>",
+      "12": "<i>When she first started bartending, Diona found that no matter how much ice she put in her cocktails, it would never do a drunkard any harm. That all changed when she received her Vision — now she can form ice cold enough to cause severe brainfreeze. Five out of five stars!</i>"
+    },
+    "skillParams": {
+      "0": "Icy Paw DMG",
+      "1": "Base Shield DMG Absorption",
+      "2": "Duration",
+      "3": "Press CD",
+      "4": "Hold CD",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Signature Mix",
+    "description": {
+      "0": "Tosses out a special cold brew that deals <cryo>AoE Cryo DMG</cryo> and creates a Drunken Mist in an AoE.",
+      "1": "<br/>",
+      "2": "<strong>Drunken Mist</strong>",
+      "3": [
+        "Deals continuous <cryo>Cryo DMG</cryo> to opponents within the AoE.",
+        "Continuously regenerates the HP of characters within the AoE."
+      ],
+      "4": "<br/>",
+      "5": "<i>A horrific mix that even Diona considers inhumane. The horrifying foretaste should be left for one's opponents. It has a crisp aftertaste, but unfortunately, one can only feel it on one's nose and skin.</i>"
+    },
+    "skillParams": {
+      "0": "Skill DMG",
+      "1": "Continuous Field DMG",
+      "2": "HP Regeneration Over Time",
+      "3": "Duration",
+      "4": "CD",
+      "5": "Energy Cost",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Cat's Tail Secret Menu",
+    "description": {
+      "0": "Characters shielded by <strong>Icy Paws</strong> have their Movement SPD increased by 10% and their Stamina Consumption decreased by 10%."
+    }
+  },
+  "passive2": {
+    "name": "Drunkards' Farce",
+    "description": {
+      "0": "Opponents who enter the AoE of <strong>Signature Mix</strong> have 10% decreased ATK for 15s."
+    }
+  },
+  "passive3": {
+    "name": "Complimentary Bar Food",
+    "description": {
+      "0": "When a Perfect Cooking is achieved on a dish with restorative effects, there is a 12% chance to obtain double the product."
+    }
+  },
+  "constellation1": {
+    "name": "A Lingering Flavor",
+    "description": {
+      "0": "Regenerates 15 Energy for Diona after the effects of <strong>Signature Mix</strong> end."
+    }
+  },
+  "constellation2": {
+    "name": "Shaken, Not Purred",
+    "description": {
+      "0": "Increases <strong>Icy Paws</strong>' DMG by 15%, and increases its shield's DMG Absorption by 15%.",
+      "1": "Additionally, when paws hit their targets, creates a shield for other nearby characters on the field with 50% of the <strong>Icy Paws</strong> shield's DMG Absorption for 5s."
+    }
+  },
+  "constellation3": {
+    "name": "A—Another Round?",
+    "description": {
+      "0": "Increases the Level of <strong>Signature Mix</strong> by 3.",
+      "1": "Maximum upgrade level is 15."
+    }
+  },
+  "constellation4": {
+    "name": "Wine Industry Slayer",
+    "description": {
+      "0": "Within the radius of <strong>Signature Mix</strong>, Diona's charge time for aimed shots is reduced by 60%"
+    }
+  },
+  "constellation5": {
+    "name": "Double Shot, on the Rocks",
+    "description": {
+      "0": "Increases the Level of <strong>Icy Paws</strong> by 3.",
+      "1": "Maximum upgrade level is 15."
+    }
+  },
+  "constellation6": {
+    "name": "Cat's Tail Closing Time",
+    "description": {
+      "0": "Characters within <strong>Signature Mix</strong>'s radius will gain the following effects based on their HP amounts:",
+      "1": [
+        "Increases Incoming Healing Bonus by 30% when HP falls below or is equal to 50%.",
+        "Elemental Mastery increased by 200 when HP is above 50%."
+      ]
+    }
+  }
+}

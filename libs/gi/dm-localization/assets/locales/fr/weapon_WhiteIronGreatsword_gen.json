@@ -1,0 +1,24 @@
+{
+  "name": "Grande épée en fer blanc",
+  "description": {
+    "0": "Une épée à deux mains fabriquée dans du fer blanc, ce qui ajoute à la puissance de l'arme tout en réduisant son poids. Elle peut être maniée par tous, mais sa force reflète celle de la personne qui l'utilise."
+  },
+  "passiveName": "Moissonneur",
+  "passiveDescription": {
+    "0": {
+      "0": "Restaure <cryo>8 %</cryo> des PV après la défaite d'un ennemi."
+    },
+    "1": {
+      "0": "Restaure <cryo>10 %</cryo> des PV après la défaite d'un ennemi."
+    },
+    "2": {
+      "0": "Restaure <cryo>12 %</cryo> des PV après la défaite d'un ennemi."
+    },
+    "3": {
+      "0": "Restaure <cryo>14 %</cryo> des PV après la défaite d'un ennemi."
+    },
+    "4": {
+      "0": "Restaure <cryo>16 %</cryo> des PV après la défaite d'un ennemi."
+    }
+  }
+}

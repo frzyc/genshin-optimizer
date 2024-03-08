@@ -1,0 +1,173 @@
+{
+  "name": "Dori",
+  "title": "Schatz im Schlummerland",
+  "description": "Eine geheimnisvolle Händlerin in Sumeru, die eine Vorliebe für glitzernde Mora hat.",
+  "constellationName": "Magicae Lucerna",
+  "auto": {
+    "name": "Himmlischer Schwerttanz – Abwechslung",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Standardangriff</strong>",
+        "1": "Führt bis zu 3 Schwünge mit dem Schwert hintereinander aus."
+      },
+      "charged": {
+        "0": "<strong>Heftiger Schlag</strong>",
+        "1": "Verbraucht fortlaufend Ausdauer, wirbelt das Großschwert und greift Gegner in der Umgebung an.",
+        "2": "Schwingt das Schwert am Ende mit besonders großer Wucht."
+      },
+      "plunging": {
+        "0": "<strong>Angriff aus dem Fall</strong>",
+        "1": "Schlägt beim Fallen aus der Luft auf den Boden, greift alle Gegner in der Bahn an und verursacht beim Aufkommen Flächenschaden."
+      }
+    },
+    "skillParams": {
+      "0": "SCH Phase 1",
+      "1": "SCH Phase 2",
+      "2": "SCH Phase 3",
+      "3": "SCH heftiger Schläge pro Runde",
+      "4": "SCH heftiger Schläge am Ende",
+      "5": "Ausdauerverbrauch heftiger Schläge",
+      "6": "Höchstdauer",
+      "7": "SCH beim Fallen",
+      "8": "SCH beim Fallen aus niedriger/großer Höhe",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Lampe des Dschinns – Sorgenbefreiende Kanone",
+    "description": {
+      "0": "Die Lampe feuert eine sorgenbefreiende Kanonenkugel auf Gegner ab und verursacht <electro>Elektro-Schaden</electro>.",
+      "1": "Trifft die sorgenbefreiende Kanonenkugel, erzeugt sie 2 Kundendienst-Kanonenkugeln, die die Gegner automatisch verfolgen und <electro>Elektro-Schaden</electro> verursachen.",
+      "2": "<br/>",
+      "3": "<i>Es heißt, dass Dori jede Sorge nehmen kann ... für den richtigen Preis.</i>"
+    },
+    "skillParams": {
+      "0": "SCH pro sorgenbefreiende Kanonenkugel",
+      "1": "SCH pro Kundendienst-Kanonenkugel",
+      "2": "Abklingzeit",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Zuneigung von Alcazarzaray",
+    "description": {
+      "0": "Beschwört den Flaschengeist herauf, um den Kunden verschiedenste Arten von Hilfe zu geben.",
+      "1": "<br/>",
+      "2": "<strong>Flaschengeist</strong>",
+      "3": "Verbindet sich mit der Figur in der Nähe:",
+      "4": [
+        " Stellt der damit verbundenen Figur fortlaufend LP auf Basis von Doris max. LP wieder her.",
+        " Stellt dieser Figur fortlaufend Elementarenergie wieder her.",
+        " Verleiht dieser Figur das <electro>Elektro-Attribut</electro>."
+      ],
+      "5": "<br/>",
+      "6": "Berührt das Verbindungsstück zwischen dem Flaschengeist und der Figur die Gegner, fügt es diesen alle 0,4 s 1-mal <electro>Elektro-Schaden</electro> zu.",
+      "7": "<br/>",
+      "8": "Gleichzeitig kann immer nur höchstens 1 Flaschengeist existieren.",
+      "9": "<br/>",
+      "10": "<i>„Hmm? Du willst diese Lampe? Dafür hast du aber einen richtig guten Geschmack! Leider ist sie unschätzbar und nicht zu verkaufen. Sagen wir mal so, du wirst das Maskottchen an deiner Seite auch um keinen Preis der Welt verkaufen, oder?“</i>"
+    },
+    "skillParams": {
+      "0": "SCH des Verbindungsstücks",
+      "1": "Fortlaufende Heilung",
+      "2": "Elementarenergie-Wiederherstellung",
+      "3": "Dauer",
+      "4": "Abklingzeit",
+      "5": "Elementarenergie",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Eine Antenne für Gold",
+    "description": {
+      "0": "Verringert die Abklingzeit der Fähigkeit <strong>Lampe des Dschinns – Sorgenbefreiende Kanone</strong> um 1 s, wenn die mit dem <strong>Flaschengeist</strong> verbundene Figur Reaktionen wie „Unter Strom“, „Supraleiter“, „Überladen“, „Urwuchs“, „Suprawuchs“, „Supraspross“, „Elektro-Verwirbelung“ und „Kristallisation mit Elektro-Kraft“ ausgelöst hat.",
+      "1": "3 s Abklingzeit."
+    }
+  },
+  "passive2": {
+    "name": "Zinseszinsen",
+    "description": {
+      "0": "Stellt Dori pro 100 % Aufladerate, die sie besitzt, 5 Punkte Elementarenergie wieder her, wenn sorgenbefreiende Kanonenkugeln oder Kundendienst-Kanonenkugeln der Fähigkeit <strong>Lampe des Dschinns – Sorgenbefreiende Kanone</strong> Gegner treffen.",
+      "1": "Bis zu 15 Punkte Elementarenergie können auf diese Weise höchstens einmal pro Lampe des Dschinns – Sorgenbefreiende Kanone wiederhergestellt werden."
+    }
+  },
+  "passive3": {
+    "name": "Unerwarteter Auftrag",
+    "description": {
+      "0": "Gibt beim Zusammensetzen von Material zum Verstärken von Figuren und Waffen mit einer Wahrscheinlichkeit von 25 % einen Teil der Materialien zurück."
+    }
+  },
+  "constellation1": {
+    "name": "Zusatzinvestition",
+    "description": {
+      "0": "Erhöht die Anzahl der beim Treffen von <strong>sorgenbefreienden Kanonenkugeln</strong> entstehenden Kundendienst-Kanonenkugeln um 1."
+    }
+  },
+  "constellation2": {
+    "name": "Sonderfranchise",
+    "description": {
+      "0": "Feuert während eines Kampfes von der Position der verbundenen Figur eine Dschinn-Kanone ab und verursacht Schaden in Höhe von 50 % ANG von Dori, wenn der <strong>Flaschengeist</strong> die mit ihm verbundene Figur heilt."
+    }
+  },
+  "constellation3": {
+    "name": "Wunder wie Wasserfälle",
+    "description": {
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Zuneigung von Alcazarzaray</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation4": {
+    "name": "Zuschlag für Defizite",
+    "description": {
+      "0": "Verleiht der Figur, die mit dem <strong>Flaschengeist</strong> verbunden ist, jeweils die folgenden Boni, je nach ihren aktuellen LP und ihrer Elementarenergie:",
+      "1": [
+        " Erhöht den passiven Heilungsbonus um 50 %, wenn ihre LP weniger als 50 % betragen.",
+        " Erhöht ihre Aufladerate um 30 %, wenn ihre Elementarenergie weniger als 50 % beträgt."
+      ]
+    }
+  },
+  "constellation5": {
+    "name": "Mehrwert für Mora",
+    "description": {
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Lampe des Dschinns – Sorgenbefreiende Kanone</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation6": {
+    "name": "Saus und Braus",
+    "description": {
+      "0": "Erhält innerhalb 3 s nach Anwenden der Fähigkeit <strong>Lampe des Dschinns – Sorgenbefreiende Kanone</strong> folgende Effekte:",
+      "1": [
+        " Verleiht <electro>Elektro-Attribut</electro>.",
+        " Stellt allen Truppenmitgliedern in der Nähe bei Treffern von Gegnern mit Standardangriffen LP in Höhe von 4 % der max. LP von Dori wieder her. 0,1 s Abklingzeit."
+      ]
+    }
+  }
+}

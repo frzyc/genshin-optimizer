@@ -1,0 +1,24 @@
+{
+  "name": "Rightful Reward",
+  "description": {
+    "0": "Tombak yang begitu tajam. Hanya ujungnya saja yang meninggalkan noda bercak darah."
+  },
+  "passiveName": "Tip of the Spear",
+  "passiveDescription": {
+    "0": {
+      "0": "Saat menerima pemulihan, akan memulihkan <cryo>8</cryo> Energy, efek ini dapat terpicu sekali setiap 10 detik dan tetap bisa terpicu meskipun Karakter ada di dalam party namun sedang tidak berada di medan pertempuran."
+    },
+    "1": {
+      "0": "Saat menerima pemulihan, akan memulihkan <cryo>10</cryo> Energy, efek ini dapat terpicu sekali setiap 10 detik dan tetap bisa terpicu meskipun Karakter ada di dalam party namun sedang tidak berada di medan pertempuran."
+    },
+    "2": {
+      "0": "Saat menerima pemulihan, akan memulihkan <cryo>12</cryo> Energy, efek ini dapat terpicu sekali setiap 10 detik dan tetap bisa terpicu meskipun Karakter ada di dalam party namun sedang tidak berada di medan pertempuran."
+    },
+    "3": {
+      "0": "Saat menerima pemulihan, akan memulihkan <cryo>14</cryo> Energy, efek ini dapat terpicu sekali setiap 10 detik dan tetap bisa terpicu meskipun Karakter ada di dalam party namun sedang tidak berada di medan pertempuran."
+    },
+    "4": {
+      "0": "Saat menerima pemulihan, akan memulihkan <cryo>16</cryo> Energy, efek ini dapat terpicu sekali setiap 10 detik dan tetap bisa terpicu meskipun Karakter ada di dalam party namun sedang tidak berada di medan pertempuran."
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Calamity Queller",
+  "description": {
+    "0": "A keenly honed weapon forged from some strange crystal. Its faint blue light seems to whisper of countless matters now past."
+  },
+  "passiveName": "Extinguishing Precept",
+  "passiveDescription": {
+    "0": {
+      "0": "Gain <cryo>12%</cryo> All Elemental DMG Bonus. Obtain Consummation for 20s after using an Elemental Skill, causing ATK to increase by <cryo>3.2%</cryo> per second. This ATK increase has a maximum of 6 stacks. When the character equipped with this weapon is not on the field, Consummation's ATK increase is doubled."
+    },
+    "1": {
+      "0": "Gain <cryo>15%</cryo> All Elemental DMG Bonus. Obtain Consummation for 20s after using an Elemental Skill, causing ATK to increase by <cryo>4%</cryo> per second. This ATK increase has a maximum of 6 stacks. When the character equipped with this weapon is not on the field, Consummation's ATK increase is doubled."
+    },
+    "2": {
+      "0": "Gain <cryo>18%</cryo> All Elemental DMG Bonus. Obtain Consummation for 20s after using an Elemental Skill, causing ATK to increase by <cryo>4.8%</cryo> per second. This ATK increase has a maximum of 6 stacks. When the character equipped with this weapon is not on the field, Consummation's ATK increase is doubled."
+    },
+    "3": {
+      "0": "Gain <cryo>21%</cryo> All Elemental DMG Bonus. Obtain Consummation for 20s after using an Elemental Skill, causing ATK to increase by <cryo>5.6%</cryo> per second. This ATK increase has a maximum of 6 stacks. When the character equipped with this weapon is not on the field, Consummation's ATK increase is doubled."
+    },
+    "4": {
+      "0": "Gain <cryo>24%</cryo> All Elemental DMG Bonus. Obtain Consummation for 20s after using an Elemental Skill, causing ATK to increase by <cryo>6.4%</cryo> per second. This ATK increase has a maximum of 6 stacks. When the character equipped with this weapon is not on the field, Consummation's ATK increase is doubled."
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Esplendor das Águas Silenciosas",
+  "description": {
+    "0": "Um cetro em torno do qual gira água pura. Em dias passados, ele costumava simbolizar a mais alta autoridade sobre os mares."
+  },
+  "passiveName": "Amanhecer e Crepúsculo à Beira do Lago",
+  "passiveDescription": {
+    "0": {
+      "0": "Quando a Vida do personagem que está com essa arma equipada aumenta ou cai, aumenta o Dano causado por sua Habilidade Elemental em <cryo>8%</cryo>. Esse efeito dura 6s, pode ser acumulado 3 vezes e pode ser desencadeado uma vez a cada 0.2s. Quando a Vida dos outros personagens da equipe aumenta ou cai, aumenta a Vida Máxima do personagem que está com essa arma equipada em <cryo>14%</cryo>. Esse efeito dura 6s, pode ser acumulado até 2 vezes e pode ser desencadeado uma vez a cada 0.2s. O efeito pode ser ativado mesmo que o personagem com a arma equipada não esteja ativo no campo de batalha."
+    },
+    "1": {
+      "0": "Quando a Vida do personagem que está com essa arma equipada aumenta ou cai, aumenta o Dano causado por sua Habilidade Elemental em <cryo>10%</cryo>. Esse efeito dura 6s, pode ser acumulado 3 vezes e pode ser desencadeado uma vez a cada 0.2s. Quando a Vida dos outros personagens da equipe aumenta ou cai, aumenta a Vida Máxima do personagem que está com essa arma equipada em <cryo>17.5%</cryo>. Esse efeito dura 6s, pode ser acumulado até 2 vezes e pode ser desencadeado uma vez a cada 0.2s. O efeito pode ser ativado mesmo que o personagem com a arma equipada não esteja ativo no campo de batalha."
+    },
+    "2": {
+      "0": "Quando a Vida do personagem que está com essa arma equipada aumenta ou cai, aumenta o Dano causado por sua Habilidade Elemental em <cryo>12%</cryo>. Esse efeito dura 6s, pode ser acumulado 3 vezes e pode ser desencadeado uma vez a cada 0.2s. Quando a Vida dos outros personagens da equipe aumenta ou cai, aumenta a Vida Máxima do personagem que está com essa arma equipada em <cryo>21%</cryo>. Esse efeito dura 6s, pode ser acumulado até 2 vezes e pode ser desencadeado uma vez a cada 0.2s. O efeito pode ser ativado mesmo que o personagem com a arma equipada não esteja ativo no campo de batalha."
+    },
+    "3": {
+      "0": "Quando a Vida do personagem que está com essa arma equipada aumenta ou cai, aumenta o Dano causado por sua Habilidade Elemental em <cryo>14%</cryo>. Esse efeito dura 6s, pode ser acumulado 3 vezes e pode ser desencadeado uma vez a cada 0.2s. Quando a Vida dos outros personagens da equipe aumenta ou cai, aumenta a Vida Máxima do personagem que está com essa arma equipada em <cryo>24.5%</cryo>. Esse efeito dura 6s, pode ser acumulado até 2 vezes e pode ser desencadeado uma vez a cada 0.2s. O efeito pode ser ativado mesmo que o personagem com a arma equipada não esteja ativo no campo de batalha."
+    },
+    "4": {
+      "0": "Quando a Vida do personagem que está com essa arma equipada aumenta ou cai, aumenta o Dano causado por sua Habilidade Elemental em <cryo>16%</cryo>. Esse efeito dura 6s, pode ser acumulado 3 vezes e pode ser desencadeado uma vez a cada 0.2s. Quando a Vida dos outros personagens da equipe aumenta ou cai, aumenta a Vida Máxima do personagem que está com essa arma equipada em <cryo>28%</cryo>. Esse efeito dura 6s, pode ser acumulado até 2 vezes e pode ser desencadeado uma vez a cada 0.2s. O efeito pode ser ativado mesmo que o personagem com a arma equipada não esteja ativo no campo de batalha."
+    }
+  }
+}

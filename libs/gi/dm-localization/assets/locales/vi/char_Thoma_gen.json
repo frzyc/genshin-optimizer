@@ -1,0 +1,173 @@
+{
+  "name": "Thoma",
+  "title": "Người Bảo Vệ Phương Xa",
+  "description": "Quản gia của nhà Kamisato, \"thổ địa\" của Inazuma.",
+  "constellationName": "Cung Xích Thuẫn",
+  "auto": {
+    "name": "Ngọn Thương Dũng Mãnh",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Tấn Công Thường</strong>",
+        "1": "Thực hiện tối đa 4 lần đánh liên tiếp."
+      },
+      "charged": {
+        "0": "<strong>Trọng Kích</strong>",
+        "1": "Tiêu hao thể lực nhất định, xông về phía trước, gây sát thương cho địch trên đường đi."
+      },
+      "plunging": {
+        "0": "<strong>Tấn Công Khi Đáp</strong>",
+        "1": "Đáp xuống đất từ trên không, tấn công kẻ địch trên đường và gây sát thương phạm vi khi chạm đất."
+      }
+    },
+    "skillParams": {
+      "0": "Sát Thương Lần 1",
+      "1": "Sát Thương Lần 2",
+      "2": "Sát Thương Lần 3",
+      "3": "Sát Thương Lần 4",
+      "4": "Sát Thương Trọng Kích",
+      "5": "Thể Lực Trọng Kích Tiêu Hao",
+      "6": "Sát Thương Khi Rơi",
+      "7": "Sát Thương Khi Rơi Từ Độ Cao Thấp/Cao",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Liệt Hỏa Hộ Mệnh",
+    "description": {
+      "0": "Thoma dùng mũi giáo làm điểm tựa, tiếp thêm sức mạnh của lửa để tung cú đá về phía trước, gây <pyro>Sát Thương Phạm Vi Nguyên Tố Hỏa</pyro> và triệu hồi Khiên Lửa Hộ Mệnh, đồng thời trong phút chốc khi thi triển sẽ gán <pyro>ấn nguyên tố Hỏa</pyro> cho Thoma.",
+      "1": "Lượng hấp thụ sát thương của khiên sẽ bị ảnh hưởng bởi giới hạn HP của Thoma.",
+      "2": "Khiên Lửa Hộ Mệnh có những đặc tính sau:",
+      "3": [
+        "Có 250% hiệu quả hấp thụ đối với <pyro>Sát Thương Nguyên Tố Hỏa</pyro>;",
+        "Lượng hấp thụ sát thương còn lại của khiên sẽ cộng dồn khi nhận Khiên Lửa Hộ Mệnh lần nữa, đồng thời làm mới thời gian duy trì."
+      ],
+      "4": "<br/>",
+      "5": "Lượng hấp thụ sát thương của khiên tối đa sẽ không vượt quá tỷ lệ nhất định dựa trên giới hạn HP của Thoma.",
+      "6": "<br/>",
+      "7": "<i>Thân là kẻ tha hương, chỉ khi thắp sáng ngọn lửa nhiệt huyết nồng nhiệt nhất mới có thể học được thương thuật tinh tế và thuần túy của Inazuma. Và thành tựu của Thoma sớm đã vượt khỏi mức \"xuất sư\" và \"hào kiệt\". Mang theo ý niệm \"bảo vệ\", Thoma còn kết hợp cả kỹ xảo phòng ngự và đặc tính giáp phòng vệ vào trong thương thuật của mình.</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Kỹ Năng",
+      "1": "Sát thương hấp thụ",
+      "2": "Thời Gian Khiên Kéo Dài",
+      "3": "Giới hạn sát thương hấp thụ",
+      "4": "CD",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Chiến Giáp Rực Cháy",
+    "description": {
+      "0": "Thoma xoay ngọn thương, dùng ngọn lửa đỏ rực quét tan kẻ địch xung quanh, gây <pyro>Sát Thương Phạm Vi Nguyên Tố Hỏa</pyro>, đồng thời tạo ra Chiến Giáp Lửa Đỏ.",
+      "1": "<br/>",
+      "2": "<strong>Chiến Giáp Lửa Đỏ</strong>",
+      "3": "Nhân vật trong trận có hiệu quả Chiến Giáp Lửa Đỏ khi đánh thường sẽ kích hoạt Lửa Đỏ Công Phá, gây <pyro>Sát Thương Phạm Vi Nguyên Tố Hỏa</pyro>, đồng thời triệu hồi ra Khiên Lửa Hộ Mệnh.",
+      "4": "Lửa Đỏ Công Phá mỗi 1 giây tối đa kích hoạt một lần.",
+      "5": "<br/>",
+      "6": "Đối với khiên tạo ra, ngoài lượng hấp thụ sát thương ra, đặc tính sẽ giống như khiên của kỹ năng nguyên tố \"Liệt Hỏa Hộ Mệnh\":",
+      "7": [
+        "Có 250% hiệu quả hấp thụ đối với <pyro>Sát Thương Nguyên Tố Hỏa</pyro>;",
+        "Lượng hấp thụ sát thương còn lại của khiên sẽ cộng dồn khi nhận Khiên Lửa Hộ Mệnh lần nữa, đồng thời làm mới thời gian duy trì."
+      ],
+      "8": "<br/>",
+      "9": "Lượng hấp thụ sát thương của khiên tối đa sẽ không vượt quá tỷ lệ nhất định dựa trên giới hạn HP của Thoma.",
+      "10": "<br/>",
+      "11": "Khi Thoma ngã xuống, hiệu quả Chiến Giáp Lửa Đỏ sẽ bị xóa.",
+      "12": "<br/>",
+      "13": "<i>\"Tôi sẽ không bao giờ quên lời hứa ban đầu, nên ngọn lửa rực cháy này ắt sẽ bảo vệ người mà tôi trân trọng, không bao giờ lụi tàn.\"</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Kỹ Năng",
+      "1": "Sát thương Lửa Đỏ Công Phá",
+      "2": "Lượng sát thương hấp thụ",
+      "3": "Thời Gian Khiên Kéo Dài",
+      "4": "Thời gian duy trì Chiến Giáp Lửa Đỏ",
+      "5": "CD",
+      "6": "Năng Lượng Nguyên Tố",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Tầng Tầng Giáp Trụ",
+    "description": {
+      "0": "Khi nhân vật trong trận hiện tại của bản thân nhận hoặc làm mới <strong>Khiên Lửa Hộ Mệnh</strong>, hiệu quả khiên tăng 5%, duy trì 6 giây.",
+      "1": "Hiệu quả này mỗi 0.3 giây tối đa kích hoạt 1 lần, cộng dồn tối đa 5 lần."
+    }
+  },
+  "passive2": {
+    "name": "Ngọn Lửa Mãnh Liệt",
+    "description": {
+      "0": "Tăng sát thương Lửa Đỏ Công Phá của hiệu quả <strong>Chiến Giáp Rực Cháy</strong>, mức tăng thêm tương đương 2.2% giới hạn HP của Thoma."
+    }
+  },
+  "passive3": {
+    "name": "Tài Năng Câu Cá",
+    "description": {
+      "0": "Khi Nhà Lữ Hành <strong>câu cá</strong> thành công tại Inazuma, nhờ có Thoma giúp đỡ, có 20% khả năng nhận gấp đôi sản lượng."
+    }
+  },
+  "constellation1": {
+    "name": "Nghĩa Vụ Của Đồng Bào",
+    "description": {
+      "0": "Khi nhân vật (Ngoại trừ bản thân Thoma) được bảo vệ bởi <strong>Khiên Lửa Hộ Mệnh</strong> của Thoma bị tấn công, sẽ giảm 3 giây CD <strong>Liệt Hỏa Hộ Mệnh</strong>, giảm 3 giây CD <strong>Chiến Giáp Rực Cháy</strong> của Thoma.",
+      "1": "Hiệu quả này mỗi 20 giây tối đa kích hoạt 1 lần."
+    }
+  },
+  "constellation2": {
+    "name": "Tài Cán Của Trợ Thủ",
+    "description": {
+      "0": "Thời gian duy trì <strong>Chiến Giáp Rực Cháy</strong> kéo dài thêm 3 giây."
+    }
+  },
+  "constellation3": {
+    "name": "Định Luật Của Chiến Đấu",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Liệt Hỏa Hộ Mệnh</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation4": {
+    "name": "Mưu Kế Của Gia Thần",
+    "description": {
+      "0": "Sau khi thi triển <strong>Chiến Giáp Rực Cháy</strong> sẽ hồi 15 điểm Năng Lượng Nguyên Tố cho Thoma."
+    }
+  },
+  "constellation5": {
+    "name": "Sức Nóng Của Lửa Đỏ",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Chiến Giáp Rực Cháy</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation6": {
+    "name": "Trái Tim Của Nhiệt Huyết",
+    "description": {
+      "0": "Khi nhận hoặc làm mới <strong>Khiên Lửa Hộ Mệnh</strong>, sát thương gây ra bởi tấn công thường, trọng kích, tấn công khi đáp của tất cả nhân vật trong đội tăng 15%, duy trì 6 giây."
+    }
+  }
+}

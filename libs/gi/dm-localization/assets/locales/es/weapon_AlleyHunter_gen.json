@@ -1,0 +1,24 @@
+{
+  "name": "Cazador del Callejón",
+  "description": {
+    "0": "Un arco largo presuntuoso y fabricado con gran ingenio. Perteneció a un ladrón justiciero que nunca llegó a ser atrapado."
+  },
+  "passiveName": "Emboscada",
+  "passiveDescription": {
+    "0": {
+      "0": "Cuando el personaje que lleva esta arma equipada está en tu equipo pero no en uso, el daño de dicho personaje aumenta en un <cryo>2%</cryo> cada 1 s. Como máximo, solo se puede obtener un aumento del <cryo>20%</cryo> de daño de esta manera. 4 s después de que dicho personaje esté en uso, el aumento de daño irá reduciéndose en un <cryo>4%</cryo> cada 1 s hasta llegar al 0%."
+    },
+    "1": {
+      "0": "Cuando el personaje que lleva esta arma equipada está en tu equipo pero no en uso, el daño de dicho personaje aumenta en un <cryo>2.5%</cryo> cada 1 s. Como máximo, solo se puede obtener un aumento del <cryo>25%</cryo> de daño de esta manera. 4 s después de que dicho personaje esté en uso, el aumento de daño irá reduciéndose en un <cryo>5%</cryo> cada 1 s hasta llegar al 0%."
+    },
+    "2": {
+      "0": "Cuando el personaje que lleva esta arma equipada está en tu equipo pero no en uso, el daño de dicho personaje aumenta en un <cryo>3%</cryo> cada 1 s. Como máximo, solo se puede obtener un aumento del <cryo>30%</cryo> de daño de esta manera. 4 s después de que dicho personaje esté en uso, el aumento de daño irá reduciéndose en un <cryo>6%</cryo> cada 1 s hasta llegar al 0%."
+    },
+    "3": {
+      "0": "Cuando el personaje que lleva esta arma equipada está en tu equipo pero no en uso, el daño de dicho personaje aumenta en un <cryo>3.5%</cryo> cada 1 s. Como máximo, solo se puede obtener un aumento del <cryo>35%</cryo> de daño de esta manera. 4 s después de que dicho personaje esté en uso, el aumento de daño irá reduciéndose en un <cryo>7%</cryo> cada 1 s hasta llegar al 0%."
+    },
+    "4": {
+      "0": "Cuando el personaje que lleva esta arma equipada está en tu equipo pero no en uso, el daño de dicho personaje aumenta en un <cryo>4%</cryo> cada 1 s. Como máximo, solo se puede obtener un aumento del <cryo>40%</cryo> de daño de esta manera. 4 s después de que dicho personaje esté en uso, el aumento de daño irá reduciéndose en un <cryo>8%</cryo> cada 1 s hasta llegar al 0%."
+    }
+  }
+}

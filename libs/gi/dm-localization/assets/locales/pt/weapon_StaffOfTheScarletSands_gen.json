@@ -1,0 +1,24 @@
+{
+  "name": "Báculo das Areias Escarlates",
+  "description": {
+    "0": "Um dos pares de cetros feitos com obsidiana. Dizem que esses artefatos eram usados para guiar o povo do deserto, mas hoje em dia não há ninguém capaz de distinguir a aparência real desta relíquia."
+  },
+  "passiveName": "Sonho Ardente no Fim do Horizonte",
+  "passiveDescription": {
+    "0": {
+      "0": "Obtém Bônus de ATQ baseado em <cryo>52%</cryo> da Proficiência Elemental do personagem que está com essa arma equipada. Quando a Habilidade Elemental atinge um inimigo, gera por 10s o efeito \"Sonhos de Areias Escarlates\": obtém Bônus de ATQ baseado em <cryo>28%</cryo> da Proficiência Elemental do personagem que está com essa arma equipada. Esse efeito pode ser acumulado até 3 vezes."
+    },
+    "1": {
+      "0": "Obtém Bônus de ATQ baseado em <cryo>65%</cryo> da Proficiência Elemental do personagem que está com essa arma equipada. Quando a Habilidade Elemental atinge um inimigo, gera por 10s o efeito \"Sonhos de Areias Escarlates\": obtém Bônus de ATQ baseado em <cryo>35%</cryo> da Proficiência Elemental do personagem que está com essa arma equipada. Esse efeito pode ser acumulado até 3 vezes."
+    },
+    "2": {
+      "0": "Obtém Bônus de ATQ baseado em <cryo>78%</cryo> da Proficiência Elemental do personagem que está com essa arma equipada. Quando a Habilidade Elemental atinge um inimigo, gera por 10s o efeito \"Sonhos de Areias Escarlates\": obtém Bônus de ATQ baseado em <cryo>42%</cryo> da Proficiência Elemental do personagem que está com essa arma equipada. Esse efeito pode ser acumulado até 3 vezes."
+    },
+    "3": {
+      "0": "Obtém Bônus de ATQ baseado em <cryo>91%</cryo> da Proficiência Elemental do personagem que está com essa arma equipada. Quando a Habilidade Elemental atinge um inimigo, gera por 10s o efeito \"Sonhos de Areias Escarlates\": obtém Bônus de ATQ baseado em <cryo>49%</cryo> da Proficiência Elemental do personagem que está com essa arma equipada. Esse efeito pode ser acumulado até 3 vezes."
+    },
+    "4": {
+      "0": "Obtém Bônus de ATQ baseado em <cryo>104%</cryo> da Proficiência Elemental do personagem que está com essa arma equipada. Quando a Habilidade Elemental atinge um inimigo, gera por 10s o efeito \"Sonhos de Areias Escarlates\": obtém Bônus de ATQ baseado em <cryo>56%</cryo> da Proficiência Elemental do personagem que está com essa arma equipada. Esse efeito pode ser acumulado até 3 vezes."
+    }
+  }
+}

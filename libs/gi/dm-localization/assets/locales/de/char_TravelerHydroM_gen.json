@@ -1,0 +1,154 @@
+{
+  "auto": {
+    "name": "Stromschnellen aus der Fremde",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Standardangriff</strong>",
+        "1": "Führt bis zu 5 Schwerthiebe hintereinander aus."
+      },
+      "charged": {
+        "0": "<strong>Heftiger Schlag</strong>",
+        "1": "Verbraucht eine gewisse Menge Ausdauer und schwingt das Schwert zweimal schnell nach vorn."
+      },
+      "plunging": {
+        "0": "<strong>Angriff aus dem Fall</strong>",
+        "1": "Schlägt beim Fallen aus der Luft auf den Boden, greift alle Gegner in der Bahn an und verursacht beim Aufkommen Flächenschaden."
+      }
+    },
+    "skillParams": {
+      "0": "SCH Phase 1",
+      "1": "SCH Phase 2",
+      "2": "SCH Phase 3",
+      "3": "SCH Phase 4",
+      "4": "SCH Phase 5",
+      "5": "SCH heftiger Schläge",
+      "6": "Ausdauerverbrauch heftiger Schläge",
+      "7": "SCH beim Fallen",
+      "8": "SCH beim Fallen aus niedriger/großer Höhe",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Wasserschütze",
+    "description": {
+      "0": "Ruft eine Stromschnelle hervor, die die Erde selbst hinfortzuspülen vermag.",
+      "1": "<br/>",
+      "2": "<strong>Drücken</strong>",
+      "3": "Löst eine nach vorn gerichtete eruptive Stromschnelle aus, die getroffenen Gegnern <hydro>Hydro-Schaden</hydro> zufügt.",
+      "4": "<br/>",
+      "5": "<strong>Gedrückt halten</strong>",
+      "6": "Aktiviert den Zielmodus und feuert ununterbrochen Tautropfen in Zielrichtung ab, die getroffenen Gegnern <hydro>Hydro-Schaden</hydro> zufügen.",
+      "7": "Löst am Ende eine nach vorn gerichtete eruptive Stromschnelle aus, die getroffenen Gegnern <hydro>Hydro-Schaden</hydro> zufügt.",
+      "8": "Suffosion: Verfügt {F#die}{M#der} Reisende beim Gedrückthalten über mehr als 50 % LP, so erhöht sich der durch die Tautropfen verursachte Schaden entsprechend der max. LP {F#der}{M#des} Reisenden. Allerdings werden sekündlich die LP {F#der}{M#des} Reisenden verbraucht.",
+      "9": "<br/>",
+      "10": "<strong>Arkhe: Pneuma</strong>",
+      "11": "In bestimmten Abständen, nachdem eine eruptive Stromschnelle ausgelöst wurde, erscheint ein Geisterstachel, der Gegner durchbohrt und mit Pneuma versehenen <hydro>Hydro-Schaden</hydro> verursacht.",
+      "12": "<br/>",
+      "13": "<i>Du hast mit Paimon die Wellen beobachtet.</i>"
+    },
+    "skillParams": {
+      "0": "SCH eruptiver Stromschnelle",
+      "1": "SCH von Tautropfen",
+      "2": "Geisterstachel-SCH",
+      "3": "Geisterstachel-Intervall",
+      "4": "LP-Verbrauch von Suffosion",
+      "5": "SCH-Bonus von Suffosion",
+      "6": "Dauer bei Gedrückthalten",
+      "7": "Abklingzeit",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Gezeitenblase",
+    "description": {
+      "0": "Löst eine sich langsam bewegende Blase aus, die Gegnern in der Nähe fortlaufend <hydro>Hydro-Schaden</hydro> zufügt.",
+      "1": "<br/>",
+      "2": "<i>Du hast mit Paimon die Ebbe und Flut studiert.</i>"
+    },
+    "skillParams": {
+      "0": "Fähigkeits-SCH",
+      "1": "Dauer",
+      "2": "Abklingzeit",
+      "3": "Elementarenergie",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Ungetrübtes Wasser",
+    "description": {
+      "0": "Nachdem Gegner durch Tautropfen getroffen wurden, die durch Gedrückthalten des <strong>Wasserschützen</strong> erzeugt werden, entsteht in der Nähe {F#der Reisenden}{M#des Reisenden} ein Quellwassertropfen, der beim Einsammeln 7 % von {F#deren}{M#dessen} LP wiederherstellt.",
+      "1": "Auf diese Weise kann jede Sekunde bis zu ein Quellwassertropfen erzeugt werden, wobei Wasserschütze bei jedem Auslösen bis zu 4 Tropfen erzeugen kann."
+    }
+  },
+  "passive2": {
+    "name": "Klares Wasser",
+    "description": {
+      "0": "Wurden während des Gedrückthaltens vom <strong>Wasserschützen</strong> durch Suffosion LP verbraucht, so erhöht sich am Ende der Fähigkeit der Schaden der eruptiven Stromschnelle {F#der Reisenden}{M#des Reisenden} um 45 % der durch Suffosion verbrauchten LP.",
+      "1": "Der Schaden kann auf diese Weise höchstens um 5.000 Punkte erhöht werden."
+    }
+  },
+  "constellation1": {
+    "name": "Plätscherndes Seewasser",
+    "description": {
+      "0": "Stellt {F#der Reisenden}{M#dem Reisenden} nach Einsammeln von Quellwassertropfen 2 Punkte Elementarenergie wieder her.",
+      "1": "Das passive Talent „Ungetrübtes Wasser“ muss zuerst freigeschaltet werden."
+    }
+  },
+  "constellation2": {
+    "name": "Rieselndes Wasser",
+    "description": {
+      "0": "Die Geschwindigkeit, mit der sich die <strong>Gezeitenblase</strong> bewegt, reduziert sich um 30 %, während sich ihre Dauer um 3 s erhöht."
+    }
+  },
+  "constellation3": {
+    "name": "Wogende Wellen",
+    "description": {
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Wasserschütze</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation4": {
+    "name": "Strömender Wasserfall",
+    "description": {
+      "0": "Erzeugt beim Auslösen vom <strong>Wasserschützen</strong> einen Hydro-Schild. Dieser hält Schaden in Höhe von 10 % der max. LP und bei <hydro>Hydro-Schaden</hydro> 250 % ab. Hält bis zum Ende vom Wasserschützen.",
+      "1": "Sollte sich {F#die Reisende}{M#der Reisende} im Schutz des Hydro-Schilds befinden, wird einmal alle 2 s, nachdem Gegner von Tautropfen getroffen wurden, die Schildstärke wieder auf 10 % der max. LP {F#der Reisenden}{M#des Reisenden} ergänzt. Sollte kein Hydro-Schild vorhanden sein, so wird dieser in diesem Fall neu erzeugt."
+    }
+  },
+  "constellation5": {
+    "name": "Wirbelnder Strudel",
+    "description": {
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Gezeitenblase</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation6": {
+    "name": "Gezeiten der Gerechtigkeit",
+    "description": {
+      "0": "Stellt bei dem Truppenmitglied mit den niedrigsten LP in der Nähe 6 % von dessen max. LP wieder her, wenn {F#die Reisende}{M#der Reisende} einen Quellwassertropfen einsammelt."
+    }
+  }
+}

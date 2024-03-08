@@ -1,0 +1,167 @@
+{
+  "name": "Charlotte",
+  "title": "Œil pour la vérité",
+  "description": "Une infatigable journaliste de L'Oiseau de vapeur, en constante recherche de la « vérité ».",
+  "constellationName": "Hualina Veritas",
+  "auto": {
+    "name": "Phototype à froid",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attaque normale</strong>",
+        "1": "Visant ses cibles à l'aide de Monsieur Vérité, son Daguerréotype personnalisé, Charlotte enchaîne jusqu'à 3 attaques qui infligent des <cryo>DGT Cryo</cryo>."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Consomme de l'endurance pour déployer Monsieur Vérité après un moment de préparation et infliger des <cryo>DGT Cryo de zone</cryo>."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Plonge depuis les airs en concentrant ses pouvoirs Cryo, infligeant des DGT aux ennemis en chemin et des <cryo>DGT Cryo de zone</cryo> à l'impact."
+      },
+      "arkhe": {
+        "0": "<strong>Arkhe : Pneuma</strong>",
+        "1": "Régulièrement, après avoir utilisé une attaque chargée, une épine d'inhalation qui transperce les ennemis est libérée pour infliger des <cryo>DGT Cryo de zone</cryo> chargés d'énergie pneuma."
+      }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT attaque chargée",
+      "4": "Coût d'endurance attaque chargée",
+      "5": "DGT durant la chute",
+      "6": "DGT chute basse/élevée",
+      "7": "DGT épine d'inhalation",
+      "8": "Intervalle d'épine d'inhalation",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Cadrage : Composition gelée",
+    "description": {
+      "0": "Grâce à son instinct de grande journaliste, Charlotte utilise ses compétences en photographie pour produire différents effets selon la méthode de déclenchement :",
+      "1": "<br/>",
+      "2": "<strong>Appui simple</strong>",
+      "3": "Prend un cliché net à l'aide de Monsieur Vérité, infligeant des <cryo>DGT Cryo de zone</cryo> aux ennemis en face ainsi que l'effet Silhouette instantanée à un maximum de 5 ennemis touchés. Pendant sa durée, l'effet Silhouette instantanée inflige des <cryo>DGT Cryo</cryo> aux ennemis de façon intermittente.",
+      "4": "<br/>",
+      "5": "<strong>Appui long</strong>",
+      "6": "En activant le mode visée de Monsieur Vérité, Charlotte entre dans l'état Composition et le viseur peut s'agrandir jusqu'à atteindre le cadre de finition en maintenant l'appui long. Dans cet état, Charlotte peut se déplacer et changer d'orientation.",
+      "7": "Lorsque le mode visée se termine, Monsieur Vérité inflige des <cryo>DGT Cryo</cryo> aux ennemis verrouillés dans son viseur ainsi que le même effet Silhouette instantanée déclenché lors d'un appui simple. Si Charlotte met fin au mode visée après que le viseur a atteint le cadre de finition, elle inflige à la place l'effet Impression ciblée, ce dernier durant plus longtemps et infligeant plus de DGT, bien qu'il prolongera le TdR de la compétence.",
+      "8": "L'état Composition dure 15 s maximum et peut verrouiller un maximum de 5 ennemis.",
+      "9": "<br/>",
+      "10": "<i>« Les photos de presse nécessitent des clichés simples avec une thématique exceptionnelle, mais il faut surtout avoir le don de capturer l'instant présent ! »</i>"
+    },
+    "skillParams": {
+      "0": "DGT photo (appui simple)",
+      "1": "DGT photo (appui long)",
+      "2": "DGT effet Silhouette instantanée",
+      "3": "Intervalle de déclenchement d'effet Silhouette instantanée",
+      "4": "Durée d'effet Silhouette instantanée",
+      "5": "DGT effet Impression ciblée",
+      "6": "Intervalle d'effet Impression ciblée",
+      "7": "Durée d'effet Impression ciblée",
+      "8": "Temps de recharge",
+      "9": "TdR après le cadre de finition",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Pose : Corroboration complète",
+    "description": {
+      "0": "En condensant de la glace pour créer l'emblème de L'Oiseau de vapeur, Charlotte crée un champ de flash info qui inflige des <cryo>DGT Cryo de zone</cryo> et restaure les PV de tous les personnages de l'équipe à proximité selon son ATQ.",
+      "1": "<br/>",
+      "2": "<strong>Champ de flash info</strong>",
+      "3": [
+        " Tant qu'il est actif, Monsieur Vérité attaque les ennemis à l'intérieur de façon intermittente pour leur infliger des <cryo>DGT Cryo</cryo>.",
+        " Lorsque le personnage déployé est à l'intérieur du champ, ses PV sont restaurés de façon continue selon l'ATQ de Charlotte."
+      ],
+      "4": "<br/>",
+      "5": "<i>« Écouter des histoires sous plusieurs perspectives pour recréer ce qui s'est réellement passé est la clé d'un bon reportage... Je veux dire, c'est ainsi qu'on peut choisir le meilleur angle pour son article ! »</i>"
+    },
+    "skillParams": {
+      "0": "Soins lors du déclenchement",
+      "1": "DGT compétence",
+      "2": "Soins continus",
+      "3": "DGT Monsieur Vérité",
+      "4": "Durée du champ de flash info",
+      "5": "Temps de recharge",
+      "6": "Énergie élémentaire",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Moment d'impact",
+    "description": {
+      "0": "Lorsqu'un ennemi affligé de l'effet Impression ciblée est éliminé, le TdR de <strong>Cadrage : Composition gelée</strong> diminue de 2 s. Le TdR peut être diminué 4 fois toutes les 12 s de cette manière."
+    }
+  },
+  "passive2": {
+    "name": "Enquête de diversité",
+    "description": {
+      "0": "Lorsque l'équipe contient 1, 2 ou 3 personnages fontainois (en plus de Charlotte), Charlotte obtient un bonus de soins de 5 %, 10 % ou 15 %, respectivement. Lorsque l'équipe contient 1, 2 ou 3 personnages non-fontainois, Charlotte bénéficie d'un bonus de DGT Cryo de 5 %, 10 % ou 15 %, respectivement."
+    }
+  },
+  "passive3": {
+    "name": "Premier obturateur",
+    "description": {
+      "0": "Une fois que Charlotte a activé son zoom d'analyse spéciale, l'appui long de sa compétence élémentaire « Cadrage : Composition gelée » ne peut plus déclencher les effets d'origine, mais elle peut désormais prendre des photos d'une manière spéciale..."
+    }
+  },
+  "constellation1": {
+    "name": "Une vérification des faits",
+    "description": {
+      "0": "Lorsque <strong>Pose : Corroboration complète</strong> a effectué un soin sur un personnage, ce dernier obtient une marque de vérification pendant 6 s, qui le soigne une fois toutes les 2 s d'une valeur équivalant à 80 % de l'ATQ de Charlotte."
+    }
+  },
+  "constellation2": {
+    "name": "Une poursuite de la vérité",
+    "description": {
+      "0": "Lorsque Monsieur Vérité touche 1, 2, ou au moins 3 ennemis pendant <strong>Cadrage : Composition gelée</strong>, l'ATQ de Charlotte augmente respectivement de 10 %, 20 % ou 30 % pendant 12 s."
+    }
+  },
+  "constellation3": {
+    "name": "Une nécessité d'indépendance",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Pose : Corroboration complète</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation4": {
+    "name": "Une responsabilité de surveillance",
+    "description": {
+      "0": "Lorsque <strong>Pose : Corroboration complète</strong> touche un ennemi affligé de l'effet Silhouette instantanée ou de l'effet Impression ciblée, les DGT infligés augmentent de 10 % et Charlotte récupère 2 pts d'énergie élémentaire. L'énergie élémentaire peut être restaurée 5 fois toutes les 20 s de cette manière."
+    }
+  },
+  "constellation5": {
+    "name": "Un principe de conscience",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Cadrage : Composition gelée</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation6": {
+    "name": "Un résumé de pertinence",
+    "description": {
+      "0": "Lorsqu'une attaque normale ou chargée du personnage déployé a touché un ennemi affligé de l'effet Impression ciblée de <strong>Cadrage : Composition gelée</strong>, Monsieur Vérité effectue une attaque coordonnée qui inflige des <cryo>DGT Cryo de zone</cryo> d'une valeur équivalant à 180 % de l'ATQ de Charlotte et soigne les PV des personnages déployés à portée de l'attaque d'une valeur équivalant à 42 % de l'ATQ de Charlotte. Cet effet peut être déclenché une fois toutes les 6 s et les DGT et soins déclenchés de cette manière sont considérés comme provenant du déchaînement élémentaire de Charlotte."
+    }
+  }
+}

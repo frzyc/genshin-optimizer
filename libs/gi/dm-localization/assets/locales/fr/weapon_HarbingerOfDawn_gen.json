@@ -1,0 +1,24 @@
+{
+  "name": "Messager de l'Aube",
+  "description": {
+    "0": "La lame de cette épée luisait jadis comme le soleil, mais ce n'est plus le cas aujourd'hui. Celui qui manie cette arme se sent au sommet de sa forme."
+  },
+  "passiveName": "Vigueur",
+  "passiveDescription": {
+    "0": {
+      "0": "Augmente le taux CRIT de <cryo>14 %</cryo> quand les PV sont supérieurs à 90 %."
+    },
+    "1": {
+      "0": "Augmente le taux CRIT de <cryo>17,5 %</cryo> quand les PV sont supérieurs à 90 %."
+    },
+    "2": {
+      "0": "Augmente le taux CRIT de <cryo>21 %</cryo> quand les PV sont supérieurs à 90 %."
+    },
+    "3": {
+      "0": "Augmente le taux CRIT de <cryo>24,5 %</cryo> quand les PV sont supérieurs à 90 %."
+    },
+    "4": {
+      "0": "Augmente le taux CRIT de <cryo>28 %</cryo> quand les PV sont supérieurs à 90 %."
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Emerald Orb",
+  "description": {
+    "0": "A catalyst carved out of the hard jade from Jueyun Karst north of Liyue. Small, light, and durable, it is known more colloquially as the \"jade ball.\""
+  },
+  "passiveName": "Rapids",
+  "passiveDescription": {
+    "0": {
+      "0": "Upon causing a Vaporize, Electro-Charged, Frozen, Bloom, or a Hydro-infused Swirl reaction, increases ATK by <cryo>20%</cryo> for 12s."
+    },
+    "1": {
+      "0": "Upon causing a Vaporize, Electro-Charged, Frozen, Bloom, or a Hydro-infused Swirl reaction, increases ATK by <cryo>25%</cryo> for 12s."
+    },
+    "2": {
+      "0": "Upon causing a Vaporize, Electro-Charged, Frozen, Bloom, or a Hydro-infused Swirl reaction, increases ATK by <cryo>30%</cryo> for 12s."
+    },
+    "3": {
+      "0": "Upon causing a Vaporize, Electro-Charged, Frozen, Bloom, or a Hydro-infused Swirl reaction, increases ATK by <cryo>35%</cryo> for 12s."
+    },
+    "4": {
+      "0": "Upon causing a Vaporize, Electro-Charged, Frozen, Bloom, or a Hydro-infused Swirl reaction, increases ATK by <cryo>40%</cryo> for 12s."
+    }
+  }
+}

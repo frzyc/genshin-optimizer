@@ -1,0 +1,167 @@
+{
+  "name": "Charlotte",
+  "title": "La Rastreadora de la Verdad",
+  "description": "La vivaracha reportera de «El Pájaro de Vapor», siempre en busca de la verdad.",
+  "constellationName": "Hualina Veritas",
+  "auto": {
+    "name": "Criografía",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Ataque Normal</strong>",
+        "1": "Apunta a un objetivo con su particular Daguerrotipo llamado “Monsieur Vérité” para realizar hasta 3 ataques que infligen <cryo>Daño Cryo</cryo>."
+      },
+      "charged": {
+        "0": "<strong>Ataque Cargado</strong>",
+        "1": "Consume una cierta cantidad de Aguante y usa a Monsieur Vérité para infligir <cryo>Daño Cryo en el AdE</cryo> después de un corto tiempo de canalización."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Descendente</strong>",
+        "1": "Concentra el elemento Cryo y se lanza desde el aire para golpear el suelo, dañando a los enemigos cercanos e infligiendo <cryo>Daño Cryo en el AdE</cryo> en el momento del impacto."
+      },
+      "arkhe": {
+        "0": "<strong>Arjé: pneuma</strong>",
+        "1": "Cada cierto tiempo, aparecerá una espina halitoespiritual que inflige <cryo>Daño Cryo en el AdE</cryo> cargado de energía pneuma."
+      }
+    },
+    "skillParams": {
+      "0": "Daño de 1er golpe",
+      "1": "Daño de 2.º golpe",
+      "2": "Daño de 3er golpe",
+      "3": "Daño de ATQ Cargado",
+      "4": "Coste de Aguante de ATQ Cargado",
+      "5": "Daño de Caída",
+      "6": "Daño de impacto de caída baja/alta",
+      "7": "Daño de espina halitoespiritual",
+      "8": "Intervalo de daño de espina halitoespiritual",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Enfoque: Composición gélida",
+    "description": {
+      "0": "Con su agudo instinto de periodista, usa sus habilidades fotográficas para crear diferentes efectos dependiendo de si pulsa una vez la habilidad o la mantiene pulsada.",
+      "1": "<br/>",
+      "2": "<strong>Pulsar una vez</strong>",
+      "3": "Hace una captura rápida utilizando a Monsieur Vérité para infligir <cryo>Daño Cryo en el AdE</cryo> a los enemigos frente a sí misma, y aplica el efecto de “fotosilueta” a un máximo de 5 enemigos afectados. Mientras la fotosilueta está activa, infligirá <cryo>Daño Cryo</cryo> periódicamente a los enemigos a los que afecta.",
+      "4": "<br/>",
+      "5": "<strong>Mantener pulsado</strong>",
+      "6": "Abre el visor de Monsieur Vérité y entra en el estado de “composición”. Al mantener pulsado, el visor irá ampliándose hasta llegar al tamaño máximo. Mientras está en el estado de composición, Charlotte puede moverse y cambiar de dirección libremente.",
+      "7": "Al dejar de mantener pulsado, Monsieur Vérité infligirá <cryo>Daño Cryo</cryo> a los enemigos fijados por el visor y, igual que al pulsar una vez, les aplicará el efecto de fotosilueta. Si dejas de pulsar la habilidad cuando el visor haya alcanzado el tamaño máximo, Charlotte aplicará el efecto de “imagen encuadrada”, el cual tiene una mayor duración e inflige más daño, pero también dejará a esta habilidad con un mayor TdE.",
+      "8": "El estado de composición dura hasta 15 s y permite seleccionar hasta 5 enemigos.",
+      "9": "<br/>",
+      "10": "<i>“Para la captura de imágenes periodísticas, hay que ser capaz de tomar imágenes sencillas con un tema claro. Aun así, ¡lo más importante sigue siendo tener talento para capturar el momento!”.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de foto al pulsar una vez",
+      "1": "Daño de foto al mantener pulsado",
+      "2": "Daño de marca de fotosilueta",
+      "3": "Intervalo de activación de fotosilueta",
+      "4": "Duración de fotosilueta",
+      "5": "Daño de marca de imagen encuadrada",
+      "6": "Intervalo de activación de imagen encuadrada",
+      "7": "Duración de imagen encuadrada",
+      "8": "TdE",
+      "9": "TdE de ampliación máxima",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Encuadre: Corroboración integral",
+    "description": {
+      "0": "Concentra la escarcha para formar la insignia de «El Pájaro de Vapor», crear un “área de flashes” que inflige <cryo>Daño Cryo en el AdE</cryo> y curar a todos los miembros del equipo cercanos en función del ATQ de Charlotte.",
+      "1": "<br/>",
+      "2": "<strong>Área de flashes</strong>",
+      "3": [
+        "Mientras está activa, Monsieur Vérité atacará periódicamente a los enemigos que haya dentro del área para infligirles <cryo>Daño Cryo</cryo>.",
+        "Cura continuamente a los personajes en uso que haya dentro del área en función del ATQ de Charlotte."
+      ],
+      "4": "<br/>",
+      "5": "<i>“Conocer la posición de todas las partes, reconstruir los hechos... ¡Para hacer un buen reportaje, se debe investigar desde diferentes perspectivas y así decidir cuál de ellas es la mejor!”.</i>"
+    },
+    "skillParams": {
+      "0": "Curación realizada",
+      "1": "Daño de habilidad",
+      "2": "Curación fotográfica continua",
+      "3": "Daño fotográfico",
+      "4": "Duración de área de flashes",
+      "5": "TdE",
+      "6": "Energía Elemental",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Instante impactante",
+    "description": {
+      "0": "Cuando un enemigo marcado con imagen encuadrada es derrotado, el TdE de <strong>Enfoque: Composición gélida</strong> se reduce en 2 s. El TdE de la Habilidad Elemental solo se puede reducir un máximo de 4 veces cada 12 s de esta manera."
+    }
+  },
+  "passive2": {
+    "name": "Investigación diversificada",
+    "description": {
+      "0": "Charlotte obtiene un 5/10/15% de Bono de Curación por cada 1/2/3 personajes de Fontaine (a excepción de sí misma) que haya en el equipo. Por otro lado, obtiene un 5/10/15% de Bono de Daño Cryo por cada 1/2/3 personajes del equipo que no sean de Fontaine."
+    }
+  },
+  "passive3": {
+    "name": "Obturador de primera persona",
+    "description": {
+      "0": "Cuando Charlotte activa el Objetivo zoom de análisis especial, mantener pulsada la Habilidad Elemental, “Enfoque: Composición gélida”, no tendrá el efecto original, sino que pasará a tomar fotografías de un modo muy especial..."
+    }
+  },
+  "constellation1": {
+    "name": "Mi obligación: Verificar",
+    "description": {
+      "0": "Aplica una marca de “verificación” a los personajes curados con <strong>Encuadre: Corroboración integral</strong>. Dichos personajes recuperarán Vida cada 2 s en una cantidad equivalente al 80% del ATQ de Charlotte. Este efecto dura 6 s."
+    }
+  },
+  "constellation2": {
+    "name": "Mi deber: Buscar la verdad",
+    "description": {
+      "0": "Al usar <strong>Enfoque: Composición gélida</strong>, cuando Monsieur Vérité golpea a 1/2/3 o más enemigos, el ATQ de Charlotte aumenta en un 10/20/30% durante 12 s."
+    }
+  },
+  "constellation3": {
+    "name": "Mi exigencia: Ser independiente",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Enfoque: Corroboración integral</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Mi responsabilidad: Supervisar",
+    "description": {
+      "0": "Aumenta en un 10% el daño infligido por <strong>Encuadre: Corroboración integral</strong> contra los enemigos marcados con fotosilueta o imagen encuadrada, y además, Charlotte recupera 2 pts. de Energía Elemental. Solo se puede regenerar Energía 5 veces cada 20 s de esta manera."
+    }
+  },
+  "constellation5": {
+    "name": "Mi máxima: La ética",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Enfoque: Composición gélida</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Mi condición: Ser de interés",
+    "description": {
+      "0": "Cuando el personaje en uso golpea con un Ataque Normal o Cargado a un enemigo bajo el efecto de imagen encuadrada de <strong>Enfoque: Composición gélida</strong>, Monsieur Vérité ejecuta un ataque coordinado que inflige <cryo>Daño Cryo en el AdE</cryo> equivalente al 180% del ATQ de Charlotte y que, además, restaura Vida a los personajes en uso situados en el AdE del ataque en una cantidad equivalente al 42% del ATQ de Charlotte. Este efecto solo puede activarse una vez cada 6 s, y el daño y la curación realizados de esta manera se consideran daño y curación de la Habilidad Definitiva de Charlotte."
+    }
+  }
+}

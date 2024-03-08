@@ -1,0 +1,29 @@
+{
+  "setName": "Golden Troupe",
+  "setEffects": {
+    "2": "Increases Elemental Skill DMG by 20%.",
+    "4": "Increases Elemental Skill DMG by 25%. Additionally, when not on the field, Elemental Skill DMG will be further increased by 25%. This effect will be cleared 2s after taking the field."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Golden Song's Variation",
+      "desc": "A flower constructed out of clam, mother-of-pearl, and gold leaf. It blooms proudly."
+    },
+    "plume": {
+      "name": "Golden Bird's Shedding",
+      "desc": "A gold feather made using silver and gold filigree. A crystal-clear sapphire is mounted atop it."
+    },
+    "sands": {
+      "name": "Golden Era's Prelude",
+      "desc": "This lovely sundial is inlaid with silver and gold. It seems that time has stopped flowing atop its dial plate."
+    },
+    "goblet": {
+      "name": "Golden Night's Bustle",
+      "desc": "An ancient silver urn that was once filled with fine wine as red as rubies. Now, it contains nothing but bitter seawater."
+    },
+    "circlet": {
+      "name": "Golden Troupe's Reward",
+      "desc": "An ancient crown that resembles a stage prop more than it does some suzerain's headgear."
+    }
+  }
+}

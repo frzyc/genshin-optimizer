@@ -1,0 +1,24 @@
+{
+  "name": "The First Great Magic",
+  "description": {
+    "0": "A stage prop once used by a past \"Great Magician.\" Its final secret was that it was also a weapon beyond the pale."
+  },
+  "passiveName": "Parsifal the Great",
+  "passiveDescription": {
+    "0": {
+      "0": "DMG dealt by Charged Attacks increased by <cryo>16%</cryo>. For every party member with the same Elemental Type as the wielder (including the wielder themselves), gain 1 Gimmick stack. For every party member with a different Elemental Type from the wielder, gain 1 Theatrics stack. When the wielder has 1/2/3 or more Gimmick stacks, ATK will be increased by <cryo>16%/32%/48%</cryo>. When the wielder has 1/2/3 or more Theatrics stacks, Movement SPD will be increased by <cryo>4%/7%/10%</cryo>."
+    },
+    "1": {
+      "0": "DMG dealt by Charged Attacks increased by <cryo>20%</cryo>. For every party member with the same Elemental Type as the wielder (including the wielder themselves), gain 1 Gimmick stack. For every party member with a different Elemental Type from the wielder, gain 1 Theatrics stack. When the wielder has 1/2/3 or more Gimmick stacks, ATK will be increased by <cryo>20%/40%/60%</cryo>. When the wielder has 1/2/3 or more Theatrics stacks, Movement SPD will be increased by <cryo>6%/9%/12%</cryo>."
+    },
+    "2": {
+      "0": "DMG dealt by Charged Attacks increased by <cryo>24%</cryo>. For every party member with the same Elemental Type as the wielder (including the wielder themselves), gain 1 Gimmick stack. For every party member with a different Elemental Type from the wielder, gain 1 Theatrics stack. When the wielder has 1/2/3 or more Gimmick stacks, ATK will be increased by <cryo>24%/48%/72%</cryo>. When the wielder has 1/2/3 or more Theatrics stacks, Movement SPD will be increased by <cryo>8%/11%/14%</cryo>."
+    },
+    "3": {
+      "0": "DMG dealt by Charged Attacks increased by <cryo>28%</cryo>. For every party member with the same Elemental Type as the wielder (including the wielder themselves), gain 1 Gimmick stack. For every party member with a different Elemental Type from the wielder, gain 1 Theatrics stack. When the wielder has 1/2/3 or more Gimmick stacks, ATK will be increased by <cryo>28%/56%/84%</cryo>. When the wielder has 1/2/3 or more Theatrics stacks, Movement SPD will be increased by <cryo>10%/13%/16%</cryo>."
+    },
+    "4": {
+      "0": "DMG dealt by Charged Attacks increased by <cryo>32%</cryo>. For every party member with the same Elemental Type as the wielder (including the wielder themselves), gain 1 Gimmick stack. For every party member with a different Elemental Type from the wielder, gain 1 Theatrics stack. When the wielder has 1/2/3 or more Gimmick stacks, ATK will be increased by <cryo>32%/64%/96%</cryo>. When the wielder has 1/2/3 or more Theatrics stacks, Movement SPD will be increased by <cryo>12%/15%/18%</cryo>."
+    }
+  }
+}

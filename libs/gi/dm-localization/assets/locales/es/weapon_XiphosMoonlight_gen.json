@@ -1,0 +1,24 @@
+{
+  "name": "Luz Lunar de Xifos",
+  "description": {
+    "0": "Una espada de doble filo que emite un brillo similar al de la luna. Según la leyenda, en ella reside un genio que ahora permanece en silencio."
+  },
+  "passiveName": "Susurro del genio",
+  "passiveDescription": {
+    "0": {
+      "0": "Cada 10 s, la Recarga de Energía del personaje que lleve esta arma equipada aumenta durante 12 s en un <cryo>0.036%</cryo> por cada punto de Maestría Elemental que tenga, y los personajes del equipo cercanos obtienen un 30% de este bono. Este efecto se puede acumular con los de otros personajes del equipo que lleven esta arma equipada, y se puede activar incluso cuando el personaje está en tu equipo pero no en uso."
+    },
+    "1": {
+      "0": "Cada 10 s, la Recarga de Energía del personaje que lleve esta arma equipada aumenta durante 12 s en un <cryo>0.045%</cryo> por cada punto de Maestría Elemental que tenga, y los personajes del equipo cercanos obtienen un 30% de este bono. Este efecto se puede acumular con los de otros personajes del equipo que lleven esta arma equipada, y se puede activar incluso cuando el personaje está en tu equipo pero no en uso."
+    },
+    "2": {
+      "0": "Cada 10 s, la Recarga de Energía del personaje que lleve esta arma equipada aumenta durante 12 s en un <cryo>0.054%</cryo> por cada punto de Maestría Elemental que tenga, y los personajes del equipo cercanos obtienen un 30% de este bono. Este efecto se puede acumular con los de otros personajes del equipo que lleven esta arma equipada, y se puede activar incluso cuando el personaje está en tu equipo pero no en uso."
+    },
+    "3": {
+      "0": "Cada 10 s, la Recarga de Energía del personaje que lleve esta arma equipada aumenta durante 12 s en un <cryo>0.063%</cryo> por cada punto de Maestría Elemental que tenga, y los personajes del equipo cercanos obtienen un 30% de este bono. Este efecto se puede acumular con los de otros personajes del equipo que lleven esta arma equipada, y se puede activar incluso cuando el personaje está en tu equipo pero no en uso."
+    },
+    "4": {
+      "0": "Cada 10 s, la Recarga de Energía del personaje que lleve esta arma equipada aumenta durante 12 s en un <cryo>0.072%</cryo> por cada punto de Maestría Elemental que tenga, y los personajes del equipo cercanos obtienen un 30% de este bono. Este efecto se puede acumular con los de otros personajes del equipo que lleven esta arma equipada, y se puede activar incluso cuando el personaje está en tu equipo pero no en uso."
+    }
+  }
+}

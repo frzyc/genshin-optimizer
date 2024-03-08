@@ -1,0 +1,24 @@
+{
+  "name": "Lâmina das Ondas",
+  "description": {
+    "0": "Uma espada modelo padrão intrincada para os oficiais de alto-escalão e capitães da antiga marinha de Fontaine."
+  },
+  "passiveName": "Onda Branca do Cruzamento",
+  "passiveDescription": {
+    "0": {
+      "0": "Após receber cura, aumenta o ATQ em <cryo>24%</cryo> por 8s. Pode ser ativado mesmo quando o personagem não estiver em campo."
+    },
+    "1": {
+      "0": "Após receber cura, aumenta o ATQ em <cryo>30%</cryo> por 8s. Pode ser ativado mesmo quando o personagem não estiver em campo."
+    },
+    "2": {
+      "0": "Após receber cura, aumenta o ATQ em <cryo>36%</cryo> por 8s. Pode ser ativado mesmo quando o personagem não estiver em campo."
+    },
+    "3": {
+      "0": "Após receber cura, aumenta o ATQ em <cryo>42%</cryo> por 8s. Pode ser ativado mesmo quando o personagem não estiver em campo."
+    },
+    "4": {
+      "0": "Após receber cura, aumenta o ATQ em <cryo>48%</cryo> por 8s. Pode ser ativado mesmo quando o personagem não estiver em campo."
+    }
+  }
+}

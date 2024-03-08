@@ -1,0 +1,171 @@
+{
+  "name": "Shenhe",
+  "title": "La Ermitaña Sobrehumana",
+  "description": "Una discípula de los Adeptus con una mirada perdida. Al haber vivido recluida en las montañas de Liyue, su carácter es tan frío y distante como el de los Adeptus.",
+  "constellationName": "Crista Doloris",
+  "auto": {
+    "name": "Perforaestrellas",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Ataque Normal</strong>",
+        "1": "Realiza hasta 5 ataques rápidos con lanza."
+      },
+      "charged": {
+        "0": "<strong>Ataque Cargado</strong>",
+        "1": "Consume una cierta cantidad de Aguante para lanzarse al frente, infligiendo daño a los enemigos en el camino."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Descendente</strong>",
+        "1": "Se lanza desde el aire para golpear el suelo, dañando a los enemigos cercanos e infligiendo Daño en el AdE en el momento del impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Daño de 1er golpe",
+      "1": "Daño de 2.º golpe",
+      "2": "Daño de 3er golpe",
+      "3": "Daño de 4.º golpe",
+      "4": "Daño de 5.º golpe",
+      "5": "Daño de ATQ Cargado",
+      "6": "Coste de Aguante de ATQ Cargado",
+      "7": "Daño de Caída",
+      "8": "Daño de impacto de caída baja/alta",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Espíritu exorcizador",
+    "description": {
+      "0": "Invoca una escarcha plateada para exorcizar el mal.",
+      "1": "Aplica el efecto de “pluma glacial” sobre todos los personajes del equipo cercanos e inflige <cryo>Daño Cryo</cryo> de maneras distintas dependiendo de si la habilidad se activó pulsando una vez o manteniendo pulsado.",
+      "2": "<br/>",
+      "3": "<strong>Pulsar una vez</strong>",
+      "4": "Se lanza al frente junto a un espíritu hechizado para infligir <cryo>Daño Cryo</cryo> contra los enemigos en su camino.",
+      "5": "<br/>",
+      "6": "<strong>Mantener pulsado</strong>",
+      "7": "Ordena al espíritu hechizado que inflija <cryo>Daño Cryo en el AdE</cryo>.",
+      "8": "<br/>",
+      "9": "<strong>Pluma glacial</strong>",
+      "10": "Cuando los Ataques Normales, Cargados o Descendentes o la Habilidad Elemental o Definitiva infligen <cryo>Daño Cryo</cryo> contra un enemigo, el daño que infligen aumenta en proporción al ATQ actual de Shenhe.",
+      "11": "<br/>",
+      "12": "Los efectos de la pluma glacial desaparecerán cuando termine su duración o cuando se haya activado un número determinado de cargas. La pluma glacial activada manteniendo pulsado tiene una mayor duración y un mayor número de cargas que la activada pulsando una vez.",
+      "13": "Al golpear a varios enemigos a la vez con un golpe de <cryo>Daño Cryo</cryo>, se consumirán cargas en función del número de enemigos golpeados. Los efectos y las cargas de la pluma glacial se calculan de manera independiente para cada personaje.",
+      "14": "<br/>",
+      "15": "<i>Que los espíritus tienen poder no es ninguna falsedad. Ahora, yo te ordeno que en el talismán has de entrar. ¡Ja!</i>"
+    },
+    "skillParams": {
+      "0": "Daño de habilidad al pulsar una vez",
+      "1": "Daño de habilidad al mantener pulsado",
+      "2": "Aumento de daño",
+      "3": "Duración de pulsar una vez/mantener pulsado",
+      "4": "Cargas al pulsar una vez/mantener pulsado",
+      "5": "TdE al pulsar una vez",
+      "6": "TdE de mantener pulsado",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Encantamiento de la damisela divina",
+    "description": {
+      "0": "Libera el poder del espíritu hechizado para que deambule por el mundo e inflija <cryo>Daño Cryo en el AdE</cryo>.",
+      "1": "El espíritu creará un área que reduce la <cryo>RES Cryo</cryo> y la RES Física de los enemigos que haya dentro de ella, e inflige <cryo>Daño Cryo</cryo> continuo contra dichos enemigos.",
+      "2": "<br/>",
+      "3": "<i>El camino de los Adeptus no se basa en algo abstracto y misterioso, sino en observar los cambios en el mundo y entender las leyes de causa y efecto de este plano para comprender su esencia.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "Reducción de RES",
+      "2": "Daño continuo",
+      "3": "Duración",
+      "4": "TdE",
+      "5": "Energía Elemental",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Precepto divino",
+    "description": {
+      "0": "Aumenta en un 15% el <cryo>Bono de Daño Cryo</cryo> de los personajes en uso situados en el área de <strong>Encantamiento de la damisela divina</strong>."
+    }
+  },
+  "passive2": {
+    "name": "Sello de la convergencia espiritual",
+    "description": {
+      "0": "Tras lanzar <strong>Espíritu exorcizador</strong>, Shenhe otorga los siguientes efectos a todos los miembros del equipo cercanos:",
+      "1": [
+        "Pulsar una vez: el daño de las Habilidades Elementales y Definitivas aumenta en un 15% durante 10 s.",
+        "Mantener pulsado: el daño de los Ataques Normales, Cargados y Descendentes aumenta en un 15% durante 15 s."
+      ]
+    }
+  },
+  "passive3": {
+    "name": "Llegada oportuna",
+    "description": {
+      "0": "Aumenta en un 25% las recompensas de las expediciones de 20 h en Liyue."
+    }
+  },
+  "constellation1": {
+    "name": "Corazón puro",
+    "description": {
+      "0": "Aumenta en 1 las cargas de <strong>Espíritu exorcizador</strong>."
+    }
+  },
+  "constellation2": {
+    "name": "Concentración espiritual",
+    "description": {
+      "0": "Aumenta en 6 s la duración de <strong>Encantamiento de la damisela divina</strong>. Además, cuando un personaje en uso está en el área de la habilidad, el Daño CRIT de los ataques que infligen <cryo>Daño Cryo</cryo> aumenta en un 15%."
+    }
+  },
+  "constellation3": {
+    "name": "Reclusión",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Espíritu exorcizador</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Clarividencia",
+    "description": {
+      "0": "Cuando un personaje afectado por la <strong>pluma glacial</strong> de Shenhe activa el aumento de daño de la pluma, Shenhe obtiene una carga de “mantra de la escarcha”.",
+      "1": [
+        "Al lanzar <strong>Espíritu exorcizador</strong>, se consumirán todas las cargas del mantra de la escarcha y el daño infligido con Espíritu exorcizador aumentará en un 5% por cada carga consumida.",
+        "Este efecto puede acumularse hasta 50 veces y su duración es de 60 s."
+      ]
+    }
+  },
+  "constellation5": {
+    "name": "Divinización",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Encantamiento de la damisela divina</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Abandono místico",
+    "description": {
+      "0": "Cuando un personaje activa los efectos de la <strong>pluma glacial</strong> infligiendo daño con un Ataque Normal o Cargado, no se consumirán cargas de la pluma."
+    }
+  }
+}

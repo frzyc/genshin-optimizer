@@ -1,0 +1,14 @@
+{
+  "name": "Espada do Advento",
+  "description": {
+    "0": "Uma espada de artesanato único. Não parece pertencer a este mundo."
+  },
+  "passiveName": "Descensão",
+  "passiveDescription": {
+    "0": {
+      "0": "<cryo>Efetivo apenas para jogadores da seguinte plataforma:</cryo>",
+      "1": "<cryo>\"PlayStation Network\"</cryo>",
+      "2": "Acertar oponentes com um Ataque Normal ou Carregado concede <cryo>50%</cryo> de chance de causar <cryo>200%</cryo> do ATQ como Dano em uma pequena AdE. Este efeito pode ocorrer apenas uma vez a cada 10s. Adicionalmente, se {M#o}{F#a} Viajante equipar a Espada do Advento, seu ATQ é aumentado em <cryo>66</cryo>."
+    }
+  }
+}

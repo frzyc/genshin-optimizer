@@ -1,0 +1,162 @@
+{
+  "name": "Xinyan",
+  "title": "Melodia Incandescente",
+  "description": "A única roqueira do Porto de Liyue, ela usa sua música e canções apaixonadas para resistir aos preconceitos.",
+  "constellationName": "Fila Ignium",
+  "auto": {
+    "name": "Dança do Fogo",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Ataque Normal</strong>",
+        "1": "Realiza até 4 golpes consecutivos."
+      },
+      "charged": {
+        "0": "<strong>Ataque Carregado</strong>",
+        "1": "Drena Stamina ao longo do tempo para realizar um ataque giratório contínuo contra todos os inimigos próximos.",
+        "2": "Ao final da sequência, realiza um corte poderoso."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Imersivo</strong>",
+        "1": "Mergulha em pleno ar para golpear o chão, danificando inimigos em seu caminho e infligindo Dano em uma AdE durante o impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Dano do 1° Golpe",
+      "1": "Dano do 2° Golpe",
+      "2": "Dano do 3° Golpe",
+      "3": "Dano do 4° Golpe",
+      "4": "Dano de Loop de Ataque Carregado",
+      "5": "Dano Final de Ataque Carregado",
+      "6": "Consumo de Stamina de Ataque Carregado",
+      "7": "Duração Máxima",
+      "8": "Dano Durante a Queda",
+      "9": "Dano de Queda de Baixa/Alta Altitude",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Fervor Arrebatador",
+    "description": {
+      "0": "Xinyan brande seu instrumento, causando <pyro>Dano Pyro</pyro> em inimigos próximos, criando um escudo feito a partir da paixão de seu público.",
+      "1": "A absorção de Dano do escudo aumenta com base na DEF de Xinyan e no número de inimigos atingidos.",
+      "2": "Atingir de 0-1 inimigo concede Escudo Nível 1: Improviso.",
+      "3": "Atingir 2 inimigos concede Escudo Nível 2: Introdução.",
+      "4": "Atingir 3 ou mais inimigos concede Escudo Nível 3: Rave, que também causará <pyro>Dano Pyro</pyro> periodicamente aos inimigos próximos.",
+      "5": "<br/>",
+      "6": "O escudo tem as seguintes propriedades especiais:",
+      "7": "Quando ativado, ele aplica o elemento <pyro>Pyro</pyro> em Xinyan.",
+      "8": "Tem 250% de eficácia de absorção de Dano contra <pyro>Dano Pyro</pyro>.",
+      "9": "<br/>",
+      "10": "<i>Xinyan insiste que essas pirotecnias representam o ápice da arte da performance e que são fenômenos físicos que nada têm a ver com sua Visão.</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Balanço",
+      "1": "Absorção de Escudo Nv.1",
+      "2": "Absorção de Escudo Nv.2",
+      "3": "Absorção de Escudo Nv.3",
+      "4": "Dano Contínuo",
+      "5": "Duração do Escudo",
+      "6": "Recarga",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Melodia da Rebelião",
+    "description": {
+      "0": "Tocando sua música rapidamente, Xinyan lança os inimigos próximos e causa Dano Físico neles, hipnotizando a multidão.",
+      "1": "A pura intensidade da atmosfera causará explosões que causam <pyro>Dano Pyro</pyro> aos inimigos próximos.",
+      "2": "<br/>",
+      "3": "<i>Xinyan costumava terminar todas as suas performances com esse movimento. Ela não parou porque era perigoso, mas sim porque ela não tinha um final mais épico no caso de alguém gritar \"Mais!\".</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Habilidade",
+      "1": "Dano Contínuo Pyro",
+      "2": "Duração",
+      "3": "Tempo de Recarga",
+      "4": "Energia Elemental",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "\"O espetáculo deve continuar...\"",
+    "description": {
+      "0": "Diminui o número de inimigos que <strong>Fervor Arrebatador</strong> precisa acertar para acionar cada nível do escudo.",
+      "1": "Escudo Nível 2: Introdução, requerimento reduzido a 1 inimigo atingido.",
+      "2": "Escudo Nível 3: Rave, requerimento reduzido a 2 inimigos atingidos ou mais."
+    }
+  },
+  "passive2": {
+    "name": "\"...Isso sim é Rock 'n' Roll!\"",
+    "description": {
+      "0": "Personagens protegidos por <strong>Fervor Arrebatador</strong> causam 15% mais Dano Físico."
+    }
+  },
+  "passive3": {
+    "name": "Uma Receita Radical",
+    "description": {
+      "0": "Quando uma Culinária Perfeita é feita em uma comida de aumento de DEF, Xinyan tem uma chance de 12% de receber o dobro de produção."
+    }
+  },
+  "constellation1": {
+    "name": "Aceleração Fatal",
+    "description": {
+      "0": "5s após Xinyan causar um CRIT, a Vel. de ATQ do Ataque Normal e Ataque Carregado aumenta 12%.",
+      "1": "Esse efeito pode ocorrer apenas uma vez a cada 5 segundos."
+    }
+  },
+  "constellation2": {
+    "name": "Começo Improvisado",
+    "description": {
+      "0": "Taxa CRIT de Dano Físico causado pela <strong>Melodia da Rebelião</strong> aumenta em 100%, e ao lançar, formará um escudo Nv.3: Rave."
+    }
+  },
+  "constellation3": {
+    "name": "Duplo-Stop",
+    "description": {
+      "0": "Aumenta o nível da <strong>Fervor Arrebatador</strong> em 3.",
+      "1": "O nível máximo de elevação é 15."
+    }
+  },
+  "constellation4": {
+    "name": "Ritmo Contagiante",
+    "description": {
+      "0": "O Dano de Balanço de <strong>Fervor Arrebatador</strong> irá diminuir a RES Física do inimigo em 15% por 12s."
+    }
+  },
+  "constellation5": {
+    "name": "Gritos de Bis",
+    "description": {
+      "0": "Aumenta o nível da <strong>Melodia da Rebelião</strong> em 3.",
+      "1": "O nível máximo de elevação é 15."
+    }
+  },
+  "constellation6": {
+    "name": "Rockeando no inferno",
+    "description": {
+      "0": "Diminui o Consumo de Stamina do Ataque Carregado de Xinyan em 30%. Ao usar Ataques Carregados, Xinyan ganha um Bônus de Ataque baseado em 50% de sua defesa."
+    }
+  }
+}

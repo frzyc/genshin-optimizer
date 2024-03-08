@@ -1,0 +1,24 @@
+{
+  "name": "Beacon of the Reed Sea",
+  "description": {
+    "0": "A large, flat-tipped sword designed in to fit as the weapon of an ancient king or some ceremonial instrument."
+  },
+  "passiveName": "Desert Watch",
+  "passiveDescription": {
+    "0": {
+      "0": "After the character's Elemental Skill hits an opponent, their ATK will be increased by <cryo>20%</cryo> for 8s. After the character takes DMG, their ATK will be increased by <cryo>20%</cryo> for 8s. The 2 aforementioned effects can be triggered even when the character is not on the field. Additionally, when not protected by a shield, the character's Max HP will be increased by <cryo>32%</cryo>."
+    },
+    "1": {
+      "0": "After the character's Elemental Skill hits an opponent, their ATK will be increased by <cryo>25%</cryo> for 8s. After the character takes DMG, their ATK will be increased by <cryo>25%</cryo> for 8s. The 2 aforementioned effects can be triggered even when the character is not on the field. Additionally, when not protected by a shield, the character's Max HP will be increased by <cryo>40%</cryo>."
+    },
+    "2": {
+      "0": "After the character's Elemental Skill hits an opponent, their ATK will be increased by <cryo>30%</cryo> for 8s. After the character takes DMG, their ATK will be increased by <cryo>30%</cryo> for 8s. The 2 aforementioned effects can be triggered even when the character is not on the field. Additionally, when not protected by a shield, the character's Max HP will be increased by <cryo>48%</cryo>."
+    },
+    "3": {
+      "0": "After the character's Elemental Skill hits an opponent, their ATK will be increased by <cryo>35%</cryo> for 8s. After the character takes DMG, their ATK will be increased by <cryo>35%</cryo> for 8s. The 2 aforementioned effects can be triggered even when the character is not on the field. Additionally, when not protected by a shield, the character's Max HP will be increased by <cryo>56%</cryo>."
+    },
+    "4": {
+      "0": "After the character's Elemental Skill hits an opponent, their ATK will be increased by <cryo>40%</cryo> for 8s. After the character takes DMG, their ATK will be increased by <cryo>40%</cryo> for 8s. The 2 aforementioned effects can be triggered even when the character is not on the field. Additionally, when not protected by a shield, the character's Max HP will be increased by <cryo>64%</cryo>."
+    }
+  }
+}

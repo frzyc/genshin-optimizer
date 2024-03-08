@@ -1,0 +1,161 @@
+{
+  "name": "Yae Miko",
+  "title": "Akıl Oyunları",
+  "description": "Büyük Narukami Tapınağının Leydi Guuji'si aynı zamanda Yae Yayınevinde genel yayın yönetmenidir. Güzelliğinin altında akla hayale sığmayacak bir zeka ve kurnazlık saklıdır.",
+  "constellationName": "Kutsal Tilkiler",
+  "auto": {
+    "name": "Günah Yiyen Kitsune",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Saldırı</strong>",
+        "1": "Kitsune ruhlarını çağırır ve en fazla 3 saldırı yaparak <electro>Elektrik Hasarı</electro> verir."
+      },
+      "charged": {
+        "0": "<strong>Yüklü Saldırı</strong>",
+        "1": "Beceriyi kısa süre kullanıldıktan sonra belirli miktarda Dayanıklılık harcayarak <electro>Elektrik Alan Hasarı</electro> verir."
+      },
+      "plunging": {
+        "0": "<strong>Havadan Saldırı</strong>",
+        "1": "Havadayken dalışa geçerek yere doğru atılır, gürleyen kudretiyle yoluna çıkan tüm düşmanlara hasar verir. Yere vurduğunda <electro>Elektrik Alan Hasarı</electro> verir."
+      }
+    },
+    "skillParams": {
+      "0": "1 Vuruş Hasarı",
+      "1": "2 Vuruş Hasarı",
+      "2": "3 Vuruş Hasarı",
+      "3": "Yüklü Saldırı Hasarı",
+      "4": "Yüklü Saldırı Dayanıklılık Maliyeti",
+      "5": "Havadan Saldırı Hasarı",
+      "6": "Havadan Saldırı Hasarı (Alçaktan/Yüksekten)",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Yako Çağrısı: Ölümcül Kiraz Çiçeği",
+    "description": {
+      "0": "Yae'ye göre; ruhları defetmek gibi sıkıcı görevleri bizzat kendisinin halletmesine hiç gerek yoktur.",
+      "1": "Hızla hareket ederek arkasında Ölümcül Kiraz Çiçeği bırakır.",
+      "2": "<br/>",
+      "3": "<strong>Ölümcül Kiraz Çiçeği</strong>",
+      "4": "Aşağıdaki özelliklere sahiptir:",
+      "5": [
+        "Belirli aralıklarla yakındaki düşmanlardan birine yıldırımla saldırır ve <electro>Elektrik Hasarı</electro> verir.",
+        "Yakında başka Ölümcül Kiraz Çiçekleri de mevcutken hepsinin seviyesi yükselir ve yıldırım darbelerinin verdiği Hasar artar."
+      ],
+      "6": "<br/>",
+      "7": "Bu becerinin 3 yükü vardır.",
+      "8": "Aynı anda en fazla 3 Ölümcül Kiraz Çiçeği bulunabilir. Her Ölümcül Kiraz Çiçeğinin başlangıç seviyesi 1'dir ve her birinin başlangıçta ulaşabileceği en üst seviye 3'tür. Mevcut olan bir Ölümcül Kiraz Çiçeğinin fazla yakınına yeni bir Kiraz Çiçeği yerleştirilirse mevcut olan yok olur.",
+      "9": "<br/>",
+      "10": "<i>\"Bu dalların içine hapsedilmiş Kitsunelerin hepsi aslında insanları avlamaya tenezzül etmiş yakolardır. Yakolar, biz Gök Kitsunelerinden daha alt bir konumdadır, o yüzden onlara emir vermekten pek çekinmem. Öte yandan insanlar bu hiyerarşik düzenimizi örnek almasa daha iyi tabii. Hımm, bu düzende Kitsuneler mi insanlar mı daha üstte diye merak ettin demek... Haha, kim bilir?\"</i>"
+    },
+    "skillParams": {
+      "0": "1. Seviye Ölümcül Kiraz Çiçeği Hasarı",
+      "1": "2. Seviye Ölümcül Kiraz Çiçeği Hasarı",
+      "2": "3. Seviye Ölümcül Kiraz Çiçeği Hasarı",
+      "3": "4. Seviye Ölümcül Kiraz Çiçeği Hasarı",
+      "4": "Süre",
+      "5": "BS",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Gizli Ulvi Büyü: Tenko Kenshin",
+    "description": {
+      "0": "Inazuma'nın halk masallarında Kitsunelerin kudretinin bir tecellisi olan \"Kitsunetsuki\"den sık sık bahsedilir. İnsanların ilgisini çeken bu efsanelerden biri de Gök Kitsuneleriyle ilgilidir. Efsaneye göre Gök Kitsuneleri, Büyük Narukami Tapınağının düşmanlarının üzerine yıldırım yağdırır. Bir Gök Kitsunesi olan Yae Miko da düşürdüğü yıldırım darbesiyle <electro>Elektrik Alan Hasarı</electro> verir.",
+      "1": "Yae Miko bu beceriyi kullandığında yakında bulunan Ölümcül Kiraz Çiçeklerinin mührünü kaldırır. Dış formları yok olan Ölümcül Kiraz Çiçekleri, gökten inen Tenko Yıldırımlarına dönüşerek <electro>Elektrik Alan Hasarı</electro> verir. Bu şekilde yok edilen her Ölümcül Kiraz Çiçeği bir Tenko Yıldırımı oluşturur.",
+      "2": "<br/>",
+      "3": "<i>Yae Miko yalnızca böyle anlarda Gök Kitsunesi formunu gösterip yıldırımın gücünü kontrol eder. Leydi Guuji'nin kuyruklarını gördükten sonra hayatta kalabilen tek bir kişi bile yoktur. Bu sebeple bilgin olsun, Leydi Yae'nin kuyruğu falan yok. Sakın unutma.</i>"
+    },
+    "skillParams": {
+      "0": "Beceri Hasarı",
+      "1": "Tenko Yıldırımı Hasarı",
+      "2": "BS",
+      "3": "Enerji Maliyeti",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Tapınağın Kutsal Gölgesi",
+    "description": {
+      "0": "<strong>Gizli Ulvi Büyü: Tenko Kenshin</strong> becerisi kullanıldığında yok olan her Ölümcül Kiraz Çiçeği, <strong>Yako Çağrısı: Ölümcül Kiraz Çiçeği</strong> becerisinin 1 yükü için bekleme süresini sıfırlar."
+    }
+  },
+  "passive2": {
+    "name": "Aydınlanmanın Lütfu",
+    "description": {
+      "0": "Yae Miko'nun sahip olduğu her bir Element Ustalığı puanı, <strong>Ölümcül Kiraz Çiçeği</strong> Hasarını %0,15 artırır."
+    }
+  },
+  "passive3": {
+    "name": "Yako Meditasyonu",
+    "description": {
+      "0": "Üretim sırasında %25 ihtimalle 1 yöresel Karakter Yeteneği Malzemesi verir (temel malzeme hariç). Verdiği malzemelerin nadirliği temel malzemeyle aynıdır."
+    }
+  },
+  "constellation1": {
+    "name": "Yako Adağı",
+    "description": {
+      "0": "<strong>Gizli Ulvi Büyü: Tenko Kenshin</strong> becerisi her Tenko Yıldırımı çağırdığında Yae Miko kendisi için 8 Element Enerjisi yeniler."
+    }
+  },
+  "constellation2": {
+    "name": "Tilkinin Ay Çağrısı",
+    "description": {
+      "0": "Oluşturulan her <strong>Ölümcül Kiraz Çiçeği</strong> 2. Seviyeden başlar. Ulaşabilecekleri maksimum seviye 4'e çıkar ve saldırı menzilleri %60 artar."
+    }
+  },
+  "constellation3": {
+    "name": "Yedi Dönüşüm",
+    "description": {
+      "0": "<strong>Yako Çağrısı: Ölümcül Kiraz Çiçeği</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation4": {
+    "name": "Kiraz Çiçeği İletimi",
+    "description": {
+      "0": "<strong>Ölümcül Kiraz Çiçeği</strong> yıldırımları düşmanlara isabet ettiğinde 5 saniyeliğine yakındaki tüm grup üyelerinin <electro>Elektrik Hasarı Bonusu</electro> %20 artar."
+    }
+  },
+  "constellation5": {
+    "name": "Sonsuz Muziplik",
+    "description": {
+      "0": "<strong>Gizli Ulvi Büyü: Tenko Kenshin</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation6": {
+    "name": "Yasak Büyü: Katliam",
+    "description": {
+      "0": "<strong>Ölümcül Kiraz Çiçeği</strong> saldırıları düşmanların Savunmasının %60'ını yok sayar."
+    }
+  }
+}

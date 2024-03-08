@@ -1,0 +1,29 @@
+{
+  "setName": "Yankılı Ormanda Gece Fısıltısı",
+  "setEffects": {
+    "2": "+%18 Saldırı.",
+    "4": "Bir Element Becerisi kullandıktan sonra 10 saniyeliğine %20 Toprak Hasarı Bonusu kazanılır. Kristalleşme tepkimesinden gelen bir kalkan mevcutsa bu etki %150 artar. Bu ek artış, kalkan etkisini kaybettikten 1sn sonra kaybolur."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Fedakar Çiçekli Aksesuar",
+      "desc": "Hikayedeki cadının taktığı bir broş. Sevdiği diğer süslerde olduğu gibi bu broşta da kelebekler var."
+    },
+    "plume": {
+      "name": "Dürüst Tüy Kalem",
+      "desc": "Hikayedeki cadının kullandığı mürekkepli kalem. Öyle çeşitli avantajları vardır ki ipek gibi pürüzsüz yazımı bile neredeyse önemsiz kalır."
+    },
+    "sands": {
+      "name": "Sadık Kum Saati",
+      "desc": "Hikayedeki cadının kullandığı bir kum saati. Söylentilere göre bu kum saatine yanlış büyüyü okursan zaman birden son derece hızlı akmaya başlarmış."
+    },
+    "goblet": {
+      "name": "Cömert Mürekkep Şişesi",
+      "desc": "Hikayedeki cadının kullandığı bir mürekkep şişesi. Kalemde olduğu gibi kuvvetli ve tuhaf bir büyü vardır üzerinde."
+    },
+    "circlet": {
+      "name": "Şefkatli Kadın Şapkası",
+      "desc": "Hikayedeki cadının favori şapkası. Bu aksesuarı ciddiyet ve eğlenceyi bir araya getiren görünümü nedeniyle seviyordu."
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Prototip: Kehribar",
+  "description": {
+    "0": "Kara Kaya Demirci Ocağında özenle saklanan mat kaplamalı bir katalizör. Gökyüzündeki ışığın parıltısına sahip."
+  },
+  "passiveName": "Yaldızlama",
+  "passiveDescription": {
+    "0": {
+      "0": "Bir Element Patlaması kullanıldığında 6 saniye boyunca 2 saniyede bir <cryo>4</cryo> Enerji yenilenir. Bu süre boyunca tüm grup üyeleri 2 saniyede bir <cryo>%4</cryo> Can yeniler."
+    },
+    "1": {
+      "0": "Bir Element Patlaması kullanıldığında 6 saniye boyunca 2 saniyede bir <cryo>4,5</cryo> Enerji yenilenir. Bu süre boyunca tüm grup üyeleri 2 saniyede bir <cryo>%4,5</cryo> Can yeniler."
+    },
+    "2": {
+      "0": "Bir Element Patlaması kullanıldığında 6 saniye boyunca 2 saniyede bir <cryo>5</cryo> Enerji yenilenir. Bu süre boyunca tüm grup üyeleri 2 saniyede bir <cryo>%5</cryo> Can yeniler."
+    },
+    "3": {
+      "0": "Bir Element Patlaması kullanıldığında 6 saniye boyunca 2 saniyede bir <cryo>5,5</cryo> Enerji yenilenir. Bu süre boyunca tüm grup üyeleri 2 saniyede bir <cryo>%5,5</cryo> Can yeniler."
+    },
+    "4": {
+      "0": "Bir Element Patlaması kullanıldığında 6 saniye boyunca 2 saniyede bir <cryo>6</cryo> Enerji yenilenir. Bu süre boyunca tüm grup üyeleri 2 saniyede bir <cryo>%6</cryo> Can yeniler."
+    }
+  }
+}

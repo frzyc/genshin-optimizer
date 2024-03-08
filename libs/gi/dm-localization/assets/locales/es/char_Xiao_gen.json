@@ -1,0 +1,162 @@
+{
+  "name": "Xiao",
+  "title": "El Guardián Yaksha",
+  "description": "Un Yaksha y Adeptus que protege Liyue. También llamado el “Gran Cazador de Demonios” o “Guardián Yaksha”.",
+  "constellationName": "Alatus Nemeseos",
+  "auto": {
+    "name": "Impulso de torbellino",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Ataque Normal</strong>",
+        "1": "Realiza hasta 6 ataques rápidos con lanza."
+      },
+      "charged": {
+        "0": "<strong>Ataque Cargado</strong>",
+        "1": "Consume una cierta cantidad de Aguante para atacar alzando su lanza."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Descendente</strong>",
+        "1": "Se lanza desde el aire para golpear el suelo, dañando a los enemigos cercanos e infligiendo Daño en el AdE en el momento del impacto.",
+        "2": "Xiao no recibirá daño al caer con un Ataque Descendente."
+      }
+    },
+    "skillParams": {
+      "0": "Daño de 1er golpe",
+      "1": "Daño de 2.º golpe",
+      "2": "Daño de 3er golpe",
+      "3": "Daño de 4.º golpe",
+      "4": "Daño de 5.º golpe",
+      "5": "Daño de 6.º golpe",
+      "6": "Daño de ATQ Cargado",
+      "7": "Coste de Aguante de ATQ Cargado",
+      "8": "Daño de Caída",
+      "9": "Daño de impacto de caída baja/alta",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Ciclón de viento lemniscático",
+    "description": {
+      "0": "Xiao se lanza hacia adelante e inflige <anemo>Daño Anemo</anemo> a todos los enemigos que se crucen en su camino.",
+      "1": "Puede activarse en el aire y empieza con un total de 2 cargas.",
+      "2": "<br/>",
+      "3": "<i>Cuentan las leyendas de otra tierra que el mundo será aplastado por dos grandes ruedas de viento. El dominio con la lanza de Xiao le permite destrozar a sus enemigos igual que las legendarias ruedas de viento.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "TdE",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Azote de todos los males",
+    "description": {
+      "0": "Xiao se pone la máscara de Yaksha que aterrorizó tanto a los demonios como a los dioses hace miles de años.",
+      "1": "<br/>",
+      "2": "<strong>Máscara de Yaksha</strong>",
+      "3": [
+        "Mejora la capacidad de salto de Xiao.",
+        "Mientras dura la habilidad, aumenta el alcance y el daño de los ataques de Xiao.",
+        "Convierte su daño de ataque en <anemo>Daño Anemo</anemo>. Este cambio elemental no puede sustituirse imbuyéndose de otro elemento."
+      ],
+      "4": "Estar en esta forma consume la Vida de Xiao de manera continua.",
+      "5": "<br/>",
+      "6": "<i>Xiao se pone una máscara y adopta la forma del Guardián Yaksha para aterrorizar a todos los males y eliminar a los monstruos y espíritus del mundo. Sin embargo, un gran poder conlleva un gran dolor. Algunos lo llaman el “Azote de todos los males”.</i>"
+    },
+    "skillParams": {
+      "0": "Aumento de daño de ATQ Normal/Cargado/Descendente",
+      "1": "Pérdida de Vida",
+      "2": "Duración",
+      "3": "TdE",
+      "4": "Energía Elemental",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Conquista del mal: Domademonios",
+    "description": {
+      "0": "Al estar bajo los efectos de <strong>Azote de todos los males</strong>, el daño infligido por Xiao se incrementa en un 5%. Después, su daño continúa aumentando en un 5% cada 3 s hasta el fin de la habilidad.",
+      "1": "Solo se puede alcanzar un 25% de bono de daño máximo."
+    }
+  },
+  "passive2": {
+    "name": "Desintegración: Caída celestial",
+    "description": {
+      "0": "Usar <strong>Ciclón de viento lemniscático</strong> aumenta en un 15% el daño infligido por los siguientes Ciclones de viento lemniscático durante 7 s.",
+      "1": "Este efecto puede acumularse un máximo de 3 veces y, cada vez que se obtenga una nueva carga, la duración de este efecto se reiniciará."
+    }
+  },
+  "passive3": {
+    "name": "Trascendencia: Desafío a la gravedad",
+    "description": {
+      "0": "Disminuye en un 20% el Coste de Aguante al escalar de todos los miembros de tu equipo.",
+      "1": "No se puede acumular con otros talentos pasivos que tengan los mismos efectos."
+    }
+  },
+  "constellation1": {
+    "name": "Desintegración: Destructor de mundos",
+    "description": {
+      "0": "Aumenta en 1 las cargas de <strong>Ciclón de viento lemniscático</strong>."
+    }
+  },
+  "constellation2": {
+    "name": "Aniquilación: Flor de Kaleidos",
+    "description": {
+      "0": "Cuando Xiao está en tu equipo pero no en uso, su Recarga de Energía aumenta en un 25%."
+    }
+  },
+  "constellation3": {
+    "name": "Conquista del mal: Deidad de la ira",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Ciclón de viento lemniscático</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Trascendencia: Fin del sufrimiento",
+    "description": {
+      "0": "Cuando la Vida de Xiao cae por debajo del 50%, obtiene un 100% de Bono de DEF."
+    }
+  },
+  "constellation5": {
+    "name": "Evolución: Origen de la ignorancia",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Azote de todos los males</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Conquista del mal: Guardián Yaksha",
+    "description": {
+      "0": "Mientras Xiao está bajo los efectos de <strong>Azote de todos los males</strong>, golpear a 2 o más enemigos con Ataque Descendente otorga a <strong>Ciclón de viento lemniscático</strong> 1 carga adicional y elimina su TdE durante 1 s."
+    }
+  }
+}

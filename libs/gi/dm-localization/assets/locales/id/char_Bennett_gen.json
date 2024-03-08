@@ -1,0 +1,172 @@
+{
+  "name": "Bennett",
+  "title": "Trial by Fire",
+  "description": "Seorang petualang yang berhati baik, tetapi kerap dihantui oleh nasib yang tidak mujur.",
+  "constellationName": "Rota Calamitas",
+  "auto": {
+    "name": "Strike of Fortune",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Attack</strong>",
+        "1": "Melancarkan hingga 5 serangan berturut-turut."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Mengonsumsi sejumlah Stamina untuk melancarkan dua tebasan pedang."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Menerjang dari udara untuk menghantam tanah, menyerang musuh di jalur terjangan dan mengakibatkan DMG area saat mendarat."
+      }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Tahap 4",
+      "4": "DMG Tahap 5",
+      "5": "DMG Charged Attack",
+      "6": "Konsumsi Stamina Charged Attack",
+      "7": "DMG Selama Plunging",
+      "8": "DMG Plunging Attack Rendah/Tinggi",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Passion Overload",
+    "description": {
+      "0": "Bennett memusatkan seluruh gairah dan impiannya bertualang ke dalam pedang miliknya. Hasilnya berbeda-beda tergantung dari seberapa bersemangatnya dia...",
+      "1": "<br/>",
+      "2": "<strong>Tekan</strong>",
+      "3": "Sebuah ayunan berapi yang cepat, mengakibatkan <pyro>Pyro DMG</pyro>.",
+      "4": "<br/>",
+      "5": "<strong>Tahan (Sesaat)</strong>",
+      "6": "Saat ditahan, menghasilkan efek berbeda saat dilepaskan berdasarkan Level Charge.",
+      "7": [
+        "Charge Tahap 1: Mengayun dua kali, mengakibatkan <pyro>Pyro DMG</pyro> dan menghempas musuh.",
+        "Charge Tahap 2: Mengayunkan pedang 3 kali untuk mengakibatkan <pyro>Pyro DMG</pyro> yang besar, tapi serangan terakhir akan memicu ledakan yang menghempas musuh dan Bennett."
+      ],
+      "8": "Bennett tidak menerima DMG dari hempasan.",
+      "9": "<br/>",
+      "10": "<i>Serangan yang mengombinasikan impian dan gairah Bennett. Tapi gairah terkadang terlalu berlebihan, dan Pyro terkadang meledak.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Tekan",
+      "1": "DMG Charge Tahap 1",
+      "2": "DMG Charge Tahap 2",
+      "3": "DMG Ledakan",
+      "4": "Cooldown",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Fantastic Voyage",
+    "description": {
+      "0": "Bennett melakukan serangan melompat, mengakibatkan <pyro>Pyro DMG</pyro> dan menciptakan sebuah Inspiration Field.",
+      "1": "<br/>",
+      "2": "<strong>Inspiration Field</strong>",
+      "3": [
+        "Jika HP karakter di dalam lingkaran kurang dari 70%, maka HP mereka akan terus pulih. Jumlah pemulihan tergantung dari Max HP Bennett.",
+        "Jika HP karakter di dalam lingkaran di atas 70%, dia akan mendapat Bonus ATK berdasarkan Base ATK Bennett.",
+        "Memberikan <pyro>elemen Pyro</pyro> kepada karakter di dalam Inspiration Field."
+      ],
+      "4": "<br/>",
+      "5": "<i>Regu Petualangan Benny selalu menemui bahaya yang tidak diduga saat bertualang. Bennett selalu berusaha meyakini para anggotanya bahwa itu adalah tanda \"petualangan seru yang penuh tantangan dan kejutan\".</i>"
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "Regenerasi HP/dtk",
+      "2": "Rasio Bonus ATK",
+      "3": "Durasi",
+      "4": "Cooldown",
+      "5": "Konsumsi Energy",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Rekindle",
+    "description": {
+      "0": "Mengurangi 20% CD <strong>Passion Overload</strong>."
+    }
+  },
+  "passive2": {
+    "name": "Fearnaught",
+    "description": {
+      "0": "Saat berada di dalam area <strong>Fantastic Voyage</strong>, <strong>Passion Overload</strong> mempunyai efek berikut:",
+      "1": [
+        "CD berkurang 50%.",
+        "Bennet tidak akan terlempar karena efek Charge Level 2."
+      ]
+    }
+  },
+  "passive3": {
+    "name": "It Should Be Safe...",
+    "description": {
+      "0": "Ketika dikirim untuk melakukan ekspedisi di Mondstadt, waktu yang dibutuhkan berkurang 25%."
+    }
+  },
+  "constellation1": {
+    "name": "Grand Expectation",
+    "description": {
+      "0": "Efek peningkatan ATK dari <strong>Fantastic Voyage</strong> tidak lagi dibatasi HP, dan memiliki 20% ATK lebih besar."
+    }
+  },
+  "constellation2": {
+    "name": "Impasse Conqueror",
+    "description": {
+      "0": "Saat HP Bennett kurang dari 70%, meningkatkan 30% Energy Recharge."
+    }
+  },
+  "constellation3": {
+    "name": "Unstoppable Fervor",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Passion Overload</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Unexpected Odyssey",
+    "description": {
+      "0": "Mendapatkan serangan tambahan dengan menggunakan Normal Attack saat Bennett melakukan serangan kedua dari skill <strong>Passion Overload</strong> Charge Level 1.",
+      "1": "Serangan tambahan menghasilkan 135% dari DMG serangan kedua."
+    }
+  },
+  "constellation5": {
+    "name": "True Explorer",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Fantastic Voyage</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Fire Ventures with Me",
+    "description": {
+      "0": "Memberikan 15% <pyro>Pyro DMG Bonus</pyro> dan <pyro>Pyro Infusion</pyro> pada karakter yang menggunakan Sword, Claymore dan Polearm di dalam radius <strong>Fantastic Voyage</strong>."
+    }
+  }
+}

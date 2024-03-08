@@ -1,0 +1,24 @@
+{
+  "name": "Schwert der Dämmerung",
+  "description": {
+    "0": "Ein wertvolles Schwert, das einst wie die Sonne glänzte. Hält man es in der Hand, fühlt man sich überaus selbstbewusst. Das leuchtende Material hat sich mit der Zeit abgenutzt."
+  },
+  "passiveName": "Ansporn",
+  "passiveDescription": {
+    "0": {
+      "0": "Erhöht die KT bei mehr als 90 % LP um <cryo>14 %</cryo>."
+    },
+    "1": {
+      "0": "Erhöht die KT bei mehr als 90 % LP um <cryo>17.5 %</cryo>."
+    },
+    "2": {
+      "0": "Erhöht die KT bei mehr als 90 % LP um <cryo>21 %</cryo>."
+    },
+    "3": {
+      "0": "Erhöht die KT bei mehr als 90 % LP um <cryo>24.5 %</cryo>."
+    },
+    "4": {
+      "0": "Erhöht die KT bei mehr als 90 % LP um <cryo>28 %</cryo>."
+    }
+  }
+}

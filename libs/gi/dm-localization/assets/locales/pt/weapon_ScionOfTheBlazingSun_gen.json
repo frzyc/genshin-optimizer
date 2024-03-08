@@ -1,0 +1,24 @@
+{
+  "name": "Herdeiro do Sol",
+  "description": {
+    "0": "Um Arco Longo antigo que é um vestígio da era antiga do Rei Deshret. Um texto antigo indecifrável e padrões solenes foram entalhados nele."
+  },
+  "passiveName": "Caminho do Fogo Solar",
+  "passiveDescription": {
+    "0": {
+      "0": "Quando um Ataque Carregado atinge um inimigo, fará cair uma Flecha Solar no inimigo atingido, causando Dano equivalente a <cryo>60%</cryo> do ATQ, e aplicando o efeito \"Coração Flamejante\" no inimigo atingido pela Flecha Solar por 10s. Aumenta o Dano causado pelo personagem que está com essa arma equipada contra inimigos afetados por \"Coração Flamejante\" em <cryo>28%</cryo>. A Flecha Solar pode ser desencadeada uma vez a cada 10s."
+    },
+    "1": {
+      "0": "Quando um Ataque Carregado atinge um inimigo, fará cair uma Flecha Solar no inimigo atingido, causando Dano equivalente a <cryo>75%</cryo> do ATQ, e aplicando o efeito \"Coração Flamejante\" no inimigo atingido pela Flecha Solar por 10s. Aumenta o Dano causado pelo personagem que está com essa arma equipada contra inimigos afetados por \"Coração Flamejante\" em <cryo>35%</cryo>. A Flecha Solar pode ser desencadeada uma vez a cada 10s."
+    },
+    "2": {
+      "0": "Quando um Ataque Carregado atinge um inimigo, fará cair uma Flecha Solar no inimigo atingido, causando Dano equivalente a <cryo>90%</cryo> do ATQ, e aplicando o efeito \"Coração Flamejante\" no inimigo atingido pela Flecha Solar por 10s. Aumenta o Dano causado pelo personagem que está com essa arma equipada contra inimigos afetados por \"Coração Flamejante\" em <cryo>42%</cryo>. A Flecha Solar pode ser desencadeada uma vez a cada 10s."
+    },
+    "3": {
+      "0": "Quando um Ataque Carregado atinge um inimigo, fará cair uma Flecha Solar no inimigo atingido, causando Dano equivalente a <cryo>105%</cryo> do ATQ, e aplicando o efeito \"Coração Flamejante\" no inimigo atingido pela Flecha Solar por 10s. Aumenta o Dano causado pelo personagem que está com essa arma equipada contra inimigos afetados por \"Coração Flamejante\" em <cryo>49%</cryo>. A Flecha Solar pode ser desencadeada uma vez a cada 10s."
+    },
+    "4": {
+      "0": "Quando um Ataque Carregado atinge um inimigo, fará cair uma Flecha Solar no inimigo atingido, causando Dano equivalente a <cryo>120%</cryo> do ATQ, e aplicando o efeito \"Coração Flamejante\" no inimigo atingido pela Flecha Solar por 10s. Aumenta o Dano causado pelo personagem que está com essa arma equipada contra inimigos afetados por \"Coração Flamejante\" em <cryo>56%</cryo>. A Flecha Solar pode ser desencadeada uma vez a cada 10s."
+    }
+  }
+}

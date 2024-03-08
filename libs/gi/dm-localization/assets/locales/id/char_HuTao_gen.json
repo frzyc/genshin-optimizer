@@ -1,0 +1,170 @@
+{
+  "name": "Hu Tao",
+  "title": "Fragrance in Thaw",
+  "description": "Master ke-77 Wangsheng Funeral Parlor. Dia mengambil alih bisnis ini di umur yang cukup muda.",
+  "constellationName": "Papilio Charontis",
+  "auto": {
+    "name": "Secret Spear of Wangsheng",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Attack</strong>",
+        "1": "Melancarkan hingga 6 serangan berturut-turut."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Mengonsumsi sejumlah Stamina untuk menerjang ke depan, mengakibatkan DMG pada musuh di jalur terjangan."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Menerjang dari udara untuk menghantam tanah, mengakibatkan DMG pada musuh di jalur terjangan dan mengakibatkan DMG area saat mendarat."
+      }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Tahap 4",
+      "4": "DMG Tahap 5",
+      "5": "DMG Tahap 6",
+      "6": "DMG Charged Attack",
+      "7": "Konsumsi Stamina Charged Attack",
+      "8": "DMG Selama Plunging",
+      "9": "DMG Plunging Attack Rendah/Tinggi",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Guide to Afterlife",
+    "description": {
+      "0": "Hanya kobaran api tak terpadamkan yang dapat memurnikan dunia.",
+      "1": "Hu Tao mengonsumsi sejumlah HP untuk menyerang dan menghempas musuh di sekitar, kemudian masuk ke dalam kondisi Paramita Papilio.",
+      "2": "<br/>",
+      "3": "<strong>Paramita Papilio</strong>",
+      "4": [
+        "Kondisi ini meningkatkan ATK Hu Tao berdasarkan Max HP. Tambahan bonus ATK tidak dapat melebihi 400% Base ATK Hu Tao.",
+        "Mengonversi DMG serangan menjadi <pyro>Pyro DMG</pyro>, konversi ini tidak dapat ditimpa oleh Elemental Infusion lainnya.",
+        "Musuh yang terkena Charged Attack akan terkena efek Blood Blossom.",
+        "Meningkatkan ketahanan Hu Tao terhadap interupsi."
+      ],
+      "5": "<br/>",
+      "6": "<strong>Blood Blossom</strong>",
+      "7": "Musuh yang terkena efek Blood Blossom akan menerima <pyro>Pyro DMG</pyro> setiap 4 detik. DMG yang diakibatkan akan dihitung sebagai Elemental Skill DMG.",
+      "8": "Setiap musuh hanya dapat dipengaruhi oleh satu efek Blood Blossom dalam satu waktu, dan durasi waktunya hanya bisa diperbarui oleh Hu Tao sendiri.",
+      "9": "<br/>",
+      "10": "<strong>Paramita Papilio</strong> berhenti saat durasi waktunya berakhir, atau saat Hu Tao telah meninggalkan medan pertempuran/gugur.",
+      "11": "<br/>",
+      "12": "<i>Jurus tombak rahasia Hu Tao didasari oleh beberapa aturan. Yang pertama: \"Tombak membuka jalan menuju akhirat, dan kupu-kupu menjembatani dunia sekarang dan dunia berikutnya.\"</i>"
+    },
+    "skillParams": {
+      "0": "Mengonsumsi",
+      "1": "ATK Meningkat",
+      "2": "DMG Blood Blossom",
+      "3": "Durasi Blood Blossom",
+      "4": "Durasi",
+      "5": "Cooldown",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Spirit Soother",
+    "description": {
+      "0": "Memerintahkan roh yang membara untuk menyerang dan mengakibatkan <pyro>Pyro DMG</pyro> pada area yang besar.",
+      "1": "Saat memukul musuh, akan memulihkan HP berdasarkan persentase Max HP Hu Tao. Efek ini dapat terpicu ke 5 musuh berbeda.",
+      "2": "Jika HP Hu Tao sama dengan atau kurang dari 50% saat skill ini mengenai musuh, maka DMG dan pemulihan HP akan meningkat.",
+      "3": "<br/>",
+      "4": "<i>Aktivitas supernatural dari roh-roh gentayangan adalah kecemasan terbesar Wangsheng Funeral Parlor. Tetapi mengadakan kremasi selalu bisa meredakan kecemasan Hu Tao, dan semakin cemas Hu Tao, semakin kuat juga api kremasi yang dia gunakan.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "DMG Skill HP Rendah",
+      "2": "Pemulihan HP",
+      "3": "Pemulihan HP Saat HP Rendah",
+      "4": "Cooldown",
+      "5": "Konsumsi Energy",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Flutter By",
+    "description": {
+      "0": "Saat kondisi <strong>Paramita Papilio</strong> yang diaktifkan oleh <strong>Guide to Afterlife</strong> telah berakhir, akan meningkatkan 12% CRIT Rate seluruh anggota party (tidak termasuk Hu Tao sendiri) selama 8 detik."
+    }
+  },
+  "passive2": {
+    "name": "Sanguine Rouge",
+    "description": {
+      "0": "Saat HP Hu Tao kurang dari atau sama dengan 50%, maka Hu Tao akan memperoleh 33% <pyro>Pyro DMG Bonus</pyro>."
+    }
+  },
+  "passive3": {
+    "name": "The More the Merrier",
+    "description": {
+      "0": "Saat Hu Tao memasak makanan dengan sempurna, terdapat 18% kemungkinan mendapatkan hasil tambahan makanan \"Suspicious\" dari jenis makanan yang sama."
+    }
+  },
+  "constellation1": {
+    "name": "Crimson Bouquet",
+    "description": {
+      "0": "Saat kondisi <strong>Paramita Papilio</strong> diaktifkan oleh <strong>Guide to Afterlife</strong>, Charge Attack Hu Tao tidak akan mengonsumsi Stamina."
+    }
+  },
+  "constellation2": {
+    "name": "Ominous Rainfall",
+    "description": {
+      "0": "Meningkatkan DMG <strong>Blood Blossom</strong> sebesar 10% Max HP Hu Tao ketika efek diterapkan.",
+      "1": "Selain itu, <strong>Spirit Soother</strong> juga menyebabkan efek <strong>Blood Blossom</strong> saat mengenai musuh."
+    }
+  },
+  "constellation3": {
+    "name": "Lingering Carmine",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Guide to Afterlife</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Garden of Eternal Rest",
+    "description": {
+      "0": "Saat musuh yang terkena efek <strong>Blood Blossom</strong> yang disebabkan oleh Hu Tao sendiri dikalahkan, akan meningkatkan 12% CRIT Rate seluruh anggota party yang ada di sekitar (tidak termasuk Hu Tao sendiri) selama 15 detik."
+    }
+  },
+  "constellation5": {
+    "name": "Floral Incense",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Spirit Soother</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Butterfly's Embrace",
+    "description": {
+      "0": "Efek ini akan terpicu saat HP Hu Tao berada di bawah 25% atau terkena serangan mematikan:",
+      "1": "Hu Tao tidak akan gugur saat terkena serangan tersebut. Selama 10 detik ke depan, meningkatkan 200% Elemental dan Physical RES, meningkatkan 100% CRIT Rate dan meningkatkan ketahanan Hu Tao terhadap interupsi secara signifikan.",
+      "2": "Efek ini akan terpicu otomatis saat HP Hu Tao tersisa 1.",
+      "3": "Hanya dapat terpicu setiap 60 detik."
+    }
+  }
+}

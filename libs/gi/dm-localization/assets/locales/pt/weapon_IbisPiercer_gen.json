@@ -1,0 +1,24 @@
+{
+  "name": "Bico de Íbis",
+  "description": {
+    "0": "Um arco dourado forjado a partir da descrição de uma história. Se você usá-lo como uma arma comum, também pode pensar nele como parte de um mundo fictício extraído de suas páginas."
+  },
+  "passiveName": "Favor da Sabedoria Secreta",
+  "passiveDescription": {
+    "0": {
+      "0": "Nos 6s após um Ataque Carregado atingir um inimigo, aumenta a Proficiência Elemental do personagem em <cryo>40</cryo>. Esse efeito pode ser acumulado até 2 vezes e desencadeado uma vez a cada 0.5s."
+    },
+    "1": {
+      "0": "Nos 6s após um Ataque Carregado atingir um inimigo, aumenta a Proficiência Elemental do personagem em <cryo>50</cryo>. Esse efeito pode ser acumulado até 2 vezes e desencadeado uma vez a cada 0.5s."
+    },
+    "2": {
+      "0": "Nos 6s após um Ataque Carregado atingir um inimigo, aumenta a Proficiência Elemental do personagem em <cryo>60</cryo>. Esse efeito pode ser acumulado até 2 vezes e desencadeado uma vez a cada 0.5s."
+    },
+    "3": {
+      "0": "Nos 6s após um Ataque Carregado atingir um inimigo, aumenta a Proficiência Elemental do personagem em <cryo>70</cryo>. Esse efeito pode ser acumulado até 2 vezes e desencadeado uma vez a cada 0.5s."
+    },
+    "4": {
+      "0": "Nos 6s após um Ataque Carregado atingir um inimigo, aumenta a Proficiência Elemental do personagem em <cryo>80</cryo>. Esse efeito pode ser acumulado até 2 vezes e desencadeado uma vez a cada 0.5s."
+    }
+  }
+}

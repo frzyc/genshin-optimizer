@@ -1,0 +1,24 @@
+{
+  "name": "Fluencia Impoluta",
+  "description": {
+    "0": "Un compendio de aspecto muy peculiar que recoge todos los guiones escritos por Coppélius."
+  },
+  "passiveName": "Obra maestra inacabada",
+  "passiveDescription": {
+    "0": {
+      "0": "Al usar la Habilidad Elemental, se obtiene un Bono de Daño Elemental del <cryo>8%</cryo> para todos los elementos durante 15 s, y otorga al personaje un “pacto vital” del 24% de su Vida Máx. Este efecto solo puede activarse una vez cada 10 s. Cuando el pacto vital se elimina, otorga un Bono de Daño Elemental del <cryo>2%</cryo> a todos los elementos por cada 1000 pts. de Vida consumidos de dicho pacto. Como máximo, de esta manera se puede obtener un <cryo>12%</cryo> de Bono de Daño Elemental para todos los elementos durante 15 s."
+    },
+    "1": {
+      "0": "Al usar la Habilidad Elemental, se obtiene un Bono de Daño Elemental del <cryo>10%</cryo> para todos los elementos durante 15 s, y otorga al personaje un “pacto vital” del 24% de su Vida Máx. Este efecto solo puede activarse una vez cada 10 s. Cuando el pacto vital se elimina, otorga un Bono de Daño Elemental del <cryo>2%</cryo> a todos los elementos por cada 1000 pts. de Vida consumidos de dicho pacto. Como máximo, de esta manera se puede obtener un <cryo>12%</cryo> de Bono de Daño Elemental para todos los elementos durante 15 s."
+    },
+    "2": {
+      "0": "Al usar la Habilidad Elemental, se obtiene un Bono de Daño Elemental del <cryo>12%</cryo> para todos los elementos durante 15 s, y otorga al personaje un “pacto vital” del 24% de su Vida Máx. Este efecto solo puede activarse una vez cada 10 s. Cuando el pacto vital se elimina, otorga un Bono de Daño Elemental del <cryo>3%</cryo> a todos los elementos por cada 1000 pts. de Vida consumidos de dicho pacto. Como máximo, de esta manera se puede obtener un <cryo>18%</cryo> de Bono de Daño Elemental para todos los elementos durante 15 s."
+    },
+    "3": {
+      "0": "Al usar la Habilidad Elemental, se obtiene un Bono de Daño Elemental del <cryo>14%</cryo> para todos los elementos durante 15 s, y otorga al personaje un “pacto vital” del 24% de su Vida Máx. Este efecto solo puede activarse una vez cada 10 s. Cuando el pacto vital se elimina, otorga un Bono de Daño Elemental del <cryo>3.5%</cryo> a todos los elementos por cada 1000 pts. de Vida consumidos de dicho pacto. Como máximo, de esta manera se puede obtener un <cryo>21%</cryo> de Bono de Daño Elemental para todos los elementos durante 15 s."
+    },
+    "4": {
+      "0": "Al usar la Habilidad Elemental, se obtiene un Bono de Daño Elemental del <cryo>16%</cryo> para todos los elementos durante 15 s, y otorga al personaje un “pacto vital” del 24% de su Vida Máx. Este efecto solo puede activarse una vez cada 10 s. Cuando el pacto vital se elimina, otorga un Bono de Daño Elemental del <cryo>4%</cryo> a todos los elementos por cada 1000 pts. de Vida consumidos de dicho pacto. Como máximo, de esta manera se puede obtener un <cryo>24%</cryo> de Bono de Daño Elemental para todos los elementos durante 15 s."
+    }
+  }
+}

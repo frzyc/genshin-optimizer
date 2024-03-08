@@ -1,0 +1,24 @@
+{
+  "name": "Prototype Starglitter",
+  "description": {
+    "0": "Sebuah glaive yang ditemukan di Blackcliff Forge. Kilatan cahaya di ujungnya yang tajam bagaikan bintang di malam hari."
+  },
+  "passiveName": "Magic Eater",
+  "passiveDescription": {
+    "0": {
+      "0": "Setelah melancarkan Elemental Skill, meningkatkan <cryo>8%</cryo> Normal dan Charged Attack selama 12 detik. Efek ini dapat ditumpuk maksimum 2 lapis."
+    },
+    "1": {
+      "0": "Setelah melancarkan Elemental Skill, meningkatkan <cryo>10%</cryo> Normal dan Charged Attack selama 12 detik. Efek ini dapat ditumpuk maksimum 2 lapis."
+    },
+    "2": {
+      "0": "Setelah melancarkan Elemental Skill, meningkatkan <cryo>12%</cryo> Normal dan Charged Attack selama 12 detik. Maksimum 2 lapis."
+    },
+    "3": {
+      "0": "Setelah melancarkan Elemental Skill, meningkatkan <cryo>14%</cryo> Normal dan Charged Attack selama 12 detik. Maksimum 2 lapis."
+    },
+    "4": {
+      "0": "Setelah melancarkan Elemental Skill, meningkatkan <cryo>16%</cryo> Normal dan Charged Attack selama 12 detik. Maksimum 2 lapis."
+    }
+  }
+}

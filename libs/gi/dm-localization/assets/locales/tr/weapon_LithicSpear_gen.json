@@ -1,0 +1,24 @@
+{
+  "name": "Taş Mızrak",
+  "description": {
+    "0": "Guyun Taş Ormanı kayalarından yapılan bir mızrak. Sağlamlık konusunda eşi benzeri yok."
+  },
+  "passiveName": "Taş Rehber: Birlik",
+  "passiveDescription": {
+    "0": {
+      "0": "Bu silahı kuşanan karakter, grupta bulunan Liyueli her karakter için <cryo>%7</cryo> Saldırı artışı ve <cryo>%3</cryo> Kritik Oranı artışı kazanır. Bu etki 4 kademeye kadar birikir."
+    },
+    "1": {
+      "0": "Bu silahı kuşanan karakter, grupta bulunan Liyueli her karakter için <cryo>%8</cryo> Saldırı artışı ve <cryo>%4</cryo> Kritik Oranı artışı kazanır. Bu etki 4 kademeye kadar birikir."
+    },
+    "2": {
+      "0": "Bu silahı kuşanan karakter, grupta bulunan Liyueli her karakter için <cryo>%9</cryo> Saldırı artışı ve <cryo>%5</cryo> Kritik Oranı artışı kazanır. Bu etki 4 kademeye kadar birikir."
+    },
+    "3": {
+      "0": "Bu silahı kuşanan karakter, grupta bulunan Liyueli her karakter için <cryo>%10</cryo> Saldırı artışı ve <cryo>%6</cryo> Kritik Oranı artışı kazanır. Bu etki 4 kademeye kadar birikir."
+    },
+    "4": {
+      "0": "Bu silahı kuşanan karakter, grupta bulunan Liyueli her karakter için <cryo>%11</cryo> Saldırı artışı ve <cryo>%7</cryo> Kritik Oranı artışı kazanır. Bu etki 4 kademeye kadar birikir."
+    }
+  }
+}

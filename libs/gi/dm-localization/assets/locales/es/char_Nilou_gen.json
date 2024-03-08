@@ -1,0 +1,170 @@
+{
+  "name": "Nilou",
+  "title": "La Bailarina de los Lotos",
+  "description": "La famosa bailarina del Teatro Zubayr. Su estilo de danza es elegante y agraciado, y posee un carácter puro y bondadoso.",
+  "constellationName": "Lotos Somno",
+  "auto": {
+    "name": "Danza de la media luna",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Ataque Normal</strong>",
+        "1": "Realiza hasta 3 ataques consecutivos con espada."
+      },
+      "charged": {
+        "0": "<strong>Ataque Cargado</strong>",
+        "1": "Consume una cierta cantidad de Aguante para ejecutar un golpe giratorio."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Descendiente</strong>",
+        "1": "Se lanza desde el aire para golpear el suelo, dañando a los enemigos cercanos e infligiendo Daño en el AdE en el momento del impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Daño de 1er golpe",
+      "1": "Daño de 2.º golpe",
+      "2": "Daño de 3er golpe",
+      "3": "Daño de ATQ Cargado",
+      "4": "Coste de Aguante de ATQ Cargado",
+      "5": "Daño de Caída",
+      "6": "Daño de impacto de caída baja/alta",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Danza de los siete reinos",
+    "description": {
+      "0": "Nilou entra en el estado de “pirueta” e inflige <hydro>Daño Hydro</hydro> contra los enemigos cercanos en función de su Vida Máx.",
+      "1": "Además, cuando Nilou ejecuta un Ataque Normal o una Habilidad Elemental mientras está en este estado, entra respectivamente en los estados de “danza de espadas” y “danza espiral”, con los que inflige un <hydro>Daño Hydro</hydro> que no puede sustituirse imbuyéndose de otro elemento y que se considera daño de Habilidad Elemental.",
+      "2": "<br/>",
+      "3": "Mientras estos estados estén activos, el tercer paso de baile de Nilou anulará el estado de pirueta y dará lugar a varios efectos distintos dependiendo del tipo del tercer paso de baile:",
+      "4": [
+        "Danza de espadas: libera una luna de agua que inflige <hydro>Daño Hydro</hydro> contra los enemigos con los que colisiona y hace que Nilou entre en el estado de “rezo de la luna”. Los Ataques Normales que ejecute en este estado se convertirán en danza de espadas, y el último golpe liberará una luna de agua.",
+        "Danza espiral: libera una rueda de agua purificadora que inflige <hydro>Daño Hydro en el AdE</hydro> y crea un aura de quietud que sigue a tu personaje en uso y que aplica continuamente sobre él el estado de <hydro>Mojado</hydro>."
+      ],
+      "5": "<br/>",
+      "6": "En los estados de pirueta y rezo lunar, Nilou no puede ejecutar Ataques Cargados. Dichos estados se anulan si es retirada de combate.",
+      "7": "<br/>",
+      "8": "<i>Cuando sus delicados pies tocan suavemente el agua, crea unas ondulaciones tan resplandecientes como los siete cielos.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "Daño de 1er golpe de danza de espadas/danza espiral",
+      "2": "Daño de 2.º golpe de danza de espadas/danza espiral",
+      "3": "Daño de luna de agua/rueda de agua",
+      "4": "Duración de pirueta",
+      "5": "Duración de rezo de la luna",
+      "6": "Duración de aura de quietud",
+      "7": "TdE",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Danza del loto: Manantial onírico",
+    "description": {
+      "0": "Interpreta la danza del manantial onírico y hace que florezca un loto de aguas lejanas para infligir <hydro>Daño Hydro en el AdE</hydro> en función de la Vida Máx. de Nilou y aplicar el estado de “eón perpetuo” sobre los enemigos golpeados.",
+      "1": "Tras un breve lapso de tiempo, los enemigos afectados por el estado de eón perpetuo reciben <hydro>Daño Hydro</hydro>.",
+      "2": "<br/>",
+      "3": "<i>Nunca hemos visto ese sueño lejano con nuestros propios ojos, pero esta danza puede recrearlo.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "Daño de eón perpetuo",
+      "2": "TdE",
+      "3": "Energía Elemental",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Corte de los pétalos danzantes",
+    "description": {
+      "0": "Si el equipo está formado únicamente por personajes <dendro>Dendro</dendro> o <hydro>Hydro</hydro> y hay al menos un personaje Dendro y uno Hydro en él, cuando Nilou completa el tercer paso de baile de <strong>Danza de los siete reinos</strong>, otorga a los personajes cercanos el estado de “cáliz de la abundancia” durante 30 s.",
+      "1": "Cuando un personaje bajo el estado de cáliz de la abundancia recibe un <dendro>ataque Dendro</dendro>, la Maestría Elemental de todos los personajes cercanos aumenta en 100 pts. durante 10 s. Además, al causar una reacción de Florecimiento, se crearán núcleos feraces en lugar de núcleos Dendro.",
+      "2": "A diferencia de estos últimos, los núcleos feraces explotan rápidamente tras ser creados y tienen una mayor AdE.",
+      "3": "Sin embargo, estos núcleos no pueden activar las reacciones de Sobreflorecimiento y Crepitar y comparten la misma limitación de cantidad que los núcleos Dendro. Los ataques de los núcleos feraces se consideran ataques de núcleos Dendro causados por la reacción de Florecimiento.",
+      "4": "Cuando el equipo no cumple con los requisitos de los tipos elementales necesarios para este talento pasivo, se eliminarán los efectos de cáliz de la abundancia existentes."
+    }
+  },
+  "passive2": {
+    "name": "Sueño de la danza eónica",
+    "description": {
+      "0": "Por cada 1000 pts. de Vida Máx. que Nilou tenga una vez superados los 30 000 pts. de Vida Máx., el daño de los núcleos feraces creados por los personajes en el estado de cáliz de la abundancia aumenta en un 9%.",
+      "1": "El daño infligido con los núcleos feraces solo puede aumentar un máximo del 400% de esta manera."
+    }
+  },
+  "passive3": {
+    "name": "Loto de jade blanco",
+    "description": {
+      "0": "Al lograr un “Perfecto” en un plato con efectos de ayuda a la aventura, hay una probabilidad del 12% de obtener el doble."
+    }
+  },
+  "constellation1": {
+    "name": "Danza de la luna menguante",
+    "description": {
+      "0": "<strong>Danza de los siete reinos</strong> obtiene los siguientes fortalecimientos:",
+      "1": [
+        "Aumenta en un 65% el daño infligido con la luna de agua.",
+        "Aumenta en 6 s la duración del aura de quietud."
+      ]
+    }
+  },
+  "constellation2": {
+    "name": "Lluvia florestelar",
+    "description": {
+      "0": "Cuando un personaje en el estado de cáliz de la abundancia inflige <hydro>Daño Hydro</hydro> contra un enemigo, la <hydro>RES Hydro</hydro> de dicho enemigo se reduce en un 35% durante 10 s. Además, tras infligir daño contra un enemigo con una reacción de Florecimiento, la <dendro>RES Dendro</dendro> de dicho enemigo también se reduce en un 35% durante 10 s.",
+      "1": "Es necesario desbloquear el talento pasivo “Corte de los pétalos danzantes”."
+    }
+  },
+  "constellation3": {
+    "name": "Loto embelesador",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Danza del loto: Manantial onírico</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Sonido ondulante",
+    "description": {
+      "0": "Al golpear a un enemigo con el tercer paso de baile del estado de pirueta de <strong>Danza de los siete reinos</strong>, Nilou recupera 15 pts. de Energía Elemental, y el daño de <strong>Danza del loto: Manantial onírico</strong> aumenta en un 50% durante 8 s."
+    }
+  },
+  "constellation5": {
+    "name": "Pirueta luminosa",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Danza de los siete reinos</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Canción rompescarcha",
+    "description": {
+      "0": "Por cada 1000 pts. de Vida Máx. que tenga Nilou, su Prob. CRIT aumenta en un 0.6% y su Daño CRIT aumenta en un 1.2%.",
+      "1": "El aumento máximo que se puede conseguir de esta manera es del 30% para la Prob. CRIT y del 60% para el Daño CRIT."
+    }
+  }
+}

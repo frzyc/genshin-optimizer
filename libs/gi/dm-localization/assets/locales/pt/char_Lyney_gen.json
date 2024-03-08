@@ -1,0 +1,182 @@
+{
+  "name": "Lyney",
+  "title": "Espetáculo Fantasmagórico",
+  "description": "Um mágico astuto e habilidoso de Fontaine que sempre conquista o público com seus truques engenhosos e sua eloquência.",
+  "constellationName": "Felis Fuscus",
+  "auto": {
+    "name": "Translocação de Carta Forçada",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Ataque Normal</strong>",
+        "1": "Realiza até 4 disparos consecutivos com seu arco."
+      },
+      "charged": {
+        "0": "<strong>Ataque Carregado</strong>",
+        "1": "Realiza um <strong>Disparo com Mira</strong> mais preciso e que causa mais Dano.",
+        "2": "Ao mirar, o poder das chamas se condensará na ponta da flecha, sendo liberado ao dispará-la. Gerará efeitos diferentes de acordo com o tempo de carregamento:",
+        "3": [
+          " Carga Nv.1: dispara uma flecha imbuída de Pyro, causando <pyro>Dano Pyro</pyro>.",
+          " Carga Nv.2: dispara uma Flecha da Magia Secreta que causa <pyro>Dano Pyro</pyro> e, ao atingir um inimigo, invoca um Chapéu do Gato Brincalhão."
+        ],
+        "4": "Ao disparar a Flecha da Magia Secreta, se a Vida de Lyney for maior que 60%, consumirá uma parte dela e obterá um acúmulo de Resquício Mágico, esse efeito pode ser acumulado até 5 vezes, e será cancelado após 30s fora da batalha.",
+        "5": "É possível reduzir a Vida de Lyney até 60% dessa forma."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Imersivo</strong>",
+        "1": "Dispara uma chuva de flechas no ar e cai rapidamente na direção do chão, causando Dano em AdE durante a queda."
+      },
+      "grinMalkin": {
+        "0": "<strong>Chapéu do Gato Brincalhão</strong>",
+        "1": [
+          " Ridiculariza os inimigos próximos, atraindo seus ataques. Cada inimigo só pode ser provocado pelo Chapéu do Gato Brincalhão uma vez a cada 5s.",
+          " Sua durabilidade é proporcional a Vida Máxima de Lyney.",
+          " Ao ser destruído ou quando sua duração acabar, disparará <strong>Fogos de Artifício Mágicos</strong> contra os inimigos ao redor, causando <pyro>Dano Pyro</pyro>."
+        ],
+        "2": "Só é possível existir 1 Chapéu do Gato Brincalhão ao mesmo tempo."
+      },
+      "arkhe": {
+        "0": "<strong>Arkhe: Pneuma</strong>",
+        "1": "Periodicamente, na posição que a Flecha da Magia Secreta atingir, fará cair um Espinho Espiritual que causará <pyro>Dano Pyro</pyro> com Pneuma."
+      }
+    },
+    "skillParams": {
+      "0": "Dano do 1° Golpe",
+      "1": "Dano do 2° Golpe",
+      "2": "Dano do 3° Golpe",
+      "3": "Dano do 4° Golpe",
+      "4": "Dano Durante a Queda",
+      "5": "Dano de Queda de Baixa/Alta Altitude",
+      "6": "Disparo com Mira",
+      "7": "Disparo Carregado com Mira Nv.1",
+      "8": "Dano da Flecha da Magia Secreta",
+      "9": "Consumo de Vida",
+      "10": "Vida do Chapéu do Gato Brincalhão",
+      "11": "Duração de Chapéu do Gato Brincalhão",
+      "12": "Dano dos Fogos de Artifício Mágicos",
+      "13": "Dano do Espinho Espiritual",
+      "14": "Intervalo do Espinho Espiritual",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Luzes Chocantes",
+    "description": {
+      "0": "Lyney brande seu chapéu, explodindo fogos de artifício.",
+      "1": "Quando é lançado, eliminará os \"Resquícios Mágicos\" possuídos, causando <pyro>Dano Pyro em AdE</pyro> contra os inimigos em sua frente. Aumentará o Dano de acordo com o número de acúmulos consumidos, e regenerará Vida para Lyney baseado em sua própria Vida Máxima.",
+      "2": "<br/>",
+      "3": "Quando existir um Chapéu do Gato Brincalhão criado por Lyney ativo no campo de batalha, os fogos de artíficio o farão explodir, causando <pyro>Dano Pyro em AdE</pyro> equivalente ao Dano dos Fogos de Artifício Mágicos.",
+      "4": "O Dano causado pela explosão dos Chapéus do Gato Brincalhão dessa forma é considerado Dano de Ataque Carregado.",
+      "5": "<br/>",
+      "6": "<i>\"Todos sabem que os mágicos intencionalmente enganarão sua audiência... Ah, sim, enquanto você estava olhando na minha direção, o chapéu e o assistente desapareceram... Fascinante, não acha?\"</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Habilidade",
+      "1": "Bônus de Dano da Habilidade",
+      "2": "Regeneração de Vida",
+      "3": "Tempo de Recarga",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Truque Maravilhoso: Tour Fantástica",
+    "description": {
+      "0": "Lyney lança sua magia, se transformando em um Gato Brincalhão de Chapéu (Não é o Chapéu do Gato Brincalhão, são itens de apresentação diferentes!).",
+      "1": "Quando o Gato Brincalhão de Chapéu toca um inimigo, fará chamas caírem nele, causando <pyro>Dano Pyro</pyro> uma vez por inimigo. Quando a duração acabar, Lyney removerá o Gato Brincalhão de Chapéu e lançará fogos de artifício que causarão <pyro>Dano Pyro em AdE</pyro>, invocará um Chapéu do Gato Brincalhão e obterá um acúmulo de \"Resquício Mágico\".",
+      "2": "<br/>",
+      "3": "É possível remover o Gato Brincalhão de Chapéu manualmente.",
+      "4": "<br/>",
+      "5": "<i>\"Veja bem, esse é um momento de milagres, e pertence só a nós dois!\"</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Habilidade",
+      "1": "Dano do Fogos de Artifício Explosivos",
+      "2": "Duração",
+      "3": "Tempo de Recarga",
+      "4": "Energia Elemental",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Apresentação Perigosa",
+    "description": {
+      "0": "Se Lyney consumir Vida ao disparar a <strong>Flecha da Magia Secreta</strong>, quando o Chapéu do Gato Brincalhão invocado por essa Flecha da Magia Secreta atingir um inimigo, regenerará 3 de Energia Elemental para Lyney, e aumentará seu Dano causado em 80% do ATQ."
+    }
+  },
+  "passive2": {
+    "name": "Aplausos Deslumbrados!",
+    "description": {
+      "0": "Aumenta o Dano causado por Lyney contra inimigos afetados por <pyro>Pyro</pyro>. Aumentará da seguinte forma:",
+      "1": [
+        " Dano base aumenta em 60%.",
+        " Aumenta o Dano em 20% para cada personagem na equipe além de Lyney de Tipo Elemental <pyro>Pyro</pyro>."
+      ],
+      "2": "Lyney pode ganhar um total de 100% de Aumento de Dano contra inimigos afetados por <pyro>Pyro</pyro> dessa forma."
+    }
+  },
+  "passive3": {
+    "name": "Observação Trivial",
+    "description": {
+      "0": "Mostra a localização de <strong>Especialidades de Fontaine</strong> próximas no mapa."
+    }
+  },
+  "constellation1": {
+    "name": "Truque Aéreo",
+    "description": {
+      "0": "Você pode ter até 2 <strong>Chapéus do Gato Brincalhão</strong> ao mesmo tempo.",
+      "1": "Além disso, quando a Flecha da Magia Secreta atingir um inimigo, invocará 2 Chapéus do Gato Brincalhão, e obterá um acúmulo extra de \"Resquício Mágico\". Esse efeito pode ser desencadeado uma vez a cada 15s."
+    }
+  },
+  "constellation2": {
+    "name": "Truque Atrativo",
+    "description": {
+      "0": "Quando Lyney está no campo de batalha, a cada 2s obterá um acúmulo do efeito \"Foco Atento\", aumentando o Dano CRIT de Lyney em 20%. Esse efeito pode acumular até 3 vezes, e será removido quando Lyney sair do campo de batalha."
+    }
+  },
+  "constellation3": {
+    "name": "Mímica Genial",
+    "description": {
+      "0": "Aumenta o nível do <strong>Ataque Normal: Translocação de Carta Forçada</strong> em 3.",
+      "1": "O nível máximo de elevação é 15."
+    }
+  },
+  "constellation4": {
+    "name": "Estratégia Ensaiada",
+    "description": {
+      "0": "Quando um Ataque Carregado de Tipo Elemental <pyro>Pyro</pyro> de Lyney atinge um inimigo, esse inimigo terá sua <pyro>RES Pyro</pyro> reduzida em 20% por 6s."
+    }
+  },
+  "constellation5": {
+    "name": "Magia Escondida",
+    "description": {
+      "0": "Aumenta o nível de <strong>Truque Maravilhoso: Tour Fantástica</strong> em 3.",
+      "1": "O nível máximo de elevação é 15."
+    }
+  },
+  "constellation6": {
+    "name": "Sorriso Contrário",
+    "description": {
+      "0": "Quando Lyney dispara uma <strong>Flecha da Magia Secreta</strong>, disparará um Fogo de Artifício Mágico: Orquestra, causando 80% do Dano de Fogos de Artifício Mágicos. Esse Dano é considerado Dano de Ataque Carregado."
+    }
+  }
+}

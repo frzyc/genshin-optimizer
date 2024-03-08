@@ -1,0 +1,164 @@
+{
+  "name": "Jean",
+  "title": "Chevalier au Pissenlit",
+  "description": "Le Chevalier au Pissenlit, loyal et rigoureux, et la Grande Maîtresse suppléante de l'Ordre de Favonius.",
+  "constellationName": "Leo Minor",
+  "auto": {
+    "name": "Escrime de Favonius",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attaque normale</strong>",
+        "1": "Enchaîne jusqu'à 5 coups d'épée."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Consomme de l'endurance pour libérer une puissante attaque ascendante portée par les vents.",
+        "2": "Les ennemis projetés en l'air retombent lentement au sol."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis en chemin et des DGT de zone à l'impact."
+      }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT 4e coup",
+      "4": "DGT 5e coup",
+      "5": "DGT attaque chargée",
+      "6": "Coût d'endurance attaque chargée",
+      "7": "DGT durant la chute",
+      "8": "DGT chute basse/élevée",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Épée de tourbillon",
+    "description": {
+      "0": "Concentrant l'énergie des vents dans son épée, Jean libère une tornade qui projette les ennemis dans la direction ciblée, infligeant d'importants <anemo>DGT Anémo</anemo>.",
+      "1": "<br/>",
+      "2": "<strong>Appui long</strong>",
+      "3": "Consomme de l'endurance de façon continue pour générer une tornade qui attire ennemis et objets proches.",
+      "4": "La tornade peut être dirigée.",
+      "5": "Jean ne peut pas se déplacer tant que l'attaque dure.",
+      "6": "<br/>",
+      "7": "<i>Idéale pour protéger ses alliés, cette technique accompagne Jean depuis longtemps.</i>"
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "Coût d'endurance",
+      "2": "Durée max",
+      "3": "Temps de recharge",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Brise de pissenlit",
+    "description": {
+      "0": "Jean invoque la protection des vents pour générer un champ de pissenlits tournoyant qui repousse les ennemis proches, tout en leur infligeant des <anemo>DGT Anémo</anemo>.",
+      "1": "En même temps, tous les personnages sont soignés considérablement, la quantité de PV restaurés étant proportionnelle à l'ATQ de Jean.",
+      "2": "<br/>",
+      "3": "<strong>Champ de pissenlits</strong>",
+      "4": [
+        " Le champ de pissenlits restaure les PV des personnages dans la zone de façon continue.",
+        " Le champ leur applique également l'<anemo>élément Anémo</anemo>.",
+        " Les ennemis qui rentrent ou sortent de la zone subissent des <anemo>DGT Anémo</anemo>."
+      ],
+      "5": "<br/>",
+      "6": "<i>Semblable aux pissenlits bercés par le vent, la magnanimité de Jean n'a que l'horizon pour limite.</i>"
+    },
+    "skillParams": {
+      "0": "DGT explosifs",
+      "1": "DGT entrée/sortie de zone",
+      "2": "Soins du champ",
+      "3": "Soins continus",
+      "4": "Temps de recharge",
+      "5": "Énergie élémentaire",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Charge critique",
+    "description": {
+      "0": "Les attaques normales de Jean ont 50 % de chances de restaurer une quantité de PV équivalant à 15 % de l'ATQ de Jean à tous les personnages de l'équipe lorsqu'elles touchent."
+    }
+  },
+  "passive2": {
+    "name": "Que le vent vous guide",
+    "description": {
+      "0": "<strong>Brise de pissenlit</strong> restaure 20 % d'énergie élémentaire lorsqu'elle prend fin."
+    }
+  },
+  "passive3": {
+    "name": "Vent directeur",
+    "description": {
+      "0": "12 % de chances d'obtenir un plat supplémentaire lorsque vous cuisinez un plat de soins parfait."
+    }
+  },
+  "constellation1": {
+    "name": "Tourmente tranchante",
+    "description": {
+      "0": "La VIT d'attraction et les DGT infligés par <strong>Épée de tourbillon</strong> augmentent de 40 % lorsque la compétence reste activée plus d'une seconde."
+    }
+  },
+  "constellation2": {
+    "name": "Égide du peuple",
+    "description": {
+      "0": "La VIT de déplacement et d'attaque de tous les personnages de l'équipe augmente de 15 % pendant 15 s lorsque Jean obtient un orbe ou une particule élémentaire."
+    }
+  },
+  "constellation3": {
+    "name": "Lorsque le vent d'ouest souffle",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Brise de pissenlit</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation4": {
+    "name": "Territoire des pissenlits",
+    "description": {
+      "0": "La <anemo>RÉS Anémo</anemo> des ennemis à l'intérieur du champ de <strong>Brise de pissenlit</strong> diminue de 40 %."
+    }
+  },
+  "constellation5": {
+    "name": "Le moment du vent violent",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Épée de tourbillon</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation6": {
+    "name": "Croc de Lion, le protecteur de Mondstadt",
+    "description": {
+      "0": "Les DGT subis par les personnages dans le champ de <strong>Brise de pissenlit</strong> diminuent de 35 %.",
+      "1": "Après avoir quitté le champ, cet effet disparaît après avoir subi 3 attaques ou après 10 s."
+    }
+  }
+}

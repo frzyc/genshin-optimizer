@@ -1,0 +1,24 @@
+{
+  "name": "Keskin Nişancı Yemini",
+  "description": {
+    "0": "Bu muazzam yay bir zamanlar efsanevi bir okçuya aitti. Ancak kesif kokusu yüzünden onunla ava çıkmak imkansız."
+  },
+  "passiveName": "İsabetli",
+  "passiveDescription": {
+    "0": {
+      "0": "Zayıf noktalara verilen Hasarı <cryo>%24</cryo> artırır."
+    },
+    "1": {
+      "0": "Zayıf noktalara verilen Hasarı <cryo>%30</cryo> artırır."
+    },
+    "2": {
+      "0": "Zayıf noktalara verilen Hasarı <cryo>%36</cryo> artırır."
+    },
+    "3": {
+      "0": "Zayıf noktalara verilen Hasarı <cryo>%42</cryo> artırır."
+    },
+    "4": {
+      "0": "Zayıf noktalara verilen Hasarı <cryo>%48</cryo> artırır."
+    }
+  }
+}

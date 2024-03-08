@@ -1,0 +1,24 @@
+{
+  "name": "Báculo de Homa",
+  "description": {
+    "0": "Um bastão vermelho utilizado em um antigo ritual que não se pratica há muito tempo."
+  },
+  "passiveName": "Liberdade da Borboleta Vermelha",
+  "passiveDescription": {
+    "0": {
+      "0": "Aumenta a Vida em <cryo>20%</cryo>. Além disso, o Personagem que equipar esta arma terá um Bônus de ATQ de <cryo>0.8%</cryo> com base na Vida Máxima. Quando a Vida do Personagem que equipar essa arma cair para abaixo de 50%, seu ATQ aumentará <cryo>1%</cryo> com base em sua Vida Máxima."
+    },
+    "1": {
+      "0": "Aumenta a Vida em <cryo>25%</cryo>. Além disso, o Personagem que equipar esta arma terá um Bônus de ATQ de <cryo>1%</cryo> com base na Vida Máxima. Quando a Vida do Personagem que equipar essa arma cair para abaixo de 50%, seu ATQ aumentará <cryo>1.2%</cryo> com base em sua Vida Máxima."
+    },
+    "2": {
+      "0": "Aumenta a Vida em <cryo>30%</cryo>. Além disso, o Personagem que equipar esta arma terá um Bônus de ATQ de <cryo>1.2%</cryo> com base na Vida Máxima. Quando a Vida do Personagem que equipar essa arma cair para abaixo de 50%, seu ATQ aumentará <cryo>1.4%</cryo> com base em sua Vida Máxima."
+    },
+    "3": {
+      "0": "Aumenta a Vida em <cryo>35%</cryo>. Além disso, o Personagem que equipar esta arma terá um Bônus de ATQ de <cryo>1.4%</cryo> com base na Vida Máxima. Quando a Vida do Personagem que equipar essa arma cair para abaixo de 50%, seu ATQ aumentará <cryo>1.6%</cryo> com base em sua Vida Máxima."
+    },
+    "4": {
+      "0": "Aumenta a Vida em <cryo>40%</cryo>. Além disso, o Personagem que equipar esta arma terá um Bônus de ATQ de <cryo>1.6%</cryo> com base na Vida Máxima. Quando a Vida do Personagem que equipar essa arma cair para abaixo de 50%, seu ATQ aumentará <cryo>1.8%</cryo> com base em sua Vida Máxima."
+    }
+  }
+}

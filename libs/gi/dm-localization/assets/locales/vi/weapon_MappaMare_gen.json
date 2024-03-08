@@ -1,0 +1,24 @@
+{
+  "name": "Hải Đồ Vạn Quốc",
+  "description": {
+    "0": "Hải đồ ghi lại chi tiết vùng khí hậu hải lưu xung quanh đại lục, từ dị quốc qua tay thương nhân lưu lạc đến Liyue."
+  },
+  "passiveName": "Sách Năng Lượng",
+  "passiveDescription": {
+    "0": {
+      "0": "Trong 10s sau khi kích hoạt phản ứng Nguyên Tố, nhận <cryo>8%</cryo> buff sát thương Nguyên Tố, cộng dồn 2 tầng."
+    },
+    "1": {
+      "0": "Trong 10s sau khi kích hoạt phản ứng nguyên tố, nhận <cryo>10%</cryo> buff sát thương nguyên tố, cộng dồn 2 tầng."
+    },
+    "2": {
+      "0": "Trong 10s sau khi kích hoạt phản ứng Nguyên Tố, nhận <cryo>12%</cryo> buff sát thương Nguyên Tố, cộng dồn 2 tầng."
+    },
+    "3": {
+      "0": "Trong 10s sau khi kích hoạt phản ứng Nguyên Tố, nhận <cryo>14%</cryo> buff sát thương Nguyên Tố, cộng dồn 2 tầng."
+    },
+    "4": {
+      "0": "Trong 10s sau khi kích hoạt phản ứng Nguyên Tố, nhận <cryo>16%</cryo> buff sát thương Nguyên Tố, cộng dồn 2 tầng."
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Caçador do Beco",
+  "description": {
+    "0": "Um arco longo e opulento intrincado. Pertenceu a um ladrão de cavalheiros que nunca foi pego."
+  },
+  "passiveName": "Emboscada nos Becos",
+  "passiveDescription": {
+    "0": {
+      "0": "Quando o personagem com essa arma equipada estiver na equipe mas não no campo da batalha, o Dano causado por personagem será aumentado em <cryo>2%</cryo> a cada 1s, a quantidade máxima do aumento do Dano desta maneira é de <cryo>20%</cryo>. Depois de 4s de ficar no campo, o efeito de aumento do Dano será reduzido em <cryo>4%</cryo> a cada 1s até que seja reduzido para 0%."
+    },
+    "1": {
+      "0": "Quando o personagem com essa arma equipada estiver na equipe mas não no campo da batalha, o Dano causado por personagem será aumentado em <cryo>2.5%</cryo> a cada 1s, a quantidade máxima do aumento do Dano desta maneira é de <cryo>25%</cryo>. Depois de 4s de ficar no campo, o efeito de aumento do Dano será reduzido em <cryo>5%</cryo> a cada 1s até que seja reduzido para 0%."
+    },
+    "2": {
+      "0": "Quando o personagem com essa arma equipada estiver na equipe mas não no campo da batalha, o Dano causado por personagem será aumentado em <cryo>3%</cryo> a cada 1s, a quantidade máxima do aumento do Dano desta maneira é de <cryo>30%</cryo>. Depois de 4s de ficar no campo, o efeito de aumento do Dano será reduzido em <cryo>6%</cryo> a cada 1s até que seja reduzido para 0%."
+    },
+    "3": {
+      "0": "Quando o personagem com essa arma equipada estiver na equipe mas não no campo da batalha, o Dano causado por personagem será aumentado em <cryo>3.5%</cryo> a cada 1s, a quantidade máxima do aumento do Dano desta maneira é de <cryo>35%</cryo>. Depois de 4s de ficar no campo, o efeito de aumento do Dano será reduzido em <cryo>7%</cryo> a cada 1s até que seja reduzido para 0%."
+    },
+    "4": {
+      "0": "Quando o personagem com essa arma equipada estiver na equipe mas não no campo da batalha, o Dano causado por personagem será aumentado em <cryo>4%</cryo> a cada 1s, a quantidade máxima do aumento do Dano desta maneira é de <cryo>40%</cryo>. Depois de 4s de ficar no campo, o efeito de aumento do Dano será reduzido em <cryo>8%</cryo> a cada 1s até que seja reduzido para 0%."
+    }
+  }
+}

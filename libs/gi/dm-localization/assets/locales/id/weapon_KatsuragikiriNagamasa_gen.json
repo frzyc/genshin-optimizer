@@ -1,0 +1,24 @@
+{
+  "name": "Katsuragikiri Nagamasa",
+  "description": {
+    "0": "Pedang yang dibuat di Tatarasuna. Bobotnya berat dan bodinya kasar."
+  },
+  "passiveName": "Samurai Conduct",
+  "passiveDescription": {
+    "0": {
+      "0": "Meningkatkan <cryo>6%</cryo> Elemental Skill DMG. Setelah Elemental Skill mengenai musuh, 3 Energy hilang tapi akan memulihkan <cryo>3</cryo> Energy setiap 2 detik selama 6 detik. Efek terpicu setiap 10 detik. Dapat terpicu walaupun Karakter tersebut tidak berada di medan pertempuran."
+    },
+    "1": {
+      "0": "Meningkatkan <cryo>7,5%</cryo> Elemental Skill DMG. Setelah Elemental Skill mengenai musuh, 3 Energy hilang tapi akan memulihkan <cryo>3,5</cryo> Energy setiap 2 detik selama 6 detik. Efek terpicu setiap 10 detik. Dapat terpicu walaupun Karakter tersebut tidak berada di medan perang."
+    },
+    "2": {
+      "0": "Meningkatkan <cryo>9%</cryo> Elemental Skill DMG. Setelah Elemental Skill mengenai musuh, 3 Energy hilang tapi akan memulihkan <cryo>4</cryo> Energy setiap 2 detik selama 6 detik. Efek terpicu setiap 10 detik. Dapat terpicu walaupun Karakter tersebut tidak berada di medan perang."
+    },
+    "3": {
+      "0": "Meningkatkan <cryo>10,5%</cryo> Elemental Skill DMG. Setelah Elemental Skill mengenai musuh, 3 Energy hilang tapi akan memulihkan <cryo>4,5</cryo> Energy setiap 2 detik selama 6 detik. Efek terpicu setiap 10 detik. Dapat terpicu walaupun Karakter tersebut tidak berada di medan perang."
+    },
+    "4": {
+      "0": "Meningkatkan <cryo>12%</cryo> Elemental Skill DMG. Setelah Elemental Skill mengenai musuh, 3 Energy hilang tapi akan memulihkan <cryo>5</cryo> Energy setiap 2 detik selama 6 detik. Efek terpicu setiap 10 detik. Dapat terpicu walaupun Karakter tersebut tidak berada di medan perang."
+    }
+  }
+}

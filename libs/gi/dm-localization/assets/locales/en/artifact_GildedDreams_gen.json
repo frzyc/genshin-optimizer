@@ -1,0 +1,29 @@
+{
+  "setName": "Gilded Dreams",
+  "setEffects": {
+    "2": "Increases Elemental Mastery by 80.",
+    "4": "Within 8s of triggering an Elemental Reaction, the character equipping this will obtain buffs based on the Elemental Type of the other party members. ATK is increased by 14% for each party member whose Elemental Type is the same as the equipping character, and Elemental Mastery is increased by 50 for every party member with a different Elemental Type. Each of the aforementioned buffs will count up to 3 characters. This effect can be triggered once every 8s. The character who equips this can still trigger its effects when not on the field."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Dreaming Steelbloom",
+      "desc": "A flower bud made of hammered dark gold. Its crimson core is wrapped by petals that shall never open."
+    },
+    "plume": {
+      "name": "Feather of Judgment",
+      "desc": "This special feather was once used to weigh the hearts of the guilty, but it has since lost its original function."
+    },
+    "sands": {
+      "name": "The Sunken Years",
+      "desc": "This dark-golden sundial seems to tell the ancient tale of the desert."
+    },
+    "goblet": {
+      "name": "Honeyed Final Feast",
+      "desc": "A wine cup that was once used at a grand and ancient feast. It has now lost much of that luster."
+    },
+    "circlet": {
+      "name": "Shadow of the Sand King",
+      "desc": "This gold-inlaid headband was once used by desert priests in the days of old. They were made in imitation of one worn by a legendary ruler of the desert peoples."
+    }
+  }
+}

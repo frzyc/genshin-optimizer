@@ -1,0 +1,29 @@
+{
+  "setName": "Cacciatore della Maréchaussée",
+  "setEffects": {
+    "2": "DAN da attacchi normali e caricati +15%.",
+    "4": "Quando la quantità di PS attuali aumenta o diminuisce, il tasso di CRIT aumenta di un 12% per 5 s. Massimo 3 accumuli."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Fermaglio del cacciatore",
+      "desc": "Un antico marchio che un tempo veniva conferito a coloro che si distinguevano per grandi meriti in battaglia."
+    },
+    "plume": {
+      "name": "Ouverture di un capolavoro",
+      "desc": "Un attrezzo portatile usato per regolare la coppia di torsione di alcuni antichi dispositivi meccanici. Al giorno d'oggi, ha perso qualsivoglia valore pratico."
+    },
+    "sands": {
+      "name": "Momento del giudizio",
+      "desc": "Un comune orologio da tasca. Non è particolarmente preciso."
+    },
+    "goblet": {
+      "name": "Recipiente dimenticato",
+      "desc": "Un recipiente portatile fatto di metallo e contenente vino fortemente alcolico. Può essere infilato facilmente nella tasca di un cappotto per averlo sempre a disposizione."
+    },
+    "circlet": {
+      "name": "Volto del veterano",
+      "desc": "Una vecchia maschera capace, almeno in parte, di sostituire un volto tumefatto. La sua forma può variare in base alle zone ferite e al sesso di chi la usa."
+    }
+  }
+}

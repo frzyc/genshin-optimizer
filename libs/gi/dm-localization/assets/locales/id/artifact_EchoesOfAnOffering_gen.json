@@ -1,0 +1,29 @@
+{
+  "setName": "Echoes of an Offering",
+  "setEffects": {
+    "2": "ATK +18%.",
+    "4": "Saat Normal Attack mengenai musuh, ada 36% kemungkinan akan memicu Valley Rite yang akan meningkatkan DMG Normal Attack sebesar 70% ATK. Efek akan hilang 0,05 detik setelah Normal Attack mengakibatkan DMG. Jika Normal Attack gagal memicu efek Valley Rite, maka kemungkinan Valley Rite akan terpicu pada serangan berikutnya meningkat 20%. Efek ini dapat terpicu maksimum sekali setiap 0,2 detik."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Soulscent Bloom",
+      "desc": "Sebuah batu giok yang diukir dalam bentuk bunga. Aroma samar-samar muncul dan hilang dengan cepat dari benda ini."
+    },
+    "plume": {
+      "name": "Jade Leaf",
+      "desc": "Ornamen batu giok yang berbentuk seperti daun. Tampaknya dulu benda pernah memiliki makna yang dalam di antara orang-orang."
+    },
+    "sands": {
+      "name": "Symbol of Feliciation",
+      "desc": "Ornamen batu giok berbentuk bulat dan melingkar. Legenda mengatakan bahwa benda ini pernah digunakan di suatu tempat sebagai simbol untuk memulai sebuah ritual."
+    },
+    "goblet": {
+      "name": "Chalice of the Font",
+      "desc": "Cangkir teh ini selamanya dipenuhi dengan air tawar. Mungkin ini adalah hadiah dari Adeptus, atau mungkin salah satu relik mereka, atau mungkin juga hanya sesuatu yang mereka tinggalkan."
+    },
+    "circlet": {
+      "name": "Flowing Rings",
+      "desc": "Sepasang anting yang terbuat dari batu giok. Memiliki tekstur yang lembut."
+    }
+  }
+}

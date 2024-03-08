@@ -1,0 +1,24 @@
+{
+  "name": "Prototip: Hilal",
+  "description": {
+    "0": "Kara Kaya Demirci Ocağında keşfedilmiş bir yay prototipi. Bu yaydan atılan oklar mehtabın parıltısını taşır."
+  },
+  "passiveName": "Dönüşsüz",
+  "passiveDescription": {
+    "0": {
+      "0": "Zayıf noktalara yapılan Yüklü Saldırılar 10 saniyeliğine Hareket Hızını %10, Saldırıyı <cryo>%36</cryo> artırır."
+    },
+    "1": {
+      "0": "Zayıf noktalara yapılan Yüklü Saldırılar 10 saniyeliğine Hareket Hızını %10, Saldırıyı <cryo>%45</cryo> artırır."
+    },
+    "2": {
+      "0": "Zayıf noktalara yapılan Yüklü Saldırılar 10 saniyeliğine Hareket Hızını %10, Saldırıyı <cryo>%54</cryo> artırır."
+    },
+    "3": {
+      "0": "Zayıf noktalara yapılan Yüklü Saldırılar 10 saniyeliğine Hareket Hızını %10, Saldırıyı <cryo>%63</cryo> artırır."
+    },
+    "4": {
+      "0": "Zayıf noktalara yapılan Yüklü Saldırılar 10 saniyeliğine Hareket Hızını %10, Saldırıyı <cryo>%72</cryo> artırır."
+    }
+  }
+}

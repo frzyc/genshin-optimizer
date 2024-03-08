@@ -1,0 +1,165 @@
+{
+  "name": "Baizhu",
+  "title": "Beyond Mortality",
+  "description": "Pemilik Bubu Pharmacy. Dia sering membawa ular putih bernama Changsheng di pundaknya. Dia adalah seorang dokter yang terampil dan cerdas.",
+  "constellationName": "Lagenaria",
+  "auto": {
+    "name": "The Classics of Acupuncture",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Attack</strong>",
+        "1": "Melancarkan hingga 4 serangan ke arah depan dan mengakibatkan <dendro>Dendro DMG</dendro>."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Mengonsumsi sejumlah Stamina untuk mengakibatkan <dendro>Dendro DMG Area</dendro> ke area di depannya setelah jeda singkat."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Mengumpulkan kekuatan Dendro dan menerjang tanah, menyerang musuh di jalur terjangan dan mengakibatkan <dendro>Dendro DMG Area</dendro> saat mendarat."
+      }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Tahap 4",
+      "4": "DMG Charged Attack",
+      "5": "Konsumsi Stamina Charged Attack",
+      "6": "DMG Selama Plunging",
+      "7": "DMG Plunging Attack Rendah/Tinggi",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Universal Diagnosis",
+    "description": {
+      "0": "Mengendalikan Gossamer Sprite yang melayang-layang dan bisa menyerang musuh di sekitar, mengakibatkan <dendro>Dendro DMG</dendro>.",
+      "1": "Setelah menyerang maksimum sebanyak 3 kali atau saat tidak ada musuh di sekitar, Gossamer Sprite akan kembali dan memulihkan HP seluruh anggota party berdasarkan Max HP Baizhu.",
+      "2": "<br/>",
+      "3": "<i>Orang-orang di dunia medis yang bisa membedakan tanda-tanda penyakit yang tepat dan yang salah akan bisa menyembuhkan orang bahkan sebelum gejala penyakitnya muncul.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "Pemulihan HP",
+      "2": "Cooldown",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Holistic Revivification",
+    "description": {
+      "0": "Memasuki status Pulsing Clarity dan menciptakan Seamless Shield yang memiliki 250% pertahanan terhadap <dendro>Dendro DMG</dendro>.",
+      "1": "Dalam status Pulsing Clarity, Baizhu akan menciptakan Seamless Shield baru setiap 2,5 detik.",
+      "2": "<br/>",
+      "3": "Seamless Shield akan memulihkan HP Karakter aktifmu sendiri berdasarkan Max HP Baizhu, kemudian melancarkan Spiritvein untuk menyerang musuh dan mengakibatkan <dendro>Dendro DMG</dendro> dalam kondisi-kondisi berikut ini:",
+      "4": [
+        "Saat Karakter berada dalam perlindungan Seamless Shield dan tercipta sebuah Seamless Shield yang baru;",
+        "Saat efek Seamless Shield berakhir atau saat Seamless Shield hancur terkena DMG."
+      ],
+      "5": "<br/>",
+      "6": "<i>Jika kamu bisa terhubung dengan alam semesta, lindungilah kekuatan dalammu dari pengaruh luar, serta bersihkanlah jiwa dan pikiranmu ... maka tidak akan ada yang bisa menghalangimu.</i>"
+    },
+    "skillParams": {
+      "0": "Pertahanan Perisai Seamless Shield",
+      "1": "Durasi Perisai Seamless Shield",
+      "2": "Pemulihan Seamless Shield",
+      "3": "DMG Skill Spiritvein",
+      "4": "Durasi Pulsing Clarity",
+      "5": "Cooldown",
+      "6": "Konsumsi Energy",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Five Fortunes Forever",
+    "description": {
+      "0": "Baizhu akan mendapatkan efek yang berbeda berdasarkan jumlah HP Karakter aktif milik party sendiri:",
+      "1": [
+        "Saat HP Karakter aktif kurang dari 50%, Baizhu mendapatkan 20% Bonus Pemulihan;",
+        "Saat HP Karakter aktif sama dengan atau lebih dari 50%, Baizhu mendapatkan 25% <dendro>Dendro DMG Bonus</dendro>."
+      ]
+    }
+  },
+  "passive2": {
+    "name": "All Things Are of the Earth",
+    "description": {
+      "0": "Karakter yang menerima pemulihan dari <strong>Seamless Shield</strong> akan mendapatkan efek Year of Verdant Favor: Untuk setiap 1.000 poin Max HP Baizhu (maksimum 50.000 poin), Karakter tersebut akan mendapatkan peningkatan DMG dari reaksi Burning, Bloom, Hyperbloom, dan Burgeon sebesar 2%, serta peningkatan Bonus DMG dari reaksi Aggravate dan Spread sebesar 0,8%. Efek ini berlangsung selama 6 detik."
+    }
+  },
+  "passive3": {
+    "name": "Herbal Nourishment",
+    "description": {
+      "0": "Saat Baizhu berada di dalam party, berinteraksi dengan beberapa material yang bisa dikumpulkan akan memulihkan HP Karakter aktif sebesar 2,5% Max HP Baizhu."
+    }
+  },
+  "constellation1": {
+    "name": "Attentive Observation",
+    "description": {
+      "0": "Menambahkan 1 charge <strong>Universal Diagnosis</strong>."
+    }
+  },
+  "constellation2": {
+    "name": "Incisive Discernment",
+    "description": {
+      "0": "Saat serangan Karakter aktif di dalam party sendiri mengenai musuh yang ada di sekitar, Baizhu akan melancarkan Gossamer Sprite: Splice.",
+      "1": "Gossamer Sprite: Splice akan kembali setelah menyerang maksimum 1 kali, mengakibatkan <dendro>Dendro DMG</dendro> sebesar 250% ATK Baizhu dan memulihkan HP sebesar 20% berdasarkan jumlah pemulihan Gossamer Sprite dari <strong>Universal Diagnosis</strong>.",
+      "2": "DMG yang diakibatkan dengan cara ini akan dianggap sebagai DMG Elemental Skill.",
+      "3": "Efek ini dapat terpicu sekali setiap 5 detik."
+    }
+  },
+  "constellation3": {
+    "name": "All Aspects Stabilized",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Holistic Revivification</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Ancient Art of Perception",
+    "description": {
+      "0": "Setelah melancarkan <strong>Holistic Revivification</strong>, Elemental Mastery seluruh anggota party di sekitar meningkat 80 poin selama 15 detik."
+    }
+  },
+  "constellation5": {
+    "name": "The Hidden Ebb and Flow",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Universal Diagnosis</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Elimination of Malicious Qi",
+    "description": {
+      "0": "DMG yang diakibatkan Spiritvein dari skill <strong>Holistic Revivification</strong> meningkat sebesar 8% Max HP Baizhu.",
+      "1": "Selain itu, saat serangan <strong>Gossamer Sprite</strong> atau Gossamer Sprite: Splice mengenai musuh, ada 100% kemungkinan untuk menciptakan perisai Seamless Shield dari skill <strong>Holistic Revivification</strong>. Efek ini hanya dapat terpicu satu kali untuk setiap Gossamer Sprite atau Gossamer Sprite: Splice."
+    }
+  }
+}

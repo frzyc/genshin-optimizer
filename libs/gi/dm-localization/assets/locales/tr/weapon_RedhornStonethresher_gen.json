@@ -1,0 +1,24 @@
+{
+  "name": "Taşkıran Kızılboynuz",
+  "description": {
+    "0": "Bir önceki sahibinin açıklamasına göre, bu \"Yüce Kızılboynuz Metin Taşkıran Yaldızlı Taşkıran Aslan Efendisi\" ile karşılaşan tüm canavarlar kuyruğunu bacaklarının arasına sıkıştırıp kaçar."
+  },
+  "passiveName": "Gokadaiou Otogibanashi",
+  "passiveDescription": {
+    "0": {
+      "0": "Savunmayı <cryo>%28</cryo> artırır. Normal ve Yüklü Saldırı Hasarı <cryo>%40</cryo> Savunma kadar artar."
+    },
+    "1": {
+      "0": "Savunmayı <cryo>%35</cryo> artırır. Normal ve Yüklü Saldırı Hasarı <cryo>%50</cryo> Savunma kadar artar."
+    },
+    "2": {
+      "0": "Savunmayı <cryo>%42</cryo> artırır. Normal ve Yüklü Saldırı Hasarı <cryo>%60</cryo> Savunma kadar artar."
+    },
+    "3": {
+      "0": "Savunmayı <cryo>%49</cryo> artırır. Normal ve Yüklü Saldırı Hasarı <cryo>%70</cryo> Savunma kadar artar."
+    },
+    "4": {
+      "0": "Savunmayı <cryo>%56</cryo> artırır. Normal ve Yüklü Saldırı Hasarı <cryo>%80</cryo> Savunma kadar artar."
+    }
+  }
+}

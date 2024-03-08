@@ -1,0 +1,24 @@
+{
+  "name": "Drachenblutschwert",
+  "description": {
+    "0": "Der Sage nach wurde dieses stählerne Großschwert von einem Helden aus dem Norden in Drachenblut getränkt, weshalb es unzerstörbar sein soll. Das gilt aber nicht für denjenigen, der es führt."
+  },
+  "passiveName": "Bewährtheit von Feuer und Blitz",
+  "passiveDescription": {
+    "0": {
+      "0": "Erhöht den von Pyro- oder Elektro-Effekten betroffenen Gegnern zugefügten Schaden um <cryo>12 %</cryo>."
+    },
+    "1": {
+      "0": "Erhöht den von Pyro- oder Elektro-Effekten betroffenen Gegnern zugefügten Schaden um <cryo>15 %</cryo>."
+    },
+    "2": {
+      "0": "Erhöht den von Pyro- oder Elektro-Effekten betroffenen Gegnern zugefügten Schaden um <cryo>18 %</cryo>."
+    },
+    "3": {
+      "0": "Erhöht den von Pyro- oder Elektro-Effekten betroffenen Gegnern zugefügten Schaden um <cryo>21 %</cryo>."
+    },
+    "4": {
+      "0": "Erhöht den von Pyro- oder Elektro-Effekten betroffenen Gegnern zugefügten Schaden um <cryo>24 %</cryo>."
+    }
+  }
+}

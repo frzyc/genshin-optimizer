@@ -1,0 +1,180 @@
+{
+  "name": "Yaoyao",
+  "title": "Zarafet Filizleri",
+  "description": "Sokak Gezgini'nin en genç öğrencisi. Nazik ve sevimli bir \"küçük yetişkin\".",
+  "constellationName": "Osmantus",
+  "auto": {
+    "name": "Fırlat ve Mızrakla",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Saldırı</strong>",
+        "1": "Arka arkaya en fazla 4 mızrak saldırısı yapar."
+      },
+      "charged": {
+        "0": "<strong>Yüklü Saldırı</strong>",
+        "1": "İleri atılırken belirli miktarda Dayanıklılık harcar ve önündeki düşmanlara hasar verir."
+      },
+      "plunging": {
+        "0": "<strong>Havadan Saldırı</strong>",
+        "1": "Havadayken dalışa geçerek yere vurur ve yoluna çıkan düşmanlara Alan Hasarı verir."
+      }
+    },
+    "skillParams": {
+      "0": "1 Vuruş Hasarı",
+      "1": "2 Vuruş Hasarı",
+      "2": "3 Vuruş Hasarı",
+      "3": "4 Vuruş Hasarı",
+      "4": "Yüklü Saldırı Hasarı",
+      "5": "Yüklü Saldırı Dayanıklılık Maliyeti",
+      "6": "Havadan Saldırı Hasarı",
+      "7": "Havadan Saldırı Hasarı (Alçaktan/Yüksekten)",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Kızıl Gök Turpu",
+    "description": {
+      "0": "Yaoyao'ya belirli bir Adeptus tarafından sorunlarını çözmesi için verilmiş \"Yuegui: Fırlatma Modunu\" çağırır.",
+      "1": "Bu beceri basılı tutularak farklı bir şekilde kullanılabilir.",
+      "2": "<br/>",
+      "3": "<strong>Basılı Tut</strong>",
+      "4": "Nişan Alma Moduna girerek fırlatma yönünü belirler.",
+      "5": "<br/>",
+      "6": "<strong>Yuegui: Fırlatma Modu</strong>",
+      "7": "Karakterlere veya düşmanlara çarptığında patlayıp belirli bir Etki Alanı içindeki düşmanlara <dendro>Doğa Hasarı</dendro> veren ve Yaoyao'nun Maks. Canına bağlı olarak karakterleri iyileştiren bir Beyaz Yeşim Turp fırlatır. Turp, bir düşmana veya karaktere çarpmazsa olduğu yerde kalır ve bir karakter veya düşmanla temas ettiğinde veya süresi dolduğunda patlar.",
+      "8": [
+        "Yuegui: Fırlatma Modu, turp fırlatma hedeflerini kendisi seçer.",
+        "Çevredeki tüm karakterlerin kalan Canı %70 üzerindeyse turpu yakındaki bir düşmana fırlatır.",
+        "Çevredeki karakterlerin kalan Canı %70 veya altındaysa turpu Can yüzdesi en az olan karaktere fırlatır. Çevrede hiçbir düşman yoksa Yuegui yine de kalan Canı %70 ile %100 arasında olan karakterlere Beyaz Yeşim Turp fırlatır. Bu durum da mevcut değilse rastgele bir yere turp fırlatır."
+      ],
+      "9": "<br/>",
+      "10": "Aynı anda en fazla 2 adet Yuegui: Fırlatma Modu var olabilir.",
+      "11": "<br/>",
+      "12": "<i>\"Turp girmeyen eve doktor girer! Şey, bu turpun tıbbi özellikleriyle ilgili değildi aslında ama sağlığa da iyi gelir yani!\"</i>"
+    },
+    "skillParams": {
+      "0": "Beyaz Yeşim Turp Hasarı",
+      "1": "Beyaz Yeşim Turp İyileştirmesi",
+      "2": "Yuegui: Fırlatma Modu Süresi",
+      "3": "Beyaz Yeşim Turp Süresi",
+      "4": "BS",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Ay Yeşiminin İnişi",
+    "description": {
+      "0": "Acil bir durumda belirli bir Adeptusun emriyle Yuegui'nin tam potansiyeli ortaya çıkarak çevredeki düşmanlara <dendro>Doğa Hasarı</dendro> verir ve (bir bakıma) eşsiz Adeptus Mirası durumuna girer.",
+      "1": "<br/>",
+      "2": "<strong>Adeptus Mirası</strong>",
+      "3": [
+        "Oluşturulan Beyaz Yeşim Turplar, bu beceriye göre iyileştirir ve Hasar verirler. Patlamalar, yakındaki tüm grup üyelerini iyileştirir ve verdikleri <dendro>Doğa Hasarı</dendro> da Element Patlaması Hasarı olarak sayılır.",
+        "Aralıklarla sınıra ulaşıncaya kadar \"Yuegui: Sıçrama Modu\" çağırır. Bu türden Yuegui'nin fırlatma biçimi, Element Becerisi Kızıl Gök Turpu ile aynıdır. Aynı anda en fazla 3 Yuegui: Sıçrama Modu var olabilir;",
+        "Yaoyao'nun Hareket Hızı %15 artar.",
+        "Yaoyao'nun <dendro>Doğa Direnci</dendro> artar."
+      ],
+      "4": "<br/>",
+      "5": "Adeptus Mirası durumu, Yaoyao savaş alanı dışına çıktığında sona erer ve bu durum sona erdiğinde kalan tüm Yuegui: Sıçrama Modları kaldırılır.",
+      "6": "<br/>",
+      "7": "<i>\"Ne? Bunlardan hangisi gerçek Yuegui merak mı ettin? Hepsi Yuegui değil mi işte?\"</i>"
+    },
+    "skillParams": {
+      "0": "Beceri Hasarı",
+      "1": "Adeptus Mirası Beyaz Yeşim Turp Hasarı",
+      "2": "Adeptus Mirası Beyaz Yeşim Turp İyileştirmesi",
+      "3": "Doğa Direnci Bonusu",
+      "4": "Adeptus Mirası Süresi",
+      "5": "BS",
+      "6": "Enerji Maliyeti",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Yıldız Parçaları",
+    "description": {
+      "0": "Yaoyao, <strong>Ay Yeşiminin İnişi</strong> becerisinin neden olduğu Adeptus Mirası durumunda depar atarken, sıçrarken veya koşarken düşmanlara sürekli Beyaz Yeşim Turp fırlatır. Bu şekilde her 0,6 saniyede 1 Beyaz Yeşim Turp fırlatabilir."
+    }
+  },
+  "passive2": {
+    "name": "Empati",
+    "description": {
+      "0": "<strong>Beyaz Yeşim Turplar</strong> patladıklarında Etki Alanında bulunan aktif karakterler her 1 saniyede bir Yaoyao'nun Maks. Canının %0,8'i oranında Can yenilerler. Bu etki 5 saniye sürer."
+    }
+  },
+  "passive3": {
+    "name": "Parmak Ucunda Takip",
+    "description": {
+      "0": "Yaoyao gruptayken karakterlerin Kristal Kelebeklere ve diğer bazı hayvanlara yaklaştığında onları ürkütmez.",
+      "1": "Bu becerinin hangi yaratıklarda işe yaradığını görmek için Arşivdeki \"Canlılar/Vahşi Hayvanlar\" kısmının \"Diğer\" alt kategorisini kontrol et."
+    }
+  },
+  "constellation1": {
+    "name": "Adeptus Himayesi",
+    "description": {
+      "0": "<strong>Beyaz Yeşim Turplar</strong> patladıklarında Etki Alanında bulunan aktif karakterler 8 saniyeliğine %15 <dendro>Doğa Hasarı Bonusu</dendro> kazanır ve 15 Dayanıklılık yenilerler. Bu türden Dayanıklılık Yenileme her 5 saniyede bir tetiklenebilir."
+    }
+  },
+  "constellation2": {
+    "name": "Masum",
+    "description": {
+      "0": "Yaoyao, <strong>Ay Yeşiminin İnişi</strong> becerisinin neden olduğu Adeptus Mirası etkisindeyken, Beyaz Yeşim Turp patlaması düşmanlara isabet ederse 3 Enerji yeniler. Bu türden Enerji Yenilemesi her 0,8 saniyede bir tetiklenebilir."
+    }
+  },
+  "constellation3": {
+    "name": "Sadık ve Kibar",
+    "description": {
+      "0": "<strong>Kızıl Gök Turpu</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation4": {
+    "name": "Neşeli",
+    "description": {
+      "0": "<strong>Kızıl Gök Turpu</strong> veya <strong>Ay Yeşiminin İnişi</strong> kullandıktan sonra 8 saniye boyunca Yaoyao'nun Element Ustalığı Maks. Canının %0,3'ü oranında artar. Bu şekilde kazanabileceği maksimum Element Ustalığı 120'dir."
+    }
+  },
+  "constellation5": {
+    "name": "Şefkatli",
+    "description": {
+      "0": "<strong>Ay Yeşiminin İnişi</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation6": {
+    "name": "Cömert",
+    "description": {
+      "0": "<strong>Yuegui: Fırlatma Modu</strong> tarafından fırlatılan her 2 Beyaz Yeşim Turpun ardından bir Dev Turp fırlatılır. Dev Turp, normal Beyaz Yeşim Turptan daha büyük bir Etki Alanına sahiptir ve patladığında şu etkiler tetiklenir:",
+      "1": [
+        "Yaoyao'nun Saldırısının %75'i oranında <dendro>Doğa Alan Hasarı</dendro> verir.",
+        "Aktif karakterin Canını, Yaoyao'nun Maks. Canının %7,5'i oranında yeniler."
+      ],
+      "2": "<br/>",
+      "3": "Her Yuegui: Fırlatma Modu, en fazla 2 Dev Turp fırlatabilir."
+    }
+  }
+}

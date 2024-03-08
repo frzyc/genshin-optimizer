@@ -1,0 +1,24 @@
+{
+  "name": "Tailleur de pierre (prototype)",
+  "description": {
+    "0": "Une ancienne épée longue trouvée à la Forge de Rochenoire, capable de pénétrer la roche comme dans du beurre."
+  },
+  "passiveName": "Pierre cassée",
+  "passiveDescription": {
+    "0": {
+      "0": "Les attaques normales et chargées augmentent l'ATQ et la DÉF de <cryo>4 %</cryo> pendant 6 s. Cet effet peut être cumulé 4 fois maximum et déclenché une fois toutes les 0,3 s."
+    },
+    "1": {
+      "0": "Les attaques normales et chargées augmentent l'ATQ et la DÉF de <cryo>5 %</cryo> pendant 6 s. Cet effet peut être cumulé 4 fois maximum et déclenché une fois toutes les 0,3 s."
+    },
+    "2": {
+      "0": "Les attaques normales et chargées augmentent l'ATQ et la DÉF de <cryo>6 %</cryo> pendant 6 s. Cet effet peut être cumulé 4 fois maximum et déclenché une fois toutes les 0,3 s."
+    },
+    "3": {
+      "0": "Les attaques normales et chargées augmentent l'ATQ et la DÉF de <cryo>7 %</cryo> pendant 6 s. Cet effet peut être cumulé 4 fois maximum et déclenché une fois toutes les 0,3 s."
+    },
+    "4": {
+      "0": "Les attaques normales et chargées augmentent l'ATQ et la DÉF de <cryo>8 %</cryo> pendant 6 s. Cet effet peut être cumulé 4 fois maximum et déclenché une fois toutes les 0,3 s."
+    }
+  }
+}

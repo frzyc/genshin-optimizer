@@ -1,0 +1,24 @@
+{
+  "name": "Sonsuz Akış Kitabı",
+  "description": {
+    "0": "Su altındaki bir manastırda nesilden nesile aktarılan bir rehber. Bugün ise varlığından kimse haberdar değil."
+  },
+  "passiveName": "Sonsuzluk Dalgası",
+  "passiveDescription": {
+    "0": {
+      "0": "Can <cryo>%16</cryo> artar. Mevcut Can arttığında veya azaldığında 4 saniyeliğine Yüklü Saldırı Hasarı <cryo>%14</cryo> artar. En fazla 3 kademeye kadar birikir. Bu etki her 0,3 saniyede bir tetiklenebilir. Karakter 3 kademeye sahip olduğunda veya üçüncü kademenin süresi yenilendiğinde <cryo>8</cryo> Enerji yeniler. Bu Enerji yenileme etkisi her 12 saniyede bir tetiklenebilir."
+    },
+    "1": {
+      "0": "Can <cryo>%20</cryo> artar. Mevcut Can arttığında veya azaldığında 4 saniyeliğine Yüklü Saldırı Hasarı <cryo>%18</cryo> artar. En fazla 3 kademeye kadar birikir. Bu etki her 0,3 saniyede bir tetiklenebilir. Karakter 3 kademeye sahip olduğunda veya üçüncü kademenin süresi yenilendiğinde <cryo>9</cryo> Enerji yeniler. Bu Enerji yenileme etkisi her 12 saniyede bir tetiklenebilir."
+    },
+    "2": {
+      "0": "Can <cryo>%24</cryo> artar. Mevcut Can arttığında veya azaldığında 4 saniyeliğine Yüklü Saldırı Hasarı <cryo>%22</cryo> artar. En fazla 3 kademeye kadar birikir. Bu etki her 0,3 saniyede bir tetiklenebilir. Karakter 3 kademeye sahip olduğunda veya üçüncü kademenin süresi yenilendiğinde <cryo>10</cryo> Enerji yeniler. Bu Enerji yenileme etkisi her 12 saniyede bir tetiklenebilir."
+    },
+    "3": {
+      "0": "Can <cryo>%28</cryo> artar. Mevcut Can arttığında veya azaldığında 4 saniyeliğine Yüklü Saldırı Hasarı <cryo>%26</cryo> artar. En fazla 3 kademeye kadar birikir. Bu etki her 0,3 saniyede bir tetiklenebilir. Karakter 3 kademeye sahip olduğunda veya üçüncü kademenin süresi yenilendiğinde <cryo>11</cryo> Enerji yeniler. Bu Enerji yenileme etkisi her 12 saniyede bir tetiklenebilir."
+    },
+    "4": {
+      "0": "Can <cryo>%32</cryo> artar. Mevcut Can arttığında veya azaldığında 4 saniyeliğine Yüklü Saldırı Hasarı <cryo>%30</cryo> artar. En fazla 3 kademeye kadar birikir. Bu etki her 0,3 saniyede bir tetiklenebilir. Karakter 3 kademeye sahip olduğunda veya üçüncü kademenin süresi yenilendiğinde <cryo>12</cryo> Enerji yeniler. Bu Enerji yenileme etkisi her 12 saniyede bir tetiklenebilir."
+    }
+  }
+}

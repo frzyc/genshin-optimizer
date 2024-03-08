@@ -1,0 +1,24 @@
+{
+  "name": "Đao Săn Cá",
+  "description": {
+    "0": "Đao bằng thép sắc bén dùng để làm cá, thân thon dài, cực kỳ sắc bén."
+  },
+  "passiveName": "Quyết",
+  "passiveDescription": {
+    "0": {
+      "0": "Khi đánh trúng, có 50% cơ hội tạo thành <cryo>240%</cryo> sát thương tấn công vào mục tiêu đơn. Hiệu quả này <cryo>15</cryo>s xuất hiện một lần."
+    },
+    "1": {
+      "0": "Khi đánh trúng, có 50% cơ hội tạo thành <cryo>280%</cryo> sát thương tấn công vào mục tiêu đơn. Hiệu quả này <cryo>14</cryo>s xuất hiện một lần."
+    },
+    "2": {
+      "0": "Khi đánh trúng, có 50% cơ hội tạo thành <cryo>320%</cryo> sát thương tấn công vào mục tiêu đơn. Hiệu quả này <cryo>13</cryo>s xuất hiện một lần."
+    },
+    "3": {
+      "0": "Khi đánh trúng, có 50% cơ hội tạo thành <cryo>360%</cryo> sát thương tấn công vào mục tiêu đơn. Hiệu quả này <cryo>12</cryo>s xuất hiện một lần."
+    },
+    "4": {
+      "0": "Khi đánh trúng, có 50% cơ hội tạo thành <cryo>400%</cryo> sát thương tấn công vào mục tiêu đơn. Hiệu quả này <cryo>11</cryo>s xuất hiện một lần."
+    }
+  }
+}

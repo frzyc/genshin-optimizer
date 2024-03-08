@@ -1,0 +1,24 @@
+{
+  "name": "Vins et chants",
+  "description": {
+    "0": "Un recueil de chansons de l'époque aristocratique dont le compositeur est tombé dans l'oubli. Certaines d'entre elles relatent l'histoire d'un certain brigand héroïque..."
+  },
+  "passiveName": "Versatile",
+  "passiveDescription": {
+    "0": {
+      "0": "Lorsqu'une attaque normale a touché un ennemi, la consommation d'endurance du sprint ou de l'aptitude qui le remplace diminue de <cryo>14 %</cryo> pendant 5 s. De plus, après l'utilisation du sprint ou de l'aptitude qui le remplace, l'ATQ augmente de <cryo>20 %</cryo> pendant 5 s."
+    },
+    "1": {
+      "0": "Lorsqu'une attaque normale a touché un ennemi, la consommation d'endurance du sprint ou de l'aptitude qui le remplace diminue de <cryo>16 %</cryo> pendant 5 s. De plus, après l'utilisation du sprint ou de l'aptitude qui le remplace, l'ATQ augmente de <cryo>25 %</cryo> pendant 5 s."
+    },
+    "2": {
+      "0": "Lorsqu'une attaque normale a touché un ennemi, la consommation d'endurance du sprint ou de l'aptitude qui le remplace diminue de <cryo>18 %</cryo> pendant 5 s. De plus, après l'utilisation du sprint ou de l'aptitude qui le remplace, l'ATQ augmente de <cryo>30 %</cryo> pendant 5 s."
+    },
+    "3": {
+      "0": "Lorsqu'une attaque normale a touché un ennemi, la consommation d'endurance du sprint ou de l'aptitude qui le remplace diminue de <cryo>20 %</cryo> pendant 5 s. De plus, après l'utilisation du sprint ou de l'aptitude qui le remplace, l'ATQ augmente de <cryo>35 %</cryo> pendant 5 s."
+    },
+    "4": {
+      "0": "Lorsqu'une attaque normale a touché un ennemi, la consommation d'endurance du sprint ou de l'aptitude qui le remplace diminue de <cryo>22 %</cryo> pendant 5 s. De plus, après l'utilisation du sprint ou de l'aptitude qui le remplace, l'ATQ augmente de <cryo>40 %</cryo> pendant 5 s."
+    }
+  }
+}

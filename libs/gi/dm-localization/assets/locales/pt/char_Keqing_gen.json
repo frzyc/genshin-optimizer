@@ -1,0 +1,162 @@
+{
+  "name": "Keqing",
+  "title": "Trovão Condutor",
+  "description": "A Yuheng dos Qixing de Liyue. Tem muito a dizer sobre o Rex Lapis governando Liyue com apenas uma palavra, mas na verdade, esse deus admira muito esses céticos.",
+  "constellationName": "Trulla Cementarii",
+  "auto": {
+    "name": "Estilo de Yunlai",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Ataque Normal</strong>",
+        "1": "Realiza até 5 golpes rápidos."
+      },
+      "charged": {
+        "0": "<strong>Ataque Carregado</strong>",
+        "1": "Consome uma certa quantidade de Stamina para desferir 2 golpes rápidos com a espada."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Imersivo</strong>",
+        "1": "Mergulha em pleno ar para golpear o chão, causando dano aos inimigos ao longo do caminho e infligindo Dano em uma AdE durante o impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Dano do 1° Golpe",
+      "1": "Dano do 2° Golpe",
+      "2": "Dano do 3° Golpe",
+      "3": "Dano do 4° Golpe",
+      "4": "Dano do 5° Golpe",
+      "5": "Dano de Ataque Carregado",
+      "6": "Consumo de Stamina de Ataque Carregado",
+      "7": "Dano Durante a Queda",
+      "8": "Dano de Queda de Baixa/Alta Altitude",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Restauração Estelar",
+    "description": {
+      "0": "Arremessa um Relâmpago Stiletto que aniquila seus inimigos como um rápido trovão.",
+      "1": "Quando o Stiletto acerta seu alvo, ele causa <electro>Dano Electro</electro> nos inimigos em uma pequena AdE e coloca uma Marca de Stiletto no local atingido.",
+      "2": "<br/>",
+      "3": "<strong>Manter pressionado</strong>",
+      "4": "Mantenha pressionado para ajustar a direção na qual o Stiletto deve ser lançado.",
+      "5": "Stilettos lançados pelo modo de Manter pressionado podem ser suspensos em pleno ar, permitindo Keqing saltar neles ao usar Restauração Estelar uma segunda vez.",
+      "6": "<br/>",
+      "7": "<strong>Relâmpago Stiletto</strong>",
+      "8": " Se Keqing usar Restauração Estelar novamente ou usar um Ataque Carregado ainda em sua duração, removerá a Marca de Stiletto e produzirá efeitos diferentes:",
+      "9": " se ela usar Restauração Estelar novamente, ela irá teleportar para a localização da Marca e desencadeará um ataque cortante, que causa <electro>Dano Electro em AdE</electro>. Quando teleportando para um Stiletto que foi lançado com um Ataque Pressionado, Keqing pode ignorar obstruções do terreno.",
+      "10": " Se Keqing usa um Ataque Carregado, ela provocará uma série de cortes estrondosos na localização da Marca, causando <electro>Dano Electro em AdE</electro>.",
+      "11": "<br/>",
+      "12": "<i>\"Humanos são como mariposas, buscando incessantemente a chama que chamamos de deuses e Adepti. Mas essa luz que tenho aqui é a minha.\"</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Relâmpago Stiletto",
+      "1": "Dano do Corte",
+      "2": "Dano do Corte da Tormenta Elétrica",
+      "3": "Tempo de Recarga",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Passeio Celestial",
+    "description": {
+      "0": "Keqing desencadeia o poder dos raios, infligindo <electro>Dano Electro</electro> em uma AdE.",
+      "1": "Ela então se mistura na sombra de sua espada, desferindo uma série de golpes trovejantes nos inimigos próximos que simultaneamente infligem múltiplos acertos de <electro>Dano Electro</electro>. O ataque final inflige um massivo <electro>Dano Electro em uma AdE</electro>.",
+      "2": "<br/>",
+      "3": "<i>A técnica mais veloz no arsenal pessoal de Keqing é rápida o suficiente para derrubar as estrelas ao chão.</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Habilidade",
+      "1": "Dano de Corte",
+      "2": "Dano do Último Golpe",
+      "3": "Tempo de Recarga",
+      "4": "Energia Elemental",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Penitência do Trovão",
+    "description": {
+      "0": "Após relançar <strong>Restauração Estelar</strong> enquanto um Relâmpago Stiletto está presente, Keqing ganha <electro>Encantamento Electro</electro> por 5s."
+    }
+  },
+  "passive2": {
+    "name": "Dignidade Aristocrática",
+    "description": {
+      "0": "Quando lançado <strong>Passeio Celestial</strong>, a Taxa CRIT de Keqing é aumentada em 15%, e sua Recuperação de Energia é aumentada em 15%. Esse efeito dura por 8 segundos."
+    }
+  },
+  "passive3": {
+    "name": "Supervisor da Terra",
+    "description": {
+      "0": "Quando despachada em uma expedição em Liyue, o tempo consumido é reduzido em 25%"
+    }
+  },
+  "constellation1": {
+    "name": "Poder Trovejante",
+    "description": {
+      "0": "Relançar <strong>Restauração Estelar</strong> enquanto um Stiletto de Relâmpago está presente faz com que Keqing cause 50% do seu ATQ como <electro>Dano Electro em uma AdE</electro> na localização inicial e final de seu Teleporte."
+    }
+  },
+  "constellation2": {
+    "name": "Extração Afiada",
+    "description": {
+      "0": "Quando Ataques Normais e Carregados da Keqing acertam inimigos afetados por <electro>Electro</electro> eles têm 50% de chance de produzir uma Partícula Elemental.",
+      "1": "Esse efeito pode ocorrer apenas uma vez a cada 5 segundos."
+    }
+  },
+  "constellation3": {
+    "name": "Reforma Prevista",
+    "description": {
+      "0": "Aumenta o nível da <strong>Passeio Celestial</strong> em 3.",
+      "1": "O nível máximo de elevação é 15."
+    }
+  },
+  "constellation4": {
+    "name": "Sintonia",
+    "description": {
+      "0": "Por 10 segundos após Keqing acionar uma <electro>Reação Elemental relacionada com Electro</electro>, seu ATQ é aumentado em 25%."
+    }
+  },
+  "constellation5": {
+    "name": "Estrelas Viajantes",
+    "description": {
+      "0": "Aumenta o nível da <strong>Restauração Estelar</strong> em 3.",
+      "1": "O nível máximo de elevação é 15."
+    }
+  },
+  "constellation6": {
+    "name": "Estrela Tenaz",
+    "description": {
+      "0": "Ao iniciar um Ataque Normal, um Ataque Carregado, uma Habilidade Elemental ou um Supremo, Keqing ganha 6% de <electro>Bônus de Dano Electro</electro> por 8 segundos.",
+      "1": "Efeitos ativados por Ataques Normais, Ataques Carregados, Habilidades Elementais e Supremos são considerados entidades independentes."
+    }
+  }
+}

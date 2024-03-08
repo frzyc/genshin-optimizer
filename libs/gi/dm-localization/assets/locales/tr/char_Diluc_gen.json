@@ -1,0 +1,156 @@
+{
+  "name": "Diluc",
+  "title": "Şafağın Karanlık Yüzü",
+  "description": "Mondstadt'taki bir şaraphane imparatorluğunun sahibi. Her anlamda eşsiz biri.",
+  "constellationName": "Gece Kuşu",
+  "auto": {
+    "name": "Akkor Kılıç",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Saldırı</strong>",
+        "1": "Arka arkaya en fazla 4 saldırı yapar."
+      },
+      "charged": {
+        "0": "<strong>Yüklü Saldırı</strong>",
+        "1": "Zamanla Dayanıklılık harcayarak arka arkaya saldırılar yapar.",
+        "2": "Saldırıları daha güçlü bir darbeyle bitirir."
+      },
+      "plunging": {
+        "0": "<strong>Havadan Saldırı</strong>",
+        "1": "Havadayken dalışa geçerek yere vurur ve yoluna çıkan düşmanlara Alan Hasarı verir."
+      }
+    },
+    "skillParams": {
+      "0": "1 Vuruş Hasarı",
+      "1": "2 Vuruş Hasarı",
+      "2": "3 Vuruş Hasarı",
+      "3": "4 Vuruş Hasarı",
+      "4": "Yüklü Saldırı Döngüsel Hasarı",
+      "5": "Yüklü Saldırı Son Vuruş Hasarı",
+      "6": "Yüklü Saldırı Dayanıklılık Maliyeti",
+      "7": "Maks. Süre",
+      "8": "Havadan Saldırı Hasarı",
+      "9": "Havadan Saldırı Hasarı (Alçaktan/Yüksekten)",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Dağlayan Taarruz",
+    "description": {
+      "0": "İleri doğru saldırarak <pyro>Ateş Hasarı</pyro> verir.",
+      "1": "<br/>",
+      "2": "Bu beceri arka arkaya 3 defa kullanılabilir. Kısa süre içinde tekrar kullanılmazsa BS başlar.",
+      "3": "<br/>",
+      "4": "<i>Saldırılar Diluc'un önem verdiği değerleri temsil ediyor. Adalet, cesaret ve görev.</i>"
+    },
+    "skillParams": {
+      "0": "1 Vuruş Hasarı",
+      "1": "2 Vuruş Hasarı",
+      "2": "3 Vuruş Hasarı",
+      "3": "BS",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Şafak",
+    "description": {
+      "0": "Kızgın alevler yayarak yakındaki düşmanları geri iter ve <pyro>Ateş Hasarı</pyro> verir. Sonrasında alevler toplanarak bir silaha dönüşür ve ileri doğru atılarak yoluna çıkan tüm düşmanlara <pyro>Ateş Hasarı</pyro> veren bir Anka Kuşu çağırır. Anka Kuşu, hedefine vardığında patlayarak büyük miktarda <pyro>Ateş Alan Hasarı</pyro> verir.",
+      "1": "Kılıcını kaplayan alevler silaha <pyro>Ateş</pyro> etkisi verir.",
+      "2": "<br/>",
+      "3": "<i>Karanlık yola sadece aydınlık getirmek için girilir. Açın gözlerinizi. Gecenin karanlığında beliren o ışık, yaklaşan şafağın habercisidir.</i>"
+    },
+    "skillParams": {
+      "0": "Darbe Hasarı",
+      "1": "Süreli Hasar",
+      "2": "Patlama Hasarı",
+      "3": "BS",
+      "4": "Tesir Süresi",
+      "5": "Enerji Maliyeti",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Amansız",
+    "description": {
+      "0": "Diluc'un Yüklü Saldırısının Dayanıklılık Maliyeti %50 azalır ve süresi 3sn uzar."
+    }
+  },
+  "passive2": {
+    "name": "Anka Lütfu",
+    "description": {
+      "0": "<strong>Şafak</strong> etkisinin sağladığı <pyro>Ateş Tesiri</pyro> 4sn daha uzun sürer. Ayrıca Diluc, bu etki süresince %20 <pyro>Ateş Hasarı Bonusu</pyro> kazanır."
+    }
+  },
+  "passive3": {
+    "name": "Seher Şövalyesi Geleneği",
+    "description": {
+      "0": "Çift Elli Kılıç türü silahlar üretirken kullanılan cevherin %15'ini iade eder."
+    }
+  },
+  "constellation1": {
+    "name": "Hüküm",
+    "description": {
+      "0": "Diluc, Canı %50'nin üzerinde olan düşmanlara %15 daha fazla Hasar verir."
+    }
+  },
+  "constellation2": {
+    "name": "Dağlayan Kor",
+    "description": {
+      "0": "Diluc Hasar aldığında Saldırısı %10 ve Saldırı Hızı da %5 artar. Bu etki 10 saniye sürer.",
+      "1": "3 kademeye kadar birikebilir. 1,5 saniyede bir uygulanabilir."
+    }
+  },
+  "constellation3": {
+    "name": "Ateş ve Çelik",
+    "description": {
+      "0": "<strong>Dağlayan Taarruz</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation4": {
+    "name": "Akan Alev",
+    "description": {
+      "0": "<strong>Dağlayan Taarruz</strong> becerisi ritmik bir şekilde kullanıldığında, verilen hasar büyük ölçüde artar.",
+      "1": "<strong>Dağlayan Taarruz</strong> becerisi kullanıldıktan 2 saniye sonra kombo halinde kullanılan Dağlayan Taarruz %40 ek Hasar verir. Bu etki 2 saniye sürer."
+    }
+  },
+  "constellation5": {
+    "name": "Şafak Habercisi Anka",
+    "description": {
+      "0": "<strong>Şafak</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation6": {
+    "name": "Alevin Kılıcı, Karanlığın Düşmanı",
+    "description": {
+      "0": "<strong>Dağlayan Taarruz</strong> becerisini kullandıktan sonraki 6 saniye içinde yapılan 2 Normal Saldırının Hızı ve verdiği Hasar %30 artar.",
+      "1": "Buna ek olarak Dağlayan Taarruz kullanıldığında Normal Saldırı kombosu bölünmez."
+    }
+  }
+}

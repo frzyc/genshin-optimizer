@@ -1,0 +1,24 @@
+{
+  "name": "Cận Vệ Nhà Vua",
+  "description": {
+    "0": "Vũ khí nhận được từ câu chuyện của Aranara. Có tạo hình của chiếc cung, có thể bắn rơi kẻ địch trong rừng."
+  },
+  "passiveName": "Chỉ Dẫn Của Vua Mê Cung",
+  "passiveDescription": {
+    "0": {
+      "0": "Khi thi triển Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ sẽ nhận hiệu ứng \"Chỉ Dẫn Của Rừng Sâu\", tăng <cryo>60</cryo> Tinh Thông Nguyên Tố, duy trì 12s. Hiệu quả này sẽ hủy khi đổi nhân vật. \"Chỉ Dẫn Của Rừng Sâu\" khi kết thúc thời gian duy trì hoặc bị hủy sẽ gây cho một kẻ địch gần đó lượng sát thương bằng <cryo>100%</cryo> tấn công. \"Chỉ Dẫn Của Rừng Sâu\" mỗi 20s tối đa kích hoạt một lần."
+    },
+    "1": {
+      "0": "Khi thi triển Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ sẽ nhận hiệu ứng \"Chỉ Dẫn Của Rừng Sâu\", tăng <cryo>80</cryo> Tinh Thông Nguyên Tố, duy trì 12s. Hiệu quả này sẽ hủy khi đổi nhân vật. \"Chỉ Dẫn Của Rừng Sâu\" khi kết thúc thời gian duy trì hoặc bị hủy sẽ gây cho một kẻ địch gần đó lượng sát thương bằng <cryo>120%</cryo> tấn công. \"Chỉ Dẫn Của Rừng Sâu\" mỗi 20s tối đa kích hoạt một lần."
+    },
+    "2": {
+      "0": "Khi thi triển Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ sẽ nhận hiệu ứng \"Chỉ Dẫn Của Rừng Sâu\", tăng <cryo>100</cryo> Tinh Thông Nguyên Tố, duy trì 12s. Hiệu quả này sẽ hủy khi đổi nhân vật. \"Chỉ Dẫn Của Rừng Sâu\" khi kết thúc thời gian duy trì hoặc bị hủy sẽ gây cho một kẻ địch gần đó lượng sát thương bằng <cryo>140%</cryo> tấn công. \"Chỉ Dẫn Của Rừng Sâu\" mỗi 20s tối đa kích hoạt một lần."
+    },
+    "3": {
+      "0": "Khi thi triển Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ sẽ nhận hiệu ứng \"Chỉ Dẫn Của Rừng Sâu\", tăng <cryo>120</cryo> Tinh Thông Nguyên Tố, duy trì 12s. Hiệu quả này sẽ hủy khi đổi nhân vật. \"Chỉ Dẫn Của Rừng Sâu\" khi kết thúc thời gian duy trì hoặc bị hủy sẽ gây cho một kẻ địch gần đó lượng sát thương bằng <cryo>160%</cryo> tấn công. \"Chỉ Dẫn Của Rừng Sâu\" mỗi 20s tối đa kích hoạt một lần."
+    },
+    "4": {
+      "0": "Khi thi triển Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ sẽ nhận hiệu ứng \"Chỉ Dẫn Của Rừng Sâu\", tăng <cryo>140</cryo> Tinh Thông Nguyên Tố, duy trì 12s. Hiệu quả này sẽ hủy khi đổi nhân vật. \"Chỉ Dẫn Của Rừng Sâu\" khi kết thúc thời gian duy trì hoặc bị hủy sẽ gây cho một kẻ địch gần đó lượng sát thương bằng <cryo>180%</cryo> tấn công. \"Chỉ Dẫn Của Rừng Sâu\" mỗi 20s tối đa kích hoạt một lần."
+    }
+  }
+}

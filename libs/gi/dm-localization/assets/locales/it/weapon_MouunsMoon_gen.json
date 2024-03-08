@@ -1,0 +1,24 @@
+{
+  "name": "Luna di Mouun",
+  "description": {
+    "0": "Un elegante arco da guerra realizzato con conchiglie e coralli. Un triste bagliore lo pervade per tutta la sua lunghezza."
+  },
+  "passiveName": "Dominaonde di Watatsumi",
+  "passiveDescription": {
+    "0": {
+      "0": "Per ogni punto dell'energia massima totale del gruppo, i DAN da Tripudio elementale del personaggio equipaggiato con quest'arma aumentano di uno <cryo>0,12%</cryo>. In questo modo è possibile ottenere fino a un <cryo>40%</cryo> di aumento dei DAN da Tripudio elementale."
+    },
+    "1": {
+      "0": "Per ogni punto dell'energia massima totale del gruppo, i DAN da Tripudio elementale del personaggio equipaggiato con quest'arma aumentano di uno <cryo>0,15%</cryo>. In questo modo è possibile ottenere fino a un <cryo>50%</cryo> di aumento dei DAN da Tripudio elementale."
+    },
+    "2": {
+      "0": "Per ogni punto dell'energia massima totale del gruppo, i DAN da Tripudio elementale del personaggio equipaggiato con quest'arma aumentano di uno <cryo>0,18%</cryo>. In questo modo è possibile ottenere fino a un <cryo>60%</cryo> di aumento dei DAN da Tripudio elementale."
+    },
+    "3": {
+      "0": "Per ogni punto dell'energia massima totale del gruppo, i DAN da Tripudio elementale del personaggio equipaggiato con quest'arma aumentano di uno <cryo>0,21%</cryo>. In questo modo è possibile ottenere fino a un <cryo>70%</cryo> di aumento dei DAN da Tripudio elementale."
+    },
+    "4": {
+      "0": "Per ogni punto dell'energia massima totale del gruppo, i DAN da Tripudio elementale del personaggio equipaggiato con quest'arma aumentano di uno <cryo>0,24%</cryo>. In questo modo è possibile ottenere fino a un <cryo>80%</cryo> di aumento dei DAN da Tripudio elementale."
+    }
+  }
+}

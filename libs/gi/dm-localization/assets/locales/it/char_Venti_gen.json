@@ -1,0 +1,167 @@
+{
+  "name": "Venti",
+  "title": "Bardo itinerante",
+  "description": "Un bardo di Mondstadt, che vaga liberamente per le strade e le vie della città.",
+  "constellationName": "Carmen Dei",
+  "auto": {
+    "name": "Precisione divina",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attacco normale</strong>",
+        "1": "Effettua fino a 6 tiri consecutivi con un arco."
+      },
+      "charged": {
+        "0": "<strong>Attacco caricato</strong>",
+        "1": "Effettua un <strong>attacco mirato</strong> ancora più preciso con DAN aumentati.",
+        "2": "Mentre mira, sulla punta della freccia convergeranno dei venti favorevoli. Una freccia di vento caricata al massimo infligge <anemo>DAN da Anemo</anemo>."
+      },
+      "plunging": {
+        "0": "<strong>Attacco in picchiata</strong>",
+        "1": "Scocca una pioggia di frecce a mezz'aria prima di cadere e colpire il suolo, infliggendo DAN ad area all'impatto."
+      }
+    },
+    "skillParams": {
+      "0": "DAN da 1º colpo",
+      "1": "DAN da 2º colpo",
+      "2": "DAN da 3º colpo",
+      "3": "DAN da 4º colpo",
+      "4": "DAN da 5º colpo",
+      "5": "DAN da 6º colpo",
+      "6": "ATT mirato",
+      "7": "ATT mirato a piena carica",
+      "8": "DAN da ATT in picchiata",
+      "9": "DAN da ATT in picchiata basso/alto",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Sonetto celeste",
+    "description": {
+      "0": "O vento, sul quale volano tutti gli inni e i canti, solleva questi terrestri in cielo!",
+      "1": "<br/>",
+      "2": "<strong>Pressione</strong>",
+      "3": "Evoca un dominio di vento nella posizione dell'avversario, infliggendo <anemo>DAN da Anemo ad area</anemo> e scagliando gli avversari in aria.",
+      "4": "<br/>",
+      "5": "<strong>Pressione prolungata</strong>",
+      "6": "Evoca un dominio di vento ancora più grande con Venti come epicentro, infliggendo <anemo>DAN da Anemo ad area</anemo> e scagliando gli avversari colpiti in aria.",
+      "7": "Dopo aver rilasciato la pressione di quest'abilità, Venti cavalca il vento.",
+      "8": "<br/>",
+      "9": "Gli avversari colpiti da Sonetto celeste cadranno lentamente verso il suolo.",
+      "10": "<br/>",
+      "11": "<i>Al tempo in cui gli dèi e gli uomini percorrevano insieme la terra, i cieli erano colmi di infiniti canti. Quella melodia è oramai dimenticata da tempo.</i>"
+    },
+    "skillParams": {
+      "0": "DAN da pressione",
+      "1": "TdR pressione",
+      "2": "DAN da pressione prolungata",
+      "3": "TdR pressione prolungata",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Ode all'Archon di Anemo",
+    "description": {
+      "0": "Scaglia una freccia che racchiude un'infinità di venti fusi tra loro, innescando In mezzo alla tempesta, che attira gli avversari e infligge continuamente <anemo>DAN da Anemo</anemo>.",
+      "1": "<br/>",
+      "2": "<strong>Assorbimento elementale</strong>",
+      "3": "Se In mezzo alla tempesta entra in contatto con <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<electro>Electro</electro>, infligge DAN elementali aggiuntivi di quel tipo.",
+      "4": "L'Assorbimento elementale avviene una volta per utilizzo.",
+      "5": "<br/>",
+      "6": "<i>Molti inni scritti per lodare l'Archon di Anemo si sono persi nel tempo. Questo canta della sua maestria del vento.</i>"
+    },
+    "skillParams": {
+      "0": "DAN nel tempo",
+      "1": "DAN elementali aggiuntivi",
+      "2": "Durata",
+      "3": "TdR",
+      "4": "Costo energia",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Venti avvolgenti",
+    "description": {
+      "0": "Usando la variante a pressione prolungata di <strong>Sonetto celeste</strong>, si crea una corrente ascendente di 20 s."
+    }
+  },
+  "passive2": {
+    "name": "In mezzo alla tempesta",
+    "description": {
+      "0": "Quando l'effetto <strong>Ode all'Archon di Anemo</strong> termina, rigenera di 15 l'energia di Venti.",
+      "1": "Se si è verificato un assorbimento elementale, rigenera di 15 anche l'energia di tutti i personaggi dell'elemento corrispondente presenti nel gruppo."
+    }
+  },
+  "passive3": {
+    "name": "Cavalcavento",
+    "description": {
+      "0": "Diminuisce di un 20% il consumo di vigore durante la planata per i membri del tuo gruppo.",
+      "1": "Non è cumulabile con talenti passivi che conferiscono gli stessi effetti."
+    }
+  },
+  "constellation1": {
+    "name": "Venti divisi",
+    "description": {
+      "0": "Scocca 2 frecce aggiuntive per ogni <strong>attacco mirato</strong>, ognuna delle quali infligge un 33% dei DAN della freccia originale."
+    }
+  },
+  "constellation2": {
+    "name": "Brezza della reminiscenza",
+    "description": {
+      "0": "<strong>Sonetto celeste</strong> riduce la <anemo>RES ad Anemo</anemo> e la RES fisica degli avversari di un 12% per 10 s.",
+      "1": "La <anemo>RES ad Anemo</anemo> e la RES fisica degli avversari scaraventati in aria da <strong>Sonetto celeste</strong> si riducono di un ulteriore 12%."
+    }
+  },
+  "constellation3": {
+    "name": "Ode ai mille venti",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Ode all'Archon di Anemo</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation4": {
+    "name": "Uragano della libertà",
+    "description": {
+      "0": "Quando Venti raccoglie una particella o sfera elementale, riceve un <anemo>bonus DAN da Anemo</anemo> di un 25% per 10 s."
+    }
+  },
+  "constellation5": {
+    "name": "Concerto dal Cielo",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Sonetto celeste</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation6": {
+    "name": "Tempesta della resistenza",
+    "description": {
+      "0": "La <anemo>RES ad Anemo</anemo> degli avversari che subiscono DAN da <strong>Ode all'Archon di Anemo</strong> si riduce di un 20%.",
+      "1": "Se si è verificato un assorbimento elementale, anche la loro RES all'elemento corrispondente si riduce di un 20%."
+    }
+  }
+}

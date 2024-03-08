@@ -1,0 +1,24 @@
+{
+  "name": "Rightful Reward",
+  "description": {
+    "0": "A sharp spear. Only its tip remains freshly bloodstained."
+  },
+  "passiveName": "Tip of the Spear",
+  "passiveDescription": {
+    "0": {
+      "0": "When the wielder is healed, restore <cryo>8</cryo> Energy. This effect can be triggered once every 10s, and can occur even when the character is not on the field."
+    },
+    "1": {
+      "0": "When the wielder is healed, restore <cryo>10</cryo> Energy. This effect can be triggered once every 10s, and can occur even when the character is not on the field."
+    },
+    "2": {
+      "0": "When the wielder is healed, restore <cryo>12</cryo> Energy. This effect can be triggered once every 10s, and can occur even when the character is not on the field."
+    },
+    "3": {
+      "0": "When the wielder is healed, restore <cryo>14</cryo> Energy. This effect can be triggered once every 10s, and can occur even when the character is not on the field."
+    },
+    "4": {
+      "0": "When the wielder is healed, restore <cryo>16</cryo> Energy. This effect can be triggered once every 10s, and can occur even when the character is not on the field."
+    }
+  }
+}

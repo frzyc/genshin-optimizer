@@ -1,0 +1,24 @@
+{
+  "name": "Deniz Haritası",
+  "description": {
+    "0": "Bölgedeki akıntıları ve iklimi ayrıntılı olarak anlatan bir deniz haritası. Liyue'ye ticaret yoluyla geldiği biliniyor."
+  },
+  "passiveName": "Tesirli Parşömen",
+  "passiveDescription": {
+    "0": {
+      "0": "Bir Element Tepkimesi tetiklendikten sonra 10 saniyeliğine <cryo>%8</cryo> Element Hasarı Bonusu kazanılır. 2 kademeye kadar birikir."
+    },
+    "1": {
+      "0": "Bir Element Tepkimesi tetiklendikten sonra 10 saniyeliğine <cryo>%10</cryo> Element Hasarı Bonusu kazanılır. 2 kademeye kadar birikir."
+    },
+    "2": {
+      "0": "Bir Element Tepkimesi tetiklendikten sonra 10 saniyeliğine <cryo>%12</cryo> Element Hasarı Bonusu kazanılır. 2 kademeye kadar birikir."
+    },
+    "3": {
+      "0": "Bir Element Tepkimesi tetiklendikten sonra 10 saniyeliğine <cryo>%14</cryo> Element Hasarı Bonusu kazanılır. 2 kademeye kadar birikir."
+    },
+    "4": {
+      "0": "Bir Element Tepkimesi tetiklendikten sonra 10 saniyeliğine <cryo>%16</cryo> Element Hasarı Bonusu kazanılır. 2 kademeye kadar birikir."
+    }
+  }
+}

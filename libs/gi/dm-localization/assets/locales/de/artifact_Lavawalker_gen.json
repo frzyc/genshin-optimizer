@@ -1,0 +1,29 @@
+{
+  "setName": "Feuer durchwandernder Heiliger",
+  "setEffects": {
+    "2": "Erhöht den Pyro-WDS um 40 %.",
+    "4": "Erhöht den von Pyro-Effekten betroffenen Gegnern zugefügten Schaden um 35 %."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Entschlossenheit des Lavaläufers",
+      "desc": "Eine in lodernden Flammen erblühende Blume. Damit sollen die Weisen der alten Zeit über das Lavameer gewandert sein."
+    },
+    "plume": {
+      "name": "Entsagung des Lavaläufers",
+      "desc": "Die Feder eines in Lava badenden Vogels. Es ist, als könnte man den Flügelschlag zwischen den Flammen hören."
+    },
+    "sands": {
+      "name": "Mühsal des Lavaläufers",
+      "desc": "Eine Sanduhr mit gleißenden Sandkörnern, die nur so dahingleiten, aber keine Brandzeichen hinterlassen."
+    },
+    "goblet": {
+      "name": "Erleuchtung des Lavaläufers",
+      "desc": "Dieser Becher soll selbst Lava ausgehalten haben. Heute ist nichts mehr darin zu finden. Allein etwas Wärme strahlt er noch aus."
+    },
+    "circlet": {
+      "name": "Vernunft des Lavaläufers",
+      "desc": "Die Krone des Lavaläufers. Sie leuchtete einst auf dem Haupt der uralten Gestalt, die über das Lavameer wanderte."
+    }
+  }
+}

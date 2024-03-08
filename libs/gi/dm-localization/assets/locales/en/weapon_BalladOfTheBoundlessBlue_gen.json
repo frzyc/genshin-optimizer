@@ -1,0 +1,24 @@
+{
+  "name": "Ballad of the Boundless Blue",
+  "description": {
+    "0": "An anthology of exquisite poetry. It contains quite a few poems beloved by Mondstadters, concerning the skies, dandelions, and other such topics."
+  },
+  "passiveName": "Azure Skies",
+  "passiveDescription": {
+    "0": {
+      "0": "Within 6s after Normal or Charged Attacks hit an opponent, Normal Attack DMG will be increased by <cryo>8%</cryo> and Charged Attack DMG will be increased by <cryo>6%</cryo>. Max 3 stacks. This effect can be triggered once every 0.3s."
+    },
+    "1": {
+      "0": "Within 6s after Normal or Charged Attacks hit an opponent, Normal Attack DMG will be increased by <cryo>10%</cryo> and Charged Attack DMG will be increased by <cryo>7.5%</cryo>. Max 3 stacks. This effect can be triggered once every 0.3s."
+    },
+    "2": {
+      "0": "Within 6s after Normal or Charged Attacks hit an opponent, Normal Attack DMG will be increased by <cryo>12%</cryo> and Charged Attack DMG will be increased by <cryo>9%</cryo>. Max 3 stacks. This effect can be triggered once every 0.3s."
+    },
+    "3": {
+      "0": "Within 6s after Normal or Charged Attacks hit an opponent, Normal Attack DMG will be increased by <cryo>14%</cryo> and Charged Attack DMG will be increased by <cryo>10.5%</cryo>. Max 3 stacks. This effect can be triggered once every 0.3s."
+    },
+    "4": {
+      "0": "Within 6s after Normal or Charged Attacks hit an opponent, Normal Attack DMG will be increased by <cryo>16%</cryo> and Charged Attack DMG will be increased by <cryo>12%</cryo>. Max 3 stacks. This effect can be triggered once every 0.3s."
+    }
+  }
+}

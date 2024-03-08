@@ -1,0 +1,165 @@
+{
+  "name": "Barbara",
+  "title": "Shining Idol",
+  "description": "Setiap penduduk Mondstadt mendambakan Barbara. Tetapi kata \"idola\" yang melekat padanya, dia hanya melihatnya dari majalah.",
+  "constellationName": "Crater",
+  "auto": {
+    "name": "Whisper of Water",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Attack</strong>",
+        "1": "Melancarkan hingga 4 serangan air yang mengakibatkan <hydro>Hydro DMG</hydro>."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Mengonsumsi sejumlah Stamina untuk mengakibatkan <hydro>Hydro DMG Area</hydro> setelah jeda singkat."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Mengumpulkan kekuatan Hydro dan menerjang tanah, menyerang musuh di jalur terjangan dan mengakibatkan <hydro>Hydro DMG Area</hydro> saat mendarat."
+      }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Tahap 4",
+      "4": "DMG Charged Attack",
+      "5": "Konsumsi Stamina Charged Attack",
+      "6": "DMG Selama Plunging",
+      "7": "DMG Plunging Attack Rendah/Tinggi",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Let the Show Begin♪",
+    "description": {
+      "0": "Memanggil tetesan air yang menyerupai not balok yang membentuk sebuah Melody Loop, mengakibatkan <hydro>Hydro DMG</hydro> ke musuh di sekitar Karakter dan memberikan efek <hydro>Wet</hydro>.",
+      "1": "<br/>",
+      "2": "<strong>Melody Loop</strong>",
+      "3": [
+        "Normal Attack Barbara dapat memulihkan HP seluruh anggota partymu dan karakter kawan di sekitar, jumlah HP yang dipulihkan berdasarkan pada Max HP Barbara;",
+        "Charged Attack Barbara memulihkan 4 kali lipat lebih banyak HP;",
+        "Memulihkan HP secara berkala untuk karakter sendiri yang sedang digunakan;",
+        "Memberikan efek <hydro>Wet</hydro> kepada karakter dan musuh yang menyentuhnya."
+      ],
+      "4": "<br/>",
+      "5": "<i>Musik Barbara adalah sihir yang dapat menyembuhkan teman-temannya.</i>"
+    },
+    "skillParams": {
+      "0": "Pemulihan HP/Hit",
+      "1": "Regenerasi HP",
+      "2": "DMG Tetesan Air",
+      "3": "Durasi",
+      "4": "Cooldown",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Shining Miracle♪",
+    "description": {
+      "0": "Memulihkan HP Karakter teman dan seluruh anggota party dalam jumlah besar, jumlah HP yang dipulihkan berdasarkan pada Max HP Barbara.",
+      "1": "<br/>",
+      "2": "<i>Keinginan Barbara untuk menyembuhkan adalah dorongan baginya untuk terus bertarung dan bernyanyi.</i>"
+    },
+    "skillParams": {
+      "0": "Pemulihan HP",
+      "1": "Cooldown",
+      "2": "Konsumsi Energy",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Glorious Season",
+    "description": {
+      "0": "Mengurangi 12% konsumsi Stamina Karakter yang berada dalam Melody Loop dari skill <strong>Let the Show Begin♪</strong>."
+    }
+  },
+  "passive2": {
+    "name": "Encore",
+    "description": {
+      "0": "Setiap kali karakter yang sedang digunakan mengambil Elemental Orb/Particle, akan memperpanjang durasi Melody Loop dari skill <strong>Let the Show Begin♪</strong> selama 1 detik.",
+      "1": "Penambahan durasi maksimum adalah 5 detik."
+    }
+  },
+  "passive3": {
+    "name": "With My Whole Heart ♪",
+    "description": {
+      "0": "Saat masakan jenis pemulihan dimasak dengan sempurna, memiliki 12% kemungkinan mendapatkan hasil 2 kali lipat."
+    }
+  },
+  "constellation1": {
+    "name": "Gleeful Songs",
+    "description": {
+      "0": "Memulihkan 1 Energy Barbara setiap 10 detik."
+    }
+  },
+  "constellation2": {
+    "name": "Vitality Burst",
+    "description": {
+      "0": "Mengurangi 15% CD <strong>Let the Show Begin♪</strong>.",
+      "1": "Selama durasi skill, Karakter aktif akan mendapatkan 15% <hydro>Hydro DMG Bonus</hydro>."
+    }
+  },
+  "constellation3": {
+    "name": "Star of Tomorrow",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Shining Miracle♪</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Attentiveness Be My Power",
+    "description": {
+      "0": "Setiap kali Barbara menyerang musuh dengan Charged Attack akan memulihkan 1 Energy.",
+      "1": "Paling banyak dapat memulihkan 5 Energy dengan cara ini setiap kalinya."
+    }
+  },
+  "constellation5": {
+    "name": "The Purest Companionship",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Let the Show Begin♪</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Dedicating Everything to You",
+    "description": {
+      "0": "Ketika Barbara ada dalam party namun sedang tidak berada di medan pertempuran, dan salah seorang anggota party gugur:",
+      "1": "Secara otomatis akan menghidupkan kembali Karakter gugur tersebut;",
+      "2": [
+        "Dan memulihkan HP Karakter tersebut hingga 100%."
+      ],
+      "3": "Efek ini dapat terpicu setiap 15 menit."
+    }
+  }
+}

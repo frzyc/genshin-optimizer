@@ -1,0 +1,24 @@
+{
+  "name": "Mémoire de Tulaytullah",
+  "description": {
+    "0": "Une cloche fabriquée en saphir et en argent, dont les échos sont aussi nets que lointains."
+  },
+  "passiveName": "Larme d'azur révolue",
+  "passiveDescription": {
+    "0": {
+      "0": "Augmente la VIT d'attaque normale de <cryo>10 %</cryo>. Après avoir utilisé une compétence élémentaire, les DGT infligés par les attaques normales augmentent de <cryo>4,8 %</cryo> toutes les secondes pendant 14 s. Après avoir touché un ennemi avec une attaque normale pendant cette durée, les DGT infligés par les attaques normales augmentent de <cryo>9,6 %</cryo>, cet effet pouvant être déclenché une fois toutes les 0,3 s. Pendant cette durée, les DGT des attaques normales peuvent être augmentés d'un maximum de <cryo>48 %</cryo> de ces manières. L'effet est annulé lorsque le personnage équipé de l'arme quitte le champ de bataille, et utiliser à nouveau la compétence élémentaire réinitialise tous les bonus de DGT."
+    },
+    "1": {
+      "0": "Augmente la VIT d'attaque normale de <cryo>12,5 %</cryo>. Après avoir utilisé une compétence élémentaire, les DGT infligés par les attaques normales augmentent de <cryo>6 %</cryo> toutes les secondes pendant 14 s. Après avoir touché un ennemi avec une attaque normale pendant cette durée, les DGT infligés par les attaques normales augmentent de <cryo>12 %</cryo>, cet effet pouvant être déclenché une fois toutes les 0,3 s. Pendant cette durée, les DGT des attaques normales peuvent être augmentés d'un maximum de <cryo>60 %</cryo> de ces manières. L'effet est annulé lorsque le personnage équipé de l'arme quitte le champ de bataille, et utiliser à nouveau la compétence élémentaire réinitialise tous les bonus de DGT."
+    },
+    "2": {
+      "0": "Augmente la VIT d'attaque normale de <cryo>15 %</cryo>. Après avoir utilisé une compétence élémentaire, les DGT infligés par les attaques normales augmentent de <cryo>7,2 %</cryo> toutes les secondes pendant 14 s. Après avoir touché un ennemi avec une attaque normale pendant cette durée, les DGT infligés par les attaques normales augmentent de <cryo>14,4 %</cryo>, cet effet pouvant être déclenché une fois toutes les 0,3 s. Pendant cette durée, les DGT des attaques normales peuvent être augmentés d'un maximum de <cryo>72 %</cryo> de ces manières. L'effet est annulé lorsque le personnage équipé de l'arme quitte le champ de bataille, et utiliser à nouveau la compétence élémentaire réinitialise tous les bonus de DGT."
+    },
+    "3": {
+      "0": "Augmente la VIT d'attaque normale de <cryo>17,5 %</cryo>. Après avoir utilisé une compétence élémentaire, les DGT infligés par les attaques normales augmentent de <cryo>8,4 %</cryo> toutes les secondes pendant 14 s. Après avoir touché un ennemi avec une attaque normale pendant cette durée, les DGT infligés par les attaques normales augmentent de <cryo>16,8 %</cryo>, cet effet pouvant être déclenché une fois toutes les 0,3 s. Pendant cette durée, les DGT des attaques normales peuvent être augmentés d'un maximum de <cryo>84 %</cryo> de ces manières. L'effet est annulé lorsque le personnage équipé de l'arme quitte le champ de bataille, et utiliser à nouveau la compétence élémentaire réinitialise tous les bonus de DGT."
+    },
+    "4": {
+      "0": "Augmente la VIT d'attaque normale de <cryo>20 %</cryo>. Après avoir utilisé une compétence élémentaire, les DGT infligés par les attaques normales augmentent de <cryo>9,6 %</cryo> toutes les secondes pendant 14 s. Après avoir touché un ennemi avec une attaque normale pendant cette durée, les DGT infligés par les attaques normales augmentent de <cryo>19,2 %</cryo>, cet effet pouvant être déclenché une fois toutes les 0,3 s. Pendant cette durée, les DGT des attaques normales peuvent être augmentés d'un maximum de <cryo>96 %</cryo> de ces manières. L'effet est annulé lorsque le personnage équipé de l'arme quitte le champ de bataille, et utiliser à nouveau la compétence élémentaire réinitialise tous les bonus de DGT."
+    }
+  }
+}

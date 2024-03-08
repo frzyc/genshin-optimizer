@@ -1,0 +1,24 @@
+{
+  "name": "Scion of the Blazing Sun",
+  "description": {
+    "0": "Sebuah busur panjang kuno yang ditinggalkan sejak zaman Raja Deshret. Tulisan kuno dan pola yang megah terukir di atasnya."
+  },
+  "passiveName": "The Way of Sunfire",
+  "passiveDescription": {
+    "0": {
+      "0": "Setelah Charged Attack mengenai musuh, akan memanggil Sunfire Arrow yang mengakibatkan DMG sebesar <cryo>60%</cryo> ATK terhadap musuh yang terkena serangan dan akan memberikan efek Heartsearer yang bertahan selama 10 detik terhadap musuh yang menerima Sunfire Arrow tersebut. DMG Charged Attack Karakter yang mengenakan meningkat <cryo>28%</cryo> terhadap musuh yang berada dalam status Heartsearer. Sunfire Arrow dapat terpicu sekali setiap 10 detik."
+    },
+    "1": {
+      "0": "Setelah Charged Attack mengenai musuh, akan memanggil Sunfire Arrow yang mengakibatkan DMG sebesar <cryo>75%</cryo> ATK terhadap musuh yang terkena serangan dan akan memberikan efek Heartsearer yang bertahan selama 10 detik terhadap musuh yang menerima Sunfire Arrow tersebut. DMG Charged Attack Karakter yang mengenakan meningkat <cryo>35%</cryo> terhadap musuh yang berada dalam status Heartsearer. Sunfire Arrow dapat terpicu sekali setiap 10 detik."
+    },
+    "2": {
+      "0": "Setelah Charged Attack mengenai musuh, akan memanggil Sunfire Arrow yang mengakibatkan DMG sebesar <cryo>90%</cryo> ATK terhadap musuh yang terkena serangan dan akan memberikan efek Heartsearer yang bertahan selama 10 detik terhadap musuh yang menerima Sunfire Arrow tersebut. DMG Charged Attack Karakter yang mengenakan meningkat <cryo>42%</cryo> terhadap musuh yang berada dalam status Heartsearer. Sunfire Arrow dapat terpicu sekali setiap 10 detik."
+    },
+    "3": {
+      "0": "Setelah Charged Attack mengenai musuh, akan memanggil Sunfire Arrow yang mengakibatkan DMG sebesar <cryo>105%</cryo> ATK terhadap musuh yang terkena serangan dan akan memberikan efek Heartsearer yang bertahan selama 10 detik terhadap musuh yang menerima Sunfire Arrow tersebut. DMG Charged Attack Karakter yang mengenakan meningkat <cryo>49%</cryo> terhadap musuh yang berada dalam status Heartsearer. Sunfire Arrow dapat terpicu sekali setiap 10 detik."
+    },
+    "4": {
+      "0": "Setelah Charged Attack mengenai musuh, akan memanggil Sunfire Arrow yang mengakibatkan DMG sebesar <cryo>120%</cryo> ATK terhadap musuh yang terkena serangan dan akan memberikan efek Heartsearer yang bertahan selama 10 detik terhadap musuh yang menerima Sunfire Arrow tersebut. DMG Charged Attack Karakter yang mengenakan meningkat <cryo>56%</cryo> terhadap musuh yang berada dalam status Heartsearer. Sunfire Arrow dapat terpicu sekali setiap 10 detik."
+    }
+  }
+}

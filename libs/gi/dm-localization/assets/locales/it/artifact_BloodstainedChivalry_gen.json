@@ -1,0 +1,29 @@
+{
+  "setName": "Cavalleria sanguinaria",
+  "setEffects": {
+    "2": "DAN fisici +25%.",
+    "4": "Dopo aver sconfitto un avversario, aumenta di un 50% i DAN da attacco caricato e ne azzera il costo in vigore per 10 s."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Fiore di ferro insanguinato",
+      "desc": "Un fiore secco macchiato di sangue e indurito come l'acciaio. Una sorta di cimelio per suo vecchio proprietario."
+    },
+    "plume": {
+      "name": "Piuma nera insanguinata",
+      "desc": "La piuma di un corvo appuntata sul mantello di un cavaliere. Le innumerevoli macchie di sangue ne hanno cambiato il colore."
+    },
+    "sands": {
+      "name": "La fine del Cavaliere insanguinato",
+      "desc": "Una clessidra usata da un cavaliere. Il liquido al suo interno si è seccato, rendendola inutilizzabile."
+    },
+    "goblet": {
+      "name": "Calice del Cavaliere insanguinato",
+      "desc": "Un calice di metallo appartenuto al Cavaliere insanguinato. Il suo colore scuro come la notte è dovuto al sangue secco e al fumo."
+    },
+    "circlet": {
+      "name": "Maschera di ferro insanguinata",
+      "desc": "La maschera di ferro del cavaliere usata per nasconderne l'identità. In molti hanno fatto congetture riguardo al volto che cela."
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Mappa Mare",
+  "description": {
+    "0": "A nautical chart featuring nearby currents and climates that somehow found its way into Liyue via foreign traders."
+  },
+  "passiveName": "Infusion Scroll",
+  "passiveDescription": {
+    "0": {
+      "0": "Triggering an Elemental reaction grants a <cryo>8%</cryo> Elemental DMG Bonus for 10s. Max 2 stacks."
+    },
+    "1": {
+      "0": "Triggering an Elemental reaction grants a <cryo>10%</cryo> Elemental DMG Bonus for 10s. Max 2 stacks."
+    },
+    "2": {
+      "0": "Triggering an Elemental reaction grants a <cryo>12%</cryo> Elemental DMG Bonus for 10s. Max 2 stacks."
+    },
+    "3": {
+      "0": "Triggering an Elemental reaction grants a <cryo>14%</cryo> Elemental DMG Bonus for 10s. Max 2 stacks."
+    },
+    "4": {
+      "0": "Triggering an Elemental reaction grants a <cryo>16%</cryo> Elemental DMG Bonus for 10s. Max 2 stacks."
+    }
+  }
+}

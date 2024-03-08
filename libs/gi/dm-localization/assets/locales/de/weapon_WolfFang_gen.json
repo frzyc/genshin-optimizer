@@ -1,0 +1,24 @@
+{
+  "name": "Wolfszahn",
+  "description": {
+    "0": "Ein legendäres Langschwert, das von einem wandernden Ritter einer längst vergessenen Zeit geführt wurde."
+  },
+  "passiveName": "Wolf des Nordwinds",
+  "passiveDescription": {
+    "0": {
+      "0": "Erhöht den mit Elementarfähigkeiten und Spezialfähigkeiten verursachten Schaden um <cryo>16 %</cryo>. Erhöht beim Treffen von Gegnern mit Elementarfähigkeiten die KT von Elementarfähigkeiten um <cryo>2 %</cryo>. Erhöht beim Treffen von Gegnern mit Spezialfähigkeiten die KT von Spezialfähigkeiten um <cryo>2 %</cryo>. Diese beiden Effekte halten jeweils 10 s. 4-fach stapelbar, 0,1 s Abklingzeit."
+    },
+    "1": {
+      "0": "Erhöht den mit Elementarfähigkeiten und Spezialfähigkeiten verursachten Schaden um <cryo>20 %</cryo>. Erhöht beim Treffen von Gegnern mit Elementarfähigkeiten die KT von Elementarfähigkeiten um <cryo>2,5 %</cryo>; erhöht beim Treffen von Gegnern mit Spezialfähigkeiten die KT von Spezialfähigkeiten um <cryo>2,5 %</cryo>. Die beiden oben erwähnten Effekte halten jeweils 10 s. 4-fach stapelbar, 0,1 s Abklingzeit."
+    },
+    "2": {
+      "0": "Erhöht den mit Elementarfähigkeiten und Spezialfähigkeiten verursachten Schaden um <cryo>24 %</cryo>. Erhöht beim Treffen von Gegnern mit Elementarfähigkeiten die KT von Elementarfähigkeiten um <cryo>3 %</cryo>; erhöht beim Treffen von Gegnern mit Spezialfähigkeiten die KT von Spezialfähigkeiten um <cryo>3 %</cryo>. Die beiden oben erwähnten Effekte halten jeweils 10 s. 4-fach stapelbar, 0,1 s Abklingzeit."
+    },
+    "3": {
+      "0": "Erhöht den mit Elementarfähigkeiten und Spezialfähigkeiten verursachten Schaden um <cryo>28 %</cryo>. Erhöht beim Treffen von Gegnern mit Elementarfähigkeiten die KT von Elementarfähigkeiten um <cryo>3,5 %</cryo>; erhöht beim Treffen von Gegnern mit Spezialfähigkeiten die KT von Spezialfähigkeiten um <cryo>3,5 %</cryo>. Die beiden oben erwähnten Effekte halten jeweils 10 s. 4-fach stapelbar, 0,1 s Abklingzeit."
+    },
+    "4": {
+      "0": "Erhöht den mit Elementarfähigkeiten und Spezialfähigkeiten verursachten Schaden um <cryo>32 %</cryo>. Erhöht beim Treffen von Gegnern mit Elementarfähigkeiten die KT von Elementarfähigkeiten um <cryo>4 %</cryo>; erhöht beim Treffen von Gegnern mit Spezialfähigkeiten die KT von Spezialfähigkeiten um <cryo>4 %</cryo>. Die beiden oben erwähnten Effekte halten jeweils 10 s. 4-fach stapelbar, 0,1 s Abklingzeit."
+    }
+  }
+}

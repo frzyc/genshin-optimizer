@@ -1,0 +1,24 @@
+{
+  "name": "Nỏ Kéo",
+  "description": {
+    "0": "Thực chất là một cây cung. Trải qua vô số lần cải tiến và thực nghiệm, người làm ra nó phát hiện mình đã làm một cây nỏ."
+  },
+  "passiveName": "Nỏ Kéo",
+  "passiveDescription": {
+    "0": {
+      "0": "Khi đánh thường hoặc trọng kích, nếu mũi tên bắn trúng kẻ địch trong 0.3s sau khi phóng, sát thương tạo thành sẽ tăng <cryo>36%</cryo>; Nếu không, sát thương tạo thành giảm 10%."
+    },
+    "1": {
+      "0": "Khi đánh thường hoặc trọng kích, nếu mũi tên bắn trúng kẻ địch trong 0.3s sau khi phóng, sát thương tạo thành sẽ tăng <cryo>42%</cryo>; Nếu không, sát thương tạo thành giảm 10%."
+    },
+    "2": {
+      "0": "Khi đánh thường hoặc trọng kích, nếu mũi tên bắn trúng kẻ địch trong 0.3s sau khi phóng, sát thương tạo thành sẽ tăng <cryo>48%</cryo>; Nếu không, sát thương tạo thành giảm 10%."
+    },
+    "3": {
+      "0": "Khi đánh thường hoặc trọng kích, nếu mũi tên bắn trúng kẻ địch trong 0.3s sau khi phóng, sát thương tạo thành sẽ tăng <cryo>54%</cryo>; Nếu không, sát thương tạo thành giảm 10%."
+    },
+    "4": {
+      "0": "Khi đánh thường hoặc trọng kích, nếu mũi tên bắn trúng kẻ địch trong 0.3s sau khi phóng, sát thương tạo thành sẽ tăng <cryo>60%</cryo>; Nếu không, sát thương tạo thành giảm 10%."
+    }
+  }
+}

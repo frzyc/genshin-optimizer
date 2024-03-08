@@ -1,0 +1,24 @@
+{
+  "name": "Spadone di Favonius",
+  "description": {
+    "0": "Una pesante spada cerimoniale dei Cavalieri di Favonius. Altamente distruttiva, è in grado d'incanalare facilmente il potere elementale."
+  },
+  "passiveName": "Vento propizio",
+  "passiveDescription": {
+    "0": {
+      "0": "I colpi CRIT hanno un <cryo>60%</cryo> di probabilità di generare una piccola quantità di particelle elementali, che rigenerano di 6 l'energia del personaggio. Si può verificare una sola volta ogni <cryo>12</cryo> s."
+    },
+    "1": {
+      "0": "I colpi CRIT hanno un <cryo>70%</cryo> di probabilità di generare una piccola quantità di particelle elementali, che rigenerano di 6 l'energia del personaggio. Si può verificare una sola volta ogni <cryo>10,5</cryo> s."
+    },
+    "2": {
+      "0": "I colpi CRIT hanno un <cryo>80%</cryo> di probabilità di generare una piccola quantità di particelle elementali, che rigenerano di 6 l'energia del personaggio. Si può verificare una sola volta ogni <cryo>9</cryo> s."
+    },
+    "3": {
+      "0": "I colpi CRIT hanno un <cryo>90%</cryo> di probabilità di generare una piccola quantità di particelle elementali, che rigenerano di 6 l'energia del personaggio. Si può verificare una sola volta ogni <cryo>7,5</cryo> s."
+    },
+    "4": {
+      "0": "I colpi CRIT hanno un <cryo>100%</cryo> di probabilità di generare una piccola quantità di particelle elementali, che rigenerano di 6 l'energia del personaggio. Si può verificare una sola volta ogni <cryo>6</cryo> s."
+    }
+  }
+}

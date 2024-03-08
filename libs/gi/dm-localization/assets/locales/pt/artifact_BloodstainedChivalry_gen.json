@@ -1,0 +1,29 @@
+{
+  "setName": "Cavaleiro Manchado de Sangue",
+  "setEffects": {
+    "2": "Dano Físico causado +25%",
+    "4": "Após derrotar um oponente, aumenta o Dano do Ataque Carregado em 50% e reduz seu custo de Stamina para 0 por 10s."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Coração de Ferro Sanguinário",
+      "desc": "Flor negra manchada pelo sangue, dura como o aço. É uma espécie de lembrança."
+    },
+    "plume": {
+      "name": "Pena Negra Sanguinária",
+      "desc": "Pena grudada na capa do cavaleiro. Após ser manchada diversas vezes com sangue, acabou ficando totalmente escura."
+    },
+    "sands": {
+      "name": "Relógio do Cavaleiro Sanguinário",
+      "desc": "Um relógio usado pelos estudiosos. O líquido interno que havia, se condensou, perdendo a sua função de medir o tempo."
+    },
+    "goblet": {
+      "name": "Cálice do Cavaleiro Sanguinário",
+      "desc": "Um copo de metal de um cavaleiro sanguinário. O sangue condensado fez com que a sua superfície exterior ficasse escura como a noite."
+    },
+    "circlet": {
+      "name": "Máscara de Ferro Sanguinária",
+      "desc": "A máscara de ferro usada pelo cavaleiro para proteger o seu rosto. O que há por de baixo dessa máscara é alvo de muita especulação."
+    }
+  }
+}

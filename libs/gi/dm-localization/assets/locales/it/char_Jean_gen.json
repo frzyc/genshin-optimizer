@@ -1,0 +1,162 @@
+{
+  "name": "Jean",
+  "title": "Cavaliere del Dente di leone",
+  "description": "Virtuosa e rigorosa Cavaliere del Dente di leone, oltre che Gran Maestra Reggente dei Cavalieri di Favonius di Mondstadt.",
+  "constellationName": "Leo Minor",
+  "auto": {
+    "name": "Tecnica di Favonius",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attacco normale</strong>",
+        "1": "Sferra fino a 5 colpi consecutivi."
+      },
+      "charged": {
+        "0": "<strong>Attacco caricato</strong>",
+        "1": "Consuma una determinata quantità di vigore per scagliare via un avversario usando il potere del vento.",
+        "2": "Gli avversari scagliati via cadono lentamente verso il suolo."
+      },
+      "plunging": {
+        "0": "<strong>Attacco in picchiata</strong>",
+        "1": "Attacca scagliandosi contro il suolo da mezz'aria, infliggendo DAN agli avversari lungo la traiettoria e DAN ad area all'impatto."
+      }
+    },
+    "skillParams": {
+      "0": "DAN da 1º colpo",
+      "1": "DAN da 2º colpo",
+      "2": "DAN da 3º colpo",
+      "3": "DAN da 4º colpo",
+      "4": "DAN da 5º colpo",
+      "5": "DAN da ATT caricato",
+      "6": "Costo vigore ATT caricato",
+      "7": "DAN da ATT in picchiata",
+      "8": "DAN da ATT in picchiata basso/alto",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Lama burrascosa",
+    "description": {
+      "0": "Concentrando la forza del vento informe intorno alla sua lama, Jean scatena una tempesta in miniatura, scagliando gli avversari nella direzione verso cui mira, infliggendo ingenti <anemo>DAN da Anemo</anemo>.",
+      "1": "<br/>",
+      "2": "<strong>Pressione prolungata</strong>",
+      "3": "Al costo del continuo consumo di vigore, Jean può comandare il vortice affinché aspiri gli avversari e gli oggetti circostanti portandoli davanti a lei.",
+      "4": "La direzione può essere regolata.",
+      "5": "Il personaggio è immobile per la durata dell'abilità.",
+      "6": "<br/>",
+      "7": "<i>Ciò che segue Jean, la sincera difenditrice, è un vento guardiano che può scacciare il pericolo dalla presenza dei suoi compagni.</i>"
+    },
+    "skillParams": {
+      "0": "DAN da abilità",
+      "1": "Consumo vigore",
+      "2": "Durata max",
+      "3": "TdR",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Brezza dei denti di leone",
+    "description": {
+      "0": "Evocando la protezione del vento, Jean crea un Campo di denti di leone turbinoso, scagliando via gli avversari circostanti e infliggendo <anemo>DAN da Anemo</anemo>.",
+      "1": "Allo stesso tempo, rigenera istantaneamente un grande quantitativo di PS a tutti i membri del gruppo. La quantità di PS rigenerati varia in base all'ATT di Jean.",
+      "2": "<br/>",
+      "3": "<strong>Campo di denti di leone</strong>",
+      "4": [
+        " Rigenera continuamente i PS dei personaggi all'interno dell'area d'effetto e li infonde continuamente di <anemo>Anemo</anemo>.",
+        " Infligge <anemo>DAN da Anemo</anemo> agli avversari che entrano o escono dal Campo di denti di leone."
+      ],
+      "5": "<br/>",
+      "6": "<i>La magnanimità di Jean è vasta quanto i campi di denti di leone, ed è alla radice del suo desiderio di proteggere gli altri.</i>"
+    },
+    "skillParams": {
+      "0": "DAN da Tripudio",
+      "1": "DAN da entrata/uscita campo",
+      "2": "Guarigione da attivazione campo",
+      "3": "RIGEN continua",
+      "4": "TdR",
+      "5": "Costo energia",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Compagno di vento",
+    "description": {
+      "0": "Quando vanno a segno, gli attacchi normali di Jean hanno un 50% di probabilità di rigenerare i PS di tutti i membri del gruppo di una quantità pari a un 15% dell'ATT di Jean."
+    }
+  },
+  "passive2": {
+    "name": "Lasciati guidare dal vento",
+    "description": {
+      "0": "Usare <strong>Brezza dei denti di leone</strong> rigenera un 20% della sua energia."
+    }
+  },
+  "passive3": {
+    "name": "Brezza guida",
+    "description": {
+      "0": "Quando si ottiene una preparazione perfetta di un piatto con effetti rigeneranti, c'è un 12% di probabilità di ottenere il doppio del prodotto."
+    }
+  },
+  "constellation1": {
+    "name": "Tempesta di lame",
+    "description": {
+      "0": "Aumenta la velocità di trascinamento di <strong>Lama burrascosa</strong> dopo una pressione prolungata maggiore di 1 s, e aumenta i DAN inflitti di un 40%."
+    }
+  },
+  "constellation2": {
+    "name": "Egida del popolo",
+    "description": {
+      "0": "Quando Jean raccoglie una particella o sfera elementale, la VEL di movimento e di attacco di tutti i membri del gruppo aumenta di un 15% per 15 s."
+    }
+  },
+  "constellation3": {
+    "name": "S'alza il vento dell'Ovest",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Brezza dei denti di leone</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation4": {
+    "name": "Regno dei denti di leone",
+    "description": {
+      "0": "La <strong>RES ad Anemo</strong> di tutti gli avversari all'interno del campo generato da <anemo>Brezza dei denti di leone</anemo> si riduce di un 40%."
+    }
+  },
+  "constellation5": {
+    "name": "Raffica esplosiva",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Lama burrascosa</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation6": {
+    "name": "Zanna del leone, giusta protettrice di Mondstadt",
+    "description": {
+      "0": "I DAN subiti all'interno del campo generato da <strong>Brezza dei denti di leone</strong> si riducono di un 35%. Dopo aver abbandonato il Campo di denti di leone, quest'effetto dura per 3 attacchi o 10 s."
+    }
+  }
+}

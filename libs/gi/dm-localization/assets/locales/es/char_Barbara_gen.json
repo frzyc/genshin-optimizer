@@ -1,0 +1,165 @@
+{
+  "name": "Bárbara",
+  "title": "La Ídolo Radiante",
+  "description": "Todos los habitantes de Mondstadt adoran a Bárbara. Ella vio por primera vez la palabra “ídolo” en una revista.",
+  "constellationName": "Cratus",
+  "auto": {
+    "name": "Murmullo del agua",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Ataque Normal</strong>",
+        "1": "Realiza hasta 4 salpicaduras de agua que infligen <hydro>Daño Hydro</hydro>."
+      },
+      "charged": {
+        "0": "<strong>Ataque Cargado</strong>",
+        "1": "Consume una cierta cantidad de Aguante para infligir <hydro>Daño Hydro en el AdE</hydro> después de un corto tiempo de canalización."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Descendente</strong>",
+        "1": "Concentra el poder del agua, se lanza desde el aire para golpear el suelo y daña a los enemigos a su paso, infligiendo <hydro>Daño Hydro en el AdE</hydro> en el momento del impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Daño de 1er golpe",
+      "1": "Daño de 2.º golpe",
+      "2": "Daño de 3er golpe",
+      "3": "Daño de 4.º golpe",
+      "4": "Daño de ATQ Cargado",
+      "5": "Coste de Aguante de ATQ Cargado",
+      "6": "Daño de Caída",
+      "7": "Daño de impacto de caída baja/alta",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Que empiece el concierto ♪",
+    "description": {
+      "0": "Invoca gotas de agua que se asemejan a notas musicales y forman círculos melódicos. Estas infligen <hydro>Daño Hydro</hydro> a los enemigos cercanos y los afecta con el estado de <hydro>Mojado</hydro>.",
+      "1": "<br/>",
+      "2": "<strong>Círculos melódicos</strong>",
+      "3": [
+        "Los Ataques Normales de Bárbara curan a todos los miembros de tu equipo y a los personajes aliados cercanos una cantidad de Vida proporcional a la Vida Máx. de Bárbara.",
+        "Al golpear a un enemigo con su Ataque Cargado, puede curar 4 veces más que con sus Ataques Normales.",
+        "Regenera intermitentemente una cierta cantidad de Vida para el personaje en uso.",
+        "Aplica el estado de <hydro>Mojado</hydro> sobre el personaje y sobre los enemigos que entren en contacto con él."
+      ],
+      "4": "<br/>",
+      "5": "<i>La música de Bárbara es la magia que cura a sus compañeros.</i>"
+    },
+    "skillParams": {
+      "0": "Curación al atacar",
+      "1": "Curación continua",
+      "2": "Daño de gotas de agua",
+      "3": "Duración",
+      "4": "TdE",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Milagro brillante ♪",
+    "description": {
+      "0": "Cura una cantidad considerable de Vida a los aliados cercanos y a todos los miembros de tu equipo. La curación aumenta en proporción a la Vida Máx. de Bárbara.",
+      "1": "<br/>",
+      "2": "<i>Los deseos sanadores de Bárbara refuerzan su voluntad de luchar y cantar.</i>"
+    },
+    "skillParams": {
+      "0": "Curación",
+      "1": "TdE",
+      "2": "Energía Elemental",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Momento de gloria",
+    "description": {
+      "0": "Reduce en un 12% el Coste de Aguante de los personaje cuando están dentro de los círculos melódicos de <strong>Que empiece el concierto ♪</strong>."
+    }
+  },
+  "passive2": {
+    "name": "Bis",
+    "description": {
+      "0": "Cuando tu personaje en uso recoja un orbe o una partícula elemental, aumenta en 1 s la duración de los círculos melódicos de <strong>Que empiece el concierto ♪</strong>.",
+      "1": "Puede aumentarse hasta un máximo de 5 s."
+    }
+  },
+  "passive3": {
+    "name": "Con todo mi corazón ♪",
+    "description": {
+      "0": "Al lograr un “Perfecto” en un plato con efectos reconstituyentes, hay una probabilidad del 12% de obtener el doble."
+    }
+  },
+  "constellation1": {
+    "name": "Canción de júbilo",
+    "description": {
+      "0": "Bárbara regenera 1 pt. de Energía Elemental cada 10 s."
+    }
+  },
+  "constellation2": {
+    "name": "Explosión de vitalidad",
+    "description": {
+      "0": "Reduce en un 15% el TdE de <strong>Que empiece el concierto ♪</strong>.",
+      "1": "Mientras esté activa la habilidad, el personaje en uso obtiene un 15% de <hydro>Bono de Daño Hydro</hydro>."
+    }
+  },
+  "constellation3": {
+    "name": "Estrella del mañana",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Milagro brillante ♪</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "El esfuerzo será mi magia",
+    "description": {
+      "0": "Bárbara regenera 1 pt. de Energía Elemental por cada enemigo que golpee con su Ataque Cargado.",
+      "1": "Solo se puede regenerar un máximo de 5 pts. de Energía por Ataque Cargado de esta manera."
+    }
+  },
+  "constellation5": {
+    "name": "Vínculo de inocencia",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Que empiece el concierto ♪</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Dedicándotelo todo",
+    "description": {
+      "0": "Si un miembro de tu equipo ha sido derrotado cuando Bárbara está en tu equipo pero no en uso:",
+      "1": [
+        "El personaje revive automáticamente.",
+        "Su vida se restaura en un 100%."
+      ],
+      "2": "Este efecto solo puede ocurrir una vez cada 15 min."
+    }
+  }
+}

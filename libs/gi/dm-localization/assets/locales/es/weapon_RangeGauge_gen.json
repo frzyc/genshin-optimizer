@@ -1,0 +1,24 @@
+{
+  "name": "Medidor Telemétrico",
+  "description": {
+    "0": "Una herramienta de medir que ya no se puede encontrar en prácticamente ningún sitio. Tiene la capacidad de disparar flechas."
+  },
+  "passiveName": "Saloma de los canteros",
+  "passiveDescription": {
+    "0": {
+      "0": "Al recibir o realizar curación, otorga una marca de unidad durante 30 s, acumulable hasta 3 marcas. Al usar la Habilidad Elemental o Definitiva, se consumen todas las marcas de unidad y se obtiene el efecto de “renuencia” durante 10 s. Por cada marca de unidad consumida, el ATQ aumenta en un <cryo>3%</cryo> y todos los Bonos de Daño Elemental aumentan en un <cryo>7%</cryo>. El efecto de renuencia solo se puede activar una vez cada 15 s, y el personaje puede obtener marcas de unidad incluso cuando esté en tu equipo pero no en uso."
+    },
+    "1": {
+      "0": "Al recibir o realizar curación, otorga una marca de unidad durante 30 s, acumulable hasta 3 marcas. Al usar la Habilidad Elemental o Definitiva, se consumen todas las marcas de unidad y se obtiene el efecto de “renuencia” durante 10 s. Por cada marca de unidad consumida, el ATQ aumenta en un <cryo>4%</cryo> y todos los Bonos de Daño Elemental aumentan en un <cryo>8.5%</cryo>. El efecto de renuencia solo se puede activar una vez cada 15 s, y el personaje puede obtener marcas de unidad incluso cuando esté en tu equipo pero no en uso."
+    },
+    "2": {
+      "0": "Al recibir o realizar curación, otorga una marca de unidad durante 30 s, acumulable hasta 3 marcas. Al usar la Habilidad Elemental o Definitiva, se consumen todas las marcas de unidad y se obtiene el efecto de “renuencia” durante 10 s. Por cada marca de unidad consumida, el ATQ aumenta en un <cryo>5%</cryo> y todos los Bonos de Daño Elemental aumentan en un <cryo>10%</cryo>. El efecto de renuencia solo se puede activar una vez cada 15 s, y el personaje puede obtener marcas de unidad incluso cuando esté en tu equipo pero no en uso."
+    },
+    "3": {
+      "0": "Al recibir o realizar curación, otorga una marca de unidad durante 30 s, acumulable hasta 3 marcas. Al usar la Habilidad Elemental o Definitiva, se consumen todas las marcas de unidad y se obtiene el efecto de “renuencia” durante 10 s. Por cada marca de unidad consumida, el ATQ aumenta en un <cryo>6%</cryo> y todos los Bonos de Daño Elemental aumentan en un <cryo>11.5%</cryo>. El efecto de renuencia solo se puede activar una vez cada 15 s, y el personaje puede obtener marcas de unidad incluso cuando esté en tu equipo pero no en uso."
+    },
+    "4": {
+      "0": "Al recibir o realizar curación, otorga una marca de unidad durante 30 s, acumulable hasta 3 marcas. Al usar la Habilidad Elemental o Definitiva, se consumen todas las marcas de unidad y se obtiene el efecto de “renuencia” durante 10 s. Por cada marca de unidad consumida, el ATQ aumenta en un <cryo>7%</cryo> y todos los Bonos de Daño Elemental aumentan en un <cryo>13%</cryo>. El efecto de renuencia solo se puede activar una vez cada 15 s, y el personaje puede obtener marcas de unidad incluso cuando esté en tu equipo pero no en uso."
+    }
+  }
+}

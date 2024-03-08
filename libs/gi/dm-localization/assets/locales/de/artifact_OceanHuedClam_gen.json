@@ -1,0 +1,29 @@
+{
+  "setName": "Meeresmuschel",
+  "setEffects": {
+    "2": "Erhöht den Heilungsbonus um 15 %.",
+    "4": "Wenn die mit diesem Artefaktset ausgerüsteten Figuren die Figuren in der Truppe heilen, entsteht eine Meeresblase, die 3 s hält und die wiederhergestellten Lebenspunkte beim Heilen (einschließlich des überschüssigen Heilungswerts) aufzeichnet. Wenn ihre Dauer endet, explodiert die Meeresblase, was Gegnern in der Umgebung Schaden, der 90 % der insgesamt wiederhergestellten LP entspricht, zufügt (Diese SCH-Berechnungsweise gleicht der der Elementarreaktionen Unter Strom und Supraleiter, ist jedoch von der Elementarkunde, der Stufe oder dem Reaktion-SCH-Bonus unabhängig). Alle 3,5 s kann höchstens eine Meeresblase entstehen. Jede Meeresblase kann bis zu 30.000 wiederhergestellte Lebenspunkte (einschließlich des überschüssigen Heilungswerts) aufzeichnen. In der eigenen Truppe kann gleichzeitig höchstens eine Meeresblase bestehen. Wenn die mit diesem Artefaktset ausgerüsteten Figuren inaktiv in der Truppe sind, kann dieser Effekt auch ausgelöst werden."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Meerfarbene Blüte",
+      "desc": "Eine zarte Blume, die die vielen Farben des kapriziösen Meeres angenommen hat. Unter dem silbernen Licht des Mondes leuchtet sie in wundersamen Farben."
+    },
+    "plume": {
+      "name": "Feder des Tiefenpalasts",
+      "desc": "Eine flaumige Feder mit demselben Farbton wie Korallen, die von der zeremoniellen Kleidung einer Schreinjungfer stammen sollen."
+    },
+    "sands": {
+      "name": "Muschel des Abschieds",
+      "desc": "Eine saubere, makellose Muschel, die aus dem bodenlosen Meer kommt."
+    },
+    "goblet": {
+      "name": "Perlenkäfig",
+      "desc": "Die glänzenden Perlen, die die Schreinjungfern von Watatsumi anbieten, leuchten ewig und werden nie matt."
+    },
+    "circlet": {
+      "name": "Krone von Watatsumi",
+      "desc": "Eine uralte, kunstvolle Krone, die einst von einem vergessenen Mitglied der Gottesdiener getragen wurde. Heute wird dieses Artefakt von den Menschen in Watatsumi mit großer Sorgfalt aufbewahrt."
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "setName": "Canção do Passado",
+  "setEffects": {
+    "2": "Bônus de Cura +15%",
+    "4": "Quando o personagem que está com este conjunto equipado curar um membro da equipe, gera por 6s o efeito \"Sede de Esperança\", registrando a quantidade curada (inclui sobrecura). Quando a duração acabar, o efeito Sede de Esperança será convertido para o efeito \"Ondas do Passado\": quando o Ataque Normal, Carregado, Imersivo, a Habilidade Elemental e Supremo do personagem ativo de sua equipe atingirem um inimigo, aumentará o Dano causado em 8% da cura registrada. Ondas do Passado será removido depois de ser desencadeado 5 vezes ou após 10s. Uma Sede de Esperança pode registrar até 15.000 de cura, e só é possível existir um efeito ao mesmo tempo, mas que pode registrar a cura feita por mais de um personagem que está com esse conjunto equipado. Esse efeito pode ser desencadeado mesmo que o personagem que está com esse conjunto equipado não esteja ativo no campo de batalha."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Juramento Esquecido do Passado",
+      "desc": "Uma flor desabrochada na forma de larimar, brilhando como prata. Dizem que ainda é vista como um símbolo de resistência."
+    },
+    "plume": {
+      "name": "Reflexões de Outrora",
+      "desc": "Uma pena na forma de uma borboleta, feita de cristais prateados e azuis. Dizem que no passado simbolizou um juramento que nunca seria separado."
+    },
+    "sands": {
+      "name": "Voz do Eco Passado",
+      "desc": "Uma ampulheta feita de lazurite e jade. Dizem ter sido inspirada na torre do sino de Petrichor."
+    },
+    "goblet": {
+      "name": "Sonhos de Promessas Passadas",
+      "desc": "Um recipiente opulente feito baseado no Graal da Pureza lendário. Dizem que é capaz de realizar os desejos das pessoas mais puras."
+    },
+    "circlet": {
+      "name": "Poesia Musical do Passado",
+      "desc": "Um chapéu formal que estava na moda entre criadores de óperas em Fontaine. Dizem que seu adorno em forma de pena era baseado nos elmos dos lendários Cavaleiros da Água Pura."
+    }
+  }
+}

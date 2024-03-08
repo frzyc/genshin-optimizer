@@ -1,0 +1,168 @@
+{
+  "name": "Xinyan",
+  "title": "Glühend heiße Musik",
+  "description": "Das Mädchen mit dem stürmischsten Musikgeschmack in ganz Liyue. Mit ihrer Musik und ihrem leidenschaftlichen Gesang lehnt sie sich gegen die vorgefassten Meinungen auf.",
+  "constellationName": "Fila Ignium",
+  "auto": {
+    "name": "Tanz der Flammen",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Standardangriff</strong>",
+        "1": "Führt bis zu 4 Schwünge mit dem Schwert hintereinander aus."
+      },
+      "charged": {
+        "0": "<strong>Heftiger Schlag</strong>",
+        "1": "Verbraucht fortlaufend Ausdauer, wirbelt das Großschwert und greift Gegner in der Umgebung an.",
+        "2": "Schwingt das Schwert am Ende mit besonders großer Wucht."
+      },
+      "plunging": {
+        "0": "<strong>Angriff aus dem Fall</strong>",
+        "1": "Schlägt beim Fallen aus der Luft auf den Boden, greift alle Gegner in der Bahn an und verursacht beim Aufkommen Flächenschaden."
+      }
+    },
+    "skillParams": {
+      "0": "SCH Phase 1",
+      "1": "SCH Phase 2",
+      "2": "SCH Phase 3",
+      "3": "SCH Phase 4",
+      "4": "SCH heftiger Schläge pro Runde",
+      "5": "SCH heftiger Schläge am Ende",
+      "6": "Ausdauerverbrauch heftiger Schläge",
+      "7": "Höchstdauer",
+      "8": "SCH beim Fallen",
+      "9": "SCH beim Fallen aus niedriger/großer Höhe",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Schlag in die Saiten",
+    "description": {
+      "0": "Xinyan streicht ihr Instrument, fügt Gegnern in der Umgebung <pyro>Pyro-Schaden</pyro> zu und erschafft aus der Leidenschaft ihrer Zuschauer einen Schild.",
+      "1": "Die Schildstärke hängt von Xinyans VTD und der Anzahl getroffener Gegner ab.",
+      "2": [
+        " Kein bis ein getroffener Gegner: Schild Stufe 1 – Einstimmen.",
+        " Zwei getroffene Gegner: Schild Stufe 2 – Aufdrehen.",
+        " Drei oder mehr getroffene Gegner: Schild Stufe 3 – Abfeiern. Hält Schaden ab und fügt Gegnern in der Umgebung stoßweise <pyro>Pyro-Schaden</pyro> zu."
+      ],
+      "3": "<br/>",
+      "4": "Merkmale des Schildes:",
+      "5": [
+        " Verleiht Xinyan beim Auslösen das <pyro>Pyro-Attribut</pyro>.",
+        " Hält bei <pyro>Pyro-Schaden</pyro> 250 % ab."
+      ],
+      "6": "<br/>",
+      "7": "<i>Xinyan besteht darauf, dass die Funken der Ausdruck ihrer Darbietungskunst, also natürlichen Ursprungs sind und nichts mit dem Göttlichen Auge zu tun haben.</i>"
+    },
+    "skillParams": {
+      "0": "Schwung-SCH",
+      "1": "Schildstärke Stufe 1",
+      "2": "Schildstärke Stufe 2",
+      "3": "Schildstärke Stufe 3",
+      "4": "Fortlaufender SCH",
+      "5": "Schilddauer",
+      "6": "Abklingzeit",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Refrain der Rebellion",
+    "description": {
+      "0": "Spielt harte Töne und erschafft Schallwellen, die Gegner zurückstoßen und Gegnern in der Umgebung physischen Schaden zufügen, um Euphorie in der Menge auszulösen.",
+      "1": "Bricht in Flammen aus, weil die Darbietung einfach zu heiß ist, und fügt Gegnern in der Umgebung fortlaufend <pyro>Pyro-Schaden</pyro> zu.",
+      "2": "<br/>",
+      "3": "<i>Früher hat Xinyan all ihre Auftritte auf diese Weise beendet. Später hat sie zwar damit aufgehört. Das lag aber nicht daran, dass es zu gefährlich war, sondern ihr fiel einfach nichts ein, was sie sonst bringen könnte, wenn jemand „Encore“ rufen sollte.</i>"
+    },
+    "skillParams": {
+      "0": "Fähigkeits-SCH",
+      "1": "Fortlaufender Pyro-SCH",
+      "2": "Dauer",
+      "3": "Abklingzeit",
+      "4": "Elementarenergie",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "„Es geht auch ohne Publikum ...“",
+    "description": {
+      "0": "Verringert die für den Schild von <strong>Schlag in die Saiten</strong> benötigte Trefferzahl:",
+      "1": [
+        " Schild Stufe 2 – Aufdrehen: Ein getroffener Gegner.",
+        " Schild Stufe 3 – Abfeiern: Zwei oder mehr getroffene Gegner."
+      ]
+    }
+  },
+  "passive2": {
+    "name": "„Das nenn ich Rock ’n’ Roll!“",
+    "description": {
+      "0": "Erhöht den von Figuren im Schutz eines Schilds von <strong>Schlag in die Saiten</strong> verursachten physischen Schaden um 15 %."
+    }
+  },
+  "passive3": {
+    "name": "Rezept für Rock ’n’ Roll",
+    "description": {
+      "0": "Stellt bei der perfekten Zubereitung eines Gerichts mit defensiver Funktion mit einer Wahrscheinlichkeit von 12 % den 2-fachen Ertrag her."
+    }
+  },
+  "constellation1": {
+    "name": "Tödliche Beschleunigung",
+    "description": {
+      "0": "Erhöht die Angriffs-GSW von Standardangriffen und heftigen Schlägen nach kritischen Treffern von Xinyan 5 s lang um 12 %.",
+      "1": "5 s Abklingzeit."
+    }
+  },
+  "constellation2": {
+    "name": "Explosive Stimmung",
+    "description": {
+      "0": "Erhöht die KT von mit <strong>Refrain der Rebellion</strong> verursachtem physischen Schaden um 100 % und erstellt beim Auslösen Schild Stufe 3 – Abfeiern."
+    }
+  },
+  "constellation3": {
+    "name": "Doppelgriff",
+    "description": {
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Schlag in die Saiten</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation4": {
+    "name": "Ansteckender Rhythmus",
+    "description": {
+      "0": "Der Schwungschaden von <strong>Schlag in die Saiten</strong> verringert den physischen WDS von Gegnern 12 s lang um 15 %."
+    }
+  },
+  "constellation5": {
+    "name": "Euphorisches Publikum",
+    "description": {
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Refrain der Rebellion</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation6": {
+    "name": "Tanz in der Hölle",
+    "description": {
+      "0": "Verringert den Ausdauerverbrauch von Xinyan bei heftigen Schlägen um 30 % und erhöht bei heftigen Schlägen den ANG um 50 % VTD."
+    }
+  }
+}

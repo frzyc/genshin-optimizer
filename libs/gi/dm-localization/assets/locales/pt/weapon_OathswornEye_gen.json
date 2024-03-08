@@ -1,0 +1,24 @@
+{
+  "name": "Olho do Juramento",
+  "description": {
+    "0": "Um tesouro nacional do Reino de Byakuya guardado no Dainichi Mikoshi. Com a chegada do Deus Serpente, este item foi usado para autenticar grandes juramentos e desejos."
+  },
+  "passiveName": "Povo das Profundezas Brilhantes",
+  "passiveDescription": {
+    "0": {
+      "0": "Após usar a Habilidade Elemental, a Recarga de Energia aumenta em <cryo>24%</cryo> por 10s."
+    },
+    "1": {
+      "0": "Após usar a Habilidade Elemental, a Recarga de Energia aumenta em <cryo>30%</cryo> por 10s."
+    },
+    "2": {
+      "0": "Após usar a Habilidade Elemental, a Recarga de Energia aumenta em <cryo>36%</cryo> por 10s."
+    },
+    "3": {
+      "0": "Após usar a Habilidade Elemental, a Recarga de Energia aumenta em <cryo>42%</cryo> por 10s."
+    },
+    "4": {
+      "0": "Após usar a Habilidade Elemental, a Recarga de Energia aumenta em <cryo>48%</cryo> por 10s."
+    }
+  }
+}

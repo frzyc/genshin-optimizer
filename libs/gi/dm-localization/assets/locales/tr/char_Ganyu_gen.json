@@ -1,0 +1,165 @@
+{
+  "name": "Ganyu",
+  "title": "Dolunay Gözcüsü",
+  "description": "Yuehai Konağı sekreteri. Damarlarında aydınlanmış bir yaratık olan qilin'in kanı akar.",
+  "constellationName": "Kadim Tekboynuz",
+  "auto": {
+    "name": "Liutian Okçuluğu",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Saldırı</strong>",
+        "1": "Arka arkaya en fazla 6 ok atar."
+      },
+      "charged": {
+        "0": "<strong>Yüklü Saldırı</strong>",
+        "1": "Daha isabetli ve daha yüksek Hasar veren bir <strong>Hedefli Atış</strong> yapar.",
+        "2": "Nişan alırken okun ucunda dondurucu bir aura toplanır. Gösterdiği etki, enerjinin ne kadar süre yük topladığına göre belirlenir:",
+        "3": [
+          "1. Seviye Yük: <cryo>Buz Hasarı</cryo> veren dondurucu bir ok atar.",
+          "2. Seviye Yük: <cryo>Buz Hasarı</cryo> veren bir Buzdan Ok atar. Buzdan Ok hedefini vurunca çiçek açarak <cryo>Buz Alan Hasarı</cryo> verir."
+        ]
+      },
+      "plunging": {
+        "0": "<strong>Havadan Saldırı</strong>",
+        "1": "Havadayken yaylım ok atışı yapar ve dalışa geçerek yere vurur. Yere vurduğunda Alan Hasarı verir."
+      }
+    },
+    "skillParams": {
+      "0": "1 Vuruş Hasarı",
+      "1": "2 Vuruş Hasarı",
+      "2": "3 Vuruş Hasarı",
+      "3": "4 Vuruş Hasarı",
+      "4": "5 Vuruş Hasarı",
+      "5": "6 Vuruş Hasarı",
+      "6": "Hedefli Atış",
+      "7": "1. Seviye Yüklü Hedefli Atış",
+      "8": "Buzdan Ok Hasarı",
+      "9": "Buzdan Ok Çiçeği Hasarı",
+      "10": "Havadan Saldırı Hasarı",
+      "11": "Havadan Saldırı Hasarı (Alçaktan/Yüksekten)",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Qilin'in İzi",
+    "description": {
+      "0": "Ganyu, arkasında tek bir Buz Nilüferi bırakarak geriye atılır ve saf olmayan her şeyden uzaklaşarak <cryo>Buz Alan Hasarı</cryo> verir.",
+      "1": "<br/>",
+      "2": "<strong>Buz Nilüferi</strong>",
+      "3": [
+        "Etraftaki düşmanları sürekli kışkırtır ve düşmanları kendine çeker.",
+        "Dayanıklılığı, Ganyu'nun Maks. Canına göre değişir.",
+        "Yok edildiğinde veya süresi bittiğinde kuvvetle çiçek açarak <cryo>Buz Alan Hasarı</cryo> verir."
+      ],
+      "4": "<br/>",
+      "5": "<i>\"Beni mi gördün? Karıştırmış olmalısın. O gün mesaiye kalmıştım.\"</i>"
+    },
+    "skillParams": {
+      "0": "Devralınan Can",
+      "1": "Beceri Hasarı",
+      "2": "Süre",
+      "3": "BS",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Göklerin Görkemi",
+    "description": {
+      "0": "Havadaki donu ve karı toplayarak kötülüğü defeden bir Kutsal Buz İncisi çağırır.",
+      "1": "Kutsal Buz İncisi, beceri süresi boyunca buz parçaları yağdırır. Bunlar etki alanındaki düşmanlara vurur ve <cryo>Buz Hasarı</cryo> verir.",
+      "2": "<br/>",
+      "3": "<i>Ganyu tabii ki yağmurla bereket getirebilir ama iblisleri ve dalalete düşenleri acı, dondurucu bir son bekler.</i>"
+    },
+    "skillParams": {
+      "0": "Buz Parçası Hasarı",
+      "1": "Süre",
+      "2": "BS",
+      "3": "Enerji Maliyeti",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Tek Yürek",
+    "description": {
+      "0": "Bir tane Buzdan Ok atıldığında 5 saniyeliğine sonraki Buzdan Okların ve oluşturduğu çiçeklenme etkisinin Kritik Oranı %20 artar."
+    }
+  },
+  "passive2": {
+    "name": "Yerin ve Göğün Uyumu",
+    "description": {
+      "0": "<strong>Göklerin Görkemi</strong> Etki Alanındaki aktif grup üyelerine %20 <cryo>Buz Hasarı Bonusu</cryo> verir."
+    }
+  },
+  "passive3": {
+    "name": "Avlanmaya Hazır",
+    "description": {
+      "0": "Yay türü silahlar üretirken kullanılan cevherin %15'ini iade eder."
+    }
+  },
+  "constellation1": {
+    "name": "Çiy Tadı",
+    "description": {
+      "0": "2. Yük Seviyesindeki Buzdan Oklar veya Buzdan Ok Çiçekleri isabet ettiğinde 6 saniyeliğine düşmanların <cryo>Buz Direncini</cryo> %15 azaltır.",
+      "1": "İsabet eden oklar, Ganyu için 2 Enerji yeniler. Bu etki her 2. Yük Seviyesindeki Buzdan Ok başına yalnızca bir defa uygulanabilir ve Buzdan Okun veya Çiçeğinin hedefe isabet edip etmemesine göre değişmez."
+    }
+  },
+  "constellation2": {
+    "name": "Bahtı Açık",
+    "description": {
+      "0": "<strong>Qilin'in İzi</strong> 1 defa daha kullanılabilir."
+    }
+  },
+  "constellation3": {
+    "name": "Bulut Hareketi",
+    "description": {
+      "0": "<strong>Göklerin Görkemi</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation4": {
+    "name": "Batıya Yolculuk",
+    "description": {
+      "0": "<strong>Göklerin Görkemi</strong> etki alanındaki düşmanlar daha fazla Hasar alır. Bu etki zamanla güçlenir.",
+      "1": "Alınan Hasardaki artış %5 ile başlar, her 3 saniyede %5 artar. Maksimum %25'e çıkabilir.",
+      "2": "Bu etki, düşman Etki Alanından çıktıktan sonra 3sn daha sürer."
+    }
+  },
+  "constellation5": {
+    "name": "Merhametli",
+    "description": {
+      "0": "<strong>Qilin'in İzi</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation6": {
+    "name": "Uysal",
+    "description": {
+      "0": "<strong>Qilin'in İzi</strong> kullanıldıktan sonraki 30sn içinde atılan Buzdan Okun yüklenmesi gerekmez."
+    }
+  }
+}

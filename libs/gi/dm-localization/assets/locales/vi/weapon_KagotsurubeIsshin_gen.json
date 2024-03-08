@@ -1,0 +1,12 @@
+{
+  "name": "Kagotsurube Isshin",
+  "description": {
+    "0": "Danh đao được sinh ra từ vương quốc phía bắc xa xôi, từng nhiễm vô số tội ác trên đường trở về quê hương chỉ vì hai chữ \"Isshin\"."
+  },
+  "passiveName": "Tinh Hoa Isshin",
+  "passiveDescription": {
+    "0": {
+      "0": "Khi tấn công thường, trọng kích hoặc tấn công khi đáp trúng kẻ địch sẽ thi triển Gió Cắt, gây 180% sát thương diện rộng, đồng thời tăng 15% tấn công, duy trì 8s. Hiệu quả này mỗi 8s tối đa kích hoạt một lần."
+    }
+  }
+}

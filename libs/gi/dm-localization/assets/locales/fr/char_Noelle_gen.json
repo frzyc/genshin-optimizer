@@ -1,0 +1,172 @@
+{
+  "skill": {
+    "triggerChance": "Chance de soins",
+    "name": "Armure de cœur",
+    "description": {
+      "0": "Invoque une armure de roche qui inflige des <geo>DGT Géo</geo> aux ennemis proches et génère un bouclier absorbant une quantité de DGT proportionnelle à la DÉF de Noëlle.",
+      "1": "L'armure de roche a les propriétés suivantes :",
+      "2": [
+        " Les attaques normales et chargées de Noëlle ont une chance de restaurer les PV de tous les personnages de l'équipe lorsqu'elles touchent un ennemi.",
+        " L'armure est efficace à 150 % contre les DGT élémentaires et physiques."
+      ],
+      "3": "<br/>",
+      "4": "Les soins reçus sont proportionnels à la DÉF de Noëlle.",
+      "5": "<br/>",
+      "6": "<i>Noëlle est à la fois une servante fidèle et un chevalier vaillant.</i>"
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "PV du bouclier",
+      "2": "Soins",
+      "3": "Chance de soins",
+      "4": "Durée",
+      "5": "Temps de recharge",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "atkBonus": "Bonus ATQ",
+    "name": "Grand ménage",
+    "description": {
+      "0": "Concentrant le pouvoir de la roche sur son arme, Noëlle exécute une puissante attaque circulaire qui inflige des <geo>DGT Géo</geo> aux ennemis proches.",
+      "1": "Noëlle bénéficie ensuite des effets suivants :",
+      "2": [
+        " Portée d'attaque augmentée.",
+        " DGT d'attaque convertis en <geo>DGT Géo</geo> ne pouvant pas être enchantés.",
+        " Bonus d'ATQ proportionnel à la DÉF de Noëlle."
+      ],
+      "3": "<br/>",
+      "4": "<i>Parfois, la poussière n'est pas la seule chose qu'il faut balayer...</i>"
+    },
+    "skillParams": {
+      "0": "DGT explosifs",
+      "1": "DGT compétence",
+      "2": "Bonus ATQ",
+      "3": "Durée",
+      "4": "Temps de recharge",
+      "5": "Énergie élémentaire",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "name": "Noëlle",
+  "title": "Fleur chevaleresque",
+  "description": "Une jeune fille travaillant comme servante à l'Ordre de Favonius. Elle a toujours rêvé de devenir un jour chevalier.",
+  "constellationName": "Parma Cordis",
+  "auto": {
+    "name": "Escrime de Favonius - Servante",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attaque normale</strong>",
+        "1": "Enchaîne jusqu'à 4 coups d'épée."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Consomme de l'endurance de façon continue pour exécuter une succession d'attaques tournoyantes contre les ennemis proches.",
+        "2": "L'attaque chargée se termine sur un coup puissant."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis en chemin et des DGT de zone à l'impact."
+      }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT 4e coup",
+      "4": "DGT enchaînement attaque chargée",
+      "5": "DGT coup final attaque chargée",
+      "6": "Coût d'endurance attaque chargée",
+      "7": "Durée max",
+      "8": "DGT durant la chute",
+      "9": "DGT chute basse/élevée",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Dévotion ultime",
+    "description": {
+      "0": "Lorsque Noëlle fait partie de l'équipe et n'est pas déployée, l'effet suivant se déclenche automatiquement si les PV du personnage déployé sont inférieurs à 30 % :",
+      "1": "Confère un bouclier au personnage déployé pouvant absorber des DGT équivalant à 400 % de la DÉF de Noëlle pendant 20 s.",
+      "2": [
+        " Le bouclier est efficace à 150 % contre les DGT élémentaires et les DGT physiques.",
+        " Le bouclier peut être déclenché une fois toutes les 60 s."
+      ]
+    }
+  },
+  "passive2": {
+    "name": "Clair et net",
+    "description": {
+      "0": "Noëlle diminue le TdR d'<strong>Armure de cœur</strong> de 1 s tous les 4 coups d'attaque normale ou chargée qu'elle inflige à un ennemi.",
+      "1": "Un coup peut être compté toutes les 0,1 s."
+    }
+  },
+  "passive3": {
+    "name": "À votre service",
+    "description": {
+      "0": "12 % de chances d'obtenir un plat supplémentaire lorsque vous cuisinez un plat parfait qui renforce la DÉF."
+    }
+  },
+  "constellation1": {
+    "name": "J'assure vos arrières",
+    "description": {
+      "0": "L'effet de restauration des PV d'Armure de cœur a 100 % de chances d'être déclenché lorsque <strong>Grand ménage</strong> et <strong>Armure de cœur</strong> sont actifs en même temps."
+    }
+  },
+  "constellation2": {
+    "name": "Servante de tourbillon",
+    "description": {
+      "0": "Les attaques chargées de Noëlle consomment 20 % d'endurance en moins et infligent 15 % de DGT supplémentaires."
+    }
+  },
+  "constellation3": {
+    "name": "La servante ne sera jamais blessée",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Armure de cœur</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation4": {
+    "name": "Je vais nettoyer après",
+    "description": {
+      "0": "<strong>Armure de cœur</strong> inflige une quantité de <geo>DGT Géo</geo> équivalant à 400 % de l'ATQ aux ennemis proches lorsqu'elle prend fin ou que l'armure est détruite."
+    }
+  },
+  "constellation5": {
+    "name": "Maîtresse de ménage",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Grand ménage</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation6": {
+    "name": "Aucune poussière",
+    "description": {
+      "0": "<strong>Grand ménage</strong> fait bénéficier Noëlle d'un bonus supplémentaire d'ATQ à hauteur de 50 % de sa DÉF.",
+      "1": "De plus, chaque ennemi vaincu pendant que la compétence est active prolonge sa durée de 1 s (10 s maximum)."
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "setName": "Marzialista",
+  "setEffects": {
+    "2": "DAN da attacchi normali e caricati +15%.",
+    "4": "Dopo l'uso di un'abilità elementale, aumenta di un 25% i DAN da attacchi normali e caricati per 8 s."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Fiore vermiglio del marzialista",
+      "desc": "Questo particolare tipo di fiore rosso era l'unica cosa che potesse alleviare il dolore del marzialista."
+    },
+    "plume": {
+      "name": "Piuma del marzialista",
+      "desc": "La piuma di un uccello comune. Gli esperti la usano per praticare il controllo della forza, mentre i principianti ci fanno dei ventagli."
+    },
+    "sands": {
+      "name": "Clessidra ad acqua del marzialista",
+      "desc": "Uno strumento che tiene traccia del tempo durante gli addestramenti più duri. Molto più precisa e affidabile di una clessidra normale."
+    },
+    "goblet": {
+      "name": "Coppa da vino del marzialista",
+      "desc": "Una coppa alquanto pregevole usata nei rituali che precedono i combattimenti."
+    },
+    "circlet": {
+      "name": "Bandana del marzialista",
+      "desc": "La prima lezione di un apprendista: vigore, forza e volontà. Queste parole sono scritte sulla bandana, in modo da non essere mai dimenticate."
+    }
+  }
+}

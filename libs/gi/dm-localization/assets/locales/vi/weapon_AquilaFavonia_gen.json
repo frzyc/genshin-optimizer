@@ -1,0 +1,24 @@
+{
+  "name": "Phong Ưng Kiếm",
+  "description": {
+    "0": "Linh hồn của Đội Kỵ Sĩ Tây Phong. Trải qua ngàn năm vẫn không ngừng gọi gió chính nghĩa, trừ gian diệt ác, giống như người nữ anh hùng từng dùng nó."
+  },
+  "passiveName": "Kháng Chiến Của Chim Ưng Tây Phong",
+  "passiveDescription": {
+    "0": {
+      "0": "Tấn công tăng <cryo>20%</cryo>, kích hoạt khi chịu sát thương: Linh hồn Tây Phong Ưng thức tỉnh dưới cờ hiệu kháng chiến, hồi HP bằng <cryo>100%</cryo> tấn công và gây cho địch xung quanh sát thương bằng <cryo>200%</cryo> lực tấn công. Mỗi 15s kích hoạt 1 lần."
+    },
+    "1": {
+      "0": "Tấn công tăng <cryo>25%</cryo>, kích hoạt khi chịu sát thương: Linh hồn Tây Phong Ưng thức tỉnh dưới cờ hiệu kháng chiến, hồi HP bằng <cryo>115%</cryo> tấn công và gây cho địch xung quanh sát thương bằng <cryo>230%</cryo> lực tấn công. Mỗi 15s kích hoạt 1 lần."
+    },
+    "2": {
+      "0": "Tấn công tăng <cryo>30%</cryo>, kích hoạt khi chịu sát thương: Linh hồn Tây Phong Ưng thức tỉnh dưới cờ hiệu kháng chiến, hồi HP bằng <cryo>130%</cryo> tấn công và gây cho địch xung quanh sát thương bằng <cryo>260%</cryo> lực tấn công. Mỗi 15s kích hoạt 1 lần."
+    },
+    "3": {
+      "0": "Tấn công tăng <cryo>35%</cryo>, kích hoạt khi chịu sát thương: Linh hồn Tây Phong Ưng thức tỉnh dưới cờ hiệu kháng chiến, hồi HP bằng <cryo>145%</cryo> tấn công và gây cho địch xung quanh sát thương bằng <cryo>290%</cryo> lực tấn công. Mỗi 15s kích hoạt 1 lần."
+    },
+    "4": {
+      "0": "Tấn công tăng <cryo>40%</cryo>, kích hoạt khi chịu sát thương: Linh hồn Tây Phong Ưng thức tỉnh dưới cờ hiệu kháng chiến, hồi HP bằng <cryo>160%</cryo> tấn công và gây cho địch xung quanh sát thương bằng <cryo>320%</cryo> lực tấn công. Mỗi 15s kích hoạt 1 lần."
+    }
+  }
+}

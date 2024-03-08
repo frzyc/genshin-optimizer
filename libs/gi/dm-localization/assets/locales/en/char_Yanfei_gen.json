@@ -1,0 +1,163 @@
+{
+  "name": "Yanfei",
+  "title": "Wise Innocence",
+  "description": "A well-known legal adviser active in Liyue Harbor. A brilliant young lady in whose veins runs the blood of an illuminated beast.",
+  "constellationName": "Bestia Iustitia",
+  "auto": {
+    "name": "Seal of Approval",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Attack</strong>",
+        "1": "Shoots fireballs that deal up to three counts of <pyro>Pyro DMG</pyro>.",
+        "2": "When Yanfei's Normal Attacks hit enemies, they will grant her a single Scarlet Seal. Yanfei may possess a maximum of 3 Scarlet Seals, and each time this effect is triggered, the duration of currently possessed Scarlet Seals will refresh.",
+        "3": "Each Scarlet Seal will decrease Yanfei's Stamina consumption and will disappear when she leaves the field."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Consumes Stamina and all Scarlet Seals before dealing <pyro>AoE Pyro DMG</pyro> to opponents after a short casting time.",
+        "2": "This Charged Attack's AoE and DMG will increase according to the amount of Scarlet Seals consumed."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Gathering the power of Pyro, Yanfei plunges towards the ground from mid-air, damaging all opponents in her path. Deals <pyro>AoE Pyro DMG</pyro> upon impact with the ground."
+      }
+    },
+    "skillParams": {
+      "0": "1-Hit DMG",
+      "1": "2-Hit DMG",
+      "2": "3-Hit DMG",
+      "3": "Charged Attack",
+      "4": "Charged Attack Stamina Cost",
+      "5": "Scarlet Seal Stamina Consumption Decrease",
+      "6": "Scarlet Seal Duration",
+      "7": "Plunge DMG",
+      "8": "Low/High Plunge DMG",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Signed Edict",
+    "description": {
+      "0": "Summons blistering flames that deal <pyro>AoE Pyro DMG</pyro>.",
+      "1": "Opponents hit by the flames will grant Yanfei the maximum number of Scarlet Seals.",
+      "2": "<br/>",
+      "3": "<i>Apart from their legal uses, Yanfei's seals also come with her customized additional terms and conditions. Well, it's not as if the Ministry of Civil Affairs can change the laws of nature.</i>"
+    },
+    "skillParams": {
+      "0": "Skill DMG",
+      "1": "CD",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Done Deal",
+    "description": {
+      "0": "Triggers a spray of intense flames that rush at nearby opponents, dealing <pyro>AoE Pyro DMG</pyro>, granting Yanfei the maximum number of Scarlet Seals, and applying Brilliance to her.",
+      "1": "<br/>",
+      "2": "<strong>Brilliance</strong>",
+      "3": "Has the following effects:",
+      "4": [
+        "Grants Yanfei a Scarlet Seal at fixed intervals.",
+        "Increases the DMG dealt by her Charged Attacks."
+      ],
+      "5": "The effects of Brilliance will end if Yanfei leaves the field or falls in battle.",
+      "6": "<br/>",
+      "7": "<i>\"Here are the full terms for this matter of life and death — by which I mean my life and your death!\"</i>"
+    },
+    "skillParams": {
+      "0": "Skill DMG",
+      "1": "",
+      "2": "Scarlet Seal Grant Interval",
+      "3": "Charged Attack DMG Bonus",
+      "4": "Duration",
+      "5": "CD",
+      "6": "Energy Cost",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Proviso",
+    "description": {
+      "0": "When Yanfei consumes Scarlet Seals by using a Charged Attack, each Scarlet Seal will increase Yanfei's <pyro>Pyro DMG Bonus</pyro> by 5%. This effect lasts for 6s. When a Charged Attack is used again during the effect's duration, it will dispel the previous effect."
+    }
+  },
+  "passive2": {
+    "name": "Blazing Eye",
+    "description": {
+      "0": "When Yanfei's Charged Attack deals a CRIT Hit to opponents, she will deal an additional instance of <pyro>AoE Pyro DMG</pyro> equal to 80% of her ATK. This DMG counts as Charged Attack DMG."
+    }
+  },
+  "passive3": {
+    "name": "Encyclopedic Expertise",
+    "description": {
+      "0": "Displays the location of nearby <strong>resources unique to Liyue</strong> on the mini-map."
+    }
+  },
+  "constellation1": {
+    "name": "The Law Knows No Kindness",
+    "description": {
+      "0": "When Yanfei uses her Charged Attack, each existing Scarlet Seal additionally reduces the stamina cost of this Charged Attack by 10% and increases resistance against interruption during its release."
+    }
+  },
+  "constellation2": {
+    "name": "Right of Final Interpretation",
+    "description": {
+      "0": "Increases Yanfei's Charged Attack CRIT Rate by 20% against enemies below 50% HP."
+    }
+  },
+  "constellation3": {
+    "name": "Samadhi Fire-Forged",
+    "description": {
+      "0": "Increases the Level of <strong>Signed Edict</strong> by 3.",
+      "1": "Maximum upgrade level is 15."
+    }
+  },
+  "constellation4": {
+    "name": "Supreme Amnesty",
+    "description": {
+      "0": "When <strong>Done Deal</strong> is used:",
+      "1": "Creates a shield that absorbs up to 45% of Yanfei's Max HP for 15s.",
+      "2": "This shield absorbs <pyro>Pyro DMG</pyro> 250% more effectively."
+    }
+  },
+  "constellation5": {
+    "name": "Abiding Affidavit",
+    "description": {
+      "0": "Increases the Level of <strong>Done Deal</strong> by 3.",
+      "1": "Maximum upgrade level is 15."
+    }
+  },
+  "constellation6": {
+    "name": "Extra Clause",
+    "description": {
+      "0": "Increases the maximum number of Scarlet Seals by 1."
+    }
+  }
+}

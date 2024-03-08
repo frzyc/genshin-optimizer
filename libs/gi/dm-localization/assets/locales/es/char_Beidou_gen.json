@@ -1,0 +1,176 @@
+{
+  "name": "Beidou",
+  "title": "La Reina del Océano sin Corona",
+  "description": "Líder de la Flota Crux Meridianam. Es una jefa bastante desenfadada y franca.",
+  "constellationName": "Victor Mare",
+  "auto": {
+    "name": "Conquista del océano",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Ataque Normal</strong>",
+        "1": "Realiza hasta 5 tajos consecutivos."
+      },
+      "charged": {
+        "0": "<strong>Ataque Cargado</strong>",
+        "1": "Consume Aguante de manera constante para realizar golpes de espada continuos.",
+        "2": "Cuando termina el Ataque Cargado, hará un golpe aún más poderoso."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Descendente</strong>",
+        "1": "Se lanza desde el aire para golpear el suelo, dañando a los enemigos cercanos e infligiendo Daño en el AdE en el momento del impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Daño de 1er golpe",
+      "1": "Daño de 2.º golpe",
+      "2": "Daño de 3er golpe",
+      "3": "Daño de 4.º golpe",
+      "4": "Daño de 5.º golpe",
+      "5": "Daño de ATQ Cargado en ciclo",
+      "6": "Daño final de Ataque Cargado",
+      "7": "Coste de Aguante de ATQ Cargado",
+      "8": "Duración máx.",
+      "9": "Daño de Caída",
+      "10": "Daño de impacto de caída baja/alta",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Invocadora de mareas",
+    "description": {
+      "0": "No hay nada de que preocuparse. Si alguien levanta una mano contra ella o sus hombres, ella se vengará diez veces con su espada y el trueno.",
+      "1": "<br/>",
+      "2": "<strong>Pulsar una vez</strong>",
+      "3": "Tras acumular el poder del rayo, Beidou ataca ferozmente con su espada, infligiendo <electro>Daño Electro</electro>.",
+      "4": "<br/>",
+      "5": "<strong>Mantener pulsado</strong>",
+      "6": "Beidou levanta su arma para crear un escudo cuya absorción de daño aumenta en proporción a su Vida Máx.",
+      "7": "Tras liberar la habilidad, o cuando termine su duración, contraatacará con la energía almacenada dentro de su gran espada, infligiendo <electro>Daño Electro</electro>. El daño infligido aumenta en proporción al número de veces que Beidou sea atacada mientras dure la habilidad. El bono de daño máximo se obtendrá una vez que este efecto se active dos veces.",
+      "8": "El escudo posee las siguientes características:",
+      "9": [
+        "Tiene un 250% de eficiencia de absorción de <electro>Daño Electro</electro>.",
+        "Al activarse, aplica el <electro>elemento Electro</electro> sobre Beidou."
+      ],
+      "10": "<br/>",
+      "11": "<i>¡Conquista el océano, persigue la tormenta e invoca las mareas!</i>"
+    },
+    "skillParams": {
+      "0": "Absorción de daño del escudo",
+      "1": "Daño base",
+      "2": "Bono de daño por golpe",
+      "3": "TdE",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Quebrantatormentas",
+    "description": {
+      "0": "Recordando su batalla contra la gran bestia Haishan, Beidou recurre a esa monstruosa fuerza y al rayo para crear un escudo del trueno a su alrededor que inflige <electro>Daño Electro</electro> a los enemigos cercanos.",
+      "1": "<br/>",
+      "2": "<strong>Escudo del trueno</strong>",
+      "3": [
+        "Al golpear a un enemigo con Ataques Normales y Cargados, crea una descarga eléctrica que salta entre enemigos e inflige <electro>Daño Electro</electro>.",
+        "Aumenta la RES a interrupción del personaje y reduce el daño recibido."
+      ],
+      "4": "<br/>",
+      "5": "Solo se puede provocar 1 descarga eléctrica por segundo.",
+      "6": "<br/>",
+      "7": "<i>Haishan fue asesinado con la caída de un trueno.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "Daño de rayo",
+      "2": "Reducción de daño",
+      "3": "Duración",
+      "4": "TdE",
+      "5": "Energía Elemental",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Castigo divino",
+    "description": {
+      "0": "Contraatacar con <strong>Invocadora de mareas</strong> en el momento preciso de ser golpeada otorga el máximo bono de daño posible."
+    }
+  },
+  "passive2": {
+    "name": "Tormenta eléctrica",
+    "description": {
+      "0": "Al lanzar <strong>Invocadora de mareas</strong> con el máximo bono de daño posible, obtendrás los siguientes efectos durante 10 s:",
+      "1": [
+        "Aumenta en un 15% el daño y la Vel. de Ataque Normal y de Ataque Cargado.",
+        "Reduce considerablemente el tiempo de preparación de los Ataques Cargados."
+      ]
+    }
+  },
+  "passive3": {
+    "name": "Conquistadora de mareas",
+    "description": {
+      "0": "Disminuye en un 20% el Coste de Aguante al nadar de todos los miembros de tu equipo.",
+      "1": "No se puede acumular con otros talentos pasivos que tengan los mismos efectos."
+    }
+  },
+  "constellation1": {
+    "name": "Cazadora de ictiosaurios",
+    "description": {
+      "0": "Al activar <strong>Quebrantatormentas</strong>, crea un escudo que absorbe daño en una cantidad equivalente al 16% de la Vida Máx. de Beidou durante 15 s.",
+      "1": "El escudo tiene un 250% de eficiencia de absorción de <electro>Daño Electro</electro>."
+    }
+  },
+  "constellation2": {
+    "name": "Tormenta sobre el mar turbulento",
+    "description": {
+      "0": "Los rayos de <strong>Quebrantatormentas</strong> rebotan a 2 objetivos adicionales."
+    }
+  },
+  "constellation3": {
+    "name": "Invocadora de la tormenta",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Invocadora de mareas</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Venganza súbita",
+    "description": {
+      "0": "Tras ser atacada, los Ataques Normales de Beidou obtienen un 20% de <electro>Daño Electro</electro> adicional durante 10 s."
+    }
+  },
+  "constellation5": {
+    "name": "Caminante de mareas carmesí",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Quebrantatormentas</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Flagelo del mal",
+    "description": {
+      "0": "Mientras esté activa la habilidad <strong>Quebrantatormentas</strong>, la <electro>RES Electro</electro> de los enemigos cercanos se reduce en un 15%."
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Serment de l'archer",
+  "description": {
+    "0": "Cet arc de haute qualité aurait appartenu à un maître archer. La forte odeur qu'il dégage le rend inadapté pour la chasse."
+  },
+  "passiveName": "Précision",
+  "passiveDescription": {
+    "0": {
+      "0": "Augmente les DGT de <cryo>24 %</cryo> si les points faibles de l'ennemi sont visés."
+    },
+    "1": {
+      "0": "Augmente les DGT de <cryo>30 %</cryo> si les points faibles de l'ennemi sont visés."
+    },
+    "2": {
+      "0": "Augmente les DGT de <cryo>36 %</cryo> si les points faibles de l'ennemi sont visés."
+    },
+    "3": {
+      "0": "Augmente les DGT de <cryo>42 %</cryo> si les points faibles de l'ennemi sont visés."
+    },
+    "4": {
+      "0": "Augmente les DGT de <cryo>48 %</cryo> si les points faibles de l'ennemi sont visés."
+    }
+  }
+}

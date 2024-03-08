@@ -1,0 +1,164 @@
+{
+  "name": "Chevreuse",
+  "title": "Executora da Justiça",
+  "description": "A capitã da Patrulha de Segurança e Monitoramento Especial, que tem a justiça como uma insígnia eterna em seu coração. Seu mosquete só aponta contra os culpados.",
+  "constellationName": "Sclopetum Ensiferum",
+  "auto": {
+    "name": "Linha de Baioneta Modificada",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Ataque Normal</strong>",
+        "1": "Realiza até 4 golpes com a lança."
+      },
+      "charged": {
+        "0": "<strong>Ataque Carregado</strong>",
+        "1": "Consome uma certa quantidade de Stamina para se lançar para a frente, infligindo Dano em seu trajeto."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Imersivo</strong>",
+        "1": "Mergulha em pleno ar para golpear o chão, causando dano aos inimigos ao longo do caminho e infligindo Dano em uma AdE durante o impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Dano do 1° Golpe",
+      "1": "Dano do 2° Golpe",
+      "2": "Dano do 3° Golpe",
+      "3": "Dano do 4° Golpe",
+      "4": "Dano de Ataque Carregado",
+      "5": "Consumo de Stamina de Ataque Carregado",
+      "6": "Dano Durante a Queda",
+      "7": "Dano de Queda de Baixa/Alta Altitude",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Combate Próximo Rápido",
+    "description": {
+      "0": "Chevreuse apoia rapidamente seu rifle no seu ombro e dispara contra os inimigos, causando <pyro>Dano Pyro em AdE</pyro>.",
+      "1": "Um certo tempo após Chevreuse atingir seu disparo, regenerará Vida continuamente para o próprio personagem ativo. A Vida regenerada é baseada na Vida Máxima de Chevreuse.",
+      "2": "Ao Manter Pressionado, lança de uma maneira diferente.",
+      "3": "<br/>",
+      "4": "<strong>Manter Pressionado</strong>",
+      "5": "Entra no modo de mira e fixa a mira em seu campo de visão em um inimigo, disparando mais precisamente. Se Chevreuse possuir Projétil Super Explosivo, disparará um Projétil Super Explosivo, causando <pyro>Dano Pyro</pyro> maior e com maior AdE.",
+      "6": "Chevreuse obtém um Projétil Super Explosivo quando um personagem próximo desencadeia Sobrecarga. É possível possuir até 1 Projétil Super Explosivo simultaneamente.",
+      "7": "<br/>",
+      "8": "<strong>Arkhe: Ousia</strong>",
+      "9": "Periodicamente, quando Chevreuse atingir com Projétil Super Explosivo, invocará uma Lâmina da Fluidez que causará <pyro>Dano Pyro</pyro> com Ousia.",
+      "10": "<br/>",
+      "11": "<i>\"Pra falar a verdade, as instruções de treinamento só tem a palavra 'disparo', mas o autor desse livro achou que ter um vocabulário especializado ia ser mais comovente, fazendo os inimigos perderem logo de cara... eu acho que faz sentido, por isso mudei as instruções!\"</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Pressionar",
+      "1": "Dano ao Manter Pressionado",
+      "2": "Dano de Projétil Super Explosivo",
+      "3": "Cura Contínua",
+      "4": "Duração da Cura",
+      "5": "Dano da Lâmina da Fluidez",
+      "6": "Intervalo de Lâmina da Fluidez",
+      "7": "Recarga",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Técnica da Explosão Circular",
+    "description": {
+      "0": "Chevreuse usa seu rifle para jogar uma Granada Explosiva contra os inimigos, causando <pyro>Dano Pyro em AdE</pyro>. Depois que a Granada Explosiva atingir, vai se dividir em várias Granadas Explosivas Secundárias.",
+      "1": "As Granadas Explosivas Secundárias vão explodir após um curto intervalo de tempo, causando <pyro>Dano Pyro</pyro> contra os inimigos próximos.",
+      "2": "<br/>",
+      "3": "<i>\"Via de regra, bombardear uma área quadrada seria mais eficaz contra inimigos em formação compacta, mas infelizmente, a seção transversal das ondas da explosão são circulares como um bolo, por isso as granadas saem voando nessa direção, e só explodem como frutas ao redor de um bolo!\"</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Granada Explosiva",
+      "1": "Dano de Granada Explosiva Secundária",
+      "2": "Recarga",
+      "3": "Energia Elemental",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Táticas de Combate Coordenado",
+    "description": {
+      "0": "Quando todos os personagens da equipe têm Tipo Elemental <pyro>Pyro</pyro> e <electro>Electro</electro>, e há pelo menos um personagem Pyro e um personagem Electro:",
+      "1": "Chevreuse aplica \"Táticas Coordenadas\" para os membros próximos da equipe: quando o personagem causar uma reação de Sobrecarga, reduzirá a RES <pyro>Pyro</pyro> e <electro>Electro</electro> do inimigo afetado em 40% por 6s.",
+      "2": "O efeito das \"Táticas Coordenadas\" será removido quando o Tipo Elemental dos personagens na equipe não cumprir os requisitos do Talento Passivo."
+    }
+  },
+  "passive2": {
+    "name": "Formação Vertical",
+    "description": {
+      "0": "Depois de Chevreuse disparar o \"Projétil Super Explosivo\" de <strong>Combate Próximo Rápido</strong>, aumenta o ATQ em 1% a cada 1.000 da Vida Máxima de Chevreuse para todos os personagens <pyro>Pyro</pyro> e <electro>Electro</electro> próximos por 30s. É possível aumentar o ATQ até 40% dessa forma."
+    }
+  },
+  "passive3": {
+    "name": "Estratégia de Movimento Veloz",
+    "description": {
+      "0": "Diminui o consumo de Stamina ao correr de todos os seus membros da equipe em 20%.",
+      "1": "Não acumulável com Talentos Passivos que concedem exatamente os mesmos efeitos."
+    }
+  },
+  "constellation1": {
+    "name": "Coragem da Formação Firme",
+    "description": {
+      "0": "Quando o personagem ativo que está no estado \"Táticas Coordenadas\" (exceto Chevreuse) desencadear uma reação de Sobrecarga, regenerará 6 de Energia Elemental. Esse efeito pode ser desencadeado uma vez a cada 10s.",
+      "1": "É necessário ter desbloqueado o Talento Passivo \"Táticas de Combate Coordenado\"."
+    }
+  },
+  "constellation2": {
+    "name": "Tiro Explosivo",
+    "description": {
+      "0": "Quando o disparo de Manter Pressionado de <strong>Combate Próximo Rápido</strong> atingir um alvo, gerará duas Explosões Conectadas perto da posição atingida. Cada Explosão Conectada causa <pyro>Dano Pyro</pyro> equivalente a 120% do ATQ de Chevreuse. Esse efeito pode ser desencadeado uma vez a cada 10s, e o Dano causado dessa forma é considerado Dano de Habilidade Elemental."
+    }
+  },
+  "constellation3": {
+    "name": "Técnica Copiadora Proficiente",
+    "description": {
+      "0": "Aumenta o nível do <strong>Combate Próximo Rápido</strong> em 3.",
+      "1": "O nível máximo de elevação é 15."
+    }
+  },
+  "constellation4": {
+    "name": "O Segredo dos Multidisparos Rápidos",
+    "description": {
+      "0": "Depois de lançar <strong>Técnica da Explosão Circular</strong>, o Manter Pressionado de <strong>Combate Próximo Rápido</strong> não entrará em recarga. Esse efeito dura até 6s, e será removido depois de lançar o Manter Pressionado de Combate Próximo Rápido duas vezes."
+    }
+  },
+  "constellation5": {
+    "name": "Poder de Fogo Incendiário",
+    "description": {
+      "0": "Aumenta o nível de <strong>Técnica da Explosão Circular</strong> em 3.",
+      "1": "O nível máximo de elevação é 15."
+    }
+  },
+  "constellation6": {
+    "name": "Em Busca do Fim do Mal",
+    "description": {
+      "0": "Depois que o efeito de cura de <strong>Combate Próximo Rápido</strong> durar 12s, regenerará Vida para todos os personagens próximos uma vez, a Vida regenerada é equivalente a 10% da Vida Máxima de Chevreuse.",
+      "1": "Quando o personagem é curado por Combate Próximo Rápido, obtém 20% de <pyro>Bônus de Dano Pyro</pyro> e <electro>Bônus de Dano Electro</electro> por 8s. Esse efeito pode ser acumulado 3 vezes, e cada acúmulo tem sua duração contada de forma independente."
+    }
+  }
+}

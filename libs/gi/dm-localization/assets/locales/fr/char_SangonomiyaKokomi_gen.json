@@ -1,0 +1,176 @@
+{
+  "name": "Sangonomiya Kokomi",
+  "title": "Perle de connaissance",
+  "description": "La Prêtresse divine de l'Île de Watatsumi, une jeune femme gérant toutes les affaires de l'île.",
+  "constellationName": "Dracaena Somnolenta",
+  "auto": {
+    "name": "Forme de l'eau",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attaque normale</strong>",
+        "1": "Enchaîne jusqu'à 3 attaques qui prennent la forme de poissons pour infliger des <hydro>DGT Hydro</hydro>."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Consomme de l'endurance pour infliger des <hydro>DGT Hydro de zone</hydro> après un court délai."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Plonge depuis les airs en concentrant ses pouvoirs Hydro, infligeant des DGT aux ennemis en chemin et des <hydro>DGT Hydro de zone</hydro> à l'impact."
+      }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT attaque chargée",
+      "4": "Coût d'endurance attaque chargée",
+      "5": "DGT durant la chute",
+      "6": "DGT chute basse/élevée",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Serment de Kurage",
+    "description": {
+      "0": "Kokomi crée une méduse fantôme à partir d'eau pour soigner ses alliés.",
+      "1": "Utiliser cette compétence applique l'état <hydro>Trempé</hydro> à Kokomi.",
+      "2": "<br/>",
+      "3": "<strong>Méduse fantôme</strong>",
+      "4": "Inflige des <hydro>DGT Hydro</hydro> aux ennemis proches et restaure les PV des personnages déployés à proximité à intervalles réguliers. Les soins sont fonction des PV max de Kokomi.",
+      "5": "<br/>",
+      "6": "<i>Kokomi a besoin de récupérer des forces régulièrement pour maintenir son efficacité de travail.</i>"
+    },
+    "skillParams": {
+      "0": "Soins",
+      "1": "DGT ondulation",
+      "2": "Durée",
+      "3": "Temps de recharge",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Ascension de la néréide",
+    "description": {
+      "0": "La puissance de Watatsumi se manifeste, infligeant des <hydro>DGT Hydro</hydro> aux ennemis proches, avant d'entourer Kokomi d'une parure cérémoniale faite des eaux vives de Sangonomiya.",
+      "1": "<br/>",
+      "2": "<strong>Parure cérémoniale</strong>",
+      "3": [
+        " Les DGT des attaques normales et chargées de Kokomi et ceux de la méduse fantôme créée par sa compétence élémentaire augmentent en fonction des PV max de Kokomi.",
+        " Lorsque ses attaques normales et chargées touchent des ennemis, Kokomi restaure les PV de tous les personnages de l'équipe à proximité, la quantité de PV restaurés dépendant des PV max de Kokomi.",
+        " Augmente la RÉS à l'interruption de Kokomi, et lui permet de se déplacer à la surface de l'eau."
+      ],
+      "4": "<br/>",
+      "5": "Ces effets prennent fin lorsque Kokomi quitte le champ de bataille.",
+      "6": "<br/>",
+      "7": "<i>Une lumière claire se fond dans les robes autour de Son Altesse Sangonomiya Kokomi, reflétant sa forme magnifique.</i>"
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "Bonus ATQ normale",
+      "2": "Bonus ATQ chargée",
+      "3": "Bonus ATQ méduse fantôme",
+      "4": "Soins équipe",
+      "5": "Durée",
+      "6": "Temps de recharge",
+      "7": "Énergie élémentaire",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Coffret de tamakushi",
+    "description": {
+      "0": "Si la méduse fantôme de Kokomi est sur le champ de bataille lorsqu'elle utilise <strong>Ascension de la néréide</strong>, sa durée est réinitialisée."
+    }
+  },
+  "passive2": {
+    "name": "Chant de nacre",
+    "description": {
+      "0": "Lorsque Kokomi revêt la parure cérémoniale créée par <strong>Ascension de la néréide</strong>, les bonus de DGT d'attaque normale et chargée en fonction de ses PV max bénéficient d'une augmentation supplémentaire basée sur 15 % de son bonus de soins."
+    }
+  },
+  "passive3": {
+    "name": "Princesse de Watatsumi",
+    "description": {
+      "0": "Diminue la consommation d'endurance de vos personnages dans l'équipe de 20 % lors de la nage.",
+      "1": "Ne peut pas être cumulé avec d'autres aptitudes passives aux effets identiques."
+    }
+  },
+  "passive": {
+    "name": "Stratégie sans faille",
+    "description": {
+      "0": "Le bonus de soins de Kokomi augmente de 25 %, mais son taux CRIT diminue de 100 %."
+    }
+  },
+  "constellation1": {
+    "name": "Au bord de l'eau",
+    "description": {
+      "0": "Lorsque Kokomi revêt la parure cérémoniale créée par <strong>Ascension de la néréide</strong>, la dernière attaque normale de son combo libère un poisson qui inflige des <hydro>DGT Hydro</hydro> équivalant à 30 % de ses PV max.",
+      "1": "Ces DGT ne sont pas considérés comme des DGT d'attaque normale."
+    }
+  },
+  "constellation2": {
+    "name": "Nuages comme des vagues ondulantes",
+    "description": {
+      "0": "Lorsque Kokomi soigne des personnages dont les PV sont inférieurs ou égaux à 50 %, elle bénéficie d'un bonus de soin en fonction de la méthode utilisée :",
+      "1": "<br/>",
+      "2": [
+        " Méduse fantôme de <strong>Serment de Kurage</strong> : augmentation équivalant à 4,5 % des PV max de Kokomi.",
+        " Attaque normale ou chargée sous l'effet d'<strong>Ascension de la néréide</strong> : augmentation équivalant à 0,6 % des PV max de Kokomi."
+      ]
+    }
+  },
+  "constellation3": {
+    "name": "La lune, navire des mers",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Ascension de la néréide</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation4": {
+    "name": "La lune surplombe les eaux",
+    "description": {
+      "0": "Lorsque Kokomi revêt la parure cérémoniale créée par <strong>Ascension de la néréide</strong>, la VIT d'attaque de ses attaques normales augmente de 10 %, et toute attaque normale touchant un ennemi lui permet de restaurer son énergie élémentaire de 0,8 pt.",
+      "1": "Cet effet peut être déclenché une fois toutes les 0,2 s."
+    }
+  },
+  "constellation5": {
+    "name": "Tous les ruisseaux coulent vers la mer",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Serment de Kurage</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation6": {
+    "name": "Sango Isshin",
+    "description": {
+      "0": "Lorsque Kokomi revêt la parure cérémoniale créée par <strong>Ascension de la néréide</strong>, elle bénéficie d'un <hydro>bonus de DGT Hydro</hydro> de 40 % pendant 4 s après avoir effectué un soin sur un personnage dont les PV sont supérieurs ou égaux à 80 % grâce à son attaque normale ou chargée."
+    }
+  }
+}

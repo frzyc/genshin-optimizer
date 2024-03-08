@@ -1,0 +1,24 @@
+{
+  "name": "Fillet Blade",
+  "description": {
+    "0": "A sharp filleting knife. The blade is long, thin, and incredibly sharp."
+  },
+  "passiveName": "Gash",
+  "passiveDescription": {
+    "0": {
+      "0": "On hit, has a 50% chance to deal <cryo>240%</cryo> ATK DMG to a single opponent. Can only occur once every <cryo>15</cryo>s."
+    },
+    "1": {
+      "0": "On hit, has a 50% chance to deal <cryo>280%</cryo> ATK DMG to a single opponent. Can only occur once every <cryo>14</cryo>s."
+    },
+    "2": {
+      "0": "On hit, has a 50% chance to deal <cryo>320%</cryo> ATK DMG to a single opponent. Can only occur once every <cryo>13</cryo>s."
+    },
+    "3": {
+      "0": "On hit, has a 50% chance to deal <cryo>360%</cryo> ATK DMG to a single opponent. Can only occur once every <cryo>12</cryo>s."
+    },
+    "4": {
+      "0": "On hit, has a 50% chance to deal <cryo>400%</cryo> ATK DMG to a single target. Can only occur once every <cryo>11</cryo>s."
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Clair de lune de Xiphos",
+  "description": {
+    "0": "Cette ancienne épée à double tranchant brille au clair de lune. On dit qu'un djinn maintenant silencieux l'habite..."
+  },
+  "passiveName": "Murmure du djinn",
+  "passiveDescription": {
+    "0": {
+      "0": "L'effet suivant se déclenche toutes les 10 s : le personnage équipé de l'arme obtient <cryo>0,036 %</cryo> de recharge d'énergie pour chaque point de maîtrise élémentaire qu'il possède pendant 12 s, alors que les autres personnages de l'équipe à proximité obtiennent 30 % de ce bonus. Plusieurs armes du même nom peuvent permettre à ce bonus de se cumuler. L'effet peut être déclenché même lorsque le personnage fait partie de l'équipe mais n'est pas déployé."
+    },
+    "1": {
+      "0": "L'effet suivant se déclenche toutes les 10 s : le personnage équipé de l'arme obtient <cryo>0,045 %</cryo> de recharge d'énergie pour chaque point de maîtrise élémentaire qu'il possède pendant 12 s, alors que les autres personnages de l'équipe à proximité obtiennent 30 % de ce bonus. Plusieurs armes du même nom peuvent permettre à ce bonus de se cumuler. L'effet peut être déclenché même lorsque le personnage fait partie de l'équipe mais n'est pas déployé."
+    },
+    "2": {
+      "0": "L'effet suivant se déclenche toutes les 10 s : le personnage équipé de l'arme obtient <cryo>0,054 %</cryo> de recharge d'énergie pour chaque point de maîtrise élémentaire qu'il possède pendant 12 s, alors que les autres personnages de l'équipe à proximité obtiennent 30 % de ce bonus. Plusieurs armes du même nom peuvent permettre à ce bonus de se cumuler. L'effet peut être déclenché même lorsque le personnage fait partie de l'équipe mais n'est pas déployé."
+    },
+    "3": {
+      "0": "L'effet suivant se déclenche toutes les 10 s : le personnage équipé de l'arme obtient <cryo>0,063 %</cryo> de recharge d'énergie pour chaque point de maîtrise élémentaire qu'il possède pendant 12 s, alors que les autres personnages de l'équipe à proximité obtiennent 30 % de ce bonus. Plusieurs armes du même nom peuvent permettre à ce bonus de se cumuler. L'effet peut être déclenché même lorsque le personnage fait partie de l'équipe mais n'est pas déployé."
+    },
+    "4": {
+      "0": "L'effet suivant se déclenche toutes les 10 s : le personnage équipé de l'arme obtient <cryo>0,072 %</cryo> de recharge d'énergie pour chaque point de maîtrise élémentaire qu'il possède pendant 12 s, alors que les autres personnages de l'équipe à proximité obtiennent 30 % de ce bonus. Plusieurs armes du même nom peuvent permettre à ce bonus de se cumuler. L'effet peut être déclenché même lorsque le personnage fait partie de l'équipe mais n'est pas déployé."
+    }
+  }
+}

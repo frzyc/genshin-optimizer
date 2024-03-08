@@ -1,0 +1,163 @@
+{
+  "name": "Navia",
+  "title": "Helm of the Radiant Rose",
+  "description": "Ketua Spina di Rosula, bos yang cantik, baik, dan bertanggung jawab.",
+  "constellationName": "Rosa Multiflora",
+  "auto": {
+    "name": "Blunt Refusal",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Attack</strong>",
+        "1": "Melancarkan hingga 4 tebasan berturut-turut."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Terus menguras Stamina untuk melancarkan serangan berputar yang mengakibatkan DMG ke musuh di sekitar.",
+        "2": "Diakhiri dengan sebuah tebasan yang kuat."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Menerjang dari udara untuk menghantam tanah, menyerang musuh di jalur terjangan dan mengakibatkan DMG Area saat mendarat."
+      }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Tahap 4",
+      "4": "DMG Berputar Charged Attack",
+      "5": "DMG Akhir Charged Attack",
+      "6": "Konsumsi Stamina Charged Attack",
+      "7": "Durasi Maksimum",
+      "8": "DMG Selama Plunging",
+      "9": "DMG Plunging Attack Rendah/Tinggi",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Ceremonial Crystalshot",
+    "description": {
+      "0": "Saat Karakter dalam party mendapatkan shard dari reaksi Crystallize, Navia akan mendapatkan 1 \"Crystal Shrapnel\", dan maksimum bisa mendapatkan hingga 6 \"Crystal Shrapnel\". Setiap kali perolehan \"Crystal Shrapnel\" terpicu, durasi \"Crystal Shrapnel\" yang sudah dimiliki akan diulang.",
+      "1": "Saat dilancarkan, Navia akan mengonsumsi semua \"Crystal Shrapnel\" yang dimiliki dan membuka Gunbrella elegannya untuk menembakkan beberapa Rosula Shardshots yang dapat menembus musuh dan mengakibatkan <geo>Geo DMG</geo>.",
+      "2": "Saat mengonsumsi 0/1/2/3 atau lebih \"Crystal Shrapnel\", 5/7/9/11 Rosula Shardshots akan ditembakkan sesuai dengan jumlah yang ditentukan. Semakin banyak \"Rosula Shardshots\" yang mengenai satu musuh, semakin tinggi pula DMG yang diakibatkan terhadap musuh tersebut. Saat semua 11 \"Rosula Shardshots\" mengenai satu target, akan mengakibatkan DMG sebesar 200% dari DMG awal.",
+      "3": "Selain itu, saat mengonsumsi lebih dari 3 Crystal Shrapnel, setiap Crystal Shrapnel yang dikonsumsi selain 3 Crystal Shrapnel tersebut akan meningkatkan DMG tembakan kali ini lagi sebesar 15%. ",
+      "4": "<br/>",
+      "5": "<strong>Mode Tahan</strong>",
+      "6": "Memasuki Mode Membidik dan terus mendapatkan shard dari reaksi Crystallize di sekitar. Saat Mode Tahan selesai, akan menembakkan \"Rosula Shardshots\" yang sama dengan Mode Tekan.",
+      "7": "<br/>",
+      "8": "Memiliki 2 kali jumlah penggunaan di awal.",
+      "9": "<br/>",
+      "10": "<strong>Arkhe: Ousia</strong>",
+      "11": "Setiap kurun waktu tertentu, Navia akan melancarkan Surging Blade saat menembak dengan Gunbrella-nya dan mengakibatkan Ousia-aligned <geo>Geo DMG</geo>.",
+      "12": "<br/>",
+      "13": "<i>\"Menjaga jarak yang sepantasnya dengan orang yang harus dijaga jaraknya juga adalah bagian penting dalam etika sosial. Tentu saja, ada berbagai cara untuk melakukannya ....\"</i>"
+    },
+    "skillParams": {
+      "0": "DMG Dasar Rosula Shardshot",
+      "1": "Durasi Crystal Shrapnel",
+      "2": "DMG Surging Blade",
+      "3": "Jeda Surging Blade",
+      "4": "Cooldown",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "As the Sunlit Sky's Singing Salute",
+    "description": {
+      "0": "Di bawah perintah Bos Spina di Rosula, memanggil \"Rosula Dorata Salute\" yang menawan untuk membombardir musuh di depan dengan ganas, mengakibatkan <geo>Geo DMG Area</geo>, dan dalam beberapa waktu setelahnya, akan terus melancarkan Cannon Fire Support yang mengakibatkan <geo>Geo DMG</geo> terhadap musuh di sekitar secara berkala.",
+      "1": "Saat serangan meriam mengenai musuh, Navia akan mendapatkan 1 \"Crystal Shrapnel\". Efek ini dapat terpicu sekali setiap 2,4 detik.",
+      "2": "<br/>",
+      "3": "<i>\"Tembakan penghormatan Spina di Rosula adalah perayaan awal atas keberhasilan penyelesaian perundingan kita dan dilakukan tepat sebelum perundingan dimulai. Jangan salah paham, ini sama sekali bukan ancaman dalam bentuk apa pun.\"</i>"
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "DMG Cannon Fire Support",
+      "2": "Durasi Cannon Fire Support",
+      "3": "Cooldown",
+      "4": "Konsumsi Energy",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Undisclosed Distribution Channels",
+    "description": {
+      "0": "Selama 4 detik setelah melancarkan <strong>Ceremonial Crystalshot</strong>, DMG yang diakibatkan dari Normal Attack, Charged Attack, dan Plunging Attack oleh Navia akan dikonversi menjadi <geo>Geo DMG</geo> yang tidak bisa ditimpa Elemental Infusion lainnya. DMG yang diakibatkan dari Normal Attack, Charged Attack, dan Plunging Attack oleh Navia akan meningkat 40%."
+    }
+  },
+  "passive2": {
+    "name": "Mutual Assistance Network",
+    "description": {
+      "0": "Untuk setiap Karakter <pyro>Pyro</pyro>/<electro>Electro</electro>/<cryo>Cryo</cryo>/<hydro>Hydro</hydro> yang ada di dalam party, ATK Navia akan meningkat sebesar 20%. Efek ini dapat ditumpuk hingga 2 lapis."
+    }
+  },
+  "passive3": {
+    "name": "Painstaking Transaction",
+    "description": {
+      "0": "Ketika dikirim untuk melakukan ekspedisi di Fontaine selama 20 jam, hadiah yang didapatkan akan bertambah 25%."
+    }
+  },
+  "constellation1": {
+    "name": "A Lady's Rules for Keeping a Courteous Distance",
+    "description": {
+      "0": "Saat melancarkan <strong>Ceremonial Crystalshot</strong>, setiap \"Crystal Shrapnel\" yang dikonsumsi akan memulihkan 3 poin Energy Navia dan mengurangi cooldown <strong>As the Sunlit Sky's Singing Salute</strong> selama 1 detik. Maksimum pemulihan Energy yang bisa didapatkan dengan cara ini adalah 9 poin Energy, dan maksimum mengurangi cooldown \"As the Sunlit Sky's Singing Salute\" selama 3 detik."
+    }
+  },
+  "constellation2": {
+    "name": "The President's Pursuit of Victory",
+    "description": {
+      "0": "Saat melancarkan <strong>Ceremonial Crystalshot</strong>, setiap \"Crystal Shrapnel\" yang dikonsumsi akan meningkat CRIT Rate dari skill tersebut sebesar 12%. Maksimum peningkatan CRIT Rate yang dapat diperoleh dengan cara ini adalah 36%.",
+      "1": "Selain itu, saat tembakan Ceremonial Crystalshot mengenai musuh, sebuah Cannon Fire Support dari <strong>As the Sunlit Sky's Singing Salute</strong> akan menghantam lokasi di sekitar musuh yang terkena tembakan. Setiap Ceremonial Crystalshot yang dilancarkan hanya dapat memicu satu kali Cannon Fire Support, dan DMG dari Cannon Fire Support yang diakibatkan dengan cara ini akan dianggap sebagai DMG Elemental Burst."
+    }
+  },
+  "constellation3": {
+    "name": "Businesswoman's Broad Vision",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Ceremonial Crystalshot</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "The Oathsworn Never Capitulate",
+    "description": {
+      "0": "Saat <strong>As the Sunlit Sky's Singing Salute</strong> mengenai musuh, <geo>Geo RES</geo> musuh tersebut akan berkurang 20% selama 8 detik."
+    }
+  },
+  "constellation5": {
+    "name": "Negotiator's Resolute Negotiations",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>As the Sunlit Sky's Singing Salute</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "The Flexible Finesse of the Spina's President",
+    "description": {
+      "0": "Saat melancarkan <strong>Ceremonial Crystalshot</strong>, jika mengonsumsi lebih dari 3 \"Crystal Shrapnel\", maka setiap \"Crystal Shrapnel\" yang terkonsumsi setelah \"Crystal Shrapnel\" yang ketiga akan meningkatkan CRIT DMG Ceremonial Crystalshot kali ini sebesar 45%, dan Crystal Shrapnel yang terkonsumsi setelah yang ketiga akan dikembalikan kepada Navia setelah skill dilancarkan."
+    }
+  }
+}

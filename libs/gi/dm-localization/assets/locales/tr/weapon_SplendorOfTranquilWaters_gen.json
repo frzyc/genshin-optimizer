@@ -1,0 +1,24 @@
+{
+  "name": "Sakin Suların İhtişamı",
+  "description": {
+    "0": "Etrafını saf suların çevrelediği bir asa. Uzun zaman önce, denizlerdeki en büyük hakimiyeti simgelerdi."
+  },
+  "passiveName": "Göl Kenarında Şafak ve Alacakaranlık",
+  "passiveDescription": {
+    "0": {
+      "0": "Kuşanan karakterin mevcut Canı artar veya azalırsa 6 saniyeliğine Element Becerisi Hasarı <cryo>%8</cryo> artar. 3 kademeye kadar birikir. Bu etki 0,2 saniyede bir tetiklenebilir. Diğer grup üyelerinin mevcut Canı artar veya azalırsa 6 saniyeliğine kuşanan karakterin Maks. Canı <cryo>%14</cryo> artar. 2 kademeye kadar birikir. Bu etki 0,2 saniyede bir tetiklenebilir. Yukarıdaki etkiler, kuşanan karakter savaş alanında olmasa da tetiklenebilir."
+    },
+    "1": {
+      "0": "Kuşanan karakterin mevcut Canı artar veya azalırsa 6 saniyeliğine Element Becerisi Hasarı <cryo>%10</cryo> artar. 3 kademeye kadar birikir. Bu etki 0,2 saniyede bir tetiklenebilir. Diğer grup üyelerinin mevcut Canı artar veya azalırsa 6 saniyeliğine kuşanan karakterin Maks. Canı <cryo>%17,5</cryo> artar. 2 kademeye kadar birikir. Bu etki 0,2 saniyede bir tetiklenebilir. Yukarıdaki etkiler, kuşanan karakter savaş alanında olmasa da tetiklenebilir."
+    },
+    "2": {
+      "0": "Kuşanan karakterin mevcut Canı artar veya azalırsa 6 saniyeliğine Element Becerisi Hasarı <cryo>%12</cryo> artar. 3 kademeye kadar birikir. Bu etki 0,2 saniyede bir tetiklenebilir. Diğer grup üyelerinin mevcut Canı artar veya azalırsa 6 saniyeliğine kuşanan karakterin Maks. Canı <cryo>%21</cryo> artar. 2 kademeye kadar birikir. Bu etki 0,2 saniyede bir tetiklenebilir. Yukarıdaki etkiler, kuşanan karakter savaş alanında olmasa da tetiklenebilir."
+    },
+    "3": {
+      "0": "Kuşanan karakterin mevcut Canı artar veya azalırsa 6 saniyeliğine Element Becerisi Hasarı <cryo>%14</cryo> artar. 3 kademeye kadar birikir. Bu etki 0,2 saniyede bir tetiklenebilir. Diğer grup üyelerinin mevcut Canı artar veya azalırsa 6 saniyeliğine kuşanan karakterin Maks. Canı <cryo>%24,5</cryo> artar. 2 kademeye kadar birikir. Bu etki 0,2 saniyede bir tetiklenebilir. Yukarıdaki etkiler, kuşanan karakter savaş alanında olmasa da tetiklenebilir."
+    },
+    "4": {
+      "0": "Kuşanan karakterin mevcut Canı artar veya azalırsa 6 saniyeliğine Element Becerisi Hasarı <cryo>%16</cryo> artar. 3 kademeye kadar birikir. Bu etki 0,2 saniyede bir tetiklenebilir. Diğer grup üyelerinin mevcut Canı artar veya azalırsa 6 saniyeliğine kuşanan karakterin Maks. Canı <cryo>%28</cryo> artar. 2 kademeye kadar birikir. Bu etki 0,2 saniyede bir tetiklenebilir. Yukarıdaki etkiler, kuşanan karakter savaş alanında olmasa da tetiklenebilir."
+    }
+  }
+}

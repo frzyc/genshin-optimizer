@@ -1,0 +1,21 @@
+[
+  "HPDelta",
+  "AttackDelta",
+  "HPAddedRatio",
+  "AttackAddedRatio",
+  "DefenceAddedRatio",
+  "CriticalChanceBase",
+  "CriticalDamageBase",
+  "HealRatioBase",
+  "StatusProbabilityBase",
+  "SpeedDelta",
+  "PhysicalAddedRatio",
+  "FireAddedRatio",
+  "IceAddedRatio",
+  "ThunderAddedRatio",
+  "WindAddedRatio",
+  "QuantumAddedRatio",
+  "ImaginaryAddedRatio",
+  "BreakDamageAddedRatioBase",
+  "SPRatioBase"
+]

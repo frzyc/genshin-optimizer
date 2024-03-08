@@ -1,0 +1,24 @@
+{
+  "name": "Kiếm Bến Tàu",
+  "description": {
+    "0": "Công cụ cắt gọt tiện lợi, ngày nay gần như tuyệt tích. Có thể thay thế lưỡi dao bị cùn trong quá trình sử dụng."
+  },
+  "passiveName": "Khúc Hát Thuyền Viên",
+  "passiveDescription": {
+    "0": {
+      "0": "Khi trị liệu hoặc nhận trị liệu sẽ nhận một Ký Hiệu Kiên Nhẫn, duy trì 30s, tối đa có được 3 Ký Hiệu. Khi thi triển Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ sẽ tiêu hao tất cả Ký Hiệu để sản sinh hiệu quả Phấn Khởi trong 10s: Mỗi Ký Hiệu tiêu hao sẽ tăng <cryo>40</cryo> điểm Tinh Thông Nguyên Tố, đồng thời sau 2s khi hiệu quả được sản sinh, mỗi Ký Hiệu tiêu hao sẽ hồi phục <cryo>2</cryo> điểm Năng Lượng Nguyên Tố cho người trang bị. Mỗi 15s tối đa kích hoạt một lần hiệu quả Phấn Khởi; Nhân vật không ra trận cũng có thể nhận được Ký Hiệu Kiên Nhẫn."
+    },
+    "1": {
+      "0": "Khi trị liệu hoặc nhận trị liệu sẽ nhận một Ký Hiệu Kiên Nhẫn, duy trì 30s, tối đa có được 3 Ký Hiệu. Khi thi triển Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ sẽ tiêu hao tất cả Ký Hiệu để sản sinh hiệu quả Phấn Khởi trong 10s: Mỗi Ký Hiệu tiêu hao sẽ tăng <cryo>50</cryo> điểm Tinh Thông Nguyên Tố, đồng thời sau 2s khi hiệu quả được sản sinh, mỗi Ký Hiệu tiêu hao sẽ hồi phục <cryo>2.5</cryo> điểm Năng Lượng Nguyên Tố cho người trang bị. Mỗi 15s tối đa kích hoạt một lần hiệu quả Phấn Khởi; Nhân vật không ra trận cũng có thể nhận được Ký Hiệu Kiên Nhẫn."
+    },
+    "2": {
+      "0": "Khi trị liệu hoặc nhận trị liệu sẽ nhận một Ký Hiệu Kiên Nhẫn, duy trì 30s, tối đa có được 3 Ký Hiệu. Khi thi triển Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ sẽ tiêu hao tất cả Ký Hiệu để sản sinh hiệu quả Phấn Khởi trong 10s: Mỗi Ký Hiệu tiêu hao sẽ tăng <cryo>60</cryo> điểm Tinh Thông Nguyên Tố, đồng thời sau 2s khi hiệu quả được sản sinh, mỗi Ký Hiệu tiêu hao sẽ hồi phục <cryo>3</cryo> điểm Năng Lượng Nguyên Tố cho người trang bị. Mỗi 15s tối đa kích hoạt một lần hiệu quả Phấn Khởi; Nhân vật không ra trận cũng có thể nhận được Ký Hiệu Kiên Nhẫn."
+    },
+    "3": {
+      "0": "Khi trị liệu hoặc nhận trị liệu sẽ nhận một Ký Hiệu Kiên Nhẫn, duy trì 30s, tối đa có được 3 Ký Hiệu. Khi thi triển Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ sẽ tiêu hao tất cả Ký Hiệu để sản sinh hiệu quả Phấn Khởi trong 10s: Mỗi Ký Hiệu tiêu hao sẽ tăng <cryo>70</cryo> điểm Tinh Thông Nguyên Tố, đồng thời sau 2s khi hiệu quả được sản sinh, mỗi Ký Hiệu tiêu hao sẽ hồi phục <cryo>3.5</cryo> điểm Năng Lượng Nguyên Tố cho người trang bị. Mỗi 15s tối đa kích hoạt một lần hiệu quả Phấn Khởi; Nhân vật không ra trận cũng có thể nhận được Ký Hiệu Kiên Nhẫn."
+    },
+    "4": {
+      "0": "Khi trị liệu hoặc nhận trị liệu sẽ nhận một Ký Hiệu Kiên Nhẫn, duy trì 30s, tối đa có được 3 Ký Hiệu. Khi thi triển Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ sẽ tiêu hao tất cả Ký Hiệu để sản sinh hiệu quả Phấn Khởi trong 10s: Mỗi Ký Hiệu tiêu hao sẽ tăng <cryo>80</cryo> điểm Tinh Thông Nguyên Tố, đồng thời sau 2s khi hiệu quả được sản sinh, mỗi Ký Hiệu tiêu hao sẽ hồi phục <cryo>4</cryo> điểm Năng Lượng Nguyên Tố cho người trang bị. Mỗi 15s tối đa kích hoạt một lần hiệu quả Phấn Khởi; Nhân vật không ra trận cũng có thể nhận được Ký Hiệu Kiên Nhẫn."
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "The Bell",
+  "description": {
+    "0": "Greatsword yang besar dengan sebuah jam tertanam di tengahnya, tetapi mesin di dalamnya telah rusak sejak lama."
+  },
+  "passiveName": "Guardian of the Rebellion",
+  "passiveDescription": {
+    "0": {
+      "0": "Saat menerima DMG, menciptakan sebuah perisai yang dapat menahan DMG sebesar <cryo>20%</cryo> dari Max HP. Perisai ini bertahan selama 10 detik, atau sampai terhancurkan. Perisai dapat terpicu setiap <cryo>45</cryo> detik. Saat terlindungi oleh perisai, karakter memperoleh peningkatan <cryo>12%</cryo> DMG."
+    },
+    "1": {
+      "0": "Saat menerima DMG, menciptakan sebuah perisai yang dapat menahan DMG sebesar <cryo>23%</cryo> dari Max HP. Perisai ini bertahan selama 10 detik, atau sampai terhancurkan. Perisai dapat terpicu setiap <cryo>45</cryo> detik. Saat terlindungi oleh perisai, karakter memperoleh peningkatan <cryo>15%</cryo> DMG."
+    },
+    "2": {
+      "0": "Saat menerima DMG, menciptakan sebuah perisai yang dapat menahan DMG sebesar <cryo>26%</cryo> dari Max HP. Perisai ini bertahan selama 10 detik, atau sampai terhancurkan. Perisai dapat terpicu setiap <cryo>45</cryo> detik. Saat terlindungi oleh perisai, karakter memperoleh peningkatan <cryo>18%</cryo> DMG."
+    },
+    "3": {
+      "0": "Saat menerima DMG, menciptakan sebuah perisai yang dapat menahan DMG sebesar <cryo>29%</cryo> dari Max HP. Perisai ini bertahan selama 10 detik, atau sampai terhancurkan. Perisai dapat terpicu setiap <cryo>45</cryo> detik. Saat terlindungi oleh perisai, karakter memperoleh peningkatan <cryo>21%</cryo> DMG."
+    },
+    "4": {
+      "0": "Saat menerima DMG, menciptakan sebuah perisai yang dapat menahan DMG sebesar <cryo>32%</cryo> dari Max HP. Perisai ini bertahan selama 10 detik, atau sampai terhancurkan. Perisai dapat terpicu setiap <cryo>45</cryo> detik. Saat terlindungi oleh perisai, karakter memperoleh peningkatan <cryo>24%</cryo> DMG."
+    }
+  }
+}

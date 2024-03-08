@@ -1,0 +1,29 @@
+{
+  "setName": "Guardião",
+  "setEffects": {
+    "2": "DEF +30%",
+    "4": "Aumenta a própria RES do respectivo elemento em 30% para cada elemento diferente dos seus personagens da equipe."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Flor do Guarda",
+      "desc": "As íris apreciadas pelos guardiões. Não há chances de dar a quem ama."
+    },
+    "plume": {
+      "name": "Emblema do Guarda",
+      "desc": "Um broche em forma de pena que simboliza o desejo de proteger."
+    },
+    "sands": {
+      "name": "Relógio do Guarda",
+      "desc": "Um pequeno dispositivo para mostrar a hora atual. Apenas funciona em noites sem lua."
+    },
+    "goblet": {
+      "name": "Sangue do Guarda",
+      "desc": "Recipiente de metal. Pode ser usado para reter algum tipo de líquido que pode espantar a solidão."
+    },
+    "circlet": {
+      "name": "Cinto do Guarda",
+      "desc": "Uma bandana de tecido para prender o cabelo que também pode servir de curativo em caso de emergências."
+    }
+  }
+}

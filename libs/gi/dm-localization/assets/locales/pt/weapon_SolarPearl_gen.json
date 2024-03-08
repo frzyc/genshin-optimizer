@@ -1,0 +1,24 @@
+{
+  "name": "Pérola Solar",
+  "description": {
+    "0": "Abriga a luz do sol e da lua, uma pérola feita de materiais desconhecidos pulsa com uma força calorosa."
+  },
+  "passiveName": "Brilho Celestial",
+  "passiveDescription": {
+    "0": {
+      "0": "Dentro de 6s após acertar um Ataque Normal, o Dano da Habilidade Elemental e do Supremo aumentam em <cryo>20%</cryo>. Dentro de 6s após acertar uma Habilidade Elemental e o Supremo, o Dano do Ataque Normal aumenta <cryo>20%</cryo>."
+    },
+    "1": {
+      "0": "Dentro de 6s após acertar um Ataque Normal, o Dano da Habilidade Elemental e do Supremo aumentam em <cryo>25%</cryo>. Dentro de 6s após acertar uma Habilidade Elemental e o Supremo, o Dano do Ataque Normal aumenta <cryo>25%</cryo>."
+    },
+    "2": {
+      "0": "Dentro de 6s após acertar um Ataque Normal, o Dano da Habilidade Elemental e do Supremo aumentam em <cryo>30%</cryo>. Dentro de 6s após acertar uma Habilidade Elemental e o Supremo, o Dano do Ataque Normal aumenta <cryo>30%</cryo>."
+    },
+    "3": {
+      "0": "Dentro de 6s após acertar um Ataque Normal, o Dano da Habilidade Elemental e do Supremo aumentam em <cryo>35%</cryo>. Dentro de 6s após acertar uma Habilidade Elemental e o Supremo, o Dano do Ataque Normal aumenta <cryo>35%</cryo>."
+    },
+    "4": {
+      "0": "Dentro de 6s após acertar um Ataque Normal, o Dano da Habilidade Elemental e do Supremo aumentam em <cryo>40%</cryo>. Dentro de 6s após acertar uma Habilidade Elemental e o Supremo, o Dano do Ataque Normal aumenta <cryo>40%</cryo>."
+    }
+  }
+}

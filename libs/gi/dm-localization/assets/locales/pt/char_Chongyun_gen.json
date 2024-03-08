@@ -1,0 +1,154 @@
+{
+  "name": "Chongyun",
+  "title": "Pegadas na Neve",
+  "description": "Um jovem exorcista de uma família de exorcistas. Ele tem feito de tudo para superar seu próprio Psíquico Yang Puro.",
+  "constellationName": "Nubis Caesor",
+  "auto": {
+    "name": "Desgraça dos Demônios",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Ataque Normal</strong>",
+        "1": "Realiza até 4 golpes consecutivos."
+      },
+      "charged": {
+        "0": "<strong>Ataque Carregado</strong>",
+        "1": "Drena Stamina ao longo do tempo para realizar um ataque giratório contínuo contra todos os inimigos próximos.",
+        "2": "Ao final da sequência, realiza um corte poderoso."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Imersivo</strong>",
+        "1": "Mergulha em pleno ar para golpear o chão, danificando inimigos em seu caminho e infligindo Dano em uma AdE durante o impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Dano do 1° Golpe",
+      "1": "Dano do 2° Golpe",
+      "2": "Dano do 3° Golpe",
+      "3": "Dano do 4° golpe",
+      "4": "Dano de Loop de Ataque Carregado",
+      "5": "Dano Final de Ataque Carregado",
+      "6": "Consumo de Stamina de Ataque Carregado",
+      "7": "Duração Máxima",
+      "8": "Dano Durante a Queda",
+      "9": "Dano de Queda de Baixa/Alta Altitude",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Lâmina Espiritual - Geada de Chongyun",
+    "description": {
+      "0": "Chongyun golpeia o chão com seu Espadão, causando uma explosão Cryo em uma AdE circular na sua frente que inflige <cryo>Dano Cryo</cryo>.",
+      "1": "Depois de um curto intervalo, o ar frio criado pela explosão Cryo se coalescerá em um Campo Gelado Chonghua, em que todos os personagens que usem Espada, Espadão ou Lança receberão <cryo>encantamento Cryo</cryo>.",
+      "2": "<br/>",
+      "3": "<i>\"Um anel de cristal e tudo que se segue é o silêncio. Os rios não se movem, e as nuvens estão pesadas com o gelo. Os portões do altar se abrem, e o mal é banido.\"</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Habilidade",
+      "1": "Duração do Encantamento",
+      "2": "Duração da Área",
+      "3": "Tempo de Recarga",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Lâmina Espiritual - Estrela Cadente",
+    "description": {
+      "0": "Criando os secretos selos artesanais, Chongyun evoca 3 lâminas espirituais em pleno ar que caem à terra uma por uma depois de um curto período de tempo, explodindo assim que encostam ao chão.",
+      "1": "Quando as lâminas espirituais explodem, elas infligem <cryo>Dano Cryo em uma AdE</cryo> e lançam inimigos.",
+      "2": "<br/>",
+      "3": "<i>\"Assim como o frio atroz gera a geada congelante, minha lâmina transcendente estremece o céu e a terra. Ouça meu chamado e atenda ao meu apelo!\"</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Habilidade",
+      "1": "Tempo de Recarga",
+      "2": "Energia Elemental",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Respiração Constante",
+    "description": {
+      "0": "Os personagens que usam Espada, Espadão e Lança dentro do campo criado pela <strong>Lâmina Espiritual - Geada de Chongyun</strong> terão a Vel. de ATQ Normal aumentada em 8%."
+    }
+  },
+  "passive2": {
+    "name": "Lâmina do Caçador de Gelo",
+    "description": {
+      "0": "Quando a área criada pela <strong>Lâmina Espiritual - Geada de Chongyun</strong> dissipa, outra lâmina do espírito será evocada para atacar inimigos próximos, infligindo 100% de Dano da habilidade Geada de Chongyun como <cryo>Dano Cryo em uma AdE</cryo>. Inimigos golpeados por essa lâmina terá sua <cryo>RES Cryo</cryo> diminuída em 10% por 8 segundos."
+    }
+  },
+  "passive3": {
+    "name": "Jornada Galante",
+    "description": {
+      "0": "Quando despachado em uma expedição em Liyue, o tempo consumido é reduzido em 25%"
+    }
+  },
+  "constellation1": {
+    "name": "Nevasca Desencadeada",
+    "description": {
+      "0": "O último ataque do combo de Ataques Normais do Chongyun libera 3 lâminas de gelo. Cada lâmina inflige 50% do ATQ de Chongyun como <cryo>Dano Cryo</cryo> a todos os inimigos em seu caminho."
+    }
+  },
+  "constellation2": {
+    "name": "Revolução Atmosférica",
+    "description": {
+      "0": "Habilidades Elementais e Supremos lançados dentro do Campo criado pela <strong>Lâmina Espiritual - Geada de Chongyun</strong> têm seu Tempo de Recarga reduzido em 15%."
+    }
+  },
+  "constellation3": {
+    "name": "Explosão de Nuvens",
+    "description": {
+      "0": "Aumenta o nível da <strong>Lâmina Espiritual - Estrela Cadente</strong> em 3.",
+      "1": "O nível máximo de elevação é 15."
+    }
+  },
+  "constellation4": {
+    "name": "Céus Congelados",
+    "description": {
+      "0": "Chongyun regenera 1 de Energia sempre que ele acerta um inimigo afetado por <cryo>Cryo</cryo>.",
+      "1": "Esse efeito pode ocorrer apenas uma vez a cada 2 segundos."
+    }
+  },
+  "constellation5": {
+    "name": "O Verdadeiro Caminho",
+    "description": {
+      "0": "Aumenta o nível da <strong>Lâmina Espiritual - Geada de Chongyun</strong> em 3.",
+      "1": "O nível máximo de elevação é Nv.15."
+    }
+  },
+  "constellation6": {
+    "name": "Reforço das Quatro Lâminas",
+    "description": {
+      "0": "A <strong>Lâmina Espiritual - Estrela Cadente</strong> inflige 15% a mais de Dano em inimigos com uma baixa porcentagem de sua Vida Máxima restante menor que a de Chongyun.",
+      "1": "Essa Habilidade também irá evocar uma lâmina espiritual adicional."
+    }
+  }
+}

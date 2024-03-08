@@ -1,0 +1,171 @@
+{
+  "name": "Diona",
+  "title": "Kätzlein Cocktail",
+  "description": "Seorang wanita muda yang mewarisi darah yang bukan manusia. Dia adalah bartender terkenal di Cat's Tail.",
+  "constellationName": "Feles",
+  "auto": {
+    "name": "Kätzlein Style",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Attack</strong>",
+        "1": "Melancarkan hingga 5 serangan berturut-turut menggunakan busur."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Mengerahkan sebuah <strong>Serangan Membidik</strong> yang lebih akurat untuk mengakibatkan DMG lebih besar.",
+        "2": "Saat membidik, es akan berkumpul di ujung anak panah. Panah dengan es yang terkumpul penuh akan mengakibatkan <cryo>Cryo DMG</cryo>."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Melancarkan hujan panah dari udara dan menerjang tanah dengan kecepatan tinggi, mengakibatkan DMG area saat mendarat."
+      }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Tahap 4",
+      "4": "DMG Tahap 5",
+      "5": "DMG Membidik",
+      "6": "DMG Membidik Penuh",
+      "7": "DMG Selama Plunging",
+      "8": "DMG Plunging Attack Rendah/Tinggi",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Icy Paws",
+    "description": {
+      "0": "Menembakkan Icy Paws yang mengakibatkan <cryo>Cryo DMG</cryo> dan membentuk perisai saat Icy Paws mengenai musuh.",
+      "1": "Jumlah DMG yang dapat ditahan perisai ditentukan berdasarkan Max HP Diona, dan durasinya ditentukan berdasarkan jumlah musuh yang terkena Icy Paws.",
+      "2": "<br/>",
+      "3": "<strong>Tekan</strong>",
+      "4": "Menembakkan 2 Icy Paws dengan cepat",
+      "5": "<br/>",
+      "6": "<strong>Tahan</strong>",
+      "7": "Bergerak mundur dengan cepat, kemudian menembakkan 5 Icy Paws.",
+      "8": "Perisai yang terbentuk setelah tombol skill ditahan, akan memperoleh bonus 75% penyerapan DMG.",
+      "9": "<br/>",
+      "10": "Perisai ini memiliki bonus 250% penyerapan <cryo>Cryo DMG</cryo>. Saat perisai terbentuk, karakter yang sedang digunakan akan terpengaruh <cryo>Cryo</cryo> dalam waktu singkat.",
+      "11": "<br/>",
+      "12": "<i>Saat Diona baru menjadi bartender, sebanyak apa pun es yang dimasukkannya ke dalam koktail, tidak pernah ada seorang pun pemabuk yang terluka karena dingin. Tetapi setelah Diona mendapatkan Vision — kini dia bisa membuat minuman sangat dingin yang membuat para pemabuk kedinginan hingga sakit kepala. Hebat!</i>"
+    },
+    "skillParams": {
+      "0": "DMG Per Ice Paw",
+      "1": "Ketahanan Dasar Perisai",
+      "2": "Durasi Per Claw",
+      "3": "Cooldown (Mode Tekan)",
+      "4": "Cooldown (Mode Tahan)",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Signature Mix",
+    "description": {
+      "0": "Melemparkan minuman dingin spesial yang mengakibatkan <cryo>Cryo DMG area</cryo> dan menciptakan Drunken Mist dalam area tersebut.",
+      "1": "<br/>",
+      "2": "<strong>Drunken Mist</strong>",
+      "3": [
+        "Mengakibatkan <cryo>Cryo DMG</cryo> berkelanjutan terhadap semua musuh yang berada di dalam area.",
+        "Memulihkan HP karakter yang berada di dalam lingkup area secara terus-menerus."
+      ],
+      "4": "<br/>",
+      "5": "<i> Racikan mengerikan yang bahkan dianggap tidak manusiawi oleh Diona. Rasa mengerikan yang muncul di awal kecapan harus disuguhkan kepada musuh. Sedangkan rasa dingin dan aroma manis yang muncul setelahnya... sayang sekali, hanya bisa dinikmati dengan hidung dan permukaan kulit saja.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "DMG Berkelanjutan di Area",
+      "2": "Regenerasi HP",
+      "3": "Durasi",
+      "4": "Cooldown",
+      "5": "Konsumsi Energy",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Cat's Tail Secret Menu",
+    "description": {
+      "0": "Meningkatkan 10% Movement SPD dan mengurangi 10% konsumsi Stamina untuk Karakter yang dilindungi oleh perisai dari skill <strong>Icy Paws</strong>."
+    }
+  },
+  "passive2": {
+    "name": "Drunkards' Farce",
+    "description": {
+      "0": "Mengurangi 10% ATK musuh yang masuk ke area skill <strong>Signature Mix</strong> selama 15 detik."
+    }
+  },
+  "passive3": {
+    "name": "Complimentary Bar Food",
+    "description": {
+      "0": "Saat masakan jenis pemulihan dimasak dengan sempurna, memiliki 12% kemungkinan mendapatkan hasil 2 kali lipat."
+    }
+  },
+  "constellation1": {
+    "name": "A Lingering Flavor",
+    "description": {
+      "0": "Memulihkan 15 Energy Diona setelah efek <strong>Signature Mix</strong> berakhir."
+    }
+  },
+  "constellation2": {
+    "name": "Shaken, Not Purred",
+    "description": {
+      "0": "Meningkatkan 15% DMG <strong>Icy Paws</strong>, dan meningkatkan 15% kemampuan menahan DMG;",
+      "1": "Selain itu, ketika skill ini mengenai musuh, akan menciptakan sebuah perisai untuk karakter lain di sekitarnya yang dapat menahan hingga 50% dari penahanan DMG perisai <strong>Icy Paws</strong> selama 5 detik."
+    }
+  },
+  "constellation3": {
+    "name": "A—Another Round?",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Signature Mix</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Wine Industry Slayer",
+    "description": {
+      "0": "Dalam area <strong>Signature Mix</strong>, waktu bagi Diona untuk melakukan Serangan Membidik berkurang 60%."
+    }
+  },
+  "constellation5": {
+    "name": "Double Shot, On The Rocks",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Icy Paws</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Cat's Tail Closing Time",
+    "description": {
+      "0": "Karakter dalam area <strong>Signature Mix</strong> akan mendapatkan efek berikut berdasarkan jumlah HP mereka:",
+      "1": [
+        "Meningkatkan 30% Bonus Pemulihan HP saat HP sama dengan atau kurang dari 50%.",
+        "Elemental Mastery +200 ketika HP di atas 50%."
+      ]
+    }
+  }
+}

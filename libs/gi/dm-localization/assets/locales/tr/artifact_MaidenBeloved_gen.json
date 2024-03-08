@@ -1,0 +1,29 @@
+{
+  "setName": "Hanımın Sevdiceği",
+  "setEffects": {
+    "2": "+%15 Karakter İyileştirme Verimi.",
+    "4": "Bir Element Becerisi veya Patlaması kullanıldığında 10 saniyeliğine tüm grup üyelerinin aldığı iyileştirme %20 artar."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Hanımın Uzak Sevgisi",
+      "desc": "Sonsuza dek çiçek açan ve asla solmayacak olan kokulu bir çiçek."
+    },
+    "plume": {
+      "name": "Hanımın Kara Sevdası",
+      "desc": "Rüzgar eşliğinde göçen bir kuş gibi birine duyulan özlemi yansıtan tüylü bir aksesuar."
+    },
+    "sands": {
+      "name": "Hanımın Kaybolan Gençliği",
+      "desc": "Zamanın sonu asla gelmez ama aynısı bu genç kızın üzerine düşüldüğü mutlu yılları için söylenemez."
+    },
+    "goblet": {
+      "name": "Hanımın Kısa Tatili",
+      "desc": "Acı içki yerine tatlı siyah çay için yapılan bir bardak."
+    },
+    "circlet": {
+      "name": "Hanımın Solan Güzelliği",
+      "desc": "Kırışıklıkları gizleyen, özenle saklanmış bir kadın şapkası."
+    }
+  }
+}

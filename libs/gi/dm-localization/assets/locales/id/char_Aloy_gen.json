@@ -1,0 +1,159 @@
+{
+  "name": "Aloy",
+  "title": "Savior From Another World",
+  "description": "Dulunya dikucilkan oleh sukunya, kini menjadi pemburu dengan kemampuan tak tertandingi. Selalu siap membela yang benar dengan busurnya.",
+  "constellationName": "Nora Fortis",
+  "auto": {
+    "name": "Rapid Fire",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Attack</strong>",
+        "1": "Melancarkan hingga 4 serangan berturut-turut menggunakan busur."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Mengerahkan sebuah <strong>Serangan Membidik</strong> yang lebih akurat untuk mengakibatkan DMG lebih besar.",
+        "2": "Saat membidik, es akan berkumpul di ujung anak panah. Panah dengan energi es yang terkumpul penuh akan mengakibatkan <cryo>Cryo DMG</cryo>."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Melancarkan hujan panah dari udara dan menerjang tanah dengan kecepatan tinggi, mengakibatkan DMG area saat mendarat."
+      }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Tahap 4",
+      "4": "DMG Membidik",
+      "5": "DMG Membidik Penuh",
+      "6": "DMG Selama Plunging",
+      "7": "DMG Plunging Attack Rendah/Tinggi",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Frozen Wilds",
+    "description": {
+      "0": "Aloy melemparkan sebuah Freeze Bomb ke arah target. Freeze Bomb ini akan meledak dan mengakibatkan <cryo>Cryo DMG</cryo> saat mengenai target. Setelah meledak, Freeze Bomb akan pecah menjadi beberapa Chillwater Bomblet yang akan meledak dan mengakibatkan <cryo>Cryo DMG</cryo> saat tersentuh musuh atau setelah jeda beberapa saat.",
+      "1": "Saat Freeze Bomb atau Chillwater Bomblet mengenai musuh, ATK musuh akan berkurang dan Aloy mendapatkan 1 lapisan Coil.",
+      "2": "Aloy hanya bisa mendapatkan 1 lapisan Coil setiap 0,1 detik.",
+      "3": "<br/>",
+      "4": "<strong>Coil</strong>",
+      "5": [
+        "Setiap lapisan Coil akan meningkatkan DMG Normal Attack Aloy.",
+        "Saat 4 lapisan Coil terkumpul, Aloy akan menghapus semua efek Coil lalu memasuki kondisi Rushing Ice yang meningkatkan DMG Normal Attack lebih besar lagi, serta mengubah DMG Normal Attack menjadi <cryo>Cryo DMG</cryo>."
+      ],
+      "6": "<br/>",
+      "7": "Aloy tidak bisa mendapatkan lapisan Coil baru saat berada dalam kondisi Rushing Ice.",
+      "8": "Efek Coil akan hilang dalam 30 detik setelah Aloy meninggalkan medan pertempuran.",
+      "9": "<br/>",
+      "10": "<i>Sudah kedinginan? Berarti kamu belum pernah pergi ke The Cut.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Freeze Bomb",
+      "1": "DMG Chillwater Bomblet",
+      "2": "Penurunan ATK",
+      "3": "Durasi Penurunan ATK",
+      "4": "Bonus DMG Normal Attack dari Coil",
+      "5": "Bonus DMG Normal Attack dari Rushing Ice",
+      "6": "Durasi Rushing Ice",
+      "7": "Cooldown",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Prophecies of Dawn",
+    "description": {
+      "0": "Aloy melemparkan sebuah Power Cell yang berisi elemen Cryo ke arah target dan meledakkannya dengan anak panah, mengakibatkan <cryo>Cryo DMG Area</cryo>.",
+      "1": "<br/>",
+      "2": "<i>Apakah \"Zero Dawn\" berarti harapan atau kepunahan sudah tidak penting lagi. Aloy sudah berhasil menyelamatkan dunianya, dan dunia ini sendiri memiliki para pahlawan yang akan melindunginya.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "Cooldown",
+      "2": "Konsumsi Energy",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Combat Override",
+    "description": {
+      "0": "Saat Aloy mendapatkan efek <strong>Coil</strong> dari skill Frozen Wilds, ATK Aloy akan meningkat 16%, sedangkan ATK anggota party lainnya yang berada di sekitar akan meningkat 8%. Efek ini bertahan selama 10 detik."
+    }
+  },
+  "passive2": {
+    "name": "Strong Strike",
+    "description": {
+      "0": "Saat Aloy berada dalam status Rushing Ice dari skill <strong>Frozen Wilds</strong>, <cryo>Cryo DMG Bonus</cryo> Aloy akan meningkat 3,5% setiap detik. Aloy bisa mendapatkan hingga 35% <cryo>Cryo DMG Bonus</cryo> dengan cara ini."
+    }
+  },
+  "passive3": {
+    "name": "Easy Does It",
+    "description": {
+      "0": "Saat Aloy berada dalam party, binatang kecil yang bisa menghasilkan Fowl, Raw Meat, atau Chilled Meat tidak mudah terkejut saat didekati anggota party."
+    }
+  },
+  "constellation1": {
+    "name": "Star of Another World",
+    "description": {
+      "0": "Belum tiba saatnya bagi sudut langit malam dari orang ini untuk bercahaya."
+    }
+  },
+  "constellation2": {
+    "name": "Star of Another World",
+    "description": {
+      "0": "Belum tiba saatnya bagi sudut langit malam dari orang ini untuk bercahaya."
+    }
+  },
+  "constellation3": {
+    "name": "Star of Another World",
+    "description": {
+      "0": "Belum tiba saatnya bagi sudut langit malam dari orang ini untuk bercahaya."
+    }
+  },
+  "constellation4": {
+    "name": "Star of Another World",
+    "description": {
+      "0": "Belum tiba saatnya bagi sudut langit malam dari orang ini untuk bercahaya."
+    }
+  },
+  "constellation5": {
+    "name": "Star of Another World",
+    "description": {
+      "0": "Belum tiba saatnya bagi sudut langit malam dari orang ini untuk bercahaya."
+    }
+  },
+  "constellation6": {
+    "name": "Star of Another World",
+    "description": {
+      "0": "Belum tiba saatnya bagi sudut langit malam dari orang ini untuk bercahaya."
+    }
+  }
+}

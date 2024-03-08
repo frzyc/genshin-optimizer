@@ -1,0 +1,24 @@
+{
+  "name": "Prototype Archaic",
+  "description": {
+    "0": "Sebuah greatsword kuno yang ditemukan di Blackcliff Forge. Mempunyai kekuatan ayunan yang luar biasa seolah dapat membelah dimensi."
+  },
+  "passiveName": "Crush",
+  "passiveDescription": {
+    "0": {
+      "0": "Saat mengenai musuh, Normal atau Charged Attack memiliki 50% persentase untuk mengakibatkan DMG tambahan sebesar <cryo>240%</cryo> ATK di area kecil. Dapat terpicu setiap 15 detik"
+    },
+    "1": {
+      "0": "Saat mengenai musuh, Normal atau Charged Attack memiliki 50% persentase untuk mengakibatkan DMG tambahan sebesar <cryo>300%</cryo> ATK di area kecil. Dapat terpicu setiap 15 detik"
+    },
+    "2": {
+      "0": "Saat mengenai musuh, Normal atau Charged Attack memiliki 50% persentase untuk mengakibatkan DMG tambahan sebesar <cryo>360%</cryo> ATK di area kecil. Dapat terpicu setiap 15 detik"
+    },
+    "3": {
+      "0": "Saat mengenai musuh, Normal atau Charged Attack memiliki 50% persentase untuk mengakibatkan DMG tambahan sebesar <cryo>420%</cryo> ATK di area kecil. Dapat terpicu setiap 15 detik"
+    },
+    "4": {
+      "0": "Saat mengenai musuh, Normal atau Charged Attack memiliki 50% persentase untuk mengakibatkan DMG tambahan sebesar <cryo>480%</cryo> ATK di area kecil. Dapat terpicu setiap 15 detik"
+    }
+  }
+}

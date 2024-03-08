@@ -1,0 +1,160 @@
+{
+  "name": "Collei",
+  "title": "Germoglio di rinascita",
+  "description": "Un'apprendista guardaboschi di servizio nella Selva di Avidya. Le sue parole e le sue azioni appassionate celano una personalità un po' introversa.",
+  "constellationName": "Leptailurus Cervarius",
+  "auto": {
+    "name": "Freccia del supplicante",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attacco normale</strong>",
+        "1": "Esegue fino a 4 tiri consecutivi con l'arco."
+      },
+      "charged": {
+        "0": "<strong>Attacco caricato</strong>",
+        "1": "Effettua un <strong>attacco mirato</strong> ancora più preciso con DAN aumentati.",
+        "2": "Mentre mira, l'energia di Dendro si accumula sulla punta della freccia. Una freccia completamente carica infligge <dendro>DAN da Dendro</dendro>."
+      },
+      "plunging": {
+        "0": "<strong>Attacco in picchiata</strong>",
+        "1": "Scocca una pioggia di frecce a mezz'aria prima di cadere e colpire a terra, infliggendo DAN ad area all'impatto."
+      }
+    },
+    "skillParams": {
+      "0": "DAN da 1º colpo",
+      "1": "DAN da 2º colpo",
+      "2": "DAN da 3º colpo",
+      "3": "DAN da 4º colpo",
+      "4": "ATT mirato",
+      "5": "ATT mirato a piena carica",
+      "6": "DAN da ATT in picchiata",
+      "7": "DAN da ATT in picchiata basso/alto",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Pennello floreale",
+    "description": {
+      "0": "Lancia un Anello floreale che infligge <dendro>DAN da Dendro</dendro> ai bersagli con cui entra in contatto.",
+      "1": "L'Anello floreale tornerà dopo un determinato periodo di tempo, infliggendo ulteriori <dendro>DAN da Dendro</dendro>.",
+      "2": "<br/>",
+      "3": "<i>Questo è il gadget preferito di Collei per affrontare le feroci bestie indisciplinate. Alcuni colpi ben assestati basteranno per metterle in riga. Questo stesso principio funziona altrettanto bene sui malfattori.</i>"
+    },
+    "skillParams": {
+      "0": "DAN da abilità",
+      "1": "TdR",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Micio asso vincente",
+    "description": {
+      "0": "Il fidato Cuilein-Anbar giunge a salvare la situazione!",
+      "1": "Lancia la bambola chiamata Cuilein-Anbar, provocando un'esplosione che infligge <dendro>DAN da Dendro ad area</dendro> e creando una zona Cuilein-Anbar. Cuilein-Anbar rimbalzerà all'interno di questa zona, infliggendo <dendro>DAN da Dendro ad area</dendro>.",
+      "2": "<br/>",
+      "3": "<i>\"Impressionante, eh? Cosa? Vuoi sapere da dove ho tirato fuori il nome Cuilein-Anbar? Uh, beh, io...\"</i>"
+    },
+    "skillParams": {
+      "0": "DAN da esplosione",
+      "1": "DAN da balzo",
+      "2": "Durata",
+      "3": "TdR",
+      "4": "Costo energia",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Brezza di ritorno floreale",
+    "description": {
+      "0": "Se uno dei membri del tuo gruppo innesca le reazioni di Ustione, Vivificazione, Accentuazione, Propagazione, Fioritura, Iperfioritura o Germinazione prima che l'<strong>Anello floreale</strong> torni, al ritorno di quest'ultimo il personaggio riceve l'effetto Germoglio, che infligge continuamente <dendro>DAN da Dendro</dendro> equivalenti a un 40% dell'ATT di Collei agli avversari vicini per 3 s.",
+      "1": "Se un altro effetto Germoglio viene attivato durante la sua durata iniziale, il primo effetto verrà rimosso. I DAN inflitti dal Germoglio vengono considerati come DAN da abilità elementale."
+    }
+  },
+  "passive2": {
+    "name": "La foresta languida",
+    "description": {
+      "0": "Quando un personaggio all'interno della <strong>zona Cuilein-Anbar</strong> innesca una reazione di Ustione, Vivificazione, Accentuazione, Propagazione, Fioritura, Iperfioritura o Germinazione, la durata della zona aumenta di 1 s.",
+      "1": "La durata di un singolo <strong>Micio asso vincente</strong> può essere estesa in questo modo fino a 3 s."
+    }
+  },
+  "passive3": {
+    "name": "Campionessa di volo a vela di Sumeru",
+    "description": {
+      "0": "Diminuisce di un 20% il consumo di vigore durante la planata per i membri del tuo gruppo.",
+      "1": "Non è cumulabile con talenti passivi che conferiscono gli stessi effetti."
+    }
+  },
+  "constellation1": {
+    "name": "Pattuglia di Boscoprofondo",
+    "description": {
+      "0": "Quando Collei è nel gruppo e non sul campo, la sua ricarica d'energia aumenta di un 20%."
+    }
+  },
+  "constellation2": {
+    "name": "Attraverso foreste e montagne",
+    "description": {
+      "0": "Il talento passivo Brezza di ritorno floreale cambia come segue: l'<strong>Anello floreale</strong> fornisce al personaggio l'effetto Germoglio di Brezza di ritorno floreale al ritorno dell'Anello, infliggendo un 40% dell'ATT di Collei come <dendro>DAN da Dendro</dendro> ai nemici vicini per 3 s.",
+      "1": "Dal momento in cui viene utilizzato <strong>Pennello floreale</strong>, fino al termine dell'effetto Germoglio, se uno dei membri del gruppo innesca una reazione di Ustione, Vivificazione, Accentuazione, Propagazione, Fioritura, Iperfioritura o Germinazione l'effetto Germoglio verrà esteso di 3 s.",
+      "2": "La durata dell'effetto Germoglio può essere estesa in questo modo una sola volta. Se un altro effetto Germoglio viene innescato durante la sua durata iniziale, l'effetto iniziale viene rimosso.",
+      "3": "I DAN inflitti dal Germoglio vengono considerati come DAN da abilità elementale.",
+      "4": "Devi prima sbloccare il talento passivo Brezza di ritorno floreale."
+    }
+  },
+  "constellation3": {
+    "name": "Profumo d'estate",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Pennello floreale</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation4": {
+    "name": "Dono dei boschi",
+    "description": {
+      "0": "Usando <strong>Micio asso vincente</strong>, la maestria elementale dei membri del gruppo vicini (esclusa Collei) aumenta di 60 per 12 s."
+    }
+  },
+  "constellation5": {
+    "name": "Tutto è brace",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Micio asso vincente</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation6": {
+    "name": "La foresta delle frecce cadenti",
+    "description": {
+      "0": "Quando l'<strong>Anello floreale</strong> va a segno crea un Cuilein-Anbar in miniatura che infligge un 200% dell'ATT di Collei come <dendro>DAN da Dendro</dendro>.",
+      "1": "Ogni <strong>Pennello floreale</strong> può creare un solo Cuilein-Anbar in miniatura."
+    }
+  }
+}

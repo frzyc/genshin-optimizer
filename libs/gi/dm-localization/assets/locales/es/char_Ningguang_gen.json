@@ -1,0 +1,160 @@
+{
+  "name": "Ninguang",
+  "title": "La Estrella en Eclipse",
+  "description": "Ninguang, conocida como el “Equilibrio Celestial”, es miembro de las “Siete Estrellas de Liyue”. Su riqueza es insuperable en todo Teyvat.",
+  "constellationName": "Opus Aequilibrium",
+  "auto": {
+    "name": "Lanzamiento centelleante",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Ataque Normal </strong>",
+        "1": "Dispara gemas que infligen <geo>Daño Geo</geo>.",
+        "2": "Al golpear, esto le otorga a Ninguang un jade estelar."
+      },
+      "charged": {
+        "0": "<strong>Ataque Cargado</strong>",
+        "1": "Consume una cierta cantidad de Aguante para disparar una gema gigante que inflige <geo>Daño Geo</geo>.",
+        "2": "Si Ninguang tiene algún jade estelar, lanzar un Ataque Cargado también disparará el jade estelar contra el enemigo, infligiendo daño adicional."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Descendente</strong>",
+        "1": "Concentra el poder de la roca, se lanza desde el aire para golpear el suelo y daña a los enemigos a su paso, infligiendo <geo>Daño Geo en el AdE</geo> en el momento del impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Daño de ATQ Normal",
+      "1": "Daño de ATQ Cargado",
+      "2": "Daño de jade estelar",
+      "3": "Coste de Aguante de ATQ Cargado",
+      "4": "Daño de Caída",
+      "5": "Daño de impacto de caída baja/alta",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Pantalla de jade",
+    "description": {
+      "0": "Ninguang crea una Pantalla de jade, oro y obsidiana de gran opulencia, infligiendo <geo>Daño Geo en el AdE</geo>.",
+      "1": "<br/>",
+      "2": "<strong>Pantalla de jade</strong>",
+      "3": [
+        "Bloquea los proyectiles enemigos.",
+        "La resistencia de la pantalla es proporcional a la Vida Máx. de Ninguang.",
+        "La Pantalla de jade se considera una <geo>creación Geo</geo>, y puede ser usada para bloquear ciertos ataques, pero no se puede escalar. Solo puede existir una Pantalla de jade a la vez."
+      ],
+      "4": "<br/>",
+      "5": "<i>El lienzo de las estrellas está escrito en esta pantalla de jade.</i>"
+    },
+    "skillParams": {
+      "0": "Vida de la Pantalla de jade",
+      "1": "Daño de habilidad",
+      "2": "TdE",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Devastaestrellas",
+    "description": {
+      "0": "Ninguang reúne gemas a su alrededor y las destruye a la vez, repartiéndolas entre todos los enemigos cercanos e infligiendo <geo>Daño Geo</geo> masivo.",
+      "1": "Si Devastaestrellas se lanza cuando una Pantalla de jade está cerca, la Pantalla de jade disparará proyectiles de gemas adicionales al mismo tiempo.",
+      "2": "<br/>",
+      "3": "<i>Las estrellas caen. El silencio desciende.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de gemas",
+      "1": "TdE",
+      "2": "Energía Elemental",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Plan B",
+    "description": {
+      "0": "Cuando está en posesión de jades estelares, el Ataque Cargado de Ninguang no consume Aguante."
+    }
+  },
+  "passive2": {
+    "name": "Reserva estratégica",
+    "description": {
+      "0": "Los personajes que pasen a través de la <strong>Pantalla de jade</strong> obtienen un 12% de <geo>Bono de Daño Geo</geo> durante 10 s."
+    }
+  },
+  "passive3": {
+    "name": "Registro de tesoros maravillosos",
+    "description": {
+      "0": "Muestra la ubicación de los <strong>minerales utilizados para forjar</strong> cercanos en el minimapa."
+    }
+  },
+  "constellation1": {
+    "name": "Fragmentos perforadores",
+    "description": {
+      "0": "Los Ataques Normales infligen daño en el AdE."
+    }
+  },
+  "constellation2": {
+    "name": "Efecto choque",
+    "description": {
+      "0": "Cuando la <strong>Pantalla de jade</strong> se desintegra, su TdE se elimina.",
+      "1": "Solo puede ocurrir una vez cada 6 s."
+    }
+  },
+  "constellation3": {
+    "name": "Su Majestad, el Equilibrio Celestial",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Devastaestrellas</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Excelente sea el jade, que eclipsa todo a sus pies",
+    "description": {
+      "0": "<strong>Pantalla de jade</strong> aumenta la RES elemental de los personajes cercanos en un 10%."
+    }
+  },
+  "constellation5": {
+    "name": "Invencible sea la pantalla de jade",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Pantalla de jade</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Grandiosas sean las Siete Estrellas",
+    "description": {
+      "0": "Al lanzar <strong>Devastaestrellas</strong>, Ninguang obtiene 7 jades estelares."
+    }
+  }
+}

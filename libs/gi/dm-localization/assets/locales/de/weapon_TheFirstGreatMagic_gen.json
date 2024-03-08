@@ -1,0 +1,24 @@
+{
+  "name": "Erste große Magie",
+  "description": {
+    "0": "Ein Requisit, das einst von einer „großen Zauberin“ verwendet wurde. Sein Geheimnis wurde nun endlich gelüftet, denn eigentlich handelt es sich um eine exzellente Waffe."
+  },
+  "passiveName": "Parsifal die Große",
+  "passiveDescription": {
+    "0": {
+      "0": "Erhöht den mit heftigen Schlägen verursachten Schaden um <cryo>16 %</cryo>. Fügt jeder Figur in der Truppe, die den gleichen Elementartyp wie der Träger hat (einschließlich des Trägers selbst), 1 Stapelung „Tricks“ hinzu. Fügt jeder Figur, die nicht den gleichen Elementartyp hat, 1 Stapelung „Schauspielkunst“ hinzu. Erhöht den ANG bei 1/2/3 Stapelungen von „Tricks“ um <cryo>16/32/48 %</cryo>. Erhöht die Bewegungsgeschwindigkeit bei 1/2/3 Stapelungen von „Schauspielkunst“ um <cryo>4/7/10 %</cryo>."
+    },
+    "1": {
+      "0": "Erhöht den mit heftigen Schlägen verursachten Schaden um <cryo>20 %</cryo>. Fügt jeder Figur in der Truppe, die den gleichen Elementartyp wie der Träger hat (einschließlich des Trägers selbst), 1 Stapelung „Tricks“ hinzu. Fügt jeder Figur, die nicht den gleichen Elementartyp hat, 1 Stapelung „Schauspielkunst“ hinzu. Erhöht den ANG bei 1/2/3 Stapelungen von „Tricks“ um <cryo>20/40/60 %</cryo>. Erhöht die Bewegungsgeschwindigkeit bei 1/2/3 Stapelungen von „Schauspielkunst“ um <cryo>6/9/12 %</cryo>."
+    },
+    "2": {
+      "0": "Erhöht den mit heftigen Schlägen verursachten Schaden um <cryo>24 %</cryo>. Fügt jeder Figur in der Truppe, die den gleichen Elementartyp wie der Träger hat (einschließlich des Trägers selbst), 1 Stapelung „Tricks“ hinzu. Fügt jeder Figur, die nicht den gleichen Elementartyp hat, 1 Stapelung „Schauspielkunst“ hinzu. Erhöht den ANG bei 1/2/3 Stapelungen von „Tricks“ um <cryo>24/48/72 %</cryo>. Erhöht die Bewegungsgeschwindigkeit bei 1/2/3 Stapelungen von „Schauspielkunst“ um <cryo>8/11/14 %</cryo>."
+    },
+    "3": {
+      "0": "Erhöht den mit heftigen Schlägen verursachten Schaden um <cryo>28 %</cryo>. Fügt jeder Figur in der Truppe, die den gleichen Elementartyp wie der Träger hat (einschließlich des Trägers selbst), 1 Stapelung „Tricks“ hinzu. Fügt jeder Figur, die nicht den gleichen Elementartyp hat, 1 Stapelung „Schauspielkunst“ hinzu. Erhöht den ANG bei 1/2/3 Stapelungen von „Tricks“ um <cryo>28/56/84 %</cryo>. Erhöht die Bewegungsgeschwindigkeit bei 1/2/3 Stapelungen von „Schauspielkunst“ um <cryo>10/13/16 %</cryo>."
+    },
+    "4": {
+      "0": "Erhöht den mit heftigen Schlägen verursachten Schaden um <cryo>32 %</cryo>. Fügt jeder Figur in der Truppe, die den gleichen Elementartyp wie der Träger hat (einschließlich des Trägers selbst), 1 Stapelung „Tricks“ hinzu. Fügt jeder Figur, die nicht den gleichen Elementartyp hat, 1 Stapelung „Schauspielkunst“ hinzu. Erhöht den ANG bei 1/2/3 Stapelungen von „Tricks“ um <cryo>32/64/96 %</cryo>. Erhöht die Bewegungsgeschwindigkeit bei 1/2/3 Stapelungen von „Schauspielkunst“ um <cryo>12/15/18 %</cryo>."
+    }
+  }
+}

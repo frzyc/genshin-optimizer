@@ -1,0 +1,29 @@
+{
+  "setName": "Kayıp Cennet Çiçeği",
+  "setEffects": {
+    "2": "Element Ustalığını 80 artırır.",
+    "4": "Kuşanan karakterin Çiçeklenme, Aşırı Çiçeklenme ve Filizlenme tepkimelerinin Hasarı %40 artar. Ayrıca kuşanan karakter Çiçeklenme, Aşırı Çiçeklenme veya Filizlenme tetiklerse yukarıdaki etkiye ek olarak %25 bonus daha kazanır. Bu etkinin her bir kademesi 10 saniye sürer. Aynı anda 4 kademeye kadar birikebilir. Bu etki her bir saniyede bir defa tetiklenebilir. Bu etki, kuşanan karakter savaş alanında olmasa da tetiklenebilir."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Ay-Khanoum Enginliği",
+      "desc": "Kadim ve soyu tükenmiş güzel bir çiçeğin görünümü verilmiş ametist bir çiçek."
+    },
+    "plume": {
+      "name": "Soluk Ziyafet",
+      "desc": "Uzun süre önce soyu tükenmiş olan bir kuş türünden kalma bir tüy. Çiçek Tanrıçası'nın kadim müritleri bunu altın ve mücevherlerle işlemiş."
+    },
+    "sands": {
+      "name": "Zamanda Donmuş Bir An",
+      "desc": "Bu kum saatinin içindeki kumlar, saati hangi yöne çevirirsen çevir sanki zamana karşı geliyorlarmış gibi hiç kıpırdamazlar."
+    },
+    "goblet": {
+      "name": "Sırdaşın Büyülü Şişesi",
+      "desc": "Mor kristalden yapılmış küçük bir şişe. Zümrüt bir kapak ile sıkıca mühürlenmiş."
+    },
+    "circlet": {
+      "name": "Ametist Taç",
+      "desc": "Ametist ve zümrütle süslenmiş bir taç. Çiçek Tanrıçası'nın kadim rahipleri tarafından takılan bir başlığa benziyor."
+    }
+  }
+}

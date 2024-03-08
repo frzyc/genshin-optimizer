@@ -1,0 +1,24 @@
+{
+  "name": "Hậu Duệ Mặt Trời",
+  "description": {
+    "0": "Chiếc cung cổ đại được lưu truyền từ thời đại xa xưa của vương quốc Vua Deshret, trên đó khắc những hoa văn trang nghiêm và văn tự cổ xưa không thể hiểu được."
+  },
+  "passiveName": "Con Đường Lửa Mặt Trời",
+  "passiveDescription": {
+    "0": {
+      "0": "Sau khi trọng kích đánh trúng kẻ địch, sẽ giáng xuống Mũi Tên Mặt Trời lên kẻ địch này, gây sát thương bằng <cryo>60%</cryo> tấn công, đồng thời thi triển hiệu quả Thiêu Đốt Tâm Can duy trì 10s lên kẻ địch chịu sát thương từ Mũi Tên Mặt Trời. Sát thương từ trọng kích của người trang bị vũ khí này gây ra cho kẻ địch đang trong trạng thái Thiêu Đốt Tâm Can sẽ tăng <cryo>28%</cryo>. Mũi Tên Mặt Trời mỗi 10s tối đa kích hoạt một lần."
+    },
+    "1": {
+      "0": "Sau khi trọng kích đánh trúng kẻ địch, sẽ giáng xuống Mũi Tên Mặt Trời lên kẻ địch này, gây sát thương bằng <cryo>75%</cryo> tấn công, đồng thời thi triển hiệu quả Thiêu Đốt Tâm Can duy trì 10s lên kẻ địch chịu sát thương từ Mũi Tên Mặt Trời. Sát thương từ trọng kích của người trang bị vũ khí này gây ra cho kẻ địch đang trong trạng thái Thiêu Đốt Tâm Can sẽ tăng <cryo>35%</cryo>. Mũi Tên Mặt Trời mỗi 10s tối đa kích hoạt một lần."
+    },
+    "2": {
+      "0": "Sau khi trọng kích đánh trúng kẻ địch, sẽ giáng xuống Mũi Tên Mặt Trời lên kẻ địch này, gây sát thương bằng <cryo>90%</cryo> tấn công, đồng thời thi triển hiệu quả Thiêu Đốt Tâm Can duy trì 10s lên kẻ địch chịu sát thương từ Mũi Tên Mặt Trời. Sát thương từ trọng kích của người trang bị vũ khí này gây ra cho kẻ địch đang trong trạng thái Thiêu Đốt Tâm Can sẽ tăng <cryo>42%</cryo>. Mũi Tên Mặt Trời mỗi 10s tối đa kích hoạt một lần."
+    },
+    "3": {
+      "0": "Sau khi trọng kích đánh trúng kẻ địch, sẽ giáng xuống Mũi Tên Mặt Trời lên kẻ địch này, gây sát thương bằng <cryo>105%</cryo> tấn công, đồng thời thi triển hiệu quả Thiêu Đốt Tâm Can duy trì 10s lên kẻ địch chịu sát thương từ Mũi Tên Mặt Trời. Sát thương từ trọng kích của người trang bị vũ khí này gây ra cho kẻ địch đang trong trạng thái Thiêu Đốt Tâm Can sẽ tăng <cryo>49%</cryo>. Mũi Tên Mặt Trời mỗi 10s tối đa kích hoạt một lần."
+    },
+    "4": {
+      "0": "Sau khi trọng kích đánh trúng kẻ địch, sẽ giáng xuống Mũi Tên Mặt Trời lên kẻ địch này, gây sát thương bằng <cryo>120%</cryo> tấn công, đồng thời thi triển hiệu quả Thiêu Đốt Tâm Can duy trì 10s lên kẻ địch chịu sát thương từ Mũi Tên Mặt Trời. Sát thương từ trọng kích của người trang bị vũ khí này gây ra cho kẻ địch đang trong trạng thái Thiêu Đốt Tâm Can sẽ tăng <cryo>56%</cryo>. Mũi Tên Mặt Trời mỗi 10s tối đa kích hoạt một lần."
+    }
+  }
+}

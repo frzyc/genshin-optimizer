@@ -1,0 +1,24 @@
+{
+  "name": "Estrella Errabunda",
+  "description": {
+    "0": "En su origen, era un antiguo artilugio con el que los eruditos observaban y hacían cálculos de los fenómenos astronómicos. Ahora sirve como canalizador de energía y como catalizador."
+  },
+  "passiveName": "Estrella de la selva",
+  "passiveDescription": {
+    "0": {
+      "0": "Cada 10 s, el ATQ del personaje que lleve esta arma equipada aumenta durante 12 s en un <cryo>24%</cryo> de su Maestría Elemental, y los personajes del equipo cercanos obtienen un 30% de este bono. Este efecto se puede acumular con los de otros personajes del equipo que lleven esta arma equipada, y se puede activar incluso cuando el personaje está en tu equipo pero no en uso."
+    },
+    "1": {
+      "0": "Cada 10 s, el ATQ del personaje que lleve esta arma equipada aumenta durante 12 s en un <cryo>30%</cryo> de su Maestría Elemental, y los personajes del equipo cercanos obtienen un 30% de este bono. Este efecto se puede acumular con los de otros personajes del equipo que lleven esta arma equipada, y se puede activar incluso cuando el personaje está en tu equipo pero no en uso."
+    },
+    "2": {
+      "0": "Cada 10 s, el ATQ del personaje que lleve esta arma equipada aumenta durante 12 s en un <cryo>36%</cryo> de su Maestría Elemental, y los personajes del equipo cercanos obtienen un 30% de este bono. Este efecto se puede acumular con los de otros personajes del equipo que lleven esta arma equipada, y se puede activar incluso cuando el personaje está en tu equipo pero no en uso."
+    },
+    "3": {
+      "0": "Cada 10 s, el ATQ del personaje que lleve esta arma equipada aumenta durante 12 s en un <cryo>42%</cryo> de su Maestría Elemental, y los personajes del equipo cercanos obtienen un 30% de este bono. Este efecto se puede acumular con los de otros personajes del equipo que lleven esta arma equipada, y se puede activar incluso cuando el personaje está en tu equipo pero no en uso."
+    },
+    "4": {
+      "0": "Cada 10 s, el ATQ del personaje que lleve esta arma equipada aumenta durante 12 s en un <cryo>48%</cryo> de su Maestría Elemental, y los personajes del equipo cercanos obtienen un 30% de este bono. Este efecto se puede acumular con los de otros personajes del equipo que lleven esta arma equipada, y se puede activar incluso cuando el personaje está en tu equipo pero no en uso."
+    }
+  }
+}

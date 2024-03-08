@@ -1,0 +1,175 @@
+{
+  "name": "Sangonomiya Kokomi",
+  "title": "Bilgelik İncisi",
+  "description": "Watatsumi Adası'nın Kutsal Rahibesi. Adadaki tüm meselelerden bu genç kadın sorumludur.",
+  "constellationName": "Uykuya Yatan Ejder",
+  "auto": {
+    "name": "Suyun Şekli",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Saldırı</strong>",
+        "1": "Arka arkaya, yüzen balıkların şekline bürünen 3 saldırı yaparak <hydro>Su Hasarı</hydro> verir."
+      },
+      "charged": {
+        "0": "<strong>Yüklü Saldırı</strong>",
+        "1": "Kısa süre kullanıldıktan sonra belirli miktarda Dayanıklılık harcayarak <hydro>Su Alan Hasarı</hydro> verir."
+      },
+      "plunging": {
+        "0": "<strong>Havadan Saldırı</strong>",
+        "1": "Kokomi, Suyun gücünü toplayarak havadayken yere doğru atılır ve yoluna çıkan tüm düşmanlara hasar verir. Yere vurduğunda <hydro>Su Alan Hasarı</hydro> verir."
+      }
+    },
+    "skillParams": {
+      "0": "1 Vuruş Hasarı",
+      "1": "2 Vuruş Hasarı",
+      "2": "3 Vuruş Hasarı",
+      "3": "Yüklü Saldırı Hasarı",
+      "4": "Yüklü Saldırı Dayanıklılık Maliyeti",
+      "5": "Havadan Saldırı Hasarı",
+      "6": "Havadan Saldırı Hasarı (Alçaktan/Yüksekten)",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Kurage Yemini",
+    "description": {
+      "0": "Sudan oluşan ve müttefiklerini iyileştirebilen bir \"Bake-Kurage\" çağırır.",
+      "1": "Bu beceriyi kullandığında Sangonomiya Kokomi <hydro>Islanır</hydro>.",
+      "2": "<br/>",
+      "3": "<strong>Bake-Kurage</strong>",
+      "4": "Etraftaki düşmanlara <hydro>Su Hasarı</hydro> verir ve yakındaki aktif karakterleri belirli aralıklarla iyileştirir. İyileştirme oranı Kokomi'nin Maks. Canına bağlıdır.",
+      "5": "<br/>",
+      "6": "<i>Kokomi, ideal çalışma verimini korumak için zaman zaman \"ferahlatıcılara\" ihtiyaç duyar.</i>"
+    },
+    "skillParams": {
+      "0": "Yenilenme",
+      "1": "Dalga Hasarı",
+      "2": "Süre",
+      "3": "BS",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Nereid'in Yükselişi",
+    "description": {
+      "0": "Watatsumi'nin kudretini çağırarak etrafındaki düşmanlara <hydro>Su Hasarı</hydro> verir. Ardından Kokomi'ye Sangonomiya'nın azgın sularından yapılmış Merasim Elbisesini giydirir.",
+      "1": "<br/>",
+      "2": "<strong>Merasim Elbisesi</strong>",
+      "3": [
+        "Sangonomiya Kokomi'nin Normal Saldırısı, Yüklü Saldırısı ve Bake-Kurage Hasarı, Maks. Canına bağlı olarak artar.",
+        "Normal ve Yüklü Saldırıları düşmanlara vurduğunda Kokomi, yakındaki tüm grup üyelerinin Canını yeniler. Yenilenen Can miktarı Kokomi'nin Maks. Canına göre değişir.",
+        "Sangonomiya Kokomi'nin müdahaleye karşı direncini artırır ve su üzerinde yürüyebilmesini sağlar."
+      ],
+      "4": "<br/>",
+      "5": "Bu etkiler, Sangonomiya Kokomi alandan ayrılınca kaybolur.",
+      "6": "<br/>",
+      "7": "<i>Berrak ışıklar Ekselansları Sangonomiya Kokomi'nin etrafında toplanarak bir elbise oluşturur ve muhteşem duruşunu yansıtır.</i>"
+    },
+    "skillParams": {
+      "0": "Beceri Hasarı",
+      "1": "Normal Saldırı Hasar Bonusu",
+      "2": "Yüklü Saldırı Hasar Bonusu",
+      "3": "Bake-Kurage Hasar Bonusu",
+      "4": "Vuruş Başına Yenilenen Can",
+      "5": "Süre",
+      "6": "BS",
+      "7": "Enerji Maliyeti",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Tamanooya'nın Sepeti",
+    "description": {
+      "0": "Sangonomiya Kokomi, Bake-Kurage savaş alanındayken <strong>Nereid'in Yükselişi</strong> becerisini kullanırsa Bake-Kurage'nin süresi yenilenir."
+    }
+  },
+  "passive2": {
+    "name": "İncilerin Şarkısı",
+    "description": {
+      "0": "Sangonomiya Kokomi, <strong>Nereid'in Yükselişi</strong> tarafından yaratılan Merasim Elbisesini giydiği sırada, Maks. Canına göre kazandığı Normal ve Yüklü Saldırı Hasar Bonusu ek olarak İyileştirme Bonusunun %15'i kadar artar."
+    }
+  },
+  "passive3": {
+    "name": "Watatsumi'nin Prensesi",
+    "description": {
+      "0": "Kendi grup üyelerinin yüzme Dayanıklılık tüketimini %20 azaltır.",
+      "1": "Aynı etkiyi veren Pasif Yeteneklerle birikmez."
+    }
+  },
+  "passive": {
+    "name": "Kusursuz Strateji",
+    "description": {
+      "0": "Sangonomiya Kokomi %25 İyileştirme Bonusu alır fakat Kritik Oranı %100 azalır."
+    }
+  },
+  "constellation1": {
+    "name": "Su Kıyısında",
+    "description": {
+      "0": "Sangonomiya Kokomi <strong>Nereid'in Yükselişi</strong> tarafından oluşturulan Merasim Elbisesini giyerken Normal Saldırı kombosunun son vuruşuyla beraber yüzen balıklar etrafa salınır. Bu balıklar, onun Maks. Canının %30'u kadar <hydro>Su Hasarı</hydro> verir.",
+      "1": "Bu Hasar, Normal Saldırı Hasarı sayılmaz."
+    }
+  },
+  "constellation2": {
+    "name": "Deniz Gibi Dalgalanan Bulutlar",
+    "description": {
+      "0": "Sangonomiya Kokomi, Can oranı %50 veya altında olan karakterler için aşağıdaki yöntemlerle İyileştirme Bonusu kazanır.",
+      "1": [
+        "<strong>Kurage Yemini</strong> Bake-Kurage: Kokomi'nin Maks. Canının %4,5'ine denk İyileştirme Bonusu",
+        "<strong>Nereid'in Yükselişi</strong> Normal ve Yüklü Saldırılar: Kokomi'nin Maks. Canının %0,6'sına denk İyileştirme Bonusu."
+      ]
+    }
+  },
+  "constellation3": {
+    "name": "Denizler Üzerindeki Ay Gemisi",
+    "description": {
+      "0": "<strong>Nereid'in Yükselişi</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation4": {
+    "name": "Yakamoz",
+    "description": {
+      "0": "Sangonomiya Kokomi <strong>Nereid'in Yükselişi</strong> tarafından oluşturulan Merasim Elbisesini giyerken Normal Saldırı Hızı %10 artar. Düşmanlara isabet eden Normal Saldırılar Kokomi için 0,8 Enerji yeniler.",
+      "1": "Bu etki 0,2 saniyede bir gerçekleşebilir."
+    }
+  },
+  "constellation5": {
+    "name": "Tüm Dereler Denize Çıkar",
+    "description": {
+      "0": "<strong>Kurage Yemini</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation6": {
+    "name": "Sango Isshin",
+    "description": {
+      "0": "Sangonomiya Kokomi <strong>Nereid'in Yükselişi</strong> tarafından oluşturulan Merasim Elbisesini giyerken Normal ve Yüklü Saldırıları, Canı %80 veya üzerinde olan grup üyelerini iyileştirdiğinde Kokomi 4 saniyeliğine %40 <hydro>Su Hasarı Bonusu</hydro> kazanır."
+    }
+  }
+}

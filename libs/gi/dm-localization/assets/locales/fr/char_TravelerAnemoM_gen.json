@@ -1,0 +1,153 @@
+{
+  "auto": {
+    "name": "Vents de la discorde",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attaque normale</strong>",
+        "1": "Enchaîne jusqu'à 5 coups d'épée."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Consomme de l'endurance pour déclencher deux coups d'épée rapides."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis en chemin et des DGT de zone à l'impact."
+      }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT 4e coup",
+      "4": "DGT 5e coup",
+      "5": "DGT attaque chargée",
+      "6": "Coût d'endurance attaque chargée",
+      "7": "DGT durant la chute",
+      "8": "DGT chute basse/élevée",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Vortex destructeur",
+    "description": {
+      "0": "Un vortex de vent, tournant et tranchant, se forme dans la paume de votre main, infligeant des <anemo>DGT Anémo continus</anemo> aux ennemis en face.",
+      "1": "Le vortex finit par exploser à la fin de la compétence, l'explosion couvrant une zone plus large et infligeant des DGT Anémo plus importants.",
+      "2": "<br/>",
+      "3": "<strong>Appui long</strong>",
+      "4": "Augmente les DGT et la zone d'effet.",
+      "5": "<br/>",
+      "6": "<strong>Absorption élémentaire</strong>",
+      "7": "Le vortex absorbe les éléments <hydro>Hydro</hydro>, <pyro>Pyro</pyro>, <cryo>Cryo</cryo> et <electro>Électro</electro> avec lesquels il entre en contact, ceux-ci conférant un bonus de DGT de l'élément correspondant.",
+      "8": "Une seule réaction d'absorption élémentaire peut avoir lieu par utilisation.",
+      "9": "<br/>",
+      "10": "<i>Vous avez discuté de la maîtrise de vos nouveaux pouvoirs Anémo avec Paimon.</i>"
+    },
+    "skillParams": {
+      "0": "DGT de base",
+      "1": "DGT max",
+      "2": "DGT de base explosion",
+      "3": "DGT max explosion",
+      "4": "TdR de base",
+      "5": "TdR charge max",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Rafale de vent",
+    "description": {
+      "0": "Vous invoquez une tornade qui attire les objets et les ennemis en avançant, et qui inflige des <anemo>DGT Anémo continus</anemo>.",
+      "1": "<br/>",
+      "2": "<strong>Absorption élémentaire</strong>",
+      "3": "La tornade absorbe les éléments <hydro>Hydro</hydro>, <pyro>Pyro</pyro>, <cryo>Cryo</cryo> et <electro>Électro</electro> avec lesquels elle entre en contact, ceux-ci conférant leurs attributs et infligeant un bonus de DGT de l'élément correspondant.",
+      "4": "Un seul élément peut être absorbé à la fois.",
+      "5": "<br/>",
+      "6": "<i>Paimon et vous avez étudié les battements qui agitent les ailes des papillons...</i>"
+    },
+    "skillParams": {
+      "0": "DGT tornade",
+      "1": "Bonus DGT élémentaires",
+      "2": "Durée",
+      "3": "Temps de recharge",
+      "4": "Énergie élémentaire",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Vent du ciel déchiré",
+    "description": {
+      "0": "Le dernier coup d'attaque normale libère une lame de vent, qui inflige une quantité de <anemo>DGT Anémo</anemo> équivalant à 60 % de l'ATQ aux ennemis sur sa route."
+    }
+  },
+  "passive2": {
+    "name": "Vent de guérison",
+    "description": {
+      "0": "<strong>Vortex destructeur</strong> restaure 2 % des PV toutes les secondes pendant 5 s lorsqu'il élimine un ennemi.",
+      "1": "Cet effet peut être déclenché une fois toutes les 5 s."
+    }
+  },
+  "constellation1": {
+    "name": "Vortex déchaîné",
+    "description": {
+      "0": "<strong>Vortex destructeur</strong> attire les ennemis et les objets dans un rayon de 5 mètres autour du personnage."
+    }
+  },
+  "constellation2": {
+    "name": "Tornade de la rébellion",
+    "description": {
+      "0": "Augmente la recharge d'énergie de 16 %."
+    }
+  },
+  "constellation3": {
+    "name": "Rafale de balayage",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Rafale de vent</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation4": {
+    "name": "Prévenance de brise",
+    "description": {
+      "0": "Les DGT subis diminuent de 10 % tant que <strong>Vortex destructeur</strong> est actif."
+    }
+  },
+  "constellation5": {
+    "name": "Vortex stellaire",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Vortex destructeur</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation6": {
+    "name": "Vents enlacés",
+    "description": {
+      "0": "La <anemo>RÉS Anémo</anemo> des ennemis touchés par <strong>Rafale de vent</strong> diminue de 20 %.",
+      "1": "En cas d'absorption élémentaire, leur RÉS à l'élément correspondant diminue également de 20 %."
+    }
+  }
+}

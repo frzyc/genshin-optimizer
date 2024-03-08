@@ -1,0 +1,167 @@
+{
+  "name": "Albedo",
+  "title": "Kreideprinz",
+  "description": "Kreideprinz olarak bilinen bir dahi. Favonius Şövalyelerinin Soruşturma Ekibinin Baş Simyageri ve Yüzbaşısı.",
+  "constellationName": "Tebeşir Prens",
+  "auto": {
+    "name": "Favonius Kılıç Tekniği - Weiss",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Saldırı</strong>",
+        "1": "En fazla 5 hızlı saldırı yapar."
+      },
+      "charged": {
+        "0": "<strong>Yüklü Saldırı</strong>",
+        "1": "Belirli miktarda Dayanıklılık harcayarak 2 hızlı kılıç saldırısı yapar."
+      },
+      "plunging": {
+        "0": "<strong>Havadan Saldırı</strong>",
+        "1": "Havadayken dalışa geçerek yere vurur ve yoluna çıkan düşmanlara Alan Hasarı verir."
+      }
+    },
+    "skillParams": {
+      "0": "1 Vuruş Hasarı",
+      "1": "2 Vuruş Hasarı",
+      "2": "3 Vuruş Hasarı",
+      "3": "4 Vuruş Hasarı",
+      "4": "5 Vuruş Hasarı",
+      "5": "Yüklü Saldırı Hasarı",
+      "6": "Yüklü Saldırı Dayanıklılık Maliyeti",
+      "7": "Havadan Saldırı Hasarı",
+      "8": "Havadan Saldırı Hasarı (Alçaktan/Yüksekten)",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Yaratılış: Güneş Çiçeği",
+    "description": {
+      "0": "Albedo, simyayla bir Güneş Çiçeği oluşturur ve bu çiçek ortaya çıktığında <geo>Toprak Alan Hasarı</geo> verir.",
+      "1": "<br/>",
+      "2": "<strong>Güneş Çiçeği</strong>",
+      "3": "Şu özelliklere sahiptir:",
+      "4": [
+        "Güneş Çiçeği, alandaki düşmanlar Hasar aldığında <geo>Toprak Alan Hasarı</geo> veren Fani Çiçekler oluşturur. Verilen Hasar Albedo'nun Savunmasına göre değişir. ",
+        "Fani Çiçekler 2 saniyede bir oluşabilir.",
+        "Bir karakter alanın içindeyken Güneş Çiçeği, Toprak gücü toplayarak karakteri belirli bir yüksekliğe kaldıran kristal platform oluşturur. Aynı anda birden fazla kristal platform bulunamaz.",
+        "Güneş Çiçeği bir <geo>Toprak Yapısı</geo> sayılır. Albedo'nun oluşturduğu Güneş Çiçeklerinden aynı anda bir tane bulunabilir. "
+      ],
+      "5": "<br/>",
+      "6": "Becerinin yerini belirlemek için <strong>basılı tut</strong>.",
+      "7": "<br/>",
+      "8": "<i>Bu Toprak çiçeğinin özellikleri simyanın hedefleriyle paralellik gösterir: Topraktan çıkmak, göğe yükselmek ve güneşe dönüşmek...</i>"
+    },
+    "skillParams": {
+      "0": "Beceri Hasarı",
+      "1": "Fani Çiçek Hasarı",
+      "2": "Süre",
+      "3": "Beceri BS",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Varoluş Ayini: Tektonik Dalga",
+    "description": {
+      "0": "Albedo'nun emriyle Toprak kristalleri yerden çıkar ve Albedo'nun önündeki düşmanlara <geo>Toprak Alan Hasarı</geo> verir.",
+      "1": "Alanda Albedo'nun bizzat oluşturduğu bir Güneş Çiçeği varsa Güneş Çiçeği alanında 7 Ölümcül Çiçek oluşur. Bu çiçekler şiddetle patlayarak çiçek açar ve <geo>Toprak Alan Hasarı</geo> verir.",
+      "2": "<br/>",
+      "3": "Tektonik Dalga Hasarı ve Ölümcül Çiçek Hasarı verildiğinde Fani Çiçek oluşmaz.",
+      "4": "<br/>",
+      "5": "<i>Kreideprinz'in emriyle varoluşun kendisi yeri sarsar.</i>"
+    },
+    "skillParams": {
+      "0": "Patlama Hasarı",
+      "1": "Ölümcül Çiçek Hasarı",
+      "2": "BS",
+      "3": "Enerji Maliyeti",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Tebeşirin Gücü",
+    "description": {
+      "0": "<strong>Yaratılış: Güneş Çiçeği</strong> ile oluşturulan Fani Çiçekler, Canı %50'nin altında olan düşmanlara %25 daha fazla Hasar verir."
+    }
+  },
+  "passive2": {
+    "name": "Şişedeki Bilgelik",
+    "description": {
+      "0": "<strong>Varoluş Ayini: Tektonik Dalga</strong> becerisi kullanıldığında 10 saniyeliğine yakındaki grup üyelerinin Element Ustalığı 125 artar."
+    }
+  },
+  "passive3": {
+    "name": "Zeka Parıltısı",
+    "description": {
+      "0": "Albedo, Silah Yükseltme Malzemesi üretirken elde ettiği ürünü %10 ihtimalle iki katına çıkarır."
+    }
+  },
+  "constellation1": {
+    "name": "Masumiyet Çiçeği",
+    "description": {
+      "0": "<strong>Yaratılış: Güneş Çiçeği</strong> becerisinin oluşturduğu Fani Çiçekler, Albedo için 1,2 Enerji yeniler."
+    }
+  },
+  "constellation2": {
+    "name": "Ebedi Başlangıç",
+    "description": {
+      "0": "<strong>Yaratılış: Güneş Çiçeği</strong> becerisinin oluşturduğu Fani Çiçekler Albedo'ya 30 saniyeliğine Ölümcül Hesaplaşma uygular.",
+      "1": [
+        "<strong>Varoluş Ayini: Tektonik Dalga</strong> becerisini kullanmak Ölümcül Hesaplaşma etkisinin tüm kademelerini tüketir. Tüketilen her bir Ölümcül Hesaplaşma kademesi, Ölümcül Çiçeklerin verdiği Hasarı ve Varoluş Ayini: Tektonik Dalga Patlama Hasarını Albedo'nun Savunmasının %30'u kadar artırır.",
+        "Bu etki 4 kademeye kadar birikebilir."
+      ]
+    }
+  },
+  "constellation3": {
+    "name": "Helios'un Lütfu",
+    "description": {
+      "0": "<strong>Yaratılış: Güneş Çiçeği</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation4": {
+    "name": "Kutsallığın Çöküşü",
+    "description": {
+      "0": "Güneş Çiçeği alanının içinde bulunan aktif grup üyelerinin Havadan Saldırı Hasarı %30 artar."
+    }
+  },
+  "constellation5": {
+    "name": "Hadean Dalgası",
+    "description": {
+      "0": "<strong>Varoluş Ayini: Tektonik Dalga</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation6": {
+    "name": "Arınma Tozu",
+    "description": {
+      "0": "Güneş Çiçeği alanının içinde bulunan aktif grup üyeleri, Kristalleşme tepkimesi ile oluşmuş bir kalkanla korunuyorlarsa verdikleri Hasar %17 artar."
+    }
+  }
+}

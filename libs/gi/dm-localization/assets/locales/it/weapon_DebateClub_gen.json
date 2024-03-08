@@ -1,0 +1,24 @@
+{
+  "name": "Mazza della persuasione",
+  "description": {
+    "0": "Una mazza d'acciaio. L'arma più persuasiva in caso di controversie eccessivamente animate."
+  },
+  "passiveName": "Schiettezza",
+  "passiveDescription": {
+    "0": {
+      "0": "Dopo l'uso di un'abilità elementale e per colpo a segno, gli attacchi normali e caricati infliggono DAN extra pari a un <cryo>60%</cryo> dell'ATT in una piccola area. L'effetto dura per 15 s. I DAN possono verificarsi una volta ogni 3 s."
+    },
+    "1": {
+      "0": "Dopo l'uso di un'abilità elementale e per colpo a segno, gli attacchi normali e caricati infliggono DAN extra pari a un <cryo>75%</cryo> dell'ATT in una piccola area. L'effetto dura per 15 s. I DAN possono verificarsi una volta ogni 3 s."
+    },
+    "2": {
+      "0": "Dopo l'uso di un'abilità elementale e per colpo a segno, gli attacchi normali e caricati infliggono DAN extra pari a un <cryo>90%</cryo> dell'ATT in una piccola area. L'effetto dura per 15 s. I DAN possono verificarsi una volta ogni 3 s."
+    },
+    "3": {
+      "0": "Dopo l'uso di un'abilità elementale e per colpo a segno, gli attacchi normali e caricati infliggono DAN extra pari a un <cryo>105%</cryo> dell'ATT in una piccola area. L'effetto dura per 15 s. I DAN possono verificarsi una volta ogni 3 s."
+    },
+    "4": {
+      "0": "Dopo l'uso di un'abilità elementale e per colpo a segno, gli attacchi normali e caricati infliggono DAN extra pari a un <cryo>120%</cryo> dell'ATT in una piccola area. L'effetto dura per 15 s. I DAN possono verificarsi una volta ogni 3 s."
+    }
+  }
+}

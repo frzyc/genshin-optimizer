@@ -1,0 +1,24 @@
+{
+  "name": "Kuzgun Yayı",
+  "description": {
+    "0": "Kuzgunlar birçok efsanede ölümün habercileridir. Bu yayın üzerindeki kuzgun tüyleri de hedefinin kaçınılmaz ecelini simgeliyor."
+  },
+  "passiveName": "Alev ve Suyun Laneti",
+  "passiveDescription": {
+    "0": {
+      "0": "Su veya Ateşten etkilenen düşmanlara verilen Hasarı <cryo>%12</cryo> artırır."
+    },
+    "1": {
+      "0": "Su veya Ateşten etkilenen düşmanlara verilen Hasarı <cryo>%15</cryo> artırır."
+    },
+    "2": {
+      "0": "Su veya Ateşten etkilenen düşmanlara verilen Hasarı <cryo>%18</cryo> artırır."
+    },
+    "3": {
+      "0": "Su veya Ateşten etkilenen düşmanlara verilen Hasarı <cryo>%21</cryo> artırır."
+    },
+    "4": {
+      "0": "Su veya Ateşten etkilenen düşmanlara verilen Hasarı <cryo>%24</cryo> artırır."
+    }
+  }
+}

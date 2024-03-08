@@ -1,0 +1,24 @@
+{
+  "name": "Sombra de la Marea",
+  "description": {
+    "0": "Una bella espada de modelo estándar forjada para los oficiales de alto rango y capitanes de la antigua marina de Fontaine."
+  },
+  "passiveName": "Olas albugíneas",
+  "passiveDescription": {
+    "0": {
+      "0": "Tras recibir curación, el ATQ aumenta en un <cryo>24%</cryo> durante 8 s. Este efecto puede activarse incluso cuando el personaje está en tu equipo pero no en uso."
+    },
+    "1": {
+      "0": "Tras recibir curación, el ATQ aumenta en un <cryo>30%</cryo> durante 8 s. Este efecto puede activarse incluso cuando el personaje está en tu equipo pero no en uso."
+    },
+    "2": {
+      "0": "Tras recibir curación, el ATQ aumenta en un <cryo>36%</cryo> durante 8 s. Este efecto puede activarse incluso cuando el personaje está en tu equipo pero no en uso."
+    },
+    "3": {
+      "0": "Tras recibir curación, el ATQ aumenta en un <cryo>42%</cryo> durante 8 s. Este efecto puede activarse incluso cuando el personaje está en tu equipo pero no en uso."
+    },
+    "4": {
+      "0": "Tras recibir curación, el ATQ aumenta en un <cryo>48%</cryo> durante 8 s. Este efecto puede activarse incluso cuando el personaje está en tu equipo pero no en uso."
+    }
+  }
+}

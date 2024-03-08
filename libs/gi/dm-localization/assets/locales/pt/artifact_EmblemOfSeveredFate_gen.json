@@ -1,0 +1,29 @@
+{
+  "setName": "Selo da Insulação",
+  "setEffects": {
+    "2": "Recarga de Energia +20%",
+    "4": "Aumenta o Dano do Supremo em 25% da Recarga de Energia. No máximo é possível obter 75% de aumento de Dano dessa maneira."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Pomo Poderoso",
+      "desc": "Diz a lenda que esse protetor de mãos ornamentado foi usado como revestimento de uma espada presenteada a oni que traiu a Shogun."
+    },
+    "plume": {
+      "name": "Pluma Cortada",
+      "desc": "Asas pretas que originalmente pertenciam a algum Tengu. No passado eram uma lembrança valorizada por espadachins."
+    },
+    "sands": {
+      "name": "Gaiola da Tempestade",
+      "desc": "Uma gaiola selada refinada com amores-perfeitos pintados em um fundo preto, decorada com conchas brilhantes incrustadas e pequenos detalhes de ouro."
+    },
+    "goblet": {
+      "name": "Ânfora das Flores Escarlates",
+      "desc": "Uma ânfora de vinho ornamentada. Antes era o recipiente que um guerreiro famoso carregava vinho."
+    },
+    "circlet": {
+      "name": "Capacete Ornamentado",
+      "desc": "Um capacete sólido e firme. Era um item que guerreiros respeitáveis utilizavam para se protegerem."
+    }
+  }
+}

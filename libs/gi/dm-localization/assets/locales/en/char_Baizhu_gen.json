@@ -1,0 +1,165 @@
+{
+  "name": "Baizhu",
+  "title": "Beyond Mortality",
+  "description": "The owner of Bubu Pharmacy, who is rarely seen without the white snake named Changsheng. His medicinal knowledge is encyclopedic, and his personal intrigues subtle.",
+  "constellationName": "Lagenaria",
+  "auto": {
+    "name": "The Classics of Acupuncture",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Attack</strong>",
+        "1": "Performs up to 4 attacks that deal <dendro>Dendro DMG</dendro> to opponents in front of him."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Consumes a certain amount of Stamina to deal <dendro>AoE Dendro DMG</dendro> to opponents in front of him after a short casting time."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Calling upon the might of Dendro, Baizhu plunges towards the ground from mid-air, damaging all opponents in his path. Deals <dendro>AoE Dendro DMG</dendro> upon impact with the ground."
+      }
+    },
+    "skillParams": {
+      "0": "1-Hit DMG",
+      "1": "2-Hit DMG",
+      "2": "3-Hit DMG",
+      "3": "4-Hit DMG",
+      "4": "Charged Attack DMG",
+      "5": "Charged Attack Stamina Cost",
+      "6": "Plunge DMG",
+      "7": "Low/High Plunge DMG",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Universal Diagnosis",
+    "description": {
+      "0": "Controls a Gossamer Sprite that cruises and attacks nearby opponents, dealing <dendro>Dendro DMG</dendro>.",
+      "1": "After it performs 3 attacks or if there are no opponents nearby, the Sprite will return, healing all nearby party members based on Baizhu's Max HP.",
+      "2": "<br/>",
+      "3": "<i>Those in the medical field who can read true signs of illness from false ones may even cure people before any symptoms can show.</i>"
+    },
+    "skillParams": {
+      "0": "Skill DMG",
+      "1": "Healing",
+      "2": "CD",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Holistic Revivification",
+    "description": {
+      "0": "Enters the Pulsing Clarity state, creating a Seamless Shield that absorbs <dendro>Dendro DMG</dendro> with 250% effectiveness.",
+      "1": "While in this state, Baizhu will generate a new Seamless Shield every 2.5s.",
+      "2": "<br/>",
+      "3": "The Seamless Shield will heal your own active character based on Baizhu's Max HP and attack opponents by unleashing Spiritveins, dealing <dendro>Dendro DMG</dendro> under the following circumstances:",
+      "4": [
+        "When a character is under the protection of a Seamless Shield and a new Seamless Shield is generated.",
+        "When the Seamless Shield's effects expire, or when it is shattered."
+      ],
+      "5": "<br/>",
+      "6": "<i>If you can perceive the heavens and the earth, defend against malignant auras with the flow of qi, and keep your mind clear, surely nothing can hinder you.</i>"
+    },
+    "skillParams": {
+      "0": "Seamless Shield DMG Absorption",
+      "1": "Seamless Shield Duration",
+      "2": "Seamless Shield Healing",
+      "3": "Spiritvein DMG",
+      "4": "Pulsing Clarity Duration",
+      "5": "CD",
+      "6": "Energy Cost",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Five Fortunes Forever",
+    "description": {
+      "0": "Baizhu gains different effects according to the current HP of your current active character:",
+      "1": [
+        "When their HP is less than 50%, Baizhu gains 20% Healing Bonus.",
+        "When their HP is equal to or more than 50%, Baizhu gains 25% <dendro>Dendro DMG Bonus</dendro>."
+      ]
+    }
+  },
+  "passive2": {
+    "name": "All Things Are of the Earth",
+    "description": {
+      "0": "Characters who are healed by <strong>Seamless Shields</strong> will gain the Year of Verdant Favor effect: Each 1,000 Max HP that Baizhu possesses that does not exceed 50,000 will increase the Burning, Bloom, Hyperbloom, and Burgeon reaction DMG dealt by these characters by 2%, and will increase the DMG Bonus provided by Aggravate and Spread by 0.8%. This effect lasts 6s."
+    }
+  },
+  "passive3": {
+    "name": "Herbal Nourishment",
+    "description": {
+      "0": "When Baizhu is in the party, interacting with certain harvestable items will heal your current active character for 2.5% of Baizhu's Max HP."
+    }
+  },
+  "constellation1": {
+    "name": "Attentive Observation",
+    "description": {
+      "0": "<strong>Universal Diagnosis</strong> gains 1 additional charge."
+    }
+  },
+  "constellation2": {
+    "name": "Incisive Discernment",
+    "description": {
+      "0": "When your own active character hits a nearby opponent with their attacks, Baizhu will unleash a Gossamer Sprite: Splice.",
+      "1": "Gossamer Sprite: Splice will initiate 1 attack before returning, dealing 250% of Baizhu's ATK as <dendro>Dendro DMG</dendro> and healing for 20% of <strong>Universal Diagnosis</strong>'s Gossamer Sprite's normal healing.",
+      "2": "DMG dealt this way is considered Elemental Skill DMG.",
+      "3": "This effect can be triggered once every 5s."
+    }
+  },
+  "constellation3": {
+    "name": "All Aspects Stabilized",
+    "description": {
+      "0": "Increases the Level of <strong>Holistic Revivification</strong> by 3.",
+      "1": "Maximum upgrade level is 15."
+    }
+  },
+  "constellation4": {
+    "name": "Ancient Art of Perception",
+    "description": {
+      "0": "For 15s after <strong>Holistic Revivification</strong> is used, Baizhu will increase all nearby party members' Elemental Mastery by 80."
+    }
+  },
+  "constellation5": {
+    "name": "The Hidden Ebb and Flow",
+    "description": {
+      "0": "Increases the Level of <strong>Universal Diagnosis</strong> by 3.",
+      "1": "Maximum upgrade level is 15."
+    }
+  },
+  "constellation6": {
+    "name": "Elimination of Malicious Qi",
+    "description": {
+      "0": "Increases the DMG dealt by <strong>Holistic Revivification</strong>'s Spiritveins by 8% of Baizhu's Max HP.",
+      "1": "Additionally, when a <strong>Gossamer Sprite</strong> or Gossamer Sprite: Splice hits opponents, there is a 100% chance of generating one of <strong>Holistic Revivification</strong>'s Seamless Shields. This effect can only be triggered once by each Gossamer Sprite or Gossamer Sprite: Splice."
+    }
+  }
+}

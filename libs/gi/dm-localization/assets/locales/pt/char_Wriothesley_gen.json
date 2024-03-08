@@ -1,0 +1,173 @@
+{
+  "name": "Wriothesley",
+  "title": "Emissário da Culpa Incógnita",
+  "description": "Duque da Fortaleza Meropide, Lorde Incógnito das profundezas obscuras.",
+  "constellationName": "Cerberus",
+  "auto": {
+    "name": "Punho Gelado Destruidor",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Ataque Normal</strong>",
+        "1": "Concentra gelo nos punhos, desferindo poderosos <strong>Socos Repulsores</strong>, dando até cinco golpes rápidos e causando <cryo>Dano Cryo</cryo>.",
+        "2": "Além disso, o Combo de Ataques Normais não será redefinido por um curto tempo após correr ou após lançar a Habilidade Elemental \"Corrida da Presa Gelada\"."
+      },
+      "charged": {
+        "0": "<strong>Ataque Carregado</strong>",
+        "1": "Consome uma certa quantidade de Stamina para saltar e desferir o <strong>Soco do Salto Gelado</strong>, causando <cryo>Dano Cryo em AdE</cryo>."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Imersivo</strong>",
+        "1": "Mergulha em pleno ar para golpear o chão, causando dano aos inimigos ao longo do caminho e infligindo <cryo>Dano Cryo em AdE</cryo> durante o impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Dano do 1° Golpe",
+      "1": "Dano do 2° Golpe",
+      "2": "Dano do 3° Golpe",
+      "3": "Dano do 4° Golpe",
+      "4": "Dano do 5° Golpe",
+      "5": "Dano de Ataque Carregado",
+      "6": "Consumo de Stamina de Ataque Carregado",
+      "7": "Dano Durante a Queda",
+      "8": "Dano de Queda de Baixa/Alta Altitude",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Corrida da Presa Gelada",
+    "description": {
+      "0": "Ajustando sua respiração e ritmo com agilidade, Wriothesley dá um passo à frente e entra no estado <strong>Julgamento do Gelo Feroz</strong> para executar ataques ainda mais poderosos.",
+      "1": "<br/>",
+      "2": "<strong>Julgamento do Gelo Feroz</strong>",
+      "3": [
+        " Aumenta a Resistência contra Interrupção de Wriothesley.",
+        " Quando sua Vida é maior que 50%, o Soco Repulsor de <strong>Ataque Normal: Punho Gelado Destruidor</strong> tem seu Dano aumentado. Ao atingir seu alvo, Wriothesley perderá uma certa quantidade de Vida. É possível perder Vida dessa forma uma vez a cada 0.1s."
+      ],
+      "4": "Esse efeito será eliminado quando Wriosthesley sair do campo de batalha.",
+      "5": "<br/>",
+      "6": "<i>\"Os julgamentos do passado já foram resolvidos, mas as escolhas do futuro ainda estão em nossas mãos.\"",
+      "7": "\"Se você não quer que seus momentos de fraqueza determinem seu destino, aprenda a apreciar o presente.\"</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Soco Repulsor Fortalecido",
+      "1": "Consumo de Vida",
+      "2": "Duração",
+      "3": "Tempo de Recarga",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Mordida do Lobo de Ouro Escuro",
+    "description": {
+      "0": "Empunhando as luvas, desfere um soco concentrado de geada, fazendo com que Estalactites Cryo sejam disparadas numa área à frente e causando várias instâncias de <cryo>Dano Cryo em AdE</cryo>.",
+      "1": "<br/>",
+      "2": "<strong>Arkhe: Ousia</strong>",
+      "3": "Quando o ataque de Estalactites Cryo terminar, fará uma Lâmina da Fluidez cair na posição do inimigo, causando <cryo>Dano Cryo</cryo> carregado de energia Ousia.",
+      "4": "<br/>",
+      "5": "<i>Às vezes, até mesmo o Duque da Fortaleza Meropide pode se sentir impotente diante de certas situações — como a papelada interminável, a supervisão chata ou até... a insistência de certas criaturas de baixa estatura em colar vários adesivos fofos e difíceis de tirar em suas luvas.</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Habilidade",
+      "1": "Dano da Lâmina da Fluidez",
+      "2": "Tempo de Recarga",
+      "3": "Tempo de Recarga da Lâmina da Fluidez",
+      "4": "Energia Elemental",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Haverá Arguição Pela Justiça",
+    "description": {
+      "0": "Quando a Vida de Wriothesley for inferior a 60%, ele obtém \"Ordem da Graça\", fazendo com que seu próximo Ataque Carregado de <strong>Ataque Normal: Punho Gelado Destruidor</strong> fique mais forte e se torne Disciplina: Soco do Salto Gelado. O ataque não consumirá Stamina, terá seu Dano aumentado em 50% e, ao atingir um inimigo, regenerará Vida para Wriothesley. A quantidade de Vida regenerada é equivalente a 30% da Vida Máxima de Wriothesley.",
+      "1": "É possível obter um acúmulo do efeito \"Ordem da Graça\" a cada 5s dessa forma."
+    }
+  },
+  "passive2": {
+    "name": "Retribuição do Pecado",
+    "description": {
+      "0": "Quando a Vida de Wriothesley aumentar ou diminuir, se ele estiver no estado Julgamento do Gelo Feroz de <strong>Corrida da Presa Gelada</strong>, o estado Julgamento do Gelo Feroz ganhará um acúmulo do efeito \"Édito do Processo\", podendo ser acumulado até 5 vezes. Cada acúmulo aumenta o ATQ de Wriothesley em 6%."
+    }
+  },
+  "passive3": {
+    "name": "Graça do Duque",
+    "description": {
+      "0": "Quando fabrica Materiais de Ascensão de Armas, tem 10% de chance de receber o dobro do produto."
+    }
+  },
+  "constellation1": {
+    "name": "Aterrorizando Criminosos",
+    "description": {
+      "0": "Muda a \"Ordem da Graça\" do Talento Passivo \"Haverá Arguição Pela Justiça\":",
+      "1": "Quando a Vida de Wriothesley for inferior a 60%, ou quando estiver no estado Julgamento do Gelo Feroz de <strong>Corrida da Presa Gelada</strong> e o quinto golpe de Soco Repulsor atingir um inimigo, obtém \"Ordem da Graça\". É possível obter uma \"Ordem da Graça\" a cada 2.5s.",
+      "2": "Além disso, Disciplina: Soco do Salto Gelado recebe os seguintes bônus:",
+      "3": [
+        " Aumenta o Dano causado ainda mais, chegando a 200%.",
+        " Ao atingir um inimigo, se estiver no estado Julgamento do Gelo Feroz, a duração desse estado é prolongada em 4s. É possível prolongar a duração de uma instância do estado Julgamento do Gelo Feroz uma vez dessa forma."
+      ],
+      "4": "<br/>",
+      "5": "É necessário ter desbloqueado o Talento Passivo \"Haverá Arguição Pela Justiça\"."
+    }
+  },
+  "constellation2": {
+    "name": "Prendendo os Arrogantes",
+    "description": {
+      "0": "Ao lançar <strong>Mordida do Lobo de Ouro Escuro</strong>, cada acúmulo do efeito \"Édito do Processo\" do Talento Passivo \"Retribuição do Pecado\" aumentará o Dano causado em 40%.",
+      "1": "É preciso ter desbloqueado o Talento Passivo \"Retribuição do Pecado\"."
+    }
+  },
+  "constellation3": {
+    "name": "Punindo as Fraudes",
+    "description": {
+      "0": "Aumenta o nível do <strong>Ataque Normal: Punho Gelado Destruidor</strong> em 3.",
+      "1": "O nível máximo de elevação é 15."
+    }
+  },
+  "constellation4": {
+    "name": "Redimindo Aqueles Que Sofrem",
+    "description": {
+      "0": "Aumenta a Vida que Wriothesley regenera com Disciplina: Soco do Salto Gelado para 50% de sua Vida Máxima. É necessário ter desbloqueado o Talento Passivo \"Haverá Arguição Pela Justiça\".",
+      "1": "Além disso, quando Wriothesley é curado, caso haja sobrecura, gerará efeitos diferentes dependendo de Wriothesley estar ou não no campo de batalha. Quando ele está no campo de batalha, aumenta sua Vel. de ATQ em 20% por 4s. Quando ele não está no campo de batalha, aumenta a Vel. de ATQ de todos os membros da própria equipe em 10% por 6s. Os dois efeitos de Vel. de ATQ não acumulam."
+    }
+  },
+  "constellation5": {
+    "name": "Misericórdia aos Caluniados",
+    "description": {
+      "0": "Aumenta o nível de <strong>Mordida do Lobo de Ouro Escuro</strong> em 3.",
+      "1": "O nível máximo de elevação é 15."
+    }
+  },
+  "constellation6": {
+    "name": "Valorizando os Inocentes",
+    "description": {
+      "0": "Aumenta a Taxa CRIT de Disciplina: Soco do Salto Gelado em 10%, o Dano CRIT em 80% e dispara uma Estalactite Cryo adicional que causa 100% do Dano Base de Disciplina: Soco do Salto Gelado como <cryo>Dano Cryo</cryo>. O Dano causado dessa forma é considerado Dano de Ataque Carregado.",
+      "1": "É necessário ter desbloqueado o Talento Passivo \"Haverá Arguição Pela Justiça\"."
+    }
+  }
+}

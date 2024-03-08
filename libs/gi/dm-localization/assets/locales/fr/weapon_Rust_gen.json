@@ -1,0 +1,24 @@
+{
+  "name": "Arc rouillé",
+  "description": {
+    "0": "Un grand arc en fer complètement recouvert de rouille. Le soulever ou le manier est impossible sans posséder une force hors du commun."
+  },
+  "passiveName": "Tir rapide",
+  "passiveDescription": {
+    "0": {
+      "0": "Augmente les DGT infligés par les attaques normales de <cryo>40 %</cryo> et diminue les DGT infligés par les attaques chargées de 10 %."
+    },
+    "1": {
+      "0": "Augmente les DGT infligés par les attaques normales de <cryo>50 %</cryo> et diminue les DGT infligés par les attaques chargées de 10 %."
+    },
+    "2": {
+      "0": "Augmente les DGT infligés par les attaques normales de <cryo>60 %</cryo> et diminue les DGT infligés par les attaques chargées de 10 %."
+    },
+    "3": {
+      "0": "Augmente les DGT infligés par les attaques normales de <cryo>70 %</cryo> et diminue les DGT infligés par les attaques chargées de 10 %."
+    },
+    "4": {
+      "0": "Augmente les DGT infligés par les attaques normales de <cryo>80 %</cryo> et diminue les DGT infligés par les attaques chargées de 10 %."
+    }
+  }
+}

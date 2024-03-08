@@ -1,0 +1,24 @@
+{
+  "name": "Fiyortların Türküsü",
+  "description": {
+    "0": "Buzların arasında balık tutmak isteyenlerin tercihi olan bir mızrak. Hiçbir balık ondan kaçamaz."
+  },
+  "passiveName": "Tundra Hikayeleri",
+  "passiveDescription": {
+    "0": {
+      "0": "Grubunda farklı Element Türünde en az 3 karakter olduğunda Element Ustalığı <cryo>120</cryo> artar."
+    },
+    "1": {
+      "0": "Grubunda farklı Element Türünde en az 3 karakter olduğunda Element Ustalığı <cryo>150</cryo> artar."
+    },
+    "2": {
+      "0": "Grubunda farklı Element Türünde en az 3 karakter olduğunda Element Ustalığı <cryo>180</cryo> artar."
+    },
+    "3": {
+      "0": "Grubunda farklı Element Türünde en az 3 karakter olduğunda Element Ustalığı <cryo>210</cryo> artar."
+    },
+    "4": {
+      "0": "Grubunda farklı Element Türünde en az 3 karakter olduğunda Element Ustalığı <cryo>240</cryo> artar."
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "setName": "Nächtliches Geflüster in den widerhallenden Wäldern",
+  "setEffects": {
+    "2": "Erhöht den ANG um 18 %.",
+    "4": "Erhöht den Geo-SCH-Bonus 10 s lang um 20 %, nachdem eine Elementarfähigkeit eingesetzt wurde. Erhöht diesen Effekt zusätzlich um 150 %, wenn die Figur von einem Kristallschild, der durch die Reaktion „Kristallisation“ entsteht, geschützt wird. Diese weitere Verstärkung wird 1 s nach dem Verlieren des Schildes entfernt."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Selbstloser Blumenschmuck",
+      "desc": "Die Brosche, die die Hexe in der Geschichte trägt. Wie die anderen Dekorationen, die sie liebt, hat sie die Form eines Schmetterlings als Verzierung."
+    },
+    "plume": {
+      "name": "Ehrlicher Federkiel",
+      "desc": "Der Federkiel, den die Hexe in der Geschichte benutzt. Die reibungslose Führung ist der am wenigsten bemerkenswerte aller seiner Vorteile."
+    },
+    "sands": {
+      "name": "Treue Sanduhr",
+      "desc": "Die Sanduhr, auf die die Hexe in der Geschichte angewiesen ist. Es heißt, dass die Zeit besonders schnell vergeht, wenn man ihr den falschen Zauberspruch aufsagt."
+    },
+    "goblet": {
+      "name": "Großzügiges Tintenfass",
+      "desc": "Das Tintenfass, auf das sich die Hexe in der Geschichte verlässt. Es hat eine Magie, die nicht geringer ist als die des Federkiels."
+    },
+    "circlet": {
+      "name": "Mitfühlender Damenhut",
+      "desc": "Der Damenhut, den die Hexe in der Geschichte trägt. Sie liebt vor allem sein elegantes und zugleich erfrischendes Aussehen."
+    }
+  }
+}

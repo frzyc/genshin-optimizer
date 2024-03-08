@@ -1,0 +1,24 @@
+{
+  "name": "Lưỡi Kiếm Narzissenkreuz",
+  "description": {
+    "0": "Thanh kiếm với ý chí và sức mạnh đã tan biến khi câu chuyện kết thúc, nó sẽ bước tiếp trên hành trình mới. Một phần sức mạnh sót lại trong đó là để kỷ niệm cho giấc mộng hào hùng."
+  },
+  "passiveName": "Lưỡi Kiếm Anh Hùng",
+  "passiveDescription": {
+    "0": {
+      "0": "Khi người trang bị không có Sức Mạnh Nền Tảng: Tấn Công Thường, Trọng Kích, Tấn Công Khi Đáp trúng đích sẽ thi triển năng lượng xung kích Pneuma hoặc Ousia, gây lượng sát thương bằng <cryo>160%</cryo> tấn công. Hiệu quả này mỗi 12s tối đa kích hoạt một lần, loại năng lượng xung kích sẽ do thuộc tính hiện tại của Lưỡi Kiếm Narzissenkreuz quyết định."
+    },
+    "1": {
+      "0": "Khi người trang bị không có Sức Mạnh Nền Tảng: Tấn Công Thường, Trọng Kích, Tấn Công Khi Đáp trúng đích sẽ thi triển năng lượng xung kích Pneuma hoặc Ousia, gây lượng sát thương bằng <cryo>200%</cryo> tấn công. Hiệu quả này mỗi 12s tối đa kích hoạt một lần, loại năng lượng xung kích sẽ do thuộc tính hiện tại của Lưỡi Kiếm Narzissenkreuz quyết định."
+    },
+    "2": {
+      "0": "Khi người trang bị không có Sức Mạnh Nền Tảng: Tấn Công Thường, Trọng Kích, Tấn Công Khi Đáp trúng đích sẽ thi triển năng lượng xung kích Pneuma hoặc Ousia, gây lượng sát thương bằng <cryo>240%</cryo> tấn công. Hiệu quả này mỗi 12s tối đa kích hoạt một lần, loại năng lượng xung kích sẽ do thuộc tính hiện tại của Lưỡi Kiếm Narzissenkreuz quyết định."
+    },
+    "3": {
+      "0": "Khi người trang bị không có Sức Mạnh Nền Tảng: Tấn Công Thường, Trọng Kích, Tấn Công Khi Đáp trúng đích sẽ thi triển năng lượng xung kích Pneuma hoặc Ousia, gây lượng sát thương bằng <cryo>280%</cryo> tấn công. Hiệu quả này mỗi 12s tối đa kích hoạt một lần, loại năng lượng xung kích sẽ do thuộc tính hiện tại của Lưỡi Kiếm Narzissenkreuz quyết định."
+    },
+    "4": {
+      "0": "Khi người trang bị không có Sức Mạnh Nền Tảng: Tấn Công Thường, Trọng Kích, Tấn Công Khi Đáp trúng đích sẽ thi triển năng lượng xung kích Pneuma hoặc Ousia, gây lượng sát thương bằng <cryo>320%</cryo> tấn công. Hiệu quả này mỗi 12s tối đa kích hoạt một lần, loại năng lượng xung kích sẽ do thuộc tính hiện tại của Lưỡi Kiếm Narzissenkreuz quyết định."
+    }
+  }
+}

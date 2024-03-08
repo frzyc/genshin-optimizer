@@ -1,0 +1,165 @@
+{
+  "name": "Laila",
+  "title": "La Estrella de la Noche",
+  "description": "Una estudiante de la Facultad Rtawahist especializada en astrología teórica. A veces con sonambulismo, otras veces con insomnio, esta chica siempre tiene problemas de sueño.",
+  "constellationName": "Luscinia",
+  "auto": {
+    "name": "Senda radiante",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Ataque Normal</strong>",
+        "1": "Realiza hasta 3 ataques consecutivos con espada."
+      },
+      "charged": {
+        "0": "<strong>Ataque Cargado</strong>",
+        "1": "Consume cierta cantidad de Aguante para desatar un doble golpe de espada."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Descendente</strong>",
+        "1": "Se lanza desde el aire para golpear el suelo, dañando a los enemigos cercanos e infligiendo Daño en el AdE en el momento del impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Daño de 1er golpe",
+      "1": "Daño de 2.º golpe",
+      "2": "Daño de 3er golpe",
+      "3": "Daño de ATQ Cargado",
+      "4": "Coste de Aguante de ATQ Cargado",
+      "5": "Daño de Caída",
+      "6": "Daño de impacto de caída baja/alta",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Noche solemne",
+    "description": {
+      "0": "Extiende una Cortina del Letargo protectora para infligir <cryo>Daño Cryo en el AdE</cryo>.",
+      "1": "La cantidad de daño que absorbe el escudo aumenta en función de la Vida Máx. de Laila, y tiene un 250% de efectividad de absorción de <cryo>Daño Cryo</cryo>. Al crear el escudo, Laila es <cryo>afectada por Cryo</cryo> durante un breve periodo de tiempo.",
+      "2": "<br/>",
+      "3": "<strong>Estrellas nocturnas y estrellas fugaces</strong>",
+      "4": "Mientras el escudo Cortina del Letargo esté activo, cada 1.5 s obtiene una estrella nocturna que se adhiere a él. Cuando un personaje protegido por el escudo use una Habilidad Elemental, creará 2 estrellas nocturnas. Solo se puede obtener una estrella nocturna cada 0.3 s de esta manera y, como máximo, solo se pueden tener 4 al mismo tiempo.",
+      "5": "Si hay enemigos cerca cuando el escudo Cortina del Letargo alcanza las 4 estrellas nocturnas, estas se convertirán en estrellas fugaces que se disparan una tras otra y que persiguen por sí solas a los enemigos para infligir <cryo>Daño Cryo</cryo> al golpearlos.",
+      "6": "Cuando termine la duración del escudo Cortina del Letargo o cuando se rompa, todas las estrellas nocturnas desaparecerán. Si ya se están disparando como estrellas fugaces, durarán hasta que se hayan disparado todas.",
+      "7": "<br/>",
+      "8": "No se pueden crear nuevas estrellas nocturnas hasta que todas las estrellas fugaces actuales se hayan disparado.",
+      "9": "<br/>",
+      "10": "<i>Ella y yo somos como dos maestras artesanas que aún no se han conocido, sentadas en la misma silla y bordando la misma flor de ensueño.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "Daño de estrella fugaz",
+      "2": "Absorción base de escudo",
+      "3": "Duración del escudo",
+      "4": "TdE",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Sueño acunaestrellas",
+    "description": {
+      "0": "Libera una celestesfera onírica que lanza continuamente proyectiles estelares para atacar a los enemigos situados dentro del área e infligirles <cryo>Daño Cryo</cryo>.",
+      "1": "Cuando un proyectil estelar golpea a un enemigo, obtiene 1 estrella nocturna para los escudos Cortina del Letargo cercanos. Cada Cortina del Letargo puede obtener una estrella nocturna cada 0.5 s de esta manera.",
+      "2": "<br/>",
+      "3": "<i>Duerme, duerme plácidamente. Sé que sueñas con sendas estelares, y que el porvenir de muchos destinos se revela ante tus ojos en ese difuso letargo.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de proyectil estelar",
+      "1": "Duración",
+      "2": "TdE",
+      "3": "Energía Elemental",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Manifestación de la luz",
+    "description": {
+      "0": "Mientras el <strong>escudo Cortina del Letargo</strong> esté activo, cada vez que obtenga una estrella nocturna se produce el efecto de “gran letargo”:",
+      "1": [
+        "La Protección de Escudo de los personajes bajo el efecto de Cortina del Letargo aumenta en un 6%.",
+        "Este efecto puede acumularse hasta 4 veces y dura hasta que desaparezca el escudo Cortina del Letargo."
+      ]
+    }
+  },
+  "passive2": {
+    "name": "Sueños imperturbables",
+    "description": {
+      "0": "El daño infligido por las estrellas fugaces de <strong>Noche solemne</strong> aumenta en una cantidad equivalente al 1.5% de la Vida Máx. de Laila."
+    }
+  },
+  "passive3": {
+    "name": "Sueño premonitorio",
+    "description": {
+      "0": "Al crear materiales de talento de personaje, hay una probabilidad del 10% de recibir el doble."
+    }
+  },
+  "constellation1": {
+    "name": "Fortaleza fantástica",
+    "description": {
+      "0": "Aumenta en un 20% la absorción de daño del escudo Cortina del Letargo de <strong>Noche solemne</strong>.",
+      "1": "Además, al usar Noche solemne, se crea para todos los personajes del equipo cercanos que no estén protegidos por Cortina del Letargo un escudo con una cantidad de absorción de daño del 35% de la de Cortina del Letargo. Este escudo dura 12 s y tiene un 250% de efectividad de absorción de <cryo>Daño Cryo</cryo>."
+    }
+  },
+  "constellation2": {
+    "name": "Remisión estelar",
+    "description": {
+      "0": "Cuando las estrellas fugaces de <strong>Noche solemne</strong> golpean a un enemigo, Laila recupera 1 pt. de Energía Elemental. Laila solo puede regenerar energía una vez por cada estrella fugaz de esta manera."
+    }
+  },
+  "constellation3": {
+    "name": "Secretos de la noche",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Noche solemne</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Revelación astral",
+    "description": {
+      "0": "Cuando se empieza a lanzar un conjunto de estrellas fugaces de <strong>Noche solemne</strong>, otorga a todos los miembros del equipo cercanos el efecto de “lucero”, el cual aumenta el daño de sus Ataques Normales y Cargados en una cantidad equivalente al 5% de la Vida Máx. de Laila.",
+      "1": "El efecto de lucero dura 3 s y se anula 0.05 s después de infligir daño con un Ataque Normal o Cargado."
+    }
+  },
+  "constellation5": {
+    "name": "Flujo de consciencia",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Sueño acunaestrellas</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Fulgor espirituardiente",
+    "description": {
+      "0": "Aumenta en un 40% tanto el daño infligido por las estrellas fugaces de <strong>Noche solemne</strong> como el de los rayos estelares de <strong>Sueño acunaestrellas</strong>.",
+      "1": "Además, el intervalo de creación de estrellas nocturnas de Noche solemne se reduce en un 20%."
+    }
+  }
+}

@@ -1,0 +1,161 @@
+{
+  "name": "Ningguang",
+  "title": "Eclipsing Star",
+  "description": "Seorang \"Tianquan\" dari \"Liyue Qixing\", kekayaannya tidak tertandingi di seluruh Teyvat.",
+  "constellationName": "Opus Aequilibrium",
+  "auto": {
+    "name": "Sparkling Scatter",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Attack</strong>",
+        "1": "Menembakkan batu permata yang mengakibatkan <geo>Geo DMG</geo>.",
+        "2": "Saat mengenai musuh, akan memberikan 1 Star Jade kepada Ningguang."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Mengonsumsi sejumlah Stamina untuk menembakkan batu permata raksasa yang mengakibatkan <geo>Geo DMG</geo>.",
+        "2": "Jika Ningguang memiliki Star Jade, melancarkan Charged Attack juga akan menembakkan Star Jade ke musuh untuk mengakibatkan DMG tambahan."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Mengumpulkan kekuatan Geo dan menerjang tanah, menyerang musuh di jalur terjangan dan mengakibatkan <geo>Geo DMG Area</geo> saat mendarat."
+      }
+    },
+    "skillParams": {
+      "0": "DMG Normal Attack",
+      "1": "DMG Charged Attack",
+      "2": "DMG Per Star Jade",
+      "3": "Konsumsi Stamina Charged Attack",
+      "4": "DMG Selama Plunging",
+      "5": "DMG Plunging Attack Rendah/Tinggi",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Jade Screen",
+    "description": {
+      "0": "Ningguang membentuk sebuah perisai Geo yang terbuat dari emas, obsidian, dan kekayaannya untuk mengakibatkan <geo>Geo DMG Area</geo>.",
+      "1": "<br/>",
+      "2": "<strong>Jade Screen</strong>",
+      "3": [
+        "Menghalangi proyektil musuh.",
+        "HP Jade Screen mewarisi Max HP Ningguang berdasarkan persentase tertentu."
+      ],
+      "4": "<br/>",
+      "5": "Jade Screen dianggap sebagai sebuah <geo>Geo Construct</geo> dan dapat digunakan untuk menghalang beberapa jenis serangan, tapi tidak dapat dipanjat. Ningguang hanya dapat memiliki satu Jade Screen di satu waktu.",
+      "6": "<br/>",
+      "7": "<i>Kanvas bintang-bintang terukir di atas layar giok ini.</i>"
+    },
+    "skillParams": {
+      "0": "HP Terwariskan",
+      "1": "DMG Skill",
+      "2": "Cooldown",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Starshatter",
+    "description": {
+      "0": "Ningguang mengumpulkan batu permata di sekelilingnya dan menyebarkan semuanya sekaligus untuk menyerang musuh, mengakibatkan <geo>Geo DMG</geo> yang besar.",
+      "1": "Jika Starshatter digunakan saat Jade Screen berada di dekatnya, Jade Screen juga akan menembakkan tambahan batu permata di saat bersamaan.",
+      "2": "<br/>",
+      "3": "<i>Bintang-bintang terpecah, namun keheningan tidak terpecahkan.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Per Gem",
+      "1": "Cooldown",
+      "2": "Konsumsi Energy",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Backup Plan",
+    "description": {
+      "0": "Charged Attack Ningguang tidak mengonsumsi Stamina saat Ningguang memiliki Star Jade."
+    }
+  },
+  "passive2": {
+    "name": "Strategic Reserve",
+    "description": {
+      "0": "Karakter yang melewati <strong>Jade Screen</strong> akan mendapatkan 12% <geo>Geo DMG Bonus</geo> selama 10 detik."
+    }
+  },
+  "passive3": {
+    "name": "Trove of Marvelous Treasures",
+    "description": {
+      "0": "Memperlihatkan lokasi <strong>tambang ore untuk Forge</strong> di peta kecil."
+    }
+  },
+  "constellation1": {
+    "name": "Piercing Fragments",
+    "description": {
+      "0": "Saat Normal Attack mengenai musuh, mengakibatkan DMG Area."
+    }
+  },
+  "constellation2": {
+    "name": "Shock Effect",
+    "description": {
+      "0": "Saat <strong>Jade Screen</strong> pecah, cooldown skill tersebut selesai.",
+      "1": "Dapat terpicu sekali setiap 6 detik."
+    }
+  },
+  "constellation3": {
+    "name": "Majesty be the Array of Stars",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Starshatter</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Exquisite be the Jade, Outshining All Beneath",
+    "description": {
+      "0": "<strong>Jade Screen</strong> meningkatkan Elemental RES karakter di sekitar sebesar 10%."
+    }
+  },
+  "constellation5": {
+    "name": "Invincible be the Jade Screen",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Jade Screen</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Grandeur be the Seven Stars",
+    "description": {
+      "0": "Ningguang akan mendapatkan 7 Star Jade ketika melancarkan <strong>Starshatter</strong>."
+    }
+  }
+}

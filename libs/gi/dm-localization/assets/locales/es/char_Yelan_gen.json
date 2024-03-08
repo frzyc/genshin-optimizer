@@ -1,0 +1,176 @@
+{
+  "name": "Yelan",
+  "title": "La Orquídea del Valle",
+  "description": "Una misteriosa persona que dice trabajar para el Ministerio de Asuntos Civiles, pero que “no existe” según los registros del propio Ministerio.",
+  "constellationName": "Umbrabilis Orchis",
+  "auto": {
+    "name": "Flecha subrepticia",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Ataque Normal</strong>",
+        "1": "Realiza hasta 4 disparos consecutivos con arco."
+      },
+      "charged": {
+        "0": "<strong>Ataque Cargado</strong>",
+        "1": "Realiza un <strong>Disparo Preciso</strong> que inflige mayor daño y tiene mayor precisión.",
+        "2": "Al apuntar, un flujo de agua se acumulará en la punta de la flecha. Una flecha torrencial totalmente cargada infligirá <hydro>Daño Hydro</hydro>."
+      },
+      "breakthrough": {
+        "0": "<strong>Irrupción</strong>",
+        "1": "Cuando el equipo está 5 s fuera de combate, Yelan entra en el estado de “irrupción”, en el que el tiempo de carga de su siguiente Disparo Preciso totalmente cargado se reduce en un 80%. Una vez cargado, el disparo se convertirá en una flecha irruptora que inflige <hydro>Daño Hydro en el AdE</hydro> en proporción a la Vida Máx. de Yelan."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Descendente</strong>",
+        "1": "Dispara una lluvia de flechas desde el aire mientras desciende rápidamente, infligiendo Daño en el AdE al impactar contra el suelo."
+      }
+    },
+    "skillParams": {
+      "0": "Daño de 1er golpe",
+      "1": "Daño de 2.º golpe",
+      "2": "Daño de 3er golpe",
+      "3": "Daño de 4.º golpe",
+      "4": "Disparo Preciso",
+      "5": "Disparo Preciso (carga completa)",
+      "6": "Daño de flecha irruptora",
+      "7": "Daño de Caída",
+      "8": "Daño de impacto de caída baja/alta",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Atadura salvavidas",
+    "description": {
+      "0": "Saca una cuerda salvavidas y corre a gran velocidad para atársela a los enemigos a su paso y marcarlos.",
+      "1": "Al terminar el movimiento, la cuerda explotará para infligir <hydro>Daño Hydro</hydro> contra los enemigos marcados en proporción a la Vida Máx. de Yelan.",
+      "2": "<br/>",
+      "3": "<strong>Pulsar una vez</strong>",
+      "4": "Recorre rápidamente cierta distancia hacia delante.",
+      "5": "<br/>",
+      "6": "<strong>Mantener pulsado</strong>",
+      "7": "Corre continuamente a gran velocidad. En este estado, la RES a interrupción de Yelan aumenta.",
+      "8": "Mientras lo hace, Yelan puede controlar la dirección en la que esprinta y, al volver a pulsar una vez la habilidad, terminará de correr.",
+      "9": "<br/>",
+      "10": "Además, cuando la cuerda salvavidas explota, por cada enemigo marcado aumentará en un 34% la probabilidad de que Yelan entre en el estado de irrupción.",
+      "11": "<br/>",
+      "12": "<i>Cuando tira de los hilos es cuando los bandidos, malhechores y conspiradores se dan cuenta de que, por el bien de sus vidas, deben huir.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "Duración máx. de mantener pulsado",
+      "2": "TdE",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Dado clarividente",
+    "description": {
+      "0": "Inflige <hydro>Daño Hydro en el AdE</hydro> y crea un dado intrincado que la asiste en combate.",
+      "1": "<br/>",
+      "2": "<strong>Dado intrincado</strong>",
+      "3": "Sigue al personaje y ejecuta un ataque coordinado que inflige <hydro>Daño Hydro</hydro> en proporción a la Vida Máx. de Yelan en las siguientes situaciones:",
+      "4": [
+        "Cuando tu personaje en uso ejecuta un Ataque Normal. El ataque coordinado liberado de esta manera solo se podrá activar una vez por segundo.",
+        "Cuando la explosión de la cuerda salvavidas de Yelan golpea a un enemigo."
+      ],
+      "5": "<br/>",
+      "6": "<i>La adicción a los juegos de apuestas es lo peor que puede existir. Mira, deja que yo, como crupier, haga las cuentas: ¿cuánta probabilidad crees que tienes de ganarme si yo tengo siete dados y tú solo uno?</i>"
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "Daño de dado intrincado",
+      "2": "Duración",
+      "3": "TdE",
+      "4": "Energía Elemental",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Control estratégico",
+    "description": {
+      "0": "Cuando en el equipo haya 1/2/3/4 personajes de tipos elementales distintos, la Vida Máx. de Yelan aumenta en un 6/12/18/30% respectivamente."
+    }
+  },
+  "passive2": {
+    "name": "Adaptación maestra",
+    "description": {
+      "0": "Mientras el <strong>dado intrincado</strong> esté activo, el daño de tu personaje en uso aumenta en un 1%, e irá aumentando en un 3.5% adicional por segundo hasta un máximo de un 50%.",
+      "1": "Si vuelves a usar Dado clarividente mientras el dado intrincado está activo, el efecto anterior se disipará."
+    }
+  },
+  "passive3": {
+    "name": "Jugada táctica",
+    "description": {
+      "0": "Aumenta en un 25% las recompensas de las expediciones de 20 h en Liyue."
+    }
+  },
+  "constellation1": {
+    "name": "Trampa anticonspiradores",
+    "description": {
+      "0": "Aumenta en 1 las cargas de <strong>Atadura salvavidas</strong>."
+    }
+  },
+  "constellation2": {
+    "name": "Aprisionamiento masivo",
+    "description": {
+      "0": "Cuando el <strong>dado intrincado</strong> activa un ataque coordinado, lanzará una flecha Hydro adicional que inflige Daño Hydro equivalente al 14% de la Vida Máx. de Yelan.",
+      "1": "Esto solo puede ocurrir una vez cada 1.8 s."
+    }
+  },
+  "constellation3": {
+    "name": "Dado trucado",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Dado clarividente</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Intercambio encubierto",
+    "description": {
+      "0": "Por cada enemigo marcado con la <strong>cuerda salvavidas</strong>, la explosión de cada marca aumenta la Vida Máx. de todos los miembros del equipo en un 10% durante 25 s. La Vida Máx. solo podrá aumentar hasta un máximo del 40% de esta manera."
+    }
+  },
+  "constellation5": {
+    "name": "Artificio de crupier",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Atadura salvavidas</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Mano ganadora",
+    "description": {
+      "0": "Tras usar <strong>Dado clarividente</strong>, Yelan entra en el estado de “planificación táctica”.",
+      "1": "En este estado, sus Ataques Normales se convierten en flechas irruptoras especiales con unas características similares a las de las flechas irruptoras normales y que infligen un 156% de su daño original. Este daño es considerado daño de Ataque Cargado.",
+      "2": "<br/>",
+      "3": "El estado de planificación táctica dura un máximo de 20 s y se anulará después de que Yelan haya disparado 5 flechas."
+    }
+  }
+}

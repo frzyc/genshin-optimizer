@@ -1,0 +1,24 @@
+{
+  "name": "Sword of Narzissenkreuz",
+  "description": {
+    "0": "Pedang yang kehilangan kekuatan di akhir kisahnya. Kini pedang ini akan memulai perjalanan barunya dengan sisa kekuatan yang ada di dalamnya, terus memperingati sebuah mimpi yang agung mulia."
+  },
+  "passiveName": "Hero's Blade",
+  "passiveDescription": {
+    "0": {
+      "0": "Saat Karakter yang mengenakan tidak memiliki Arkhe: Saat Normal Attack, Charged Attack, atau Plunging Attack mengenai musuh, akan melancarkan Energy Blast Pneuma atau Ousia yang mengakibatkan DMG sebesar <cryo>160%</cryo> ATK. Efek ini dapat terpicu sekali setiap 12 detik. Tipe Energy Blast ditentukan oleh tipe Sword of Narzissenkreuz saat ini."
+    },
+    "1": {
+      "0": "Saat Karakter yang mengenakan tidak memiliki Arkhe: Saat Normal Attack, Charged Attack, atau Plunging Attack mengenai musuh, akan melancarkan Energy Blast Pneuma atau Ousia yang mengakibatkan DMG sebesar <cryo>200%</cryo> ATK. Efek ini dapat terpicu sekali setiap 12 detik. Tipe Energy Blast ditentukan oleh tipe Sword of Narzissenkreuz saat ini."
+    },
+    "2": {
+      "0": "Saat Karakter yang mengenakan tidak memiliki Arkhe: Saat Normal Attack, Charged Attack, atau Plunging Attack mengenai musuh, akan melancarkan Energy Blast Pneuma atau Ousia yang mengakibatkan DMG sebesar <cryo>240%</cryo> ATK. Efek ini dapat terpicu sekali setiap 12 detik. Tipe Energy Blast ditentukan oleh tipe Sword of Narzissenkreuz saat ini."
+    },
+    "3": {
+      "0": "Saat Karakter yang mengenakan tidak memiliki Arkhe: Saat Normal Attack, Charged Attack, atau Plunging Attack mengenai musuh, akan melancarkan Energy Blast Pneuma atau Ousia yang mengakibatkan DMG sebesar <cryo>280%</cryo> ATK. Efek ini dapat terpicu sekali setiap 12 detik. Tipe Energy Blast ditentukan oleh tipe Sword of Narzissenkreuz saat ini."
+    },
+    "4": {
+      "0": "Saat Karakter yang mengenakan tidak memiliki Arkhe: Saat Normal Attack, Charged Attack, atau Plunging Attack mengenai musuh, akan melancarkan Energy Blast Pneuma atau Ousia yang mengakibatkan DMG sebesar <cryo>320%</cryo> ATK. Efek ini dapat terpicu sekali setiap 12 detik. Tipe Energy Blast ditentukan oleh tipe Sword of Narzissenkreuz saat ini."
+    }
+  }
+}

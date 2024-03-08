@@ -1,0 +1,24 @@
+{
+  "name": "Favonius Codex",
+  "description": {
+    "0": "A secret tome that belonged to the scholars of the Knights of Favonius. It describes the logic and power of elements and matter."
+  },
+  "passiveName": "Windfall",
+  "passiveDescription": {
+    "0": {
+      "0": "CRIT Hits have a <cryo>60%</cryo> chance to generate a small amount of Elemental Particles, which will regenerate 6 Energy for the character. Can only occur once every <cryo>12</cryo>s."
+    },
+    "1": {
+      "0": "CRIT Hits have a <cryo>70%</cryo> chance to generate a small amount of Elemental Particles, which will regenerate 6 Energy for the character. Can only occur once every <cryo>10.5</cryo>s."
+    },
+    "2": {
+      "0": "CRIT Hits have a <cryo>80%</cryo> chance to generate a small amount of Elemental Particles, which will regenerate 6 Energy for the character. Can only occur once every <cryo>9</cryo>s."
+    },
+    "3": {
+      "0": "CRIT Hits have a <cryo>90%</cryo> chance to generate a small amount of Elemental Particles, which will regenerate 6 Energy for the character. Can only occur once every <cryo>7.5</cryo>s."
+    },
+    "4": {
+      "0": "CRIT Hits have a <cryo>100%</cryo> chance to generate a small amount of Elemental Particles, which will regenerate 6 Energy for the character. Can only occur once every <cryo>6</cryo>s."
+    }
+  }
+}

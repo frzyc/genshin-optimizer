@@ -1,0 +1,24 @@
+{
+  "name": "Axioma de la Kagura",
+  "description": {
+    "0": "Una campana divina bendecida por la Suma Sacerdotisa y usada en las actuaciones de danza kagura. De ella emana la fragancia del Cerezo Sagrado."
+  },
+  "passiveName": "Danza kagura del Cerezo Sagrado",
+  "passiveDescription": {
+    "0": {
+      "0": "Al usar la Habilidad Elemental, obtienes el efecto de “danza kagura”, el cual aumenta en un <cryo>12%</cryo> el daño de la Habilidad Elemental del personaje que equipa esta arma. Este efecto dura 16 s y puede acumularse hasta 3 veces. Al tener 3 acumulaciones, dicho personaje obtiene un <cryo>12%</cryo> de todos los Bonos de Daño Elemental."
+    },
+    "1": {
+      "0": "Al usar la Habilidad Elemental, obtienes el efecto de “danza kagura”, el cual aumenta en un <cryo>15%</cryo> el daño de la Habilidad Elemental del personaje que equipa esta arma. Este efecto dura 16 s y puede acumularse hasta 3 veces. Al tener 3 acumulaciones, dicho personaje obtiene un <cryo>15%</cryo> de todos los Bonos de Daño Elemental."
+    },
+    "2": {
+      "0": "Al usar la Habilidad Elemental, obtienes el efecto de “danza kagura”, el cual aumenta en un <cryo>18%</cryo> el daño de la Habilidad Elemental del personaje que equipa esta arma. Este efecto dura 16 s y puede acumularse hasta 3 veces. Al tener 3 acumulaciones, dicho personaje obtiene un <cryo>18%</cryo> de todos los Bonos de Daño Elemental."
+    },
+    "3": {
+      "0": "Al usar la Habilidad Elemental, obtienes el efecto de “danza kagura”, el cual aumenta en un <cryo>21%</cryo> el daño de la Habilidad Elemental del personaje que equipa esta arma. Este efecto dura 16 s y puede acumularse hasta 3 veces. Al tener 3 acumulaciones, dicho personaje obtiene un <cryo>21%</cryo> de todos los Bonos de Daño Elemental."
+    },
+    "4": {
+      "0": "Al usar la Habilidad Elemental, obtienes el efecto de “danza kagura”, el cual aumenta en un <cryo>24%</cryo> el daño de la Habilidad Elemental del personaje que equipa esta arma. Este efecto dura 16 s y puede acumularse hasta 3 veces. Al tener 3 acumulaciones, dicho personaje obtiene un <cryo>24%</cryo> de todos los Bonos de Daño Elemental."
+    }
+  }
+}

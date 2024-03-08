@@ -1,0 +1,175 @@
+{
+  "name": "Alhaitham",
+  "title": "Instruction d'admonestation",
+  "description": "L'actuel scribe de l'Académie de Sumeru, doté d'une intelligence et d'un talent extraordinaires. Son goût pour une vie libre de contraintes est tel qu'il est difficile pour la plupart des gens de savoir où le trouver.",
+  "constellationName": "Vultur Volans",
+  "auto": {
+    "name": "Raisonnement abductif",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attaque normale</strong>",
+        "1": "Enchaîne jusqu'à 5 coups d'épée."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Consomme de l'endurance pour déclencher deux coups d'épée rapides."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis en chemin et des DGT de zone à l'impact."
+      }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT 4e coup",
+      "4": "DGT 5e coup",
+      "5": "DGT attaque chargée",
+      "6": "Coût d'endurance attaque chargée",
+      "7": "DGT durant la chute",
+      "8": "DGT chute basse/élevée",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Universalité : Élaboration de forme",
+    "description": {
+      "0": "Se précipite en avant pour infliger des <dendro>DGT Dendro</dendro> aux ennemis proches à la fin de sa ruée et génère un miroir de diffraction.",
+      "1": "En cas d'appui long, la compétence est déclenchée différemment.",
+      "2": "<br/>",
+      "3": "<strong>Appui long</strong>",
+      "4": "Bascule en mode visée, ce qui permet d'ajuster la direction de la ruée.",
+      "5": "<br/>",
+      "6": "<strong>Miroir de diffraction</strong>",
+      "7": "Alhaitham génère 1 miroir de diffraction lors de l'utilisation de cette compétence. Si aucun miroir n'est présent à ce moment-là, il génère 1 miroir supplémentaire. Les miroirs de diffraction ont les propriétés suivantes :",
+      "8": [
+        " Lorsqu'il possède des miroirs de diffraction, les DGT des attaques normales, chargées et plongeantes d'Alhaitham sont converties en <dendro>DGT Dendro</dendro> ne pouvant pas être enchantés.",
+        " Lorsqu'une attaque des types susmentionnés touche un ennemi, les miroirs de diffraction déclenchent une attaque de rayonnement qui inflige des <dendro>DGT Dendro de zone</dendro> selon la quantité de miroirs présents.",
+        " Un maximum de 3 miroirs de diffraction peut exister en même temps.",
+        " Les miroirs de diffraction disparaissent les uns après les autres au fur et à mesure, ou tous d'un coup lorsqu'Alhaitham quitte le champ de bataille."
+      ],
+      "9": "<br/>",
+      "10": "<i>« La vérité existe intrinsèquement au milieu de l'incertitude. Même les plus grands savants ne sont pas à l'abri de l'erreur. »</i>"
+    },
+    "skillParams": {
+      "0": "DGT ruée",
+      "1": "Intervalle d'attaques de rayonnement",
+      "2": "DGT rayonnement (1 miroir)",
+      "3": "DGT rayonnement (2 miroirs)",
+      "4": "DGT rayonnement (3 miroirs)",
+      "5": "Intervalle de disparition des miroirs",
+      "6": "Temps de recharge",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Champ particulier : Liens de phénomène",
+    "description": {
+      "0": "Crée un champ de liaison particulier qui inflige plusieurs fois des <dendro>DGT Dendro de zone</dendro>.",
+      "1": "Si des miroirs de diffraction sont présents lors de l'utilisation de cette capacité, ils sont tous consommés pour augmenter le nombre de fois où des DGT sont infligés.",
+      "2": "2 s après l'utilisation de cette capacité, si 0/1/2/3 miroirs de diffraction ont été consommés, Alhaitham obtient respectivement 3/2/1/0 miroirs de diffraction.",
+      "3": "<br/>",
+      "4": "<i>« Si un chercheur fait de la sagesse son objectif, il doit être prêt à se faire un ennemi de chaque mot qu'il lit : ce n'est qu'alors qu'il peut éviter les préjugés. »</i>"
+    },
+    "skillParams": {
+      "0": "DGT uniques",
+      "1": "Attaques de base",
+      "2": "Attaques (1 miroir)",
+      "3": "Attaques (2 miroirs)",
+      "4": "Attaques (3 miroirs)",
+      "5": "Temps de recharge",
+      "6": "Énergie élémentaire",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Correction à quadruple cause",
+    "description": {
+      "0": "Lorsqu'une attaque chargée ou plongeante d'Alhaitham touche un ennemi, elle génère 1 miroir de diffraction. Cet effet peut être déclenché une fois toutes les 12 s."
+    }
+  },
+  "passive2": {
+    "name": "Mystères révélés",
+    "description": {
+      "0": "Chaque point de maîtrise élémentaire qu'Alhaitham possède augmente les DGT infligés par les rayonnements et par <strong>Champ particulier : Liens de phénomène</strong> de 0,1 %.",
+      "1": "Les DGT des rayonnements et de Champ particulier : Liens de phénomène peuvent être augmentés d'un maximum de 100 % de cette manière."
+    }
+  },
+  "passive3": {
+    "name": "Loi de surdétermination réductrice",
+    "description": {
+      "0": "10 % de chances d'obtenir le double de produits lors de la synthèse de matériaux d'élévation d'arme."
+    }
+  },
+  "constellation1": {
+    "name": "Intuition",
+    "description": {
+      "0": "Lorsqu'une attaque de rayonnement touche un ennemi, le TdR d'<strong>Universalité : Élaboration de forme</strong> diminue de 1,2 s. Cet effet peut être déclenché une fois toutes les secondes."
+    }
+  },
+  "constellation2": {
+    "name": "Rhétorique",
+    "description": {
+      "0": "Lorsqu'Alhaitham génère un miroir de diffraction, sa maîtrise élémentaire augmente de 50 pts pendant 8 s. Cet effet peut être cumulé 4 fois maximum, la durée de chaque cumul étant calculée indépendamment. Cet effet peut être déclenché même si le nombre de miroirs de diffraction a atteint la limite."
+    }
+  },
+  "constellation3": {
+    "name": "Antithèse",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Universalité : Élaboration de forme</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation4": {
+    "name": "Élucidation",
+    "description": {
+      "0": "Lors de l'utilisation de <strong>Champ particulier : Liens de phénomène</strong>, les effets suivants se produisent selon le nombre de miroirs de diffraction consommés et générés cette fois-ci :",
+      "1": [
+        " Chaque miroir consommé augmente la maîtrise élémentaire de tous les autres personnages de l'équipe à proximité de 30 pts pendant 15 s.",
+        " Chaque miroir généré accorde à Alhaitham un <dendro>bonus de DGT Dendro</dendro> de 10 % pendant 15 s."
+      ],
+      "2": "<br/>",
+      "3": "Les effets susmentionnés déjà existants sont annulés si vous utilisez à nouveau Champ particulier : Liens de phénomène pendant leur durée."
+    }
+  },
+  "constellation5": {
+    "name": "Sagacité",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Champ particulier : Liens de phénomène</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation6": {
+    "name": "Structuration",
+    "description": {
+      "0": "Alhaitham bénéficie des effets suivants :",
+      "1": [
+        " 2 s après l'utilisation de <strong>Champ particulier : Liens de phénomène</strong>, il génère 3 miroirs de diffraction, peu importe le nombre de miroirs consommés.",
+        " Si Alhaitham génère un miroir de diffraction alors que leur nombre a déjà atteint le maximum, il augmente son taux CRIT de 10 % et ses DGT CRIT de 70 % pendant 6 s. Lorsque cet effet se déclenche à nouveau alors que sa durée n'est pas écoulée, la durée augmente de 6 s."
+      ]
+    }
+  }
+}

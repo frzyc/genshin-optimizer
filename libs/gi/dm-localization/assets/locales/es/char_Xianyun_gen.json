@@ -1,0 +1,174 @@
+{
+  "name": "Xianyun",
+  "title": "La Grulla Emisaria",
+  "description": "Una de los poderosos e iluminados Adeptus del Desfiladero Jueyun, conocida como Preservadora de Nubes. Gran maestra de la mecánica, interesada en el mundo de los humanos y conocida en él con el nombre de “Xianyun”.",
+  "constellationName": "Grus Serena",
+  "auto": {
+    "name": "Palabra vientofloral",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Ataque Normal</strong>",
+        "1": "Crea remolinos de viento para realizar hasta 4 ataques consecutivos, los cuales infligen <anemo>Daño Anemo</anemo>."
+      },
+      "charged": {
+        "0": "<strong>Ataque Cargado</strong>",
+        "1": "Consume una cierta cantidad de Aguante y crea un anillo de viento que viaja en línea recta e inflige <anemo>Daño Anemo</anemo> a los enemigos que hay en su trayectoria."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Descendente</strong>",
+        "1": "Concentra el poder del viento, se lanza desde el aire para golpear el suelo y daña a los enemigos a su paso, infligiendo <anemo>Daño Anemo en el AdE</anemo> en el momento del impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Daño de 1er golpe",
+      "1": "Daño de 2.º golpe",
+      "2": "Daño de 3er golpe",
+      "3": "Daño de 4.º golpe",
+      "4": "Daño de ATQ Cargado",
+      "5": "Coste de Aguante de ATQ Cargado",
+      "6": "Daño de Caída",
+      "7": "Daño de impacto de caída baja/alta",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Grulla del celaje",
+    "description": {
+      "0": "Xianyun entra en el estado de “nimbogrulla”, en el que no recibe daño de caída, y da un impulso célico.",
+      "1": "Mientras este estado está activo, el Ataque Descendente de Xianyun se convierte en una onda nublosa que inflige <anemo>Daño Anemo en el AdE</anemo> y que termina dicho estado. Este daño se considera daño de Ataque Descendente.",
+      "2": "Cada impulso célico que dé en el estado de nimbogrulla aumenta el daño y el AdE de la onda nublosa.",
+      "3": "<br/>",
+      "4": "<strong>Impulso célico</strong>",
+      "5": "Se puede liberar mientras está en el aire. Xianyun salta hacia delante e inflige <anemo>Daño Anemo</anemo> a los objetivos en el camino.",
+      "6": "Durante el estado de nimbogrulla, Xianyun puede dar un máximo de 3 impulsos célicos, y a cada enemigo solo le podrá infligir daño una vez por medio de un impulso.",
+      "7": "Si no da un impulso célico en un breve periodo de tiempo, el estado de nimbogrulla terminará.",
+      "8": "<br/>",
+      "9": "Si no libera ninguna onda nublosa durante dicho estado, el TdE de Grulla del celaje se reducirá en 3 s.",
+      "10": "<br/>",
+      "11": "<i>Una breve conversación con Preservadora de Nubes es suficiente para darse cuenta de que tiene un pico de oro.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "Daño de onda nublosa",
+      "2": "TdE",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Estrellas del crepúsculo",
+    "description": {
+      "0": "Invoca los vientos adépticos para infligir <anemo>Daño Anemo en el AdE</anemo>, restaura Vida a todos los personajes cercanos del equipo en una cantidad equivalente al ATQ de Xianyun, e invoca el artilugio “lucero de bambú”.",
+      "1": "<br/>",
+      "2": "<strong>Lucero de bambú</strong>",
+      "3": [
+        "Sigue continuamente al personaje en uso y restaura Vida periódicamente a todos los personajes cercanos en función del ATQ de Xianyun.",
+        "Comienza con 8 cargas de “potenciación adéptica”, las cuales aumentan la altura a la que saltan los personajes en uso cercanos.",
+        "Cuando el personaje en uso ejecuta un Ataque Descendente, el lucero de bambú consume una carga de potenciación adéptica e inflige <anemo>Daño Anemo en el AdE</anemo>."
+      ],
+      "4": "Como máximo, solo puede haber un lucero de bambú al mismo tiempo en el campo de batalla.",
+      "5": "<br/>",
+      "6": "<i>Este nuevo invento, perteneciente a la serie “Artilugios Lunastrales”, fue creado después de la cocinadora mecánica suprema, la esquiadora voladora suprema, la limpiadora del hogar suprema, la transportadora de madera suprema y la Podadera Deífica. Los artilugios de esta serie estaban dirigidos a los niños humanos que más aprecia Preservadora de Nubes, por lo que (que conste) no tenía en mente a cierta medio-Adeptus cuando los creó. Fue una lástima que, al ver el lucero de bambú, cierta discípula de Preservadora le dijera con total indiferencia que no lo quería para nada...",
+      "7": "Así que la Adeptus se quedó con el artilugio para uso personal.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "Daño del lucero de bambú",
+      "2": "Curación",
+      "3": "Curación continua",
+      "4": "Duración",
+      "5": "TdE",
+      "6": "Energía Elemental",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Brisa alboalada",
+    "description": {
+      "0": "Por cada enemigo golpeado con la onda nublosa de <strong>Grulla del celaje</strong>, todos los personajes cercanos del equipo obtienen una carga del efecto “pluma huracanada”, el cual dura 20 s, puede acumularse hasta 4 veces y aumenta en un 4/6/8/10% la Prob. CRIT del Ataque Descendente de los personajes.",
+      "1": "La duración del efecto de pluma huracanada creado cada vez que se golpea a un enemigo se calcula de manera independiente."
+    }
+  },
+  "passive2": {
+    "name": "Cual Adeptus en su morada",
+    "description": {
+      "0": "Cuando el lucero de bambú de <strong>Estrellas del crepúsculo</strong> tiene cargas de potenciación adéptica, el daño del Ataque Descendente de los personajes en uso cercanos aumenta en una cantidad equivalente al 200% del ATQ de Xianyun. Este daño solo puede aumentar en un máximo de 9000 pts. de esta manera.",
+      "1": "El daño aumentado de cada Ataque Descendente solo puede surtir efecto contra 1 enemigo, y cada personaje solo podrá activar este efecto una vez cada 0.4 s."
+    }
+  },
+  "passive3": {
+    "name": "Encarnación de la grulla",
+    "description": {
+      "0": "Aumenta en un 15% la Vel. de Vuelo de tus personajes del equipo.",
+      "1": "No se puede acumular con otros talentos pasivos que tengan los mismos efectos."
+    }
+  },
+  "constellation1": {
+    "name": "Vientos del destino",
+    "description": {
+      "0": "Aumenta en 1 las cargas de <strong>Grulla del celaje</strong>."
+    }
+  },
+  "constellation2": {
+    "name": "Graznido ermitaño",
+    "description": {
+      "0": "Tras efectuar un impulso célico de <strong>Grulla del celaje</strong>, el ATQ de Xianyun aumenta en un 20% durante 15 s.",
+      "1": "Además, los efectos del talento pasivo “Cual Adeptus en su morada” se fortalecen, de manera que, cuando el lucero de bambú de <strong>Estrellas del crepúsculo</strong> tiene cargas de potenciación adéptica, el daño del Ataque Descendente de los personajes en uso cercanos aumenta en una cantidad equivalente al 400% del ATQ de Xianyun. Este daño solo puede aumentar en un máximo de 18 000 pts. de esta manera.",
+      "2": "El daño aumentado de cada Ataque Descendente solo puede surtir efecto contra 1 enemigo, y cada personaje solo podrá activar este efecto una vez cada 0.4 s.",
+      "3": "Para activar este efecto, es necesario desbloquear el talento pasivo “Cual Adeptus en su morada”."
+    }
+  },
+  "constellation3": {
+    "name": "Creaciones lunastrales",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Estrellas del crepúsculo</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Maravillas del sorgo",
+    "description": {
+      "0": "Tras dar 1/2/3 impulsos célicos en el estado de nimbogrulla de <strong>Grulla del celaje</strong> y golpear a un enemigo con una onda nublosa mientras dicho estado está activo, todos los miembros cercanos del equipo recuperan una cantidad de Vida equivalente al 50/80/150% del ATQ de Xianyun. Este efecto puede ocurrir una vez cada 5 s."
+    }
+  },
+  "constellation5": {
+    "name": "Celaje arrebol",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Grulla del celaje</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Custodia de las nubes",
+    "description": {
+      "0": "Tras dar 1/2/3 impulsos célicos durante el estado de nimbogrulla de <strong>Grulla del celaje</strong>, el Daño CRIT de la onda nublosa liberada mientras dicho estado está activo aumenta en un 15/35/70%.",
+      "1": "Durante 16 s después de que Xianyun use <strong>Estrellas del crepúsculo</strong>, la habilidad Grulla del celaje no entrará en TdE al usarla. Este efecto se elimina tras haber usado 8 veces Grulla del celaje."
+    }
+  }
+}

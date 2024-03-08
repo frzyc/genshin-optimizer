@@ -1,0 +1,24 @@
+{
+  "name": "Ausklingende Dämmerung",
+  "description": {
+    "0": "Ein kostbarer Bogen aus Platin, der mit Kugeln verziert ist, die im Licht der Abenddämmerung schimmern."
+  },
+  "passiveName": "Glanz der Tiefe",
+  "passiveDescription": {
+    "0": {
+      "0": "Diese Waffe hat drei Zustände: Zwielicht, Abendröte und Morgengrauen. Diese drei Zustände erhöhen den verursachten Schaden jeweils um <cryo>6/10/14 %</cryo>. Nachdem die Figur einen Gegner trifft, wird der aktuelle Zustand deaktiviert und der nächste Zustand wird aktiviert. 7 s Abklingzeit für den Zustandswechsel, der auch ausgelöst werden kann, wenn die mit dieser Waffe ausgerüstete Figur inaktiv ist."
+    },
+    "1": {
+      "0": "Diese Waffe hat drei Zustände: Zwielicht, Abendröte und Morgengrauen. Diese drei Zustände erhöhen den verursachten Schaden jeweils um <cryo>7,5/12,5/17,5 %</cryo>. Nachdem die Figur einen Gegner trifft, wird der aktuelle Zustand deaktiviert und der nächste Zustand wird aktiviert. 7 s Abklingzeit für den Zustandswechsel, der auch ausgelöst werden kann, wenn die mit dieser Waffe ausgerüstete Figur inaktiv ist."
+    },
+    "2": {
+      "0": "Diese Waffe hat drei Zustände: Zwielicht, Abendröte und Morgengrauen. Diese drei Zustände erhöhen den verursachten Schaden jeweils um <cryo>9/15/21 %</cryo>. Nachdem die Figur einen Gegner trifft, wird der aktuelle Zustand deaktiviert und der nächste Zustand wird aktiviert. 7 s Abklingzeit für den Zustandswechsel, der auch ausgelöst werden kann, wenn die mit dieser Waffe ausgerüstete Figur inaktiv ist."
+    },
+    "3": {
+      "0": "Diese Waffe hat drei Zustände: Zwielicht, Abendröte und Morgengrauen. Diese drei Zustände erhöhen den verursachten Schaden jeweils um <cryo>10,5/17,5/24,5 %</cryo>. Nachdem die Figur einen Gegner trifft, wird der aktuelle Zustand deaktiviert und der nächste Zustand wird aktiviert. 7 s Abklingzeit für den Zustandswechsel, der auch ausgelöst werden kann, wenn die mit dieser Waffe ausgerüstete Figur inaktiv ist."
+    },
+    "4": {
+      "0": "Diese Waffe hat drei Zustände: Zwielicht, Abendröte und Morgengrauen. Diese drei Zustände erhöhen den verursachten Schaden jeweils um <cryo>12/20/28 %</cryo>. Nachdem die Figur einen Gegner trifft, wird der aktuelle Zustand deaktiviert und der nächste Zustand wird aktiviert. 7 s Abklingzeit für den Zustandswechsel, der auch ausgelöst werden kann, wenn die mit dieser Waffe ausgerüstete Figur inaktiv ist."
+    }
+  }
+}

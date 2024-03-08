@@ -1,0 +1,24 @@
+{
+  "name": "Arco Esmeralda do Caçador",
+  "description": {
+    "0": "Um arco de caça verde puro. Isso pertenceu a um certo caçador cuja casa era a floresta."
+  },
+  "passiveName": "Vento Esmeralda",
+  "passiveDescription": {
+    "0": {
+      "0": "Ao acertar um Ataque Normal ou Ataque com Mira, possui 50% de chance de gerar um Ciclone, que atrairá continuamente os inimigos ao redor, causando <cryo>40%</cryo> de Dano de ATQ a estes inimigos a cada 0.5s por 4s. Este efeito pode ser ativado uma vez a cada <cryo>14</cryo>s."
+    },
+    "1": {
+      "0": "Ao acertar um Ataque Normal ou Ataque com Mira, possui 50% de chance de gerar um Ciclone que atacará continuamente os inimigos ao redor, causando <cryo>50%</cryo> de Dano de ATQ a esses inimigos a cada 0.5s por 4s. Este efeito pode ser ativado uma vez a cada <cryo>13</cryo>s."
+    },
+    "2": {
+      "0": "Ao acertar um Ataque Normal ou Ataque com Mira, possui 50% de chance de gerar um Ciclone que atacará continuamente os inimigos ao redor, causando <cryo>60%</cryo> de Dano de ATQ a esses inimigos a cada 0.5s por 4s. Este efeito pode ser ativado uma vez a cada <cryo>12</cryo>s."
+    },
+    "3": {
+      "0": "Ao acertar um Ataque Normal ou Ataque com Mira, possui 50% de chance de gerar um Ciclone que atacará continuamente os inimigos ao redor, causando <cryo>70%</cryo> de Dano de ATQ a esses inimigos a cada 0.5s por 4s. Este efeito pode ser ativado uma vez a cada <cryo>11</cryo>s."
+    },
+    "4": {
+      "0": "Ao acertar um Ataque Normal ou Ataque com Mira, possui 50% de chance de gerar um Ciclone que atacará continuamente os inimigos ao redor, causando <cryo>80%</cryo> de Dano de ATQ a esses inimigos a cada 0.5s por 4s. Este efeito pode ser ativado uma vez a cada <cryo>10</cryo>s."
+    }
+  }
+}
