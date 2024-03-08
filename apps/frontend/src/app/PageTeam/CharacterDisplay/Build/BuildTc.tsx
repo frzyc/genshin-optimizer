@@ -18,7 +18,6 @@ import InfoIcon from '@mui/icons-material/Info'
 import {
   Box,
   Button,
-  CardActionArea,
   CardContent,
   CardHeader,
   Divider,
@@ -57,7 +56,15 @@ export default function BuildTc({
     // trigger validation
     database.teamChars.set(teamCharId, {})
   }
-
+  const canActivate = !active
+  const titleElement = (
+    <Box sx={{ p: 1, display: 'flex', gap: 1, alignItems: 'center' }}>
+      <Typography variant="h6">{name}</Typography>
+      <BootstrapTooltip title={<Typography>{description}</Typography>}>
+        <InfoIcon />
+      </BootstrapTooltip>
+    </Box>
+  )
   return (
     <>
       <ModalWrapper open={open} onClose={onClose}>
@@ -72,21 +79,22 @@ export default function BuildTc({
       >
         <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
           <Box sx={{ display: 'flex', gap: 1 }}>
-            <CardThemed sx={{ flexGrow: 1 }}>
-              <CardActionArea disabled={active} onClick={onActive}>
-                <Box
-                  component="span"
-                  sx={{ p: 1, display: 'flex', gap: 1, alignItems: 'center' }}
-                >
-                  <Typography variant="h6">{name}</Typography>
-                  <BootstrapTooltip
-                    title={<Typography>{description}</Typography>}
-                  >
-                    <InfoIcon />
-                  </BootstrapTooltip>
-                </Box>
-              </CardActionArea>
-            </CardThemed>
+            {canActivate ? (
+              <Button
+                onClick={onActive}
+                color="info"
+                sx={{
+                  flexGrow: 1,
+                  p: 0,
+                  textAlign: 'left',
+                  justifyContent: 'flex-start',
+                }}
+              >
+                {titleElement}
+              </Button>
+            ) : (
+              <CardThemed sx={{ flexGrow: 1 }}>{titleElement}</CardThemed>
+            )}
             <Tooltip
               title={<Typography>Edit Build Settings</Typography>}
               placement="top"
