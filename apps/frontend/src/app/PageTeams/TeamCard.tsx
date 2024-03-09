@@ -85,6 +85,7 @@ export default function TeamCard({
                   >
                     <CharacterCardPico
                       characterKey={database.teamChars.get(teamCharIds[i])!.key}
+                      disableTooltip
                     />
                   </CardActionArea>
                 ) : (
