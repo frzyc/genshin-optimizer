@@ -235,7 +235,6 @@ function TeamCharacterSelector({
                 key={ind}
                 onClick={() => setCharSelectIndex(ind)}
                 fullWidth
-                sx={{ height: '100%' }}
                 disabled={!!ind && !teamCharIds.some((id) => id)}
                 startIcon={<AddIcon />}
               >
