@@ -1,18 +1,14 @@
-import { useForceUpdate } from '@genshin-optimizer/common/react-util'
 import type {
   GeneralAutocompleteMultiProps,
   GeneralAutocompleteOption,
 } from '@genshin-optimizer/common/ui'
 import { GeneralAutocompleteMulti } from '@genshin-optimizer/common/ui'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
-import {
-  allCharacterKeys,
-  charKeyToLocGenderedCharKey,
-} from '@genshin-optimizer/gi/consts'
+import { charKeyToLocGenderedCharKey } from '@genshin-optimizer/gi/consts'
 import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { SillyContext } from '@genshin-optimizer/gi/ui'
-import { Box, Skeleton } from '@mui/material'
-import { Suspense, useCallback, useContext, useEffect, useMemo } from 'react'
+import { Skeleton } from '@mui/material'
+import { Suspense, useCallback, useContext, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import CharIconSide from '../Image/CharIconSide'
 
