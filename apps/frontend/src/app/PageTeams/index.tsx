@@ -133,7 +133,7 @@ export default function PageTeams() {
     numShowing: TeamIdsToShow.length,
     total: totalShowing,
     t: t,
-    namespace: 'page_character',
+    namespace: 'page_teams',
   }
 
   const sortByButtonProps = {
