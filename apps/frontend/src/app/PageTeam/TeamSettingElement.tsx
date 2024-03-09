@@ -3,7 +3,6 @@ import {
   CardThemed,
   ModalWrapper,
 } from '@genshin-optimizer/common/ui'
-import { range } from '@genshin-optimizer/common/util'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { CharacterName } from '@genshin-optimizer/gi/ui'
@@ -14,7 +13,6 @@ import {
   Alert,
   Box,
   Button,
-  ButtonGroup,
   CardContent,
   CardHeader,
   Divider,
@@ -25,12 +23,14 @@ import { Suspense, useDeferredValue, useEffect, useState } from 'react'
 import CharacterSelectionModal from '../Components/Character/CharacterSelectionModal'
 import CloseButton from '../Components/CloseButton'
 import CharIconSide from '../Components/Image/CharIconSide'
-
+import { LoadoutDropdown } from './LoadoutDropdown'
+import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward'
+import GroupsIcon from '@mui/icons-material/Groups'
 // TODO: Translation
 
 export default function TeamSettingElement({ teamId }: { teamId: string }) {
   const database = useDatabase()
-  const team = database.teams.get(teamId)
+  const team = database.teams.get(teamId)!
   const noChars = team.teamCharIds.every((id) => !id)
   // open the settings modal by default
   const [open, setOpen] = useState(noChars ? true : false)
@@ -42,7 +42,9 @@ export default function TeamSettingElement({ teamId }: { teamId: string }) {
 
   // trigger on teamId change, to use the new team's name/desc
   useEffect(() => {
-    const { name, description } = database.teams.get(teamId)
+    const newTeam = database.teams.get(teamId)
+    if (!newTeam) return
+    const { name, description } = newTeam
     setName(name)
     setDesc(description)
   }, [database, teamId])
@@ -64,27 +66,39 @@ export default function TeamSettingElement({ teamId }: { teamId: string }) {
   }, [database, descDeferred])
   return (
     <>
-      <Box display="flex" gap={1} alignItems="center">
-        <BootstrapTooltip title={<Typography>{team.description}</Typography>}>
-          <Button
-            endIcon={<DriveFileRenameOutlineIcon />}
-            onClick={() => setOpen((open) => !open)}
-          >
-            <Typography variant="h6">{team.name}</Typography>
-          </Button>
-        </BootstrapTooltip>
-      </Box>
+      <BootstrapTooltip title={<Typography>{team.description}</Typography>}>
+        <Button
+          color="info"
+          sx={{ flexGrow: 1 }}
+          startIcon={<GroupsIcon />}
+          endIcon={<DriveFileRenameOutlineIcon />}
+          onClick={() => setOpen((open) => !open)}
+        >
+          <Typography variant="h6">{team.name}</Typography>
+        </Button>
+      </BootstrapTooltip>
 
       <ModalWrapper open={open} onClose={() => setOpen(false)}>
         <CardThemed>
           <CardHeader
-            title="Team Settings"
+            title={
+              <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
+                <GroupsIcon />
+                <span>Team Settings</span>
+              </Box>
+            }
             action={<CloseButton onClick={() => setOpen(false)} />}
           />
           <Divider />
           <CardContent
             sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}
           >
+            <Alert variant="filled" severity="info">
+              <strong>Teams</strong> are a container for 4 character loadouts.
+              It provides a way for characters to apply team buffs, and
+              configuration of enemy stats. Loadouts can be shared between
+              teams.
+            </Alert>
             <TextField
               fullWidth
               label="Team Name"
@@ -104,7 +118,7 @@ export default function TeamSettingElement({ teamId }: { teamId: string }) {
             <Typography variant="h6">Team Editor</Typography>
             <Alert severity="info" variant="filled">
               The first character in the team receives any "active on-field
-              character" buffs
+              character" buffs, and cannot be empty.
             </Alert>
             <TeamCharacterSelector teamId={teamId} />
           </CardContent>
@@ -115,7 +129,7 @@ export default function TeamSettingElement({ teamId }: { teamId: string }) {
 }
 function TeamCharacterSelector({ teamId }: { teamId: string }) {
   const database = useDatabase()
-  const team = database.teams.get(teamId)
+  const team = database.teams.get(teamId)!
   const { teamCharIds } = team
   const [charSelectIndex, setCharSelectIndex] = useState(
     undefined as number | undefined
@@ -123,23 +137,19 @@ function TeamCharacterSelector({ teamId }: { teamId: string }) {
   const onSelect = (cKey: CharacterKey) => {
     if (charSelectIndex === undefined) return
 
+    // Make sure character exists
+    database.chars.getWithInitWeapon(cKey)
+
     const existingIndex = teamCharIds.findIndex(
-      (teamCharId) => database.teamChars.get(teamCharId).key === cKey
+      (teamCharId) => database.teamChars.get(teamCharId)?.key === cKey
     )
     if (existingIndex < 0) {
-      if (teamCharIds[charSelectIndex]) {
-        // Already have a teamChar at destination, prompt for deletion
-        if (
-          !window.confirm(
-            `Do you want to replace existing character with a new character? The loadouts and data (such as multi-opts) on this existing character will be deleted.`
-          )
-        )
-          return
-        // delete destination character
-        const existingTeamCharId = teamCharIds[charSelectIndex]
-        database.teamChars.remove(existingTeamCharId)
-      }
-      const teamCharId = database.teamChars.new(cKey)
+      //find the first available teamchar
+      let teamCharId = database.teamChars.keys.find(
+        (k) => database.teamChars.get(k)!.key === cKey
+      )
+      // if there is no teamchar, create one.
+      if (!teamCharId) teamCharId = database.teamChars.new(cKey)
       database.teams.set(teamId, (team) => {
         team.teamCharIds[charSelectIndex] = teamCharId
       })
@@ -156,39 +166,28 @@ function TeamCharacterSelector({ teamId }: { teamId: string }) {
       }
     }
   }
-  const onDel = (index: number) => () => {
-    if (
-      !window.confirm(
-        `Do you want to delete this character? The loadouts and data (such as multi-opts) on this character will be deleted.`
-      )
-    )
-      return
-    const oldId = teamCharIds[index]
-    database.teams.set(teamId, (team) => {
-      team.teamCharIds[index] = undefined
-    })
-    database.teamChars.remove(oldId)
-  }
   const charKeyAtIndex = database.teamChars.get(
-    teamCharIds[charSelectIndex]
+    teamCharIds[charSelectIndex as number]
   )?.key
+
   return (
     <>
       <Suspense fallback={false}>
         <CharacterSelectionModal
-          filter={(c) => charKeyAtIndex !== c?.key}
+          filter={(c) => c !== charKeyAtIndex}
           show={charSelectIndex !== undefined}
           onHide={() => setCharSelectIndex(undefined)}
           onSelect={onSelect}
         />
       </Suspense>
-      {range(0, 3).map((ind) =>
-        teamCharIds[ind] ? (
+      {teamCharIds.map((teamCharId, ind) =>
+        teamCharId ? (
           <CharSelButton
-            key={ind}
-            teamCharId={teamCharIds[ind]}
-            onClick={() => setCharSelectIndex(ind)}
-            onClose={onDel(ind)}
+            index={ind}
+            key={teamCharId}
+            teamId={teamId}
+            teamCharId={teamCharId}
+            onClickChar={() => setCharSelectIndex(ind)}
           />
         ) : (
           <Button
@@ -196,7 +195,7 @@ function TeamCharacterSelector({ teamId }: { teamId: string }) {
             onClick={() => setCharSelectIndex(ind)}
             fullWidth
             sx={{ height: '100%' }}
-            disabled={ind !== teamCharIds.length}
+            disabled={!!ind && !teamCharIds.some((id) => id)}
             startIcon={<AddIcon />}
           >
             Add Character
@@ -207,34 +206,67 @@ function TeamCharacterSelector({ teamId }: { teamId: string }) {
   )
 }
 function CharSelButton({
+  index,
+  teamId,
   teamCharId,
-  onClick,
-  onClose,
+  onClickChar,
 }: {
+  index: number
+  teamId: string
   teamCharId: string
-  onClick: () => void
-  onClose: () => void
+  onClickChar: () => void
 }) {
   const database = useDatabase()
-  const { key: characterKey } = database.teamChars.get(teamCharId)
+  const { key: characterKey } = database.teamChars.get(teamCharId)!
   const { gender } = useDBMeta()
+  const onChangeTeamCharId = (teamCharId: string) => {
+    database.teams.set(teamId, (team) => {
+      team.teamCharIds[index] = teamCharId
+    })
+  }
+  const onActive = () => {
+    // Swap the active with current loadout
+    database.teams.set(teamId, (team) => {
+      const oldActive = team.teamCharIds[0]
+      team.teamCharIds[0] = teamCharId
+      team.teamCharIds[index] = oldActive
+    })
+  }
+
+  const onDel = () =>
+    database.teams.set(teamId, (team) => {
+      team.teamCharIds[index] = undefined
+    })
   return (
-    <ButtonGroup fullWidth sx={{ height: '100%', alignItems: 'stretch' }}>
-      <Button
-        onClick={onClick}
-        color={'success'}
-        startIcon={<CharIconSide characterKey={characterKey} />}
-      >
-        <CharacterName characterKey={characterKey} gender={gender} />
-      </Button>
-      <Button
-        onClick={onClose}
-        color="error"
-        sx={{ flexBasis: '0' }}
-        // size="small"
-      >
-        <CloseIcon />
-      </Button>
-    </ButtonGroup>
+    <CardThemed bgt="light">
+      <CardContent>
+        <Box sx={{ display: 'flex', gap: 1 }}>
+          <Button
+            onClick={onClickChar}
+            color={'success'}
+            startIcon={<CharIconSide characterKey={characterKey} />}
+          >
+            <CharacterName characterKey={characterKey} gender={gender} />
+          </Button>
+          <LoadoutDropdown
+            teamCharId={teamCharId}
+            onChangeTeamCharId={onChangeTeamCharId}
+            dropdownBtnProps={{ sx: { flexGrow: 1 } }}
+          />
+          {!!index && (
+            <Button
+              onClick={onActive}
+              startIcon={<ArrowUpwardIcon />}
+              color="info"
+            >
+              Active
+            </Button>
+          )}
+          <Button onClick={onDel} color="error" sx={{ flexBasis: '0' }}>
+            <CloseIcon />
+          </Button>
+        </Box>
+      </CardContent>
+    </CardThemed>
   )
 }

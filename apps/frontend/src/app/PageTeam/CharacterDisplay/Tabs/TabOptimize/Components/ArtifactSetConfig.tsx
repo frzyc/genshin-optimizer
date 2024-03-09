@@ -64,7 +64,7 @@ export default function ArtifactSetConfig({
     teamChar: { conditional, optConfigId },
     teamCharId,
   } = useContext(TeamCharacterContext)
-  const { artSetExclusion } = useOptConfig(optConfigId)
+  const { artSetExclusion } = useOptConfig(optConfigId)!
   const [open, setOpen] = useState(false)
   const onOpen = useCallback(() => setOpen(true), [setOpen])
   const onClose = useCallback(() => setOpen(false), [setOpen])
@@ -548,7 +548,7 @@ function ArtifactSetCard({
   const {
     teamChar: { optConfigId },
   } = useContext(TeamCharacterContext)
-  const { artSetExclusion } = useOptConfig(optConfigId)
+  const { artSetExclusion } = useOptConfig(optConfigId)!
   const setExclusionSet = artSetExclusion?.[setKey] ?? []
   const allow4 = !setExclusionSet.includes(4)
   const slots = getNumSlots(slotCount)

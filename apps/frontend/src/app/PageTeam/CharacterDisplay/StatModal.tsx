@@ -1,6 +1,7 @@
 import type { TeamCharacter } from '@genshin-optimizer/gi/db'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { allEleDmgKeys, allEleResKeys } from '@genshin-optimizer/gi/keymap'
+import BarChartIcon from '@mui/icons-material/BarChart'
 import {
   Alert,
   Box,
@@ -17,7 +18,6 @@ import CardDark from '../../Components/Card/CardDark'
 import CardLight from '../../Components/Card/CardLight'
 import CloseButton from '../../Components/CloseButton'
 import ColorText from '../../Components/ColoredText'
-import { EnemyExpandCard } from '../../Components/EnemyEditor'
 import {
   FieldDisplayList,
   NodeFieldDisplay,
@@ -30,7 +30,6 @@ import { TeamCharacterContext } from '../../Context/TeamCharacterContext'
 import { allInputPremodKeys, uiInput as input } from '../../Formula'
 import type { ReadNode } from '../../Formula/type'
 import { nodeVStr } from '../../Formula/uiData'
-
 const cols = {
   xs: 1,
   md: 2,
@@ -43,13 +42,17 @@ export default function StatModal({ open, onClose }) {
     <ModalWrapper open={open} onClose={onClose}>
       <CardDark>
         <CardHeader
-          title={t`addStats.title`}
+          title={
+            <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
+              <BarChartIcon />
+              <span>{t`addStats.title`}</span>
+            </Box>
+          }
           action={<CloseButton onClick={onClose} />}
         />
         <CardContent sx={{ pt: 0 }}>
           <Stack spacing={1}>
             <BonusStatsEditor />
-            <EnemyExpandCard />
             <MainStatsCards />
           </Stack>
         </CardContent>

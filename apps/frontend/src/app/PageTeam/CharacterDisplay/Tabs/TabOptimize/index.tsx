@@ -4,7 +4,12 @@ import {
   useMediaQueryUp,
 } from '@genshin-optimizer/common/react-util'
 import { CardThemed, ModalWrapper } from '@genshin-optimizer/common/ui'
-import { objKeyMap, objPathValue, range } from '@genshin-optimizer/common/util'
+import {
+  notEmpty,
+  objKeyMap,
+  objPathValue,
+  range,
+} from '@genshin-optimizer/common/util'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import {
   allArtifactSlotKeys,
@@ -109,11 +114,14 @@ export default function TabBuild() {
     teamCharId,
     teamChar: { optConfigId, key: characterKey },
     teamId,
+    team,
   } = useContext(TeamCharacterContext)
   const { characterSheet } = useContext(CharacterContext)
   const database = useDatabase()
   const { setChartData, graphBuilds, setGraphBuilds } = useContext(GraphContext)
   const { gender } = useDBMeta()
+
+  const activeCharKey = database.teams.getActiveTeamChar(teamId)!.key
 
   const [notification, setnotification] = useState(false)
   const notificationRef = useRef(false)
@@ -159,7 +167,7 @@ export default function TabBuild() {
 
   const noArtifact = useMemo(() => !database.arts.values.length, [database])
 
-  const buildSetting = useOptConfig(optConfigId)
+  const buildSetting = useOptConfig(optConfigId)!
   const {
     plotBase,
     optimizationTarget,
@@ -170,6 +178,7 @@ export default function TabBuild() {
     levelHigh,
     builds,
     buildDate,
+    useTeammateBuild,
   } = buildSetting
   const { data } = useContext(DataContext)
   const oldData = useOldData()
@@ -194,10 +203,24 @@ export default function TabBuild() {
       levelHigh,
       allowLocationsState,
       useExcludedArts,
+      useTeammateBuild,
     } = deferredArtsDirty && deferredBuildSetting
+
+    const artifactIds = Array.from(
+      new Set(
+        team.teamCharIds
+          .filter(notEmpty)
+          .filter((tcId) => tcId !== teamCharId)
+          .map((tcId) => database.teamChars.getLoadoutArtifacts(tcId))
+          .flatMap((arts) => Object.values(arts))
+          .filter(notEmpty)
+          .map(({ id }) => id)
+      )
+    )
 
     return database.arts.values.filter((art) => {
       if (!useExcludedArts && artExclusion.includes(art.id)) return false
+      if (!useTeammateBuild && artifactIds.includes(art.id)) return false
       if (art.level < levelLow) return false
       if (art.level > levelHigh) return false
       const mainStats = mainStatKeys[art.slotKey]
@@ -219,7 +242,15 @@ export default function TabBuild() {
 
       return true
     })
-  }, [database, characterKey, deferredArtsDirty, deferredBuildSetting])
+  }, [
+    characterKey,
+    database.arts.values,
+    database.teamChars,
+    deferredArtsDirty,
+    deferredBuildSetting,
+    team.teamCharIds,
+    teamCharId,
+  ])
 
   const filteredArtIdMap = useMemo(
     () =>
@@ -319,7 +350,7 @@ export default function TabBuild() {
       []
     )
     if (!teamData) return
-    const workerData = uiDataForTeam(teamData.teamData, gender, characterKey)[
+    const workerData = uiDataForTeam(teamData.teamData, gender, activeCharKey)[
       characterKey
     ]?.target.data![0]
     if (!workerData) return
@@ -442,7 +473,7 @@ export default function TabBuild() {
         builds: builds.map((build) => ({
           artifactIds: objKeyMap(allArtifactSlotKeys, (slotKey) =>
             build.artifactIds.find(
-              (aId) => database.arts.get(aId).slotKey === slotKey
+              (aId) => database.arts.get(aId)?.slotKey === slotKey
             )
           ),
           weaponId,
@@ -480,13 +511,14 @@ export default function TabBuild() {
       })
     }
   }, [
-    teamCharId,
-    teamId,
     buildSetting,
     characterKey,
     filteredArts,
     database,
+    teamId,
+    teamCharId,
     gender,
+    activeCharKey,
     setChartData,
     maxWorkers,
     optConfigId,
@@ -664,6 +696,22 @@ export default function TabBuild() {
             excludedTotal={excludedTotal.in}
           />
 
+          <Button
+            fullWidth
+            startIcon={
+              useTeammateBuild ? <CheckBox /> : <CheckBoxOutlineBlank />
+            }
+            color={useTeammateBuild ? 'success' : 'secondary'}
+            onClick={() => {
+              database.optConfigs.set(optConfigId, {
+                useTeammateBuild: !useTeammateBuild,
+              })
+            }}
+            disabled={generatingBuilds}
+          >
+            {/* TODO: Translation */}
+            Use artifacts in teammates' builds
+          </Button>
           <Button
             fullWidth
             startIcon={allowPartial ? <CheckBox /> : <CheckBoxOutlineBlank />}
@@ -999,9 +1047,10 @@ function CopyTcButton({ build }: { build: GeneratedBuild }) {
       weapon,
       Object.values(build.artifactIds).map((id) => database.arts.get(id))
     )
-    database.buildTcs.set(buildTcId, {
-      name,
-    })
+    if (buildTcId)
+      database.buildTcs.set(buildTcId, {
+        name,
+      })
 
     setName('')
     OnHideTcPrompt()
@@ -1118,7 +1167,7 @@ type Prop = {
   children: React.ReactNode
   characterKey: CharacterKey
   build: GeneratedBuild
-  oldData: UIData
+  oldData?: UIData
   mainStatAssumptionLevel: number
 }
 function DataContextWrapper({
@@ -1141,7 +1190,8 @@ function DataContextWrapper({
     }
   }, [database, artifactIds, setDirty])
   useEffect(
-    () => database.weapons.follow(weaponId, () => setDirty()),
+    () =>
+      weaponId ? database.weapons.follow(weaponId, () => setDirty()) : () => {},
     [database, weaponId, setDirty]
   )
   const buildsArts = useMemo(

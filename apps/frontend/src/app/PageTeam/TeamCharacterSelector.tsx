@@ -1,30 +1,31 @@
 import { CardThemed } from '@genshin-optimizer/common/ui'
-import { range } from '@genshin-optimizer/common/util'
-import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
+import type { CharacterKey } from '@genshin-optimizer/gi/consts'
+import { useDBMeta, useDatabase, useTeam } from '@genshin-optimizer/gi/db-ui'
 import { CharacterName } from '@genshin-optimizer/gi/ui'
 import PersonIcon from '@mui/icons-material/Person'
 import { Box, Tab, Tabs } from '@mui/material'
-import { useMatch, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import CharIconSide from '../Components/Image/CharIconSide'
-export default function TeamCharacterSelector() {
+export default function TeamCharacterSelector({
+  teamId,
+  characterKey,
+  tab,
+}: {
+  teamId: string
+  characterKey?: CharacterKey
+  tab: string
+}) {
   const navigate = useNavigate()
   const database = useDatabase()
 
-  const {
-    params: { teamId, tab = 'overview', characterKey: characterKeyRaw },
-  } = useMatch({ path: '/teams/:teamId/:characterKey/:tab', end: false }) ?? {
-    params: { teamId: '', tab: 'overview', characterKey: '' },
-  }
-  const team = database.teams.get(teamId) ?? { teamCharIds: [] }
-  const { teamCharIds } = team
   const { gender } = useDBMeta()
-
+  const { teamCharIds } = useTeam(teamId)!
   return (
     <Box>
       <CardThemed bgt="light">
         <Tabs
           variant="fullWidth"
-          value={characterKeyRaw}
+          value={characterKey ?? 0}
           sx={{
             '& .MuiTab-root:hover': {
               transition: 'background-color 0.25s ease',
@@ -32,33 +33,30 @@ export default function TeamCharacterSelector() {
             },
           }}
         >
-          {range(0, 3).map((ind) => {
-            const characterKey = database.teamChars.get(teamCharIds[ind])?.key
+          {teamCharIds.map((teamCharId, ind) => {
+            const teamCharKey = database.teamChars.get(teamCharId)?.key
             return (
               <Tab
                 icon={
-                  characterKey ? (
-                    <CharIconSide characterKey={characterKey} sideMargin />
+                  teamCharKey ? (
+                    <CharIconSide characterKey={teamCharKey} sideMargin />
                   ) : (
                     <PersonIcon />
                   )
                 }
                 iconPosition="start"
-                value={characterKey ?? ind}
+                value={teamCharKey ?? ind}
                 key={ind}
                 disabled={!teamCharIds[ind]}
                 label={
-                  characterKey ? (
-                    <CharacterName
-                      characterKey={characterKey}
-                      gender={gender}
-                    />
+                  teamCharKey ? (
+                    <CharacterName characterKey={teamCharKey} gender={gender} />
                   ) : (
-                    `Character ${ind + 1}`
+                    `Character ${ind + 1}` // TODO: Translation
                   )
                 }
                 onClick={() =>
-                  navigate(`/teams/${teamId}/${characterKey}/${tab}`)
+                  navigate(`/teams/${teamId}/${teamCharKey}/${tab}`)
                 }
               />
             )

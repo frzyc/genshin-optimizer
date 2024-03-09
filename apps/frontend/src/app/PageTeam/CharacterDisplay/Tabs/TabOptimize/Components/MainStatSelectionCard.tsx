@@ -46,7 +46,7 @@ export default function MainStatSelectionCard({
   const {
     teamChar: { optConfigId },
   } = useContext(TeamCharacterContext)
-  const { mainStatKeys } = useOptConfig(optConfigId)
+  const { mainStatKeys } = useOptConfig(optConfigId)!
   const database = useDatabase()
   const { mainStatSlotTots, slotTots } = useMemo(() => {
     const catKeys = {

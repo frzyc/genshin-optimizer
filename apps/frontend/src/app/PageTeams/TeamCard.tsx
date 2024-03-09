@@ -32,16 +32,10 @@ export default function TeamCard({
   onClick: (cid?: CharacterKey) => void
   disableButtons?: boolean
 }) {
-  const team = useTeam(teamId)
+  const team = useTeam(teamId)!
   const { name, description, teamCharIds } = team
   const database = useDatabase()
   const onDel = () => {
-    if (
-      !window.confirm(
-        `Do you want to remove this team? This will delete all loadouts and data (such as multi-opts) in this team as well.`
-      )
-    )
-      return
     database.teams.remove(teamId)
   }
   const onExport = () => {
@@ -86,11 +80,11 @@ export default function TeamCard({
                 {teamCharIds[i] ? (
                   <CardActionArea
                     onClick={() =>
-                      onClick(database.teamChars.get(teamCharIds[i]).key)
+                      onClick(database.teamChars.get(teamCharIds[i])!.key)
                     }
                   >
                     <CharacterCardPico
-                      characterKey={database.teamChars.get(teamCharIds[i]).key}
+                      characterKey={database.teamChars.get(teamCharIds[i])!.key}
                     />
                   </CardActionArea>
                 ) : (

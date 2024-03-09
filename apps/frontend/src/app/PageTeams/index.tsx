@@ -1,8 +1,14 @@
+import { useDataEntryBase } from '@genshin-optimizer/common/database-ui'
 import {
   useBoolState,
   useForceUpdate,
+  useMediaQueryUp,
 } from '@genshin-optimizer/common/react-util'
-import { CardThemed, ModalWrapper } from '@genshin-optimizer/common/ui'
+import {
+  CardThemed,
+  ModalWrapper,
+  useOnScreen,
+} from '@genshin-optimizer/common/ui'
 import { sortFunction } from '@genshin-optimizer/common/util'
 import { teamSortKeys } from '@genshin-optimizer/gi/db'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
@@ -20,16 +26,23 @@ import {
   Typography,
 } from '@mui/material'
 import { Suspense, useEffect, useMemo, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
-import SortByButton from '../Components/SortByButton'
+import ShowingAndSortOptionSelect from '../Components/ShowingAndSortOptionSelect'
 import TeamCard from './TeamCard'
 import { teamSortConfigs, teamSortMap } from './TeamSort'
-import { useDataEntryBase } from '@genshin-optimizer/common/database-ui'
 const columns = { xs: 1, sm: 2, md: 3, lg: 4, xl: 4 }
+const numToShowMap = { xs: 5, sm: 8, md: 9, lg: 12, xl: 12 }
 
 // TODO: Translation
 
 export default function PageTeams() {
+  const { t } = useTranslation([
+    'page_teams',
+    // Always load these 2 so character names are loaded for searching/sorting
+    'sillyWisher_charNames',
+    'charNames_gen',
+  ])
   const database = useDatabase()
   const [dbDirty, forceUpdate] = useForceUpdate()
   const navigate = useNavigate()
@@ -61,18 +74,50 @@ export default function PageTeams() {
   const { sortType, ascending } = useDataEntryBase(database.displayTeam)
 
   // Currently using the BD key as an ID maybe later will need to add an ID entry to Team
-  const teamIds = useMemo(
-    () =>
-      dbDirty &&
-      database.teams.keys.sort((k1, k2) => {
-        return sortFunction(
-          teamSortMap[sortType],
-          ascending,
-          teamSortConfigs()
-        )(database.teams.get(k1), database.teams.get(k2))
-      }),
-    [dbDirty, database.teams, sortType, ascending]
+  const { teamIds, totalTeamNum } = useMemo(() => {
+    const totalTeamNum = database.teams.keys.length
+    const teamIds = database.teams.keys.sort((k1, k2) => {
+      return sortFunction(
+        teamSortMap[sortType],
+        ascending,
+        teamSortConfigs()
+      )(database.teams.get(k1)!, database.teams.get(k2)!)
+    })
+    return dbDirty && { teamIds, totalTeamNum }
+  }, [dbDirty, database.teams, sortType, ascending])
+  const brPt = useMediaQueryUp()
+  const [numShow, setNumShow] = useState(numToShowMap[brPt])
+  // reset the numShow when artifactIds changes
+  useEffect(() => {
+    teamIds && setNumShow(numToShowMap[brPt])
+  }, [teamIds, brPt])
+
+  const [triggerElement, setTriggerElement] = useState<
+    HTMLElement | undefined
+  >()
+  const trigger = useOnScreen(triggerElement)
+  const shouldIncrease = trigger && numShow < teamIds.length
+  useEffect(() => {
+    if (!shouldIncrease) return
+    setNumShow((num) => num + numToShowMap[brPt])
+  }, [shouldIncrease, brPt])
+
+  const TeamIdsToShow = useMemo(
+    () => teamIds.slice(0, numShow),
+    [teamIds, numShow]
   )
+
+  const totalShowing =
+    teamIds.length !== totalTeamNum
+      ? `${teamIds.length}/${totalTeamNum}`
+      : `${totalTeamNum}`
+
+  const showingTextProps = {
+    numShowing: TeamIdsToShow.length,
+    total: totalShowing,
+    t: t,
+    namespace: 'page_character',
+  }
 
   const sortByButtonProps = {
     sortKeys: [...teamSortKeys],
@@ -84,16 +129,22 @@ export default function PageTeams() {
 
   return (
     <Box my={1} display="flex" flexDirection="column" gap={1}>
-      <Box
-        sx={{
-          display: 'flex',
-          justifyContent: 'flex-end',
-          alignItems: 'center',
-        }}
-      >
-        {/* May use `PageAndSortOptionSelect` to add multiple pages and filter count later */}
-        <SortByButton {...sortByButtonProps} />
-      </Box>
+      <CardThemed>
+        <CardContent>
+          <Box
+            display="flex"
+            justifyContent="space-between"
+            alignItems="center"
+            flexWrap="wrap"
+          >
+            <ShowingAndSortOptionSelect
+              showingTextProps={showingTextProps}
+              sortByButtonProps={sortByButtonProps}
+            />
+          </Box>
+        </CardContent>
+      </CardThemed>
+
       <Box sx={{ display: 'flex', gap: 1 }}>
         <Button fullWidth onClick={onAdd} color="info" startIcon={<AddIcon />}>
           Add Team
@@ -143,7 +194,7 @@ export default function PageTeams() {
         }
       >
         <Grid container spacing={1} columns={columns}>
-          {teamIds.map((tid) => (
+          {TeamIdsToShow.map((tid) => (
             <Grid item xs={1} key={tid}>
               <TeamCard
                 teamId={tid}
@@ -154,6 +205,18 @@ export default function PageTeams() {
           ))}
         </Grid>
       </Suspense>
+      {teamIds.length !== TeamIdsToShow.length && (
+        <Skeleton
+          ref={(node) => {
+            if (!node) return
+            setTriggerElement(node)
+          }}
+          sx={{ borderRadius: 1 }}
+          variant="rectangular"
+          width="100%"
+          height={100}
+        />
+      )}
     </Box>
   )
 }

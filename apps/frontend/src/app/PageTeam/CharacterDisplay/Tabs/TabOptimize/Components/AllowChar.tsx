@@ -84,7 +84,7 @@ export default function AllowChar({
     character: { key: characterKey },
   } = useContext(CharacterContext)
   const { silly } = useContext(SillyContext)
-  const { excludedLocations, allowLocationsState } = useOptConfig(optConfigId)
+  const { excludedLocations, allowLocationsState } = useOptConfig(optConfigId)!
   const database = useDatabase()
   const [show, onOpen, onClose] = useBoolState(false)
   const [dbDirty, forceUpdate] = useForceUpdate()
@@ -136,6 +136,20 @@ export default function AllowChar({
       deferredSearchTerm,
       silly,
     ]
+  )
+
+  const locListLength = useMemo(
+    () =>
+      deferredDbDirty &&
+      new Set(
+        Object.keys(database.chars.data)
+          .filter(
+            (ck) =>
+              charKeyToLocCharKey(ck) !== charKeyToLocCharKey(characterKey)
+          )
+          .map(charKeyToLocCharKey)
+      ).size,
+    [characterKey, database.chars.data, deferredDbDirty]
   )
 
   const locList = Array.from(
@@ -291,7 +305,8 @@ export default function AllowChar({
 
   const onMouseUp = useCallback(() => setMouseUpDetected(true), [])
 
-  const total = locList.length
+  // `total` shouldn't rely on `locList.length` because it gets filtered
+  const total = locListLength
   const useTot = total - excludedLocations.length
   const totalStr = useTot === total ? useTot : `${useTot}/${total}`
   const charactersAllowed =

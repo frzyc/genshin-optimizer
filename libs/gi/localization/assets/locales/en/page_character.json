@@ -42,7 +42,7 @@
     "target_other": "<0>{{count}}</0> Targets"
   },
   "addStats": {
-    "title": "Enemy Config + Bonus Stats",
+    "title": "Bonus Stats",
     "info": "You can use these fields to add buffs/debuffs not directly supported in GO, such as food buffs, Abyss cards, or Superconduct. Please refer to the <1>Genshin Impact Wiki</1> for specific values.",
     "label": "New Bonus Stat"
   },

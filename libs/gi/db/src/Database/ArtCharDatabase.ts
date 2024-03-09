@@ -6,9 +6,9 @@ import { DBMetaEntry } from './DataEntries/DBMetaEntry'
 import { DisplayArtifactEntry } from './DataEntries/DisplayArtifactEntry'
 import { DisplayCharacterEntry } from './DataEntries/DisplayCharacterEntry'
 import { DisplayOptimizeEntry } from './DataEntries/DisplayOptimizeEntry'
+import { DisplayTeamEntry } from './DataEntries/DisplayTeamEntry'
 import { DisplayToolEntry } from './DataEntries/DisplayTool'
 import { DisplayWeaponEntry } from './DataEntries/DisplayWeaponEntry'
-import { DisplayTeamEntry } from './DataEntries/DisplayTeamEntry'
 import { ArtifactDataManager } from './DataManagers/ArtifactDataManager'
 import { BuildDataManager } from './DataManagers/BuildDataManager'
 import { BuildTcDataManager } from './DataManagers/BuildTcDataManager'
@@ -169,10 +169,10 @@ export class ArtCharDatabase extends Database {
         if (ind < 0) arr.push(value)
         else arr[ind] = value
       }),
-      this.arts.followAny((key, reason, value) =>
+      this.arts.followAny((_key, reason, value) =>
         result.artifacts[reason].push(value)
       ),
-      this.weapons.followAny((key, reason, value) =>
+      this.weapons.followAny((_key, reason, value) =>
         result.weapons[reason].push(value)
       ),
     ]
