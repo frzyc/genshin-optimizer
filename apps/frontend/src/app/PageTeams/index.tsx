@@ -10,7 +10,6 @@ import {
   useOnScreen,
 } from '@genshin-optimizer/common/ui'
 import { filterFunction, sortFunction } from '@genshin-optimizer/common/util'
-import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import { teamSortKeys } from '@genshin-optimizer/gi/db'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import AddIcon from '@mui/icons-material/Add'
@@ -75,11 +74,14 @@ export default function PageTeams() {
       return
     }
   }
-  const { sortType, ascending } = useDataEntryBase(database.displayTeam)
+  const displayTeam = useDataEntryBase(database.displayTeam)
+  const { sortType, ascending, charKeys } = displayTeam
 
-  const [charKeys, setCharKeys] = useState([] as CharacterKey[])
-  const [searchTerm, setSearchTerm] = useState('')
+  const [searchTerm, setSearchTerm] = useState(displayTeam.searchTerm)
   const deferredSearchTerm = useDeferredValue(searchTerm)
+  useEffect(() => {
+    database.displayTeam.set({ searchTerm: deferredSearchTerm })
+  }, [database, deferredSearchTerm])
 
   // Currently using the BD key as an ID maybe later will need to add an ID entry to Team
   const { teamIds, totalTeamNum } = useMemo(() => {
@@ -148,8 +150,9 @@ export default function PageTeams() {
         <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
           <Box display="flex" gap={1} alignItems="stretch">
             <CharacterMultiAutocomplete
+              teamIds={teamIds}
               charKeys={charKeys}
-              setCharKey={setCharKeys}
+              setCharKey={(charKeys) => database.displayTeam.set({ charKeys })}
               acProps={{ sx: { flexGrow: 1 } }}
             />
             <TextField
