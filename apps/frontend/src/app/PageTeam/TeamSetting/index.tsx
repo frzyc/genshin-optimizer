@@ -156,7 +156,7 @@ export default function TeamSetting({
               multiline
               rows={4}
             />
-            <Box sx={{ display: 'flex', gap: 1 }}>
+            <Box sx={{ display: 'flex', gap: 2 }}>
               <Button
                 color="info"
                 sx={{ flexGrow: 1 }}
@@ -166,7 +166,6 @@ export default function TeamSetting({
               >
                 Export Team
               </Button>
-              <Divider orientation="vertical" />
               <Button
                 color="info"
                 sx={{ flexGrow: 1 }}
@@ -176,7 +175,6 @@ export default function TeamSetting({
               >
                 Duplicate Team
               </Button>
-              <Divider orientation="vertical" />
               <Button color="error" size="small" onClick={onDel}>
                 <DeleteForeverIcon />
               </Button>
