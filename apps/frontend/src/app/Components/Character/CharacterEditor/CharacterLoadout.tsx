@@ -4,9 +4,10 @@ import {
   SqBadge,
 } from '@genshin-optimizer/common/ui'
 import { unit } from '@genshin-optimizer/common/util'
-import { artifactAsset, weaponAsset } from '@genshin-optimizer/gi/assets'
+import { artifactAsset } from '@genshin-optimizer/gi/assets'
 import type { ArtifactSlotKey } from '@genshin-optimizer/gi/consts'
 import { allArtifactSlotKeys } from '@genshin-optimizer/gi/consts'
+import type { ICachedWeapon} from '@genshin-optimizer/gi/db';
 import { type ICachedArtifact } from '@genshin-optimizer/gi/db'
 import { useBuildTc, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { StatIcon } from '@genshin-optimizer/gi/svgicons'
@@ -23,14 +24,16 @@ import {
   IconButton,
   Typography,
 } from '@mui/material'
-import { useState } from 'react'
+import { useContext, useState } from 'react'
+import { DataContext } from '../../../Context/DataContext'
 import { getWeaponSheet } from '../../../Data/Weapons'
 import ArtifactCardPico from '../../Artifact/ArtifactCardPico'
 import SlotIcon from '../../Artifact/SlotIcon'
+import { NodeFieldDisplay } from '../../FieldDisplay'
 import ImgIcon from '../../Image/ImgIcon'
 import { StatWithUnit } from '../../StatDisplay'
+import { WeaponCardNanoObj } from '../../Weapon/WeaponCardNano'
 import WeaponCardPico from '../../Weapon/WeaponCardPico'
-import WeaponNameTooltip from '../../Weapon/WeaponNameTooltip'
 
 export function CharacterLoadout({ activeCharId }: { activeCharId: string }) {
   const database = useDatabase()
@@ -80,7 +83,9 @@ function ShowReal({
   weaponId: string
   artifacts: Array<[ArtifactSlotKey, ICachedArtifact | undefined]>
 }) {
+  const { data } = useContext(DataContext)
   const [expanded, setExpanded] = useState(false)
+  const upperRow = ['flower', 'plume']
 
   return (
     <CardThemed
@@ -102,17 +107,52 @@ function ShowReal({
         expanded={expanded}
       />
       <Collapse in={expanded} timeout="auto">
-        <Grid container columns={6} spacing={1}>
-          <Grid item xs={2} sm={1} height="100%">
-            <WeaponCardPico weaponId={weaponId ?? ''} />
-          </Grid>
-          {artifacts.map(
-            ([key, art]: [ArtifactSlotKey, ICachedArtifact | undefined]) => (
-              <Grid item key={key} xs={2} sm={1}>
-                <ArtifactCardPico artifactObj={art} slotKey={key} />
+        <Grid container spacing={1} direction="row">
+          <Grid item container direction="column" spacing={1} xs={12} md={3}>
+            <Grid item container spacing={1} justifyContent="center">
+              <Grid item xs={3} md={8}>
+                <WeaponCardPico weaponId={weaponId ?? ''} />
               </Grid>
-            )
-          )}
+              <Grid item container xs={6} md={4} spacing={1}>
+                {artifacts.map(
+                  ([key, art]: [
+                    ArtifactSlotKey,
+                    ICachedArtifact | undefined
+                  ]) =>
+                    upperRow.includes(key) && (
+                      <Grid item key={key} xs={6} md={12}>
+                        <ArtifactCardPico artifactObj={art} slotKey={key} />
+                      </Grid>
+                    )
+                )}
+              </Grid>
+            </Grid>
+            <Grid item container spacing={1} justifyContent="center">
+              {artifacts.map(
+                ([key, art]: [ArtifactSlotKey, ICachedArtifact | undefined]) =>
+                  !upperRow.includes(key) && (
+                    <Grid item key={key} xs={3} md={4}>
+                      <ArtifactCardPico artifactObj={art} slotKey={key} />
+                    </Grid>
+                  )
+              )}
+            </Grid>
+          </Grid>
+          <Grid
+            item
+            container
+            direction="row"
+            justifyContent="space-evenly"
+            spacing={1}
+            xs={12}
+            md={9}
+          >
+            {Object.values(data.getDisplay().basic).map((n) => (
+              <Grid item key={JSON.stringify(n.info)} xs={12} md={5}>
+                <NodeFieldDisplay node={n} />
+              </Grid>
+            ))}
+          </Grid>
         </Grid>
       </Collapse>
     </CardThemed>
@@ -159,43 +199,27 @@ function ShowTC({ buildTcId }: { buildTcId: string }) {
           direction="row"
           justifyContent="center"
         >
-          <Grid item container xs={3} md={1} columns={3}>
+          <Grid
+            item
+            container
+            xs={3}
+            md={1}
+            columns={3}
+            direction="row"
+            alignItems="stretch"
+            justifyContent="center"
+          >
             <CardThemed
               sx={{
                 p: 1,
-                gap: 1,
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'stretch',
               }}
             >
-              <Box
-                sx={{
-                  display: 'flex',
-                  flexDirection: 'row',
-                  gap: 1,
-                  justifyContent: 'space-between',
-                }}
-              >
-                <Grid
-                  item
-                  xs={3}
-                  md={1}
-                  className={`grad-${weaponSheet.rarity}star`}
-                  sx={{
-                    display: 'flex',
-                    borderRadius: 3,
-                  }}
-                >
-                  <WeaponNameTooltip sheet={weaponSheet}>
-                    <Box
-                      component="img"
-                      src={weaponAsset(weapon.key, weapon.ascension >= 2)}
-                      sx={{ maxWidth: '100%' }}
-                    />
-                  </WeaponNameTooltip>
-                </Grid>
-              </Box>
+              <Grid item xs={3} lg={2}>
+                <WeaponCardNanoObj
+                  weapon={weapon as ICachedWeapon}
+                  weaponSheet={weaponSheet}
+                />
+              </Grid>
 
               <Grid item xs={3}>
                 {!!Object.keys(sets).length &&
