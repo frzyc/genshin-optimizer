@@ -63,6 +63,7 @@ declare module '@mui/material/InputBase' {
 
 const defaultTheme = createTheme({
   palette: {
+    tonalOffset: 0.1,
     mode: `dark`,
   },
 })

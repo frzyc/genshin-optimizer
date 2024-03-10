@@ -1,9 +1,11 @@
 import { CardThemed, SqBadge } from '@genshin-optimizer/common/ui'
+import { objPathValue } from '@genshin-optimizer/common/util'
 import { artifactAsset } from '@genshin-optimizer/gi/assets'
 import {
   useBuildTc,
   useCharacter,
   useDatabase,
+  useTeam,
   useTeamChar,
 } from '@genshin-optimizer/gi/db-ui'
 import { ArtifactSetName } from '@genshin-optimizer/gi/ui'
@@ -18,62 +20,31 @@ import {
 } from '@mui/material'
 import { Suspense, useContext, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
-import { useMatch, useNavigate } from 'react-router-dom'
-import CardLight from '../../../Components/Card/CardLight'
-import { CharacterCardEquipmentRow } from '../../../Components/Character/CharacterCard/CharacterCardEquipmentRow'
+import CardLight from '../../Components/Card/CardLight'
+import { CharacterCardEquipmentRow } from '../../Components/Character/CharacterCard/CharacterCardEquipmentRow'
 import {
   CharacterCardHeader,
   CharacterCardHeaderContent,
-} from '../../../Components/Character/CharacterCard/CharacterCardHeader'
-import ColorText from '../../../Components/ColoredText'
-import DocumentDisplay from '../../../Components/DocumentDisplay'
-import { NodeFieldDisplay } from '../../../Components/FieldDisplay'
-import ImgIcon from '../../../Components/Image/ImgIcon'
-import { InfoTooltipInline } from '../../../Components/InfoTooltip'
-import { WeaponFullCardObj } from '../../../Components/Weapon/WeaponFullCard'
-import type { CharacterContextObj } from '../../../Context/CharacterContext'
-import { CharacterContext } from '../../../Context/CharacterContext'
-import type { dataContextObj } from '../../../Context/DataContext'
-import { DataContext } from '../../../Context/DataContext'
-import type { TeamCharacterContextObj } from '../../../Context/TeamCharacterContext'
-import { TeamCharacterContext } from '../../../Context/TeamCharacterContext'
-import { dataSetEffects, getArtSheet } from '../../../Data/Artifacts'
-import type CharacterSheet from '../../../Data/Characters/CharacterSheet'
-import { resonanceSheets } from '../../../Data/Resonance'
-import { input } from '../../../Formula'
-import type { NodeDisplay } from '../../../Formula/uiData'
-import { objPathValue } from '../../../Util/Util'
+} from '../../Components/Character/CharacterCard/CharacterCardHeader'
+import ColorText from '../../Components/ColoredText'
+import DocumentDisplay from '../../Components/DocumentDisplay'
+import { NodeFieldDisplay } from '../../Components/FieldDisplay'
+import ImgIcon from '../../Components/Image/ImgIcon'
+import { InfoTooltipInline } from '../../Components/InfoTooltip'
+import { WeaponFullCardObj } from '../../Components/Weapon/WeaponFullCard'
+import type { CharacterContextObj } from '../../Context/CharacterContext'
+import { CharacterContext } from '../../Context/CharacterContext'
+import type { dataContextObj } from '../../Context/DataContext'
+import { DataContext } from '../../Context/DataContext'
+import type { TeamCharacterContextObj } from '../../Context/TeamCharacterContext'
+import { TeamCharacterContext } from '../../Context/TeamCharacterContext'
+import { dataSetEffects, getArtSheet } from '../../Data/Artifacts'
+import type CharacterSheet from '../../Data/Characters/CharacterSheet'
+import { resonanceSheets } from '../../Data/Resonance'
+import { input } from '../../Formula'
+import type { NodeDisplay } from '../../Formula/uiData'
 
-export default function TabTeambuffs() {
-  const {
-    team: { teamCharIds },
-    teamCharId,
-  } = useContext(TeamCharacterContext)
-  return (
-    <Box display="flex" flexDirection="column" gap={1} alignItems="stretch">
-      <Grid container spacing={1}>
-        <Grid
-          item
-          xs={12}
-          md={6}
-          lg={3}
-          sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}
-        >
-          <TeamBuffDisplay />
-          <ResonanceDisplay />
-        </Grid>
-        {(teamCharIds.filter((id) => id && id !== teamCharId) as string[]).map(
-          (id) => (
-            <Grid item xs={12} md={6} lg={3} key={id}>
-              <TeammateDisplay teamCharId={id} />
-            </Grid>
-          )
-        )}
-      </Grid>
-    </Box>
-  )
-}
-function TeamBuffDisplay() {
+export function TeamBuffDisplay() {
   const { data, oldData } = useContext(DataContext)
   const teamBuffs = data.getTeamBuff() as any
   const nodes: Array<[string[], NodeDisplay<number>]> = []
@@ -117,12 +88,11 @@ function TeamBuffDisplay() {
     </CardLight>
   )
 }
-function ResonanceDisplay() {
+export function ResonanceDisplay({ teamId }: { teamId: string }) {
   const { t } = useTranslation('page_character')
   const { data } = useContext(DataContext)
-  const {
-    team: { teamCharIds },
-  } = useContext(TeamCharacterContext)
+
+  const { teamCharIds } = useTeam(teamId)!
   const teamCount = teamCharIds.reduce((a, t) => a + (t ? 1 : 0), 0)
   return (
     <>
@@ -169,22 +139,21 @@ function ResonanceDisplay() {
     </>
   )
 }
-function TeammateDisplay({ teamCharId }: { teamCharId: string }) {
-  const { teamData } = useContext(DataContext)
-  const navigate = useNavigate()
-  const { teamId, team } = useContext(TeamCharacterContext)
+export function TeammateDisplay({
+  teamCharId,
+  dataContextValue,
+  teamId,
+}: {
+  teamCharId: string
+  teamId: string
+  dataContextValue: dataContextObj
+}) {
+  const { teamData } = dataContextValue
+  const team = useTeam(teamId)!
   const teamChar = useTeamChar(teamCharId)!
   const teamMateKey = teamChar?.key
   const character = useCharacter(teamMateKey)!
   const { key: characterKey } = character
-
-  const {
-    params: { tab = '' },
-  } = useMatch({ path: '/teams/:teamId/:characterKey/:tab', end: false }) ?? {
-    params: { tab: '' },
-  }
-
-  const onClick = () => navigate(`/teams/${teamId}/${characterKey}/${tab}`)
 
   const dataBundle = teamData[teamMateKey]
   const teammateCharacterContext: TeamCharacterContextObj | undefined = useMemo(
@@ -215,57 +184,37 @@ function TeammateDisplay({ teamCharId }: { teamCharId: string }) {
       },
     [dataBundle, teamData]
   )
+  if (
+    !teamMateKey ||
+    !teammateCharacterContext ||
+    !teamMateDataContext ||
+    !characterContext
+  )
+    return null
   return (
-    <CardLight sx={{ overflow: 'visible' }}>
-      {teamMateKey && teammateCharacterContext && (
-        <TeamCharacterContext.Provider value={teammateCharacterContext}>
-          {teamMateDataContext && (
-            <DataContext.Provider value={teamMateDataContext}>
-              {characterContext && (
-                <CharacterContext.Provider value={characterContext}>
-                  <Suspense
-                    fallback={
-                      <Skeleton
-                        variant="rectangular"
-                        width="100%"
-                        height={600}
-                      />
-                    }
-                  >
-                    <CardThemed bgt="light">
-                      <CharacterCardHeader
-                        characterKey={characterKey}
-                        onClick={onClick}
-                      >
-                        <CharacterCardHeaderContent
-                          characterKey={characterKey}
-                        />
-                      </CharacterCardHeader>
-                      <Box
-                        sx={{
-                          p: 1,
-                          width: '100%',
-                          display: 'flex',
-                          flexDirection: 'column',
-                          gap: 1,
-                          flexGrow: 1,
-                        }}
-                      >
-                        <EquipmentRow />
-                        <CharArtifactCondDisplay />
-                        <CharacterCardWeaponFull />
-                        <CharWeaponCondDisplay />
-                        <CharTalentCondDisplay />
-                      </Box>
-                    </CardThemed>
-                  </Suspense>
-                </CharacterContext.Provider>
-              )}
-            </DataContext.Provider>
-          )}
-        </TeamCharacterContext.Provider>
-      )}
-    </CardLight>
+    <TeamCharacterContext.Provider value={teammateCharacterContext}>
+      <DataContext.Provider value={teamMateDataContext}>
+        <CharacterContext.Provider value={characterContext}>
+          <Suspense
+            fallback={
+              <Skeleton variant="rectangular" width="100%" height={600} />
+            }
+          >
+            <CardThemed bgt="light">
+              <CharacterCardHeader characterKey={characterKey}>
+                <CharacterCardHeaderContent characterKey={characterKey} />
+              </CharacterCardHeader>
+            </CardThemed>
+
+            <EquipmentRow />
+            <CharArtifactCondDisplay />
+            <CharacterCardWeaponFull teamCharId={teamCharId} />
+            <CharWeaponCondDisplay />
+            <CharTalentCondDisplay />
+          </Suspense>
+        </CharacterContext.Provider>
+      </DataContext.Provider>
+    </TeamCharacterContext.Provider>
   )
 }
 function EquipmentRow() {
@@ -283,7 +232,7 @@ function TcEquipmentRow() {
     artifact: { sets },
   } = useBuildTc(buildTcId)!
   return (
-    <CardThemed sx={{ flexGrow: 1 }}>
+    <CardThemed bgt="light" sx={{ flexGrow: 1 }}>
       <Box
         sx={{
           p: 1,
@@ -310,17 +259,19 @@ function TcEquipmentRow() {
     </CardThemed>
   )
 }
-function CharacterCardWeaponFull() {
+function CharacterCardWeaponFull({ teamCharId }: { teamCharId: string }) {
   const { data } = useContext(DataContext)
-  const { teamCharId } = useContext(TeamCharacterContext)
   const database = useDatabase()
   const weapon = useMemo(() => {
-    const weaponId = data.get(input.weapon.id).value?.toString() ?? ''
-    if (weaponId) return database.weapons.get(weaponId)
+    const weaponId = data.get(input.weapon.id).value?.toString() ?? 'invalid'
+
+    if (weaponId && weaponId !== 'invalid')
+      return database.weapons.get(weaponId)
     else return database.teamChars.getLoadoutWeapon(teamCharId) // TC build
   }, [database, data, teamCharId])
+  console.log({ weapon })
   if (!weapon) return null
-  return <WeaponFullCardObj weapon={weapon} />
+  return <WeaponFullCardObj weapon={weapon} bgt="light" />
 }
 function CharArtifactCondDisplay() {
   const { data } = useContext(DataContext)
@@ -332,7 +283,7 @@ function CharArtifactCondDisplay() {
     [data]
   )
   if (!sections) return null
-  return <DocumentDisplay sections={sections} teamBuffOnly={true} />
+  return <DocumentDisplay bgt="light" sections={sections} teamBuffOnly={true} />
 }
 function CharWeaponCondDisplay() {
   const {
@@ -341,7 +292,13 @@ function CharWeaponCondDisplay() {
   const { teamData } = useContext(DataContext)
   const weaponSheet = teamData[charKey]!.weaponSheet
   if (!weaponSheet.document) return null
-  return <DocumentDisplay sections={weaponSheet.document} teamBuffOnly={true} />
+  return (
+    <DocumentDisplay
+      bgt="light"
+      sections={weaponSheet.document}
+      teamBuffOnly={true}
+    />
+  )
 }
 function CharTalentCondDisplay() {
   const {
@@ -353,5 +310,5 @@ function CharTalentCondDisplay() {
     (sts) => sts.sections
   )
   if (!sections) return null
-  return <DocumentDisplay sections={sections} teamBuffOnly={true} />
+  return <DocumentDisplay bgt="light" sections={sections} teamBuffOnly={true} />
 }
