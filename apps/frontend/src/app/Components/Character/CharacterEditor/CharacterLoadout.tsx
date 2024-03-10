@@ -5,7 +5,10 @@ import {
 } from '@genshin-optimizer/common/ui'
 import { unit } from '@genshin-optimizer/common/util'
 import { artifactAsset } from '@genshin-optimizer/gi/assets'
-import type { ArtifactSlotKey } from '@genshin-optimizer/gi/consts'
+import type {
+  ArtifactSlotKey,
+  CharacterKey,
+} from '@genshin-optimizer/gi/consts'
 import { allArtifactSlotKeys } from '@genshin-optimizer/gi/consts'
 import type { ICachedWeapon } from '@genshin-optimizer/gi/db'
 import { type ICachedArtifact } from '@genshin-optimizer/gi/db'
@@ -24,9 +27,9 @@ import {
   IconButton,
   Typography,
 } from '@mui/material'
-import { useContext, useState } from 'react'
-import { DataContext } from '../../../Context/DataContext'
+import { useMemo, useState } from 'react'
 import { getWeaponSheet } from '../../../Data/Weapons'
+import useCharData from '../../../ReactHooks/useCharData'
 import ArtifactCardPico from '../../Artifact/ArtifactCardPico'
 import SlotIcon from '../../Artifact/SlotIcon'
 import { NodeFieldDisplay } from '../../FieldDisplay'
@@ -38,13 +41,17 @@ import WeaponCardPico from '../../Weapon/WeaponCardPico'
 export function CharacterLoadout({ activeCharId }: { activeCharId: string }) {
   const database = useDatabase()
   const artifactSet = database.teamChars.getLoadoutArtifacts(activeCharId)
-  const { id: weaponId } = database.teamChars.getLoadoutWeapon(activeCharId)
+  const weapon = database.teamChars.getLoadoutWeapon(activeCharId)
   const artifacts:
     | false
     | Array<[ArtifactSlotKey, ICachedArtifact | undefined]> =
     !!artifactSet && allArtifactSlotKeys.map((k) => [k, artifactSet[k]])
-  const { buildType, buildId, buildTcId } =
-    database.teamChars.get(activeCharId)!
+  const {
+    buildType,
+    buildId,
+    buildTcId,
+    key: charKey,
+  } = database.teamChars.get(activeCharId)!
   const equippedBuild = buildType === 'equipped'
   const realBuild = buildType === 'real' && database.builds.get(buildId)
   const tcBuild = buildType === 'tc' && database.buildTcs.get(buildTcId)
@@ -52,10 +59,15 @@ export function CharacterLoadout({ activeCharId }: { activeCharId: string }) {
   return (
     <>
       {!!equippedBuild && (
-        <ShowEquipped weaponId={weaponId} artifacts={artifacts} />
+        <ShowEquipped weapon={weapon} artifacts={artifacts} charKey={charKey} />
       )}
       {!!realBuild && (
-        <ShowReal {...realBuild} weaponId={weaponId} artifacts={artifacts} />
+        <ShowReal
+          {...realBuild}
+          weapon={weapon}
+          artifacts={artifacts}
+          charKey={charKey}
+        />
       )}
       {!!tcBuild && <ShowTC buildTcId={buildTcId} />}
     </>
@@ -63,29 +75,47 @@ export function CharacterLoadout({ activeCharId }: { activeCharId: string }) {
 }
 
 function ShowEquipped({
-  weaponId,
+  charKey,
+  weapon,
   artifacts,
 }: {
-  weaponId: string
+  charKey: CharacterKey
+  weapon: ICachedWeapon
   artifacts: Array<[ArtifactSlotKey, ICachedArtifact | undefined]>
 }) {
-  return <ShowReal name="Default" weaponId={weaponId} artifacts={artifacts} />
+  return (
+    <ShowReal
+      name="Default"
+      charKey={charKey}
+      weapon={weapon}
+      artifacts={artifacts}
+    />
+  )
 }
 
 function ShowReal({
   name,
   description,
-  weaponId,
+  charKey,
+  weapon,
   artifacts,
 }: {
   name: string
   description?: string
-  weaponId: string
+  charKey: CharacterKey
+  weapon: ICachedWeapon
   artifacts: Array<[ArtifactSlotKey, ICachedArtifact | undefined]>
 }) {
-  const { data } = useContext(DataContext)
+  const { id: weaponId } = weapon
   const [expanded, setExpanded] = useState(false)
   const upperRow = ['flower', 'plume']
+  const char = useCharData(
+    charKey,
+    0,
+    artifacts.map((a) => a[1]!),
+    weapon
+  )!
+  const data = useMemo(() => char[charKey]?.target, [char, charKey])!
 
   return (
     <CardThemed
