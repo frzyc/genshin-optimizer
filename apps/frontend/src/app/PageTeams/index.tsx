@@ -31,8 +31,8 @@ import { useNavigate } from 'react-router-dom'
 import ShowingAndSortOptionSelect from '../Components/ShowingAndSortOptionSelect'
 import TeamCard from './TeamCard'
 import { teamSortConfigs, teamSortMap } from './TeamSort'
-const columns = { xs: 1, sm: 2, md: 3, lg: 4, xl: 4 }
-const numToShowMap = { xs: 5, sm: 8, md: 9, lg: 12, xl: 12 }
+const columns = { xs: 1, sm: 2, md: 3, lg: 3, xl: 3 }
+const numToShowMap = { xs: 6, sm: 12, md: 18, lg: 24, xl: 24 }
 
 // TODO: Translation
 

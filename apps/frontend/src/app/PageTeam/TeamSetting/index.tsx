@@ -33,6 +33,11 @@ import {
   TeamBuffDisplay,
   TeammateDisplay,
 } from './TeamComponents'
+
+import ContentCopyIcon from '@mui/icons-material/ContentCopy'
+import ContentPasteIcon from '@mui/icons-material/ContentPaste'
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
+import { useNavigate } from 'react-router-dom'
 // TODO: Translation
 
 export default function TeamSetting({
@@ -42,6 +47,7 @@ export default function TeamSetting({
   teamId: string
   dataContextValue?: dataContextObj
 }) {
+  const navigate = useNavigate()
   const database = useDatabase()
   const team = database.teams.get(teamId)!
   const noChars = team.teamCharIds.every((id) => !id)
@@ -77,6 +83,24 @@ export default function TeamSetting({
     // Don't need to trigger when teamId is changed, only when the name is changed.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [database, descDeferred])
+
+  const onDel = () => {
+    database.teams.remove(teamId)
+    navigate(`/teams`)
+  }
+  const onExport = () => {
+    const data = database.teams.export(teamId)
+    const dataStr = JSON.stringify(data)
+    navigator.clipboard
+      .writeText(dataStr)
+      .then(() => alert('Copied team data to clipboard.'))
+      .catch(console.error)
+  }
+  const onDup = () => {
+    const newTeamId = database.teams.duplicate(teamId)
+    navigate(`/teams/${newTeamId}`)
+  }
+
   return (
     <>
       <BootstrapTooltip title={<Typography>{team.description}</Typography>}>
@@ -132,6 +156,31 @@ export default function TeamSetting({
               multiline
               rows={4}
             />
+            <Box sx={{ display: 'flex', gap: 1 }}>
+              <Button
+                color="info"
+                sx={{ flexGrow: 1 }}
+                startIcon={<ContentPasteIcon />}
+                disabled={team.teamCharIds.every((id) => !id)}
+                onClick={onExport}
+              >
+                Export Team
+              </Button>
+              <Divider orientation="vertical" />
+              <Button
+                color="info"
+                sx={{ flexGrow: 1 }}
+                disabled={team.teamCharIds.every((id) => !id)}
+                onClick={onDup}
+                startIcon={<ContentCopyIcon />}
+              >
+                Duplicate Team
+              </Button>
+              <Divider orientation="vertical" />
+              <Button color="error" size="small" onClick={onDel}>
+                <DeleteForeverIcon />
+              </Button>
+            </Box>
             <Typography variant="h6">Team Editor</Typography>
             <Alert severity="info" variant="filled">
               The first character in the team receives any "active on-field
