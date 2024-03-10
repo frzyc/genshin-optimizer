@@ -112,7 +112,7 @@ function ShowReal({
   const char = useCharData(
     charKey,
     0,
-    artifacts.map((a) => a[1]!),
+    artifacts.map((a) => a[1]).filter((a) => !!a) as ICachedArtifact[],
     weapon
   )!
   const data = useMemo(() => char[charKey]?.target, [char, charKey])!
