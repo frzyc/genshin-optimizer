@@ -7,7 +7,7 @@ import { unit } from '@genshin-optimizer/common/util'
 import { artifactAsset } from '@genshin-optimizer/gi/assets'
 import type { ArtifactSlotKey } from '@genshin-optimizer/gi/consts'
 import { allArtifactSlotKeys } from '@genshin-optimizer/gi/consts'
-import type { ICachedWeapon} from '@genshin-optimizer/gi/db';
+import type { ICachedWeapon } from '@genshin-optimizer/gi/db'
 import { type ICachedArtifact } from '@genshin-optimizer/gi/db'
 import { useBuildTc, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { StatIcon } from '@genshin-optimizer/gi/svgicons'
