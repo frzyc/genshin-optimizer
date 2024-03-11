@@ -42,6 +42,21 @@ export default function useTeamData(
 ): TeamData | undefined {
   const { teamId, teamCharId: overrideTeamCharId } =
     useContext(TeamCharacterContext)
+  return useTeamDataNoContext(
+    teamId,
+    overrideTeamCharId,
+    mainStatAssumptionLevel,
+    overrideArt,
+    overrideWeapon
+  )
+}
+export function useTeamDataNoContext(
+  teamId: string,
+  overrideTeamCharId: string,
+  mainStatAssumptionLevel = 0,
+  overrideArt?: ICachedArtifact[] | Data,
+  overrideWeapon?: ICachedWeapon
+): TeamData | undefined {
   const database = useDatabase()
   const [dbDirty, setDbDirty] = useForceUpdate()
   const dbDirtyDeferred = useDeferredValue(dbDirty)

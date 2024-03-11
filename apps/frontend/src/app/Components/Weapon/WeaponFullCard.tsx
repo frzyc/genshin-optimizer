@@ -1,3 +1,5 @@
+import type { CardBackgroundColor } from '@genshin-optimizer/common/ui'
+import { CardThemed } from '@genshin-optimizer/common/ui'
 import { weaponAsset } from '@genshin-optimizer/gi/assets'
 import type { ICachedWeapon } from '@genshin-optimizer/gi/db'
 import { useWeapon } from '@genshin-optimizer/gi/db-ui'
@@ -10,14 +12,19 @@ import { uiInput as input } from '../../Formula'
 import { computeUIData, dataObjForWeapon } from '../../Formula/api'
 import type { NodeDisplay } from '../../Formula/uiData'
 import { nodeVStr } from '../../Formula/uiData'
-import CardDark from '../Card/CardDark'
 import SqBadge from '../SqBadge'
 export default function WeaponFullCard({ weaponId }: { weaponId: string }) {
   const weapon = useWeapon(weaponId)
   if (!weapon) return null
   return <WeaponFullCardObj weapon={weapon} />
 }
-export function WeaponFullCardObj({ weapon }: { weapon: IWeapon }) {
+export function WeaponFullCardObj({
+  weapon,
+  bgt = 'normal',
+}: {
+  weapon: IWeapon
+  bgt?: CardBackgroundColor
+}) {
   const weaponSheet = weapon?.key && getWeaponSheet(weapon.key)
   const UIData = useMemo(
     () =>
@@ -31,7 +38,7 @@ export function WeaponFullCardObj({ weapon }: { weapon: IWeapon }) {
   )
   if (!weapon || !weaponSheet || !UIData) return null
   return (
-    <CardDark>
+    <CardThemed bgt={bgt}>
       <Box display="flex">
         <Box
           flexShrink={1}
@@ -71,7 +78,7 @@ export function WeaponFullCardObj({ weapon }: { weapon: IWeapon }) {
           </Typography>
         </Box>
       </Box>
-    </CardDark>
+    </CardThemed>
   )
 }
 function WeaponStat({ node }: { node: NodeDisplay }) {
