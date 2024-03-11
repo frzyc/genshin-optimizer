@@ -299,7 +299,7 @@ export default function BuildDisplayItem({
               size="small"
               color="success"
               onClick={equipBuild}
-              disabled={disabled || currentlyEquipped}
+              disabled={disabled || isActiveBuild}
               startIcon={<Checkroom />}
             >
               Equip Build
