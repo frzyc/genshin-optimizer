@@ -37,7 +37,7 @@ import {
 import ContentCopyIcon from '@mui/icons-material/ContentCopy'
 import ContentPasteIcon from '@mui/icons-material/ContentPaste'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
-import { useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 // TODO: Translation
 
 export default function TeamSetting({
@@ -51,8 +51,16 @@ export default function TeamSetting({
   const database = useDatabase()
   const team = database.teams.get(teamId)!
   const noChars = team.teamCharIds.every((id) => !id)
-  // open the settings modal by default
-  const [open, setOpen] = useState(noChars ? true : false)
+
+  const location = useLocation()
+
+  const { openSetting = false } = (location.state ?? {
+    openSetting: false,
+  }) as {
+    openSetting?: boolean
+  }
+  const [open, setOpen] = useState(openSetting || noChars)
+  console.log({ state: location.state, openSetting, noChars, open })
 
   const [name, setName] = useState(team.name)
   const nameDeferred = useDeferredValue(name)
