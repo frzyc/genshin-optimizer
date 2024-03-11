@@ -302,7 +302,7 @@ export default function BuildDisplayItem({
               disabled={disabled || isActiveBuild}
               startIcon={<Checkroom />}
             >
-              Equip Build
+              Equip to Current Build
             </Button>
             {extraButtonsRight}
           </Box>
