@@ -5,8 +5,8 @@ import {
   type AbilityKey,
   type CharacterKey,
 } from '@genshin-optimizer/sr/consts'
-import { useCharacter, useCharacterReducer } from '@genshin-optimizer/sr/ui'
 import { MenuItem } from '@mui/material'
+import { useCharacter, useCharacterReducer } from '../Hook'
 
 type AbilityDropdownProps = {
   characterKey: CharacterKey | ''
