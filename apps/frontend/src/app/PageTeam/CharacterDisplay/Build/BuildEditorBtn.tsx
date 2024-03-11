@@ -13,7 +13,7 @@ import {
   Divider,
   Typography,
 } from '@mui/material'
-import { Suspense, useContext, useMemo } from 'react'
+import { Suspense, useContext } from 'react'
 import { TeamCharacterContext } from '../../../Context/TeamCharacterContext'
 import { Build } from './Build'
 import { BuildEquipped } from './BuildEquipped'
@@ -35,16 +35,8 @@ export default function BuildEditorBtn() {
     },
   } = useContext(TeamCharacterContext)
   const weaponTypeKey = getCharData(characterKey).weaponType
-  const name = useMemo(() => {
-    switch (buildType) {
-      case 'equipped':
-        return 'Equipped Build'
-      case 'real':
-        return database.builds.get(buildId)?.name ?? ''
-      case 'tc':
-        return database.buildTcs.get(buildTcId)?.name ?? ''
-    }
-  }, [database, buildType, buildId, buildTcId])
+  // TODO: Translate for the `equippedName` variable
+  const name = database.teamChars.getActiveBuildName(teamCharId)
   return (
     <>
       <Button
