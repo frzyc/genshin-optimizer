@@ -1,23 +1,13 @@
 import { BootstrapTooltip, CardThemed } from '@genshin-optimizer/common/ui'
-import { range } from '@genshin-optimizer/common/util'
-import type { CharacterKey } from '@genshin-optimizer/gi/consts'
+import { hexToColor, range } from '@genshin-optimizer/common/util'
+import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
 import { useDatabase, useTeam } from '@genshin-optimizer/gi/db-ui'
-import ContentCopyIcon from '@mui/icons-material/ContentCopy'
-import ContentPasteIcon from '@mui/icons-material/ContentPaste'
-import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import InfoIcon from '@mui/icons-material/Info'
-import {
-  Box,
-  Button,
-  CardActionArea,
-  Divider,
-  Grid,
-  IconButton,
-  Typography,
-} from '@mui/material'
+import { Box, CardActionArea, Grid, Typography } from '@mui/material'
 import CharacterCardPico, {
   BlankCharacterCardPico,
 } from '../Components/Character/CharacterCardPico'
+import { getCharSheet } from '../Data/Characters'
 
 // TODO: Translation
 
@@ -25,29 +15,23 @@ export default function TeamCard({
   teamId,
   onClick,
   bgt,
-  disableButtons = false,
 }: {
   teamId: string
   bgt?: 'light' | 'dark'
   onClick: (cid?: CharacterKey) => void
-  disableButtons?: boolean
 }) {
   const team = useTeam(teamId)!
   const { name, description, teamCharIds } = team
   const database = useDatabase()
-  const onDel = () => {
-    database.teams.remove(teamId)
-  }
-  const onExport = () => {
-    const data = database.teams.export(teamId)
-    const dataStr = JSON.stringify(data)
-    navigator.clipboard
-      .writeText(dataStr)
-      .then(() => alert('Copied team data to clipboard.'))
-      .catch(console.error)
-  }
-  const onDup = () => database.teams.duplicate(teamId)
 
+  const elementArray: Array<ElementKey | undefined> = teamCharIds.map(
+    (tcid) => {
+      if (!tcid) return
+      const teamChar = database.teamChars.get(tcid)
+      if (!teamChar) return
+      return getCharSheet(teamChar.key).elementKey
+    }
+  )
   return (
     <CardThemed
       bgt={bgt}
@@ -58,29 +42,40 @@ export default function TeamCard({
       }}
     >
       <Box
-        sx={{
-          height: '100%',
-          p: 1,
-          display: 'flex',
-          flexDirection: 'column',
-          gap: 1,
+        sx={(theme) => {
+          const rgbas = elementArray.map((ele) => {
+            if (!ele) return `rgba(0,0,0,0)`
+
+            const hex = theme.palette[ele].main as string
+            const color = hexToColor(hex)
+            if (!color) return `rgba(0,0,0,0)`
+            return `rgba(${color.r},${color.g},${color.b},0.25)`
+          })
+          return {
+            // will be in the form of `linear-gradient(to right, red 12.5%, orange 27.5%, yellow 62.5%, green 87.5%)`
+            background: `linear-gradient(to right, ${rgbas
+              .map((rgba, i) => `${rgba} ${i * 25 + 12.5}%`)
+              .join(', ')})`,
+          }
         }}
       >
-        <Typography sx={{ display: 'flex', gap: 1 }}>
-          <span>{name}</span>{' '}
-          <BootstrapTooltip title={<Typography>{description}</Typography>}>
-            <InfoIcon />
-          </BootstrapTooltip>
-        </Typography>
+        <CardActionArea onClick={() => onClick()} sx={{ p: 1 }}>
+          <Typography sx={{ display: 'flex', gap: 1 }}>
+            <span>{name}</span>{' '}
+            <BootstrapTooltip title={<Typography>{description}</Typography>}>
+              <InfoIcon />
+            </BootstrapTooltip>
+          </Typography>
+        </CardActionArea>
 
-        <Box sx={{ marginTop: 'auto' }}>
+        <Box sx={{ p: 1 }}>
           <Grid container columns={4} spacing={1}>
             {range(0, 3).map((i) => (
               <Grid key={i} item xs={1} height="100%">
                 {teamCharIds[i] ? (
                   <CardActionArea
                     onClick={() =>
-                      onClick(database.teamChars.get(teamCharIds[i])!.key)
+                      onClick(database.teamChars.get(teamCharIds[i])?.key)
                     }
                   >
                     <CharacterCardPico
@@ -97,32 +92,6 @@ export default function TeamCard({
           </Grid>
         </Box>
       </Box>
-      {!disableButtons && (
-        <Box sx={{ display: 'flex', gap: 1, marginTop: 'auto', p: 1 }}>
-          <Button
-            color="info"
-            variant="text"
-            sx={{ flexGrow: 1 }}
-            startIcon={<ContentPasteIcon />}
-            disabled={teamCharIds.every((id) => !id)}
-            onClick={onExport}
-          >
-            Export
-          </Button>
-          <Divider orientation="vertical" />
-          <IconButton
-            color="info"
-            disabled={teamCharIds.every((id) => !id)}
-            onClick={onDup}
-          >
-            <ContentCopyIcon />
-          </IconButton>
-          <Divider orientation="vertical" />
-          <IconButton color="error" size="small" onClick={onDel}>
-            <DeleteForeverIcon />
-          </IconButton>
-        </Box>
-      )}
     </CardThemed>
   )
 }
