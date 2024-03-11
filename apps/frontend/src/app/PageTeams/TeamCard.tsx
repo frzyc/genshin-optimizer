@@ -1,8 +1,4 @@
-import {
-  BootstrapTooltip,
-  CardThemed,
-  SqBadge,
-} from '@genshin-optimizer/common/ui'
+import { BootstrapTooltip, CardThemed } from '@genshin-optimizer/common/ui'
 import { hexToColor, range } from '@genshin-optimizer/common/util'
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
 import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
@@ -19,6 +15,10 @@ import PersonIcon from '@mui/icons-material/Person'
 import { Box, CardActionArea, Grid, Skeleton, Typography } from '@mui/material'
 import { Suspense, useMemo } from 'react'
 import {
+  CharacterCardEquipmentRow,
+  CharacterCardEquipmentRowTC,
+} from '../Components/Character/CharacterCard/CharacterCardEquipmentRow'
+import {
   CharacterCardHeader,
   CharacterCardHeaderContent,
 } from '../Components/Character/CharacterCard/CharacterCardHeader'
@@ -32,10 +32,6 @@ import { DataContext } from '../Context/DataContext'
 import { getCharSheet } from '../Data/Characters'
 import { getArtifactData } from '../PageTeam/CharacterDisplay/Tabs/TabTheorycraft/optimizeTc'
 import useCharData from '../ReactHooks/useCharData'
-import {
-  CharacterCardEquipmentRow,
-  CharacterCardEquipmentRowTC,
-} from '../Components/Character/CharacterCard/CharacterCardEquipmentRow'
 
 // TODO: Translation
 
@@ -146,8 +142,7 @@ function HoverCard({
   const { gender } = useDBMeta()
   const characterSheet = getCharSheet(characterKey, gender)
 
-  const { name, buildType, buildTcId, buildIds, buildTcIds } =
-    useTeamChar(teamCharId)!
+  const { name, buildType, buildTcId } = useTeamChar(teamCharId)!
   const buildname = database.teamChars.getActiveBuildName(teamCharId)
   const weapon = (() => {
     return database.teamChars.getLoadoutWeapon(teamCharId)
@@ -199,35 +194,18 @@ function HoverCard({
               <Box
                 sx={{ p: 1, display: 'flex', flexDirection: 'column', gap: 1 }}
               >
-                <Typography>
-                  <SqBadge
-                    sx={{ display: 'flex', gap: 1, alignItems: 'center' }}
-                  >
-                    <PersonIcon />
-                    <span>{name}</span>
-                  </SqBadge>
+                <Typography
+                  sx={{ display: 'flex', gap: 1, alignItems: 'center' }}
+                >
+                  <PersonIcon />
+                  <span>{name}</span>
                 </Typography>
-                <Typography sx={{ display: 'flex', gap: 1 }}>
-                  <SqBadge
-                    color={buildIds.length ? 'success' : 'secondary'}
-                    sx={{ flexGrow: 1 }}
-                  >
-                    {buildIds.length} Builds
-                  </SqBadge>
-                  <SqBadge
-                    color={buildTcIds.length ? 'success' : 'secondary'}
-                    sx={{ flexGrow: 1 }}
-                  >
-                    {buildTcIds.length} TC Builds
-                  </SqBadge>
-                </Typography>
-                <Typography>
-                  <SqBadge
-                    sx={{ display: 'flex', gap: 1, alignItems: 'center' }}
-                  >
-                    <CheckroomIcon />
-                    <span>{buildname}</span>
-                  </SqBadge>
+
+                <Typography
+                  sx={{ display: 'flex', gap: 1, alignItems: 'center' }}
+                >
+                  <CheckroomIcon />
+                  <span>{buildname}</span>
                 </Typography>
                 {buildType === 'tc' && buildTcId ? (
                   <CharacterCardEquipmentRowTC weapon={weapon} />
