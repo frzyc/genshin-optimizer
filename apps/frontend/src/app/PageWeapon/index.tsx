@@ -2,7 +2,7 @@ import {
   useForceUpdate,
   useMediaQueryUp,
 } from '@genshin-optimizer/common/react-util'
-import { useOnScreen } from '@genshin-optimizer/common/ui'
+import { useInfScroll } from '@genshin-optimizer/common/ui'
 import { filterFunction, sortFunction } from '@genshin-optimizer/common/util'
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
 import { allRarityKeys, allWeaponTypeKeys } from '@genshin-optimizer/gi/consts'
@@ -133,20 +133,10 @@ export default function PageWeapon() {
     deferredSearchTerm,
   ])
 
-  const [numShow, setNumShow] = useState(numToShowMap[brPt])
-  // reset the numShow when artifactIds changes
-  useEffect(() => {
-    weaponIds && setNumShow(numToShowMap[brPt])
-  }, [weaponIds, brPt])
-
-  const [element, setElement] = useState<HTMLElement | undefined>()
-  const trigger = useOnScreen(element)
-  const shouldIncrease = trigger && numShow < weaponIds.length
-  useEffect(() => {
-    if (!shouldIncrease) return
-    setNumShow((num) => num + numToShowMap[brPt])
-  }, [shouldIncrease, brPt])
-
+  const { numShow, setTriggerElement } = useInfScroll(
+    numToShowMap[brPt],
+    weaponIds.length
+  )
   const weaponIdsToShow = useMemo(
     () => weaponIds.slice(0, numShow),
     [weaponIds, numShow]
@@ -307,7 +297,7 @@ export default function PageWeapon() {
         <Skeleton
           ref={(node) => {
             if (!node) return
-            setElement(node)
+            setTriggerElement(node)
           }}
           sx={{ borderRadius: 1 }}
           variant="rectangular"
