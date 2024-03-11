@@ -22,6 +22,7 @@ import CardDark from '../../../../../../Components/Card/CardDark'
 import CloseButton from '../../../../../../Components/CloseButton'
 import SqBadge from '../../../../../../Components/SqBadge'
 import WeaponCardPico from '../../../../../../Components/Weapon/WeaponCardPico'
+import { CharacterContext } from '../../../../../../Context/CharacterContext'
 import { DataContext } from '../../../../../../Context/DataContext'
 import { input } from '../../../../../../Formula'
 import { ArtifactSetBadges } from '../ArtifactSetBadges'
@@ -49,7 +50,9 @@ export default function CustomTooltip({
   const database = useDatabase()
   const { data } = useContext(DataContext)
   const { t } = useTranslation('page_character_optimize')
-
+  const {
+    character: { equippedArtifacts, equippedWeapon },
+  } = useContext(CharacterContext)
   const artifactsBySlot: Record<ArtifactSlotKey, ICachedArtifact | undefined> =
     useMemo(
       () =>
@@ -72,6 +75,12 @@ export default function CustomTooltip({
   )
 
   const currentlyEquipped =
+    equippedWeapon === selectedPoint?.build?.weaponId &&
+    allArtifactSlotKeys.every(
+      (slotKey) => artifactsBySlot[slotKey]?.id === equippedArtifacts[slotKey]
+    )
+
+  const activeBuild =
     data.get(input.weapon.id).value?.toString() ===
       selectedPoint?.build?.weaponId &&
     artifactsBySlot &&
@@ -117,12 +126,17 @@ export default function CustomTooltip({
                     <strong>{t('currentlyEquippedBuild')}</strong>
                   </SqBadge>
                 )}
+                {activeBuild && (
+                  <SqBadge color="success">
+                    {/* TODO: Translation */}
+                    <strong>Active Build</strong>
+                  </SqBadge>
+                )}
                 {generLabel && <SqBadge color="info">{generLabel}</SqBadge>}
                 {graphLabel && <SqBadge color="info">{graphLabel}</SqBadge>}
                 <Suspense fallback={<Skeleton width={300} height={50} />}>
                   <ArtifactSetBadges
                     artifacts={Object.values(artifactsBySlot)}
-                    currentlyEquipped={currentlyEquipped}
                   />
                 </Suspense>
               </Stack>
