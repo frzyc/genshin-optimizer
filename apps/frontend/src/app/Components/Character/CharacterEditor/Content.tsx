@@ -238,7 +238,7 @@ function InTeam() {
     database.teams.set(teamId, (team) => {
       team.teamCharIds[0] = teamCharId
     })
-    navigate(`/teams/${teamId}`)
+    navigate(`/teams/${teamId}`, { state: { openSetting: true } })
   }
   const onAddNewTeam = () => {
     const teamId = database.teams.new()
@@ -246,7 +246,7 @@ function InTeam() {
     database.teams.set(teamId, (team) => {
       team.teamCharIds[0] = teamCharId
     })
-    navigate(`/teams/${teamId}`)
+    navigate(`/teams/${teamId}`, { state: { openSetting: true } })
   }
   const onDelete = (teamCharId: string) => {
     if (
