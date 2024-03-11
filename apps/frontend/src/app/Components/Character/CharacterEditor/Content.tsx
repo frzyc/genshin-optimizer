@@ -272,7 +272,6 @@ function InTeam() {
                       onClick={(cid) =>
                         navigate(`/teams/${teamId}${cid ? `/${cid}` : ''}`)
                       }
-                      disableButtons
                     />
                   </Grid>
                 ))}

@@ -11,17 +11,9 @@ import {
 } from '@genshin-optimizer/gi/db-ui'
 import { SillyContext } from '@genshin-optimizer/gi/ui'
 import { Box, CardContent, Skeleton } from '@mui/material'
-import {
-  Suspense,
-  useCallback,
-  useContext,
-  useEffect,
-  useMemo,
-  useState,
-} from 'react'
+import { Suspense, useContext, useEffect, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Navigate, useMatch, useNavigate, useParams } from 'react-router-dom'
-import CloseButton from '../Components/CloseButton'
 import type { CharacterContextObj } from '../Context/CharacterContext'
 import { CharacterContext } from '../Context/CharacterContext'
 import { DataContext, type dataContextObj } from '../Context/DataContext'
@@ -45,9 +37,7 @@ import TeamCharacterSelector from './TeamCharacterSelector'
 import TeamSetting from './TeamSetting'
 
 export default function PageTeam() {
-  const navigate = useNavigate()
   const database = useDatabase()
-  const onClose = useCallback(() => navigate('/teams'), [navigate])
   const { teamId } = useParams<{ teamId?: string }>()
   const invalidKey = !teamId || !database.teams.keys.includes(teamId)
 
@@ -64,7 +54,7 @@ export default function PageTeam() {
       <Suspense
         fallback={<Skeleton variant="rectangular" width="100%" height={1000} />}
       >
-        {teamId && <Page teamId={teamId} onClose={onClose} />}
+        {teamId && <Page teamId={teamId} />}
       </Suspense>
     </Box>
   )
@@ -77,7 +67,7 @@ const fallback = <Skeleton variant="rectangular" width="100%" height={1000} />
 // Stored per teamCharId
 const chartDataAll: Record<string, ChartData> = {}
 const graphBuildAll: Record<string, GeneratedBuild[]> = {}
-function Page({ teamId, onClose }: { teamId: string; onClose?: () => void }) {
+function Page({ teamId }: { teamId: string }) {
   const navigate = useNavigate()
   const { silly } = useContext(SillyContext)
   const database = useDatabase()
@@ -188,7 +178,6 @@ function Page({ teamId, onClose }: { teamId: string; onClose?: () => void }) {
         <Box sx={{ display: 'flex', gap: 1 }}>
           <TeamSetting teamId={teamId} dataContextValue={dataContextValue} />
           <EnemyEditorElement teamId={teamId} />
-          <CloseButton sx={{ ml: 'auto' }} onClick={onClose} />
         </Box>
 
         <TeamCharacterSelector
