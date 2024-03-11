@@ -204,7 +204,7 @@ export function migrateGOOD(good: IGOOD & IGO): IGOOD & IGO {
         })
       }
       const team: Team = {
-        name: `Migrated from ${characterKey}`,
+        name: `${characterKey} Team`,
         description: `Generated team due to database migration for GO version 10`,
         enemyOverride,
         teamCharIds,
