@@ -60,7 +60,6 @@ export default function TeamSetting({
     openSetting?: boolean
   }
   const [open, setOpen] = useState(openSetting || noChars)
-  console.log({ state: location.state, openSetting, noChars, open })
 
   const [name, setName] = useState(team.name)
   const nameDeferred = useDeferredValue(name)
