@@ -7,7 +7,7 @@ import {
 import {
   CardThemed,
   ModalWrapper,
-  useInfScroll
+  useInfScroll,
 } from '@genshin-optimizer/common/ui'
 import { filterFunction, sortFunction } from '@genshin-optimizer/common/util'
 import { teamSortKeys } from '@genshin-optimizer/gi/db'

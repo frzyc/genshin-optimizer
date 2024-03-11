@@ -24,7 +24,7 @@ import {
   useCallback,
   useEffect,
   useMemo,
-  useReducer
+  useReducer,
 } from 'react'
 import { useTranslation } from 'react-i18next'
 import ArtifactCard from '../../PageArtifact/ArtifactCard'
