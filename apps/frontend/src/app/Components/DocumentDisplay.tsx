@@ -109,7 +109,7 @@ function FieldsSectionDisplay({
   bgt?: CardBackgroundColor
 }) {
   return (
-    <CardThemed bgt={bgt}>
+    <CardThemed bgt={bgt} className='FieldsSectionCard'>
       {!evalIfFunc(hideHeader, section) && section.header && (
         <HeaderDisplay
           header={section.header}

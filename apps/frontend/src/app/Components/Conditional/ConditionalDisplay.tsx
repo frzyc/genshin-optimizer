@@ -38,7 +38,7 @@ export default function ConditionalDisplay({
     })
   }
   return (
-    <CardThemed bgt={bgt}>
+    <CardThemed bgt={bgt} className='ConditionalCard'>
       {!evalIfFunc(hideHeader, conditional) && (
         <HeaderDisplay header={conditional.header} hideDesc={hideDesc} />
       )}
