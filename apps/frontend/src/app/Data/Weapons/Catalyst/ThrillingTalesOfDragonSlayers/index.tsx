@@ -40,7 +40,6 @@ const sheet: IWeaponSheet = {
       value: condPassive,
       path: condPassivePath,
       name: trm('condName'),
-      canShow: unequal(input.activeCharKey, input.charKey, 1),
       teamBuff: true,
       header: headerTemplate(key, st('conditional')),
       states: {

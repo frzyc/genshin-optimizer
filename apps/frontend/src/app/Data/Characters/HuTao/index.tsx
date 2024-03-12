@@ -1,7 +1,7 @@
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
 import { allElementWithPhyKeys } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
-import { input } from '../../../Formula'
+import { input, target } from '../../../Formula'
 import {
   equal,
   equalStr,
@@ -119,7 +119,7 @@ const critRateTeam_1 = greaterEq(
     condA1,
     unequal(
       input.activeCharKey,
-      input.charKey,
+      target.charKey,
       percent(dm.passive1.critRateInc),
       { ...KeyMap.info('critRate_'), isTeamBuff: true }
     )
@@ -141,7 +141,7 @@ const critRateTeam_2 = greaterEq(
     condC4,
     unequal(
       input.activeCharKey,
-      input.charKey,
+      target.charKey,
       percent(dm.constellation4.critRateInc),
       { ...KeyMap.info('critRate_'), isTeamBuff: true }
     )
@@ -405,7 +405,6 @@ const sheet: ICharacterSheet = {
         value: condA1,
         path: condA1Path,
         teamBuff: true,
-        canShow: unequal(input.activeCharKey, input.charKey, 1),
         name: ct.ch('paramita.end'),
         states: {
           on: {
@@ -450,7 +449,7 @@ const sheet: ICharacterSheet = {
         value: condC4,
         path: condC4Path,
         teamBuff: true,
-        canShow: unequal(input.activeCharKey, input.charKey, 1),
+        canShow: unequal(input.activeCharKey, target.charKey, 1),
         name: ct.ch('constellation4.condName'),
         states: {
           on: {

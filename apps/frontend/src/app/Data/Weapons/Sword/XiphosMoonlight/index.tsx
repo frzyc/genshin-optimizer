@@ -1,6 +1,6 @@
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
-import { input } from '../../../../Formula'
+import { input, target } from '../../../../Formula'
 import {
   equal,
   infoMut,
@@ -37,7 +37,7 @@ const teamEnerRech_disp = equal(
 )
 const teamEnerRech_ = unequal(
   input.activeCharKey,
-  input.charKey,
+  target.charKey,
   teamEnerRech_disp
 )
 

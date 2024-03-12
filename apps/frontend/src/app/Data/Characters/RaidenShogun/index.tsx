@@ -1,7 +1,7 @@
 import { objKeyMap } from '@genshin-optimizer/common/util'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
-import { input } from '../../../Formula'
+import { input, target } from '../../../Formula'
 import {
   constant,
   equal,
@@ -126,7 +126,7 @@ const energyCosts = [40, 50, 60, 70, 80, 90]
 const [condSkillEyeTeamPath, condSkillEyeTeam] = cond(key, 'skillEyeTeam')
 const skillEyeTeamBurstDmgInc = unequal(
   input.activeCharKey,
-  input.charKey,
+  target.charKey,
   prod(
     lookup(
       condSkillEyeTeam,
@@ -206,7 +206,7 @@ const c4AtkBonus_ = greaterEq(
   equal(
     'c4',
     condC4,
-    unequal(input.activeCharKey, input.charKey, dm.constellation4.atk_bonus)
+    unequal(input.activeCharKey, target.charKey, dm.constellation4.atk_bonus)
   )
 )
 
@@ -387,7 +387,7 @@ const sheet: ICharacterSheet = {
         value: condSkillEyeTeam,
         path: condSkillEyeTeamPath,
         teamBuff: true,
-        canShow: unequal(input.activeCharKey, input.charKey, 1),
+        canShow: unequal(input.activeCharKey, target.charKey, 1),
         name: ct.ch('skill.partyCost'),
         states: Object.fromEntries(
           energyCosts.map((c) => [
@@ -579,7 +579,7 @@ const sheet: ICharacterSheet = {
         value: condC4,
         path: condC4Path,
         teamBuff: true,
-        canShow: unequal(input.activeCharKey, input.charKey, 1),
+        canShow: unequal(input.activeCharKey, target.charKey, 1),
         name: ct.ch('c4.expires'),
         states: {
           c4: {
