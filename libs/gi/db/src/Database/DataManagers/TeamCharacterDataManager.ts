@@ -22,7 +22,7 @@ import {
   type MultiOptHitModeKey,
 } from '@genshin-optimizer/gi/consts'
 import { getCharData } from '@genshin-optimizer/gi/stats'
-import type { ICachedArtifact, ICachedWeapon } from '../../Interfaces'
+import type { BuildTc, ICachedArtifact, ICachedWeapon } from '../../Interfaces'
 import type { InputPremodKey } from '../../legacy/keys'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
 import { DataManager } from '../DataManager'
@@ -310,12 +310,12 @@ export class TeamCharacterDataManager extends DataManager<
     teamChar.name = `${teamChar.name} (duplicated)`
     return this.new(teamChar.key, teamChar)
   }
-  newBuild(teamcharId: string, build: Partial<Build> = {}) {
-    if (!this.get(teamcharId)) return
+  newBuild(teamCharId: string, build: Partial<Build> = {}) {
+    if (!this.get(teamCharId)) return
 
     // force the build to have a valid weapon
     if (!build.weaponId) {
-      const teamChar = this.database.teamChars.get(teamcharId)
+      const teamChar = this.database.teamChars.get(teamCharId)
       if (!teamChar) return
       const weaponTypeKey = getCharData(teamChar.key).weaponType
       const defWeaponKey = defaultInitialWeaponKey(weaponTypeKey)
@@ -330,8 +330,17 @@ export class TeamCharacterDataManager extends DataManager<
 
     const buildId = this.database.builds.new(build)
     if (!buildId) return
-    this.set(teamcharId, (teamChar) => {
+    this.set(teamCharId, (teamChar) => {
       teamChar.buildIds.unshift(buildId)
+    })
+  }
+  newBuildTc(teamCharId: string, data: Partial<BuildTc> = {}) {
+    if (!this.get(teamCharId)) return
+
+    const buildTcId = this.database.buildTcs.new(data)
+    if (!buildTcId) return
+    this.set(teamCharId, (teamChar) => {
+      teamChar.buildIds.unshift(buildTcId)
     })
   }
   newBuildTcFromBuild(
