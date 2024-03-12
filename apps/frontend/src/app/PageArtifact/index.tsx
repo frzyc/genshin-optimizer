@@ -3,11 +3,8 @@ import {
   useForceUpdate,
   useMediaQueryUp,
 } from '@genshin-optimizer/common/react-util'
-import {
-  clamp,
-  filterFunction,
-  sortFunction,
-} from '@genshin-optimizer/common/util'
+import { useOnScreen } from '@genshin-optimizer/common/ui'
+import { filterFunction, sortFunction } from '@genshin-optimizer/common/util'
 import type { SubstatKey } from '@genshin-optimizer/gi/consts'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { Add } from '@mui/icons-material'
@@ -19,7 +16,6 @@ import React, {
   useDeferredValue,
   useEffect,
   useMemo,
-  useRef,
   useState,
 } from 'react'
 import ReactGA from 'react-ga4'
@@ -27,7 +23,7 @@ import { useTranslation } from 'react-i18next'
 import AddArtInfo from '../Components/AddArtInfo'
 import CardDark from '../Components/Card/CardDark'
 import InfoComponent from '../Components/InfoComponent'
-import PageAndSortOptionSelect from '../Components/PageAndSortOptionSelect'
+import ShowingAndSortOptionSelect from '../Components/ShowingAndSortOptionSelect'
 import useDisplayArtifact from '../ReactHooks/useDisplayArtifact'
 import ArtifactCard from './ArtifactCard'
 import ArtifactFilter, { ArtifactRedButtons } from './ArtifactFilter'
@@ -47,7 +43,7 @@ const ArtifactEditor = React.lazy(() => import('./ArtifactEditor'))
 const InfoDisplay = React.lazy(() => import('./InfoDisplay'))
 
 const columns = { xs: 1, sm: 2, md: 3, lg: 3, xl: 4 }
-const numToShowMap = { xs: 10, sm: 12, md: 24, lg: 24, xl: 24 }
+const numToShowMap = { xs: 5, sm: 6, md: 12, lg: 12, xl: 12 }
 
 export default function PageArtifact() {
   const { t } = useTranslation(['artifact', 'ui'])
@@ -59,14 +55,11 @@ export default function PageArtifact() {
   const [showDup, onShowDup, onHideDup] = useBoolState(false)
 
   const brPt = useMediaQueryUp()
-  const maxNumArtifactsToDisplay = numToShowMap[brPt]
 
   const { sortType, effFilter, ascending, probabilityFilter } =
     artifactDisplayState
   const showProbability = sortType === 'probability'
 
-  const [pageIndex, setpageIndex] = useState(0)
-  const invScrollRef = useRef<HTMLDivElement>(null)
   const [dbDirty, forceUpdate] = useForceUpdate()
   const dbDirtyDeferred = useDeferredValue(dbDirty)
   const effFilterSet = useMemo(
@@ -82,6 +75,9 @@ export default function PageArtifact() {
     ReactGA.send({ hitType: 'pageview', page: '/artifact' })
     return database.arts.followAny(() => forceUpdate())
   }, [database, forceUpdate])
+
+  const [element, setElement] = useState<HTMLElement | undefined>()
+  const trigger = useOnScreen(element)
 
   const setProbabilityFilter = useCallback(
     (probabilityFilter) => database.displayArtifact.set({ probabilityFilter }),
@@ -113,6 +109,8 @@ export default function PageArtifact() {
       )
   }, [database, showProbability, deferredProbabilityFilter])
 
+  const [numShow, setNumShow] = useState(numToShowMap[brPt])
+
   const { artifactIds, totalArtNum } = useMemo(() => {
     const {
       sortType = artifactSortKeys[0],
@@ -141,45 +139,32 @@ export default function PageArtifact() {
     showProbability,
   ])
 
-  const { artifactIdsToShow, numPages, currentPageIndex } = useMemo(() => {
-    const numPages = Math.ceil(artifactIds.length / maxNumArtifactsToDisplay)
-    const currentPageIndex = clamp(pageIndex, 0, numPages - 1)
-    return {
-      artifactIdsToShow: artifactIds.slice(
-        currentPageIndex * maxNumArtifactsToDisplay,
-        (currentPageIndex + 1) * maxNumArtifactsToDisplay
-      ),
-      numPages,
-      currentPageIndex,
-    }
-  }, [artifactIds, pageIndex, maxNumArtifactsToDisplay])
+  // reset the numShow when artifactIds changes
+  useEffect(() => {
+    artifactIds && setNumShow(numToShowMap[brPt])
+  }, [artifactIds, brPt])
 
+  const shouldIncrease = trigger && numShow < artifactIds.length
+  useEffect(() => {
+    if (!shouldIncrease) return
+    setNumShow((num) => num + numToShowMap[brPt])
+  }, [shouldIncrease, brPt])
+
+  const artifactIdsToShow = useMemo(
+    () => artifactIds.slice(0, numShow),
+    [artifactIds, numShow]
+  )
   //for pagination
   const totalShowing =
     artifactIds.length !== totalArtNum
       ? `${artifactIds.length}/${totalArtNum}`
       : `${totalArtNum}`
-  const setPage = useCallback(
-    (e, value) => {
-      invScrollRef.current?.scrollIntoView({ behavior: 'smooth' })
-      setpageIndex(value - 1)
-    },
-    [setpageIndex, invScrollRef]
-  )
-
-  const paginationProps = {
-    count: numPages,
-    page: currentPageIndex + 1,
-    onChange: setPage,
-  }
-
   const showingTextProps = {
     numShowing: artifactIdsToShow.length,
     total: totalShowing,
     t: t,
     namespace: 'artifact',
   }
-
   const sortByButtonProps = {
     sortKeys: [...artifactSortKeys],
     value: sortType,
@@ -187,7 +172,6 @@ export default function PageArtifact() {
     ascending: ascending,
     onChangeAsc: (ascending) => database.displayArtifact.set({ ascending }),
   }
-
   return (
     <Box display="flex" flexDirection="column" gap={1} my={1}>
       <Suspense fallback={false}>
@@ -225,10 +209,8 @@ export default function PageArtifact() {
             alignItems="center"
             flexWrap="wrap"
           >
-            <PageAndSortOptionSelect
-              paginationProps={paginationProps}
+            <ShowingAndSortOptionSelect
               showingTextProps={showingTextProps}
-              displaySort={true}
               sortByButtonProps={sortByButtonProps}
             />
           </Box>
@@ -280,24 +262,19 @@ export default function PageArtifact() {
             </Grid>
           ))}
         </Grid>
+        {artifactIds.length !== artifactIdsToShow.length && (
+          <Skeleton
+            ref={(node) => {
+              if (!node) return
+              setElement(node)
+            }}
+            sx={{ borderRadius: 1 }}
+            variant="rectangular"
+            width="100%"
+            height={100}
+          />
+        )}
       </Suspense>
-      {numPages > 1 && (
-        <CardDark>
-          <CardContent>
-            <Box
-              display="flex"
-              justifyContent="space-between"
-              alignItems="center"
-              flexWrap="wrap"
-            >
-              <PageAndSortOptionSelect
-                paginationProps={paginationProps}
-                showingTextProps={showingTextProps}
-              />
-            </Box>
-          </CardContent>
-        </CardDark>
-      )}
     </Box>
   )
 }
