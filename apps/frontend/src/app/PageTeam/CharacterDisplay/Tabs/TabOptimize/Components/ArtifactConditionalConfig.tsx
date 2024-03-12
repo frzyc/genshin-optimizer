@@ -259,18 +259,25 @@ function ArtifactSetCard({
 
         {!!set4CondNums.length && (
           <DataContext.Provider value={fakeDataContextObj}>
-            {/* If there is ever a 2-Set conditional, we will need to change this */}
-            {set4CondNums.map((setNumKey) => (
-              <SetEffectDisplay
-                key={setNumKey}
-                setKey={setKey}
-                setNumKey={parseInt(setNumKey) as SetNum}
+            <Box
+              sx={{
                 // Get rid of the rounded corners from the default Card component
-                component={Box}
-                hideHeader
-                conditionalsOnly
-              />
-            ))}
+                '& .FieldsSectionCard,.ConditionalCard': {
+                  borderRadius: 0,
+                },
+              }}
+            >
+              {/* If there is ever a 2-Set conditional, we will need to change this */}
+              {set4CondNums.map((setNumKey) => (
+                <SetEffectDisplay
+                  key={setNumKey}
+                  setKey={setKey}
+                  setNumKey={parseInt(setNumKey) as SetNum}
+                  hideHeader
+                  conditionalsOnly
+                />
+              ))}
+            </Box>
           </DataContext.Provider>
         )}
       </CardThemed>

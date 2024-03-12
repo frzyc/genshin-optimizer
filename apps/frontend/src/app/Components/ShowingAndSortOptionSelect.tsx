@@ -1,13 +1,7 @@
-import { Pagination, Typography } from '@mui/material'
+import { Typography } from '@mui/material'
 import type { TFunction } from 'i18next'
 import { Trans } from 'react-i18next'
-import SortByButton from '../Components/SortByButton'
-
-type PaginationProps = {
-  count: number
-  page: number
-  onChange: (_: any, value: number) => void
-}
+import SortByButton from './SortByButton'
 
 type ShowingItemProps = {
   numShowing: number
@@ -24,31 +18,22 @@ type SortByButtonProps = {
   onChangeAsc: (value: boolean) => void
 }
 
-export default function PageAndSortOptionSelect({
-  paginationProps,
+export default function ShowingAndSortOptionSelect({
   showingTextProps,
-  displaySort = false,
   sortByButtonProps = undefined,
 }: {
-  paginationProps: PaginationProps
   showingTextProps: ShowingItemProps
-  displaySort?: boolean
   sortByButtonProps?: SortByButtonProps
 }) {
   return (
     <>
-      <Pagination
-        count={paginationProps.count}
-        page={paginationProps.page}
-        onChange={paginationProps.onChange}
-      />
       <ShowingItem
         numShowing={showingTextProps.numShowing}
         total={showingTextProps.total}
         t={showingTextProps.t}
         namespace={showingTextProps.namespace}
       />
-      {displaySort && sortByButtonProps && (
+      {sortByButtonProps && (
         <SortByButton
           sortKeys={sortByButtonProps.sortKeys}
           value={sortByButtonProps.value}

@@ -22,6 +22,7 @@ import { Trans, withTranslation } from 'react-i18next'
 import CardLight from '../Components/Card/CardLight'
 import DatabaseCard from '../PageSettings/DatabaseCard'
 import SpaghettiCode from './SpaghettiCode.png'
+import { isDev } from '../Util/Util'
 
 interface Props extends WithTranslation {
   children?: ReactNode
@@ -38,6 +39,7 @@ class ErrorBoundary extends Component<Props, State> {
 
   public static getDerivedStateFromError(error: Error): State {
     // Update state so the next render will show the fallback UI.
+    if (isDev) return { error: undefined }
     return { error }
   }
 
