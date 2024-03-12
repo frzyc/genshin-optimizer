@@ -197,10 +197,7 @@ function EquipmentSection() {
 }
 const columns = {
   xs: 1,
-  sm: 2,
-  md: 3,
-  lg: 3,
-  xl: 3,
+  md: 2,
 } as const
 function InTeam() {
   const navigate = useNavigate()
@@ -302,7 +299,7 @@ function InTeam() {
             </CardContent>
             <Divider />
             <CardContent>
-              <Grid container columns={columns} spacing={2}>
+              <Grid container columns={columns} spacing={1}>
                 {teamIds.map((teamId) => (
                   <Grid item xs={1} key={teamId}>
                     <TeamCard

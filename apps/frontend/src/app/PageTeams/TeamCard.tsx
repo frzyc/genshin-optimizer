@@ -63,8 +63,6 @@ export default function TeamCard({
       bgt={bgt}
       sx={{
         height: '100%',
-        display: 'flex',
-        flexDirection: 'column',
       }}
     >
       <Box
@@ -78,6 +76,9 @@ export default function TeamCard({
             return `rgba(${color.r},${color.g},${color.b},0.25)`
           })
           return {
+            height: '100%',
+            display: 'flex',
+            flexDirection: 'column',
             // will be in the form of `linear-gradient(to right, red 12.5%, orange 27.5%, yellow 62.5%, green 87.5%)`
             background: `linear-gradient(to right, ${rgbas
               .map((rgba, i) => `${rgba} ${i * 25 + 12.5}%`)
@@ -94,7 +95,7 @@ export default function TeamCard({
           </Typography>
         </CardActionArea>
 
-        <Box sx={{ p: 1 }}>
+        <Box sx={{ p: 1, marginTop: 'auto' }}>
           <Grid container columns={4} spacing={1}>
             {range(0, 3).map((i) => {
               const teamCharId = teamCharIds[i]
