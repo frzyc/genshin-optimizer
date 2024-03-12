@@ -3,7 +3,7 @@ import {
   useForceUpdate,
   useMediaQueryUp,
 } from '@genshin-optimizer/common/react-util'
-import { useOnScreen } from '@genshin-optimizer/common/ui'
+import { useInfScroll } from '@genshin-optimizer/common/ui'
 import { filterFunction, sortFunction } from '@genshin-optimizer/common/util'
 import type { SubstatKey } from '@genshin-optimizer/gi/consts'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
@@ -16,7 +16,6 @@ import React, {
   useDeferredValue,
   useEffect,
   useMemo,
-  useState,
 } from 'react'
 import ReactGA from 'react-ga4'
 import { useTranslation } from 'react-i18next'
@@ -76,9 +75,6 @@ export default function PageArtifact() {
     return database.arts.followAny(() => forceUpdate())
   }, [database, forceUpdate])
 
-  const [element, setElement] = useState<HTMLElement | undefined>()
-  const trigger = useOnScreen(element)
-
   const setProbabilityFilter = useCallback(
     (probabilityFilter) => database.displayArtifact.set({ probabilityFilter }),
     [database]
@@ -109,8 +105,6 @@ export default function PageArtifact() {
       )
   }, [database, showProbability, deferredProbabilityFilter])
 
-  const [numShow, setNumShow] = useState(numToShowMap[brPt])
-
   const { artifactIds, totalArtNum } = useMemo(() => {
     const {
       sortType = artifactSortKeys[0],
@@ -139,17 +133,10 @@ export default function PageArtifact() {
     showProbability,
   ])
 
-  // reset the numShow when artifactIds changes
-  useEffect(() => {
-    artifactIds && setNumShow(numToShowMap[brPt])
-  }, [artifactIds, brPt])
-
-  const shouldIncrease = trigger && numShow < artifactIds.length
-  useEffect(() => {
-    if (!shouldIncrease) return
-    setNumShow((num) => num + numToShowMap[brPt])
-  }, [shouldIncrease, brPt])
-
+  const { numShow, setTriggerElement } = useInfScroll(
+    numToShowMap[brPt],
+    artifactIds.length
+  )
   const artifactIdsToShow = useMemo(
     () => artifactIds.slice(0, numShow),
     [artifactIds, numShow]
@@ -266,7 +253,7 @@ export default function PageArtifact() {
           <Skeleton
             ref={(node) => {
               if (!node) return
-              setElement(node)
+              setTriggerElement(node)
             }}
             sx={{ borderRadius: 1 }}
             variant="rectangular"
