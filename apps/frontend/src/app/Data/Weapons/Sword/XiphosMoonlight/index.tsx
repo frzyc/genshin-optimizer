@@ -35,11 +35,8 @@ const teamEnerRech_disp = equal(
   key,
   prod(percent(0.3), selfEnerRech_)
 )
-const teamEnerRech_ = unequal(
-  input.activeCharKey,
-  target.charKey,
-  teamEnerRech_disp
-)
+// Apply to non-equipped character
+const teamEnerRech_ = unequal(input.charKey, target.charKey, teamEnerRech_disp)
 
 const data = dataObjForWeaponSheet(
   key,

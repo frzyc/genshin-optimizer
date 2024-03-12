@@ -111,20 +111,18 @@ const atk = equal(
 const infusion = equalStr('on', condAfterlife, elementKey)
 
 const [condA1Path, condA1] = cond(key, 'FlutterBy')
-const critRateTeam_1 = greaterEq(
+const critRateTeam_1Disp = greaterEq(
   input.asc,
   1,
-  equal(
-    'on',
-    condA1,
-    unequal(
-      input.activeCharKey,
-      target.charKey,
-      percent(dm.passive1.critRateInc),
-      { ...KeyMap.info('critRate_'), isTeamBuff: true }
-    )
-  )
+  equal('on', condA1, percent(dm.passive1.critRateInc), {
+    ...KeyMap.info('critRate_'),
+    isTeamBuff: true,
+  })
 )
+const critRateTeam_1 = unequal(key, target.charKey, critRateTeam_1Disp, {
+  ...KeyMap.info('critRate_'),
+  isTeamBuff: true,
+})
 const [condA4Path, condA4] = cond(key, 'SanguineRouge')
 const pyro_dmg_ = greaterEq(
   input.asc,
@@ -133,20 +131,18 @@ const pyro_dmg_ = greaterEq(
 )
 
 const [condC4Path, condC4] = cond(key, 'GardenOfEternalRest')
-const critRateTeam_2 = greaterEq(
+const critRateTeam_2Disp = greaterEq(
   input.constellation,
   4,
-  equal(
-    'on',
-    condC4,
-    unequal(
-      input.activeCharKey,
-      target.charKey,
-      percent(dm.constellation4.critRateInc),
-      { ...KeyMap.info('critRate_'), isTeamBuff: true }
-    )
-  )
+  equal('on', condC4, percent(dm.constellation4.critRateInc), {
+    ...KeyMap.info('critRate_'),
+    isTeamBuff: true,
+  })
 )
+const critRateTeam_2 = unequal(key, target.charKey, critRateTeam_2Disp, {
+  ...KeyMap.info('critRate_'),
+  isTeamBuff: true,
+})
 
 const [condC6Path, condC6] = cond(key, 'ButterflysEmbrace')
 const critRate_ = greaterEq(
@@ -410,7 +406,7 @@ const sheet: ICharacterSheet = {
           on: {
             fields: [
               {
-                node: critRateTeam_1,
+                node: critRateTeam_1Disp,
               },
               {
                 text: stg('duration'),
@@ -449,13 +445,12 @@ const sheet: ICharacterSheet = {
         value: condC4,
         path: condC4Path,
         teamBuff: true,
-        canShow: unequal(input.activeCharKey, target.charKey, 1),
         name: ct.ch('constellation4.condName'),
         states: {
           on: {
             fields: [
               {
-                node: critRateTeam_2,
+                node: critRateTeam_2Disp,
               },
               {
                 text: stg('duration'),
