@@ -1,9 +1,10 @@
+import type { CardBackgroundColor } from '@genshin-optimizer/common/ui'
 import { valueString } from '@genshin-optimizer/common/util'
 import type { AmpReactionKey } from '@genshin-optimizer/gi/consts'
 import { allAmpReactionKeys } from '@genshin-optimizer/gi/consts'
 import { Groups } from '@mui/icons-material'
 import HelpIcon from '@mui/icons-material/Help'
-import type { ListProps, Palette, PaletteColor } from '@mui/material'
+import type { ListProps, PaletteColor } from '@mui/material'
 import {
   Box,
   Divider,
@@ -24,9 +25,15 @@ import AmpReactionModeText from './AmpReactionModeText'
 import BootstrapTooltip from './BootstrapTooltip'
 import ColorText from './ColoredText'
 
-export default function FieldsDisplay({ fields }: { fields: IFieldDisplay[] }) {
+export default function FieldsDisplay({
+  fields,
+  bgt = 'normal',
+}: {
+  fields: IFieldDisplay[]
+  bgt?: CardBackgroundColor
+}) {
   return (
-    <FieldDisplayList sx={{ m: 0 }}>
+    <FieldDisplayList sx={{ m: 0 }} bgt={bgt}>
       {fields.map((field, i) => (
         <FieldDisplay key={i} field={field} component={ListItem} />
       ))}
@@ -213,25 +220,27 @@ export function NodeFieldDisplayText({ node }: { node: NodeDisplay }) {
   )
 }
 export interface FieldDisplayListProps extends ListProps {
-  light?: keyof Palette
-  dark?: keyof Palette
+  bgt?: CardBackgroundColor
   palletOption?: keyof PaletteColor
 }
 export const FieldDisplayList = styled(List)<FieldDisplayListProps>(
-  ({
-    theme,
-    light = 'contentNormal',
-    dark = 'contentDark',
-    palletOption = 'main',
-  }) => ({
-    borderRadius: theme.shape.borderRadius,
-    overflow: 'hidden',
-    margin: 0,
-    '> .MuiListItem-root:nth-of-type(even)': {
-      backgroundColor: (theme.palette[light] as PaletteColor)[palletOption],
-    },
-    '> .MuiListItem-root:nth-of-type(odd)': {
-      backgroundColor: (theme.palette[dark] as PaletteColor)[palletOption],
-    },
-  })
+  ({ theme, bgt = 'normal' }) => {
+    const palette =
+      bgt === 'light'
+        ? 'contentLight'
+        : bgt === 'dark'
+        ? 'contentDark'
+        : 'contentNormal'
+    return {
+      borderRadius: theme.shape.borderRadius,
+      overflow: 'hidden',
+      margin: 0,
+      '> .MuiListItem-root:nth-of-type(even)': {
+        backgroundColor: (theme.palette[palette] as PaletteColor)['main'],
+      },
+      '> .MuiListItem-root:nth-of-type(odd)': {
+        backgroundColor: (theme.palette[palette] as PaletteColor)['dark'],
+      },
+    }
+  }
 )

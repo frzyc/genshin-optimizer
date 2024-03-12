@@ -1,9 +1,10 @@
+import type { CardBackgroundColor } from '@genshin-optimizer/common/ui'
+import { CardThemed } from '@genshin-optimizer/common/ui'
 import { CardContent } from '@mui/material'
 import React, { useContext } from 'react'
 import { DataContext } from '../../Context/DataContext'
 import type { DocumentConditional, DocumentSection } from '../../Types/sheet'
 import { evalIfFunc } from '../../Util/Util'
-import CardDark from '../Card/CardDark'
 import { HeaderDisplay } from '../DocumentDisplay'
 import FieldsDisplay from '../FieldDisplay'
 import ConditionalSelector from './ConditionalSelector'
@@ -13,7 +14,7 @@ type ConditionalDisplayProps = {
   hideHeader?: boolean | ((section: DocumentSection) => boolean)
   hideDesc?: boolean
   disabled?: boolean
-  component?: React.ElementType
+  bgt?: CardBackgroundColor
 }
 
 export default function ConditionalDisplay({
@@ -21,7 +22,7 @@ export default function ConditionalDisplay({
   hideHeader = false,
   hideDesc = false,
   disabled = false,
-  component = CardDark,
+  bgt = 'normal',
 }: ConditionalDisplayProps) {
   const { data } = useContext(DataContext)
   let fields
@@ -36,18 +37,15 @@ export default function ConditionalDisplay({
       return stateVal ? state.fields : []
     })
   }
-
-  const children = (
-    <>
+  return (
+    <CardThemed bgt={bgt}>
       {!evalIfFunc(hideHeader, conditional) && (
         <HeaderDisplay header={conditional.header} hideDesc={hideDesc} />
       )}
       <CardContent sx={{ p: 0, '&:last-child': { pb: 0 } }}>
         <ConditionalSelector conditional={conditional} disabled={disabled} />
       </CardContent>
-      {fields && <FieldsDisplay fields={fields} />}
-    </>
+      {fields && <FieldsDisplay bgt={bgt} fields={fields} />}
+    </CardThemed>
   )
-
-  return React.createElement(component, { children })
 }

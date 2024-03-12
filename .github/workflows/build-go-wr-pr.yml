@@ -2,7 +2,6 @@ name: Build GO (WR) PR
 run-name: Build GO (WR) for ${{ github.event.number }} - ${{ github.event.pull_request.title }}
 
 permissions:
-  actions: read
   contents: read
 
 on:
