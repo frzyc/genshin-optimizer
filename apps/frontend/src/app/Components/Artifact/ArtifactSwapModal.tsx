@@ -3,7 +3,7 @@ import {
   useForceUpdate,
   useMediaQueryUp,
 } from '@genshin-optimizer/common/react-util'
-import { useOnScreen } from '@genshin-optimizer/common/ui'
+import { useInfScroll } from '@genshin-optimizer/common/ui'
 import { filterFunction } from '@genshin-optimizer/common/util'
 import { imgAssets } from '@genshin-optimizer/gi/assets'
 import type { ArtifactSlotKey } from '@genshin-optimizer/gi/consts'
@@ -25,7 +25,6 @@ import {
   useEffect,
   useMemo,
   useReducer,
-  useState,
 } from 'react'
 import { useTranslation } from 'react-i18next'
 import ArtifactCard from '../../PageArtifact/ArtifactCard'
@@ -99,19 +98,10 @@ export default function ArtifactSwapModal({
     )
   }, [dbDirty, database, filterConfigs, filterOption])
 
-  const [numShow, setNumShow] = useState(numToShowMap[brPt])
-  // reset the numShow when artifactIds changes
-  useEffect(() => {
-    artifactIds && setNumShow(numToShowMap[brPt])
-  }, [artifactIds, brPt])
-
-  const [element, setElement] = useState<HTMLElement | undefined>()
-  const trigger = useOnScreen(element)
-  const shouldIncrease = trigger && numShow < artifactIds.length
-  useEffect(() => {
-    if (!shouldIncrease) return
-    setNumShow((num) => num + numToShowMap[brPt])
-  }, [shouldIncrease, brPt])
+  const { numShow, setTriggerElement } = useInfScroll(
+    numToShowMap[brPt],
+    artifactIds.length
+  )
 
   const artifactIdsToShow = useMemo(
     () => artifactIds.slice(0, numShow),
@@ -217,7 +207,7 @@ export default function ArtifactSwapModal({
             <Skeleton
               ref={(node) => {
                 if (!node) return
-                setElement(node)
+                setTriggerElement(node)
               }}
               sx={{ borderRadius: 1, mt: 1 }}
               variant="rectangular"
