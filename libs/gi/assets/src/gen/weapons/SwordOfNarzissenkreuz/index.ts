@@ -1,8 +1,6 @@
 // This is a generated index file.
-import {
-  default as awakenIcon,
-  default as icon,
-} from './UI_EquipIcon_Sword_Purewill.png'
+import awakenIcon from './UI_EquipIcon_Sword_Purewill.png'
+import icon from './UI_EquipIcon_Sword_Purewill.png'
 
 const data = {
   awakenIcon,

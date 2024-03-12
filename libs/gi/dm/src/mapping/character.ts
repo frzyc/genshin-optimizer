@@ -145,6 +145,7 @@ export const characterIdMap: Record<
   10000091: 'Navia',
   10000092: 'Gaming',
   10000093: 'Xianyun',
+  10000094: 'Chiori',
   // 11000008: "TEMPLATE",
   // 11000009: "TEMPLATE",
   // 11000010: "TEMPLATE",

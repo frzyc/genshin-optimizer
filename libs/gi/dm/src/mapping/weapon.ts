@@ -49,6 +49,7 @@ export const weaponIdMap: Record<number | string, WeaponKey> = {
   11511: 'KeyOfKhajNisut',
   11512: 'LightOfFoliarIncision',
   11513: 'SplendorOfTranquilWaters',
+  11514: 'UrakuMisugiri',
 
   //claymore
   12101: 'WasterGreatsword',
@@ -115,6 +116,7 @@ export const weaponIdMap: Record<number | string, WeaponKey> = {
   13419: 'MissiveWindspear',
   13424: 'BalladOfTheFjords',
   13425: 'RightfulReward',
+  13426: 'DialoguesOfTheDesertSages',
   13427: 'ProspectorsDrill',
   13501: 'StaffOfHoma',
   13502: 'SkywardSpine',
