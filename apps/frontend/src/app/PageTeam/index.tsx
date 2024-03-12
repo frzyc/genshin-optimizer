@@ -13,7 +13,7 @@ import { SillyContext } from '@genshin-optimizer/gi/ui'
 import { Box, CardContent, Skeleton } from '@mui/material'
 import { Suspense, useContext, useEffect, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Navigate, useMatch, useNavigate, useParams } from 'react-router-dom'
+import { Navigate, useMatch, useParams } from 'react-router-dom'
 import type { CharacterContextObj } from '../Context/CharacterContext'
 import { CharacterContext } from '../Context/CharacterContext'
 import { DataContext, type dataContextObj } from '../Context/DataContext'
@@ -68,7 +68,6 @@ const fallback = <Skeleton variant="rectangular" width="100%" height={1000} />
 const chartDataAll: Record<string, ChartData> = {}
 const graphBuildAll: Record<string, GeneratedBuild[]> = {}
 function Page({ teamId }: { teamId: string }) {
-  const navigate = useNavigate()
   const { silly } = useContext(SillyContext)
   const database = useDatabase()
   const { gender } = useDBMeta()
@@ -88,7 +87,6 @@ function Page({ teamId }: { teamId: string }) {
   } = useMatch({ path: '/teams/:teamId/:characterKey/:tab', end: false }) ?? {
     params: {},
   }
-
   // validate characterKey
   const { characterKey, teamCharId } = useMemo(() => {
     const teamCharId =
@@ -112,21 +110,6 @@ function Page({ teamId }: { teamId: string }) {
     }
     return tabRaw
   }, [teamChar, tabRaw])
-  // Enforce validated routing for tabs and character
-  useEffect(() => {
-    if (!characterKey) return
-    if (characterKeyRaw !== characterKey || tab !== tabRaw)
-      navigate(`/teams/${teamId}/${characterKey}/${tab}`)
-  }, [
-    database,
-    characterKey,
-    characterKeyRaw,
-    navigate,
-    teamCharIds,
-    tab,
-    teamId,
-    tabRaw,
-  ])
 
   const { t } = useTranslation([
     'sillyWisher_charNames',

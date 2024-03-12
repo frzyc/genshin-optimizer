@@ -514,4 +514,17 @@ export class TeamCharacterDataManager extends DataManager<
       return this.database.buildTcs.follow(teamChar.compareBuildTcId, callback)
     return () => {}
   }
+  getActiveBuildName(teamCharId: string, equippedName = 'Equipped Build') {
+    const teamChar = this.database.teamChars.get(teamCharId)
+    if (!teamChar) return
+    const { buildType, buildId, buildTcId } = teamChar
+    switch (buildType) {
+      case 'equipped':
+        return equippedName
+      case 'real':
+        return this.database.builds.get(buildId)?.name ?? ''
+      case 'tc':
+        return this.database.buildTcs.get(buildTcId)?.name ?? ''
+    }
+  }
 }
