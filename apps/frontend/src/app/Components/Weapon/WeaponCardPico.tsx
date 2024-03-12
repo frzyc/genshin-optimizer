@@ -1,5 +1,4 @@
 import { weaponAsset } from '@genshin-optimizer/gi/assets'
-import type { ICachedWeapon } from '@genshin-optimizer/gi/db'
 import { useWeapon } from '@genshin-optimizer/gi/db-ui'
 import { Box, Typography } from '@mui/material'
 import { useMemo } from 'react'
@@ -15,11 +14,6 @@ import WeaponNameTooltip from './WeaponNameTooltip'
 
 export default function WeaponCardPico({ weaponId }: { weaponId: string }) {
   const weapon = useWeapon(weaponId)
-  if (!weapon) return null
-  return <WeaponCardPicoObj weapon={weapon} />
-}
-
-export function WeaponCardPicoObj({ weapon }: { weapon: ICachedWeapon }) {
   const weaponSheet = weapon?.key && getWeaponSheet(weapon.key)
   const UIData = useMemo(
     () =>

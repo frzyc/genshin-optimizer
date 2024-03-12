@@ -2,8 +2,11 @@ import {
   useForceUpdate,
   useMediaQueryUp,
 } from '@genshin-optimizer/common/react-util'
-import { useOnScreen } from '@genshin-optimizer/common/ui'
-import { filterFunction, sortFunction } from '@genshin-optimizer/common/util'
+import {
+  clamp,
+  filterFunction,
+  sortFunction,
+} from '@genshin-optimizer/common/util'
 import { imgAssets } from '@genshin-optimizer/gi/assets'
 import type {
   RarityKey,
@@ -21,7 +24,6 @@ import {
   CardContent,
   Divider,
   Grid,
-  Skeleton,
   TextField,
   ToggleButton,
   Typography,
@@ -33,6 +35,7 @@ import {
   useDeferredValue,
   useEffect,
   useMemo,
+  useRef,
   useState,
 } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -49,7 +52,7 @@ import CloseButton from '../CloseButton'
 import CompareBuildButton from '../CompareBuildButton'
 import ImgIcon from '../Image/ImgIcon'
 import ModalWrapper from '../ModalWrapper'
-import ShowingAndSortOptionSelect from '../ShowingAndSortOptionSelect'
+import PageAndSortOptionSelect from '../PageAndSortOptionSelect'
 import SolidToggleButtonGroup from '../SolidToggleButtonGroup'
 import WeaponSelectionModal from './WeaponSelectionModal'
 
@@ -98,12 +101,16 @@ export default function WeaponSwapModal({
   )
 
   const brPt = useMediaQueryUp()
+  const maxNumWeaponsToDisplay = numToShowMap[brPt]
+
+  const [pageIndex, setpageIndex] = useState(0)
+  const invScrollRef = useRef<HTMLDivElement>(null)
 
   const [rarity, setRarity] = useState<RarityKey[]>([5, 4, 3])
   const [searchTerm, setSearchTerm] = useState('')
   const deferredSearchTerm = useDeferredValue(searchTerm)
 
-  const weaponIds = useMemo(
+  const weaponIdList = useMemo(
     () =>
       (dbDirty &&
         database.weapons.values
@@ -125,27 +132,34 @@ export default function WeaponSwapModal({
     [dbDirty, database, rarity, weaponTypeKey, deferredSearchTerm]
   )
 
-  const [numShow, setNumShow] = useState(numToShowMap[brPt])
-  // reset the numShow when artifactIds changes
-  useEffect(() => {
-    weaponIds && setNumShow(numToShowMap[brPt])
-  }, [weaponIds, brPt])
-
-  const [element, setElement] = useState<HTMLElement | undefined>()
-  const trigger = useOnScreen(element)
-  const shouldIncrease = trigger && numShow < weaponIds.length
-  useEffect(() => {
-    if (!shouldIncrease) return
-    setNumShow((num) => num + numToShowMap[brPt])
-  }, [shouldIncrease, brPt])
-
-  const weaponIdsToShow = useMemo(
-    () => weaponIds.slice(0, numShow),
-    [weaponIds, numShow]
-  )
+  const { weaponIdsToShow, numPages, currentPageIndex } = useMemo(() => {
+    const numPages = Math.ceil(weaponIdList.length / maxNumWeaponsToDisplay)
+    const currentPageIndex = clamp(pageIndex, 0, numPages - 1)
+    return {
+      weaponIdsToShow: weaponIdList.slice(
+        currentPageIndex * maxNumWeaponsToDisplay,
+        (currentPageIndex + 1) * maxNumWeaponsToDisplay
+      ),
+      numPages,
+      currentPageIndex,
+    }
+  }, [weaponIdList, pageIndex, maxNumWeaponsToDisplay])
 
   // for pagination
-  const totalShowing = `${weaponIds.length}`
+  const totalShowing = `${weaponIdList.length}`
+  const setPage = useCallback(
+    (e, value) => {
+      invScrollRef.current?.scrollIntoView({ behavior: 'smooth' })
+      setpageIndex(value - 1)
+    },
+    [setpageIndex, invScrollRef]
+  )
+
+  const paginationProps = {
+    count: numPages,
+    page: currentPageIndex + 1,
+    onChange: setPage,
+  }
 
   const showingTextProps = {
     numShowing: weaponIdsToShow.length,
@@ -233,7 +247,10 @@ export default function WeaponSwapModal({
             alignItems="center"
             flexWrap="wrap"
           >
-            <ShowingAndSortOptionSelect showingTextProps={showingTextProps} />
+            <PageAndSortOptionSelect
+              paginationProps={paginationProps}
+              showingTextProps={showingTextProps}
+            />
           </Box>
           <Button
             fullWidth
@@ -254,17 +271,19 @@ export default function WeaponSwapModal({
               </Grid>
             ))}
           </Grid>
-          {weaponIds.length !== weaponIdsToShow.length && (
-            <Skeleton
-              ref={(node) => {
-                if (!node) return
-                setElement(node)
-              }}
-              sx={{ borderRadius: 1 }}
-              variant="rectangular"
-              width="100%"
-              height={100}
-            />
+          {numPages > 1 && (
+            <Box
+              pt={1}
+              display="flex"
+              justifyContent="space-between"
+              alignItems="center"
+              flexWrap="wrap"
+            >
+              <PageAndSortOptionSelect
+                paginationProps={paginationProps}
+                showingTextProps={showingTextProps}
+              />
+            </Box>
           )}
         </CardContent>
       </CardDark>

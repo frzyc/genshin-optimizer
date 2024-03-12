@@ -1,5 +1,3 @@
-import type { CardBackgroundColor } from '@genshin-optimizer/common/ui'
-import { CardThemed } from '@genshin-optimizer/common/ui'
 import { Box, Divider, Typography } from '@mui/material'
 import { useContext } from 'react'
 import { DataContext } from '../Context/DataContext'
@@ -10,6 +8,7 @@ import type {
   IDocumentText,
 } from '../Types/sheet'
 import { evalIfFunc } from '../Util/Util'
+import CardDark from './Card/CardDark'
 import CardHeaderCustom from './Card/CardHeaderCustom'
 import ConditionalDisplay from './Conditional/ConditionalDisplay'
 import FieldsDisplay from './FieldDisplay'
@@ -21,7 +20,7 @@ type DocumentDisplayProps = {
   hideDesc?: boolean
   hideHeader?: boolean | ((section: DocumentSection) => boolean)
   disabled?: boolean
-  bgt?: CardBackgroundColor
+  component?: React.ElementType
 }
 
 export default function DocumentDisplay({
@@ -30,7 +29,7 @@ export default function DocumentDisplay({
   hideDesc = false,
   hideHeader = false,
   disabled = false,
-  bgt = 'normal',
+  component,
 }: DocumentDisplayProps) {
   const { data } = useContext(DataContext)
   if (!sections.length) return null
@@ -47,7 +46,7 @@ export default function DocumentDisplay({
           hideDesc={hideDesc}
           hideHeader={hideHeader}
           disabled={disabled}
-          bgt={bgt}
+          component={component}
         />
       )
     })
@@ -65,13 +64,13 @@ function SectionDisplay({
   hideDesc = false,
   hideHeader = false,
   disabled = false,
-  bgt = 'normal',
+  component,
 }: {
   section: DocumentSection
   hideDesc?: boolean
   hideHeader?: boolean | ((section: DocumentSection) => boolean)
   disabled?: boolean
-  bgt?: CardBackgroundColor
+  component?: React.ElementType
 }) {
   if ('fields' in section) {
     return (
@@ -79,7 +78,6 @@ function SectionDisplay({
         section={section}
         hideDesc={hideDesc}
         hideHeader={hideHeader}
-        bgt={bgt}
       />
     )
   } else if ('states' in section) {
@@ -89,7 +87,7 @@ function SectionDisplay({
         hideDesc={hideDesc}
         hideHeader={hideHeader}
         disabled={disabled}
-        bgt={bgt}
+        component={component}
       />
     )
   } /* if ("text" in section) */ else {
@@ -101,15 +99,13 @@ function FieldsSectionDisplay({
   section,
   hideDesc,
   hideHeader,
-  bgt = 'normal',
 }: {
   section: IDocumentFields
   hideDesc?: boolean
   hideHeader?: boolean | ((section: DocumentSection) => boolean)
-  bgt?: CardBackgroundColor
 }) {
   return (
-    <CardThemed bgt={bgt} className='FieldsSectionCard'>
+    <CardDark>
       {!evalIfFunc(hideHeader, section) && section.header && (
         <HeaderDisplay
           header={section.header}
@@ -117,8 +113,8 @@ function FieldsSectionDisplay({
           hideDivider={section.fields.length === 0}
         />
       )}
-      <FieldsDisplay bgt={bgt} fields={section.fields} />
-    </CardThemed>
+      <FieldsDisplay fields={section.fields} />
+    </CardDark>
   )
 }
 

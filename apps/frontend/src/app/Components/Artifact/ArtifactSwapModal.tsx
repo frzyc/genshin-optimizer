@@ -3,8 +3,7 @@ import {
   useForceUpdate,
   useMediaQueryUp,
 } from '@genshin-optimizer/common/react-util'
-import { useOnScreen } from '@genshin-optimizer/common/ui'
-import { filterFunction } from '@genshin-optimizer/common/util'
+import { clamp, filterFunction } from '@genshin-optimizer/common/util'
 import { imgAssets } from '@genshin-optimizer/gi/assets'
 import type { ArtifactSlotKey } from '@genshin-optimizer/gi/consts'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
@@ -25,6 +24,7 @@ import {
   useEffect,
   useMemo,
   useReducer,
+  useRef,
   useState,
 } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -39,7 +39,7 @@ import CloseButton from '../CloseButton'
 import CompareBuildButton from '../CompareBuildButton'
 import ImgIcon from '../Image/ImgIcon'
 import ModalWrapper from '../ModalWrapper'
-import ShowingAndSortOptionSelect from '../ShowingAndSortOptionSelect'
+import PageAndSortOptionSelect from '../PageAndSortOptionSelect'
 
 const numToShowMap = { xs: 2 * 3, sm: 2 * 3, md: 3 * 3, lg: 4 * 3, xl: 4 * 3 }
 const ArtifactEditor = lazy(() => import('../../PageArtifact/ArtifactEditor'))
@@ -86,42 +86,53 @@ export default function ArtifactSwapModal({
   }, [database, forceUpdate])
 
   const brPt = useMediaQueryUp()
+  const maxNumArtifactsToDisplay = numToShowMap[brPt]
+
+  const [pageIdex, setpageIdex] = useState(0)
+  const invScrollRef = useRef<HTMLDivElement>(null)
 
   const filterConfigs = useMemo(() => artifactFilterConfigs(), [])
   const totalArtNum = database.arts.values.filter(
     (s) => s.slotKey === filterOption.slotKeys[0]
   ).length
-
-  const artifactIds = useMemo(() => {
+  const artIdList = useMemo(() => {
     const filterFunc = filterFunction(filterOption, filterConfigs)
     return (
       dbDirty && database.arts.values.filter(filterFunc).map((art) => art.id)
     )
   }, [dbDirty, database, filterConfigs, filterOption])
 
-  const [numShow, setNumShow] = useState(numToShowMap[brPt])
-  // reset the numShow when artifactIds changes
-  useEffect(() => {
-    artifactIds && setNumShow(numToShowMap[brPt])
-  }, [artifactIds, brPt])
+  const { artifactIdsToShow, numPages, currentPageIndex } = useMemo(() => {
+    const numPages = Math.ceil(artIdList.length / maxNumArtifactsToDisplay)
+    const currentPageIndex = clamp(pageIdex, 0, numPages - 1)
+    return {
+      artifactIdsToShow: artIdList.slice(
+        currentPageIndex * maxNumArtifactsToDisplay,
+        (currentPageIndex + 1) * maxNumArtifactsToDisplay
+      ),
+      numPages,
+      currentPageIndex,
+    }
+  }, [artIdList, pageIdex, maxNumArtifactsToDisplay])
 
-  const [element, setElement] = useState<HTMLElement | undefined>()
-  const trigger = useOnScreen(element)
-  const shouldIncrease = trigger && numShow < artifactIds.length
-  useEffect(() => {
-    if (!shouldIncrease) return
-    setNumShow((num) => num + numToShowMap[brPt])
-  }, [shouldIncrease, brPt])
-
-  const artifactIdsToShow = useMemo(
-    () => artifactIds.slice(0, numShow),
-    [artifactIds, numShow]
+  // for pagination
+  const totalShowing =
+    artIdList.length !== totalArtNum
+      ? `${artIdList.length}/${totalArtNum}`
+      : `${totalArtNum}`
+  const setPage = useCallback(
+    (e, value) => {
+      invScrollRef.current?.scrollIntoView({ behavior: 'smooth' })
+      setpageIdex(value - 1)
+    },
+    [setpageIdex, invScrollRef]
   )
 
-  const totalShowing =
-    artifactIds.length !== totalArtNum
-      ? `${artifactIds.length}/${totalArtNum}`
-      : `${totalArtNum}`
+  const paginationProps = {
+    count: numPages,
+    page: currentPageIndex + 1,
+    onChange: setPage,
+  }
 
   const showingTextProps = {
     numShowing: artifactIdsToShow.length,
@@ -170,7 +181,7 @@ export default function ArtifactSwapModal({
             <ArtifactFilterDisplay
               filterOption={filterOption}
               filterOptionDispatch={filterOptionDispatch}
-              filteredIds={artifactIds}
+              filteredIds={artIdList}
               disableSlotFilter
             />
           </Suspense>
@@ -184,7 +195,10 @@ export default function ArtifactSwapModal({
             alignItems="flex-end"
             flexWrap="wrap"
           >
-            <ShowingAndSortOptionSelect showingTextProps={showingTextProps} />
+            <PageAndSortOptionSelect
+              paginationProps={paginationProps}
+              showingTextProps={showingTextProps}
+            />
           </Box>
           <Button
             fullWidth
@@ -213,17 +227,19 @@ export default function ArtifactSwapModal({
               </Grid>
             </Suspense>
           </Box>
-          {artifactIds.length !== artifactIdsToShow.length && (
-            <Skeleton
-              ref={(node) => {
-                if (!node) return
-                setElement(node)
-              }}
-              sx={{ borderRadius: 1, mt: 1 }}
-              variant="rectangular"
-              width="100%"
-              height={100}
-            />
+          {numPages > 1 && (
+            <Box
+              pt={2}
+              display="flex"
+              justifyContent="space-between"
+              alignItems="center"
+              flexWrap="wrap"
+            >
+              <PageAndSortOptionSelect
+                paginationProps={paginationProps}
+                showingTextProps={showingTextProps}
+              />
+            </Box>
           )}
         </CardContent>
       </CardDark>

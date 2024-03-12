@@ -563,6 +563,7 @@ function SelectItem({
     setCharListMode(mode)
     setCharList(new Set([...charList]).add(locKey))
   }, [selected, setCharListMode, setCharList, charList, locKey])
+  const disableTooltip = useMemo(() => charList.size !== 0, [charList.size])
   const allowed =
     // Character is already allowed, and not selected to be excluded
     (selected &&
@@ -606,6 +607,7 @@ function SelectItem({
         characterKey={database.chars.LocationToCharacterKey(locKey)}
         onMouseDown={onMouseDown}
         onMouseEnter={onMouseEnter}
+        disableTooltip={disableTooltip}
       />
       {content}
     </CardLight>

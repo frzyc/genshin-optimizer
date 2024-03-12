@@ -5,6 +5,8 @@
   "projectType": "library",
   "tags": [],
   "targets": {
-    "lint": {}
+    "lint": {},
+    "build": {},
+    "build-vite": {}
   }
 }

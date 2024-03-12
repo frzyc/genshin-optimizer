@@ -146,7 +146,7 @@ function Content() {
       <Grid item>
         <Header anchor="back-to-top-anchor" />
       </Grid>
-      <Container maxWidth="xl" sx={{ px: { xs: 0.5, sm: 1 } }}>
+      <Container maxWidth="xl" sx={{ px: { xs: 0.5, sm: 1, md: 2 } }}>
         <Suspense
           fallback={
             <Skeleton

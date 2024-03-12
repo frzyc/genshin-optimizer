@@ -21,20 +21,9 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
-      - uses: actions/checkout@v4
-      - name: Get Cache Key
-        id: get-cache-key
-        run: |
-          echo "key=$(git ls-tree -r HEAD | grep '^160000' | sha256sum | cut -d " " -f 1)" >> $GITHUB_OUTPUT
-      - uses: actions/cache/restore@v4
+      - name: Checkout
+        uses: actions/checkout@v4
         with:
-          path: .git/modules
-          key: submodule-${{ steps.get-cache-key.outputs.key }}
-          restore-keys: |
-            submodule-
-      - uses: actions/checkout@v4
-        with:
-          persist-credentials: false
           submodules: true
       - uses: actions/setup-node@v4
         with:

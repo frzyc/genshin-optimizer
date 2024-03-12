@@ -115,10 +115,10 @@ export class TeamCharacterDataManager extends DataManager<
       num <= existingUndercKey.length * 2;
       num++
     ) {
-      const name = `${characterKey} Loadout ${num}`
+      const name = `Loadout Name ${num}`
       if (existingUndercKey.some((tc) => tc.name !== name)) return name
     }
-    return `${characterKey} Loadout`
+    return `Loadout Name`
   }
   override validate(obj: unknown): TeamCharacter | undefined {
     const { key: characterKey } = obj as TeamCharacter
@@ -513,18 +513,5 @@ export class TeamCharacterDataManager extends DataManager<
     } else if (teamChar.buildType === 'tc')
       return this.database.buildTcs.follow(teamChar.compareBuildTcId, callback)
     return () => {}
-  }
-  getActiveBuildName(teamCharId: string, equippedName = 'Equipped Build') {
-    const teamChar = this.database.teamChars.get(teamCharId)
-    if (!teamChar) return
-    const { buildType, buildId, buildTcId } = teamChar
-    switch (buildType) {
-      case 'equipped':
-        return equippedName
-      case 'real':
-        return this.database.builds.get(buildId)?.name ?? ''
-      case 'tc':
-        return this.database.buildTcs.get(buildTcId)?.name ?? ''
-    }
   }
 }

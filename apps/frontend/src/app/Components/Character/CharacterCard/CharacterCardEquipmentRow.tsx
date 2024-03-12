@@ -1,13 +1,13 @@
 import type { ArtifactSlotKey } from '@genshin-optimizer/gi/consts'
 import { allArtifactSlotKeys } from '@genshin-optimizer/gi/consts'
-import type { ICachedArtifact, ICachedWeapon } from '@genshin-optimizer/gi/db'
+import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
-import { Box, Card, Grid, Typography } from '@mui/material'
+import { Box, Grid } from '@mui/material'
 import { useContext } from 'react'
 import { DataContext } from '../../../Context/DataContext'
 import { input } from '../../../Formula'
 import ArtifactCardPico from '../../Artifact/ArtifactCardPico'
-import WeaponCardPico, { WeaponCardPicoObj } from '../../Weapon/WeaponCardPico'
+import WeaponCardPico from '../../Weapon/WeaponCardPico'
 
 export function CharacterCardEquipmentRow({
   hideWeapon = false,
@@ -49,36 +49,5 @@ function Artifacts() {
         )
       )}
     </>
-  )
-}
-export function CharacterCardEquipmentRowTC({
-  weapon,
-}: {
-  weapon: ICachedWeapon
-}) {
-  return (
-    <Box>
-      <Grid container columns={weapon ? 6 : 5} spacing={0.5} sx={{}}>
-        {weapon && (
-          <Grid item xs={1} height="100%">
-            <WeaponCardPicoObj weapon={weapon} />
-          </Grid>
-        )}
-        <Grid item xs={5}>
-          <Card
-            sx={{
-              backgroundColor: 'info.main',
-              height: '44px',
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-            }}
-          >
-            {/* TODO: Translation */}
-            <Typography>TC Build</Typography>
-          </Card>
-        </Grid>
-      </Grid>
-    </Box>
   )
 }

@@ -4,6 +4,12 @@
   "sourceRoot": "libs/sr/consts/src",
   "projectType": "library",
   "targets": {
+    "build": {},
+    "build-ts": {
+      "options": {
+        "updateBuildableProjectDepsInPackageJson": true
+      }
+    },
     "publish": {
       "executor": "nx:run-commands",
       "options": {

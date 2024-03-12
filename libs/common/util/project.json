@@ -4,6 +4,12 @@
   "sourceRoot": "libs/common/util/src",
   "projectType": "library",
   "targets": {
+    "build": {},
+    "build-ts": {
+      "options": {
+        "updateBuildableProjectDepsInPackageJson": true
+      }
+    },
     "lint": {},
     "test": {}
   },

@@ -15,6 +15,12 @@
       ]
     },
     "gen-file": {},
+    "build": {},
+    "build-ts": {
+      "options": {
+        "updateBuildableProjectDepsInPackageJson": true
+      }
+    },
     "lint": {}
   },
   "tags": []

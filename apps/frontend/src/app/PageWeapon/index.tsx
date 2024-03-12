@@ -2,8 +2,11 @@ import {
   useForceUpdate,
   useMediaQueryUp,
 } from '@genshin-optimizer/common/react-util'
-import { useOnScreen } from '@genshin-optimizer/common/ui'
-import { filterFunction, sortFunction } from '@genshin-optimizer/common/util'
+import {
+  clamp,
+  filterFunction,
+  sortFunction,
+} from '@genshin-optimizer/common/util'
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
 import { allRarityKeys, allWeaponTypeKeys } from '@genshin-optimizer/gi/consts'
 import { initialWeapon } from '@genshin-optimizer/gi/db'
@@ -25,12 +28,13 @@ import React, {
   useDeferredValue,
   useEffect,
   useMemo,
+  useRef,
   useState,
 } from 'react'
 import ReactGA from 'react-ga4'
 import { useTranslation } from 'react-i18next'
 import CardDark from '../Components/Card/CardDark'
-import ShowingAndSortOptionSelect from '../Components/ShowingAndSortOptionSelect'
+import PageAndSortOptionSelect from '../Components/PageAndSortOptionSelect'
 import WeaponRarityToggle from '../Components/ToggleButton/WeaponRarityToggle'
 import WeaponToggle from '../Components/ToggleButton/WeaponToggle'
 import { getWeaponSheet } from '../Data/Weapons'
@@ -62,6 +66,8 @@ export default function PageWeapon() {
 
   const [newWeaponModalShow, setnewWeaponModalShow] = useState(false)
   const [dbDirty, forceUpdate] = useForceUpdate()
+  const invScrollRef = useRef<HTMLDivElement>(null)
+  const [pageIndex, setPageIndex] = useState(0)
   //set follow, should run only once
   useEffect(() => {
     ReactGA.send({ hitType: 'pageview', page: '/weapon' })
@@ -71,6 +77,7 @@ export default function PageWeapon() {
   }, [forceUpdate, database])
 
   const brPt = useMediaQueryUp()
+  const maxNumToDisplay = numToShowMap[brPt]
 
   const deleteWeapon = useCallback(
     async (key: string) => {
@@ -104,10 +111,10 @@ export default function PageWeapon() {
   const deferredSearchTerm = useDeferredValue(searchTerm)
 
   const { sortType, ascending, weaponType, rarity } = state
-  const { weaponIds, totalWeaponNum } = useMemo(() => {
+  const { weaponIdList, totalWeaponNum } = useMemo(() => {
     const weapons = database.weapons.values
     const totalWeaponNum = weapons.length
-    const weaponIds = weapons
+    const weaponIdList = weapons
       .filter(
         filterFunction(
           { weaponType, rarity, name: deferredSearchTerm },
@@ -122,7 +129,7 @@ export default function PageWeapon() {
         )
       )
       .map((weapon) => weapon.id)
-    return dbDirty && { weaponIds, totalWeaponNum }
+    return dbDirty && { weaponIdList, totalWeaponNum }
   }, [
     dbDirty,
     database,
@@ -133,30 +140,31 @@ export default function PageWeapon() {
     deferredSearchTerm,
   ])
 
-  const [numShow, setNumShow] = useState(numToShowMap[brPt])
-  // reset the numShow when artifactIds changes
-  useEffect(() => {
-    weaponIds && setNumShow(numToShowMap[brPt])
-  }, [weaponIds, brPt])
-
-  const [element, setElement] = useState<HTMLElement | undefined>()
-  const trigger = useOnScreen(element)
-  const shouldIncrease = trigger && numShow < weaponIds.length
-  useEffect(() => {
-    if (!shouldIncrease) return
-    setNumShow((num) => num + numToShowMap[brPt])
-  }, [shouldIncrease, brPt])
-
-  const weaponIdsToShow = useMemo(
-    () => weaponIds.slice(0, numShow),
-    [weaponIds, numShow]
-  )
+  const { weaponIdsToShow, numPages, currentPageIndex } = useMemo(() => {
+    const numPages = Math.ceil(weaponIdList.length / maxNumToDisplay)
+    const currentPageIndex = clamp(pageIndex, 0, numPages - 1)
+    return {
+      weaponIdsToShow: weaponIdList.slice(
+        currentPageIndex * maxNumToDisplay,
+        (currentPageIndex + 1) * maxNumToDisplay
+      ),
+      numPages,
+      currentPageIndex,
+    }
+  }, [weaponIdList, pageIndex, maxNumToDisplay])
 
   // Pagination
   const totalShowing =
-    weaponIds.length !== totalWeaponNum
-      ? `${weaponIds.length}/${totalWeaponNum}`
+    weaponIdList.length !== totalWeaponNum
+      ? `${weaponIdList.length}/${totalWeaponNum}`
       : `${totalWeaponNum}`
+  const setPage = useCallback(
+    (_: ChangeEvent<unknown>, value: number) => {
+      invScrollRef.current?.scrollIntoView({ behavior: 'smooth' })
+      setPageIndex(value - 1)
+    },
+    [setPageIndex, invScrollRef]
+  )
 
   const resetEditWeapon = useCallback(
     () => database.displayWeapon.set({ editWeaponId: '' }),
@@ -177,10 +185,10 @@ export default function PageWeapon() {
         Object.entries(database.weapons.data).forEach(([id, weapon]) => {
           const wtk = getWeaponSheet(weapon.key).weaponType
           ct[wtk].total++
-          if (weaponIds.includes(id)) ct[wtk].current++
+          if (weaponIdList.includes(id)) ct[wtk].current++
         })
       ),
-    [database, weaponIds]
+    [database, weaponIdList]
   )
 
   const weaponRarityTotals = useMemo(
@@ -189,11 +197,17 @@ export default function PageWeapon() {
         Object.entries(database.weapons.data).forEach(([id, weapon]) => {
           const wr = getWeaponSheet(weapon.key).rarity
           ct[wr].total++
-          if (weaponIds.includes(id)) ct[wr].current++
+          if (weaponIdList.includes(id)) ct[wr].current++
         })
       ),
-    [database, weaponIds]
+    [database, weaponIdList]
   )
+
+  const paginationProps = {
+    count: numPages,
+    page: currentPageIndex + 1,
+    onChange: setPage,
+  }
 
   const showingTextProps = {
     numShowing: weaponIdsToShow.length,
@@ -228,7 +242,7 @@ export default function PageWeapon() {
         />
       </Suspense>
 
-      <CardDark>
+      <CardDark ref={invScrollRef}>
         <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
           <Box display="flex" flexWrap="wrap" gap={1} alignItems="stretch">
             <WeaponToggle
@@ -264,11 +278,13 @@ export default function PageWeapon() {
           <Box
             display="flex"
             justifyContent="space-between"
-            alignItems="center"
+            alignItems="flex-end"
             flexWrap="wrap"
           >
-            <ShowingAndSortOptionSelect
+            <PageAndSortOptionSelect
+              paginationProps={paginationProps}
               showingTextProps={showingTextProps}
+              displaySort={true}
               sortByButtonProps={sortByButtonProps}
             />
           </Box>
@@ -303,17 +319,22 @@ export default function PageWeapon() {
           ))}
         </Grid>
       </Suspense>
-      {weaponIds.length !== weaponIdsToShow.length && (
-        <Skeleton
-          ref={(node) => {
-            if (!node) return
-            setElement(node)
-          }}
-          sx={{ borderRadius: 1 }}
-          variant="rectangular"
-          width="100%"
-          height={100}
-        />
+      {numPages > 1 && (
+        <CardDark>
+          <CardContent>
+            <Box
+              display="flex"
+              justifyContent="space-between"
+              alignItems="center"
+              flexWrap="wrap"
+            >
+              <PageAndSortOptionSelect
+                paginationProps={paginationProps}
+                showingTextProps={showingTextProps}
+              />
+            </Box>
+          </CardContent>
+        </CardDark>
       )}
     </Box>
   )

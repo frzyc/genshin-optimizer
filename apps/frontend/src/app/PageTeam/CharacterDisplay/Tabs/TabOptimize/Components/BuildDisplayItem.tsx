@@ -86,8 +86,8 @@ export default function BuildDisplayItem({
   // update when data is recalc'd
   const weaponNewOld = useMemo(
     () => ({
-      oldId: oldData?.get(input.weapon.id)?.value,
-      newId: data.get(input.weapon.id).value ?? '',
+      oldId: oldData!.get(input.weapon.id).value!,
+      newId: data.get(input.weapon.id).value!,
     }),
     [data, oldData]
   )
@@ -99,7 +99,7 @@ export default function BuildDisplayItem({
   const artifactNewOldBySlot: Record<ArtifactSlotKey, NewOld> = useMemo(
     () =>
       objKeyMap(allArtifactSlotKeys, (slotKey) => ({
-        oldId: oldData?.get(input.art[slotKey].id)?.value,
+        oldId: oldData!.get(input.art[slotKey].id).value ?? '',
         newId: data.get(input.art[slotKey].id).value ?? '',
       })),
     [data, oldData]

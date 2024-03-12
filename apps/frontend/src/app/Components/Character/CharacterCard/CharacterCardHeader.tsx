@@ -59,7 +59,7 @@ export function CharacterCardHeader({
             top: 0,
             width: '100%',
             height: '100%',
-            opacity: 0.5,
+            opacity: 0.7,
             backgroundImage: `url(${banner})`,
             backgroundPosition: 'center',
             backgroundSize: 'cover',
