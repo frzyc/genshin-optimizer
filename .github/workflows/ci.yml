@@ -1,8 +1,5 @@
 name: CI
 
-permissions:
-  contents: read
-
 on:
   push:
     branches:
@@ -81,6 +78,8 @@ jobs:
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
       - name: Get Cache Key
         id: get-cache-key
         run: |
@@ -93,13 +92,8 @@ jobs:
             submodule-
       - uses: actions/checkout@v4
         with:
-          ref: ${{ github.sha }} # Force checking of the whole repo when running on pushes to master
           persist-credentials: false
           submodules: true
-      - name: Fetch master
-        if: ${{ github.event_name == 'pull_request' }}
-        run: |
-          git fetch --no-tags --no-recurse-submodules --filter=blob:none origin +master:refs/heads/master
       - name: Sparse Checkout
         run: |
           $(cd libs/gi/dm/GenshinData  && git sparse-checkout set TextMap ExcelBinOutput)
@@ -119,17 +113,6 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v4
-      - name: Get Cache Key
-        id: get-cache-key
-        run: |
-          echo "key=$(git ls-tree -r HEAD | grep '^160000' | sha256sum | cut -d " " -f 1)" >> $GITHUB_OUTPUT
-      - uses: actions/cache/restore@v4
-        with:
-          path: .git/modules
-          key: submodule-${{ steps.get-cache-key.outputs.key }}
-          restore-keys: |
-            submodule-
       - uses: actions/checkout@v4
         with:
           persist-credentials: false

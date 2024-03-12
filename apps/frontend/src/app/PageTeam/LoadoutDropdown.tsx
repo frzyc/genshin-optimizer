@@ -104,26 +104,17 @@ export function LoadoutDropdown({
       </ModalWrapper>
       <DropdownButton
         title={
-          <Box
-            sx={{
-              display: 'flex',
-              gap: 1,
-              flexWrap: 'wrap',
-              justifyContent: 'center',
-            }}
-          >
+          <Box sx={{ display: 'flex', gap: 1 }}>
             <span>{name}</span>
-            <Box sx={{ display: 'flex', gap: 1 }}>
-              <SqBadge
-                color={buildIds.length ? 'success' : 'secondary'}
-                sx={{ marginLeft: 'auto' }}
-              >
-                {buildIds.length} Builds
-              </SqBadge>
-              <SqBadge color={buildTcIds.length ? 'success' : 'secondary'}>
-                {buildTcIds.length} TC Builds
-              </SqBadge>
-            </Box>
+            <SqBadge
+              color={buildIds.length ? 'success' : 'secondary'}
+              sx={{ marginLeft: 'auto' }}
+            >
+              {buildIds.length} Builds
+            </SqBadge>
+            <SqBadge color={buildTcIds.length ? 'success' : 'secondary'}>
+              {buildTcIds.length} TC Builds
+            </SqBadge>
           </Box>
         }
         {...dropdownBtnProps}

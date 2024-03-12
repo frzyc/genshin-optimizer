@@ -4,6 +4,12 @@
   "sourceRoot": "libs/sr/srod/src",
   "projectType": "library",
   "targets": {
+    "build": {},
+    "build-ts": {
+      "options": {
+        "updateBuildableProjectDepsInPackageJson": true
+      }
+    },
     "lint": {
       "executor": "@nx/linter:eslint",
       "outputs": ["{options.outputFile}"],

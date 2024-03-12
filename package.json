@@ -6,7 +6,7 @@
   "scripts": {
     "frontend": "nx serve frontend",
     "build-all": "nx run-many -t build",
-    "mini-ci": "nx format:write && nx affected -t typecheck && nx affected -t test,lint --max-warnings=0",
+    "mini-ci": "nx format:write && nx affected -t test,lint,typecheck --max-warnings=0",
     "reload-dm": "git submodule update --init",
     "update-dm": "git submodule update --remote"
   },

@@ -10,6 +10,7 @@ type SetEffectDisplayProps = {
   hideHeader?: boolean
   conditionalsOnly?: boolean
   disabled?: boolean
+  component?: React.ElementType
 }
 
 export default function SetEffectDisplay({
@@ -18,6 +19,7 @@ export default function SetEffectDisplay({
   hideHeader = false,
   conditionalsOnly = false,
   disabled = false,
+  component,
 }: SetEffectDisplayProps) {
   const sheet = getArtSheet(setKey)
 
@@ -33,6 +35,7 @@ export default function SetEffectDisplay({
           sections={document}
           hideHeader={hideHeader}
           disabled={disabled}
+          component={component}
         />
       ) : null}
     </Box>

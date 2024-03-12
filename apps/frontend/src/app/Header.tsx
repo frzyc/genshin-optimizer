@@ -280,7 +280,6 @@ const mobileContent = [
   artifacts,
   weapons,
   characters,
-  teams,
   tools,
   scanner,
   doc,

@@ -29,13 +29,12 @@ export function ModalWrapper({
     <Modal
       component={Box}
       sx={{
+        padding: { xs: 1, sm: 2 },
         overflow: 'auto',
       }}
       {...props}
     >
-      <ModalContainer sx={{ p: { xs: 1 } }} {...containerProps}>
-        {children}
-      </ModalContainer>
+      <ModalContainer {...containerProps}>{children}</ModalContainer>
     </Modal>
   )
 }

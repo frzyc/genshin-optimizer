@@ -1,9 +1,8 @@
 'use client'
 import type { CardProps } from '@mui/material'
 import { Card, styled } from '@mui/material'
-export type CardBackgroundColor = 'light' | 'dark' | 'normal'
 interface StyledCardProps extends CardProps {
-  bgt?: CardBackgroundColor
+  bgt?: 'light' | 'dark'
 }
 /**
  * A colored Card that is by default `contentNormal` colored.

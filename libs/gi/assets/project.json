@@ -9,6 +9,8 @@
       "executor": "@genshin-optimizer/gi/assets:gen-assets",
       "outputs": ["{workspaceRoot}/${projectRoot}/src/gen/**/*"]
     },
-    "lint": {}
+    "lint": {},
+    "build": {},
+    "build-vite": {}
   }
 }

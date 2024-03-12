@@ -11,6 +11,12 @@
         "{projectRoot}/src/allStat_gen.json"
       ]
     },
+    "build": {},
+    "build-ts": {
+      "options": {
+        "updateBuildableProjectDepsInPackageJson": true
+      }
+    },
     "lint": {}
   },
   "tags": []

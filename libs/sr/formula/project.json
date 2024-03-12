@@ -4,6 +4,12 @@
   "sourceRoot": "libs/sr/formula/src",
   "projectType": "library",
   "targets": {
+    "build": {},
+    "build-ts": {
+      "options": {
+        "updateBuildableProjectDepsInPackageJson": true
+      }
+    },
     "gen-file": {
       "executor": "@genshin-optimizer/sr/formula:gen-desc",
       "options": {

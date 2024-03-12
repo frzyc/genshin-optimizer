@@ -8,11 +8,10 @@ import { objKeyMap } from '@genshin-optimizer/common/util'
 import {
   allArtifactSlotKeys,
   charKeyToLocCharKey,
-  charKeyToLocGenderedCharKey,
 } from '@genshin-optimizer/gi/consts'
 import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { getCharData } from '@genshin-optimizer/gi/stats'
-import { CharacterName, SillyContext } from '@genshin-optimizer/gi/ui'
+import { CharacterName } from '@genshin-optimizer/gi/ui'
 import AddIcon from '@mui/icons-material/Add'
 import ContentCopyIcon from '@mui/icons-material/ContentCopy'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
@@ -25,12 +24,10 @@ import {
   Grid,
   Typography,
 } from '@mui/material'
-import { useCallback, useContext, useEffect, useMemo } from 'react'
-import { useTranslation } from 'react-i18next'
+import { useContext, useEffect, useMemo } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { CharacterContext } from '../../../Context/CharacterContext'
 import { DataContext } from '../../../Context/DataContext'
-import { getCharSheet } from '../../../Data/Characters'
 import { uiInput as input } from '../../../Formula'
 import TeamCard from '../../../PageTeams/TeamCard'
 import CloseButton from '../../CloseButton'
@@ -46,49 +43,19 @@ import TalentDropdown from '../TalentDropdown'
 import TravelerGenderSelect from './TravelerGenderSelect'
 
 export default function Content({ onClose }: { onClose?: () => void }) {
-  const { t } = useTranslation([
-    'page_character',
-    // Always load these 2 so character names are loaded for searching/sorting
-    'sillyWisher_charNames',
-    'charNames_gen',
-  ])
-  const navigate = useNavigate()
   const database = useDatabase()
   const {
     character,
     character: { key: characterKey },
     characterSheet,
   } = useContext(CharacterContext)
-  const { gender } = useDBMeta()
-  const { silly } = useContext(SillyContext)
-  const deleteCharacter = useCallback(async () => {
-    let name = getCharSheet(characterKey, gender).name
-    // Use translated string
-    if (typeof name === 'object')
-      name = t(
-        `${
-          silly ? 'sillyWisher_charNames' : 'charNames_gen'
-        }:${charKeyToLocGenderedCharKey(characterKey, gender)}`
-      )
-
-    if (!window.confirm(t('removeCharacter', { value: name }))) return
-    database.chars.remove(characterKey)
-    navigate('/characters')
-  }, [database, navigate, characterKey, gender, silly, t])
-
   return (
     <Box display="flex" flexDirection="column" gap={1}>
       <Box display="flex" gap={1}>
         <TravelerGenderSelect />
-        <Button
-          color="error"
-          onClick={() => deleteCharacter()}
-          startIcon={<DeleteForeverIcon />}
-          sx={{ marginLeft: 'auto' }}
-        >
-          {t('delete')}
-        </Button>
-        {!!onClose && <CloseButton onClick={onClose} />}
+        {!!onClose && (
+          <CloseButton onClick={onClose} sx={{ marginLeft: 'auto' }} />
+        )}
       </Box>
       <Box>
         <Grid container spacing={1} sx={{ justifyContent: 'center' }}>
@@ -238,7 +205,7 @@ function InTeam() {
     database.teams.set(teamId, (team) => {
       team.teamCharIds[0] = teamCharId
     })
-    navigate(`/teams/${teamId}`, { state: { openSetting: true } })
+    navigate(`/teams/${teamId}`)
   }
   const onAddNewTeam = () => {
     const teamId = database.teams.new()
@@ -246,7 +213,7 @@ function InTeam() {
     database.teams.set(teamId, (team) => {
       team.teamCharIds[0] = teamCharId
     })
-    navigate(`/teams/${teamId}`, { state: { openSetting: true } })
+    navigate(`/teams/${teamId}`)
   }
   const onDelete = (teamCharId: string) => {
     if (
@@ -310,6 +277,7 @@ function InTeam() {
                       onClick={(cid) =>
                         navigate(`/teams/${teamId}${cid ? `/${cid}` : ''}`)
                       }
+                      disableButtons
                     />
                   </Grid>
                 ))}

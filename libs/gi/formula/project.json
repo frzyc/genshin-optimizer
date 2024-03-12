@@ -4,6 +4,13 @@
   "sourceRoot": "libs/gi/formula/src",
   "projectType": "library",
   "targets": {
+    "build": {},
+    "build-ts": {
+      "inputs": ["!{projectRoot}/**/*.gen.ts"],
+      "options": {
+        "updateBuildableProjectDepsInPackageJson": true
+      }
+    },
     "gen-file": {
       "executor": "@genshin-optimizer/gi/formula:gen-desc",
       "options": {

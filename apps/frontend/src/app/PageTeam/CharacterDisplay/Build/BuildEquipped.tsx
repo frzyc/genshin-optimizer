@@ -3,7 +3,14 @@ import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { getCharData } from '@genshin-optimizer/gi/stats'
 import ContentCopyIcon from '@mui/icons-material/ContentCopy'
 import ScienceIcon from '@mui/icons-material/Science'
-import { Box, Button, CardContent, Tooltip, Typography } from '@mui/material'
+import {
+  Box,
+  Button,
+  CardActionArea,
+  CardContent,
+  Tooltip,
+  Typography,
+} from '@mui/material'
 import { useContext } from 'react'
 import { CharacterContext } from '../../../Context/CharacterContext'
 import { TeamCharacterContext } from '../../../Context/TeamCharacterContext'
@@ -37,14 +44,6 @@ export function BuildEquipped({ active = false }: { active: boolean }) {
       description: 'Copied from Equipped Build',
     })
   }
-
-  const canActivate = !active
-  const titleElement = (
-    <Typography sx={{ p: 1 }} variant="h6">
-      Equipped Build
-    </Typography>
-  )
-
   return (
     <CardThemed
       bgt="light"
@@ -55,22 +54,11 @@ export function BuildEquipped({ active = false }: { active: boolean }) {
     >
       <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
         <Box sx={{ display: 'flex', gap: 1 }}>
-          {canActivate ? (
-            <Button
-              onClick={onActive}
-              color="info"
-              sx={{
-                flexGrow: 1,
-                p: 0,
-                textAlign: 'left',
-                justifyContent: 'flex-start',
-              }}
-            >
-              {titleElement}
-            </Button>
-          ) : (
-            <CardThemed sx={{ flexGrow: 1 }}>{titleElement}</CardThemed>
-          )}
+          <CardThemed sx={{ flexGrow: 1 }}>
+            <CardActionArea disabled={active} onClick={onActive} sx={{ p: 1 }}>
+              <Typography variant="h6">Equipped Build</Typography>
+            </CardActionArea>
+          </CardThemed>
           <Tooltip
             title={<Typography>Copy to TC Builds</Typography>}
             placement="top"

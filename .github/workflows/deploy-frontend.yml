@@ -14,8 +14,7 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    timeout-minutes: 15
     steps:
       - name: Download build artifact
         uses: actions/download-artifact@v4

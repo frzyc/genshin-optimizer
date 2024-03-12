@@ -3,7 +3,6 @@ import {
   useForceUpdate,
   useMediaQueryUp,
 } from '@genshin-optimizer/common/react-util'
-import { useOnScreen } from '@genshin-optimizer/common/ui'
 import { filterFunction } from '@genshin-optimizer/common/util'
 import { useDatabase, useOptConfig } from '@genshin-optimizer/gi/db-ui'
 import AddIcon from '@mui/icons-material/Add'
@@ -27,7 +26,6 @@ import {
   useEffect,
   useMemo,
   useReducer,
-  useState,
 } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
 import ArtifactCardNano from '../../../../../../Components/Artifact/ArtifactCardNano'
@@ -232,7 +230,7 @@ function ArtifactSelectModal({
   const brPt = useMediaQueryUp()
 
   const filterConfigs = useMemo(() => artifactFilterConfigs(), [])
-  const artifactIds = useMemo(() => {
+  const artIdList = useMemo(() => {
     const filterFunc = filterFunction(filterOption, filterConfigs)
     return (
       dbDirty &&
@@ -240,27 +238,10 @@ function ArtifactSelectModal({
         .filter(filterFunc)
         .map((art) => art.id)
         .filter((id) => !artExclusion.includes(id))
+        .slice(0, numToShowMap[brPt])
     )
-  }, [dbDirty, database, filterConfigs, filterOption, artExclusion])
+  }, [dbDirty, database, filterConfigs, filterOption, brPt, artExclusion])
 
-  const [element, setElement] = useState<HTMLElement | undefined>()
-  const trigger = useOnScreen(element)
-  const [numShow, setNumShow] = useState(numToShowMap[brPt])
-  // reset the numShow when artifactIds changes
-  useEffect(() => {
-    artifactIds && setNumShow(numToShowMap[brPt])
-  }, [artifactIds, brPt])
-
-  const shouldIncrease = trigger && numShow < artifactIds.length
-  useEffect(() => {
-    if (!shouldIncrease) return
-    setNumShow((num) => num + numToShowMap[brPt])
-  }, [shouldIncrease, brPt])
-
-  const artifactIdsToShow = useMemo(
-    () => artifactIds.slice(0, numShow),
-    [artifactIds, numShow]
-  )
   return (
     <ModalWrapper
       open={show}
@@ -289,7 +270,7 @@ function ArtifactSelectModal({
             <ArtifactFilterDisplay
               filterOption={filterOption}
               filterOptionDispatch={filterOptionDispatch}
-              filteredIds={artifactIds}
+              filteredIds={artIdList}
             />
           </Suspense>
           <Box mt={1}>
@@ -299,25 +280,13 @@ function ArtifactSelectModal({
               }
             >
               <Grid container spacing={1} columns={{ xs: 2, md: 3, lg: 4 }}>
-                {artifactIdsToShow.map((id) => (
+                {artIdList.map((id) => (
                   <Grid item key={id} xs={1}>
                     <ArtifactCard artifactId={id} onClick={clickHandler} />
                   </Grid>
                 ))}
               </Grid>
             </Suspense>
-            {artifactIds.length !== artifactIdsToShow.length && (
-              <Skeleton
-                ref={(node) => {
-                  if (!node) return
-                  setElement(node)
-                }}
-                sx={{ borderRadius: 1, mt: 1 }}
-                variant="rectangular"
-                width="100%"
-                height={100}
-              />
-            )}
           </Box>
         </CardContent>
       </CardDark>
