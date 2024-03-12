@@ -59,7 +59,7 @@ export function BuildCard({
             )
           }
         />
-        <CardContent sx={{ py: 0 }}>{children}</CardContent>
+        <CardContent sx={{ pt: 0, pb: 1 }}>{children}</CardContent>
       </CardActionArea>
       <CardActions
         sx={{
