@@ -26,12 +26,15 @@ import {
 import { Checkroom, ChevronRight } from '@mui/icons-material'
 import CheckBoxIcon from '@mui/icons-material/CheckBox'
 import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank'
+import CheckroomIcon from '@mui/icons-material/Checkroom'
+import InfoIcon from '@mui/icons-material/Info'
 import {
   Box,
   Button,
   CardContent,
   Grid,
   Skeleton,
+  Tooltip,
   Typography,
 } from '@mui/material'
 import {
@@ -59,7 +62,6 @@ import ArtifactCard from '../../../../../PageArtifact/ArtifactCard'
 import WeaponCard from '../../../../../PageWeapon/WeaponCard'
 import { ArtifactSetBadges } from './ArtifactSetBadges'
 import SetInclusionButton from './SetInclusionButton'
-
 type NewOld = {
   newId: string
   oldId?: string
@@ -225,10 +227,10 @@ export default function BuildDisplayItem({
       (slotKey) => artifactIdsBySlot[slotKey] === equippedArtifacts[slotKey]
     ) && data.get(input.weapon.id).value === equippedWeapon
 
-  const sameAsBuildId = useMemo(
+  const sameAsBuildIds = useMemo(
     () =>
       dbDirty &&
-      buildIds.find((buildId) => {
+      buildIds.filter((buildId) => {
         const build = database.builds.get(buildId)
         if (!build) return false
         const { artifactIds, weaponId } = build
@@ -241,13 +243,16 @@ export default function BuildDisplayItem({
     [dbDirty, database, buildIds, artifactIdsBySlot, data]
   )
 
-  const isActiveBuild =
-    sameAsBuildId === buildId || (buildType === 'equipped' && currentlyEquipped)
+  const isActiveBuild = buildType === 'real' && sameAsBuildIds.includes(buildId)
+  const isActiveBuildOrEquip =
+    isActiveBuild || (buildType === 'equipped' && currentlyEquipped)
 
   return (
     <CardLight
       sx={{
-        boxShadow: isActiveBuild ? '0px 0px 0px 2px green inset' : undefined,
+        boxShadow: isActiveBuildOrEquip
+          ? '0px 0px 0px 2px green inset'
+          : undefined,
       }}
     >
       <Suspense
@@ -272,21 +277,49 @@ export default function BuildDisplayItem({
           <Box display="flex" gap={1} flexWrap="wrap">
             {label !== undefined && (
               <SqBadge color={currentlyEquipped ? 'success' : 'info'}>
-                <Typography>
-                  <strong>
-                    {label}
-                    {/* TODO: Translation */}
-                    {currentlyEquipped ? ' (Equipped)' : ''}
-                  </strong>
+                <Typography sx={{ display: 'flex', gap: 1 }}>
+                  <strong>{label}</strong>
+                  {/* TODO: Translation */}
+                  {currentlyEquipped && <span>(Equipped)</span>}
                 </Typography>
               </SqBadge>
             )}
-            {sameAsBuildId && (
+            {!!sameAsBuildIds.length && (
               <SqBadge color={isActiveBuild ? 'success' : 'info'}>
-                <Typography>
-                  {database.builds.get(sameAsBuildId)?.name}
+                <Typography sx={{ display: 'flex', gap: 1 }}>
+                  <CheckroomIcon />
+                  <span>
+                    {
+                      database.builds.get(
+                        isActiveBuild ? buildId : sameAsBuildIds[0]
+                      )?.name
+                    }
+                  </span>
                   {/* TODO: Translation */}
-                  {isActiveBuild ? ' (current build)' : ''}
+                  {isActiveBuild && <span>(current build)</span>}
+                  {sameAsBuildIds.length > 1 && (
+                    <Tooltip
+                      arrow
+                      title={
+                        <Box>
+                          {sameAsBuildIds.map((buildId) => (
+                            <Typography
+                              sx={{
+                                display: 'flex',
+                                gap: 1,
+                                alignItems: 'center',
+                              }}
+                            >
+                              <CheckroomIcon />
+                              {database.builds.get(buildId)?.name}
+                            </Typography>
+                          ))}
+                        </Box>
+                      }
+                    >
+                      <InfoIcon />
+                    </Tooltip>
+                  )}
                 </Typography>
               </SqBadge>
             )}
