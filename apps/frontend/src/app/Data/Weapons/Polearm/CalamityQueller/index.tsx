@@ -9,7 +9,6 @@ import {
   lookup,
   prod,
   subscript,
-  unequal,
 } from '../../../../Formula/utils'
 import { cond, st, trans } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
@@ -22,7 +21,6 @@ const data_gen = allStats.weapon.data[key]
 const [, trm] = trans('weapon', key)
 
 const [condStackPath, condStack] = cond(key, 'stack')
-const [condOffFieldPath, condOffField] = cond(key, 'offField')
 
 const dmg_ = [-1, 0.12, 0.15, 0.18, 0.21, 0.24]
 const atk_ = [-1, 0.032, 0.04, 0.048, 0.056, 0.064]
@@ -35,10 +33,10 @@ const dmg_Nodes = Object.fromEntries(
 )
 const atkInc = prod(
   compareEq(
-    condOffField,
-    'on',
-    constant(2, { name: trm('inactive') }),
-    constant(1, { name: trm('active') })
+    input.charKey,
+    input.activeCharKey,
+    constant(1, { name: trm('active') }),
+    constant(2, { name: trm('inactive') })
   ),
   lookup(
     condStack,
@@ -79,19 +77,6 @@ const sheet: IWeaponSheet = {
           },
         ])
       ),
-    },
-    {
-      canShow: unequal(condStack, undefined, 1),
-      value: condOffField,
-      path: condOffFieldPath,
-      teamBuff: true,
-      header: headerTemplate(key, st('conditional')),
-      name: st('charOffField'),
-      states: {
-        on: {
-          fields: [],
-        },
-      },
     },
   ],
 }
