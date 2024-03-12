@@ -90,9 +90,9 @@ function CharacterPanel() {
       <Routes>
         {/* Character Panel */}
         {isTCBuild ? (
-          <Route path="/:characterKey/*" element={<TabTheorycraft />} />
+          <Route path="/*" element={<TabTheorycraft />} />
         ) : (
-          <Route path="/:characterKey/*" element={<TabOverview />} />
+          <Route path="/*" element={<TabOverview />} />
         )}
         <Route path="/:characterKey/talent" element={<TabTalent />} />
         {!isTCBuild && (
