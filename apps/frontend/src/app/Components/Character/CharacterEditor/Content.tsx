@@ -288,7 +288,7 @@ function InTeam() {
                 <SqBadge
                   color={customMultiTargets.length ? 'primary' : 'secondary'}
                 >
-                  {customMultiTargets.length} Custom Multi-Opt
+                  {customMultiTargets.length} Multi-Opt
                 </SqBadge>
                 <Button
                   color="info"

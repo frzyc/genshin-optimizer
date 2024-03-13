@@ -127,7 +127,7 @@ export function LoadoutDropdown({
               <SqBadge
                 color={customMultiTargets.length ? 'success' : 'secondary'}
               >
-                {customMultiTargets.length} Custom Multi-Opt
+                {customMultiTargets.length} Multi-Opt
               </SqBadge>
             </Box>
           </Box>
@@ -159,7 +159,7 @@ export function LoadoutDropdown({
               <SqBadge
                 color={customMultiTargets.length ? 'success' : 'secondary'}
               >
-                {customMultiTargets.length} Custom Multi-Opt
+                {customMultiTargets.length} Multi-Opt
               </SqBadge>
             </MenuItem>
           )

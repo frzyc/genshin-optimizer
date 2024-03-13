@@ -122,7 +122,7 @@ export default function LoadoutSettingElement() {
               <SqBadge
                 color={customMultiTargets.length ? 'primary' : 'secondary'}
               >
-                {customMultiTargets.length} Custom Multi-Opt
+                {customMultiTargets.length} Multi-Opt
               </SqBadge>
             </Typography>
           </Button>
