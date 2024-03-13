@@ -14,7 +14,15 @@ import {
   Typography,
   styled,
 } from '@mui/material'
-import React, { Suspense, useCallback, useContext, useMemo } from 'react'
+import type {
+  ReactNode
+} from 'react'
+import React, {
+  Suspense,
+  useCallback,
+  useContext,
+  useMemo,
+} from 'react'
 import { DataContext } from '../Context/DataContext'
 import { FormulaDataContext } from '../Context/FormulaDataContext'
 import type { NodeDisplay } from '../Formula/api'
@@ -121,26 +129,29 @@ export function NodeFieldDisplay({
   const { multi } = node.info
 
   const multiDisplay = multi && <span>{multi}&#215;</span>
-  let fieldVal = '' as Displayable
+  let fieldVal = false as ReactNode
   if (oldValue !== undefined) {
     const diff = node.value - oldValue
     const pctDiff = valueString(Math.abs(diff / oldValue), '%', node.info.fixed)
     fieldVal = (
-      <span>
-        {valueString(oldValue, node.info.unit, node.info.fixed)}
-        {diff > 0.0001 || diff < -0.0001 ? (
-          <ColorText color={diff > 0 ? 'success' : 'error'}>
-            {' '}
-            {diff > 0 ? '+' : ''}
-            {valueString(diff, node.info.unit, node.info.fixed)}
-            {node.info.unit !== '%' && oldValue !== 0 ? ` (${pctDiff})` : ''}
-          </ColorText>
-        ) : (
-          ''
+      <>
+        <span>{valueString(oldValue, node.info.unit, node.info.fixed)}</span>
+        {Math.abs(diff) > 0.0001 && (
+          <>
+            <ColorText color={diff > 0 ? 'success' : 'error'}>
+              {diff > 0 ? '+' : ''}
+              {valueString(diff, node.info.unit, node.info.fixed)}
+            </ColorText>
+            {node.info.unit !== '%' && oldValue !== 0 && (
+              <ColorText color={diff > 0 ? 'success' : 'error'}>
+                ({pctDiff})
+              </ColorText>
+            )}
+          </>
         )}
-      </span>
+      </>
     )
-  } else fieldVal = nodeVStr(node)
+  } else fieldVal = <span>{nodeVStr(node)}</span>
 
   return (
     <Box
@@ -154,51 +165,57 @@ export function NodeFieldDisplay({
       component={component}
     >
       <NodeFieldDisplayText node={node} />
-      <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
-        <Typography noWrap>
-          {multiDisplay}
-          {fieldVal}
-        </Typography>
-        {!!node.formula && (
-          <BootstrapTooltip
-            placement="top"
-            title={
-              <Typography>
-                <Suspense
-                  fallback={
-                    <Skeleton variant="rectangular" width={300} height={30} />
-                  }
-                >
-                  {allAmpReactionKeys.includes(node.info.variant as any) && (
-                    <Box sx={{ display: 'inline-flex', gap: 1, mr: 1 }}>
-                      <Box>
-                        <AmpReactionModeText
-                          reaction={node.info.variant as AmpReactionKey}
-                          trigger={
-                            node.info.subVariant as
-                              | 'cryo'
-                              | 'pyro'
-                              | 'hydro'
-                              | undefined
-                          }
-                        />
-                      </Box>
-                      <Divider orientation="vertical" flexItem />
+      <Typography
+        sx={{
+          display: 'flex',
+          gap: 0.5,
+          alignItems: 'center',
+          justifyContent: 'flex-end',
+          flexWrap: 'wrap',
+        }}
+      >
+        {multiDisplay}
+        {fieldVal}
+      </Typography>
+      {!!node.formula && (
+        <BootstrapTooltip
+          placement="top"
+          title={
+            <Typography>
+              <Suspense
+                fallback={
+                  <Skeleton variant="rectangular" width={300} height={30} />
+                }
+              >
+                {allAmpReactionKeys.includes(node.info.variant as any) && (
+                  <Box sx={{ display: 'inline-flex', gap: 1, mr: 1 }}>
+                    <Box>
+                      <AmpReactionModeText
+                        reaction={node.info.variant as AmpReactionKey}
+                        trigger={
+                          node.info.subVariant as
+                            | 'cryo'
+                            | 'pyro'
+                            | 'hydro'
+                            | undefined
+                        }
+                      />
                     </Box>
-                  )}
-                  <span>{node.formula}</span>
-                </Suspense>
-              </Typography>
-            }
-          >
-            <HelpIcon
-              onClick={onClick}
-              fontSize="inherit"
-              sx={{ cursor: 'help' }}
-            />
-          </BootstrapTooltip>
-        )}
-      </Box>
+                    <Divider orientation="vertical" flexItem />
+                  </Box>
+                )}
+                <span>{node.formula}</span>
+              </Suspense>
+            </Typography>
+          }
+        >
+          <HelpIcon
+            onClick={onClick}
+            fontSize="inherit"
+            sx={{ cursor: 'help' }}
+          />
+        </BootstrapTooltip>
+      )}
     </Box>
   )
 }
@@ -208,7 +225,12 @@ export function NodeFieldDisplayText({ node }: { node: NodeDisplay }) {
   return (
     <Typography
       component="div"
-      sx={{ display: 'flex', gap: 1, alignItems: 'center' }}
+      sx={{
+        display: 'flex',
+        gap: 1,
+        alignItems: 'center',
+        marginRight: 'auto',
+      }}
     >
       {!!node.info.isTeamBuff && <Groups />}
       {node.info.icon}

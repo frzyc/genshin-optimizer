@@ -253,14 +253,14 @@ export default function TabTheorycraft() {
       <Stack spacing={1}>
         <Box>
           <Grid container spacing={1} sx={{ justifyContent: 'center' }}>
-            <Grid item xs={8} sm={8} md={4} lg={2.3}>
+            <Grid item xs={8} sm={8} md={3} lg={2.3}>
               <CharacterProfileCard />
             </Grid>
             <Grid
               item
               xs={12}
               sm={12}
-              md={8}
+              md={9}
               lg={9.7}
               sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}
             >
@@ -269,7 +269,7 @@ export default function TabTheorycraft() {
                   {dataContextValueWithOld ? (
                     <DataContext.Provider value={dataContextValueWithOld}>
                       <StatDisplayComponent
-                        columns={{ xs: 1, sm: 1, md: 1, lg: 2, xl: 3 }}
+                        columns={{ xs: 1, sm: 1, md: 2, lg: 2, xl: 3 }}
                       />
                     </DataContext.Provider>
                   ) : (
