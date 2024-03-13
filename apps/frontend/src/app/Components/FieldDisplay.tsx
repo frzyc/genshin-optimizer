@@ -14,15 +14,8 @@ import {
   Typography,
   styled,
 } from '@mui/material'
-import type {
-  ReactNode
-} from 'react'
-import React, {
-  Suspense,
-  useCallback,
-  useContext,
-  useMemo,
-} from 'react'
+import type { ReactNode } from 'react'
+import React, { Suspense, useCallback, useContext, useMemo } from 'react'
 import { DataContext } from '../Context/DataContext'
 import { FormulaDataContext } from '../Context/FormulaDataContext'
 import type { NodeDisplay } from '../Formula/api'
