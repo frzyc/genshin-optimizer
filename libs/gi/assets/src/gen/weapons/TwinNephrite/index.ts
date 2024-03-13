@@ -1,6 +1,6 @@
 // This is a generated index file.
-import icon from './UI_EquipIcon_Catalyst_Phoney.png'
 import awakenIcon from './UI_EquipIcon_Catalyst_Phoney_Awaken.png'
+import icon from './UI_EquipIcon_Catalyst_Phoney.png'
 
 const data = {
   awakenIcon,

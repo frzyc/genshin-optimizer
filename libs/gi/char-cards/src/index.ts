@@ -11,6 +11,7 @@ import Bennett from './Character_Bennett_Card.jpg'
 import Candace from './Character_Candace_Card.jpg'
 import Charlotte from './Character_Charlotte_Card.jpg'
 import Chevreuse from './Character_Chevreuse_Card.jpg'
+import Chiori from './Character_Chiori_Card.jpg'
 import Chongyun from './Character_Chongyun_Card.jpg'
 import Collei from './Character_Collei_Card.jpg'
 import Cyno from './Character_Cyno_Card.jpg'
@@ -94,6 +95,7 @@ const charCards = {
   Candace,
   Charlotte,
   Chevreuse,
+  Chiori,
   Chongyun,
   Collei,
   Cyno,
