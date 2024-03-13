@@ -124,13 +124,13 @@
   "passive3": {
     "name": "Apaixonado Pela Pesca",
     "description": {
-      "0": "Quando você <strong>pescar</strong> com sucesso em Inazuma, possui 20% de chance de obter o dobro de peixe graças a ajuda do Thoma."
+      "0": "Quando você <strong>pescar</strong> com sucesso em Inazuma, possui 20% de chance de obter o dobro de peixe graças à ajuda de Thoma."
     }
   },
   "constellation1": {
     "name": "O Dever de Um Amigo",
     "description": {
-      "0": "Quando uma <strong>Barreira Flamejante</strong> levar Dano em qualquer personagem que não seja o Thoma, então a própria <strong>Proteção das Chamas do Destino</strong> dele irá diminuir seu Tempo de Recarga em 3s, enquanto que sua própria <strong>Grande Armadura Flamejante</strong> tem seu Tempo de Recarga reduzido em 3s.",
+      "0": "Quando uma <strong>Barreira Flamejante</strong> proteger contra Dano qualquer personagem que não seja Thoma, então a própria <strong>Proteção das Chamas do Destino</strong> dele irá diminuir seu Tempo de Recarga em 3s, enquanto sua própria <strong>Grande Armadura Flamejante</strong> tem seu Tempo de Recarga reduzido em 3s.",
       "1": "Este efeito pode ser desencadeado uma vez a cada 20s."
     }
   },
@@ -163,7 +163,7 @@
   "constellation6": {
     "name": "Coração Fervoroso",
     "description": {
-      "0": "Quando uma <strong>Barreira Flamejante</strong> é obtida ou acumulada o Dano causado por Ataques Normais, Carregados e Imersivos de todos os membros da equipe é aumentado em 15% por 6s."
+      "0": "Quando uma <strong>Barreira Flamejante</strong> é obtida ou redefinida, o Dano causado por Ataques Normais, Carregados e Imersivos de todos os membros da equipe é aumentado em 15% por 6s."
     }
   }
 }

@@ -43,7 +43,7 @@
     "name": "Canavar Yükselişi",
     "description": {
       "0": "Wushou sanatlarını kullanarak öne doğru atılır ve bir hedefe veya yüzeye isabet ettiğinde havaya sıçrar.",
-      "1": "Gaming, Canavar Yükselişini kullanarak havaya yükseldiğinde, Havadan Saldırı yaparken daha güçlü olan Havadan Saldırı: Büyülü Bulutgezeri kullanır.",
+      "1": "Gaming, Canavar Yükselişini kullanarak havaya yükseldiğinde hemen Havadan Saldırı yaparsa daha güçlü olan Havadan Saldırı: Büyülü Bulutgezeri kullanır.",
       "2": "<br/>",
       "3": "<strong>Havadan Saldırı: Büyülü Bulutgezer</strong>",
       "4": "Canavar Yükselişi ile yapılan Havadan Saldırıdan gelen Hasar, diğer element tesirleriyle değişmeyecek şekilde <pyro>Ateş Hasarına</pyro> dönüşür. Gaming yere indiğinde belirli bir miktar Can tüketir. Gaming'in Canı bu şekilde en fazla %10'a kadar düşer.",
@@ -115,8 +115,8 @@
   "passive3": {
     "name": "Dörtnala Koşan Canavar",
     "description": {
-      "0": "Gündüz saatlerinde (06:00 - 18:00) kendi grup üyelerinin Hareket Hızını %10 artırır.",
-      "1": "Zindanlarda, Ezici Zindanlarda veya Hiçlik Sarmalında etkili değildir. Aynı etkiyi veren Pasif Yeteneklerle birikmez."
+      "0": "Gündüzleri (06:00 – 18:00) grup üyelerin Hızlı Adım etkisi kazanır: Hareket Hızı %10 artar.",
+      "1": "Zindanlarda, Ezici Zindanlarda veya Hiçlik Sarmalında etkili değildir. Hızlı Adım etkileri birikmez."
     }
   },
   "constellation1": {

@@ -1,0 +1,182 @@
+{
+  "name": "Chiori",
+  "title": "The Thundering Seamstress",
+  "description": "The owner of Chioriya Boutique. A tailor renowned throughout Fontaine.",
+  "constellationName": "Cisoria",
+  "auto": {
+    "name": "Weaving Blade",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Attack</strong>",
+        "1": "Performs up to 4 rapid strikes."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Consumes a certain amount of Stamina to unleash 2 rapid sword strikes."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact."
+      }
+    },
+    "skillParams": {
+      "0": "1-Hit DMG",
+      "1": "2-Hit DMG",
+      "2": "3-Hit DMG",
+      "3": "4-Hit DMG",
+      "4": "Charged Attack DMG",
+      "5": "Charged Attack Stamina Cost",
+      "6": "Plunge DMG",
+      "7": "Low/High Plunge DMG",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Fluttering Hasode",
+    "description": {
+      "0": "Dashes nimbly forward with silken steps. Once this dash ends, Chiori will summon the automaton doll \"Tamoto\" beside her and sweep her blade upward, dealing <geo>AoE Geo DMG</geo> to nearby opponents based on her ATK and DEF.",
+      "1": "Holding the Skill will cause it to behave differently.",
+      "2": "<br/>",
+      "3": "<strong>Hold</strong>",
+      "4": "Enter Aiming Mode to adjust the dash direction.",
+      "5": "<br/>",
+      "6": "<strong>Tamoto</strong>",
+      "7": [
+        " Will slash at nearby opponents at intervals, dealing <geo>AoE Geo DMG</geo> based on Chiori's ATK and DEF.",
+        " While active, if there are nearby <geo>Geo Construct(s)</geo> or <geo>Geo Construct(s)</geo> are created nearby, an additional Tamoto will be summoned next to your active character. Only 1 additional Tamoto can be summoned in this manner, and its duration is independently counted."
+      ],
+      "8": "<br/>",
+      "9": "<i>\"Sakura red dyes the brocade, the fragrance suffuses the sleeves, the orioles intoxicated.\"</i>"
+    },
+    "skillParams": {
+      "0": "Tamoto DMG",
+      "1": "Tamoto Duration",
+      "2": "Tamoto Attack Interval",
+      "3": "Upward Sweep Attack DMG",
+      "4": "CD",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Hiyoku: Twin Blades",
+    "description": {
+      "0": "Twin blades leave their sheaths as Chiori slices with the clean cuts of a master tailor, dealing <geo>AoE Geo DMG</geo> based on her ATK and DEF.",
+      "1": "<br/>",
+      "2": "<i>\"Master one principle, and the path to all others shall open to you.\"</i>"
+    },
+    "skillParams": {
+      "0": "Skill DMG",
+      "1": "CD",
+      "2": "Energy Cost",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Tailor-Made",
+    "description": {
+      "0": "Gain different effects depending on the next action you take within a short duration after using <strong>Fluttering Hasode</strong>'s upward sweep. If you Press the Elemental Skill, you will trigger the Tapestry effect. If you Press your Normal Attack, the Tailoring effect will be triggered instead.",
+      "1": "<br/>",
+      "2": "<strong>Tapestry</strong>",
+      "3": [
+        " Switches to the next character in your roster.",
+        " Grants all your party members \"Seize the Moment\": When your active party member's Normal Attacks, Charged Attacks, and Plunging Attacks hit a nearby opponent, \"Tamoto\" will execute a coordinated attack, dealing 100% of Fluttering Hasode's upward sweep DMG as <geo>AoE Geo DMG</geo> at the opponent's location. DMG dealt this way is considered Elemental Skill DMG.",
+        " \"Seize the Moment\" lasts 8s, and 1 of \"Tamoto\"'s coordinated attack can be unleashed every 2s. 2 such coordinated attacks can occur per \"Seize the Moment\" effect duration."
+      ],
+      "4": "<br/>",
+      "5": "<strong>Tailoring</strong>",
+      "6": [
+        " Chiori gains <geo>Geo infusion</geo> for 5s."
+      ],
+      "7": "<br/>",
+      "8": "When on the field, if Chiori does not either Press her Elemental Skill or use a Normal Attack within a short time after using Fluttering Hasode's upward sweep, the Tailoring effect will be triggered by default."
+    }
+  },
+  "passive2": {
+    "name": "The Finishing Touch",
+    "description": {
+      "0": "When a nearby party member creates a <geo>Geo Construct</geo>, Chiori will gain 20% <geo>Geo DMG Bonus</geo> for 20s."
+    }
+  },
+  "passive3": {
+    "name": "Brocaded Collar's Beauteous Silhouette",
+    "description": {
+      "0": "When any party member is wearing an outfit apart from their default outfit, or is wearing a wind glider other than the Wings of First Flight, your party members will obtain the Swift Stride effect: Movement SPD is increased by 10%.",
+      "1": "This effect does not take effect in Domains, Trounce Domains, and the Spiral Abyss. Swift Stride does not stack."
+    }
+  },
+  "constellation1": {
+    "name": "Six Paths of Sage Silkcraft",
+    "description": {
+      "0": "The AoE of the automaton doll \"Tamoto\" summoned by <strong>Fluttering Hasode</strong> is increased by 50%.",
+      "1": "Additionally, if there is a <geo>Geo</geo> party member other than Chiori, Fluttering Hasode will trigger the following after the dash is completed:",
+      "2": [
+        " Summon an additional Tamoto. Only one additional Tamoto can exist at the same time, whether summoned by Chiori this way or through the presence of a Geo Construct.",
+        " Triggers the Passive Talent \"The Finishing Touch.\" This effect requires you to first unlock the Passive Talent \"The Finishing Touch.\""
+      ]
+    }
+  },
+  "constellation2": {
+    "name": "In Five Colors Dyed",
+    "description": {
+      "0": "For 10s after using <strong>Hiyoku: Twin Blades</strong>, a simplified automaton doll, \"Kinu,\" will be summoned next to your active character every 3s. Kinu will attack nearby opponents, dealing <geo>AoE Geo DMG</geo> equivalent to 170% of Tamoto's DMG. DMG dealt this way is considered Elemental Skill DMG.",
+      "1": "Kinu will leave the field after 1 attack or after lasting 3s."
+    }
+  },
+  "constellation3": {
+    "name": "Four Brocade Embellishments",
+    "description": {
+      "0": "Increases the Level of <strong>Fluttering Hasode</strong> by 3.",
+      "1": "Maximum upgrade level is 15."
+    }
+  },
+  "constellation4": {
+    "name": "A Tailor's Three Courtesies",
+    "description": {
+      "0": "For 8s after triggering either follow-up effect of the Passive Talent \"Tailor-Made,\" when your current active character's Normal, Charged, or Plunging Attacks hit a nearby opponent, a simplified automaton doll, \"Kinu,\" will be summoned near this opponent. You can summon 1 Kinu every 1s in this way, and up to 3 Kinu may be summoned this way during each instance of \"Tailor-Made\"'s Seize the Moment or Tailoring effect. The above effect can be triggered up to once every 15s.",
+      "1": "Must unlock the Passive Talent \"Tailor-Made\" first."
+    }
+  },
+  "constellation5": {
+    "name": "Two Silken Plumules",
+    "description": {
+      "0": "Increases the Level of <strong>Hiyoku: Twin Blades</strong> by 3.",
+      "1": "Maximum upgrade level is 15."
+    }
+  },
+  "constellation6": {
+    "name": "Sole Principle Pursuit",
+    "description": {
+      "0": "After triggering a follow-up effect of the Passive Talent \"Tailor-Made,\" Chiori's own <strong>Fluttering Hasode</strong>'s CD is decreased by 12s. Must unlock the Passive \"Tailor-Made\" first.",
+      "1": "In addition, the DMG dealt by Chiori's own Normal Attacks is increased by an amount equal to 235% of her own DEF."
+    }
+  }
+}

@@ -43,7 +43,7 @@
     "name": "Einer glückverheißenden Bestie versprochener Aufstieg",
     "description": {
       "0": "Springt mit den Wushou-Künsten nach vorn und erhebt sich beim Kontakt mit dem Ziel oder Boden hoch in die Luft.",
-      "1": "Nachdem sich Gaming mit seiner Elementarfähigkeit „Einer glückverheißenden Bestie versprochener Aufstieg“ in die Luft erhoben hat, setzt er den besonders kraftvollen Angriff aus dem Fall „Heiliger Wolkenreiter“ ein, wenn er Angriffe aus dem Fall ausführt.",
+      "1": "Wenn sich Gaming mit seiner Elementarfähigkeit „Einer glückverheißenden Bestie versprochener Aufstieg“ in die Luft erhoben hat und er dann sofort einen Angriff aus dem Fall ausführt, setzt er den besonders kraftvollen Angriff aus dem Fall „Heiliger Wolkenreiter“ ein.",
       "2": "<br/>",
       "3": "<strong>Angriff aus dem Fall: Heiliger Wolkenreiter</strong>",
       "4": "Wandelt den durch die Elementarfähigkeit „Einer glückverheißenden Bestie versprochener Aufstieg“ verursachten Schaden des Angriffs aus dem Fall in <pyro>Pyro-Schaden</pyro> um, der nicht von anderen Elementen überdeckt werden kann und beim Aufkommen eine bestimmte Menge LP von Gaming verbraucht. Auf diese Weise können Gamings LP höchstens auf 10 % verringert werden.",
@@ -115,8 +115,8 @@
   "passive3": {
     "name": "Schreitende Bestie",
     "description": {
-      "0": "Erhöht die Bewegungs-GSW der eigenen Figuren in der Truppe tagsüber (6 bis 18 Uhr) um 10 %.",
-      "1": "Dieser Effekt gilt nicht in Sphären, Gebietssäuberungen und im Gewundenen Abgrund und ist nicht mit passiven Talenten mit völlig gleichen Effekten stapelbar."
+      "0": "Verleiht den eigenen Figuren in der Truppe tagsüber (6 bis 18 Uhr) den Effekt „Schneller Schritt“: Erhöht die Bewegungs-GSW um 10 %.",
+      "1": "Dieser Effekt gilt nicht in Sphären, Gebietssäuberungen oder im Gewundenen Abgrund und ist nicht stapelbar."
     }
   },
   "constellation1": {

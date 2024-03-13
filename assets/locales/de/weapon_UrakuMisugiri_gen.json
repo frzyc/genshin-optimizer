@@ -1,0 +1,24 @@
+{
+  "name": "Uraku Misugiri",
+  "description": {
+    "0": "Dieses berühmte Schwert wurde einst von Urakusai, dem berühmten Literaten, persönlich geschaffen. Die Legende besagt, dass es in all den Jahrhunderten noch nie ein Lebewesen verletzt hat."
+  },
+  "passiveName": "Die Blume im Brokat und das Schwert im Schrein",
+  "passiveDescription": {
+    "0": {
+      "0": "Erhöht den mit Standardangriffen verursachten Schaden um <cryo>16 %</cryo> und den mit Elementarfähigkeiten verursachten Schaden um <cryo>24 %</cryo>. Erhöht diesen Effekt um 100 %, wenn Truppenmitglieder in der Nähe Geo-Schaden auf dem Feld verursachen, hält 15 s. Erhöht außerdem die VTD des Trägers um <cryo>20 %</cryo>."
+    },
+    "1": {
+      "0": "Erhöht den mit Standardangriffen verursachten Schaden um <cryo>20 %</cryo> und den mit Elementarfähigkeiten verursachten Schaden um <cryo>30 %</cryo>. Erhöht diesen Effekt um 100 %, wenn Truppenmitglieder in der Nähe Geo-Schaden auf dem Feld verursachen, hält 15 s. Erhöht außerdem die VTD des Trägers um <cryo>25 %</cryo>."
+    },
+    "2": {
+      "0": "Erhöht den mit Standardangriffen verursachten Schaden um <cryo>24 %</cryo> und den mit Elementarfähigkeiten verursachten Schaden um <cryo>36 %</cryo>. Erhöht diesen Effekt um 100 %, wenn Truppenmitglieder in der Nähe Geo-Schaden auf dem Feld verursachen, hält 15 s. Erhöht außerdem die VTD des Trägers um <cryo>30 %</cryo>."
+    },
+    "3": {
+      "0": "Erhöht den mit Standardangriffen verursachten Schaden um <cryo>28 %</cryo> und den mit Elementarfähigkeiten verursachten Schaden um <cryo>42 %</cryo>. Erhöht diesen Effekt um 100 %, wenn Truppenmitglieder in der Nähe Geo-Schaden auf dem Feld verursachen, hält 15 s. Erhöht außerdem die VTD des Trägers um <cryo>35 %</cryo>."
+    },
+    "4": {
+      "0": "Erhöht den mit Standardangriffen verursachten Schaden um <cryo>32 %</cryo> und den mit Elementarfähigkeiten verursachten Schaden um <cryo>48 %</cryo>. Erhöht diesen Effekt um 100 %, wenn Truppenmitglieder in der Nähe Geo-Schaden auf dem Feld verursachen, hält 15 s. Erhöht außerdem die VTD des Trägers um <cryo>40 %</cryo>."
+    }
+  }
+}

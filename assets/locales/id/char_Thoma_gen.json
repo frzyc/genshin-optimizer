@@ -42,7 +42,7 @@
     "name": "Blazing Blessing",
     "description": {
       "0": "Thoma menggunakan ujung tombaknya sebagai poros untuk menyalurkan apinya dan melakukan tendangan yang mengakibatkan <pyro>Pyro DMG Area</pyro>, kemudian menciptakan sebuah pelindung Blazing Barrier. Saat melancarkan Elemental Skill, Thoma akan terkena <pyro>efek elemen Pyro</pyro> selama sekejap.",
-      "1": "DMG yang dapat ditahan oleh Barrier berdasar pada Max HP Thoma.",
+      "1": "DMG yang dapat ditahan oleh Barrier didasarkan pada Max HP Thoma.",
       "2": "Blazing Barrier mempunyai efek sebagai berikut:",
       "3": [
         "Menahan <pyro>Pyro DMG</pyro> 250% lebih efektif.",
@@ -115,8 +115,8 @@
   "passive1": {
     "name": "Imbricated Armor",
     "description": {
-      "0": "Saat Karakter yang sedang digunakan mendapatkan atau memperbarui <strong>Blazing Barrier</strong>, kekuatan perisai akan meningkat 5% selama 6 detik.",
-      "1": "Efek ini dapat terpicu setiap 0,3 detik. Maks. 5 tumpuk."
+      "0": "Saat Karakter yang sedang digunakan mendapatkan atau memperbarui <strong>Blazing Barrier</strong>, maka Kekuatan Perisai akan meningkat 5% selama 6 detik.",
+      "1": "Efek ini dapat terpicu setiap 0,3 detik. Maks. 5 lapis."
     }
   },
   "passive2": {
@@ -167,7 +167,7 @@
   "constellation6": {
     "name": "Burning Heart",
     "description": {
-      "0": "Saat mendapatkan atau memperbarui <strong>Blazing Barrier</strong>, DMG Normal, Charged, dan Plunging Attack yang diakibatkan semua anggota party akan meningkat 15% selama 6 detik."
+      "0": "Saat mendapatkan atau memperbarui <strong>Blazing Barrier</strong>, maka DMG Normal, Charged, dan Plunging Attack yang diakibatkan semua anggota party akan meningkat 15% selama 6 detik."
     }
   }
 }

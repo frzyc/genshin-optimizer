@@ -130,8 +130,8 @@
   "passive3": {
     "name": "Weg sonniger Gerechtigkeit",
     "description": {
-      "0": "Erhöht die Bewegungs-GSW der eigenen Figuren in der Truppe tagsüber (6 bis 18 Uhr) um 10 %.",
-      "1": "Dieser Effekt gilt nicht in Sphären, Gebietssäuberungen und im Gewundenen Abgrund und ist nicht mit passiven Talenten mit völlig gleichen Effekten stapelbar."
+      "0": "Verleiht den eigenen Figuren in der Truppe tagsüber (6 bis 18 Uhr) den Effekt „Schneller Schritt“: Erhöht die Bewegungs-GSW um 10 %.",
+      "1": "Dieser Effekt gilt nicht in Sphären, Gebietssäuberungen oder im Gewundenen Abgrund und ist nicht stapelbar."
     }
   },
   "constellation1": {

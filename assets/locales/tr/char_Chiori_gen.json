@@ -1,0 +1,182 @@
+{
+  "name": "Chiori",
+  "title": "Gürleyen Terzi",
+  "description": "Butik Chioriya'nın sahibi. Tüm Fontaine'de tanınan bir terzi.",
+  "constellationName": "İpek Makası",
+  "auto": {
+    "name": "Örgü Kılıcı",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Saldırı</strong>",
+        "1": "En fazla 4 hızlı saldırı yapar."
+      },
+      "charged": {
+        "0": "<strong>Yüklü Saldırı</strong>",
+        "1": "Belirli miktarda Dayanıklılık harcayarak 2 hızlı kılıç saldırısı yapar."
+      },
+      "plunging": {
+        "0": "<strong>Havadan Saldırı</strong>",
+        "1": "Havadayken dalışa geçerek yere vurur ve yoluna çıkan düşmanlara Alan Hasarı verir."
+      }
+    },
+    "skillParams": {
+      "0": "1 Vuruş Hasarı",
+      "1": "2 Vuruş Hasarı",
+      "2": "3 Vuruş Hasarı",
+      "3": "4 Vuruş Hasarı",
+      "4": "Yüklü Saldırı Hasarı",
+      "5": "Yüklü Saldırı Dayanıklılık Maliyeti",
+      "6": "Havadan Saldırı Hasarı",
+      "7": "Havadan Saldırı Hasarı (Alçaktan/Yüksekten)",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Hasode Darbesi",
+    "description": {
+      "0": "Chiori, ipek kadar yumuşak adımlarla hızla ileri atılır. İleri atıldıktan sonra kukla canavar makinası: \"Tamoto\"yu çağırıp kılıcıyla yukarı doğru süpürerek bir vuruş gerçekleştirir ve yakındaki düşmanlara Chiori'nin Saldırı ile Savunmasına göre <geo>Toprak Alan Hasarı</geo> verir.",
+      "1": "Beceriye basılı tutmak farklı bir etki ortaya çıkmasını sağlar.",
+      "2": "<br/>",
+      "3": "<strong>Basılı Tut</strong>",
+      "4": "Atılmanın yönünü belirlemek için Nişan Alma Moduna girer.",
+      "5": "<br/>",
+      "6": "<strong>Tamoto</strong>",
+      "7": [
+        "Belirli aralıklarla yakındaki düşmanlara saldırarak Chiori'nin Saldırı ve Savunmasına göre <geo>Toprak Alan Hasarı</geo> verir.",
+        "Aktif haldeyken yakında <geo>Toprak Yapıları</geo> varsa veya <geo>Toprak Yapıları</geo> oluşturulmuşsa aktif karakterinin yanına fazladan bir Tamoto daha çağrılır. Bu şekilde fazladan yalnızca 1 adet Tamoto çağrılabilir ve süresi ayrı hesaplanır."
+      ],
+      "8": "<br/>",
+      "9": "<i>\"Kiraz çiçeği kırmızısı, sırma kumaştan kollarını savurduğunda, mis gibi kokusuyla sarıasmaları sarhoş eder.\"</i>"
+    },
+    "skillParams": {
+      "0": "Tamoto Hasarı",
+      "1": "Tamoto Süresi",
+      "2": "Tamoto Saldırı Aralığı",
+      "3": "Yukarı Süpürme Vuruşu Hasarı",
+      "4": "BS",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Hiyoku: Çift Kılıç",
+    "description": {
+      "0": "Chiori çift kılıcını kınlarından çeker ve düşmanlarını usta bir terzi maharetiyle biçerek Saldırı ile Savunmasına göre <geo>Toprak Alan Hasarı</geo> verir.",
+      "1": "<br/>",
+      "2": "<i>\"Bir ilkede ustalaşmak, diğerlerinin de kapılarını aralamanı sağlar.\"</i>"
+    },
+    "skillParams": {
+      "0": "Beceri Hasarı",
+      "1": "BS",
+      "2": "Enerji Maliyeti",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Terzi İşi",
+    "description": {
+      "0": "<strong>Hasode Darbesi</strong> ile yapılan yukarı süpürme vuruşundan hemen sonra seçilen harekete göre farklı etkiler elde edilir. Örgü etkisini tetiklemek için Element Becerisine Bas. Terzilik etkisini tetiklemek içinse Normal Saldırıya tekrar Bas.",
+      "1": "<br/>",
+      "2": "<strong>Örgü</strong>",
+      "3": [
+        "Grubundaki bir sonraki karaktere geçer.",
+        "Tüm grup üyelerine \"Anı Yakala\" etkisi kazandırır: Aktif grup üyesi yakındaki bir düşmana Normal Saldırı, Yüklü Saldırı veya Havadan Saldırı ile vurduğunda \"Tamoto\" bir ortak saldırı gerçekleştirir. Bu saldırı düşmana Hasode Darbesinin yukarı süpürme vuruşuyla verdiği Hasarın %100'ü oranında <geo>Toprak Alan Hasarı</geo> verir. Bu şekilde verilen Hasar, Element Becerisi Hasarı sayılır.",
+        "\"Anı Yakala\" etkisi 8sn sürer ve her 2 saniyede, 1 \"Tamoto\" ortak saldırısı yapılabilir. Her bir \"Anı Yakala\" etkisi süresi boyunca 2 defa bu tür bir ortak saldırı gerçekleşebilir."
+      ],
+      "4": "<br/>",
+      "5": "<strong>Terzilik</strong>",
+      "6": [
+        "Chiori 5sn boyunca <geo>Toprak Tesiri</geo> kazanır."
+      ],
+      "7": "<br/>",
+      "8": "Chiori savaş alanındayken Hasode Darbesinin süpürme vuruşunu kullandıktan sonra kısa bir süre içerisinde Element Becerisine yeniden Basmazsa ya da bir Normal Saldırı gerçekleştirmezse varsayılan olarak Terzilik etkisi tetiklenir."
+    }
+  },
+  "passive2": {
+    "name": "Son Dokunuş",
+    "description": {
+      "0": "Yakındaki bir grup üyesi bir <geo>Toprak Yapısı</geo> oluşturduğunda Chiori 20sn boyunca %20 <geo>Toprak Hasarı Bonusu</geo> kazanır."
+    }
+  },
+  "passive3": {
+    "name": "Sırmalı Yakanın Güzel Hatları",
+    "description": {
+      "0": "Herhangi bir grup üyesi varsayılan giysileri dışında bir giysi giydiğinde veya İlk Uçuş Kanatları dışında bir kanat taktığında grup üyelerin Hızlı Adım etkisi kazanır: Hareket Hızı %10 artar.",
+      "1": "Zindanlarda, Ezici Zindanlarda veya Hiçlik Sarmalında etkili değildir. Hızlı Adım etkileri birikmez."
+    }
+  },
+  "constellation1": {
+    "name": "İpek Ustalığı İlminin Altı Yolu",
+    "description": {
+      "0": "<strong>Hasode Darbesi</strong> ile çağrılan kukla canavar makinası \"Tamoto\"nun Etki Alanı %50 artar.",
+      "1": "Buna ek olarak grupta Chiori dışında bir <geo>Toprak</geo> karakteri olması halinde, Hasode Darbesi hareketi tamamlandığında şu etkiler tetiklenir:",
+      "2": [
+        "Bir tane daha Tamoto çağrılır. Chiori'nin bu yöntemle çağırdığı veya Toprak Yapılardan gelen yalnızca 1 ek Tamoto aynı anda var olabilir.",
+        "\"Son Dokunuş\" Pasif Yeteneğini tetikler. \"Son Dokunuş\" Pasif Yeteneğinin açılmış olması gerekir."
+      ]
+    }
+  },
+  "constellation2": {
+    "name": "Beş Renk Boya",
+    "description": {
+      "0": "<strong>Hiyoku: Çift Kılıç</strong> becerisi kullanıldıktan sonraki 10sn boyunca her 3 saniyede bir aktif karakterinin yanına daha basit bir kukla canavar makinası olan \"Kinu\" çağrılır. Kinu, yakındaki düşmanlara saldırarak Tamoto Hasarının %170'i kadar <geo>Toprak Alan Hasarı</geo> verir. Bu şekilde verilen Hasar, Element Becerisi Hasarı sayılır.",
+      "1": "Kinu 1 saldırı yaptıktan sonra veya 3sn geçtiğinde alandan ayrılır."
+    }
+  },
+  "constellation3": {
+    "name": "Dört Sırmalı Süsleme",
+    "description": {
+      "0": "<strong>Hasode Darbesi</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation4": {
+    "name": "Terzinin Üç Görgü Kuralı",
+    "description": {
+      "0": "\"Terzi İşi\" Pasif Yeteneğinin iki farklı takip etkisinden herhangi biri tetiklendikten sonra 8sn boyunca, mevcut aktif karakterinin Normal, Yüklü veya Havadan Saldırıları yakındaki bir düşmana vurduğunda, isabet alan düşmanın yanına daha basit bir kukla canavar makinası olan \"Kinu\" çağrılır. Bu şekilde her 1 saniyede 1 Kinu çağrılabilir ve \"Terzi İşi\" Pasif Yeteneğinin Anı Yakala veya Terzilik etkileri tetiklenerek en fazla 3 Kinu çağrılabilir. Yukarıdaki etki her 15 saniyede bir defa tetiklenebilir.",
+      "1": "\"Terzi İşi\" Pasif Yeteneğinin açılmış olması gerekir."
+    }
+  },
+  "constellation5": {
+    "name": "İki İpek Filizi",
+    "description": {
+      "0": "<strong>Hiyoku: Çift Kılıç</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation6": {
+    "name": "Tek ve Esas Hedef",
+    "description": {
+      "0": "\"Terzi İşi\" Pasif Yeteneğinin bir takip etkisi tetiklendiğinde Chiori'nin kendi <strong>Hasode Darbesi</strong> becerisinin Bekleme Süresi 12sn azalır. \"Terzi İşi\" Pasif Yeteneğinin açılmış olması gerekir.",
+      "1": "Buna ek olarak, Chiori'nin kendi Normal Saldırılarının verdiği Hasar, Savunmasının %235'i kadar artar."
+    }
+  }
+}

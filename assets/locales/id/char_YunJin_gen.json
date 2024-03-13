@@ -8,7 +8,7 @@
     "fields": {
       "normal": {
         "0": "<strong><strong>Normal Attack</strong>",
-        "1": "Melancarkan hingga 5 serangan berturut-turut."
+        "1": "Melancarkan hingga 5 serangan berturut-turut menggunakan tombak."
       },
       "charged": {
         "0": "<strong>Charged Attack</strong>",
@@ -78,13 +78,13 @@
       "0": "Mengakibatkan <geo>Geo DMG Area</geo> dan memberikan efek Flying Cloud Flag Formation kepada seluruh anggota party di sekitar.",
       "1": "<br/>",
       "2": "<strong>Flying Cloud Flag Formation</strong>",
-      "3": "Saat mengakibatkan DMG kepada musuh dengan Normal Attack, DMG yang diakibatkan akan meningkat sesuai dengan DEF Yun Jin saat ini.",
+      "3": "Saat mengakibatkan DMG kepada musuh dengan Normal Attack, DMG yang diakibatkan akan meningkat sesuai dengan DEF Yun Jin sendiri saat ini.",
       "4": "<br/>",
       "5": "Efek Flying Cloud Flag Formation akan hilang setelah durasinya berakhir atau lapisannya terkonsumsi dalam jumlah tertentu.",
       "6": "Saat satu Normal Attack mengenai beberapa musuh secara bersamaan, jumlah lapisan Flying Cloud Flag Formation yang dikonsumsi akan disesuaikan dengan jumlah musuh yang terkena serangan. Efek dan jumlah lapisan Flying Cloud Flag Formation untuk setiap Karakter dalam party akan dihitung secara terpisah.",
       "7": "<br/>",
-      "8": "<i>\"Di tengah suara genderang perang, tombak dan pedang saling berayun, sang wanita cantik berubah menjadi jenderal yang membawa panji perang.\"</i>",
-      "9": "<i>\"Saat instrumen di atas panggung berbunyi serempak, lihatlah bagaimana dia mengalahkan para iblis ini!\"</i>"
+      "8": "<i>\"Di tengah suara genderang perang dan tombak serta pedang yang saling berayun, sang wanita cantik menjelma sebagai sesosok jenderal yang membawa panji peperangan.\"</i>",
+      "9": "<i>\"Saat instrumen di atas panggung berkumandang serempak, lihatlah caranya menumpas para iblis itu!\"</i>"
     },
     "skillParams": {
       "0": "DMG Skill",
@@ -156,7 +156,7 @@
     }
   },
   "constellation6": {
-    "name": "Hiasan yang Harmonis",
+    "name": "Decorous Harmony",
     "description": {
       "0": "Meningkatkan 12% Normal ATK SPD Karakter yang berada dalam status <strong>Flying Cloud Flag Formation</strong>."
     }

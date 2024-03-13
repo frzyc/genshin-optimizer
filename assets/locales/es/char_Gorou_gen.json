@@ -118,7 +118,7 @@
   "passive1": {
     "name": "Contra viento y marea",
     "description": {
-      "0": "Al realizar <strong>Colmillo de la victoria</strong>, la DEF de todos los miembros del equipo cercanos aumenta en un 25% durante 12 s."
+      "0": "Al realizar <strong>Colmillo de la victoria</strong>, la DEF de todos los miembros del equipo cercanos aumenta en un 25% durante 12 s."
     }
   },
   "passive2": {

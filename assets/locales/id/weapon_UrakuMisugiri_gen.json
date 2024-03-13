@@ -1,0 +1,24 @@
+{
+  "name": "Uraku Misugiri",
+  "description": {
+    "0": "Pedang terkenal yang dibuat langsung oleh Urakusai — orang yang paling berseni dan berbudaya. Konon katanya, pedang ini tidak pernah menebas makhluk hidup sama sekali selama ratusan tahun."
+  },
+  "passiveName": "Brocade Bloom, Shrine Sword",
+  "passiveDescription": {
+    "0": {
+      "0": "DMG Normal Attack meningkat sebesar <cryo>16%</cryo> dan DMG Elemental Skill meningkat sebesar <cryo>24%</cryo>. Setelah Karakter aktif di sekitar mengakibatkan Geo DMG, efek ini meningkat 100% selama 15 detik. Selain itu, DEF pengguna meningkat sebesar <cryo>20%</cryo>."
+    },
+    "1": {
+      "0": "DMG Normal Attack meningkat sebesar <cryo>20%</cryo> dan DMG Elemental Skill meningkat sebesar <cryo>30%</cryo>. Setelah Karakter aktif di sekitar mengakibatkan Geo DMG, efek ini meningkat 100% selama 15 detik. Selain itu, DEF pengguna meningkat sebesar <cryo>25%</cryo>."
+    },
+    "2": {
+      "0": "DMG Normal Attack meningkat sebesar <cryo>24%</cryo> dan DMG Elemental Skill meningkat sebesar <cryo>36%</cryo>. Setelah Karakter aktif di sekitar mengakibatkan Geo DMG, efek ini meningkat 100% selama 15 detik. Selain itu, DEF pengguna meningkat sebesar <cryo>30%</cryo>."
+    },
+    "3": {
+      "0": "DMG Normal Attack meningkat sebesar <cryo>28%</cryo> dan DMG Elemental Skill meningkat sebesar <cryo>42%</cryo>. Setelah Karakter aktif di sekitar mengakibatkan Geo DMG, efek ini meningkat 100% selama 15 detik. Selain itu, DEF pengguna meningkat sebesar <cryo>35%</cryo>."
+    },
+    "4": {
+      "0": "DMG Normal Attack meningkat sebesar <cryo>32%</cryo> dan DMG Elemental Skill meningkat sebesar <cryo>48%</cryo>. Setelah Karakter aktif di sekitar mengakibatkan Geo DMG, efek ini meningkat 100% selama 15 detik. Selain itu, DEF pengguna meningkat sebesar <cryo>40%</cryo>."
+    }
+  }
+}

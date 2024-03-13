@@ -130,7 +130,7 @@
     "name": "Flink und geschickt",
     "description": {
       "0": "Wenn der Angriff der aktuellen eigenen Figur in der Truppe Gegner in der Nähe trifft, setzt Baizhu Unruhspiral-Geist – Schnitter ein.",
-      "1": "Der Unruhspiral-Geist – Schnitter führt höchstens einen einzelnen Angriff aus, der <dendro>Dendro-Schaden</dendro> in Höhe von 250 % von Baizhus ANG verursacht und die LP wiederherstellt und kehrt dann zurück. Die wiederhergestellte Menge an LP entspricht 20 % der von Unruhspiral-Geist der <strong>Universal-Diagnose</strong> wiederhergestellten LP.",
+      "1": "Der Unruhspiral-Geist – Schnitter führt höchstens einen einzelnen Angriff aus, der <dendro>Dendro-Schaden</dendro> in Höhe von 250 % von Baizhus ANG verursacht und die LP wiederherstellt und kehrt dann zurück. Die Menge an wiederhergestellten LP entspricht 20 % der von Unruhspiral-Geist der <strong>Universal-Diagnose</strong> wiederhergestellten LP.",
       "2": "Hierdurch verursachter Schaden wird als Schaden der Elementarfähigkeit gewertet.",
       "3": "5 s Abklingzeit."
     }

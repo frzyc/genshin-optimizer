@@ -43,7 +43,7 @@
     "name": "Ascensão Bestial",
     "description": {
       "0": "Ataca para frente com as artes Wushou, saltando no ar quando atingir o alvo ou o terreno.",
-      "1": "Quando Gaming usar sua Habilidade Elemental, Ascensão Bestial, para ascender no ar, e se realizar um Ataque Imersivo, lançará um poderoso Ataque Imersivo: Caminhador das Nuvens.",
+      "1": "Quando Gaming usar sua Habilidade Elemental, Ascensão Bestial, para ascender no ar, e se realizar um Ataque Imersivo imediatamente, lançará um poderoso Ataque Imersivo: Caminhador das Nuvens.",
       "2": "<br/>",
       "3": "<strong>Ataque Imersivo: Caminhador das Nuvens</strong>",
       "4": "O Dano do Ataque Imersivo da Habilidade Elemental Ascensão Bestial é convertido em <pyro>Dano Pyro</pyro> que não pode ser substituído, e ao cair, consome uma certa quantidade da Vida de Gaming. É possível reduzir a Vida de Gaming até 10% dessa forma.",
@@ -115,8 +115,8 @@
   "passive3": {
     "name": "A Besta Caminhante",
     "description": {
-      "0": "Durante o dia (06:00 - 18:00), os personagens da equipe recebem um aumento da Veloc. Mov. de 10%.",
-      "1": "Esse efeito não se aplica em Domínios, Domínios Dizimados e Abismo do Espiral. Além disso, esse não é acumulado com Talentos Passivos de efeito igual."
+      "0": "Durante o dia (06:00 - 18:00), os membros do seu grupo ganham o efeito Passos Ágeis: Veloc. Mov. aumenta em 10%.",
+      "1": "Não tem efeito em Domínios, Domínios Dizimados ou Abismo Espiral. O efeito Passos Ágeis não se acumula."
     }
   },
   "constellation1": {
