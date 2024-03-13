@@ -75,7 +75,7 @@
   "burst": {
     "name": "Banner der brechenden Klippen",
     "description": {
-      "0": "Verursacht <geo>Geo-Flächenschaden</geo> und verleiht allen Truppenmitgliedern in der Nähe die „Formation der Fliegenden Wolken“.",
+      "0": "Verursacht <geo>Geo-Flächenschaden</geo> und verleiht allen Truppenmitgliedern in der Nähe die „Formation der fliegenden Wolken“.",
       "1": "<br/>",
       "2": "<strong>Formation der fliegenden Wolken</strong>",
       "3": "Erhöht, wenn Gegnern mit Standardangriffen Schaden zugefügt wird, den verursachten Schaden basierend auf Yun Jins eigener aktueller VTD.",
@@ -114,7 +114,7 @@
   "passive2": {
     "name": "Nieder mit den alten Werten",
     "description": {
-      "0": "Erhöht den Schadensbonus für Standardangriffe von <strong>Formation der Fliegenden Wolken</strong> bei Truppenmitgliedern mit 1/2/3/4 verschiedenen Elementartypen zusätzlich um 2,5/5/7,5/11,5 % von Yun Jins VTD."
+      "0": "Erhöht den Schadensbonus für Standardangriffe von <strong>Formation der fliegenden Wolken</strong> bei Truppenmitgliedern mit 1/2/3/4 verschiedenen Elementartypen zusätzlich um 2,5/5/7,5/11,5 % von Yun Jins VTD."
     }
   },
   "passive3": {
@@ -145,7 +145,7 @@
   "constellation4": {
     "name": "Auf in die Wolken",
     "description": {
-      "0": "Erhöht nach dem Auslösen der Reaktion Kristallisation durch Yun Jin die VTD 12 s lang um 20 %."
+      "0": "Erhöht nach dem Auslösen der Reaktion Kristallisation durch Yun Jin ihre VTD 12 s lang um 20 %."
     }
   },
   "constellation5": {
@@ -158,7 +158,7 @@
   "constellation6": {
     "name": "Gemeinsame Unternehmung",
     "description": {
-      "0": "Erhöht die Angriffs-GSW mit Standardangriffen von Figuren im Zustand <strong>Formation der Fliegenden Wolken</strong> um 12 %."
+      "0": "Erhöht die Standardangriffs-GSW von Figuren im Zustand <strong>Formation der fliegenden Wolken</strong> um 12 %."
     }
   }
 }

@@ -108,8 +108,8 @@
   "passive3": {
     "name": "Passeggiata notturna",
     "description": {
-      "0": "Nelle ore notturne (18:00-06:00), aumenta la VEL di movimento dei membri del tuo gruppo di un 10%.",
-      "1": "Non ha effetto nei domini, nei Domini della conquista o nell'Abisso a spirale. Non è cumulabile con talenti passivi che conferiscono gli stessi effetti."
+      "0": "Di notte (18:00-06:00), i membri del tuo gruppo ottengono l'effetto Piè veloce: la VEL di movimento aumenta di un 10%.",
+      "1": "Non ha effetto all'interno di domini, Domini della conquista o Abisso a spirale. Piè veloce non è cumulabile."
     }
   },
   "constellation1": {

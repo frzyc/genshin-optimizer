@@ -1,0 +1,24 @@
+{
+  "name": "Uraku Misugiri",
+  "description": {
+    "0": "This famous blade was once created by the hand of Urakusai, the renowned literatus. Legend has it that it has never cut any living creature in all these hundreds of years."
+  },
+  "passiveName": "Brocade Bloom, Shrine Sword",
+  "passiveDescription": {
+    "0": {
+      "0": "Normal Attack DMG is increased by <cryo>16%</cryo> and Elemental Skill DMG is increased by <cryo>24%</cryo>. After a nearby active character deals Geo DMG, the aforementioned effects increase by 100% for 15s. Additionally, the wielder's DEF is increased by <cryo>20%</cryo>."
+    },
+    "1": {
+      "0": "Normal Attack DMG is increased by <cryo>20%</cryo> and Elemental Skill DMG is increased by <cryo>30%</cryo>. After a nearby active character deals Geo DMG, the aforementioned effects increase by 100% for 15s. Additionally, the wielder's DEF is increased by <cryo>25%</cryo>."
+    },
+    "2": {
+      "0": "Normal Attack DMG is increased by <cryo>24%</cryo> and Elemental Skill DMG is increased by <cryo>36%</cryo>. After a nearby active character deals Geo DMG, the aforementioned effects increase by 100% for 15s. Additionally, the wielder's DEF is increased by <cryo>30%</cryo>."
+    },
+    "3": {
+      "0": "Normal Attack DMG is increased by <cryo>28%</cryo> and Elemental Skill DMG is increased by <cryo>42%</cryo>. After a nearby active character deals Geo DMG, the aforementioned effects increase by 100% for 15s. Additionally, the wielder's DEF is increased by <cryo>35%</cryo>."
+    },
+    "4": {
+      "0": "Normal Attack DMG is increased by <cryo>32%</cryo> and Elemental Skill DMG is increased by <cryo>48%</cryo>. After a nearby active character deals Geo DMG, the aforementioned effects increase by 100% for 15s. Additionally, the wielder's DEF is increased by <cryo>40%</cryo>."
+    }
+  }
+}

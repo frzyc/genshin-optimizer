@@ -130,8 +130,8 @@
   "passive3": {
     "name": "Voie ensoleillée",
     "description": {
-      "0": "Augmente la VIT de déplacement de vos personnages dans l'équipe pendant la journée (06 h 00 - 18 h 00) de 10 %.",
-      "1": "Cet effet ne s'applique ni dans les donjons, ni dans les Donjons de la conquête, ni dans les Profondeurs spiralées, et ne peut être cumulé avec d'autres aptitudes passives aux effets identiques."
+      "0": "La journée (06 h 00 - 18 h 00), vos personnages dans l'équipe obtiennent l'effet Foulée célère : augmente la VIT de déplacement de 10 %.",
+      "1": "Cet effet ne s'applique pas dans les donjons, dans les Donjons de la conquête et dans les Profondeurs spiralées, et ne peut pas être cumulé."
     }
   },
   "constellation1": {

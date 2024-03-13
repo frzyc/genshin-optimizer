@@ -43,7 +43,7 @@
     "name": "Bestial Ascent",
     "description": {
       "0": "Pounces forward using the Wushou arts, leaping high into the air after coming into contact with a target or surface.",
-      "1": "After Gaming has used Bestial Ascent to rise into the air, he will use the especially powerful Plunging Attack: Charmed Cloudstrider when performing a Plunging Attack.",
+      "1": "After Gaming has used Bestial Ascent to rise into the air, if he immediately uses a Plunging Attack, he will use the especially powerful Plunging Attack: Charmed Cloudstrider instead.",
       "2": "<br/>",
       "3": "<strong>Plunging Attack: Charmed Cloudstrider</strong>",
       "4": "The DMG from Plunging Attacks caused by Bestial Ascent is converted to <pyro>Pyro DMG</pyro> that cannot be overridden by other elemental infusions. Upon landing, Gaming will consume a fixed amount of HP. Gaming's HP cannot be reduced below 10% by this method.",
@@ -115,8 +115,8 @@
   "passive3": {
     "name": "The Striding Beast",
     "description": {
-      "0": "Increases the Movement SPD of your own party members by 10% during the day (6:00 – 18:00).",
-      "1": "Does not take effect in Domains, Trounce Domains, or Spiral Abyss. Not stackable with Passive Talents that provide the exact same effects."
+      "0": "During the day (06:00 – 18:00), your party members gain the Swift Stride effect: Movement SPD increased by 10%.",
+      "1": "Does not take effect in Domains, Trounce Domains, or Spiral Abyss. Swift Stride does not stack."
     }
   },
   "constellation1": {

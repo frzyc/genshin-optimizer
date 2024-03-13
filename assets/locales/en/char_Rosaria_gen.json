@@ -108,8 +108,8 @@
   "passive3": {
     "name": "Night Walk",
     "description": {
-      "0": "At night (18:00–6:00), increases the Movement SPD of your own party members by 10%.",
-      "1": "Does not take effect in Domains, Trounce Domains, or Spiral Abyss. Not stackable with Passive Talents that provide the exact same effects."
+      "0": "At night (18:00 – 06:00), your party members gain the Swift Stride effect: Movement SPD increased by 10%.",
+      "1": "Does not take effect in Domains, Trounce Domains, or Spiral Abyss. Swift Stride does not stack."
     }
   },
   "constellation1": {

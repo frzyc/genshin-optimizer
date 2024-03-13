@@ -129,8 +129,8 @@
   "passive3": {
     "name": "Jornada Iluminada",
     "description": {
-      "0": "Durante o dia (06:00 - 18:00), os personagens da equipe recebem um aumento da Veloc. Mov. de 10%.",
-      "1": "Esse efeito não se aplica em Domínios, Domínios Dizimados e Abismo do Espiral. Além disso, esse não é acumulado com Talentos Passivos de efeito igual."
+      "0": "Durante o dia (06:00 - 18:00), os membros do seu grupo ganham o efeito Passos Ágeis: Veloc. Mov. aumenta em 10%.",
+      "1": "Não tem efeito em Domínios, Domínios Dizimados ou Abismo Espiral. O efeito Passos Ágeis não se acumula."
     }
   },
   "constellation1": {

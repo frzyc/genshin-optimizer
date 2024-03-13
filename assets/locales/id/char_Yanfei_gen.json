@@ -14,12 +14,12 @@
       },
       "charged": {
         "0": "<strong>Charged Attack</strong>",
-        "1": "Mengonsumsi Stamina dan semua Scarlet Seal untuk mengakibatkan <pyro>Pyro DMG area</pyro> setelah jeda singkat.",
+        "1": "Mengonsumsi Stamina dan semua Scarlet Seal untuk mengakibatkan <pyro>Pyro DMG Area</pyro> setelah jeda singkat.",
         "2": "Area dan DMG dari Charged Attack ini akan meluas dan meningkat sesuai dengan jumlah Scarlet Seal yang dikonsumsi."
       },
       "plunging": {
         "0": "<strong>Plunging Attack</strong>",
-        "1": "Mengumpulkan kekuatan Pyro dan menerjang tanah, menyerang musuh di jalur terjangan dan mengakibatkan <pyro>Pyro DMG area</pyro> saat mendarat."
+        "1": "Mengumpulkan kekuatan Pyro dan menerjang tanah, menyerang musuh di jalur terjangan dan mengakibatkan <pyro>Pyro DMG Area</pyro> saat mendarat."
       }
     },
     "skillParams": {
@@ -123,7 +123,7 @@
   "constellation1": {
     "name": "The Law Knows No Kindness",
     "description": {
-      "0": "Saat Yanfei menggunakan Charged Attack, setiap Scarlet Seal yang terkumpul akan mengurangi 10% konsumsi stamina Charged Attack dan meningkatkan ketahanan terhadap interupsi selama Charged Attack berlangsung."
+      "0": "Saat Yanfei melancarkan Charged Attack, setiap Scarlet Seal yang terkumpul akan mengurangi 10% konsumsi stamina Charged Attack dan meningkatkan ketahanan terhadap interupsi selama Charged Attack berlangsung."
     }
   },
   "constellation2": {

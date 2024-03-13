@@ -132,7 +132,7 @@
     "name": "Arte Yoohoo: Segredo da Dissimulação",
     "description": {
       "0": "Quando Sayu estiver na equipe, seus personagens não irão assustar as Borboletas de Cristais e alguns outros animais ao chegar perto deles.",
-      "1": "Cheque a sub-categoria \"Outros\" da seção \"Seres Vivos/Animais Selvagens\" do Arquivo, para descobrir quais criaturas esta habilidade funciona."
+      "1": "Cheque a sub-categoria \"Outros\" da seção \"Seres Vivos/Animais Selvagens\" do Arquivo, para descobrir com quais criaturas esta habilidade funciona."
     }
   },
   "constellation1": {
@@ -178,7 +178,7 @@
       "0": "O Ataque e Recuperação de Daruma Muji-Muji criado por <strong>Arte Yoohoo: Agitação Mujina</strong> de Sayu agora beneficiam também de sua Proficiência Elemental. Cada ponto de Proficiência Elemental irá produzir os seguintes efeitos:",
       "1": [
         "Aumenta o dano causado pelos Ataques de Muji-Muji Daruma em 0.2% de ATQ. Um máximo de 400% de ATQ pode ser obtido através desse método;",
-        "A quantidade de HP restaurada por Muji-Muji Daruma é aumentada em 3. Um máximo de 6000 HP pode ser restaurado desse forma."
+        "A quantidade de HP restaurada por Muji-Muji Daruma é aumentada em 3. Um máximo de 6000 HP pode ser restaurado dessa forma."
       ]
     }
   }

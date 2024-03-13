@@ -108,8 +108,8 @@
   "passive3": {
     "name": "Travesía nocturna",
     "description": {
-      "0": "La Vel. Movimiento de todos los miembros de tu equipo aumenta en un 10% por la noche (18-06 h).",
-      "1": "Este efecto no se activará en dominios, Dominios de la cruzada y la Espiral del Abismo, y no se puede acumular con otros talentos pasivos que tengan los mismos efectos."
+      "0": "Tus personajes del equipo obtienen el efecto de “paso ligero”, de manera que su Vel. Movimiento aumenta en un 10% por la noche (18-06 h).",
+      "1": "Este efecto no se activará en dominios, Dominios de la cruzada y la Espiral del Abismo, y no se puede acumular con otros efectos de paso ligero."
     }
   },
   "constellation1": {
