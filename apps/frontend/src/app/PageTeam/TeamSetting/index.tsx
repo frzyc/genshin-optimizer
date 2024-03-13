@@ -21,7 +21,7 @@ import {
   TextField,
   Typography,
 } from '@mui/material'
-import { Suspense, useDeferredValue, useEffect, useState } from 'react'
+import { Suspense, useDeferredValue, useEffect, useMemo, useState } from 'react'
 import CharacterSelectionModal from '../../Components/Character/CharacterSelectionModal'
 import CloseButton from '../../Components/CloseButton'
 import CharIconSide from '../../Components/Image/CharIconSide'
@@ -38,6 +38,8 @@ import ContentCopyIcon from '@mui/icons-material/ContentCopy'
 import ContentPasteIcon from '@mui/icons-material/ContentPaste'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import { useLocation, useNavigate } from 'react-router-dom'
+import type { TeamCharacterContextObj } from '../../Context/TeamCharacterContext'
+import { TeamCharacterContext } from '../../Context/TeamCharacterContext'
 // TODO: Translation
 
 export default function TeamSetting({
@@ -250,6 +252,17 @@ function TeamCharacterSelector({
     teamCharIds[charSelectIndex as number]
   )?.key
 
+  // This context is only used by the ResonanceDisplay, which needs to attach conditional values to team data.
+  const teamCharContextObj = useMemo(
+    () =>
+      ({
+        teamId,
+        team,
+        teamCharId: teamCharIds[0],
+        teamChar: {},
+      } as TeamCharacterContextObj),
+    [team, teamId, teamCharIds]
+  )
   return (
     <>
       <Suspense fallback={false}>
@@ -269,7 +282,9 @@ function TeamCharacterSelector({
           {dataContextValue && (
             <DataContext.Provider value={dataContextValue}>
               <TeamBuffDisplay />
-              <ResonanceDisplay teamId={teamId} />
+              <TeamCharacterContext.Provider value={teamCharContextObj}>
+                <ResonanceDisplay teamId={teamId} />
+              </TeamCharacterContext.Provider>
             </DataContext.Provider>
           )}
         </Grid>
