@@ -1,8 +1,8 @@
 import { deepClone, range } from '@genshin-optimizer/common/util'
+import { allElementWithPhyKeys } from '@genshin-optimizer/gi/consts'
 import type { EleEnemyResKey } from '@genshin-optimizer/gi/keymap'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
 import { DataManager } from '../DataManager'
-import { allElementWithPhyKeys } from '@genshin-optimizer/gi/consts'
 export interface Team {
   name: string
   description: string
@@ -13,7 +13,9 @@ export interface Team {
       number
     >
   >
-
+  conditional: {
+    resonance: { [key: string]: string }
+  }
   teamCharIds: Array<string | undefined>
   lastEdit: number
 }
@@ -40,8 +42,14 @@ export class TeamDataManager extends DataManager<
     return `Team Name`
   }
   override validate(obj: unknown): Team | undefined {
-    let { name, description, enemyOverride, teamCharIds, lastEdit } =
-      obj as Team
+    let {
+      name,
+      description,
+      enemyOverride,
+      conditional,
+      teamCharIds,
+      lastEdit,
+    } = obj as Team
     if (typeof name !== 'string') name = this.newName()
     if (typeof description !== 'string') description = 'Team Description'
 
@@ -63,6 +71,8 @@ export class TeamDataManager extends DataManager<
         if (typeof enemyOverride[key] !== 'number') enemyOverride[key] = 10
       })
     }
+
+    if (!conditional) conditional = { resonance: {} }
 
     {
       // validate teamCharIds
@@ -90,6 +100,7 @@ export class TeamDataManager extends DataManager<
       name,
       description,
       enemyOverride,
+      conditional,
       teamCharIds,
       lastEdit,
     }
