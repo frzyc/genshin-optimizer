@@ -54,7 +54,9 @@ export default function TabOverview() {
               }}
             >
               <DataContext.Provider value={dataContextObj}>
-                <StatDisplayComponent />
+                <StatDisplayComponent
+                  columns={{ xs: 1, sm: 1, md: 1, lg: 2, xl: 3 }}
+                />
               </DataContext.Provider>
               <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
                 <CompareBtn />

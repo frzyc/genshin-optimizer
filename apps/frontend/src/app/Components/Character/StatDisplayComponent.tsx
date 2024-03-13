@@ -1,5 +1,6 @@
 import { objMap } from '@genshin-optimizer/common/util'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
+import type { MasonryProps } from '@mui/lab'
 import { Masonry } from '@mui/lab'
 import { Box, Divider, ListItem } from '@mui/material'
 import { useContext, useMemo } from 'react'
@@ -15,7 +16,11 @@ import { FieldDisplayList, NodeFieldDisplay } from '../FieldDisplay'
 import ImgIcon from '../Image/ImgIcon'
 import SqBadge from '../SqBadge'
 
-export default function StatDisplayComponent() {
+export default function StatDisplayComponent({
+  columns = { xs: 1, sm: 2, md: 3, xl: 4 },
+}: {
+  columns?: MasonryProps['columns']
+}) {
   const { data } = useContext(DataContext)
   const sections = useMemo(
     () =>
@@ -26,7 +31,7 @@ export default function StatDisplayComponent() {
   )
   return (
     <Box sx={{ mr: -1, mb: -1 }}>
-      <Masonry columns={{ xs: 1, sm: 2, md: 3, xl: 4 }} spacing={1}>
+      <Masonry columns={columns} spacing={1}>
         {sections.map(([key, Nodes]) => (
           <Section key={key} displayNs={Nodes} sectionKey={key} />
         ))}
