@@ -233,8 +233,8 @@ export function CustomMultiTargetButton() {
                   title={
                     <Typography>
                       <Trans t={t} i18nKey="multiTarget.info1">
-                        Note: Community created Multi-Optimization
-                        Targets can be found within the
+                        Note: Community created Multi-Optimization Targets can
+                        be found within the
                         <a
                           href={process.env.NX_URL_DISCORD_GO}
                           target="_blank"
