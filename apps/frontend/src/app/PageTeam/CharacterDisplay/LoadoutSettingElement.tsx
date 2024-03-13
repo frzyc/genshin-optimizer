@@ -40,6 +40,7 @@ export default function LoadoutSettingElement() {
       buildIds,
       buildTcId,
       buildTcIds,
+      customMultiTargets,
     },
   } = useContext(TeamCharacterContext)
 
@@ -92,7 +93,11 @@ export default function LoadoutSettingElement() {
     <>
       <Box display="flex" gap={1} alignItems="center">
         <BootstrapTooltip
-          title={<Typography>{teamChar.description}</Typography>}
+          title={
+            teamChar.description ? (
+              <Typography>{teamChar.description}</Typography>
+            ) : undefined
+          }
         >
           <Button
             startIcon={<PersonIcon />}
@@ -113,6 +118,11 @@ export default function LoadoutSettingElement() {
               </SqBadge>
               <SqBadge color={buildTcIds.length ? 'primary' : 'secondary'}>
                 {buildTcIds.length} TC Builds
+              </SqBadge>
+              <SqBadge
+                color={customMultiTargets.length ? 'primary' : 'secondary'}
+              >
+                {customMultiTargets.length} Multi-Opt
               </SqBadge>
             </Typography>
           </Button>

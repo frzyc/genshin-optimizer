@@ -35,6 +35,7 @@ export function LoadoutDropdown({
     name,
     buildIds,
     buildTcIds,
+    customMultiTargets,
   } = database.teamChars.get(teamCharId)!
   const { gender } = useDBMeta()
   const teamCharIds = database.teamChars.keys.filter(
@@ -123,6 +124,11 @@ export function LoadoutDropdown({
               <SqBadge color={buildTcIds.length ? 'success' : 'secondary'}>
                 {buildTcIds.length} TC Builds
               </SqBadge>
+              <SqBadge
+                color={customMultiTargets.length ? 'success' : 'secondary'}
+              >
+                {customMultiTargets.length} Multi-Opt
+              </SqBadge>
             </Box>
           </Box>
         }
@@ -131,7 +137,8 @@ export function LoadoutDropdown({
         <MenuItem onClick={() => onShow()}>Create a new Loadout</MenuItem>
         {/* TODO: new loadout */}
         {teamCharIds.map((tcId) => {
-          const { name, buildIds, buildTcIds } = database.teamChars.get(tcId)!
+          const { name, buildIds, buildTcIds, customMultiTargets } =
+            database.teamChars.get(tcId)!
           return (
             <MenuItem
               key={tcId}
@@ -148,6 +155,11 @@ export function LoadoutDropdown({
               </SqBadge>
               <SqBadge color={buildTcIds.length ? 'primary' : 'secondary'}>
                 {buildTcIds.length} TC Builds
+              </SqBadge>
+              <SqBadge
+                color={customMultiTargets.length ? 'success' : 'secondary'}
+              >
+                {customMultiTargets.length} Multi-Opt
               </SqBadge>
             </MenuItem>
           )

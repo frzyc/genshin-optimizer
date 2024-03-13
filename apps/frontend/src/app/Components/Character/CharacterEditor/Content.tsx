@@ -267,7 +267,7 @@ function InTeam() {
       </Typography>
 
       {Object.entries(loadoutTeamMap).map(([teamCharId, teamIds]) => {
-        const { name, description, buildIds, buildTcIds } =
+        const { name, description, buildIds, buildTcIds, customMultiTargets } =
           database.teamChars.get(teamCharId)!
         return (
           <CardThemed key={teamCharId} bgt="light">
@@ -284,6 +284,11 @@ function InTeam() {
                 </SqBadge>
                 <SqBadge color={buildTcIds.length ? 'primary' : 'secondary'}>
                   {buildTcIds.length} TC Builds
+                </SqBadge>
+                <SqBadge
+                  color={customMultiTargets.length ? 'primary' : 'secondary'}
+                >
+                  {customMultiTargets.length} Multi-Opt
                 </SqBadge>
                 <Button
                   color="info"

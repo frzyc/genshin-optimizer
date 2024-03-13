@@ -1,4 +1,5 @@
 import { useBoolState, useTimeout } from '@genshin-optimizer/common/react-util'
+import { SqBadge } from '@genshin-optimizer/common/ui'
 import {
   arrayMove,
   clamp,
@@ -210,11 +211,12 @@ export function CustomMultiTargetButton() {
     <Suspense
       fallback={<Skeleton variant="rectangular" height="100%" width={100} />}
     >
-      <Button
-        color="info"
-        onClick={onShow}
-        startIcon={<SettingsIcon />}
-      >{t`multiTarget.title`}</Button>
+      <Button color="info" onClick={onShow} startIcon={<SettingsIcon />}>
+        {t`multiTarget.title`}{' '}
+        <SqBadge color={customMultiTargets.length ? 'success' : 'secondary'}>
+          {customMultiTargets.length}
+        </SqBadge>
+      </Button>
       <DataContext.Provider value={dataContextObj}>
         <ModalWrapper
           open={show}
@@ -231,8 +233,8 @@ export function CustomMultiTargetButton() {
                   title={
                     <Typography>
                       <Trans t={t} i18nKey="multiTarget.info1">
-                        Note: Community created custom Multi-Optimization
-                        Targets can be found within the
+                        Note: Community created Multi-Optimization Targets can
+                        be found within the
                         <a
                           href={process.env.NX_URL_DISCORD_GO}
                           target="_blank"
