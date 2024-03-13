@@ -43,7 +43,7 @@
     "name": "Ascensione selvaggia",
     "description": {
       "0": "Si proietta in avanti sfruttando le sue arti Wushou, compiendo un lungo balzo verso l'alto dopo aver colpito un bersaglio o una superficie.",
-      "1": "Quando Gaming usa Ascensione selvaggia per elevarsi, sferra il suo potente attacco Cavalcanubi propizio quando usa un attacco in picchiata.",
+      "1": "Quando Gaming usa Ascensione selvaggia per librarsi in aria, se usa immediatamente un attacco in picchiata, sferra il potentissimo Attacco in picchiata: Cavalcanubi propizio.",
       "2": "<br/>",
       "3": "<strong>Attacco in picchiata: Cavalcanubi propizio</strong>",
       "4": "I DAN da attacco in picchiata derivanti da Ascensione selvaggia vengono convertiti in <pyro>DAN da Pyro</pyro> che non possono essere contrastati da altre infusioni elementali. All'impatto col suolo, Gaming consuma una certa quantità di PS. Con questo metodo, i PS di Gaming non possono calare al di sotto di un 10% dei suoi PS max.",
@@ -115,8 +115,8 @@
   "passive3": {
     "name": "Bestia dal grande passo",
     "description": {
-      "0": "Aumenta la VEL di movimento dei membri del tuo gruppo di un 10% durante il giorno (06:00-18:00).",
-      "1": "Non ha effetto nei domini, nei Domini della conquista o nell'Abisso a spirale. Non è cumulabile con talenti passivi che conferiscono gli stessi effetti."
+      "0": "Di giorno (06:00-18:00), i membri del tuo gruppo ottengono l'effetto Piè veloce: la VEL di movimento aumenta di un 10%.",
+      "1": "Non ha effetto all'interno di domini, Domini della conquista o Abisso a spirale. Piè veloce non è cumulabile."
     }
   },
   "constellation1": {

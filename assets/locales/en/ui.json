@@ -5,6 +5,7 @@
     "weapons": "Weapons",
     "artifacts": "Artifacts",
     "characters": "Characters",
+    "teams": "Teams",
     "tools": "Tools",
     "setting": "Settings",
     "doc": "Docs",
@@ -39,7 +40,8 @@
     "artsetkey": "Artifact Set",
     "efficiency": "Current RV",
     "mefficiency": "Maximum RV",
-    "probability": "Roll Probability"
+    "probability": "Roll Probability",
+    "lastEdit": "Recently Edited"
   },
   "delete": "Delete",
   "locked": "Locked",

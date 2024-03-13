@@ -42,11 +42,11 @@
   "skill": {
     "name": "Bestial Ascent",
     "description": {
-      "0": "Menerjang ke depan dengan teknik Wushou, setelah menyentuh musuh atau permukaan tanah maka Gaming akan meloncat tinggi ke angkasa.",
-      "1": "Gaming menggunakan Elemental Skill Bestial Ascent untuk naik ke angkasa, jika melancarkan Plunging Attack, maka Gaming akan melancarkan Plunging Attack: Charmed Cloudstrider yang sangat kuat.",
+      "0": "Menerjang ke depan dengan teknik Wushou, setelah menyentuh musuh atau permukaan medan maka Gaming akan meloncat tinggi ke udara.",
+      "1": "Gaming menggunakan Elemental Skill Bestial Ascent untuk naik ke udara, jika langsung melancarkan Plunging Attack, maka Gaming akan melancarkan Plunging Attack: Charmed Cloudstrider yang sangat kuat.",
       "2": "<br/>",
       "3": "<strong>Plunging Attack: Charmed Cloudstrider</strong>",
-      "4": "DMG yang diakibatkan Plunging Attack yang dilancarkan melalui Elemental Skill Bestial Ascent akan dikonversi menjadi <pyro>Pyro DMG</pyro> yang tidak bisa ditimpa Elemental Infusion lainnya, dan akan mengonsumsi sejumlah HP Gaming saat dia mendarat. Cara ini bisa mengurangi nilai HP Gaming hingga maksimum 10% HP-nya.",
+      "4": "DMG dari Plunging Attack yang dilancarkan melalui Elemental Skill Bestial Ascent akan dikonversi menjadi <pyro>Pyro DMG</pyro> yang tidak bisa ditimpa Elemental Infusion lainnya, dan akan mengonsumsi sejumlah HP Gaming saat dia mendarat. HP Gaming tidak bisa berkurang hingga di bawah 10% Max HP-nya melalui cara ini.",
       "5": "DMG Charmed Cloudstrider dianggap sebagai DMG Plunging Attack.",
       "6": "<br/>",
       "7": "<i>\"Hewan melompat tinggi dan mematuk sayuran, semua kemakmuran di sekitar tumbuh bermekaran. Semoga kekayaan dan kesehatan mendatangi kita semua, dan semoga kita semua bisa terus berkembang!\"</i>"
@@ -75,8 +75,8 @@
     "description": {
       "0": "Gaming memasuki Wushou Stance, lalu terpengaruh oleh <pyro>Pyro</pyro> selama waktu singkat, memulihkan HP dalam jumlah tertentu, dan memanggil rekannya yang bisa diandalkan yakni Suanni Man Chai untuk menghantam targetnya dan mengakibatkan <pyro>Pyro DMG Area</pyro>.",
       "1": "Setelah Man Chai menghantam targetnya, dia akan berguling ke sekitarnya, lalu bergerak kembali ke arah Gaming. Saat berkumpul kembali dengan Gaming, Suanni Man Chai akan meninggalkan medan pertempuran, dan CD Elemental Skill Bestial Ascent akan diperbarui.",
-      "2": "Selama Wushou Stance berlangsung, ketahanan Gaming terhadap interupsi meningkat. Saat Plunging Attack: Charmed Cloudstrider menyentuh tanah atau terjangan ke depan Bestial Ascent berakhir, jika HP Gaming lebih dari 50%, maka dia akan memanggil lagi Suanni Man Chai.",
-      "3": "Maksimum satu Suanni Man Chai milik Gaming sendiri yang bisa ada di medan pertempuran dalam waktu yang bersamaan.",
+      "2": "Selama Wushou Stance berlangsung, ketahanan Gaming terhadap interupsi meningkat. Saat Plunging Attack: Charmed Cloudstrider menyentuh tanah atau terjangan ke depan Bestial Ascent berakhir, jika HP Gaming lebih dari 50%, maka dia akan memanggil Suanni Man Chai lagi.",
+      "3": "Maksimum hanya satu Suanni Man Chai milik Gaming sendiri yang bisa ada di medan pertempuran dalam waktu yang bersamaan.",
       "4": "Efek ini akan hilang saat Gaming meninggalkan medan pertempuran.",
       "5": "<br/>",
       "6": "<i>\"Hewan emas membawa keberuntungan, cahaya gemerlapan, dan pemandangan berkilauan! Itulah yang dinamakan hidup yang penuh sukacita!\"</i>"
@@ -115,8 +115,8 @@
   "passive3": {
     "name": "The Striding Beast",
     "description": {
-      "0": "Saat pagi sampai sore hari (06:00 - 18:00), meningkatkan 10% Movement SPD anggota party sendiri.",
-      "1": "Efek ini tidak aktif dalam Domain, Trounce Domain, atau Spiral Abyss. Efek ini tidak dapat ditumpuk dengan Talenta Pasif lain dengan efek yang sama persis."
+      "0": "Saat siang hari (06:00 — 18:00), anggota party sendiri mendapatkan efek peningkatan kecepatan: meningkatkan 10% Movement SPD.",
+      "1": "Efek ini tidak aktif dalam Domain, Domain Trounce, atau Spiral Abyss. Efek peningkatan kecepatan tidak dapat ditumpuk."
     }
   },
   "constellation1": {
@@ -141,7 +141,7 @@
   "constellation4": {
     "name": "Soar Across Mountains",
     "description": {
-      "0": "Saat Plunging Attack: Charmed Cloudstrider <strong>Bestial Ascent</strong> mengenai musuh, akan memulihkan 2 poin Energy Gaming. Efek ini dapat terpicu sekali setiap 0,2 detik."
+      "0": "Saat Plunging Attack: Charmed Cloudstrider dari <strong>Bestial Ascent</strong> mengenai musuh, akan memulihkan 2 poin Energy Gaming. Efek ini dapat terpicu sekali setiap 0,2 detik."
     }
   },
   "constellation5": {
@@ -154,7 +154,7 @@
   "constellation6": {
     "name": "To Tame All Beasts",
     "description": {
-      "0": "Plunging Attack: Charmed Cloudstrider <strong>Bestial Ascent</strong> mendapatkan peningkatan 20% CRIT Rate dan 40% CRIT DMG, radius serangan juga meningkat."
+      "0": "Plunging Attack: Charmed Cloudstrider dari <strong>Bestial Ascent</strong> mendapatkan peningkatan 20% CRIT Rate dan 40% CRIT DMG, radius serangannya juga meningkat."
     }
   }
 }

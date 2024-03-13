@@ -43,7 +43,7 @@
     "name": "Ascensión bestial",
     "description": {
       "0": "Se abalanza hacia delante utilizando el arte de la danza de bestias y, tras entrar en contacto con un objetivo o cualquier tipo de obstáculo, da un gran salto hacia arriba.",
-      "1": "Si Gaming ejecuta un Ataque Descendente tras elevarse en las alturas con su Habilidad Elemental, “Ascensión bestial”, ejecutará un Ataque Descendente: Auspicio nebular especialmente poderoso.",
+      "1": "Si Gaming ejecuta un Ataque Descendente inmediatamente después de elevarse en las alturas con su Habilidad Elemental, “Ascensión bestial”, ejecutará un Ataque Descendente: Auspicio nebular especialmente poderoso.",
       "2": "<br/>",
       "3": "<strong>Ataque Descendente: Auspicio nebular</strong>",
       "4": "El daño infligido con el Ataque Descendente ejecutado con su Habilidad Elemental, “Ascensión bestial”, se convierte en <pyro>Daño Pyro</pyro>, el cual no puede sustituirse imbuyéndose de otro elemento, y además, al aterrizar, Gaming perderá cierta cantidad de Vida. Como máximo, la Vida de Gaming puede reducirse hasta el 10% de esta manera.",
@@ -115,8 +115,8 @@
   "passive3": {
     "name": "Andar de la bestia",
     "description": {
-      "0": "La Vel. Movimiento de todos los miembros de tu equipo aumenta en un 10% por el día (06-18 h).",
-      "1": "Este efecto no se activará en dominios, Dominios de la cruzada ni en la Espiral del Abismo, y no se puede acumular con otros talentos pasivos que tengan el mismo efecto."
+      "0": "Tus personajes del equipo obtienen el efecto de “paso ligero”, de manera que su Vel. Movimiento aumenta en un 10% por el día (06-18 h).",
+      "1": "Este efecto no se activará en dominios, Dominios de la cruzada y la Espiral del Abismo, y no se puede acumular con otros efectos de paso ligero."
     }
   },
   "constellation1": {

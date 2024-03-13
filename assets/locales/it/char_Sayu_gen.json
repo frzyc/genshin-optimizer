@@ -90,7 +90,7 @@
       "4": "A intervalli specifici, il Daruma effettuerà una delle seguenti azioni in base alla situazione:",
       "5": [
         " se i PS dei personaggi vicini sono superiori a un 70%, attaccherà un avversario vicino, infliggendo <anemo>DAN da Anemo</anemo>;",
-        " se ci sono personaggi attivi vicini con un 70% dei PS o meno, guarirà il personaggio attivo con la percentuale di PS rimasti più bassa. Se non ci sono avversari vicini, guarirà i personaggi attivi vicini anche se hanno un 70% o più di PS."
+        " se ci sono personaggi attivi vicini con un 70% dei PS o meno, guarirà il personaggio attivo con la percentuale di PS rimasti più bassa, in base all'ATT di Sayu. Se non ci sono avversari vicini, guarirà i personaggi attivi vicini anche se hanno un 70% o più di PS."
       ],
       "6": "<br/>",
       "7": "<i>Coloro che non conoscono affatto il ninjutsu amano vedere Sayu mettere in mostra la sua abilità, e c'è persino chi ha cercato di imparare da lei. Ma Sayu vuole solo dormire senza essere disturbata.</i>"

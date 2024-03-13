@@ -43,7 +43,7 @@
     "description": {
       "0": "Xianyun memasuki status Cloud Transmogrification, tidak akan menerima DMG saat terjatuh, dan akan melancarkan satu kali Skyladder.",
       "1": "Dalam status ini, Plunging Attack Xianyun akan dikonversi menjadi Driftcloud Wave, mengakibatkan <anemo>Anemo DMG Area</anemo>, dan akan mengakhiri status Cloud Transmogrification. DMG ini akan dianggap sebagai DMG Plunging Attack.",
-      "2": "Setiap kali melancarkan Skyladder dalam status ini, akan meningkatkan DMG dan efek serangan Driftcloud Wave yang selanjutnya.",
+      "2": "Setiap kali melancarkan Skyladder dalam status ini, akan meningkatkan DMG dan area serangan Driftcloud Wave yang selanjutnya.",
       "3": "<br/>",
       "4": "<strong>Skyladder</strong>",
       "5": "Bisa dilancarkan di udara, Xianyun melompat maju ke depan, dan mengakibatkan <anemo>Anemo DMG</anemo> terhadap target di jalurnya.",
@@ -93,7 +93,7 @@
       "0": "DMG Skill",
       "1": "DMG Starwicker",
       "2": "Jumlah Pemulihan",
-      "3": "Jumlah Pemulihan Berlanjutan",
+      "3": "Jumlah Pemulihan Berkelanjutan",
       "4": "Durasi",
       "5": "Cooldown",
       "6": "Konsumsi Energy",
@@ -118,8 +118,8 @@
   "passive2": {
     "name": "Consider, the Adeptus in Her Realm",
     "description": {
-      "0": "Saat Starwicker yang diciptakan oleh <strong>Stars Gather at Dusk</strong> memiliki lapisan Adeptal Assistance, DMG terjangan Plunging Attack Karakter aktif di sekitar meningkat sebesar 200% ATK Xianyun. Jumlah peningkatan Plunging Attack Karakter aktif yang bisa diperoleh dengan cara ini maksimum 9.000 DMG.",
-      "1": "Dalam satu kali terjangan Plunging Attack, hanya satu musuh yang bisa menerima efek yang disebutkan di atas. Bisa terpicu maksimum sekali setiap 0,4 detik untuk setiap Karakter."
+      "0": "Saat Starwicker yang diciptakan oleh <strong>Stars Gather at Dusk</strong> memiliki lapisan Adeptal Assistance, DMG terjangan Plunging Attack Karakter aktif di sekitar meningkat sebesar 200% ATK Xianyun. Jumlah peningkatan DMG Plunging Attack Karakter aktif di sekitar yang bisa diperoleh dengan cara ini maksimum 9.000 poin.",
+      "1": "Dalam satu kali DMG terjangan Plunging Attack, hanya satu musuh yang bisa menerima efek yang disebutkan di atas. Bisa terpicu maksimum sekali setiap 0,4 detik untuk setiap Karakter."
     }
   },
   "passive3": {
@@ -139,7 +139,7 @@
     "name": "Aloof From the World",
     "description": {
       "0": "Setelah menggunakan Skyladder dari <strong>White Clouds at Dawn</strong>, ATK Xianyun meningkat 20% selama 15 detik.",
-      "1": "Selain itu, efek Talenta Pasif \"Consider, the Adeptus in Her Realm\" akan mendapatkan peningkatan: Saat Starwicker yang diciptakan oleh <strong>Stars Gather at Dusk</strong> memiliki lapisan Adeptal Assistance. DMG terjangan Plunging Attack Karakter aktif di sekitar meningkat sebesar 400% ATK Xianyun. Jumlah peningkatan Plunging Attack Karakter aktif yang bisa diperoleh dengan cara ini adalah maksimum 18.000 DMG.",
+      "1": "Selain itu, efek Talenta Pasif \"Consider, the Adeptus in Her Realm\" akan mendapatkan peningkatan: Saat Starwicker yang diciptakan oleh <strong>Stars Gather at Dusk</strong> memiliki lapisan Adeptal Assistance, DMG terjangan Plunging Attack Karakter aktif di sekitar meningkat sebesar 400% ATK Xianyun. Jumlah peningkatan Plunging Attack Karakter aktif yang bisa diperoleh dengan cara ini adalah maksimum 18.000 DMG.",
       "2": "Dalam satu kali terjangan Plunging Attack, hanya satu musuh yang bisa menerima efek yang disebutkan di atas. Bisa terpicu maksimum sekali setiap 0,4 detik untuk setiap Karakter.",
       "3": "Harus membuka Talenta Pasif \"Consider, the Adeptus in Her Realm\" terlebih dahulu."
     }
@@ -168,7 +168,7 @@
     "name": "They Call Her Cloud Retainer",
     "description": {
       "0": "Setelah Xianyun menggunakan 1/2/3 Skyladder dalam satu kali Cloud Transmogrification dari <strong>White Clouds at Dawn</strong>, CRIT DMG Driftcloud Wave selama Cloud Transmogrification kali ini meningkat 15%/35%/70%.",
-      "1": "Dalam waktu 16 detik setelah Xianyun melancarkan <strong>Stars Gather at Dusk</strong>, White Clouds at Dawn tidak akan memasuki CD. Efek ini akan dihapus setelah Xianyun melancarkan 8 kali White Clouds at Dawn."
+      "1": "Selama 16 detik setelah Xianyun melancarkan <strong>Stars Gather at Dusk</strong>, White Clouds at Dawn tidak akan memasuki CD. Efek ini akan dihapus setelah Xianyun melancarkan 8 kali White Clouds at Dawn."
     }
   }
 }

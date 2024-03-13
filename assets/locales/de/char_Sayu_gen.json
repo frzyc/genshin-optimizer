@@ -43,10 +43,10 @@
     "name": "Juhu-Stil – Fuuin-Stoß",
     "description": {
       "0": "Die Spezialtechnik der Ninja-Kunst des Juhu-Stils in einem über das Schlachtfeld rollenden Fuufuu-Windrad!",
-      "1": "Rollt in einem Windrad mit hoher Geschwindigkeit umher, stößt gegen Gegner und verursacht <anemo>Anemo-Schaden</anemo>. Löst am Ende einen Windradtritt aus und verursacht <anemo>Anemo-Flächenschaden</anemo>.",
+      "1": "Rollt in einem Windrad mit hoher Geschwindigkeit umher, stößt gegen Gegner und verursacht <anemo>Anemo-Schaden</anemo>. Löst am Ende einen Fuufuu-Windradtritt aus und verursacht <anemo>Anemo-Flächenschaden</anemo>.",
       "2": "<br/>",
       "3": "<strong>Drücken</strong>",
-      "4": "Startet den Windradmodus und rollt kurz nach vorn, bis ein Windradtritt ausgelöst wird.",
+      "4": "Startet den Windradmodus und rollt kurz nach vorn, bis ein Fuufuu-Windradtritt ausgelöst wird.",
       "5": "<br/>",
       "6": "<strong>Gedrückt halten</strong>",
       "7": "Rollt fortlaufend in Windradform und erhöht Sayus Unterbrechungs-WDS in diesem Zustand.",
@@ -56,7 +56,7 @@
       "11": "Hält bis zu 10 s. Startet am Ende des Effekts eine Abklingphase. Je länger der Zustand des Windradmodus anhält, desto länger wird die Abklingphase.",
       "12": "<br/>",
       "13": "<strong>Elementarumwandlung</strong>",
-      "14": "Verleiht Sayu beim Treffen auf <hydro>Hydro</hydro>-, <pyro>Pyro</pyro>-, <cryo>Kryo</cryo>- oder <electro>Elektro</electro>-Effekte im Windradmodus das jeweilige Element und verursacht mit dem Windrad sowie dem Windradtritt dementsprechend zusätzlichen Schaden.",
+      "14": "Verleiht Sayu beim Treffen auf <hydro>Hydro</hydro>-, <pyro>Pyro</pyro>-, <cryo>Kryo</cryo>- oder <electro>Elektro</electro>-Effekte im Windradmodus das jeweilige Element und verursacht mit dem Fuufuu-Windrad sowie dem Fuufuu-Windradtritt dementsprechend zusätzlichen Schaden.",
       "15": "Elementarumwandlung nur einmal während der Wirkungsdauer möglich.",
       "16": "<br/>",
       "17": "<i>Sayu ist so geübt in dieser Fähigkeit, dass sie sie mit geschlossenen Augen anwenden könnte. Eigentlich war sie als Mittel zur Flucht gedacht. Jetzt, da sie ein Göttliches Auge hat, kann sie ihren Feinden dabei wenigstens ordentlich zusetzen.</i>"
@@ -135,7 +135,7 @@
     "name": "Juhu-Stil – Leise Schritte",
     "description": {
       "0": "Eigene Figuren in der Truppe scheuchen Kristallschmetterlinge und einige andere Lebewesen nicht auf, wenn sie sich ihnen nähern, solange Sayu in der Truppe ist.",
-      "1": "Sieh unter „Andere“ bei „Lebewesen – Wilde Tiere“ im Handbuch nach, um Genaueres über die Lebewesen, bei denen diese Fähigkeit wirkt, zu erfahren."
+      "1": "Sieh unter „Andere“ bei „Lebewesen – Wildtiere“ im Handbuch nach, um Genaueres über die Lebewesen, bei denen diese Fähigkeit wirkt, zu erfahren."
     }
   },
   "constellation1": {
@@ -150,7 +150,7 @@
       "0": "Gewährt <strong>Juhu-Stil – Fuuin-Stoß</strong> folgende Effekte:",
       "1": [
         " Erhöht den mit dem Fuufuu-Windradtritt beim Drücken verursachten Schaden um 3,3 %.",
-        " Erhöht den mit dem Fuufuu-Windradtritt im Fuufuu-Windradmodus beim Gedrückthalten verursachten Schaden für dieses Mal alle 0,5 s um 3,3 %. Erhöhung des mit dem Fuufuu-Windraftritt verursachten Schadens um bis zu 66 % auf diese Weise möglich."
+        " Erhöht den mit dem Fuufuu-Windradtritt im Fuufuu-Windradmodus beim Gedrückthalten verursachten Schaden für dieses Mal alle 0,5 s um 3,3 %. Erhöhung des mit dem Fuufuu-Windradtritt verursachten Schadens um bis zu 66 % auf diese Weise möglich."
       ]
     }
   },

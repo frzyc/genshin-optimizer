@@ -91,7 +91,7 @@
         "Crystal Collapse juga akan menarik 1 Elemental Shard yang terbentuk dari Reaksi Crystallize dalam area tersebut ke posisi Karakter aktif setiap 1,5 detik."
       ],
       "5": "<br/>",
-      "6": "Bila General's War-Banner ciptaan Gorou sendiri berada di medan pertempuran saat melancarkan skill ini, maka General's War-Banner tersebut akan hancur. Selain itu, selama durasi General's Glory berlangsung, tidak akan muncul General's War-Banner saat Gorou sendiri melancarkan Elemental skill Inuzaka All-Round Defense.",
+      "6": "Bila General's War-Banner ciptaan Gorou sendiri berada di medan pertempuran saat melancarkan skill ini, maka General's War-Banner tersebut akan hancur. Selain itu, selama durasi General's Glory berlangsung, General's War-Banner tidak akan tercipta saat Gorou sendiri melancarkan Elemental Skill \"Inuzaka All-Round Defense\".",
       "7": "Efek General's Glory milik Gorou sendiri akan hilang ketika Gorou gugur.",
       "8": "<br/>",
       "9": "<i>\"Kita ada di posisi yang lebih tinggi!\" Gorou bisa sedikit mengubah medan pertempuran untuk memperoleh kemenangan. Teknik ini adalah teknik yang sangat efektif untuk menghadapi musuh kuat.</i>"
@@ -141,14 +141,14 @@
     "name": "Rushing Hound: Swift as the Wind",
     "description": {
       "0": "Setelah Karakter aktif (selain Gorou sendiri) mengakibatkan Geo DMG saat berada dalam Area <strong>General's War-Banner</strong> atau <strong>General's Glory</strong> ciptaan Gorou sendiri, durasi CD <strong>Inuzaka All-Round Defense</strong> milik Gorou akan berkurang 2 detik.",
-      "1": "Efek ini dapat terpicu setiap 10 detik."
+      "1": "Efek ini dapat terpicu sekali setiap 10 detik."
     }
   },
   "constellation2": {
     "name": "Sitting Hound: Steady as a Clock",
     "description": {
       "0": "Selama durasi <strong>General's Glory</strong> berlangsung, setelah Karakter aktif di sekitar memperoleh Elemental Shard dari reaksi Crystallize, maka durasi General's Glory milik Gorou sendiri akan bertambah 1 detik.",
-      "1": "Efek ini dapat terpicu setiap 0,1 detik dan durasi General's Glory dapat bertambah hingga 3 detik dengan cara ini."
+      "1": "Efek ini dapat terpicu sekali setiap 0,1 detik dan durasi General's Glory dapat bertambah hingga 3 detik dengan cara ini."
     }
   },
   "constellation3": {
@@ -161,7 +161,7 @@
   "constellation4": {
     "name": "Lapping Hound: Warm as Water",
     "description": {
-      "0": "Saat <strong>General's Glory</strong> berada dalam status \"Impregnable\" atau \"Crunch\", HP Karakter aktif yang berada di dalam area General's Glory akan dipulihkan sebesar 50% DEF Gorou sendiri setiap 1,5 detik."
+      "0": "Saat <strong>General's Glory</strong> berada dalam status \"Impregnable\" atau \"Crunch\", maka HP Karakter aktif yang berada di dalam area General's Glory akan dipulihkan sebesar 50% DEF Gorou sendiri setiap 1,5 detik."
     }
   },
   "constellation5": {

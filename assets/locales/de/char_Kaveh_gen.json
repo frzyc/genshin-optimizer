@@ -100,7 +100,7 @@
   "passive1": {
     "name": "Verantwortung des Bauherrn",
     "description": {
-      "0": "Wenn der durch Dendro-Kerne verursachte Schaden (einschließlich Schaden durch Flammenspross und Supraspross) Kaveh trifft, stellt dieser LP wieder her. Die wiederhergestellte Menge an LP entspricht 300 % von Kavehs Elementarkunde. 0,5 s Abklingzeit."
+      "0": "Wenn der durch Dendro-Kerne verursachte Schaden (einschließlich Schaden durch Flammenspross und Supraspross) Kaveh trifft, stellt dieser LP in Höhe von 300 % von Kavehs Elementarkunde wieder her. 0,5 s Abklingzeit."
     }
   },
   "passive2": {

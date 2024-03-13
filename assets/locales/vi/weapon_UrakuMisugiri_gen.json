@@ -1,0 +1,24 @@
+{
+  "name": "Uraku Misugiri",
+  "description": {
+    "0": "Thanh kiếm nổi tiếng từng được tạo ra bởi bàn tay của Urakusai, một học giả trứ danh. Truyền thuyết kể rằng nó chưa bao giờ chém bất kỳ sinh vật sống nào trong suốt hàng trăm năm qua."
+  },
+  "passiveName": "Hoa Thổ Cẩm Và Kiếm Đền Thờ",
+  "passiveDescription": {
+    "0": {
+      "0": "Sát thương Tấn Công Thường tăng <cryo>16%</cryo>; Sát thương Kỹ Năng Nguyên Tố tăng <cryo>24%</cryo>. Sau khi nhân vật trong đội ra trận gần đó gây Sát Thương Nguyên Tố Nham, hiệu quả nêu trên tăng 100% trong 15s. Ngoài ra, Phòng Ngự của người trang bị tăng <cryo>20%</cryo>."
+    },
+    "1": {
+      "0": "Sát thương Tấn Công Thường tăng <cryo>20%</cryo>; Sát thương Kỹ Năng Nguyên Tố tăng <cryo>30%</cryo>. Sau khi nhân vật trong đội ra trận gần đó gây Sát Thương Nguyên Tố Nham, hiệu quả nêu trên tăng 100% trong 15s. Ngoài ra, Phòng Ngự của người trang bị tăng <cryo>25%</cryo>."
+    },
+    "2": {
+      "0": "Sát thương Tấn Công Thường tăng <cryo>24%</cryo>; Sát thương Kỹ Năng Nguyên Tố tăng <cryo>36%</cryo>. Sau khi nhân vật trong đội ra trận gần đó gây Sát Thương Nguyên Tố Nham, hiệu quả nêu trên tăng 100% trong 15s. Ngoài ra, Phòng Ngự của người trang bị tăng <cryo>30%</cryo>."
+    },
+    "3": {
+      "0": "Sát thương Tấn Công Thường tăng <cryo>28%</cryo>; Sát thương Kỹ Năng Nguyên Tố tăng <cryo>42%</cryo>. Sau khi nhân vật trong đội ra trận gần đó gây Sát Thương Nguyên Tố Nham, hiệu quả nêu trên tăng 100% trong 15s. Ngoài ra, Phòng Ngự của người trang bị tăng <cryo>35%</cryo>."
+    },
+    "4": {
+      "0": "Sát thương Tấn Công Thường tăng <cryo>32%</cryo>; Sát thương Kỹ Năng Nguyên Tố tăng <cryo>48%</cryo>. Sau khi nhân vật trong đội ra trận gần đó gây Sát Thương Nguyên Tố Nham, hiệu quả nêu trên tăng 100% trong 15s. Ngoài ra, Phòng Ngự của người trang bị tăng <cryo>40%</cryo>."
+    }
+  }
+}

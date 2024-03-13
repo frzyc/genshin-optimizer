@@ -130,8 +130,8 @@
   "passive3": {
     "name": "The Sunlit Way",
     "description": {
-      "0": "Increases the Movement SPD of your own party members by 10% during the day (6:00 – 18:00).",
-      "1": "Does not take effect in Domains, Trounce Domains, or Spiral Abyss. Not stackable with Passive Talents that provide the exact same effects."
+      "0": "During the day (06:00 – 18:00), your party members gain the Swift Stride effect: Movement SPD increased by 10%.",
+      "1": "Does not take effect in Domains, Trounce Domains, or Spiral Abyss. Swift Stride does not stack."
     }
   },
   "constellation1": {
