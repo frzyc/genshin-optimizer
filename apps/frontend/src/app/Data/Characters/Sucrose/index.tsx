@@ -305,7 +305,6 @@ const sheet: ICharacterSheet = {
       ct.condTem('constellation6', {
         // Absorption teambuff for C6
         teamBuff: true,
-        canShow: unequal(target.charKey, input.activeCharKey, 1),
         value: condAbsorption,
         path: condAbsorptionPath,
         name: st('eleAbsor'),
@@ -331,15 +330,16 @@ const sheet: ICharacterSheet = {
       ct.condTem('passive1', {
         // Swirl Element
         teamBuff: true,
-        // Hide for Sucrose
-        canShow: unequal(input.activeCharKey, key, 1),
         states: objKeyMap(absorbableEle, (ele) => ({
           path: condSwirlPaths[ele],
           value: condSwirls[ele],
           name: st(`swirlReaction.${ele}`),
           fields: [
             {
-              node: infoMut(asc1Disp, KeyMap.info('eleMas')),
+              node: infoMut(asc1Disp, {
+                ...KeyMap.info('eleMas'),
+                isTeamBuff: true,
+              }),
             },
             {
               text: st(`effectDuration.${ele}`),
@@ -357,7 +357,6 @@ const sheet: ICharacterSheet = {
         value: condSkillHitOpponent,
         path: condSkillHitOpponentPath,
         name: st('hitOp.skillOrBurst'),
-        canShow: unequal(input.activeCharKey, key, 1),
         states: {
           hit: {
             fields: [
@@ -374,7 +373,6 @@ const sheet: ICharacterSheet = {
         },
       }),
       ct.fieldsTem('passive2', {
-        canShow: equal(input.activeCharKey, key, 1),
         fields: [{ node: dmgFormulas.passive2.asc4OptNode }],
       }),
     ]),
