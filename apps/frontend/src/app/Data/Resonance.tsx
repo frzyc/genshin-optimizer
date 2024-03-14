@@ -317,7 +317,7 @@ const enduringRock: IResonance = {
         on: {
           fields: [
             {
-              node: erNodeDMG_disp,
+              node: infoMut(erNodeDMG_disp, { isTeamBuff: false }),
             },
           ],
         },
@@ -457,6 +457,9 @@ export const resonanceSheets: IResonance[] = [
 ]
 
 export const resonanceData = inferInfoMut({
+  premod: {
+    all_dmg_: erNodeDMG_,
+  },
   teamBuff: {
     premod: {
       ...objMap(pcNodes, ([_nodeDisp, node]) => node),
@@ -466,7 +469,6 @@ export const resonanceData = inferInfoMut({
       moveSPD_: iwNodeMove,
       cdRed_: iwNodeCD,
       shield_: erNodeshield_,
-      all_dmg_: erNodeDMG_,
       geo_enemyRes_: erNodeRes_,
       eleMas: infoMut(sum(sgBase_eleMas, sg2ele_eleMas, sg3ele_eleMas), {
         pivot: true,
