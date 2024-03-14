@@ -46,15 +46,19 @@ export default function BuildReal({
 }) {
   const [open, onOpen, onClose] = useBoolState()
   const {
+    teamId,
     teamCharId,
     teamChar: { key: characterKey },
-    team: { teamCharIds },
+    team: { loadoutData },
   } = useContext(TeamCharacterContext)
   const { gender } = useDBMeta()
   const database = useDatabase()
   const { name, description, weaponId, artifactIds } = useBuild(buildId)!
   const onActive = () =>
-    database.teamChars.set(teamCharId, { buildType: 'real', buildId })
+    database.teams.setLoadoutDatum(teamId, teamCharId, {
+      buildType: 'real',
+      buildId,
+    })
   const onEquip = () => {
     // Cannot equip a build without weapon
     if (!weaponId) return
@@ -100,26 +104,26 @@ export default function BuildReal({
       artifactIds: artifactIds,
       weaponId: weaponId,
     })
-  const weaponUsedInTeamCharId = teamCharIds.find(
-    (tcId) =>
-      tcId &&
-      tcId !== teamCharId &&
-      database.teamChars.getLoadoutWeapon(tcId).id === weaponId
+  const weaponUsedInLoadoutDatum = loadoutData.find(
+    (loadoutDatum) =>
+      loadoutDatum &&
+      loadoutDatum.teamCharId !== teamCharId &&
+      database.teams.getLoadoutWeapon(loadoutDatum).id === weaponId
   )
   const weaponUsedInTeamCharKey =
-    weaponUsedInTeamCharId &&
-    database.teamChars.get(weaponUsedInTeamCharId)!.key
+    weaponUsedInLoadoutDatum &&
+    database.teamChars.get(weaponUsedInLoadoutDatum?.teamCharId)!.key
 
   const artUsedInTeamCharKeys = objKeyMap(allArtifactSlotKeys, (slotKey) => {
     const artId = artifactIds[slotKey]
     if (!artId) return undefined
-    const tcId = teamCharIds.find(
-      (tcId) =>
-        tcId &&
-        tcId !== teamCharId &&
-        database.teamChars.getLoadoutArtifacts(tcId)[slotKey]?.id === artId
+    const loadoutDatum = loadoutData.find(
+      (loadoutDatum) =>
+        loadoutDatum &&
+        loadoutDatum.teamCharId !== teamCharId &&
+        database.teams.getLoadoutArtifacts(loadoutDatum)[slotKey]?.id === artId
     )
-    return tcId && database.teamChars.get(tcId)!.key
+    return loadoutDatum && database.teamChars.get(loadoutDatum.teamCharId)!.key
   })
 
   const [showPrompt, onShowPrompt, OnHidePrompt] = useBoolState()

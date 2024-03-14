@@ -52,14 +52,15 @@ export default function TabTheorycraft() {
   const {
     teamId,
     teamCharId,
-    teamChar: { key: characterKey, buildTcId },
+    loadoutDatum,
+    teamChar: { key: characterKey },
   } = useContext(TeamCharacterContext)
-  const buildTc = useBuildTc(buildTcId)!
+  const buildTc = useBuildTc(loadoutDatum.buildTcId)!
   const setBuildTc = useCallback(
     (data: SetBuildTcAction) => {
-      database.buildTcs.set(buildTcId, data)
+      database.buildTcs.set(loadoutDatum.buildTcId, data)
     },
-    [buildTcId, database]
+    [loadoutDatum, database]
   )
   const buildTCContextObj = useMemo(
     () => ({ buildTc, setBuildTc }),

@@ -1,6 +1,7 @@
 import { useForceUpdate } from '@genshin-optimizer/common/react-util'
 import { objMap } from '@genshin-optimizer/common/util'
 import type { CharacterKey, GenderKey } from '@genshin-optimizer/gi/consts'
+import type { LoadoutDatum } from '@genshin-optimizer/gi/db'
 import {
   type ArtCharDatabase,
   type ICachedArtifact,
@@ -61,7 +62,9 @@ export function useTeamDataNoContext(
   const [dbDirty, setDbDirty] = useForceUpdate()
   const dbDirtyDeferred = useDeferredValue(dbDirty)
   const { gender } = useDBMeta()
-  const { teamCharIds } = useTeam(teamId) ?? { teamCharIds: [] as string[] }
+  const { loadoutData } = useTeam(teamId) ?? {
+    loadoutData: [] as Array<LoadoutDatum | undefined>,
+  }
   const data = useMemo(
     () =>
       dbDirtyDeferred &&
@@ -93,11 +96,18 @@ export function useTeamDataNoContext(
 
   useEffect(() => {
     if (!dbDirty) return () => {}
-    const unfollowTeamChars = teamCharIds.map((teamCharId) => {
-      const unfollowTeamChar = database.teamChars.follow(teamCharId, setDbDirty)
-      const unfollowChar = database.teamChars.followChar(teamCharId, setDbDirty)
-      const unfollowBuild = database.teamChars.followBuild(
-        teamCharId,
+    const unfollowTeamChars = loadoutData.map((loadoutDatum) => {
+      if (!loadoutDatum) return () => {}
+      const unfollowTeamChar = database.teamChars.follow(
+        loadoutDatum.teamCharId,
+        setDbDirty
+      )
+      const unfollowChar = database.teamChars.followChar(
+        loadoutDatum.teamCharId,
+        setDbDirty
+      )
+      const unfollowBuild = database.teams.followLoadoutDatum(
+        loadoutDatum,
         setDbDirty
       )
       return () => {
@@ -110,7 +120,7 @@ export function useTeamDataNoContext(
     return () => {
       unfollowTeamChars.forEach((unfollow) => unfollow())
     }
-  }, [dbDirty, database, teamCharIds, setDbDirty])
+  }, [dbDirty, database, loadoutData, setDbDirty])
 
   return data
 }
@@ -160,16 +170,15 @@ export function getTeamData(
   if (!teamId) return undefined
   const team = database.teams.get(teamId)
   if (!team) return undefined
-  const { teamCharIds, enemyOverride, conditional: teamConditional } = team
-  const teamBundleArr = teamCharIds
-    .map((teamCharId) => {
-      if (!teamCharId) return undefined
+  const { loadoutData, enemyOverride, conditional: teamConditional } = team
+  const teamBundleArr = loadoutData
+    .map((loadoutDatum) => {
+      if (!loadoutDatum) return undefined
+      const { teamCharId, buildType, buildTcId } = loadoutDatum
       const teamChar = database.teamChars.get(teamCharId)
       if (!teamChar) return undefined
       const {
         key: characterKey,
-        buildType,
-        buildTcId,
         infusionAura,
         customMultiTargets,
         conditional,
@@ -183,14 +192,14 @@ export function getTeamData(
       const isActiveTeamChar = teamCharId === activeTeamCharId
       const weapon = (() => {
         if (overrideWeapon && isActiveTeamChar) return overrideWeapon
-        return database.teamChars.getLoadoutWeapon(teamCharId)
+        return database.teams.getLoadoutWeapon(loadoutDatum)
       })()
       const arts = (() => {
         if (overrideArt && isActiveTeamChar) return overrideArt
         if (buildType === 'tc' && buildTcId)
           return getArtifactData(database.buildTcs.get(buildTcId)!)
         return Object.values(
-          database.teamChars.getLoadoutArtifacts(teamCharId)
+          database.teams.getLoadoutArtifacts(loadoutDatum)
         ).filter((a) => a) as ICachedArtifact[]
       })()
       const mainLevel = (() => {

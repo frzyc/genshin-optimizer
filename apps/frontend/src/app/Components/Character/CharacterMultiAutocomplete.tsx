@@ -13,6 +13,7 @@ import { useTranslation } from 'react-i18next'
 import { getCharSheet } from '../../Data/Characters'
 import { bulkCatTotal } from '../../Util/totalUtils'
 import CharIconSide from '../Image/CharIconSide'
+import { notEmpty } from '@genshin-optimizer/common/util'
 
 export function CharacterMultiAutocomplete({
   teamIds,
@@ -62,9 +63,8 @@ export function CharacterMultiAutocomplete({
     } as const
     return bulkCatTotal(catKeys, (ctMap) => {
       database.teams.values.forEach((team) => {
-        const { teamCharIds } = team
-
-        teamCharIds.forEach((teamCharId) => {
+        const { loadoutData } = team
+        loadoutData.filter(notEmpty).forEach(({ teamCharId }) => {
           const teamChar = database.teamChars.get(teamCharId)
           if (!teamChar) return
           const ck = teamChar.key
@@ -74,9 +74,8 @@ export function CharacterMultiAutocomplete({
       teamIds.forEach((teamId) => {
         const team = database.teams.get(teamId)
         if (!team) return
-        const { teamCharIds } = team
-
-        teamCharIds.forEach((teamCharId) => {
+        const { loadoutData } = team
+        loadoutData.filter(notEmpty).forEach(({ teamCharId }) => {
           const teamChar = database.teamChars.get(teamCharId)
           if (!teamChar) return
           const ck = teamChar.key

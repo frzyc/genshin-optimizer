@@ -32,12 +32,12 @@ export default function BuildTc({
   active: boolean
 }) {
   const [open, onOpen, onClose] = useBoolState()
-  const { teamCharId } = useContext(TeamCharacterContext)
+  const { teamId, teamCharId } = useContext(TeamCharacterContext)
   const database = useDatabase()
   const buildTc = useBuildTc(buildTcId)!
   const { name, description } = buildTc
   const onActive = () =>
-    database.teamChars.set(teamCharId, {
+    database.teams.setLoadoutDatum(teamId, teamCharId, {
       buildType: 'tc',
       buildTcId,
     })

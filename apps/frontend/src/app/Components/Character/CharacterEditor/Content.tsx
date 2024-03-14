@@ -10,6 +10,7 @@ import {
   charKeyToLocCharKey,
   charKeyToLocGenderedCharKey,
 } from '@genshin-optimizer/gi/consts'
+import type { LoadoutDatum } from '@genshin-optimizer/gi/db'
 import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { getCharData } from '@genshin-optimizer/gi/stats'
 import { CharacterName, SillyContext } from '@genshin-optimizer/gi/ui'
@@ -215,10 +216,13 @@ function InTeam() {
       if (!loadoutTeamMap[teamCharId]) loadoutTeamMap[teamCharId] = []
     })
     database.teams.entries.forEach(([teamId, team]) => {
-      const teamCharIdWithCKey = team.teamCharIds.find(
-        (teamCharId) => database.teamChars.get(teamCharId)?.key === characterKey
+      const teamCharIdWithCKey = team.loadoutData.find(
+        (loadoutDatum) =>
+          loadoutDatum &&
+          database.teamChars.get(loadoutDatum?.teamCharId)?.key === characterKey
       )
-      if (teamCharIdWithCKey) loadoutTeamMap[teamCharIdWithCKey].push(teamId)
+      if (teamCharIdWithCKey)
+        loadoutTeamMap[teamCharIdWithCKey?.teamCharId].push(teamId)
     })
     return dbDirty && loadoutTeamMap
   }, [dbDirty, characterKey, database])
@@ -233,7 +237,7 @@ function InTeam() {
   const onAddTeam = (teamCharId: string) => {
     const teamId = database.teams.new()
     database.teams.set(teamId, (team) => {
-      team.teamCharIds[0] = teamCharId
+      team.loadoutData[0] = { teamCharId } as LoadoutDatum
     })
     navigate(`/teams/${teamId}`, { state: { openSetting: true } })
   }
@@ -241,7 +245,7 @@ function InTeam() {
     const teamId = database.teams.new()
     const teamCharId = database.teamChars.new(characterKey)
     database.teams.set(teamId, (team) => {
-      team.teamCharIds[0] = teamCharId
+      team.loadoutData[0] = { teamCharId } as LoadoutDatum
     })
     navigate(`/teams/${teamId}`, { state: { openSetting: true } })
   }

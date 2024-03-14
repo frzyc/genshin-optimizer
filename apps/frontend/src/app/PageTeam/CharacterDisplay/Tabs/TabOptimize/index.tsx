@@ -111,6 +111,7 @@ const audio = new Audio('assets/notification.mp3')
 export default function TabBuild() {
   const { t } = useTranslation('page_character_optimize')
   const {
+    loadoutDatum,
     teamCharId,
     teamChar: { optConfigId, key: characterKey },
     teamId,
@@ -206,12 +207,14 @@ export default function TabBuild() {
       useTeammateBuild,
     } = deferredArtsDirty && deferredBuildSetting
 
-    const artifactIds = Array.from(
+    const teammateArtifactIds = Array.from(
       new Set(
-        team.teamCharIds
+        team.loadoutData
           .filter(notEmpty)
-          .filter((tcId) => tcId !== teamCharId)
-          .map((tcId) => database.teamChars.getLoadoutArtifacts(tcId))
+          .filter((loadoutDatum) => loadoutDatum.teamCharId !== teamCharId)
+          .map((loadoutDatum) =>
+            database.teams.getLoadoutArtifacts(loadoutDatum)
+          )
           .flatMap((arts) => Object.values(arts))
           .filter(notEmpty)
           .map(({ id }) => id)
@@ -220,7 +223,8 @@ export default function TabBuild() {
 
     return database.arts.values.filter((art) => {
       if (!useExcludedArts && artExclusion.includes(art.id)) return false
-      if (!useTeammateBuild && artifactIds.includes(art.id)) return false
+      if (!useTeammateBuild && teammateArtifactIds.includes(art.id))
+        return false
       if (art.level < levelLow) return false
       if (art.level > levelHigh) return false
       const mainStats = mainStatKeys[art.slotKey]
@@ -243,12 +247,11 @@ export default function TabBuild() {
       return true
     })
   }, [
+    database,
     characterKey,
-    database.arts.values,
-    database.teamChars,
     deferredArtsDirty,
     deferredBuildSetting,
-    team.teamCharIds,
+    team,
     teamCharId,
   ])
 
@@ -435,7 +438,7 @@ export default function TabBuild() {
       solver.cancel() // Done using `solver`
 
       cancelToken.current = () => {}
-      const weaponId = database.teamChars.getLoadoutWeapon(teamCharId).id
+      const weaponId = database.teams.getLoadoutWeapon(loadoutDatum).id
       if (plotBaseNumNode) {
         const plotData = mergePlot(results.map((x) => x.plotData!))
         const solverBuilds = Object.values(plotData)
@@ -521,6 +524,7 @@ export default function TabBuild() {
     activeCharKey,
     setChartData,
     maxWorkers,
+    loadoutDatum,
     optConfigId,
     t,
     throwGlobalError,
@@ -1035,12 +1039,13 @@ function CopyTcButton({ build }: { build: GeneratedBuild }) {
   const database = useDatabase()
   const {
     teamCharId,
+    loadoutDatum,
     teamChar: { key: characterKey },
   } = useContext(TeamCharacterContext)
 
   const toTc = () => {
     const weaponTypeKey = getCharData(characterKey).weaponType
-    const weapon = database.teamChars.getLoadoutWeapon(teamCharId)
+    const weapon = database.teams.getLoadoutWeapon(loadoutDatum)
     const buildTcId = database.teamChars.newBuildTcFromBuild(
       teamCharId,
       weaponTypeKey,

@@ -1,4 +1,8 @@
-import type { FilterConfigs, SortConfigs } from '@genshin-optimizer/common/util'
+import {
+  notEmpty,
+  type FilterConfigs,
+  type SortConfigs,
+} from '@genshin-optimizer/common/util'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import type {
   ArtCharDatabase,
@@ -31,7 +35,8 @@ export function teamFilterConfigs(
       !filter.length ||
       !!database.teams
         .get(teamId)
-        ?.teamCharIds.some((teamCharId) =>
+        ?.loadoutData.filter(notEmpty)
+        .every(({ teamCharId }) =>
           filter.includes(
             database.teamChars.get(teamCharId)?.key as CharacterKey
           )

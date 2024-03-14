@@ -80,10 +80,12 @@ export class BuildTcDataManager extends DataManager<
   }
   override remove(key: string, notify?: boolean): BuildTc | undefined {
     const buildTc = super.remove(key, notify)
-    this.database.teamChars.keys.map((teamCharId) => {
-      const { buildTcId } = this.database.teamChars.get(teamCharId)!
-      if (buildTcId === key) this.database.teamChars.set(teamCharId, {}) // trigger a validation
-    })
+    this.database.teams.entries.forEach(
+      ([teamId, team]) =>
+        team.loadoutData?.some(
+          (loadoutDatum) => loadoutDatum?.buildTcId === key
+        ) && this.database.teams.set(teamId, {}) // trigger a validation
+    )
     return buildTc
   }
   export(buildTcId: string): object {
