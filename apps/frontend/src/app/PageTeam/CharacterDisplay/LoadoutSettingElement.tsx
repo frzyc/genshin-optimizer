@@ -146,7 +146,7 @@ export default function LoadoutSettingElement() {
           >
             <Alert variant="filled" severity="info">
               <strong>Loadouts</strong> provides character context data,
-              including bonus stats, conditionals, multi-tagets, optimization
+              including bonus stats, conditionals, multi-targets, optimization
               config, and stores builds. A single <strong>Loadout</strong> can
               be used for many teams.
             </Alert>
