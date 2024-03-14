@@ -26,7 +26,6 @@ import type { IGO } from './exim'
 export const currentDBVersion = 25
 
 export function migrateGOOD(good: IGOOD & IGO): IGOOD & IGO {
-  console.log('migrateGOOD')
   const version = good.dbVersion ?? 0
   function migrateVersion(version: number, cb: () => void) {
     const dbver = good.dbVersion ?? 0
@@ -220,12 +219,10 @@ export function migrateGOOD(good: IGOOD & IGO): IGOOD & IGO {
 
   // 10.1.0 - present
   migrateVersion(25, () => {
-    console.log('migrate25')
     if (!good['teams']) good['teams'] = []
     const teams = (good as any).teams
     if (!good['teamchars']) good['teamchars'] = []
     const teamchars = (good as any).teamchars
-    console.log({ teams, teamchars })
     teams.forEach(
       (
         team: Team & {
@@ -238,7 +235,6 @@ export function migrateGOOD(good: IGOOD & IGO): IGOOD & IGO {
           const teamChar = teamchars.find(
             (tc: { id: string }) => tc.id === teamCharId
           )
-          console.log({ teamChar, teamCharId })
           if (!teamChar) return undefined
           const {
             buildType,

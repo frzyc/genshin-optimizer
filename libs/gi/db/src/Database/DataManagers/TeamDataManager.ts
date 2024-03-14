@@ -107,7 +107,6 @@ export class TeamDataManager extends DataManager<
       loadoutData = range(0, 3).map((ind) => {
         const loadoutDatum = loadoutData[ind]
         if (!loadoutDatum || typeof loadoutDatum !== 'object') return undefined
-        console.log({ loadoutDatum, type: typeof loadoutDatum })
         const { teamCharId } = loadoutDatum
         let {
           buildType,
