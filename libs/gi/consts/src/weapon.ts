@@ -49,6 +49,7 @@ export const allWeaponSwordKeys = [
   'TheFlute',
   'ToukabouShigure',
   'TravelersHandySword',
+  'UrakuMisugiri',
   'WolfFang',
   'XiphosMoonlight',
 ] as const
@@ -101,6 +102,7 @@ export const allWeaponPolearmKeys = [
   'CalamityQueller',
   'CrescentPike',
   'Deathmatch',
+  'DialoguesOfTheDesertSages',
   'DragonsBane',
   'DragonspineSpear',
   'EngulfingLightning',

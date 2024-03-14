@@ -7,7 +7,7 @@ import {
 import {
   CardThemed,
   ModalWrapper,
-  useOnScreen,
+  useInfScroll,
 } from '@genshin-optimizer/common/ui'
 import { filterFunction, sortFunction } from '@genshin-optimizer/common/util'
 import { teamSortKeys } from '@genshin-optimizer/gi/db'
@@ -103,21 +103,11 @@ export default function PageTeams() {
     return dbDirty && { teamIds, totalTeamNum }
   }, [dbDirty, database, charKeys, deferredSearchTerm, sortType, ascending])
   const brPt = useMediaQueryUp()
-  const [numShow, setNumShow] = useState(numToShowMap[brPt])
-  // reset the numShow when artifactIds changes
-  useEffect(() => {
-    teamIds && setNumShow(numToShowMap[brPt])
-  }, [teamIds, brPt])
 
-  const [triggerElement, setTriggerElement] = useState<
-    HTMLElement | undefined
-  >()
-  const trigger = useOnScreen(triggerElement)
-  const shouldIncrease = trigger && numShow < teamIds.length
-  useEffect(() => {
-    if (!shouldIncrease) return
-    setNumShow((num) => num + numToShowMap[brPt])
-  }, [shouldIncrease, brPt])
+  const { numShow, setTriggerElement } = useInfScroll(
+    numToShowMap[brPt],
+    teamIds.length
+  )
 
   const TeamIdsToShow = useMemo(
     () => teamIds.slice(0, numShow),
@@ -234,11 +224,18 @@ export default function PageTeams() {
         <Grid container spacing={1} columns={columns}>
           {TeamIdsToShow.map((tid) => (
             <Grid item xs={1} key={tid}>
-              <TeamCard
-                teamId={tid}
-                bgt="light"
-                onClick={(cid) => navigate(`${tid}${cid ? `/${cid}` : ''}`)}
-              />
+              <Suspense
+                fallback={
+                  <Skeleton variant="rectangular" width="100%" height={150} />
+                }
+              >
+                <TeamCard
+                  teamId={tid}
+                  bgt="light"
+                  onClick={(cid) => navigate(`${tid}${cid ? `/${cid}` : ''}`)}
+                  hoverCard
+                />
+              </Suspense>
             </Grid>
           ))}
         </Grid>

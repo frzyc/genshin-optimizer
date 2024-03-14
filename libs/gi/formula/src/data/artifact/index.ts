@@ -24,6 +24,7 @@ import LuckyDog from './LuckyDog'
 import MaidenBeloved from './MaidenBeloved'
 import MarechausseeHunter from './MarechausseeHunter'
 import MartialArtist from './MartialArtist'
+import NighttimeWhispersInTheEchoingWoods from './NighttimeWhispersInTheEchoingWoods'
 import NoblesseOblige from './NoblesseOblige'
 import NymphsDream from './NymphsDream'
 import OceanHuedClam from './OceanHuedClam'
@@ -36,6 +37,7 @@ import ResolutionOfSojourner from './ResolutionOfSojourner'
 import RetracingBolide from './RetracingBolide'
 import Scholar from './Scholar'
 import ShimenawasReminiscence from './ShimenawasReminiscence'
+import SongOfDaysPast from './SongOfDaysPast'
 import TenacityOfTheMillelith from './TenacityOfTheMillelith'
 import TheExile from './TheExile'
 import ThunderingFury from './ThunderingFury'
@@ -73,6 +75,7 @@ const data: TagMapNodeEntries[] = [
   MaidenBeloved,
   MarechausseeHunter,
   MartialArtist,
+  NighttimeWhispersInTheEchoingWoods,
   NoblesseOblige,
   NymphsDream,
   OceanHuedClam,
@@ -85,6 +88,7 @@ const data: TagMapNodeEntries[] = [
   RetracingBolide,
   Scholar,
   ShimenawasReminiscence,
+  SongOfDaysPast,
   TenacityOfTheMillelith,
   TheExile,
   ThunderingFury,

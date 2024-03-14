@@ -160,7 +160,7 @@ export function getTeamData(
   if (!teamId) return undefined
   const team = database.teams.get(teamId)
   if (!team) return undefined
-  const { teamCharIds, enemyOverride } = team
+  const { teamCharIds, enemyOverride, conditional: teamConditional } = team
   const teamBundleArr = teamCharIds
     .map((teamCharId) => {
       if (!teamCharId) return undefined
@@ -212,7 +212,7 @@ export function getTeamData(
 
           infusionAura,
           customMultiTargets,
-          conditional,
+          conditional: { ...conditional, ...teamConditional },
           bonusStats,
 
           enemyOverride,

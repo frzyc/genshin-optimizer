@@ -2,9 +2,12 @@ import {
   BootstrapTooltip,
   CardThemed,
   ModalWrapper,
+  SqBadge,
 } from '@genshin-optimizer/common/ui'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
-import DriveFileRenameOutlineIcon from '@mui/icons-material/DriveFileRenameOutline'
+import { getCharData } from '@genshin-optimizer/gi/stats'
+import AddIcon from '@mui/icons-material/Add'
+import CheckroomIcon from '@mui/icons-material/Checkroom'
 import PersonIcon from '@mui/icons-material/Person'
 import {
   Alert,
@@ -13,6 +16,7 @@ import {
   CardContent,
   CardHeader,
   Divider,
+  Grid,
   TextField,
   Typography,
 } from '@mui/material'
@@ -20,10 +24,27 @@ import { useContext, useDeferredValue, useEffect, useState } from 'react'
 import CloseButton from '../../Components/CloseButton'
 import { TeamCharacterContext } from '../../Context/TeamCharacterContext'
 import { LoadoutDropdown } from '../LoadoutDropdown'
+import { BuildEquipped } from './Build/BuildEquipped'
+import BuildReal from './Build/BuildReal'
+import BuildTc from './Build/BuildTc'
 // TODO: Translation
-
+const columns = { xs: 1, sm: 1, md: 2, lg: 2 }
 export default function LoadoutSettingElement() {
-  const { teamId, teamCharId } = useContext(TeamCharacterContext)
+  const {
+    teamId,
+    teamCharId,
+    teamChar: {
+      key: characterKey,
+      buildType,
+      buildId,
+      buildIds,
+      buildTcId,
+      buildTcIds,
+      customMultiTargets,
+    },
+  } = useContext(TeamCharacterContext)
+
+  const weaponTypeKey = getCharData(characterKey).weaponType
 
   const database = useDatabase()
   const teamChar = database.teamChars.get(teamCharId)!
@@ -72,15 +93,38 @@ export default function LoadoutSettingElement() {
     <>
       <Box display="flex" gap={1} alignItems="center">
         <BootstrapTooltip
-          title={<Typography>{teamChar.description}</Typography>}
+          title={
+            teamChar.description ? (
+              <Typography>{teamChar.description}</Typography>
+            ) : undefined
+          }
         >
           <Button
             startIcon={<PersonIcon />}
-            endIcon={<DriveFileRenameOutlineIcon />}
             color="info"
             onClick={() => setOpen((o) => !o)}
           >
-            <Typography variant="h6">{teamChar.name}</Typography>
+            <Typography sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
+              <strong>{teamChar.name}</strong>
+              <SqBadge
+                color="success"
+                sx={{ display: 'flex', gap: 1, alignItems: 'center' }}
+              >
+                <CheckroomIcon />
+                <span>{database.teamChars.getActiveBuildName(teamCharId)}</span>
+              </SqBadge>
+              <SqBadge color={buildIds.length ? 'primary' : 'secondary'}>
+                {buildIds.length} Builds
+              </SqBadge>
+              <SqBadge color={buildTcIds.length ? 'primary' : 'secondary'}>
+                {buildTcIds.length} TC Builds
+              </SqBadge>
+              <SqBadge
+                color={customMultiTargets.length ? 'primary' : 'secondary'}
+              >
+                {customMultiTargets.length} Multi-Opt
+              </SqBadge>
+            </Typography>
           </Button>
         </BootstrapTooltip>
       </Box>
@@ -127,6 +171,85 @@ export default function LoadoutSettingElement() {
               multiline
               rows={4}
             />
+          </CardContent>
+          <Divider />
+          <CardHeader
+            title={
+              <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
+                <CheckroomIcon />
+                <span>Build Management</span>
+              </Box>
+            }
+          />
+          <Divider />
+          <CardContent
+            sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}
+          >
+            <Alert variant="filled" severity="info">
+              A <strong>Build</strong> is comprised of a weapon and 5 artifacts.
+              A <strong>TC Build</strong> allows the artifacts to be created
+              from its stats.
+            </Alert>
+            <Grid container columns={columns} spacing={2}>
+              <Grid item xs={1}>
+                <BuildEquipped active={buildType === 'equipped'} />
+              </Grid>
+            </Grid>
+
+            <Box sx={{ display: 'flex', gap: 2 }}>
+              <Typography variant="h6">Builds</Typography>
+              <Button
+                startIcon={<AddIcon />}
+                color="info"
+                size="small"
+                onClick={() => database.teamChars.newBuild(teamCharId)}
+              >
+                New Build
+              </Button>
+            </Box>
+
+            <Box>
+              <Grid container columns={columns} spacing={2}>
+                {buildIds.map((id) => (
+                  <Grid item xs={1} key={id}>
+                    <BuildReal
+                      buildId={id}
+                      active={buildType === 'real' && buildId === id}
+                    />
+                  </Grid>
+                ))}
+              </Grid>
+            </Box>
+
+            <Box sx={{ display: 'flex', gap: 2 }}>
+              <Typography variant="h6">TC Builds</Typography>
+              <Button
+                startIcon={<AddIcon />}
+                color="info"
+                size="small"
+                onClick={() =>
+                  database.teamChars.newBuildTcFromBuild(
+                    teamCharId,
+                    weaponTypeKey
+                  )
+                }
+              >
+                New TC Build
+              </Button>
+            </Box>
+
+            <Box>
+              <Grid container columns={columns} spacing={2}>
+                {buildTcIds.map((id) => (
+                  <Grid item xs={1} key={id}>
+                    <BuildTc
+                      buildTcId={id}
+                      active={buildType === 'tc' && buildTcId === id}
+                    />
+                  </Grid>
+                ))}
+              </Grid>
+            </Box>
           </CardContent>
         </CardThemed>
       </ModalWrapper>

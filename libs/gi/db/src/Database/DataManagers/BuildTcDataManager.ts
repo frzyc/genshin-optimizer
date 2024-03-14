@@ -68,7 +68,7 @@ export class BuildTcDataManager extends DataManager<
       optimization: _optimization,
     }
   }
-  new(data: BuildTc) {
+  new(data: Partial<BuildTc>) {
     const id = this.generateKey()
     this.set(id, data)
     return id

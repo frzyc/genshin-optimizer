@@ -204,10 +204,11 @@ export function migrateGOOD(good: IGOOD & IGO): IGOOD & IGO {
         })
       }
       const team: Team = {
-        name: `Migrated from ${characterKey}`,
+        name: `${characterKey} Team`,
         description: `Generated team due to database migration for GO version 10`,
         enemyOverride,
         teamCharIds,
+        conditional: { resonance: {} },
         lastEdit: 0,
       }
       const teamId = `team_${teamInd++}`
@@ -402,10 +403,11 @@ export function migrate(storage: DBStorage) {
           })
         }
         const team: Team = {
-          name: `Migrated from ${characterKey}`,
+          name: `${characterKey} Team`,
           description: `Generated team due to database migration for GO version 10`,
           enemyOverride,
           teamCharIds,
+          conditional: { resonance: {} },
           lastEdit: 0,
         }
         storage.set(`team_${teamInd++}`, team)

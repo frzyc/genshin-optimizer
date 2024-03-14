@@ -22,7 +22,7 @@ import {
   type MultiOptHitModeKey,
 } from '@genshin-optimizer/gi/consts'
 import { getCharData } from '@genshin-optimizer/gi/stats'
-import type { ICachedArtifact, ICachedWeapon } from '../../Interfaces'
+import type { BuildTc, ICachedArtifact, ICachedWeapon } from '../../Interfaces'
 import type { InputPremodKey } from '../../legacy/keys'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
 import { DataManager } from '../DataManager'
@@ -115,10 +115,10 @@ export class TeamCharacterDataManager extends DataManager<
       num <= existingUndercKey.length * 2;
       num++
     ) {
-      const name = `Loadout Name ${num}`
+      const name = `${characterKey} Loadout ${num}`
       if (existingUndercKey.some((tc) => tc.name !== name)) return name
     }
-    return `Loadout Name`
+    return `${characterKey} Loadout`
   }
   override validate(obj: unknown): TeamCharacter | undefined {
     const { key: characterKey } = obj as TeamCharacter
@@ -161,6 +161,10 @@ export class TeamCharacterDataManager extends DataManager<
       .filter((t) => t) as CustomMultiTarget[]
 
     if (!conditional) conditional = {}
+
+    // Resonance conditionals have been moved to teams
+    if ((conditional as any)['resonance'])
+      delete (conditional as any)['resonance']
 
     // TODO: validate bonusStats
     if (
@@ -310,12 +314,12 @@ export class TeamCharacterDataManager extends DataManager<
     teamChar.name = `${teamChar.name} (duplicated)`
     return this.new(teamChar.key, teamChar)
   }
-  newBuild(teamcharId: string, build: Partial<Build> = {}) {
-    if (!this.get(teamcharId)) return
+  newBuild(teamCharId: string, build: Partial<Build> = {}) {
+    if (!this.get(teamCharId)) return
 
     // force the build to have a valid weapon
     if (!build.weaponId) {
-      const teamChar = this.database.teamChars.get(teamcharId)
+      const teamChar = this.database.teamChars.get(teamCharId)
       if (!teamChar) return
       const weaponTypeKey = getCharData(teamChar.key).weaponType
       const defWeaponKey = defaultInitialWeaponKey(weaponTypeKey)
@@ -330,8 +334,17 @@ export class TeamCharacterDataManager extends DataManager<
 
     const buildId = this.database.builds.new(build)
     if (!buildId) return
-    this.set(teamcharId, (teamChar) => {
+    this.set(teamCharId, (teamChar) => {
       teamChar.buildIds.unshift(buildId)
+    })
+  }
+  newBuildTc(teamCharId: string, data: Partial<BuildTc> = {}) {
+    if (!this.get(teamCharId)) return
+
+    const buildTcId = this.database.buildTcs.new(data)
+    if (!buildTcId) return
+    this.set(teamCharId, (teamChar) => {
+      teamChar.buildIds.unshift(buildTcId)
     })
   }
   newBuildTcFromBuild(
@@ -513,5 +526,18 @@ export class TeamCharacterDataManager extends DataManager<
     } else if (teamChar.buildType === 'tc')
       return this.database.buildTcs.follow(teamChar.compareBuildTcId, callback)
     return () => {}
+  }
+  getActiveBuildName(teamCharId: string, equippedName = 'Equipped Build') {
+    const teamChar = this.database.teamChars.get(teamCharId)
+    if (!teamChar) return
+    const { buildType, buildId, buildTcId } = teamChar
+    switch (buildType) {
+      case 'equipped':
+        return equippedName
+      case 'real':
+        return this.database.builds.get(buildId)?.name ?? ''
+      case 'tc':
+        return this.database.buildTcs.get(buildTcId)?.name ?? ''
+    }
   }
 }

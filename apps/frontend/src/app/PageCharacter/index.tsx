@@ -2,7 +2,7 @@ import {
   useForceUpdate,
   useMediaQueryUp,
 } from '@genshin-optimizer/common/react-util'
-import { useOnScreen } from '@genshin-optimizer/common/ui'
+import { useInfScroll } from '@genshin-optimizer/common/ui'
 import { filterFunction, sortFunction } from '@genshin-optimizer/common/util'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import {
@@ -176,22 +176,10 @@ export default function PageCharacter() {
     [database, charKeys]
   )
 
-  const [numShow, setNumShow] = useState(numToShowMap[brPt])
-  // reset the numShow when artifactIds changes
-  useEffect(() => {
-    charKeys && setNumShow(numToShowMap[brPt])
-  }, [charKeys, brPt])
-
-  const [triggerElement, setTriggerElement] = useState<
-    HTMLElement | undefined
-  >()
-  const trigger = useOnScreen(triggerElement)
-  const shouldIncrease = trigger && numShow < charKeys.length
-  useEffect(() => {
-    if (!shouldIncrease) return
-    setNumShow((num) => num + numToShowMap[brPt])
-  }, [shouldIncrease, brPt])
-
+  const { numShow, setTriggerElement } = useInfScroll(
+    numToShowMap[brPt],
+    charKeys.length
+  )
   const charKeysToShow = useMemo(
     () => charKeys.slice(0, numShow),
     [charKeys, numShow]

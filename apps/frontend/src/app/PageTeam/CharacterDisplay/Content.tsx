@@ -22,7 +22,6 @@ import SqBadge from '../../Components/SqBadge'
 import { FormulaDataContext } from '../../Context/FormulaDataContext'
 import { TeamCharacterContext } from '../../Context/TeamCharacterContext'
 import { shouldShowDevComponents } from '../../Util/Util'
-import BuildEditorBtn from './Build/BuildEditorBtn'
 import { CustomMultiTargetButton } from './CustomMultiTarget'
 import FormulaModal from './FormulaModal'
 import LoadoutSettingElement from './LoadoutSettingElement'
@@ -50,7 +49,6 @@ export default function Content({ tab }: { tab: string }) {
         }}
       >
         <LoadoutSettingElement />
-        <BuildEditorBtn />
         <DetailStatButton />
         <CustomMultiTargetButton />
         <FormulasButton />
@@ -92,9 +90,9 @@ function CharacterPanel() {
       <Routes>
         {/* Character Panel */}
         {isTCBuild ? (
-          <Route path="/:characterKey/*" element={<TabTheorycraft />} />
+          <Route path="/*" element={<TabTheorycraft />} />
         ) : (
-          <Route path="/:characterKey/*" element={<TabOverview />} />
+          <Route path="/*" element={<TabOverview />} />
         )}
         <Route path="/:characterKey/talent" element={<TabTalent />} />
         {!isTCBuild && (

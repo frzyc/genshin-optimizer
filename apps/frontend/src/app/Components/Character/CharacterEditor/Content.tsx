@@ -197,10 +197,7 @@ function EquipmentSection() {
 }
 const columns = {
   xs: 1,
-  sm: 2,
-  md: 3,
-  lg: 3,
-  xl: 3,
+  md: 2,
 } as const
 function InTeam() {
   const navigate = useNavigate()
@@ -238,7 +235,7 @@ function InTeam() {
     database.teams.set(teamId, (team) => {
       team.teamCharIds[0] = teamCharId
     })
-    navigate(`/teams/${teamId}`)
+    navigate(`/teams/${teamId}`, { state: { openSetting: true } })
   }
   const onAddNewTeam = () => {
     const teamId = database.teams.new()
@@ -246,7 +243,7 @@ function InTeam() {
     database.teams.set(teamId, (team) => {
       team.teamCharIds[0] = teamCharId
     })
-    navigate(`/teams/${teamId}`)
+    navigate(`/teams/${teamId}`, { state: { openSetting: true } })
   }
   const onDelete = (teamCharId: string) => {
     if (
@@ -270,7 +267,7 @@ function InTeam() {
       </Typography>
 
       {Object.entries(loadoutTeamMap).map(([teamCharId, teamIds]) => {
-        const { name, description, buildIds, buildTcIds } =
+        const { name, description, buildIds, buildTcIds, customMultiTargets } =
           database.teamChars.get(teamCharId)!
         return (
           <CardThemed key={teamCharId} bgt="light">
@@ -288,6 +285,11 @@ function InTeam() {
                 <SqBadge color={buildTcIds.length ? 'primary' : 'secondary'}>
                   {buildTcIds.length} TC Builds
                 </SqBadge>
+                <SqBadge
+                  color={customMultiTargets.length ? 'primary' : 'secondary'}
+                >
+                  {customMultiTargets.length} Multi-Opt
+                </SqBadge>
                 <Button
                   color="info"
                   onClick={() => onDup(teamCharId)}
@@ -302,7 +304,7 @@ function InTeam() {
             </CardContent>
             <Divider />
             <CardContent>
-              <Grid container columns={columns} spacing={2}>
+              <Grid container columns={columns} spacing={1}>
                 {teamIds.map((teamId) => (
                   <Grid item xs={1} key={teamId}>
                     <TeamCard
