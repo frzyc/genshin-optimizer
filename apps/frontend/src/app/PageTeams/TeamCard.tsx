@@ -147,8 +147,8 @@ function HoverCard({
   const characterSheet = getCharSheet(characterKey, gender)
 
   const { name } = useTeamChar(teamCharId)!
-  const buildname = database.teams.getActiveBuildName(teamId, teamCharId)
   const loadoutDatum = database.teams.getLoadoutDatum(teamId, teamCharId)!
+  const buildname = database.teams.getActiveBuildName(loadoutDatum)
   const weapon = (() => {
     return database.teams.getLoadoutWeapon(loadoutDatum)
   })()

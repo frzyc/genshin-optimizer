@@ -41,6 +41,7 @@ import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import { useLocation, useNavigate } from 'react-router-dom'
 import type { TeamCharacterContextObj } from '../../Context/TeamCharacterContext'
 import { TeamCharacterContext } from '../../Context/TeamCharacterContext'
+import BuildDropdown from '../BuildDropdown'
 // TODO: Translation
 
 export default function TeamSetting({
@@ -375,7 +376,12 @@ function CharSelButton({
       <LoadoutDropdown
         teamCharId={teamCharId}
         onChangeTeamCharId={onChangeTeamCharId}
-        dropdownBtnProps={{ sx: { flexGrow: 1 } }}
+        dropdownBtnProps={{ fullWidth: true }}
+      />
+      <BuildDropdown
+        teamId={teamId}
+        loadoutDatum={loadoutDatum}
+        dropdownBtnProps={{ fullWidth: true }}
       />
       {index ? (
         <Button onClick={onActive} color="info">

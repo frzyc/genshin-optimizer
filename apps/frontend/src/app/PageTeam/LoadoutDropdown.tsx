@@ -8,6 +8,7 @@ import {
 } from '@genshin-optimizer/common/ui'
 import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { CharacterName } from '@genshin-optimizer/gi/ui'
+import PersonIcon from '@mui/icons-material/Person'
 import {
   Box,
   Button,
@@ -104,6 +105,7 @@ export function LoadoutDropdown({
         </CardThemed>
       </ModalWrapper>
       <DropdownButton
+        startIcon={<PersonIcon />}
         title={
           <Box
             sx={{
@@ -114,28 +116,22 @@ export function LoadoutDropdown({
             }}
           >
             <span>{name}</span>
-            <Box sx={{ display: 'flex', gap: 1 }}>
-              <SqBadge
-                color={buildIds.length ? 'success' : 'secondary'}
-                sx={{ marginLeft: 'auto' }}
-              >
-                {buildIds.length} Builds
-              </SqBadge>
-              <SqBadge color={buildTcIds.length ? 'success' : 'secondary'}>
-                {buildTcIds.length} TC Builds
-              </SqBadge>
-              <SqBadge
-                color={customMultiTargets.length ? 'success' : 'secondary'}
-              >
-                {customMultiTargets.length} Multi-Opt
-              </SqBadge>
-            </Box>
+            <SqBadge color={buildIds.length ? 'success' : 'secondary'}>
+              {buildIds.length} Builds
+            </SqBadge>
+            <SqBadge color={buildTcIds.length ? 'success' : 'secondary'}>
+              {buildTcIds.length} TC Builds
+            </SqBadge>
+            <SqBadge
+              color={customMultiTargets.length ? 'success' : 'secondary'}
+            >
+              {customMultiTargets.length} Multi-Opt
+            </SqBadge>
           </Box>
         }
         {...dropdownBtnProps}
       >
         <MenuItem onClick={() => onShow()}>Create a new Loadout</MenuItem>
-        {/* TODO: new loadout */}
         {teamCharIds.map((tcId) => {
           const { name, buildIds, buildTcIds, customMultiTargets } =
             database.teamChars.get(tcId)!

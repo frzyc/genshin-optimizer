@@ -108,7 +108,7 @@ export default function LoadoutSettingElement() {
               >
                 <CheckroomIcon />
                 <span>
-                  {database.teams.getActiveBuildName(teamId, teamCharId)}
+                  {database.teams.getActiveBuildName(loadoutDatum)}
                 </span>
               </SqBadge>
               <SqBadge color={buildIds.length ? 'primary' : 'secondary'}>

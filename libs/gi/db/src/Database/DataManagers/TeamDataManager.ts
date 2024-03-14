@@ -384,18 +384,9 @@ export class TeamDataManager extends DataManager<
     return () => {}
   }
   getActiveBuildName(
-    teamId: string,
-    teamCharId: string,
+    { buildType, buildId, buildTcId }: LoadoutDatum,
     equippedName = 'Equipped Build'
   ) {
-    const team = this.get(teamId)
-    if (!team) return
-
-    const loadoutDatum = team.loadoutData.find(
-      (loadoutDatum) => loadoutDatum?.teamCharId === teamCharId
-    )
-    if (!loadoutDatum) return
-    const { buildType, buildId, buildTcId } = loadoutDatum
     switch (buildType) {
       case 'equipped':
         return equippedName
