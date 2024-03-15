@@ -34,8 +34,12 @@ import TabUpopt from './Tabs/TabUpgradeOpt'
 
 export default function Content({ tab }: { tab: string }) {
   const {
+    loadoutDatum,
     teamChar: { key: characterKey },
   } = useContext(TeamCharacterContext)
+  const isTCBuild = !!(
+    loadoutDatum.buildTcId && loadoutDatum.buildType === 'tc'
+  )
   return (
     <>
       <Box
@@ -68,21 +72,17 @@ export default function Content({ tab }: { tab: string }) {
         <ReactionToggle size="small" />
       </Box>
       <CardLight>
-        <TabNav tab={tab} characterKey={characterKey} />
+        <TabNav tab={tab} characterKey={characterKey} isTCBuild={isTCBuild} />
       </CardLight>
-      <CharacterPanel />
+      <CharacterPanel isTCBuild={isTCBuild} />
       <CardLight>
-        <TabNav tab={tab} characterKey={characterKey} />
+        <TabNav tab={tab} characterKey={characterKey} isTCBuild={isTCBuild} />
       </CardLight>
     </>
   )
 }
 
-function CharacterPanel() {
-  const {
-    teamChar: { buildType, buildTcId },
-  } = useContext(TeamCharacterContext)
-  const isTCBuild = buildTcId && buildType === 'tc'
+function CharacterPanel({ isTCBuild }: { isTCBuild: boolean }) {
   return (
     <Suspense
       fallback={<Skeleton variant="rectangular" width="100%" height={500} />}
@@ -109,15 +109,14 @@ function CharacterPanel() {
 function TabNav({
   tab,
   characterKey,
+  isTCBuild,
 }: {
   tab: string
   characterKey: CharacterKey
+  isTCBuild: boolean
 }) {
   const { t } = useTranslation('page_character')
-  const {
-    teamChar: { buildType, buildTcId },
-  } = useContext(TeamCharacterContext)
-  const isTCBuild = buildTcId && buildType === 'tc'
+
   return (
     <Tabs
       value={tab}

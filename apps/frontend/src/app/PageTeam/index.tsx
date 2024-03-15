@@ -73,7 +73,7 @@ function Page({ teamId }: { teamId: string }) {
   const { gender } = useDBMeta()
 
   const team = useTeam(teamId)!
-  const { teamCharIds } = team
+  const { loadoutData } = team
 
   // use the current URL as the "source of truth" for characterKey and tab.
   const {
@@ -87,29 +87,37 @@ function Page({ teamId }: { teamId: string }) {
   } = useMatch({ path: '/teams/:teamId/:characterKey/:tab', end: false }) ?? {
     params: {},
   }
+
   // validate characterKey
+  const loadoutDatum = useMemo(
+    () =>
+      loadoutData.find(
+        (loadoutDatum) =>
+          loadoutDatum?.teamCharId &&
+          database.teamChars.get(loadoutDatum.teamCharId)?.key ===
+            characterKeyRaw
+      ) ?? loadoutData[0],
+    [database, loadoutData, characterKeyRaw]
+  )
+
   const { characterKey, teamCharId } = useMemo(() => {
-    const teamCharId =
-      teamCharIds.find(
-        (teamCharId) =>
-          database.teamChars.get(teamCharId)?.key === characterKeyRaw
-      ) ?? teamCharIds[0]
+    const teamCharId = loadoutDatum?.teamCharId
     const characterKey = database.teamChars.get(teamCharId)?.key
     return { characterKey, teamCharId }
-  }, [teamCharIds, characterKeyRaw, database])
+  }, [loadoutDatum, database])
 
   const teamChar = useTeamChar(teamCharId ?? '')
 
   // validate tab value
   const tab = useMemo(() => {
-    if (!teamChar) return 'overview'
-    if (teamChar.buildType === 'tc') {
+    if (!loadoutDatum) return 'overview'
+    if (loadoutDatum.buildType === 'tc') {
       if (!tabRaw || !tabsTc.includes(tabRaw)) return 'overview'
     } else {
       if (!tabRaw || !tabs.includes(tabRaw)) return 'overview'
     }
     return tabRaw
-  }, [teamChar, tabRaw])
+  }, [loadoutDatum, tabRaw])
 
   const { t } = useTranslation([
     'sillyWisher_charNames',
@@ -133,14 +141,15 @@ function Page({ teamId }: { teamId: string }) {
 
   const teamCharacterContextValue: TeamCharacterContextObj | undefined =
     useMemo(() => {
-      if (!teamCharId || !teamChar) return undefined
+      if (!teamCharId || !teamChar || !loadoutDatum) return undefined
       return {
         teamId,
         team,
         teamCharId,
         teamChar,
+        loadoutDatum,
       }
-    }, [teamId, team, teamCharId, teamChar])
+    }, [teamId, team, teamCharId, teamChar, loadoutDatum])
 
   const teamData = useTeamDataNoContext(teamId, teamCharId ?? '')
   const { target: charUIData } =

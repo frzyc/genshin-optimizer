@@ -83,7 +83,8 @@ export default function BuildDisplayItem({
   disabled,
 }: BuildDisplayItemProps) {
   const {
-    teamChar: { optConfigId, buildType, buildId, buildIds = [] },
+    loadoutDatum: { buildType, buildId },
+    teamChar: { optConfigId, buildIds = [] },
   } = useContext(TeamCharacterContext)
   const {
     character: { key: characterKey, equippedArtifacts, equippedWeapon },

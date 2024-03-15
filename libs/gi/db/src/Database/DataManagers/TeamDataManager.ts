@@ -1,8 +1,33 @@
-import { deepClone, range } from '@genshin-optimizer/common/util'
-import { allElementWithPhyKeys } from '@genshin-optimizer/gi/consts'
+import {
+  deepClone,
+  objKeyMap,
+  objMap,
+  range,
+} from '@genshin-optimizer/common/util'
+import type { ArtifactSlotKey } from '@genshin-optimizer/gi/consts'
+import {
+  allArtifactSlotKeys,
+  allElementWithPhyKeys,
+  charKeyToLocCharKey,
+} from '@genshin-optimizer/gi/consts'
 import type { EleEnemyResKey } from '@genshin-optimizer/gi/keymap'
+import type { ICachedArtifact, ICachedWeapon } from '../../Interfaces'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
 import { DataManager } from '../DataManager'
+import { defaultInitialWeapon } from './WeaponDataManager'
+
+const buildTypeKeys = ['equipped', 'real', 'tc'] as const
+type BuildTypeKey = (typeof buildTypeKeys)[number]
+export type LoadoutDatum = {
+  teamCharId: string
+  buildType: BuildTypeKey
+  buildId: string
+  buildTcId: string
+  compare: boolean
+  compareType: BuildTypeKey
+  compareBuildId: string
+  compareBuildTcId: string
+}
 export interface Team {
   name: string
   description: string
@@ -16,7 +41,7 @@ export interface Team {
   conditional: {
     resonance: { [key: string]: string }
   }
-  teamCharIds: Array<string | undefined>
+  loadoutData: Array<LoadoutDatum | undefined>
   lastEdit: number
 }
 
@@ -47,7 +72,7 @@ export class TeamDataManager extends DataManager<
       description,
       enemyOverride,
       conditional,
-      teamCharIds,
+      loadoutData,
       lastEdit,
     } = obj as Team
     if (typeof name !== 'string') name = this.newName()
@@ -76,21 +101,79 @@ export class TeamDataManager extends DataManager<
 
     {
       // validate teamCharIds
-      if (!Array.isArray(teamCharIds))
-        teamCharIds = range(0, 3).map(() => undefined)
+      if (!Array.isArray(loadoutData))
+        loadoutData = range(0, 3).map(() => undefined)
 
-      const charIds = this.database.teamChars.keys
-      teamCharIds = range(0, 3).map((ind) => {
-        const id = teamCharIds[ind]
-        if (id && charIds.includes(id)) return id
-        return undefined
+      loadoutData = range(0, 3).map((ind) => {
+        const loadoutDatum = loadoutData[ind]
+        if (!loadoutDatum || typeof loadoutDatum !== 'object') return undefined
+        const { teamCharId } = loadoutDatum
+        let {
+          buildType,
+          buildId,
+          buildTcId,
+          compare,
+          compareType,
+          compareBuildId,
+          compareBuildTcId,
+        } = loadoutDatum
+        const teamChar = this.database.teamChars.get(teamCharId)
+        if (!teamChar) return undefined
+
+        if (!buildTypeKeys.includes(buildType)) buildType = 'equipped'
+        if (typeof buildId !== 'string' || !teamChar.buildIds.includes(buildId))
+          buildId = ''
+
+        if (
+          typeof buildTcId !== 'string' ||
+          !teamChar.buildTcIds.includes(buildTcId)
+        )
+          buildTcId = ''
+
+        if (
+          (!buildId && !buildTcId) ||
+          (buildType === 'real' && !buildId) ||
+          (buildType === 'tc' && !buildTcId)
+        )
+          buildType = 'equipped'
+
+        if (typeof compare !== 'boolean') compare = false
+        if (!buildTypeKeys.includes(compareType)) compareType = 'equipped'
+
+        if (
+          typeof compareBuildId !== 'string' ||
+          !teamChar.buildIds.includes(compareBuildId) ||
+          !this.database.builds.get(compareBuildId)?.weaponId
+        ) {
+          compareBuildId = ''
+          if (compareType === 'real') compareType = 'equipped'
+        }
+
+        if (
+          typeof compareBuildTcId !== 'string' ||
+          !teamChar.buildTcIds.includes(compareBuildTcId)
+        ) {
+          compareBuildTcId = ''
+          if (compareType === 'tc') compareType = 'equipped'
+        }
+
+        return {
+          teamCharId,
+          buildType,
+          buildId,
+          buildTcId,
+          compare,
+          compareType,
+          compareBuildId,
+          compareBuildTcId,
+        } as LoadoutDatum
       })
 
       // make sure there isnt a team without "Active" character, by shifting characters forward.
-      if (!teamCharIds[0] && teamCharIds.some((tcid) => tcid)) {
-        const index = teamCharIds.findIndex((tcid) => !!tcid)
-        teamCharIds[0] = teamCharIds[index]
-        teamCharIds[index] = undefined
+      if (!loadoutData[0] && loadoutData.some((loadoutData) => loadoutData)) {
+        const index = loadoutData.findIndex((loadoutData) => !!loadoutData)
+        loadoutData[0] = loadoutData[index]
+        loadoutData[index] = undefined
       }
     }
 
@@ -101,7 +184,7 @@ export class TeamDataManager extends DataManager<
       description,
       enemyOverride,
       conditional,
-      teamCharIds,
+      loadoutData,
       lastEdit,
     }
   }
@@ -125,12 +208,13 @@ export class TeamDataManager extends DataManager<
   export(teamId: string): object {
     const team = this.database.teams.get(teamId)
     if (!team) return {}
-    const { teamCharIds, ...rest } = team
+    const { loadoutData, ...rest } = team
     return {
       ...rest,
-      teamChars: teamCharIds.map(
-        (teamCharId) => teamCharId && this.database.teamChars.export(teamCharId)
-      ),
+      loadoutData: loadoutData.map((loadoutData) => {
+        loadoutData?.teamCharId &&
+          this.database.teamChars.export(loadoutData?.teamCharId)
+      }),
     }
   }
   import(data: object): string {
@@ -140,9 +224,9 @@ export class TeamDataManager extends DataManager<
       !this.set(id, {
         ...rest,
         name: `${rest.name ?? ''} (Imported)`,
-        teamCharIds: teamChars.map((obj) =>
-          this.database.teamChars.import(obj)
-        ),
+        loadoutData: teamChars.map((obj) => ({
+          teamCharId: this.database.teamChars.import(obj),
+        })),
       } as Team)
     )
       return ''
@@ -151,7 +235,165 @@ export class TeamDataManager extends DataManager<
 
   getActiveTeamChar(teamId: string) {
     const team = this.database.teams.get(teamId)
-    const teamCharId = team?.teamCharIds[0]
+    const teamCharId = team?.loadoutData[0]?.teamCharId
     return this.database.teamChars.get(teamCharId)
+  }
+
+  /**
+   *
+   * @param teamCharId
+   * @returns a ICached weapon, because in WR a lack of a weapon can have strange effects
+   */
+  getLoadoutWeapon({
+    buildType,
+    buildId,
+    buildTcId,
+    teamCharId,
+  }: LoadoutDatum): ICachedWeapon {
+    const teamChar = this.database.teamChars.get(teamCharId)
+    if (!teamChar) return defaultInitialWeapon()
+    const { key: characterKey } = teamChar
+    switch (buildType) {
+      case 'equipped': {
+        const char = this.database.chars.get(characterKey)
+        if (!char) return defaultInitialWeapon()
+        return (
+          this.database.weapons.get(char.equippedWeapon) ??
+          defaultInitialWeapon()
+        )
+      }
+      case 'real': {
+        const build = this.database.builds.get(buildId)
+        if (!build) return defaultInitialWeapon()
+        return (
+          this.database.weapons.get(build.weaponId) ?? defaultInitialWeapon()
+        )
+      }
+      case 'tc': {
+        const buildTc = this.database.buildTcs.get(buildTcId)
+        if (!buildTc) return defaultInitialWeapon()
+        return {
+          ...buildTc.weapon,
+          location: charKeyToLocCharKey(teamChar.key),
+          lock: false,
+          id: 'invalid',
+        }
+      }
+    }
+    return defaultInitialWeapon()
+  }
+  getLoadoutDatum(teamId: string, teamCharId: string) {
+    const team = this.get(teamId)
+    if (!team) return undefined
+    return team.loadoutData.find(
+      (loadoutDatum) => loadoutDatum?.teamCharId === teamCharId
+    )
+  }
+  setLoadoutDatum(
+    teamId: string,
+    teamCharId: string,
+    data: Partial<LoadoutDatum>
+  ) {
+    this.set(teamId, (team) => {
+      const loadoutDataInd = team.loadoutData.findIndex(
+        (loadoutDatum) => loadoutDatum && loadoutDatum.teamCharId === teamCharId
+      )
+      if (loadoutDataInd < 0) return
+
+      team.loadoutData[loadoutDataInd]! = {
+        ...team.loadoutData[loadoutDataInd]!,
+        ...data,
+      }
+    })
+  }
+  /**
+   * Note: this doesnt return any artifacts(all undefined) when the current teamchar is using a TC Build.
+   */
+  getLoadoutArtifacts({
+    teamCharId,
+    buildType,
+    buildId,
+  }: LoadoutDatum): Record<ArtifactSlotKey, ICachedArtifact | undefined> {
+    const teamChar = this.database.teamChars.get(teamCharId)
+    if (!teamChar) return objKeyMap(allArtifactSlotKeys, () => undefined)
+    const { key: characterKey } = teamChar
+    switch (buildType) {
+      case 'equipped': {
+        const char = this.database.chars.get(characterKey)
+        if (!char) return objKeyMap(allArtifactSlotKeys, () => undefined)
+        return objMap(char.equippedArtifacts, (id) =>
+          this.database.arts.get(id)
+        )
+      }
+      case 'real': {
+        const build = this.database.builds.get(buildId)
+        if (!build) return objKeyMap(allArtifactSlotKeys, () => undefined)
+        return objMap(build.artifactIds, (id) => this.database.arts.get(id))
+      }
+    }
+    return objKeyMap(allArtifactSlotKeys, () => undefined)
+  }
+
+  followLoadoutDatum(
+    { buildType, buildId, buildTcId }: LoadoutDatum,
+    callback: () => void
+  ) {
+    if (buildType === 'real') {
+      const build = this.database.builds.get(buildId)
+      if (!build) return () => {}
+      const unfollowBuild = this.database.builds.follow(buildId, callback)
+      const unfollowWeapon = build.weaponId
+        ? this.database.weapons.follow(build.weaponId, callback)
+        : () => {}
+      const unfollowArts = Object.values(build.artifactIds).map((id) =>
+        id ? this.database.arts.follow(id, callback) : () => {}
+      )
+      return () => {
+        unfollowBuild()
+        unfollowWeapon()
+        unfollowArts.forEach((unfollow) => unfollow())
+      }
+    } else if (buildType === 'tc')
+      return this.database.buildTcs.follow(buildTcId, callback)
+    return () => {}
+  }
+  followLoadoutDatumCompare(
+    { compareType, compareBuildId, compareBuildTcId }: LoadoutDatum,
+    callback: () => void
+  ) {
+    if (compareType === 'real') {
+      const build = this.database.builds.get(compareBuildId)
+      if (!build) return () => {}
+      const unfollowBuild = this.database.builds.follow(
+        compareBuildId,
+        callback
+      )
+      const unfollowWeapon = build.weaponId
+        ? this.database.weapons.follow(build.weaponId, callback)
+        : () => {}
+      const unfollowArts = Object.values(build.artifactIds).map((id) =>
+        id ? this.database.arts.follow(id, callback) : () => {}
+      )
+      return () => {
+        unfollowBuild()
+        unfollowWeapon()
+        unfollowArts.forEach((unfollow) => unfollow())
+      }
+    } else if (compareType === 'tc')
+      return this.database.buildTcs.follow(compareBuildTcId, callback)
+    return () => {}
+  }
+  getActiveBuildName(
+    { buildType, buildId, buildTcId }: LoadoutDatum,
+    equippedName = 'Equipped Build'
+  ) {
+    switch (buildType) {
+      case 'equipped':
+        return equippedName
+      case 'real':
+        return this.database.builds.get(buildId)?.name ?? ''
+      case 'tc':
+        return this.database.buildTcs.get(buildTcId)?.name ?? ''
+    }
   }
 }

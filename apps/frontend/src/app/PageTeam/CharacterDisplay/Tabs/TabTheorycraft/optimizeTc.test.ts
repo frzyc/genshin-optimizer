@@ -1,6 +1,6 @@
 import { SandboxStorage } from '@genshin-optimizer/common/database'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
-import type { BuildTc } from '@genshin-optimizer/gi/db'
+import type { BuildTc, LoadoutDatum } from '@genshin-optimizer/gi/db'
 import { ArtCharDatabase } from '@genshin-optimizer/gi/db'
 import { getTeamDataCalc } from '../../../../ReactHooks/useTeamData'
 import {
@@ -61,7 +61,7 @@ describe('A general optimizeTC usecase', () => {
         minTotal: { enerRech_: 150 },
       },
     })
-    const buildTc: BuildTc = database.buildTcs.get(buildTcId)
+    const buildTc: BuildTc = database.buildTcs.get(buildTcId)!
     expect(buildTc).toBeTruthy()
     const characterKey: CharacterKey = 'HuTao'
 
@@ -116,29 +116,35 @@ describe('A general optimizeTC usecase', () => {
       hitMode: 'avgHit',
       reaction: 'vaporize',
     })
-    const teamCharIds = [
-      HuTaoTeamCharId,
-      database.teamChars.new('Xingqiu', {
-        conditional: {
-          NoblesseOblige: { set4: 'on' },
-          Xingqiu: { c2: 'on', skill: 'on' },
-        },
-      }),
-      database.teamChars.new('Yelan', {
-        conditional: { Yelan: { a4Stacks: '9' } },
-      }),
-      database.teamChars.new('Xiangling', {
-        conditional: {
-          Xiangling: {
-            afterGuobaHit: 'afterGuobaHit',
-            afterPyronado: 'duringPyronado',
-            afterChili: 'afterChili',
+    const loadoutData = [
+      { teamCharId: HuTaoTeamCharId },
+      {
+        teamCharId: database.teamChars.new('Xingqiu', {
+          conditional: {
+            NoblesseOblige: { set4: 'on' },
+            Xingqiu: { c2: 'on', skill: 'on' },
           },
-        },
-      }),
-    ]
+        }),
+      },
+      {
+        teamCharId: database.teamChars.new('Yelan', {
+          conditional: { Yelan: { a4Stacks: '9' } },
+        }),
+      },
+      {
+        teamCharId: database.teamChars.new('Xiangling', {
+          conditional: {
+            Xiangling: {
+              afterGuobaHit: 'afterGuobaHit',
+              afterPyronado: 'duringPyronado',
+              afterChili: 'afterChili',
+            },
+          },
+        }),
+      },
+    ] as LoadoutDatum[]
     const teamId = database.teams.new({
-      teamCharIds,
+      loadoutData,
     })
     expect(teamId).toBeTruthy()
     const overrideArt = getArtifactData(buildTc)
@@ -151,23 +157,25 @@ describe('A general optimizeTC usecase', () => {
       0,
       overrideArt,
       overrideWeapon
-    )
+    )!
 
+    expect(teamData).toBeTruthy()
     const { nodes } = optimizeTcGetNodes(teamData, characterKey, buildTc)
-
-    optimizeTcUsingNodes(nodes, buildTc, (data) => {
-      if (data.resultType !== 'finalize') return
-      expect(data.maxBufferRolls).toEqual({
-        atk: 0,
-        atk_: 0,
-        critDMG_: 0,
-        critRate_: 1, // dmg assignment
-        eleMas: 0,
-        enerRech_: 1, // assigned to enerRech for 150
-        hp: 0,
-        hp_: 0,
-        other: 0,
+    expect(nodes).toBeTruthy()
+    nodes &&
+      optimizeTcUsingNodes(nodes, buildTc, (data) => {
+        if (data.resultType !== 'finalize') return
+        expect(data.maxBufferRolls).toEqual({
+          atk: 0,
+          atk_: 0,
+          critDMG_: 0,
+          critRate_: 1, // dmg assignment
+          eleMas: 0,
+          enerRech_: 1, // assigned to enerRech for 150
+          hp: 0,
+          hp_: 0,
+          other: 0,
+        })
       })
-    })
   })
 })

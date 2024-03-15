@@ -1,4 +1,5 @@
 import { CardThemed } from '@genshin-optimizer/common/ui'
+import { hexToColor } from '@genshin-optimizer/common/util'
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
 import { useDBMeta, useDatabase, useTeam } from '@genshin-optimizer/gi/db-ui'
 import { CharacterName } from '@genshin-optimizer/gi/ui'
@@ -7,7 +8,6 @@ import { Box, Tab, Tabs } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
 import CharIconSide from '../Components/Image/CharIconSide'
 import { getCharSheet } from '../Data/Characters'
-import { hexToColor } from '@genshin-optimizer/common/util'
 export default function TeamCharacterSelector({
   teamId,
   characterKey,
@@ -21,18 +21,20 @@ export default function TeamCharacterSelector({
   const database = useDatabase()
 
   const { gender } = useDBMeta()
-  const { teamCharIds } = useTeam(teamId)!
+  const { loadoutData } = useTeam(teamId)!
 
-  const elementArray: Array<ElementKey | undefined> = teamCharIds.map(
-    (tcid) => {
-      if (!tcid) return
-      const teamChar = database.teamChars.get(tcid)
+  const elementArray: Array<ElementKey | undefined> = loadoutData.map(
+    (loadoutDatum) => {
+      if (!loadoutDatum) return
+      const teamChar = database.teamChars.get(loadoutDatum.teamCharId)
       if (!teamChar) return
       return getCharSheet(teamChar.key).elementKey
     }
   )
-  const selectedIndex = teamCharIds.findIndex(
-    (tcid) => database.teamChars.get(tcid)?.key === characterKey
+  const selectedIndex = loadoutData.findIndex(
+    (loadoutDatum) =>
+      loadoutDatum &&
+      database.teamChars.get(loadoutDatum?.teamCharId)?.key === characterKey
   )
   const selectedEle = elementArray[selectedIndex]
   return (
@@ -71,8 +73,10 @@ export default function TeamCharacterSelector({
             }
           }}
         >
-          {teamCharIds.map((teamCharId, ind) => {
-            const teamCharKey = database.teamChars.get(teamCharId)?.key
+          {loadoutData.map((loadoutDatum, ind) => {
+            const teamCharKey =
+              loadoutDatum &&
+              database.teamChars.get(loadoutDatum?.teamCharId)?.key
             return (
               <Tab
                 icon={
@@ -85,7 +89,7 @@ export default function TeamCharacterSelector({
                 iconPosition="start"
                 value={teamCharKey ?? ind}
                 key={ind}
-                disabled={!teamCharIds[ind]}
+                disabled={!loadoutData[ind]}
                 label={
                   teamCharKey ? (
                     <CharacterName characterKey={teamCharKey} gender={gender} />

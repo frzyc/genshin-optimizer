@@ -1,10 +1,15 @@
-import type { Team, TeamCharacter } from '@genshin-optimizer/gi/db'
+import type {
+  LoadoutDatum,
+  Team,
+  TeamCharacter,
+} from '@genshin-optimizer/gi/db'
 import { createContext } from 'react'
 export type TeamCharacterContextObj = {
   teamId: string
   team: Team
   teamCharId: string
   teamChar: TeamCharacter
+  loadoutDatum: LoadoutDatum
 }
 
 // If using this context without a Provider, then stuff will crash...

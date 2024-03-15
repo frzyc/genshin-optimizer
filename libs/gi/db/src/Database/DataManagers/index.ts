@@ -23,7 +23,7 @@ import {
   maxBuildsToShowList,
 } from './OptConfigDataManager'
 import type { TeamCharacter } from './TeamCharacterDataManager'
-import type { Team } from './TeamDataManager'
+import type { LoadoutDatum, Team } from './TeamDataManager'
 import {
   defaultInitialWeapon,
   defaultInitialWeaponKey,
@@ -53,6 +53,7 @@ export type {
   ArtSetExclusion,
   ArtSetExclusionKey,
   GeneratedBuild,
+  LoadoutDatum,
   MinTotalStatKey,
   StatFilterSetting,
   StatFilters,

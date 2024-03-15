@@ -73,4 +73,23 @@ export class BuildDataManager extends DataManager<
     if (!build) return ''
     return this.new(structuredClone(build))
   }
+  override remove(key: string, notify?: boolean): Build | undefined {
+    const build = super.remove(key, notify)
+    // remove data from teamChar first
+    this.database.teamChars.entries.forEach(
+      ([teamCharId, teamChar]) =>
+        teamChar.buildIds.includes(key) &&
+        this.database.teamChars.set(teamCharId, {})
+    )
+    // once teamChars are validated, teams can be validated as well
+    this.database.teams.entries.forEach(
+      ([teamId, team]) =>
+        team.loadoutData?.some(
+          (loadoutDatum) =>
+            loadoutDatum?.buildId === key || loadoutDatum?.compareBuildId
+        ) && this.database.teams.set(teamId, {}) // trigger a validation
+    )
+
+    return build
+  }
 }

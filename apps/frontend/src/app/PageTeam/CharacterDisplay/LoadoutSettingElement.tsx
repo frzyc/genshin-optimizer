@@ -4,6 +4,7 @@ import {
   ModalWrapper,
   SqBadge,
 } from '@genshin-optimizer/common/ui'
+import type { LoadoutDatum } from '@genshin-optimizer/gi/db'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { getCharData } from '@genshin-optimizer/gi/stats'
 import AddIcon from '@mui/icons-material/Add'
@@ -30,23 +31,16 @@ import BuildTc from './Build/BuildTc'
 // TODO: Translation
 const columns = { xs: 1, sm: 1, md: 2, lg: 2 }
 export default function LoadoutSettingElement() {
+  const database = useDatabase()
   const {
     teamId,
     teamCharId,
-    teamChar: {
-      key: characterKey,
-      buildType,
-      buildId,
-      buildIds,
-      buildTcId,
-      buildTcIds,
-      customMultiTargets,
-    },
+    loadoutDatum,
+    teamChar: { key: characterKey, buildIds, buildTcIds, customMultiTargets },
   } = useContext(TeamCharacterContext)
 
   const weaponTypeKey = getCharData(characterKey).weaponType
 
-  const database = useDatabase()
   const teamChar = database.teamChars.get(teamCharId)!
   const [open, setOpen] = useState(false)
 
@@ -83,10 +77,12 @@ export default function LoadoutSettingElement() {
   const onChangeTeamCharId = (newTeamCharId: string) => {
     const index = database.teams
       .get(teamId)!
-      .teamCharIds.findIndex((id) => id === teamCharId)
+      .loadoutData.findIndex(
+        (loadoutDatum) => loadoutDatum?.teamCharId === teamCharId
+      )
     if (index < 0) return
     database.teams.set(teamId, (team) => {
-      team.teamCharIds[index] = newTeamCharId
+      team.loadoutData[index] = { teamCharId: newTeamCharId } as LoadoutDatum
     })
   }
   return (
@@ -111,7 +107,7 @@ export default function LoadoutSettingElement() {
                 sx={{ display: 'flex', gap: 1, alignItems: 'center' }}
               >
                 <CheckroomIcon />
-                <span>{database.teamChars.getActiveBuildName(teamCharId)}</span>
+                <span>{database.teams.getActiveBuildName(loadoutDatum)}</span>
               </SqBadge>
               <SqBadge color={buildIds.length ? 'primary' : 'secondary'}>
                 {buildIds.length} Builds
@@ -192,7 +188,9 @@ export default function LoadoutSettingElement() {
             </Alert>
             <Grid container columns={columns} spacing={2}>
               <Grid item xs={1}>
-                <BuildEquipped active={buildType === 'equipped'} />
+                <BuildEquipped
+                  active={loadoutDatum?.buildType === 'equipped'}
+                />
               </Grid>
             </Grid>
 
@@ -214,7 +212,10 @@ export default function LoadoutSettingElement() {
                   <Grid item xs={1} key={id}>
                     <BuildReal
                       buildId={id}
-                      active={buildType === 'real' && buildId === id}
+                      active={
+                        loadoutDatum?.buildType === 'real' &&
+                        loadoutDatum?.buildId === id
+                      }
                     />
                   </Grid>
                 ))}
@@ -244,7 +245,10 @@ export default function LoadoutSettingElement() {
                   <Grid item xs={1} key={id}>
                     <BuildTc
                       buildTcId={id}
-                      active={buildType === 'tc' && buildTcId === id}
+                      active={
+                        loadoutDatum?.buildType === 'tc' &&
+                        loadoutDatum?.buildTcId === id
+                      }
                     />
                   </Grid>
                 ))}

@@ -1,6 +1,7 @@
 import { CardThemed, SqBadge } from '@genshin-optimizer/common/ui'
 import { objPathValue } from '@genshin-optimizer/common/util'
 import { artifactAsset } from '@genshin-optimizer/gi/assets'
+import type { LoadoutDatum } from '@genshin-optimizer/gi/db'
 import {
   useBuildTc,
   useCharacter,
@@ -92,8 +93,8 @@ export function ResonanceDisplay({ teamId }: { teamId: string }) {
   const { t } = useTranslation('page_character')
   const { data } = useContext(DataContext)
 
-  const { teamCharIds } = useTeam(teamId)!
-  const teamCount = teamCharIds.reduce((a, t) => a + (t ? 1 : 0), 0)
+  const { loadoutData } = useTeam(teamId)!
+  const teamCount = loadoutData.reduce((a, t) => a + (t ? 1 : 0), 0)
   return (
     <>
       <CardLight>
@@ -148,9 +149,11 @@ export function TeammateDisplay({
   teamId: string
   dataContextValue: dataContextObj
 }) {
+  const database = useDatabase()
   const { teamData } = dataContextValue
   const team = useTeam(teamId)!
   const teamChar = useTeamChar(teamCharId)!
+  const loadoutDatum = database.teams.getLoadoutDatum(teamId, teamCharId)!
   const teamMateKey = teamChar?.key
   const character = useCharacter(teamMateKey)!
   const { key: characterKey } = character
@@ -163,10 +166,9 @@ export function TeammateDisplay({
         team,
         teamCharId,
         teamChar,
-        character,
-        characterSheet: dataBundle.characterSheet,
+        loadoutDatum,
       },
-    [teamId, team, teamCharId, teamChar, character, dataBundle]
+    [teamId, team, teamCharId, teamChar, dataBundle, loadoutDatum]
   )
   const characterContext: CharacterContextObj | undefined = useMemo(
     () =>
@@ -206,9 +208,9 @@ export function TeammateDisplay({
               </CharacterCardHeader>
             </CardThemed>
 
-            <EquipmentRow />
+            <EquipmentRow loadoutDatum={loadoutDatum} />
             <CharArtifactCondDisplay />
-            <CharacterCardWeaponFull teamCharId={teamCharId} />
+            <CharacterCardWeaponFull loadoutDatum={loadoutDatum} />
             <CharWeaponCondDisplay />
             <CharTalentCondDisplay />
           </Suspense>
@@ -217,17 +219,20 @@ export function TeammateDisplay({
     </TeamCharacterContext.Provider>
   )
 }
-function EquipmentRow() {
-  const {
-    teamChar: { buildType },
-  } = useContext(TeamCharacterContext)
+function EquipmentRow({
+  loadoutDatum,
+  loadoutDatum: { buildType },
+}: {
+  loadoutDatum: LoadoutDatum
+}) {
   if (buildType !== 'tc') return <CharacterCardEquipmentRow hideWeapon />
-  else return <TcEquipmentRow />
+  else return <TcEquipmentRow loadoutDatum={loadoutDatum} />
 }
-function TcEquipmentRow() {
-  const {
-    teamChar: { buildTcId },
-  } = useContext(TeamCharacterContext)
+function TcEquipmentRow({
+  loadoutDatum: { buildTcId },
+}: {
+  loadoutDatum: LoadoutDatum
+}) {
   const {
     artifact: { sets },
   } = useBuildTc(buildTcId)!
@@ -259,7 +264,11 @@ function TcEquipmentRow() {
     </CardThemed>
   )
 }
-function CharacterCardWeaponFull({ teamCharId }: { teamCharId: string }) {
+function CharacterCardWeaponFull({
+  loadoutDatum,
+}: {
+  loadoutDatum: LoadoutDatum
+}) {
   const { data } = useContext(DataContext)
   const database = useDatabase()
   const weapon = useMemo(() => {
@@ -267,8 +276,8 @@ function CharacterCardWeaponFull({ teamCharId }: { teamCharId: string }) {
 
     if (weaponId && weaponId !== 'invalid')
       return database.weapons.get(weaponId)
-    else return database.teamChars.getLoadoutWeapon(teamCharId) // TC build
-  }, [database, data, teamCharId])
+    else return database.teams.getLoadoutWeapon(loadoutDatum) // TC build
+  }, [database, data, loadoutDatum])
   if (!weapon) return null
   return <WeaponFullCardObj weapon={weapon} bgt="light" />
 }

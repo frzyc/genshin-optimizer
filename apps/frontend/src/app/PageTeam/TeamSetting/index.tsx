@@ -34,12 +34,14 @@ import {
   TeammateDisplay,
 } from './TeamComponents'
 
+import type { LoadoutDatum } from '@genshin-optimizer/gi/db'
 import ContentCopyIcon from '@mui/icons-material/ContentCopy'
 import ContentPasteIcon from '@mui/icons-material/ContentPaste'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import { useLocation, useNavigate } from 'react-router-dom'
 import type { TeamCharacterContextObj } from '../../Context/TeamCharacterContext'
 import { TeamCharacterContext } from '../../Context/TeamCharacterContext'
+import BuildDropdown from '../BuildDropdown'
 // TODO: Translation
 
 export default function TeamSetting({
@@ -52,7 +54,7 @@ export default function TeamSetting({
   const navigate = useNavigate()
   const database = useDatabase()
   const team = database.teams.get(teamId)!
-  const noChars = team.teamCharIds.every((id) => !id)
+  const noChars = team.loadoutData.every((id) => !id)
 
   const location = useLocation()
 
@@ -170,7 +172,7 @@ export default function TeamSetting({
                 color="info"
                 sx={{ flexGrow: 1 }}
                 startIcon={<ContentPasteIcon />}
-                disabled={team.teamCharIds.every((id) => !id)}
+                disabled={noChars}
                 onClick={onExport}
               >
                 Export Team
@@ -178,7 +180,7 @@ export default function TeamSetting({
               <Button
                 color="info"
                 sx={{ flexGrow: 1 }}
-                disabled={team.teamCharIds.every((id) => !id)}
+                disabled={noChars}
                 onClick={onDup}
                 startIcon={<ContentCopyIcon />}
               >
@@ -212,7 +214,7 @@ function TeamCharacterSelector({
 }) {
   const database = useDatabase()
   const team = database.teams.get(teamId)!
-  const { teamCharIds } = team
+  const { loadoutData } = team
   const [charSelectIndex, setCharSelectIndex] = useState(
     undefined as number | undefined
   )
@@ -222,8 +224,10 @@ function TeamCharacterSelector({
     // Make sure character exists
     database.chars.getWithInitWeapon(cKey)
 
-    const existingIndex = teamCharIds.findIndex(
-      (teamCharId) => database.teamChars.get(teamCharId)?.key === cKey
+    const existingIndex = loadoutData.findIndex(
+      (loadoutDatum) =>
+        loadoutDatum &&
+        database.teamChars.get(loadoutDatum.teamCharId)?.key === cKey
     )
     if (existingIndex < 0) {
       //find the first available teamchar
@@ -233,23 +237,24 @@ function TeamCharacterSelector({
       // if there is no teamchar, create one.
       if (!teamCharId) teamCharId = database.teamChars.new(cKey)
       database.teams.set(teamId, (team) => {
-        team.teamCharIds[charSelectIndex] = teamCharId
+        if (!teamCharId) return
+        team.loadoutData[charSelectIndex] = { teamCharId } as LoadoutDatum
       })
     } else {
       if (charSelectIndex === existingIndex) return
-      if (teamCharIds[charSelectIndex]) {
+      if (loadoutData[charSelectIndex]) {
         // Already have a teamChar at destination, move to existing Index
-        const existingTeamCharId = teamCharIds[existingIndex]
-        const destinationTeamCharId = teamCharIds[charSelectIndex]
+        const existingLoadoutDatum = loadoutData[existingIndex]
+        const destinationLoadoutDatum = loadoutData[charSelectIndex]
         database.teams.set(teamId, (team) => {
-          team.teamCharIds[charSelectIndex] = existingTeamCharId
-          team.teamCharIds[existingIndex] = destinationTeamCharId
+          team.loadoutData[charSelectIndex] = existingLoadoutDatum
+          team.loadoutData[existingIndex] = destinationLoadoutDatum
         })
       }
     }
   }
   const charKeyAtIndex = database.teamChars.get(
-    teamCharIds[charSelectIndex as number]
+    loadoutData[charSelectIndex as number]?.teamCharId
   )?.key
 
   // This context is only used by the ResonanceDisplay, which needs to attach conditional values to team data.
@@ -258,10 +263,10 @@ function TeamCharacterSelector({
       ({
         teamId,
         team,
-        teamCharId: teamCharIds[0],
+        teamCharId: '', // can be left blank since its only modifying team conditional
         teamChar: {},
       } as TeamCharacterContextObj),
-    [team, teamId, teamCharIds]
+    [team, teamId]
   )
   return (
     <>
@@ -288,14 +293,14 @@ function TeamCharacterSelector({
             </DataContext.Provider>
           )}
         </Grid>
-        {teamCharIds.map((teamCharId, ind) => (
-          <Grid item xs={1} key={teamCharId ?? ind}>
-            {teamCharId ? (
+        {loadoutData.map((loadoutDatum, ind) => (
+          <Grid item xs={1} key={loadoutDatum?.teamCharId ?? ind}>
+            {loadoutDatum ? (
               <CharSelButton
                 index={ind}
-                key={teamCharId}
+                key={loadoutDatum?.teamCharId}
                 teamId={teamId}
-                teamCharId={teamCharId}
+                loadoutDatum={loadoutDatum}
                 onClickChar={() => setCharSelectIndex(ind)}
                 dataContextValue={dataContextValue}
               />
@@ -304,7 +309,7 @@ function TeamCharacterSelector({
                 key={ind}
                 onClick={() => setCharSelectIndex(ind)}
                 fullWidth
-                disabled={!!ind && !teamCharIds.some((id) => id)}
+                disabled={!!ind && !loadoutData.some((id) => id)}
                 startIcon={<AddIcon />}
               >
                 Add Character
@@ -319,36 +324,37 @@ function TeamCharacterSelector({
 function CharSelButton({
   index,
   teamId,
-  teamCharId,
+  loadoutDatum,
   dataContextValue,
   onClickChar,
 }: {
   index: number
   teamId: string
-  teamCharId: string
+  loadoutDatum: LoadoutDatum
   dataContextValue?: dataContextObj
   onClickChar: () => void
 }) {
   const database = useDatabase()
+  const { teamCharId } = loadoutDatum
   const { key: characterKey } = database.teamChars.get(teamCharId)!
   const { gender } = useDBMeta()
   const onChangeTeamCharId = (teamCharId: string) => {
     database.teams.set(teamId, (team) => {
-      team.teamCharIds[index] = teamCharId
+      team.loadoutData[index] = { teamCharId } as LoadoutDatum
     })
   }
   const onActive = () => {
     // Swap the active with current loadout
     database.teams.set(teamId, (team) => {
-      const oldActive = team.teamCharIds[0]
-      team.teamCharIds[0] = teamCharId
-      team.teamCharIds[index] = oldActive
+      const oldActive = team.loadoutData[0]
+      team.loadoutData[0] = loadoutDatum
+      team.loadoutData[index] = oldActive
     })
   }
 
   const onDel = () =>
     database.teams.set(teamId, (team) => {
-      team.teamCharIds[index] = undefined
+      team.loadoutData[index] = undefined
     })
   return (
     // <CardThemed bgt="light" sx={{ height: '100%' }}>
@@ -370,7 +376,12 @@ function CharSelButton({
       <LoadoutDropdown
         teamCharId={teamCharId}
         onChangeTeamCharId={onChangeTeamCharId}
-        dropdownBtnProps={{ sx: { flexGrow: 1 } }}
+        dropdownBtnProps={{ fullWidth: true }}
+      />
+      <BuildDropdown
+        teamId={teamId}
+        loadoutDatum={loadoutDatum}
+        dropdownBtnProps={{ fullWidth: true }}
       />
       {index ? (
         <Button onClick={onActive} color="info">
