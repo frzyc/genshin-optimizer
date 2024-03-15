@@ -44,10 +44,6 @@ export default function BuildTc({
   const onRemove = () => {
     //TODO: prompt user for removal
     database.buildTcs.remove(buildTcId)
-    // trigger validation
-    database.teamChars.set(teamCharId, {})
-    // trigget validation
-    database.teams.set(teamId, {})
   }
   const onDupe = () =>
     database.teamChars.newBuild(teamCharId, {
