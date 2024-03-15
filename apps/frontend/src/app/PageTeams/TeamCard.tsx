@@ -116,6 +116,7 @@ export default function TeamCard({
                             />
                           )
                         }
+                        hideFav
                       />
                     </CardActionArea>
                   ) : (
