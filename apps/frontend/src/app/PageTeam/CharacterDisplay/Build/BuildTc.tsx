@@ -46,6 +46,8 @@ export default function BuildTc({
     database.buildTcs.remove(buildTcId)
     // trigger validation
     database.teamChars.set(teamCharId, {})
+    // trigget validation
+    database.teams.set(teamId, {})
   }
   const onDupe = () =>
     database.teamChars.newBuild(teamCharId, {

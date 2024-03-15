@@ -82,6 +82,8 @@ export default function BuildReal({
     database.builds.remove(buildId)
     // trigger validation
     database.teamChars.set(teamCharId, {})
+    // trigger validation
+    database.teams.set(teamId, {})
   }
   const weaponTypeKey = getCharData(characterKey).weaponType
   const copyToTc = () => {
