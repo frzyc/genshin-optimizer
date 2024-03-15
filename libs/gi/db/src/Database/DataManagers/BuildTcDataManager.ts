@@ -90,7 +90,9 @@ export class BuildTcDataManager extends DataManager<
     this.database.teams.entries.forEach(
       ([teamId, team]) =>
         team.loadoutData?.some(
-          (loadoutDatum) => loadoutDatum?.buildTcId === key
+          (loadoutDatum) =>
+            loadoutDatum?.buildTcId === key ||
+            loadoutDatum?.compareBuildTcId === key
         ) && this.database.teams.set(teamId, {}) // trigger a validation
     )
 
