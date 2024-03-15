@@ -60,6 +60,7 @@ import { getCharSheet } from '../../../../../Data/Characters'
 import { uiInput as input } from '../../../../../Formula'
 import ArtifactCard from '../../../../../PageArtifact/ArtifactCard'
 import WeaponCard from '../../../../../PageWeapon/WeaponCard'
+import EquipBuildModal from '../../../Build/EquipBuildModal'
 import { ArtifactSetBadges } from './ArtifactSetBadges'
 import SetInclusionButton from './SetInclusionButton'
 type NewOld = {
@@ -248,6 +249,36 @@ export default function BuildDisplayItem({
   const isActiveBuildOrEquip =
     isActiveBuild || (buildType === 'equipped' && currentlyEquipped)
 
+  const activeWeapon = useMemo(
+    () => {
+      if (dbDirty && buildType === 'real') return database.builds.get(buildId)!.weaponId
+      if (dbDirty && buildType === 'equipped') return equippedWeapon
+
+      // default
+      return ''
+    }, [dbDirty, database, buildType, buildId, equippedWeapon]
+  )
+
+  const activeArtifacts = useMemo(
+    () => {
+      if (dbDirty && buildType === 'real') return database.builds.get(buildId)!.artifactIds
+      if (dbDirty && buildType === 'equipped') return equippedArtifacts
+
+      // default
+      return objKeyMap(allArtifactSlotKeys, () => '')
+    }, [dbDirty, database, buildType, buildId, equippedArtifacts]
+  )
+
+  const [showBuildChange, onShowBuildChange, onHideBuildChange] = useBoolState()
+
+  const buildProps = {
+    currentWeapon: activeWeapon,
+    currentArtifacts: activeArtifacts,
+    newWeapon: data.get(input.weapon.id).value!,
+    newArtifacts: objKeyMap(allArtifactSlotKeys, (s) =>
+      data.get(input.art[s].id).value!),
+  }
+
   return (
     <CardLight
       sx={{
@@ -329,10 +360,16 @@ export default function BuildDisplayItem({
               sx={{ flexGrow: 1, display: 'flex', justifyContent: 'flex-end' }}
             />
             {extraButtonsLeft}
+            <EquipBuildModal
+              buildProps={buildProps}
+              showPrompt={showBuildChange}
+              onEquip={equipBuild}
+              OnHidePrompt={onHideBuildChange}
+            />
             <Button
               size="small"
               color="success"
-              onClick={equipBuild}
+              onClick={onShowBuildChange}
               disabled={disabled || isActiveBuild}
               startIcon={<Checkroom />}
             >

@@ -12,13 +12,10 @@ import { ArtifactSlotName, CharacterName } from '@genshin-optimizer/gi/ui'
 import {
   Alert,
   Box,
-  Button,
   Card,
   CardContent,
   CardHeader,
-  Checkbox,
   Divider,
-  FormControlLabel,
   Grid,
   TextField,
   Typography,
@@ -32,6 +29,7 @@ import WeaponCardNano from '../../../Components/Weapon/WeaponCardNano'
 import { CharacterContext } from '../../../Context/CharacterContext'
 import { TeamCharacterContext } from '../../../Context/TeamCharacterContext'
 import { BuildCard } from './BuildCard'
+import EquipBuildModal from './EquipBuildModal'
 
 const UsedCard = styled(Card)(() => ({
   boxShadow: '0px 0px 0px 2px red',
@@ -51,6 +49,9 @@ export default function BuildReal({
     teamChar: { key: characterKey },
     team: { loadoutData },
   } = useContext(TeamCharacterContext)
+  const {
+    character: { equippedWeapon, equippedArtifacts }
+  } = useContext(CharacterContext)
   const { gender } = useDBMeta()
   const database = useDatabase()
   const { name, description, weaponId, artifactIds } = useBuild(buildId)!
@@ -124,6 +125,13 @@ export default function BuildReal({
     return loadoutDatum && database.teamChars.get(loadoutDatum.teamCharId)!.key
   })
 
+  const buildProps = {
+    currentWeapon: equippedWeapon,
+    currentArtifacts: equippedArtifacts,
+    newWeapon: weaponId,
+    newArtifacts: artifactIds,
+  }
+
   const [showPrompt, onShowPrompt, OnHidePrompt] = useBoolState()
   return (
     <>
@@ -131,6 +139,7 @@ export default function BuildReal({
         <BuildEditor buildId={buildId} onClose={onClose} />
       </ModalWrapper>
       <EquipBuildModal
+        buildProps={buildProps}
         showPrompt={showPrompt}
         onEquip={onEquip}
         OnHidePrompt={OnHidePrompt}
@@ -293,94 +302,5 @@ function BuildEditor({
         </Box>
       </CardContent>
     </CardThemed>
-  )
-}
-
-function EquipBuildModal({
-  showPrompt,
-  OnHidePrompt,
-  onEquip,
-}: {
-  showPrompt: boolean
-  onEquip: () => void
-  OnHidePrompt: () => void
-}) {
-  const [name, setName] = useState('')
-  const [copyEquipped, setCopyEquipped] = useState(false)
-  // const [showPrompt, onShowPrompt, OnHidePrompt] = useBoolState()
-
-  const database = useDatabase()
-  const { teamCharId } = useContext(TeamCharacterContext)
-  const {
-    character: { equippedArtifacts, equippedWeapon },
-  } = useContext(CharacterContext)
-
-  const toEquip = () => {
-    if (copyEquipped) {
-      database.teamChars.newBuild(teamCharId, {
-        name: name !== '' ? name : 'Duplicate of Equipped',
-        artifactIds: equippedArtifacts,
-        weaponId: equippedWeapon,
-      })
-    }
-
-    onEquip()
-    setName('')
-    setCopyEquipped(false)
-    OnHidePrompt()
-  }
-
-  /* TODO: Dialog Wanted to use a Dialog here, but was having some weird issues with closing out of it */
-  /* TODO: Translation */
-  return (
-    <ModalWrapper
-      open={showPrompt}
-      onClose={OnHidePrompt}
-      containerProps={{ maxWidth: 'md' }}
-    >
-      <CardThemed>
-        <CardHeader
-          title="Do you want to equip all gear in this build to this character?"
-          action={<CloseButton onClick={OnHidePrompt} />}
-        />
-        <CardContent sx={{ display: 'flex', flexDirection: 'column' }}>
-          <FormControlLabel
-            label="Copy my current equipment to a new build. Otherwise, the currently equipped build will be overwritten."
-            control={
-              <Checkbox
-                checked={copyEquipped}
-                onChange={(event) => setCopyEquipped(event.target.checked)}
-                color={copyEquipped ? 'success' : 'secondary'}
-              />
-            }
-          />
-          {copyEquipped && (
-            <TextField
-              label="Build Name"
-              placeholder="Duplicate of Equipped"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              size="small"
-              sx={{ width: '75%', marginX: 4 }}
-            />
-          )}
-          <Box
-            sx={{
-              display: 'flex',
-              justifyContent: 'flex-end',
-              gap: 1,
-              marginTop: 8,
-            }}
-          >
-            <Button color="error" onClick={OnHidePrompt}>
-              Cancel
-            </Button>
-            <Button color="success" onClick={toEquip}>
-              Equip
-            </Button>
-          </Box>
-        </CardContent>
-      </CardThemed>
-    </ModalWrapper>
   )
 }
