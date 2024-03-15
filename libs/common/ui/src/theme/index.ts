@@ -215,5 +215,18 @@ export const theme = createTheme({
         },
       },
     },
+    /*
+     * FIXME: A ducttape solution to address
+     * https://github.com/mui/material-ui/issues/32286
+     */
+    MuiBackdrop: {
+      styleOverrides: {
+        root: {
+          '&[style*="opacity: 0"]': {
+            pointerEvents: 'none',
+          },
+        },
+      },
+    },
   },
 })
