@@ -13,6 +13,7 @@ import Bennett from './splash_bennett.png'
 import Candace from './splash_candace.png'
 import Charlotte from './splash_charlotte.png'
 import Chevreuse from './splash_chevreuse.png'
+import Chiori from './splash_chiori.png'
 import Chongyun from './splash_chongyun.png'
 import Collei from './splash_collei.png'
 import Cyno from './splash_cyno.png'
@@ -92,6 +93,7 @@ const charCards = {
   Candace,
   Charlotte,
   Chevreuse,
+  Chiori,
   Chongyun,
   Collei,
   Cyno,
