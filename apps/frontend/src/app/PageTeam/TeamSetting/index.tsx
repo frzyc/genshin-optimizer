@@ -114,7 +114,13 @@ export default function TeamSetting({
 
   return (
     <>
-      <BootstrapTooltip title={<Typography>{team.description}</Typography>}>
+      <BootstrapTooltip
+        title={
+          team.description ? (
+            <Typography>{team.description}</Typography>
+          ) : undefined
+        }
+      >
         <Button
           color="info"
           sx={{ flexGrow: 1 }}
