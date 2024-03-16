@@ -88,7 +88,7 @@ export function LoadoutDropdown({
               value={newDesc}
               onChange={(e) => setNewDesc(e.target.value)}
               multiline
-              rows={4}
+              minRows={2}
             />
             <Box sx={{ display: 'flex', gap: 2 }}>
               <Button color="error" fullWidth onClick={onHide}>
