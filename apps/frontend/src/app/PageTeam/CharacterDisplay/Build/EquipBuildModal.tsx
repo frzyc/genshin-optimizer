@@ -1,4 +1,4 @@
-import { CardThemed, ModalWrapper } from '@genshin-optimizer/common/ui'
+import { CardThemed, ModalWrapper, SqBadge } from '@genshin-optimizer/common/ui'
 import type { ArtifactSlotKey } from '@genshin-optimizer/gi/consts'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { getCharData } from '@genshin-optimizer/gi/stats'
@@ -76,7 +76,10 @@ export default function EquipBuildModal({
           title={
             <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
               <Checkroom />
-              <span>Confirm Equipment Changes</span>
+              <span>
+                Confirm Equipment Changes for{' '}
+                <strong>{equipChangeProps.currentName}</strong>
+              </span>
             </Box>
           }
           action={<CloseButton onClick={OnHidePrompt} />}
@@ -91,12 +94,12 @@ export default function EquipBuildModal({
           <Box>
             {/* Active Build */}
             <CardThemed bgt="light">
-              <CardHeader
-                sx={{ pb: 0 }}
-                title={`${equipChangeProps.currentName}: Current Equipment`}
-              />
+              <Box sx={{ pl: 2, pt: 2 }}>
+                <SqBadge color="success">Current Equipment</SqBadge>
+              </Box>
               <CardContent
                 sx={{
+                  pt: 1,
                   display: 'flex',
                   flexDirection: 'row',
                   gap: 1,
@@ -135,9 +138,12 @@ export default function EquipBuildModal({
             </Box>
             {/* New Build */}
             <CardThemed bgt="light">
-              <CardHeader sx={{ pb: 0 }} title={'New Equipment'} />
+              <Box sx={{ pl: 2, pt: 2 }}>
+                <SqBadge color="success">New Equipment</SqBadge>
+              </Box>
               <CardContent
                 sx={{
+                  pt: 1,
                   display: 'flex',
                   flexDirection: 'row',
                   gap: 1,
@@ -172,7 +178,13 @@ export default function EquipBuildModal({
             Do you want to make the changes shown above?
           </Typography>
           <FormControlLabel
-            label={`Copy the current equipment in ${equipChangeProps.currentName} to a new build. Otherwise, they will be overwritten.`}
+            label={
+              <>
+                Copy the current equipment in{' '}
+                <strong>{equipChangeProps.currentName}</strong> to a new build.
+                Otherwise, they will be overwritten.
+              </>
+            }
             control={
               <Checkbox
                 checked={copyCurrent}
