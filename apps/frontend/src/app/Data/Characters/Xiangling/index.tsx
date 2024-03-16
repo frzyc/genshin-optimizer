@@ -1,6 +1,6 @@
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
-import { input } from '../../../Formula'
+import { input, target } from '../../../Formula'
 import {
   constant,
   equal,
@@ -9,7 +9,8 @@ import {
   percent,
   prod,
 } from '../../../Formula/utils'
-import { cond, st, stg } from '../../SheetUtil'
+import KeyMap from '../../../KeyMap'
+import { activeCharBuff, cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import type { ICharacterSheet } from '../ICharacterSheet.d'
 import { charTemplates } from '../charTemplates'
@@ -85,10 +86,14 @@ const dm = {
 
 // A4
 const [condAfterChiliPath, condAfterChili] = cond(key, 'afterChili')
-const afterChili = greaterEq(
-  input.asc,
-  4,
-  equal('afterChili', condAfterChili, percent(dm.passive2.atk_bonus))
+const [afterChiliDisp, afterChili] = activeCharBuff(
+  target.charKey,
+  greaterEq(
+    input.asc,
+    4,
+    equal('afterChili', condAfterChili, percent(dm.passive2.atk_bonus))
+  ),
+  KeyMap.info('atk_')
 )
 
 // C1
@@ -257,7 +262,7 @@ const sheet: ICharacterSheet = {
           afterChili: {
             fields: [
               {
-                node: afterChili,
+                node: afterChiliDisp,
               },
               {
                 text: stg('duration'),
