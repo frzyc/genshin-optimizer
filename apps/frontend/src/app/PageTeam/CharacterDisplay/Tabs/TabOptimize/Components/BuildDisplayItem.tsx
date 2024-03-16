@@ -60,6 +60,7 @@ import { getCharSheet } from '../../../../../Data/Characters'
 import { uiInput as input } from '../../../../../Formula'
 import ArtifactCard from '../../../../../PageArtifact/ArtifactCard'
 import WeaponCard from '../../../../../PageWeapon/WeaponCard'
+import EquipBuildModal from '../../../Build/EquipBuildModal'
 import { ArtifactSetBadges } from './ArtifactSetBadges'
 import SetInclusionButton from './SetInclusionButton'
 type NewOld = {
@@ -131,10 +132,6 @@ export default function BuildDisplayItem({
   const closeArt = useCallback(() => setArtNewOld(undefined), [setArtNewOld])
   const buildEquip = buildId && buildType === 'real'
   const equipBuild = useCallback(() => {
-    const confirmMsg = buildEquip
-      ? 'Do you want to equip this build to the currently active build?'
-      : 'Do you want to equip this build to this character?'
-    if (!window.confirm(confirmMsg)) return
     if (buildEquip) {
       database.builds.set(buildId, {
         weaponId: data.get(input.weapon.id).value,
@@ -248,6 +245,38 @@ export default function BuildDisplayItem({
   const isActiveBuildOrEquip =
     isActiveBuild || (buildType === 'equipped' && currentlyEquipped)
 
+  const activeWeapon = useMemo(() => {
+    if (dbDirty && buildType === 'real')
+      return database.builds.get(buildId)!.weaponId
+    if (dbDirty && buildType === 'equipped') return equippedWeapon
+
+    // default
+    return ''
+  }, [dbDirty, database, buildType, buildId, equippedWeapon])
+
+  const activeArtifacts = useMemo(() => {
+    if (dbDirty && buildType === 'real')
+      return database.builds.get(buildId)!.artifactIds
+    if (dbDirty && buildType === 'equipped') return equippedArtifacts
+
+    // default
+    return objKeyMap(allArtifactSlotKeys, () => '')
+  }, [dbDirty, database, buildType, buildId, equippedArtifacts])
+
+  const [showEquipChange, onShowEquipChange, onHideEquipChange] = useBoolState()
+
+  const equipChangeProps = {
+    currentName:
+      buildType === 'real' ? database.builds.get(buildId)!.name : 'Equipped',
+    currentWeapon: activeWeapon,
+    currentArtifacts: activeArtifacts,
+    newWeapon: data.get(input.weapon.id).value!,
+    newArtifacts: objKeyMap(
+      allArtifactSlotKeys,
+      (s) => data.get(input.art[s].id).value!
+    ),
+  }
+
   return (
     <CardLight
       sx={{
@@ -329,10 +358,16 @@ export default function BuildDisplayItem({
               sx={{ flexGrow: 1, display: 'flex', justifyContent: 'flex-end' }}
             />
             {extraButtonsLeft}
+            <EquipBuildModal
+              equipChangeProps={equipChangeProps}
+              showPrompt={showEquipChange}
+              onEquip={equipBuild}
+              OnHidePrompt={onHideEquipChange}
+            />
             <Button
               size="small"
               color="success"
-              onClick={equipBuild}
+              onClick={onShowEquipChange}
               disabled={disabled || isActiveBuild}
               startIcon={<Checkroom />}
             >
