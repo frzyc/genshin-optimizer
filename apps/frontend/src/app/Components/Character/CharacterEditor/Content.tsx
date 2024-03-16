@@ -131,7 +131,7 @@ export default function Content({ onClose }: { onClose?: () => void }) {
             <Box>
               <Grid container columns={3} spacing={1}>
                 {(['auto', 'skill', 'burst'] as const).map((talentKey) => (
-                  <Grid item xs={1}>
+                  <Grid item xs={1} key={talentKey}>
                     <TalentDropdown
                       key={talentKey}
                       talentKey={talentKey}
