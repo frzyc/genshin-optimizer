@@ -1,5 +1,5 @@
 import { BootstrapTooltip, CardThemed } from '@genshin-optimizer/common/ui'
-import { hexToColor } from '@genshin-optimizer/common/util'
+import { hexToColor, truncateString } from '@genshin-optimizer/common/util'
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
 import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
 import {
@@ -88,7 +88,7 @@ export default function TeamCard({
       >
         <CardActionArea onClick={() => onClick()} sx={{ p: 1 }}>
           <Typography sx={{ display: 'flex', gap: 1 }}>
-            <span>{name}</span>{' '}
+            <span>{truncateString(name, 100)}</span>{' '}
             <BootstrapTooltip title={<Typography>{description}</Typography>}>
               <InfoIcon />
             </BootstrapTooltip>

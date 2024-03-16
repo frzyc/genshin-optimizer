@@ -42,6 +42,7 @@ import { useLocation, useNavigate } from 'react-router-dom'
 import type { TeamCharacterContextObj } from '../../Context/TeamCharacterContext'
 import { TeamCharacterContext } from '../../Context/TeamCharacterContext'
 import BuildDropdown from '../BuildDropdown'
+import { truncateString } from '@genshin-optimizer/common/util'
 // TODO: Translation
 
 export default function TeamSetting({
@@ -122,7 +123,9 @@ export default function TeamSetting({
           endIcon={<SettingsIcon />}
           onClick={() => setOpen((open) => !open)}
         >
-          <Typography variant="h6">{team.name}</Typography>
+          <Typography variant="h6">
+            {truncateString(team.name, 100)}
+          </Typography>
         </Button>
       </BootstrapTooltip>
 
@@ -154,9 +157,10 @@ export default function TeamSetting({
             <TextField
               fullWidth
               label="Team Name"
-              placeholder="Team Name"
+              placeholder="Team Name (max 300 characters)"
               value={name}
               onChange={(e) => setName(e.target.value)}
+              inputProps={{ maxLength: 300 }}
             />
             <TextField
               fullWidth

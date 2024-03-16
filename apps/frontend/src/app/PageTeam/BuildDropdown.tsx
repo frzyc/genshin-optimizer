@@ -1,5 +1,6 @@
 import type { DropdownButtonProps } from '@genshin-optimizer/common/ui'
 import { DropdownButton, SqBadge } from '@genshin-optimizer/common/ui'
+import { truncateString } from '@genshin-optimizer/common/util'
 import type { LoadoutDatum } from '@genshin-optimizer/gi/db'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import CheckroomIcon from '@mui/icons-material/Checkroom'
@@ -26,7 +27,7 @@ export default function BuildDropdown({
       startIcon={<CheckroomIcon />}
       title={
         <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap' }}>
-          <span>{database.teams.getActiveBuildName(loadoutDatum)}</span>
+          <span>{truncateString(database.teams.getActiveBuildName(loadoutDatum), 50)}</span>
           {buildType === 'tc' && <SqBadge color="success">TC</SqBadge>}
         </Box>
       }
@@ -50,7 +51,7 @@ export default function BuildDropdown({
             }
             sx={{ display: 'flex', gap: 1 }}
           >
-            {name}
+            {truncateString(name, 50)}
           </MenuItem>
         )
       })}
@@ -66,7 +67,7 @@ export default function BuildDropdown({
             }
             sx={{ display: 'flex', gap: 1 }}
           >
-            <span>{name}</span>
+            <span>{truncateString(name, 50)}</span>
             <SqBadge color="success">TC</SqBadge>
           </MenuItem>
         )

@@ -28,6 +28,7 @@ import { LoadoutDropdown } from '../LoadoutDropdown'
 import { BuildEquipped } from './Build/BuildEquipped'
 import BuildReal from './Build/BuildReal'
 import BuildTc from './Build/BuildTc'
+import { truncateString } from '@genshin-optimizer/common/util'
 // TODO: Translation
 const columns = { xs: 1, sm: 1, md: 2, lg: 2 }
 export default function LoadoutSettingElement() {
@@ -101,13 +102,13 @@ export default function LoadoutSettingElement() {
             onClick={() => setOpen((o) => !o)}
           >
             <Typography sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
-              <strong>{teamChar.name}</strong>
+              <strong>{truncateString(teamChar.name, 100)}</strong>
               <SqBadge
                 color="success"
                 sx={{ display: 'flex', gap: 1, alignItems: 'center' }}
               >
                 <CheckroomIcon />
-                <span>{database.teams.getActiveBuildName(loadoutDatum)}</span>
+                <span>{truncateString(database.teams.getActiveBuildName(loadoutDatum), 50)}</span>
               </SqBadge>
               <SqBadge color={buildIds.length ? 'primary' : 'secondary'}>
                 {buildIds.length} Builds
@@ -154,9 +155,10 @@ export default function LoadoutSettingElement() {
             <TextField
               fullWidth
               label="Loadout Name"
-              placeholder="Loadout Name"
+              placeholder="Loadout Name (max 300 characters)"
               value={name}
               onChange={(e) => setName(e.target.value)}
+              inputProps={{ maxLength: 300 }}
             />
             <TextField
               fullWidth

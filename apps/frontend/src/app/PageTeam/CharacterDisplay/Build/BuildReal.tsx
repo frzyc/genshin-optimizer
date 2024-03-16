@@ -263,9 +263,10 @@ function BuildEditor({
         <TextField
           fullWidth
           label="Build Name"
-          placeholder="Build Name"
+          placeholder="Build Name (max 100 characters)"
           value={name}
           onChange={(e) => setName(e.target.value)}
+          inputProps={{ maxLength: 100 }}
         />
         <TextField
           fullWidth
