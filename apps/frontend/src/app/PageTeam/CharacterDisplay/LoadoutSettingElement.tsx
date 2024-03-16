@@ -165,7 +165,7 @@ export default function LoadoutSettingElement() {
               value={desc}
               onChange={(e) => setDesc(e.target.value)}
               multiline
-              rows={4}
+              minRows={2}
             />
           </CardContent>
           <Divider />
