@@ -4,6 +4,10 @@ import { useCallback, useContext, useMemo, useRef } from 'react'
 import ArtifactCardNano from '../../../../Components/Artifact/ArtifactCardNano'
 import CardLight from '../../../../Components/Card/CardLight'
 import StatDisplayComponent from '../../../../Components/Character/StatDisplayComponent'
+import {
+  HitModeToggle,
+  ReactionToggle,
+} from '../../../../Components/HitModeEditor'
 import WeaponCardNano from '../../../../Components/Weapon/WeaponCardNano'
 import { DataContext } from '../../../../Context/DataContext'
 import { uiInput as input } from '../../../../Formula'
@@ -53,14 +57,23 @@ export default function TabOverview() {
                 gap: 1,
               }}
             >
+              <Box
+                sx={{
+                  display: 'flex',
+                  justifyContent: 'flex-end',
+                  gap: 1,
+                  flexWrap: 'wrap',
+                }}
+              >
+                <HitModeToggle size="small" />
+                <ReactionToggle size="small" />
+                <CompareBtn buttonGroupProps={{ sx: { marginLeft: 'auto' } }} />
+              </Box>
               <DataContext.Provider value={dataContextObj}>
                 <StatDisplayComponent
                   columns={{ xs: 1, sm: 1, md: 2, lg: 2, xl: 3 }}
                 />
               </DataContext.Provider>
-              <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
-                <CompareBtn />
-              </Box>
             </CardLight>
           </Grid>
         </Grid>

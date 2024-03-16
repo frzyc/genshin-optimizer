@@ -46,8 +46,8 @@ export default function BuildTc({
     database.buildTcs.remove(buildTcId)
   }
   const onDupe = () =>
-    database.teamChars.newBuild(teamCharId, {
-      ...buildTc,
+    database.teamChars.newBuildTc(teamCharId, {
+      ...structuredClone(buildTc),
       name: `Duplicate of ${name}`,
     })
   return (

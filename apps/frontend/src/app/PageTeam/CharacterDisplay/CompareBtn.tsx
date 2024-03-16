@@ -2,6 +2,7 @@ import { DropdownButton, SqBadge } from '@genshin-optimizer/common/ui'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import CheckBoxIcon from '@mui/icons-material/CheckBox'
 import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank'
+import type { ButtonGroupProps } from '@mui/material'
 import { Button, ButtonGroup, MenuItem } from '@mui/material'
 import { useContext } from 'react'
 import { TeamCharacterContext } from '../../Context/TeamCharacterContext'
@@ -12,7 +13,11 @@ import { TeamCharacterContext } from '../../Context/TeamCharacterContext'
  */
 
 // TODO: Translation
-export default function CompareBtn() {
+export default function CompareBtn({
+  buttonGroupProps = {},
+}: {
+  buttonGroupProps?: ButtonGroupProps
+}) {
   const database = useDatabase()
   const {
     teamId,
@@ -51,7 +56,7 @@ export default function CompareBtn() {
       buildType === 'tc' &&
       buildTcId === compareBuildTcId)
   return (
-    <ButtonGroup>
+    <ButtonGroup {...buttonGroupProps}>
       <Button
         startIcon={compare ? <CheckBoxIcon /> : <CheckBoxOutlineBlankIcon />}
         color={compare ? 'success' : 'secondary'}
