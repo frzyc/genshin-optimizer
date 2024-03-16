@@ -437,6 +437,10 @@ function RemoveLoadout({
               <ListItem sx={{ display: 'list-item' }}>
                 Optimization Configuration
               </ListItem>
+              <ListItem sx={{ display: 'list-item' }}>
+                Any teams with this loadout will have this loadout removed from
+                the team. Teams will not be deleted.
+              </ListItem>
             </List>
           </CardContent>
           <CardActions sx={{ float: 'right' }}>
