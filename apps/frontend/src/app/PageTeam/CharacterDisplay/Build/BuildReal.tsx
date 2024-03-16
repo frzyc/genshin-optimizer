@@ -50,7 +50,7 @@ export default function BuildReal({
     team: { loadoutData },
   } = useContext(TeamCharacterContext)
   const {
-    character: { equippedWeapon, equippedArtifacts }
+    character: { equippedWeapon, equippedArtifacts },
   } = useContext(CharacterContext)
   const { gender } = useDBMeta()
   const database = useDatabase()

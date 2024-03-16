@@ -245,35 +245,36 @@ export default function BuildDisplayItem({
   const isActiveBuildOrEquip =
     isActiveBuild || (buildType === 'equipped' && currentlyEquipped)
 
-  const activeWeapon = useMemo(
-    () => {
-      if (dbDirty && buildType === 'real') return database.builds.get(buildId)!.weaponId
-      if (dbDirty && buildType === 'equipped') return equippedWeapon
+  const activeWeapon = useMemo(() => {
+    if (dbDirty && buildType === 'real')
+      return database.builds.get(buildId)!.weaponId
+    if (dbDirty && buildType === 'equipped') return equippedWeapon
 
-      // default
-      return ''
-    }, [dbDirty, database, buildType, buildId, equippedWeapon]
-  )
+    // default
+    return ''
+  }, [dbDirty, database, buildType, buildId, equippedWeapon])
 
-  const activeArtifacts = useMemo(
-    () => {
-      if (dbDirty && buildType === 'real') return database.builds.get(buildId)!.artifactIds
-      if (dbDirty && buildType === 'equipped') return equippedArtifacts
+  const activeArtifacts = useMemo(() => {
+    if (dbDirty && buildType === 'real')
+      return database.builds.get(buildId)!.artifactIds
+    if (dbDirty && buildType === 'equipped') return equippedArtifacts
 
-      // default
-      return objKeyMap(allArtifactSlotKeys, () => '')
-    }, [dbDirty, database, buildType, buildId, equippedArtifacts]
-  )
+    // default
+    return objKeyMap(allArtifactSlotKeys, () => '')
+  }, [dbDirty, database, buildType, buildId, equippedArtifacts])
 
   const [showEquipChange, onShowEquipChange, onHideEquipChange] = useBoolState()
 
   const equipChangeProps = {
-    currentName: buildType === 'real' ? database.builds.get(buildId)!.name : 'Equipped',
+    currentName:
+      buildType === 'real' ? database.builds.get(buildId)!.name : 'Equipped',
     currentWeapon: activeWeapon,
     currentArtifacts: activeArtifacts,
     newWeapon: data.get(input.weapon.id).value!,
-    newArtifacts: objKeyMap(allArtifactSlotKeys, (s) =>
-      data.get(input.art[s].id).value!),
+    newArtifacts: objKeyMap(
+      allArtifactSlotKeys,
+      (s) => data.get(input.art[s].id).value!
+    ),
   }
 
   return (

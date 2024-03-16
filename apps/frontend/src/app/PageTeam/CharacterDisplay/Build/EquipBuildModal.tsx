@@ -1,7 +1,4 @@
-import {
-  CardThemed,
-  ModalWrapper,
-} from '@genshin-optimizer/common/ui'
+import { CardThemed, ModalWrapper } from '@genshin-optimizer/common/ui'
 import type { ArtifactSlotKey } from '@genshin-optimizer/gi/consts'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { getCharData } from '@genshin-optimizer/gi/stats'
@@ -51,13 +48,14 @@ export default function EquipBuildModal({
   const {
     teamCharId,
     teamChar: { key: characterKey },
-   } = useContext(TeamCharacterContext)
+  } = useContext(TeamCharacterContext)
   const weaponTypeKey = getCharData(characterKey).weaponType
 
   const toEquip = () => {
     if (copyCurrent) {
       database.teamChars.newBuild(teamCharId, {
-        name: name !== '' ? name : `Duplicate of ${equipChangeProps.currentName}`,
+        name:
+          name !== '' ? name : `Duplicate of ${equipChangeProps.currentName}`,
         artifactIds: equipChangeProps.currentArtifacts,
         weaponId: equipChangeProps.currentWeapon,
       })
@@ -72,10 +70,7 @@ export default function EquipBuildModal({
   /* TODO: Dialog Wanted to use a Dialog here, but was having some weird issues with closing out of it */
   /* TODO: Translation */
   return (
-    <ModalWrapper
-      open={showPrompt}
-      onClose={OnHidePrompt}
-    >
+    <ModalWrapper open={showPrompt} onClose={OnHidePrompt}>
       <CardThemed>
         <CardHeader
           title={
@@ -95,8 +90,11 @@ export default function EquipBuildModal({
         >
           <Box>
             {/* Active Build */}
-            <CardThemed bgt='light'>
-              <CardHeader sx={{ pb: 0 }} title={`${equipChangeProps.currentName}: Current Equipment`} />
+            <CardThemed bgt="light">
+              <CardHeader
+                sx={{ pb: 0 }}
+                title={`${equipChangeProps.currentName}: Current Equipment`}
+              />
               <CardContent
                 sx={{
                   display: 'flex',
@@ -116,14 +114,13 @@ export default function EquipBuildModal({
                       weaponTypeKey={weaponTypeKey}
                     />
                   </Grid>
-                  {Object.entries(equipChangeProps.currentArtifacts).map(([slotKey, id]) => (
-                    <Grid item key={id || slotKey} xs={1}>
-                      <ArtifactCardNano
-                        artifactId={id}
-                        slotKey={slotKey}
-                      />
-                    </Grid>
-                  ))}
+                  {Object.entries(equipChangeProps.currentArtifacts).map(
+                    ([slotKey, id]) => (
+                      <Grid item key={id || slotKey} xs={1}>
+                        <ArtifactCardNano artifactId={id} slotKey={slotKey} />
+                      </Grid>
+                    )
+                  )}
                 </Grid>
               </CardContent>
             </CardThemed>
@@ -137,7 +134,7 @@ export default function EquipBuildModal({
               <KeyboardArrowDown sx={{ fontSize: 40 }} />
             </Box>
             {/* New Build */}
-            <CardThemed bgt='light'>
+            <CardThemed bgt="light">
               <CardHeader sx={{ pb: 0 }} title={'New Equipment'} />
               <CardContent
                 sx={{
@@ -153,26 +150,27 @@ export default function EquipBuildModal({
                   columns={{ xs: 2, sm: 3, md: 4, lg: 6 }}
                 >
                   <Grid item xs={1}>
-                  <WeaponCardNano
-                    weaponId={equipChangeProps.newWeapon}
-                    weaponTypeKey={weaponTypeKey}
-                  />
+                    <WeaponCardNano
+                      weaponId={equipChangeProps.newWeapon}
+                      weaponTypeKey={weaponTypeKey}
+                    />
                   </Grid>
-                  {Object.entries(equipChangeProps.newArtifacts).map(([slotKey, id]) => (
-                    <Grid item key={id || slotKey} xs={1}>
-                      <ArtifactCardNano
-                        artifactId={id}
-                        slotKey={slotKey}
-                      />
-                    </Grid>
-                  ))}
+                  {Object.entries(equipChangeProps.newArtifacts).map(
+                    ([slotKey, id]) => (
+                      <Grid item key={id || slotKey} xs={1}>
+                        <ArtifactCardNano artifactId={id} slotKey={slotKey} />
+                      </Grid>
+                    )
+                  )}
                 </Grid>
               </CardContent>
             </CardThemed>
           </Box>
         </CardContent>
         <CardContent sx={{ pt: '0', display: 'flex', flexDirection: 'column' }}>
-          <Typography sx={{ fontSize: 20 }}>Do you want to make the changes shown above?</Typography>
+          <Typography sx={{ fontSize: 20 }}>
+            Do you want to make the changes shown above?
+          </Typography>
           <FormControlLabel
             label={`Copy the current equipment in ${equipChangeProps.currentName} to a new build. Otherwise, they will be overwritten.`}
             control={
