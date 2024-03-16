@@ -89,9 +89,11 @@ export default function TeamCard({
         <CardActionArea onClick={() => onClick()} sx={{ p: 1 }}>
           <Typography sx={{ display: 'flex', gap: 1 }}>
             <span>{name}</span>{' '}
-            <BootstrapTooltip title={<Typography>{description}</Typography>}>
-              <InfoIcon />
-            </BootstrapTooltip>
+            {description && (
+              <BootstrapTooltip title={<Typography>{description}</Typography>}>
+                <InfoIcon />
+              </BootstrapTooltip>
+            )}
           </Typography>
         </CardActionArea>
 
