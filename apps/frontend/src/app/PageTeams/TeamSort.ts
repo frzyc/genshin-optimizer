@@ -32,6 +32,8 @@ export function teamFilterConfigs(
 ): TeamFilterConfigs {
   return {
     charKeys: (teamId: string, filter: CharacterKey[]) => {
+      if (!filter.length) return true
+
       const nonEmptyLoadoutData = database.teams
         .get(teamId)
         ?.loadoutData.filter(notEmpty)
@@ -42,7 +44,7 @@ export function teamFilterConfigs(
         characters?.includes(charKey)
       )
 
-      return !filter.length || allFilteredCharInTeam
+      return allFilteredCharInTeam
     },
     name: (teamId: string, filter: string) =>
       !filter ||
