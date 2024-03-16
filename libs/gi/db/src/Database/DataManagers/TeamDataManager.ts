@@ -76,7 +76,7 @@ export class TeamDataManager extends DataManager<
       lastEdit,
     } = obj as Team
     if (typeof name !== 'string') name = this.newName()
-    if (typeof description !== 'string') description = 'Team Description'
+    if (typeof description !== 'string') description = ''
 
     {
       // validate enemyOverride
@@ -280,7 +280,6 @@ export class TeamDataManager extends DataManager<
         }
       }
     }
-    return defaultInitialWeapon()
   }
   getLoadoutDatum(teamId: string, teamCharId: string) {
     const team = this.get(teamId)
