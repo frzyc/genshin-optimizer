@@ -1,7 +1,11 @@
-import { useForceUpdate } from '@genshin-optimizer/common/react-util'
+import {
+  useBoolState,
+  useForceUpdate,
+} from '@genshin-optimizer/common/react-util'
 import {
   BootstrapTooltip,
   CardThemed,
+  ModalWrapper,
   SqBadge,
 } from '@genshin-optimizer/common/ui'
 import { objKeyMap } from '@genshin-optimizer/common/util'
@@ -15,15 +19,21 @@ import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { getCharData } from '@genshin-optimizer/gi/stats'
 import { CharacterName, SillyContext } from '@genshin-optimizer/gi/ui'
 import AddIcon from '@mui/icons-material/Add'
+import CloseIcon from '@mui/icons-material/Close'
 import ContentCopyIcon from '@mui/icons-material/ContentCopy'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import InfoIcon from '@mui/icons-material/Info'
 import {
   Box,
   Button,
+  CardActions,
   CardContent,
+  CardHeader,
   Divider,
   Grid,
+  IconButton,
+  List,
+  ListItem,
   Typography,
 } from '@mui/material'
 import { useCallback, useContext, useEffect, useMemo } from 'react'
@@ -301,9 +311,10 @@ function InTeam() {
                 >
                   <ContentCopyIcon />
                 </Button>
-                <Button color="error" onClick={() => onDelete(teamCharId)}>
-                  <DeleteForeverIcon />
-                </Button>
+                <RemoveLoadout
+                  teamCharId={teamCharId}
+                  onDelete={() => onDelete(teamCharId)}
+                />
               </Box>
             </CardContent>
             <Divider />
@@ -345,5 +356,107 @@ function InTeam() {
       </Button>
       <CardThemed bgt="light"></CardThemed>
     </Box>
+  )
+}
+function RemoveLoadout({
+  teamCharId,
+  onDelete,
+}: {
+  teamCharId: string
+  onDelete: () => void
+}) {
+  const database = useDatabase()
+  const {
+    name,
+    description,
+    buildIds,
+    buildTcIds,
+    customMultiTargets,
+    bonusStats,
+  } = database.teamChars.get(teamCharId)!
+
+  const [show, onShow, onHide] = useBoolState()
+  const onDeleteLoadout = useCallback(() => {
+    onHide()
+    onDelete()
+  }, [onDelete, onHide])
+  return (
+    <>
+      <Button color="error" onClick={onShow}>
+        <DeleteForeverIcon />
+      </Button>
+      <ModalWrapper
+        open={show}
+        onClose={onHide}
+        containerProps={{ maxWidth: 'md' }}
+      >
+        <CardThemed>
+          <CardHeader
+            title={
+              <span>
+                Delete Loadout: <strong>{name}</strong>?
+              </span>
+            }
+            action={
+              <IconButton onClick={onHide}>
+                <CloseIcon />
+              </IconButton>
+            }
+          />
+          <Divider />
+          <CardContent>
+            {description && (
+              <CardThemed bgt="dark" sx={{ mb: 2 }}>
+                <CardContent>{description}</CardContent>
+              </CardThemed>
+            )}
+            <Typography>
+              Deleting the Loadout will also delete all data:
+            </Typography>
+            <List sx={{ listStyleType: 'disc', pl: 4 }}>
+              {!!buildIds.length && (
+                <ListItem sx={{ display: 'list-item' }}>
+                  All saved builds: {buildIds.length}
+                </ListItem>
+              )}
+              {!!buildTcIds.length && (
+                <ListItem sx={{ display: 'list-item' }}>
+                  All saved TC builds: {buildTcIds.length}
+                </ListItem>
+              )}
+              {!!customMultiTargets.length && (
+                <ListItem sx={{ display: 'list-item' }}>
+                  All Custom Multi-targets: {customMultiTargets.length}
+                </ListItem>
+              )}
+              {!!Object.keys(bonusStats).length && (
+                <ListItem sx={{ display: 'list-item' }}>
+                  Bonus stats: {Object.keys(bonusStats).length}
+                </ListItem>
+              )}
+              <ListItem sx={{ display: 'list-item' }}>
+                Optimization Configuration
+              </ListItem>
+            </List>
+          </CardContent>
+          <CardActions sx={{ float: 'right' }}>
+            <Button
+              startIcon={<CloseIcon />}
+              color="secondary"
+              onClick={onHide}
+            >
+              Cancel
+            </Button>
+            <Button
+              startIcon={<DeleteForeverIcon />}
+              color="error"
+              onClick={onDeleteLoadout}
+            >
+              Delete
+            </Button>
+          </CardActions>
+        </CardThemed>
+      </ModalWrapper>
+    </>
   )
 }
