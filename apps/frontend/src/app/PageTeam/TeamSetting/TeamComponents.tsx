@@ -213,6 +213,7 @@ export function TeammateDisplay({
             <CharacterCardWeaponFull loadoutDatum={loadoutDatum} />
             <CharWeaponCondDisplay />
             <CharTalentCondDisplay />
+            <TeamBuffDisplay />
           </Suspense>
         </CharacterContext.Provider>
       </DataContext.Provider>
