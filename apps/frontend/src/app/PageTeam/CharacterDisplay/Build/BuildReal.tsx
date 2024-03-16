@@ -125,7 +125,8 @@ export default function BuildReal({
     return loadoutDatum && database.teamChars.get(loadoutDatum.teamCharId)!.key
   })
 
-  const buildProps = {
+  const equipChangeProps = {
+    currentName: 'Equipped',
     currentWeapon: equippedWeapon,
     currentArtifacts: equippedArtifacts,
     newWeapon: weaponId,
@@ -139,7 +140,7 @@ export default function BuildReal({
         <BuildEditor buildId={buildId} onClose={onClose} />
       </ModalWrapper>
       <EquipBuildModal
-        buildProps={buildProps}
+        equipChangeProps={equipChangeProps}
         showPrompt={showPrompt}
         onEquip={onEquip}
         OnHidePrompt={OnHidePrompt}

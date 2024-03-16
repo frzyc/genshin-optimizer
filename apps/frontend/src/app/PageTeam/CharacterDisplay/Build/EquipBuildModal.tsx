@@ -16,6 +16,7 @@ import {
   FormControlLabel,
   Grid,
   TextField,
+  Typography,
 } from '@mui/material'
 import { useContext, useState } from 'react'
 import ArtifactCardNano from '../../../Components/Artifact/ArtifactCardNano'
@@ -23,7 +24,8 @@ import CloseButton from '../../../Components/CloseButton'
 import WeaponCardNano from '../../../Components/Weapon/WeaponCardNano'
 import { TeamCharacterContext } from '../../../Context/TeamCharacterContext'
 
-type CurrentNewBuildProps = {
+type EquipChangeProps = {
+  currentName: string
   currentWeapon: string | undefined
   currentArtifacts: Record<ArtifactSlotKey, string | undefined>
   newWeapon: string | undefined
@@ -31,18 +33,18 @@ type CurrentNewBuildProps = {
 }
 
 export default function EquipBuildModal({
-  buildProps,
+  equipChangeProps,
   showPrompt,
   OnHidePrompt,
   onEquip,
 }: {
-  buildProps: CurrentNewBuildProps
+  equipChangeProps: EquipChangeProps
   showPrompt: boolean
   onEquip: () => void
   OnHidePrompt: () => void
 }) {
   const [name, setName] = useState('')
-  const [copyEquipped, setCopyEquipped] = useState(false)
+  const [copyCurrent, setCopyCurrent] = useState(false)
   // const [showPrompt, onShowPrompt, OnHidePrompt] = useBoolState()
 
   const database = useDatabase()
@@ -53,17 +55,17 @@ export default function EquipBuildModal({
   const weaponTypeKey = getCharData(characterKey).weaponType
 
   const toEquip = () => {
-    if (copyEquipped) {
+    if (copyCurrent) {
       database.teamChars.newBuild(teamCharId, {
-        name: name !== '' ? name : 'Duplicate of Equipped',
-        artifactIds: buildProps.currentArtifacts,
-        weaponId: buildProps.currentWeapon,
+        name: name !== '' ? name : `Duplicate of ${equipChangeProps.currentName}`,
+        artifactIds: equipChangeProps.currentArtifacts,
+        weaponId: equipChangeProps.currentWeapon,
       })
     }
 
     onEquip()
     setName('')
-    setCopyEquipped(false)
+    setCopyCurrent(false)
     OnHidePrompt()
   }
 
@@ -79,7 +81,7 @@ export default function EquipBuildModal({
           title={
             <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
               <Checkroom />
-              <span>Preview Build Changes</span>
+              <span>Confirm Equipment Changes</span>
             </Box>
           }
           action={<CloseButton onClick={OnHidePrompt} />}
@@ -91,13 +93,10 @@ export default function EquipBuildModal({
             flexDirection: 'column',
           }}
         >
-          <Grid
-            container
-            spacing={1}
-            columns={{ xs: 2, sm: 2, md: 3, lg: 6, xl: 6 }}
-          >
+          <Box>
             {/* Active Build */}
             <CardThemed bgt='light'>
+              <CardHeader sx={{ pb: 0 }} title={`${equipChangeProps.currentName}: Current Equipment`} />
               <CardContent
                 sx={{
                   display: 'flex',
@@ -106,20 +105,26 @@ export default function EquipBuildModal({
                   alignItems: 'stretch',
                 }}
               >
-                <Grid item xs={1}>
-                  <WeaponCardNano
-                    weaponId={buildProps.currentWeapon}
-                    weaponTypeKey={weaponTypeKey}
-                  />
-                </Grid>
-                {Object.entries(buildProps.currentArtifacts).map(([slotKey, id]) => (
-                  <Grid item key={id || slotKey} xs={1}>
-                    <ArtifactCardNano
-                      artifactId={id}
-                      slotKey={slotKey}
+                <Grid
+                  container
+                  spacing={1}
+                  columns={{ xs: 2, sm: 3, md: 4, lg: 6 }}
+                >
+                  <Grid item xs={1}>
+                    <WeaponCardNano
+                      weaponId={equipChangeProps.currentWeapon}
+                      weaponTypeKey={weaponTypeKey}
                     />
                   </Grid>
-                ))}
+                  {Object.entries(equipChangeProps.currentArtifacts).map(([slotKey, id]) => (
+                    <Grid item key={id || slotKey} xs={1}>
+                      <ArtifactCardNano
+                        artifactId={id}
+                        slotKey={slotKey}
+                      />
+                    </Grid>
+                  ))}
+                </Grid>
               </CardContent>
             </CardThemed>
             <Box
@@ -133,6 +138,7 @@ export default function EquipBuildModal({
             </Box>
             {/* New Build */}
             <CardThemed bgt='light'>
+              <CardHeader sx={{ pb: 0 }} title={'New Equipment'} />
               <CardContent
                 sx={{
                   display: 'flex',
@@ -141,40 +147,46 @@ export default function EquipBuildModal({
                   alignItems: 'stretch',
                 }}
               >
-                <Grid item xs={1}>
+                <Grid
+                  container
+                  spacing={1}
+                  columns={{ xs: 2, sm: 3, md: 4, lg: 6 }}
+                >
+                  <Grid item xs={1}>
                   <WeaponCardNano
-                    weaponId={buildProps.newWeapon}
+                    weaponId={equipChangeProps.newWeapon}
                     weaponTypeKey={weaponTypeKey}
                   />
-                </Grid>
-                {Object.entries(buildProps.newArtifacts).map(([slotKey, id]) => (
-                  <Grid item key={id || slotKey} xs={1}>
-                    <ArtifactCardNano
-                      artifactId={id}
-                      slotKey={slotKey}
-                    />
                   </Grid>
-                ))}
+                  {Object.entries(equipChangeProps.newArtifacts).map(([slotKey, id]) => (
+                    <Grid item key={id || slotKey} xs={1}>
+                      <ArtifactCardNano
+                        artifactId={id}
+                        slotKey={slotKey}
+                      />
+                    </Grid>
+                  ))}
+                </Grid>
               </CardContent>
             </CardThemed>
-          </Grid>
+          </Box>
         </CardContent>
-        <CardContent sx={{ display: 'flex', flexDirection: 'column' }}>
-          <span>Do you want to equip all gear in this build to this character?</span>
+        <CardContent sx={{ pt: '0', display: 'flex', flexDirection: 'column' }}>
+          <Typography sx={{ fontSize: 20 }}>Do you want to make the changes shown above?</Typography>
           <FormControlLabel
-            label="Copy my current equipment to a new build. Otherwise, the currently equipped build will be overwritten."
+            label={`Copy the current equipment in ${equipChangeProps.currentName} to a new build. Otherwise, they will be overwritten.`}
             control={
               <Checkbox
-                checked={copyEquipped}
-                onChange={(event) => setCopyEquipped(event.target.checked)}
-                color={copyEquipped ? 'success' : 'secondary'}
+                checked={copyCurrent}
+                onChange={(event) => setCopyCurrent(event.target.checked)}
+                color={copyCurrent ? 'success' : 'secondary'}
               />
             }
           />
-          {copyEquipped && (
+          {copyCurrent && (
             <TextField
               label="Build Name"
-              placeholder="Duplicate of Equipped"
+              placeholder={`Duplicate of ${equipChangeProps.currentName}`}
               value={name}
               onChange={(e) => setName(e.target.value)}
               size="small"
@@ -186,7 +198,7 @@ export default function EquipBuildModal({
               display: 'flex',
               justifyContent: 'flex-end',
               gap: 1,
-              marginTop: 8,
+              marginTop: 4,
             }}
           >
             <Button color="error" onClick={OnHidePrompt}>

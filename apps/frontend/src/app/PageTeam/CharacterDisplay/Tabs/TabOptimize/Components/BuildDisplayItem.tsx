@@ -132,10 +132,6 @@ export default function BuildDisplayItem({
   const closeArt = useCallback(() => setArtNewOld(undefined), [setArtNewOld])
   const buildEquip = buildId && buildType === 'real'
   const equipBuild = useCallback(() => {
-    const confirmMsg = buildEquip
-      ? 'Do you want to equip this build to the currently active build?'
-      : 'Do you want to equip this build to this character?'
-    if (!window.confirm(confirmMsg)) return
     if (buildEquip) {
       database.builds.set(buildId, {
         weaponId: data.get(input.weapon.id).value,
@@ -269,9 +265,10 @@ export default function BuildDisplayItem({
     }, [dbDirty, database, buildType, buildId, equippedArtifacts]
   )
 
-  const [showBuildChange, onShowBuildChange, onHideBuildChange] = useBoolState()
+  const [showEquipChange, onShowEquipChange, onHideEquipChange] = useBoolState()
 
-  const buildProps = {
+  const equipChangeProps = {
+    currentName: buildType === 'real' ? database.builds.get(buildId)!.name : 'Equipped',
     currentWeapon: activeWeapon,
     currentArtifacts: activeArtifacts,
     newWeapon: data.get(input.weapon.id).value!,
@@ -361,15 +358,15 @@ export default function BuildDisplayItem({
             />
             {extraButtonsLeft}
             <EquipBuildModal
-              buildProps={buildProps}
-              showPrompt={showBuildChange}
+              equipChangeProps={equipChangeProps}
+              showPrompt={showEquipChange}
               onEquip={equipBuild}
-              OnHidePrompt={onHideBuildChange}
+              OnHidePrompt={onHideEquipChange}
             />
             <Button
               size="small"
               color="success"
-              onClick={onShowBuildChange}
+              onClick={onShowEquipChange}
               disabled={disabled || isActiveBuild}
               startIcon={<Checkroom />}
             >
