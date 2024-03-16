@@ -278,7 +278,7 @@ export class TeamCharacterDataManager extends DataManager<
     const buildTcId = this.database.buildTcs.new(data)
     if (!buildTcId) return
     this.set(teamCharId, (teamChar) => {
-      teamChar.buildIds.unshift(buildTcId)
+      teamChar.buildTcIds.unshift(buildTcId)
     })
   }
   newBuildTcFromBuild(
