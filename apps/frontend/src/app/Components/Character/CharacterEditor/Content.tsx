@@ -313,6 +313,7 @@ function InTeam() {
                 </Button>
                 <RemoveLoadout
                   teamCharId={teamCharId}
+                  teamIds={teamIds}
                   onDelete={() => onDelete(teamCharId)}
                 />
               </Box>
@@ -361,8 +362,10 @@ function InTeam() {
 function RemoveLoadout({
   teamCharId,
   onDelete,
+  teamIds,
 }: {
   teamCharId: string
+  teamIds: string[]
   onDelete: () => void
 }) {
   const database = useDatabase()
@@ -437,10 +440,13 @@ function RemoveLoadout({
               <ListItem sx={{ display: 'list-item' }}>
                 Optimization Configuration
               </ListItem>
-              <ListItem sx={{ display: 'list-item' }}>
-                Any teams with this loadout will have this loadout removed from
-                the team. Teams will not be deleted.
-              </ListItem>
+              {!!teamIds.length && (
+                <ListItem sx={{ display: 'list-item' }}>
+                  Any teams with this loadout will have this loadout removed
+                  from the team. Teams will not be deleted. Teams affected:{' '}
+                  {teamIds.length}
+                </ListItem>
+              )}
             </List>
           </CardContent>
           <CardActions sx={{ float: 'right' }}>
