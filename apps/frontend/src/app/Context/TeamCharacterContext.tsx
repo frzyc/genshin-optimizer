@@ -17,4 +17,5 @@ export type TeamCharacterContextObj = {
 export const TeamCharacterContext = createContext({
   teamChar: {},
   team: {},
+  loadoutDatum: {},
 } as TeamCharacterContextObj)
