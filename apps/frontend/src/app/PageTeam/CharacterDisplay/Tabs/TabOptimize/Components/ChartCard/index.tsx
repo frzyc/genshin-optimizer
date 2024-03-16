@@ -131,7 +131,7 @@ export default function ChartCard({
         const graphBuildIndex = graphBuilds?.findIndex(
           (build) =>
             build.weaponId === weaponId &&
-            artifactIdsArr.every((aId) => datumBuildMap[aId])
+            Object.values(build.artifactIds).every((aId) => datumBuildMap[aId])
         )
         if (graphBuildIndex !== undefined && graphBuildIndex !== -1) {
           // Skip setting y-value if it has already been set.
