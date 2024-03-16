@@ -19,9 +19,12 @@ import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { getCharData } from '@genshin-optimizer/gi/stats'
 import { CharacterName, SillyContext } from '@genshin-optimizer/gi/ui'
 import AddIcon from '@mui/icons-material/Add'
+import CheckroomIcon from '@mui/icons-material/Checkroom'
 import CloseIcon from '@mui/icons-material/Close'
 import ContentCopyIcon from '@mui/icons-material/ContentCopy'
+import DashboardCustomizeIcon from '@mui/icons-material/DashboardCustomize'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
+import GroupsIcon from '@mui/icons-material/Groups'
 import InfoIcon from '@mui/icons-material/Info'
 import {
   Box,
@@ -34,6 +37,7 @@ import {
   IconButton,
   List,
   ListItem,
+  Tooltip,
   Typography,
 } from '@mui/material'
 import { useCallback, useContext, useEffect, useMemo } from 'react'
@@ -414,24 +418,96 @@ function RemoveLoadout({
               </CardThemed>
             )}
             <Typography>
-              Deleting the Loadout will also delete all data:
+              Deleting the Loadout will also delete the following data:
             </Typography>
             <List sx={{ listStyleType: 'disc', pl: 4 }}>
               {!!buildIds.length && (
                 <ListItem sx={{ display: 'list-item' }}>
-                  All saved builds: {buildIds.length}
+                  <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                    All saved builds: {buildIds.length}{' '}
+                    <Tooltip
+                      title={
+                        <Box>
+                          {buildIds.map((bId) => (
+                            <Typography
+                              key={bId}
+                              sx={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: 1,
+                              }}
+                            >
+                              <CheckroomIcon />
+                              <span>{database.builds.get(bId)?.name}</span>
+                            </Typography>
+                          ))}
+                        </Box>
+                      }
+                    >
+                      <InfoIcon />
+                    </Tooltip>
+                  </Box>
                 </ListItem>
               )}
+
               {!!buildTcIds.length && (
                 <ListItem sx={{ display: 'list-item' }}>
-                  All saved TC builds: {buildTcIds.length}
+                  <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                    All saved TC builds: {buildTcIds.length}{' '}
+                    <Tooltip
+                      title={
+                        <Box>
+                          {buildTcIds.map((bId) => (
+                            <Typography
+                              key={bId}
+                              sx={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: 1,
+                              }}
+                            >
+                              <CheckroomIcon />
+                              <span>{database.buildTcs.get(bId)?.name}</span>
+                            </Typography>
+                          ))}
+                        </Box>
+                      }
+                    >
+                      <InfoIcon />
+                    </Tooltip>
+                  </Box>
                 </ListItem>
               )}
+
               {!!customMultiTargets.length && (
                 <ListItem sx={{ display: 'list-item' }}>
-                  All Custom Multi-targets: {customMultiTargets.length}
+                  <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                    All Custom Multi-targets: {customMultiTargets.length}{' '}
+                    <Tooltip
+                      title={
+                        <Box>
+                          {customMultiTargets.map((target, i) => (
+                            <Typography
+                              key={i}
+                              sx={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: 1,
+                              }}
+                            >
+                              <DashboardCustomizeIcon />
+                              <span>{target.name}</span>
+                            </Typography>
+                          ))}
+                        </Box>
+                      }
+                    >
+                      <InfoIcon />
+                    </Tooltip>
+                  </Box>
                 </ListItem>
               )}
+
               {!!Object.keys(bonusStats).length && (
                 <ListItem sx={{ display: 'list-item' }}>
                   Bonus stats: {Object.keys(bonusStats).length}
@@ -440,11 +516,38 @@ function RemoveLoadout({
               <ListItem sx={{ display: 'list-item' }}>
                 Optimization Configuration
               </ListItem>
+
               {!!teamIds.length && (
                 <ListItem sx={{ display: 'list-item' }}>
-                  Any teams with this loadout will have this loadout removed
-                  from the team. Teams will not be deleted. Teams affected:{' '}
-                  {teamIds.length}
+                  <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                    <span>
+                      Any teams with this loadout will have this loadout removed
+                      from the team. Teams will not be deleted. Teams affected:{' '}
+                      {teamIds.length}
+                    </span>
+
+                    <Tooltip
+                      title={
+                        <Box>
+                          {teamIds.map((teamId) => (
+                            <Typography
+                              key={teamId}
+                              sx={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: 1,
+                              }}
+                            >
+                              <GroupsIcon />
+                              <span>{database.teams.get(teamId)?.name}</span>
+                            </Typography>
+                          ))}
+                        </Box>
+                      }
+                    >
+                      <InfoIcon />
+                    </Tooltip>
+                  </Box>
                 </ListItem>
               )}
             </List>
