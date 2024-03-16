@@ -19,6 +19,8 @@ import {
   useScrollTrigger,
 } from '@mui/material'
 import React, { Suspense, lazy, useCallback, useMemo, useState } from 'react'
+import { DndProvider } from 'react-dnd'
+import { HTML5Backend } from 'react-dnd-html5-backend'
 import { useTranslation } from 'react-i18next'
 import { HashRouter, Route, Routes, useMatch } from 'react-router-dom'
 import './App.scss'
@@ -117,21 +119,23 @@ function App() {
           <SnowContext.Provider value={SnowContextObj}>
             <DatabaseContext.Provider value={dbContextObj}>
               <ErrorBoundary>
-                <HashRouter basename="/">
-                  <Suspense fallback={null}>
-                    <MatchTitle />
-                  </Suspense>
-                  <Content />
-                  <ScrollTop>
-                    <Fab
-                      color="secondary"
-                      size="small"
-                      aria-label="scroll back to top"
-                    >
-                      <KeyboardArrowUp />
-                    </Fab>
-                  </ScrollTop>
-                </HashRouter>
+                <DndProvider backend={HTML5Backend}>
+                  <HashRouter basename="/">
+                    <Suspense fallback={null}>
+                      <MatchTitle />
+                    </Suspense>
+                    <Content />
+                    <ScrollTop>
+                      <Fab
+                        color="secondary"
+                        size="small"
+                        aria-label="scroll back to top"
+                      >
+                        <KeyboardArrowUp />
+                      </Fab>
+                    </ScrollTop>
+                  </HashRouter>
+                </DndProvider>
               </ErrorBoundary>
             </DatabaseContext.Provider>
           </SnowContext.Provider>
