@@ -123,9 +123,7 @@ export default function TeamSetting({
           endIcon={<SettingsIcon />}
           onClick={() => setOpen((open) => !open)}
         >
-          <Typography variant="h6">
-            {truncateString(team.name, 100)}
-          </Typography>
+          <Typography variant="h6">{truncateString(team.name, 100)}</Typography>
         </Button>
       </BootstrapTooltip>
 

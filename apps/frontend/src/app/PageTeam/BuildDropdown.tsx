@@ -27,7 +27,12 @@ export default function BuildDropdown({
       startIcon={<CheckroomIcon />}
       title={
         <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap' }}>
-          <span>{truncateString(database.teams.getActiveBuildName(loadoutDatum), 50)}</span>
+          <span>
+            {truncateString(
+              database.teams.getActiveBuildName(loadoutDatum),
+              50
+            )}
+          </span>
           {buildType === 'tc' && <SqBadge color="success">TC</SqBadge>}
         </Box>
       }
