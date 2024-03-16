@@ -1,7 +1,5 @@
-const { sep, posix } = require('node:path');
+const { sep, posix, dirname } = require('node:path');
 const ts = require('typescript');
-
-var languageService;
 
 /**
  * Organize the given code's imports.
@@ -13,9 +11,7 @@ module.exports.organize = (code, { filepath = 'file.ts', organizeImportsSkipDest
 	if (sep !== posix.sep) {
 		filepath = filepath.split(sep).join(posix.sep);
 	}
-
-	languageService ??= getLanguageService(parser, filepath, code);
-
+	const languageService = getLanguageService(parser, filepath, code);
 	const fileChanges = languageService.organizeImports(
 		{ type: 'file', fileName: filepath, skipDestructiveCodeActions: organizeImportsSkipDestructiveCodeActions },
 		{},
@@ -47,8 +43,8 @@ const getLanguageService = (parser, filepath, code) => {
  * @returns {ts.LanguageServiceHost}
  */
 function getTypeScriptLanguageServiceHost(path, content) {
-	const compilerOptions = getCompilerOptions();
-
+	const tsconfig = ts.findConfigFile(path, ts.sys.fileExists);
+	const compilerOptions = getCompilerOptions(tsconfig);
 	return {
 		directoryExists: ts.sys.directoryExists,
 		fileExists: ts.sys.fileExists,
@@ -71,9 +67,14 @@ function getTypeScriptLanguageServiceHost(path, content) {
 
 /**
  * Get the compiler options from the path to a tsconfig.
+ *
+ * @param {string | undefined} tsconfig path to tsconfig
  */
-function getCompilerOptions() {
-	const compilerOptions = ts.getDefaultCompilerOptions();
+function getCompilerOptions(tsconfig) {
+	const compilerOptions = tsconfig
+		? ts.parseJsonConfigFileContent(ts.readConfigFile(tsconfig, ts.sys.readFile).config, ts.sys, dirname(tsconfig))
+				.options
+		: ts.getDefaultCompilerOptions();
 	compilerOptions.allowJs = true; // for automatic JS support
 	return compilerOptions;
 }
