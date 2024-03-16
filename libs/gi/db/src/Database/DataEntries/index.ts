@@ -2,8 +2,8 @@ import {
   characterSortKeys,
   type CharacterSortKey,
 } from './DisplayCharacterEntry'
-import type { TimeZoneKey } from './DisplayTool'
 import { teamSortKeys, type TeamSortKey } from './DisplayTeamEntry'
+import type { TimeZoneKey } from './DisplayTool'
 import { RESIN_MAX, timeZones } from './DisplayTool'
-export { RESIN_MAX, characterSortKeys, timeZones, teamSortKeys }
-export type { CharacterSortKey, TimeZoneKey, TeamSortKey }
+export { RESIN_MAX, characterSortKeys, teamSortKeys, timeZones }
+export type { CharacterSortKey, TeamSortKey, TimeZoneKey }

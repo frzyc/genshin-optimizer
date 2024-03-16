@@ -6,13 +6,13 @@ import {
   allBoolConditionals,
   allListConditionals,
   allNumConditionals,
+  allStacks,
+  enemyDebuff,
+  register,
   self,
   selfBuff,
   team,
   teamBuff,
-  enemyDebuff,
-  allStacks,
-  register,
 } from '../util'
 import { dataGenToCharInfo, dmg, entriesForChar } from './util'
 

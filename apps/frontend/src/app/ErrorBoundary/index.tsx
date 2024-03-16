@@ -21,8 +21,8 @@ import type { WithTranslation } from 'react-i18next'
 import { Trans, withTranslation } from 'react-i18next'
 import CardLight from '../Components/Card/CardLight'
 import DatabaseCard from '../PageSettings/DatabaseCard'
-import SpaghettiCode from './SpaghettiCode.png'
 import { isDev } from '../Util/Util'
+import SpaghettiCode from './SpaghettiCode.png'
 
 interface Props extends WithTranslation {
   children?: ReactNode
