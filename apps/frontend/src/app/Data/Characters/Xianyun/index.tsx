@@ -421,13 +421,13 @@ const sheet: ICharacterSheet = {
             }),
           },
           {
-            text: ct.chg('burst.skillParams.4'),
+            text: st('interval'),
             value: dm.burst.deviceHealInterval,
             unit: 's',
             fixed: 1,
           },
           {
-            text: ct.chg('burst.skillParams.5'),
+            text: stg('duration'),
             value: dm.burst.duration,
             unit: 's',
           },

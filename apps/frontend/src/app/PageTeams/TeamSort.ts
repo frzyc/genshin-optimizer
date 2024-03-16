@@ -31,16 +31,21 @@ export function teamFilterConfigs(
   database: ArtCharDatabase
 ): TeamFilterConfigs {
   return {
-    charKeys: (teamId: string, filter: CharacterKey[]) =>
-      !filter.length ||
-      !!database.teams
+    charKeys: (teamId: string, filter: CharacterKey[]) => {
+      if (!filter.length) return true
+
+      const nonEmptyLoadoutData = database.teams
         .get(teamId)
         ?.loadoutData.filter(notEmpty)
-        .every(({ teamCharId }) =>
-          filter.includes(
-            database.teamChars.get(teamCharId)?.key as CharacterKey
-          )
-        ),
+      const characters = nonEmptyLoadoutData
+        ?.map(({ teamCharId }) => database.teamChars.get(teamCharId)?.key)
+        .filter(notEmpty)
+      const allFilteredCharInTeam = filter.every((charKey) =>
+        characters?.includes(charKey)
+      )
+
+      return allFilteredCharInTeam
+    },
     name: (teamId: string, filter: string) =>
       !filter ||
       !!database.teams
