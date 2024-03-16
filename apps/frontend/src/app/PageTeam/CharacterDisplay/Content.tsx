@@ -13,11 +13,6 @@ import { Suspense, useContext } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Route, Link as RouterLink, Routes } from 'react-router-dom'
 import CardLight from '../../Components/Card/CardLight'
-import {
-  HitModeToggle,
-  InfusionAuraDropdown,
-  ReactionToggle,
-} from '../../Components/HitModeEditor'
 import SqBadge from '../../Components/SqBadge'
 import { FormulaDataContext } from '../../Context/FormulaDataContext'
 import { TeamCharacterContext } from '../../Context/TeamCharacterContext'
@@ -56,20 +51,6 @@ export default function Content({ tab }: { tab: string }) {
         <DetailStatButton />
         <CustomMultiTargetButton />
         <FormulasButton />
-      </Box>
-      <Box
-        sx={{
-          display: 'flex',
-          gap: 1,
-          flexWrap: 'wrap',
-          '& button,.MuiToggleButtonGroup-root': {
-            flexGrow: 1,
-          },
-        }}
-      >
-        <HitModeToggle size="small" />
-        <InfusionAuraDropdown />
-        <ReactionToggle size="small" />
       </Box>
       <CardLight>
         <TabNav tab={tab} characterKey={characterKey} isTCBuild={isTCBuild} />
