@@ -1,5 +1,6 @@
 import { useBoolState, useTimeout } from '@genshin-optimizer/common/react-util'
 import { SqBadge } from '@genshin-optimizer/common/ui'
+import type { Identifier, XYCoord } from 'dnd-core'
 import {
   arrayMove,
   clamp,
@@ -55,6 +56,7 @@ import {
   useContext,
   useEffect,
   useMemo,
+  useRef,
   useState,
 } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
@@ -83,6 +85,7 @@ import {
 } from '../../Types/consts'
 import OptimizationTargetSelector from './Tabs/TabOptimize/Components/OptimizationTargetSelector'
 import { TargetSelectorModal } from './Tabs/TabOptimize/Components/TargetSelectorModal'
+import { useDrag, useDrop } from 'react-dnd'
 
 const MAX_DESC_TOOLTIP_LENGTH = 300
 
@@ -359,29 +362,30 @@ function CustomMultiTargetDisplay({
     },
     [target, setTarget]
   )
-
-  const customTargetDisplays = useMemo(
-    () =>
-      target.targets.map((t, i) => (
-        <CustomTargetDisplay
-          key={t.path.join() + i}
-          customTarget={t}
-          setCustomTarget={setCustomTarget(i)}
-          deleteCustomTarget={deleteCustomTarget(i)}
-          rank={i + 1}
-          maxRank={target.targets.length}
-          setTargetIndex={setTargetIndex(i)}
-          onDup={dupCustomTarget(i)}
-        />
-      )),
-    [
-      deleteCustomTarget,
-      dupCustomTarget,
-      setCustomTarget,
-      setTargetIndex,
-      target.targets,
-    ]
+  const onMove = useCallback(
+    (dragIndex: number, hoverIndex: number) => {
+      const targets = [...target.targets]
+      targets.splice(dragIndex, 1)
+      targets.splice(hoverIndex, 0, target.targets[dragIndex])
+      setTarget({ ...target, targets })
+    },
+    [setTarget, target]
   )
+
+  const customTargetDisplays = target.targets.map((t, i) => (
+    <CustomTargetDisplay
+      key={JSON.stringify(t)} // TODO: needs to be unique for drag and drop, so duplicated targets are not exchangeable.
+      customTarget={t}
+      setCustomTarget={setCustomTarget(i)}
+      deleteCustomTarget={deleteCustomTarget(i)}
+      rank={i + 1}
+      index={i}
+      maxRank={target.targets.length}
+      setTargetIndex={setTargetIndex(i)}
+      onDup={dupCustomTarget(i)}
+      onMove={onMove}
+    />
+  ))
 
   return (
     <Accordion sx={{ bgcolor: 'contentLight.main' }} expanded={expanded}>
@@ -559,23 +563,101 @@ const wrapperFunc = (e: JSX.Element, key?: string) => (
     {e}
   </Grid>
 )
+
 function CustomTargetDisplay({
   customTarget,
   setCustomTarget,
   deleteCustomTarget,
   rank,
+  index,
   maxRank,
   setTargetIndex,
   onDup,
+  onMove,
 }: {
   customTarget: CustomTarget
   setCustomTarget: (t: CustomTarget) => void
   deleteCustomTarget: () => void
   rank: number
+  index: number
   maxRank: number
   setTargetIndex: (ind?: number) => void
   onDup: () => void
+  onMove: (dragIndex: number, hoverIndex: number) => void
 }) {
+  const ref = useRef<HTMLDivElement>(null)
+  const [{ handlerId }, drop] = useDrop<
+    { index: number },
+    void,
+    { handlerId: Identifier | null }
+  >({
+    accept: 'CustomTarget',
+    collect(monitor) {
+      return {
+        handlerId: monitor.getHandlerId(),
+      }
+    },
+    hover(item: { index: number }, monitor) {
+      if (!ref.current) {
+        return
+      }
+      const dragIndex = item.index
+      const hoverIndex = index
+
+      // Don't replace items with themselves
+      if (dragIndex === hoverIndex) {
+        return
+      }
+
+      // Determine rectangle on screen
+      const hoverBoundingRect = ref.current?.getBoundingClientRect()
+
+      // Get vertical middle
+      const hoverMiddleY =
+        (hoverBoundingRect.bottom - hoverBoundingRect.top) / 2
+
+      // Determine mouse position
+      const clientOffset = monitor.getClientOffset()
+
+      // Get pixels to the top
+      const hoverClientY = (clientOffset as XYCoord).y - hoverBoundingRect.top
+
+      // Only perform the move when the mouse has crossed half of the items height
+      // When dragging downwards, only move when the cursor is below 50%
+      // When dragging upwards, only move when the cursor is above 50%
+
+      // Dragging downwards
+      if (dragIndex < hoverIndex && hoverClientY < hoverMiddleY) {
+        return
+      }
+
+      // Dragging upwards
+      if (dragIndex > hoverIndex && hoverClientY > hoverMiddleY) {
+        return
+      }
+
+      // Time to actually perform the action
+      onMove(dragIndex, hoverIndex)
+
+      // Note: we're mutating the monitor item here!
+      // Generally it's better to avoid mutations,
+      // but it's good here for the sake of performance
+      // to avoid expensive index searches.
+      item.index = hoverIndex
+    },
+  })
+
+  const [{ isDragging }, drag] = useDrag({
+    type: 'CustomTarget',
+    item: () => {
+      return { index }
+    },
+    collect: (monitor: any) => ({
+      isDragging: monitor.isDragging(),
+      // istarget:monitor.
+    }),
+  })
+  drag(drop(ref))
   const { t } = useTranslation('page_character')
   const { characterSheet } = useContext(CharacterContext)
   const { data } = useContext(DataContext)
@@ -609,7 +691,16 @@ function CustomTargetDisplay({
     (path[0] === 'normal' || path[0] === 'charged' || path[0] === 'plunging')
   const isTransformativeReaction = path[0] === 'reaction'
   return (
-    <CardDark sx={{ display: 'flex' }}>
+    <CardDark
+      sx={{
+        display: 'flex',
+        opacity: isDragging ? 0.5 : 1,
+        cursor: 'move',
+        boxShadow: isDragging ? '0px 0px 0px 2px green inset' : undefined,
+      }}
+      ref={ref}
+      data-handler-id={handlerId}
+    >
       <Box sx={{ p: 1, flexGrow: 1 }}>
         <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap' }}>
           <CustomNumberInput
