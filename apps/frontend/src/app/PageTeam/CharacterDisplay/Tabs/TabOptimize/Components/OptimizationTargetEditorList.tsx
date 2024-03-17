@@ -12,7 +12,7 @@ import CustomNumberInput, {
 } from '../../../../../Components/CustomNumberInput'
 import { DataContext } from '../../../../../Context/DataContext'
 import type { NodeDisplay } from '../../../../../Formula/uiData'
-import { objPathValue } from '../../../../../Util/Util'
+import { objPathValue } from '@genshin-optimizer/common/util'
 import OptimizationTargetSelector from './OptimizationTargetSelector'
 
 type OptimizationTargetEditorListProps = {

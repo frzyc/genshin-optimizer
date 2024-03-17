@@ -8,7 +8,7 @@ import SqBadge from '../../../../../Components/SqBadge'
 import { DataContext } from '../../../../../Context/DataContext'
 import { getDisplayHeader } from '../../../../../Formula/DisplayUtil'
 import type { NodeDisplay } from '../../../../../Formula/uiData'
-import { objPathValue } from '../../../../../Util/Util'
+import { objPathValue } from '@genshin-optimizer/common/util'
 import type { TargetSelectorModalProps } from './TargetSelectorModal'
 import { TargetSelectorModal } from './TargetSelectorModal'
 

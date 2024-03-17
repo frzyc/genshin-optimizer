@@ -9,7 +9,7 @@ import {
   subscript,
   sum,
 } from '../../../../Formula/utils'
-import { range } from '../../../../Util/Util'
+import { range } from '@genshin-optimizer/common/util'
 import { cond, st, stg, trans } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'

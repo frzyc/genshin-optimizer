@@ -15,7 +15,7 @@ import {
   sum,
 } from '../../../Formula/utils'
 import { absorbableEle } from '../../../Types/consts'
-import { range } from '../../../Util/Util'
+import { range } from '@genshin-optimizer/common/util'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import type { ICharacterSheet } from '../ICharacterSheet.d'

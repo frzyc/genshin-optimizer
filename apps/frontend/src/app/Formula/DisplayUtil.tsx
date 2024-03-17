@@ -11,7 +11,7 @@ import { getArtSheet } from '../Data/Artifacts'
 import { artifactDefIcon } from '../Data/Artifacts/ArtifactSheet'
 import { getCharSheet } from '../Data/Characters'
 import { getWeaponSheet } from '../Data/Weapons'
-import { range } from '../Util/Util'
+import { range } from '@genshin-optimizer/common/util'
 import type { DisplaySub } from './type'
 import type { NodeDisplay, UIData } from './uiData'
 

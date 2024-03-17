@@ -17,7 +17,7 @@ import {
   subscript,
 } from '../../../Formula/utils'
 import KeyMap from '../../../KeyMap'
-import { range } from '../../../Util/Util'
+import { range } from '@genshin-optimizer/common/util'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import type { ICharacterSheet } from '../ICharacterSheet.d'

@@ -17,7 +17,7 @@ import CardDark from '../Components/Card/CardDark'
 import CardLight from '../Components/Card/CardLight'
 import { StyledInputBase } from '../Components/CustomNumberInput'
 import ModalWrapper from '../Components/ModalWrapper'
-import { range } from '../Util/Util'
+import { range } from '@genshin-optimizer/common/util'
 import UploadCard from './UploadCard'
 
 export default function DatabaseCard({

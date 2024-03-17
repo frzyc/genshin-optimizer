@@ -25,7 +25,7 @@ import {
   uiDataForTeam,
 } from '../Formula/api'
 import type { Data } from '../Formula/type'
-import { objectMap } from '../Util/Util'
+import { objMap } from '@genshin-optimizer/common/util'
 
 type TeamDataBundle = {
   teamData: Dict<CharacterKey, Data[]>
@@ -131,7 +131,7 @@ function getTeamDataCalc(
 
   const calcData = uiDataForTeam(teamData, gender, characterKey)
 
-  const data = objectMap(calcData, (obj, ck) => {
+  const data = objMap(calcData, (obj, ck) => {
     const { data: _, ...rest } = teamBundle[ck]!
     return { ...obj, ...rest }
   })

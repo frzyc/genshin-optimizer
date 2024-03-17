@@ -11,7 +11,7 @@ import {
   sum,
   threshold,
 } from '../../../Formula/utils'
-import { cartesian } from '../../../Util/Util'
+import { cartesian } from '@genshin-optimizer/common/util'
 import type { ArtifactsBySlot, DynStat } from '../../common'
 import type { Linear } from './linearUB'
 import { linearUB } from './linearUB'

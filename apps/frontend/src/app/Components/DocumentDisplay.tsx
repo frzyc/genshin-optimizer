@@ -9,7 +9,7 @@ import type {
   IDocumentHeader,
   IDocumentText,
 } from '../Types/sheet'
-import { evalIfFunc } from '../Util/Util'
+import { evalIfFunc } from '@genshin-optimizer/common/util'
 import CardHeaderCustom from './Card/CardHeaderCustom'
 import ConditionalDisplay from './Conditional/ConditionalDisplay'
 import FieldsDisplay from './FieldDisplay'
