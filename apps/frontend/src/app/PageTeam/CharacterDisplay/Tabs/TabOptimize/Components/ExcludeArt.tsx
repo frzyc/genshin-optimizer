@@ -9,14 +9,17 @@ import { useDatabase, useOptConfig } from '@genshin-optimizer/gi/db-ui'
 import AddIcon from '@mui/icons-material/Add'
 import CheckBoxIcon from '@mui/icons-material/CheckBox'
 import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank'
+import CloseIcon from '@mui/icons-material/Close'
 import SettingsIcon from '@mui/icons-material/Settings'
 import {
   Box,
   Button,
   ButtonGroup,
   CardContent,
+  CardHeader,
   Divider,
   Grid,
+  IconButton,
   Skeleton,
   Typography,
 } from '@mui/material'
@@ -33,7 +36,6 @@ import ArtifactCardNano from '../../../../../Components/Artifact/ArtifactCardNan
 import ArtifactFilterDisplay from '../../../../../Components/Artifact/ArtifactFilterDisplay'
 import CardDark from '../../../../../Components/Card/CardDark'
 import CardLight from '../../../../../Components/Card/CardLight'
-import CloseButton from '../../../../../Components/CloseButton'
 import InfoTooltip from '../../../../../Components/InfoTooltip'
 import ModalWrapper from '../../../../../Components/ModalWrapper'
 import SqBadge from '../../../../../Components/SqBadge'
@@ -85,6 +87,7 @@ export default function ExcludeArt({
       }),
     [database, optConfigId, useExcludedArts]
   )
+
   return (
     <>
       {/* Begin modal */}
@@ -94,16 +97,22 @@ export default function ExcludeArt({
         containerProps={{ maxWidth: 'xl' }}
       >
         <CardDark>
-          <CardContent>
-            <Box display="flex" gap={1} alignItems="center">
-              <Typography variant="h6">{t`excludeArt.title_exclude`}</Typography>
-              <InfoTooltip
-                title={<Typography>{t`excludeArt.title_tooltip`}</Typography>}
-              />
-              <Box flexGrow={1} />
-              <CloseButton onClick={onClose} size="small" />
-            </Box>
-          </CardContent>
+          <CardHeader
+            title={
+              <Box display="flex" gap={1} alignItems="center">
+                <Typography variant="h6">{t`excludeArt.title_exclude`}</Typography>
+                <InfoTooltip
+                  title={<Typography>{t`excludeArt.title_tooltip`}</Typography>}
+                />
+              </Box>
+            }
+            action={
+              <IconButton onClick={onClose}>
+                <CloseIcon />
+              </IconButton>
+            }
+          />
+
           <Divider />
           <CardContent>
             <ArtifactSelectModal
@@ -257,17 +266,14 @@ function ArtifactSelectModal({
       containerProps={{ maxWidth: 'xl' }}
     >
       <CardDark>
-        <CardContent
-          sx={{
-            py: 1,
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-          }}
-        >
-          <Typography variant="h6">{t`excludeArt.selExc`}</Typography>
-          <CloseButton onClick={onClose} />
-        </CardContent>
+        <CardHeader
+          title={t`excludeArt.selExc`}
+          action={
+            <IconButton onClick={onClose}>
+              <CloseIcon />
+            </IconButton>
+          }
+        />
         <Divider />
         <CardContent>
           <Suspense

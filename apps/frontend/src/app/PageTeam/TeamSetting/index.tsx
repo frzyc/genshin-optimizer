@@ -18,12 +18,12 @@ import {
   CardHeader,
   Divider,
   Grid,
+  IconButton,
   TextField,
   Typography,
 } from '@mui/material'
 import { Suspense, useDeferredValue, useEffect, useMemo, useState } from 'react'
 import CharacterSelectionModal from '../../Components/Character/CharacterSelectionModal'
-import CloseButton from '../../Components/CloseButton'
 import CharIconSide from '../../Components/Image/CharIconSide'
 import type { TeamData, dataContextObj } from '../../Context/DataContext'
 import { DataContext } from '../../Context/DataContext'
@@ -141,7 +141,11 @@ export default function TeamSetting({
                 <span>Team Settings</span>
               </Box>
             }
-            action={<CloseButton onClick={() => setOpen(false)} />}
+            action={
+              <IconButton onClick={() => setOpen(false)}>
+                <CloseIcon />
+              </IconButton>
+            }
           />
           <Divider />
           <CardContent
