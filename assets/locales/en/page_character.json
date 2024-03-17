@@ -63,7 +63,7 @@
     "kqmsDialog": {
       "kqmsBtn": "Use KQMS",
       "title": "Use KQMS?",
-      "content": "This will replace your current <strong>substat setup</strong> with one that adheres to the <4>KQM Standards</4>."
+      "content": "This will replace your current <strong>substat setup</strong> with one that adheres to the <5>KQM Standards</5>."
     },
     "gcsimDialog": {
       "title": "gcsim Export",
