@@ -168,8 +168,21 @@ function Page({ teamId }: { teamId: string }) {
     <CardThemed>
       <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
         <Box sx={{ display: 'flex', gap: 1 }}>
-          <TeamSetting teamId={teamId} teamData={teamData} />
-          <EnemyEditorElement teamId={teamId} />
+          <TeamSetting
+            teamId={teamId}
+            teamData={teamData}
+            buttonProps={{
+              sx: { flexGrow: 1, backgroundColor: 'contentLight.main' },
+              variant: 'outlined',
+            }}
+          />
+          <EnemyEditorElement
+            teamId={teamId}
+            buttonProps={{
+              sx: { backgroundColor: 'contentLight.main' },
+              variant: 'outlined',
+            }}
+          />
         </Box>
 
         <TeamCharacterSelector

@@ -13,6 +13,7 @@ import { KeyMap } from '@genshin-optimizer/gi/keymap'
 import { ElementIcon } from '@genshin-optimizer/gi/svgicons'
 import { CheckBox, CheckBoxOutlineBlank, Replay } from '@mui/icons-material'
 import BarChartIcon from '@mui/icons-material/BarChart'
+import type { ButtonProps } from '@mui/material'
 import {
   Box,
   Button,
@@ -26,8 +27,13 @@ import {
 import { useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import StatInput from '../Components/StatInput'
-
-export function EnemyEditorElement({ teamId }: { teamId: string }) {
+export function EnemyEditorElement({
+  teamId,
+  buttonProps = {},
+}: {
+  teamId: string
+  buttonProps?: ButtonProps
+}) {
   const { t } = useTranslation('ui')
   const database = useDatabase()
   const [show, onShow, onHide] = useBoolState()
@@ -85,7 +91,12 @@ export function EnemyEditorElement({ teamId }: { teamId: string }) {
           </CardContent>
         </CardThemed>
       </ModalWrapper>
-      <Button onClick={onShow} color="info" startIcon={<BarChartIcon />}>
+      <Button
+        onClick={onShow}
+        color="info"
+        startIcon={<BarChartIcon />}
+        {...buttonProps}
+      >
         <Box sx={{ display: 'flex', gap: 1 }}>
           <span>Enemy Config</span>
           <Chip
