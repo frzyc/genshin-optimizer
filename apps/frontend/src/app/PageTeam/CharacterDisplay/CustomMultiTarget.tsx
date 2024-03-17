@@ -83,7 +83,7 @@ import {
 } from '../../Types/consts'
 import OptimizationTargetSelector from './Tabs/TabOptimize/Components/OptimizationTargetSelector'
 import { TargetSelectorModal } from './Tabs/TabOptimize/Components/TargetSelectorModal'
-
+import DashboardCustomizeIcon from '@mui/icons-material/DashboardCustomize'
 const MAX_DESC_TOOLTIP_LENGTH = 300
 
 export function CustomMultiTargetButton() {
@@ -211,7 +211,11 @@ export function CustomMultiTargetButton() {
     <Suspense
       fallback={<Skeleton variant="rectangular" height="100%" width={100} />}
     >
-      <Button color="info" onClick={onShow} startIcon={<SettingsIcon />}>
+      <Button
+        color="info"
+        onClick={onShow}
+        startIcon={<DashboardCustomizeIcon />}
+      >
         {t`multiTarget.title`}{' '}
         <SqBadge color={customMultiTargets.length ? 'success' : 'secondary'}>
           {customMultiTargets.length}
@@ -228,6 +232,7 @@ export function CustomMultiTargetButton() {
               sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}
             >
               <Box display="flex" gap={1} alignItems="center">
+                <DashboardCustomizeIcon />
                 <Typography variant="h6">{t`multiTarget.title`}</Typography>
                 <InfoTooltip
                   title={
