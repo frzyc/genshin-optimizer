@@ -1,4 +1,5 @@
 import { useForceUpdate } from '@genshin-optimizer/common/react-util'
+import { objMap } from '@genshin-optimizer/common/util'
 import type { CharacterKey, GenderKey } from '@genshin-optimizer/gi/consts'
 import type {
   ArtCharDatabase,
@@ -25,7 +26,6 @@ import {
   uiDataForTeam,
 } from '../Formula/api'
 import type { Data } from '../Formula/type'
-import { objMap } from '@genshin-optimizer/common/util'
 
 type TeamDataBundle = {
   teamData: Dict<CharacterKey, Data[]>

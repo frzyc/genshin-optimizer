@@ -1,4 +1,5 @@
 import { CardThemed } from '@genshin-optimizer/common/ui'
+import { range } from '@genshin-optimizer/common/util'
 import { maxConstellationCount } from '@genshin-optimizer/gi/consts'
 import type { ICharacter } from '@genshin-optimizer/gi/good'
 import {
@@ -30,7 +31,6 @@ import { uiInput as input } from '../../../Formula'
 import type { NodeDisplay } from '../../../Formula/uiData'
 import useCharacterReducer from '../../../ReactHooks/useCharacterReducer'
 import type { DocumentSection } from '../../../Types/sheet'
-import { range } from '@genshin-optimizer/common/util'
 
 const talentSpacing = {
   xs: 12,

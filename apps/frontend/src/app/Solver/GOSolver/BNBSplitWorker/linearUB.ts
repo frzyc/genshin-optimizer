@@ -1,5 +1,5 @@
-import type { OptNode } from '../../../Formula/optimization'
 import { assertUnreachable, cartesian } from '@genshin-optimizer/common/util'
+import type { OptNode } from '../../../Formula/optimization'
 import type { ArtifactsBySlot, DynStat, MinMax } from '../../common'
 import { computeFullArtRange } from '../../common'
 import { polyUB } from './polyUB'

@@ -1,5 +1,6 @@
 import type { CardBackgroundColor } from '@genshin-optimizer/common/ui'
 import { CardThemed } from '@genshin-optimizer/common/ui'
+import { evalIfFunc } from '@genshin-optimizer/common/util'
 import { Box, Divider, Typography } from '@mui/material'
 import { useContext } from 'react'
 import { DataContext } from '../Context/DataContext'
@@ -9,7 +10,6 @@ import type {
   IDocumentHeader,
   IDocumentText,
 } from '../Types/sheet'
-import { evalIfFunc } from '@genshin-optimizer/common/util'
 import CardHeaderCustom from './Card/CardHeaderCustom'
 import ConditionalDisplay from './Conditional/ConditionalDisplay'
 import FieldsDisplay from './FieldDisplay'

@@ -1,5 +1,5 @@
-import type { DynStat } from '../Solver/common'
 import { assertUnreachable, objPathValue } from '@genshin-optimizer/common/util'
+import type { DynStat } from '../Solver/common'
 import { customMapFormula, forEachNodes, mapFormulas } from './internal'
 import type {
   AnyNode,

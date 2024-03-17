@@ -1,5 +1,5 @@
-import type { WorkerCommand, WorkerResult } from '..'
 import { assertUnreachable } from '@genshin-optimizer/common/util'
+import type { WorkerCommand, WorkerResult } from '..'
 import type { RequestFilter } from '../common'
 import {
   artSetPerm,
