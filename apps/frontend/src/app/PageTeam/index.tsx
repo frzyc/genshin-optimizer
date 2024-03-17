@@ -172,8 +172,12 @@ function Page({ teamId }: { teamId: string }) {
             teamId={teamId}
             teamData={teamData}
             buttonProps={{
-              sx: { flexGrow: 1, backgroundColor: 'contentLight.main' },
+              sx: {
+                flexGrow: 1,
+                backgroundColor: 'contentLight.main',
+              },
               variant: 'outlined',
+              color: 'info',
             }}
           />
           <EnemyEditorElement

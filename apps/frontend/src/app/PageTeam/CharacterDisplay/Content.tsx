@@ -123,7 +123,6 @@ function TabNav({
   const { gender } = useDBMeta()
   const elementKey = getCharData(characterKey).ele
   const bar = characterAsset(characterKey, 'bar', gender)
-  console.log({ elementKey, bar })
   return (
     <CardThemed
       bgt="light"
@@ -143,7 +142,7 @@ function TabNav({
             left: 0,
             width: '100%',
             height: '100%',
-            opacity: 0.4,
+            opacity: 0.6,
             backgroundImage: `url(${bar})`,
             backgroundPosition: 'center',
             backgroundSize: 'cover',
@@ -162,7 +161,7 @@ function TabNav({
               backgroundColor: 'rgba(255,255,255,0.1)',
             },
             '& .MuiTab-root.Mui-selected': {
-              color: elementKey && theme.palette[elementKey]?.main,
+              color: 'white !important',
             },
             '& .MuiTabs-indicator': {
               backgroundColor: elementKey && theme.palette[elementKey]?.main,
