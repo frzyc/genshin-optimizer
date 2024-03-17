@@ -27,6 +27,7 @@ import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import AddIcon from '@mui/icons-material/Add'
 import ContentCopyIcon from '@mui/icons-material/ContentCopy'
 import ContentPasteIcon from '@mui/icons-material/ContentPaste'
+import DashboardCustomizeIcon from '@mui/icons-material/DashboardCustomize'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import ExpandLessIcon from '@mui/icons-material/ExpandLess'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
@@ -83,7 +84,6 @@ import {
 } from '../../Types/consts'
 import OptimizationTargetSelector from './Tabs/TabOptimize/Components/OptimizationTargetSelector'
 import { TargetSelectorModal } from './Tabs/TabOptimize/Components/TargetSelectorModal'
-import DashboardCustomizeIcon from '@mui/icons-material/DashboardCustomize'
 const MAX_DESC_TOOLTIP_LENGTH = 300
 
 export function CustomMultiTargetButton() {
