@@ -3,6 +3,7 @@ import type {
   GeneralAutocompleteOption,
 } from '@genshin-optimizer/common/ui'
 import { GeneralAutocompleteMulti } from '@genshin-optimizer/common/ui'
+import { notEmpty } from '@genshin-optimizer/common/util'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import { charKeyToLocGenderedCharKey } from '@genshin-optimizer/gi/consts'
 import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
@@ -13,7 +14,6 @@ import { useTranslation } from 'react-i18next'
 import { getCharSheet } from '../../Data/Characters'
 import { bulkCatTotal } from '../../Util/totalUtils'
 import CharIconSide from '../Image/CharIconSide'
-import { notEmpty } from '@genshin-optimizer/common/util'
 
 export function CharacterMultiAutocomplete({
   teamIds,

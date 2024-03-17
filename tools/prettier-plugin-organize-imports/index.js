@@ -3,7 +3,6 @@
  * the next major release.
  */
 const { parsers: babelParsers } = require('prettier/parser-babel');
-const { parsers: htmlParsers } = require('prettier/parser-html');
 const { parsers: typescriptParsers } = require('prettier/parser-typescript');
 
 const { organize } = require('./lib/organize');
@@ -31,10 +30,7 @@ const organizeImports = (code, options) => {
 	try {
 		return organize(code, options);
 	} catch (error) {
-		if (process.env.DEBUG) {
-			console.error(error);
-		}
-
+		console.error(error);
 		return code;
 	}
 };
@@ -72,7 +68,6 @@ const plugin = {
 		babel: withOrganizeImportsPreprocess(babelParsers.babel),
 		'babel-ts': withOrganizeImportsPreprocess(babelParsers['babel-ts']),
 		typescript: withOrganizeImportsPreprocess(typescriptParsers.typescript),
-		vue: withOrganizeImportsPreprocess(htmlParsers.vue),
 	},
 };
 

@@ -17285,7 +17285,7 @@ __metadata:
 
 "prettier-plugin-organize-imports@file:./tools/prettier-plugin-organize-imports::locator=genshin-optimizer%40workspace%3A.":
   version: 3.2.4
-  resolution: "prettier-plugin-organize-imports@file:./tools/prettier-plugin-organize-imports#./tools/prettier-plugin-organize-imports::hash=3e8fba&locator=genshin-optimizer%40workspace%3A."
+  resolution: "prettier-plugin-organize-imports@file:./tools/prettier-plugin-organize-imports#./tools/prettier-plugin-organize-imports::hash=faac83&locator=genshin-optimizer%40workspace%3A."
   peerDependencies:
     "@volar/vue-language-plugin-pug": ^1.0.4
     "@volar/vue-typescript": ^1.0.4
@@ -17296,7 +17296,7 @@ __metadata:
       optional: true
     "@volar/vue-typescript":
       optional: true
-  checksum: 0db93ce375a3f060b7ee78cb11fd3d6dea2db1bdae2d745b6ca8d0c3513da4235cbd8c089a2cc932ac2eb804cef128c481e3c9323e2871c29200c2c9fdda6a7a
+  checksum: dd89e48368ed1f662e02c60fe6dce425104a5a79aeca74afd48634b5b969fa06bd79af63cddf2bc6c9259c7040dd9b5b6e66f87c217a5d298da2680eaefc7339
   languageName: node
   linkType: hard
 
