@@ -168,7 +168,7 @@ function Page({ teamId }: { teamId: string }) {
     <CardThemed>
       <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
         <Box sx={{ display: 'flex', gap: 1 }}>
-          <TeamSetting teamId={teamId} dataContextValue={dataContextValue} />
+          <TeamSetting teamId={teamId} teamData={teamData} />
           <EnemyEditorElement teamId={teamId} />
         </Box>
 

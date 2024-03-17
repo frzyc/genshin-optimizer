@@ -68,7 +68,7 @@ export function TeamBuffDisplay() {
   return (
     <CardLight>
       <CardContent>
-        <Typography>Team Buffs</Typography>
+        <Typography>Received Team Buffs</Typography>
       </CardContent>
       <Divider />
       <CardContent>
@@ -209,8 +209,9 @@ export function TeammateDisplay({
             </CardThemed>
 
             <EquipmentRow loadoutDatum={loadoutDatum} />
-            <CharArtifactCondDisplay />
             <CharacterCardWeaponFull loadoutDatum={loadoutDatum} />
+            <TeamBuffDisplay />
+            <CharArtifactCondDisplay />
             <CharWeaponCondDisplay />
             <CharTalentCondDisplay />
           </Suspense>
