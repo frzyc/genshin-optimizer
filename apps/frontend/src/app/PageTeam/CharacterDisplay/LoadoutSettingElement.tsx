@@ -2,7 +2,6 @@ import {
   BootstrapTooltip,
   CardThemed,
   ModalWrapper,
-  SqBadge,
 } from '@genshin-optimizer/common/ui'
 import type { LoadoutDatum } from '@genshin-optimizer/gi/db'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
