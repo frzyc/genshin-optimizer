@@ -120,12 +120,6 @@ export default function LoadoutSettingElement({
               <Divider orientation="vertical" variant="middle" flexItem />
               <CheckroomIcon />
               <span>{database.teams.getActiveBuildName(loadoutDatum)}</span>
-              <SqBadge color={buildIds.length ? 'primary' : 'secondary'}>
-                {buildIds.length} Builds
-              </SqBadge>
-              <SqBadge color={buildTcIds.length ? 'primary' : 'secondary'}>
-                {buildTcIds.length} TC Builds
-              </SqBadge>
             </Typography>
           </Button>
         </BootstrapTooltip>

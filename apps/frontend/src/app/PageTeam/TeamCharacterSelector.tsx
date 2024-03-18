@@ -39,7 +39,7 @@ export default function TeamCharacterSelector({
   const selectedEle = elementArray[selectedIndex]
   return (
     <Box>
-      <CardThemed bgt="light">
+      <CardThemed sx={{ borderRadius: 0 }}>
         <Tabs
           variant="fullWidth"
           value={characterKey ?? 0}
@@ -67,6 +67,7 @@ export default function TeamCharacterSelector({
                 color: 'white !important',
               },
               '& .MuiTabs-indicator': {
+                height: '4px',
                 backgroundColor:
                   selectedEle && theme.palette[selectedEle]?.main,
               },

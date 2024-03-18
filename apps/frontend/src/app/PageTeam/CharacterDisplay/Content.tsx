@@ -142,7 +142,7 @@ function TabNav({
             left: 0,
             width: '100%',
             height: '100%',
-            opacity: 0.6,
+            opacity: 0.4,
             backgroundImage: `url(${bar})`,
             backgroundPosition: 'center',
             backgroundSize: 'cover',
@@ -163,8 +163,12 @@ function TabNav({
             '& .MuiTab-root.Mui-selected': {
               color: 'white !important',
             },
+            '& .MuiTab-root': {
+              textShadow: '#000 0 0 10px !important',
+            },
             '& .MuiTabs-indicator': {
               backgroundColor: elementKey && theme.palette[elementKey]?.main,
+              height: '4px',
             },
           }
         }}

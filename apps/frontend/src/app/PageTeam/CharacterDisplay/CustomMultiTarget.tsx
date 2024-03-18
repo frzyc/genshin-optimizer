@@ -222,10 +222,12 @@ export function CustomMultiTargetButton({
         startIcon={<DashboardCustomizeIcon />}
         {...buttonProps}
       >
-        {t`multiTarget.title`}{' '}
-        <SqBadge color={customMultiTargets.length ? 'success' : 'secondary'}>
-          {customMultiTargets.length}
-        </SqBadge>
+        <Box display="flex" gap={1}>
+          <span>{t`multiTarget.title`}</span>
+          <SqBadge color={customMultiTargets.length ? 'success' : 'secondary'}>
+            {customMultiTargets.length}
+          </SqBadge>
+        </Box>
       </Button>
       <DataContext.Provider value={dataContextObj}>
         <ModalWrapper

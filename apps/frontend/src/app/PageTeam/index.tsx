@@ -165,48 +165,49 @@ function Page({ teamId }: { teamId: string }) {
   }, [charUIData, teamData])
 
   return (
-    <CardThemed>
-      <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
-        <Box sx={{ display: 'flex', gap: 1 }}>
-          <TeamSetting
-            teamId={teamId}
-            teamData={teamData}
-            buttonProps={{
-              sx: {
-                flexGrow: 1,
-                backgroundColor: 'contentLight.main',
-              },
-              variant: 'outlined',
-              color: 'info',
-            }}
-          />
-          <EnemyEditorElement
-            teamId={teamId}
-            buttonProps={{
-              sx: { backgroundColor: 'contentLight.main' },
-              variant: 'outlined',
-            }}
-          />
-        </Box>
-
+    <Box sx={{ display: 'flex', gap: 1, flexDirection: 'column' }}>
+      <Box sx={{ display: 'flex', gap: 1 }}>
+        <TeamSetting
+          teamId={teamId}
+          teamData={teamData}
+          buttonProps={{
+            sx: {
+              flexGrow: 1,
+              backgroundColor: 'contentLight.main',
+            },
+            variant: 'outlined',
+            color: 'info',
+          }}
+        />
+        <EnemyEditorElement
+          teamId={teamId}
+          buttonProps={{
+            sx: { backgroundColor: 'contentLight.main' },
+            variant: 'outlined',
+          }}
+        />
+      </Box>
+      <CardThemed>
         <TeamCharacterSelector
           teamId={teamId}
           characterKey={characterKey}
           tab={tab}
         />
-        {teamCharacterContextValue ? (
-          dataContextValue ? (
-            <TeamCharacterContext.Provider value={teamCharacterContextValue}>
-              <DataContext.Provider value={dataContextValue}>
-                <InnerContent tab={tab} />
-              </DataContext.Provider>
-            </TeamCharacterContext.Provider>
-          ) : (
-            fallback
-          )
-        ) : null}
-      </CardContent>
-    </CardThemed>
+        <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
+          {teamCharacterContextValue ? (
+            dataContextValue ? (
+              <TeamCharacterContext.Provider value={teamCharacterContextValue}>
+                <DataContext.Provider value={dataContextValue}>
+                  <InnerContent tab={tab} />
+                </DataContext.Provider>
+              </TeamCharacterContext.Provider>
+            ) : (
+              fallback
+            )
+          ) : null}
+        </CardContent>
+      </CardThemed>
+    </Box>
   )
 }
 function InnerContent({ tab }: { tab: string }) {
