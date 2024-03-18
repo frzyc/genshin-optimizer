@@ -122,14 +122,12 @@ function TabNav({
   const { t } = useTranslation('page_character')
   const { gender } = useDBMeta()
   const elementKey = getCharData(characterKey).ele
-  const bar = characterAsset(characterKey, 'bar', gender)
+  const banner = characterAsset(characterKey, 'banner', gender)
   return (
     <CardThemed
       bgt="light"
       sx={(theme) => {
         return {
-          borderTopRightRadius: '36px',
-          borderBottomRightRadius: '36px',
           position: 'relative',
           boxShadow: elementKey
             ? `0px 0px 0px 0.5px ${theme.palette[elementKey].main} inset`
@@ -143,7 +141,7 @@ function TabNav({
             width: '100%',
             height: '100%',
             opacity: 0.4,
-            backgroundImage: `url(${bar})`,
+            backgroundImage: `url(${banner})`,
             backgroundPosition: 'center',
             backgroundSize: 'cover',
           },
