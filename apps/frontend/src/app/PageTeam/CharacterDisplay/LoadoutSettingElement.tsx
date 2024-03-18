@@ -108,21 +108,25 @@ export default function LoadoutSettingElement({
             ) : undefined
           }
         >
-          <Button
-            startIcon={<PersonIcon />}
-            endIcon={<SettingsIcon />}
-            color="info"
-            onClick={() => setOpen((o) => !o)}
-            {...buttonProps}
+          <Typography
+            sx={{ display: 'flex', gap: 1, alignItems: 'center', flexGrow: 1 }}
           >
-            <Typography sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
-              <strong>{teamChar.name}</strong>{' '}
-              <Divider orientation="vertical" variant="middle" flexItem />
-              <CheckroomIcon />
-              <span>{database.teams.getActiveBuildName(loadoutDatum)}</span>
-            </Typography>
-          </Button>
+            <strong>{teamChar.name}</strong>{' '}
+            <Divider orientation="vertical" variant="middle" flexItem />
+            <CheckroomIcon />
+            <span>{database.teams.getActiveBuildName(loadoutDatum)}</span>
+          </Typography>
         </BootstrapTooltip>
+        <Button
+          startIcon={<SettingsIcon />}
+          color="info"
+          onClick={() => setOpen((o) => !o)}
+          {...buttonProps}
+        >
+          <Typography sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
+            Loadout Settings/Build Management
+          </Typography>
+        </Button>
       </Box>
 
       <ModalWrapper open={open} onClose={() => setOpen(false)}>

@@ -120,22 +120,26 @@ export default function TeamSetting({
 
   return (
     <>
-      <BootstrapTooltip
-        title={
-          team.description ? (
-            <Typography>{team.description}</Typography>
-          ) : undefined
-        }
-      >
+      <Box sx={{ display: 'flex', gap: 1 }}>
+        <BootstrapTooltip
+          title={
+            team.description ? (
+              <Typography>{team.description}</Typography>
+            ) : undefined
+          }
+        >
+          <Typography variant="h4" align="center" sx={{ flexGrow: 1 }}>
+            {database.teams.get(teamId)?.name}
+          </Typography>
+        </BootstrapTooltip>
         <Button
-          startIcon={<GroupsIcon />}
-          endIcon={<SettingsIcon />}
+          startIcon={<SettingsIcon />}
           onClick={() => setOpen((open) => !open)}
           {...buttonProps}
         >
-          <Typography variant="h6">{team.name}</Typography>
+          <Typography variant="h6">Team Settings</Typography>
         </Button>
-      </BootstrapTooltip>
+      </Box>
 
       <ModalWrapper
         open={open}

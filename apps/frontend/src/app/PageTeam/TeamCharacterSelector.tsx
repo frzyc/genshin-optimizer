@@ -43,6 +43,7 @@ export default function TeamCharacterSelector({
         <Tabs
           variant="fullWidth"
           value={characterKey ?? 0}
+          indicatorColor="secondary"
           sx={(theme) => {
             const rgbas = elementArray.map((ele, i) => {
               if (!ele) return `rgba(0,0,0,0)`
@@ -51,25 +52,24 @@ export default function TeamCharacterSelector({
               const color = hexToColor(hex)
               if (!color) return `rgba(0,0,0,0)`
               return `rgba(${color.r},${color.g},${color.b},${
-                selectedIndex === i ? 0.5 : 0.15
+                selectedIndex === i ? 0.1 : 0.15
               })`
             })
             return {
               // will be in the form of `linear-gradient(to right, red 12.5%, orange 27.5%, yellow 62.5%, green 87.5%)`
-              background: `linear-gradient(to right, ${rgbas
-                .map((rgba, i) => `${rgba} ${i * 25 + 12.5}%`)
-                .join(', ')})`,
+              borderRadius: 0,
               '& .MuiTab-root:hover': {
                 transition: 'background-color 0.25s ease',
                 backgroundColor: 'rgba(255,255,255,0.1)',
               },
+              '& .MuiTab-root': { opacity: 0.5 },
               '& .Mui-selected': {
                 color: 'white !important',
+                opacity: 1,
+                backgroundColor: theme.palette.contentDark.main,
               },
               '& .MuiTabs-indicator': {
-                height: '4px',
-                backgroundColor:
-                  selectedEle && theme.palette[selectedEle]?.main,
+                height: '0px',
               },
             }
           }}

@@ -13,7 +13,7 @@ import { characterAsset } from '@genshin-optimizer/gi/assets'
 import { useDBMeta } from '@genshin-optimizer/gi/db-ui'
 import { getCharData } from '@genshin-optimizer/gi/stats'
 import type { ButtonProps } from '@mui/material'
-import { Box, Button, Skeleton, Tab, Tabs } from '@mui/material'
+import { Box, Button, CardContent, Skeleton, Tab, Tabs } from '@mui/material'
 import { Suspense, useContext } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Route, Link as RouterLink, Routes } from 'react-router-dom'
@@ -39,50 +39,50 @@ export default function Content({ tab }: { tab: string }) {
   const isTCBuild = !!(
     loadoutDatum.buildTcId && loadoutDatum.buildType === 'tc'
   )
-  const elementKey = getCharData(characterKey).ele
   return (
-    <>
-      <LoadoutSettingElement
-        buttonProps={{
-          fullWidth: true,
-          color: elementKey ?? 'info',
-          variant: 'outlined',
-          sx: { backgroundColor: 'contentLight.main' },
-        }}
-      />
-      <Box
-        sx={{
-          display: 'flex',
-          gap: 1,
-          flexWrap: 'wrap',
-        }}
-      >
-        <DetailStatButton
+    <CardThemed bgt="dark">
+      <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
+        <LoadoutSettingElement
           buttonProps={{
-            sx: { flexGrow: 1, backgroundColor: 'contentLight.main' },
-            color: elementKey ?? 'info',
+            color: 'info',
             variant: 'outlined',
+            sx: { backgroundColor: 'contentLight.main' },
           }}
         />
-        <CustomMultiTargetButton
-          buttonProps={{
-            sx: { flexGrow: 1, backgroundColor: 'contentLight.main' },
-            color: elementKey ?? 'info',
-            variant: 'outlined',
+        <Box
+          sx={{
+            display: 'flex',
+            gap: 1,
+            flexWrap: 'wrap',
           }}
-        />
-        <FormulasButton
-          buttonProps={{
-            sx: { flexGrow: 1, backgroundColor: 'contentLight.main' },
-            color: elementKey ?? 'info',
-            variant: 'outlined',
-          }}
-        />
-      </Box>
-      <TabNav tab={tab} characterKey={characterKey} isTCBuild={isTCBuild} />
-      <CharacterPanel isTCBuild={isTCBuild} />
-      <TabNav tab={tab} characterKey={characterKey} isTCBuild={isTCBuild} />
-    </>
+        >
+          <DetailStatButton
+            buttonProps={{
+              sx: { flexGrow: 1, backgroundColor: 'contentLight.main' },
+              color: 'info',
+              variant: 'outlined',
+            }}
+          />
+          <CustomMultiTargetButton
+            buttonProps={{
+              sx: { flexGrow: 1, backgroundColor: 'contentLight.main' },
+              color: 'info',
+              variant: 'outlined',
+            }}
+          />
+          <FormulasButton
+            buttonProps={{
+              sx: { flexGrow: 1, backgroundColor: 'contentLight.main' },
+              color: 'info',
+              variant: 'outlined',
+            }}
+          />
+        </Box>
+        <TabNav tab={tab} characterKey={characterKey} isTCBuild={isTCBuild} />
+        <CharacterPanel isTCBuild={isTCBuild} />
+        <TabNav tab={tab} characterKey={characterKey} isTCBuild={isTCBuild} />
+      </CardContent>
+    </CardThemed>
   )
 }
 
@@ -129,9 +129,6 @@ function TabNav({
       sx={(theme) => {
         return {
           position: 'relative',
-          boxShadow: elementKey
-            ? `0px 0px 0px 0.5px ${theme.palette[elementKey].main} inset`
-            : undefined,
           '&::before': {
             content: '""',
             display: 'block',
@@ -141,7 +138,6 @@ function TabNav({
             width: '100%',
             height: '100%',
             opacity: 0.4,
-            backgroundImage: `url(${banner})`,
             backgroundPosition: 'center',
             backgroundSize: 'cover',
           },
@@ -165,7 +161,6 @@ function TabNav({
               textShadow: '#000 0 0 10px !important',
             },
             '& .MuiTabs-indicator': {
-              backgroundColor: elementKey && theme.palette[elementKey]?.main,
               height: '4px',
             },
           }

@@ -164,28 +164,26 @@ function Page({ teamId }: { teamId: string }) {
   }, [charUIData, teamData])
 
   return (
-    <Box sx={{ display: 'flex', gap: 1, flexDirection: 'column' }}>
-      <Box sx={{ display: 'flex', gap: 1 }}>
+    <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+      <CardThemed bgt="normal">
         <TeamSetting
           teamId={teamId}
           teamData={teamData}
           buttonProps={{
             sx: {
-              flexGrow: 1,
               backgroundColor: 'contentLight.main',
+              borderRadius: 0,
             },
             variant: 'outlined',
             color: 'info',
           }}
         />
-      </Box>
-      <CardThemed>
-        <TeamCharacterSelector
-          teamId={teamId}
-          characterKey={characterKey}
-          tab={tab}
-        />
-        <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
+        <CardContent sx={{ display: 'flex', flexDirection: 'column' }}>
+          <TeamCharacterSelector
+            teamId={teamId}
+            characterKey={characterKey}
+            tab={tab}
+          />
           {teamCharacterContextValue ? (
             dataContextValue ? (
               <TeamCharacterContext.Provider value={teamCharacterContextValue}>
