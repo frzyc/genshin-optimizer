@@ -48,7 +48,6 @@ import { DataContext } from '../../../Context/DataContext'
 import { getCharSheet } from '../../../Data/Characters'
 import { uiInput as input } from '../../../Formula'
 import TeamCard from '../../../PageTeams/TeamCard'
-import CloseButton from '../../CloseButton'
 import ImgIcon from '../../Image/ImgIcon'
 import LevelSelect from '../../LevelSelect'
 import { CharacterCardStats } from '../CharacterCard/CharacterCardStats'
@@ -103,7 +102,11 @@ export default function Content({ onClose }: { onClose?: () => void }) {
         >
           {t('delete')}
         </Button>
-        {!!onClose && <CloseButton onClick={onClose} />}
+        {!!onClose && (
+          <IconButton onClick={onClose}>
+            <CloseIcon />
+          </IconButton>
+        )}
       </Box>
       <Box>
         <Grid container spacing={1} sx={{ justifyContent: 'center' }}>

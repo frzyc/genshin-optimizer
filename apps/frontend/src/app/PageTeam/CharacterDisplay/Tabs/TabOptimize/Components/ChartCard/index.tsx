@@ -238,7 +238,7 @@ export default function ChartCard({
             >
               <span>
                 <Button
-                  color="error"
+                  color="secondary"
                   onClick={() => setPlotBase(undefined)}
                   disabled={!plotBase || disabled}
                 >

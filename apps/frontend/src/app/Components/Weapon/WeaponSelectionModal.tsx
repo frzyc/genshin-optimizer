@@ -6,12 +6,14 @@ import {
   allWeaponTypeKeys,
 } from '@genshin-optimizer/gi/consts'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
+import CloseIcon from '@mui/icons-material/Close'
 import {
   Box,
   CardActionArea,
   CardContent,
   Divider,
   Grid,
+  IconButton,
   TextField,
   Typography,
 } from '@mui/material'
@@ -23,7 +25,6 @@ import type WeaponSheet from '../../Data/Weapons/WeaponSheet'
 import { catTotal } from '../../Util/totalUtils'
 import CardDark from '../Card/CardDark'
 import CardLight from '../Card/CardLight'
-import CloseButton from '../CloseButton'
 import ImgIcon from '../Image/ImgIcon'
 import ModalWrapper from '../ModalWrapper'
 import { StarsDisplay } from '../StarDisplay'
@@ -113,45 +114,37 @@ export default function WeaponSelectionModal({
   return (
     <ModalWrapper open={show} onClose={onHide}>
       <CardDark>
-        <CardContent sx={{ py: 1 }}>
-          <Grid container spacing={1}>
-            <Grid item>
-              <WeaponToggle
-                value={weaponFilter}
-                totals={weaponTotals}
-                onChange={setWeaponfilter}
-                disabled={!!weaponTypeFilter}
-                size="small"
-              />
-            </Grid>
-            <Grid item>
-              <WeaponRarityToggle
-                sx={{ height: '100%' }}
-                onChange={(rarity) => database.displayWeapon.set({ rarity })}
-                value={rarity}
-                totals={weaponRarityTotals}
-                size="small"
-              />
-            </Grid>
-            <Grid item flexGrow={1}>
-              <TextField
-                autoFocus
-                size="small"
-                value={searchTerm}
-                onChange={(e: ChangeEvent<HTMLTextAreaElement>) =>
-                  setSearchTerm(e.target.value)
-                }
-                label={t('weaponName')}
-                sx={{ height: '100%' }}
-                InputProps={{
-                  sx: { height: '100%' },
-                }}
-              />
-            </Grid>
-            <Grid item>
-              <CloseButton onClick={onHide} />
-            </Grid>
-          </Grid>
+        <CardContent sx={{ display: 'flex', gap: 1, flexWrap: 'wrap' }}>
+          <WeaponToggle
+            value={weaponFilter}
+            totals={weaponTotals}
+            onChange={setWeaponfilter}
+            disabled={!!weaponTypeFilter}
+            size="small"
+          />
+          <WeaponRarityToggle
+            sx={{ height: '100%' }}
+            onChange={(rarity) => database.displayWeapon.set({ rarity })}
+            value={rarity}
+            totals={weaponRarityTotals}
+            size="small"
+          />
+          <TextField
+            autoFocus
+            size="small"
+            value={searchTerm}
+            onChange={(e: ChangeEvent<HTMLTextAreaElement>) =>
+              setSearchTerm(e.target.value)
+            }
+            label={t('weaponName')}
+            sx={{ height: '100%' }}
+            InputProps={{
+              sx: { height: '100%' },
+            }}
+          />
+          <IconButton onClick={onHide} sx={{ ml: 'auto' }}>
+            <CloseIcon />
+          </IconButton>
         </CardContent>
         <Divider />
         <CardContent>
@@ -196,10 +189,6 @@ export default function WeaponSelectionModal({
               )
             })}
           </Grid>
-        </CardContent>
-        <Divider />
-        <CardContent sx={{ py: 1 }}>
-          <CloseButton large onClick={onHide} />
         </CardContent>
       </CardDark>
     </ModalWrapper>

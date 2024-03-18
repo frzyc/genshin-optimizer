@@ -30,6 +30,7 @@ import {
   Shuffle,
   Update,
 } from '@mui/icons-material'
+import CloseIcon from '@mui/icons-material/Close'
 import HelpIcon from '@mui/icons-material/Help'
 import LockIcon from '@mui/icons-material/Lock'
 import LockOpenIcon from '@mui/icons-material/LockOpen'
@@ -42,6 +43,7 @@ import {
   CardHeader,
   CircularProgress,
   Grid,
+  IconButton,
   LinearProgress,
   MenuItem,
   Skeleton,
@@ -70,7 +72,6 @@ import {
   ArtifactStatWithUnit,
 } from '../Components/Artifact/ArtifactStatKeyDisplay'
 import { LocationAutocomplete } from '../Components/Character/LocationAutocomplete'
-import CloseButton from '../Components/CloseButton'
 import CustomNumberTextField from '../Components/CustomNumberTextField'
 import DropdownButton from '../Components/DropdownMenu/DropdownButton'
 import ImgIcon from '../Components/Image/ImgIcon'
@@ -405,7 +406,11 @@ export default function ArtifactEditor({
               Artifact Editor
             </Trans>
           }
-          action={<CloseButton disabled={!!queueTotal} onClick={onClose} />}
+          action={
+            <IconButton disabled={!!queueTotal} onClick={onClose}>
+              <CloseIcon />
+            </IconButton>
+          }
         />
         <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
           <Grid container spacing={1} columns={{ xs: 1, md: 2 }}>
