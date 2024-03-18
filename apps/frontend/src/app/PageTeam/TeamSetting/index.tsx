@@ -35,10 +35,10 @@ import ContentCopyIcon from '@mui/icons-material/ContentCopy'
 import ContentPasteIcon from '@mui/icons-material/ContentPaste'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import { useLocation, useNavigate } from 'react-router-dom'
+import { EnemyExpandCard } from '../../Components/EnemyEditor'
 import type { TeamCharacterContextObj } from '../../Context/TeamCharacterContext'
 import { TeamCharacterContext } from '../../Context/TeamCharacterContext'
 import BuildDropdown from '../BuildDropdown'
-import { EnemyExpandCard } from '../../Components/EnemyEditor'
 // TODO: Translation
 
 export default function TeamSetting({
