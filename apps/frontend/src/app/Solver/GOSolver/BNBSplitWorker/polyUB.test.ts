@@ -1,3 +1,4 @@
+import { cartesian } from '@genshin-optimizer/common/util'
 import type { OptNode } from '../../../Formula/optimization'
 import { precompute } from '../../../Formula/optimization'
 import {
@@ -11,7 +12,6 @@ import {
   sum,
   threshold,
 } from '../../../Formula/utils'
-import { cartesian } from '../../../Util/Util'
 import type { ArtifactsBySlot, DynStat } from '../../common'
 import type { Linear } from './linearUB'
 import { linearUB } from './linearUB'

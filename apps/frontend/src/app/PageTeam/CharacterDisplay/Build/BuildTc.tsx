@@ -7,16 +7,17 @@ import { useBuildTc, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { SlotIcon } from '@genshin-optimizer/gi/svgicons'
 import { ArtifactSetName } from '@genshin-optimizer/gi/ui'
 import { artDisplayValue } from '@genshin-optimizer/gi/util'
+import CloseIcon from '@mui/icons-material/Close'
 import {
   Box,
   CardContent,
   CardHeader,
   Divider,
   Grid,
+  IconButton,
   TextField,
 } from '@mui/material'
 import { useContext, useDeferredValue, useEffect, useState } from 'react'
-import CloseButton from '../../../Components/CloseButton'
 import ImgIcon from '../../../Components/Image/ImgIcon'
 import { StatWithUnit } from '../../../Components/StatDisplay'
 import { WeaponCardNanoObj } from '../../../Components/Weapon/WeaponCardNano'
@@ -229,7 +230,11 @@ function BuildTcEditor({
     <CardThemed>
       <CardHeader
         title="Build Settings"
-        action={<CloseButton onClick={onClose} />}
+        action={
+          <IconButton onClick={onClose}>
+            <CloseIcon />
+          </IconButton>
+        }
       />
       <Divider />
       <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>

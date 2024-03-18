@@ -32,7 +32,6 @@ import { useTeamDataNoContext } from '../ReactHooks/useTeamData'
 import useTitle from '../ReactHooks/useTitle'
 import { shouldShowDevComponents } from '../Util/Util'
 import Content from './CharacterDisplay/Content'
-import { EnemyEditorElement } from './EnemyEditorElement'
 import TeamCharacterSelector from './TeamCharacterSelector'
 import TeamSetting from './TeamSetting'
 
@@ -177,13 +176,6 @@ function Page({ teamId }: { teamId: string }) {
             },
             variant: 'outlined',
             color: 'info',
-          }}
-        />
-        <EnemyEditorElement
-          teamId={teamId}
-          buttonProps={{
-            sx: { backgroundColor: 'contentLight.main' },
-            variant: 'outlined',
           }}
         />
       </Box>

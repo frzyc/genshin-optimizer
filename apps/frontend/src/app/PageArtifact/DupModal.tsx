@@ -1,38 +1,51 @@
 import { useForceUpdate } from '@genshin-optimizer/common/react-util'
+import { CardThemed } from '@genshin-optimizer/common/ui'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
+import CloseIcon from '@mui/icons-material/Close'
 import DifferenceIcon from '@mui/icons-material/Difference'
 import {
   Alert,
   Box,
   CardContent,
+  CardHeader,
   Divider,
+  IconButton,
   Stack,
   Typography,
 } from '@mui/material'
 import { useEffect, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import CardDark from '../Components/Card/CardDark'
-import CardLight from '../Components/Card/CardLight'
-import CloseButton from '../Components/CloseButton'
 import ModalWrapper from '../Components/ModalWrapper'
 import ArtifactCard from './ArtifactCard'
 export default function DupModal({ show, onHide }) {
   const { t } = useTranslation('artifact')
   return (
     <ModalWrapper open={show} onClose={onHide}>
-      <CardLight>
-        <CardContent sx={{ display: 'flex', alignItems: 'center' }}>
-          <Typography variant="h6" flexGrow={1}>
-            <DifferenceIcon sx={{ verticalAlign: 'text-top', mr: 1 }} />
-            {t`showDup`}
-          </Typography>
-          <CloseButton onClick={onHide} />
-        </CardContent>
+      <CardThemed>
+        <CardHeader
+          title={
+            <Typography
+              variant="h6"
+              flexGrow={1}
+              display="flex"
+              alignItems="center"
+            >
+              <DifferenceIcon sx={{ verticalAlign: 'text-top', mr: 1 }} />
+              {t`showDup`}
+            </Typography>
+          }
+          action={
+            <IconButton onClick={onHide}>
+              <CloseIcon />
+            </IconButton>
+          }
+        />
         <Divider />
         <CardContent>
           <DupContent />
         </CardContent>
-      </CardLight>
+      </CardThemed>
     </ModalWrapper>
   )
 }

@@ -8,6 +8,7 @@ import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { getCharData } from '@genshin-optimizer/gi/stats'
 import AddIcon from '@mui/icons-material/Add'
 import CheckroomIcon from '@mui/icons-material/Checkroom'
+import CloseIcon from '@mui/icons-material/Close'
 import PersonIcon from '@mui/icons-material/Person'
 import SettingsIcon from '@mui/icons-material/Settings'
 import type { ButtonProps } from '@mui/material'
@@ -19,6 +20,7 @@ import {
   CardHeader,
   Divider,
   Grid,
+  IconButton,
   Skeleton,
   TextField,
   Typography,
@@ -30,7 +32,6 @@ import {
   useEffect,
   useState,
 } from 'react'
-import CloseButton from '../../Components/CloseButton'
 import { TeamCharacterContext } from '../../Context/TeamCharacterContext'
 import { LoadoutDropdown } from '../LoadoutDropdown'
 import { BuildEquipped } from './Build/BuildEquipped'
@@ -138,7 +139,11 @@ export default function LoadoutSettingElement({
                   <span>Loadout Settings</span>
                 </Box>
               }
-              action={<CloseButton onClick={() => setOpen(false)} />}
+              action={
+                <IconButton onClick={() => setOpen(false)}>
+                  <CloseIcon />
+                </IconButton>
+              }
             />
             <Divider />
             <CardContent

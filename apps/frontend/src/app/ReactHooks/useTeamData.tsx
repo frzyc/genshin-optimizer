@@ -29,7 +29,6 @@ import {
 } from '../Formula/api'
 import type { Data } from '../Formula/type'
 import { getArtifactData } from '../PageTeam/CharacterDisplay/Tabs/TabTheorycraft/optimizeTc'
-import { objectMap } from '../Util/Util'
 
 type TeamDataBundle = {
   teamData: Dict<CharacterKey, Data[]>
@@ -151,7 +150,7 @@ export function getTeamDataCalc(
 
   const calcData = uiDataForTeam(teamData, gender, activeChar.key)
 
-  const data = objectMap(calcData, (obj, ck) => {
+  const data = objMap(calcData, (obj, ck) => {
     const { data: _, ...rest } = teamBundle[ck]!
     return { ...obj, ...rest }
   })

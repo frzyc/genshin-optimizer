@@ -4,6 +4,7 @@ import type { ICachedWeapon } from '@genshin-optimizer/gi/db'
 import { useDatabase, useWeapon } from '@genshin-optimizer/gi/db-ui'
 import { milestoneLevelsLow } from '@genshin-optimizer/gi/util'
 import { Lock, LockOpen } from '@mui/icons-material'
+import CloseIcon from '@mui/icons-material/Close'
 import {
   Box,
   Button,
@@ -12,6 +13,7 @@ import {
   CardHeader,
   Divider,
   Grid,
+  IconButton,
   ListItem,
   Typography,
 } from '@mui/material'
@@ -19,7 +21,6 @@ import React, { useCallback, useContext, useEffect, useMemo } from 'react'
 import CardDark from '../Components/Card/CardDark'
 import CardLight from '../Components/Card/CardLight'
 import { LocationAutocomplete } from '../Components/Character/LocationAutocomplete'
-import CloseButton from '../Components/CloseButton'
 import DocumentDisplay from '../Components/DocumentDisplay'
 import { FieldDisplayList, NodeFieldDisplay } from '../Components/FieldDisplay'
 import LevelSelect from '../Components/LevelSelect'
@@ -116,20 +117,37 @@ export default function WeaponEditor({
         <CardContent>
           {weaponSheet && weaponUIData && (
             <Grid container spacing={1.5}>
+              {/* Left column */}
               <Grid item xs={12} sm={3}>
                 <Grid container spacing={1.5}>
                   <Grid item xs={6} sm={12}>
-                    <Box
-                      component="img"
-                      src={img}
-                      className={`grad-${weaponSheet.rarity}star`}
-                      sx={{
-                        maxWidth: 256,
-                        width: '100%',
-                        height: 'auto',
-                        borderRadius: 1,
-                      }}
-                    />
+                    <Box sx={{ position: 'relative', display: 'flex' }}>
+                      <Box
+                        component="img"
+                        src={img}
+                        className={`grad-${weaponSheet.rarity}star`}
+                        sx={{
+                          maxWidth: 256,
+                          width: '100%',
+                          height: 'auto',
+                          borderRadius: 1,
+                        }}
+                      />
+                      <IconButton
+                        color="primary"
+                        onClick={() =>
+                          id && database.weapons.set(id, { lock: !lock })
+                        }
+                        sx={{
+                          position: 'absolute',
+                          right: 0,
+                          bottom: 0,
+                          zIndex: 2,
+                        }}
+                      >
+                        {lock ? <Lock /> : <LockOpen />}
+                      </IconButton>
+                    </Box>
                   </Grid>
                   <Grid item xs={6} sm={12}>
                     <Typography>
@@ -138,18 +156,14 @@ export default function WeaponEditor({
                   </Grid>
                 </Grid>
               </Grid>
+              {/* right column */}
               <Grid
                 item
                 xs={12}
                 sm={9}
                 sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}
               >
-                <Box
-                  display="flex"
-                  gap={1}
-                  flexWrap="wrap"
-                  justifyContent="space-between"
-                >
+                <Box display="flex" gap={1} flexWrap="wrap">
                   <ButtonGroup>
                     <Button color="info" onClick={onShowModal}>
                       {weaponSheet?.name ?? 'Select a Weapon'}
@@ -162,13 +176,13 @@ export default function WeaponEditor({
                     )}
                     {extraButtons}
                   </ButtonGroup>
+                  {onClose && (
+                    <IconButton onClick={onClose} sx={{ marginLeft: 'auto' }}>
+                      <CloseIcon />
+                    </IconButton>
+                  )}
                 </Box>
-                <Box
-                  display="flex"
-                  gap={1}
-                  flexWrap="wrap"
-                  justifyContent="space-between"
-                >
+                <Box display="flex" gap={1} flexWrap="wrap">
                   {weaponSheet && (
                     <LevelSelect
                       level={level}
@@ -177,15 +191,6 @@ export default function WeaponEditor({
                       useLow={!weaponSheet.hasRefinement}
                     />
                   )}
-                  <Button
-                    color="error"
-                    onClick={() =>
-                      id && database.weapons.set(id, { lock: !lock })
-                    }
-                    startIcon={lock ? <Lock /> : <LockOpen />}
-                  >
-                    {lock ? 'Locked' : 'Unlocked'}
-                  </Button>
                 </Box>
                 <StarsDisplay stars={weaponSheet.rarity} />
                 <Typography variant="subtitle1">
@@ -241,16 +246,6 @@ export default function WeaponEditor({
                   autoCompleteProps={{ getOptionDisabled: (t) => !t.key }}
                 />
               </Grid>
-              <Grid item flexGrow={2} />
-              {!!onClose && (
-                <Grid item>
-                  <CloseButton
-                    sx={{ height: '100%' }}
-                    large
-                    onClick={onClose}
-                  />
-                </Grid>
-              )}
             </Grid>
           </CardContent>
         )}

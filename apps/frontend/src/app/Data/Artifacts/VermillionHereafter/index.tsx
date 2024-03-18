@@ -1,3 +1,4 @@
+import { range } from '@genshin-optimizer/common/util'
 import type { ArtifactSetKey } from '@genshin-optimizer/gi/consts'
 import { input } from '../../../Formula'
 import type { Data } from '../../../Formula/type'
@@ -10,7 +11,6 @@ import {
   sum,
 } from '../../../Formula/utils'
 import KeyMap from '../../../KeyMap'
-import { range } from '../../../Util/Util'
 import { cond, st } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
 import type { IArtifactSheet } from '../IArtifactSheet'

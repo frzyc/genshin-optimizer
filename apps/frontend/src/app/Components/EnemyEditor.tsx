@@ -1,131 +1,121 @@
 import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
+import { CardThemed } from '@genshin-optimizer/common/ui'
 import type { ElementWithPhyKey } from '@genshin-optimizer/gi/consts'
 import { allElementWithPhyKeys } from '@genshin-optimizer/gi/consts'
-import { useDatabase } from '@genshin-optimizer/gi/db-ui'
+import type { Team } from '@genshin-optimizer/gi/db'
+import { useDatabase, useTeam } from '@genshin-optimizer/gi/db-ui'
 import { KeyMap } from '@genshin-optimizer/gi/keymap'
-import {
-  CheckBox,
-  CheckBoxOutlineBlank,
-  ExpandMore,
-  Replay,
-} from '@mui/icons-material'
+import { CheckBox, CheckBoxOutlineBlank, ExpandMore } from '@mui/icons-material'
 import {
   Box,
   Button,
+  CardActionArea,
   CardContent,
   Chip,
   Collapse,
   Grid,
   Typography,
 } from '@mui/material'
-import { useCallback, useContext, useState } from 'react'
-import { useTranslation } from 'react-i18next'
-import { DataContext } from '../Context/DataContext'
-import { TeamCharacterContext } from '../Context/TeamCharacterContext'
-import { uiInput as input } from '../Formula'
-import { nodeVStr } from '../Formula/uiData'
+import { useCallback, useState } from 'react'
 import { ElementIcon } from '../KeyMap/StatIcon'
-import CardLight from './Card/CardLight'
 import ColorText from './ColoredText'
 import ExpandButton from './ExpandButton'
 import StatInput from './StatInput'
-
-export function EnemyExpandCard() {
-  const { t } = useTranslation('ui')
-  const { teamId } = useContext(TeamCharacterContext)
-  const database = useDatabase()
-  const { data } = useContext(DataContext)
+// TODO: Translation
+export function EnemyExpandCard({ teamId }: { teamId: string }) {
   const [expanded, setexpanded] = useState(false)
   const toggle = useCallback(
     () => setexpanded(!expanded),
     [setexpanded, expanded]
   )
-  const eLvlNode = data.get(input.enemy.level)
-  const eDefRed = data.get(input.enemy.defRed)
-  const eDefIgn = data.get(input.enemy.defIgn)
-  const onReset = useCallback(
-    () => database.teams.set(teamId, { enemyOverride: {} }),
-    [database, teamId]
-  )
+  const {
+    enemyOverride,
+    enemyOverride: { enemyLevel, enemyDefRed_, enemyDefIgn_ },
+  } = useTeam(teamId)!
 
   return (
-    <CardLight>
-      <CardContent
-        sx={{ display: 'flex', gap: 1, alignItems: 'center', flexWrap: 'wrap' }}
-      >
-        <Chip
-          size="small"
-          color="success"
-          label={
-            <span>
-              {eLvlNode.info.name} <strong>{eLvlNode.value}</strong>
-            </span>
-          }
-        />
-        {allElementWithPhyKeys.map((element) => (
-          <Typography key={element}>
-            <EnemyResText element={element} />
-          </Typography>
-        ))}
-        <Typography>DEF Red. {nodeVStr(eDefRed)}</Typography>
-        <Typography>DEF Ignore {nodeVStr(eDefIgn)}</Typography>
-        <Box flexGrow={1} display="flex" justifyContent="flex-end" gap={1}>
-          <Button
+    <CardThemed bgt="light">
+      <CardActionArea onClick={toggle}>
+        <CardContent
+          sx={{
+            display: 'flex',
+            gap: 1,
+            alignItems: 'center',
+            flexWrap: 'wrap',
+          }}
+        >
+          <Chip
             size="small"
-            color="error"
-            onClick={onReset}
-            startIcon={<Replay />}
-          >{t`reset`}</Button>
-          <ExpandButton
-            expand={expanded}
-            onClick={toggle}
-            aria-expanded={expanded}
-            aria-label="show more"
-            size="small"
-            sx={{ marginLeft: 0 }}
-          >
-            <ExpandMore />
-          </ExpandButton>
-        </Box>
-      </CardContent>
+            color="success"
+            label={
+              <span>
+                Enemy <strong>{enemyLevel}</strong>
+              </span>
+            }
+          />
+          {allElementWithPhyKeys.map((element) => (
+            <Typography key={element}>
+              <EnemyResText element={element} enemyOverride={enemyOverride} />
+            </Typography>
+          ))}
+          <Typography>DEF Red. {enemyDefRed_}</Typography>
+          <Typography>DEF Ignore {enemyDefIgn_}</Typography>
+          <Box flexGrow={1} display="flex" justifyContent="flex-end" gap={1}>
+            <ExpandButton
+              expand={expanded}
+              onClick={toggle}
+              aria-expanded={expanded}
+              aria-label="show more"
+              size="small"
+              sx={{ marginLeft: 0 }}
+            >
+              <ExpandMore />
+            </ExpandButton>
+          </Box>
+        </CardContent>
+      </CardActionArea>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
-        <CardContent sx={{ pt: 0 }}>
-          <EnemyEditor />
+        <CardContent>
+          <EnemyEditor teamId={teamId} enemyOverride={enemyOverride} />
         </CardContent>
       </Collapse>
-    </CardLight>
+    </CardThemed>
   )
 }
 
-export function EnemyResText({ element }: { element: ElementWithPhyKey }) {
-  const { data } = useContext(DataContext)
-  const node = data.get(input.enemy[`${element}_res_`])
-  const immune = !isFinite(node.value)
+export function EnemyResText({
+  enemyOverride,
+  element,
+}: {
+  enemyOverride: Team['enemyOverride']
+  element: ElementWithPhyKey
+}) {
+  const value = enemyOverride[`${element}_enemyRes_`]
+  const immune = value === Number.MAX_VALUE
   const icon = <ElementIcon ele={element} iconProps={iconInlineProps} />
   const content = immune ? (
     <span>{icon} &#8734;</span>
   ) : (
     <span>
-      {icon} <strong>{nodeVStr(node)}</strong>
+      {icon} <strong>{value}%</strong>
     </span>
   )
   return <ColorText color={element}>{content}</ColorText>
 }
 
 export function EnemyEditor({
+  teamId,
+  enemyOverride,
   bsProps = { xs: 12, md: 6 },
 }: {
+  teamId: string
+  enemyOverride: Team['enemyOverride']
   bsProps?: object
 }) {
-  const {
-    teamId,
-    team: { enemyOverride },
-  } = useContext(TeamCharacterContext)
   const database = useDatabase()
-  const { data } = useContext(DataContext)
   const defaultVal = 10
 
-  const eLvl = enemyOverride.enemyLevel ?? data.get(input.lvl).value
+  const eLvl = enemyOverride.enemyLevel ?? 100
   const eDefRed = enemyOverride.enemyDefIgn_ ?? 0
   const eDefIgn = enemyOverride.enemyDefRed_ ?? 0
   return (
@@ -151,7 +141,7 @@ export function EnemyEditor({
           name={<b>{KeyMap.get('enemyLevel')}</b>}
           value={eLvl}
           placeholder={KeyMap.getStr('enemyLevel')}
-          defaultValue={data.get(input.lvl).value}
+          defaultValue={100}
           onValueChange={(value) =>
             database.teams.set(teamId, (team) => {
               team.enemyOverride.enemyLevel = value
