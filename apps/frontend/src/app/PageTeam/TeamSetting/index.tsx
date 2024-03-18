@@ -38,6 +38,7 @@ import { useLocation, useNavigate } from 'react-router-dom'
 import type { TeamCharacterContextObj } from '../../Context/TeamCharacterContext'
 import { TeamCharacterContext } from '../../Context/TeamCharacterContext'
 import BuildDropdown from '../BuildDropdown'
+import { EnemyExpandCard } from '../../Components/EnemyEditor'
 // TODO: Translation
 
 export default function TeamSetting({
@@ -92,7 +93,13 @@ export default function TeamSetting({
   }, [database, descDeferred])
 
   const onDel = () => {
-    database.teams.remove(teamId)
+    if (
+      !window.confirm(
+        'Removing the team will not remove the loadouts, but will remove select builds, resonance buffs, and enemy config.'
+      )
+    )
+      return
+    // database.teams.remove(teamId)
     navigate(`/teams`)
   }
   const onExport = () => {
@@ -169,7 +176,7 @@ export default function TeamSetting({
               multiline
               minRows={2}
             />
-            <Box sx={{ display: 'flex', gap: 2 }}>
+            <Box sx={{ display: 'flex', gap: 1 }}>
               <Button
                 color="info"
                 sx={{ flexGrow: 1 }}
@@ -188,10 +195,16 @@ export default function TeamSetting({
               >
                 Duplicate Team
               </Button>
-              <Button color="error" size="small" onClick={onDel}>
-                <DeleteForeverIcon />
+              <Button
+                color="error"
+                sx={{ flexGrow: 1 }}
+                onClick={onDel}
+                startIcon={<DeleteForeverIcon />}
+              >
+                Delete Team
               </Button>
             </Box>
+            <EnemyExpandCard teamId={teamId} />
             <Typography variant="h6">Team Editor</Typography>
             <Alert severity="info" variant="filled">
               The first character in the team receives any "active on-field
