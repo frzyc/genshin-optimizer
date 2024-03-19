@@ -36,3 +36,8 @@ export function levenshteinDistance(str1: string, str2: string) {
   }
   return arr[str2.length][str1.length]
 }
+
+// truncate string to a certain length, and add ellipsis if it's longer
+export function truncateString(str: string, length: number) {
+  return str.length > length ? str.slice(0, length) + '...' : str
+}

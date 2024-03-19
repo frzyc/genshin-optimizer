@@ -6,6 +6,7 @@ import {
   ModalWrapper,
   SqBadge,
 } from '@genshin-optimizer/common/ui'
+import { truncateString } from '@genshin-optimizer/common/util'
 import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { CharacterName } from '@genshin-optimizer/gi/ui'
 import PersonIcon from '@mui/icons-material/Person'
@@ -75,9 +76,10 @@ export function LoadoutDropdown({
             <TextField
               fullWidth
               label="New Loadout Name"
-              placeholder="New Loadout Name"
+              placeholder="New Loadout Name (max 300 characters)"
               value={newName}
               onChange={(e) => setNewName(e.target.value)}
+              inputProps={{ maxLength: 300 }}
             />
             <TextField
               fullWidth
@@ -115,7 +117,7 @@ export function LoadoutDropdown({
               justifyContent: 'center',
             }}
           >
-            <span>{name}</span>
+            <span>{truncateString(name, 100)}</span>
             <SqBadge color={buildIds.length ? 'success' : 'secondary'}>
               {buildIds.length} Builds
             </SqBadge>
@@ -142,7 +144,7 @@ export function LoadoutDropdown({
               onClick={() => onChangeTeamCharId(tcId)}
               sx={{ display: 'flex', gap: 1 }}
             >
-              <span>{name}</span>
+              <span>{truncateString(name, 100)}</span>
               <SqBadge
                 color={buildIds.length ? 'primary' : 'secondary'}
                 sx={{ marginLeft: 'auto' }}

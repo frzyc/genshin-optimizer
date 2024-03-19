@@ -8,7 +8,7 @@ import {
   ModalWrapper,
   SqBadge,
 } from '@genshin-optimizer/common/ui'
-import { objKeyMap } from '@genshin-optimizer/common/util'
+import { objKeyMap, truncateString } from '@genshin-optimizer/common/util'
 import {
   allArtifactSlotKeys,
   charKeyToLocCharKey,
@@ -294,7 +294,7 @@ function InTeam() {
           <CardThemed key={teamCharId} bgt="light">
             <CardContent>
               <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
-                <Typography>{name}</Typography>
+                <Typography>{truncateString(name, 100)}</Typography>
                 <BootstrapTooltip
                   title={<Typography>{description}</Typography>}
                 >
