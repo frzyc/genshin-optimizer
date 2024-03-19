@@ -94,7 +94,7 @@ export function WeaponCardNanoObj({
     [weaponSheet, weapon]
   )
   return (
-    <BGComponent sx={{ height: '100%' }}>
+    <BGComponent sx={{ height: '100%', maxHeight: '8em' }}>
       <ConditionalWrapper condition={!!onClick} wrapper={actionWrapperFunc}>
         <Box display="flex" height="100%" alignItems="stretch">
           <Box
