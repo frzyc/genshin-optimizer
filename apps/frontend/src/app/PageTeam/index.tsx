@@ -1,4 +1,5 @@
 import { CardThemed } from '@genshin-optimizer/common/ui'
+import { colorToRgbaString, hexToColor } from '@genshin-optimizer/common/util'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import { charKeyToLocGenderedCharKey } from '@genshin-optimizer/gi/consts'
 import type { GeneratedBuild } from '@genshin-optimizer/gi/db'
@@ -34,7 +35,6 @@ import { shouldShowDevComponents } from '../Util/Util'
 import Content from './CharacterDisplay/Content'
 import TeamCharacterSelector from './TeamCharacterSelector'
 import TeamSetting from './TeamSetting'
-import { colorToRgbaString, hexToColor } from '@genshin-optimizer/common/util'
 
 export default function PageTeam() {
   const database = useDatabase()
