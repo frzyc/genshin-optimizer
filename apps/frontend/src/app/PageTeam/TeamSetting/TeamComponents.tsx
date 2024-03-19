@@ -82,6 +82,9 @@ export function TeamBuffDisplay() {
     >
       <AccordionSummary sx={{ py: 1 }} expandIcon={<ExpandMoreIcon />}>
         <Typography>Received Team Buffs</Typography>
+        <SqBadge sx={{ ml: 1 }} color={nodes.length ? 'success' : 'info'}>
+          {nodes.length}
+        </SqBadge>
       </AccordionSummary>
       <AccordionDetails sx={{ p: 0 }}>
         <Divider />
