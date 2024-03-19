@@ -1,4 +1,2 @@
-import type { DatabaseContextObj } from './DatabaseContext'
-import { DatabaseContext } from './DatabaseContext'
-export { DatabaseContext }
-export type { DatabaseContextObj }
+export * from './DatabaseContext'
+export * from './TeamCharacterContext'

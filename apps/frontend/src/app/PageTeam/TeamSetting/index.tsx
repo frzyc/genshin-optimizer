@@ -36,11 +36,12 @@ import ContentPasteIcon from '@mui/icons-material/ContentPaste'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { EnemyExpandCard } from '../../Components/EnemyEditor'
+import TeamInfoAlert from '../../Components/Team/TeamInfoAlert'
 import type { TeamCharacterContextObj } from '../../Context/TeamCharacterContext'
 import { TeamCharacterContext } from '../../Context/TeamCharacterContext'
 import BuildDropdown from '../BuildDropdown'
-// TODO: Translation
 
+// TODO: Translation
 export default function TeamSetting({
   teamId,
   teamData,
@@ -158,12 +159,7 @@ export default function TeamSetting({
           <CardContent
             sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}
           >
-            <Alert variant="filled" severity="info">
-              <strong>Teams</strong> are a container for 4 character loadouts.
-              It provides a way for characters to apply team buffs, and
-              configuration of enemy stats. Loadouts can be shared between
-              teams.
-            </Alert>
+            <TeamInfoAlert />
             <TextField
               fullWidth
               label="Team Name"
@@ -210,7 +206,7 @@ export default function TeamSetting({
             </Box>
             <EnemyExpandCard teamId={teamId} />
             <Typography variant="h6">Team Editor</Typography>
-            <Alert severity="info" variant="filled">
+            <Alert severity="info">
               The first character in the team receives any "active on-field
               character" buffs, and cannot be empty.
             </Alert>
