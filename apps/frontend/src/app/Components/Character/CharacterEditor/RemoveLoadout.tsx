@@ -27,12 +27,14 @@ export default function RemoveLoadout({
   teamCharId,
   onDelete,
   teamIds,
+  conditionalCount,
 }: {
-  show
-  onHide
+  show: boolean
+  onHide: () => void
   teamCharId: string
   teamIds: string[]
   onDelete: () => void
+  conditionalCount: number
 }) {
   const database = useDatabase()
   const {
@@ -168,6 +170,11 @@ export default function RemoveLoadout({
             {!!Object.keys(bonusStats).length && (
               <ListItem sx={{ display: 'list-item' }}>
                 Bonus stats: {Object.keys(bonusStats).length}
+              </ListItem>
+            )}
+            {!!conditionalCount && (
+              <ListItem sx={{ display: 'list-item' }}>
+                Conditionals: {conditionalCount}
               </ListItem>
             )}
             <ListItem sx={{ display: 'list-item' }}>

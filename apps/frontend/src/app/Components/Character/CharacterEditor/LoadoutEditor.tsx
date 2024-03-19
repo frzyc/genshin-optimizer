@@ -1,5 +1,5 @@
 import { CardThemed, ModalWrapper } from '@genshin-optimizer/common/ui'
-import { unit } from '@genshin-optimizer/common/util'
+import { crawlObject, unit } from '@genshin-optimizer/common/util'
 import type { LoadoutDatum, TeamCharacter } from '@genshin-optimizer/gi/db'
 import {
   useDatabase,
@@ -25,6 +25,7 @@ import {
   Grid,
   IconButton,
   Tooltip,
+  Typography,
 } from '@mui/material'
 
 import DocumentDisplay from '../../DocumentDisplay'
@@ -40,6 +41,7 @@ import { useNavigate } from 'react-router-dom'
 import TeamCard from '../../../PageTeams/TeamCard'
 import TeamInfoAlert from '../../Team/TeamInfoAlert'
 import RemoveLoadout from './RemoveLoadout'
+import { useMemo } from 'react'
 
 export default function LoadoutEditor({
   show,
@@ -63,6 +65,7 @@ export default function LoadoutEditor({
     customMultiTargets,
     bonusStats,
     optConfigId,
+    conditional,
   } = useTeamChar(teamCharId)!
   const { optimizationTarget } = useOptConfig(optConfigId)!
   const onDelete = () => {
@@ -81,6 +84,16 @@ export default function LoadoutEditor({
     })
     navigate(`/teams/${teamId}`, { state: { openSetting: true } })
   }
+  const conditionalCount = useMemo(() => {
+    let count = 0
+    crawlObject(
+      conditional,
+      [],
+      (o) => typeof o !== 'object',
+      () => count++
+    )
+    return count
+  }, [conditional])
   return (
     <ModalWrapper
       open={show}
@@ -124,6 +137,7 @@ export default function LoadoutEditor({
                   onDelete={onDelete}
                   teamCharId={teamCharId}
                   teamIds={teamIds}
+                  conditionalCount={conditionalCount}
                 />
                 <Button
                   fullWidth
@@ -156,6 +170,15 @@ export default function LoadoutEditor({
                   <MultiTargetCard customMultiTargets={customMultiTargets} />
                 </Grid>
               )}
+              <Grid item xs={1}>
+                <CardThemed bgt="light">
+                  <CardContent>
+                    <Typography variant="h6">
+                      Conditionals: <strong>{conditionalCount}</strong>
+                    </Typography>
+                  </CardContent>
+                </CardThemed>
+              </Grid>
             </Grid>
           </Box>
         </CardContent>
