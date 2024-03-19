@@ -34,6 +34,7 @@ import { shouldShowDevComponents } from '../Util/Util'
 import Content from './CharacterDisplay/Content'
 import TeamCharacterSelector from './TeamCharacterSelector'
 import TeamSetting from './TeamSetting'
+import { colorToRgbaString, hexToColor } from '@genshin-optimizer/common/util'
 
 export default function PageTeam() {
   const database = useDatabase()
@@ -180,24 +181,43 @@ function Page({ teamId }: { teamId: string }) {
         />
       </Box>
       <CardThemed>
-        <TeamCharacterSelector
-          teamId={teamId}
-          characterKey={characterKey}
-          tab={tab}
-        />
-        <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
-          {teamCharacterContextValue ? (
-            dataContextValue ? (
-              <TeamCharacterContext.Provider value={teamCharacterContextValue}>
-                <DataContext.Provider value={dataContextValue}>
-                  <InnerContent tab={tab} />
-                </DataContext.Provider>
-              </TeamCharacterContext.Provider>
-            ) : (
-              fallback
-            )
-          ) : null}
-        </CardContent>
+        <Box
+          sx={(theme) => {
+            const elementKey =
+              characterKey && getCharSheet(characterKey).elementKey
+            if (!elementKey) return {}
+            const hex = theme.palette[elementKey].main as string
+            const color = hexToColor(hex)
+            if (!color) return {}
+            const rgba = colorToRgbaString(color, 0.1)
+            return {
+              background: `linear-gradient(to bottom, ${rgba} 0%, rgba(0,0,0,0)) 25%`,
+            }
+          }}
+        >
+          <TeamCharacterSelector
+            teamId={teamId}
+            characterKey={characterKey}
+            tab={tab}
+          />
+          <CardContent
+            sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}
+          >
+            {teamCharacterContextValue ? (
+              dataContextValue ? (
+                <TeamCharacterContext.Provider
+                  value={teamCharacterContextValue}
+                >
+                  <DataContext.Provider value={dataContextValue}>
+                    <InnerContent tab={tab} />
+                  </DataContext.Provider>
+                </TeamCharacterContext.Provider>
+              ) : (
+                fallback
+              )
+            ) : null}
+          </CardContent>
+        </Box>
       </CardThemed>
     </Box>
   )
