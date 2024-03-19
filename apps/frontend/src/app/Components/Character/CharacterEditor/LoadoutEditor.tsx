@@ -1,3 +1,4 @@
+import { useBoolState } from '@genshin-optimizer/common/react-util'
 import { CardThemed, ModalWrapper } from '@genshin-optimizer/common/ui'
 import { crawlObject, unit } from '@genshin-optimizer/common/util'
 import type { LoadoutDatum, TeamCharacter } from '@genshin-optimizer/gi/db'
@@ -27,21 +28,18 @@ import {
   Tooltip,
   Typography,
 } from '@mui/material'
-
+import { useMemo } from 'react'
+import { useNavigate } from 'react-router-dom'
+import TeamCard from '../../../PageTeams/TeamCard'
 import DocumentDisplay from '../../DocumentDisplay'
 import BuildInfoAlert from '../../Team/Loadout/Build/BuildInfoAlert'
 import LoadoutInfoAlert from '../../Team/Loadout/LoadoutInfoAlert'
 import LoadoutNameDesc from '../../Team/Loadout/LoadoutNameDesc'
+import TeamInfoAlert from '../../Team/TeamInfoAlert'
 import BuildRealSimplified from './BuildRealSimplified'
 import BuildTcSimplified from './BuildTcSimplified'
 import OptimizationTargetDisplay from './OptimizationTargetDisplay'
-
-import { useBoolState } from '@genshin-optimizer/common/react-util'
-import { useNavigate } from 'react-router-dom'
-import TeamCard from '../../../PageTeams/TeamCard'
-import TeamInfoAlert from '../../Team/TeamInfoAlert'
 import RemoveLoadout from './RemoveLoadout'
-import { useMemo } from 'react'
 
 export default function LoadoutEditor({
   show,
