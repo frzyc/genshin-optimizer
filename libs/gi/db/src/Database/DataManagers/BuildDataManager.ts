@@ -28,7 +28,7 @@ export class BuildDataManager extends DataManager<
   override validate(obj: unknown): Build | undefined {
     let { name, description, weaponId, artifactIds } = obj as Build
     if (typeof name !== 'string') name = 'Build Name'
-    if (typeof description !== 'string') description = 'Build Description'
+    if (typeof description !== 'string') description = ''
     if (weaponId && !this.database.weapons.get(weaponId)) weaponId = undefined
 
     // force the build to have a valid weapon

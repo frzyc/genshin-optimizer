@@ -166,7 +166,6 @@ export default function LoadoutSettingElement() {
             <TextField
               fullWidth
               label="Loadout Description"
-              placeholder="Loadout Description"
               value={desc}
               onChange={(e) => setDesc(e.target.value)}
               multiline

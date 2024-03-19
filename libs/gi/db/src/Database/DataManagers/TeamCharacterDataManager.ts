@@ -127,7 +127,7 @@ export class TeamCharacterDataManager extends DataManager<
 
     if (typeof name !== 'string') name = this.newName(characterKey)
 
-    if (typeof description !== 'string') description = 'Loadout Description'
+    if (typeof description !== 'string') description = ''
 
     // create a character if it doesnt exist
     if (!this.database.chars.keys.includes(characterKey))
