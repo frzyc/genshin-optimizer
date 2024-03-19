@@ -1,16 +1,7 @@
 import type { TeamCharacterContextObj } from '@genshin-optimizer/gi/db-ui'
 import { TeamCharacterContext } from '@genshin-optimizer/gi/db-ui'
+// @deprecated
+export type { TeamCharacterContextObj }
 
-export type {
-  /**
-   * @deprecated use gi/ui
-   */
-  TeamCharacterContextObj,
-}
-
-export {
-  /**
-   * @deprecated use gi/ui
-   */
-  TeamCharacterContext,
-}
+// @deprecated
+export { TeamCharacterContext }

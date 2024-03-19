@@ -19,7 +19,7 @@ import {
   Divider,
   Grid,
   IconButton,
-  Typography
+  Typography,
 } from '@mui/material'
 import { useContext, useState } from 'react'
 import BuildInfoAlert from '../../Components/Team/Loadout/Build/BuildInfoAlert'
@@ -98,13 +98,13 @@ export default function LoadoutSettingElement() {
           <CardContent
             sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}
           >
-            <LoadoutInfoAlert/>
+            <LoadoutInfoAlert />
             <LoadoutDropdown
               teamCharId={teamCharId}
               onChangeTeamCharId={onChangeTeamCharId}
               dropdownBtnProps={{ fullWidth: true }}
             />
-            <LoadoutNameDesc teamCharId={teamCharId}  />
+            <LoadoutNameDesc teamCharId={teamCharId} />
           </CardContent>
           <Divider />
           <BuildManagementContent />
@@ -136,7 +136,7 @@ function BuildManagementContent() {
       />
       <Divider />
       <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
-        <BuildInfoAlert/>
+        <BuildInfoAlert />
         <Grid container columns={columns} spacing={2}>
           <Grid item xs={1}>
             <BuildEquipped active={loadoutDatum?.buildType === 'equipped'} />

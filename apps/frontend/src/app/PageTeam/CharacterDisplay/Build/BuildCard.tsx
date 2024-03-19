@@ -66,7 +66,9 @@ export function BuildCard({
       }}
     >
       {onActive ? (
-        <CardActionArea onClick={onActive}>{clickableAreaContent}</CardActionArea>
+        <CardActionArea onClick={onActive}>
+          {clickableAreaContent}
+        </CardActionArea>
       ) : (
         clickableAreaContent
       )}

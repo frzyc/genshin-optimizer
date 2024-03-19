@@ -35,9 +35,11 @@ import BuildRealSimplified from './BuildRealSimplified'
 import BuildTcSimplified from './BuildTcSimplified'
 import OptimizationTargetDisplay from './OptimizationTargetDisplay'
 
+import { useBoolState } from '@genshin-optimizer/common/react-util'
 import { useNavigate } from 'react-router-dom'
 import TeamCard from '../../../PageTeams/TeamCard'
 import TeamInfoAlert from '../../Team/TeamInfoAlert'
+import RemoveLoadout from './RemoveLoadout'
 
 export default function LoadoutEditor({
   show,
@@ -50,6 +52,7 @@ export default function LoadoutEditor({
   teamCharId: string
   teamIds: string[]
 }) {
+  const [showRemoval, onShowRemoval, onHideRemoval] = useBoolState()
   const navigate = useNavigate()
   const database = useDatabase()
   const {
@@ -63,16 +66,6 @@ export default function LoadoutEditor({
   } = useTeamChar(teamCharId)!
   const { optimizationTarget } = useOptConfig(optConfigId)!
   const onDelete = () => {
-    if (
-      !window.confirm(
-        `Delete loadout? ${
-          teamIds.length
-            ? 'Teams with this loadout will have this loadout removed from the team. Teams will not be deleted.'
-            : ''
-        }`
-      )
-    )
-      return
     onHide()
     database.teamChars.remove(teamCharId)
   }
@@ -125,11 +118,18 @@ export default function LoadoutEditor({
                 </Button>
               </Grid>
               <Grid item xs={1}>
+                <RemoveLoadout
+                  show={showRemoval}
+                  onHide={onHideRemoval}
+                  onDelete={onDelete}
+                  teamCharId={teamCharId}
+                  teamIds={teamIds}
+                />
                 <Button
                   fullWidth
                   startIcon={<DeleteForeverIcon />}
                   color="error"
-                  onClick={onDelete}
+                  onClick={onShowRemoval}
                 >
                   Delete Loadout
                 </Button>
