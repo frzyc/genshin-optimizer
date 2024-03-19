@@ -86,7 +86,7 @@ export default function ArtifactCardNano({
     ? alpha(theme.palette[element].main, 0.6)
     : alpha(theme.palette.secondary.main, 0.6)
   return (
-    <BGComponent sx={{ height: '100%' }}>
+    <BGComponent sx={{ height: '100%', maxHeight: '8em' }}>
       <ConditionalWrapper condition={!!onClick} wrapper={actionWrapperFunc}>
         <Box display="flex" height="100%">
           <Box
