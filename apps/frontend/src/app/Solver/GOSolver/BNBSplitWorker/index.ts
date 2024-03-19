@@ -1,3 +1,4 @@
+import { objKeyValMap, objMap } from '@genshin-optimizer/common/util'
 import type {
   ArtifactSetKey,
   ArtifactSlotKey,
@@ -5,7 +6,6 @@ import type {
 import { allArtifactSetKeys } from '@genshin-optimizer/gi/consts'
 import type { Interim, Setup } from '../..'
 import { optimize, type OptNode } from '../../../Formula/optimization'
-import { objectKeyValueMap, objectMap } from '../../../Util/Util'
 import type {
   ArtifactBuildData,
   ArtifactsBySlot,
@@ -103,7 +103,7 @@ export class BNBSplitWorker implements SplitWorker {
           this.calculateFilter(this.firstUncalculated++) // Amortize the filter calculation to 1-per-split
 
         this.reportInterim(false)
-        yield objectMap(arts.values, (arts) => ({
+        yield objMap(arts.values, (arts) => ({
           kind: 'id' as const,
           ids: new Set(arts.map((art) => art.id)),
         }))
@@ -166,7 +166,7 @@ export class BNBSplitWorker implements SplitWorker {
     if (Object.values(arts.values).every((x) => x.length)) {
       ;({ lins, approxs } = approximation(nodes, arts))
       maxConts = approxs.map((approx) =>
-        objectMap(arts.values, (val) => maxContribution(val, approx))
+        objMap(arts.values, (val) => maxContribution(val, approx))
       )
     }
     // Removing artifacts that doesn't meet the required opt target contributions.
@@ -180,7 +180,7 @@ export class BNBSplitWorker implements SplitWorker {
         approxs[i].base - this.min[i]
       )
     )
-    const newValues = objectMap(arts.values, (arts, slot) => {
+    const newValues = objMap(arts.values, (arts, slot) => {
       const requiredConts = leadingConts.map((lc, i) => maxConts[i][slot] - lc)
       return arts.filter(({ id }) =>
         approxs.every(({ conts }, i) => conts[id] >= requiredConts[i])
@@ -225,7 +225,7 @@ function approximation(
     lins,
     approxs: lins.map((weight) => ({
       base: dot(arts.base, weight, weight.$c),
-      conts: objectKeyValueMap(Object.values(arts.values).flat(), (data) => [
+      conts: objKeyValMap(Object.values(arts.values).flat(), (data) => [
         data.id,
         dot(data.values, weight, 0),
       ]),

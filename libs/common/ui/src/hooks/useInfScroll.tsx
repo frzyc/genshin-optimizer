@@ -1,6 +1,6 @@
+import { useForceUpdate } from '@genshin-optimizer/common/react-util'
 import { useEffect, useState } from 'react'
 import { useOnScreen } from './useOnScreen'
-import { useForceUpdate } from '@genshin-optimizer/common/react-util'
 
 /**
  * A utility function to help implementation of an infinite scroll.

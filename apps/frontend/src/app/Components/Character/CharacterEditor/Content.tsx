@@ -1,7 +1,11 @@
-import { useForceUpdate } from '@genshin-optimizer/common/react-util'
+import {
+  useBoolState,
+  useForceUpdate,
+} from '@genshin-optimizer/common/react-util'
 import {
   BootstrapTooltip,
   CardThemed,
+  ModalWrapper,
   SqBadge,
 } from '@genshin-optimizer/common/ui'
 import { objKeyMap } from '@genshin-optimizer/common/util'
@@ -15,15 +19,25 @@ import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { getCharData } from '@genshin-optimizer/gi/stats'
 import { CharacterName, SillyContext } from '@genshin-optimizer/gi/ui'
 import AddIcon from '@mui/icons-material/Add'
+import CheckroomIcon from '@mui/icons-material/Checkroom'
+import CloseIcon from '@mui/icons-material/Close'
 import ContentCopyIcon from '@mui/icons-material/ContentCopy'
+import DashboardCustomizeIcon from '@mui/icons-material/DashboardCustomize'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
+import GroupsIcon from '@mui/icons-material/Groups'
 import InfoIcon from '@mui/icons-material/Info'
 import {
   Box,
   Button,
+  CardActions,
   CardContent,
+  CardHeader,
   Divider,
   Grid,
+  IconButton,
+  List,
+  ListItem,
+  Tooltip,
   Typography,
 } from '@mui/material'
 import { useCallback, useContext, useEffect, useMemo } from 'react'
@@ -34,7 +48,6 @@ import { DataContext } from '../../../Context/DataContext'
 import { getCharSheet } from '../../../Data/Characters'
 import { uiInput as input } from '../../../Formula'
 import TeamCard from '../../../PageTeams/TeamCard'
-import CloseButton from '../../CloseButton'
 import ImgIcon from '../../Image/ImgIcon'
 import LevelSelect from '../../LevelSelect'
 import { CharacterCardStats } from '../CharacterCard/CharacterCardStats'
@@ -89,7 +102,11 @@ export default function Content({ onClose }: { onClose?: () => void }) {
         >
           {t('delete')}
         </Button>
-        {!!onClose && <CloseButton onClick={onClose} />}
+        {!!onClose && (
+          <IconButton onClick={onClose}>
+            <CloseIcon />
+          </IconButton>
+        )}
       </Box>
       <Box>
         <Grid container spacing={1} sx={{ justifyContent: 'center' }}>
@@ -131,7 +148,7 @@ export default function Content({ onClose }: { onClose?: () => void }) {
             <Box>
               <Grid container columns={3} spacing={1}>
                 {(['auto', 'skill', 'burst'] as const).map((talentKey) => (
-                  <Grid item xs={1}>
+                  <Grid item xs={1} key={talentKey}>
                     <TalentDropdown
                       key={talentKey}
                       talentKey={talentKey}
@@ -301,9 +318,11 @@ function InTeam() {
                 >
                   <ContentCopyIcon />
                 </Button>
-                <Button color="error" onClick={() => onDelete(teamCharId)}>
-                  <DeleteForeverIcon />
-                </Button>
+                <RemoveLoadout
+                  teamCharId={teamCharId}
+                  teamIds={teamIds}
+                  onDelete={() => onDelete(teamCharId)}
+                />
               </Box>
             </CardContent>
             <Divider />
@@ -345,5 +364,215 @@ function InTeam() {
       </Button>
       <CardThemed bgt="light"></CardThemed>
     </Box>
+  )
+}
+function RemoveLoadout({
+  teamCharId,
+  onDelete,
+  teamIds,
+}: {
+  teamCharId: string
+  teamIds: string[]
+  onDelete: () => void
+}) {
+  const database = useDatabase()
+  const {
+    name,
+    description,
+    buildIds,
+    buildTcIds,
+    customMultiTargets,
+    bonusStats,
+  } = database.teamChars.get(teamCharId)!
+
+  const [show, onShow, onHide] = useBoolState()
+  const onDeleteLoadout = useCallback(() => {
+    onHide()
+    onDelete()
+  }, [onDelete, onHide])
+  return (
+    <>
+      <Button color="error" onClick={onShow}>
+        <DeleteForeverIcon />
+      </Button>
+      <ModalWrapper
+        open={show}
+        onClose={onHide}
+        containerProps={{ maxWidth: 'md' }}
+      >
+        <CardThemed>
+          <CardHeader
+            title={
+              <span>
+                Delete Loadout: <strong>{name}</strong>?
+              </span>
+            }
+            action={
+              <IconButton onClick={onHide}>
+                <CloseIcon />
+              </IconButton>
+            }
+          />
+          <Divider />
+          <CardContent>
+            {description && (
+              <CardThemed bgt="dark" sx={{ mb: 2 }}>
+                <CardContent>{description}</CardContent>
+              </CardThemed>
+            )}
+            <Typography>
+              Deleting the Loadout will also delete the following data:
+            </Typography>
+            <List sx={{ listStyleType: 'disc', pl: 4 }}>
+              {!!buildIds.length && (
+                <ListItem sx={{ display: 'list-item' }}>
+                  <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                    All saved builds: {buildIds.length}{' '}
+                    <Tooltip
+                      title={
+                        <Box>
+                          {buildIds.map((bId) => (
+                            <Typography
+                              key={bId}
+                              sx={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: 1,
+                              }}
+                            >
+                              <CheckroomIcon />
+                              <span>{database.builds.get(bId)?.name}</span>
+                            </Typography>
+                          ))}
+                        </Box>
+                      }
+                    >
+                      <InfoIcon />
+                    </Tooltip>
+                  </Box>
+                </ListItem>
+              )}
+
+              {!!buildTcIds.length && (
+                <ListItem sx={{ display: 'list-item' }}>
+                  <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                    All saved TC builds: {buildTcIds.length}{' '}
+                    <Tooltip
+                      title={
+                        <Box>
+                          {buildTcIds.map((bId) => (
+                            <Typography
+                              key={bId}
+                              sx={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: 1,
+                              }}
+                            >
+                              <CheckroomIcon />
+                              <span>{database.buildTcs.get(bId)?.name}</span>
+                            </Typography>
+                          ))}
+                        </Box>
+                      }
+                    >
+                      <InfoIcon />
+                    </Tooltip>
+                  </Box>
+                </ListItem>
+              )}
+
+              {!!customMultiTargets.length && (
+                <ListItem sx={{ display: 'list-item' }}>
+                  <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                    All Custom Multi-targets: {customMultiTargets.length}{' '}
+                    <Tooltip
+                      title={
+                        <Box>
+                          {customMultiTargets.map((target, i) => (
+                            <Typography
+                              key={i}
+                              sx={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: 1,
+                              }}
+                            >
+                              <DashboardCustomizeIcon />
+                              <span>{target.name}</span>
+                            </Typography>
+                          ))}
+                        </Box>
+                      }
+                    >
+                      <InfoIcon />
+                    </Tooltip>
+                  </Box>
+                </ListItem>
+              )}
+
+              {!!Object.keys(bonusStats).length && (
+                <ListItem sx={{ display: 'list-item' }}>
+                  Bonus stats: {Object.keys(bonusStats).length}
+                </ListItem>
+              )}
+              <ListItem sx={{ display: 'list-item' }}>
+                Optimization Configuration
+              </ListItem>
+
+              {!!teamIds.length && (
+                <ListItem sx={{ display: 'list-item' }}>
+                  <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                    <span>
+                      Any teams with this loadout will have this loadout removed
+                      from the team. Teams will not be deleted. Teams affected:{' '}
+                      {teamIds.length}
+                    </span>
+
+                    <Tooltip
+                      title={
+                        <Box>
+                          {teamIds.map((teamId) => (
+                            <Typography
+                              key={teamId}
+                              sx={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: 1,
+                              }}
+                            >
+                              <GroupsIcon />
+                              <span>{database.teams.get(teamId)?.name}</span>
+                            </Typography>
+                          ))}
+                        </Box>
+                      }
+                    >
+                      <InfoIcon />
+                    </Tooltip>
+                  </Box>
+                </ListItem>
+              )}
+            </List>
+          </CardContent>
+          <CardActions sx={{ float: 'right' }}>
+            <Button
+              startIcon={<CloseIcon />}
+              color="secondary"
+              onClick={onHide}
+            >
+              Cancel
+            </Button>
+            <Button
+              startIcon={<DeleteForeverIcon />}
+              color="error"
+              onClick={onDeleteLoadout}
+            >
+              Delete
+            </Button>
+          </CardActions>
+        </CardThemed>
+      </ModalWrapper>
+    </>
   )
 }

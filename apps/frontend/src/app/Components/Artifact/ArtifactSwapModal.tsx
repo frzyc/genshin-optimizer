@@ -9,12 +9,14 @@ import { imgAssets } from '@genshin-optimizer/gi/assets'
 import type { ArtifactSlotKey } from '@genshin-optimizer/gi/consts'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { Add } from '@mui/icons-material'
+import CloseIcon from '@mui/icons-material/Close'
 import {
   Box,
   Button,
   CardContent,
   Divider,
   Grid,
+  IconButton,
   Skeleton,
   Typography,
 } from '@mui/material'
@@ -34,7 +36,6 @@ import {
   initialFilterOption,
 } from '../../PageArtifact/ArtifactSort'
 import CardDark from '../Card/CardDark'
-import CloseButton from '../CloseButton'
 import CompareBuildButton from '../CompareBuildButton'
 import ImgIcon from '../Image/ImgIcon'
 import ModalWrapper from '../ModalWrapper'
@@ -140,7 +141,6 @@ export default function ArtifactSwapModal({
           sx={{
             py: 1,
             display: 'flex',
-            justifyContent: 'space-between',
             alignItems: 'center',
           }}
         >
@@ -148,7 +148,9 @@ export default function ArtifactSwapModal({
             {slotKey ? <ImgIcon src={imgAssets.slot[slotKey]} /> : null}{' '}
             {t`tabEquip.swapArt`}
           </Typography>
-          <CloseButton onClick={onClose} />
+          <IconButton onClick={onClose} sx={{ ml: 'auto' }}>
+            <CloseIcon />
+          </IconButton>
         </CardContent>
         <Divider />
         <CardContent>

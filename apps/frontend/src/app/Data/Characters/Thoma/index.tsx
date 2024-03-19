@@ -1,3 +1,4 @@
+import { range } from '@genshin-optimizer/common/util'
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
 import { input } from '../../../Formula'
@@ -10,7 +11,6 @@ import {
   naught,
   prod,
 } from '../../../Formula/utils'
-import { range } from '../../../Util/Util'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import type { ICharacterSheet } from '../ICharacterSheet.d'

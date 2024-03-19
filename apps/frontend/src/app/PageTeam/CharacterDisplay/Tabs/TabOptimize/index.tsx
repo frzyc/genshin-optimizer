@@ -32,6 +32,7 @@ import {
   TrendingUp,
 } from '@mui/icons-material'
 import CheckroomIcon from '@mui/icons-material/Checkroom'
+import CloseIcon from '@mui/icons-material/Close'
 import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive'
 import NotificationsOffIcon from '@mui/icons-material/NotificationsOff'
 import {
@@ -42,6 +43,7 @@ import {
   CardHeader,
   Divider,
   Grid,
+  IconButton,
   MenuItem,
   Skeleton,
   TextField,
@@ -67,7 +69,6 @@ import {
   CharacterCardHeaderContent,
 } from '../../../../Components/Character/CharacterCard/CharacterCardHeader'
 import { CharacterCardStats } from '../../../../Components/Character/CharacterCard/CharacterCardStats'
-import CloseButton from '../../../../Components/CloseButton'
 import DropdownButton from '../../../../Components/DropdownMenu/DropdownButton'
 import {
   HitModeToggle,
@@ -1076,7 +1077,11 @@ function CopyTcButton({ build }: { build: GeneratedBuild }) {
         <CardThemed>
           <CardHeader
             title="New Theorycraft Build"
-            action={<CloseButton onClick={OnHideTcPrompt} />}
+            action={
+              <IconButton onClick={OnHideTcPrompt}>
+                <CloseIcon />
+              </IconButton>
+            }
           />
           <Divider />
           <CardContent
@@ -1109,7 +1114,7 @@ function CopyBuildButton({
   build: GeneratedBuild
 }) {
   const [name, setName] = useState('')
-  const [showTcPrompt, onShowTcPrompt, OnHideTcPrompt] = useBoolState()
+  const [showPrompt, onShowPrompt, OnHidePrompt] = useBoolState()
 
   const database = useDatabase()
   const { teamCharId } = useContext(TeamCharacterContext)
@@ -1122,7 +1127,7 @@ function CopyBuildButton({
     })
 
     setName('')
-    OnHideTcPrompt()
+    OnHidePrompt()
   }
   return (
     <>
@@ -1130,17 +1135,21 @@ function CopyBuildButton({
         color="info"
         size="small"
         startIcon={<CheckroomIcon />}
-        onClick={onShowTcPrompt}
+        onClick={onShowPrompt}
       >
         New Build
       </Button>
       {/* TODO: Dialog Wanted to use a Dialog here, but was having some weird issues with closing out of it */}
       {/* TODO: Translation */}
-      <ModalWrapper open={showTcPrompt} onClose={OnHideTcPrompt}>
+      <ModalWrapper open={showPrompt} onClose={OnHidePrompt}>
         <CardThemed>
           <CardHeader
             title="New Build"
-            action={<CloseButton onClick={OnHideTcPrompt} />}
+            action={
+              <IconButton onClick={OnHidePrompt}>
+                <CloseIcon />
+              </IconButton>
+            }
           />
           <Divider />
           <CardContent
@@ -1156,7 +1165,7 @@ function CopyBuildButton({
               fullWidth
             />
             <Box sx={{ display: 'flex', justifyContent: 'flex-end', gap: 1 }}>
-              <Button onClick={OnHideTcPrompt}>Cancel</Button>
+              <Button onClick={OnHidePrompt}>Cancel</Button>
               <Button color="success" disabled={!name} onClick={toLoadout}>
                 Create
               </Button>

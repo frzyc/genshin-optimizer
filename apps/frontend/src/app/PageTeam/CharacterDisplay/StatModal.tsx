@@ -2,12 +2,14 @@ import type { TeamCharacter } from '@genshin-optimizer/gi/db'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { allEleDmgKeys, allEleResKeys } from '@genshin-optimizer/gi/keymap'
 import BarChartIcon from '@mui/icons-material/BarChart'
+import CloseIcon from '@mui/icons-material/Close'
 import {
   Alert,
   Box,
   CardContent,
   CardHeader,
   Grid,
+  IconButton,
   ListItem,
   Stack,
   Typography,
@@ -16,7 +18,6 @@ import { useContext, useMemo } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
 import CardDark from '../../Components/Card/CardDark'
 import CardLight from '../../Components/Card/CardLight'
-import CloseButton from '../../Components/CloseButton'
 import ColorText from '../../Components/ColoredText'
 import {
   FieldDisplayList,
@@ -35,7 +36,6 @@ const cols = {
   md: 2,
   lg: 3,
 }
-
 export default function StatModal({ open, onClose }) {
   const { t } = useTranslation('page_character')
   return (
@@ -48,7 +48,11 @@ export default function StatModal({ open, onClose }) {
               <span>{t`addStats.title`}</span>
             </Box>
           }
-          action={<CloseButton onClick={onClose} />}
+          action={
+            <IconButton onClick={onClose}>
+              <CloseIcon />
+            </IconButton>
+          }
         />
         <CardContent sx={{ pt: 0 }}>
           <Stack spacing={1}>

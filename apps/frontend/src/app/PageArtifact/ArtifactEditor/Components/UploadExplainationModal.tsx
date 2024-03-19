@@ -1,13 +1,14 @@
+import CloseIcon from '@mui/icons-material/Close'
 import {
   Alert,
   Box,
   CardContent,
   Divider,
   Grid,
+  IconButton,
   Typography,
 } from '@mui/material'
 import CardDark from '../../../Components/Card/CardDark'
-import CloseButton from '../../../Components/CloseButton'
 import ModalWrapper from '../../../Components/ModalWrapper'
 import Snippet from './imgs/fullscreen.png'
 import scan_art_main from './imgs/scanned.png'
@@ -21,17 +22,13 @@ export default function UploadExplainationModal({
   return (
     <ModalWrapper open={modalShow} onClose={hide}>
       <CardDark>
-        <CardContent sx={{ py: 1 }}>
-          <Grid container>
-            <Grid item flexGrow={1}>
-              <Typography variant="subtitle1">
-                How to Upload Screenshots for parsing
-              </Typography>
-            </Grid>
-            <Grid item>
-              <CloseButton onClick={hide} />
-            </Grid>
-          </Grid>
+        <CardContent sx={{ py: 1, display: 'flex' }}>
+          <Typography variant="subtitle1">
+            How to Upload Screenshots for parsing
+          </Typography>
+          <IconButton onClick={hide} sx={{ ml: 'auto' }}>
+            <CloseIcon />
+          </IconButton>
         </CardContent>
         <Divider />
         <CardContent>
@@ -125,10 +122,6 @@ export default function UploadExplainationModal({
               />
             </Grid>
           </Grid>
-        </CardContent>
-        <Divider />
-        <CardContent sx={{ py: 1 }}>
-          <CloseButton large onClick={hide} />
         </CardContent>
       </CardDark>
     </ModalWrapper>

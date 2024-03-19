@@ -5,7 +5,7 @@ import {
   artMaxLevel,
 } from '@genshin-optimizer/gi/consts'
 import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
-import { getMainStatDisplayValue } from '@genshin-optimizer/gi/util'
+import { getMainStatValue } from '@genshin-optimizer/gi/util'
 import { input } from '../../../../Formula'
 import { computeUIData } from '../../../../Formula/api'
 import { formulaString } from '../../../../Formula/debug'
@@ -39,7 +39,7 @@ export function compactArtifacts(
   const keys = new Set<string>()
 
   for (const art of arts) {
-    const mainStatVal = getMainStatDisplayValue(
+    const mainStatVal = getMainStatValue(
       art.mainStatKey,
       art.rarity,
       Math.max(
@@ -53,9 +53,7 @@ export function compactArtifacts(
       set: art.setKey,
       values: {
         [art.setKey]: 1,
-        [art.mainStatKey]: art.mainStatKey.endsWith('_')
-          ? mainStatVal / 100
-          : mainStatVal,
+        [art.mainStatKey]: mainStatVal,
         ...Object.fromEntries(
           art.substats.map((substat) => [
             substat.key,
