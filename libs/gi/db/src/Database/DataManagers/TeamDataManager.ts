@@ -211,10 +211,11 @@ export class TeamDataManager extends DataManager<
     const { loadoutData, ...rest } = team
     return {
       ...rest,
-      loadoutData: loadoutData.map((loadoutData) => {
-        loadoutData?.teamCharId &&
+      loadoutData: loadoutData.map(
+        (loadoutData) =>
+          loadoutData?.teamCharId &&
           this.database.teamChars.export(loadoutData?.teamCharId)
-      }),
+      ),
     }
   }
   import(data: object): string {
