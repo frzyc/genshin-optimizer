@@ -1,4 +1,5 @@
 import { useBoolState } from '@genshin-optimizer/common/react-util'
+import { objPathValue } from '@genshin-optimizer/common/util'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { Box, Button, Divider, Stack } from '@mui/material'
 import { useCallback, useContext, useMemo } from 'react'
@@ -8,7 +9,6 @@ import SqBadge from '../../../../../Components/SqBadge'
 import { DataContext } from '../../../../../Context/DataContext'
 import { getDisplayHeader } from '../../../../../Formula/DisplayUtil'
 import type { NodeDisplay } from '../../../../../Formula/uiData'
-import { objPathValue } from '../../../../../Util/Util'
 import type { TargetSelectorModalProps } from './TargetSelectorModal'
 import { TargetSelectorModal } from './TargetSelectorModal'
 

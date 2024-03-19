@@ -18,12 +18,12 @@ import {
   CardHeader,
   Divider,
   Grid,
+  IconButton,
   TextField,
   Typography,
 } from '@mui/material'
 import { Suspense, useDeferredValue, useEffect, useMemo, useState } from 'react'
 import CharacterSelectionModal from '../../Components/Character/CharacterSelectionModal'
-import CloseButton from '../../Components/CloseButton'
 import CharIconSide from '../../Components/Image/CharIconSide'
 import type { TeamData, dataContextObj } from '../../Context/DataContext'
 import { DataContext } from '../../Context/DataContext'
@@ -35,6 +35,7 @@ import ContentCopyIcon from '@mui/icons-material/ContentCopy'
 import ContentPasteIcon from '@mui/icons-material/ContentPaste'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import { useLocation, useNavigate } from 'react-router-dom'
+import { EnemyExpandCard } from '../../Components/EnemyEditor'
 import type { TeamCharacterContextObj } from '../../Context/TeamCharacterContext'
 import { TeamCharacterContext } from '../../Context/TeamCharacterContext'
 import BuildDropdown from '../BuildDropdown'
@@ -92,7 +93,13 @@ export default function TeamSetting({
   }, [database, descDeferred])
 
   const onDel = () => {
-    database.teams.remove(teamId)
+    if (
+      !window.confirm(
+        'Removing the team will not remove the loadouts, but will remove select builds, resonance buffs, and enemy config.'
+      )
+    )
+      return
+    // database.teams.remove(teamId)
     navigate(`/teams`)
   }
   const onExport = () => {
@@ -141,7 +148,11 @@ export default function TeamSetting({
                 <span>Team Settings</span>
               </Box>
             }
-            action={<CloseButton onClick={() => setOpen(false)} />}
+            action={
+              <IconButton onClick={() => setOpen(false)}>
+                <CloseIcon />
+              </IconButton>
+            }
           />
           <Divider />
           <CardContent
@@ -169,7 +180,7 @@ export default function TeamSetting({
               multiline
               minRows={2}
             />
-            <Box sx={{ display: 'flex', gap: 2 }}>
+            <Box sx={{ display: 'flex', gap: 1 }}>
               <Button
                 color="info"
                 sx={{ flexGrow: 1 }}
@@ -188,10 +199,16 @@ export default function TeamSetting({
               >
                 Duplicate Team
               </Button>
-              <Button color="error" size="small" onClick={onDel}>
-                <DeleteForeverIcon />
+              <Button
+                color="error"
+                sx={{ flexGrow: 1 }}
+                onClick={onDel}
+                startIcon={<DeleteForeverIcon />}
+              >
+                Delete Team
               </Button>
             </Box>
+            <EnemyExpandCard teamId={teamId} />
             <Typography variant="h6">Team Editor</Typography>
             <Alert severity="info" variant="filled">
               The first character in the team receives any "active on-field

@@ -32,7 +32,6 @@ import { useTeamDataNoContext } from '../ReactHooks/useTeamData'
 import useTitle from '../ReactHooks/useTitle'
 import { shouldShowDevComponents } from '../Util/Util'
 import Content from './CharacterDisplay/Content'
-import { EnemyEditorElement } from './EnemyEditorElement'
 import TeamCharacterSelector from './TeamCharacterSelector'
 import TeamSetting from './TeamSetting'
 
@@ -169,7 +168,6 @@ function Page({ teamId }: { teamId: string }) {
       <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
         <Box sx={{ display: 'flex', gap: 1 }}>
           <TeamSetting teamId={teamId} teamData={teamData} />
-          <EnemyEditorElement teamId={teamId} />
         </Box>
 
         <TeamCharacterSelector

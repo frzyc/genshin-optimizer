@@ -9,6 +9,7 @@ import {
 import { useBuild, useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { getCharData } from '@genshin-optimizer/gi/stats'
 import { ArtifactSlotName, CharacterName } from '@genshin-optimizer/gi/ui'
+import CloseIcon from '@mui/icons-material/Close'
 import {
   Alert,
   Box,
@@ -17,6 +18,7 @@ import {
   CardHeader,
   Divider,
   Grid,
+  IconButton,
   TextField,
   Typography,
   styled,
@@ -24,7 +26,6 @@ import {
 import { useContext, useDeferredValue, useEffect, useState } from 'react'
 import ArtifactCardNano from '../../../Components/Artifact/ArtifactCardNano'
 import EquippedGrid from '../../../Components/Character/EquippedGrid'
-import CloseButton from '../../../Components/CloseButton'
 import WeaponCardNano from '../../../Components/Weapon/WeaponCardNano'
 import { CharacterContext } from '../../../Context/CharacterContext'
 import { TeamCharacterContext } from '../../../Context/TeamCharacterContext'
@@ -266,7 +267,11 @@ function BuildEditor({
     <CardThemed>
       <CardHeader
         title="Build Settings"
-        action={<CloseButton onClick={onClose} />}
+        action={
+          <IconButton onClick={onClose}>
+            <CloseIcon />
+          </IconButton>
+        }
       />
       <Divider />
       <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>

@@ -25,8 +25,10 @@ import {
 } from '@genshin-optimizer/gi/db'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import AddIcon from '@mui/icons-material/Add'
+import CloseIcon from '@mui/icons-material/Close'
 import ContentCopyIcon from '@mui/icons-material/ContentCopy'
 import ContentPasteIcon from '@mui/icons-material/ContentPaste'
+import DashboardCustomizeIcon from '@mui/icons-material/DashboardCustomize'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import ExpandLessIcon from '@mui/icons-material/ExpandLess'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
@@ -39,8 +41,11 @@ import {
   Button,
   ButtonGroup,
   CardContent,
+  CardHeader,
   Chip,
+  Divider,
   Grid,
+  IconButton,
   MenuItem,
   Skeleton,
   TextField,
@@ -61,7 +66,6 @@ import { Trans, useTranslation } from 'react-i18next'
 import AdditiveReactionModeText from '../../Components/AdditiveReactionModeText'
 import AmpReactionModeText from '../../Components/AmpReactionModeText'
 import CardDark from '../../Components/Card/CardDark'
-import CloseButton from '../../Components/CloseButton'
 import ColorText from '../../Components/ColoredText'
 import CustomNumberInput, {
   CustomNumberInputButtonGroupWrapper,
@@ -83,7 +87,6 @@ import {
 } from '../../Types/consts'
 import OptimizationTargetSelector from './Tabs/TabOptimize/Components/OptimizationTargetSelector'
 import { TargetSelectorModal } from './Tabs/TabOptimize/Components/TargetSelectorModal'
-import DashboardCustomizeIcon from '@mui/icons-material/DashboardCustomize'
 const MAX_DESC_TOOLTIP_LENGTH = 300
 
 export function CustomMultiTargetButton() {
@@ -228,44 +231,53 @@ export function CustomMultiTargetButton() {
           containerProps={{ sx: { overflow: 'visible' } }}
         >
           <CardDark>
+            <CardHeader
+              title={
+                <Box display="flex" gap={1} alignItems="center">
+                  <DashboardCustomizeIcon />
+                  <Typography variant="h6">{t`multiTarget.title`}</Typography>
+                  <InfoTooltip
+                    title={
+                      <Typography>
+                        <Trans t={t} i18nKey="multiTarget.info1">
+                          Note: Community created Multi-Optimization Targets can
+                          be found within the
+                          <a
+                            href={process.env.NX_URL_DISCORD_GO}
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            GO Discord
+                          </a>
+                          or
+                          <a
+                            href={process.env.NX_URL_KQM_MULTI_GUIDE}
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            KQM Multi-Opt Guide
+                          </a>
+                          , however the validity of such configurations cannot
+                          be guaranteed.
+                        </Trans>
+                        <br />
+                        <br />
+                        {t('multiTarget.info2')}
+                      </Typography>
+                    }
+                  />
+                </Box>
+              }
+              action={
+                <IconButton onClick={onClose}>
+                  <CloseIcon />
+                </IconButton>
+              }
+            />
+            <Divider />
             <CardContent
               sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}
             >
-              <Box display="flex" gap={1} alignItems="center">
-                <DashboardCustomizeIcon />
-                <Typography variant="h6">{t`multiTarget.title`}</Typography>
-                <InfoTooltip
-                  title={
-                    <Typography>
-                      <Trans t={t} i18nKey="multiTarget.info1">
-                        Note: Community created Multi-Optimization Targets can
-                        be found within the
-                        <a
-                          href={process.env.NX_URL_DISCORD_GO}
-                          target="_blank"
-                          rel="noreferrer"
-                        >
-                          GO Discord
-                        </a>
-                        or
-                        <a
-                          href={process.env.NX_URL_KQM_MULTI_GUIDE}
-                          target="_blank"
-                          rel="noreferrer"
-                        >
-                          KQM Multi-Opt Guide
-                        </a>
-                        , however the validity of such configurations cannot be
-                        guaranteed.
-                      </Trans>
-                      <br />
-                      <br />
-                      {t('multiTarget.info2')}
-                    </Typography>
-                  }
-                />
-                <CloseButton onClick={onClose} sx={{ marginLeft: 'auto' }} />
-              </Box>
               <Box>
                 {customMultiTargetDisplays}
                 <Button

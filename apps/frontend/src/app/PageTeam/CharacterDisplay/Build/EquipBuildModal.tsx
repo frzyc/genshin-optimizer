@@ -2,7 +2,9 @@ import { CardThemed, ModalWrapper, SqBadge } from '@genshin-optimizer/common/ui'
 import type { ArtifactSlotKey } from '@genshin-optimizer/gi/consts'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { getCharData } from '@genshin-optimizer/gi/stats'
-import { Checkroom, KeyboardArrowDown } from '@mui/icons-material'
+import CheckroomIcon from '@mui/icons-material/Checkroom'
+import CloseIcon from '@mui/icons-material/Close'
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 import {
   Box,
   Button,
@@ -12,12 +14,12 @@ import {
   Divider,
   FormControlLabel,
   Grid,
+  IconButton,
   TextField,
   Typography,
 } from '@mui/material'
 import { useContext, useState } from 'react'
 import ArtifactCardNano from '../../../Components/Artifact/ArtifactCardNano'
-import CloseButton from '../../../Components/CloseButton'
 import WeaponCardNano from '../../../Components/Weapon/WeaponCardNano'
 import { TeamCharacterContext } from '../../../Context/TeamCharacterContext'
 
@@ -75,14 +77,18 @@ export default function EquipBuildModal({
         <CardHeader
           title={
             <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
-              <Checkroom />
+              <CheckroomIcon />
               <span>
                 Confirm Equipment Changes for{' '}
                 <strong>{equipChangeProps.currentName}</strong>
               </span>
             </Box>
           }
-          action={<CloseButton onClick={OnHidePrompt} />}
+          action={
+            <IconButton onClick={OnHidePrompt}>
+              <CloseIcon />
+            </IconButton>
+          }
         />
         <Divider />
         <CardContent
@@ -134,7 +140,7 @@ export default function EquipBuildModal({
               alignItems="center"
               padding={2}
             >
-              <KeyboardArrowDown sx={{ fontSize: 40 }} />
+              <KeyboardArrowDownIcon sx={{ fontSize: 40 }} />
             </Box>
             {/* New Build */}
             <CardThemed bgt="light">

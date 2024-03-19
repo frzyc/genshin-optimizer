@@ -1,6 +1,6 @@
+import { assertUnreachable } from '@genshin-optimizer/common/util'
 import { allArtifactSlotKeys } from '@genshin-optimizer/gi/consts'
 import type { Interim, Setup } from '..'
-import { assertUnreachable } from '../../Util/Util'
 import type { ArtifactsBySlot, RequestFilter } from '../common'
 import { countBuilds, filterArts } from '../common'
 import type { SplitWorker } from './BackgroundWorker'

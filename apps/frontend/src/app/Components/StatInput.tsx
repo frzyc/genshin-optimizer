@@ -57,7 +57,7 @@ export default function StatInput({
       <Button
         sx={{ flexShrink: 2 }}
         size="small"
-        color="error"
+        color="secondary"
         onClick={() => (onReset ? onReset() : onValueChange(defaultValue))}
         disabled={disabled || value === defaultValue}
       >
