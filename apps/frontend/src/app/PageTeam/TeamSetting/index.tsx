@@ -103,7 +103,7 @@ export default function TeamSetting({
       )
     )
       return
-    // database.teams.remove(teamId)
+    database.teams.remove(teamId)
     navigate(`/teams`)
   }
   const onExport = () => {
