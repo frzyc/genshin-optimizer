@@ -1,4 +1,5 @@
 import { CardThemed } from '@genshin-optimizer/common/ui'
+import { colorToRgbaString, hexToColor } from '@genshin-optimizer/common/util'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import { charKeyToLocGenderedCharKey } from '@genshin-optimizer/gi/consts'
 import type { GeneratedBuild } from '@genshin-optimizer/gi/db'
@@ -164,30 +165,61 @@ function Page({ teamId }: { teamId: string }) {
   }, [charUIData, teamData])
 
   return (
-    <CardThemed>
-      <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
-        <Box sx={{ display: 'flex', gap: 1 }}>
-          <TeamSetting teamId={teamId} teamData={teamData} />
-        </Box>
-
-        <TeamCharacterSelector
+    <Box sx={{ display: 'flex', gap: 1, flexDirection: 'column' }}>
+      <Box sx={{ display: 'flex', gap: 1 }}>
+        <TeamSetting
           teamId={teamId}
-          characterKey={characterKey}
-          tab={tab}
+          teamData={teamData}
+          buttonProps={{
+            sx: {
+              flexGrow: 1,
+              backgroundColor: 'contentLight.main',
+            },
+            variant: 'outlined',
+            color: 'info',
+          }}
         />
-        {teamCharacterContextValue ? (
-          dataContextValue ? (
-            <TeamCharacterContext.Provider value={teamCharacterContextValue}>
-              <DataContext.Provider value={dataContextValue}>
-                <InnerContent tab={tab} />
-              </DataContext.Provider>
-            </TeamCharacterContext.Provider>
-          ) : (
-            fallback
-          )
-        ) : null}
-      </CardContent>
-    </CardThemed>
+      </Box>
+      <CardThemed>
+        <Box
+          sx={(theme) => {
+            const elementKey =
+              characterKey && getCharSheet(characterKey).elementKey
+            if (!elementKey) return {}
+            const hex = theme.palette[elementKey].main as string
+            const color = hexToColor(hex)
+            if (!color) return {}
+            const rgba = colorToRgbaString(color, 0.1)
+            return {
+              background: `linear-gradient(to bottom, ${rgba} 0%, rgba(0,0,0,0)) 25%`,
+            }
+          }}
+        >
+          <TeamCharacterSelector
+            teamId={teamId}
+            characterKey={characterKey}
+            tab={tab}
+          />
+          <CardContent
+            sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}
+          >
+            {teamCharacterContextValue ? (
+              dataContextValue ? (
+                <TeamCharacterContext.Provider
+                  value={teamCharacterContextValue}
+                >
+                  <DataContext.Provider value={dataContextValue}>
+                    <InnerContent tab={tab} />
+                  </DataContext.Provider>
+                </TeamCharacterContext.Provider>
+              ) : (
+                fallback
+              )
+            ) : null}
+          </CardContent>
+        </Box>
+      </CardThemed>
+    </Box>
   )
 }
 function InnerContent({ tab }: { tab: string }) {

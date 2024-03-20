@@ -2,7 +2,6 @@ import {
   BootstrapTooltip,
   CardThemed,
   ModalWrapper,
-  SqBadge,
 } from '@genshin-optimizer/common/ui'
 import type { LoadoutDatum } from '@genshin-optimizer/gi/db'
 import { TeamCharacterContext, useDatabase } from '@genshin-optimizer/gi/db-ui'
@@ -11,6 +10,8 @@ import AddIcon from '@mui/icons-material/Add'
 import CheckroomIcon from '@mui/icons-material/Checkroom'
 import CloseIcon from '@mui/icons-material/Close'
 import PersonIcon from '@mui/icons-material/Person'
+import SettingsIcon from '@mui/icons-material/Settings'
+import type { ButtonProps } from '@mui/material'
 import {
   Box,
   Button,
@@ -19,9 +20,10 @@ import {
   Divider,
   Grid,
   IconButton,
+  Skeleton,
   Typography,
 } from '@mui/material'
-import { useContext, useState } from 'react'
+import { Suspense, useContext, useState } from 'react'
 import BuildInfoAlert from '../../Components/Team/Loadout/Build/BuildInfoAlert'
 import LoadoutInfoAlert from '../../Components/Team/Loadout/LoadoutInfoAlert'
 import LoadoutNameDesc from '../../Components/Team/Loadout/LoadoutNameDesc'
@@ -32,7 +34,11 @@ import BuildTc from './Build/BuildTc'
 
 // TODO: Translation
 const columns = { xs: 1, sm: 1, md: 2, lg: 2 }
-export default function LoadoutSettingElement() {
+export default function LoadoutSettingElement({
+  buttonProps = {},
+}: {
+  buttonProps?: ButtonProps
+}) {
   const database = useDatabase()
   const { teamId, teamChar, teamCharId, loadoutDatum } =
     useContext(TeamCharacterContext)
@@ -62,18 +68,16 @@ export default function LoadoutSettingElement() {
         >
           <Button
             startIcon={<PersonIcon />}
+            endIcon={<SettingsIcon />}
             color="info"
             onClick={() => setOpen((o) => !o)}
+            {...buttonProps}
           >
             <Typography sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
               <strong>{teamChar.name}</strong>
-              <SqBadge
-                color="success"
-                sx={{ display: 'flex', gap: 1, alignItems: 'center' }}
-              >
-                <CheckroomIcon />
-                <span>{database.teams.getActiveBuildName(loadoutDatum)}</span>
-              </SqBadge>
+              <Divider orientation="vertical" variant="middle" flexItem />
+              <CheckroomIcon />
+              <span>{database.teams.getActiveBuildName(loadoutDatum)}</span>
             </Typography>
           </Button>
         </BootstrapTooltip>
@@ -81,33 +85,39 @@ export default function LoadoutSettingElement() {
 
       <ModalWrapper open={open} onClose={() => setOpen(false)}>
         <CardThemed>
-          <CardHeader
-            title={
-              <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
-                <PersonIcon />
-                <span>Loadout Settings</span>
-              </Box>
+          <Suspense
+            fallback={
+              <Skeleton variant="rectangular" width="100%" height={1000} />
             }
-            action={
-              <IconButton onClick={() => setOpen(false)}>
-                <CloseIcon />
-              </IconButton>
-            }
-          />
-          <Divider />
-          <CardContent
-            sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}
           >
-            <LoadoutInfoAlert />
-            <LoadoutDropdown
-              teamCharId={teamCharId}
-              onChangeTeamCharId={onChangeTeamCharId}
-              dropdownBtnProps={{ fullWidth: true }}
+            <CardHeader
+              title={
+                <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
+                  <PersonIcon />
+                  <span>Loadout Settings</span>
+                </Box>
+              }
+              action={
+                <IconButton onClick={() => setOpen(false)}>
+                  <CloseIcon />
+                </IconButton>
+              }
             />
-            <LoadoutNameDesc teamCharId={teamCharId} />
-          </CardContent>
-          <Divider />
-          <BuildManagementContent />
+            <Divider />
+            <CardContent
+              sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}
+            >
+              <LoadoutInfoAlert />
+              <LoadoutDropdown
+                teamCharId={teamCharId}
+                onChangeTeamCharId={onChangeTeamCharId}
+                dropdownBtnProps={{ fullWidth: true }}
+              />
+              <LoadoutNameDesc teamCharId={teamCharId} />
+            </CardContent>
+            <Divider />
+            <BuildManagementContent />
+          </Suspense>
         </CardThemed>
       </ModalWrapper>
     </>

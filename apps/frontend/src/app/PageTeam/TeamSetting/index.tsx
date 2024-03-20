@@ -10,6 +10,7 @@ import AddIcon from '@mui/icons-material/Add'
 import CloseIcon from '@mui/icons-material/Close'
 import GroupsIcon from '@mui/icons-material/Groups'
 import SettingsIcon from '@mui/icons-material/Settings'
+import type { ButtonProps } from '@mui/material'
 import {
   Alert,
   Box,
@@ -45,9 +46,11 @@ import BuildDropdown from '../BuildDropdown'
 export default function TeamSetting({
   teamId,
   teamData,
+  buttonProps = {},
 }: {
   teamId: string
   teamData?: TeamData
+  buttonProps?: ButtonProps
 }) {
   const navigate = useNavigate()
   const database = useDatabase()
@@ -126,11 +129,10 @@ export default function TeamSetting({
         }
       >
         <Button
-          color="info"
-          sx={{ flexGrow: 1 }}
           startIcon={<GroupsIcon />}
           endIcon={<SettingsIcon />}
           onClick={() => setOpen((open) => !open)}
+          {...buttonProps}
         >
           <Typography variant="h6">{team.name}</Typography>
         </Button>

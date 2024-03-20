@@ -221,11 +221,11 @@ export const theme = createTheme({
       name: 'dendro',
     }),
     pyro: commonTheme.palette.augmentColor({
-      color: { main: '#bf2818' },
+      color: { main: '#FF3C32' },
       name: 'pyro',
     }),
     hydro: commonTheme.palette.augmentColor({
-      color: { main: '#2f63d4' },
+      color: { main: '#5680ff' },
       name: 'hydro',
     }),
     cryo: commonTheme.palette.augmentColor({

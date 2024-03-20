@@ -33,6 +33,7 @@ import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import ExpandLessIcon from '@mui/icons-material/ExpandLess'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import SettingsIcon from '@mui/icons-material/Settings'
+import type { ButtonProps } from '@mui/material'
 import {
   Accordion,
   AccordionDetails,
@@ -89,7 +90,11 @@ import OptimizationTargetSelector from './Tabs/TabOptimize/Components/Optimizati
 import { TargetSelectorModal } from './Tabs/TabOptimize/Components/TargetSelectorModal'
 const MAX_DESC_TOOLTIP_LENGTH = 300
 
-export function CustomMultiTargetButton() {
+export function CustomMultiTargetButton({
+  buttonProps = {},
+}: {
+  buttonProps?: ButtonProps
+}) {
   const database = useDatabase()
   const { t } = useTranslation('page_character')
   const [show, onShow, onCloseModal] = useBoolState()
@@ -218,11 +223,14 @@ export function CustomMultiTargetButton() {
         color="info"
         onClick={onShow}
         startIcon={<DashboardCustomizeIcon />}
+        {...buttonProps}
       >
-        {t`multiTarget.title`}{' '}
-        <SqBadge color={customMultiTargets.length ? 'success' : 'secondary'}>
-          {customMultiTargets.length}
-        </SqBadge>
+        <Box display="flex" gap={1}>
+          <span>{t`multiTarget.title`}</span>
+          <SqBadge color={customMultiTargets.length ? 'success' : 'secondary'}>
+            {customMultiTargets.length}
+          </SqBadge>
+        </Box>
       </Button>
       <DataContext.Provider value={dataContextObj}>
         <ModalWrapper
