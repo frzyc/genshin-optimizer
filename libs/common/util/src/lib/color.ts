@@ -10,3 +10,11 @@ export function hexToColor(hex: string) {
     b: parseInt(result[3], 16),
   }
 }
+
+export function colorToRgbaString(
+  color: { r: number; g: number; b: number },
+  alpha: number
+) {
+  if (!color) return
+  return `rgba(${color.r},${color.g},${color.b},${alpha})`
+}

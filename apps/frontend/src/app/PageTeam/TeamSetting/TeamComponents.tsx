@@ -10,7 +10,11 @@ import {
   useTeamChar,
 } from '@genshin-optimizer/gi/db-ui'
 import { ArtifactSetName } from '@genshin-optimizer/gi/ui'
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import {
+  Accordion,
+  AccordionDetails,
+  AccordionSummary,
   Box,
   CardContent,
   CardHeader,
@@ -66,27 +70,45 @@ export function TeamBuffDisplay() {
   )
   if (!nodes.length) return null
   return (
-    <CardLight>
-      <CardContent>
+    <Accordion
+      sx={(theme) => ({
+        bgcolor: theme.palette.contentLight.main,
+        borderRadius: '4px',
+        '&:before': {
+          display: 'none',
+        },
+      })}
+      disableGutters
+    >
+      <AccordionSummary sx={{ py: 1 }} expandIcon={<ExpandMoreIcon />}>
         <Typography>Received Team Buffs</Typography>
-      </CardContent>
-      <Divider />
-      <CardContent>
-        <Grid container>
-          {nodes.map(
-            ([path, n]) =>
-              n && (
-                <Grid item xs={12} key={JSON.stringify(n.info)}>
-                  <NodeFieldDisplay
-                    node={n}
-                    oldValue={objPathValue(oldData?.getTeamBuff(), path)?.value}
-                  />
-                </Grid>
-              )
-          )}
-        </Grid>
-      </CardContent>
-    </CardLight>
+        <SqBadge sx={{ ml: 1 }} color={nodes.length ? 'success' : 'info'}>
+          {nodes.length}
+        </SqBadge>
+      </AccordionSummary>
+      <AccordionDetails sx={{ p: 0 }}>
+        <Divider />
+        <CardLight>
+          <CardContent>
+            <Grid container>
+              {nodes.map(
+                ([path, n]) =>
+                  n && (
+                    <Grid item xs={12} key={JSON.stringify(n.info)}>
+                      <NodeFieldDisplay
+                        node={n}
+                        oldValue={
+                          objPathValue(oldData?.getTeamBuff(), path)?.value
+                        }
+                      />
+                    </Grid>
+                  )
+              )}
+            </Grid>
+          </CardContent>
+        </CardLight>
+      </AccordionDetails>
+    </Accordion>
   )
 }
 export function ResonanceDisplay({ teamId }: { teamId: string }) {

@@ -41,7 +41,7 @@ export default function BuildReal({
   active = false,
 }: {
   buildId: string
-  active: boolean
+  active?: boolean
 }) {
   const [open, onOpen, onClose] = useBoolState()
   const {

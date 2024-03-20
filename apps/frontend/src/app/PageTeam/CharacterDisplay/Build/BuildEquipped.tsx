@@ -10,7 +10,7 @@ import { type ArtifactSlotKey } from '@genshin-optimizer/gi/consts'
 import { Grid } from '@mui/material'
 import ArtifactCardNano from '../../../Components/Artifact/ArtifactCardNano'
 import WeaponCardNano from '../../../Components/Weapon/WeaponCardNano'
-export function BuildEquipped({ active = false }: { active: boolean }) {
+export function BuildEquipped({ active = false }: { active?: boolean }) {
   const { teamId, teamCharId } = useContext(TeamCharacterContext)
   const {
     character: { key: characterKey, equippedArtifacts, equippedWeapon },
