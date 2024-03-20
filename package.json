@@ -72,7 +72,7 @@
     "jsdom": "22.1.0",
     "nx": "16.10.0",
     "prettier": "^2.8.4",
-    "prettier-plugin-organize-imports": "file:./tools/prettier-plugin-organize-imports",
+    "prettier-plugin-organize-imports": "^3.2.4",
     "prisma": "^5.5.2",
     "react-refresh": "^0.10.0",
     "swc-loader": "0.1.15",
