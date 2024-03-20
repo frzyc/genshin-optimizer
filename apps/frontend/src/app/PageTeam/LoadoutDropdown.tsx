@@ -82,7 +82,6 @@ export function LoadoutDropdown({
             <TextField
               fullWidth
               label="New Loadout Description"
-              placeholder="New Loadout Description"
               value={newDesc}
               onChange={(e) => setNewDesc(e.target.value)}
               multiline

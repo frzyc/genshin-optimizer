@@ -248,7 +248,6 @@ function BuildTcEditor({
         <TextField
           fullWidth
           label="Build Description"
-          placeholder="Build Description"
           value={desc}
           onChange={(e) => setDesc(e.target.value)}
           multiline

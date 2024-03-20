@@ -172,7 +172,6 @@ export default function TeamSetting({
             <TextField
               fullWidth
               label="Team Description"
-              placeholder="Team Description"
               value={desc}
               onChange={(e) => setDesc(e.target.value)}
               multiline
