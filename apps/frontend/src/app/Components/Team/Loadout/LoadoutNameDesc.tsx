@@ -52,7 +52,6 @@ export default function LoadoutNameDesc({
       <TextField
         fullWidth
         label="Loadout Description"
-        placeholder="Loadout Description"
         value={desc}
         onChange={(e) => setDesc(e.target.value)}
         multiline
