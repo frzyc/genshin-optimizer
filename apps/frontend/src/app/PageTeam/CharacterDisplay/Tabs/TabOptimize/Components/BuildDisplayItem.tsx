@@ -250,10 +250,10 @@ export default function BuildDisplayItem({
   const compareFromCharEditor = buildType === undefined
 
   const activeWeapon = useMemo(() => {
+    if (compareFromCharEditor) return equippedWeapon
     if (dbDirty && buildType === 'real')
       return database.builds.get(buildId)!.weaponId
     if (dbDirty && buildType === 'equipped') return equippedWeapon
-    if (compareFromCharEditor) return equippedWeapon
 
     // default
     return ''
@@ -267,10 +267,10 @@ export default function BuildDisplayItem({
   ])
 
   const activeArtifacts = useMemo(() => {
+    if (compareFromCharEditor) return equippedArtifacts
     if (dbDirty && buildType === 'real')
       return database.builds.get(buildId)!.artifactIds
     if (dbDirty && buildType === 'equipped') return equippedArtifacts
-    if (compareFromCharEditor) return equippedArtifacts
 
     // default
     return objKeyMap(allArtifactSlotKeys, () => '')

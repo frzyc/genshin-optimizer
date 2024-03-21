@@ -184,22 +184,24 @@ export default function EquipBuildModal({
           <Typography sx={{ fontSize: 20 }}>
             Do you want to make the changes shown above?
           </Typography>
-          <FormControlLabel
-            label={
-              <>
-                Copy the current equipment in{' '}
-                <strong>{equipChangeProps.currentName}</strong> to a new build.
-                Otherwise, they will be overwritten.
-              </>
-            }
-            control={
-              <Checkbox
-                checked={copyCurrent}
-                onChange={(event) => setCopyCurrent(event.target.checked)}
-                color={copyCurrent ? 'success' : 'secondary'}
-              />
-            }
-          />
+          {teamCharId && (
+            <FormControlLabel
+              label={
+                <>
+                  Copy the current equipment in{' '}
+                  <strong>{equipChangeProps.currentName}</strong> to a new
+                  build. Otherwise, they will be overwritten.
+                </>
+              }
+              control={
+                <Checkbox
+                  checked={copyCurrent}
+                  onChange={(event) => setCopyCurrent(event.target.checked)}
+                  color={copyCurrent ? 'success' : 'secondary'}
+                />
+              }
+            />
+          )}
           {copyCurrent && (
             <TextField
               label="Build Name"
