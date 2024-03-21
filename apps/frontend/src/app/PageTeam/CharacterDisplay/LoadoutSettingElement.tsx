@@ -1,12 +1,16 @@
+import { useBoolState } from '@genshin-optimizer/common/react-util'
 import {
   BootstrapTooltip,
   CardThemed,
   ModalWrapper,
+  SqBadge,
 } from '@genshin-optimizer/common/ui'
 import type { LoadoutDatum } from '@genshin-optimizer/gi/db'
 import { TeamCharacterContext, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { getCharData } from '@genshin-optimizer/gi/stats'
 import AddIcon from '@mui/icons-material/Add'
+import BarChartIcon from '@mui/icons-material/BarChart'
+import CalculateIcon from '@mui/icons-material/Calculate'
 import CheckroomIcon from '@mui/icons-material/Checkroom'
 import CloseIcon from '@mui/icons-material/Close'
 import PersonIcon from '@mui/icons-material/Person'
@@ -24,13 +28,17 @@ import {
   Typography,
 } from '@mui/material'
 import { Suspense, useContext, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import BuildInfoAlert from '../../Components/Team/Loadout/Build/BuildInfoAlert'
 import LoadoutInfoAlert from '../../Components/Team/Loadout/LoadoutInfoAlert'
 import LoadoutNameDesc from '../../Components/Team/Loadout/LoadoutNameDesc'
+import { FormulaDataContext } from '../../Context/FormulaDataContext'
 import { LoadoutDropdown } from '../LoadoutDropdown'
 import { BuildEquipped } from './Build/BuildEquipped'
 import BuildReal from './Build/BuildReal'
 import BuildTc from './Build/BuildTc'
+import { CustomMultiTargetButton } from './CustomMultiTarget'
+import StatModal from './StatModal'
 
 // TODO: Translation
 const columns = { xs: 1, sm: 1, md: 2, lg: 2 }
@@ -56,6 +64,7 @@ export default function LoadoutSettingElement({
       team.loadoutData[index] = { teamCharId: newTeamCharId } as LoadoutDatum
     })
   }
+  const elementKey = getCharData(teamChar.key).ele
   return (
     <>
       <Box display="flex" gap={1} alignItems="center">
@@ -116,9 +125,37 @@ export default function LoadoutSettingElement({
               <LoadoutDropdown
                 teamCharId={teamCharId}
                 onChangeTeamCharId={onChangeTeamCharId}
-                dropdownBtnProps={{ fullWidth: true }}
+                dropdownBtnProps={{
+                  fullWidth: true,
+                  sx: { flexGrow: 1, backgroundColor: 'contentLight.main' },
+                  color: elementKey ?? 'info',
+                  variant: 'outlined',
+                }}
               />
               <LoadoutNameDesc teamCharId={teamCharId} />
+              <Box display="flex" gap={2} flexWrap="wrap">
+                <DetailStatButton
+                  buttonProps={{
+                    sx: { backgroundColor: 'contentLight.main', flexGrow: 1 },
+                    color: elementKey ?? 'info',
+                    variant: 'outlined',
+                  }}
+                />
+                <CustomMultiTargetButton
+                  buttonProps={{
+                    sx: { backgroundColor: 'contentLight.main', flexGrow: 1 },
+                    color: elementKey ?? 'info',
+                    variant: 'outlined',
+                  }}
+                />
+                <FormulasButton
+                  buttonProps={{
+                    sx: { backgroundColor: 'contentLight.main', flexGrow: 1 },
+                    color: elementKey ?? 'info',
+                    variant: 'outlined',
+                  }}
+                />
+              </Box>
             </CardContent>
             <Divider />
             <BuildManagementContent />
@@ -217,5 +254,44 @@ function BuildManagementContent() {
         </Box>
       </CardContent>
     </>
+  )
+}
+function DetailStatButton({ buttonProps = {} }: { buttonProps?: ButtonProps }) {
+  const { t } = useTranslation('page_character')
+  const [open, onOpen, onClose] = useBoolState()
+  const {
+    teamChar: { bonusStats },
+  } = useContext(TeamCharacterContext)
+  const bStatsNum = Object.keys(bonusStats).length
+  return (
+    <>
+      <Button
+        color="info"
+        startIcon={<BarChartIcon />}
+        onClick={onOpen}
+        {...buttonProps}
+      >
+        {t`addStats.title`}
+        {!!bStatsNum && (
+          <SqBadge sx={{ ml: 1 }} color="success">
+            {bStatsNum}
+          </SqBadge>
+        )}
+      </Button>
+      <StatModal open={open} onClose={onClose} />
+    </>
+  )
+}
+function FormulasButton({ buttonProps = {} }: { buttonProps?: ButtonProps }) {
+  const { onModalOpen } = useContext(FormulaDataContext)
+  return (
+    <Button
+      color="info"
+      startIcon={<CalculateIcon />}
+      onClick={onModalOpen}
+      {...buttonProps}
+    >
+      Show Formulas {'&'} Calcs
+    </Button>
   )
 }

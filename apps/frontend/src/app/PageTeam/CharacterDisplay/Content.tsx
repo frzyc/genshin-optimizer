@@ -1,8 +1,5 @@
-import { useBoolState } from '@genshin-optimizer/common/react-util'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 
-import BarChartIcon from '@mui/icons-material/BarChart'
-import CalculateIcon from '@mui/icons-material/Calculate'
 import FactCheckIcon from '@mui/icons-material/FactCheck'
 import PersonIcon from '@mui/icons-material/Person'
 import ScienceIcon from '@mui/icons-material/Science'
@@ -12,19 +9,14 @@ import { CardThemed } from '@genshin-optimizer/common/ui'
 import { characterAsset } from '@genshin-optimizer/gi/assets'
 import { useDBMeta } from '@genshin-optimizer/gi/db-ui'
 import { getCharData } from '@genshin-optimizer/gi/stats'
-import type { ButtonProps } from '@mui/material'
-import { Box, Button, Skeleton, Tab, Tabs } from '@mui/material'
+import { Skeleton, Tab, Tabs } from '@mui/material'
 import { Suspense, useContext } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Route, Link as RouterLink, Routes } from 'react-router-dom'
-import SqBadge from '../../Components/SqBadge'
-import { FormulaDataContext } from '../../Context/FormulaDataContext'
 import { TeamCharacterContext } from '../../Context/TeamCharacterContext'
 import { shouldShowDevComponents } from '../../Util/Util'
-import { CustomMultiTargetButton } from './CustomMultiTarget'
 import FormulaModal from './FormulaModal'
 import LoadoutSettingElement from './LoadoutSettingElement'
-import StatModal from './StatModal'
 import TabBuild from './Tabs/TabOptimize'
 import TabOverview from './Tabs/TabOverview'
 import TabTalent from './Tabs/TabTalent'
@@ -42,6 +34,7 @@ export default function Content({ tab }: { tab: string }) {
   const elementKey = getCharData(characterKey).ele
   return (
     <>
+      <FormulaModal />
       <LoadoutSettingElement
         buttonProps={{
           fullWidth: true,
@@ -50,35 +43,7 @@ export default function Content({ tab }: { tab: string }) {
           sx: { backgroundColor: 'contentLight.main' },
         }}
       />
-      <Box
-        sx={{
-          display: 'flex',
-          gap: 1,
-          flexWrap: 'wrap',
-        }}
-      >
-        <DetailStatButton
-          buttonProps={{
-            sx: { flexGrow: 1, backgroundColor: 'contentLight.main' },
-            color: elementKey ?? 'info',
-            variant: 'outlined',
-          }}
-        />
-        <CustomMultiTargetButton
-          buttonProps={{
-            sx: { flexGrow: 1, backgroundColor: 'contentLight.main' },
-            color: elementKey ?? 'info',
-            variant: 'outlined',
-          }}
-        />
-        <FormulasButton
-          buttonProps={{
-            sx: { flexGrow: 1, backgroundColor: 'contentLight.main' },
-            color: elementKey ?? 'info',
-            variant: 'outlined',
-          }}
-        />
-      </Box>
+
       <TabNav tab={tab} characterKey={characterKey} isTCBuild={isTCBuild} />
       <CharacterPanel isTCBuild={isTCBuild} />
       <TabNav tab={tab} characterKey={characterKey} isTCBuild={isTCBuild} />
@@ -216,48 +181,5 @@ function TabNav({
         )}
       </Tabs>
     </CardThemed>
-  )
-}
-
-function DetailStatButton({ buttonProps = {} }: { buttonProps?: ButtonProps }) {
-  const { t } = useTranslation('page_character')
-  const [open, onOpen, onClose] = useBoolState()
-  const {
-    teamChar: { bonusStats },
-  } = useContext(TeamCharacterContext)
-  const bStatsNum = Object.keys(bonusStats).length
-  return (
-    <>
-      <Button
-        color="info"
-        startIcon={<BarChartIcon />}
-        onClick={onOpen}
-        {...buttonProps}
-      >
-        {t`addStats.title`}
-        {!!bStatsNum && (
-          <SqBadge sx={{ ml: 1 }} color="success">
-            {bStatsNum}
-          </SqBadge>
-        )}
-      </Button>
-      <StatModal open={open} onClose={onClose} />
-    </>
-  )
-}
-function FormulasButton({ buttonProps = {} }: { buttonProps?: ButtonProps }) {
-  const { onModalOpen } = useContext(FormulaDataContext)
-  return (
-    <>
-      <Button
-        color="info"
-        startIcon={<CalculateIcon />}
-        onClick={onModalOpen}
-        {...buttonProps}
-      >
-        Formulas {'&'} Calcs
-      </Button>
-      <FormulaModal />
-    </>
   )
 }
