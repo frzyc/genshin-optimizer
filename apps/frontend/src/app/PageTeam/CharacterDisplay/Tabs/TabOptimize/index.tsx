@@ -33,6 +33,7 @@ import {
 } from '@mui/icons-material'
 import CheckroomIcon from '@mui/icons-material/Checkroom'
 import CloseIcon from '@mui/icons-material/Close'
+import InfoIcon from '@mui/icons-material/Info'
 import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive'
 import NotificationsOffIcon from '@mui/icons-material/NotificationsOff'
 import {
@@ -47,6 +48,7 @@ import {
   MenuItem,
   Skeleton,
   TextField,
+  Tooltip,
   Typography,
 } from '@mui/material'
 import React, {
@@ -60,6 +62,7 @@ import React, {
   useState,
 } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
+import ArtifactCardPico from '../../../../Components/Artifact/ArtifactCardPico'
 import ArtifactLevelSlider from '../../../../Components/Artifact/ArtifactLevelSlider'
 import BootstrapTooltip from '../../../../Components/BootstrapTooltip'
 import CardLight from '../../../../Components/Card/CardLight'
@@ -74,6 +77,7 @@ import {
   HitModeToggle,
   ReactionToggle,
 } from '../../../../Components/HitModeEditor'
+import CharIconSide from '../../../../Components/Image/CharIconSide'
 import InfoTooltip from '../../../../Components/InfoTooltip'
 import NoArtWarning from '../../../../Components/NoArtWarning'
 import SqBadge from '../../../../Components/SqBadge'
@@ -116,7 +120,7 @@ export default function TabBuild() {
     teamCharId,
     teamChar: { optConfigId, key: characterKey },
     teamId,
-    team,
+    team: { loadoutData },
   } = useContext(TeamCharacterContext)
   const { characterSheet } = useContext(CharacterContext)
   const database = useDatabase()
@@ -196,6 +200,23 @@ export default function TabBuild() {
 
   const deferredArtsDirty = useDeferredValue(artsDirty)
   const deferredBuildSetting = useDeferredValue(buildSetting)
+  const teammateArtifactIds = useMemo(
+    () =>
+      Array.from(
+        new Set(
+          loadoutData
+            .filter(notEmpty)
+            .filter((loadoutDatum) => loadoutDatum.teamCharId !== teamCharId)
+            .map((loadoutDatum) =>
+              database.teams.getLoadoutArtifacts(loadoutDatum)
+            )
+            .flatMap((arts) => Object.values(arts))
+            .filter(notEmpty)
+            .map(({ id }) => id)
+        )
+      ),
+    [database, loadoutData, teamCharId]
+  )
   const filteredArts = useMemo(() => {
     const {
       mainStatKeys,
@@ -207,20 +228,6 @@ export default function TabBuild() {
       useExcludedArts,
       useTeammateBuild,
     } = deferredArtsDirty && deferredBuildSetting
-
-    const teammateArtifactIds = Array.from(
-      new Set(
-        team.loadoutData
-          .filter(notEmpty)
-          .filter((loadoutDatum) => loadoutDatum.teamCharId !== teamCharId)
-          .map((loadoutDatum) =>
-            database.teams.getLoadoutArtifacts(loadoutDatum)
-          )
-          .flatMap((arts) => Object.values(arts))
-          .filter(notEmpty)
-          .map(({ id }) => id)
-      )
-    )
 
     return database.arts.values.filter((art) => {
       if (!useExcludedArts && artExclusion.includes(art.id)) return false
@@ -248,12 +255,11 @@ export default function TabBuild() {
       return true
     })
   }, [
-    database,
-    characterKey,
     deferredArtsDirty,
     deferredBuildSetting,
-    team,
-    teamCharId,
+    database,
+    teammateArtifactIds,
+    characterKey,
   ])
 
   const filteredArtIdMap = useMemo(
@@ -701,22 +707,92 @@ export default function TabBuild() {
             excludedTotal={excludedTotal.in}
           />
 
-          <Button
-            fullWidth
-            startIcon={
-              useTeammateBuild ? <CheckBox /> : <CheckBoxOutlineBlank />
+          <Tooltip
+            arrow
+            title={
+              <Suspense
+                fallback={
+                  <Skeleton variant="rectangular" width={400} height={400} />
+                }
+              >
+                <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
+                  {loadoutData
+                    .filter(notEmpty)
+                    .filter(
+                      (loadoutDatum) => loadoutDatum.teamCharId !== teamCharId
+                    )
+                    .map((loadoutDatum) => {
+                      const characterKey = database.teamChars.get(
+                        loadoutDatum?.teamCharId
+                      )?.key
+                      const artifacts =
+                        loadoutDatum.buildType === 'tc'
+                          ? undefined
+                          : database.teams.getLoadoutArtifacts(loadoutDatum)
+                      return (
+                        <CardThemed
+                          sx={{
+                            p: 1,
+                            display: 'flex',
+                            flexDirection: 'column',
+                            gap: 1,
+                          }}
+                        >
+                          <Box display="flex" alignItems="center" gap={1}>
+                            {characterKey && (
+                              <CharIconSide characterKey={characterKey} />
+                            )}
+                            <Typography>
+                              {database.teams.getActiveBuildName(loadoutDatum)}
+                            </Typography>
+                          </Box>
+                          {artifacts ? (
+                            <Grid container columns={5} spacing={1}>
+                              {Object.entries(artifacts).map(
+                                ([slotKey, art]) => (
+                                  <Grid item key={slotKey} xs={1}>
+                                    <ArtifactCardPico
+                                      artifactObj={art}
+                                      slotKey={slotKey}
+                                    />
+                                  </Grid>
+                                )
+                              )}
+                            </Grid>
+                          ) : (
+                            <SqBadge sx={{ width: '100%' }}>TC build</SqBadge>
+                          )}
+                        </CardThemed>
+                      )
+                    })}
+                </Box>
+              </Suspense>
             }
-            color={useTeammateBuild ? 'success' : 'secondary'}
-            onClick={() => {
-              database.optConfigs.set(optConfigId, {
-                useTeammateBuild: !useTeammateBuild,
-              })
-            }}
-            disabled={generatingBuilds}
           >
-            {/* TODO: Translation */}
-            Use artifacts in teammates' builds
-          </Button>
+            <Button
+              fullWidth
+              startIcon={
+                useTeammateBuild ? <CheckBox /> : <CheckBoxOutlineBlank />
+              }
+              endIcon={<InfoIcon />}
+              color={useTeammateBuild ? 'success' : 'secondary'}
+              onClick={() => {
+                database.optConfigs.set(optConfigId, {
+                  useTeammateBuild: !useTeammateBuild,
+                })
+              }}
+              disabled={generatingBuilds}
+            >
+              <Box display="flex" gap={1}>
+                {/* TODO: Translation */}
+                <span>Use artifacts in teammates' active builds</span>
+                <strong>
+                  {useTeammateBuild ? teammateArtifactIds.length : 0}/
+                  {teammateArtifactIds.length}
+                </strong>
+              </Box>
+            </Button>
+          </Tooltip>
           <Button
             fullWidth
             startIcon={allowPartial ? <CheckBox /> : <CheckBoxOutlineBlank />}
