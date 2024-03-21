@@ -250,6 +250,10 @@ export default function BuildDisplayItem({
       return database.builds.get(buildId)!.weaponId
     if (dbDirty && buildType === 'equipped') return equippedWeapon
 
+    // An undefined buildType indicates this was accessed from outside a team. This currently occurs
+    // when comparing from the character editor.
+    if (buildType === undefined) return equippedWeapon
+
     // default
     return ''
   }, [dbDirty, database, buildType, buildId, equippedWeapon])
@@ -258,6 +262,10 @@ export default function BuildDisplayItem({
     if (dbDirty && buildType === 'real')
       return database.builds.get(buildId)!.artifactIds
     if (dbDirty && buildType === 'equipped') return equippedArtifacts
+
+    // An undefined buildType indicates this was accessed from outside a team. This currently occurs
+    // when comparing from the character editor.
+    if (buildType === undefined) return equippedArtifacts
 
     // default
     return objKeyMap(allArtifactSlotKeys, () => '')

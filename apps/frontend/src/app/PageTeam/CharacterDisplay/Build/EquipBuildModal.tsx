@@ -21,6 +21,7 @@ import {
 import { useContext, useState } from 'react'
 import ArtifactCardNano from '../../../Components/Artifact/ArtifactCardNano'
 import WeaponCardNano from '../../../Components/Weapon/WeaponCardNano'
+import { CharacterContext } from '../../../Context/CharacterContext'
 import { TeamCharacterContext } from '../../../Context/TeamCharacterContext'
 
 type EquipChangeProps = {
@@ -47,10 +48,10 @@ export default function EquipBuildModal({
   // const [showPrompt, onShowPrompt, OnHidePrompt] = useBoolState()
 
   const database = useDatabase()
+  const { teamCharId } = useContext(TeamCharacterContext)
   const {
-    teamCharId,
-    teamChar: { key: characterKey },
-  } = useContext(TeamCharacterContext)
+    character: { key: characterKey },
+  } = useContext(CharacterContext)
   const weaponTypeKey = getCharData(characterKey).weaponType
 
   const toEquip = () => {
