@@ -99,7 +99,7 @@ Run `nx graph` to see a diagram of the dependencies of the projects.
 
 ## Acknowledgments
 
-✨ The tesseract model used was trained and provided by the creator of [Inventory Kamera](https://github.com/Andrewthe13th/Inventory_Kamera.)
+✨ The tesseract model used was trained and provided by the creator of [Inventory Kamera](https://github.com/Andrewthe13th/Inventory_Kamera).
 
 ✨ The creator of Silly Wisher has granted us permission to incorporate their artwork into Silly Optimizer. Silly Wisher [discord](https://discord.com/invite/sillywisher), [App store](https://apps.apple.com/lv/app/silly-wisher/id6444465724https://apps.apple.com/lv/app/silly-wisher/id6444465724), [Google Play](https://play.google.com/store/apps/details?id=com.sketchi.sillywisher)
 
