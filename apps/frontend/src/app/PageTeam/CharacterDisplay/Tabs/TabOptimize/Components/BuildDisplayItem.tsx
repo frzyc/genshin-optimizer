@@ -245,31 +245,43 @@ export default function BuildDisplayItem({
   const isActiveBuildOrEquip =
     isActiveBuild || (buildType === 'equipped' && currentlyEquipped)
 
+  // An undefined buildType indicates this was accessed from outside a team. This currently occurs
+  // when comparing from the character editor.
+  const compareFromCharEditor = buildType === undefined
+
   const activeWeapon = useMemo(() => {
     if (dbDirty && buildType === 'real')
       return database.builds.get(buildId)!.weaponId
     if (dbDirty && buildType === 'equipped') return equippedWeapon
-
-    // An undefined buildType indicates this was accessed from outside a team. This currently occurs
-    // when comparing from the character editor.
-    if (buildType === undefined) return equippedWeapon
+    if (compareFromCharEditor) return equippedWeapon
 
     // default
     return ''
-  }, [dbDirty, database, buildType, buildId, equippedWeapon])
+  }, [
+    dbDirty,
+    database,
+    buildType,
+    buildId,
+    equippedWeapon,
+    compareFromCharEditor,
+  ])
 
   const activeArtifacts = useMemo(() => {
     if (dbDirty && buildType === 'real')
       return database.builds.get(buildId)!.artifactIds
     if (dbDirty && buildType === 'equipped') return equippedArtifacts
-
-    // An undefined buildType indicates this was accessed from outside a team. This currently occurs
-    // when comparing from the character editor.
-    if (buildType === undefined) return equippedArtifacts
+    if (compareFromCharEditor) return equippedArtifacts
 
     // default
     return objKeyMap(allArtifactSlotKeys, () => '')
-  }, [dbDirty, database, buildType, buildId, equippedArtifacts])
+  }, [
+    dbDirty,
+    database,
+    buildType,
+    buildId,
+    equippedArtifacts,
+    compareFromCharEditor,
+  ])
 
   const [showEquipChange, onShowEquipChange, onHideEquipChange] = useBoolState()
 
@@ -309,6 +321,7 @@ export default function BuildDisplayItem({
             mainStatAssumptionLevel={mainStatAssumptionLevel}
             onClose={closeArt}
             allowLocationsState={allowLocationsState}
+            compareFromCharEditor={compareFromCharEditor}
           />
         )}
         <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
@@ -474,11 +487,13 @@ function CompareArtifactModal({
   mainStatAssumptionLevel,
   onClose,
   allowLocationsState,
+  compareFromCharEditor,
 }: {
   newOld: NewOld
   mainStatAssumptionLevel: number
   onClose: () => void
   allowLocationsState: AllowLocationsState
+  compareFromCharEditor: boolean
 }) {
   const database = useDatabase()
   const {
@@ -532,7 +547,9 @@ function CompareArtifactModal({
                 />
               )}
 
-              {oldId !== 'tc' && <ArtInclusionButton id={oldId} />}
+              {oldId !== 'tc' && !compareFromCharEditor && (
+                <ArtInclusionButton id={oldId} />
+              )}
             </Box>
           )}
           {oldId && <Box display="flex" flexGrow={1} />}
@@ -557,20 +574,24 @@ function CompareArtifactModal({
                 fixedSlotKey: newArtifact?.slotKey,
               }}
             />
-            {newArtifact && <ArtInclusionButton id={newId} />}
-            {newLoc &&
-              newLoc !== charKeyToLocCharKey(characterKey) &&
-              allowLocationsState !== 'all' && (
-                <ExcludeEquipButton locationKey={newLoc} />
-              )}
-            {newArtifact &&
-              allArtifactSetExclusionKeys.includes(
-                newArtifact.setKey as ArtSetExclusionKey
-              ) && (
-                <SetInclusionButton
-                  setKey={newArtifact.setKey as ArtSetExclusionKey}
-                />
-              )}
+            {!compareFromCharEditor && (
+              <>
+                {newArtifact && <ArtInclusionButton id={newId} />}
+                {newLoc &&
+                  newLoc !== charKeyToLocCharKey(characterKey) &&
+                  allowLocationsState !== 'all' && (
+                    <ExcludeEquipButton locationKey={newLoc} />
+                  )}
+                {newArtifact &&
+                  allArtifactSetExclusionKeys.includes(
+                    newArtifact.setKey as ArtSetExclusionKey
+                  ) && (
+                    <SetInclusionButton
+                      setKey={newArtifact.setKey as ArtSetExclusionKey}
+                    />
+                  )}
+              </>
+            )}
           </Box>
         </CardContent>
       </CardDark>
