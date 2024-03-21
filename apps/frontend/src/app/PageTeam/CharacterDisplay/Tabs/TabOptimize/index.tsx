@@ -42,6 +42,7 @@ import {
   ButtonGroup,
   CardContent,
   CardHeader,
+  Chip,
   Divider,
   Grid,
   IconButton,
@@ -806,7 +807,7 @@ export default function TabBuild() {
               <Box display="flex" gap={1}>
                 {/* TODO: Translation */}
                 <span>Use artifacts in teammates' active builds</span>
-                <strong>{teammateBuildTotal.in}</strong>
+                <Chip label={teammateBuildTotal.in} size="small" />
               </Box>
             </Button>
           </Tooltip>
