@@ -73,11 +73,13 @@ export default function LoadoutSettingElement({
             onClick={() => setOpen((o) => !o)}
             {...buttonProps}
           >
-            <Typography sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
+            <Typography variant='h6' sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
               <strong>{teamChar.name}</strong>
               <Divider orientation="vertical" variant="middle" flexItem />
               <CheckroomIcon />
-              <span>{database.teams.getActiveBuildName(loadoutDatum)}</span>
+              <strong>{database.teams.getActiveBuildName(loadoutDatum)}</strong>
+              <Divider orientation="vertical" variant="middle" flexItem />
+              <span>Loadout/Build settings</span>
             </Typography>
           </Button>
         </BootstrapTooltip>

@@ -134,7 +134,11 @@ export default function TeamSetting({
           onClick={() => setOpen((open) => !open)}
           {...buttonProps}
         >
-          <Typography variant="h6">{team.name}</Typography>
+          <Typography variant="h5" display="flex" gap={1}>
+            <strong>{team.name}</strong>
+            <Divider orientation="vertical" variant="middle" flexItem />
+            <span>Team Settings</span>
+          </Typography>
         </Button>
       </BootstrapTooltip>
 
