@@ -131,21 +131,21 @@ export default function LoadoutSettingElement({
 
               <DetailStatButton
                 buttonProps={{
-                  sx: {  backgroundColor: 'contentLight.main' },
+                  sx: { backgroundColor: 'contentLight.main' },
                   color: elementKey ?? 'info',
                   variant: 'outlined',
                 }}
               />
               <CustomMultiTargetButton
                 buttonProps={{
-                  sx: {  backgroundColor: 'contentLight.main' },
+                  sx: { backgroundColor: 'contentLight.main' },
                   color: elementKey ?? 'info',
                   variant: 'outlined',
                 }}
               />
               <FormulasButton
                 buttonProps={{
-                  sx: {  backgroundColor: 'contentLight.main' },
+                  sx: { backgroundColor: 'contentLight.main' },
                   color: elementKey ?? 'info',
                   variant: 'outlined',
                 }}
