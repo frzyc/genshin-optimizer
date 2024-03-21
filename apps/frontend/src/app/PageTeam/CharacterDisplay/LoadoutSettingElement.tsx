@@ -128,30 +128,29 @@ export default function LoadoutSettingElement({
                 }}
               />
               <LoadoutNameDesc teamCharId={teamCharId} />
-                <Box display="flex" gap={2} flexWrap="wrap">
+              <Box display="flex" gap={2} flexWrap="wrap">
                 <DetailStatButton
-                buttonProps={{
-                  sx: { backgroundColor: 'contentLight.main', flexGrow:1 },
-                  color: elementKey ?? 'info',
-                  variant: 'outlined',
-                }}
-              />
-              <CustomMultiTargetButton
-                buttonProps={{
-                  sx: { backgroundColor: 'contentLight.main', flexGrow:1 },
-                  color: elementKey ?? 'info',
-                  variant: 'outlined',
-                }}
-              />
-              <FormulasButton
-                buttonProps={{
-                  sx: { backgroundColor: 'contentLight.main' , flexGrow:1},
-                  color: elementKey ?? 'info',
-                  variant: 'outlined',
-                }}
-              />
-                </Box>
-
+                  buttonProps={{
+                    sx: { backgroundColor: 'contentLight.main', flexGrow: 1 },
+                    color: elementKey ?? 'info',
+                    variant: 'outlined',
+                  }}
+                />
+                <CustomMultiTargetButton
+                  buttonProps={{
+                    sx: { backgroundColor: 'contentLight.main', flexGrow: 1 },
+                    color: elementKey ?? 'info',
+                    variant: 'outlined',
+                  }}
+                />
+                <FormulasButton
+                  buttonProps={{
+                    sx: { backgroundColor: 'contentLight.main', flexGrow: 1 },
+                    color: elementKey ?? 'info',
+                    variant: 'outlined',
+                  }}
+                />
+              </Box>
             </CardContent>
             <Divider />
             <BuildManagementContent />
