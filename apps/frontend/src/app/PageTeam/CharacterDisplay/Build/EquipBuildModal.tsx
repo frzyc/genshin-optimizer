@@ -21,6 +21,7 @@ import {
 import { useContext, useState } from 'react'
 import ArtifactCardNano from '../../../Components/Artifact/ArtifactCardNano'
 import WeaponCardNano from '../../../Components/Weapon/WeaponCardNano'
+import { CharacterContext } from '../../../Context/CharacterContext'
 import { TeamCharacterContext } from '../../../Context/TeamCharacterContext'
 
 type EquipChangeProps = {
@@ -47,14 +48,15 @@ export default function EquipBuildModal({
   // const [showPrompt, onShowPrompt, OnHidePrompt] = useBoolState()
 
   const database = useDatabase()
+  const { teamCharId } = useContext(TeamCharacterContext)
+
   const {
-    teamCharId,
-    teamChar: { key: characterKey },
-  } = useContext(TeamCharacterContext)
+    character: { key: characterKey },
+  } = useContext(CharacterContext)
   const weaponTypeKey = getCharData(characterKey).weaponType
 
   const toEquip = () => {
-    if (copyCurrent) {
+    if (teamCharId && copyCurrent) {
       database.teamChars.newBuild(teamCharId, {
         name:
           name !== '' ? name : `Duplicate of ${equipChangeProps.currentName}`,
@@ -183,22 +185,24 @@ export default function EquipBuildModal({
           <Typography sx={{ fontSize: 20 }}>
             Do you want to make the changes shown above?
           </Typography>
-          <FormControlLabel
-            label={
-              <>
-                Copy the current equipment in{' '}
-                <strong>{equipChangeProps.currentName}</strong> to a new build.
-                Otherwise, they will be overwritten.
-              </>
-            }
-            control={
-              <Checkbox
-                checked={copyCurrent}
-                onChange={(event) => setCopyCurrent(event.target.checked)}
-                color={copyCurrent ? 'success' : 'secondary'}
-              />
-            }
-          />
+          {teamCharId && (
+            <FormControlLabel
+              label={
+                <>
+                  Copy the current equipment in{' '}
+                  <strong>{equipChangeProps.currentName}</strong> to a new
+                  build. Otherwise, they will be overwritten.
+                </>
+              }
+              control={
+                <Checkbox
+                  checked={copyCurrent}
+                  onChange={(event) => setCopyCurrent(event.target.checked)}
+                  color={copyCurrent ? 'success' : 'secondary'}
+                />
+              }
+            />
+          )}
           {copyCurrent && (
             <TextField
               label="Build Name"
