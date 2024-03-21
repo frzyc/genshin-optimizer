@@ -31,13 +31,7 @@ export function LoadoutDropdown({
   dropdownBtnProps?: Omit<DropdownButtonProps, 'children' | 'title'>
 }) {
   const database = useDatabase()
-  const {
-    key: characterKey,
-    name,
-    buildIds,
-    buildTcIds,
-    customMultiTargets,
-  } = database.teamChars.get(teamCharId)!
+  const { key: characterKey, name } = database.teamChars.get(teamCharId)!
   const { gender } = useDBMeta()
   const teamCharIds = database.teamChars.keys.filter(
     (teamCharId) => database.teamChars.get(teamCharId)!.key === characterKey
@@ -115,17 +109,6 @@ export function LoadoutDropdown({
             }}
           >
             <span>{name}</span>
-            <SqBadge color={buildIds.length ? 'success' : 'secondary'}>
-              {buildIds.length} Builds
-            </SqBadge>
-            <SqBadge color={buildTcIds.length ? 'success' : 'secondary'}>
-              {buildTcIds.length} TC Builds
-            </SqBadge>
-            <SqBadge
-              color={customMultiTargets.length ? 'success' : 'secondary'}
-            >
-              {customMultiTargets.length} Multi-Opt
-            </SqBadge>
           </Box>
         }
         {...dropdownBtnProps}
