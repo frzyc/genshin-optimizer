@@ -96,7 +96,7 @@ export const allLightConeKeys = [
 
 export type LightConeKey = (typeof allLightConeKeys)[number]
 
-export const allSuperimposeKeys = [0, 1, 2, 3, 4, 5] as const
+export const allSuperimposeKeys = [1, 2, 3, 4, 5] as const
 export type SuperimposeKey = (typeof allSuperimposeKeys)[number]
 
 export const lightConeMaxLevel = 80
