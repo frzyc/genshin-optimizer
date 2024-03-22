@@ -1,0 +1,24 @@
+{
+  "name": "Homa'nın Asası",
+  "description": {
+    "0": "Uzun zaman önce unutulan kadim ayinlerde kullanılmış ahşap bir asa."
+  },
+  "passiveName": "Pervasız Sülüğen",
+  "passiveDescription": {
+    "0": {
+      "0": "Canı <cryo>%20</cryo> artırır. Ayrıca silahı kullanan karakterin Maks. Canının <cryo>%0,8</cryo>'i kadar bir Saldırı Bonusu sağlar. Silahı kuşanan karakterin Canı %50'nin altındaysa, bu Saldırı Bonusu ek <cryo>%1</cryo> Maks. Can kadar artırılır."
+    },
+    "1": {
+      "0": "Canı <cryo>%25</cryo> artırır. Ayrıca silahı kullanan karakterin Maks. Canının <cryo>%1</cryo>'i kadar bir Saldırı Bonusu sağlar. Silahı kuşanan karakterin Canı %50'nin altındaysa, bu Saldırı Bonusu ek <cryo>%1,2</cryo> Maks. Can kadar artırılır."
+    },
+    "2": {
+      "0": "Canı <cryo>%30</cryo> artırır. Ayrıca silahı kullanan karakterin Maks. Canının <cryo>%1,2</cryo>'si kadar bir Saldırı Bonusu sağlar. Silahı kuşanan karakterin Canı %50'nin altındaysa, bu Saldırı Bonusu ek <cryo>%1,4</cryo> Maks. Can kadar artırılır."
+    },
+    "3": {
+      "0": "Canı <cryo>%35</cryo> artırır. Ayrıca silahı kullanan karakterin Maks. Canının <cryo>%1,4</cryo>'ü kadar bir Saldırı Bonusu sağlar. Silahı kuşanan karakterin Canı %50'nin altındaysa, bu Saldırı Bonusu ek <cryo>%1,6</cryo> Maks. Can kadar artırılır."
+    },
+    "4": {
+      "0": "Canı <cryo>%40</cryo> artırır. Ayrıca silahı kullanan karakterin Maks. Canının <cryo>%1,6</cryo>'sı kadar bir Saldırı Bonusu sağlar. Silahı kuşanan karakterin Canı %50'nin altındaysa, bu Saldırı Bonusu ek <cryo>%1,8</cryo> Maks. Can kadar artırılır."
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Toukabou Shigure",
+  "description": {
+    "0": "Ein ungewöhnlicher Ölpapierschirm. Auch wenn man sich auf langen Reisen an Wind und Wetter gewöhnt, so kann es doch eine besondere Freude sein, den Regen unter diesem Schirm zu genießen."
+  },
+  "passiveName": "Kaidan – Regen der Erde",
+  "passiveDescription": {
+    "0": {
+      "0": "Nach Treffen von Gegnern mit einem Angriff wird einer der Gegner vom Effekt „Verwünschung des Papierschirms“ betroffen, hält 10 s, 15 s Abklingzeit. Wird der von diesem Effekt betroffene Gegner während der Dauer des Effekts besiegt, wird die Abklingzeit sofort abgeschlossen. Erhöht den von der damit ausgerüsteten Figur an Gegnern, die von „Verwünschung des Papierschirms“ betroffen sind, verursachten Schaden um <cryo>16 %</cryo>."
+    },
+    "1": {
+      "0": "Nach Treffen von Gegnern mit einem Angriff wird einer der Gegner vom Effekt „Verwünschung des Papierschirms“ betroffen, hält 10 s, 15 s Abklingzeit. Wird der von diesem Effekt betroffene Gegner während der Dauer des Effekts besiegt, wird die Abklingzeit sofort abgeschlossen. Erhöht den von der damit ausgerüsteten Figur an Gegnern, die von „Verwünschung des Papierschirms“ betroffen sind, verursachten Schaden um <cryo>20 %</cryo>."
+    },
+    "2": {
+      "0": "Nach Treffen von Gegnern mit einem Angriff wird einer der Gegner vom Effekt „Verwünschung des Papierschirms“ betroffen, hält 10 s, 15 s Abklingzeit. Wird der von diesem Effekt betroffene Gegner während der Dauer des Effekts besiegt, wird die Abklingzeit sofort abgeschlossen. Erhöht den von der damit ausgerüsteten Figur an Gegnern, die von „Verwünschung des Papierschirms“ betroffen sind, verursachten Schaden um <cryo>24 %</cryo>."
+    },
+    "3": {
+      "0": "Nach Treffen von Gegnern mit einem Angriff wird einer der Gegner vom Effekt „Verwünschung des Papierschirms“ betroffen, hält 10 s, 15 s Abklingzeit. Wird der von diesem Effekt betroffene Gegner während der Dauer des Effekts besiegt, wird die Abklingzeit sofort abgeschlossen. Erhöht den von der damit ausgerüsteten Figur an Gegnern, die von „Verwünschung des Papierschirms“ betroffen sind, verursachten Schaden um <cryo>28 %</cryo>."
+    },
+    "4": {
+      "0": "Nach Treffen von Gegnern mit einem Angriff wird einer der Gegner vom Effekt „Verwünschung des Papierschirms“ betroffen, hält 10 s, 15 s Abklingzeit. Wird der von diesem Effekt betroffene Gegner während der Dauer des Effekts besiegt, wird die Abklingzeit sofort abgeschlossen. Erhöht den von der damit ausgerüsteten Figur an Gegnern, die von „Verwünschung des Papierschirms“ betroffen sind, verursachten Schaden um <cryo>32 %</cryo>."
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Sacrificial Jade",
+  "description": {
+    "0": "An ancient jade pendant that gleams like clear water. It seems to have been used in ancient ceremonies."
+  },
+  "passiveName": "Jade Circulation",
+  "passiveDescription": {
+    "0": {
+      "0": "When not on the field for more than 5s, Max HP will be increased by <cryo>32%</cryo> and Elemental Mastery will be increased by <cryo>40</cryo>. These effects will be canceled after the wielder has been on the field for 10s."
+    },
+    "1": {
+      "0": "When not on the field for more than 5s, Max HP will be increased by <cryo>40%</cryo> and Elemental Mastery will be increased by <cryo>50</cryo>. These effects will be canceled after the wielder has been on the field for 10s."
+    },
+    "2": {
+      "0": "When not on the field for more than 5s, Max HP will be increased by <cryo>48%</cryo> and Elemental Mastery will be increased by <cryo>60</cryo>. These effects will be canceled after the wielder has been on the field for 10s."
+    },
+    "3": {
+      "0": "When not on the field for more than 5s, Max HP will be increased by <cryo>56%</cryo> and Elemental Mastery will be increased by <cryo>70</cryo>. These effects will be canceled after the wielder has been on the field for 10s."
+    },
+    "4": {
+      "0": "When not on the field for more than 5s, Max HP will be increased by <cryo>64%</cryo> and Elemental Mastery will be increased by <cryo>80</cryo>. These effects will be canceled after the wielder has been on the field for 10s."
+    }
+  }
+}

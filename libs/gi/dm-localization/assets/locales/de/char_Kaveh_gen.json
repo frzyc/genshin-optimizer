@@ -1,0 +1,157 @@
+{
+  "name": "Kaveh",
+  "title": "Empyreische Reflexion",
+  "description": "Ein renommierter Architekt aus Sumeru, der sich über viele Dinge übermäßig besorgt zeigt. Ein Ästhet, der von der Realität verwirrt wird.",
+  "constellationName": "Paradisaea",
+  "auto": {
+    "name": "Drehmomenteinstellung",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Standardangriff</strong>",
+        "1": "Treibt „Mehrak“ an und führt bis zu 4 Angriffe hintereinander aus."
+      },
+      "charged": {
+        "0": "<strong>Heftiger Schlag</strong>",
+        "1": "Verbraucht fortlaufend Ausdauer und führt mehrere Hiebe aus.",
+        "2": "Schwingt das Schwert am Ende mit besonders großer Wucht."
+      },
+      "plunging": {
+        "0": "<strong>Angriff aus dem Fall</strong>",
+        "1": "Schlägt beim Fallen aus der Luft auf den Boden, greift alle Gegner in der Bahn an und verursacht beim Aufkommen Flächenschaden."
+      }
+    },
+    "skillParams": {
+      "0": "SCH Phase 1",
+      "1": "SCH Phase 2",
+      "2": "SCH Phase 3",
+      "3": "SCH Phase 4",
+      "4": "SCH heftiger Schläge pro Runde",
+      "5": "SCH heftiger Schläge am Ende",
+      "6": "Ausdauerverbrauch heftiger Schläge",
+      "7": "Höchstdauer",
+      "8": "SCH beim Fallen",
+      "9": "SCH beim Fallen aus niedriger/großer Höhe",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Künstlerische Genialität",
+    "description": {
+      "0": "Zweckentfremdet „Mehraks“ Fähigkeit zur Kartierung für offensive Zwecke, indem ein Flächenscan ausgeführt wird, der <dendro>Dendro-Flächenschaden</dendro> verursacht sowie alle Dendro-Kerne in Reichweite scannt und augenblicklich zur Explosion bringt.",
+      "1": "<br/>",
+      "2": "<i>„Mehrak“ wurde mittels Modifikation uralter Technik erschaffen. Wer weiß, vielleicht kann er ja noch mehr, als nur bei Kartierungen und dergleichen zu helfen ...</i>"
+    },
+    "skillParams": {
+      "0": "Fähigkeits-SCH",
+      "1": "Abklingzeit",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Dimension der ästhetischen Vermessung",
+    "description": {
+      "0": "Setzt „Mehraks“ gesamte Energie zur Kartierung frei und erzeugt einen dreidimensionalen Scan-Bereich. Dieser fügt Gegnern, die sich innerhalb dieses Bereichs befinden, <dendro>Dendro-Flächenschaden</dendro> zu, lässt alle Dendro-Kerne in Reichweite explodieren und verstärkt für eine kurze Zeit Kavehs Kampffähigkeiten:",
+      "1": [
+        " Erhöht die Angriffsreichweite von Kavehs Standardangriff, heftigem Schlag und Angriff aus dem Fall. Wandelt außerdem den verursachten Schaden in <dendro>Dendro-Schaden</dendro> um, der nicht von anderen Elementen überdeckt werden kann.",
+        " Erhöht den Schaden der Explosion aller Dendro-Kerne, die durch die Reaktion Sprießen von eigenen Figuren in der Truppe erschaffen wurden.",
+        " Erhöht Kavehs Unterbrechungs-WDS."
+      ],
+      "2": "Diese Effekte werden entfernt, sobald Kaveh ausgewechselt wird.",
+      "3": "<br/>",
+      "4": "<i>„Jede Form der Architektur spiegelt auf einzigartige Art und Weise das Weltbild ihres Architekten wider. Man könnte also sagen, dass Architektur selbst eine Art Gedächtnis darstellt.“</i>"
+    },
+    "skillParams": {
+      "0": "Fähigkeits-SCH",
+      "1": "Dauer",
+      "2": "SCH-Bonus für Dendro-Kern-Explosionen",
+      "3": "Abklingzeit",
+      "4": "Elementarenergie",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Verantwortung des Bauherrn",
+    "description": {
+      "0": "Wenn der durch Dendro-Kerne verursachte Schaden (einschließlich Schaden durch Flammenspross und Supraspross) Kaveh trifft, stellt dieser LP in Höhe von 300 % von Kavehs Elementarkunde wieder her. 0,5 s Abklingzeit."
+    }
+  },
+  "passive2": {
+    "name": "Die Marotten eines Künstlers",
+    "description": {
+      "0": "Erhöht Kavehs Elementarkunde um 25 Punkte, nachdem sein Standardangriff, heftiger Schlag oder Angriff aus dem Fall während der Dauer von <strong>Dimension der ästhetischen Vermessung</strong> Gegner getroffen hat. 0,1 s Abklingzeit. 4-fach stapelbar.",
+      "1": "Dieser Effekt wird entfernt, sobald Dimension der ästhetischen Vermessung endet."
+    }
+  },
+  "passive3": {
+    "name": "Die Kunst der Budgetplanung",
+    "description": {
+      "0": "Erhält beim Herstellen von Landschafts-, Gebäude- und Hofdekorationen mit einer Wahrscheinlichkeit von 100 % einen Teil der verbrauchten Materialien zurück."
+    }
+  },
+  "constellation1": {
+    "name": "Erhabener Gruß",
+    "description": {
+      "0": "Erhöht nach dem Auslösen von <strong>Künstlerische Genialität</strong> 3 s lang Kavehs <dendro>Dendro-WDS</dendro> um 50 % und dessen passiven Heilungsbonus um 25 %."
+    }
+  },
+  "constellation2": {
+    "name": "Erhabene Straßen",
+    "description": {
+      "0": "Erhöht während der Dauer von <strong>Dimension der ästhetischen Vermessung</strong> Kavehs Standardangriffs-GSW um 15 %."
+    }
+  },
+  "constellation3": {
+    "name": "Opfergabe von Dur Untash",
+    "description": {
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Dimension der ästhetischen Vermessung</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation4": {
+    "name": "Festmahl von Apadana",
+    "description": {
+      "0": "Erhöht den Schaden der Explosionen, der durch die von Kaveh durch die Reaktion Sprießen erschaffenen Dendro-Kerne verursacht wird, um 60 %."
+    }
+  },
+  "constellation5": {
+    "name": "Schätze von Bonkhanak",
+    "description": {
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Künstlerische Genialität</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation6": {
+    "name": "Träume von Pairidaeza",
+    "description": {
+      "0": "Wenn Kavehs Standardangriff, heftiger Schlag oder Angriff aus dem Fall während der Dauer der <strong>Dimension der ästhetischen Vermessung</strong> Gegner trifft, wird ein himmlisches Licht an der Position der Gegner entfesselt, welches <dendro>Dendro-Flächenschaden</dendro> in Höhe von 61,8 % von Kavehs ANG verursacht und sämtliche Dendro-Kerne im Wirkungsbereich zur Explosion bringt. 3 s Abklingzeit."
+    }
+  }
+}

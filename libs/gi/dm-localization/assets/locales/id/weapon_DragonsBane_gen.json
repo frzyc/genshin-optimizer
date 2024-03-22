@@ -1,0 +1,24 @@
+{
+  "name": "Dragon's Bane",
+  "description": {
+    "0": "Tombak dengan ukiran naga emas yang membelit menjadi satu. Ringan dan tajam, mungkin senjata ini sungguh dapat membunuh naga."
+  },
+  "passiveName": "Bane of Flame and Water",
+  "passiveDescription": {
+    "0": {
+      "0": "Meningkatkan <cryo>20%</cryo> DMG terhadap musuh yang terkena elemen Hydro atau Pyro."
+    },
+    "1": {
+      "0": "Meningkatkan <cryo>24%</cryo> DMG terhadap musuh yang terpengaruh Hydro atau Pyro."
+    },
+    "2": {
+      "0": "Meningkatkan <cryo>28%</cryo> DMG terhadap musuh yang terkena elemen Hydro atau Pyro."
+    },
+    "3": {
+      "0": "Meningkatkan <cryo>32%</cryo> DMG terhadap musuh yang terkena elemen Hydro atau Pyro."
+    },
+    "4": {
+      "0": "Meningkatkan <cryo>36%</cryo> DMG terhadap musuh yang terkena elemen Hydro atau Pyro."
+    }
+  }
+}

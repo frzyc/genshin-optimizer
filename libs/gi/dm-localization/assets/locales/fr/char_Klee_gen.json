@@ -1,0 +1,157 @@
+{
+  "name": "Klee",
+  "title": "Soleil fuyant",
+  "description": "Une invitée régulière des cellules de l'Ordre de Favonius, et également la maîtresse des explosions à Mondstadt, où on la surnomme « le soleil fuyant ».",
+  "constellationName": "Trifolium",
+  "auto": {
+    "name": "Boum ! Boum !",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attaque normale</strong>",
+        "1": "Une bombe qui explose au contact, ça c'est un bel objet ! Klee jette jusqu'à 3 bombes consécutives, qui infligent des <pyro>DGT Pyro de zone</pyro>."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Consomme de l'endurance pour bombarder les ennemis après un court délai et leur infliger des <pyro>DGT Pyro de zone</pyro>."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Plonge depuis les airs en concentrant ses pouvoirs Pyro, infligeant des DGT aux ennemis en chemin et des <pyro>DGT Pyro de zone</pyro> à l'impact."
+      }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT attaque chargée",
+      "4": "Coût d'endurance attaque chargée",
+      "5": "DGT durant la chute",
+      "6": "DGT chute basse/élevée",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Bombe rebondissante",
+    "description": {
+      "0": "Boiing, boiing ! Klee lance une bombe qui pète de joie !",
+      "1": "La bombe rebondit 3 fois et explose à chaque rebond, infligeant des <pyro>DGT Pyro de zone</pyro>.",
+      "2": "<br/>",
+      "3": "Après le 3e rebond, la bombe se divise en plusieurs mines.",
+      "4": "Les mines explosent après un court délai ou au contact de l'ennemi, infligeant des <pyro>DGT Pyro de zone</pyro>.",
+      "5": "<br/>",
+      "6": "Klee commence avec 2 utilisations disponibles.",
+      "7": "<br/>",
+      "8": "<i>La Bombe rebondissante est l'amie fidèle de Klee... Elle veut toujours la présenter à tout le monde.</i>"
+    },
+    "skillParams": {
+      "0": "DGT Bombe rebondissante",
+      "1": "DGT mine",
+      "2": "Durée mine",
+      "3": "Temps de recharge",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Fleur bombardier",
+    "description": {
+      "0": "Klee s'enflamme ! Invoque une Fleur bombardier qui harcèle les ennemis proches, infligeant des <pyro>DGT Pyro de zone</pyro>.",
+      "1": "<br/>",
+      "2": "<i>Les membres de l'Ordre de Favonius sont convaincus qu'une bonne étoile veille sur Klee... Sinon, comment expliquer qu'elle ne se blesse jamais ?</i>"
+    },
+    "skillParams": {
+      "0": "DGT Fleur bombardier",
+      "1": "Durée",
+      "2": "Temps de recharge",
+      "3": "Énergie élémentaire",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Cadeau explosif",
+    "description": {
+      "0": "Les attaques normales ainsi que <strong>Bombe rebondissante</strong> ont 50 % de chances de conférer à Klee une étincelle explosive lorsqu'elles infligent des DGT.",
+      "1": "Cette dernière est consommée lors de la prochaine attaque chargée, qui inflige 50 % de DGT supplémentaires sans consommer d'endurance."
+    }
+  },
+  "passive2": {
+    "name": "Étincelle infinie",
+    "description": {
+      "0": "Lorsque Klee inflige des DGT CRIT avec des attaques chargées, l'énergie élémentaire de tous les personnages de l'équipe est restaurée de 2 pts."
+    }
+  },
+  "passive3": {
+    "name": "Des trésors partout !",
+    "description": {
+      "0": "Affiche l'emplacement des <strong>produits de Mondstadt</strong> sur la mini-carte."
+    }
+  },
+  "constellation1": {
+    "name": "Bombardement continu",
+    "description": {
+      "0": "Les attaques et compétences ont une chance de générer des étincelles qui bombardent les ennemis, infligeant 120 % des DGT de <strong>Fleur bombardier</strong>."
+    }
+  },
+  "constellation2": {
+    "name": "Éclats de bombe",
+    "description": {
+      "0": "Les mines de <strong>Bombe rebondissante</strong> réduisent la DÉF des ennemis de 23 % pendant 10 s."
+    }
+  },
+  "constellation3": {
+    "name": "Réglage spécial de Klee",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Bombe rebondissante</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation4": {
+    "name": "Tout est prêt",
+    "description": {
+      "0": "Une explosion se produit lorsque Klee quitte le champ de bataille tant que <strong>Fleur bombardier</strong> est active. Cette explosion inflige 555 % de l'ATQ en <pyro>DGT Pyro de zone</pyro>."
+    }
+  },
+  "constellation5": {
+    "name": "Bombardement d'étoiles",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Fleur bombardier</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation6": {
+    "name": "À tout feu",
+    "description": {
+      "0": "Klee restaure 3 pts d'énergie élémentaire à tous les personnages de l'équipe (hormis Klee) toutes les 3 s tant que <strong>Fleur bombardier</strong> est active.",
+      "1": "L'activation de <strong>Fleur bombardier</strong> confère un bonus de <pyro>DGT Pyro</pyro> de 10 % pendant 25 s à tous les membres de l'équipe."
+    }
+  }
+}

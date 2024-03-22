@@ -1,0 +1,24 @@
+{
+  "name": "Primordial Jade Winged-Spear",
+  "description": {
+    "0": "A jade polearm made by the archons, capable of slaying ancient beasts."
+  },
+  "passiveName": "Eagle Spear of Justice",
+  "passiveDescription": {
+    "0": {
+      "0": "On hit, increases ATK by <cryo>3.2%</cryo> for 6s. Max 7 stacks. This effect can only occur once every 0.3s. While in possession of the maximum possible stacks, DMG dealt is increased by <cryo>12%</cryo>."
+    },
+    "1": {
+      "0": "On hit, increases ATK by <cryo>3.9%</cryo> for 6s. Max 7 stacks. This effect can only occur once every 0.3s. While in possession of the maximum possible stacks, DMG dealt is increased by <cryo>15%</cryo>."
+    },
+    "2": {
+      "0": "On hit, increases ATK by <cryo>4.6%</cryo> for 6s. Max 7 stacks. This effect can only occur once every 0.3s. While in possession of the maximum possible stacks, DMG dealt is increased by <cryo>18%</cryo>."
+    },
+    "3": {
+      "0": "On hit, increases ATK by <cryo>5.3%</cryo> for 6s. Max 7 stacks. This effect can only occur once every 0.3s. While in possession of the maximum possible stacks, DMG dealt is increased by <cryo>21%</cryo>."
+    },
+    "4": {
+      "0": "On hit, increases ATK by <cryo>6%</cryo> for 6s. Max 7 stacks. This effect can only occur once every 0.3s. While in possession of the maximum possible stacks, DMG dealt is increased by <cryo>24%</cryo>."
+    }
+  }
+}

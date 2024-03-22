@@ -1,0 +1,163 @@
+{
+  "name": "Faruzan",
+  "title": "Machiniste énigmatique",
+  "description": "Une chercheuse qui vient « du siècle dernier ». Elle aime être l'aînée de tous et possède de vastes connaissances sur les textes anciens et la mécanique classique.",
+  "constellationName": "Flosculi Implexi",
+  "auto": {
+    "name": "Tir parthe",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attaque normale</strong>",
+        "1": "Enchaîne jusqu'à 4 tirs consécutifs."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Effectue un <strong>tir visé</strong> plus précis infligeant davantage de DGT.",
+        "2": "Lors de la visée, la flèche se charge de vents puissants, infligeant de considérables <anemo>DGT Anémo</anemo> quand elle est complètement chargée."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Tire une pluie de flèches depuis les airs et plonge au sol, attaquant les ennemis en chemin et infligeant des DGT de zone à l'impact."
+      }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT 4e coup",
+      "4": "DGT tir visé",
+      "5": "DGT tir visé (pleine charge)",
+      "6": "DGT durant la chute",
+      "7": "DGT chute basse/élevée",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Royaume venteux de nasamjnin",
+    "description": {
+      "0": "Faruzan déploie un polyèdre qui inflige des <anemo>DGT Anémo de zone</anemo> aux ennemis proches et lui accorde l'état Épiphanie du vent.",
+      "1": "Pendant l'état Épiphanie du vent, le prochain tir visé à pleine charge de Faruzan annule l'état et se transforme pour tirer une flèche d'ouragan qui contient des rafales à haute pression, infligeant des <anemo>DGT Anémo</anemo> selon les DGT d'un tir visé à pleine charge de l'attaque normale « Tir parthe ».",
+      "2": "<br/>",
+      "3": "<strong>Effondrement compressé</strong>",
+      "4": "La flèche d'ouragan applique l'effet Effondrement compressé à l'ennemi ou personnage touché. Cet effet est annulé après un court délai tout en créant un vortex qui inflige des <anemo>DGT Anémo de zone</anemo> et attire les objets et les ennemis à proximité. Si la flèche d'ouragan ne touche aucun ennemi ou personnage, elle crée un effet Effondrement compressé à son point d'impact.",
+      "5": "Les DGT infligés par le vortex sont considérés comme des DGT de compétence élémentaire.",
+      "6": "<br/>",
+      "7": "<i>Les vents de la sincérité soufflent sur les esprits de ceux qui recherchent la vérité, dispersant les miasmes des idées préconçues.</i>"
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "DGT vortex d'effondrement compressé",
+      "2": "Durée d'épiphanie du vent",
+      "3": "Temps de recharge",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Sentier secret du vent",
+    "description": {
+      "0": "Faruzan déploie rapidement un polyèdre éblouissant qui libère une impulsion de tourbillon et inflige des <anemo>DGT Anémo de zone</anemo>.",
+      "1": "Pendant sa durée, le polyèdre éblouissant bouge de façon continue en suivant une trajectoire en triangle, libérant une impulsion de tourbillon à chaque fois qu'il arrive à une des pointes.",
+      "2": "<br/>",
+      "3": "<strong>Impulsion de tourbillon</strong>",
+      "4": [
+        " Lorsqu'une impulsion de tourbillon est libérée, elle inflige aux ennemis proches l'effet Calamité de vent : diminue la <anemo>RÉS Anémo</anemo>.",
+        " Lorsqu'une impulsion de tourbillon est libérée, elle accorde l'effet Vent de prière à tous les personnages de l'équipe à proximité : accorde un <anemo>bonus de DGT Anémo</anemo>."
+      ],
+      "5": "<br/>",
+      "6": "<i>Il est nécessaire de faire preuve de respect pour la sagesse inconnue qui pourrait être cachée dans des ruines antiques.</i>"
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "Bonus DGT Anémo",
+      "2": "Durée de vent de prière",
+      "3": "Baisse RÉS Anémo",
+      "4": "Durée de calamité de vent",
+      "5": "Durée",
+      "6": "Temps de recharge",
+      "7": "Énergie élémentaire",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Courant impétueux",
+    "description": {
+      "0": "Lorsque Faruzan est dans l'état Épiphanie du vent de <strong>Royaume venteux de nasamjnin</strong>, la durée de charge de son tir visé diminue de 60 % et elle inflige l'effet Calamité de vent de <strong>Sentier secret du vent</strong> aux ennemis touchés par le vortex créé par l'effet Effondrement compressé."
+    }
+  },
+  "passive2": {
+    "name": "Sagesse perdue des sept cavernes",
+    "description": {
+      "0": "Lorsqu'un personnage sous l'effet Vent de prière de <strong>Sentier secret du vent</strong> inflige des <anemo>DGT Anémo</anemo> à un ennemi en utilisant une attaque normale, chargée ou plongeante ou une compétence ou un déchaînement élémentaires, il déclenche l'effet Protection venteuse : augmente les DGT infligés d'une valeur équivalant à 32 % de l'ATQ de base de Faruzan. Un effet Protection venteuse peut être déclenché une fois toutes les 0,8 s. Cet effet disparaît à la fin de la durée du vent de prière ou après avoir été activé une fois."
+    }
+  },
+  "passive3": {
+    "name": "Illumination des tomes",
+    "description": {
+      "0": "Augmente les récompenses d'une expédition de 20 h à Sumeru de 25 %."
+    }
+  },
+  "constellation1": {
+    "name": "Vérité à tout prix",
+    "description": {
+      "0": "Faruzan peut tirer un maximum de 2 flèches d'ouragan en utilisant des tirs visés à pleine charge pendant l'effet d'une seule épiphanie du vent de <strong>Royaume venteux de nasamjnin</strong>."
+    }
+  },
+  "constellation2": {
+    "name": "Intelligence zélée",
+    "description": {
+      "0": "La durée du polyèdre éblouissant de <strong>Sentier secret du vent</strong> augmente de 6 s."
+    }
+  },
+  "constellation3": {
+    "name": "Errance au jardin spirituel",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Royaume venteux de nasamjnin</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation4": {
+    "name": "Compréhension divine",
+    "description": {
+      "0": "Le vortex créé par <strong>Effondrement compressé</strong> restaure l'énergie élémentaire de Faruzan selon la quantité d'ennemis touchés : si un ennemi est touché, Faruzan récupère 2 pts, puis chaque ennemi touché lui permet de récupérer 0,5 pt.",
+      "1": "Un vortex peut restaurer un maximum de 4 pts d'énergie élémentaire de cette manière."
+    }
+  },
+  "constellation5": {
+    "name": "Merveilles de contemplation",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Sentier secret du vent</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation6": {
+    "name": "Merveilleux chemin de la vérité",
+    "description": {
+      "0": "Les DGT CRIT des personnages sous l'effet Vent de prière de <strong>Sentier secret du vent</strong> augmentent de 40 % lorsqu'ils infligent des <anemo>DGT Anémo</anemo>. Lorsque le personnage déployé inflige des DGT alors qu'il est affecté par l'effet Vent de prière, il inflige l'effet Effondrement compressé à l'ennemi, cet effet pouvant être déclenché une fois toutes les 3 s et son TdR étant partagé entre tous les personnages de l'équipe."
+    }
+  }
+}

@@ -1,0 +1,165 @@
+{
+  "name": "Xiao",
+  "title": "Bekçi Yaksha",
+  "description": "Liyue'yi savunan bir Yaksha Adeptusu. \"İblislerin Fatihi\" ve \"Bekçi Yaksha\" olarak da bilinir.",
+  "constellationName": "Altın Kanatlar",
+  "auto": {
+    "name": "Kasırga Saldırısı",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Saldırı</strong>",
+        "1": "Arka arkaya en fazla 6 mızrak saldırısı yapar."
+      },
+      "charged": {
+        "0": "<strong>Yüklü Saldırı</strong>",
+        "1": "Belirli miktarda Dayanıklılık harcayarak yukarı doğru bir saldırı yapar."
+      },
+      "plunging": {
+        "0": "<strong>Havadan Saldırı</strong>",
+        "1": "Havadayken dalışa geçerek yere vurur ve yoluna çıkan düşmanlara Alan Hasarı verir.",
+        "2": "Xiao, Havadan Saldırı yaparken Hasar almaz."
+      }
+    },
+    "skillParams": {
+      "0": "1 Vuruş Hasarı",
+      "1": "2 Vuruş Hasarı",
+      "2": "3 Vuruş Hasarı",
+      "3": "4 Vuruş Hasarı",
+      "4": "5 Vuruş Hasarı",
+      "5": "6 Vuruş Hasarı",
+      "6": "Yüklü Saldırı Hasarı",
+      "7": "Yüklü Saldırı Dayanıklılık Maliyeti",
+      "8": "Havadan Saldırı Hasarı",
+      "9": "Havadan Saldırı Hasarı (Alçaktan/Yüksekten)",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Sonsuz Rüzgar Türbini",
+    "description": {
+      "0": "Xiao, ileri atılarak yoluna çıkan düşmanlara <anemo>Rüzgar Hasarı</anemo> verir.",
+      "1": "Havadayken kullanılabilir.",
+      "2": "2 yük ile başlar.",
+      "3": "<br/>",
+      "4": "<i>Başka bir diyardaki efsanelere göre dünya bir gün iki hortumla yok olacakmış. Xiao, mızrak kullanmakta oldukça yetenekli. Düşmanlarını efsanelerdeki o iki hortum gibi paramparça eder.</i>"
+    },
+    "skillParams": {
+      "0": "Beceri Hasarı",
+      "1": "BS",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Tüm Şerlerin Laneti",
+    "description": {
+      "0": "Xiao, binlerce yıl önce tanrıları ve iblisleri korkudan titreten Yaksha Maskesini takar.",
+      "1": "<br/>",
+      "2": "<strong>Yaksha Maskesi</strong>",
+      "3": [
+        "Xiao'nun sıçrama becerisini artırır.",
+        "Saldırılarının etki alanını ve saldırı Hasarını artırır.",
+        "Saldırı Hasarını, farklı herhangi bir element tesiri tarafından değiştirilemeyen <anemo>Rüzgar Hasarına</anemo> dönüştürür."
+      ],
+      "4": "<br/>",
+      "5": "Xiao, bu etki altındayken sürekli Can kaybeder.",
+      "6": "Bu becerinin etkisi Xiao alandan ayrılınca kaybolur.",
+      "7": "<br/>",
+      "8": "<i>Xiao, Yaksha Maskesini takarak Bekçi Yaksha'nın iblisleri korkutan haline bürünür ama bu büyük güç aynı zamanda ona çok acı çektirir. Bazıları ona \"Tüm Şerlerin Laneti\" der.</i>"
+    },
+    "skillParams": {
+      "0": "Normal/Yüklü/Havadan Saldırı Hasar Bonusu",
+      "1": "Can Kaybı",
+      "2": "Süre",
+      "3": "BS",
+      "4": "Enerji Maliyeti",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Şer Fatihi: İblis Terbiyecisi",
+    "description": {
+      "0": "<strong>Tüm Şerlerin Laneti</strong> etkisindeyken Xiao'nun verdiği tüm Hasar %5 artar. Becerinin etkin kaldığı her 3 saniyede bir Hasar %5 daha artar.",
+      "1": "Maksimum Hasar Bonusu %25'tir."
+    }
+  },
+  "passive2": {
+    "name": "Ebedi Çözünme: Göklerin Düşüşü",
+    "description": {
+      "0": "<strong>Sonsuz Rüzgar Türbini</strong> becerisinin sonraki kullanımlarında Hasarı %15 artar.",
+      "1": "Bu etki 7sn sürer ve maksimum kademe sayısı 3'tür. Yeni bir kademe elde ettiğinde etki süresi yenilenir."
+    }
+  },
+  "passive3": {
+    "name": "Doğaüstü: Yorulmaz Tırmanıcı",
+    "description": {
+      "0": "Kendi grup üyelerinin tırmanma Dayanıklılık tüketimini %20 azaltır.",
+      "1": "Aynı etkiyi veren Pasif Yeteneklerle birikmez."
+    }
+  },
+  "constellation1": {
+    "name": "Ebedi Çözünme: Dünyaların Yok Edicisi",
+    "description": {
+      "0": "<strong>Sonsuz Rüzgar Türbini</strong> yükünü 1 artırır."
+    }
+  },
+  "constellation2": {
+    "name": "Ebedi İmha: Kaleidos'un Çiçeği",
+    "description": {
+      "0": "Savaş alanında değilken Xiao'nun Enerji Yüklemesi %25 artar."
+    }
+  },
+  "constellation3": {
+    "name": "Şer Fatihi: Gazap İlahı",
+    "description": {
+      "0": "<strong>Sonsuz Rüzgar Türbini</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation4": {
+    "name": "Üstün Gelme: Acı Çekmeye Son",
+    "description": {
+      "0": "Xiao'nun Canı %50'nin altına düştüğünde %100 Savunma Bonusu kazanır."
+    }
+  },
+  "constellation5": {
+    "name": "Ebedi Evrim: Cehaletin Kökeni",
+    "description": {
+      "0": "<strong>Tüm Şerlerin Laneti</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation6": {
+    "name": "Şer Fatihi: Muhafız Yaksha",
+    "description": {
+      "0": "<strong>Tüm Şerlerin Laneti</strong> etkisi altındayken en az 2 düşmana vurduğunda Xiao'nun Havadan Saldırısı ona anında 1 <strong>Sonsuz Rüzgar Türbini</strong> yükü kazandırır. Sonraki 1sn boyunca Sonsuz Rüzgar Türbini becerisini Bekleme Süresinden bağımsız olarak kullanabilir."
+    }
+  }
+}

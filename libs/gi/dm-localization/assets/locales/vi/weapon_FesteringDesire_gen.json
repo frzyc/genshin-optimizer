@@ -1,0 +1,24 @@
+{
+  "name": "Răng Nanh Rỉ Sét",
+  "description": {
+    "0": "Thanh kiếm cổ quái khao khát sinh mệnh, có độc tính có thể ăn mòn cả Rồng."
+  },
+  "passiveName": "Khát Vọng Vô Tận",
+  "passiveDescription": {
+    "0": {
+      "0": "Tăng <cryo>16%</cryo> sát thương kỹ năng nguyên tố, tăng <cryo>6%</cryo> tỷ lệ bạo kích của kỹ năng nguyên tố."
+    },
+    "1": {
+      "0": "Tăng <cryo>20%</cryo> sát thương kỹ năng nguyên tố, tăng <cryo>7.5%</cryo> tỷ lệ bạo kích của kỹ năng nguyên tố."
+    },
+    "2": {
+      "0": "Tăng <cryo>24%</cryo> sát thương kỹ năng nguyên tố, tăng <cryo>9%</cryo> tỷ lệ bạo kích của kỹ năng nguyên tố."
+    },
+    "3": {
+      "0": "Tăng <cryo>28%</cryo> sát thương kỹ năng nguyên tố, tăng <cryo>10.5%</cryo> tỷ lệ bạo kích của kỹ năng nguyên tố."
+    },
+    "4": {
+      "0": "Tăng <cryo>32%</cryo> sát thương kỹ năng nguyên tố, tăng <cryo>12%</cryo> tỷ lệ bạo kích của kỹ năng nguyên tố."
+    }
+  }
+}

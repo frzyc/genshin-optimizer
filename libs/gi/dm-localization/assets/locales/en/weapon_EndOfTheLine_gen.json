@@ -1,0 +1,24 @@
+{
+  "name": "End of the Line",
+  "description": {
+    "0": "This seems to be a now-extinct fish. Its body is sufficiently elastic that a string may be attached to it to let it serve as a bow."
+  },
+  "passiveName": "Net Snapper",
+  "passiveDescription": {
+    "0": {
+      "0": "Triggers the Flowrider effect after using an Elemental Skill, dealing <cryo>80%</cryo> ATK as AoE DMG upon hitting an opponent with an attack. Flowrider will be removed after 15s or after causing 3 instances of AoE DMG. Only 1 instance of AoE DMG can be caused every 2s in this way. Flowrider can be triggered once every 12s."
+    },
+    "1": {
+      "0": "Triggers the Flowrider effect after using an Elemental Skill, dealing <cryo>100%</cryo> ATK as AoE DMG upon hitting an opponent with an attack. Flowrider will be removed after 15s or after causing 3 instances of AoE DMG. Only 1 instance of AoE DMG can be caused every 2s in this way. Flowrider can be triggered once every 12s."
+    },
+    "2": {
+      "0": "Triggers the Flowrider effect after using an Elemental Skill, dealing <cryo>120%</cryo> ATK as AoE DMG upon hitting an opponent with an attack. Flowrider will be removed after 15s or after causing 3 instances of AoE DMG. Only 1 instance of AoE DMG can be caused every 2s in this way. Flowrider can be triggered once every 12s."
+    },
+    "3": {
+      "0": "Triggers the Flowrider effect after using an Elemental Skill, dealing <cryo>140%</cryo> ATK as AoE DMG upon hitting an opponent with an attack. Flowrider will be removed after 15s or after causing 3 instances of AoE DMG. Only 1 instance of AoE DMG can be caused every 2s in this way. Flowrider can be triggered once every 12s."
+    },
+    "4": {
+      "0": "Triggers the Flowrider effect after using an Elemental Skill, dealing <cryo>160%</cryo> ATK as AoE DMG upon hitting an opponent with an attack. Flowrider will be removed after 15s or after causing 3 instances of AoE DMG. Only 1 instance of AoE DMG can be caused every 2s in this way. Flowrider can be triggered once every 12s."
+    }
+  }
+}

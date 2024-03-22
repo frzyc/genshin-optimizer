@@ -1,0 +1,159 @@
+{
+  "name": "Aloy",
+  "title": "Salvatrice d'un autre monde",
+  "description": "Autrefois une paria, maintenant une chasseuse d'une acuité sans précédent. Toujours prête à utiliser son arc pour la bonne cause.",
+  "constellationName": "Nora Fortis",
+  "auto": {
+    "name": "Tir rapide",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attaque normale</strong>",
+        "1": "Enchaîne jusqu'à 4 tirs consécutifs."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Effectue un <strong>tir visé</strong> plus précis infligeant davantage de DGT.",
+        "2": "Lors de la visée, la flèche se charge en élément Cryo, infligeant d'importants <cryo>DGT Cryo</cryo> quand elle est complètement chargée."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Tire une pluie de flèches depuis les airs et plonge au sol, infligeant des DGT de zone à l'impact."
+      }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT 4e coup",
+      "4": "DGT tir visé",
+      "5": "DGT tir visé (pleine charge)",
+      "6": "DGT durant la chute",
+      "7": "DGT chute basse/élevée",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Frozen Wilds",
+    "description": {
+      "0": "Aloy lance une bombe à gel qui explose à l'impact dans la direction ciblée, infligeant des <cryo>DGT Cryo</cryo>. Après avoir explosé, la bombe à gel se divise en de nombreuses petites bombes glacées qui explosent au contact des ennemis ou après un court délai, infligeant des <cryo>DGT Cryo</cryo>.",
+      "1": "Lorsqu'une bombe à gel ou une petite bombe glacée a touché un ennemi, l'ATQ de ce dernier diminue et Aloy obtient 1 cumul de bobine.",
+      "2": "Un cumul de bobine peut être obtenu une fois toutes les 0,1 s.",
+      "3": "<br/>",
+      "4": "<strong>Bobine</strong>",
+      "5": [
+        " Chaque cumul augmente les DGT des attaques normales d'Aloy.",
+        " Avec 4 cumuls de bobine, Aloy consomme tous les cumuls de bobine pour entrer dans l'état Glace précipitée, ce qui augmente davantage les DGT infligés par ses attaques normales et les convertit en <cryo>DGT Cryo</cryo>."
+      ],
+      "6": "<br/>",
+      "7": "Quand Aloy est dans l'état Glace précipitée, elle ne peut pas recevoir de nouveaux cumuls de bobine.",
+      "8": "Les effets de la bobine seront annulés après 30 s si Aloy quitte le combat.",
+      "9": "<br/>",
+      "10": "<i>Vous trouvez ça froid ? On voit bien que vous n'avez jamais mis les pieds à la Plaie !</i>"
+    },
+    "skillParams": {
+      "0": "DGT bombe à gel",
+      "1": "DGT petite bombe glacée",
+      "2": "Réduction d'ATQ",
+      "3": "Durée réduction d'ATQ",
+      "4": "Bonus ATQ normale (Bobine)",
+      "5": "Bonus ATQ normale (Glace précipitée)",
+      "6": "Durée Glace précipitée",
+      "7": "Temps de recharge",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Prophéties de l'aube",
+    "description": {
+      "0": "Aloy lance une batterie Cryo dans la direction ciblée, puis la fait exploser avec une flèche, infligeant des <cryo>DGT Cryo de zone</cryo>.",
+      "1": "<br/>",
+      "2": "<i>Que l'Aube zéro fasse référence à l'espoir ou à l'extinction n'a plus d'importance. Aloy a déjà sauvé son monde, et celui-ci a ses propres héros pour s'inquiéter de son sort.</i>"
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "Temps de recharge",
+      "2": "Énergie élémentaire",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Surcharge offensive",
+    "description": {
+      "0": "Lorsqu'Aloy est sous l'effet d'une bobine de <strong>Frozen Wilds</strong>, son ATQ augmente de 16 %, tandis que celle des personnages de l'équipe à proximité augmente de 8 %. Cet effet dure 10 s."
+    }
+  },
+  "passive2": {
+    "name": "Frappe puissante",
+    "description": {
+      "0": "Lorsqu'Aloy est dans l'état Glace précipitée accordé par <strong>Frozen Wilds</strong>, son <cryo>bonus de DGT Cryo</cryo> augmente de 3,5 % toutes les secondes. Son <cryo>bonus de DGT Cryo</cryo> peut augmenter de cette manière jusqu'à 35 %."
+    }
+  },
+  "passive3": {
+    "name": "Doucement mais sûrement",
+    "description": {
+      "0": "Quand Aloy fait partie de l'équipe, vos personnages dans l'équipe n'effraient pas les petits animaux en s'approchant, et peuvent ainsi obtenir de la volaille, de la viande crue et de la viande congelée."
+    }
+  },
+  "constellation1": {
+    "name": "Étoile d'un autre monde",
+    "description": {
+      "0": "Le moment d'éclairer le coin du ciel nocturne de cette personne n'est pas encore venu."
+    }
+  },
+  "constellation2": {
+    "name": "Étoile d'un autre monde",
+    "description": {
+      "0": "Le moment d'éclairer le coin du ciel nocturne de cette personne n'est pas encore venu."
+    }
+  },
+  "constellation3": {
+    "name": "Étoile d'un autre monde",
+    "description": {
+      "0": "Le moment d'éclairer le coin du ciel nocturne de cette personne n'est pas encore venu."
+    }
+  },
+  "constellation4": {
+    "name": "Étoile d'un autre monde",
+    "description": {
+      "0": "Le moment d'éclairer le coin du ciel nocturne de cette personne n'est pas encore venu."
+    }
+  },
+  "constellation5": {
+    "name": "Étoile d'un autre monde",
+    "description": {
+      "0": "Le moment d'éclairer le coin du ciel nocturne de cette personne n'est pas encore venu."
+    }
+  },
+  "constellation6": {
+    "name": "Étoile d'un autre monde",
+    "description": {
+      "0": "Le moment d'éclairer le coin du ciel nocturne de cette personne n'est pas encore venu."
+    }
+  }
+}

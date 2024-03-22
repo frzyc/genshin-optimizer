@@ -1,0 +1,175 @@
+{
+  "name": "Razor",
+  "title": "Enfant-loup",
+  "description": "Un jeune garçon qui vit sur le Territoire des Loups situé aux environs de Mondstadt, loin de la ville et des foules. Il possède un instinct et une agilité surprenante.",
+  "constellationName": "Lupus Minor",
+  "auto": {
+    "name": "Croc d'acier",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attaque normale</strong>",
+        "1": "Enchaîne jusqu'à 4 coups d'épée."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Consomme de l'endurance de façon continue pour exécuter une succession d'attaques tournoyantes contre les ennemis proches.",
+        "2": "L'attaque chargée se termine sur un coup puissant."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis en chemin et des DGT de zone à l'impact."
+      }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT 4e coup",
+      "4": "DGT enchaînement attaque chargée",
+      "5": "DGT coup final attaque chargée",
+      "6": "Coût d'endurance attaque chargée",
+      "7": "Durée max",
+      "8": "DGT durant la chute",
+      "9": "DGT chute basse/élevée",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Griffe et tonnerre",
+    "description": {
+      "0": "Razor met à profit les enseignements de son maître et de son lupical pour chasser sa proie.",
+      "1": "<br/>",
+      "2": "<strong>Appui simple</strong>",
+      "3": "D'un coup de griffe du loup de tonnerre, il inflige des <electro>DGT Électro</electro> aux ennemis en face.",
+      "4": "Razor obtient un sceau Électro lorsque cette attaque touche un ennemi, chaque sceau lui conférant un bonus de recharge d'énergie.",
+      "5": "Razor peut cumuler jusqu'à 3 sceaux Électro, chaque nouveau sceau réinitialisant leur durée.",
+      "6": "<br/>",
+      "7": "<strong>Appui long</strong>",
+      "8": "Amassant la puissance du tonnerre, Razor libère une explosion électrique, infligeant d'importants <electro>DGT Électro</electro> aux ennemis proches, et supprimant tous les sceaux Électro.",
+      "9": "Chaque sceau ainsi supprimé est converti en énergie élémentaire.",
+      "10": "<br/>",
+      "11": "<i>Parfois un malheureux peut apercevoir à la lueur de l'éclair le regard de prédateur de Razor.</i>"
+    },
+    "skillParams": {
+      "0": "DGT appui simple",
+      "1": "DGT appui long",
+      "2": "Bonus recharge d'énergie",
+      "3": "Énergie restaurée",
+      "4": "Durée sceau Électro",
+      "5": "TdR appui simple",
+      "6": "TdR appui long",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Croc éclair",
+    "description": {
+      "0": "Le loup de tonnerre qui sommeille se réveille et vient à la rescousse, infligeant des <electro>DGT Électro</electro> aux ennemis proches. Ceci supprime également tous les sceaux Électro, qui sont convertis en énergie élémentaire.",
+      "1": "Le loup de tonnerre combat aux côtés de Razor tant qu'il est actif.",
+      "2": "<br/>",
+      "3": "<strong>Loup de tonnerre</strong>",
+      "4": [
+        " Attaque lorsque Razor effectue une attaque normale, et inflige des <electro>DGT Électro</electro>.",
+        " Augmente la VIT d'attaque ainsi que la <electro>RÉS Électro</electro> de Razor.",
+        " Razor est immunisé aux DGT d'<electro>Électrocution</electro>.",
+        " Attaque chargée impossible.",
+        " Augmente la RÉS à l'interruption de Razor."
+      ],
+      "5": "<br/>",
+      "6": "Le loup de tonnerre disparaît lorsque Razor est vaincu ou quitte le champ de bataille.",
+      "7": "Le temps restant est converti en énergie élémentaire (10 pts maximum) lorsque Razor quitte le champ de bataille.",
+      "8": "<br/>",
+      "9": "<i>Le loup s'est réveillé. L'heure de la chasse a sonné.</i>"
+    },
+    "skillParams": {
+      "0": "DGT explosifs",
+      "1": "DGT attaque",
+      "2": "Bonus VIT d'attaque normale",
+      "3": "Bonus RÉS Électro",
+      "4": "Durée",
+      "5": "Temps de recharge",
+      "6": "Énergie élémentaire",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Éveil",
+    "description": {
+      "0": "Diminue le TdR de <strong>Griffe et tonnerre</strong> de 18 %.",
+      "1": "<strong>Croc éclair</strong> réinitialise le TdR de <strong>Griffe et tonnerre</strong> lorsqu'il est activé."
+    }
+  },
+  "passive2": {
+    "name": "Famine",
+    "description": {
+      "0": "Razor bénéficie d'un bonus de recharge d'énergie de 30 % lorsque son énergie élémentaire est inférieure à 50 %."
+    }
+  },
+  "passive3": {
+    "name": "Vélocité lupine",
+    "description": {
+      "0": "Diminue la consommation d'endurance des personnages de l'équipe de 20 % lors du sprint.",
+      "1": "Ne peut pas être cumulé avec d'autres aptitudes passives aux effets identiques."
+    }
+  },
+  "constellation1": {
+    "name": "Nature du loup",
+    "description": {
+      "0": "Razor inflige 10 % de DGT supplémentaires pendant 8 s lorsqu'il obtient un orbe ou une particule élémentaire."
+    }
+  },
+  "constellation2": {
+    "name": "Répression",
+    "description": {
+      "0": "Le taux CRIT de Razor augmente de 10 % quand il attaque des ennemis dont les PV sont inférieurs à 30 %."
+    }
+  },
+  "constellation3": {
+    "name": "Âme de loup",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Croc éclair</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation4": {
+    "name": "Morsure",
+    "description": {
+      "0": "L'appui simple de <strong>Griffe et tonnerre</strong> diminue la DÉF des cibles de 15 % pendant 7 s."
+    }
+  },
+  "constellation5": {
+    "name": "Griffes tranchantes",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Griffe et tonnerre</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation6": {
+    "name": "Lupus Fulguris",
+    "description": {
+      "0": "Toutes les 10 s, l'arme de Razor se charge d'énergie électrique pour infliger lors de la prochaine attaque normale des <electro>DGT Électro</electro> équivalant à 100 % de l'ATQ.",
+      "1": "Chaque ennemi touché confère à Razor un sceau Électro de <strong>Griffe et tonnerre</strong> tant que <strong>Croc éclair</strong> n'est pas actif."
+    }
+  }
+}

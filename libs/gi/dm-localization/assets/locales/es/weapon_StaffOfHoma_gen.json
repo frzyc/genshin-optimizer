@@ -1,0 +1,24 @@
+{
+  "name": "Báculo de Homa",
+  "description": {
+    "0": "Un bastón de color bermellón utilizado en un antiguo ritual que hace mucho tiempo que no se practica."
+  },
+  "passiveName": "Libertad de la mariposa cinabrio",
+  "passiveDescription": {
+    "0": {
+      "0": "Aumenta la Vida en un <cryo>20%</cryo>. Además, el personaje que lleve esta arma equipada obtendrá un <cryo>0.8%</cryo> de Bono de ATQ en proporción a su Vida Máx. Cuando la Vida de dicho personaje esté por debajo del 50%, el ATQ aumentará en un <cryo>1%</cryo> adicional en proporción a su Vida Máx."
+    },
+    "1": {
+      "0": "Aumenta la Vida en un <cryo>25%</cryo>. Además, el personaje que lleve esta arma equipada obtendrá un <cryo>1%</cryo> de Bono de ATQ en proporción a su Vida Máx. Cuando la Vida de dicho personaje esté por debajo del 50%, el ATQ aumentará en un <cryo>1.2%</cryo> adicional en proporción a su Vida Máx."
+    },
+    "2": {
+      "0": "Aumenta la Vida en un <cryo>30%</cryo>. Además, el personaje que lleve esta arma equipada obtendrá un <cryo>1.2%</cryo> de Bono de ATQ en proporción a su Vida Máx. Cuando la Vida de dicho personaje esté por debajo del 50%, el ATQ aumentará en un <cryo>1.4%</cryo> adicional en proporción a su Vida Máx."
+    },
+    "3": {
+      "0": "Aumenta la Vida en un <cryo>35%</cryo>. Además, el personaje que lleve esta arma equipada obtendrá un <cryo>1.4%</cryo> de Bono de ATQ en proporción a su Vida Máx. Cuando la Vida de dicho personaje esté por debajo del 50%, el ATQ aumentará en un <cryo>1.6%</cryo> adicional en proporción a su Vida Máx."
+    },
+    "4": {
+      "0": "Aumenta la Vida en un <cryo>40%</cryo>. Además, el personaje que lleve esta arma equipada obtendrá un <cryo>1.6%</cryo> de Bono de ATQ en proporción a su Vida Máx. Cuando la Vida de dicho personaje esté por debajo del 50%, el ATQ aumentará en un <cryo>1.8%</cryo> adicional en proporción a su Vida Máx."
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Thương Quyết Chiến",
+  "description": {
+    "0": "Thương dài sắc bén màu máu tươi, xưa kia là bảo vật trân quý của một đấu sĩ nào đó. Mũi thương đã nhuộm đầy máu tươi của vô số dã thú và sinh mệnh."
+  },
+  "passiveName": "Giác Đấu Sĩ",
+  "passiveDescription": {
+    "0": {
+      "0": "Khi bên cạnh có ít nhất 2 kẻ địch, được tăng <cryo>16%</cryo> tấn công và <cryo>16%</cryo> phòng ngự, khi có dưới 2 kẻ địch, được tăng <cryo>24%</cryo> tấn công."
+    },
+    "1": {
+      "0": "Khi bên cạnh có ít nhất 2 kẻ địch, được tăng <cryo>20%</cryo> tấn công và <cryo>20%</cryo> phòng ngự, khi có dưới 2 kẻ địch, được tăng <cryo>30%</cryo> tấn công."
+    },
+    "2": {
+      "0": "Khi bên cạnh có ít nhất 2 kẻ địch, được tăng <cryo>24%</cryo> tấn công và <cryo>24%</cryo> phòng ngự, khi có dưới 2 kẻ địch, được tăng <cryo>36%</cryo> tấn công."
+    },
+    "3": {
+      "0": "Khi bên cạnh có ít nhất 2 kẻ địch, được tăng <cryo>28%</cryo> tấn công và <cryo>28%</cryo> phòng ngự, khi có dưới 2 kẻ địch, được tăng <cryo>42%</cryo> tấn công."
+    },
+    "4": {
+      "0": "Khi bên cạnh có ít nhất 2 kẻ địch, được tăng <cryo>32%</cryo> tấn công và <cryo>32%</cryo> phòng ngự, khi có dưới 2 kẻ địch, được tăng <cryo>48%</cryo> tấn công."
+    }
+  }
+}

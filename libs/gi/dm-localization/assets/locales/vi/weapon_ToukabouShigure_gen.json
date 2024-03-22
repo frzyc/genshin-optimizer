@@ -1,0 +1,24 @@
+{
+  "name": "Toukabou Shigure",
+  "description": {
+    "0": "Chiếc dù giấy dầu có chút đặc biệt. Tuy đã quen với mưa gió trong chuyến hành trình, nhưng chiêm ngưỡng cảnh mưa rơi với nó cũng sẽ có chút cảm giác thú vị."
+  },
+  "passiveName": "Kinh Dị - Một Chân Dưới Màn Mưa",
+  "passiveDescription": {
+    "0": {
+      "0": "Sau khi tấn công trúng kẻ địch, sẽ khiến một kẻ địch trúng đòn chịu trạng thái \"Dù Giấy Tác Quái\", duy trì 10s. Hiệu quả này mỗi 15s tối đa kích hoạt một lần; Trong thời gian duy trì, nếu kẻ địch đó bị tiêu diệt sẽ xóa thời gian chờ của hiệu quả này. Tăng <cryo>16%</cryo> sát thương của người trang bị gây ra cho kẻ địch trong trạng thái \"Dù Giấy Tác Quái\"."
+    },
+    "1": {
+      "0": "Sau khi tấn công trúng kẻ địch, sẽ khiến một kẻ địch trúng đòn chịu trạng thái \"Dù Giấy Tác Quái\", duy trì 10s. Hiệu quả này mỗi 15s tối đa kích hoạt một lần; Trong thời gian duy trì, nếu kẻ địch đó bị tiêu diệt sẽ xóa thời gian chờ của hiệu quả này. Tăng <cryo>20%</cryo> sát thương của người trang bị gây ra cho kẻ địch trong trạng thái \"Dù Giấy Tác Quái\"."
+    },
+    "2": {
+      "0": "Sau khi tấn công trúng kẻ địch, sẽ khiến một kẻ địch trúng đòn chịu trạng thái \"Dù Giấy Tác Quái\", duy trì 10s. Hiệu quả này mỗi 15s tối đa kích hoạt một lần; Trong thời gian duy trì, nếu kẻ địch đó bị tiêu diệt sẽ xóa thời gian chờ của hiệu quả này. Tăng <cryo>24%</cryo> sát thương của người trang bị gây ra cho kẻ địch trong trạng thái \"Dù Giấy Tác Quái\"."
+    },
+    "3": {
+      "0": "Sau khi tấn công trúng kẻ địch, sẽ khiến một kẻ địch trúng đòn chịu trạng thái \"Dù Giấy Tác Quái\", duy trì 10s. Hiệu quả này mỗi 15s tối đa kích hoạt một lần; Trong thời gian duy trì, nếu kẻ địch đó bị tiêu diệt sẽ xóa thời gian chờ của hiệu quả này. Tăng <cryo>28%</cryo> sát thương của người trang bị gây ra cho kẻ địch trong trạng thái \"Dù Giấy Tác Quái\"."
+    },
+    "4": {
+      "0": "Sau khi tấn công trúng kẻ địch, sẽ khiến một kẻ địch trúng đòn chịu trạng thái \"Dù Giấy Tác Quái\", duy trì 10s. Hiệu quả này mỗi 15s tối đa kích hoạt một lần; Trong thời gian duy trì, nếu kẻ địch đó bị tiêu diệt sẽ xóa thời gian chờ của hiệu quả này. Tăng <cryo>32%</cryo> sát thương của người trang bị gây ra cho kẻ địch trong trạng thái \"Dù Giấy Tác Quái\"."
+    }
+  }
+}

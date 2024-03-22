@@ -1,0 +1,24 @@
+{
+  "name": "Arco de Cuervo",
+  "description": {
+    "0": "Los cuervos son conocidos por ser los mensajeros de la muerte. Las plumas que decoran este arco presagian la muerte inminente de cualquier objetivo."
+  },
+  "passiveName": "Perdición de las llamas y el agua",
+  "passiveDescription": {
+    "0": {
+      "0": "Aumenta en un <cryo>12%</cryo> el daño contra los enemigos afectados por Hydro o Pyro."
+    },
+    "1": {
+      "0": "Aumenta en un <cryo>15%</cryo> el daño contra los enemigos afectados por Hydro o Pyro."
+    },
+    "2": {
+      "0": "Aumenta en un <cryo>18%</cryo> el daño contra los enemigos afectados por Hydro o Pyro."
+    },
+    "3": {
+      "0": "Aumenta en un <cryo>21%</cryo> el daño contra los enemigos afectados por Hydro o Pyro."
+    },
+    "4": {
+      "0": "Aumenta en un <cryo>24%</cryo> el daño contra los enemigos afectados por Hydro o Pyro."
+    }
+  }
+}

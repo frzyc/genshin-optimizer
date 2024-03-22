@@ -1,0 +1,161 @@
+{
+  "name": "Shikanoin Heizou",
+  "title": "Armonia analitica",
+  "description": "Un giovane investigatore prodigio della Commissione Tenryou dai sensi acuti e dalla mente chiara.",
+  "constellationName": "Cervus Minor",
+  "auto": {
+    "name": "Arti marziali stile Fudou",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attacco normale</strong>",
+        "1": "Sferra fino a 5 colpi col potere di un vento impetuoso, infliggendo <anemo>DAN da Anemo</anemo>."
+      },
+      "charged": {
+        "0": "<strong>Attacco caricato</strong>",
+        "1": "Consuma una determinata quantità di vigore e sferra una spazzata che infligge <anemo>DAN da Anemo</anemo>."
+      },
+      "plunging": {
+        "0": "<strong>Attacco in picchiata</strong>",
+        "1": "Invocando l'impeto del vento, Heizou si scaglia contro il suolo da mezz'aria, infliggendo DAN agli avversari lungo la traiettoria. Infligge <anemo>DAN da Anemo ad area</anemo> all'impatto col suolo."
+      }
+    },
+    "skillParams": {
+      "0": "DAN da 1º colpo",
+      "1": "DAN da 2º colpo",
+      "2": "DAN da 3º colpo",
+      "3": "DAN da 4º colpo",
+      "4": "DAN da 5º colpo",
+      "5": "ATT caricato",
+      "6": "Costo vigore ATT caricato",
+      "7": "DAN da ATT in picchiata",
+      "8": "DAN da ATT in picchiata basso/alto",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Colpo cardiaco",
+    "description": {
+      "0": "<strong>Pressione</strong>",
+      "1": "Sfrutta le raffiche di vento per scagliare un Colpo cardiaco che infligge <anemo>DAN da Anemo</anemo>.",
+      "2": "<br/>",
+      "3": "<strong>Pressione prolungata</strong>",
+      "4": "Accumula energia per scagliare un colpo ancora più potente. Mentre accumula energia, ottiene l'effetto Deterioramento che aumenta il potere del Colpo cardiaco. Quando l'abilità viene rilasciata o l'accumulo di energia termina, colpisce in avanti infliggendo <anemo>DAN da Anemo</anemo>.",
+      "5": "<br/>",
+      "6": "<strong>Deterioramento</strong>",
+      "7": "Aumenta il potere del Colpo cardiaco successivo. Cumulabile fino a 4 volte.",
+      "8": "4 accumuli di Deterioramento producono l'effetto Condanna, che rendono il Colpo cardiaco successivo ancora più potente e ne aumentano l'area d'effetto.",
+      "9": "<br/>",
+      "10": "<i>Questo colpo all'apparenza ordinario racchiude ciò che Heizou desidera: vedere i criminali confessare le proprie colpe e pentirsi di ciò che hanno fatto.</i>"
+    },
+    "skillParams": {
+      "0": "DAN da abilità",
+      "1": "Bonus DAN da Deterioramento",
+      "2": "Bonus DAN da Condanna",
+      "3": "Durata Deterioramento",
+      "4": "TdR",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Calcio acchiappavento",
+    "description": {
+      "0": "Balza in aria e usa Picchiatore vacuo stile Fudou, sferrando un calcio all'avversario. Il Picchiatore vacuo esplode all'impatto col nemico e crea un Tunnel di vento che attrae gli oggetti e gli avversari nelle vicinanze, infliggendo <anemo>DAN da Anemo ad area</anemo>.",
+      "1": "Quando Picchiatore vacuo colpisce avversari affetti da <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<electro>Electro</electro>, applica loro Iride Acchiappavento. Quest'ultima esplode dopo poco tempo e si dissolve, infliggendo DAN ad area del tipo elementale corrispondente.",
+      "2": "Il Picchiatore vacuo può applicare l'Iride Acchiappavento a un massimo di 4 avversari. Un singolo avversario non può essere sotto l'effetto di Iridi acchiappavento di elementi diversi contemporaneamente.",
+      "3": "<br/>",
+      "4": "<i>Una tecnica unica che incanala l'elemento Anemo in un punto prima di rilasciarlo in un colpo solo. Una risorsa sempre utile per colpire i criminali in fuga!</i>"
+    },
+    "skillParams": {
+      "0": "DAN da Picchiatore vacuo stile Fudou",
+      "1": "DAN da Iride Acchiappavento",
+      "2": "TdR",
+      "3": "Costo energia",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Pratica paradossale",
+    "description": {
+      "0": "Quando Shikanoin Heizou attiva la reazione di Turbinio mentre è sul campo di battaglia, ottiene 1 accumulo di Deterioramento per <strong>Colpo cardiaco</strong>. Quest'effetto può attivarsi una volta ogni 0,1 s."
+    }
+  },
+  "passive2": {
+    "name": "Ragionamento penetrante",
+    "description": {
+      "0": "Dopo che il <strong>Colpo cardiaco</strong> di Shikanoin Heizou colpisce un avversario, aumenta la maestria elementale di tutti i membri del gruppo (tranne Shikanoin Heizou) di 80 per 10 s."
+    }
+  },
+  "passive3": {
+    "name": "Senso di colpa preesistente",
+    "description": {
+      "0": "Diminuisce di un 20% il consumo di vigore durante lo Scatto per i membri del tuo gruppo.",
+      "1": "Non è cumulabile con talenti passivi che conferiscono gli stessi effetti."
+    }
+  },
+  "constellation1": {
+    "name": "Giustizia esuberante",
+    "description": {
+      "0": "Per 5 s dopo che Shikanoin Heizou scende in campo, la sua VEL d'attacco normale aumenta di un 15%. Ottiene anche 1 accumulo di Deterioramento per <strong>Colpo cardiaco</strong>. Quest'effetto può attivarsi una volta ogni 10 s."
+    }
+  },
+  "constellation2": {
+    "name": "Raccolta investigativa",
+    "description": {
+      "0": "Potenzia l'effetto di attrazione del Tunnel di vento creato da <strong>Calcio acchiappavento</strong> ed estende la sua durata a 1 s."
+    }
+  },
+  "constellation3": {
+    "name": "Enigma inestricabile",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Colpo cardiaco</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation4": {
+    "name": "Tomo delle menzogne",
+    "description": {
+      "0": "La prima esplosione dell'Iride acchiappavento in ogni <strong>Calcio acchiappavento</strong> rigenera l'energia elementale di Shikanoin Heizou di 9. Ogni esplosione successiva dello stesso Calcio acchiappavento rigenera l'energia di Heizou di un ulteriore 1,5.",
+      "1": "In questo modo, un <strong>Calcio acchiappavento</strong> può rigenerare l'energia di Heizou fino a un totale di 13,5."
+    }
+  },
+  "constellation5": {
+    "name": "Archivio segreto",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Calcio acchiappavento</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation6": {
+    "name": "Fascicoli bizzarri",
+    "description": {
+      "0": "Ogni accumulo di Deterioramento aumenta il tasso di CRIT di <strong>Colpo cardiaco</strong> di un 4%. Quando Heizou è sotto l'effetto di Condanna, i DAN da CRIT di Colpo cardiaco aumentano di un 32%."
+    }
+  }
+}

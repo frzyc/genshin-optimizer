@@ -1,0 +1,24 @@
+{
+  "name": "Aiutante del porto",
+  "description": {
+    "0": "Un comodo strumento da taglio che al giorno d'oggi risulta particolarmente raro. Permette di sostituire facilmente le lame smussate dall'usura."
+  },
+  "passiveName": "Ballata marinara",
+  "passiveDescription": {
+    "0": {
+      "0": "Quando il personaggio che equipaggia l'arma riceve o apporta effetti di guarigione, ottiene un Simbolo stoico che dura 30 s, fino a un massimo di 3 Simboli. Con l'uso di abilità o Tripudio elementale, il personaggio consuma tutti i Simboli e riceve l'effetto Riscossa per 10 s. Per ogni Simbolo consumato, il personaggio ottiene <cryo>40</cryo> di maestria elementale. 2 s dopo aver attivato l'effetto, il personaggio recupera <cryo>2</cryo> di energia per ciascun Simbolo consumato. L'effetto Riscossa può attivarsi una volta ogni 15 s, e i Simboli sono ottenibili anche quando il personaggio che equipaggia quest'arma non è in campo."
+    },
+    "1": {
+      "0": "Quando il personaggio che equipaggia l'arma riceve o apporta effetti di guarigione, ottiene un Simbolo stoico che dura 30 s, fino a un massimo di 3 Simboli. Con l'uso di abilità o Tripudio elementale, il personaggio consuma tutti i Simboli e riceve l'effetto Riscossa per 10 s. Per ogni Simbolo consumato, il personaggio ottiene <cryo>50</cryo> di maestria elementale. 2 s dopo aver attivato l'effetto, il personaggio recupera <cryo>2,5</cryo> di energia per ciascun Simbolo consumato. L'effetto Riscossa può attivarsi una volta ogni 15 s, e i Simboli sono ottenibili anche quando il personaggio che equipaggia quest'arma non è in campo."
+    },
+    "2": {
+      "0": "Quando il personaggio che equipaggia l'arma riceve o apporta effetti di guarigione, ottiene un Simbolo stoico che dura 30 s, fino a un massimo di 3 Simboli. Con l'uso di abilità o Tripudio elementale, il personaggio consuma tutti i Simboli e riceve l'effetto Riscossa per 10 s. Per ogni Simbolo consumato, il personaggio ottiene <cryo>60</cryo> di maestria elementale. 2 s dopo aver attivato l'effetto, il personaggio recupera <cryo>3</cryo> di energia per ciascun Simbolo consumato. L'effetto Riscossa può attivarsi una volta ogni 15 s, e i Simboli sono ottenibili anche quando il personaggio che equipaggia quest'arma non è in campo."
+    },
+    "3": {
+      "0": "Quando il personaggio che equipaggia l'arma riceve o apporta effetti di guarigione, ottiene un Simbolo stoico che dura 30 s, fino a un massimo di 3 Simboli. Con l'uso di abilità o Tripudio elementale, il personaggio consuma tutti i Simboli e riceve l'effetto Riscossa per 10 s. Per ogni Simbolo consumato, il personaggio ottiene <cryo>70</cryo> di maestria elementale. 2 s dopo aver attivato l'effetto, il personaggio recupera <cryo>3,5</cryo> di energia per ciascun Simbolo consumato. L'effetto Riscossa può attivarsi una volta ogni 15 s, e i Simboli sono ottenibili anche quando il personaggio che equipaggia quest'arma non è in campo."
+    },
+    "4": {
+      "0": "Quando il personaggio che equipaggia l'arma riceve o apporta effetti di guarigione, ottiene un Simbolo stoico che dura 30 s, fino a un massimo di 3 Simboli. Con l'uso di abilità o Tripudio elementale, il personaggio consuma tutti i Simboli e riceve l'effetto Riscossa per 10 s. Per ogni Simbolo consumato, il personaggio ottiene <cryo>80</cryo> di maestria elementale. 2 s dopo aver attivato l'effetto, il personaggio recupera <cryo>4</cryo> di energia per ciascun Simbolo consumato. L'effetto Riscossa può attivarsi una volta ogni 15 s, e i Simboli sono ottenibili anche quando il personaggio che equipaggia quest'arma non è in campo."
+    }
+  }
+}

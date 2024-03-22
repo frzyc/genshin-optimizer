@@ -1,0 +1,161 @@
+{
+  "name": "Amber",
+  "title": "Campeã Voadora",
+  "description": "Sempre energética e cheia de vida, a Amber é a melhor, mas também a última Aventureira dos Cavaleiros de Favonius.",
+  "constellationName": "Lepus",
+  "auto": {
+    "name": "Pontaria",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Ataque Normal</strong>",
+        "1": "Realiza até 5 tiros consecutivos com um arco."
+      },
+      "charged": {
+        "0": "<strong>Ataque Carregado</strong>",
+        "1": "Dispara um <strong>Tiro com Mira</strong> mais preciso e com Dano aumentado.",
+        "2": "Ao mirar, chamas irão se acumular na ponta da flecha. Uma flecha em chamas completamente carregada inflige <pyro>Dano Pyro</pyro>."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Imersivo</strong>",
+        "1": "Dispara uma chuva de flechas em pleno ar antes de atingir o chão, infligindo Dano em uma AdE durante o impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Dano do 1° Golpe",
+      "1": "Dano do 2° Golpe",
+      "2": "Dano do 3° Golpe",
+      "3": "Dano do 4° Golpe",
+      "4": "Dano do 5° Golpe",
+      "5": "Disparo com Mira",
+      "6": "Disparo com Mira com Energização Completa",
+      "7": "Dano Durante a Queda",
+      "8": "Dano de Queda de Baixa/Alta Altitude",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Marionete Explosiva",
+    "description": {
+      "0": "O sempre tão confiável Barão Coelho sobe ao palco.",
+      "1": "<br/>",
+      "2": "<strong>Barão Coelho</strong>",
+      "3": "Continuamente provoca o inimigo, atraindo seus golpes.",
+      "4": "A vida do Barão Coelho aumenta com a Vida máxima de Amber.",
+      "5": "Quando destruído ou quando o tempo expirar, Barão Coelho explode, infligindo <pyro>Dano Pyro em uma AdE</pyro>.",
+      "6": "<br/>",
+      "7": "<strong>Manter pressionado</strong>",
+      "8": "Ajusta a direção do lançamento do Barão Coelho.",
+      "9": "Quanto mais tempo o botão for pressionado, mais distante é o lançamento.",
+      "10": "<br/>",
+      "11": "<i>Barão Coelho provém de uma histórica linhagem, mas Amber decidiu parar de contar desde o Barão Coelho 893.</i>"
+    },
+    "skillParams": {
+      "0": "Vida Recebida",
+      "1": "Dano de Explosão",
+      "2": "Tempo de Recarga",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Chuva Ardente",
+    "description": {
+      "0": "Dispara uma chuva de flechas, causando <pyro>Dano em uma AdE Pyro</pyro> contínuo.",
+      "1": "<br/>",
+      "2": "<i>A paixão de Amber arde como o fogo.</i>"
+    },
+    "skillParams": {
+      "0": "Dano Único da Chuva Ardente",
+      "1": "Dano Total da Chuva Ardente",
+      "2": "Duração",
+      "3": "Tempo de Recarga",
+      "4": "Energia Elemental",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Ninguém consegue fugir do meu campo de visão!",
+    "description": {
+      "0": "Aumenta a Taxa Crítica da <strong>Chuva Ardente</strong> em 10% e expande a AdE em 30%."
+    }
+  },
+  "passive2": {
+    "name": "Disparo Preciso",
+    "description": {
+      "0": "Disparos com Mira em pontos fracos aumentam o ATQ em 15% por 10s."
+    }
+  },
+  "passive3": {
+    "name": "Campeã Voadora",
+    "description": {
+      "0": "Diminui o consumo de Stamina ao Planar de todos os seus personagens em 20%.",
+      "1": "Não acumulável com Talentos Passivos que concedem exatamente os mesmos efeitos."
+    }
+  },
+  "constellation1": {
+    "name": "Uma Flecha para Todos Governar",
+    "description": {
+      "0": "Dispara 2 flechas a cada <strong>Disparo com Mira</strong>. A segunda flecha causa 20% do Dano da primeira flecha."
+    }
+  },
+  "constellation2": {
+    "name": "Coelho Ativado",
+    "description": {
+      "0": "Barão Coelho, novo e melhorado! Atingir o pé do Barão Coelho com um Tiro com Mira completamente carregado irá manualmente detoná-lo.",
+      "1": "Explosões feitas de maneira manual causam 200% de Dano adicional."
+    }
+  },
+  "constellation3": {
+    "name": "Isso, Queima!",
+    "description": {
+      "0": "Aumenta o nível da <strong>Chuva Ardente</strong> em 3.",
+      "1": "O nível máximo de elevação é 15."
+    }
+  },
+  "constellation4": {
+    "name": "Não É Uma Boneca Qualquer...",
+    "description": {
+      "0": "Diminui o Tempo de Recarga da <strong>Marionete Explosiva</strong> em 20% e adiciona 1 carga adicional."
+    }
+  },
+  "constellation5": {
+    "name": "É o Barão Coelho!",
+    "description": {
+      "0": "Aumenta o nível da <strong>Marionete Explosiva</strong> em 3.",
+      "1": "O nível máximo de elevação é 15."
+    }
+  },
+  "constellation6": {
+    "name": "Fogo Vivo",
+    "description": {
+      "0": "A <strong>Chuva Ardente</strong> aumenta a Veloc. Mov. da equipe toda em 15% e o ATQ em 15% por 10s."
+    }
+  }
+}

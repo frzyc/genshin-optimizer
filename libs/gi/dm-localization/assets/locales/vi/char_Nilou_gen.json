@@ -1,0 +1,171 @@
+{
+  "name": "Nilou",
+  "title": "Vũ Điệu Ánh Sen",
+  "description": "Vũ công nổi danh của Nhà Hát Zubayr, điệu nhảy sống động và tính cách hồn nhiên ấm áp.",
+  "constellationName": "Cung Thụy Liên",
+  "auto": {
+    "name": "Vũ Điệu Samser",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Tấn Công Thường</strong>",
+        "1": "Thực hiện tối đa 3 lần đánh liên tiếp."
+      },
+      "charged": {
+        "0": "<strong>Trọng Kích</strong>",
+        "1": "Tiêu hao thể lực nhất định để thi triển một lần chém xoáy."
+      },
+      "plunging": {
+        "0": "<strong>Tấn Công Khi Đáp</strong>",
+        "1": "Đáp xuống đất từ trên không, tấn công kẻ địch trên đường và gây sát thương phạm vi khi chạm đất."
+      }
+    },
+    "skillParams": {
+      "0": "Sát Thương Lần 1",
+      "1": "Sát Thương Lần 2",
+      "2": "Sát Thương Lần 3",
+      "3": "Sát Thương Trọng Kích",
+      "4": "Thể Lực Trọng Kích Tiêu Hao",
+      "5": "Sát Thương Khi Rơi",
+      "6": "Sát Thương Khi Rơi Từ Độ Cao Thấp/Cao",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Vũ Điệu Haftkarsvar",
+    "description": {
+      "0": "Vào trạng thái \"Xoay Người\", gây <hydro>Sát Thương Nguyên Tố Thủy</hydro> cho kẻ địch xung quanh dựa vào giới hạn HP của Nilou.",
+      "1": "Trong trạng thái Xoay Người, Nilou đánh thường hoặc dùng Kỹ Năng Nguyên Tố sẽ lần lượt chuyển thành thi triển \"Vũ Điệu Bão Kiếm\" và \"Vũ Điệu Xoay Vòng\" tương ứng, sát thương gây ra sẽ được tính là <hydro>Sát Thương Nguyên Tố Thủy</hydro> của Kỹ Năng Nguyên Tố và không thể bị đính kèm thay thế.",
+      "2": "<br/>",
+      "3": "Trong trạng thái này, Vũ Điệu thứ ba của Nilou sẽ hóa giải trạng thái \"Xoay Người\", đồng thời căn cứ vào loại hình của Vũ Điệu thứ ba để sản sinh các hiệu quả sau:",
+      "4": [
+        "Vũ Điệu Bão Kiếm: Thi triển một đòn Thủy Nguyệt, gây <hydro>Sát Thương Nguyên Tố Thủy</hydro> cho kẻ địch trúng đòn, đồng thời cung cấp trạng thái Ánh Trăng Cầu Nguyện cho Nilou. Trong trạng thái này, đòn đánh thường của Nilou sẽ chuyển hóa thành Vũ Điệu Bão Kiếm, đòn cuối cùng sẽ thi triển Thủy Nguyệt;",
+        "Vũ Điệu Xoay Vòng: Thi triển một đòn Thủy Luân, gây <hydro>Sát Thương Phạm Vi Nguyên Tố Thủy</hydro>, đồng thời tạo ra Vòng Nước Thanh Tẩy đi theo nhân vật của bản thân đang trong trận, liên tục gây trạng thái <hydro>Ẩm Ướt</hydro> cho kẻ địch trong đó."
+      ],
+      "5": "<br/>",
+      "6": "Khi trong trạng thái Xoay Người hoặc Ánh Trăng Cầu Nguyện, Nilou sẽ không thể trọng kích, những trạng thái này sẽ xóa khi Nilou rời trận.",
+      "7": "<br/>",
+      "8": "<i>\"Những bước nhảy uyển chuyển của cô ấy chạm lên mặt nước, ánh sáng gợn sóng sánh ngang bảy tầng trời.\"</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Kỹ Năng",
+      "1": "Sát Thương Vũ Điệu Bão Kiếm/Vũ Điệu Xoay Vòng Lần 1",
+      "2": "Sát Thương Vũ Điệu Bão Kiếm/Vũ Điệu Xoay Vòng Lần 2",
+      "3": "Sát Thương Thủy Nguyệt/Thủy Luân",
+      "4": "Thời Gian Duy Trì Xoay Người",
+      "5": "Thời Gian Duy Trì Ánh Trăng Cầu Nguyện",
+      "6": "Thời Gian Duy Trì Vòng Nước Thanh Tẩy",
+      "7": "CD",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Vũ Điệu Abzendegi - Viễn Mộng Linh Tuyền",
+    "description": {
+      "0": "Bắt đầu vũ điệu của giấc mơ và dòng suối xa để triệu hồi Hoa Sen Nước, gây <hydro>Sát Thương Phạm Vi Nguyên Tố Thủy</hydro> dựa vào giới hạn HP của Nilou, kẻ địch trúng đòn sẽ nhận trạng thái \"Dòng Nước Vĩnh Hằng\".",
+      "1": "Sau một thời gian ngắn, kẻ địch trong trạng thái Dòng Nước Vĩnh Hằng sẽ chịu <hydro>Sát Thương Nguyên Tố Thủy</hydro>.",
+      "2": "<br/>",
+      "3": "<i>\"Dù chưa từng chứng kiến giấc mơ xa vời đó, nhưng chỉ điệu múa này mới có thể lột tả được khung cảnh đẹp như mơ.\"</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Kỹ Năng",
+      "1": "Sát Thương Dòng Nước Vĩnh Hằng",
+      "2": "CD",
+      "3": "Năng Lượng Nguyên Tố",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Sảnh Đường Ngân Nga",
+    "description": {
+      "0": "Khi loại nguyên tố của toàn bộ nhân vật trong đội là <dendro>Thảo</dendro> và <hydro>Thủy</hydro>, đồng thời có ít nhất một nhân vật nguyên tố Thảo, một nhân vật nguyên tố Thủy:",
+      "1": "Nilou hoàn thành Vũ Điệu thứ ba từ <strong>Vũ Điệu Haftkarsvar</strong> sẽ cung cấp trạng thái Phước Lành Ly Vàng cho tất cả nhân vật gần đó trong 30s.",
+      "2": "Nhân vật trong trạng thái Phước Lành Ly Vàng khi chịu phải <dendro>tấn công Nguyên Tố Thảo</dendro> sẽ khiến tất cả nhân vật gần đó tăng 100 Tinh Thông Nguyên Tố trong 10s; Ngoài ra, khi kích hoạt phản ứng Sum Suê, Hạt Nhân Thảo sẽ được thay thế bằng \"Hạt Nhân Căng Tràn\".",
+      "3": "So với Hạt Nhân Thảo thì Hạt Nhân Căng Tràn sẽ phát nổ nhanh hơn và phạm vi ảnh hưởng cũng rộng hơn.",
+      "4": "Hạt Nhân Căng Tràn sẽ không thể kích hoạt được phản ứng Nở Rộ và Bung Tỏa, số lượng tồn tại giới hạn sẽ dùng chung với Hạt Nhân Thảo. Sát thương của Hạt Nhân Căng Tràn sẽ được tính là sát thương phản ứng Sum Suê của Hạt Nhân Thảo.",
+      "5": "Khi loại nguyên tố của nhân vật trong đội không đáp ứng yêu cầu của thiên phú, sẽ giải trừ hiệu quả Phước Lành Ly Vàng đã có."
+    }
+  },
+  "passive2": {
+    "name": "Giấc Mơ Ca Múa Ngàn Đời",
+    "description": {
+      "0": "Căn cứ vào phần dư ra của 30.000 giới hạn HP của Nilou, cứ mỗi 1000 giới hạn HP sẽ tăng 9% sát thương của Hạt Nhân Căng Tràn do nhân vật đang trong thái \"Phước Lành Ly Vàng\" kích hoạt gây ra.",
+      "1": "Sát thương Hạt Nhân Căng Tràn gây ra tối đa tăng đến 400% bằng cách này."
+    }
+  },
+  "passive3": {
+    "name": "Sen Ngọc Tinh Khôi",
+    "description": {
+      "0": "Khi nấu ăn hoàn mỹ các món thuộc loại thám hiểm, có tỷ lệ 12% được x2 thành phẩm."
+    }
+  },
+  "constellation1": {
+    "name": "Bước Dạo Trăng Khuyết",
+    "description": {
+      "0": "<strong>Vũ Điệu Haftkarsvar</strong> nhận được cường hóa sau:",
+      "1": [
+        "Sát thương Thủy Nguyệt gây ra tăng 65%;",
+        "Thời gian duy trì Vòng Nước Thanh Tẩy kéo dài thêm 6s."
+      ]
+    }
+  },
+  "constellation2": {
+    "name": "Mưa Hoa Trời Sao",
+    "description": {
+      "0": "Nhân vật trong trạng thái \"Phước Lành Ly Vàng\" sau khi gây <hydro>Sát Thương Nguyên Tố Thủy</hydro> lên kẻ địch sẽ khiến kẻ địch đó giảm 35% <hydro>Kháng Nguyên Tố Thủy</hydro>, duy trì 10s. Sau khi kích hoạt phản ứng Sum Suê gây sát thương cho kẻ địch sẽ khiến kẻ địch đó giảm 35% <dendro>Kháng Nguyên Tố Thảo</dendro>, duy trì 10s.",
+      "1": "Cần phải mở khóa thiên phú cố định \"Sảnh Đường Ngân Nga\"."
+    }
+  },
+  "constellation3": {
+    "name": "Vũ Đạo Phản Chiếu",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Vũ Điệu Abzendegi - Viễn Mộng Linh Tuyền</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation4": {
+    "name": "Tiết Tấu Sóng Gợn",
+    "description": {
+      "0": "Vũ Điệu thứ ba trong trạng thái \"Xoay Người\" của <strong>Vũ Điệu Haftkarsvar</strong> sau khi đánh trúng kẻ địch sẽ hồi 15 điểm Năng Lượng Nguyên Tố cho Nilou, đồng thời tăng 50% sát thương do <strong>Vũ Điệu Abzendegi - Viễn Mộng Linh Tuyền</strong> của Nilou gây ra, duy trì 8s."
+    }
+  },
+  "constellation5": {
+    "name": "Ánh Sáng Xoay Vần",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Vũ Điệu Haftkarsvar</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation6": {
+    "name": "Cung Đàn Ngăn Sương",
+    "description": {
+      "0": "Mỗi 1000 điểm Giới Hạn HP sẽ tăng 0.6% Tỷ Lệ Bạo Kích, tăng 1.2% Sát Thương Bạo Kích cho Nilou.",
+      "1": "Tăng tối đa 30% Tỷ Lệ Bạo Kích và 60% Sát Thương Bạo Kích cho Nilou thông qua cách này."
+    }
+  }
+}

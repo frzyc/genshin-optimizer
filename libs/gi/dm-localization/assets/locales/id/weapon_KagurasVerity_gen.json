@@ -1,0 +1,24 @@
+{
+  "name": "Kagura's Verity",
+  "description": {
+    "0": "Lonceng yang digunakan saat melakukan Kagura Dance dan diberkati oleh Guuji sendiri. Aroma pohon Sacred Sakura masih ada di atasnya."
+  },
+  "passiveName": "Kagura Dance of the Sacred Sakura",
+  "passiveDescription": {
+    "0": {
+      "0": "Saat melancarkan Elemental Skill, akan memperoleh efek Kagura Dance yang akan meningkatkan <cryo>12%</cryo> DMG Elemental Skill dari Karakter pengguna senjata ini selama 16 detik. Maksimum 3 lapis. Saat memiliki 3 lapis, Karakter tersebut akan memperoleh <cryo>12%</cryo> DMG Bonus untuk semua elemen."
+    },
+    "1": {
+      "0": "Saat melancarkan Elemental Skill, akan memperoleh efek Kagura Dance yang akan meningkatkan <cryo>15%</cryo> DMG Elemental Skill dari Karakter pengguna senjata ini selama 16 detik. Maksimum 3 lapis. Saat memiliki 3 lapis, Karakter tersebut akan memperoleh <cryo>15%</cryo> DMG Bonus untuk semua elemen."
+    },
+    "2": {
+      "0": "Saat melancarkan Elemental Skill, akan memperoleh efek Kagura Dance yang akan meningkatkan <cryo>18%</cryo> DMG Elemental Skill dari Karakter pengguna senjata ini selama 16 detik. Maksimum 3 lapis. Saat memiliki 3 lapis, Karakter tersebut akan memperoleh <cryo>18%</cryo> DMG Bonus untuk semua elemen."
+    },
+    "3": {
+      "0": "Saat melancarkan Elemental Skill, akan memperoleh efek Kagura Dance yang akan meningkatkan <cryo>21%</cryo> DMG Elemental Skill dari Karakter pengguna senjata ini selama 16 detik. Maksimum 3 lapis. Saat memiliki 3 lapis, Karakter tersebut akan memperoleh <cryo>21%</cryo> DMG Bonus untuk semua elemen."
+    },
+    "4": {
+      "0": "Saat melancarkan Elemental Skill, akan memperoleh efek Kagura Dance yang akan meningkatkan <cryo>24%</cryo> DMG Elemental Skill dari Karakter pengguna senjata ini selama 16 detik. Maksimum 3 lapis. Saat memiliki 3 lapis, Karakter tersebut akan memperoleh <cryo>24%</cryo> DMG Bonus untuk semua elemen."
+    }
+  }
+}

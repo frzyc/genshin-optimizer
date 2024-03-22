@@ -1,0 +1,193 @@
+{
+  "name": "Mona",
+  "title": "Astral Yansıma",
+  "description": "Kendisini \"Astrolog Mona Megistus\" olarak tanıtan ve bu unvana uygun yeteneklere sahip gizemli genç bir astrolog. Bilgili olmasına karşın kibirlidir.",
+  "constellationName": "Usturlap",
+  "auto": {
+    "name": "Kader Dalgası",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Saldırı</strong>",
+        "1": "<hydro>Su Hasarı</hydro> veren en fazla 4 su fırlatma saldırısı yapar."
+      },
+      "charged": {
+        "0": "<strong>Yüklü Saldırı</strong>",
+        "1": "Kısa süre kullanıldıktan sonra belirli miktarda Dayanıklılık harcayarak <hydro>Su Alan Hasarı</hydro> verir."
+      },
+      "plunging": {
+        "0": "<strong>Havadan Saldırı</strong>",
+        "1": "Mona, Suyun gücünü toplayarak havadayken yere doğru atılır ve yoluna çıkan tüm düşmanlara hasar verir. Yere vurduğunda <hydro>Su Alan Hasarı</hydro> verir."
+      }
+    },
+    "skillParams": {
+      "0": "1 Vuruş Hasarı",
+      "1": "2 Vuruş Hasarı",
+      "2": "3 Vuruş Hasarı",
+      "3": "4 Vuruş Hasarı",
+      "4": "Yüklü Saldırı Hasarı",
+      "5": "Yüklü Saldırı Dayanıklılık Maliyeti",
+      "6": "Havadan Saldırı Hasarı",
+      "7": "Havadan Saldırı Hasarı (Alçaktan/Yüksekten)",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Kıyamet Yansıması",
+    "description": {
+      "0": "Toplanan su hortumlarından hayali bir Kader Gölgesi oluşturur.",
+      "1": "<br/>",
+      "2": "<strong>Gölge</strong> şu özelliklere sahiptir:",
+      "3": [
+        "Yakındaki düşmanları sürekli kışkırtarak kendine saldırmalarını sağlar.",
+        "Yakındaki düşmanlara sürekli <hydro>Su Hasarı</hydro> verir.",
+        "Süresi bittiğinde Gölge patlayarak <hydro>Su Alan Hasarı</hydro> verir."
+      ],
+      "4": "<br/>",
+      "5": "<strong>Basılı Tut</strong>",
+      "6": "Su akıntılarını kullanarak hızla geri gider ve bir Gölge oluşturur.",
+      "7": "<br/>",
+      "8": "Aynı anda birden fazla Kıyamet Yansıması ile oluşan Gölge olamaz.",
+      "9": "<br/>",
+      "10": "<i>Becerikli astrologlar, muhtemel talihsizlikleri önlemek için kendilerinin gölgeden bir kopyasını kullanmak istemiştir ama tüm Teyvat'ta bunu başaran ilk kişi sanırım Mona olmuş.</i>"
+    },
+    "skillParams": {
+      "0": "Süreli Hasar",
+      "1": "Patlama Hasarı",
+      "2": "BS",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Kaderin Yıldızı",
+    "description": {
+      "0": "Mona, parıltılı dalgalar oluşturarak yıldızların ihtişamını gözler önüne serer ve geniş bir etki alanındaki düşmanlara Hayali Baloncuk etkisi uygular.",
+      "1": "<br/>",
+      "2": "<strong>Hayali Baloncuk</strong>",
+      "3": "Düşmanları bir kader kapanına hapseder ve onları <hydro>Islatır</hydro>. Daha zayıf düşmanları hareketsiz kılar.",
+      "4": "Hayali Baloncuk etkisindeki bir düşman Hasar aldığında aşağıdaki etkiler uygulanır:",
+      "5": [
+        "Düşmana bir Alamet etkisi uygular, bu etki Hasar Bonusu verir ve etkiyi uygulayan saldırının Hasarını artırır.",
+        "Hayali Baloncuğu patlatıp <hydro>Su Hasarı</hydro> verir."
+      ],
+      "6": "<br/>",
+      "7": "<strong>Alamet</strong>",
+      "8": "Etki süresince düşmanların aldığı Hasarı artırır.",
+      "9": "<br/>",
+      "10": "<i>\"Kader\" kavramı, göklerdeki ışıklar tanrıların gözüne ilk vurduğunda ortaya çıkmıştır.</i>"
+    },
+    "skillParams": {
+      "0": "Hayali Baloncuk Süresi",
+      "1": "Hayali Baloncuk Patlama Hasarı",
+      "2": "Hasar Bonusu",
+      "3": "Alamet Süresi",
+      "4": "BS",
+      "5": "Enerji Maliyeti",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "sprint": {
+    "name": "Hayali Akıntı",
+    "description": {
+      "0": "<strong>Alternatif Depar</strong>",
+      "1": "Mona kendini suyun akıntısıyla kaplar ve Dayanıklılık harcayarak hızla hareket eder.",
+      "2": "<br/>",
+      "3": "Hayali Akıntı etkisindeyken Mona suda çok hızlı hareket edebilir.",
+      "4": "Yeniden belirdiğinde yakındaki düşmanları <hydro>Islatır</hydro>.",
+      "5": "<br/>",
+      "6": "<i>Bu, Mona'nın yapabildiği ama öğretmenin yapamadığı bir şey. Öğretmeni zaten Su Önsezisiyle alakalı hiçbir şeyle ilgilenmiyor.</i>"
+    }
+  },
+  "passive1": {
+    "name": "\"Yakala da Görelim Yaşlı Cadı!\"",
+    "description": {
+      "0": "<strong>Hayali Akıntı</strong> becerisini 2 saniye boyunca kullandıktan sonra yakında düşman varsa Mona otomatik olarak bir Hayalet oluşturur.",
+      "1": "Bu şekilde yaratılan bir Hayalet, 2 saniye sonra <strong>Kıyamet Yansıması</strong> Hasarının %50'sine denk patlama Hasarı verir."
+    }
+  },
+  "passive2": {
+    "name": "Sudan Kader",
+    "description": {
+      "0": "Mona'nın <hydro>Su Hasarı Bonusunu</hydro>, Enerji Yüklemesi oranının %20'si kadar artırır."
+    }
+  },
+  "passive3": {
+    "name": "Astrolojinin İlkeleri",
+    "description": {
+      "0": "Mona, Silah Yükseltme Malzemesi üretirken kullanılan malzemelerin bir kısmını %25 ihtimalle iade eder."
+    }
+  },
+  "constellation1": {
+    "name": "Batışın Kehaneti",
+    "description": {
+      "0": "Kendi grup üyelerinden biri Alamet etkisi altındayken <hydro>Su içeren Element Tepkimelerinin</hydro> etkileri 8 saniyeliğine artar:",
+      "1": [
+        "Elektrik Yüklü Hasar %15 artar.",
+        "Buharlaşma Hasarı %15 artar."
+      ],
+      "2": " Su Girdabı Hasarı %15 artar.",
+      "3": " Donma süresi %15 uzar."
+    }
+  },
+  "constellation2": {
+    "name": "Ay Zinciri",
+    "description": {
+      "0": "Bir Normal Saldırıdan sonra %20 ihtimalle Yüklü Saldırı yapar.",
+      "1": "Bu etki 5 saniyede bir uygulanabilir."
+    }
+  },
+  "constellation3": {
+    "name": "Sonsuz Devrim",
+    "description": {
+      "0": "<strong>Kaderin Yıldızı</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation4": {
+    "name": "Yok Oluş Kehaneti",
+    "description": {
+      "0": "Herhangi bir grup üyesi, Alamet etkisindeki bir düşmana saldırdığında Kritik Oranı %15 artar."
+    }
+  },
+  "constellation5": {
+    "name": "Alaycı Kader",
+    "description": {
+      "0": "<strong>Kıyamet Yansıması</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation6": {
+    "name": "Mecazi Felaket",
+    "description": {
+      "0": "Mona, <strong>Hayali Akıntı</strong> etkisindeyken hareket ettiği saniye başına bir sonraki Yüklü Saldırı Hasarı %60 artar.",
+      "1": "Bu şekilde maksimum %180 Hasar Bonusu kazanılabilir. Etki 8 saniye sürer."
+    }
+  }
+}

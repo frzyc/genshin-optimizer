@@ -1,0 +1,150 @@
+{
+  "auto": {
+    "name": "Tonnerre venu d'ailleurs",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attaque normale</strong>",
+        "1": "Enchaîne jusqu'à 5 coups d'épée."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Consomme de l'endurance pour déclencher deux coups d'épée rapides."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis en chemin et des DGT de zone à l'impact."
+      }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT 4e coup",
+      "4": "DGT 5e coup",
+      "5": "DGT attaque chargée",
+      "6": "Coût d'endurance attaque chargée",
+      "7": "DGT durant la chute",
+      "8": "DGT chute basse/élevée",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Lame d'éclair",
+    "description": {
+      "0": "Libère trois ombres de foudre rapides, qui infligent des <electro>DGT Électro</electro> aux ennemis, et laissent une amulette d'abondance lorsqu'elles touchent un ennemi.",
+      "1": "Un maximum de 2 amulettes d'abondance peut être généré initialement. Réutiliser la compétence annule les amulettes d'abondance générées.",
+      "2": "<br/>",
+      "3": "<strong>Amulettes d'abondance</strong>",
+      "4": "Lorsqu'un personnage s'approche d'une amulette d'abondance, il l'absorbe et obtient les effets suivants :",
+      "5": "Son énergie élémentaire se régénère.",
+      "6": "Sa recharge d'énergie élémentaire augmente.",
+      "7": "<br/>",
+      "8": "<i>Vous discutez des différents chemins que peut prendre l'électricité avec Paimon.</i>"
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "Restauration énergie élémentaire",
+      "2": "Bonus recharge d'énergie",
+      "3": "Durée",
+      "4": "Durée d'amulette d'abondance",
+      "5": "Temps de recharge",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Tonnerre hurlant",
+    "description": {
+      "0": "Vous invoquez la protection de la foudre, qui repousse les ennemis proches et leur inflige des <electro>DGT Électro</electro>.",
+      "1": "<br/>",
+      "2": "<strong>Voile de foudre</strong>",
+      "3": "Les attaques chargées ou normales du personnage déployé font pleuvoir la Foudre majestueuse lorsqu'elles touchent, qui inflige des <electro>DGT Électro</electro>.",
+      "4": "Lorsque la Foudre majestueuse touche un ennemi, elle fait récupérer de l'énergie élémentaire à ce personnage.",
+      "5": "Une Foudre majestueuse peut être déclenchée une fois toutes les 0,5 s.",
+      "6": "<br/>",
+      "7": "<i>Paimon et vous avez étudié la lumière qui traverse les nuages...</i>"
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "DGT Foudre majestueuse",
+      "2": "Restauration énergie élémentaire",
+      "3": "Durée",
+      "4": "Temps de recharge",
+      "5": "Énergie élémentaire",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Éclair soudain",
+    "description": {
+      "0": "Diminue de 1,5 s le TdR de <strong>Lame d'éclair</strong> lorsqu'un autre personnage proche absorbe l'amulette d'abondance générée par <strong>Lame d'éclair</strong>."
+    }
+  },
+  "passive2": {
+    "name": "Tonnerre retentissant",
+    "description": {
+      "0": "Confère un bonus supplémentaire de recharge d'énergie à l'amulette d'abondance générée par <strong>Lame d'éclair</strong> équivalant à 10 % de la recharge d'énergie {M#du voyageur}{F#de la voyageuse}."
+    }
+  },
+  "constellation1": {
+    "name": "Orage de récolte printanière",
+    "description": {
+      "0": "Augmente le nombre d'amulettes d'abondance pouvant être générées avec <strong>Lame d'éclair</strong> à 3."
+    }
+  },
+  "constellation2": {
+    "name": "Véhémence pourpre",
+    "description": {
+      "0": "Diminue de 15 % pendant 8 s la <electro>RÉS Électro</electro> des ennemis ayant été touchés par la Foudre majestueuse de <strong>Tonnerre hurlant</strong>."
+    }
+  },
+  "constellation3": {
+    "name": "Grondement lointain",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Tonnerre hurlant</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation4": {
+    "name": "Cumulonimbus imprévisible",
+    "description": {
+      "0": "Si l'énergie élémentaire d'un personnage obtenant une amulette d'abondance générée par <strong>Lame d'éclair</strong> est inférieure à 35 %, l'énergie restaurée par l'amulette d'abondance augmente de 100 %."
+    }
+  },
+  "constellation5": {
+    "name": "Clameurs de la nature",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Lame d'éclair</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation6": {
+    "name": "Secousse céleste",
+    "description": {
+      "0": "Toutes les 2 Foudres majestueuses déclenchées par <strong>Tonnerre hurlant</strong>, la Foudre majestueuse suivante inflige 200 % de ses DGT d'origine et le personnage actuel récupère 1 pt d'énergie élémentaire supplémentaire."
+    }
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "normal": {
+    "hit1": "1段ダメージ",
+    "hit2": "2段ダメージ",
+    "hit3": "3段ダメージ",
+    "hit4": "4段ダメージ",
+    "hit5": "5段ダメージ",
+    "hit6": "6段ダメージ"
+  },
+  "charged": {
+    "dmg": "重撃ダメージ",
+    "spinning": "連続重撃ダメージ",
+    "final": "重撃終了ダメージ",
+    "stamina": "重撃スタミナ消費",
+    "aimed": "狙い撃ち",
+    "fullyAimed": "フルチャージ狙い撃ち"
+  },
+  "plunging": {
+    "dmg": "落下期間のダメージ",
+    "low": "低空落下攻撃ダメージ",
+    "high": "高空落下攻撃ダメージ"
+  },
+  "maxDuration": "最大継続時間",
+  "maxStacks": "エネルギー数上限",
+  "skillDMG": "スキルダメージ",
+  "burstDMG": "爆発ダメージ",
+  "dmgAbsorption": "シールド吸収量",
+  "healing": "回復量",
+  "contHealing": "持続回復量",
+  "duration": "継続時間",
+  "cd": "クールタイム",
+  "energyCost": "元素エネルギー",
+  "energyRegen": "元素エネルギー回復",
+  "baseDMG": "基礎ダメージ",
+  "dot": "継続ダメージ",
+  "addEleDMG": "付加元素ダメージ",
+  "hpRegenPerHit": "命中回復量",
+  "press": {
+    "dmg": "一回押しダメージ",
+    "cd": "一回押しクールタイム"
+  },
+  "hold": {
+    "dmg": "長押しダメージ",
+    "cd": "長押しクールタイム"
+  },
+  "element": {
+    "anemo": "風",
+    "geo": "岩元素",
+    "pyro": "炎",
+    "hydro": "水元素",
+    "cryo": "氷",
+    "electro": "雷",
+    "dendro": "草元素"
+  },
+  "reaction": {
+    "swirl": "拡散",
+    "crystallize": "結晶",
+    "overloaded": "過負荷",
+    "electrocharged": "感電",
+    "superconduct": "超電導",
+    "vaporize": "蒸発",
+    "melt": "溶解",
+    "bloom": "開花",
+    "burgeon": "烈開花",
+    "hyperbloom": "超開花",
+    "quicken": "原激化",
+    "aggravate": "超激化",
+    "spread": "草激化"
+  },
+  "stat": {
+    "def": "防御力",
+    "base": {
+      "atk": "基礎攻撃力"
+    }
+  },
+  "constellationLvl": "命ノ星座 第{{level}}重",
+  "talentLvl": "天賦Lv.{{level}}",
+  "talents": {
+    "auto": "通常攻撃",
+    "skill": "元素スキル",
+    "burst": "元素爆発",
+    "altSprint": "ダッシュの代わりに発動する"
+  },
+  "unlockPassive1": "突破段階「1」で解放",
+  "unlockPassive2": "突破段階「4」で解放",
+  "unlockPassive3": "固有天賦"
+}

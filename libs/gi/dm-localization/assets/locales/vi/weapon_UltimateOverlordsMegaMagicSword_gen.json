@@ -1,0 +1,24 @@
+{
+  "name": "\"Bá Vương Tối Thượng Siêu Cấp Ma Kiếm\"",
+  "description": {
+    "0": "Thanh kiếm ma thuật chỉ có thể được sử dụng bởi bá vương tối thượng thống trị biển cả. Do được làm bằng vật liệu chống nước đặc biệt, nên nó sẽ không bị hư hại ngay cả khi ngâm trong nước. Vì vậy, nó gần như xứng danh vô địch!"
+  },
+  "passiveName": "Cố Lên Nào!",
+  "passiveDescription": {
+    "0": {
+      "0": "Tấn công tăng <cryo>12%</cryo>. Không những vậy, tiếng lòng của các Melusine ở Làng Merusea sẽ cung cấp thêm sức mạnh. Căn cứ vào số lượng Melusine đã giúp đỡ, tấn công sẽ tăng thêm tối đa <cryo>12%</cryo>."
+    },
+    "1": {
+      "0": "Tấn công tăng <cryo>15%</cryo>. Không những vậy, tiếng lòng của các Melusine ở Làng Merusea sẽ cung cấp thêm sức mạnh. Căn cứ vào số lượng Melusine đã giúp đỡ, tấn công sẽ tăng thêm tối đa <cryo>15%</cryo>."
+    },
+    "2": {
+      "0": "Tấn công tăng <cryo>18%</cryo>. Không những vậy, tiếng lòng của các Melusine ở Làng Merusea sẽ cung cấp thêm sức mạnh. Căn cứ vào số lượng Melusine đã giúp đỡ, tấn công sẽ tăng thêm tối đa <cryo>18%</cryo>."
+    },
+    "3": {
+      "0": "Tấn công tăng <cryo>21%</cryo>. Không những vậy, tiếng lòng của các Melusine ở Làng Merusea sẽ cung cấp thêm sức mạnh. Căn cứ vào số lượng Melusine đã giúp đỡ, tấn công sẽ tăng thêm tối đa <cryo>21%</cryo>."
+    },
+    "4": {
+      "0": "Tấn công tăng <cryo>24%</cryo>. Không những vậy, tiếng lòng của các Melusine ở Làng Merusea sẽ cung cấp thêm sức mạnh. Căn cứ vào số lượng Melusine đã giúp đỡ, tấn công sẽ tăng thêm tối đa <cryo>24%</cryo>."
+    }
+  }
+}

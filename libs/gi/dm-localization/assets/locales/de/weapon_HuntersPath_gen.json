@@ -1,0 +1,24 @@
+{
+  "name": "Pfad des Jägers",
+  "description": {
+    "0": "Dieser vergoldete Bogen wurde aus seltenen weißen Ästen gefertigt. Er hat schon zahllose böse Bestien erlegt, die versuchten, in den Wald einzudringen."
+  },
+  "passiveName": "Am Ende der Fährte",
+  "passiveDescription": {
+    "0": {
+      "0": "Erhöht den Schaden aller Elemente um <cryo>12 %</cryo>. Erhält nach Treffern mit heftigen Schlägen den Effekt „Unermüdliche Jagd“: Erhöht den Schaden heftiger Schläge um <cryo>160 %</cryo> der Elementarkunde. Dieser Effekt verschwindet nach 10 s oder 12 heftigen Schlägen. 12 s Abklingzeit."
+    },
+    "1": {
+      "0": "Erhöht den Schaden aller Elemente um <cryo>15 %</cryo>. Erhält nach Treffern mit heftigen Schlägen den Effekt „Unermüdliche Jagd“: Erhöht den Schaden heftiger Schläge um <cryo>200 %</cryo> der Elementarkunde. Dieser Effekt verschwindet nach 10 s oder 12 heftigen Schlägen. 12 s Abklingzeit."
+    },
+    "2": {
+      "0": "Erhöht den Schaden aller Elemente um <cryo>18 %</cryo>. Erhält nach Treffern mit heftigen Schlägen den Effekt „Unermüdliche Jagd“: Erhöht den Schaden heftiger Schläge um <cryo>240 %</cryo> der Elementarkunde. Dieser Effekt verschwindet nach 10 s oder 12 heftigen Schlägen. 12 s Abklingzeit."
+    },
+    "3": {
+      "0": "Erhöht den Schaden aller Elemente um <cryo>21 %</cryo>. Erhält nach Treffern mit heftigen Schlägen den Effekt „Unermüdliche Jagd“: Erhöht den Schaden heftiger Schläge um <cryo>280 %</cryo> der Elementarkunde. Dieser Effekt verschwindet nach 10 s oder 12 heftigen Schlägen. 12 s Abklingzeit."
+    },
+    "4": {
+      "0": "Erhöht den Schaden aller Elemente um <cryo>24 %</cryo>. Erhält nach Treffern mit heftigen Schlägen den Effekt „Unermüdliche Jagd“: Erhöht den Schaden heftiger Schläge um <cryo>320 %</cryo> der Elementarkunde. Dieser Effekt verschwindet nach 10 s oder 12 heftigen Schlägen. 12 s Abklingzeit."
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Song of Stillness",
+  "description": {
+    "0": "Sebuah busur panjang aneh yang mirip dengan makhluk laut. Senarnya begitu sunyi dan tidak mengeluarkan suara apa pun."
+  },
+  "passiveName": "Benthic Pulse",
+  "passiveDescription": {
+    "0": {
+      "0": "Setelah menerima pemulihan, akan meningkatkan <cryo>16%</cryo> DMG yang diakibatkan selama 8 detik. Tetap dapat terpicu saat Karakter ada di dalam party namun sedang tidak berada di medan pertempuran."
+    },
+    "1": {
+      "0": "Setelah menerima pemulihan, akan meningkatkan <cryo>20%</cryo> DMG yang diakibatkan selama 8 detik. Tetap dapat terpicu saat Karakter ada di dalam party namun sedang tidak berada di medan pertempuran."
+    },
+    "2": {
+      "0": "Setelah menerima pemulihan, akan meningkatkan <cryo>24%</cryo> DMG yang diakibatkan selama 8 detik. Tetap dapat terpicu saat Karakter ada di dalam party namun sedang tidak berada di medan pertempuran."
+    },
+    "3": {
+      "0": "Setelah menerima pemulihan, akan meningkatkan <cryo>28%</cryo> DMG yang diakibatkan selama 8 detik. Tetap dapat terpicu saat Karakter ada di dalam party namun sedang tidak berada di medan pertempuran."
+    },
+    "4": {
+      "0": "Setelah menerima pemulihan, akan meningkatkan <cryo>32%</cryo> DMG yang diakibatkan selama 8 detik. Tetap dapat terpicu saat Karakter ada di dalam party namun sedang tidak berada di medan pertempuran."
+    }
+  }
+}

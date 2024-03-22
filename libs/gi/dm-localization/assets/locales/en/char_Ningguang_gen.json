@@ -1,0 +1,161 @@
+{
+  "name": "Ningguang",
+  "title": "Eclipsing Star",
+  "description": "The Tianquan of the Liyue Qixing. Her wealth is unsurpassed in all of Teyvat.",
+  "constellationName": "Opus Aequilibrium",
+  "auto": {
+    "name": "Sparkling Scatter",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Attack</strong>",
+        "1": "Shoots gems that deal <geo>Geo DMG</geo>.",
+        "2": "Upon hit, this grants Ningguang 1 Star Jade."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Consumes a certain amount of stamina to fire off a giant gem that deals <geo>Geo DMG</geo>.",
+        "2": "If Ningguang has any Star Jades, unleashing a Charged Attack will cause the Star Jades to be fired at the enemy as well, dealing additional DMG."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Gathering the might of Geo, Ningguang plunges towards the ground from mid-air, damaging all opponents in her path. Deals <geo>AoE Geo DMG</geo> upon impact with the ground."
+      }
+    },
+    "skillParams": {
+      "0": "Normal Attack DMG",
+      "1": "Charged Attack DMG",
+      "2": "DMG per Star Jade",
+      "3": "Charged Attack Stamina Cost",
+      "4": "Plunge DMG",
+      "5": "Low/High Plunge DMG",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Jade Screen",
+    "description": {
+      "0": "Ningguang creates a Jade Screen out of gold, obsidian, and her great opulence, dealing <geo>AoE Geo DMG</geo>.",
+      "1": "<br/>",
+      "2": "<strong>Jade Screen</strong>",
+      "3": [
+        "Blocks opponents' projectiles.",
+        "Endurance scales based on Ningguang's Max HP."
+      ],
+      "4": "<br/>",
+      "5": "Jade Screen is considered a <geo>Geo Construct</geo> and can be used to block certain attacks, but cannot be climbed. Only one Jade Screen may exist at any one time.",
+      "6": "<br/>",
+      "7": "<i>The canvas of stars is written upon this jade screen.</i>"
+    },
+    "skillParams": {
+      "0": "Inherited HP",
+      "1": "Skill DMG",
+      "2": "CD",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Starshatter",
+    "description": {
+      "0": "Gathering a great number of gems, Ningguang scatters them all at once, sending homing projectiles at her opponents that deal massive <geo>Geo DMG</geo>.",
+      "1": "If Starshatter is cast when a Jade Screen is nearby, the Jade Screen will fire additional gem projectiles at the same time.",
+      "2": "<br/>",
+      "3": "<i>Stars shatter. Silence falls.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Per Gem",
+      "1": "CD",
+      "2": "Energy Cost",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Backup Plan",
+    "description": {
+      "0": "When Ningguang is in possession of Star Jades, her Charged Attack does not consume Stamina."
+    }
+  },
+  "passive2": {
+    "name": "Strategic Reserve",
+    "description": {
+      "0": "A character that passes through the <strong>Jade Screen</strong> will gain a 12% <geo>Geo DMG Bonus</geo> for 10s."
+    }
+  },
+  "passive3": {
+    "name": "Trove of Marvelous Treasures",
+    "description": {
+      "0": "Displays the location of nearby <strong>ore veins used in forging</strong> on the mini-map."
+    }
+  },
+  "constellation1": {
+    "name": "Piercing Fragments",
+    "description": {
+      "0": "When a Normal Attack hits, it deals AoE DMG."
+    }
+  },
+  "constellation2": {
+    "name": "Shock Effect",
+    "description": {
+      "0": "When <strong>Jade Screen</strong> is shattered, its CD will reset.",
+      "1": "Can occur once every 6s."
+    }
+  },
+  "constellation3": {
+    "name": "Majesty Be the Array of Stars",
+    "description": {
+      "0": "Increases the Level of <strong>Starshatter</strong> by 3.",
+      "1": "Maximum upgrade level is 15."
+    }
+  },
+  "constellation4": {
+    "name": "Exquisite be the Jade, Outshining All Beneath",
+    "description": {
+      "0": "<strong>Jade Screen</strong> increases nearby characters' Elemental RES by 10%."
+    }
+  },
+  "constellation5": {
+    "name": "Invincible Be the Jade Screen",
+    "description": {
+      "0": "Increases the Level of <strong>Jade Screen</strong> by 3.",
+      "1": "Maximum upgrade level is 15."
+    }
+  },
+  "constellation6": {
+    "name": "Grandeur Be the Seven Stars",
+    "description": {
+      "0": "When <strong>Starshatter</strong> is used, Ningguang gains 7 Star Jades."
+    }
+  }
+}

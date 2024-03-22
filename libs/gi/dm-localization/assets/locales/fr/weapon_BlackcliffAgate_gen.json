@@ -1,0 +1,24 @@
+{
+  "name": "Agate de Rochenoire",
+  "description": {
+    "0": "Un mystérieux catalyseur en roche noire. La lueur rouge qui en émane résonne en harmonie avec les entrailles de la terre."
+  },
+  "passiveName": "De victoire en victoire",
+  "passiveDescription": {
+    "0": {
+      "0": "Augmente l'ATQ de <cryo>12 %</cryo> pendant 30 s après avoir vaincu un ennemi. Cet effet peut être cumulé 3 fois maximum et la durée de chaque cumul peut varier."
+    },
+    "1": {
+      "0": "Augmente l'ATQ de <cryo>15 %</cryo> pendant 30 s après avoir vaincu un ennemi. Cet effet peut être cumulé 3 fois maximum et la durée de chaque cumul peut varier."
+    },
+    "2": {
+      "0": "Augmente l'ATQ de <cryo>18 %</cryo> pendant 30 s après avoir vaincu un ennemi. Cet effet peut être cumulé 3 fois maximum et la durée de chaque cumul peut varier."
+    },
+    "3": {
+      "0": "Augmente l'ATQ de <cryo>21 %</cryo> pendant 30 s après avoir vaincu un ennemi. Cet effet peut être cumulé 3 fois maximum et la durée de chaque cumul peut varier."
+    },
+    "4": {
+      "0": "Augmente l'ATQ de <cryo>24 %</cryo> pendant 30 s après avoir vaincu un ennemi. Cet effet peut être cumulé 3 fois maximum et la durée de chaque cumul peut varier."
+    }
+  }
+}

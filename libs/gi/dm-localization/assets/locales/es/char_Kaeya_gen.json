@@ -1,0 +1,157 @@
+{
+  "name": "Kaeya",
+  "title": "El Espadachín Glacial",
+  "description": "El gran estratega de los Caballeros de Favonius. Se rumorea que procede de un lugar de fuera de Mondstadt.",
+  "constellationName": "Pavo Ocellus",
+  "auto": {
+    "name": "Técnica de espada ceremonial",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Ataque Normal</strong>",
+        "1": "Realiza hasta 5 ataques consecutivos con espada."
+      },
+      "charged": {
+        "0": "<strong>Ataque Cargado</strong>",
+        "1": "Consume cierta cantidad de Aguante para desatar un doble golpe de espada."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Descendente</strong>",
+        "1": "Se lanza desde el aire para golpear el suelo, dañando a los enemigos cercanos e infligiendo Daño en el AdE en el momento del impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Daño de 1er golpe",
+      "1": "Daño de 2.º golpe",
+      "2": "Daño de 3er golpe",
+      "3": "Daño de 4.º golpe",
+      "4": "Daño de 5.º golpe",
+      "5": "Daño de ATQ Cargado",
+      "6": "Coste de Aguante de ATQ Cargado",
+      "7": "Daño de Caída",
+      "8": "Daño de impacto de caída baja/alta",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Golpe de escarcha",
+    "description": {
+      "0": "Lanza una ráfaga gélida que inflige <cryo>Daño Cryo</cryo> a los enemigos frente a Kaeya.",
+      "1": "<br/>",
+      "2": "<i>Kaeya parece amable, pero su naturaleza es la del hielo inderretible.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "TdE",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Vals gélido",
+    "description": {
+      "0": "Al condensar la escarcha en el aire, Kaeya invoca 3 carámbanos que giran a su alrededor.",
+      "1": "Estos carámbanos seguirán al personaje e infligirán <cryo>Daño Cryo</cryo> a los enemigos que se atraviesen.",
+      "2": "<br/>",
+      "3": "<i>Una sonrisa encantadora, palabras bondadosas y la despiadada escarcha que yace oculta... Esas son las armas de Kaeya.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "TdE",
+      "2": "Duración",
+      "3": "Energía Elemental",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Espada de sangre fría",
+    "description": {
+      "0": "Al atacar a un enemigo con <strong>Golpe de escarcha</strong>, Kaeya restaura su Vida una cantidad equivalente al 15% de su ATQ."
+    }
+  },
+  "passive2": {
+    "name": "Corazón glacial",
+    "description": {
+      "0": "Cuando <strong>Golpe de escarcha</strong> <cryo>congela</cryo> a un enemigo, el enemigo congelado dejará caer partículas elementales adicionales.",
+      "1": "Cada golpe dará un máximo de 2 partículas elementales adicionales."
+    }
+  },
+  "passive3": {
+    "name": "Fuerza subyacente",
+    "description": {
+      "0": "Disminuye en un 20% el Coste de Aguante al esprintar de todos los miembros de tu equipo.",
+      "1": "No se puede acumular con otros talentos pasivos que tengan los mismos efectos."
+    }
+  },
+  "constellation1": {
+    "name": "Sangre excelente",
+    "description": {
+      "0": "La Prob. CRIT del Ataque Normal y Cargado de Kaeya aumentan en un 15% contra enemigos afectados por <cryo>Cryo</cryo>."
+    }
+  },
+  "constellation2": {
+    "name": "Actuación eterna",
+    "description": {
+      "0": "Al derrotar a un enemigo con <strong>Vals gélido</strong>, aumenta su duración en 2.5 s hasta un máximo de 15 s."
+    }
+  },
+  "constellation3": {
+    "name": "Baile de escarcha",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Golpe de escarcha</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Beso congelado",
+    "description": {
+      "0": "Cuando la Vida de Kaeya cae por debajo del 20%:",
+      "1": [
+        "Crea un escudo que absorbe daño en una cantidad equivalente al 30% de su Vida Máx. durante 20 s.",
+        "El escudo tiene un 250% de efectividad de absorción de <cryo>Daño Cryo</cryo>."
+      ],
+      "2": "Solo puede ocurrir una vez cada 60 s."
+    }
+  },
+  "constellation5": {
+    "name": "Abrazo helado",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Vals gélido</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Torbellino helado",
+    "description": {
+      "0": "<strong>Vals gélido</strong> produce 1 carámbano adicional y regenera 15 pts. de Energía Elemental al ser lanzado."
+    }
+  }
+}

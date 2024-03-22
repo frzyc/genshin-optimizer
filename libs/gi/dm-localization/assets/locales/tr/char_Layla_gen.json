@@ -1,0 +1,165 @@
+{
+  "name": "Layla",
+  "title": "Bir Akşam Yıldızı Rüyası",
+  "description": "Teorik Astrolojide uzmanlaşmış bir Rtawahist öğrencisi. Uyurgezerlikten muzdarip ve uyku eksikliği ile sürekli savaş halindedir. İyi bir uyku, onun için büyük bir sorundur.",
+  "constellationName": "Bülbül",
+  "auto": {
+    "name": "Işıltılı Yolun Kılıcı",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Saldırı</strong>",
+        "1": "En fazla 3 hızlı saldırı yapar."
+      },
+      "charged": {
+        "0": "<strong>Yüklü Saldırı</strong>",
+        "1": "Belirli miktarda Dayanıklılık harcayarak 2 hızlı kılıç saldırısı yapar."
+      },
+      "plunging": {
+        "0": "<strong>Havadan Saldırı</strong>",
+        "1": "Havadayken dalışa geçerek yere vurur ve yoluna çıkan düşmanlara Alan Hasarı verir."
+      }
+    },
+    "skillParams": {
+      "0": "1 Vuruş Hasarı",
+      "1": "2 Vuruş Hasarı",
+      "2": "3 Vuruş Hasarı",
+      "3": "Yüklü Saldırı Hasarı",
+      "4": "Yüklü Saldırı Dayanıklılık Maliyeti",
+      "5": "Havadan Saldırı Hasarı",
+      "6": "Havadan Saldırı Hasarı (Alçaktan/Yüksekten)",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Odaklanma Gecesi",
+    "description": {
+      "0": "Uyku Perdesi olarak bilinen bir kalkan kullanarak <cryo>Buz Alan Hasarı</cryo> verir.",
+      "1": "Uyku Perdesinin Hasar Emilimi Layla'nın Maks. Canına bağlıdır ve <cryo>Buz Hasarını</cryo> %250 verimlilikle emer. Kalkan ortaya çıkarıldığında Layla kısa bir süreliğine <cryo>Buz</cryo> tesirinde olur.",
+      "2": "<br/>",
+      "3": "<strong>Gece Yıldızları ve Kayan Yıldızlar</strong>",
+      "4": "Uyku Perdesi etkinken kendisine 1,5 saniyede bir bağlanan 1 Gece Yıldızı oluşturur. Bu kalkanla korunan bir karakter Element Becerisi kullandığında 2 Gece Yıldızı oluşturulur. Gece Yıldızları bu şekilde her 0,3 saniyede bir oluşturulabilir. Tek seferde maksimum 4 Gece Yıldızı toplanabilir.",
+      "5": "Uyku Perdesi 4 Gece Yıldızı topladığında ve yakında düşmanlar olduğunda bu Gece Yıldızları, güdümlü Kayan Yıldızlara dönüşürler ve sırayla ateşlenerek isabet ettiği düşmanlara <cryo>Buz Hasarı</cryo> verirler.",
+      "6": "Uyku Perdesinin süresi sona ererse veya imha edilirse Gece Yıldızları yok olur. Eğer halihazırda Kayan Yıldız olarak ateşlendiyseler bu Kayan Yıldızlar mevcut atış dalgası sona erene dek sürer.",
+      "7": "<br/>",
+      "8": "Önceki Kayan Yıldız dalgası tamamen ateşlenene kadar Yeni Gece Yıldızı oluşturulamaz.",
+      "9": "<br/>",
+      "10": "<i>\"Onunla ben daha önce hiç tanışmamış ama aynı minderli koltukta oturan ve aynı rüya çiçeğini işleyen iki usta zanaatkar gibiyiz.\"</i>"
+    },
+    "skillParams": {
+      "0": "Beceri Hasarı",
+      "1": "Kayan Yıldız Hasarı",
+      "2": "Kalkan Temel Hasar Emilimi",
+      "3": "Kalkan Süresi",
+      "4": "BS",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Dağılan Yıldız Akışı Rüyası",
+    "description": {
+      "0": "Etki Alanındaki düşmanlara sürekli Yıldız Işını ateşleyen bir Kutsal Diyar Rüya Küresi göndererek <cryo>Buz Hasarı</cryo> verir.",
+      "1": "Bir Yıldız Işını isabet ettiğinde yakındaki Uyku Perdesi için 1 Gece Yıldızı oluşturur. Her Uyku Perdesi bu şekilde 0,5 saniyede bir 1 Gece Yıldızı elde edebilir.",
+      "2": "<br/>",
+      "3": "<i>\"Uyu, uyu... Uyuyan gözlerinin önünde, yıldızlarla dolu rüyalarında nice kaderler seni bekliyor.\"</i>"
+    },
+    "skillParams": {
+      "0": "Yıldız Işını Hasarı",
+      "1": "Süre",
+      "2": "BS",
+      "3": "Enerji Maliyeti",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Saklı Işık Gibi",
+    "description": {
+      "0": "<strong>Uyku Perdesi</strong> etkinken Perde, her 1 Gece Yıldızı elde ettiğinde Derin Uyku etkisi etkinleşir:",
+      "1": [
+        "Uyku Perdesi altındaki bir karakterin Kalkan Gücü %6 artar.",
+        "Bu etki 4 kademeye kadar birikebilir ve Uyku Perdesi yok olana kadar devam eder."
+      ]
+    }
+  },
+  "passive2": {
+    "name": "Huzurlu Bir Uyku",
+    "description": {
+      "0": "<strong>Odaklanma Gecesi</strong> tarafından ateşlenen Kayan Yıldızların verdiği Hasar, Layla'nın Maks. Canının %1,5'i kadar artar."
+    }
+  },
+  "passive3": {
+    "name": "Meşum Rüya İşaretleri",
+    "description": {
+      "0": "Layla, Karakter Yeteneği Malzemeleri üretirken elde ettiği ürünü %10 ihtimalle iki katına çıkarır."
+    }
+  },
+  "constellation1": {
+    "name": "Fantastik Kale",
+    "description": {
+      "0": "<strong>Odaklanma Gecesi</strong> tarafından oluşturulan Uyku Perdesinin Kalkan Emilimi %20 artar.",
+      "1": "Ayrıca, Odaklanma Gecesini kullanırken, bir Uyku Perdesinin koruması altında olmayan yakındaki grup üyeleri için bir kalkan oluşturur. Bu kalkan, Uyku Perdesinin emiliminin %35'ine sahip olur, 12 saniye sürer ve <cryo>Buz Hasarını</cryo> %250 verimlilikle emer."
+    }
+  },
+  "constellation2": {
+    "name": "Işığın Yetki Alanı",
+    "description": {
+      "0": "<strong>Odaklanma Gecesi</strong> tarafından ateşlenen Kayan Yıldızlar, düşmanlara isabet ettiğinde Layla için 1 Enerji yeniler. Her Kayan Yıldız bu şekilde bir defa Enerji yenileyebilir."
+    }
+  },
+  "constellation3": {
+    "name": "Gecenin Sırları",
+    "description": {
+      "0": "<strong>Odaklanma Gecesi</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation4": {
+    "name": "Yıldızlı Aydınlanma",
+    "description": {
+      "0": "<strong>Odaklanma Gecesi</strong>, Kayan Yıldızları ateşlediğinde yakındaki grup üyelerine Şafak Yıldızı etkisi vererek Normal ve Yüklü Saldırı Hasarlarının Layla'nın Maks. Canının %5'i oranında artmasını sağlar.",
+      "1": "Şafak Yıldızı, maksimum 3 saniye sürer ve Normal veya Yüklü Saldırı Hasarı verdikten 0,05 saniye sonra kaldırılır."
+    }
+  },
+  "constellation5": {
+    "name": "Bilinç Akışı",
+    "description": {
+      "0": "<strong>Dağılan Yıldız Akışı Rüyası</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation6": {
+    "name": "Ruhun Parlayan Ateşi",
+    "description": {
+      "0": "<strong>Odaklanma Gecesi</strong> becerisindeki Kayan Yıldızların verdiği hasar %40 artar ve <strong>Dağılan Yıldız Akışı Rüyası</strong> becerisindeki Yıldız Işınının verdiği Hasar da %40 artar.",
+      "1": "Ayrıca, Odaklanma Gecesi becerisinde toplanan Gece Yıldızlarının oluşturulma süresi %20 azalır."
+    }
+  }
+}

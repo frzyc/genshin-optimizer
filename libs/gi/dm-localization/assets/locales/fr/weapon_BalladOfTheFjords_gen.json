@@ -1,0 +1,24 @@
+{
+  "name": "Ballade des fjords",
+  "description": {
+    "0": "Une lance utilisée par ceux qui cherchent à attraper du poisson dans la toundra. Elle ne laisse personne s'échapper."
+  },
+  "passiveName": "Contes de la toundra",
+  "passiveDescription": {
+    "0": {
+      "0": "Lorsque votre équipe contient des personnages d'au moins 3 types élémentaires différents, la maîtrise élémentaire augmente de <cryo>120</cryo> pts."
+    },
+    "1": {
+      "0": "Lorsque votre équipe contient des personnages d'au moins 3 types élémentaires différents, la maîtrise élémentaire augmente de <cryo>150</cryo> pts."
+    },
+    "2": {
+      "0": "Lorsque votre équipe contient des personnages d'au moins 3 types élémentaires différents, la maîtrise élémentaire augmente de <cryo>180</cryo> pts."
+    },
+    "3": {
+      "0": "Lorsque votre équipe contient des personnages d'au moins 3 types élémentaires différents, la maîtrise élémentaire augmente de <cryo>210</cryo> pts."
+    },
+    "4": {
+      "0": "Lorsque votre équipe contient des personnages d'au moins 3 types élémentaires différents, la maîtrise élémentaire augmente de <cryo>240</cryo> pts."
+    }
+  }
+}

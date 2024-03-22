@@ -1,0 +1,29 @@
+{
+  "setName": "Thiên Nham Vững Chắc",
+  "setEffects": {
+    "2": "HP tăng 20%",
+    "4": "Sau khi Kỹ Năng Nguyên Tố đánh trúng địch, sẽ tăng 20% tấn công cho tất cả nhân vật trong đội ở gần, tăng 30% hiệu quả Khiên, kéo dài 3s. Hiệu quả này mỗi 0.5s tối đa kích hoạt 1 lần. Khi nhân vật trang bị bộ Thánh Di Vật này ở trong đội nhưng không ra trận, vẫn có thể kích hoạt hiệu quả này."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Hoa Chiến Công",
+      "desc": "Đóa hoa được làm từ vàng lá, tượng trưng cho chiến công và vinh quang của người chủ sở hữu."
+    },
+    "plume": {
+      "name": "Chiêu Võ Linh Vũ",
+      "desc": "Chiếc lông được đeo trong những nghi lễ, để cho người ngoài thấy được sự quyết tâm và uy nghiêm của cảng Liyue."
+    },
+    "sands": {
+      "name": "Đồng Hồ Vàng Đồng",
+      "desc": "Dụng cụ đếm giản dị đơn sơ, trong thời kỳ chiến tranh nó cũng từng ;à trang bị tiêu chuẩn của Thiên Nham Quân."
+    },
+    "goblet": {
+      "name": "Minh Thệ Kim Tước",
+      "desc": "Ly vàng được Thiên Nham Quân dùng khi lập lời thề, vẫn còn đọng lại một chút mùi hương của rượu."
+    },
+    "circlet": {
+      "name": "Nón Nguyên Soái",
+      "desc": "Chiếc mũ có lịch sử lâu đời, sau khi rửa sạch bụi bặm thì sáng bong như mới."
+    }
+  }
+}

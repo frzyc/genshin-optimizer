@@ -1,0 +1,24 @@
+{
+  "name": "Águas Secas",
+  "description": {
+    "0": "Parece ser um tipo de peixe extinto. Seu corpo é tão elástico, que uma corda pode ser presa a ele e fazer com que sirva como um arco."
+  },
+  "passiveName": "Rompedor de Redes",
+  "passiveDescription": {
+    "0": {
+      "0": "Desencadeia o efeito \"Deriva\" após usar uma Habilidade Elemental, causando <cryo>80%</cryo> do ATQ como Dano em uma AdE após acertar um oponente com um ataque. O efeito de Deriva será removido após 15s ou após causar Dano em uma AdE 3 vezes. 1 Dano em uma AdE pode ser causado a cada 2s dessa forma. O efeito de Deriva pode ser desencadeado uma vez a cada 12s."
+    },
+    "1": {
+      "0": "Desencadeia o efeito \"Deriva\" após usar uma Habilidade Elemental, causando <cryo>100%</cryo> do ATQ como Dano em uma AdE após acertar um oponente com um ataque. O efeito de Deriva será removido após 15s ou após causar Dano em uma AdE 3 vezes. 1 Dano em uma AdE pode ser causado a cada 2s dessa forma. O efeito de Deriva pode ser desencadeado uma vez a cada 12s."
+    },
+    "2": {
+      "0": "Desencadeia o efeito \"Deriva\" após usar uma Habilidade Elemental, causando <cryo>120%</cryo> do ATQ como Dano em uma AdE após acertar um oponente com um ataque. O efeito de Deriva será removido após 15s ou após causar Dano em uma AdE 3 vezes. 1 Dano em uma AdE pode ser causado a cada 2s dessa forma. O efeito de Deriva pode ser desencadeado uma vez a cada 12s."
+    },
+    "3": {
+      "0": "Desencadeia o efeito \"Deriva\" após usar uma Habilidade Elemental, causando <cryo>140%</cryo> do ATQ como Dano em uma AdE após acertar um oponente com um ataque. O efeito de Deriva será removido após 15s ou após causar Dano em uma AdE 3 vezes. 1 Dano em uma AdE pode ser causado a cada 2s dessa forma. O efeito de Deriva pode ser desencadeado uma vez a cada 12s."
+    },
+    "4": {
+      "0": "Desencadeia o efeito \"Deriva\" após usar uma Habilidade Elemental, causando <cryo>160%</cryo> do ATQ como Dano em uma AdE após acertar um oponente com um ataque. O efeito de Deriva será removido após 15s ou após causar Dano em uma AdE 3 vezes. 1 Dano em uma AdE pode ser causado a cada 2s dessa forma. O efeito de Deriva pode ser desencadeado uma vez a cada 12s."
+    }
+  }
+}

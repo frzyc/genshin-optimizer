@@ -1,0 +1,165 @@
+{
+  "name": "Barbara",
+  "title": "Işıltılı İdol",
+  "description": "Mondstadt'ın her vatandaşı Barbara'ya bayılır. \"İdol\" kelimesini bir dergiden öğrenmiştir.",
+  "constellationName": "Kupa",
+  "auto": {
+    "name": "Suyun Fısıltısı",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Saldırı</strong>",
+        "1": "<hydro>Su Hasarı</hydro> veren en fazla 4 su fırlatma saldırısı yapar."
+      },
+      "charged": {
+        "0": "<strong>Yüklü Saldırı</strong>",
+        "1": "Kısa süre kullanıldıktan sonra belirli miktarda Dayanıklılık harcayarak <hydro>Su Alan Hasarı</hydro> verir."
+      },
+      "plunging": {
+        "0": "<strong>Havadan Saldırı</strong>",
+        "1": "Barbara, Suyun gücünü toplayarak havadayken yere doğru atılır ve yoluna çıkan tüm düşmanlara hasar verir. Yere vurduğunda <hydro>Su Alan Hasarı</hydro> verir."
+      }
+    },
+    "skillParams": {
+      "0": "1 Vuruş Hasarı",
+      "1": "2 Vuruş Hasarı",
+      "2": "3 Vuruş Hasarı",
+      "3": "4 Vuruş Hasarı",
+      "4": "Yüklü Saldırı Hasarı",
+      "5": "Yüklü Saldırı Dayanıklılık Maliyeti",
+      "6": "Havadan Saldırı Hasarı",
+      "7": "Havadan Saldırı Hasarı (Alçaktan/Yüksekten)",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Gösteri Başlasın♪",
+    "description": {
+      "0": "Melodi Döngüsü oluşturan notalara benzeyen ve etraftaki düşmanlara <hydro>Su Hasarı</hydro> vererek onları <hydro>Islatan</hydro> su damlacıkları çağırır.",
+      "1": "<br/>",
+      "2": "<strong>Melodi Döngüsü</strong>",
+      "3": [
+        "Barbara'nın Normal Saldırısı isabet ettiğinde kendi grup üyelerine ve yakındaki takım arkadaşlarına belirli miktarda Can verir. Bu miktar Barbara'nın Maks. Canına göre değişir.",
+        "Barbara'nın Yüklü Saldırısı isabet ettiğinde 4 kat daha fazla can verir.",
+        "Aktif karakterinin Canını belirli aralıklarla yeniler.",
+        "Karakteri ve karaktere temas eden düşmanları <hydro>Islatır</hydro>."
+      ],
+      "4": "<br/>",
+      "5": "<i>Barbara'nın büyülü müziği arkadaşlarını iyileştirir.</i>"
+    },
+    "skillParams": {
+      "0": "Vuruş Başına Yenilenen Can",
+      "1": "Sürekli Yenilenme",
+      "2": "Damlacık Hasarı",
+      "3": "Süre",
+      "4": "BS",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Parlayan Mucize♪",
+    "description": {
+      "0": "Kendi grup üyelerini ve yakındaki takım arkadaşlarını büyük miktarda iyileştirir. Bu miktar Barbara'nın Maks. Canına göre değişir.",
+      "1": "<br/>",
+      "2": "<i>Barbara'nın iyileştirme arzusu, savaşırken ve şarkı söylerken ona güç verir.</i>"
+    },
+    "skillParams": {
+      "0": "Yenilenme",
+      "1": "BS",
+      "2": "Enerji Maliyeti",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Muhteşem Sezon",
+    "description": {
+      "0": "<strong>Gösteri Başlasın♪</strong> Melodi Döngüsü içerisindeki karakterlerin Dayanıklılık Tüketimini %12 azalır."
+    }
+  },
+  "passive2": {
+    "name": "Bis",
+    "description": {
+      "0": "Aktif karakterin, bir Element Küresi/Parçacığı elde ettiğinde <strong>Gösteri Başlasın♪</strong> Melodi Döngüsü 1sn uzar.",
+      "1": "En fazla 5sn uzatılabilir."
+    }
+  },
+  "passive3": {
+    "name": "Tüm Kalbimle♪",
+    "description": {
+      "0": "Yenileyici etkide olan bir yemek Mükemmel Pişirildiğinde elde edilen ürün %12 ihtimalle iki katına çıkar."
+    }
+  },
+  "constellation1": {
+    "name": "Neşeli Şarkılar",
+    "description": {
+      "0": "Barbara her 10 saniyede 1 Enerji yeniler."
+    }
+  },
+  "constellation2": {
+    "name": "Canlılık Patlaması",
+    "description": {
+      "0": "<strong>Gösteri Başlasın♪</strong> becerisinin Bekleme Süresini %15 kısaltır.",
+      "1": "Beceri süresi boyunca aktif karakter %15 <hydro>Su Hasarı Bonusu</hydro> kazanır."
+    }
+  },
+  "constellation3": {
+    "name": "Yarının Yıldızı",
+    "description": {
+      "0": "<strong>Parlayan Mucize♪</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation4": {
+    "name": "Çalışkanlığın Büyüsü",
+    "description": {
+      "0": "Barbara, Yüklü Saldırı ile vurduğu her düşman başına 1 Enerji yeniler.",
+      "1": "Bu şekilde her bir Yüklü Saldırı ile maksimum 5 enerji yenilenebilir."
+    }
+  },
+  "constellation5": {
+    "name": "Gerçek Yoldaşlık",
+    "description": {
+      "0": "<strong>Gösteri Başlasın♪</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation6": {
+    "name": "Her Şeyi Sana Adıyorum",
+    "description": {
+      "0": "Barbara savaş alanında değilken grup üyelerinden biri saf dışı kalırsa:",
+      "1": [
+        "Saf dışı kalan karakteri otomatik olarak canlandırır.",
+        "Karakterin Canını %100 yeniler."
+      ],
+      "2": "Bu etki 15 dakikada bir uygulanabilir."
+    }
+  }
+}

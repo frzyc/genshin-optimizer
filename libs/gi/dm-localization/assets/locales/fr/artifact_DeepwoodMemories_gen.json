@@ -1,0 +1,29 @@
+{
+  "setName": "Souvenir de forêt",
+  "setEffects": {
+    "2": "Confère un bonus de DGT Dendro de 15 %",
+    "4": "Après qu'une compétence ou un déchaînement élémentaires a touché un ennemi, sa RÉS Dendro diminue de 30 % pendant 8 s. Cet effet peut être déclenché même si le personnage équipé de l'artéfact fait partie de l'équipe mais n'est pas déployé."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Voyageur du labyrinthe",
+      "desc": "Cette belle fleur plaquée or a été cueillie dans la couronne du roi de la forêt."
+    },
+    "plume": {
+      "name": "Érudit des lianes",
+      "desc": "Une feuille d'émeraude aussi duveteuse qu'une plume, extraite des vêtements d'un érudit de la forêt."
+    },
+    "sands": {
+      "name": "Période de perspicacité",
+      "desc": "Ces garde-temps sont utilisés par ceux qui se consacrent à la voie de la sagesse, ne contenant pas de sable sans vie, mais abritant plutôt de minuscules graines de moutarde."
+    },
+    "goblet": {
+      "name": "Lampe des perdus",
+      "desc": "Il s'agissait à l'origine d'une lampe à huile dans le style du royaume du désert, mais elle a depuis fait germer des feuilles vertes fluorescentes."
+    },
+    "circlet": {
+      "name": "Couronne de laurier",
+      "desc": "Cette couronne, à l'origine accordée par la divinité contrôlant les plantes et les arbres, a été transmise de génération en génération par la famille royale du labyrinthe. Elle s'est finalement retrouvée entre les mains du vassal de l'un de ces rois."
+    }
+  }
+}

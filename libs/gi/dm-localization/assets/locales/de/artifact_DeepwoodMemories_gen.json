@@ -1,0 +1,29 @@
+{
+  "setName": "Erinnerungen des tiefen Waldes",
+  "setEffects": {
+    "2": "Erhöht den Dendro-Schaden um 15 %.",
+    "4": "Verringert nach Treffern mit der Elementarfähigkeit oder Spezialfähigkeit den Dendro-WDS des Ziels 8 s lang um 30 %. Dieser Effekt kann auch ausgelöst werden, wenn die damit ausgerüstete Figur inaktiv in der Truppe ist."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Besucher des Labyrinths",
+      "desc": "Eine goldene Blume, die aus der Krone des Waldkönigs gepflückt wurde."
+    },
+    "plume": {
+      "name": "Weiser des Dickichts",
+      "desc": "Ein federleichtes smaragdgrünes Blatt, das aus dem Gewand eines Weisen im tiefen Wald entnommen wurde."
+    },
+    "sands": {
+      "name": "Zeitmesser der Weisheit",
+      "desc": "Der Zeitmesser derjenigen, die ihr Leben dem Streben nach Weisheit gewidmet haben. Seine Füllung sind keine leblosen Sandkörner, sondern winzige Senfkörner."
+    },
+    "goblet": {
+      "name": "Lampe des Verirrten",
+      "desc": "Ursprünglich war sie eine Öllampe, deren Aussehen an die Wüste erinnert, aber irgendwann wuchsen ihr die leuchtend grünen Blätter."
+    },
+    "circlet": {
+      "name": "Unschätzbarer Lorbeerkranz",
+      "desc": "Eine Krone, das Geschenk der großen Göttin der Pflanzen. Sie wurde von verschiedenen Königen des Labyrinths geerbt. Am Ende gelangte es in die Hände der Gefolgsfrau eines dieser Könige."
+    }
+  }
+}

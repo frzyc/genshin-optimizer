@@ -1,0 +1,29 @@
+{
+  "setName": "Chasseur de la Maréchaussée",
+  "setEffects": {
+    "2": "Augmente les DGT infligés par les attaques normales et chargées de 15 %.",
+    "4": "Lorsque les PV actuels du personnage augmentent ou diminuent, son taux CRIT augmente de 12 % pendant 5 s. Cet effet peut être cumulé 3 fois maximum."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Broche du chasseur",
+      "desc": "Un ancien emblème qui était autrefois décerné à ceux qui avaient apporté une contribution exceptionnelle au combat."
+    },
+    "plume": {
+      "name": "Prologue du chef-d'œuvre",
+      "desc": "Un outil portable utilisé pour régler le couple de certaines machines horlogoïdes de l'ère classique. Il a depuis perdu sa valeur pratique."
+    },
+    "sands": {
+      "name": "Moment du jugement",
+      "desc": "Une montre de poche standard. Sa précision n'est pas particulièrement élevée."
+    },
+    "goblet": {
+      "name": "Réceptacle oublié",
+      "desc": "Un récipient métallique portable contenant du vin fort. Il peut être rangé dans la poche d'un manteau pour en faciliter l'accès et l'utilisation."
+    },
+    "circlet": {
+      "name": "Visage du vétéran",
+      "desc": "Un vieux masque qui peut, dans une certaine mesure, remplacer un visage marqué par des blessures. Sa conception peut varier en fonction des zones blessées et du sexe de l'utilisateur."
+    }
+  }
+}

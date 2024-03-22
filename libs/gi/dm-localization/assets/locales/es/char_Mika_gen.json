@@ -1,0 +1,171 @@
+{
+  "name": "Mika",
+  "title": "El Agrimensor Nieveclara",
+  "description": "Un joven caballero procedente de una familia normal. Es el tímido y precavido topógrafo de avanzada de la Compañía de Reconocimiento.",
+  "constellationName": "Palumbus",
+  "auto": {
+    "name": "Lanza de Favonius - Punta afilada",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Ataque Normal</strong>",
+        "1": "Realiza hasta 5 ataques rápidos con lanza y ballesta."
+      },
+      "charged": {
+        "0": "<strong>Ataque Cargado</strong>",
+        "1": "Consume una cierta cantidad de Aguante para lanzarse al frente, infligiendo daño a los enemigos en el camino."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Descendente</strong>",
+        "1": "Se lanza desde el aire para golpear el suelo, dañando a los enemigos cercanos e infligiendo Daño en el AdE en el momento del impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Daño de 1er golpe",
+      "1": "Daño de 2.º golpe",
+      "2": "Daño de 3er golpe",
+      "3": "Daño de 4.º golpe",
+      "4": "Daño de 5.º golpe",
+      "5": "Daño de ATQ Cargado",
+      "6": "Coste de Aguante de ATQ Cargado",
+      "7": "Daño de Caída",
+      "8": "Daño de impacto de caída baja/alta",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Vórtice hieloastral",
+    "description": {
+      "0": "Mika ataca a los enemigos con su ballesta y otorga el estado de “aeroánima” a todos los personajes cercanos del equipo. Cuando un personaje en estado de aeroánima está en uso, su Vel. de Ataque aumenta.",
+      "1": "Esta habilidad tiene distintos efectos dependiendo de si se activa pulsando una vez o manteniendo pulsado.",
+      "2": "<br/>",
+      "3": "<strong>Pulsar una vez</strong>",
+      "4": "Lanza rápidamente una saeta de escarcha perforadora que inflige <cryo>Daño Cryo</cryo> a los enemigos contra los que impacta.",
+      "5": "<br/>",
+      "6": "<strong>Mantener pulsado</strong>",
+      "7": "Apunta y selecciona un objetivo enemigo contra el que dispara una señal astrogélida, la cual inflige <cryo>Daño Cryo</cryo>. Después de golpear al objetivo, la señal astrogélida se eleva y luego explota, tras lo cual lanza esquirlas astrogélidas que infligen <cryo>Daño Cryo</cryo> contra otros 3 enemigos cercanos como máximo.",
+      "8": "<br/>",
+      "9": "<i>Las estrellas explotan bajo el cielo helado.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de saeta de escarcha",
+      "1": "Daño de señal astrogélida",
+      "2": "Daño de esquirlas astrogélidas",
+      "3": "Aumento de Vel. de Ataque",
+      "4": "Duración de aeroánima",
+      "5": "TdE",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Himno plumiceleste",
+    "description": {
+      "0": "Mika invoca la fuerza para espolear a sus compañeros al recitar las oraciones de los Caballeros de Favonius, con lo que restaura Vida para todos los personajes del equipo cercanos en función de la vida Máx. de Mika, y les otorga el estado de “pluma aquilae”.",
+      "1": "<br/>",
+      "2": "<strong>Pluma aquilae</strong>",
+      "3": "Cuando un personaje en uso bajo el estado de pluma aquilae golpea a un enemigo con un Ataque Normal, Mika le regenera Vida en función de su propia Vida Máx.",
+      "4": "Los personajes en este estado solo pueden recuperar Vida una vez cada cierto tiempo de esta forma.",
+      "5": "<br/>",
+      "6": "<i>“No pierdas la esperanza en tiempos difíciles y mantente alerta cuando todo va bien, pues esa pluma blanca al final mostrará el camino a los viajeros extraviados”.</i>"
+    },
+    "skillParams": {
+      "0": "Curación al usar la habilidad",
+      "1": "Curación de pluma aquilae",
+      "2": "Intervalo de curación de pluma aquilae",
+      "3": "Duración de pluma aquilae",
+      "4": "TdE",
+      "5": "Energía Elemental",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Supresión fuegorrápido",
+    "description": {
+      "0": "En los siguientes casos, el estado de aeroánima otorgado por <strong>Vórtice hieloastral</strong> concederá el efecto amplificador de “detección”, el cual aumenta en un 10% el Daño Físico de los personajes en uso:",
+      "1": [
+        "Cuando la saeta de escarcha golpea a más de un enemigo, se genera 1 carga de detección por cada enemigo adicional golpeado.",
+        "Las esquirlas astrogélidas generan 1 carga de detección por cada enemigo golpeado. Cada esquirla astrogélida solo puede activar una vez este efecto."
+      ],
+      "2": "<br/>",
+      "3": "El efecto de detección solo puede acumularse hasta 3 veces en el estado de aeroánima. Si se vuelve a liberar Vórtice hieloastral antes de que concluya este estado, se eliminará el estado de aeroánima anterior y todas sus cargas de detección."
+    }
+  },
+  "passive2": {
+    "name": "Levantamiento topográfico",
+    "description": {
+      "0": "Cuando un personaje en uso afectado a la vez por los estados pluma aquilae de <strong>Himno plumiceleste</strong> y aeroánima de <strong>Vórtice hieloastral</strong> inflige un crítico al atacar, el estado de aeroánima generará 1 carga de detección del talento pasivo “Supresión fuegorrápido”. Solo se puede generar 1 carga de detección de esta manera durante un estado de aeroánima.",
+      "1": "Además, aumenta en 1 el máximo de acumulaciones de detección durante ese estado.",
+      "2": "Es necesario desbloquear el talento pasivo “Supresión fuegorrápido”."
+    }
+  },
+  "passive3": {
+    "name": "Demarcación",
+    "description": {
+      "0": "Muestra la ubicación de los <strong>objetos típicos de Mondstadt</strong> cercanos en el minimapa."
+    }
+  },
+  "constellation1": {
+    "name": "Amistad predestinada",
+    "description": {
+      "0": "El estado de aeroánima de <strong>Vórtice hieloastral</strong> reduce el intervalo con el que el estado de pluma aquilae de <strong>Himno plumiceleste</strong> restaura Vida en la misma proporción con que aumenta la Vel. de Ataque bajo el estado de aeroánima."
+    }
+  },
+  "constellation2": {
+    "name": "El camino que nos une",
+    "description": {
+      "0": "Cuando la saeta de escarcha de <strong>Vórtice hieloastral</strong> golpea por primera vez a un enemigo o cuando la señal astrogélida golpea a los enemigos, se genera 1 carga de detección del talento pasivo “Supresión fuegorrápido”.",
+      "1": "Es necesario desbloquear el talento pasivo “Supresión fuegorrápido”."
+    }
+  },
+  "constellation3": {
+    "name": "Batidor veterano",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Himno plumiceleste</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Alabanza de la cencellada",
+    "description": {
+      "0": "Cuando el estado de pluma aquilae de <strong>Himno plumiceleste</strong> de Mika cura a los personajes del equipo, Mika recupera 3 pts. de Energía Elemental. Solo se puede regenerar Energía Elemental hasta 5 veces mediante un estado de pluma aquilae creado con Himno plumiceleste."
+    }
+  },
+  "constellation5": {
+    "name": "Flecha tintineante",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Vórtice hieloastral</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Asistencia táctica",
+    "description": {
+      "0": "Aumenta en 1 el máximo de cargas de detección acumulables en el estado de aeroánima de <strong>Vórtice hieloastral</strong>.",
+      "1": "Es necesario desbloquear el talento pasivo “Supresión fuegorrápido”.",
+      "2": "Además, cuando un personaje en uso está bajo los efectos de aeroánima, el Daño CRIT de sus ataques que infligen Daño Físico aumenta en un 60%."
+    }
+  }
+}

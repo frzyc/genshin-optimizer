@@ -1,0 +1,24 @@
+{
+  "name": "Con Đường Thợ Săn",
+  "description": {
+    "0": "Cung săn bắn được chế tạo từ nhánh cây trắng, từng bắn hạ vô số ác thú xâm chiếm khu rừng."
+  },
+  "passiveName": "Đường Cùng Của Thú",
+  "passiveDescription": {
+    "0": {
+      "0": "Nhận <cryo>12%</cryo> buff sát thương tất cả nguyên tố. Sau khi trọng kích đánh trúng kẻ địch sẽ nhận được hiệu ứng \"Săn Bắt Vô Tận\": Tăng sát thương trọng kích gây ra, lượng sát thương tăng thêm tương đương <cryo>160%</cryo> Tinh Thông Nguyên Tố. Hiệu quả này sẽ biến mất sau khi có hiệu lực 12 lần hoặc sau 10s. Mỗi 12s tối đa kích hoạt một lần \"Săn Bắt Vô Tận\"."
+    },
+    "1": {
+      "0": "Nhận <cryo>15%</cryo> buff sát thương tất cả nguyên tố. Sau khi trọng kích đánh trúng kẻ địch sẽ nhận được hiệu ứng \"Săn Bắt Vô Tận\": Tăng sát thương trọng kích gây ra, lượng sát thương tăng thêm tương đương <cryo>200%</cryo> Tinh Thông Nguyên Tố. Hiệu quả này sẽ biến mất sau khi có hiệu lực 12 lần hoặc sau 10s. Mỗi 12s tối đa kích hoạt một lần \"Săn Bắt Vô Tận\"."
+    },
+    "2": {
+      "0": "Nhận <cryo>18%</cryo> buff sát thương tất cả nguyên tố. Sau khi trọng kích đánh trúng kẻ địch sẽ nhận được hiệu ứng \"Săn Bắt Vô Tận\": Tăng sát thương trọng kích gây ra, lượng sát thương tăng thêm tương đương <cryo>240%</cryo> Tinh Thông Nguyên Tố. Hiệu quả này sẽ biến mất sau khi có hiệu lực 12 lần hoặc sau 10s. Mỗi 12s tối đa kích hoạt một lần \"Săn Bắt Vô Tận\"."
+    },
+    "3": {
+      "0": "Nhận <cryo>21%</cryo> buff sát thương tất cả nguyên tố. Sau khi trọng kích đánh trúng kẻ địch sẽ nhận được hiệu ứng \"Săn Bắt Vô Tận\": Tăng sát thương trọng kích gây ra, lượng sát thương tăng thêm tương đương <cryo>280%</cryo> Tinh Thông Nguyên Tố. Hiệu quả này sẽ biến mất sau khi có hiệu lực 12 lần hoặc sau 10s. Mỗi 12s tối đa kích hoạt một lần \"Săn Bắt Vô Tận\"."
+    },
+    "4": {
+      "0": "Nhận <cryo>24%</cryo> buff sát thương tất cả nguyên tố. Sau khi trọng kích đánh trúng kẻ địch sẽ nhận được hiệu ứng \"Săn Bắt Vô Tận\": Tăng sát thương trọng kích gây ra, lượng sát thương tăng thêm tương đương <cryo>320%</cryo> Tinh Thông Nguyên Tố. Hiệu quả này sẽ biến mất sau khi có hiệu lực 12 lần hoặc sau 10s. Mỗi 12s tối đa kích hoạt một lần \"Săn Bắt Vô Tận\"."
+    }
+  }
+}

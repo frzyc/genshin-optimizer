@@ -1,0 +1,163 @@
+{
+  "name": "Amber",
+  "title": "Championne de planage",
+  "description": "Une jeune fille pleine d'énergie. Elle est la seule et unique Éclaireuse de l'Ordre de Favonius.",
+  "constellationName": "Lepus",
+  "auto": {
+    "name": "Archerie revisitée",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attaque normale</strong>",
+        "1": "Enchaîne jusqu'à 5 tirs consécutifs."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Effectue un <strong>tir visé</strong> plus précis infligeant davantage de DGT.",
+        "2": "Lors de la visée, la flèche se charge en élément Pyro, infligeant de considérables <pyro>DGT Pyro</pyro> quand elle est complètement chargée."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Tire une pluie de flèches depuis les airs et plonge au sol, infligeant des DGT de zone à l'impact."
+      }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT 4e coup",
+      "4": "DGT 5e coup",
+      "5": "DGT tir visé",
+      "6": "DGT tir visé (pleine charge)",
+      "7": "DGT durant la chute",
+      "8": "DGT chute basse/élevée",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Poupée explosive",
+    "description": {
+      "0": "Le fidèle Baron Lapinou est déployé sur le terrain.",
+      "1": "<br/>",
+      "2": "<strong>Baron Lapinou</strong>",
+      "3": [
+        " Le Baron nargue les ennemis proches et attire leur attention.",
+        " Ses PV sont proportionnels aux PV max d'Amber.",
+        " Le Baron explose à la fin ou s'il est détruit entre temps, et inflige des <pyro>DGT Pyro de zone</pyro>."
+      ],
+      "4": "<br/>",
+      "5": "<strong>Appui long</strong>",
+      "6": "Ajuste la direction du jet.",
+      "7": "Ajuste la portée du jet.",
+      "8": "<br/>",
+      "9": "<i>La lignée de Baron Lapinou est impressionnante, mais Amber a décidé d'arrêter de compter à partir du 893e Baron Lapinou.</i>"
+    },
+    "skillParams": {
+      "0": "PV hérités",
+      "1": "DGT explosion",
+      "2": "Temps de recharge",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Pluie de flèches",
+    "description": {
+      "0": "Tire une pluie de flèches qui inflige des <pyro>DGT Pyro continus</pyro>.",
+      "1": "<br/>",
+      "2": "<i>Amber est une fille chaleureuse et pleine de passion.</i>"
+    },
+    "skillParams": {
+      "0": "DGT pluie de flèches",
+      "1": "DGT totaux Pluie de flèches",
+      "2": "Durée",
+      "3": "Temps de recharge",
+      "4": "Énergie élémentaire",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Dans le mille !",
+    "description": {
+      "0": "Augmente le taux CRIT de <strong>Pluie de flèches</strong> de 10 % et la zone d'effet de 30 %."
+    }
+  },
+  "passive2": {
+    "name": "Tir précis",
+    "description": {
+      "0": "L'ATQ augmente de 15 % pendant 10 s lorsque le tir visé touche un point faible."
+    }
+  },
+  "passive3": {
+    "name": "Championne de planage",
+    "description": {
+      "0": "Diminue la consommation d'endurance de vos personnages dans l'équipe de 20 % lors du planage.",
+      "1": "Ne peut pas être cumulé avec d'autres aptitudes passives aux effets identiques."
+    }
+  },
+  "constellation1": {
+    "name": "Une flèche suffit !",
+    "description": {
+      "0": "Tire 2 flèches consécutives à chaque <strong>tir visé</strong>. La seconde flèche inflige 20 % des DGT de la première."
+    }
+  },
+  "constellation2": {
+    "name": "Tout est prêt",
+    "description": {
+      "0": "Une toute nouvelle modification du Baron Lapinou ! Un tir visé à pleine charge aux pieds du Baron Lapinou, et ce dernier explose directement...",
+      "1": "Ce type d'explosion inflige 200 % de DGT supplémentaires."
+    }
+  },
+  "constellation3": {
+    "name": "Ça brûle !",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Pluie de flèches</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation4": {
+    "name": "Ce n'est pas n'importe quelle poupée...",
+    "description": {
+      "0": "Diminue le TdR de <strong>Poupée explosive</strong> de 20 % et permet de l'utiliser une fois supplémentaire."
+    }
+  },
+  "constellation5": {
+    "name": "Baron Lapinou !",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Poupée explosive</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation6": {
+    "name": "Feu sauvage",
+    "description": {
+      "0": "<strong>Pluie de flèches</strong> augmente la VIT de déplacement de tous les personnages de l'équipe de 15 % et leur ATQ de 15 % pendant 10 s."
+    }
+  }
+}

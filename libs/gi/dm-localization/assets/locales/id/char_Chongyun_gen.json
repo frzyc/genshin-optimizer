@@ -1,0 +1,153 @@
+{
+  "name": "Chongyun",
+  "title": "Frozen Ardor",
+  "description": "Anak muda pewaris klan pembasmi iblis. Dia telah melakukan segalanya yang bisa dia lakukan untuk menahan \"Luapan Energi Yang\" yang ada dalam dirinya.",
+  "constellationName": "Nubis Caesor",
+  "auto": {
+    "name": "Demonbane",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Attack</strong> Melancarkan hingga 4 tebasan berturut-turut."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Terus menguras Stamina untuk melancarkan serangan berputar yang mengakibatkan DMG ke musuh di sekitar.",
+        "2": "Diakhiri dengan sebuah tebasan yang kuat."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Menerjang dari udara untuk menghantam tanah, menyerang musuh di jalur terjangan dan mengakibatkan DMG area saat mendarat."
+      }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Tahap 4",
+      "4": "DMG Berputar Charged Attack",
+      "5": "DMG Akhir Charged Attack",
+      "6": "Konsumsi Stamina Charged Attack",
+      "7": "Durasi Maksimum",
+      "8": "DMG Selama Plunging",
+      "9": "DMG Plunging Attack Rendah/Tinggi",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Spirit Blade: Chonghua's Layered Frost",
+    "description": {
+      "0": "Chongyun menghantam tanah dengan pedangnya dan mengakibatkan ledakan Cryo dalam area melingkar di depannya, mengakibatkan <cryo>Cryo DMG</cryo>.",
+      "1": "Setelah jeda singkat, udara dingin yang diciptakan oleh ledakan Cryo akan bersatu menjadi sebuah Chonghua Frost Field, dan karakter lain yang menggunakan Sword, Claymore, dan Polearm akan menerima <cryo>Cryo Infusion</cryo>.",
+      "2": "<br/>",
+      "3": "<i>\"Dengan bunyi sejernih kristal, dan semua menjadi sunyi. Sungai tidak bergerak, dan awan-awan penuh dengan es. Gerbang altar terbuka, dan kejahatan dimusnahkan.\"</i>"
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "Durasi Infusion",
+      "2": "Durasi Area",
+      "3": "Cooldown",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Spirit Blade: Cloud-parting Star",
+    "description": {
+      "0": "Melepas segel, Chongyun memanggil 3 pedang raksasa di tengah udara yang jatuh ke tanah dan meledak satu per satu setelah jeda pendek.",
+      "1": "Pedangnya mengakibatkan <cryo>Cryo DMG area</cryo> dan menghempas musuh saat meledak.",
+      "2": "<br/>",
+      "3": "<i>\"Seiring dengan es yang melahirkan dingin membeku, pedangku menggetarkan langit dan bumi. Dengarkan panggilanku, wahai pedang jiwa!\"</i>"
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "Cooldown",
+      "2": "Konsumsi Energy",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Steady Breathing",
+    "description": {
+      "0": "Meningkatkan 8% Normal ATK SPD karakter yang bertarung menggunakan Sword, Claymore, atau Polearm di dalam area <strong>Spirit Blade: Chonghua's Layered Frost</strong>."
+    }
+  },
+  "passive2": {
+    "name": "Rimechaser Blade",
+    "description": {
+      "0": "Setelah area dari <strong>Spirit Blade: Chonghua's Layered Frost</strong> menghilang, sebilah Spirit Blade baru akan muncul dan menyerang musuh di dekatnya, mengakibatkan <cryo>Cryo DMG area</cryo> sebesar 100% DMG Skill Chonghua's Layered Frost. Serangan ini juga akan mengurangi 10% <cryo>Cryo RES</cryo> musuh selama 8 detik."
+    }
+  },
+  "passive3": {
+    "name": "Gallant Journey",
+    "description": {
+      "0": "Ketika dikirim untuk melakukan ekspedisi di Liyue, waktu yang dibutuhkan berkurang 25%."
+    }
+  },
+  "constellation1": {
+    "name": "Ice Unleashed",
+    "description": {
+      "0": "Serangan terakhir kombo Normal Attack Chongyun akan menghasilkan 3 pedang es. Setiap pedang membuat 50% dari ATK Chongyun menjadi <cryo>Cryo DMG</cryo> kepada semua musuh di jalurnya."
+    }
+  },
+  "constellation2": {
+    "name": "Atmospheric Revolution",
+    "description": {
+      "0": "CD Elemental Skill dan Elemental Burst yang digunakan di dalam Frost Field yang dibuat oleh <strong>Spirit Blade: Chonghua's Layered Frost</strong> berkurang 15%."
+    }
+  },
+  "constellation3": {
+    "name": "Cloudburst",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Spirit Blade: Cloud-parting Star</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Frozen Skies",
+    "description": {
+      "0": "Chongyun mendapatkan 1 Energy setiap kali memukul musuh yang terkena efek <cryo>Cryo</cryo>.",
+      "1": "Efek ini terpicu setiap 2 detik."
+    }
+  },
+  "constellation5": {
+    "name": "The True Path",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Spirit Blade: Chonghua's Layered Frost</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Rally of Four Blades",
+    "description": {
+      "0": "<strong>Spirit Blade: Cloud-parting Star</strong> mengakibatkan 15% DMG lebih banyak kepada musuh dengan persentase sisa HP lebih rendah dari Chongyun.",
+      "1": "Skill ini juga akan memanggil 1 spirit blade tambahan."
+    }
+  }
+}

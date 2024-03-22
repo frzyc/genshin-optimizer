@@ -1,0 +1,24 @@
+{
+  "name": "„Megamagisches Schwert des ultimativen Oberherrn“",
+  "description": {
+    "0": "Ein magisches Superschwert, das nur vom ultimativen Oberherrn des Ozeans benutzt werden kann. Aufgrund des speziellen wasserdichten Materials, das verwendet wird, wird es nicht beschädigt, selbst wenn es in Wasser getaucht wird, sodass es regelrecht als unschlagbar bezeichnet werden kann!"
+  },
+  "passiveName": "Melusinen-Unterstützung",
+  "passiveDescription": {
+    "0": {
+      "0": "Erhöht den ANG um <cryo>12 %</cryo>. Das ist noch nicht alles! Die Unterstützung durch alle Melusinen, denen du im Dorf Mérusea geholfen hast, erfüllt dich mit Kraft! Erhöht den ANG basierend auf der Anzahl der Melusinen, denen du geholfen hast, zusätzlich um bis zu <cryo>12 %</cryo>."
+    },
+    "1": {
+      "0": "Erhöht den ANG um <cryo>15 %</cryo>. Das ist noch nicht alles! Die Unterstützung durch alle Melusinen, denen du im Dorf Mérusea geholfen hast, erfüllt dich mit Kraft! Erhöht den ANG basierend auf der Anzahl der Melusinen, denen du geholfen hast, zusätzlich um bis zu <cryo>15 %</cryo>."
+    },
+    "2": {
+      "0": "Erhöht den ANG um <cryo>18 %</cryo>. Das ist noch nicht alles! Die Unterstützung durch alle Melusinen, denen du im Dorf Mérusea geholfen hast, erfüllt dich mit Kraft! Erhöht den ANG basierend auf der Anzahl der Melusinen, denen du geholfen hast, zusätzlich um bis zu <cryo>18 %</cryo>."
+    },
+    "3": {
+      "0": "Erhöht den ANG um <cryo>21 %</cryo>. Das ist noch nicht alles! Die Unterstützung durch alle Melusinen, denen du im Dorf Mérusea geholfen hast, erfüllt dich mit Kraft! Erhöht den ANG basierend auf der Anzahl der Melusinen, denen du geholfen hast, zusätzlich um bis zu <cryo>21 %</cryo>."
+    },
+    "4": {
+      "0": "Erhöht den ANG um <cryo>24 %</cryo>. Das ist noch nicht alles! Die Unterstützung durch alle Melusinen, denen du im Dorf Mérusea geholfen hast, erfüllt dich mit Kraft! Erhöht den ANG basierend auf der Anzahl der Melusinen, denen du geholfen hast, zusätzlich um bis zu <cryo>24 %</cryo>."
+    }
+  }
+}

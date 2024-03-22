@@ -1,0 +1,24 @@
+{
+  "name": "« Méga épée magique du suzerain ultime »",
+  "description": {
+    "0": "Une épée magique qui ne peut être maniée que par le suzerain ultime qui règne sur les mers. Comme elle a été fabriquée avec des matériaux spéciaux résistants à l'eau, elle ne sera pas trempée même si elle est immergée dans l'eau. On pourrait même dire qu'elle est invincible !"
+  },
+  "passiveName": "Mélusaide !",
+  "passiveDescription": {
+    "0": {
+      "0": "Augmente l'ATQ de <cryo>12 %</cryo>. Mais ce n'est pas tout : le soutien des mélusines vous remplit de force ! Votre ATQ augmente donc d'un maximum de <cryo>12 %</cryo> supplémentaires selon la quantité de mélusines que vous avez aidées au Village Mérusea."
+    },
+    "1": {
+      "0": "Augmente l'ATQ de <cryo>15 %</cryo>. Mais ce n'est pas tout : le soutien des mélusines vous remplit de force ! Votre ATQ augmente donc d'un maximum de <cryo>15 %</cryo> supplémentaires selon la quantité de mélusines que vous avez aidées au Village Mérusea."
+    },
+    "2": {
+      "0": "Augmente l'ATQ de <cryo>18 %</cryo>. Mais ce n'est pas tout : le soutien des mélusines vous remplit de force ! Votre ATQ augmente donc d'un maximum de <cryo>18 %</cryo> supplémentaires selon la quantité de mélusines que vous avez aidées au Village Mérusea."
+    },
+    "3": {
+      "0": "Augmente l'ATQ de <cryo>21 %</cryo>. Mais ce n'est pas tout : le soutien des mélusines vous remplit de force ! Votre ATQ augmente donc d'un maximum de <cryo>21 %</cryo> supplémentaires selon la quantité de mélusines que vous avez aidées au Village Mérusea."
+    },
+    "4": {
+      "0": "Augmente l'ATQ de <cryo>24 %</cryo>. Mais ce n'est pas tout : le soutien des mélusines vous remplit de force ! Votre ATQ augmente donc d'un maximum de <cryo>24 %</cryo> supplémentaires selon la quantité de mélusines que vous avez aidées au Village Mérusea."
+    }
+  }
+}

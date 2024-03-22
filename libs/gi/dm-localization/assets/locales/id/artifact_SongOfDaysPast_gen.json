@@ -1,0 +1,29 @@
+{
+  "setName": "Song of Days Past",
+  "setEffects": {
+    "2": "Bonus pemulihan +15%.",
+    "4": "Saat Karakter yang mengenakan memberikan pemulihan kepada Karakter di dalam party, akan memberikan efek Yearning yang berlangsung selama 6 detik, dan mencatat dan mengakumulasi jumlah pemulihan yang dilakukan (termasuk pemulihan yang berlebih). Setelah durasinya berakhir, efek Yearning akan dikonversi menjadi efek \"Waves of Days Past\": Saat Normal Attack, Charged Attack, Plunging Attack, Elemental Skill, atau Elemental Burst Karakter aktif diri sendiri di dalam party mengenai musuh, DMG yang diakibatkan akan meningkat sebesar 8% dari semua jumlah pemulihan yang tercatat oleh efek Yearning. Efek \"Waves of Days Past\" akan dihapus setelah terpicu sebanyak 5 kali atau setelah 10 detik. Maksimum jumlah pemulihan yang dapat tercatat oleh satu kali Yearning adalah 15.000 poin. Hanya satu efek Yearning yang dapat muncul dalam waktu bersamaan, tapi saat ada lebih dari 1 Karakter pengguna yang memberikan efek pemulihan, efek pemulihan ini akan dicatat secara bersamaan. Efek tetap dapat terpicu saat Karakter yang mengenakan ada di dalam party namun sedang tidak berada di medan pertempuran."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Forgotten Oath of Days Past",
+      "desc": "Bunga tak layu yang dibentuk batu larimar dan perak bergemilangan. Konon katanya hingga sekarang masih tetap dianggap sebagai simbol pemberontak."
+    },
+    "plume": {
+      "name": "Recollection of Days Past",
+      "desc": "Aksesoris bulu berbentuk kupu-kupu yang terbuat dari perak dan kristal biru langit. Konon katanya, pada zaman dulu sekali, melambangkan sumpah tak terpisahkan."
+    },
+    "sands": {
+      "name": "Echoing Sound from Days Past",
+      "desc": "Jam pasir dengan bentuk yang aneh, dibentuk dari batu lazurite dan giok biru air. Konon katanya inspirasi desainnya datang dari menara jam di Desa Petrichor."
+    },
+    "goblet": {
+      "name": "Promised Dream of Days Past",
+      "desc": "Wadah indah yang dibuat berdasarkan bentuk Cawan Kemurnian di dalam legenda. Konon katanya dapat mewujudkan harapan orang yang paling murni."
+    },
+    "circlet": {
+      "name": "Poetry of Days Past",
+      "desc": "Topi tinggi yang pernah populer di antara para pencipta opera di Fontaine. Konon katanya desain ornamen bulu ini mengambil referensi dari helm Lochknight yang legendaris."
+    }
+  }
+}

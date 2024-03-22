@@ -1,0 +1,169 @@
+{
+  "skill": {
+    "brandDMG": "SCH von Schwert des Eisstrudel",
+    "grimheartDuration": "Dauer von Kaltes Herz",
+    "name": "Eisiger Strudel",
+    "description": {
+      "0": "Extreme Kälte und geschwinder Schwerttanz.",
+      "1": "<br/>",
+      "2": "<strong>Drücken</strong>",
+      "3": "Führt schnelle Schwünge aus, die <cryo>Kryo-Schaden</cryo> verursachen.",
+      "4": "Eula bekommt beim Treffen von Gegnern eine Stapelung von dem Effekt Kaltes Herz, 2-fach stapelbar, 0,3 s Abklingzeit.",
+      "5": "<br/>",
+      "6": "<strong>Kaltes Herz</strong>",
+      "7": "Erhöht Eulas Unterbrechungs-WDS und VTD.",
+      "8": "<br/>",
+      "9": "<strong>Gedrückt halten</strong>",
+      "10": "Verbraucht den Effekt Kaltes Herz vollständig, schwingt dabei das Schwert nach vorn und fügt den Gegnern vor ihr <cryo>Kryo-Flächenschaden</cryo> zu.",
+      "11": "Verringert beim Verbrauchen des Effekts Kaltes Herz den physischen WDS sowie den <cryo>Kryo-WDS</cryo> der Gegner in der Nähe von Eula.",
+      "12": "Jede verbrauchte Stapelung von Kaltes Herz wandelt sich in ein Eisstrudelschwert um, das den Gegnern in der Umgebung <cryo>Kryo-Schaden</cryo> zufügt.",
+      "13": "<br/>",
+      "14": "<i>„So wird die Krone der Aristokraten in den Strudel hineingerissen. In jedem eiskalten Tröpfchen ist der Widerschein der goldenen Krone zu sehen. Der stiebende Schaum glänzt.“</i>"
+    },
+    "skillParams": {
+      "0": "SCH bei Drücken",
+      "1": "SCH bei Gedrückthalten",
+      "2": "SCH von Schwert des Eisstrudel",
+      "3": "VTD-Bonus",
+      "4": "Dauer von Kaltes Herz",
+      "5": "Verringerung des phys. WDS",
+      "6": "Verringert den Kryo-WDS um",
+      "7": "Dauer der WDS-Verringerung",
+      "8": "Abklingzeit für Drücken",
+      "9": "Abklingzeit für Gedrückthalten",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "name": "Eula",
+  "title": "Wirbeltanz der Gischt",
+  "description": "Sie ist die „Gischtritterin“ aus einer uralten Familie und Truppenführerin der Freischärler des Ordo Favonius. Als ein Nachkomme der Aristokraten ist sie aber dem Ritterorden, dem Erzfeind der Aristokratie, beigetreten. Warum sie solch eine Entscheidung getroffen hat, bleibt eins der größten Rätsel von Mondstadt.",
+  "constellationName": "Aphros Delos",
+  "auto": {
+    "name": "Favonius-Schwertkunst – Adelshaus",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Standardangriff</strong>",
+        "1": "Führt bis zu 5 Schwünge mit dem Schwert hintereinander aus."
+      },
+      "charged": {
+        "0": "<strong>Heftiger Schlag</strong>",
+        "1": "Verbraucht fortlaufend Ausdauer und führt schnell mehrere Hiebe aus.",
+        "2": "Schwingt das Schwert am Ende mit besonders großer Wucht."
+      },
+      "plunging": {
+        "0": "<strong>Angriff aus dem Fall</strong>",
+        "1": "Schlägt beim Fallen aus der Luft auf den Boden, greift alle Gegner in der Bahn an und verursacht beim Aufkommen Flächenschaden."
+      }
+    },
+    "skillParams": {
+      "0": "SCH Phase 1",
+      "1": "SCH Phase 2",
+      "2": "SCH Phase 3",
+      "3": "SCH Phase 4",
+      "4": "SCH Phase 5",
+      "5": "SCH heftiger Schläge pro Runde",
+      "6": "SCH heftiger Schläge am Ende",
+      "7": "Ausdauerverbrauch heftiger Schläge",
+      "8": "Höchstdauer",
+      "9": "SCH beim Fallen",
+      "10": "SCH beim Fallen aus niedriger/großer Höhe",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Schwert der Brandung",
+    "description": {
+      "0": "Schwingt das Schwert mit großer Wucht, fügt den Gegnern in der Umgebung <cryo>Kryo-Schaden</cryo> zu und erstellt dabei ein Schwert des Lichtfalls, das Eula folgt und bis zu 7 Sekunden existiert.",
+      "1": "Das Schwert des Lichtfalls erhöht innerhalb der Wirkungsdauer Eulas Unterbrechungs-WDS und lädt beim Verursachen von Schaden bei Gegnern mit Eulas Standardangriff, Elementarfähigkeit oder Spezialfähigkeit Energie auf, nur 1 neue Stapelung in 0,1 s.",
+      "2": "Sobald die Dauer abgelaufen ist, fällt das Schwert herunter, explodiert und fügt den Gegnern in der Umgebung physischen Schaden zu.",
+      "3": "Der Schaden ist von der gestapelten Energie des Schwerts des Lichtfalls abhängig.",
+      "4": "Wenn Eula ausgewechselt wird, explodiert das Schwert des Lichtfalls sofort.",
+      "5": "<br/>",
+      "6": "<i>Mit dem Sinken verhält es sich wie mit der Schwerkraft. Trotzdem will sie auf Biegen und Brechen die Strömung einfrieren.</i>"
+    },
+    "skillParams": {
+      "0": "Fähigkeits-SCH",
+      "1": "Basis-SCH von Schwert des Lichtfalls",
+      "2": "SCH pro Stapelung",
+      "3": "Max. Stapelungen der Energie",
+      "4": "Abklingzeit",
+      "5": "Elementarenergie",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Eisschwert in brausenden Wogen",
+    "description": {
+      "0": "Erstellt ein fragmentarisches Schwert des Lichtfalls beim Auslösen von <strong>Eisiger Strudel</strong> durch Gedrückthalten, sobald 2 Stapelungen von dem Effekt Kaltes Herz auf einmal verbraucht werden, und verursacht physischen Schaden in Höhe von 50 % des Basis-SCH, der durch das Schwert des Lichtfalls von <strong>Schwert der Brandung</strong> verursacht wird."
+    }
+  },
+  "passive2": {
+    "name": "Sprudelnde Kampflust",
+    "description": {
+      "0": "Überspringt beim Auslösen von <strong>Schwert der Brandung</strong> die Abklingzeit von <strong>Eisiger Strudel</strong> und gibt Eula eine Stapelung des Effekts Kaltes Herz."
+    }
+  },
+  "passive3": {
+    "name": "Selbstreflexion der Aristokraten",
+    "description": {
+      "0": "Stellt beim Zusammensetzen von Material für Figurentalente mit einer Wahrscheinlichkeit von 10 % den 2-fachen Ertrag her."
+    }
+  },
+  "constellation1": {
+    "name": "Illusion der Lichtwelle",
+    "description": {
+      "0": "Erhöht Eulas Bonus für physischen SCH 6 s lang um 30 %, sobald <strong>Eisiger Strudel</strong> den Effekt Kaltes Herz aufbraucht.",
+      "1": "Jede verbrauchte Stapelung von Kaltes Herz verlängert die Dauer des Bonus um 6 s und insgesamt um bis zu 18 s."
+    }
+  },
+  "constellation2": {
+    "name": "Mädchen des Meeresschaums",
+    "description": {
+      "0": "Verringert die Abklingzeit für Gedrückthalten von <strong>Eisiger Strudel</strong>, sodass sie ebenso lang wie die bei normalem Drücken ist."
+    }
+  },
+  "constellation3": {
+    "name": "Blut des Lawrence-Klans",
+    "description": {
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Schwert der Brandung</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation4": {
+    "name": "Kampf gegen Minderwertigkeitsgefühle",
+    "description": {
+      "0": "Erhöht den Gegnern mit weniger als 50 % LP mit Schwert des Lichtfalls zugefügten Schaden um 25 %."
+    }
+  },
+  "constellation5": {
+    "name": "Qualitäten eines Ritters",
+    "description": {
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Eisiger Strudel</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation6": {
+    "name": "Pflichten der Adeligen",
+    "description": {
+      "0": "Das mit <strong>Schwert der Brandung</strong> erstellte Schwert des Lichtfalls erhält sofort 5 Stapelungen Energie und bei Verursachen von Schaden durch Standardangriffe, Elementarfähigkeiten oder Spezialfähigkeiten mit einer Wahrscheinlichkeit von 50 % eine zusätzliche Stapelung."
+    }
+  }
+}

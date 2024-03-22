@@ -1,0 +1,24 @@
+{
+  "name": "Hamayumi",
+  "description": {
+    "0": "Bu savaş yayı bir zamanlar bir tapınak görevlisine aitti. Üstün işçilikle üretilen bu yay karmaşık bir yapıya sahip olsa da sağlamdır."
+  },
+  "passiveName": "Tam Çekiş",
+  "passiveDescription": {
+    "0": {
+      "0": "Normal Saldırı Hasarını <cryo>%16</cryo>, Yüklü Saldırı Hasarını <cryo>%12</cryo> artırır. Bu silahı kuşanan karakterin Enerjisi %100'e ulaştığında, bu güçlendirme %100 artar."
+    },
+    "1": {
+      "0": "Normal Saldırı Hasarını <cryo>%20</cryo>, Yüklü Saldırı Hasarını <cryo>%15</cryo> artırır. Bu silahı kuşanan karakterin Enerjisi %100'e ulaştığında, bu güçlendirme %100 artar."
+    },
+    "2": {
+      "0": "Normal Saldırı Hasarını <cryo>%24</cryo>, Yüklü Saldırı Hasarını <cryo>%18</cryo> artırır. Bu silahı kuşanan karakterin Enerjisi %100'e ulaştığında, bu güçlendirme %100 artar."
+    },
+    "3": {
+      "0": "Normal Saldırı Hasarını <cryo>%28</cryo>, Yüklü Saldırı Hasarını <cryo>%21</cryo> artırır. Bu silahı kuşanan karakterin Enerjisi %100'e ulaştığında, bu güçlendirme %100 artar."
+    },
+    "4": {
+      "0": "Normal Saldırı Hasarını <cryo>%32</cryo>, Yüklü Saldırı Hasarını <cryo>%24</cryo> artırır. Bu silahı kuşanan karakterin Enerjisi %100'e ulaştığında, bu güçlendirme %100 artar."
+    }
+  }
+}

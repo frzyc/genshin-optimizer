@@ -1,0 +1,24 @@
+{
+  "name": "Saflığın Akışı",
+  "description": {
+    "0": "Coppelius'un yazdığı tüm senaryoların yer aldığı tuhaf biçimli bir senaryo antolojisi."
+  },
+  "passiveName": "Tamamlanmamış Şaheser",
+  "passiveDescription": {
+    "0": {
+      "0": "Bir Element Becerisi kullanıldığında 15 saniyeliğine Tüm Element Hasarları <cryo>%8</cryo> artar ve Maks. Canın %24'ü oranında bir Hayat Bağı kazanılır. Bu etki her 10 saniyede bir tetiklenebilir. Hayat Bağı sona erdiğinde bu süreçte emilen her 1,000 Can için Tüm Element Hasarları <cryo>%2</cryo> artar. Bu şekilde en fazla <cryo>%12</cryo> Hasar artışı kazanılabilir. Bu etki 15 saniye sürer."
+    },
+    "1": {
+      "0": "Bir Element Becerisi kullanıldığında 15 saniyeliğine Tüm Element Hasarları <cryo>%10</cryo> artar ve Maks. Canın %24'ü oranında bir Hayat Bağı kazanılır. Bu etki her 10 saniyede bir tetiklenebilir. Hayat Bağı sona erdiğinde bu süreçte emilen her 1,000 Can için Tüm Element Hasarları <cryo>%2,5</cryo> artar. Bu şekilde en fazla <cryo>%15</cryo> Hasar artışı kazanılabilir. Bu etki 15 saniye sürer."
+    },
+    "2": {
+      "0": "Bir Element Becerisi kullanıldığında 15 saniyeliğine Tüm Element Hasarları <cryo>%12</cryo> artar ve Maks. Canın %24'ü oranında bir Hayat Bağı kazanılır. Bu etki her 10 saniyede bir tetiklenebilir. Hayat Bağı sona erdiğinde bu süreçte emilen her 1,000 Can için Tüm Element Hasarları <cryo>%3</cryo> artar. Bu şekilde en fazla <cryo>%18</cryo> Hasar artışı kazanılabilir. Bu etki 15 saniye sürer."
+    },
+    "3": {
+      "0": "Bir Element Becerisi kullanıldığında 15 saniyeliğine Tüm Element Hasarları <cryo>%14</cryo> artar ve Maks. Canın %24'ü oranında bir Hayat Bağı kazanılır. Bu etki her 10 saniyede bir tetiklenebilir. Hayat Bağı sona erdiğinde bu süreçte emilen her 1,000 Can için Tüm Element Hasarları <cryo>%3,5</cryo> artar. Bu şekilde en fazla <cryo>%21</cryo> Hasar artışı kazanılabilir. Bu etki 15 saniye sürer."
+    },
+    "4": {
+      "0": "Bir Element Becerisi kullanıldığında 15 saniyeliğine Tüm Element Hasarları <cryo>%16</cryo> artar ve Maks. Canın %24'ü oranında bir Hayat Bağı kazanılır. Bu etki her 10 saniyede bir tetiklenebilir. Hayat Bağı sona erdiğinde bu süreçte emilen her 1,000 Can için Tüm Element Hasarları <cryo>%4</cryo> artar. Bu şekilde en fazla <cryo>%24</cryo> Hasar artışı kazanılabilir. Bu etki 15 saniye sürer."
+    }
+  }
+}

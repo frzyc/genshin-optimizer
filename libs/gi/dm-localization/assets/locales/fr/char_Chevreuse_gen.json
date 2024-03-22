@@ -1,0 +1,164 @@
+{
+  "name": "Chevreuse",
+  "title": "Exécutrice de la justice",
+  "description": "La capitaine de la patrouille de surveillance spéciale, qui porte la justice comme un sceau omniprésent sur son cœur. Son mousquet ne doit pointer que vers les coupables.",
+  "constellationName": "Sclopetum Ensiferum",
+  "auto": {
+    "name": "Pique de baïonnette (modifiée)",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attaque normale</strong>",
+        "1": "Enchaîne jusqu'à 4 coups de lance."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Consomme de l'endurance pour charger en ligne droite et infliger des DGT aux ennemis sur la route."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis sur la route et des DGT de zone à l'impact."
+      }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT 4e coup",
+      "4": "DGT attaque chargée",
+      "5": "Coût d'endurance attaque chargée",
+      "6": "DGT durant la chute",
+      "7": "DGT chute basse/élevée",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Tir de suppression rapide à courte portée",
+    "description": {
+      "0": "Chevreuse place rapidement son mousquet sur son épaule et tire sur l'ennemi pour infliger des <pyro>DGT Pyro de zone</pyro>.",
+      "1": "Pendant une courte durée après que Chevreuse tire un coup de feu, les PV de votre personnage déployé sont restaurés de façon continue selon les PV max de Chevreuse.",
+      "2": "En cas d'appui long, la compétence est déclenchée différemment.",
+      "3": "<br/>",
+      "4": "<strong>Appui long</strong>",
+      "5": "Bascule en mode visée, ce qui permet à Chevreuse de verrouiller une cible dans son réticule pour déclencher un tir de suppression précis. Si Chevreuse en possède une, elle tire une cartouche surchargée à la place pour infliger des <pyro>DGT Pyro</pyro> plus importants sur une zone plus grande.",
+      "6": "Chevreuse obtient 1 cartouche surchargée chaque fois qu'un personnage de l'équipe à proximité déclenche une réaction de Surcharge, mais ne peut posséder qu'une seule cartouche surchargée à la fois.",
+      "7": "<br/>",
+      "8": "<strong>Arkhe : Ousia</strong>",
+      "9": "Régulièrement, lorsque Chevreuse touche avec Tir de suppression rapide à courte portée, elle déclenche une lame fluide pour infliger des <pyro>DGT Pyro</pyro> chargés d'énergie ousia.",
+      "10": "<br/>",
+      "11": "<i>« En fait, le règlement d'entraînement ne comportait que le terme « Tir de suppression », mais le protagoniste de ce roman estime qu'une terminologie élégante peut affecter la motivation des troupes, et même acculer les adversaires dès le départ... Je pense que c'est un bon point, alors j'ai modifié le règlement ! »</i>"
+    },
+    "skillParams": {
+      "0": "DGT appui simple",
+      "1": "DGT appui long",
+      "2": "DGT cartouche surchargée",
+      "3": "Soins continus",
+      "4": "Durée des soins",
+      "5": "DGT lame fluide",
+      "6": "Intervalle de lame fluide",
+      "7": "Temps de recharge",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Anneau de grenades éclatantes",
+    "description": {
+      "0": "Chevreuse tire une grenade explosive sur les ennemis avec son mousquet pour infliger des <pyro>DGT Pyro de zone</pyro>. Lorsque la grenade a touché, elle se divise en plusieurs obus explosifs secondaires.",
+      "1": "Ces obus explosent après un court intervalle pour infliger des <pyro>DGT Pyro</pyro> aux ennemis proches.",
+      "2": "<br/>",
+      "3": "<i>« Théoriquement, une explosion rectangulaire serait la plus efficace pour détruire les formations ennemies. Cependant, la section transversale de l'onde de choc d'une explosion est ronde, comme la plupart des gâteaux. Ainsi, les obus explosifs secondaires ne peuvent être disposés que comme les fruits sur un gâteau, formant un anneau sur le pourtour. »</i>"
+    },
+    "skillParams": {
+      "0": "DGT grenade explosive",
+      "1": "DGT obus explosif secondaire",
+      "2": "Temps de recharge",
+      "3": "Énergie élémentaire",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Tactique coordonnée",
+    "description": {
+      "0": "Lorsque les personnages de l'équipe sont de l'élément <pyro>Pyro</pyro> ou <electro>Électro</electro> et qu'il y a au moins un personnage Pyro et un personnage Électro :",
+      "1": "Chevreuse accorde une coordination aux personnages de l'équipe à proximité : lorsqu'un personnage a déclenché une réaction de Surcharge, les RÉS <pyro>Pyro</pyro> et <electro>Électro</electro> des ennemis touchés par cette réaction de Surcharge diminuent de 40 % pendant 6 s.",
+      "2": "La coordination est annulée lorsque les types élémentaires des personnages de l'équipe ne répondent pas aux conditions de base de l'aptitude passive."
+    }
+  },
+  "passive2": {
+    "name": "Agencement vertical",
+    "description": {
+      "0": "Lorsque Chevreuse a tiré une cartouche surchargée de <strong>Tir de suppression rapide à courte portée</strong>, l'ATQ de tous les personnages <pyro>Pyro</pyro> et <electro>Électro</electro> de l'équipe à proximité augmente, pendant 30 s, de 1 % pour chaque tranche de 1 000 PV max de Chevreuse. L'ATQ peut être augmentée d'un maximum de 40 % de cette manière."
+    }
+  },
+  "passive3": {
+    "name": "Pas redoublé",
+    "description": {
+      "0": "Diminue la consommation d'endurance de vos personnages dans l'équipe de 20 % lors du sprint.",
+      "1": "Ne peut pas être cumulé avec d'autres aptitudes passives aux effets identiques."
+    }
+  },
+  "constellation1": {
+    "name": "Vaillance du front stable",
+    "description": {
+      "0": "Lorsqu'un personnage déployé avec une coordination (hormis Chevreuse) déclenche une réaction de Surcharge, il récupère 6 pts d'énergie élémentaire. Cet effet peut être déclenché une fois toutes les 10 s.",
+      "1": "L'aptitude passive « Tactique coordonnée » doit être déjà débloquée."
+    }
+  },
+  "constellation2": {
+    "name": "Sniper de l'explosion induite",
+    "description": {
+      "0": "En touchant avec l'appui long de <strong>Tir de suppression rapide à courte portée</strong>, 2 explosions en chaîne sont déclenchées près de l'emplacement touché, chaque explosion infligeant des <pyro>DGT Pyro</pyro> d'une valeur équivalant à 120 % de l'ATQ de Chevreuse. Cet effet peut être déclenché une fois toutes les 10 s, et les DGT infligés de cette manière sont considérés comme des DGT de compétence élémentaire."
+    }
+  },
+  "constellation3": {
+    "name": "Technique du démontage de terrain",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Tir de suppression rapide à courte portée</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation4": {
+    "name": "Secret du tir multiple",
+    "description": {
+      "0": "Après avoir utilisé <strong>Anneau de grenades éclatantes</strong>, l'appui long de <strong>Tir de suppression rapide à courte portée</strong> ne déclenche pas de TdR. Cet effet est annulé après 6 s ou après avoir utilisé Tir de suppression rapide à courte portée 2 fois avec l'appui long."
+    }
+  },
+  "constellation5": {
+    "name": "Puissance de l'explosion accrue",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Anneau de grenades éclatantes</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation6": {
+    "name": "Poursuite de l'anéantissement du mal",
+    "description": {
+      "0": "Lorsque l'effet de soins de <strong>Tir de suppression rapide à courte portée</strong> a duré 12 s, tous les personnages de l'équipe à proximité récupèrent une fois des PV d'une valeur équivalant à 10 % des PV max de Chevreuse.",
+      "1": "Lorsqu'un personnage de l'équipe a été soigné par Tir de suppression rapide à courte portée, il bénéficie d'un <pyro>bonus de DGT Pyro</pyro> et d'un <electro>bonus de DGT Électro</electro> de 20 % pendant 8 s. Cet effet peut être cumulé 3 fois maximum, la durée de chaque cumul étant calculée indépendamment."
+    }
+  }
+}

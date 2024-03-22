@@ -1,0 +1,194 @@
+{
+  "name": "Mona",
+  "title": "Astral Reflection",
+  "description": "A mysterious young astrologer who proclaims herself to be \"Astrologist Mona Megistus,\" and who possesses abilities to match the title. Erudite, but prideful.",
+  "constellationName": "Astrolabos",
+  "auto": {
+    "name": "Ripple of Fate",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Attack</strong>",
+        "1": "Performs up to 4 water splash attacks that deal <hydro>Hydro DMG</hydro>."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Consumes a certain amount of Stamina to deal <hydro>AoE Hydro DMG</hydro> after a short casting time."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Gathering the might of Hydro, Mona plunges towards the ground from mid-air, damaging all opponents in her path. Deals <hydro>AoE Hydro DMG</hydro> upon impact with the ground."
+      }
+    },
+    "skillParams": {
+      "0": "1-Hit DMG",
+      "1": "2-Hit DMG",
+      "2": "3-Hit DMG",
+      "3": "4-Hit DMG",
+      "4": "Charged Attack DMG",
+      "5": "Charged Attack Stamina Cost",
+      "6": "Plunge DMG",
+      "7": "Low/High Plunge DMG",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Mirror Reflection of Doom",
+    "description": {
+      "0": "Creates an illusory Phantom of Fate from coalesced waterspouts.",
+      "1": "<br/>",
+      "2": "<strong>Phantom</strong>",
+      "3": "Has the following special properties:",
+      "4": [
+        "Continuously taunts nearby opponents, attracting their fire.",
+        "Continuously deals <hydro>Hydro DMG</hydro> to nearby opponents.",
+        "When its duration expires, the Phantom explodes, dealing <hydro>AoE Hydro DMG</hydro>."
+      ],
+      "5": "<br/>",
+      "6": "<strong>Hold</strong>",
+      "7": "Utilizes water currents to move backwards swiftly before conjuring a Phantom.",
+      "8": "<br/>",
+      "9": "Only one Phantom created by Mirror Reflection of Doom can exist at any time.",
+      "10": "<br/>",
+      "11": "<i>Skilled astrologers have always dreamed of using a phantom facsimile of themselves to ward off imminent ill fate, but Mona must be the first to make such a mockery of it in all of Teyvat.</i>"
+    },
+    "skillParams": {
+      "0": "DoT",
+      "1": "Explosion DMG",
+      "2": "CD",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Stellaris Phantasm",
+    "description": {
+      "0": "Mona summons the sparkling waves and creates a reflection of the starry sky, applying the Illusory Bubble status to opponents in a large AoE.",
+      "1": "<br/>",
+      "2": "<strong>Illusory Bubble</strong>",
+      "3": "Traps opponents inside a pocket of destiny and also makes them <hydro>Wet</hydro>. Renders weaker opponents immobile.",
+      "4": "When an opponent affected by Illusory Bubble sustains DMG, it has the following effects:",
+      "5": [
+        "Applies an Omen to the opponent, which gives a DMG Bonus, also increasing the DMG of the attack that causes it.",
+        "Removes the Illusory Bubble, dealing <hydro>Hydro</hydro> DMG in the process."
+      ],
+      "6": "<br/>",
+      "7": "<strong>Omen</strong>",
+      "8": "During its duration, increases DMG taken by opponents.",
+      "9": "<br/>",
+      "10": "<i>It was from the time that gods first traced the lights in the heavens with their eyes that the notion of \"fate\" was born.</i>"
+    },
+    "skillParams": {
+      "0": "Illusory Bubble Duration",
+      "1": "Illusory Bubble Explosion DMG",
+      "2": "DMG Bonus",
+      "3": "Omen Duration",
+      "4": "CD",
+      "5": "Energy Cost",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "sprint": {
+    "name": "Illusory Torrent",
+    "description": {
+      "0": "<strong>Alternate Sprint</strong>",
+      "1": "Mona cloaks herself within the water's flow, consuming Stamina to move rapidly.",
+      "2": "<br/>",
+      "3": "When under the effect of Illusory Torrent, Mona can move at high speed on water.",
+      "4": "Applies the <hydro>Wet</hydro> status to nearby opponents when she reappears.",
+      "5": "<br/>",
+      "6": "<i>This is something that Mona can do, but her teacher cannot. Well, but it's not as if her teacher would pursue any matter concerning Hydro Visions anyway...</i>"
+    }
+  },
+  "passive1": {
+    "name": "\"Come 'n' Get Me, Hag!\"",
+    "description": {
+      "0": "After she has used <strong>Illusory Torrent</strong> for 2s, if there are any opponents nearby, Mona will automatically create a Phantom.",
+      "1": "A Phantom created in this manner lasts for 2s, and its explosion DMG is equal to 50% of <strong>Mirror Reflection of Doom</strong>."
+    }
+  },
+  "passive2": {
+    "name": "Waterborne Destiny",
+    "description": {
+      "0": "Increases Mona's <hydro>Hydro DMG Bonus</hydro> by a degree equivalent to 20% of her Energy Recharge rate."
+    }
+  },
+  "passive3": {
+    "name": "Principium of Astrology",
+    "description": {
+      "0": "When Mona crafts Weapon Ascension Materials, she has a 25% chance to refund a portion of the crafting materials used."
+    }
+  },
+  "constellation1": {
+    "name": "Prophecy of Submersion",
+    "description": {
+      "0": "When any of your own party members hits an opponent affected by an Omen, the effects of <hydro>Hydro-related Elemental Reactions</hydro> are enhanced for 8s:",
+      "1": [
+        "Electro-Charged DMG increases by 15%.",
+        "Vaporize DMG increases by 15%.",
+        "Hydro Swirl DMG increases by 15%.",
+        "Frozen duration is extended by 15%."
+      ]
+    }
+  },
+  "constellation2": {
+    "name": "Lunar Chain",
+    "description": {
+      "0": "When a Normal Attack hits, there is a 20% chance that it will be automatically followed by a Charged Attack.",
+      "1": "This effect can only occur once every 5s."
+    }
+  },
+  "constellation3": {
+    "name": "Restless Revolution",
+    "description": {
+      "0": "Increases the Level of <strong>Stellaris Phantasm</strong> by 3.",
+      "1": "Maximum upgrade level is 15."
+    }
+  },
+  "constellation4": {
+    "name": "Prophecy of Oblivion",
+    "description": {
+      "0": "When any party member attacks an opponent affected by an Omen, their CRIT Rate is increased by 15%."
+    }
+  },
+  "constellation5": {
+    "name": "Mockery of Fortuna",
+    "description": {
+      "0": "Increases the Level of <strong>Mirror Reflection of Doom</strong> by 3.",
+      "1": "Maximum upgrade level is 15."
+    }
+  },
+  "constellation6": {
+    "name": "Rhetorics of Calamitas",
+    "description": {
+      "0": "Upon entering <strong>Illusory Torrent</strong>, Mona gains a 60% increase to the DMG of her next Charged Attack per second of movement.",
+      "1": "A maximum DMG Bonus of 180% can be achieved in this manner. The effect lasts for no more than 8s."
+    }
+  }
+}

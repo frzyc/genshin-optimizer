@@ -1,0 +1,166 @@
+{
+  "name": "Xingqiu",
+  "title": "Edelmütiger Jüngling",
+  "description": "Ein junger Mann, der häufig in der Nähe von Bücherständen gesehen werden kann. In der Hand trägt er ein Langschwert, in seiner Brust ein Herz für die Schwachen.",
+  "constellationName": "Fabulae Textile",
+  "auto": {
+    "name": "Guhua-Stil",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Standardangriff</strong>",
+        "1": "Führt bis zu 5 Schwerthiebe hintereinander aus."
+      },
+      "charged": {
+        "0": "<strong>Heftiger Schlag</strong>",
+        "1": "Verbraucht eine gewisse Menge Ausdauer und schwingt das Schwert zweimal schnell nach vorn."
+      },
+      "plunging": {
+        "0": "<strong>Angriff aus dem Fall</strong>",
+        "1": "Schlägt beim Fallen aus der Luft auf den Boden, greift alle Gegner in der Bahn an und verursacht beim Aufkommen Flächenschaden."
+      }
+    },
+    "skillParams": {
+      "0": "SCH Phase 1",
+      "1": "SCH Phase 2",
+      "2": "SCH Phase 3",
+      "3": "SCH Phase 4",
+      "4": "SCH Phase 5",
+      "5": "SCH heftiger Schläge",
+      "6": "Ausdauerverbrauch heftiger Schläge",
+      "7": "SCH beim Fallen",
+      "8": "SCH beim Fallen aus niedriger/großer Höhe",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Guhua-Schwert – Wolkenbruch",
+    "description": {
+      "0": "Greift zweimal mit dem Schwert an und fügt gegenüberstehenden Gegnern <hydro>Hydro-Schaden</hydro> zu. Erstellt die Höchstzahl an Regenschwertern, die die aktuelle eigene Figur umkreisen.",
+      "1": "Merkmale:",
+      "2": [
+        " Wird bei Erleiden von Schaden zerstört und verringert den erlittenen Schaden.",
+        " Erhöht den Unterbrechungs-WDS der Figur."
+      ],
+      "3": "20 % von Xingqius <hydro>Hydro-SCH-Bonus</hydro> werden zusätzlich zu Schadensminderung der Regenschwerter umgewandelt.",
+      "4": "<br/>",
+      "5": "Bis zu 24 % zusätzliche Schadensminderung auf diese Weise möglich.",
+      "6": "Anfänglich bis zu 3 Regenschwerter möglich.",
+      "7": "Verleiht der Figur bei Anwendung den Zustand <hydro>Nass</hydro> .",
+      "8": "<br/>",
+      "9": "<i>„Drachen sind einfacher zu zerteilen als der Regen.“</i>"
+    },
+    "skillParams": {
+      "0": "Fähigkeits-SCH",
+      "1": "SCH-Minderungsrate",
+      "2": "Dauer",
+      "3": "Abklingzeit",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Guhua-Schwert – Regen und Bogen",
+    "description": {
+      "0": "Wendet „Regenbogentechnik“ an, um mit Illusionsschwertern zu kämpfen, und erstellt die Höchstzahl an Regenschwertern.",
+      "1": "<br/>",
+      "2": "<strong>Regenbogentechnik</strong>",
+      "3": [
+        " Standardangriffe der aktuellen eigenen Figur lösen aufeinanderfolgende Schwertregenangriffe aus, die <hydro>Hydro-Schaden</hydro> verursachen.",
+        " Die Anzahl der Regenschwerter bleibt unverändert auf der höchsten Anzahl."
+      ],
+      "4": "<br/>",
+      "5": "<i>Die Regenschnittkunst ist eine geheime Technik der Guhua-Schule, die nicht an normale Schüler weitergegeben wird.</i>"
+    },
+    "skillParams": {
+      "0": "Schwertregen-SCH",
+      "1": "Dauer",
+      "2": "Abklingzeit",
+      "3": "Elementarenergie",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Hydropathie",
+    "description": {
+      "0": "Stellt der aktuellen Figur bei Zerstörung eines Regenschwerts durch einen Angriff oder nach Ablauf der Wirkungsdauer LP in Höhe von 6 % der max. LP von Xingqiu wieder her."
+    }
+  },
+  "passive2": {
+    "name": "Realistischer Schreibstil",
+    "description": {
+      "0": "Erhöht Xingqius <hydro>Hydro-Schaden</hydro> um 20 %."
+    }
+  },
+  "passive3": {
+    "name": "Gedankenblitz",
+    "description": {
+      "0": "Gibt beim Zusammensetzen von Material für Figurentalente mit einer Wahrscheinlichkeit von 25 % einen Teil der Materialien zurück."
+    }
+  },
+  "constellation1": {
+    "name": "Nachgeschmack",
+    "description": {
+      "0": "Erhöht die Höchstmenge an Regenschwertern um 1."
+    }
+  },
+  "constellation2": {
+    "name": "Klarer Himmel",
+    "description": {
+      "0": "Verlängert die Dauer von <strong>Guhua-Schwert – Regen und Bogen</strong> um 3 s.",
+      "1": "Verringert außerdem den <hydro>Hydro-WDS</hydro> von mit Schwertregen angegriffenen Gegnern 4 s lang um 15 %."
+    }
+  },
+  "constellation3": {
+    "name": "Reimemacher",
+    "description": {
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Guhua-Schwert – Regen und Bogen</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation4": {
+    "name": "Vernichter des Bösen",
+    "description": {
+      "0": "Erhöht den mit <strong>Guhua-Schwert – Wolkenbruch</strong> verursachten Schaden während der Wirkungsdauer von <strong>Guhua-Schwert – Regen und Bogen</strong> um 50 %."
+    }
+  },
+  "constellation5": {
+    "name": "Tanz im Regen",
+    "description": {
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Guhua-Schwert – Wolkenbruch</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation6": {
+    "name": "Gesammelte Werke",
+    "description": {
+      "0": "Verstärkt jeden dritten Schwertregenangriff von <strong>Guhua-Schwert – Regen und Bogen</strong> enorm und stellt Xingqiu bei einem Treffer damit 3 Punkte Elementarenergie wieder her."
+    }
+  }
+}

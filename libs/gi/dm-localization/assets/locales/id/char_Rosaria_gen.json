@@ -1,0 +1,154 @@
+{
+  "name": "Rosaria",
+  "title": "Thorny Benevolence",
+  "description": "Seorang suster yang selain dari pakaiannya, tidak terlihat seperti seorang suster sama sekali. Dikenal karena kata-katanya yang tajam dan dingin. Sering terlihat bekerja sendiri.",
+  "constellationName": "Spinea Corona",
+  "auto": {
+    "name": "Spear of the Church",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Attack</strong>",
+        "1": "Melancarkan hingga 5 serangan berturut-turut menggunakan tombak."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Mengonsumsi sejumlah Stamina untuk menerjang ke depan, mengakibatkan DMG pada musuh di jalurnya."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Menerjang dari udara untuk menghantam tanah, menyerang musuh di jalur terjangan dan mengakibatkan DMG area saat mendarat."
+      }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Tahap 4",
+      "4": "DMG Tahap 5",
+      "5": "DMG Charged Attack",
+      "6": "Konsumsi Stamina Charged Attack",
+      "7": "DMG Selama Plunging",
+      "8": "DMG Plunging Attack Rendah/Tinggi",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Ravaging Confession",
+    "description": {
+      "0": "Rosaria bergerak dengan cepat, muncul di belakang musuh, lalu menusuk dan menebas dengan polearm, mengakibatkan <cryo>Cryo DMG</cryo>.",
+      "1": "Talenta ini tidak dapat digunakan untuk bergerak ke belakang musuh yang bertubuh lebih besar.",
+      "2": "<br/>",
+      "3": "<i>Mereka yang mengaku dosa pada Suster Rosaria tidak akan mendapatkan pengampunan. Sebaliknya, para pendosa akan menerima hukuman dingin yang menusuk tulang, masing-masing sebanding dengan berat dosa yang mereka lakukan.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "Cooldown",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Rites of Termination",
+    "description": {
+      "0": "Doa khas Rosaria. Setelah mengayunkan senjatanya untuk menebas musuh di sekitar, dia akan melancarkan Ice Lance yang menghantam tanah. Kedua aksi tersebut mengakibatkan <cryo>Cryo DMG</cryo>.",
+      "1": "Saat Talenta ini aktif, Ice Lance akan mengeluarkan hawa dingin secara berkala, mengakibatkan <cryo>Cryo DMG</cryo> pada musuh di sekitar.",
+      "2": "<br/>",
+      "3": "<i> Penghakiman adalah pekerjaan yang merepotkan. Kusarankan sebaiknya kita lewatkan saja, dan langsung masuk ke tahap terakhir! Rosaria bukan seseorang yang taat pada Dewa Anemo, karena itu, menurut Rosaria, penghakiman adalah pekerjaan yang mudah.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "DMG berkelanjutan Ice Lance",
+      "2": "Durasi",
+      "3": "Cooldown",
+      "4": "Konsumsi Energy",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Regina Probationum",
+    "description": {
+      "0": "Saat Rosaria menyerang musuh dari belakang menggunakan <strong>Ravaging Confession</strong>, CRIT Rate Rosaria akan meningkat 12% selama 5 detik."
+    }
+  },
+  "passive2": {
+    "name": "Shadow Samaritan",
+    "description": {
+      "0": "Melancarkan <strong>Rites of Termination</strong> akan meningkatkan CRIT Rate seluruh anggota party di sekitar (tidak termasuk Rosaria sendiri) sebesar 15% dari CRIT Rate Rosaria selama 10 detik.",
+      "1": "Bonus CRIT Rate yang didapat dari Talenta ini tidak dapat melebihi 15%."
+    }
+  },
+  "passive3": {
+    "name": "Night Walk",
+    "description": {
+      "0": "Saat malam hari (18:00 — 06:00), anggota party sendiri mendapatkan efek peningkatan kecepatan: meningkatkan 10% Movement SPD.",
+      "1": "Efek ini tidak aktif dalam Domain, Domain Trounce, atau Spiral Abyss. Efek peningkatan kecepatan tidak dapat ditumpuk."
+    }
+  },
+  "constellation1": {
+    "name": "Unholy Revelation",
+    "description": {
+      "0": "Setelah Rosaria mengakibatkan serangan CRIT, ATK SPD dan DMG Normal Attack Rosaria meningkat 10% selama 4 detik."
+    }
+  },
+  "constellation2": {
+    "name": "Land Without Promise",
+    "description": {
+      "0": "Durasi Ice Lance yang terbentuk dari Talenta <strong>Rites of Termination</strong> bertambah 4 detik."
+    }
+  },
+  "constellation3": {
+    "name": "The Wages of Sin",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Ravaging Confession</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Painful Grace",
+    "description": {
+      "0": "Serangan CRIT <strong>Ravaging Confession</strong> memulihkan 5 Energy Rosaria.",
+      "1": "Hanya dapat terpicu setiap Ravaging Confession dilancarkan."
+    }
+  },
+  "constellation5": {
+    "name": "Last Rites",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Rites of Termination</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Divine Retribution",
+    "description": {
+      "0": "Serangan dari <strong>Rites of Termination</strong> dapat mengurangi 20% Physical RES musuh selama 10 detik."
+    }
+  }
+}

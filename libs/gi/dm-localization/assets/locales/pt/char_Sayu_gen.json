@@ -1,0 +1,185 @@
+{
+  "name": "Sayu",
+  "title": "Mujina Ninja",
+  "description": "Uma Ninja pertencente ao Shiyuumatsu-Ban que parece sempre estar cansada.",
+  "constellationName": "Nyctereutes Minor",
+  "auto": {
+    "name": "Lâmina de Ninja Shiyuumatsu-Ban",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Ataque Normal</strong>",
+        "1": "Realiza até 4 golpes consecutivos."
+      },
+      "charged": {
+        "0": "<strong>Ataque Carregado</strong>",
+        "1": "Drena Stamina ao longo do tempo para realizar um ataque giratório contínuo contra todos os inimigos próximos.",
+        "2": "Ao final da sequência, realiza um corte poderoso."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Imersivo</strong>",
+        "1": "Mergulha em pleno ar para golpear o chão, causando dano aos inimigos em seu caminho e infligindo Dano em uma AdE durante o impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Dano do 1° Golpe",
+      "1": "Dano do 2° Golpe",
+      "2": "Dano do 3° Golpe",
+      "3": "Dano do 4° Golpe",
+      "4": "Dano de Loop de Ataque Carregado",
+      "5": "Dano Final de Ataque Carregado",
+      "6": "Consumo de Stamina de Ataque Carregado",
+      "7": "Duração Máxima",
+      "8": "Dano Durante a Queda",
+      "9": "Dano de Queda de Baixa/Alta Altitude",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Arte Yoohoo: Ataque Fuuin",
+    "description": {
+      "0": "A técnica especial das Artes Ninja Yoohoo! Uma técnica veloz como um raio que circula por todo o campo!",
+      "1": "Forma uma Roda Fuufuu e colide nos inimigos em alta velocidade, causando <anemo>Dano Anemo</anemo>. Quando a duração termina, lança um Chute da Roda Fuufuu, causando <anemo>Dano Anemo em uma AdE</anemo>.",
+      "2": "<br/>",
+      "3": "<strong>Pressionar</strong>",
+      "4": "Entra no estado da Roda Fuufuu, rebola para a frente em uma distância curta antes de usar o Chute da Roda Fuufuu.",
+      "5": "<br/>",
+      "6": "<strong>Manter pressionado</strong>",
+      "7": "Gira continuamente no estado da Roda Fuufuu, aumentando a resistência de Sayu à interrupção durante esse estado.",
+      "8": "Durante este tempo, Sayu pode controlar a direção da Roda e pode usar a habilidade novamente para terminar seu estado de Roda e liberar uma versão mais forte do Chute da Roda Fuufuu. A versão dessa habilidade com Manter Pressionado pode desencadear uma Absorção Elemental.",
+      "9": "<br/>",
+      "10": "Dura até 10s, ao final do efeito, a habilidade entrará em Recarga. Quanto maior o tempo sob o estado da Roda Fuufuu, maior será a Recarga.",
+      "11": "<br/>",
+      "12": "<strong>Absorção Elemental</strong>",
+      "13": "Se Sayu entrar em contato com os elementos <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<electro>Electro</electro> durante seu estado de Roda, ela irá causar Dano elemental adicional baseado naquele tipo.",
+      "14": "Absorção Elemental pode ocorrer apenas uma vez por uso.",
+      "15": "<br/>",
+      "16": "<i>Sayu pode usar essa habilidade com seus olhos fechados. Esta técnica foi originalmente criada para escapar, mas agora que ela tem uma Visão, pode também servir para dificultar a vida dos seus inimigos enquanto ela usa a habilidade.</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Roda Fuufuu",
+      "1": "Dano de Pressionar em Chute da Roda Fuufuu",
+      "2": "Dano ao Manter Pressionado Chute da Roda Fuufuu",
+      "3": "Dano Elemental Adicional da Roda Fuufuu",
+      "4": "Dano Elemental Adicional ao Manter Pressionado da Roda Fuufuu",
+      "5": "Duração Máxima por Manter Pressionado",
+      "6": "Tempo de Recarga",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Arte Yoohoo: Agitação Mujina",
+    "description": {
+      "0": "Outra técnica muito especial das Artes Ninja Yoohoo! Ela invoca um par de mãos ajudantes para Sayu.",
+      "1": "Inflige <anemo>Dano Anemo</anemo> aos inimigos ao redor e cura todos os personagens da equipe ao redor. A quantidade de Vida restaurada é baseada no ATQ de Sayu. A habilidade invoca então Daruma Muji-Muji.",
+      "2": "<br/>",
+      "3": "<strong>Daruma Muji-Muji</strong>",
+      "4": "Em intervalos específicos, Daruma irá tomar uma das muitas ações com base na situação ao seu redor:",
+      "5": [
+        "Se houver personagens ativos ao redor com mais de 70% de Vida, Daruma irá atacar um inimigo por perto infligindo <anemo>Dano Anemo</anemo>;",
+        "Se houver personagens ativos por perto com 70% ou menos de Vida, Daruma irá curar o personagem ativo com menos porcentagem de Vida. Se não houver oponentes ao redor e os personagens tiverem mais de 70% de Vida, ele irá curar os personagens."
+      ],
+      "6": "<br/>",
+      "7": "<i>As pessoas que não entendem nada sobre ninjutsu adoram ver Sayu mostrando sua habilidade, e alguns tentaram aprender com ela. Mas Sayu apenas quer dormir e não ser incomodada.</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Ativação da Habilidade",
+      "1": "Cura da Ativação da Habilidade",
+      "2": "Dano de Daruma Muji-Muji",
+      "3": "Cura de Daruma Muji-Muji",
+      "4": "Duração",
+      "5": "Tempo de Recarga",
+      "6": "Energia Elemental",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Alguém Mais Adequado",
+    "description": {
+      "0": "Quando Sayu desencadeia uma reação de Redemoinho enquanto ela estiver no campo de batalha, ela cura todos os seus personagens e aliados próximos em 300 de Vida. Ela também curará um adicional de 1.2 de Vida para cada ponto de Proficiência Elemental que ela possuir.",
+      "1": "Esse efeito pode ocorrer uma vez a cada 2s."
+    }
+  },
+  "passive2": {
+    "name": "Não Tem Trabalho Hoje!",
+    "description": {
+      "0": "O Daruma Muji-Muji invocado pela <strong>Arte Yoohoo: Agitação Mujina</strong> ganha os seguintes efeitos: ",
+      "1": "Quando um personagem é curado, outros personagens próximos a ele e em combate recuperam uma quantidade de Vida de 20% do que foi recuperado pelo primeiro personagem. ",
+      "2": "Aumenta a área de Danos durante o ataque contra inimigos."
+    }
+  },
+  "passive3": {
+    "name": "Arte Yoohoo: Segredo da Dissimulação",
+    "description": {
+      "0": "Quando Sayu estiver na equipe, seus personagens não irão assustar as Borboletas de Cristais e alguns outros animais ao chegar perto deles.",
+      "1": "Cheque a sub-categoria \"Outros\" da seção \"Seres Vivos/Animais Selvagens\" do Arquivo, para descobrir com quais criaturas esta habilidade funciona."
+    }
+  },
+  "constellation1": {
+    "name": "Técnica de Multitarefa",
+    "description": {
+      "0": "O Daruma Muji-Muji criado por <strong>Arte Yoohoo: Agitação Mujina</strong> ignora os limites de Vida e pode simultaneamente atacar inimigos próximos e curar personagens."
+    }
+  },
+  "constellation2": {
+    "name": "Fora do Meu Caminho!",
+    "description": {
+      "0": "<strong>Arte Yoohoo: Ataque Fuuin</strong> obtém os seguintes efeitos:",
+      "1": [
+        "Quando pressiona para lançar, o Dano causado por Chute da Roda Fuufuu aumenta 3.3%;",
+        "A cada 0.5s no estado da Roda Fuufuu aumenta o Dano de Chute da Roda Fuufuu por 3.3%. O aumento máximo de Dano através deste método é 66%."
+      ]
+    }
+  },
+  "constellation3": {
+    "name": "Deixe para o Bunshin",
+    "description": {
+      "0": "Aumenta o nível da <strong>Arte Yoohoo: Agitação Mujina</strong> em 3 níveis.",
+      "1": "O nível máximo de elevação é 15."
+    }
+  },
+  "constellation4": {
+    "name": "Novo Método de Ser Preguiçosa",
+    "description": {
+      "0": "Sayu regenera 1.2 de Energia quando ela desencadeia uma reação de Redemoinho.",
+      "1": "Este efeito ocorre uma vez a cada 2s."
+    }
+  },
+  "constellation5": {
+    "name": "A Velocidade Vem Primeiro",
+    "description": {
+      "0": "Aumenta o nível da <strong>Arte Yoohoo: Ataque Fuuin</strong> em 3 níveis. ",
+      "1": "O nível máximo de elevação é 15."
+    }
+  },
+  "constellation6": {
+    "name": "Só Mais Cinco Minutinhos",
+    "description": {
+      "0": "O Ataque e Recuperação de Daruma Muji-Muji criado por <strong>Arte Yoohoo: Agitação Mujina</strong> de Sayu agora beneficiam também de sua Proficiência Elemental. Cada ponto de Proficiência Elemental irá produzir os seguintes efeitos:",
+      "1": [
+        "Aumenta o dano causado pelos Ataques de Muji-Muji Daruma em 0.2% de ATQ. Um máximo de 400% de ATQ pode ser obtido através desse método;",
+        "A quantidade de HP restaurada por Muji-Muji Daruma é aumentada em 3. Um máximo de 6000 HP pode ser restaurado dessa forma."
+      ]
+    }
+  }
+}

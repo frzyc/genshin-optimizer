@@ -1,0 +1,24 @@
+{
+  "name": "Espada do Viajante",
+  "description": {
+    "0": "Uma espada de aço que esconde tesouras, lupas, entre outros itens úteis de viagem em sua bainha."
+  },
+  "passiveName": "Jornada",
+  "passiveDescription": {
+    "0": {
+      "0": "Cada Orbe ou Partícula Elemental coletada restaura <cryo>1%</cryo> da Vida."
+    },
+    "1": {
+      "0": "Cada Orbe ou Partícula Elemental coletada restaura <cryo>1.25%</cryo> da Vida."
+    },
+    "2": {
+      "0": "Cada Orbe ou Partícula Elemental coletada restaura <cryo>1.5%</cryo> da Vida."
+    },
+    "3": {
+      "0": "Cada Orbe ou Partícula Elemental coletada restaura <cryo>1.75%</cryo> da Vida."
+    },
+    "4": {
+      "0": "Cada Orbe ou Partícula Elemental coletada restaura <cryo>2%</cryo> da Vida."
+    }
+  }
+}

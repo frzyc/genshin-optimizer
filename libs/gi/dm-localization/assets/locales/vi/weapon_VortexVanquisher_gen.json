@@ -1,0 +1,24 @@
+{
+  "name": "Giáo Nịnh Thần",
+  "description": {
+    "0": "Thanh thương sắc bén có thể chọc thủng mọi thứ. Khi sử dụng, dường như thấy được vệt rách mà thanh thương cứa vào không khí."
+  },
+  "passiveName": "Hoàng Cực Chương Vàng",
+  "passiveDescription": {
+    "0": {
+      "0": "Hiệu quả khiên tăng <cryo>20%</cryo>. Trong vòng 8s sau khi đánh trúng, tấn công tăng <cryo>4%</cryo>. Cộng dồn 5 tầng, mỗi 0.3s chỉ được thi triển 1 lần. Ngoài ra, khi được khiên bảo vệ, hiệu quả tăng tấn công sẽ tăng 100%."
+    },
+    "1": {
+      "0": "Hiệu quả khiên tăng <cryo>25%</cryo>. Trong vòng 8s sau khi đánh trúng, tấn công tăng <cryo>5%</cryo>. Cộng dồn 5 tầng, mỗi 0.3s chỉ được thi triển 1 lần. Ngoài ra, khi được khiên bảo vệ, hiệu quả tăng tấn công sẽ tăng 100%."
+    },
+    "2": {
+      "0": "Hiệu quả khiên tăng <cryo>30%</cryo>. Trong vòng 8s sau khi đánh trúng, tấn công tăng <cryo>6%</cryo>. Cộng dồn 5 tầng, mỗi 0.3s chỉ được thi triển 1 lần. Ngoài ra, khi được khiên bảo vệ, hiệu quả tăng tấn công sẽ tăng 100%."
+    },
+    "3": {
+      "0": "Hiệu quả khiên tăng <cryo>35%</cryo>. Trong vòng 8s sau khi đánh trúng, tấn công tăng <cryo>7%</cryo>. Cộng dồn 5 tầng, mỗi 0.3s chỉ được thi triển 1 lần. Ngoài ra, khi được khiên bảo vệ, hiệu quả tăng tấn công sẽ tăng 100%."
+    },
+    "4": {
+      "0": "Hiệu quả khiên tăng <cryo>40%</cryo>. Trong vòng 8s sau khi đánh trúng, tấn công tăng <cryo>8%</cryo>. Cộng dồn 5 tầng, mỗi 0.3s chỉ được thi triển 1 lần. Ngoài ra, khi được khiên bảo vệ, hiệu quả tăng tấn công sẽ tăng 100%."
+    }
+  }
+}

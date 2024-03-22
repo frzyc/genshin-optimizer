@@ -1,0 +1,24 @@
+{
+  "name": "Spada nera",
+  "description": {
+    "0": "Una spada lunga, nera come la pece e assetata di guerre e di sangue. Si dice che quest'arma possa ubriacare chi la brandisce del vino rosso delle mattanze."
+  },
+  "passiveName": "Giustizia",
+  "passiveDescription": {
+    "0": {
+      "0": "Aumenta i DAN inflitti da attacchi normali e caricati di un <cryo>20%</cryo>. Inoltre, rigenera PS pari a un <cryo>60%</cryo> dell'ATT quando gli attacchi normali e caricati mettono a segno un colpo CRIT. Quest'effetto si può verificare una volta ogni 5 s."
+    },
+    "1": {
+      "0": "Aumenta i DAN inflitti da attacchi normali e caricati di un <cryo>25%</cryo>. Inoltre, rigenera PS pari a un <cryo>70%</cryo> dell'ATT quando gli attacchi normali e caricati mettono a segno un colpo CRIT. Quest'effetto si può verificare una volta ogni 5 s."
+    },
+    "2": {
+      "0": "Aumenta i DAN inflitti da attacchi normali e caricati di un <cryo>30%</cryo>. Inoltre, rigenera PS pari a un <cryo>80%</cryo> dell'ATT quando gli attacchi normali e caricati mettono a segno un colpo CRIT. Quest'effetto si può verificare una volta ogni 5 s."
+    },
+    "3": {
+      "0": "Aumenta i DAN inflitti da attacchi normali e caricati di un <cryo>35%</cryo>. Inoltre, rigenera PS pari a un <cryo>90%</cryo> dell'ATT quando gli attacchi normali e caricati mettono a segno un colpo CRIT. Quest'effetto si può verificare una volta ogni 5 s."
+    },
+    "4": {
+      "0": "Aumenta i DAN inflitti da attacchi normali e caricati di un <cryo>40%</cryo>. Inoltre, rigenera PS pari a un <cryo>100%</cryo> dell'ATT quando gli attacchi normali e caricati mettono a segno un colpo CRIT. Quest'effetto si può verificare una volta ogni 5 s."
+    }
+  }
+}

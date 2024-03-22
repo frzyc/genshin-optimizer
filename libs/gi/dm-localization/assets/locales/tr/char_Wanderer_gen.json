@@ -1,0 +1,178 @@
+{
+  "name": "Avare",
+  "title": "Sonsuzluğa Sürüklenme",
+  "description": "Kimliği gizemli olan bir gezgin. Bir dağ keşişi gibi giyinse de hiç de öyle davranmıyor.",
+  "constellationName": "Salik",
+  "auto": {
+    "name": "Yuuban Meigen",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Saldırı</strong>",
+        "1": "Rüzgar kılıçlarıyla en fazla 3 saldırı yaparak <anemo>Rüzgar Hasarı</anemo> verir."
+      },
+      "charged": {
+        "0": "<strong>Yüklü Saldırı</strong>",
+        "1": "Belirli miktarda Dayanıklılık harcayarak yüksek rüzgar basıncı toplar ve kısa süre kullanıldıktan sonra <anemo>Rüzgar Alan Hasarı</anemo> verir."
+      },
+      "plunging": {
+        "0": "<strong>Havadan Saldırı</strong>",
+        "1": "Avare, Rüzgarın gücünü çağırarak havadayken yere doğru atılır ve yoluna çıkan tüm düşmanlara hasar verir. Yere vurduğunda <anemo>Rüzgar Alan Hasarı</anemo> verir."
+      }
+    },
+    "skillParams": {
+      "0": "1 Vuruş Hasarı",
+      "1": "2 Vuruş Hasarı",
+      "2": "3 Vuruş Hasarı",
+      "3": "Yüklü Saldırı Hasarı",
+      "4": "Yüklü Saldırı Dayanıklılık Maliyeti",
+      "5": "Havadan Saldırı Hasarı",
+      "6": "Havadan Saldırı Hasarı (Alçaktan/Yüksekten)",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Hanega: Rüzgar Şarkısı",
+    "description": {
+      "0": "Rüzgarların gücünü odaklayarak dünyevi zincirlerden kurtulur. Havaya yükselip Akım Harmonisi durumuna girmeden önce <anemo>Rüzgar Alan Hasarı</anemo> verir.",
+      "1": "<br/>",
+      "2": "<strong>Akım Harmonisi</strong>",
+      "3": "Avare, bu durumdayken Havadan Saldırı yapamaz. Normal ve Yüklü Saldırıları sırasıyla Kuugo: Fushoudan ve Kuugo: Toufukai olarak değişir, verdikleri Hasar ve Etki Alanları artar; ayrıca verilen Hasar sırasıyla Normal ve Yüklü Saldırı Hasarı olarak sayılır. Kuugo: Toufukai Dayanıklılık tüketmez.",
+      "4": "Avare, bu durumdayken sürekli havada süzülür. Bu durum etkinken Avare'nin hareketleri şu özellikleri kazanır:",
+      "5": [
+        "Havada süzülmek için sürekli Kuugoryoku Puanı harcar.",
+        "Depar atarken havada hızlanmak için ek Kuugoryoku Puanı harcanır. Depara basılı tutmak hızın korunması için sürekli Kuugoryoku Puanı harcanmasına neden olur. Bu etki, varsayılan deparın yerine geçer.",
+        "Sıçramak ek Kuugoryoku Puanı harcayarak süzülme irtifasını artırır. Sıçramaya basılı tutmak süzülme irtifasını artırmak için sürekli Kuugoryoku Puanı harcanmasına neden olur."
+      ],
+      "6": "<br/>",
+      "7": "Kuugoryoku Puanının bitmesi Akım Harmonisi durumunu sona erdirir.",
+      "8": "Akım Harmonisi durumundayken becerinin tekrar kullanılması durumu sonlandırır.",
+      "9": "<br/>",
+      "10": "<i>\"Dünya, ağırlığı olmayan bir akımda akar ve yalnızca çiçeklerde bulunan bir sırrı ortaya çıkarır.\"</i>"
+    },
+    "skillParams": {
+      "0": "Beceri Hasarı",
+      "1": "Kuugo: Fushoudan Hasarı",
+      "2": "Kuugo: Toufukai Hasarı",
+      "3": "Başlangıç Kuugoryoku Puanı",
+      "4": "BS",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Kyougen: Beşli Merasim Oyunu",
+    "description": {
+      "0": "Ortamdaki havayı tek bir boşluğa sıkıştırarak tüm dertlerden kurtulur ve birkaç defa <anemo>Rüzgar Alan Hasarı</anemo> verir.",
+      "1": "Eğer karakter, \"Hanega: Rüzgar Şarkısı\" becerisinin sağladığı Akım Harmonisi durumundaysa bu beceri kullanıldıktan sonra Akım Harmonisi durumu sona erer.",
+      "2": "<br/>",
+      "3": "<i>\"Göğün parlak bakışı, hem önceki hem de şimdiki rüyaları tıpkı esen rüzgardaki toz tanelerinin parlaması gibi aydınlatır.\"</i>"
+    },
+    "skillParams": {
+      "0": "Beceri Hasarı",
+      "1": "BS",
+      "2": "Enerji Maliyeti",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Yeşim Kaplı Çiçek",
+    "description": {
+      "0": "<strong>Hanega: Rüzgar Şarkısı</strong>, <hydro>Su</hydro>/<pyro>Ateş</pyro>/<cryo>Buz</cryo>/<electro>Elektrik</electro> ile temas ederse Akım Harmonisi kullanıldığında temas edilen elementlere göre şu güçlendirmeleri verir:",
+      "1": [
+        "<hydro>Su</hydro>: Kuugoryoku Puanı sınırı 20 artar.",
+        "<pyro>Ateş</pyro>: Saldırı %30 artar.",
+        "<cryo>Buz</cryo>: Kritik Oranı %20 artar.",
+        "<electro>Elektrik</electro>: Normal ve Yüklü Saldırılar bir düşmana isabet ettiğinde 0,8 Enerji yenilenir. Enerji, bu şekilde her 0,2 saniyede bir yenilenebilir."
+      ],
+      "2": "<br/>",
+      "3": "Bu güçlendirmelerden aynı anda en fazla 2 tanesine sahip olabilirsin."
+    }
+  },
+  "passive2": {
+    "name": "Bora Rüyası",
+    "description": {
+      "0": "Avare, <strong>Akım Harmonisi</strong> durumundayken Kuugo: Fushoudan ve Kuugo: Toufukai ile düşmanını vurduğunda İniş etkisi almak için %16 şansı olur. Avare, bir sonraki sefer Akım Harmonisi durumundayken süzülürken hızlandığında bu etki silinir, bu hızlanma Kuugoryoku Puanı harcamaz ve her biri Saldırısının %35'i kadar <anemo>Rüzgar Hasarı</anemo> veren 4 ok atar.",
+      "1": "Bu etkiyi vermeyen her Kuugo: Fushoudan ve Kuugo: Toufukai için sonraki bu türden saldırılarda etki oluşturma olasılığı %12 artar. Etki oluşturma olasılığı her 0,1 saniyede bir hesaplanır."
+    }
+  },
+  "passive3": {
+    "name": "Girdap Uğultusu",
+    "description": {
+      "0": "Yayı ve Katalizörü yükseltirken harcanan Mora %50 azalır."
+    }
+  },
+  "constellation1": {
+    "name": "Shoban: Gösterişli Tüy",
+    "description": {
+      "0": "<strong>Akım Harmonisi</strong> durumundayken Avare'nin Kuugo: Fushoudan ve Kuugo: Toufukai Saldırı Hızı %10 artar.",
+      "1": "Ek olarak Bora Rüyası Pasif Yeteneği tarafından ateşlenen rüzgar okları, Avare'nin Saldırısının %25'i kadar ek Hasar verir. Öncelikle \"Bora Rüyası\" Pasif Yeteneğinin açılmış olması gerekir."
+    }
+  },
+  "constellation2": {
+    "name": "Niban: Beyaz Dalgaların Eşiğindeki Ada",
+    "description": {
+      "0": "<strong>Akım Harmonisi</strong> durumundayken <strong>Kyougen: Beşli Merasim Oyunu</strong> hasarı, bu beceriyi kullanırken Kuugoryoku Puanı sınırı miktarıyla mevcut Kuugoryoku Puanı miktarı farkının her bir birim değeri için %4 artar.",
+      "1": "Bu yöntemle Kyougen: Beşli Merasim Oyununun Hasarı en fazla %200 artırılabilir."
+    }
+  },
+  "constellation3": {
+    "name": "Sanban: Kasım Çiçeği Kusemai",
+    "description": {
+      "0": "<strong>Kyougen: Beşli Merasim Oyunu</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation4": {
+    "name": "Yonban: Bahara Doğru",
+    "description": {
+      "0": "<strong>Hanega: Rüzgar Şarkısı</strong> becerisini kullanırken \"Yeşim Kaplı Çiçek\" Pasif Yeteneği tetiklenirse karakter, temas ettiği Element türüne göre güçlendirmeler ve tetiklenmemiş rastgele bir güçlendirme kazanır. Aynı anda bu türden en fazla ilgili 3 element güçlendirmesi bulunabilir.",
+      "1": "\"Yeşim Kaplı Çiçek\" Pasif Yeteneğinin açılmış olması gerekir."
+    }
+  },
+  "constellation5": {
+    "name": "Matsuban: Uzaklardaki Kadim Işık",
+    "description": {
+      "0": "<strong>Hanega: Rüzgar Şarkısı</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation6": {
+    "name": "Shugen: Kasvetle Dalgalanan Perdeler",
+    "description": {
+      "0": "Avare, <strong>Akım Harmonisi</strong> durumundayken bir düşmana sürekli Kuugo: Fushoudan ile vurursa şu etkiler tetiklenir:",
+      "1": [
+        "Vurulan yerde %40 Saldırı oranında Rüzgar Hasarı veren ek bir Kuugo: Fushoudan gerçekleşir. Bu Hasar, Normal Saldırı Hasarı sayılır.",
+        "Avare, 40 Kuugoryoku Puanı altına düştüğünde 4 Puan yeniler. Bu yöntemle Kuugoryoku Puanı her 0,2 saniyede bir yenilenebilir. Bu yenileme her bir Akım Harmonisi süresince 5 defaya kadar gerçekleşebilir."
+      ]
+    }
+  }
+}

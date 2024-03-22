@@ -1,0 +1,161 @@
+{
+  "name": "Kuki Shinobu",
+  "title": "La Resolutora de Apuros",
+  "description": "La hábil y confiable subjefa de la Banda de Arataki. Menos mal que está ella, si no, la Banda de Arataki no tendría nada de “hábil” ni “confiable”.",
+  "constellationName": "Tribulatio Demptio",
+  "auto": {
+    "name": "Corte alado Shinobu",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Ataque Normal</strong>",
+        "1": "Realiza hasta 4 ataques consecutivos con espada."
+      },
+      "charged": {
+        "0": "<strong>Ataque Cargado</strong>",
+        "1": "Consume cierta cantidad de Aguante para desatar un doble golpe de espada."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Descendente</strong>",
+        "1": "Se lanza desde el aire para golpear el suelo, dañando a los enemigos cercanos e infligiendo Daño en el AdE en el momento del impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Daño de 1er golpe",
+      "1": "Daño de 2.º golpe",
+      "2": "Daño de 3er golpe",
+      "3": "Daño de 4.º golpe",
+      "4": "Daño de ATQ Cargado",
+      "5": "Coste de Aguante de ATQ Cargado",
+      "6": "Daño de Caída",
+      "7": "Daño de impacto de caída baja/alta",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Anillo purificador herboatronador",
+    "description": {
+      "0": "Consume una parte de la Vida del personaje para crear un anillo purificador que inflige <electro>Daño Electro</electro> a los enemigos cercanos.",
+      "1": "<br/>",
+      "2": "<strong>Anillo purificador</strong>",
+      "3": "Acompaña al personaje en uso para infligir <electro>Daño Electro</electro> cada 1.5 s contra los enemigos de alrededor y regenerar Vida a los personajes en uso que estén en el AdE del anillo. La cantidad de Vida regenerada varía en función de la Vida Máx. de Kuki Shinobu.",
+      "4": "<br/>",
+      "5": "La Vida consumida para usar esta habilidad no reducirá la Vida actual de Kuki Shinobu por debajo del 20%.",
+      "6": "<br/>",
+      "7": "<i>Un anillo de percibetormentas se forma en su cintura para expulsar la energía impura.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "Curación de anillo purificador",
+      "2": "Daño de anillo purificador",
+      "3": "Consumo de Vida",
+      "4": "Duración",
+      "5": "TdE",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Eleusinia de Narukami",
+    "description": {
+      "0": "Clava una espada exorcizante en el suelo para crear frente a sí misma una barrera purificadora, la cual inflige <electro>Daño Electro</electro> de forma continua en función de la Vida Máx. de Kuki Shinobu contra los enemigos que se encuentren en el AdE de la barrera.",
+      "1": "Si al usar esta habilidad la Vida de Kuki Shinobu es igual o inferior al 50%, la duración de la barrera será mayor.",
+      "2": "<br/>",
+      "3": "<i>Tradicionalmente, esta técnica se usaba para desbrozar, y también, en ciertos rituales, como plegaria de abundancia para las cosechas venideras. Shinobu no la ha olvidado, ni siquiera tras haber dejado atrás su vida como miko.</i>"
+    },
+    "skillParams": {
+      "0": "Daño por cada golpe",
+      "1": "Daño total",
+      "2": "Duración",
+      "3": "TdE",
+      "4": "Energía Elemental",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Designio liberador",
+    "description": {
+      "0": "Cuando la Vida de Kuki Shinobu sea igual o inferior al 50%, su Bono de Curación aumenta en un 15%."
+    }
+  },
+  "passive2": {
+    "name": "Retiro espiritual",
+    "description": {
+      "0": "<strong>Anillo purificador herboatronador</strong> recibe las siguientes bonificaciones en función de la Maestría Elemental de Kuki Shinobu:",
+      "1": [
+        "Aumenta la curación en una cantidad equivalente al 75% de su Maestría Elemental.",
+        "Aumenta el daño infligido en una cantidad equivalente al 25% de su Maestría Elemental."
+      ]
+    }
+  },
+  "passive3": {
+    "name": "Plegaria perpetua",
+    "description": {
+      "0": "Aumenta en un 25% las recompensas de las expediciones de 20 h en Inazuma."
+    }
+  },
+  "constellation1": {
+    "name": "Reniego de la compasión",
+    "description": {
+      "0": "Aumenta en un 50% el AdE de <strong>Eleusinia de Narukami</strong>."
+    }
+  },
+  "constellation2": {
+    "name": "Reniego de la fortuna",
+    "description": {
+      "0": "Aumenta en 3 s la duración del <strong>anillo purificador</strong>."
+    }
+  },
+  "constellation3": {
+    "name": "Reniego del sufrimiento",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Anillo purificador herboatronador</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Reniego de la reclusión",
+    "description": {
+      "0": "Cuando un personaje bajo los efectos del <strong>anillo purificador</strong> de Kuki Shinobu golpea a un enemigo con un Ataque Normal, Cargado o Descendente, una marca herboatronadora caerá en la ubicación del enemigo e infligirá <electro>Daño Electro en el AdE</electro> en proporción al 9.7% de la Vida Máx. de Kuki Shinobu.",
+      "1": "Este efecto puede ocurrir una vez cada 5 s."
+    }
+  },
+  "constellation5": {
+    "name": "Reniego de la adulación",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Eleusinia de Narukami</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Reniego de la debilidad",
+    "description": {
+      "0": "Cuando Kuki Shinobu recibe una cantidad de daño suficiente como para ser derrotada, dicho daño no hará que sea derrotada. Este efecto se activará automáticamente cuando Kuki Shinobu tenga 1 pt. de Vida, y solo podrá ocurrir una vez cada 60 s.",
+      "1": "Cuando la Vida de Kuki Shinobu sea inferior al 25%, su Maestría Elemental aumenta en 150 pts. durante 15 s, lo cual solo puede ocurrir una vez cada 60 s."
+    }
+  }
+}

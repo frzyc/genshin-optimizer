@@ -1,0 +1,24 @@
+{
+  "name": "Cruzamento de Fleuve Cendre",
+  "description": {
+    "0": "Um cano de cobre abandonado que foi usado como arma. Era famoso, ou infame, dependendo de onde se estivesse."
+  },
+  "passiveName": "Ossos de Aço",
+  "passiveDescription": {
+    "0": {
+      "0": "Aumenta a Taxa CRIT da Habilidade Elemental em <cryo>8%</cryo>. Além disso, após utilizar a Habilidade Elemental, aumenta a Recarga de Energia em <cryo>16%</cryo> por 5s."
+    },
+    "1": {
+      "0": "Aumenta a Taxa CRIT da Habilidade Elemental em <cryo>10%</cryo>. Além disso, após utilizar a Habilidade Elemental, aumenta a Recarga de Energia em <cryo>20%</cryo> por 5s."
+    },
+    "2": {
+      "0": "Aumenta a Taxa CRIT da Habilidade Elemental em <cryo>12%</cryo>. Além disso, após utilizar a Habilidade Elemental, aumenta a Recarga de Energia em <cryo>24%</cryo> por 5s."
+    },
+    "3": {
+      "0": "Aumenta a Taxa CRIT da Habilidade Elemental em <cryo>14%</cryo>. Além disso, após utilizar a Habilidade Elemental, aumenta a Recarga de Energia em <cryo>28%</cryo> por 5s."
+    },
+    "4": {
+      "0": "Aumenta a Taxa CRIT da Habilidade Elemental em <cryo>16%</cryo>. Além disso, após utilizar a Habilidade Elemental, aumenta a Recarga de Energia em <cryo>32%</cryo> por 5s."
+    }
+  }
+}

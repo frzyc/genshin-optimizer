@@ -1,0 +1,178 @@
+{
+  "name": "Wanderer",
+  "title": "Eons Adrift",
+  "description": "Seorang pengelana dengan identitas misterius. Berpakaian seperti \"shugenja\", tapi tutur kata dan perbuatannya malah tidak seperti \"shugenja\".",
+  "constellationName": "Peregrinus",
+  "auto": {
+    "name": "Yuuban Meigen",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Attack</strong>",
+        "1": "Melancarkan hingga 3 serangan dengan Wind Blade yang mengakibatkan <anemo>Anemo DMG</anemo>."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Mengonsumsi sejumlah Stamina untuk mengumpulkan arus angin bertekanan tinggi di hadapan dan mengakibatkan <anemo>Anemo DMG Area</anemo> setelah jeda singkat."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Mengumpulkan kekuatan Anemo dan menerjang tanah, menyerang musuh di jalur terjangan dan mengakibatkan <anemo>Anemo DMG area</anemo> saat mendarat."
+      }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Charged Attack",
+      "4": "Konsumsi Stamina Charged Attack",
+      "5": "DMG Selama Plunging",
+      "6": "DMG Plunging Attack Rendah/Tinggi",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Hanega: Song of the Wind",
+    "description": {
+      "0": "Mengumpulkan kekuatan angin dan memanfaatkannya untuk terlepas dari cengkeraman tanah, mengakibatkan <anemo>Anemo DMG</anemo> di sekitarnya, melompat ke udara, dan memasuki status Windfavored.",
+      "1": "<br/>",
+      "2": "<strong>Windfavored</strong>",
+      "3": "Saat berada dalam status ini, Wanderer tidak akan bisa melancarkan Plunging Attack. Normal Attack dan Charged Attack akan berubah menjadi Kuugo: Fushoudan dan Kuugo: Toufukai, meningkatkan DMG dan efek serangan area yang diakibatkan, DMG yang diakibatkan akan dianggap sebagai DMG Normal Attack dan DMG Charged Attack untuk masing-masingnya. Melancarkan Kuugo: Toufukai, tidak akan lagi mengonsumsi Stamina.",
+      "4": "Saat berada dalam status ini, Wanderer akan terus-menerus melayang di udara. Pada saat ini, gerakan Wanderer akan memiliki karakteristik sebagai berikut:",
+      "5": [
+        "Akan terus-menerus mengonsumsi Kuugoryoku Point dan mempertahankan status melayang;",
+        "Saat berlari, akan mengonsumsi Kuugoryoku Point tambahan untuk akselerasi di udara; Pada saat menahan tombol berlari, akan terus-menerus mengonsumsi Kuugoryoku Point untuk mempertahankan kecepatan pergerakannya. Efek ini akan menggantikan mode Berlari bawaannya;",
+        "Saat melompat, akan mengonsumsi Kuugoryoku Point tambahan untuk meningkatkan ketinggian posisi melayang. Pada saat menahan tombol melompat, akan terus-menerus mengonsumsi Kuugoryoku Point untuk terus meningkatkan ketinggiannya."
+      ],
+      "6": "<br/>",
+      "7": "Status akan berakhir setelah Kuugoryoku Point habis dikonsumsi.",
+      "8": "Status Windfavored akan berakhir jika dilancarkan lagi selama durasinya masih aktif.",
+      "9": "<br/>",
+      "10": "<i>\"Dunia menari dalam pusaran tanpa beban, mengungkapkan rahasia yang hanya dapat ditemukan di dalam bunga.\"</i>"
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "DMG Kuugo: Fushoudan",
+      "2": "DMG Kuugo: Toufukai",
+      "3": "Initial Kuugoryoku Point",
+      "4": "Cooldown",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Kyougen: Five Ceremonial Plays",
+    "description": {
+      "0": "Mengkompresi atmosfer di sekitar dan merubahnya menjadi sebuah lubang yang bisa memusnahkan seluruh kegelisahan, mengakibatkan beberapa kali <anemo>Anemo DMG Area</anemo>.",
+      "1": "Saat Karakter berada dalam status Windfavored dari skill \"Hanega: Song of the Wind\", status Windfavored akan berakhir setelah dilancarkan.",
+      "2": "<br/>",
+      "3": "<i>\"Jadilah terang tatapan langit yang sempit, mengarahkan pandangannya pada mimpi, baik dulu dan sekarang, seperti pancaran cahaya yang menyapu debu di atas angin.\"</i>"
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "Cooldown",
+      "2": "Konsumsi Energy",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Jade-Claimed Flower",
+    "description": {
+      "0": "Saat <strong>Hanega: Song of the Wind</strong> dilancarkan dan berinteraksi dengan <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<electro>Electro</electro>, akan memperoleh efek peningkatan untuk status Windfavored kali ini:",
+      "1": [
+        "<hydro>Hydro</hydro>: Batas maksimum Kuugoryoku Point meningkat 20 poin;",
+        "<pyro>Pyro</pyro>: ATK meningkat 30%;",
+        "<cryo>Cryo</cryo>: CRIT Rate meningkat 20%;",
+        "<electro>Electro</electro>: Setelah Normal Attack dan Charged Attack mengenai musuh, akan memulihkan 0,8 poin Energy, Energy yang bisa dipulihkan dengan cara ini maksimum adalah setiap 0,2 detik sekali."
+      ],
+      "2": "<br/>",
+      "3": "Kamu bisa mendapatkan 2 jenis dari buff ini di saat yang bersamaan."
+    }
+  },
+  "passive2": {
+    "name": "Gales of Reverie",
+    "description": {
+      "0": "Saat berada dalam status <strong>Windfavored</strong>, saat Kuugo: Fushoudan atau Kuugo: Toufukai Wanderer mengenai musuh, memiliki 16% kesempatan untuk mendapatkan efek Descent: Saat Wanderer melakukan akselerasi di udara dalam status Windfavored kali ini, efek ini akan hilang, namun akselerasi kali ini tidak akan mengonsumsi Kuugoryoku Point dan akan menembakkan 4 buah panah angin, masing-masingnya akan mengakibatkan <anemo>Anemo DMG</anemo> sebesar 35% ATK.",
+      "1": "Saat Kuugo: Fushoudan atau Kuugo: Toufukai tidak menghasilkan efek Descent, kemungkinan efek untuk dihasilkan kali selanjutnya akan meningkat 12%; Perhitungan berhasil atau tidaknya efek ini terpicu akan dilakukan setiap 0,1 detik sekali."
+    }
+  },
+  "passive3": {
+    "name": "Strum the Swirling Winds",
+    "description": {
+      "0": "Mora yang terkonsumsi untuk melakukan Ascend Senjata Bow dan Catalyst berkurang 50%."
+    }
+  },
+  "constellation1": {
+    "name": "Shoban: Ostentatious Plumage",
+    "description": {
+      "0": "Saat dalam status <strong>Windfavored</strong>, ATK SPD Kuugo: Fushoudan dan Kuugo: Toufukai Wanderer meningkat 10%.",
+      "1": "Selain itu, panah angin yang diciptakan oleh Talenta Pasif \"Gales of Reverie\" milik Wanderer mengakibatkan tambahan DMG sebesar 25% ATK. Kamu harus membuka Talenta Pasif \"Gales of Reverie\" terlebih dahulu."
+    }
+  },
+  "constellation2": {
+    "name": "Niban: Isle Amidst White Waves",
+    "description": {
+      "0": "Saat dalam status <strong>Windfavored</strong>, DMG yang diakibatkan <strong>Kyougen: Five Ceremonial Plays</strong> saat menggunakan skill ini akan meningkat sebesar 4% untuk setiap poin perbedaan antara jumlah maksimum Kuugoryoku Point dikurangi dengan jumlah Kuugoryoku Point yang dimilliki sekarang.",
+      "1": "Peningkatan DMG yang diakibatkan Kyougen: Five Ceremonial Plays yang bisa diperoleh dengan cara ini adalah sebesar maksimum 200%."
+    }
+  },
+  "constellation3": {
+    "name": "Sanban: Moonflower Kusemai",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Kyougen: Five Ceremonial Plays</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Yonban: Set Adrift into Spring",
+    "description": {
+      "0": "Saat melancarkan <strong>Hanega: Song of the Wind</strong>, jika memicu Talenta Pasif \"Jade-Claimed Flower\", Karakter akan mendapatkan efek peningkatan berdasarkan jenis Elemennya, dan akan mendapatkan 1 jenis efek peningkatan acak yang belum terpicu kali ini. Maksimum efek peningkatan elemen yang bisa diperoleh bersamaan adalah 3 jenis elemen.",
+      "1": "Harus sudah membuka Talenta Pasif \"Jade-Claimed Flower\" lebih dulu."
+    }
+  },
+  "constellation5": {
+    "name": "Matsuban: Ancient Illuminator From Abroad",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Hanega: Song of the Wind</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Shugen: The Curtains' Melancholic Sway",
+    "description": {
+      "0": "Saat berada dalam status <strong>Windfavored</strong>, saat Kuugo: Fushoudan Wanderer mengenai musuh, akan menghasilkan efek sebagai berikut:",
+      "1": [
+        "Melancarkan satu kali Kuugo: Fushoudan tambahan di posisi awal, mengakibatkan DMG sebesar 40% DMG awal. DMG ini akan dianggap sebagai DMG Normal Attack;",
+        "Saat Kuugoryoku Point Wanderer berada di bawah 40 poin, Wanderer akan memulihkan 4 Kuugoryoku Point. Kuugoryoku Point yang bisa dipulihkan dengan cara ini adalah satu kali setiap 0,2 detik, maksimum 5 kali dalam satu kali durasi Windfavored."
+      ]
+    }
+  }
+}

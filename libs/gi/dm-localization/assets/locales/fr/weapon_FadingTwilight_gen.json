@@ -1,0 +1,24 @@
+{
+  "name": "Crépuscule couchant",
+  "description": {
+    "0": "Un arc précieux en platine, incrusté d'un orbe qui scintille à la lumière du soir."
+  },
+  "passiveName": "Flèche enterrée",
+  "passiveDescription": {
+    "0": {
+      "0": "Cette arme possède trois états (crépuscule, rémanence et aube) qui augmentent respectivement les DGT infligés de <cryo>6 %/10 %/14 %</cryo>. Lorsqu'une attaque a touché un ennemi, l'arme passe à l'état suivant. Un changement d'état peut être déclenché une fois toutes les 7 s, même lorsque le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé."
+    },
+    "1": {
+      "0": "Cette arme possède trois états (crépuscule, rémanence et aube) qui augmentent respectivement les DGT infligés de <cryo>7,5 %/12,5 %/17,5 %</cryo>. Lorsqu'une attaque a touché un ennemi, l'arme passe à l'état suivant. Un changement d'état peut être déclenché une fois toutes les 7 s, même lorsque le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé."
+    },
+    "2": {
+      "0": "Cette arme possède trois états (crépuscule, rémanence et aube) qui augmentent respectivement les DGT infligés de <cryo>9 %/15 %/21 %</cryo>. Lorsqu'une attaque a touché un ennemi, l'arme passe à l'état suivant. Un changement d'état peut être déclenché une fois toutes les 7 s, même lorsque le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé."
+    },
+    "3": {
+      "0": "Cette arme possède trois états (crépuscule, rémanence et aube) qui augmentent respectivement les DGT infligés de <cryo>10,5 %/17,5 %/24,5 %</cryo>. Lorsqu'une attaque a touché un ennemi, l'arme passe à l'état suivant. Un changement d'état peut être déclenché une fois toutes les 7 s, même lorsque le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé."
+    },
+    "4": {
+      "0": "Cette arme possède trois états (crépuscule, rémanence et aube) qui augmentent respectivement les DGT infligés de <cryo>12 %/20 %/28 %</cryo>. Lorsqu'une attaque a touché un ennemi, l'arme passe à l'état suivant. Un changement d'état peut être déclenché une fois toutes les 7 s, même lorsque le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé."
+    }
+  }
+}

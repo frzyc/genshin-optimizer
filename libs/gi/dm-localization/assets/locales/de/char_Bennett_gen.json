@@ -1,0 +1,171 @@
+{
+  "name": "Bennett",
+  "title": "Prüfling des Schicksals",
+  "description": "Ein junger Abenteurer aus Mondstadt, der trotz seiner ungewöhnlichen Güte vom Pech verfolgt wird.",
+  "constellationName": "Rota Calamitas",
+  "auto": {
+    "name": "Glücksbringer",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Standardangriff</strong>",
+        "1": "Führt bis zu 5 Schwerthiebe hintereinander aus."
+      },
+      "charged": {
+        "0": "<strong>Heftiger Schlag</strong>",
+        "1": "Verbraucht eine gewisse Menge Ausdauer und schwingt das Schwert zweimal schnell nach vorn."
+      },
+      "plunging": {
+        "0": "<strong>Angriff aus dem Fall</strong>",
+        "1": "Schlägt beim Fallen aus der Luft auf den Boden, greift alle Gegner in der Bahn an und verursacht beim Aufkommen Flächenschaden."
+      }
+    },
+    "skillParams": {
+      "0": "SCH Phase 1",
+      "1": "SCH Phase 2",
+      "2": "SCH Phase 3",
+      "3": "SCH Phase 4",
+      "4": "SCH Phase 5",
+      "5": "SCH heftiger Schläge",
+      "6": "Ausdauerverbrauch heftiger Schläge",
+      "7": "SCH beim Fallen",
+      "8": "SCH beim Fallen aus niedriger/großer Höhe",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Überschwänglichkeit",
+    "description": {
+      "0": "Bennett konzentriert die Pyro-Kraft und seine Leidenschaft für Abenteuer in seinem Schwert. Je nach Stärke der Konzentration werden verschiedene Effekte erzielt.",
+      "1": "<br/>",
+      "2": "<strong>Drücken</strong>",
+      "3": "Schwingt sein mit Flammen überzogenes Schwert einmal nach vorn und verursacht <pyro>Pyro-Schaden</pyro>.",
+      "4": "<br/>",
+      "5": "<strong>Gedrückt halten</strong>",
+      "6": "Verursacht je nach Dauer des Gedrückthaltens unterschiedliche Effekte.",
+      "7": [
+        " Phase 1: Startet einen zweistufigen Angriff, der <pyro>Pyro-Schaden</pyro> verursacht und Gegner wegschleudert.",
+        " Phase 2: Startet einen dreistufigen Angriff, der beachtlichen <pyro>Pyro-Schaden</pyro> und am Ende eine Explosion verursacht, bei der Bennett und seine Gegner weggeschleudert werden. Dabei erleidet Bennett jedoch keinen Schaden."
+      ],
+      "8": "<br/>",
+      "9": "<i>Bennett steckt seine ganze Leidenschaft und Träume in diesen Pyro-Angriff. Manchmal übertreibt er es aber damit und verursacht eine Explosion.</i>"
+    },
+    "skillParams": {
+      "0": "SCH bei Drücken",
+      "1": "SCH bei Aufladung (Phase 1)",
+      "2": "SCH bei Aufladung (Phase 2)",
+      "3": "Explosions-SCH",
+      "4": "Abklingzeit",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Fantastische Reise",
+    "description": {
+      "0": "Bennett springt auf seine Gegner zu, greift sie aus der Luft an, verursacht dabei <pyro>Pyro-Schaden</pyro> und erstellt ein Feld der Aufmunterung.",
+      "1": "<br/>",
+      "2": "<strong>Feld der Aufmunterung</strong>",
+      "3": [
+        " Heilt Figuren mit 70 % oder weniger LP auf diesem Feld fortlaufend basierend auf Bennetts max. LP.",
+        " Erhöht den ANG der Figuren mit mehr als 70 % LP auf diesem Feld basierend auf Bennetts Basis-ANG.",
+        " Verleiht den Figuren auf dem Feld das <pyro>Pyro-Attribut</pyro>."
+      ],
+      "4": "<br/>",
+      "5": "<i>Bennys Abenteurergruppe gerät jedes Mal aufs Neue in Gefahr. Als einziges Mitglied findet Bennett aber, dass die Abenteuer dadurch überhaupt erst an Spaß und Spannung gewinnen.</i>"
+    },
+    "skillParams": {
+      "0": "Fähigkeits-SCH",
+      "1": "Fortlaufende Heilung",
+      "2": "ANG-Bonus-Rate",
+      "3": "Dauer",
+      "4": "Abklingzeit",
+      "5": "Elementarenergie",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Aufflammen",
+    "description": {
+      "0": "Verkürzt die Abklingzeit von <strong>Überschwänglichkeit</strong> um 20 %."
+    }
+  },
+  "passive2": {
+    "name": "Unerschrockenheit",
+    "description": {
+      "0": "Effekte von <strong>Überschwänglichkeit</strong> im Wirkungsbereich von <strong>Fantastische Reise</strong>:",
+      "1": [
+        " Verringert die Abklingzeit um 50 %.",
+        " Schleudert Bennett beim Aufladen Phase 2 nicht mehr weg."
+      ]
+    }
+  },
+  "passive3": {
+    "name": "Vermutlich sicher",
+    "description": {
+      "0": "Verkürzt die bei Erkundungen innerhalb des Einflussbereichs von Mondstadt verbrauchte Zeit um 25 %."
+    }
+  },
+  "constellation1": {
+    "name": "Lust auf Abenteuer",
+    "description": {
+      "0": "Hebt die LP-Beschränkung für die ANG-Erhöhung von <strong>Fantastische Reise</strong> auf und erhöht den Wert um 20 % von Bennetts Basis-ANG."
+    }
+  },
+  "constellation2": {
+    "name": "Flucht aus der Trostlosigkeit",
+    "description": {
+      "0": "Erhöht die Aufladerate, wenn Bennett weniger als 70 % LP hat, um 30 %."
+    }
+  },
+  "constellation3": {
+    "name": "Inbrunst",
+    "description": {
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Überschwänglichkeit</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation4": {
+    "name": "Unerschütterlichkeit",
+    "description": {
+      "0": "Startet einen zusätzlichen Angriff, wenn während des zweiten Angriffs der Aufladephase 1 von <strong>Überschwänglichkeit</strong> ein Standardangriff angewendet wird.",
+      "1": "Der Schaden dieses Angriffs entspricht 135 % ANG des zweiten Angriffs."
+    }
+  },
+  "constellation5": {
+    "name": "Entdeckergeist",
+    "description": {
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Fantastische Reise</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation6": {
+    "name": "Feuer in meiner Brust",
+    "description": {
+      "0": "Erhöht den <pyro>Pyro-Schaden</pyro> der aktuellen Figuren in der Truppe mit Einhändern, Zweihändern und Stangenwaffen im Wirkungsbereich von <strong>Fantastische Reise</strong> um 15 % und verleiht ihnen die <pyro>Pyro-Kraft</pyro>."
+    }
+  }
+}

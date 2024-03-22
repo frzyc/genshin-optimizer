@@ -1,0 +1,157 @@
+{
+  "name": "Klee",
+  "title": "Sole fugace",
+  "description": "Esperta di esplosivi e ospite frequente della cella d'isolamento dei Cavalieri di Favonius. Conosciuta anche come Sole fugace.",
+  "constellationName": "Trifolium",
+  "auto": {
+    "name": "Megaboom!",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attacco normale</strong>",
+        "1": "Lancia oggetti che fanno boom quando entrano in contatto con cose o persone! Effettua fino a 3 attacchi esplosivi, infliggendo <pyro>DAN da Pyro ad area</pyro>."
+      },
+      "charged": {
+        "0": "<strong>Attacco caricato</strong>",
+        "1": "Consuma una determinata quantità di vigore per infliggere <pyro>DAN da Pyro ad area</pyro> agli avversari dopo un breve periodo di lancio."
+      },
+      "plunging": {
+        "0": "<strong>Attacco in picchiata</strong>",
+        "1": "Convogliando la forza di Pyro, Klee si scaglia contro il suolo da mezz'aria, danneggiando tutti gli avversari sul suo percorso. Infligge <pyro>DAN da Pyro ad area</pyro> all'impatto col suolo."
+      }
+    },
+    "skillParams": {
+      "0": "DAN da 1º colpo",
+      "1": "DAN da 2º colpo",
+      "2": "DAN da 3º colpo",
+      "3": "DAN da ATT caricato",
+      "4": "Costo vigore ATT caricato",
+      "5": "DAN da ATT in picchiata",
+      "6": "DAN da ATT in picchiata basso/alto",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Coniglio Bumbum",
+    "description": {
+      "0": "Il Coniglio Bumbum è divertente e scoppiettante! ",
+      "1": "Quando viene lanciato, il Coniglio Bumbum rimbalza tre volte, infuocandosi e infliggendo <pyro>DAN da Pyro ad area</pyro> a ogni rimbalzo.",
+      "2": "<br/>",
+      "3": "Al terzo rimbalzo, la bomba si divide in tante mine.",
+      "4": "Le mine esplodono al contatto con gli avversari o dopo un breve periodo di tempo, infliggendo <pyro>DAN da Pyro ad area</pyro>.",
+      "5": "<br/>",
+      "6": "Inizia con 2 cariche.",
+      "7": "<br/>",
+      "8": "<i>Il Coniglio Bumbum è un ottimo amico di Klee! Non può fare a meno di presentarlo a tutti.</i>"
+    },
+    "skillParams": {
+      "0": "DAN da Coniglio Bumbum",
+      "1": "DAN da mina",
+      "2": "Durata mina",
+      "3": "TdR",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Schizzi e scintille",
+    "description": {
+      "0": "Una delizia ardente di Klee! Fintanto che l'abilità è attiva, evoca continuamente Schizzi e scintille per attaccare gli avversari vicini, infliggendo <pyro>DAN da Pyro ad area</pyro>.",
+      "1": "<br/>",
+      "2": "<i>Tutti i cavalieri pensano che Klee debba avere una buona stella che la sorveglia, perché non si ferisce mai con le sue stesse bombe...</i>"
+    },
+    "skillParams": {
+      "0": "DAN da Schizzi e scintille",
+      "1": "Durata",
+      "2": "TdR",
+      "3": "Costo energia",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Batosta a sorpresa",
+    "description": {
+      "0": "Quando il <strong>Coniglio Bumbum</strong> e gli attacchi normali infliggono DAN, Klee ha un 50% di probabilità di ottenere una Scintilla esplosiva.",
+      "1": "La Scintilla esplosiva è consumata dal successivo attacco caricato, che non ha costo di vigore e infligge un 50% di DAN in più."
+    }
+  },
+  "passive2": {
+    "name": "Scoppio scintillante",
+    "description": {
+      "0": "Quando l'attacco caricato di Klee provoca un colpo CRIT, tutti i membri del gruppo ottengono 2 di energia elementale."
+    }
+  },
+  "passive3": {
+    "name": "Tutti i miei tesori!",
+    "description": {
+      "0": "Mostra sulla minimappa la posizione delle <strong>risorse uniche di Mondstadt</strong>."
+    }
+  },
+  "constellation1": {
+    "name": "Esplosioni a catena",
+    "description": {
+      "0": "Gli attacchi e le abilità hanno una certa probabilità di evocare scintille che bombardano gli avversari, infliggendo DAN pari a un 120% dei DAN di <strong>Schizzi e scintille</strong>."
+    }
+  },
+  "constellation2": {
+    "name": "Schegge esplosive",
+    "description": {
+      "0": "Quando un avversario viene colpito dalle mine di <strong>Coniglio Bumbum</strong>, la sua DIF si riduce di un 23% per 10 s."
+    }
+  },
+  "constellation3": {
+    "name": "Miscela speciale",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Coniglio Bumbum</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation4": {
+    "name": "Esplosione scintillante",
+    "description": {
+      "0": "Se Klee lascia il campo di battaglia mentre <strong>Schizzi e scintille</strong> è attiva, verrà innescata un'esplosione che infligge <pyro>DAN da Pyro ad area</pyro> pari a un 555% del suo ATT."
+    }
+  },
+  "constellation5": {
+    "name": "Esplosione stellare",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Schizzi e scintille</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation6": {
+    "name": "Delizia ardente",
+    "description": {
+      "0": "Mentre è sotto l'effetto di <strong>Schizzi e scintille</strong>, Klee ripristinerà 3 di energia a tutti i membri del gruppo (esclusa Klee) ogni 3 s.",
+      "1": "Quando <strong>Schizzi e scintille</strong> viene usata, tutti i membri del gruppo otterranno un <pyro>bonus DAN da Pyro</pyro> di un 10% per 25 s."
+    }
+  }
+}

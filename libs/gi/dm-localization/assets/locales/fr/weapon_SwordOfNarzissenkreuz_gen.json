@@ -1,0 +1,24 @@
+{
+  "name": "Lame du Narzissenkreuz",
+  "description": {
+    "0": "Une épée dont la puissance s'est évanouie à la fin de l'histoire. Elle va désormais s'embarquer dans un nouveau voyage avec la puissance qui lui reste, afin de commémorer un certain grand rêve."
+  },
+  "passiveName": "Lame de héros",
+  "passiveDescription": {
+    "0": {
+      "0": "Si le personnage équipé de l'arme n'a pas d'Arkhe : lorsque ses attaques normales, chargées ou plongeantes touchent, une explosion d'énergie pneuma ou ousia est déclenchée, infligeant des DGT d'une valeur équivalant à <cryo>160 %</cryo> de son ATQ. Cet effet peut être déclenché une fois toutes les 12 s, et le type de l'explosion d'énergie est déterminé par l'alignement actuel de la Lame du Narzissenkreuz."
+    },
+    "1": {
+      "0": "Si le personnage équipé de l'arme n'a pas d'Arkhe : lorsque ses attaques normales, chargées ou plongeantes touchent, une explosion d'énergie pneuma ou ousia est déclenchée, infligeant des DGT d'une valeur équivalant à <cryo>200 %</cryo> de son ATQ. Cet effet peut être déclenché une fois toutes les 12 s, et le type de l'explosion d'énergie est déterminé par l'alignement actuel de la Lame du Narzissenkreuz."
+    },
+    "2": {
+      "0": "Si le personnage équipé de l'arme n'a pas d'Arkhe : lorsque ses attaques normales, chargées ou plongeantes touchent, une explosion d'énergie pneuma ou ousia est déclenchée, infligeant des DGT d'une valeur équivalant à <cryo>240 %</cryo> de son ATQ. Cet effet peut être déclenché une fois toutes les 12 s, et le type de l'explosion d'énergie est déterminé par l'alignement actuel de la Lame du Narzissenkreuz."
+    },
+    "3": {
+      "0": "Si le personnage équipé de l'arme n'a pas d'Arkhe : lorsque ses attaques normales, chargées ou plongeantes touchent, une explosion d'énergie pneuma ou ousia est déclenchée, infligeant des DGT d'une valeur équivalant à <cryo>280 %</cryo> de son ATQ. Cet effet peut être déclenché une fois toutes les 12 s, et le type de l'explosion d'énergie est déterminé par l'alignement actuel de la Lame du Narzissenkreuz."
+    },
+    "4": {
+      "0": "Si le personnage équipé de l'arme n'a pas d'Arkhe : lorsque ses attaques normales, chargées ou plongeantes touchent, une explosion d'énergie pneuma ou ousia est déclenchée, infligeant des DGT d'une valeur équivalant à <cryo>320 %</cryo> de son ATQ. Cet effet peut être déclenché une fois toutes les 12 s, et le type de l'explosion d'énergie est déterminé par l'alignement actuel de la Lame du Narzissenkreuz."
+    }
+  }
+}

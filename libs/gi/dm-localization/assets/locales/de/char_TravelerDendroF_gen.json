@@ -1,0 +1,152 @@
+{
+  "auto": {
+    "name": "Grasfeder aus der Fremde",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Standardangriff</strong>",
+        "1": "Führt bis zu 5 Schwerthiebe hintereinander aus."
+      },
+      "charged": {
+        "0": "<strong>Heftiger Schlag</strong>",
+        "1": "Verbraucht eine gewisse Menge Ausdauer und schwingt das Schwert zweimal schnell nach vorn."
+      },
+      "plunging": {
+        "0": "<strong>Angriff aus dem Fall</strong>",
+        "1": "Schlägt beim Fallen aus der Luft auf den Boden, greift alle Gegner in der Bahn an und verursacht beim Aufkommen Flächenschaden."
+      }
+    },
+    "skillParams": {
+      "0": "SCH Phase 1",
+      "1": "SCH Phase 2",
+      "2": "SCH Phase 3",
+      "3": "SCH Phase 4",
+      "4": "SCH Phase 5",
+      "5": "SCH heftiger Schläge",
+      "6": "Ausdauerverbrauch heftiger Schläge",
+      "7": "SCH beim Fallen",
+      "8": "SCH beim Fallen aus niedriger/großer Höhe",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Grasklinge",
+    "description": {
+      "0": "Zerstreut beim Schwingen der Waffe scharfe Blätter und verursacht vor sich <dendro>Dendro-Schaden</dendro>.",
+      "1": "<br/>",
+      "2": "<i>Du hast mit Paimon den scharfen Blattrand beobachtet.</i>"
+    },
+    "skillParams": {
+      "0": "Fähigkeits-SCH",
+      "1": "Abklingzeit",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Florale Wandlung",
+    "description": {
+      "0": "Konzentriert die Kraft der Pflanzen und erschafft einen Lampenlotos.",
+      "1": "Der Lampenlotos greift fortlaufend die Gegner in seinem Wirkungsbereich an und verursacht <dendro>Dendro-Schaden</dendro>.",
+      "2": "<br/>",
+      "3": "<strong>Wandel des Lotoslichts</strong>",
+      "4": "In Kontakt mit <hydro>Hydro</hydro>-, <electro>Elektro</electro>- und <pyro>Pyro</pyro>-Kraft kommen jeweils folgende Wandlungen zustande:",
+      "5": [
+        " <hydro>Hydro</hydro>: Vergrößert den Wirkungsbereich des Lampenlotos und erhöht die Reichweite seiner Angriffe.",
+        " <electro>Elektro</electro>: Steigert die Angriffs-GSW des Lampenlotos;",
+        " <pyro>Pyro</pyro>: Lampenlotos verschwindet nach einer kurzen Verzögerung mit einer heftigen Explosion und verursacht <dendro>Dendro-Flächenschaden</dendro>."
+      ],
+      "6": "Während der Wirkungsdauer des Lampenlotos kann er nur 1-mal den Wandel des Lotoslichts durchgehen.",
+      "7": "<br/>",
+      "8": "Gleichzeitig kann immer nur ein von {F#der Reisenden}{M#dem Reisenden} geschaffener Lampenlotos existieren.",
+      "9": "<br/>",
+      "10": "<i>Du hast mit Paimon gemeinsam die Geräusche von Pflanzen erforscht, die nach dem Regen sprießen.</i>"
+    },
+    "skillParams": {
+      "0": "Angriffs-SCH von Lampenlotos",
+      "1": "SCH der heftigen Explosion",
+      "2": "Vorhandensein des Lampenlotos",
+      "3": "Abklingzeit",
+      "4": "Elementarenergie",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Überwucherndes Wildgras",
+    "description": {
+      "0": "Der <strong>Lampenlotos</strong> erhält für die Dauer seiner Existenz pro Sekunde 1 Stapelung des Effekts „Glanz des Lotoslichts“, der die Elementarkunde der aktuellen Figur in seinem Wirkungsbereich um 6 Punkte erhöht, 10-fach stapelbar."
+    }
+  },
+  "passive2": {
+    "name": "Üppiges Gras",
+    "description": {
+      "0": "Erhöht für jeden Punkt Elementarkunde {F#der}{M#des} Reisenden den mit <strong>Grasklinge</strong> verursachten Schaden um 0,15 % und den mit <strong>Florale Wandlung</strong> verursachten Schaden um 0,1 %."
+    }
+  },
+  "constellation1": {
+    "name": "Parasitäres Gras",
+    "description": {
+      "0": "Stellt {F#der Reisende}{M#dem Reisenden} beim Treffen von Gegnern mit <strong>Grasklinge</strong> 3,5 Punkte Elementarenergie wieder her."
+    }
+  },
+  "constellation2": {
+    "name": "Beharrliches Gras",
+    "description": {
+      "0": "Verlängert die Dauer des <strong>Lampenlotos</strong> um 3 s."
+    }
+  },
+  "constellation3": {
+    "name": "Tänzelndes Gras",
+    "description": {
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Grasklinge</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation4": {
+    "name": "Zuckersüßes Gras",
+    "description": {
+      "0": "<strong>Lampenlotos</strong> erhält nach Wandel des Lotoslichts 5 Stapelungen des Effekts „Glanz des Lotoslichts“ vom passiven Talent „Überwucherndes Wildgras“.",
+      "1": "Das passive Talent „Überwucherndes Wildgras“ muss zuerst freigeschaltet werden."
+    }
+  },
+  "constellation5": {
+    "name": "Sprießendes Gras",
+    "description": {
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Florale Wandlung</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation6": {
+    "name": "Grübelndes Gras",
+    "description": {
+      "0": "Verleiht der Figur, die unter dem „Glanz des Lotoslichts“ des <strong>Lampenlotos</strong> steht, einen <dendro>Dendro-SCH-Bonus</dendro> von 12 %. Wenn der Lampenlotos zuvor einen Wandel des Lotoslichts durchlaufen hat, erhält die Figur noch zusätzlich 12 % Elementar-SCH-Bonus für das entsprechende Element."
+    }
+  }
+}

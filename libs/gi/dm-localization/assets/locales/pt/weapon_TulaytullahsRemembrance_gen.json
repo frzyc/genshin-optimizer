@@ -1,0 +1,24 @@
+{
+  "name": "Reminiscências de Tulaytullah",
+  "description": {
+    "0": "Um sino feito de safira e prata pura. Seus ecos são claros, mas distantes."
+  },
+  "passiveName": "Lágrimas de Safira Enterradas",
+  "passiveDescription": {
+    "0": {
+      "0": "Aumenta a Vel. do Ataque Normal em <cryo>10%</cryo>. Nos 14s após lançar a Habilidade Elemental: o Dano causado por Ataques Normais aumenta em <cryo>4.8%</cryo> a cada segundo; ao atingir os oponentes com um Ataque Normal, o Dano causado pelo Ataque Normal aumentará em <cryo>9.6%</cryo>. Este efeito pode ser desencadeado até 1 vez a cada 0.3s. Enquanto este efeito estiver ativo, o Dano causado por Ataques Normais através do efeito descrito acima aumentará em até no máximo <cryo>48%</cryo>. Este efeito é removido quando o personagem deixa o campo de batalha. Ao lançar a Habilidade Elemental novamente, o efeito será reiniciado."
+    },
+    "1": {
+      "0": "Aumenta a Vel. do Ataque Normal em <cryo>12.5%</cryo>. Nos 14s após lançar a Habilidade Elemental: o Dano causado por Ataques Normais aumenta em <cryo>6%</cryo> a cada segundo; ao atingir os oponentes com um Ataque Normal, o Dano causado pelo Ataque Normal aumentará em <cryo>12%</cryo>. Este efeito pode ser desencadeado até 1 vez a cada 0.3s. Enquanto este efeito estiver ativo, o Dano causado por Ataques Normais através do efeito descrito acima aumentará em até no máximo <cryo>60%</cryo>. Este efeito é removido quando o personagem deixa o campo de batalha. Ao lançar a Habilidade Elemental novamente, o efeito será reiniciado."
+    },
+    "2": {
+      "0": "Aumenta a Vel. do Ataque Normal em <cryo>15%</cryo>. Nos 14s após lançar a Habilidade Elemental: o Dano causado por Ataques Normais aumenta em <cryo>7.2%</cryo> a cada segundo; ao atingir os oponentes com um Ataque Normal, o Dano causado pelo Ataque Normal aumentará em <cryo>14.4%</cryo>. Este efeito pode ser desencadeado até 1 vez a cada 0.3s. Enquanto este efeito estiver ativo, o Dano causado por Ataques Normais através do efeito descrito acima aumentará em até no máximo <cryo>72%</cryo>. Este efeito é removido quando o personagem deixa o campo de batalha. Ao lançar a Habilidade Elemental novamente, o efeito será reiniciado."
+    },
+    "3": {
+      "0": "Aumenta a Vel. do Ataque Normal em <cryo>17.5%</cryo>. Nos 14s após lançar a Habilidade Elemental: o Dano causado por Ataques Normais aumenta em <cryo>8.4%</cryo> a cada segundo; ao atingir os oponentes com um Ataque Normal, o Dano causado pelo Ataque Normal aumentará em <cryo>16.8%</cryo>. Este efeito pode ser desencadeado até 1 vez a cada 0.3s. Enquanto este efeito estiver ativo, o Dano causado por Ataques Normais através do efeito descrito acima aumentará em até no máximo <cryo>84%</cryo>. Este efeito é removido quando o personagem deixa o campo de batalha. Ao lançar a Habilidade Elemental novamente, o efeito será reiniciado."
+    },
+    "4": {
+      "0": "Aumenta a Vel. do Ataque Normal em <cryo>20%</cryo>. Nos 14s após lançar a Habilidade Elemental: o Dano causado por Ataques Normais aumenta em <cryo>9.6%</cryo> a cada segundo; ao atingir os oponentes com um Ataque Normal, o Dano causado pelo Ataque Normal aumentará em <cryo>19.2%</cryo>. Este efeito pode ser desencadeado até 1 vez a cada 0.3s. Enquanto este efeito estiver ativo, o Dano causado por Ataques Normais através do efeito descrito acima aumentará em até no máximo <cryo>96%</cryo>. Este efeito é removido quando o personagem deixa o campo de batalha. Ao lançar a Habilidade Elemental novamente, o efeito será reiniciado."
+    }
+  }
+}

@@ -1,0 +1,177 @@
+{
+  "name": "Shougun Raiden",
+  "title": "Utopische Gefilde",
+  "description": "Ihre Exzellenz, die Allmächtige Narukami Ogosho. Sie hat dem Volk von Inazuma eine unvergängliche Ewigkeit versprochen.",
+  "constellationName": "Imperatrix Umbrosa",
+  "auto": {
+    "name": "Ursprung",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Standardangriff</strong>",
+        "1": "Führt bis zu 5 Lanzenstiche hintereinander aus."
+      },
+      "charged": {
+        "0": "<strong>Heftiger Schlag</strong>",
+        "1": "Verbraucht eine gewisse Menge Ausdauer und führt einen Angriff nach oben aus."
+      },
+      "plunging": {
+        "0": "<strong>Angriff aus dem Fall</strong>",
+        "1": "Schlägt beim Fallen aus der Luft auf den Boden, greift alle Gegner in der Bahn an und verursacht beim Aufkommen Flächenschaden."
+      }
+    },
+    "skillParams": {
+      "0": "SCH Phase 1",
+      "1": "SCH Phase 2",
+      "2": "SCH Phase 3",
+      "3": "SCH Phase 4",
+      "4": "SCH Phase 5",
+      "5": "SCH heftiger Schläge",
+      "6": "Ausdauerverbrauch heftiger Schläge",
+      "7": "SCH beim Fallen",
+      "8": "SCH beim Fallen aus niedriger/großer Höhe",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Wunder – Unheilvoller Blick",
+    "description": {
+      "0": "Der Shougun Raiden offenbart einen kleinen Teil ihrer Utopie, fügt Gegnern in der Umgebung <electro>Elektro-Schaden</electro> zu und verleiht allen Truppenmitgliedern in der Nähe das „unheilvolle Auge der Blitzstrafe“.",
+      "1": "<br/>",
+      "2": "<strong>Unheilvolles Auge der Blitzstrafe</strong>",
+      "3": [
+        " Das unheilvolle Auge der Blitzstrafe greift gemeinsam an, wenn die Angriffe der Figuren mit dem unheilvollen Auge der Blitzstrafe den Gegnern Schaden zufügen, und verursacht an der Stelle der Gegner <electro>Elektro-Flächenschaden</electro>.",
+        " Erhöht während der Wirkungsdauer den mit Spezialfähigkeiten der Figuren mit dem unheilvollen Auge der Blitzstrafe verursachten Schaden basierend auf der Elementarenergie der Spezialfähigkeiten."
+      ],
+      "4": "<br/>",
+      "5": "Das unheilvolle Auge der Blitzstrafe jeder Truppe kann alle 0,9 s höchstens einen abgestimmten Angriff ausführen.",
+      "6": "Der mit dem abgestimmten Angriff der Figuren außerhalb der eigenen Figuren in der Truppe verursachte Schaden entspricht 20 % des ursprünglichen Schadens.",
+      "7": "<br/>",
+      "8": "<i>Außergewöhnliche transzendente Wesen sind in der Lage, auf alles, was sie sehen, einzuwirken. Die Göttin der Blitze kann unheilvolle Sterne kontrollieren, um ihre Gefolgsleute zu schützen und ein donnerndes Urteil zu fällen.</i>"
+    },
+    "skillParams": {
+      "0": "Fähigkeits-SCH",
+      "1": "SCH abgestimmter Angriffe",
+      "2": "Dauer",
+      "3": "Erhöht den Schaden von Spezialfähigkeiten",
+      "4": "Abklingzeit",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Geheime Kunst – Musou Shinsetsu",
+    "description": {
+      "0": "Der Shougun Raiden sammelt die Stärke der absoluten Wahrheit und die Entschlusskraft von unzähligen Wünschen, beschwört das Musou no Hitotachi, das die übelsten Flüche austreiben kann, verursacht <electro>Elektro-Flächenschaden</electro> und verwendet eine gewisse Zeit „Musou Isshin“ zum Kampf. Erhöht den mit den Angriffen von Musou no Hitotachi und Musou Isshin verursachten Schaden gemäß den beim Auslösen verbrauchten Stapelungen an Entschlusskraft der Charkra-Desiderate.",
+      "1": "<br/>",
+      "2": "<strong>Musou Isshin</strong>",
+      "3": "In diesem Zustand greift Shougun Raiden mit einem Katana an und verursacht mit Standardangriffen, heftigen Schlägen und Angriffen aus dem Fall <electro>Elektro-Schaden</electro>, wobei diese Elementarumwandlung nicht von anderen Elementen überdeckt werden kann. Stellt beim Treffen von Gegnern mit diesen Angriffen in diesem Zustand allen Truppenmitgliedern in der Nähe Elementarenergie wieder her. Stellt auf diese Weise pro s höchstens einmal Elementarenergie wieder her, 5-mal während der Wirkungsdauer auslösbar.",
+      "4": "Erhöht in diesem Zustand den Unterbrechungs-WDS von Shougun Raiden und macht sie immun gegen Schaden von Reaktionen <electro>Unter Strom</electro>.",
+      "5": "Der mit Shougun Raidens Standardangriffen, heftigen Schlägen und Angriffen aus dem Fall im Zustand Musou Isshin verursachte Schaden gilt als Spezialfähigkeitsschaden.",
+      "6": "<br/>",
+      "7": "Der Effekt von Musou Isshin erlischt, wenn Shougun Raiden ausgewechselt wird.",
+      "8": "<br/>",
+      "9": "<strong>Charkra-Desiderate</strong>",
+      "10": "Sammelt den Charkra-Desideraten von Shougun Raiden beim Auslösen von Spezialfähigkeiten durch Truppenmitglieder in der Nähe, aber nicht durch Shougun Raiden selbst, gemäß der Elementarenergie der Spezialfähigkeiten Entschlusskraft.",
+      "11": "Sammelt bis zu 60 Stapelungen Entschlusskraft.",
+      "12": "<br/>",
+      "13": "Die in den Charkra-Desideraten gesammelte Entschlusskraft wird 300 s nach dem Verlassen der Kampfzone zurückgesetzt.",
+      "14": "<br/>",
+      "15": "<i>Dies ist die geheime Technik, die Shougun Raiden zuletzt erlernt hat. Sie gab ihr altes Musou auf, um ein neues Musou zu tragen und so die Träume und Hoffnungen der anderen zu schultern. Wie „Shinsetsu“ gleichzeitig für Wahrheit und Neues steht, so beginnt auch für Inazuma ein neues Kapitel.</i>"
+    },
+    "skillParams": {
+      "0": "Basis-SCH von Musou no Hitotachi",
+      "1": "Entschlusskraft-Bonus",
+      "2": "Erhaltene Stapelungen von Entschlusskraft",
+      "3": "SCH Phase 1",
+      "4": "SCH Phase 2",
+      "5": "SCH Phase 3",
+      "6": "SCH Phase 4",
+      "7": "SCH Phase 5",
+      "8": "SCH heftiger Schläge",
+      "9": "Ausdauerverbrauch heftiger Schläge",
+      "10": "SCH beim Fallen",
+      "11": "SCH beim Fallen aus niedriger/großer Höhe",
+      "12": "Energie-Wiederherstellung von Musou Isshin",
+      "13": "Dauer von Musou Isshin",
+      "14": "Abklingzeit",
+      "15": "Elementarenergie"
+    }
+  },
+  "passive1": {
+    "name": "Unzählige Wünsche",
+    "description": {
+      "0": "Fügt <strong>Charkra-Desiderate</strong> beim Erhalten von Elementarkristallen oder Elementarteilchen durch Truppenmitglieder in der Nähe 2 Stapelungen Entschlusskraft hinzu.",
+      "1": "3 s Abklingzeit."
+    }
+  },
+  "passive2": {
+    "name": "Wahre Erleuchtung",
+    "description": {
+      "0": "Gewährt Shougun Raiden für jeden Prozentpunkt über 100 % Aufladerate die folgenden Effekte:",
+      "1": [
+        " Erhöht die Elementarenergie-Wiederherstellung von <strong>Musou Isshin</strong> um 0,6 %.",
+        " Erhöht den <electro>Elektro-SCH-Bonus</electro> um 0,4 %."
+      ]
+    }
+  },
+  "passive3": {
+    "name": "Weltberühmte Bewahrerin",
+    "description": {
+      "0": "Verringert die für den Aufstieg von Einhändern oder Stangenwaffen verbrauchte Menge an Mora um 50 %."
+    }
+  },
+  "constellation1": {
+    "name": "Unheilvolles Omen",
+    "description": {
+      "0": "<strong>Charkra-Desiderate</strong> kann Entschlusskraft noch schneller sammeln. Wenn <electro>Elektro</electro>-Figuren ihre Spezialfähigkeiten verwenden, wird die gewonnene Entschlusskraft um 80 % erhöht. Wenn Figuren anderer Elementartypen ihre Spezialfähigkeiten verwenden, wird die gewonnene Entschlusskraft um 20 % erhöht."
+    }
+  },
+  "constellation2": {
+    "name": "Stahlbrecherin",
+    "description": {
+      "0": "Wenn Shougun Raiden Musou no Hitotachi einsetzt und durch <strong>Geheime Kunst – Musou Shinsetsu</strong> in den Zustand Musou Isshin versetzt wird, ignorieren die Angriffe von Shougun Raiden 60 % der VTD von Gegnern."
+    }
+  },
+  "constellation3": {
+    "name": "Shinkage-Geschichten",
+    "description": {
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Geheime Kunst – Musou Shinsetsu</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation4": {
+    "name": "Gelöbnis des Anstands",
+    "description": {
+      "0": "Erhöht nach dem Ende des Zustands <strong>Musou Isshin</strong> von <strong>Geheime Kunst – Musou Shinsetsu</strong> den ANG aller Truppenmitglieder in der Nähe außer Shougun Raiden selbst 10 s lang um 30 %."
+    }
+  },
+  "constellation5": {
+    "name": "Erscheinen des Unheils",
+    "description": {
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Wunder – Unheilvoller Blick</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation6": {
+    "name": "Wunschträgerin",
+    "description": {
+      "0": "Verringert im Zustand <strong>Musou Isshin</strong> von <strong>Geheime Kunst – Musou Shinsetsu</strong> die Abklingzeit der Spezialfähigkeiten aller Truppenmitglieder in der Nähe (außer Shougun Raiden selbst) um 1 s, wenn die Angriffe mit Spezialfähigkeitsschaden von Shougun Raiden Gegner treffen.",
+      "1": "1 s Abklingzeit, 5-mal während der Wirkungsdauer des Zustands auslösbar."
+    }
+  }
+}

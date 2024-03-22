@@ -1,0 +1,182 @@
+{
+  "name": "Lyney",
+  "title": "Spettacolo fantasmagorico",
+  "description": "Un celebre mago di Fontaine, dotato di grande presenza scenica e notevoli doti dialettiche. Il pubblico rimane ammaliato dalle sue incredibili abilità e pende letteralmente dalle sue labbra.",
+  "constellationName": "Felis Fuscus",
+  "auto": {
+    "name": "Traslazione forzata",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attacco normale</strong>",
+        "1": "Effettua fino a 4 tiri consecutivi con un arco."
+      },
+      "charged": {
+        "0": "<strong>Attacco caricato</strong>",
+        "1": "Effettua un <strong>attacco mirato</strong> ancora più preciso con DAN aumentati.",
+        "2": "Mentre mira, sulla punta della freccia divampano delle fiamme. In base al tempo di durata della carica, si verificano diversi effetti.",
+        "3": [
+          " Livello di carica 1: scaglia una freccia infusa del potere di Pyro che infligge <pyro>DAN da Pyro</pyro>.",
+          " Livello di carica 2: scaglia una Freccia scenica che infligge <pyro>DAN da Pyro</pyro> ed evoca un Cappello sogghignante all'impatto."
+        ],
+        "4": "Se Lyney scocca una Freccia scenica mentre ha più di un 60% di PS a disposizione, consuma una parte dei suoi PS e ottiene 1 accumulo di Riserva scenica, fino a un massimo di 5. L'effetto viene rimosso dopo 30 s passati al di fuori di un combattimento.",
+        "5": "Con questo metodo, i PS di Lyney non possono calare al di sotto di un 60% dei suoi PS max."
+      },
+      "plunging": {
+        "0": "<strong>Attacco in picchiata</strong>",
+        "1": "Scocca una pioggia di frecce a mezz'aria prima di cadere e colpire il suolo, infliggendo DAN ad area all'impatto."
+      },
+      "grinMalkin": {
+        "0": "<strong>Cappello sogghignante</strong>",
+        "1": [
+          " Provoca gli avversari circostanti attirando i loro attacchi. Ciascun avversario può essere provocato dal Cappello solo una volta ogni 5 s.",
+          " Il Cappello eredita una percentuale dei PS max di Lyney.",
+          " Se viene distrutto o la sua durata si esaurisce, il Cappello lancia una <strong>Botta pirotecnica</strong> a un avversario vicino, infliggendo <pyro>DAN da Pyro</pyro>."
+        ],
+        "2": "Non può esistere più di 1 Cappello alla volta."
+      },
+      "arkhe": {
+        "0": "<strong>Archè: Pneuma</strong>",
+        "1": "A determinati intervalli, la Freccia scenica genera un Aculeo spettrale nel punto colpito che infligge <pyro>DAN da Pyro</pyro> di polarità Pneuma."
+      }
+    },
+    "skillParams": {
+      "0": "DAN da 1º colpo",
+      "1": "DAN da 2º colpo",
+      "2": "DAN da 3º colpo",
+      "3": "DAN da 4º colpo",
+      "4": "DAN da ATT in picchiata",
+      "5": "DAN da ATT in picchiata basso/alto",
+      "6": "ATT mirato",
+      "7": "ATT mirato a livello di carica 1",
+      "8": "DAN da Freccia scenica",
+      "9": "Costo PS",
+      "10": "PS ereditati da Cappello sogghignante",
+      "11": "Durata Cappello sogghignante",
+      "12": "DAN da Botta pirotecnica",
+      "13": "DAN da Aculeo spettrale",
+      "14": "Intervallo Aculeo spettrale",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Luci stupefacenti",
+    "description": {
+      "0": "Lyney esegue un gesto plateale con il cappello, scagliando fuochi d'artificio contro gli oppositori!",
+      "1": "Consuma tutti gli accumuli di Riserva scenica e infligge <pyro>DAN da Pyro ad area</pyro> agli avversari di fronte a lui. A seconda degli accumuli consumati, la quantità di DAN aumenta e i PS di Lyney si ripristinano in proporzione ai suoi PS max.",
+      "2": "<br/>",
+      "3": "In presenza di un Cappello sogghignante creato da Lyney, i fuochi d'artificio lo faranno esplodere, infliggendo <pyro>DAN da Pyro ad area</pyro> pari a quelli inflitti da una Botta pirotecnica.",
+      "4": "I DAN inflitti in questo modo dal Cappello sogghignante vengono considerati DAN da attacco caricato.",
+      "5": "<br/>",
+      "6": "<i>\"Ogni mago dev'essere bravo a sviare l'attenzione del suo pubblico, lo sanno tutti... Ah, già, mentre guardavi da questa parte, il cappello e l'assistente che erano laggiù sono svaniti nel nulla... Affascinante, non credi?\"</i>"
+    },
+    "skillParams": {
+      "0": "DAN da abilità",
+      "1": "Bonus DAN da abilità",
+      "2": "RIGEN PS",
+      "3": "TdR",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Trucco mirabolante: Corteo dei miracoli",
+    "description": {
+      "0": "Lyney scatena tutta la sua magia per assumere la forma di Gatto sogghignante (da non confondersi con il Cappello sogghignante, che è un'altra cosa!), con cui può spostarsi a gran velocità.",
+      "1": "Quando il Gatto sogghignante si avvicina agli avversari, scatena delle fiamme impetuose che infliggono 1 iterazione di <pyro>DAN da Pyro</pyro> a ciascun avversario. Al termine dell'effetto, Lyney abbandona la forma di Gatto sogghignante e fa esplodere dei fuochi d'artificio che infliggono <pyro>DAN da Pyro ad area</pyro>, dopodiché evoca 1 Cappello sogghignante e ottiene 1 accumulo di Riserva scenica.",
+      "2": "<br/>",
+      "3": "Il Gatto sogghignante può essere interrotto attivamente.",
+      "4": "<br/>",
+      "5": "<i>\"Ora guarda con attenzione. Questo è un momento miracoloso, e appartiene soltanto a noi due!\"</i>"
+    },
+    "skillParams": {
+      "0": "DAN da abilità",
+      "1": "DAN da fuoco d'artificio esplosivo",
+      "2": "Durata",
+      "3": "TdR",
+      "4": "Costo energia",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Numero rischioso",
+    "description": {
+      "0": "Se Lyney consuma PS quando scaglia una <strong>Freccia scenica</strong>, il Cappello sogghignante evocato dalla suddetta Freccia ripristina di 3 l'energia di Lyney all'impatto con l'avversario, aumentando al contempo i DAN inflitti di un 80% del suo ATT."
+    }
+  },
+  "passive2": {
+    "name": "Applauso finale",
+    "description": {
+      "0": "I DAN inflitti da Lyney agli avversari sotto l'effetto di <pyro>Pyro</pyro> ricevono i seguenti effetti positivi:",
+      "1": [
+        " i DAN aumentano di un 60%;",
+        " per ogni membro di <pyro>Pyro</pyro> presente nel gruppo, escluso Lyney, i DAN inflitti aumentano di un ulteriore 20%."
+      ],
+      "2": "In questo modo, Lyney può infliggere fino a un 100% di DAN aumentati contro gli avversari sotto l'effetto di <pyro>Pyro</pyro>."
+    }
+  },
+  "passive3": {
+    "name": "Osservazioni irrilevanti",
+    "description": {
+      "0": "Mostra sulla minimappa la posizione delle <strong>risorse uniche di Fontaine</strong>."
+    }
+  },
+  "constellation1": {
+    "name": "Miracoli estrosi",
+    "description": {
+      "0": "Lyney può avere 2 <strong>Cappelli sogghignanti</strong> in campo contemporaneamente.",
+      "1": "Inoltre, le Frecce sceniche evocano 2 Cappelli sogghignanti e forniscono a Lyney 1 accumulo di Riserva scenica in più. Questo effetto può verificarsi una volta ogni 15 s."
+    }
+  },
+  "constellation2": {
+    "name": "Maestro delle lusinghe",
+    "description": {
+      "0": "Quando Lyney è in campo, ottiene ogni 2 s un accumulo di Concentrazione totale. Ogni accumulo aumenta di un 20% i suoi DAN da CRIT. Massimo 3 accumuli. L'effetto si annulla quando Lyney abbandona il campo."
+    }
+  },
+  "constellation3": {
+    "name": "Prestidigitazione",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Attacco normale: Traslazione forzata</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation4": {
+    "name": "Esperienza sul palco",
+    "description": {
+      "0": "Quando Lyney colpisce un avversario con un attacco caricato di <pyro>Pyro</pyro>, la <pyro>RES a Pyro</pyro> del suddetto avversario si riduce di un 20% per 6 s."
+    }
+  },
+  "constellation5": {
+    "name": "Enigmi da svelare",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Trucco mirabolante: Corteo dei miracoli</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation6": {
+    "name": "Sorriso prudente",
+    "description": {
+      "0": "Quando Lyney scaglia una <strong>Freccia scenica</strong>, lancia una Botta pirotecnica: Ripresa che infligge un 80% dei DAN da Botta pirotecnica. Tali DAN sono considerati DAN da attacco caricato."
+    }
+  }
+}

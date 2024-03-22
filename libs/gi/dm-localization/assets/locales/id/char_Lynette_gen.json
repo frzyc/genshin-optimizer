@@ -1,0 +1,171 @@
+{
+  "name": "Lynette",
+  "title": "Elegance in the Shadows",
+  "description": "Asisten pesulap yang tidak banyak bicara. Emosinya sulit ditebak, persis seperti kucing.",
+  "constellationName": "Felis Alba",
+  "auto": {
+    "name": "Rapid Ritesword",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Attack</strong>",
+        "1": "Melancarkan hingga 4 serangan berturut-turut."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Mengonsumsi sejumlah Stamina untuk melancarkan dua tebasan pedang."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Menerjang dari udara untuk menghantam tanah, menyerang musuh di jalur terjangan dan mengakibatkan DMG area saat mendarat."
+      }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Tahap 4",
+      "4": "DMG Charged Attack",
+      "5": "Konsumsi Stamina Charged Attack",
+      "6": "DMG Selama Plunging",
+      "7": "DMG Plunging Attack Rendah/Tinggi",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Enigmatic Feint",
+    "description": {
+      "0": "Lynette mengayunkan jubahnya dan melancarkan Enigma Thrust yang mengakibatkan <anemo>Anemo DMG</anemo>.",
+      "1": "Saat Enigma Thrust mengenai musuh, serangan ini akan memulihkan HP Lynette berdasarkan Max HP-nya, dan dalam 4 detik selanjutnya, HP Lynette akan berkurang dalam jumlah tertentu setiap detiknya.",
+      "2": "Lynette akan menggunakan Enigma Thrust dengan cara yang berbeda berdasarkan cara skill dilancarkan; Mode Tekan atau Mode Tahan.",
+      "3": "<br/>",
+      "4": "<strong>Mode Tekan</strong>",
+      "5": "Melancarkan Enigma Thrust dengan gesit.",
+      "6": "<br/>",
+      "7": "<strong>Mode Tahan</strong>",
+      "8": "Lynette memasuki status Pilfering Shadow yang membuatnya bergerak dengan cepat dan memberikan \"Shadowsign\" terhadap musuh di dekatnya. Dalam kondisi ini, kamu bisa mengontrol arah gerakannya dan kamu bisa menghentikannya jika menggunakan skill ini lagi.",
+      "9": "Setelah status ini berakhir, Lynette akan melancarkan Enigma Thrust. Jika ada musuh yang memiliki Shadowsign di sekitarnya, maka Lynette akan mendekatinya secara cepat dan melancarkan Enigma Thrust.",
+      "10": "<br/>",
+      "11": "Maksimum 1 musuh yang dapat terkena Shadowsign dalam satu waktu. Jika musuh ini berada terlalu jauh dari Lynette, Shadowsign akan terhapus.",
+      "12": "<br/>",
+      "13": "<strong>Arkhe: Ousia</strong>",
+      "14": "Setiap kurun waktu tertentu, Lynette akan melancarkan Surging Blade saat menggunakan Enigma Thrust dan mengakibatkan Ousia-aligned <anemo>Anemo DMG</anemo>.",
+      "15": "<br/>",
+      "16": "<i>\"Baiklah, arahkan matamu ke arah panggung dan lanjutkan menikmati pertunjukannya. Saat aku muncul selanjutnya, aku akan berada di tempat yang tidak kamu sangka.\"</i>"
+    },
+    "skillParams": {
+      "0": "DMG Enigma Thrust",
+      "1": "DMG Surging Blade",
+      "2": "Jeda Surging Blade",
+      "3": "Pemulihan HP saat serangan terkena",
+      "4": "Konsumsi HP",
+      "5": "Durasi Maksimum Mode Tahan",
+      "6": "Cooldown",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Magic Trick: Astonishing Shift",
+    "description": {
+      "0": "Lynette mengangkat mantelnya dengan tinggi dan mengakibatkan <anemo>Anemo DMG Area</anemo>, menggunakan cara yang mengejutkan untuk memunculkan Bogglecat Box!",
+      "1": "<br/>",
+      "2": "<strong>Bogglecat Box</strong>",
+      "3": [
+        "Memprovokasi musuh di sekitar terus-menerus dan memancing serangan mereka.",
+        "Mengakibatkan <anemo>Anemo DMG</anemo> terhadap musuh di sekitar secara berkala.",
+        "Saat Bogglecat Box berhubungan dengan <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<electro>Electro</electro>, akan mendapatkan tipe elemen yang sama dan menembakkan Vivid Shot yang mengakibatkan DMG elemen tersebut secara berkala."
+      ],
+      "4": "Elemental Absorption hanya akan terjadi satu kali selama Skill ini berlangsung.",
+      "5": "<br/>",
+      "6": "<i>\"Coba lihat ke arah ini, lihat baik-baik. Waktunya keajaiban terjadi, waktu milik kita saja.\"</i>"
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "DMG Bogglecat Box",
+      "2": "DMG Vivid Shot",
+      "3": "Durasi Bogglecat Box",
+      "4": "Cooldown",
+      "5": "Konsumsi Energy",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Sophisticated Synergy",
+    "description": {
+      "0": "Setelah melancarkan <strong>Magic Trick: Astonishing Shift</strong>, ATK seluruh anggota party akan meningkat 8%/12%/16%/20% selama 10 detik jika di dalam party terdapat Karakter dengan 1/2/3/4 jenis elemen yang berbeda."
+    }
+  },
+  "passive2": {
+    "name": "Props Positively Prepped",
+    "description": {
+      "0": "Setelah Bogglecat Box yang tercipta dari <strong>Magic Trick: Astonishing Shift</strong> mengalami Elemental Absorption, DMG Elemental Burst Lynette akan meningkat 15%. Efek ini akan berlangsung hingga durasi Bogglecat Box berakhir."
+    }
+  },
+  "passive3": {
+    "name": "Loci-Based Mnemonics",
+    "description": {
+      "0": "Memperlihatkan lokasi <strong>Recovery Orb</strong> di sekitar pada peta kecil. Pemulihan HP dan Aquatic Stamina saat menyentuh Recovery Orb meningkat 25%."
+    }
+  },
+  "constellation1": {
+    "name": "A Cold Blade Like a Shadow",
+    "description": {
+      "0": "Saat Enigma Thrust dari <strong>Enigmatic Feint</strong> mengenai musuh yang memiliki Shadowsign, pusaran angin akan tercipta di posisi musuh berada dan menarik musuh di sekitarnya."
+    }
+  },
+  "constellation2": {
+    "name": "Endless Mysteries",
+    "description": {
+      "0": "Saat Bogglecat Box yang tercipta dari <strong>Magic Trick: Astonishing Shift</strong> menembakkan Vivid Shot, akan menembakkan satu Vivid Shot tambahan."
+    }
+  },
+  "constellation3": {
+    "name": "Cognition-Inverting Gaze",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Magic Trick: Astonishing Shift</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Tacit Coordination",
+    "description": {
+      "0": "Meningkatkan 1 charge <strong>Enigmatic Feint</strong>."
+    }
+  },
+  "constellation5": {
+    "name": "Obscuring Ambiguity",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Enigmatic Feint</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Watchful Eye",
+    "description": {
+      "0": "Saat Lynette melancarkan Enigma Thrust dari skill <strong>Enigmatic Feint</strong>, akan mendapatkan <anemo>Anemo Infusion</anemo> dan meningkatkan 20% <anemo>Anemo DMG Bonus</anemo> selama 6 detik."
+    }
+  }
+}

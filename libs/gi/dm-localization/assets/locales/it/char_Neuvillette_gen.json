@@ -1,0 +1,169 @@
+{
+  "constellationName": "Leviathan Judicator",
+  "name": "Neuvillette",
+  "title": "Sentenza ineluttabile",
+  "description": "Il Giudice supremo di Fontaine, anche conosciuto come lo Iudex, famoso per la sua incontestabile imparzialità.",
+  "auto": {
+    "name": "Acque chete",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attacco normale</strong>",
+        "1": "Agitando elegantemente il suo bastone, Neuvillette governa le maree per scagliare fino a 3 attacchi che infliggono <hydro>DAN da Hydro</hydro>."
+      },
+      "chargedLegal": {
+        "0": "<strong>Rafforzamento attacco caricato: Valutazione legale</strong>",
+        "1": "Mentre carica l'attacco, Neuvillette convoglia il potere dell'acqua per materializzare un Sigillo arbitrale. Quando è in questo stato, Neuvillette può spostarsi, cambiare direzione e assorbire le Gocce d'acqua sorgiva presenti entro una certa area d'effetto.",
+        "2": "Ogni Goccia assorbita aumenta la velocità di materializzazione del Sigillo e ripristina i PS di Neuvillette.",
+        "3": "Quando la carica si interrompe, se il Sigillo non ha finito di materializzarsi, Neuvillette sferra un attacco caricato; in caso contrario, scaglia un Attacco caricato: Equo giudizio."
+      },
+      "charged": {
+        "0": "<strong>Attacco caricato</strong>",
+        "1": "Consuma una data quantità di vigore per attaccare gli avversari tramite un getto d'acqua squarciante, infliggendo <hydro>DAN da Hydro ad area</hydro>."
+      },
+      "chargedJudgment": {
+        "0": "<strong>Attacco caricato: Equo giudizio</strong>",
+        "1": "Scatena torrenti impetuosi che infliggono <hydro>DAN da Hydro ad area</hydro> continui a tutti gli avversari in linea retta davanti a sé.",
+        "2": "Equo giudizio non consuma vigore e dura 3 s.",
+        "3": "Durante l'uso di questo attacco, i PS di Neuvillette vengono consumati costantemente se sono superiori a un 50%."
+      },
+      "plunging": {
+        "0": "<strong>Attacco in picchiata</strong>",
+        "1": "Accumulando la forza di Hydro, Neuvillette si scaglia contro il suolo da mezz'aria, danneggiando tutti gli avversari lungo la sua traiettoria. Infligge <hydro>DAN da Hydro ad area</hydro> all'impatto col suolo."
+      }
+    },
+    "skillParams": {
+      "0": "DAN da 1º colpo",
+      "1": "DAN da 2º colpo",
+      "2": "DAN da 3º colpo",
+      "3": "DAN da ATT caricato",
+      "4": "Costo vigore attacco caricato",
+      "5": "Attacco caricato: Equo giudizio",
+      "6": "RIGEN PS",
+      "7": "Perdita PS",
+      "8": "DAN da ATT in picchiata",
+      "9": "DAN da ATT in picchiata basso/alto",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "O lagrime, i debiti ripagherò",
+    "description": {
+      "0": "Evoca una Cascata furente che infligge <hydro>DAN da Hydro ad area</hydro> agli avversari davanti a Neuvillette in base ai suoi PS max. Quando colpisce, l'abilità genera 3 Gocce d'acqua sorgiva accanto all'avversario colpito.",
+      "1": "<br/>",
+      "2": "<strong>Archè: Pneuma</strong>",
+      "3": "A determinati intervalli, quando la Cascata furente precipita sugli avversari, cala un Aculeo spettrale che li trafigge infliggendo <hydro>DAN da Hydro</hydro> di polarità Pneuma.",
+      "4": "<br/>",
+      "5": "<i>\"La legge può limitare crimini d'ogni sorta, ma non è in grado di estirpare il male.\"</i>"
+    },
+    "skillParams": {
+      "0": "DAN da abilità",
+      "1": "DAN da Aculeo spettrale",
+      "2": "Intervallo Aculeo spettrale",
+      "3": "Durata Goccia d'acqua sorgiva",
+      "4": "TdR",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "O maree, ai patrii lidi ritorno",
+    "description": {
+      "0": "Sprigiona delle onde che infliggono <hydro>DAN da Hydro ad area</hydro> in base ai PS max di Neuvillette. Dopo un breve intervallo di tempo, 2 cascate precipitano in un'area d'effetto leggermente più piccola, infliggendo <hydro>DAN da Hydro</hydro> e generando 6 Gocce d'acqua sorgiva nell'area davanti al personaggio.",
+      "1": "<br/>",
+      "2": "<i>\"La legge si consolida solo una volta che viene resa pubblica. Ma le leggi della natura sono al di sopra di essa, poiché hanno governato tutte le specie fin dalle ere più antiche.\"</i>"
+    },
+    "skillParams": {
+      "0": "DAN da abilità",
+      "1": "DAN da Cascata",
+      "2": "TdR",
+      "3": "Costo energia",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Eredità del Mare antico",
+    "description": {
+      "0": "Quando un membro del gruppo innesca reazioni di Vaporizzazione, Congelamento, Electrocarica, Fioritura, Turbinio di Hydro o Cristallizzazione di Hydro sugli avversari, Neuvillette ottiene 1 accumulo di Antiche glorie draconiche della durata di 30 s, fino a un massimo di 3. Antiche glorie draconiche permette ad Attacco caricato: Equo giudizio di infliggere un 110%/125%/160% dei suoi DAN originali.",
+      "1": "Ogni accumulo di Antiche glorie draconiche creato da ciascun tipo di reazione elementale esiste in maniera indipendente."
+    }
+  },
+  "passive2": {
+    "name": "Arbitro supremo",
+    "description": {
+      "0": "Quando Neuvillette ha più di un 30% di PS, per ogni 1% oltre tale soglia ottiene uno 0,6% di <hydro>bonus DAN da Hydro</hydro>. È possibile ottenere in questo modo fino a un 30% di bonus massimo."
+    }
+  },
+  "passive3": {
+    "name": "Adunanza delle maree",
+    "description": {
+      "0": "Aumenta di un 15% la VEL di Scatto sott'acqua per i membri del tuo gruppo.",
+      "1": "Non è cumulabile con talenti passivi che conferiscono gli stessi effetti."
+    }
+  },
+  "constellation1": {
+    "name": "Istituzione onorabile",
+    "description": {
+      "0": "Quando Neuvillette entra in campo, ottiene 1 accumulo di Antiche glorie draconiche del talento passivo Eredità del Mare antico. Richiede il talento passivo Eredità del Mare antico.",
+      "1": "Inoltre, la resistenza all'interruzione del personaggio aumenta quando usa Rafforzamento attacco caricato: Valutazione legale e Attacco caricato: Equo giudizio."
+    }
+  },
+  "constellation2": {
+    "name": "Come legge comanda",
+    "description": {
+      "0": "Il talento passivo Eredità del Mare antico riceve un potenziamento: ciascun accumulo di Antiche glorie draconiche aumenta i DAN da CRIT di Attacco caricato: Equo giudizio di un 14%. L'incremento massimo che è possibile ottenere è pari a un 42%.",
+      "1": "Richiede il talento passivo Eredità del Mare antico."
+    }
+  },
+  "constellation3": {
+    "name": "Postulazione antica",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Attacco normale: Acque chete</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation4": {
+    "name": "Corona di clemenza",
+    "description": {
+      "0": "Quando Neuvillette è in campo e riceve effetti di guarigione, si materializza 1 Goccia d'acqua sorgiva. Quest'effetto può verificarsi una volta ogni 4 s."
+    }
+  },
+  "constellation5": {
+    "name": "Verdetto assiomatico",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>O maree, ai patrii lidi ritorno</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation6": {
+    "name": "Oblazione iraconda",
+    "description": {
+      "0": "Quando Neuvillette usa Attacco caricato: Equo giudizio, può assorbire le Gocce d'acqua sorgiva presenti in una data area d'effetto. Ciascuna Goccia assorbita aumenta la durata di Attacco caricato: Equo giudizio di 1 s.",
+      "1": "Inoltre, colpendo gli avversari con Equo giudizio, vengono scagliate 2 correnti aggiuntive ogni 2 s, che infliggono ciascuna <hydro>DAN da Hydro</hydro> pari a un 10% dei PS max di Neuvillette. I DAN inflitti in questo modo sono considerati DAN da Equo giudizio."
+    }
+  }
+}

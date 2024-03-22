@@ -1,0 +1,167 @@
+{
+  "name": "Venti",
+  "title": "Nhà Thơ Có Màu Của Gió",
+  "description": "Một trong các nhà thơ thành Mondstadt, tự do tự tại đi khắp hang cùng ngõ hẻm.",
+  "constellationName": "Cung Ca Tiên",
+  "auto": {
+    "name": "Xạ Thuật Của Thần",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Tấn Công Thường</strong>",
+        "1": "Thực hiện tối đa 6 lần bắn tên liên tiếp."
+      },
+      "charged": {
+        "0": "<strong>Trọng Kích</strong>",
+        "1": "Tiến hành <strong>ngắm bắn</strong> chuẩn hơn, có sát thương cao hơn.",
+        "2": "Khi ngắm bắn, gió sẽ tích tụ trên mũi tên. Mũi tên đầy gió sẽ gây <anemo>Sát Thương Nguyên Tố Phong</anemo>."
+      },
+      "plunging": {
+        "0": "<strong>Tấn Công Khi Đáp</strong>",
+        "1": "Bắn mưa tên liên tiếp xuống mặt đất, gây sát thương phạm vi khi chạm đất."
+      }
+    },
+    "skillParams": {
+      "0": "Sát Thương Lần 1",
+      "1": "Sát Thương Lần 2",
+      "2": "Sát Thương Lần 3",
+      "3": "Sát Thương Lần 4",
+      "4": "Sát Thương Lần 5",
+      "5": "Sát Thương Lần 6",
+      "6": "Ngắm Bắn",
+      "7": "Tụ Lực Ngắm Bắn",
+      "8": "Sát Thương Khi Đáp",
+      "9": "ST Khi Rơi Từ Độ Cao Thấp/Cao",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Bài Ca Trời Cao",
+    "description": {
+      "0": "Triệu hồi ngọn gió kết hợp thơ và nhạc, cuốn mọi thứ trong bụi mù lên không trung.",
+      "1": "<br/>",
+      "2": "<strong>Nhấn</strong>",
+      "3": "Tại vị trí của mục tiêu gọi ra ngọn gió, gây <anemo>Sát Thương Phạm Vi Nguyên Tố Phong</anemo>, và đánh bay địch.",
+      "4": "<br/>",
+      "5": "<strong>Nhấn Giữ</strong>",
+      "6": "Lấy bản thân làm trung tâm gọi ra ngọn gió, gây <anemo>Sát Thương Phạm Vi Nguyên Tố Phong</anemo>, và đánh bay địch.",
+      "7": "Sau khi nhấn giữ, Venti cưỡi gió bay lên không trung.",
+      "8": "<br/>",
+      "9": "Địch bị Bài Ca Trời Cao đánh bay, trong thời gian ngắn sẽ rơi chậm.",
+      "10": "<br/>",
+      "11": "<i>Trong thời đại mà thần cùng con người cùng sống trên trái đất, có vô số bài hát truyền khắp bốn phương. Đây là giai điệu đã sớm bị lãng quên.</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Nhấn",
+      "1": "CD Nhấn",
+      "2": "Sát Thương Nhấn Giữ",
+      "3": "CD Nhấn Giữ",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Bài Thơ Thần Gió",
+    "description": {
+      "0": "Bắn ra mũi tên được tạo thành từ hàng nghìn ngọn gió, tạo thành bão lớn, cuốn địch vào, duy trì gây <anemo>Sát Thương Nguyên Tố Phong</anemo>.",
+      "1": "<br/>",
+      "2": "<strong>Chuyển hóa nguyên tố</strong>",
+      "3": "Nếu cơn bão trong thời gian duy trì kỹ năng có tiếp xúc <hydro>Nguyên Tố Thủy</hydro>/<pyro>Nguyên Tố Hỏa</pyro>/<cryo>Nguyên Tố Băng</cryo>/<electro>Nguyên Tố Lôi</electro>, sẽ nhận được thuộc tính nguyên tố tương ứng, tạo thêm sát thương thuộc tính.",
+      "4": "Chuyển hóa nguyên tố chỉ phát sinh 1 lần.",
+      "5": "<br/>",
+      "6": "<i>Có rất nhiều bài thơ ca ngợi Phong Thần đã biến mất. Trong đó bài thơ này miêu tả sức mạnh của ngài ấy cùng với gió.</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Kéo Dài",
+      "1": "Sát Thương Nguyên Tố Kèm Theo",
+      "2": "Thời Gian Kéo Dài",
+      "3": "CD",
+      "4": "Năng Lượng Nguyên Tố",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Cái Ôm Của Gió",
+    "description": {
+      "0": "Nhấn giữ <strong>Bài Ca Trời Cao</strong>, sẽ tạo ra luồng gió lên cao, kéo dài 20s."
+    }
+  },
+  "passive2": {
+    "name": "Mắt Bão",
+    "description": {
+      "0": "Sau khi kết thúc hiệu quả <strong>Bài Thơ Thần Gió</strong>, hồi phục 15 điểm năng lượng Nguyên Tố cho Venti; ",
+      "1": "Nếu xảy ra chuyển hoá nguyên tố, hồi phục 15 điểm năng lượng Nguyên Tố cho tất cả nhân vật trong đội có nguyên tố tương ứng."
+    }
+  },
+  "passive3": {
+    "name": "Đi Theo Cơn Gió",
+    "description": {
+      "0": "Giảm 20% tiêu hao thể lực nhân vật của bản thân trong đội khi bay lượn.",
+      "1": "Đối với buff Thiên Phú cố định có hiệu quả hoàn toàn giống sẽ không thể cộng dồn."
+    }
+  },
+  "constellation1": {
+    "name": "Mũi Tên Gió",
+    "description": {
+      "0": "<strong>Ngắm bắn</strong> sẽ phóng thêm 2 mũi tên, lần lượt gây sát thương bằng 33% sát thương gốc."
+    }
+  },
+  "constellation2": {
+    "name": "Tình Yêu Gió Lạnh",
+    "description": {
+      "0": "<strong>Bài Ca Trời Cao</strong> sẽ khiến <anemo>kháng Nguyên Tố Phong</anemo> và kháng vật lý của địch giảm 12%, kéo dài 10s.",
+      "1": "Địch bị <strong>Bài Ca Trời Cao</strong> đánh bay trước khi rơi xuống đất, <anemo>kháng Nguyên Tố Phong</anemo> và kháng vật lý giảm thêm 12%."
+    }
+  },
+  "constellation3": {
+    "name": "Tập Thơ Thiên Phong",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Bài Thơ Thần Gió</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation4": {
+    "name": "Cơn Gió Tự Do",
+    "description": {
+      "0": "Sau khi Venti nhận Nguyên Tố Tinh Cầu hoặc Nguyên Tố Hạt Nhân, sẽ nhận được 25% <anemo>Buff Sát Thương Nguyên Tố Phong</anemo>, kéo dài 10s."
+    }
+  },
+  "constellation5": {
+    "name": "Hợp Tấu Trời Cao",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Bài Ca Trời Cao</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation6": {
+    "name": "Bão Chiến Tranh",
+    "description": {
+      "0": "Kẻ địch bị <strong>Bài Thơ Thần Gió</strong> sát thương, <anemo>kháng Nguyên Tố Phong</anemo> giảm 20%.",
+      "1": "Nếu chuyển hoá nguyên tố xảy ra, sẽ giảm 20% kháng nguyên tố đã chuyển."
+    }
+  }
+}

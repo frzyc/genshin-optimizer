@@ -1,0 +1,165 @@
+{
+  "name": "Ganyu",
+  "title": "Plenilune Gaze",
+  "description": "Seorang sekretaris di Yuehai Pavilion. Darah hewan pusaka Qilin mengalir di dalam tubuhnya.",
+  "constellationName": "Sinae Unicornis",
+  "auto": {
+    "name": "Liutian Archery",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Attack</strong>",
+        "1": "Melancarkan hingga 6 serangan berturut-turut dengan busur."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Melancarkan sebuah <strong>Serangan Membidik</strong> yang lebih akurat untuk mengakibatkan DMG lebih besar.",
+        "2": "Saat membidik, es akan berkumpul di ujung anak panah. Memiliki efek yang berbeda tergantung dari lama serangannya ditahan:",
+        "3": [
+          "Charge Tahap 1: Menembakkan panah es yang mengakibatkan <cryo>Cryo DMG</cryo>.",
+          "Charge Tahap 2: Menembakkan Frostflake Arrow yang mengakibatkan <cryo>Cryo DMG</cryo>. Frostflake Arrow akan mengembang setelah mengenai target untuk mengakibatkan <cryo>Cryo DMG area</cryo>."
+        ]
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Melancarkan hujan panah dari udara dan menerjang tanah dengan kecepatan tinggi, mengakibatkan DMG area saat mendarat."
+      }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Tahap 4",
+      "4": "DMG Tahap 5",
+      "5": "DMG Tahap 6",
+      "6": "DMG Membidik",
+      "7": "Serangan Membidik Tahap 1",
+      "8": "DMG Frostflake Arrow",
+      "9": "DMG Frostflake Arrow Bloom",
+      "10": "DMG Selama Plunging",
+      "11": "DMG Plunging Attack Rendah/Tinggi",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Trail of the Qilin",
+    "description": {
+      "0": "Dengan meninggalkan sebuah Ice Lotus, Ganyu meloncat mundur dengan cepat, membuang semua ketidakmurnian dan mengakibatkan <cryo>Cryo DMG area</cryo>.",
+      "1": "<br/>",
+      "2": "<strong>Ice Lotus</strong>",
+      "3": [
+        "Terus menarik perhatian musuh di sekitar untuk menyerangnya.",
+        "HP Ice Lotus mewarisi Max HP Ganyu berdasarkan persentase tertentu.",
+        "Saat dihancurkan atau durasinya berakhir, Ice Lotus akan mengembang dengan hebat dan mengakibatkan <cryo>Cryo DMG area</cryo>."
+      ],
+      "4": "<br/>",
+      "5": "<i>\"Kamu melihatku? Pasti salah, aku sedang lembur saat itu.\"</i>"
+    },
+    "skillParams": {
+      "0": "HP Terwariskan",
+      "1": "DMG Skill",
+      "2": "Durasi",
+      "3": "Cooldown",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Celestial Shower",
+    "description": {
+      "0": "Mengumpulkan es dan salju di udara untuk memanggil Sacred Cryo Pearl yang membasmi iblis.",
+      "1": "Selama durasi skill, Sacred Cryo Pearl akan terus menjatuhkan bongkahan es yang mengenai musuh dalam area dan mengakibatkan <cryo>Cryo DMG</cryo>.",
+      "2": "<br/>",
+      "3": "<i>Ganyu tentunya dapat membuat hujan manis, tapi terhadap iblis dan monster, hujannya menjadi salju yang dingin dan pahit.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Ice Shard",
+      "1": "Durasi",
+      "2": "Cooldown",
+      "3": "Konsumsi Energy",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Undivided Heart",
+    "description": {
+      "0": "Setelah menembakkan sebuah Frostflake Arrow, meningkatkan 20% CRIT Rate dari Frostflake Arrow berikutnya serta efek ledakan yang disebabkan olehnya selama 5 detik."
+    }
+  },
+  "passive2": {
+    "name": "Harmony between Heaven and Earth",
+    "description": {
+      "0": "<strong>Celestial Shower</strong> memberikan 20% <cryo>Cryo DMG Bonus</cryo> kepada anggota party yang berada di dalam lingkup areanya."
+    }
+  },
+  "passive3": {
+    "name": "Perserved for the Hunt",
+    "description": {
+      "0": "Mengembalikan 15% jumlah Ore yang digunakan saat membuat senjata tipe Bow."
+    }
+  },
+  "constellation1": {
+    "name": "Dew-Drinker",
+    "description": {
+      "0": "Mengurangi 15% <cryo>Cryo RES</cryo> musuh yang terkena Frostflake Arrow Charge Tahap 2 atau Frostflake Arrow Bloom selama 6 detik.",
+      "1": "Serangan ini juga akan memulihkan 2 Energy Ganyu. Efek pemulihan Energy terpicu maksimum 1 kali dalam 1 serangan, tak peduli musuh terkena Frostflake Arrow Charge Tahap 2 atau ledakan Frostflake Arrow Bloom."
+    }
+  },
+  "constellation2": {
+    "name": "The Auspicious",
+    "description": {
+      "0": "Meningkatkan 1 charge <strong>Trail of the Qilin</strong>."
+    }
+  },
+  "constellation3": {
+    "name": "Cloud-Strider",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Celestial Shower</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Westward Sojourn",
+    "description": {
+      "0": "Meningkatkan DMG yang diterima musuh saat mereka berada di dalam area <strong>Celestial Shower</strong>. Semakin lama musuh berada di dalam area, semakin besar efek peningkatan DMG.",
+      "1": "Peningkatan DMG mula-mula 5%, dan meningkat 5% setiap 3 detik, peningkatan DMG maksimum: 25%.",
+      "2": "Efek ini bertahan selama 3 detik setelah musuh meninggalkan area."
+    }
+  },
+  "constellation5": {
+    "name": "The Merciful",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Trail of the Qilin</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "The Clement",
+    "description": {
+      "0": "Menggunakan <strong>Trail of the Qilin</strong> akan menyebabkan Frostflake Arrow yang ditembakkan dalam waktu 30 detik ke depan tidak memerlukan Charge."
+    }
+  }
+}

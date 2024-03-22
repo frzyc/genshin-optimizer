@@ -1,0 +1,165 @@
+{
+  "name": "Ganyu",
+  "title": "Người Bảo Vệ Tận Tâm",
+  "description": "Thư ký tại Nguyệt Hải Đình, trong người chứa huyết mạch của tiên thú Kỳ Lân.",
+  "constellationName": "Cung Tiên Lân",
+  "auto": {
+    "name": "Lưu Thiên Xạ Thuật",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Tấn Công Thường</strong>",
+        "1": "Liên tục bắn tên, tối đa 6 lần."
+      },
+      "charged": {
+        "0": "<strong>Trọng kích</strong>",
+        "1": "Có thể <strong>ngắm bắn</strong> chính xác hơn, sát thương cao hơn.",
+        "2": "Khi ngắm bắn, dòng không khí lạnh sẽ ngưng tụ liên tục trên mũi tên và bắn ra cùng lúc tấn công. Căn cứ thời gian tụ lực dài hay ngắn sẽ gây ra hiệu quả khác nhau:",
+        "3": [
+          "Tụ lực lần 1: Bắn mũi tên có khí lạnh gây <cryo>sát thương Nguyên Tố Băng</cryo>;",
+          "Tụ lực lần 2: Bắn Cung Sương Hoa gây <cryo>sát thương Nguyên Tố Băng</cryo>; sau khi bắn trúng, sương giá tung bay, gây thêm <cryo>Sát Thương Phạm Vi Nguyên Tố Băng</cryo>."
+        ]
+      },
+      "plunging": {
+        "0": "<strong>Tấn Công Khi Đáp</strong>",
+        "1": "Bắn mưa tên từ trên không, đồng thời lao nhanh xuống mặt đất, gây sát thương phạm vi khi chạm đất."
+      }
+    },
+    "skillParams": {
+      "0": "Sát Thương Lần 1",
+      "1": "Sát Thương Lần 2",
+      "2": "Sát Thương Lần 3",
+      "3": "Sát Thương Lần 4",
+      "4": "Sát Thương Lần 5",
+      "5": "Sát Thương Lần 6",
+      "6": "Ngắm Bắn",
+      "7": "Tụ lực Ngắm Bắn Lần 1",
+      "8": "Sát thương bắn trúng của Cung Sương Hoa",
+      "9": "ST Cung Sương Hoa: Sương Giá Tung Bay",
+      "10": "Sát Thương Khi Rơi",
+      "11": "Sát Thương Khi Rơi Từ Độ Cao Thấp/Cao",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Sơn Trạch Lân Tích",
+    "description": {
+      "0": "Ganyu để lại một đóa sen băng rồi lùi nhanh về phía sau, tránh xa tất cả yêu ma, gây <cryo>Sát Thương Phạm Vi Nguyên Tố Băng</cryo>.",
+      "1": "<br/>",
+      "2": "<strong>Băng Liên</strong>",
+      "3": [
+        "Liên tục khiêu khích kẻ địch xung quanh, thu hút địch tấn công;",
+        "Độ bền sẽ kế thừa căn cứ theo tỷ lệ giới hạn HP của Ganyu;",
+        "Khi bị phá hủy hoặc hết thời gian sẽ nở rộ, gây <cryo>Sát Thương Phạm Vi Nguyên Tố Băng</cryo>."
+      ],
+      "4": "<br/>",
+      "5": "<i>\"Bạn nhìn thấy tôi à? Chắc chỉ là ảo giác thôi, lúc đó tôi đang tăng ca mà.\"</i>"
+    },
+    "skillParams": {
+      "0": "HP Thừa Kế",
+      "1": "Sát Thương Kỹ Năng",
+      "2": "Thời Gian Kéo Dài",
+      "3": "CD",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Thiên Hoa Hạ Phàm",
+    "description": {
+      "0": "Ngưng tụ sương tuyết trong không khí, triệu hồi Linh Châu Băng diệt ma.",
+      "1": "Trong thời gian tồn tại, Linh Châu Băng sẽ không ngừng giáng Nhũ Băng xuống, tấn công kẻ địch trong phạm vi, gây <cryo>Sát Thương Nguyên Tố Băng</cryo>.",
+      "2": "<br/>",
+      "3": "<i>Đương nhiên Ganyu có thể giáng cơn mưa mát lành xuống, nhưng đối với tà ma ngoại đạo, những thứ này đều sẽ hóa thành bông tuyết khổ đau.</i>"
+    },
+    "skillParams": {
+      "0": "Sát thương Nhũ Băng",
+      "1": "Thời Gian Kéo Dài",
+      "2": "CD",
+      "3": "Năng Lượng Nguyên Tố",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Duy Thử Nhất Tâm",
+    "description": {
+      "0": "Trong vòng 5s sau khi Cung Sương Hoa bắn ra, sẽ khiến cho Cung Sương Hoa được bắn ra tiếp theo và Sương Giá Tung Bay được tạo ra từ những Cung Sương Hoa này tăng 20% tỷ lệ bạo kích."
+    }
+  },
+  "passive2": {
+    "name": "Thiên Địa Giao Hòa",
+    "description": {
+      "0": "Nhân vật trong đội đang trong trận ở khu vực <strong>Thiên Hoa Hạ Phàm</strong> sẽ nhận 20% <cryo>tăng sát thương Nguyên Tố Băng</cryo>."
+    }
+  },
+  "passive3": {
+    "name": "Cất Cung Đợi Dùng",
+    "description": {
+      "0": "Khi rèn vũ khí loại cung, hoàn trả 15% Khoáng Thạch tiêu hao."
+    }
+  },
+  "constellation1": {
+    "name": "Ẩm Lộ",
+    "description": {
+      "0": "Khi Cung Sương Hoa hoặc Sương Giá Tung Bay tụ lực trọng kích lần 2 trúng kẻ địch sẽ khiến địch bị giảm 15% <cryo>Kháng Nguyên Tố Băng</cryo>, kéo dài 6s;",
+      "1": "Ngoài ra, khi trúng sẽ hồi 2 điểm Năng Lượng Nguyên Tố cho Ganyu. Mỗi lần tụ lực trọng kích lần 2 chỉ có thể kích hoạt hiệu quả hồi Năng Lượng Nguyên Tố 1 lần, bất kể Cung Sương Hoa hoặc Sương Giá Tung Bay có trúng địch hay không."
+    }
+  },
+  "constellation2": {
+    "name": "Hoạch Lân",
+    "description": {
+      "0": "Số lần sử dụng <strong>Sơn Trạch Lân Tích</strong> tăng thêm 1."
+    }
+  },
+  "constellation3": {
+    "name": "Vân Hành",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Thiên Hoa Hạ Phàm</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation4": {
+    "name": "Tây Thú",
+    "description": {
+      "0": "Trong khu vực của <strong>Thiên Hoa Hạ Phàm</strong>, tăng sát thương kẻ địch phải chịu, hiệu quả này sẽ dần mạnh hơn theo thời gian.",
+      "1": "Ban đầu lượng tăng sát thương phải chịu là 5%, mỗi 3s tăng 5%, tăng nhiều nhất đến 25%.",
+      "2": "Sau khi rời khỏi khu vực, hiệu quả kéo dài nhiều nhất 3s."
+    }
+  },
+  "constellation5": {
+    "name": "Trảm Thảo",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Sơn Trạch Lân Tích</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation6": {
+    "name": "Lữ Trùng",
+    "description": {
+      "0": "Trong vòng 30s sau khi thi triển <strong>Sơn Trạch Lân Tích</strong>, không cần tụ lực cũng có thể thi triển Cung Sương Hoa lần đầu."
+    }
+  }
+}

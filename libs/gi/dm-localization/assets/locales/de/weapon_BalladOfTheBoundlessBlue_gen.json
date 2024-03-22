@@ -1,0 +1,24 @@
+{
+  "name": "Ballade des unendlichen Blaus",
+  "description": {
+    "0": "Eine wunderschön gebundene Sammlung von Gedichten über den Himmel, Pusteblumen und dergleichen. Erfreut sich unter den Einwohnern von Mondstadt großer Beliebtheit."
+  },
+  "passiveName": "Tiefblauer Himmel",
+  "passiveDescription": {
+    "0": {
+      "0": "Erhöht den mit Standardangriffen verursachten Schaden nach dem Treffen von Gegnern mit Standardangriffen oder heftigen Schlägen 6 s lang um <cryo>8 %</cryo> und den mit heftigen Schlägen verursachten Schaden um <cryo>6 %</cryo>. 3-fach stapelbar, 0,3 s Abklingzeit."
+    },
+    "1": {
+      "0": "Erhöht den mit Standardangriffen verursachten Schaden nach dem Treffen von Gegnern mit Standardangriffen oder heftigen Schlägen 6 s lang um <cryo>10 %</cryo> und den mit heftigen Schlägen verursachten Schaden um <cryo>7,5 %</cryo>. 3-fach stapelbar, 0,3 s Abklingzeit."
+    },
+    "2": {
+      "0": "Erhöht den mit Standardangriffen verursachten Schaden nach dem Treffen von Gegnern mit Standardangriffen oder heftigen Schlägen 6 s lang um <cryo>12 %</cryo> und den mit heftigen Schlägen verursachten Schaden um <cryo>9 %</cryo>. 3-fach stapelbar, 0,3 s Abklingzeit."
+    },
+    "3": {
+      "0": "Erhöht den mit Standardangriffen verursachten Schaden nach dem Treffen von Gegnern mit Standardangriffen oder heftigen Schlägen 6 s lang um <cryo>14 %</cryo> und den mit heftigen Schlägen verursachten Schaden um <cryo>10,5 %</cryo>. 3-fach stapelbar, 0,3 s Abklingzeit."
+    },
+    "4": {
+      "0": "Erhöht den mit Standardangriffen verursachten Schaden nach dem Treffen von Gegnern mit Standardangriffen oder heftigen Schlägen 6 s lang um <cryo>16 %</cryo> und den mit heftigen Schlägen verursachten Schaden um <cryo>12 %</cryo>. 3-fach stapelbar, 0,3 s Abklingzeit."
+    }
+  }
+}

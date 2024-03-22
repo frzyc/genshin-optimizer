@@ -1,0 +1,24 @@
+{
+  "name": "Arco Real",
+  "description": {
+    "0": "Um velho arco real que pertencia aos antigos governantes de Mondstadt. Inúmeras gerações depois, a corda do arco ainda está firme e ainda pode disparar flechas com grande força."
+  },
+  "passiveName": "Foco",
+  "passiveDescription": {
+    "0": {
+      "0": "Ao atingir um oponente, aumenta a Taxa Crítica em <cryo>8%</cryo>, acumulando no máximo 5 vezes. Causar Dano Crítico remove todos os acúmulos."
+    },
+    "1": {
+      "0": "Ao atingir um oponente, aumenta a Taxa Crítica em <cryo>10%</cryo>, acumulando no máximo 5 vezes. Causar Dano Crítico remove todos os acúmulos."
+    },
+    "2": {
+      "0": "Ao atingir um oponente, aumenta a Taxa Crítica em <cryo>12%</cryo>, acumulando no máximo 5 vezes. Causar Dano Crítico remove todos os acúmulos."
+    },
+    "3": {
+      "0": "Ao atingir um oponente, aumenta a Taxa Crítica em <cryo>14%</cryo>, acumulando no máximo 5 vezes. Causar Dano Crítico remove todos os acúmulos."
+    },
+    "4": {
+      "0": "Ao atingir um oponente, aumenta a Taxa Crítica em <cryo>16%</cryo>, acumulando no máximo 5 vezes. Causar Dano Crítico remove todos os acúmulos."
+    }
+  }
+}

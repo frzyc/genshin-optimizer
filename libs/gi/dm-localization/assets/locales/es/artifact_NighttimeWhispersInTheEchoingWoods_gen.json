@@ -1,0 +1,29 @@
+{
+  "setName": "Murmullo del Bosque Reverberante",
+  "setEffects": {
+    "2": "ATQ +18%.",
+    "4": "Tras usar la Habilidad Elemental, el personaje obtiene un 20% de Bono de Daño Geo durante 10 s. Si está protegido por un escudo creado mediante la reacción de Cristalización, el anterior efecto aumenta en un 150%. Este aumento adicional se eliminará 1 s después de perder el escudo creado mediante Cristalización."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Flor Ornamental de la Abnegación",
+      "desc": "El broche que solía llevar la bruja de cierta historia. Presenta un ornamento con forma de mariposa, al igual que los demás accesorios por los que sentía predilección."
+    },
+    "plume": {
+      "name": "Pluma de la Sinceridad",
+      "desc": "La pluma que utilizaba la bruja de cierta historia. Posee unas cualidades tan extraordinarias que ni siquiera vale la pena mencionar la fluidez y suavidad con la que escribe."
+    },
+    "sands": {
+      "name": "Reloj de Arena de la Fidelidad",
+      "desc": "El reloj de arena del que dependía la bruja de cierta historia. Cuenta la leyenda que, si le recitas un encantamiento equivocado, el tiempo empezará a transcurrir más rápido de lo normal."
+    },
+    "goblet": {
+      "name": "Tintero de la Magnanimidad",
+      "desc": "El tintero que utilizaba la bruja de cierta historia. Posee un encantamiento de un poder comparable al de la pluma que se mojaba en él."
+    },
+    "circlet": {
+      "name": "Sombrero del Afecto",
+      "desc": "El sombrero favorito de la bruja de cierta historia. La elegancia y, al mismo tiempo, informalidad de este accesorio eran las dos cosas que más le gustaban de él."
+    }
+  }
+}

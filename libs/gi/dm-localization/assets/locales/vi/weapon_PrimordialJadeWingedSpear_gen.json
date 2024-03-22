@@ -1,0 +1,24 @@
+{
+  "name": "Hòa Phác Diên",
+  "description": {
+    "0": "Thương hóa thân từ ma thần, có độ sắc bén và sức mạnh từ thời viễn cổ."
+  },
+  "passiveName": "Thương Đại Bàng Ngân Nga",
+  "passiveDescription": {
+    "0": {
+      "0": "Khi đánh trúng kẻ địch tấn công của bản thân tăng <cryo>3.2%</cryo>, kéo dài 6s, có thể cộng dồn 7 tầng. Mỗi 0.3s có hiệu quả 1 lần, khi cộng dồn đầy sẽ tăng <cryo>12%</cryo> sát thương."
+    },
+    "1": {
+      "0": "Khi đánh trúng kẻ địch tấn công của bản thân tăng <cryo>3.9%</cryo>, kéo dài 6s, có thể cộng dồn 7 tầng. Mỗi 0.3s có hiệu quả 1 lần, khi cộng dồn đầy sẽ tăng <cryo>15%</cryo> sát thương."
+    },
+    "2": {
+      "0": "Khi đánh trúng kẻ địch tấn công của bản thân tăng <cryo>4.6%</cryo>, kéo dài 6s, có thể cộng dồn 7 tầng. Mỗi 0.3s có hiệu quả 1 lần, khi cộng dồn đầy sẽ tăng <cryo>18%</cryo> sát thương."
+    },
+    "3": {
+      "0": "Khi đánh trúng kẻ địch tấn công của bản thân tăng <cryo>5.3%</cryo>, kéo dài 6s, có thể cộng dồn 7 tầng. Mỗi 0.3s có hiệu quả 1 lần, khi cộng dồn đầy sẽ tăng <cryo>21%</cryo> sát thương."
+    },
+    "4": {
+      "0": "Khi đánh trúng kẻ địch tấn công của bản thân tăng <cryo>6%</cryo>, kéo dài 6s, có thể cộng dồn 7 tầng. Mỗi 0.3s có hiệu quả 1 lần, khi cộng dồn đầy sẽ tăng <cryo>24%</cryo> sát thương."
+    }
+  }
+}

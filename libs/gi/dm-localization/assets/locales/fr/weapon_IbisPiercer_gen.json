@@ -1,0 +1,24 @@
+{
+  "name": "Perceur d'ibis",
+  "description": {
+    "0": "Un arc en or forgé à partir de la description d'une histoire. Si vous l'utilisez comme une arme normale, vous pouvez également le considérer comme faisant partie d'un monde fictif sorti de ses pages."
+  },
+  "passiveName": "Faveur de la sagesse secrète",
+  "passiveDescription": {
+    "0": {
+      "0": "Lorsqu'une attaque chargée a touché un ennemi, la maîtrise élémentaire du personnage augmente de <cryo>40</cryo> pts pendant 6 s. Cet effet peut être cumulé 2 fois maximum et déclenché une fois toutes les 0,5 s."
+    },
+    "1": {
+      "0": "Lorsqu'une attaque chargée a touché un ennemi, la maîtrise élémentaire du personnage augmente de <cryo>50</cryo> pts pendant 6 s. Cet effet peut être cumulé 2 fois maximum et déclenché une fois toutes les 0,5 s."
+    },
+    "2": {
+      "0": "Lorsqu'une attaque chargée a touché un ennemi, la maîtrise élémentaire du personnage augmente de <cryo>60</cryo> pts pendant 6 s. Cet effet peut être cumulé 2 fois maximum et déclenché une fois toutes les 0,5 s."
+    },
+    "3": {
+      "0": "Lorsqu'une attaque chargée a touché un ennemi, la maîtrise élémentaire du personnage augmente de <cryo>70</cryo> pts pendant 6 s. Cet effet peut être cumulé 2 fois maximum et déclenché une fois toutes les 0,5 s."
+    },
+    "4": {
+      "0": "Lorsqu'une attaque chargée a touché un ennemi, la maîtrise élémentaire du personnage augmente de <cryo>80</cryo> pts pendant 6 s. Cet effet peut être cumulé 2 fois maximum et déclenché une fois toutes les 0,5 s."
+    }
+  }
+}

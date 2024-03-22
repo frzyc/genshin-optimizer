@@ -1,0 +1,160 @@
+{
+  "name": "Gaming",
+  "title": "Tuấn Nghê Ngẩng Đầu",
+  "description": "Tiêu sư của Kiếm Hạp Tiêu Cục, người ra quyết định của Đội Múa Thú Uy Vũ.",
+  "constellationName": "Cung Tỉnh Sư",
+  "auto": {
+    "name": "Hái Sao",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Tấn Công Thường</strong>",
+        "1": "Thực hiện tối đa 4 lần tấn công liên tiếp."
+      },
+      "charged": {
+        "0": "<strong>Trọng Kích</strong>",
+        "1": "Tiêu hao thể lực để xoay kiếm tấn công địch xung quanh.",
+        "2": "Khi ngừng quay, sẽ bổ một nhát cực mạnh."
+      },
+      "plunging": {
+        "0": "<strong>Tấn Công Khi Đáp</strong>",
+        "1": "Đáp xuống đất từ trên không, tấn công kẻ địch trên đường và gây sát thương phạm vi khi chạm đất."
+      }
+    },
+    "skillParams": {
+      "0": "Sát Thương Lần 1",
+      "1": "Sát Thương Lần 2",
+      "2": "Sát Thương Lần 3",
+      "3": "Sát Thương Lần 4",
+      "4": "Sát Thương Trọng Kích Tuần Hoàn",
+      "5": "Sát Thương Trọng Kích Cuối Cùng",
+      "6": "Thể lực Trọng Kích tiêu hao",
+      "7": "Thời Gian Duy Trì Tối Đa",
+      "8": "Sát Thương Khi Đáp",
+      "9": "Sát Thương Khi Đáp Từ Độ Cao Thấp/Cao",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Thụy Thú Thăng Thiên",
+    "description": {
+      "0": "Dùng kỹ thuật múa thú lao về phía trước để tấn công, khi tiếp xúc với mục tiêu hoặc địa hình thì sẽ nhảy lên cao.",
+      "1": "Gaming khi nhảy lên không trung từ Kỹ Năng Nguyên Tố - Thụy Thú Thăng Thiên, nếu thực hiện Tấn Công Khi Đáp ngay thì sẽ thi triển Tấn Công Khi Đáp - Đạp Vân Hiến Thụy mạnh mẽ hơn.",
+      "2": "<br/>",
+      "3": "<strong>Tấn Công Khi Đáp - Đạp Vân Hiến Thụy</strong>",
+      "4": "Sát thương gây ra từ Tấn Công Khi Đáp được thi triển bởi Kỹ Năng Nguyên Tố - Thụy Thú Thăng Thiên sẽ chuyển hóa thành <pyro>Sát Thương Nguyên Tố Hỏa</pyro> không thể thay thế, đồng thời khi tiếp đất sẽ khiến Gaming tiêu hao một lượng HP nhất định, cách thức này khiến HP của Gaming tối đa giảm xuống đến 10%.",
+      "5": "Sát thương của Đạp Vân Hiến Thụy sẽ được xem là sát thương Tấn Công Khi Đáp.",
+      "6": "<br/>",
+      "7": "<i>\"Thụy thú nhảy cao hái lộc, ngụ ý điềm lành gõ cửa. Chúc quý vị vạn sự như ý, làm ăn phát tài nhé!\"</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Tấn Công Khi Đáp - Đạp Vân Hiến Thụy",
+      "1": "HP Tiêu Hao",
+      "2": "CD",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Kim Nghê Vũ Bùng Cháy",
+    "description": {
+      "0": "Gaming tiến vào Tư Thế Múa Thú, khiến Gaming nhận ấn nguyên tố <pyro>Hỏa</pyro> trong thời gian ngắn, hồi phục một lượng HP nhất định, đồng thời triệu hồi Nghê Thú - A Văn tấn công kẻ địch, gây <pyro>Sát Thương Phạm Vi Nguyên Tố Hỏa</pyro>.",
+      "1": "Nghê Thú - A Văn sau khi hoàn thành đòn tấn công sẽ lăn về phía xung quanh trước khi di chuyển đến vị trí của Gaming. Sau khi hội hợp với Gaming thì Nghê Thú - A Văn sẽ rời trận, đồng thời làm mới thời gian chờ Kỹ Năng Nguyên Tố - Thụy Thú Thăng Thiên của Gaming.",
+      "2": "Trong thời gian duy trì Tư Thế Múa Thú sẽ tăng khả năng kháng gián đoạn của Gaming, khi Tấn Công Khi Đáp - Đạp Vân Hiến Thụy đáp đất hoặc kết thúc đòn tấn công lao đến của kỹ năng Thụy Thú Thăng Thiên, nếu HP của Gaming cao hơn 50% thì sẽ triệu hồi lại Nghê Thú - A Văn.",
+      "3": "Trong trận cùng lúc chỉ tồn tại một Nghê Thú - A Văn của bản thân Gaming.",
+      "4": "Hiệu quả sẽ bị xóa khi Gaming rời trận.",
+      "5": "<br/>",
+      "6": "<i>\"Kim nghê thổ tường, hỏa thụ kim hoa! Đó, vậy là may mắn cả năm nhé.\"</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Nghê Thú - A Văn Tấn Công",
+      "1": "Lượng Trị Liệu Kỹ Năng",
+      "2": "Tư Thế Múa Thú Duy Trì",
+      "3": "CD",
+      "4": "Năng Lượng Nguyên Tố",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Vũ Điệu Thái Bình",
+    "description": {
+      "0": "Sau khi Tấn Công Khi Đáp - Đạp Vân Hiến Thụy của <strong>Thụy Thú Thăng Thiên</strong> đánh trúng mục tiêu, mỗi 0.2s sẽ hồi phục 1 lần HP cho Gaming, lượng hồi phục tương đương 1.5% Giới Hạn HP của Gaming, kéo dài 0.8s."
+    }
+  },
+  "passive2": {
+    "name": "Không Khí Thịnh Vượng",
+    "description": {
+      "0": "Khi HP của Gaming thấp hơn 50%, sẽ tăng 20% trị liệu nhận được. Khi HP của Gaming cao hơn hoặc bằng 50%, sát thương gây ra từ Tấn Công Khi Đáp - Đạp Vân Hiến Thụy sẽ tăng 20%."
+    }
+  },
+  "passive3": {
+    "name": "Tỉnh Sư Tung Hoành",
+    "description": {
+      "0": "Ban ngày (6h đến 18h), nhân vật trong đội của bản thân nhận hiệu ứng Tốc Hành: Tốc độ di chuyển tăng 10%.",
+      "1": "Hiệu quả này vô hiệu trong Bí Cảnh, Vùng Đất Thảo Phạt, La Hoàn Thâm Cảnh. Hiệu quả Tốc Hành không thể cộng dồn."
+    }
+  },
+  "constellation1": {
+    "name": "Phù Hộ Bừng Sáng",
+    "description": {
+      "0": "Khi Nghê Thú - A Văn của <strong>Kim Nghê Vũ Bùng Cháy</strong> thành công hội hợp với Gaming, sẽ hồi phục cho Gaming 15% HP."
+    }
+  },
+  "constellation2": {
+    "name": "Bộ Đạp Mai Hoa",
+    "description": {
+      "0": "Khi Gaming nhận trị liệu, nếu lần hồi phục đó bị dư ra thì Tấn Công của Gaming sẽ tăng 20% trong 5s."
+    }
+  },
+  "constellation3": {
+    "name": "Linh Hồn Thức Tỉnh",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Thụy Thú Thăng Thiên</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation4": {
+    "name": "Phá Mây Vượt Núi",
+    "description": {
+      "0": "Tấn Công Khi Đáp - Đạp Vân Hiến Thụy của <strong>Thụy Thú Thăng Thiên</strong> khi trúng kẻ địch, sẽ hồi cho Gaming 2 điểm Năng Lượng Nguyên Tố. Hiệu quả này mỗi 0.2s tối đa kích hoạt một lần."
+    }
+  },
+  "constellation5": {
+    "name": "Tiếng Hống Trấn Ma",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Kim Nghê Vũ Bùng Cháy</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation6": {
+    "name": "Bách Thú Quy Phục",
+    "description": {
+      "0": "Tấn Công Khi Đáp - Đạp Vân Hiến Thụy của <strong>Thụy Thú Thăng Thiên</strong> tăng 20% Tỷ Lệ Bạo Kích, tăng 40% Sát Thương Bạo Kích và tăng phạm vi tấn công."
+    }
+  }
+}

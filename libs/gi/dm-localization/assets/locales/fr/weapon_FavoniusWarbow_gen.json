@@ -1,0 +1,24 @@
+{
+  "name": "Arc de chasse de Favonius",
+  "description": {
+    "0": "Un arc manié par les chevaliers de l'Ordre de Favonius. Seuls les meilleurs archers pourront tirer le maximum de son potentiel."
+  },
+  "passiveName": "Charge critique",
+  "passiveDescription": {
+    "0": {
+      "0": "Les coups CRIT des attaques ont <cryo>60 %</cryo> de chances de générer une faible quantité de particules élémentaires qui restaurent 6 pts d'énergie. Cet effet peut être déclenché une fois toutes les <cryo>12</cryo> s."
+    },
+    "1": {
+      "0": "Les coups CRIT des attaques ont <cryo>70 %</cryo> de chances de générer une faible quantité de particules élémentaires qui restaurent 6 pts d'énergie. Cet effet peut être déclenché une fois toutes les <cryo>10,5</cryo> s."
+    },
+    "2": {
+      "0": "Les coups CRIT des attaques ont <cryo>80 %</cryo> de chances de générer une faible quantité de particules élémentaire qui restaurent 6 pts d'énergie. Cet effet peut être déclenché une fois toutes les <cryo>9</cryo> s."
+    },
+    "3": {
+      "0": "Les coups CRIT des attaques ont <cryo>90 %</cryo> de chances de générer une faible quantité de particules élémentaires qui restaurent 6 pts d'énergie. Cet effet peut être déclenché une fois toutes les <cryo>7,5</cryo> s."
+    },
+    "4": {
+      "0": "Les coups CRIT des attaques ont <cryo>100 %</cryo> de chances de générer une faible quantité de particules élémentaire qui restaurent 6 pts d'énergie. Cet effet peut être déclenché une fois toutes les <cryo>6</cryo> s."
+    }
+  }
+}

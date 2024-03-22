@@ -1,0 +1,24 @@
+{
+  "name": "Brilho do Beco",
+  "description": {
+    "0": "Uma espada negra, tão escura quanto a noite. Pertenceu a um ladrão que vagava pelas ruas à noite."
+  },
+  "passiveName": "Herói Itinerante",
+  "passiveDescription": {
+    "0": {
+      "0": "Aumenta o Dano causado pelo Personagem em <cryo>12%</cryo>. Ao sofrer Dano, esse efeito de aumento de Dano não ocorrerá por 5s."
+    },
+    "1": {
+      "0": "Aumenta o Dano causado pelo Personagem em <cryo>15%</cryo>. Ao sofrer Dano, esse efeito de aumento de Dano não ocorrerá por 5s."
+    },
+    "2": {
+      "0": "Aumenta o Dano causado pelo Personagem em <cryo>18%</cryo>. Ao sofrer Dano, esse efeito de aumento de Dano não ocorrerá por 5s."
+    },
+    "3": {
+      "0": "Aumenta o Dano causado pelo Personagem em <cryo>21%</cryo>. Ao sofrer Dano, esse efeito de aumento de Dano não ocorrerá por 5s."
+    },
+    "4": {
+      "0": "Aumenta o Dano causado pelo Personagem em <cryo>24%</cryo>. Ao sofrer Dano, esse efeito de aumento de Dano não ocorrerá por 5s."
+    }
+  }
+}

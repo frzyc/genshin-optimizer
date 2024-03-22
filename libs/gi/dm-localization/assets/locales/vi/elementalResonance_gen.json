@@ -1,0 +1,34 @@
+{
+  "ProtectiveCanopy": {
+    "name": "Bảo Hộ Đan Xen",
+    "desc": "Tất cả kháng Nguyên Tố tăng 15%, kháng vật lý tăng 15%"
+  },
+  "FerventFlames": {
+    "name": "Hỏa Nhiệt Tình",
+    "desc": "Thời gian duy trì ấn nguyên tố Băng giảm 40%. Tấn công tăng 25%."
+  },
+  "SoothingWater": {
+    "name": "Thủy Trị Liệu",
+    "desc": "Thời gian duy trì ấn nguyên tố Hỏa giảm 40%. Giới hạn HP tăng 25%."
+  },
+  "ShatteringIce": {
+    "name": "Băng Vụn Vỡ",
+    "desc": "Thời gian duy trì ấn nguyên tố Lôi giảm 40%. Khi tấn công kẻ địch bị gán ấn nguyên tố Băng hoặc địch ở trạng thái Đóng Băng, tỷ lệ bạo kích tăng 15%."
+  },
+  "HighVoltage": {
+    "name": "Lôi Mạnh Mẽ",
+    "desc": "Thời gian duy trì ấn nguyên tố Thủy giảm 40%. Khi kích hoạt phản ứng Siêu Dẫn, Quá Tải, Điện Cảm, Sinh Trưởng, Tăng Cường, Nở Rộ sẽ có 100% tỉ lệ rơi 1 Nguyên Tố Hạt Nhân Lôi, CD 5s."
+  },
+  "ImpetuousWinds": {
+    "name": "Phong Nhạy Bén",
+    "desc": "Tiêu hao thể lực giảm 15%, tốc độ di chuyển tăng 10%, CD rút ngắn 5%."
+  },
+  "EnduringRock": {
+    "name": "Nham Kiên Định",
+    "desc": "Hiệu quả khiên tăng 15%. Ngoài ra, khi nhân vật có khiên bảo hộ, sẽ có đặc tính sau: Sát thương gây ra tăng 15%; khi nhân vật gây sát thương cho địch, sẽ khiến kháng nguyên tố Nham của địch giảm 20%, duy trì 15s."
+  },
+  "SprawlingGreenery": {
+    "name": "Thảo Sinh Sôi",
+    "desc": "Tinh Thông Nguyên Tố tăng 50 điểm. Sau khi kích hoạt phản ứng Thiêu Đốt, Sinh Trưởng, Sum Suê, tất cả nhân vật trong đội gần đó tăng 30 Tinh Thông Nguyên Tố, duy trì 6s. Sau khi kích hoạt phản ứng Tăng Cường, Lan Tràn, Nở Rộ, Bung Tỏa, tất cả nhân vật trong đội gần đó tăng 20 Tinh Thông Nguyên Tố, duy trì 6s. Thời gian của các hiệu ứng trên sẽ tính độc lập với nhau."
+  }
+}

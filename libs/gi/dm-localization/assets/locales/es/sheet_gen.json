@@ -1,0 +1,87 @@
+{
+  "normal": {
+    "hit1": "Daño de 1er golpe",
+    "hit2": "Daño de 2.º golpe",
+    "hit3": "Daño de 3er golpe",
+    "hit4": "Daño de 4.º golpe",
+    "hit5": "Daño de 5.º golpe",
+    "hit6": "Daño de 6.º golpe"
+  },
+  "charged": {
+    "dmg": "Ataque Cargado",
+    "spinning": "Daño de ATQ Cargado en ciclo",
+    "final": "Daño final de Ataque Cargado",
+    "stamina": "Coste de Aguante de ATQ Cargado",
+    "aimed": "Disparo Preciso",
+    "fullyAimed": "Disparo Preciso (carga completa)"
+  },
+  "plunging": {
+    "dmg": "Daño de Caída",
+    "low": "Daño de impacto de caída baja",
+    "high": "Daño de impacto de caída alta"
+  },
+  "maxDuration": "Duración máx.",
+  "maxStacks": "Límite de cargas de energía",
+  "skillDMG": "Daño de habilidad",
+  "burstDMG": "Daño instantáneo",
+  "dmgAbsorption": "Absorción de daño del escudo",
+  "healing": "Curación",
+  "contHealing": "Curación continua",
+  "duration": "Duración",
+  "cd": "TdE",
+  "energyCost": "Energía Elemental",
+  "energyRegen": "Energía Elemental regenerada",
+  "baseDMG": "Daño base",
+  "dot": "Daño continuo",
+  "addEleDMG": "Daño Elemental adicional",
+  "hpRegenPerHit": "Curación al atacar",
+  "press": {
+    "dmg": "Daño al pulsar una vez",
+    "cd": "TdE al pulsar una vez"
+  },
+  "hold": {
+    "dmg": "Daño al mantener pulsado",
+    "cd": "TdE de mantener pulsado"
+  },
+  "element": {
+    "anemo": "Anemo",
+    "geo": "Geo",
+    "pyro": "Pyro",
+    "hydro": "Hydro",
+    "cryo": "Cryo",
+    "electro": "Electro",
+    "dendro": "Dendro"
+  },
+  "reaction": {
+    "swirl": "Torbellino",
+    "crystallize": "Cristalizado",
+    "overloaded": "Sobrecargado",
+    "electrocharged": "Electrocargado",
+    "superconduct": "Superconductor",
+    "vaporize": "Vaporizado",
+    "melt": "Derretido",
+    "bloom": "Florecimiento",
+    "burgeon": "Crepitar",
+    "hyperbloom": "Sobreflorecimiento",
+    "quicken": "Aceleración",
+    "aggravate": "Intensificación",
+    "spread": "Propagación"
+  },
+  "stat": {
+    "def": "DEF",
+    "base": {
+      "atk": "ATQ Básico"
+    }
+  },
+  "constellationLvl": "Constelación Niv. {{level}}",
+  "talentLvl": "Niv. talento {{level}}",
+  "talents": {
+    "auto": "Ataque Normal",
+    "skill": "Habilidad Elemental",
+    "burst": "Habilidad Definitiva",
+    "altSprint": "Reemplaza a Esprintar"
+  },
+  "unlockPassive1": "Se desbloquea al alcanzar Niv. de ascensión 1",
+  "unlockPassive2": "Se desbloquea al alcanzar Niv. de ascensión 4",
+  "unlockPassive3": "Talento pasivo"
+}

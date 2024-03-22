@@ -1,0 +1,167 @@
+{
+  "name": "Charlotte",
+  "title": "Lentes em Busca da Verdade",
+  "description": "A jornalista cheia de energia do Pássaro a Vapor, sempre correndo atrás da \"verdade\".",
+  "constellationName": "Hualina Veritas",
+  "auto": {
+    "name": "Foto de Cores Frias",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Ataque Normal</strong>",
+        "1": "Mira nos alvos com o Monsieur Verite, e com sua câmera personalizada, Charlotte desfere 3 golpes consecutivos, causando <cryo>Dano Cryo.</cryo>"
+      },
+      "charged": {
+        "0": "<strong>Ataque Carregado</strong>",
+        "1": "Consome uma certa quantidade de Stamina, e depois de uma curta preparação, envia Monsieur Verite para causar <cryo>Dano Cryo em AdE</cryo>."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Imersivo</strong>",
+        "1": "Reunindo o poder do Cryo, mergulha em direção ao chão, causando Dano contra todos os oponentes no caminho e causando <cryo>Dano Cryo em AdE</cryo> ao impactar com o chão."
+      },
+      "arkhe": {
+        "0": "<strong>Arkhe: Pneuma</strong>",
+        "1": "Periodicamente, ao lançar um Ataque Carregado, um Espinho Espiritual cairá e perfurará os inimigos, causando <cryo>Dano Cryo em AdE</cryo> com Pneuma contra os oponentes."
+      }
+    },
+    "skillParams": {
+      "0": "Dano do 1° Golpe",
+      "1": "Dano do 2° Golpe",
+      "2": "Dano do 3° Golpe",
+      "3": "Dano de Ataque Carregado",
+      "4": "Consumo de Stamina de Ataque Carregado",
+      "5": "Dano Durante a Queda",
+      "6": "Dano de Queda de Baixa/Alta Altitude",
+      "7": "Dano do Espinho Espiritual",
+      "8": "Intervalo de Espinho Espiritual",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Enquadramento: Composição do Ponto de Congelamento",
+    "description": {
+      "0": "Usando os instintos aguçados de uma repórter, Charlotte usa suas habilidades de fotografia para produzir efeitos diferentes ao pressionar ou manter pressionada a Habilidade.",
+      "1": "<br/>",
+      "2": "<strong>Pressionar</strong>",
+      "3": "Tira uma foto usando Monsieur Verite, causando <cryo>Dano Cryo em AdE</cryo> contra os inimigos em frente, e marcando até 5 inimigos atingidos com Silhueta Instantânea. Na duração de Silhueta Instantânea, causará periodicamente <cryo>Dano Cryo</cryo> contra os inimigos.",
+      "4": "<br/>",
+      "5": "<strong>Manter Pressionado</strong>",
+      "6": "Abre o Visor do Monsieur Verite, entrando no estado Composição. O Visor irá gradualmente aumentar até virar a Foto Enorme enquanto estiver mantendo pressionado. Nesse estado, Charlotte é capaz de se mover e mudar de direção.",
+      "7": "Quando terminar de manter pressionado, Monsieur Verite causará <cryo>Dano Cryo</cryo> contra os inimigos fixados pelo Visor, e os aplicará com a mesma Silhueta Instantânea causada ao pressionar. Se a Habilidade for lançada depois que o Visor chegar em Foto Enorme, a duração e o Dano de Foco Impressionante serão mais altos, mas o tempo de recarga da Habilidade será maior.",
+      "8": "O estado Composição pode durar até 15 segundos e marcar até 5 inimigos.",
+      "9": "<br/>",
+      "10": "<i>\"Fotografia jornalística precisa de ângulos simples com temas excepcionais, mas acima de tudo, você precisa ter talento pra capturar o momento!\"</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Pressionar Fotografar",
+      "1": "Dono de Manter Pressionado Fotografar",
+      "2": "Dano de Marca \"Silhueta Instantânea\"",
+      "3": "Intervalo de ativação de Marca \"Silhueta Instantânea\"",
+      "4": "Duração de Marca \"Silhueta Instantânea\"",
+      "5": "Dano da Marca \"Foco Impressionante\"",
+      "6": "Intervalo de Ativação da Marca \"Foco Impressionante\"",
+      "7": "Duração da Marca \"Foco Impressionante\"",
+      "8": "Recarga",
+      "9": "Recarga de lançamento de Foto Enorme",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Determinado: Confirmação Geral",
+    "description": {
+      "0": "Condensando o gelo para criar a assinatura do Pássaro a Vapor, Charlotte cria a \"Área de Flash\", causando <cryo>Dano Cryo em AdE</cryo> e regenerando Vida para todos os membros próximos da equipe. A quantidade regenerada é baseada no ATQ de Charlotte.",
+      "1": "<br/>",
+      "2": "<strong>Área de Flash</strong>",
+      "3": [
+        " Em sua duração, Monsieur Verite periodicamente atacará os inimigos dentro da AdE, causando <cryo>Dano Cryo</cryo>.",
+        " Personagens ativos no interior da área terão sua Vida regenerada continuamente, a quantidade regenerada é baseada no ATQ de Charlotte."
+      ],
+      "4": "<br/>",
+      "5": "<i>\"Ouvir as histórias de múltiplas perspectivas para recriar o que aconteceu é a chave de uma notícia... Bem, é assim que você escolhe o melhor ângulo para o artigo!\"</i>"
+    },
+    "skillParams": {
+      "0": "Cura ao lançar",
+      "1": "Dano de Habilidade",
+      "2": "Regeneração Contínua da Câmera",
+      "3": "Dano da Câmera",
+      "4": "Duração da Área de Flash",
+      "5": "Tempo de Recarga",
+      "6": "Energia Elemental",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Momento do Impacto",
+    "description": {
+      "0": "Ao derrotar inimigos marcados por Foco Impressionante, reduz a recarga de <strong>Enquadramento: Composição do Ponto de Congelamento</strong> em 2s. A recarga da Habilidade Elemental pode ser reduzida até 4 vezes a cada 12s dessa forma."
+    }
+  },
+  "passive2": {
+    "name": "Investigação Diversa",
+    "description": {
+      "0": "Quando a equipe contém 1/2/3 personagens de Fontaine além da própria Charlotte, ela ganha 5%/10%/15% de Bônus de Cura. Quando a equipe contém 1/2/3 personagens que não são de Fontaine, Charlotte ganha 5%/10%/15% de Bônus de Dano Cryo."
+    }
+  },
+  "passive3": {
+    "name": "Obturador em Primeira Pessoa",
+    "description": {
+      "0": "Depois de ativar a Lente de Zoom de Análise Especial, não causará mais o efeito original de manter pressionada a Habilidade Elemental \"Enquadramento: Composição do Ponto de Congelamento\", mas agora vai poder tirar fotos de um jeito mais especial..."
+    }
+  },
+  "constellation1": {
+    "name": "Necessidade de Verificar Fatos",
+    "description": {
+      "0": "Depois de <strong>Determinado: Confirmação Geral</strong> curar um personagem, aplicará a marca de Verificação no personagem, que o curará uma vez a cada 2s com base em 80% do ATQ de Charlotte. Esse efeito dura 6s."
+    }
+  },
+  "constellation2": {
+    "name": "Dever de Buscar a Verdade",
+    "description": {
+      "0": "Ao lançar <strong>Enquadramento: Composição do Ponto de Congelamento</strong>, quando Monsieur Verite atingir 1/2/3 ou mais inimigos, aumenta o ATQ de Charlotte em 10%/20%/30% por 12s."
+    }
+  },
+  "constellation3": {
+    "name": "Imperativo pela Independência",
+    "description": {
+      "0": "Aumenta o nível de <strong>Determinado: Confirmação Geral</strong> em 3.",
+      "1": "O nível máximo de elevação é 15."
+    }
+  },
+  "constellation4": {
+    "name": "Responsabilidade para Supervisionar",
+    "description": {
+      "0": "Quando <strong>Determinado: Confirmação Geral</strong> atinge um inimigo marcado por Silhueta Instantânea ou Foco Impressionante, aumenta o Dano causado em 10% e regenera 2 de Energia Elemental para Charlotte. A Energia Elemental pode ser regenerada até 5 vezes a cada 20s desta forma."
+    }
+  },
+  "constellation5": {
+    "name": "Princípio de Consciência",
+    "description": {
+      "0": "Aumenta o nível de <strong>Enquadramento: Composição do Ponto de Congelamento</strong> em 3.",
+      "1": "O nível máximo de elevação é 15."
+    }
+  },
+  "constellation6": {
+    "name": "Resumo de Interesse",
+    "description": {
+      "0": "Quando o Ataque Normal e Carregado do personagem ativo atingem um inimigo marcado por Foco Impressionante de <strong>Enquadramento: Composição do Ponto de Congelamento</strong>, Monsieur Verite fará um Ataque Coordenado que causa 180% do ATQ de Charlotte como <cryo>Dano Cryo em AdE</cryo>, e cura os personagens ativos na AdE em 42% do ATQ de Charlotte. Esse efeito pode ser desencadeado uma vez a cada 6s, e tanto o Dano quanto a cura realizados serão considerados como causados pelo Supremo de Charlotte."
+    }
+  }
+}

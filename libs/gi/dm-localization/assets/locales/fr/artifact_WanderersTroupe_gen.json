@@ -1,0 +1,29 @@
+{
+  "setName": "Bande vagabonde",
+  "setEffects": {
+    "2": "Augmente la maîtrise élémentaire de 80 pts.",
+    "4": "Augmente les DGT infligés par les attaques chargées de 35 % lorsque ce set d'artéfacts est équipé par les personnages armés d'un arc ou d'un catalyseur."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Aube de l'orchestre",
+      "desc": "Un petit emblème en forme de fleur. Celui qui prête l'oreille peut presque entendre une flûte accompagnant le chant de plusieurs voix."
+    },
+    "plume": {
+      "name": "Plume de flèche du lyriste",
+      "desc": "Une plume de flèche cyan ni flétrie ni brisée par le temps. Une mélodie claire et cristalline rappelant l'eau vive s'en dégage."
+    },
+    "sands": {
+      "name": "Tombée du rideau",
+      "desc": "Un sablier permettant de garder trace du temps écoulé lors des représentations. Un son clair s'en échappait autrefois, mais le temps des représentations est aujourd'hui fini..."
+    },
+    "goblet": {
+      "name": "Gourde à cordes du ménestrel",
+      "desc": "Une gourde ancienne à la forme étrange. Des cordes de harpe ornent son intérieur ; une mélodie sublime s'en dégage lorsque l'eau coule."
+    },
+    "circlet": {
+      "name": "Haut-de-forme du chef d'orchestre",
+      "desc": "Un chapeau haut-de-forme ayant gardé son éclat malgré le passage du temps. Une mélodie ancienne semble y résonner."
+    }
+  }
+}

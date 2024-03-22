@@ -1,0 +1,34 @@
+{
+  "ProtectiveCanopy": {
+    "name": "Lianes protectrices",
+    "desc": "Augmente toutes les RÉS élémentaires et la RÉS physique de 15 %."
+  },
+  "FerventFlames": {
+    "name": "Flammes de la ferveur",
+    "desc": "Diminue la durée des effets Cryo de 40 % et augmente l'ATQ de 25 %."
+  },
+  "SoothingWater": {
+    "name": "Eau salvatrice",
+    "desc": "Diminue la durée des effets Pyro de 40 % et augmente les PV max de 25 %."
+  },
+  "ShatteringIce": {
+    "name": "Gel pulvérisateur",
+    "desc": "Diminue la durée des effets Électro de 40 %, et augmente le taux CRIT de 15 % lorsque vous attaquez des ennemis gelés ou affectés par l'élément Cryo."
+  },
+  "HighVoltage": {
+    "name": "Tonnerre puissant",
+    "desc": "Diminue la durée des effets Hydro de 40 %. De plus, il y a 100 % de chances de générer 1 particule élémentaire lorsque Supraconduction, Surcharge, Électrocution, Stimulation, Suractivation ou Exubérance est déclenchée (TdR : 5 s)."
+  },
+  "ImpetuousWinds": {
+    "name": "Vents de la célérité",
+    "desc": "Diminue la consommation d'endurance de 15 %, augmente la VIT de déplacement de 10 % et diminue le TdR des compétences élémentaires de 5 %."
+  },
+  "EnduringRock": {
+    "name": "Roc inamovible",
+    "desc": "Augmente la force du bouclier de 15 %. De plus, lorsqu'un personnage est sous la protection du bouclier, les effets suivants s'appliquent : les DGT infligés par le personnage augmentent de 15 % ; la RÉS Géo de l'ennemi diminue de 20 % pendant 15 s lorsqu'il subit des DGT de la part du personnage."
+  },
+  "SprawlingGreenery": {
+    "name": "Plante grimpante",
+    "desc": "Augmente la maîtrise élémentaire de 50 pts. Après avoir déclenché une réaction de Brûlure, de Stimulation ou de Fleurissement, la maîtrise élémentaire de tous les personnages de l'équipe à proximité augmente de 30 pts pendant 6 s. Après avoir déclenché une réaction de Suractivation, de Propagation, d'Exubérance ou de Bourgeonnement, la maîtrise élémentaire de tous les personnages de l'équipe à proximité augmente de 20 pts pendant 6 s. La durée de ces effets est calculée indépendamment."
+  }
+}

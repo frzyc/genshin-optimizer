@@ -1,0 +1,29 @@
+{
+  "setName": "Maiden Beloved",
+  "setEffects": {
+    "2": "Character Healing Effectiveness +15%",
+    "4": "Using an Elemental Skill or Burst increases healing received by all party members by 20% for 10s."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Maiden's Distant Love",
+      "desc": "A fragrant flower that will bloom for all eternity and never wither."
+    },
+    "plume": {
+      "name": "Maiden's Heart-stricken Infatuation",
+      "desc": "A feathered accessory that carries the longing for a certain someone, like a migratory bird on the wind."
+    },
+    "sands": {
+      "name": "Maiden's Passing Youth",
+      "desc": "The hands of time will never come to an end, but the same cannot not be said for those cherished years of the young maiden's life when she was doted upon."
+    },
+    "goblet": {
+      "name": "Maiden's Fleeting Leisure",
+      "desc": "A vessel made with sweet black tea in mind rather than bitter liquor."
+    },
+    "circlet": {
+      "name": "Maiden's Fading Beauty",
+      "desc": "A meticulously well-maintained woman's hat that keeps wrinkles safely out of sight."
+    }
+  }
+}

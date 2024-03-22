@@ -1,0 +1,24 @@
+{
+  "name": "Scacciadraghi",
+  "description": {
+    "0": "Una lancia decorata con un drago d'oro attorcigliato. Leggera e aguzza, quest'arma può uccidere i draghi con facilità."
+  },
+  "passiveName": "Flagello delle fiamme e dell'acqua",
+  "passiveDescription": {
+    "0": {
+      "0": "Aumenta i DAN contro gli avversari sotto l'effetto di Hydro o Pyro di un <cryo>20%</cryo>."
+    },
+    "1": {
+      "0": "Aumenta i DAN contro gli avversari sotto l'effetto di Hydro o Pyro di un <cryo>24%</cryo>."
+    },
+    "2": {
+      "0": "Aumenta i DAN contro gli avversari sotto l'effetto di Hydro o Pyro di un <cryo>28%</cryo>."
+    },
+    "3": {
+      "0": "Aumenta i DAN contro gli avversari sotto l'effetto di Hydro o Pyro di un <cryo>32%</cryo>."
+    },
+    "4": {
+      "0": "Aumenta i DAN contro gli avversari sotto l'effetto di Hydro o Pyro di un <cryo>36%</cryo>."
+    }
+  }
+}

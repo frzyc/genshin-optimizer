@@ -1,0 +1,24 @@
+{
+  "name": "Schwertfischer",
+  "description": {
+    "0": "Dies scheint ein inzwischen ausgestorbener Fisch zu sein. Sein Körper ist so elastisch, dass man eine Schnur daran befestigen kann, um ihn als Bogen zu benutzen."
+  },
+  "passiveName": "Netzreißer",
+  "passiveDescription": {
+    "0": {
+      "0": "Löst beim Anwenden der Elementarfähigkeit den Effekt „Drift“ aus, bei dem die Figur, wenn sie einen Gegner trifft, Flächenschaden in Höhe von <cryo>80 %</cryo> ANG verursacht. Dieser Effekt wird nach 15 s oder 3-maligem Verursachen des Flächenschadens entfernt. 2 s Abklingzeit für das Verursachen solch eines Flächenschadens, 12 s Abklingzeit für den Effekt „Drift“."
+    },
+    "1": {
+      "0": "Löst beim Anwenden der Elementarfähigkeit den Effekt „Drift“ aus, bei dem die Figur, wenn sie einen Gegner trifft, Flächenschaden in Höhe von <cryo>100 %</cryo> ANG verursacht. Dieser Effekt wird nach 15 s oder 3-maligem Verursachen des Flächenschadens entfernt. 2 s Abklingzeit für das Verursachen solch eines Flächenschadens, 12 s Abklingzeit für den Effekt „Drift“."
+    },
+    "2": {
+      "0": "Löst beim Anwenden der Elementarfähigkeit den Effekt „Drift“ aus, bei dem die Figur, wenn sie einen Gegner trifft, Flächenschaden in Höhe von <cryo>120 %</cryo> ANG verursacht. Dieser Effekt wird nach 15 s oder 3-maligem Verursachen des Flächenschadens entfernt. 2 s Abklingzeit für das Verursachen solch eines Flächenschadens, 12 s Abklingzeit für den Effekt „Drift“."
+    },
+    "3": {
+      "0": "Löst beim Anwenden der Elementarfähigkeit den Effekt „Drift“ aus, bei dem die Figur, wenn sie einen Gegner trifft, Flächenschaden in Höhe von <cryo>140 %</cryo> ANG verursacht. Dieser Effekt wird nach 15 s oder 3-maligem Verursachen des Flächenschadens entfernt. 2 s Abklingzeit für das Verursachen solch eines Flächenschadens, 12 s Abklingzeit für den Effekt „Drift“."
+    },
+    "4": {
+      "0": "Löst beim Anwenden der Elementarfähigkeit den Effekt „Drift“ aus, bei dem die Figur, wenn sie einen Gegner trifft, Flächenschaden in Höhe von <cryo>160 %</cryo> ANG verursacht. Dieser Effekt wird nach 15 s oder 3-maligem Verursachen des Flächenschadens entfernt. 2 s Abklingzeit für das Verursachen solch eines Flächenschadens, 12 s Abklingzeit für den Effekt „Drift“."
+    }
+  }
+}

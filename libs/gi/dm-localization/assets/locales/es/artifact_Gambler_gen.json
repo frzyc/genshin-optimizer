@@ -1,0 +1,29 @@
+{
+  "setName": "Jugadora",
+  "setEffects": {
+    "2": "Daño de Habilidad Elemental +20%.",
+    "4": "Al derrotar a un enemigo, hay una probabilidad del 100% de reiniciar el TdE de la Habilidad Elemental. Puede ocurrir una vez cada 15 s."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Broche de la Jugadora",
+      "desc": "Una gran y hermosa flor que puede esconder un dado trucado."
+    },
+    "plume": {
+      "name": "Pluma de la Jugadora",
+      "desc": "La pluma de la cola de un pájaro muy grande que puede esconder una carta capaz de cambiar el destino."
+    },
+    "sands": {
+      "name": "Reloj de Bolsillo de la Jugadora",
+      "desc": "Un reloj de bolsillo roto que una vez bloqueó un golpe letal que se dirigía hacia su dueña."
+    },
+    "goblet": {
+      "name": "Cubilete de la Jugadora",
+      "desc": "Un cubilete que solo sirve para una cosa. No tiene compartimentos secretos incorporados en él."
+    },
+    "circlet": {
+      "name": "Aretes de la Jugadora",
+      "desc": "Un par de aretes azules que calman la mente y fomentan el pensamiento racional, muy útil para evaluar los riesgos."
+    }
+  }
+}

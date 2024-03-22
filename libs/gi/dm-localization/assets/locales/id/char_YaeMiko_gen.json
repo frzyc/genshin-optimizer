@@ -1,0 +1,161 @@
+{
+  "name": "Yae Miko",
+  "title": "Astute Amusement",
+  "description": "Lady Guuji dari Kuil Agung Narukami ini juga menjabat sebagai pemimpin redaksi Yae Publishing House. Kecerdasan dan kelicikan yang tidak dapat dibayangkan tersembunyi di balik penampilannya yang cantik.",
+  "constellationName": "Divina Vulpes",
+  "auto": {
+    "name": "Spiritfox Sin-Eater",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Attack</strong>",
+        "1": "Memanggil roh kitsune untuk melancarkan hingga 3 serangan yang mengakibatkan <electro>Electro DMG</electro>."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Mengonsumsi sejumlah Stamina dan mengakibatkan <electro>Electro DMG Area</electro> setelah jeda singkat."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Mengumpulkan kekuatan petir dan menerjang tanah, menyerang musuh di jalur terjangan dan mengakibatkan <electro>Electro DMG Area</electro> saat mendarat."
+      }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Charged Attack",
+      "4": "Konsumsi Stamina Charged Attack",
+      "5": "DMG Selama Plunging",
+      "6": "DMG Plunging Attack Rendah/Tinggi",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Yakan Evocation: Sesshou Sakura",
+    "description": {
+      "0": "Bagi Yae, urusan yang tidak penting bisa diselesaikan dengan menggunakan roh kitsune, sehingga dia sendiri tidak perlu turun tangan.",
+      "1": "Bergerak cepat dan meninggalkan sebuah Sesshou Sakura.",
+      "2": "<br/>",
+      "3": "<strong>Sesshou Sakura</strong>",
+      "4": "Memiliki karakteristik sebagai berikut:",
+      "5": [
+        "Menyerang musuh yang ada di sekitar dengan sambaran petir secara berkala, mengakibatkan <electro>Electro DMG</electro>.",
+        "Ketika ada Sesshou Sakura lain yang berdekatan, levelnya akan meningkat dan DMG yang diakibatkan juga turut meningkat."
+      ],
+      "6": "<br/>",
+      "7": "Memiliki jumlah penggunaan 3 kali.",
+      "8": "Maksimum dapat meninggalkan 3 Sesshou Sakura di waktu yang sama. Level awal dari setiap Sesshou Sakura adalah 1, dan levelnya dapat ditingkatkan hingga level 3. Jika ada dua Sesshou Sakura yang diciptakan terlalu berdekatan, maka Sesshou Sakura yang diciptakan lebih dulu akan hancur.",
+      "9": "<br/>",
+      "10": "<i>\"Roh kitsune yang dikurung di pepohonan adalah roh para yakan yang jatuh ke dalam godaan dan hidup dengan memangsa manusia. Kasta mereka berada dua tingkat di bawah Sky Kitsune, jadi kurasa ... tidak masalah kan kalau aku suruh-suruh mereka mengerjakan urusanku? Nah, sistem kasta seperti ini bukan untuk ditiru manusia yah, tidak boleh ... Tapi soal siapa yang lebih tinggi kastanya di antara kitsune dan manusia ... Hehehe, siapa ya ...?\"</i>"
+    },
+    "skillParams": {
+      "0": "DMG Sesshou Sakura: Level 1",
+      "1": "DMG Sesshou Sakura: Level 2",
+      "2": "DMG Sesshou Sakura: Level 3",
+      "3": "DMG Sesshou Sakura: Level 4",
+      "4": "Durasi",
+      "5": "Cooldown",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Great Secret Art: Tenko Kenshin",
+    "description": {
+      "0": "Salah satu cerita rakyat Inazuma disebut \"kitsunetsuki\", dan yang paling spesial di antaranya adalah kisah tentang Sky Kitsune yang turun menghanguskan musuh-musuh Kuil Agung Narukami. Memanggil sambaran petir dan mengakibatkan <electro>Electro DMG Area</electro>.",
+      "1": "Saat melancarkan skill ini, Yae Miko akan membuka Sesshou Sakura yang ada di dekatnya, menghancurkan wujud luarnya, dan mengubahnya menjadi Tenko Thunderbolt yang turun dari langit, dan mengakibatkan <electro>Electro DMG Area</electro>. Setiap Sesshou Sakura yang dihancurkan dengan cara ini akan menciptakan satu Tenko Thunderbolt.",
+      "2": "<br/>",
+      "3": "<i>Yae hanya akan mengeluarkan \"wujud\" Sky Kitsune-nya di saat-saat tertentu seperti ini dan mengendalikan petir tersebut. Tidak ada seorang pun yang hidup setelah melihat ekor sang Nona Guuji ... Jadi ingat baik-baik ya, Nona Yae \"tidak\" punya ekor.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "DMG Tenko Thunderbolt",
+      "2": "Cooldown",
+      "3": "Konsumsi Energy",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "The Shrine's Sacred Shade",
+    "description": {
+      "0": "Saat melancarkan <strong>Great Secret Art: Tenko Kenshin</strong>, setiap kali menghancurkan sebuah Sesshou Sakura akan me-reset cooldown <strong>Yakan Evocation: Sesshou Sakura</strong> satu kali."
+    }
+  },
+  "passive2": {
+    "name": "Enlightened Blessing",
+    "description": {
+      "0": "Setiap poin Elemental Mastery yang dimiliki Yae Miko akan meningkatkan DMG yang diakibatkan <strong>Sesshou Sakura</strong> sebanyak 0,15%."
+    }
+  },
+  "passive3": {
+    "name": "Meditations of a Yako",
+    "description": {
+      "0": "Memberikan 25% peluang mendapat 1 tambahan Material Talenta acak yang sewilayah saat craft. Level dan material yang dibutuhkannya sama."
+    }
+  },
+  "constellation1": {
+    "name": "Yakan Offering",
+    "description": {
+      "0": "Setiap kali <strong>Great Secret Art: Tenko Kenshin</strong> mengaktifkan Tenko Thunderbolt, Yae Miko akan memulihkan 8 Energy untuk dirinya sendiri."
+    }
+  },
+  "constellation2": {
+    "name": "Fox's Mooncall",
+    "description": {
+      "0": "Level awal <strong>Sesshou Sakura</strong> yang tercipta meningkat menjadi level 2. Level tertinggi yang bisa dicapai menjadi level 4 dan jangkauan serangan meningkat 60%."
+    }
+  },
+  "constellation3": {
+    "name": "The Seven Glamours",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Yakan Evocation: Sesshou Sakura</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Sakura Channeling",
+    "description": {
+      "0": "Setelah sambaran petir <strong>Sesshou Sakura</strong> mengenai musuh, <electro>Electro DMG Bonus</electro> seluruh anggota party di sekitar meningkat 20% selama 5 detik."
+    }
+  },
+  "constellation5": {
+    "name": "Mischievous Teasing",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Great Secret Art: Tenko Kenshin</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Forbidden Art: Daisesshou",
+    "description": {
+      "0": "Serangan <strong>Sesshou Sakura</strong> mengabaikan 60% DEF musuh."
+    }
+  }
+}

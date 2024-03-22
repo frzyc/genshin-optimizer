@@ -1,0 +1,29 @@
+{
+  "setName": "Asil Minnettarlık",
+  "setEffects": {
+    "2": "+%20 Element Patlaması Hasarı.",
+    "4": "Bir Element Patlaması kullanıldığında tüm grup üyelerinin 12 saniyeliğine Saldırısı %20 artar. Bu etki birikemez."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Kraliyet Çiçeği",
+      "desc": "Genellikle resmi günlerde giyilen, parlak kaplamalı saten bir çiçek. Kenara bırakıldığı günden beri seçkinliğinden bir gram kaybetmemiş."
+    },
+    "plume": {
+      "name": "Kraliyet Tüyü",
+      "desc": "Eski Mondstadt soylularının avlarda taktıkları tüylü bir şapka. Sanki aradan hiç zaman geçmemiş gibi yeniliğini koruyor."
+    },
+    "sands": {
+      "name": "Kraliyet Cep Saati",
+      "desc": "Bir zamanlar Eski Mondstadt soylularına ait olan bir cep saati. Kuşaktan kuşağa geçerken tarihe tanıklık etmiş."
+    },
+    "goblet": {
+      "name": "Kraliyet Gümüş Vazosu",
+      "desc": "Bir zamanlar Mondstadt'ın eski soylularına ait olan süslü bir vazo. İçinde esen hüzünlü rüzgarların yankısı duyulabilir."
+    },
+    "circlet": {
+      "name": "Kraliyet Maskesi",
+      "desc": "Eski Mondstadt soylularının maskeli balolarda taktıkları maske. Gözleri nerede o eski günler dermişçesine bakıyor."
+    }
+  }
+}

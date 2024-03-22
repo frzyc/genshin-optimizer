@@ -1,0 +1,29 @@
+{
+  "setName": "Nymph's Dream",
+  "setEffects": {
+    "2": "Hydro DMG Bonus +15%.",
+    "4": "Setelah Normal Attack, Charged Attack, Plunging Attack, Elemental Skill, atau Elemental Burst mengenai musuh, akan mendapatkan 1 lapis efek Mirrored Nymph yang berlangsung selama 8 detik. Saat efek Mirrored Nymph yang dimiliki mencapai 1/2/3 lapis atau lebih, ATK akan meningkat 7%/16%/25% dan Hydro DMG Bonus meningkat 4%/9%/15%. Efek Mirrored Nymph yang dihasilkan oleh Normal Attack, Charged Attack, Plunging Attack, Elemental Skill, atau Elemental Burst akan dihitung secara terpisah."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Odyssean Flower",
+      "desc": "Pada akhirnya, cerita pasti akan berakhir, bunga juga pasti layu. Tapi bunga dalam mimpi seseorang akan selalu tetap bermekaran dan semerbak."
+    },
+    "plume": {
+      "name": "Wicked Mage's Plumule",
+      "desc": "Benda ini pernah menjadi bulu pajangan di topi seseorang. Warna hijau tuanya pasti sangat menarik perhatian."
+    },
+    "sands": {
+      "name": "Nymph's Constancy",
+      "desc": "Jam saku yang sudah lama berhenti bekerja. Sepertinya sudah menjadi saksi atas tahun-tahun yang berlalu selagi jarum jamnya berputar dengan sia-sia."
+    },
+    "goblet": {
+      "name": "Heroes' Tea Party",
+      "desc": "Cangkir teh yang indah. Mungkin cangkir ini pernah digunakan oleh orang-orang yang menikmati sore santai bersama."
+    },
+    "circlet": {
+      "name": "Fell Dragon's Monocle",
+      "desc": "Kacamata berlensa yang dibuat dengan indah. Menurut kisah-kisah kuno, kamu mungkin bisa melihat masa depan dengan benda ini."
+    }
+  }
+}

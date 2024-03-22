@@ -1,0 +1,24 @@
+{
+  "name": "Amos' Bow",
+  "description": {
+    "0": "Busur kuno yang masih menyimpan kekuatan walaupun pemiliknya telah lama hilang. Menarik kekuatan dari semua orang dan segala yang ada di dunia, dan semakin jauh seseorang dari keinginan hatinya, semakin kuat pula busur tersebut."
+  },
+  "passiveName": "Strong-willed Arrow",
+  "passiveDescription": {
+    "0": {
+      "0": "Meningkatkan DMG dari Normal dan Charged Attack sebesar <cryo>12%</cryo>. Setelah Normal atau Charged Attack ditembakkan, DMG meningkat sebesar <cryo>8%</cryo> lebih lanjut setiap 0,1 detik panah di udara hingga 5 kali."
+    },
+    "1": {
+      "0": "Meningkatkan DMG dari Normal dan Charged Attack sebesar <cryo>15%</cryo>. Setelah Normal atau Charged Attack ditembakkan, DMG meningkat sebesar <cryo>10%</cryo> lebih lanjut setiap 0,1 detik panah di udara hingga 5 kali."
+    },
+    "2": {
+      "0": "Meningkatkan DMG dari Normal dan Charged Attack sebesar <cryo>18%</cryo>. Setelah Normal atau Charged Attack ditembakkan, DMG meningkat sebesar <cryo>12%</cryo> lebih lanjut setiap 0,1 detik panah di udara hingga 5 kali."
+    },
+    "3": {
+      "0": "Meningkatkan DMG dari Normal dan Charged Attack sebesar <cryo>21%</cryo>. Setelah Normal atau Charged Attack ditembakkan, DMG meningkat sebesar <cryo>14%</cryo> lebih lanjut setiap 0,1 detik panah di udara hingga 5 kali."
+    },
+    "4": {
+      "0": "Meningkatkan DMG dari Normal dan Charged Attack sebesar <cryo>24%</cryo>. Setelah Normal atau Charged Attack ditembakkan, DMG meningkat sebesar <cryo>16%</cryo> lebih lanjut setiap 0,1 detik panah di udara hingga 5 kali."
+    }
+  }
+}

@@ -1,0 +1,167 @@
+{
+  "name": "Xinyan",
+  "title": "Blazing Riff",
+  "description": "Musisi rock 'n' roll satu-satunya di Liyue, kecintaannya yang unik terhadap musik dapat memutarbalikkan pemahaman-pemahaman masyarakat yang kaku.",
+  "constellationName": "Fila Ignium",
+  "auto": {
+    "name": "Dance on Fire",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Attack</strong> Melancarkan hingga 4 tebasan berturut-turut."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Terus menguras Stamina untuk melancarkan serangan berputar yang mengakibatkan DMG ke musuh di sekitar.",
+        "2": "Melancarkan sebuah tebasan yang kuat di akhir serangan berputar."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Menerjang dari udara untuk menghantam tanah, menyerang musuh di jalur terjangan dan mengakibatkan DMG area saat mendarat."
+      }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Tahap 4",
+      "4": "DMG Berputar Charged Attack",
+      "5": "DMG Akhir Charged Attack",
+      "6": "Konsumsi Stamina Charged Attack",
+      "7": "Durasi Maksimum",
+      "8": "DMG Selama Plunging",
+      "9": "DMG Plunging Attack Rendah/Tinggi",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Sweeping Fervor",
+    "description": {
+      "0": "Xinyan mengayunkan alat musiknya, mengakibatkan <pyro>Pyro DMG</pyro> terhadap semua musuh di dekatnya, dan membentuk sebuah perisai yang terbuat dari hasrat para pendengarnya.",
+      "1": "Jumlah DMG yang bisa ditahan perisai didasarkan pada DEF Xinyan dan jumlah musuh yang terkena skill ini.",
+      "2": [
+        " Mengenai 0-1 musuh memberikan Perisai Level 1: Ad Lib.",
+        " Mengenai 2 musuh memberikan Perisai Level 2: Lead-In.",
+        " Mengenai 3 musuh memberikan Perisai Level 3: Rave, yang juga akan mengakibatkan <pyro>Pyro DMG</pyro> secara berkala terhadap semua musuh di dekatnya."
+      ],
+      "3": "<br/>",
+      "4": "Perisai Xinyan memiliki sifat khusus berikut:",
+      "5": [
+        " Ketika dilancarkan, perisai akan memberikan efek <pyro>Pyro</pyro> untuk Xinyan.",
+        " Perisai dapat menahan <pyro>Pyro DMG</pyro> 250% lebih efektif."
+      ],
+      "6": "<br/>",
+      "7": "<i>Xinyan menegaskan bahwa seni Pyrotechnic ini adalah puncak dari seni pertunjukan, dan itu adalah fenomena fisik yang tidak berhubungan dengan Vision yang dia miliki.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Tebasan",
+      "1": "Pertahanan Perisai Level 1",
+      "2": "Pertahanan Perisai Level 2",
+      "3": "Pertahanan Perisai Level 3",
+      "4": "DMG Berkelanjutan",
+      "5": "Durasi Perisai",
+      "6": "Cooldown",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Riff Revolution",
+    "description": {
+      "0": "Xinyan memetik senar gitarnya dengan cepat untuk menghempaskan musuh di sekitar dan mengakibatkan Physical DMG serta membuat suasana menjadi semakin panas.",
+      "1": "Atmosfer yang semakin panas ini akan menyebabkan ledakan dan mengakibatkan <pyro>Pyro DMG</pyro> ke musuh di sekitarnya.",
+      "2": "<br/>",
+      "3": "<i>Xinyan biasa mengakhiri rangkaian penampilannya dengan gerakan ini. Dia bukan berhenti karena berbahaya, tapi karena dia tidak punya gerakan penyelesaian yang lebih keren dari ini seandainya ada penonton yang meminta \"Encore!\". </i>"
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "Pyro DMG Berkelanjutan",
+      "2": "Durasi",
+      "3": "Cooldown",
+      "4": "Konsumsi Energy",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "\"The Show Goes On, Even Without An Audience...\"",
+    "description": {
+      "0": "Mengurangi jumlah musuh yang harus terkena serangan <strong>Sweeping Fervor</strong> untuk memicu setiap level perisai.",
+      "1": [
+        " Perisai Level 2: Syarat memicu Lead-In dikurangi menjadi 1 musuh.",
+        "Perisai Level 3: Syarat memicu Rave dikurangi menjadi 2 musuh atau lebih."
+      ]
+    }
+  },
+  "passive2": {
+    "name": "\"...Now That's Rock 'N' Roll!\"",
+    "description": {
+      "0": "Meningkatkan 15% Physical DMG Karakter yang dilindungi oleh perisai dari <strong>Sweeping Fervor</strong>."
+    }
+  },
+  "passive3": {
+    "name": "A Rad Recipe",
+    "description": {
+      "0": "Saat masakan jenis pertahanan dimasak dengan sempurna, terdapat 12% kemungkinan mendapatkan hasil 2 kali lipat."
+    }
+  },
+  "constellation1": {
+    "name": "Fatal Acceleration",
+    "description": {
+      "0": "Setelah melakukan serangan CRIT, meningkatkan ATK SPD dari Normal dan Charged Attack Xinyan sebesar 12% selama 5 detik.",
+      "1": "Terpicu setiap 5 detik."
+    }
+  },
+  "constellation2": {
+    "name": "Impromptu Opening",
+    "description": {
+      "0": "Meningkatkan 100% CRIT Rate serangan Physical DMG <strong>Riff Revolution</strong>, dan saat dilancarkan, akan membentuk Perisai Level 3: Rave."
+    }
+  },
+  "constellation3": {
+    "name": "Double-Stop",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Sweeping Fervor</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Wildfire Rhythm",
+    "description": {
+      "0": "Swing DMG <strong>Sweeping Fervor</strong> mengurangi Physical RES musuh sebesar 15% selama 12 detik."
+    }
+  },
+  "constellation5": {
+    "name": "Screamin' for an Encore",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Riff Revolution</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Rockin' in a Flaming World",
+    "description": {
+      "0": "Mengurangi Konsumsi Stamina Charged Attack Xinyan sebesar 30%. Selain itu, Xinyan mendapatkan Bonus ATK sebesar 50% DEF saat melakukan Charged Attack."
+    }
+  }
+}

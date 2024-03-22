@@ -1,0 +1,24 @@
+{
+  "name": "Dark Iron Sword",
+  "description": {
+    "0": "Sebenarnya, hanya sebilah pedang yang sedikit lebih gelap dari Iron Sword."
+  },
+  "passiveName": "Overloaded",
+  "passiveDescription": {
+    "0": {
+      "0": "Saat memicu Overloaded, Superconduct, Electro-Charged, Quicken, Aggravate, Hyperbloom, atau reaksi Swirl dengan elemen Electro, meningkatkan <cryo>20%</cryo> ATK selama 12 detik."
+    },
+    "1": {
+      "0": "Saat memicu Overloaded, Superconduct, Electro-Charged, Quicken, Aggravate, Hyperbloom, atau reaksi Swirl dengan elemen Electro, meningkatkan <cryo>25%</cryo> ATK selama 12 detik."
+    },
+    "2": {
+      "0": "Saat memicu Overloaded, Superconduct, Electro-Charged, Quicken, Aggravate, Hyperbloom, atau reaksi Swirl dengan elemen Electro, meningkatkan <cryo>30%</cryo> ATK selama 12 detik."
+    },
+    "3": {
+      "0": "Saat memicu Overloaded, Superconduct, Electro-Charged, Quicken, Aggravate, Hyperbloom, atau reaksi Swirl dengan elemen Electro, meningkatkan <cryo>35%</cryo> ATK selama 12 detik."
+    },
+    "4": {
+      "0": "Saat memicu Overloaded, Superconduct, Electro-Charged, Quicken, Aggravate, Hyperbloom, atau reaksi Swirl dengan elemen Electro, meningkatkan <cryo>40%</cryo> ATK selama 12 detik."
+    }
+  }
+}

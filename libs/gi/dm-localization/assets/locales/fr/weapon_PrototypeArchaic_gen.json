@@ -1,0 +1,24 @@
+{
+  "name": "Espadon (prototype)",
+  "description": {
+    "0": "Un prototype d'espadon ancien découvert dans la Forge de Rochenoire. La force qui s'en dégage lorsqu'on le manie laisse supposer qu'il serait capable de couper même à travers le tissu de la réalité."
+  },
+  "passiveName": "Pulvérisation",
+  "passiveDescription": {
+    "0": {
+      "0": "Les attaques normales et chargées ont 50 % de chances d'infliger <cryo>240 %</cryo> de DGT d'ATQ supplémentaires dans une zone restreinte lorsqu'elles touchent. Cet effet peut être déclenché une fois toutes les 15 s."
+    },
+    "1": {
+      "0": "Les attaques normales et chargées ont 50 % de chances d'infliger <cryo>300 %</cryo> de DGT d'ATQ supplémentaires dans une zone restreinte lorsqu'elles touchent. Cet effet peut être déclenché une fois toutes les 15 s."
+    },
+    "2": {
+      "0": "Les attaques normales et chargées ont 50 % de chances d'infliger <cryo>360 %</cryo> de DGT d'ATQ supplémentaires dans une zone restreinte lorsqu'elles touchent. Cet effet peut être déclenché une fois toutes les 15 s."
+    },
+    "3": {
+      "0": "Les attaques normales et chargées ont 50 % de chances d'infliger <cryo>420 %</cryo> de DGT d'ATQ supplémentaires dans une zone restreinte lorsqu'elles touchent. Cet effet peut être déclenché une fois toutes les 15 s."
+    },
+    "4": {
+      "0": "Les attaques normales et chargées ont 50 % de chances d'infliger <cryo>480 %</cryo> de DGT d'ATQ supplémentaires dans une zone restreinte lorsqu'elles touchent. Cet effet peut être déclenché une fois toutes les 15 s."
+    }
+  }
+}

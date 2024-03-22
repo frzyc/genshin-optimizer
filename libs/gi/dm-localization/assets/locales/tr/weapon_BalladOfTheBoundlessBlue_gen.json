@@ -1,0 +1,24 @@
+{
+  "name": "Sonsuz Mavinin Şarkısı",
+  "description": {
+    "0": "Zarif şiirlerin toplandığı bir antoloji. Gökyüzü, karahindiba ve benzer konular üzerine Mondstadtlıların sevdiği şiirler içeriyor."
+  },
+  "passiveName": "Masmavi Gökyüzü",
+  "passiveDescription": {
+    "0": {
+      "0": "Normal ve Yüklü Saldırılar bir düşmana isabet ettikten sonraki 6 saniye boyunca Normal Saldırı Hasarı <cryo>%8</cryo>, Yüklü Saldırı Hasarı <cryo>%6</cryo> artar. En fazla 3 kademeye kadar birikir. Bu etki her 0,3 saniyede bir tetiklenebilir."
+    },
+    "1": {
+      "0": "Normal ve Yüklü Saldırılar bir düşmana isabet ettikten sonraki 6 saniye boyunca Normal Saldırı Hasarı <cryo>%10</cryo>, Yüklü Saldırı Hasarı <cryo>%7,5</cryo> artar. En fazla 3 kademeye kadar birikir. Bu etki her 0,3 saniyede bir tetiklenebilir."
+    },
+    "2": {
+      "0": "Normal ve Yüklü Saldırılar bir düşmana isabet ettikten sonraki 6 saniye boyunca Normal Saldırı Hasarı <cryo>%12</cryo>, Yüklü Saldırı Hasarı <cryo>%9</cryo> artar. En fazla 3 kademeye kadar birikir. Bu etki her 0,3 saniyede bir tetiklenebilir."
+    },
+    "3": {
+      "0": "Normal ve Yüklü Saldırılar bir düşmana isabet ettikten sonraki 6 saniye boyunca Normal Saldırı Hasarı <cryo>%14</cryo>, Yüklü Saldırı Hasarı <cryo>%10,5</cryo> artar. En fazla 3 kademeye kadar birikir. Bu etki her 0,3 saniyede bir tetiklenebilir."
+    },
+    "4": {
+      "0": "Normal ve Yüklü Saldırılar bir düşmana isabet ettikten sonraki 6 saniye boyunca Normal Saldırı Hasarı <cryo>%16</cryo>, Yüklü Saldırı Hasarı <cryo>%12</cryo> artar. En fazla 3 kademeye kadar birikir. Bu etki her 0,3 saniyede bir tetiklenebilir."
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "강림의 검",
+  "description": {
+    "0": "외형이 독특한 검. 이 세상의 검이 아닌 것 같다"
+  },
+  "passiveName": "현세 강림",
+  "passiveDescription": {
+    "0": {
+      "0": "<cryo>다음 플랫폼에서만 적용:</cryo>",
+      "1": "<cryo>\"PlayStation Network\"</cryo>",
+      "2": "일반 공격과 강공격 명중 후 <cryo>50%</cryo>의 확률로 작은 범위 내에 공격력 <cryo>200%</cryo>의 피해를 준다. 해당 효과는 10초마다 1회 발동한다. 또한 여행자가 강림의 검을 장착하면 공격력이 <cryo>66</cryo>pt 증가한다"
+    }
+  }
+}

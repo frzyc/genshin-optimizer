@@ -1,0 +1,24 @@
+{
+  "name": "Tome du flux éternel",
+  "description": {
+    "0": "Un manuel qui se transmettait autrefois de génération en génération au sein d'un centre de formation sous-marin. Aujourd'hui, personne ne connaît son existence."
+  },
+  "passiveName": "Vague éonique",
+  "passiveDescription": {
+    "0": {
+      "0": "Les PV augmentent de <cryo>16 %</cryo>. Lorsque les PV actuels augmentent ou diminuent, les DGT infligés par les attaques chargées augmentent de <cryo>14 %</cryo> pendant 4 s, cet effet pouvant être cumulé 3 fois maximum et déclenché une fois toutes les 0,3 s. Avec 3 cumuls ou en actualisant la durée du 3e cumul, l'énergie élémentaire est restaurée de <cryo>8</cryo> pts, cet effet pouvant être déclenché une fois toutes les 12 s."
+    },
+    "1": {
+      "0": "Les PV augmentent de <cryo>20 %</cryo>. Lorsque les PV actuels augmentent ou diminuent, les DGT infligés par les attaques chargées augmentent de <cryo>18 %</cryo> pendant 4 s, cet effet pouvant être cumulé 3 fois maximum et déclenché une fois toutes les 0,3 s. Avec 3 cumuls ou en actualisant la durée du 3e cumul, l'énergie élémentaire est restaurée de <cryo>9</cryo> pts, cet effet pouvant être déclenché une fois toutes les 12 s."
+    },
+    "2": {
+      "0": "Les PV augmentent de <cryo>24 %</cryo>. Lorsque les PV actuels augmentent ou diminuent, les DGT infligés par les attaques chargées augmentent de <cryo>22 %</cryo> pendant 4 s, cet effet pouvant être cumulé 3 fois maximum et déclenché une fois toutes les 0,3 s. Avec 3 cumuls ou en actualisant la durée du 3e cumul, l'énergie élémentaire est restaurée de <cryo>10</cryo> pts, cet effet pouvant être déclenché une fois toutes les 12 s."
+    },
+    "3": {
+      "0": "Les PV augmentent de <cryo>28 %</cryo>. Lorsque les PV actuels augmentent ou diminuent, les DGT infligés par les attaques chargées augmentent de <cryo>26 %</cryo> pendant 4 s, cet effet pouvant être cumulé 3 fois maximum et déclenché une fois toutes les 0,3 s. Avec 3 cumuls ou en actualisant la durée du 3e cumul, l'énergie élémentaire est restaurée de <cryo>11</cryo> pts, cet effet pouvant être déclenché une fois toutes les 12 s."
+    },
+    "4": {
+      "0": "Les PV augmentent de <cryo>32 %</cryo>. Lorsque les PV actuels augmentent ou diminuent, les DGT infligés par les attaques chargées augmentent de <cryo>30 %</cryo> pendant 4 s, cet effet pouvant être cumulé 3 fois maximum et déclenché une fois toutes les 0,3 s. Avec 3 cumuls ou en actualisant la durée du 3e cumul, l'énergie élémentaire est restaurée de <cryo>12</cryo> pts, cet effet pouvant être déclenché une fois toutes les 12 s."
+    }
+  }
+}

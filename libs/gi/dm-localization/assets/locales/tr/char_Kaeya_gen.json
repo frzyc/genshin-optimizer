@@ -1,0 +1,155 @@
+{
+  "name": "Kaeya",
+  "title": "Buzdaki Kılıç Ustası",
+  "description": "Favonius Şövalyelerinde başarılı bir kılıç ustası ve stratejik düşünür. Mondstadt'ın ötesinden geldiği söylenir.",
+  "constellationName": "Tavus Kuşu",
+  "auto": {
+    "name": "Merasim Kılıcı Tekniği",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Saldırı</strong>",
+        "1": "En fazla 5 hızlı saldırı yapar."
+      },
+      "charged": {
+        "0": "<strong>Yüklü Saldırı</strong>",
+        "1": "Belirli miktarda Dayanıklılık harcayarak 2 hızlı kılıç saldırısı yapar."
+      },
+      "plunging": {
+        "0": "<strong>Havadan Saldırı</strong>",
+        "1": "Havadayken dalışa geçerek yere vurur ve yoluna çıkan düşmanlara Alan Hasarı verir."
+      }
+    },
+    "skillParams": {
+      "0": "1 Vuruş Hasarı",
+      "1": "2 Vuruş Hasarı",
+      "2": "3 Vuruş Hasarı",
+      "3": "4 Vuruş Hasarı",
+      "4": "5 Vuruş Hasarı",
+      "5": "Yüklü Saldırı Hasarı",
+      "6": "Yüklü Saldırı Dayanıklılık Maliyeti",
+      "7": "Havadan Saldırı Hasarı",
+      "8": "Havadan Saldırı Hasarı (Alçaktan/Yüksekten)",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Buzul Isırığı",
+    "description": {
+      "0": "Buz gibi bir patlama oluşturarak Kaeya'nın önündeki düşmanlara <cryo>Buz Hasarı</cryo> verir.",
+      "1": "<br/>",
+      "2": "<i>Kaeya cana yakın durur ama özünde kırılmaz bir buz gibidir.</i>"
+    },
+    "skillParams": {
+      "0": "Beceri Hasarı",
+      "1": "BS",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Buzul Valsi",
+    "description": {
+      "0": "Kaeya, havadaki buzu bir araya getirerek etrafında dönen 3 buz sarkıtı oluşturur.",
+      "1": "Bu buz sarkıtları karakteri takip eder ve beceri süresi boyunca yoluna çıkan düşmanlara <cryo>Buz Hasarı</cryo> verir.",
+      "2": "<br/>",
+      "3": "<i>Sevimli bir gülüş, içten sözler ve altında gizlenen acımasız bir kırağı. Bunların hepsi Kaeya'nın silahlarıdır.</i>"
+    },
+    "skillParams": {
+      "0": "Beceri Hasarı",
+      "1": "BS",
+      "2": "Süre",
+      "3": "Enerji Maliyeti",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Soğukkanlı Vuruş",
+    "description": {
+      "0": "<strong>Buzul Isırığı</strong> her isabet ettiğinde Kaeya'nın Canını, Saldırısının %15'i kadar yeniler."
+    }
+  },
+  "passive2": {
+    "name": "Buzul Kalp",
+    "description": {
+      "0": "<strong>Buzul Isırığı</strong> etkisiyle <cryo>Donan</cryo> düşmanlar ek Element Parçacıkları düşürür.",
+      "1": "Buzul Isırığı kullanım başına en fazla 2 ek Element Parçacığı çıkarabilir."
+    }
+  },
+  "passive3": {
+    "name": "Gizli Güç",
+    "description": {
+      "0": "Kendi grup üyelerinin depar esnasında harcadığı Dayanıklılık %20 azalır.",
+      "1": "Aynı etkiyi veren Pasif Yeteneklerle birikmez."
+    }
+  },
+  "constellation1": {
+    "name": "Kusursuz Kan",
+    "description": {
+      "0": "<cryo>Buz</cryo> etkisindeki düşmanlara karşı Kaeya'nın Normal ve Yüklü Saldırısının Kritik Oranı %15 artar."
+    }
+  },
+  "constellation2": {
+    "name": "Ebedi Gösteri",
+    "description": {
+      "0": "<strong>Buzul Valsi</strong> devam ettiği sırada yenilen her bir düşman başına becerinin süresi 2,5 saniye artar. Toplam süre maksimum 15 saniye olabilir."
+    }
+  },
+  "constellation3": {
+    "name": "Buzul Dansı",
+    "description": {
+      "0": "<strong>Buzul Isırığı</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation4": {
+    "name": "Donmuş Öpücük",
+    "description": {
+      "0": "Kaeya'nın Canı %20'nin altına düştüğünde şu etkiler otomatik olarak tetiklenir:",
+      "1": "Kaeya'nın Maks. Canının %30'una denk miktarda Hasarı emen bir kalkan oluşturur. Kalkan 20 saniye devrede kalır.",
+      "2": "Bu kalkan <cryo>Buz Hasarını</cryo> %250 verimlilikle emer.",
+      "3": "Sadece 60 saniyede bir uygulanabilir."
+    }
+  },
+  "constellation5": {
+    "name": "Ayazın Kucaklaması",
+    "description": {
+      "0": "<strong>Buzul Valsi</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation6": {
+    "name": "Buzul Hortumu",
+    "description": {
+      "0": "<strong>Buzul Valsi</strong> fazladan 1 buzul üretir ve kullanıldığında 15 Enerji yeniler."
+    }
+  }
+}

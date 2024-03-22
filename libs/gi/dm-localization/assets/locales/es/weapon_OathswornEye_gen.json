@@ -1,0 +1,24 @@
+{
+  "name": "Ojo del Juramento",
+  "description": {
+    "0": "Un tesoro del reino de Byakuya guardado en el Dainichi Mikoshi. Tras la llegada del dios serpiente, se usó en Enkanomiya como testigo de grandes juramentos y deseos."
+  },
+  "passiveName": "Resplandor de las profundidades",
+  "passiveDescription": {
+    "0": {
+      "0": "Tras usar la Habilidad Elemental, la Recarga de Energía aumenta en un <cryo>24%</cryo> durante 10 s."
+    },
+    "1": {
+      "0": "Tras usar la Habilidad Elemental, la Recarga de Energía aumenta en un <cryo>30%</cryo> durante 10 s."
+    },
+    "2": {
+      "0": "Tras usar la Habilidad Elemental, la Recarga de Energía aumenta en un <cryo>36%</cryo> durante 10 s."
+    },
+    "3": {
+      "0": "Tras usar la Habilidad Elemental, la Recarga de Energía aumenta en un <cryo>42%</cryo> durante 10 s."
+    },
+    "4": {
+      "0": "Tras usar la Habilidad Elemental, la Recarga de Energía aumenta en un <cryo>48%</cryo> durante 10 s."
+    }
+  }
+}

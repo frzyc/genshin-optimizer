@@ -1,0 +1,24 @@
+{
+  "name": "Arc d'Amos",
+  "description": {
+    "0": "Un arc extrêmement ancien. Même si son maître d'origine n'est plus, on sent encore son pouvoir, drainé de tous les êtres de ce monde. Plus l'objet de vos désirs se trouve loin, et meilleure est sa puissance."
+  },
+  "passiveName": "Flèche de la volonté",
+  "passiveDescription": {
+    "0": {
+      "0": "Augmente les DGT infligés par les attaques normales et les attaques chargées de <cryo>12 %</cryo>. Les DGT augmentent de <cryo>8 %</cryo> toutes les 0,1 s après avoir tiré une flèche d'attaque normale ou chargée. Cet effet peut être cumulé 5 fois maximum."
+    },
+    "1": {
+      "0": "Augmente les DGT infligés par les attaques normales et les attaques chargées de <cryo>15 %</cryo>. Les DGT augmentent de <cryo>10 %</cryo> toutes les 0,1 s après avoir tiré une flèche d'attaque normale ou chargée. Cet effet peut être cumulé 5 fois maximum."
+    },
+    "2": {
+      "0": "Augmente les DGT infligés par les attaques normales et les attaques chargées de <cryo>18 %</cryo>. Les DGT augmentent de <cryo>12 %</cryo> toutes les 0,1 s après avoir tiré une flèche d'attaque normale ou chargée. Cet effet peut être cumulé 5 fois maximum."
+    },
+    "3": {
+      "0": "Augmente les DGT infligés par les attaques normales et les attaques chargées de <cryo>21 %</cryo>. Les DGT augmentent de <cryo>14 %</cryo> toutes les 0,1 s après avoir tiré une flèche d'attaque normale ou chargée. Cet effet peut être cumulé 5 fois maximum."
+    },
+    "4": {
+      "0": "Augmente les DGT infligés par les attaques normales et les attaques chargées de <cryo>24 %</cryo>. Les DGT augmentent de <cryo>16 %</cryo> toutes les 0,1 s après avoir tiré une flèche d'attaque normale ou chargée. Cet effet peut être cumulé 5 fois maximum."
+    }
+  }
+}

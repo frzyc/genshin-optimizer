@@ -1,0 +1,24 @@
+{
+  "name": "Lehre des ewigen Flusses",
+  "description": {
+    "0": "Ein Lehrwerk, das in einem geheimen Unterwasserkloster von Generation zu Generation weitergereicht wurde. Heute weiß niemand mehr von dessen Existenz."
+  },
+  "passiveName": "Äonenwelle",
+  "passiveDescription": {
+    "0": {
+      "0": "Erhöht die LP um <cryo>16 %</cryo>. Erhöht den mit heftigen Schlägen verursachten Schaden um <cryo>14 %</cryo>, wenn sich die aktuellen LP erhöhen oder verringern. Hält 4 s, 3-fach stapelbar, 0,3 s Abklingzeit. Stellt bei Erreichen von 3 Stapelungen oder bei Zurücksetzen der Wirkungsdauer von 3 Stapelungen <cryo>8</cryo> Punkte Elementarenergie wieder her. 12 s Abklingzeit."
+    },
+    "1": {
+      "0": "Erhöht die LP um <cryo>20 %</cryo>. Erhöht den mit heftigen Schlägen verursachten Schaden um <cryo>18 %</cryo>, wenn sich die aktuellen LP erhöhen oder verringern. Hält 4 s, 3-fach stapelbar, 0,3 s Abklingzeit. Stellt bei Erreichen von 3 Stapelungen oder bei Zurücksetzen der Wirkungsdauer von 3 Stapelungen <cryo>9</cryo> Punkte Elementarenergie wieder her. 12 s Abklingzeit."
+    },
+    "2": {
+      "0": "Erhöht die LP um <cryo>24 %</cryo>. Erhöht den mit heftigen Schlägen verursachten Schaden um <cryo>22 %</cryo>, wenn sich die aktuellen LP erhöhen oder verringern. Hält 4 s, 3-fach stapelbar, 0,3 s Abklingzeit. Stellt bei Erreichen von 3 Stapelungen oder bei Zurücksetzen der Wirkungsdauer von 3 Stapelungen <cryo>10</cryo> Punkte Elementarenergie wieder her. 12 s Abklingzeit."
+    },
+    "3": {
+      "0": "Erhöht die LP um <cryo>28 %</cryo>. Erhöht den mit heftigen Schlägen verursachten Schaden um <cryo>26 %</cryo>, wenn sich die aktuellen LP erhöhen oder verringern. Hält 4 s, 3-fach stapelbar, 0,3 s Abklingzeit. Stellt bei Erreichen von 3 Stapelungen oder bei Zurücksetzen der Wirkungsdauer von 3 Stapelungen <cryo>11</cryo> Punkte Elementarenergie wieder her. 12 s Abklingzeit."
+    },
+    "4": {
+      "0": "Erhöht die LP um <cryo>32 %</cryo>. Erhöht den mit heftigen Schlägen verursachten Schaden um <cryo>30 %</cryo>, wenn sich die aktuellen LP erhöhen oder verringern. Hält 4 s, 3-fach stapelbar, 0,3 s Abklingzeit. Stellt bei Erreichen von 3 Stapelungen oder bei Zurücksetzen der Wirkungsdauer von 3 Stapelungen <cryo>12</cryo> Punkte Elementarenergie wieder her. 12 s Abklingzeit."
+    }
+  }
+}

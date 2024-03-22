@@ -1,0 +1,175 @@
+{
+  "name": "Sangonomiya Kokomi",
+  "title": "Pearl of Wisdom",
+  "description": "Sang Pemimpin Suci di Pulau Watatsumi. Segala urusan yang terjadi di pulau tersebut ada dalam genggaman nona muda ini.",
+  "constellationName": "Dracaena Somnolenta",
+  "auto": {
+    "name": "The Shape of Water",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Attack</strong>",
+        "1": "Melancarkan hingga 3 serangan beruntun dalam wujud ikan yang berenang dan mengakibatkan <hydro>Hydro DMG</hydro>."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Mengonsumsi sejumlah Stamina untuk mengakibatkan <hydro>Hydro DMG area</hydro> setelah jeda singkat."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Mengumpulkan kekuatan Hydro dan menghantam ke tanah dari udara, menyerang musuh di jalur terjangan dan mengakibatkan <hydro>Hydro DMG Area</hydro> saat mendarat."
+      }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Charged Attack",
+      "4": "Konsumsi Stamina Charged Attack",
+      "5": "DMG Selama Plunging",
+      "6": "DMG Plunging Attack Rendah/Tinggi",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Kurage's Oath",
+    "description": {
+      "0": "Memanggil \"Bake-Kurage\" yang tercipta dari air untuk menyembuhkan rekan.",
+      "1": "Ketika melancarkan skill ini, Sangonomiya Kokomi akan terkena status <hydro>Wet</hydro>.",
+      "2": "<br/>",
+      "3": "<strong>Bake-Kurage</strong>",
+      "4": "Setiap beberapa saat, Bake-Kurage akan mengakibatkan <hydro>Hydro DMG</hydro> pada musuh di sekitar dan memulihkan HP Karakter yang berada di medan pertempuran. Jumlah HP yang dipulihkan dihitung berdasarkan Max HP Sangonomiya Kokomi.",
+      "5": "<br/>",
+      "6": "<i>Kokomi sewaktu-waktu perlu mengisi ulang \"energi\" demi mempertahankan kinerja yang sempurna.</i>"
+    },
+    "skillParams": {
+      "0": "Pemulihan HP",
+      "1": "DMG Gelombang",
+      "2": "Durasi Aktif",
+      "3": "Cooldown",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Nereid's Ascension",
+    "description": {
+      "0": "Memanggil kekuatan Watatsumi dan mengakibatkan <hydro>Hydro DMG</hydro> pada musuh di sekitar, kemudian menyelimuti Kokomi dengan Ceremonial Garment yang tercipta dari aliran air Sangonomiya.",
+      "1": "<br/>",
+      "2": "<strong>Ceremonial Garment</strong>",
+      "3": [
+        "Meningkatkan DMG Normal dan Charged Attack, serta DMG Bake-Kurage berdasarkan Max HP Sangonomiya Kokomi.",
+        "Saat Normal dan Charged Attack mengenai musuh, Sangonomiya Kokomi akan memulihkan HP seluruh anggota party yang berada di sekitar berdasarkan Max HP miliknya.",
+        "Meningkatkan ketahanan Sangonomiya Kokomi terhadap interupsi dan membuat Kokomi dapat berjalan di atas permukaan air."
+      ],
+      "4": "<br/>",
+      "5": "Efek ini akan hilang jika Kokomi meninggalkan medan pertempuran.",
+      "6": "<br/>",
+      "7": "<i>Kilauan cahaya berkumpul membentuk jubah, yang menunjukkan keagungan rupa Yang Mulia, Sangonomiya Kokomi.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "Bonus DMG Normal Attack",
+      "2": "Bonus DMG Charged Attack",
+      "3": "Bonus DMG Bake-Kurage",
+      "4": "Pemulihan HP/Hit",
+      "5": "Durasi",
+      "6": "Cooldown",
+      "7": "Konsumsi Energy",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Tamakushi Casket",
+    "description": {
+      "0": "Saat Kokomi melancarkan <strong>Nereid's Ascension</strong>, jika Bake-Kurage milik Sangonomiya Kokomi sendiri masih berada di medan pertempuran, durasi Bake-Kurage tersebut akan diperbarui."
+    }
+  },
+  "passive2": {
+    "name": "Song of Pearls",
+    "description": {
+      "0": "Saat mengenakan Ceremonial Garment dari skill <strong>Nereid's Ascension</strong>, Bonus DMG Normal dan Charged Attack yang didapatkan Sangonomiya Kokomi berdasarkan Max HP-nya akan meningkat lagi sebesar 15% dari Healing Bonus Kokomi."
+    }
+  },
+  "passive3": {
+    "name": "Princess of Watatsumi",
+    "description": {
+      "0": "Mengurangi 20% konsumsi Stamina Karakter party sendiri saat berenang.",
+      "1": "Efek ini tidak dapat ditumpuk dengan Talenta Pasif lain dengan efek yang sama persis."
+    }
+  },
+  "passive": {
+    "name": "Flawless Strategy",
+    "description": {
+      "0": "Meningkatkan 25% Healing Bonus Sangonomiya Kokomi, tetapi CRIT Rate Kokomi berkurang 100%."
+    }
+  },
+  "constellation1": {
+    "name": "At Water's Edge",
+    "description": {
+      "0": "Saat mengenakan Ceremonial Garment dari skill <strong>Nereid's Ascension</strong>, serangan terakhir dari kombo Normal Attack Sangonomiya Kokomi akan memunculkan seekor ikan yang berenang dan mengakibatkan <hydro>Hydro DMG</hydro> sebesar 30% dari Max HP Kokomi.",
+      "1": "DMG ini tidak dianggap sebagai DMG Normal Attack."
+    }
+  },
+  "constellation2": {
+    "name": "The Clouds Like Waves Rippling",
+    "description": {
+      "0": "Saat memulihkan Karakter dengan HP kurang dari 50% dengan cara-cara di bawah, Sangonomiya Kokomi akan mendapatkan bonus pemulihan berdasarkan Max HP dirinya:",
+      "1": [
+        "Bake-Kurage dari <strong>Kurage's Oath</strong>: 4,5% dari Max HP Kokomi.",
+        "Normal dan Charged Attack <strong>Nereid's Ascension</strong>: 0,6% dari Max HP Kokomi."
+      ]
+    }
+  },
+  "constellation3": {
+    "name": "The Moon, A Ship O'er the Seas",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Nereid's Ascension</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "The Moon Overlooks the Waters",
+    "description": {
+      "0": "Saat mengenakan Ceremonial Garment dari skill <strong>Nereid's Ascension</strong>, Normal Attack SPD Sangonomiya Kokomi meningkat 10% dan Normal Attack yang mengenai musuh akan memulihkan 0,8 Energy.",
+      "1": "Efek ini dapat terpicu setiap 0,2 detik."
+    }
+  },
+  "constellation5": {
+    "name": "All Streams Flow to the Sea",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Kurage's Oath</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Sango Isshin",
+    "description": {
+      "0": "Saat mengenakan Ceremonial Garment dari skill <strong>Nereid's Ascension</strong>, dan ketika Normal atau Charged Attack Sangonomiya Kokomi melakukan pemulihan atau berusaha memulihkan HP Karakter di dalam party dengan HP 80% atau lebih, maka Sangonomiya Kokomi akan mendapatkan 40% <hydro>Hydro DMG Bonus</hydro> selama 4 detik."
+    }
+  }
+}

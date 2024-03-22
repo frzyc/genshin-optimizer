@@ -1,0 +1,24 @@
+{
+  "name": "Vòng Bạch Thần",
+  "description": {
+    "0": "Pháp khí kế thừa ý niệm của Ngài Kitsune. Chỉ có điều ý niệm của ngài lớn mạnh như vậy vật nhỏ bé này chẳng thể chứa đựng được hết."
+  },
+  "passiveName": "Sakura Saiguu",
+  "passiveDescription": {
+    "0": {
+      "0": "Mỗi khi nhân vật trang bị vũ khí này kích hoạt phản ứng liên quan đến nguyên tố lôi, thì nhân vật lân cận trong đội có thuộc tính nguyên tố gây ra các phản ứng liên quan sẽ tăng <cryo>10%</cryo> Sát Thương Nguyên Tố của nguyên tố tương ứng và kéo dài 6 giây. Nhân vật được tăng Sát Thương Nguyên Tố bằng hình thức này sẽ không được cộng dồn."
+    },
+    "1": {
+      "0": "Mỗi khi nhân vật trang bị vũ khí này kích hoạt phản ứng liên quan đến nguyên tố lôi, thì nhân vật lân cận trong đội có thuộc tính nguyên tố gây ra các phản ứng liên quan sẽ tăng <cryo>12.5%</cryo> Sát Thương Nguyên Tố của nguyên tố tương ứng và kéo dài 6 giây. Nhân vật được tăng Sát Thương Nguyên Tố bằng hình thức này sẽ không được cộng dồn."
+    },
+    "2": {
+      "0": "Mỗi khi nhân vật trang bị vũ khí này kích hoạt phản ứng liên quan đến nguyên tố lôi, thì nhân vật lân cận trong đội có thuộc tính nguyên tố gây ra các phản ứng liên quan sẽ tăng <cryo>15%</cryo> Sát Thương Nguyên Tố của nguyên tố tương ứng và kéo dài 6 giây. Nhân vật được tăng Sát Thương Nguyên Tố bằng hình thức này sẽ không được cộng dồn."
+    },
+    "3": {
+      "0": "Mỗi khi nhân vật trang bị vũ khí này kích hoạt phản ứng liên quan đến nguyên tố lôi, thì nhân vật lân cận trong đội có thuộc tính nguyên tố gây ra các phản ứng liên quan sẽ tăng <cryo>17.5%</cryo> Sát Thương Nguyên Tố của nguyên tố tương ứng và kéo dài 6 giây. Nhân vật được tăng Sát Thương Nguyên Tố bằng hình thức này sẽ không được cộng dồn."
+    },
+    "4": {
+      "0": "Mỗi khi nhân vật trang bị vũ khí này kích hoạt phản ứng liên quan đến nguyên tố lôi, thì nhân vật lân cận trong đội có thuộc tính nguyên tố gây ra các phản ứng liên quan sẽ tăng <cryo>20%</cryo> Sát Thương Nguyên Tố của nguyên tố tương ứng và kéo dài 6 giây. Nhân vật được tăng Sát Thương Nguyên Tố bằng hình thức này sẽ không được cộng dồn."
+    }
+  }
+}

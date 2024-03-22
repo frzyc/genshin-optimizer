@@ -1,0 +1,187 @@
+{
+  "name": "Gorou",
+  "title": "Canine Warrior",
+  "description": "Jenderal pasukan di Pulau Watatsumi. Dia sangat dipercaya anak buahnya.",
+  "constellationName": "Canis Bellatoris",
+  "auto": {
+    "name": "Ripping Fang Fletching",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Attack</strong>",
+        "1": "Melancarkan hingga 4 serangan berturut-turut menggunakan busur."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Melancarkan sebuah <strong>Serangan Membidik</strong> yang lebih akurat untuk mengakibatkan DMG lebih besar.",
+        "2": "Saat membidik, kristal batu akan berkumpul di ujung anak panah. Setelah terkumpul penuh, anak panah yang diluncurkan akan mengakibatkan <geo>Geo DMG</geo>."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Melancarkan hujan panah dari udara dan menerjang tanah dengan kecepatan tinggi, mengakibatkan DMG Area saat mendarat."
+      }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Tahap 4",
+      "4": "DMG Membidik",
+      "5": "DMG Membidik Penuh",
+      "6": "DMG Selama Plunging",
+      "7": "DMG Plunging Attack Rendah/Tinggi",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Inuzaka All-Round Defense",
+    "description": {
+      "0": "Mengakibatkan <geo>Geo DMG Area</geo> dan mendirikan General's War-Banner.",
+      "1": "<br/>",
+      "2": "<strong>General's War-Banner</strong>",
+      "3": "Memberikan buff berikut kepada Karakter aktif di dalam area skill, berdasarkan jumlah Karakter <geo>Geo</geo> di dalam party saat Banner didirikan:",
+      "4": [
+        "Satu Karakter — memberikan efek \"Standing Firm\": Bonus DEF.",
+        "Dua Karakter — memberikan efek \"Impregnable\": Bonus DEF dan meningkatkan pertahanan terhadap interupsi.",
+        "Tiga Karakter — memberikan efek \"Crunch\": Bonus DEF, peningkatan pertahanan terhadap interupsi, dan memberikan <geo>Bonus Geo DMG</geo>."
+      ],
+      "5": "<br/>",
+      "6": "Hanya bisa ada 1 General's War-Banner ciptaan Gorou yang ada di medan pertempuran dalam waktu bersamaan. Karakter hanya dapat memperoleh buff dari 1 General's War-Banner. Setelah Karakter meninggalkan area General's War-Banner, efek buff tersebut akan berlanjut selama 2 detik.",
+      "7": "<br/>",
+      "8": "<strong>Mode Tahan</strong>",
+      "9": "Dapat menyesuaikan posisi skill.",
+      "10": "<br/>",
+      "11": "<i>\"Asalkan dapat masuk ke formasi ini, aku jamin kita akan aman!\" Tidak peduli di mana pun dan kapan pun, Gorou sang Jenderal tidak akan pernah ingin melihat rekan-rekannya terluka.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "Peningkatan DEF",
+      "2": "Bonus Geo DMG",
+      "3": "Durasi",
+      "4": "Cooldown",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Juuga: Forward Unto Victory",
+    "description": {
+      "0": "Dengan menunjukkan kewibawaan sebagai jenderal, Gorou mengakibatkan <geo>Geo DMG Area</geo> dan menciptakan area General's Glory untuk menyalakan semangat rekan-rekannya.",
+      "1": "<br/>",
+      "2": "<strong>General's Glory</strong>",
+      "3": "Memiliki karakteristik berikut:",
+      "4": [
+        "Area ini memiliki efek yang persis seperti efek General's War Banner dari Elemental Skill Gorou, Inuzaka All-Round Defense, yang memberikan buff pada Karakter aktif di dalam area skill sesuai dengan jumlah Karakter <geo>Geo</geo> dalam party. Area ini juga akan mengikuti pergerakan Karakter aktif.",
+        "Menciptakan 1 Crystal Collapse setiap 1,5 detik yang mengakibatkan <geo>Geo DMG Area</geo> pada 1 musuh di lingkup area.",
+        "Crystal Collapse juga akan menarik 1 Elemental Shard yang terbentuk dari Reaksi Crystallize dalam area tersebut ke posisi Karakter aktif setiap 1,5 detik."
+      ],
+      "5": "<br/>",
+      "6": "Bila General's War-Banner ciptaan Gorou sendiri berada di medan pertempuran saat melancarkan skill ini, maka General's War-Banner tersebut akan hancur. Selain itu, selama durasi General's Glory berlangsung, General's War-Banner tidak akan tercipta saat Gorou sendiri melancarkan Elemental Skill \"Inuzaka All-Round Defense\".",
+      "7": "Efek General's Glory milik Gorou sendiri akan hilang ketika Gorou gugur.",
+      "8": "<br/>",
+      "9": "<i>\"Kita ada di posisi yang lebih tinggi!\" Gorou bisa sedikit mengubah medan pertempuran untuk memperoleh kemenangan. Teknik ini adalah teknik yang sangat efektif untuk menghadapi musuh kuat.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "DMG Crystal Collapse",
+      "2": "Durasi",
+      "3": "Cooldown",
+      "4": "Konsumsi Energy",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Heedless of the Wind and Weather",
+    "description": {
+      "0": "Meningkatkan 25% DEF seluruh anggota party di sekitar selama 12 detik setelah melancarkan <strong>Juuga: Forward Unto Victory</strong>."
+    }
+  },
+  "passive2": {
+    "name": "A Favor Repaid",
+    "description": {
+      "0": "Berdasarkan DEF-nya, Gorou memperoleh Bonus DMG berikut:",
+      "1": [
+        "Meningkatkan DMG skill <strong>Inuzaka All-Round Defense</strong> sebesar 156% DEF Gorou.",
+        "Meningkatkan DMG skill <strong>Juuga: Forward Unto Victory</strong> dan DMG Crystal Collapse sebesar 15,6% DEF Gorou."
+      ]
+    }
+  },
+  "passive3": {
+    "name": "Seeker of Shinies",
+    "description": {
+      "0": "Memperlihatkan lokasi <strong>produk khas Inazuma</strong> di sekitar pada peta kecil."
+    }
+  },
+  "constellation1": {
+    "name": "Rushing Hound: Swift as the Wind",
+    "description": {
+      "0": "Setelah Karakter aktif (selain Gorou sendiri) mengakibatkan Geo DMG saat berada dalam Area <strong>General's War-Banner</strong> atau <strong>General's Glory</strong> ciptaan Gorou sendiri, durasi CD <strong>Inuzaka All-Round Defense</strong> milik Gorou akan berkurang 2 detik.",
+      "1": "Efek ini dapat terpicu sekali setiap 10 detik."
+    }
+  },
+  "constellation2": {
+    "name": "Sitting Hound: Steady as a Clock",
+    "description": {
+      "0": "Selama durasi <strong>General's Glory</strong> berlangsung, setelah Karakter aktif di sekitar memperoleh Elemental Shard dari reaksi Crystallize, maka durasi General's Glory milik Gorou sendiri akan bertambah 1 detik.",
+      "1": "Efek ini dapat terpicu sekali setiap 0,1 detik dan durasi General's Glory dapat bertambah hingga 3 detik dengan cara ini."
+    }
+  },
+  "constellation3": {
+    "name": "Mauling Hound: Fierce as Fire",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Inuzaka All-Round Defense</strong>.",
+      "1": "Maksimum: Lv.15."
+    }
+  },
+  "constellation4": {
+    "name": "Lapping Hound: Warm as Water",
+    "description": {
+      "0": "Saat <strong>General's Glory</strong> berada dalam status \"Impregnable\" atau \"Crunch\", maka HP Karakter aktif yang berada di dalam area General's Glory akan dipulihkan sebesar 50% DEF Gorou sendiri setiap 1,5 detik."
+    }
+  },
+  "constellation5": {
+    "name": "Striking Hound: Thunderous Force",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Juuga: Forward Unto Victory</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Valiant Hound: Mountainous Fealty",
+    "description": {
+      "0": "Dalam 12 detik setelah menggunakan <strong>Inuzaka All-Round Defense</strong> atau <strong>Juuga: Forward Unto Victory</strong>, Gorou akan meningkatkan CRIT DMG untuk <geo>Geo DMG</geo> milik seluruh anggota party di sekitar sesuai dengan level area Gorou saat skill ini dilancarkan:",
+      "1": [
+        "Standing Firm: Meningkatkan 10%.",
+        "Impregnable: Meningkatkan 20%.",
+        "Crunch: Meningkatkan 40%."
+      ],
+      "2": "<br/>",
+      "3": "Efek ini tidak bisa ditumpuk, yang terhitung adalah yang terakhir kali aktif."
+    }
+  }
+}

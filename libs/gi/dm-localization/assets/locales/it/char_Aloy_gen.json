@@ -1,0 +1,159 @@
+{
+  "name": "Aloy",
+  "title": "Salvatrice di un altro mondo",
+  "description": "Prima una reietta, ora una cacciatrice dalle abilità senza pari. Pronta a fare la cosa giusta in qualsiasi momento.",
+  "constellationName": "Nora Fortis",
+  "auto": {
+    "name": "Fuocosvelto",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attacco normale</strong>",
+        "1": "Effettua fino a 4 tiri consecutivi con un arco."
+      },
+      "charged": {
+        "0": "<strong>Attacco caricato</strong>",
+        "1": "Effettua un <strong>attacco mirato</strong> ancora più preciso con DAN aumentati.",
+        "2": "Mentre mira, sulla punta della freccia si accumulerà del gelo pungente. Una freccia gelida caricata al massimo infligge <cryo>DAN da Cryo</cryo>."
+      },
+      "plunging": {
+        "0": "<strong>Attacco in picchiata</strong>",
+        "1": "Scocca una pioggia di frecce a mezz'aria prima di cadere e colpire il suolo, infliggendo DAN ad area all'impatto."
+      }
+    },
+    "skillParams": {
+      "0": "DAN da 1º colpo",
+      "1": "DAN da 2º colpo",
+      "2": "DAN da 3º colpo",
+      "3": "DAN da 4º colpo",
+      "4": "ATT mirato",
+      "5": "ATT mirato a piena carica",
+      "6": "DAN da ATT in picchiata",
+      "7": "DAN da ATT in picchiata basso/alto",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Natura congelata",
+    "description": {
+      "0": "Aloy lancia una Bomba congelante nella direzione indicata, che esplode all'impatto infliggendo <cryo>DAN da Cryo</cryo>. Dopo l'esplosione, la Bomba congelante si divide in tanti Frammenti di Acquagelida che esplodono a contatto con gli avversari o dopo un breve lasso di tempo, infliggendo <cryo>DAN da Cryo</cryo>.",
+      "1": "Quando una Bomba congelante o un Frammento di Acquagelida colpisce un avversario, l'ATT dell'avversario si riduce e Aloy ottiene 1 accumulo di Bobina.",
+      "2": "Aloy può ottenere fino a 1 accumulo di Bobina ogni 0,1 s.",
+      "3": "<br/>",
+      "4": "<strong>Bobina</strong>",
+      "5": [
+        " Ogni accumulo aumenta i DAN da attacco normale di Aloy.",
+        " Quando Aloy accumula Bobina per 4 volte, gli accumuli si azzerano. Poi, entra nello stato di Frenesia di gelo, che aumenta ulteriormente i DAN inflitti dai suoi attacchi normali e converte i DAN da attacco normale in <cryo>DAN da Cryo</cryo>."
+      ],
+      "6": "<br/>",
+      "7": "Mentre è nello stato di Frenesia di gelo, Aloy non può accumulare Bobina.",
+      "8": "Gli effetti di Bobina si annullano 30 s dopo che Aloy abbandona il combattimento.",
+      "9": "<br/>",
+      "10": "<i>Credi che faccia freddo? Allora non hai mai visitato il Tumulo.</i>"
+    },
+    "skillParams": {
+      "0": "DAN da Bomba congelante",
+      "1": "DAN da Frammento di Acquagelida",
+      "2": "Riduzione ATT",
+      "3": "Durata riduzione ATT",
+      "4": "Bonus DAN da ATT normale Bobina",
+      "5": "Bonus DAN da ATT normale Frenesia di gelo",
+      "6": "Durata Frenesia di gelo",
+      "7": "TdR",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Profezie dell'alba",
+    "description": {
+      "0": "Aloy lancia una Batteria piena di energia di Cryo nella direzione indicata, poi la fa esplodere con una freccia, infliggendo <cryo>DAN da Cryo ad area</cryo>.",
+      "1": "<br/>",
+      "2": "<i>Che \"Alba Zero\" si riferisse alla speranza o all'estinzione ormai non importa. Aloy ha già salvato il suo mondo, e il relativo fato deve essere forgiato dai propri eroi.</i>"
+    },
+    "skillParams": {
+      "0": "DAN da abilità",
+      "1": "TdR",
+      "2": "Costo energia",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Sovraccarico offensivo",
+    "description": {
+      "0": "Quando Aloy riceve l'effetto Bobina da <strong>Natura congelata</strong>, il suo ATT aumenta di un 16%, mentre l'ATT dei membri vicini del gruppo aumenta di un 8%. Quest'effetto dura 10 s."
+    }
+  },
+  "passive2": {
+    "name": "Attacco potente",
+    "description": {
+      "0": "Quando Aloy è nello stato di Frenesia di gelo conferito da <strong>Natura congelata</strong>, il suo <cryo>bonus DAN da Cryo</cryo> aumenta di un 3,5% ogni secondo. In questo modo è possibile ottenere fino a un 35% di <cryo>bonus DAN da Cryo</cryo>."
+    }
+  },
+  "passive3": {
+    "name": "Piano piano",
+    "description": {
+      "0": "Quando Aloy è nel gruppo, gli animali che forniscono pollame, carne cruda o carne congelata non fuggiranno dallo spavento se i membri del gruppo si avvicinano a loro."
+    }
+  },
+  "constellation1": {
+    "name": "Stella di un altro mondo",
+    "description": {
+      "0": "Non è ancora giunto il momento che l'angolo di cielo notturno di questa persona s'illumini."
+    }
+  },
+  "constellation2": {
+    "name": "Stella di un altro mondo",
+    "description": {
+      "0": "Non è ancora giunto il momento che l'angolo di cielo notturno di questa persona s'illumini."
+    }
+  },
+  "constellation3": {
+    "name": "Stella di un altro mondo",
+    "description": {
+      "0": "Non è ancora giunto il momento che l'angolo di cielo notturno di questa persona s'illumini."
+    }
+  },
+  "constellation4": {
+    "name": "Stella di un altro mondo",
+    "description": {
+      "0": "Non è ancora giunto il momento che l'angolo di cielo notturno di questa persona s'illumini."
+    }
+  },
+  "constellation5": {
+    "name": "Stella di un altro mondo",
+    "description": {
+      "0": "Non è ancora giunto il momento che l'angolo di cielo notturno di questa persona s'illumini."
+    }
+  },
+  "constellation6": {
+    "name": "Stella di un altro mondo",
+    "description": {
+      "0": "Non è ancora giunto il momento che l'angolo di cielo notturno di questa persona s'illumini."
+    }
+  }
+}

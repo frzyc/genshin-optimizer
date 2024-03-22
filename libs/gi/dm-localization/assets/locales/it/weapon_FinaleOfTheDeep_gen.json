@@ -1,0 +1,24 @@
+{
+  "name": "Finale degli abissi",
+  "description": {
+    "0": "Una spada silenziosa come i profondi abissi dell'oceano. Malgrado la sua forma, è ben più antica di quanto sembri."
+  },
+  "passiveName": "Finale sublime",
+  "passiveDescription": {
+    "0": {
+      "0": "Quando usa un'abilità elementale, il personaggio riceve un aumento dell'ATT pari a un <cryo>12%</cryo> per 15 s e un Legame vitale pari a un 25% dei PS max. Quest'effetto può attivarsi una volta ogni 10 s. Quando il Legame vitale si dissolve, è possibile ottenere fino a un massimo di <cryo>150</cryo> di ATT, in base a un <cryo>2,4%</cryo> della quantità totale del Legame vitale dissolto, per 15 s."
+    },
+    "1": {
+      "0": "Quando usa un'abilità elementale, il personaggio riceve un aumento dell'ATT pari a un <cryo>15%</cryo> per 15 s e un Legame vitale pari a un 25% dei PS max. Quest'effetto può attivarsi una volta ogni 10 s. Quando il Legame vitale si dissolve, è possibile ottenere fino a un massimo di <cryo>187,5</cryo> di ATT, in base a un <cryo>3%</cryo> della quantità totale del Legame vitale dissolto, per 15 s."
+    },
+    "2": {
+      "0": "Quando usa un'abilità elementale, il personaggio riceve un aumento dell'ATT pari a un <cryo>18%</cryo> per 15 s e un Legame vitale pari a un 25% dei PS max. Quest'effetto può attivarsi una volta ogni 10 s. Quando il Legame vitale si dissolve, è possibile ottenere fino a un massimo di <cryo>225</cryo> di ATT, in base a un <cryo>3,6%</cryo> della quantità totale del Legame vitale dissolto, per 15 s."
+    },
+    "3": {
+      "0": "Quando usa un'abilità elementale, il personaggio riceve un aumento dell'ATT pari a un <cryo>21%</cryo> per 15 s e un Legame vitale pari a un 25% dei PS max. Quest'effetto può attivarsi una volta ogni 10 s. Quando il Legame vitale si dissolve, è possibile ottenere fino a un massimo di <cryo>262,5</cryo> di ATT, in base a un <cryo>4,2%</cryo> della quantità totale del Legame vitale dissolto, per 15 s."
+    },
+    "4": {
+      "0": "Quando usa un'abilità elementale, il personaggio riceve un aumento dell'ATT pari a un <cryo>24%</cryo> per 15 s e un Legame vitale pari a un 25% dei PS max. Quest'effetto può attivarsi una volta ogni 10 s. Quando il Legame vitale si dissolve, è possibile ottenere fino a un massimo di <cryo>300</cryo> di ATT, in base a un <cryo>4,8%</cryo> della quantità totale del Legame vitale dissolto, per 15 s."
+    }
+  }
+}

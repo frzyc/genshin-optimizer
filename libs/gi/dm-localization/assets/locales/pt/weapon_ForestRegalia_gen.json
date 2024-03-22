@@ -1,0 +1,24 @@
+{
+  "name": "Espada Real da Floresta",
+  "description": {
+    "0": "Uma arma obtida através de uma das histórias dos Aranara. Ela tomou a forma de um espadão que é capaz de cortar os inimigos da floresta."
+  },
+  "passiveName": "Bênção da Floresta",
+  "passiveDescription": {
+    "0": {
+      "0": "Após desencadear Queimaduras, Aceleração, Intensificação, Propagação, Florescimento, Superflorescimento ou Germinação, uma Folha da Consciência será criada em volta do personagem por no máximo 10s. Quando coletada, a Folha da Consciência aumentará a Proficiência Elemental do personagem em <cryo>60</cryo> por 12s. Apenas 1 Folha pode ser criada dessa forma a cada 20s. Esse efeito ainda pode ser desencadeado mesmo se o personagem não estiver em campo. O efeito da Folha da Consciência não pode ser acumulado."
+    },
+    "1": {
+      "0": "Após desencadear Queimaduras, Aceleração, Intensificação, Propagação, Florescimento, Superflorescimento ou Germinação, uma Folha da Consciência será criada em volta do personagem por no máximo 10s. Quando coletada, a Folha da Consciência aumentará a Proficiência Elemental do personagem em <cryo>75</cryo> por 12s . Apenas 1 Folha pode ser criada dessa forma a cada 20s. Esse efeito ainda pode ser desencadeado mesmo se o personagem não estiver em campo. O efeito da Folha da Consciência não pode ser acumulado."
+    },
+    "2": {
+      "0": "Após desencadear Queimaduras, Aceleração, Intensificação, Propagação, Florescimento, Superflorescimento ou Germinação, uma Folha da Consciência será criada em volta do personagem por no máximo 10s. Quando coletada, a Folha da Consciência aumentará a Proficiência Elemental do personagem em <cryo>90</cryo> por 12s. Apenas 1 Folha pode ser criada dessa forma a cada 20s. Esse efeito ainda pode ser desencadeado mesmo se o personagem não estiver em campo. O efeito da Folha da Consciência não pode ser acumulado."
+    },
+    "3": {
+      "0": "Após desencadear Queimaduras, Aceleração, Intensificação, Propagação, Florescimento, Superflorescimento ou Germinação, uma Folha da Consciência será criada em volta do personagem por no máximo 10s. Quando coletada, a Folha da Consciência aumentará a Proficiência Elemental do personagem em <cryo>105</cryo> por 12s . Apenas 1 Folha pode ser criada dessa forma a cada 20s. Esse efeito ainda pode ser desencadeado mesmo se o personagem não estiver em campo. O efeito da Folha da Consciência não pode ser acumulado."
+    },
+    "4": {
+      "0": "Após desencadear Queimaduras, Aceleração, Intensificação, Propagação, Florescimento, Superflorescimento ou Germinação, uma Folha da Consciência será criada em volta do personagem por no máximo 10s. Quando coletada, a Folha da Consciência aumentará a Proficiência Elemental do personagem em <cryo>120</cryo> por 12s. Apenas 1 Folha pode ser criada dessa forma a cada 20s. Esse efeito ainda pode ser desencadeado mesmo se o personagem não estiver em campo. O efeito da Folha da Consciência não pode ser acumulado."
+    }
+  }
+}

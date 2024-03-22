@@ -1,0 +1,24 @@
+{
+  "name": "Arco di Amos",
+  "description": {
+    "0": "Un arco estremamente antico, che ha mantenuto il suo potere nonostante la prematura dipartita del suo primo proprietario. Assorbe l'energia di tutto e di tutti, e quanto più è lontano il tuo oggetto del desiderio, maggiore è la sua potenza."
+  },
+  "passiveName": "Freccia della volontà",
+  "passiveDescription": {
+    "0": {
+      "0": "Aumenta i DAN da attacco normale e caricato di un <cryo>12%</cryo>. Dopo che un attacco normale o caricato è stato sferrato, i DAN inflitti aumentano di un ulteriore <cryo>8%</cryo> ogni 0,1 s mentre la freccia è in aria. Cumulabile fino a 5 volte."
+    },
+    "1": {
+      "0": "Aumenta i DAN da attacco normale e caricato di un <cryo>15%</cryo>. Dopo che un attacco normale o caricato è stato sferrato, i DAN inflitti aumentano di un ulteriore <cryo>10%</cryo> ogni 0,1 s mentre la freccia è in aria. Cumulabile fino a 5 volte."
+    },
+    "2": {
+      "0": "Aumenta i DAN da attacco normale e caricato di un <cryo>18%</cryo>. Dopo che un attacco normale o caricato è stato sferrato, i DAN inflitti aumentano di un ulteriore <cryo>12%</cryo> ogni 0,1 s mentre la freccia è in aria. Cumulabile fino a 5 volte."
+    },
+    "3": {
+      "0": "Aumenta i DAN da attacco normale e caricato di un <cryo>21%</cryo>. Dopo che un attacco normale o caricato è stato sferrato, i DAN inflitti aumentano di un ulteriore <cryo>14%</cryo> ogni 0,1 s mentre la freccia è in aria. Cumulabile fino a 5 volte."
+    },
+    "4": {
+      "0": "Aumenta i DAN da attacco normale e caricato di un <cryo>24%</cryo>. Dopo che un attacco normale o caricato è stato sferrato, i DAN inflitti aumentano di un ulteriore <cryo>16%</cryo> ogni 0,1 s mentre la freccia è in aria. Cumulabile fino a 5 volte."
+    }
+  }
+}

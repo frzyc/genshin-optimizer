@@ -1,0 +1,24 @@
+{
+  "name": "Verdict",
+  "description": {
+    "0": "Pedang yang pernah digunakan oleh gadis bangsawan yang meninggalkan nama keluarganya. Dulu, senjata ini ternoda oleh cairan darah dari musuh dan kekasihnya."
+  },
+  "passiveName": "Many Oaths of Dawn and Dusk",
+  "passiveDescription": {
+    "0": {
+      "0": "ATK meningkat <cryo>20%</cryo>. Saat Karakter dalam party mendapatkan Elemental Shard dari reaksi Crystallize, Karakter yang mengenakannya akan mendapatkan 1 \"Seal\", yang dapat meningkatkan <cryo>18%</cryo> DMG Elemental Skill. Seal dapat berlangsung selama 15 detik dan hanya 2 Seal yang dapat tercipta dalam waktu bersamaan. Semua Seal akan dihapus 0,2 detik setelah Elemental Skill Karakter yang mengenakan mengakibatkan DMG."
+    },
+    "1": {
+      "0": "ATK meningkat <cryo>25%</cryo>. Saat Karakter dalam party mendapatkan Elemental Shard dari reaksi Crystallize, Karakter yang mengenakannya akan mendapatkan 1 \"Seal\", yang dapat meningkatkan <cryo>22,5%</cryo> DMG Elemental Skill. Seal dapat berlangsung selama 15 detik dan hanya 2 Seal yang dapat tercipta dalam waktu bersamaan. Semua Seal akan dihapus 0,2 detik setelah Elemental Skill Karakter yang mengenakan mengakibatkan DMG."
+    },
+    "2": {
+      "0": "ATK meningkat <cryo>30%</cryo>. Saat Karakter dalam party mendapatkan Elemental Shard dari reaksi Crystallize, Karakter yang mengenakannya akan mendapatkan 1 \"Seal\", yang dapat meningkatkan <cryo>27%</cryo> DMG Elemental Skill. Seal dapat berlangsung selama 15 detik dan hanya 2 Seal yang dapat tercipta dalam waktu bersamaan. Semua Seal akan dihapus 0,2 detik setelah Elemental Skill Karakter yang mengenakan mengakibatkan DMG."
+    },
+    "3": {
+      "0": "ATK meningkat <cryo>35%</cryo>. Saat Karakter dalam party mendapatkan Elemental Shard dari reaksi Crystallize, Karakter yang mengenakannya akan mendapatkan 1 \"Seal\", yang dapat meningkatkan <cryo>31,5%</cryo> DMG Elemental Skill. Seal dapat berlangsung selama 15 detik dan hanya 2 Seal yang dapat tercipta dalam waktu bersamaan. Semua Seal akan dihapus 0,2 detik setelah Elemental Skill Karakter yang mengenakan mengakibatkan DMG."
+    },
+    "4": {
+      "0": "ATK meningkat <cryo>40%</cryo>. Saat Karakter dalam party mendapatkan Elemental Shard dari reaksi Crystallize, Karakter yang mengenakannya akan mendapatkan 1 \"Seal\", yang dapat meningkatkan <cryo>36%</cryo> DMG Elemental Skill. Seal dapat berlangsung selama 15 detik dan hanya 2 Seal yang dapat tercipta dalam waktu bersamaan. Semua Seal akan dihapus 0,2 detik setelah Elemental Skill Karakter yang mengenakan mengakibatkan DMG."
+    }
+  }
+}

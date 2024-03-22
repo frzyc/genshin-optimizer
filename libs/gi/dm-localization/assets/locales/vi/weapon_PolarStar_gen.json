@@ -1,0 +1,24 @@
+{
+  "name": "Ngôi Sao Cực Đông",
+  "description": {
+    "0": "Cánh cung hoàn mỹ như giá lạnh của băng tuyết cực Bắc."
+  },
+  "passiveName": "Điềm Báo Ban Trưa",
+  "passiveDescription": {
+    "0": {
+      "0": "Tăng <cryo>12%</cryo> sát thương Kỹ Năng Nguyên Tố và Kỹ Năng Nộ gây ra; Tấn công thường, trọng kích, Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ sau khi đánh trúng kẻ địch sẽ sản sinh 1 tầng hiệu quả \"Ngôi Sao Đêm Trắng\" trong 12s. Khi trong trạng thái \"Ngôi Sao Đêm Trắng\" tầng 1/2/3/4, sức tấn công tăng <cryo>10/20/30/48%</cryo>. Hiệu quả \"Ngôi Sao Đêm Trắng\" sinh ra từ tấn công thường, trọng kích, Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ sẽ tồn tại độc lập với nhau."
+    },
+    "1": {
+      "0": "Tăng <cryo>15%</cryo> sát thương Kỹ Năng Nguyên Tố và Kỹ Năng Nộ gây ra; Tấn công thường, trọng kích, Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ sau khi đánh trúng kẻ địch sẽ sản sinh 1 tầng hiệu quả \"Ngôi Sao Đêm Trắng\" trong 12s. Khi trong trạng thái \"Ngôi Sao Đêm Trắng\" tầng 1/2/3/4, sức tấn công tăng <cryo>12.5/25/37.5/60%</cryo>. Hiệu quả \"Ngôi Sao Đêm Trắng\" sinh ra từ tấn công thường, trọng kích, Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ sẽ tồn tại độc lập với nhau."
+    },
+    "2": {
+      "0": "Tăng <cryo>18%</cryo> sát thương Kỹ Năng Nguyên Tố và Kỹ Năng Nộ gây ra; Tấn công thường, trọng kích, Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ sau khi đánh trúng kẻ địch sẽ sản sinh 1 tầng hiệu quả \"Ngôi Sao Đêm Trắng\" trong 12s. Khi trong trạng thái \"Ngôi Sao Đêm Trắng\" tầng 1/2/3/4, sức tấn công tăng <cryo>15/30/45/72%</cryo>. Hiệu quả \"Ngôi Sao Đêm Trắng\" sinh ra từ tấn công thường, trọng kích, Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ sẽ tồn tại độc lập với nhau."
+    },
+    "3": {
+      "0": "Tăng <cryo>21%</cryo> sát thương Kỹ Năng Nguyên Tố và Kỹ Năng Nộ gây ra; Tấn công thường, trọng kích, Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ sau khi đánh trúng kẻ địch sẽ sản sinh 1 tầng hiệu quả \"Ngôi Sao Đêm Trắng\" trong 12s. Khi trong trạng thái \"Ngôi Sao Đêm Trắng\" tầng 1/2/3/4, sức tấn công tăng <cryo>17.5/35/52.5/84%</cryo>. Hiệu quả \"Ngôi Sao Đêm Trắng\" sinh ra từ tấn công thường, trọng kích, Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ sẽ tồn tại độc lập với nhau."
+    },
+    "4": {
+      "0": "Tăng <cryo>24%</cryo> sát thương Kỹ Năng Nguyên Tố và Kỹ Năng Nộ gây ra; Tấn công thường, trọng kích, Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ sau khi đánh trúng kẻ địch sẽ sản sinh 1 tầng hiệu quả \"Ngôi Sao Đêm Trắng\" trong 12s. Khi trong trạng thái \"Ngôi Sao Đêm Trắng\" tầng 1/2/3/4, sức tấn công tăng <cryo>20/40/60/96%</cryo>. Hiệu quả \"Ngôi Sao Đêm Trắng\" sinh ra từ tấn công thường, trọng kích, Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ sẽ tồn tại độc lập với nhau."
+    }
+  }
+}

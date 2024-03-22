@@ -1,0 +1,24 @@
+{
+  "name": "Fruto de la Culminación",
+  "description": {
+    "0": "Un fruto obtenido a través de una de las historias de los aranara. Tiene la capacidad de salir airoso de cualquier crisis."
+  },
+  "passiveName": "Culminación",
+  "passiveDescription": {
+    "0": {
+      "0": "Al causar una Reacción Elemental, obtienes el efecto de “fase lunar”, el cual aumenta la Maestría Elemental en <cryo>24</cryo> pts. y reduce el ATQ en un 5%. Solo se puede obtener una carga de este efecto cada 0.3 s y acumularse un máximo de 5 veces. Si no se causa ninguna Reacción Elemental en 6 s, perderás una carga de fase lunar. Este efecto puede activarse incluso cuando el personaje está en tu equipo pero no en uso."
+    },
+    "1": {
+      "0": "Al causar una Reacción Elemental, obtienes el efecto de “fase lunar”, el cual aumenta la Maestría Elemental en <cryo>27</cryo> pts. y reduce el ATQ en un 5%. Solo se puede obtener una carga de este efecto cada 0.3 s y acumularse un máximo de 5 veces. Si no se causa ninguna Reacción Elemental en 6 s, perderás una carga de fase lunar. Este efecto puede activarse incluso cuando el personaje está en tu equipo pero no en uso."
+    },
+    "2": {
+      "0": "Al causar una Reacción Elemental, obtienes el efecto de “fase lunar”, el cual aumenta la Maestría Elemental en <cryo>30</cryo> pts. y reduce el ATQ en un 5%. Solo se puede obtener una carga de este efecto cada 0.3 s y acumularse un máximo de 5 veces. Si no se causa ninguna Reacción Elemental en 6 s, perderás una carga de fase lunar. Este efecto puede activarse incluso cuando el personaje está en tu equipo pero no en uso."
+    },
+    "3": {
+      "0": "Al causar una Reacción Elemental, obtienes el efecto de “fase lunar”, el cual aumenta la Maestría Elemental en <cryo>33</cryo> pts. y reduce el ATQ en un 5%. Solo se puede obtener una carga de este efecto cada 0.3 s y acumularse un máximo de 5 veces. Si no se causa ninguna Reacción Elemental en 6 s, perderás una carga de fase lunar. Este efecto puede activarse incluso cuando el personaje está en tu equipo pero no en uso."
+    },
+    "4": {
+      "0": "Al causar una Reacción Elemental, obtienes el efecto de “fase lunar”, el cual aumenta la Maestría Elemental en <cryo>36</cryo> pts. y reduce el ATQ en un 5%. Solo se puede obtener una carga de este efecto cada 0.3 s y acumularse un máximo de 5 veces. Si no se causa ninguna Reacción Elemental en 6 s, perderás una carga de fase lunar. Este efecto puede activarse incluso cuando el personaje está en tu equipo pero no en uso."
+    }
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "normal": {
+    "hit1": "Sát Thương Lần 1",
+    "hit2": "Sát Thương Lần 2",
+    "hit3": "Sát Thương Lần 3",
+    "hit4": "Sát Thương Lần 4",
+    "hit5": "Sát Thương Lần 5",
+    "hit6": "Sát Thương Lần 6"
+  },
+  "charged": {
+    "dmg": "Sát Thương Trọng Kích",
+    "spinning": "Sát Thương Trọng Kích Tuần Hoàn",
+    "final": "Sát Thương Trọng Kích Chí Mạng",
+    "stamina": "Thể lực Trọng Kích tiêu hao",
+    "aimed": "Ngắm Bắn",
+    "fullyAimed": "Tụ Lực Ngắm Bắn"
+  },
+  "plunging": {
+    "dmg": "Sát Thương Khi Rơi",
+    "low": "ST Khi Rơi Từ Độ Cao Thấp",
+    "high": "ST Khi Rơi Từ Độ Cao Cao"
+  },
+  "maxDuration": "Thời Gian Kéo Dài Tối Đa",
+  "maxStacks": "Giới Hạn Số Tầng Năng Lượng",
+  "skillDMG": "Sát Thương Kỹ Năng",
+  "burstDMG": "ST Bạo Phát",
+  "dmgAbsorption": "Sát thương hấp thụ",
+  "healing": "Lượng trị liệu",
+  "contHealing": "Lượng Trị Liệu",
+  "duration": "Thời Gian Kéo Dài",
+  "cd": "CD",
+  "energyCost": "Năng Lượng Nguyên Tố",
+  "energyRegen": "Hồi Phục Năng Lượng Nguyên Tố",
+  "baseDMG": "Sát Thương Cơ Bản",
+  "dot": "Sát Thương Kéo Dài",
+  "addEleDMG": "Sát Thương Nguyên Tố Kèm Theo",
+  "hpRegenPerHit": "Hồi HP khi đánh trúng địch",
+  "press": {
+    "dmg": "Sát Thương Nhấn",
+    "cd": "CD Nhấn"
+  },
+  "hold": {
+    "dmg": "Sát Thương Nhấn Giữ",
+    "cd": "CD Nhấn Giữ"
+  },
+  "element": {
+    "anemo": "Phong",
+    "geo": "Nham",
+    "pyro": "Hỏa",
+    "hydro": "Thủy",
+    "cryo": "Băng",
+    "electro": "Lôi",
+    "dendro": "Thảo"
+  },
+  "reaction": {
+    "swirl": "Khuếch tán",
+    "crystallize": "Kết tinh",
+    "overloaded": "Quá Tải",
+    "electrocharged": "Điện Cảm",
+    "superconduct": "Siêu Dẫn",
+    "vaporize": "Bốc Hơi",
+    "melt": "Tan Chảy",
+    "bloom": "Sum Suê",
+    "burgeon": "Bung Tỏa",
+    "hyperbloom": "Nở Rộ",
+    "quicken": "Sinh Trưởng",
+    "aggravate": "Tăng Cường",
+    "spread": "Lan Tràn"
+  },
+  "stat": {
+    "def": "Phòng Ngự",
+    "base": {
+      "atk": "Tấn Công Căn Bản"
+    }
+  },
+  "constellationLvl": "Cung Mệnh Tầng {{level}}",
+  "talentLvl": "Cấp Thiên Phú {{level}}",
+  "talents": {
+    "auto": "Đánh Thường",
+    "skill": "Kỹ Năng Nguyên Tố",
+    "burst": "Kỹ Năng Nộ",
+    "altSprint": "Thay thế xung kích"
+  },
+  "unlockPassive1": "Nhân vật đột phá Cấp 1 sẽ mở",
+  "unlockPassive2": "Nhân vật đột phá Cấp 4 sẽ mở",
+  "unlockPassive3": "Thiên Phú Cố Định"
+}

@@ -1,0 +1,12 @@
+{
+  "setName": "Prayers for Wisdom",
+  "setEffects": {
+    "1": "Affected by Electro for 40% less time."
+  },
+  "pieces": {
+    "circlet": {
+      "name": "Tiara of Thunder",
+      "desc": "A tiara worn by those tasked with offering sacrifices in ancient times. Because it harkened to the call of thunder year in and year out, it possesses remarkable resistance."
+    }
+  }
+}

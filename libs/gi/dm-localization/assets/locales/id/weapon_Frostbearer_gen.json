@@ -1,0 +1,24 @@
+{
+  "name": "Frostbearer",
+  "description": {
+    "0": "Buah unik yang seakan memiliki sebuah keinginan sendiri. Senjata ini memancarkan sebuah aura kepedihan yang samar."
+  },
+  "passiveName": "Frost Burial",
+  "passiveDescription": {
+    "0": {
+      "0": "Saat Normal atau Charged Attack mengenai musuh, memiliki <cryo>60%</cryo> persentase untuk menciptakan Everfrost Icicle di atas musuh, mengakibatkan DMG area sebesar <cryo>80%</cryo> ATK. Jika musuh berada dalam efek Cryo, maka Everfrost Icicle akan mengakibatkan DMG sebesar <cryo>200%</cryo> ATK. Efek ini dapat terpicu setiap 10 detik."
+    },
+    "1": {
+      "0": "Saat Normal atau Charged Attack mengenai musuh, memiliki <cryo>70%</cryo> persentase untuk menciptakan Everfrost Icicle di atas musuh, mengakibatkan DMG area sebesar <cryo>95%</cryo> ATK. Jika musuh berada dalam efek Cryo, maka Everfrost Icicle akan mengakibatkan DMG sebesar <cryo>240%</cryo> ATK. Efek ini dapat terpicu setiap 10 detik."
+    },
+    "2": {
+      "0": "Saat Normal atau Charged Attack mengenai musuh, memiliki <cryo>80%</cryo> persentase untuk menciptakan Everfrost Icicle di atas musuh, mengakibatkan DMG area sebesar <cryo>110%</cryo> ATK. Jika musuh berada dalam efek Cryo, maka Everfrost Icicle akan mengakibatkan DMG sebesar <cryo>280%</cryo> ATK. Efek ini dapat terpicu setiap 10 detik."
+    },
+    "3": {
+      "0": "Saat Normal atau Charged Attack mengenai musuh, memiliki <cryo>90%</cryo> persentase untuk menciptakan Everfrost Icicle di atas musuh, mengakibatkan DMG area sebesar <cryo>125%</cryo> ATK. Jika musuh berada dalam efek Cryo, maka Everfrost Icicle akan mengakibatkan DMG sebesar <cryo>320%</cryo> ATK. Efek ini dapat terpicu setiap 10 detik."
+    },
+    "4": {
+      "0": "Saat Normal atau Charged Attack mengenai musuh, memiliki <cryo>100%</cryo> persentase untuk menciptakan Everfrost Icicle di atas musuh, mengakibatkan DMG area sebesar <cryo>140%</cryo> ATK. Jika musuh berada dalam efek Cryo, maka Everfrost Icicle akan mengakibatkan DMG sebesar <cryo>360%</cryo> ATK. Efek ini dapat terpicu setiap 10 detik."
+    }
+  }
+}

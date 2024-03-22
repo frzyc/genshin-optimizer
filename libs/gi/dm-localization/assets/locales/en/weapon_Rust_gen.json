@@ -1,0 +1,24 @@
+{
+  "name": "Rust",
+  "description": {
+    "0": "A completely rusted iron greatbow. The average person would lack the strength to even lift it, let alone fire it."
+  },
+  "passiveName": "Rapid Firing",
+  "passiveDescription": {
+    "0": {
+      "0": "Increases Normal Attack DMG by <cryo>40%</cryo> but decreases Charged Attack DMG by 10%."
+    },
+    "1": {
+      "0": "Increases Normal Attack DMG by <cryo>50%</cryo> but decreases Charged Attack DMG by 10%."
+    },
+    "2": {
+      "0": "Increases Normal Attack DMG by <cryo>60%</cryo> but decreases Charged Attack DMG by 10%."
+    },
+    "3": {
+      "0": "Increases Normal Attack DMG by <cryo>70%</cryo> but decreases Charged Attack DMG by 10%."
+    },
+    "4": {
+      "0": "Increases Normal Attack DMG by <cryo>80%</cryo> but decreases Charged Attack DMG by 10%."
+    }
+  }
+}

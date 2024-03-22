@@ -1,0 +1,185 @@
+{
+  "burst": {
+    "name": "Bin Yaprak Darbesi",
+    "description": {
+      "0": "Kazuha'nın kendine özgü kılıç tekniğidir. Güzün ilk rüzgarlarının gücüyle yapılan tek bir saldırı <anemo>Rüzgar Alan Hasarı</anemo> verir.",
+      "1": "Kılıç savrulunca \"Güz Kasırgası\" adında bir alan oluşur. Bu alanın içindeki düşmanlar belirli aralıklarla <anemo>Rüzgar Alan Hasarı</anemo> alır.",
+      "2": "<br/>",
+      "3": "<strong>Element Emilimi</strong>",
+      "4": "Güz Kasırgası, <hydro>Su</hydro>/<pyro>Ateş</pyro>/<cryo>Buz</cryo>/<electro>Elektrik</electro> ile etkileşime girdiğinde o element türünden ek Element Hasarı verir.",
+      "5": "Her kullanıldığında Element Emilimi yalnızca bir defa uygulanabilir.",
+      "6": "<br/>",
+      "7": "<i>\"Sonsuzluk gözlerimin önünden akıp gidiyor. Sayısız sonbahar geçiyor, sayısız yaprak dökülüyor. Ben de bu akçaağacını bir vuruşla kesip çağın sorusunu soracağım.\"</i>"
+    },
+    "slashdmg": "Darbe Hasarı",
+    "skillParams": {
+      "0": "Darbe Hasarı",
+      "1": "Süreli Hasar",
+      "2": "Ek Element Hasarı",
+      "3": "Süre",
+      "4": "BS",
+      "5": "Enerji Maliyeti",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "name": "Kaedehara Kazuha",
+  "title": "Hırçın Dalgaları Kovalayan Kızıl Yapraklar",
+  "description": "Şu anda Liyue'nin Güneyhaçı Mürettebatında olan Inazumalı gezgin bir samuray. Nazik ve dizginlenemez bir doğası var ve kalbinde geçmişin yaralarını taşıyor.",
+  "constellationName": "Akçaağaç",
+  "auto": {
+    "name": "Garyuu Kılıç Tekniği",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Saldırı</strong>",
+        "1": "En fazla 5 hızlı saldırı yapar."
+      },
+      "charged": {
+        "0": "<strong>Yüklü Saldırı</strong>",
+        "1": "Belirli miktarda Dayanıklılık harcayarak 2 hızlı kılıç saldırısı yapar."
+      },
+      "plunging": {
+        "0": "<strong>Havadan Saldırı</strong>",
+        "1": "Havadayken dalışa geçerek yere vurur ve yoluna çıkan düşmanlara Alan Hasarı verir. Bu Havadan Saldırıyı Chihayaburu tetiklerse Midare Ranzan saldırısına dönüşür."
+      },
+      "plunging_midare": {
+        "0": "<strong>Havadan Saldırı: Midare Ranzan</strong>",
+        "1": "Chihayaburu Element Becerisinin etkisi ile Havadan Saldırı yapılırsa Havadan Saldırı Hasarı <anemo>Rüzgar Hasarına</anemo> dönüşür. Gizli bir kılıç tekniğiyle yakındaki nesneleri ve düşmanları çeken küçük bir rüzgar girdabı oluşturur."
+      }
+    },
+    "skillParams": {
+      "0": "1 Vuruş Hasarı",
+      "1": "2 Vuruş Hasarı",
+      "2": "3 Vuruş Hasarı",
+      "3": "4 Vuruş Hasarı",
+      "4": "5 Vuruş Hasarı",
+      "5": "Yüklü Saldırı Hasarı",
+      "6": "Yüklü Saldırı Dayanıklılık Maliyeti",
+      "7": "Havadan Saldırı Hasarı",
+      "8": "Havadan Saldırı Hasarı (Alçaktan/Yüksekten)",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Chihayaburu",
+    "description": {
+      "0": "Sert rüzgarlar kadar güçlü bir gizli teknik kullanarak nesneleri ve düşmanları Kazuha'nın olduğu yere çeker. Etki alanı içindeki düşmanları fırlatarak <anemo>Rüzgar Hasarı</anemo> verirken Kazuha'yı kuvvetli bir esintiyle havaya kaldırır.",
+      "1": "Kazuha, Chihayaburu becerisini kullandıktan sonra 10sn içinde Midare Ranzan adında güçlü bir Havadan Saldırı yapabilir.",
+      "2": "<br/>",
+      "3": "<strong>Bas</strong>",
+      "4": "Havadayken kullanılabilir.",
+      "5": "<br/>",
+      "6": "<strong>Basılı Tut</strong>",
+      "7": "Yük biriktirerek Basma durumuna göre daha geniş bir etki alanı içinde daha büyük miktarda <anemo>Rüzgar Hasarı</anemo> verir.",
+      "8": "<br/>",
+      "9": "<strong>Havadan Saldırı: Midare Ranzan</strong>",
+      "10": "Chihayaburu Element Becerisinin etkisi ile Havadan Saldırı yapılırsa Havadan Saldırı Hasarı, <anemo>Rüzgar Hasarına</anemo> dönüşür. Kazuha yere vurduğunda yakındaki nesneleri ve düşmanları çeken küçük bir rüzgar girdabı oluşturur.",
+      "11": "Midare Ranzan Hasarı, Havadan Saldırı Hasarı olarak sayılır.",
+      "12": "<br/>",
+      "13": "<i>\"Dallardaki rüzgar yas tutar,",
+      "14": "Eski çağlar, eski tanrılar,",
+      "15": "Güz yaprakları gibi solar.\"</i>"
+    },
+    "skillParams": {
+      "0": "Basma Beceri Hasarı",
+      "1": "Basma BS",
+      "2": "Basılı Tutma Beceri Hasarı",
+      "3": "BS (Basılı Tutma)",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Soumon Kılıç Tekniği",
+    "description": {
+      "0": "<strong>Chihayaburu</strong> becerisi <hydro>Su</hydro>/<pyro>Ateş</pyro>/<cryo>Buz</cryo>/<electro>Elektrik</electro> ile etkileşime girdiğinde <strong>Chihayaburu</strong>, temas ettiği elementi emer. Bu etkinin süresi dolmadan önce Havadan Saldırı: Midare Ranzan kullanılırsa %200 Saldırı kadar emilen element türünden Hasar verir. Bu Hasar, Havadan Saldırı Hasarı sayılır.",
+      "1": "<strong>Chihayaburu</strong> becerisi her kullanıldığında Element Emilimi yalnızca bir defa uygulanabilir."
+    }
+  },
+  "passive2": {
+    "name": "Fuubutsu Şiirleri",
+    "description": {
+      "0": "Kaedehara Kazuha bir Girdap tepkimesi tetiklediğinde Girdap tarafından emilen Element için tüm grup üyelerine Kazuha'nın Element Ustalığının %0,04'ü kadar Element Hasarı Bonusu verir. Bu bonus, 8 saniye sürer. Bu yöntemle elde edilen farklı element bonusları aynı anda var olabilir."
+    }
+  },
+  "passive3": {
+    "name": "Yel Esintisi",
+    "description": {
+      "0": "Kendi grup üyelerinin depar esnasında harcadığı Dayanıklılık %20 azalır.",
+      "1": "Aynı etkiyi veren Pasif Yeteneklerle birikmez."
+    }
+  },
+  "constellation1": {
+    "name": "Kızıl Tepeler",
+    "description": {
+      "0": "<strong>Chihayaburu</strong> becerisinin Bekleme Süresi %10 azalır.",
+      "1": "<strong>Bin Yaprak Darbesi</strong> kullanıldığında <strong>Chihayaburu</strong> becerisinin Bekleme Süresi sıfırlanır."
+    }
+  },
+  "constellation2": {
+    "name": "Yamaarashi Rüzgarları",
+    "description": {
+      "0": "<strong>Bin Yaprak Darbesi</strong> ile oluşan Güz Kasırgası alanı aşağıdaki etkilere sahiptir:",
+      "1": [
+        "Süre boyunca Kaedehara Kazuha'nın kendi Element Ustalığını 200 artırır.",
+        "Alanın içindeki karakterlerin Element Ustalığını 200 artırır."
+      ],
+      "2": "<br/>",
+      "3": "Bu Takımyıldızın Element Ustalığı artırıcı etkileri birikmez."
+    }
+  },
+  "constellation3": {
+    "name": "Akçaağaç Efsanesi",
+    "description": {
+      "0": "<strong>Chihayaburu</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation4": {
+    "name": "Oozora Genpou",
+    "description": {
+      "0": "Kaedehara Kazuha'nın Enerjisi 45'in altındayken aşağıdaki etkileri kazanır:",
+      "1": [
+        "<strong>Chihayaburu</strong> becerisi, basıldığında veya basılı tutulduğunda Kaedehara Kazuha için sırasıyla 3 veya 4 Enerji yeniler.",
+        "Kaedehara Kazuha uçarken saniyede 2 Enerji yeniler."
+      ]
+    }
+  },
+  "constellation5": {
+    "name": "Kadim Bilgelik",
+    "description": {
+      "0": "<strong>Bin Yaprak Darbesi</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation6": {
+    "name": "Kızıl Momiji",
+    "description": {
+      "0": "<strong>Chihayaburu</strong> veya <strong>Bin Yaprak Darbesi</strong> kullanıldıktan sonra Kaedehara Kazuha, 5 saniyeliğine <anemo>Rüzgar Tesiri</anemo> kazanır. Buna ek olarak her bir Element Ustalığı puanı Kaedehara Kazuha'nın Normal, Yüklü ve Havadan Saldırı Hasarını %0,2 artırır."
+    }
+  }
+}

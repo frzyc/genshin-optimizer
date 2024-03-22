@@ -1,0 +1,24 @@
+{
+  "name": "Hamayumi",
+  "description": {
+    "0": "Seorang miko tertentu pernah memiliki busur ini. Busur ini dibuat dengan keahlian yang luar biasa, rumit, juga kokoh."
+  },
+  "passiveName": "Full Draw",
+  "passiveDescription": {
+    "0": {
+      "0": "Meningkatkan <cryo>16%</cryo> Normal Attack DMG dan <cryo>12%</cryo> Charged ATK DMG. Saat Energy dari Karakter yang menggunakan senjata ini mencapai 100%, efek meningkat 100%."
+    },
+    "1": {
+      "0": "Meningkatkan <cryo>20%</cryo> Normal Attack DMG dan <cryo>15%</cryo> Charged ATK DMG. Saat Energy dari Karakter yang menggunakan senjata ini mencapai 100%, efek meningkat 100%."
+    },
+    "2": {
+      "0": "Meningkatkan <cryo>24%</cryo> Normal Attack DMG dan <cryo>18%</cryo> Charged ATK DMG. Saat Energy dari Karakter yang menggunakan senjata ini mencapai 100%, efek meningkat 100%."
+    },
+    "3": {
+      "0": "Meningkatkan <cryo>28%</cryo> Normal Attack DMG dan <cryo>21%</cryo> Charged ATK DMG. Saat Energy dari Karakter yang menggunakan senjata ini mencapai 100%, efek meningkat 100%."
+    },
+    "4": {
+      "0": "Meningkatkan <cryo>32%</cryo> Normal Attack DMG dan <cryo>24%</cryo> Charged ATK DMG. Saat Energy dari Karakter yang menggunakan senjata ini mencapai 100%, efek meningkat 100%."
+    }
+  }
+}

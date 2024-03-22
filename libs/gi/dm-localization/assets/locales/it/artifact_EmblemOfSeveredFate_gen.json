@@ -1,0 +1,29 @@
+{
+  "setName": "Emblema del fato spezzato",
+  "setEffects": {
+    "2": "Ricarica energia +20%.",
+    "4": "Aumenta i DAN da Tripudio elementale di un 25% della ricarica d'energia. In questo modo puoi ottenere fino a un 75% di bonus DAN."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Tsuba poderosa",
+      "desc": "Secondo la leggenda, un tempo questa tsuba decorata era montata su una spada donata all'oni che tradì lo Shogun."
+    },
+    "plume": {
+      "name": "Piuma spaccata",
+      "desc": "La piuma nera appartenuta a un guerriero tengu, custodita amorevolmente da un antico spadaccino."
+    },
+    "sands": {
+      "name": "Inro della tempesta",
+      "desc": "Una graziosa scatoletta di lacca nera decorata con un motivo floreale, conchiglie e dettagli in oro."
+    },
+    "goblet": {
+      "name": "Calice scarlatto",
+      "desc": "Un calice da vino lavorato appartenuto a un marzialista famoso in tutto il mondo."
+    },
+    "circlet": {
+      "name": "Kabuto decorato",
+      "desc": "Un elmetto resistente indossato come parte dell'armatura da un nobile samurai."
+    }
+  }
+}

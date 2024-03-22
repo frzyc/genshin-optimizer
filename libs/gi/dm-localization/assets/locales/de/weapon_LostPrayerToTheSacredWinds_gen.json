@@ -1,0 +1,24 @@
+{
+  "name": "Gebete der Vier Winde",
+  "description": {
+    "0": "Ein wertvolles Lehrbuch von einem Unbekannten über die Anbetung des Windes. Für das über die Jahrtausende überlieferte Vertrauen erhielt es das Wohlwollen des Windes und somit seinen Segen und seine Kraft."
+  },
+  "passiveName": "Grenzenlose Gunst",
+  "passiveDescription": {
+    "0": {
+      "0": "Erhöht die Bewegungs-GSW um 10 % und den Elementar-SCH nach dem Einwechseln alle 4 s um <cryo>8 %</cryo>. 4-fach stapelbar, hält bis zum Auswechseln oder, bis die Figur ohnmächtig wird."
+    },
+    "1": {
+      "0": "Erhöht die Bewegungs-GSW um 10 % und erhält alle 4 s nach dem Einwechseln einen Elementar-SCH-Bonus in Höhe von <cryo>10 %</cryo>. 4-fach stapelbar, hält bis zum Auswechseln oder, bis die Figur ohnmächtig wird."
+    },
+    "2": {
+      "0": "Erhöht die Bewegungs-GSW um 10 % und den Elementar-SCH nach dem Einwechseln alle 4 s um <cryo>12 %</cryo>. 4-fach stapelbar, hält bis zum Auswechseln oder, bis die Figur ohnmächtig wird."
+    },
+    "3": {
+      "0": "Erhöht die Bewegungs-GSW um 10 % und den Elementar-SCH nach dem Einwechseln alle 4 s um <cryo>14 %</cryo>. 4-fach stapelbar, hält bis zum Auswechseln oder, bis die Figur ohnmächtig wird."
+    },
+    "4": {
+      "0": "Erhöht die Bewegungs-GSW um 10 % und den Elementar-SCH nach dem Einwechseln alle 4 s um <cryo>16 %</cryo>. 4-fach stapelbar, hält bis zum Auswechseln oder, bis die Figur ohnmächtig wird."
+    }
+  }
+}

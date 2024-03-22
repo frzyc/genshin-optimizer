@@ -1,0 +1,24 @@
+{
+  "name": "Réquiem Abisal",
+  "description": {
+    "0": "Una espada tan silenciosa como una llanura abisal. Parece aún más antigua que la época a la supuestamente pertenece."
+  },
+  "passiveName": "Sublime final",
+  "passiveDescription": {
+    "0": {
+      "0": "Al usar la Habilidad Elemental, el ATQ aumenta en un <cryo>12%</cryo> durante 15 s y otorga al personaje un “pacto vital” del 25% de su Vida Máx. Este efecto solo puede activarse una vez cada 10 s. Cuando el pacto vital se elimina, el ATQ aumenta durante 15 s en un <cryo>2.4%</cryo> de la cantidad eliminada, hasta un máximo de <cryo>150</cryo> pts. de ATQ."
+    },
+    "1": {
+      "0": "Al usar la Habilidad Elemental, el ATQ aumenta en un <cryo>15%</cryo> durante 15 s y otorga al personaje un “pacto vital” del 25% de su Vida Máx. Este efecto solo puede activarse una vez cada 10 s. Cuando el pacto vital se elimina, el ATQ aumenta durante 15 s en un <cryo>3%</cryo> de la cantidad eliminada, hasta un máximo de <cryo>187.5</cryo> pts. de ATQ."
+    },
+    "2": {
+      "0": "Al usar la Habilidad Elemental, el ATQ aumenta en un <cryo>18%</cryo> durante 15 s y otorga al personaje un “pacto vital” del 25% de su Vida Máx. Este efecto solo puede activarse una vez cada 10 s. Cuando el pacto vital se elimina, el ATQ aumenta durante 15 s en un <cryo>3.6%</cryo> de la cantidad eliminada, hasta un máximo de <cryo>225</cryo> pts. de ATQ."
+    },
+    "3": {
+      "0": "Al usar la Habilidad Elemental, el ATQ aumenta en un <cryo>21%</cryo> durante 15 s y otorga al personaje un “pacto vital” del 25% de su Vida Máx. Este efecto solo puede activarse una vez cada 10 s. Cuando el pacto vital se elimina, el ATQ aumenta durante 15 s en un <cryo>4.2%</cryo> de la cantidad eliminada, hasta un máximo de <cryo>262.5</cryo> pts. de ATQ."
+    },
+    "4": {
+      "0": "Al usar la Habilidad Elemental, el ATQ aumenta en un <cryo>24%</cryo> durante 15 s y otorga al personaje un “pacto vital” del 25% de su Vida Máx. Este efecto solo puede activarse una vez cada 10 s. Cuando el pacto vital se elimina, el ATQ aumenta durante 15 s en un <cryo>4.8%</cryo> de la cantidad eliminada, hasta un máximo de <cryo>300</cryo> pts. de ATQ."
+    }
+  }
+}

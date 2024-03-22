@@ -1,0 +1,180 @@
+{
+  "name": "Dehya",
+  "title": "Alevli Yele",
+  "description": "Sumeru'nun kumlarında dolaşan ve bir paralı asker örgütü olan Münzevilerin bir üyesi. Yiğit ve güçlü savaşçı yapısıyla, Münzevi arkadaşları arasında büyük bir şöhrete sahiptir.",
+  "constellationName": "Mantikor",
+  "auto": {
+    "name": "Kum Fırtınası Saldırısı",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Saldırı</strong>",
+        "1": "Çift Elli Kılıcını ve dövüş sanatlarını kullanarak arka arkaya en fazla 4 saldırı yapar."
+      },
+      "charged": {
+        "0": "<strong>Yüklü Saldırı</strong>",
+        "1": "Zamanla Dayanıklılık harcayarak arka arkaya saldırılar yapar.",
+        "2": "Saldırıları daha güçlü bir darbeyle bitirir."
+      },
+      "plunging": {
+        "0": "<strong>Havadan Saldırı</strong>",
+        "1": "Havadayken dalışa geçerek yere vurur ve yoluna çıkan düşmanlara Alan Hasarı verir."
+      }
+    },
+    "skillParams": {
+      "0": "1 Vuruş Hasarı",
+      "1": "2 Vuruş Hasarı",
+      "2": "3 Vuruş Hasarı",
+      "3": "4 Vuruş Hasarı",
+      "4": "Yüklü Saldırı Döngüsel Hasarı",
+      "5": "Yüklü Saldırı Son Vuruş Hasarı",
+      "6": "Yüklü Saldırı Dayanıklılık Maliyeti",
+      "7": "Maks. Süre",
+      "8": "Havadan Saldırı Hasarı",
+      "9": "Havadan Saldırı Hasarı (Alçaktan/Yüksekten)",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Ateşten Kafes",
+    "description": {
+      "0": "Dehya'nın kendi icadı olan bu teknik, savaş durumuna göre kullanım şeklini değiştirir.",
+      "1": "<br/>",
+      "2": "<strong>Yenilmez Alev</strong>",
+      "3": "Bu beceri, mevcut durumda Dehya'nın oluşturmuş olduğu bir Yakıcı Sığınak alanı yoksa kullanılabilir.",
+      "4": "<pyro>Ateş Alan Hasarı</pyro> verir ve Yakıcı Sığınak olarak bilinen bir alan oluşturur.",
+      "5": "<br/>",
+      "6": "<strong>Alevli Kılıç</strong>",
+      "7": "Bu beceri, mevcut durumda Dehya'nın oluşturmuş olduğu bir Yakıcı Sığınak varsa kullanılabilir.",
+      "8": "Dehya, bir atlama saldırısı yaparak <pyro>Ateş Alan Hasarı</pyro> verir ve indiği yerde bir Yakıcı Sığınak alanı oluşturur.",
+      "9": "Bu şekilde oluşturulan bir Yakıcı Sığınak alanı, önceki alanın kalan süresini devralır.",
+      "10": "<br/>",
+      "11": "Bir Yakıcı Sığınak alanının süresi boyunca Alevli Kılıç sadece bir defa kullanılabilir.",
+      "12": "<br/>",
+      "13": "<strong>Yakıcı Sığınak</strong>",
+      "14": "Yakıcı Sığınak alanındaki bir düşman Hasar aldığında alan, bir ortak saldırı başlatarak düşmanlara Dehya'nın Saldırısı ve Maks. Canına göre <pyro>Ateş Alan Hasarı</pyro> verir. Bu etki her 2,5 saniyede bir tetiklenebilir.",
+      "15": "Bu alandaki aktif karakterlerin müdahaleye karşı dirençleri artar ve bu karakterler Hasar aldığında bu hasarın bir kısmı azaltılır ve Kızıl Yele Kanına geçer. Dehya, daha sonra bu Hasarı 10sn boyunca alır. Kızıl Yele Kanı tarafından biriktirilen azaltılmış Hasar, Dehya'nın Maks. Canının belirli bir oranına ulaştığında veya bu oranı aştığında Dehya artık bu şekilde Hasar azaltmaz.",
+      "16": "<br/>",
+      "17": "Dehya'nın oluşturmuş olduğu Yakıcı Sığınaklardan aynı anda sadece 1 tane var olabilir.",
+      "18": "<br/>",
+      "19": "<i>Tıpkı bir alev canavarının alevler içinde ilerlediği gibi, bu ateşli ve çileli yolu benimle beraber yürüyerek tüm pislikleri temizle.</i>"
+    },
+    "skillParams": {
+      "0": "Yenilmez Alev Hasarı",
+      "1": "Alevli Kılıç Hasarı",
+      "2": "Alan Hasarı",
+      "3": "Azaltma",
+      "4": "Kızıl Yele Kanı Sınırı",
+      "5": "Alan Süresi",
+      "6": "BS",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Aslan Isırığı",
+    "description": {
+      "0": "Dehya, bir cinnetle kılıcını sanki bir engelmiş gibi bir kenara atarak Alevli Aslan durumuna girer ve müdahaleye karşı direnci artar.",
+      "1": "Dehya, bu durumdayken kendiliğinden sürekli olarak Saldırısı ve Maks. Canına göre <pyro>Ateş Hasarı</pyro> veren Alevli Yele Yumruklarını kullanır ve bu etkinin süresi sona erdiğinde yine Saldırısı ve Maks. Canına göre <pyro>Ateş Alan Hasarı</pyro> veren bir Kül Eden Tekme atar.",
+      "2": "Bu beceri kullanıldığında Dehya'nın kendi Element Becerisi Ateşten Kafes tarafından oluşturulan bir Yakıcı Sığınak alanı mevcutsa Dehya onu geri alır ve Alevli Aslanın süresi sona erdiğinde başka bir alan oluşturur. Bu alan, geri alınan alanın alınma esnasındaki süresini de devralır.",
+      "3": "Dehya, bu durumdayken Element Becerisini kullanamaz veya Normal, Yüklü ve Havadan Saldırılar yapamaz. \"Normal Saldırı: Kum Fırtınası Saldırısı\" ile Element Becerisi \"Ateşten Kafes\", \"Cinnet Saldırısı\" ile değiştirilir.",
+      "4": "<strong>Cinnet Saldırısı</strong>",
+      "5": "Alevli Yele Yumruğu saldırısından sonraki 0,4sn içinde Cinnet Saldırısı kullanıldığında bir sonraki Alevli Yele Yumruğu saldırısının tetiklenme hızı artar.",
+      "6": "<br/>",
+      "7": "<i>Akan alevler bile onun öfkesine itaat etmeli ve onun emriyle dişleri ve pençeleri haline gelmelidir.</i>"
+    },
+    "skillParams": {
+      "0": "Alevli Yele Yumruğu Hasarı",
+      "1": "Kül Eden Tekme Hasarı",
+      "2": "Süre",
+      "3": "BS",
+      "4": "Enerji Maliyeti",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Sınırsız Yardım",
+    "description": {
+      "0": "Dehya, <strong>Ateşten Kafes: Alevli Kılıç</strong> veya <strong>Aslan Isırığı</strong> ile Yakıcı Sığınak alanını geri aldıktan sonra 6 saniyeliğine Kızıl Yele Kanından %60 daha az Hasar alır. Bu etki her 2 saniyede bir tetiklenebilir.",
+      "1": "Ayrıca Dehya, <strong>Ateşten Kafes: Yenilmez Alev</strong> kullandıktan sonra 9 saniyeliğine tüm grup üyelerine Altınla Dövülmüş Form durumu verir. Bu duruma sahip karakterlerin müdahaleye karşı dirençleri Yakıcı Sığınak içindeyken daha da artar. Altınla Dövülmüş Form her 18 saniyede bir tetiklenebilir."
+    }
+  },
+  "passive2": {
+    "name": "Cesur ve Dürüst",
+    "description": {
+      "0": "Dehya'nın Canı %40'ın altına düştüğünde Maks. Canının %20'si yenilenir ve sonraki 10sn boyunca her 2 saniyede bir Maks. Canı %6 yenilenir. Bu etki her 20 saniyede bir tetiklenebilir."
+    }
+  },
+  "passive3": {
+    "name": "Güneşli Yol",
+    "description": {
+      "0": "Gündüzleri (06:00 – 18:00) grup üyelerin Hızlı Adım etkisi kazanır: Hareket Hızı %10 artar.",
+      "1": "Zindanlarda, Ezici Zindanlarda veya Hiçlik Sarmalında etkili değildir. Hızlı Adım etkileri birikmez."
+    }
+  },
+  "constellation1": {
+    "name": "Parlak Alev",
+    "description": {
+      "0": "Dehya'nın Maks. Canı %20 artar ve aşağıdaki saldırıları kullanırken Maks. Canına göre bonus Hasar verir:",
+      "1": [
+        "<strong>Ateşten Kafes</strong> Hasarı Maks. Canının %3,6'sı kadar artar.",
+        "<strong>Aslan Isırığı</strong> Hasarı Maks. Canının %6'sı kadar artar."
+      ]
+    }
+  },
+  "constellation2": {
+    "name": "Işıltılı Kum Kılıçları",
+    "description": {
+      "0": "Dehya, <strong>Ateşten Kafes: Alevli Kılıç</strong> kullandığında yeniden oluşturulan Yakıcı Sığınak alanının süresi 6sn artar.",
+      "1": "Ayrıca, savaş alanında bir Yakıcı Sığınak etkin durumdayken bu alandaki aktif karakterler saldırıya uğradığında bir sonraki ortak saldırının vereceği Hasar %50 artar."
+    }
+  },
+  "constellation3": {
+    "name": "Ateş Gibi Hızlı Bir Öfke",
+    "description": {
+      "0": "<strong>Aslan Isırığı</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation4": {
+    "name": "Yeminine Sadık",
+    "description": {
+      "0": "<strong>Aslan Isırığı</strong> sırasında yapılan Alevli Yele Yumruğu ve Kül Eden Tekme saldırıları düşmanlara isabet ettiğinde Dehya 1,5 Enerji ve Maks. Canının %2,5'ini yeniler. Bu etki her 0,2 saniyede bir tetiklenebilir."
+    }
+  },
+  "constellation5": {
+    "name": "Sürüdeki Alfa",
+    "description": {
+      "0": "<strong>Ateşten Kafes</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation6": {
+    "name": "Parçalayıcı Alevli Pençe",
+    "description": {
+      "0": "<strong>Aslan Isırığının</strong> Kritik Oranı %10 artar.",
+      "1": "Ek olarak bir Alevli Yele Yumruğu saldırısı, bir düşmana isabet ettikten ve bir Alevli Aslan durumunda Kritik Vuruş yaptıktan sonra Alevli Aslanın kalan süresinde Aslan Isırığının Kritik Hasarı %15 artar ve bu durumun süresi 0,5sn uzar. Bu etki her 0,2 saniyede bir tetiklenebilir. Bu şekilde, süre en fazla 2sn uzatılabilir ve Kritik Hasar en fazla %60 artırılabilir."
+    }
+  }
+}

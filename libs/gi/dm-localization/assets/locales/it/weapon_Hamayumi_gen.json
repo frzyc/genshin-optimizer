@@ -1,0 +1,24 @@
+{
+  "name": "Arco ammazzademoni",
+  "description": {
+    "0": "Quest'arco, appartenuto a una sacerdotessa, è stato realizzato con una maestria superlativa. Un'arma elaborata e resistente al tempo stesso."
+  },
+  "passiveName": "Grande giocata",
+  "passiveDescription": {
+    "0": {
+      "0": "Aumenta i DAN da attacco normale di un <cryo>16%</cryo> e quelli da attacco caricato di un <cryo>12%</cryo>. Quando l'energia del personaggio equipaggiato con quest'arma raggiunge il massimo, l'effetto aumenta di un 100%."
+    },
+    "1": {
+      "0": "Aumenta i DAN da attacco normale di un <cryo>20%</cryo> e quelli da attacco caricato di un <cryo>15%</cryo>. Quando l'energia del personaggio equipaggiato con quest'arma raggiunge il massimo, l'effetto aumenta di un 100%."
+    },
+    "2": {
+      "0": "Aumenta i DAN da attacco normale di un <cryo>24%</cryo> e quelli da attacco caricato di un <cryo>18%</cryo>. Quando l'energia del personaggio equipaggiato con quest'arma raggiunge il massimo, l'effetto aumenta di un 100%."
+    },
+    "3": {
+      "0": "Aumenta i DAN da attacco normale di un <cryo>28%</cryo> e quelli da attacco caricato di un <cryo>21%</cryo>. Quando l'energia del personaggio equipaggiato con quest'arma raggiunge il massimo, l'effetto aumenta di un 100%."
+    },
+    "4": {
+      "0": "Aumenta i DAN da attacco normale di un <cryo>32%</cryo> e quelli da attacco caricato di un <cryo>24%</cryo>. Quando l'energia del personaggio equipaggiato con quest'arma raggiunge il massimo, l'effetto aumenta di un 100%."
+    }
+  }
+}

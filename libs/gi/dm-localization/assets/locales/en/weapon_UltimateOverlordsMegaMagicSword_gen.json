@@ -1,0 +1,24 @@
+{
+  "name": "\"Ultimate Overlord's Mega Magic Sword\"",
+  "description": {
+    "0": "A magical sword that can only be wielded by the ultimate overlord who rules the seas. As it has been made with special water-resistant materials, it will not get ruined by water damage even after being immersed. Why, one might even call it invincible!"
+  },
+  "passiveName": "Melussistance!",
+  "passiveDescription": {
+    "0": {
+      "0": "ATK increased by <cryo>12%</cryo>. That's not all! The support from all Melusines you've helped in Merusea Village fills you with strength! Based on the number of them you've helped, your ATK is increased by up to an additional <cryo>12%</cryo>."
+    },
+    "1": {
+      "0": "ATK increased by <cryo>15%</cryo>. That's not all! The support from all Melusines you've helped in Merusea Village fills you with strength! Based on the number of them you've helped, your ATK is increased by up to an additional <cryo>15%</cryo>."
+    },
+    "2": {
+      "0": "ATK increased by <cryo>18%</cryo>. That's not all! The support from all Melusines you've helped in Merusea Village fills you with strength! Based on the number of them you've helped, your ATK is increased by up to an additional <cryo>18%</cryo>."
+    },
+    "3": {
+      "0": "ATK increased by <cryo>21%</cryo>. That's not all! The support from all Melusines you've helped in Merusea Village fills you with strength! Based on the number of them you've helped, your ATK is increased by up to an additional <cryo>21%</cryo>."
+    },
+    "4": {
+      "0": "ATK increased by <cryo>24%</cryo>. That's not all! The support from all Melusines you've helped in Merusea Village fills you with strength! Based on the number of them you've helped, your ATK is increased by up to an additional <cryo>24%</cryo>."
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Prototipo d'ambra",
+  "description": {
+    "0": "Un oggetto catalizzatore custodito segretamente nella Fucina di Rupenera. Sembra brillare della luce del cielo."
+  },
+  "passiveName": "Doratura",
+  "passiveDescription": {
+    "0": {
+      "0": "L'uso di un Tripudio elementale rigenera <cryo>4</cryo> di energia ogni 2 s per 6 s. I PS di tutti i membri del gruppo si rigenerano di un <cryo>4%</cryo> ogni 2 s."
+    },
+    "1": {
+      "0": "L'uso di un Tripudio elementale rigenera <cryo>4,5</cryo> di energia ogni 2 s per 6 s. I PS di tutti i membri del gruppo si rigenerano di un <cryo>4,5%</cryo> ogni 2 s."
+    },
+    "2": {
+      "0": "L'uso di un Tripudio elementale rigenera <cryo>5</cryo> di energia ogni 2 s per 6 s. I PS di tutti i membri del gruppo si rigenerano di un <cryo>5%</cryo> ogni 2 s."
+    },
+    "3": {
+      "0": "L'uso di un Tripudio elementale rigenera <cryo>5,5</cryo> di energia ogni 2 s per 6 s. I PS di tutti i membri del gruppo si rigenerano di un <cryo>5,5%</cryo> ogni 2 s."
+    },
+    "4": {
+      "0": "L'uso di un Tripudio elementale rigenera <cryo>6</cryo> di energia ogni 2 s per 6 s. I PS di tutti i membri del gruppo si rigenerano di un <cryo>6%</cryo> ogni 2 s."
+    }
+  }
+}

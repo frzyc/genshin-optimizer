@@ -1,0 +1,185 @@
+{
+  "constellationName": "Lapis Dei",
+  "name": "Zhongli",
+  "title": "Vagabond du monde mortel",
+  "description": "Une mystérieuse relation du Funérarium Wangsheng, aux connaissances aussi variées qu'étendues.",
+  "auto": {
+    "name": "Pluie de pierres",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attaque normale</strong>",
+        "1": "Enchaîne jusqu'à 6 coups de lance."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Consomme de l'endurance pour charger vers l'avant, faisant pleuvoir des lances de roche sur la route."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis en chemin et des DGT de zone à l'impact."
+      }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT 4e coup",
+      "4": "DGT 5e coup",
+      "5": "DGT 6e coup",
+      "6": "DGT attaque chargée",
+      "7": "Coût d'endurance attaque chargée",
+      "8": "DGT durant la chute",
+      "9": "DGT chute basse/élevée",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Dominus Lapidis",
+    "description": {
+      "0": "Le pouvoir Géo est présent dans les montagnes, sur la terre comme dans les profondeurs, et jusque dans les fissures rocailleuses. Mais rares sont ceux capables de maîtriser une telle puissance.",
+      "1": "<br/>",
+      "2": "<strong>Appui simple</strong>",
+      "3": "Zhongli matérialise une Dorsale rocheuse.",
+      "4": "<br/>",
+      "5": "<strong>Appui long</strong>",
+      "6": "Zhongli fait exploser l'élément Géo contenu dans les environs, entraînant les effets suivants :",
+      "7": [
+        " Une Dorsale rocheuse est créée si le nombre maximum de Dorsales rocheuses sur le terrain n'est pas atteint.",
+        " Un bouclier de jade capable d'absorber une quantité de DGT proportionnelle aux PV max de Zhongli est généré.",
+        " Inflige des <geo>DGT Géo de zone</geo>.",
+        " Absorbe l'<geo>élément Géo</geo> des cibles proches affectées par <geo>l'élément Géo</geo> (jusqu'à 2 cibles maximum). Cet effet n'inflige pas de DGT."
+      ],
+      "8": "<br/>",
+      "9": "<strong>Dorsale rocheuse</strong>",
+      "10": "Une Dorsale rocheuse inflige des <geo>DGT Géo de zone</geo> lorsqu'elle est matérialisée.",
+      "11": "La Dorsale entre en résonance avec les autres <geo>constructions Géo</geo> présentes.",
+      "12": "L'amas rocheux libère l'écho de la pierre originelle de façon intermittente, infligeant des <geo>DGT Géo</geo> aux ennemis proches.",
+      "13": "La Dorsale rocheuse est une <geo>construction Géo</geo> qui bloque les attaques et peut être escaladée. Il ne peut exister qu'une seule dorsale à la fois.",
+      "14": "<br/>",
+      "15": "<strong>Bouclier de jade</strong>",
+      "16": "Le bouclier de jade est efficace à 150 % contre les DGT élémentaires et physiques.",
+      "17": "Lorsqu'un bouclier de jade protège un personnage, les RÉS élémentaires et physique des ennemis proches diminuent de 20 %. Cet effet est non cumulable.",
+      "18": "<br/>",
+      "19": "<i>Un vrai maître de la roche doit savoir sculpter le jade et l'or.</i>"
+    },
+    "skillParams": {
+      "0": "DGT dorsale/résonance",
+      "1": "TdR appui simple",
+      "2": "DGT appui long",
+      "3": "PV de base du bouclier",
+      "4": "Bonus de PV du bouclier",
+      "5": "Durée du bouclier",
+      "6": "TdR appui long",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Chute de météore",
+    "description": {
+      "0": "Zhongli fait tomber des cieux un gigantesque météore, infligeant d'importants <geo>DGT Géo</geo> à l'impact et <geo>pétrifie</geo> les ennemis.",
+      "1": "<br/>",
+      "2": "<strong>Pétrification</strong>",
+      "3": "Les ennemis <geo>pétrifiés</geo> sont immobilisés.",
+      "4": "<br/>",
+      "5": "<i>Que le météore qui transperce la voûte illumine les ténèbres de ce monde.</i>"
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "Durée pétrification",
+      "2": "Temps de recharge",
+      "3": "Énergie élémentaire",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Ondes résonnantes",
+    "description": {
+      "0": "Chaque attaque touchant le bouclier de jade génère les effets suivants :",
+      "1": [
+        " Augmente la force du bouclier de 5 %.",
+        " Cet effet peut être cumulé 5 fois maximum et dure jusqu'à la fin du bouclier."
+      ]
+    }
+  },
+  "passive2": {
+    "name": "Domination de la Terre",
+    "description": {
+      "0": "Augmente les DGT infligés par les attaques de Zhongli citées ci-dessous en fonction de ses PV max :",
+      "1": [
+        " Augmentation de DGT des attaques normales, chargées et plongeantes : 1,39 % des PV max.",
+        " Augmentation de DGT de dorsale rocheuse, de DGT de résonance et de DGT de l'appui long de <strong>Dominus Lapidis</strong> : 1,9 % des PV max.",
+        "Augmentation de DGT de <strong>Chute de météore</strong> : 33 % des PV max."
+      ]
+    }
+  },
+  "passive3": {
+    "name": "Cristal du destin",
+    "description": {
+      "0": "Lorsque vous forgez une arme d'hast, 15 % du minerai utilisé vous sera rendu."
+    }
+  },
+  "constellation1": {
+    "name": "Roche, le squelette de la terre",
+    "description": {
+      "0": "2 Dorsales de <strong>Dominus Lapidis</strong> peuvent exister en même temps."
+    }
+  },
+  "constellation2": {
+    "name": "Pierre, le berceau du jade",
+    "description": {
+      "0": "Les personnages déployés à proximité sont protégés par un bouclier de jade lors de <strong>Chute de météore</strong>."
+    }
+  },
+  "constellation3": {
+    "name": "Jade, brillant à travers les ténèbres",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Dominus Lapidis</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation4": {
+    "name": "Topaze, incassable et intrépide",
+    "description": {
+      "0": "Augmente la zone d'effet de <strong>Chute de météore</strong> de 20 %.",
+      "1": "Prolonge de plus la durée de la pétrification de 2 s."
+    }
+  },
+  "constellation5": {
+    "name": "Lazulite, le héraut de l'ordre divin",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Chute de météore</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation6": {
+    "name": "Or, la générosité du dominateur",
+    "description": {
+      "0": "40 % des DGT subis par le bouclier de jade sont convertis en PV pour le personnage déployé.",
+      "1": "La quantité de PV restaurés en une fois ne peut pas dépasser 8 % des PV max du personnage."
+    }
+  }
+}

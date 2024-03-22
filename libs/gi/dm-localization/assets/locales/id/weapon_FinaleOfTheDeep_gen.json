@@ -1,0 +1,24 @@
+{
+  "name": "Finale of the Deep",
+  "description": {
+    "0": "Pedang panjang yang sunyi bagaikan kedalaman laut yang misterius, bahkan sepertinya pedang ini masih jauh lebih tua daripada kelihatannya."
+  },
+  "passiveName": "An End Sublime",
+  "passiveDescription": {
+    "0": {
+      "0": "Saat melancarkan Elemental Skill, ATK meningkat <cryo>12%</cryo> selama 15 detik dan memberikan Bond of Life sebesar 25% dari Max HP. Efek ini dapat terpicu sekali setiap 10 detik. Saat Bond of Life hilang, akan meningkatkan ATK sebesar <cryo>2,4%</cryo> dari nilai HP yang dibersihkan selama 15 detik, maksimum <cryo>150</cryo> poin ATK."
+    },
+    "1": {
+      "0": "Saat melancarkan Elemental Skill, ATK meningkat <cryo>15%</cryo> selama 15 detik dan memberikan Bond of Life sebesar 25% dari Max HP. Efek ini dapat terpicu sekali setiap 10 detik. Saat Bond of Life hilang, akan meningkatkan ATK sebesar <cryo>3%</cryo> dari nilai HP yang dibersihkan selama 15 detik, maksimum <cryo>187,5</cryo> poin ATK."
+    },
+    "2": {
+      "0": "Saat melancarkan Elemental Skill, ATK meningkat <cryo>18%</cryo> selama 15 detik dan memberikan Bond of Life sebesar 25% dari Max HP. Efek ini dapat terpicu sekali setiap 10 detik. Saat Bond of Life hilang, akan meningkatkan ATK sebesar <cryo>3,6%</cryo> dari nilai HP yang dibersihkan selama 15 detik, maksimum <cryo>225</cryo> poin ATK."
+    },
+    "3": {
+      "0": "Saat melancarkan Elemental Skill, ATK meningkat <cryo>21%</cryo> selama 15 detik dan memberikan Bond of Life sebesar 25% dari Max HP. Efek ini dapat terpicu sekali setiap 10 detik. Saat Bond of Life hilang, akan meningkatkan ATK sebesar <cryo>4,2%</cryo> dari nilai HP yang dibersihkan selama 15 detik, maksimum <cryo>262,5</cryo> poin ATK."
+    },
+    "4": {
+      "0": "Saat melancarkan Elemental Skill, ATK meningkat <cryo>24%</cryo> selama 15 detik dan memberikan Bond of Life sebesar 25% dari Max HP. Efek ini dapat terpicu sekali setiap 10 detik. Saat Bond of Life hilang, akan meningkatkan ATK sebesar <cryo>4,8%</cryo> dari nilai HP yang dibersihkan selama 15 detik, maksimum <cryo>300</cryo> poin ATK."
+    }
+  }
+}

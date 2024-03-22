@@ -1,0 +1,24 @@
+{
+  "name": "Ballad of the Fjords",
+  "description": {
+    "0": "A polearm used by those seeking to catch fish in the tundra. It lets none escape."
+  },
+  "passiveName": "Tales of the Tundra",
+  "passiveDescription": {
+    "0": {
+      "0": "When there are at least 3 different Elemental Types in your party, Elemental Mastery will be increased by <cryo>120.</cryo>"
+    },
+    "1": {
+      "0": "When there are at least 3 different Elemental Types in your party, Elemental Mastery will be increased by <cryo>150.</cryo>"
+    },
+    "2": {
+      "0": "When there are at least 3 different Elemental Types in your party, Elemental Mastery will be increased by <cryo>180.</cryo>"
+    },
+    "3": {
+      "0": "When there are at least 3 different Elemental Types in your party, Elemental Mastery will be increased by <cryo>210.</cryo>"
+    },
+    "4": {
+      "0": "When there are at least 3 different Elemental Types in your party, Elemental Mastery will be increased by <cryo>240.</cryo>"
+    }
+  }
+}

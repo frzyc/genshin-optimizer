@@ -1,0 +1,172 @@
+{
+  "name": "Bennett",
+  "title": "Prova del fuoco",
+  "description": "Un giovane avventuriere di Mondstadt estremamente sfortunato.",
+  "constellationName": "Rota Calamitas",
+  "auto": {
+    "name": "Colpo di fortuna",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attacco normale</strong>",
+        "1": "Sferra fino a 5 colpi rapidi."
+      },
+      "charged": {
+        "0": "<strong>Attacco caricato</strong>",
+        "1": "Consuma una determinata quantità di vigore per sferrare 2 colpi di spada rapidi."
+      },
+      "plunging": {
+        "0": "<strong>Attacco in picchiata</strong>",
+        "1": "Attacca scagliandosi contro il suolo da mezz'aria, infliggendo DAN agli avversari lungo la traiettoria e DAN ad area all'impatto."
+      }
+    },
+    "skillParams": {
+      "0": "DAN da 1º colpo",
+      "1": "DAN da 2º colpo",
+      "2": "DAN da 3º colpo",
+      "3": "DAN da 4º colpo",
+      "4": "DAN da 5º colpo",
+      "5": "DAN da ATT caricato",
+      "6": "Costo vigore ATT caricato",
+      "7": "DAN da ATT in picchiata",
+      "8": "DAN da ATT in picchiata basso/alto",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Sovraccarico di passione",
+    "description": {
+      "0": "Bennett convoglia nella sua spada tutto il suo ardore e la sua passione per l'avventura. I risultati possono variare in base a quanto è su di giri...",
+      "1": "<br/>",
+      "2": "<strong>Pressione</strong>",
+      "3": "Un singolo, rapido colpo di fiamma che infligge <pyro>DAN da Pyro</pyro>.",
+      "4": "<br/>",
+      "5": "<strong>Pressione prolungata (breve)</strong>",
+      "6": "Si carica, provocando diversi effetti in base al livello di carica quando viene rilasciato.",
+      "7": [
+        " Livello 1: colpisce due volte, infliggendo <pyro>DAN da Pyro</pyro> e scagliando via gli avversari;",
+        " Livello 2: sferra 3 attacchi consecutivi che infliggono notevoli <pyro>DAN da Pyro</pyro>, ma l'ultimo attacco innesca un'esplosione che scaglia via sia Bennett che il nemico."
+      ],
+      "8": "Bennett non subisce danno quando viene scagliato.",
+      "9": "<br/>",
+      "10": "<i>Un attacco che combina i sogni e le passioni di Bennett con Pyro. Ma di passione a volte si scoppia, e anche Pyro a volte sa esplodere.</i>"
+    },
+    "skillParams": {
+      "0": "DAN da pressione",
+      "1": "DAN da livello di carica 1",
+      "2": "DAN da livello di carica 2",
+      "3": "DAN da esplosione",
+      "4": "TdR",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Viaggio fantastico",
+    "description": {
+      "0": "Bennett effettua un attacco in salto che infligge <pyro>DAN da Pyro</pyro>, creando un Campo d'ispirazione.",
+      "1": "<br/>",
+      "2": "<strong>Campo d'ispirazione</strong>",
+      "3": [
+        " Se la salute di un personaggio all'interno dell'area d'effetto è uguale o inferiore a un 70%, la sua salute si rigenererà costantemente. La quantità di PS rigenerati varia in base ai PS max di Bennett.",
+        " Se la salute di un personaggio dentro l'area d'effetto è superiore a un 70%, questo acquisisce un bonus ATT in base all'ATT di base di Bennett.",
+        " Infonde di <pyro>Pyro</pyro> i personaggi all'interno dell'area d'effetto."
+      ],
+      "4": "<br/>",
+      "5": "<i>Gli avventurieri della Brigata dell'avventura di Benny si trovano sempre davanti a pericoli inaspettati. Tuttavia, Bennett è più incline a chiamarli \"viaggi colmi di meraviglia, emozione e bellezza.\"</i>"
+    },
+    "skillParams": {
+      "0": "DAN da abilità",
+      "1": "RIGEN continua al secondo",
+      "2": "Tasso bonus ATT",
+      "3": "Durata",
+      "4": "TdR",
+      "5": "Costo energia",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Ravvivamento",
+    "description": {
+      "0": "Riduce il TdR di <strong>Sovraccarico di passione</strong> di un 20%."
+    }
+  },
+  "passive2": {
+    "name": "Ardimento",
+    "description": {
+      "0": "All'interno dell'area creata da <strong>Viaggio fantastico</strong>, <strong>Sovraccarico di passione</strong> ha i seguenti effetti:",
+      "1": [
+        " TdR ridotto di un 50%;",
+        " Bennett non sarà scagliato via dagli effetti del livello di carica 2."
+      ]
+    }
+  },
+  "passive3": {
+    "name": "Dovrebbe essere sicuro...",
+    "description": {
+      "0": "Quando intraprende una spedizione a Mondstadt, il tempo impiegato per portarla a termine si riduce di un 25%."
+    }
+  },
+  "constellation1": {
+    "name": "Desiderio di avventura",
+    "description": {
+      "0": "L'aumento dell'ATT di <strong>Viaggio fantastico</strong> non ha più limiti di PS, e ottiene un 20% extra dell'ATT di base di Bennett."
+    }
+  },
+  "constellation2": {
+    "name": "Conquistatore delle avversità",
+    "description": {
+      "0": "Quando i PS di Bennett scendono al di sotto di un 70%, la sua ricarica d'energia aumenta di un 30%."
+    }
+  },
+  "constellation3": {
+    "name": "Fervore ardente",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Sovraccarico di passione</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation4": {
+    "name": "Odissea inaspettata",
+    "description": {
+      "0": "Usare un attacco normale come secondo attacco del livello di carica 1 di <strong>Sovraccarico di passione</strong> permette di effettuare un attacco aggiuntivo.",
+      "1": "Questo attacco infligge un 135% dei DAN del secondo attacco."
+    }
+  },
+  "constellation5": {
+    "name": "Vero esploratore",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Viaggio fantastico</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation6": {
+    "name": "Coraggio incandescente",
+    "description": {
+      "0": "I personaggi che usano una spada, una claymore o una lancia nel raggio di <strong>Viaggio fantastico</strong> ottengono un <pyro>bonus DAN da Pyro</pyro> di un 15% e le loro armi vengono infuse col potere di <pyro>Pyro</pyro>."
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Akuoumaru",
+  "description": {
+    "0": "Das geliebte Schwert des legendären „Akuou“. Die Klinge ist lang und majestätisch, aber überraschend einfach zu handhaben."
+  },
+  "passiveName": "Wellenbändiger von Watatsumi",
+  "passiveDescription": {
+    "0": {
+      "0": "Erhöht den mit Spezialfähigkeiten der mit dieser Waffe ausgerüsteten Figur verursachten Schaden für jeden Punkt aus der Summe der max. Elementarenergie aller Truppenmitglieder zusammengerechnet um <cryo>0,12 %</cryo>. Erhöht den mit Spezialfähigkeit verursachten Schaden auf diese Weise um bis zu <cryo>40 %</cryo>."
+    },
+    "1": {
+      "0": "Erhöht den mit Spezialfähigkeiten der mit dieser Waffe ausgerüsteten Figur verursachten Schaden für jeden Punkt aus der Summe der max. Elementarenergie aller Truppenmitglieder zusammengerechnet um <cryo>0,15 %</cryo>. Erhöht den mit Spezialfähigkeit verursachten Schaden auf diese Weise um bis zu <cryo>50 %</cryo>."
+    },
+    "2": {
+      "0": "Erhöht den mit Spezialfähigkeiten der mit dieser Waffe ausgerüsteten Figur verursachten Schaden für jeden Punkt aus der Summe der max. Elementarenergie aller Truppenmitglieder zusammengerechnet um <cryo>0,18 %</cryo>. Erhöht den mit Spezialfähigkeit verursachten Schaden auf diese Weise um bis zu <cryo>60 %</cryo>."
+    },
+    "3": {
+      "0": "Erhöht den mit Spezialfähigkeiten der mit dieser Waffe ausgerüsteten Figur verursachten Schaden für jeden Punkt aus der Summe der max. Elementarenergie aller Truppenmitglieder zusammengerechnet um <cryo>0,21 %</cryo>. Erhöht den mit Spezialfähigkeit verursachten Schaden auf diese Weise um bis zu <cryo>70 %</cryo>."
+    },
+    "4": {
+      "0": "Erhöht den mit Spezialfähigkeiten der mit dieser Waffe ausgerüsteten Figur verursachten Schaden für jeden Punkt aus der Summe der max. Elementarenergie aller Truppenmitglieder zusammengerechnet um <cryo>0,24 %</cryo>. Erhöht den mit Spezialfähigkeit verursachten Schaden auf diese Weise um bis zu <cryo>80 %</cryo>."
+    }
+  }
+}

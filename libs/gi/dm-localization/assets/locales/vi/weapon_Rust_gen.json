@@ -1,0 +1,24 @@
+{
+  "name": "Cung Rỉ Sét",
+  "description": {
+    "0": "Cung bằng sắt đã bị rỉ sét, người thường khó nhấc lên được chứ đừng nói có thể khiến nó bắn ra."
+  },
+  "passiveName": "Cung Tên Tốc Xạ",
+  "passiveDescription": {
+    "0": {
+      "0": "Tăng <cryo>40%</cryo> sát thương của tấn công thường, giảm 10% sát thương trọng kích."
+    },
+    "1": {
+      "0": "Tăng <cryo>50%</cryo> sát thương của tấn công thường, giảm 10% sát thương trọng kích."
+    },
+    "2": {
+      "0": "Tăng <cryo>60%</cryo> sát thương của tấn công thường, giảm 10% sát thương trọng kích."
+    },
+    "3": {
+      "0": "Tăng <cryo>70%</cryo> sát thương của tấn công thường, giảm 10% sát thương trọng kích."
+    },
+    "4": {
+      "0": "Tăng <cryo>80%</cryo> sát thương của tấn công thường, giảm 10% sát thương trọng kích."
+    }
+  }
+}

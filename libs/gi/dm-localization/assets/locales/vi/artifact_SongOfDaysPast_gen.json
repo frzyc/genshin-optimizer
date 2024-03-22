@@ -1,0 +1,29 @@
+{
+  "setName": "Khúc Ca Ngày Cũ",
+  "setEffects": {
+    "2": "Tăng Trị Liệu lên 15%.",
+    "4": "Người trang bị khi trị liệu cho nhân vật trong đội, sẽ sản sinh hiệu quả \"Mong Mỏi\" trong 6s, ghi nhận lượng HP hồi phục khi trị liệu (Bao gồm phần dư ra). Khi thời gian duy trì kết thúc, hiệu quả \"Mong Mỏi\" sẽ chuyển thành hiệu quả \"Làn Sóng Ngày Cũ\": Khi Tấn Công Thường, Trọng Kích, Tấn Công Khi Đáp, Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ của nhân vật ra trận trong đội bản thân trúng kẻ địch, sát thương gây ra sẽ tăng dựa vào 8% lượng HP hồi phục được ghi nhận trong hiệu quả \"Mong Mỏi\". Hiệu quả \"Làn Sóng Ngày Cũ\" sẽ xóa khi hiệu lực 5 lần hoặc sau 10s. Một lần hiệu quả \"Mong Mỏi\" tối đa ghi nhớ 15000 điểm hồi phục, tối đa tồn tại một hiệu quả cùng lúc, nhưng có thể ghi nhận lượng hồi phục của nhiều người trang bị. Người trang bị không ra trận cũng có thể kích hoạt hiệu quả."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Lời Thề Thất Lạc Ngày Cũ",
+      "desc": "Bông hoa luôn nở, được chế tác từ thạch nhũ và bạc lấp lánh. Nghe nói cho đến nay thì đây vẫn được coi là biểu tượng của sự phản kháng."
+    },
+    "plume": {
+      "name": "Hồi Ức Vương Vấn Ngày Cũ",
+      "desc": "Phụ kiện lông vũ hình bướm được làm từ pha lê màu bạc và xanh lam. Nghe nói ngày xưa từng tượng trưng cho lời thề mãi không chia lìa."
+    },
+    "sands": {
+      "name": "Âm Thanh Vang Vọng Ngày Cũ",
+      "desc": "Đồng hồ cát kỳ lạ được chế tác bằng đá xanh và ngọc bích. Nghe nói cảm hứng thiết kế đến từ tháp đồng hồ ở Thị Trấn Petrichor."
+    },
+    "goblet": {
+      "name": "Giấc Mơ Lời Hứa Ngày Cũ",
+      "desc": "Vật chứa sang trọng được chế tạo dựa trên hình dạng của \"Chén Thánh Thuần Khiết\" huyền thoại. Nghe nói nó có thể thực hiện tâm nguyện của người thuần khiết nhất."
+    },
+    "circlet": {
+      "name": "Áng Thơ Truyền Tấu Ngày Cũ",
+      "desc": "Loại mũ từng được các nhà soạn nhạc ưa chuộng tại Fontaine. Nghe nói trang sức trên đó được thiết kế dựa trên giáp mũ của các Kỵ Sĩ Nước Trong huyền thoại."
+    }
+  }
+}

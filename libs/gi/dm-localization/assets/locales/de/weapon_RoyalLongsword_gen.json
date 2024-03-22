@@ -1,0 +1,24 @@
+{
+  "name": "Königliches Langschwert",
+  "description": {
+    "0": "Ein altes Schwert der Aristokraten, die einst über Mondstadt herrschten. Es ist fein ausgearbeitet und zeigt mit seinen Verzierungen und Schnitzereien den Status seines Trägers."
+  },
+  "passiveName": "Konzentration",
+  "passiveDescription": {
+    "0": {
+      "0": "Erhöht die KT beim Verursachen von Schaden um <cryo>8 %</cryo>, 5-fach stapelbar. Effekt erlischt beim Verursachen eines KT."
+    },
+    "1": {
+      "0": "Erhöht die KT beim Verursachen von Schaden um <cryo>10 %</cryo>, 5-fach stapelbar. Effekt erlischt beim Verursachen eines KT."
+    },
+    "2": {
+      "0": "Erhöht die KT beim Verursachen von Schaden um <cryo>12 %</cryo>, 5-fach stapelbar. Effekt erlischt beim Verursachen eines KT."
+    },
+    "3": {
+      "0": "Erhöht die KT beim Verursachen von Schaden um <cryo>14 %</cryo>, 5-fach stapelbar. Effekt erlischt beim Verursachen eines KT."
+    },
+    "4": {
+      "0": "Erhöht die KT beim Verursachen von Schaden um <cryo>16 %</cryo>, 5-fach stapelbar. Effekt erlischt beim Verursachen eines KT."
+    }
+  }
+}

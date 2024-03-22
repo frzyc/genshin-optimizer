@@ -1,0 +1,24 @@
+{
+  "name": "Dư Âm Tiếng Hạc",
+  "description": {
+    "0": "Chiếc quạt được chạm khắc từ ngọc phỉ thuý tinh khiết, có hào quang của tiên lực cổ xưa."
+  },
+  "passiveName": "Vân Cấp Hàng Chân Yếu Quyết",
+  "passiveDescription": {
+    "0": {
+      "0": "Người trang bị sau khi Tấn Công Khi Đáp trúng kẻ địch, thì sát thương gây ra từ Tấn Công Khi Đáp của tất cả nhân vật trong đội gần đó tăng <cryo>28%</cryo> trong 20s. Các nhân vật trong đội gần đó khi Tấn Công Khi Đáp trúng kẻ địch, sẽ hồi phục <cryo>2.5</cryo> điểm Năng Lượng Nguyên Tố cho người trang bị. Mỗi 0.7s tối đa hồi phục một lần Năng Lượng Nguyên Tố bằng cách này. Người trang bị khi không ra trận vẫn có thể hồi phục Năng Lượng Nguyên Tố bằng cách này."
+    },
+    "1": {
+      "0": "Người trang bị sau khi Tấn Công Khi Đáp trúng kẻ địch, thì sát thương gây ra từ Tấn Công Khi Đáp của tất cả nhân vật trong đội gần đó tăng <cryo>41%</cryo> trong 20s. Các nhân vật trong đội gần đó khi Tấn Công Khi Đáp trúng kẻ địch, sẽ hồi phục <cryo>2.75</cryo> điểm Năng Lượng Nguyên Tố cho người trang bị. Mỗi 0.7s tối đa hồi phục một lần Năng Lượng Nguyên Tố bằng cách này. Người trang bị khi không ra trận vẫn có thể hồi phục Năng Lượng Nguyên Tố bằng cách này."
+    },
+    "2": {
+      "0": "Người trang bị sau khi Tấn Công Khi Đáp trúng kẻ địch, thì sát thương gây ra từ Tấn Công Khi Đáp của tất cả nhân vật trong đội gần đó tăng <cryo>54%</cryo> trong 20s. Các nhân vật trong đội gần đó khi Tấn Công Khi Đáp trúng kẻ địch, sẽ hồi phục <cryo>3</cryo> điểm Năng Lượng Nguyên Tố cho người trang bị. Mỗi 0.7s tối đa hồi phục một lần Năng Lượng Nguyên Tố bằng cách này. Người trang bị khi không ra trận vẫn có thể hồi phục Năng Lượng Nguyên Tố bằng cách này."
+    },
+    "3": {
+      "0": "Người trang bị sau khi Tấn Công Khi Đáp trúng kẻ địch, thì sát thương gây ra từ Tấn Công Khi Đáp của tất cả nhân vật trong đội gần đó tăng <cryo>67%</cryo> trong 20s. Các nhân vật trong đội gần đó khi Tấn Công Khi Đáp trúng kẻ địch, sẽ hồi phục <cryo>3.25</cryo> điểm Năng Lượng Nguyên Tố cho người trang bị. Mỗi 0.7s tối đa hồi phục một lần Năng Lượng Nguyên Tố bằng cách này. Người trang bị khi không ra trận vẫn có thể hồi phục Năng Lượng Nguyên Tố bằng cách này."
+    },
+    "4": {
+      "0": "Người trang bị sau khi Tấn Công Khi Đáp trúng kẻ địch, thì sát thương gây ra từ Tấn Công Khi Đáp của tất cả nhân vật trong đội gần đó tăng <cryo>80%</cryo> trong 20s. Các nhân vật trong đội gần đó khi Tấn Công Khi Đáp trúng kẻ địch, sẽ hồi phục <cryo>3.5</cryo> điểm Năng Lượng Nguyên Tố cho người trang bị. Mỗi 0.7s tối đa hồi phục một lần Năng Lượng Nguyên Tố bằng cách này. Người trang bị khi không ra trận vẫn có thể hồi phục Năng Lượng Nguyên Tố bằng cách này."
+    }
+  }
+}

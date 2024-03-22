@@ -1,0 +1,34 @@
+{
+  "ProtectiveCanopy": {
+    "name": "Koruyucu Kubbe",
+    "desc": "Tüm Element Direnci +%15, Fiziksel Direnç +%15."
+  },
+  "FerventFlames": {
+    "name": "Tutkulu Alevler",
+    "desc": "Buz etkisinde kalma süresini %40 kısaltır. Saldırıyı %25 artırır."
+  },
+  "SoothingWater": {
+    "name": "Yatıştırıcı Sular",
+    "desc": "Ateş etkisinde kalma süresini %40 kısaltır. Maks. Canı %25 artırır."
+  },
+  "ShatteringIce": {
+    "name": "Kırıcı Buz",
+    "desc": "Elektrik etkisinde kalma süresini %40 kısaltır. Donma veya Buz etkisindeki düşmanlara karşı Kritik Oranını %15 artırır."
+  },
+  "HighVoltage": {
+    "name": "Yüksek Gerilim",
+    "desc": "Su etkisinde kalma süresini %40 azaltır. Süper İletim, Yüksek Voltaj, Elektrik Yüklü, Hızlanma, Şiddetlenme veya Aşırı Çiçeklenme tepkimeleri %100 ihtimalle bir Elektrik Element Parçacığı oluşturur (BS: 5sn)."
+  },
+  "ImpetuousWinds": {
+    "name": "Coşkun Rüzgarlar",
+    "desc": "Dayanıklılık Tüketimini %15 azaltır. Hareket Hızını %10 artırır. Beceri BS %5 kısaltır."
+  },
+  "EnduringRock": {
+    "name": "Sağlam Kaya",
+    "desc": "Kalkan gücünü %15 artırır. Kalkanla korunan karakterler buna ek olarak şu özellikleri kazanır: Verilen Hasar %15 artar, 15 saniyeliğine Hasar alan düşmanların Toprak Direnci %20 azalır."
+  },
+  "SprawlingGreenery": {
+    "name": "Büyüyen Yeşillikler",
+    "desc": "Element Ustalığı 50 artar. Yanma, Hızlanma veya Çiçeklenme tepkimeleri tetiklendiğinde 6 saniyeliğine yakındaki tüm grup üyeleri 30 Element Ustalığı kazanır. Şiddetlenme, Yayılma, Aşırı Çiçeklenme veya Filizlenme tepkimeleri tetiklendiğinde 6 saniyeliğine yakındaki tüm grup üyeleri 20 Element Ustalığı kazanır. Yukarıdaki etkilerin süreleri bağımsız olarak hesaplanır."
+  }
+}

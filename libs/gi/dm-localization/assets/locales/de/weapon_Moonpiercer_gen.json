@@ -1,0 +1,24 @@
+{
+  "name": "Monddurchbohrer",
+  "description": {
+    "0": "Eine Waffe, die du aus einer Geschichte über die Aranara erhalten hast. Sie hat die Form eines Riesenpfeils angenommen und kann als Speer verwendet werden."
+  },
+  "passiveName": "Geräuschloser Wald im Mondschein",
+  "passiveDescription": {
+    "0": {
+      "0": "Erzeugt nach dem Auslösen der Reaktionen wie „In Flammen“, „Urwuchs“, „Suprawuchs“, „Rankenwuchs“, „Sprießen“, „Supraspross“ oder „Flammenspross“ in der Umgebung der Figur ein Reinkarnations-Blatt, das höchstens 10 s lang bestehen bleibt. Erhöht 12 s lang den ANG der Figur, die das Blatt sammelt, um <cryo>16 %</cryo>. Auf diese Weise kann alle 20 s nur ein Reinkarnations-Blatt erzeugt werden. Dieser Effekt tritt auch in Kraft, wenn sich die Figur inaktiv in der Truppe befindet."
+    },
+    "1": {
+      "0": "Erzeugt nach dem Auslösen der Reaktionen wie „In Flammen“, „Urwuchs“, „Suprawuchs“, „Rankenwuchs“, „Sprießen“, „Supraspross“ oder „Flammenspross“ in der Umgebung der Figur ein Reinkarnations-Blatt, das höchstens 10 s lang bestehen bleibt. Erhöht 12 s lang den ANG der Figur, die das Blatt sammelt, um <cryo>20 %</cryo>. Auf diese Weise kann alle 20 s nur ein Reinkarnations-Blatt erzeugt werden. Dieser Effekt tritt auch in Kraft, wenn sich die Figur inaktiv in der Truppe befindet."
+    },
+    "2": {
+      "0": "Erzeugt nach dem Auslösen der Reaktionen wie „In Flammen“, „Urwuchs“, „Suprawuchs“, „Rankenwuchs“, „Sprießen“, „Supraspross“ oder „Flammenspross“ in der Umgebung der Figur ein Reinkarnations-Blatt, das höchstens 10 s lang bestehen bleibt. Erhöht 12 s lang den ANG der Figur, die das Blatt sammelt, um <cryo>24 %</cryo>. Auf diese Weise kann alle 20 s nur ein Reinkarnations-Blatt erzeugt werden. Dieser Effekt tritt auch in Kraft, wenn sich die Figur inaktiv in der Truppe befindet."
+    },
+    "3": {
+      "0": "Erzeugt nach dem Auslösen der Reaktionen wie „In Flammen“, „Urwuchs“, „Suprawuchs“, „Rankenwuchs“, „Sprießen“, „Supraspross“ oder „Flammenspross“ in der Umgebung der Figur ein Reinkarnations-Blatt, das höchstens 10 s lang bestehen bleibt. Erhöht 12 s lang den ANG der Figur, die das Blatt sammelt, um <cryo>28 %</cryo>. Auf diese Weise kann alle 20 s nur ein Reinkarnations-Blatt erzeugt werden. Dieser Effekt tritt auch in Kraft, wenn sich die Figur inaktiv in der Truppe befindet."
+    },
+    "4": {
+      "0": "Erzeugt nach dem Auslösen der Reaktionen wie „In Flammen“, „Urwuchs“, „Suprawuchs“, „Rankenwuchs“, „Sprießen“, „Supraspross“ oder „Flammenspross“ in der Umgebung der Figur ein Reinkarnations-Blatt, das höchstens 10 s lang bestehen bleibt. Erhöht 12 s lang den ANG der Figur, die das Blatt sammelt, um <cryo>32 %</cryo>. Auf diese Weise kann alle 20 s nur ein Reinkarnations-Blatt erzeugt werden. Dieser Effekt tritt auch in Kraft, wenn sich die Figur inaktiv in der Truppe befindet."
+    }
+  }
+}

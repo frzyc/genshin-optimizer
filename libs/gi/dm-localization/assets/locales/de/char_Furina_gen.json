@@ -1,0 +1,179 @@
+{
+  "name": "Furina",
+  "title": "Endloser Solotanz",
+  "description": "Der absolute Mittelpunkt auf der Bühne bei Verhandlungen bis zum Applaus am Ende.",
+  "constellationName": "Animula Choragi",
+  "auto": {
+    "name": "Einladung der Solistin",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Standardangriff</strong>",
+        "1": "Führt bis zu 4 Angriffe hintereinander aus."
+      },
+      "charged": {
+        "0": "<strong>Heftiger Schlag</strong>",
+        "1": "Verbraucht eine gewisse Menge Ausdauer, erschafft die Aura eines Solotanzes, die den Gegnern in der Nähe physischen Schaden zufügt und die eigene Arkhe-Energiesignatur ändert. Wenn „Salonmitglieder“ oder „Sängerin der Ströme“, die von der Elementarfähigkeit „Salon solitaire“ herbeigerufen wurden, anwesend sind, ändert sich ihre Aufstellung."
+      },
+      "arkhe": {
+        "0": "<strong>Arkhe: Thron der Geistlichkeit und Weltlichkeit</strong>",
+        "1": "Erzeugt in gewissen Zeitabständen bei Treffern mit Standardangriffen von Furina an der getroffenen Position basierend auf Furinas aktueller Arkhe-Energiesignatur einen Geisterstachel oder eine Wogenklinge, die auf Gegner herabfällt, diese durchbohrt und mit Pneuma oder Ousia versehenen <hydro>Hydro-Schaden</hydro> verursacht.",
+        "2": "Wenn Furina eingewechselt wird, ist ihre anfängliche Arkhe-Energiesignatur Ousia."
+      },
+      "plunging": {
+        "0": "<strong>Angriff aus dem Fall</strong>",
+        "1": "Schlägt beim Fallen aus der Luft auf den Boden, greift alle Gegner in der Bahn an und verursacht beim Aufkommen Flächenschaden."
+      }
+    },
+    "skillParams": {
+      "0": "SCH Phase 1",
+      "1": "SCH Phase 2",
+      "2": "SCH Phase 3",
+      "3": "SCH Phase 4",
+      "4": "SCH heftiger Schläge",
+      "5": "Ausdauerverbrauch heftiger Schläge",
+      "6": "SCH beim Fallen",
+      "7": "SCH beim Fallen aus niedriger/großer Höhe",
+      "8": "Geisterstachel-/Wogenklingen-SCH",
+      "9": "Geisterstachel-/Wogenklingen-SCH- Intervall",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Salon solitaire",
+    "description": {
+      "0": "Lädt die Gäste des Salon solitaire ein, Furina bei ihrem Auftritt zu unterstützen. Beschwört entweder die „Salonmitglieder“ oder die „Sängerin der Ströme“, je nach Furinas aktueller <strong>Arkhe-Energiesignatur</strong>.",
+      "1": "<br/>",
+      "2": "<strong>Ousia</strong>",
+      "3": "Versprüht feierliche Blasen, die <hydro>Hydro-Flächenschaden</hydro> basierend auf Furinas max. LP verursachen und 3 „Salonmitglieder“ beschwören: den poingpoing-oktopus-förmigen „Gentilhomme Usher“, die blubber-seepferdchen-förmige „Surintendante Chevalmarin“ und die panzerkrabbenförmige „Mademoiselle Crabaletta“.",
+      "4": "Die „Salonmitglieder“ greifen in gewissen Abständen Gegner in der Nähe an und bevorzugen das Ziel der aktiven Figur, wobei sie <hydro>Hydro-Schaden</hydro> basierend auf den max. LP verursachen.",
+      "5": "Wenn die „Salonmitglieder“ angreifen, erhöht sich die Stärke ihres aktuellen Angriffs basierend auf der Anzahl der Figuren, die sich in der Nähe befinden und deren LP mehr als 50 % betragen, wobei deren LP verbraucht werden: Wenn die Anzahl der Figuren, die diese Bedingungen erfüllen, 1/2/3/4 oder mehr beträgt, verursacht der Angriff der Mitglieder 110/120/130/140 % des ursprünglichen Schadens.",
+      "6": "<br/>",
+      "7": "<strong>Pneuma</strong>",
+      "8": "Beschwört die „Sängerin der Ströme“, die in regelmäßigen Abständen die LP der in der Nähe befindlichen aktiven Figuren basierend auf den max. LP wiederherstellt.",
+      "9": "<br/>",
+      "10": "Die Dauer gilt für die „Salonmitglieder“ und die „Sängerin der Ströme“ gemeinsam. Wenn Furina ihren heftigen Schlag einsetzt, um die Aufstellung der Gäste zu ändern, übernehmen die neuen Gäste die verbleibende Dauer.",
+      "11": "Während die „Salonmitglieder“ oder die „Sängerin der Ströme“ existiert, kann Furina sich auf Wasseroberflächen bewegen.",
+      "12": "<br/>",
+      "13": "<i>In Furinas Salon solitaire gibt es einen festen Stamm an Gästen. Zu anderen Zeiten kommen Mademoiselle Crabaletta, Surintendante Chevalmarin und Gentilhomme Usher, und an düsteren Mittwochen ist es die Sängerin, die vorbeikommt.</i>"
+    },
+    "skillParams": {
+      "0": "Ousia-Blasen-SCH",
+      "1": "Dauer",
+      "2": "SCH Gentilhomme Usher",
+      "3": "SCH Surintendante Chevalmarin",
+      "4": "SCH Mademoiselle Crabaletta",
+      "5": "LP-Verbrauch Gentilhomme Usher",
+      "6": "LP-Verbrauch Surintendante Chevalmarin",
+      "7": "LP-Verbrauch Mademoiselle Crabaletta",
+      "8": "Heilung durch Sängerin der Ströme",
+      "9": "Abklingzeit",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Möge das Volk frohlocken",
+    "description": {
+      "0": "Entfacht den Impuls zum Schwelgen und erzeugt eine Schaumbühne, die <hydro>Hydro-Flächenschaden</hydro> basierend auf Furinas max. LP verursacht und Truppenmitglieder in der Nähe in den Zustand „Universelle Schwelgerei“ versetzt. Während dieser Zeit, wenn die aktuellen LP der Figuren steigen oder sinken, gewähren sie Furina für je 1 % der LP-Schwankung im Vergleich zu den max. LP 1 Punkt „Pomp“.",
+      "1": "Gleichzeitig erhöht Furina den von allen Truppenmitgliedern in der Nähe verursachten Schaden und ihren passiven Heilungsbonus, je nachdem, wie viel Pomp sie hat.",
+      "2": "Wenn die Wirkungsdauer endet, wird Furinas Pomp entfernt.",
+      "3": "<br/>",
+      "4": "<i>„Jubelt! Lobt! Seid ehrfürchtig! Erhebt eure Gläser! Jede Nacht ohne Festmahl ist eine schmutzige Vergeudung von nüchternem Tageslicht ... Und die, die noch nicht volljährig sind, können stattdessen Traubensaft trinken!“</i>"
+    },
+    "skillParams": {
+      "0": "Fähigkeits-SCH",
+      "1": "Dauer",
+      "2": "Max. Pomp",
+      "3": "Umwandlungsrate Pomp zu SCH-Bonus",
+      "4": "Umwandlungsrate Pomp zu passivem Heilungsbonus",
+      "5": "Abklingzeit",
+      "6": "Elementarenergie",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Endloser Walzer",
+    "description": {
+      "0": "Wenn die aktive Figur in der Truppe geheilt wird, die Heilung aber nicht von Furina stammt und einen Überschuss aufweist, stellt Furina den Truppenmitgliedern in der Nähe innerhalb der nächsten 4 s alle 2 s 2 % ihrer jeweiligen max. LP wieder her."
+    }
+  },
+  "passive2": {
+    "name": "Ungehörter Monolog",
+    "description": {
+      "0": "Verleiht Furinas <strong>Salon solitaire</strong> unter den verschiedenen Arkhe-Energiesignaturen für je 1.000 Punkte ihrer max. LP die entsprechenden Bonuseffekte:",
+      "1": "Erhöht den von den Salonmitgliedern verursachten Schaden um 0,7 %. Auf diese Weise kann der durch die Salonmitglieder verursachte Schaden um bis zu 28 % erhöht werden.",
+      "2": "Verringert das Heilungsintervall der Sängerin der Ströme bei den aktiven Figuren in der Nähe um 0,4 %. Auf diese Weise kann das Heilungsintervall um bis zu 16 % verringert werden."
+    }
+  },
+  "passive3": {
+    "name": "Der Ozean ist meine Bühne",
+    "description": {
+      "0": "Verringert die Abklingzeit der Kraft des xenochromatischen Fontemer-Mutanten um 30 %."
+    }
+  },
+  "constellation1": {
+    "name": "„Wie ein widerspenstiger Vogel ist die Liebe taub gegenüber dem Flehen“",
+    "description": {
+      "0": "Verleiht Furina beim Einsetzen der Fähigkeit <strong>Möge das Volk frohlocken</strong> 150 Punkte „Pomp“.",
+      "1": "Zusätzlich wird das Limit für „Pomp“ um 100 Punkte erhöht."
+    }
+  },
+  "constellation2": {
+    "name": "„Frauen sind feinfühlig wie Wasserlinsen im Teich“",
+    "description": {
+      "0": "Während der Wirkungsdauer der Fähigkeit <strong>Möge das Volk frohlocken</strong> wird die durch die aktuelle LP-Schwankung der in der Nähe befindlichen Truppenmitglieder erhaltene Menge an „Pomp“ von Furina um 250 % erhöht. Basierend auf dem Teil von „Pomp“, der über dem Limit liegt, erhöht jeder Punkt „Pomp“ Furinas max. LP um 0,35 %. Auf diese Weise können Furinas max. LP um bis zu 140 % erhöht werden."
+    }
+  },
+  "constellation3": {
+    "name": "„Meine Geheimnisse verberge ich, meinen Namen kennt niemand“",
+    "description": {
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Möge das Volk frohlocken</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation4": {
+    "name": "„Wer nicht in der Unterwelt wohnt, kennt das Leben nicht!“",
+    "description": {
+      "0": "Stellt Furina 4 Punkte Elementarenergie wieder her, wenn die Salonmitglieder der Fähigkeit <strong>Salon solitaire</strong> Gegner treffen oder die Sängerin der Ströme die LP der aktiven Figuren in der Nähe wiederherstellt. 5 s Abklingzeit."
+    }
+  },
+  "constellation5": {
+    "name": "„Sein Name, den kenne ich jetzt, er lautet ...!“",
+    "description": {
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Salon solitaire</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation6": {
+    "name": "„Hört meinen Lobgesang und erhebt die Becher der Liebe!“",
+    "description": {
+      "0": "Erhält den Effekt „Im Mittelpunkt der Blicke“, wenn <strong>„Salon solitaire“</strong> eingesetzt wird, hält 10 s.",
+      "1": "Während der Wirkungsdauer wird der von Furinas Standardangriffen, heftigen Schlägen und Angriffen aus dem Fall verursachte Schaden zu <hydro>Hydro-Schaden</hydro> umgewandelt, der nicht von anderen Elementen überdeckt werden kann. Gleichzeitig wird der verursachte Schaden um 18 % der max. LP von Furina erhöht.",
+      "2": "Während der Wirkungsdauer werden, nachdem Furinas Standardangriffe (außer den Angriffen von „Arkhe: Thron der Geistlichkeit und Weltlichkeit“), heftige Schläge oder Angriffe aus dem Fall beim Aufkommen Gegner getroffen haben, alle 0,1 s basierend auf Furinas aktueller Arkhe-Energiesignatur unterschiedliche Effekte erzeugt.",
+      "3": "<br/>",
+      "4": "Arkhe: Ousia",
+      "5": "Stellt allen Truppenmitgliedern in der Nähe jede Sekunde LP in Höhe von 4 % der max. LP von Furina wieder her, hält 2,9 s. Verlängert die Wirkungsdauer bei erneutem Auslösen.",
+      "6": "Arkhe: Pneuma",
+      "7": "Erhöht den diesmaligen Schaden des Standardangriffs (außer den Angriffen von „Arkhe: Thron der Geistlichkeit und Weltlichkeit“), des heftigen Schlags oder des Angriffs aus dem Fall beim Aufkommen um weitere 25 % der max. LP von Furina. Beim Treffen von Gegnern mit den oben genannten Angriffsmethoden werden 1 % der aktuellen LP aller Truppenmitglieder in der Nähe verbraucht.",
+      "8": "<br/>",
+      "9": "Während der Wirkungsdauer eines einzelnen „Im Mittelpunkt der Blicke“ kann der oben genannte Effekt höchstens 6-mal ausgelöst werden. Dieser Effekt endet, sobald er 6-mal ausgelöst wurde oder seine Dauer abgelaufen ist."
+    }
+  }
+}

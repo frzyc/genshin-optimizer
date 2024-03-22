@@ -1,0 +1,191 @@
+{
+  "name": "Mona",
+  "title": "Réflexion astrale",
+  "description": "Jeune astromancienne mystérieuse, Mona se surnomme elle-même « la grande astromancienne Mona », et fait preuve d'une force singulière et d'une érudition hors norme qui ne désavouent pas cette appellation.",
+  "constellationName": "Astrolabos",
+  "auto": {
+    "name": "Ondes du destin",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attaque normale</strong>",
+        "1": "Enchaîne jusqu'à 4 attaques d'eau qui infligent des <hydro>DGT Hydro</hydro>."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Consomme de l'endurance pour infliger des <hydro>DGT Hydro de zone</hydro> après un court délai."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Plonge depuis les airs en concentrant ses pouvoirs Hydro, infligeant des DGT aux ennemis en chemin et des <hydro>DGT Hydro de zone</hydro> à l'impact."
+      }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT 4e coup",
+      "4": "DGT attaque chargée",
+      "5": "Coût d'endurance attaque chargée",
+      "6": "DGT durant la chute",
+      "7": "DGT chute basse/élevée",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Mirage aqueux",
+    "description": {
+      "0": "Mona invoque un mirage du destin créé à partir de projections aqueuses.",
+      "1": "<br/>",
+      "2": "<strong>Mirage</strong>",
+      "3": "Le mirage a les effets suivants :",
+      "4": [
+        " Nargue les ennemis proches et attire leur attention.",
+        " Inflige des <hydro>DGT Hydro continus</hydro> aux ennemis proches.",
+        " Lorsque le mirage prend fin, il explose et inflige des <hydro>DGT Hydro de zone</hydro>."
+      ],
+      "5": "<br/>",
+      "6": "<strong>Appui long</strong>",
+      "7": "Mona utilise la puissance de l'eau pour se propulser rapidement en arrière et invoque un mirage du destin.",
+      "8": "Il ne peut exister qu'un seul mirage à la fois.",
+      "9": "<br/>",
+      "10": "<i>Les astromanciens les plus doués ont toujours rêvé de pouvoir créer un sosie d'eux-mêmes pour pouvoir faire face au danger, mais Mona est sans doute la première à avoir réalisé ce tour de main.</i>"
+    },
+    "skillParams": {
+      "0": "DGT continus",
+      "1": "DGT explosion",
+      "2": "Temps de recharge",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Voie divine",
+    "description": {
+      "0": "Mona invoque des vagues chatoyantes pour créer un reflet du ciel étoilé, infligeant l'état Bulle nocturne aux ennemis dans un large rayon.",
+      "1": "<br/>",
+      "2": "<strong>Bulle nocturne</strong>",
+      "3": "Emprisonne les ennemis, et les <hydro>trempe</hydro>. Les ennemis les plus faibles sont immobilisés.",
+      "4": "Lorsqu'un ennemi emprisonné subit des DGT, il subit également les effets suivants :",
+      "5": [
+        " Un présage est appliqué à l'ennemi, qui subit alors une augmentation de DGT, y compris de l'attaque l'ayant provoqué.",
+        " L'effet Bulle nocturne disparaît, et inflige des <hydro>DGT Hydro</hydro> supplémentaires."
+      ],
+      "6": "<br/>",
+      "7": "<strong>Présage</strong>",
+      "8": "Le présage augmente les DGT subis par l'ennemi tant qu'il est actif.",
+      "9": "<br/>",
+      "10": "<i>C'est lorsque le regard des dieux dessina les étoiles que la notion de « destin » naquit.</i>"
+    },
+    "skillParams": {
+      "0": "Durée Bulle nocturne",
+      "1": "DGT bulle nocturne",
+      "2": "Bonus de DGT",
+      "3": "Durée du présage",
+      "4": "Temps de recharge",
+      "5": "Énergie élémentaire",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "sprint": {
+    "name": "Vicissitude",
+    "description": {
+      "0": "<strong>Sprint alternatif</strong>",
+      "1": "Mona consomme de l'endurance pour se déplacer aussi vite qu'un torrent sous la forme d'un courant d'eau.",
+      "2": "<br/>",
+      "3": "Dans l'état Vicissitude, Mona peut se déplacer rapidement sur l'eau.",
+      "4": "À la fin de l'état, Mona <hydro>trempe</hydro> les ennemis proches lorsqu'elle réapparaît.",
+      "5": "<br/>",
+      "6": "<i>Voici une technique que Mona est capable d'effectuer, mais pas son maître. Ce n'est pas comme si cette dernière souhaitait apprendre quoi que ce soit au sujet de l'œil divin Hydro...</i>"
+    }
+  },
+  "passive1": {
+    "name": "Leurre du fatum",
+    "description": {
+      "0": "Entrer dans l'état <strong>Vicissitude</strong> invoque automatiquement un mirage après 2 s en cas de présence d'ennemis proches.",
+      "1": "Le mirage ainsi invoqué dure 2 s, et ses DGT d'explosion sont équivalents à 50 % des DGT de <strong>Mirage aqueux</strong>."
+    }
+  },
+  "passive2": {
+    "name": "Que le destin décide",
+    "description": {
+      "0": "Confère à Mona un <hydro>bonus de DGT Hydro</hydro> équivalant à 20 % de sa recharge d'énergie."
+    }
+  },
+  "passive3": {
+    "name": "Principes d'astromancie",
+    "description": {
+      "0": "Lorsque vous fabriquez un matériau d'élévation d'arme, il y a 25 % de chances qu'une partie des matières premières vous soit rendue."
+    }
+  },
+  "constellation1": {
+    "name": "Prophétie immersive",
+    "description": {
+      "0": "Les effets des <hydro>réactions liées à l'élément Hydro</hydro> sont renforcés pendant 8 s lorsqu'une attaque de vos personnages dans l'équipe touche un ennemi marqué par un présage :",
+      "1": [
+        " Les DGT d'Électrocution, d'Évaporation, de Dispersion Hydro augmentent de 15 %.",
+        " La durée de Gel augmente de 15 %."
+      ]
+    }
+  },
+  "constellation2": {
+    "name": "Chaîne lunaire",
+    "description": {
+      "0": "Les attaques normales ont 20 % de chances d'être suivies par une attaque chargée.",
+      "1": "Cet effet peut être déclenché une fois toutes les 5 s."
+    }
+  },
+  "constellation3": {
+    "name": "Révolution éternelle",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Voie divine</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation4": {
+    "name": "Prophétie de la fin",
+    "description": {
+      "0": "Augmente le taux CRIT de 15 % lorsque vos personnages dans l'équipe attaquent un ennemi marqué par un présage."
+    }
+  },
+  "constellation5": {
+    "name": "Un tour du destin",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Mirage aqueux</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation6": {
+    "name": "Rhétorique de l'adversité",
+    "description": {
+      "0": "Dans l'état <strong>Vicissitude</strong>, Mona obtient un bonus de 60 % de DGT pour sa prochaine attaque chargée à chaque seconde passée à se déplacer.",
+      "1": "Cet effet peut être cumulé 3 fois maximum (bonus de 180 %) et dure 8 s."
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Astro del vespro errante",
+  "description": {
+    "0": "In origine, questo dispositivo era impiegato dai ricercatori per osservare ed eseguire calcoli sui fenomeni celesti. Funge sia da canale di trasmissione sia da catalizzatore."
+  },
+  "passiveName": "Stella della selva notturna",
+  "passiveDescription": {
+    "0": {
+      "0": "Il seguente effetto positivo si innesca ogni 10 s: il personaggio che equipaggia l'arma guadagna per 12 s un bonus ATT pari a un <cryo>24%</cryo> della propria maestria elementale, mentre i personaggi del gruppo vicini ricevono un 30% di tale effetto per la stessa durata. La presenza di più esemplari di quest'arma permette di accumulare l'effetto. Può innescarsi anche se il personaggio non si trova in campo."
+    },
+    "1": {
+      "0": "Il seguente effetto positivo si innesca ogni 10 s: il personaggio che equipaggia l'arma guadagna per 12 s un bonus ATT pari a un <cryo>30%</cryo> della propria maestria elementale, mentre i personaggi del gruppo vicini ricevono un 30% di tale effetto per la stessa durata. La presenza di più esemplari di quest'arma permette di accumulare l'effetto. Può innescarsi anche se il personaggio non si trova in campo."
+    },
+    "2": {
+      "0": "Il seguente effetto positivo si innesca ogni 10 s: il personaggio che equipaggia l'arma guadagna per 12 s un bonus ATT pari a un <cryo>36%</cryo> della propria maestria elementale, mentre i personaggi del gruppo vicini ricevono un 30% di tale effetto per la stessa durata. La presenza di più esemplari di quest'arma permette di accumulare l'effetto. Può innescarsi anche se il personaggio non si trova in campo."
+    },
+    "3": {
+      "0": "Il seguente effetto positivo si innesca ogni 10 s: il personaggio che equipaggia l'arma guadagna per 12 s un bonus ATT pari a un <cryo>42%</cryo> della propria maestria elementale, mentre i personaggi del gruppo vicini ricevono un 30% di tale effetto per la stessa durata. La presenza di più esemplari di quest'arma permette di accumulare l'effetto. Può innescarsi anche se il personaggio non si trova in campo."
+    },
+    "4": {
+      "0": "Il seguente effetto positivo si innesca ogni 10 s: il personaggio che equipaggia l'arma guadagna per 12 s un bonus ATT pari a un <cryo>48%</cryo> della propria maestria elementale, mentre i personaggi del gruppo vicini ricevono un 30% di tale effetto per la stessa durata. La presenza di più esemplari di quest'arma permette di accumulare l'effetto. Può innescarsi anche se il personaggio non si trova in campo."
+    }
+  }
+}

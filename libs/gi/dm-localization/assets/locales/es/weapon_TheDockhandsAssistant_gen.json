@@ -1,0 +1,24 @@
+{
+  "name": "Sable de la Dársena",
+  "description": {
+    "0": "Una práctica herramienta de cortar que ya no se puede encontrar en prácticamente ningún sitio. Sus desafiladas cuchillas se pueden ir cambiando conforme se usan."
+  },
+  "passiveName": "Saloma de los barqueros",
+  "passiveDescription": {
+    "0": {
+      "0": "Al recibir o realizar curación, otorga una marca de tenacidad durante 30 s, acumulable hasta 3 marcas. Al usar la Habilidad Elemental o Definitiva, se consumen todas las marcas de tenacidad y se obtiene el efecto de “vigorización” durante 10 s. Por cada marca de tenacidad consumida, aumenta en <cryo>40</cryo> pts. la Maestría Elemental y regenera <cryo>2</cryo> pts. de Energía Elemental al portador de esta arma durante los 2 s después de obtener este efecto. El efecto de vigorización solo se puede activar una vez cada 15 s, y el personaje puede obtener marcas de tenacidad incluso cuando esté en tu equipo pero no en uso."
+    },
+    "1": {
+      "0": "Al recibir o realizar curación, otorga una marca de tenacidad durante 30 s, acumulable hasta 3 marcas. Al usar la Habilidad Elemental o Definitiva, se consumen todas las marcas de tenacidad y se obtiene el efecto de “vigorización” durante 10 s. Por cada marca de tenacidad consumida, aumenta en <cryo>50</cryo> pts. la Maestría Elemental y regenera <cryo>2.5</cryo> pts. de Energía Elemental al portador de esta arma durante los 2 s después de obtener este efecto. El efecto de vigorización solo se puede activar una vez cada 15 s, y el personaje puede obtener marcas de tenacidad incluso cuando esté en tu equipo pero no en uso."
+    },
+    "2": {
+      "0": "Al recibir o realizar curación, otorga una marca de tenacidad durante 30 s, acumulable hasta 3 marcas. Al usar la Habilidad Elemental o Definitiva, se consumen todas las marcas de tenacidad y se obtiene el efecto de “vigorización” durante 10 s. Por cada marca de tenacidad consumida, aumenta en <cryo>60</cryo> pts. la Maestría Elemental y regenera <cryo>3</cryo> pts. de Energía Elemental al portador de esta arma durante los 2 s después de obtener este efecto. El efecto de vigorización solo se puede activar una vez cada 15 s, y el personaje puede obtener marcas de tenacidad incluso cuando esté en tu equipo pero no en uso."
+    },
+    "3": {
+      "0": "Al recibir o realizar curación, otorga una marca de tenacidad durante 30 s, acumulable hasta 3 marcas. Al usar la Habilidad Elemental o Definitiva, se consumen todas las marcas de tenacidad y se obtiene el efecto de “vigorización” durante 10 s. Por cada marca de tenacidad consumida, aumenta en <cryo>70</cryo> pts. la Maestría Elemental y regenera <cryo>3.5</cryo> pts. de Energía Elemental al portador de esta arma durante los 2 s después de obtener este efecto. El efecto de vigorización solo se puede activar una vez cada 15 s, y el personaje puede obtener marcas de tenacidad incluso cuando esté en tu equipo pero no en uso."
+    },
+    "4": {
+      "0": "Al recibir o realizar curación, otorga una marca de tenacidad durante 30 s, acumulable hasta 3 marcas. Al usar la Habilidad Elemental o Definitiva, se consumen todas las marcas de tenacidad y se obtiene el efecto de “vigorización” durante 10 s. Por cada marca de tenacidad consumida, aumenta en <cryo>80</cryo> pts. la Maestría Elemental y regenera <cryo>4</cryo> pts. de Energía Elemental al portador de esta arma durante los 2 s después de obtener este efecto. El efecto de vigorización solo se puede activar una vez cada 15 s, y el personaje puede obtener marcas de tenacidad incluso cuando esté en tu equipo pero no en uso."
+    }
+  }
+}

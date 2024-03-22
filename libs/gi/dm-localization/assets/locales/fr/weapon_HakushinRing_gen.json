@@ -1,0 +1,24 @@
+{
+  "name": "Anneau des Hakushin",
+  "description": {
+    "0": "Un catalyseur qui contient les mémoires de la Kitsune Saiguu. Cependant, ses pensées étaient si nombreuses qu'il n'était pas possible de toutes les faire tenir dans cet objet."
+  },
+  "passiveName": "Palais des cerisiers",
+  "passiveDescription": {
+    "0": {
+      "0": "Lorsqu'un personnage équipé de cette arme a déclenché une réaction liée à l'élément Électro, tous les personnages de l'équipe à proximité dont l'élément est impliqué dans cette réaction élémentaire obtiennent un bonus de DGT de leur élément de <cryo>10 %</cryo> pendant 6 s. Les bonus de DGT élémentaires obtenus de cette manière ne se cumulent pas."
+    },
+    "1": {
+      "0": "Lorsqu'un personnage équipé de cette arme a déclenché une réaction liée à l'élément Électro, tous les personnages de l'équipe à proximité dont l'élément est impliqué dans cette réaction élémentaire obtiennent un bonus de DGT de leur élément de <cryo>12,5 %</cryo> pendant 6 s. Les bonus de DGT élémentaires obtenus de cette manière ne se cumulent pas."
+    },
+    "2": {
+      "0": "Lorsqu'un personnage équipé de cette arme a déclenché une réaction liée à l'élément Électro, tous les personnages de l'équipe à proximité dont l'élément est impliqué dans cette réaction élémentaire obtiennent un bonus de DGT de leur élément de <cryo>15 %</cryo> pendant 6 s. Les bonus de DGT élémentaires obtenus de cette manière ne se cumulent pas."
+    },
+    "3": {
+      "0": "Lorsqu'un personnage équipé de cette arme a déclenché une réaction liée à l'élément Électro, tous les personnages de l'équipe à proximité dont l'élément est impliqué dans cette réaction élémentaire obtiennent un bonus de DGT de leur élément de <cryo>17,5 %</cryo> pendant 6 s. Les bonus de DGT élémentaires obtenus de cette manière ne se cumulent pas."
+    },
+    "4": {
+      "0": "Lorsqu'un personnage équipé de cette arme a déclenché une réaction liée à l'élément Électro, tous les personnages de l'équipe à proximité dont l'élément est impliqué dans cette réaction élémentaire obtiennent un bonus de DGT de leur élément de <cryo>20 %</cryo> pendant 6 s. Les bonus de DGT élémentaires obtenus de cette manière ne se cumulent pas."
+    }
+  }
+}

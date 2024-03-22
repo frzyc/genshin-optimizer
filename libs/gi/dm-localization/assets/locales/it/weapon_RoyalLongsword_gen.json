@@ -1,0 +1,24 @@
+{
+  "name": "Spada lunga reale",
+  "description": {
+    "0": "Una vecchia spada lunga, appartenuta agli antichi governanti di Mondstadt. Di squisita fattura, le incisioni e gli ornamenti testimoniano la levatura del suo proprietario."
+  },
+  "passiveName": "Concentrazione",
+  "passiveDescription": {
+    "0": {
+      "0": "Dopo aver inflitto danni a un avversario, il tasso di CRIT aumenta di un <cryo>8%</cryo>. Cumulabile fino a 5 volte. In caso di colpo CRIT, la quantità cumulata si azzera."
+    },
+    "1": {
+      "0": "Dopo aver inflitto danni a un avversario, il tasso di CRIT aumenta di un <cryo>10%</cryo>. Cumulabile fino a 5 volte. In caso di colpo CRIT, la quantità cumulata si azzera."
+    },
+    "2": {
+      "0": "Dopo aver inflitto danni a un avversario, il tasso di CRIT aumenta di un <cryo>12%</cryo>. Cumulabile fino a 5 volte. In caso di colpo CRIT, la quantità cumulata si azzera."
+    },
+    "3": {
+      "0": "Dopo aver inflitto danni a un avversario, il tasso di CRIT aumenta di un <cryo>14%</cryo>. Cumulabile fino a 5 volte. In caso di colpo CRIT, la quantità cumulata si azzera."
+    },
+    "4": {
+      "0": "Dopo aver inflitto danni a un avversario, il tasso di CRIT aumenta di un <cryo>16%</cryo>. Cumulabile fino a 5 volte. In caso di colpo CRIT, la quantità cumulata si azzera."
+    }
+  }
+}

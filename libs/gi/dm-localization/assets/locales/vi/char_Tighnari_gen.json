@@ -1,0 +1,158 @@
+{
+  "name": "Tighnari",
+  "title": "Dạo Bước Rừng Xanh",
+  "description": "Học giả thiếu niên tinh thông thực vật học, hiện đang làm đội trưởng kiểm lâm của Rừng Avidya. Tính tình thẳng thắn nhiệt tình, hay dạy bảo những người hay lơ là đầu óc.",
+  "constellationName": "Cung Quách Hồ",
+  "auto": {
+    "name": "Phá Bỏ Chướng Ngại",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Tấn Công Thường</strong>",
+        "1": "Thực hiện tối đa 4 lần bắn tên liên tiếp."
+      },
+      "charged": {
+        "0": "<strong>Trọng kích</strong>",
+        "1": "<strong>Ngắm bắn</strong> chuẩn hơn, sát thương cao hơn.",
+        "2": "Khi ngắm bắn, sức mạnh hoa cỏ sẽ ngưng tụ liên tục trên mũi tên và bắn ra. Căn cứ vào thời gian tụ lực dài hay ngắn sẽ gây ra hiệu quả khác nhau:",
+        "3": [
+          "Tụ lực lần 1: Bắn mũi tên nguyên tố Thảo gây <dendro>Sát Thương Nguyên Tố Thảo</dendro>;",
+          "Tụ lực lần 2: Bắn Mũi Tên Hoa gây <dendro>Sát Thương Nguyên Tố Thảo</dendro>. Sau khi trúng sẽ sản sinh 4 Mũi Tên Bung Tỏa tự động truy đuổi kẻ địch gần đó, gây <dendro>Sát Thương Nguyên Tố Thảo</dendro>."
+        ]
+      },
+      "plunging": {
+        "0": "<strong>Tấn Công Khi Đáp</strong>",
+        "1": "Bắn mưa tên từ trên không, đồng thời lao nhanh xuống mặt đất, gây sát thương phạm vi khi chạm đất."
+      }
+    },
+    "skillParams": {
+      "0": "Sát Thương Lần 1",
+      "1": "Sát Thương Lần 2",
+      "2": "Sát Thương Lần 3",
+      "3": "Sát Thương Lần 4",
+      "4": "Ngắm Bắn",
+      "5": "Tụ Lực Ngắm Bắn Bậc 1",
+      "6": "Sát Thương Mũi Tên Hoa",
+      "7": "Sát Thương Mũi Tên Bung Tỏa",
+      "8": "Sát Thương Khi Đáp",
+      "9": "Sát Thương Khi Rơi Từ Độ Cao Thấp/Cao",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Hạt Giống Vijnana-Phala",
+    "description": {
+      "0": "Tighnari ném Bom Vijnana, gây <dendro>Sát Thương Phạm Vi Nguyên Tố Thảo</dendro> và tạo ra Khu Vực Vijnana-Khanda, ảo ảnh thần bí trong đó sẽ khiêu khích kẻ địch để thu hút hỏa lực.",
+      "1": "Ngoài ra, Tighnari nhận được hiệu ứng \"Vijnana Lan Tràn\", khiến cho thời gian tụ lực của Mũi Tên Hoa giảm 2.4s, hiệu quả này sẽ mất khi kết thúc thời gian duy trì hoặc Tighnari bắn ra 3 lần Mũi Tên Hoa.",
+      "2": "<br/>",
+      "3": "<i>\"Hạt giống nếu như khô héo bên ngoài lớp đất thì nó chỉ là một hạt giống nhỏ. Nhưng nếu nó được đặt vào trong lớp đất, nó sẽ tạo ra được cả ngàn vạn hạt giống.\"</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Kỹ Năng",
+      "1": "Thời Gian Duy Trì Khu Vực Vijnana-Khanda",
+      "2": "Thời Gian Duy Trì Vijnana Lan Tràn",
+      "3": "CD",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Dây Leo Sinh Trưởng",
+    "description": {
+      "0": "Tập trung sức mạnh của hạt giống, bắn ra 6 Mũi Tên Dây Leo truy đuổi kẻ địch, gây <dendro>Sát Thương Nguyên Tố Thảo</dendro>.",
+      "1": "Mũi Tên Dây Leo khi trúng đích sẽ sản sinh Mũi Tên Dây Leo Thứ Cấp truy đuổi kẻ địch gần đó, khi trúng sẽ gây <dendro>Sát Thương Nguyên Tố Thảo</dendro>.",
+      "2": "<br/>",
+      "3": "<i>\"Đừng nghĩ sẽ có thể chạy trốn, dây leo sẽ luôn sinh trưởng. Nếu như không thể dọn dẹp triệt để thì hậu quả sẽ rất khó lường đấy.\"</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Mũi Tên Dây Leo",
+      "1": "Sát Thương Mũi Tên Dây Leo Thứ Cấp",
+      "2": "CD",
+      "3": "Năng Lượng Nguyên Tố",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Tầm Nhìn Sắc Sảo",
+    "description": {
+      "0": "Tighnari sau khi bắn <strong>Mũi Tên Hoa</strong>, Tinh Thông Nguyên Tố tăng 50 điểm, duy trì 4s."
+    }
+  },
+  "passive2": {
+    "name": "Chuyên Gia Thực Vật",
+    "description": {
+      "0": "Mỗi 1 điểm Tinh Thông Nguyên Tố của Tighnari sẽ khiến cho sát thương trọng kích và sát thương <strong>Dây Leo Sinh Trưởng</strong> gây ra tăng 0.06%.",
+      "1": "Sát thương có thể tăng tối đa 60% thông qua cách này."
+    }
+  },
+  "passive3": {
+    "name": "Học Thức Uyên Thâm",
+    "description": {
+      "0": "Hiển thị <strong>đặc sản khu vực Sumeru</strong> trên bản đồ nhỏ."
+    }
+  },
+  "constellation1": {
+    "name": "Từ Gốc Rễ Định Ban Sơ",
+    "description": {
+      "0": "Tỉ lệ bạo kích từ trọng kích của Tighnari tăng 15%."
+    }
+  },
+  "constellation2": {
+    "name": "Từ Mầm Chồi Hiểu Ngọn Nguồn",
+    "description": {
+      "0": "Khi có kẻ địch trong Khu Vực Vijnana-Khanda từ kỹ năng <strong>Hạt Giống Vijnana-Phala</strong>, Tighnari nhận được 20% <dendro>Buff Sát Thương Nguyên Tố Thảo</dendro>.",
+      "1": "Khi Khu Vực Vijnana-Khanda kết thúc hoặc không còn kẻ địch, hiệu ứng này tối đa duy trì 6s."
+    }
+  },
+  "constellation3": {
+    "name": "Từ Thân Nhánh Biết Vạn Vật",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Dây Leo Sinh Trưởng</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation4": {
+    "name": "Từ Phiến Lá Giải Thịnh Suy",
+    "description": {
+      "0": "Khi thi triển <strong>Dây Leo Sinh Trưởng</strong>, Tinh Thông Nguyên Tố của tất cả nhân vật trong đội gần đó tăng 60 điểm, duy trì 8s. Nếu Dây Leo Sinh Trưởng kích hoạt phản ứng Thiêu Đốt, Sum Suê, Sinh Trưởng hoặc Lan Tràn, Tinh Thông Nguyên Tố sẽ tăng thêm 60 điểm, đồng thời làm mới thời gian duy trì của trạng thái này."
+    }
+  },
+  "constellation5": {
+    "name": "Từ Cánh Hoa Tìm Giác Ngộ",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Hạt Giống Vijnana-Phala</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation6": {
+    "name": "Từ Cây Trái Luận Nhân Quả",
+    "description": {
+      "0": "Thời gian tụ lực cần thiết của <strong>Mũi Tên Hoa</strong> giảm 0.9s, đồng thời khi đánh trúng kẻ địch sẽ sản sinh thêm 1 Mũi Tên Bung Tỏa, gây lượng sát thương bằng 150% tấn công của Tighnari."
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Crepuscolo tenue",
+  "description": {
+    "0": "Un arco prezioso fatto di platino, con incastonata una sfera che brilla della luce della sera."
+  },
+  "passiveName": "Bagliore delle profondità",
+  "passiveDescription": {
+    "0": {
+      "0": "Ha tre stati: Vesprolume, Crepuscoluce e Ardiaurora, che aumentano i DAN inflitti rispettivamente di un <cryo>6%/10%/14%</cryo>. Quando gli attacchi vanno a segno, quest'arma passa allo stato successivo. L'arma può cambiare stato ogni 7 s e anche quando il personaggio che la utilizza non è in campo."
+    },
+    "1": {
+      "0": "Ha tre stati: Vesprolume, Crepuscoluce e Ardiaurora, che aumentano i DAN inflitti rispettivamente di un <cryo>7,5%/12,5%/17,5%</cryo>. Quando gli attacchi vanno a segno, quest'arma passa allo stato successivo. L'arma può cambiare stato ogni 7 s e anche quando il personaggio che la utilizza non è in campo."
+    },
+    "2": {
+      "0": "Ha tre stati: Vesprolume, Crepuscoluce e Ardiaurora, che aumentano i DAN inflitti rispettivamente di un <cryo>9%/15%/21%</cryo>. Quando gli attacchi vanno a segno, quest'arma passa allo stato successivo. L'arma può cambiare stato ogni 7 s e anche quando il personaggio che la utilizza non è in campo."
+    },
+    "3": {
+      "0": "Ha tre stati: Vesprolume, Crepuscoluce e Ardiaurora, che aumentano i DAN inflitti rispettivamente di un <cryo>10,5%/17,5%/24,5%</cryo>. Quando gli attacchi vanno a segno, quest'arma passa allo stato successivo. L'arma può cambiare stato ogni 7 s e anche quando il personaggio che la utilizza non è in campo."
+    },
+    "4": {
+      "0": "Ha tre stati: Vesprolume, Crepuscoluce e Ardiaurora, che aumentano i DAN inflitti rispettivamente di un <cryo>12%/20%/28%</cryo>. Quando gli attacchi vanno a segno, quest'arma passa allo stato successivo. L'arma può cambiare stato ogni 7 s e anche quando il personaggio che la utilizza non è in campo."
+    }
+  }
+}

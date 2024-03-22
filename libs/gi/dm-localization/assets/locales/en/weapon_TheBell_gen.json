@@ -1,0 +1,24 @@
+{
+  "name": "The Bell",
+  "description": {
+    "0": "A heavy greatsword. A clock is embedded within it, though its internal mechanisms have long been damaged."
+  },
+  "passiveName": "Rebellious Guardian",
+  "passiveDescription": {
+    "0": {
+      "0": "Taking DMG generates a shield which absorbs DMG up to <cryo>20%</cryo> of Max HP. This shield lasts for 10s or until broken, and can only be triggered once every <cryo>45</cryo>s. While protected by a shield, the character gains <cryo>12%</cryo> increased DMG."
+    },
+    "1": {
+      "0": "Taking DMG generates a shield which absorbs DMG up to <cryo>23%</cryo> of Max HP. This shield lasts for 10s or until broken, and can only be triggered once every <cryo>45</cryo>s. While protected by a shield, the character gains <cryo>15%</cryo> increased DMG."
+    },
+    "2": {
+      "0": "Taking DMG generates a shield which absorbs DMG up to <cryo>26%</cryo> of Max HP. This shield lasts for 10s or until broken, and can only be triggered once every <cryo>45</cryo>s. While protected by a shield, the character gains <cryo>18%</cryo> increased DMG."
+    },
+    "3": {
+      "0": "Taking DMG generates a shield which absorbs DMG up to <cryo>29%</cryo> of Max HP. This shield lasts for 10s or until broken, and can only be triggered once every <cryo>45</cryo>s. While protected by a shield, the character gains <cryo>21%</cryo> increased DMG."
+    },
+    "4": {
+      "0": "Taking DMG generates a shield which absorbs DMG up to <cryo>32%</cryo> of Max HP. This shield lasts for 10s or until broken, and can only be triggered once every <cryo>45</cryo>s. While protected by a shield, the character gains <cryo>24%</cryo> increased DMG."
+    }
+  }
+}

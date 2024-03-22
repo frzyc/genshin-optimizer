@@ -1,0 +1,87 @@
+{
+  "normal": {
+    "hit1": "1-Hit DMG",
+    "hit2": "2-Hit DMG",
+    "hit3": "3-Hit DMG",
+    "hit4": "4-Hit DMG",
+    "hit5": "5-Hit DMG",
+    "hit6": "6-Hit DMG"
+  },
+  "charged": {
+    "dmg": "Charged Attack DMG",
+    "spinning": "Charged Attack Cyclic DMG",
+    "final": "Charged Attack Final DMG",
+    "stamina": "Charged Attack Stamina Cost",
+    "aimed": "Aimed Shot",
+    "fullyAimed": "Fully-Charged Aimed Shot"
+  },
+  "plunging": {
+    "dmg": "Plunge DMG",
+    "low": "Low Plunge DMG",
+    "high": "High Plunge DMG"
+  },
+  "maxDuration": "Max Duration",
+  "maxStacks": "Maximum Stacks",
+  "skillDMG": "Skill DMG",
+  "burstDMG": "Burst DMG",
+  "dmgAbsorption": "Shield DMG Absorption",
+  "healing": "Healing",
+  "contHealing": "Continuous Healing",
+  "duration": "Duration",
+  "cd": "CD",
+  "energyCost": "Energy Cost",
+  "energyRegen": "Energy Regeneration",
+  "baseDMG": "Base DMG",
+  "dot": "DoT",
+  "addEleDMG": "Additional Elemental DMG",
+  "hpRegenPerHit": "HP Regeneration Per Hit",
+  "press": {
+    "dmg": "Press DMG",
+    "cd": "Press CD"
+  },
+  "hold": {
+    "dmg": "Hold DMG",
+    "cd": "Hold CD"
+  },
+  "element": {
+    "anemo": "Anemo",
+    "geo": "Geo",
+    "pyro": "Pyro",
+    "hydro": "Hydro",
+    "cryo": "Cryo",
+    "electro": "Electro",
+    "dendro": "Dendro"
+  },
+  "reaction": {
+    "swirl": "Swirl",
+    "crystallize": "Crystallize",
+    "overloaded": "Overloaded",
+    "electrocharged": "Electro-Charged",
+    "superconduct": "Superconduct",
+    "vaporize": "Vaporize",
+    "melt": "Melt",
+    "bloom": "Bloom",
+    "burgeon": "Burgeon",
+    "hyperbloom": "Hyperbloom",
+    "quicken": "Quicken",
+    "aggravate": "Aggravate",
+    "spread": "Spread"
+  },
+  "stat": {
+    "def": "DEF",
+    "base": {
+      "atk": "Base ATK"
+    }
+  },
+  "constellationLvl": "Constellation Lv. {{level}}",
+  "talentLvl": "Talent Lv. {{level}}",
+  "talents": {
+    "auto": "Normal Attack",
+    "skill": "Elemental Skill",
+    "burst": "Elemental Burst",
+    "altSprint": "Alternate Sprint"
+  },
+  "unlockPassive1": "Unlocks at Character Ascension Phase 1",
+  "unlockPassive2": "Unlocks at Character Ascension Phase 4",
+  "unlockPassive3": "Passive Talent"
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Thương Long Tích",
+  "description": {
+    "0": "Trường thương được chế tạo từ răng rồng. Có một cảm giác ấm áp kỳ lạ."
+  },
+  "passiveName": "Sương Táng",
+  "passiveDescription": {
+    "0": {
+      "0": "Khi tấn công thường và trọng kích đánh trúng kẻ địch có tỷ lệ <cryo>60%</cryo> tạo ra Đá Vĩnh Hằng phía trên kẻ địch và rơi xuống, gây sát thương phạm vi bằng <cryo>80%</cryo> tấn công. Nếu địch bị ảnh hưởng bởi nguyên tố Băng, sẽ gây sát thương bằng <cryo>200%</cryo> tấn công. Hiệu quả này mỗi 10s kích hoạt 1 lần."
+    },
+    "1": {
+      "0": "Khi tấn công thường và trọng kích đánh trúng kẻ địch có tỷ lệ <cryo>70%</cryo> tạo ra Đá Vĩnh Hằng phía trên kẻ địch và rơi xuống, gây sát thương phạm vi bằng <cryo>95%</cryo> tấn công. Nếu địch bị ảnh hưởng bởi nguyên tố Băng, sẽ gây sát thương bằng <cryo>240%</cryo> tấn công. Hiệu quả này mỗi 10s kích hoạt 1 lần."
+    },
+    "2": {
+      "0": "Khi tấn công thường và trọng kích đánh trúng kẻ địch có tỷ lệ <cryo>80%</cryo> tạo ra Đá Vĩnh Hằng phía trên kẻ địch và rơi xuống, gây sát thương phạm vi bằng <cryo>110%</cryo> tấn công. Nếu địch bị ảnh hưởng bởi nguyên tố Băng, sẽ gây sát thương bằng <cryo>280%</cryo> tấn công. Hiệu quả này mỗi 10s kích hoạt 1 lần."
+    },
+    "3": {
+      "0": "Khi tấn công thường và trọng kích đánh trúng kẻ địch có tỷ lệ <cryo>90%</cryo> tạo ra Đá Vĩnh Hằng phía trên kẻ địch và rơi xuống, gây sát thương phạm vi bằng <cryo>125%</cryo> tấn công. Nếu địch bị ảnh hưởng bởi nguyên tố Băng, sẽ gây sát thương bằng <cryo>320%</cryo> tấn công. Hiệu quả này mỗi 10s kích hoạt 1 lần."
+    },
+    "4": {
+      "0": "Khi tấn công thường và trọng kích đánh trúng kẻ địch có tỷ lệ <cryo>100%</cryo> tạo ra Đá Vĩnh Hằng phía trên kẻ địch và rơi xuống, gây sát thương phạm vi bằng <cryo>140%</cryo> tấn công. Nếu địch bị ảnh hưởng bởi nguyên tố Băng, sẽ gây sát thương bằng <cryo>360%</cryo> tấn công. Hiệu quả này mỗi 10s kích hoạt 1 lần."
+    }
+  }
+}

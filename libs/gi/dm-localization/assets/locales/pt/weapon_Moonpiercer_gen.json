@@ -1,0 +1,24 @@
+{
+  "name": "Perfurador de Luas",
+  "description": {
+    "0": "Uma arma obtida através de uma das histórias dos Aranara. Ela tomou a forma de uma flecha gigantesca e pode ser usada como uma lança."
+  },
+  "passiveName": "Sombra da Lua na Floresta",
+  "passiveDescription": {
+    "0": {
+      "0": "Após desencadear Queimadura, Aceleração, Intensificação, Propagação, Florescimento, Superflorescimento ou Germinação, uma Folha do Renascimento será criada em volta do personagem por no máximo 10s. Quando coletada, a Folha do Renascimento aumentará o ATQ do personagem em <cryo>16%</cryo> por 12s. Apenas 1 Folha pode ser criada dessa forma a cada 20s. Esse efeito ainda pode ser desencadeado mesmo se o personagem não estiver em campo."
+    },
+    "1": {
+      "0": "Após desencadear Queimadura, Aceleração, Intensificação, Propagação, Florescimento, Superflorescimento e Germinação, uma Folha do Renascimento será criada em volta do personagem por no máximo 10s. Quando coletada, a Folha do Renascimento aumentará o ATQ do personagem em <cryo>20%</cryo> por 12s. Apenas 1 Folha pode ser criada dessa forma a cada 20s. Esse efeito ainda pode ser desencadeado mesmo se o personagem não estiver em campo."
+    },
+    "2": {
+      "0": "Após desencadear Queimadura, Aceleração, Intensificação, Propagação, Florescimento, Superflorescimento e Germinação, uma Folha do Renascimento será criada em volta do personagem por no máximo 10s. Quando coletada, a Folha do Renascimento aumentará o ATQ do personagem em <cryo>24%</cryo> por 12s. Apenas 1 Folha pode ser criada dessa forma a cada 20s. Esse efeito ainda pode ser desencadeado mesmo se o personagem não estiver em campo."
+    },
+    "3": {
+      "0": "Após desencadear Queimadura, Aceleração, Intensificação, Propagação, Florescimento, Superflorescimento e Germinação, uma Folha do Renascimento será criada em volta do personagem por no máximo 10s. Quando coletada, a Folha do Renascimento aumentará o ATQ do personagem em <cryo>28%</cryo> por 12s. Apenas 1 Folha pode ser criada dessa forma a cada 20s. Esse efeito ainda pode ser desencadeado mesmo se o personagem não estiver em campo."
+    },
+    "4": {
+      "0": "Após desencadear Queimadura, Aceleração, Intensificação, Propagação, Florescimento, Superflorescimento e Germinação, uma Folha do Renascimento será criada em volta do personagem por no máximo 10s. Quando coletada, a Folha do Renascimento aumentará o ATQ do personagem em <cryo>32%</cryo> por 12s. Apenas 1 Folha pode ser criada dessa forma a cada 20s. Esse efeito ainda pode ser desencadeado mesmo se o personagem não estiver em campo."
+    }
+  }
+}

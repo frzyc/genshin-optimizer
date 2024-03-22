@@ -1,0 +1,24 @@
+{
+  "name": "Tragbare motorisierte Säge",
+  "description": {
+    "0": "Diese alte Motorsäge sieht man heute fast nirgends mehr, aber einst diente sie Arbeitern als zuverlässiges Werkzeug."
+  },
+  "passiveName": "Seemannslied",
+  "passiveDescription": {
+    "0": {
+      "0": "Verleiht der Figur bei erhaltener Heilung, oder wenn sie jemanden heilt, ein Zeichen der Beharrlichkeit, hält 30 s. Es können max. bis zu 3 Zeichen der Beharrlichkeit vorhanden sein. Verbraucht beim Auslösen der Elementarfähigkeit oder der Spezialfähigkeit alle Zeichen der Beharrlichkeit und löst den Effekt „Erhabenheit“ aus, der 10 s hält: Jedes verbrauchte Zeichen der Beharrlichkeit erhöht die Elementarkunde um <cryo>40</cryo> Punkte. Außerdem stellt jedes verbrauchte Zeichen dem Träger 2 s nach Auslösen des Effekts <cryo>2</cryo> Punkte Elementarenergie wieder her. 15 s Abklingzeit für den Effekt „Erhabenheit“. Zeichen der Beharrlichkeit können auch erhalten werden, wenn die Figur inaktiv in der Truppe ist."
+    },
+    "1": {
+      "0": "Verleiht der Figur bei erhaltener Heilung, oder wenn sie jemanden heilt, ein Zeichen der Beharrlichkeit, hält 30 s. Es können max. bis zu 3 Zeichen der Beharrlichkeit vorhanden sein. Verbraucht beim Auslösen der Elementarfähigkeit oder der Spezialfähigkeit alle Zeichen der Beharrlichkeit und löst den Effekt „Erhabenheit“ aus, der 10 s hält: Jedes verbrauchte Zeichen der Beharrlichkeit erhöht die Elementarkunde um <cryo>50</cryo> Punkte. Außerdem stellt jedes verbrauchte Zeichen dem Träger 2 s nach Auslösen des Effekts <cryo>2,5</cryo> Punkte Elementarenergie wieder her. 15 s Abklingzeit für den Effekt „Erhabenheit“. Zeichen der Beharrlichkeit können auch erhalten werden, wenn die Figur inaktiv in der Truppe ist."
+    },
+    "2": {
+      "0": "Verleiht der Figur bei erhaltener Heilung, oder wenn sie jemanden heilt, ein Zeichen der Beharrlichkeit, hält 30 s. Es können max. bis zu 3 Zeichen der Beharrlichkeit vorhanden sein. Verbraucht beim Auslösen der Elementarfähigkeit oder der Spezialfähigkeit alle Zeichen der Beharrlichkeit und löst den Effekt „Erhabenheit“ aus, der 10 s hält: Jedes verbrauchte Zeichen der Beharrlichkeit erhöht die Elementarkunde um <cryo>60</cryo> Punkte. Außerdem stellt jedes verbrauchte Zeichen dem Träger 2 s nach Auslösen des Effekts <cryo>3</cryo> Punkte Elementarenergie wieder her. 15 s Abklingzeit für den Effekt „Erhabenheit“. Zeichen der Beharrlichkeit können auch erhalten werden, wenn die Figur inaktiv in der Truppe ist."
+    },
+    "3": {
+      "0": "Verleiht der Figur bei erhaltener Heilung, oder wenn sie jemanden heilt, ein Zeichen der Beharrlichkeit, hält 30 s. Es können max. bis zu 3 Zeichen der Beharrlichkeit vorhanden sein. Verbraucht beim Auslösen der Elementarfähigkeit oder der Spezialfähigkeit alle Zeichen der Beharrlichkeit und löst den Effekt „Erhabenheit“ aus, der 10 s hält: Jedes verbrauchte Zeichen der Beharrlichkeit erhöht die Elementarkunde um <cryo>70</cryo> Punkte. Außerdem stellt jedes verbrauchte Zeichen dem Träger 2 s nach Auslösen des Effekts <cryo>3,5</cryo> Punkte Elementarenergie wieder her. 15 s Abklingzeit für den Effekt „Erhabenheit“. Zeichen der Beharrlichkeit können auch erhalten werden, wenn die Figur inaktiv in der Truppe ist."
+    },
+    "4": {
+      "0": "Verleiht der Figur bei erhaltener Heilung, oder wenn sie jemanden heilt, ein Zeichen der Beharrlichkeit, hält 30 s. Es können max. bis zu 3 Zeichen der Beharrlichkeit vorhanden sein. Verbraucht beim Auslösen der Elementarfähigkeit oder der Spezialfähigkeit alle Zeichen der Beharrlichkeit und löst den Effekt „Erhabenheit“ aus, der 10 s hält: Jedes verbrauchte Zeichen der Beharrlichkeit erhöht die Elementarkunde um <cryo>80</cryo> Punkte. Außerdem stellt jedes verbrauchte Zeichen dem Träger 2 s nach Auslösen des Effekts <cryo>4</cryo> Punkte Elementarenergie wieder her. 15 s Abklingzeit für den Effekt „Erhabenheit“. Zeichen der Beharrlichkeit können auch erhalten werden, wenn die Figur inaktiv in der Truppe ist."
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Rito do Fluxo Eterno",
+  "description": {
+    "0": "Um manual passado de geração em geração num centro de treinamento submarino. Hoje, ninguém sabe da sua existência."
+  },
+  "passiveName": "Ondas de Eras Passadas",
+  "passiveDescription": {
+    "0": {
+      "0": "Aumenta a Vida em <cryo>16%</cryo>. Quando a Vida atual aumentar ou cair, aumenta o Dano do Ataque Carregado em <cryo>14%</cryo>. Esse efeito dura 4s, pode ser acumulado até 3 vezes e desencadeado uma vez a cada 0.3s. Ao possuir 3 acúmulos ou quando redefinir a duração dos 3 acúmulos, regenera <cryo>8</cryo> de Energia Elemental. É possível regenerar Energia Elemental uma vez a cada 12s dessa forma."
+    },
+    "1": {
+      "0": "Aumenta a Vida em <cryo>20%</cryo>. Quando a Vida atual aumentar ou cair, aumenta o Dano do Ataque Carregado em <cryo>18%</cryo>. Esse efeito dura 4s, pode ser acumulado até 3 vezes e desencadeado uma vez a cada 0.3s. Ao possuir 3 acúmulos ou quando redefinir a duração dos 3 acúmulos, regenera <cryo>9</cryo> de Energia Elemental. É possível regenerar Energia Elemental uma vez a cada 12s dessa forma."
+    },
+    "2": {
+      "0": "Aumenta a Vida em <cryo>24%</cryo>. Quando a Vida atual aumentar ou cair, aumenta o Dano do Ataque Carregado em <cryo>22%</cryo>. Esse efeito dura 4s, pode ser acumulado até 3 vezes e desencadeado uma vez a cada 0.3s. Ao possuir 3 acúmulos ou quando redefinir a duração dos 3 acúmulos, regenera <cryo>10</cryo> de Energia Elemental. É possível regenerar Energia Elemental uma vez a cada 12s dessa forma."
+    },
+    "3": {
+      "0": "Aumenta a Vida em <cryo>28%</cryo>. Quando a Vida atual aumentar ou cair, aumenta o Dano do Ataque Carregado em <cryo>26%</cryo>. Esse efeito dura 4s, pode ser acumulado até 3 vezes e desencadeado uma vez a cada 0.3s. Ao possuir 3 acúmulos ou quando redefinir a duração dos 3 acúmulos, regenera <cryo>11</cryo> de Energia Elemental. É possível regenerar Energia Elemental uma vez a cada 12s dessa forma."
+    },
+    "4": {
+      "0": "Aumenta a Vida em <cryo>32%</cryo>. Quando a Vida atual aumentar ou cair, aumenta o Dano do Ataque Carregado em <cryo>30%</cryo>. Esse efeito dura 4s, pode ser acumulado até 3 vezes e desencadeado uma vez a cada 0.3s. Ao possuir 3 acúmulos ou quando redefinir a duração dos 3 acúmulos, regenera <cryo>12</cryo> de Energia Elemental. É possível regenerar Energia Elemental uma vez a cada 12s dessa forma."
+    }
+  }
+}

@@ -1,0 +1,166 @@
+{
+  "name": "Charlotte",
+  "title": "Hakikatin Merceği",
+  "description": "Buğukuş'un her zaman \"gerçeğin\" peşinde koşan ve asla yorulmak bilmeyen muhabiri.",
+  "constellationName": "Gerçeklerin Aynası",
+  "auto": {
+    "name": "Soğuk Renk Fotoğrafçılığı",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Saldırı</strong>",
+        "1": "Charlotte, özel Kamerası Mösyö Verite ile hedefe nişan alarak <cryo>Buz Hasarı</cryo> veren art arda 3 saldırı yapar."
+      },
+      "charged": {
+        "0": "<strong>Yüklü Saldırı</strong>",
+        "1": "Belirli bir miktar Dayanıklılık tüketir ve bir süre hazırlandıktan sonra Mösyö Verite'yi kullanarak <cryo>Buz Alan Hasarı</cryo> verir."
+      },
+      "plunging": {
+        "0": "<strong>Havadan Saldırı</strong>",
+        "1": "Charlotte, Buzun gücünü toplayarak yere doğru atılır ve yoluna çıkan tüm düşmanlara Hasar verir, yere indiğinde de <cryo>Buz Alan Hasarı</cryo> verir."
+      },
+      "arkhe": {
+        "0": "<strong>Arkhe: Ruh</strong>",
+        "1": "Belirli aralıklarla Charlotte'un Yüklü Saldırıları düşmanları delen ve Ruh tesirli <cryo>Buz Alan Hasarı</cryo> veren bir Ruh Nefesi Dikeni indirir."
+      }
+    },
+    "skillParams": {
+      "0": "1 Vuruş Hasarı",
+      "1": "2 Vuruş Hasarı",
+      "2": "3 Vuruş Hasarı",
+      "3": "Yüklü Saldırı Hasarı",
+      "4": "Yüklü Saldırı Dayanıklılık Maliyeti",
+      "5": "Havadan Saldırı Hasarı",
+      "6": "Havadan Saldırı Hasarı (Alçaktan/Yüksekten)",
+      "7": "Ruh Nefesi Dikeni Hasarı",
+      "8": "Ruh Nefesi Dikeni Hasar Aralığı",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Kadraj: Dondurma Tekniği",
+    "description": {
+      "0": "Charlotte, usta gazeteci içgüdüleriyle fotoğrafçılık hünerlerini kullanır ve becerisine Dokunulduğunda veya Basılı Tutulduğunda farklı etkiler ortaya çıkarır.",
+      "1": "<br/>",
+      "2": "<strong>Dokun</strong>",
+      "3": "Mösyö Verite ile bir fotoğraf çekerek önündeki düşmanlara <cryo>Buz Alan Hasarı</cryo> verir ve en fazla 5 düşmana Anlık Silüet etkisi uygular. Etkilenen düşmanlara bu etki süresince belirli aralıklarla <cryo>Buz Hasarı</cryo> verir.",
+      "4": "<br/>",
+      "5": "<strong>Basılı Tut</strong>",
+      "6": "Charlotte, Mösyö Verite'nin vizörünü açarak Kompozisyon Moduna girer ve basılı tutulduğunda Son Kare durumuna ulaşıncaya kadar vizör genişlemeye devam eder. Charlotte bu süre içinde hareket edebilir ve yönünü değiştirebilir.",
+      "7": "Basılı tutma durumu sona erdiğinde Mösyö Verite, vizörde hedeflenmiş tüm düşmanlara <cryo>Buz Hasarı</cryo> verir ve Dokunma Modunda olduğu gibi onlara Anlık Silüet etkisi uygular. Bu beceri Son Kare durumuna ulaştıktan sonra serbest bırakıldığında Odak İzlenimi uygulanır. Bu durum daha uzun sürer ve daha fazla Hasar verir ancak Beceri Bekleme Süresi daha uzun olur.",
+      "8": "Kompozisyon Modu en fazla 15 saniye sürer ve en fazla 5 düşman seçilebilir.",
+      "9": "<br/>",
+      "10": "<i>\"Basın fotoğrafçılığında basit konuları mükemmel bir zamanlamayla yakalamak gerekir ancak en önemlisi anı yakalayabilmek!\"</i>"
+    },
+    "skillParams": {
+      "0": "Fotoğraf Hasarı (Basma)",
+      "1": "Fotoğraf Hasarı (Basılı Tutma)",
+      "2": "\"Anlık Silüet\" İşareti Hasarı",
+      "3": "\"Anlık Silüet\" İşareti Tetikleme Aralığı",
+      "4": "\"Anlık Silüet\" İşareti Süresi",
+      "5": "\"Odak İzlenimi\" İşareti Hasarı",
+      "6": "\"Odak İzlenimi\" İşareti Tetikleme Aralığı",
+      "7": "\"Odak İzlenimi\" İşareti Süresi",
+      "8": "BS",
+      "9": "Son Kare BS",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Sabit Fotoğraf: Tam Doğrulama",
+    "description": {
+      "0": "Charlotte, Buğukuş'un imzasını oluşturmak için buzu yoğunlaştırıp <cryo>Buz Alan Hasarı</cryo> veren bir Önemli Haber Alanı oluşturur ve Saldırısına göre yakındaki tüm grup üyelerine Can yeniler.",
+      "1": "<strong>Önemli Haber Alanı</strong>",
+      "2": [
+        "Bu beceri etkinken Mösyö Verite belirli aralıklarla kendi Etki Alanı içindeki düşmanlara <cryo>Buz Hasarı</cryo> verir.",
+        "Charlotte'un Saldırısına göre sürekli olarak Etki Alanındaki aktif karakterlere Can yeniler."
+      ],
+      "3": "<br/>",
+      "4": "<i>\"Gerçekte ne olduğunu anlamak için olayı farklı bakış açılarından dinlemek iyi bir haber yapma konusunda en önemli unsurdur... Yani haberini kaleme almak için hangi bakış açısını seçeceğine ancak bu şekilde karar verebilirsin!\"</i>"
+    },
+    "skillParams": {
+      "0": "Anlık İyileştirme",
+      "1": "Beceri Hasarı",
+      "2": "Kamera Sürekli Yenilenme",
+      "3": "Kamera Hasarı",
+      "4": "Önemli Haber Alan Süresi",
+      "5": "BS",
+      "6": "Enerji Maliyeti",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Anı Yakala",
+    "description": {
+      "0": "\"Odak İzlenimi\" tarafından işaretlenmiş düşmanlar yenildiklerinde <strong>Kadraj: Dondurma Tekniğinin</strong> Bekleme Süresi 2 saniye azalır. Bekleme Süresi azalması her 12 saniyede 4 defa tetiklenebilir."
+    }
+  },
+  "passive2": {
+    "name": "Kültürel Çeşitlilik",
+    "description": {
+      "0": "Grupta kendisi dışında Fontaineli 1/2/3 karakter varsa Charlotte, %5/%10/%15 İyileştirme Bonusu kazanır. Grupta Fontaineli olmayan 1/2/3 karakter varsa Charlotte, %5/%10/%15 Buz Hasarı Bonusu kazanır."
+    }
+  },
+  "passive3": {
+    "name": "Birinci Şahıs Fotoğrafçı",
+    "description": {
+      "0": "Özel Analiz Lensini etkinleştirdikten sonra Charlotte'un \"Kadraj: Dondurma Tekniğinin\" Basılı Tutma Modu asıl etkileri tetikleyemez ancak onun daha özel yöntemlerle fotoğraf çekmesine izin verir..."
+    }
+  },
+  "constellation1": {
+    "name": "Gerçeği Doğrulama Dürtüsü",
+    "description": {
+      "0": "<strong>Sabit Fotoğraf: Tam Doğrulama</strong> bir karakteri iyileştirdikten sonra onu her 2 saniyede bir Charlotte'un Saldırısının %80'i kadar iyileştiren Teyit ile işaretler. Bu etki 6 saniye sürer."
+    }
+  },
+  "constellation2": {
+    "name": "Daima Gerçeğin Peşinde",
+    "description": {
+      "0": "<strong>Kadraj: Dondurma Tekniği</strong> kullanırken Mösyö Verite 1/2/3 veya daha fazla düşmana vurduğunda 12 saniyeliğine Charlotte'un kendi Saldırısı %10/%20/%30 artar."
+    }
+  },
+  "constellation3": {
+    "name": "Bağımsızlık Vazgeçilmezdir",
+    "description": {
+      "0": "<strong>Sabit Fotoğraf: Tam Doğrulama</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation4": {
+    "name": "Yönetim Sorumluluğu",
+    "description": {
+      "0": "<strong>Sabit Fotoğraf: Tam Doğrulama</strong>, Anlık Silüet veya Odak İzlenimi tarafından işaretlenmiş bir düşmana vurduğunda %10 daha fazla Hasar verir ve Charlotte'a 2 Enerji yeniler. Bu yenileme her 20 saniyede 5 defa tetiklenebilir."
+    }
+  },
+  "constellation5": {
+    "name": "Vicdan Meselesi",
+    "description": {
+      "0": "<strong>Kadraj: Dondurma Tekniği</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation6": {
+    "name": "İlginç Noktalar",
+    "description": {
+      "0": "Aktif karakterin Normal ve Yüklü Saldırıları <strong>Kadraj: Dondurma Tekniğinin</strong> Odak İzlenimi tarafından işaretlenmiş bir düşmana vurduğunda Mösyö Verite, Charlotte'un Saldırısının %180'i kadar <cryo>Buz Alan Hasarı</cryo> veren ve Etki Alanı içindeki karakterleri Charlotte'un Saldırısının %42'si kadar iyileştiren bir ortak saldırı yapar. Bu etki 6 saniyede bir tetiklenebilir. Bu şekilde verilen Hasar ve iyileştirme Charlotte'un Element Patlaması tarafından yapılmış sayılır."
+    }
+  }
+}

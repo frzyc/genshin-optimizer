@@ -1,0 +1,163 @@
+{
+  "name": "Fischl",
+  "title": "Prinzessin der Verurteilung!",
+  "description": "Una ragazza misteriosa che si fa chiamare Prinzessin der Verurteilung e che viaggia in compagnia di un corvo di nome Oz.",
+  "constellationName": "Corvus",
+  "auto": {
+    "name": "Cascata di dardi",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attacco normale</strong>",
+        "1": "Effettua fino a 5 tiri consecutivi con un arco."
+      },
+      "charged": {
+        "0": "<strong>Attacco caricato</strong>",
+        "1": "Effettua un <strong>attacco mirato</strong> ancora più preciso con DAN aumentati.",
+        "2": "Mentre mira, gli spiriti oscuri del fulmine dell'Immernachtreich rispondono alla chiamata della loro Prinzessin per albergare nella punta incantata della freccia. Se caricato completamente, il Rachsüchtig Blitz infligge immensi <electro>DAN da Electro</electro>."
+      },
+      "plunging": {
+        "0": "<strong>Attacco in picchiata</strong>",
+        "1": "Scocca una pioggia di frecce a mezz'aria prima di cadere e colpire il suolo, infliggendo DAN ad area all'impatto."
+      }
+    },
+    "skillParams": {
+      "0": "DAN da 1º colpo",
+      "1": "DAN da 2º colpo",
+      "2": "DAN da 3º colpo",
+      "3": "DAN da 4º colpo",
+      "4": "DAN da 5º colpo",
+      "5": "ATT mirato",
+      "6": "ATT mirato a piena carica",
+      "7": "DAN da ATT in picchiata",
+      "8": "DAN da ATT in picchiata basso/alto",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Guardiano della notte",
+    "description": {
+      "0": "Evoca Oz. Il corvo della notte forgiato di oscurità e fulmine scende in terra, infliggendo <electro>DAN da Electro</electro> in una piccola area d'effetto.",
+      "1": "Finché l'abilità è attiva, Oz attacca continuamente gli avversari vicini con i <electro>Freikugel</electro>.",
+      "2": "<br/>",
+      "3": "Tieni premuto per regolare la posizione in cui Oz sarà evocato.",
+      "4": "Premi di nuovo in qualsiasi momento nella durata dell'abilità per evocarlo di nuovo al fianco di Fischl.",
+      "5": "<br/>",
+      "6": "<i>\"Il mio tempo è preziosissimo e non lo sprecherò con gente come voi... Vai, Oz, lanciati e scaglia su di loro il tuo Rachsüchtig Blitz, il lampo che squarcia la lunga notte.\"</i>",
+      "7": "<i>—Fiori per la principessa Fischl (IV): Addio Frau Welt</i>"
+    },
+    "skillParams": {
+      "0": "DAN da ATT di Oz",
+      "1": "DAN da evocazione",
+      "2": "Durata Oz",
+      "3": "TdR",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Fantasmagoria di mezzanotte",
+    "description": {
+      "0": "Evoca Oz affinché dispieghi le sue ali gemelle del crepuscolo e difenda Fischl.",
+      "1": "Finché l'abilità è attiva, ha le seguenti proprietà:",
+      "2": [
+        " Fischl assume la forma di Oz, aumentando notevolmente la sua VEL di movimento;",
+        " colpisce gli avversari vicini con fulmini, infliggendo <electro>DAN da Electro</electro> agli avversari con cui entra in contatto. Ogni avversario si può colpire una sola volta;",
+        " al termine degli effetti di quest'abilità, Oz rimane sul campo di battaglia e attacca i nemici della sua Prinzessin. Se Oz è già sul campo di battaglia, questo ripristinerà la durata della sua permanenza."
+      ],
+      "3": "<br/>",
+      "4": "<i>\"...Nelle orde di bestie che seguono il sangue maledetto, solo il principe Nachtraben, che vide coi suoi occhi l'estinzione di migliaia di mondi, conosce la vera grandezza di lei. Perciò, le ali della notte che dispiega sono la sua eterna promessa di proteggere Sua Altezza Reale.\"</i>",
+      "5": "<i>—Fiori per la principessa Fischl (I): Dissoluzione finale</i>"
+    },
+    "skillParams": {
+      "0": "DAN da Pioggia di tuoni",
+      "1": "TdR",
+      "2": "Costo energia",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Predatore di stelle",
+    "description": {
+      "0": "Quando Fischl colpisce Oz con un attacco mirato a piena carica, Oz scaglia una Folgore del castigo, infliggendo <electro>DAN da Electro ad area</electro> pari a un 152,7% dei DAN della freccia."
+    }
+  },
+  "passive2": {
+    "name": "Supplizio dei peccatori",
+    "description": {
+      "0": "Se il tuo personaggio attivo innesca una <electro>reazione elementale di Electro</electro> quando Oz è in campo, l'avversario viene colpito da una Folgore del castigo che infligge <electro>DAN da Electro</electro> pari a un 80% dell'ATT di Fischl."
+    }
+  },
+  "passive3": {
+    "name": "Mein Hausgarten",
+    "description": {
+      "0": "Quando intraprende una spedizione a Mondstadt, il tempo impiegato per portarla a termine si riduce di un 25%."
+    }
+  },
+  "constellation1": {
+    "name": "Occhio del corvo",
+    "description": {
+      "0": "Anche quando Oz non è attivo in combattimento, può sempre tenere d'occhio Fischl grazie ai suoi occhi di corvo. Quando Fischl effettua un attacco normale contro un avversario, Oz sferra un attacco coordinato, infliggendo DAN pari a un 22% dell'ATT di Fischl."
+    }
+  },
+  "constellation2": {
+    "name": "Piume del giudizio",
+    "description": {
+      "0": "Quando si usa <strong>Guardiano della notte</strong>, infligge DAN extra pari a un 200% dell'ATT, e l'area d'effetto aumenta del 50%."
+    }
+  },
+  "constellation3": {
+    "name": "Ali nere come la pece",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Guardiano della notte</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation4": {
+    "name": "Le fantasie della principessa",
+    "description": {
+      "0": "Quando si usa <strong>Fantasmagoria di mezzanotte</strong>, infligge agli avversari circostanti <electro>DAN da Electro</electro> pari a un 222% dell'ATT.",
+      "1": "Al termine della durata dell'abilità, Fischl rigenera un 20% dei suoi PS."
+    }
+  },
+  "constellation5": {
+    "name": "Favore delle tenebre",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Fantasmagoria di mezzanotte</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation6": {
+    "name": "Corvo dell'Immernacht",
+    "description": {
+      "0": "Estende di 2 s la durata della presenza di Oz sul campo. Inoltre, quando presente, Oz effettua un attacco coordinato con il tuo personaggio attivo, infliggendo <electro>DAN da Electro</electro> pari a un 30% dell'ATT di Fischl."
+    }
+  }
+}

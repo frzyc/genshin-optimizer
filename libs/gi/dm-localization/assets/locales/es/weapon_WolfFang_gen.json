@@ -1,0 +1,24 @@
+{
+  "name": "Colmillo Lupino",
+  "description": {
+    "0": "Cuenta la leyenda que esta era la espada que utilizaba el legendario caballero errante de un pasado muy remoto."
+  },
+  "passiveName": "Viento boreazulado",
+  "passiveDescription": {
+    "0": {
+      "0": "Aumenta en un <cryo>16%</cryo> el daño de la Habilidad Elemental y la Habilidad Definitiva. Tras golpear a un enemigo con la Habilidad Elemental, su Prob. CRIT aumenta en un <cryo>2%</cryo>, y tras golpearlo con la Habilidad Definitiva, la Prob. CRIT de esta habilidad aumenta en un <cryo>2%</cryo>. Cada uno de estos efectos dura 10 s, se puede acumular hasta 4 veces y se puede activar una vez cada 0.1 s."
+    },
+    "1": {
+      "0": "Aumenta en un <cryo>20%</cryo> el daño de la Habilidad Elemental y la Habilidad Definitiva. Tras golpear a un enemigo con la Habilidad Elemental, su Prob. CRIT aumenta en un <cryo>2.5%</cryo>, y tras golpearlo con la Habilidad Definitiva, la Prob. CRIT de esta habilidad aumenta en un <cryo>2.5%</cryo>. Cada uno de estos efectos dura 10 s, se puede acumular hasta 4 veces y se puede activar una vez cada 0.1 s."
+    },
+    "2": {
+      "0": "Aumenta en un <cryo>24%</cryo> el daño de la Habilidad Elemental y la Habilidad Definitiva. Tras golpear a un enemigo con la Habilidad Elemental, su Prob. CRIT aumenta en un <cryo>3%</cryo>, y tras golpearlo con la Habilidad Definitiva, la Prob. CRIT de esta habilidad aumenta en un <cryo>3%</cryo>. Cada uno de estos efectos dura 10 s, se puede acumular hasta 4 veces y se puede activar una vez cada 0.1 s."
+    },
+    "3": {
+      "0": "Aumenta en un <cryo>28%</cryo> el daño de la Habilidad Elemental y la Habilidad Definitiva. Tras golpear a un enemigo con la Habilidad Elemental, su Prob. CRIT aumenta en un <cryo>3.5%</cryo>, y tras golpearlo con la Habilidad Definitiva, la Prob. CRIT de esta habilidad aumenta en un <cryo>3.5%</cryo>. Cada uno de estos efectos dura 10 s, se puede acumular hasta 4 veces y se puede activar una vez cada 0.1 s."
+    },
+    "4": {
+      "0": "Aumenta en un <cryo>32%</cryo> el daño de la Habilidad Elemental y la Habilidad Definitiva. Tras golpear a un enemigo con la Habilidad Elemental, su Prob. CRIT aumenta en un <cryo>4%</cryo>, y tras golpearlo con la Habilidad Definitiva, la Prob. CRIT de esta habilidad aumenta en un <cryo>4%</cryo>. Cada uno de estos efectos dura 10 s, se puede acumular hasta 4 veces y se puede activar una vez cada 0.1 s."
+    }
+  }
+}

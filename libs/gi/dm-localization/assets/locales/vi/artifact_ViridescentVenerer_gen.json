@@ -1,0 +1,29 @@
+{
+  "setName": "Bóng Hình Màu Xanh",
+  "setEffects": {
+    "2": "Nhận 15% buff sát thương nguyên tố Phong.",
+    "4": "Sát thương phản ứng khuếch tán tạo thành tăng 60%. Dựa theo loại Nguyên Tố khuếch tán, giảm 40% kháng Nguyên Tố của kẻ địch bị ảnh hưởng, kéo dài 10s."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Hoa Ký Ức Đồng Xanh",
+      "desc": "Loài hoa dại từng mọc khắp nơi. Rời khỏi đất mẹ, được người thợ săn đeo trên ngực."
+    },
+    "plume": {
+      "name": "Lông Vũ Xanh Của Thợ Săn",
+      "desc": "Lông đuôi của mũi tên từng đâm xuyên qua thú săn. Hiện nay vẫn lấp lánh ánh sáng."
+    },
+    "sands": {
+      "name": "Thời Gian Của Thợ Săn",
+      "desc": "Khí cụ từng được người thợ săn mang theo mình, vĩnh viễn chỉ về con mồi."
+    },
+    "goblet": {
+      "name": "Vật Đựng Của Thợ Săn",
+      "desc": "Túi nước Thợ Săn Đồng Xanh từng dùng, dung lượng lớn hơn bạn nghĩ."
+    },
+    "circlet": {
+      "name": "Nón Thợ Săn",
+      "desc": "Nón từng thuộc về người Thợ Săn Đồng Xanh kiêu ngạo, xanh tươi giống như gió ngoài thảo nguyên."
+    }
+  }
+}

@@ -1,0 +1,163 @@
+{
+  "name": "Faruzan",
+  "title": "Einfallsreiche Mechanismen",
+  "description": "Eine Gelehrte von „vor hundert Jahren“, die sich gern als angesehene Gelehrte ausgibt und über umfangreiche Kenntnisse über alte Schriften und Vorrichtungen aller Arten verfügt.",
+  "constellationName": "Flosculi Implexi",
+  "auto": {
+    "name": "Drehschütze",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Standardangriff</strong>",
+        "1": "Führt bis zu 4 Pfeilschüsse hintereinander aus."
+      },
+      "charged": {
+        "0": "<strong>Heftiger Schlag</strong>",
+        "1": "Führt einen <strong>gezielten Schuss</strong> mit höherem Schaden und höherer Genauigkeit aus.",
+        "2": "Konzentriert den Wind während des Zielens an der Pfeilspitze, die voll aufgeladen <anemo>Anemo-Schaden</anemo> verursacht."
+      },
+      "plunging": {
+        "0": "<strong>Angriff aus dem Fall</strong>",
+        "1": "Schießt in der Luft einen Pfeilregen ab, trifft schnell auf dem Boden auf, greift alle Gegner in der Bahn an und verursacht beim Aufkommen Flächenschaden."
+      }
+    },
+    "skillParams": {
+      "0": "SCH Phase 1",
+      "1": "SCH Phase 2",
+      "2": "SCH Phase 3",
+      "3": "SCH Phase 4",
+      "4": "Gezielte Schüsse",
+      "5": "Voll aufgeladene gezielte Schüsse",
+      "6": "SCH beim Fallen",
+      "7": "SCH beim Fallen aus niedriger/großer Höhe",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Windreich von Nasamjnin",
+    "description": {
+      "0": "Faruzan setzt ein Polyeder ein, das den Gegnern in der Nähe <anemo>Anemo-Flächenschaden</anemo> zufügt, und erhält den Effekt „Offenbarung des Sturms“.",
+      "1": "In diesem Zustand verbraucht Faruzan den Effekt mit ihrem nächsten voll aufgeladenen gezielten Schuss und verwandelt den Schuss in einen Sturmpfeil, in dem Hochdruckströmungen herumwirbeln und welcher entsprechend der Schadenshöhe eines voll aufgeladenen gezielten Schusses von „Standardangriff: Drehschütze“ <anemo>Anemo-Schaden</anemo> verursacht.",
+      "2": "<br/>",
+      "3": "<strong>Stürmischer Einsturz</strong>",
+      "4": "Der Sturmpfeil löst am getroffenen Gegner oder der getroffenen Figur den Effekt „Stürmischer Einsturz“ aus. Dieser Effekt wird nach kurzer Zeit wieder entfernt und erzeugt einen Wirbel, der <anemo>Anemo-Flächenschaden</anemo> verursacht und Objekte sowie Gegner in der Nähe anzieht. Wenn kein Gegner und keine Figur getroffen wurde, tritt an der getroffenen Stelle der Effekt „Stürmischer Einsturz“ auf.",
+      "5": "Der durch den Wirbel verursachte Schaden gilt als Schaden der Elementarfähigkeit.",
+      "6": "<br/>",
+      "7": "<i>Sobald man die Barriere der Vorurteile beseitigt, wehen die Winde der Wahrheit im geistigen Garten der Wissenssuchenden.</i>"
+    },
+    "skillParams": {
+      "0": "Fähigkeits-SCH",
+      "1": "SCH durch Wirbel des Effekts „Stürmischer Einsturz“",
+      "2": "Dauer der Offenbarung des Sturms",
+      "3": "Abklingzeit",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Geheime Pfade der Winde",
+    "description": {
+      "0": "Faruzan setzt schnell ein „gleißendes Polyeder“ ein, das eine „Sturmwelle“ freisetzt und <anemo>Anemo-Flächenschaden</anemo> verursacht.",
+      "1": "Während der Wirkungsdauer bewegt sich das gleißende Polyeder fortlaufend in einer dreieckigen Flugbahn. Jedes Mal, wenn es die Spitze des Dreiecks erreicht, setzt es eine Sturmwelle frei.",
+      "2": "<br/>",
+      "3": "<strong>Sturmwelle</strong>",
+      "4": [
+        " Verleiht beim Freisetzen der Sturmwelle Gegnern in der Umgebung den Effekt „Betrübnis des perfiden Windes“: Verringert den <anemo>Anemo-WDS</anemo> der Gegner.",
+        " Verleiht beim Freisetzen der Sturmwelle allen Truppenmitgliedern in der Nähe den Effekt „Seligkeit des frommen Windes“: Verleiht ihnen <anemo>Anemo-SCH-Bonus</anemo>."
+      ],
+      "5": "<br/>",
+      "6": "<i>Respekt vor unbekanntem Wissen, das sich in alten Ruinen verbirgt, ist geboten.</i>"
+    },
+    "skillParams": {
+      "0": "Fähigkeits-SCH",
+      "1": "Anemo-SCH-Bonus",
+      "2": "Dauer der Seligkeit des frommen Windes",
+      "3": "Verringerung des Anemo-WDS",
+      "4": "Dauer der Betrübnis des perfiden Windes",
+      "5": "Dauer",
+      "6": "Abklingzeit",
+      "7": "Elementarenergie",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Ungestüme Böe",
+    "description": {
+      "0": "Befindet sich Faruzan im Zustand „Offenbarung des Sturms“ der Fähigkeit <strong>„Windreich von Nasamjnin“</strong>: Verringert die Aufladezeit für gezielte Schüsse um 60 % und verleiht den Gegnern, die vom Wirbel des Effekts „Stürmischer Einsturz“ getroffen sind, den Effekt „Betrübnis des perfiden Windes“ der Fähigkeit <strong>„Geheime Pfade der Winde“</strong>."
+    }
+  },
+  "passive2": {
+    "name": "Verlorenes Wissen der sieben Grotten",
+    "description": {
+      "0": "Wenn Figuren, die unter dem Effekt „Seligkeit des frommen Windes“ der Fähigkeit <strong>Geheime Pfade der Winde</strong> stehen, mit Standardangriffen, heftigen Schlägen, Angriffen aus dem Fall, Elementarfähigkeiten oder Spezialfähigkeiten Gegnern <anemo>Anemo-Schaden</anemo> zufügen, entsteht der Effekt Wirbelschutz: Erhöht den verursachten Schaden um 32 % des Basis-ANG von Faruzan. Dieser Effekt hat 0,8 s Abklingzeit. Dieser Effekt wird entfernt, nachdem die Dauer von „Seligkeit des frommen Windes“ abgelaufen ist oder einmal ausgelöst wurde."
+    }
+  },
+  "passive3": {
+    "name": "Den Weg erhellende Wälzer",
+    "description": {
+      "0": "Bringt bei 20-stündigen Erkundungsentsendungen in Sumeru 25 % mehr Belohnungen."
+    }
+  },
+  "constellation1": {
+    "name": "Pilgerin der Wahrheit",
+    "description": {
+      "0": "Faruzan kann während jeder einzelnen Dauer des Effekts „Offenbarung des Sturms“ der Fähigkeit <strong>„Windreich von Nasamjnin“</strong> durch voll aufgeladene gezielte Schüsse höchstens 2 Sturmpfeile freisetzen."
+    }
+  },
+  "constellation2": {
+    "name": "Eifer des Wissens",
+    "description": {
+      "0": "Verlängert die Dauer vom gleißenden Polyeder der Fähigkeit <strong>Geheime Pfade der Winde</strong> um 6 s."
+    }
+  },
+  "constellation3": {
+    "name": "Spaziergang durch den Garten des Gottes",
+    "description": {
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Windreich von Nasamjnin</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation4": {
+    "name": "Einsicht der Einmaligkeit",
+    "description": {
+      "0": "Der Wirbel der Fähigkeit <strong>Stürmischer Einsturz</strong> kann Faruzan Elementarenergie entsprechend der Anzahl der getroffenen Gegner wiederherstellen: Stellt Faruzan bei 1 getroffenen Gegner 2 Punkte Elementarenergie wieder her und stellt für jeden zusätzlichen getroffenen Gegner 0,5 Punkte Elementarenergie wieder her.",
+      "1": "Jeder Wirbel kann Faruzan auf diese Weise höchstens 4 Punkte Elementarenergie wiederherstellen."
+    }
+  },
+  "constellation5": {
+    "name": "Wunderland des Nachdenkens",
+    "description": {
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Geheime Pfade der Winde</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation6": {
+    "name": "Wundersamer Pfad der Wahrheit",
+    "description": {
+      "0": "Erhöht den KSCH des <anemo>Anemo-Schadens</anemo> durch die Figuren mit dem Effekt „Seligkeit des frommen Windes“ der Fähigkeit <strong>Geheime Pfade der Winde</strong> um 40 %. Verursacht die aktuelle Figur mit dem Effekt „Seligkeit des frommen Windes“ Schaden, wird dem getroffenen Gegner der Effekt „Stürmischer Einsturz“ verliehen, 3 s Abklingzeit, die Abklingzeit gilt für alle Truppenmitglieder gemeinsam."
+    }
+  }
+}

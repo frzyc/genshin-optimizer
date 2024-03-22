@@ -1,0 +1,24 @@
+{
+  "name": "Göçebenin Nota Kitabı",
+  "description": {
+    "0": "Notalarla dolu, büyük bir müzik defteri. Güveler ve zaman bu deftere çok acımasız davranmış olsa da, satırlarında bulunabilecek gücün eşi benzeri yok."
+  },
+  "passiveName": "Giriş Müziği",
+  "passiveDescription": {
+    "0": {
+      "0": "Karakter savaş alanına çıktığında, 10 saniyeliğine rastgele bir tema müziği kazanır. 30 saniyede bir uygulanabilir. Resital: Saldırı <cryo>%60</cryo> artar. Arya: Tüm Element Hasarlarını <cryo>%48</cryo> artırır. İntermezzo: Element Ustalığını <cryo>240</cryo> artırır."
+    },
+    "1": {
+      "0": "Karakter savaş alanına çıktığında, 10 saniyeliğine rastgele bir tema müziği kazanır. 30 saniyede bir uygulanabilir. Resital: Saldırı <cryo>%75</cryo> artar. Arya: Tüm Element Hasarlarını <cryo>%60</cryo> artırır. İntermezzo: Element Ustalığını <cryo>300</cryo> artırır."
+    },
+    "2": {
+      "0": "Karakter savaş alanına çıktığında, 10 saniyeliğine rastgele bir tema müziği kazanır. 30 saniyede bir uygulanabilir. Resital: Saldırı <cryo>%90</cryo> artar. Arya: Tüm Element Hasarlarını <cryo>%72</cryo> artırır. İntermezzo: Element Ustalığını <cryo>360</cryo> artırır."
+    },
+    "3": {
+      "0": "Karakter savaş alanına çıktığında, 10 saniyeliğine rastgele bir tema müziği kazanır. 30 saniyede bir uygulanabilir. Resital: Saldırı <cryo>%105</cryo> artar. Arya: Tüm Element Hasarlarını <cryo>%84</cryo> artırır. İntermezzo: Element Ustalığını <cryo>420</cryo> artırır."
+    },
+    "4": {
+      "0": "Karakter savaş alanına çıktığında, 10 saniyeliğine rastgele bir tema müziği kazanır. 30 saniyede bir uygulanabilir. Resital: Saldırı <cryo>%120</cryo> artar. Arya: Tüm Element Hasarlarını <cryo>%96</cryo> artırır. İntermezzo: Element Ustalığını <cryo>480</cryo> artırır."
+    }
+  }
+}

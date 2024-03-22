@@ -1,0 +1,24 @@
+{
+  "name": "Prototipo Ámbar",
+  "description": {
+    "0": "Un catalizador recubierto de oro guardado en secreto en la Forja Peñasco Oscuro. Parece brillar con la misma luz del cielo."
+  },
+  "passiveName": "Dorado",
+  "passiveDescription": {
+    "0": {
+      "0": "Tras lanzar una Habilidad Definitiva, regenera <cryo>4</cryo> pts. de Energía Elemental cada 2 s durante 6 s. Además, todos los miembros del equipo recuperarán un <cryo>4%</cryo> de Vida cada 2 s."
+    },
+    "1": {
+      "0": "Tras lanzar una Habilidad Definitiva, regenera <cryo>4.5</cryo> pts. de Energía Elemental cada 2 s durante 6 s. Además, todos los miembros del equipo recuperarán un <cryo>4.5%</cryo> de Vida cada 2 s."
+    },
+    "2": {
+      "0": "Tras lanzar una Habilidad Definitiva, regenera <cryo>5</cryo> pts. de Energía Elemental cada 2 s durante 6 s. Además, todos los miembros del equipo recuperarán un <cryo>5%</cryo> de Vida cada 2 s."
+    },
+    "3": {
+      "0": "Tras lanzar una Habilidad Definitiva, regenera <cryo>5.5</cryo> pts. de Energía Elemental cada 2 s durante 6 s. Además, todos los miembros del equipo recuperarán un <cryo>5.5%</cryo> de Vida cada 2 s."
+    },
+    "4": {
+      "0": "Tras lanzar una Habilidad Definitiva, regenera <cryo>6</cryo> pts. de Energía Elemental cada 2 s durante 6 s. Además, todos los miembros del equipo recuperarán un <cryo>6%</cryo> de Vida cada 2 s."
+    }
+  }
+}

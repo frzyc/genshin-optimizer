@@ -1,0 +1,24 @@
+{
+  "name": "Baltalı Mızrak",
+  "description": {
+    "0": "Baltalı bir uca sahip bu mızrağın hasar kabiliyeti inanılmaz. Taşordu subaylarının vazgeçilmez silahı."
+  },
+  "passiveName": "Ezici",
+  "passiveDescription": {
+    "0": {
+      "0": "Normal Saldırılar ek olarak <cryo>%160</cryo> Saldırı kadar Hasar verir. 10 saniyede bir uygulanabilir."
+    },
+    "1": {
+      "0": "Normal Saldırılar ek olarak <cryo>%200</cryo> Saldırı kadar Hasar verir. Bu etki 10 saniyede bir uygulanabilir."
+    },
+    "2": {
+      "0": "Normal Saldırılar ek olarak <cryo>%240</cryo> Saldırı kadar Hasar verir. Bu etki 10 saniyede bir uygulanabilir."
+    },
+    "3": {
+      "0": "Normal Saldırılar ek olarak <cryo>%280</cryo> Saldırı kadar Hasar verir. Bu etki 10 saniyede bir uygulanabilir."
+    },
+    "4": {
+      "0": "Normal Saldırılar ek olarak <cryo>%320</cryo> Saldırı kadar Hasar verir. Bu etki 10 saniyede bir uygulanabilir."
+    }
+  }
+}

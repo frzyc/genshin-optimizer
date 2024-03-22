@@ -1,0 +1,24 @@
+{
+  "name": "Iron Sting",
+  "description": {
+    "0": "An exotic long-bladed rapier that somehow found its way into Liyue via foreign traders. It is light, agile, and sharp."
+  },
+  "passiveName": "Infusion Stinger",
+  "passiveDescription": {
+    "0": {
+      "0": "Dealing Elemental DMG increases all DMG by <cryo>6%</cryo> for 6s. Max 2 stacks. Can occur once every 1s."
+    },
+    "1": {
+      "0": "Dealing Elemental DMG increases all DMG by <cryo>7.5%</cryo> for 6s. Max 2 stacks. Can occur once every 1s."
+    },
+    "2": {
+      "0": "Dealing Elemental DMG increases all DMG by <cryo>9%</cryo> for 6s. Max 2 stacks. Can occur once every 1s."
+    },
+    "3": {
+      "0": "Dealing Elemental DMG increases all DMG by <cryo>10.5%</cryo> for 6s. Max 2 stacks. Can occur once every 1s."
+    },
+    "4": {
+      "0": "Dealing Elemental DMG increases all DMG by <cryo>12%</cryo> for 6s. Max 2 stacks. Can occur once every 1s."
+    }
+  }
+}

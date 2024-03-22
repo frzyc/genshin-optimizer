@@ -1,0 +1,24 @@
+{
+  "name": "Cung Hắc Nham",
+  "description": {
+    "0": "Tạo nên từ hắc nham. Cung chắc chắn và nặng vô cùng, chỉ có cung thủ có thể lực tốt mới có thể phát huy hết sức mạnh."
+  },
+  "passiveName": "Thừa Thắng Xông Lên",
+  "passiveDescription": {
+    "0": {
+      "0": "Sau khi đánh bại kẻ địch, tấn công tăng <cryo>12%</cryo>, kéo dài 30s. Hiệu quả này cộng dồn đến 3 tầng, CD mỗi tầng độc lập."
+    },
+    "1": {
+      "0": "Sau khi đánh bại kẻ địch, tấn công tăng <cryo>15%</cryo>, kéo dài 30s. Hiệu quả này cộng dồn đến 3 tầng, CD mỗi tầng độc lập."
+    },
+    "2": {
+      "0": "Sau khi đánh bại kẻ địch, tấn công tăng <cryo>18%</cryo>, kéo dài 30s. Hiệu quả này cộng dồn đến 3 tầng, CD mỗi tầng độc lập."
+    },
+    "3": {
+      "0": "Sau khi đánh bại kẻ địch, tấn công tăng <cryo>21%</cryo>, kéo dài 30s. Hiệu quả này cộng dồn đến 3 tầng, CD mỗi tầng độc lập."
+    },
+    "4": {
+      "0": "Sau khi đánh bại kẻ địch, tấn công tăng <cryo>24%</cryo>, kéo dài 30s. Hiệu quả này cộng dồn đến 3 tầng, CD mỗi tầng độc lập."
+    }
+  }
+}

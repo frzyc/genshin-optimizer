@@ -1,0 +1,24 @@
+{
+  "name": "Arco de Amos",
+  "description": {
+    "0": "Un arco extremadamente antiguo que conserva su poder aunque su dueño abandonó nuestro mundo hace mucho tiempo. Absorbe el poder de los seres vivos e inertes. Cuanto más lejos estés de aquello que tu corazón anhela, más poderoso será este arco."
+  },
+  "passiveName": "Flecha imparable",
+  "passiveDescription": {
+    "0": {
+      "0": "El daño infligido con Ataques Normales o Cargados aumenta en un <cryo>12%</cryo>. Tras disparar un Ataque Normal o Cargado, el daño aumenta en un <cryo>8%</cryo> por cada 0.1 s que la flecha permanece en el aire. Este efecto puede acumularse hasta cinco veces."
+    },
+    "1": {
+      "0": "El daño infligido con Ataques Normales o Cargados aumenta en un <cryo>15%</cryo>. Tras disparar un Ataque Normal o Cargado, el daño aumenta en un <cryo>10%</cryo> por cada 0.1 s que la flecha permanece en el aire. Este efecto puede acumularse hasta cinco veces."
+    },
+    "2": {
+      "0": "El daño infligido con Ataques Normales o Cargados aumenta en un <cryo>18%</cryo>. Tras disparar un Ataque Normal o Cargado, el daño aumenta en un <cryo>12%</cryo> por cada 0.1 s que la flecha permanece en el aire. Este efecto puede acumularse hasta cinco veces."
+    },
+    "3": {
+      "0": "El daño infligido con Ataques Normales o Cargados aumenta en un <cryo>21%</cryo>. Tras disparar un Ataque Normal o Cargado, el daño aumenta en un <cryo>14%</cryo> por cada 0.1 s que la flecha permanece en el aire. Este efecto puede acumularse hasta cinco veces."
+    },
+    "4": {
+      "0": "El daño infligido con Ataques Normales o Cargados aumenta en un <cryo>24%</cryo>. Tras disparar un Ataque Normal o Cargado, el daño aumenta en un <cryo>16%</cryo> por cada 0.1 s que la flecha permanece en el aire. Este efecto puede acumularse hasta cinco veces."
+    }
+  }
+}

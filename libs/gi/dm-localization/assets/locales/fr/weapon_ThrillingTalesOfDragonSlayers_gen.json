@@ -1,0 +1,24 @@
+{
+  "name": "Histoire des chasseurs de dragon",
+  "description": {
+    "0": "L'histoire de cinq héros partant à la chasse au dragon. L'ouvrage est mal écrit et particulièrement incohérent. Sa valeur réside dans les nombreuses leçons que l'on peut tirer de l'échec."
+  },
+  "passiveName": "Héritage",
+  "passiveDescription": {
+    "0": {
+      "0": "Augmente l'ATQ de <cryo>24 %</cryo> pendant 10 s après un changement de personnage. Cet effet peut être déclenché une fois toutes les 20 s."
+    },
+    "1": {
+      "0": "Augmente l'ATQ de <cryo>30 %</cryo> pendant 10 s après un changement de personnage. Cet effet peut être déclenché une fois toutes les 20 s."
+    },
+    "2": {
+      "0": "Augmente l'ATQ de <cryo>36 %</cryo> pendant 10 s après un changement de personnage. Cet effet peut être déclenché une fois toutes les 20 s."
+    },
+    "3": {
+      "0": "Augmente l'ATQ de <cryo>42 %</cryo> pendant 10 s après un changement de personnage. Cet effet peut être déclenché une fois toutes les 20 s."
+    },
+    "4": {
+      "0": "Augmente l'ATQ de <cryo>48 %</cryo> pendant 10 s après un changement de personnage. Cet effet peut être déclenché une fois toutes les 20 s."
+    }
+  }
+}

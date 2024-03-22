@@ -1,0 +1,24 @@
+{
+  "name": "Dialoge der Weisen der Wüste",
+  "description": {
+    "0": "Ein Caduceus, der den Ruhm der Alchimie symbolisiert und aus einer besonderen Legierung hergestellt wurde, um seinem besonderen Status gerecht zu werden. Er ist äußerst fest und schwer, sodass er wahrscheinlich ziemlich wehtun würde, wenn man ihn als Knüppel verwenden würde."
+  },
+  "passiveName": "Prinzip des Gleichgewichts",
+  "passiveDescription": {
+    "0": {
+      "0": "Stellt bei aktiver Heilung durch den Träger <cryo>8</cryo> Punkte Energie wieder her, 10 s Abklingzeit. Der Effekt kann auch noch ausgelöst werden, wenn die Figur inaktiv in der Truppe ist."
+    },
+    "1": {
+      "0": "Stellt bei aktiver Heilung durch den Träger <cryo>10</cryo> Punkte Energie wieder her, 10 s Abklingzeit. Der Effekt kann auch noch ausgelöst werden, wenn die Figur inaktiv in der Truppe ist."
+    },
+    "2": {
+      "0": "Stellt bei aktiver Heilung durch den Träger <cryo>12</cryo> Punkte Energie wieder her, 10 s Abklingzeit. Der Effekt kann auch noch ausgelöst werden, wenn die Figur inaktiv in der Truppe ist."
+    },
+    "3": {
+      "0": "Stellt bei aktiver Heilung durch den Träger <cryo>14</cryo> Punkte Energie wieder her, 10 s Abklingzeit. Der Effekt kann auch noch ausgelöst werden, wenn die Figur inaktiv in der Truppe ist."
+    },
+    "4": {
+      "0": "Stellt bei aktiver Heilung durch den Träger <cryo>16</cryo> Punkte Energie wieder her, 10 s Abklingzeit. Der Effekt kann auch noch ausgelöst werden, wenn die Figur inaktiv in der Truppe ist."
+    }
+  }
+}

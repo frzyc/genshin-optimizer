@@ -1,0 +1,161 @@
+{
+  "name": "Shikanoin Heizou",
+  "title": "Con Tim Giao Hòa",
+  "description": "Thám tử thiếu niên thiên tài của Hiệp Hội Tenryou, trực giác nhạy bén, tư duy sắc sảo.",
+  "constellationName": "Cung Ấu Lộc",
+  "auto": {
+    "name": "Võ Thuật Fudou",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Tấn Công Thường</strong>",
+        "1": "Tấn công kẻ địch với sức mạnh gió bão, thực hiện tối đa 5 lần tấn công, gây <anemo>Sát Thương Nguyên Tố Phong</anemo>."
+      },
+      "charged": {
+        "0": "<strong>Trọng Kích</strong>",
+        "1": "Tiêu hao thể lực nhất định, thi triển đá quét gây <anemo>Sát Thương Nguyên Tố Phong</anemo>."
+      },
+      "plunging": {
+        "0": "<strong>Tấn Công Khi Đáp</strong>",
+        "1": "Ngưng tụ sức mạnh nguyên tố Phong, từ trên trời tấn công xuống mặt đất, tấn công kẻ địch trên đường, gây <anemo>sát thương phạm vi nguyên tố Phong</anemo> khi chạm đất."
+      }
+    },
+    "skillParams": {
+      "0": "Sát Thương Lần 1",
+      "1": "Sát Thương Lần 2",
+      "2": "Sát Thương Lần 3",
+      "3": "Sát Thương Lần 4",
+      "4": "Sát Thương Lần 5",
+      "5": "Sát Thương Trọng Kích",
+      "6": "Trọng Kích tiêu hao thể lực",
+      "7": "Sát Thương Khi Rơi",
+      "8": "Sát Thương Khi Rơi Từ Độ Cao Thấp/Cao",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Lục Tâm Quyền",
+    "description": {
+      "0": "<strong>Nhấn</strong>",
+      "1": "Tụ gió và đánh ra Lục Tâm Quyền về phía trước, gây <anemo>Sát Thương Nguyên Tố Phong</anemo>.",
+      "2": "<br/>",
+      "3": "<strong>Nhấn Giữ</strong>",
+      "4": "Tụ lực để thi triển đòn đánh mạnh mẽ hơn. Trong thời gian tụ lực sẽ nhận được hiệu quả \"Biến Cách\" để tăng uy lực cho Lục Tâm Quyền; Khi thả kỹ năng hoặc tụ lực kết thúc sẽ đánh ra Lục Tâm Quyền về phía trước, gây <anemo>Sát Thương Nguyên Tố Phong</anemo>.",
+      "5": "<br/>",
+      "6": "<strong>Biến Cách</strong>",
+      "7": "Tăng sát thương cho Lục Tâm Quyền tiếp theo, tối đa cộng dồn 4 tầng.",
+      "8": "Khi có 4 tầng \"Biến Cách\" sẽ sản sinh hiệu ứng \"Phán Quyết\", tăng thêm sát thương và phạm vi ảnh hưởng của Lục Tâm Quyền lần sau.",
+      "9": "<br/>",
+      "10": "<i>Trông thì có vẻ như chỉ là một cú đấm bình thường, nhưng trong đó chất chứa thành ý muốn kẻ phạm tội phải ăn năn hối lỗi.</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Kỹ Năng",
+      "1": "Tăng Sát Thương Biến Cách",
+      "2": "Tăng Sát Thương Phán Quyết",
+      "3": "Thời Gian Duy Trì Biến Cách",
+      "4": "CD",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Tụ Phong Cước",
+    "description": {
+      "0": "Nhảy lên và tung Trường Phái Fudou - Đạn Chân Không về phía kẻ địch, khi trúng sẽ phát nổ, tạo ra Hang Gió để hút lấy vật thể và kẻ địch xung quanh, gây <anemo>Sát Thương Phạm Vi Nguyên Tố Phong</anemo>.",
+      "1": "Trường Phái Fudou - Đạn Chân Không khi đánh trúng kẻ địch có gán ấn <hydro>Nguyên Tố Thủy</hydro>/<pyro>Nguyên Tố Hỏa</pyro>/<cryo>Nguyên Tố Băng</cryo>/<electro>Nguyên Tố Lôi</electro> sẽ kích hoạt hiệu ứng \"Tụ Phong Nhãn\", hiệu ứng này sẽ phát nổ trong giây lát và gây sát thương phạm vi của thuộc tính nguyên tố tương ứng.",
+      "2": "Trường Phái Fudou - Đạn Chân Không tối đa gây \"Tụ Phong Nhãn\" cho 4 kẻ địch trúng phải; Kẻ địch sẽ không thể ở trong trạng thái \"Tụ Phong Nhãn\" của nhiều loại nguyên tố cùng một lúc.",
+      "3": "<br/>",
+      "4": "<i>Tích tụ nguyên tố Phong và đá chúng đi là chiêu thức đặc biệt, sẽ luôn đá trúng kẻ địch khi chúng cố chạy trốn.</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Trường Phái Fudou - Đạn Chân Không",
+      "1": "Sát Thương Tụ Phong Nhãn",
+      "2": "CD",
+      "3": "Năng Lượng Nguyên Tố",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Kinh Nghiệm Phản Biện",
+    "description": {
+      "0": "Shikanoin Heizou khi kích hoạt phản ứng khuếch tán sẽ nhận 1 tầng \"Biến Cách\" của <strong>Lục Tâm Quyền</strong>, hiệu quả này mỗi 0.1s tối đa kích hoạt một lần."
+    }
+  },
+  "passive2": {
+    "name": "Nhìn Thấu Nguyên Do",
+    "description": {
+      "0": "<strong>Lục Tâm Quyền</strong> khi đánh trúng kẻ địch, tất cả nhân vật trong đội (Không bao gồm bản thân Heizou) tăng 80 Tinh Thông Nguyên Tố, duy trì 10s."
+    }
+  },
+  "passive3": {
+    "name": "Có Tội Từ Trước",
+    "description": {
+      "0": "Giảm 20% tiêu hao thể lực khi xung kích cho nhân vật của bản thân trong đội.",
+      "1": "Không thể cộng dồn với buff Thiên Phú cố định có cùng hiệu quả."
+    }
+  },
+  "constellation1": {
+    "name": "Tư Liệu Thiếu Niên",
+    "description": {
+      "0": "Trong 5s sau khi Shikanoin Heizou ra trận, tốc độ tấn công thường tăng 15%, đồng thời nhận 1 tầng hiệu ứng \"Biến Cách\" của <strong>Lục Tâm Quyền</strong>. Hiệu quả này mỗi 10s tối đa kích hoạt một lần."
+    }
+  },
+  "constellation2": {
+    "name": "Tập Án Chuyên Biệt",
+    "description": {
+      "0": "Tăng cường sức hút Hang Gió của <strong>Tụ Phong Cước</strong>, thời gian duy trì kéo dài đến 1s."
+    }
+  },
+  "constellation3": {
+    "name": "Sổ Tay Giải Mã",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Lục Tâm Quyền</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation4": {
+    "name": "Tuyển Tập Dối Trá",
+    "description": {
+      "0": "Trong một lần thi triển <strong>Tụ Phong Cước</strong>, \"Tụ Phong Nhãn\" lần đầu phát nổ sẽ hồi cho Shikanoin Heizou 9 điểm Năng Lượng Nguyên Tố, sau đó mỗi lần phát nổ sẽ hồi phục thêm 1.5 điểm Năng Lượng Nguyên Tố cho Heizou.",
+      "1": "Trong một lần <strong>Tụ Phong Cước</strong>, tối đa hồi phục cho Heizou 13.5 điểm Năng Lượng Nguyên Tố bằng cách này."
+    }
+  },
+  "constellation5": {
+    "name": "Kho Tàng Bí Mật",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Tụ Phong Cước</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation6": {
+    "name": "Hồ Sơ Hão Huyền",
+    "description": {
+      "0": "Khi thi triển <strong>Lục Tâm Quyền</strong>, mỗi tầng \"Biến Cách\" sẽ tăng 4% tỉ lệ bạo kích cho Lục Tâm Quyền lần đó. Khi có hiệu ứng \"Phán Quyết\", sát thương bạo kích của Lục Tâm Quyền lần đó tăng 32%."
+    }
+  }
+}

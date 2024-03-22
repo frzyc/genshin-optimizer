@@ -1,0 +1,24 @@
+{
+  "name": "Uraku Misugiri",
+  "description": {
+    "0": "Cette lame célèbre a été créée par la main d'Urakusai, le lettré renommé. La légende raconte qu'elle n'a coupé aucune créature vivante depuis ces centaines d'années."
+  },
+  "passiveName": "Fleur brodée et épée consacrée",
+  "passiveDescription": {
+    "0": {
+      "0": "Les DGT infligés par les attaques normales augmentent de <cryo>16 %</cryo> et ceux infligés par les compétences élémentaires augmentent de <cryo>24 %</cryo>. Lorsqu'un personnage de l'équipe à proximité a infligé des DGT Géo, les effets susmentionnés augmentent de 100 % supplémentaires pendant 15 s. De plus, la DÉF du personnage équipé de l'arme augmente de <cryo>20 %</cryo>."
+    },
+    "1": {
+      "0": "Les DGT infligés par les attaques normales augmentent de <cryo>20 %</cryo> et ceux infligés par les compétences élémentaires augmentent de <cryo>30 %</cryo>. Lorsqu'un personnage de l'équipe à proximité a infligé des DGT Géo, les effets susmentionnés augmentent de 100 % supplémentaires pendant 15 s. De plus, la DÉF du personnage équipé de l'arme augmente de <cryo>25 %</cryo>."
+    },
+    "2": {
+      "0": "Les DGT infligés par les attaques normales augmentent de <cryo>24 %</cryo> et ceux infligés par les compétences élémentaires augmentent de <cryo>36 %</cryo>. Lorsqu'un personnage de l'équipe à proximité a infligé des DGT Géo, les effets susmentionnés augmentent de 100 % supplémentaires pendant 15 s. De plus, la DÉF du personnage équipé de l'arme augmente de <cryo>30 %</cryo>."
+    },
+    "3": {
+      "0": "Les DGT infligés par les attaques normales augmentent de <cryo>28 %</cryo> et ceux infligés par les compétences élémentaires augmentent de <cryo>42 %</cryo>. Lorsqu'un personnage de l'équipe à proximité a infligé des DGT Géo, les effets susmentionnés augmentent de 100 % supplémentaires pendant 15 s. De plus, la DÉF du personnage équipé de l'arme augmente de <cryo>35 %</cryo>."
+    },
+    "4": {
+      "0": "Les DGT infligés par les attaques normales augmentent de <cryo>32 %</cryo> et ceux infligés par les compétences élémentaires augmentent de <cryo>48 %</cryo>. Lorsqu'un personnage de l'équipe à proximité a infligé des DGT Géo, les effets susmentionnés augmentent de 100 % supplémentaires pendant 15 s. De plus, la DÉF du personnage équipé de l'arme augmente de <cryo>40 %</cryo>."
+    }
+  }
+}

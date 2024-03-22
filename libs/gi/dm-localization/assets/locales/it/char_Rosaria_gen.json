@@ -1,0 +1,154 @@
+{
+  "name": "Rosaria",
+  "title": "Benevolenza spinosa",
+  "description": "Nel caso di Rosaria, l'abito è l'unica cosa che faccia la monaca. Famosa per la sua parlantina pungente e i suoi modi glaciali, lavora spesso da sola.",
+  "constellationName": "Spinea Corona",
+  "auto": {
+    "name": "Lancia della Chiesa",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attacco normale</strong>",
+        "1": "Sferra fino a 5 colpi di lancia consecutivi."
+      },
+      "charged": {
+        "0": "<strong>Attacco caricato</strong>",
+        "1": "Consuma una determinata quantità di vigore per attaccare balzando in avanti infliggendo DAN agli avversari lungo la traiettoria."
+      },
+      "plunging": {
+        "0": "<strong>Attacco in picchiata</strong>",
+        "1": "Attacca scagliandosi contro il suolo da mezz'aria, infliggendo DAN agli avversari lungo la traiettoria e DAN ad area all'impatto."
+      }
+    },
+    "skillParams": {
+      "0": "DAN da 1º colpo",
+      "1": "DAN da 2º colpo",
+      "2": "DAN da 3º colpo",
+      "3": "DAN da 4º colpo",
+      "4": "DAN da 5º colpo",
+      "5": "DAN da ATT caricato",
+      "6": "Costo vigore ATT caricato",
+      "7": "DAN da ATT in picchiata",
+      "8": "DAN da ATT in picchiata basso/alto",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Confessione devastante",
+    "description": {
+      "0": "Rosaria cambia rapidamente la sua posizione per apparire dietro l'avversario, per poi squarciarlo con la sua lancia, infliggendo <cryo>DAN da Cryo</cryo>.",
+      "1": "Quest'abilità non può essere usata per spostarsi dietro avversari di grandi dimensioni.",
+      "2": "<br/>",
+      "3": "<i>Coloro che si confessano con Sorella Rosaria non riceveranno alcuna assoluzione. Tutti i peccatori subiranno la punizione del gelo penetrante in proporzione alla gravità dei loro peccati.</i>"
+    },
+    "skillParams": {
+      "0": "DAN da abilità",
+      "1": "TdR",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Sacramento finale",
+    "description": {
+      "0": "Il rituale di preghiera guidato da Rosaria: prima sferza con la sua arma gli avversari circostanti, poi evoca una gelida Asta di ghiaccio che colpisce il suolo. Entrambe le azioni infliggono <cryo>DAN da Cryo</cryo>.",
+      "1": "Finché è attiva, l'Asta di ghiaccio rilascia periodicamente un'ondata di aria fredda, infliggendo <cryo>DAN da Cryo</cryo> agli avversari circostanti.",
+      "2": "<br/>",
+      "3": "<i>Il giudizio è un tedioso calvario. È molto più semplice saltare quella fase e arrivare dritti agli ultimi riti. Rosaria non è mai stata particolarmente devota al Dio di Anemo, perciò, non si fa particolari problemi a eseguire questi riti.</i>"
+    },
+    "skillParams": {
+      "0": "DAN da abilità",
+      "1": "DAN da Asta di ghiaccio nel tempo",
+      "2": "Durata",
+      "3": "TdR",
+      "4": "Costo energia",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Regina probationum",
+    "description": {
+      "0": "Quando Rosaria attacca un avversario alle spalle usando <strong>Confessione devastante</strong>, il suo tasso di CRIT aumenta di un 12% per 5 s."
+    }
+  },
+  "passive2": {
+    "name": "Rinfianco umbratile",
+    "description": {
+      "0": "Usando <strong>Sacramento finale</strong>, il tasso di CRIT di tutti i membri del gruppo vicini (esclusa Rosaria) aumenta di una quantità pari a un 15% del tasso di CRIT di Rosaria per 10 s.",
+      "1": "In questo modo è possibile ottenere fino a un 15% di bonus del tasso di CRIT."
+    }
+  },
+  "passive3": {
+    "name": "Passeggiata notturna",
+    "description": {
+      "0": "Di notte (18:00-06:00), i membri del tuo gruppo ottengono l'effetto Piè veloce: la VEL di movimento aumenta di un 10%.",
+      "1": "Non ha effetto all'interno di domini, Domini della conquista o Abisso a spirale. Piè veloce non è cumulabile."
+    }
+  },
+  "constellation1": {
+    "name": "Rivelazione impura",
+    "description": {
+      "0": "Quando Rosaria infligge un colpo CRIT, la sua VEL d'ATT aumenta di un 10% e i DAN da attacco normale aumentano di un 10% per 4 s."
+    }
+  },
+  "constellation2": {
+    "name": "Terra sconsacrata",
+    "description": {
+      "0": "La durata dell'Asta di ghiaccio creata da <strong>Sacramento finale</strong> si estende di 4 s."
+    }
+  },
+  "constellation3": {
+    "name": "Rito di penitenza",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Confessione devastante</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation4": {
+    "name": "Consacrazione della sofferenza",
+    "description": {
+      "0": "I colpi CRIT di <strong>Confessione devastante</strong> rigenerano l'energia di Rosaria di 5.",
+      "1": "Si può attivare una volta sola per ogni uso di Confessione devastante."
+    }
+  },
+  "constellation5": {
+    "name": "L'ultimo rituale",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Sacramento finale</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation6": {
+    "name": "Punizione divina",
+    "description": {
+      "0": "L'attacco di <strong>Sacramento finale</strong> riduce di un 20% la RES fisica degli avversari per 10 s."
+    }
+  }
+}

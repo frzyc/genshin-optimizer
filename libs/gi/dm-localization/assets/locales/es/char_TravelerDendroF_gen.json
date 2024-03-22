@@ -1,0 +1,152 @@
+{
+  "auto": {
+    "name": "Hoz extranjera",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Ataque Normal</strong>",
+        "1": "Realiza hasta 5 ataques consecutivos con espada."
+      },
+      "charged": {
+        "0": "<strong>Ataque Cargado</strong>",
+        "1": "Consume cierta cantidad de Aguante para desatar un doble golpe de espada."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Descendente</strong>",
+        "1": "Se lanza desde el aire para golpear el suelo, dañando a los enemigos cercanos e infligiendo Daño en el AdE en el momento del impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Daño de 1er golpe",
+      "1": "Daño de 2.º golpe",
+      "2": "Daño de 3er golpe",
+      "3": "Daño de 4.º golpe",
+      "4": "Daño de 5.º golpe",
+      "5": "Daño de ATQ Cargado",
+      "6": "Coste de Aguante de ATQ Cargado",
+      "7": "Daño de Caída",
+      "8": "Daño de impacto de caída baja/alta",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Espada hierbafilada",
+    "description": {
+      "0": "Blande su espada para esparcir unas hojas afiladas que infligen <dendro>Daño Dendro</dendro> hacia el frente.",
+      "1": "<br/>",
+      "2": "<i>Observaste con Paimon cuán afilado es el borde de las hojas de las plantas.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "TdE",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Dendromímesis",
+    "description": {
+      "0": "Canaliza el poder de las plantas para crear un loto luminoso.",
+      "1": "El loto atacará continuamente a los enemigos que haya en su AdE para infligirles <dendro>Daño Dendro</dendro>.",
+      "2": "<br/>",
+      "3": "<strong>Lototransformación</strong>",
+      "4": "Cuando el loto luminoso entra en contacto con <hydro>Hydro</hydro>/<electro>Electro</electro>/<pyro>Pyro</pyro>, se producen los siguientes cambios respectivamente:",
+      "5": [
+        "<hydro>Hydro</hydro>: aumenta el AdE del loto luminoso y el alcance de sus ataques.",
+        "<electro>Electro</electro>: aumenta la Vel. de Ataque del loto luminoso.",
+        "<pyro>Pyro</pyro>: tras un breve lapso de tiempo, el loto luminoso explota, desaparece e inflige <dendro>Daño Dendro en el AdE</dendro>."
+      ],
+      "6": "Mientras esté activo, el loto solo podrá experimentar una lototransformación.",
+      "7": "<br/>",
+      "8": "{F#La Viajera}{M#El Viajero} solo puede crear un loto luminoso a la vez.",
+      "9": "<br/>",
+      "10": "<i>Investigaste con Paimon el suave sonido que hacen las plantas al brotar tras la lluvia.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de ataque del loto luminoso",
+      "1": "Daño de explosión del loto",
+      "2": "Duración del loto luminoso",
+      "3": "TdE",
+      "4": "Energía Elemental",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Crecimiento exuberante",
+    "description": {
+      "0": "Mientras el <strong>loto luminoso</strong> está activo, obtienes cada segundo una carga del efecto “lotoiluminación”, el cual aumenta en 6 pts. la Maestría Elemental de los personajes en uso que haya dentro de su área. La lotoiluminación del loto luminoso se puede acumular un máximo de 10 veces."
+    }
+  },
+  "passive2": {
+    "name": "Verdor prolífico",
+    "description": {
+      "0": "Por cada punto de Maestría Elemental que tenga {F#la Viajera}{M#el Viajero}, el daño de <strong>Espada hierbafilada</strong> aumenta en un 0.15%, y el de <strong>Dendromímesis</strong> aumenta en un 0.1%."
+    }
+  },
+  "constellation1": {
+    "name": "Enredadera simbiótica",
+    "description": {
+      "0": "Al golpear a un enemigo con <strong>Espada hierbafilada</strong>, {F#la Viajera}{M#el Viajero} recupera 3.5 pts. de Energía Elemental."
+    }
+  },
+  "constellation2": {
+    "name": "Planta tenaz",
+    "description": {
+      "0": "Aumenta en 3 s la duración del <strong>loto luminoso</strong>."
+    }
+  },
+  "constellation3": {
+    "name": "Mecer de las praderas",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Espada hierbafilada</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Melaza herbácea",
+    "description": {
+      "0": "Cuando el <strong>loto luminoso</strong> sufre una lototransformación, otorga 5 cargas del efecto “lotoiluminación” del talento pasivo “Crecimiento exuberante”.",
+      "1": "Se necesita desbloquear el talento pasivo “Crecimiento exuberante”."
+    }
+  },
+  "constellation5": {
+    "name": "Fugacidad veridiana",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Dendromímesis</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Marcescencia congregada",
+    "description": {
+      "0": "Los personajes que están bajo los efectos de la lotoiluminación del <strong>loto luminoso</strong> obtienen un 12% de <dendro>Bono de Daño Dendro</dendro>. Si el loto ha sufrido previamente una lototransformación, también obtendrán un 12% del Bono de Daño Elemental correspondiente."
+    }
+  }
+}

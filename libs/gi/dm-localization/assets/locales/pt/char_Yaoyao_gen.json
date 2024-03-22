@@ -1,0 +1,179 @@
+{
+  "name": "Yaoyao",
+  "title": "Graça Florescente",
+  "description": "A discípula mais jovem da Adeptus Corista. Uma \"pequena adulta\" carinhosa e gentil.",
+  "constellationName": "Osmanthus",
+  "auto": {
+    "name": "Lança Vorpal",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Ataque Normal</strong>",
+        "1": "Realiza até 4 golpes com a lança."
+      },
+      "charged": {
+        "0": "<strong>Ataque Carregado</strong>",
+        "1": "Consome uma certa quantidade de Stamina para se lançar para a frente, infligindo Dano em seu trajeto."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Imersivo</strong>",
+        "1": "Mergulha em pleno ar para golpear o chão, causando dano aos inimigos ao longo do caminho e infligindo Dano em uma AdE durante o impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Dano do 1° Golpe",
+      "1": "Dano do 2° Golpe",
+      "2": "Dano do 3° Golpe",
+      "3": "Dano do 4° Golpe",
+      "4": "Dano de Ataque Carregado",
+      "5": "Consumo de Stamina de Ataque Carregado",
+      "6": "Dano Durante a Queda",
+      "7": "Dano de Queda de Baixa/Alta Altitude",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Rabanete das Nuvens",
+    "description": {
+      "0": "Invoca o \"Yuegui: Modo de Arremesso\", um dispositivo especial criado por um certo Adeptus, para ajudar a resolver os problemas de Yaoyao.",
+      "1": "Será lançado de forma diferente ao Manter Pressionado.",
+      "2": "<br/>",
+      "3": "<strong>Manter Pressionado</strong>",
+      "4": "Entra no modo de mira para ajustar a direção do arremesso.",
+      "5": "<br/>",
+      "6": "<strong>Yuegui: Modo de Arremesso</strong>",
+      "7": "Joga um Rabanete de Jade Branca. Quando o Rabanete de Jade Branca atinge um personagem ou inimigo, explodirá, causando <dendro>Dano Dendro</dendro> contra os inimigos dentro de uma certa AdE e regenerando Vida para os personagens dentro dela. A Cura é baseada na Vida Máxima de Yaoyao. Se não atingir inimigos ou personagens, o Rabanete de Jade Branca ficará na posição em que caiu, e quando for tocado por um personagem ou inimigo, ou quando sua duração acabar, explodirá.",
+      "8": "A escolha do alvo de arremesso do Rabanete de Jade Branca será definida de acordo com a situação das proximidades:",
+      "9": [
+        " Se a Vida de todos os personagens próximos for maior que 70%, arremessará contra um inimigo próximo;",
+        " Se houver um personagem próximo com Vida igual ou inferior a 70%, jogará na direção próxima do personagem ativo com menor porcentagem de Vida. Se não houverem inimigos próximos, e caso que a Vida de todos os personagens seja superior a 70% e inferior a 100%, arremessará na direção de um personagem; caso contrário, arremessará em qualquer direção ao redor."
+      ],
+      "10": "<br/>",
+      "11": "É possível existir até 2 Yuegui: Modo de Arremesso simultaneamente.",
+      "12": "<br/>",
+      "13": "<i>\"Um Rabanete por dia, deixa a vida mais sadia! Ah, isso não é só sobre as propriedades medicinais de um Rabanete, mas ele também possui vários benefícios para a sua saúde!\"</i>"
+    },
+    "skillParams": {
+      "0": "Dano do Rabanete de Jade Branca",
+      "1": "Cura do Rabanete de Jade Branca",
+      "2": "Duração de Yuegui: Modo de Arremesso",
+      "3": "Duração do Rabanete de Jade Branca",
+      "4": "Tempo de Recarga",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Descida da Lua de Jade",
+    "description": {
+      "0": "Sob comando de uma certa Adeptus, todo o potencial de Yuegui pode ser lançado em uma emergência, causando <dendro>Dano Dendro</dendro> contra os inimigos ao redor, e entra no invencível (de certa forma) estado \"Legado Adepti\".",
+      "1": "<br/>",
+      "2": "<strong>Legado Adepti</strong>",
+      "3": [
+        " Rabanetes de Jade Branca gerados são convertidos para curar e causar Dano baseado nos atributos detalhados dessa Habilidade. Ao explodirem, regenerarão Vida para todos os personagens próximos da equipe e causarão <dendro>Dano Dendro</dendro>, e esse Dano é considerado Dano de Supremo.",
+        " Periodicamente invoca \"Yuegui: Modo de Salto\" até atingir o limite máximo. A forma de ação de Yuegui: Modo de Salto e Yuegui: Modo de Arremesso da Habilidade Elemental \"Rabanete das Nuvens\" é igual. É possível existir até 3 Yuegui: Modo de Salto simultaneamente;",
+        " Aumenta a Veloc. Mov. de Yaoyao em 15%; Yaoyao obtém aumento de <dendro>RES Dendro</dendro>."
+      ],
+      "4": "<br/>",
+      "5": "Ao sair do campo de batalha, terminará o estado Legado Adepti. Quando o estado Legado Adepti acabar, removerá os Yuegui: Modo de Salto restantes.",
+      "6": "<br/>",
+      "7": "<i>\"Hã? Você quer saber qual é Yuegui? Todos são Yuegui!\"</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Habilidade",
+      "1": "Dano do Rabanete de Jade Branca do Legado Adepti",
+      "2": "Cura do Rabanete de Jade Branca do Legado Adepti",
+      "3": "Aumento de RES Dendro",
+      "4": "Duração do Legado Adepti",
+      "5": "Tempo de Recarga",
+      "6": "Energia Elemental",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Chuva de Estrelas",
+    "description": {
+      "0": "Quando estiver no estado Legado Adepti de <strong>Descida da Lua de Jade</strong> e Yaoyao correr, saltar ou estiver correndo, jogará Rabanetes de Jade Branca constantemente contra os inimigos próximos. É possível jogar 1 Rabanete de Jade Branca a cada 0.6s dessa forma."
+    }
+  },
+  "passive2": {
+    "name": "No Lugar de Outra Pessoa",
+    "description": {
+      "0": "Quando o <strong>Rabanete de Jade Branca</strong> explode, os personagens ativos dentro de sua AdE regenerarão Vida uma vez a cada segundo. A quantidade regenerada é baseada em 0.8% da Vida Máxima de Yaoyao. Dura 5s."
+    }
+  },
+  "passive3": {
+    "name": "Perseguição na Ponta dos Pés",
+    "description": {
+      "0": "Quando Yaoyao estiver na equipe, seus personagens não irão assustar as Borboletas de Cristais e alguns outros animais ao chegar perto deles.",
+      "1": "Cheque a sub-categoria \"Outros\" da seção \"Seres Vivos/Animais Selvagens\" do Arquivo, para descobrir em quais criaturas esta habilidade funciona."
+    }
+  },
+  "constellation1": {
+    "name": "Ensinamento Adepti",
+    "description": {
+      "0": "Quando o <strong>Rabanete de Jade Branca</strong> explode, os personagens ativos dentro da AdE ganharão 15% de <dendro>Bônus de Dano Dendro</dendro> durante 8s e restaurarão 15 de Stamina. Só é possível recuperar Stamina desta maneira 1 vez a cada 5s."
+    }
+  },
+  "constellation2": {
+    "name": "Inocência",
+    "description": {
+      "0": "Quando estiver no estado Legado Adepti da <strong>Descida da Lua de Jade</strong>, caso a explosão do Rabanete de Jade Branca cause Dano contra um inimigo atingido, Yaoyao regenerará 3 de Energia Elemental. Esta regeneração de Energia Elemental pode ocorrer uma vez a cada 0.8s."
+    }
+  },
+  "constellation3": {
+    "name": "Lealdade e Gentileza",
+    "description": {
+      "0": "Aumenta o nível de <strong>Rabanete das Nuvens</strong> em 3.",
+      "1": "O nível máximo de elevação é 15."
+    }
+  },
+  "constellation4": {
+    "name": "Amor Amigável",
+    "description": {
+      "0": "Depois de lançar <strong>Rabanete das Nuvens</strong> ou <strong>Descida da Lua de Jade</strong>, aumenta a Proficiência Elemental de Yaoyao baseado em 0.3% de sua Vida Máxima por 8s. É possível obter até 120 pontos de Proficiência Elemental dessa maneira."
+    }
+  },
+  "constellation5": {
+    "name": "Compaixão",
+    "description": {
+      "0": "Aumenta o nível de <strong>Descida da Lua de Jade</strong> em 3.",
+      "1": "O nível máximo de elevação é 15."
+    }
+  },
+  "constellation6": {
+    "name": "Benevolente",
+    "description": {
+      "0": "Para cada 2 Rabanetes de Jade Branca jogados por <strong>Yuegui: Modo de Arremesso</strong>, na próxima vez que jogar, jogará um Super Incrível Grande Rabanete adicional. Comparado a um Rabanete de Jade Branca, o Super Incrível Grande Rabanete explode em uma AdE maior, e gera os seguintes efeitos ao explodir:",
+      "1": [
+        " Causa <dendro>Dano Dendro em AdE</dendro> baseado em 75% do ATQ de Yaoyao;",
+        " Regenera Vida para o personagem ativo no campo de batalha baseado em 7.5% da Vida Máxima de Yaoyao."
+      ],
+      "2": "<br/>",
+      "3": "Cada Yuegui: Modo de Arremesso pode jogar até 2 Super Incríveis Grandes Rabanetes."
+    }
+  }
+}

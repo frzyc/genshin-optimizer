@@ -1,0 +1,24 @@
+{
+  "name": "Juramento pela Liberdade",
+  "description": {
+    "0": "Uma espada azul como canção antediluviana e tão aguçada quanto os juramentos de liberdade prestados na Terra do Vento."
+  },
+  "passiveName": "Hino da Rebelião",
+  "passiveDescription": {
+    "0": {
+      "0": "Uma parte do \"Concerto Milenar\" que flutua no vento. Aumenta o Dano causado em <cryo>10%</cryo>. Quando ativa a Reação Elemental, o personagem obterá um Símbolo da Resistência, que pode ser ativado uma vez a cada 0.5s, mesmo quando o personagem não está no campo de batalha. Possuir 2 Símbolos da Resistência faz consumir todos eles, e faz todos os personagens da equipe obterem o efeito de \"Concerto Milenar: Canção da Resistência\" por 12s: Aumenta o Dano de Ataque Normal, Ataque Carregado, Ataque Imersivo em <cryo>16%</cryo>, além disso o ATQ será aumentado em <cryo>20%</cryo>. Dentro de 20s depois da ativação, não é possível obter os Símbolos da Resistência de novo. Entre todos os efeitos de vários valores, os efeitos do mesmo valor não podem ser acumulados."
+    },
+    "1": {
+      "0": "Uma parte do \"Concerto Milenar\" que flutua no vento. Aumenta o Dano causado em <cryo>12.5%</cryo>. Quando ativa a Reação Elemental, o personagem obterá um Símbolo da Resistência, que pode ser ativado uma vez a cada 0.5s, mesmo quando o personagem não está no campo de batalha. Possuir 2 Símbolos da Resistência faz consumir todos eles, e faz todos os personagens da equipe obterem o efeito de \"Concerto Milenar: Canção da Resistência\" por 12s: Aumenta o Dano de Ataque Normal, Ataque Carregado, Ataque Imersivo em <cryo>20%</cryo>, além disso o ATQ será aumentado em <cryo>25%</cryo>. Dentro de 20s depois da ativação, não é possível obter os Símbolos da Resistência de novo. Entre todos os efeitos de vários valores, os efeitos do mesmo valor não podem ser acumulados."
+    },
+    "2": {
+      "0": "Uma parte do \"Concerto Milenar\" que flutua no vento. Aumenta o Dano causado em <cryo>15%</cryo>. Quando ativa a Reação Elemental, o personagem obterá um Símbolo da Resistência, que pode ser ativado uma vez a cada 0.5s, mesmo quando o personagem não está no campo de batalha. Possuir 2 Símbolos da Resistência faz consumir todos eles, e faz todos os personagens da equipe obterem o efeito de \"Concerto Milenar: Canção da Resistência\" por 12s: Aumenta o Dano de Ataque Normal, Ataque Carregado, Ataque Imersivo em <cryo>24%</cryo>, além disso o ATQ será aumentado em <cryo>30%</cryo>. Dentro de 20s depois da ativação, não é possível obter os Símbolos da Resistência de novo. Entre todos os efeitos de vários valores, os efeitos do mesmo valor não podem ser acumulados."
+    },
+    "3": {
+      "0": "Uma parte do \"Concerto Milenar\" que flutua no vento. Aumenta o Dano causado em <cryo>17.5%</cryo>. Quando ativa a Reação Elemental, o personagem obterá um Símbolo da Resistência, que pode ser ativado uma vez a cada 0.5s, mesmo quando o personagem não está no campo de batalha. Possuir 2 Símbolos da Resistência faz consumir todos eles, e faz todos os personagens da equipe obterem o efeito de \"Concerto Milenar: Canção da Resistência\" por 12s: Aumenta o Dano de Ataque Normal, Ataque Carregado, Ataque Imersivo em <cryo>28%</cryo>, além disso o ATQ será aumentado em <cryo>35%</cryo>. Dentro de 20s depois da ativação, não é possível obter os Símbolos da Resistência de novo. Entre todos os efeitos de vários valores, os efeitos do mesmo valor não podem ser acumulados."
+    },
+    "4": {
+      "0": "Uma parte do \"Concerto Milenar\" que flutua no vento. Aumenta o Dano causado em <cryo>20%</cryo>. Quando ativa a Reação Elemental, o personagem obterá um Símbolo da Resistência, que pode ser ativado uma vez a cada 0.5s, mesmo quando o personagem não está no campo de batalha. Possuir 2 Símbolos da Resistência faz consumir todos eles, e faz todos os personagens da equipe obterem o efeito de \"Concerto Milenar: Canção da Resistência\" por 12s: Aumenta o Dano de Ataque Normal, Ataque Carregado, Ataque Imersivo em <cryo>32%</cryo>, além disso o ATQ será aumentado em <cryo>40%</cryo>. Dentro de 20s depois da ativação, não é possível obter os Símbolos da Resistência de novo. Entre todos os efeitos de vários valores, os efeitos do mesmo valor não podem ser acumulados."
+    }
+  }
+}

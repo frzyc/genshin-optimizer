@@ -1,0 +1,167 @@
+{
+  "name": "Charlotte",
+  "title": "Occhio per la verità",
+  "description": "Instancabile giornalista dell'Uccello a vapore, sempre a caccia della \"verità\".",
+  "constellationName": "Hualina Veritas",
+  "auto": {
+    "name": "Fotografia a colori freddi",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attacco normale</strong>",
+        "1": "Charlotte inquadra gli avversari con Monsieur Vérité, la sua Fotokamera personalizzata, per eseguire 3 attacchi consecutivi che infliggono <cryo>DAN da Cryo</cryo>."
+      },
+      "charged": {
+        "0": "<strong>Attacco caricato</strong>",
+        "1": "Consuma una data quantità di vigore per schierare Monsieur Vérité dopo alcuni istanti di preparazione, infliggendo <cryo>DAN da Cryo ad area</cryo>."
+      },
+      "plunging": {
+        "0": "<strong>Attacco in picchiata</strong>",
+        "1": "Convogliando la forza di Cryo, Charlotte si scaglia contro il suolo da mezz'aria, danneggiando tutti gli avversari sul suo percorso. Infligge <cryo>DAN da Cryo ad area</cryo> all'impatto col suolo."
+      },
+      "arkhe": {
+        "0": "<strong>Archè: Pneuma</strong>",
+        "1": "A determinati intervalli, dopo aver usato un attacco caricato, Charlotte genera un Aculeo spettrale che trafigge gli avversari infliggendo <cryo>DAN da Cryo ad area</cryo> di polarità Pneuma."
+      }
+    },
+    "skillParams": {
+      "0": "DAN da 1º colpo",
+      "1": "DAN da 2º colpo",
+      "2": "DAN da 3º colpo",
+      "3": "DAN da ATT caricato",
+      "4": "Costo vigore ATT caricato",
+      "5": "DAN da ATT in picchiata",
+      "6": "DAN da ATT in picchiata basso/alto",
+      "7": "DAN da Aculeo spettrale",
+      "8": "Intervallo DAN da Aculeo spettrale",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Inquadratura: Composizione gelida",
+    "description": {
+      "0": "Affidandosi al suo acuto ed eccezionale istinto da reporter, Charlotte sfrutta le sue capacità nella fotografia per produrre effetti diversi in base alla durata di pressione dell'abilità.",
+      "1": "<br/>",
+      "2": "<strong>Pressione</strong>",
+      "3": "Scatta una foto istantanea usando Monsieur Vérité, infliggendo <cryo>DAN da Cryo ad area</cryo> agli avversari di fronte a lei e applicando lo stato di Sagoma vivida a un massimo di 5 avversari, che subiscono <cryo>DAN da Cryo</cryo> a intervalli regolari per tutta la durata dello stato.",
+      "4": "<br/>",
+      "5": "<strong>Pressione prolungata</strong>",
+      "6": "Attivando il mirino ottico di Monsieur Vérité, Charlotte entra in Modalità Composizione. Durante la pressione, il mirino si espande progressivamente fino a raggiungere l'Ampiezza massima. In questo intervallo di tempo, Charlotte può muoversi e cambiare liberamente direzione.",
+      "7": "Se la pressione prolungata viene interrotta, Monsieur Vérité infligge <cryo>DAN da Cryo</cryo> a tutti gli avversari presenti nel mirino, applicando loro lo stesso stato di Sagoma vivida della variante a pressione dell'abilità. Scatenando l'abilità dopo aver raggiunto l'Ampiezza massima, Charlotte applica invece lo stato di Immagine al tratto, che dura più a lungo e infligge più DAN, al costo di un TdR maggiore.",
+      "8": "La Modalità Composizione dura fino a un massimo di 15 s e permette di selezionare fino a 5 avversari in totale.",
+      "9": "<br/>",
+      "10": "<i>\"La fotografia giornalistica richiede di saper scattare foto semplici ed eccezionalmente pertinenti. Al tempo stesso, però, bisogna avere anche una certa abilità nell'immortalare il momento.\"</i>"
+    },
+    "skillParams": {
+      "0": "DAN da foto (pressione)",
+      "1": "DAN da foto (pressione prolungata)",
+      "2": "DAN da marchio Sagoma vivida",
+      "3": "Intervallo di attivazione marchio Sagoma vivida",
+      "4": "Durata marchio Sagoma vivida",
+      "5": "DAN da marchio Immagine al tratto",
+      "6": "Intervallo di attivazione marchio Immagine al tratto",
+      "7": "Durata marchio Immagine al tratto",
+      "8": "TdR",
+      "9": "TdR lancio Ampiezza massima",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Fermo immagine: Conferma esaustiva",
+    "description": {
+      "0": "Charlotte condensa il ghiaccio per materializzare il logo dell'Uccello a vapore e formare un campo Notizia flash, infliggendo <cryo>DAN da Cryo ad area</cryo> e ripristinando i PS di tutti membri del gruppo nelle vicinanze in base al suo ATT.",
+      "1": "<br/>",
+      "2": "<strong>Campo Notizia flash</strong>",
+      "3": [
+        " Mentre l'abilità è attiva, Monsieur Vérité infligge <cryo>DAN da Cryo</cryo> a intervalli regolari agli avversari presenti nella sua area d'effetto.",
+        " Ripristina continuamente i PS dei personaggi attivi all'interno dell'area d'effetto in base all'ATT di Charlotte."
+      ],
+      "4": "<br/>",
+      "5": "<i>\"Ascoltare la stessa storia da vari punti di vista per ricostruire la dinamica dei fatti è essenziale per ogni buon reportage... In fondo, è solo così che puoi trovare la prospettiva migliore per il tuo articolo!\"</i>"
+    },
+    "skillParams": {
+      "0": "Guarigione al lancio",
+      "1": "DAN da abilità",
+      "2": "RIGEN continua Fotokamera",
+      "3": "DAN da Fotokamera",
+      "4": "Durata campo Notizia flash",
+      "5": "TdR",
+      "6": "Costo energia",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Momento d'impatto",
+    "description": {
+      "0": "Quando gli avversari marchiati da Immagine al tratto vengono sconfitti, il TdR di <strong>Inquadratura: Composizione gelida</strong> si riduce di 2 s, fino a un massimo di 4 volte ogni 12 s."
+    }
+  },
+  "passive2": {
+    "name": "Indagine diversificata",
+    "description": {
+      "0": "Se nel gruppo sono presenti 1/2/3 personaggi provenienti da Fontaine, esclusa sé stessa, Charlotte ottiene un 5%/10%/15% di bonus di guarigione. Se nel gruppo sono presenti 1/2/3 personaggi non provenienti da Fontaine, ottiene un 5%/10%/15% di bonus DAN da Cryo."
+    }
+  },
+  "passive3": {
+    "name": "Otturatore in prima persona",
+    "description": {
+      "0": "Dopo aver attivato il Teleobiettivo per analisi speciali, la variante a pressione prolungata di Inquadratura: Composizione gelida di Charlotte non innesca i suoi effetti originali, ma le permette di scattare fotografie decisamente particolari..."
+    }
+  },
+  "constellation1": {
+    "name": "Verifica dei fatti",
+    "description": {
+      "0": "Quando un personaggio riceve effetti di guarigione tramite <strong>Fermo immagine: Conferma esaustiva</strong>, riceve anche un Marchio di verifica che ripristina i suoi PS di una quantità pari a un 80% dell'ATT di Charlotte ogni 2 s. L'effetto dura 6 s."
+    }
+  },
+  "constellation2": {
+    "name": "Ricerca della verità",
+    "description": {
+      "0": "Quando usa <strong>Inquadratura: Composizione gelida</strong>, se Monsieur Vérité colpisce 1/2/3 (o più) avversari, l'ATT di Charlotte aumenta di un 10%/20%/30% per 12 s."
+    }
+  },
+  "constellation3": {
+    "name": "Obbligo d'indipendenza",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Fermo immagine: Conferma esaustiva</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation4": {
+    "name": "Incarico di responsabilità",
+    "description": {
+      "0": "Quando <strong>Fermo immagine: Conferma esaustiva</strong> colpisce un avversario marchiato con Sagoma vivida o Immagine al tratto, infligge un 10% di DAN in più e ripristina di 2 l'energia di Charlotte. Questo ripristino può avvenire 5 volte ogni 20 s."
+    }
+  },
+  "constellation5": {
+    "name": "Principio di coscienza",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Inquadratura: Composizione gelida</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation6": {
+    "name": "Sommatoria d'interessi",
+    "description": {
+      "0": "Quando gli attacchi normali e caricati del personaggio attivo colpiscono un avversario segnato dall'Immagine al tratto di <strong>Inquadratura: Composizione gelida</strong>, Monsieur Vérité lancia un attacco coordinato che infligge <cryo>DAN da Cryo ad area</cryo> e ripristina i PS dei personaggi attivi presenti nella medesima area. I DAN inflitti e il ripristino dei PS sono pari rispettivamente a un 180% e a un 42% dell'ATT di Charlotte. Quest'effetto può attivarsi una volta ogni 6 s, e sia i DAN sia la guarigione apportata sono considerati effetti del Tripudio elementale di Charlotte."
+    }
+  }
+}

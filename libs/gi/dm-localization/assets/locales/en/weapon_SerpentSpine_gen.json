@@ -1,0 +1,24 @@
+{
+  "name": "Serpent Spine",
+  "description": {
+    "0": "A rare weapon whose origin is the ancient ocean. One can hear the sound of the ageless waves as one swings it."
+  },
+  "passiveName": "Wavesplitter",
+  "passiveDescription": {
+    "0": {
+      "0": "Every 4s a character is on the field, they will deal <cryo>6%</cryo> more DMG and take <cryo>3%</cryo> more DMG. This effect has a maximum of 5 stacks and will not be reset if the character leaves the field, but will be reduced by 1 stack when the character takes DMG."
+    },
+    "1": {
+      "0": "Every 4s a character is on the field, they will deal <cryo>7%</cryo> more DMG and take <cryo>2.7%</cryo> more DMG. This effect has a maximum of 5 stacks and will not be reset if the character leaves the field, but will be reduced by 1 stack when the character takes DMG."
+    },
+    "2": {
+      "0": "Every 4s a character is on the field, they will deal <cryo>8%</cryo> more DMG and take <cryo>2.4%</cryo> more DMG. This effect has a maximum of 5 stacks and will not be reset if the character leaves the field, but will be reduced by 1 stack when the character takes DMG."
+    },
+    "3": {
+      "0": "Every 4s a character is on the field, they will deal <cryo>9%</cryo> more DMG and take <cryo>2.2%</cryo> more DMG. This effect has a maximum of 5 stacks and will not be reset if the character leaves the field, but will be reduced by 1 stack when the character takes DMG."
+    },
+    "4": {
+      "0": "Every 4s a character is on the field, they will deal <cryo>10%</cryo> more DMG and take <cryo>2%</cryo> more DMG. This effect has a maximum of 5 stacks and will not be reset if the character leaves the field, but will be reduced by 1 stack when the character takes DMG."
+    }
+  }
+}

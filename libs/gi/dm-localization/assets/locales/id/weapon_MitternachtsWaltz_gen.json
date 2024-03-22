@@ -1,0 +1,24 @@
+{
+  "name": "Mitternachts Waltz",
+  "description": {
+    "0": "Busur yang diwarnai dengan warna kelam bagaikan dosa dan malam hari pada imajinasi yang liar."
+  },
+  "passiveName": "Evernight Duet",
+  "passiveDescription": {
+    "0": {
+      "0": "Saat Normal Attack mengenai musuh, meningkatkan <cryo>20%</cryo> DMG Elemental Skill selama 5 detik; Saat Elemental Skill mengenai musuh, meningkatkan <cryo>20%</cryo> DMG Normal Attack selama 5 detik."
+    },
+    "1": {
+      "0": "Saat Normal Attack mengenai musuh, meningkatkan <cryo>25%</cryo> DMG Elemental Skill selama 5 detik; Saat Elemental Skill mengenai musuh, meningkatkan <cryo>25%</cryo> DMG Normal Attack selama 5 detik."
+    },
+    "2": {
+      "0": "Saat Normal Attack mengenai musuh, meningkatkan <cryo>30%</cryo> DMG Elemental Skill selama 5 detik; Saat Elemental Skill mengenai musuh, meningkatkan <cryo>30%</cryo> DMG Normal Attack selama 5 detik."
+    },
+    "3": {
+      "0": "Saat Normal Attack mengenai musuh, meningkatkan <cryo>35%</cryo> DMG Elemental Skill selama 5 detik; Saat Elemental Skill mengenai musuh, meningkatkan <cryo>35%</cryo> DMG Normal Attack selama 5 detik."
+    },
+    "4": {
+      "0": "Saat Normal Attack mengenai musuh, meningkatkan <cryo>40%</cryo> DMG Elemental Skill selama 5 detik; Saat Elemental Skill mengenai musuh, meningkatkan <cryo>40%</cryo> DMG Normal Attack selama 5 detik."
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Lance de chasse royale",
+  "description": {
+    "0": "Cette arme d'hast était autrefois chérie par l'un des nobles gouvernant Mondstadt, il y a de cela longtemps. Elle n'a sans doute jamais vu la lumière du jour, et est toujours particulièrement aiguisée."
+  },
+  "passiveName": "Focus",
+  "passiveDescription": {
+    "0": {
+      "0": "Augmente le taux CRIT de <cryo>8 %</cryo> à chaque attaque qui cause des DGT à un ennemi. Cet effet peut être cumulé 5 fois maximum et est réinitialisé lors d'un coup CRIT."
+    },
+    "1": {
+      "0": "Augmente le taux CRIT de <cryo>10 %</cryo> à chaque attaque qui cause des DGT à un ennemi. Cet effet peut être cumulé 5 fois maximum et est réinitialisé lors d'un coup CRIT."
+    },
+    "2": {
+      "0": "Augmente le taux CRIT de <cryo>12 %</cryo> à chaque attaque qui cause des DGT à un ennemi. Cet effet peut être cumulé 5 fois maximum et est réinitialisé lors d'un coup CRIT."
+    },
+    "3": {
+      "0": "Augmente le taux CRIT de <cryo>14 %</cryo> à chaque attaque qui cause des DGT à un ennemi. Cet effet peut être cumulé 5 fois maximum et est réinitialisé lors d'un coup CRIT."
+    },
+    "4": {
+      "0": "Augmente le taux CRIT de <cryo>16 %</cryo> à chaque attaque qui cause des DGT à un ennemi. Cet effet peut être cumulé 5 fois maximum et est réinitialisé lors d'un coup CRIT."
+    }
+  }
+}

@@ -1,0 +1,163 @@
+{
+  "name": "Navia",
+  "title": "Parlak Gülün Önderi",
+  "description": "Spina di Rosula'nın şu anki Başkanı. Cana yakın, görevine bağlı ve takdire şayan bir patron.",
+  "constellationName": "Sarmaşık Gül",
+  "auto": {
+    "name": "Açık İnkar",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Saldırı</strong>",
+        "1": "Arka arkaya en fazla 4 saldırı yapar."
+      },
+      "charged": {
+        "0": "<strong>Yüklü Saldırı</strong>",
+        "1": "Zamanla Dayanıklılık harcar ve yakındaki tüm düşmanlara dönerek saldırır.",
+        "2": "Saldırıları daha güçlü bir darbeyle bitirir. "
+      },
+      "plunging": {
+        "0": "<strong>Havadan Saldırı</strong>",
+        "1": "Havadayken dalışa geçerek yere vurur ve yoluna çıkan düşmanlara Alan Hasarı verir."
+      }
+    },
+    "skillParams": {
+      "0": "1 Vuruş Hasarı",
+      "1": "2 Vuruş Hasarı",
+      "2": "3 Vuruş Hasarı",
+      "3": "4 Vuruş Hasarı",
+      "4": "Yüklü Saldırı Döngüsel Hasarı",
+      "5": "Yüklü Saldırı Son Vuruş Hasarı",
+      "6": "Yüklü Saldırı Dayanıklılık Maliyeti",
+      "7": "Maks. Süre",
+      "8": "Havadan Saldırı Hasarı",
+      "9": "Havadan Saldırı Hasarı (Alçaktan/Yüksekten)",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Kristal Tören Atışı",
+    "description": {
+      "0": "Gruptaki karakterlerden biri Kristalleşme tepkimesiyle oluşan bir Element Parçası elde ettiğinde Navia 1 Kristal Şarapnel kazanır. Navia bir seferde en fazla 6 Kristal Şarapnele sahip olabilir. Kristal Şarapnel kazanımı her tetiklendiğinde mevcut Kristal Şarapnellerinin süresi de sıfırlanır.",
+      "1": "Navia ateş ettiğinde Kristal Şarapnellerin tümünü harcar ve şık ama ölümcül Şemsilahını açarak düşmanları delip geçen Rosula Kristal Mermileri ateşleyerek <geo>Toprak Hasarı</geo> verir.",
+      "2": "0/1/2/3 veya daha fazla Kristal Şarapnel harcandığında sırasıyla 5/7/9/11 Rosula Kristal Mermi ateşlenir. Tek bir düşmana ne kadar çok Rosula Kristal Mermi isabet ederse verilen Hasar da o kadar büyük olur. 11 Rosula Kristal Merminin hepsi isabet ettiğinde asıl Hasarın %200'ü kadar Hasar verilir.",
+      "3": "Ayrıca 3'ten fazla Kristal Şarapnel harcandığında harcanan ilk 3 Kristal Şarapnelden sonraki her bir Şarapnel, asıl Şemsilah saldırısının verdiği Hasarı %15 artırır.",
+      "4": "<br/>",
+      "5": "<strong>Basılı Tut</strong>",
+      "6": "Nişan Alma Moduna girerek sürekli olarak Kristalleşme tepkimesiyle oluşan yakındaki Element Parçalarını toplar. Bırakıldığında, Rosula Kristal Mermiler beceriye Dokunulduğunda olduğu gibi aynı etkiyle ateşlenir.",
+      "7": "<br/>",
+      "8": "Başlangıçta 2 defa kullanılabilir.",
+      "9": "<br/>",
+      "10": "<strong>Arkhe: Öz</strong>",
+      "11": "Navia Şemsilahını ateşlediğinde belirli aralıklarla bir Çalkantılı Kılıç çıkar ve Öz tesirli <geo>Toprak Hasarı</geo> verir.",
+      "12": "<br/>",
+      "13": "<i>\"Mesafeli olman gereken kişilerle doğru mesafede olmak görgü kurallarının önemli bir parçasıdır. Bunu yapmanın da birçok yolu var tabii...\"</i>"
+    },
+    "skillParams": {
+      "0": "Rosula Kristal Mermi Temel Hasarı",
+      "1": "Kristal Şarapnel Süresi",
+      "2": "Çalkantılı Kılıç Hasarı",
+      "3": "Çalkantılı Kılıç Aralığı",
+      "4": "BS",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Güneşli Gökyüzünün Selamı",
+    "description": {
+      "0": "Spina di Rosula Başkanının emri üzerine muhteşem bir Altın Gül Selamı çağrılır. Önündeki düşmanlara ağır bir top bombardımanı yaparak <geo>Toprak Alan Hasarı</geo> verir ve daha sonra bir müddet Top Ateşi Desteği sağlayarak belirli aralıklarla yakındaki düşmanlara <geo>Toprak Hasarı</geo> verir.",
+      "1": "Top saldırıları düşmanlara isabet ettiğinde Navia 1 Kristal Şarapnel kazanır. Bu etki her 2,4 saniyede bir tetiklenebilir.",
+      "2": "<br/>",
+      "3": "<i>\"Spina di Rosula'nın selamı, müzakerelerimizin başarıyla sonuçlanacağına dair bir ön kutlamadır ve görüşmeler başlamadan önce ateşlenir. Yanlış anlaşılmasın, hiçbir şekilde ve surette bir tehdit amacı taşımaz.\"</i>"
+    },
+    "skillParams": {
+      "0": "Beceri Hasarı",
+      "1": "Top Ateşi Desteği Hasarı",
+      "2": "Top Ateşi Desteği Süresi",
+      "3": "BS",
+      "4": "Enerji Maliyeti",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Gizli Dağıtım Kanalları",
+    "description": {
+      "0": "<strong>Kristal Tören Atışı</strong> kullanıldıktan sonra 4sn boyunca Navia'nın Normal, Yüklü ve Havadan Saldırılarının verdiği Hasar, <geo>Toprak Hasarına</geo> dönüşür ve diğer element tesirleriyle değiştirilemez. Ayrıca Navia'nın Normal, Yüklü ve Havadan Saldırılarının verdiği Hasar %40 artar."
+    }
+  },
+  "passive2": {
+    "name": "Karşılıklı Yardım Ağı",
+    "description": {
+      "0": "Gruptaki her <pyro>Ateş</pyro>/<electro>Elektrik</electro>/<cryo>Buz</cryo>/<hydro>Su</hydro> üyesi için Navia'nın Saldırısı %20 artar. Bu etki 2 kademeye kadar birikebilir."
+    }
+  },
+  "passive3": {
+    "name": "Titiz Süreç",
+    "description": {
+      "0": "20 saatliğine bir Fontaine Keşfine gönderildiğinde %25 daha fazla ödül kazanır."
+    }
+  },
+  "constellation1": {
+    "name": "Bir Hanımefendinin Nezaket Kuralları",
+    "description": {
+      "0": "Navia, <strong>Kristal Tören Atışını</strong> kullanırken harcadığı her Kristal Şarapnel için 3 Enerji yeniler ve <strong>Güneşli Gökyüzünün Selamının</strong> Bekleme Süresi 1sn azalır. Bu şekilde en fazla 9 Enerji yenilenebilir ve \"Güneşli Gökyüzünün Selamı\"nın Bekleme Süresi en fazla 3sn kadar azaltılabilir."
+    }
+  },
+  "constellation2": {
+    "name": "Başkanın Zafer Arayışı",
+    "description": {
+      "0": "Harcanan her bir Kristal Şarapnel için <strong>Kristal Tören Atışının</strong> Kritik Oranı %12 artar. Kritik Oranı bu şekilde en fazla %36 artabilir.",
+      "1": "Ayrıca Kristal Tören Atışı bir düşmana isabet ettiğinde <strong>Güneşli Gökyüzünün Selamından</strong> gelen bir Top Ateşi Desteği, isabet eden yerin yakınlarına vurur. Kristal Tören Atışı her kullanıldığında en fazla bir Top Ateşi Desteği kullanılabilir ve bu şekilde Top Ateşi Desteği ile verilen Hasar, Element Patlaması Hasarı sayılır."
+    }
+  },
+  "constellation3": {
+    "name": "İş Kadınının Geniş Vizyonu",
+    "description": {
+      "0": "<strong>Kristal Tören Atışı</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation4": {
+    "name": "Yeminin Tavizi Olmaz",
+    "description": {
+      "0": "<strong>Güneşli Gökyüzünün Selamı</strong> bir düşmana isabet ettiğinde 8 saniyeliğine düşmanın <geo>Toprak Direnci</geo> %20 azalır."
+    }
+  },
+  "constellation5": {
+    "name": "Müzakerecinin Kararlı Görüşmeleri",
+    "description": {
+      "0": "<strong>Güneşli Gökyüzünün Selamı</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation6": {
+    "name": "Spina Başkanının Kurnazlığı",
+    "description": {
+      "0": "<strong>Kristal Tören Atışı</strong> kullanıldığında 3'ten fazla Kristal Şarapnel harcanırsa harcanan ilk 3 Kristal Şarapnelden sonraki her bir Şarapnel, Kristal Tören Atışının Kritik Hasarını %45 artırır ve 3'ten fazla harcanan tüm Şarapneller Navia'ya iade edilir."
+    }
+  }
+}

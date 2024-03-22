@@ -1,0 +1,29 @@
+{
+  "setName": "Ombre de la Verte Chasseuse",
+  "setEffects": {
+    "2": "Confère un bonus de DGT Anémo de 15 %.",
+    "4": "Augmente les DGT infligés par Dispersion de 60 % ; la RÉS élémentaire des ennemis diminue de 40 % pendant 10 s selon le type élémentaire de Dispersion."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Souvenir de fleur des champs",
+      "desc": "Une fleur sauvage répandue dans une certaine partie du monde. Elle a été cueillie par une chasseresse et portée comme une broche."
+    },
+    "plume": {
+      "name": "Plume de flèche de la Verte Chasseuse",
+      "desc": "La plume d'une flèche qui transperça sa proie. Elle est encore lisse et propre."
+    },
+    "sands": {
+      "name": "Détermination de la Verte Chasseuse",
+      "desc": "Un objet formidable autrefois porté par une chasseuse. Il lui indiquait la direction de sa proie."
+    },
+    "goblet": {
+      "name": "Récipient de la Verte Chasseuse",
+      "desc": "Un objet ayant été utilisé comme une gourde à eau par la Verte Chasseuse. Sa contenance est bien supérieure à ce qu'on pourrait imaginer."
+    },
+    "circlet": {
+      "name": "Diadème de la Verte Chasseuse",
+      "desc": "Un diadème porté autrefois fièrement par la Verte Chasseuse, aussi vert que la nature sauvage."
+    }
+  }
+}

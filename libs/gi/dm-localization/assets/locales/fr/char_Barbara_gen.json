@@ -1,0 +1,165 @@
+{
+  "name": "Barbara",
+  "title": "Star de la chanson",
+  "description": "Barbara est adulée de tous à Mondstadt. Pourtant, c'est dans un magazine qu'elle a découvert le terme « idole ».",
+  "constellationName": "Crater",
+  "auto": {
+    "name": "Murmure de l'eau",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attaque normale</strong>",
+        "1": "Enchaîne jusqu'à 4 attaques d'eau qui infligent des <hydro>DGT Hydro</hydro>."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Consomme de l'endurance pour infliger des <hydro>DGT Hydro de zone</hydro> après un court délai."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Plonge depuis les airs en concentrant ses pouvoirs Hydro, infligeant des DGT aux ennemis en chemin et des <hydro>DGT Hydro de zone</hydro> à l'impact."
+      }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT 4e coup",
+      "4": "DGT attaque chargée",
+      "5": "Coût d'endurance attaque chargée",
+      "6": "DGT durant la chute",
+      "7": "DGT chute basse/élevée",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "C'est parti pour le show ♪",
+    "description": {
+      "0": "Invoque des gouttelettes dansantes qui forment un cercle de mélodie infligeant des <hydro>DGT Hydro</hydro> et <hydro>trempant</hydro> les ennemis proches.",
+      "1": "<br/>",
+      "2": "<strong>Cercle de mélodie</strong>",
+      "3": [
+        " Les attaques normales de Barbara restaurent les PV de vos personnages dans l'équipe ainsi que de tous les alliés proches lorsqu'elles touchent. La quantité de PV restaurés est proportionnelle aux PV max de Barbara.",
+        " L'effet des soins est multiplié par 4 avec les attaques chargées.",
+        " Régénère les PV de votre personnage déployé à intervalles réguliers.",
+        " Barbara <hydro>trempe</hydro> les personnages et les ennemis avec qui elle entre en contact."
+      ],
+      "4": "<br/>",
+      "5": "<i>La musique de Barbara est une magie capable de soigner chacun.</i>"
+    },
+    "skillParams": {
+      "0": "Soins équipe",
+      "1": "Soins continus",
+      "2": "DGT gouttelettes",
+      "3": "Durée",
+      "4": "Temps de recharge",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Miracle brillant ♪",
+    "description": {
+      "0": "Restaure considérablement les PV des alliés et de vos personnages dans l'équipe, la quantité de PV restaurés étant proportionnelle aux PV max de Barbara.",
+      "1": "<br/>",
+      "2": "<i>Soigner le cœur de chacun, telle est la force du chant de Barbara.</i>"
+    },
+    "skillParams": {
+      "0": "Soins",
+      "1": "Temps de recharge",
+      "2": "Énergie élémentaire",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Splendide saison",
+    "description": {
+      "0": "Les personnages situés dans le cercle de mélodie de <strong>C'est parti pour le show ♪</strong> consomment 12 % d'endurance en moins."
+    }
+  },
+  "passive2": {
+    "name": "Bis repetita",
+    "description": {
+      "0": "Chaque particule ou orbe élémentaires obtenus par votre personnage déployé prolongent le cercle de mélodie de <strong>C'est parti pour le show ♪</strong> de 1 s.",
+      "1": "Durée max : 5 s."
+    }
+  },
+  "passive3": {
+    "name": "De tout mon cœur ♪",
+    "description": {
+      "0": "12 % de chances d'obtenir un plat supplémentaire lorsque vous cuisinez un plat de soins parfait."
+    }
+  },
+  "constellation1": {
+    "name": "Joyeuse ballade",
+    "description": {
+      "0": "Barbara récupère 1 pt d'énergie élémentaire toutes les 10 s."
+    }
+  },
+  "constellation2": {
+    "name": "Éclat de vitalité",
+    "description": {
+      "0": "Diminue le TdR de <strong>C'est parti pour le show ♪</strong> de 15 %.",
+      "1": "Confère un <hydro>bonus de DGT Hydro de 15 %</hydro> au personnage déployé tant que la compétence est active."
+    }
+  },
+  "constellation3": {
+    "name": "Étoile du lendemain",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Miracle brillant ♪</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation4": {
+    "name": "L'effort est la meilleure des magies",
+    "description": {
+      "0": "À chaque ennemi touché par une attaque chargée, Barbara récupère 1 pt d'énergie élémentaire.",
+      "1": "5 pts d'énergie maximum peuvent être régénérés après chaque attaque chargée."
+    }
+  },
+  "constellation5": {
+    "name": "Lien innocent",
+    "description": {
+      "0": "Niveau d'aptitude <strong>C'est parti pour le show ♪</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation6": {
+    "name": "Toujours le meilleur pour vous",
+    "description": {
+      "0": "Si Barbara fait partie de l'équipe mais n'est pas déployée, et qu'un de vos personnages dans l'équipe est vaincu :",
+      "1": [
+        " Barbara le réanime immédiatement.",
+        " Les PV de ce personnage sont restaurés à 100 %."
+      ],
+      "2": "Cet effet peut être déclenché une fois toutes les 15 min."
+    }
+  }
+}

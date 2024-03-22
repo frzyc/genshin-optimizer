@@ -1,0 +1,174 @@
+{
+  "name": "Razor",
+  "title": "Wolf Boy",
+  "description": "Seorang anak laki-laki yang tinggal di daerah Mondstadt. Jauh dari peradaban manusia dan tinggal di kalangan antara serigala di Wolvendom. Firasatnya tajam, tubuhnya lincah bagai kilat.",
+  "constellationName": "Lupus Minor",
+  "auto": {
+    "name": "Steel Fang",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Attack</strong>",
+        "1": "Melancarkan hingga 4 tebasan berturut-turut."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Terus menguras Stamina untuk melancarkan serangan berputar yang mengakibatkan DMG ke musuh di sekitar.",
+        "2": "Diakhiri dengan sebuah tebasan yang kuat."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Menerjang dari udara untuk menghantam tanah, menyerang musuh di jalur terjangan dan mengakibatkan DMG area saat mendarat."
+      }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Tahap 4",
+      "4": "DMG Berputar Charged Attack",
+      "5": "DMG Akhir Charged Attack",
+      "6": "Konsumsi Stamina Charged Attack",
+      "7": "Durasi Maksimum",
+      "8": "DMG Selama Plunging",
+      "9": "DMG Plunging Attack Rendah/Tinggi",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Claw and Thunder",
+    "description": {
+      "0": "Memburu mangsanya dengan teknik yang diajarkan oleh keluarganya dan Lupical.",
+      "1": "<br/>",
+      "2": "<strong>Tekan</strong>",
+      "3": "Mengayunkan Thunder Wolf Claw, mengakibatkan <electro>Electro DMG</electro> ke musuh di depan Razor.",
+      "4": "Saat mengenai musuh, Razor akan mendapatkan Electro Sigil yang meningkatkan kecepatan Energy Recharge.",
+      "5": "Razor dapat memiliki paling banyak 3 Electro Sigil dalam waktu bersamaan, dan mendapatkan Electro Sigil baru akan memutar ulang durasi mereka.",
+      "6": "<br/>",
+      "7": "<strong>Tahan</strong>",
+      "8": "Mengumpulkan Electro Energy untuk mengerahkan badai petir dalam area kecil, mengakibatkan <electro>Electro DMG</electro> yang besar dan mengonsumsi seluruh Electro Sigil milik Razor.",
+      "9": "Setiap Electro Sigil yang digunakan dengan cara ini akan dikonversi menjadi Energy untuk Razor.",
+      "10": "<br/>",
+      "11": "<i>Pada saat petir menyambar, kamu dapat melihat mata Razor yang sedang mengamati mangsanya.</i>"
+    },
+    "skillParams": {
+      "0": "DMG One-tap",
+      "1": "DMG Menahan",
+      "2": "Peningkatan Energy Recharge per Sigil",
+      "3": "Pemulihan Energy per Electro Sigil",
+      "4": "Durasi Electro Sigil",
+      "5": "Cooldown (Mode Tekan)",
+      "6": "Cooldown (Mode Tahan)",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Lightning Fang",
+    "description": {
+      "0": "Memanggil Wolf Within untuk mengakibatkan <electro>Electro DMG</electro> ke semua musuh di sekitar. Juga akan menghilangkan semua Electro Sigil milik Razor, yang akan dikonversi menjadi Energy untuknya.",
+      "1": "Wolf Within akan bertempur bersama Razor selama durasi skill.",
+      "2": "<br/>",
+      "3": "<strong>The Wolf Within</strong>",
+      "4": [
+        "Menyerang bersama dengan Normal Attack Razor dan mengakibatkan <electro>Electro DMG</electro>;",
+        "Meningkatkan ATK SPD dan <electro>Electro RES</electro> Razor;",
+        "Membuat Razor kebal terhadap DMG yang diakibatkan oleh efek <electro>Electro-Charged</electro>;",
+        "Menonaktifkan Charged Attack milik Razor."
+      ],
+      "5": "<br/>",
+      "6": "Efek-efek ini berakhir saat Razor meninggalkan medan pertempuran.",
+      "7": "Saat Razor meninggalkan medan pertempuran, hingga 10 Energy akan dikembalikan kepadanya berdasarkan durasi yang tersisa dari skill ini.",
+      "8": "<br/>",
+      "9": "<i>Sang serigala telah terbangun, perburuan dimulai.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Burst",
+      "1": "DMG Spirit",
+      "2": "Peningkatan Normal Attack SPD",
+      "3": "Bonus Electro RES",
+      "4": "Durasi",
+      "5": "Cooldown",
+      "6": "Konsumsi Energy",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Awakening",
+    "description": {
+      "0": "Mengurangi 18% CD <strong>Claw and Thunder</strong>.",
+      "1": "Melancarkan <strong>Lightning Fang</strong> akan menyelesaikan CD <strong>Claw and Thunder</strong>."
+    }
+  },
+  "passive2": {
+    "name": "Hunger",
+    "description": {
+      "0": "Meningkatkan 30% Energy Recharge saat Energy Razor kurang dari 50%."
+    }
+  },
+  "passive3": {
+    "name": "Wolvensprint",
+    "description": {
+      "0": "Mengurangi 20% konsumsi Stamina Karakter party sendiri saat berlari.",
+      "1": "Efek ini tidak dapat ditumpuk dengan Talenta Pasif lain dengan efek yang sama persis."
+    }
+  },
+  "constellation1": {
+    "name": "Wolf's Instinct",
+    "description": {
+      "0": "Saat mengambil Elemental Orb atau Particle, meningkatkan 10% DMG Razor selama 8 detik."
+    }
+  },
+  "constellation2": {
+    "name": "Suppression",
+    "description": {
+      "0": "Meningkatkan 10% CRIT Rate Razor terhadap musuh dengan HP kurang dari 30%."
+    }
+  },
+  "constellation3": {
+    "name": "Soul Companion",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Lightning Fang</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Bite",
+    "description": {
+      "0": "Saat <strong>Claw and Thunder</strong> ditekan, DEF musuh yang terkena akan berkurang 15% selama 7 detik."
+    }
+  },
+  "constellation5": {
+    "name": "Sharpened Claws",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Claw and Thunder</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Lupus Fulguris",
+    "description": {
+      "0": "Setiap 10 detik, pedang Razor mengumpulkan kekuatan secara otomatis, membuat Normal Attack berikutnya melepaskan serangan listrik, mengakibatkan 100% dari ATK Razor sebagai <electro>Electro DMG</electro>.",
+      "1": "Saat Razor tidak menggunakan <strong>Lightning Fang</strong>, sambaran petir pada musuh akan memberikan Razor sebuah Electro Sigil untuk <strong>Claw and Thunder</strong>."
+    }
+  }
+}

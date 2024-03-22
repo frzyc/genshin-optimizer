@@ -1,0 +1,24 @@
+{
+  "name": "Hủy Diệt",
+  "description": {
+    "0": "Vũ khí sắc bén được chế tạo từ Tinh Thạch kỳ lạ. Ánh sáng xanh u tối dường như đang kể lại vô vàn những chuyện đã qua."
+  },
+  "passiveName": "Diệt Khước Giới Pháp",
+  "passiveDescription": {
+    "0": {
+      "0": "Tăng <cryo>12%</cryo> sát thương tất cả nguyên tố; Sau khi thi triển Kỹ Năng Nguyên Tố sẽ nhận được hiệu quả \"Viên Đột\", duy trì 20s, sức tấn công mỗi giây tăng <cryo>3.2%</cryo>, hiệu quả tăng tấn công này tối đa cộng dồn 6 lần. Khi nhân vật trang bị vũ khí này không xuất hiện trong trận, hiệu quả tăng tấn công của \"Viên Đột\" tăng gấp đôi."
+    },
+    "1": {
+      "0": "Tăng <cryo>15%</cryo> sát thương tất cả nguyên tố; Sau khi thi triển Kỹ Năng Nguyên Tố sẽ nhận được hiệu quả \"Viên Đột\", duy trì 20s, sức tấn công mỗi giây tăng <cryo>4%</cryo>, hiệu quả tăng tấn công này tối đa cộng dồn 6 lần. Khi nhân vật trang bị vũ khí này không xuất hiện trong trận, hiệu quả tăng tấn công của \"Viên Đột\" tăng gấp đôi."
+    },
+    "2": {
+      "0": "Tăng <cryo>18%</cryo> sát thương tất cả nguyên tố; Sau khi thi triển Kỹ Năng Nguyên Tố sẽ nhận được hiệu quả \"Viên Đột\", duy trì 20s, sức tấn công mỗi giây tăng <cryo>4.8%</cryo>, hiệu quả tăng tấn công này tối đa cộng dồn 6 lần. Khi nhân vật trang bị vũ khí này không xuất hiện trong trận, hiệu quả tăng tấn công của \"Viên Đột\" tăng gấp đôi."
+    },
+    "3": {
+      "0": "Tăng <cryo>21%</cryo> sát thương tất cả nguyên tố; Sau khi thi triển Kỹ Năng Nguyên Tố sẽ nhận được hiệu quả \"Viên Đột\", duy trì 20s, sức tấn công mỗi giây tăng <cryo>5.6%</cryo>, hiệu quả tăng tấn công này tối đa cộng dồn 6 lần. Khi nhân vật trang bị vũ khí này không xuất hiện trong trận, hiệu quả tăng tấn công của \"Viên Đột\" tăng gấp đôi."
+    },
+    "4": {
+      "0": "Tăng <cryo>24%</cryo> sát thương tất cả nguyên tố; Sau khi thi triển Kỹ Năng Nguyên Tố sẽ nhận được hiệu quả \"Viên Đột\", duy trì 20s, sức tấn công mỗi giây tăng <cryo>6.4%</cryo>, hiệu quả tăng tấn công này tối đa cộng dồn 6 lần. Khi nhân vật trang bị vũ khí này không xuất hiện trong trận, hiệu quả tăng tấn công của \"Viên Đột\" tăng gấp đôi."
+    }
+  }
+}

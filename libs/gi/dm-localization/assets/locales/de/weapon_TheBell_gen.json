@@ -1,0 +1,24 @@
+{
+  "name": "Glocke",
+  "description": {
+    "0": "Ein schweres Großschwert mit einer eingebauten Uhr, die jedoch längst nicht mehr geht."
+  },
+  "passiveName": "Beschützer der Rebellen",
+  "passiveDescription": {
+    "0": {
+      "0": "Erstellt beim Erleiden von Schaden einen Schutzschild mit einer Stärke von <cryo>20 %</cryo> der max. LP. Hält solange, bis die Schadensmenge erreicht ist, aber max. 10 s. <cryo>45</cryo> s Abklingzeit. Erhöht den verursachten Schaden der Figur während der Wirkungsdauer um <cryo>12 %</cryo>."
+    },
+    "1": {
+      "0": "Erstellt beim Erleiden von Schaden einen Schutzschild mit einer Stärke von <cryo>23 %</cryo> der max. LP. Hält solange, bis die Schadensmenge erreicht ist, aber max. 10 s. <cryo>45</cryo> s Abklingzeit. Erhöht den verursachten Schaden der Figur während der Wirkungsdauer um <cryo>15 %</cryo>."
+    },
+    "2": {
+      "0": "Erstellt beim Erleiden von Schaden einen Schutzschild mit einer Stärke von <cryo>26 %</cryo> der max. LP. Hält solange, bis die Schadensmenge erreicht ist, aber max. 10 s. <cryo>45</cryo> s Abklingzeit. Erhöht den verursachten Schaden der Figur während der Wirkungsdauer um <cryo>18 %</cryo>."
+    },
+    "3": {
+      "0": "Erstellt beim Erleiden von Schaden einen Schutzschild mit einer Stärke von <cryo>29 %</cryo> der max. LP. Hält solange, bis die Schadensmenge erreicht ist, aber max. 10 s. <cryo>45</cryo> s Abklingzeit. Erhöht den verursachten Schaden der Figur während der Wirkungsdauer um <cryo>21 %</cryo>."
+    },
+    "4": {
+      "0": "Erstellt beim Erleiden von Schaden einen Schutzschild mit einer Stärke von <cryo>32 %</cryo> der max. LP. Hält solange, bis die Schadensmenge erreicht ist, aber max. 10 s. <cryo>45</cryo> s Abklingzeit. Erhöht den verursachten Schaden der Figur während der Wirkungsdauer um <cryo>24 %</cryo>."
+    }
+  }
+}

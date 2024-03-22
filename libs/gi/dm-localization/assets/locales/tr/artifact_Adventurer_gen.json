@@ -1,0 +1,29 @@
+{
+  "setName": "Maceracı",
+  "setEffects": {
+    "2": "Maks. Can 1.000 artar.",
+    "4": "Bir sandık açmak Maks. Canın %30'unu 5 saniyede yeniler."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Maceracının Çiçeği",
+      "desc": "Antik bir şehrin çetin ortamından kurtulmuş dayanıklı bir çiçek. Şimdi bir madalyon gibi gururla takılıyor."
+    },
+    "plume": {
+      "name": "Maceracının Kuyruk Tüyü",
+      "desc": "Bu kıtada nadir olarak görülen egzotik bir kuşun tüyü."
+    },
+    "sands": {
+      "name": "Maceracının Cep Saati",
+      "desc": "İster hiçliğin dibi olsun, isterse kayıp bir şehrin harabeleri, insan güneş ışınlarının ulaşamadığı yerlerde zamanın nasıl geçtiğini anlamıyor."
+    },
+    "goblet": {
+      "name": "Maceracının Altın Kadehi",
+      "desc": "Bir maceracının keşiflerinden birinde elde ettiği bir ganimet. Biraz hasar almış olsa da çok değerli bir hazine."
+    },
+    "circlet": {
+      "name": "Maceracının Bandanası",
+      "desc": "Alna sarılan kumaş bir bandana. Tozla kaplı ve terle sırılsıklam olan bu bandana yine de bir maceracının gururunu yansıtıyor."
+    }
+  }
+}

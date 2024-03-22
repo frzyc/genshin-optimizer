@@ -1,0 +1,167 @@
+{
+  "name": "Charlotte",
+  "title": "Ống Kính Sự Thật",
+  "description": "Phóng viên đầy năng lượng của tờ báo Chim Hơi Nước, mỗi giây phút đều hướng về \"chân tướng\".",
+  "constellationName": "Cung Chân Thị Kính",
+  "auto": {
+    "name": "Phối Màu Lạnh",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Tấn Công Thường</strong>",
+        "1": "Dùng máy ảnh đặc chế là \"Ngài Verite\" để ngắm chuẩn mục tiêu, tiến hành tối đa 3 lần tấn công, gây <cryo>Sát Thương Nguyên Tố Băng</cryo>."
+      },
+      "charged": {
+        "0": "<strong>Trọng Kích</strong>",
+        "1": "Tiêu hao thể lực nhất định để khiến Ngài Verite gây <cryo>Sát Thương Phạm Vi Nguyên Tố Băng</cryo>."
+      },
+      "plunging": {
+        "0": "<strong>Tấn Công Khi Đáp</strong>",
+        "1": "Ngưng tụ sức mạnh nguyên tố Băng, từ trên trời tấn công xuống mặt đất, tấn công kẻ địch trên đường đi, gây <cryo>Sát Thương Phạm Vi Nguyên Tố Băng</cryo> khi chạm đất."
+      },
+      "arkhe": {
+        "0": "<strong>Sức Mạnh Nền Tảng: Pneuma</strong>",
+        "1": "Mỗi cách một khoảng thời gian, sau khi Charlotte thi triển Trọng Kích sẽ giáng xuống Gai Linh Hồn xuyên thấu kẻ địch, gây <cryo>Sát Thương Phạm Vi Nguyên Tố Băng</cryo> thuộc tính Pneuma."
+      }
+    },
+    "skillParams": {
+      "0": "Sát Thương Lần 1",
+      "1": "Sát Thương Lần 2",
+      "2": "Sát Thương Lần 3",
+      "3": "Sát Thương Trọng Kích",
+      "4": "Thể lực Trọng Kích tiêu hao",
+      "5": "Sát Thương Khi Rơi",
+      "6": "Sát Thương Khi Rơi Từ Độ Cao Thấp/Cao",
+      "7": "Sát Thương Gai Linh Hồn",
+      "8": "Giãn Cách Sát Thương Gai Linh Hồn",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Lấy Cảnh - Bố Cục Điểm Lạnh",
+    "description": {
+      "0": "Sử dụng bản năng nhạy bén của một phóng viên xuất sắc để triển khai kỹ thuật chụp ảnh. Dựa vào cách nhấn và nhấn giữ để sản sinh hiệu quả khác nhau.",
+      "1": "<br/>",
+      "2": "<strong>Nhấn</strong>",
+      "3": "Dùng Ngài Verite để chụp ảnh, gây <cryo>Sát Thương Phạm Vi Nguyên Tố Băng</cryo> cho kẻ địch phía trước, đồng thời gán \"Cắt Hình Siêu Tốc\" lên tối đa 5 kẻ địch trúng phải. Trong thời gian duy trì, Cắt Hình Siêu Tốc cách một khoảng thời gian sẽ gây <cryo>Sát Thương Nguyên Tố Băng</cryo> cho kẻ địch.",
+      "4": "<br/>",
+      "5": "<strong>Nhấn Giữ</strong>",
+      "6": "Mở kính ngắm của Ngài Verite để vào trạng thái \"Lấy Bố Cục\", kính ngắm trong thời gian nhấn giữ sẽ liên tục mở rộng đến mức tối đa. Charlotte vẫn có thể di chuyển và điều chỉnh hướng trong trạng thái này.",
+      "7": "Khi kết thúc nhấn giữ, Ngài Verite sẽ gây <cryo>Sát Thương Nguyên Tố Băng</cryo> lên kẻ địch bị khóa bởi kính ngắm, đồng thời gán \"Cắt Hình Siêu Tốc\" lên kẻ địch tương tự như khi nhấn; Nếu thi triển kỹ năng khi kính ngắm đạt đến mức cực hạn, thì sẽ gán \"Ấn Tượng Tập Trung\" với sát thương cao hơn và thời gian duy trì lâu hơn, thời gian chờ kỹ năng trong lần đó cũng sẽ dài hơn.",
+      "8": "Trạng thái Lấy Bố Cục tối đa duy trì 15s, tối đa khóa được 5 kẻ địch.",
+      "9": "<br/>",
+      "10": "<i>\"Chụp ảnh báo chí yêu cầu những bức ảnh đơn giản, nổi bật chủ đề. Nhưng trên hết thì cần phải giỏi bắt giữ khoảnh khắc!\"</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Nhấn Chụp Ảnh",
+      "1": "Sát Thương Nhấn Giữ Chụp Ảnh",
+      "2": "Sát Thương \"Cắt Hình Siêu Tốc\"",
+      "3": "Giãn Cách Kích Hoạt \"Cắt Hình Siêu Tốc\"",
+      "4": "\"Cắt Hình Siêu Tốc\" Duy Trì",
+      "5": "Sát Thương \"Ấn Tượng Tập Trung\"",
+      "6": "Giãn Cách Kích Hoạt \"Ấn Tượng Tập Trung\"",
+      "7": "\"Ấn Tượng Tập Trung\" Duy Trì",
+      "8": "CD",
+      "9": "CD Kính Ngắm Cực Hạn",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Ảnh Tĩnh - Xác Nhận Toàn Diện",
+    "description": {
+      "0": "Dùng băng sương để kết thành biểu tượng Báo Chim Hơi Nước, tạo ra \"Hiện Trường Tạm Thời\", gây <cryo>Sát Thương Phạm Vi Nguyên Tố Băng</cryo>, hồi phục một lượng HP căn cứ vào sức tấn công của Charlotte cho tất cả nhân vật trong đội gần đó.",
+      "1": "<br/>",
+      "2": "<strong>Hiện Trường Tạm Thời</strong>",
+      "3": [
+        "Trong thời gian duy trì, Ngài Verite cách một khoảng thời gian sẽ tấn công kẻ địch trong đó, gây <cryo>Sát Thương Nguyên Tố Băng</cryo>.",
+        "Duy trì hồi phục một lượng HP căn cứ vào sức tấn công của Charlotte cho nhân vật trong trận đứng trong phạm vi đó."
+      ],
+      "4": "<br/>",
+      "5": "<i>\"Lắng nghe từ nhiều góc độ để tái hiện lại những gì thực sự đã xảy ra chính là chìa khóa để có một bài báo hay... Ý tôi là bạn sẽ có thể viết được bài báo hay nhất từ góc độ tốt nhất đó!\"</i>"
+    },
+    "skillParams": {
+      "0": "Lượng Trị Liệu Thi Triển",
+      "1": "Sát Thương Kỹ Năng",
+      "2": "Lượng Trị Liệu Máy Ảnh",
+      "3": "Sát Thương Máy Ảnh",
+      "4": "Hiện Trường Tạm Thời Duy Trì",
+      "5": "CD",
+      "6": "Năng Lượng Nguyên Tố",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Thời Khắc Bắt Ảnh",
+    "description": {
+      "0": "Khi kẻ địch có \"Ấn Tượng Tập Trung\" bị đánh bại, thời gian chờ của kỹ năng <strong>Lấy Cảnh - Bố Cục Điểm Lạnh</strong> giảm 2s. Mỗi 12s tối đa rút ngắn thời gian chờ 4 lần bằng cách này."
+    }
+  },
+  "passive2": {
+    "name": "Khảo Sát Đa Dạng",
+    "description": {
+      "0": "Ngoài Charlotte ra, mỗi 1/2/3 nhân vật người Fontaine trong đội sẽ khiến Charlotte nhận 5%/10%/15% buff trị liệu; Mỗi 1/2/3 nhân vật không phải người Fontaine trong đội sẽ khiến Charlotte nhận 5%/10%/15% buff Sát Thương Nguyên Tố Băng."
+    }
+  },
+  "passive3": {
+    "name": "Màn Trập Tự Thân",
+    "description": {
+      "0": "Charlotte sau khi dùng \"Ống Kính Thu Phóng Đặc Biệt\", khả năng nhấn giữ của Kỹ Năng Nguyên Tố \"Lấy Cảnh - Bố Cục Điểm Lạnh\" sẽ không tạo ra hiệu quả vốn có, mà sẽ chuyển sang cách thức đặc biệt để chụp ảnh..."
+    }
+  },
+  "constellation1": {
+    "name": "Lấy Xác Nhận Làm Ràng Buộc",
+    "description": {
+      "0": "<strong>Ảnh Tĩnh - Xác Nhận Toàn Diện</strong> sau khi trị liệu cho nhân vật, sẽ gán ấn \"Xác Minh\" cho họ, mỗi 2s sẽ hồi phục một lượng HP bằng 80% tấn công của Charlotte cho nhân vật. Hiệu quả này duy trì 6s."
+    }
+  },
+  "constellation2": {
+    "name": "Lấy Sự Thật Làm Mục Tiêu",
+    "description": {
+      "0": "Khi thi triển <strong>Lấy Cảnh - Bố Cục Điểm Lạnh</strong>, Ngài Verite tấn công trúng 1/2/3 kẻ địch trở lên, tấn công của Charlotte sẽ tăng 10%/20%/30%, duy trì 12s."
+    }
+  },
+  "constellation3": {
+    "name": "Lấy Tự Thân Làm Tiên Quyết",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Ảnh Tĩnh - Xác Nhận Toàn Diện</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation4": {
+    "name": "Lấy Giám Sát Làm Trách Nhiệm",
+    "description": {
+      "0": "<strong>Ảnh Tĩnh - Xác Nhận Toàn Diện</strong> khi trúng kẻ địch có ấn \"Cắt Hình Siêu Tốc\" hoặc \"Ấn Tượng Tập Trung\", sát thương gây ra tăng 10%, đồng thời sẽ hồi phục cho Charlotte 2 điểm năng lượng. Mỗi 20s tối đa hồi phục 5 lần Năng Lượng Nguyên Tố bằng cách này."
+    }
+  },
+  "constellation5": {
+    "name": "Lấy Lương Tri Làm Nguyên Tắc",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Lấy Cảnh - Bố Cục Điểm Lạnh</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation6": {
+    "name": "Lấy Thú Vị Làm Lý Lẽ",
+    "description": {
+      "0": "Tấn Công Thường hoặc Trọng Kích trúng kẻ địch có \"Ấn Tượng Tập Trung\" của kỹ năng <strong>Lấy Cảnh - Bố Cục Điểm Lạnh</strong>, Ngài Verite sẽ hỗ trợ tấn công, gây ra <cryo>Sát Thương Phạm Vi Nguyên Tố Băng</cryo> tương ứng với 180% tấn công của Charlotte, đồng thời hồi phục một lượng HP bằng 42% tấn công của Charlotte cho nhân vật trong trận đứng trong phạm vi đó. Hiệu quả này mỗi 6s tối đa kích hoạt một lần, sát thương và hiệu quả trị liệu từ cách thức này sẽ được tính là sát thương và hiệu quả trị liệu của Kỹ Năng Nộ."
+    }
+  }
+}

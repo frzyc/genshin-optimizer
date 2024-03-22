@@ -1,0 +1,24 @@
+{
+  "name": "Splendor of Tranquil Waters",
+  "description": {
+    "0": "A scepter around which swirls pure water. In days long past, it once symbolized the highest authority over the seas."
+  },
+  "passiveName": "Dawn and Dusk by the Lake",
+  "passiveDescription": {
+    "0": {
+      "0": "When the equipping character's current HP increases or decreases, Elemental Skill DMG dealt will be increased by <cryo>8%</cryo> for 6s. Max 3 stacks. This effect can be triggered once every 0.2s. When other party members' current HP increases or decreases, the equipping character's Max HP will be increased by <cryo>14%</cryo> for 6s. Max 2 stacks. This effect can be triggered once every 0.2s. The aforementioned effects can be triggered even if the wielder is off-field."
+    },
+    "1": {
+      "0": "When the equipping character's current HP increases or decreases, Elemental Skill DMG dealt will be increased by <cryo>10%</cryo> for 6s. Max 3 stacks. This effect can be triggered once every 0.2s. When other party members' current HP increases or decreases, the equipping character's Max HP will be increased by <cryo>17.5%</cryo> for 6s. Max 2 stacks. This effect can be triggered once every 0.2s. The aforementioned effects can be triggered even if the wielder is off-field."
+    },
+    "2": {
+      "0": "When the equipping character's current HP increases or decreases, Elemental Skill DMG dealt will be increased by <cryo>12%</cryo> for 6s. Max 3 stacks. This effect can be triggered once every 0.2s. When other party members' current HP increases or decreases, the equipping character's Max HP will be increased by <cryo>21%</cryo> for 6s. Max 2 stacks. This effect can be triggered once every 0.2s. The aforementioned effects can be triggered even if the wielder is off-field."
+    },
+    "3": {
+      "0": "When the equipping character's current HP increases or decreases, Elemental Skill DMG dealt will be increased by <cryo>14%</cryo> for 6s. Max 3 stacks. This effect can be triggered once every 0.2s. When other party members' current HP increases or decreases, the equipping character's Max HP will be increased by <cryo>24.5%</cryo> for 6s. Max 2 stacks. This effect can be triggered once every 0.2s. The aforementioned effects can be triggered even if the wielder is off-field."
+    },
+    "4": {
+      "0": "When the equipping character's current HP increases or decreases, Elemental Skill DMG dealt will be increased by <cryo>16%</cryo> for 6s. Max 3 stacks. This effect can be triggered once every 0.2s. When other party members' current HP increases or decreases, the equipping character's Max HP will be increased by <cryo>28%</cryo> for 6s. Max 2 stacks. This effect can be triggered once every 0.2s. The aforementioned effects can be triggered even if the wielder is off-field."
+    }
+  }
+}

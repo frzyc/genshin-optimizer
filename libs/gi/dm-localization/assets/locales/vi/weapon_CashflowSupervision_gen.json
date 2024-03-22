@@ -1,0 +1,24 @@
+{
+  "name": "Quản Đốc Vàng Ròng",
+  "description": {
+    "0": "Thiết bị lơ lửng, có thể giám sát hiện tượng nhất định. Sau khi bị bỏ đi đã được người nhặt cải tạo thành công dụng khác."
+  },
+  "passiveName": "Thủy Triều Máu Hoàng Kim",
+  "passiveDescription": {
+    "0": {
+      "0": "Tấn công tăng <cryo>16%</cryo>. Khi HP hiện tại tăng lên hoặc giảm xuống, sát thương tấn công thường tăng <cryo>16%</cryo>, sát thương trọng kích tăng <cryo>14%</cryo>. Hiệu quả này duy trì 4s, tối đa cộng dồn 3 tầng, mỗi 0.3s tối đa kích hoạt một lần. Khi cộng dồn đủ 3 tầng, tốc độ tấn công tăng <cryo>8%</cryo>."
+    },
+    "1": {
+      "0": "Tấn công tăng <cryo>20%</cryo>. Khi HP hiện tại tăng lên hoặc giảm xuống, sát thương tấn công thường tăng <cryo>20%</cryo>, sát thương trọng kích tăng <cryo>17.5%</cryo>. Hiệu quả này duy trì 4s, tối đa cộng dồn 3 tầng, mỗi 0.3s tối đa kích hoạt một lần. Khi cộng dồn đủ 3 tầng, tốc độ tấn công tăng <cryo>10%</cryo>."
+    },
+    "2": {
+      "0": "Tấn công tăng <cryo>24%</cryo>. Khi HP hiện tại tăng lên hoặc giảm xuống, sát thương tấn công thường tăng <cryo>24%</cryo>, sát thương trọng kích tăng <cryo>21%</cryo>. Hiệu quả này duy trì 4s, tối đa cộng dồn 3 tầng, mỗi 0.3s tối đa kích hoạt một lần. Khi cộng dồn đủ 3 tầng, tốc độ tấn công tăng <cryo>12%</cryo>."
+    },
+    "3": {
+      "0": "Tấn công tăng <cryo>28%</cryo>. Khi HP hiện tại tăng lên hoặc giảm xuống, sát thương tấn công thường tăng <cryo>28%</cryo>, sát thương trọng kích tăng <cryo>24.5%</cryo>. Hiệu quả này duy trì 4s, tối đa cộng dồn 3 tầng, mỗi 0.3s tối đa kích hoạt một lần. Khi cộng dồn đủ 3 tầng, tốc độ tấn công tăng <cryo>14%</cryo>."
+    },
+    "4": {
+      "0": "Tấn công tăng <cryo>32%</cryo>. Khi HP hiện tại tăng lên hoặc giảm xuống, sát thương tấn công thường tăng <cryo>32%</cryo>, sát thương trọng kích tăng <cryo>28%</cryo>. Hiệu quả này duy trì 4s, tối đa cộng dồn 3 tầng, mỗi 0.3s tối đa kích hoạt một lần. Khi cộng dồn đủ 3 tầng, tốc độ tấn công tăng <cryo>16%</cryo>."
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Kiếm Đen",
+  "description": {
+    "0": "Trường kiếm đen khao khát chiến tranh và chém giết, nghe nói có thể khiến người ta chìm đắm trong cuồng sát."
+  },
+  "passiveName": "Chính Nghĩa",
+  "passiveDescription": {
+    "0": {
+      "0": "Tấn công thường và sát thương trọng kích tăng <cryo>20%</cryo>, ngoài ra khi tấn công thường và bạo kích trọng kích sẽ hồi HP bằng <cryo>60%</cryo> tấn công. Hiệu quả này mỗi 5s thi triển 1 lần."
+    },
+    "1": {
+      "0": "Tấn công thường và sát thương trọng kích tăng <cryo>25%</cryo>, ngoài ra khi tấn công thường và bạo kích trọng kích sẽ hồi HP bằng <cryo>70%</cryo> tấn công. Hiệu quả này mỗi 5s thi triển 1 lần."
+    },
+    "2": {
+      "0": "Sát thương tấn công thường và trọng kích gây ra tăng <cryo>30%</cryo>, ngoài ra khi tấn công thường và trọng kích bạo kích sẽ hồi HP bằng <cryo>80%</cryo> tấn công. Hiệu quả này mỗi 5s thi triển 1 lần."
+    },
+    "3": {
+      "0": "Tấn công thường và sát thương trọng kích tăng <cryo>35%</cryo>, ngoài ra khi tấn công thường và bạo kích trọng kích sẽ hồi HP bằng <cryo>90%</cryo> tấn công. Hiệu quả này mỗi 5s thi triển 1 lần."
+    },
+    "4": {
+      "0": "Tấn công thường và sát thương trọng kích tăng <cryo>40%</cryo>, ngoài ra khi tấn công thường và bạo kích trọng kích sẽ hồi HP bằng <cryo>100%</cryo> tấn công. Hiệu quả này mỗi 5s thi triển 1 lần."
+    }
+  }
+}

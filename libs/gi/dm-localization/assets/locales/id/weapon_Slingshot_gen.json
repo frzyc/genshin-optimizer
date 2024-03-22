@@ -1,0 +1,24 @@
+{
+  "name": "Slingshot",
+  "description": {
+    "0": "Selepas namanya, ini adalah sebuah busur. Setelah percobaan dan peningkatan yang tak terhitung jumlahnya, orang yang membuat Slingshot baru menyadari bahwa yang terbentuk adalah sebuah busur."
+  },
+  "passiveName": "Slingshot",
+  "passiveDescription": {
+    "0": {
+      "0": "Jika Normal atau Charged Attack mengenai target dalam waktu 0,3 detik setelah dilancarkan, DMG meningkat sebesar <cryo>36%</cryo>. Sebaliknya jika tidak, maka DMG menurun sebesar 10%."
+    },
+    "1": {
+      "0": "Jika Normal atau Charged Attack mengenai target dalam waktu 0,3 detik setelah dilancarkan, DMG meningkat sebesar <cryo>42%</cryo>. Sebaliknya jika tidak, maka DMG menurun sebesar 10%."
+    },
+    "2": {
+      "0": "Jika Normal atau Charged Attack mengenai target dalam waktu 0,3 detik setelah dilancarkan, DMG meningkat sebesar <cryo>48%</cryo>. Sebaliknya jika tidak, maka DMG menurun sebesar 10%."
+    },
+    "3": {
+      "0": "Jika Normal atau Charged Attack mengenai target dalam waktu 0,3 detik setelah dilancarkan, DMG meningkat sebesar <cryo>54%</cryo>. Sebaliknya jika tidak, maka DMG menurun sebesar 10%."
+    },
+    "4": {
+      "0": "Jika Normal atau Charged Attack mengenai target dalam waktu 0,3 detik setelah dilancarkan, DMG meningkat sebesar <cryo>60%</cryo>. Sebaliknya jika tidak, maka DMG menurun sebesar 10%."
+    }
+  }
+}

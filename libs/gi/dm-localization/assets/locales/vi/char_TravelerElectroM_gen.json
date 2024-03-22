@@ -1,0 +1,152 @@
+{
+  "auto": {
+    "name": "Tiếng Sấm Dị Bang",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Tấn Công Thường</strong>",
+        "1": "Thực hiện tối đa 5 lần đánh kiếm liên tiếp."
+      },
+      "charged": {
+        "0": "<strong>Trọng Kích</strong>",
+        "1": "Tiêu hao thể lực nhất định, đánh ra hai kiếm về phía trước trong chớp mắt."
+      },
+      "plunging": {
+        "0": "<strong>Tấn Công Khi Đáp</strong>",
+        "1": "Đáp xuống đất từ trên không, tấn công kẻ địch trên đường và gây sát thương phạm vi khi chạm đất."
+      }
+    },
+    "skillParams": {
+      "0": "Sát Thương Lần 1",
+      "1": "Sát Thương Lần 2",
+      "2": "Sát Thương Lần 3",
+      "3": "Sát Thương Lần 4",
+      "4": "Sát Thương Lần 5",
+      "5": "Sát Thương Trọng Kích",
+      "6": "Thể lực Trọng Kích tiêu hao",
+      "7": "Sát Thương Khi Đáp",
+      "8": "Sát Thương Khi Rơi Từ Độ Cao Thấp/Cao",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Lôi Ảnh Kiếm",
+    "description": {
+      "0": "Chém ra ba đường lôi ảnh chớp nhoáng. Lôi ảnh sẽ gây cho địch <electro>sát thương Nguyên Tố Lôi</electro>, đồng thời khi đánh trúng địch sẽ để lại Khuyết Ngọc Dậy Sóng.",
+      "1": "Ban đầu sẽ sinh ra tối đa 2 Khuyết Ngọc Dậy Sóng. Khi thi triển kỹ năng sẽ xóa bỏ Khuyết Ngọc Dậy Sóng của bản thân.",
+      "2": "<br/>",
+      "3": "<strong>Khuyết Ngọc Dậy Sóng</strong>",
+      "4": "Khi nhân vật đến gần sẽ hấp thụ Khuyết Ngọc Dậy Sóng, nhận hiệu quả sau đây:",
+      "5": [
+        "Hồi Năng Lượng Nguyên Tố;",
+        "Trong thời gian duy trì, tăng hiệu suất Nạp Nguyên Tố."
+      ],
+      "6": "<br/>",
+      "7": "<i>Thảo luận với Paimon về tất cả những con đường mà dòng điện có thể đi qua.</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Kỹ Năng",
+      "1": "Hồi Phục Năng Lượng Nguyên Tố",
+      "2": "Tăng Hiệu Quả Nạp Nguyên Tố",
+      "3": "Thời Gian Kéo Dài",
+      "4": "Thời Gian Khuyết Ngọc Dậy Sóng Tồn Tại",
+      "5": "CD",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Xung Điện Sấm Rền",
+    "description": {
+      "0": "Kêu gọi sự bảo vệ của sấm sét, đánh lui kẻ địch xung quanh và gây <electro>sát thương Nguyên Tố Lôi</electro>.",
+      "1": "<br/>",
+      "2": "<strong>Sấm Sét Bao Vây</strong>",
+      "3": "Khi tấn công thường hoặc trọng kích của nhân vật trong trận đánh trúng địch sẽ triệu hồi Sấm Sét Uy Vũ gây <electro>sát thương Nguyên Tố Lôi</electro> cho địch.",
+      "4": "Khi Sấm Sét Uy Vũ đánh trúng địch sẽ hồi Năng Lượng Nguyên Tố cho nhân vật này.",
+      "5": "Mỗi 0.5s tối đa sinh ra Sấm Sét Uy Vũ 1 lần.",
+      "6": "<br/>",
+      "7": "<i>Cùng Paimon nghiên cứu về ánh sáng xuyên qua những đám mây.</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Kỹ Năng",
+      "1": "Sát thương Sấm Sét Uy Vũ",
+      "2": "Hồi Phục Năng Lượng Nguyên Tố",
+      "3": "Thời Gian Kéo Dài",
+      "4": "CD",
+      "5": "Năng Lượng Nguyên Tố",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Tia Chớp",
+    "description": {
+      "0": "Khi các nhân vật khác trong đội nhận Khuyết Ngọc Dậy Sóng do <strong>Lôi Ảnh Kiếm</strong> sinh ra, CD của <strong>Lôi Ảnh Kiếm</strong> sẽ giảm 1.5s."
+    }
+  },
+  "passive2": {
+    "name": "Sấm Rền",
+    "description": {
+      "0": "Tăng hiệu quả Nạp Nguyên Tố do Khuyết Ngọc Dậy Sóng của <strong>Lôi Ảnh Kiếm</strong> cung cấp theo 10% hiệu quả Nạp Nguyên Tố của Nhà Lữ Hành."
+    }
+  },
+  "constellation1": {
+    "name": "Sấm Sét Bội Thu",
+    "description": {
+      "0": "Số lượng Khuyết Ngọc Dậy Sóng có thể sinh ra khi thi triển <strong>Lôi Ảnh Kiếm</strong> tăng đến 3."
+    }
+  },
+  "constellation2": {
+    "name": "Như Sấm Thịnh Nộ",
+    "description": {
+      "0": "Sau khi Sấm Sét Uy Vũ của <strong>Xung Điện Sấm Rền</strong> đánh trúng địch, sẽ làm giảm 15% <electro>Kháng Nguyên Tố Lôi</electro> của địch, duy trì 8s."
+    }
+  },
+  "constellation3": {
+    "name": "Sấm Chớp Liên Miên",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Xung Điện Sấm Rền</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation4": {
+    "name": "Mây Sét Khó Lường",
+    "description": {
+      "0": "Khi nhân vật nhận được Khuyết Ngọc Dậy Sóng sinh ra từ <strong>Lôi Ảnh Kiếm</strong>, nếu Năng Lượng Nguyên Tố hiện tại của nhân vật này dưới 35%, thì Năng Lượng Nguyên Tố mà Khuyết Ngọc Dậy Sóng hồi phục sẽ tăng 100%."
+    }
+  },
+  "constellation5": {
+    "name": "Tiếng Sấm Giữa Đồng Hoang",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Lôi Ảnh Kiếm</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation6": {
+    "name": "Thần Lôi Chấn Thế",
+    "description": {
+      "0": "Mỗi khi <strong>Xung Điện Sấm Rền</strong> tạo ra 2 lần Sấm Sét Uy Vũ, thì Sấm Sét Uy Vũ lần sau sẽ gây 200% sát thương so với ban đầu, đồng thời hồi thêm 1 điểm Năng Lượng Nguyên Tố cho nhân vật hiện tại."
+    }
+  }
+}

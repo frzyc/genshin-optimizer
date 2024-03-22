@@ -1,0 +1,29 @@
+{
+  "setName": "Savunmacı İradesi",
+  "setEffects": {
+    "2": "+%30 Savunma.",
+    "4": "Bunu kuşanan karakterin Element Direnci, grubunda bulunan her farklı element için %30 artar."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Muhafız Çiçeği",
+      "desc": "Muhafızın gözünden bile sakındığı bir çiçek. Ne yazık ki hiçbir zaman onu sevdiğine verme fırsatı bulamadı."
+    },
+    "plume": {
+      "name": "Muhafız Mührü",
+      "desc": "Başkalarını koruma güdüsünün sembolü olan tüy bir broş."
+    },
+    "sands": {
+      "name": "Muhafız Saati",
+      "desc": "Zamanı takip etmeye yarayan küçük bir aygıt. Mehtapsız gecelerde eski sahibini zamana bağlayan tek şeydi."
+    },
+    "goblet": {
+      "name": "Muhafız Matarası",
+      "desc": "Metal bir matara. Uzun nöbetlerin efkarını dağıtabilecek içeceklerle doldurulabilir."
+    },
+    "circlet": {
+      "name": "Muhafız Bandı",
+      "desc": "Gece mavisinin renklerini almış bir kumaş bant. Acil durumlarda bandaj olarak da kullanılabilir."
+    }
+  }
+}

@@ -1,0 +1,184 @@
+{
+  "name": "Tartaglia",
+  "title": "Childe",
+  "description": "Childe đứng thứ 11 trong quan chấp hành Fatui, uy danh chiến tích luôn được ca ngợi.",
+  "constellationName": "Cung Kình Thiên",
+  "auto": {
+    "name": "Chém Mưa",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Tấn Công Thường</strong>",
+        "1": "Thực hiện tối đa 6 lần bắn tên liên tiếp."
+      },
+      "charged": {
+        "0": "<strong>Trọng Kích</strong>",
+        "1": "Sát thương càng cao, <strong>ngắm bắn</strong> càng chính xác.",
+        "2": "Khi ngắm bắn, sức mạnh Nguyên Tố Thủy sẽ tích tụ trên mũi tên. Mũi tên tụ đầy dòng chảy sẽ gây <hydro>Sát Thương Nguyên Tố Thủy</hydro> khi bắn trúng địch, và thi triển hiệu quả Đoạn Lưu."
+      },
+      "riptide": {
+        "0": "<strong>Đoạn Lưu</strong>",
+        "1": "Địch ở trạng thái Đoạn Lưu khi bị Tartaglia tấn công, sẽ tạo hiệu quả <hydro>Sát Thương Phạm Vi Nguyên Tố Thủy</hydro>. Sát thương do những hiệu quả này gây ra được xem là tấn công thường. ",
+        "2": [
+          "Đoạn Lưu - Né: Khi tụ lực ngắm bắn trúng địch đang bị Đoạn Lưu ảnh hưởng, sẽ gây sát thương phạm vi liên tục. Đoạn Lưu - Né mỗi 0.7s mới có hiệu quả 1 lần.",
+          "Đoạn Lưu - Phá: Khi đánh bại địch bị Đoạn Lưu ảnh hưởng sẽ tạo xoáy nước, tăng thêm hiệu quả Đoạn Lưu cho địch ở gần."
+        ]
+      },
+      "plunging": {
+        "0": "<strong>Tấn Công Khi Đáp</strong>",
+        "1": "Bắn mưa tên liên tiếp xuống mặt đất, gây sát thương phạm vi.",
+        "2": "Khi ở trạng thái cận chiến Trang Phục Ma Vương - Thủy Triều, không thể thi triển tấn công khi đáp xuống."
+      }
+    },
+    "skillParams": {
+      "0": "Sát Thương Lần 1",
+      "1": "Sát Thương Lần 2",
+      "2": "Sát Thương Lần 3",
+      "3": "Sát Thương Lần 4",
+      "4": "Sát Thương Lần 5",
+      "5": "Sát Thương Lần 6",
+      "6": "Ngắm Bắn",
+      "7": "Tụ Lực Ngắm Bắn",
+      "8": "Sát Thương Đoạn Lưu - Né",
+      "9": "Sát Thương Đoạn Lưu - Phá",
+      "10": "Thời gian duy trì Đoạn Lưu",
+      "11": "Sát Thương Khi Rơi",
+      "12": "Sát Thương Khi Rơi Từ Độ Cao Thấp/Cao",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Trang Phục Ma Vương - Thủy Triều",
+    "description": {
+      "0": "Giải phóng vũ trang cấu tạo từ nước tinh khiết, gây cho địch xung quanh <hydro>Sát Thương Nguyên Tố Thủy</hydro>, và vào trạng thái cận chiến.",
+      "1": "Ở trạng thái này, tấn công thường và trọng kích của Tartaglia sẽ chuyển thành <hydro>sát thương Nguyên Tố Thủy</hydro> không thể bị đính kèm thay thế, và có thay đổi như sau:",
+      "2": "<br/>",
+      "3": "<strong>Tấn Công Thường</strong>",
+      "4": "Thực hiện tối đa 6 lần chém liên tiếp <hydro>Nguyên Tố Thủy</hydro>.",
+      "5": "<br/>",
+      "6": "<strong>Trọng Kích</strong>",
+      "7": "Tiêu hao thể lực, đánh ra hai kiếm về phía trước trong chớp mắt, gây <hydro>Sát Thương Nguyên Tố Thủy</hydro>.",
+      "8": "<br/>",
+      "9": "<strong>Đoạn Lưu - Chém</strong>",
+      "10": "Tấn công gần, đánh trúng kẻ địch bị Đoạn Lưu ảnh hưởng sẽ thi triển Đoạn Lưu - Chém 1 lần, gây <hydro>Sát Thương Phạm Vi Nguyên Tố Thủy</hydro>. Sát thương do Đoạn Lưu - Chém gây ra được coi là sát thương kỹ năng nguyên tố, mỗi 1.5s mới có hiệu quả 1 lần.",
+      "11": "<br/>",
+      "12": "Sau 30s, hoặc thi triển để hủy hiệu quả kỹ năng lần nữa, sẽ trở về trạng thái đánh xa, kỹ năng cũng sẽ vào thời gian chờ. Trạng thái cận chiến kéo dài càng lâu, thời gian chờ càng dài.",
+      "13": "Kéo dài sau 30s sẽ tự động trở về trạng thái đánh xa, kỹ năng cũng sẽ bước vào thời gian chờ lâu hơn",
+      "14": "<br/>",
+      "15": "<i>Để khắc phục nhược điểm dùng cung không tốt, anh đã chọn cung làm vũ khí. Nhưng khi chiến đấu thực sự, ắt sẽ lấy ra sức mạnh thực sự...</i>"
+    },
+    "skillParams": {
+      "0": "Trạng thái gây ra sát thương",
+      "1": "Sát Thương Lần 1",
+      "2": "Sát Thương Lần 2",
+      "3": "Sát Thương Lần 3",
+      "4": "Sát Thương Lần 4",
+      "5": "Sát Thương Lần 5",
+      "6": "Sát Thương Lần 6",
+      "7": "Sát Thương Trọng Kích",
+      "8": "Thể lực Trọng Kích tiêu hao",
+      "9": "Sát Thương Đoạn Lưu - Chém",
+      "10": "Thời Gian Kéo Dài Tối Đa",
+      "11": "CD",
+      "12": "CD sau khi dùng hết thời gian kéo dài",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Kỹ năng Thượng Thừa - Ánh Sáng Tận Diệt",
+    "description": {
+      "0": "Dựa theo trạng thái hiện tại của Tartaglia, thực hiện tấn công khác nhau: ",
+      "1": "<br/>",
+      "2": "<strong>Trạng thái đánh xa - Đạn Ma</strong>",
+      "3": "Bắn ra mũi tên tràn đầy nguyên tố thủy về phía trước, gây <hydro>Sát Thương Phạm Vi Nguyên Tố Thủy</hydro>, và thi triển hiệu quả Đoạn Lưu.",
+      "4": "Sau khi thi triển, trả lại một phần Năng Lượng Nguyên Tố.",
+      "5": "<br/>",
+      "6": "<strong>Trạng thái cận chiến - Tận Diệt Thủy Quang</strong>",
+      "7": "Trảm kích phạm vi lớn, gây <hydro>Sát Thương Nguyên Tố Thủy</hydro> cho tất cả địch ở gần và kích hoạt Đoạn Lưu - Nổ.",
+      "8": "<br/>",
+      "9": "<strong>Đoạn Lưu - Nổ</strong>",
+      "10": "Tận Diệt Thủy Quang đánh trúng địch trong trạng thái Đoạn Lưu sẽ tiêu hao hiệu quả Đoạn Lưu và tung tóe nước, gây <hydro>Sát Thương Phạm Vi Nguyên Tố Thủy</hydro>. Sát thương của Đoạn Lưu - Nổ được xem như sát thương kỹ năng nộ.",
+      "11": "<br/>",
+      "12": "<i>Dòng nước chảy vội, rất hiếm gặp trên quê hương được tuyết bao phủ của anh ấy. Có lẽ là do hiểu được sự quý giá của nó nên anh ấy có thể điều khiển nó.</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Kỹ Năng - Cận Chiến",
+      "1": "Sát Thương Kỹ Năng - Đánh Xa",
+      "2": "Sát Thương Đoạn Lưu - Nổ",
+      "3": "Kỹ năng trả lại năng lượng Nguyên Tố (đánh xa)",
+      "4": "CD",
+      "5": "Năng Lượng Nguyên Tố",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Kéo Dài Bất Tận",
+    "description": {
+      "0": "Thời gian hiệu quả Đoạn Lưu kéo dài 8 giây."
+    }
+  },
+  "passive2": {
+    "name": "Thủy Hình Kiếm",
+    "description": {
+      "0": "Khi ở trạng thái cận chiến của <strong>Trang Phục Ma Vương - Thủy Triều</strong>, tấn công thường và trọng kích tạo thành bạo kích sẽ tạo ra thêm hiệu quả Đoạn Lưu cho kẻ địch bị đánh trúng."
+    }
+  },
+  "passive3": {
+    "name": "Tinh Thông Võ Thuật",
+    "description": {
+      "0": "Tăng 1 cấp <strong>tấn công thường</strong> cho nhân vật của bản thân trong đội."
+    }
+  },
+  "constellation1": {
+    "name": "Trang Phục Ma Vương - Ngăn Sóng",
+    "description": {
+      "0": "Giảm 20% CD của <strong>Trang Phục Ma Vương - Thủy Triều</strong>."
+    }
+  },
+  "constellation2": {
+    "name": "Trang Phục Ma Vương - Sóng Ngầm",
+    "description": {
+      "0": "Khi kẻ địch bị đánh bại và chịu ảnh hưởng của hiệu ứng Đoạn Lưu, sẽ hồi phục 4 điểm Năng Lượng Nguyên Tố cho Tartaglia."
+    }
+  },
+  "constellation3": {
+    "name": "Tai Họa Vực Sâu - Nguồn Gốc Tranh Giành",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Trang Phục Ma Vương - Thủy Triều</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation4": {
+    "name": "Tai Họa Vực Sâu - Bắn Nước",
+    "description": {
+      "0": "Mỗi 4s, khi trong trận xuất hiện hiệu quả Đoạn Lưu do Tartaglia thi triển, nếu Tartaglia đang trong trạng thái cận chiến của <strong>Trang Phục Ma Vương - Thủy Triều</strong>, sẽ kích hoạt Đoạn Lưu - Chém; Nếu không Đoạn Lưu - Né sẽ được kích hoạt.",
+      "1": "Đoạn Lưu - Né và Đoạn Lưu - Chém được kích hoạt bằng cung mệnh này sẽ không bị giới hạn bởi thời gian kích hoạt của hai loại Đoạn Lưu này và cũng không ảnh hưởng đến thời gian kích hoạt của chúng."
+    }
+  },
+  "constellation5": {
+    "name": "Kỹ Năng Thượng Thừa - Chém Nước Chặt Mưa",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Kỹ Năng Thượng Thừa - Ánh Sáng Tận Diệt</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation6": {
+    "name": "Kỹ Năng Thượng Thừa - Thiên Sứ Tai Ương",
+    "description": {
+      "0": "Khi thi triển <strong>Kỹ Năng Thượng Thừa - Ánh Sáng Tận Diệt</strong> trong trạng thái cận chiến, hủy CD của <strong>Trang Phục Ma Vương - Thủy Triều</strong>.",
+      "1": "Hiệu quả này sẽ được kích hoạt khi anh quay trở lại trạng thái đánh xa."
+    }
+  }
+}

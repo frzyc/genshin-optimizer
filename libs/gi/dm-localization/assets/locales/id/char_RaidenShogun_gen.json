@@ -1,0 +1,179 @@
+{
+  "name": "Raiden Shogun",
+  "title": "Plane of Euthymia",
+  "description": "Yang Mulia, Sang Narukami Ogosho Yang Mahakuasa. Dia menjanjikan para penduduk Inazuma keabadian yang tidak akan pernah berubah.",
+  "constellationName": "Imperatrix Umbrosa",
+  "auto": {
+    "name": "Origin",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Attack</strong>",
+        "1": "Melancarkan hingga 5 serangan tombak berturut-turut."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Mengonsumsi sejumlah Stamina untuk menebas ke atas."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Menerjang dari udara untuk menghantam tanah di bawahnya, menyerang musuh di jalur terjangan dan mengakibatkan DMG area saat mendarat."
+      }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Tahap 4",
+      "4": "DMG Tahap 5",
+      "5": "DMG Charged Attack",
+      "6": "Konsumsi Stamina Charged Attack",
+      "7": "DMG Selama Plunging",
+      "8": "DMG Plunging Attack Rendah/Tinggi",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Transcendence: Baleful Omen",
+    "description": {
+      "0": "Raiden Shogun membuka sebagian Euthymia-nya, mengakibatkan <electro>Electro DMG</electro> pada musuh di sekitar dan memberikan efek Eye of Stormy Judgment pada anggota party di sekitar.",
+      "1": "<br/>",
+      "2": "<strong>Eye of Stormy Judgment</strong>",
+      "3": [
+        "Saat Karakter dengan efek ini mengakibatkan DMG pada musuh, Eye of Stormy Judgment akan melancarkan serangan terkoordinasi dan mengakibatkan <electro>Electro DMG Area</electro> di tempat musuh berada.",
+        "Selama Eye of Stormy Judgment aktif, DMG Elemental Burst Karakter yang mendapatkan efek Eye of Stormy Judgment akan meningkat sesuai dengan Konsumsi Energy Elemental Burst tersebut."
+      ],
+      "4": "<br/>",
+      "5": "Eye of Stormy Judgment di setiap party dapat melancarkan serangan terkoordinasi setiap 0,9 detik.",
+      "6": [
+        "Serangan terkoordinasi yang dipicu oleh Karakter yang bukan partymu sendiri dapat mengakibatkan 20% DMG aslinya."
+      ],
+      "7": "<br/>",
+      "8": "<i>Makna kekuatan sesosok dewa, adalah mereka memiliki kuasa akan segala yang dapat terlihat oleh mata mereka. Sang Archon Electro memegang kendali akan bintang-bintang di langit untuk melindungi para pengikutnya, dan juga kendali untuk memanggil sambaran petir guna menghukum mereka yang berani menentang kehendaknya.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "DMG Serangan Terkoordinasi",
+      "2": "Durasi",
+      "3": "Bonus DMG Elemental Burst",
+      "4": "Cooldown",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Secret Art: Musou Shinsetsu",
+    "description": {
+      "0": "Dengan mengumpulkan kebenaran dan harapan yang tak terhitung, Raiden Shogun mengeluarkan Musou no Hitotachi-nya dan mengakibatkan <electro>Electro DMG Area</electro>. Kemudian Raiden Shogun akan bertarung menggunakan Musou Isshin untuk sementara waktu. DMG yang diakibatkan Musou no Hitotachi dan Musou Isshin akan meningkat berdasarkan jumlah lapisan Resolve dari Chakra Desiderata yang dikonsumsi saat menggunakan skill ini.",
+      "1": "<br/>",
+      "2": "<strong>Musou Isshin</strong>",
+      "3": "Dalam kondisi ini, Raiden Shogun akan bertarung menggunakan pedang tachi miliknya. Normal, Charged, dan Plunging Attack Raiden Shogun dikonversi menjadi <electro>Electro DMG</electro> yang tidak bisa ditimpa oleh Elemental Infusion lainnya. Saat serangan yang berada dalam kondisi ini mengenai musuh, Raiden Shogun akan memulihkan Energy untuk anggota party di sekitar. Pemulihan Energy dengan cara ini hanya bisa terpicu setiap 1 detik, dan maksimum sebanyak 5 kali selama durasi skill.",
+      "4": "Dalam kondisi ini, pertahanan Raiden Shogun terhadap interupsi akan meningkat dan menjadi kebal terhadap DMG dari reaksi <electro>Electro-Charged</electro>.",
+      "5": "Saat berada dalam kondisi Musou Isshin, DMG dari Normal, Charged, dan Plunging Attack Raiden Shogun akan terhitung sebagai DMG Elemental Burst.",
+      "6": "<br/>",
+      "7": "Efek Musou Isshin akan hilang saat Raiden Shogun meninggalkan medan pertempuran.",
+      "8": "<br/>",
+      "9": "<strong>Chakra Desiderata</strong>",
+      "10": "Saat anggota party di sekitar (kecuali Raiden Shogun sendiri) melancarkan Elemental Burst, Raiden Shogun akan mendapatkan lapisan Resolve berdasarkan jumlah Energy yang terkonsumsi dari Elemental Burst tersebut.",
+      "11": "Jumlah maksimum lapisan Resolve adalah 60.",
+      "12": "<br/>",
+      "13": "Lapisan Resolve yang didapatkan dari Chakra Desiderata akan hilang dalam 300 detik setelah Raiden Shogun meninggalkan medan pertempuran.",
+      "14": "<br/>",
+      "15": "<i>Teknik ini adalah teknik rahasia baru Raiden Shogun. Setelah meninggalkan \"Musou\" yang penuh kekosongan, dia kini menanggung sebuah \"Musou\" baru yang terdiri dari mimpi dan harapan semua orang. Sama seperti \"shinsetsu\" atau \"kebenaran\" yang juga berarti \"pembaruan\", maka kini Inazuma telah memasuki sebuah lembaran baru.</i>"
+    },
+    "skillParams": {
+      "0": "Base DMG Musou no Hitotachi",
+      "1": "Bonus DMG Resolve",
+      "2": "Lapisan Resolve Didapatkan",
+      "3": "DMG Tahap 1",
+      "4": "DMG Tahap 2",
+      "5": "DMG Tahap 3",
+      "6": "DMG Tahap 4",
+      "7": "DMG Tahap 5",
+      "8": "DMG Charged Attack",
+      "9": "Konsumsi Stamina Charged Attack",
+      "10": "DMG Selama Plunging",
+      "11": "DMG Plunging Attack Min./Maks.",
+      "12": "Pemulihan Energi Musou Isshin",
+      "13": "Durasi Musou Isshin",
+      "14": "Cooldown",
+      "15": "Konsumsi Energy"
+    }
+  },
+  "passive1": {
+    "name": "Wishes Unnumbered",
+    "description": {
+      "0": "Saat anggota party di sekitar memperoleh Elemental Orb atau Elemental Particle, <strong>Chakra Desiderata</strong> akan mendapatkan 2 lapis Resolve.",
+      "1": "Efek ini dapat terpicu setiap 3 detik."
+    }
+  },
+  "passive2": {
+    "name": "Enlightened One",
+    "description": {
+      "0": "Untuk setiap 1% Energy Recharge di atas 100% yang dimiliki Raiden Shogun, Raiden Shogun akan mendapatkan efek:",
+      "1": [
+        "<strong>Musou Isshin</strong> memberikan pemulihan Energy 0,6% lebih besar.",
+        "0,4% <electro>Electro DMG Bonus</electro>."
+      ]
+    }
+  },
+  "passive3": {
+    "name": "All-Preserver",
+    "description": {
+      "0": "Mora yang terkonsumsi untuk melakukan Ascend Senjata Sword dan Polearm berkurang 50%."
+    }
+  },
+  "constellation1": {
+    "name": "Ominous Inscription",
+    "description": {
+      "0": "<strong>Chakra Desiderata</strong> dapat mengumpulkan Resolve dengan lebih cepat. Setelah Karakter dengan elemen <electro>Electro</electro> melancarkan Elemental Burst, jumlah Resolve yang didapatkan akan meningkat 80%. Setelah Karakter dengan elemen lain melancarkan Elemental Burst, jumlah Resolve yang didapatkan akan meningkat 20%."
+    }
+  },
+  "constellation2": {
+    "name": "Steelbreaker",
+    "description": {
+      "0": "Saat menggunakan Musou no Hitotachi dan berada dalam status Musou Isshin yang diperoleh dari skill <strong>Secret Art: Musou Shinsetsu</strong>, serangan Raiden Shogun akan mengabaikan 60% DEF musuh."
+    }
+  },
+  "constellation3": {
+    "name": "Shinkage Bygones",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Secret Art: Musou Shinsetsu</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Pledge of Propriety",
+    "description": {
+      "0": "Setelah status <strong>Musou Isshin</strong> yang diperoleh dari <strong>Secret Art: Musou Shinsetsu</strong> berakhir, seluruh anggota party di sekitar (kecuali Raiden Shogun sendiri) mendapatkan 30% bonus ATK selama 10 detik."
+    }
+  },
+  "constellation5": {
+    "name": "Shogun's Descent",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Transcendence: Baleful Omen</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Wishbearer",
+    "description": {
+      "0": "Saat berada dalam status <strong>Musou Isshin</strong> yang diperoleh dari <strong>Secret Art: Musou Shinsetsu</strong>, DMG Elemental Burst Raiden Shogun yang mengenai musuh akan mengurangi 1 detik CD Elemental Burst seluruh anggota party di sekitar (kecuali Raiden Shogun sendiri).",
+      "1": "Efek ini dapat terpicu setiap 1 detik, dan dapat terpicu maksimum 5 kali selama durasi status."
+    }
+  }
+}

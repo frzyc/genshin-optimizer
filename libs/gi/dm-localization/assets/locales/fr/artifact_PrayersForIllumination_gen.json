@@ -1,0 +1,12 @@
+{
+  "setName": "Sacrifieur Pyro",
+  "setEffects": {
+    "1": "Diminue la durée des effets Pyro subis de 40 %."
+  },
+  "pieces": {
+    "circlet": {
+      "name": "Couronne rituelle Pyro",
+      "desc": "Une couronne portée par les prêtres lors de cérémonies dans les temps anciens. Son immersion dans le feu tout au long de l'année lui a conféré une merveilleuse résistance."
+    }
+  }
+}

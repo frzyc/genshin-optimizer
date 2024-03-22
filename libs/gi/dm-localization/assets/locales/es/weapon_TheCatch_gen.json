@@ -1,0 +1,24 @@
+{
+  "name": "La Captura",
+  "description": {
+    "0": "Hace mucho tiempo, esta lanza era la preferida de un famoso bandido de Inazuma."
+  },
+  "passiveName": "Saloma",
+  "passiveDescription": {
+    "0": {
+      "0": "Aumenta en un <cryo>16%</cryo> el daño de la Habilidad Definitiva y en un <cryo>6%</cryo> su Prob. CRIT."
+    },
+    "1": {
+      "0": "Aumenta en un <cryo>20%</cryo> el daño de la Habilidad Definitiva y en un <cryo>7.5%</cryo> su Prob. CRIT."
+    },
+    "2": {
+      "0": "Aumenta en un <cryo>24%</cryo> el daño de la Habilidad Definitiva y en un <cryo>9%</cryo> su Prob. CRIT."
+    },
+    "3": {
+      "0": "Aumenta en un <cryo>28%</cryo> el daño de la Habilidad Definitiva y en un <cryo>10.5%</cryo> su Prob. CRIT."
+    },
+    "4": {
+      "0": "Aumenta en un <cryo>32%</cryo> el daño de la Habilidad Definitiva y en un <cryo>12%</cryo> su Prob. CRIT."
+    }
+  }
+}

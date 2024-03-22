@@ -1,0 +1,24 @@
+{
+  "name": "Bóng Tối Thủy Triều",
+  "description": {
+    "0": "Kiếm của hải quân Fontaine xưa, có tạo hình đẹp mắt, được chế tạo dành riêng cho tướng quân và thuyền trưởng chiến hạm."
+  },
+  "passiveName": "Sóng Trắng Dao Động",
+  "passiveDescription": {
+    "0": {
+      "0": "Sau khi nhận trị liệu, tấn công tăng <cryo>24%</cryo> trong 8s. Nhân vật không ra trận cũng có thể kích hoạt."
+    },
+    "1": {
+      "0": "Sau khi nhận trị liệu, tấn công tăng <cryo>30%</cryo> trong 8s. Nhân vật không ra trận cũng có thể kích hoạt."
+    },
+    "2": {
+      "0": "Sau khi nhận trị liệu, tấn công tăng <cryo>36%</cryo> trong 8s. Nhân vật không ra trận cũng có thể kích hoạt."
+    },
+    "3": {
+      "0": "Sau khi nhận trị liệu, tấn công tăng <cryo>42%</cryo> trong 8s. Nhân vật không ra trận cũng có thể kích hoạt."
+    },
+    "4": {
+      "0": "Sau khi nhận trị liệu, tấn công tăng <cryo>48%</cryo> trong 8s. Nhân vật không ra trận cũng có thể kích hoạt."
+    }
+  }
+}

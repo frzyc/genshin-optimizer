@@ -1,0 +1,24 @@
+{
+  "name": "Chuva Floral",
+  "description": {
+    "0": "Um guarda-chuva especial feito de papel e óleo. Apesar de longas viagens poderem fazer alguém se acostumar com o vento e a chuva, talvez ainda exista razão para admirar uma cena chuvosa sob esse guarda-chuva."
+  },
+  "passiveName": "Épico: Chuva do Atrelador da Terra",
+  "passiveDescription": {
+    "0": {
+      "0": "Ao atingir os inimigos com um ataque, aplicará o estado de \"Assombração do Guarda-Chuva\" em um inimigo por 10s. Esse efeito pode ser desencadeado uma vez a cada 15s; caso esse inimigo seja derrotado na duração do efeito, redefinirá o tempo de recarga dele. Personagens com esta arma equipada causam <cryo>16%</cryo> a mais de Dano contra inimigos no estado \"Assombração do Guarda-Chuva\"."
+    },
+    "1": {
+      "0": "Ao atingir os inimigos com um ataque, aplicará o estado de \"Assombração do Guarda-Chuva\" em um inimigo por 10s. Esse efeito pode ser desencadeado uma vez a cada 15s; caso esse inimigo seja derrotado na duração do efeito, redefinirá o tempo de recarga dele. Personagens com esta arma equipada causam <cryo>20%</cryo> a mais de Dano contra inimigos no estado \"Assombração do Guarda-Chuva\"."
+    },
+    "2": {
+      "0": "Ao atingir os inimigos com um ataque, aplicará o estado de \"Assombração do Guarda-Chuva\" em um inimigo por 10s. Esse efeito pode ser desencadeado uma vez a cada 15s; caso esse inimigo seja derrotado na duração do efeito, redefinirá o tempo de recarga dele. Personagens com esta arma equipada causam <cryo>24%</cryo> a mais de Dano contra inimigos no estado \"Assombração do Guarda-Chuva\"."
+    },
+    "3": {
+      "0": "Ao atingir os inimigos com um ataque, aplicará o estado de \"Assombração do Guarda-Chuva\" em um inimigo por 10s. Esse efeito pode ser desencadeado uma vez a cada 15s; caso esse inimigo seja derrotado na duração do efeito, redefinirá o tempo de recarga dele. Personagens com esta arma equipada causam <cryo>28%</cryo> a mais de Dano contra inimigos no estado \"Assombração do Guarda-Chuva\"."
+    },
+    "4": {
+      "0": "Ao atingir os inimigos com um ataque, aplicará o estado de \"Assombração do Guarda-Chuva\" em um inimigo por 10s. Esse efeito pode ser desencadeado uma vez a cada 15s; caso esse inimigo seja derrotado na duração do efeito, redefinirá o tempo de recarga dele. Personagens com esta arma equipada causam <cryo>32%</cryo> a mais de Dano contra inimigos no estado \"Assombração do Guarda-Chuva\"."
+    }
+  }
+}

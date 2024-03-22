@@ -1,0 +1,24 @@
+{
+  "name": "\"Spada magica del Super Signore Supremo\"",
+  "description": {
+    "0": "Una spada magica che può essere brandita solo dal Signore Supremo di tutti i mari. Essendo forgiata con materiali impermeabili, non si rovina a contatto con l'acqua nemmeno se viene immersa. La si potrebbe quasi definire un'arma invincibile!"
+  },
+  "passiveName": "Assistenza Melusina!",
+  "passiveDescription": {
+    "0": {
+      "0": "L'ATT aumenta di un <cryo>12%</cryo>. E non finisce qui! Tutte le Melusine che hai aiutato al Villaggio di Merusea ti daranno la loro forza! In base al loro numero, l'ATT riceve un bonus ulteriore, fino a un <cryo>12%</cryo> massimo."
+    },
+    "1": {
+      "0": "L'ATT aumenta di un <cryo>15%</cryo>. E non finisce qui! Tutte le Melusine che hai aiutato al Villaggio di Merusea ti daranno la loro forza! In base al loro numero, l'ATT riceve un bonus ulteriore, fino a un <cryo>15%</cryo> massimo."
+    },
+    "2": {
+      "0": "L'ATT aumenta di un <cryo>18%</cryo>. E non finisce qui! Tutte le Melusine che hai aiutato al Villaggio di Merusea ti daranno la loro forza! In base al loro numero, l'ATT riceve un bonus ulteriore, fino a un <cryo>18%</cryo> massimo."
+    },
+    "3": {
+      "0": "L'ATT aumenta di un <cryo>21%</cryo>. E non finisce qui! Tutte le Melusine che hai aiutato al Villaggio di Merusea ti daranno la loro forza! In base al loro numero, l'ATT riceve un bonus ulteriore, fino a un <cryo>21%</cryo> massimo."
+    },
+    "4": {
+      "0": "L'ATT aumenta di un <cryo>24%</cryo>. E non finisce qui! Tutte le Melusine che hai aiutato al Villaggio di Merusea ti daranno la loro forza! In base al loro numero, l'ATT riceve un bonus ulteriore, fino a un <cryo>24%</cryo> massimo."
+    }
+  }
+}

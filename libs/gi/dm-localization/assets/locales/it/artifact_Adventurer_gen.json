@@ -1,0 +1,29 @@
+{
+  "setName": "Avventuriere",
+  "setEffects": {
+    "2": "PS max +1.000.",
+    "4": "Aprire un baule rigenera un 30% dei PS max per 5 s."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Fiore dell'avventuriere",
+      "desc": "Un fiore resiliente, sopravvissuto all'ambiente ostile di un'antica città. Ora viene indossato come una medaglia."
+    },
+    "plume": {
+      "name": "Piuma dell'avventuriere",
+      "desc": "La piuma di un uccello esotico che si avvista raramente in questo continente."
+    },
+    "sands": {
+      "name": "Orologio dell'avventuriere",
+      "desc": "Quando ci si avventura in luoghi senza luce, che si tratti delle profondità degli abissi o delle rovine di una città perduta, è facile perdere la cognizione del tempo."
+    },
+    "goblet": {
+      "name": "Calice d'oro dell'avventuriere",
+      "desc": "Il bottino di una delle tante spedizioni di un avventuriere. Un pochino danneggiato, ma pur sempre di gran valore."
+    },
+    "circlet": {
+      "name": "Bandana dell'avventuriere",
+      "desc": "Un capo di stoffa indossato sulla fronte. Sebbene sia zuppa di sudore e ricoperta di polvere, questa bandana brilla ancora dell'orgoglio di un avventuriere."
+    }
+  }
+}

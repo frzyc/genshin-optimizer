@@ -1,0 +1,24 @@
+{
+  "name": "Yıldırım Nabzı",
+  "description": {
+    "0": "Şogun tarafından hediye edilmiş bir yay. Dizginsiz şimşekler ona eşlik eder."
+  },
+  "passiveName": "Yıldırım Hükümranlığı",
+  "passiveDescription": {
+    "0": {
+      "0": "Saldırıyı <cryo>%20</cryo> artırır ve Yıldırım Arması gücünü bahşeder. Yıldırım Arması 1/2/3 kademeye ulaştığında, Normal Saldırı Hasarını <cryo>%12/24/40</cryo> artırır. Karakter, aşağıdaki durumlarda 1 kademe Yıldırım Arması elde eder: Normal Saldırı ile Hasar verdiğinde (kademe 5sn sürelidir), Element Becerisi kullandığında (kademe 10sn sürelidir), Enerji %100'ün altında olduğunda (Enerji tamamlanana kadar). Her kademenin süresi ayrıca hesaplanır."
+    },
+    "1": {
+      "0": "Saldırıyı <cryo>%25</cryo> artırır ve Yıldırım Arması gücünü bahşeder. Yıldırım Arması 1/2/3 kademeye ulaştığında, Normal Saldırı Hasarını <cryo>%15/30/50</cryo> artırır. Karakter, aşağıdaki durumlarda 1 kademe Yıldırım Arması elde eder: Normal Saldırı ile Hasar verdiğinde (kademe 5sn sürelidir), Element Becerisi kullandığında (kademe 10sn sürelidir), Enerji %100'ün altında olduğunda (Enerji tamamlanana kadar). Her kademenin süresi ayrıca hesaplanır."
+    },
+    "2": {
+      "0": "Saldırıyı <cryo>%30</cryo> artırır ve Yıldırım Arması gücünü bahşeder. Yıldırım Arması 1/2/3 kademeye ulaştığında, Normal Saldırı Hasarını <cryo>%18/36/60</cryo> artırır. Karakter, aşağıdaki durumlarda 1 kademe Yıldırım Arması elde eder: Normal Saldırı ile Hasar verdiğinde (kademe 5sn sürelidir), Element Becerisi kullandığında (kademe 10sn sürelidir), Enerji %100'ün altında olduğunda (Enerji tamamlanana kadar). Her kademenin süresi ayrıca hesaplanır."
+    },
+    "3": {
+      "0": "Saldırıyı <cryo>%35</cryo> artırır ve Yıldırım Arması gücünü bahşeder. Yıldırım Arması 1/2/3 kademeye ulaştığında, Normal Saldırı Hasarını <cryo>%21/42/70</cryo> artırır. Karakter, aşağıdaki durumlarda 1 kademe Yıldırım Arması elde eder: Normal Saldırı ile Hasar verdiğinde (kademe 5sn sürelidir), Element Becerisi kullandığında (kademe 10sn sürelidir), Enerji %100'ün altında olduğunda (Enerji tamamlanana kadar). Her kademenin süresi ayrıca hesaplanır."
+    },
+    "4": {
+      "0": "Saldırıyı <cryo>%40</cryo> artırır ve Yıldırım Arması gücünü bahşeder. Yıldırım Arması 1/2/3 kademeye ulaştığında, Normal Saldırı Hasarını <cryo>%24/48/80</cryo> artırır. Karakter, aşağıdaki durumlarda 1 kademe Yıldırım Arması elde eder: Normal Saldırı ile Hasar verdiğinde (kademe 5sn sürelidir), Element Becerisi kullandığında (kademe 10sn sürelidir), Enerji %100'ün altında olduğunda (Enerji tamamlanana kadar). Her kademenin süresi ayrıca hesaplanır."
+    }
+  }
+}

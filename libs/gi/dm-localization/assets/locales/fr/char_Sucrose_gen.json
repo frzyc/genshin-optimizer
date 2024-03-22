@@ -1,0 +1,155 @@
+{
+  "name": "Sucrose",
+  "title": "Alchimiste 100 % naturelle",
+  "description": "Une alchimiste très curieuse du monde qui l'entoure. Elle se spécialise dans la bio-alchimie.",
+  "constellationName": "Ampulla",
+  "auto": {
+    "name": "Esprit du vent",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attaque normale</strong>",
+        "1": "Enchaîne jusqu'à 4 attaques de vent qui infligent des <anemo>DGT Anémo</anemo>."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Consomme de l'endurance pour infliger des <anemo>DGT Anémo de zone</anemo> après un court délai."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Plonge depuis les airs en concentrant ses pouvoirs Anémo, infligeant des DGT aux ennemis en chemin et des <anemo>DGT Anémo de zone</anemo> à l'impact."
+      }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT 4e coup",
+      "4": "DGT attaque chargée",
+      "5": "Coût d'endurance attaque chargée",
+      "6": "DGT durant la chute",
+      "7": "DGT chute basse/élevée",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Esprit du vent : Sujet 6308",
+    "description": {
+      "0": "Sucrose invoque un Esprit du vent de taille réduite, qui attire les ennemis et les objets proches à lui, projetant les ennemis dans les airs et leur infligeant des <anemo>DGT Anémo</anemo>.",
+      "1": "<br/>",
+      "2": "<i>C'est un peu embarrassant, mais il faut bien reconnaître que malgré leur courte durée de vie, les entités élémentaires créées via ce procédé sont particulièrement utiles pour l'aventure. Comme quoi, même les expériences ratées peuvent servir.</i>"
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "Temps de recharge",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Esprit du vent : Isomorphe 75 Type II",
+    "description": {
+      "0": "Sucrose jette une concoction instable qui libère un Esprit du vent de grande taille.",
+      "1": "L'Esprit attire les ennemis et les objets proches à lui, projetant les ennemis dans les airs et leur infligeant des <anemo>DGT Anémo</anemo>.",
+      "2": "<br/>",
+      "3": "<strong>Absorption élémentaire</strong>",
+      "4": "L'Esprit du vent absorbe les éléments <hydro>Hydro</hydro>, <pyro>Pyro</pyro>, <cryo>Cryo</cryo> et <electro>Électro</electro> avec lesquels il entre en contact, ceux-ci lui conférant leurs attributs et infligeant un bonus de DGT de l'élément correspondant.",
+      "5": "Une seule réaction d'absorption élémentaire peut avoir lieu par utilisation.",
+      "6": "<br/>",
+      "7": "<i>Sucrose aime à donner des noms à ses Hypostases Anémo instables... Leur lignée est encore plus longue que celle du Baron Lapinou 893e du nom.</i>"
+    },
+    "skillParams": {
+      "0": "DGT continus",
+      "1": "Bonus DGT élémentaires",
+      "2": "Durée",
+      "3": "Temps de recharge",
+      "4": "Énergie élémentaire",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Permutation de catalyste",
+    "description": {
+      "0": "Tous les personnages de l'équipe du type élémentaire concerné (hormis Sucrose) obtiennent un bonus de 50 pts de maîtrise élémentaire pendant 8 s lorsque Sucrose déclenche une réaction de Dispersion."
+    }
+  },
+  "passive2": {
+    "name": "Mollis Favonius",
+    "description": {
+      "0": "Lorsque <strong>Esprit du vent : Sujet 6308</strong> ou <strong>Esprit du vent : Isomorphe 75 Type II</strong> touche un ennemi, tous les personnages de l'équipe (hormis Sucrose) bénéficient pendant 8 s d'un bonus de maîtrise élémentaire équivalant à 20 % de la maîtrise élémentaire de Sucrose."
+    }
+  },
+  "passive3": {
+    "name": "Fragile découverte",
+    "description": {
+      "0": "10 % de chances d'obtenir le double de produits lors de la synthèse de matériaux d'amélioration de personnage ou d'arme."
+    }
+  },
+  "constellation1": {
+    "name": "Champ du néant",
+    "description": {
+      "0": "Confère une utilisation supplémentaire de <strong>Esprit du vent : Sujet 6308</strong>."
+    }
+  },
+  "constellation2": {
+    "name": "Bett : Forme éthérée",
+    "description": {
+      "0": "Prolonge la durée d'<strong>Esprit du vent : Isomorphe 75 Type II</strong> de 2 s."
+    }
+  },
+  "constellation3": {
+    "name": "Zéro défaut",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Esprit du vent : Sujet 6308</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation4": {
+    "name": "Alchémania",
+    "description": {
+      "0": "Sucrose diminue le TdR d'<strong>Esprit du vent : Sujet 6308</strong> de 1 à 7 s tous les 7 coups d'attaque normale ou chargée qu'elle inflige à un ennemi.",
+      "1": "Un coup peut être compté toutes les 0,1 s."
+    }
+  },
+  "constellation5": {
+    "name": "Flasque standard",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Esprit du vent : Isomorphe 75 Type II</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation6": {
+    "name": "Théorie de l'entropie",
+    "description": {
+      "0": "En cas d'absorption élémentaire, <strong>Esprit du vent : Isomorphe 75 Type II</strong> confère à tous les personnages de l'équipe un bonus de DGT élémentaires de 20 % pour l'élément absorbé tant que la compétence est active."
+    }
+  }
+}

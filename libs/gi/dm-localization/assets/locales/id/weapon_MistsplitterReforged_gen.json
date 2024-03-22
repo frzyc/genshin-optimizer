@@ -1,0 +1,24 @@
+{
+  "name": "Mistsplitter Reforged",
+  "description": {
+    "0": "Pedang yang menyala dengan cahaya ungu yang dahsyat. Ia dinamakan \"Reforged\" karena pernah patah di masa lalu."
+  },
+  "passiveName": "Mistsplitter's Edge",
+  "passiveDescription": {
+    "0": {
+      "0": "Mendapatkan <cryo>12%</cryo> Elemental DMG Bonus untuk setiap elemen dan mendapatkan kekuatan Mistsplitter's Emblem. Pada lapisan level 1/2/3, Mistsplitter's Emblem memberikan <cryo>8/16/28%</cryo> Elemental DMG Bonus untuk tipe Elemen Karakter tersebut. Karakter akan mendapatkan 1 lapis Mistsplitter's Emblem untuk setiap skenario berikut: Saat Normal Attack mengakibatkan Elemental DMG (lapisan bertahan 5 detik), saat melancarkan Elemental Burst (lapisan bertahan 10 detik). Selain itu, Karakter juga akan mendapatkan 1 lapis saat Energy kurang dari 100% (lapisan ini akan menghilang saat Energy penuh). Durasi setiap lapis dihitung terpisah."
+    },
+    "1": {
+      "0": "Mendapatkan <cryo>15%</cryo> Elemental DMG Bonus untuk setiap elemen dan mendapatkan kekuatan Mistsplitter's Emblem. Pada lapisan level 1/2/3, Mistsplitter's Emblem memberikan <cryo>10/20/35%</cryo> Elemental DMG Bonus untuk tipe Elemen Karakter tersebut. Karakter akan mendapatkan 1 lapis Mistsplitter's Emblem untuk setiap skenario berikut: Saat Normal Attack mengakibatkan Elemental DMG (lapisan bertahan 5 detik), saat melancarkan Elemental Burst (lapisan bertahan 10 detik). Selain itu, Karakter juga akan mendapatkan 1 lapis saat Energy kurang dari 100% (lapisan ini akan menghilang saat Energy penuh). Durasi setiap lapis dihitung terpisah."
+    },
+    "2": {
+      "0": "Mendapatkan <cryo>18%</cryo> Elemental DMG Bonus untuk setiap elemen dan mendapatkan kekuatan Mistsplitter's Emblem. Pada lapisan level 1/2/3, Mistsplitter's Emblem memberikan <cryo>12/24/42%</cryo> Elemental DMG Bonus untuk tipe Elemen Karakter tersebut. Karakter akan mendapatkan 1 lapis Mistsplitter's Emblem untuk setiap skenario berikut: Saat Normal Attack mengakibatkan Elemental DMG (lapisan bertahan 5 detik), saat melancarkan Elemental Burst (lapisan bertahan 10 detik). Selain itu, Karakter juga akan mendapatkan 1 lapis saat Energy kurang dari 100% (lapisan ini akan saat Energy penuh). Durasi setiap lapis dihitung terpisah."
+    },
+    "3": {
+      "0": "Mendapatkan <cryo>21%</cryo> Elemental DMG Bonus untuk setiap elemen dan mendapatkan kekuatan Mistsplitter's Emblem. Pada lapisan level 1/2/3, Mistsplitter's Emblem memberikan <cryo>14/28/49%</cryo> Elemental DMG Bonus untuk tipe Elemen Karakter tersebut. Karakter akan mendapatkan 1 lapis Mistsplitter's Emblem untuk setiap skenario berikut: Saat Normal Attack mengakibatkan Elemental DMG (lapisan bertahan 5 detik), saat melancarkan Elemental Burst (lapisan bertahan 10 detik). Selain itu, Karakter juga akan mendapatkan 1 lapis saat Energy kurang dari 100% (lapisan ini akan menghilang saat Energy penuh). Durasi setiap lapis dihitung terpisah."
+    },
+    "4": {
+      "0": "Mendapatkan <cryo>24%</cryo> Elemental DMG Bonus untuk setiap elemen dan mendapatkan kekuatan Mistsplitter's Emblem. Pada lapisan level 1/2/3, Mistsplitter's Emblem memberikan <cryo>16/32/56%</cryo> Elemental DMG Bonus untuk tipe Elemen Karakter tersebut. Karakter akan mendapatkan 1 lapis Mistsplitter's Emblem untuk setiap skenario berikut: Saat Normal Attack mengakibatkan Elemental DMG (lapisan bertahan 5 detik), saat melancarkan Elemental Burst (lapisan bertahan 10 detik). Selain itu, Karakter juga akan mendapatkan 1 lapis saat Energy kurang dari 100% (lapisan ini akan menghilang saat Energy penuh). Durasi setiap lapis dihitung terpisah."
+    }
+  }
+}

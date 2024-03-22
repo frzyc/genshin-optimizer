@@ -1,0 +1,170 @@
+{
+  "name": "Mika",
+  "title": "Sabah Ayazının Koordinatları",
+  "description": "Sıradan bir ailenin çocuğu olan genç bir şövalye. Bölüğünde Ön Saha Gözlemcisi olarak görev yapmaktadır. Alçak gönüllü ve temkinli bir karakterdir.",
+  "constellationName": "Güvercin",
+  "auto": {
+    "name": "Favonius Mızrağı - Ok Geçişi",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Saldırı</strong>",
+        "1": "Arbaletini ve mızrağını kullanarak arka arkaya en fazla 5 saldırı yapar."
+      },
+      "charged": {
+        "0": "<strong>Yüklü Saldırı</strong>",
+        "1": "İleri atılırken belirli miktarda Dayanıklılık harcar ve önündeki düşmanlara hasar verir."
+      },
+      "plunging": {
+        "0": "<strong>Havadan Saldırı</strong>",
+        "1": "Havadayken dalışa geçerek yere vurur ve yoluna çıkan düşmanlara Alan Hasarı verir."
+      }
+    },
+    "skillParams": {
+      "0": "1 Vuruş Hasarı",
+      "1": "2 Vuruş Hasarı",
+      "2": "3 Vuruş Hasarı",
+      "3": "4 Vuruş Hasarı",
+      "4": "5 Vuruş Hasarı",
+      "5": "Yüklü Saldırı Hasarı",
+      "6": "Yüklü Saldırı Dayanıklılık Maliyeti",
+      "7": "Havadan Saldırı Hasarı",
+      "8": "Havadan Saldırı Hasarı (Alçaktan/Yüksekten)",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Kırağı Girdabı",
+    "description": {
+      "0": "Mika, arbaletini kullanarak saldırır ve grubunda olan yakındaki tüm karakterlere Ruh Esintisi durumu verir. Ruh Esintisi durumundaki karakterler savaş alanındayken Saldırı Hızları artar.",
+      "1": "Dokunulduğunda veya Basılı Tutulduğunda farklı şekillerde etki eder.",
+      "2": "<br/>",
+      "3": "<strong>Dokun</strong>",
+      "4": "Düşmanları delip geçen ve temas ettiklerine <cryo>Buz Hasarı</cryo> veren bir Dondurucu Ok atar.",
+      "5": "<br/>",
+      "6": "<strong>Basılı Tut</strong>",
+      "7": "Nişan Alma Moduna girerek bir düşmana kilitlenir ve ona <cryo>Buz Hasarı</cryo> veren bir Kutup Yıldızı Fişeği ateşler. Kutup Yıldızı Fişeği, hedefe isabet ettiğinde patlamadan önce havaya yükselir ve en fazla diğer 3 düşmana Kutup Yıldızı Parçaları ateşleyerek <cryo>Buz Hasarı</cryo> verir.",
+      "8": "<br/>",
+      "9": "<i>Buzlu gökyüzünün altında yıldızlar patlar.</i>"
+    },
+    "skillParams": {
+      "0": "Dondurucu Ok Hasarı",
+      "1": "Kutup Yıldızı Fişeği Hasarı",
+      "2": "Kutup Yıldızı Parçası Hasarı",
+      "3": "Saldırı Hızı Bonusu",
+      "4": "Ruh Esintisi Süresi",
+      "5": "BS",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Göktüyü Şarkısı",
+    "description": {
+      "0": "Şövalyelerin okuduğu dualardan takım arkadaşlarını cesaretlendirme becerisi alır ve yakındaki tüm grup üyelerinin Canını yeniler. Bu iyileştirme, Mika'nın Maks. Canına bağlıdır ve onlara Kartal Tüyü durumu kazandırır.",
+      "1": "<br/>",
+      "2": "<strong>Kartal Tüyü</strong>",
+      "3": "Kartal Tüyü durumundaki aktif karakterlerin Normal Saldırıları bir düşmana isabet ettiğinde Mika, kendi Maks. Canına bağlı olarak onların Can yenilemelerine yardımcı olur.",
+      "4": "Bu durumdan etkilenen karakterler, kısa zaman aralıklarıyla bu şekilde sadece bir defa Can yenileyebilir.",
+      "5": "<br/>",
+      "6": "<i>\"En zor durumlarda bile umudunu yitirme ve her şey yolundayken de tetikte kalmaya devam et... Çünkü o saf beyaz tüy, yolunu kaybetmiş yolculara eninde sonunda yol gösterir.\"</i>"
+    },
+    "skillParams": {
+      "0": "Anlık İyileştirme",
+      "1": "Kartal Tüyü İyileştirmesi",
+      "2": "Kartal Tüyü İyileştirme Aralığı",
+      "3": "Kartal Tüyü Süresi",
+      "4": "BS",
+      "5": "Enerji Maliyeti",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Bastırıcı Ok Yağmuru",
+    "description": {
+      "0": "Aşağıdaki şartlarda <strong>Kırağı Girdabı</strong> tarafından oluşturulan Ruh Esintisi durumu, karakterlere Dedektör etkisi vererek karakterler savaş alanındayken Fiziksel Hasarlarını %10 artırır.",
+      "1": [
+        "Dondurucu Ok birden fazla düşmana isabet ederse isabet alan fazladan her bir düşman 1 Dedektör kademesi oluşturur.",
+        "Kutup Yıldızı Parçası bir düşmana isabet ettiğinde 1 Dedektör kademesi oluşturur. Her bir Kutup Yıldızı Parçası bu etkiyi 1 defa tetikleyebilir."
+      ],
+      "2": "<br/>",
+      "3": "Ruh Esintisi durumunda en fazla 3 Dedektör kademesi birikebilir ve bu süre içinde Kırağı Girdabı yeniden kullanılırsa mevcut Ruh Esintisi durumu ve tüm Dedektör kademeleri sıfırlanır."
+    }
+  },
+  "passive2": {
+    "name": "Topografik Haritalandırma",
+    "description": {
+      "0": "Hem <strong>Göktüyü Şarkısının</strong> Kartal Tüyünden hem de <strong>Kırağı Girdabının</strong> Ruh Esintisinden aynı anda etkilenen bir aktif karakter, saldırılarıyla bir Kritik Vuruş yaparsa Ruh Esintisi ona Bastırıcı Ok Yağmurundan 1 Dedektör kademesi verir. Tek bir Ruh Esintisi ile bu şekilde 1 Dedektör kademesi elde edilebilir.",
+      "1": "Ek olarak, yalnızca Ruh Esintisinden kazanılabilecek maksimum kademe sayısı 1 artar.",
+      "2": "Öncelikle Bastırıcı Ok Yağmurunun açılmış olması gerekir."
+    }
+  },
+  "passive3": {
+    "name": "Sınır Belirleme",
+    "description": {
+      "0": "Yakınlardaki <strong>Mondstadt'a özgü kaynakların</strong> yerini mini haritada gösterir."
+    }
+  },
+  "constellation1": {
+    "name": "Faktör Birleşimi",
+    "description": {
+      "0": "<strong>Kırağı Girdabının</strong> Ruh Esintisi durumu, <strong>Göktüyü Şarkısının</strong> Kartal Tüyü durumunun neden olduğu iyileştirme aralıklarını kısaltabilir. Bu kısaltma oranı, Ruh Esintisinin kazandırdığı Saldırı Hızı artışına eşittir."
+    }
+  },
+  "constellation2": {
+    "name": "Yoldaşın Girişi",
+    "description": {
+      "0": "<strong>Kırağı Girdabının</strong> Dondurucu Oku bir düşmana ilk defa isabet ettiğinde veya Kutup Yıldızı Fişeği düşmanlara isabet ettiğinde \"Bastırıcı Ok Yağmuru\" Pasif Yeteneği ile 1 Dedektör kademesi oluşur.",
+      "1": "Öncelikle \"Bastırıcı Ok Yağmuru\" Pasif Yeteneğinin açılmış olması gerekir."
+    }
+  },
+  "constellation3": {
+    "name": "Keşif Tecrübesi",
+    "description": {
+      "0": "<strong>Göktüyü Şarkısı</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation4": {
+    "name": "Tezatlık Kasidesi",
+    "description": {
+      "0": "Mika'nın kendi <strong>Göktüyü Şarkısının</strong> Kartal Tüyü durumu grup üyelerini iyileştirdiğinde Mika 3 Enerji yeniler. Bu türden bir Enerji yenilemesi, 1 Göktüyü Şarkısı kullanımıyla oluşan Kartal Tüyü durumu süresince 5 defa gerçekleşebilir."
+    }
+  },
+  "constellation5": {
+    "name": "İşaret Oku",
+    "description": {
+      "0": "<strong>Kırağı Girdabı</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation6": {
+    "name": "Yoldaş Yardımı",
+    "description": {
+      "0": "<strong>Kırağı Girdabının</strong> Ruh Esintisinin kazanabileceği Dedektör kademesi sınırı 1 artar. Öncelikle \"Bastırıcı Ok Yağmuru\" Pasif Yeteneğinin açılmış olması gerekir.",
+      "1": "Ayrıca Ruh Esintisinden etkilenen aktif karakterler %60 daha fazla Fiziksel Kritik Hasar verir."
+    }
+  }
+}

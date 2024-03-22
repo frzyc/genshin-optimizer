@@ -1,0 +1,24 @@
+{
+  "name": "Juramento por la Libertad",
+  "description": {
+    "0": "Una espada azul celeste que recuerda a una canción de la antigüedad. Es tan tajante como el juramento por la libertad del Reino del Viento."
+  },
+  "passiveName": "Himno de la rebelión",
+  "passiveDescription": {
+    "0": {
+      "0": "Una parte del «Gran concierto milenario» que flota por los vientos. Aumenta en un <cryo>10%</cryo> el daño infligido. Al causar una Reacción Elemental, el personaje obtiene un talismán de insurrección que puede adquirirse una vez cada 0.5 s como máximo. Este efecto también puede ocurrir cuando el personaje que lleva equipada esta arma está en tu equipo pero no en uso. Al obtener 2 talismanes de insurrección, estos se consumirán y otorgarán a todos los miembros del equipo cercanos el efecto de «Gran concierto milenario: Canción de la resistencia» durante 12 s, el cual aumenta en un <cryo>16%</cryo> el daño de los Ataques Normales, Cargados y Descendentes, y en un <cryo>20%</cryo> el ATQ. Tras activarse este efecto, no podrán obtenerse talismanes de insurrección durante 20 s. Los efectos de «Gran concierto milenario» no se acumularán con otros efectos del mismo tipo."
+    },
+    "1": {
+      "0": "Una parte del «Gran concierto milenario» que flota por los vientos. Aumenta en un <cryo>12.5%</cryo> el daño infligido. Al causar una Reacción Elemental, el personaje obtiene un talismán de insurrección que puede adquirirse una vez cada 0.5 s como máximo. Este efecto también puede ocurrir cuando el personaje que lleva equipada esta arma está en tu equipo pero no en uso. Al obtener 2 talismanes de insurrección, estos se consumirán y otorgarán a todos los miembros del equipo cercanos el efecto de «Gran concierto milenario: Canción de la resistencia» durante 12 s, el cual aumenta en un <cryo>20%</cryo> el daño de los Ataques Normales, Cargados y Descendentes, y en un <cryo>25%</cryo> el ATQ. Tras activarse este efecto, no podrán obtenerse talismanes de insurrección durante 20 s. Los efectos de «Gran concierto milenario» no se acumularán con otros efectos del mismo tipo."
+    },
+    "2": {
+      "0": "Una parte del «Gran concierto milenario» que flota por los vientos. Aumenta en un <cryo>15%</cryo> el daño infligido. Al causar una Reacción Elemental, el personaje obtiene un talismán de insurrección que puede adquirirse una vez cada 0.5 s como máximo. Este efecto también puede ocurrir cuando el personaje que lleva equipada esta arma está en tu equipo pero no en uso. Al obtener 2 talismanes de insurrección, estos se consumirán y otorgarán a todos los miembros del equipo cercanos el efecto de «Gran concierto milenario: Canción de la resistencia» durante 12 s, el cual aumenta en un <cryo>24%</cryo> el daño de los Ataques Normales, Cargados y Descendentes, y en un <cryo>30%</cryo> el ATQ. Tras activarse este efecto, no podrán obtenerse talismanes de insurrección durante 20 s. Los efectos de «Gran concierto milenario» no se acumularán con otros efectos del mismo tipo."
+    },
+    "3": {
+      "0": "Una parte del «Gran concierto milenario» que flota por los vientos. Aumenta en un <cryo>17.5%</cryo> el daño infligido. Al causar una Reacción Elemental, el personaje obtiene un talismán de insurrección que puede adquirirse una vez cada 0.5 s como máximo. Este efecto también puede ocurrir cuando el personaje que lleva equipada esta arma está en tu equipo pero no en uso. Al obtener 2 talismanes de insurrección, estos se consumirán y otorgarán a todos los miembros del equipo cercanos el efecto de «Gran concierto milenario: Canción de la resistencia» durante 12 s, el cual aumenta en un <cryo>28%</cryo> el daño de los Ataques Normales, Cargados y Descendentes, y en un <cryo>35%</cryo> el ATQ. Tras activarse este efecto, no podrán obtenerse talismanes de insurrección durante 20 s. Los efectos de «Gran concierto milenario» no se acumularán con otros efectos del mismo tipo."
+    },
+    "4": {
+      "0": "Una parte del «Gran concierto milenario» que flota por los vientos. Aumenta en un <cryo>20%</cryo> el daño infligido. Al causar una Reacción Elemental, el personaje obtiene un talismán de insurrección que puede adquirirse una vez cada 0.5 s como máximo. Este efecto también puede ocurrir cuando el personaje que lleva equipada esta arma está en tu equipo pero no en uso. Al obtener 2 talismanes de insurrección, estos se consumirán y otorgarán a todos los miembros del equipo cercanos el efecto de «Gran concierto milenario: Canción de la resistencia» durante 12 s, el cual aumenta en un <cryo>32%</cryo> el daño de los Ataques Normales, Cargados y Descendentes, y en un <cryo>40%</cryo> el ATQ. Tras activarse este efecto, no podrán obtenerse talismanes de insurrección durante 20 s. Los efectos de «Gran concierto milenario» no se acumularán con otros efectos del mismo tipo."
+    }
+  }
+}

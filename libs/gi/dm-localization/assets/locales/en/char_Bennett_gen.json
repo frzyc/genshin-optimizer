@@ -1,0 +1,172 @@
+{
+  "name": "Bennett",
+  "title": "Trial by Fire",
+  "description": "A good-natured adventurer from Mondstadt who's unfortunately extremely unlucky.",
+  "constellationName": "Rota Calamitas",
+  "auto": {
+    "name": "Strike of Fortune",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Attack</strong>",
+        "1": "Performs up to 5 rapid strikes."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Consumes a certain amount of Stamina to unleash 2 rapid sword strikes."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact."
+      }
+    },
+    "skillParams": {
+      "0": "1-Hit DMG",
+      "1": "2-Hit DMG",
+      "2": "3-Hit DMG",
+      "3": "4-Hit DMG",
+      "4": "5-Hit DMG",
+      "5": "Charged Attack DMG",
+      "6": "Charged Attack Stamina Cost",
+      "7": "Plunge DMG",
+      "8": "Low/High Plunge DMG",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Passion Overload",
+    "description": {
+      "0": "Bennett puts all his fire and passion for adventuring into his sword. Results may vary based on how fired up he is...",
+      "1": "<br/>",
+      "2": "<strong>Press</strong>",
+      "3": "A single, swift flame strike that deals <pyro>Pyro DMG</pyro>.",
+      "4": "<br/>",
+      "5": "<strong>Hold (Short)</strong>",
+      "6": "Charges up, resulting in different effects when unleashed based on the Charge Level.",
+      "7": [
+        "Level 1: Strikes twice, dealing <pyro>Pyro DMG</pyro> and launching opponents.",
+        "Level 2: Unleashes 3 consecutive attacks that deal impressive <pyro>Pyro DMG</pyro>, but the last attack triggers an explosion that launches both Bennett and the enemy."
+      ],
+      "8": "Bennett takes no damage from being launched.",
+      "9": "<br/>",
+      "10": "<i>An attack that combines Bennett's dreams and passion with Pyro. But passion is sometimes overblown, and Pyro sometimes blows over.</i>"
+    },
+    "skillParams": {
+      "0": "Press DMG",
+      "1": "Charge Level 1 DMG",
+      "2": "Charge Level 2 DMG",
+      "3": "Explosion DMG",
+      "4": "CD",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Fantastic Voyage",
+    "description": {
+      "0": "Bennett performs a jumping attack that deals <pyro>Pyro DMG</pyro>, creating an Inspiration Field.",
+      "1": "<br/>",
+      "2": "<strong>Inspiration Field</strong>",
+      "3": [
+        "If the health of a character within the AoE is equal to or falls below 70%, their health will continuously regenerate. The amount of HP restored scales off Bennett's Max HP.",
+        "If the health of a character within the AoE is higher than 70%, they gain an ATK Bonus that is based on Bennett's Base ATK.",
+        "Imbues characters within the AoE with <pyro>Pyro</pyro>."
+      ],
+      "4": "<br/>",
+      "5": "<i>Benny's Adventure Team's adventures are always fraught with unexpected danger. However, Bennett is more inclined to call them \"journeys full of wonder, excitement, and beauty.\"</i>"
+    },
+    "skillParams": {
+      "0": "Skill DMG",
+      "1": "Continuous Regeneration Per Sec",
+      "2": "ATK Bonus Ratio",
+      "3": "Duration",
+      "4": "CD",
+      "5": "Energy Cost",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Rekindle",
+    "description": {
+      "0": "Decreases <strong>Passion Overload</strong>'s CD by 20%."
+    }
+  },
+  "passive2": {
+    "name": "Fearnaught",
+    "description": {
+      "0": "Within the area created by <strong>Fantastic Voyage</strong>, <strong>Passion Overload</strong> takes on the following effects:",
+      "1": [
+        "CD is reduced by 50%.",
+        "Bennett will not be launched by the effects of Charge Level 2."
+      ]
+    }
+  },
+  "passive3": {
+    "name": "It Should Be Safe...",
+    "description": {
+      "0": "When dispatched on an expedition in Mondstadt, time consumed is reduced by 25%."
+    }
+  },
+  "constellation1": {
+    "name": "Grand Expectation",
+    "description": {
+      "0": "<strong>Fantastic Voyage</strong>'s ATK increase no longer has an HP restriction, and gains an additional 20% of Bennett's Base ATK."
+    }
+  },
+  "constellation2": {
+    "name": "Impasse Conqueror",
+    "description": {
+      "0": "When Bennett's HP falls below 70%, his Energy Recharge is increased by 30%."
+    }
+  },
+  "constellation3": {
+    "name": "Unstoppable Fervor",
+    "description": {
+      "0": "Increases the Level of <strong>Passion Overload</strong> by 3.",
+      "1": "Maximum upgrade level is 15."
+    }
+  },
+  "constellation4": {
+    "name": "Unexpected Odyssey",
+    "description": {
+      "0": "Using a Normal Attack as the second attack of <strong>Passion Overload</strong>'s Charge Level 1 will perform a follow-up attack.",
+      "1": "This additional attack does 135% of the second attack's DMG."
+    }
+  },
+  "constellation5": {
+    "name": "True Explorer",
+    "description": {
+      "0": "Increases the Level of <strong>Fantastic Voyage</strong> by 3.",
+      "1": "Maximum upgrade level is 15."
+    }
+  },
+  "constellation6": {
+    "name": "Fire Ventures With Me",
+    "description": {
+      "0": "Sword, Claymore, or Polearm-wielding characters inside <strong>Fantastic Voyage</strong>'s radius gain a 15% <pyro>Pyro DMG Bonus</pyro> and their weapons are infused with <pyro>Pyro</pyro>."
+    }
+  }
+}

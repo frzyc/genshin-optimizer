@@ -1,0 +1,174 @@
+{
+  "name": "Xianyun",
+  "title": "Héraldesse passériforme",
+  "description": "Faisant partie des Adeptes puissants et éclairés de Jueyun, elle est connue sous le nom de Souffle-Nuages. Experte en ingénierie mécanique de toutes sortes, son cœur se tourne désormais vers les affaires du monde des mortels, dans lequel elle évolue sous le nom de Xianyun.",
+  "constellationName": "Grus Serena",
+  "auto": {
+    "name": "Murmures floraux au vent",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attaque normale</strong>",
+        "1": "Crée des tourbillons de vent pour enchaîner jusqu'à 4 attaques qui infligent des <anemo>DGT Anémo</anemo>."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Consomme de l'endurance pour lancer un anneau de brise en ligne droite, infligeant des <anemo>DGT Anémo</anemo> aux ennemis en chemin."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Plonge depuis les airs en concentrant ses pouvoirs Anémo, infligeant des DGT aux ennemis en chemin et des <anemo>DGT Anémo de zone</anemo> à l'impact."
+      }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT 4e coup",
+      "4": "DGT attaque chargée",
+      "5": "Coût d'endurance attaque chargée",
+      "6": "DGT durant la chute",
+      "7": "DGT chute basse/élevée",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Nuages blancs à l'aube",
+    "description": {
+      "0": "Xianyun entre dans l'état Transfiguration nimbo-gruiforme, pendant lequel elle ne subit pas de DGT de chute, et utilise une échelle céleste.",
+      "1": "Dans cet état, l'attaque plongeante de Xianyun est convertie en vague de nuage flottant, infligeant des <anemo>DGT Anémo de zone</anemo> et mettant fin à la transfiguration nimbo-gruiforme. Ces DGT sont considérés comme des DGT d'attaque plongeante.",
+      "2": "Chaque échelle céleste utilisée pendant cet état augmente les DGT et la portée de la prochaine vague de nuage flottant.",
+      "3": "<br/>",
+      "4": "<strong>Échelle céleste</strong>",
+      "5": "Fonctionne aussi dans les airs. Xianyun bondit en avant et inflige des <anemo>DGT Anémo</anemo> aux ennemis en chemin.",
+      "6": "Pendant une transfiguration nimbo-gruiforme, Xianyun peut utiliser un maximum de 3 échelles célestes et un même ennemi ne peut subir qu'une seule fois des DGT d'une échelle céleste.",
+      "7": "Si aucune échelle céleste n'est utilisée pendant un court laps de temps, l'état Transfiguration nimbo-gruiforme prend fin.",
+      "8": "<br/>",
+      "9": "Si la vague de nuage flottant n'a pas été utilisée pendant la transfiguration nimbo-gruiforme, le TdR de Nuages blancs à l'aube diminue de 3 s.",
+      "10": "<br/>",
+      "11": "<i>Attention lorsque vous tenez la main de Souffle-Nuages : elle a une poigne de grue.</i>"
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "DGT vague de nuage flottant",
+      "2": "Temps de recharge",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Étoiles réunies au crépuscule",
+    "description": {
+      "0": "Déclenche une brise sacrée qui inflige des <anemo>DGT Anémo de zone</anemo>, restaure les PV de tous les personnages de l'équipe à proximité selon l'ATQ de Xianyun et invoque le mécanisme « Étoileur d'osier ».",
+      "1": "<br/>",
+      "2": "<strong>Étoileur d'osier</strong>",
+      "3": [
+        " Suit de façon continue le personnage déployé et restaure de façon intermittente les PV de tous les personnages de l'équipe à proximité selon l'ATQ de Xianyun.",
+        " Commence avec 8 cumuls d'aide adeptale. L'aide adeptale permet d'augmenter la hauteur du saut des personnages déployés de l'équipe à proximité.",
+        " Lorsque le personnage déployé termine une attaque plongeante, l'étoileur d'osier consomme un cumul d'aide adeptale pour infliger des <anemo>DGT Anémo de zone</anemo>."
+      ],
+      "4": "Il ne peut exister qu'un seul étoileur d'osier à la fois sur le champ de bataille.",
+      "5": "<br/>",
+      "6": "<i>Il s'agit de la dernière invention de la gamme « Artifices de lunétoile », dont les appareils précédents étaient le cuiseur suprême, le dériveur de neige, le balayeur multifonction, le transporteur lévitant et le sécateur floral. Cette gamme était destinée aux jeunes humains que Souffle-Nuages admirait et n'a donc pas été conçue pour une certaine mi-Adepte. Cependant, une disciple qui s'est vue offrir l'étoileur d'osier n'eut que ces mots sans émotion pour réponse : « Non, merci. »",
+      "7": "Souffle-Nuages n'a donc pas eu d'autres choix que de le garder pour elle.</i>"
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "DGT étoileur d'osier",
+      "2": "Soins",
+      "3": "Soins continus",
+      "4": "Durée",
+      "5": "Temps de recharge",
+      "6": "Énergie élémentaire",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Poursuite des plumes de givre",
+    "description": {
+      "0": "Chaque ennemi touché par la vague de nuage flottant de <strong>Nuages blancs à l'aube</strong> accorde 1 cumul de penne de tempête à tous les personnages de l'équipe à proximité pendant 20 s : augmente le taux CRIT des attaques plongeantes de 4 %, 6 %, 8 % ou 10 % selon le nombre de cumuls. Cet effet peut être cumulé 4 fois maximum.",
+      "1": "La durée des cumuls de penne de tempête est calculée indépendamment."
+    }
+  },
+  "passive2": {
+    "name": "Adepte dans sa demeure",
+    "description": {
+      "0": "Lorsque l'étoileur d'osier créé par <strong>Étoiles réunies au crépuscule</strong> possède de l'aide adeptale, les DGT des attaques plongeantes (lorsqu'elles touchent le sol) des personnages déployés à proximité augmentent d'une valeur équivalant à 200 % de l'ATQ de Xianyun. Ces DGT peuvent être augmentés d'un maximum de 9 000 de cette manière.",
+      "1": "Pour chaque attaque plongeante, cet effet d'augmentation des DGT ne s'applique qu'à un seul ennemi. Cet effet peut être déclenché une fois toutes les 0,4 s par personnage."
+    }
+  },
+  "passive3": {
+    "name": "Forme de la grue",
+    "description": {
+      "0": "Augmente la VIT de planage de vos personnages dans l'équipe de 15 %.",
+      "1": "Ne peut pas être cumulé avec d'autres aptitudes passives aux effets identiques."
+    }
+  },
+  "constellation1": {
+    "name": "Vent d'épuration",
+    "description": {
+      "0": "Confère une utilisation supplémentaire de <strong>Nuages blancs à l'aube</strong>."
+    }
+  },
+  "constellation2": {
+    "name": "Réclusion du monde",
+    "description": {
+      "0": "Après avoir utilisé l'échelle céleste de <strong>Nuages blancs à l'aube</strong>, l'ATQ de Xianyun augmente de 20 % pendant 15 s.",
+      "1": "De plus, l'effet de l'aptitude passive « Adepte dans sa demeure » est amélioré : lorsque l'étoileur d'osier créé par <strong>Étoiles réunies au crépuscule</strong> possède de l'aide adeptale, les DGT des attaques plongeantes (lorsqu'elles touchent le sol) des personnages déployés à proximité augmentent d'une valeur équivalant à 400 % de l'ATQ de Xianyun, ces DGT pouvant être augmentés d'un maximum de 18 000 de cette manière.",
+      "2": "Pour chaque attaque plongeante, cet effet d'augmentation des DGT ne s'applique qu'à un seul ennemi. Cet effet peut être déclenché une fois toutes les 0,4 s par personnage.",
+      "3": "L'aptitude passive « Adepte dans sa demeure » doit être déjà débloquée."
+    }
+  },
+  "constellation3": {
+    "name": "Création du firmament",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Étoiles réunies au crépuscule</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation4": {
+    "name": "Délectation du millet",
+    "description": {
+      "0": "Après avoir utilisé 1/2/3 échelles célestes pendant une transfiguration nimbo-gruiforme de <strong>Nuages blancs à l'aube</strong>, si la vague de nuage flottant déclenchée pendant cette transfiguration touche un ennemi, elle soigne tous les personnages de l'équipe à proximité d'une valeur équivalant respectivement à 50 %/80 %/150 % de l'ATQ de Xianyun. Cet effet peut être déclenché une fois toutes les 5 s."
+    }
+  },
+  "constellation5": {
+    "name": "Évolution de la beauté",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Nuages blancs à l'aube</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation6": {
+    "name": "Souffle-Nuages est son nom",
+    "description": {
+      "0": "Après avoir utilisé 1/2/3 échelles célestes pendant une transfiguration nimbo-gruiforme de <strong>Nuages blancs à l'aube</strong>, les DGT CRIT de la vague de nuage flottant déclenchée pendant cette transfiguration augmentent respectivement de 15 %/35 %/70 %.",
+      "1": "Pendant 16 s après avoir utilisé <strong>Étoiles réunies au crépuscule</strong>, Nuages blancs à l'aube ne déclenche aucun TdR. Cet effet est annulé lorsque Xianyun a déclenché 8 fois Nuages blancs à l'aube."
+    }
+  }
+}

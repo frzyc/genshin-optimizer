@@ -1,0 +1,24 @@
+{
+  "name": "The Viridescent Hunt",
+  "description": {
+    "0": "Busur berburu warna hijau tua, dulunya milik seorang pemburu hutan."
+  },
+  "passiveName": "Verdant Wind",
+  "passiveDescription": {
+    "0": {
+      "0": "Saat Normal atau Charged Attack mengenai musuh, memiliki 50% persentase untuk menciptakan Cyclone yang akan menarik musuh di sekitar dan mengakibatkan <cryo>40%</cryo> DMG setiap 0,5 detik. Efek ini berlangsung selama 4 detik. Dapat dipicu setiap <cryo>14</cryo> detik."
+    },
+    "1": {
+      "0": "Saat Normal atau Charged Attack mengenai musuh, memiliki 50% persentase untuk menciptakan Cyclone yang akan menarik musuh di sekitar dan mengakibatkan <cryo>50%</cryo> DMG setiap 0,5 detik. Efek ini berlangsung selama 4 detik. Dapat dipicu setiap <cryo>13</cryo> detik."
+    },
+    "2": {
+      "0": "Saat Normal atau Charged Attack mengenai musuh, memiliki 50% persentase untuk menciptakan Cyclone yang akan menarik musuh di sekitar dan mengakibatkan <cryo>60%</cryo> DMG setiap 0,5 detik. Efek ini berlangsung selama 4 detik. Dapat dipicu setiap <cryo>12</cryo> detik."
+    },
+    "3": {
+      "0": "Saat Normal atau Charged Attack mengenai musuh, memiliki 50% persentase untuk menciptakan Cyclone yang akan menarik musuh di sekitar dan mengakibatkan <cryo>70%</cryo> DMG setiap 0,5 detik. Efek ini berlangsung selama 4 detik. Dapat dipicu setiap <cryo>11</cryo> detik."
+    },
+    "4": {
+      "0": "Saat Normal atau Charged Attack mengenai musuh, memiliki 50% persentase untuk menciptakan Cyclone yang akan menarik musuh di sekitar dan mengakibatkan <cryo>80%</cryo> DMG setiap 0,5 detik. Efek ini berlangsung selama 4 detik. Dapat dipicu setiap <cryo>10</cryo> detik."
+    }
+  }
+}

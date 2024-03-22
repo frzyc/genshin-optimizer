@@ -1,0 +1,171 @@
+{
+  "name": "Lynette",
+  "title": "Eleganza nell'ombra",
+  "description": "Un'assistente magica di poche parole, le cui emozioni sono imperscrutabili come quelle di un gatto.",
+  "constellationName": "Felis Alba",
+  "auto": {
+    "name": "Spada rituale",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attacco normale</strong>",
+        "1": "Sferra fino a 4 colpi rapidi."
+      },
+      "charged": {
+        "0": "<strong>Attacco caricato</strong>",
+        "1": "Consuma una determinata quantità di vigore per sferrare 2 colpi di spada rapidi."
+      },
+      "plunging": {
+        "0": "<strong>Attacco in picchiata</strong>",
+        "1": "Attacca scagliandosi contro il suolo da mezz'aria, infliggendo DAN agli avversari lungo la traiettoria e DAN ad area all'impatto."
+      }
+    },
+    "skillParams": {
+      "0": "DAN da 1º colpo",
+      "1": "DAN da 2º colpo",
+      "2": "DAN da 3º colpo",
+      "3": "DAN da 4º colpo",
+      "4": "DAN da ATT caricato",
+      "5": "Costo vigore ATT caricato",
+      "6": "DAN da ATT in picchiata",
+      "7": "DAN da ATT in picchiata basso/alto",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Simulazione enigmatica",
+    "description": {
+      "0": "Si scosta il mantello per effettuare una Stoccata enigmatica, infliggendo <anemo>DAN da Anemo</anemo>.",
+      "1": "Quando Lynette colpisce un avversario con la Stoccata enigmatica, i suoi PS si ripristinano in base ai PS max e, per i 4 s successivi, Lynette perde una certa quantità di PS al secondo.",
+      "2": "L'utilizzo della Stoccata enigmatica varia in base alla durata della pressione dell'abilità.",
+      "3": "<br/>",
+      "4": "<strong>Pressione</strong>",
+      "5": "Sferra una Stoccata enigmatica rapida.",
+      "6": "<br/>",
+      "7": "<strong>Pressione prolungata</strong>",
+      "8": "Lynette entra nello stato di Ombra ladruncola, che le consente di muoversi a gran velocità e di applicare un Marchio d'ombra a un avversario vicino. Mentre Ombra ladruncola è attivo, è possibile controllare la direzione di movimento di Lynette e interrompere in anticipo gli effetti dello stato usando nuovamente l'abilità.",
+      "9": "Al termine di Ombra ladruncola, Lynette sferra una Stoccata enigmatica. Se nelle sue vicinanze è presente un avversario affetto dal Marchio d'ombra, Lynette lo raggiunge in un baleno prima di sferrare la Stoccata enigmatica.",
+      "10": "<br/>",
+      "11": "Il Marchio d'ombra può essere applicato a non più di 1 avversario alla volta. Se quest'ultimo si allontana troppo da Lynette, il Marchio d'ombra si dissolve.",
+      "12": "<br/>",
+      "13": "<strong>Archè: Ousia</strong>",
+      "14": "A determinati intervalli, quando Lynette sferra una Stoccata enigmatica, si sprigiona una Lama nascente che infligge <anemo>DAN da Anemo</anemo> di polarità Ousia.",
+      "15": "<br/>",
+      "16": "<i>\"Bene, ora volta lo sguardo verso il palco e continua a goderti lo spettacolo. Quando mi vedrai riapparire, sarò dove meno te lo aspetti.\"</i>"
+    },
+    "skillParams": {
+      "0": "DAN da Stoccata enigmatica",
+      "1": "DAN da Lama nascente",
+      "2": "Intervallo Lama nascente",
+      "3": "RIGEN PS",
+      "4": "Costo PS",
+      "5": "Durata max pressione prolungata",
+      "6": "TdR",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Gioco di prestigio: Trasmutazione mirabolante",
+    "description": {
+      "0": "Lynette alza il mantello per infliggere <anemo>DAN da Anemo ad area</anemo>, e usa la sua incredibile destrezza di mano per far apparire una Scatola Stravagatto gigante!",
+      "1": "<br/>",
+      "2": "<strong>Scatola Stravagatto</strong>",
+      "3": [
+        " Provoca i nemici vicini, attirando i loro attacchi.",
+        " Infligge <anemo>DAN da Anemo</anemo> ai nemici circostanti a intervalli regolari.",
+        " Quando la Scatola Stravagatto entra in contatto con <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<electro>Electro</electro>, assorbe l'elemento corrispondente e scaglia Colpi vividi che infliggono DAN del suddetto elemento a intervalli regolari."
+      ],
+      "4": "Questo tipo di assorbimento elementale può avvenire una volta sola nell'intera durata dell'abilità.",
+      "5": "<br/>",
+      "6": "<i>\"Guarda da questa parte e osserva con attenzione. Questo è un momento miracoloso, ed è tutto per noi.\"</i>"
+    },
+    "skillParams": {
+      "0": "DAN da abilità",
+      "1": "DAN da Scatola Stravagatto",
+      "2": "DAN da Colpo vivido",
+      "3": "Durata Scatola Stravagatto",
+      "4": "TdR",
+      "5": "Costo energia",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Sinergia sofisticata",
+    "description": {
+      "0": "Entro 10 s dall'utilizzo di <strong>Gioco di prestigio: Trasmutazione mirabolante</strong>, se il gruppo è composto da 1/2/3/4 tipi elementali, l'ATT di tutti i membri aumenta di un 8%/12%/16%/20% rispettivamente."
+    }
+  },
+  "passive2": {
+    "name": "Oggetti di scena pronti all'uso",
+    "description": {
+      "0": "Dopo che la Scatola Stravagatto, evocata tramite <strong>Gioco di prestigio: Trasmutazione mirabolante</strong>, esegue una conversione elementale, il Tripudio elementale di Lynette infligge un 15% di DAN in più. Quest'effetto rimane attivo per tutta la durata della Scatola Stravagatto."
+    }
+  },
+  "passive3": {
+    "name": "Tecnica dei loci",
+    "description": {
+      "0": "Mostra la posizione dei <strong>Globi di ripristino</strong> sulla minimappa. Il vigore acquatico e i PS ottenuti toccando i Globi aumentano di un 25%."
+    }
+  },
+  "constellation1": {
+    "name": "Ombra sferzante",
+    "description": {
+      "0": "Quando un avversario con il Marchio d'ombra viene colpito dalla Stoccata enigmatica di <strong>Simulazione enigmatica</strong>, si genera un vortice nella sua posizione che risucchia gli avversari vicini."
+    }
+  },
+  "constellation2": {
+    "name": "Misteri sconfinati",
+    "description": {
+      "0": "Ogni volta che la Scatola Stravagatto evocata da <strong>Gioco di prestigio: Trasmutazione mirabolante</strong> scaglia un Colpo vivido, ne scaglia uno in più."
+    }
+  },
+  "constellation3": {
+    "name": "Conoscenza invertita",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Gioco di prestigio: Trasmutazione mirabolante</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation4": {
+    "name": "Accordo tacito",
+    "description": {
+      "0": "Aumenta di 1 le cariche di <strong>Simulazione enigmatica</strong>."
+    }
+  },
+  "constellation5": {
+    "name": "Ambiguità oscurante",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Simulazione enigmatica</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation6": {
+    "name": "Occhio vigile",
+    "description": {
+      "0": "Quando Lynette usa la Stoccata enigmatica di <strong>Simulazione enigmatica</strong>, ottiene un'<anemo>infusione di Anemo</anemo> e un 20% di <anemo>bonus DAN da Anemo</anemo> per 6 s."
+    }
+  }
+}
