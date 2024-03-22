@@ -70,7 +70,7 @@ describe('lightCone test', () => {
           key: lcKey,
           level: lvl,
           ascension: ascension as AscensionKey,
-          superimpose: 0,
+          superimpose: 1,
           lock: false,
           location: 'March7th',
         })
@@ -109,7 +109,7 @@ describe('char+lightCone test', () => {
           key: lcKey,
           level: 1,
           ascension: 0,
-          superimpose: 0,
+          superimpose: 1,
           lock: false,
           location: 'March7th',
         })
