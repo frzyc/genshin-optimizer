@@ -4,9 +4,9 @@ import { optimize, precompute } from '../../Formula/optimization'
 import type {
   ArtifactBuildData,
   ArtifactsBySlot,
-  SolverBuild,
   PlotData,
   RequestFilter,
+  SolverBuild,
 } from '../common'
 import { countBuilds, filterArts, mergePlot, pruneAll } from '../common'
 

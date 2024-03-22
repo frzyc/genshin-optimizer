@@ -28,7 +28,7 @@ export class BuildDataManager extends DataManager<
   override validate(obj: unknown): Build | undefined {
     let { name, description, weaponId, artifactIds } = obj as Build
     if (typeof name !== 'string') name = 'Build Name'
-    if (typeof description !== 'string') description = 'Build Description'
+    if (typeof description !== 'string') description = ''
     if (weaponId && !this.database.weapons.get(weaponId)) weaponId = undefined
 
     // force the build to have a valid weapon
@@ -72,5 +72,24 @@ export class BuildDataManager extends DataManager<
     const build = this.get(buildId)
     if (!build) return ''
     return this.new(structuredClone(build))
+  }
+  override remove(key: string, notify?: boolean): Build | undefined {
+    const build = super.remove(key, notify)
+    // remove data from teamChar first
+    this.database.teamChars.entries.forEach(
+      ([teamCharId, teamChar]) =>
+        teamChar.buildIds.includes(key) &&
+        this.database.teamChars.set(teamCharId, {})
+    )
+    // once teamChars are validated, teams can be validated as well
+    this.database.teams.entries.forEach(
+      ([teamId, team]) =>
+        team.loadoutData?.some(
+          (loadoutDatum) =>
+            loadoutDatum?.buildId === key || loadoutDatum?.compareBuildId
+        ) && this.database.teams.set(teamId, {}) // trigger a validation
+    )
+
+    return build
   }
 }

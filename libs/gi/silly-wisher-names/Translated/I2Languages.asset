@@ -4365,7 +4365,7 @@ MonoBehaviour:
       - Clon de Abogado
       - 기레기
       - ทนายโคลน
-      - Wartawan
+      - Saya viralin nih
       - Clone de Advogado
       - Адвокат Клон
       - Chị Ngok
@@ -4407,7 +4407,7 @@ MonoBehaviour:
       - Pulsante più Potente
       - Stärkster Knopf
       - Botón más Fuerte
-      - 가장 강한 버튼
+      - 클래시로얄
       - ปุ่มที่แข็งแกร่งที่สุด
       - Cl
       - Botão mais Forte
@@ -4429,7 +4429,7 @@ MonoBehaviour:
       - Moschettiere
       - Musketier
       - Mosquetero
-      - 총병
+      - 슈베르트
       - ทหารเสือ
       - Ciprut
       - Mosqueteiro
@@ -4451,7 +4451,7 @@ MonoBehaviour:
       - Lanciatore di balene
       - Walwerfer
       - Lanzador de ballenas
-      - 고래 던지기
+      - 스컹크
       - ปลาวาฬทอสเซอร์
       - Banting Tatang
       - Lançador de Baleia
@@ -4473,9 +4473,9 @@ MonoBehaviour:
       - Mamma Uccello
       - Mama Vogel
       - Mamá Pájaro
-      - 엄마 새
+      - 학 모녀
       - แม่เบิร์ด
-      - Ibu Burung
+      - Kecap
       - Mamãe Pássaro
       - Мама Птица
       - Chim mẹ
@@ -4495,14 +4495,36 @@ MonoBehaviour:
       - Gamer
       - Gamer
       - Gamer
+      - 진명
+      - Gamer
+      - Edi Barongsai
       - Gamer
       - Gamer
       - Gamer
       - Gamer
       - Gamer
-      - Gamer
-      - Gamer
-      - Gamer
+      Flags: 00000000000000000000000000000000
+      Languages_Touch: []
+    - Term: CharMemNames/chiori
+      TermType: 0
+      Description:
+      Languages:
+      - Chidori
+      - 美腿設計師
+      - 美腿设计师
+      - Chidori
+      - Chidori
+      - Chidori
+      - Chidori
+      - Chidori
+      - Chidori
+      - Chidori
+      - Chidori
+      - Chidori
+      - Chidori
+      - Chidori
+      - Chidori
+      - Chidori
       Flags: 00000000000000000000000000000000
       Languages_Touch: []
     - Term: CharMemDescShort/albedo
@@ -4708,9 +4730,9 @@ MonoBehaviour:
       Description:
       Languages:
       - One and Oni
-      - One and Oni
-      - One and Oni
-      - One and Oni
+      - 先動再想
+      - 先动再想
+      - まず行動して、後で考える
       - Le seul et l'Onique
       - One and Oni
       - One and Oni
@@ -4798,7 +4820,7 @@ MonoBehaviour:
       - Fish are Friends
       - 是魚就是朋友
       - 是鱼就是朋友
-      - Fish are Friends
+      - 魚は友達です
       - Les pitis poissons dans l'eau
       - Fish are Friends
       - Fische sind Freunde
@@ -5267,12 +5289,34 @@ MonoBehaviour:
       - gafas sexys
       - 섹시한 안경
       - แว่นเซ็กซี่
-      - Kacamata Seksi
+      - Mak Lambe Turah
       - Óculos Sexy
       - сексуальные очки
       - Kính gợi cảm
       - Seksowne okulary
       - Seksi Gözlük
+      Flags: 00000000000000000000000000000000
+      Languages_Touch: []
+    - Term: CharMemDescShort/chiori
+      TermType: 0
+      Description:
+      Languages:
+      - High Fashion
+      - 高端時尚
+      - 高端时尚
+      - ハイファッション
+      - High Fashion
+      - High Fashion
+      - High Fashion
+      - High Fashion
+      - High Fashion
+      - High Fashion
+      - High Fashion
+      - High Fashion
+      - High Fashion
+      - High Fashion
+      - High Fashion
+      - High Fashion
       Flags: 00000000000000000000000000000000
       Languages_Touch: []
     - Term: CharMemDescLong/albedo
@@ -5947,7 +5991,7 @@ MonoBehaviour:
       - Il mio [vocabolario] è molto ampio e non ho paura di usarlo
       - Mein [Wortschatz] ist sehr umfangreich und ich habe keine Angst, ihn zu verwenden
       - Mi [vocabulario] es muy amplio y no tengo miedo de usarlo.
-      - 내 [어휘]는 매우 방대해서 사용하는 것이 두렵지 않습니다.
+      - 네가 울 면 무지 개 연 못에 [비 가 온단 다]🎵
       - '[คำศัพท์] ของฉันใหญ่มากและฉันไม่กลัวที่จะใช้มัน'
       - '[Hakim sebiru langit] tapi hati helokitih'
       - Meu [vocabulário] é muito extenso e não tenho medo de usá-lo
@@ -6013,7 +6057,7 @@ MonoBehaviour:
       - Sempre pronto per [l'ora del tè]
       - Immer bereit für [Teezeit]
       - Siempre listo para [la hora del té]
-      - 항상 [티타임] 준비가 되어있습니다.
+      - 내 왼손엔 [마르시악] 오른손에는 [실버]
       - พร้อมเสมอสำหรับ [Teatime]
       - Dame yo [dame dame]
       - Sempre pronto para [hora do chá]
@@ -6035,14 +6079,36 @@ MonoBehaviour:
       - Lascia che ti racconti un'altra [storia imbarazzante]...
       - Lass mich dir noch eine weitere [peinliche Geschichte] erzählen ...
       - Déjame contarte otra [Historia embarazosa]...
-      - 또 다른 [부끄러운 이야기]를 말씀드리겠습니다...
+      - 또 그래서 [감우가 어릴 때]...
       - ขอเล่า [เรื่องน่าอาย] อีกเรื่องครับ...
-      - Izinkan saya menceritakan kepada Anda [Kisah Memalukan] lainnya...
+      - Eh tau ga, jeng [tetangganya Pak Julkipli loh--]
       - Deixe-me contar outra [história embaraçosa]...
       - Позвольте мне рассказать вам еще одну [неловкую историю]...
       - Để tôi kể cho bạn nghe một [Câu chuyện đáng xấu hổ] khác...
       - Pozwól, że opowiem ci inną [żenującą historię]...
       - Size başka bir [Utanç verici Hikaye] anlatayım...
+      Flags: 00000000000000000000000000000000
+      Languages_Touch: []
+    - Term: CharMemDescLong/chiori
+      TermType: 0
+      Description:
+      Languages:
+      - '[Thundering Thighs] Seamstress'
+      - 穿她的衣服，[腿就會美了]！
+      - 穿她的衣服，[腿就会美了]！
+      - 彼女の服を着ると[脚が綺麗に見えます]！
+      - '[Belles Cuisses] Couturière'
+      - '[Belle Cosce] Sarta'
+      - '[Schöne Oberschenkel] Näherin'
+      - '[Muslos hermosos] Costurera'
+      - '[아름다운 허벅지] 재봉사'
+      - '[ต้นขาสวย] ช่างเย็บ'
+      - '[Paha Cantik] Penjahit'
+      - '[Lindas Coxas] Costureira'
+      - '[Красивые бедра] Швея'
+      - '[Đùi đẹp] Thợ may'
+      - '[Piękne uda] Krawcowa'
+      - '[Güzel Kalçalar] Terzi'
       Flags: 00000000000000000000000000000000
       Languages_Touch: []
     - Term: WepNames/rust
@@ -7181,7 +7247,7 @@ MonoBehaviour:
       - Awuawu
       - Awuawu
       - Awuawu
-      - Awuawu
+      - Akuah
       - Awuawu
       - Awuawu
       - Awuawu
@@ -7203,7 +7269,7 @@ MonoBehaviour:
       - Moon Moon
       - Moon Moon
       - Moon Moon
-      - Moon Moon
+      - Bubuy Bulan
       - Moon Moon
       - Moon Moon
       - Moon Moon
@@ -7225,7 +7291,7 @@ MonoBehaviour:
       - Wavestick
       - Wavestick
       - Wavestick
-      - Wavestick
+      - Bolpen Pilott
       - Wavestick
       - Wavestick
       - Wavestick
@@ -7247,7 +7313,7 @@ MonoBehaviour:
       - Asian Powerup Stick
       - Asian Powerup Stick
       - Asian Powerup Stick
-      - Asian Powerup Stick
+      - Setik Olang Liyue
       - Asian Powerup Stick
       - Asian Powerup Stick
       - Asian Powerup Stick
@@ -7269,7 +7335,7 @@ MonoBehaviour:
       - Fancy Leaf Lamp
       - Fancy Leaf Lamp
       - Fancy Leaf Lamp
-      - Fancy Leaf Lamp
+      - Lampunya Om jin Sarimih
       - Fancy Leaf Lamp
       - Fancy Leaf Lamp
       - Fancy Leaf Lamp
@@ -7291,12 +7357,122 @@ MonoBehaviour:
       - Fancy Birb Fan
       - Fancy Birb Fan
       - Fancy Birb Fan
+      - Pisang goreng kipas
       - Fancy Birb Fan
       - Fancy Birb Fan
       - Fancy Birb Fan
       - Fancy Birb Fan
       - Fancy Birb Fan
-      - Fancy Birb Fan
+      Flags: 00000000000000000000000000000000
+      Languages_Touch: []
+    - Term: WepNames/kagurasverity
+      TermType: 0
+      Description:
+      Languages:
+      - Cupcake Stand
+      - 紙杯蛋糕攤
+      - 纸杯蛋糕摊
+      - カップケーキスタンド
+      - Cupcake Stand
+      - Cupcake Stand
+      - Cupcake Stand
+      - Cupcake Stand
+      - Cupcake Stand
+      - Cupcake Stand
+      - Cupcake Stand
+      - Cupcake Stand
+      - Cupcake Stand
+      - Cupcake Stand
+      - Cupcake Stand
+      - Cupcake Stand
+      Flags: 00000000000000000000000000000000
+      Languages_Touch: []
+    - Term: WepNames/lithicblade
+      TermType: 0
+      Description:
+      Languages:
+      - Asian Powerup Paddle
+      - 華人升級槳
+      - 华人升级桨
+      - Asian Powerup Paddle
+      - Asian Powerup Paddle
+      - Asian Powerup Paddle
+      - Asian Powerup Paddle
+      - Asian Powerup Paddle
+      - Asian Powerup Paddle
+      - Asian Powerup Paddle
+      - Asian Powerup Paddle
+      - Asian Powerup Paddle
+      - Asian Powerup Paddle
+      - Asian Powerup Paddle
+      - Asian Powerup Paddle
+      - Asian Powerup Paddle
+      Flags: 00000000000000000000000000000000
+      Languages_Touch: []
+    - Term: WepNames/alleyhunter
+      TermType: 0
+      Description:
+      Languages:
+      - Alley Bow
+      - 黑暗的小路獵人
+      - 黑暗的小路猎手
+      - ダークトレイルハンター
+      - Alley Bow
+      - Alley Bow
+      - Alley Bow
+      - Alley Bow
+      - Alley Bow
+      - Alley Bow
+      - Alley Bow
+      - Alley Bow
+      - Alley Bow
+      - Alley Bow
+      - Alley Bow
+      - Alley Bow
+      Flags: 00000000000000000000000000000000
+      Languages_Touch: []
+    - Term: WepNames/redhornstonethresher
+      TermType: 0
+      Description:
+      Languages:
+      - Oni's Big Stick
+      - 放牛的大棍
+      - 放牛的大棍
+      - 鬼の大棒
+      - Oni's Big Stick
+      - Oni's Big Stick
+      - Oni's Big Stick
+      - Oni's Big Stick
+      - Oni's Big Stick
+      - Oni's Big Stick
+      - Oni's Big Stick
+      - Oni's Big Stick
+      - Oni's Big Stick
+      - Oni's Big Stick
+      - Oni's Big Stick
+      - Oni's Big Stick
+      Flags: 00000000000000000000000000000000
+      Languages_Touch: []
+    - Term: WepNames/urakumisugiri
+      TermType: 0
+      Description:
+      Languages:
+      - Flowery Geo Sword
+      - 花花泥土劍
+      - 花花泥土剑
+      - 花粘土の剣
+      - Flowery Geo Sword
+      - Flowery Geo Sword
+      - Flowery Geo Sword
+      - Flowery Geo Sword
+      - Flowery Geo Sword
+      - Flowery Geo Sword
+      - Flowery Geo Sword
+      - Flowery Geo Sword
+      - Flowery Geo Sword
+      - Flowery Geo Sword
+      - Flowery Geo Sword
+      - Flowery Geo Sword
       Flags: 00000000000000000000000000000000
       Languages_Touch: []
     CaseInsensitiveTerms: 0
@@ -7356,9 +7532,9 @@ MonoBehaviour:
     Google_WebServiceURL: https://script.google.com/macros/s/AKfycbxu8CXfmubud0lH_ChGOEujDtNdDO6WQ4qtgBUvc3Btn63kZdUdUR3BPVWg3jY53dV4/exec
     Google_SpreadsheetKey: 1oivW_K32Yfaa17IKypH6-q6HTheORm8qqQDc83cyCxo
     Google_SpreadsheetName: I2Loc Silly Wisher Localization
-    Google_LastUpdatedVersion: 1706598848494
+    Google_LastUpdatedVersion: 1710143934825
     GoogleUpdateFrequency: 1
     GoogleInEditorCheckFrequency: 2
     GoogleUpdateDelay: 5
     Assets:
-    - {fileID: 12800000, guid: 3c25795cf1d30c64a97b5b877bb0f820, type: 3}
+    - {fileID: 12800000, guid: b7755754df4943a40a6d75dfbfae2715, type: 3}

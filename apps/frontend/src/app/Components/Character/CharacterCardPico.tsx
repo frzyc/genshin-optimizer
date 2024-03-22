@@ -28,12 +28,14 @@ export default function CharacterCardPico({
   onMouseDown,
   onMouseEnter,
   hoverChild,
+  hideFav,
 }: {
   characterKey: CharacterKey
   onClick?: (characterKey: CharacterKey) => void
   onMouseDown?: (e: MouseEvent) => void
   onMouseEnter?: (e: MouseEvent) => void
   hoverChild?: React.ReactNode
+  hideFav?: boolean
 }) {
   const character = useCharacter(characterKey)
   const { favorite } = useCharMeta(characterKey)
@@ -107,13 +109,15 @@ export default function CharacterCardPico({
               </strong>
             </Typography>
           )}
-          <Box sx={{ position: 'absolute', top: 0, right: 0 }}>
-            {favorite ? (
-              <FavoriteIcon fontSize="small" />
-            ) : (
-              <FavoriteBorderIcon fontSize="small" />
-            )}
-          </Box>
+          {!hideFav && (
+            <Box sx={{ position: 'absolute', top: 0, right: 0 }}>
+              {favorite ? (
+                <FavoriteIcon fontSize="small" />
+              ) : (
+                <FavoriteBorderIcon fontSize="small" />
+              )}
+            </Box>
+          )}
           {character && (
             <Typography
               sx={{

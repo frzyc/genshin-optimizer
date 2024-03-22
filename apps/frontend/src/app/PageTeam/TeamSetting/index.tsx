@@ -10,6 +10,7 @@ import AddIcon from '@mui/icons-material/Add'
 import CloseIcon from '@mui/icons-material/Close'
 import GroupsIcon from '@mui/icons-material/Groups'
 import SettingsIcon from '@mui/icons-material/Settings'
+import type { ButtonProps } from '@mui/material'
 import {
   Alert,
   Box,
@@ -18,41 +19,43 @@ import {
   CardHeader,
   Divider,
   Grid,
+  IconButton,
   TextField,
   Typography,
 } from '@mui/material'
 import { Suspense, useDeferredValue, useEffect, useMemo, useState } from 'react'
 import CharacterSelectionModal from '../../Components/Character/CharacterSelectionModal'
-import CloseButton from '../../Components/CloseButton'
 import CharIconSide from '../../Components/Image/CharIconSide'
-import type { dataContextObj } from '../../Context/DataContext'
+import type { TeamData, dataContextObj } from '../../Context/DataContext'
 import { DataContext } from '../../Context/DataContext'
 import { LoadoutDropdown } from '../LoadoutDropdown'
-import {
-  ResonanceDisplay,
-  TeamBuffDisplay,
-  TeammateDisplay,
-} from './TeamComponents'
+import { ResonanceDisplay, TeammateDisplay } from './TeamComponents'
 
+import type { LoadoutDatum } from '@genshin-optimizer/gi/db'
 import ContentCopyIcon from '@mui/icons-material/ContentCopy'
 import ContentPasteIcon from '@mui/icons-material/ContentPaste'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import { useLocation, useNavigate } from 'react-router-dom'
+import { EnemyExpandCard } from '../../Components/EnemyEditor'
+import TeamInfoAlert from '../../Components/Team/TeamInfoAlert'
 import type { TeamCharacterContextObj } from '../../Context/TeamCharacterContext'
 import { TeamCharacterContext } from '../../Context/TeamCharacterContext'
-// TODO: Translation
+import BuildDropdown from '../BuildDropdown'
 
+// TODO: Translation
 export default function TeamSetting({
   teamId,
-  dataContextValue,
+  teamData,
+  buttonProps = {},
 }: {
   teamId: string
-  dataContextValue?: dataContextObj
+  teamData?: TeamData
+  buttonProps?: ButtonProps
 }) {
   const navigate = useNavigate()
   const database = useDatabase()
   const team = database.teams.get(teamId)!
-  const noChars = team.teamCharIds.every((id) => !id)
+  const noChars = team.loadoutData.every((id) => !id)
 
   const location = useLocation()
 
@@ -94,6 +97,12 @@ export default function TeamSetting({
   }, [database, descDeferred])
 
   const onDel = () => {
+    if (
+      !window.confirm(
+        'Removing the team will not remove the loadouts, but will remove select builds, resonance buffs, and enemy config.'
+      )
+    )
+      return
     database.teams.remove(teamId)
     navigate(`/teams`)
   }
@@ -112,15 +121,24 @@ export default function TeamSetting({
 
   return (
     <>
-      <BootstrapTooltip title={<Typography>{team.description}</Typography>}>
+      <BootstrapTooltip
+        title={
+          team.description ? (
+            <Typography>{team.description}</Typography>
+          ) : undefined
+        }
+      >
         <Button
-          color="info"
-          sx={{ flexGrow: 1 }}
           startIcon={<GroupsIcon />}
           endIcon={<SettingsIcon />}
           onClick={() => setOpen((open) => !open)}
+          {...buttonProps}
         >
-          <Typography variant="h6">{team.name}</Typography>
+          <Typography variant="h5" display="flex" gap={1}>
+            <strong>{team.name}</strong>
+            <Divider orientation="vertical" variant="middle" flexItem />
+            <span>Team Settings</span>
+          </Typography>
         </Button>
       </BootstrapTooltip>
 
@@ -137,18 +155,17 @@ export default function TeamSetting({
                 <span>Team Settings</span>
               </Box>
             }
-            action={<CloseButton onClick={() => setOpen(false)} />}
+            action={
+              <IconButton onClick={() => setOpen(false)}>
+                <CloseIcon />
+              </IconButton>
+            }
           />
           <Divider />
           <CardContent
             sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}
           >
-            <Alert variant="filled" severity="info">
-              <strong>Teams</strong> are a container for 4 character loadouts.
-              It provides a way for characters to apply team buffs, and
-              configuration of enemy stats. Loadouts can be shared between
-              teams.
-            </Alert>
+            <TeamInfoAlert />
             <TextField
               fullWidth
               label="Team Name"
@@ -159,18 +176,17 @@ export default function TeamSetting({
             <TextField
               fullWidth
               label="Team Description"
-              placeholder="Team Description"
               value={desc}
               onChange={(e) => setDesc(e.target.value)}
               multiline
-              rows={4}
+              minRows={2}
             />
-            <Box sx={{ display: 'flex', gap: 2 }}>
+            <Box sx={{ display: 'flex', gap: 1 }}>
               <Button
                 color="info"
                 sx={{ flexGrow: 1 }}
                 startIcon={<ContentPasteIcon />}
-                disabled={team.teamCharIds.every((id) => !id)}
+                disabled={noChars}
                 onClick={onExport}
               >
                 Export Team
@@ -178,25 +194,28 @@ export default function TeamSetting({
               <Button
                 color="info"
                 sx={{ flexGrow: 1 }}
-                disabled={team.teamCharIds.every((id) => !id)}
+                disabled={noChars}
                 onClick={onDup}
                 startIcon={<ContentCopyIcon />}
               >
                 Duplicate Team
               </Button>
-              <Button color="error" size="small" onClick={onDel}>
-                <DeleteForeverIcon />
+              <Button
+                color="error"
+                sx={{ flexGrow: 1 }}
+                onClick={onDel}
+                startIcon={<DeleteForeverIcon />}
+              >
+                Delete Team
               </Button>
             </Box>
+            <EnemyExpandCard teamId={teamId} />
             <Typography variant="h6">Team Editor</Typography>
-            <Alert severity="info" variant="filled">
+            <Alert severity="info">
               The first character in the team receives any "active on-field
               character" buffs, and cannot be empty.
             </Alert>
-            <TeamCharacterSelector
-              teamId={teamId}
-              dataContextValue={dataContextValue}
-            />
+            <TeamCharacterSelector teamId={teamId} teamData={teamData} />
           </CardContent>
         </CardThemed>
       </ModalWrapper>
@@ -205,14 +224,14 @@ export default function TeamSetting({
 }
 function TeamCharacterSelector({
   teamId,
-  dataContextValue,
+  teamData,
 }: {
   teamId: string
-  dataContextValue?: dataContextObj
+  teamData?: TeamData
 }) {
   const database = useDatabase()
   const team = database.teams.get(teamId)!
-  const { teamCharIds } = team
+  const { loadoutData } = team
   const [charSelectIndex, setCharSelectIndex] = useState(
     undefined as number | undefined
   )
@@ -222,8 +241,10 @@ function TeamCharacterSelector({
     // Make sure character exists
     database.chars.getWithInitWeapon(cKey)
 
-    const existingIndex = teamCharIds.findIndex(
-      (teamCharId) => database.teamChars.get(teamCharId)?.key === cKey
+    const existingIndex = loadoutData.findIndex(
+      (loadoutDatum) =>
+        loadoutDatum &&
+        database.teamChars.get(loadoutDatum.teamCharId)?.key === cKey
     )
     if (existingIndex < 0) {
       //find the first available teamchar
@@ -233,23 +254,24 @@ function TeamCharacterSelector({
       // if there is no teamchar, create one.
       if (!teamCharId) teamCharId = database.teamChars.new(cKey)
       database.teams.set(teamId, (team) => {
-        team.teamCharIds[charSelectIndex] = teamCharId
+        if (!teamCharId) return
+        team.loadoutData[charSelectIndex] = { teamCharId } as LoadoutDatum
       })
     } else {
       if (charSelectIndex === existingIndex) return
-      if (teamCharIds[charSelectIndex]) {
+      if (loadoutData[charSelectIndex]) {
         // Already have a teamChar at destination, move to existing Index
-        const existingTeamCharId = teamCharIds[existingIndex]
-        const destinationTeamCharId = teamCharIds[charSelectIndex]
+        const existingLoadoutDatum = loadoutData[existingIndex]
+        const destinationLoadoutDatum = loadoutData[charSelectIndex]
         database.teams.set(teamId, (team) => {
-          team.teamCharIds[charSelectIndex] = existingTeamCharId
-          team.teamCharIds[existingIndex] = destinationTeamCharId
+          team.loadoutData[charSelectIndex] = existingLoadoutDatum
+          team.loadoutData[existingIndex] = destinationLoadoutDatum
         })
       }
     }
   }
   const charKeyAtIndex = database.teamChars.get(
-    teamCharIds[charSelectIndex as number]
+    loadoutData[charSelectIndex as number]?.teamCharId
   )?.key
 
   // This context is only used by the ResonanceDisplay, which needs to attach conditional values to team data.
@@ -258,11 +280,26 @@ function TeamCharacterSelector({
       ({
         teamId,
         team,
-        teamCharId: teamCharIds[0],
+        teamCharId: '', // can be left blank since its only modifying team conditional
         teamChar: {},
       } as TeamCharacterContextObj),
-    [team, teamId, teamCharIds]
+    [team, teamId]
   )
+
+  const firstTeamCharId = loadoutData[0]?.teamCharId
+  const firstTeamCharKey =
+    firstTeamCharId && database.teamChars.get(firstTeamCharId)?.key
+  const charData = firstTeamCharKey && teamData?.[firstTeamCharKey]
+  const charUIData = charData ? charData.target : undefined
+
+  const dataContextValue: dataContextObj | undefined = useMemo(() => {
+    if (!teamData || !charUIData) return undefined
+    return {
+      data: charUIData,
+      teamData,
+      oldData: undefined,
+    }
+  }, [charUIData, teamData])
   return (
     <>
       <Suspense fallback={false}>
@@ -281,30 +318,29 @@ function TeamCharacterSelector({
         >
           {dataContextValue && (
             <DataContext.Provider value={dataContextValue}>
-              <TeamBuffDisplay />
               <TeamCharacterContext.Provider value={teamCharContextObj}>
                 <ResonanceDisplay teamId={teamId} />
               </TeamCharacterContext.Provider>
             </DataContext.Provider>
           )}
         </Grid>
-        {teamCharIds.map((teamCharId, ind) => (
-          <Grid item xs={1} key={teamCharId ?? ind}>
-            {teamCharId ? (
+        {loadoutData.map((loadoutDatum, ind) => (
+          <Grid item xs={1} key={loadoutDatum?.teamCharId ?? ind}>
+            {loadoutDatum ? (
               <CharSelButton
                 index={ind}
-                key={teamCharId}
+                key={loadoutDatum?.teamCharId}
                 teamId={teamId}
-                teamCharId={teamCharId}
+                loadoutDatum={loadoutDatum}
                 onClickChar={() => setCharSelectIndex(ind)}
-                dataContextValue={dataContextValue}
+                teamData={teamData}
               />
             ) : (
               <Button
                 key={ind}
                 onClick={() => setCharSelectIndex(ind)}
                 fullWidth
-                disabled={!!ind && !teamCharIds.some((id) => id)}
+                disabled={!!ind && !loadoutData.some((id) => id)}
                 startIcon={<AddIcon />}
               >
                 Add Character
@@ -319,40 +355,52 @@ function TeamCharacterSelector({
 function CharSelButton({
   index,
   teamId,
-  teamCharId,
-  dataContextValue,
+  loadoutDatum,
+  teamData,
   onClickChar,
 }: {
   index: number
   teamId: string
-  teamCharId: string
-  dataContextValue?: dataContextObj
+  loadoutDatum: LoadoutDatum
+  teamData?: TeamData
   onClickChar: () => void
 }) {
   const database = useDatabase()
+  const { teamCharId } = loadoutDatum
   const { key: characterKey } = database.teamChars.get(teamCharId)!
   const { gender } = useDBMeta()
   const onChangeTeamCharId = (teamCharId: string) => {
     database.teams.set(teamId, (team) => {
-      team.teamCharIds[index] = teamCharId
+      team.loadoutData[index] = { teamCharId } as LoadoutDatum
     })
   }
   const onActive = () => {
     // Swap the active with current loadout
     database.teams.set(teamId, (team) => {
-      const oldActive = team.teamCharIds[0]
-      team.teamCharIds[0] = teamCharId
-      team.teamCharIds[index] = oldActive
+      const oldActive = team.loadoutData[0]
+      team.loadoutData[0] = loadoutDatum
+      team.loadoutData[index] = oldActive
     })
   }
 
   const onDel = () =>
     database.teams.set(teamId, (team) => {
-      team.teamCharIds[index] = undefined
+      team.loadoutData[index] = undefined
     })
+
+  const charData = characterKey && teamData?.[characterKey]
+  const charUIData = charData ? charData.target : undefined
+
+  const dataContextValue: dataContextObj | undefined = useMemo(() => {
+    if (!teamData || !charUIData) return undefined
+    return {
+      data: charUIData,
+      teamData,
+      oldData: undefined,
+    }
+  }, [charUIData, teamData])
+
   return (
-    // <CardThemed bgt="light" sx={{ height: '100%' }}>
-    //   <CardContent>
     <Box sx={{ display: 'flex', gap: 1, flexDirection: 'column' }}>
       <Box sx={{ display: 'flex', gap: 1 }}>
         <Button
@@ -370,7 +418,12 @@ function CharSelButton({
       <LoadoutDropdown
         teamCharId={teamCharId}
         onChangeTeamCharId={onChangeTeamCharId}
-        dropdownBtnProps={{ sx: { flexGrow: 1 } }}
+        dropdownBtnProps={{ fullWidth: true }}
+      />
+      <BuildDropdown
+        teamId={teamId}
+        loadoutDatum={loadoutDatum}
+        dropdownBtnProps={{ fullWidth: true }}
       />
       {index ? (
         <Button onClick={onActive} color="info">

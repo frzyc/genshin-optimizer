@@ -93,17 +93,23 @@ function CharacterEditorContent({
   return (
     <CardThemed>
       <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
-        {dataContextValue && characterContextValue && graphContextValue ? (
-          <CharacterContext.Provider value={characterContextValue}>
-            <DataContext.Provider value={dataContextValue}>
-              <GraphContext.Provider value={graphContextValue}>
-                <Content onClose={onClose} />
-              </GraphContext.Provider>
-            </DataContext.Provider>
-          </CharacterContext.Provider>
-        ) : (
-          <Skeleton variant="rectangular" width="100%" height={1000} />
-        )}
+        <Suspense
+          fallback={
+            <Skeleton variant="rectangular" width="100%" height={1000} />
+          }
+        >
+          {dataContextValue && characterContextValue && graphContextValue ? (
+            <CharacterContext.Provider value={characterContextValue}>
+              <DataContext.Provider value={dataContextValue}>
+                <GraphContext.Provider value={graphContextValue}>
+                  <Content onClose={onClose} />
+                </GraphContext.Provider>
+              </DataContext.Provider>
+            </CharacterContext.Provider>
+          ) : (
+            <Skeleton variant="rectangular" width="100%" height={1000} />
+          )}
+        </Suspense>
       </CardContent>
     </CardThemed>
   )

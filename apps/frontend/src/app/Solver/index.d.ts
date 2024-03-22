@@ -2,9 +2,9 @@ import type { ArtSetExclusion } from '@genshin-optimizer/gi/db'
 import type { OptNode } from '../Formula/optimization'
 import type {
   ArtifactsBySlot,
-  SolverBuild,
   PlotData,
   RequestFilter,
+  SolverBuild,
 } from './common'
 
 export type OptProblemInput = {

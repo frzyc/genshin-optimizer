@@ -7,16 +7,17 @@ import { useBuildTc, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { SlotIcon } from '@genshin-optimizer/gi/svgicons'
 import { ArtifactSetName } from '@genshin-optimizer/gi/ui'
 import { artDisplayValue } from '@genshin-optimizer/gi/util'
+import CloseIcon from '@mui/icons-material/Close'
 import {
   Box,
   CardContent,
   CardHeader,
   Divider,
   Grid,
+  IconButton,
   TextField,
 } from '@mui/material'
 import { useContext, useDeferredValue, useEffect, useState } from 'react'
-import CloseButton from '../../../Components/CloseButton'
 import ImgIcon from '../../../Components/Image/ImgIcon'
 import { StatWithUnit } from '../../../Components/StatDisplay'
 import { WeaponCardNanoObj } from '../../../Components/Weapon/WeaponCardNano'
@@ -29,27 +30,25 @@ export default function BuildTc({
   active = false,
 }: {
   buildTcId: string
-  active: boolean
+  active?: boolean
 }) {
   const [open, onOpen, onClose] = useBoolState()
-  const { teamCharId } = useContext(TeamCharacterContext)
+  const { teamId, teamCharId } = useContext(TeamCharacterContext)
   const database = useDatabase()
   const buildTc = useBuildTc(buildTcId)!
   const { name, description } = buildTc
   const onActive = () =>
-    database.teamChars.set(teamCharId, {
+    database.teams.setLoadoutDatum(teamId, teamCharId, {
       buildType: 'tc',
       buildTcId,
     })
   const onRemove = () => {
     //TODO: prompt user for removal
     database.buildTcs.remove(buildTcId)
-    // trigger validation
-    database.teamChars.set(teamCharId, {})
   }
   const onDupe = () =>
-    database.teamChars.newBuild(teamCharId, {
-      ...buildTc,
+    database.teamChars.newBuildTc(teamCharId, {
+      ...structuredClone(buildTc),
       name: `Duplicate of ${name}`,
     })
   return (
@@ -231,7 +230,11 @@ function BuildTcEditor({
     <CardThemed>
       <CardHeader
         title="Build Settings"
-        action={<CloseButton onClick={onClose} />}
+        action={
+          <IconButton onClick={onClose}>
+            <CloseIcon />
+          </IconButton>
+        }
       />
       <Divider />
       <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
@@ -245,11 +248,10 @@ function BuildTcEditor({
         <TextField
           fullWidth
           label="Build Description"
-          placeholder="Build Description"
           value={desc}
           onChange={(e) => setDesc(e.target.value)}
           multiline
-          rows={4}
+          minRows={2}
         />
       </CardContent>
     </CardThemed>

@@ -3,6 +3,7 @@ import type {
   GeneralAutocompleteOption,
 } from '@genshin-optimizer/common/ui'
 import { GeneralAutocompleteMulti } from '@genshin-optimizer/common/ui'
+import { notEmpty } from '@genshin-optimizer/common/util'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import { charKeyToLocGenderedCharKey } from '@genshin-optimizer/gi/consts'
 import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
@@ -62,9 +63,8 @@ export function CharacterMultiAutocomplete({
     } as const
     return bulkCatTotal(catKeys, (ctMap) => {
       database.teams.values.forEach((team) => {
-        const { teamCharIds } = team
-
-        teamCharIds.forEach((teamCharId) => {
+        const { loadoutData } = team
+        loadoutData.filter(notEmpty).forEach(({ teamCharId }) => {
           const teamChar = database.teamChars.get(teamCharId)
           if (!teamChar) return
           const ck = teamChar.key
@@ -74,9 +74,8 @@ export function CharacterMultiAutocomplete({
       teamIds.forEach((teamId) => {
         const team = database.teams.get(teamId)
         if (!team) return
-        const { teamCharIds } = team
-
-        teamCharIds.forEach((teamCharId) => {
+        const { loadoutData } = team
+        loadoutData.filter(notEmpty).forEach(({ teamCharId }) => {
           const teamChar = database.teamChars.get(teamCharId)
           if (!teamChar) return
           const ck = teamChar.key

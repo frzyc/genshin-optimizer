@@ -10,14 +10,16 @@ import { type ArtifactSlotKey } from '@genshin-optimizer/gi/consts'
 import { Grid } from '@mui/material'
 import ArtifactCardNano from '../../../Components/Artifact/ArtifactCardNano'
 import WeaponCardNano from '../../../Components/Weapon/WeaponCardNano'
-export function BuildEquipped({ active = false }: { active: boolean }) {
-  const { teamCharId } = useContext(TeamCharacterContext)
+export function BuildEquipped({ active = false }: { active?: boolean }) {
+  const { teamId, teamCharId } = useContext(TeamCharacterContext)
   const {
     character: { key: characterKey, equippedArtifacts, equippedWeapon },
   } = useContext(CharacterContext)
   const database = useDatabase()
   const onActive = () =>
-    database.teamChars.set(teamCharId, { buildType: 'equipped' })
+    database.teams.setLoadoutDatum(teamId, teamCharId, {
+      buildType: 'equipped',
+    })
   const onDupe = () =>
     database.teamChars.newBuild(teamCharId, {
       name: 'Duplicate of Equipped',

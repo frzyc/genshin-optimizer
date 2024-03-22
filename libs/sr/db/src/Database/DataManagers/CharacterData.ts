@@ -1,6 +1,5 @@
 import type { TriggerString } from '@genshin-optimizer/common/database'
 import { clamp, deepClone, objKeyMap } from '@genshin-optimizer/common/util'
-import { validateLevelAsc } from '@genshin-optimizer/sr/util'
 import type {
   CharacterKey,
   CharacterLocationKey,
@@ -17,6 +16,7 @@ import {
   charKeyToCharLocKey,
 } from '@genshin-optimizer/sr/consts'
 import type { ISrObjectDescription } from '@genshin-optimizer/sr/srod'
+import { validateLevelAsc } from '@genshin-optimizer/sr/util'
 import type {
   ICachedSroCharacter,
   ISroCharacter,

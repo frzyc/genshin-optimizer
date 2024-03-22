@@ -1,3 +1,5 @@
+import { CardThemed } from '@genshin-optimizer/common/ui'
+import { range } from '@genshin-optimizer/common/util'
 import { maxConstellationCount } from '@genshin-optimizer/gi/consts'
 import type { ICharacter } from '@genshin-optimizer/gi/good'
 import {
@@ -18,6 +20,10 @@ import TalentDropdown from '../../../Components/Character/TalentDropdown'
 import ConditionalWrapper from '../../../Components/ConditionalWrapper'
 import DocumentDisplay from '../../../Components/DocumentDisplay'
 import { NodeFieldDisplay } from '../../../Components/FieldDisplay'
+import {
+  HitModeToggle,
+  ReactionToggle,
+} from '../../../Components/HitModeEditor'
 import { CharacterContext } from '../../../Context/CharacterContext'
 import { DataContext } from '../../../Context/DataContext'
 import type { TalentSheetElementKey } from '../../../Data/Characters/ICharacterSheet'
@@ -25,7 +31,6 @@ import { uiInput as input } from '../../../Formula'
 import type { NodeDisplay } from '../../../Formula/uiData'
 import useCharacterReducer from '../../../ReactHooks/useCharacterReducer'
 import type { DocumentSection } from '../../../Types/sheet'
-import { range } from '../../../Util/Util'
 
 const talentSpacing = {
   xs: 12,
@@ -75,6 +80,22 @@ export default function CharacterTalentPane() {
 
   return (
     <>
+      <CardThemed bgt="light">
+        <CardContent>
+          <Box
+            sx={{
+              display: 'flex',
+              justifyContent: 'flex-end',
+              gap: 1,
+              flexWrap: 'wrap',
+            }}
+          >
+            <HitModeToggle size="small" />
+            <ReactionToggle size="small" />
+          </Box>
+        </CardContent>
+      </CardThemed>
+
       <ReactionDisplay />
       <Grid container spacing={1}>
         {/* constellations for 4column */}

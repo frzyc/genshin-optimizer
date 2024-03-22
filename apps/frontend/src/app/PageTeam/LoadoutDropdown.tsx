@@ -8,6 +8,7 @@ import {
 } from '@genshin-optimizer/common/ui'
 import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { CharacterName } from '@genshin-optimizer/gi/ui'
+import PersonIcon from '@mui/icons-material/Person'
 import {
   Box,
   Button,
@@ -30,13 +31,7 @@ export function LoadoutDropdown({
   dropdownBtnProps?: Omit<DropdownButtonProps, 'children' | 'title'>
 }) {
   const database = useDatabase()
-  const {
-    key: characterKey,
-    name,
-    buildIds,
-    buildTcIds,
-    customMultiTargets,
-  } = database.teamChars.get(teamCharId)!
+  const { key: characterKey, name } = database.teamChars.get(teamCharId)!
   const { gender } = useDBMeta()
   const teamCharIds = database.teamChars.keys.filter(
     (teamCharId) => database.teamChars.get(teamCharId)!.key === characterKey
@@ -81,11 +76,10 @@ export function LoadoutDropdown({
             <TextField
               fullWidth
               label="New Loadout Description"
-              placeholder="New Loadout Description"
               value={newDesc}
               onChange={(e) => setNewDesc(e.target.value)}
               multiline
-              rows={4}
+              minRows={2}
             />
             <Box sx={{ display: 'flex', gap: 2 }}>
               <Button color="error" fullWidth onClick={onHide}>
@@ -104,6 +98,7 @@ export function LoadoutDropdown({
         </CardThemed>
       </ModalWrapper>
       <DropdownButton
+        startIcon={<PersonIcon />}
         title={
           <Box
             sx={{
@@ -114,28 +109,11 @@ export function LoadoutDropdown({
             }}
           >
             <span>{name}</span>
-            <Box sx={{ display: 'flex', gap: 1 }}>
-              <SqBadge
-                color={buildIds.length ? 'success' : 'secondary'}
-                sx={{ marginLeft: 'auto' }}
-              >
-                {buildIds.length} Builds
-              </SqBadge>
-              <SqBadge color={buildTcIds.length ? 'success' : 'secondary'}>
-                {buildTcIds.length} TC Builds
-              </SqBadge>
-              <SqBadge
-                color={customMultiTargets.length ? 'success' : 'secondary'}
-              >
-                {customMultiTargets.length} Multi-Opt
-              </SqBadge>
-            </Box>
           </Box>
         }
         {...dropdownBtnProps}
       >
         <MenuItem onClick={() => onShow()}>Create a new Loadout</MenuItem>
-        {/* TODO: new loadout */}
         {teamCharIds.map((tcId) => {
           const { name, buildIds, buildTcIds, customMultiTargets } =
             database.teamChars.get(tcId)!

@@ -69,19 +69,19 @@ function TeamWrapper({ artId, weaponId, onHide }: WrapperProps) {
     character: { key: characterKey },
   } = useContext(CharacterContext)
   const {
-    teamCharId,
+    loadoutDatum,
     teamChar: { optConfigId },
   } = useContext(TeamCharacterContext)
   const { mainStatAssumptionLevel } = useOptConfig(optConfigId)!
   const { data: oldData } = useContext(DataContext)
   const build = useMemo(() => {
     const newArt = database.arts.get(artId ?? '')
-    const equippedArtifacts = database.teamChars.getLoadoutArtifacts(teamCharId)
+    const equippedArtifacts = database.teams.getLoadoutArtifacts(loadoutDatum)
     const artmap = objMap(equippedArtifacts, (art, slot) =>
       slot === newArt?.slotKey ? newArt : art
     )
     return Object.values(artmap).filter((a) => a)
-  }, [database, teamCharId, artId])
+  }, [database, loadoutDatum, artId])
   const teamData = useTeamData(
     mainStatAssumptionLevel,
     build,

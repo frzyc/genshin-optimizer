@@ -1,4 +1,4 @@
-import { assertUnreachable } from '../Util/Util'
+import { assertUnreachable } from '@genshin-optimizer/common/util'
 import { forEachNodes } from './internal'
 import type { OptNode } from './optimization'
 import type { ReadNode } from './type'

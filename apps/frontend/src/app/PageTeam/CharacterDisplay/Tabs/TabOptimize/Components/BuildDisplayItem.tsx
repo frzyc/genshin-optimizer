@@ -60,6 +60,7 @@ import { getCharSheet } from '../../../../../Data/Characters'
 import { uiInput as input } from '../../../../../Formula'
 import ArtifactCard from '../../../../../PageArtifact/ArtifactCard'
 import WeaponCard from '../../../../../PageWeapon/WeaponCard'
+import EquipBuildModal from '../../../Build/EquipBuildModal'
 import { ArtifactSetBadges } from './ArtifactSetBadges'
 import SetInclusionButton from './SetInclusionButton'
 type NewOld = {
@@ -83,7 +84,8 @@ export default function BuildDisplayItem({
   disabled,
 }: BuildDisplayItemProps) {
   const {
-    teamChar: { optConfigId, buildType, buildId, buildIds = [] },
+    loadoutDatum: { buildType, buildId },
+    teamChar: { optConfigId, buildIds = [] },
   } = useContext(TeamCharacterContext)
   const {
     character: { key: characterKey, equippedArtifacts, equippedWeapon },
@@ -130,10 +132,6 @@ export default function BuildDisplayItem({
   const closeArt = useCallback(() => setArtNewOld(undefined), [setArtNewOld])
   const buildEquip = buildId && buildType === 'real'
   const equipBuild = useCallback(() => {
-    const confirmMsg = buildEquip
-      ? 'Do you want to equip this build to the currently active build?'
-      : 'Do you want to equip this build to this character?'
-    if (!window.confirm(confirmMsg)) return
     if (buildEquip) {
       database.builds.set(buildId, {
         weaponId: data.get(input.weapon.id).value,
@@ -247,6 +245,58 @@ export default function BuildDisplayItem({
   const isActiveBuildOrEquip =
     isActiveBuild || (buildType === 'equipped' && currentlyEquipped)
 
+  // An undefined buildType indicates this was accessed from outside a team. This currently occurs
+  // when comparing from the character editor.
+  const compareFromCharEditor = buildType === undefined
+
+  const activeWeapon = useMemo(() => {
+    if (compareFromCharEditor) return equippedWeapon
+    if (dbDirty && buildType === 'real')
+      return database.builds.get(buildId)!.weaponId
+    if (dbDirty && buildType === 'equipped') return equippedWeapon
+
+    // default
+    return ''
+  }, [
+    dbDirty,
+    database,
+    buildType,
+    buildId,
+    equippedWeapon,
+    compareFromCharEditor,
+  ])
+
+  const activeArtifacts = useMemo(() => {
+    if (compareFromCharEditor) return equippedArtifacts
+    if (dbDirty && buildType === 'real')
+      return database.builds.get(buildId)!.artifactIds
+    if (dbDirty && buildType === 'equipped') return equippedArtifacts
+
+    // default
+    return objKeyMap(allArtifactSlotKeys, () => '')
+  }, [
+    dbDirty,
+    database,
+    buildType,
+    buildId,
+    equippedArtifacts,
+    compareFromCharEditor,
+  ])
+
+  const [showEquipChange, onShowEquipChange, onHideEquipChange] = useBoolState()
+
+  const equipChangeProps = {
+    currentName:
+      buildType === 'real' ? database.builds.get(buildId)!.name : 'Equipped',
+    currentWeapon: activeWeapon,
+    currentArtifacts: activeArtifacts,
+    newWeapon: data.get(input.weapon.id).value!,
+    newArtifacts: objKeyMap(
+      allArtifactSlotKeys,
+      (s) => data.get(input.art[s].id).value!
+    ),
+  }
+
   return (
     <CardLight
       sx={{
@@ -271,6 +321,7 @@ export default function BuildDisplayItem({
             mainStatAssumptionLevel={mainStatAssumptionLevel}
             onClose={closeArt}
             allowLocationsState={allowLocationsState}
+            compareFromCharEditor={compareFromCharEditor}
           />
         )}
         <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
@@ -328,10 +379,16 @@ export default function BuildDisplayItem({
               sx={{ flexGrow: 1, display: 'flex', justifyContent: 'flex-end' }}
             />
             {extraButtonsLeft}
+            <EquipBuildModal
+              equipChangeProps={equipChangeProps}
+              showPrompt={showEquipChange}
+              onEquip={equipBuild}
+              OnHidePrompt={onHideEquipChange}
+            />
             <Button
               size="small"
               color="success"
-              onClick={equipBuild}
+              onClick={onShowEquipChange}
               disabled={disabled || isActiveBuild}
               startIcon={<Checkroom />}
             >
@@ -430,11 +487,13 @@ function CompareArtifactModal({
   mainStatAssumptionLevel,
   onClose,
   allowLocationsState,
+  compareFromCharEditor,
 }: {
   newOld: NewOld
   mainStatAssumptionLevel: number
   onClose: () => void
   allowLocationsState: AllowLocationsState
+  compareFromCharEditor: boolean
 }) {
   const database = useDatabase()
   const {
@@ -488,7 +547,9 @@ function CompareArtifactModal({
                 />
               )}
 
-              {oldId !== 'tc' && <ArtInclusionButton id={oldId} />}
+              {oldId !== 'tc' && !compareFromCharEditor && (
+                <ArtInclusionButton id={oldId} />
+              )}
             </Box>
           )}
           {oldId && <Box display="flex" flexGrow={1} />}
@@ -513,20 +574,24 @@ function CompareArtifactModal({
                 fixedSlotKey: newArtifact?.slotKey,
               }}
             />
-            {newArtifact && <ArtInclusionButton id={newId} />}
-            {newLoc &&
-              newLoc !== charKeyToLocCharKey(characterKey) &&
-              allowLocationsState !== 'all' && (
-                <ExcludeEquipButton locationKey={newLoc} />
-              )}
-            {newArtifact &&
-              allArtifactSetExclusionKeys.includes(
-                newArtifact.setKey as ArtSetExclusionKey
-              ) && (
-                <SetInclusionButton
-                  setKey={newArtifact.setKey as ArtSetExclusionKey}
-                />
-              )}
+            {!compareFromCharEditor && (
+              <>
+                {newArtifact && <ArtInclusionButton id={newId} />}
+                {newLoc &&
+                  newLoc !== charKeyToLocCharKey(characterKey) &&
+                  allowLocationsState !== 'all' && (
+                    <ExcludeEquipButton locationKey={newLoc} />
+                  )}
+                {newArtifact &&
+                  allArtifactSetExclusionKeys.includes(
+                    newArtifact.setKey as ArtSetExclusionKey
+                  ) && (
+                    <SetInclusionButton
+                      setKey={newArtifact.setKey as ArtSetExclusionKey}
+                    />
+                  )}
+              </>
+            )}
           </Box>
         </CardContent>
       </CardDark>

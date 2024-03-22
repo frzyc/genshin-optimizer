@@ -15,7 +15,7 @@ import {
 } from '@genshin-optimizer/gi/svgicons'
 import ElementCycle from '../Components/ElementCycle'
 import { Translate } from '../Components/Translate'
-import { input, tally } from '../Formula'
+import { input, tally, target } from '../Formula'
 import { inferInfoMut } from '../Formula/api'
 import type { UIData } from '../Formula/uiData'
 import { equal, greaterEq, infoMut, percent, sum } from '../Formula/utils'
@@ -266,13 +266,18 @@ const [erNodeshield_disp, erNodeshield_] = activeCharBuff(
   greaterEq(teamSize, 4, greaterEq(tally.geo, 2, percent(0.15))),
   KeyMap.info('shield_')
 )
-const [erNodeDMG_disp, erNodeDMG_] = activeCharBuff(
+const [erNodeDMG_resonanceDisp, erNodeDMG_resonance] = activeCharBuff(
   input.charKey,
   greaterEq(
     teamSize,
     4,
     greaterEq(tally.geo, 2, equal(condERShield, 'on', percent(0.15)))
   ),
+  KeyMap.info('all_dmg_')
+)
+const [, erNodeDMG_] = activeCharBuff(
+  target.charKey,
+  erNodeDMG_resonance,
   KeyMap.info('all_dmg_')
 )
 const [erNodeRes_disp, erNodeRes_] = activeCharBuff(
@@ -317,7 +322,7 @@ const enduringRock: IResonance = {
         on: {
           fields: [
             {
-              node: erNodeDMG_disp,
+              node: infoMut(erNodeDMG_resonanceDisp, { isTeamBuff: false }),
             },
           ],
         },
@@ -466,11 +471,11 @@ export const resonanceData = inferInfoMut({
       moveSPD_: iwNodeMove,
       cdRed_: iwNodeCD,
       shield_: erNodeshield_,
-      all_dmg_: erNodeDMG_,
       geo_enemyRes_: erNodeRes_,
       eleMas: infoMut(sum(sgBase_eleMas, sg2ele_eleMas, sg3ele_eleMas), {
         pivot: true,
       }),
+      all_dmg_: erNodeDMG_,
     },
     total: {
       // TODO: this crit rate is on-hit. Might put it in a `hit.critRate_` namespace later.

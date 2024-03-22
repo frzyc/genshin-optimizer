@@ -2,6 +2,7 @@ import { DropdownButton, SqBadge } from '@genshin-optimizer/common/ui'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import CheckBoxIcon from '@mui/icons-material/CheckBox'
 import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank'
+import type { ButtonGroupProps } from '@mui/material'
 import { Button, ButtonGroup, MenuItem } from '@mui/material'
 import { useContext } from 'react'
 import { TeamCharacterContext } from '../../Context/TeamCharacterContext'
@@ -12,24 +13,27 @@ import { TeamCharacterContext } from '../../Context/TeamCharacterContext'
  */
 
 // TODO: Translation
-export default function CompareBtn() {
+export default function CompareBtn({
+  buttonGroupProps = {},
+}: {
+  buttonGroupProps?: ButtonGroupProps
+}) {
   const database = useDatabase()
   const {
+    teamId,
     teamCharId,
-    teamChar: {
-      buildType,
-      buildId,
-      buildIds,
-      buildTcId,
-      buildTcIds,
-      compare,
-      compareType,
-      compareBuildId,
-      compareBuildTcId,
-      buildId: teamCharBuildId,
-      buildTcId: teamCharBuildTcId,
-    },
+    loadoutDatum,
+    teamChar: { buildIds, buildTcIds },
   } = useContext(TeamCharacterContext)
+  const {
+    buildType,
+    buildId,
+    buildTcId,
+    compare,
+    compareType,
+    compareBuildId,
+    compareBuildTcId,
+  } = loadoutDatum
   const selectedLabel =
     compareType === 'real' ? (
       database.builds.get(compareBuildId)?.name ?? ''
@@ -52,12 +56,14 @@ export default function CompareBtn() {
       buildType === 'tc' &&
       buildTcId === compareBuildTcId)
   return (
-    <ButtonGroup>
+    <ButtonGroup {...buttonGroupProps}>
       <Button
         startIcon={compare ? <CheckBoxIcon /> : <CheckBoxOutlineBlankIcon />}
         color={compare ? 'success' : 'secondary'}
         onClick={() =>
-          database.teamChars.set(teamCharId, { compare: !compare })
+          database.teams.setLoadoutDatum(teamId, teamCharId, {
+            compare: !compare,
+          })
         }
       >
         Compare
@@ -77,7 +83,7 @@ export default function CompareBtn() {
       >
         <MenuItem
           onClick={() =>
-            database.teamChars.set(teamCharId, {
+            database.teams.setLoadoutDatum(teamId, teamCharId, {
               compareType: 'equipped',
             })
           }
@@ -89,40 +95,40 @@ export default function CompareBtn() {
             </SqBadge>
           )}
         </MenuItem>
-        {buildIds.map((buildId) => (
+        {buildIds.map((bId) => (
           <MenuItem
-            disabled={!database.builds.get(buildId)?.weaponId}
-            key={buildId}
+            disabled={!database.builds.get(bId)?.weaponId}
+            key={bId}
             onClick={() =>
-              database.teamChars.set(teamCharId, {
+              database.teams.setLoadoutDatum(teamId, teamCharId, {
                 compareType: 'real',
-                compareBuildId: buildId,
+                compareBuildId: bId,
               })
             }
           >
-            {database.builds.get(buildId)!.name}{' '}
-            {buildType === 'real' && buildId === teamCharBuildId && (
+            {database.builds.get(bId)!.name}{' '}
+            {buildType === 'real' && bId === buildId && (
               <SqBadge color="info" sx={{ ml: 1 }}>
                 Current
               </SqBadge>
             )}
           </MenuItem>
         ))}
-        {buildTcIds.map((buildTcId) => (
+        {buildTcIds.map((bTcId) => (
           <MenuItem
-            key={buildTcId}
+            key={bTcId}
             onClick={() =>
-              database.teamChars.set(teamCharId, {
+              database.teams.setLoadoutDatum(teamId, teamCharId, {
                 compareType: 'tc',
-                compareBuildTcId: buildTcId,
+                compareBuildTcId: bTcId,
               })
             }
           >
-            {database.buildTcs.get(buildTcId)?.name ?? ''}{' '}
+            {database.buildTcs.get(bTcId)?.name ?? ''}{' '}
             <SqBadge color="info" sx={{ ml: 1 }}>
               TC
             </SqBadge>
-            {buildType === 'tc' && buildTcId === teamCharBuildTcId && (
+            {buildType === 'tc' && bTcId === buildTcId && (
               <SqBadge color="info" sx={{ ml: 1 }}>
                 Current
               </SqBadge>

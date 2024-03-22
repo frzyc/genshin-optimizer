@@ -1,5 +1,5 @@
 import { BootstrapTooltip, CardThemed } from '@genshin-optimizer/common/ui'
-import { hexToColor, range } from '@genshin-optimizer/common/util'
+import { hexToColor } from '@genshin-optimizer/common/util'
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
 import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
 import {
@@ -47,13 +47,13 @@ export default function TeamCard({
   onClick: (cid?: CharacterKey) => void
 }) {
   const team = useTeam(teamId)!
-  const { name, description, teamCharIds } = team
+  const { name, description, loadoutData } = team
   const database = useDatabase()
 
-  const elementArray: Array<ElementKey | undefined> = teamCharIds.map(
-    (tcid) => {
-      if (!tcid) return
-      const teamChar = database.teamChars.get(tcid)
+  const elementArray: Array<ElementKey | undefined> = loadoutData.map(
+    (loadoutDatum) => {
+      if (!loadoutDatum) return
+      const teamChar = database.teamChars.get(loadoutDatum.teamCharId)
       if (!teamChar) return
       return getCharSheet(teamChar.key).elementKey
     }
@@ -89,16 +89,18 @@ export default function TeamCard({
         <CardActionArea onClick={() => onClick()} sx={{ p: 1 }}>
           <Typography sx={{ display: 'flex', gap: 1 }}>
             <span>{name}</span>{' '}
-            <BootstrapTooltip title={<Typography>{description}</Typography>}>
-              <InfoIcon />
-            </BootstrapTooltip>
+            {description && (
+              <BootstrapTooltip title={<Typography>{description}</Typography>}>
+                <InfoIcon />
+              </BootstrapTooltip>
+            )}
           </Typography>
         </CardActionArea>
 
         <Box sx={{ p: 1, marginTop: 'auto' }}>
           <Grid container columns={4} spacing={1}>
-            {range(0, 3).map((i) => {
-              const teamCharId = teamCharIds[i]
+            {loadoutData.map((loadoutDatum, i) => {
+              const teamCharId = loadoutDatum?.teamCharId
               const characterKey =
                 teamCharId && database.teamChars.get(teamCharId)?.key
               return (
@@ -112,9 +114,11 @@ export default function TeamCard({
                             <HoverCard
                               characterKey={characterKey}
                               teamCharId={teamCharId}
+                              teamId={teamId}
                             />
                           )
                         }
+                        hideFav
                       />
                     </CardActionArea>
                   ) : (
@@ -133,9 +137,11 @@ export default function TeamCard({
 }
 function HoverCard({
   characterKey,
+  teamId,
   teamCharId,
 }: {
   characterKey: CharacterKey
+  teamId: string
   teamCharId: string
 }) {
   const database = useDatabase()
@@ -143,16 +149,18 @@ function HoverCard({
   const { gender } = useDBMeta()
   const characterSheet = getCharSheet(characterKey, gender)
 
-  const { name, buildType, buildTcId } = useTeamChar(teamCharId)!
-  const buildname = database.teamChars.getActiveBuildName(teamCharId)
+  const { name } = useTeamChar(teamCharId)!
+  const loadoutDatum = database.teams.getLoadoutDatum(teamId, teamCharId)!
+  const buildname = database.teams.getActiveBuildName(loadoutDatum)
   const weapon = (() => {
-    return database.teamChars.getLoadoutWeapon(teamCharId)
+    return database.teams.getLoadoutWeapon(loadoutDatum)
   })()
   const arts = (() => {
+    const { buildType, buildTcId } = loadoutDatum
     if (buildType === 'tc' && buildTcId)
       return getArtifactData(database.buildTcs.get(buildTcId)!)
     return Object.values(
-      database.teamChars.getLoadoutArtifacts(teamCharId)
+      database.teams.getLoadoutArtifacts(loadoutDatum)
     ).filter((a) => a) as ICachedArtifact[]
   })()
 
@@ -208,7 +216,7 @@ function HoverCard({
                   <CheckroomIcon />
                   <span>{buildname}</span>
                 </Typography>
-                {buildType === 'tc' && buildTcId ? (
+                {loadoutDatum?.buildType === 'tc' && loadoutDatum?.buildTcId ? (
                   <CharacterCardEquipmentRowTC weapon={weapon} />
                 ) : (
                   <CharacterCardEquipmentRow />

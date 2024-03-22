@@ -4,11 +4,13 @@ import { allArtifactSlotKeys } from '@genshin-optimizer/gi/consts'
 import type { GeneratedBuild, ICachedArtifact } from '@genshin-optimizer/gi/db'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import type { Unit } from '@genshin-optimizer/gi/keymap'
+import CloseIcon from '@mui/icons-material/Close'
 import {
   Box,
   Button,
   ClickAwayListener,
   Grid,
+  IconButton,
   Skeleton,
   Stack,
   Typography,
@@ -19,7 +21,6 @@ import type { TooltipProps } from 'recharts'
 import ArtifactCardPico from '../../../../../../Components/Artifact/ArtifactCardPico'
 import BootstrapTooltip from '../../../../../../Components/BootstrapTooltip'
 import CardDark from '../../../../../../Components/Card/CardDark'
-import CloseButton from '../../../../../../Components/CloseButton'
 import SqBadge from '../../../../../../Components/SqBadge'
 import WeaponCardPico from '../../../../../../Components/Weapon/WeaponCardPico'
 import { CharacterContext } from '../../../../../../Context/CharacterContext'
@@ -140,8 +141,12 @@ export default function CustomTooltip({
                   />
                 </Suspense>
               </Stack>
-              <Grid item flexGrow={1} />
-              <CloseButton onClick={() => setSelectedPoint(undefined)} />
+              <IconButton
+                onClick={() => setSelectedPoint(undefined)}
+                sx={{ ml: 'auto' }}
+              >
+                <CloseIcon />
+              </IconButton>
             </Stack>
             <Grid container direction="row" spacing={0.75} columns={6}>
               {selectedPoint.build?.weaponId && (

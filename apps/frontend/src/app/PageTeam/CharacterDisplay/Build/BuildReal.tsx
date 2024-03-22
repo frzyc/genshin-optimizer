@@ -9,17 +9,16 @@ import {
 import { useBuild, useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { getCharData } from '@genshin-optimizer/gi/stats'
 import { ArtifactSlotName, CharacterName } from '@genshin-optimizer/gi/ui'
+import CloseIcon from '@mui/icons-material/Close'
 import {
   Alert,
   Box,
-  Button,
   Card,
   CardContent,
   CardHeader,
-  Checkbox,
   Divider,
-  FormControlLabel,
   Grid,
+  IconButton,
   TextField,
   Typography,
   styled,
@@ -27,11 +26,11 @@ import {
 import { useContext, useDeferredValue, useEffect, useState } from 'react'
 import ArtifactCardNano from '../../../Components/Artifact/ArtifactCardNano'
 import EquippedGrid from '../../../Components/Character/EquippedGrid'
-import CloseButton from '../../../Components/CloseButton'
 import WeaponCardNano from '../../../Components/Weapon/WeaponCardNano'
 import { CharacterContext } from '../../../Context/CharacterContext'
 import { TeamCharacterContext } from '../../../Context/TeamCharacterContext'
 import { BuildCard } from './BuildCard'
+import EquipBuildModal from './EquipBuildModal'
 
 const UsedCard = styled(Card)(() => ({
   boxShadow: '0px 0px 0px 2px red',
@@ -42,19 +41,26 @@ export default function BuildReal({
   active = false,
 }: {
   buildId: string
-  active: boolean
+  active?: boolean
 }) {
   const [open, onOpen, onClose] = useBoolState()
   const {
+    teamId,
     teamCharId,
     teamChar: { key: characterKey },
-    team: { teamCharIds },
+    team: { loadoutData },
   } = useContext(TeamCharacterContext)
+  const {
+    character: { equippedWeapon, equippedArtifacts },
+  } = useContext(CharacterContext)
   const { gender } = useDBMeta()
   const database = useDatabase()
   const { name, description, weaponId, artifactIds } = useBuild(buildId)!
   const onActive = () =>
-    database.teamChars.set(teamCharId, { buildType: 'real', buildId })
+    database.teams.setLoadoutDatum(teamId, teamCharId, {
+      buildType: 'real',
+      buildId,
+    })
   const onEquip = () => {
     // Cannot equip a build without weapon
     if (!weaponId) return
@@ -76,8 +82,6 @@ export default function BuildReal({
   const onRemove = () => {
     //TODO: prompt user for removal
     database.builds.remove(buildId)
-    // trigger validation
-    database.teamChars.set(teamCharId, {})
   }
   const weaponTypeKey = getCharData(characterKey).weaponType
   const copyToTc = () => {
@@ -100,27 +104,35 @@ export default function BuildReal({
       artifactIds: artifactIds,
       weaponId: weaponId,
     })
-  const weaponUsedInTeamCharId = teamCharIds.find(
-    (tcId) =>
-      tcId &&
-      tcId !== teamCharId &&
-      database.teamChars.getLoadoutWeapon(tcId).id === weaponId
+  const weaponUsedInLoadoutDatum = loadoutData.find(
+    (loadoutDatum) =>
+      loadoutDatum &&
+      loadoutDatum.teamCharId !== teamCharId &&
+      database.teams.getLoadoutWeapon(loadoutDatum).id === weaponId
   )
   const weaponUsedInTeamCharKey =
-    weaponUsedInTeamCharId &&
-    database.teamChars.get(weaponUsedInTeamCharId)!.key
+    weaponUsedInLoadoutDatum &&
+    database.teamChars.get(weaponUsedInLoadoutDatum?.teamCharId)!.key
 
   const artUsedInTeamCharKeys = objKeyMap(allArtifactSlotKeys, (slotKey) => {
     const artId = artifactIds[slotKey]
     if (!artId) return undefined
-    const tcId = teamCharIds.find(
-      (tcId) =>
-        tcId &&
-        tcId !== teamCharId &&
-        database.teamChars.getLoadoutArtifacts(tcId)[slotKey]?.id === artId
+    const loadoutDatum = loadoutData.find(
+      (loadoutDatum) =>
+        loadoutDatum &&
+        loadoutDatum.teamCharId !== teamCharId &&
+        database.teams.getLoadoutArtifacts(loadoutDatum)[slotKey]?.id === artId
     )
-    return tcId && database.teamChars.get(tcId)!.key
+    return loadoutDatum && database.teamChars.get(loadoutDatum.teamCharId)!.key
   })
+
+  const equipChangeProps = {
+    currentName: 'Equipped',
+    currentWeapon: equippedWeapon,
+    currentArtifacts: equippedArtifacts,
+    newWeapon: weaponId,
+    newArtifacts: artifactIds,
+  }
 
   const [showPrompt, onShowPrompt, OnHidePrompt] = useBoolState()
   return (
@@ -129,6 +141,7 @@ export default function BuildReal({
         <BuildEditor buildId={buildId} onClose={onClose} />
       </ModalWrapper>
       <EquipBuildModal
+        equipChangeProps={equipChangeProps}
         showPrompt={showPrompt}
         onEquip={onEquip}
         OnHidePrompt={OnHidePrompt}
@@ -254,7 +267,11 @@ function BuildEditor({
     <CardThemed>
       <CardHeader
         title="Build Settings"
-        action={<CloseButton onClick={onClose} />}
+        action={
+          <IconButton onClick={onClose}>
+            <CloseIcon />
+          </IconButton>
+        }
       />
       <Divider />
       <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
@@ -268,11 +285,10 @@ function BuildEditor({
         <TextField
           fullWidth
           label="Build Description"
-          placeholder="Build Description"
           value={desc}
           onChange={(e) => setDesc(e.target.value)}
           multiline
-          rows={4}
+          minRows={2}
         />
         <Box>
           <EquippedGrid
@@ -291,94 +307,5 @@ function BuildEditor({
         </Box>
       </CardContent>
     </CardThemed>
-  )
-}
-
-function EquipBuildModal({
-  showPrompt,
-  OnHidePrompt,
-  onEquip,
-}: {
-  showPrompt: boolean
-  onEquip: () => void
-  OnHidePrompt: () => void
-}) {
-  const [name, setName] = useState('')
-  const [copyEquipped, setCopyEquipped] = useState(false)
-  // const [showPrompt, onShowPrompt, OnHidePrompt] = useBoolState()
-
-  const database = useDatabase()
-  const { teamCharId } = useContext(TeamCharacterContext)
-  const {
-    character: { equippedArtifacts, equippedWeapon },
-  } = useContext(CharacterContext)
-
-  const toEquip = () => {
-    if (copyEquipped) {
-      database.teamChars.newBuild(teamCharId, {
-        name: name !== '' ? name : 'Duplicate of Equipped',
-        artifactIds: equippedArtifacts,
-        weaponId: equippedWeapon,
-      })
-    }
-
-    onEquip()
-    setName('')
-    setCopyEquipped(false)
-    OnHidePrompt()
-  }
-
-  /* TODO: Dialog Wanted to use a Dialog here, but was having some weird issues with closing out of it */
-  /* TODO: Translation */
-  return (
-    <ModalWrapper
-      open={showPrompt}
-      onClose={OnHidePrompt}
-      containerProps={{ maxWidth: 'md' }}
-    >
-      <CardThemed>
-        <CardHeader
-          title="Do you want to equip all gear in this build to this character?"
-          action={<CloseButton onClick={OnHidePrompt} />}
-        />
-        <CardContent sx={{ display: 'flex', flexDirection: 'column' }}>
-          <FormControlLabel
-            label="Copy my current equipment to a new build. Otherwise, the currently equipped build will be overwritten."
-            control={
-              <Checkbox
-                checked={copyEquipped}
-                onChange={(event) => setCopyEquipped(event.target.checked)}
-                color={copyEquipped ? 'success' : 'secondary'}
-              />
-            }
-          />
-          {copyEquipped && (
-            <TextField
-              label="Build Name"
-              placeholder="Duplicate of Equipped"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              size="small"
-              sx={{ width: '75%', marginX: 4 }}
-            />
-          )}
-          <Box
-            sx={{
-              display: 'flex',
-              justifyContent: 'flex-end',
-              gap: 1,
-              marginTop: 8,
-            }}
-          >
-            <Button color="error" onClick={OnHidePrompt}>
-              Cancel
-            </Button>
-            <Button color="success" onClick={toEquip}>
-              Equip
-            </Button>
-          </Box>
-        </CardContent>
-      </CardThemed>
-    </ModalWrapper>
   )
 }

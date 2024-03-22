@@ -1,3 +1,4 @@
+import { range } from '@genshin-optimizer/common/util'
 import { imgAssets } from '@genshin-optimizer/gi/assets'
 import { charCard } from '@genshin-optimizer/gi/char-cards'
 import type { AscensionKey } from '@genshin-optimizer/gi/consts'
@@ -26,7 +27,6 @@ import type { TalentSheetElementKey } from '../../Data/Characters/ICharacterShee
 import { uiInput as input } from '../../Formula'
 import { ElementIcon } from '../../KeyMap/StatIcon'
 import useCharacterReducer from '../../ReactHooks/useCharacterReducer'
-import { range } from '../../Util/Util'
 import ImgIcon from '../Image/ImgIcon'
 import SqBadge from '../SqBadge'
 import { StarsDisplay } from '../StarDisplay'

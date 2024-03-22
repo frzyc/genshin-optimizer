@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
+import { assertUnreachable, cartesian } from '@genshin-optimizer/common/util'
 import { customMapFormula, forEachNodes } from '../../../Formula/internal'
 import type { OptNode } from '../../../Formula/optimization'
 import { allOperations } from '../../../Formula/optimization'
 import type { ConstantNode } from '../../../Formula/type'
 import { prod, threshold } from '../../../Formula/utils'
-import { assertUnreachable, cartesian } from '../../../Util/Util'
 import type { ArtifactsBySlot, MinMax } from '../../common'
 import { computeFullArtRange, computeNodeRange } from '../../common'
 import type { Linear } from './linearUB'

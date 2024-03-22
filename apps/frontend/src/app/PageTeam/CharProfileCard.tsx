@@ -3,9 +3,8 @@ import { CardThemed } from '@genshin-optimizer/common/ui'
 import { useDBMeta } from '@genshin-optimizer/gi/db-ui'
 import { CharacterConstellationName } from '@genshin-optimizer/gi/ui'
 import DriveFileRenameOutlineIcon from '@mui/icons-material/DriveFileRenameOutline'
-import { Box, Button, CardActionArea, Typography } from '@mui/material'
+import { Box, Button, Typography } from '@mui/material'
 import { useContext } from 'react'
-import { useNavigate } from 'react-router-dom'
 import CharacterEditor from '../Components/Character/CharacterEditor'
 import {
   CharacterCompactConstSelector,
@@ -19,7 +18,6 @@ export default function CharacterProfileCard() {
     character: { key: characterKey },
   } = useContext(CharacterContext)
   const { gender } = useDBMeta()
-  const navigate = useNavigate()
 
   const [showEditor, onShowEditor, onHideEditor] = useBoolState()
   return (
@@ -42,9 +40,7 @@ export default function CharacterProfileCard() {
           </Button>
         </Box>
 
-        <CardActionArea sx={{ p: 1 }} onClick={() => navigate('talent')}>
-          <CharacterCompactTalent />
-        </CardActionArea>
+        <CharacterCompactTalent />
 
         <Typography sx={{ textAlign: 'center', mt: 1 }} variant="h6">
           <CharacterConstellationName

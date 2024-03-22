@@ -1,4 +1,5 @@
 import { CardThemed } from '@genshin-optimizer/common/ui'
+import { colorToRgbaString, hexToColor } from '@genshin-optimizer/common/util'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import { charKeyToLocGenderedCharKey } from '@genshin-optimizer/gi/consts'
 import type { GeneratedBuild } from '@genshin-optimizer/gi/db'
@@ -32,7 +33,6 @@ import { useTeamDataNoContext } from '../ReactHooks/useTeamData'
 import useTitle from '../ReactHooks/useTitle'
 import { shouldShowDevComponents } from '../Util/Util'
 import Content from './CharacterDisplay/Content'
-import { EnemyEditorElement } from './EnemyEditorElement'
 import TeamCharacterSelector from './TeamCharacterSelector'
 import TeamSetting from './TeamSetting'
 
@@ -73,7 +73,7 @@ function Page({ teamId }: { teamId: string }) {
   const { gender } = useDBMeta()
 
   const team = useTeam(teamId)!
-  const { teamCharIds } = team
+  const { loadoutData } = team
 
   // use the current URL as the "source of truth" for characterKey and tab.
   const {
@@ -87,29 +87,37 @@ function Page({ teamId }: { teamId: string }) {
   } = useMatch({ path: '/teams/:teamId/:characterKey/:tab', end: false }) ?? {
     params: {},
   }
+
   // validate characterKey
+  const loadoutDatum = useMemo(
+    () =>
+      loadoutData.find(
+        (loadoutDatum) =>
+          loadoutDatum?.teamCharId &&
+          database.teamChars.get(loadoutDatum.teamCharId)?.key ===
+            characterKeyRaw
+      ) ?? loadoutData[0],
+    [database, loadoutData, characterKeyRaw]
+  )
+
   const { characterKey, teamCharId } = useMemo(() => {
-    const teamCharId =
-      teamCharIds.find(
-        (teamCharId) =>
-          database.teamChars.get(teamCharId)?.key === characterKeyRaw
-      ) ?? teamCharIds[0]
+    const teamCharId = loadoutDatum?.teamCharId
     const characterKey = database.teamChars.get(teamCharId)?.key
     return { characterKey, teamCharId }
-  }, [teamCharIds, characterKeyRaw, database])
+  }, [loadoutDatum, database])
 
   const teamChar = useTeamChar(teamCharId ?? '')
 
   // validate tab value
   const tab = useMemo(() => {
-    if (!teamChar) return 'overview'
-    if (teamChar.buildType === 'tc') {
+    if (!loadoutDatum) return 'overview'
+    if (loadoutDatum.buildType === 'tc') {
       if (!tabRaw || !tabsTc.includes(tabRaw)) return 'overview'
     } else {
       if (!tabRaw || !tabs.includes(tabRaw)) return 'overview'
     }
     return tabRaw
-  }, [teamChar, tabRaw])
+  }, [loadoutDatum, tabRaw])
 
   const { t } = useTranslation([
     'sillyWisher_charNames',
@@ -133,14 +141,15 @@ function Page({ teamId }: { teamId: string }) {
 
   const teamCharacterContextValue: TeamCharacterContextObj | undefined =
     useMemo(() => {
-      if (!teamCharId || !teamChar) return undefined
+      if (!teamCharId || !teamChar || !loadoutDatum) return undefined
       return {
         teamId,
         team,
         teamCharId,
         teamChar,
+        loadoutDatum,
       }
-    }, [teamId, team, teamCharId, teamChar])
+    }, [teamId, team, teamCharId, teamChar, loadoutDatum])
 
   const teamData = useTeamDataNoContext(teamId, teamCharId ?? '')
   const { target: charUIData } =
@@ -156,31 +165,61 @@ function Page({ teamId }: { teamId: string }) {
   }, [charUIData, teamData])
 
   return (
-    <CardThemed>
-      <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
-        <Box sx={{ display: 'flex', gap: 1 }}>
-          <TeamSetting teamId={teamId} dataContextValue={dataContextValue} />
-          <EnemyEditorElement teamId={teamId} />
-        </Box>
-
-        <TeamCharacterSelector
+    <Box sx={{ display: 'flex', gap: 1, flexDirection: 'column' }}>
+      <Box sx={{ display: 'flex', gap: 1 }}>
+        <TeamSetting
           teamId={teamId}
-          characterKey={characterKey}
-          tab={tab}
+          teamData={teamData}
+          buttonProps={{
+            sx: {
+              flexGrow: 1,
+              backgroundColor: 'contentLight.main',
+            },
+            variant: 'outlined',
+            color: 'info',
+          }}
         />
-        {teamCharacterContextValue ? (
-          dataContextValue ? (
-            <TeamCharacterContext.Provider value={teamCharacterContextValue}>
-              <DataContext.Provider value={dataContextValue}>
-                <InnerContent tab={tab} />
-              </DataContext.Provider>
-            </TeamCharacterContext.Provider>
-          ) : (
-            fallback
-          )
-        ) : null}
-      </CardContent>
-    </CardThemed>
+      </Box>
+      <CardThemed>
+        <Box
+          sx={(theme) => {
+            const elementKey =
+              characterKey && getCharSheet(characterKey).elementKey
+            if (!elementKey) return {}
+            const hex = theme.palette[elementKey].main as string
+            const color = hexToColor(hex)
+            if (!color) return {}
+            const rgba = colorToRgbaString(color, 0.1)
+            return {
+              background: `linear-gradient(to bottom, ${rgba} 0%, rgba(0,0,0,0)) 25%`,
+            }
+          }}
+        >
+          <TeamCharacterSelector
+            teamId={teamId}
+            characterKey={characterKey}
+            tab={tab}
+          />
+          <CardContent
+            sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}
+          >
+            {teamCharacterContextValue ? (
+              dataContextValue ? (
+                <TeamCharacterContext.Provider
+                  value={teamCharacterContextValue}
+                >
+                  <DataContext.Provider value={dataContextValue}>
+                    <InnerContent tab={tab} />
+                  </DataContext.Provider>
+                </TeamCharacterContext.Provider>
+              ) : (
+                fallback
+              )
+            ) : null}
+          </CardContent>
+        </Box>
+      </CardThemed>
+    </Box>
   )
 }
 function InnerContent({ tab }: { tab: string }) {

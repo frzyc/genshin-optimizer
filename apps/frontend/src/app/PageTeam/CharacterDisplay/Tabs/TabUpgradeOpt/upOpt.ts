@@ -13,7 +13,7 @@ import { allSubstatKeys, artMaxLevel } from '@genshin-optimizer/gi/consts'
 import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
 import type { MainStatKey, SubstatKey } from '@genshin-optimizer/gi/dm'
 import {
-  getMainStatDisplayValue,
+  getMainStatValue,
   getRollsRemaining,
   getSubstatValue,
 } from '@genshin-optimizer/gi/util'
@@ -216,11 +216,7 @@ export class UpOptCalculator {
   /** Adds an artifact to be tracked by UpOptCalc. It is initially un-evaluated. */
   _addArtifact(art: ICachedArtifact) {
     const maxLevel = artMaxLevel[art.rarity]
-    const mainStatVal = getMainStatDisplayValue(
-      art.mainStatKey,
-      art.rarity,
-      maxLevel
-    ) // 5* only
+    const mainStatVal = getMainStatValue(art.mainStatKey, art.rarity, maxLevel) // 5* only
 
     this.artifacts.push({
       id: art.id,
@@ -232,7 +228,7 @@ export class UpOptCalculator {
         .filter((v) => v !== '') as SubstatKey[],
       values: {
         [art.setKey]: 1,
-        [art.mainStatKey]: toDecimal(art.mainStatKey, mainStatVal),
+        [art.mainStatKey]: mainStatVal,
         ...Object.fromEntries(
           art.substats
             .filter(({ key }) => key !== '')
@@ -678,10 +674,7 @@ export class UpOptCalculator {
 
 /* ICachedArtifact to ArtifactBuildData. Maybe this should go in common? */
 export function toArtifact(art: ICachedArtifact): ArtifactBuildData {
-  const mainStatVal = toDecimal(
-    art.mainStatKey,
-    getMainStatDisplayValue(art.mainStatKey, art.rarity, art.level)
-  ) // 5* only
+  const mainStatVal = getMainStatValue(art.mainStatKey, art.rarity, art.level) // 5* only
   const buildData = {
     id: art.id,
     slot: art.slotKey,

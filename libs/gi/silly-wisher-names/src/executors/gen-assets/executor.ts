@@ -42,6 +42,7 @@ const swKeyMap = {
   candace: 'Candace',
   charlotte: 'Charlotte',
   chevreuse: 'Chevreuse',
+  chiori: 'Chiori',
   chongyun: 'Chongyun',
   collei: 'Collei',
   cyno: 'Cyno',
