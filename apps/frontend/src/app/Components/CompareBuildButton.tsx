@@ -130,6 +130,11 @@ function BuildDisplay({
   dataProviderValue: dataContextObj
   onHide: () => void
 }) {
+  const {
+    teamChar: { optConfigId },
+  } = useContext(TeamCharacterContext)
+  const { mainStatAssumptionLevel, allowLocationsState } =
+    useOptConfig(optConfigId)!
   return (
     <Suspense
       fallback={<Skeleton variant="rectangular" width="100%" height={600} />}
@@ -148,6 +153,8 @@ function BuildDisplay({
                 <CloseIcon />
               </Button>
             }
+            mainStatAssumptionLevel={mainStatAssumptionLevel}
+            allowLocationsState={allowLocationsState}
           />
         </DataContext.Provider>
       )}

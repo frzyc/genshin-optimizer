@@ -1,7 +1,6 @@
 import {
   deepClone,
   deepFreeze,
-  objKeyMap,
   validateArr,
 } from '@genshin-optimizer/common/util'
 import type {
@@ -193,21 +192,23 @@ export class OptConfigDataManager extends DataManager<
       builds = []
       buildDate = 0
     } else {
-      builds = builds
-        .map((build) => {
-          if (typeof build !== 'object') return undefined
-          const { weaponId, artifactIds: artifactIdsRaw } =
-            build as GeneratedBuild
-          if (!this.database.weapons.get(weaponId)) return undefined
-          const artifactIds = objKeyMap(allArtifactSlotKeys, (slotKey) =>
+      builds = mapFilterInplace(builds, (build) => {
+        if (typeof build !== 'object') return undefined
+        const { weaponId, artifactIds: artifactIdsRaw } =
+          build as GeneratedBuild
+        if (!this.database.weapons.get(weaponId)) return undefined
+        const artifactIds = objectKeyMapInplace(
+          allArtifactSlotKeys,
+          artifactIdsRaw,
+          (slotKey) =>
             this.database.arts.get(artifactIdsRaw[slotKey])?.slotKey === slotKey
               ? artifactIdsRaw[slotKey]
               : undefined
-          )
-
-          return { artifactIds, weaponId }
-        })
-        .filter((b) => b) as GeneratedBuild[]
+        )
+        return artifactIds === artifactIdsRaw
+          ? build
+          : { artifactIds, weaponId }
+      })
       if (!Number.isInteger(buildDate)) buildDate = 0
     }
     if (typeof useTeammateBuild !== 'boolean') useTeammateBuild = false
@@ -306,4 +307,34 @@ export function handleArtSetExclusion(
     if (!setExclusion.length) delete artSetExclusion[setKey]
   }
   return artSetExclusion
+}
+
+function mapFilterInplace<T>(xs: T[], f: (x: T) => T | undefined): T[] {
+  const a: T[] = []
+  let reuse = true
+  for (const x of xs) {
+    const y = f(x)
+    if (y) {
+      a.push(y)
+    }
+    reuse &&= x !== undefined && y === x
+  }
+  return reuse ? xs : a
+}
+
+function objectKeyMapInplace<K extends string, T>(
+  ks: readonly K[],
+  o: Record<K, T>,
+  f: (k: K) => T
+) {
+  const oKeys = Object.keys(o)
+  let reuse = oKeys.length == ks.length && ks.every((k, i) => k === oKeys[i])
+  const r = Object.fromEntries(
+    ks.map((k) => {
+      const y = f(k)
+      reuse &&= y === o[k]
+      return [k, y]
+    })
+  ) as Record<K, T>
+  return reuse ? o : r
 }
