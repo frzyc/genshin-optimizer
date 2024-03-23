@@ -28,6 +28,7 @@ const selfAtk = equal(
   )
 )
 const teamAtkDisp = equal(input.weapon.key, key, prod(percent(0.3), selfAtk))
+// Apply to non-equipped character
 const teamAtk = unequal(input.activeCharKey, input.charKey, teamAtkDisp)
 
 const data = dataObjForWeaponSheet(

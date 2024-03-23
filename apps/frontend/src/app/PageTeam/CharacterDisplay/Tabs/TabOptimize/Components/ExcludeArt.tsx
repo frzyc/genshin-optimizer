@@ -3,20 +3,23 @@ import {
   useForceUpdate,
   useMediaQueryUp,
 } from '@genshin-optimizer/common/react-util'
-import { useOnScreen } from '@genshin-optimizer/common/ui'
+import { useInfScroll } from '@genshin-optimizer/common/ui'
 import { filterFunction } from '@genshin-optimizer/common/util'
 import { useDatabase, useOptConfig } from '@genshin-optimizer/gi/db-ui'
 import AddIcon from '@mui/icons-material/Add'
 import CheckBoxIcon from '@mui/icons-material/CheckBox'
 import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank'
+import CloseIcon from '@mui/icons-material/Close'
 import SettingsIcon from '@mui/icons-material/Settings'
 import {
   Box,
   Button,
   ButtonGroup,
   CardContent,
+  CardHeader,
   Divider,
   Grid,
+  IconButton,
   Skeleton,
   Typography,
 } from '@mui/material'
@@ -27,14 +30,12 @@ import {
   useEffect,
   useMemo,
   useReducer,
-  useState,
 } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
 import ArtifactCardNano from '../../../../../Components/Artifact/ArtifactCardNano'
 import ArtifactFilterDisplay from '../../../../../Components/Artifact/ArtifactFilterDisplay'
 import CardDark from '../../../../../Components/Card/CardDark'
 import CardLight from '../../../../../Components/Card/CardLight'
-import CloseButton from '../../../../../Components/CloseButton'
 import InfoTooltip from '../../../../../Components/InfoTooltip'
 import ModalWrapper from '../../../../../Components/ModalWrapper'
 import SqBadge from '../../../../../Components/SqBadge'
@@ -86,6 +87,7 @@ export default function ExcludeArt({
       }),
     [database, optConfigId, useExcludedArts]
   )
+
   return (
     <>
       {/* Begin modal */}
@@ -95,16 +97,22 @@ export default function ExcludeArt({
         containerProps={{ maxWidth: 'xl' }}
       >
         <CardDark>
-          <CardContent>
-            <Box display="flex" gap={1} alignItems="center">
-              <Typography variant="h6">{t`excludeArt.title_exclude`}</Typography>
-              <InfoTooltip
-                title={<Typography>{t`excludeArt.title_tooltip`}</Typography>}
-              />
-              <Box flexGrow={1} />
-              <CloseButton onClick={onClose} size="small" />
-            </Box>
-          </CardContent>
+          <CardHeader
+            title={
+              <Box display="flex" gap={1} alignItems="center">
+                <Typography variant="h6">{t`excludeArt.title_exclude`}</Typography>
+                <InfoTooltip
+                  title={<Typography>{t`excludeArt.title_tooltip`}</Typography>}
+                />
+              </Box>
+            }
+            action={
+              <IconButton onClick={onClose}>
+                <CloseIcon />
+              </IconButton>
+            }
+          />
+
           <Divider />
           <CardContent>
             <ArtifactSelectModal
@@ -243,20 +251,10 @@ function ArtifactSelectModal({
     )
   }, [dbDirty, database, filterConfigs, filterOption, artExclusion])
 
-  const [element, setElement] = useState<HTMLElement | undefined>()
-  const trigger = useOnScreen(element)
-  const [numShow, setNumShow] = useState(numToShowMap[brPt])
-  // reset the numShow when artifactIds changes
-  useEffect(() => {
-    artifactIds && setNumShow(numToShowMap[brPt])
-  }, [artifactIds, brPt])
-
-  const shouldIncrease = trigger && numShow < artifactIds.length
-  useEffect(() => {
-    if (!shouldIncrease) return
-    setNumShow((num) => num + numToShowMap[brPt])
-  }, [shouldIncrease, brPt])
-
+  const { numShow, setTriggerElement } = useInfScroll(
+    numToShowMap[brPt],
+    artifactIds.length
+  )
   const artifactIdsToShow = useMemo(
     () => artifactIds.slice(0, numShow),
     [artifactIds, numShow]
@@ -268,17 +266,14 @@ function ArtifactSelectModal({
       containerProps={{ maxWidth: 'xl' }}
     >
       <CardDark>
-        <CardContent
-          sx={{
-            py: 1,
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-          }}
-        >
-          <Typography variant="h6">{t`excludeArt.selExc`}</Typography>
-          <CloseButton onClick={onClose} />
-        </CardContent>
+        <CardHeader
+          title={t`excludeArt.selExc`}
+          action={
+            <IconButton onClick={onClose}>
+              <CloseIcon />
+            </IconButton>
+          }
+        />
         <Divider />
         <CardContent>
           <Suspense
@@ -310,7 +305,7 @@ function ArtifactSelectModal({
               <Skeleton
                 ref={(node) => {
                   if (!node) return
-                  setElement(node)
+                  setTriggerElement(node)
                 }}
                 sx={{ borderRadius: 1, mt: 1 }}
                 variant="rectangular"

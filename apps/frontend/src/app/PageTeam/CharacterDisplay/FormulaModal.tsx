@@ -2,6 +2,7 @@ import type { AmpReactionKey } from '@genshin-optimizer/gi/consts'
 import { allAmpReactionKeys } from '@genshin-optimizer/gi/consts'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { ExpandMore } from '@mui/icons-material'
+import CloseIcon from '@mui/icons-material/Close'
 import {
   Accordion,
   AccordionDetails,
@@ -10,6 +11,7 @@ import {
   CardContent,
   CardHeader,
   Divider,
+  IconButton,
   Skeleton,
   Typography,
 } from '@mui/material'
@@ -27,7 +29,6 @@ import AmpReactionModeText from '../../Components/AmpReactionModeText'
 import CardDark from '../../Components/Card/CardDark'
 import CardHeaderCustom from '../../Components/Card/CardHeaderCustom'
 import CardLight from '../../Components/Card/CardLight'
-import CloseButton from '../../Components/CloseButton'
 import ColorText from '../../Components/ColoredText'
 import ImgIcon from '../../Components/Image/ImgIcon'
 import ModalWrapper from '../../Components/ModalWrapper'
@@ -38,7 +39,6 @@ import { getDisplayHeader, getDisplaySections } from '../../Formula/DisplayUtil'
 import type { DisplaySub } from '../../Formula/type'
 import type { NodeDisplay } from '../../Formula/uiData'
 import { nodeVStr } from '../../Formula/uiData'
-
 export default function FormulaModal() {
   const { modalOpen } = useContext(FormulaDataContext)
   const { setFormulaData } = useContext(FormulaDataContext)
@@ -51,7 +51,11 @@ export default function FormulaModal() {
       <CardDark>
         <CardHeader
           title="Formulas & Calculations"
-          action={<CloseButton onClick={onCloseHandler} />}
+          action={
+            <IconButton onClick={onCloseHandler}>
+              <CloseIcon />
+            </IconButton>
+          }
         />
         <CardContent sx={{ pt: 0 }}>
           <CalculationDisplay />

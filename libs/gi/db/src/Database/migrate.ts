@@ -13,7 +13,7 @@ import {
 } from '@genshin-optimizer/gi/consts'
 import type { ICharacter, IGOOD } from '@genshin-optimizer/gi/good'
 import type { CustomMultiTarget } from '../Interfaces/CustomMultiTarget'
-import type { Team, TeamCharacter } from './DataManagers'
+import type { LoadoutDatum, Team, TeamCharacter } from './DataManagers'
 import type { IGO } from './exim'
 
 // MIGRATION STEP
@@ -23,7 +23,7 @@ import type { IGO } from './exim'
 // 3. Update `currentDBVersion`
 // 4. Test on import, and also on version update
 
-export const currentDBVersion = 24
+export const currentDBVersion = 25
 
 export function migrateGOOD(good: IGOOD & IGO): IGOOD & IGO {
   const version = good.dbVersion ?? 0
@@ -142,7 +142,7 @@ export function migrateGOOD(good: IGOOD & IGO): IGOOD & IGO {
     }
   })
 
-  // 10.0.0 - present
+  // 10.0.0 - 10.0.2
   migrateVersion(24, () => {
     const chars = (good as any).characters
     const buildSettings = (good as any).buildSettings
@@ -155,7 +155,6 @@ export function migrateGOOD(good: IGOOD & IGO): IGOOD & IGO {
     let teamInd = ((good['teams'] as Array<any>) ?? []).length
     let teamCharInd = ((good['teamchars'] as Array<any>) ?? []).length
     let optConfigInd = ((good['optConfigs'] as Array<any>) ?? []).length
-    console.log({ chars, buildSettings })
     chars.forEach((char: any) => {
       const {
         key: characterKey,
@@ -203,16 +202,62 @@ export function migrateGOOD(good: IGOOD & IGO): IGOOD & IGO {
           teamCharIds.push(teamCharId)
         })
       }
-      const team: Team = {
-        name: `Migrated from ${characterKey}`,
+      const team: Omit<Team, 'loadoutData'> & {
+        teamCharIds: Array<string | undefined>
+      } = {
+        name: `${characterKey} Team`,
         description: `Generated team due to database migration for GO version 10`,
         enemyOverride,
         teamCharIds,
+        conditional: { resonance: {} },
         lastEdit: 0,
       }
       const teamId = `team_${teamInd++}`
       ;(good as any).teams.push({ ...team, id: teamId })
     })
+  })
+
+  // 10.1.0 - present
+  migrateVersion(25, () => {
+    if (!good['teams']) good['teams'] = []
+    const teams = (good as any).teams
+    if (!good['teamchars']) good['teamchars'] = []
+    const teamchars = (good as any).teamchars
+    teams.forEach(
+      (
+        team: Team & {
+          teamCharIds: Array<string | undefined>
+        }
+      ) => {
+        const { teamCharIds = [] } = team
+        team.loadoutData = teamCharIds.map((teamCharId) => {
+          if (!teamCharId) return undefined
+          const teamChar = teamchars.find(
+            (tc: { id: string }) => tc.id === teamCharId
+          )
+          if (!teamChar) return undefined
+          const {
+            buildType,
+            buildId,
+            buildTcId,
+            compare,
+            compareType,
+            compareBuildId,
+            compareBuildTcId,
+          } = teamChar
+          return {
+            teamCharId,
+            buildType,
+            buildId,
+            buildTcId,
+            compare,
+            compareType,
+            compareBuildId,
+            compareBuildTcId,
+          } as LoadoutDatum
+        })
+      }
+    )
   })
 
   good.dbVersion = currentDBVersion
@@ -348,7 +393,7 @@ export function migrate(storage: DBStorage) {
     }
   })
 
-  // 10.0.0 - present
+  // 10.0.0 - 10.1.0
   migrateVersion(24, () => {
     const keys = storage.keys
     let teamInd = keys.filter((k) => k.startsWith(`team_`)).length
@@ -401,14 +446,57 @@ export function migrate(storage: DBStorage) {
             teamCharIds.push(teamCharId)
           })
         }
-        const team: Team = {
-          name: `Migrated from ${characterKey}`,
+        const team: Omit<Team, 'loadoutData'> & {
+          teamCharIds: Array<string | undefined>
+        } = {
+          name: `${characterKey} Team`,
           description: `Generated team due to database migration for GO version 10`,
           enemyOverride,
           teamCharIds,
+          conditional: { resonance: {} },
           lastEdit: 0,
         }
         storage.set(`team_${teamInd++}`, team)
+      }
+    }
+  })
+
+  // 10.1.0 - present
+  migrateVersion(25, () => {
+    const keys = storage.keys
+    for (const key of keys) {
+      // migrate teamCharId to loadoutData
+      if (key.startsWith('team_')) {
+        const team = storage.get(key) as Team & {
+          teamCharIds: Array<string | undefined>
+        }
+        const { teamCharIds = [] } = team
+        team.loadoutData = teamCharIds.map((teamCharId) => {
+          if (!teamCharId) return undefined
+          const teamChar = storage.get(teamCharId)
+          if (!teamChar) return undefined
+          const {
+            buildType,
+            buildId,
+            buildTcId,
+            compare,
+            compareType,
+            compareBuildId,
+            compareBuildTcId,
+          } = teamChar
+          return {
+            teamCharId,
+            buildType,
+            buildId,
+            buildTcId,
+            compare,
+            compareType,
+            compareBuildId,
+            compareBuildTcId,
+          } as LoadoutDatum
+        })
+
+        storage.set(key, team)
       }
     }
   })

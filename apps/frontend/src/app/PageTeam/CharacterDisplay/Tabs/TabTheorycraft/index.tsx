@@ -19,6 +19,10 @@ import { ArtifactStatWithUnit } from '../../../../Components/Artifact/ArtifactSt
 import CardLight from '../../../../Components/Card/CardLight'
 import StatDisplayComponent from '../../../../Components/Character/StatDisplayComponent'
 import CustomNumberInput from '../../../../Components/CustomNumberInput'
+import {
+  HitModeToggle,
+  ReactionToggle,
+} from '../../../../Components/HitModeEditor'
 import type { dataContextObj } from '../../../../Context/DataContext'
 import { DataContext } from '../../../../Context/DataContext'
 import { OptimizationTargetContext } from '../../../../Context/OptimizationTargetContext'
@@ -52,14 +56,15 @@ export default function TabTheorycraft() {
   const {
     teamId,
     teamCharId,
-    teamChar: { key: characterKey, buildTcId },
+    loadoutDatum,
+    teamChar: { key: characterKey },
   } = useContext(TeamCharacterContext)
-  const buildTc = useBuildTc(buildTcId)!
+  const buildTc = useBuildTc(loadoutDatum.buildTcId)!
   const setBuildTc = useCallback(
     (data: SetBuildTcAction) => {
-      database.buildTcs.set(buildTcId, data)
+      database.buildTcs.set(loadoutDatum.buildTcId, data)
     },
-    [buildTcId, database]
+    [loadoutDatum, database]
   )
   const buildTCContextObj = useMemo(
     () => ({ buildTc, setBuildTc }),
@@ -253,14 +258,14 @@ export default function TabTheorycraft() {
       <Stack spacing={1}>
         <Box>
           <Grid container spacing={1} sx={{ justifyContent: 'center' }}>
-            <Grid item xs={8} sm={5} md={4} lg={2.3}>
+            <Grid item xs={8} sm={8} md={3} lg={2.3}>
               <CharacterProfileCard />
             </Grid>
             <Grid
               item
               xs={12}
-              sm={7}
-              md={8}
+              sm={12}
+              md={9}
               lg={9.7}
               sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}
             >
@@ -268,7 +273,9 @@ export default function TabTheorycraft() {
                 <OptimizationTargetContext.Provider value={optimizationTarget}>
                   {dataContextValueWithOld ? (
                     <DataContext.Provider value={dataContextValueWithOld}>
-                      <StatDisplayComponent />
+                      <StatDisplayComponent
+                        columns={{ xs: 1, sm: 1, md: 2, lg: 2, xl: 3 }}
+                      />
                     </DataContext.Provider>
                   ) : (
                     <Skeleton variant="rectangular" width="100%" height={500} />
@@ -279,12 +286,12 @@ export default function TabTheorycraft() {
           </Grid>
         </Box>
         <CardLight>
-          <Box sx={{ display: 'flex', gap: 1, p: 1 }}>
-            <Box sx={{ flexGrow: 1, display: 'flex', gap: 1 }}>
-              <KQMSButton action={kqms} disabled={solving} />
-              <GcsimButton disabled={solving} />
-            </Box>
-            <CompareBtn />
+          <Box sx={{ display: 'flex', gap: 1, p: 1, flexWrap: 'wrap' }}>
+            <KQMSButton action={kqms} disabled={solving} />
+            <GcsimButton disabled={solving} />
+            <HitModeToggle size="small" />
+            <ReactionToggle size="small" />
+            <CompareBtn buttonGroupProps={{ sx: { marginLeft: 'auto' } }} />
           </Box>
         </CardLight>
         {dataContextValue ? (

@@ -1,10 +1,5 @@
 import { useBoolState } from '@genshin-optimizer/common/react-util'
-import {
-  BootstrapTooltip,
-  CardThemed,
-  ModalWrapper,
-  SqBadge,
-} from '@genshin-optimizer/common/ui'
+import { CardThemed, ModalWrapper, SqBadge } from '@genshin-optimizer/common/ui'
 import { unit } from '@genshin-optimizer/common/util'
 import { artifactAsset } from '@genshin-optimizer/gi/assets'
 import type { ICachedWeapon } from '@genshin-optimizer/gi/db'
@@ -12,112 +7,66 @@ import { useBuildTc, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { SlotIcon } from '@genshin-optimizer/gi/svgicons'
 import { ArtifactSetName } from '@genshin-optimizer/gi/ui'
 import { artDisplayValue } from '@genshin-optimizer/gi/util'
-import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
-import EditIcon from '@mui/icons-material/Edit'
-import InfoIcon from '@mui/icons-material/Info'
+import CloseIcon from '@mui/icons-material/Close'
 import {
   Box,
-  Button,
   CardContent,
   CardHeader,
   Divider,
   Grid,
+  IconButton,
   TextField,
-  Tooltip,
-  Typography,
 } from '@mui/material'
 import { useContext, useDeferredValue, useEffect, useState } from 'react'
-import CloseButton from '../../../Components/CloseButton'
 import ImgIcon from '../../../Components/Image/ImgIcon'
 import { StatWithUnit } from '../../../Components/StatDisplay'
 import { WeaponCardNanoObj } from '../../../Components/Weapon/WeaponCardNano'
 import { TeamCharacterContext } from '../../../Context/TeamCharacterContext'
 import { getWeaponSheet } from '../../../Data/Weapons'
+import { BuildCard } from './BuildCard'
 
 export default function BuildTc({
   buildTcId,
   active = false,
 }: {
   buildTcId: string
-  active: boolean
+  active?: boolean
 }) {
   const [open, onOpen, onClose] = useBoolState()
-  const { teamCharId } = useContext(TeamCharacterContext)
+  const { teamId, teamCharId } = useContext(TeamCharacterContext)
   const database = useDatabase()
-  const { name, description } = useBuildTc(buildTcId)!
+  const buildTc = useBuildTc(buildTcId)!
+  const { name, description } = buildTc
   const onActive = () =>
-    database.teamChars.set(teamCharId, {
+    database.teams.setLoadoutDatum(teamId, teamCharId, {
       buildType: 'tc',
       buildTcId,
     })
   const onRemove = () => {
     //TODO: prompt user for removal
     database.buildTcs.remove(buildTcId)
-    // trigger validation
-    database.teamChars.set(teamCharId, {})
   }
-  const canActivate = !active
-  const titleElement = (
-    <Box sx={{ p: 1, display: 'flex', gap: 1, alignItems: 'center' }}>
-      <Typography variant="h6">{name}</Typography>
-      <BootstrapTooltip title={<Typography>{description}</Typography>}>
-        <InfoIcon />
-      </BootstrapTooltip>
-    </Box>
-  )
+  const onDupe = () =>
+    database.teamChars.newBuildTc(teamCharId, {
+      ...structuredClone(buildTc),
+      name: `Duplicate of ${name}`,
+    })
   return (
     <>
       <ModalWrapper open={open} onClose={onClose}>
         <BuildTcEditor buildTcId={buildTcId} onClose={onClose} />
       </ModalWrapper>
-      <CardThemed
-        bgt="light"
-        sx={{
-          undefined,
-          boxShadow: active ? '0px 0px 0px 2px green inset' : undefined,
-        }}
+      <BuildCard
+        name={name}
+        description={description}
+        active={active}
+        onActive={onActive}
+        onEdit={onOpen}
+        onDupe={onDupe}
+        onRemove={onRemove}
       >
-        <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
-          <Box sx={{ display: 'flex', gap: 1 }}>
-            {canActivate ? (
-              <Button
-                onClick={onActive}
-                color="info"
-                sx={{
-                  flexGrow: 1,
-                  p: 0,
-                  textAlign: 'left',
-                  justifyContent: 'flex-start',
-                }}
-              >
-                {titleElement}
-              </Button>
-            ) : (
-              <CardThemed sx={{ flexGrow: 1 }}>{titleElement}</CardThemed>
-            )}
-            <Tooltip
-              title={<Typography>Edit Build Settings</Typography>}
-              placement="top"
-              arrow
-            >
-              <Button color="info" size="small" onClick={onOpen}>
-                <EditIcon />
-              </Button>
-            </Tooltip>
-            <Tooltip
-              title={<Typography>Delete Build</Typography>}
-              placement="top"
-              arrow
-            >
-              <Button color="error" size="small" onClick={onRemove}>
-                <DeleteForeverIcon />
-              </Button>
-            </Tooltip>
-          </Box>
-
-          <TcEquip buildTcId={buildTcId} />
-        </CardContent>
-      </CardThemed>
+        <TcEquip buildTcId={buildTcId} />
+      </BuildCard>
     </>
   )
 }
@@ -135,70 +84,80 @@ function TcEquip({ buildTcId }: { buildTcId: string }) {
   const substatsArr1 = substatsArr.slice(0, 5)
   const substatsArr2 = substatsArr.slice(5)
   return (
-    <Grid container spacing={1} columns={{ xs: 2, sm: 2, md: 3, lg: 6, xl: 6 }}>
-      <Grid item xs={1}>
-        <WeaponCardNanoObj
-          weapon={weapon as ICachedWeapon}
-          weaponSheet={weaponSheet}
-        />
-      </Grid>
-      <Grid item xs={2} sm={2} md={2} lg={5}>
-        <Box
-          sx={{
-            display: 'flex',
-            gap: 1,
-            alignItems: 'stretch',
-            height: '100%',
-          }}
-        >
-          {!!Object.keys(sets).length && (
-            <CardThemed sx={{ flexGrow: 1 }}>
-              <Box
-                sx={{
-                  p: 1,
-                  display: 'flex',
-                  flexDirection: 'column',
-                  gap: 1,
-                }}
-              >
-                {Object.entries(sets).map(([setKey, number]) => (
-                  <Box
-                    key={setKey}
-                    sx={{ display: 'flex', alignItems: 'center', gap: 1 }}
-                  >
-                    <ImgIcon size={2} src={artifactAsset(setKey, 'flower')} />
-                    <span>
-                      <ArtifactSetName setKey={setKey} />
-                    </span>
-                    <SqBadge>x{number}</SqBadge>
-                  </Box>
-                ))}
-              </Box>
-            </CardThemed>
-          )}
-          <CardThemed sx={{ flexGrow: 1 }}>
-            <Box
-              sx={{ p: 1, display: 'flex', flexDirection: 'column', gap: 1 }}
-            >
-              {Object.entries(slots).map(([sk, { level, statKey }]) => (
+    <Box>
+      <Grid
+        container
+        spacing={1}
+        columns={{ xs: 2, sm: 2, md: 2, lg: 2, xl: 2 }}
+      >
+        <Grid item xs={1}>
+          <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
+            <WeaponCardNanoObj
+              weapon={weapon as ICachedWeapon}
+              weaponSheet={weaponSheet}
+            />
+            {!!Object.keys(sets).length && (
+              <CardThemed sx={{ flexGrow: 1 }}>
                 <Box
-                  key={sk}
-                  sx={{ display: 'flex', alignItems: 'center', gap: 1 }}
+                  sx={{
+                    p: 1,
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: 1,
+                  }}
                 >
-                  <SlotIcon slotKey={sk} />
-                  <SqBadge>+{level}</SqBadge>
-                  <StatWithUnit statKey={statKey} />
+                  {Object.entries(sets).map(([setKey, number]) => (
+                    <Box
+                      key={setKey}
+                      sx={{ display: 'flex', alignItems: 'center', gap: 1 }}
+                    >
+                      <ImgIcon size={2} src={artifactAsset(setKey, 'flower')} />
+                      <span>
+                        <ArtifactSetName setKey={setKey} />
+                      </span>
+                      <SqBadge>x{number}</SqBadge>
+                    </Box>
+                  ))}
                 </Box>
-              ))}
-            </Box>
+              </CardThemed>
+            )}
+          </Box>
+        </Grid>
+
+        <Grid item xs={1}>
+          <CardThemed
+            sx={{
+              flexGrow: 1,
+              height: '100%',
+              p: 1,
+              display: 'flex',
+              flexDirection: 'column',
+              gap: 1,
+              justifyContent: 'space-between',
+            }}
+          >
+            {Object.entries(slots).map(([sk, { level, statKey }]) => (
+              <Box
+                key={sk}
+                sx={{ display: 'flex', alignItems: 'center', gap: 1 }}
+              >
+                <SlotIcon slotKey={sk} />
+                <SqBadge>+{level}</SqBadge>
+                <StatWithUnit statKey={statKey} />
+              </Box>
+            ))}
           </CardThemed>
-          {[substatsArr1, substatsArr2].map((arr, i) => (
-            <CardThemed key={i} sx={{ flexGrow: 1 }}>
+        </Grid>
+        {[substatsArr1, substatsArr2].map((arr, i) => (
+          <Grid item xs={1} key={i}>
+            <CardThemed sx={{ flexGrow: 1, height: '100%' }}>
               <Box
                 sx={{
                   p: 1,
+                  height: '100%',
                   display: 'flex',
                   flexDirection: 'column',
+                  justifyContent: 'space-between',
                   gap: 1,
                 }}
               >
@@ -221,10 +180,10 @@ function TcEquip({ buildTcId }: { buildTcId: string }) {
                 ))}
               </Box>
             </CardThemed>
-          ))}
-        </Box>
+          </Grid>
+        ))}
       </Grid>
-    </Grid>
+    </Box>
   )
 }
 
@@ -271,7 +230,11 @@ function BuildTcEditor({
     <CardThemed>
       <CardHeader
         title="Build Settings"
-        action={<CloseButton onClick={onClose} />}
+        action={
+          <IconButton onClick={onClose}>
+            <CloseIcon />
+          </IconButton>
+        }
       />
       <Divider />
       <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
@@ -285,11 +248,10 @@ function BuildTcEditor({
         <TextField
           fullWidth
           label="Build Description"
-          placeholder="Build Description"
           value={desc}
           onChange={(e) => setDesc(e.target.value)}
           multiline
-          rows={4}
+          minRows={2}
         />
       </CardContent>
     </CardThemed>

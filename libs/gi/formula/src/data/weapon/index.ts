@@ -23,10 +23,12 @@ import CashflowSupervision from './CashflowSupervision'
 import CinnabarSpindle from './CinnabarSpindle'
 import CompoundBow from './CompoundBow'
 import CoolSteel from './CoolSteel'
+import CranesEchoingCall from './CranesEchoingCall'
 import CrescentPike from './CrescentPike'
 import DarkIronSword from './DarkIronSword'
 import Deathmatch from './Deathmatch'
 import DebateClub from './DebateClub'
+import DialoguesOfTheDesertSages from './DialoguesOfTheDesertSages'
 import DodocoTales from './DodocoTales'
 import DragonsBane from './DragonsBane'
 import DragonspineSpear from './DragonspineSpear'
@@ -164,6 +166,9 @@ import ToukabouShigure from './ToukabouShigure'
 import TravelersHandySword from './TravelersHandySword'
 import TulaytullahsRemembrance from './TulaytullahsRemembrance'
 import TwinNephrite from './TwinNephrite'
+import UltimateOverlordsMegaMagicSword from './UltimateOverlordsMegaMagicSword'
+import UrakuMisugiri from './UrakuMisugiri'
+import Verdict from './Verdict'
 import VortexVanquisher from './VortexVanquisher'
 import WanderingEvenstar from './WanderingEvenstar'
 import WasterGreatsword from './WasterGreatsword'
@@ -217,6 +222,7 @@ const data: TagMapNodeEntries[] = [
   TheFlute,
   ToukabouShigure,
   TravelersHandySword,
+  UrakuMisugiri,
   WolfFang,
   XiphosMoonlight,
   Akuoumaru,
@@ -248,6 +254,8 @@ const data: TagMapNodeEntries[] = [
   TheBell,
   TheUnforged,
   TidalShadow,
+  UltimateOverlordsMegaMagicSword,
+  Verdict,
   WasterGreatsword,
   Whiteblind,
   WhiteIronGreatsword,
@@ -259,6 +267,7 @@ const data: TagMapNodeEntries[] = [
   CalamityQueller,
   CrescentPike,
   Deathmatch,
+  DialoguesOfTheDesertSages,
   DragonsBane,
   DragonspineSpear,
   EngulfingLightning,
@@ -323,6 +332,7 @@ const data: TagMapNodeEntries[] = [
   BalladOfTheBoundlessBlue,
   BlackcliffAgate,
   CashflowSupervision,
+  CranesEchoingCall,
   DodocoTales,
   EmeraldOrb,
   EverlastingMoonglow,

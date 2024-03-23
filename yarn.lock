@@ -11646,7 +11646,7 @@ __metadata:
     passport: ^0.6.0
     passport-jwt: ^4.0.1
     prettier: ^2.8.4
-    prettier-plugin-organize-imports: "file:./tools/prettier-plugin-organize-imports"
+    prettier-plugin-organize-imports: ^3.2.4
     prisma: ^5.5.2
     react: 18.2.0
     react-cookie: ^6.1.1
@@ -17283,9 +17283,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier-plugin-organize-imports@file:./tools/prettier-plugin-organize-imports::locator=genshin-optimizer%40workspace%3A.":
+"prettier-plugin-organize-imports@npm:^3.2.4":
   version: 3.2.4
-  resolution: "prettier-plugin-organize-imports@file:./tools/prettier-plugin-organize-imports#./tools/prettier-plugin-organize-imports::hash=42055e&locator=genshin-optimizer%40workspace%3A."
+  resolution: "prettier-plugin-organize-imports@npm:3.2.4"
   peerDependencies:
     "@volar/vue-language-plugin-pug": ^1.0.4
     "@volar/vue-typescript": ^1.0.4
@@ -17296,7 +17296,7 @@ __metadata:
       optional: true
     "@volar/vue-typescript":
       optional: true
-  checksum: 4fd2cdc4e7822a38c1224bc7fcd0b2dd8ca38402f254b870edfa393c5333fc5e973622b7883623f934811dcde164fa11d00b58a60e1711b8c504d9c97a180f5e
+  checksum: 57ae97d7e403445e650ae92b7da586761d1d88a47e46b3ea274baeb96782165bebd0132db9c652081e185c41b50701ba1d30d615ad1c9000300cc0c67eb12b7a
   languageName: node
   linkType: hard
 

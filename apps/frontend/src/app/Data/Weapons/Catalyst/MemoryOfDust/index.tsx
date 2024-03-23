@@ -1,3 +1,4 @@
+import { range } from '@genshin-optimizer/common/util'
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
 import { input } from '../../../../Formula'
@@ -9,7 +10,6 @@ import {
   subscript,
   sum,
 } from '../../../../Formula/utils'
-import { range } from '../../../../Util/Util'
 import { cond, st, stg, trans } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'

@@ -1,4 +1,5 @@
 import { useForceUpdate } from '@genshin-optimizer/common/react-util'
+import { objMap } from '@genshin-optimizer/common/util'
 import type { CharacterKey, GenderKey } from '@genshin-optimizer/gi/consts'
 import type {
   ArtCharDatabase,
@@ -25,7 +26,6 @@ import {
   uiDataForTeam,
 } from '../Formula/api'
 import type { Data } from '../Formula/type'
-import { objectMap } from '../Util/Util'
 
 type TeamDataBundle = {
   teamData: Dict<CharacterKey, Data[]>
@@ -131,7 +131,7 @@ function getTeamDataCalc(
 
   const calcData = uiDataForTeam(teamData, gender, characterKey)
 
-  const data = objectMap(calcData, (obj, ck) => {
+  const data = objMap(calcData, (obj, ck) => {
     const { data: _, ...rest } = teamBundle[ck]!
     return { ...obj, ...rest }
   })

@@ -1,30 +1,19 @@
 import { useForceUpdate } from '@genshin-optimizer/common/react-util'
-import {
-  BootstrapTooltip,
-  CardThemed,
-  SqBadge,
-} from '@genshin-optimizer/common/ui'
+import { CardThemed } from '@genshin-optimizer/common/ui'
 import { objKeyMap } from '@genshin-optimizer/common/util'
 import {
   allArtifactSlotKeys,
   charKeyToLocCharKey,
   charKeyToLocGenderedCharKey,
 } from '@genshin-optimizer/gi/consts'
+import type { LoadoutDatum } from '@genshin-optimizer/gi/db'
 import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { getCharData } from '@genshin-optimizer/gi/stats'
 import { CharacterName, SillyContext } from '@genshin-optimizer/gi/ui'
 import AddIcon from '@mui/icons-material/Add'
-import ContentCopyIcon from '@mui/icons-material/ContentCopy'
+import CloseIcon from '@mui/icons-material/Close'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
-import InfoIcon from '@mui/icons-material/Info'
-import {
-  Box,
-  Button,
-  CardContent,
-  Divider,
-  Grid,
-  Typography,
-} from '@mui/material'
+import { Box, Button, Grid, IconButton, Typography } from '@mui/material'
 import { useCallback, useContext, useEffect, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
@@ -32,8 +21,6 @@ import { CharacterContext } from '../../../Context/CharacterContext'
 import { DataContext } from '../../../Context/DataContext'
 import { getCharSheet } from '../../../Data/Characters'
 import { uiInput as input } from '../../../Formula'
-import TeamCard from '../../../PageTeams/TeamCard'
-import CloseButton from '../../CloseButton'
 import ImgIcon from '../../Image/ImgIcon'
 import LevelSelect from '../../LevelSelect'
 import { CharacterCardStats } from '../CharacterCard/CharacterCardStats'
@@ -43,6 +30,7 @@ import {
 } from '../CharacterProfilePieces'
 import EquippedGrid from '../EquippedGrid'
 import TalentDropdown from '../TalentDropdown'
+import LoadoutCard from './LoadoutCard'
 import TravelerGenderSelect from './TravelerGenderSelect'
 
 export default function Content({ onClose }: { onClose?: () => void }) {
@@ -88,7 +76,11 @@ export default function Content({ onClose }: { onClose?: () => void }) {
         >
           {t('delete')}
         </Button>
-        {!!onClose && <CloseButton onClick={onClose} />}
+        {!!onClose && (
+          <IconButton onClick={onClose}>
+            <CloseIcon />
+          </IconButton>
+        )}
       </Box>
       <Box>
         <Grid container spacing={1} sx={{ justifyContent: 'center' }}>
@@ -130,7 +122,7 @@ export default function Content({ onClose }: { onClose?: () => void }) {
             <Box>
               <Grid container columns={3} spacing={1}>
                 {(['auto', 'skill', 'burst'] as const).map((talentKey) => (
-                  <Grid item xs={1}>
+                  <Grid item xs={1} key={talentKey}>
                     <TalentDropdown
                       key={talentKey}
                       talentKey={talentKey}
@@ -195,13 +187,6 @@ function EquipmentSection() {
     </Box>
   )
 }
-const columns = {
-  xs: 1,
-  sm: 2,
-  md: 3,
-  lg: 3,
-  xl: 3,
-} as const
 function InTeam() {
   const navigate = useNavigate()
 
@@ -218,10 +203,13 @@ function InTeam() {
       if (!loadoutTeamMap[teamCharId]) loadoutTeamMap[teamCharId] = []
     })
     database.teams.entries.forEach(([teamId, team]) => {
-      const teamCharIdWithCKey = team.teamCharIds.find(
-        (teamCharId) => database.teamChars.get(teamCharId)?.key === characterKey
+      const teamCharIdWithCKey = team.loadoutData.find(
+        (loadoutDatum) =>
+          loadoutDatum &&
+          database.teamChars.get(loadoutDatum?.teamCharId)?.key === characterKey
       )
-      if (teamCharIdWithCKey) loadoutTeamMap[teamCharIdWithCKey].push(teamId)
+      if (teamCharIdWithCKey)
+        loadoutTeamMap[teamCharIdWithCKey?.teamCharId].push(teamId)
     })
     return dbDirty && loadoutTeamMap
   }, [dbDirty, characterKey, database])
@@ -233,33 +221,13 @@ function InTeam() {
     () => database.teamChars.followAny(() => setDbDirty()),
     [database, setDbDirty]
   )
-  const onAddTeam = (teamCharId: string) => {
-    const teamId = database.teams.new()
-    database.teams.set(teamId, (team) => {
-      team.teamCharIds[0] = teamCharId
-    })
-    navigate(`/teams/${teamId}`)
-  }
   const onAddNewTeam = () => {
     const teamId = database.teams.new()
     const teamCharId = database.teamChars.new(characterKey)
     database.teams.set(teamId, (team) => {
-      team.teamCharIds[0] = teamCharId
+      team.loadoutData[0] = { teamCharId } as LoadoutDatum
     })
-    navigate(`/teams/${teamId}`)
-  }
-  const onDelete = (teamCharId: string) => {
-    if (
-      !window.confirm(
-        'The loadouts and data (such as multi-opts) on this character will be deleted.'
-      )
-    )
-      return
-    database.teamChars.remove(teamCharId)
-  }
-  const onDup = (teamCharId: string) => {
-    const newTeamCharId = database.teamChars.duplicate(teamCharId)
-    if (!newTeamCharId) return
+    navigate(`/teams/${teamId}`, { state: { openSetting: true } })
   }
   // TODO: Translation
   return (
@@ -269,72 +237,20 @@ function InTeam() {
         <CharacterName characterKey={characterKey} gender={gender} />
       </Typography>
 
-      {Object.entries(loadoutTeamMap).map(([teamCharId, teamIds]) => {
-        const { name, description, buildIds, buildTcIds } =
-          database.teamChars.get(teamCharId)!
-        return (
-          <CardThemed key={teamCharId} bgt="light">
-            <CardContent>
-              <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
-                <Typography>{name}</Typography>
-                <BootstrapTooltip
-                  title={<Typography>{description}</Typography>}
-                >
-                  <InfoIcon />
-                </BootstrapTooltip>
-                <SqBadge color={buildIds.length ? 'primary' : 'secondary'}>
-                  {buildIds.length} Builds
-                </SqBadge>
-                <SqBadge color={buildTcIds.length ? 'primary' : 'secondary'}>
-                  {buildTcIds.length} TC Builds
-                </SqBadge>
-                <Button
-                  color="info"
-                  onClick={() => onDup(teamCharId)}
-                  sx={{ ml: 'auto' }}
-                >
-                  <ContentCopyIcon />
-                </Button>
-                <Button color="error" onClick={() => onDelete(teamCharId)}>
-                  <DeleteForeverIcon />
-                </Button>
-              </Box>
-            </CardContent>
-            <Divider />
-            <CardContent>
-              <Grid container columns={columns} spacing={2}>
-                {teamIds.map((teamId) => (
-                  <Grid item xs={1} key={teamId}>
-                    <TeamCard
-                      teamId={teamId}
-                      onClick={(cid) =>
-                        navigate(`/teams/${teamId}${cid ? `/${cid}` : ''}`)
-                      }
-                      disableButtons
-                    />
-                  </Grid>
-                ))}
-                <Grid item xs={1}>
-                  <Button
-                    fullWidth
-                    sx={{ height: '100%' }}
-                    onClick={() => onAddTeam(teamCharId)}
-                    color="info"
-                    startIcon={<AddIcon />}
-                  >
-                    Add new Team
-                  </Button>
-                </Grid>
-              </Grid>
-            </CardContent>
-          </CardThemed>
-        )
-      })}
+      {Object.entries(loadoutTeamMap).map(([teamCharId, teamIds]) => (
+        <LoadoutCard
+          key={teamCharId}
+          teamCharId={teamCharId}
+          teamIds={teamIds}
+        />
+      ))}
       <Button
         fullWidth
         onClick={() => onAddNewTeam()}
         color="info"
         startIcon={<AddIcon />}
+        variant="outlined"
+        sx={{ backgroundColor: 'contentLight.main' }}
       >
         Add new Loadout+Team
       </Button>

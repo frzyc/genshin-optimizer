@@ -13,25 +13,23 @@ import { getArtSheet } from '../../../../../Data/Artifacts'
 
 type ArtifactSetBadgesProps = {
   artifacts: ICachedArtifact[]
-  currentlyEquipped?: boolean
 }
-export function ArtifactSetBadges({
-  artifacts,
-  currentlyEquipped = false,
-}: ArtifactSetBadgesProps) {
-  const setToSlots: Partial<Record<ArtifactSetKey, ArtifactSlotKey[]>> =
-    useMemo(
-      () =>
-        artifacts
-          .filter((arti) => arti)
-          .reduce((acc, curr) => {
-            acc[curr.setKey]
-              ? acc[curr.setKey].push(curr.slotKey)
-              : (acc[curr.setKey] = [curr.slotKey])
-            return acc
-          }, {}),
-      [artifacts]
-    )
+export function ArtifactSetBadges({ artifacts }: ArtifactSetBadgesProps) {
+  const setToSlots = useMemo(() => {
+    const setToSlots: Partial<Record<ArtifactSetKey, ArtifactSlotKey[]>> =
+      artifacts
+        .filter((arti) => arti)
+        .reduce((acc, curr) => {
+          acc[curr.setKey]
+            ? acc[curr.setKey].push(curr.slotKey)
+            : (acc[curr.setKey] = [curr.slotKey])
+          return acc
+        }, {})
+    Object.keys(setToSlots).forEach((setKey) => {
+      if (setToSlots[setKey]?.length === 1) delete setToSlots[setKey]
+    })
+    return setToSlots
+  }, [artifacts])
   return (
     <>
       {Object.entries(setToSlots)
@@ -40,23 +38,16 @@ export function ArtifactSetBadges({
             slotarr2.length - slotarr1.length
         )
         .map(([key, slotarr]) => (
-          <ArtifactSetBadge
-            key={key}
-            setKey={key}
-            currentlyEquipped={currentlyEquipped}
-            slotarr={slotarr}
-          />
+          <ArtifactSetBadge key={key} setKey={key} slotarr={slotarr} />
         ))}
     </>
   )
 }
 function ArtifactSetBadge({
   setKey,
-  currentlyEquipped = false,
   slotarr,
 }: {
   setKey: ArtifactSetKey
-  currentlyEquipped: boolean
   slotarr: ArtifactSlotKey[]
 }) {
   const artifactSheet = getArtSheet(setKey)
@@ -67,10 +58,7 @@ function ArtifactSetBadge({
   return (
     <Box>
       <ArtifactSetTooltip artifactSheet={artifactSheet} numInSet={numInSet}>
-        <SqBadge
-          sx={{ height: '100%' }}
-          color={currentlyEquipped ? 'success' : 'primary'}
-        >
+        <SqBadge sx={{ height: '100%' }} color={'primary'}>
           <Typography>
             {slotarr.map((slotKey) => (
               <SlotIcon

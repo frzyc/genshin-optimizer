@@ -26,16 +26,17 @@ import { dataSetEffects } from '../../../../Data/Artifacts'
 import { uiInput as input } from '../../../../Formula'
 
 export default function EquipmentSection() {
+  const database = useDatabase()
   const {
     character: { key: characterKey },
   } = useContext(CharacterContext)
   const {
-    teamChar: { buildType, buildId },
+    loadoutDatum: { buildType, buildId },
   } = useContext(TeamCharacterContext)
   const loadoutEquip = buildId && buildType === 'real'
   const { teamData, data } = useContext(DataContext)
   const weaponSheet = teamData[characterKey]?.weaponSheet
-  const database = useDatabase()
+
   const theme = useTheme()
   const breakpoint = useMediaQuery(theme.breakpoints.up('lg'))
 
@@ -131,7 +132,7 @@ function ArtifactSectionCard() {
     character: { equippedArtifacts },
   } = useContext(CharacterContext)
   const {
-    teamChar: { buildType, buildId },
+    loadoutDatum: { buildType, buildId },
   } = useContext(TeamCharacterContext)
   const { data } = useContext(DataContext)
   const hasEquipped = !!Object.values(equippedArtifacts).filter((i) => i).length

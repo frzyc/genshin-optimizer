@@ -1,4 +1,4 @@
-import { objKeyMap } from '@genshin-optimizer/common/util'
+import { cartesian, objKeyMap } from '@genshin-optimizer/common/util'
 import {
   allArtifactSlotKeys,
   type ArtifactSetKey,
@@ -8,7 +8,6 @@ import type { ArtSetExclusion } from '@genshin-optimizer/gi/db'
 import type { OptNode } from '../Formula/optimization'
 import { precompute } from '../Formula/optimization'
 import { dynRead, prod, sum, threshold } from '../Formula/utils'
-import { cartesian } from '../Util/Util'
 import type { ArtifactBuildData, ArtifactsBySlot } from './common'
 import { artSetPerm, exclusionToAllowed, pruneAll } from './common'
 

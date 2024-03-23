@@ -1,11 +1,8 @@
 import { CardThemed } from '@genshin-optimizer/common/ui'
+import { colorToRgbaString, hexToColor } from '@genshin-optimizer/common/util'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import { charKeyToLocGenderedCharKey } from '@genshin-optimizer/gi/consts'
-import type {
-  GeneratedBuild,
-  Team,
-  TeamCharacter,
-} from '@genshin-optimizer/gi/db'
+import type { GeneratedBuild } from '@genshin-optimizer/gi/db'
 import {
   useCharacter,
   useDBMeta,
@@ -15,17 +12,9 @@ import {
 } from '@genshin-optimizer/gi/db-ui'
 import { SillyContext } from '@genshin-optimizer/gi/ui'
 import { Box, CardContent, Skeleton } from '@mui/material'
-import {
-  Suspense,
-  useCallback,
-  useContext,
-  useEffect,
-  useMemo,
-  useState,
-} from 'react'
+import { Suspense, useContext, useEffect, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Navigate, useMatch, useNavigate, useParams } from 'react-router-dom'
-import CloseButton from '../Components/CloseButton'
+import { Navigate, useMatch, useParams } from 'react-router-dom'
 import type { CharacterContextObj } from '../Context/CharacterContext'
 import { CharacterContext } from '../Context/CharacterContext'
 import { DataContext, type dataContextObj } from '../Context/DataContext'
@@ -40,18 +29,15 @@ import {
   type TeamCharacterContextObj,
 } from '../Context/TeamCharacterContext'
 import { getCharSheet } from '../Data/Characters'
-import useTeamData from '../ReactHooks/useTeamData'
+import { useTeamDataNoContext } from '../ReactHooks/useTeamData'
 import useTitle from '../ReactHooks/useTitle'
 import { shouldShowDevComponents } from '../Util/Util'
 import Content from './CharacterDisplay/Content'
 import TeamCharacterSelector from './TeamCharacterSelector'
-import TeamSettingElement from './TeamSettingElement'
-import { EnemyEditorElement } from './EnemyEditorElement'
+import TeamSetting from './TeamSetting'
 
 export default function PageTeam() {
-  const navigate = useNavigate()
   const database = useDatabase()
-  const onClose = useCallback(() => navigate('/teams'), [navigate])
   const { teamId } = useParams<{ teamId?: string }>()
   const invalidKey = !teamId || !database.teams.keys.includes(teamId)
 
@@ -68,23 +54,26 @@ export default function PageTeam() {
       <Suspense
         fallback={<Skeleton variant="rectangular" width="100%" height={1000} />}
       >
-        {teamId && <Page teamId={teamId} onClose={onClose} />}
+        {teamId && <Page teamId={teamId} />}
       </Suspense>
     </Box>
   )
 }
+
 const tabs = ['overview', 'talent', 'teambuffs', 'optimize']
 if (shouldShowDevComponents) tabs.push('upopt')
 const tabsTc = ['overview', 'talent', 'teambuffs']
-
-function Page({ teamId, onClose }: { teamId: string; onClose?: () => void }) {
-  const navigate = useNavigate()
+const fallback = <Skeleton variant="rectangular" width="100%" height={1000} />
+// Stored per teamCharId
+const chartDataAll: Record<string, ChartData> = {}
+const graphBuildAll: Record<string, GeneratedBuild[]> = {}
+function Page({ teamId }: { teamId: string }) {
   const { silly } = useContext(SillyContext)
   const database = useDatabase()
   const { gender } = useDBMeta()
 
   const team = useTeam(teamId)!
-  const { teamCharIds } = team
+  const { loadoutData } = team
 
   // use the current URL as the "source of truth" for characterKey and tab.
   const {
@@ -100,43 +89,35 @@ function Page({ teamId, onClose }: { teamId: string; onClose?: () => void }) {
   }
 
   // validate characterKey
+  const loadoutDatum = useMemo(
+    () =>
+      loadoutData.find(
+        (loadoutDatum) =>
+          loadoutDatum?.teamCharId &&
+          database.teamChars.get(loadoutDatum.teamCharId)?.key ===
+            characterKeyRaw
+      ) ?? loadoutData[0],
+    [database, loadoutData, characterKeyRaw]
+  )
+
   const { characterKey, teamCharId } = useMemo(() => {
-    const teamCharId =
-      teamCharIds.find(
-        (teamCharId) =>
-          database.teamChars.get(teamCharId)?.key === characterKeyRaw
-      ) ?? teamCharIds[0]
+    const teamCharId = loadoutDatum?.teamCharId
     const characterKey = database.teamChars.get(teamCharId)?.key
     return { characterKey, teamCharId }
-  }, [teamCharIds, characterKeyRaw, database])
+  }, [loadoutDatum, database])
 
   const teamChar = useTeamChar(teamCharId ?? '')
 
   // validate tab value
   const tab = useMemo(() => {
-    if (!teamChar) return 'overview'
-    if (teamChar.buildType === 'tc') {
+    if (!loadoutDatum) return 'overview'
+    if (loadoutDatum.buildType === 'tc') {
       if (!tabRaw || !tabsTc.includes(tabRaw)) return 'overview'
     } else {
       if (!tabRaw || !tabs.includes(tabRaw)) return 'overview'
     }
     return tabRaw
-  }, [teamChar, tabRaw])
-  // Enforce validated routing for tabs and character
-  useEffect(() => {
-    if (!characterKey) return
-    if (characterKeyRaw !== characterKey || tab !== tabRaw)
-      navigate(`/teams/${teamId}/${characterKey}/${tab}`)
-  }, [
-    database,
-    characterKey,
-    characterKeyRaw,
-    navigate,
-    teamCharIds,
-    tab,
-    teamId,
-    tabRaw,
-  ])
+  }, [loadoutDatum, tabRaw])
 
   const { t } = useTranslation([
     'sillyWisher_charNames',
@@ -158,67 +139,99 @@ function Page({ teamId, onClose }: { teamId: string; onClose?: () => void }) {
     )
   )
 
-  return (
-    <CardThemed>
-      <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
-        <Box sx={{ display: 'flex', gap: 1 }}>
-          <TeamSettingElement teamId={teamId} />
-          <EnemyEditorElement teamId={teamId} />
-          <CloseButton sx={{ ml: 'auto' }} onClick={onClose} />
-        </Box>
-
-        <TeamCharacterSelector
-          teamId={teamId}
-          characterKey={characterKey}
-          tab={tab}
-        />
-        {characterKey && team && teamChar && teamCharId && (
-          <PageContent
-            characterKey={characterKey}
-            teamCharId={teamCharId}
-            teamId={teamId}
-            team={team}
-            teamChar={teamChar}
-            tab={tab}
-          />
-        )}
-      </CardContent>
-    </CardThemed>
-  )
-}
-// Stored per teamCharId
-const chartDataAll: Record<string, ChartData> = {}
-const graphBuildAll: Record<string, GeneratedBuild[]> = {}
-function PageContent({
-  characterKey,
-  teamCharId,
-  teamChar,
-  teamId,
-  team,
-  tab,
-}: {
-  characterKey: CharacterKey
-  teamCharId: string
-  teamChar: TeamCharacter
-  teamId: string
-  team: Team
-  tab: string
-}) {
-  const { gender } = useDBMeta()
-  const characterSheet = getCharSheet(characterKey, gender)
-  const character = useCharacter(characterKey)
   const teamCharacterContextValue: TeamCharacterContextObj | undefined =
     useMemo(() => {
-      if (!character || !characterSheet) return undefined
+      if (!teamCharId || !teamChar || !loadoutDatum) return undefined
       return {
         teamId,
         team,
         teamCharId,
         teamChar,
-        character,
-        characterSheet,
+        loadoutDatum,
       }
-    }, [teamId, team, teamCharId, teamChar, character, characterSheet])
+    }, [teamId, team, teamCharId, teamChar, loadoutDatum])
+
+  const teamData = useTeamDataNoContext(teamId, teamCharId ?? '')
+  const { target: charUIData } =
+    (characterKey && teamData?.[characterKey]) ?? {}
+
+  const dataContextValue: dataContextObj | undefined = useMemo(() => {
+    if (!teamData || !charUIData) return undefined
+    return {
+      data: charUIData,
+      teamData,
+      oldData: undefined,
+    }
+  }, [charUIData, teamData])
+
+  return (
+    <Box sx={{ display: 'flex', gap: 1, flexDirection: 'column' }}>
+      <Box sx={{ display: 'flex', gap: 1 }}>
+        <TeamSetting
+          teamId={teamId}
+          teamData={teamData}
+          buttonProps={{
+            sx: {
+              flexGrow: 1,
+              backgroundColor: 'contentLight.main',
+            },
+            variant: 'outlined',
+            color: 'info',
+          }}
+        />
+      </Box>
+      <CardThemed>
+        <Box
+          sx={(theme) => {
+            const elementKey =
+              characterKey && getCharSheet(characterKey).elementKey
+            if (!elementKey) return {}
+            const hex = theme.palette[elementKey].main as string
+            const color = hexToColor(hex)
+            if (!color) return {}
+            const rgba = colorToRgbaString(color, 0.1)
+            return {
+              background: `linear-gradient(to bottom, ${rgba} 0%, rgba(0,0,0,0)) 25%`,
+            }
+          }}
+        >
+          <TeamCharacterSelector
+            teamId={teamId}
+            characterKey={characterKey}
+            tab={tab}
+          />
+          <CardContent
+            sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}
+          >
+            {teamCharacterContextValue ? (
+              dataContextValue ? (
+                <TeamCharacterContext.Provider
+                  value={teamCharacterContextValue}
+                >
+                  <DataContext.Provider value={dataContextValue}>
+                    <InnerContent tab={tab} />
+                  </DataContext.Provider>
+                </TeamCharacterContext.Provider>
+              ) : (
+                fallback
+              )
+            ) : null}
+          </CardContent>
+        </Box>
+      </CardThemed>
+    </Box>
+  )
+}
+function InnerContent({ tab }: { tab: string }) {
+  const { gender } = useDBMeta()
+  const {
+    teamCharId,
+    teamChar: { key: characterKey },
+  } = useContext(TeamCharacterContext)
+  const characterSheet = characterKey
+    ? getCharSheet(characterKey, gender)
+    : undefined
+  const character = useCharacter(characterKey as CharacterKey)
   const CharacterContextValue: CharacterContextObj | undefined = useMemo(
     () =>
       character &&
@@ -228,6 +241,7 @@ function PageContent({
       },
     [character, characterSheet]
   )
+
   const [chartData, setChartDataState] = useState<ChartData | undefined>(
     chartDataAll[teamCharId]
   )
@@ -238,6 +252,7 @@ function PageContent({
     setChartDataState(chartDataAll[teamCharId])
     setGraphBuildState(graphBuildAll[teamCharId])
   }, [teamCharId, setChartDataState, setGraphBuildState])
+
   const graphContextValue: GraphContextObj | undefined = useMemo(() => {
     return {
       chartData,
@@ -258,44 +273,14 @@ function PageContent({
     setChartDataState,
     setGraphBuildState,
   ])
-  return teamCharacterContextValue &&
-    graphContextValue &&
-    CharacterContextValue ? (
-    <TeamCharacterContext.Provider value={teamCharacterContextValue}>
-      <CharacterContext.Provider value={CharacterContextValue}>
-        <DataContextWrapper>
-          <GraphContext.Provider value={graphContextValue}>
-            <FormulaDataWrapper>
-              <Content tab={tab} />
-            </FormulaDataWrapper>
-          </GraphContext.Provider>
-        </DataContextWrapper>
-      </CharacterContext.Provider>
-    </TeamCharacterContext.Provider>
-  ) : (
-    <Skeleton variant="rectangular" width="100%" height={1000} />
-  )
-}
-function DataContextWrapper({ children }: { children: React.ReactNode }) {
-  const {
-    teamChar: { key: characterKey },
-  } = useContext(TeamCharacterContext)
-  const teamData = useTeamData()
-  const { target: charUIData } = teamData?.[characterKey] ?? {}
-
-  const dataContextValue: dataContextObj | undefined = useMemo(() => {
-    if (!teamData || !charUIData) return undefined
-    return {
-      data: charUIData,
-      teamData,
-      oldData: undefined,
-    }
-  }, [charUIData, teamData])
-  if (!dataContextValue)
-    return <Skeleton variant="rectangular" width="100%" height={1000} />
+  if (!CharacterContextValue) return fallback
   return (
-    <DataContext.Provider value={dataContextValue}>
-      {children}
-    </DataContext.Provider>
+    <CharacterContext.Provider value={CharacterContextValue}>
+      <GraphContext.Provider value={graphContextValue}>
+        <FormulaDataWrapper>
+          <Content tab={tab} />
+        </FormulaDataWrapper>
+      </GraphContext.Provider>
+    </CharacterContext.Provider>
   )
 }

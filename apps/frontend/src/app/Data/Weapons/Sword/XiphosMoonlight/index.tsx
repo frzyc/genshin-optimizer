@@ -1,6 +1,6 @@
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
-import { input } from '../../../../Formula'
+import { input, target } from '../../../../Formula'
 import {
   equal,
   infoMut,
@@ -35,11 +35,8 @@ const teamEnerRech_disp = equal(
   key,
   prod(percent(0.3), selfEnerRech_)
 )
-const teamEnerRech_ = unequal(
-  input.activeCharKey,
-  input.charKey,
-  teamEnerRech_disp
-)
+// Apply to non-equipped character
+const teamEnerRech_ = unequal(input.charKey, target.charKey, teamEnerRech_disp)
 
 const data = dataObjForWeaponSheet(
   key,

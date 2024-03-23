@@ -1,17 +1,18 @@
 import { useBoolState } from '@genshin-optimizer/common/react-util'
 import { getRandomElementFromArray } from '@genshin-optimizer/common/util'
+import CloseIcon from '@mui/icons-material/Close'
 import HelpIcon from '@mui/icons-material/Help'
 import {
   Button,
   CardContent,
   Divider,
   Grid,
+  IconButton,
   Skeleton,
   Typography,
 } from '@mui/material'
 import { Suspense, useCallback, useState } from 'react'
 import CardDark from './Card/CardDark'
-import CloseButton from './CloseButton'
 import ModalWrapper from './ModalWrapper'
 import { Translate } from './Translate'
 export function initialInfoShownState() {
@@ -73,15 +74,11 @@ export default function InfoComponent({
         onClose={closeModal}
       >
         <CardDark>
-          <CardContent sx={{ py: 1 }}>
-            <Grid container>
-              <Grid item flexGrow={1}>
-                <Typography variant="h6">{modalTitle}</Typography>
-              </Grid>
-              <Grid item>
-                <CloseButton onClick={closeModal} />
-              </Grid>
-            </Grid>
+          <CardContent sx={{ py: 1, display: 'flex' }}>
+            <Typography variant="h6">{modalTitle}</Typography>
+            <IconButton onClick={closeModal} sx={{ ml: 'auto' }}>
+              <CloseIcon />
+            </IconButton>
           </CardContent>
           <Divider />
           <CardContent>
@@ -92,10 +89,6 @@ export default function InfoComponent({
             >
               {children}
             </Suspense>
-          </CardContent>
-          <Divider />
-          <CardContent sx={{ py: 1 }}>
-            <CloseButton large onClick={closeModal} />
           </CardContent>
         </CardDark>
       </ModalWrapper>

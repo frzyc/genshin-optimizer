@@ -3,18 +3,20 @@ import {
   useForceUpdate,
   useMediaQueryUp,
 } from '@genshin-optimizer/common/react-util'
-import { useOnScreen } from '@genshin-optimizer/common/ui'
+import { useInfScroll } from '@genshin-optimizer/common/ui'
 import { filterFunction } from '@genshin-optimizer/common/util'
 import { imgAssets } from '@genshin-optimizer/gi/assets'
 import type { ArtifactSlotKey } from '@genshin-optimizer/gi/consts'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { Add } from '@mui/icons-material'
+import CloseIcon from '@mui/icons-material/Close'
 import {
   Box,
   Button,
   CardContent,
   Divider,
   Grid,
+  IconButton,
   Skeleton,
   Typography,
 } from '@mui/material'
@@ -25,7 +27,6 @@ import {
   useEffect,
   useMemo,
   useReducer,
-  useState,
 } from 'react'
 import { useTranslation } from 'react-i18next'
 import ArtifactCard from '../../PageArtifact/ArtifactCard'
@@ -35,7 +36,6 @@ import {
   initialFilterOption,
 } from '../../PageArtifact/ArtifactSort'
 import CardDark from '../Card/CardDark'
-import CloseButton from '../CloseButton'
 import CompareBuildButton from '../CompareBuildButton'
 import ImgIcon from '../Image/ImgIcon'
 import ModalWrapper from '../ModalWrapper'
@@ -99,19 +99,10 @@ export default function ArtifactSwapModal({
     )
   }, [dbDirty, database, filterConfigs, filterOption])
 
-  const [numShow, setNumShow] = useState(numToShowMap[brPt])
-  // reset the numShow when artifactIds changes
-  useEffect(() => {
-    artifactIds && setNumShow(numToShowMap[brPt])
-  }, [artifactIds, brPt])
-
-  const [element, setElement] = useState<HTMLElement | undefined>()
-  const trigger = useOnScreen(element)
-  const shouldIncrease = trigger && numShow < artifactIds.length
-  useEffect(() => {
-    if (!shouldIncrease) return
-    setNumShow((num) => num + numToShowMap[brPt])
-  }, [shouldIncrease, brPt])
+  const { numShow, setTriggerElement } = useInfScroll(
+    numToShowMap[brPt],
+    artifactIds.length
+  )
 
   const artifactIdsToShow = useMemo(
     () => artifactIds.slice(0, numShow),
@@ -150,7 +141,6 @@ export default function ArtifactSwapModal({
           sx={{
             py: 1,
             display: 'flex',
-            justifyContent: 'space-between',
             alignItems: 'center',
           }}
         >
@@ -158,7 +148,9 @@ export default function ArtifactSwapModal({
             {slotKey ? <ImgIcon src={imgAssets.slot[slotKey]} /> : null}{' '}
             {t`tabEquip.swapArt`}
           </Typography>
-          <CloseButton onClick={onClose} />
+          <IconButton onClick={onClose} sx={{ ml: 'auto' }}>
+            <CloseIcon />
+          </IconButton>
         </CardContent>
         <Divider />
         <CardContent>
@@ -217,7 +209,7 @@ export default function ArtifactSwapModal({
             <Skeleton
               ref={(node) => {
                 if (!node) return
-                setElement(node)
+                setTriggerElement(node)
               }}
               sx={{ borderRadius: 1, mt: 1 }}
               variant="rectangular"

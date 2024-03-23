@@ -1,3 +1,8 @@
+import { useBoolState } from '@genshin-optimizer/common/react-util'
+import {
+  BootstrapTooltip,
+  ConditionalWrapper,
+} from '@genshin-optimizer/common/ui'
 import { imgAssets } from '@genshin-optimizer/gi/assets'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import {
@@ -9,32 +14,28 @@ import { SillyContext } from '@genshin-optimizer/gi/ui'
 import { ascensionMaxLevel } from '@genshin-optimizer/gi/util'
 import FavoriteIcon from '@mui/icons-material/Favorite'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
-import { Box, CardActionArea, Skeleton, Typography } from '@mui/material'
+import { Box, CardActionArea, Typography } from '@mui/material'
 import type { MouseEvent, ReactNode } from 'react'
-import { Suspense, useCallback, useContext, useEffect, useState } from 'react'
+import { useCallback, useContext } from 'react'
 import { getCharSheet } from '../../Data/Characters'
-import { ElementIcon } from '../../KeyMap/StatIcon'
 import { iconAsset } from '../../Util/AssetUtil'
-import BootstrapTooltip from '../BootstrapTooltip'
 import CardDark from '../Card/CardDark'
-import ConditionalWrapper from '../ConditionalWrapper'
 import SqBadge from '../SqBadge'
-import CharacterCard from './CharacterCard'
 
 export default function CharacterCardPico({
   characterKey,
   onClick,
   onMouseDown,
   onMouseEnter,
-  simpleTooltip = false,
-  disableTooltip = false,
+  hoverChild,
+  hideFav,
 }: {
   characterKey: CharacterKey
   onClick?: (characterKey: CharacterKey) => void
   onMouseDown?: (e: MouseEvent) => void
   onMouseEnter?: (e: MouseEvent) => void
-  simpleTooltip?: boolean
-  disableTooltip?: boolean
+  hoverChild?: React.ReactNode
+  hideFav?: boolean
 }) {
   const character = useCharacter(characterKey)
   const { favorite } = useCharMeta(characterKey)
@@ -57,81 +58,17 @@ export default function CharacterCardPico({
     ),
     [onClickHandler, onMouseDown, onMouseEnter]
   )
-  const [open, setOpen] = useState(false)
-  const onTooltipOpen = useCallback(
-    () => !disableTooltip && setOpen(true),
-    [disableTooltip]
-  )
-  const onTooltipClose = useCallback(() => setOpen(false), [])
-  useEffect(() => {
-    disableTooltip && setOpen(false)
-  }, [disableTooltip])
-
-  const simpleTooltipWrapperFunc = useCallback(
-    (children: ReactNode) => (
-      <BootstrapTooltip
-        placement="top"
-        open={open && !disableTooltip}
-        onClose={onTooltipClose}
-        onOpen={onTooltipOpen}
-        title={
-          <Suspense fallback={<Skeleton width={300} height={400} />}>
-            <Typography>
-              {characterSheet.elementKey && (
-                <ElementIcon
-                  ele={characterSheet.elementKey}
-                  iconProps={{
-                    fontSize: 'inherit',
-                    sx: {
-                      verticalAlign: '-10%',
-                      color: `${characterSheet.elementKey}.main`,
-                    },
-                  }}
-                />
-              )}{' '}
-              {characterSheet.name}
-            </Typography>
-          </Suspense>
-        }
-      >
-        {children as JSX.Element}
-      </BootstrapTooltip>
-    ),
-    [
-      characterSheet.elementKey,
-      characterSheet.name,
-      disableTooltip,
-      onTooltipClose,
-      onTooltipOpen,
-      open,
-    ]
-  )
-  const charCardTooltipWrapperFunc = useCallback(
-    (children: ReactNode) => (
-      <BootstrapTooltip
-        enterNextDelay={500}
-        enterTouchDelay={500}
-        placement="top"
-        open={open && !disableTooltip}
-        onClose={onTooltipClose}
-        onOpen={onTooltipOpen}
-        title={
-          <Box sx={{ width: 300, m: -1 }}>
-            <CharacterCard hideStats characterKey={characterKey} />
-          </Box>
-        }
-      >
-        {children as JSX.Element}
-      </BootstrapTooltip>
-    ),
-    [characterKey, disableTooltip, onTooltipClose, onTooltipOpen, open]
-  )
+  const [open, onTooltipOpen, onTooltipClose] = useBoolState()
 
   return (
-    <ConditionalWrapper
-      condition={simpleTooltip}
-      wrapper={simpleTooltipWrapperFunc}
-      falseWrapper={charCardTooltipWrapperFunc}
+    <BootstrapTooltip
+      enterNextDelay={500}
+      enterTouchDelay={500}
+      placement="top"
+      open={!!hoverChild && open}
+      onClose={onTooltipClose}
+      onOpen={onTooltipOpen}
+      title={hoverChild}
     >
       <CardDark
         sx={{
@@ -172,13 +109,15 @@ export default function CharacterCardPico({
               </strong>
             </Typography>
           )}
-          <Box sx={{ position: 'absolute', top: 0, right: 0 }}>
-            {favorite ? (
-              <FavoriteIcon fontSize="small" />
-            ) : (
-              <FavoriteBorderIcon fontSize="small" />
-            )}
-          </Box>
+          {!hideFav && (
+            <Box sx={{ position: 'absolute', top: 0, right: 0 }}>
+              {favorite ? (
+                <FavoriteIcon fontSize="small" />
+              ) : (
+                <FavoriteBorderIcon fontSize="small" />
+              )}
+            </Box>
+          )}
           {character && (
             <Typography
               sx={{
@@ -198,7 +137,7 @@ export default function CharacterCardPico({
           )}
         </ConditionalWrapper>
       </CardDark>
-    </ConditionalWrapper>
+    </BootstrapTooltip>
   )
 }
 

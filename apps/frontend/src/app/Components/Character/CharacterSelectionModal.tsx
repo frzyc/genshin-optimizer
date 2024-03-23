@@ -20,6 +20,7 @@ import {
 import { SillyContext } from '@genshin-optimizer/gi/ui'
 import { ascensionMaxLevel } from '@genshin-optimizer/gi/util'
 import { Favorite, FavoriteBorder } from '@mui/icons-material'
+import CloseIcon from '@mui/icons-material/Close'
 import type { TooltipProps } from '@mui/material'
 import {
   Box,
@@ -56,7 +57,6 @@ import {
 import { catTotal } from '../../Util/totalUtils'
 import CardDark from '../Card/CardDark'
 import CardLight from '../Card/CardLight'
-import CloseButton from '../CloseButton'
 import ModalWrapper from '../ModalWrapper'
 import SortByButton from '../SortByButton'
 import SqBadge from '../SqBadge'
@@ -64,7 +64,6 @@ import { StarsDisplay } from '../StarDisplay'
 import ElementToggle from '../ToggleButton/ElementToggle'
 import WeaponToggle from '../ToggleButton/WeaponToggle'
 import CharacterCard from './CharacterCard'
-
 type characterFilter = (
   characterKey: CharacterKey,
   character: ICachedCharacter | undefined,
@@ -188,32 +187,36 @@ export default function CharacterSelectionModal({
       sx={{ '& .MuiContainer-root': { justifyContent: 'normal' } }}
     >
       <CardDark>
-        <CardContent
-          sx={{
-            py: 1,
-            display: 'flex',
-            alignItems: 'center',
-            gap: 1,
-            flexWrap: 'wrap',
-          }}
-        >
-          <WeaponToggle
-            sx={{ height: '100%' }}
-            onChange={(weaponType) =>
-              database.displayCharacter.set({ weaponType })
-            }
-            value={weaponType}
-            totals={weaponTotals}
-            size="small"
-          />
-          <ElementToggle
-            sx={{ height: '100%' }}
-            onChange={(element) => database.displayCharacter.set({ element })}
-            value={element}
-            totals={elementTotals}
-            size="small"
-          />
-          <Box flexGrow={1}>
+        <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
+          <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap' }}>
+            <WeaponToggle
+              sx={{ height: '100%' }}
+              onChange={(weaponType) =>
+                database.displayCharacter.set({ weaponType })
+              }
+              value={weaponType}
+              totals={weaponTotals}
+              size="small"
+            />
+            <ElementToggle
+              sx={{ height: '100%' }}
+              onChange={(element) => database.displayCharacter.set({ element })}
+              value={element}
+              totals={elementTotals}
+              size="small"
+            />
+            <IconButton
+              sx={{ ml: 'auto' }}
+              onClick={() => {
+                setSearchTerm('')
+                onHide()
+              }}
+            >
+              <CloseIcon />
+            </IconButton>
+          </Box>
+
+          <Box display="flex" gap={1}>
             <TextField
               autoFocus
               value={searchTerm}
@@ -222,28 +225,23 @@ export default function CharacterSelectionModal({
               }
               label={t('characterName')}
               size="small"
-              sx={{ height: '100%' }}
+              sx={{ height: '100%', mr: 'auto' }}
               InputProps={{
                 sx: { height: '100%' },
               }}
             />
+            <SortByButton
+              sortKeys={sortKeys}
+              value={sortType}
+              onChange={(sortType) =>
+                database.displayCharacter.set({ sortType })
+              }
+              ascending={ascending}
+              onChangeAsc={(ascending) =>
+                database.displayCharacter.set({ ascending })
+              }
+            />
           </Box>
-          <SortByButton
-            sx={{ height: '100%' }}
-            sortKeys={sortKeys}
-            value={sortType}
-            onChange={(sortType) => database.displayCharacter.set({ sortType })}
-            ascending={ascending}
-            onChangeAsc={(ascending) =>
-              database.displayCharacter.set({ ascending })
-            }
-          />
-          <CloseButton
-            onClick={() => {
-              setSearchTerm('')
-              onHide()
-            }}
-          />
         </CardContent>
         <Divider />
         <DataContext.Provider value={{ teamData: undefined } as any}>

@@ -68,7 +68,7 @@ export class BuildTcDataManager extends DataManager<
       optimization: _optimization,
     }
   }
-  new(data: BuildTc) {
+  new(data: Partial<BuildTc>) {
     const id = this.generateKey()
     this.set(id, data)
     return id
@@ -80,10 +80,22 @@ export class BuildTcDataManager extends DataManager<
   }
   override remove(key: string, notify?: boolean): BuildTc | undefined {
     const buildTc = super.remove(key, notify)
-    this.database.teamChars.keys.map((teamCharId) => {
-      const { buildTcId } = this.database.teamChars.get(teamCharId)!
-      if (buildTcId === key) this.database.teamChars.set(teamCharId, {}) // trigger a validation
-    })
+    // remove data from teamChar first
+    this.database.teamChars.entries.forEach(
+      ([teamCharId, teamChar]) =>
+        teamChar.buildTcIds.includes(key) &&
+        this.database.teamChars.set(teamCharId, {})
+    )
+    // once teamChars are validated, teams can be validated as well
+    this.database.teams.entries.forEach(
+      ([teamId, team]) =>
+        team.loadoutData?.some(
+          (loadoutDatum) =>
+            loadoutDatum?.buildTcId === key ||
+            loadoutDatum?.compareBuildTcId === key
+        ) && this.database.teams.set(teamId, {}) // trigger a validation
+    )
+
     return buildTc
   }
   export(buildTcId: string): object {

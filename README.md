@@ -24,6 +24,7 @@ If you have knowledge in some(or any) of those techonology mentioned above, or a
 
 - New characters and content will continue to be added as Genshin updates
 - Artifact upgrade damage probability calculator - **Q1 2024**
+- ~~Teams + Loadouts - Q2 2024~~
 - ~~Optimal substat solver for TC mode - **Q2 2024**~~
 
 ### GO-next
@@ -42,12 +43,12 @@ If you have knowledge in some(or any) of those techonology mentioned above, or a
 ### Somnia-bot
 
 - Access your GO builds from a discord bot
-- **Coming Q2 2024**
+- ~~Coming Q2 2024~~
 
 ### SRO - GO but Star Rail
 
 - **We need more devs!** Please help us!
-- Coming ???
+- **Coming Q3 2024**
 
 ## Code structure
 
@@ -91,15 +92,15 @@ Run `yarn` to install dependencies.
 
 ## Development server
 
-Run `nx serve {frontend | sr-frontend}` for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
+Run `yarn run nx serve {frontend | sr-frontend}` for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
 
 ## Understand this workspace
 
-Run `nx graph` to see a diagram of the dependencies of the projects.
+Run `yarn run nx graph` to see a diagram of the dependencies of the projects.
 
 ## Acknowledgments
 
-✨ The tesseract model used was trained and provided by the creator of [Inventory Kamera](https://github.com/Andrewthe13th/Inventory_Kamera.)
+✨ The tesseract model used was trained and provided by the creator of [Inventory Kamera](https://github.com/Andrewthe13th/Inventory_Kamera).
 
 ✨ The creator of Silly Wisher has granted us permission to incorporate their artwork into Silly Optimizer. Silly Wisher [discord](https://discord.com/invite/sillywisher), [App store](https://apps.apple.com/lv/app/silly-wisher/id6444465724https://apps.apple.com/lv/app/silly-wisher/id6444465724), [Google Play](https://play.google.com/store/apps/details?id=com.sketchi.sillywisher)
 

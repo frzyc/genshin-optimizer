@@ -17,14 +17,9 @@ export default function useOldData(): undefined | UIData {
   const {
     teamId,
     teamCharId,
-    team: { teamCharIds },
-    teamChar: {
-      key: characterKey,
-      compare,
-      compareType,
-      compareBuildId,
-      compareBuildTcId,
-    },
+    loadoutDatum,
+    team: { loadoutData },
+    teamChar: { key: characterKey },
   } = useContext(TeamCharacterContext)
 
   const { gender } = useDBMeta()
@@ -38,17 +33,18 @@ export default function useOldData(): undefined | UIData {
 
   useEffect(() => {
     if (!dbDirty) return () => {}
-    const unfollowTeamChars = teamCharIds.map((tcId) => {
-      const unfollowTeamChar = tcId
-        ? database.teamChars.follow(tcId, setDbDirty)
+    const unfollowTeamChars = loadoutData.map((loadoutDatum) => {
+      if (!loadoutDatum) return () => {}
+      const unfollowTeamChar = loadoutDatum
+        ? database.teamChars.follow(loadoutDatum.teamCharId, setDbDirty)
         : () => {}
-      const unfollowChar = tcId
-        ? database.teamChars.followChar(tcId, setDbDirty)
+      const unfollowChar = loadoutDatum
+        ? database.teamChars.followChar(loadoutDatum.teamCharId, setDbDirty)
         : () => {}
-      const unfollowBuild = tcId
-        ? tcId === teamCharId
-          ? database.teamChars.followCompareBuild(tcId, setDbDirty)
-          : database.teamChars.followBuild(tcId, setDbDirty)
+      const unfollowBuild = loadoutDatum
+        ? loadoutDatum.teamCharId === teamCharId
+          ? database.teams.followLoadoutDatumCompare(loadoutDatum, setDbDirty)
+          : database.teams.followLoadoutDatum(loadoutDatum, setDbDirty)
         : () => {}
       return () => {
         unfollowTeamChar()
@@ -60,10 +56,12 @@ export default function useOldData(): undefined | UIData {
     return () => {
       unfollowTeamChars.forEach((unfollow) => unfollow())
     }
-  }, [dbDirty, teamCharId, database, teamCharIds, setDbDirty])
+  }, [dbDirty, teamCharId, database, loadoutData, setDbDirty])
 
   return useMemo(() => {
     if (!dbDirtyDeferred) return undefined
+    const { compare, compareType, compareBuildId, compareBuildTcId } =
+      loadoutDatum
     if (!compare) return undefined
     const { overrideArt, overrideWeapon } = ((): {
       overrideArt: ICachedArtifact[] | Data
@@ -114,14 +112,11 @@ export default function useOldData(): undefined | UIData {
     return charUIData
   }, [
     dbDirtyDeferred,
-    characterKey,
-    teamCharId,
+    loadoutDatum,
+    database,
     teamId,
     gender,
-    compare,
-    compareType,
-    compareBuildId,
-    compareBuildTcId,
-    database,
+    teamCharId,
+    characterKey,
   ])
 }

@@ -1,7 +1,7 @@
 import { objKeyMap } from '@genshin-optimizer/common/util'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
-import { input } from '../../../Formula'
+import { input, target } from '../../../Formula'
 import {
   constant,
   equal,
@@ -15,6 +15,7 @@ import {
   sum,
   unequal,
 } from '../../../Formula/utils'
+import KeyMap from '../../../KeyMap'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import type { ICharacterSheet } from '../ICharacterSheet.d'
@@ -124,9 +125,7 @@ function skillDmg(atkType: number[]) {
 
 const energyCosts = [40, 50, 60, 70, 80, 90]
 const [condSkillEyeTeamPath, condSkillEyeTeam] = cond(key, 'skillEyeTeam')
-const skillEyeTeamBurstDmgInc = unequal(
-  input.activeCharKey,
-  input.charKey,
+const skillEyeTeamBurstDmgIncDisp = infoMut(
   prod(
     lookup(
       condSkillEyeTeam,
@@ -137,7 +136,13 @@ const skillEyeTeamBurstDmgInc = unequal(
       fixed: 2,
       unit: '%',
     })
-  )
+  ),
+  { ...KeyMap.info('burst_dmg_'), isTeamBuff: true }
+)
+const skillEyeTeamBurstDmgInc = unequal(
+  key,
+  target.charKey,
+  skillEyeTeamBurstDmgIncDisp
 )
 
 const resolveStacks = [10, 20, 30, 40, 50, 60]
@@ -206,7 +211,7 @@ const c4AtkBonus_ = greaterEq(
   equal(
     'c4',
     condC4,
-    unequal(input.activeCharKey, input.charKey, dm.constellation4.atk_bonus)
+    unequal(input.activeCharKey, target.charKey, dm.constellation4.atk_bonus)
   )
 )
 
@@ -387,7 +392,6 @@ const sheet: ICharacterSheet = {
         value: condSkillEyeTeam,
         path: condSkillEyeTeamPath,
         teamBuff: true,
-        canShow: unequal(input.activeCharKey, input.charKey, 1),
         name: ct.ch('skill.partyCost'),
         states: Object.fromEntries(
           energyCosts.map((c) => [
@@ -396,7 +400,7 @@ const sheet: ICharacterSheet = {
               name: `${c}`,
               fields: [
                 {
-                  node: skillEyeTeamBurstDmgInc,
+                  node: skillEyeTeamBurstDmgIncDisp,
                 },
               ],
             },
@@ -579,7 +583,7 @@ const sheet: ICharacterSheet = {
         value: condC4,
         path: condC4Path,
         teamBuff: true,
-        canShow: unequal(input.activeCharKey, input.charKey, 1),
+        canShow: unequal(input.activeCharKey, target.charKey, 1),
         name: ct.ch('c4.expires'),
         states: {
           c4: {

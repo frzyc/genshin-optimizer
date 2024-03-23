@@ -160,7 +160,8 @@ export function splitScaleDmgNode(
     | 'plunging_impact'
     | 'skill'
     | 'burst',
-  additional: Data = {}
+  additional: Data = {},
+  specialMultiplier?: NumNode
 ): NumNode {
   const talentType = getTalentType(move)
   return customDmgNode(
@@ -170,7 +171,10 @@ export function splitScaleDmgNode(
           subscript(input.total[`${talentType}Index`], lvlMultipliers[i], {
             unit: '%',
           }),
-          input.total[base]
+          input.total[base],
+          ...(specialMultiplier
+            ? [infoMut(specialMultiplier, { unit: '%' })]
+            : [])
         )
       )
     ),

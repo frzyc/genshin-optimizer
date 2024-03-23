@@ -24,7 +24,7 @@ import OptimizationTargetSelector from '../TabOptimize/Components/OptimizationTa
 import StatFilterCard from '../TabOptimize/Components/StatFilterCard'
 
 import { useForceUpdate } from '@genshin-optimizer/common/react-util'
-import { clamp } from '@genshin-optimizer/common/util'
+import { clamp, objPathValue } from '@genshin-optimizer/common/util'
 import type {
   ArtifactSlotKey,
   CharacterKey,
@@ -52,7 +52,7 @@ import { mergeData, uiDataForTeam } from '../../../../Formula/api'
 import { optimize } from '../../../../Formula/optimization'
 import type { NumNode } from '../../../../Formula/type'
 import type { DynStat } from '../../../../Solver/common'
-import { objPathValue, shouldShowDevComponents } from '../../../../Util/Util'
+import { shouldShowDevComponents } from '../../../../Util/Util'
 import MainStatSelectionCard from '../TabOptimize/Components/MainStatSelectionCard'
 import { dynamicData } from '../TabOptimize/foreground'
 import UpgradeOptChartCard from './UpgradeOptChartCard'
