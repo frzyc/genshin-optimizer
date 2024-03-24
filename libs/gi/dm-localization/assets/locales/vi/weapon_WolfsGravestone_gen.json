@@ -1,0 +1,24 @@
+{
+  "name": "Đường Cùng Của Sói",
+  "description": {
+    "0": "Kiếm được kỵ sĩ của sói dùng. Vốn chỉ là miếng sắt của lò rèn trong thành, nhưng do tình bạn với sói mà nhận được sức mạnh thần thánh."
+  },
+  "passiveName": "Người Thợ Săn Như Sói",
+  "passiveDescription": {
+    "0": {
+      "0": "Tấn công tăng <cryo>20%</cryo>; Khi tấn công đánh trúng kẻ địch có HP dưới 30%, lực tấn công của tất cả thành viên đội tăng <cryo>40%</cryo>, kéo dài 12s. Mỗi 30s mới thi triển 1 lần."
+    },
+    "1": {
+      "0": "Tấn công tăng <cryo>25%</cryo>; Khi đánh trúng kẻ địch có HP dưới 30%, lực tấn công của tất cả thành viên đội tăng <cryo>50%</cryo>, kéo dài 12s. Mỗi 30s mới thi triển 1 lần."
+    },
+    "2": {
+      "0": "Tấn công tăng <cryo>30%</cryo>; Khi đánh trúng kẻ địch có HP dưới 30%, lực tấn công của tất cả thành viên đội tăng <cryo>60%</cryo>, kéo dài 12s. Mỗi 30s mới thi triển 1 lần."
+    },
+    "3": {
+      "0": "Tấn công tăng <cryo>35%</cryo>; Khi tấn công đánh trúng kẻ địch có HP dưới 30%, lực tấn công của tất cả thành viên đội tăng <cryo>70%</cryo>, kéo dài 12s. Mỗi 30s mới thi triển 1 lần."
+    },
+    "4": {
+      "0": "Tấn công tăng <cryo>40%</cryo>; Khi đánh trúng kẻ địch có HP dưới 30%, lực tấn công của tất cả thành viên đội tăng <cryo>80%</cryo>, kéo dài 12s. Mỗi 30s mới thi triển 1 lần."
+    }
+  }
+}

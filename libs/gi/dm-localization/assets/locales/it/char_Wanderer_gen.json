@@ -1,0 +1,178 @@
+{
+  "name": "Vagabondo",
+  "title": "Eternamente perduto",
+  "description": "Un viandante dall'identità misteriosa. Nonostante sia vestito come una sorta di asceta di montagna, il suo atteggiamento è di quanto più distante ci sia da una tale definizione.",
+  "constellationName": "Peregrinus",
+  "auto": {
+    "name": "Yuuban Meigen",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attacco normale</strong>",
+        "1": "Sferra fino a 3 attacchi usando lame di vento, infliggendo <anemo>DAN da Anemo</anemo>."
+      },
+      "charged": {
+        "0": "<strong>Attacco caricato</strong>",
+        "1": "Consuma una determinata quantità di vigore, convogliando vento ad alta pressione per infliggere <anemo>DAN da Anemo ad area</anemo> dopo un breve periodo di lancio."
+      },
+      "plunging": {
+        "0": "<strong>Attacco in picchiata</strong>",
+        "1": "Evocando il potere di Anemo, il Vagabondo si scaglia contro il suolo da mezz'aria, danneggiando tutti gli avversari lungo la sua traiettoria. Infligge <anemo>DAN da Anemo ad area</anemo> all'impatto col suolo."
+      }
+    },
+    "skillParams": {
+      "0": "DAN da 1º colpo",
+      "1": "DAN da 2º colpo",
+      "2": "DAN da 3º colpo",
+      "3": "DAN da ATT caricato",
+      "4": "Costo vigore ATT caricato",
+      "5": "DAN da ATT in picchiata",
+      "6": "DAN da ATT in picchiata basso/alto",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Hanega: Canzone del vento",
+    "description": {
+      "0": "Convoglia il potere dei venti per spezzare le catene terrene, infliggendo <anemo>DAN da Anemo ad area</anemo> e balzando in aria per acquisire lo stato di Vento prospero.",
+      "1": "<br/>",
+      "2": "<strong>Vento prospero</strong>",
+      "3": "In questo stato, il Vagabondo non può eseguire attacchi in picchiata. Quando usa gli attacchi normali e caricati, questi vengono convertiti rispettivamente in Kuugo: Fushoudan e Kuugo: Toufukai, ricevendo un incremento dei DAN inflitti e dell'area d'effetto, e i loro DAN vengono considerati rispettivamente DAN da attacco normale e caricato. Kuugo: Toufukai non consuma vigore.",
+      "4": "Quando è in questo stato, il Vagabondo può librarsi costantemente in aria, e i suoi movimenti acquistano le seguenti proprietà.",
+      "5": [
+        " Consuma una quantità costante di punti Kuugoryoku, che gli permette di continuare a librarsi in aria.",
+        " Quando esegue uno Scatto, consuma una maggiore quantità di punti Kuugoryoku per accelerare a mezz'aria. La pressione prolungata del tasto dello Scatto causa un consumo continuo di punti Kuugoryoku, che gli consente di mantenere la velocità. Questo effetto sostituisce lo Scatto normale.",
+        " Il salto usa una quantità extra di punti Kuugoryoku per incrementare l'altezza di volo. Tenere premuto il tasto del salto causa un consumo di punti Kuugoryoku costante."
+      ],
+      "6": "<br/>",
+      "7": "L'esaurimento di punti Kuugoryoku rimuove lo stato di Vento prospero.",
+      "8": "Eseguire nuovamente l'abilità mentre Vento prospero è attivo ne annulla gli effetti.",
+      "9": "<br/>",
+      "10": "<i>\"Il mondo danza in una spirale impalpabile, palesando un segreto che solo i fiori sono in grado di mostrare.\"</i>"
+    },
+    "skillParams": {
+      "0": "DAN da abilità",
+      "1": "DAN da Kuugo: Fushoudan",
+      "2": "DAN da Kuugo: Toufukai",
+      "3": "Punti Kuugoryoku iniziali",
+      "4": "TdR",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Kyougen: Goban Date cerimoniale",
+    "description": {
+      "0": "Comprime l'atmosfera in un unico spazio vuoto, mandando ogni pena in frantumi e infliggendo più volte <anemo>DAN da Anemo ad area</anemo>.",
+      "1": "Se il personaggio ha attivato lo stato di Vento prospero fornito da Hanega: Canzone del vento, Vento prospero termina dopo l'esecuzione dell'abilità.",
+      "2": "<br/>",
+      "3": "<i>\"Luminoso è il limitato sguardo del cielo, che posa i suoi occhi su sogni passati e presenti, come un bagliore che spazza via la polvere nel vento.\"</i>"
+    },
+    "skillParams": {
+      "0": "DAN da abilità",
+      "1": "TdR",
+      "2": "Costo energia",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Fiore della giada",
+    "description": {
+      "0": "Se <strong>Hanega: Canzone del vento</strong> entra in contatto con <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<electro>Electro</electro> quando impiegato, l'effetto Vento prospero ottiene effetti positivi a seconda dell'elemento.",
+      "1": [
+        " <hydro>Hydro</hydro>: il limite di punti di Kuugoryoku aumenta di 20.",
+        " <pyro>Pyro</pyro>: l'ATT aumenta di un 30%.",
+        " <cryo>Cryo</cryo>: il tasso di CRIT aumenta di un 20%.",
+        " <electro>Electro</electro>: quando gli attacchi normali e caricati colpiscono gli avversari, il personaggio ottiene 0,8 di energia. È possibile ottenere energia in questo modo ogni 0,2 s."
+      ],
+      "2": "<br/>",
+      "3": "Puoi beneficiare di max 2 di questi effetti positivi contemporaneamente."
+    }
+  },
+  "passive2": {
+    "name": "Fantasticheria burrascosa",
+    "description": {
+      "0": "Quando il Vagabondo colpisce gli avversari con Kuugo: Fushoudan o Kuugo: Toufukai nel suo stato di <strong>Vento prospero</strong> ha un 16% di probabilità di ottenere l'effetto Discesa: la volta successiva che il Vagabondo accelera a mezz'aria mentre è in stato di Vento prospero, questo effetto viene rimosso. In questo caso, l'accelerazione non consuma alcun punto di Kuugoryoku, e il personaggio scocca 4 frecce di vento che infliggono <anemo>DAN da Anemo</anemo> ciascuna pari a un 35% del suo ATT.",
+      "1": "Per ogni Kuugo: Fushoudan e Kuugo: Toufukai che non produce quest'effetto, l'attacco successivo di uno dei due tipi ha un 12% di probabilità in più di produrlo. Il calcolo della produzione dell'effetto viene effettuato ogni 0,1 s."
+    }
+  },
+  "passive3": {
+    "name": "Corde dei venti vorticosi",
+    "description": {
+      "0": "Il costo in Mora per l'ascensione di catalizzatori e archi si riduce di un 50%."
+    }
+  },
+  "constellation1": {
+    "name": "Shoban: Piume sfarzose",
+    "description": {
+      "0": "Quando lo stato <strong>Vento prospero</strong> è attivo, la VEL d'ATT di Kuugo: Fushoudan e Kuugo: Toufukai del Vagabondo aumenta di un 10%.",
+      "1": "Inoltre, le frecce di vento scoccate dal talento passivo Fantasticheria burrascosa infliggono DAN pari a un ulteriore 25% del suo ATT. Devi prima sbloccare il talento passivo Fantasticheria burrascosa."
+    }
+  },
+  "constellation2": {
+    "name": "Niban: Isola tra le bianche onde",
+    "description": {
+      "0": "Quando lo stato <strong>Vento prospero</strong> è attivo, i DAN da <strong>Kyougen: Goban Date cerimoniale</strong> aumentano di un 4% per ogni punto di differenza tra la quantità massima di punti di Kuugoryoku e la sua attuale capacità durante il suo uso.",
+      "1": "In questo modo, è possibile incrementare i DAN di Kyougen: Goban Date cerimoniale fino a un 200% massimo."
+    }
+  },
+  "constellation3": {
+    "name": "Sanban: Kusemai dei Fiordiluna",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Kyougen: Goban Date cerimoniale</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation4": {
+    "name": "Yonban: Deriva primaverile",
+    "description": {
+      "0": "Quando usi <strong>Hanega: Canzone del vento</strong>, se si attiva il talento passivo Fiore della giada, il personaggio ottiene degli effetti positivi in relazione ai tipi elementali con cui entra in contatto, oltre a un effetto positivo casuale inattivo. Non possono esistere più di 3 di questi effetti positivi elementali contemporaneamente.",
+      "1": "Devi prima sbloccare il talento passivo Fiore della giada."
+    }
+  },
+  "constellation5": {
+    "name": "Matsuban: Rivelazione remota",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Hanega: Canzone del vento</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation6": {
+    "name": "Shugen: Ondeggio malinconico",
+    "description": {
+      "0": "Quando il Vagabondo si trova nello stato di <strong>Vento prospero</strong> e colpisce attivamente un avversario con Kuugo: Fushoudan, si verificano gli effetti descritti di seguito.",
+      "1": [
+        " Lancia un ulteriore Kuugo: Fushoudan nella posizione colpita, che infligge un 40% dei DAN originali. Questi DAN vengono considerati come DAN da attacco normale.",
+        " Quando i punti di Kuugoryoku del Vagabondo sono inferiori a 40, ne ripristina 4. I punti di Kuugoryoku possono essere ripristinati in questo modo una volta ogni 0,2 s e per un massimo di 5 volte per tutta la durata di Vento prospero."
+      ]
+    }
+  }
+}

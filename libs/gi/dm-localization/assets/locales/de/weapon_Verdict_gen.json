@@ -1,0 +1,24 @@
+{
+  "name": "Urteilsspruch",
+  "description": {
+    "0": "Eine Waffe, die von einem adligen Mädchen benutzt wurde, das einst seinen Familiennamen aufgab. Sie war mit dem Blut von Feinden und seinem Liebsten aus der Vergangenheit befleckt."
+  },
+  "passiveName": "Zahlreiche Eide der Morgenröte und Abenddämmerung",
+  "passiveDescription": {
+    "0": {
+      "0": "Erhöht den ANG um <cryo>20 %</cryo>. Verleiht dem Träger, wenn Truppenmitglieder Elementarsplitter durch die Reaktion „Kristallisation“ erhalten, 1 Siegel, das den Schaden der Elementarfähigkeit um <cryo>18 %</cryo> erhöht. Das Siegel hält 15 s und der Träger kann bis zu 2 Siegel auf einmal haben. Alle Siegel des Trägers werden 0,2 s, nachdem dessen Elementarfähigkeit Schaden verursacht hat, entfernt."
+    },
+    "1": {
+      "0": "Erhöht den ANG um <cryo>25 %</cryo>. Verleiht dem Träger, wenn Truppenmitglieder Elementarsplitter durch die Reaktion „Kristallisation“ erhalten, 1 Siegel, das den Schaden der Elementarfähigkeit um <cryo>22,5 %</cryo> erhöht. Das Siegel hält 15 s und der Träger kann bis zu 2 Siegel auf einmal haben. Alle Siegel des Trägers werden 0,2 s, nachdem dessen Elementarfähigkeit Schaden verursacht hat, entfernt."
+    },
+    "2": {
+      "0": "Erhöht den ANG um <cryo>30 %</cryo>. Verleiht dem Träger, wenn Truppenmitglieder Elementarsplitter durch die Reaktion „Kristallisation“ erhalten, 1 Siegel, das den Schaden der Elementarfähigkeit um <cryo>27 %</cryo> erhöht. Das Siegel hält 15 s und der Träger kann bis zu 2 Siegel auf einmal haben. Alle Siegel des Trägers werden 0,2 s, nachdem dessen Elementarfähigkeit Schaden verursacht hat, entfernt."
+    },
+    "3": {
+      "0": "Erhöht den ANG um <cryo>35 %</cryo>. Verleiht dem Träger, wenn Truppenmitglieder Elementarsplitter durch die Reaktion „Kristallisation“ erhalten, 1 Siegel, das den Schaden der Elementarfähigkeit um <cryo>31,5 %</cryo> erhöht. Das Siegel hält 15 s und der Träger kann bis zu 2 Siegel auf einmal haben. Alle Siegel des Trägers werden 0,2 s, nachdem dessen Elementarfähigkeit Schaden verursacht hat, entfernt."
+    },
+    "4": {
+      "0": "Erhöht den ANG um <cryo>40 %</cryo>. Verleiht dem Träger, wenn Truppenmitglieder Elementarsplitter durch die Reaktion „Kristallisation“ erhalten, 1 Siegel, das den Schaden der Elementarfähigkeit um <cryo>36 %</cryo> erhöht. Das Siegel hält 15 s und der Träger kann bis zu 2 Siegel auf einmal haben. Alle Siegel des Trägers werden 0,2 s, nachdem dessen Elementarfähigkeit Schaden verursacht hat, entfernt."
+    }
+  }
+}

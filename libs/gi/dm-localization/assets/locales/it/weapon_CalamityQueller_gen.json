@@ -1,0 +1,24 @@
+{
+  "name": "Flagello delle calamità",
+  "description": {
+    "0": "Un'arma eccezionalmente affilata forgiata da uno strano cristallo. La sua debole luce azzurra sembra sussurrare storie del passato all'infinito."
+  },
+  "passiveName": "Legge dell'estinzione",
+  "passiveDescription": {
+    "0": {
+      "0": "Ricevi un <cryo>12%</cryo> di bonus DAN per tutti gli elementi. Dopo l'uso di un'abilità elementale, ottieni l'effetto Perfezionamento per 20 s, che aumenta l'ATT di un <cryo>3,2%</cryo> al secondo. L'aumento dell'ATT è cumulabile fino a 6 volte. Quando il personaggio equipaggiato con quest'arma non è sul campo, l'aumento dell'ATT di Perfezionamento raddoppia."
+    },
+    "1": {
+      "0": "Ricevi un <cryo>15%</cryo> di bonus DAN per tutti gli elementi. Dopo l'uso di un'abilità elementale, ottieni l'effetto Perfezionamento per 20 s, che aumenta l'ATT di un <cryo>4%</cryo> al secondo. L'aumento dell'ATT è cumulabile fino a 6 volte. Quando il personaggio equipaggiato con quest'arma non è sul campo, l'aumento dell'ATT di Perfezionamento raddoppia."
+    },
+    "2": {
+      "0": "Ricevi un <cryo>18%</cryo> di bonus DAN per tutti gli elementi. Dopo l'uso di un'abilità elementale, ottieni l'effetto Perfezionamento per 20 s, che aumenta l'ATT di un <cryo>4,8%</cryo> al secondo. L'aumento dell'ATT è cumulabile fino a 6 volte. Quando il personaggio equipaggiato con quest'arma non è sul campo, l'aumento dell'ATT di Perfezionamento raddoppia."
+    },
+    "3": {
+      "0": "Ricevi un <cryo>21%</cryo> di bonus DAN per tutti gli elementi. Dopo l'uso di un'abilità elementale, ottieni l'effetto Perfezionamento per 20 s, che aumenta l'ATT di un <cryo>5,6%</cryo> al secondo. L'aumento dell'ATT è cumulabile fino a 6 volte. Quando il personaggio equipaggiato con quest'arma non è sul campo, l'aumento dell'ATT di Perfezionamento raddoppia."
+    },
+    "4": {
+      "0": "Ricevi un <cryo>24%</cryo> di bonus DAN per tutti gli elementi. Dopo l'uso di un'abilità elementale, ottieni l'effetto Perfezionamento per 20 s, che aumenta l'ATT di un <cryo>6,4%</cryo> al secondo. L'aumento dell'ATT è cumulabile fino a 6 volte. Quando il personaggio equipaggiato con quest'arma non è sul campo, l'aumento dell'ATT di Perfezionamento raddoppia."
+    }
+  }
+}

@@ -1,0 +1,178 @@
+{
+  "name": "Nomade",
+  "title": "L'éternellement égaré",
+  "description": "Une silhouette itinérante dont l'identité est un mystère. S'habillant comme un ascète des montagnes, il n'en joue cependant pas le rôle.",
+  "constellationName": "Peregrinus",
+  "auto": {
+    "name": "Battement flottant",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attaque normale</strong>",
+        "1": "Utilise des lames de vent pour enchaîner jusqu'à 3 attaques qui infligent des <anemo>DGT Anémo</anemo>."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Consomme de l'endurance pour concentrer un champ à haute pression en avant et infliger des <anemo>DGT Anémo de zone</anemo> après un court délai."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Plonge depuis les airs en concentrant ses pouvoirs Anémo, infligeant des DGT aux ennemis en chemin et des <anemo>DGT Anémo de zone</anemo> à l'impact."
+      }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT attaque chargée",
+      "4": "Coût d'endurance attaque chargée",
+      "5": "DGT durant la chute",
+      "6": "DGT chute basse/élevée",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Hanega : Lyrisme des vents",
+    "description": {
+      "0": "Concentre la puissance des vents pour déjouer les contraintes de la terre, infligeant des <anemo>DGT Anémo</anemo> dans la zone avant de bondir dans les airs pour entrer dans l'état Bienfait venteux.",
+      "1": "<br/>",
+      "2": "<strong>Bienfait venteux</strong>",
+      "3": "Dans cet état, le Nomade ne peut pas effectuer d'attaques plongeantes, mais ses attaques normales et chargées sont respectivement converties en Kuugo : Fushoudan et Kuugo : Toufukai, dont les DGT et la zone d'effet augmentent, les DGT étant alors respectivement considérés comme des DGT d'attaque normale ou comme des DGT d'attaque chargée. De plus, Kuugo : Toufukai ne consomme pas d'endurance.",
+      "4": "Dans cet état, le Nomade flotte de façon continue dans les airs et ses actions déclenchent les effets suivants :",
+      "5": [
+        " Il consomme de façon continue du Kuugoryoku pour maintenir l'état de flottaison.",
+        " Son sprint consomme une quantité de Kuugoryoku supplémentaire pour qu'il puisse accélérer dans les airs. Maintenir le sprint consomme du Kuugoryoku de façon continue afin de maintenir la vitesse. Cet effet remplace le sprint.",
+        " Sauter consomme une quantité de Kuugoryoku supplémentaire pour augmenter la hauteur de flottaison. Maintenir le saut consomme du Kuugoryoku de façon continue afin de continuer à monter."
+      ],
+      "6": "<br/>",
+      "7": "L'état prend fin une fois le Kuugoryoku épuisé.",
+      "8": "Utiliser à nouveau la compétence pendant la durée du bienfait venteux met fin à l'état.",
+      "9": "<br/>",
+      "10": "<i>« Le monde danse dans un tourbillon d'apesanteur, présentant un secret qui ne peut être décelé que dans les fleurs. »</i>"
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "DGT Kuugo : Fushoudan",
+      "2": "DGT Kuugo : Toufukai",
+      "3": "Kuugoryoku de départ",
+      "4": "Temps de recharge",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Kyougen : Gobandate en cinq actes",
+    "description": {
+      "0": "Compresse l'atmosphère en une faille capable de mettre fin à tous les soucis, infligeant plusieurs fois des <anemo>DGT Anémo de zone</anemo>.",
+      "1": "Si le personnage est dans l'état Bienfait venteux accordé par « Hanega : Lyrisme des vents », l'état prend fin après l'utilisation de cette compétence.",
+      "2": "<br/>",
+      "3": "<i>« Brillant est le regard rétréci du ciel, jetant son regard sur les rêves passés et présents, comme l'éclat qui lave la poussière sous les vents. »</i>"
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "Temps de recharge",
+      "2": "Énergie élémentaire",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Fleur de jade",
+    "description": {
+      "0": "Pendant <strong>Hanega : Lyrisme des vents</strong>, entrer au contact de l'élément <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<electro>Électro</electro> permet à l'état Bienfait venteux qui en résulte d'obtenir un effet de renforcement selon l'élément concerné :",
+      "1": [
+        " <hydro>Hydro</hydro> : la limite de Kuugoryoku augmente de 20 pts.",
+        " <pyro>Pyro</pyro> : l'ATQ augmente de 30 %.",
+        " <cryo>Cryo</cryo> : le taux CRIT augmente de 20 %.",
+        " <electro>Électro</electro> : les attaques normales et chargées restaurent 0,8 pt d'énergie élémentaire après avoir touché un ennemi. L'énergie élémentaire peut être restaurée une fois toutes les 0,2 s de cette manière."
+      ],
+      "2": "<br/>",
+      "3": "Un maximum de 2 types différents de ces effets de renforcement peut être obtenu simultanément."
+    }
+  },
+  "passive2": {
+    "name": "Rafales de rêverie",
+    "description": {
+      "0": "Lorsque le Nomade touche un ennemi avec Kuugo : Fushoudan ou Kuugo : Toufukai pendant l'état <strong>Bienfait venteux</strong>, il a 16 % de chances d'obtenir l'effet Descente : la prochaine fois qu'il accélère dans les airs pendant cet état Bienfait venteux, l'effet est annulé, l'accélération ne consomme aucun point de Kuugoryoku et il tire 4 flèches de vent qui infligent chacune des <anemo>DGT Anémo</anemo> d'une valeur équivalant à 35 % de son ATQ.",
+      "1": "Si Kuugo : Fushoudan ou Kuugo : Toufukai ne déclenche pas l'effet Descente, les chances de le déclencher la fois suivante augmentent de 12 %. Le calcul du déclenchement de l'effet se fait une fois toutes les 0,1 s."
+    }
+  },
+  "passive3": {
+    "name": "Accord des vents tourbillonnants",
+    "description": {
+      "0": "Les moras utilisés lors de l'élévation de catalyseurs et d'arcs diminuent de 50 %."
+    }
+  },
+  "constellation1": {
+    "name": "Shoban : Pennage ostentatoire",
+    "description": {
+      "0": "Pendant l'état <strong>Bienfait venteux</strong>, la VIT d'attaque de Kuugo : Fushoudan et de Kuugo : Toufukai du Nomade augmente de 10 %.",
+      "1": "De plus, les flèches de vent tirées par l'aptitude passive « Rafales de rêverie » infligent des DGT supplémentaires équivalant à 25 % de l'ATQ. L'aptitude passive « Rafales de rêverie » doit être déjà débloquée pour cet effet."
+    }
+  },
+  "constellation2": {
+    "name": "Niban : Île dans les vagues blanches",
+    "description": {
+      "0": "Pendant l'état <strong>Bienfait venteux</strong>, les DGT infligés par <strong>Kyougen : Gobandate en cinq actes</strong> augmentent de 4 % pour chaque point de différence entre la quantité actuelle et maximale de Kuugoryoku.",
+      "1": "Les DGT infligés par Kyougen : Gobandate en cinq actes peuvent être augmentés d'un maximum de 200 % de cette manière."
+    }
+  },
+  "constellation3": {
+    "name": "Sanban : Kusemai de belle-de-nuit",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Kyougen : Gobandate en cinq actes</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation4": {
+    "name": "Yonban : Dérive vers le printemps",
+    "description": {
+      "0": "Si l'effet de renforcement selon le type élémentaire de l'aptitude passive « Fleur de jade » est déclenché en utilisant <strong>Hanega : Lyrisme des vents</strong>, un effet de renforcement n'ayant pas été déclenché cette fois-ci est aléatoirement accordé. Un maximum de 3 types différents de ces effets de renforcement peut être obtenu simultanément.",
+      "1": "L'aptitude passive « Fleur de jade » doit être déjà débloquée."
+    }
+  },
+  "constellation5": {
+    "name": "Matsuban : Illustre du lointain",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Hanega : Lyrisme des vents</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation6": {
+    "name": "Shugen : Mélancolie de la brume",
+    "description": {
+      "0": "Lorsque le Nomade touche un ennemi en utilisant Kuugo : Fushoudan pendant l'état <strong>Bienfait venteux</strong>, les effets suivants se produisent :",
+      "1": [
+        " Il déclenche Kuugo : Fushoudan une fois de plus à l'emplacement touché, infligeant 40 % des DGT d'origine, ces DGT étant considérés comme des DGT d'attaque normale.",
+        " Si son Kuugoryoku est inférieur à 40 pts, il restaure 4 pts. Les points de Kuugoryoku peuvent être restaurés une fois toutes les 0,2 s de cette manière, et un maximum de 5 fois pour chaque durée de l'état Bienfait venteux."
+      ]
+    }
+  }
+}

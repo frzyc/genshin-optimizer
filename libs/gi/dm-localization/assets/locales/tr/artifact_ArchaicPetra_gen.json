@@ -1,0 +1,29 @@
+{
+  "setName": "Arkaik Taşlar",
+  "setEffects": {
+    "2": "+%15 Toprak Hasarı Bonusu.",
+    "4": "Kristalleştirme Tepkimesi ile bir Element Parçası elde edildiğinde, 10 saniyeliğine tüm grup üyeleri o element için %35 Hasar Bonusu kazanır. Bu yöntemle aynı anda yalnızca bir tür Element Hasarı Bonusu kazanılabilir."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Çatlak Uçurum Çiçeği",
+      "desc": "Uçurum kenarındaki boşluklarda yer alan minerallerden doğan bir çiçek. Rüzgarda dans eden taç yapraklarıyla canlı gibi görünüyor."
+    },
+    "plume": {
+      "name": "Sarp Zirve Tüyü",
+      "desc": "Büyük bir balık kartalından sert bir tüy. Bazalt ucu bazen küçük bir esintiyle parlar."
+    },
+    "sands": {
+      "name": "Dayanıklı Yeşim Güneş Saati",
+      "desc": "Tek parça yeşim taşından oyulma bir güneş saati. Zamanın akışını sessizce gösteren bir desenle kaplanmış."
+    },
+    "goblet": {
+      "name": "Yalçın Kayalık Kadehi",
+      "desc": "Bir zamanlar ağzına kadar dolu olan göz kamaştırıcı ve saygın bir şarap kadehi."
+    },
+    "circlet": {
+      "name": "Münzevi Bazalt Maskesi",
+      "desc": "Bazalt ile zarifçe oyulmuş heybetli bir maske. Gözleri boş ve soğuk bir şekilde hiçliğe bakıyor."
+    }
+  }
+}

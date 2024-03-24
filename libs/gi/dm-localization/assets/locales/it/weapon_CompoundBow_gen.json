@@ -1,0 +1,24 @@
+{
+  "name": "Arco composto",
+  "description": {
+    "0": "Un arco metallico esotico proveniente da una terra lontana. Benché di difficile manutenzione, le sue frecce colpiscono con una forza impressionante."
+  },
+  "passiveName": "Freccia energizzante",
+  "passiveDescription": {
+    "0": {
+      "0": "I colpi da attacco normale e caricato aumentano l'ATT di un <cryo>4%</cryo> e la VEL d'ATT normale di un <cryo>1,2%</cryo> per 6 s. Cumulabile fino a 4 volte. Si può verificare una sola volta ogni 0,3 s."
+    },
+    "1": {
+      "0": "I colpi da attacco normale e caricato aumentano l'ATT di un <cryo>5%</cryo> e la VEL d'ATT normale di un <cryo>1,5%</cryo> per 6 s. Cumulabile fino a 4 volte. Si può verificare una sola volta ogni 0,3 s."
+    },
+    "2": {
+      "0": "I colpi da attacco normale e caricato aumentano l'ATT di un <cryo>6%</cryo> e la VEL d'ATT normale di un <cryo>1,8%</cryo> per 6 s. Cumulabile fino a 4 volte. Si può verificare una sola volta ogni 0,3 s."
+    },
+    "3": {
+      "0": "I colpi da attacco normale e caricato aumentano l'ATT di un <cryo>7%</cryo> e la VEL d'ATT normale di un <cryo>2,1%</cryo> per 6 s. Cumulabile fino a 4 volte. Si può verificare una sola volta ogni 0,3 s."
+    },
+    "4": {
+      "0": "I colpi da attacco normale e caricato aumentano l'ATT di un <cryo>8%</cryo> e la VEL d'ATT normale di un <cryo>2,4%</cryo> per 6 s. Cumulabile fino a 4 volte. Si può verificare una sola volta ogni 0,3 s."
+    }
+  }
+}

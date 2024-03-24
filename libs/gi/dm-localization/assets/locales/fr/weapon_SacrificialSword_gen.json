@@ -1,0 +1,24 @@
+{
+  "name": "Épée rituelle",
+  "description": {
+    "0": "Une épée ornementale qui a été pétrifiée par le temps, dont on peut encore distinguer les décorations. Avec elle, son manieur sera capable d'affronter l'épreuve du temps."
+  },
+  "passiveName": "Sang-froid",
+  "passiveDescription": {
+    "0": {
+      "0": "Les compétences élémentaires ont <cryo>40 %</cryo> de chances de réinitialiser leur propre TdR lorsqu'elles infligent des DGT. Cet effet peut être déclenché une fois toutes les <cryo>30</cryo> s."
+    },
+    "1": {
+      "0": "Les compétences élémentaires ont <cryo>50 %</cryo> de chances de réinitialiser leur propre TdR lorsqu'elles infligent des DGT. Cet effet peut être déclenché une fois toutes les <cryo>26</cryo> s."
+    },
+    "2": {
+      "0": "Les compétences élémentaires ont <cryo>60 %</cryo> de chances de réinitialiser leur propre TdR lorsqu'elles infligent des DGT. Cet effet peut être déclenché une fois toutes les <cryo>22</cryo> s."
+    },
+    "3": {
+      "0": "Les compétences élémentaires ont <cryo>70 %</cryo> de chances de réinitialiser leur propre TdR lorsqu'elles infligent des DGT. Cet effet peut être déclenché une fois toutes les <cryo>19</cryo> s."
+    },
+    "4": {
+      "0": "Les compétences élémentaires ont <cryo>80 %</cryo> de chances de réinitialiser leur propre TdR lorsqu'elles infligent des DGT. Cet effet peut être déclenché une fois toutes les <cryo>16</cryo> s."
+    }
+  }
+}

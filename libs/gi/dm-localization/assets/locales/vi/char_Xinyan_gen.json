@@ -1,0 +1,168 @@
+{
+  "name": "Xinyan",
+  "title": "Giai Điệu Nóng Bỏng",
+  "description": "Nghệ sĩ rock duy nhất ở cảng Liyue, dùng âm nhạc và niềm đam mê hát lên chống lại những \"định kiến\".",
+  "constellationName": "Hồng Đàn Tứ Huyền",
+  "auto": {
+    "name": "Viêm Vũ",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Tấn Công Thường</strong>",
+        "1": "Thực hiện tối đa 4 lần chém liên tiếp."
+      },
+      "charged": {
+        "0": "<strong>Trọng Kích</strong>",
+        "1": "Tiêu hao thể lực để xoay kiếm tấn công địch xung quanh.",
+        "2": "Khi ngừng quay, sẽ bổ một nhát cực mạnh."
+      },
+      "plunging": {
+        "0": "<strong>Tấn Công Khi Đáp</strong>",
+        "1": "Đáp xuống đất từ trên không, tấn công kẻ địch trên đường và gây sát thương phạm vi khi chạm đất."
+      }
+    },
+    "skillParams": {
+      "0": "Sát Thương Lần 1",
+      "1": "Sát Thương Lần 2",
+      "2": "Sát Thương Lần 3",
+      "3": "Sát Thương Lần 4",
+      "4": "Sát Thương Trọng Kích Tuần Hoàn",
+      "5": "Sát Thương Trọng Kích Chí Mạng",
+      "6": "Thể lực Trọng Kích tiêu hao",
+      "7": "Thời Gian Kéo Dài Tối Đa",
+      "8": "Sát Thương Khi Đáp",
+      "9": "ST Khi Rơi Từ Độ Cao Thấp/Cao",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Khuấy Động Nhiệt Huyết",
+    "description": {
+      "0": "Xinyan vung nhạc cụ gây <pyro>sát thương nguyên tố hỏa</pyro> cho kẻ địch xung quanh và hình thành khiên với sự cuồng nhiệt của khán giả.",
+      "1": "Lượng hấp thụ sát thương của khiên được hưởng từ sức phòng thủ của Xinyan, và dựa trên số kẻ địch bị đánh trúng:",
+      "2": [
+        "Chưa trúng hoặc trúng 1 địch: Khiên Cấp 1 - Nhịp Điệu Phân Tán.",
+        "Trúng 2 địch: Khiên Cấp 2 - Nhịp Điệu Mở Đầu.",
+        "Trúng từ 3 địch trở lên, sẽ tạo Khiên Cấp 3 - Nhịp Điệu Nhảy Múa. Ngoài việc hấp thụ sát thương còn gây <pyro>sát thương nguyên tố hỏa</pyro> cho kẻ địch xung quanh theo từng quãng."
+      ],
+      "3": "<br/>",
+      "4": "Khiên có đặc tính sau:",
+      "5": [
+        "Khi thi triển sẽ gán <pyro>ấn nguyên tố Hỏa</pyro> cho Xinyan.",
+        "Hấp thụ 250% <pyro>sát thương nguyên tố hỏa</pyro>."
+      ],
+      "6": "<br/>",
+      "7": "<i>Xinyan quả quyết những tia lửa này là sự biểu hiện của kỹ thuật trình diễn đỉnh cao, là hiện tượng vật lý, không liên quan đến Vision.</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Chém",
+      "1": "Khiên Cấp 1 hấp thu",
+      "2": "Khiên Cấp 2 hấp thu",
+      "3": "Khiên Cấp 3 hấp thu",
+      "4": "Sát Thương Kéo Dài",
+      "5": "Thời Gian Khiên Kéo Dài",
+      "6": "CD",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Cung Đàn Ngỗ Ngược",
+    "description": {
+      "0": "Lướt nhanh qua dây đàn phát ra sóng âm đánh lui kẻ địch, gây sát thương vật lý cho địch xung quanh và khơi dậy bầu không khí trên sân khấu.",
+      "1": "Vì bầu không khí quá cháy bỏng, nên sẽ phát ra lửa, gây <pyro>sát thương nguyên tố hỏa</pyro> liên tục cho kẻ địch xung quanh.",
+      "2": "<br/>",
+      "3": "<i>Xưa kia mỗi lần diễn xong, Xinyan đều có màn kết như vậy. Sau này không làm vậy nữa, không phải do nguy hiểm, mà là vì, nếu như bị bắt phải \"diễn lại\", thì cô ấy không thể làm ra trận hạ màn bùng nổ hơn được.</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Kỹ Năng",
+      "1": "Sát Thương Nguyên Tố Hỏa Kéo Dài",
+      "2": "Thời Gian Kéo Dài",
+      "3": "CD",
+      "4": "Năng Lượng Nguyên Tố",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "\"Không có thính giả cũng phải diễn...\"",
+    "description": {
+      "0": "Giảm số lượng địch cần đánh trúng mà khiên <strong>Khuấy Động Nhiệt Huyết</strong> cần:",
+      "1": [
+        "Khiên Cấp 2 - Nhịp Điệu Mở Đầu: Trúng 1 địch.",
+        "Khiên Cấp 3 - Nhịp Điệu Nhảy Múa: Trúng từ 2 địch trở lên."
+      ]
+    }
+  },
+  "passive2": {
+    "name": "\"...Đây mới là Rock and Roll!\"",
+    "description": {
+      "0": "Nhân vật được bảo vệ bởi khiên <strong>Khuấy Động Nhiệt Huyết</strong> sẽ tăng 15% sát thương vật lý gây ra."
+    }
+  },
+  "passive3": {
+    "name": "Công Thức Rock",
+    "description": {
+      "0": "Nấu hoàn mỹ món ăn thuộc loại phòng ngự, có tỷ lệ 12% x2 sản lượng."
+    }
+  },
+  "constellation1": {
+    "name": "Gia Tốc Của Tuyệt Mệnh",
+    "description": {
+      "0": "Trong 5s sau khi Xinyan tạo thành bạo kích, tốc độ tấn công của tấn công thường và trọng kích tăng 12%.",
+      "1": "Hiệu quả này mỗi 5s chỉ kích hoạt 1 lần."
+    }
+  },
+  "constellation2": {
+    "name": "Khúc Ngẫu Hứng Mở Màn",
+    "description": {
+      "0": "Tỉ lệ bạo kích của sát thương vật lý mà <strong>Cung Đàn Ngỗ Ngược</strong> gây ra tăng 100%, đồng thời khi thi triển sẽ hình thành Lớp Khiên Cấp 3 - Vũ Điệu Tiết Tấu."
+    }
+  },
+  "constellation3": {
+    "name": "Phương Pháp Phân Giải",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Khuấy Động Nhiệt Huyết</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation4": {
+    "name": "Tiết Tấu Gây Nghiện",
+    "description": {
+      "0": "Sát thương từ vũ điệu hất tay <strong>Khuấy Động Nhiệt Huyết</strong> làm giảm 15% kháng sát thương vật lý của kẻ địch. kéo dài 12s."
+    }
+  },
+  "constellation5": {
+    "name": "Tiếng Vọng Khi Quay Về",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Cung Đàn Ngỗ Ngược</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation6": {
+    "name": "Khuấy Động Từ Địa Ngục",
+    "description": {
+      "0": "Xinyan giảm 30% tiêu hao thể lực khi dùng trọng kích; Đồng thời khi thi triển, tăng sức tấn công bằng 50% phòng ngự."
+    }
+  }
+}

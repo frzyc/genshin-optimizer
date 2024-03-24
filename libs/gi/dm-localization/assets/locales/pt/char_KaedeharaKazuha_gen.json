@@ -1,0 +1,186 @@
+{
+  "burst": {
+    "name": "Lâmina de Kazuha",
+    "description": {
+      "0": "A derradeira técnica de Garyuu - um simples corte semelhante a uma tempestade que se avizinha que causa <anemo>Dano em uma AdE Anemo</anemo>.",
+      "1": "A passagem da lâmina deixa um campo chamado \"Redemoinho do Outono\" que causa <anemo>Dano Anemo</anemo> intermitente aos inimigos nela.",
+      "2": "<br/>",
+      "3": "<strong>Absorção Elemental</strong>",
+      "4": "Se o Redemoinho do Outono entrar em contato com os elementos <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<electro>Electro</electro>, ele irá causar Dano elemental adicional daquele tipo.",
+      "5": "Absorção Elemental pode ocorrer apenas uma vez por uso.",
+      "6": "<br/>",
+      "7": "Esta conversão só ocorre uma vez durante a duração da habilidade.",
+      "8": "<br/>",
+      "9": "<i>\"Eu vejo a eternidade desvanecer em um piscar de olhos, vejo os outonos de muitos anos em apenas uma folha. Por isso, desejo cortar essa árvore e perguntar ao tempo...\"</i>"
+    },
+    "slashdmg": "Dano do Corte",
+    "skillParams": {
+      "0": "Dano do Corte",
+      "1": "Dano Contínuo",
+      "2": "Dano Elemental adicional",
+      "3": "Duração",
+      "4": "Tempo de Recarga",
+      "5": "Energia Elemental",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "name": "Kaedehara Kazuha",
+  "title": "Folhas Escarlates Procuram Ondas Selvagens",
+  "description": "Um samurai errante de Inazuma que atualmente está com a Frota Crux de Liyue. Uma alma gentil e livre cujo coração esconde muitas feridas.",
+  "constellationName": "Acer Palmatum",
+  "auto": {
+    "name": "Técnica da Espada de Garyuu",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Ataque Normal</strong>",
+        "1": "Realiza até 5 golpes rápidos."
+      },
+      "charged": {
+        "0": "<strong>Ataque Carregado</strong>",
+        "1": "Consome uma certa quantidade de Stamina para desferir 2 golpes rápidos com a espada."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Imersivo</strong>",
+        "1": "Mergulha em pleno ar para golpear o chão, causando dano aos inimigos ao longo do caminho e infligindo Dano em uma AdE durante o impacto. Caso o Ataque Imersivo seja lançado por Chihayaburu, infligirá um Ataque Imersivo - Ranzan Aéreo."
+      },
+      "plunging_midare": {
+        "0": "<strong>Ataque Imersivo - Ranzan Aéreo</strong>",
+        "1": "Quando Chihayaburu lança um Ataque Imersivo com habilidade elemental, o Dano causado pelo Ataque Imersivo será convertido em <anemo>Dano Anemo</anemo>, e quando cair no chão irá criar uma pequena corrente de vento com uma técnica secreta, atraindo os objetos e inimigos ao redor."
+      }
+    },
+    "skillParams": {
+      "0": "Dano do 1° Golpe",
+      "1": "Dano do 2° Golpe",
+      "2": "Dano do 3° Golpe",
+      "3": "Dano do 4° Golpe",
+      "4": "Dano do 5° Golpe",
+      "5": "Dano de Ataque Carregado",
+      "6": "Consumo de Stamina de Ataque Carregado",
+      "7": "Dano Durante a Queda",
+      "8": "Dano de Queda de Baixa/Alta Altitude",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Chihayaburu",
+    "description": {
+      "0": "Lança uma técnica secreta feroz como o vento que puxa objetos e inimigos rumo a Kazuha antes de lançá-los voando dentro da AdE, causando <anemo>Dano Anemo</anemo> e levantando Kazuha no ar com uma corrente de vento.",
+      "1": "Dentro dos 10s após Kaedehara Kazuha ascender no ar devido à Habilidade Elemental Chihayaburu, e enquanto permanecer no ar, se lançar um Ataque Imersivo, será lançado um Ataque Imersivo muito poderoso: Ranzan Aéreo.",
+      "2": "<br/>",
+      "3": "<strong>Pressionar</strong>",
+      "4": "Pode ser utilizado enquanto está no ar.",
+      "5": "<br/>",
+      "6": "<strong>Manter Pressionado</strong>",
+      "7": "Carrega antes de lançar <anemo>Dano Anemo</anemo> numa AdE ainda maior que Pressionar.",
+      "8": "<br/>",
+      "9": "<strong>Ataque Imersivo - Ranzan Aéreo</strong>",
+      "10": "O Dano dos Ataques Imersivos lançados através da Habilidade Elemental Chihayaburu é convertido em <anemo>Dano Anemo</anemo> e criará um túnel em miniatura através de uma técnica secreta que puxa objetos e inimigos próximos.",
+      "11": "O Dano de Ranzan Aéreo é considerado Dano de Ataque Imersivo.",
+      "12": "<br/>",
+      "13": "<i>\"Vento e Bordo choram",
+      "14": "Por deuses e homens que já se foram",
+      "15": "Como montanhas vermelhas do outono.\"</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Habilidade de Pressionar",
+      "1": "Recarga de Toque",
+      "2": "Dano de Habilidade ao Manter Pressionado",
+      "3": "Recarga ao Manter Pressionado",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Esgrima Soumon",
+    "description": {
+      "0": "Quando <strong>Chihayaburu</strong> é lançado, se entrar em contato com <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<electro>Electro</electro> fará com que o Ataque Imersivo - Ranzan Aéreo de <strong>Chihayaburu</strong> cause Conversão Elemental, gerando 200% de Dano Elemental adicional correspondente, e esse Dano é considerado um Dano de Ataque Imersivo. A Conversão Elemental só pode acontecer uma vez por cada vez do efeito da Habilidade <strong>Chihayaburu</strong>."
+    }
+  },
+  "passive2": {
+    "name": "Poesia de Fuubutsu",
+    "description": {
+      "0": "Depois de Kaedehara Kazuha causar uma Reação de Redemoinho, cada ponto de sua Proficiência Elemental fornecerá a todos os membros da Equipe um aumento de 0.04% de Dano Adicional Elemental por 8s. Podem existir simultaneamente distintos Bônus de Dano Elemental obtidos desta maneira."
+    }
+  },
+  "passive3": {
+    "name": "Caminhador das Nuvens",
+    "description": {
+      "0": "Diminui o consumo de Stamina ao Correr de todos os seus personagens em 20%.",
+      "1": "Não acumulável com Talentos Passivos que concedem exatamente os mesmos efeitos."
+    }
+  },
+  "constellation1": {
+    "name": "Cordilheiras Avermelhadas",
+    "description": {
+      "0": "Reduz o Tempo de Recarga de <strong>Chihayaburu</strong> em 10%.",
+      "1": "Ao lançar <strong>Lâmina de Kazuha</strong>, redefine o Tempo de Recarga de <strong>Chihayaburu</strong>."
+    }
+  },
+  "constellation2": {
+    "name": "Vento das Montanhas",
+    "description": {
+      "0": "O campo de Redemoinho do Outono criado por <strong>Lâmina de Kazuha</strong> tem as seguintes propriedades:",
+      "1": [
+        "Aumenta a Proficiência Elemental de Kaedehara Kazuha em 200;",
+        "Aumenta a Proficiência Elemental dos personagens no campo em 200."
+      ],
+      "2": "<br/>",
+      "3": "Os efeitos de aumento de Proficiência Elemental desta Constelação não se acumulam."
+    }
+  },
+  "constellation3": {
+    "name": "Bordo Monogatari",
+    "description": {
+      "0": "Aumenta o nível do <strong>Chihayaburu</strong> em 3.",
+      "1": "O nível máximo de elevação é 15."
+    }
+  },
+  "constellation4": {
+    "name": "Magia Ilusória",
+    "description": {
+      "0": "Quando a Energia Elemental de Kaedehara Kazuha está em menos que 45, ele possui os seguintes efeitos: ",
+      "1": [
+        "Ao Pressionar e Manter Pressionado <strong>Chihayaburu</strong>, ele recupera 3 e 4 de Energia Elemental respectivamente;",
+        "Kaedehara Kazuha recupera 2 pontos de Energia Elemental por cada segundo que passa Planando."
+      ]
+    }
+  },
+  "constellation5": {
+    "name": "Sabedoria de Bansei",
+    "description": {
+      "0": "Aumenta o nível da Habilidade <strong>Lâmina de Kazuha</strong> em 3.",
+      "1": "O nível máximo de elevação é 15."
+    }
+  },
+  "constellation6": {
+    "name": "Momiji Escarlate",
+    "description": {
+      "0": "Nos 5 segundos após Kaedehara Kazuha lançar <strong>Chihayaburu</strong> ou <strong>Lâmina de Kazuha</strong>, ele obtém <anemo>Encantamento Anemo</anemo>. Cada ponto da Proficiência Elemental de Kaedehara Kazuha será utilizado nos seus Ataques Normais, Ataques Carregados, Ataques Imersivos e Ataque Imersivo - Ranzan Aéreo, causando um Aumento de Dano de 0.2%."
+    }
+  }
+}

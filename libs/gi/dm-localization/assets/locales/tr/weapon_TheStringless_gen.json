@@ -1,0 +1,24 @@
+{
+  "name": "Kirişsiz Yay",
+  "description": {
+    "0": "Bir zamanlar eşsiz bir müzik aleti olan bir yay. Artık kimseyi dans ettirme şansı kalmadı."
+  },
+  "passiveName": "Oksuz Şarkı",
+  "passiveDescription": {
+    "0": {
+      "0": "Element Becerisi ve Element Patlaması Hasarını <cryo>%24</cryo> artırır."
+    },
+    "1": {
+      "0": "Element Becerisi ve Element Patlaması Hasarını <cryo>%30</cryo> artırır."
+    },
+    "2": {
+      "0": "Element Becerisi ve Element Patlaması Hasarını <cryo>%36</cryo> artırır."
+    },
+    "3": {
+      "0": "Element Becerisi ve Element Patlaması Hasarını <cryo>%42</cryo> artırır."
+    },
+    "4": {
+      "0": "Element Becerisi ve Element Patlaması Hasarını <cryo>%48</cryo> artırır."
+    }
+  }
+}

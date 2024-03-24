@@ -1,0 +1,24 @@
+{
+  "name": "Wandering Evenstar",
+  "description": {
+    "0": "This was originally a device used by researchers to observe and perform calculations on celestial phenomena. It serves as a conduit and catalyst."
+  },
+  "passiveName": "Wildling Nightstar",
+  "passiveDescription": {
+    "0": {
+      "0": "The following effect will trigger every 10s: The equipping character will gain <cryo>24%</cryo> of their Elemental Mastery as bonus ATK for 12s, with nearby party members gaining 30% of this buff for the same duration. Multiple instances of this weapon can allow this buff to stack. This effect will still trigger even if the character is not on the field."
+    },
+    "1": {
+      "0": "The following effect will trigger every 10s: The equipping character will gain <cryo>30%</cryo> of their Elemental Mastery as bonus ATK for 12s, with nearby party members gaining 30% of this buff for the same duration. Multiple instances of this weapon can allow this buff to stack. This effect will still trigger even if the character is not on the field."
+    },
+    "2": {
+      "0": "The following effect will trigger every 10s: The equipping character will gain <cryo>36%</cryo> of their Elemental Mastery as bonus ATK for 12s, with nearby party members gaining 30% of this buff for the same duration. Multiple instances of this weapon can allow this buff to stack. This effect will still trigger even if the character is not on the field."
+    },
+    "3": {
+      "0": "The following effect will trigger every 10s: The equipping character will gain <cryo>42%</cryo> of their Elemental Mastery as bonus ATK for 12s, with nearby party members gaining 30% of this buff for the same duration. Multiple instances of this weapon can allow this buff to stack. This effect will still trigger even if the character is not on the field."
+    },
+    "4": {
+      "0": "The following effect will trigger every 10s: The equipping character will gain <cryo>48%</cryo> of their Elemental Mastery as bonus ATK for 12s, with nearby party members gaining 30% of this buff for the same duration. Multiple instances of this weapon can allow this buff to stack. This effect will still trigger even if the character is not on the field."
+    }
+  }
+}

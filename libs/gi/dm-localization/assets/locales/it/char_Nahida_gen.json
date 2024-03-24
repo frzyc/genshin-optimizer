@@ -1,0 +1,183 @@
+{
+  "name": "Nahida",
+  "title": "Fisica della purezza",
+  "description": "Un uccello rinchiuso tra le mura del Santuario di Surasthana che può vedere il mondo solo attraverso i suoi sogni.",
+  "constellationName": "Sapientia Oromasdis",
+  "auto": {
+    "name": "Akara",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attacco normale</strong>",
+        "1": "Sferra fino a 4 attacchi che infliggono <dendro>DAN da Dendro</dendro> agli avversari davanti a lei."
+      },
+      "charged": {
+        "0": "<strong>Attacco caricato</strong>",
+        "1": "Consuma una determinata quantità di vigore per infliggere <dendro>DAN da Dendro ad area</dendro> agli avversari davanti a lei dopo un breve periodo di lancio."
+      },
+      "plunging": {
+        "0": "<strong>Attacco in picchiata</strong>",
+        "1": "Evocando il potere di Dendro, Nahida si scaglia verso il suolo da mezz'aria, danneggiando tutti gli avversari lungo la sua traiettoria. Infligge <dendro>DAN da Dendro ad area</dendro> all'impatto con il suolo."
+      }
+    },
+    "skillParams": {
+      "0": "DAN da 1º colpo",
+      "1": "DAN da 2º colpo",
+      "2": "DAN da 3º colpo",
+      "3": "DAN da 4º colpo",
+      "4": "DAN da ATT caricato",
+      "5": "Costo vigore attacco caricato",
+      "6": "DAN da ATT in picchiata",
+      "7": "DAN da ATT in picchiata basso/alto",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Karma vincolante",
+    "description": {
+      "0": "Sprigiona i vincoli karmici delle piante intorno a sé, infliggendo <dendro>DAN da Dendro ad area</dendro> e marchiando fino a 8 avversari colpiti con il Seme di Skandha.",
+      "1": "Quest'abilità può attivarsi in modi diversi in base al tipo di pressione.",
+      "2": "<br/>",
+      "3": "<strong>Pressione prolungata</strong>",
+      "4": "Entra nella modalità di mira, consentendoti di selezionare un numero limitato di avversari in una determinata area. Durante questa modalità, la resistenza all'interruzione di Nahida è aumentata.",
+      "5": "Quando viene rilasciata, l'abilità infligge <dendro>DAN da Dendro</dendro> agli avversari selezionati e li marchia con il Seme di Skandha.",
+      "6": "La modalità di mira dura fino a 5 s e ti consente di selezionare un massimo di 8 avversari.",
+      "7": "<br/>",
+      "8": "<strong>Seme di Skandha</strong>",
+      "9": "Gli avversari marchiati con il Seme di Skandha saranno vincolati tra loro entro una certa distanza.",
+      "10": "Dopo aver innescato reazioni elementali sugli avversari affetti dai Semi di Skandha o quando subiscono DAN da nuclei di Dendro (DAN da Germinazione e Iperfioritura inclusi), Nahida lancerà la Purificazione trikarmica contro gli avversari e tutti quelli a essi vincolati, infliggendo <dendro>DAN da Dendro</dendro> in base al suo ATT e alla sua maestria elementale.",
+      "11": "È possibile attivare al massimo 1 Purificazione trikarmica entro un breve periodo.",
+      "12": "<br/>",
+      "13": "<i>Lo, la Dea dell'erba e degli alberi, irradia la sua verità suprema nel vuoto, illuminando l'origine e la distruzione dei tre karma.</i>"
+    },
+    "skillParams": {
+      "0": "DAN variante a pressione",
+      "1": "DAN da pressione prolungata",
+      "2": "DAN da Purificazione trikarmica",
+      "3": "Intervallo di attivazione Purificazione trikarmica",
+      "4": "Durata Seme di Skandha",
+      "5": "TdR pressione",
+      "6": "TdR pressione prolungata",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Cuore illusorio",
+    "description": {
+      "0": "Rivela la Corte dei sogni ed espande il Santuario di Maya.",
+      "1": "<br/>",
+      "2": "Quando il campo del Santuario di Maya viene attivato, s'innescheranno separatamente gli effetti descritti di seguito, in base ai tipi elementali del gruppo.",
+      "3": [
+        " <pyro>Pyro</pyro>: quando Nahida si trova all'interno del Santuario di Maya, i DAN inflitti dalla Purificazione trikarmica di Karma vincolante aumentano.",
+        " <electro>Electro</electro>: quando Nahida si trova all'interno del Santuario di Maya, l'intervallo tra ogni Purificazione trikarmica di Karma vincolante diminuisce.",
+        " <hydro>Hydro</hydro>: la durata del Santuario di Maya aumenta."
+      ],
+      "4": "<br/>",
+      "5": "Se sono schierati almeno 2 membri del gruppo dei tipi elementali indicati sopra, gli effetti aumentano ulteriormente.",
+      "6": "<br/>",
+      "7": "Anche se Nahida non è in campo, questi bonus mantengono il loro effetto finché i membri del gruppo si trovano all'interno del Santuario di Maya.",
+      "8": "<br/>",
+      "9": "<i>Forse agli occhi della Dea della Saggezza ciò che giace all'ombra degli alberi non sembra altro che un fuggevole sogno capovolto.</i>"
+    },
+    "skillParams": {
+      "0": "Pyro: bonus DAN",
+      "1": "Pyro: bonus DAN",
+      "2": "Electro: riduzione intervallo di attivazione",
+      "3": "Electro: riduzione intervallo di attivazione",
+      "4": "Hydro: estensione durata",
+      "5": "Hydro: estensione durata",
+      "6": "Durata di base",
+      "7": "TdR",
+      "8": "Costo energia",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Compassione lucente",
+    "description": {
+      "0": "Quando <strong>Cuore illusorio</strong> viene sprigionato, il Santuario di Maya acquisisce gli effetti seguenti:",
+      "1": [
+        " la maestria elementale del personaggio attivo all'interno del campo aumenta di un 25% della maestria elementale del membro del gruppo con il valore più alto."
+      ],
+      "2": "È possibile ottenere in questo modo fino a 250 di maestria elementale."
+    }
+  },
+  "passive2": {
+    "name": "Risveglio splendente",
+    "description": {
+      "0": "Ogni punto di maestria elementale di Nahida sopra i 200 fornisce uno 0,1% di DAN bonus e uno 0,03% di tasso di CRIT alla Purificazione trikarmica di <strong>Karma vincolante</strong>.",
+      "1": "La Purificazione trikarmica può ottenere in questo modo un 80% massimo di DAN bonus e un 24% massimo di tasso di CRIT."
+    }
+  },
+  "passive3": {
+    "name": "Meditazione del tutto",
+    "description": {
+      "0": "Nahida può usare il <strong>Karma vincolante</strong> per interagire con alcuni oggetti da raccogliere presenti in una data area d'effetto.",
+      "1": "Quest'abilità può avere anche altri effetti..."
+    }
+  },
+  "constellation1": {
+    "name": "Seme della conoscenza custodita",
+    "description": {
+      "0": "Quando il <strong>Santuario di Maya</strong> viene attivato e i tipi elementali dei membri del gruppo sono conteggiati, viene aggiunta 1 unità al numero di personaggi di Pyro, Electro e Hydro rispettivamente."
+    }
+  },
+  "constellation2": {
+    "name": "Radice della rettitudine",
+    "description": {
+      "0": "Gli avversari marchiati con i <strong>Semi di Skandha</strong> applicati da Nahida subiscono gli effetti seguenti:",
+      "1": [
+        " i DAN delle reazioni di Ustione, Fioritura, Iperfioritura e Germinazione possono infliggere colpi CRIT. Il tasso di CRIT e i DAN da CRIT sono fissi, rispettivamente a un 20% e a un 100%;",
+        " entro 8 s dall'attivazione dell'effetto di Vivificazione, Accentuazione e Propagazione, la DIF si riduce di un 30%."
+      ]
+    }
+  },
+  "constellation3": {
+    "name": "Germogli di coscienza",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Karma vincolante</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation4": {
+    "name": "Stelo dell'inferenza palese",
+    "description": {
+      "0": "Quando 1/2/3/4 (o più) avversari vicini subiscono l'effetto dei Semi di Skandha di <strong>Karma vincolante</strong>, la maestria elementale di Nahida aumenta di 100/120/140/160."
+    }
+  },
+  "constellation5": {
+    "name": "Foglie dell'illuminazione",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Cuore illusorio</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation6": {
+    "name": "Frutto della ragione",
+    "description": {
+      "0": "Dopo aver attivato <strong>Cuore illusorio</strong>, quando Nahida colpisce un avversario affetto dai Semi di Skandha di <strong>Karma vincolante</strong> con attacchi normali o caricati, applica Purificazione trikarmica: Oblio karmico a tale avversario e a tutti quelli vincolati, infliggendo <dendro>DAN da Dendro</dendro> pari a un 200% del suo ATT e a un 400% della sua maestria elementale.",
+      "1": "I DAN inflitti da Purificazione trikarmica: Oblio karmico sono considerati DAN da abilità elementale, e sono attivabili una volta ogni 0,2 s.",
+      "2": "L'effetto può durare fino a 10 s, e sarà rimosso dopo che Nahida avrà applicato 6 volte Purificazione trikarmica: Oblio karmico."
+    }
+  }
+}

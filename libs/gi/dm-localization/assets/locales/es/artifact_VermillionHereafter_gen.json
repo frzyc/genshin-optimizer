@@ -1,0 +1,29 @@
+{
+  "setName": "Deceso del Cinabrio",
+  "setEffects": {
+    "2": "ATQ +18%.",
+    "4": "Al usar la Habilidad Definitiva, obtienes el efecto de “destello emergente” durante 16 s, el cual aumenta el ATQ en un 8% y, además, hace que cada vez que el personaje pierda Vida, su ATQ aumente en un 10% adicional. Este efecto solo puede aumentar el ATQ un máximo de 4 veces de esta manera y activarse una vez cada 0.8 s. Los efectos de destello emergente se disiparán si el personaje es retirado de combate. Si el personaje vuelve a usar la Habilidad Definitiva mientras dicho efecto está activo, el destello emergente original también se disipará."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Flor de la Vitalidad",
+      "desc": "Un objeto conmemorativo tan vivo como el ser que lo resguardó cientos de años atrás."
+    },
+    "plume": {
+      "name": "Pluma del Resplandor",
+      "desc": "Una pluma de brillo tenue en la que se concentran muchos recuerdos."
+    },
+    "sands": {
+      "name": "Reliquia Solar",
+      "desc": "Un antiguo reloj de aspecto robusto y brillante como la arena cristalizada."
+    },
+    "goblet": {
+      "name": "Grabación del Contrato",
+      "desc": "Una antigua copa de arena cristalizada cuyo brillo no se ha perdido con la erosión del tiempo."
+    },
+    "circlet": {
+      "name": "Máscara Atronadora",
+      "desc": "Una máscara que, se dice, los habitantes de las montañas crearon para un Yaksha. Pese a su sencillo aspecto, su exterior es realmente lustroso."
+    }
+  }
+}

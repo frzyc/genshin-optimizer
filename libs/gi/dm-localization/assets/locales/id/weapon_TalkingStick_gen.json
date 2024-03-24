@@ -1,0 +1,24 @@
+{
+  "name": "Talking Stick",
+  "description": {
+    "0": "Sebagian besar orang akan menganggap pentungan bertatahkan obsidian ini memang cukup meyakinkan."
+  },
+  "passiveName": "\"The Silver Tongue\"",
+  "passiveDescription": {
+    "0": {
+      "0": "Meningkatkan ATK sebesar <cryo>16%</cryo> selama 15 detik setelah menerima efek Pyro, dapat terpicu sekali setiap 12 detik. Meningkatkan Elemental DMG Bonus seluruh elemen sebesar <cryo>12%</cryo> selama 15 detik setelah menerima efek Hydro, Cryo, Electro, atau Dendro, dapat terpicu sekali setiap 12 detik."
+    },
+    "1": {
+      "0": "Meningkatkan ATK sebesar <cryo>20%</cryo> selama 15 detik setelah menerima efek Pyro, dapat terpicu sekali setiap 12 detik. Meningkatkan Elemental DMG Bonus seluruh elemen sebesar <cryo>15%</cryo> selama 15 detik setelah menerima efek Hydro, Cryo, Electro, atau Dendro, dapat terpicu sekali setiap 12 detik."
+    },
+    "2": {
+      "0": "Meningkatkan ATK sebesar <cryo>24%</cryo> selama 15 detik setelah menerima efek Pyro, dapat terpicu sekali setiap 12 detik. Meningkatkan Elemental DMG Bonus seluruh elemen sebesar <cryo>18%</cryo> selama 15 detik setelah menerima efek Hydro, Cryo, Electro, atau Dendro, dapat terpicu sekali setiap 12 detik."
+    },
+    "3": {
+      "0": "Meningkatkan ATK sebesar <cryo>28%</cryo> selama 15 detik setelah menerima efek Pyro, dapat terpicu sekali setiap 12 detik. Meningkatkan Elemental DMG Bonus seluruh elemen sebesar <cryo>21%</cryo> selama 15 detik setelah menerima efek Hydro, Cryo, Electro, atau Dendro, dapat terpicu sekali setiap 12 detik."
+    },
+    "4": {
+      "0": "Meningkatkan ATK sebesar <cryo>32%</cryo> selama 15 detik setelah menerima efek Pyro, dapat terpicu sekali setiap 12 detik. Meningkatkan Elemental DMG Bonus seluruh elemen sebesar <cryo>24%</cryo> selama 15 detik setelah menerima efek Hydro, Cryo, Electro, atau Dendro, dapat terpicu sekali setiap 12 detik."
+    }
+  }
+}

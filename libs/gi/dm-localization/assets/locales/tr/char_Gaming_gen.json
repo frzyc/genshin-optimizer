@@ -1,0 +1,160 @@
+{
+  "name": "Gaming",
+  "title": "Aslan Yürekli Öncü",
+  "description": "Kılıç ve Kasa Güvenli Teslimat Bürosu muhafızı ve \"Kudretli Efsanevi Canavarlar\" Wushou dans ekibinin lideri.",
+  "constellationName": "Aslanın Uyanışı",
+  "auto": {
+    "name": "Yıldız Pençesi",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Saldırı</strong>",
+        "1": "Arka arkaya en fazla 4 saldırı yapar."
+      },
+      "charged": {
+        "0": "<strong>Yüklü Saldırı</strong>",
+        "1": "Zamanla Dayanıklılık harcar ve yakındaki tüm düşmanlara dönerek saldırır.",
+        "2": "Saldırıları daha güçlü bir darbeyle bitirir."
+      },
+      "plunging": {
+        "0": "<strong>Havadan Saldırı</strong>",
+        "1": "Havadayken dalışa geçerek yere vurur ve yoluna çıkan düşmanlara Alan Hasarı verir."
+      }
+    },
+    "skillParams": {
+      "0": "1 Vuruş Hasarı",
+      "1": "2 Vuruş Hasarı",
+      "2": "3 Vuruş Hasarı",
+      "3": "4 Vuruş Hasarı",
+      "4": "Yüklü Saldırı Döngüsel Hasarı",
+      "5": "Yüklü Saldırı Son Vuruş Hasarı",
+      "6": "Yüklü Saldırı Dayanıklılık Maliyeti",
+      "7": "Maks. Süre",
+      "8": "Havadan Saldırı Hasarı",
+      "9": "Havadan Saldırı Hasarı (Alçaktan/Yüksekten)",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Canavar Yükselişi",
+    "description": {
+      "0": "Wushou sanatlarını kullanarak öne doğru atılır ve bir hedefe veya yüzeye isabet ettiğinde havaya sıçrar.",
+      "1": "Gaming, Canavar Yükselişini kullanarak havaya yükseldiğinde hemen Havadan Saldırı yaparsa daha güçlü olan Havadan Saldırı: Büyülü Bulutgezeri kullanır.",
+      "2": "<br/>",
+      "3": "<strong>Havadan Saldırı: Büyülü Bulutgezer</strong>",
+      "4": "Canavar Yükselişi ile yapılan Havadan Saldırıdan gelen Hasar, diğer element tesirleriyle değişmeyecek şekilde <pyro>Ateş Hasarına</pyro> dönüşür. Gaming yere indiğinde belirli bir miktar Can tüketir. Gaming'in Canı bu şekilde en fazla %10'a kadar düşer.",
+      "5": "Büyülü Bulutgezer Hasarı, Havadan Saldırı Hasarı sayılır.",
+      "6": "<br/>",
+      "7": "<i>\"Uğurlu canavarlar yükseklere sıçrar, yeşilliklere uzanır; refahımızın gitgide arşa ulaşacağını simgeler. Sağlık ve zenginlik bizimle olsun, ömrümüz yeni güzelliklerle dolsun!\"</i>"
+    },
+    "skillParams": {
+      "0": "Havadan Saldırı: Büyülü Bulutgezer Hasarı",
+      "1": "Can Maliyeti",
+      "2": "BS",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Suanni'nin Yaldızlı Dansı",
+    "description": {
+      "0": "Gaming, Wushou Duruşuna girer, kısa süreliğine <pyro>Ateş</pyro> etkisine girip belirli bir miktar Can yeniler ve yoldaşı Suanni Man Chai'yi çağırır. Man Chai, hedefe saldırıp <pyro>Ateş Alan Hasarı</pyro> verir.",
+      "1": "Man Chai, hedefe kuvvetli bir darbe indirdikten sonra yakında bir konuma takla atıp ardından Gaming'e döner. Gaming ile bir araya geldikten sonra ise Man Chai alandan ayrılır ve Gaming'in Element Becerisinin Bekleme Süresi sıfırlanır.",
+      "2": "Wushou Duruşu aktifken Gaming'in müdahaleye direnci artar ve Büyülü Bulutgezer saldırısından sonra yere indiğinde veya Canavar Yükselişindeki hücum saldırısını tamamladığında Canı %50'nin üzerindeyse Man Chai'yi yeniden çağırır.",
+      "3": "Alandaki her Gaming karakteri aynı anda sadece 1 Man Chai bulundurabilir.",
+      "4": "Bu etki, Gaming savaş alanından ayrıldığında sona erer.",
+      "5": "<br/>",
+      "6": "<i>\"Hey gidi altın Suanni; servet dağıtır havai fişekler gibi! Zengin bir hayat diye buna denir şüphesiz ki!\"</i>"
+    },
+    "skillParams": {
+      "0": "Suanni Man Chai Hücum Hasarı",
+      "1": "Beceri İyileştirmesi",
+      "2": "Wushou Duruşu Süresi",
+      "3": "BS",
+      "4": "Enerji Maliyeti",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Dostluk Dansı",
+    "description": {
+      "0": "<strong>Canavar Yükselişinin</strong> Havadan Saldırı: Büyülü Bulutgezeri bir düşmana isabet ettiğinde Gaming 0,8sn boyunca her 0,2 saniyede bir kendi Maks. Canının %1,5'i kadar Can yeniler."
+    }
+  },
+  "passive2": {
+    "name": "Bolluk Ortamı",
+    "description": {
+      "0": "Gaming'in Canı %50'nin altına düştüğünde %20 Gelen İyileştirme Bonusu alır. Gaming'in Canı %50 veya üzerinde olduğunda ise Havadan Saldırı: Büyülü Bulutgezer %20 daha fazla Hasar verir."
+    }
+  },
+  "passive3": {
+    "name": "Dörtnala Koşan Canavar",
+    "description": {
+      "0": "Gündüzleri (06:00 – 18:00) grup üyelerin Hızlı Adım etkisi kazanır: Hareket Hızı %10 artar.",
+      "1": "Zindanlarda, Ezici Zindanlarda veya Hiçlik Sarmalında etkili değildir. Hızlı Adım etkileri birikmez."
+    }
+  },
+  "constellation1": {
+    "name": "Lütuf Getiren",
+    "description": {
+      "0": "<strong>Suanni'nin Yaldızlı Dansı</strong> ile çağrılan Suanni Man Chai, Gaming ile yeniden buluştuğunda Gaming'in Canı %15 yenilenir."
+    }
+  },
+  "constellation2": {
+    "name": "Erik Çiçeklerinin Arasında",
+    "description": {
+      "0": "Gaming iyileştirme aldığında eğer bu iyileştirme Gaming'in Maks. Canını geçerse 5sn boyunca Saldırısı %20 artar."
+    }
+  },
+  "constellation3": {
+    "name": "İradenin Uyanışı",
+    "description": {
+      "0": "<strong>Canavar Yükselişi</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation4": {
+    "name": "Dağlar Arasında Süzülürken",
+    "description": {
+      "0": "<strong>Canavar Yükselişinin</strong> Havadan Saldırı: Büyülü Bulutgezer vuruşu bir düşmana isabet ettiğinde Gaming için 2 Enerji yeniler. Bu etki 0,2 saniyede bir tetiklenebilir."
+    }
+  },
+  "constellation5": {
+    "name": "İblis Kaçıran Kükreyiş",
+    "description": {
+      "0": "<strong>Suanni'nin Yaldızlı Dansı</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation6": {
+    "name": "Tüm Canavarların Terbiyecisi",
+    "description": {
+      "0": "<strong>Canavar Yükselişinin</strong> Havadan Saldırı: Büyülü Bulutgezer vuruşunun Kritik Oranı %20 artar, Kritik Hasarı %40 artar, ayrıca Saldırı menzili de artar."
+    }
+  }
+}

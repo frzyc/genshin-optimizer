@@ -1,0 +1,24 @@
+{
+  "name": "Steinschneider-Prototyp",
+  "description": {
+    "0": "Ein uraltes Langschwert aus der Schwarzsteinschmiede, das durch Felsen gleitet, als wären sie Butter."
+  },
+  "passiveName": "Trümmer",
+  "passiveDescription": {
+    "0": {
+      "0": "Erhöht den ANG und die VTD bei Treffern mit Standardangriffen und heftigen Schlägen 6 s lang um <cryo>4 %</cryo>, 4-fach stapelbar. 0,3 s Abklingzeit."
+    },
+    "1": {
+      "0": "Erhöht den ANG und die VTD bei Treffern mit Standardangriffen und heftigen Schlägen 6 s lang um <cryo>5 %</cryo>, 4-fach stapelbar. 0,3 s Abklingzeit."
+    },
+    "2": {
+      "0": "Erhöht den ANG und die VTD bei Treffern mit Standardangriffen und heftigen Schlägen 6 s lang um <cryo>6 %</cryo>, 4-fach stapelbar. 0,3 s Abklingzeit."
+    },
+    "3": {
+      "0": "Erhöht den ANG und die VTD bei Treffern mit Standardangriffen und heftigen Schlägen 6 s lang um <cryo>7 %</cryo>, 4-fach stapelbar. 0,3 s Abklingzeit."
+    },
+    "4": {
+      "0": "Erhöht den ANG und die VTD bei Treffern mit Standardangriffen und heftigen Schlägen 6 s lang um <cryo>8 %</cryo>, 4-fach stapelbar. 0,3 s Abklingzeit."
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Croc de loup",
+  "description": {
+    "0": "La légende raconte que cette longue épée était autrefois utilisée par un chevalier nomade d'un passé lointain."
+  },
+  "passiveName": "Loup boréal",
+  "passiveDescription": {
+    "0": {
+      "0": "Les DGT infligés par les compétences et déchaînements élémentaires augmentent de <cryo>16 %</cryo>. Lorsqu'une compétence élémentaire touche un ennemi, son taux CRIT augmente de <cryo>2 %</cryo>. Lorsqu'un déchaînement élémentaire touche un ennemi, son taux CRIT augmente de <cryo>2 %</cryo>. Chacun de ces deux effets dure 10 s, et peut être cumulé 4 fois maximum et déclenché une fois toutes les 0,1 s."
+    },
+    "1": {
+      "0": "Les DGT infligés par les compétences et déchaînements élémentaires augmentent de <cryo>20 %</cryo>. Lorsqu'une compétence élémentaire touche un ennemi, son taux CRIT augmente de <cryo>2,5 %</cryo>. Lorsqu'un déchaînement élémentaire touche un ennemi, son taux CRIT augmente de <cryo>2,5 %</cryo>. Chacun de ces deux effets dure 10 s, et peut être cumulé 4 fois maximum et déclenché une fois toutes les 0,1 s."
+    },
+    "2": {
+      "0": "Les DGT infligés par les compétences et déchaînements élémentaires augmentent de <cryo>24 %</cryo>. Lorsqu'une compétence élémentaire touche un ennemi, son taux CRIT augmente de <cryo>3 %</cryo>. Lorsqu'un déchaînement élémentaire touche un ennemi, son taux CRIT augmente de <cryo>3 %</cryo>. Chacun de ces deux effets dure 10 s, et peut être cumulé 4 fois maximum et déclenché une fois toutes les 0,1 s."
+    },
+    "3": {
+      "0": "Les DGT infligés par les compétences et déchaînements élémentaires augmentent de <cryo>28 %</cryo>. Lorsqu'une compétence élémentaire touche un ennemi, son taux CRIT augmente de <cryo>3,5 %</cryo>. Lorsqu'un déchaînement élémentaire touche un ennemi, son taux CRIT augmente de <cryo>3,5 %</cryo>. Chacun de ces deux effets dure 10 s, et peut être cumulé 4 fois maximum et déclenché une fois toutes les 0,1 s."
+    },
+    "4": {
+      "0": "Les DGT infligés par les compétences et déchaînements élémentaires augmentent de <cryo>32 %</cryo>. Lorsqu'une compétence élémentaire touche un ennemi, son taux CRIT augmente de <cryo>4 %</cryo>. Lorsqu'un déchaînement élémentaire touche un ennemi, son taux CRIT augmente de <cryo>4 %</cryo>. Chacun de ces deux effets dure 10 s, et peut être cumulé 4 fois maximum et déclenché une fois toutes les 0,1 s."
+    }
+  }
+}

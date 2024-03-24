@@ -1,0 +1,24 @@
+{
+  "name": "Arco Enferrujado",
+  "description": {
+    "0": "Um arco de ferro completamente enferrujado. Uma pessoa comum não teria forças para sequer levantá-lo, muito menos dispará-lo."
+  },
+  "passiveName": "Disparo Rápido",
+  "passiveDescription": {
+    "0": {
+      "0": "Aumenta o Dano do Ataque Normal em <cryo>40%</cryo> mas diminui o Dano do Ataque Carregado em 10%."
+    },
+    "1": {
+      "0": "Aumenta o Dano do Ataque Normal em <cryo>50%</cryo> mas diminui o Dano do Ataque Carregado em 10%."
+    },
+    "2": {
+      "0": "Aumenta o Dano do Ataque Normal em <cryo>60%</cryo> mas diminui o Dano do Ataque Carregado em 10%."
+    },
+    "3": {
+      "0": "Aumenta o Dano do Ataque Normal em <cryo>70%</cryo> mas diminui o Dano do Ataque Carregado em 10%."
+    },
+    "4": {
+      "0": "Aumenta o Dano do Ataque Normal em <cryo>80%</cryo> mas diminui o Dano do Ataque Carregado em 10%."
+    }
+  }
+}

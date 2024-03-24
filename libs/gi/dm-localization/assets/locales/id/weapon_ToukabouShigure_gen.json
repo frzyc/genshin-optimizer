@@ -1,0 +1,24 @@
+{
+  "name": "Toukabou Shigure",
+  "description": {
+    "0": "Payung kertas minyak yang agak istimewa. Meskipun sudah terbiasa dengan angin dan hujan dalam pengembaraan yang panjang, mungkin seseorang akan bisa memperoleh kebahagiaan saat mengagumi pemandangan hujan di bawah perlindungan payung ini."
+  },
+  "passiveName": "Kaidan: Rainfall Earthbinder",
+  "passiveDescription": {
+    "0": {
+      "0": "Setelah serangan mengenai musuh, akan memberikan status Cursed Parasol selama 10 detik kepada salah satu musuh tersebut. Efek ini bisa terpicu maksimum 15 detik sekali; Jika target dikalahkan saat sedang berada dalam status ini, maka cooldown status ini akan langsung selesai. DMG yang diakibatkan pengguna Senjata terhadap musuh yang berada dalam status ini akan meningkat <cryo>16%</cryo>."
+    },
+    "1": {
+      "0": "Setelah serangan mengenai musuh, akan memberikan status Cursed Parasol selama 10 detik kepada salah satu musuh tersebut. Efek ini bisa terpicu maksimum 15 detik sekali; Jika target dikalahkan saat sedang berada dalam status ini, maka cooldown status ini akan langsung selesai. DMG yang diakibatkan pengguna Senjata terhadap musuh yang berada dalam status ini akan meningkat <cryo>20%</cryo>."
+    },
+    "2": {
+      "0": "Setelah serangan mengenai musuh, akan memberikan status Cursed Parasol selama 10 detik kepada salah satu musuh tersebut. Efek ini bisa terpicu maksimum 15 detik sekali; Jika target dikalahkan saat sedang berada dalam status ini, maka cooldown status ini akan langsung selesai. DMG yang diakibatkan pengguna Senjata terhadap musuh yang berada dalam status ini akan meningkat <cryo>24%</cryo>."
+    },
+    "3": {
+      "0": "Setelah serangan mengenai musuh, akan memberikan status Cursed Parasol selama 10 detik kepada salah satu musuh tersebut. Efek ini bisa terpicu maksimum 15 detik sekali; Jika target dikalahkan saat sedang berada dalam status ini, maka cooldown status ini akan langsung selesai. DMG yang diakibatkan pengguna Senjata terhadap musuh yang berada dalam status ini akan meningkat <cryo>28%</cryo>."
+    },
+    "4": {
+      "0": "Setelah serangan mengenai musuh, akan memberikan status Cursed Parasol selama 10 detik kepada salah satu musuh tersebut. Efek ini bisa terpicu maksimum 15 detik sekali; Jika target dikalahkan saat sedang berada dalam status ini, maka cooldown status ini akan langsung selesai. DMG yang diakibatkan pengguna Senjata terhadap musuh yang berada dalam status ini akan meningkat <cryo>32%</cryo>."
+    }
+  }
+}

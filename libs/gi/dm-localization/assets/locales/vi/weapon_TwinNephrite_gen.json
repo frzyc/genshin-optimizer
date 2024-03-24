@@ -1,0 +1,24 @@
+{
+  "name": "Ngọc Sinh Đôi",
+  "description": {
+    "0": "Ngọc bội tinh xảo được ghép từ hai miếng ngọc."
+  },
+  "passiveName": "Chiến Thuật Đột Kích",
+  "passiveDescription": {
+    "0": {
+      "0": "Trong 15s sau khi đánh bại kẻ địch, tốc độ di chuyển và tấn công tăng <cryo>12%</cryo>."
+    },
+    "1": {
+      "0": "Trong 15s sau khi đánh bại kẻ địch, tốc độ di chuyển và tấn công tăng <cryo>14%</cryo>."
+    },
+    "2": {
+      "0": "Trong 15s sau khi đánh bại kẻ địch, tốc độ di chuyển và tấn công tăng <cryo>16%</cryo>."
+    },
+    "3": {
+      "0": "Trong 15s sau khi đánh bại kẻ địch, tốc độ di chuyển và tấn công tăng <cryo>18%</cryo>."
+    },
+    "4": {
+      "0": "Trong 15s sau khi đánh bại kẻ địch, tốc độ di chuyển và tấn công tăng <cryo>20%</cryo>."
+    }
+  }
+}

@@ -1,0 +1,161 @@
+{
+  "name": "Chevreuse",
+  "title": "Braccio armato della legge",
+  "description": "La capitana della Pattuglia speciale di sicurezza e sorveglianza, che porta il sigillo della giustizia perennemente apposto sul cuore. Il suo moschetto non mirerà mai a nessuno se non a rei e malfattori.",
+  "constellationName": "Sclopetum Ensiferum",
+  "auto": {
+    "name": "Baionetta d'avanguardia modificata",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attacco normale</strong>",
+        "1": "Sferra fino a 4 colpi di lancia consecutivi."
+      },
+      "charged": {
+        "0": "<strong>Attacco caricato</strong>",
+        "1": "Consuma una determinata quantità di vigore per attaccare balzando in avanti e infliggendo DAN agli avversari lungo la traiettoria."
+      },
+      "plunging": {
+        "0": "<strong>Attacco in picchiata</strong>",
+        "1": "Attacca scagliandosi contro il suolo da mezz'aria, infliggendo DAN agli avversari lungo la traiettoria e DAN ad area all'impatto."
+      }
+    },
+    "skillParams": {
+      "0": "DAN da 1º colpo",
+      "1": "DAN da 2º colpo",
+      "2": "DAN da 3º colpo",
+      "3": "DAN da 4º colpo",
+      "4": "DAN da ATT caricato",
+      "5": "Costo vigore ATT caricato",
+      "6": "DAN da ATT in picchiata",
+      "7": "DAN da ATT in picchiata basso/alto",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Fuoco d'interdizione rapido a corto raggio",
+    "description": {
+      "0": "Chevreuse imbraccia il suo moschetto e spara agli avversari per infliggere <pyro>DAN da Pyro ad area</pyro>.",
+      "1": "Per un breve lasso di tempo dopo lo sparo, i PS del tuo personaggio attivo presente in campo vengono rigenerati costantemente in base ai PS max di Chevreuse. La pressione prolungata dell'abilità permette di effettuare un tiro alternativo.",
+      "2": "<br/>",
+      "3": "<strong>Pressione prolungata</strong>",
+      "4": "Entra in modalità di mira, agganciando un bersaglio nella sua linea di tiro per sparare un colpo d'interdizione ad alta precisione. Se è in possesso di una Pallottola sovraccarica, Chevreuse spara quest'ultima infliggendo <pyro>DAN da Pyro</pyro> aumentati in un'area d'effetto di ampiezza maggiore.",
+      "5": "Chevreuse guadagna 1 Pallottola sovraccarica ogni volta che un membro vicino del gruppo innesca una reazione di Sovraccarico, e non può averne più di 1 alla volta.",
+      "6": "<br/>",
+      "7": "<strong>Archè: Ousia</strong>",
+      "8": "A determinati intervalli, dopo aver colpito il bersaglio con Fuoco d'interdizione rapido a corto raggio, Chevreuse genera una Lama nascente che infligge <pyro>DAN da Pyro</pyro> di polarità Ousia.",
+      "9": "<br/>",
+      "10": "<i>\"A dirla tutta, le regole di addestramento menzionavano solo la frase 'fuoco d'interdizione', ma il protagonista di questo romanzo è convinto che la ricercatezza lessicale non solo possa influire positivamente sul morale delle truppe, ma anche fiaccare quello degli avversari fin dall'inizio della battaglia... È una linea di pensiero che sposo appieno, così ho deciso di applicare qualche modifica al regolamento!\"</i>"
+    },
+    "skillParams": {
+      "0": "DAN da pressione",
+      "1": "DAN da pressione prolungata",
+      "2": "DAN da Pallottola sovraccarica",
+      "3": "RIGEN PS nel tempo",
+      "4": "Durata guarigione",
+      "5": "DAN da Lama nascente",
+      "6": "Intervallo Lama nascente",
+      "7": "TdR",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Cerchio di deflagrazione",
+    "description": {
+      "0": "Chevreuse usa il suo moschetto per sparare una granata esplosiva contro gli avversari, infliggendo <pyro>DAN da Pyro ad area</pyro>. All'impatto, il proiettile si distrugge disperdendo un gran numero di bossoli secondari, che scoppiano a loro volta dopo un breve intervallo di tempo, infliggendo <pyro>DAN da Pyro</pyro> agli avversari nelle vicinanze.",
+      "1": "<br/>",
+      "2": "<i>\"In linea teorica, una deflagrazione rettangolare sarebbe molto più efficiente per distruggere le formazioni nemiche. Sfortunatamente, nella maggior parte dei casi, l'onda d'urto ha una sezione trasversale di forma circolare; per questo, i bossoli esplosivi secondari vanno disposti come della frutta su una torta per creare un anello intorno al bordo.\"</i>"
+    },
+    "skillParams": {
+      "0": "DAN da Granata esplosiva",
+      "1": "DAN da Scoppio ausiliario",
+      "2": "TdR",
+      "3": "Costo energia",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Tattiche coordinate dell'avanguardia",
+    "description": {
+      "0": "Quando tutti i membri del gruppo appartengono a <pyro>Pyro</pyro> ed <electro>Electro</electro>, e ci sono almeno un personaggio di tipo Pyro e uno di tipo Electro nel gruppo, Chevreuse conferisce Tattiche coordinate ai membri del gruppo vicini: quando un personaggio innesca la reazione di Sovraccarico, le RES a <pyro>Pyro</pyro> ed <electro>Electro</electro> degli avversari colpiti da tale reazione diminuisce di un 40% per 6 s.",
+      "1": "L'effetto Tattiche coordinate viene rimosso quando i tipi elementali dei personaggi del gruppo non rispettano i requisiti minimi del talento passivo."
+    }
+  },
+  "passive2": {
+    "name": "Coordinazione della forza verticale",
+    "description": {
+      "0": "Nei 30 s dopo che Chevreuse lancia una Pallottola sovraccarica usando <strong>Fuoco d'interdizione rapido a corto raggio</strong>, l'ATT dei personaggi vicini di tipo <pyro>Pyro</pyro> o <electro>Electro</electro> presenti nel gruppo aumenta di un 1% per ogni 1.000 PS max di Chevreuse. In questo modo, l'ATT può aumentare fino a un 40% massimo."
+    }
+  },
+  "passive3": {
+    "name": "Marcia a doppio tempo",
+    "description": {
+      "0": "Diminuisce di un 20% il consumo di vigore durante lo Scatto per i membri del tuo gruppo.",
+      "1": "Non è cumulabile con talenti passivi che conferiscono gli stessi effetti."
+    }
+  },
+  "constellation1": {
+    "name": "Risolutezza della prima linea",
+    "description": {
+      "0": "Quando il personaggio attivo nello stato di Tattiche coordinate (a esclusione di Chevreuse) innesca una reazione di Sovraccarico, recupera 6 di energia. Quest'effetto può attivarsi una volta ogni 10 s.",
+      "1": "Richiede il talento passivo Tattiche coordinate dell'avanguardia."
+    }
+  },
+  "constellation2": {
+    "name": "Esplosione di precisione",
+    "description": {
+      "0": "Dopo aver colpito un bersaglio con la variante a pressione prolungata di <strong>Fuoco d'interdizione rapido a corto raggio</strong>, innesca 2 esplosioni a catena vicino al punto d'impatto. Ogni esplosione infligge <pyro>DAN da Pyro</pyro> pari a un 120% dell'ATT di Chevreuse. Quest'effetto può attivarsi una volta ogni 10 s, e i DAN inflitti in questo modo sono considerati DAN da abilità elementale."
+    }
+  },
+  "constellation3": {
+    "name": "Abile tecnica di disassemblaggio",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Fuoco d'interdizione rapido a corto raggio</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation4": {
+    "name": "Tecnica segreta di tiro multiplo",
+    "description": {
+      "0": "Dopo aver usato <strong>Cerchio di deflagrazione</strong>, la variante a pressione prolungata di <strong>Fuoco d'interdizione rapido a corto raggio</strong> non entra in TdR. Questo effetto viene rimosso dopo aver usato due volte la variante a pressione prolungata di Fuoco d'interdizione rapido a corto raggio o dopo 6 s."
+    }
+  },
+  "constellation5": {
+    "name": "Munizioni incendiarie potenziate",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Cerchio di deflagrazione</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation6": {
+    "name": "Annientamento del male",
+    "description": {
+      "0": "Dopo i 12 s dell'effetto di guarigione di <strong>Fuoco d'interdizione rapido a corto raggio</strong>, i PS di tutti i membri del gruppo vicini vengono ripristinati una volta sola di una quantità pari a un 10% dei PS max di Chevreuse.",
+      "1": "Quando un membro del gruppo viene guarito da Fuoco d'interdizione rapido a corto raggio, ottiene un 20% di <pyro>bonus DAN da Pyro</pyro> e <electro>bonus DAN da Electro</electro> per 8 s. Massimo 3 accumuli. La durata di ciascun accumulo è indipendente dalle altre."
+    }
+  }
+}

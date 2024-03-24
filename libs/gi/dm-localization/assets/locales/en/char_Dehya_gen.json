@@ -1,0 +1,181 @@
+{
+  "name": "Dehya",
+  "title": "Flame-Mane",
+  "description": "A member of the Eremites, a mercenary organization that roams the sands of Sumeru. Valiant and powerful, she enjoys great fame amongst her fellow Eremites.",
+  "constellationName": "Mantichora",
+  "auto": {
+    "name": "Sandstorm Assault",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Attack</strong>",
+        "1": "Performs up to 4 consecutive strikes using her Claymore and her martial arts."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Drains Stamina over time to perform continuous slashes.",
+        "2": "At the end of the sequence, performs a more powerful slash."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Plunges from mid-air to strike the ground, damaging opponents along the path and dealing AoE DMG upon impact."
+      }
+    },
+    "skillParams": {
+      "0": "1-Hit DMG",
+      "1": "2-Hit DMG",
+      "2": "3-Hit DMG",
+      "3": "4-Hit DMG",
+      "4": "Charged Attack Cyclic DMG",
+      "5": "Charged Attack Final DMG",
+      "6": "Charged Attack Stamina Cost",
+      "7": "Max Duration",
+      "8": "Plunge DMG",
+      "9": "Low/High Plunge DMG",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Molten Inferno",
+    "description": {
+      "0": "This art of Dehya's own invention changes its method of use depending on the combat situation.",
+      "1": "<br/>",
+      "2": "<strong>Indomitable Flame</strong>",
+      "3": "This skill will be unleashed should there be no Fiery Sanctum field created by Dehya herself present at the time.",
+      "4": "Deals <pyro>AoE Pyro DMG</pyro>, and creates a field known as Fiery Sanctum.",
+      "5": "<br/>",
+      "6": "<strong>Ranging Flame</strong>",
+      "7": "This skill will be unleashed should a Fiery Sanctum field created by Dehya herself already exist.",
+      "8": "Dehya will perform a leaping attack, dealing <pyro>AoE Pyro DMG</pyro> before recreating a Fiery Sanctum field at her new position.",
+      "9": "A Fiery Sanctum field created this way will inherit the remaining duration of the previous field.",
+      "10": "<br/>",
+      "11": "Ranging Flame can be used only once throughout a single Fiery Sanctum field's duration.",
+      "12": "<br/>",
+      "13": "<strong>Fiery Sanctum</strong>",
+      "14": "When an opponent within a Fiery Sanctum field takes DMG, the field will unleash a coordinated attack, dealing <pyro>AoE Pyro DMG</pyro> to them based on Dehya's ATK and Max HP. This effect can be triggered once every 2.5s.",
+      "15": "Active characters within this field have their resistance to interruption increased, and when such characters take DMG, a portion of that damage will be mitigated and flow into Redmane's Blood. Dehya will then take this DMG over 10s. When the mitigated DMG stored by Redmane's Blood reaches or goes over a certain percentage of Dehya's Max HP, she will stop mitigating DMG in this way.",
+      "16": "<br/>",
+      "17": "Only 1 Fiery Sanctum created by Dehya herself can exist at the same time.",
+      "18": "<br/>",
+      "19": "<i>Walk this fiery ordeal with me and purge all impurity, just as a beast of flames that must descend from the blaze.</i>"
+    },
+    "skillParams": {
+      "0": "Indomitable Flame DMG",
+      "1": "Ranging Flame DMG",
+      "2": "Field DMG",
+      "3": "Mitigation",
+      "4": "Redmane's Blood Maximum",
+      "5": "Field Duration",
+      "6": "CD",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Leonine Bite",
+    "description": {
+      "0": "Unleashing her burning anger and casting her inconvenient blade aside, Dehya enters the Blazing Lioness state and increases her resistance to interruption.",
+      "1": "In this state, Dehya will automatically and continuously unleash the Flame-Mane's Fists, dealing <pyro>Pyro DMG</pyro> based on her ATK and Max HP, and when its duration ends, she will unleash an Incineration Drive, dealing <pyro>AoE Pyro DMG</pyro> based on her ATK and Max HP.",
+      "2": "If a Fiery Sanctum field created by Dehya's own Elemental Skill \"Molten Inferno\" exists when this ability is unleashed, Dehya will retrieve it, and then create another field once Blazing Lioness's duration expires. This field will take on the retrieved field's duration at the moment of its retrieval.",
+      "3": "In this state, Dehya will be unable to cast her Elemental Skill, or perform Normal, Charged, and Plunging Attacks. \"Normal Attack: Sandstorm Assault\" and Elemental Skill \"Molten Inferno\" will be replaced by \"Roaring Barrage.\"",
+      "4": "<br/>",
+      "5": "<strong>Roaring Barrage</strong>",
+      "6": "Unleashing Roaring Barrage within 0.4s after each Flame-Mane's Fist strike will increase the speed at which the next Flame-Mane's Fist strike will be triggered.",
+      "7": "<br/>",
+      "8": "<i>Even the flowing flames must obey her rage and at her command become her fangs and claws.</i>"
+    },
+    "skillParams": {
+      "0": "Flame-Mane's Fist DMG",
+      "1": "Incineration Drive DMG",
+      "2": "Duration",
+      "3": "CD",
+      "4": "Energy Cost",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Unstinting Succor",
+    "description": {
+      "0": "Within 6 seconds after Dehya retrieves the Fiery Sanctum field through <strong>Molten Inferno: Ranging Flame</strong> or <strong>Leonine Bite</strong>, she will take 60% less DMG when receiving DMG from Redmane's Blood. This effect can be triggered once every 2s.",
+      "1": "Additionally, within 9s after Dehya unleashes <strong>Molten Inferno: Indomitable Flame</strong>, she will grant all party members the Gold-Forged Form state. This state will further increase a character's resistance to interruption when they are within the Fiery Sanctum field. Gold-Forged Form can be activated once every 18s."
+    }
+  },
+  "passive2": {
+    "name": "Stalwart and True",
+    "description": {
+      "0": "When her HP is less than 40%, Dehya will recover 20% of her Max HP and will restore 6% of her Max HP every 2s for the next 10s. This effect can be triggered once every 20s."
+    }
+  },
+  "passive3": {
+    "name": "The Sunlit Way",
+    "description": {
+      "0": "During the day (06:00 – 18:00), your party members gain the Swift Stride effect: Movement SPD increased by 10%.",
+      "1": "Does not take effect in Domains, Trounce Domains, or Spiral Abyss. Swift Stride does not stack."
+    }
+  },
+  "constellation1": {
+    "name": "The Flame Incandescent",
+    "description": {
+      "0": "Dehya's Max HP is increased by 20%, and she deals bonus DMG based on her Max HP when using the following attacks:",
+      "1": [
+        "<strong>Molten Inferno</strong>'s DMG will be increased by 3.6% of her Max HP.",
+        "<strong>Leonine Bite</strong>'s DMG will be increased by 6% of her Max HP."
+      ]
+    }
+  },
+  "constellation2": {
+    "name": "The Sand-Blades Glittering",
+    "description": {
+      "0": "When Dehya uses <strong>Molten Inferno: Ranging Flame</strong>, the duration of the recreated Fiery Sanctum field will be increased by 6s.",
+      "1": "Additionally, when a Fiery Sanctum exists on the field, DMG dealt by its next coordinated attack will be increased by 50% when active character(s) within the Fiery Sanctum field are attacked."
+    }
+  },
+  "constellation3": {
+    "name": "A Rage Swift as Fire",
+    "description": {
+      "0": "Increases the Level of <strong>Leonine Bite</strong> by 3.",
+      "1": "Maximum upgrade level is 15."
+    }
+  },
+  "constellation4": {
+    "name": "An Oath Abiding",
+    "description": {
+      "0": "When Flame-Mane's Fist and Incineration Drive attacks unleashed during <strong>Leonine Bite</strong> hit opponents, they will restore 1.5 Energy for Dehya and 2.5% of her Max HP. This effect can be triggered once every 0.2s."
+    }
+  },
+  "constellation5": {
+    "name": "The Alpha Unleashed",
+    "description": {
+      "0": "Increases the Level of <strong>Molten Inferno</strong> by 3.",
+      "1": "Maximum upgrade level is 15."
+    }
+  },
+  "constellation6": {
+    "name": "The Burning Claws Cleaving",
+    "description": {
+      "0": "The CRIT Rate of <strong>Leonine Bite</strong> is increased by 10%.",
+      "1": "Additionally, after a Flame-Mane's Fist attack hits an opponent and deals CRIT Hits during a single Blazing Lioness state, it will cause the CRIT DMG of Leonine Bite to increase by 15% for the rest of Blazing Lioness's duration and extend that duration by 0.5s. This effect can be triggered every 0.2s. The duration can be extended for a maximum of 2s and CRIT DMG can be increased by a maximum of 60% this way."
+    }
+  }
+}

@@ -1,0 +1,171 @@
+{
+  "name": "Beidou",
+  "title": "Rainha do Mar Sem Coroa",
+  "description": "Líder da Frota Crux. Ela é uma chefe sem limites e franca.",
+  "constellationName": "Victor Mare",
+  "auto": {
+    "name": "Conquista do Oceano",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Ataque Normal</strong>",
+        "1": "Realiza até 5 golpes consecutivos."
+      },
+      "charged": {
+        "0": "<strong>Ataque Carregado</strong>",
+        "1": "Drena Stamina ao longo do tempo para realizar cortes contínuos.",
+        "2": "Ao final da sequência, realiza um corte ainda mais poderoso."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Imersivo</strong>",
+        "1": "Mergulha em pleno ar para golpear o chão, danificando inimigos em seu caminho e infligindo dano em uma AdE durante o impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Dano do 1° Golpe",
+      "1": "Dano do 2° Golpe",
+      "2": "Dano do 3° Golpe",
+      "3": "Dano do 4° Golpe",
+      "4": "Dano do 5° Golpe",
+      "5": "Dano de Loop de Ataque Carregado",
+      "6": "Dano Final de Ataque Carregado",
+      "7": "Consumo de Stamina de Ataque Carregado",
+      "8": "Duração Máxima",
+      "9": "Dano Durante a Queda",
+      "10": "Dano de Queda de Baixa/Alta Altitude",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Invocadora da Maré",
+    "description": {
+      "0": "Nada com que se deva preocupar. Se alguém levantar uma mão contra ela ou contra os seus homens, ela se vingará dez vezes mais com espada e trovão.",
+      "1": "<br/>",
+      "2": "<strong>Pressionar</strong>",
+      "3": "Acumulando o poder dos raios, Beidou balança sua lâmina para frente ferozmente, causando <electro>Dano Electro</electro>.",
+      "4": "<br/>",
+      "5": "<strong>Manter pressionado</strong>",
+      "6": "Levanta sua arma como um escudo. Dano Máximo absorvido aumenta conforme a Vida Máxima de Beidou.",
+      "7": "Ataca usando a energia armazenada no Espadão ao soltar ou quando a duração da habilidade expira, causando <electro>Dano Electro</electro>. Dano causado aumenta com o número de vezes em que Beidou é atacada ao longo da duração da habilidade. O maior Bônus de Dano será atingido quando esse efeito for desencadeado duas vezes.",
+      "8": "O escudo possui as seguintes propriedades:",
+      "9": "Tem 250% de eficiência em absorção de <electro>Dano Electro</electro>",
+      "10": "Aplica o <electro>Elemento Electro</electro> para a Beidou ao ativar.",
+      "11": "<br/>",
+      "12": "<i>Conquistar o alto-mar! Seguir as ondas e perseguir a tempestade!</i>"
+    },
+    "skillParams": {
+      "0": "Absorção de Dano de Escudo",
+      "1": "Dano Básico",
+      "2": "Aumenta o Dano ao ser Atacado",
+      "3": "Tempo de Recarga",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Quebrador de Tempestades",
+    "description": {
+      "0": "Relembrando seu abate da grande fera Haishan, Beidou clama pela força monstruosa e relâmpagos para criar um Escudo do Trovão ao seu redor, infligindo <electro>Dano Electro</electro> aos inimigos próximos.",
+      "1": "<br/>",
+      "2": "<strong>Escudo do Trovão</strong>",
+      "3": "Quando Ataques Normais e Carregados atingem, eles criam uma descarga elétrica que pode saltar entre os inimigos, infligindo <electro>Dano Electro</electro>.",
+      "4": "Aumenta a resistência do personagem a interrupções e diminui o Dano recebido.",
+      "5": "<br/>",
+      "6": "No máximo 1 descarga de relâmpago pode ser desencadeada por segundo.",
+      "7": "<br/>",
+      "8": "<i>Com o estrondo do trovão, Haishan foi derrotado.</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Habilidade",
+      "1": "Dano de Relâmpago",
+      "2": "Redução de Dano",
+      "3": "Duração",
+      "4": "Tempo de Recarga",
+      "5": "Energia Elemental",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Retribuição",
+    "description": {
+      "0": "Ao atacar com <strong>Invocadora da Maré</strong> no exato momento em que o personagem é atingido, concede o bônus de Dano máximo."
+    }
+  },
+  "passive2": {
+    "name": "Tormenta Elétrica",
+    "description": {
+      "0": "Obtém os seguintes efeitos por 10s após lançar a <strong>Invocadora da Maré</strong> com seu bônus máximo de Dano:",
+      "1": "O Dano causado pelos Ataques Normais e Carregados aumenta em 15%. A Vel. de Ataque dos Ataques Normais ou Carregados é aumentada em 15%.",
+      "2": "Reduz grandemente o atraso antes de lançar Ataques Carregados."
+    }
+  },
+  "passive3": {
+    "name": "Conquistadora das Marés",
+    "description": {
+      "0": "Diminui o consumo de Stamina ao Nadar de todos os seus personagens em 20%.",
+      "1": "Não acumulável com Talentos Passivos que concedem exatamente os mesmos efeitos."
+    }
+  },
+  "constellation1": {
+    "name": "Flagelo da Fera do Mar",
+    "description": {
+      "0": "Quando o <strong>Quebrador de Tempestades</strong> é usado:",
+      "1": "Cria um escudo que absorve até 16% de Dano baseado na Vida Máxima de Beidou por 15 segundos.",
+      "2": "Esse escudo absorve 250% do <electro>Dano Electro</electro> mais eficientemente."
+    }
+  },
+  "constellation2": {
+    "name": "Sobre o Mar Turbulento, o Trovão Surge",
+    "description": {
+      "0": "O Arco Relâmpago do <strong>Quebrador de Tempestades</strong> pode rebater em 2 alvos adicionais."
+    }
+  },
+  "constellation3": {
+    "name": "Invocadora da Tempestade",
+    "description": {
+      "0": "Aumenta o nível da <strong>Invocadora da Maré</strong> em 3.",
+      "1": "O nível máximo de elevação é 15."
+    }
+  },
+  "constellation4": {
+    "name": "Vingança Impressionante",
+    "description": {
+      "0": "Após ser atacada, os Ataques Normais de Beidou ganham 20% de <electro>Dano Electro</electro> adicional por 10s."
+    }
+  },
+  "constellation5": {
+    "name": "Caminhante da Maré Carmesim",
+    "description": {
+      "0": "Aumenta o nível do <strong>Quebrador de Tempestades</strong> em 3.",
+      "1": "O nível máximo de elevação é 15."
+    }
+  },
+  "constellation6": {
+    "name": "Destruição do Mal",
+    "description": {
+      "0": "Ao longo da duração do <strong>Quebrador de Tempestades</strong>, a <electro>RES Electro</electro> dos inimigos próximos é diminuída em 15%."
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "setName": "Viridescent Venerer",
+  "setEffects": {
+    "2": "Anemo DMG Bonus +15%",
+    "4": "Increases Swirl DMG by 60%. Decreases opponent's Elemental RES to the element infused in the Swirl by 40% for 10s."
+  },
+  "pieces": {
+    "flower": {
+      "name": "In Remembrance of Viridescent Fields",
+      "desc": "A wild flower that was once a ubiquitous sight in its homeland. It was picked by a hunter who wore it on their chest."
+    },
+    "plume": {
+      "name": "Viridescent Arrow Feather",
+      "desc": "The fletching of an arrow that once pierced right through its prey, but somehow still remains spotless."
+    },
+    "sands": {
+      "name": "Viridescent Venerer's Determination",
+      "desc": "A wondrous instrument that a hunter once wore. It forever points towards their prey."
+    },
+    "goblet": {
+      "name": "Viridescent Venerer's Vessel",
+      "desc": "A water pouch used by the Viridescent Venerer. Its capacity is much greater than one would expect."
+    },
+    "circlet": {
+      "name": "Viridescent Venerer's Diadem",
+      "desc": "A proud crown that once belonged to the Viridescent Venerer. It is as lush and green as the breezes of the wild."
+    }
+  }
+}

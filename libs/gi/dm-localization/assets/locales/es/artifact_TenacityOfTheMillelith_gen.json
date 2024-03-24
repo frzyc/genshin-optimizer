@@ -1,0 +1,29 @@
+{
+  "setName": "Tenacidad de la Geoarmada",
+  "setEffects": {
+    "2": "Vida +20%.",
+    "4": "Cuando una Habilidad Elemental golpea a un enemigo, el ATQ de todos los personajes del equipo cercanos aumenta en un 20% y su Protección de Escudo aumenta en un 30% durante 3 s. Este efecto puede tener lugar cada 0.5 s y se activa incluso cuando el personaje que lleva equipado este conjunto de artefactos está en tu equipo pero no en uso."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Flor del Honor",
+      "desc": "Una flor hecha de una fina lámina de oro. Representa la gloria y el honor obtenidos por quien la lleva."
+    },
+    "plume": {
+      "name": "Pluma de Guerra Ceremonial",
+      "desc": "Una pluma de halcón que se utiliza en ceremonias. Muestra al resto del mundo la dignidad y resolución de Liyue."
+    },
+    "sands": {
+      "name": "Reloj de Sol de Oricalco",
+      "desc": "Un dispositivo muy sencillo para saber la hora. En época de guerra, era parte del equipamiento de la Geoarmada."
+    },
+    "goblet": {
+      "name": "Copa del Juramento",
+      "desc": "Una copa de oro que la Geoarmada utiliza para prestar juramento. Todavía contiene trazas de aroma a vino."
+    },
+    "circlet": {
+      "name": "Yelmo Vetusto del General",
+      "desc": "Un yelmo espléndido procedente de una época ya pasada. Si limpias el polvo acumulado en su superficie, se verá como nuevo."
+    }
+  }
+}

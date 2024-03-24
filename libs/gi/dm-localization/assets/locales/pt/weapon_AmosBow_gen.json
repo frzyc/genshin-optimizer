@@ -1,0 +1,24 @@
+{
+  "name": "Arco de Amos",
+  "description": {
+    "0": "Um arco extremamente antigo que reteve seu poder, apesar de seu mestre original ter desaparecido há muito tempo. Ele extrai poder de todos e de tudo no mundo, e quanto mais longe você estiver daquilo que seu coração deseja, mais poderoso será."
+  },
+  "passiveName": "Inabalável",
+  "passiveDescription": {
+    "0": {
+      "0": "Aumenta o Dano infligido pelo Ataque Normal e Ataque Carregado em <cryo>12%</cryo>. A cada 0.1s depois de disparar uma flecha com o Ataque Normal e Ataque Carregado, terá aumento de Dano de <cryo>8%</cryo>, acumulando até um máximo de 5 vezes."
+    },
+    "1": {
+      "0": "Aumenta o Dano infligido pelo Ataque Normal e Ataque Carregado em <cryo>15%</cryo>. A cada 0.1s depois de disparar uma flecha com o Ataque Normal e Ataque Carregado, terá aumento de Dano de <cryo>10%</cryo>, acumulando até um máximo de 5 vezes."
+    },
+    "2": {
+      "0": "Aumenta o Dano infligido pelo Ataque Normal e Ataque Carregado em <cryo>18%</cryo>. A cada 0.1s depois de disparar uma flecha com o Ataque Normal e Ataque Carregado, terá aumento de Dano de <cryo>12%</cryo>, acumulando até um máximo de 5 vezes."
+    },
+    "3": {
+      "0": "Aumenta o Dano infligido pelo Ataque Normal e Ataque Carregado em <cryo>21%</cryo>. A cada 0.1s depois de disparar uma flecha com o Ataque Normal e Ataque Carregado, terá aumento de Dano de <cryo>14%</cryo>, acumulando até um máximo de 5 vezes."
+    },
+    "4": {
+      "0": "Aumenta o Dano infligido pelo Ataque Normal e Ataque Carregado em <cryo>24%</cryo>. A cada 0.1s depois de disparar uma flecha com o Ataque Normal e Ataque Carregado, terá aumento de Dano de <cryo>16%</cryo>, acumulando até um máximo de 5 vezes."
+    }
+  }
+}

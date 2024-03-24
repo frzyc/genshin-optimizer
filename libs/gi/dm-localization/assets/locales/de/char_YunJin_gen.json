@@ -1,0 +1,164 @@
+{
+  "name": "Yun Jin",
+  "title": "Bühnenschönheit",
+  "description": "Eine berühmte Opernsängerin in Liyue, die sowohl im Schreiben als auch im Gesang erfahren ist. Ihr Stil ist einzigartig, exquisit und sanft, genauso wie sie selbst.",
+  "constellationName": "Opera Grandis",
+  "auto": {
+    "name": "Wolkenfetzer",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Standardangriff</strong>",
+        "1": "Führt bis zu 5 Lanzenstiche hintereinander aus."
+      },
+      "charged": {
+        "0": "<strong>Heftiger Schlag</strong>",
+        "1": "Verbraucht eine gewisse Menge Ausdauer, sticht geschwind nach vorn und fügt den Gegnern in der Bahn Schaden zu."
+      },
+      "plunging": {
+        "0": "<strong>Angriff aus dem Fall</strong>",
+        "1": "Schlägt beim Fallen aus der Luft auf den Boden, greift alle Gegner in der Bahn an und verursacht beim Aufkommen Flächenschaden."
+      }
+    },
+    "skillParams": {
+      "0": "SCH Phase 1",
+      "1": "SCH Phase 2",
+      "2": "SCH Phase 3",
+      "3": "SCH Phase 4",
+      "4": "SCH Phase 5",
+      "5": "SCH heftiger Schläge",
+      "6": "Ausdauerverbrauch heftiger Schläge",
+      "7": "SCH beim Fallen",
+      "8": "SCH beim Fallen aus niedriger/großer Höhe",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Wolkenöffnung",
+    "description": {
+      "0": "Mit den theatralischen Aufführungen ihrer Kampfkünste kommt Fräulein Yun sogar gegen ihre Feinde an.",
+      "1": "<br/>",
+      "2": "<strong>Drücken</strong>",
+      "3": "Verursacht mit dem Speertanz des Wolkenzupfens <geo>Geo-Schaden</geo>.",
+      "4": "<br/>",
+      "5": "<strong>Gedrückt halten</strong>",
+      "6": "Nimmt die Stellung der Wolkenöffnung ein, lädt auf und erschafft einen Schutzschild, der Schaden basierend auf Yun Jins max. LP und bei elementarem sowie physischem Schaden 150 % abhält. Der Schutzschild hält bis zum Ende der Elementarfähigkeit.",
+      "7": "Yun Jin wirbelt beim Loslassen der Taste, beim Ende der Wirkungsdauer oder dann, wenn der Schild zerstört wird, ihre Stangenwaffe mit der aufgeladenen Kraft und verursacht <geo>Geo-Schaden</geo>.",
+      "8": "Erhält beim Auslösen je nach Zeit der Aufladung den Zustand von Aufladung Phase 1 oder Phase 2.",
+      "9": "<br/>",
+      "10": "<i>Ein Moment des Ruhms auf der Bühne entspricht einem Jahrzehnt harter Arbeit hinter der Bühne.</i>"
+    },
+    "skillParams": {
+      "0": "SCH bei Drücken",
+      "1": "SCH bei Aufladung (Phase 1)",
+      "2": "SCH bei Aufladung (Phase 2)",
+      "3": "Schildstärke",
+      "4": "Abklingzeit",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Banner der brechenden Klippen",
+    "description": {
+      "0": "Verursacht <geo>Geo-Flächenschaden</geo> und verleiht allen Truppenmitgliedern in der Nähe die „Formation der fliegenden Wolken“.",
+      "1": "<br/>",
+      "2": "<strong>Formation der fliegenden Wolken</strong>",
+      "3": "Erhöht, wenn Gegnern mit Standardangriffen Schaden zugefügt wird, den verursachten Schaden basierend auf Yun Jins eigener aktueller VTD.",
+      "4": "<br/>",
+      "5": "Der Effekt „Formation der fliegenden Wolken“ erlischt am Ende der Wirkungszeit oder nach dem Inkrafttreten einer bestimmten Menge an Stapelungen.",
+      "6": "Verbraucht beim Treffen mehrerer Gegner mit einem einzelnen Standardangriff eine der Anzahl der getroffenen Gegner entsprechende Menge an wirksamen Stapelungen. Die wirksamen Stapelungen jedes Truppenmitglieds mit dem Effekt Formation der fliegenden Wolken werden unabhängig voneinander berechnet.",
+      "7": "<br/>",
+      "8": "<i>„Mit dem Klang der Trommeln sowie dem Geklirr der Schwerter, Speere und Hellebarden in der Luft, wird die Bühnenschönheit zu einer führenden Generalin.“</i>",
+      "9": "<i>„Auf dem roten Teppich begleiten Harfen, Flöten, Glocken und Zimbeln sie im Kampf gegen die Dämonen.“</i>"
+    },
+    "skillParams": {
+      "0": "Fähigkeits-SCH",
+      "1": "SCH-Bonus",
+      "2": "Dauer",
+      "3": "Wirksame Stapelungen",
+      "4": "Abklingzeit",
+      "5": "Elementarenergie",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Selbstsicherheit",
+    "description": {
+      "0": "Löst <strong>Wolkenöffnung</strong> bei Anwendung im Augenblick des Erleidens eines Angriffs wie beim Gedrückthalten für Aufladung Phase 2 aus."
+    }
+  },
+  "passive2": {
+    "name": "Nieder mit den alten Werten",
+    "description": {
+      "0": "Erhöht den Schadensbonus für Standardangriffe von <strong>Formation der fliegenden Wolken</strong> bei Truppenmitgliedern mit 1/2/3/4 verschiedenen Elementartypen zusätzlich um 2,5/5/7,5/11,5 % von Yun Jins VTD."
+    }
+  },
+  "passive3": {
+    "name": "Leichte Nahrung",
+    "description": {
+      "0": "Stellt bei der perfekten Zubereitung eines Gerichts mit Abenteuer-Funktion mit einer Wahrscheinlichkeit von 12 % den 2-fachen Ertrag her."
+    }
+  },
+  "constellation1": {
+    "name": "Fliegender Gallopp",
+    "description": {
+      "0": "Verkürzt die Abklingzeit von <strong>Wolkenöffnung</strong> um 18 %."
+    }
+  },
+  "constellation2": {
+    "name": "Unzählige Requisiten",
+    "description": {
+      "0": "Erhöht nach dem Auslösen von <strong>Banner der brechenden Klippen</strong> den mit Standardangriffen aller Truppenmitglieder verursachten Schaden 12 s lang um 15 %."
+    }
+  },
+  "constellation3": {
+    "name": "Flagge auf dem Mast",
+    "description": {
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Banner der brechenden Klippen</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation4": {
+    "name": "Auf in die Wolken",
+    "description": {
+      "0": "Erhöht nach dem Auslösen der Reaktion Kristallisation durch Yun Jin ihre VTD 12 s lang um 20 %."
+    }
+  },
+  "constellation5": {
+    "name": "Überall bekannt",
+    "description": {
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Wolkenöffnung</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation6": {
+    "name": "Gemeinsame Unternehmung",
+    "description": {
+      "0": "Erhöht die Standardangriffs-GSW von Figuren im Zustand <strong>Formation der fliegenden Wolken</strong> um 12 %."
+    }
+  }
+}

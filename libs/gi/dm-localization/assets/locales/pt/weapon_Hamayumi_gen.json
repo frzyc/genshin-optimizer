@@ -1,0 +1,24 @@
+{
+  "name": "Arco Quebra-Demônios",
+  "description": {
+    "0": "Uma certa bruxa do templo tinha este arco de guerra. Foi feito com uma excelente habilidade, e ele é complexo e robusto."
+  },
+  "passiveName": "Grande Jogada",
+  "passiveDescription": {
+    "0": {
+      "0": "Aumenta o Dano de ATQ Normal em <cryo>16%</cryo> e o Dano de ATQ Carregado em <cryo>12%</cryo>. Quando a Energia Elemental do personagem equipado com essa arma é igual a 100%, esse efeito aumenta 100%."
+    },
+    "1": {
+      "0": "Aumenta o Dano de ATQ Normal em <cryo>20%</cryo> e o Dano de ATQ Carregado em <cryo>15%</cryo>. Quando a Energia Elemental do personagem equipado com essa arma é igual a 100%, esse efeito aumenta 100%."
+    },
+    "2": {
+      "0": "Aumenta o Dano de ATQ Normal em <cryo>24%</cryo> e o Dano de ATQ Carregado em <cryo>18%</cryo>. Quando a Energia Elemental do personagem equipado com essa arma é igual a 100%, esse efeito aumenta 100%."
+    },
+    "3": {
+      "0": "Aumenta o Dano de ATQ Normal em <cryo>28%</cryo> e o Dano de ATQ Carregado em <cryo>21%</cryo>. Quando a Energia Elemental do personagem equipado com essa arma é igual a 100%, esse efeito aumenta 100%."
+    },
+    "4": {
+      "0": "Aumenta o Dano de ATQ Normal em <cryo>32%</cryo> e o Dano de ATQ Carregado em <cryo>24%</cryo>. Quando a Energia Elemental do personagem equipado com essa arma é igual a 100%, esse efeito aumenta 100%."
+    }
+  }
+}

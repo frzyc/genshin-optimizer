@@ -1,0 +1,156 @@
+{
+  "name": "Diluc",
+  "title": "The Dark Side of Dawn",
+  "description": "Pemilik dari kerajaan kilang anggur di Mondstadt, kekayaan, ketenaran, dan kekuatannya diakui oleh semua orang.",
+  "constellationName": "Noctua",
+  "auto": {
+    "name": "Tempered Sword",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Attack</strong>",
+        "1": "Melancarkan hingga 4 serangan berturut-turut."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Terus menguras Stamina untuk melancarkan tebasan berkelanjutan.",
+        "2": "Diakhiri dengan sebuah tebasan yang sangat kuat."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Menerjang dari udara untuk menghantam tanah, menyerang semua musuh di jalurnya dan mengakibatkan DMG Area saat mendarat."
+      }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Tahap 4",
+      "4": "DMG Berputar Charged Attack",
+      "5": "DMG Akhir Charged Attack",
+      "6": "Konsumsi Stamina Charged Attack",
+      "7": "Durasi Maksimum",
+      "8": "DMG Selama Plunging",
+      "9": "DMG Plunging Attack Rendah/Tinggi",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Searing Onslaught",
+    "description": {
+      "0": "Melancarkan tebasan ke arah depan yang mengakibatkan <pyro>Pyro DMG</pyro>.",
+      "1": "<br/>",
+      "2": "Skill ini dapat digunakan 3 kali berturut-turut. Memasuki CD jika tidak digunakan lagi dalam waktu singkat.",
+      "3": "<br/>",
+      "4": "<i>Pedang ini mewakili nilai-nilai yang dijunjung Diluc: Keadilan, keberanian, dan kewajiban.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "Cooldown",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Dawn",
+    "description": {
+      "0": "Mengerahkan kekuatan api yang meledak untuk menghempas musuh di sekitar, mengakibatkan <pyro>Pyro DMG</pyro>. Setelahnya, mengumpulkan elemen Pyro di ujung senjata dan memanggil seekor burung Phoenix yang terbang melaju, mengakibatkan <pyro>Pyro DMG</pyro> kepada semua musuh di jalurnya dan mengakibatkan <pyro>Pyro DMG Area</pyro> yang besar.",
+      "1": "Kobaran api yang tersisa pada pedang Diluc memberikan <pyro>Pyro Infusion</pyro> pada serangan Diluc.",
+      "2": "<br/>",
+      "3": "<i>Satu-satunya alasan untuk berjalan dalam kegelapan adalah untuk membuatnya terang. Lihatlah, cahaya yang lari di tengah kegelapan malam adalah pemberita fajar yang akan datang.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Tebasan",
+      "1": "DMG Berkelanjutan",
+      "2": "DMG Ledakan",
+      "3": "Cooldown",
+      "4": "Durasi Infusion",
+      "5": "Konsumsi Energy",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Relentless",
+    "description": {
+      "0": "Mengurangi 50% konsumsi Stamina Charged Attack Diluc, dan meningkatkan durasi maksimum selama 3 detik."
+    }
+  },
+  "passive2": {
+    "name": "Blessing of Phoenix",
+    "description": {
+      "0": "<pyro>Pyro Infusion</pyro> yang didapat dari skill <strong>Dawn</strong> bertahan 4 detik lebih lama. Diluc juga mendapatkan 20% <pyro>Pyro DMG Bonus</pyro> selama efek berlangsung."
+    }
+  },
+  "passive3": {
+    "name": "Tradition of the Dawn Knight",
+    "description": {
+      "0": "Mengembalikan 15% jumlah Ore yang digunakan saat membuat senjata tipe Claymore."
+    }
+  },
+  "constellation1": {
+    "name": "Conviction",
+    "description": {
+      "0": "Diluc menghasilkan 15% DMG lebih kepada musuh yang mempunyai HP di atas 50%."
+    }
+  },
+  "constellation2": {
+    "name": "Searing Ember",
+    "description": {
+      "0": "Saat Diluc menerima DMG, meningkatkan 10% ATK dan 5% ATK SPD selama 10 detik.",
+      "1": "Efek ini dapat ditumpuk sampai 3 kali dan terpicu setiap 1,5 detik."
+    }
+  },
+  "constellation3": {
+    "name": "Fire and Steel",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Searing Onslaught</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Flowing Flame",
+    "description": {
+      "0": "Mengerahkan <strong>Searing Onslaught</strong> secara beruntun akan meningkatkan DMG yang dihasilkan.",
+      "1": "2 detik setelah mengerahkan <strong>Searing Onslaught</strong>, DMG Searing Onslaught berikutnya meningkat 40% selama 2 detik."
+    }
+  },
+  "constellation5": {
+    "name": "Phoenix, Harbinger of Dawn",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Dawn</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Flaming Sword, Nemesis of the Dark",
+    "description": {
+      "0": "Setelah mengerahkan <strong>Searing Onslaught</strong>, 2 Normal Attack dalam waktu 6 detik berikutnya akan meningkatkan 30% DMG dan ATK SPD.",
+      "1": "Selain itu, Searing Onslaught tidak akan mengganggu kombo Normal Attack."
+    }
+  }
+}

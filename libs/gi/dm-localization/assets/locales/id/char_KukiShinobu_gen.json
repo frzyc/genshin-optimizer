@@ -1,0 +1,161 @@
+{
+  "name": "Kuki Shinobu",
+  "title": "Mender of Tribulations",
+  "description": "Orang nomor dua di Geng Arataki yang hebat dan bisa diandalkan. Catatan: yang hebat dan bisa diandalkan itu si orang nomor duanya, bukan kelompoknya. Tolong jangan keliru.",
+  "constellationName": "Tribulatio Demptio",
+  "auto": {
+    "name": "Shinobu's Shadowsword",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Attack</strong>",
+        "1": "Melancarkan hingga 4 serangan berturut-turut."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Mengonsumsi sejumlah Stamina untuk melancarkan dua tebasan pedang."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Menerjang dari udara untuk menghantam tanah, menyerang musuh di jalur terjangan dan mengakibatkan DMG area saat mendarat."
+      }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Tahap 4",
+      "4": "DMG Charged Attack",
+      "5": "Konsumsi Stamina Charged Attack",
+      "6": "DMG Selama Plunging",
+      "7": "DMG Plunging Attack Rendah/Tinggi",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Sanctifying Ring",
+    "description": {
+      "0": "Menciptakan Grass Ring of Sanctification dengan mengorbankan sebagian dari HP-nya, mengakibatkan <electro>Electro DMG</electro> kepada musuh di sekitarnya.",
+      "1": "<br/>",
+      "2": "<strong>Grass Ring of Sanctification</strong>",
+      "3": "Mengikuti Karakter aktif. Mengakibatkan <electro>Electro DMG</electro> kepada musuh di sekitar setiap 1,5 detik dan memulihkan HP Karakter aktif di dalam Area efeknya berdasarkan Max HP Kuki Shinobu.",
+      "4": "<br/>",
+      "5": "HP yang terkonsumsi akibat penggunaan skill ini akan mengurangi HP Shinobu sampai batas 20% maksimum.",
+      "6": "<br/>",
+      "7": "<i>Ikat Naku Weed secara melingkar di pinggangmu, dan itu bisa membantumu mengusir roh jahat.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "Pemulihan Grass Ring of Sanctification",
+      "2": "DMG Grass Ring of Sanctification",
+      "3": "Mengonsumsi",
+      "4": "Durasi",
+      "5": "Cooldown",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Gyoei Narukami Kariyama Rite",
+    "description": {
+      "0": "Menancapkan pedang pengusir roh jahat di tanah, dan membuat sebuah medan yang membersihkan area yang kotor, mengakibatkan <electro>Electro DMG</electro> secara berkelanjutan kepada musuh di dalam Area efeknya berdasarkan Max HP Kuki Shinobu.",
+      "1": "Jika HP Shinobu 50% atau kurang saat skill ini digunakan, durasi medan ini akan lebih lama.",
+      "2": "<br/>",
+      "3": "<i>Sebenarnya ini teknik yang digunakan saat menyiangi rumput dan ritual doa saat panen, dan walaupun hari-harinya sebagai miko telah berakhir tapi Shinobu tidak pernah lupa dengan teknik ini.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Instan Tunggal",
+      "1": "Total DMG",
+      "2": "Durasi",
+      "3": "Cooldown",
+      "4": "Konsumsi Energy",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Breaking Free",
+    "description": {
+      "0": "Saat HP Shinobu tidak lebih dari 50%, maka bonus pemulihannya meningkat 15%."
+    }
+  },
+  "passive2": {
+    "name": "Heart's Repose",
+    "description": {
+      "0": "Kemampuan <strong>Sanctifying Ring</strong> akan menguat berdasarkan Elemental Mastery milik Kuki Shinobu:",
+      "1": [
+        "Jumlah pemulihan akan meningkat sebesar 75% dari Elemental Mastery;",
+        "DMG yang diakibatkan akan meningkat sebesar 25% dari Elemental Mastery."
+      ]
+    }
+  },
+  "passive3": {
+    "name": "Protracted Prayers",
+    "description": {
+      "0": "Ketika dikirim untuk melakukan ekspedisi di Inazuma selama 20 jam, hadiah yang didapatkan akan bertambah 25%."
+    }
+  },
+  "constellation1": {
+    "name": "To Cloister Compassion",
+    "description": {
+      "0": "Meningkatkan 50% area serangan <strong>Gyoei Narukami Kariyama Rite</strong>."
+    }
+  },
+  "constellation2": {
+    "name": "To Forsake Fortune",
+    "description": {
+      "0": "Meningkatkan 3 detik durasi <strong>Grass Ring of Santification</strong>"
+    }
+  },
+  "constellation3": {
+    "name": "To Sequester Sorrow",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Sanctifying Ring</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "To Sever Sealing",
+    "description": {
+      "0": "Saat Normal, Charged, atau Plunging Attack dari Karakter yang terpengaruh oleh <strong>Grass Ring of Sanctification</strong> milik Shinobu memukul musuh, maka Thundergrass Mark akan muncul di posisi musuh dan mengakibatkan <electro>Electro DMG Area</electro> berdasarkan 9,7% Max HP Shinobu.",
+      "1": "Efek ini dapat terpicu setiap 5 detik."
+    }
+  },
+  "constellation5": {
+    "name": "To Cease Courtesies",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Gyoei Narukami Kariyama Rite</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "To Ward Weakness",
+    "description": {
+      "0": "Saat Kuki Shinobu menerima DMG mematikan, DMG tersebut tidak akan membuatnya gugur. Efek ini terpicu secara otomatis saat HP-nya mencapai 1 dan dapat terpicu setiap 60 detik.",
+      "1": "Saat HP Shinobu turun sampai di bawah 25%, Shinobu akan mendapatkan 150 Elemental Mastery selama 15 detik. Efek ini terpicu setiap 60 detik."
+    }
+  }
+}

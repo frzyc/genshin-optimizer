@@ -1,0 +1,181 @@
+{
+  "name": "Dehya",
+  "title": "Feuermähne",
+  "description": "Ein Mitglied der „Goldbrigade“, einer Söldnergruppe, die die Wüste Sumerus durchstreift. Sie ist mutig und stark und genießt innerhalb der „Goldbrigade“ einen hervorragenden Ruf.",
+  "constellationName": "Mantichora",
+  "auto": {
+    "name": "Standardangriff – Schwertkunst des Goldenen Sturms",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Standardangriff</strong>",
+        "1": "Führt durch Kombination des Zweihänders mit körperlichen Fähigkeiten bis zu 4 Angriffe hintereinander aus."
+      },
+      "charged": {
+        "0": "<strong>Heftiger Schlag</strong>",
+        "1": "Verbraucht fortlaufend Ausdauer und führt mehrere Hiebe aus.",
+        "2": "Schwingt das Schwert am Ende mit besonders großer Wucht."
+      },
+      "plunging": {
+        "0": "<strong>Angriff aus dem Fall</strong>",
+        "1": "Schlägt beim Fallen aus der Luft auf den Boden, greift alle Gegner in der Bahn an und verursacht beim Aufkommen Flächenschaden."
+      }
+    },
+    "skillParams": {
+      "0": "SCH Phase 1",
+      "1": "SCH Phase 2",
+      "2": "SCH Phase 3",
+      "3": "SCH Phase 4",
+      "4": "SCH heftiger Schläge pro Runde",
+      "5": "SCH heftiger Schläge am Ende",
+      "6": "Ausdauerverbrauch heftiger Schläge",
+      "7": "Höchstdauer",
+      "8": "SCH beim Fallen",
+      "9": "SCH beim Fallen aus niedriger/großer Höhe",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Inferno geschmolzenen Eisens",
+    "description": {
+      "0": "Dehya setzt je nach Kampfsituation die entsprechenden Kampftechniken ein, die sie selbst kreiert hat.",
+      "1": "<br/>",
+      "2": "<strong>„Unzähmbare Flamme“</strong>",
+      "3": "Wird entfesselt, wenn sich zur gleichen Zeit kein von Dehya geschaffenes „Unzähmbares Schwertjoch“ auf dem Schlachtfeld befindet.",
+      "4": "Verursacht <pyro>Pyro-Flächenschaden</pyro> und erschafft ein Feld des Unzähmbaren Schwertjochs.",
+      "5": "<br/>",
+      "6": "<strong>Loderndes Schwertfeld</strong>",
+      "7": "Wird entfesselt, wenn sich zur gleichen Zeit Dehyas Unzähmbares Schwertjoch auf dem Schlachtfeld befindet.",
+      "8": "Führt einen Sprungangriff aus, der <pyro>Pyro-Flächenschaden</pyro> verursacht und an einer neuen Position das Feld des Unzähmbaren Schwertjochs erneut erschafft.",
+      "9": "Dieses mit dieser Methode neu geschaffene Feld des Unzähmbaren Schwertjochs setzt die Dauer des ursprünglichen Feldes weiter fort.",
+      "10": "<br/>",
+      "11": "Während der Dauer eines Feldes des Unzähmbaren Schwertjochs kann nur einmal Loderndes Schwertfeld entfesselt werden.",
+      "12": "<br/>",
+      "13": "<strong>Unzähmbares Schwertjoch</strong>",
+      "14": "Erleiden Gegner innerhalb des Feldes Schaden, initiiert Unzähmbares Schwertjoch einen abgestimmten Angriff, der diesen Gegnern <pyro>Pyro-Flächenschaden</pyro> basierend auf Dehyas ANG und max. LP zufügt. 2,5 s Abklingzeit.",
+      "15": "Erhöht den Unterbrechungs-WDS aktueller Figuren innerhalb dieses Feldes. Erleiden diese Figuren außerdem Schaden, wird ein Teil des Schadens neutralisiert und auf „Blut der Rotmähne“ übertragen, sodass Dehya diesen erlittenen Schaden innerhalb von 10 s trägt. Erreicht oder übersteigt der in Blut der Rotmähne gespeicherte Schaden einen bestimmten Anteil von Dehyas max. LP, so wird kein Schaden mehr neutralisiert.",
+      "16": "<br/>",
+      "17": "Gleichzeitig kann immer nur 1 von Dehya erzeugtes Unzähmbares Schwertjoch existieren.",
+      "18": "<br/>",
+      "19": "<i>Bestreite mit mir die Feuerprobe, verbrenne alles Unreine, genauso wie das Tier des gleißenden Lichts vom Feuer herabsteigt.</i>"
+    },
+    "skillParams": {
+      "0": "SCH Unzähmbarer Flamme",
+      "1": "SCH Lodernden Schwertfeldes",
+      "2": "SCH des Feldes",
+      "3": "SCH-Neutralisierung",
+      "4": "Max. Blut der Rotmähne",
+      "5": "Dauer des Feldes",
+      "6": "Abklingzeit",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Flammender Löwenbiss",
+    "description": {
+      "0": "Dehya entfesselt ihre sengende Wut, wirft ihr Großschwert, welches jetzt nur im Weg wäre, von sich und tritt in den Zustand „Flammender Löwe“ ein, wodurch sich ihr Unterbrechungs-WDS erhöht.",
+      "1": "In diesem Zustand schwingt sie automatisch ununterbrochen ihre Flammenden Löwenfäuste und verursacht <pyro>Pyro-Schaden</pyro> basierend auf ihrem ANG und max. LP. Bei Ablauf der Dauer führt sie einen Versengenden Tritt aus, der <pyro>Pyro-Flächenschaden</pyro> basierend auf ihrem ANG und max. LP verursacht.",
+      "2": "Sollte sich beim Auslösen ein Feld des „Unzähmbaren Schwertjochs“ von Dehyas Elementarfähigkeit „Inferno geschmolzenen Eisens“ auf dem Schlachtfeld befinden, so wird sie dieses zurückziehen und nach Beendigung des Zustands „Flammender Löwe“ an einem neuen Ort erzeugen. Das neu erzeugte Feld setzt die Dauer des zurückgezogenen Feldes von dem Moment an fort, an dem es zurückgezogen wurde.",
+      "3": "In diesem Zustand kann Dehya weder ihre Elementarfähigkeit noch ihren Standardangriff, heftigen Schlag oder Angriff aus dem Fall einsetzen. Ihr „Standardangriff – Schwertkunst des Goldenen Sturms“ und ihre Elementarfähigkeit „Inferno geschmolzenen Eisens“ werden durch „Flammengebrüll“ ersetzt.",
+      "4": "<br/>",
+      "5": "<strong>Flammengebrüll</strong>",
+      "6": "Wird innerhalb von 0,4 s, nachdem Flammende Löwenfäuste eingesetzt wurden, Flammengebrüll entfesselt, erhöht dieses einmalig die Geschwindigkeit, mit der die nächsten Flammenden Löwenfäuste eingesetzt werden.",
+      "7": "<br/>",
+      "8": "<i>Selbst die lodernden Flammen beugen sich ihrem Zorn und werden zu ihren Klauen und Reißzähnen.</i>"
+    },
+    "skillParams": {
+      "0": "SCH Flammender Löwenfäuste",
+      "1": "SCH Versengenden Tritts",
+      "2": "Dauer",
+      "3": "Abklingzeit",
+      "4": "Elementarenergie",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Unermüdlicher Beistand",
+    "description": {
+      "0": "Dehya erleidet, nachdem sie nach dem Auslösen von <strong>Inferno geschmolzenen Eisens – Loderndes Schwertfeld</strong> oder <strong>Flammender Löwenbiss</strong> Unzähmbares Schwertjoch zurückgeholt hat, 6 s lang 60 % weniger Schaden, der von Blut der Rotmähne stammt. 2 s Abklingzeit.",
+      "1": "Darüber hinaus gewährt Dehya nach dem Auslösen von <strong>Inferno geschmolzenen Eisens – Unzähmbare Flamme</strong> 9 s allen Truppenmitgliedern den Zustand „In Gold gegossener Körper“. Wenn sich Figuren im Zustand In Gold gegossener Körper im Feld des Unzähmbaren Schwertjochs befinden, erhalten sie zusätzlichen Unterbrechungs-WDS. Der Zustand In Gold gegossener Körper hat 18 s Abklingzeit."
+    }
+  },
+  "passive2": {
+    "name": "Erhabenheit der Aufrichtigkeit",
+    "description": {
+      "0": "Betragen Dehyas LP weniger als 40 %, werden ihr 20 % ihrer max. LP wiederhergestellt. Auch werden ihr daraufhin 10 s lang alle 2 s 6 % ihrer max. LP wiederhergestellt. 20 s Abklingzeit."
+    }
+  },
+  "passive3": {
+    "name": "Weg sonniger Gerechtigkeit",
+    "description": {
+      "0": "Verleiht den eigenen Figuren in der Truppe tagsüber (6 bis 18 Uhr) den Effekt „Schneller Schritt“: Erhöht die Bewegungs-GSW um 10 %.",
+      "1": "Dieser Effekt gilt nicht in Sphären, Gebietssäuberungen oder im Gewundenen Abgrund und ist nicht stapelbar."
+    }
+  },
+  "constellation1": {
+    "name": "Glühend helle Flamme",
+    "description": {
+      "0": "Erhöht die max. LP von Dehya um 20 % und den mit den folgenden Angriffen von Dehya verursachten Schaden basierend auf ihren max. LP:",
+      "1": [
+        " Erhöht den Schaden von <strong>Inferno geschmolzenen Eisens</strong> um 3,6 % der max. LP.",
+        " Erhöht den Schaden von <strong>Flammender Löwenbiss</strong> um 6 % der max. LP."
+      ]
+    }
+  },
+  "constellation2": {
+    "name": "Das Glänzen der Sandklinge",
+    "description": {
+      "0": "Verlängert, wenn <strong>Inferno geschmolzenen Eisens – Loderndes Schwertfeld</strong> ausgelöst wird, die Dauer des erneut geschaffenen Feldes des Unzähmbaren Schwertjochs um 6 s.",
+      "1": "Erhöht außerdem den Schaden des nächsten abgestimmten Angriffs des Unzähmbaren Schwertjochs um 50 %, wenn sich ein Unzähmbares Schwertjoch auf dem Feld befindet und aktuelle Figuren in diesem angegriffen werden."
+    }
+  },
+  "constellation3": {
+    "name": "Wut, einem Lauffeuer gleich",
+    "description": {
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Flammender Löwenbiss</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation4": {
+    "name": "Dem Eid treu ergeben",
+    "description": {
+      "0": "Stellt Dehya beim Treffen von Gegnern mit Flammende Löwenfäuste und Versengender Tritt von <strong>Flammender Löwenbiss</strong> 1,5 Punkte Elementarenergie und 2,5 % ihrer max. LP wieder her. 0,2 s Abklingzeit."
+    }
+  },
+  "constellation5": {
+    "name": "Entfesselte Bestienjägerin",
+    "description": {
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Inferno geschmolzenen Eisens</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation6": {
+    "name": "Brennende reißende Klauen",
+    "description": {
+      "0": "Erhöht die KT von <strong>Flammender Löwenbiss</strong> um 10 %.",
+      "1": "Wird außerdem, während der Dauer von einem Mal Flammender Löwe, ein Gegner mit Flammenden Löwenfäusten getroffen und KSCH verursacht, erhöht sich danach der KSCH von Flammender Löwenbiss innerhalb der Dauer um 15 % und die Dauer von Flammender Löwe wird um 0,5 s verlängert. 0,2 s Abklingzeit. Auf diese Weise kann die Dauer um bis zu 2 s verlängert und der Kritische Schaden um bis zu 60 % erhöht werden."
+    }
+  }
+}

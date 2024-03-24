@@ -1,0 +1,24 @@
+{
+  "name": "Harbinger of Dawn",
+  "description": {
+    "0": "A sword that once shone like the sun. The wielder of this sword will be blessed with a \"feel-good\" buff. The reflective material on the blade has long worn off."
+  },
+  "passiveName": "Vigorous",
+  "passiveDescription": {
+    "0": {
+      "0": "When HP is above 90%, increases CRIT Rate by <cryo>14%</cryo>."
+    },
+    "1": {
+      "0": "When HP is above 90%, increases CRIT Rate by <cryo>17.5%</cryo>."
+    },
+    "2": {
+      "0": "When HP is above 90%, increases CRIT Rate by <cryo>21%</cryo>."
+    },
+    "3": {
+      "0": "When HP is above 90%, increases CRIT Rate by <cryo>24.5%</cryo>."
+    },
+    "4": {
+      "0": "When HP is above 90%, increases CRIT Rate by <cryo>28%</cryo>."
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Dòng Chảy Tinh Khiết",
+  "description": {
+    "0": "Tập kịch bản có tạo hình độc đáo, trong đó đã ghi lại tất cả kịch bản mà Coppelius sáng tác."
+  },
+  "passiveName": "Kiệt Tác Chưa Hoàn Thành",
+  "passiveDescription": {
+    "0": {
+      "0": "Khi thi triển Kỹ Năng Nguyên Tố, sẽ tăng <cryo>8%</cryo> buff sát thương tất cả nguyên tố, duy trì 15s, và cung cấp Khế Ước Sinh Mệnh tương đương 24% HP tối đa, hiệu quả này mỗi 10s tối đa kích hoạt một lần. Khi xóa Khế Ước Sinh Mệnh, mỗi 1000 điểm xóa đi sẽ cung cấp <cryo>2%</cryo> buff sát thương tất cả nguyên tố, tối đa nhận được <cryo>12%</cryo> buff sát thương tất cả nguyên tố thông qua cách này, duy trì 15s."
+    },
+    "1": {
+      "0": "Khi thi triển Kỹ Năng Nguyên Tố, sẽ tăng <cryo>10%</cryo> buff sát thương tất cả nguyên tố, duy trì 15s, và cung cấp Khế Ước Sinh Mệnh tương đương 24% HP tối đa, hiệu quả này mỗi 10s tối đa kích hoạt một lần. Khi xóa Khế Ước Sinh Mệnh, mỗi 1000 điểm xóa đi sẽ cung cấp <cryo>2.5%</cryo> buff sát thương tất cả nguyên tố, tối đa nhận được <cryo>15%</cryo> buff sát thương tất cả nguyên tố thông qua cách này, duy trì 15s."
+    },
+    "2": {
+      "0": "Khi thi triển Kỹ Năng Nguyên Tố, sẽ tăng <cryo>12%</cryo> buff sát thương tất cả nguyên tố, duy trì 15s, và cung cấp Khế Ước Sinh Mệnh tương đương 24% HP tối đa, hiệu quả này mỗi 10s tối đa kích hoạt một lần. Khi xóa Khế Ước Sinh Mệnh, mỗi 1000 điểm xóa đi sẽ cung cấp <cryo>3%</cryo> buff sát thương tất cả nguyên tố, tối đa nhận được <cryo>18%</cryo> buff sát thương tất cả nguyên tố thông qua cách này, duy trì 15s."
+    },
+    "3": {
+      "0": "Khi thi triển Kỹ Năng Nguyên Tố, sẽ tăng <cryo>14%</cryo> buff sát thương tất cả nguyên tố, duy trì 15s, và cung cấp Khế Ước Sinh Mệnh tương đương 24% HP tối đa, hiệu quả này mỗi 10s tối đa kích hoạt một lần. Khi xóa Khế Ước Sinh Mệnh, mỗi 1000 điểm xóa đi sẽ cung cấp <cryo>3.5%</cryo> buff sát thương tất cả nguyên tố, tối đa nhận được <cryo>21%</cryo> buff sát thương tất cả nguyên tố thông qua cách này, duy trì 15s."
+    },
+    "4": {
+      "0": "Khi thi triển Kỹ Năng Nguyên Tố, sẽ tăng <cryo>16%</cryo> buff sát thương tất cả nguyên tố, duy trì 15s, và cung cấp Khế Ước Sinh Mệnh tương đương 24% HP tối đa, hiệu quả này mỗi 10s tối đa kích hoạt một lần. Khi xóa Khế Ước Sinh Mệnh, mỗi 1000 điểm xóa đi sẽ cung cấp <cryo>4%</cryo> buff sát thương tất cả nguyên tố, tối đa nhận được <cryo>24%</cryo> buff sát thương tất cả nguyên tố thông qua cách này, duy trì 15s."
+    }
+  }
+}

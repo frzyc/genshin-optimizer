@@ -1,0 +1,12 @@
+{
+  "setName": "Người Tế Lôi",
+  "setEffects": {
+    "1": "Thời gian duy trì hiệu quả ấn nguyên tố Lôi giảm 40%."
+  },
+  "pieces": {
+    "circlet": {
+      "name": "Nón Tế Lôi",
+      "desc": "Là nón tế lễ được tư tế thời cổ đại đeo khi hành lễ. Vì nghe tiếng sấm trong khoảng thời gian dài nên rất có kháng tính."
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Ombra di ferro",
+  "description": {
+    "0": "Una replica della famosa spada di Arundolyn, il Leone della luce. Lasciati avvolgere dal potere dell'eroe leggendario! Libera il grande guerriero che c'è in te! Nota: sognare a occhi aperti può essere dannoso per la salute."
+  },
+  "passiveName": "Implacabilità",
+  "passiveDescription": {
+    "0": {
+      "0": "Quando i PS scendono al di sotto di un <cryo>70%</cryo>, aumenta i DAN degli attacchi caricati di un <cryo>30%</cryo>, rendendoli più difficili da interrompere."
+    },
+    "1": {
+      "0": "Quando i PS scendono al di sotto di un <cryo>75%</cryo>, aumenta i DAN degli attacchi caricati di un <cryo>35%</cryo>, rendendoli più difficili da interrompere."
+    },
+    "2": {
+      "0": "Quando i PS scendono al di sotto di un <cryo>80%</cryo>, aumenta i DAN degli attacchi caricati di un <cryo>40%</cryo>, rendendoli più difficili da interrompere."
+    },
+    "3": {
+      "0": "Quando i PS scendono al di sotto di un <cryo>85%</cryo>, aumenta i DAN degli attacchi caricati di un <cryo>45%</cryo>, rendendoli più difficili da interrompere."
+    },
+    "4": {
+      "0": "Quando i PS scendono al di sotto di un <cryo>90%</cryo>, aumenta i DAN degli attacchi caricati di un <cryo>50%</cryo>, rendendoli più difficili da interrompere."
+    }
+  }
+}

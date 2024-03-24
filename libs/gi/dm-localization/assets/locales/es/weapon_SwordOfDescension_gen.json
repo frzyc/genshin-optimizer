@@ -1,0 +1,14 @@
+{
+  "name": "Espada del Descenso",
+  "description": {
+    "0": "Una espada con una forma única. No parece pertenecer a este mundo."
+  },
+  "passiveName": "Descenso",
+  "passiveDescription": {
+    "0": {
+      "0": "<cryo>Solo disponible en las siguientes plataformas:</cryo>",
+      "1": "<cryo>“PlayStation Network”</cryo>.",
+      "2": "Al atacar a un enemigo con un Ataque Normal o Cargado, hay un <cryo>50%</cryo> de probabilidad de infligir daño en una pequeña AdE equivalente al <cryo>200%</cryo> del ATQ. Esto puede ocurrir una vez cada 10 s. Además, si {F#la Viajera}{M#el Viajero} lleva equipada la Espada del Descenso, el ATQ aumenta en <cryo>66</cryo> pts."
+    }
+  }
+}

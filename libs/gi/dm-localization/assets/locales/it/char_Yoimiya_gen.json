@@ -1,0 +1,167 @@
+{
+  "name": "Yoimiya",
+  "title": "Euforia di fuochi",
+  "description": "Proprietaria della Bottega Naganohara. Conosciuta come la Regina del Festival d'estate, è particolarmente abile nella creazione di fuochi d'artificio che simboleggiano le speranze e i sogni della gente.",
+  "constellationName": "Carassius Auratus",
+  "auto": {
+    "name": "Vampata pirotecnica",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attacco normale</strong>",
+        "1": "Effettua fino a 5 tiri consecutivi con un arco."
+      },
+      "charged": {
+        "0": "<strong>Attacco caricato</strong>",
+        "1": "Effettua un <strong>attacco mirato</strong> ancora più preciso con DAN aumentati.",
+        "2": "Mentre mira, delle fiamme si accumulano sulla punta della freccia prima che scocchi. Ha diversi effetti in base alla durata della carica dell'energia.",
+        "3": [
+          " Livello di carica 1: scocca una freccia incandescente che infligge <pyro>DAN da Pyro</pyro>.",
+          " Livello di carica 2: genera un massimo di 3 Dardi pirotecnici in base al tempo passato a caricare, rilasciandole come parte di questo attacco mirato. I Dardi pirotecnici mirano automaticamente agli avversari vicini, infliggendo <pyro>DAN da Pyro</pyro> quando vanno a segno."
+        ]
+      },
+      "plunging": {
+        "0": "<strong>Attacco in picchiata</strong>",
+        "1": "Scocca una pioggia di frecce a mezz'aria prima di cadere e colpire il suolo, infliggendo DAN ad area all'impatto."
+      }
+    },
+    "skillParams": {
+      "0": "DAN da 1º colpo",
+      "1": "DAN da 2º colpo",
+      "2": "DAN da 3º colpo",
+      "3": "DAN da 4º colpo",
+      "4": "DAN da 5º colpo",
+      "5": "ATT mirato",
+      "6": "ATT mirato a piena carica",
+      "7": "DAN da Dardo pirotecnico",
+      "8": "DAN da ATT in picchiata",
+      "9": "DAN da ATT in picchiata basso/alto",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Danza del fuoco Niwabi",
+    "description": {
+      "0": "Yoimiya agita una stellina e un anello di salnitro compare intorno a lei.",
+      "1": "<br/>",
+      "2": "<strong>Niwabi Enshou</strong>",
+      "3": "In questo lasso di tempo, le frecce scoccate dall'attacco normale di Yoimiya diventano Frecce infuocate, e i loro DAN aumentano e sono convertiti in <pyro>DAN da Pyro</pyro>. Inoltre, Attacco normale: Vampata pirotecnica non crea Dardi pirotecnici al livello di carica 2.",
+      "4": "<br/>",
+      "5": "Questo effetto si disattiva quando Yoimiya lascia il campo di battaglia.",
+      "6": "<br/>",
+      "7": "<i>Il Niwabi è un tipo di fuoco d'artificio all'incenso creato da Yoimiya in persona. Si può accendere senza aver ricevuto alcun addestramento o preparazione, perciò gode di molta popolarità. A seguito di molti incidenti legati agli incendi, la Commissione Tenryou ha bandito l'uso dei Niwabi, ma si possono ancora vedere delle piccole scintille nel cielo notturno. Se le si guarda dall'alto, sembrano quasi delle stelle luccicanti.</i>"
+    },
+    "skillParams": {
+      "0": "DAN da Freccia infuocata",
+      "1": "Durata",
+      "2": "TdR",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Sassifraga Ryuukin",
+    "description": {
+      "0": "Yoimiya balza in aria insieme alla sua creazione originale, la Sassifraga Ryuukin, e spara razzi infuocati pieni di sorprese che infliggono <pyro>DAN da Pyro ad area</pyro> e marcano uno degli avversari colpiti con Vampata aurea.",
+      "1": "<br/>",
+      "2": "<strong>Vampata aurea</strong>",
+      "3": "Se un membro del gruppo diverso da Yoimiya colpisce un avversario marcato da Vampata aurea con attacchi normali/caricati/in picchiata, abilità elementali e Tripudi elementali, innescherà un'esplosione infliggendo <pyro>DAN da Pyro ad area</pyro>.",
+      "4": "Quando un avversario colpito da Vampata aurea viene sconfitto prima del termine della sua durata, l'effetto sarà trasferito a un altro avversario vicino, che ne erediterà la durata rimanente.",
+      "5": "<br/>",
+      "6": "Un'esplosione di Vampata aurea può attivarsi ogni 2 s. Quando Yoimiya è a terra, gli effetti di Vampata aurea causati dalle sue abilità saranno disattivati.",
+      "7": "<br/>",
+      "8": "<i>I fuochi d'artificio rappresentano le stelle create dall'uomo, delle comete sparate nel cielo. Anche se non durano per più di un istante, la memoria del loro fulgore continuerà a vivere.</i>"
+    },
+    "skillParams": {
+      "0": "DAN da abilità",
+      "1": "DAN da esplosione Vampata aurea",
+      "2": "Durata",
+      "3": "TdR",
+      "4": "Costo energia",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Trucchi da combinaguai",
+    "description": {
+      "0": "Durante la <strong>Danza del fuoco Niwabi</strong>, l'attacco normale di Yoimiya aumenta il suo <pyro>bonus DAN da Pyro</pyro> di un 2% per ogni colpo andato a segno. Quest'effetto dura per 3 s ed è cumulabile fino a 10 volte."
+    }
+  },
+  "passive2": {
+    "name": "Alba d'una notte d'estate",
+    "description": {
+      "0": "Usando <strong>Sassifraga Ryuukin</strong>, l'ATT dei membri del gruppo vicini (esclusa Yoimiya) aumenta di un 10% per 15 s. Inoltre, viene aggiunto un ulteriore bonus ATT in base al numero di accumuli di Trucchi da combinaguai che Yoimiya possiede quando usa <strong>Sassifraga Ryuukin</strong>. Il bonus ATT aumenta di un 1% per ogni accumulo."
+    }
+  },
+  "passive3": {
+    "name": "Abbinamento incandescente",
+    "description": {
+      "0": "Quando Yoimiya crea decorazioni, accessori e ornamenti per il paesaggio, ha un 100% di probabilità di restituire una parte dei materiali utilizzati."
+    }
+  },
+  "constellation1": {
+    "name": "Ryuukin d'agata",
+    "description": {
+      "0": "La Vampata aurea creata da <strong>Sassifraga Ryuukin</strong> dura 4 s in più.",
+      "1": "Inoltre, quando un avversario viene sconfitto mentre è affetto da Vampata aurea, l'ATT di Yoimiya aumenta di un 20% per 20 s."
+    }
+  },
+  "constellation2": {
+    "name": "Corteo fiammeggiante",
+    "description": {
+      "0": "Quando i <pyro>DAN da Pyro</pyro> di Yoimiya infliggono un colpo CRIT, Yoimiya otterrà un <pyro>bonus DAN da Pyro</pyro> di un 25% per 6 s.",
+      "1": "Quest'effetto può attivarsi anche quando Yoimiya non è il personaggio attivo."
+    }
+  },
+  "constellation3": {
+    "name": "Fiamma dell'astuzia",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Danza del fuoco Niwabi</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation4": {
+    "name": "Esperta di pirotecnica",
+    "description": {
+      "0": "Quando la Vampata aurea di Yoimiya innesca un'esplosione, il TdR di <strong>Danza del fuoco Niwabi</strong> si riduce di 1,2 s."
+    }
+  },
+  "constellation5": {
+    "name": "Vigilia del Festival d'estate",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Sassifraga Ryuukin</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation6": {
+    "name": "Sciame di meteoriti di Naganohara",
+    "description": {
+      "0": "Durante la <strong>Danza del fuoco Niwabi</strong>, gli attacchi normali di Yoimiya hanno un 50% di probabilità di scoccare una Freccia infuocata aggiuntiva che infligge un 60% dei suoi DAN iniziali, che verranno considerati come DAN da attacco normale."
+    }
+  }
+}

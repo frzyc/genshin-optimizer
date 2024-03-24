@@ -1,0 +1,24 @@
+{
+  "name": "Derinliklerin Sonu",
+  "description": {
+    "0": "Bu uzun kılıç, gizemli okyanusun derinlikleri kadar sessizdir ve göründüğünden bile eskidir."
+  },
+  "passiveName": "Yüce Son",
+  "passiveDescription": {
+    "0": {
+      "0": "Bir Element Becerisi kullanıldığında 15 saniyeliğine Saldırı <cryo>%12</cryo> artar ve Maks. Canın %25'i oranında bir Hayat Bağı kazanılır. Bu etki her 10 saniyede bir tetiklenebilir. Hayat Bağı sona erdiğinde 15 saniyeliğine en fazla <cryo>150</cryo> olmak üzere temizlenen toplam Hayat Bağının <cryo>%2,4'ü</cryo> kadar Saldırı kazanılır."
+    },
+    "1": {
+      "0": "Bir Element Becerisi kullanıldığında 15 saniyeliğine Saldırı <cryo>%15</cryo> artar ve Maks. Canın %25'i oranında bir Hayat Bağı kazanılır. Bu etki her 10 saniyede bir tetiklenebilir. Hayat Bağı sona erdiğinde 15 saniyeliğine en fazla <cryo>187,5</cryo> olmak üzere temizlenen toplam Hayat Bağının <cryo>%3'ü</cryo> kadar Saldırı kazanılır."
+    },
+    "2": {
+      "0": "Bir Element Becerisi kullanıldığında 15 saniyeliğine Saldırı <cryo>%18</cryo> artar ve Maks. Canın %25'i oranında bir Hayat Bağı kazanılır. Bu etki her 10 saniyede bir tetiklenebilir. Hayat Bağı sona erdiğinde 15 saniyeliğine en fazla <cryo>225</cryo> olmak üzere temizlenen toplam Hayat Bağının <cryo>%3,6'sı</cryo> kadar Saldırı kazanılır."
+    },
+    "3": {
+      "0": "Bir Element Becerisi kullanıldığında 15 saniyeliğine Saldırı <cryo>%21</cryo> artar ve Maks. Canın %25'i oranında bir Hayat Bağı kazanılır. Bu etki her 10 saniyede bir tetiklenebilir. Hayat Bağı sona erdiğinde 15 saniyeliğine en fazla <cryo>262,5</cryo> olmak üzere temizlenen toplam Hayat Bağının <cryo>%4,2'si</cryo> kadar Saldırı kazanılır."
+    },
+    "4": {
+      "0": "Bir Element Becerisi kullanıldığında 15 saniyeliğine Saldırı <cryo>%24</cryo> artar ve Maks. Canın %25'i oranında bir Hayat Bağı kazanılır. Bu etki her 10 saniyede bir tetiklenebilir. Hayat Bağı sona erdiğinde 15 saniyeliğine en fazla <cryo>300</cryo> olmak üzere temizlenen toplam Hayat Bağının <cryo>%4,8'i</cryo> kadar Saldırı kazanılır."
+    }
+  }
+}

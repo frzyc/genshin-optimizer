@@ -1,0 +1,24 @@
+{
+  "name": "Condamneur",
+  "description": {
+    "0": "Une arme autrefois utilisée par une jeune fille qui a abandonné son nom de famille, tachée du sang de ses ennemis et de ses proches."
+  },
+  "passiveName": "Promesses des mille aubes et crépuscules",
+  "passiveDescription": {
+    "0": {
+      "0": "Augmente l'ATQ de <cryo>20 %</cryo>. Lorsqu'un personnage de l'équipe obtient un fragment généré par une réaction de Cristallisation, le personnage équipé de l'arme gagne 1 sceau pendant 15 s, ce qui augmente les DGT de ses compétences élémentaires de <cryo>18 %</cryo>. Un maximum de 2 sceaux peut être obtenu en même temps, tous les sceaux disparaissant 0,2 s après que le personnage équipé de l'arme inflige des DGT avec une compétence élémentaire."
+    },
+    "1": {
+      "0": "Augmente l'ATQ de <cryo>25 %</cryo>. Lorsqu'un personnage de l'équipe obtient un fragment généré par une réaction de Cristallisation, le personnage équipé de l'arme gagne 1 sceau pendant 15 s, ce qui augmente les DGT de ses compétences élémentaires de <cryo>22,5 %</cryo>. Un maximum de 2 sceaux peut être obtenu en même temps, tous les sceaux disparaissant 0,2 s après que le personnage équipé de l'arme inflige des DGT avec une compétence élémentaire."
+    },
+    "2": {
+      "0": "Augmente l'ATQ de <cryo>30 %</cryo>. Lorsqu'un personnage de l'équipe obtient un fragment généré par une réaction de Cristallisation, le personnage équipé de l'arme gagne 1 sceau pendant 15 s, ce qui augmente les DGT de ses compétences élémentaires de <cryo>27 %</cryo>. Un maximum de 2 sceaux peut être obtenu en même temps, tous les sceaux disparaissant 0,2 s après que le personnage équipé de l'arme inflige des DGT avec une compétence élémentaire."
+    },
+    "3": {
+      "0": "Augmente l'ATQ de <cryo>35 %</cryo>. Lorsqu'un personnage de l'équipe obtient un fragment généré par une réaction de Cristallisation, le personnage équipé de l'arme gagne 1 sceau pendant 15 s, ce qui augmente les DGT de ses compétences élémentaires de <cryo>31,5 %</cryo>. Un maximum de 2 sceaux peut être obtenu en même temps, tous les sceaux disparaissant 0,2 s après que le personnage équipé de l'arme inflige des DGT avec une compétence élémentaire."
+    },
+    "4": {
+      "0": "Augmente l'ATQ de <cryo>40 %</cryo>. Lorsqu'un personnage de l'équipe obtient un fragment généré par une réaction de Cristallisation, le personnage équipé de l'arme gagne 1 sceau pendant 15 s, ce qui augmente les DGT de ses compétences élémentaires de <cryo>36 %</cryo>. Un maximum de 2 sceaux peut être obtenu en même temps, tous les sceaux disparaissant 0,2 s après que le personnage équipé de l'arme inflige des DGT avec une compétence élémentaire."
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "setName": "Trái Tim Thủ Hộ",
+  "setEffects": {
+    "2": "Phòng ngự tăng 30%.",
+    "4": "Cứ mỗi nhân vật của bản thân có 1 nguyên tố khác trong đội thì bản thân sẽ được nhận 30% kháng Nguyên Tố tương ứng."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Hoa Thủ Hộ",
+      "desc": "Hoa được kẻ bảo vệ coi như báu vật, nhưng lại không có cơ hội để tặng cho người thầm thương."
+    },
+    "plume": {
+      "name": "Huy Hiệu Thủ Hộ",
+      "desc": "Trâm cài hình lông vũ tượng trưng cho \"khát vọng trở thành lá chắn mạnh mẽ\" của ai đó."
+    },
+    "sands": {
+      "name": "Đồng Hồ Thủ Hộ",
+      "desc": "Đạo cụ nhỏ hiển thị thời gian, là vật tham chiếu duy nhất trong đêm đen."
+    },
+    "goblet": {
+      "name": "Ly Thủ Hộ",
+      "desc": "Vật đựng làm bằng kim loại, dùng để đựng loại chất lỏng có thể giúp con người ta xua đi sự cô quạnh của năm tháng."
+    },
+    "circlet": {
+      "name": "Nón Thủ Hộ",
+      "desc": "Vật được dệt từ vải, có màu chàm đen. Có thể dùng để băng bó trong trường hợp khẩn cấp."
+    }
+  }
+}

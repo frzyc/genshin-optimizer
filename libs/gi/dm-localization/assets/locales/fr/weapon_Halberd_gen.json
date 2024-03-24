@@ -1,0 +1,24 @@
+{
+  "name": "Hallebarde",
+  "description": {
+    "0": "Une hampe à l'extrémité de laquelle se trouve un fer de hache. Cette arme puissante est l'une des favorites des officiers des Millelithes."
+  },
+  "passiveName": "Écrasement",
+  "passiveDescription": {
+    "0": {
+      "0": "Les attaques normales infligent <cryo>160 %</cryo> de DGT d'ATQ supplémentaires lorsqu'elles touchent. Cet effet peut être déclenché une fois toutes les 10 s."
+    },
+    "1": {
+      "0": "Les attaques normales infligent <cryo>200 %</cryo> de DGT d'ATQ supplémentaires lorsqu'elles touchent. Cet effet peut être déclenché une fois toutes les 10 s."
+    },
+    "2": {
+      "0": "Les attaques normales infligent <cryo>240 %</cryo> de DGT d'ATQ supplémentaires lorsqu'elles touchent. Cet effet peut être déclenché une fois toutes les 10 s."
+    },
+    "3": {
+      "0": "Les attaques normales infligent <cryo>280 %</cryo> de DGT d'ATQ supplémentaires lorsqu'elles touchent. Cet effet peut être déclenché une fois toutes les 10 s."
+    },
+    "4": {
+      "0": "Les attaques normales infligent <cryo>320 %</cryo> de DGT d'ATQ supplémentaires lorsqu'elles touchent. Cet effet peut être déclenché une fois toutes les 10 s."
+    }
+  }
+}

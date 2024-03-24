@@ -1,0 +1,24 @@
+{
+  "name": "\"A Fisgada\"",
+  "description": {
+    "0": "Num passado distante, esta era a amada lança de um famoso bandido de Inazuma."
+  },
+  "passiveName": "Canção Navegante",
+  "passiveDescription": {
+    "0": {
+      "0": "Aumenta o Dano do Supremo em <cryo>16%</cryo> e a Taxa CRIT do Supremo em <cryo>6%</cryo>."
+    },
+    "1": {
+      "0": "Aumenta o Dano do Supremo em <cryo>20%</cryo> e a Taxa CRIT do Supremo em <cryo>7.5%</cryo>."
+    },
+    "2": {
+      "0": "Aumenta o Dano do Supremo em <cryo>24%</cryo> e a Taxa CRIT do Supremo em <cryo>9%</cryo>."
+    },
+    "3": {
+      "0": "Aumenta o Dano do Supremo em <cryo>28%</cryo> e a Taxa CRIT do Supremo em <cryo>10.5%</cryo>."
+    },
+    "4": {
+      "0": "Aumenta o Dano do Supremo em <cryo>32%</cryo> e a Taxa CRIT do Supremo em <cryo>12%</cryo>."
+    }
+  }
+}

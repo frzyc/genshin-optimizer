@@ -1,0 +1,24 @@
+{
+  "name": "Deseo Ponzoñoso",
+  "description": {
+    "0": "Una espada muy recta y misteriosa que parece sedienta de vida. De ella gotea un veneno capaz de corromper hasta a un dragón."
+  },
+  "passiveName": "Anhelo infinito",
+  "passiveDescription": {
+    "0": {
+      "0": "Aumenta en un <cryo>16%</cryo> el daño de la Habilidad Elemental y en un <cryo>6%</cryo> su Prob. CRIT."
+    },
+    "1": {
+      "0": "Aumenta en un <cryo>20%</cryo> el daño de la Habilidad Elemental y en un <cryo>7.5%</cryo> su Prob. CRIT."
+    },
+    "2": {
+      "0": "Aumenta en un <cryo>24%</cryo> el daño de la Habilidad Elemental y en un <cryo>9%</cryo> su Prob. CRIT."
+    },
+    "3": {
+      "0": "Aumenta en un <cryo>28%</cryo> el daño de la Habilidad Elemental y en un <cryo>10.5%</cryo> su Prob. CRIT."
+    },
+    "4": {
+      "0": "Aumenta en un <cryo>32%</cryo> el daño de la Habilidad Elemental y en un <cryo>12%</cryo> su Prob. CRIT."
+    }
+  }
+}

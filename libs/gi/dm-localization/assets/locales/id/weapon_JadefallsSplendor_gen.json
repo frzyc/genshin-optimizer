@@ -1,0 +1,24 @@
+{
+  "name": "Jadefall's Splendor",
+  "description": {
+    "0": "Wadah ritual yang diukir dari batu giok, memantulkan kilauan langit dan air yang jernih."
+  },
+  "passiveName": "Primordial Jade Regalia",
+  "passiveDescription": {
+    "0": {
+      "0": "Selama 3 detik setelah melancarkan Elemental Burst atau menciptakan perisai, akan mendapatkan efek Primordial Jade Regalia: Memulihkan <cryo>4,5</cryo> poin Energy setiap 2,5 detik dan meningkatkan Elemental DMG Bonus sesuai elemen Karakter yang mengenakan sebesar <cryo>0,3%</cryo> untuk setiap 1.000 poin Max HP Karakter yang mengenakan, hingga maksimum <cryo>12%</cryo>. Efek Primordial Jade Regalia tetap aktif meskipun Karakter yang mengenakan ada di dalam party, namun tidak berada di medan pertempuran."
+    },
+    "1": {
+      "0": "Selama 3 detik setelah melancarkan Elemental Burst atau menciptakan perisai, akan mendapatkan efek Primordial Jade Regalia: Memulihkan <cryo>5</cryo> poin Energy setiap 2,5 detik dan meningkatkan Elemental DMG Bonus sesuai elemen Karakter yang mengenakan sebesar <cryo>0,5%</cryo> untuk setiap 1.000 poin Max HP Karakter yang mengenakan, hingga maksimum <cryo>20%</cryo>. Efek Primordial Jade Regalia tetap aktif meskipun Karakter yang mengenakan ada di dalam party, namun tidak berada di medan pertempuran."
+    },
+    "2": {
+      "0": "Selama 3 detik setelah melancarkan Elemental Burst atau menciptakan perisai, akan mendapatkan efek Primordial Jade Regalia: Memulihkan <cryo>5,5</cryo> poin Energy setiap 2,5 detik dan meningkatkan Elemental DMG Bonus sesuai elemen Karakter yang mengenakan sebesar <cryo>0,7%</cryo> untuk setiap 1.000 poin Max HP Karakter yang mengenakan, hingga maksimum <cryo>28%</cryo>. Efek Primordial Jade Regalia tetap aktif meskipun Karakter yang mengenakan ada di dalam party, namun tidak berada di medan pertempuran."
+    },
+    "3": {
+      "0": "Selama 3 detik setelah melancarkan Elemental Burst atau menciptakan perisai, akan mendapatkan efek Primordial Jade Regalia: Memulihkan <cryo>6</cryo> poin Energy setiap 2,5 detik dan meningkatkan Elemental DMG Bonus sesuai elemen Karakter yang mengenakan sebesar <cryo>0,9%</cryo> untuk setiap 1.000 poin Max HP Karakter yang mengenakan, hingga maksimum <cryo>36%</cryo>. Efek Primordial Jade Regalia tetap aktif meskipun Karakter yang mengenakan ada di dalam party, namun tidak berada di medan pertempuran."
+    },
+    "4": {
+      "0": "Selama 3 detik setelah melancarkan Elemental Burst atau menciptakan perisai, akan mendapatkan efek Primordial Jade Regalia: Memulihkan <cryo>6,5</cryo> poin Energy setiap 2,5 detik dan meningkatkan Elemental DMG Bonus sesuai elemen Karakter yang mengenakan sebesar <cryo>1,1%</cryo> untuk setiap 1.000 poin Max HP Karakter yang mengenakan, hingga maksimum <cryo>44%</cryo>. Efek Primordial Jade Regalia tetap aktif meskipun Karakter yang mengenakan ada di dalam party, namun tidak berada di medan pertempuran."
+    }
+  }
+}

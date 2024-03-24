@@ -1,0 +1,24 @@
+{
+  "name": "Tidal Shadow",
+  "description": {
+    "0": "An exquisitely-crafted, standard-model sword forged for the high-ranking officers and flagship captains of Fontaine's old navy."
+  },
+  "passiveName": "White Cruising Wave",
+  "passiveDescription": {
+    "0": {
+      "0": "After the wielder is healed, ATK will be increased by <cryo>24%</cryo> for 8s. This can be triggered even when the character is not on the field."
+    },
+    "1": {
+      "0": "After the wielder is healed, ATK will be increased by <cryo>30%</cryo> for 8s. This can be triggered even when the character is not on the field."
+    },
+    "2": {
+      "0": "After the wielder is healed, ATK will be increased by <cryo>36%</cryo> for 8s. This can be triggered even when the character is not on the field."
+    },
+    "3": {
+      "0": "After the wielder is healed, ATK will be increased by <cryo>42%</cryo> for 8s. This can be triggered even when the character is not on the field."
+    },
+    "4": {
+      "0": "After the wielder is healed, ATK will be increased by <cryo>48%</cryo> for 8s. This can be triggered even when the character is not on the field."
+    }
+  }
+}

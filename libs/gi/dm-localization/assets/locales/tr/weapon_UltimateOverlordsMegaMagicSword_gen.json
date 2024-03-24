@@ -1,0 +1,24 @@
+{
+  "name": "\"Yüce Lordun Devasa Büyü Kılıcı\"",
+  "description": {
+    "0": "Yalnızca denizlerde hüküm süren yüce lordun kullanabildiği büyülü bir kılıç. Suya dayanıklı özel bir malzemeden yapıldığı için suyun içinde bırakılsa bile zarar görmez. Böyle bir kılıç nasıl mağlup edilebilir ki?"
+  },
+  "passiveName": "Melusinalar Arkanda!",
+  "passiveDescription": {
+    "0": {
+      "0": "Saldırı <cryo>%12</cryo> artar. Hepsi bu kadar değil tabii! Merusea Köyü'nde yardım ettiğin bütün Melusinaların desteği sana güç kazandırır! Yardım ettiğin Melusinaların sayısına göre Saldırın ek olarak <cryo>%12</cryo>'ye kadar artabilir."
+    },
+    "1": {
+      "0": "Saldırı <cryo>%15</cryo> artar. Hepsi bu kadar değil tabii! Merusea Köyü'nde yardım ettiğin bütün Melusinaların desteği sana güç kazandırır! Yardım ettiğin Melusinaların sayısına göre Saldırın ek olarak <cryo>%15</cryo>'e kadar artabilir."
+    },
+    "2": {
+      "0": "Saldırı <cryo>%18</cryo> artar. Hepsi bu kadar değil tabii! Merusea Köyü'nde yardım ettiğin bütün Melusinaların desteği sana güç kazandırır! Yardım ettiğin Melusinaların sayısına göre Saldırın ek olarak <cryo>%18</cryo>'e kadar artabilir."
+    },
+    "3": {
+      "0": "Saldırı <cryo>%21</cryo> artar. Hepsi bu kadar değil tabii! Merusea Köyü'nde yardım ettiğin bütün Melusinaların desteği sana güç kazandırır! Yardım ettiğin Melusinaların sayısına göre Saldırın ek olarak <cryo>%21</cryo>'e kadar artabilir."
+    },
+    "4": {
+      "0": "Saldırı <cryo>%24</cryo> artar. Hepsi bu kadar değil tabii! Merusea Köyü'nde yardım ettiğin bütün Melusinaların desteği sana güç kazandırır! Yardım ettiğin Melusinaların sayısına göre Saldırın ek olarak <cryo>%24</cryo>'e kadar artabilir."
+    }
+  }
+}

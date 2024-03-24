@@ -1,0 +1,163 @@
+{
+  "name": "Faruzan",
+  "title": "Esrarengiz Makinist",
+  "description": "\"Yüzyıl öncesinden\" bir araştırmacı. Kendisini herkesten daha kıdemli görmeyi sever ve eski yazılar ve her türden makina hakkında önemli bilgilere sahiptir.",
+  "constellationName": "Çiçek Sarmaşığı",
+  "auto": {
+    "name": "Girdap Atışı",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Saldırı</strong>",
+        "1": "Arka arkaya en fazla 4 ok atar."
+      },
+      "charged": {
+        "0": "<strong>Yüklü Saldırı</strong>",
+        "1": "Daha isabetli ve daha yüksek Hasar veren bir <strong>Hedefli Atış</strong> yapar.",
+        "2": "Nişan alırken okun ucunda güçlü rüzgarlar toplanır. Tam yüklü bu rüzgar oku <anemo>Rüzgar Hasarı</anemo> verir."
+      },
+      "plunging": {
+        "0": "<strong>Havadan Saldırı</strong>",
+        "1": "Havadayken yaylım ok atışı yapar ve hızla aşağı dalış yaparak yere vurur, yoluna çıkan düşmanlara saldırır ve Alan Hasarı verir."
+      }
+    },
+    "skillParams": {
+      "0": "1 Vuruş Hasarı",
+      "1": "2 Vuruş Hasarı",
+      "2": "3 Vuruş Hasarı",
+      "3": "4 Vuruş Hasarı",
+      "4": "Hedefli Atış",
+      "5": "Tam Yüklü Hedefli Atış",
+      "6": "Havadan Saldırı Hasarı",
+      "7": "Havadan Saldırı Hasarı (Alçaktan/Yüksekten)",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Nasamjnin Rüzgar Diyarı",
+    "description": {
+      "0": "Faruzan, yakındaki düşmanlara <anemo>Rüzgar Alan Hasarı</anemo> veren bir geometrik top çıkarır. Aynı zamanda Bora Oluşumu durumuna girer.",
+      "1": "Bora Oluşumu durumundayken Faruzan'ın bir sonraki tam yüklü atışı, bu durumu harcayarak yüksek basınçlı akımlara sahip bir Kasırga Okuna dönüşür. Bu ok, \"Normal Saldırı: Girdap Atışı\"nın tam yüklü Hedefli Atış Hasarı oranında <anemo>Rüzgar Hasarı</anemo> verir.",
+      "2": "<br/>",
+      "3": "<strong>Basınç Çöküşü</strong>",
+      "4": "Kasırga Oku, isabet ettiği düşman veya karaktere Basınç Çöküşü etkisi verir. Bu etki, kısa bir süre sonra kaldırılır. Kaldırıldıktan sonra yakındaki nesne ve düşmanları kendine çekip <anemo>Rüzgar Alan Hasarı</anemo> veren bir girdap oluşturur. Kasırga Oku, herhangi bir düşmana veya karaktere isabet etmezse isabet ettiği yerde Basınç Çöküşü etkisi oluşturur.",
+      "5": "Girdap Hasarı, Element Becerisi Hasarı olarak sayılır.",
+      "6": "<br/>",
+      "7": "<i>Gerçeğin esintisi, ön yargı belasını temizleyerek gerçeği arayanların ruhlarını doyurur.</i>"
+    },
+    "skillParams": {
+      "0": "Beceri Hasarı",
+      "1": "Basınç Çöküşü Girdap Hasarı",
+      "2": "Bora Oluşumu Süresi",
+      "3": "BS",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Rüzgarın Gizli Yolları",
+    "description": {
+      "0": "Faruzan, <anemo>Rüzgar Alan Hasarı</anemo> veren ve Ritmik Hortum çıkaran bir Kamaştırıcı Geometrik Top çıkarır.",
+      "1": "Kamaştırıcı Geometrik Top savaş alanında bulunduğu sürece sürekli üçgen bir yolda hareket eder. Üçgen yolun her köşesine ulaştığında 1 Ritmik Hortum çıkarır.",
+      "2": "<br/>",
+      "3": "<strong>Ritmik Hortum</strong>",
+      "4": [
+        "Ritmik Hortum ortaya çıktığında yakındaki düşmanlara <anemo>Rüzgar Direncini</anemo> azaltan bir Hain Rüzgar Zulmü etkisi verir.",
+        "Ritmik Hortum çıkarıldığında yakındaki grup üyelerine <anemo>Rüzgar Hasarı Bonusu</anemo> veren bir Keşiş Rüzgarının Lütfu etkisini de verir."
+      ],
+      "5": "<br/>",
+      "6": "<i>Kadim Harabelerde bulunabilecek olan bilinmeyen bilgilere saygı duyulması gerekir.</i>"
+    },
+    "skillParams": {
+      "0": "Beceri Hasarı",
+      "1": "Rüzgar Hasarı Bonusu",
+      "2": "Keşiş Rüzgarının Lütfu Süresi",
+      "3": "Rüzgar Direnci Azalması",
+      "4": "Hain Rüzgar Zulmü Süresi",
+      "5": "Süre",
+      "6": "BS",
+      "7": "Enerji Maliyeti",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Şiddetli Akım",
+    "description": {
+      "0": "Faruzan, <strong>Nasamjnin Rüzgar Diyarı</strong> tarafından oluşturulan Bora Oluşumu durumundayken bir atışın yüklenmesi için gereken süre %60 azalır ve <strong>Rüzgarın Gizli Yollarının</strong> Hain Rüzgar Zulmünü, Basınç Çöküşünün oluşturduğu girdap tarafından vurulan düşmanlara uygulayabilir."
+    }
+  },
+  "passive2": {
+    "name": "Yedi Mağaranın Kayıp Bilgeliği",
+    "description": {
+      "0": "<strong>Rüzgarın Gizli Yollarının</strong> Keşiş Rüzgarının Lütfundan etkilenen karakterler, düşmanlara Normal, Yüklü, Havadan Saldırılar, Element Becerisi veya Element Patlaması ile <anemo>Rüzgar Hasarı</anemo> verdiklerinde Kasırga Koruması etkisi kazanırlar. Bu Hasar, Faruzan'ın Temel Saldırısının %32'sine bağlı olarak artar. Her 0,8 saniyede 1 defa Kasırga Koruması tetiklenebilir. Bu hasar Bonusu, Keşiş Rüzgarının Lütfu sona erdiğinde veya etki bir defa tetiklendiğinde kaybolur."
+    }
+  },
+  "passive3": {
+    "name": "Kitaplar Doğru Yolu Gösterir",
+    "description": {
+      "0": "20 saatliğine bir Sumeru Keşfine gönderildiğinde %25 daha fazla ödül kazanır."
+    }
+  },
+  "constellation1": {
+    "name": "Ne Olursa Olsun Gerçek",
+    "description": {
+      "0": "Faruzan, <strong>Nasamjnin Rüzgar Diyarının</strong> oluşturduğu tek bir Bora Oluşumu etkisindeyken tam yüklü Hedefli Atışları kullanarak en fazla 2 Kasırga Oku atabilir."
+    }
+  },
+  "constellation2": {
+    "name": "Aşırı İdrak",
+    "description": {
+      "0": "<strong>Rüzgarın Gizli Yolları</strong> tarafından oluşturulan Kamaştırıcı Geometrik Topun süresi 6 saniye artar."
+    }
+  },
+  "constellation3": {
+    "name": "Ruhani Bostan Yolculuğu",
+    "description": {
+      "0": "<strong>Nasamjnin Rüzgar Diyarı</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation4": {
+    "name": "Kutsal Anlayış",
+    "description": {
+      "0": "<strong>Basınç Çöküşünün</strong> oluşturduğu girdap, vurduğu düşman sayısına göre Faruzan'ın Enerjisini yeniler. 1 düşmana vurduğu zaman Faruzan için 2 Enerji yeniler. Vurulan ek her bir düşman, Faruzan için 0,5 Enerji daha yeniler.",
+      "1": "Her girdapla en fazla 4 Enerji yenilenebilir."
+    }
+  },
+  "constellation5": {
+    "name": "Düşünce Çokluğu Diyarı",
+    "description": {
+      "0": "<strong>Rüzgarın Gizli Yolları</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation6": {
+    "name": "Gerçeğin Harika Yolu",
+    "description": {
+      "0": "<strong>Rüzgarın Gizli Yolları</strong> becerisinin Keşiş Rüzgarının Lütfu etkisinde olan karakterler, <anemo>Rüzgar Hasarı</anemo> verirken %40 Kritik Hasar artışı elde ederler. Aktif karakter, Keşiş Rüzgarının Lütfu etkisindeyken Hasar verirse hasar verdiği düşmana Basınç Çöküşü etkisi uygular. Bu etki her 3 saniyede bir tetiklenebilir. Bu Bekleme Süresi tüm grup üyeleri tarafından paylaşılır."
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Balada de los Fiordos",
+  "description": {
+    "0": "Una lanza utilizada por las personas que pescan en las zonas de tundra. Ninguna presa se le puede escapar."
+  },
+  "passiveName": "Historias de la tundra",
+  "passiveDescription": {
+    "0": {
+      "0": "Cuando en el equipo hay al menos tres personajes de distinto tipo elemental, la Maestría Elemental aumenta en <cryo>120</cryo> pts."
+    },
+    "1": {
+      "0": "Cuando en el equipo hay al menos tres personajes de distinto tipo elemental, la Maestría Elemental aumenta en <cryo>150</cryo> pts."
+    },
+    "2": {
+      "0": "Cuando en el equipo hay al menos tres personajes de distinto tipo elemental, la Maestría Elemental aumenta en <cryo>180</cryo> pts."
+    },
+    "3": {
+      "0": "Cuando en el equipo hay al menos tres personajes de distinto tipo elemental, la Maestría Elemental aumenta en <cryo>210</cryo> pts."
+    },
+    "4": {
+      "0": "Cuando en el equipo hay al menos tres personajes de distinto tipo elemental, la Maestría Elemental aumenta en <cryo>240</cryo> pts."
+    }
+  }
+}

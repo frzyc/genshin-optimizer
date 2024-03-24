@@ -1,0 +1,24 @@
+{
+  "name": "Fierté de la Voûte d'Azur",
+  "description": {
+    "0": "Une épée à deux mains symbolisant le fier envol de Dvalin dans les cieux. Elle émet un son grave lorsqu'on la brandit, invoquant la puissance du dragon Anémo qui déchaîne les vents."
+  },
+  "passiveName": "Échine du dragon briseur de ciel",
+  "passiveDescription": {
+    "0": {
+      "0": "Augmente tous les DGT infligés de <cryo>8 %</cryo>. Après un déchaînement élémentaire, les attaques normales et chargées génèrent une lame de vide qui inflige <cryo>80 %</cryo> de DGT d'ATQ aux ennemis sur sa route. Cet effet dure 20 s ou 8 lames."
+    },
+    "1": {
+      "0": "Augmente tous les DGT infligés de <cryo>10 %</cryo>. Après un déchaînement élémentaire, les attaques normales et chargées génèrent lorsqu'elles touchent une lame de vide qui inflige <cryo>100 %</cryo> de DGT d'ATQ aux ennemis sur sa route. Cet effet dure 20 s ou 8 lames."
+    },
+    "2": {
+      "0": "Augmente tous les DGT infligés de <cryo>12 %</cryo>. Après un déchaînement élémentaire, les attaques normales et chargées génèrent une lame de vide qui inflige <cryo>120 %</cryo> de DGT d'ATQ aux ennemis sur sa route. Cet effet dure 20 s ou 8 lames."
+    },
+    "3": {
+      "0": "Augmente tous les DGT infligés de <cryo>14 %</cryo>. Après un déchaînement élémentaire, les attaques normales et chargées génèrent une lame de vide qui inflige <cryo>140 %</cryo> de DGT d'ATQ aux ennemis sur sa route. Cet effet dure 20 s ou 8 lames."
+    },
+    "4": {
+      "0": "Augmente tous les DGT infligés de <cryo>16 %</cryo>. Après un déchaînement élémentaire, les attaques normales et chargées génèrent une lame de vide qui inflige <cryo>160 %</cryo> de DGT d'ATQ aux ennemis sur sa route. Cet effet dure 20 s ou 8 lames."
+    }
+  }
+}

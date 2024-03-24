@@ -1,0 +1,167 @@
+{
+  "name": "Venti",
+  "title": "Bardo Itinerante",
+  "description": "Um dos muitos bardos de Mondstadt que vagueia livremente pelas ruas e becos da cidade.",
+  "constellationName": "Carmen Dei",
+  "auto": {
+    "name": "Tiro com Arco Divino",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Ataque Normal</strong>",
+        "1": "Realiza até 6 tiros consecutivos com o arco."
+      },
+      "charged": {
+        "0": "<strong>Ataque Carregado</strong>",
+        "1": "Realiza um <strong>Tiro com Mira</strong> mais preciso com Dano aumentado.",
+        "2": "Enquanto estiver mirando, ventos favoráveis irão se acumular na ponta da flecha. Uma flecha completamente carregada com o vento irá infligir <anemo>Dano Anemo</anemo>."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Imersivo</strong>",
+        "1": "Dispara uma chuva de flechas em pleno ar antes de atingir o chão, infligindo Dano em uma AdE durante o impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Dano do 1° Golpe",
+      "1": "Dano do 2° Golpe",
+      "2": "Dano do 3° Golpe",
+      "3": "Dano do 4° Golpe",
+      "4": "Dano do 5° Golpe",
+      "5": "Dano do 6° Golpe",
+      "6": "Disparo com Mira",
+      "7": "Disparo com Mira com Energização Completa",
+      "8": "Dano Durante a Queda",
+      "9": "Dano de Queda de Baixa/Alta Altitude",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Sonata Celestial",
+    "description": {
+      "0": "Ó vento no qual voam todos os hinos e canções pelo ar, leve estes peregrinos terrestres aos céus!",
+      "1": "<br/>",
+      "2": "<strong>Pressionar</strong>",
+      "3": "Evoca um Domínio dos Ventos na localização do inimigo, causando <anemo>Dano Anemo em uma AdE</anemo> e lançando inimigos pelo ar.",
+      "4": "<br/>",
+      "5": "<strong>Manter pressionado</strong>",
+      "6": "Evoca um Domínio dos Ventos ainda maior com um Venti em seu centro, causando <anemo>Dano Anemo em AdE</anemo> e lançando inimigos afetados pelo ar.",
+      "7": "Após liberar a versão de Manter Pressionado dessa habilidade, Venti monta o vento pelo ar.",
+      "8": "<br/>",
+      "9": "Inimigos atingidos pelo Soneto dos Céus cairão lentamente ao chão.",
+      "10": "<br/>",
+      "11": "<i>Nos dias em que deuses e homens andaram na terra juntos, os céus eram cheios de infinitas canções. Essa melodia foi esquecida há muito tempo.</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Toque",
+      "1": "Recarga de Toque",
+      "2": "Dano ao Manter Pressionado",
+      "3": "Recarga ao Manter Pressionado",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Grande Ode do Vento",
+    "description": {
+      "0": "Dispara uma flecha energizada com vento, criando um grande Olho da Tempestade que suga inimigos, causando <anemo>Dano Anemo</anemo> contínuo.",
+      "1": "<br/>",
+      "2": "<strong>Absorção Elemental</strong>",
+      "3": "Se o Olho da Tempestade entrar em contato com os elementos <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<electro>Electro</electro>, causará Dano elemental adicional daquele tipo.",
+      "4": "A Absorção Elemental pode ocorrer uma vez a cada uso.",
+      "5": "<br/>",
+      "6": "<i>Muitos hinos escritos para elogiar o Arconte Anemo não existem mais. Essa é a sua compreensão do vento.</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Contínuo",
+      "1": "Adição de Dano Elemental",
+      "2": "Duração",
+      "3": "Tempo de Recarga",
+      "4": "Energia Elemental",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Abrace os Ventos",
+    "description": {
+      "0": "Ao manter pressionado a <strong>Sonata Celestial</strong> cria uma corrente de vento que dura por 20s."
+    }
+  },
+  "passive2": {
+    "name": "Olho da Tempestade",
+    "description": {
+      "0": "Regenera 15 de Energia para Venti após o efeito do <strong>Grande Ode do Vento</strong> terminar.",
+      "1": "Se ocorrer uma Absorção Elemental, também irá restaurar 15 de Energia a todos os personagens da equipe do elemento correspondente."
+    }
+  },
+  "passive3": {
+    "name": "Viajante do Vento",
+    "description": {
+      "0": "Diminui o consumo de Stamina ao Planar de todos os seus personagens em 20%.",
+      "1": "Não acumulável com Talentos Passivos que concedem exatamente os mesmos efeitos."
+    }
+  },
+  "constellation1": {
+    "name": "Vento Dividido",
+    "description": {
+      "0": "Dispara 2 flechas adicionais por cada <strong>Disparo com Mira</strong>, cada flecha causa 33% do Dano original da flecha."
+    }
+  },
+  "constellation2": {
+    "name": "Brisa da Reminiscência",
+    "description": {
+      "0": "<strong>Sonata Celestial</strong> diminui a <anemo>RES Anemo</anemo> e RES Física do inimigo em 12% por 10s.",
+      "1": "Os inimigos lançados pela <strong>Sonata Celestial</strong> sofrem uma penalidade adicional de <anemo>RES Anemo</anemo> de 12% e RES física quando estiverem no ar."
+    }
+  },
+  "constellation3": {
+    "name": "Ode aos Ventos Milenares",
+    "description": {
+      "0": "Aumenta o nível do <strong>Grande Ode do Vento</strong> em 3.",
+      "1": "O nível máximo de elevação é 15."
+    }
+  },
+  "constellation4": {
+    "name": "Furacão da Liberdade",
+    "description": {
+      "0": "Quando Venti obtém um Orbe ou uma Partícula Elemental, ele recebe 25% de <anemo>Dano Anemo Bônus</anemo> por 10s."
+    }
+  },
+  "constellation5": {
+    "name": "Concerto Celestial",
+    "description": {
+      "0": "Aumenta o nível da <strong>Sonata Celestial</strong> em 3.",
+      "1": "O nível máximo de elevação é 15."
+    }
+  },
+  "constellation6": {
+    "name": "Tempestade do Desafio",
+    "description": {
+      "0": "Alvos que levarem Dano da <strong>Grande Ode do Vento</strong> terão sua <anemo>RES Anemo</anemo> reduzida em 20%.",
+      "1": "Se uma Absorção Elemental ocorrer, então sua RES ao Elemento correspondente também é reduzida em 20%."
+    }
+  }
+}

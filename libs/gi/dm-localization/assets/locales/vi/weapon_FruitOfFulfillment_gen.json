@@ -1,0 +1,24 @@
+{
+  "name": "Quả Mọng",
+  "description": {
+    "0": "Quả mọng nhận được từ câu chuyện của Aranara. Bên trong ẩn chứa tiềm năng chiến thắng mọi nguy hiểm."
+  },
+  "passiveName": "Hình Dạng Tròn Trĩnh",
+  "passiveDescription": {
+    "0": {
+      "0": "Sau khi kích hoạt phản ứng nguyên tố sẽ nhận hiệu ứng \"Doanh Khuyết\": Tinh Thông Nguyên Tố tăng <cryo>24</cryo> điểm, tấn công giảm 5%. Mỗi 0.3s tối đa nhận một tầng hiệu quả Doanh Khuyết, cộng dồn tối đa 5 tầng. Khi không kích hoạt phản ứng nguyên tố, mỗi 6s sẽ mất đi một tầng. Nhân vật không ra trận cũng sẽ kích hoạt hiệu quả này."
+    },
+    "1": {
+      "0": "Sau khi kích hoạt phản ứng nguyên tố sẽ nhận hiệu ứng \"Doanh Khuyết\": Tinh Thông Nguyên Tố tăng <cryo>27</cryo> điểm, tấn công giảm 5%. Mỗi 0.3s tối đa nhận một tầng hiệu quả Doanh Khuyết, cộng dồn tối đa 5 tầng. Khi không kích hoạt phản ứng nguyên tố, mỗi 6s sẽ mất đi một tầng. Nhân vật không ra trận cũng sẽ kích hoạt hiệu quả này."
+    },
+    "2": {
+      "0": "Sau khi kích hoạt phản ứng nguyên tố sẽ nhận hiệu ứng \"Doanh Khuyết\": Tinh Thông Nguyên Tố tăng <cryo>30</cryo> điểm, tấn công giảm 5%. Mỗi 0.3s tối đa nhận một tầng hiệu quả Doanh Khuyết, cộng dồn tối đa 5 tầng. Khi không kích hoạt phản ứng nguyên tố, mỗi 6s sẽ mất đi một tầng. Nhân vật không ra trận cũng sẽ kích hoạt hiệu quả này."
+    },
+    "3": {
+      "0": "Sau khi kích hoạt phản ứng nguyên tố sẽ nhận hiệu ứng \"Doanh Khuyết\": Tinh Thông Nguyên Tố tăng <cryo>33</cryo> điểm, tấn công giảm 5%. Mỗi 0.3s tối đa nhận một tầng hiệu quả Doanh Khuyết, cộng dồn tối đa 5 tầng. Khi không kích hoạt phản ứng nguyên tố, mỗi 6s sẽ mất đi một tầng. Nhân vật không ra trận cũng sẽ kích hoạt hiệu quả này."
+    },
+    "4": {
+      "0": "Sau khi kích hoạt phản ứng nguyên tố sẽ nhận hiệu ứng \"Doanh Khuyết\": Tinh Thông Nguyên Tố tăng <cryo>36</cryo> điểm, tấn công giảm 5%. Mỗi 0.3s tối đa nhận một tầng hiệu quả Doanh Khuyết, cộng dồn tối đa 5 tầng. Khi không kích hoạt phản ứng nguyên tố, mỗi 6s sẽ mất đi một tầng. Nhân vật không ra trận cũng sẽ kích hoạt hiệu quả này."
+    }
+  }
+}

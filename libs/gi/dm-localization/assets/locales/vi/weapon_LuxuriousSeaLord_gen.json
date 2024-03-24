@@ -1,0 +1,24 @@
+{
+  "name": "Vua Biển Hàng Hiệu",
+  "description": {
+    "0": "Vua của biển cả. Sau khi sấy khô thì sẽ trở thành binh khí và cả thức ăn dự trữ nữa."
+  },
+  "passiveName": "Chiến Thắng Của Biển Cả",
+  "passiveDescription": {
+    "0": {
+      "0": "Sát thương từ Kỹ Năng Nộ tăng <cryo>12%</cryo>. Khi Kỹ Năng Nộ trúng địch, có 100% tỷ lệ triệu hồi kình ngư xung kích, gây sát thương phạm vi bằng <cryo>100%</cryo> sức tấn công. Hiệu quả này mỗi 15s tối đa kích hoạt một lần."
+    },
+    "1": {
+      "0": "Sát thương từ Kỹ Năng Nộ tăng <cryo>15%</cryo>. Khi Kỹ Năng Nộ trúng địch, có 100% tỷ lệ triệu hồi kình ngư xung kích, gây sát thương phạm vi bằng <cryo>125%</cryo> sức tấn công. Hiệu quả này mỗi 15s tối đa kích hoạt một lần."
+    },
+    "2": {
+      "0": "Sát thương từ Kỹ Năng Nộ tăng <cryo>18%</cryo>. Khi Kỹ Năng Nộ trúng địch, có 100% tỷ lệ triệu hồi kình ngư xung kích, gây sát thương phạm vi bằng <cryo>150%</cryo> sức tấn công. Hiệu quả này mỗi 15s tối đa kích hoạt một lần."
+    },
+    "3": {
+      "0": "Sát thương từ Kỹ Năng Nộ tăng <cryo>21%</cryo>. Khi Kỹ Năng Nộ trúng địch, có 100% tỷ lệ triệu hồi kình ngư xung kích, gây sát thương phạm vi bằng <cryo>175%</cryo> sức tấn công. Hiệu quả này mỗi 15s tối đa kích hoạt một lần."
+    },
+    "4": {
+      "0": "Sát thương từ Kỹ Năng Nộ tăng <cryo>24%</cryo>. Khi Kỹ Năng Nộ trúng địch, có 100% tỷ lệ triệu hồi kình ngư xung kích, gây sát thương phạm vi bằng <cryo>200%</cryo> sức tấn công. Hiệu quả này mỗi 15s tối đa kích hoạt một lần."
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "setName": "Virtuoso Corredor de Lava",
+  "setEffects": {
+    "2": "RES Pyro +40%.",
+    "4": "Aumenta en un 35% el daño contra los enemigos afectados por Pyro."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Determinación del Corredor de Lava",
+      "desc": "Una flor que se abrió mientras estaba rodeada de llamas. Según la leyenda, los sabios de la antigüedad la llevaron consigo antes de cruzar el mar de fuego."
+    },
+    "plume": {
+      "name": "Liberación del Corredor de Lava",
+      "desc": "Una pluma de pájaro bañada en lava. Escuchando de cerca, parece oírse el sonido del aleteo de un pájaro en medio de las llamas."
+    },
+    "sands": {
+      "name": "Tormento del Corredor de Lava",
+      "desc": "Un reloj que contiene una brillante y ardiente arena. A pesar del intenso calor, dicha arena fluye sin dejar ningún rastro de deterioro."
+    },
+    "goblet": {
+      "name": "Despertar del Corredor de Lava",
+      "desc": "Cuenta la leyenda que el vidrio de este cáliz puede soportar altas temperaturas. Actualmente, su interior está vacío, pero sigue emitiendo calor."
+    },
+    "circlet": {
+      "name": "Sabiduría del Corredor de Lava",
+      "desc": "La corona de la sabiduría bañada en llamas. Una vez brilló vivamente a la luz del fuego."
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Protótipo Âmbar",
+  "description": {
+    "0": "Um catalisador dourado, guardado secretamente na Forja do Penhasco Obscuro. Parece brilhar com a própria luz do céu."
+  },
+  "passiveName": "Chapeamento de Ouro",
+  "passiveDescription": {
+    "0": {
+      "0": "Ao usar o Supremo, regenera <cryo>4</cryo> de Energia a cada 2s por 6s. Todos os membros da Equipe regenerarão <cryo>4%</cryo> de Vida a cada 2s."
+    },
+    "1": {
+      "0": "Ao usar o Supremo, regenera <cryo>4.5</cryo> de Energia a cada 2s por 6s. Todos os membros da Equipe regenerarão <cryo>4.5%</cryo> de Vida a cada 2s."
+    },
+    "2": {
+      "0": "Ao usar o Supremo, regenera <cryo>5</cryo> de Energia a cada 2s por 6s. Todos os membros da Equipe regenerarão <cryo>5%</cryo> de Vida a cada 2s."
+    },
+    "3": {
+      "0": "Ao usar o Supremo, regenera <cryo>5.5</cryo> de Energia a cada 2s por 6s. Todos os membros da Equipe regenerarão <cryo>5.5%</cryo> de Vida a cada 2s."
+    },
+    "4": {
+      "0": "Ao usar o Supremo, regenera <cryo>6</cryo> de Energia a cada 2s por 6s. Todos os membros da Equipe regenerarão <cryo>6%</cryo> de Vida a cada 2s."
+    }
+  }
+}

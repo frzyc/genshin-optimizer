@@ -1,0 +1,24 @@
+{
+  "name": "Son Ağıt",
+  "description": {
+    "0": "Bir ozanın liri kadar sevimli bir yay, oklarıyla kalpleri bir ağıt gibi deler."
+  },
+  "passiveName": "Veda Nakaratı",
+  "passiveDescription": {
+    "0": {
+      "0": "\"Milenyum Hareketi\" koleksiyonunun rüzgarla birlikte hareket eden bir parçası. Element Ustalığını <cryo>60</cryo> artırır. Bu silahı kullanan karakterin Element Becerileri veya Element Patlamaları bir düşmanı vurduğunda karakter bir Hatıra Mührü kazanır. Bu etki 0,2 saniyede bir uygulanabilir ve ilgili karakter sahada değilken bile tetiklenir. 4 adet Hatıra Mührüne sahip olduğunda, mühürlerin tamamı kullanılır ve çevredeki tüm grup üyeleri 12 saniyeliğine \"Milenyum Hareketi: Veda Şarkısı\" kazanır. \"Milenyum Hareketi: Veda Şarkısı\" ile Element Ustalığı <cryo>100</cryo>, Saldırı <cryo>%20</cryo> artar. Bu etki tetiklendikten sonra 20 saniye boyunca Hatıra Mührü kazanılamaz. \"Milenyum Hareketi\"nin etkileri arasından aynı türde güçlendirmeler birbirine eklenmez."
+    },
+    "1": {
+      "0": "\"Milenyum Hareketi\" koleksiyonunun rüzgarla birlikte hareket eden bir parçası. Element Ustalığını <cryo>75</cryo> artırır. Bu silahı kullanan karakterin Element Becerileri veya Element Patlamaları bir düşmanı vurduğunda karakter bir Hatıra Mührü kazanır. Bu etki 0,2 saniyede bir uygulanabilir ve ilgili karakter sahada değilken bile tetiklenir. 4 adet Hatıra Mührüne sahip olduğunda, mühürlerin tamamı kullanılır ve çevredeki tüm grup üyeleri 12 saniyeliğine \"Milenyum Hareketi: Veda Şarkısı\" kazanır. \"Milenyum Hareketi: Veda Şarkısı\" ile Element Ustalığı <cryo>125</cryo>, Saldırı <cryo>%25</cryo> artar. Bu etki tetiklendikten sonra 20 saniye boyunca Hatıra Mührü kazanılamaz. \"Milenyum Hareketi\"nin etkileri arasından aynı türde güçlendirmeler birbirine eklenmez."
+    },
+    "2": {
+      "0": "\"Milenyum Hareketi\" koleksiyonunun rüzgarla birlikte hareket eden bir parçası. Element Ustalığını <cryo>90</cryo> artırır. Bu silahı kullanan karakterin Element Becerileri veya Element Patlamaları bir düşmanı vurduğunda karakter bir Hatıra Mührü kazanır. Bu etki 0,2 saniyede bir uygulanabilir ve ilgili karakter sahada değilken bile tetiklenir. 4 adet Hatıra Mührüne sahip olduğunda, mühürlerin tamamı kullanılır ve çevredeki tüm grup üyeleri 12 saniyeliğine \"Milenyum Hareketi: Veda Şarkısı\" kazanır. \"Milenyum Hareketi: Veda Şarkısı\" ile Element Ustalığı <cryo>150</cryo>, Saldırı <cryo>%30</cryo> artar. Bu etki tetiklendikten sonra 20 saniye boyunca Hatıra Mührü kazanılamaz. \"Milenyum Hareketi\"nin etkileri arasından aynı türde güçlendirmeler birbirine eklenmez."
+    },
+    "3": {
+      "0": "\"Milenyum Hareketi\" koleksiyonunun rüzgarla birlikte hareket eden bir parçası. Element Ustalığını <cryo>105</cryo> artırır. Bu silahı kullanan karakterin Element Becerileri veya Element Patlamaları bir düşmanı vurduğunda karakter bir Hatıra Mührü kazanır. Bu etki 0,2 saniyede bir uygulanabilir ve ilgili karakter sahada değilken bile tetiklenir. 4 adet Hatıra Mührüne sahip olduğunda, mühürlerin tamamı kullanılır ve çevredeki tüm grup üyeleri 12 saniyeliğine \"Milenyum Hareketi: Veda Şarkısı\" kazanır. \"Milenyum Hareketi: Veda Şarkısı\" ile Element Ustalığı <cryo>175</cryo>, Saldırı <cryo>%35</cryo> artar. Bu etki tetiklendikten sonra 20 saniye boyunca Hatıra Mührü kazanılamaz. \"Milenyum Hareketi\"nin etkileri arasından aynı türde güçlendirmeler birbirine eklenmez."
+    },
+    "4": {
+      "0": "\"Milenyum Hareketi\" koleksiyonunun rüzgarla birlikte hareket eden bir parçası. Element Ustalığını <cryo>120</cryo> artırır. Bu silahı kullanan karakterin Element Becerileri veya Element Patlamaları bir düşmanı vurduğunda karakter bir Hatıra Mührü kazanır. Bu etki 0,2 saniyede bir uygulanabilir ve ilgili karakter sahada değilken bile tetiklenir. 4 adet Hatıra Mührüne sahip olduğunda, mühürlerin tamamı kullanılır ve çevredeki tüm grup üyeleri 12 saniyeliğine \"Milenyum Hareketi: Veda Şarkısı\" kazanır. \"Milenyum Hareketi: Veda Şarkısı\" ile Element Ustalığı <cryo>200</cryo>, Saldırı <cryo>%40</cryo> artar. Bu etki tetiklendikten sonra 20 saniye boyunca Hatıra Mührü kazanılamaz. \"Milenyum Hareketi\"nin etkileri arasından aynı türde güçlendirmeler birbirine eklenmez."
+    }
+  }
+}

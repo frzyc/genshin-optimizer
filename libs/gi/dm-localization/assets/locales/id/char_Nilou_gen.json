@@ -1,0 +1,171 @@
+{
+  "name": "Nilou",
+  "title": "Dance of Lotuslight",
+  "description": "Penari terkenal di Teater Zubayr. Tariannya elegan dan gemulai, pembawaannya ramah dan polos.",
+  "constellationName": "Lotos Somno",
+  "auto": {
+    "name": "Dance of Samser",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Attack</strong>",
+        "1": "Melancarkan maksimum hingga 3 serangan pedang beruntun."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Mengonsumsi sejumlah Stamina untuk melakukan 1 tebasan memutar."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Menerjang dari udara untuk menghantam tanah di bawahnya, menyerang musuh di jalurnya dan mengakibatkan DMG area saat mendarat."
+      }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Charged Attack",
+      "4": "Konsumsi Stamina Charged Attack",
+      "5": "DMG Selama Plunging",
+      "6": "DMG Plunging Attack Rendah/Tinggi",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Dance of Haftkarsvar",
+    "description": {
+      "0": "Nilou memasuki status Pirouette dan mengakibatkan <hydro>Hydro DMG</hydro> terhadap musuh di sekitarnya berdasarkan Max HP-nya.",
+      "1": "Saat Nilou berada dalam status Pirouette dan melancarkan Normal Attack atau Elemental Skill, serangan tersebut akan dikonversi menjadi Sword Dance atau Whirling Steps sesuai jenis serangannya, DMG yang diakibatkan akan dikonversi menjadi <hydro>Hydro DMG</hydro> yang tidak bisa ditimpa Elemental Infusion lainnya, dan itu dianggap sebagai DMG Elemental Skill.",
+      "2": "<br/>",
+      "3": "Dalam status ini, langkah tarian ketiga Nilou akan mengakhiri status Pirouette dan akan menghasilkan efek berikut sesuai dengan kategori langkah tarian ketiganya:",
+      "4": [
+        "Sword Dance: Melepaskan Luminous Illusion yang akan mengakibatkan <hydro>Hydro DMG</hydro> terhadap musuh yang menyentuhnya dan memberikan status Lunar Prayer kepada Nilou. Dalam status ini, Normal Attack Nilou akan dikonversi menjadi Sword Dance, dan akan melepaskan Luminous Illusion saat melakukan serangan yang terakhir;",
+        "Whirling Steps: Melepaskan sebuah Whirling Water Wheel dan mengakibatkan <hydro>Hydro DMG Area</hydro>, juga akan menghasilkan sebuah Tranquility Aura yang akan bergerak mengikuti Karakter aktif dan memberikan status <hydro>Wet</hydro> terhadap musuh yang berada di dalamnya."
+      ],
+      "5": "<br/>",
+      "6": "Saat berada dalam status Pirouette dan Lunar Prayer, Nilou tidak akan bisa melancarkan Charged Attack; Semua status ini akan hilang setelah Nilou meninggalkan medan pertempuran.",
+      "7": "<br/>",
+      "8": "<i>\"Dengan anggun jari-jari kakinya menyentuh permukaan air, dan cahaya yang beriak darinya bahkan sama dengan ketujuh langit.\"</i>"
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "DMG Tahap 1 Sword Dance/Whirling Steps",
+      "2": "DMG Tahap 2 Sword Dance/Whirling Steps",
+      "3": "DMG Luminous Illusion/Water Wheel",
+      "4": "Durasi Pirouette",
+      "5": "Durasi Lunar Prayer",
+      "6": "Durasi Tranquility Aura",
+      "7": "Cooldown",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Dance of Abzendegi: Distant Dreams, Listening Spring",
+    "description": {
+      "0": "Memulai tarian mimpi nan jauh dan sumber mata air yang bisa didengar dan menyebabkan sebuah Lotus of Distant Water mekar, mengakibatkan <hydro>Hydro DMG Area</hydro> berdasarkan Max HP Nilou dan memberikan status \"Lingering Aeon\" kepada musuh yang terkena.",
+      "1": "Setelah waktu singkat, musuh yang berada dalam status Lingering Aeon akan menerima <hydro>Hydro DMG</hydro>.",
+      "2": "<br/>",
+      "3": "<i>\"Kita belum pernah menyaksikan mimpi yang jauh itu, tapi tarian ini dapat membangkitkannya.\"</i>"
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "DMG Lingering Aeon",
+      "2": "Cooldown",
+      "3": "Konsumsi Energy",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Court of Dancing Petals",
+    "description": {
+      "0": "Saat seluruh anggota party adalah Karakter <dendro>Dendro</dendro> dan <hydro>Hydro</hydro>, serta memiliki minimal 1 Karakter Dendro dan 1 Karakter Hydro:",
+      "1": "Saat Nilou menyelesaikan langkah tarian ketiga <strong>Dance of Haftkarsvar</strong>, Nilou akan memberikan status Golden Chalice's Bounty yang bertahan 30 detik kepada seluruh Karakter di sekitar.",
+      "2": "Setelah Karakter yang berada dalam status Golden Chalice's Bounty menerima <dendro>serangan Dendro</dendro>, Elemental Mastery seluruh Karakter di sekitar meningkat 100 poin selama 10 detik; Selain itu, saat memicu reaksi Bloom, akan menghasilkan Bountiful Core yang akan menggantikan Dendro Core.",
+      "3": "Jika dibandingkan dengan Dendro Core, Bountiful Core akan meledak dengan sangat cepat setelah diciptakan dan memiliki cakupan area yang lebih luas.",
+      "4": "Bountiful Core tidak akan bisa memicu reaksi Hyperbloom atau Burgeon, dan memiliki batas jumlah yang sama dengan Dendro Core. Serangan Bountiful Core akan dianggap sebagai serangan Dendro Core dari reaksi Bloom.",
+      "5": "Saat jenis elemen Karakter di dalam party tidak cukup untuk memicu Talenta Pasif, maka efek Golden Chalice's Bounty yang sudah dimiliki akan dihapus."
+    }
+  },
+  "passive2": {
+    "name": "Dreamy Dance of Aeons",
+    "description": {
+      "0": "Untuk setiap kelebihan 1.000 poin Max HP di atas 30.000 poin Max HP yang dimiliki Nilou, akan membuat DMG Bountiful Core yang diakibatkan Karakter yang berada dalam status Golden Chalice's Bounty meningkat 9%.",
+      "1": "Batas maksimum peningkatan DMG yang diakibatkan Bountiful Core dengan cara ini adalah 400%."
+    }
+  },
+  "passive3": {
+    "name": "White Jade Lotus",
+    "description": {
+      "0": "Saat masakan jenis petualangan dimasak dengan sempurna, terdapat 12% kemungkinan mendapatkan hasil 2 kali lipat."
+    }
+  },
+  "constellation1": {
+    "name": "Dance of the Waning Moon",
+    "description": {
+      "0": "<strong>Dance of Haftkarsvar</strong> mendapatkan penguatan berikut:",
+      "1": [
+        "DMG yang diakibatkan Luminous Illusion meningkat sebesar 65%;",
+        "Durasi Tranquility Aura diperpanjang 6 detik."
+      ]
+    }
+  },
+  "constellation2": {
+    "name": "The Starry Skies Their Flowers Rain",
+    "description": {
+      "0": "Setelah Karakter yang berada dalam status \"Golden Chalice's Bounty\" mengakibatkan <hydro>Hydro DMG</hydro> kepada musuh, mengurangi 35% <hydro>Hydro RES</hydro> musuh tersebut selama 10 detik. Setelah memicu reaksi Bloom yang mengakibatkan DMG kepada musuh, mengurangi 35% <dendro>Dendro RES</dendro> musuh selama 10 detik.",
+      "1": "Kamu harus membuka Talenta Pasif \"Court of Dancing Petals\" terlebih dahulu."
+    }
+  },
+  "constellation3": {
+    "name": "Beguiling Shadowstep",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Dance of Abzendegi: Distant Dreams, Listening Spring</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Fricative Pulse",
+    "description": {
+      "0": "Setelah langkah tarian ketiga dalam status Pirouette dari <strong>Dance of Haftkarsvar</strong> mengenai musuh, Nilou akan memulihkan 15 Energy, meningkatkan 50% DMG <strong>Dance of Abzendegi: Distant Dreams, Listening Spring</strong>-nya selama 8 detik."
+    }
+  },
+  "constellation5": {
+    "name": "Twirling Light",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Dance of Haftkarsvar</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Frostbreaker's Melody",
+    "description": {
+      "0": "Untuk setiap 1.000 poin Max HP, akan meningkakan CRIT Rate dan CRIT DMG Nilou masing-masing sebesar 0,6% dan 1,2%.",
+      "1": "Kenaikan maksimum CRIT Rate dan CRIT DMG masing-masing adalah 30% dan 60%."
+    }
+  }
+}

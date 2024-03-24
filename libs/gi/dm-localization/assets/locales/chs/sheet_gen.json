@@ -1,0 +1,87 @@
+{
+  "normal": {
+    "hit1": "一段伤害",
+    "hit2": "二段伤害",
+    "hit3": "三段伤害",
+    "hit4": "四段伤害",
+    "hit5": "五段伤害",
+    "hit6": "六段伤害"
+  },
+  "charged": {
+    "dmg": "重击伤害",
+    "spinning": "重击循环伤害",
+    "final": "重击终结伤害",
+    "stamina": "重击体力消耗",
+    "aimed": "瞄准射击",
+    "fullyAimed": "满蓄力瞄准射击"
+  },
+  "plunging": {
+    "dmg": "下坠期间伤害",
+    "low": "低空坠地冲击伤害",
+    "high": "高空坠地冲击伤害"
+  },
+  "maxDuration": "最大持续时间",
+  "maxStacks": "能量层数上限",
+  "skillDMG": "技能伤害",
+  "burstDMG": "爆发伤害",
+  "dmgAbsorption": "护盾吸收量",
+  "healing": "治疗量",
+  "contHealing": "持续治疗量",
+  "duration": "持续时间",
+  "cd": "冷却时间",
+  "energyCost": "元素能量",
+  "energyRegen": "元素能量恢复",
+  "baseDMG": "基础伤害",
+  "dot": "持续伤害",
+  "addEleDMG": "附加元素伤害",
+  "hpRegenPerHit": "命中治疗量",
+  "press": {
+    "dmg": "点按伤害",
+    "cd": "点按冷却时间"
+  },
+  "hold": {
+    "dmg": "长按伤害",
+    "cd": "长按冷却时间"
+  },
+  "element": {
+    "anemo": "风",
+    "geo": "岩元素",
+    "pyro": "火",
+    "hydro": "水元素",
+    "cryo": "冰",
+    "electro": "雷",
+    "dendro": "草元素"
+  },
+  "reaction": {
+    "swirl": "扩散",
+    "crystallize": "结晶",
+    "overloaded": "超载",
+    "electrocharged": "感电",
+    "superconduct": "超导",
+    "vaporize": "蒸发",
+    "melt": "融化",
+    "bloom": "绽放",
+    "burgeon": "烈绽放",
+    "hyperbloom": "超绽放",
+    "quicken": "原激化",
+    "aggravate": "超激化",
+    "spread": "蔓激化"
+  },
+  "stat": {
+    "def": "防御力",
+    "base": {
+      "atk": "基础攻击力"
+    }
+  },
+  "constellationLvl": "命之座 第{{level}}层",
+  "talentLvl": "天赋等级{{level}}",
+  "talents": {
+    "auto": "普通攻击",
+    "skill": "元素战技",
+    "burst": "元素爆发",
+    "altSprint": "替代冲刺"
+  },
+  "unlockPassive1": "角色突破等级1解锁",
+  "unlockPassive2": "角色突破等级4解锁",
+  "unlockPassive3": "固有天赋"
+}

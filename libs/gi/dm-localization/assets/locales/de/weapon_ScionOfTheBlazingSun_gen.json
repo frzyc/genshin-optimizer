@@ -1,0 +1,24 @@
+{
+  "name": "Spross der flammenden Sonne",
+  "description": {
+    "0": "Ein Langbogen. Stammt aus dem längst vergangenen Zeitalter König Deshrets und ist verziert mit unverständlichen alten Schriften und feierlichen Schnitzereien."
+  },
+  "passiveName": "Pfad der Sonnenflammen",
+  "passiveDescription": {
+    "0": {
+      "0": "Lässt nach dem Treffen von Gegnern mit heftigen Schlägen einen Brennpfeil auf diese niedergehen, der Schaden in Höhe von <cryo>60 %</cryo> des ANG verursacht und ihnen 10 s Brennendes Herz zufügt. Erhöht den Schaden heftiger Schläge des Trägers an Gegnern mit Brennendem Herzen um <cryo>28 %</cryo>. 10 s Abklingzeit für den Brennpfeil."
+    },
+    "1": {
+      "0": "Lässt nach dem Treffen von Gegnern mit heftigen Schlägen einen Brennpfeil auf diese niedergehen, der Schaden in Höhe von <cryo>75 %</cryo> des ANG verursacht und ihnen 10 s Brennendes Herz zufügt. Erhöht den Schaden heftiger Schläge des Trägers an Gegnern mit Brennendem Herzen um <cryo>35 %</cryo>. 10 s Abklingzeit für den Brennpfeil."
+    },
+    "2": {
+      "0": "Lässt nach dem Treffen von Gegnern mit heftigen Schlägen einen Brennpfeil auf diese niedergehen, der Schaden in Höhe von <cryo>90 %</cryo> des ANG verursacht und ihnen 10 s Brennendes Herz zufügt. Erhöht den Schaden heftiger Schläge des Trägers an Gegnern mit Brennendem Herzen um <cryo>42 %</cryo>. 10 s Abklingzeit für den Brennpfeil."
+    },
+    "3": {
+      "0": "Lässt nach dem Treffen von Gegnern mit heftigen Schlägen einen Brennpfeil auf diese niedergehen, der Schaden in Höhe von <cryo>105 %</cryo> des ANG verursacht und ihnen 10 s Brennendes Herz zufügt. Erhöht den Schaden heftiger Schläge des Trägers an Gegnern mit Brennendem Herzen um <cryo>49 %</cryo>. 10 s Abklingzeit für den Brennpfeil."
+    },
+    "4": {
+      "0": "Lässt nach dem Treffen von Gegnern mit heftigen Schlägen einen Brennpfeil auf diese niedergehen, der Schaden in Höhe von <cryo>120 %</cryo> des ANG verursacht und ihnen 10 s Brennendes Herz zufügt. Erhöht den Schaden heftiger Schläge des Trägers an Gegnern mit Brennendem Herzen um <cryo>56 %</cryo>. 10 s Abklingzeit für den Brennpfeil."
+    }
+  }
+}

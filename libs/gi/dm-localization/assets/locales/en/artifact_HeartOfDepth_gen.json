@@ -1,0 +1,29 @@
+{
+  "setName": "Heart of Depth",
+  "setEffects": {
+    "2": "Hydro DMG Bonus +15%",
+    "4": "After using Elemental Skill, increases Normal Attack and Charged Attack DMG by 30% for 15s."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Gilded Corsage",
+      "desc": "A mantle brooch that has lost its luster. The gold plating that once adorned it was ground away by the wind and the waves long ago."
+    },
+    "plume": {
+      "name": "Gust of Nostalgia",
+      "desc": "A feather carried over by whimpering sea winds and crimson waves. The passage of time has changed its shape and color."
+    },
+    "sands": {
+      "name": "Copper Compass",
+      "desc": "An ancient bronze compass. Its needle points towards some ever-distant shore, to a non-existent harbor."
+    },
+    "goblet": {
+      "name": "Goblet of Thundering Deep",
+      "desc": "A faded wine cup that was unintentionally dredged up from the sea. Its dull exterior tells of the days it has spent beneath the waves."
+    },
+    "circlet": {
+      "name": "Wine-Stained Tricorne",
+      "desc": "An ancient, wine-stained sea hat that still reeks of alcohol even now."
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "setName": "Eğitmen",
+  "setEffects": {
+    "2": "Element Ustalığını 80 artırır.",
+    "4": "Bir Element Tepkimesi tetiklendikten sonra, 8 saniyeliğine tüm grup üyelerinin Element Ustalığını 120 artırır."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Eğitmenin Broşu",
+      "desc": "Eğitmenin bu broşu giymesi o gün talim olmayacağını belirtirdi."
+    },
+    "plume": {
+      "name": "Eğitmenin Tüylü Aksesuarı",
+      "desc": "Sakinlikte ustalaşmış bir eğitmen, bu aksesuarı her zaman yanında bulundurması gerektiğini bilir."
+    },
+    "sands": {
+      "name": "Eğitmenin Cep Saati",
+      "desc": "Genel olarak zaman yerine talim süresini takip etmek için kullanılan bir cep saati."
+    },
+    "goblet": {
+      "name": "Eğitmenin Çay Fincanı",
+      "desc": "Çoğu kişiye sıradan bir çay fincanı gibi görünebilir. Ama öğrenciler için eğitmenlerinin iradesini temsil eder."
+    },
+    "circlet": {
+      "name": "Eğitmenin Şapkası",
+      "desc": "Standart bir onursal eğitmen şapkası, yalnızca bir terfiyi reddedenlere verilir."
+    }
+  }
+}

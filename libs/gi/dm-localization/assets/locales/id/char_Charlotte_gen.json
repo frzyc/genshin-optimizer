@@ -1,0 +1,167 @@
+{
+  "name": "Charlotte",
+  "title": "Lens of Verity",
+  "description": "Seorang reporter dari The Steambird yang selalu terlihat sangat bersemangat. Ia tidak pernah berhenti berlari ke sana kemari untuk mencari \"kebenaran\".",
+  "constellationName": "Hualina Veritas",
+  "auto": {
+    "name": "Cool-Color Capture",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Attack</strong>",
+        "1": "Menggunakan Kamera buatan khusus, \"Monsieur Verite\", untuk membidik target dan melancarkan maksimum 3 serangan berturut-turut dan mengakibatkan <cryo>Cryo DMG</cryo>."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Mengonsumsi sejumlah Stamina untuk melancarkan Monsieur Verite yang mengakibatkan <cryo>Cryo DMG Area</cryo> setelah persiapan yang singkat."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Mengumpulkan kekuatan Cryo, menerjang dari udara untuk menghantam tanah, menyerang musuh di jalur terjangan dan mengakibatkan <cryo>Cryo DMG Area</cryo> saat mendarat."
+      },
+      "arkhe": {
+        "0": "<strong>Arkhe: Pneuma</strong>",
+        "1": "Setiap satu kurun waktu tertentu, setelah Charlotte menggunakan Charged Attack, akan menurunkan Spiritbreath Thorn yang dapat menembus musuh dan mengakibatkan Pneuma-aligned <cryo>Cryo DMG Area</cryo>."
+      }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Charged Attack",
+      "4": "Konsumsi Stamina Charged Attack",
+      "5": "DMG Selama Plunging",
+      "6": "DMG Plunging Attack Rendah/Tinggi",
+      "7": "DMG Spiritbreath Thorn",
+      "8": "Jeda DMG Spiritbreath Thorn",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Framing: Freezing Point Composition",
+    "description": {
+      "0": "Mengumpulkan ketajaman insting dari jurnalis kondang dan melancarkan kemampuan fotografi yang menghasilkan efek yang berbeda berdasarkan cara skill dilancarkan, yaitu ditekan atau ditahan.",
+      "1": "<br/>",
+      "2": "<strong>Mode Tekan</strong>",
+      "3": "Mengambil foto cepat menggunakan Monsieur Verita dan mengakibatkan <cryo>Cryo DMG Area</cryo> terhadap musuh di depan, lalu memberikan Snappy Silhouette terhadap maksimum 5 musuh yang terkena. Selama durasi berlangsung, Snappy Silhouette akan mengakibatkan <cryo>Cryo DMG</cryo> terhadap musuh secara berkala.",
+      "4": "<br/>",
+      "5": "<strong>Mode Tahan</strong>",
+      "6": "Membuka jendela bidik Monsieur Verite dan memasuki status Composition. Selama tombol skill ditahan, jendela bidik Monsieur Verite akan terus membesar sampai mencapai status Finisher Frame. Saat berada dalam status ini, Charlotte dapat bergerak dan mengubah arah pergerakannya dengan bebas.",
+      "7": "Saat Mode Tahan selesai, Monsieur Verite akan mengakibatkan <cryo>Cryo DMG</cryo> terhadap semua musuh yang terkunci di dalam jendela bidiknya, dan memberikan Snappy Silhouette yang sama dengan Mode Tekan. Jika kamu melancarkan skill ini setelah jendela bidik mencapai Finisher State, maka Snappy Silhouette akan dikonversi menjadi Focused Impression yang dapat bertahan lebih lama dan memiliki DMG yang lebih tinggi, namun Cooldown skill kali ini akan menjadi lebih lama.",
+      "8": "Status Composition dapat berlangsung maksimum 15 detik dan dapat mengunci maksimum 5 musuh.",
+      "9": "<br/>",
+      "10": "<i>\"Fotografi di dunia media membutuhkan jepretan sederhana dengan tema luar biasa. Tapi yang paling penting, kamu harus punya talenta untuk menangkap momen-momennya!\"</i>"
+    },
+    "skillParams": {
+      "0": "DMG Photo (Mode Tekan)",
+      "1": "DMG Photo (Mode Tahan)",
+      "2": "DMG Tanda \"Snappy Silhouette\"",
+      "3": "Jeda Terpicu Tanda \"Snappy Silhouette\"",
+      "4": "Durasi Tanda \"Snappy Silhouette\"",
+      "5": "DMG Tanda \"Focused Impression\"",
+      "6": "Jeda Terpicu Tanda \"Focused Impression\"",
+      "7": "Durasi Tanda \"Focused Impression\"",
+      "8": "Cooldown",
+      "9": "Cooldown Finisher Frame",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Still Photo: Comprehensive Confirmation",
+    "description": {
+      "0": "Mengumpulkan embun es untuk menciptakan karakteristik The Steambird, Charlotte akan menciptakan Newsflash Field yang mengakibatkan <cryo>Cryo DMG Area</cryo> dan memulihkan HP seluruh anggota party di sekitar, jumlah pemulihan didasarkan pada ATK Charlotte.",
+      "1": "<br/>",
+      "2": "<strong>Newsflash Field</strong>",
+      "3": [
+        "Selama durasinya berlangsung, Monsieur Verite akan menyerang musuh secara berkala dan mengakibatkan <cryo>Cryo DMG</cryo>.",
+        "Selama durasinya berlangsung, akan memulihkan HP Karakter aktif yang berada di dalam jangkauannya, jumlah pemulihan didasarkan pada ATK Charlotte."
+      ],
+      "4": "<br/>",
+      "5": "<i>\"Mendengar cerita dari perspektif yang berbeda untuk merekayasa kembali sebuah kejadian benar-benar kunci penting untuk menghadirkan laporan yang berkualitas ... Yah, itu kan cara untuk dapatkan sudut terbaik dalam menulis artikelmu!\"</i>"
+    },
+    "skillParams": {
+      "0": "Pemulihan Saat Dilancarkan",
+      "1": "DMG Skill",
+      "2": "Pemulihan Berkelanjutan Kamera",
+      "3": "DMG Kamera",
+      "4": "Durasi Newsflash Field",
+      "5": "Cooldown",
+      "6": "Konsumsi Energy",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Moment of Impact",
+    "description": {
+      "0": "Saat musuh yang memiliki tanda \"Focused Impression\" dikalahkan, cooldown <strong>Framing: Freezing Point Composition</strong> akan berkurang 2 detik. Pengurangan cooldown Elemental Skill melalui cara ini dapat terpicu 4 kali setiap 12 detik."
+    }
+  },
+  "passive2": {
+    "name": "Diversified Investigation",
+    "description": {
+      "0": "Untuk setiap 1/2/3 Karakter di dalam party yang berasal dari Fontaine (selain Charlotte sendiri), Charlotte akan mendapatkan 5%/10%/15% Bonus Pemulihan; Untuk setiap 1/2/3 Karakter di dalam party yang bukan berasal dari Fontaine, Charlotte mendapatkan 5%/10%/15% Cryo DMG Bonus."
+    }
+  },
+  "passive3": {
+    "name": "First-Person Shutter",
+    "description": {
+      "0": "Setelah menggunakan \"Special Analysis Zoom Lens\", Mode Tahan dari Elemental Skill \"Framing: Freezing Point Composition\" milik Charlotte tidak dapat memicu efek awalnya, tapi dapat mengambil foto dengan cara yang lebih istimewa ...."
+    }
+  },
+  "constellation1": {
+    "name": "A Need to Verify Facts",
+    "description": {
+      "0": "Setelah <strong>Still Photo: Comprehensive Confirmation</strong> memulihkan Karakter, akan memberikan tanda Verification yang akan memulihkan HP Karakter setiap 2 detik sekali. Jumlah pemulihan didasarkan pada 80% ATK Charlotte. Efek berlangsung selama 6 detik."
+    }
+  },
+  "constellation2": {
+    "name": "A Duty to Pursue Truth",
+    "description": {
+      "0": "Saat melancarkan <strong>Framing: Freezing Point Composition</strong>, saat Monsieur Verite menyerang musuh berjumlah 1/2/3 atau lebih, ATK Charlotte meningkat sebesar 10%/20%/30% selama 12 detik."
+    }
+  },
+  "constellation3": {
+    "name": "An Imperative to Independence",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Still Photo: Comprehensive Confirmation</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "A Responsibility to Oversee",
+    "description": {
+      "0": "Saat <strong>Still Photo: Comprehensive Confirmation</strong> mengenai musuh yang memiliki tanda Snappy Silhouette atau Focused Impression, DMG yang diakibatkan meningkat 10%, dan akan memulihkan 2 poin Energy untuk Charlotte. Pemulihan Energy yang dapat diperoleh dengan cara ini adalah maksimum 5 kali setiap 20 detik."
+    }
+  },
+  "constellation5": {
+    "name": "A Principle of Conscience",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Framing: Freezing Point Composition</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "A Summation of Interest",
+    "description": {
+      "0": "Saat Normal Attack dan Charged Attack Karakter aktif mengenai musuh yang memiliki Focused Impression dari <strong>Framing: Freezing Point Composition</strong>, Monsieur Verite akan melancarkan serangan terkoordinasi dan mengakibatkan <cryo>Cryo DMG Area</cryo> sebesar 180% ATK Charlotte, lalu memulihkan HP Karakter aktif yang berada di dalam radius serangan sebesar 42% ATK Charlotte. Efek ini dapat terpicu sekali setiap 6 detik, DMG yang diakibatkan dan pemulihan yang diberikan dengan cara ini akan dianggap sebagai DMG dan pemulihan dari Elemental Burst Charlotte."
+    }
+  }
+}

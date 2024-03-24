@@ -1,0 +1,24 @@
+{
+  "name": "Yeniden Dövülmüş Siskesen",
+  "description": {
+    "0": "Mor ışıltısıyla göz kamaştıran bir kılıç. Daha önce kırıldığı ve onarıldığı için \"Yeniden Dövülmüş\" ismini aldı."
+  },
+  "passiveName": "Siskesen Kılıç Kını",
+  "passiveDescription": {
+    "0": {
+      "0": "Tüm elementler için <cryo>%12</cryo> Element Hasarı Bonusu kazandırır ve Siskesen Arması gücünü bahşeder. Siskesen Arması 1/2/3 kademesine ulaştığında, karakterin Element Türüne göre <cryo>%8/16/28</cryo> Element Hasarı Bonusu sağlar. Karakter, şu durumlarda 1 kademe Siskesen Arması elde eder: Normal Saldırı ile Element Hasarı verdiğinde (kademe 5sn sürelidir), Element Patlaması kullandığında (kademe 10sn sürelidir), Enerji %100'ün altında olduğunda (Enerji tamamlanana kadar). Her kademenin süresi ayrıca hesaplanır."
+    },
+    "1": {
+      "0": "Tüm elementler için <cryo>%15</cryo> Element Hasarı Bonusu kazandırır ve Siskesen Arması gücünü bahşeder. Siskesen Arması 1/2/3 kademesine ulaştığında, karakterin Element Türüne göre <cryo>%10/20/35</cryo> Element Hasarı Bonusu sağlar. Karakter, şu durumlarda 1 kademe Siskesen Arması elde eder: Normal Saldırı ile Element Hasarı verdiğinde (kademe 5sn sürelidir), Element Patlaması kullandığında (kademe 10sn sürelidir), Enerji %100'ün altında olduğunda (Enerji tamamlanana kadar). Her kademenin süresi ayrıca hesaplanır."
+    },
+    "2": {
+      "0": "Tüm elementler için <cryo>%18</cryo> Element Hasarı Bonusu kazandırır ve Siskesen Arması gücünü bahşeder. Siskesen Arması 1/2/3 kademesine ulaştığında, karakterin Element Türüne göre <cryo>%12/24/42</cryo> Element Hasarı Bonusu sağlar. Karakter, şu durumlarda 1 kademe Siskesen Arması elde eder: Normal Saldırı ile Element Hasarı verdiğinde (kademe 5sn sürelidir), Element Patlaması kullandığında (kademe 10sn sürelidir), Enerji %100'ün altında olduğunda (Enerji tamamlanana kadar). Her kademenin süresi ayrıca hesaplanır."
+    },
+    "3": {
+      "0": "Tüm elementler için <cryo>%21</cryo> Element Hasarı Bonusu kazandırır ve Siskesen Arması gücünü bahşeder. Siskesen Arması 1/2/3 kademesine ulaştığında, karakterin Element Türüne göre <cryo>%14/28/49</cryo> Element Hasarı Bonusu sağlar. Karakter, şu durumlarda 1 kademe Siskesen Arması elde eder: Normal Saldırı ile Element Hasarı verdiğinde (kademe 5sn sürelidir), Element Patlaması kullandığında (kademe 10sn sürelidir), Enerji %100'ün altında olduğunda (Enerji tamamlanana kadar). Her kademenin süresi ayrıca hesaplanır."
+    },
+    "4": {
+      "0": "Tüm elementler için <cryo>%24</cryo> Element Hasarı Bonusu kazandırır ve Siskesen Arması gücünü bahşeder. Siskesen Arması 1/2/3 kademesine ulaştığında, karakterin Element Türüne göre <cryo>%16/32/56</cryo> Element Hasarı Bonusu sağlar. Karakter, şu durumlarda 1 kademe Siskesen Arması elde eder: Normal Saldırı ile Element Hasarı verdiğinde (kademe 5sn sürelidir), Element Patlaması kullandığında (kademe 10sn sürelidir), Enerji %100'ün altında olduğunda (Enerji tamamlanana kadar). Her kademenin süresi ayrıca hesaplanır."
+    }
+  }
+}

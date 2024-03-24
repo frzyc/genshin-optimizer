@@ -1,0 +1,11 @@
+{
+  "electro": {
+    "skill": {
+      "enerRegen": "元素エネルギー回復",
+      "enerRechInc": "元素チャージ効率アップ"
+    },
+    "burst": {
+      "thunderDMG": "威光の落雷ダメージ"
+    }
+  }
+}

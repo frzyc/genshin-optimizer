@@ -1,0 +1,24 @@
+{
+  "name": "Espada del Alba",
+  "description": {
+    "0": "Una espada que solía brillar como el sol. Su portador será bendecido con una sensación de poder y bienestar. El material reflectante de su hoja se desgastó hace mucho tiempo."
+  },
+  "passiveName": "Vigor",
+  "passiveDescription": {
+    "0": {
+      "0": "Cuando la Vida esté por encima del 90%, aumenta la Prob. CRIT en un <cryo>14%</cryo>."
+    },
+    "1": {
+      "0": "Cuando la Vida esté por encima del 90%, aumenta la Prob. CRIT un <cryo>17.5%</cryo>."
+    },
+    "2": {
+      "0": "Cuando la Vida esté por encima del 90%, aumenta la Prob. CRIT un <cryo>21%</cryo>."
+    },
+    "3": {
+      "0": "Cuando la Vida esté por encima del 90%, aumenta la Prob. CRIT un <cryo>24.5%</cryo>."
+    },
+    "4": {
+      "0": "Cuando la Vida esté por encima del 90%, aumenta la Prob. CRIT un <cryo>28%</cryo>."
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "setName": "Phiến Đá Lâu Đời",
+  "setEffects": {
+    "2": "Nhận 15% buff sát thương nguyên tố Nham.",
+    "4": "Khi nhận được mảnh kết tinh do phản ứng Kết Tinh hình thành, tất cả thành viên đội sẽ được tăng 35% sát thương nguyên tố tương ứng, duy trì 10 giây. Chỉ được nhận một loại tăng sát thương nguyên tố cùng lúc."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Hoa Bàn Đà",
+      "desc": "Hoa đá vàng rực nở, cánh hoa lung lay theo gió sinh động như đang sống."
+    },
+    "plume": {
+      "name": "Cánh Thái Sơn",
+      "desc": "Lông vũ cứng cáp trên người những con chim đá khổng lồ, trên đó đôi khi còn ngưng tụ những giọt sương lạnh lẽo."
+    },
+    "sands": {
+      "name": "Cát Tinh Đà",
+      "desc": "Đồng hồ được chạm khắc từ phiến đá lớn, hoa văn trang trí hình những ngôi sao, vẫn cứ âm thầm ghi lại dòng chảy của thời gian."
+    },
+    "goblet": {
+      "name": "Ly Ngọc Bàn Thạch",
+      "desc": "Ly rượu cầu kỳ mà không mất phần sang trọng, hàng ngàn năm trước từng đựng đầy rượu quý."
+    },
+    "circlet": {
+      "name": "Mặt Nạ Huyền Thạch",
+      "desc": "Mặt nạ trang trọng được chạm khắc từ đá đen, đôi mắt trống rỗng luôn nhìn chằm chằm về phía trước."
+    }
+  }
+}

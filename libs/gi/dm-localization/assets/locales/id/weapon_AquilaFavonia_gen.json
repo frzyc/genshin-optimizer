@@ -1,0 +1,24 @@
+{
+  "name": "Aquila Favonia",
+  "description": {
+    "0": "Lambang jiwa dan raga dari Knights of Favonius. Ribuan tahun berlalu pun, pedang ini masih akan menghembuskan angin keadilan, dan membasmi kejahatan, seperti pahlawan wanita yang terakhir menggenggamnya."
+  },
+  "passiveName": "Falcon's Defiance",
+  "passiveDescription": {
+    "0": {
+      "0": "Meningkatkan <cryo>20%</cryo> ATK. Terpicu saat menerima DMG: Jiwa Falcon of the West bangkit dan menegakkan bendera pertahanan. Memulihkan HP sebesar <cryo>100%</cryo> ATK dan mengakibatkan DMG sebesar <cryo>200%</cryo> ATK pada musuh di sekitar. Dapat terpicu setiap 15 detik."
+    },
+    "1": {
+      "0": "Meningkatkan <cryo>25%</cryo> ATK. Terpicu saat menerima DMG: Jiwa Falcon of the West bangkit dan menegakkan bendera pertahanan. Memulihkan HP sebesar <cryo>115%</cryo> ATK dan mengakibatkan DMG sebesar <cryo>230%</cryo> ATK pada musuh di sekitar. Dapat terpicu setiap 15 detik."
+    },
+    "2": {
+      "0": "Meningkatkan <cryo>30%</cryo> ATK. Terpicu saat menerima DMG: Jiwa Falcon of the West bangkit dan menegakkan bendera pertahanan. Memulihkan HP sebesar <cryo>130%</cryo> ATK dan mengakibatkan DMG sebesar <cryo>260%</cryo> ATK pada musuh di sekitar. Dapat terpicu setiap 15 detik."
+    },
+    "3": {
+      "0": "Meningkatkan <cryo>35%</cryo> ATK. Terpicu saat menerima DMG: Jiwa Falcon of the West bangkit dan menegakkan bendera pertahanan. Memulihkan HP sebesar <cryo>145%</cryo> ATK dan mengakibatkan DMG sebesar <cryo>290%</cryo> ATK pada musuh di sekitar. Dapat terpicu setiap 15 detik."
+    },
+    "4": {
+      "0": "Meningkatkan <cryo>40%</cryo> ATK. Terpicu saat menerima DMG: Jiwa Falcon of the West bangkit dan menegakkan bendera pertahanan. Memulihkan HP sebesar <cryo>160%</cryo> ATK dan mengakibatkan DMG sebesar <cryo>320%</cryo> ATK pada musuh di sekitar. Dapat terpicu setiap 15 detik."
+    }
+  }
+}

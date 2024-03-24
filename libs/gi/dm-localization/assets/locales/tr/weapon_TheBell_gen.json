@@ -1,0 +1,24 @@
+{
+  "name": "Çan",
+  "description": {
+    "0": "Ağır bir büyük kılıç. Üzerinde mekanizması uzun zaman önce bozulmuş bir saat bulunur."
+  },
+  "passiveName": "Asi Muhafız",
+  "passiveDescription": {
+    "0": {
+      "0": "Hasar alındığında Maksimum Canın <cryo>%20</cryo>'sine kadar Hasarı emen bir kalkan devreye girer. Bu kalkan 10 saniye veya kırılana kadar kullanılır ve <cryo>45</cryo> saniyede bir kullanılabilir. Bir kalkan korumasındayken karakter <cryo>%12</cryo> Hasar artışı kazanır."
+    },
+    "1": {
+      "0": "Hasar alındığında Maksimum Canın <cryo>%23</cryo>'üne kadar Hasarı emen bir kalkan devreye girer. Bu kalkan 10 saniye veya kırılana kadar kullanılır ve <cryo>45</cryo> saniyede bir kullanılabilir. Bir kalkan korumasındayken karakter <cryo>%15</cryo> Hasar artışı kazanır."
+    },
+    "2": {
+      "0": "Hasar alındığında Maksimum Canın <cryo>%26</cryo>'sına kadar Hasarı emen bir kalkan devreye girer. Bu kalkan 10 saniye veya kırılana kadar kullanılır ve <cryo>45</cryo> saniyede bir kullanılabilir. Bir kalkan korumasındayken karakter <cryo>%18</cryo> Hasar artışı kazanır."
+    },
+    "3": {
+      "0": "Hasar alındığında Maksimum Canın <cryo>%29</cryo>'una kadar Hasarı emen bir kalkan devreye girer. Bu kalkan 10 saniye veya kırılana kadar kullanılır ve <cryo>45</cryo> saniyede bir kullanılabilir. Bir kalkan korumasındayken karakter <cryo>%21</cryo> Hasar artışı kazanır."
+    },
+    "4": {
+      "0": "Hasar alındığında Maksimum Canın <cryo>%32</cryo>'sine kadar Hasarı emen bir kalkan devreye girer. Bu kalkan 10 saniye veya kırılana kadar kullanılır ve <cryo>45</cryo> saniyede bir kullanılabilir. Bir kalkan korumasındayken karakter <cryo>%24</cryo> Hasar artışı kazanır."
+    }
+  }
+}

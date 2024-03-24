@@ -1,0 +1,29 @@
+{
+  "setName": "Sombra Verde",
+  "setEffects": {
+    "2": "Bônus de Dano Anemo +15%",
+    "4": "Aumenta o Dano do Redemoinho em 60%. Dependendo do tipo elemento infundido, diminui a RES Elemental correspondente do oponente em 40% por 10s."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Lembrança de Flores Silvestres",
+      "desc": "Uma flor silvestre que crescia por toda a parte. Após sua partida, o caçador a usava como broche."
+    },
+    "plume": {
+      "name": "Pena de Flecha do Caçador Verde",
+      "desc": "A pena de cauda da flecha que uma vez perfurou a sua presa. Ainda está limpa como antigamente."
+    },
+    "sands": {
+      "name": "Determinação do Caçador Verde",
+      "desc": "Um dispositivo incrível que era carregado pelos caçadores, sempre apontava em direção aos seus alvos."
+    },
+    "goblet": {
+      "name": "Frasco do Caçador Verde",
+      "desc": "Frasco para armazenar água, seu interior é muito maior do que realmente parece."
+    },
+    "circlet": {
+      "name": "Coroa do Caçador Verde",
+      "desc": "Coroa usada com orgulho pelo caçador dos campos, tão verde quanto os campos em que costumava vagar."
+    }
+  }
+}

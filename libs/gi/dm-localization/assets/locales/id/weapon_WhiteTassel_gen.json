@@ -1,0 +1,24 @@
+{
+  "name": "White Tassel",
+  "description": {
+    "0": "Senjata standar milik prajurit Millelith dengan poros yang kokoh dan ujung tombak yang tajam. Sebuah senjata yang dapat diandalkan."
+  },
+  "passiveName": "Sharp",
+  "passiveDescription": {
+    "0": {
+      "0": "Meningkatkan DMG Normal Attack sebesar <cryo>24%</cryo>."
+    },
+    "1": {
+      "0": "Meningkatkan DMG Normal Attack sebesar <cryo>30%</cryo>."
+    },
+    "2": {
+      "0": "Meningkatkan DMG Normal Attack sebesar <cryo>36%</cryo>."
+    },
+    "3": {
+      "0": "Meningkatkan DMG Normal Attack sebesar <cryo>42%</cryo>."
+    },
+    "4": {
+      "0": "Meningkatkan DMG Normal Attack sebesar <cryo>48%</cryo>."
+    }
+  }
+}

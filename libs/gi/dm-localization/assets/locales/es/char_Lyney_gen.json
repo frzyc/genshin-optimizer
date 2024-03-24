@@ -1,0 +1,182 @@
+{
+  "name": "Lyney",
+  "title": "El Mago de la Fantasmagoría",
+  "description": "Un astuto y hábil mago de Fontaine que siempre se gana al público con sus ingeniosos trucos y su elocuencia.",
+  "constellationName": "Felis Fuscus",
+  "auto": {
+    "name": "Adivina la carta",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Ataque Normal</strong>",
+        "1": "Realiza hasta 4 disparos consecutivos con arco."
+      },
+      "charged": {
+        "0": "<strong>Ataque Cargado</strong>",
+        "1": "Realiza un <strong>Disparo Preciso</strong> que inflige mayor daño y tiene mayor precisión.",
+        "2": "Al apuntar, se acumulará una llama en la punta de la flecha. Sus efectos serán distintos dependiendo de durante cuánto tiempo se haya cargado:",
+        "3": [
+          "Carga 1: dispara una flecha cargada del elemento Pyro que inflige <pyro>Daño Pyro</pyro>.",
+          "Carga 2: dispara una flecha magiaoculta que inflige <pyro>Daño Pyro</pyro> y que crea un sombrero gatorrisueño tras impactar contra el objetivo."
+        ],
+        "4": "Si Lyney tiene más del 60% de Vida al disparar la flecha magiaoculta, consumirá una parte de su Vida y obtendrá una carga de “cálculo oculto”, la cual puede acumularse hasta 5 veces. Este efecto se anula 30 s después de que Lyney no esté en combate.",
+        "5": "La Vida de Lyney solo podrá reducirse hasta el 60% de esta manera."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Descendente</strong>",
+        "1": "Dispara una lluvia de flechas desde el aire mientras desciende rápidamente, infligiendo Daño en el AdE al impactar contra el suelo."
+      },
+      "grinMalkin": {
+        "0": "<strong>Sombrero gatorrisueño</strong>",
+        "1": [
+          "Provoca a los enemigos cercanos para atraer sus ataques. Cada enemigo solo puede ser provocado una vez cada 5 s.",
+          "Su resistencia depende de la Vida Máx. de Lyney.",
+          "Al ser destruido o cuando termina su duración, dispara un <strong>proyectil pirotecnimágico</strong> que inflige <pyro>Daño Pyro</pyro>."
+        ],
+        "2": "Solo puede haber un sombrero gatorrisueño al mismo tiempo."
+      },
+      "arkhe": {
+        "0": "<strong>Arjé: pneuma</strong>",
+        "1": "Cada cierto tiempo, cuando la flecha magiaoculta colisione con un objetivo, en la ubicación de dicho objetivo cae una espina halitoespiritual que inflige un <pyro>Daño Pyro</pyro> cargado de energía pneuma."
+      }
+    },
+    "skillParams": {
+      "0": "Daño de 1er golpe",
+      "1": "Daño de 2.º golpe",
+      "2": "Daño de 3er golpe",
+      "3": "Daño de 4.º golpe",
+      "4": "Daño de Caída",
+      "5": "Daño de impacto de caída baja/alta",
+      "6": "Disparo Preciso",
+      "7": "Disparo Preciso (carga 1)",
+      "8": "Daño de flecha magiaoculta",
+      "9": "Consumo de Vida",
+      "10": "Vida heredada del sombrero gatorrisueño",
+      "11": "Duración de sombrero gatorrisueño",
+      "12": "Daño de proyectil pirotecnimágico",
+      "13": "Daño de espina halitoespiritual",
+      "14": "Intervalo de espina halitoespiritual",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Luces del desconcierto",
+    "description": {
+      "0": "Lyney crea una explosión pirotécnica sorpresa con su sombrero de copa.",
+      "1": "Al liberar la habilidad, se elimina el efecto de cálculo oculto para infligir <pyro>Daño Pyro en el AdE</pyro> a los enemigos que haya enfrente. Dicho daño será mayor cuantas más cargas de cálculo oculto se hayan consumido, y además, Lyney recuperará Vida en función de su propia Vida Máx. y de las cargas de cálculo oculto consumidas.",
+      "2": "<br/>",
+      "3": "Si en el campo de batalla hay un sombrero gatorrisueño creado por Lyney, la explosión lo hará estallar e infligirá un <pyro>Daño Pyro en el AdE</pyro> equivalente al daño del proyectil pirotecnimágico.",
+      "4": "El daño de la explosión del sombrero gatorrisueño infligido de esta manera se considera daño de Ataque Cargado.",
+      "5": "<br/>",
+      "6": "<i>“Como es bien sabido, uno de los trucos que más usan los magos es desviar la atención del público hacia algo en concreto. Por ejemplo, mientras mirabas hacia aquí, mi sombrero y mi ayudante ya han desaparecido. Divertido, ¿eh?”.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "Bono de daño de habilidad",
+      "2": "Recuperación de Vida",
+      "3": "TdE",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Número final: Desfile prodigioso",
+    "description": {
+      "0": "En un alarde de sus habilidades mágicas, Lyney se transforma en un “sombregato risueño” (atención: ¡el sombrero gatorrisueño y el sombregato risueño son dos herramientas mágicas muy distintas!).",
+      "1": "Cuando el sombregato risueño se acerca a los enemigos, descenderán unos fuegos artificiales que infligen <pyro>Daño Pyro</pyro> una vez como máximo contra cada uno de ellos. Cuando termina la duración de esta habilidad, Lyney sale de su forma de sombregato risueño para provocar una hermosa explosión pirotécnica que inflige <pyro>Daño Pyro en el AdE</pyro>, crea un sombrero gatorrisueño y obtiene una carga de cálculo oculto.",
+      "2": "<br/>",
+      "3": "Lyney puede salir manualmente de su forma de sombregato risueño.",
+      "4": "<br/>",
+      "5": "<i>“Damas y caballeros, presten atención. ¡Este es nuestro único e inigualable momento mágico!”.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "Daño de explosión pirotécnica",
+      "2": "Duración",
+      "3": "TdE",
+      "4": "Energía Elemental",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Espectáculo arriesgado",
+    "description": {
+      "0": "Si Lyney consume su propia Vida al disparar una <strong>flecha magiaoculta</strong>, cuando el sombrero gatorrisueño invocado por dicha flecha golpee a un enemigo, Lyney recupera 3 pts. de Energía Elemental y el daño que inflige aumenta en un 80% de su ATQ."
+    }
+  },
+  "passive2": {
+    "name": "¡Un fuerte aplauso!",
+    "description": {
+      "0": "El daño que inflige Lyney contra los enemigos afectados por <pyro>Pyro</pyro> aumenta de las siguientes maneras:",
+      "1": [
+        "El daño básico aumenta en un 60%.",
+        "El daño aumenta en un 20% por cada personaje del equipo (a excepción de Lyney) cuyo tipo elemental sea <pyro>Pyro</pyro>."
+      ],
+      "2": "El daño que inflige Lyney contra los enemigos afectados por <pyro>Pyro</pyro> puede aumentar como máximo en un 100% de esta manera."
+    }
+  },
+  "passive3": {
+    "name": "Observación de lo cotidiano",
+    "description": {
+      "0": "Muestra la ubicación de los <strong>objetos típicos de Fontaine</strong> cercanos en el minimapa."
+    }
+  },
+  "constellation1": {
+    "name": "Truco telequinético",
+    "description": {
+      "0": "Puede haber 2 <strong>sombreros gatorrisueños</strong> al mismo tiempo.",
+      "1": "Además, cuando la flecha magiaoculta impacta contra el objetivo, se crean 2 sombreros gatorrisueños y se obtiene 1 carga adicional de cálculo oculto. Este efecto solo se puede activar una vez cada 15 s."
+    }
+  },
+  "constellation2": {
+    "name": "Trampa de atención",
+    "description": {
+      "0": "Cuando Lyney está en uso, obtiene cada 2 s una carga de “máxima atención”, la cual aumenta su Daño CRIT en un 20%. Este efecto puede acumularse hasta 3 veces y se anulará cuando Lyney se retire del campo de batalla."
+    }
+  },
+  "constellation3": {
+    "name": "Mímica ingeniosa",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Ataque Normal: Adivina la carta</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Estrategia ensayada",
+    "description": {
+      "0": "Cuando Lyney golpea a un enemigo con un Ataque Cargado <pyro>Pyro</pyro>, la <pyro>RES Pyro</pyro> de dicho enemigo se reduce en un 20% durante 6 s."
+    }
+  },
+  "constellation5": {
+    "name": "Magia abscóndita",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Número final: Desfile prodigioso</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Sonrisa engañosa",
+    "description": {
+      "0": "Cuando Lyney dispara una <strong>flecha magiaoculta</strong>, se libera un proyectil pirotecnimágico: bis que inflige un 80% del daño del proyectil pirotecnimágico original. Este daño se considera daño de Ataque Cargado."
+    }
+  }
+}

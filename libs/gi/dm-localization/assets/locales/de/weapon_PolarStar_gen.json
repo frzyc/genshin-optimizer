@@ -1,0 +1,24 @@
+{
+  "name": "Polarstern",
+  "description": {
+    "0": "Ein makelloser Bogen, so scharf wie die Gletscher des hohen Nordens."
+  },
+  "passiveName": "Taghelle Vorzeichen",
+  "passiveDescription": {
+    "0": {
+      "0": "Erhöht den mit Elementarfähigkeiten und Spezialfähigkeiten verursachten Schaden um <cryo>12 %</cryo>. Erschafft beim Treffen von Gegnern mit Standardangriffen, heftigen Schlägen, Elementarfähigkeiten oder Spezialfähigkeiten 1 12 s anhaltende Stapelung des Effekts „Stern der weißen Nacht“. Erhöht den ANG bei 1/2/3/4 Stapelungen von „Stern der weißen Nacht“ um <cryo>10/20/30/48 %</cryo>. Die durch Standardangriffe, heftige Schläge, Elementarfähigkeiten oder Spezialfähigkeiten entstandenen Effekte von „Stern der weißen Nacht“ existieren unabhängig voneinander."
+    },
+    "1": {
+      "0": "Erhöht den mit Elementarfähigkeiten und Spezialfähigkeiten verursachten Schaden um <cryo>15 %</cryo>. Erschafft beim Treffen von Gegnern mit Standardangriffen, heftigen Schlägen, Elementarfähigkeiten oder Spezialfähigkeiten 1 12 s anhaltende Stapelung des Effekts „Stern der weißen Nacht“. Erhöht den ANG bei 1/2/3/4 Stapelungen von „Stern der weißen Nacht“ um <cryo>12,5/25/37,5/60 %</cryo>. Die durch Standardangriffe, heftige Schläge, Elementarfähigkeiten oder Spezialfähigkeiten entstandenen Effekte von „Stern der weißen Nacht“ existieren unabhängig voneinander."
+    },
+    "2": {
+      "0": "Erhöht den mit Elementarfähigkeiten und Spezialfähigkeiten verursachten Schaden um <cryo>18 %</cryo>. Erschafft beim Treffen von Gegnern mit Standardangriffen, heftigen Schlägen, Elementarfähigkeiten oder Spezialfähigkeiten 1 12 s anhaltende Stapelung des Effekts „Stern der weißen Nacht“. Erhöht den ANG bei 1/2/3/4 Stapelungen von „Stern der weißen Nacht“ um <cryo>15/30/45/72 %</cryo>. Die durch Standardangriffe, heftige Schläge, Elementarfähigkeiten oder Spezialfähigkeiten entstandenen Effekte von „Stern der weißen Nacht“ existieren unabhängig voneinander."
+    },
+    "3": {
+      "0": "Erhöht den mit Elementarfähigkeiten und Spezialfähigkeiten verursachten Schaden um <cryo>21 %</cryo>. Erschafft beim Treffen von Gegnern mit Standardangriffen, heftigen Schlägen, Elementarfähigkeiten oder Spezialfähigkeiten 1 12 s anhaltende Stapelung des Effekts „Stern der weißen Nacht“. Erhöht den ANG bei 1/2/3/4 Stapelungen von „Stern der weißen Nacht“ um <cryo>17,5/35/52,5/84 %</cryo>. Die durch Standardangriffe, heftige Schläge, Elementarfähigkeiten oder Spezialfähigkeiten entstandenen Effekte von „Stern der weißen Nacht“ existieren unabhängig voneinander."
+    },
+    "4": {
+      "0": "Erhöht den mit Elementarfähigkeiten und Spezialfähigkeiten verursachten Schaden um <cryo>24 %</cryo>. Erschafft beim Treffen von Gegnern mit Standardangriffen, heftigen Schlägen, Elementarfähigkeiten oder Spezialfähigkeiten 1 12 s anhaltende Stapelung des Effekts „Stern der weißen Nacht“. Erhöht den ANG bei 1/2/3/4 Stapelungen von „Stern der weißen Nacht“ um <cryo>20/40/60/96 %</cryo>. Die durch Standardangriffe, heftige Schläge, Elementarfähigkeiten oder Spezialfähigkeiten entstandenen Effekte von „Stern der weißen Nacht“ existieren unabhängig voneinander."
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Wolf's Gravestone",
+  "description": {
+    "0": "Pedang panjang yang digunakan oleh Wolf Knight. Dibentuk menggunakan selempeng besi yang biasa saja oleh seorang pandai besi kota. Tetapi persahabatannya dengan para serigala memberikan kekuatan yang spesial di dalam karya ini."
+  },
+  "passiveName": "Wolfish Tracker",
+  "passiveDescription": {
+    "0": {
+      "0": "Meningkatkan <cryo>20%</cryo> ATK. Saat berhasil mengenai musuh dengan HP kurang dari 30%, meningkatkan <cryo>40%</cryo> ATK seluruh anggota party selama 12 detik. Dapat terpicu setiap 30 detik."
+    },
+    "1": {
+      "0": "Meningkatkan <cryo>25%</cryo> ATK. Saat berhasil mengenai musuh dengan HP kurang dari 30%, meningkatkan <cryo>50%</cryo> ATK seluruh anggota party selama 12 detik. Dapat terpicu setiap 30 detik."
+    },
+    "2": {
+      "0": "Meningkatkan <cryo>30%</cryo> ATK. Saat berhasil mengenai musuh dengan HP kurang dari 30%, meningkatkan <cryo>60%</cryo> ATK seluruh anggota party selama 12 detik. Dapat terpicu setiap 30 detik."
+    },
+    "3": {
+      "0": "Meningkatkan <cryo>35%</cryo> ATK. Saat berhasil mengenai musuh dengan HP kurang dari 30%, meningkatkan <cryo>70%</cryo> ATK seluruh anggota party selama 12 detik. Dapat terpicu setiap 30 detik."
+    },
+    "4": {
+      "0": "Meningkatkan <cryo>40%</cryo> ATK. Saat berhasil mengenai musuh dengan HP kurang dari 30%, meningkatkan <cryo>80%</cryo> ATK seluruh anggota party selama 12 detik. Dapat terpicu setiap 30 detik."
+    }
+  }
+}

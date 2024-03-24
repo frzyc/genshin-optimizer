@@ -1,0 +1,87 @@
+{
+  "normal": {
+    "hit1": "SCH Phase 1",
+    "hit2": "SCH Phase 2",
+    "hit3": "SCH Phase 3",
+    "hit4": "SCH Phase 4",
+    "hit5": "SCH Phase 5",
+    "hit6": "SCH Phase 6"
+  },
+  "charged": {
+    "dmg": "SCH heftiger Schläge",
+    "spinning": "SCH heftiger Schläge pro Runde",
+    "final": "SCH heftiger Schläge am Ende",
+    "stamina": "Ausdauerverbrauch heftiger Schläge",
+    "aimed": "Gezielte Schüsse",
+    "fullyAimed": "Voll aufgeladene gezielte Schüsse"
+  },
+  "plunging": {
+    "dmg": "SCH beim Fallen",
+    "low": "SCH beim Fallen aus niedriger Höhe",
+    "high": "SCH beim Fallen aus großer Höhe"
+  },
+  "maxDuration": "Höchstdauer",
+  "maxStacks": "Max. Stapelungen der Energie",
+  "skillDMG": "Fähigkeits-SCH",
+  "burstDMG": "Spezialfähigkeits-SCH",
+  "dmgAbsorption": "Schildstärke",
+  "healing": "Heilung",
+  "contHealing": "Fortlaufende Heilung",
+  "duration": "Dauer",
+  "cd": "Abklingzeit",
+  "energyCost": "Elementarenergie",
+  "energyRegen": "Elementarenergie-Wiederherstellung",
+  "baseDMG": "Basis-SCH",
+  "dot": "Fortlaufender SCH",
+  "addEleDMG": "Zusätzlicher Elementar-SCH",
+  "hpRegenPerHit": "Heilung bei Treffer",
+  "press": {
+    "dmg": "SCH bei Drücken",
+    "cd": "Abklingzeit für Drücken"
+  },
+  "hold": {
+    "dmg": "SCH bei Gedrückthalten",
+    "cd": "Abklingzeit für Gedrückthalten"
+  },
+  "element": {
+    "anemo": "Anemo",
+    "geo": "Geo",
+    "pyro": "Pyro",
+    "hydro": "Hydro",
+    "cryo": "Kryo",
+    "electro": "Elektro",
+    "dendro": "Dendro"
+  },
+  "reaction": {
+    "swirl": "Verwirbelung",
+    "crystallize": "Kristallisation",
+    "overloaded": "Überladen",
+    "electrocharged": "Unter Strom",
+    "superconduct": "Supraleiter",
+    "vaporize": "Verdampfen",
+    "melt": "Schmelzen",
+    "bloom": "Sprießen",
+    "burgeon": "Flammenspross",
+    "hyperbloom": "Supraspross",
+    "quicken": "Urwuchs",
+    "aggravate": "Suprawuchs",
+    "spread": "Rankenwuchs"
+  },
+  "stat": {
+    "def": "VTD",
+    "base": {
+      "atk": "Basis-ANG"
+    }
+  },
+  "constellationLvl": "Sternbild Stufe {{level}}",
+  "talentLvl": "Talentstufe {{level}}",
+  "talents": {
+    "auto": "Standardangriff",
+    "skill": "Elementarfähigkeit",
+    "burst": "Spezialfähigkeit",
+    "altSprint": "Ersetzt Rennen"
+  },
+  "unlockPassive1": "Ab Figurenaufstiegsstufe 1 verfügbar",
+  "unlockPassive2": "Ab Figurenaufstiegsstufe 4 verfügbar",
+  "unlockPassive3": "Passives Talent"
+}

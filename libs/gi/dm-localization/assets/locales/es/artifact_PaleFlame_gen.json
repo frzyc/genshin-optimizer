@@ -1,0 +1,29 @@
+{
+  "setName": "Llamas Albinas",
+  "setEffects": {
+    "2": "Daño Físico +25%.",
+    "4": "Al atacar a un enemigo con una Habilidad Elemental, el ATQ aumenta en un 9% durante 7 s. Este efecto puede acumularse hasta 2 veces y activarse cada 0.3 s. Al alcanzar 2 acumulaciones, el efecto de dos piezas del conjunto aumenta en un 100%."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Flor Inmaculada",
+      "desc": "Una flor azul, dura y artificial. Sus pétalos nunca se marchitarán y su color nunca se apagará."
+    },
+    "plume": {
+      "name": "Pluma del Doctor Sabio",
+      "desc": "Una pluma de mal agüero con un borde muy afilado. Quizás representa una naturaleza sin ningún tipo de inhibiciones."
+    },
+    "sands": {
+      "name": "Momento de Cese",
+      "desc": "Un reloj de bolsillo cuya tapa no se puede abrir. No obstante, se puede oír el sonido de sus manecillas marcando el paso inexorable del tiempo."
+    },
+    "goblet": {
+      "name": "Cáliz de la Trascendencia",
+      "desc": "Un cáliz con un diseño muy intrincado. Por su apariencia, es imposible saber de qué época procede."
+    },
+    "circlet": {
+      "name": "Máscara de la Burla",
+      "desc": "Una máscara que cubre la cara y oculta a los demás la expresión facial."
+    }
+  }
+}

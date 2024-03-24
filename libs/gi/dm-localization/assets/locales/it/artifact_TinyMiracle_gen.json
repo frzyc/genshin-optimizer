@@ -1,0 +1,29 @@
+{
+  "setName": "Miracolo",
+  "setEffects": {
+    "2": "RES a tutti gli elementi +20%.",
+    "4": "I DAN elementali subiti aumentano la RES elementale corrispondente di un 30% per 10 s. Si può verificare una sola volta ogni 10 s."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Fiore miracoloso",
+      "desc": "Un fiore cresciuto in una roccia, che è riuscito a rompere per farsi strada verso la luce."
+    },
+    "plume": {
+      "name": "Piuma miracolosa",
+      "desc": "La piuma di un rapace che vola tanto velocemente da non essere quasi avvistato dall'occhio umano."
+    },
+    "sands": {
+      "name": "Clessidra miracolosa",
+      "desc": "Una clessidra comune. Girala e la sabbia comincerà a scorrere verso il basso come se fosse acqua."
+    },
+    "goblet": {
+      "name": "Calice miracoloso",
+      "desc": "Un calice usato solitamente nella chiromanzia. Ovviamente, può anche contenere dell'acqua."
+    },
+    "circlet": {
+      "name": "Orecchini miracolosi",
+      "desc": "Un accessorio di poco valore, prodotto con i minerali estratti da un meteorite."
+    }
+  }
+}

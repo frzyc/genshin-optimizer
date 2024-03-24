@@ -1,0 +1,24 @@
+{
+  "name": "Estrela Invernal",
+  "description": {
+    "0": "Um arco imaculado que é tão afiado quanto as geleiras do extremo norte."
+  },
+  "passiveName": "Pressagiador do Dia",
+  "passiveDescription": {
+    "0": {
+      "0": "Aumenta o Dano causado por Habilidade Elemental e Supremo em <cryo>12%</cryo>; Depois que o Ataque Normal, Ataque Carregado, Habilidade Elemental ou Supremo acerta o inimigo, gera 1 efeito \"Estrela Polar da Noite Branca\" por 12s. Quando tiver 1/2/3/4 acúmulos de \"Estrela Polar da Noite Branca\", o ATQ é aumentado em <cryo>10/20/30/48%</cryo>. Os efeitos de \"Estrela Polar da Noite Branca\" gerados por Ataque Normal, Ataque Carregado, Habilidade Elemental ou Supremo são individuais."
+    },
+    "1": {
+      "0": "Aumenta o Dano causado por Habilidade Elemental e Supremo em <cryo>15%</cryo>; Depois que o Ataque Normal, Ataque Carregado, Habilidade Elemental ou Supremo acerta o inimigo, gera 1 efeito \"Estrela Polar da Noite Branca\" por 12s. Quando tiver 1/2/3/4 acúmulos de \"Estrela Polar da Noite Branca\", o ATQ é aumentado em <cryo>12.5/25/37.5/60%</cryo>. Os efeitos de \"Estrela Polar da Noite Branca\" gerados por Ataque Normal, Ataque Carregado, Habilidade Elemental ou Supremo são individuais."
+    },
+    "2": {
+      "0": "Aumenta o Dano causado pela Habilidade Elemental e Supremo em <cryo>18%</cryo>; Depois que o Ataque Normal, Ataque Carregado, Habilidade Elemental ou Supremo acerta o inimigo, gera 1 efeito \"Estrela Polar da Noite Branca\" que dura 12s. Quando tiver 1/2/3/4 acúmulos de \"Estrela Polar da Noite Branca\", o ATQ é aumentado em <cryo>15/30/45/72%</cryo>. Os efeitos de \"Estrela Polar da Noite Branca\" gerados por Ataque Normal, Ataque Carregado, Habilidade Elemental ou Supremo são individuais."
+    },
+    "3": {
+      "0": "Aumenta o Dano causado por Habilidade Elemental e Supremo em <cryo>21%</cryo>; Depois que o Ataque Normal, Ataque Carregado, Habilidade Elemental ou Supremo acerta o inimigo, gera 1 efeito \"Estrela Polar da Noite Branca\" por 12s. Quando tiver 1/2/3/4 acúmulos de \"Estrela Polar da Noite Branca\", o ATQ é aumentado em <cryo>17.5/35/52.5/84%</cryo>. Os efeitos de \"Estrela Polar da Noite Branca\" gerados por Ataque Normal, Ataque Carregado, Habilidade Elemental ou Supremo são individuais."
+    },
+    "4": {
+      "0": "Aumenta o Dano causado por Habilidade Elemental e Supremo em <cryo>24%</cryo>; Depois que o Ataque Normal, Ataque Carregado, Habilidade Elemental ou Supremo acerta o inimigo, gera 1 efeito \"Estrela Polar da Noite Branca\" por 12s. Quando tiver 1/2/3/4 acúmulos de \"Estrela Polar da Noite Branca\", o ATQ é aumentado em <cryo>20/40/60/96%</cryo>. Os efeitos de \"Estrela Polar da Noite Branca\" gerados por Ataque Normal, Ataque Carregado, Habilidade Elemental ou Supremo são individuais."
+    }
+  }
+}

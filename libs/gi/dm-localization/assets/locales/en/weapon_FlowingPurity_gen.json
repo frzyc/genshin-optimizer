@@ -1,0 +1,24 @@
+{
+  "name": "Flowing Purity",
+  "description": {
+    "0": "A strangely-shaped anthology of scripts. All the scripts written by Coppelius are recorded within."
+  },
+  "passiveName": "Unfinished Masterpiece",
+  "passiveDescription": {
+    "0": {
+      "0": "When using an Elemental Skill, All Elemental DMG Bonus will be increased by <cryo>8%</cryo> for 15s, and a Bond of Life worth 24% of Max HP will be granted. This effect can be triggered once every 10s. When the Bond of Life is cleared, every 1,000 HP cleared in the process will provide <cryo>2%</cryo> All Elemental DMG Bonus, up to a maximum of <cryo>12%</cryo>. This effect lasts 15s."
+    },
+    "1": {
+      "0": "When using an Elemental Skill, All Elemental DMG Bonus will be increased by <cryo>10%</cryo> for 15s, and a Bond of Life worth 24% of Max HP will be granted. This effect can be triggered once every 10s. When the Bond of Life is cleared, every 1,000 HP cleared in the process will provide <cryo>2.5%</cryo> All Elemental DMG Bonus, up to a maximum of <cryo>15%</cryo>. This effect lasts 15s."
+    },
+    "2": {
+      "0": "When using an Elemental Skill, All Elemental DMG Bonus will be increased by <cryo>12%</cryo> for 15s, and a Bond of Life worth 24% of Max HP will be granted. This effect can be triggered once every 10s. When the Bond of Life is cleared, every 1,000 HP cleared in the process will provide <cryo>3%</cryo> All Elemental DMG Bonus, up to a maximum of <cryo>18%</cryo>. This effect lasts 15s."
+    },
+    "3": {
+      "0": "When using an Elemental Skill, All Elemental DMG Bonus will be increased by <cryo>14%</cryo> for 15s, and a Bond of Life worth 24% of Max HP will be granted. This effect can be triggered once every 10s. When the Bond of Life is cleared, every 1,000 HP cleared in the process will provide <cryo>3.5%</cryo> All Elemental DMG Bonus, up to a maximum of <cryo>21%</cryo>. This effect lasts 15s."
+    },
+    "4": {
+      "0": "When using an Elemental Skill, All Elemental DMG Bonus will be increased by <cryo>16%</cryo> for 15s, and a Bond of Life worth 24% of Max HP will be granted. This effect can be triggered once every 10s. When the Bond of Life is cleared, every 1,000 HP cleared in the process will provide <cryo>4%</cryo> All Elemental DMG Bonus, up to a maximum of <cryo>24%</cryo>. This effect lasts 15s."
+    }
+  }
+}

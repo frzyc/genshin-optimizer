@@ -1,0 +1,24 @@
+{
+  "name": "Skyward Blade",
+  "description": {
+    "0": "The sword of a knight that symbolizes the restored honor of Dvalin. The blessings of the Anemo Archon rest on the fuller of the blade, imbuing the sword with the powers of the sky and the wind."
+  },
+  "passiveName": "Sky-Piercing Fang",
+  "passiveDescription": {
+    "0": {
+      "0": "CRIT Rate increased by <cryo>4%</cryo>. Gains Skypiercing Might upon using an Elemental Burst: Increases Movement SPD by <cryo>10%</cryo>, increases ATK SPD by <cryo>10%</cryo>, and Normal and Charged hits deal additional DMG equal to <cryo>20%</cryo> of ATK. Skypiercing Might lasts for 12s."
+    },
+    "1": {
+      "0": "CRIT Rate increased by <cryo>5%</cryo>, Gains Skypiercing Might upon using an Elemental Burst: Increases Movement SPD by <cryo>10%</cryo>, increases ATK SPD by <cryo>10%</cryo>, and Normal and Charged hits deal additional DMG equal to <cryo>25%</cryo> of ATK. Skypiercing Might lasts for 12s."
+    },
+    "2": {
+      "0": "CRIT Rate increased by <cryo>6%</cryo>. Gains Skypiercing Might upon using an Elemental Burst: Increases Movement SPD by <cryo>10%</cryo>, increases ATK SPD by <cryo>10%</cryo>, and Normal and Charged hits deal additional DMG equal to <cryo>30%</cryo> of ATK. Skypiercing Might lasts for 12s."
+    },
+    "3": {
+      "0": "CRIT Rate increased by <cryo>7%</cryo>. Gains Skypiercing Might upon using an Elemental Burst: Increases Movement SPD by <cryo>10%</cryo>, increases ATK SPD by <cryo>10%</cryo>, and Normal and Charged hits deal additional DMG equal to <cryo>35%</cryo> of ATK. Skypiercing Might lasts for 12s."
+    },
+    "4": {
+      "0": "CRIT Rate increased by <cryo>8%</cryo>. Gains Skypiercing Might upon using an Elemental Burst: Increases Movement SPD by <cryo>10%</cryo>, increases ATK SPD by <cryo>10%</cryo>, and Normal and Charged hits deal additional DMG equal to <cryo>40%</cryo> of ATK. Skypiercing Might lasts for 12s."
+    }
+  }
+}

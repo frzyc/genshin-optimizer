@@ -1,0 +1,24 @@
+{
+  "name": "Tomo del flusso perenne",
+  "description": {
+    "0": "Un manuale che un tempo veniva tramandato all'interno di un priorato subacqueo. Al giorno d'oggi, la sua esistenza è ignota a chiunque."
+  },
+  "passiveName": "Onda eonica",
+  "passiveDescription": {
+    "0": {
+      "0": "I PS aumentano di un <cryo>16%</cryo>. Quando la quantità di PS attuali aumenta o diminuisce, i DAN da attacco caricato aumentano di un <cryo>14%</cryo> per 4 s. Massimo 3 accumuli. Quest'effetto può attivarsi una volta ogni 0,3 s. Una volta raggiunto il massimo numero di accumuli o quando la durata del terzo accumulo si ripristina, l'energia del personaggio si ripristina di <cryo>8</cryo>. Questo effetto di ripristino dell'energia può attivarsi una volta ogni 12 s."
+    },
+    "1": {
+      "0": "I PS aumentano di un <cryo>20%</cryo>. Quando la quantità di PS attuali aumenta o diminuisce, i DAN da attacco caricato aumentano di un <cryo>18%</cryo> per 4 s. Massimo 3 accumuli. Quest'effetto può attivarsi una volta ogni 0,3 s. Una volta raggiunto il massimo numero di accumuli o quando la durata del terzo accumulo si ripristina, l'energia del personaggio si ripristina di <cryo>9</cryo>. Questo effetto di ripristino dell'energia può attivarsi una volta ogni 12 s."
+    },
+    "2": {
+      "0": "I PS aumentano di un <cryo>24%</cryo>. Quando la quantità di PS attuali aumenta o diminuisce, i DAN da attacco caricato aumentano di un <cryo>22%</cryo> per 4 s. Massimo 3 accumuli. Quest'effetto può attivarsi una volta ogni 0,3 s. Una volta raggiunto il massimo numero di accumuli o quando la durata del terzo accumulo si ripristina, l'energia del personaggio si ripristina di <cryo>10</cryo>. Questo effetto di ripristino dell'energia può attivarsi una volta ogni 12 s."
+    },
+    "3": {
+      "0": "I PS aumentano di un <cryo>28%</cryo>. Quando la quantità di PS attuali aumenta o diminuisce, i DAN da attacco caricato aumentano di un <cryo>26%</cryo> per 4 s. Massimo 3 accumuli. Quest'effetto può attivarsi una volta ogni 0,3 s. Una volta raggiunto il massimo numero di accumuli o quando la durata del terzo accumulo si ripristina, l'energia del personaggio si ripristina di <cryo>11</cryo>. Questo effetto di ripristino dell'energia può attivarsi una volta ogni 12 s."
+    },
+    "4": {
+      "0": "I PS aumentano di un <cryo>32%</cryo>. Quando la quantità di PS attuali aumenta o diminuisce, i DAN da attacco caricato aumentano di un <cryo>30%</cryo> per 4 s. Massimo 3 accumuli. Quest'effetto può attivarsi una volta ogni 0,3 s. Una volta raggiunto il massimo numero di accumuli o quando la durata del terzo accumulo si ripristina, l'energia del personaggio si ripristina di <cryo>12</cryo>. Questo effetto di ripristino dell'energia può attivarsi una volta ogni 12 s."
+    }
+  }
+}

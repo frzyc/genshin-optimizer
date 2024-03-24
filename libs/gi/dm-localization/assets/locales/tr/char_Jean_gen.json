@@ -1,0 +1,162 @@
+{
+  "name": "Jean",
+  "title": "Karahindiba Şövalyesi",
+  "description": "Dürüst ve titiz Karahindiba Şövalyesi, aynı zamanda Mondstadt'ın Favonius Şövalyelerinin Büyük Kumandan Vekili.",
+  "constellationName": "Küçük Aslan",
+  "auto": {
+    "name": "Favonius Kılıç Tekniği",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Saldırı</strong>",
+        "1": "Arka arkaya en fazla 5 saldırı yapar."
+      },
+      "charged": {
+        "0": "<strong>Yüklü Saldırı</strong>",
+        "1": "Belirli miktarda dayanıklılık harcayarak rüzgar gücüyle bir düşmanı fırlatır.",
+        "2": "Fırlatılan düşmanlar yavaşça yere düşer."
+      },
+      "plunging": {
+        "0": "<strong>Havadan Saldırı</strong>",
+        "1": "Havadayken dalışa geçerek yere vurur ve yoluna çıkan düşmanlara Alan Hasarı verir."
+      }
+    },
+    "skillParams": {
+      "0": "1 Vuruş Hasarı",
+      "1": "2 Vuruş Hasarı",
+      "2": "3 Vuruş Hasarı",
+      "3": "4 Vuruş Hasarı",
+      "4": "5 Vuruş Hasarı",
+      "5": "Yüklü Saldırı Hasarı",
+      "6": "Yüklü Saldırı Dayanıklılık Maliyeti",
+      "7": "Havadan Saldırı Hasarı",
+      "8": "Havadan Saldırı Hasarı (Alçaktan/Yüksekten)",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Bora Kılıcı",
+    "description": {
+      "0": "Kılıcının etrafındaki rüzgarın gücünü toplayan Jean, küçük bir fırtına oluşturur ve düşmanları nişan aldığı yöne fırlatarak büyük miktarda <anemo>Rüzgar Hasarı</anemo> verir.",
+      "1": "<br/>",
+      "2": "<strong>Basılı Tut</strong>",
+      "3": "Jean sürekli dayanıklılık harcayarak kasırgayı kontrol edip etrafındaki düşmanları ve nesneleri önüne çekebilir.",
+      "4": "Yönü ayarlanabilir.",
+      "5": "Beceri süresi boyunca karakter hareketsiz kalır.",
+      "6": "<br/>",
+      "7": "<i>Gerçek bir muhafız olan Jean'in arkasından tehlikeyi yoldaşlarından uzaklaştıran koruyucu bir rüzgar eser.</i>"
+    },
+    "skillParams": {
+      "0": "Beceri Hasarı",
+      "1": "Dayanıklılık Tüketimi",
+      "2": "Maks. Süre",
+      "3": "BS",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Karahindiba Yeli",
+    "description": {
+      "0": "Jean rüzgarın koruyucu etkisini açığa çıkarıp bir Karahindiba Tarlası oluşturur ve etrafındaki düşmanları geri iterek <anemo>Rüzgar Hasarı</anemo> verir.",
+      "1": "Ayrıca tüm grup üyelerinin Canı anında büyük ölçüde yenilenir. Yenilenen Can miktarı Jean'in Saldırısına bağlıdır.",
+      "2": "<br/>",
+      "3": "<strong>Karahindiba Tarlası</strong>",
+      "4": [
+        "Alan içindeki karakterlerin Canını sürekli yeniler ve onlara <anemo>Rüzgar</anemo> etkisi kazandırır.",
+        "Karahindiba Tarlasına giren ve çıkan düşmanlara <anemo>Rüzgar Hasarı</anemo> verir."
+      ],
+      "5": "<br/>",
+      "6": "<i>Jean'in yüceliği karahindiba tarlaları kadar geniştir. Başkalarını koruma isteği buradan gelir.</i>"
+    },
+    "skillParams": {
+      "0": "Patlama Hasarı",
+      "1": "Alana Girme/Alandan Ayrılma Hasarı",
+      "2": "Alan Etkinleştirme İyileştirmesi",
+      "3": "Sürekli Yenilenme",
+      "4": "BS",
+      "5": "Enerji Maliyeti",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Rüzgar Yoldaşı",
+    "description": {
+      "0": "Jean'in Normal Saldırıları isabet ettiğinde %50 ihtimalle tüm grup üyelerine Jean'in Saldırısının %15'i kadar Can verir."
+    }
+  },
+  "passive2": {
+    "name": "Rüzgar Rehberin Olsun",
+    "description": {
+      "0": "<strong>Karahindiba Yeli</strong> kullanıldığında Enerjisinin %20'si yenilenir."
+    }
+  },
+  "passive3": {
+    "name": "Rehber Esinti",
+    "description": {
+      "0": "Yenileyici etkide olan bir yemek Mükemmel Pişirildiğinde elde edilen ürün %12 ihtimalle iki katına çıkar."
+    }
+  },
+  "constellation1": {
+    "name": "Sarmal Fırtına",
+    "description": {
+      "0": "1 saniyeden fazla basılı tutulduğunda <strong>Bora Kılıcı</strong> becerisinin çekiş hızını ve verdiği Hasarı %40 artırır."
+    }
+  },
+  "constellation2": {
+    "name": "Halkın Kalkanı",
+    "description": {
+      "0": "Jean bir Element Küresi/Parçacığı aldığında 15 saniyeliğine tüm grup üyelerinin Hareket Hızı ve Saldırı Hızı %15 artar."
+    }
+  },
+  "constellation3": {
+    "name": "Batı Rüzgarı Estiğinde",
+    "description": {
+      "0": "<strong>Karahindiba Yeli</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation4": {
+    "name": "Karahindiba Toprakları",
+    "description": {
+      "0": "<strong>Karahindiba Yeli</strong> kullanıldığında oluşan Alanda bulunan tüm düşmanların <anemo>Rüzgar Direnci</anemo> %40 azalır."
+    }
+  },
+  "constellation5": {
+    "name": "Ani Rüzgar Patlaması",
+    "description": {
+      "0": "<strong>Bora Kılıcı</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation6": {
+    "name": "Aslan Dişi, Mondstadt'ın Güzide Koruyucusu",
+    "description": {
+      "0": "<strong>Karahindiba Yeli</strong> becerisinin oluşturduğu Alanın içindeyken alınan Hasar %35 azalır. Bu etki, alandan çıkıldığında 3 vuruş veya 10 saniye boyunca devam eder."
+    }
+  }
+}

@@ -1,0 +1,152 @@
+{
+  "auto": {
+    "name": "Tuonoscossa straniera",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attacco normale</strong>",
+        "1": "Sferra fino a 5 colpi rapidi."
+      },
+      "charged": {
+        "0": "<strong>Attacco caricato</strong>",
+        "1": "Consuma una determinata quantità di vigore per sferrare 2 colpi di spada rapidi."
+      },
+      "plunging": {
+        "0": "<strong>Attacco in picchiata</strong>",
+        "1": "Attacca scagliandosi contro il suolo da mezz'aria, infliggendo DAN agli avversari lungo la traiettoria e DAN ad area all'impatto."
+      }
+    },
+    "skillParams": {
+      "0": "DAN da 1º colpo",
+      "1": "DAN da 2º colpo",
+      "2": "DAN da 3º colpo",
+      "3": "DAN da 4º colpo",
+      "4": "DAN da 5º colpo",
+      "5": "DAN da ATT caricato",
+      "6": "Costo vigore ATT caricato",
+      "7": "DAN da ATT in picchiata",
+      "8": "DAN da ATT in picchiata basso/alto",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Lama di fulmine",
+    "description": {
+      "0": "Scaglia 3 rapide ombre di tuono che infliggono <electro>DAN da Electro</electro> agli avversari e rilasciano un Amuleto dell'abbondanza all'impatto con un avversario.",
+      "1": "Inizialmente, si possono creare 2 Amuleti dell'abbondanza. Usare questa abilità annullerà gli Amuleti dell'abbondanza generati in precedenza.",
+      "2": "<br/>",
+      "3": "<strong>Amuleti dell'abbondanza</strong>",
+      "4": "Quando un personaggio è vicino a un Amuleto dell'abbondanza, lo assorbe e ottiene i seguenti effetti:",
+      "5": [
+        " recupera energia elementale;",
+        " aumenta la ricarica d'energia mentre l'Amuleto dell'abbondanza è attivo."
+      ],
+      "6": "<br/>",
+      "7": "<i>Tu e Paimon discutete dei percorsi in cui l'elettricità potrebbe fluire.</i>"
+    },
+    "skillParams": {
+      "0": "DAN da abilità",
+      "1": "RIGEN energia",
+      "2": "Aumento ricarica d'energia",
+      "3": "Durata",
+      "4": "Durata Amuleto dell'abbondanza",
+      "5": "TdR",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Tuono roboante",
+    "description": {
+      "0": "Richiama la protezione del tuono, respingendo gli avversari vicini e infliggendo <electro>DAN da Electro</electro>.",
+      "1": "<br/>",
+      "2": "<strong>Velo di fulmine</strong>",
+      "3": "Quando gli attacchi normali o caricati del personaggio attivo colpiscono gli avversari, richiamano una Pioggia di tuoni, infliggendo <electro>DAN da Electro</electro>.",
+      "4": "Quando Pioggia di tuoni colpisce gli avversari, rigenera energia per quel personaggio.",
+      "5": "È possibile generare una Pioggia di tuoni ogni 0,5 s.",
+      "6": "<br/>",
+      "7": "<i>Tu e Paimon avete studiato la luce che lampeggia tra le nuvole.</i>"
+    },
+    "skillParams": {
+      "0": "DAN da abilità",
+      "1": "DAN da Pioggia di tuoni",
+      "2": "RIGEN energia",
+      "3": "Durata",
+      "4": "TdR",
+      "5": "Costo energia",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Lampo della folgore",
+    "description": {
+      "0": "Quando un altro personaggio del gruppo vicino ottiene un Amuleto dell'abbondanza creato da <strong>Lama di fulmine</strong>, il TdR di <strong>Lama di fulmine</strong> si riduce di 1,5 s."
+    }
+  },
+  "passive2": {
+    "name": "Ruggito possente",
+    "description": {
+      "0": "Aumenta l'effetto di ricarica d'energia conferito dall'Amuleto dell'abbondanza di <strong>Lama di fulmine</strong> di un 10% della ricarica d'energia de{F#lla}{M#l} viaggiat{F#rice}{M#ore}."
+    }
+  },
+  "constellation1": {
+    "name": "Tuono primaverile della fertilità",
+    "description": {
+      "0": "Il numero di Amuleti dell'abbondanza che può essere generato usando <strong>Lama di fulmine</strong> aumenta a 3."
+    }
+  },
+  "constellation2": {
+    "name": "Veemenza violetta",
+    "description": {
+      "0": "Quando la Pioggia di tuoni generata da <strong>Tuono roboante</strong> colpisce un avversario, la sua <electro>RES a Electro</electro> si riduce di un 15% per 8 s."
+    }
+  },
+  "constellation3": {
+    "name": "Crepitio distante",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Tuono roboante</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation4": {
+    "name": "Tempesta imprevedibile",
+    "description": {
+      "0": "Quando un personaggio ottiene Amuleti dell'abbondanza generati da <strong>Lama di fulmine</strong>, se l'energia del personaggio è inferiore a un 35%, l'energia ripristinata dagli Amuleti dell'abbondanza aumenta di un 100%."
+    }
+  },
+  "constellation5": {
+    "name": "Natura roboante",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Lama di fulmine</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation6": {
+    "name": "Scossa divina",
+    "description": {
+      "0": "Ogni 2 attacchi di Pioggia di tuoni sprigionati da <strong>Tuono roboante</strong>, i DAN dell'attacco successivo di Pioggia di tuoni aumenteranno notevolmente, infliggendo un 200% dei suoi DAN iniziali e ripristinando ulteriormente l'energia del personaggio attuale di 1."
+    }
+  }
+}

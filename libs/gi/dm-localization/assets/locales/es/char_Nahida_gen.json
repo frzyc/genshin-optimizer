@@ -1,0 +1,181 @@
+{
+  "name": "Nahida",
+  "title": "La Purificadora de las Plantas",
+  "description": "Un pajarito enjaulado en el Santuario Surasthana que solo puede contemplar el mundo desde sus sueños.",
+  "constellationName": "Sapientia Oromasdis",
+  "auto": {
+    "name": "Akara",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Ataque Normal</strong>",
+        "1": "Ataca hasta 4 veces hacia el frente para infligir <dendro>Daño Dendro</dendro>."
+      },
+      "charged": {
+        "0": "<strong>Ataque Cargado</strong>",
+        "1": "Consume una cierta cantidad de Aguante para infligir <dendro>Daño Dendro en el AdE</dendro> hacia adelante después de un corto tiempo de canalización."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Descendente</strong>",
+        "1": "Concentra el poder de las plantas, se lanza desde el aire para golpear el suelo y daña a los enemigos a su paso, infligiendo <dendro>Daño Dendro en el AdE</dendro> en el momento del impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Daño de 1er golpe",
+      "1": "Daño de 2.º golpe",
+      "2": "Daño de 3er golpe",
+      "3": "Daño de 4.º golpe",
+      "4": "Daño de ATQ Cargado",
+      "5": "Coste de Aguante de ATQ Cargado",
+      "6": "Daño de Caída",
+      "7": "Daño de impacto de caída baja/alta",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Omnisciencia",
+    "description": {
+      "0": "Libera una cadena herbokármica que inflige <dendro>Daño Dendro en el AdE</dendro> y aplica una semilla skandha sobre un máximo de 8 enemigos.",
+      "1": "Esta habilidad se libera de manera distinta al mantener pulsado.",
+      "2": "<br/>",
+      "3": "<strong>Mantener pulsado</strong>",
+      "4": "Apunta para escoger una AdE y una cantidad de enemigos determinadas. Mientras lo hace, aumenta la RES a interrupción de Nahida.",
+      "5": "Al terminar de apuntar, inflige <dendro>Daño Dendro</dendro> contra los enemigos seleccionados y les pone una semilla skandha.",
+      "6": "Se puede apuntar durante un máximo de 5 s y se pueden escoger hasta 8 enemigos.",
+      "7": "<br/>",
+      "8": "<strong>Semilla skandha</strong>",
+      "9": "Los enemigos afectados por una semilla skandha serán encadenados entre sí hasta una cierta distancia.",
+      "10": "Tras causar una Reacción Elemental contra un enemigo afectado por una semilla, o infligir daño contra él por medio de un núcleo Dendro (esto incluye el daño infligido con Crepitar y Sobreflorecimiento), Nahida libera un trikarma acrisolador contra ese enemigo y contra todos los enemigos encadenados a él para infligir <dendro>Daño Dendro</dendro> en función de su ATQ y su Maestría Elemental.",
+      "11": "El trikarma acrisolador solo se puede liberar una vez en un breve periodo de tiempo.",
+      "12": "<br/>",
+      "13": "<i>La diosa de los árboles y las plantas irradia su verdadera esencia en el vacío, con lo que arroja luz a la manera en que se originan y destruyen los tres karmas.</i>"
+    },
+    "skillParams": {
+      "0": "Daño al pulsar una vez",
+      "1": "Daño al mantener pulsado",
+      "2": "Daño de trikarma acrisolador",
+      "3": "Intervalo de activación de trikarma acrisolador",
+      "4": "Duración de semilla skandha",
+      "5": "TdE al pulsar una vez",
+      "6": "TdE de mantener pulsado",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Corazón ilusorio",
+    "description": {
+      "0": "Manifiesta un “templo ilusorio” y recrea el gran pabellón de los sueños.",
+      "1": "<br/>",
+      "2": "Al hacerlo, se producen distintos efectos si en el equipo hay personajes con los siguientes tipos elementales:",
+      "3": [
+        "<pyro>Pyro</pyro>: cuando Nahida está dentro del templo ilusorio, aumenta el daño del trikarma acrisolador de su Habilidad Elemental, Omnisciencia.",
+        "<electro>Electro</electro>: cuando Nahida está dentro del templo ilusorio, se reduce el tiempo en el que se puede activar el trikarma acrisolador de su Habilidad Elemental, Omnisciencia.",
+        "<hydro>Hydro</hydro>: aumenta la duración del templo ilusorio."
+      ],
+      "4": "<br/>",
+      "5": "Si al crear el área hay, por lo menos, 2 personajes de los tipos elementales anteriormente mencionados, el efecto correspondiente se potencia aún más.",
+      "6": "<br/>",
+      "7": "Las bonificaciones mencionadas seguirán teniendo efecto siempre y cuando el equipo se encuentre dentro del templo ilusorio, aunque Nahida se encuentre en tu equipo pero no en uso.",
+      "8": "<br/>",
+      "9": "<i>Para la Diosa de la Sabiduría, todo lo que existe bajo los árboles podría no ser más que un efímero sueño invertido</i>."
+    },
+    "skillParams": {
+      "0": "Pyro: aumento de daño",
+      "1": "Pyro: aumento de daño",
+      "2": "Electro: reducción de intervalo de activación",
+      "3": "Electro: reducción de intervalo de activación",
+      "4": "Hydro: aumento de duración",
+      "5": "Hydro: aumento de duración",
+      "6": "Duración básica",
+      "7": "TdE",
+      "8": "Energía Elemental",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Iluminación de la compasión",
+    "description": {
+      "0": "Al usar <strong>Corazón ilusorio</strong>, el templo ilusorio obtiene los siguientes efectos:",
+      "1": "Cuando un personaje en uso se encuentra en el área del templo, su Maestría Elemental aumenta en un 25% de la del personaje con la mayor Maestría Elemental del equipo.",
+      "2": "La Maestría Elemental solo puede aumentar en un máximo de 250 pts. de esta manera."
+    }
+  },
+  "passive2": {
+    "name": "Dilucidación del despertar",
+    "description": {
+      "0": "Al superar los 200 pts. de Maestría Elemental, por cada punto de más que tenga Nahida, aumenta en un 0.1% el daño del trikarma acrisolador de <strong>Omnisciencia</strong> y en un 0.03% su Prob. CRIT.",
+      "1": "Se puede aumentar el daño del trikarma acrisolador hasta en un 80% y su Prob. CRIT hasta en un 24% de esta manera."
+    }
+  },
+  "passive3": {
+    "name": "Meditación holística",
+    "description": {
+      "0": "Nahida puede interactuar con algunos objetos recolectables en cierta área a través de <strong>Omnisciencia</strong>.",
+      "1": "Tal vez esta habilidad tenga incluso otros efectos..."
+    }
+  },
+  "constellation1": {
+    "name": "Semillas del conocimiento",
+    "description": {
+      "0": "Al calcular la cantidad de personajes de tipos elementales específicos en el equipo en el momento en que se crea el <strong>templo ilusorio</strong>, se contabilizan un personaje Pyro, uno Electro y uno Hydro adicionales."
+    }
+  },
+  "constellation2": {
+    "name": "Raíces de la plenitud",
+    "description": {
+      "0": "Los enemigos afectados por una <strong>semilla skandha</strong> aplicada por Nahida reciben los siguientes efectos:",
+      "1": [
+        "El daño que reciben por medio de las reacciones de Quemadura, Florecimiento, Sobreflorecimiento y Crepitar puede infligir críticos contra ellos, con una Prob. CRIT fija del 20% y un Daño CRIT fijo del 100%.",
+        "La DEF de dichos enemigos se reduce en un 30% durante 8 s al ser afectados por las reacciones de Aceleración, Intensificación y Propagación."
+      ]
+    }
+  },
+  "constellation3": {
+    "name": "Brotes del karma",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Omnisciencia</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Tallos de la acción manifiesta",
+    "description": {
+      "0": "Cuando en las cercanías hay 1/2/3/4 o más enemigos afectados por una semilla skandha de <strong>Omnisciencia</strong>, la Maestría Elemental de Nahida aumenta en 100/120/140/160 pts."
+    }
+  },
+  "constellation5": {
+    "name": "Hojas de la iluminación discursiva",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Corazón ilusorio</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Frutos de la culminación racional",
+    "description": {
+      "0": "Tras usar <strong>Corazón ilusorio</strong>, cuando Nahida golpea con un Ataque Normal o Cargado a un enemigo afectado por una semilla skandha de <strong>Omnisciencia</strong>, libera un trikarma acrisolador: expiación kármica contra ese enemigo y contra todos los enemigos encadenados con él para infligir <dendro>Daño Dendro</dendro> en función del 200% del ATQ y el 400% de la Maestría Elemental de Nahida.",
+      "1": "El daño del trikarma acrisolador: expiación kármica se considera daño de Habilidad Elemental, y solo se puede activar una vez cada 0.2 s.",
+      "2": "Este efecto dura 10 s y se elimina una vez que Nahida haya liberado 6 veces el trikarma acrisolador: expiación kármica."
+    }
+  }
+}

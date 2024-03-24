@@ -1,0 +1,578 @@
+[
+  {
+    "GroupID": 2,
+    "AffixID": 1,
+    "Property": "HPDelta",
+    "BaseValue": {
+      "Value": 13.548016
+    },
+    "StepValue": {
+      "Value": 1.693502
+    },
+    "StepNum": 2
+  },
+  {
+    "GroupID": 2,
+    "AffixID": 2,
+    "Property": "AttackDelta",
+    "BaseValue": {
+      "Value": 6.774008
+    },
+    "StepValue": {
+      "Value": 0.846751
+    },
+    "StepNum": 2
+  },
+  {
+    "GroupID": 2,
+    "AffixID": 3,
+    "Property": "DefenceDelta",
+    "BaseValue": {
+      "Value": 6.774008
+    },
+    "StepValue": {
+      "Value": 0.846751
+    },
+    "StepNum": 2
+  },
+  {
+    "GroupID": 2,
+    "AffixID": 4,
+    "Property": "HPAddedRatio",
+    "BaseValue": {
+      "Value": 0.013824001
+    },
+    "StepValue": {
+      "Value": 0.0017280006
+    },
+    "StepNum": 2
+  },
+  {
+    "GroupID": 2,
+    "AffixID": 5,
+    "Property": "AttackAddedRatio",
+    "BaseValue": {
+      "Value": 0.013824001
+    },
+    "StepValue": {
+      "Value": 0.0017280006
+    },
+    "StepNum": 2
+  },
+  {
+    "GroupID": 2,
+    "AffixID": 6,
+    "Property": "DefenceAddedRatio",
+    "BaseValue": {
+      "Value": 0.017280001
+    },
+    "StepValue": {
+      "Value": 0.0021600004
+    },
+    "StepNum": 2
+  },
+  {
+    "GroupID": 2,
+    "AffixID": 7,
+    "Property": "SpeedDelta",
+    "BaseValue": {
+      "Value": 1
+    },
+    "StepValue": {
+      "Value": 0.1
+    },
+    "StepNum": 2
+  },
+  {
+    "GroupID": 2,
+    "AffixID": 8,
+    "Property": "CriticalChanceBase",
+    "BaseValue": {
+      "Value": 0.010368001
+    },
+    "StepValue": {
+      "Value": 0.0012960008
+    },
+    "StepNum": 2
+  },
+  {
+    "GroupID": 2,
+    "AffixID": 9,
+    "Property": "CriticalDamageBase",
+    "BaseValue": {
+      "Value": 0.020736001
+    },
+    "StepValue": {
+      "Value": 0.0025920009
+    },
+    "StepNum": 2
+  },
+  {
+    "GroupID": 2,
+    "AffixID": 10,
+    "Property": "StatusProbabilityBase",
+    "BaseValue": {
+      "Value": 0.013824001
+    },
+    "StepValue": {
+      "Value": 0.0017280006
+    },
+    "StepNum": 2
+  },
+  {
+    "GroupID": 2,
+    "AffixID": 11,
+    "Property": "StatusResistanceBase",
+    "BaseValue": {
+      "Value": 0.013824001
+    },
+    "StepValue": {
+      "Value": 0.0017280006
+    },
+    "StepNum": 2
+  },
+  {
+    "GroupID": 2,
+    "AffixID": 12,
+    "Property": "BreakDamageAddedRatioBase",
+    "BaseValue": {
+      "Value": 0.020736001
+    },
+    "StepValue": {
+      "Value": 0.0025920009
+    },
+    "StepNum": 2
+  },
+  {
+    "GroupID": 3,
+    "AffixID": 1,
+    "Property": "HPDelta",
+    "BaseValue": {
+      "Value": 20.322023
+    },
+    "StepValue": {
+      "Value": 2.540253
+    },
+    "StepNum": 2
+  },
+  {
+    "GroupID": 3,
+    "AffixID": 2,
+    "Property": "AttackDelta",
+    "BaseValue": {
+      "Value": 10.161012
+    },
+    "StepValue": {
+      "Value": 1.270126
+    },
+    "StepNum": 2
+  },
+  {
+    "GroupID": 3,
+    "AffixID": 3,
+    "Property": "DefenceDelta",
+    "BaseValue": {
+      "Value": 10.161012
+    },
+    "StepValue": {
+      "Value": 1.270126
+    },
+    "StepNum": 2
+  },
+  {
+    "GroupID": 3,
+    "AffixID": 4,
+    "Property": "HPAddedRatio",
+    "BaseValue": {
+      "Value": 0.020736001
+    },
+    "StepValue": {
+      "Value": 0.0025920009
+    },
+    "StepNum": 2
+  },
+  {
+    "GroupID": 3,
+    "AffixID": 5,
+    "Property": "AttackAddedRatio",
+    "BaseValue": {
+      "Value": 0.020736001
+    },
+    "StepValue": {
+      "Value": 0.0025920009
+    },
+    "StepNum": 2
+  },
+  {
+    "GroupID": 3,
+    "AffixID": 6,
+    "Property": "DefenceAddedRatio",
+    "BaseValue": {
+      "Value": 0.02592
+    },
+    "StepValue": {
+      "Value": 0.0032400002
+    },
+    "StepNum": 2
+  },
+  {
+    "GroupID": 3,
+    "AffixID": 7,
+    "Property": "SpeedDelta",
+    "BaseValue": {
+      "Value": 1.2
+    },
+    "StepValue": {
+      "Value": 0.1
+    },
+    "StepNum": 2
+  },
+  {
+    "GroupID": 3,
+    "AffixID": 8,
+    "Property": "CriticalChanceBase",
+    "BaseValue": {
+      "Value": 0.015552
+    },
+    "StepValue": {
+      "Value": 0.0019440008
+    },
+    "StepNum": 2
+  },
+  {
+    "GroupID": 3,
+    "AffixID": 9,
+    "Property": "CriticalDamageBase",
+    "BaseValue": {
+      "Value": 0.031104
+    },
+    "StepValue": {
+      "Value": 0.003888001
+    },
+    "StepNum": 2
+  },
+  {
+    "GroupID": 3,
+    "AffixID": 10,
+    "Property": "StatusProbabilityBase",
+    "BaseValue": {
+      "Value": 0.020736001
+    },
+    "StepValue": {
+      "Value": 0.0025920009
+    },
+    "StepNum": 2
+  },
+  {
+    "GroupID": 3,
+    "AffixID": 11,
+    "Property": "StatusResistanceBase",
+    "BaseValue": {
+      "Value": 0.020736001
+    },
+    "StepValue": {
+      "Value": 0.0025920009
+    },
+    "StepNum": 2
+  },
+  {
+    "GroupID": 3,
+    "AffixID": 12,
+    "Property": "BreakDamageAddedRatioBase",
+    "BaseValue": {
+      "Value": 0.031104
+    },
+    "StepValue": {
+      "Value": 0.003888001
+    },
+    "StepNum": 2
+  },
+  {
+    "GroupID": 4,
+    "AffixID": 1,
+    "Property": "HPDelta",
+    "BaseValue": {
+      "Value": 27.096031
+    },
+    "StepValue": {
+      "Value": 3.387004
+    },
+    "StepNum": 2
+  },
+  {
+    "GroupID": 4,
+    "AffixID": 2,
+    "Property": "AttackDelta",
+    "BaseValue": {
+      "Value": 13.548016
+    },
+    "StepValue": {
+      "Value": 1.693502
+    },
+    "StepNum": 2
+  },
+  {
+    "GroupID": 4,
+    "AffixID": 3,
+    "Property": "DefenceDelta",
+    "BaseValue": {
+      "Value": 13.548016
+    },
+    "StepValue": {
+      "Value": 1.693502
+    },
+    "StepNum": 2
+  },
+  {
+    "GroupID": 4,
+    "AffixID": 4,
+    "Property": "HPAddedRatio",
+    "BaseValue": {
+      "Value": 0.027648
+    },
+    "StepValue": {
+      "Value": 0.0034560005
+    },
+    "StepNum": 2
+  },
+  {
+    "GroupID": 4,
+    "AffixID": 5,
+    "Property": "AttackAddedRatio",
+    "BaseValue": {
+      "Value": 0.027648
+    },
+    "StepValue": {
+      "Value": 0.0034560005
+    },
+    "StepNum": 2
+  },
+  {
+    "GroupID": 4,
+    "AffixID": 6,
+    "Property": "DefenceAddedRatio",
+    "BaseValue": {
+      "Value": 0.034560002
+    },
+    "StepValue": {
+      "Value": 0.0043200003
+    },
+    "StepNum": 2
+  },
+  {
+    "GroupID": 4,
+    "AffixID": 7,
+    "Property": "SpeedDelta",
+    "BaseValue": {
+      "Value": 1.6
+    },
+    "StepValue": {
+      "Value": 0.2
+    },
+    "StepNum": 2
+  },
+  {
+    "GroupID": 4,
+    "AffixID": 8,
+    "Property": "CriticalChanceBase",
+    "BaseValue": {
+      "Value": 0.020736001
+    },
+    "StepValue": {
+      "Value": 0.0025920009
+    },
+    "StepNum": 2
+  },
+  {
+    "GroupID": 4,
+    "AffixID": 9,
+    "Property": "CriticalDamageBase",
+    "BaseValue": {
+      "Value": 0.041472
+    },
+    "StepValue": {
+      "Value": 0.0051840004
+    },
+    "StepNum": 2
+  },
+  {
+    "GroupID": 4,
+    "AffixID": 10,
+    "Property": "StatusProbabilityBase",
+    "BaseValue": {
+      "Value": 0.027648
+    },
+    "StepValue": {
+      "Value": 0.0034560005
+    },
+    "StepNum": 2
+  },
+  {
+    "GroupID": 4,
+    "AffixID": 11,
+    "Property": "StatusResistanceBase",
+    "BaseValue": {
+      "Value": 0.027648
+    },
+    "StepValue": {
+      "Value": 0.0034560005
+    },
+    "StepNum": 2
+  },
+  {
+    "GroupID": 4,
+    "AffixID": 12,
+    "Property": "BreakDamageAddedRatioBase",
+    "BaseValue": {
+      "Value": 0.041472
+    },
+    "StepValue": {
+      "Value": 0.0051840004
+    },
+    "StepNum": 2
+  },
+  {
+    "GroupID": 5,
+    "AffixID": 1,
+    "Property": "HPDelta",
+    "BaseValue": {
+      "Value": 33.87004
+    },
+    "StepValue": {
+      "Value": 4.233755
+    },
+    "StepNum": 2
+  },
+  {
+    "GroupID": 5,
+    "AffixID": 2,
+    "Property": "AttackDelta",
+    "BaseValue": {
+      "Value": 16.935019
+    },
+    "StepValue": {
+      "Value": 2.116877
+    },
+    "StepNum": 2
+  },
+  {
+    "GroupID": 5,
+    "AffixID": 3,
+    "Property": "DefenceDelta",
+    "BaseValue": {
+      "Value": 16.935019
+    },
+    "StepValue": {
+      "Value": 2.116877
+    },
+    "StepNum": 2
+  },
+  {
+    "GroupID": 5,
+    "AffixID": 4,
+    "Property": "HPAddedRatio",
+    "BaseValue": {
+      "Value": 0.034560002
+    },
+    "StepValue": {
+      "Value": 0.0043200003
+    },
+    "StepNum": 2
+  },
+  {
+    "GroupID": 5,
+    "AffixID": 5,
+    "Property": "AttackAddedRatio",
+    "BaseValue": {
+      "Value": 0.034560002
+    },
+    "StepValue": {
+      "Value": 0.0043200003
+    },
+    "StepNum": 2
+  },
+  {
+    "GroupID": 5,
+    "AffixID": 6,
+    "Property": "DefenceAddedRatio",
+    "BaseValue": {
+      "Value": 0.0432
+    },
+    "StepValue": {
+      "Value": 0.0054
+    },
+    "StepNum": 2
+  },
+  {
+    "GroupID": 5,
+    "AffixID": 7,
+    "Property": "SpeedDelta",
+    "BaseValue": {
+      "Value": 2
+    },
+    "StepValue": {
+      "Value": 0.3
+    },
+    "StepNum": 2
+  },
+  {
+    "GroupID": 5,
+    "AffixID": 8,
+    "Property": "CriticalChanceBase",
+    "BaseValue": {
+      "Value": 0.02592
+    },
+    "StepValue": {
+      "Value": 0.0032400002
+    },
+    "StepNum": 2
+  },
+  {
+    "GroupID": 5,
+    "AffixID": 9,
+    "Property": "CriticalDamageBase",
+    "BaseValue": {
+      "Value": 0.05184
+    },
+    "StepValue": {
+      "Value": 0.0064800004
+    },
+    "StepNum": 2
+  },
+  {
+    "GroupID": 5,
+    "AffixID": 10,
+    "Property": "StatusProbabilityBase",
+    "BaseValue": {
+      "Value": 0.034560002
+    },
+    "StepValue": {
+      "Value": 0.0043200003
+    },
+    "StepNum": 2
+  },
+  {
+    "GroupID": 5,
+    "AffixID": 11,
+    "Property": "StatusResistanceBase",
+    "BaseValue": {
+      "Value": 0.034560002
+    },
+    "StepValue": {
+      "Value": 0.0043200003
+    },
+    "StepNum": 2
+  },
+  {
+    "GroupID": 5,
+    "AffixID": 12,
+    "Property": "BreakDamageAddedRatioBase",
+    "BaseValue": {
+      "Value": 0.05184
+    },
+    "StepValue": {
+      "Value": 0.0064800004
+    },
+    "StepNum": 2
+  }
+]

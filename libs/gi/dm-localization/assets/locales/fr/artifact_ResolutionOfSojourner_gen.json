@@ -1,0 +1,29 @@
+{
+  "setName": "Cœur du Voyageur",
+  "setEffects": {
+    "2": "Augmente l'ATQ de 18 %.",
+    "4": "Augmente le taux CRIT des attaques chargées de 30 %."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Fleur du Voyageur",
+      "desc": "Une petite fleur bleue avec un ruban attaché à sa tige."
+    },
+    "plume": {
+      "name": "Plume du Voyageur",
+      "desc": "Une plume de flèche bleue qui symbolise la nostalgie d'un voyageur."
+    },
+    "sands": {
+      "name": "Montre du Voyageur",
+      "desc": "Un cadran solaire qui a connu des temps instables, tout en enregistrant silencieusement les cycles dictés par le soleil et de la lune."
+    },
+    "goblet": {
+      "name": "Calice du Voyageur",
+      "desc": "Un verre en porcelaine blanche qui a contenu de nombreuses boissons alcoolisées."
+    },
+    "circlet": {
+      "name": "Couronne du Voyageur",
+      "desc": "Une couronne en bois de saule qui émet une petite brise printanière."
+    }
+  }
+}

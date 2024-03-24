@@ -1,0 +1,152 @@
+{
+  "auto": {
+    "name": "Foreign Thundershock",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Attack</strong>",
+        "1": "Melancarkan hingga 5 serangan pedang berturut-turut."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Mengonsumsi sejumlah Stamina untuk melancarkan dua tebasan pedang."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Menerjang dari udara untuk menghantam tanah di bawahnya, menyerang musuh di jalurnya dan mengakibatkan DMG area saat mendarat."
+      }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Tahap 4",
+      "4": "DMG Tahap 5",
+      "5": "DMG Charged Attack",
+      "6": "Konsumsi Stamina Charged Attack",
+      "7": "DMG Selama Plunging",
+      "8": "DMG Plunging Attack Rendah/Tinggi",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Lightning Blade",
+    "description": {
+      "0": "Melancarkan 3 tebasan secepat kilat yang mengakibatkan <electro>Electro DMG</electro> pada musuh, dan meninggalkan Abundance Amulet pada musuh yang terkena.",
+      "1": "Awal-awal, maksimal 2 Abundance Amulet dapat dihasilkan. Dan saat skill dilancarkan, semua Abundance Amulet yang ada akan terkonsumsi.",
+      "2": "<br/>",
+      "3": "<strong>Abundance Amulet</strong>",
+      "4": "Karakter yang berada di sekitar Abundance Amulet akan menyerap Abundance Amulet dan memperoleh efek berikut:",
+      "5": [
+        "Memulihkan Energy;",
+        "Meningkatkan Energy Recharge."
+      ],
+      "6": "<br/>",
+      "7": "<i>Kamu dan Paimon sempat mendiskusikan semua jalur yang mungkin dialiri listrik.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "Pemulihan Energy",
+      "2": "Peningkatan Energy Recharge",
+      "3": "Durasi",
+      "4": "Durasi Abundance Amulet",
+      "5": "Cooldown",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Bellowing Thunder",
+    "description": {
+      "0": "Memanggil perlindungan petir, menghempas musuh di sekitar dan menyebabkan <electro>Electro DMG</electro>.",
+      "1": "<br/>",
+      "2": "<strong>Lightning Shroud</strong>",
+      "3": "Jika Normal atau Charged Attack Karakter yang sedang aktif mengenai musuh, Falling Thunder akan terpicu dan mengakibatkan <electro>Electro DMG.</electro>",
+      "4": "Falling Thunder yang mengenai musuh akan memulihkan Energy Karakter yang bersangkutan.",
+      "5": "Satu Falling Thunder dapat terpicu setiap 0,5 detik.",
+      "6": "<br/>",
+      "7": "<i>Kamu dan Paimon pernah mempelajari kilatan cahaya yang tiba-tiba menembus awan.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "DMG Falling Thunder",
+      "2": "Pemulihan Energy",
+      "3": "Durasi",
+      "4": "Cooldown",
+      "5": "Konsumsi Energy",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Thunderflash",
+    "description": {
+      "0": "Saat Karakter party yang berada di sekitar menyerap Abundance Amulet yang tercipta dari <strong>Lightning Blade</strong>, maka CD <strong>Lightning Blade</strong> akan berkurang 1,5 detik."
+    }
+  },
+  "passive2": {
+    "name": "Resounding Roar",
+    "description": {
+      "0": "Bonus Energy Recharge dari Abundance Amulet yang dihasilkan <strong>Lightning Blade</strong> akan meningkat sebesar 10% dari Energy Recharge Pengembara."
+    }
+  },
+  "constellation1": {
+    "name": "Spring Thunder of Fertility",
+    "description": {
+      "0": "Jumlah Abundance Amulet yang bisa diciptakan dengan <strong>Lightning Blade</strong> bertambah menjadi 3 buah."
+    }
+  },
+  "constellation2": {
+    "name": "Violet Vehemence",
+    "description": {
+      "0": "Falling Thunder dari <strong>Bellowing Thunder</strong> yang mengenai musuh akan mengurangi 15% <electro>Electro RES</electro> musuh selama 8 detik."
+    }
+  },
+  "constellation3": {
+    "name": "Distant Crackling",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Bellowing Thunder</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Fickle Cloudstrike",
+    "description": {
+      "0": "Saat Karakter menyerap Abundance Amulet yang tercipta dari <strong>Lightning Blade</strong> dan Energy karakter kurang dari 35%, maka Energy yang dipulihkan Abundance Amulet akan meningkat 100%."
+    }
+  },
+  "constellation5": {
+    "name": "Clamor in the Wilds",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Lightning Blade</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "World-Shaker",
+    "description": {
+      "0": "Setiap 2 serangan Falling Thunder yang terpicu dari <strong>Bellowing Thunder</strong> akan meningkatkan DMG Falling Thunder selanjutnya secara drastis, mengakibatkan DMG sebesar 200% dari DMG aslinya dan memulihkan 1 Energy tambahan untuk Karakter saat ini."
+    }
+  }
+}

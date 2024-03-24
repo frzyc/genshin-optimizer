@@ -1,0 +1,21 @@
+{
+  "hp": "HP",
+  "hp_": "HP",
+  "atk": "Tấn Công",
+  "atk_": "Tấn Công",
+  "def": "Phòng Ngự",
+  "def_": "Phòng Ngự",
+  "eleMas": "Tinh Thông Nguyên Tố",
+  "enerRech_": "Hiệu Quả Nạp Nguyên Tố",
+  "critRate_": "Tỷ Lệ Bạo Kích",
+  "critDMG_": "ST Bạo Kích",
+  "heal_": "Tăng Trị Liệu",
+  "physical_dmg_": "Tăng Sát Thương Vật Lý",
+  "anemo_dmg_": "Tăng ST Nguyên Tố Phong",
+  "geo_dmg_": "Tăng ST Nguyên Tố Nham",
+  "electro_dmg_": "Tăng ST Nguyên Tố Lôi",
+  "hydro_dmg_": "Tăng ST Nguyên Tố Thủy",
+  "pyro_dmg_": "Tăng ST Nguyên Tố Hỏa",
+  "cryo_dmg_": "Tăng ST Nguyên Tố Băng",
+  "dendro_dmg_": "Tăng ST Nguyên Tố Thảo"
+}

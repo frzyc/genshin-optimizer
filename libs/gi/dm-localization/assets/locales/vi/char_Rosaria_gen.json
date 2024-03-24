@@ -1,0 +1,154 @@
+{
+  "name": "Rosaria",
+  "title": "Ân Điển Mũ Gai",
+  "description": "Một tu nữ ngoại trừ cách ăn mặc thì không có điểm nào giống với người trong tu viện. Trong hành vi và lời nói lãnh đạm thoảng qua chút sắc sảo. Lúc nào cũng hành động một mình.",
+  "constellationName": "Cung Kinh Quán",
+  "auto": {
+    "name": "Thương Thuật Giáo Hội",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Tấn Công Thường</strong>",
+        "1": "Thực hiện tối đa 5 lần đánh liên tiếp."
+      },
+      "charged": {
+        "0": "<strong>Trọng Kích</strong>",
+        "1": "Tiêu hao thể lực nhất định, xông về phía trước, gây sát thương cho địch trên đường đi."
+      },
+      "plunging": {
+        "0": "<strong>Tấn Công Khi Đáp</strong>",
+        "1": "Đáp xuống đất từ trên không, tấn công kẻ địch trên đường và gây sát thương phạm vi khi chạm đất."
+      }
+    },
+    "skillParams": {
+      "0": "Sát Thương Lần 1",
+      "1": "Sát Thương Lần 2",
+      "2": "Sát Thương Lần 3",
+      "3": "Sát Thương Lần 4",
+      "4": "Sát Thương Lần 5",
+      "5": "Sát Thương Trọng Kích",
+      "6": "Thể lực Trọng Kích tiêu hao",
+      "7": "Sát Thương Khi Đáp",
+      "8": "ST Khi Rơi Từ Độ Cao Thấp/Cao",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Lời Cáo Tội",
+    "description": {
+      "0": "Rosaria nhanh chóng di chuyển đến phía sau kẻ địch, dùng thương để đâm xuyên và chém, gây <cryo>Sát Thương Nguyên Tố Băng</cryo>.",
+      "1": "Không thể di chuyển nhanh đến phía sau kẻ địch có thể hình lớn.",
+      "2": "<br/>",
+      "3": "<i>Lời thú tội với nữ tu Rosaria sẽ không được tha thứ. Ngược lại, tội càng nặng thì hình phạt càng giá lạnh.</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Kỹ Năng",
+      "1": "CD",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Thánh Lễ Cuối Cùng",
+    "description": {
+      "0": "Đây là nghi thức riêng của Rosaria. Vung vũ khí lên quét sạch kẻ địch, sau đó ngưng tụ hàn băng găm vào mặt đất, gây <cryo>Sát Thương Nguyên Tố Băng</cryo>.",
+      "1": "Khi băng thương tồn tại, nó sẽ liên tục phát ra hơi lạnh, gây <cryo>Sát Thương Nguyên Tố Băng</cryo> cho kẻ địch gần đó.",
+      "2": "<br/>",
+      "3": "<i>Quá trình phán xử rất phiền phức, vì vậy cứ trực tiếp thực thi buổi lễ cho cái chết thôi. Rosaria vốn không tin vào Phong Thần nên vấn đề này rất dễ dàng với cô ấy.</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Kỹ Năng",
+      "1": "Sát Thương Thương Băng Kéo Dài",
+      "2": "Thời Gian Kéo Dài",
+      "3": "CD",
+      "4": "Năng Lượng Nguyên Tố",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Nghe U Ảnh Sám Hối",
+    "description": {
+      "0": "Khi <strong>Lời Cáo Tội</strong> tấn công từ phía sau của mục tiêu, tỷ lệ bạo kích của Rosaria tăng 12%, kéo dài 5s."
+    }
+  },
+  "passive2": {
+    "name": "Chi Viện Bóng Tối",
+    "description": {
+      "0": "Khi thi triển <strong>Thánh Lễ Cuối Cùng</strong>, dựa trên 15% tỷ lệ bạo kích của bản thân, tăng tỷ lệ bạo kích cho tất cả các nhân vật trong đội ở gần (không bao gồm Rosaria), kéo dài 10s.",
+      "1": "Tỷ lệ bạo kích tăng thêm bằng cách này không thể vượt quá 15%."
+    }
+  },
+  "passive3": {
+    "name": "Dạ Hành",
+    "description": {
+      "0": "Buổi tối (18h đến 6h), nhân vật trong đội của bản thân nhận hiệu ứng Tốc Hành: Tốc độ di chuyển tăng 10%.",
+      "1": "Hiệu quả này vô hiệu trong Bí Cảnh, Vùng Đất Thảo Phạt, La Hoàn Thâm Cảnh. Hiệu quả Tốc Hành không thể cộng dồn."
+    }
+  },
+  "constellation1": {
+    "name": "Nguồn Gốc Tội Lỗi",
+    "description": {
+      "0": "Đòn tấn công của Rosaria sau khi tạo thành bạo kích sẽ tăng 10% tốc độ tấn công cho bản thân, sát thương tấn công thường tạo thành tăng 10%, kéo dài 4s."
+    }
+  },
+  "constellation2": {
+    "name": "Vùng Đất Bất Hạnh",
+    "description": {
+      "0": "Thời gian Thương Băng do <strong>Thánh Lễ Cuối Cùng</strong> tạo ra kéo dài thêm 4s"
+    }
+  },
+  "constellation3": {
+    "name": "Buổi Lễ Xưng Tội",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Lời Cáo Tội</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation4": {
+    "name": "Ân Điển Đau Khổ",
+    "description": {
+      "0": "Khi <strong>Lời Cáo Tội</strong> tạo thành bạo kích, hồi 5 điểm năng lượng nguyên tố cho bản thân Rosaria.",
+      "1": "Mỗi lần Lời Cáo Tội nhiều nhất kích hoạt 1 lần hiệu quả này."
+    }
+  },
+  "constellation5": {
+    "name": "Lời Nguyện Lúc Lâm Chung",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Thánh Lễ Cuối Cùng</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation6": {
+    "name": "Thay Trời Hành Đạo",
+    "description": {
+      "0": "Đòn tấn công của <strong>Thánh Lễ Cuối Cùng</strong> sẽ khiến kháng vật lý của địch giảm 20%, kéo dài 10s."
+    }
+  }
+}

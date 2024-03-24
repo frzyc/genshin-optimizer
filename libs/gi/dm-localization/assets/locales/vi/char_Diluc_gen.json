@@ -1,0 +1,157 @@
+{
+  "name": "Diluc",
+  "title": "Mặt Tối Của Bình Minh",
+  "description": "Là công tử nắm trong tay hơn một nửa ngành rượu Mondstadt, tài lực, danh vọng, năng lực đều khiến người khác không thể coi thường.",
+  "constellationName": "Cung Dạ Hiêu",
+  "auto": {
+    "name": "Kiếm Tôi Luyện",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Tấn Công Thường</strong>",
+        "1": "Thực hiện tối đa 4 lần chém liên tiếp."
+      },
+      "charged": {
+        "0": "<strong>Trọng Kích</strong>",
+        "1": "Tiêu hao thể lực liên tục để chém nhanh liên tiếp.",
+        "2": "Sau khi Trọng Kích kết thúc, sẽ bổ một nhát cực mạnh."
+      },
+      "plunging": {
+        "0": "<strong>Tấn Công Khi Đáp</strong>",
+        "1": "Đáp xuống đất từ trên không, tấn công kẻ địch trên đường và gây sát thương phạm vi khi chạm đất."
+      }
+    },
+    "skillParams": {
+      "0": "Sát Thương Lần 1",
+      "1": "Sát Thương Lần 2",
+      "2": "Sát Thương Lần 3",
+      "3": "Sát Thương Lần 4",
+      "4": "Sát Thương Trọng Kích Tuần Hoàn",
+      "5": "Sát Thương Trọng Kích Chí Mạng",
+      "6": "Thể lực Trọng Kích tiêu hao",
+      "7": "Thời Gian Kéo Dài Tối Đa",
+      "8": "Sát Thương Khi Đáp",
+      "9": "ST Khi Rơi Từ Độ Cao Thấp/Cao",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Lưỡi Đao Rực Lửa",
+    "description": {
+      "0": "Vung kiếm chém về phía trước, gây <pyro>Sát Thương Nguyên Tố Hỏa</pyro>.",
+      "1": "<br/>",
+      "2": "Có thể thi triển liên tiếp 3 lần.",
+      "3": "Nếu trong thời gian ngắn không thi triển, sẽ vào trạng thái chờ.",
+      "4": "<br/>",
+      "5": "<i>Tượng trưng cho chính nghĩa, can đảm và trách nhiệm của Diluc.</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Lần 1",
+      "1": "Sát Thương Lần 2",
+      "2": "Sát Thương Lần 3",
+      "3": "CD",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Bình Minh",
+    "description": {
+      "0": "Bùng cháy sức mạnh lửa, đánh lui địch xung quanh, gây <pyro>Sát Thương Nguyên Tố Hỏa</pyro>. Sau đó ngưng tụ lửa lên vũ khí, vung ra chim lửa bay về phía trước, gây cho địch trên đường lượng lớn <pyro>Sát Thương Nguyên Tố Hỏa</pyro> đồng thời ở điểm đến cuối cùng của chim lửa gây lượng lớn <pyro>Sát Thương Phạm Vi Nguyên Tố Hỏa</pyro>.",
+      "1": "Ngọn lửa trên vũ khí khiến Diluc nhận được <pyro>đính kèm Nguyên Tố Hỏa</pyro>.",
+      "2": "<br/>",
+      "3": "<i>Bước đi trong bóng tối là để mang lại ánh sáng. Nhìn vào ánh sáng xa xăm tỏa ra trong màn đêm tĩnh lặng, là điềm báo bình minh sẽ đến.</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Chém",
+      "1": "Sát Thương Kéo Dài",
+      "2": "Sát Thương Nổ",
+      "3": "CD",
+      "4": "Thời Gian Đính Kèm Kéo Dài",
+      "5": "Năng Lượng Nguyên Tố",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Không Bỏ Cuộc",
+    "description": {
+      "0": "Thể lực trọng kích Diluc tiêu hao giảm 50%, tăng thời gian tối đa thêm 3s."
+    }
+  },
+  "passive2": {
+    "name": "Đôi Cánh Rực Lửa",
+    "description": {
+      "0": "Kéo dài 4s thời gian <strong>đính kèm Nguyên Tố Hỏa</strong> mà <pyro>Bình Minh</pyro> mang đến. Ngoài ra, trong thời gian còn hiệu lực, Diluc nhận 20% <pyro>buff sát thương Nguyên Tố Hỏa</pyro>."
+    }
+  },
+  "passive3": {
+    "name": "Truyền Thống Của Bình Minh",
+    "description": {
+      "0": "Khi rèn vũ khí dạng Trọng Kiếm, hoàn trả 15% khoáng thạch tiêu hao."
+    }
+  },
+  "constellation1": {
+    "name": "Cắt Đứt Tội Lỗi",
+    "description": {
+      "0": "Đối với địch có HP trên 50%, sát thương Diluc tạo ra tăng 15%."
+    }
+  },
+  "constellation2": {
+    "name": "Than Hồng",
+    "description": {
+      "0": "Khi Diluc bị thương, tấn công tăng 10%, tốc độ tấn công tăng 5%, kéo dài 10s.",
+      "1": "Hiệu quả cộng dồn tối đa 3 lần, mỗi 1,5s chỉ thi triển 1 lần."
+    }
+  },
+  "constellation3": {
+    "name": "Ngọn Lửa Thép",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Lưỡi Đao Rực Lửa</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation4": {
+    "name": "Lòng Như Lửa Đốt",
+    "description": {
+      "0": "Phóng <strong>Lưỡi Đao Rực Lửa</strong> theo từng nhịp và có thể tăng sát thương tạo thành.",
+      "1": "Sau 2s thi triển <strong>Lưỡi Đao Rực Lửa</strong> tăng 40% sát thương đòn đánh tiếp theo của Lưỡi Đao Rực Lửa, kéo dài 2s."
+    }
+  },
+  "constellation5": {
+    "name": "Phượng Hoàng Lúc Bình Minh",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Bình Minh</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation6": {
+    "name": "Kiếm Lửa Diệt Trừ Tà Ác",
+    "description": {
+      "0": "Sau khi thi triển <strong>Lưỡi Đao Rực Lửa</strong> tăng 30% tốc độ cho 2 lần đánh tấn công thường tiếp theo trong 6s, sát thương tạo thành tăng 30%.",
+      "1": "Ngoài ra, Lưỡi Đao Rực Lửa sẽ không làm mới các đoạn liên kích tấn công thường."
+    }
+  }
+}

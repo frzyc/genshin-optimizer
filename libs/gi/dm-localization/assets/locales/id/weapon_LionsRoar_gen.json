@@ -1,0 +1,24 @@
+{
+  "name": "Lion's Roar",
+  "description": {
+    "0": "Pedang dengan ukiran dan desain yang mewah, tetapi sama sekali tidak memengaruhi ketajaman dan ketahanan pedang ini. Suara dari tebasannya menyerupai suara amarah singa."
+  },
+  "passiveName": "Bane of Fire and Thunder",
+  "passiveDescription": {
+    "0": {
+      "0": "Meningkatkan <cryo>20%</cryo> DMG terhadap musuh yang terpengaruh Pyro atau Electro."
+    },
+    "1": {
+      "0": "Meningkatkan <cryo>24%</cryo> DMG terhadap musuh yang terpengaruh Pyro atau Electro."
+    },
+    "2": {
+      "0": "Meningkatkan <cryo>28%</cryo> DMG terhadap musuh yang terpengaruh Pyro atau Electro."
+    },
+    "3": {
+      "0": "Meningkatkan <cryo>32%</cryo> DMG terhadap musuh yang terpengaruh Pyro atau Electro."
+    },
+    "4": {
+      "0": "Meningkatkan <cryo>36%</cryo> DMG terhadap musuh yang terpengaruh Pyro atau Electro."
+    }
+  }
+}

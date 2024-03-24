@@ -1,0 +1,12 @@
+{
+  "setName": "Người Tế Hỏa",
+  "setEffects": {
+    "1": "Thời gian duy trì hiệu quả ấn nguyên tố Hỏa giảm 40%."
+  },
+  "pieces": {
+    "circlet": {
+      "name": "Nón Tế Lửa",
+      "desc": "Là nón tế lễ được tư tế thời cổ đại đeo khi hành lễ. Vì bị lửa thiêu đốt lâu ngày nên rất có kháng tính."
+    }
+  }
+}

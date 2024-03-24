@@ -1,0 +1,165 @@
+{
+  "name": "Ganyu",
+  "title": "Défense fervente",
+  "description": "Secrétaire du Pavillon Yuehai ; du sang de Qilin, la créature mythique, coule dans ses veines.",
+  "constellationName": "Sinae Unicornis",
+  "auto": {
+    "name": "Archerie Liutian",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attaque normale</strong>",
+        "1": "Enchaîne jusqu'à 6 tirs consécutifs."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Effectue un <strong>tir visé</strong> plus précis et infligeant davantage de DGT.",
+        "2": "Lors du tir visé, la puissance du froid vient se concentrer sur la pointe de la flèche. Les effets varient selon le nombre de charges :",
+        "3": [
+          " 1 charge : Tire une flèche glaciale qui inflige des <cryo>DGT Cryo</cryo>.",
+          " 2 charges : Tire une flèche de givre qui inflige des <cryo>DGT Cryo</cryo>. Le givre se répand lorsqu'il touche un ennemi, infligeant des <cryo>DGT Cryo de zone</cryo>."
+        ]
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Tire une pluie de flèches depuis les airs et plonge au sol, infligeant des DGT de zone à l'impact."
+      }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT 4e coup",
+      "4": "DGT 5e coup",
+      "5": "DGT 6e coup",
+      "6": "DGT tir visé",
+      "7": "DGT 1e charge",
+      "8": "DGT flèche de givre",
+      "9": "DGT zone de givre",
+      "10": "DGT durant la chute",
+      "11": "DGT chute basse/élevée",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Trace de Qilin",
+    "description": {
+      "0": "Ganyu dépose un lotus de glace qui inflige des <cryo>DGT Cryo de zone</cryo> puis part vite en retraite.",
+      "1": "<br/>",
+      "2": "<strong>Lotus de glace</strong>",
+      "3": [
+        " Le lotus nargue les ennemis et concentre leurs attaques.",
+        " Ses PV sont proportionnels aux PV max de Ganyu.",
+        " Le lotus explose à la fin ou s'il est détruit entre temps, et inflige des <cryo>DGT Cryo de zone</cryo>."
+      ],
+      "4": "<br/>",
+      "5": "<i>« Vous m'avez aperçue ? Ça doit être une erreur, je suis restée tard au travail. »</i>"
+    },
+    "skillParams": {
+      "0": "PV hérités",
+      "1": "DGT compétence",
+      "2": "Durée",
+      "3": "Temps de recharge",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Baptême céleste",
+    "description": {
+      "0": "Condensant les particules présentes dans l'air, Ganyu invoque une perle de glace magique qui exorcise les démons.",
+      "1": "Tant qu'elle est active, la perle libère des éclats de glace de façon continue qui infligent des <cryo>DGT Cryo</cryo> aux ennemis dans la zone.",
+      "2": "<br/>",
+      "3": "<i>Ganyu sait bien sûr comment invoquer une bruine rafraîchissante... Mais quand il s'agit de combattre, la bruine se change en tempête de neige.</i>"
+    },
+    "skillParams": {
+      "0": "DGT éclats de glace",
+      "1": "Durée",
+      "2": "Temps de recharge",
+      "3": "Énergie élémentaire",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Cœur indivisible",
+    "description": {
+      "0": "Tirer une flèche de givre confère pendant 5 s aux flèches de givre suivantes ainsi qu'aux zones de givre ainsi créées un bonus de 20 % de taux CRIT."
+    }
+  },
+  "passive2": {
+    "name": "Harmonie du ciel et de la terre",
+    "description": {
+      "0": "Les personnages déployés se trouvant dans la zone de <strong>Baptême céleste</strong> obtiennent un <cryo>bonus de DGT Cryo de 20 %</cryo> supplémentaires."
+    }
+  },
+  "passive3": {
+    "name": "Arc de réserve",
+    "description": {
+      "0": "Lorsque vous forgez un arc, 15 % du minerai utilisé vous sera rendu."
+    }
+  },
+  "constellation1": {
+    "name": "Buveur de rosée",
+    "description": {
+      "0": "La <cryo>RÉS Cryo</cryo> des ennemis touchés par une flèche de givre (attaque chargée) ou par la zone de givre qui en résulte diminue de 15 % pendant 6 s.",
+      "1": "Ganyu récupère de plus 2 pts d'énergie élémentaire lorsqu'elle touche. Ce dernier effet ne peut être déclenché qu'une fois par flèche de givre, même si la zone de givre et la flèche de givre touchent toutes les deux."
+    }
+  },
+  "constellation2": {
+    "name": "Auspices",
+    "description": {
+      "0": "Confère une utilisation supplémentaire de <strong>Trace de Qilin</strong>."
+    }
+  },
+  "constellation3": {
+    "name": "Mouvement des nuages",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Baptême céleste</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation4": {
+    "name": "Chasse vers l'ouest",
+    "description": {
+      "0": "Les DGT subis par les ennemis se trouvant dans la zone de <strong>Baptême céleste</strong> augmentent ; cet effet se cumule avec le temps.",
+      "1": "Bonus de DGT initial : 5 %. Ce bonus augmente de 5 % toutes les 3 s (cumul maximum : 25 %).",
+      "2": "L'effet perdure pendant 3 s après avoir quitté la zone."
+    }
+  },
+  "constellation5": {
+    "name": "Miséricorde",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Trace de Qilin</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation6": {
+    "name": "Clémence",
+    "description": {
+      "0": "La première flèche de givre libérée dans les 30 s suivant l'activation de <strong>Trace de Qilin</strong> ne requiert pas de charge."
+    }
+  }
+}

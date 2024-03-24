@@ -1,0 +1,24 @@
+{
+  "name": "O Sino",
+  "description": {
+    "0": "Um espadão pesado com um relógio, mas seus mecanismos internos foram danificados."
+  },
+  "passiveName": "Guarda da Rebelião",
+  "passiveDescription": {
+    "0": {
+      "0": "Ao receber dano, cria um escudo que absorve o equivalente a <cryo>20%</cryo> da Vida Máxima por 10s ou até o escudo desaparecer. Pode ser ativado uma vez a cada <cryo>45</cryo>s. Quando o personagem estiver com o escudo, o Dano causado aumenta <cryo>12%</cryo>."
+    },
+    "1": {
+      "0": "Ao receber dano, cria um escudo que absorve o equivalente a <cryo>23%</cryo> da Vida Máxima por 10s ou até o escudo desaparecer. Pode ser ativado uma vez a cada <cryo>45</cryo>s. Quando o personagem estiver com o escudo, o Dano causado aumenta <cryo>15%</cryo>."
+    },
+    "2": {
+      "0": "Ao receber dano, cria um escudo que absorve o equivalente a <cryo>26%</cryo> da Vida Máxima por 10s ou até o escudo desaparecer. Pode ser ativado uma vez a cada <cryo>45</cryo>s. Quando o personagem estiver com o escudo, o Dano causado aumenta <cryo>18%</cryo>."
+    },
+    "3": {
+      "0": "Ao receber dano, cria um escudo que absorve o equivalente a <cryo>29%</cryo> da Vida Máxima por 10s ou até o escudo desaparecer. Pode ser ativado uma vez a cada <cryo>45</cryo>s. Quando o personagem estiver com o escudo, o Dano causado aumenta <cryo>21%</cryo>."
+    },
+    "4": {
+      "0": "Ao receber dano, cria um escudo que absorve o equivalente a <cryo>32%</cryo> da Vida Máxima por 10s ou até o escudo desaparecer. Pode ser ativado uma vez a cada <cryo>45</cryo>s. Quando o personagem estiver com o escudo, o Dano causado aumenta <cryo>24%</cryo>."
+    }
+  }
+}

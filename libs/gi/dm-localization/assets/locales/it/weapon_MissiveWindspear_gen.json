@@ -1,0 +1,24 @@
+{
+  "name": "Missiva del vento",
+  "description": {
+    "0": "Uno strumento che indica la direzione delle correnti d'aria. Non tutti gli idilli sospinti dalla brezza del vento rimangono tali..."
+  },
+  "passiveName": "Vento irrealizzato",
+  "passiveDescription": {
+    "0": {
+      "0": "Entro 10 s dall'innesco di una reazione elementale, l'ATT aumenta di un <cryo>12%</cryo> e la maestria elementale di <cryo>48</cryo>."
+    },
+    "1": {
+      "0": "Entro 10 s dall'innesco di una reazione elementale, l'ATT aumenta di un <cryo>15%</cryo> e la maestria elementale di <cryo>60</cryo>."
+    },
+    "2": {
+      "0": "Entro 10 s dall'innesco di una reazione elementale, l'ATT aumenta di un <cryo>18%</cryo> e la maestria elementale di <cryo>72</cryo>."
+    },
+    "3": {
+      "0": "Entro 10 s dall'innesco di una reazione elementale, l'ATT aumenta di un <cryo>21%</cryo> e la maestria elementale di <cryo>84</cryo>."
+    },
+    "4": {
+      "0": "Entro 10 s dall'innesco di una reazione elementale, l'ATT aumenta di un <cryo>24%</cryo> e la maestria elementale di <cryo>96</cryo>."
+    }
+  }
+}

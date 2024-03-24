@@ -1,0 +1,24 @@
+{
+  "name": "Diálogo",
+  "description": {
+    "0": "A maioria das pessoas acha que esse porrete com obsidiana incrustada é bem convincente."
+  },
+  "passiveName": "\"Bom de Papo\"",
+  "passiveDescription": {
+    "0": {
+      "0": "Nos 15s seguintes após ser afetado por Pyro, aumenta o ATQ em <cryo>16%</cryo>. Esse efeito pode ser desencadeado uma vez a cada 12s. Nos 15s após ser afetado por Hydro, Cryo, Electro ou Dendro fornece Bônus de Dano de todos os Elementos de <cryo>12%</cryo>. Esse efeito pode ser desencadeado uma vez a cada 12s."
+    },
+    "1": {
+      "0": "Nos 15s seguintes após ser afetado por Pyro, aumenta o ATQ em <cryo>20%</cryo>. Esse efeito pode ser desencadeado uma vez a cada 12s. Nos 15s após ser afetado por Hydro, Cryo, Electro ou Dendro, fornece Bônus de Dano de todos os Elementos de <cryo>15%</cryo>. Esse efeito pode ser desencadeado uma vez a cada 12s."
+    },
+    "2": {
+      "0": "Nos 15s seguintes após ser afetado por Pyro, aumenta o ATQ em <cryo>24%</cryo>. Esse efeito pode ser desencadeado uma vez a cada 12s. Nos 15s após ser afetado por Hydro, Cryo, Electro ou Dendro, fornece Bônus de Dano de todos os Elementos de <cryo>18%</cryo>. Esse efeito pode ser desencadeado uma vez a cada 12s."
+    },
+    "3": {
+      "0": "Nos 15s seguintes após ser afetado por Pyro, aumenta o ATQ em <cryo>28%</cryo>. Esse efeito pode ser desencadeado uma vez a cada 12s. Nos 15s após ser afetado por Hydro, Cryo, Electro ou Dendro, fornece Bônus de Dano de todos os Elementos de <cryo>21%</cryo>. Esse efeito pode ser desencadeado uma vez a cada 12s."
+    },
+    "4": {
+      "0": "Nos 15s seguintes após ser afetado por Pyro, aumenta o ATQ em <cryo>32%</cryo>. Esse efeito pode ser desencadeado uma vez a cada 12s. Nos 15s após ser afetado por Hydro, Cryo, Electro ou Dendro, fornece Bônus de Dano de todos os Elementos de <cryo>24%</cryo>. Esse efeito pode ser desencadeado uma vez a cada 12s."
+    }
+  }
+}

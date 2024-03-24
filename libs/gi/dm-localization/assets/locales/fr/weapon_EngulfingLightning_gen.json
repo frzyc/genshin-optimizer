@@ -1,0 +1,24 @@
+{
+  "name": "Lumière du faucheur",
+  "description": {
+    "0": "Une naginata utilisée pour « faucher les mauvaises herbes ». Tout soldat se tenant devant sa lame sera probablement également taillé d'un peu trop près..."
+  },
+  "passiveName": "Rêve intemporel : Fournaise éternelle",
+  "passiveDescription": {
+    "0": {
+      "0": "Augmente l'ATQ d'une valeur équivalant à <cryo>28 %</cryo> de la part de recharge d'énergie supérieure à 100 %. L'ATQ peut être augmentée de <cryo>80 %</cryo> maximum de cette manière. Après l'utilisation d'un déchaînement élémentaire, la recharge d'énergie augmente de <cryo>30 %</cryo> pendant 12 s."
+    },
+    "1": {
+      "0": "Augmente l'ATQ d'une valeur équivalant à <cryo>35 %</cryo> de la part de recharge d'énergie supérieure à 100 %. L'ATQ peut être augmentée de <cryo>90 %</cryo> maximum de cette manière. Après l'utilisation d'un déchaînement élémentaire, la recharge d'énergie augmente de <cryo>35 %</cryo> pendant 12 s."
+    },
+    "2": {
+      "0": "Augmente l'ATQ d'une valeur équivalant à <cryo>42 %</cryo> de la part de recharge d'énergie supérieure à 100 %. L'ATQ peut être augmentée de <cryo>100 %</cryo> maximum de cette manière. Après l'utilisation d'un déchaînement élémentaire, la recharge d'énergie augmente de <cryo>40 %</cryo> pendant 12 s."
+    },
+    "3": {
+      "0": "Augmente l'ATQ d'une valeur équivalant à <cryo>49 %</cryo> de la part de recharge d'énergie supérieure à 100 %. L'ATQ peut être augmentée de <cryo>110 %</cryo> maximum de cette manière. Après l'utilisation d'un déchaînement élémentaire, la recharge d'énergie augmente de <cryo>45 %</cryo> pendant 12 s."
+    },
+    "4": {
+      "0": "Augmente l'ATQ d'une valeur équivalant à <cryo>56 %</cryo> de la part de recharge d'énergie supérieure à 100 %. L'ATQ peut être augmentée de <cryo>120 %</cryo> maximum de cette manière. Après l'utilisation d'un déchaînement élémentaire, la recharge d'énergie augmente de <cryo>50 %</cryo> pendant 12 s."
+    }
+  }
+}

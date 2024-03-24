@@ -1,0 +1,24 @@
+{
+  "name": "Épée en fer noir",
+  "description": {
+    "0": "Une épée en fer légèrement noirci."
+  },
+  "passiveName": "Surcapacité",
+  "passiveDescription": {
+    "0": {
+      "0": "Augmente l'ATQ de <cryo>20 %</cryo> pendant 12 s après avoir déclenché Surcharge, Supraconduction, Électrocution, Stimulation, Suractivation, Exubérance ou Dispersion Électro."
+    },
+    "1": {
+      "0": "Augmente l'ATQ de <cryo>25 %</cryo> pendant 12 s après avoir déclenché Surcharge, Supraconduction, Électrocution, Stimulation, Suractivation, Exubérance ou Dispersion Électro."
+    },
+    "2": {
+      "0": "Augmente l'ATQ de <cryo>30 %</cryo> pendant 12 s après avoir déclenché Surcharge, Supraconduction, Électrocution, Stimulation, Suractivation, Exubérance ou Dispersion Électro."
+    },
+    "3": {
+      "0": "Augmente l'ATQ de <cryo>35 %</cryo> pendant 12 s après avoir déclenché Surcharge, Supraconduction, Électrocution, Stimulation, Suractivation, Exubérance ou Dispersion Électro."
+    },
+    "4": {
+      "0": "Augmente l'ATQ de <cryo>40 %</cryo> pendant 12 s après avoir déclenché Surcharge, Supraconduction, Électrocution, Stimulation, Suractivation, Exubérance ou Dispersion Électro."
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Grobes Schwert",
+  "description": {
+    "0": "Ein Großschwert, das böse Geister und Menschen gleichsam vertreiben kann. Es scheint keine scharfe Kante zu haben und doch göttliche Kraft zu besitzen."
+  },
+  "passiveName": "Majestätische Größe",
+  "passiveDescription": {
+    "0": {
+      "0": "Erhöht die Schildeffizienz um <cryo>20 %</cryo>. Erhöht den ANG nach Treffern 8 s lang um <cryo>4 %</cryo>. 5-fach stapelbar, 0,3 s Abklingzeit. Erhöht die Wirksamkeit der Erhöhung des ANG außerdem im Schutz von Schilden um 100 %."
+    },
+    "1": {
+      "0": "Erhöht die Schildeffizienz um <cryo>25 %</cryo>. Erhöht den ANG nach Treffern 8 s lang um <cryo>5 %</cryo>. 5-fach stapelbar, 0,3 s Abklingzeit. Erhöht die Wirksamkeit der Erhöhung des ANG außerdem im Schutz von Schilden um 100 %."
+    },
+    "2": {
+      "0": "Erhöht die Schildeffizienz um <cryo>30 %</cryo>. Erhöht den ANG nach Treffern 8 s lang um <cryo>6 %</cryo>. 5-fach stapelbar, 0,3 s Abklingzeit. Erhöht die Wirksamkeit der Erhöhung des ANG außerdem im Schutz von Schilden um 100 %."
+    },
+    "3": {
+      "0": "Erhöht die Schildeffizienz um <cryo>35 %</cryo>. Erhöht den ANG nach Treffern 8 s lang um <cryo>7 %</cryo>. 5-fach stapelbar, 0,3 s Abklingzeit. Erhöht die Wirksamkeit der Erhöhung des ANG außerdem im Schutz von Schilden um 100 %."
+    },
+    "4": {
+      "0": "Erhöht die Schildeffizienz um <cryo>40 %</cryo>. Erhöht den ANG nach Treffern 8 s lang um <cryo>8 %</cryo>. 5-fach stapelbar, 0,3 s Abklingzeit. Erhöht die Wirksamkeit der Erhöhung des ANG außerdem im Schutz von Schilden um 100 %."
+    }
+  }
+}

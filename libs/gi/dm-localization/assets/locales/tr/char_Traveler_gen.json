@@ -1,0 +1,11 @@
+{
+  "electro": {
+    "skill": {
+      "enerRegen": "Enerji Yenilenmesi",
+      "enerRechInc": "Enerji Yüklemesi Artışı"
+    },
+    "burst": {
+      "thunderDMG": "Çarpan Yıldırım Hasarı"
+    }
+  }
+}

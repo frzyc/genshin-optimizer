@@ -1,0 +1,24 @@
+{
+  "name": "Lança de Jade Primitiva",
+  "description": {
+    "0": "Uma lança pesada e afiada feita de jade. Usada para derrotar monstros marinhos poderosos e pré-históricos."
+  },
+  "passiveName": "Lança da Justiça da Águia",
+  "passiveDescription": {
+    "0": {
+      "0": "Ao acertar, aumenta o ATQ em <cryo>3.2%</cryo> por 6s. Pode acumular até 7 vezes. Pode ocorrer uma vez a cada 0.3s. O acúmulo máximo aumenta o Dano em <cryo>12%</cryo>."
+    },
+    "1": {
+      "0": "Ao acertar, aumenta o ATQ em <cryo>3.9%</cryo> por 6s. Pode acumular até 7 vezes. Pode ocorrer uma vez a cada 0.3s. O acúmulo máximo aumenta o Dano em <cryo>15%</cryo>."
+    },
+    "2": {
+      "0": "Ao acertar, aumenta o ATQ em <cryo>4.6%</cryo> por 6s. Pode acumular até 7 vezes. Pode ocorrer uma vez a cada 0.3s. O acúmulo máximo aumenta o Dano em <cryo>18%</cryo>."
+    },
+    "3": {
+      "0": "Ao acertar, aumenta o ATQ em <cryo>5.3%</cryo> por 6s. Pode acumular até 7 vezes. Pode ocorrer uma vez a cada 0.3s. O acúmulo máximo aumenta o Dano em <cryo>21%</cryo>."
+    },
+    "4": {
+      "0": "Ao acertar, aumenta o ATQ em <cryo>6%</cryo> por 6s. Pode acumular até 7 vezes. Pode ocorrer uma vez a cada 0.3s. O acúmulo máximo aumenta o Dano em <cryo>24%</cryo>."
+    }
+  }
+}

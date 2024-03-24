@@ -1,0 +1,29 @@
+{
+  "setName": "Tenacity of the Millelith",
+  "setEffects": {
+    "2": "HP +20%",
+    "4": "When an Elemental Skill hits an opponent, the ATK of all nearby party members is increased by 20% and their Shield Strength is increased by 30% for 3s. This effect can be triggered once every 0.5s. This effect can still be triggered even when the character who is using this artifact set is not on the field."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Flower of Accolades",
+      "desc": "A flower made from gold leaf. It represents the glories and honors attained by its wearer."
+    },
+    "plume": {
+      "name": "Ceremonial War-Plume",
+      "desc": "A falcon feather worn on ceremonial occasions. It displays the dignity and resolve of Liyue Harbor to the outside world."
+    },
+    "sands": {
+      "name": "Orichalceous Time-Dial",
+      "desc": "A simple device for telling time. This was once standard-issue for the Millelith during times of war."
+    },
+    "goblet": {
+      "name": "Noble's Pledging Vessel",
+      "desc": "A golden cup used by the Millelith to take their oaths. Still bears the lovely scent of wine."
+    },
+    "circlet": {
+      "name": "General's Ancient Helm",
+      "desc": "A splendorous helmet from ages past. Clean the dust away and it will look brand-new once more."
+    }
+  }
+}

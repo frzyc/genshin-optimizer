@@ -1,0 +1,29 @@
+{
+  "setName": "Compagnia dorata",
+  "setEffects": {
+    "2": "DAN da abilità elementale +20%.",
+    "4": "Aumenta i DAN da abilità elementale di un 25%. Inoltre, quando il personaggio non è in campo, tali DAN aumentano di un ulteriore 25%. Quest'effetto si annulla 2 s dopo che il personaggio rientra in campo."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Variazione della Canzone dorata",
+      "desc": "Un fiore fatto di conchiglie, madreperla e lamine d'oro che sboccia con fierezza."
+    },
+    "plume": {
+      "name": "Piuma caduta dell'Uccello dorato",
+      "desc": "Una piuma d'oro realizzata in filigrana d'argento e oro, sormontata da uno zaffiro splendente."
+    },
+    "sands": {
+      "name": "Preludio dell'Era dorata",
+      "desc": "Una stupenda meridiana che sfoggia intarsi argentati e dorati. Sul quadrante, sembra che il tempo abbia smesso di scorrere."
+    },
+    "goblet": {
+      "name": "Bolgia della Notte dorata",
+      "desc": "Un'antica urna d'argento, un tempo piena di vino delizioso e rosso come il rubino. Ora non contiene altro che acqua salmastra."
+    },
+    "circlet": {
+      "name": "Ricompensa della Compagnia dorata",
+      "desc": "Un'antica corona che ricorda più un oggetto di scena anziché un copricapo degno di un signore feudale."
+    }
+  }
+}

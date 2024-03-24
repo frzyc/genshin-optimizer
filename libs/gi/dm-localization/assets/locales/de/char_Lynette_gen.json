@@ -1,0 +1,171 @@
+{
+  "name": "Lynette",
+  "title": "Eleganz im Schatten",
+  "description": "Eine wortkarge Zauberassistentin. Ihre Mimik lässt sich kaum ergründen und ihr Temperament ist so unergründlich wie das einer Katze.",
+  "constellationName": "Felis Alba",
+  "auto": {
+    "name": "Flinker Degen",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Standardangriff</strong>",
+        "1": "Führt bis zu 4 Schwerthiebe hintereinander aus."
+      },
+      "charged": {
+        "0": "<strong>Heftiger Schlag</strong>",
+        "1": "Verbraucht eine gewisse Menge Ausdauer und schwingt das Schwert zweimal schnell nach vorn."
+      },
+      "plunging": {
+        "0": "<strong>Angriff aus dem Fall</strong>",
+        "1": "Schlägt beim Fallen aus der Luft auf den Boden, greift alle Gegner in der Bahn an und verursacht beim Aufkommen Flächenschaden."
+      }
+    },
+    "skillParams": {
+      "0": "SCH Phase 1",
+      "1": "SCH Phase 2",
+      "2": "SCH Phase 3",
+      "3": "SCH Phase 4",
+      "4": "SCH heftiger Schläge",
+      "5": "Ausdauerverbrauch heftiger Schläge",
+      "6": "SCH beim Fallen",
+      "7": "SCH beim Fallen aus niedriger/großer Höhe",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Rätselhafte Schattenverhüllung",
+    "description": {
+      "0": "Lynette schwingt ihren Umhang und vollführt einen Enigma-Stoß, der <anemo>Anemo-Schaden</anemo> verursacht.",
+      "1": "Stellt Lynette LP basierend auf ihren max. LP wieder her, sobald sie Gegner mit ihrem Enigma-Stoß trifft. Allerdings verliert sie in den darauffolgenden 4 s eine bestimmte Menge LP.",
+      "2": "Je nachdem, ob gedrückt oder gedrückt gehalten wird, wird der Enigma-Stoß anders eingesetzt.",
+      "3": "<br/>",
+      "4": "<strong>Drücken</strong>",
+      "5": "Führt einen schnellen Enigma-Stoß aus.",
+      "6": "<br/>",
+      "7": "<strong>Gedrückt halten</strong>",
+      "8": "Lynette wechselt in den flinken Zustand „Diebischer Schatten“ und fügt einem Gegner in der Nähe „Schattenzeichen“ zu. Während dieser Zeit kannst du die Richtung kontrollieren, in die sich Lynette bewegt. Außerdem kannst du ihren Sprint vorzeitig abbrechen, indem du die Fähigkeit erneut einsetzt.",
+      "9": "Zum Ende des flinken Zustands vollführt Lynette dann einen Enigma-Stoß. Sollte sich in der Nähe ein Gegner befinden, der das Schattenzeichen trägt, so bewegt sich Lynette blitzschnell zu diesem hin, bevor sie ihren Stoß vollführt.",
+      "10": "<br/>",
+      "11": "Es kann jeweils nur ein Gegner zur selben Zeit das von Lynette auferlegte Schattenzeichen tragen. Außerdem verschwindet das Zeichen, wenn Lynette zu weit von seinem Träger entfernt ist.",
+      "12": "<br/>",
+      "13": "<strong>Arkhe: Ousia</strong>",
+      "14": "Lynette wird in regelmäßigen Abständen beim Vollführen ihres Enigma-Stoßes eine Wogenklinge beschwören, die mit Ousia versehenen <anemo>Anemo-Schaden</anemo> verursacht.",
+      "15": "<br/>",
+      "16": "<i>„Richte deinen Blick nun wieder auf die Bühne, die Darbietung geht weiter. Und wenn ich das nächste Mal wieder auftauche, wird es dort sein, wo du es am wenigsten vermutest.“</i>"
+    },
+    "skillParams": {
+      "0": "Enigma-Stoß-SCH",
+      "1": "Wogenklinge-SCH",
+      "2": "Wogenklinge-Intervall",
+      "3": "Heilung bei Treffer",
+      "4": "LP-Verbrauch",
+      "5": "Höchstdauer beim Gedrückthalten",
+      "6": "Abklingzeit",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Zaubertrick – Erstaunlicher Wechsel",
+    "description": {
+      "0": "Lynette lässt ihren Umhang flattern, verursacht <anemo>Anemo-Flächenschaden</anemo> und lässt mit einem erstaunlichen Trick eine riesige Überraschungskatzenkiste erscheinen!",
+      "1": "<br/>",
+      "2": "<strong>Überraschungskatzenkiste</strong>",
+      "3": [
+        " Verspottet fortlaufend Gegner in der Umgebung und zieht ihre Angriffe auf sich.",
+        " Fügt in regelmäßigen Abständen Gegnern in der Nähe <anemo>Anemo-Schaden</anemo> zu.",
+        " Verleiht der Überraschungskatzenkiste beim Kontakt mit dem <hydro>Hydro</hydro>-, <pyro>Pyro</pyro>-, <cryo>Kryo</cryo>- oder <electro>Elektro</electro>-Element das jeweilige Element und feuert in regelmäßigen Abständen Farbgeschosse auf Gegner in der Nähe ab, die den entsprechenden Elementarschaden verursachen."
+      ],
+      "4": "Elementarumwandlung ist nur einmal während der Wirkungsdauer möglich.",
+      "5": "<br/>",
+      "6": "<i>„Schau einfach in diese Richtung und pass genau auf. Dieser Moment gehört uns ganz allein, ein Moment des Staunens.“</i>"
+    },
+    "skillParams": {
+      "0": "Fähigkeits-SCH",
+      "1": "Überraschungskatzenkiste-SCH",
+      "2": "Farbgeschoss-SCH",
+      "3": "Überraschungskatzenkiste-Dauer",
+      "4": "Abklingzeit",
+      "5": "Elementarenergie",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Ausgefeilte Synergie",
+    "description": {
+      "0": "Erhöht für 10 s nach Auslösen von <strong>Zaubertrick – Erstaunlicher Wechsel</strong> für jeweils 1/2/3/4 Figuren unterschiedlichen Elementartyps in deiner Truppe, den ANG aller Truppenmitglieder um 8/12/16/20 %."
+    }
+  },
+  "passive2": {
+    "name": "Alle Requisiten vorbereitet",
+    "description": {
+      "0": "Erhöht, nachdem die durch <strong>Zaubertrick – Erstaunlicher Wechsel</strong> beschworene Überraschungskatzenkiste ihre Elementarumwandlung vollzogen hat, den Schaden, den Lynette mit Spezialfähigkeiten verursacht, um 15 %. Dieser Effekt hält bis zum Ende der Überraschungskatzenkiste."
+    }
+  },
+  "passive3": {
+    "name": "Punktuelle Mnemonik",
+    "description": {
+      "0": "Zeigt die Positionen von <strong>Wiederbelebungstropfen</strong> auf der Minikarte an. Die Wasserausdauer und LP, die durch das Berühren von den Tropfen gewonnen werden, werden um 25 % erhöht."
+    }
+  },
+  "constellation1": {
+    "name": "Schattenhafte kalte Klinge",
+    "description": {
+      "0": "Erschafft an der Position des Gegners, der das Schattenzeichen trägt, einen Wirbel, der Gegner in der Nähe anzieht, wenn dieser vom Enigma-Stoß der <strong>Rätselhafte Schattenverhüllung</strong> getroffen wird."
+    }
+  },
+  "constellation2": {
+    "name": "Endlose Mysterien",
+    "description": {
+      "0": "Die durch <strong>Zaubertrick – Erstaunlicher Wechsel</strong> beschworene Überraschungskatzenkiste verschießt beim Abfeuern des Farbgeschosses ein weiteres Geschoss."
+    }
+  },
+  "constellation3": {
+    "name": "Kognitionsumkehrende Blickrichtung",
+    "description": {
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Zaubertrick – Erstaunlicher Wechsel</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation4": {
+    "name": "Stillschweigende Koordination",
+    "description": {
+      "0": "Ermöglicht 1 weitere Anwendung von <strong>Rätselhafte Schattenverhüllung</strong>."
+    }
+  },
+  "constellation5": {
+    "name": "Raffiniertes Ablenkungsmanöver",
+    "description": {
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Rätselhafte Schattenverhüllung</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation6": {
+    "name": "Enthüllende Einsicht",
+    "description": {
+      "0": "Verleiht Lynette bei der Anwendung des Enigma-Stoßes von <strong>Rätselhafte Schattenverhüllung</strong> 6 s lang die <anemo>Anemo-Kraft</anemo> und erhöht ihren <anemo>Anemo-SCH-Bonus</anemo> um 20 %."
+    }
+  }
+}

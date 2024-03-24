@@ -1,0 +1,24 @@
+{
+  "name": "Makhaira Deniz Yeşili",
+  "description": {
+    "0": "Su gibi parıldayan kadim bir büyük kılıç. Yıllar boyu süren kum erozyonu keskinliğini bir nebze bile köreltememiş."
+  },
+  "passiveName": "Çöl Konağı",
+  "passiveDescription": {
+    "0": {
+      "0": "Bu etki her 10 saniyede bir tetiklenir: Kuşanan karakter 12 saniyeliğine Element Ustalığının <cryo>%24</cryo>'ü kadar bonus Saldırı kazanır. Yakındaki grup üyeleri aynı süre ile bu güçlendirmenin %30'unu kazanırlar. Silahın aynı anda farklı karakterlerde kullanılması bu güçlendirmeyi biriktirebilir. Bu etki, karakter savaş alanında olmasa da tetiklenir."
+    },
+    "1": {
+      "0": "Bu etki her 10 saniyede bir tetiklenir: Kuşanan karakter 12 saniyeliğine Element Ustalığının <cryo>%30</cryo>'u kadar bonus Saldırı kazanır. Yakındaki grup üyeleri aynı süre ile bu güçlendirmenin %30'unu kazanırlar. Silahın aynı anda farklı karakterlerde kullanılması bu güçlendirmeyi biriktirebilir. Bu etki, karakter savaş alanında olmasa da tetiklenir."
+    },
+    "2": {
+      "0": "Bu etki her 10 saniyede bir tetiklenir: Kuşanan karakter 12 saniyeliğine Element Ustalığının <cryo>%36</cryo>'sı kadar bonus Saldırı kazanır. Yakındaki grup üyeleri aynı süre ile bu güçlendirmenin %30'unu kazanırlar. Silahın aynı anda farklı karakterlerde kullanılması bu güçlendirmeyi biriktirebilir. Bu etki, karakter savaş alanında olmasa da tetiklenir."
+    },
+    "3": {
+      "0": "Bu etki her 10 saniyede bir tetiklenir: Kuşanan karakter 12 saniyeliğine Element Ustalığının <cryo>%42</cryo>'si kadar bonus Saldırı kazanır. Yakındaki grup üyeleri aynı süre ile bu güçlendirmenin %30'unu kazanırlar. Silahın aynı anda farklı karakterlerde kullanılması bu güçlendirmeyi biriktirebilir. Bu etki, karakter savaş alanında olmasa da tetiklenir."
+    },
+    "4": {
+      "0": "Bu etki her 10 saniyede bir tetiklenir: Kuşanan karakter 12 saniyeliğine Element Ustalığının <cryo>%48</cryo>'i kadar bonus Saldırı kazanır. Yakındaki grup üyeleri aynı süre ile bu güçlendirmenin %30'unu kazanırlar. Silahın aynı anda farklı karakterlerde kullanılması bu güçlendirmeyi biriktirebilir. Bu etki, karakter savaş alanında olmasa da tetiklenir."
+    }
+  }
+}

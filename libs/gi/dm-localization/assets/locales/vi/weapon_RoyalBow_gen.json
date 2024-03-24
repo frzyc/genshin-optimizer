@@ -1,0 +1,24 @@
+{
+  "name": "Trường Cung Tông Thất",
+  "description": {
+    "0": "Cung dài từng thuộc về quý tộc Monstadt cũ. Trải qua nhiều đời, dây cung vẫn rất mạnh mẽ."
+  },
+  "passiveName": "Chuyên Chú",
+  "passiveDescription": {
+    "0": {
+      "0": "Khi tấn công tạo thành sát thương, tăng tỷ lệ bạo kích <cryo>8%</cryo>, nhiều nhất cộng dồn 5 lần. Sau khi tấn công tạo thành bạo kích, xóa hiệu quả Chuyên Chú đã có."
+    },
+    "1": {
+      "0": "Khi tấn công tạo thành sát thương, tăng tỷ lệ bạo kích <cryo>10%</cryo>, nhiều nhất cộng dồn 5 lần. Sau khi tấn công tạo thành bạo kích, xóa hiệu quả Chuyên Chú đã có."
+    },
+    "2": {
+      "0": "Khi tấn công tạo thành sát thương, tăng tỷ lệ bạo kích <cryo>12%</cryo>, nhiều nhất cộng dồn 5 lần. Sau khi tấn công tạo thành bạo kích, xóa hiệu quả Chuyên Chú đã có."
+    },
+    "3": {
+      "0": "Khi tấn công tạo thành sát thương, tăng tỷ lệ bạo kích <cryo>14%</cryo>, nhiều nhất cộng dồn 5 lần. Sau khi tấn công tạo thành bạo kích, xóa hiệu quả Chuyên Chú đã có."
+    },
+    "4": {
+      "0": "Khi tấn công tạo thành sát thương, tăng tỷ lệ bạo kích <cryo>16%</cryo>, nhiều nhất cộng dồn 5 lần. Sau khi tấn công tạo thành bạo kích, xóa hiệu quả Chuyên Chú đã có."
+    }
+  }
+}

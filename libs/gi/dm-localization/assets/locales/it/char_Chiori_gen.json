@@ -1,0 +1,182 @@
+{
+  "name": "Chiori",
+  "title": "Sarta tonante",
+  "description": "La proprietaria della Boutique Chiori. Una sarta famosa in tutta Fontaine.",
+  "constellationName": "Cisoria",
+  "auto": {
+    "name": "Lama intrecciata",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attacco normale</strong>",
+        "1": "Sferra fino a 4 colpi rapidi."
+      },
+      "charged": {
+        "0": "<strong>Attacco caricato</strong>",
+        "1": "Consuma una determinata quantità di vigore per sferrare 2 colpi di spada rapidi."
+      },
+      "plunging": {
+        "0": "<strong>Attacco in picchiata</strong>",
+        "1": "Attacca scagliandosi contro il suolo da mezz'aria, infliggendo DAN agli avversari lungo il percorso e DAN ad area all'impatto."
+      }
+    },
+    "skillParams": {
+      "0": "DAN da 1º colpo",
+      "1": "DAN da 2º colpo",
+      "2": "DAN da 3º colpo",
+      "3": "DAN da 4º colpo",
+      "4": "DAN da ATT caricato",
+      "5": "Costo vigore ATT caricato",
+      "6": "DAN da ATT in picchiata",
+      "7": "DAN da ATT in picchiata basso/alto",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Hasode svolazzante",
+    "description": {
+      "0": "Compie uno scatto in avanti a passo vellutato. Al termine dello scatto, Chiori evoca al suo fianco la Robobambola Tamoto e sferra un colpo ascendente con la sua lama, infliggendo <geo>DAN da Geo ad area</geo> ai nemici vicini in base ai suoi attributi di ATT e DIF.",
+      "1": "La pressione prolungata permette di eseguire una versione alternativa dell'abilità.",
+      "2": "<br/>",
+      "3": "<strong>Pressione prolungata</strong>",
+      "4": "Entra in modalità di mira per regolare la direzione dello scatto.",
+      "5": "<br/>",
+      "6": "<strong>Tamoto</strong>",
+      "7": [
+        " Scaglia fendenti contro i nemici vicini a intervalli regolari, infliggendo <geo>DAN da Geo ad area</geo> in base agli attributi di ATT e DIF di Chiori.",
+        " Mentre è attiva, se sono presenti o vengono creati <geo>costrutti di Geo</geo> nelle vicinanze, viene evocata 1 ulteriore Tamoto accanto al personaggio attivo. È possibile evocare in questo modo 1 unica Tamoto aggiuntiva, e la sua durata è calcolata in modo indipendente."
+      ],
+      "8": "<br/>",
+      "9": "<i>\"Broccato tinto di rosso, una fragranza cosparge le maniche, i rigogoli ne vengono inebriati.\"</i>"
+    },
+    "skillParams": {
+      "0": "DAN da Tamoto",
+      "1": "Durata Tamoto",
+      "2": "Intervallo attacco Tamoto",
+      "3": "DAN da colpo ascendente",
+      "4": "TdR",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Hiyoku: Lame gemelle",
+    "description": {
+      "0": "Sguainando le Lame gemelle, Chiori esegue un taglio con la maestria e la precisione di una sarta esperta, infliggendo <geo>DAN da Geo ad area</geo> in base ai suoi attributi di ATT e DIF.",
+      "1": "<br/>",
+      "2": "<i>\"Padroneggia un singolo principio e il sentiero per tutti gli altri s'aprirà dinanzi a te.\"</i>"
+    },
+    "skillParams": {
+      "0": "DAN da abilità",
+      "1": "TdR",
+      "2": "Costo energia",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Su misura",
+    "description": {
+      "0": "Entro un breve intervallo di tempo dall'uso del colpo ascendente di <strong>Hasode svolazzante</strong>, ottieni svariati effetti in base all'azione successiva eseguita. Premendo il tasto dell'abilità elementale, si attiva l'effetto Broccato; premendo quello dell'attacco normale, invece, si attiva l'effetto Sartoria.",
+      "1": "<br/>",
+      "2": "<strong>Broccato</strong>",
+      "3": [
+        " Passa al personaggio successivo nella tua formazione.",
+        " Conferisce Carpe diem a tutti i membri del tuo gruppo: quando il membro attivo del gruppo colpisce un avversario vicino con attacchi normali, caricati o in picchiata, Tamoto esegue un attacco coordinato nella posizione dell'avversario che infligge un 100% dei DAN del colpo ascendente di Hasode svolazzante come <geo>DAN da Geo ad area</geo>. I DAN inflitti in questo modo sono considerati DAN da abilità elementale.",
+        " Carpe diem dura 8 s, e permette di scatenare 1 attacco coordinato di Tamoto ogni 2 s, per un massimo di 2 volte entro la durata dell'effetto Carpe diem."
+      ],
+      "4": "<br/>",
+      "5": "<strong>Sartoria</strong>",
+      "6": [
+        " Chiori ottiene un'<geo>infusione di Geo</geo> per 5 s."
+      ],
+      "7": "<br/>",
+      "8": "Quando Chiori è in campo, se non si preme né il tasto dell'abilità elementale né quello dell'attacco normale per un breve lasso di tempo dopo aver sferrato il colpo ascendente di Hasode svolazzante, si attiva automaticamente l'effetto Sartoria."
+    }
+  },
+  "passive2": {
+    "name": "Tocco finale",
+    "description": {
+      "0": "Quando un membro del gruppo vicino crea un <geo>costrutto di Geo</geo>, Chiori ottiene un 20% di <geo>bonus DAN da Geo</geo> per 20 s."
+    }
+  },
+  "passive3": {
+    "name": "Silhouette avvenente",
+    "description": {
+      "0": "Quando un membro del gruppo indossa un completo non predefinito o equipaggia un aliante diverso dalle Ali del principiante, i membri del tuo gruppo ottengono l'effetto Piè veloce: la VEL di movimento aumenta di un 10%.",
+      "1": "Non ha effetto all'interno di Domini, Domini della conquista o nell'Abisso a spirale. Piè veloce non è cumulabile."
+    }
+  },
+  "constellation1": {
+    "name": "Sei vie della seteria sapiente",
+    "description": {
+      "0": "L'area d'effetto della Robobambola Tamoto evocata da <strong>Hasode svolazzante</strong> aumenta di un 50%.",
+      "1": "In più, se nel gruppo è presente un altro personaggio di <geo>Geo</geo> oltre a Chiori, Hasode svolazzante innesca i seguenti effetti alla fine dello scatto.",
+      "2": [
+        " Evoca 1 ulteriore Tamoto. È possibile avere soltanto 1 Tamoto aggiuntiva, evocata con questo metodo o tramite i costrutti di Geo.",
+        " Se già sbloccato, attiva il talento passivo Tocco finale."
+      ]
+    }
+  },
+  "constellation2": {
+    "name": "In cinque colori",
+    "description": {
+      "0": "Per 10 s dopo l'uso di <strong>Hiyoku: Lame gemelle</strong>, viene evocata una Robobambola semplificata, Kinu, ogni 3 s accanto al personaggio attivo. Kinu attacca gli avversari circostanti, infliggendo <geo>DAN da Geo ad area</geo> equivalenti a un 170% dei DAN inflitti da Tamoto. Questi DAN sono considerati DAN da abilità elementale.",
+      "1": "Kinu abbandona il campo dopo 1 attacco o trascorsi 3 s."
+    }
+  },
+  "constellation3": {
+    "name": "Quattro decorazioni in broccato",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Hasode svolazzante</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation4": {
+    "name": "Tre cortesie sartoriali",
+    "description": {
+      "0": "Per 8 s dopo aver attivato uno degli effetti del talento passivo Su misura, quando l'attacco normale, caricato o in picchiata del tuo personaggio attivo colpisce un avversario vicino, viene evocata una Robobambola semplificata, Kinu, vicino al suddetto avversario. È possibile evocare in questo modo 1 Kinu al secondo, fino a 3 volte per ogni iterazione degli effetti Carpe diem o Sartoria generati da Su misura. L'effetto sopracitato può attivarsi una volta ogni 15 s.",
+      "1": "Richiede il talento passivo Su misura."
+    }
+  },
+  "constellation5": {
+    "name": "Due piume seriche",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Hiyoku: Lame gemelle</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation6": {
+    "name": "Un unico principio",
+    "description": {
+      "0": "Dopo aver attivato uno degli effetti del talento passivo Su misura, il TdR di <strong>Hasode svolazzante</strong> di Chiori si riduce di 12 s. Richiede il talento passivo Su misura.",
+      "1": "In più, i DAN inflitti dagli attacchi normali di Chiori aumentano di un 235% della sua DIF."
+    }
+  }
+}

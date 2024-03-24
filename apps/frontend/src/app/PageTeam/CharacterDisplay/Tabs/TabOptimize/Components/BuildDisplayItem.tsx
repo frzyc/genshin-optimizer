@@ -73,6 +73,8 @@ type BuildDisplayItemProps = {
   disabled?: boolean
   extraButtonsRight?: JSX.Element
   extraButtonsLeft?: JSX.Element
+  mainStatAssumptionLevel: number
+  allowLocationsState: AllowLocationsState
 }
 
 // TODO: Translation for build UI
@@ -82,17 +84,16 @@ export default function BuildDisplayItem({
   extraButtonsRight,
   extraButtonsLeft,
   disabled,
+  mainStatAssumptionLevel,
+  allowLocationsState,
 }: BuildDisplayItemProps) {
   const {
     loadoutDatum: { buildType, buildId },
-    teamChar: { optConfigId, buildIds = [] },
+    teamChar: { buildIds = [] },
   } = useContext(TeamCharacterContext)
   const {
     character: { key: characterKey, equippedArtifacts, equippedWeapon },
   } = useContext(CharacterContext)
-  const { mainStatAssumptionLevel, allowLocationsState } = useOptConfig(
-    optConfigId
-  ) ?? { mainStatAssumptionLevel: 0, allowLocationsState: 'all' }
   const database = useDatabase()
   const { data, oldData } = useContext(DataContext)
 

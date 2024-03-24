@@ -1,0 +1,165 @@
+{
+  "name": "Baizhu",
+  "title": "Transcendant la mortalité",
+  "description": "Le propriétaire du Cottage Bubu, un serpent blanc appelé Changsheng l'accompagnant. Médecin extrêmement compétent, ses véritables intentions restent cependant un mystère.",
+  "constellationName": "Lagenaria",
+  "auto": {
+    "name": "Acupuncture dorée",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attaque normale</strong>",
+        "1": "Enchaîne jusqu'à 4 attaques qui infligent des <dendro>DGT Dendro</dendro> vers l'avant."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Consomme de l'endurance pour infliger des <dendro>DGT Dendro de zone</dendro> vers l'avant après un court délai."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Plonge depuis les airs en concentrant ses pouvoirs Dendro, infligeant des DGT aux ennemis en chemin et des <dendro>DGT Dendro de zone</dendro> à l'impact."
+      }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT 4e coup",
+      "4": "DGT attaque chargée",
+      "5": "Coût d'endurance attaque chargée",
+      "6": "DGT durant la chute",
+      "7": "DGT chute basse/élevée",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Diagnostic universel",
+    "description": {
+      "0": "Contrôle un esprit de gaze qui se promène et attaque les ennemis proches, infligeant des <dendro>DGT Dendro</dendro>.",
+      "1": "Après avoir effectué 3 attaques ou s'il n'y a pas d'ennemis à proximité, l'esprit revient et soigne tous les personnages de l'équipe à proximité selon les PV max de Baizhu.",
+      "2": "<br/>",
+      "3": "<i>Ceux qui, dans le domaine médical, peuvent distinguer les vrais signes de maladie des faux peuvent même guérir les gens avant que les symptômes ne se manifestent.</i>"
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "Soins ",
+      "2": "Temps de recharge",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Reviviscence holistique",
+    "description": {
+      "0": "Entre dans l'état Ordonnance impulsive, créant un bouclier aseptique qui absorbe les <dendro>DGT Dendro</dendro> 250 % plus efficacement.",
+      "1": "Pendant cet état, un nouveau bouclier aseptique est généré toutes les 2,5 s.",
+      "2": "<br/>",
+      "3": "Dans les circonstances suivantes, le bouclier aseptique soigne votre personnage déployé selon les PV max de Baizhu et libère une veine d'aura pour attaquer les ennemis en infligeant des <dendro>DGT Dendro</dendro> :",
+      "4": [
+        " Lorsqu'un personnage est sous la protection d'un bouclier aseptique et qu'un nouveau bouclier aseptique est généré.",
+        " Lorsque les effets du bouclier aseptique prennent fin ou lorsqu'il est détruit."
+      ],
+      "5": "<br/>",
+      "6": "<i>Si l'on peut percevoir les cieux et la terre, défendre sa sphère intérieure contre les influences extérieures et garder l'esprit clair, rien ne peut gêner.</i>"
+    },
+    "skillParams": {
+      "0": "PV de bouclier aseptique",
+      "1": "Durée de bouclier aseptique",
+      "2": "Soins de bouclier aseptique",
+      "3": "DGT veine d'aura",
+      "4": "Durée d'ordonnance impulsive",
+      "5": "Temps de recharge",
+      "6": "Énergie élémentaire",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Cinq fortunes perpétuelles",
+    "description": {
+      "0": "Baizhu obtient différents effets selon les PV de votre personnage déployé :",
+      "1": [
+        " Si les PV de ce dernier sont inférieurs à 50 %, Baizhu obtient un bonus de soins de 20 %.",
+        " Si les PV de ce dernier sont supérieurs ou égaux à 50 %, Baizhu bénéficie d'un <dendro>bonus de DGT Dendro</dendro> de 25 %."
+      ]
+    }
+  },
+  "passive2": {
+    "name": "Terre mère",
+    "description": {
+      "0": "Les personnages soignés par un <strong>bouclier aseptique</strong> obtiennent l'effet Année de la chance boisée : pour chaque tranche de 1 000 PV max que Baizhu possède jusqu'à 50 000 PV, les DGT infligés par leurs réactions de Brûlure, de Fleurissement, d'Exubérance et de Bourgeonnement augmentent de 2 % et les augmentations de DGT accordées par leurs réactions de Suractivation et de Propagation augmentent de 0,8 %, pendant 6 s."
+    }
+  },
+  "passive3": {
+    "name": "Bienfait herbacé",
+    "description": {
+      "0": "Lorsque Baizhu fait partie de l'équipe, interagir avec certains objets récoltables soigne votre personnage déployé d'une valeur équivalant à 2,5 % des PV max de Baizhu."
+    }
+  },
+  "constellation1": {
+    "name": "Regard attentif",
+    "description": {
+      "0": "Confère une utilisation supplémentaire de <strong>Diagnostic universel</strong>."
+    }
+  },
+  "constellation2": {
+    "name": "Discernement incisif",
+    "description": {
+      "0": "Lorsque votre personnage déployé touche un ennemi proche avec une attaque, Baizhu libère un esprit divisé de gaze.",
+      "1": "L'esprit divisé de gaze effectue 1 attaque avant de revenir, infligeant des <dendro>DGT Dendro</dendro> d'une valeur équivalant à 250 % de l'ATQ de Baizhu et soignant pour 20 % du soin de l'esprit de gaze de <strong>Diagnostic universel</strong>.",
+      "2": "Les DGT infligés de cette manière sont considérés comme des DGT de compétence élémentaire.",
+      "3": "Cet effet peut être déclenché une fois toutes les 5 s."
+    }
+  },
+  "constellation3": {
+    "name": "Stabilisation complète",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Reviviscence holistique</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation4": {
+    "name": "Perception ancienne",
+    "description": {
+      "0": "La maîtrise élémentaire de tous les personnages de l'équipe à proximité augmente de 80 pts pendant 15 s après l'utilisation de <strong>Reviviscence holistique</strong>."
+    }
+  },
+  "constellation5": {
+    "name": "Fluctuations déroutantes",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Diagnostic universel</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation6": {
+    "name": "Purification du qi",
+    "description": {
+      "0": "Les DGT infligés par la veine d'aura de <strong>Reviviscence holistique</strong> augmentent d'une valeur équivalant à 8 % des PV max de Baizhu.",
+      "1": "De plus, lorsque l'<strong>esprit de gaze</strong> ou l'esprit divisé de gaze touche un ennemi, il y a 100 % de chances de créer un bouclier aseptique de <strong>Reviviscence holistique</strong>. Cet effet peut être déclenché une fois par esprit de gaze ou esprit divisé de gaze."
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Clé de Khaj-Nisut",
+  "description": {
+    "0": "L'un des sceptres d'une paire fabriquée à partir d'obsidiennes. On raconte qu'elle peut être utilisée comme clé pour ouvrir la porte d'un paradis qui se trouve tout au bout de l'océan de sable."
+  },
+  "passiveName": "Chant englouti des sables",
+  "passiveDescription": {
+    "0": {
+      "0": "Les PV sont augmentés de <cryo>20 %</cryo>. Lorsqu'une compétence élémentaire touche un ennemi, l'effet Rhapsodie est généré pendant 20 s : augmente la maîtrise élémentaire d'une valeur équivalant à <cryo>0,12 %</cryo> des PV max du personnage équipé de l'arme. Cet effet peut être déclenché une fois toutes les 0,3 s et cumulé 3 fois maximum. Lorsque cet effet obtient 3 cumuls ou que la durée du 3e cumul est actualisée, la maîtrise élémentaire de tous les personnages de l'équipe à proximité augmente d'une valeur équivalant à <cryo>0,2 %</cryo> des PV max du personnage équipé de l'arme pendant 20 s."
+    },
+    "1": {
+      "0": "Les PV sont augmentés de <cryo>25 %</cryo>. Lorsqu'une compétence élémentaire touche un ennemi, l'effet Rhapsodie est généré pendant 20 s : augmente la maîtrise élémentaire d'une valeur équivalant à <cryo>0,15 %</cryo> des PV max du personnage équipé de l'arme. Cet effet peut être déclenché une fois toutes les 0,3 s et cumulé 3 fois maximum. Lorsque cet effet obient 3 cumuls ou que la durée du 3e cumul est actualisée, la maîtrise élémentaire de tous les personnages de l'équipe à proximité augmente d'une valeur équivalant à <cryo>0,25 %</cryo> des PV max du personnage équipé de l'arme pendant 20 s."
+    },
+    "2": {
+      "0": "Les PV sont augmentés de <cryo>30 %</cryo>. Lorsqu'une compétence élémentaire touche un ennemi, l'effet Rhapsodie est généré pendant 20 s : augmente la maîtrise élémentaire d'une valeur équivalant à <cryo>0,18 %</cryo> des PV max du personnage équipé de l'arme. Cet effet peut être déclenché une fois toutes les 0,3 s et cumulé 3 fois maximum. Lorsque cet effet obtient 3 cumuls ou que la durée du 3e cumul est actualisée, la maîtrise élémentaire de tous les personnages de l'équipe à proximité augmente d'une valeur équivalant à <cryo>0,3 %</cryo> des PV max du personnage équipé de l'arme pendant 20 s."
+    },
+    "3": {
+      "0": "Les PV sont augmentés de <cryo>35 %</cryo>. Lorsqu'une compétence élémentaire touche un ennemi, l'effet Rhapsodie est généré pendant 20 s : augmente la maîtrise élémentaire d'une valeur équivalant à <cryo>0,21 %</cryo> des PV max du personnage équipé de l'arme. Cet effet peut être déclenché une fois toutes les 0,3 s et cumulé 3 fois maximum. Lorsque cet effet obtient 3 cumuls ou que la durée du 3e cumul est actualisée, la maîtrise élémentaire de tous les personnages de l'équipe à proximité augmente d'une valeur équivalant à <cryo>0,35 %</cryo> des PV max du personnage équipé de l'arme pendant 20 s."
+    },
+    "4": {
+      "0": "Les PV sont augmentés de <cryo>40 %</cryo>. Lorsqu'une compétence élémentaire touche un ennemi, l'effet Rhapsodie est généré pendant 20 s : augmente la maîtrise élémentaire d'une valeur équivalant à <cryo>0,24 %</cryo> des PV max du personnage équipé de l'arme. Cet effet peut être déclenché une fois toutes les 0,3 s et cumulé 3 fois maximum. Lorsque cet effet obtient 3 cumuls ou que la durée du 3e cumul est actualisée, la maîtrise élémentaire de tous les personnages de l'équipe à proximité augmente d'une valeur équivalant à <cryo>0,4 %</cryo> des PV max du personnage équipé de l'arme pendant 20 s."
+    }
+  }
+}

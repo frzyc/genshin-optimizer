@@ -1,0 +1,24 @@
+{
+  "name": "Oda al Vasto Azul",
+  "description": {
+    "0": "Una colección lírica exquisitamente encuadernada. Contiene poemas sobre el cielo, los dientes de león y demás elementos que tanto gustan a la gente de Mondstadt."
+  },
+  "passiveName": "Cielo añil",
+  "passiveDescription": {
+    "0": {
+      "0": "Al golpear a un enemigo con un Ataque Normal o Cargado, el daño de Ataque Normal aumenta en un <cryo>8%</cryo> y el de Ataque Cargado, en un <cryo>6%</cryo>. Este efecto dura 6 s, puede acumularse hasta 3 veces y solo se puede activar una vez cada 0.3 s."
+    },
+    "1": {
+      "0": "Al golpear a un enemigo con un Ataque Normal o Cargado, el daño de Ataque Normal aumenta en un <cryo>10%</cryo> y el de Ataque Cargado, en un <cryo>7.5%</cryo>. Este efecto dura 6 s, puede acumularse hasta 3 veces y solo se puede activar una vez cada 0.3 s."
+    },
+    "2": {
+      "0": "Al golpear a un enemigo con un Ataque Normal o Cargado, el daño de Ataque Normal aumenta en un <cryo>12%</cryo> y el de Ataque Cargado, en un <cryo>9%</cryo>. Este efecto dura 6 s, puede acumularse hasta 3 veces y solo se puede activar una vez cada 0.3 s."
+    },
+    "3": {
+      "0": "Al golpear a un enemigo con un Ataque Normal o Cargado, el daño de Ataque Normal aumenta en un <cryo>14%</cryo> y el de Ataque Cargado, en un <cryo>10.5%</cryo>. Este efecto dura 6 s, puede acumularse hasta 3 veces y solo se puede activar una vez cada 0.3 s."
+    },
+    "4": {
+      "0": "Al golpear a un enemigo con un Ataque Normal o Cargado, el daño de Ataque Normal aumenta en un <cryo>16%</cryo> y el de Ataque Cargado, en un <cryo>12%</cryo>. Este efecto dura 6 s, puede acumularse hasta 3 veces y solo se puede activar una vez cada 0.3 s."
+    }
+  }
+}

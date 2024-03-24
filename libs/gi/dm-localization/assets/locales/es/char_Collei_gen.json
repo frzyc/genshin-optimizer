@@ -1,0 +1,160 @@
+{
+  "name": "Collei",
+  "title": "La Promesa en Flor",
+  "description": "Una guardabosques en prácticas que suele rondar por el Bosque Avidya. Detrás de su apasionado carácter se esconde una personalidad más bien introvertida.",
+  "constellationName": "Leptailurus Cervarius",
+  "auto": {
+    "name": "Elogio de la arquería",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Ataque Normal</strong>",
+        "1": "Realiza hasta 4 disparos consecutivos con arco."
+      },
+      "charged": {
+        "0": "<strong>Ataque Cargado</strong>",
+        "1": "Realiza un <strong>Disparo Preciso</strong> que inflige mayor daño y tiene mayor precisión.",
+        "2": "Al apuntar, la flecha se imbuirá del elemento Dendro y, cuando esté completamente cargada, infligirá <dendro>Daño Dendro</dendro> al dispararla."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Descendente</strong>",
+        "1": "Dispara una lluvia de flechas desde el aire mientras desciende rápidamente, infligiendo Daño en el AdE al impactar contra el suelo."
+      }
+    },
+    "skillParams": {
+      "0": "Daño de 1er golpe",
+      "1": "Daño de 2.º golpe",
+      "2": "Daño de 3er golpe",
+      "3": "Daño de 4.º golpe",
+      "4": "Disparo Preciso",
+      "5": "Disparo Preciso (carga completa)",
+      "6": "Daño de Caída",
+      "7": "Daño de impacto de caída baja/alta",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Caricia de las flores",
+    "description": {
+      "0": "Lanza un bumerán foliáceo que inflige un golpe de <dendro>Daño Dendro</dendro> contra los objetivos con los que colisiona.",
+      "1": "Un tiempo después de haberlo lanzado, el bumerán regresa e inflige otro golpe de <dendro>Daño Dendro</dendro>.",
+      "2": "<br/>",
+      "3": "<i>Esta es la herramienta que usa Collei para enfrentarse a las bestias más agresivas. Tras golpearlas con ella varias veces, las bestias suelen volverse dóciles, y lo mismo ocurre con aquellos que solo guardan malas intenciones.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "TdE",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Secreto miauravilloso",
+    "description": {
+      "0": "¡Colleámbar al rescate!",
+      "1": "Lanza al muñeco Colleámbar, el cual explota para infligir <dendro>Daño Dendro en el AdE</dendro> y crear un área de Colleámbar. Dentro de esta área, Colleámbar saltará constantemente para infligir <dendro>Daño Dendro en el AdE</dendro>.",
+      "2": "<br/>",
+      "3": "<i>¿Qué te parece Colleámbar? Es genial, ¿verdad? ¿Eh? ¿Que por qué se llama así? P-pues...</i>"
+    },
+    "skillParams": {
+      "0": "Daño instantáneo",
+      "1": "Daño de Colleámbar al saltar",
+      "2": "Duración",
+      "3": "TdE",
+      "4": "Energía Elemental",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Retorno foliáceo",
+    "description": {
+      "0": "Si algún personaje de tu equipo causa una reacción de Quemadura, Aceleración, Intensificación, Propagación, Florecimiento, Sobreflorecimiento o Crepitar antes de que el <strong>bumerán foliáceo</strong> regrese, al regresar otorga al personaje el estado de “germinación”, el cual inflige continuamente <dendro>Daño Dendro</dendro> contra los enemigos cercanos en una cantidad equivalente al 40% del ATQ de Collei durante 3 s.",
+      "1": "Si otro efecto de germinación se activa antes de que concluya, se eliminará el efecto anterior. El daño infligido por germinación se considera daño de Habilidad Elemental."
+    }
+  },
+  "passive2": {
+    "name": "Quietud del bosque",
+    "description": {
+      "0": "Cuando un personaje dentro del <strong>área de Colleámbar</strong> causa una reacción de Quemadura, Aceleración, Intensificación, Propagación, Florecimiento, Sobreflorecimiento o Crepitar, la duración de dicha área aumenta en 1 s.",
+      "1": "Esta duración solo se puede aumentar un máximo de 3 veces de esta manera por cada vez que se use <strong>Secreto miauravilloso</strong>."
+    }
+  },
+  "passive3": {
+    "name": "Campeona de Vuelo de Sumeru",
+    "description": {
+      "0": "Disminuye en un 20% el Coste de Aguante al planear de todos los miembros de tu equipo.",
+      "1": "No se puede acumular con otros talentos pasivos que tengan los mismos efectos."
+    }
+  },
+  "constellation1": {
+    "name": "Patrulla forestal",
+    "description": {
+      "0": "Cuando Collei está en tu equipo pero no en uso, su Recarga de Energía aumenta en un 20%."
+    }
+  },
+  "constellation2": {
+    "name": "A través de los árboles",
+    "description": {
+      "0": "Transforma el talento pasivo “Retorno foliáceo”:",
+      "1": "Cuando el <strong>bumerán foliáceo</strong> regresa, otorga al personaje el estado de “germinación” de dicho talento pasivo para que inflija continuamente <dendro>Daño Dendro</dendro> contra los enemigos cercanos en una cantidad equivalente al 40% del ATQ de Collei durante 3 s.",
+      "2": "Desde que Collei usa <strong>Caricia de las flores</strong> hasta que desaparece el estado de germinación, si algún personaje de tu equipo causa una reacción de Quemadura, Aceleración, Intensificación, Propagación, Florecimiento, Sobreflorecimiento o Crepitar, la duración de germinación aumenta en 3 s.",
+      "3": "La duración de germinación solo se puede aumentar una vez de esta manera como máximo. Si otro efecto de germinación se activa antes de que concluya, se eliminará el efecto anterior. El daño infligido por germinación se considera daño de Habilidad Elemental.",
+      "4": "Es necesario desbloquear el talento pasivo “Retorno foliáceo”."
+    }
+  },
+  "constellation3": {
+    "name": "Fragancia estival",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Caricia de las flores</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Obsequio de la naturaleza",
+    "description": {
+      "0": "Al usar <strong>Secreto miauravilloso</strong>, la Maestría Elemental de todos los personajes del equipo cercanos (a excepción de Collei) aumenta en 60 pts. durante 12 s."
+    }
+  },
+  "constellation5": {
+    "name": "Plenitud de las ascuas",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Secreto miauravilloso</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Bosque de flechas",
+    "description": {
+      "0": "Cuando el <strong>bumerán foliáceo</strong> golpea a un enemigo, se crea un mini-Colleámbar que inflige <dendro>Daño Dendro</dendro> en una cantidad equivalente al 200% del ATQ de Collei.",
+      "1": "Solo se puede crear 1 mini-Colleámbar cada vez que se use <strong>Caricia de las flores</strong>."
+    }
+  }
+}

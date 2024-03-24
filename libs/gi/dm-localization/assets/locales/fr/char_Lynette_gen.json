@@ -1,0 +1,171 @@
+{
+  "name": "Lynette",
+  "title": "Élégance parmi les ombres",
+  "description": "Une assistante magique au verbe laconique, dont les émotions sont aussi impénétrables que celles d'un chat.",
+  "constellationName": "Felis Alba",
+  "auto": {
+    "name": "Rapière rapide",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attaque normale</strong>",
+        "1": "Enchaîne jusqu'à 4 coups d'épée."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Consomme de l'endurance pour déclencher deux coups d'épée rapides."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis en chemin et des DGT de zone à l'impact."
+      }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT 4e coup",
+      "4": "DGT attaque chargée",
+      "5": "Coût d'endurance attaque chargée",
+      "6": "DGT durant la chute",
+      "7": "DGT chute basse/élevée",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Feinte sibylline",
+    "description": {
+      "0": "Balance sa cape et déclenche une aiguille énigmatique infligeant des <anemo>DGT Anémo</anemo>.",
+      "1": "Lorsqu'une aiguille énigmatique touche un ennemi, Lynette récupère des PV selon ses PV max, avant de perdre, pendant les 4 s qui suivent, une certaine quantité de PV à chaque seconde.",
+      "2": "L'aiguille énigmatique est utilisée différemment selon la méthode de déclenchement :",
+      "3": "<br/>",
+      "4": "<strong>Appui simple</strong>",
+      "5": "Utilise rapidement une aiguille énigmatique.",
+      "6": "<br/>",
+      "7": "<strong>Appui long</strong>",
+      "8": "Lynette entre dans l'état Logogriphe qui permet de se déplacer à grande vitesse, et applique une saillie sombre à un ennemi proche. Pendant ce déplacement, Lynette peut contrôler la direction de sa course et peut s'arrêter en utilisant à nouveau la compétence.",
+      "9": "Lorsque cet état rapide prend fin, Lynette déclenche son aiguille énigmatique. Si un ennemi marqué d'une saillie sombre est à proximité, Lynette s'en approche en un éclair avant d'utiliser son aiguille énigmatique.",
+      "10": "<br/>",
+      "11": "Il ne peut y avoir qu'un seul ennemi marqué d'une saillie sombre de Lynette à la fois, et lorsqu'un ennemi ainsi marqué s'éloigne trop, la saillie s'annule.",
+      "12": "<br/>",
+      "13": "<strong>Arkhe : Ousia</strong>",
+      "14": "Régulièrement, lorsque Lynette utilise une aiguille énigmatique, elle déclenche une lame fluide pour infliger des <anemo>DGT Anémo</anemo> chargés d'énergie ousia.",
+      "15": "<br/>",
+      "16": "<i>« Tournez maintenant vos yeux vers la scène et profitez de la performance ! La prochaine fois que j'apparaîtrai, je serai là où vous vous y attendez le moins. »</i>"
+    },
+    "skillParams": {
+      "0": "DGT aiguille énigmatique",
+      "1": "DGT lame fluide",
+      "2": "Intervalle de lame fluide",
+      "3": "Soins de PV",
+      "4": "Coût de PV",
+      "5": "Durée max (appui long)",
+      "6": "Temps de recharge",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Magie : Variation étonnante",
+    "description": {
+      "0": "Lynette lève sa cape en hauteur pour infliger des <anemo>DGT Anémo de zone</anemo> et utilise un tour de passe-passe pour faire apparaître une boîte minestyque géante !",
+      "1": "<br/>",
+      "2": "<strong>Boîte minestyque</strong>",
+      "3": [
+        " Nargue les ennemis proches et attire leurs attaques.",
+        " Inflige des <anemo>DGT Anémo</anemo> aux ennemis proches de façon régulière.",
+        " Lorsqu'une boîte minestyque entre en contact avec l'élément <hydro>Hydro</hydro>, <pyro>Pyro</pyro>, <cryo>Cryo</cryo> ou <electro>Électro</electro>, elle absorbe l'élément correspondant et tire en plus des balles bariolées de façon régulière sur les ennemis proches pour infliger des DGT de cet élément."
+      ],
+      "4": "Une seule réaction d'absorption élémentaire peut avoir lieu par utilisation.",
+      "5": "<br/>",
+      "6": "<i>« Par ici, par ici. Regardez attentivement. C'est le moment du miracle, rien que pour nous ! »</i>"
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "DGT boîte minestyque",
+      "2": "DGT balle bariolée",
+      "3": "Durée de boîte minestyque",
+      "4": "Temps de recharge",
+      "5": "Énergie élémentaire",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Synergie ingénieuse",
+    "description": {
+      "0": "Si l'équipe comprend des personnages de 1/2/3/4 types élémentaires, l'ATQ de tous les personnages de l'équipe augmente respectivement de 8/12/16/20 % pendant 10 s après l'utilisation de <strong>Magie : Variation étonnante</strong>."
+    }
+  },
+  "passive2": {
+    "name": "Apprêt d'accessoires",
+    "description": {
+      "0": "Lorsqu'une boîte minestyque invoquée par <strong>Magie : Variation étonnante</strong> a effectué une absorption élémentaire, les DGT infligés par les déchaînements élémentaires de Lynette augmentent de 15 %. Cet effet dure jusqu'à la disparition de la boîte minestyque."
+    }
+  },
+  "passive3": {
+    "name": "Mnémoniques de localisation",
+    "description": {
+      "0": "Affiche l'emplacement des <strong>globes de revitalisation</strong> sur la mini-carte et permet d'augmenter l'endurance aquatique et les PV récupérés en touchant ces globes de 25 %."
+    }
+  },
+  "constellation1": {
+    "name": "Lame d'ombre frisquette",
+    "description": {
+      "0": "Lorsqu'une aiguille énigmatique de <strong>Feinte sibylline</strong> touche un ennemi marqué d'une saillie sombre, un vortex est déclenché à l'emplacement de ce dernier pour attirer les ennemis proches."
+    }
+  },
+  "constellation2": {
+    "name": "Mystère de continuité infinie",
+    "description": {
+      "0": "Lorsqu'une boîte minestyque invoquée par <strong>Magie : Variation étonnante</strong> tire une balle bariolée, elle tire une balle supplémentaire."
+    }
+  },
+  "constellation3": {
+    "name": "Regard de cognition inversée",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Magie : Variation étonnante</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation4": {
+    "name": "Coordination de réponse tacite",
+    "description": {
+      "0": "Confère une utilisation supplémentaire de <strong>Feinte sibylline</strong>."
+    }
+  },
+  "constellation5": {
+    "name": "Obstacle d'ambiguïté ténébreuse",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Feinte sibylline</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation6": {
+    "name": "Œil perspicace",
+    "description": {
+      "0": "Lorsque Lynette utilise une aiguille énigmatique de <strong>Feinte sibylline</strong>, elle bénéficie d'un <anemo>enchantement Anémo</anemo> et son <anemo>bonus de DGT Anémo</anemo> augmente de 20 %, pendant 6 s."
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Emblema del Mar de Juncos",
+  "description": {
+    "0": "Un mandoble de factura antigua con la punta semicircular. Parece que era un arma usada antaño por la realeza para ciertas ceremonias."
+  },
+  "passiveName": "Vigía del mar de arena",
+  "passiveDescription": {
+    "0": {
+      "0": "Tras golpear a un enemigo con una Habilidad Elemental, el ATQ aumenta en un <cryo>20%</cryo> durante 8 s. Asimismo, cuando el personaje recibe daño, su ATQ aumenta en un <cryo>20%</cryo> durante 8 s. Estos dos efectos se pueden activar incluso cuando el personaje está en tu equipo pero no en uso. Además, si el portador de esta arma no está bajo la protección de un escudo, su Vida Máx. aumenta en un <cryo>32%</cryo>."
+    },
+    "1": {
+      "0": "Tras golpear a un enemigo con una Habilidad Elemental, el ATQ aumenta en un <cryo>25%</cryo> durante 8 s. Asimismo, cuando el personaje recibe daño, su ATQ aumenta en un <cryo>25%</cryo> durante 8 s. Estos dos efectos se pueden activar incluso cuando el personaje está en tu equipo pero no en uso. Además, si el portador de esta arma no está bajo la protección de un escudo, su Vida Máx. aumenta en un <cryo>40%</cryo>."
+    },
+    "2": {
+      "0": "Tras golpear a un enemigo con una Habilidad Elemental, el ATQ aumenta en un <cryo>30%</cryo> durante 8 s. Asimismo, cuando el personaje recibe daño, su ATQ aumenta en un <cryo>30%</cryo> durante 8 s. Estos dos efectos se pueden activar incluso cuando el personaje está en tu equipo pero no en uso. Además, si el portador de esta arma no está bajo la protección de un escudo, su Vida Máx. aumenta en un <cryo>48%</cryo>."
+    },
+    "3": {
+      "0": "Tras golpear a un enemigo con una Habilidad Elemental, el ATQ aumenta en un <cryo>35%</cryo> durante 8 s. Asimismo, cuando el personaje recibe daño, su ATQ aumenta en un <cryo>35%</cryo> durante 8 s. Estos dos efectos se pueden activar incluso cuando el personaje está en tu equipo pero no en uso. Además, si el portador de esta arma no está bajo la protección de un escudo, su Vida Máx. aumenta en un <cryo>56%</cryo>."
+    },
+    "4": {
+      "0": "Tras golpear a un enemigo con una Habilidad Elemental, el ATQ aumenta en un <cryo>40%</cryo> durante 8 s. Asimismo, cuando el personaje recibe daño, su ATQ aumenta en un <cryo>40%</cryo> durante 8 s. Estos dos efectos se pueden activar incluso cuando el personaje está en tu equipo pero no en uso. Además, si el portador de esta arma no está bajo la protección de un escudo, su Vida Máx. aumenta en un <cryo>64%</cryo>."
+    }
+  }
+}

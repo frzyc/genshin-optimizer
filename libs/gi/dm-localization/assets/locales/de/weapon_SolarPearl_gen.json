@@ -1,0 +1,24 @@
+{
+  "name": "Sonne und Mond",
+  "description": {
+    "0": "Diese Kugel aus unbekanntem dunklem Metall enthält den himmlischen Glanz von Sonne und Mond und strahlt eine spürbare Wärme aus."
+  },
+  "passiveName": "Himmlisches Leuchten",
+  "passiveDescription": {
+    "0": {
+      "0": "Erhöht den Schaden von Elementarfähigkeiten und Spezialfähigkeiten bei Treffern mit Standardangriffen 6 s lang um <cryo>20 %</cryo>. Erhöht den Schaden von Standardangriffen bei Treffern mit Elementarfähigkeiten und Spezialfähigkeiten 6 s lang um <cryo>20 %</cryo>."
+    },
+    "1": {
+      "0": "Erhöht den Schaden von Elementarfähigkeiten und Spezialfähigkeiten bei Treffern mit Standardangriffen 6 s lang um <cryo>25 %</cryo>. Erhöht den Schaden von Standardangriffen bei Treffern mit Elementarfähigkeiten und Spezialfähigkeiten 6 s lang um <cryo>25 %</cryo>."
+    },
+    "2": {
+      "0": "Erhöht den Schaden von Elementarfähigkeiten und Spezialfähigkeiten bei Treffern mit Standardangriffen 6 s lang um <cryo>30 %</cryo>. Erhöht den Schaden von Standardangriffen bei Treffern mit Elementarfähigkeiten und Spezialfähigkeiten 6 s lang um <cryo>30 %</cryo>."
+    },
+    "3": {
+      "0": "Erhöht den Schaden von Elementarfähigkeiten und Spezialfähigkeiten bei Treffern mit Standardangriffen 6 s lang um <cryo>35 %</cryo>. Erhöht den Schaden von Standardangriffen bei Treffern mit Elementarfähigkeiten und Spezialfähigkeiten 6 s lang um <cryo>35 %</cryo>."
+    },
+    "4": {
+      "0": "Erhöht den Schaden von Elementarfähigkeiten und Spezialfähigkeiten bei Treffern mit Standardangriffen 6 s lang um <cryo>40 %</cryo>. Erhöht den Schaden von Standardangriffen bei Treffern mit Elementarfähigkeiten und Spezialfähigkeiten 6 s lang um <cryo>40 %</cryo>."
+    }
+  }
+}

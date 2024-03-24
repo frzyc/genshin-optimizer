@@ -1,0 +1,24 @@
+{
+  "name": "Flauto",
+  "description": {
+    "0": "Sotto la sua superficie arrugginita, si nasconde una sottile lama decorata. Colpisce rapidamente come il vento."
+  },
+  "passiveName": "Accordo",
+  "passiveDescription": {
+    "0": {
+      "0": "Colpire con gli attacchi normali o caricati conferisce un'Armonia. Acquisire 5 Armonie attiva il potere della musica e infligge un <cryo>100%</cryo> di DAN da ATT agli avversari circostanti. Le Armonie durano fino a 30 s, ed è possibile acquisirne 1 ogni 0,5 s."
+    },
+    "1": {
+      "0": "Colpire con gli attacchi normali o caricati conferisce un'Armonia. Acquisire 5 Armonie attiva il potere della musica e infligge un <cryo>125%</cryo> di DAN da ATT agli avversari circostanti. Le Armonie durano fino a 30 s, ed è possibile acquisirne 1 ogni 0,5 s."
+    },
+    "2": {
+      "0": "Colpire con gli attacchi normali o caricati conferisce un'Armonia. Acquisire 5 Armonie attiva il potere della musica e infligge un <cryo>150%</cryo> di DAN da ATT agli avversari circostanti. Le Armonie durano fino a 30 s, ed è possibile acquisirne 1 ogni 0,5 s."
+    },
+    "3": {
+      "0": "Colpire con gli attacchi normali o caricati conferisce un'Armonia. Acquisire 5 Armonie attiva il potere della musica e infligge un <cryo>175%</cryo> di DAN da ATT agli avversari circostanti. Le Armonie durano fino a 30 s, ed è possibile acquisirne 1 ogni 0,5 s."
+    },
+    "4": {
+      "0": "Colpire con gli attacchi normali o caricati conferisce un'Armonia. Acquisire 5 Armonie attiva il potere della musica e infligge un <cryo>200%</cryo> di DAN da ATT agli avversari circostanti. Le Armonie durano fino a 30 s, ed è possibile acquisirne 1 ogni 0,5 s."
+    }
+  }
+}

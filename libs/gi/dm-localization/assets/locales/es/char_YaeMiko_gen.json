@@ -1,0 +1,161 @@
+{
+  "name": "Yae Miko",
+  "title": "La Kitsune Taimada",
+  "description": "La Suma Sacerdotisa del Gran Santuario Narukami y editora jefa de la Editorial Yae. Bajo su increíble encanto esconde una inteligencia y una astucia inimaginables.",
+  "constellationName": "Divina Vulpes",
+  "auto": {
+    "name": "Kitsune devorapecados",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Ataque Normal</strong>",
+        "1": "Invoca espíritus kitsune para realizar hasta 3 ataques que infligen <electro>Daño Electro</electro>."
+      },
+      "charged": {
+        "0": "<strong>Ataque Cargado</strong>",
+        "1": "Consume una cierta cantidad de Aguante para infligir <electro>Daño Electro en el AdE</electro> después de un corto tiempo de invocación."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Descendente</strong>",
+        "1": "Concentra el poder del rayo, se lanza desde el aire para golpear el suelo y daña a los enemigos a su paso, infligiendo <electro>Daño Electro en el AdE</electro> en el momento del impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Daño de 1er golpe",
+      "1": "Daño de 2.º golpe",
+      "2": "Daño de 3er golpe",
+      "3": "Daño de ATQ Cargado",
+      "4": "Coste de Aguante de ATQ Cargado",
+      "5": "Daño de Caída",
+      "6": "Daño de impacto de caída baja/alta",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Maleficio yako: Cerezo kitsune aniquilador",
+    "description": {
+      "0": "Yae Miko no necesita hacer personalmente las tareas más triviales mientras pueda usar los espíritus de otros seres.",
+      "1": "Hace un rápido movimiento e invoca un cerezo kitsune.",
+      "2": "<br/>",
+      "3": "<strong>Cerezo kitsune</strong>",
+      "4": "Tiene las siguientes características:",
+      "5": [
+        "Cada cierto tiempo, hace descender un rayo sobre un enemigo cercano para infligirle <electro>Daño Electro</electro>.",
+        "Si se invoca un cerezo kitsune cuando ya existen otros, los ya existentes subirán de nivel y el daño que infligen con sus ataques aumentará."
+      ],
+      "6": "<br/>",
+      "7": "Esta habilidad puede usarse tres veces.",
+      "8": "Solo pueden existir 3 cerezos kitsune al mismo tiempo. Cuando se crea uno, su nivel inicial es 1 y solo podrá aumentar al nivel 3 como máximo. Si se crea un cerezo kitsune en una ubicación que esté excesivamente cerca de otro, el ya existente se destruirá.",
+      "9": "<br/>",
+      "10": "<i>“Los espíritus kitsune sellados en las ramas de los árboles son yako que han degenerado hasta querer herir a los humanos. Los yako están dos rangos por debajo de nosotros, los Kitsune Celestiales, así que no veo ningún problema en pedirles que cumplan mis órdenes. Aunque entre los kitsune tengamos un sistema de clasificación, los humanos no tienen por qué hacer eso. ¿Que quiénes son superiores, los humanos o los kitsune? *Ejem*, ¿de verdad te gustaría saberlo?”</i>"
+    },
+    "skillParams": {
+      "0": "Daño de cerezo kitsune niv. 1",
+      "1": "Daño de cerezo kitsune niv. 2",
+      "2": "Daño de cerezo kitsune niv. 3",
+      "3": "Daño de cerezo kitsune niv. 4",
+      "4": "Duración",
+      "5": "TdE",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Técnica secreta suprema: Encarnación de Kitsune Celestial",
+    "description": {
+      "0": "En Inazuma existen leyendas sobre posesiones kitsune. Una de las más particulares es la de la posesión por Kitsune Celestiales que caen con forma de relámpago sobre los intrusos que se infiltran en el Gran Santuario Narukami. Cuando el relámpago desciende, inflige <electro>Daño Electro en el AdE</electro>.",
+      "1": "Al lanzar la habilidad, Yae Miko destruye los cerezos kitsune cercanos, los cuales se transforman en relámpagos de Kitsune Celestiales que infligen <electro>Daño Electro en el AdE</electro>. Un relámpago de Kitsune Celestial caerá por cada cerezo kitsune que se destruya de esta forma.",
+      "2": "<br/>",
+      "3": "<i>Yae Miko solo revela su aspecto de Kitsune Celestial en los momentos más cruciales para invocar el poder del rayo. De aquellos que han visto la cola de la Suma Sacerdotisa no quedan ni las cenizas, así que más te vale recordar esto muy bien: la Srta. Yae no tiene cola.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "Daño de relámpago de Kitsune Celestial",
+      "2": "TdE",
+      "3": "Energía Elemental",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Sombra sagrada",
+    "description": {
+      "0": "Al usar <strong>Técnica secreta suprema: Encarnación de Kitsune Celestial</strong>, el TdE de <strong>Maleficio yako: Cerezo kitsune aniquilador</strong> se reiniciará una vez por cada cerezo kitsune destruido."
+    }
+  },
+  "passive2": {
+    "name": "Bendición del despertar",
+    "description": {
+      "0": "Aumenta en un 0.15% el daño que infligen los <strong>cerezos kitsune</strong> por cada punto de Maestría Elemental de Yae Miko."
+    }
+  },
+  "passive3": {
+    "name": "Meditación de yako",
+    "description": {
+      "0": "Al fabricar materiales de talento, hay una probabilidad del 25% de obtener otro aleatorio de la misma región y tipo que los materiales usados."
+    }
+  },
+  "constellation1": {
+    "name": "Ofrenda de los yako",
+    "description": {
+      "0": "Yae Miko recupera 8 pts. de Energía Elemental por cada relámpago de Kitsune Celestial desencadenado con <strong>Técnica secreta suprema: Encarnación de Kitsune Celestial</strong>."
+    }
+  },
+  "constellation2": {
+    "name": "Aullido lunar",
+    "description": {
+      "0": "Al ser creados, los <strong>cerezos kitsune</strong> comienzan con nivel 2, pueden aumentarse hasta nivel 4 y su alcance de ataque aumenta en un 60%."
+    }
+  },
+  "constellation3": {
+    "name": "Heptatransformación",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Maleficio yako: Cerezo kitsune aniquilador</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Cerezo de la tormenta",
+    "description": {
+      "0": "Cuando el rayo de un <strong>cerezo kitsune</strong> golpea a un enemigo, todos los miembros del equipo cercanos obtienen un 20% de <electro>Bono de Daño Electro</electro> durante 5 s."
+    }
+  },
+  "constellation5": {
+    "name": "Burla despiadada",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Técnica secreta suprema: Encarnación de Kitsune Celestial</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Técnica prohibida: Masacre",
+    "description": {
+      "0": "Los ataques de los <strong>cerezos kitsune</strong> ignoran un 60% de la DEF del enemigo."
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "End of the Line",
+  "description": {
+    "0": "Tampak seperti ikan yang kini sudah punah. Dengan elastisitas tubuhnya, ia dapat digunakan sebagai busur setelah diikatkan dengan tali."
+  },
+  "passiveName": "Net Snapper",
+  "passiveDescription": {
+    "0": {
+      "0": "Setelah melancarkan Elemental Skill, akan mendapatkan efek \"Flowrider\": Saat serangan mengenai musuh, akan mengakibatkan DMG Area sebesar <cryo>80%</cryo> ATK. Efek ini akan dihapus setelah 15 detik atau setelah memicu DMG Area sebanyak 3 kali. DMG Area dari \"Flowrider\" dapat diakibatkan dengan cara ini setiap 2 detik, sementara \"Flowrider\" dapat terpicu setiap 12 detik."
+    },
+    "1": {
+      "0": "Setelah melancarkan Elemental Skill, efek \"Flowrider\" akan terpicu. Saat serangan mengenai musuh, akan mendapatkan efek \"Flowrider\" yang mengakibatkan DMG Area sebesar <cryo>100%</cryo> ATK. Efek ini akan dihapus setelah 15 detik atau setelah memicu DMG Area sebanyak 3 kali. DMG Area dari \"Flowrider\" dapat diakibatkan dengan cara ini setiap 2 detik, sementara \"Flowrider\" dapat terpicu setiap 12 detik."
+    },
+    "2": {
+      "0": "Setelah melancarkan Elemental Skill, efek \"Flowrider\" akan terpicu. Saat serangan mengenai musuh, akan mendapatkan efek \"Flowrider\" yang mengakibatkan DMG Area sebesar <cryo>120%</cryo> ATK. Efek ini akan dihapus setelah 15 detik atau setelah memicu DMG Area sebanyak 3 kali. DMG Area dari \"Flowrider\" dapat diakibatkan dengan cara ini setiap 2 detik, sementara \"Flowrider\" dapat terpicu setiap 12 detik."
+    },
+    "3": {
+      "0": "Setelah melancarkan Elemental Skill, efek \"Flowrider\" akan terpicu. Saat serangan mengenai musuh, akan mendapatkan efek \"Flowrider\" yang mengakibatkan DMG Area sebesar <cryo>140%</cryo> ATK. Efek ini akan dihapus setelah 15 detik atau setelah memicu DMG Area sebanyak 3 kali. DMG Area dari \"Flowrider\" dapat diakibatkan dengan cara ini setiap 2 detik, sementara \"Flowrider\" dapat terpicu setiap 12 detik."
+    },
+    "4": {
+      "0": "Setelah melancarkan Elemental Skill, efek \"Flowrider\" akan terpicu. Saat serangan mengenai musuh, akan mendapatkan efek \"Flowrider\" yang mengakibatkan DMG Area sebesar <cryo>160%</cryo> ATK. Efek ini akan dihapus setelah 15 detik atau setelah memicu DMG Area sebanyak 3 kali. DMG Area dari \"Flowrider\" dapat diakibatkan dengan cara ini setiap 2 detik, sementara \"Flowrider\" dapat terpicu setiap 12 detik."
+    }
+  }
+}

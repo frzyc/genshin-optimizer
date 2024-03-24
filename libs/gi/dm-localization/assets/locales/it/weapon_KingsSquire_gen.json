@@ -1,0 +1,24 @@
+{
+  "name": "Scudiere del re",
+  "description": {
+    "0": "Un'arma che hai ottenuto da una storia degli Aranara. Ha assunto la forma di un arco in grado di abbattere i nemici della foresta."
+  },
+  "passiveName": "Istruzioni del Signore del labirinto",
+  "passiveDescription": {
+    "0": {
+      "0": "Ottieni l'effetto Insegnamenti della foresta quando scateni abilità elementali e Tripudi elementali, aumentando la maestria elementale di <cryo>60</cryo> per 12 s. Quest'effetto viene rimosso se il personaggio viene sostituito. Quando l'effetto Insegnamenti della foresta termina o viene rimosso, infligge un <cryo>100%</cryo> dell'ATT sotto forma di DAN a 1 nemico nelle vicinanze. L'effetto Insegnamenti della foresta può attivarsi una volta ogni 20 s."
+    },
+    "1": {
+      "0": "Ottieni l'effetto Insegnamenti della foresta quando scateni abilità elementali e Tripudi elementali, aumentando la maestria elementale di <cryo>80</cryo> per 12 s. Quest'effetto viene rimosso se il personaggio viene sostituito. Quando l'effetto Insegnamenti della foresta termina o viene rimosso, infligge un <cryo>120%</cryo> dell'ATT sotto forma di DAN a 1 nemico nelle vicinanze. L'effetto Insegnamenti della foresta può attivarsi una volta ogni 20 s."
+    },
+    "2": {
+      "0": "Ottieni l'effetto Insegnamenti della foresta quando scateni abilità elementali e Tripudi elementali, aumentando la maestria elementale di <cryo>100</cryo> per 12 s. Quest'effetto viene rimosso se il personaggio viene sostituito. Quando l'effetto Insegnamenti della foresta termina o viene rimosso, infligge un <cryo>140%</cryo> dell'ATT sotto forma di DAN a 1 nemico nelle vicinanze. L'effetto Insegnamenti della foresta può attivarsi una volta ogni 20 s."
+    },
+    "3": {
+      "0": "Ottieni l'effetto Insegnamenti della foresta quando scateni abilità elementali e Tripudi elementali, aumentando la maestria elementale di <cryo>120</cryo> per 12 s. Quest'effetto viene rimosso se il personaggio viene sostituito. Quando l'effetto Insegnamenti della foresta termina o viene rimosso, infligge un <cryo>160%</cryo> dell'ATT sotto forma di DAN a 1 nemico nelle vicinanze. L'effetto Insegnamenti della foresta può attivarsi una volta ogni 20 s."
+    },
+    "4": {
+      "0": "Ottieni l'effetto Insegnamenti della foresta quando scateni abilità elementali e Tripudi elementali, aumentando la maestria elementale di <cryo>140</cryo> per 12 s. Quest'effetto viene rimosso se il personaggio viene sostituito. Quando l'effetto Insegnamenti della foresta termina o viene rimosso, infligge un <cryo>180%</cryo> dell'ATT sotto forma di DAN a 1 nemico nelle vicinanze. L'effetto Insegnamenti della foresta può attivarsi una volta ogni 20 s."
+    }
+  }
+}

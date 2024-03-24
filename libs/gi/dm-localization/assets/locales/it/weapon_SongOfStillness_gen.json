@@ -1,0 +1,24 @@
+{
+  "name": "Canto del silenzio",
+  "description": {
+    "0": "Uno strano arco lungo dall'aspetto simile a una creatura marina. La corda non emette alcun suono."
+  },
+  "passiveName": "Impulso bentonico",
+  "passiveDescription": {
+    "0": {
+      "0": "Quando chi lo utilizza riceve effetti di guarigione, infligge un <cryo>16%</cryo> di DAN in più per 8 s. Questo effetto può attivarsi anche quando il personaggio non si trova in campo."
+    },
+    "1": {
+      "0": "Quando chi lo utilizza riceve effetti di guarigione, infligge un <cryo>20%</cryo> di DAN in più per 8 s. Quest'effetto può attivarsi anche quando il personaggio non si trova in campo."
+    },
+    "2": {
+      "0": "Quando chi lo utilizza riceve effetti di guarigione, infligge un <cryo>24%</cryo> di DAN in più per 8 s. Quest'effetto può attivarsi anche quando il personaggio non si trova in campo."
+    },
+    "3": {
+      "0": "Quando chi lo utilizza riceve effetti di guarigione, infligge un <cryo>28%</cryo> di DAN in più per 8 s. Quest'effetto può attivarsi anche quando il personaggio non si trova in campo."
+    },
+    "4": {
+      "0": "Quando chi lo utilizza riceve effetti di guarigione, infligge un <cryo>32%</cryo> di DAN in più per 8 s. Quest'effetto può attivarsi anche quando il personaggio non si trova in campo."
+    }
+  }
+}

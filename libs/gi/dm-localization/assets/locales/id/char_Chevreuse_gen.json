@@ -1,0 +1,164 @@
+{
+  "name": "Chevreuse",
+  "title": "Executor of Justice",
+  "description": "Kapten Pasukan Patroli Khusus, yang telah mengukirkan \"keadilan\" di dalam lubuk hatinya. Senjata di tangannya hanya akan ditodongkan kepada orang yang bersalah.",
+  "constellationName": "Sclopetum Ensiferum",
+  "auto": {
+    "name": "Line Bayonet Thrust EX",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Attack</strong>",
+        "1": "Melancarkan hingga 4 serangan tombak berturut-turut."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Mengonsumsi sejumlah Stamina untuk menerjang ke depan, mengakibatkan DMG pada musuh di jalur terjangan."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Menerjang dari udara untuk menghantam tanah di bawahnya, menyerang musuh di jalur terjangan dan mengakibatkan DMG area saat mendarat."
+      }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Tahap 4",
+      "4": "DMG Charged Attack",
+      "5": "Konsumsi Stamina Charged Attack",
+      "6": "DMG Selama Plunging",
+      "7": "DMG Plunging Attack Rendah/Tinggi",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Short-Range Rapid Interdiction Fire",
+    "description": {
+      "0": "Chevreuse mengangkat senapannya dengan cepat untuk menembak musuh dan mengakibatkan <pyro>Pyro DMG Area</pyro>.",
+      "1": "Beberapa saat setelah Chevreuse menembak, dia akan terus memulihkan HP Karakter aktif sendiri. Jumlah pemulihan didasarkan pada Max HP Chevreuse.",
+      "2": "Saat ditahan, akan melancarkan serangan dengan cara yang berbeda.",
+      "3": "<br/>",
+      "4": "<strong>Mode Tahan</strong>",
+      "5": "Memasuki Mode Membidik dan mengunci target dalam bidang penglihatannya untuk menembakkan tembakan pencegat dengan akurat. Jika Chevreuse memiliki \"Overcharged Ball\", maka akan menembakkan \"Overcharged Ball\" dan mengakibatkan <pyro>Pyro DMG</pyro> yang memiliki radius serangan yang lebih luas dan DMG yang lebih tinggi.",
+      "6": "Chevreuse akan mendapatkan 1 Overcharged Ball saat Karakter dalam party di sekitar memicu Reaksi Overloaded. Hanya 1 Overcharged Ball yang dapat tercipta dalam waktu bersamaan.",
+      "7": "<br/>",
+      "8": "<strong>Arkhe: Ousia</strong>",
+      "9": "Setiap beberapa saat setelah \"Short-Range Rapid Interdiction Fire\" mengenai musuh, Chevreuse akan melancarkan Surging Blade yang mengakibatkan Ousia-aligned <pyro>Pyro DMG</pyro>.",
+      "10": "<br/>",
+      "11": "<i>\"Sebenarnya di dalam panduan pelatihan istilahnya cuma \"tembakan pencegat\", tapi pemeran utama novel ini percaya kalau nama jurus yang keren bisa memengaruhi motivasi pasukanmu, sehingga musuh kehilangan momentumnya di awal ... Kurasa sih cukup masuk akal ya, jadi aku ubah peraturannya!\"</i>"
+    },
+    "skillParams": {
+      "0": "DMG Tekan",
+      "1": "DMG Tahan",
+      "2": "DMG Overcharged Ball",
+      "3": "Pemulihan HP Berkelanjutan",
+      "4": "Durasi Pemulihan",
+      "5": "DMG Surging Blade",
+      "6": "Jeda Surging Blade",
+      "7": "Cooldown",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Ring of Bursting Grenades",
+    "description": {
+      "0": "Chevreuse menggunakan senapannya untuk menembakkan Explosive Grenade terhadap musuh dan mengakibatkan <pyro>Pyro DMG Area</pyro>. Setelah mengenai musuh, Explosive Grenade akan terpecah menjadi beberapa Secondary Explosive Shell.",
+      "1": "Secondary Explosive Shell akan meledak setelah jeda singkat dan mengakibatkan <pyro>Pyro DMG</pyro> terhadap musuh di sekitar.",
+      "2": "<br/>",
+      "3": "<i>\"Secara teorinya sih, ledakan berbentuk persegi akan jauh lebih efisien dalam menghancurkan formasi musuh. Sayangnya, struktur gelombang ledakan kebanyakan bentuknya bulat seperti kue. Jadi granat terbangnya cuma bisa disusun seperti dekorasi buah yang mengelilingi tepi kue.\"</i>"
+    },
+    "skillParams": {
+      "0": "DMG Explosive Grenade",
+      "1": "DMG Secondary Explosive Shell",
+      "2": "Cooldown",
+      "3": "Konsumsi Energy",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Vanguard's Coordinated Tactics",
+    "description": {
+      "0": "Saat seluruh anggota party adalah Karakter <pyro>Pyro</pyro> dan <electro>Electro</electro>, serta terdapat minimal 1 Karakter Pyro dan 1 Karakter Electro:",
+      "1": "Chevreuse akan memberikan \"Coordinated Tactics\" kepada Karakter dalam party di sekitarnya: Setelah Karakter memicu reaksi Overloaded, <pyro>Pyro</pyro> dan <electro>Electro</electro> RES milik target tersebut akan berkurang 40% selama 6 detik.",
+      "2": "Saat jenis elemen Karakter di dalam party tidak cukup untuk memicu Talenta Pasif, maka efek Coordinated Tactics yang sudah dimiliki akan dihapus."
+    }
+  },
+  "passive2": {
+    "name": "Vertical Force Coordination",
+    "description": {
+      "0": "Setelah Chevreuse menembakkan \"Overcharged Ball\" dari <strong>Short-Range Rapid Interdiction Fire</strong>, ATK semua Karakter dalam party berelemen <pyro>Pyro</pyro> dan <electro>Electro</electro> di sekitar akan meningkat 1% untuk setiap 1.000 poin Max HP Chevreuse selama 30 detik. Peningkatan ATK maksimum yang bisa didapatkan dengan cara ini adalah 40%."
+    }
+  },
+  "passive3": {
+    "name": "Double Time March",
+    "description": {
+      "0": "Mengurangi 20% konsumsi Stamina Karakter party sendiri saat berlari.",
+      "1": "Efek ini tidak dapat ditumpuk dengan Talenta Pasif lain dengan efek yang sama persis."
+    }
+  },
+  "constellation1": {
+    "name": "Stable Front Line's Resolve",
+    "description": {
+      "0": "Saat Karakter aktif yang berada dalam status \"Coordinated Tactics\" (tidak termasuk Chevreuse sendiri) memicu Reaksi Overloaded, akan memulihkan 6 Energy. Efek ini dapat terpicu sekali setiap 10 detik.",
+      "1": "Harus membuka Talenta Pasif \"Vanguard's Coordinated Tactics\" terlebih dahulu."
+    }
+  },
+  "constellation2": {
+    "name": "Sniper Induced Explosion",
+    "description": {
+      "0": "Setelah tembakan <strong>Short-Range Rapid Interdiction Fire</strong> dalam Mode Tahan mengenai musuh, akan memicu 2 ledakan berantai di sekitar lokasi musuh yang terkena. Setiap ledakan akan mengakibatkan <pyro>Pyro DMG</pyro> sebesar 120% ATK Chevreuse. Efek ini bisa terpicu sekali setiap 10 detik, dan DMG yang diakibatkan dengan cara ini akan dianggap sebagai DMG Elemental Skill."
+    }
+  },
+  "constellation3": {
+    "name": "Practiced Field Stripping Technique",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Short-Range Rapid Interdiction Fire</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "The Secret to Rapid-Fire Multishots",
+    "description": {
+      "0": "Setelah melancarkan <strong>Ring of Bursting Grenades</strong>, Mode Tahan <strong>Short-Range Rapid Interdiction Fire</strong> Chevreuse tidak akan memasuki Cooldown. Efek ini berlangsung selama 6 detik, dan akan hilang setelah melancarkan Short-Range Rapid Interdiction Fire Mode Tahan 2 kali."
+    }
+  },
+  "constellation5": {
+    "name": "Enhanced Incendiary Firepower",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Ring of Bursting Grenades</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "In Pursuit of Ending Evil",
+    "description": {
+      "0": "Setelah efek pemulihan <strong>Short-Range Rapid Interdiction Fire</strong> berlangsung selama 12 detik, akan memulihkan HP seluruh anggota party di sekitar satu kali, berdasarkan 10% Max HP Chevreuse.",
+      "1": "Karakter dalam party yang menerima pemulihan dari \"Short-Range Rapid Interdiction Fire\", akan mendapatkan 20% <pyro>Pyro DMG Bonus</pyro> dan <electro>Electro DMG Bonus</electro> selama 8 detik. Efek ini dapat ditumpuk hingga 3 lapis. Durasi setiap lapisannya terhitung secara terpisah."
+    }
+  }
+}

@@ -1,0 +1,155 @@
+{
+  "name": "Saccharose",
+  "title": "Harmlos und süß",
+  "description": "Eine Alchimistin, die sich für regelrecht alles um sie herum interessiert. Darüber hinaus erforscht sie die sogenannte Bio-Alchimie.",
+  "constellationName": "Ampulla",
+  "auto": {
+    "name": "Vereinfachte Windseelenschaffung",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Standardangriff</strong>",
+        "1": "Führt bis zu 4 Windseelen-Angriffe aus und verursacht <anemo>Anemo-Schaden</anemo>."
+      },
+      "charged": {
+        "0": "<strong>Heftiger Schlag</strong>",
+        "1": "Verbraucht eine gewisse Menge Ausdauer und verursacht nach kurzer Aufladezeit <anemo>Anemo-Flächenschaden</anemo>."
+      },
+      "plunging": {
+        "0": "<strong>Angriff aus dem Fall</strong>",
+        "1": "Konzentriert die Kraft der Windseelen, schlägt beim Fallen aus der Luft auf den Boden, greift alle Gegner in der Bahn an und verursacht beim Aufkommen <anemo>Anemo-Flächenschaden</anemo>."
+      }
+    },
+    "skillParams": {
+      "0": "SCH Phase 1",
+      "1": "SCH Phase 2",
+      "2": "SCH Phase 3",
+      "3": "SCH Phase 4",
+      "4": "SCH heftiger Schläge",
+      "5": "Ausdauerverbrauch heftiger Schläge",
+      "6": "SCH beim Fallen",
+      "7": "SCH beim Fallen aus niedriger/großer Höhe",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Windseelenschaffung – Experiment 6308",
+    "description": {
+      "0": "Beschwört eine kleine Windseele, die Gegner sowie Objekte anzieht und dann wegschleudert, und fügt den Gegnern im Wirkungsbereich <anemo>Anemo-Schaden</anemo> zu.",
+      "1": "<br/>",
+      "2": "<i>Es ist mir schon ein bisschen peinlich. Die bei diesem Verfahren entstehenden elementaren Lebensformen schwinden zwar nach kurzer Zeit, sind auf Abenteuern aber höchst nützlich. Fehlgeschlagene Experimente haben also auch ihren praktischen Nutzen.</i>"
+    },
+    "skillParams": {
+      "0": "Fähigkeits-SCH",
+      "1": "Abklingzeit",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Verbotene Windseelenschaffung – Isomorpher Typ 75-II",
+    "description": {
+      "0": "Saccharose wirft einen Glaskolben mit leicht reagierenden Stoffen und erschafft so eine große Windseele.",
+      "1": "Zieht während der Wirkungsdauer fortlaufend Gegner und Objekte in der Nähe an, schleudert die angezogenen Gegner weg und verursacht <anemo>Anemo-Schaden</anemo>.",
+      "2": "<br/>",
+      "3": "<strong>Elementarumwandlung</strong>",
+      "4": "Verleiht der Windseele beim Treffen auf <hydro>Hydro</hydro>-, <pyro>Pyro</pyro>-, <cryo>Kryo</cryo>- oder <electro>Elektro</electro>-Effekte während der Wirkungsdauer das jeweilige Element und verursacht dementsprechend zusätzlichen Schaden.",
+      "5": "Elementarumwandlung nur einmal während der Wirkungsdauer möglich.",
+      "6": "<br/>",
+      "7": "<i>Saccharose wollte ursprünglich jeder instabilen Anemo-Hypostase einen Namen geben. Dieses Vorhaben musste sie jedoch aufgeben, da bald mehr Hypostasen als Generationen von Graf von Hoppel zusammenkamen.</i>"
+    },
+    "skillParams": {
+      "0": "Fortlaufender SCH",
+      "1": "Zusätzlicher Elementar-SCH",
+      "2": "Dauer",
+      "3": "Abklingzeit",
+      "4": "Elementarenergie",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Katalysatorenkonversion",
+    "description": {
+      "0": "Erhöht die Elementarkunde aller Figuren in der Truppe des jeweiligen Elements (außer sich selbst) 8 s lang um 50 Punkte, wenn Saccharose eine Verwirbelung auslöst."
+    }
+  },
+  "passive2": {
+    "name": "Favonius Mollis",
+    "description": {
+      "0": "Erhöht die Elementarkunde aller Figuren in der Truppe (außer sich selbst) beim Treffen von Gegnern mit <strong>Windseelenschaffung – Experiment 6308</strong> oder <strong>Verbotene Windseelenschaffung – Isomorpher Typ 75-II</strong> 8 s lang in Höhe von 20 % von Saccharoses Elementarkunde."
+    }
+  },
+  "passive3": {
+    "name": "Instabile Entdeckung",
+    "description": {
+      "0": "Stellt beim Zusammensetzen von Material zur Verbesserung von Figuren und Waffen mit einer Wahrscheinlichkeit von 10 % den 2-fachen Ertrag her."
+    }
+  },
+  "constellation1": {
+    "name": "Gebündeltes Vakuumfeld",
+    "description": {
+      "0": "Ermöglicht 1 weitere Anwendung von <strong>Windseelenschaffung – Experiment 6308</strong>."
+    }
+  },
+  "constellation2": {
+    "name": "Beth – Ungezügelt",
+    "description": {
+      "0": "Verlängert die Wirkungsdauer von <strong>Verbotene Windseelenschaffung – Isomorpher Typ 75-II</strong> um 2 s."
+    }
+  },
+  "constellation3": {
+    "name": "Bestnote",
+    "description": {
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Windseelenschaffung – Experiment 6308</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation4": {
+    "name": "Besessenheit",
+    "description": {
+      "0": "Verkürzt die Abklingzeit von <strong>Windseelenschaffung – Experiment 6308</strong> alle 7 Standardangriffe oder heftige Schläge, die Saccharose bei Gegnern erzielt, zufällig um 1 bis 7 s.",
+      "1": "Ein Treffer kann alle 0,1 s gezählt werden."
+    }
+  },
+  "constellation5": {
+    "name": "Gewissenhaftes Handwerk",
+    "description": {
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Verbotene Windseelenschaffung – Isomorpher Typ 75-II</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation6": {
+    "name": "Chaotische Entropie",
+    "description": {
+      "0": "Erhöht den jeweiligen Elementar-SCH aller Truppenmitglieder bei einer Elementarumwandlung von <strong>Verbotene Windseelenschaffung – Isomorpher Typ 75-II</strong> während der Wirkungsdauer der Fähigkeit um 20 %."
+    }
+  }
+}

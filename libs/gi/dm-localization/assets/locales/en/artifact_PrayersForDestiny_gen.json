@@ -1,0 +1,12 @@
+{
+  "setName": "Prayers for Destiny",
+  "setEffects": {
+    "1": "Affected by Hydro for 40% less time."
+  },
+  "pieces": {
+    "circlet": {
+      "name": "Tiara of Torrents",
+      "desc": "A tiara worn by those tasked with offering sacrifices in ancient times. Because it was submerged in water year in and year out, it possesses remarkable resistance."
+    }
+  }
+}

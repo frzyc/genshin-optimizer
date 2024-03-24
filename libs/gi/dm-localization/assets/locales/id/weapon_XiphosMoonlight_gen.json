@@ -1,0 +1,24 @@
+{
+  "name": "Xiphos' Moonlight",
+  "description": {
+    "0": "Pedang kuno bermata dua yang memancarkan cahaya seperti bulan. Menurut legenda, ada Jinni yang menunggu dalam diam."
+  },
+  "passiveName": "Jinni's Whisper",
+  "passiveDescription": {
+    "0": {
+      "0": "Efek berikut akan dihasilkan setiap 10 detik: Untuk setiap poin Elemental Mastery Karakter yang mengenakan, akan meningkatkan <cryo>0,036%</cryo> Energy Recharge Karakter ini, sedangkan anggota party lain di sekitar mendapatkan peningkatan Energy Recharge sebesar 30% dari peningkatan tersebut, bertahan selama 12 detik. Saat efek ini dihasilkan oleh lebih dari satu Senjata dengan nama yang sama, efek akan bisa ditumpuk. Efek ini tetap dapat terpicu meskipun Karakter penggunanya ada dalam party namun sedang tidak berada di medan pertempuran."
+    },
+    "1": {
+      "0": "Efek berikut akan dihasilkan setiap 10 detik: Untuk setiap poin Elemental Mastery Karakter yang mengenakan, akan meningkatkan <cryo>0,045%</cryo> Energy Recharge Karakter ini, sedangkan anggota party lain di sekitar mendapatkan peningkatan Energy Recharge sebesar 30% dari peningkatan tersebut, bertahan selama 12 detik. Saat efek ini dihasilkan oleh lebih dari satu Senjata dengan nama yang sama, efek akan bisa ditumpuk. Efek ini tetap dapat terpicu meskipun Karakter penggunanya ada dalam party namun sedang tidak berada di medan pertempuran."
+    },
+    "2": {
+      "0": "Efek berikut akan dihasilkan setiap 10 detik: Untuk setiap poin Elemental Mastery Karakter yang mengenakan, akan meningkatkan <cryo>0,054%</cryo> Energy Recharge Karakter ini, sedangkan anggota party lain di sekitar mendapatkan peningkatan Energy Recharge sebesar 30% dari peningkatan tersebut, bertahan selama 12 detik. Saat efek ini dihasilkan oleh lebih dari satu Senjata dengan nama yang sama, efek akan bisa ditumpuk. Efek ini tetap dapat terpicu meskipun Karakter penggunanya ada dalam party namun sedang tidak berada di medan pertempuran."
+    },
+    "3": {
+      "0": "Efek berikut akan dihasilkan setiap 10 detik: Untuk setiap poin Elemental Mastery Karakter yang mengenakan, akan meningkatkan <cryo>0,063%</cryo> Energy Recharge Karakter ini, sedangkan anggota party lain di sekitar mendapatkan peningkatan Energy Recharge sebesar 30% dari peningkatan tersebut, bertahan selama 12 detik. Saat efek ini dihasilkan oleh lebih dari satu Senjata dengan nama yang sama, efek akan bisa ditumpuk. Efek ini tetap dapat terpicu meskipun Karakter penggunanya ada dalam party namun sedang tidak berada di medan pertempuran."
+    },
+    "4": {
+      "0": "Efek berikut akan dihasilkan setiap 10 detik: Untuk setiap poin Elemental Mastery Karakter yang mengenakan, akan meningkatkan <cryo>0,072%</cryo> Energy Recharge Karakter ini, sedangkan anggota party lain di sekitar mendapatkan peningkatan Energy Recharge sebesar 30% dari peningkatan tersebut, bertahan selama 12 detik. Saat efek ini dihasilkan oleh lebih dari satu Senjata dengan nama yang sama, efek akan bisa ditumpuk. Efek ini tetap dapat terpicu meskipun Karakter penggunanya ada dalam party namun sedang tidak berada di medan pertempuran."
+    }
+  }
+}

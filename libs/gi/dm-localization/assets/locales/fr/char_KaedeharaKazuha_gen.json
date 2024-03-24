@@ -1,0 +1,183 @@
+{
+  "burst": {
+    "name": "Coupure de mille feuilles",
+    "description": {
+      "0": "Déclenche la technique ultime de Garyuu, une coupure unique semblable à une tempête grondante qui inflige des <anemo>DGT Anémo de zone</anemo>.",
+      "1": "Le trajet de la lame laissera derrière lui un champ appelé « Vent d'automne » qui inflige des <anemo>DGT Anémo</anemo> de façon intermittente aux ennemis à l'intérieur.",
+      "2": "<br/>",
+      "3": "<strong>Absorption élémentaire</strong>",
+      "4": "Le vent d'automne absorbe les éléments <hydro>Hydro</hydro>, <pyro>Pyro</pyro>, <cryo>Cryo</cryo> et <electro>Électro</electro> avec lesquels il entre en contact, ceux-ci lui conférant leurs attributs et infligeant un bonus de DGT de l'élément correspondant.",
+      "5": "Un seul élément peut être absorbé à la fois.",
+      "6": "<br/>",
+      "7": "<i>« Je vois passer l'éternité en un instant, les automnes de plusieurs années d'une seule feuille... Ainsi je trancherai cet érable en un éclair, et je poserai la question des âges... »</i>"
+    },
+    "slashdmg": "DGT entaille",
+    "skillParams": {
+      "0": "DGT entaille",
+      "1": "DGT continus",
+      "2": "Bonus DGT élémentaires",
+      "3": "Durée",
+      "4": "Temps de recharge",
+      "5": "Énergie élémentaire",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "name": "Kaedehara Kazuha",
+  "title": "Tourbillon de feuilles écarlates",
+  "description": "Un samouraï errant d'Inazuma qui fait actuellement partie de la Flotte du Crux. Une âme douce et insouciante dont le cœur cache de nombreuses blessures.",
+  "constellationName": "Acer Palmatum",
+  "auto": {
+    "name": "Escrime de Garyuu",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attaque normale</strong>",
+        "1": "Enchaîne jusqu'à 5 coups d'épée."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Consomme de l'endurance pour déclencher deux coups d'épée rapides."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis en chemin et des DGT de zone à l'impact. Si une attaque plongeante est effectuée pendant « Véhémence divine », elle se transforme en « Attaque plongeante : Contrôle du chaos »."
+      },
+      "plunging_midare": {
+        "0": "<strong>Attaque plongeante : Contrôle du chaos</strong>",
+        "1": "Lorsqu'une attaque plongeante est déclenchée en utilisant les effets de la compétence élémentaire « Véhémence divine », ses DGT sont convertis en <anemo>DGT Anémo</anemo> et un petit tunnel venteux est créé à l'atterrissage à l'aide d'une technique d'épée secrète pour attirer les objets et les ennemis proches."
+      }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT 4e coup",
+      "4": "DGT 5e coup",
+      "5": "DGT attaque chargée",
+      "6": "Coût d'endurance attaque chargée",
+      "7": "DGT durant la chute",
+      "8": "DGT chute basse/élevée",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Véhémence divine",
+    "description": {
+      "0": "Libère une technique secrète aussi violente qu'une bourrasque déchaînée qui attire les ennemis et les objets vers la position actuelle de Kazuha, avant de projeter les ennemis situés dans la zone, leur infligeant des <anemo>DGT Anémo</anemo> et d'élever Kazuha sur un courant de vent impétueux.",
+      "1": "Si Kazuha déclenche une attaque plongeante depuis les airs dans un délai de 10 s après la compétence élémentaire « Véhémence divine », il provoque une attaque plongeante particulièrement puissante connue sous le nom de Contrôle du chaos.",
+      "2": "<br/>",
+      "3": "<strong>Appui simple</strong>",
+      "4": "Permet d'utiliser l'aptitude dans les airs.",
+      "5": "<br/>",
+      "6": "<strong>Appui long</strong>",
+      "7": "Charge l'aptitude avant de libérer davantage de <anemo>DGT Anémo</anemo> sur une zone plus large que lors d'un appui simple.",
+      "8": "<br/>",
+      "9": "<strong>Attaque plongeante : Contrôle du chaos</strong>",
+      "10": "Lorsqu'une attaque plongeante est déclenchée en utilisant les effets de la compétence élémentaire « Véhémence divine », ses DGT sont convertis en <anemo>DGT Anémo</anemo> et un petit tunnel venteux est créé à l'atterrissage à l'aide d'une technique d'épée secrète pour attirer les objets et les ennemis proches.",
+      "11": "Les DGT infligés par Contrôle du chaos sont considérés comme des DGT d'attaque plongeante.",
+      "12": "<br/>",
+      "13": "<i>« Les vents dans les érables pleurent, pour les dieux et les hommes du passé, comme des montagnes rouges d'automne. »</i>"
+    },
+    "skillParams": {
+      "0": "DGT appui simple",
+      "1": "TdR appui simple",
+      "2": "DGT appui long",
+      "3": "TdR appui long",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Lame d'érosion",
+    "description": {
+      "0": "Si <strong>Véhémence divine</strong> entre en contact avec l'élément <hydro>Hydro</hydro>, <pyro>Pyro</pyro>, <cryo>Cryo</cryo> ou <electro>Électro</electro> lors de son utilisation, l'attaque plongeante « Contrôle du chaos » déclenchée après cette <strong>Véhémence divine</strong> bénéficie d'une absorption élémentaire, ajoutant ensuite des DGT de l'élément correspondant pour 200 % de l'attaque, ces DGT étant considérés comme des DGT d'attaque plongeante.",
+      "1": "Un seul élément peut être absorbé à chaque utilisation de <strong>Véhémence divine</strong>."
+    }
+  },
+  "passive2": {
+    "name": "Haïku de la brise",
+    "description": {
+      "0": "Pour chaque point de maîtrise élémentaire de Kazuha, ce dernier accorde à tous les personnages de l'équipe un bonus de 0,04 % de DGT de l'élément correspondant pendant 8 s lorsqu'il a déclenché une Dispersion. Il est possible de cumuler les bonus de DGT de différents éléments grâce à cette méthode."
+    }
+  },
+  "passive3": {
+    "name": "Vent d'aube",
+    "description": {
+      "0": "Diminue la consommation d'endurance de vos personnages dans l'équipe de 20 % lors du sprint.",
+      "1": "Ne peut pas être cumulé avec d'autres aptitudes passives aux effets identiques."
+    }
+  },
+  "constellation1": {
+    "name": "Montagnes écarlates",
+    "description": {
+      "0": "Diminue le TdR de <strong>Véhémence divine</strong> de 10 %.",
+      "1": "<strong>Coupure de mille feuilles</strong> réinitialise le TdR de <strong>Véhémence divine</strong> lorsqu'elle est activée."
+    }
+  },
+  "constellation2": {
+    "name": "Zanshin des montagnes cruelles",
+    "description": {
+      "0": "Le champ de vent d'automne créé par <strong>Coupure de mille feuilles</strong> a les effets suivants :",
+      "1": [
+        " Tant qu'il est actif, la maîtrise élémentaire de Kazuha est augmentée de 200 pts.",
+        " La maîtrise élémentaire des personnages déployés dans le champ est augmentée de 200 pts."
+      ],
+      "2": "<br/>",
+      "3": "Les effets d'augmentation de maîtrise élémentaire de cette constellation ne se cumulent pas."
+    }
+  },
+  "constellation3": {
+    "name": "Mystère d'érable",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Véhémence divine</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation4": {
+    "name": "Illusion du néant",
+    "description": {
+      "0": "Quand l'énergie élémentaire de Kazuha tombe en dessous de 45 pts, il obtient les effets suivants :",
+      "1": [
+        " Cliquer simplement ou longuement pour utiliser <strong>Véhémence divine</strong> restaure l'énergie élémentaire de Kazuha de 3 ou 4 pts, respectivement.",
+        " Planer restaure l'énergie élémentaire de Kazuha de 2 pts toutes les secondes."
+      ]
+    }
+  },
+  "constellation5": {
+    "name": "Collection ancestrale",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Coupure de mille feuilles</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation6": {
+    "name": "Pétales écarlates",
+    "description": {
+      "0": "Kazuha bénéficie d'un <anemo>enchantement Anémo</anemo> pendant 5 s après avoir utilisé <strong>Véhémence divine</strong> ou <strong>Coupure de mille feuilles</strong>. De plus, chaque point de maîtrise élémentaire de Kazuha augmente les DGT infligés par son attaque normale, son attaque chargée et son attaque plongeante de 0,2 %."
+    }
+  }
+}

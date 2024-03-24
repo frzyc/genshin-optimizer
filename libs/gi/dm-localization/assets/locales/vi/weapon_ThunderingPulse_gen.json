@@ -1,0 +1,24 @@
+{
+  "name": "Sấm Sét Rung Động",
+  "description": {
+    "0": "Chiếc cung được Shogun ban tặng, ánh lên sắc màu của lôi điện bất diệt."
+  },
+  "passiveName": "Đế Chế Sấm Sét",
+  "passiveDescription": {
+    "0": {
+      "0": "Tấn công tăng <cryo>20%</cryo>, đồng thời nhận lấy sức mạnh \"Vết Cắt Sấm Sét\". Khi Vết Cắt Sấm Sét ở tầng 1/2/3 sẽ tăng sát thương tấn công thường tương ứng <cryo>12/24/40%</cryo>. Nhân vật sẽ được nhận 1 tầng Vết Cắt Sấm Sét khi: Gây sát thương tấn công thường trong 5 giây; thi triển Kỹ Năng Nguyên Tố tồn tại trong 10 giây; ngoài ra Năng Lượng Nguyên Tố thấp hơn 100%, sẽ tạo một tầng Vết Cắt Sấm Sét, Vết Cắt Sấm Sét của lần này sẽ biến mất sau khi Năng Lượng Nguyên Tố của nhân vật được nạp đầy. Thời gian tồn tại của mỗi tầng Vết Cắt Sấm Sét được tính độc lập với nhau."
+    },
+    "1": {
+      "0": "Tấn công tăng <cryo>25%</cryo>, đồng thời nhận lấy sức mạnh \"Vết Cắt Sấm Sét\". Khi Vết Cắt Sấm Sét ở tầng 1/2/3 sẽ tăng sát thương tấn công thường tương ứng <cryo>15/30/50%</cryo>. Nhân vật sẽ được nhận 1 tầng Vết Cắt Sấm Sét khi: Gây sát thương tấn công thường trong 5 giây; thi triển Kỹ Năng Nguyên Tố tồn tại trong 10 giây; ngoài ra Năng Lượng Nguyên Tố thấp hơn 100%, sẽ tạo một tầng Vết Cắt Sấm Sét, Vết Cắt Sấm Sét của lần này sẽ biến mất sau khi Năng Lượng Nguyên Tố của nhân vật được nạp đầy. Thời gian tồn tại của mỗi tầng Vết Cắt Sấm Sét được tính độc lập với nhau."
+    },
+    "2": {
+      "0": "Tấn công tăng <cryo>30%</cryo>, đồng thời nhận lấy sức mạnh \"Vết Cắt Sấm Sét\". Khi Vết Cắt Sấm Sét ở tầng 1/2/3 sẽ tăng sát thương tấn công thường tương ứng <cryo>18/36/60%</cryo>. Nhân vật sẽ được nhận 1 tầng Vết Cắt Sấm Sét khi: Gây sát thương tấn công thường trong 5 giây; thi triển Kỹ Năng Nguyên Tố tồn tại trong 10 giây; ngoài ra Năng Lượng Nguyên Tố thấp hơn 100%, sẽ tạo một tầng Vết Cắt Sấm Sét, Vết Cắt Sấm Sét của lần này sẽ biến mất sau khi Năng Lượng Nguyên Tố của nhân vật được nạp đầy. Thời gian tồn tại của mỗi tầng Vết Cắt Sấm Sét được tính độc lập với nhau."
+    },
+    "3": {
+      "0": "Tấn công tăng <cryo>35%</cryo>, đồng thời nhận lấy sức mạnh \"Vết Cắt Sấm Sét\". Khi Vết Cắt Sấm Sét ở tầng 1/2/3 sẽ tăng sát thương tấn công thường tương ứng <cryo>21/42/70%</cryo>. Nhân vật sẽ được nhận 1 tầng Vết Cắt Sấm Sét khi: Gây sát thương tấn công thường trong 5 giây; thi triển Kỹ Năng Nguyên Tố tồn tại trong 10 giây; ngoài ra Năng Lượng Nguyên Tố thấp hơn 100%, sẽ tạo một tầng Vết Cắt Sấm Sét, Vết Cắt Sấm Sét của lần này sẽ biến mất sau khi Năng Lượng Nguyên Tố của nhân vật được nạp đầy. Thời gian tồn tại của mỗi tầng Vết Cắt Sấm Sét được tính độc lập với nhau."
+    },
+    "4": {
+      "0": "Tấn công tăng <cryo>40%</cryo>, đồng thời nhận lấy sức mạnh \"Vết Cắt Sấm Sét\". Khi Vết Cắt Sấm Sét ở tầng 1/2/3 sẽ tăng sát thương tấn công thường tương ứng <cryo>24/48/80%</cryo>. Nhân vật sẽ được nhận 1 tầng Vết Cắt Sấm Sét khi: Gây sát thương tấn công thường trong 5 giây; thi triển Kỹ Năng Nguyên Tố tồn tại trong 10 giây; ngoài ra Năng Lượng Nguyên Tố thấp hơn 100%, sẽ tạo một tầng Vết Cắt Sấm Sét, Vết Cắt Sấm Sét của lần này sẽ biến mất sau khi Năng Lượng Nguyên Tố của nhân vật được nạp đầy. Thời gian tồn tại của mỗi tầng Vết Cắt Sấm Sét được tính độc lập với nhau."
+    }
+  }
+}

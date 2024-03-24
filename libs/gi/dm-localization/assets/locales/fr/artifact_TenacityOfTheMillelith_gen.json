@@ -1,0 +1,29 @@
+{
+  "setName": "Ténacité du Millelithe",
+  "setEffects": {
+    "2": "Les PV sont augmentés de 20 %.",
+    "4": "Lorsqu'une compétence élémentaire a touché un ennemi, l'ATQ de tous les personnages de l'équipe à proximité augmente de 20 % et la force de leur bouclier augmente de 30 % pendant 3 s. Cet effet peut être déclenché une fois toutes les 0,5 s, même lorsque le personnage équipé de ce set d'artéfacts fait partie de l'équipe mais n'est pas déployé."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Fleur honorifique",
+      "desc": "Une fleur faite à partir de feuille d'or. Elle symbolise les mérites et les honneurs de son porteur."
+    },
+    "plume": {
+      "name": "Plume de guerre du Commandant",
+      "desc": "Une plume de faucon portée lors des cérémonies officielles. Elle montre la dignité et la détermination du Port de Liyue aux yeux du monde entier."
+    },
+    "sands": {
+      "name": "Cadran solaire doré",
+      "desc": "Un appareil simple permettant de connaître l'heure. Il faisait autrefois partie du paquetage du Millelithe en temps de guerre."
+    },
+    "goblet": {
+      "name": "Coupe du serment",
+      "desc": "Une coupe en or utilisée par les Millelithes pour prêter serment. Elle porte encore le doux parfum du vin."
+    },
+    "circlet": {
+      "name": "Ancien heaume de Général",
+      "desc": "Un casque splendide qui a traversé les âges. Il suffit de nettoyer un peu la poussière et il sera de nouveau rutilant."
+    }
+  }
+}

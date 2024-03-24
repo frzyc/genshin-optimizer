@@ -1,0 +1,173 @@
+{
+  "name": "Thoma",
+  "title": "Protector From Afar",
+  "description": "Pengurus rumah tangga Klan Kamisato. Seorang \"kepala\" yang terkenal di Inazuma.",
+  "constellationName": "Rubeum Scutum",
+  "auto": {
+    "name": "Swiftshatter Spear",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Attack</strong>",
+        "1": "Melancarkan hingga 4 serangan tombak berturut-turut."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Mengonsumsi sejumlah Stamina untuk menerjang ke depan, mengakibatkan DMG pada musuh di jalur terjangan."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Menerjang dari udara untuk menghantam tanah, menyerang musuh di jalur terjangan dan mengakibatkan DMG area saat mendarat."
+      }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Tahap 4",
+      "4": "DMG Charged Attack",
+      "5": "Konsumsi Stamina Charged Attack",
+      "6": "DMG Selama Plunging",
+      "7": "DMG Plunging Attack Rendah/Tinggi",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Blazing Blessing",
+    "description": {
+      "0": "Thoma menggunakan ujung tombaknya sebagai poros untuk menyalurkan apinya dan melakukan tendangan yang mengakibatkan <pyro>Pyro DMG Area</pyro>, kemudian menciptakan sebuah pelindung Blazing Barrier. Saat melancarkan Elemental Skill, Thoma akan terkena <pyro>efek elemen Pyro</pyro> selama sekejap.",
+      "1": "DMG yang dapat ditahan oleh Barrier didasarkan pada Max HP Thoma.",
+      "2": "Blazing Barrier mempunyai efek sebagai berikut:",
+      "3": [
+        "Menahan <pyro>Pyro DMG</pyro> 250% lebih efektif.",
+        "Saat menciptakan Blazing Barrier baru, sisa DMG yang dapat ditahan oleh Blazing Barrier akan ditumpuk dan durasinya diperbarui."
+      ],
+      "4": "<br/>",
+      "5": "DMG maksimum yang dapat ditahan oleh Barrier tidak akan melebihi persentase tertentu dari Max HP Thoma.",
+      "6": "<br/>",
+      "7": "<i>Sebagai pendatang asing, hanya gairah membara yang memungkinkan Thoma bisa menguasai seni tombak Inazuma yang murni dan akurat. Penguasaan ilmu tombak Thoma memang tidak terbatas pada julukannya sebagai \"murid paling cepat belajar\" atau \"si ahli ilmu tombak\", tapi dia juga menanamkan tekad untuk melindungi orang lain dan mengusir musuh ke dalam seni tombaknya.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "Pertahanan Perisai",
+      "2": "Durasi Perisai",
+      "3": "Pertahanan Perisai Maksimum",
+      "4": "Cooldown",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Crimson Ooyoroi",
+    "description": {
+      "0": "Thoma memutar tombaknya untuk menebas musuh-musuh di sekitar dengan api membara yang mengakibatkan <pyro>Pyro DMG Area</pyro>, kemudian menciptakan efek Scorching Ooyoroi.",
+      "1": "<br/>",
+      "2": "<strong>Scorching Ooyoroi</strong>",
+      "3": "Normal Attack dari Karakter aktif yang memiliki efek Scorching Ooyoroi akan memicu Fiery Collapse yang mengakibatkan <pyro>Pyro DMG Area</pyro> dan menciptakan Blazing Barrier.",
+      "4": "Fiery Collapse dapat terpicu setiap 1 detik.",
+      "5": "<br/>",
+      "6": "Blazing Barrier yang diciptakan dengan cara ini mempunyai karakteristik yang sama dengan yang terbuat dari Elemental Skill Thoma \"Blazing Blessing\", kecuali pada jumlah DMG yang dapat ditahan:",
+      "7": [
+        "Menahan <pyro>Pyro DMG</pyro> 250% lebih efektif.",
+        "Saat menciptakan Blazing Barrier baru, sisa DMG yang dapat ditahan oleh Blazing Barrier akan ditumpuk dan durasinya diperbarui."
+      ],
+      "8": "<br/>",
+      "9": "DMG maksimum yang dapat ditahan oleh Barrier tidak akan melebihi persentase tertentu dari Max HP Thoma.",
+      "10": "<br/>",
+      "11": "Jika Thoma gugur, efek Scorching Ooyoroi akan hilang.",
+      "12": "<br/>",
+      "13": "<i>\"Aku tidak akan melupakan janjiku. Biarlah api yang melindungi orang-orang yang kusayang, terus membara dan tidak pernah padam.\"</i>"
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "DMG Fiery Collapse",
+      "2": "Pertahanan Perisai",
+      "3": "Durasi Perisai",
+      "4": "Durasi Scorching Ooyoroi",
+      "5": "Cooldown",
+      "6": "Konsumsi Energy",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Imbricated Armor",
+    "description": {
+      "0": "Saat Karakter yang sedang digunakan mendapatkan atau memperbarui <strong>Blazing Barrier</strong>, maka Kekuatan Perisai akan meningkat 5% selama 6 detik.",
+      "1": "Efek ini dapat terpicu setiap 0,3 detik. Maks. 5 lapis."
+    }
+  },
+  "passive2": {
+    "name": "Flaming Assault",
+    "description": {
+      "0": "DMG Fiery Collapse dari <strong>Crimson Ooyoroi</strong> meningkat sebesar 2,2 % dari Max HP Thoma."
+    }
+  },
+  "passive3": {
+    "name": "Snap and Swing",
+    "description": {
+      "0": "Saat Traveler sukses <strong>memancing</strong> di Inazuma, terdapat 20% kemungkinan untuk mendapatkan hasil dua kali lipat berkat bantuan Thoma."
+    }
+  },
+  "constellation1": {
+    "name": "A Comrade's Duty",
+    "description": {
+      "0": "Saat Karakter yang dilindungi oleh <strong>Blazing Barrier</strong> milik Thoma (kecuali Thoma sendiri) terkena serangan, maka CD <strong>Blazing Blessing</strong> Thoma akan berkurang 3 detik, dan CD <strong>Crimson Ooyoroi</strong> Thoma juga berkurang 3 detik.",
+      "1": "Efek ini dapat terpicu setiap 20 detik."
+    }
+  },
+  "constellation2": {
+    "name": "A Subordinate's Skills",
+    "description": {
+      "0": "Durasi <strong>Crimson Ooyoroi</strong> bertambah 3 detik."
+    }
+  },
+  "constellation3": {
+    "name": "Fortified Resolve",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Blazing Blessing</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Long-Term Planning",
+    "description": {
+      "0": "Memulihkan 15 Energy Thoma setelah menggunakan <strong>Crimson Ooyoroi</strong>."
+    }
+  },
+  "constellation5": {
+    "name": "Raging Wildfire",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Crimson Ooyoroi</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Burning Heart",
+    "description": {
+      "0": "Saat mendapatkan atau memperbarui <strong>Blazing Barrier</strong>, maka DMG Normal, Charged, dan Plunging Attack yang diakibatkan semua anggota party akan meningkat 15% selama 6 detik."
+    }
+  }
+}

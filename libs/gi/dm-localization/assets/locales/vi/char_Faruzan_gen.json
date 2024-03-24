@@ -1,0 +1,163 @@
+{
+  "name": "Faruzan",
+  "title": "Người Giải Bí Ẩn",
+  "description": "Học giả đến từ \"trăm năm trước\", thích được gọi là tiền bối, chuyên nghiên cứu về các loại văn tự cổ xưa và cơ quan cổ điển.",
+  "constellationName": "Cung Man Đằng Hoa Sức",
+  "auto": {
+    "name": "Tiễn Thuật Parthian",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Tấn Công Thường</strong>",
+        "1": "Thực hiện tối đa 4 lần bắn tên liên tiếp."
+      },
+      "charged": {
+        "0": "<strong>Trọng Kích</strong>",
+        "1": "Tiến hành <strong>ngắm bắn</strong> chuẩn hơn, có sát thương cao hơn.",
+        "2": "Khi ngắm bắn, gió sẽ tích tụ trên mũi tên. Mũi tên đầy gió sẽ gây <anemo>Sát Thương Nguyên Tố Phong</anemo>."
+      },
+      "plunging": {
+        "0": "<strong>Tấn Công Khi Đáp</strong>",
+        "1": "Bắn mưa tên xuống mặt đất, đồng thời lao nhanh xuống đất, tấn công kẻ địch trên đường và gây sát thương phạm vi khi chạm đất."
+      }
+    },
+    "skillParams": {
+      "0": "Sát Thương Lần 1",
+      "1": "Sát Thương Lần 2",
+      "2": "Sát Thương Lần 3",
+      "3": "Sát Thương Lần 4",
+      "4": "Ngắm Bắn",
+      "5": "Tụ Lực Ngắm Bắn",
+      "6": "Sát Thương Khi Rơi",
+      "7": "Sát Thương Khi Rơi Từ Độ Cao Thấp/Cao",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Phi Tưởng Phong Thiên",
+    "description": {
+      "0": "Faruzan triển khai khối đa diện, gây <anemo>Sát Thương Phạm Vi Nguyên Tố Phong</anemo> cho kẻ địch gần đó, đồng thời nhận được hiệu quả \"Lốc Xoáy Hiển Hiện\".",
+      "1": "Trong trạng thái \"Lốc Xoáy Hiển Hiện\", khi Faruzan tụ lực hoàn chỉnh ngắm bắn ở lần tiếp theo, sẽ tiêu hao hiệu quả \"Lốc Xoáy Hiển Hiện\" lần này để chuyển hóa thành Mũi Tên Bão Tố, căn cứ vào sát thương tụ lực hoàn chỉnh ngắm bắn của \"Tấn Công Thường - Tiễn Thuật Parthian\" để gây <anemo>Sát Thương Nguyên Tố Phong</anemo>.",
+      "2": "<br/>",
+      "3": "<strong>Áp Suất Sụp Đổ</strong>",
+      "4": "Mũi Tên Bão Tố sẽ tạo ra hiệu ứng \"Áp Suất Sụp Đổ\" cho kẻ địch hoặc nhân vật trúng phải. Hiệu ứng này sẽ được giải trừ trong thời gian ngắn để tạo thành Gió Xoáy, gây <anemo>Sát Thương Phạm Vi Nguyên Tố Phong</anemo>, đồng thời lôi kéo vật thể và kẻ địch gần đó; Nếu không trúng kẻ địch hoặc nhân vật, sẽ thi triển \"Áp Suất Sụp Đổ\" ở vị trí đó.",
+      "5": "Sát thương của Gió Xoáy được xem là sát thương Kỹ Năng Nguyên Tố.",
+      "6": "<br/>",
+      "7": "<i>Luồng gió chân lý sẽ nâng đỡ tinh thần của những người tìm kiếm sự thật, xua tan chướng ngại của định kiến.</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Kỹ Năng",
+      "1": "Sát Thương Gió Xoáy Của Áp Suất Sụp Đổ",
+      "2": "Thời Gian Duy Trì Lốc Xoáy Hiển Hiện",
+      "3": "CD",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Lối Đi Riêng Của Gió",
+    "description": {
+      "0": "Faruzan nhanh chóng triển khai \"Khối Đa Diện Sáng Chói\", thi triển 1 lần \"Xung Lốc Xoáy\" và gây <anemo>Sát Thương Phạm Vi Nguyên Tố Phong</anemo>.",
+      "1": "Trong thời gian tồn tại, Khối Đa Diện Sáng Chói sẽ liên tục di chuyển theo con đường hình tam giác. Mỗi lần di chuyển đến đỉnh điểm của con đường hình tam giác, Khối Đa Diện Sáng Chói sẽ thi triển thêm một lần Xung Lốc Xoáy.",
+      "2": "<br/>",
+      "3": "<strong>Xung Lốc Xoáy</strong>",
+      "4": [
+        "Xung Lốc Xoáy khi thi triển sẽ tạo hiệu ứng \"Ngọn Gió Tai Họa\" cho kẻ địch xung quanh: Giảm <anemo>Kháng Nguyên Tố Phong</anemo> của kẻ địch;",
+        "Khi thi triển Xung Lốc Xoáy sẽ tạo ra hiệu ứng \"Ngọn Gió Cầu Phúc\" cho tất cả nhân vật trong đội gần đó: Nhận được <anemo>Buff Sát Thương Nguyên Tố Phong</anemo>."
+      ],
+      "5": "<br/>",
+      "6": "<i>Phải có lòng tôn trọng với những trí tuệ ẩn sâu trong tàn tích cổ xưa.</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Kỹ Năng",
+      "1": "Tăng Sát Thương Nguyên Tố Phong",
+      "2": "Thời Gian Duy Trì Ngọn Gió Cầu Phúc",
+      "3": "Giảm Kháng Nguyên Tố Phong",
+      "4": "Thời Gian Duy Trì Ngọn Gió Tai Họa",
+      "5": "Thời Gian Kéo Dài",
+      "6": "CD",
+      "7": "Năng Lượng Nguyên Tố",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Ngọn Gió Nhanh Nhẹn",
+    "description": {
+      "0": "Khi Faruzan ở trong trạng thái \"Lốc Xoáy Hiển Hiện\" của <strong>Phi Tưởng Phong Thiên</strong>, sẽ giảm 60% thời gian cần để tụ lực ngắm bắn, đồng thời khiến hiệu quả Gió Xoáy của \"Áp Suất Sụp Đổ\" khi trúng kẻ địch sẽ gây thêm hiệu ứng \"Ngọn Gió Tai Họa\" từ <strong>Lối Đi Riêng Của Gió</strong>."
+    }
+  },
+  "passive2": {
+    "name": "Trí Tuệ Trong Di Tích",
+    "description": {
+      "0": "Tấn công thường, trọng kích, tấn công khi đáp, Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ của nhân vật trong trạng thái \"Ngọn Gió Cầu Phúc\" của <strong>Lối Đi Riêng Của Gió</strong> khi gây <anemo>Sát Thương Nguyên Tố Phong</anemo> cho kẻ địch sẽ sản sinh Bảo Hộ Gió Gầm: Tăng sát thương gây ra căn cứ vào 32% tấn công cơ bản của Faruzan, mỗi 0.8s tối đa sản sinh hiệu quả Bảo Hộ Gió Gầm một lần, hiệu quả này sẽ biến mất sau khi kết thúc thời gian duy trì Ngọn Gió Cầu Phúc hoặc sau khi đã kích hoạt 1 lần."
+    }
+  },
+  "passive3": {
+    "name": "Ngàn Sách Soi Đường Dài",
+    "description": {
+      "0": "Khi làm nhiệm vụ Phái Đi Thám Hiểm có thời gian là 20 giờ ở Sumeru, phần thưởng nhận được tăng 25%."
+    }
+  },
+  "constellation1": {
+    "name": "Sự Thật Bằng Mọi Cách",
+    "description": {
+      "0": "Trong một lần hiệu ứng \"Lốc Xoáy Hiển Hiện\" của <strong>Phi Tưởng Phong Thiên</strong>, Faruzan tối đa có thể bắn ra 2 \"Mũi Tên Bão Tố\" bằng cách hoàn thành tụ lực ngắm bắn."
+    }
+  },
+  "constellation2": {
+    "name": "Quên Mình Luyện Tri Thức",
+    "description": {
+      "0": "Thời gian tồn tại của \"Khối Đa Diện Sáng Chói\" từ <strong>Lối Đi Riêng Của Gió</strong> kéo dài thêm 6s."
+    }
+  },
+  "constellation3": {
+    "name": "Dạo Bước Vườn Linh Hồn",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Phi Tưởng Phong Thiên</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation4": {
+    "name": "Giác Ngộ Từ Thần Cơ",
+    "description": {
+      "0": "Gió Xoáy từ <strong>Áp Suất Sụp Đổ</strong> sẽ hồi phục Năng Lượng Nguyên Tố cho Faruzan dựa vào số lượng kẻ địch trúng phải: Khi trúng một kẻ địch sẽ hồi cho Faruzan 2 điểm Năng Lượng Nguyên Tố; Mỗi khi trúng thêm một kẻ địch sẽ hồi thêm cho Faruzan 0.5 điểm Năng Lượng Nguyên Tố.",
+      "1": "Trong một lần Gió Xoáy, tối đa hồi phục 4 điểm Năng Lượng Nguyên Tố cho Faruzan bằng cách này."
+    }
+  },
+  "constellation5": {
+    "name": "Cảnh Đẹp Trong Tư Duy",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Lối Đi Riêng Của Gió</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation6": {
+    "name": "Đường Chân Lý Kỳ Diệu",
+    "description": {
+      "0": "Nhân vật trong hiệu ứng \"Ngọn Gió Cầu Phúc\" từ <strong>Lối Đi Riêng Của Gió</strong> tăng 40% sát thương bạo kích khi gây <anemo>Sát Thương Nguyên Tố Phong</anemo>; Khi nhân vật trong trận hiện tại đang chịu ảnh hưởng từ hiệu ứng \"Ngọn Gió Cầu Phúc\" gây sát thương, sẽ gây thêm hiệu ứng \"Áp Suất Sụp Đổ\" cho kẻ địch đó. Hiệu quả này mỗi 3s tối đa kích hoạt một lần, tất cả nhân vật trong đội tính chung thời gian CD."
+    }
+  }
+}

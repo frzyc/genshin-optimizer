@@ -1,0 +1,169 @@
+{
+  "constellationName": "Cung Nguyên Hải Cự Linh",
+  "name": "Neuvillette",
+  "title": "Tiếng Sóng Phán Quyết",
+  "description": "Thẩm phán tối cao của Fontaine, nổi tiếng với sự công chính liêm minh của mình.",
+  "auto": {
+    "name": "Tĩnh Lặng Như Nước",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Tấn Công Thường</strong>",
+        "1": "Vung quyền trượng, triệu hồi sóng nước tấn công tối đa 3 lần, gây <hydro>Sát Thương Nguyên Tố Thủy</hydro>."
+      },
+      "chargedLegal": {
+        "0": "<strong>Tụ Lực Trọng Kích - Đánh Giá Hợp Pháp</strong>",
+        "1": "Khi tụ lực, Neuvillette sẽ tích tụ sức mạnh của nước, dần dần tạo thành Biểu Tượng Xét Xử. Trong trạng thái này, Neuvillette có thể di chuyển và thay đổi phương hướng, đồng thời hấp thụ Nguồn Nước Trong trong một phạm vi nhất định.",
+        "2": "Mỗi hấp thụ một Nguồn Nước Trong đều sẽ gia tăng tốc độ hình thành Biểu Tượng, đồng thời hồi phục HP cho Neuvillette.",
+        "3": "Khi kết thúc tụ lực, nếu Biểu Tượng chưa hoàn chỉnh sẽ tiến hành Trọng Kích; Nếu Biểu Tượng đã hoàn chỉnh thì sẽ chuyển thành thi triển Trọng Kích - Phán Quyết Công Bằng."
+      },
+      "charged": {
+        "0": "<strong>Trọng Kích</strong>",
+        "1": "Tiêu hao một lượng thể lực nhất định để tung ra vòng nước tấn công kẻ địch, gây <hydro>Sát Thương Phạm Vi Nguyên Tố Thủy</hydro>."
+      },
+      "chargedJudgment": {
+        "0": "<strong>Trọng Kích - Phán Quyết Công Bằng</strong>",
+        "1": "Triệu hồi thủy triều cuồn cuộn, liên tục gây <hydro>Sát Thương Phạm Vi Nguyên Tố Thủy</hydro> cho kẻ địch trong khu vực đường thẳng phía trước.",
+        "2": "Trọng Kích - Phán Quyết Công Bằng sẽ không tiêu hao thể lực, duy trì 3s.",
+        "3": "Nếu HP cao hơn 50%, Neuvillette khi thi triển sẽ liên tục tiêu hao HP."
+      },
+      "plunging": {
+        "0": "<strong>Tấn Công Khi Đáp</strong>",
+        "1": "Ngưng tụ sức mạnh nguyên tố Thủy, từ trên trời tấn công xuống mặt đất, tấn công kẻ địch trên đường đi, gây <hydro>Sát Thương Phạm Vi Nguyên Tố Thủy</hydro> khi chạm đất."
+      }
+    },
+    "skillParams": {
+      "0": "Sát Thương Lần 1",
+      "1": "Sát Thương Lần 2",
+      "2": "Sát Thương Lần 3",
+      "3": "Sát Thương Trọng Kích",
+      "4": "Thể Lực Trọng Kích Tiêu Hao",
+      "5": "Sát Thương Trọng Kích - Phán Quyết Công Bằng",
+      "6": "HP Hồi Phục",
+      "7": "HP Tổn Thất",
+      "8": "Sát Thương Khi Rơi",
+      "9": "Sát Thương Khi Rơi Từ Độ Cao Thấp/Cao",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Hoàn Trả Nước Mắt",
+    "description": {
+      "0": "Triệu hồi Thác Nước Tuôn Trào, dựa vào giới hạn HP của Neuvillette để gây cho kẻ địch phía trước <hydro>Sát Thương Phạm Vi Nguyên Tố Thủy</hydro>, sau khi trúng địch sẽ sản sinh 3 Nguồn Nước Trong ở xung quanh kẻ địch.",
+      "1": "<br/>",
+      "2": "<strong>Sức Mạnh Nền Tảng: Pneuma</strong>",
+      "3": "Cứ cách một khoảng thời gian, sau khi triệu hồi Thác Nước Tuôn Trào sẽ giáng xuống Gai Linh Hồn xuyên thấu kẻ địch, gây <hydro>Sát Thương Nguyên Tố Thủy</hydro> thuộc tính Pneuma.",
+      "4": "<br/>",
+      "5": "<i>\"Pháp luật có thể khống chế hành vi tội ác, nhưng không thể tiêu diệt bản chất tội ác.\"</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Kỹ Năng",
+      "1": "Sát Thương Gai Linh Hồn",
+      "2": "Giãn Cách Gai Linh Hồn",
+      "3": "Nguồn Nước Trong Duy Trì",
+      "4": "CD",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Về Với Thủy Triều",
+    "description": {
+      "0": "Thi triển đợt sóng cuồn cuộn, gây <hydro>Sát Thương Phạm Vi Nguyên Tố Thủy</hydro> dựa trên giới hạn HP của Neuvillette. Trong một thời gian ngắn sau, sẽ giáng xuống hai thác nước ở gần đó, gây <hydro>Sát Thương Nguyên Tố Thủy</hydro> trong phạm vi tương đối nhỏ, đồng thời sản sinh 6 Nguồn Nước Trong ở một phạm vi nhất định phía trước.",
+      "1": "<br/>",
+      "2": "<i>\"Quy luật chỉ được thiết lập sau khi nó được công bố. Còn quy luật tự nhiên thì đã trói buộc muôn loài và mọi thời đại từ thời xa xưa.\"</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Kỹ Năng",
+      "1": "Sát Thương Thác Nước",
+      "2": "CD",
+      "3": "Năng Lượng Nguyên Tố",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Di Sản Hậu Duệ Biển Xưa",
+    "description": {
+      "0": "Nhân vật trong đội khi kích hoạt phản ứng Bốc Hơi, Đóng Băng, Điện Cảm, Sum Suê, Khuếch Tán Nguyên Tố Thủy hoặc Kết Tinh Nguyên Tố Thủy lên kẻ địch, sẽ khiến Neuvillette sản sinh hiệu quả \"Vinh Dự Của Rồng\" trong 30s, tối đa cộng dồn 3 tầng. Khiến sát thương Trọng Kích - Phán Quyết Công Bằng gây ra tăng 110%/125%/160% so với mức ban đầu.",
+      "1": "\"Vinh Dự Của Rồng\" sinh ra từ mỗi loại phản ứng nguyên tố sẽ tồn tại độc lập nhau."
+    }
+  },
+  "passive2": {
+    "name": "Khuôn Phép Thẩm Phán Tối Cao",
+    "description": {
+      "0": "Mỗi 1% lượng HP hiện tại vượt qua mốc 30% HP tối đa sẽ khiến Neuvillette nhận được 0.6% <hydro>buff sát thương nguyên tố Thủy</hydro>. Tối đa tăng 30% bằng phương thức này."
+    }
+  },
+  "passive3": {
+    "name": "Dung Hòa Như Thủy Triều",
+    "description": {
+      "0": "Nhân vật trong đội khi xung kích dưới nước, tốc độ di chuyển tăng 15%.",
+      "1": "Không thể cộng dồn với buff Thiên Phú có cùng hiệu quả."
+    }
+  },
+  "constellation1": {
+    "name": "Khởi Đầu Của Tôn Quý",
+    "description": {
+      "0": "Khi Neuvillette ra trận sẽ nhận được một tầng \"Vinh Dự Của Rồng\" từ thiên phú cố định \"Di Sản Hậu Duệ Biển Xưa\". Cần mở khóa thiên phú \"Di Sản Hậu Duệ Biển Xưa\" trước.",
+      "1": "Ngoài ra, khi thi triển Tụ Lực Trọng Kích - Đánh Giá Hợp Pháp và Trọng Kích - Phán Quyết Công Bằng sẽ tăng khả năng kháng gián đoạn của Neuvillette."
+    }
+  },
+  "constellation2": {
+    "name": "Mệnh Lệnh Của Pháp Luật",
+    "description": {
+      "0": "Cường hóa thiên phú cố định \"Di Sản Hậu Duệ Biển Xưa\": Mỗi tồn tại một tầng \"Vinh Dự Của Rồng\" sẽ khiến sát thương bạo kích của Trọng Kích - Phán Quyết Công Bằng tăng 14%. Tối đa tăng 42% thông qua phương thức này.",
+      "1": "Cần mở khóa thiên phú \"Di Sản Hậu Duệ Biển Xưa\" trước."
+    }
+  },
+  "constellation3": {
+    "name": "Mô Phỏng Của Cổ Xưa",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Tấn Công Thường - Tĩnh Lặng Như Nước</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation4": {
+    "name": "Vinh Quang Của Xót Thương",
+    "description": {
+      "0": "Khi Neuvillette đang trong trận và nhận được trị liệu, sẽ sản sinh 1 Nguồn Nước Trong. Hiệu quả này mỗi 4s tối đa kích hoạt một lần."
+    }
+  },
+  "constellation5": {
+    "name": "Phán Quyết Của Công Lý",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Về Với Thủy Triều</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation6": {
+    "name": "Đền Bù Của Phẫn Nộ",
+    "description": {
+      "0": "Khi thi triển Trọng Kích - Phán Quyết Công Bằng, Neuvillette có thể hấp thu Nguồn Nước Trong trong một phạm vi nhất định gần đó. Mỗi một Nguồn Nước Trong sẽ khiến thời gian duy trì của Trọng Kích - Phán Quyết Công Bằng kéo dài thêm 1s.",
+      "1": "Ngoài ra, Trọng Kích - Phán Quyết Công Bằng khi trúng kẻ địch, mỗi 2s sẽ thi triển thêm 2 dòng thủy lưu, mỗi dòng thủy lưu gây <hydro>Sát Thương Nguyên Tố Thủy</hydro> tương đương 10% giới hạn HP của Neuvillette. Sát thương gây ra bằng phương thức này sẽ được tính là sát thương của Trọng Kích - Phán Quyết Công Bằng."
+    }
+  }
+}

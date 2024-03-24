@@ -1,0 +1,155 @@
+{
+  "name": "Sucrose",
+  "title": "Harmless Sweetie",
+  "description": "Seorang alkemis dipenuhi dengan rasa ingin tahu tentang semua hal. Dia meneliti bio-alkimia.",
+  "constellationName": "Ampulla",
+  "auto": {
+    "name": "Wind Spirit Creation",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Attack</strong>",
+        "1": "Melancarkan hingga 4 serangan angin yang mengakibatkan <anemo>Anemo DMG</anemo>."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Mengonsumsi sejumlah Stamina untuk mengakibatkan <anemo>Anemo DMG area</anemo> setelah jeda singkat."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Mengumpulkan kekuatan Anemo dan menerjang tanah, menyerang musuh di jalur terjangan dan mengakibatkan <anemo>Anemo DMG area</anemo> saat mendarat."
+      }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Tahap 4",
+      "4": "DMG Charged Attack",
+      "5": "Konsumsi Stamina Charged Attack",
+      "6": "DMG Selama Plunging",
+      "7": "DMG Plunging Attack Rendah/Tinggi",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Astable Anemohypostasis Creation - 6308",
+    "description": {
+      "0": "Menciptakan Wind Spirit kecil yang menarik musuh dan obyek ke lokasi Wind Spirit sebelum menghempas musuh di area tersebut; juga mengakibatkan <anemo>Anemo DMG</anemo>.",
+      "1": "<br/>",
+      "2": "<i>Ini sedikit memalukan, tetapi meskipun elemen kehidupan yang dilahirkan melalui prosedur ini menghilang dengan sangat cepat, mereka cukup berguna saat bertualang. Bahkan percobaan yang gagal pun dapat memiliki penggunaan yang praktis.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "Cooldown",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Forbidden Creation - Isomer 75 / Type II",
+    "description": {
+      "0": "Sucrose melemparkan sebuah ramuan yang menciptakan Large Wind Spirit.",
+      "1": "Selama ramuan itu ada, Large Wind Spirit akan terus-menerus menarik musuh dan obyek yang ada di sekitar, menghasilkan <anemo>Anemo DMG</anemo>.",
+      "2": "<br/>",
+      "3": "<strong>Elemental Absorption</strong>",
+      "4": "Ketika Wind Spirit bersentuhan dengan elemen<hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<electro>Electro</electro>, maka akan mengakibatkan elemental DMG tambahan dari tipe tersebut.",
+      "5": "Elemental Absorption hanya dapat muncul satu kali dalam sekali penggunaan.",
+      "6": "<br/>",
+      "7": "<i>Sucrose dulunya selalu memberikan nama kepada Anemo Hypostases miliknya. Namun mereka berkembang biak dengan cepat sampai melampaui Baron Bunny ke-893.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Berkelanjutan",
+      "1": "Tambahan Elemental DMG",
+      "2": "Durasi",
+      "3": "Cooldown",
+      "4": "Konsumsi Energy",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Catalyst Conversion",
+    "description": {
+      "0": "Ketika Sucrose memicu Swirl, akan meningkatkan Elemental Mastery anggota party dengan tipe elemen yang sama (tidak termasuk Sucrose sendiri) sebesar 50, berlangsung selama 8 detik."
+    }
+  },
+  "passive2": {
+    "name": "Mollis Favonius",
+    "description": {
+      "0": "Ketika skill <strong>Astable Anemohypostasis Creation - 6308</strong> atau <strong>Forbidden Creation - Isomer 75 / Type II</strong> mengenai musuh, akan meningkatkan Elemental Mastery seluruh anggota party (tidak termasuk Sucrose sendiri) sebanyak 20% dari Elemental Mastery Sucrose selama 8 detik."
+    }
+  },
+  "passive3": {
+    "name": "Astable Invention",
+    "description": {
+      "0": "Saat Sucrose membuat Material Penguatan Senjata dan Karakter, memiliki 10% kemungkinan untuk mendapatkan hasil 2 kali lipat."
+    }
+  },
+  "constellation1": {
+    "name": "Clustered Vacuum Field",
+    "description": {
+      "0": "Meningkatkan 1 charge <strong>Astable Anemohypostasis Creation - 6308</strong>."
+    }
+  },
+  "constellation2": {
+    "name": "Beth: Unbound Form",
+    "description": {
+      "0": "Durasi <strong>Forbidden Creation - Isomer 75 / Type II</strong> bertambah 2 detik."
+    }
+  },
+  "constellation3": {
+    "name": "Flawless Alchemistress",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Astable Anemohypostasis Creation - 6308</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Alchemania",
+    "description": {
+      "0": "Saat Normal Attack atau Charged Attack Sucrose mengenai musuh 7 kali, maka CD skill <strong>Astable Anemohypostasis Creation - 6308</strong> akan berkurang 1-7 detik secara acak.",
+      "1": "Serangan Sucrose dapat dihitung sebagai 1 kali setiap 0,1 detik."
+    }
+  },
+  "constellation5": {
+    "name": "Caution: Standard Flask",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Forbidden Creation - Isomer 75 / Type II</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Chaotic Entropy",
+    "description": {
+      "0": "Jika <strong>Forbidden Creation - Isomer 75 / Type II</strong> memicu Elemental Absorption, seluruh anggota party mendapatkan 20% Elemental DMG Bonus untuk elemen sesuai yang diserap selama durasinya."
+    }
+  }
+}

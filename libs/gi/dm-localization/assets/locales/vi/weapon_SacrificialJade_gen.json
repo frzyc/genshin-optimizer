@@ -1,0 +1,24 @@
+{
+  "name": "Ngọc Bích Hiến Tế",
+  "description": {
+    "0": "Viên ngọc cổ xưa, lấp lánh ánh sáng trong trẻo như nước, hình như là vật dụng trong tế lễ thời cổ đại."
+  },
+  "passiveName": "Bích Ngọc Lưu Chuyển",
+  "passiveDescription": {
+    "0": {
+      "0": "Khi không ra trận quá 5s, giới hạn HP tăng <cryo>32%</cryo>, Tinh Thông Nguyên Tố tăng <cryo>40</cryo> điểm. Hiệu quả này sẽ bị hủy khi người trang bị đã ra trận 10s."
+    },
+    "1": {
+      "0": "Khi không ra trận quá 5s, giới hạn HP tăng <cryo>40%</cryo>, Tinh Thông Nguyên Tố tăng <cryo>50</cryo> điểm. Hiệu quả này sẽ bị hủy khi người trang bị đã ra trận 10s."
+    },
+    "2": {
+      "0": "Khi không ra trận quá 5s, giới hạn HP tăng <cryo>48%</cryo>, Tinh Thông Nguyên Tố tăng <cryo>60</cryo> điểm. Hiệu quả này sẽ bị hủy khi người trang bị đã ra trận 10s."
+    },
+    "3": {
+      "0": "Khi không ra trận quá 5s, giới hạn HP tăng <cryo>56%</cryo>, Tinh Thông Nguyên Tố tăng <cryo>70</cryo> điểm. Hiệu quả này sẽ bị hủy khi người trang bị đã ra trận 10s."
+    },
+    "4": {
+      "0": "Khi không ra trận quá 5s, giới hạn HP tăng <cryo>64%</cryo>, Tinh Thông Nguyên Tố tăng <cryo>80</cryo> điểm. Hiệu quả này sẽ bị hủy khi người trang bị đã ra trận 10s."
+    }
+  }
+}

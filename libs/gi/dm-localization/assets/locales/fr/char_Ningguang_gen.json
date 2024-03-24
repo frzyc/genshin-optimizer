@@ -1,0 +1,161 @@
+{
+  "name": "Ningguang",
+  "title": "Megrez de l'éclipse",
+  "description": "La Megrez des Sept Étoiles de Liyue. Peu de personnes peuvent se vanter d'être aussi riches à travers Teyvat.",
+  "constellationName": "Opus Aequilibrium",
+  "auto": {
+    "name": "Géo-dispersion",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attaque normale</strong>",
+        "1": "Tire des gemmes qui infligent des <geo>DGT Géo</geo>.",
+        "2": "Ningguang obtient un Jade d'étoile à chaque fois qu'une gemme touche un ennemi."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Tire une gemme géante qui inflige des <geo>DGT Géo</geo>.",
+        "2": "Si Ningguang a obtenu des Jades d'étoile, l'attaque chargée les tire tous au même moment, infligeant des DGT supplémentaires."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Plonge depuis les airs en concentrant ses pouvoirs Géo, infligeant des DGT aux ennemis en chemin et des <geo>DGT Géo de zone</geo> à l'impact."
+      }
+    },
+    "skillParams": {
+      "0": "DGT attaque normale",
+      "1": "DGT attaque chargée",
+      "2": "DGT par Jade d'étoile",
+      "3": "Coût d'endurance attaque chargée",
+      "4": "DGT durant la chute",
+      "5": "DGT chute basse/élevée",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Paravent d'astrolabe",
+    "description": {
+      "0": "Ningguang puise dans son opulence pour créer un paravent d'or et d'obsidienne infligeant des <geo>DGT Géo de zone</geo>.",
+      "1": "<br/>",
+      "2": "<strong>Paravent d'astrolabe</strong>",
+      "3": [
+        " Bloque les projectiles ennemis.",
+        " Les PV du paravent sont proportionnels aux PV max de Ningguang."
+      ],
+      "4": "<br/>",
+      "5": "Le paravent d'astrolabe est une <geo>construction Géo</geo> qui peut bloquer certaines attaques mais ne peut pas être escaladée. Il ne peut exister qu'un seul paravent à la fois.",
+      "6": "<br/>",
+      "7": "<i>Les étoiles sont dispersées dans le ciel nocturne, les pions sont prêts sur l'échiquier divin. Alors, le paravent d'astrolabe commence à s'étendre.</i>"
+    },
+    "skillParams": {
+      "0": "PV hérités",
+      "1": "DGT compétence",
+      "2": "Temps de recharge",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Éclatement des étoiles",
+    "description": {
+      "0": "Ningguang fait tournoyer plusieurs jades précieux à tête chercheuse autour d'elle, qu'elle relâche tous en même temps, infligeant ainsi d'importants <geo>DGT Géo</geo>.",
+      "1": "Si le paravent d'astrolabe est actif lorsque cette attaque est exécutée, il l'accompagne de tirs de jade supplémentaires.",
+      "2": "<br/>",
+      "3": "<i>Éparses sont les ténèbres quand les étoiles sont éclatées.</i>"
+    },
+    "skillParams": {
+      "0": "DGT par gemme",
+      "1": "Temps de recharge",
+      "2": "Énergie élémentaire",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Plan de reprise",
+    "description": {
+      "0": "L'attaque chargée de Ningguang ne consomme pas d'endurance tant que celle-ci possède des Jades d'étoile."
+    }
+  },
+  "passive2": {
+    "name": "Réserve stratégique",
+    "description": {
+      "0": "Confère pendant 10 s un <geo>bonus de DGT Géo</geo> de 12 % aux personnages qui traversent le <strong>Paravent d'astrolabe</strong>."
+    }
+  },
+  "passive3": {
+    "name": "Corne d'abondance",
+    "description": {
+      "0": "Affiche l'emplacement des <strong>filons de minerai utilisables en forge</strong> sur la mini-carte."
+    }
+  },
+  "constellation1": {
+    "name": "Fragments perforants",
+    "description": {
+      "0": "Les attaques normales qui touchent infligent des DGT de zone."
+    }
+  },
+  "constellation2": {
+    "name": "Effet de choc",
+    "description": {
+      "0": "Le TdR de <strong>Paravent d'astrolabe</strong> est annulé lorsque ce dernier est brisé.",
+      "1": "Cet effet peut être déclenché une fois toutes les 6 s."
+    }
+  },
+  "constellation3": {
+    "name": "Alignement des étoiles",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Éclatement des étoiles</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation4": {
+    "name": "Exquis soit le Jade, éclatant de toutes parts",
+    "description": {
+      "0": "<strong>Paravent d'astrolabe</strong> augmente les RÉS élémentaires des personnages à proximité de 10 %."
+    }
+  },
+  "constellation5": {
+    "name": "Invincible soit le Paravent d'astrolabe",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Paravent d'astrolabe</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation6": {
+    "name": "Grandeur soit les Sept Étoiles",
+    "description": {
+      "0": "L'activation d'<strong>Éclatement des étoiles</strong> confère 7 Jades d'étoile à Ningguang."
+    }
+  }
+}

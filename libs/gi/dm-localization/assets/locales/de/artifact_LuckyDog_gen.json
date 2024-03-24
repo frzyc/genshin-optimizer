@@ -1,0 +1,29 @@
+{
+  "setName": "Glückspilz",
+  "setEffects": {
+    "2": "Erhöht die VTD um 100 Punkte.",
+    "4": "Stellt beim Sammeln von Mora 300 LP wieder her."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Glücksklee",
+      "desc": "Ein eigentlich sorglos in der Gegend herumstehendes vierblättriges Kleeblatt. Gepflückt wurde es nur, weil man ihm nachsagt, Glück zu bringen."
+    },
+    "plume": {
+      "name": "Glücksfeder",
+      "desc": "Diese Feder verschafft einem hin und wieder das Glück, das man braucht, damit beispielsweise das Monster, das es auf einen abgesehen hat, von einem vorbeiziehenden Falken abgelenkt wird."
+    },
+    "sands": {
+      "name": "Glückssanduhr",
+      "desc": "Diese Sanduhr ist kaputt und enthält keinen Sand mehr. Die Vergänglichkeit der Zeit spielt für sorgenfreie Gemüter aber sowieso keine Rolle."
+    },
+    "goblet": {
+      "name": "Glückskelch",
+      "desc": "Ein gut gearbeiteter Kelch aus Metall, mit dem man seinerzeit Diebe niedergestreckt hat."
+    },
+    "circlet": {
+      "name": "Silberner Glückshaarreif",
+      "desc": "Der ehemalige Besitzer fiel in eine Grube und entdeckte per Zufall den Schatz einer uralten Familie. Dieses Stück erinnert an diese Begebenheit."
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Centelleo Jadecaído",
+  "description": {
+    "0": "Un arma ritual hecha de un jade esmeralda que refleja el brillo del cielo y de unas aguas turquesas."
+  },
+  "passiveName": "Amuleto de jade",
+  "passiveDescription": {
+    "0": {
+      "0": "Tras usar una Habilidad Definitiva o crear un escudo, se activa el efecto de “amuleto de jade” durante 3 s, el cual regenera <cryo>4.5</cryo> pts. de Energía Elemental cada 2.5 s y hace que, por cada 1000 pts. de Vida Máx. que tenga el portador de esta arma, el Bono de Daño Elemental de su tipo elemental aumente en un <cryo>0.3%</cryo>, pudiendo aumentar hasta un máximo de un <cryo>12%</cryo>. El efecto de amuleto de jade podrá activarse incluso cuando el portador de esta arma esté en tu equipo pero no en uso."
+    },
+    "1": {
+      "0": "Tras usar una Habilidad Definitiva o crear un escudo, se activa el efecto de “amuleto de jade” durante 3 s, el cual regenera <cryo>5</cryo> pts. de Energía Elemental cada 2.5 s y hace que, por cada 1000 pts. de Vida Máx. que tenga el portador de esta arma, el Bono de Daño Elemental de su tipo elemental aumente en un <cryo>0.5%</cryo>, pudiendo aumentar hasta un máximo de un <cryo>20%</cryo>. El efecto de amuleto de jade podrá activarse incluso cuando el portador de esta arma esté en tu equipo pero no en uso."
+    },
+    "2": {
+      "0": "Tras usar una Habilidad Definitiva o crear un escudo, se activa el efecto de “amuleto de jade” durante 3 s, el cual regenera <cryo>5.5</cryo> pts. de Energía Elemental cada 2.5 s y hace que, por cada 1000 pts. de Vida Máx. que tenga el portador de esta arma, el Bono de Daño Elemental de su tipo elemental aumente en un <cryo>0.7%</cryo>, pudiendo aumentar hasta un máximo de un <cryo>28%</cryo>. El efecto de amuleto de jade podrá activarse incluso cuando el portador de esta arma esté en tu equipo pero no en uso."
+    },
+    "3": {
+      "0": "Tras usar una Habilidad Definitiva o crear un escudo, se activa el efecto de “amuleto de jade” durante 3 s, el cual regenera <cryo>6</cryo> pts. de Energía Elemental cada 2.5 s y hace que, por cada 1000 pts. de Vida Máx. que tenga el portador de esta arma, el Bono de Daño Elemental de su tipo elemental aumente en un <cryo>0.9%</cryo>, pudiendo aumentar hasta un máximo de un <cryo>36%</cryo>. El efecto de amuleto de jade podrá activarse incluso cuando el portador de esta arma esté en tu equipo pero no en uso."
+    },
+    "4": {
+      "0": "Tras usar una Habilidad Definitiva o crear un escudo, se activa el efecto de “amuleto de jade” durante 3 s, el cual regenera <cryo>6.5</cryo> pts. de Energía Elemental cada 2.5 s y hace que, por cada 1000 pts. de Vida Máx. que tenga el portador de esta arma, el Bono de Daño Elemental de su tipo elemental aumente en un <cryo>1.1%</cryo>, pudiendo aumentar hasta un máximo de un <cryo>44%</cryo>. El efecto de amuleto de jade podrá activarse incluso cuando el portador de esta arma esté en tu equipo pero no en uso."
+    }
+  }
+}

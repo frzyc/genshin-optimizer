@@ -1,0 +1,24 @@
+{
+  "name": "Jade Sacrificial",
+  "description": {
+    "0": "Una antigua pieza de jade del color de unas aguas turquesas. Posiblemente sea un viejo objeto de ofrendas y sacrificios."
+  },
+  "passiveName": "Jade fluctuante",
+  "passiveDescription": {
+    "0": {
+      "0": "Cuando el personaje está en tu equipo pero no en uso durante más de 5 s, su Vida Máx. aumenta en un <cryo>32%</cryo> y su Maestría Elemental aumenta en <cryo>40</cryo> pts. Este efecto se anulará cuando el portador de esta arma entre en el campo de batalla y permanezca en él durante 10 s."
+    },
+    "1": {
+      "0": "Cuando el personaje está en tu equipo pero no en uso durante más de 5 s, su Vida Máx. aumenta en un <cryo>40%</cryo> y su Maestría Elemental aumenta en <cryo>50</cryo> pts. Este efecto se anulará cuando el portador de esta arma entre en el campo de batalla y permanezca en él durante 10 s."
+    },
+    "2": {
+      "0": "Cuando el personaje está en tu equipo pero no en uso durante más de 5 s, su Vida Máx. aumenta en un <cryo>48%</cryo> y su Maestría Elemental aumenta en <cryo>60</cryo> pts. Este efecto se anulará cuando el portador de esta arma entre en el campo de batalla y permanezca en él durante 10 s."
+    },
+    "3": {
+      "0": "Cuando el personaje está en tu equipo pero no en uso durante más de 5 s, su Vida Máx. aumenta en un <cryo>56%</cryo> y su Maestría Elemental aumenta en <cryo>70</cryo> pts. Este efecto se anulará cuando el portador de esta arma entre en el campo de batalla y permanezca en él durante 10 s."
+    },
+    "4": {
+      "0": "Cuando el personaje está en tu equipo pero no en uso durante más de 5 s, su Vida Máx. aumenta en un <cryo>64%</cryo> y su Maestría Elemental aumenta en <cryo>80</cryo> pts. Este efecto se anulará cuando el portador de esta arma entre en el campo de batalla y permanezca en él durante 10 s."
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "setName": "Ritual del Destino",
+  "setEffects": {
+    "1": "Los efectos de Hydro causados sobre ti duran un 40% menos."
+  },
+  "pieces": {
+    "circlet": {
+      "name": "Diadema Torrencial",
+      "desc": "Una corona ceremonial portada por sacerdotes de tiempos antiguos al ofrecer un sacrificio a los dioses. Haber estado sumergida bajo el agua durante tantos años le ha dado una increíble resistencia al agua."
+    }
+  }
+}

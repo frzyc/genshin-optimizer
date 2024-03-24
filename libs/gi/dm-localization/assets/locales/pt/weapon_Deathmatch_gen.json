@@ -1,0 +1,24 @@
+{
+  "name": "Lança do Duelo",
+  "description": {
+    "0": "Uma lança afiada vermelho-sangue que era inestimável para um gladiador no passado. Sua ponta está manchada com o sangue de inúmeras bestas e pessoas."
+  },
+  "passiveName": "Gladiador",
+  "passiveDescription": {
+    "0": {
+      "0": "Se houver 2 inimigos ao redor, o ATQ é aumentado em <cryo>16%</cryo> e a DEF é aumentada em <cryo>16%</cryo>. Se houver menos que 2 inimigos ao redor, o ATQ é aumentado em <cryo>24%</cryo>."
+    },
+    "1": {
+      "0": "Se houver 2 inimigos ao redor, o ATQ é aumentado em <cryo>20%</cryo> e a DEF é aumentada em <cryo>20%</cryo>. Se houver menos que 2 inimigos ao redor, o ATQ é aumentado em <cryo>30%</cryo>."
+    },
+    "2": {
+      "0": "Se houver 2 inimigos ao redor, o ATQ é aumentado em <cryo>24%</cryo> e a DEF é aumentada em <cryo>24%</cryo>. Se houver menos que 2 inimigos ao redor, o ATQ é aumentado em <cryo>36%</cryo>."
+    },
+    "3": {
+      "0": "Se houver 2 inimigos ao redor, o ATQ é aumentado em <cryo>28%</cryo> e a DEF é aumentada em <cryo>28%</cryo>. Se houver menos que 2 inimigos ao redor, o ATQ é aumentado em <cryo>42%</cryo>."
+    },
+    "4": {
+      "0": "Se houver 2 inimigos ao redor, o ATQ é aumentado em <cryo>32%</cryo> e a DEF é aumentada em <cryo>32%</cryo>. Se houver menos que 2 inimigos ao redor, o ATQ é aumentado em <cryo>48%</cryo>."
+    }
+  }
+}

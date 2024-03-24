@@ -1,0 +1,24 @@
+{
+  "name": "Lâmina do Vento Mensageiro",
+  "description": {
+    "0": "Um estandarte que pode guiar os ventos. Os ventos que sopram por lugares idílicos nem sempre são suaves."
+  },
+  "passiveName": "Vento Inalcançável",
+  "passiveDescription": {
+    "0": {
+      "0": "Nos 10s depois de desencadear uma Reação Elemental, aumenta o ATQ em <cryo>12%</cryo> e a Proficiência Elemental em <cryo>48</cryo> pontos."
+    },
+    "1": {
+      "0": "Nos 10s depois de desencadear uma Reação Elemental, aumenta o ATQ em <cryo>15%</cryo> e a Proficiência Elemental em <cryo>60</cryo> pontos."
+    },
+    "2": {
+      "0": "Nos 10s depois de desencadear uma Reação Elemental, aumenta o ATQ em <cryo>18%</cryo> e a Proficiência Elemental em <cryo>72</cryo> pontos."
+    },
+    "3": {
+      "0": "Nos 10s depois de desencadear uma Reação Elemental, aumenta o ATQ em <cryo>21%</cryo> e a Proficiência Elemental em <cryo>84</cryo> pontos."
+    },
+    "4": {
+      "0": "Nos 10s depois de desencadear uma Reação Elemental, aumenta o ATQ em <cryo>24%</cryo> e a Proficiência Elemental em <cryo>96</cryo> pontos."
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "setName": "Lueur du vourukasha",
+  "setEffects": {
+    "2": "Les PV sont augmentés de 20 %.",
+    "4": "Les DGT infligés par les compétences et déchaînements élémentaires augmentent de 10 %. Lorsque le personnage équipé de l'artéfact a subi des DGT, cet effet de bonus de DGT augmente de 80 % pendant 5 s. Cet effet peut être cumulé 5 fois maximum, la durée de chaque cumul étant calculée de façon indépendante. Cet effet peut être déclenché même si le personnage fait partie de l'équipe mais n'est pas déployé."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Étamine de l'origine de la khvarena",
+      "desc": "Un insigne en forme de jolie petite fleur que portaient autrefois les pèlerins."
+    },
+    "plume": {
+      "name": "Penne vibrante",
+      "desc": "Une décoration exquise en forme de plume sur laquelle scintillent les teintes vives des feuilles verdoyantes et des fleurs parfumées."
+    },
+    "sands": {
+      "name": "Abscission ancienne",
+      "desc": "Un ancien garde-temps sur lequel brille la khvarena. Il est rempli d'un liquide pur qui semble vivant."
+    },
+    "goblet": {
+      "name": "Festin de joie sans bornes",
+      "desc": "Un verre à vin opulent qui était autrefois rempli de nectar et de miellat, mais qui est aujourd'hui vide."
+    },
+    "circlet": {
+      "name": "Cœur de la brillance de la khvarena",
+      "desc": "Des boucles d'oreilles complexes et vibrantes sur lesquelles l'éclat d'une centaine de fleurs semble couler."
+    }
+  }
+}

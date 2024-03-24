@@ -1,0 +1,24 @@
+{
+  "name": "Traveler's Handy Sword",
+  "description": {
+    "0": "Pedang baja yang nyaman untuk digenggam, di dalamnya tersembunyi gunting, kaca pembesar, kayu bakar, dan berbagai kebutuhan bertualang lainnya."
+  },
+  "passiveName": "Journey",
+  "passiveDescription": {
+    "0": {
+      "0": "Mengambil Elemental Energy Orb/Particle memulihkan <cryo>1%</cryo> HP."
+    },
+    "1": {
+      "0": "Mengambil Elemental Energy Orb/Particle memulihkan <cryo>1.25%</cryo> HP."
+    },
+    "2": {
+      "0": "Mengambil Elemental Energy Orb/Particle memulihkan <cryo>1.5%</cryo> HP."
+    },
+    "3": {
+      "0": "Mengambil Elemental Energy Orb/Particle memulihkan <cryo>1.75%</cryo> HP."
+    },
+    "4": {
+      "0": "Mengambil Elemental Energy Orb/Particle memulihkan <cryo>2%</cryo> HP."
+    }
+  }
+}

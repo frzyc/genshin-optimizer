@@ -1,0 +1,157 @@
+{
+  "name": "Kujou Sara",
+  "title": "Flecha de Penas de Corvo",
+  "description": "General da Comissão Tenryou. Audaciosa, decisiva e habilidosa na batalha.",
+  "constellationName": "Flabellum",
+  "auto": {
+    "name": "Tiro com Arco Tengu",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Ataque Normal</strong>",
+        "1": "Realiza até 5 tiros consecutivos com um arco."
+      },
+      "charged": {
+        "0": "<strong>Ataque Carregado</strong>",
+        "1": "Dispara um <strong>Tiro com Mira</strong> mais preciso e com Dano aumentado.",
+        "2": "Ao mirar, relâmpagos crepitantes irão se acumular na ponta da flecha. Uma flecha de relâmpago completamente carregada inflige <electro>Dano Electro</electro>."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Imersivo</strong>",
+        "1": "Dispara uma chuva de flechas em pleno ar antes de atingir o chão, infligindo Dano em uma AdE durante o impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Dano do 1° Golpe",
+      "1": "Dano do 2° Golpe",
+      "2": "Dano do 3° Golpe",
+      "3": "Dano do 4° Golpe",
+      "4": "Dano do 5° Golpe",
+      "5": "Disparo com Mira",
+      "6": "Disparo com Mira com Energização Completa",
+      "7": "Dano Durante a Queda",
+      "8": "Dano de Queda de Alta/Baixa Altitude",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Invocação da Tempestade Tengu",
+    "description": {
+      "0": "Retira-se rapidamente com a velocidade de um tengu, invocando a proteção da Pena do Corvo.",
+      "1": "Ganha a Proteção da Pena do Corvo por 18s, e quando a Kujou Sara dispara um tiro com mira totalmente carregada, a Proteção da Pena do Corvo será consumida, e deixará uma Pena do Corvo no local alvo.",
+      "2": "As Penas do Corvo desencadearão o Tengu Juurai: Emboscada após um curto período de tempo, causando <electro>Dano Electro</electro> e concedendo ao personagem ativo um Bônus de ATQ baseado no ATQ Base de Kujou Sara dentro da AdE do campo atual.",
+      "3": "<br/>",
+      "4": "<i>À raça tengu nunca faltaram talentos excepcionais que tenham recebido uma Visão Electro. É que eles costumam fazer cânticos à Arconte Electro enquanto manipulam o Electro. Os cânticos são mais ou menos assim</i>",
+      "5": "<i>\"Mostre sua força, ó louvável Narukami, e conceda a este suplicante sua força trovejante! Sowaka!\"</i>"
+    },
+    "skillParams": {
+      "0": "Dano do Tengu Juurai: Emboscada",
+      "1": "Taxa de Bônus de ATQ",
+      "2": "Duração do Bônus de ATQ",
+      "3": "Tempo de Recarga",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Subjugação: Koukou Sendou",
+    "description": {
+      "0": "Lança um Tengu Juurai: Destruidor de Titãs, causando <electro>Dano Electro em uma AdE</electro>. Depois disso, Tengu Juurai: Destruidor de Titãs irá se espalhar em 4 Tengu Juurai: Aglomerado de Tempestades consecutivos, causando <electro>Dano Electro em uma AdE</electro>.",
+      "1": "Tengu Juurai: Destruidor de Titãs e Tengu Juurai: Aglomerado de Tempestades permitirá que o personagem ativo receba o mesmo Bônus de ATQ que receberia durante a Habilidade Elemental dentro da AdE do campo atual, Invocação da Tempestade Tengu.",
+      "2": "<br/>",
+      "3": "O Bônus de ATQ fornecido por vários tipos de Tengu Juurai não será acumulado, e seus efeitos e duração serão determinados pelo último Tengu Juurai a entrar em vigor.",
+      "4": "<br/>",
+      "5": "<i>Sara abandonou seu povo, os tengu, e também perdeu temporariamente sua fé na Comissão Tenryou. Mas uma vez que as nuvens sobre seu coração se dissiparam, ela encontrou de novo seu próprio relâmpago.</i>"
+    },
+    "skillParams": {
+      "0": "Dano do Tengu Juurai: Destruidor de Titãs",
+      "1": "Dano do Tengu Juurai: Aglomerado de Tempestades",
+      "2": "Tempo de Recarga",
+      "3": "Energia Elemental",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Imovível",
+    "description": {
+      "0": "Enquanto estiver no estado de Proteção da Pena do Corvo concedido pela <strong>Invocação da Tempestade Tengu</strong>, o tempo do Disparo com Mira é reduzido em 60%."
+    }
+  },
+  "passive2": {
+    "name": "Decorum",
+    "description": {
+      "0": "Quando Tengu Juurai: Emboscada atinge os oponentes, Kujou Sara irá restaurar 1.2 de Energia para todos os membros da equipe para cada 100% de Recarga de Energia que ela tiver. Este efeito pode ser acionado uma vez a cada 3s."
+    }
+  },
+  "passive3": {
+    "name": "Pesquisa de Terreno",
+    "description": {
+      "0": "Quando despachada em uma expedição em Inazuma, o tempo consumido é reduzido em 25%"
+    }
+  },
+  "constellation1": {
+    "name": "Olho do Corvo",
+    "description": {
+      "0": "Quando Tengu Juurai concede aos personagens Bônus de ATQ ou acerta oponentes, o Tempo de Recarga da <strong>Invocação da Tempestade Tengu</strong> é diminuído em 1s.",
+      "1": "Este efeito pode ser desencadeado uma vez a cada 3s."
+    }
+  },
+  "constellation2": {
+    "name": "Asas Negras",
+    "description": {
+      "0": "Lançar a <strong>Invocação da Tempestade Tengu</strong> deixará uma Pena do Corvo mais fraca na posição original de Kujou Sara, que causará 30% do seu Dano original."
+    }
+  },
+  "constellation3": {
+    "name": "Guerra Interna",
+    "description": {
+      "0": "Aumenta o Nível de <strong>Subjugação: Koukou Sendou</strong> em 3.",
+      "1": "O nível máximo de elevação é 15."
+    }
+  },
+  "constellation4": {
+    "name": "Prova Conclusiva",
+    "description": {
+      "0": "O número de Tengu Juurai: Aglomerados de Tempestades liberados pela <strong>Subjugação: Koukou Sendou</strong> é aumentada para 6."
+    }
+  },
+  "constellation5": {
+    "name": "Soletrador de Feitiços",
+    "description": {
+      "0": "Aumenta o Nível de <strong>Invocação da Tempestade Tengu</strong> em 3.",
+      "1": "O nível máximo de elevação é 15."
+    }
+  },
+  "constellation6": {
+    "name": "Meu Mundo",
+    "description": {
+      "0": "O <electro>Dano Electro</electro> dos personagens que tiveram seus ATQs aumentados pelo Tengu Juurai tem seu Dano CRIT aumentado em 60%."
+    }
+  }
+}

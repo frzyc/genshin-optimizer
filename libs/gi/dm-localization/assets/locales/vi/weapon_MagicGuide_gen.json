@@ -1,0 +1,24 @@
+{
+  "name": "Tóm Tắt Ma Pháp",
+  "description": {
+    "0": "Phần 12, kết hợp thêm nội dung thời đại mới và sửa đổi một số lỗi của phần 11."
+  },
+  "passiveName": "Ngưng Thủy Diệt Lôi",
+  "passiveDescription": {
+    "0": {
+      "0": "Sát thương tạo ra cho kẻ địch bị ảnh hưởng bởi nguyên tố Thủy hoặc Lôi tăng <cryo>12%</cryo>."
+    },
+    "1": {
+      "0": "Sát thương tạo ra cho kẻ địch bị ảnh hưởng bởi nguyên tố Thủy hoặc Lôi tăng <cryo>15%</cryo>."
+    },
+    "2": {
+      "0": "Sát thương tạo ra cho kẻ địch bị ảnh hưởng bởi nguyên tố Thủy hoặc Lôi tăng <cryo>18%</cryo>."
+    },
+    "3": {
+      "0": "Sát thương tạo ra cho kẻ địch bị ảnh hưởng bởi nguyên tố Thủy hoặc Lôi tăng <cryo>21%</cryo>."
+    },
+    "4": {
+      "0": "Sát thương tạo ra cho kẻ địch bị ảnh hưởng bởi nguyên tố Thủy hoặc Lôi tăng <cryo>24%</cryo>."
+    }
+  }
+}

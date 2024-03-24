@@ -1,0 +1,157 @@
+{
+  "name": "Klee",
+  "title": "Fleeing Sunlight",
+  "description": "Seorang ahli peledak yang sudah menjadi langganan di ruang tahanan Knights of Favonius. Juga dikenal dengan nama Fleeing Sunlight.",
+  "constellationName": "Trifolium",
+  "auto": {
+    "name": "Kaboom!",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Attack</strong>",
+        "1": "Melempar benda yang akan meledak saat mengenai sesuatu! Melancarkan hingga 3 serangan ledakan yang mengakibatkan <pyro>Pyro DMG Area</pyro>."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Mengonsumsi sejumlah Stamina dan mengakibatkan <pyro>Pyro DMG Area</pyro> kepada musuh setelah jeda singkat."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Mengumpulkan kekuatan Pyro dan menerjang tanah, menyerang musuh di jalur terjangan dan mengakibatkan <pyro>Pyro DMG Area</pyro> saat mendarat."
+      }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Charged Attack",
+      "4": "Konsumsi Stamina Charged Attack",
+      "5": "DMG Selama Plunging",
+      "6": "DMG Plunging Attack Rendah/Tinggi",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Jumpy Dumpty",
+    "description": {
+      "0": "Melemparkan bom Jumpy Dumpty yang membawa kesenangan tidak terbatas!",
+      "1": "Saat dilempar, Jumpy Dumpty dapat memantul tiga kali, setiap pantulannya akan meledak dan mengakibatkan <pyro>Pyro DMG Area</pyro>.",
+      "2": "<br/>",
+      "3": "Pada pantulan ke-3, bomnya akan terbagi menjadi banyak ranjau.",
+      "4": "Ranjau-ranjau ini akan meledak saat menyentuh musuh, atau setelah jeda waktu yang singkat, kemudian mengakibatkan <pyro>Pyro DMG Area</pyro>.",
+      "5": "<br/>",
+      "6": "Dimulai dengan 2 kali jumlah penggunaan.",
+      "7": "<br/>",
+      "8": "<i>Jumpy Dumpty adalah teman baik Klee! Klee selalu tidak sabar untuk memperkenalkannya ke semua orang.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Jumpy Dumpty",
+      "1": "DMG Ranjau",
+      "2": "Durasi Ranjau",
+      "3": "Cooldown",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Sparks 'n' Splash",
+    "description": {
+      "0": "Kegembiraan Klee yang membara! Selama durasi skill, Sparks 'n' Splash yang muncul akan terus menyerang musuh-musuh di sekitar dan mengakibatkan <pyro>Pyro DMG Area</pyro>.",
+      "1": "<br/>",
+      "2": "<i>Para Knight meyakini kalau Klee pasti dilindungi sebuah bintang keberuntungan karena dia tidak pernah terluka karena bomnya sendiri ...</i>"
+    },
+    "skillParams": {
+      "0": "DMG Sparks 'n' Splash",
+      "1": "Durasi",
+      "2": "Cooldown",
+      "3": "Konsumsi Energy",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Pounding Surprise",
+    "description": {
+      "0": "Saat <strong>Jumpy Dumpty</strong> atau Normal Attack Klee mengakibatkan DMG, Klee memiliki 50% kemungkinan untuk mendapatkan Explosive Spark.",
+      "1": "Explosive Spark akan terkonsumsi saat Klee melancarkan Charged Attack dan membuatnya tidak mengonsumsi Stamina serta mengakibatkan 50% DMG lebih besar."
+    }
+  },
+  "passive2": {
+    "name": "Sparkling Burst",
+    "description": {
+      "0": "Seluruh anggota party akan mendapatkan 2 Energy saat Charged Attack Klee mengakibatkan CRIT."
+    }
+  },
+  "passive3": {
+    "name": "All Of My Treasures!",
+    "description": {
+      "0": "Memperlihatkan lokasi <strong>produk khas Mondstadt</strong> di sekitar pada peta kecil."
+    }
+  },
+  "constellation1": {
+    "name": "Chained Reaction",
+    "description": {
+      "0": "Saat melancarkan serangan atau skill, Klee memiliki kemungkinan untuk menimbulkan percikan api yang mengakibatkan DMG sebesar 120% dari DMG <strong>Sparks 'n' Splash</strong> pada musuh."
+    }
+  },
+  "constellation2": {
+    "name": "Explosive Frags",
+    "description": {
+      "0": "DEF musuh berkurang 23% selama 10 detik saat terkena ranjau dari <strong>Jumpy Dumpty</strong>."
+    }
+  },
+  "constellation3": {
+    "name": "Exquisite Compound",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Jumpy Dumpty</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Sparkly Explosion",
+    "description": {
+      "0": "Jika Klee meninggalkan medan pertempuran saat <strong>Sparks 'n' Splash</strong> sedang berlangsung, kepergian Klee akan memicu ledakan yang mengakibatkan <pyro>Pyro DMG Area</pyro> sebesar 555% ATK."
+    }
+  },
+  "constellation5": {
+    "name": "Nova Burst",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Sparks 'n' Splash</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Blazing Delight",
+    "description": {
+      "0": "Saat <strong>Sparks 'n' Splash</strong> aktif, Klee akan memulihkan 3 Energy setiap 3 detik untuk semua anggota party (tidak termasuk Klee sendiri).",
+      "1": "Setelah melancarkan <strong>Sparks 'n' Splash</strong>, seluruh anggota party mendapatkan 10% <pyro>Pyro DMG Bonus</pyro> selama 25 detik."
+    }
+  }
+}

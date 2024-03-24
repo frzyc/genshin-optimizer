@@ -1,0 +1,24 @@
+{
+  "name": "Konuşma Çubuğu",
+  "description": {
+    "0": "Çoğu kişiye göre bu obsidiyen işlemeli çubuk gayet ikna edicidir."
+  },
+  "passiveName": "\"Tatlı Dil\"",
+  "passiveDescription": {
+    "0": {
+      "0": "Ateş etkisine girdikten sonra 15 saniyeliğine Saldırı <cryo>%16</cryo> artar. Bu etki her 12 saniyede bir tetiklenebilir. Su, Buz, Elektrik veya Doğa etkisine girdikten sonra 15 saniyeliğine Tüm Element Hasarları <cryo>%12</cryo> artar. Bu etki her 12 saniyede bir tetiklenebilir."
+    },
+    "1": {
+      "0": "Ateş etkisine girdikten sonra 15 saniyeliğine Saldırı <cryo>%20</cryo> artar. Bu etki her 12 saniyede bir tetiklenebilir. Su, Buz, Elektrik veya Doğa etkisine girdikten sonra 15 saniyeliğine Tüm Element Hasarları <cryo>%15</cryo> artar. Bu etki her 12 saniyede bir tetiklenebilir."
+    },
+    "2": {
+      "0": "Ateş etkisine girdikten sonra 15 saniyeliğine Saldırı <cryo>%24</cryo> artar. Bu etki her 12 saniyede bir tetiklenebilir. Su, Buz, Elektrik veya Doğa etkisine girdikten sonra 15 saniyeliğine Tüm Element Hasarları <cryo>%18</cryo> artar. Bu etki her 12 saniyede bir tetiklenebilir."
+    },
+    "3": {
+      "0": "Ateş etkisine girdikten sonra 15 saniyeliğine Saldırı <cryo>%28</cryo> artar. Bu etki her 12 saniyede bir tetiklenebilir. Su, Buz, Elektrik veya Doğa etkisine girdikten sonra 15 saniyeliğine Tüm Element Hasarları <cryo>%21</cryo> artar. Bu etki her 12 saniyede bir tetiklenebilir."
+    },
+    "4": {
+      "0": "Ateş etkisine girdikten sonra 15 saniyeliğine Saldırı <cryo>%32</cryo> artar. Bu etki her 12 saniyede bir tetiklenebilir. Su, Buz, Elektrik veya Doğa etkisine girdikten sonra 15 saniyeliğine Tüm Element Hasarları <cryo>%24</cryo> artar. Bu etki her 12 saniyede bir tetiklenebilir."
+    }
+  }
+}

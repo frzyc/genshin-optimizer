@@ -1,0 +1,24 @@
+{
+  "name": "Điển Tích Tây Phong",
+  "description": {
+    "0": "Điển tích được người dân sùng bái gió viết nên. Qua ngàn năm, niềm tin được lưu truyền và nhận được sự ưu ái của gió, tràn đầy sức mạnh và sự chúc phúc."
+  },
+  "passiveName": "Sự Chăm Sóc Vô Biên",
+  "passiveDescription": {
+    "0": {
+      "0": "Tốc độ di chuyển tăng 10%; Lên trận mỗi 4s nhận <cryo>8%</cryo> buff sát thương Nguyên Tố. Cộng dồn tối đa 4 lần, kéo dài đến khi nhân vật ngã xuống hoặc rời trận."
+    },
+    "1": {
+      "0": "Tốc độ di chuyển tăng 10%; Lên trận mỗi 4s nhận <cryo>10%</cryo> buff sát thương nguyên tố. Cộng dồn tối đa 4 lần, kéo dài đến khi nhân vật ngã xuống hoặc rời trận."
+    },
+    "2": {
+      "0": "Tốc độ di chuyển tăng 10%; Lên trận mỗi 4s nhận <cryo>12%</cryo> buff sát thương Nguyên Tố. Cộng dồn tối đa 4 lần, kéo dài đến khi nhân vật ngã xuống hoặc rời trận."
+    },
+    "3": {
+      "0": "Tốc độ di chuyển tăng 10%; Lên trận mỗi 4s nhận <cryo>14%</cryo> buff sát thương Nguyên Tố. Cộng dồn tối đa 4 lần, kéo dài đến khi nhân vật ngã xuống hoặc rời trận."
+    },
+    "4": {
+      "0": "Tốc độ di chuyển tăng 10%; Lên trận mỗi 4s nhận <cryo>16%</cryo> buff sát thương Nguyên Tố. Cộng dồn tối đa 4 lần, kéo dài đến khi nhân vật ngã xuống hoặc rời trận."
+    }
+  }
+}

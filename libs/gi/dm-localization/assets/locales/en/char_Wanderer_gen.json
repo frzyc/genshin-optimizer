@@ -1,0 +1,178 @@
+{
+  "name": "Wanderer",
+  "title": "Eons Adrift",
+  "description": "A wayfaring figure whose identity is a mystery. He dresses like a mountain ascetic, but he certainly does not act the part.",
+  "constellationName": "Peregrinus",
+  "auto": {
+    "name": "Yuuban Meigen",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Attack</strong>",
+        "1": "Performs up to 3 attacks using wind blades, dealing <anemo>Anemo DMG</anemo>."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Consumes a certain amount of Stamina, gathers a build up of high wind pressure, and deals <anemo>AoE Anemo DMG</anemo> after a short casting time."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Calling upon the power of Anemo, the Wanderer plunges towards the ground from mid-air, damaging all opponents in his path. Deals <anemo>AoE Anemo DMG</anemo> upon impact with the ground."
+      }
+    },
+    "skillParams": {
+      "0": "1-Hit DMG",
+      "1": "2-Hit DMG",
+      "2": "3-Hit DMG",
+      "3": "Charged Attack DMG",
+      "4": "Charged Attack Stamina Cost",
+      "5": "Plunge DMG",
+      "6": "Low/High Plunge DMG",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Hanega: Song of the Wind",
+    "description": {
+      "0": "Concentrates the power of the winds to break free from the shackles of the earth, dealing <anemo>AoE Anemo DMG</anemo> before leaping into the air and entering the Windfavored state.",
+      "1": "<br/>",
+      "2": "<strong>Windfavored</strong>",
+      "3": "The Wanderer cannot perform Plunging Attacks in this state. When he uses Normal and Charged Attacks, they will be converted into Kuugo: Fushoudan and Kuugo: Toufukai respectively; the DMG they deal and their AoE will be increased, and their DMG will be considered Normal and Charged Attack DMG respectively. Kuugo: Toufukai will not consume Stamina.",
+      "4": "The Wanderer will hover persistently during this time. While this state is active, the Wanderer's movements gain the following properties:",
+      "5": [
+        "Persistently consumes Kuugoryoku Points to maintain this hovering state.",
+        "When sprinting, additional Kuugoryoku Points will be consumed for the Wanderer to accelerate mid-air. Holding sprint will cause persistent Kuugoryoku Point consumption to maintain speed. This effect will replace his default sprint.",
+        "Jumping expends extra Kuugoryoku Points to increase hovering height. Holding jump will cause persistent Kuugoryoku Point consumption to keep increasing hovering height."
+      ],
+      "6": "<br/>",
+      "7": "Running out of Kuugoryoku Points will end the Windfavored state.",
+      "8": "A second cast during the duration of Windfavored will also end it.",
+      "9": "<br/>",
+      "10": "<i>\"The world dances in a weightless whirl, presenting a secret that can only be found in the flowers.\"</i>"
+    },
+    "skillParams": {
+      "0": "Skill DMG",
+      "1": "Kuugo: Fushoudan DMG",
+      "2": "Kuugo: Toufukai DMG",
+      "3": "Initial Kuugoryoku Points",
+      "4": "CD",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Kyougen: Five Ceremonial Plays",
+    "description": {
+      "0": "Compresses the atmosphere into a singular vacuum that grinds all troubles away, dealing multiple instances of <anemo>AoE Anemo DMG</anemo>.",
+      "1": "If the character is in the Windfavored state due to the skill \"Hanega: Song of the Wind,\" Windfavored state will end after casting.",
+      "2": "<br/>",
+      "3": "<i>\"Bright be the narrowed gaze of the sky, casting its sight on dreams both past and present, like radiance washing over dust on the winds.\"</i>"
+    },
+    "skillParams": {
+      "0": "Skill DMG",
+      "1": "CD",
+      "2": "Energy Cost",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Jade-Claimed Flower",
+    "description": {
+      "0": "If <strong>Hanega: Song of the Wind</strong> comes into contact with <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<electro>Electro</electro> when it is unleashed, this instance of the Windfavored state will obtain buffs according to the contacted element(s):",
+      "1": [
+        "<hydro>Hydro</hydro>: Kuugoryoku Point cap increases by 20.",
+        "<pyro>Pyro</pyro>: ATK increases by 30%.",
+        "<cryo>Cryo</cryo>: CRIT Rate increases by 20%.",
+        "<electro>Electro</electro>: When Normal and Charged Attacks hit an opponent, 0.8 Energy will be restored. Energy can be restored this way once every 0.2s."
+      ],
+      "2": "<br/>",
+      "3": "You can have up to 2 different kinds of these buffs simultaneously."
+    }
+  },
+  "passive2": {
+    "name": "Gales of Reverie",
+    "description": {
+      "0": "When the Wanderer hits opponents with Kuugo: Fushoudan or Kuugo: Toufukai in his <strong>Windfavored</strong> state, he has a 16% chance to obtain the Descent effect: The next time the Wanderer accelerates in mid-air while in this instance of the Windfavored state, this effect will be removed, this acceleration instance will not consume any Kuugoryoku Points, and he will fire off 4 wind arrows that deal 35% of his ATK as <anemo>Anemo DMG</anemo> each.",
+      "1": "For each Kuugo: Fushoudan and Kuugo: Toufukai that does not produce this effect, the next attack of those types will have a 12% increased chance of producing it. The calculation of the effect production is done once every 0.1s."
+    }
+  },
+  "passive3": {
+    "name": "Strum the Swirling Winds",
+    "description": {
+      "0": "Mora expended when ascending Bows and Catalysts is decreased by 50%."
+    }
+  },
+  "constellation1": {
+    "name": "Shoban: Ostentatious Plumage",
+    "description": {
+      "0": "When in the <strong>Windfavored</strong> state, the Attack SPD of the Wanderer's Kuugo: Fushoudan and Kuugo: Toufukai is increased by 10%.",
+      "1": "Additionally, the wind arrows fired by the Passive Talent \"Gales of Reverie\" will deal an additional 25% of his ATK as DMG. You must unlock the Passive Talent \"Gales of Reverie\" first."
+    }
+  },
+  "constellation2": {
+    "name": "Niban: Isle Amidst White Waves",
+    "description": {
+      "0": "When in the <strong>Windfavored</strong> state, <strong>Kyougen: Five Ceremonial Plays</strong> will see its DMG increased by 4% per point of difference between the max amount of Kuugoryoku Points contrasted with Kuugoryoku's present capacity when using this skill.",
+      "1": "Through this method, you can increase Kyougen: Five Ceremonial Plays's DMG by a maximum of 200%."
+    }
+  },
+  "constellation3": {
+    "name": "Sanban: Moonflower Kusemai",
+    "description": {
+      "0": "Increases the Level of <strong>Kyougen: Five Ceremonial Plays</strong> by 3.",
+      "1": "Maximum upgrade level is 15."
+    }
+  },
+  "constellation4": {
+    "name": "Yonban: Set Adrift into Spring",
+    "description": {
+      "0": "When casting <strong>Hanega: Song of the Wind</strong>, should the Passive Talent \"Jade-Claimed Flower\" be triggered, the character will gain buffs in correspondence to the contacted Elemental Type(s), and also obtain a random untriggered buff. A maximum of 3 such corresponding elemental buffs can exist simultaneously.",
+      "1": "You must unlock the Passive Talent \"Jade-Claimed Flower\" first."
+    }
+  },
+  "constellation5": {
+    "name": "Matsuban: Ancient Illuminator From Abroad",
+    "description": {
+      "0": "Increases the Level of <strong>Hanega: Song of the Wind</strong> by 3.",
+      "1": "Maximum upgrade level is 15."
+    }
+  },
+  "constellation6": {
+    "name": "Shugen: The Curtains' Melancholic Sway",
+    "description": {
+      "0": "When the Wanderer actively hits an opponent with Kuugo: Fushoudan while in the <strong>Windfavored</strong> state, the following effects will occur:",
+      "1": [
+        "Deals an additional instance of Kuugo: Fushoudan at the position hit, dealing 40% of the attack's original DMG. This DMG will be considered Normal Attack DMG.",
+        "When the Wanderer falls below 40 Kuugoryoku Points, restores 4 Points to him. Kuugoryoku Points can be restored in this manner once every 0.2s. This restoration can occur up to 5 times within one Windfavored duration."
+      ]
+    }
+  }
+}

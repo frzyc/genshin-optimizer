@@ -1,0 +1,29 @@
+{
+  "setName": "Bereketli Rüyaların Hatıraları",
+  "setEffects": {
+    "2": "+%30 Savunma.",
+    "4": "Bu Yadigar setini kuşanan bir karakter, aşağıdaki durumlarda Merak etkisi kazanır: Savaş alanındayken, karakter düşmanı bir Toprak saldırısıyla vurursa 1 kademe kazanır, 0,3 saniyede bir defa tetiklenebilir. Karakter savaş alanında değilken, her 3 saniyede 1 kademe kazanır. 4 kademeye kadar Merak birikebilir, her bir kademe %6 Savunma ve %6 Toprak Hasar Bonusu kazandırır. Bir Merak kademesi kazanılmadan 6 saniye geçtiğinde, 1 kademe kaybedilir."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Çiçeklerin Zamanı",
+      "desc": "Asla solmayacak olan altı yapraktan oluşan altın bir süs. Ölümlü dünyadaki başarıların geçiciliğini simgeler."
+    },
+    "plume": {
+      "name": "İhtişam Tüyü",
+      "desc": "Münzevi bir yerden getirilen tüy şeklinde bir tılsım. Üreticisinin tutkusuyla bu köşkte dış dünyaya kapalı bir şekilde bırakılmış."
+    },
+    "sands": {
+      "name": "Yaşam Şarkısı",
+      "desc": "Inazumalılar için yalnızca küçük bir saat. İçindeki ana mekanizma söküldüğü için ibreleri oynamıyor."
+    },
+    "goblet": {
+      "name": "Uyanış Matarası",
+      "desc": "Altın tozu ve siyah boyayla süslenmiş bir matara. Artık gerçek rengi görülemese de sahne dekoru olarak kullanıldığı için pek de önemi yok."
+    },
+    "circlet": {
+      "name": "İskelet Şapka",
+      "desc": "Bir zamanlar gezginleri güneşten ve yağmurdan koruyan bir şapka. Nihayetinde yüzleri ve duyguları gizlemek için kullanılan bir araç haline gelmiş."
+    }
+  }
+}

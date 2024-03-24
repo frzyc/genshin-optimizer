@@ -1,0 +1,24 @@
+{
+  "name": "Traghettatore del Fleuve Cendre",
+  "description": {
+    "0": "Un tubo di rame abbandonato di media lunghezza, che un tempo veniva usato come arma. In certi ambienti, era considerato molto popolare o famigerato (in base ai punti di vista)."
+  },
+  "passiveName": "Ossa di ferro",
+  "passiveDescription": {
+    "0": {
+      "0": "Aumenta il tasso di CRIT dell'abilità elementale di un <cryo>8%</cryo>. In più, aumenta la ricarica d'energia di un <cryo>16%</cryo> per 5 s dopo l'utilizzo dell'abilità elementale."
+    },
+    "1": {
+      "0": "Aumenta il tasso di CRIT dell'abilità elementale di un <cryo>10%</cryo>. In più, aumenta la ricarica d'energia di un <cryo>20%</cryo> per 5 s dopo l'utilizzo dell'abilità elementale."
+    },
+    "2": {
+      "0": "Aumenta il tasso di CRIT dell'abilità elementale di un <cryo>12%</cryo>. In più, aumenta la ricarica d'energia di un <cryo>24%</cryo> per 5 s dopo l'utilizzo dell'abilità elementale."
+    },
+    "3": {
+      "0": "Aumenta il tasso di CRIT dell'abilità elementale di un <cryo>14%</cryo>. In più, aumenta la ricarica d'energia di un <cryo>28%</cryo> per 5 s dopo l'utilizzo dell'abilità elementale."
+    },
+    "4": {
+      "0": "Aumenta il tasso di CRIT dell'abilità elementale di un <cryo>16%</cryo>. In più, aumenta la ricarica d'energia di un <cryo>32%</cryo> per 5 s dopo l'utilizzo dell'abilità elementale."
+    }
+  }
+}

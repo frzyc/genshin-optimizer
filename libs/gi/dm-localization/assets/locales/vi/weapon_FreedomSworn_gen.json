@@ -1,0 +1,24 @@
+{
+  "name": "Lời Thề Tự Do Cổ Xưa",
+  "description": {
+    "0": "Thanh kiếm thẳng tắp màu xanh lam như tiếng ca hoài cổ, vũ khí sắc bén như lời thề tự do ở đất nước của gió."
+  },
+  "passiveName": "Bài Ca Kháng Chiến",
+  "passiveDescription": {
+    "0": {
+      "0": "Một phần của \"Ca Khúc Thời Đại Nghìn Năm\" lãng du trong gió. Sát thương tạo thành tăng <cryo>10%</cryo>; Khi kích hoạt phản ứng nguyên tố, nhân vật sẽ nhận 1 Lá Bùa Phấn Khởi, mỗi 0.5s tối đa kích hoạt một lần, nhân vật dự bị trong đội cũng sẽ kích hoạt. Khi có 2 Lá Bùa Phấn Khởi sẽ tiêu hao tất cả Lá Bùa Phấn Khởi, khiến tất cả nhân vật trong đội gần đó nhận được hiệu ứng \"Ca Khúc Thời Đại Nghìn Năm - Bài Ca Kháng Chiến\" trong 12s: Sát thương đánh thường, trọng kích, tấn công khi đáp tăng <cryo>16%</cryo>, tấn công tăng <cryo>20%</cryo>. Trong 20s sau khi kích hoạt sẽ không nhận được Lá Bùa Phấn Khởi nữa. Khi các hiệu quả của \"Ca Khúc Thời Đại Nghìn Năm\" đang kích hoạt, những hiệu quả cùng loại khác sẽ không được cộng dồn."
+    },
+    "1": {
+      "0": "Một phần của \"Ca Khúc Thời Đại Nghìn Năm\" lãng du trong gió. Sát thương tạo thành tăng <cryo>12.5%</cryo>; Khi kích hoạt phản ứng nguyên tố, nhân vật sẽ nhận 1 Lá Bùa Phấn Khởi, mỗi 0.5s tối đa kích hoạt một lần, nhân vật dự bị trong đội cũng sẽ kích hoạt. Khi có 2 Lá Bùa Phấn Khởi sẽ tiêu hao tất cả Lá Bùa Phấn Khởi, khiến tất cả nhân vật trong đội gần đó nhận được hiệu ứng \"Ca Khúc Thời Đại Nghìn Năm - Bài Ca Kháng Chiến\" trong 12s: Sát thương đánh thường, trọng kích, tấn công khi đáp tăng <cryo>20%</cryo>, tấn công tăng <cryo>25%</cryo>. Trong 20s sau khi kích hoạt sẽ không nhận được Lá Bùa Phấn Khởi nữa. Khi các hiệu quả của \"Ca Khúc Thời Đại Nghìn Năm\" đang kích hoạt, những hiệu quả cùng loại khác sẽ không được cộng dồn."
+    },
+    "2": {
+      "0": "Một phần của \"Ca Khúc Thời Đại Nghìn Năm\" lãng du trong gió. Sát thương tạo thành tăng <cryo>15%</cryo>; Khi kích hoạt phản ứng nguyên tố, nhân vật sẽ nhận 1 Lá Bùa Phấn Khởi, mỗi 0.5s tối đa kích hoạt một lần, nhân vật dự bị trong đội cũng sẽ kích hoạt. Khi có 2 Lá Bùa Phấn Khởi sẽ tiêu hao tất cả Lá Bùa Phấn Khởi, khiến tất cả nhân vật trong đội gần đó nhận được hiệu ứng \"Ca Khúc Thời Đại Nghìn Năm - Bài Ca Kháng Chiến\" trong 12s: Sát thương đánh thường, trọng kích, tấn công khi đáp tăng <cryo>24%</cryo>, tấn công tăng <cryo>30%</cryo>. Trong 20s sau khi kích hoạt sẽ không nhận được Lá Bùa Phấn Khởi nữa. Khi các hiệu quả của \"Ca Khúc Thời Đại Nghìn Năm\" đang kích hoạt, những hiệu quả cùng loại khác sẽ không được cộng dồn."
+    },
+    "3": {
+      "0": "Một phần của \"Ca Khúc Thời Đại Nghìn Năm\" lãng du trong gió. Sát thương tạo thành tăng <cryo>17.5%</cryo>; Khi kích hoạt phản ứng nguyên tố, nhân vật sẽ nhận 1 Lá Bùa Phấn Khởi, mỗi 0.5s tối đa kích hoạt một lần, nhân vật dự bị trong đội cũng sẽ kích hoạt. Khi có 2 Lá Bùa Phấn Khởi sẽ tiêu hao tất cả Lá Bùa Phấn Khởi, khiến tất cả nhân vật trong đội gần đó nhận được hiệu ứng \"Ca Khúc Thời Đại Nghìn Năm - Bài Ca Kháng Chiến\" trong 12s: Sát thương đánh thường, trọng kích, tấn công khi đáp tăng <cryo>28%</cryo>, tấn công tăng <cryo>35%</cryo>. Trong 20s sau khi kích hoạt sẽ không nhận được Lá Bùa Phấn Khởi nữa. Khi các hiệu quả của \"Ca Khúc Thời Đại Nghìn Năm\" đang kích hoạt, những hiệu quả cùng loại khác sẽ không được cộng dồn."
+    },
+    "4": {
+      "0": "Một phần của \"Ca Khúc Thời Đại Nghìn Năm\" lãng du trong gió. Sát thương tạo thành tăng <cryo>20%</cryo>; Khi kích hoạt phản ứng nguyên tố, nhân vật sẽ nhận 1 Lá Bùa Phấn Khởi, mỗi 0.5s tối đa kích hoạt một lần, nhân vật dự bị trong đội cũng sẽ kích hoạt. Khi có 2 Lá Bùa Phấn Khởi sẽ tiêu hao tất cả Lá Bùa Phấn Khởi, khiến tất cả nhân vật trong đội gần đó nhận được hiệu ứng \"Ca Khúc Thời Đại Nghìn Năm - Bài Ca Kháng Chiến\" trong 12s: Sát thương đánh thường, trọng kích, tấn công khi đáp tăng <cryo>32%</cryo>, tấn công tăng <cryo>40%</cryo>. Trong 20s sau khi kích hoạt sẽ không nhận được Lá Bùa Phấn Khởi nữa. Khi các hiệu quả của \"Ca Khúc Thời Đại Nghìn Năm\" đang kích hoạt, những hiệu quả cùng loại khác sẽ không được cộng dồn."
+    }
+  }
+}

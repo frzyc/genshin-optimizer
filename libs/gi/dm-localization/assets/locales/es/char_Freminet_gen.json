@@ -1,0 +1,176 @@
+{
+  "name": "Fréminet",
+  "title": "El Buzo de lo Insondable",
+  "description": "Un retraído joven experto en el arte del submarinismo. Bajo su gélido y distante talante, se oculta un corazón sin mácula alguna.",
+  "constellationName": "Automaton",
+  "auto": {
+    "name": "Espada vortiginosa",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Ataque Normal</strong>",
+        "1": "Realiza hasta 4 ataques de espada consecutivos."
+      },
+      "charged": {
+        "0": "<strong>Ataque Cargado</strong>",
+        "1": "Consume Aguante de manera constante para realizar golpes de espada giratorios contra los enemigos cercanos.",
+        "2": "Al final del Ataque Cargado, realizará un golpe de espada más poderoso."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Descendente</strong>",
+        "1": "Se lanza desde el aire para golpear el suelo, dañando a los enemigos cercanos e infligiendo Daño en el AdE en el momento del impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Daño de 1er golpe",
+      "1": "Daño de 2.º golpe",
+      "2": "Daño de 3er golpe",
+      "3": "Daño de 4.º golpe",
+      "4": "Daño de ATQ Cargado en ciclo",
+      "5": "Daño final de Ataque Cargado",
+      "6": "Coste de Aguante de ATQ Cargado",
+      "7": "Duración máx.",
+      "8": "Daño de Caída",
+      "9": "Daño de impacto de caída baja/alta",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Criopresurización",
+    "description": {
+      "0": "Ejecuta un ataque ascendente que inflige <cryo>Daño Cryo</cryo> y hace que Fréminet entre en el estado de “hora de Pers” durante 10 s.",
+      "1": "En este estado, la Habilidad Elemental de Fréminet se convierte en Presión quebrantadora.",
+      "2": "<br/>",
+      "3": "<strong>Presión quebrantadora</strong>",
+      "4": "Ejecuta distintos ataques en función del nivel de presión de hora de Pers y cancela dicho estado.",
+      "5": [
+        "Nivel 0: realiza un corte vertical que inflige <cryo>Daño Cryo</cryo>.",
+        "Niveles 1-3: junto a Pers, realiza un corte vertical que inflige <cryo>Daño Cryo</cryo> y Daño Físico. El daño infligido varía en función del nivel de presión.",
+        "Nivel 4: toma prestado todo el poder de un Pers completamente presurizado para infligir Daño Físico. Además, el Ataque Normal: Espada vortiginosa se convierte en Presión quebrantadora."
+      ],
+      "6": "<br/>",
+      "7": "<strong>Hora de Pers</strong>",
+      "8": "Cuando Fréminet ejecuta un Ataque Normal, al mismo tiempo libera unas oleadas de escarcha que infligen <cryo>Daño Cryo</cryo> y aumenta el nivel de presión de hora de Pers.",
+      "9": "El <cryo>Daño Cryo</cryo> infligido de esta forma se considera Daño de Habilidad Elemental.",
+      "10": "<br/>",
+      "11": "<strong>Arjé: pneuma</strong>",
+      "12": "Cada cierto intervalo de tiempo, tras realizar su ataque ascendente, Fréminet crea una espina halitoespiritual que ejecuta otro ataque ascendente y que inflige <cryo>Daño Cryo</cryo> cargado de energía pneuma.",
+      "13": "<br/>",
+      "14": "<i>Inmovilizar al oponente sin arrebatarle la vida podría considerarse una estrategia de supervivencia.</i>",
+      "15": "<i>“Pers, cuento contigo”.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de ataque ascendente",
+      "1": "Daño de oleadas de escarcha",
+      "2": "Daño de Presión quebrantadora (niv. 0)",
+      "3": "Daño de Presión quebrantadora (niv. 1)",
+      "4": "Daño de Presión quebrantadora (niv. 2)",
+      "5": "Daño de Presión quebrantadora (niv. 3)",
+      "6": "Daño de Presión quebrantadora (niv. 4)",
+      "7": "Daño de espina halitoespiritual",
+      "8": "Intervalo de espina halitoespiritual",
+      "9": "TdE",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Emboscada cazasombras",
+    "description": {
+      "0": "Libera una ola de frío intocable que inflige <cryo>Daño Cryo en el AdE</cryo>, reinicia el TdE de la Habilidad Elemental, “Criopresurización”, y hace que Fréminet entre en modo “acecho subacuático” durante 10 s.",
+      "1": "<br/>",
+      "2": "En este estado, aumenta la RES a interrupción de Fréminet, y Criopresurización obtiene los siguientes fortalecimientos:",
+      "3": [
+        "Su TdE se reduce en un 70%.",
+        "Al ejecutar un Ataque Normal, el nivel de presión de hora de Pers aumenta en un nivel adicional y las oleadas de escarcha liberadas con el Ataque Normal infligen un 200% de su daño original."
+      ],
+      "4": "<br/>",
+      "5": "Este efecto se anulará si Fréminet abandona el campo de batalla.",
+      "6": "<br/>",
+      "7": "<i>“Ahora... no necesito ningún ruido externo”.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "Duración",
+      "2": "TdE",
+      "3": "Energía Elemental",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Buceo de saturación",
+    "description": {
+      "0": "El TdE de Criopresurización se reduce en 1 s si, al usar <strong>Criopresurización: Presión quebrantadora</strong>, el nivel de presión de hora de Pers es inferior a 4."
+    }
+  },
+  "passive2": {
+    "name": "Condensador de flujos",
+    "description": {
+      "0": "Cuando Fréminet causa una reacción de Rompehielo contra un enemigo, el daño infligido por <strong>Criopresurización: Presión quebrantadora</strong> aumenta en un 40% durante 5 s."
+    }
+  },
+  "passive3": {
+    "name": "Pilotaje submarino",
+    "description": {
+      "0": "Disminuye en un 35% el Coste de Resistencia Acuática de tus personajes del equipo.",
+      "1": "No se puede acumular con otros talentos pasivos que tengan los mismos efectos."
+    }
+  },
+  "constellation1": {
+    "name": "Efervescencia onírica",
+    "description": {
+      "0": "Aumenta en un 15% la Prob. CRIT de <strong>Criopresurización: Presión quebrantadora</strong>."
+    }
+  },
+  "constellation2": {
+    "name": "Pingüinotopía",
+    "description": {
+      "0": "Al usar <strong>Criopresurización: Presión quebrantadora</strong>, Fréminet recupera 2 pts. de Energía Elemental. Si la Presión quebrantadora que libera es de nivel 4, en su lugar regenera 3 pts."
+    }
+  },
+  "constellation3": {
+    "name": "Melodía del torbellino y la arena",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Ataque Normal: Espada vortiginosa</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Danza luniflautina",
+    "description": {
+      "0": "Cuando Fréminet causa una reacción de Congelación, Rompehielo o Superconductor a un enemigo, aumenta el ATQ en un 9 %. Este efecto dura 6 s, puede acumularse hasta 2 veces y puede ocurrir una vez cada 0.3 s."
+    }
+  },
+  "constellation5": {
+    "name": "Noche de hogueras y júbilo",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Criopresurización</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Resolución del alba",
+    "description": {
+      "0": "Cuando Fréminet causa una reacción de Congelación, Rompehielo o Superconductor contra un enemigo, su Daño CRIT aumenta en un 12%. Este efecto dura 6 s, puede acumularse hasta 3 veces y puede ocurrir una vez cada 0.3 s."
+    }
+  }
+}

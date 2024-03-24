@@ -1,0 +1,24 @@
+{
+  "name": "Último Acorde",
+  "description": {
+    "0": "Un arco que alguna vez acompañó a un instrumento extraordinario. Ya no es capaz de hacer bailar a la gente."
+  },
+  "passiveName": "Canción sin flechas",
+  "passiveDescription": {
+    "0": {
+      "0": "Aumenta en un <cryo>24%</cryo> el daño de la Habilidad Elemental y la Habilidad Definitiva."
+    },
+    "1": {
+      "0": "Aumenta en un <cryo>30%</cryo> el daño de la Habilidad Elemental y la Habilidad Definitiva."
+    },
+    "2": {
+      "0": "Aumenta en un <cryo>36%</cryo> el daño de la Habilidad Elemental y la Habilidad Definitiva."
+    },
+    "3": {
+      "0": "Aumenta en un <cryo>42%</cryo> el daño de la Habilidad Elemental y la Habilidad Definitiva."
+    },
+    "4": {
+      "0": "Aumenta en un <cryo>48%</cryo> el daño de la Habilidad Elemental y la Habilidad Definitiva."
+    }
+  }
+}

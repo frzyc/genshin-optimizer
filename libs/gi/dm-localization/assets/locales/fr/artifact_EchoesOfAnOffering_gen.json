@@ -1,0 +1,29 @@
+{
+  "setName": "Échos d'une offrande",
+  "setEffects": {
+    "2": "Augmente l'ATQ de 18 %.",
+    "4": "En touchant un ennemi, les attaques normales ont 36 % de chances de déclencher l'effet Rituel de la vallée, augmentant les DGT d'attaque normale d'une valeur équivalant à 70 % de l'ATQ. Cet effet sera dissipé 0,05 s après avoir infligé des DGT avec une attaque normale. Chaque attaque normale ne déclenchant pas l'effet augmentera les chances de le déclencher la prochaine fois de 20 %. Cet effet peut être déclenché une fois toutes les 0,2 s."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Fleur d'aromesprit",
+      "desc": "Un jade sculpté en forme de fleur. Un parfum fantôme, ici un instant et disparu le suivant, tourbillonne autour de lui."
+    },
+    "plume": {
+      "name": "Feuille de jade",
+      "desc": "Un ornement de jade en forme de feuille. Il semble avoir eu autrefois une signification profonde aux yeux de certains amis..."
+    },
+    "sands": {
+      "name": "Symbole de félicitation",
+      "desc": "Un ornement circulaire en jade. La légende raconte qu'il était autrefois utilisé quelque part comme symbole pour le début des rituels."
+    },
+    "goblet": {
+      "name": "Calice des sources",
+      "desc": "Cette tasse déborde toujours d'eau fraîche. Peut-être était-ce un cadeau des Adeptes, un de leurs artéfacts, ou juste quelque chose qu'ils ont laissé derrière eux..."
+    },
+    "circlet": {
+      "name": "Anneaux de fluidité",
+      "desc": "Une paire de boucles d'oreilles faites d'un seul morceau de jade, dont la texture est des plus douces."
+    }
+  }
+}

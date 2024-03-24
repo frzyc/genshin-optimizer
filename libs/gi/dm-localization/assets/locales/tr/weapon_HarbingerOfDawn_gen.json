@@ -1,0 +1,24 @@
+{
+  "name": "Şafak Habercisi",
+  "description": {
+    "0": "Bir zamanlar güneş gibi parlamış bir kılıç. Bu kılıcı eline alan kişi kendini yenilmez hisseder. Kılıcın parlak kaplaması zaman içinde aşınmıştır."
+  },
+  "passiveName": "Dinç",
+  "passiveDescription": {
+    "0": {
+      "0": "Can %90'ın üzerindeyken Kritik Oranını <cryo>%14</cryo> artırır."
+    },
+    "1": {
+      "0": "Can %90'ın üzerindeyken Kritik Oranını <cryo>%17,5</cryo> artırır."
+    },
+    "2": {
+      "0": "Can %90'ın üzerindeyken Kritik Oranını <cryo>%21</cryo> artırır."
+    },
+    "3": {
+      "0": "Can %90'ın üzerindeyken Kritik Oranını <cryo>%24,5</cryo> artırır."
+    },
+    "4": {
+      "0": "Can %90'ın üzerindeyken Kritik Oranını <cryo>%28</cryo> artırır."
+    }
+  }
+}

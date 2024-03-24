@@ -1,0 +1,24 @@
+{
+  "name": "Kiếm Bạch Thiết",
+  "description": {
+    "0": "Kiếm được tôi luyện từ thép trắng, có trọng lực và cường độ tốt. Cho dù người thường cũng có thể sử dụng, trong tay kẻ mạnh thì càng có uy lực xuất chúng."
+  },
+  "passiveName": "Dứt Điểm",
+  "passiveDescription": {
+    "0": {
+      "0": "Khi đánh bại kẻ địch, hồi <cryo>8%</cryo> HP."
+    },
+    "1": {
+      "0": "Khi đánh bại kẻ địch, hồi <cryo>10%</cryo> HP."
+    },
+    "2": {
+      "0": "Khi đánh bại kẻ địch, hồi <cryo>12%</cryo> HP."
+    },
+    "3": {
+      "0": "Khi đánh bại kẻ địch, hồi <cryo>14%</cryo> HP."
+    },
+    "4": {
+      "0": "Khi đánh bại kẻ địch, hồi <cryo>16%</cryo> HP."
+    }
+  }
+}

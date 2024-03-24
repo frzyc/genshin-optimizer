@@ -1,0 +1,24 @@
+{
+  "name": "Toukabou Shigure",
+  "description": {
+    "0": "A rather special oil-paper umbrella. While long wanderings may make one used to the wind and the rain, there might be some fun in admiring a rainy scene beneath this parasol."
+  },
+  "passiveName": "Kaidan: Rainfall Earthbinder",
+  "passiveDescription": {
+    "0": {
+      "0": "After an attack hits opponents, it will inflict an instance of Cursed Parasol upon one of them for 10s. This effect can be triggered once every 15s. If this opponent is defeated during Cursed Parasol's duration, Cursed Parasol's CD will be refreshed immediately. The character wielding this weapon will deal <cryo>16%</cryo> more DMG to the opponent affected by Cursed Parasol."
+    },
+    "1": {
+      "0": "After an attack hits opponents, it will inflict an instance of Cursed Parasol upon one of them for 10s. This effect can be triggered once every 15s. If this opponent is defeated during Cursed Parasol's duration, Cursed Parasol's CD will be refreshed immediately. The character wielding this weapon will deal <cryo>20%</cryo> more DMG to the opponent affected by Cursed Parasol."
+    },
+    "2": {
+      "0": "After an attack hits opponents, it will inflict an instance of Cursed Parasol upon one of them for 10s. This effect can be triggered once every 15s. If this opponent is defeated during Cursed Parasol's duration, Cursed Parasol's CD will be refreshed immediately. The character wielding this weapon will deal <cryo>24%</cryo> more DMG to the opponent affected by Cursed Parasol."
+    },
+    "3": {
+      "0": "After an attack hits opponents, it will inflict an instance of Cursed Parasol upon one of them for 10s. This effect can be triggered once every 15s. If this opponent is defeated during Cursed Parasol's duration, Cursed Parasol's CD will be refreshed immediately. The character wielding this weapon will deal <cryo>28%</cryo> more DMG to the opponent affected by Cursed Parasol."
+    },
+    "4": {
+      "0": "After an attack hits opponents, it will inflict an instance of Cursed Parasol upon one of them for 10s. This effect can be triggered once every 15s. If this opponent is defeated during Cursed Parasol's duration, Cursed Parasol's CD will be refreshed immediately. The character wielding this weapon will deal <cryo>32%</cryo> more DMG to the opponent affected by Cursed Parasol."
+    }
+  }
+}

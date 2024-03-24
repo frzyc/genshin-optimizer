@@ -1,0 +1,24 @@
+{
+  "name": "Portable Power Saw",
+  "description": {
+    "0": "An old-school power saw that you can rarely find nowadays. It was once a cutting tool trusted by workers all around."
+  },
+  "passiveName": "Sea Shanty",
+  "passiveDescription": {
+    "0": {
+      "0": "When the wielder is healed or heals others, they will gain a Stoic's Symbol that lasts 30s, up to a maximum of 3 Symbols. When using their Elemental Skill or Burst, all Symbols will be consumed and the Roused effect will be granted for 10s. For each Symbol consumed, gain <cryo>40</cryo> Elemental Mastery, and 2s after the effect occurs, <cryo>2</cryo> Energy per Symbol consumed will be restored for said character. The Roused effect can be triggered once every 15s, and Symbols can be gained even when the character is not on the field."
+    },
+    "1": {
+      "0": "When the wielder is healed or heals others, they will gain a Stoic's Symbol that lasts 30s, up to a maximum of 3 Symbols. When using their Elemental Skill or Burst, all Symbols will be consumed and the Roused effect will be granted for 10s. For each Symbol consumed, gain <cryo>50</cryo> Elemental Mastery, and 2s after the effect occurs, <cryo>2.5</cryo> Energy per Symbol consumed will be restored for said character. The Roused effect can be triggered once every 15s, and Symbols can be gained even when the character is not on the field."
+    },
+    "2": {
+      "0": "When the wielder is healed or heals others, they will gain a Stoic's Symbol that lasts 30s, up to a maximum of 3 Symbols. When using their Elemental Skill or Burst, all Symbols will be consumed and the Roused effect will be granted for 10s. For each Symbol consumed, gain <cryo>60</cryo> Elemental Mastery, and 2s after the effect occurs, <cryo>3</cryo> Energy per Symbol consumed will be restored for said character. The Roused effect can be triggered once every 15s, and Symbols can be gained even when the character is not on the field."
+    },
+    "3": {
+      "0": "When the wielder is healed or heals others, they will gain a Stoic's Symbol that lasts 30s, up to a maximum of 3 Symbols. When using their Elemental Skill or Burst, all Symbols will be consumed and the Roused effect will be granted for 10s. For each Symbol consumed, gain <cryo>70</cryo> Elemental Mastery, and 2s after the effect occurs, <cryo>3.5</cryo> Energy per Symbol consumed will be restored for said character. The Roused effect can be triggered once every 15s, and Symbols can be gained even when the character is not on the field."
+    },
+    "4": {
+      "0": "When the wielder is healed or heals others, they will gain a Stoic's Symbol that lasts 30s, up to a maximum of 3 Symbols. When using their Elemental Skill or Burst, all Symbols will be consumed and the Roused effect will be granted for 10s. For each Symbol consumed, gain <cryo>80</cryo> Elemental Mastery, and 2s after the effect occurs, <cryo>4</cryo> Energy per Symbol consumed will be restored for said character. The Roused effect can be triggered once every 15s, and Symbols can be gained even when the character is not on the field."
+    }
+  }
+}

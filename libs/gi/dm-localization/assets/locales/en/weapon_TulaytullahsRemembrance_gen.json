@@ -1,0 +1,24 @@
+{
+  "name": "Tulaytullah's Remembrance",
+  "description": {
+    "0": "A bell crafted of deep sapphire and sterling silver. Its echoes are as crisp as they are distant."
+  },
+  "passiveName": "Bygone Azure Teardrop",
+  "passiveDescription": {
+    "0": {
+      "0": "Normal Attack SPD is increased by <cryo>10%</cryo>. After the wielder unleashes an Elemental Skill, Normal Attack DMG will increase by <cryo>4.8%</cryo> every second for 14s. After hitting an opponent with a Normal Attack during this duration, Normal Attack DMG will be increased by <cryo>9.6%</cryo>. This increase can be triggered once every 0.3s. The maximum Normal Attack DMG increase per single duration of the overall effect is <cryo>48%</cryo>. The effect will be removed when the wielder leaves the field, and using the Elemental Skill again will reset all DMG buffs."
+    },
+    "1": {
+      "0": "Normal Attack SPD is increased by <cryo>12.5%</cryo>. After the wielder unleashes an Elemental Skill, Normal Attack DMG will increase by <cryo>6%</cryo> every second for 14s. After hitting an opponent with a Normal Attack during this duration, Normal Attack DMG will be increased by <cryo>12%</cryo>. This increase can be triggered once every 0.3s. The maximum Normal Attack DMG increase per single duration of the overall effect is <cryo>60%</cryo>. The effect will be removed when the wielder leaves the field, and using the Elemental Skill again will reset all DMG buffs."
+    },
+    "2": {
+      "0": "Normal Attack SPD is increased by <cryo>15%</cryo>. After the wielder unleashes an Elemental Skill, Normal Attack DMG will increase by <cryo>7.2%</cryo> every second for 14s. After hitting an opponent with a Normal Attack during this duration, Normal Attack DMG will be increased by <cryo>14.4%</cryo>. This increase can be triggered once every 0.3s. The maximum Normal Attack DMG increase per single duration of the overall effect is <cryo>72%</cryo>. The effect will be removed when the wielder leaves the field, and using the Elemental Skill again will reset all DMG buffs."
+    },
+    "3": {
+      "0": "Normal Attack SPD is increased by <cryo>17.5%</cryo>. After the wielder unleashes an Elemental Skill, Normal Attack DMG will increase by <cryo>8.4%</cryo> every second for 14s. After hitting an opponent with a Normal Attack during this duration, Normal Attack DMG will be increased by <cryo>16.8%</cryo>. This increase can be triggered once every 0.3s. The maximum Normal Attack DMG increase per single duration of the overall effect is <cryo>84%</cryo>. The effect will be removed when the wielder leaves the field, and using the Elemental Skill again will reset all DMG buffs."
+    },
+    "4": {
+      "0": "Normal Attack SPD is increased by <cryo>20%</cryo>. After the wielder unleashes an Elemental Skill, Normal Attack DMG will increase by <cryo>9.6%</cryo> every second for 14s. After hitting an opponent with a Normal Attack during this duration, Normal Attack DMG will be increased by <cryo>19.2%</cryo>. This increase can be triggered once every 0.3s. The maximum Normal Attack DMG increase per single duration of the overall effect is <cryo>96%</cryo>. The effect will be removed when the wielder leaves the field, and using the Elemental Skill again will reset all DMG buffs."
+    }
+  }
+}

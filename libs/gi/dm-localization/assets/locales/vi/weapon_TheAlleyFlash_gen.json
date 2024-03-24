@@ -1,0 +1,24 @@
+{
+  "name": "Tia Sáng Nơi Hẻm Tối",
+  "description": {
+    "0": "Trường kiếm thẳng tắp có màu sắc của bóng đêm, từng thuộc về tên cướp ở bến cảng."
+  },
+  "passiveName": "Hiệp Sĩ Đường Phố",
+  "passiveDescription": {
+    "0": {
+      "0": "Sát thương nhân vật tạo thành tăng <cryo>12%</cryo>. Sau khi chịu phải sát thương, hiệu quả tăng sát thương này sẽ mất hiệu lực 5s."
+    },
+    "1": {
+      "0": "Sát thương nhân vật tạo thành tăng <cryo>15%</cryo>. Sau khi chịu phải sát thương, hiệu quả tăng sát thương này sẽ mất hiệu lực 5s."
+    },
+    "2": {
+      "0": "Sát thương nhân vật tạo thành tăng <cryo>18%</cryo>. Sau khi chịu phải sát thương, hiệu quả tăng sát thương này sẽ mất hiệu lực 5s."
+    },
+    "3": {
+      "0": "Sát thương nhân vật tạo thành tăng <cryo>21%</cryo>. Sau khi chịu phải sát thương, hiệu quả tăng sát thương này sẽ mất hiệu lực 5s."
+    },
+    "4": {
+      "0": "Sát thương nhân vật tạo thành tăng <cryo>24%</cryo>. Sau khi chịu phải sát thương, hiệu quả tăng sát thương này sẽ mất hiệu lực 5s."
+    }
+  }
+}

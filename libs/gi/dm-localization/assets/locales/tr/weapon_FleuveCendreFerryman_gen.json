@@ -1,0 +1,24 @@
+{
+  "name": "Cendre Nehri Kayıkçısı",
+  "description": {
+    "0": "Bir zamanlar silah görevi gören uzun bakır bir boru. Bazıları arasında ünlüydü, bazıları için de kötü bir namı vardı."
+  },
+  "passiveName": "Demir Kemik",
+  "passiveDescription": {
+    "0": {
+      "0": "Element Becerisinin Kritik Oranını <cryo>%8</cryo> artırır. Ek olarak bir Element Becerisi kullanıldıktan sonra 5 saniyeliğine Enerji Yüklemesini <cryo>%16</cryo> artırır."
+    },
+    "1": {
+      "0": "Element Becerisinin Kritik Oranını <cryo>%10</cryo> artırır. Ek olarak bir Element Becerisi kullanıldıktan sonra 5 saniyeliğine Enerji Yüklemesini <cryo>%20</cryo> artırır."
+    },
+    "2": {
+      "0": "Element Becerisinin Kritik Oranını <cryo>%12</cryo> artırır. Ek olarak bir Element Becerisi kullanıldıktan sonra 5 saniyeliğine Enerji Yüklemesini <cryo>%24</cryo> artırır."
+    },
+    "3": {
+      "0": "Element Becerisinin Kritik Oranını <cryo>%14</cryo> artırır. Ek olarak bir Element Becerisi kullanıldıktan sonra 5 saniyeliğine Enerji Yüklemesini <cryo>%28</cryo> artırır."
+    },
+    "4": {
+      "0": "Element Becerisinin Kritik Oranını <cryo>%16</cryo> artırır. Ek olarak bir Element Becerisi kullanıldıktan sonra 5 saniyeliğine Enerji Yüklemesini <cryo>%32</cryo> artırır."
+    }
+  }
+}

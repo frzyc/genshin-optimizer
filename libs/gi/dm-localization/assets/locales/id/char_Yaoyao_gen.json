@@ -1,0 +1,180 @@
+{
+  "name": "Yaoyao",
+  "title": "Burgeoning Grace",
+  "description": "Murid Streetward Rambler yang paling muda. Usianya masih kecil tapi sudah seperti orang dewasa, pribadinya lemah lembut dan penuh perhatian.",
+  "constellationName": "Osmanthus",
+  "auto": {
+    "name": "Toss 'N' Turn Spear",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Attack</strong>",
+        "1": "Melancarkan hingga 4 serangan tombak berturut-turut."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Mengonsumsi sejumlah Stamina untuk menerjang ke depan, mengakibatkan DMG pada musuh di jalur terjangan."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Menerjang dari udara untuk menghantam tanah, menyerang musuh di jalur terjangan dan mengakibatkan DMG area saat mendarat."
+      }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Tahap 4",
+      "4": "DMG Charged Attack",
+      "5": "Konsumsi Stamina Charged Attack",
+      "6": "DMG Selama Plunging",
+      "7": "DMG Plunging Attack Rendah/Tinggi",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Raphanus Sky Cluster",
+    "description": {
+      "0": "Memanggil mekanisme khusus buatan Adeptus, \"Yuegui: Throwing Mode\" untuk datang dan membantu Yaoyao mengatasi segala kerisauannya.",
+      "1": "Saat ditahan, akan melancarkan serangan dengan cara yang berbeda.",
+      "2": "<br/>",
+      "3": "<strong>Mode Tahan</strong>",
+      "4": "Memasuki Mode Membidik untuk menyesuaikan arah melempar.",
+      "5": "<br/>",
+      "6": "<strong>Yuegui: Throwing Mode</strong>",
+      "7": "Melemparkan White Jade Radish yang akan meledak saat mengenai Karakter atau musuh dan mengakibatkan <dendro>Dendro DMG</dendro> kepada musuh di dalam radius tertentu dan memulihkan HP Karakter dalam radius yang sama tersebut berdasarkan Max HP Yaoyao; Jika tidak mengenai musuh atau Karakter, White Jade Radish akan tetap berada di posisi awal dan akan meledak saat menyentuh Karakter atau musuh, atau setelah durasinya berakhir.",
+      "8": "Yuegui: Throwing Mode akan memilih target pelemparan White Jade Radish berdasarkan situasi di sekitarnya:",
+      "9": [
+        "Saat HP Karakter di sekitar berada di atas 70%, akan dilemparkan kepada satu musuh di sekitar;",
+        "Saat ada Karakter dengan HP di bawah atau sama dengan 70%, maka akan dilemparkan kepada Karakter dengan persentase HP paling rendah. Jika tidak ada musuh di sekitar, maka akan tetap dilemparkan kepada Karakter meskipun HP Karakter berada di atas 70% dan di bawah 100%. Jika tidak, maka akan dilemparkan ke tempat acak di sekitar."
+      ],
+      "10": "<br/>",
+      "11": "Hanya bisa ada 2 Yuegui: Throwing Mode di saat yang sama.",
+      "12": "<br/>",
+      "13": "<i>Satu lobak sehari akan membuatmu jauh dari dokter ... Oh, ini bukan soal fungsi kesehatan lobak ... Tepat sekali, tapi lobak memang punya manfaat untuk kesehatan, yey!</i>"
+    },
+    "skillParams": {
+      "0": "DMG White Jade Radish",
+      "1": "Pemulihan White Jade Radish",
+      "2": "Durasi Yuegui: Throwing Mode",
+      "3": "Durasi White Jade Radish",
+      "4": "Cooldown",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Moonjade Descent",
+    "description": {
+      "0": "Mengikuti perintah dari satu Adeptus dan melepaskan seluruh kemampuan tersembunyi Yuegui: Throwing Mode dalam kondisi genting, mengakibatkan <dendro>Dendro DMG</dendro> terhadap musuh di sekitar, dan memasuki (dalam arti tertentu) status Adeptal Legacy dengan kekuatan terkuat.",
+      "1": "<br/>",
+      "2": "<strong>Adeptal Legacy</strong>",
+      "3": [
+        "White Jade Radish yang dihasilkan akan dikonversi menjadi DMG dan pemulihan berdasarkan status skill ini. Saat meledak, akan memulihkan HP seluruh anggota party di sekitar, <dendro>Dendro DMG</dendro> yang diakibatkan akan dianggap sebagai DMG Elemental Burst;",
+        "Akan memanggil Yuegui: Jumping Mode secara berkala hingga jumlahnya mencapai batas maksimum. Yuegui: Jumping Mode akan memiliki tindakan yang sama dengan Yuegui: Throwing Mode dari Elemental Skill Raphanus Sky Cluster. Maksimum 3 Yuegui: Jumping Mode yang bisa dipanggil di saat yang bersamaan;",
+        "Movement SPD Yaoyao meningkat 15%;",
+        "Yaoyao mendapatkan peningkatan <dendro>Dendro RES</dendro>."
+      ],
+      "4": "<br/>",
+      "5": "Status Adeptal Legacy akan berakhir saat Yaoyao meninggalkan medan pertempuran. Saat status Adeptal Legacy berakhir, seluruh Yuegui: Jumping Mode akan hilang.",
+      "6": "<br/>",
+      "7": "<i>\"Eh? Kamu tanya yang mana yang Yuegui? Semuanya Yuegui, kan?\"</i>"
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "DMG White Jade Radish Adeptal Legacy",
+      "2": "Pemulihan White Jade Radish Adeptal Legacy",
+      "3": "Bonus Dendro RES",
+      "4": "Durasi Adeptal Legacy",
+      "5": "Cooldown",
+      "6": "Konsumsi Energy",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Starscatter",
+    "description": {
+      "0": "Saat berada dalam status Adeptal Legacy dari <strong>Moonjade Descent</strong>, setiap kali Yaoyao berlari, melompat, atau berlari kecil, Yaoyao akan terus-menerus melemparkan White Jade Radish ke musuh di sekitarnya. White Jade Radish yang bisa dilemparkan dengan cara ini adalah 1 buah setiap 0,6 detik."
+    }
+  },
+  "passive2": {
+    "name": "In Others' Shoes",
+    "description": {
+      "0": "Saat <strong>White Jade Radish</strong> meledak, Karakter aktif yang berada di dalam area efek serangan akan memulihkan HP setiap 1 detik sekali. Jumlah pemulihan setara dengan 0,8% Max HP Yaoyao, berlangsung selama 5 detik."
+    }
+  },
+  "passive3": {
+    "name": "Tailing on Tiptoes",
+    "description": {
+      "0": "Saat Yaoyao berada di dalam party, Crystalfly dan beberapa binatang tertentu yang didekati Karakter dalam party tidak akan kaget dan kabur.",
+      "1": "Silakan menuju bagian Arsip > Makhluk Hidup/Hewan Liar > Lainnya untuk mengecek objek-objek yang dapat dipengaruhi skill ini."
+    }
+  },
+  "constellation1": {
+    "name": "Adeptus' Tutelage",
+    "description": {
+      "0": "Saat <strong>White Jade Radish</strong> meledak, Karakter aktif yang berada di efek serangan area akan menerima 15% <dendro>Dendro DMG Bonus</dendro> selama 8 detik dan akan memulihkan 15 Stamina. Pemulihan Stamina yang bisa didapatkan dengan cara ini adalah sekali setiap 5 detik."
+    }
+  },
+  "constellation2": {
+    "name": "Innocent",
+    "description": {
+      "0": "Saat berada dalam status Adeptal Legacy dari <strong>Moonjade Descent</strong>, jika DMG ledakan White Jade Radish mengenai musuh, maka Yaoyao akan memulihkan 3 poin Energy. Pemulihan Energy yang bisa didapatkan dengan cara ini adalah sekali setiap 0,8 detik."
+    }
+  },
+  "constellation3": {
+    "name": "Loyal and Kind",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Raphanus Sky Cluster</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Winsome",
+    "description": {
+      "0": "Setelah melancarkan <strong>Raphanus Sky Cluster</strong> atau <strong>Moonjade Descent</strong>, Elemental Mastery Yaoyao akan meningkat berdasarkan 0,3% Max HP-nya selama 8 detik. Peningkatan Elemental Mastery yang bisa didapatkan dengan cara ini adalah maksimum 120 poin."
+    }
+  },
+  "constellation5": {
+    "name": "Compassionate",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Moonjade Descent</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Beneficent",
+    "description": {
+      "0": "Untuk setiap 2 White Jade Radish yang dilemparkan <strong>Yuegui: Throwing Mode</strong>, maka pada lemparan berikutnya (lemparan ketiga), akan melemparkan satu White Jade Radish dan satu Mega Radish tambahan. Dibandingkan dengan White Jade Radish, efek serangan area Mega Radish saat meledak akan lebih luas, dan akan menghasilkan efek sebagai berikut saat meledak:",
+      "1": [
+        "Mengakibatkan <dendro>Dendro DMG Area</dendro> sebesar 75% ATK Yaoyao.",
+        "Memulihkan HP Karakter aktif sebesar 7,5% Max HP Yaoyao."
+      ],
+      "2": "<br/>",
+      "3": "Satu Yuegui: Throwing Mode bisa melemparkan maksimum 2 Mega Radish."
+    }
+  }
+}

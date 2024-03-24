@@ -1,0 +1,24 @@
+{
+  "name": "Supervisor Flujoáurico",
+  "description": {
+    "0": "Un artilugio flotante que sirve para monitorear ciertos fenómenos. Tras ser abandonado, lo recogió otra persona para modificarlo y cambiar su uso."
+  },
+  "passiveName": "Marea aureosangrienta",
+  "passiveDescription": {
+    "0": {
+      "0": "El ATQ aumenta en un <cryo>16%</cryo>. Cuando la Vida del personaje aumenta o disminuye, el daño de sus Ataques Normales aumenta en un <cryo>16%</cryo> y el de sus Ataques Cargados, en un <cryo>14%</cryo>. Este efecto dura 4 s, puede acumularse hasta 3 veces y solo se puede activar una vez cada 0.3 s. Al alcanzar 3 acumulaciones, la Vel. de Ataque aumenta en un <cryo>8%</cryo>."
+    },
+    "1": {
+      "0": "El ATQ aumenta en un <cryo>20%</cryo>. Cuando la Vida del personaje aumenta o disminuye, el daño de sus Ataques Normales aumenta en un <cryo>20%</cryo> y el de sus Ataques Cargados, en un <cryo>17.5%</cryo>. Este efecto dura 4 s, puede acumularse hasta 3 veces y solo se puede activar una vez cada 0.3 s. Al alcanzar 3 acumulaciones, la Vel. de Ataque aumenta en un <cryo>10%</cryo>."
+    },
+    "2": {
+      "0": "El ATQ aumenta en un <cryo>24%</cryo>. Cuando la Vida del personaje aumenta o disminuye, el daño de sus Ataques Normales aumenta en un <cryo>24%</cryo> y el de sus Ataques Cargados, en un <cryo>21%</cryo>. Este efecto dura 4 s, puede acumularse hasta 3 veces y solo se puede activar una vez cada 0.3 s. Al alcanzar 3 acumulaciones, la Vel. de Ataque aumenta en un <cryo>12%</cryo>."
+    },
+    "3": {
+      "0": "El ATQ aumenta en un <cryo>28%</cryo>. Cuando la Vida del personaje aumenta o disminuye, el daño de sus Ataques Normales aumenta en un <cryo>28%</cryo> y el de sus Ataques Cargados, en un <cryo>24.5%</cryo>. Este efecto dura 4 s, puede acumularse hasta 3 veces y solo se puede activar una vez cada 0.3 s. Al alcanzar 3 acumulaciones, la Vel. de Ataque aumenta en un <cryo>14%</cryo>."
+    },
+    "4": {
+      "0": "El ATQ aumenta en un <cryo>32%</cryo>. Cuando la Vida del personaje aumenta o disminuye, el daño de sus Ataques Normales aumenta en un <cryo>32%</cryo> y el de sus Ataques Cargados, en un <cryo>28%</cryo>. Este efecto dura 4 s, puede acumularse hasta 3 veces y solo se puede activar una vez cada 0.3 s. Al alcanzar 3 acumulaciones, la Vel. de Ataque aumenta en un <cryo>16%</cryo>."
+    }
+  }
+}

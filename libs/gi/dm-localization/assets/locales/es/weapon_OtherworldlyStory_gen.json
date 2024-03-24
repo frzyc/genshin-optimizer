@@ -1,0 +1,24 @@
+{
+  "name": "Historias de Otros Mundos",
+  "description": {
+    "0": "Una novela de fantasía barata y sin ningún valor. También es fantasía el hecho de que pueda servir como catalizador."
+  },
+  "passiveName": "Inmersión energética",
+  "passiveDescription": {
+    "0": {
+      "0": "Restaura un <cryo>1%</cryo> de Vida al obtener orbes o partículas elementales."
+    },
+    "1": {
+      "0": "Restaura un <cryo>1.25%</cryo> de Vida al obtener orbes o partículas elementales."
+    },
+    "2": {
+      "0": "Restaura un <cryo>1.5%</cryo> de Vida al obtener orbes o partículas elementales."
+    },
+    "3": {
+      "0": "Restaura un <cryo>1.75%</cryo> de Vida al obtener orbes o partículas elementales."
+    },
+    "4": {
+      "0": "Restaura un <cryo>2%</cryo> de Vida al obtener orbes o partículas elementales."
+    }
+  }
+}

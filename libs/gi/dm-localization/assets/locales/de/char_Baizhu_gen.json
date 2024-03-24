@@ -1,0 +1,165 @@
+{
+  "name": "Baizhu",
+  "title": "Jenseits der Sterblichkeit",
+  "description": "Der Besitzer der „Bubu-Hütte“. Er trägt eine weiße Schlange namens Changsheng auf seiner Schulter. Ein äußerst geschickter Mediziner, der allerdings als Person schwer zu durchschauen ist.",
+  "constellationName": "Lagenaria",
+  "auto": {
+    "name": "Klassische Akupunktur",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Standardangriff</strong>",
+        "1": "Führt bis zu 4 Angriffe nach vorn aus und verursacht <dendro>Dendro-Schaden</dendro>."
+      },
+      "charged": {
+        "0": "<strong>Heftiger Schlag</strong>",
+        "1": "Verbraucht eine gewisse Menge Ausdauer und verursacht nach kurzer Aufladezeit im Bereich vor der Figur <dendro>Dendro-Flächenschaden</dendro>."
+      },
+      "plunging": {
+        "0": "<strong>Angriff aus dem Fall</strong>",
+        "1": "Konzentriert die Kraft der Pflanzen, schlägt beim Fallen aus der Luft auf den Boden, greift alle Gegner in der Bahn an und verursacht beim Aufkommen <dendro>Dendro-Flächenschaden</dendro>."
+      }
+    },
+    "skillParams": {
+      "0": "SCH Phase 1",
+      "1": "SCH Phase 2",
+      "2": "SCH Phase 3",
+      "3": "SCH Phase 4",
+      "4": "SCH heftiger Schläge",
+      "5": "Ausdauerverbrauch heftiger Schläge",
+      "6": "SCH beim Fallen",
+      "7": "SCH beim Fallen aus niedriger/großer Höhe",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Universal-Diagnose",
+    "description": {
+      "0": "Beschwört einen umherfliegenden Unruhspiral-Geist, der Gegner in der Nähe angreift und <dendro>Dendro-Schaden</dendro> verursacht.",
+      "1": "Der Unruhspiral-Geist wird nach max. 3 Angriffen, oder wenn sich keine Gegner in seiner Nähe befinden, zurückgerufen und stellt allen Truppenmitgliedern in der Nähe LP basierend auf Baizhus max. LP wieder her.",
+      "2": "<br/>",
+      "3": "<i>Diejenigen unter den Medizinern, die Schein von Wirklichkeit trennen können, sind auch „diejenigen, die Krankheiten heilen können, bevor sich die Symptome zeigen“.</i>"
+    },
+    "skillParams": {
+      "0": "Fähigkeits-SCH",
+      "1": "Heilung",
+      "2": "Abklingzeit",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Ganzheitliche Heilung",
+    "description": {
+      "0": "Begibt sich in den Zustand Pulsierende Klarheit und erzeugt einen makellosen Schild, der 250 % des <dendro>Dendro-Schadens</dendro> abhält.",
+      "1": "In diesem Zustand wird alle 2,5 s ein neuer makelloser Schild erzeugt.",
+      "2": "<br/>",
+      "3": "Der makellose Schild stellt unter folgenden Umständen die LP der eigenen aktuellen Figur basierend auf Baizhus max. LP wieder her und beschwört einen Geist-Äther, der Gegner angreift und ihnen <dendro>Dendro-Schaden</dendro> zufügt:",
+      "4": [
+        " Wenn eine Figur sich unter dem Schutz eines makellosen Schilds befindet und ein neuer makelloser Schild erzeugt wird.",
+        " Wenn der makellose Schild endet oder durch Schaden zerstört wird."
+      ],
+      "5": "<br/>",
+      "6": "<i>Der, der den Glanz des Himmels und der Erde zu empfangen vermag, der sich mit seinem Inneren vor dem Äußeren bewahrt und seinen Geist in Klarheit taucht, dem werde ein Leben in Erfüllung zuteil.</i>"
+    },
+    "skillParams": {
+      "0": "Schildstärke vom makellosen Schild",
+      "1": "Dauer des makellosen Schilds",
+      "2": "Heilung durch makellosen Schild",
+      "3": "Geist-Äther-Fähigkeits-SCH",
+      "4": "Dauer von Pulsierende Klarheit",
+      "5": "Abklingzeit",
+      "6": "Elementarenergie",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Zyklus der fünf Elemente",
+    "description": {
+      "0": "Verleiht Baizhu auf Basis der LP der eigenen aktuellen Figur unterschiedliche Effekte:",
+      "1": [
+        " Erhöht Baizhus Heilungsbonus um 20 %, wenn die LP weniger als 50 % betragen.",
+        " Verleiht Baizhu einen <dendro>Dendro-SCH-Bonus</dendro> von 25 %, wenn die LP 50 % oder mehr betragen."
+      ]
+    }
+  },
+  "passive2": {
+    "name": "Aus der Erde geboren",
+    "description": {
+      "0": "Figuren, die Heilung durch den <strong>makellosen Schild</strong> erhalten, wird der Effekt „Jahr der Gunst des Grüns“ gewährt: Erhöht den Schaden, den die geheilten Figuren durch das Auslösen der Reaktionen „in Flammen“, „Sprießen“, „Supraspross“ sowie „Flammenspross“ verursachen, für je 1.000 LP (bis max. 50.000 LP) von Baizhu um 2 % und den Bonus für den Schaden, der durch die Reaktionen „Suprawuchs“ und „Rankenwuchs“ gewährt wird, für je 1.000 LP (bis max. 50.000 LP) von Baizhu um 0,8 %. Hält 6 s."
+    }
+  },
+  "passive3": {
+    "name": "Kräuterkur",
+    "description": {
+      "0": "Wenn sich Baizhu in der Truppe befindet, stellt die Interaktion mit bestimmten Rohstoffen die LP deiner aktuellen Figur basierend auf 2,5 % der max. LP von Baizhu wieder her."
+    }
+  },
+  "constellation1": {
+    "name": "Binnen eines Atemzugs",
+    "description": {
+      "0": "Ermöglicht 1 weitere Anwendung von <strong>Universal-Diagnose</strong>."
+    }
+  },
+  "constellation2": {
+    "name": "Flink und geschickt",
+    "description": {
+      "0": "Wenn der Angriff der aktuellen eigenen Figur in der Truppe Gegner in der Nähe trifft, setzt Baizhu Unruhspiral-Geist – Schnitter ein.",
+      "1": "Der Unruhspiral-Geist – Schnitter führt höchstens einen einzelnen Angriff aus, der <dendro>Dendro-Schaden</dendro> in Höhe von 250 % von Baizhus ANG verursacht und die LP wiederherstellt und kehrt dann zurück. Die Menge an wiederhergestellten LP entspricht 20 % der von Unruhspiral-Geist der <strong>Universal-Diagnose</strong> wiederhergestellten LP.",
+      "2": "Hierdurch verursachter Schaden wird als Schaden der Elementarfähigkeit gewertet.",
+      "3": "5 s Abklingzeit."
+    }
+  },
+  "constellation3": {
+    "name": "Alle Symptome stabilisiert",
+    "description": {
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Ganzheitliche Heilung</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation4": {
+    "name": "Uralte Heilkunst",
+    "description": {
+      "0": "Erhöht die Elementarkunde aller Truppenmitglieder in der Nähe bei Anwendung der Fähigkeit <strong>Ganzheitliche Heilung</strong> 15 s lang um 80 Punkte."
+    }
+  },
+  "constellation5": {
+    "name": "Verborgene Ebbe und Flut",
+    "description": {
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Universal-Diagnose</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation6": {
+    "name": "Austreibung negativer Energie",
+    "description": {
+      "0": "Erhöht den Schaden des Geist-Äthers von <strong>Ganzheitliche Heilung</strong> um 8 % von Baizhus max. LP.",
+      "1": "Außerdem wird jedes Mal, wenn der <strong>Unruhspiral-Geist</strong> oder der Unruhspiral-Geist – Schnitter einen Gegner trifft, mit einer Wahrscheinlichkeit von 100 % ein makelloser Schild der <strong>Ganzheitliche Heilung</strong> erschaffen. Jeder Unruhspiral-Geist oder Unruhspiral-Geist – Schnitter kann diesen Effekt jeweils nur einmal auslösen."
+    }
+  }
+}

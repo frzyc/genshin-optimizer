@@ -1,0 +1,29 @@
+{
+  "setName": "Palourde aux teintes océaniques",
+  "setEffects": {
+    "2": "Augmente le bonus de soins de 15 %.",
+    "4": "Lorsqu'un personnage équipé de ce set d'artéfacts soigne un personnage de l'équipe, une mousse marine apparaîtra pendant 3 s, accumulant la quantité de PV récupérée grâce au soin (y compris tout surplus au-dessus de 100 %). À la fin de la durée, la mousse marine explosera, infligeant des DGT aux ennemis proches d'une valeur équivalant à 90 % du soin accumulé (Ces DGT sont calculés de la même manière que les réactions d'Électrocution et de Supraconduction, mais ne sont pas affectés par la maîtrise élémentaire, les niveaux des personnages ou les bonus de DGT de réactions élémentaires). Une mousse marine peut être générée une fois toutes les 3,5 s, et chaque mousse marine peut accumuler jusqu'à 30 000 PV, incluant tout surplus au-dessus de 100 %. Il ne peut exister qu'une seule mousse marine à la fois. Cet effet peut être déclenché même lorsque le personnage équipé de ce set d'artéfacts fait partie de l'équipe mais n'est pas déployé."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Fleur de teinte marine",
+      "desc": "Une fleur douce qui a pris les multiples teintes de l'océan capricieux. Elle brille de couleurs merveilleuses sous la lumière argentée de la lune."
+    },
+    "plume": {
+      "name": "Plume du palais des profondeurs",
+      "desc": "Une plume duveteuse de la même teinte que le corail, qui proviendrait du vêtement cérémonial d'une prêtresse."
+    },
+    "sands": {
+      "name": "Pétoncle de séparation",
+      "desc": "Un coquillage propre et impeccable qui vient de l'océan sans fond."
+    },
+    "goblet": {
+      "name": "Écrin de perle",
+      "desc": "La brillance des perles qu'offrent les prêtresses du sanctuaire de l'Île de Watatsumi est éternelle et ne s'estompe jamais."
+    },
+    "circlet": {
+      "name": "Couronne de Watatsumi",
+      "desc": "Une ancienne couronne délicate qui était autrefois utilisée par un membre du clergé oublié. Aujourd'hui, cette relique a été enchâssée cérémonieusement par les Watatsumiens."
+    }
+  }
+}

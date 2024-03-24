@@ -1,0 +1,175 @@
+{
+  "name": "Beidou",
+  "title": "Long Vương Không Vương Miện",
+  "description": "Thủ lĩnh đội thuyền vũ trang \"Nam Thập Tự\", là chị đại hào sảng.",
+  "constellationName": "Cung Nam Thiên Hải Sơn",
+  "auto": {
+    "name": "Đại Dương",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Tấn Công Thường</strong>",
+        "1": "Thực hiện tối đa 5 lần chém liên tiếp."
+      },
+      "charged": {
+        "0": "<strong>Trọng Kích</strong>",
+        "1": "Duy trì tiêu hao thể lực, chém nhanh liên tiếp.",
+        "2": "Sau khi Trọng Kích kết thúc, sẽ bổ một nhát cực mạnh."
+      },
+      "plunging": {
+        "0": "<strong>Tấn Công Khi Đáp</strong>",
+        "1": "Đáp xuống đất từ trên không, tấn công kẻ địch trên đường, đồng thời gây sát thương phạm vi khi chạm đất."
+      }
+    },
+    "skillParams": {
+      "0": "Sát Thương Lần 1",
+      "1": "Sát Thương Lần 2",
+      "2": "Sát Thương Lần 3",
+      "3": "Sát Thương Lần 4",
+      "4": "Sát Thương Lần 5",
+      "5": "Sát Thương Trọng Kích Tuần Hoàn",
+      "6": "Sát Thương Trọng Kích Chí Mạng",
+      "7": "Thể lực Trọng Kích tiêu hao",
+      "8": "Thời Gian Tối Đa",
+      "9": "Sát Thương Khi Rơi",
+      "10": "Sát Thương Khi Rơi Từ Độ Cao Thấp/Cao",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Bắt Sóng",
+    "description": {
+      "0": "Không có gì phải lo lắng. Nếu có ai dám ra tay với cô hoặc người của cô, thì sẽ phải trả giá gấp 10 lần bằng sấm sét và kiếm.",
+      "1": "<br/>",
+      "2": "<strong>Nhấn</strong>",
+      "3": "Tích tụ sức mạnh sấm sét, chém mạnh kiếm lớn về phía trước, gây <electro>Sát Thương Nguyên Tố Lôi</electro>.",
+      "4": "<br/>",
+      "5": "<strong>Nhấn Giữ</strong>",
+      "6": "Nhấc vũ khí lên hình thành khiên, hấp thụ lượng sát thương căn cứ theo giới hạn HP của Beidou.",
+      "7": "Sau khi thả giữ kỹ năng hoặc hết thời gian, sẽ vung kiếm giải phóng sức mạnh tích lũy để phản công, gây <electro>Sát Thương Nguyên Tố Lôi</electro>. Dựa vào số lần bị tấn công trong thời gian kỹ năng, tăng sát thương tạo thành. Kích hoạt 2 lần sẽ đạt buff sát thương cao nhất.",
+      "8": "Khiên có hiệu quả như sau:",
+      "9": [
+        "Đối với <electro>Sát Thương Nguyên Tố Lôi</electro> có 250% hiệu quả hấp thu;",
+        "Khi thi triển, sẽ <electro>gán ấn nguyên tố Lôi</electro> cho Beidou."
+      ],
+      "10": "<br/>",
+      "11": "<i>Thuyền Meo Meo đuổi theo sóng biển.</i>"
+    },
+    "skillParams": {
+      "0": "Khiên hấp thụ",
+      "1": "Sát Thương Cơ Bản",
+      "2": "ST Tăng Sau Khi Nhận Tấn Công",
+      "3": "CD",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Chước Lôi",
+    "description": {
+      "0": "Nhớ lại trận chiến diệt Cự Thú Hải Sơn, triệu hồi cự thú và sức mạnh lôi điện, tạo ra Khiên Lôi Thú bao quanh, đồng thời gây <electro>Sát Thương Nguyên Tố Lôi</electro> cho kẻ địch xung quanh.",
+      "1": "<br/>",
+      "2": "<strong>Khiên Lôi Thú</strong>",
+      "3": [
+        "Khi tấn công thường và trọng kích đánh trúng địch, giải phóng sức mạnh sấm sét, tạo 1 tia sét chạy giữa địch, gây <electro>Sát Thương Nguyên Tố Lôi</electro>;",
+        "Tăng khả năng kháng gián đoạn của nhân vật và giảm sát thương phải chịu."
+      ],
+      "4": "<br/>",
+      "5": "Mỗi giây tối đa kích hoạt 1 tia sét.",
+      "6": "<br/>",
+      "7": "<i>Sấm sét chói lọi, dời non lấp bể.</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Kỹ Năng",
+      "1": "Sát Thương Sấm Sét",
+      "2": "Miễn Sát Thương",
+      "3": "Thời Gian Kéo Dài",
+      "4": "CD",
+      "5": "Năng Lượng Nguyên Tố",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Hào Quang Rực Rỡ",
+    "description": {
+      "0": "Khi <strong>Bắt Sóng</strong> phản đòn vào đúng lúc nhân vật bị tấn công, sẽ có buff sát thương cao nhất."
+    }
+  },
+  "passive2": {
+    "name": "Sấm Sét Đầy Trời",
+    "description": {
+      "0": "Trong 10s sau khi thi triển <strong>Bắt Sóng</strong> có buff sát thương cao nhất, nhận được hiệu quả như sau:",
+      "1": "Sát thương trọng kích và tấn công thường tạo thành tăng 15%, tốc độ tấn công tăng 15%;",
+      "2": "Giảm thời gian chuẩn bị cần thiết cho trọng kích."
+    }
+  },
+  "passive3": {
+    "name": "Sóng Vỗ Dào Dạt",
+    "description": {
+      "0": "Giảm 20% tiêu hao thể lực khi bơi cho nhân vật trong đội của bản thân.",
+      "1": "Không thể cộng dồn với buff Thiên Phú cố định có cùng hiệu quả."
+    }
+  },
+  "constellation1": {
+    "name": "Ngư Long Trầm Tứ Phương",
+    "description": {
+      "0": "Khi thi triển <strong>Chước Lôi</strong>: ",
+      "1": "Hình thành tấm khiên hấp thu sát thương tương đương với 16% giới hạn HP, kéo dài 15s.",
+      "2": "Khiên có hiệu quả hấp thụ 250% <electro>sát thương Nguyên Tố Lôi</electro>."
+    }
+  },
+  "constellation2": {
+    "name": "Tia Sét Chói Lọi",
+    "description": {
+      "0": "Sấm sét của <strong>Chước Lôi</strong> có thể đánh bật thêm 2 kẻ địch."
+    }
+  },
+  "constellation3": {
+    "name": "Thủy Triều Dẫn Điện",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Bắt Sóng</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation4": {
+    "name": "Sao Trời Dẫn Lối",
+    "description": {
+      "0": "Trong vòng 10s sau khi bị tấn công, tấn công thường của Beidou tăng thêm 20% <electro>sát thương Nguyên Tố Lôi</electro>."
+    }
+  },
+  "constellation5": {
+    "name": "Đạp Lãng Liên Cấp",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Chước Lôi</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation6": {
+    "name": "Beidou Diệt Ác",
+    "description": {
+      "0": "Trong thời gian <strong>Chước Lôi</strong> tồn tại, <electro>kháng Nguyên Tố Lôi</electro> của địch xung quanh giảm 15%."
+    }
+  }
+}

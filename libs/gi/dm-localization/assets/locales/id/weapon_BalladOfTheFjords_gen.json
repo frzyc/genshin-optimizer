@@ -1,0 +1,24 @@
+{
+  "name": "Ballad of the Fjords",
+  "description": {
+    "0": "Tombak yang digunakan oleh mereka yang ingin menangkap ikan di kutub es. Tombak ini jelas tidak akan membiarkan mangsanya lolos."
+  },
+  "passiveName": "Tales of the Tundra",
+  "passiveDescription": {
+    "0": {
+      "0": "Saat ada Karakter dengan minimum tiga jenis elemen yang berbeda di dalam party, Elemental Mastery meningkat <cryo>120</cryo> poin."
+    },
+    "1": {
+      "0": "Saat ada Karakter dengan minimum tiga jenis elemen yang berbeda di dalam party, Elemental Mastery meningkat <cryo>150</cryo> poin."
+    },
+    "2": {
+      "0": "Saat ada Karakter dengan minimum tiga jenis elemen yang berbeda di dalam party, Elemental Mastery meningkat <cryo>180</cryo> poin."
+    },
+    "3": {
+      "0": "Saat ada Karakter dengan minimum tiga jenis elemen yang berbeda di dalam party, Elemental Mastery meningkat <cryo>210</cryo> poin."
+    },
+    "4": {
+      "0": "Saat ada Karakter dengan minimum tiga jenis elemen yang berbeda di dalam party, Elemental Mastery meningkat <cryo>240</cryo> poin."
+    }
+  }
+}

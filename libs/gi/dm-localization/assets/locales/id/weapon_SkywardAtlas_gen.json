@@ -1,0 +1,24 @@
+{
+  "name": "Skyward Atlas",
+  "description": {
+    "0": "Atlas awan yang melambangkan Dvalin dan tuannya, Archon Anemo. Menunjukkan secara rinci awan dan angin di daerah Utara, mengandung kekuatan angin dan angkasa."
+  },
+  "passiveName": "Wandering Clouds",
+  "passiveDescription": {
+    "0": {
+      "0": "Meningkatkan <cryo>12%</cryo> Elemental DMG Bonus. Saat Normal Attack mengenai musuh, memiliki 50% persentase untuk mendapatkan bantuan dari awan yang mengincar musuh terdekat selama 15 detik, dan mengakibatkan DMG sebesar <cryo>160%</cryo> ATK. Dapat terpicu setiap 30 detik."
+    },
+    "1": {
+      "0": "Meningkatkan <cryo>15%</cryo> Elemental DMG Bonus. Saat Normal Attack mengenai musuh, memiliki 50% persentase untuk mendapatkan bantuan dari awan yang mengincar musuh terdekat selama 15 detik, dan mengakibatkan DMG sebesar <cryo>200%</cryo> ATK. Dapat terpicu setiap 30 detik."
+    },
+    "2": {
+      "0": "Meningkatkan <cryo>18%</cryo> Elemental DMG Bonus. Saat Normal Attack mengenai musuh, memiliki 50% persentase untuk mendapatkan bantuan dari awan yang mengincar musuh terdekat selama 15 detik, dan mengakibatkan DMG sebesar <cryo>240%</cryo> ATK. Dapat terpicu setiap 30 detik."
+    },
+    "3": {
+      "0": "Meningkatkan <cryo>21%</cryo> Elemental DMG Bonus. Saat Normal Attack mengenai musuh, memiliki 50% persentase untuk mendapatkan bantuan dari awan yang mengincar musuh terdekat selama 15 detik, dan mengakibatkan DMG sebesar <cryo>280%</cryo> ATK. Dapat terpicu setiap 30 detik."
+    },
+    "4": {
+      "0": "Meningkatkan <cryo>24%</cryo> Elemental DMG Bonus. Saat Normal Attack mengenai musuh, memiliki 50% persentase untuk mendapatkan bantuan dari awan yang mengincar musuh terdekat selama 15 detik, dan mengakibatkan DMG sebesar <cryo>320%</cryo> ATK. Dapat terpicu setiap 30 detik."
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Sombra Férrea",
+  "description": {
+    "0": "Una réplica de la famosa espada de Arundolyn, el León de la Luz. ¡Sostenla y siente el poder del héroe legendario! Nota: Soñar despierto demasiado tiempo puede ser perjudicial para la salud."
+  },
+  "passiveName": "Inquebrantable",
+  "passiveDescription": {
+    "0": {
+      "0": "Cuando la Vida está por debajo del <cryo>70%</cryo>, los Ataques Cargados son más difíciles de ser interrumpidos. Además, aumenta el daño de Ataque Cargado en un <cryo>30%</cryo>."
+    },
+    "1": {
+      "0": "Cuando la Vida está por debajo del <cryo>75%</cryo>, los Ataques Cargados son más difíciles de ser interrumpidos. Además, aumenta el daño de Ataque Cargado en un <cryo>35%</cryo>."
+    },
+    "2": {
+      "0": "Cuando la Vida está por debajo del <cryo>80%</cryo>, los Ataques Cargados son más difíciles de ser interrumpidos. Además, aumenta el daño de Ataque Cargado en un <cryo>40%</cryo>."
+    },
+    "3": {
+      "0": "Cuando la Vida está por debajo del <cryo>85%</cryo>, los Ataques Cargados son más difíciles de ser interrumpidos. Además, aumenta el daño de Ataque Cargado en un <cryo>45%</cryo>."
+    },
+    "4": {
+      "0": "Cuando la Vida está por debajo del <cryo>90%</cryo>, los Ataques Cargados son más difíciles de ser interrumpidos. Además, aumenta el daño de Ataque Cargado en un <cryo>50%</cryo>."
+    }
+  }
+}

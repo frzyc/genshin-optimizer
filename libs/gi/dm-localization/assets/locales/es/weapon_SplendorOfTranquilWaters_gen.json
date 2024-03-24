@@ -1,0 +1,24 @@
+{
+  "name": "Fulgor de las Aguas Calmas",
+  "description": {
+    "0": "Un cetro alrededor del cual gira un agua de extrema pureza. En un pasado muy remoto, simbolizaba la máxima autoridad sobre los mares."
+  },
+  "passiveName": "Alba y ocaso en el lago",
+  "passiveDescription": {
+    "0": {
+      "0": "El daño de la Habilidad Elemental del portador de esta arma aumenta en un <cryo>8%</cryo> cuando su Vida aumenta o disminuye. Este efecto dura 6 s, puede acumularse hasta 3 veces y activarse una vez cada 0.2 s. Cuando la Vida de otro personaje del equipo aumenta o disminuye, la Vida Máx. del portador de esta arma aumenta en un <cryo>14%</cryo>. Este efecto dura 6 s, puede acumularse hasta 2 veces y activarse una vez cada 0.2 s. Los dos anteriores efectos pueden activarse incluso cuando el portador del arma está en tu equipo pero no en uso."
+    },
+    "1": {
+      "0": "El daño de la Habilidad Elemental del portador de esta arma aumenta en un <cryo>10%</cryo> cuando su Vida aumenta o disminuye. Este efecto dura 6 s, puede acumularse hasta 3 veces y activarse una vez cada 0.2 s. Cuando la Vida de otro personaje del equipo aumenta o disminuye, la Vida Máx. del portador de esta arma aumenta en un <cryo>17.5%</cryo>. Este efecto dura 6 s, puede acumularse hasta 2 veces y activarse una vez cada 0.2 s. Los dos anteriores efectos pueden activarse incluso cuando el portador del arma está en tu equipo pero no en uso."
+    },
+    "2": {
+      "0": "El daño de la Habilidad Elemental del portador de esta arma aumenta en un <cryo>12%</cryo> cuando su Vida aumenta o disminuye. Este efecto dura 6 s, puede acumularse hasta 3 veces y activarse una vez cada 0.2 s. Cuando la Vida de otro personaje del equipo aumenta o disminuye, la Vida Máx. del portador de esta arma aumenta en un <cryo>21%</cryo>. Este efecto dura 6 s, puede acumularse hasta 2 veces y activarse una vez cada 0.2 s. Los dos anteriores efectos pueden activarse incluso cuando el portador del arma está en tu equipo pero no en uso."
+    },
+    "3": {
+      "0": "El daño de la Habilidad Elemental del portador de esta arma aumenta en un <cryo>14%</cryo> cuando su Vida aumenta o disminuye. Este efecto dura 6 s, puede acumularse hasta 3 veces y activarse una vez cada 0.2 s. Cuando la Vida de otro personaje del equipo aumenta o disminuye, la Vida Máx. del portador de esta arma aumenta en un <cryo>24.5%</cryo>. Este efecto dura 6 s, puede acumularse hasta 2 veces y activarse una vez cada 0.2 s. Los dos anteriores efectos pueden activarse incluso cuando el portador del arma está en tu equipo pero no en uso."
+    },
+    "4": {
+      "0": "El daño de la Habilidad Elemental del portador de esta arma aumenta en un <cryo>16%</cryo> cuando su Vida aumenta o disminuye. Este efecto dura 6 s, puede acumularse hasta 3 veces y activarse una vez cada 0.2 s. Cuando la Vida de otro personaje del equipo aumenta o disminuye, la Vida Máx. del portador de esta arma aumenta en un <cryo>28%</cryo>. Este efecto dura 6 s, puede acumularse hasta 2 veces y activarse una vez cada 0.2 s. Los dos anteriores efectos pueden activarse incluso cuando el portador del arma está en tu equipo pero no en uso."
+    }
+  }
+}

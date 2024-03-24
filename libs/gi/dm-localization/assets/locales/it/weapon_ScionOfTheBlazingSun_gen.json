@@ -1,0 +1,24 @@
+{
+  "name": "Erede del sole ardente",
+  "description": {
+    "0": "Un antico arco lungo risalente all'antica era di Re Deshret. Su di esso sono stati incisi testi indecifrabili e motivi dall'aspetto solenne."
+  },
+  "passiveName": "Cammino del fuoco solare",
+  "passiveDescription": {
+    "0": {
+      "0": "Se chi lo utilizza colpisce un avversario con un attacco caricato, scaglia su di esso una Freccia del fuoco solare che infligge DAN pari a un <cryo>60%</cryo> dell'ATT, applicando al suddetto avversario l'effetto Cuore arso per 10 s. Gli avversari affetti da Cuore arso subiscono un <cryo>28%</cryo> di DAN da attacco caricato in più da parte del personaggio che utilizza l'arma. È possibile scagliare una Freccia del fuoco solare una volta ogni 10 s."
+    },
+    "1": {
+      "0": "Se chi lo utilizza colpisce un avversario con un attacco caricato, scaglia su di esso una Freccia del fuoco solare che infligge DAN pari a un <cryo>75%</cryo> dell'ATT, applicando al suddetto avversario l'effetto Cuore arso per 10 s. Gli avversari affetti da Cuore arso subiscono un <cryo>35%</cryo> di DAN da attacco caricato in più da parte del personaggio che utilizza l'arma. È possibile scagliare una Freccia del fuoco solare una volta ogni 10 s."
+    },
+    "2": {
+      "0": "Se chi lo utilizza colpisce un avversario con un attacco caricato, scaglia su di esso una Freccia del fuoco solare che infligge DAN pari a un <cryo>90%</cryo> dell'ATT, applicando al suddetto avversario l'effetto Cuore arso per 10 s. Gli avversari affetti da Cuore arso subiscono un <cryo>42%</cryo> di DAN da attacco caricato in più da parte del personaggio che utilizza l'arma. È possibile scagliare una Freccia del fuoco solare una volta ogni 10 s."
+    },
+    "3": {
+      "0": "Se chi lo utilizza colpisce un avversario con un attacco caricato, scaglia su di esso una Freccia del fuoco solare che infligge DAN pari a un <cryo>105%</cryo> dell'ATT, applicando al suddetto avversario l'effetto Cuore arso per 10 s. Gli avversari affetti da Cuore arso subiscono un <cryo>49%</cryo> di DAN da attacco caricato in più da parte del personaggio che utilizza l'arma. È possibile scagliare una Freccia del fuoco solare una volta ogni 10 s."
+    },
+    "4": {
+      "0": "Se chi lo utilizza colpisce un avversario con un attacco caricato, scaglia su di esso una Freccia del fuoco solare che infligge DAN pari a un <cryo>120%</cryo> dell'ATT, applicando al suddetto avversario l'effetto Cuore arso per 10 s. Gli avversari affetti da Cuore arso subiscono un <cryo>56%</cryo> di DAN da attacco caricato in più da parte del personaggio che utilizza l'arma. È possibile scagliare una Freccia del fuoco solare una volta ogni 10 s."
+    }
+  }
+}

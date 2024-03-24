@@ -1,0 +1,29 @@
+{
+  "setName": "Compañía Dorada",
+  "setEffects": {
+    "2": "Daño de Habilidad Elemental +20%.",
+    "4": "Aumenta en un 25% el daño infligido con la Habilidad Elemental. Además, cuando el personaje está en tu equipo pero no en uso, el daño de dicha habilidad aumenta en un 25% adicional. Este efecto se anula 2 s después de entrar en el campo de batalla."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Variación de la Serenata Dorada",
+      "desc": "Una flor orgullosamente abierta y fabricada con almejas, madreperlas y pan de oro."
+    },
+    "plume": {
+      "name": "Pluma del Ave Dorada",
+      "desc": "Una pluma de ave hecha de una filigrana de oro y plata. En ella hay incrustado un radiante zafiro."
+    },
+    "sands": {
+      "name": "Preludio de la Era Dorada",
+      "desc": "Un elegante reloj de sol hecho con incrustaciones de oro y plata. Para su disco, el tiempo dejó de transcurrir hace mucho."
+    },
+    "goblet": {
+      "name": "Clamor de la Noche Dorada",
+      "desc": "Una antigua ánfora de plata que en el pasado contenía vino de color rubí. Ahora, en cambio, en ella solo queda la salada agua del mar."
+    },
+    "circlet": {
+      "name": "Condecoración de la Compañía Dorada",
+      "desc": "Una corona muy antigua. Más que una pieza para algún monarca, es un objeto de atrezo para una actuación."
+    }
+  }
+}

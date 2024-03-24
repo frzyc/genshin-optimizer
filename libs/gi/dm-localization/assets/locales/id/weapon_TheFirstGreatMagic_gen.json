@@ -1,0 +1,24 @@
+{
+  "name": "The First Great Magic",
+  "description": {
+    "0": "Sebuah alat pertunjukan aneh yang digunakan oleh \"Pesulap Hebat\" di masa lalu. Rahasianya adalah, alat ini juga merupakan sebuah senjata yang luar biasa."
+  },
+  "passiveName": "Parsifal the Great",
+  "passiveDescription": {
+    "0": {
+      "0": "DMG yang diakibatkan oleh Charged Attack meningkat <cryo>16%</cryo>. Untuk setiap Karakter di dalam party yang memiliki jenis elemen yang sama dengan jenis elemen Karakter yang mengenakan Senjata ini (termasuk Karakter yang mengenakannya sendiri), akan mendapatkan 1 lapis efek 'Gimmick'. Untuk setiap Karakter di dalam party yang memiliki jenis elemen yang berbeda dengan jenis elemen Karakter yang mengenakan Senjata ini, akan mendapatkan 1 lapis efek 'Theatrics'. Saat memiliki efek 'Gimmick' yang berjumlah 1/2/3 lapis atau lebih, ATK meningkat <cryo>16%/32%/48%</cryo>. Saat memiliki efek 'Theatrics' yang berjumlah 1/2/3 lapis atau lebih, Movement SPD meningkat <cryo>4%/7%/10%</cryo>."
+    },
+    "1": {
+      "0": "DMG yang diakibatkan oleh Charged Attack meningkat <cryo>20%</cryo>. Untuk setiap Karakter di dalam party yang memiliki jenis elemen yang sama dengan jenis elemen Karakter yang mengenakan Senjata ini (termasuk Karakter yang mengenakannya sendiri), akan mendapatkan 1 lapis efek 'Gimmick'. Untuk setiap Karakter di dalam party yang memiliki jenis elemen yang berbeda dengan jenis elemen Karakter yang mengenakan Senjata ini, akan mendapatkan 1 lapis efek 'Theatrics'. Saat memiliki efek 'Gimmick' yang berjumlah 1/2/3 lapis atau lebih, ATK meningkat <cryo>20%/40%/60%</cryo>. Saat memiliki efek 'Theatrics' yang berjumlah 1/2/3 lapis atau lebih, Movement SPD meningkat <cryo>6%/9%/12%</cryo>."
+    },
+    "2": {
+      "0": "DMG yang diakibatkan oleh Charged Attack meningkat <cryo>24%</cryo>. Untuk setiap Karakter di dalam party yang memiliki jenis elemen yang sama dengan jenis elemen Karakter yang mengenakan Senjata ini (termasuk Karakter yang mengenakannya sendiri), akan mendapatkan 1 lapis efek 'Gimmick'. Untuk setiap Karakter di dalam party yang memiliki jenis elemen yang berbeda dengan jenis elemen Karakter yang mengenakan Senjata ini, akan mendapatkan 1 lapis efek 'Theatrics'. Saat memiliki efek 'Gimmick' yang berjumlah 1/2/3 lapis atau lebih, ATK meningkat <cryo>24%/48%/72%</cryo>. Saat memiliki efek 'Theatrics' yang berjumlah 1/2/3 lapis atau lebih, Movement SPD meningkat <cryo>8%/11%/14%</cryo>."
+    },
+    "3": {
+      "0": "DMG yang diakibatkan oleh Charged Attack meningkat <cryo>28%</cryo>. Untuk setiap Karakter di dalam party yang memiliki jenis elemen yang sama dengan jenis elemen Karakter yang mengenakan Senjata ini (termasuk Karakter yang mengenakannya sendiri), akan mendapatkan 1 lapis efek 'Gimmick'. Untuk setiap Karakter di dalam party yang memiliki jenis elemen yang berbeda dengan jenis elemen Karakter yang mengenakan Senjata ini, akan mendapatkan 1 lapis efek 'Theatrics'. Saat memiliki efek 'Gimmick' yang berjumlah 1/2/3 lapis atau lebih, ATK meningkat <cryo>28%/56%/84%</cryo>. Saat memiliki efek 'Theatrics' yang berjumlah 1/2/3 lapis atau lebih, Movement SPD meningkat <cryo>10%/13%/16%</cryo>."
+    },
+    "4": {
+      "0": "DMG yang diakibatkan oleh Charged Attack meningkat <cryo>32%</cryo>. Untuk setiap Karakter di dalam party yang memiliki jenis elemen yang sama dengan jenis elemen Karakter yang mengenakan Senjata ini (termasuk Karakter yang mengenakannya sendiri), akan mendapatkan 1 lapis efek 'Gimmick'. Untuk setiap Karakter di dalam party yang memiliki jenis elemen yang berbeda dengan jenis elemen Karakter yang mengenakan Senjata ini, akan mendapatkan 1 lapis efek 'Theatrics'. Saat memiliki efek 'Gimmick' yang berjumlah 1/2/3 lapis atau lebih, ATK meningkat <cryo>32%/64%/96%</cryo>. Saat memiliki efek 'Theatrics' yang berjumlah 1/2/3 lapis atau lebih, Movement SPD meningkat <cryo>12%/15%/18%</cryo>."
+    }
+  }
+}

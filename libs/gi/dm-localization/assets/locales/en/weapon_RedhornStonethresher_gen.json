@@ -1,0 +1,24 @@
+{
+  "name": "Redhorn Stonethresher",
+  "description": {
+    "0": "According to its previous owner, this weapon is the \"Mighty Redhorn Stoic Stonethreshing Gilded Goldcrushing Lion Lord\" that can send any monster packing with its tail between its legs."
+  },
+  "passiveName": "Gokadaiou Otogibanashi",
+  "passiveDescription": {
+    "0": {
+      "0": "DEF is increased by <cryo>28%</cryo>. Normal and Charged Attack DMG is increased by <cryo>40%</cryo> of DEF."
+    },
+    "1": {
+      "0": "DEF is increased by <cryo>35%</cryo>. Normal and Charged Attack DMG is increased by <cryo>50%</cryo> of DEF."
+    },
+    "2": {
+      "0": "DEF is increased by <cryo>42%</cryo>. Normal and Charged Attack DMG is increased by <cryo>60%</cryo> of DEF."
+    },
+    "3": {
+      "0": "DEF is increased by <cryo>49%</cryo>. Normal and Charged Attack DMG is increased by <cryo>70%</cryo> of DEF."
+    },
+    "4": {
+      "0": "DEF is increased by <cryo>56%</cryo>. Normal and Charged Attack DMG is increased by <cryo>80%</cryo> of DEF."
+    }
+  }
+}

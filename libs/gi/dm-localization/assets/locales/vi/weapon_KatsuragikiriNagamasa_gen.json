@@ -1,0 +1,24 @@
+{
+  "name": "Trường Đao Katsuragi",
+  "description": {
+    "0": "Thanh kiếm được Tatarasuna rèn, tuy nặng nề nhưng vô cùng sắc bén."
+  },
+  "passiveName": "Vũ Điệu Samurai",
+  "passiveDescription": {
+    "0": {
+      "0": "Tăng sát thương Kỹ Năng Nguyên Tố <cryo>6%</cryo>. Sau khi Kỹ Năng Nguyên Tố đánh trúng, nhân vật mất 3 điểm Năng Lượng Nguyên Tố, đồng thời 6 giây tiếp theo mỗi 2 giây hồi phục <cryo>3</cryo> điểm. Hiệu quả này mỗi 10 giây kích hoạt 1 lần, nhân vật ở trong đội nhưng không ra trận vẫn có thể kích hoạt."
+    },
+    "1": {
+      "0": "Tăng sát thương Kỹ Năng Nguyên Tố <cryo>7.5%</cryo>. Sau khi Kỹ Năng Nguyên Tố đánh trúng, nhân vật mất 3 điểm Năng Lượng Nguyên Tố, đồng thời 6 giây tiếp theo mỗi 2 giây hồi phục <cryo>3.5</cryo> điểm. Hiệu quả này mỗi 10 giây kích hoạt 1 lần, nhân vật ở trong đội nhưng không ra trận vẫn có thể kích hoạt."
+    },
+    "2": {
+      "0": "Tăng sát thương Kỹ Năng Nguyên Tố <cryo>9%</cryo>. Sau khi Kỹ Năng Nguyên Tố đánh trúng, nhân vật mất 3 điểm Năng Lượng Nguyên Tố, đồng thời 6 giây tiếp theo mỗi 2 giây hồi phục <cryo>4</cryo> điểm. Hiệu quả này mỗi 10 giây kích hoạt 1 lần, nhân vật ở trong đội nhưng không ra trận vẫn có thể kích hoạt."
+    },
+    "3": {
+      "0": "Tăng sát thương Kỹ Năng Nguyên Tố <cryo>10.5%</cryo>. Sau khi Kỹ Năng Nguyên Tố đánh trúng, nhân vật mất 3 điểm Năng Lượng Nguyên Tố, đồng thời 6 giây tiếp theo mỗi 2 giây hồi phục <cryo>4.5</cryo> điểm. Hiệu quả này mỗi 10 giây kích hoạt 1 lần, nhân vật ở trong đội nhưng không ra trận vẫn có thể kích hoạt."
+    },
+    "4": {
+      "0": "Tăng sát thương Kỹ Năng Nguyên Tố <cryo>12%</cryo>. Sau khi Kỹ Năng Nguyên Tố đánh trúng, nhân vật mất 3 điểm Năng Lượng Nguyên Tố, đồng thời 6 giây tiếp theo mỗi 2 giây hồi phục <cryo>5</cryo> điểm. Hiệu quả này mỗi 10 giây kích hoạt 1 lần, nhân vật ở trong đội nhưng không ra trận vẫn có thể kích hoạt."
+    }
+  }
+}

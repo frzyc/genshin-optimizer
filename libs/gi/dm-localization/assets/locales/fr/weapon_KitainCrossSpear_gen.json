@@ -1,0 +1,24 @@
+{
+  "name": "Lance en croix de Kitain",
+  "description": {
+    "0": "Une lance spéciale qui était autrefois utilisée par un célèbre guerrier qui gardait le Tatarigami sur l'Île de Yashiori."
+  },
+  "passiveName": "Code du samouraï",
+  "passiveDescription": {
+    "0": {
+      "0": "Augmente les DGT infligés par les compétences élémentaires de <cryo>6 %</cryo>. Lorsqu'une compétence élémentaire touche un ennemi, le personnage perd 3 pts d'énergie élémentaire, mais récupère <cryo>3</cryo> pts d'énergie toutes les 2 s pendant 6 s. Cet effet peut être déclenché une fois toutes les 10 s, même lorsque le personnage fait partie de l'équipe mais n'est pas déployé."
+    },
+    "1": {
+      "0": "Augmente les DGT infligés par les compétences élémentaires de <cryo>7,5 %</cryo>. Lorsqu'une compétence élémentaire touche un ennemi, le personnage perd 3 pts d'énergie élémentaire, mais récupère <cryo>3,5</cryo> pts d'énergie toutes les 2 s pendant 6 s. Cet effet peut être déclenché une fois toutes les 10 s, même lorsque le personnage fait partie de l'équipe mais n'est pas déployé."
+    },
+    "2": {
+      "0": "Augmente les DGT infligés par les compétences élémentaires de <cryo>9 %</cryo>. Lorsqu'une compétence élémentaire touche un ennemi, le personnage perd 3 pts d'énergie élémentaire, mais récupère <cryo>4</cryo> pts d'énergie toutes les 2 s pendant 6 s. Cet effet peut être déclenché une fois toutes les 10 s, même lorsque le personnage fait partie de l'équipe mais n'est pas déployé."
+    },
+    "3": {
+      "0": "Augmente les DGT infligés par les compétences élémentaires de <cryo>10,5 %</cryo>. Lorsqu'une compétence élémentaire touche un ennemi, le personnage perd 3 pts d'énergie élémentaire, mais récupère <cryo>4,5</cryo> pts d'énergie toutes les 2 s pendant 6 s. Cet effet peut être déclenché une fois toutes les 10 s, même lorsque le personnage fait partie de l'équipe mais n'est pas déployé."
+    },
+    "4": {
+      "0": "Augmente les DGT infligés par les compétences élémentaires de <cryo>12 %</cryo>. Lorsqu'une compétence élémentaire touche un ennemi, le personnage perd 3 pts d'énergie élémentaire, mais récupère <cryo>5</cryo> pts d'énergie toutes les 2 s pendant 6 s. Cet effet peut être déclenché une fois toutes les 10 s, même lorsque le personnage fait partie de l'équipe mais n'est pas déployé."
+    }
+  }
+}

@@ -1,0 +1,161 @@
+{
+  "name": "Shikanoin Heizou",
+  "title": "Mitfühlender Analytiker",
+  "description": "Der begnadete junge Detektiv der Tenryou-Verwaltung, ausgestattet mit scharfem Instinkt und wachem Geist.",
+  "constellationName": "Cervus Minor",
+  "auto": {
+    "name": "Kampf im Fudou-Stil",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Standardangriff</strong>",
+        "1": "Kämpft mit der Kraft eines starken Windes gegen den Feind, führt bis zu 5 Angriffe aus und verursacht <anemo>Anemo-Schaden</anemo>."
+      },
+      "charged": {
+        "0": "<strong>Heftiger Schlag</strong>",
+        "1": "Verbraucht eine gewisse Menge Ausdauer und verursacht mit einem über das Feld fegenden Tritt <anemo>Anemo-Schaden</anemo>."
+      },
+      "plunging": {
+        "0": "<strong>Angriff aus dem Fall</strong>",
+        "1": "Konzentriert die Kraft des starken Windes, schlägt beim Fallen aus der Luft auf den Boden, greift alle Gegner in der Bahn an und verursacht beim Aufkommen <anemo>Anemo-Flächenschaden</anemo>."
+      }
+    },
+    "skillParams": {
+      "0": "SCH Phase 1",
+      "1": "SCH Phase 2",
+      "2": "SCH Phase 3",
+      "3": "SCH Phase 4",
+      "4": "SCH Phase 5",
+      "5": "SCH heftiger Schläge",
+      "6": "Ausdauerverbrauch heftiger Schläge",
+      "7": "SCH beim Fallen",
+      "8": "SCH beim Fallen aus niedriger/großer Höhe",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Faust der Brüderlichkeit",
+    "description": {
+      "0": "<strong>Drücken</strong>",
+      "1": "Nutzt den schnellen Wind und schlägt mit der Faust der Brüderlichkeit zu, um <anemo>Anemo-Schaden</anemo> zu verursachen.",
+      "2": "<br/>",
+      "3": "<strong>Gedrückt halten</strong>",
+      "4": "Sammelt Kraft, um einen noch stärkeren Schlag auszuführen und erhält während des Aufladens fortlaufend den Effekt „Deklination“, der die Stärke der Faust der Brüderlichkeit erhöhen kann. Löst beim Loslassen der Taste oder am Ende des Aufladens die Faust der Brüderlichkeit aus und verursacht nach vorn gerichteten <anemo>Anemo-Schaden</anemo>.",
+      "5": "<br/>",
+      "6": "<strong>Deklination</strong>",
+      "7": "Erhöht den mit der nächsten Faust der Brüderlichkeit verursachten Schaden, 4-fach stapelbar.",
+      "8": "Erschafft bei 4 Stapelungen „Deklination“ den Effekt „Urteilsspruch“, der den mit der nächsten Faust der Brüderlichkeit verursachten Schaden weiter erhöht und ihm einen größeren Wirkungsbereich verleiht.",
+      "9": "<br/>",
+      "10": "<i>In diesem augenscheinlich so gewöhnlichen und doch kraftvollen Schlag steckt Heizous Wunsch, dass Verbrecher gestehen und Buße tun.</i>"
+    },
+    "skillParams": {
+      "0": "Fähigkeits-SCH",
+      "1": "SCH-Bonus von Deklination",
+      "2": "SCH-Bonus von Urteilsspruch",
+      "3": "Dauer von Deklination",
+      "4": "Abklingzeit",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Tritt des konzentrierten Winds",
+    "description": {
+      "0": "Springt in die Luft und führt den Vakuumtritt des Fudou-Stils aus, der beim Treffen eine Explosion auslöst und ein Windloch erschafft, in das Objekte sowie Gegner in der Nähe gezogen werden. Verursacht <anemo>Anemo-Flächenschaden</anemo>.",
+      "1": "Fügt, wenn die mit dem Vakuumtritt des Fudou-Stils getroffenen Gegner von <hydro>Hydro</hydro>-, <pyro>Pyro</pyro>-, <cryo>Kryo</cryo>- oder <electro>Elektro</electro>-Kraft betroffen sind, diesen Gegnern den Effekt „Auge des konzentrierten Winds“ zu, der nach kurzer Zeit mit einer Explosion erlischt und damit Flächenschaden des jeweiligen Elements verursacht.",
+      "2": "Der Vakuumtritt des Fudou-Stils verleiht bis zu 4 getroffenen Gegnern den Effekt „Auge des konzentrierten Winds“. Diese Gegner können zu einem Zeitpunkt nur dem Effekt „Auge des konzentrierten Winds“ eines einzigen Elements ausgesetzt sein.",
+      "3": "<br/>",
+      "4": "<i>Eine einzigartige Technik, bei der die Anemo-Kraft an einer Stelle konzentriert wird, bevor sie mit einem Tritt entfesselt wird, immer zur Stelle, wenn ein Verbrecher auf der Flucht gefasst werden muss.</i>"
+    },
+    "skillParams": {
+      "0": "SCH von Vakuumtritt des Fudou-Stils",
+      "1": "SCH von Auge des konzentrierten Winds",
+      "2": "Abklingzeit",
+      "3": "Elementarenergie",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Unterricht der Ablehnung",
+    "description": {
+      "0": "Shikanoin Heizou erhält beim Auslösen einer Verwirbelung auf dem Feld eine Stapelung des Effekts „Deklination“ für die <strong>Faust der Brüderlichkeit</strong>, 0,1 s Abklingzeit."
+    }
+  },
+  "passive2": {
+    "name": "Durchschauen der Motive",
+    "description": {
+      "0": "Erhöht beim Treffen von Gegnern mit der <strong>Faust der Brüderlichkeit</strong> die Elementarkunde aller Truppenmitglieder (außer Shikanoin Heizou selbst) 10 s lang um 80 Punkte."
+    }
+  },
+  "passive3": {
+    "name": "Verbrechen zuvorkommen",
+    "description": {
+      "0": "Verringert die beim Rennen verbrauchte Ausdauer aller eigenen Truppenmitglieder um 20 %.",
+      "1": "Nicht mit passiven Talenten mit völlig gleichen Effekten stapelbar."
+    }
+  },
+  "constellation1": {
+    "name": "Fallakte eines berüchtigten jungen Mannes",
+    "description": {
+      "0": "Erhöht die Angriffs-GSW von Standardangriffen nach dem Einwechseln von Shikanoin Heizou 5 s lang um 15 % und verleiht ihm 1 Stapelung des Effekts „Deklination“ für die <strong>Faust der Brüderlichkeit</strong>, 10 s Abklingzeit."
+    }
+  },
+  "constellation2": {
+    "name": "Aufdeckung der Hintergründe",
+    "description": {
+      "0": "Verstärkt den Anziehungseffekt des Windlochs, das durch <strong>Tritt des konzentrierten Winds</strong> ausgelöst wird, und verlängert die Dauer des Effekts auf 1 s."
+    }
+  },
+  "constellation3": {
+    "name": "Rätselheft",
+    "description": {
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Faust der Brüderlichkeit</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation4": {
+    "name": "Stoff, aus dem Lügen gemacht sind",
+    "description": {
+      "0": "Stellt Shikanoin Heizou bei der jeweils ersten Explosion des „Auges des konzentrierten Winds“ von jedem <strong>Tritt des konzentrierten Winds</strong> 9 Punkte Elementarenergie und bei jeder weiteren Explosion zusätzlich 1,5 Punkte Elementarenergie wieder her.",
+      "1": "Bis zu 13,5 Punkte Elementarenergie auf diese Weise pro <strong>Tritt des konzentrierten Winds</strong> für Shikanoin Heizou zu erhalten."
+    }
+  },
+  "constellation5": {
+    "name": "Geheimarchiv",
+    "description": {
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Tritt des konzentrierten Winds</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation6": {
+    "name": "Verblüffende Festnahme",
+    "description": {
+      "0": "Erhöht beim Auslösen der <strong>Faust der Brüderlichkeit</strong> die KT dabei für jede Stapelung „Deklination“ um 4 %. Erhöht bei Vorhandensein von „Urteilsspruch“ für Faust der Brüderlichkeit den KSCH der Faust der Brüderlichkeit dieses Mal um 32 %."
+    }
+  }
+}

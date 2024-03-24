@@ -1,0 +1,24 @@
+{
+  "name": "Giada sacrificale",
+  "description": {
+    "0": "Un antico pendente di giada che emette un bagliore limpido come l'acqua. Sembra venisse impiegato per officiare antiche cerimonie."
+  },
+  "passiveName": "Circolazione di giada",
+  "passiveDescription": {
+    "0": {
+      "0": "Se il personaggio rimane fuori dal campo per più di 5 s, i suoi PS max e la sua maestria elementale aumentano rispettivamente di un <cryo>32%</cryo> e di <cryo>40</cryo>. Questi effetti si annullano quando il personaggio rimane in campo per più di 10 s."
+    },
+    "1": {
+      "0": "Se il personaggio rimane fuori dal campo per più di 5 s, i suoi PS max e la sua maestria elementale aumentano rispettivamente di un <cryo>40%</cryo> e di <cryo>50</cryo>. Questi effetti si annullano quando il personaggio rimane in campo per più di 10 s."
+    },
+    "2": {
+      "0": "Se il personaggio rimane fuori dal campo per più di 5 s, i suoi PS max e la sua maestria elementale aumentano rispettivamente di un <cryo>48%</cryo> e di <cryo>60</cryo>. Questi effetti si annullano quando il personaggio rimane in campo per più di 10 s."
+    },
+    "3": {
+      "0": "Se il personaggio rimane fuori dal campo per più di 5 s, i suoi PS max e la sua maestria elementale aumentano rispettivamente di un <cryo>56%</cryo> e di <cryo>70</cryo>. Questi effetti si annullano quando il personaggio rimane in campo per più di 10 s."
+    },
+    "4": {
+      "0": "Se il personaggio rimane fuori dal campo per più di 5 s, i suoi PS max e la sua maestria elementale aumentano rispettivamente di un <cryo>64%</cryo> e di <cryo>80</cryo>. Questi effetti si annullano quando il personaggio rimane in campo per più di 10 s."
+    }
+  }
+}

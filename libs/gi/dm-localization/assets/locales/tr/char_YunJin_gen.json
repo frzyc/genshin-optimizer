@@ -1,0 +1,164 @@
+{
+  "name": "Yun Jin",
+  "title": "Sahnelerin Parlayan Güneşi",
+  "description": "Hem oyun yazarlığı hem de şarkı söyleme becerisine sahip ünlü bir Liyue opera sanatçısı. Tıpkı kendisi gibi zarif ve narin tarzı, türünün tek örneğidir.",
+  "constellationName": "Başyapıt",
+  "auto": {
+    "name": "Bulutları Dağıtan Vuruş",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Saldırı</strong>",
+        "1": "Arka arkaya en fazla 5 mızrak saldırısı yapar."
+      },
+      "charged": {
+        "0": "<strong>Yüklü Saldırı</strong>",
+        "1": "İleri atılırken belirli miktarda Dayanıklılık harcar ve önündeki düşmanlara hasar verir."
+      },
+      "plunging": {
+        "0": "<strong>Havadan Saldırı</strong>",
+        "1": "Havadayken dalışa geçerek yere vurur ve yoluna çıkan düşmanlara Alan Hasarı verir."
+      }
+    },
+    "skillParams": {
+      "0": "1 Vuruş Hasarı",
+      "1": "2 Vuruş Hasarı",
+      "2": "3 Vuruş Hasarı",
+      "3": "4 Vuruş Hasarı",
+      "4": "5 Vuruş Hasarı",
+      "5": "Yüklü Saldırı",
+      "6": "Yüklü Saldırı Dayanıklılık Maliyeti",
+      "7": "Havadan Saldırı Hasarı",
+      "8": "Havadan Saldırı Hasarı (Alçaktan/Yüksekten)",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Gösterişli Açılış",
+    "description": {
+      "0": "Yun Hanım, sahnede savaşırken rol yapsa da düşmanlarına karşı kendini savunurken gözler önüne serdiği mızrak becerisi gerçektir.",
+      "1": "<br/>",
+      "2": "<strong>Bas</strong>",
+      "3": "Mızrağını, bulutları dağıtırcasına savurur ve <geo>Toprak Hasarı</geo> verir.",
+      "4": "<br/>",
+      "5": "<strong>Basılı Tut</strong>",
+      "6": "Gösterişli Açılış duruşuna geçip yük biriktirerek kalkan oluşturur. Hasar Emilimi, Yun Jin'in Maks. Canına göre belirlenir. Tüm Element Hasarlarına ve Fiziksel Hasarlara karşı %150 etkilidir. Kalkan, Element Becerisi tamamen açığa çıkana kadar kullanılabilir.",
+      "7": "Beceri kullanıldığında, süresi bittiğinde veya kalkan kırıldığında Yun Jin, yüklü enerjiyi kullanarak saldırır ve <geo>Toprak Hasarı</geo> verir.",
+      "8": "Yük biriktirme süresine göre 1. Seviye veya 2. Seviye Yüklü saldırı yapar.",
+      "9": "<br/>",
+      "10": "<i>Onca yıl süren hazırlıktan sonra sahnedeki o ihtişamlı an.</i>"
+    },
+    "skillParams": {
+      "0": "Basma Hasarı",
+      "1": "1. Seviye Yük Hasarı",
+      "2": "2. Seviye Yük Hasarı",
+      "3": "Kalkanın Hasar Emilimi",
+      "4": "BS",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Uçurum Yaran Sancak",
+    "description": {
+      "0": "<geo>Toprak Alan Hasarı</geo> verir ve yakındaki tüm grup üyeleri Dalgalanan Bulut Bayrağı Düzeni alır.",
+      "1": "<br/>",
+      "2": "<strong>Dalgalanan Bulut Bayrağı Düzeni</strong>",
+      "3": "Düşmanlara Normal Saldırı Hasarı verildiğinde Yun Jin'in mevcut Savunmasına bağlı olarak Bonus Hasar verilir.",
+      "4": "<br/>",
+      "5": "Bu becerinin etkileri belirli bir süre geçtikten veya belirli sayıda tetiklendikten sonra kaybolur.",
+      "6": "Bir Normal Saldırı birden çok düşmana isabet ederse etki, isabet alan düşman sayısına göre birkaç kez tetiklenir. Etkinin tetiklenme sayısı Dalgalanan Bulut Bayrağı Düzenine sahip her grup üyesi için ayrıca hesaplanır.",
+      "7": "<br/>",
+      "8": "<i>Davul sesleri eşliğinde kılıçlar ve mızraklar çarpışırken kudretli bir general boy gösterir.</i>",
+      "9": "<i>Sahnedeki enstrümanların coşkusuyla bu iblislerin hakkından nasıl geldiğini görün!</i>"
+    },
+    "skillParams": {
+      "0": "Beceri Hasarı",
+      "1": "Hasar Artışı",
+      "2": "Süre",
+      "3": "Tetiklenme Sınırı",
+      "4": "BS",
+      "5": "Enerji Maliyeti",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Kendiyle Barışık",
+    "description": {
+      "0": "Yun Jin saldırıya uğradığında <strong>Gösterişli Açılış</strong> doğru anda kullanılırsa 2. Seviye Yüklü (Basılı Tutma) formu ortaya çıkar."
+    }
+  },
+  "passive2": {
+    "name": "Düzeni Yerle Bir Etmek",
+    "description": {
+      "0": "<strong>Dalgalanan Bulut Bayrağı Düzeni</strong> becerisinin verdiği Normal Saldırı Hasarı Bonusu, ek olarak grupta sırasıyla 1/2/3/4 Element Türü karakter olduğu zaman Yun Jin'in Savunmasının %2,5/%5/%7,5/%11,5 oranı kadar artar."
+    }
+  },
+  "passive3": {
+    "name": "Hafif Yiyecek",
+    "description": {
+      "0": "Macera ile ilgili etkilere sahip olan bir yemek Mükemmel Pişirildiğinde elde edilen ürün %12 ihtimalle iki katına çıkar."
+    }
+  },
+  "constellation1": {
+    "name": "Doludizgin Tiyatro",
+    "description": {
+      "0": "<strong>Gösterişli Açılış</strong> becerisinin Bekleme Süresi %18 azalır."
+    }
+  },
+  "constellation2": {
+    "name": "Zengin Mizansen",
+    "description": {
+      "0": "<strong>Uçurum Yaran Sancak</strong> devreye girdikten sonra 12 saniyeliğine yakında bulunan tüm grup üyelerinin Normal Saldırı Hasarı %15 artar."
+    }
+  },
+  "constellation3": {
+    "name": "Denizleri Aşan General",
+    "description": {
+      "0": "<strong>Uçurum Yaran Sancak</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation4": {
+    "name": "Çiçek ve Savaşçı",
+    "description": {
+      "0": "Yun Jin, Kristalleşme Tepkimesini tetiklediğinde 12 saniyeliğine Savunması %20 artar."
+    }
+  },
+  "constellation5": {
+    "name": "Meşhur Bir Oyuncu",
+    "description": {
+      "0": "<strong>Gösterişli Açılış</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation6": {
+    "name": "Zarif Bir Ahenk",
+    "description": {
+      "0": "<strong>Dalgalanan Bulut Bayrağı Düzeni</strong> etkisindeki karakterlerin Normal Saldırı Hızı %12 artar."
+    }
+  }
+}

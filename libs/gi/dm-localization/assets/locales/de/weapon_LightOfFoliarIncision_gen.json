@@ -1,0 +1,24 @@
+{
+  "name": "Licht der schneidenden Blätter",
+  "description": {
+    "0": "Eine aus edlen weißen Zweigen gefertigte und mit goldenen Motiven verzierte Klinge, die für zahllose den Waldboden befleckende Unheilsbringer das Ende bedeutete."
+  },
+  "passiveName": "Zweig des weißen Mondes",
+  "passiveDescription": {
+    "0": {
+      "0": "Erhöht die KT um <cryo>4 %</cryo>. Erhält, nachdem durch Standardangriffe Elementar-Schaden verursacht wurde, den Effekt „Blattschneider“: Erhöht den von Standardangriffen und Elementarfähigkeit verursachten Schaden um <cryo>120 %</cryo> der Elementarkunde. Dieser Effekt verschwindet nach 12 s oder nach 28 Auslösungen des Bonus. 12 s Abklingzeit auf das Erhalten des Effekts „Blattschneider“."
+    },
+    "1": {
+      "0": "Erhöht die KT um <cryo>5 %</cryo>. Erhält, nachdem durch Standardangriffe Elementar-Schaden verursacht wurde, den Effekt „Blattschneider“: Erhöht den von Standardangriffen und Elementarfähigkeit verursachten Schaden um <cryo>150 %</cryo> der Elementarkunde. Dieser Effekt verschwindet nach 12 s oder nach 28 Auslösungen des Bonus. 12 s Abklingzeit auf das Erhalten des Effekts „Blattschneider“."
+    },
+    "2": {
+      "0": "Erhöht die KT um <cryo>6 %</cryo>. Erhält, nachdem durch Standardangriffe Elementar-Schaden verursacht wurde, den Effekt „Blattschneider“: Erhöht den von Standardangriffen und Elementarfähigkeit verursachten Schaden um <cryo>180 %</cryo> der Elementarkunde. Dieser Effekt verschwindet nach 12 s oder nach 28 Auslösungen des Bonus. 12 s Abklingzeit auf das Erhalten des Effekts „Blattschneider“."
+    },
+    "3": {
+      "0": "Erhöht die KT um <cryo>7 %</cryo>. Erhält, nachdem durch Standardangriffe Elementar-Schaden verursacht wurde, den Effekt „Blattschneider“: Erhöht den von Standardangriffen und Elementarfähigkeit verursachten Schaden um <cryo>210 %</cryo> der Elementarkunde. Dieser Effekt verschwindet nach 12 s oder nach 28 Auslösungen des Bonus. 12 s Abklingzeit auf das Erhalten des Effekts „Blattschneider“."
+    },
+    "4": {
+      "0": "Erhöht die KT um <cryo>8 %</cryo>. Erhält, nachdem durch Standardangriffe Elementar-Schaden verursacht wurde, den Effekt „Blattschneider“: Erhöht den von Standardangriffen und Elementarfähigkeit verursachten Schaden um <cryo>240 %</cryo> der Elementarkunde. Dieser Effekt verschwindet nach 12 s oder nach 28 Auslösungen des Bonus. 12 s Abklingzeit auf das Erhalten des Effekts „Blattschneider“."
+    }
+  }
+}

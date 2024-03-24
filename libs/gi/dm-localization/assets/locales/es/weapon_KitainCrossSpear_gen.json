@@ -1,0 +1,24 @@
+{
+  "name": "Cruz de Kitain",
+  "description": {
+    "0": "El arma utilizada por el famoso lancero que custodiaba a los tatarigami en la Isla Yashiori."
+  },
+  "passiveName": "Conducta de samurái",
+  "passiveDescription": {
+    "0": {
+      "0": "Aumenta en un <cryo>6%</cryo> el daño infligido por la Habilidad Elemental. Al golpear a un enemigo con dicha habilidad, el personaje pierde 3 pts. de Energía Elemental, pero recupera <cryo>3</cryo> pts. cada 2 s durante 6 s. Este efecto puede ocurrir una vez cada 10 s incluso cuando el personaje está en tu equipo pero no en uso."
+    },
+    "1": {
+      "0": "Aumenta en un <cryo>7.5%</cryo> el daño infligido por la Habilidad Elemental. Al golpear a un enemigo con dicha habilidad, el personaje pierde 3 pts. de Energía Elemental, pero recupera <cryo>3.5</cryo> pts. cada 2 s durante 6 s. Este efecto puede ocurrir una vez cada 10 s incluso cuando el personaje está en tu equipo pero no en uso."
+    },
+    "2": {
+      "0": "Aumenta en un <cryo>9%</cryo> el daño infligido por la Habilidad Elemental. Al golpear a un enemigo con dicha habilidad, el personaje pierde 3 pts. de Energía Elemental, pero recupera <cryo>4</cryo> pts. cada 2 s durante 6 s. Este efecto puede ocurrir una vez cada 10 s incluso cuando el personaje está en tu equipo pero no en uso."
+    },
+    "3": {
+      "0": "Aumenta en un <cryo>10.5%</cryo> el daño infligido por la Habilidad Elemental. Al golpear a un enemigo con dicha habilidad, el personaje pierde 3 pts. de Energía Elemental, pero recupera <cryo>4.5</cryo> pts. cada 2 s durante 6 s. Este efecto puede ocurrir una vez cada 10 s incluso cuando el personaje está en tu equipo pero no en uso."
+    },
+    "4": {
+      "0": "Aumenta en un <cryo>12%</cryo> el daño infligido por la Habilidad Elemental. Al golpear a un enemigo con dicha habilidad, el personaje pierde 3 pts. de Energía Elemental, pero recupera <cryo>5</cryo> pts. cada 2 s durante 6 s. Este efecto puede ocurrir una vez cada 10 s incluso cuando el personaje está en tu equipo pero no en uso."
+    }
+  }
+}

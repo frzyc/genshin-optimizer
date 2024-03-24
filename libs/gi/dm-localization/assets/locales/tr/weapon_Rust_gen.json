@@ -1,0 +1,24 @@
+{
+  "name": "Pas",
+  "description": {
+    "0": "Pasla kaplanmış bir büyük yay. Sıradan birinin onu germeyi bırak yerinden bile kaldırması mümkün değil."
+  },
+  "passiveName": "Yaylım Ateşi",
+  "passiveDescription": {
+    "0": {
+      "0": "Normal Saldırı Hasarını <cryo>%40</cryo> artırır ama Yüklü Saldırı Hasarını %10 azaltır."
+    },
+    "1": {
+      "0": "Normal Saldırı Hasarını <cryo>%50</cryo> artırır ama Yüklü Saldırı Hasarını %10 azaltır."
+    },
+    "2": {
+      "0": "Normal Saldırı Hasarını <cryo>%60</cryo> artırır ama Yüklü Saldırı Hasarını %10 azaltır."
+    },
+    "3": {
+      "0": "Normal Saldırı Hasarını <cryo>%70</cryo> artırır ama Yüklü Saldırı Hasarını %10 azaltır."
+    },
+    "4": {
+      "0": "Normal Saldırı Hasarını <cryo>%80</cryo> artırır ama Yüklü Saldırı Hasarını %10 azaltır."
+    }
+  }
+}

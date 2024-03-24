@@ -1,0 +1,24 @@
+{
+  "name": "Kızıl Çölün İradesi",
+  "description": {
+    "0": "Kadim bir kralın silahına veya bazı tören aletlerine uyacak şekilde tasarlanmış büyük ve düz uçlu bir kılıç."
+  },
+  "passiveName": "Çöl Gözcüsü",
+  "passiveDescription": {
+    "0": {
+      "0": "Karakterin Element Becerisi düşmana isabet ettiğinde 8 saniyeliğine karakterin Saldırısı <cryo>%20</cryo> artar. Karakter Hasar aldıktan sonra 8 saniyeliğine Saldırısı <cryo>%20</cryo> artar. Bahsi geçen 2 etki, karakter savaş alanında değilken bile tetiklenebilir. Ayrıca, karakter bir kalkan tarafından korunmadığında Maks. Canı <cryo>%32</cryo> artar."
+    },
+    "1": {
+      "0": "Karakterin Element Becerisi düşmana isabet ettiğinde 8 saniyeliğine karakterin Saldırısı <cryo>%25</cryo> artar. Karakter Hasar aldıktan sonra 8 saniyeliğine Saldırısı <cryo>%25</cryo> artar. Bahsi geçen 2 etki, karakter savaş alanında değilken bile tetiklenebilir. Ayrıca, karakter bir kalkan tarafından korunmadığında Maks. Canı <cryo>%40</cryo> artar."
+    },
+    "2": {
+      "0": "Karakterin Element Becerisi düşmana isabet ettiğinde 8 saniyeliğine karakterin Saldırısı <cryo>%30</cryo> artar. Karakter Hasar aldıktan sonra 8 saniyeliğine Saldırısı <cryo>%30</cryo> artar. Bahsi geçen 2 etki, karakter savaş alanında değilken bile tetiklenebilir. Ayrıca, karakter bir kalkan tarafından korunmadığında Maks. Canı <cryo>%48</cryo> artar."
+    },
+    "3": {
+      "0": "Karakterin Element Becerisi düşmana isabet ettiğinde 8 saniyeliğine karakterin Saldırısı <cryo>%35</cryo> artar. Karakter Hasar aldıktan sonra 8 saniyeliğine Saldırısı <cryo>%35</cryo> artar. Bahsi geçen 2 etki, karakter savaş alanında değilken bile tetiklenebilir. Ayrıca, karakter bir kalkan tarafından korunmadığında Maks. Canı <cryo>%56</cryo> artar."
+    },
+    "4": {
+      "0": "Karakterin Element Becerisi düşmana isabet ettiğinde 8 saniyeliğine karakterin Saldırısı <cryo>%40</cryo> artar. Karakter Hasar aldıktan sonra 8 saniyeliğine Saldırısı <cryo>%40</cryo> artar. Bahsi geçen 2 etki, karakter savaş alanında değilken bile tetiklenebilir. Ayrıca, karakter bir kalkan tarafından korunmadığında Maks. Canı <cryo>%64</cryo> artar."
+    }
+  }
+}

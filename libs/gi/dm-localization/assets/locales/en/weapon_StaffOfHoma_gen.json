@@ -1,0 +1,24 @@
+{
+  "name": "Staff of Homa",
+  "description": {
+    "0": "A \"firewood staff\" that was once used in ancient and long-lost rituals."
+  },
+  "passiveName": "Reckless Cinnabar",
+  "passiveDescription": {
+    "0": {
+      "0": "HP increased by <cryo>20%</cryo>. Additionally, provides an ATK Bonus based on <cryo>0.8%</cryo> of the wielder's Max HP. When the wielder's HP is less than 50%, this ATK Bonus is increased by an additional <cryo>1%</cryo> of Max HP."
+    },
+    "1": {
+      "0": "HP increased by <cryo>25%</cryo>. Additionally, provides an ATK Bonus based on <cryo>1%</cryo> of the wielder's Max HP. When the wielder's HP is less than 50%, this ATK Bonus is increased by an additional <cryo>1.2%</cryo> of Max HP."
+    },
+    "2": {
+      "0": "HP increased by <cryo>30%</cryo>. Additionally, provides an ATK Bonus based on <cryo>1.2%</cryo> of the wielder's Max HP. When the wielder's HP is less than 50%, this ATK Bonus is increased by an additional <cryo>1.4%</cryo> of Max HP."
+    },
+    "3": {
+      "0": "HP increased by <cryo>35%</cryo>. Additionally, provides an ATK Bonus based on <cryo>1.4%</cryo> of the wielder's Max HP. When the wielder's HP is less than 50%, this ATK Bonus is increased by an additional <cryo>1.6%</cryo> of Max HP."
+    },
+    "4": {
+      "0": "HP increased by <cryo>40%</cryo>. Additionally, provides an ATK Bonus based on <cryo>1.6%</cryo> of the wielder's Max HP. When the wielder's HP is less than 50%, this ATK Bonus is increased by an additional <cryo>1.8%</cryo> of Max HP."
+    }
+  }
+}

@@ -1,0 +1,165 @@
+{
+  "name": "Xiao",
+  "title": "Schützender Yaksha",
+  "description": "Ein Yaksha, ein Adept, der Liyue beschützt. Er wird als großer „Dämonenbändiger“ und „Schützender Yaksha“ bezeichnet.",
+  "constellationName": "Alatus Nemeseos",
+  "auto": {
+    "name": "Aufgewirbelter Staub",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Standardangriff</strong>",
+        "1": "Führt bis zu 6 Lanzenstiche hintereinander aus."
+      },
+      "charged": {
+        "0": "<strong>Heftiger Schlag</strong>",
+        "1": "Verbraucht eine gewisse Menge Ausdauer und führt einen nach oben gerichteten Angriff aus."
+      },
+      "plunging": {
+        "0": "<strong>Angriff aus dem Fall</strong>",
+        "1": "Schlägt beim Fallen aus der Luft auf den Boden, greift alle Gegner in der Bahn an und verursacht beim Aufkommen Flächenschaden.",
+        "2": "Xiao erleidet bei Angriffen aus dem Fall keinen Schaden durch den Fall."
+      }
+    },
+    "skillParams": {
+      "0": "SCH Phase 1",
+      "1": "SCH Phase 2",
+      "2": "SCH Phase 3",
+      "3": "SCH Phase 4",
+      "4": "SCH Phase 5",
+      "5": "SCH Phase 6",
+      "6": "SCH heftiger Schläge",
+      "7": "Ausdauerverbrauch heftiger Schläge",
+      "8": "SCH beim Fallen",
+      "9": "SCH beim Fallen aus niedriger/großer Höhe",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Doppeltes Windrad",
+    "description": {
+      "0": "Sticht mit hoher Geschwindigkeit nach vorn und fügt den Gegnern in der Bahn <anemo>Anemo-Schaden</anemo> zu.",
+      "1": "Kann in der Luft angewendet werden.",
+      "2": "Kann anfänglich 2-mal angewendet werden.",
+      "3": "<br/>",
+      "4": "<i>In den Legenden fremder Länder würde die Welt von zwei riesigen Windrädern zermalmt werden. Xiao hat den Umgang mit der Lanze bereits perfektioniert und zerschneidet seine Gegner wie die beiden Windräder.</i>"
+    },
+    "skillParams": {
+      "0": "Fähigkeits-SCH",
+      "1": "Abklingzeit",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Geistervertreibung",
+    "description": {
+      "0": "Setzt die Yaksha-Maske auf, die Götter und Monster schon vor Jahrtausenden gleichermaßen in Angst und Schrecken versetzt hat.",
+      "1": "<br/>",
+      "2": "<strong>Yaksha-Maske</strong>",
+      "3": [
+        " Erhöht Xiaos Sprungkraft enorm.",
+        " Vergrößert den Angriffsradius und erhöht den verursachten Schaden.",
+        " Wandelt den verursachten Schaden in <anemo>Anemo-Schaden</anemo> um. Diese Elementarumwandlung kann nicht von anderen Elementen überdeckt werden."
+      ],
+      "4": "<br/>",
+      "5": "Xiao verbraucht in diesem Zustand fortlaufend LP.",
+      "6": "Effekt erlischt, wenn Xiao ausgewechselt wird.",
+      "7": "<br/>",
+      "8": "<i>Xiao setzt die Monster unterdrückende Maske auf und nimmt die Gestalt des „Schützenden Yaksha“ an, der das Böse erstarren lässt und Geistwesen vertreibt. Er erhält damit große Kraft, aber auch große Schmerzen. Dies wird als „Geistervertreibung“ bezeichnet.</i>"
+    },
+    "skillParams": {
+      "0": "Bonus für Standardangriffe, heftige Schläge und Angriffe aus dem Fall",
+      "1": "LP-Verlust",
+      "2": "Dauer",
+      "3": "Abklingzeit",
+      "4": "Elementarenergie",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Eroberung – Dämonenbändiger",
+    "description": {
+      "0": "Erhöht Xiaos gesamten Schaden im Zustand <strong>Geistervertreibung</strong> um 5 % und danach während der Dauer der Fähigkeit alle 3 s um zusätzliche 5 %.",
+      "1": "Erhöht den Schaden dabei um bis zu 25 %."
+    }
+  },
+  "passive2": {
+    "name": "Untergang – Zermalmtes Land",
+    "description": {
+      "0": "Erhöht den mit <strong>Doppeltes Windrad</strong> verursachten Schaden bei erneuter Anwendung von Doppeltes Windrad innerhalb von 7 s um 15 %.",
+      "1": "Hält 7 s, 3-fach stapelbar, aktualisiert die Dauer beim Stapeln."
+    }
+  },
+  "passive3": {
+    "name": "Transzendenz – Schwerelosigkeit",
+    "description": {
+      "0": "Verringert die beim Klettern verbrauchte Ausdauer aller eigenen Truppenmitglieder um 20 %.",
+      "1": "Nicht mit passiven Talenten mit völlig gleichen Effekten stapelbar."
+    }
+  },
+  "constellation1": {
+    "name": "Untergang – Zerstörung der Welten",
+    "description": {
+      "0": "Ermöglicht 1 weitere Anwendung von <strong>Doppeltes Windrad</strong>."
+    }
+  },
+  "constellation2": {
+    "name": "Vernichtung – Ausweitung der Leere",
+    "description": {
+      "0": "Erhöht Xiaos Aufladerate, wenn er inaktiv in der Truppe ist, um 25 %."
+    }
+  },
+  "constellation3": {
+    "name": "Eroberung – Ausdruck des Zorns",
+    "description": {
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Doppeltes Windrad</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation4": {
+    "name": "Transzendenz – Auslöschung des Leids",
+    "description": {
+      "0": "Erhöht Xiaos VTD bei weniger als 50 % LP um 100 %."
+    }
+  },
+  "constellation5": {
+    "name": "Evolution – Ausbreitung der Unwissenheit",
+    "description": {
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Geistervertreibung</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation6": {
+    "name": "Eroberung – Schutz des Yaksha",
+    "description": {
+      "0": "Ermöglicht beim Treffen von mindestens 2 Gegnern mit einem Angriff aus dem Fall unter Anwendung von <strong>Geistervertreibung</strong> sofort 1 Anwendung von <strong>Doppeltes Windrad</strong>, das innerhalb der folgenden s trotz Abklingzeit angewendet werden kann."
+    }
+  }
+}

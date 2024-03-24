@@ -1,0 +1,24 @@
+{
+  "name": "Épée du faucon",
+  "description": {
+    "0": "L'âme de l'Ordre de Favonius. Même après des millénaires, elle continue d'appeler le vent de la justice pour venir à bout du mal – tout comme la dernière héroïne à qui elle appartenait."
+  },
+  "passiveName": "Résistance du Faucon de l'Ouest",
+  "passiveDescription": {
+    "0": {
+      "0": "Augmente l'ATQ de <cryo>20 %</cryo>. Lorsque le joueur subit des DGT, l'âme du Faucon de l'Ouest se réveille brandissant l'étendard de la résistance, qui restaure <cryo>100 %</cryo> de l'ATQ sous forme de PV, et inflige des DGT équivalant à <cryo>200 %</cryo> de l'ATQ aux ennemis proches. Cet effet peut être déclenché une fois toutes les 15 s."
+    },
+    "1": {
+      "0": "Augmente l'ATQ de <cryo>25 %</cryo>. Lorsque le joueur subit des DGT, l'âme du Faucon de l'Ouest se réveille brandissant l'étendard de la résistance, qui restaure <cryo>115 %</cryo> de l'ATQ sous forme de PV, et inflige des DGT équivalant à <cryo>230 %</cryo> de l'ATQ aux ennemis proches. Cet effet peut être déclenché une fois toutes les 15 s."
+    },
+    "2": {
+      "0": "Augmente l'ATQ de <cryo>30 %</cryo>. Lorsque le joueur subit des DGT, l'âme du Faucon de l'Ouest se réveille brandissant l'étendard de la résistance, qui restaure <cryo>130 %</cryo> de l'ATQ sous forme de PV, et inflige des DGT équivalant à <cryo>260 %</cryo> de l'ATQ aux ennemis proches. Cet effet peut être déclenché une fois toutes les 15 s."
+    },
+    "3": {
+      "0": "Augmente l'ATQ de <cryo>35 %</cryo>. Lorsque le joueur subit des DGT, l'âme du Faucon de l'Ouest se réveille brandissant l'étendard de la résistance, qui restaure <cryo>145 %</cryo> de l'ATQ sous forme de PV, et inflige des DGT équivalant à <cryo>290 %</cryo> de l'ATQ aux ennemis proches. Cet effet peut être déclenché une fois toutes les 15 s."
+    },
+    "4": {
+      "0": "Augmente l'ATQ de <cryo>40 %</cryo>. Lorsque le joueur subit des DGT, l'âme du Faucon de l'Ouest se réveille brandissant l'étendard de la résistance, qui restaure <cryo>160 %</cryo> de l'ATQ sous forme de PV, et inflige des DGT équivalant à <cryo>320 %</cryo> de l'ATQ aux ennemis proches. Cet effet peut être déclenché une fois toutes les 15 s."
+    }
+  }
+}

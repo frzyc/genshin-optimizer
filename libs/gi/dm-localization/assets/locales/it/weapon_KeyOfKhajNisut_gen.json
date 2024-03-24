@@ -1,0 +1,24 @@
+{
+  "name": "Chiave del Khaj-Nisut",
+  "description": {
+    "0": "Uno degli esemplari di una coppia di scettri forgiati in ossidiana. Si dice sia la chiave che spalancherà i cancelli di un paradiso giacente ai confini dell'oceano di sabbia."
+  },
+  "passiveName": "Epopea del mare di sabbia",
+  "passiveDescription": {
+    "0": {
+      "0": "I PS aumentano di un <cryo>20%</cryo>. Quando un'abilità elementale colpisce gli avversari, ottieni l'effetto Inno maestoso per 20 s. Quest'effetto aumenta la maestria elementale del personaggio che equipaggia l'arma di uno <cryo>0,12%</cryo> dei suoi PS max. Può attivarsi una volta ogni 0,3 s e accumularsi per un massimo di 3 volte. Quando l'effetto si accumula per la terza volta, o quando la durata del terzo accumulo si ripristina, la maestria elementale di tutti i membri del gruppo vicini aumenta di uno <cryo>0,2%</cryo> dei PS max del personaggio che equipaggia l'arma per 20 s."
+    },
+    "1": {
+      "0": "I PS aumentano di un <cryo>25%</cryo>. Quando un'abilità elementale colpisce gli avversari, ottieni l'effetto Inno maestoso per 20 s. Quest'effetto aumenta la maestria elementale del personaggio che equipaggia l'arma di uno <cryo>0,15%</cryo> dei suoi PS max. Può attivarsi una volta ogni 0,3 s e accumularsi per un massimo di 3 volte. Quando l'effetto si accumula per la terza volta, o quando la durata del terzo accumulo si ripristina, la maestria elementale di tutti i membri del gruppo vicini aumenta di uno <cryo>0,25%</cryo> dei PS max del personaggio che equipaggia l'arma per 20 s."
+    },
+    "2": {
+      "0": "I PS aumentano di un <cryo>30%</cryo>. Quando un'abilità elementale colpisce gli avversari, ottieni l'effetto Inno maestoso per 20 s. Quest'effetto aumenta la maestria elementale del personaggio che equipaggia l'arma di uno <cryo>0,18%</cryo> dei suoi PS max. Può attivarsi una volta ogni 0,3 s e accumularsi per un massimo di 3 volte. Quando l'effetto si accumula per la terza volta, o quando la durata del terzo accumulo si ripristina, la maestria elementale di tutti i membri del gruppo vicini aumenta di uno <cryo>0,3%</cryo> dei PS max del personaggio che equipaggia l'arma per 20 s."
+    },
+    "3": {
+      "0": "I PS aumentano di un <cryo>35%</cryo>. Quando un'abilità elementale colpisce gli avversari, ottieni l'effetto Inno maestoso per 20 s. Quest'effetto aumenta la maestria elementale del personaggio che equipaggia l'arma di uno <cryo>0,21%</cryo> dei suoi PS max. Può attivarsi una volta ogni 0,3 s e accumularsi per un massimo di 3 volte. Quando l'effetto si accumula per la terza volta, o quando la durata del terzo accumulo si ripristina, la maestria elementale di tutti i membri del gruppo vicini aumenta di uno <cryo>0,35%</cryo> dei PS max del personaggio che equipaggia l'arma per 20 s."
+    },
+    "4": {
+      "0": "I PS aumentano di un <cryo>40%</cryo>. Quando un'abilità elementale colpisce gli avversari, ottieni l'effetto Inno maestoso per 20 s. Quest'effetto aumenta la maestria elementale del personaggio che equipaggia l'arma di uno <cryo>0,24%</cryo> dei suoi PS max. Può attivarsi una volta ogni 0,3 s e accumularsi per un massimo di 3 volte. Quando l'effetto si accumula per la terza volta, o quando la durata del terzo accumulo si ripristina, la maestria elementale di tutti i membri del gruppo vicini aumenta di uno <cryo>0,4%</cryo> dei PS max del personaggio che equipaggia l'arma per 20 s."
+    }
+  }
+}

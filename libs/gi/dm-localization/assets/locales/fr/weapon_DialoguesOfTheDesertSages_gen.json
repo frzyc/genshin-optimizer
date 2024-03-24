@@ -1,0 +1,24 @@
+{
+  "name": "Dialogues des sages du désert",
+  "description": {
+    "0": "Un caducée symbolisant la gloire de l'alchimie, fabriqué à partir d'alliages spéciaux qui correspondent à son statut particulier. Il est extrêmement rigide et lourd, et ferait probablement très mal s'il était utilisé comme un gourdin."
+  },
+  "passiveName": "Principe de l'équilibre",
+  "passiveDescription": {
+    "0": {
+      "0": "Effectuer des soins restaure <cryo>8</cryo> pts d'énergie. Cet effet peut être déclenché une fois toutes les 10 s, même lorsque le personnage fait partie de l'équipe mais n'est pas déployé."
+    },
+    "1": {
+      "0": "Effectuer des soins restaure <cryo>10</cryo> pts d'énergie. Cet effet peut être déclenché une fois toutes les 10 s, même lorsque le personnage fait partie de l'équipe mais n'est pas déployé."
+    },
+    "2": {
+      "0": "Effectuer des soins restaure <cryo>12</cryo> pts d'énergie. Cet effet peut être déclenché une fois toutes les 10 s, même lorsque le personnage fait partie de l'équipe mais n'est pas déployé."
+    },
+    "3": {
+      "0": "Effectuer des soins restaure <cryo>14</cryo> pts d'énergie. Cet effet peut être déclenché une fois toutes les 10 s, même lorsque le personnage fait partie de l'équipe mais n'est pas déployé."
+    },
+    "4": {
+      "0": "Effectuer des soins restaure <cryo>16</cryo> pts d'énergie. Cet effet peut être déclenché une fois toutes les 10 s, même lorsque le personnage fait partie de l'équipe mais n'est pas déployé."
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Chant de quiétude",
+  "description": {
+    "0": "Un arc long étrange qui ressemble à une créature marine. Ses cordes ne produisent aucun son."
+  },
+  "passiveName": "Pulsion benthique",
+  "passiveDescription": {
+    "0": {
+      "0": "Lorsque le personnage a reçu des soins, les DGT qu'il inflige augmentent de <cryo>16 %</cryo> pendant 8 s. L'effet peut être déclenché même lorsque le personnage fait partie de l'équipe mais n'est pas déployé."
+    },
+    "1": {
+      "0": "Lorsque le personnage a reçu des soins, les DGT qu'il inflige augmentent de <cryo>20 %</cryo> pendant 8 s. L'effet peut être déclenché même lorsque le personnage fait partie de l'équipe mais n'est pas déployé."
+    },
+    "2": {
+      "0": "Lorsque le personnage a reçu des soins, les DGT qu'il inflige augmentent de <cryo>24 %</cryo> pendant 8 s. L'effet peut être déclenché même lorsque le personnage fait partie de l'équipe mais n'est pas déployé."
+    },
+    "3": {
+      "0": "Lorsque le personnage a reçu des soins, les DGT qu'il inflige augmentent de <cryo>28 %</cryo> pendant 8 s. L'effet peut être déclenché même lorsque le personnage fait partie de l'équipe mais n'est pas déployé."
+    },
+    "4": {
+      "0": "Lorsque le personnage a reçu des soins, les DGT qu'il inflige augmentent de <cryo>32 %</cryo> pendant 8 s. L'effet peut être déclenché même lorsque le personnage fait partie de l'équipe mais n'est pas déployé."
+    }
+  }
+}

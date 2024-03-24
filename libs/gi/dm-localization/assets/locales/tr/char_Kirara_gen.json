@@ -1,0 +1,164 @@
+{
+  "name": "Kirara",
+  "title": "Damdaki Kedi",
+  "description": "Inazumalı kargo şirketi Komaniya Ekspres'te çalışan bir kurye. İşini ve insan toplumunu seven bir nekomata.",
+  "constellationName": "Zilli Bohça",
+  "auto": {
+    "name": "Maket Bıçağı",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Saldırı</strong>",
+        "1": "En fazla 4 hızlı saldırı yapar."
+      },
+      "charged": {
+        "0": "<strong>Yüklü Saldırı</strong>",
+        "1": "Belirli miktarda Dayanıklılık harcayarak 3 hızlı pençe saldırısı yapar."
+      },
+      "plunging": {
+        "0": "<strong>Havadan Saldırı</strong>",
+        "1": "Havadayken dalışa geçerek yere vurur ve yoluna çıkan düşmanlara Alan Hasarı verir."
+      }
+    },
+    "skillParams": {
+      "0": "1 Vuruş Hasarı",
+      "1": "2 Vuruş Hasarı",
+      "2": "3 Vuruş Hasarı",
+      "3": "4 Vuruş Hasarı",
+      "4": "Yüklü Saldırı Hasarı",
+      "5": "Yüklü Saldırı Dayanıklılık Maliyeti",
+      "6": "Havadan Saldırı Hasarı",
+      "7": "Havadan Saldırı Hasarı (Alçaktan/Yüksekten)",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Miyav Jitsu",
+    "description": {
+      "0": "<strong>Bas</strong>",
+      "1": "Damdan dama atlayan bir kedinin çevikliğiyle havaya sıçrar, düşmanlarına <dendro>Doğa Alan Hasarı</dendro> veren bir tekme savurur ve Güvenli Teslimat Kalkanı oluşturur. Bu saldırı ayrıca Kirara'ya kısa süreliğine <dendro>Doğa etkisi uygular</dendro>. Kalkan <dendro>Doğa Hasarını</dendro> %250 verimlilikle emer. Kalkanın Hasar Emilimi, Kirara'nın Maks. Canına göre belirlenir ve Maks. Canın belirli bir oranını aşamaz. Bir Güvenli Teslimat Kalkanında geriye kalan Hasar emilimi, yeni bir kalkan oluşturulduğunda o kalkana eklenir ve yeni kalkanın süresi sıfırlanır.",
+      "2": "<br/>",
+      "3": "<strong>Basılı Tut</strong>",
+      "4": "Kirara, \"yarım günde teslimat\" hedefini tutturmak için basılarak oluşturulan kalkanın aynısı bir Güvenli Teslimat Kalkanı oluşturur. Ayrıca daha hızlı hareket etmek ve dövüşmek için özel bir ekspres teslimat kutusuna kıvrılıp Acil Neko Kargo durumuna girer.",
+      "5": "<br/>",
+      "6": "<strong>Acil Neko Kargo</strong>",
+      "7": [
+        "Çarptığı düşmanlara <dendro>Doğa Hasarı</dendro> verir. Bu etki her düşmanda 0,5 saniyede bir tetiklenebilir.",
+        "Bu durumdayken Kirara'nın hareket hızı, tırmanma hızı ve sıçrama gücü artar, tırmanırkenki Dayanıklılık Tüketimi de artar.",
+        "Acil Neko Kargo süresi bittiğinde veya beceri yeniden kullanıldığında Kirara, Basma Modundaki saldırıdan daha güçlü bir Terspençe Darbesi gerçekleştirerek <dendro>Doğa Alan Hasarı</dendro> verir.",
+        "Acil Neko Kargo durumu en fazla 10 saniye sürer. Durum bittiğinde beceri Bekleme Süresine girer. Kirara bu durumda ne kadar süre geçirirse Bekleme Süresi de o kadar artar.",
+        "Depar atmak veya tırmanmayı isteyerek iptal etmek bu durumu erken sonlandırır."
+      ],
+      "8": "<br/>",
+      "9": "<i>\"Hızlı teslimatın sırrını mı soruyorsun? Her şey bacak gücünde bitiyor!\"</i>"
+    },
+    "skillParams": {
+      "0": "Kuyruk Darbeli Uçan Tekme Hasarı",
+      "1": "Kalkanın Hasar Emilimi",
+      "2": "Kalkanın Maks. Hasar Emilimi",
+      "3": "Kalkan Süresi",
+      "4": "Acil Neko Kargo Vuruş Hasarı",
+      "5": "Maks. Acil Neko Kargo Süresi",
+      "6": "Terspençe Darbesi Hasarı",
+      "7": "BS",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Gizli Sanat: Sürpriz Dağıtım",
+    "description": {
+      "0": "Kargo hırsızlarını kovalamak için kullanılan Özel Teslimat Paketiyle düşmanlara vurarak <dendro>Doğa Alan Hasarı</dendro> verir. Özel Teslimat Paketi patladıktan sonra bir sürü <strong>Kedi Otu Kakulesi</strong> oluşturur. Bu kakuleler düşmanla temas ettikten veya bir süre geçtikten sonra patlayarak <dendro>Doğa Alan Hasarı verir</dendro>.",
+      "1": "<br/>",
+      "2": "<i>\"Hehe, doğru duydun. Bunları şu kargo hırsızlarıyla başa çıkmak için hazırladım! Kargonu teslim aldığında 5 yıldızlı yorum bırakırsan çok sevinirim!\"</i>"
+    },
+    "skillParams": {
+      "0": "Beceri Hasarı",
+      "1": "Kedi Otu Kakulesi Patlama Hasarı",
+      "2": "Kedi Otu Kakulesi Süresi",
+      "3": "BS",
+      "4": "Enerji Maliyeti",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Ayın Elemanı",
+    "description": {
+      "0": "Kirara, <strong>Miyav Jitsunun</strong> Acil Neko Kargo durumundayken düşmanlara her çarptığında bir <strong>Sağlam Paketleme</strong> kademesi kazanır. Bu etki, vurulan her düşman için 0,5 saniyede bir tetiklenebilir. 3 kademeye kadar birikir. Acil Neko Kargo durumu bittiğinde Kirara, Sağlam Paketleme kademesi başına 1 Güvenli Teslimat Kalkanı kazanır. Bu yöntemle oluşturulan kalkanlar, <strong>Miyav Jitsu</strong> ile oluşturulan Güvenli Teslimat Kalkanının %20'si kadar Hasar emebilir. Kirara halihazırda Miyav Jitsunun oluşturduğu bir Güvenli Teslimat Kalkanıyla korunuyorsa o kalkanın Hasar emilimine bu yeni kalkanlar da eklenir ve süresi sıfırlanır."
+    }
+  },
+  "passive2": {
+    "name": "Birbirinden Canlı Dokuz Can",
+    "description": {
+      "0": "Kirara'nın sahip olduğu her 1.000 Maks. Can, <strong>Miyav Jitsu</strong> Hasarını %0,4 ve <strong>Gizli Sanat: Sürpriz Dağıtım</strong> Hasarını %0,3 artırır."
+    }
+  },
+  "passive3": {
+    "name": "Sessiz Patiler",
+    "description": {
+      "0": "Kirara gruptayken grup üyeleri Kuş Eti, Çiğ Et veya Dondurulmuş Et veren hayvanlara yaklaştığında onları ürkütmez."
+    }
+  },
+  "constellation1": {
+    "name": "Dağıtım Ağı",
+    "description": {
+      "0": "Kirara, <strong>Gizli Sanat: Sürpriz Dağıtım</strong> kullandığında sahip olduğu her 8.000 Maks. Can için fazladan 1 adet <strong>Kedi Otu Kakulesi</strong> oluşturur. Bu şekilde en fazla 4 adet ek Kakule oluşturabilir."
+    }
+  },
+  "constellation2": {
+    "name": "Kusursuz Kargo Kutusu",
+    "description": {
+      "0": "Kirara, <strong>Miyav Jitsunun</strong> Acil Neko Kargo durumundayken çarptığı grup üyelerine Hassas Paket Kalkanı verir.",
+      "1": "Hassas Paket Kalkanının Hasar emilimi, <strong>Miyav Jitsunun</strong> oluşturduğu Güvenli Teslimat Kalkanının %40'ı kadardır ve <dendro>Doğa Hasarını</dendro> %250 verimlilikle emer.",
+      "2": "Hassas Paket Kalkanları 12 saniye sürer ve her karakterde 10 saniyede bir tetiklenebilir."
+    }
+  },
+  "constellation3": {
+    "name": "Tüm Dünyaya Teslimat",
+    "description": {
+      "0": "<strong>Miyav Jitsu</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation4": {
+    "name": "Skanda'nın Küheylanı",
+    "description": {
+      "0": "<strong>Güvenli Teslimat Kalkanı</strong> veya <strong>Hassas Paket Kalkanı</strong> tarafından korunan aktif karakterler Normal, Yüklü veya Havadan Saldırılarla düşmanlara vurduğunda Kirara, <strong>Küçük Kedi Otu Kakuleleri</strong> kullanarak ortak bir saldırı yapar ve Saldırısının %200'ünü <dendro>Doğa Hasarı</dendro> olarak verir. Bu şekilde verilen Hasar, Element Patlaması Hasarı sayılır. Bu etki 3,8 saniyede bir tetiklenebilir. Etkinin bekleme süresi tüm grup üyelerinde ortaktır."
+    }
+  },
+  "constellation5": {
+    "name": "Günde Bin Kilometre",
+    "description": {
+      "0": "<strong>Gizli Sanat: Sürpriz Dağıtım</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation6": {
+    "name": "Görülecek Sayısız Manzara",
+    "description": {
+      "0": "Kirara, Element Becerisini veya Patlamasını kullandıktan sonra 15 saniyeliğine yakındaki grup üyelerinin Tüm Element Hasarları %12 artar."
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "setName": "Shimenawa'nın Hatırası",
+  "setEffects": {
+    "2": "+%18 Saldırı.",
+    "4": "Bir Element Becerisi kullanılırken, karakter 15 ve üzeri Enerjiye sahipse 15 Enerji kaybeder ve 10 saniyeliğine Normal/Yüklü/Havadan Saldırı Hasarı %50 artar. Bu süre boyunca aynı etki tekrar tetiklenemez."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Sarmaşık Çiçeği",
+      "desc": "Kağıt kordonunun bükülmesiyle yapılmış olan güzel bir tılsım. Dilekleri gerçekleştirme gücü olduğu söylenir."
+    },
+    "plume": {
+      "name": "Hatıra Mızrağı",
+      "desc": "Oldukça eski bir yapıya sahip olan bir iblis katleden ok. Birisi tarafından bugüne kadar muhafaza edilmiş."
+    },
+    "sands": {
+      "name": "Sabah Çiyi Saati",
+      "desc": "Bükülmüş kağıt kordonla ve çanla süslenmiş bronz bir saat. Akrep ve yelkovan, bir sonbahar gününde sessizliğe gömülmüş."
+    },
+    "goblet": {
+      "name": "Umutlu Kalp",
+      "desc": "Fal bakmak için kullanılan silindir şeklinde özel bir eşya. Altındaki özel mekanizma ile istenmeyen dilek çubukları kolayca çıkarılabilir."
+    },
+    "circlet": {
+      "name": "Kaprisli Surat",
+      "desc": "İyi bir şekilde muhafaza edilmiş ve ayinlerde kullanılan bir tilki maskesi. Dudaklarında küçük ama esrarengiz bir gülümseme var."
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "electro": {
+    "skill": {
+      "enerRegen": "Energy Regeneration",
+      "enerRechInc": "Energy Recharge Increase"
+    },
+    "burst": {
+      "thunderDMG": "Falling Thunder DMG"
+    }
+  }
+}

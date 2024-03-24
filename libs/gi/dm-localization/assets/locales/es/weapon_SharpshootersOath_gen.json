@@ -1,0 +1,24 @@
+{
+  "name": "Juramento del Arquero",
+  "description": {
+    "0": "Este sublime arco perteneció una vez a un maestro arquero. Emite un fuerte olor, por lo que no es apto para la caza."
+  },
+  "passiveName": "Precisión",
+  "passiveDescription": {
+    "0": {
+      "0": "Aumenta en un <cryo>24%</cryo> el daño contra los puntos débiles."
+    },
+    "1": {
+      "0": "Aumenta en un <cryo>30%</cryo> el daño contra los puntos débiles."
+    },
+    "2": {
+      "0": "Aumenta en un <cryo>36%</cryo> el daño contra los puntos débiles."
+    },
+    "3": {
+      "0": "Aumenta en un <cryo>42%</cryo> el daño contra los puntos débiles."
+    },
+    "4": {
+      "0": "Aumenta en un <cryo>48%</cryo> el daño contra los puntos débiles."
+    }
+  }
+}

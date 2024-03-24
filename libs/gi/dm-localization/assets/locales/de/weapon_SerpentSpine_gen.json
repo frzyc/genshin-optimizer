@@ -1,0 +1,24 @@
+{
+  "name": "Knochenschwert",
+  "description": {
+    "0": "Eine seltene Waffe aus dem Ozean alter Zeiten. Schwingt man es durch die Luft, so hört man das Rauschen der Wellen."
+  },
+  "passiveName": "Wellenspalter",
+  "passiveDescription": {
+    "0": {
+      "0": "Erhöht den verursachten Schaden bei Anwesenheit der Figur alle 4 s um <cryo>6 %</cryo> und den erlittenen Schaden um <cryo>3 %</cryo>, 5-fach stapelbar. Effekt wird nicht bei Auswechseln der Figur zurückgesetzt, 1 Stapelung des Effekts wird bei Erleiden von Schaden aber entfernt."
+    },
+    "1": {
+      "0": "Erhöht den verursachten Schaden bei Anwesenheit der Figur alle 4 s um <cryo>7 %</cryo> und den erlittenen Schaden um <cryo>2,7 %</cryo>, 5-fach stapelbar. Effekt wird nicht bei Auswechseln der Figur zurückgesetzt, 1 Stapelung des Effekts wird bei Erleiden von Schaden aber entfernt."
+    },
+    "2": {
+      "0": "Erhöht den verursachten Schaden bei Anwesenheit der Figur alle 4 s um <cryo>8 %</cryo> und den erlittenen Schaden um <cryo>2,4 %</cryo>, 5-fach stapelbar. Effekt wird nicht bei Auswechseln der Figur zurückgesetzt, 1 Stapelung des Effekts wird bei Erleiden von Schaden aber entfernt."
+    },
+    "3": {
+      "0": "Erhöht den verursachten Schaden bei Anwesenheit der Figur alle 4 s um <cryo>9 %</cryo> und den erlittenen Schaden um <cryo>2,2 %</cryo>, 5-fach stapelbar. Effekt wird nicht bei Auswechseln der Figur zurückgesetzt, 1 Stapelung des Effekts wird bei Erleiden von Schaden aber entfernt."
+    },
+    "4": {
+      "0": "Erhöht den verursachten Schaden bei Anwesenheit der Figur alle 4 s um <cryo>10 %</cryo> und den erlittenen Schaden um <cryo>2 %</cryo>, 5-fach stapelbar. Effekt wird nicht bei Auswechseln der Figur zurückgesetzt, 1 Stapelung des Effekts wird bei Erleiden von Schaden aber entfernt."
+    }
+  }
+}

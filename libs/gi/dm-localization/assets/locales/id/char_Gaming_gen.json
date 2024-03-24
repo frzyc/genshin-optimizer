@@ -1,0 +1,160 @@
+{
+  "name": "Gaming",
+  "title": "Leonine Vanguard",
+  "description": "Pengawal dari Kantor Pengawal \"Sword and Strongbox\", sekaligus ketua grup Wushou \"Wahana Dewata Kencana\".",
+  "constellationName": "Leo Expergiscens",
+  "auto": {
+    "name": "Stellar Rend",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Attack</strong>",
+        "1": "Melancarkan hingga 4 serangan berturut-turut."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Terus menguras Stamina untuk melancarkan serangan berputar yang mengakibatkan DMG ke musuh di sekitar.",
+        "2": "Diakhiri dengan sebuah tebasan yang kuat."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Menerjang dari udara untuk menghantam tanah, menyerang musuh di jalur terjangan, dan mengakibatkan DMG Area saat mendarat."
+      }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Tahap 4",
+      "4": "DMG Berputar Charged Attack",
+      "5": "DMG Akhir Charged Attack",
+      "6": "Konsumsi Stamina Charged Attack",
+      "7": "Durasi Maksimum",
+      "8": "DMG Selama Plunging",
+      "9": "DMG Plunging Attack Rendah/Tinggi",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Bestial Ascent",
+    "description": {
+      "0": "Menerjang ke depan dengan teknik Wushou, setelah menyentuh musuh atau permukaan medan maka Gaming akan meloncat tinggi ke udara.",
+      "1": "Gaming menggunakan Elemental Skill Bestial Ascent untuk naik ke udara, jika langsung melancarkan Plunging Attack, maka Gaming akan melancarkan Plunging Attack: Charmed Cloudstrider yang sangat kuat.",
+      "2": "<br/>",
+      "3": "<strong>Plunging Attack: Charmed Cloudstrider</strong>",
+      "4": "DMG dari Plunging Attack yang dilancarkan melalui Elemental Skill Bestial Ascent akan dikonversi menjadi <pyro>Pyro DMG</pyro> yang tidak bisa ditimpa Elemental Infusion lainnya, dan akan mengonsumsi sejumlah HP Gaming saat dia mendarat. HP Gaming tidak bisa berkurang hingga di bawah 10% Max HP-nya melalui cara ini.",
+      "5": "DMG Charmed Cloudstrider dianggap sebagai DMG Plunging Attack.",
+      "6": "<br/>",
+      "7": "<i>\"Hewan melompat tinggi dan mematuk sayuran, semua kemakmuran di sekitar tumbuh bermekaran. Semoga kekayaan dan kesehatan mendatangi kita semua, dan semoga kita semua bisa terus berkembang!\"</i>"
+    },
+    "skillParams": {
+      "0": "DMG Plunging Attack: Charmed Cloudstrider",
+      "1": "Konsumsi HP",
+      "2": "Cooldown",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Suanni's Gilded Dance",
+    "description": {
+      "0": "Gaming memasuki Wushou Stance, lalu terpengaruh oleh <pyro>Pyro</pyro> selama waktu singkat, memulihkan HP dalam jumlah tertentu, dan memanggil rekannya yang bisa diandalkan yakni Suanni Man Chai untuk menghantam targetnya dan mengakibatkan <pyro>Pyro DMG Area</pyro>.",
+      "1": "Setelah Man Chai menghantam targetnya, dia akan berguling ke sekitarnya, lalu bergerak kembali ke arah Gaming. Saat berkumpul kembali dengan Gaming, Suanni Man Chai akan meninggalkan medan pertempuran, dan CD Elemental Skill Bestial Ascent akan diperbarui.",
+      "2": "Selama Wushou Stance berlangsung, ketahanan Gaming terhadap interupsi meningkat. Saat Plunging Attack: Charmed Cloudstrider menyentuh tanah atau terjangan ke depan Bestial Ascent berakhir, jika HP Gaming lebih dari 50%, maka dia akan memanggil Suanni Man Chai lagi.",
+      "3": "Maksimum hanya satu Suanni Man Chai milik Gaming sendiri yang bisa ada di medan pertempuran dalam waktu yang bersamaan.",
+      "4": "Efek ini akan hilang saat Gaming meninggalkan medan pertempuran.",
+      "5": "<br/>",
+      "6": "<i>\"Hewan emas membawa keberuntungan, cahaya gemerlapan, dan pemandangan berkilauan! Itulah yang dinamakan hidup yang penuh sukacita!\"</i>"
+    },
+    "skillParams": {
+      "0": "DMG Hantaman Suanni Man Chai",
+      "1": "Pemulihan Skill",
+      "2": "Durasi Wushou Stance",
+      "3": "Cooldown",
+      "4": "Konsumsi Energy",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Dance of Amity",
+    "description": {
+      "0": "Setelah Plunging Attack: Charmed Cloudstrider dari <strong>Bestial Ascent</strong> mengenai musuh, Gaming akan memulihkan HP setara dengan 1,5% Max HP Gaming sekali setiap 0,2 detik selama 0,8 detik."
+    }
+  },
+  "passive2": {
+    "name": "Air of Prosperity",
+    "description": {
+      "0": "Saat HP Gaming di bawah 50%, mendapatkan 20% Bonus Pemulihan. Saat HP Gaming sama dengan atau di atas 50%, DMG yang diakibatkan Plunging Attack: Charmed Cloudstrider meningkat 20%."
+    }
+  },
+  "passive3": {
+    "name": "The Striding Beast",
+    "description": {
+      "0": "Saat siang hari (06:00 — 18:00), anggota party sendiri mendapatkan efek peningkatan kecepatan: meningkatkan 10% Movement SPD.",
+      "1": "Efek ini tidak aktif dalam Domain, Domain Trounce, atau Spiral Abyss. Efek peningkatan kecepatan tidak dapat ditumpuk."
+    }
+  },
+  "constellation1": {
+    "name": "Bringer of Blessing",
+    "description": {
+      "0": "Saat Suanni Man Chai dari <strong>Suanni's Gilded Dance</strong> berkumpul kembali dengan Gaming, akan memulihkan 15% HP Gaming."
+    }
+  },
+  "constellation2": {
+    "name": "Plum Blossoms Underfoot",
+    "description": {
+      "0": "Saat Gaming menerima pemulihan, jika jumlah pemulihan kali ini berlebih, ATK Gaming akan meningkat 20% selama 5 detik."
+    }
+  },
+  "constellation3": {
+    "name": "Awakening Spirit",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Bestial Ascent</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Soar Across Mountains",
+    "description": {
+      "0": "Saat Plunging Attack: Charmed Cloudstrider dari <strong>Bestial Ascent</strong> mengenai musuh, akan memulihkan 2 poin Energy Gaming. Efek ini dapat terpicu sekali setiap 0,2 detik."
+    }
+  },
+  "constellation5": {
+    "name": "Evil-Daunting Roar",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Suanni's Gilded Dance</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "To Tame All Beasts",
+    "description": {
+      "0": "Plunging Attack: Charmed Cloudstrider dari <strong>Bestial Ascent</strong> mendapatkan peningkatan 20% CRIT Rate dan 40% CRIT DMG, radius serangannya juga meningkat."
+    }
+  }
+}

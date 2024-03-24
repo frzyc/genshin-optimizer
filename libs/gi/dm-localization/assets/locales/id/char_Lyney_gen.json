@@ -1,0 +1,183 @@
+{
+  "name": "Lyney",
+  "title": "Spectacle of Phantasmagoria",
+  "description": "Pesulap terkenal dari Fontaine yang berotak encer dan bertangan gesit. Penonton selalu terpesona oleh kemampuannya dalam bermain sulap dan bertutur kata.",
+  "constellationName": "Felis Fuscus",
+  "auto": {
+    "name": "Card Force Translocation",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Attack</strong>",
+        "1": "Melancarkan hingga 4 serangan berturut-turut menggunakan busur."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Mengerahkan sebuah <strong>Serangan Membidik</strong> yang lebih akurat untuk mengakibatkan DMG lebih besar.",
+        "2": "Saat membidik, kekuatan api akan berkumpul di ujung anak panah sebelum ditembakkan. Memiliki efek yang berbeda tergantung dari lama serangannya ditahan:",
+        "3": [
+          "Charge Tahap 1: Menembakkan anak panah dengan efek Pyro dan mengakibatkan <pyro>Pyro DMG</pyro>;",
+          "Charge Tahap 2: Menembakkan sebuah Prop Arrow yang mengakibatkan <pyro>Pyro DMG</pyro> dan memanggil Grin-Malkin Hat saat mengenai target."
+        ],
+        "4": "Ketika Lyney memiliki 60% HP atau lebih saat menembakkan Prop Arrow, Lyney akan mengonsumsi sebagian HP-nya untuk mendapatkan satu lapis Prop Surplus. Efek ini dapat ditumpuk sampai 5 lapis dan akan dihapus setelah meninggalkan medan pertempuran selama 30 detik.",
+        "5": "Angka terendah yang bisa dicapai oleh HP Lyney dengan cara ini adalah 60% HP."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Melancarkan hujan panah dari udara dan menerjang tanah dengan kecepatan tinggi, mengakibatkan DMG Area saat mendarat."
+      },
+      "grinMalkin": {
+        "0": "<strong>Grin-Malkin Hat</strong>",
+        "1": [
+          "Dapat memprovokasi musuh di sekitar dan memancing serangan mereka. Setiap musuh dapat diprovokasi oleh Grin-Malkin Hat satu kali setiap 5 detik;",
+          "HP Grin-Malkin Hat akan ditentukan berdasarkan persentasi dari nilai Max HP Lyney;",
+          "Saat dihancurkan atau durasinya berakhir, akan melancarkan <strong>Pyrotechnic Strike</strong> terhadap salah satu musuh di sekitar dan mengakibatkan <pyro>Pyro DMG</pyro>."
+        ],
+        "2": "Hanya 1 Grin-Malkin Hat yang dapat muncul di medan pertempuran dalam waktu yang bersamaan."
+      },
+      "arkhe": {
+        "0": "<strong>Arkhe: Pneuma</strong>",
+        "1": "Setiap beberapa saat, Prop Arrow akan mendatangkan Spiritbreath Thorn di posisi target dan mengakibatkan Pneuma-aligned <pyro>Pyro DMG</pyro>."
+      }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Tahap 4",
+      "4": "DMG Selama Plunging",
+      "5": "DMG Plunging Attack Min./Maks.",
+      "6": "DMG Membidik",
+      "7": "Serangan Membidik Tahap 1",
+      "8": "DMG Prop Arrow",
+      "9": "Konsumsi HP",
+      "10": "HP Diwarisi Grin-Malkin Hat",
+      "11": "Durasi Grin-Malkin Hat",
+      "12": "DMG Pyrotechnic Strike",
+      "13": "DMG Spiritbreath Thorn",
+      "14": "Jeda Spiritbreath Thorn",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Bewildering Lights",
+    "description": {
+      "0": "Lyney menggerakkan topinya dan meledakkan kembang api kejutan.",
+      "1": "Saat dilancarkan, akan menghapus seluruh lapisan Prop Surplus yang sudah dimiliki dan mengakibatkan <pyro>Pyro DMG Area</pyro> terhadap musuh yang berada di depan. DMG akan meningkat berdasarkan jumlah lapisan Prop Surplus yang dihapus. Juga akan memulihkan HP Lyney berdasarkan Max HP-nya.",
+      "2": "<br/>",
+      "3": "Saat ada Grin-Malkin Hat yang diciptakan oleh Lyney di medan perang, kembang api akan membuat Grin-Malkin Hat meledak dengan kuat dan mengakibatkan <pyro>Pyro DMG Area</pyro> yang setara dengan DMG Pyrotechnic Strike.",
+      "4": "DMG yang dihasilkan oleh Grin-Malkin Hat dengan cara ini akan dianggap sebagai DMG Charged Attack.",
+      "5": "<br/>",
+      "6": "<i>\"Semua orang tahu kalau pesulap pasti akan mengalihkan perhatian para penonton ... Ah, ya, waktu kamu sedang memperhatikanku, topi dan asisten di sana sudah hilang dua-duanya ... Menarik, bukan?\"</i>"
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "Bonus DMG Skill",
+      "2": "Pemulihan HP",
+      "3": "Cooldown",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Wondrous Trick: Miracle Parade",
+    "description": {
+      "0": "Lyney melancarkan sulap dan berubah menjadi Grin-Malkin Cat yang dapat bergerak dengan cepat. (Bukan Grin-Malkin Hat ya. Ini dua alat sulap yang berbeda loh!)",
+      "1": "Saat Grin-Malkin Cat mendekati musuh, akan menurunkan bara api terhadap musuh di sekitar, dan mengakibatkan maksimum satu kali <pyro>Pyro DMG</pyro> terhadap setiap musuh. Setelah durasinya berakhir, Lyney akan membatalkan bentuk Grin-Malkin Cat, dan menyalakan kembang api yang mengakibatkan <pyro>Pyro DMG Area</pyro>, serta memanggil satu Grin-Malkin Hat dan mendapatkan satu lapis Prop Surplus.",
+      "2": "<br/>",
+      "3": "Grin-Malkin Cat bisa dibatalkan secara aktif.",
+      "4": "<br/>",
+      "5": "<i>\"Lihat baik-baik ya. Waktunya untuk keajaiban, dan ini cuma milik kita berdua saja!\"</i>"
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "DMG Ledakan Kembang Api",
+      "2": "Durasi",
+      "3": "Cooldown",
+      "4": "Konsumsi Energy",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Perilous Performance",
+    "description": {
+      "0": "Jika Lyney mengonsumsi HP saat menembakkan <strong>Prop Arrow</strong>, maka saat serangan Grin-Malkin Hat yang dipanggil dari Prop Arrow mengenai musuh, akan memulihkan 3 poin Energy Lyney dan meningkatkan DMG berdasarkan 80% ATK Lyney."
+    }
+  },
+  "passive2": {
+    "name": "Conclusive Ovation",
+    "description": {
+      "0": "DMG yang dihasilkan Lyney terhadap musuh yang berada dalam pengaruh <pyro>Pyro</pyro> akan mendapatkan peningkatan sebagai berikut:",
+      "1": [
+        "DMG dasar meningkat 60%.",
+        "Setiap Karakter <pyro>Pyro</pyro> di dalam party selain Lyney akan memberikan tambahan peningkatan 20%."
+      ],
+      "2": "<br/>",
+      "3": "Lyney bisa mendapatkan peningkatan DMG seperti yang disebutkan di atas hingga maksimum 100% terhadap musuh yang berada dalam pengaruh <pyro>Pyro</pyro>."
+    }
+  },
+  "passive3": {
+    "name": "Trivial Observations",
+    "description": {
+      "0": "Memperlihatkan lokasi <strong>produk khas Fontaine</strong> di sekitar pada peta kecil."
+    }
+  },
+  "constellation1": {
+    "name": "Whimsical Wonders",
+    "description": {
+      "0": "Lyney dapat menciptakan maksimum 2 buah <strong>Grin-Malkin Hat</strong> yang dapat muncul di medan pertempuran dalam waktu yang bersamaan.",
+      "1": "Selain itu, Prop Arrow akan memanggil 2 Grin-Malkin Hat saat mengenai target dan memberikan 1 lapis \"Prop Surplus\" tambahan. Efek ini dapat terpicu sekali setiap 15 detik."
+    }
+  },
+  "constellation2": {
+    "name": "Locquacious Cajoling",
+    "description": {
+      "0": "Saat Lyney berada di medan pertempuran, akan mendapatkan efek Crisp Focus sekali setiap 2 detik. Efek ini akan meningkatkan 20% CRIT DMG-nya, dapat ditumpuk sampai 3 lapis. Efek ini akan hilang saat Lyney meninggalkan medan pertempuran."
+    }
+  },
+  "constellation3": {
+    "name": "Prestidigitation",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Normal Attack: Card Force Translocation</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Well-Versed, Well-Rehearsed",
+    "description": {
+      "0": "Setelah Charged Attack Lyney yang berelemen <pyro>Pyro</pyro> mengenai musuh, <pyro>Pyro RES</pyro> musuh tersebut akan berkurang 20% selama 6 detik."
+    }
+  },
+  "constellation5": {
+    "name": "To Pierce Enigmas",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Wondrous Trick: Miracle Parade</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Guarded Smile",
+    "description": {
+      "0": "Saat Lyney menembakkan <strong>Prop Arrow</strong>, dia akan menembakkan satu Pyrotechnic Strike: Reprised yang akan mengakibatkan 80% DMG Pyrotechnic Strike. DMG ini dianggap sebagai DMG Charged Attack."
+    }
+  }
+}
