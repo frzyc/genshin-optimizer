@@ -27,8 +27,7 @@
         "production": {
           "buildTarget": "frontend:build-vite:production"
         }
-      },
-      "dependsOn": ["^gen-file"]
+      }
     },
     "preview": {
       "executor": "@nx/vite:preview-server",
