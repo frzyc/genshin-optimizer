@@ -15,7 +15,11 @@ import {
   allArtifactSlotKeys,
   charKeyToLocCharKey,
 } from '@genshin-optimizer/gi/consts'
-import type { GeneratedBuild, ICachedArtifact } from '@genshin-optimizer/gi/db'
+import type {
+  AllowLocationsState,
+  GeneratedBuild,
+  ICachedArtifact,
+} from '@genshin-optimizer/gi/db'
 import { defThreads, maxBuildsToShowList } from '@genshin-optimizer/gi/db'
 import {
   useDBMeta,
@@ -186,6 +190,7 @@ export default function TabBuild() {
     builds,
     buildDate,
     useTeammateBuild,
+    allowLocationsState,
   } = buildSetting
   const { data } = useContext(DataContext)
   const oldData = useOldData()
@@ -1003,6 +1008,7 @@ export default function TabBuild() {
             getLabel={getGraphBuildLabel}
             setBuilds={setGraphBuilds}
             mainStatAssumptionLevel={mainStatAssumptionLevel}
+            allowLocationsState={allowLocationsState}
           />
         )}
         <BuildList
@@ -1011,6 +1017,7 @@ export default function TabBuild() {
           disabled={!!generatingBuilds}
           getLabel={getNormBuildLabel}
           mainStatAssumptionLevel={mainStatAssumptionLevel}
+          allowLocationsState={allowLocationsState}
         />
       </OptimizationTargetContext.Provider>
     </Box>
@@ -1024,6 +1031,7 @@ function BuildList({
   disabled,
   getLabel,
   mainStatAssumptionLevel,
+  allowLocationsState,
 }: {
   builds: GeneratedBuild[]
   setBuilds?: (builds: GeneratedBuild[] | undefined) => void
@@ -1031,6 +1039,7 @@ function BuildList({
   disabled: boolean
   getLabel: (index: number) => Displayable
   mainStatAssumptionLevel: number
+  allowLocationsState: AllowLocationsState
 }) {
   const deleteBuild = useCallback(
     (index: number) => {
@@ -1070,6 +1079,8 @@ function BuildList({
                 build={build}
                 disabled={disabled}
                 deleteBuild={setBuilds ? deleteBuild : undefined}
+                mainStatAssumptionLevel={mainStatAssumptionLevel}
+                allowLocationsState={allowLocationsState}
               />
             </DataContextWrapper>
           ))}
@@ -1085,6 +1096,7 @@ function BuildList({
       deleteBuild,
       setBuilds,
       mainStatAssumptionLevel,
+      allowLocationsState,
     ]
   )
   return list
@@ -1095,12 +1107,16 @@ function BuildItemWrapper({
   build,
   disabled,
   deleteBuild,
+  mainStatAssumptionLevel,
+  allowLocationsState,
 }: {
   index: number
   label: Displayable
   build: GeneratedBuild
   disabled: boolean
   deleteBuild?: (index: number) => void
+  mainStatAssumptionLevel: number
+  allowLocationsState: AllowLocationsState
 }) {
   const { t } = useTranslation('page_character_optimize')
 
@@ -1124,6 +1140,8 @@ function BuildItemWrapper({
           )}
         </>
       }
+      mainStatAssumptionLevel={mainStatAssumptionLevel}
+      allowLocationsState={allowLocationsState}
     />
   )
 }
