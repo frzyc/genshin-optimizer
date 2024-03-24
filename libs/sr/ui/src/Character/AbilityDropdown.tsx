@@ -25,6 +25,7 @@ export function AbilityDropdown({
   return (
     <DropdownButton
       title={`${displayName} Lv. ${character?.[abilityKey] ?? ''}`}
+      disabled={!character}
     >
       {range(1, allAbilityLimits[abilityKey][character?.ascension ?? 0]).map(
         (level) => (
