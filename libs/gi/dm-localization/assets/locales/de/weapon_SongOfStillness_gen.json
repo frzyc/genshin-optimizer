@@ -1,0 +1,24 @@
+{
+  "name": "Gesang der Stille",
+  "description": {
+    "0": "Dieser skurrile Langbogen erinnert an ein Meerestier und seine Sehne ist absolut lautlos."
+  },
+  "passiveName": "Benthischer Puls",
+  "passiveDescription": {
+    "0": {
+      "0": "Erhöht nach erhaltener Heilung den von der Figur verursachten Schaden um <cryo>16 %</cryo>, hält 8 s. Der Effekt kann auch noch ausgelöst werden, wenn die Figur inaktiv in der Truppe ist."
+    },
+    "1": {
+      "0": "Erhöht nach erhaltener Heilung den von der Figur verursachten Schaden um <cryo>20 %</cryo>, hält 8 s. Der Effekt kann auch noch ausgelöst werden, wenn die Figur inaktiv in der Truppe ist."
+    },
+    "2": {
+      "0": "Erhöht nach erhaltener Heilung den von der Figur verursachten Schaden um <cryo>24 %</cryo>, hält 8 s. Der Effekt kann auch noch ausgelöst werden, wenn die Figur inaktiv in der Truppe ist."
+    },
+    "3": {
+      "0": "Erhöht nach erhaltener Heilung den von der Figur verursachten Schaden um <cryo>28 %</cryo>, hält 8 s. Der Effekt kann auch noch ausgelöst werden, wenn die Figur inaktiv in der Truppe ist."
+    },
+    "4": {
+      "0": "Erhöht nach erhaltener Heilung den von der Figur verursachten Schaden um <cryo>32 %</cryo>, hält 8 s. Der Effekt kann auch noch ausgelöst werden, wenn die Figur inaktiv in der Truppe ist."
+    }
+  }
+}

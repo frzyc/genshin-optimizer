@@ -1,0 +1,29 @@
+{
+  "setName": "Chanceux",
+  "setEffects": {
+    "2": "Augmente la DÉF de 100 pts.",
+    "4": "Collecter des moras restaure 300 PV."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Trèfle du Chanceux",
+      "desc": "Un trèfle à quatre feuilles qui a poussé dans la nature. Il a été cueilli, car il paraît que cela porte chance."
+    },
+    "plume": {
+      "name": "Plume d'aigle du Chanceux",
+      "desc": "Un monstre ayant attaqué un aventurier fut enlevé par un aigle qui chassait ; voilà le type de chance que peut amener cette plume d'aigle."
+    },
+    "sands": {
+      "name": "Sablier du Chanceux",
+      "desc": "Ce sablier cassé ne contient plus de sable. La fugacité du temps n'a pas d'importance aux yeux des insouciants."
+    },
+    "goblet": {
+      "name": "Coupe du Chanceux",
+      "desc": "Une coupe en métal exquis qui a servi autrefois à assommer un certain voleur."
+    },
+    "circlet": {
+      "name": "Diadème d'argent du Chanceux",
+      "desc": "Son ancien propriétaire a découvert le trésor d'une ancienne famille noble en tombant dans une fosse. Cet objet est un souvenir de cet heureux événement."
+    }
+  }
+}

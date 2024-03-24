@@ -1,0 +1,12 @@
+{
+  "setName": "Orações para o Destino",
+  "setEffects": {
+    "1": "Reduz a duração dos efeitos causados por Hydro em 40%."
+  },
+  "pieces": {
+    "circlet": {
+      "name": "Coroa do Ritual Hydro",
+      "desc": "Uma coroa usada por sacerdotes durante cerimônias antigamente. Sua imersão na água ao longo do ano deu-lhe uma resistência incrível."
+    }
+  }
+}

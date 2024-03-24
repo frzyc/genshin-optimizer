@@ -1,0 +1,163 @@
+{
+  "name": "Jean",
+  "title": "Dandelion Knight",
+  "description": "Dandelion Knight yang menjunjung tinggi keadilan dan kebenaran. Menjabat sebagai Grand Master Knights of Favonius di Mondstadt.",
+  "constellationName": "Leo Minor",
+  "auto": {
+    "name": "Favonius Bladework",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Attack</strong>",
+        "1": "Melancarkan hingga 5 serangan berturut-turut."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Mengonsumsi sejumlah Stamina untuk melancarkan serangan yang menghempas musuh ke udara dengan kekuatan angin.",
+        "2": "Musuh yang terhempas akan terjatuh perlahan untuk sementara waktu."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Menerjang dari udara untuk menghantam tanah, menyerang musuh di jalur terjangan dan mengakibatkan DMG area saat mendarat."
+      }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Tahap 4",
+      "4": "DMG Tahap 5",
+      "5": "DMG Charged Attack",
+      "6": "Konsumsi Stamina Charged Attack",
+      "7": "DMG Selama Plunging",
+      "8": "DMG Plunging Attack Rendah/Tinggi",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Gale Blade",
+    "description": {
+      "0": "Jean mengerahkan badai kecil dengan memusatkan kekuatan angin di bilah pedangnya untuk menghempas musuh ke arah yang dia tunjuk. Mengakibatkan <anemo>Anemo DMG</anemo> yang besar.",
+      "1": "<br/>",
+      "2": "<strong>Tahan</strong>",
+      "3": "Dengan terus mengonsumsi Stamina, Jean dapat mengarahkan badai tersebut, yang menarik musuh dan obyek di sekitar ke depannya.",
+      "4": "Arahnya dapat disesuaikan.",
+      "5": "Karakter tidak dapat bergerak selama durasi skill.",
+      "6": "<br/>",
+      "7": "<i>Yang mengikuti Jean, pelindung berhati emas, adalah angin penjaga yang bisa menghalau bahaya dari rekan-rekannya.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "Konsumsi Stamina",
+      "2": "Durasi Maksimum",
+      "3": "Cooldown",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Dandelion Breeze",
+    "description": {
+      "0": "Dengan memanggil perlindungan dari angin, Jean dapat menciptakan Dandelion Field yang menghempas musuh di sekitar dan mengakibatkan <anemo>Anemo DMG</anemo>.",
+      "1": "Di saat yang sama, sejumlah besar HP untuk semua anggota party akan pulih secara langsung. Jumlah HP yang dipulihkan bergantung dari ATK Jean.",
+      "2": "<br/>",
+      "3": "<strong>Dandelion Field</strong>",
+      "4": [
+        "Memulihkan HP karakter yang berada di dalam lingkup area secara berkelanjutan.",
+        "Memengaruhi musuh yang berada di dalam lingkup area dengan elemen <anemo>Anemo</anemo> secara berkelanjutan.",
+        "Mengakibatkan <anemo>Anemo DMG</anemo> kepada musuh yang memasuki atau keluar dari Dandelion Field."
+      ],
+      "5": "<br/>",
+      "6": "<i>Berkat Anemo bagaikan dandelion yang terbang ke seluruh pelosok dunia. Inilah fondasi prinsip dan pendirian Jean.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Burst",
+      "1": "DMG Keluar Masuk Field",
+      "2": "Pemulihan Field",
+      "3": "Regenerasi HP/dtk",
+      "4": "Cooldown",
+      "5": "Konsumsi Energy",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Wind Companion",
+    "description": {
+      "0": "Saat Normal Attack Jean mengenai musuh, memiliki 50% kemungkinan untuk memulihkan HP seluruh anggota party sebesar 15% ATK Jean."
+    }
+  },
+  "passive2": {
+    "name": "Let the Wind Lead",
+    "description": {
+      "0": "Menggunakan <strong>Dandelion Breeze</strong> akan memulihkan 20% Energy."
+    }
+  },
+  "passive3": {
+    "name": "Guiding Breeze",
+    "description": {
+      "0": "Saat masakan jenis pemulihan dimasak dengan sempurna, memiliki 12% kemungkinan mendapatkan hasil 2 kali lipat."
+    }
+  },
+  "constellation1": {
+    "name": "Spiraling Tempest",
+    "description": {
+      "0": "Meningkatkan kecepatan menarik <strong>Gale Blade</strong> setelah ditahan lebih dari 1 detik, dan meningkatkan 40% DMG yang diakibatkan."
+    }
+  },
+  "constellation2": {
+    "name": "People's Aegis",
+    "description": {
+      "0": "Meningkatkan 15% Movement SPD dan ATK SPD seluruh anggota party selama 15 detik saat Jean mengambil Elemental Orb atau Particle."
+    }
+  },
+  "constellation3": {
+    "name": "When the West Wind Arises",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Dandelion Breeze</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Lands of Dandelion",
+    "description": {
+      "0": "Mengurangi 40% <anemo>Anemo RES</anemo> musuh yang berada di dalam lingkup area <strong>Dandelion Breeze</strong>."
+    }
+  },
+  "constellation5": {
+    "name": "Outbursting Gust",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Gale Blade</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Lion's Fang, Fair Protector of Mondstadt",
+    "description": {
+      "0": "Mengurangi 35% DMG yang diterima saat berada di dalam <strong>Dandelion Breeze</strong>. Efek ini masih bertahan selama 3 serangan atau 10 detik setelah meninggalkan lingkup area skill."
+    }
+  }
+}

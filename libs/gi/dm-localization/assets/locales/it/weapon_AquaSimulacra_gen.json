@@ -1,0 +1,24 @@
+{
+  "name": "Aqua simulacra",
+  "description": {
+    "0": "Il colore di questo arco lungo è imprevedibile. Se illuminato, assume una colorazione cerulea scintillante."
+  },
+  "passiveName": "Forma purificante",
+  "passiveDescription": {
+    "0": {
+      "0": "I PS aumentano di un <cryo>16%</cryo>. Quando ci sono avversari vicini, i DAN inflitti da chi brandisce quest'arma aumentano di un <cryo>20%</cryo>. Questo effetto si attiva anche se il personaggio non è in campo."
+    },
+    "1": {
+      "0": "I PS aumentano di un <cryo>20%</cryo>. Quando ci sono avversari vicini, i DAN inflitti da chi brandisce quest'arma aumentano di un <cryo>25%</cryo>. Questo effetto si attiva anche se il personaggio non è in campo."
+    },
+    "2": {
+      "0": "I PS aumentano di un <cryo>24%</cryo>. Quando ci sono avversari vicini, i DAN inflitti da chi brandisce quest'arma aumentano di un <cryo>30%</cryo>. Questo effetto si attiva anche se il personaggio non è in campo."
+    },
+    "3": {
+      "0": "I PS aumentano di un <cryo>28%</cryo>. Quando ci sono avversari vicini, i DAN inflitti da chi brandisce quest'arma aumentano di un <cryo>35%</cryo>. Questo effetto si attiva anche se il personaggio non è in campo."
+    },
+    "4": {
+      "0": "I PS aumentano di un <cryo>32%</cryo>. Quando ci sono avversari vicini, i DAN inflitti da chi brandisce quest'arma aumentano di un <cryo>40%</cryo>. Questo effetto si attiva anche se il personaggio non è in campo."
+    }
+  }
+}

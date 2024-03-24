@@ -1,0 +1,169 @@
+{
+  "skill": {
+    "brandDMG": "DGT épée vortex de glace",
+    "grimheartDuration": "Durée de cœur de glace",
+    "name": "Vortex des mers glacées",
+    "description": {
+      "0": "Givre coupant et lame dansante.",
+      "1": "<br/>",
+      "2": "<strong>Appui simple</strong>",
+      "3": "Eula exécute une frappe rapide qui inflige des <cryo>DGT Cryo</cryo>.",
+      "4": "Si elle touche un ennemi, Eula obtient 1 cumul de cœur de glace (jusqu'à 2 cumuls maximum). Eula peut obtenir un cumul une fois toutes les 0,3 s.",
+      "5": "<br/>",
+      "6": "<strong>Cœur de glace</strong>",
+      "7": "Améliore la RÉS à l'interruption et la DÉF d'Eula.",
+      "8": "<br/>",
+      "9": "<strong>Appui long</strong>",
+      "10": "Eula consomme toutes les cumuls de cœur de glace pour faire tournoyer son épée devant elle et infliger des <cryo>DGT Cryo de zone</cryo> aux ennemis en face.",
+      "11": "Si des cumuls de cœur de glace sont consommés, la RÉS physique et la <cryo>RÉS Cryo</cryo> des ennemis à proximité diminuent.",
+      "12": "Chaque cumul de cœur de glace est converti en épée vortex de glace, qui inflige des <cryo>DGT Cryo</cryo> aux ennemis proches.",
+      "13": "<br/>",
+      "14": "<i>Ainsi roula l'écume des vagues, engloutissant dans son sillage la couronne de la royauté. Et chaque embrun de cette marée glaciale étincela de sa lumineuse clarté.</i>"
+    },
+    "skillParams": {
+      "0": "DGT appui simple",
+      "1": "DGT appui long",
+      "2": "DGT épée vortex de glace",
+      "3": "Bonus de DÉF",
+      "4": "Durée de cœur de glace",
+      "5": "Baisse RÉS physique",
+      "6": "Baisse RÉS Cryo",
+      "7": "Durée de baisse de RÉS",
+      "8": "TdR appui simple",
+      "9": "TdR appui long",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "name": "Eula",
+  "title": "Vague déferlante",
+  "description": "Le « Chevalier aux Embruns », né de l'ancien Clan Lawrence, capitaine de l'unité de reconnaissance des chevaliers de l'Ordre de Favonius de Mondstadt. Que cette descendante de la noblesse d'antan ait rejoint les chevaliers de l'Ordre, l'ennemi jusqu'alors juré de la famille, demeure un mystère aux yeux de beaucoup.",
+  "constellationName": "Aphros Delos",
+  "auto": {
+    "name": "Escrime de Favonius - Aristocratie",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attaque normale</strong>",
+        "1": "Enchaîne jusqu'à 5 coups d'épée."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Consomme de l'endurance de façon continue pour exécuter une succession d'entailles aussi rapides que tranchantes.",
+        "2": "L'attaque chargée se termine sur un coup puissant."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis en chemin et des DGT de zone à l'impact."
+      }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT 4e coup",
+      "4": "DGT 5e coup",
+      "5": "DGT enchaînement attaque chargée",
+      "6": "DGT coup final attaque chargée",
+      "7": "Coût d'endurance attaque chargée",
+      "8": "Durée max",
+      "9": "DGT durant la chute",
+      "10": "DGT chute basse/élevée",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Lame de fond",
+    "description": {
+      "0": "Eula brandit son épée avec fureur, infligeant des <cryo>DGT Cryo</cryo> aux ennemis proches, et crée une épée de lumière qui la suit pendant 7 s maximum.",
+      "1": "Tant qu'elle est active, l'épée de lumière augmente la RÉS à l'interruption d'Eula. Lorsqu'Eula inflige des DGT à des ennemis avec son attaque normale, sa compétence ou son déchaînement élémentaires, elle obtient des cumuls d'énergie pour l'épée de lumière. Un cumul d'énergie peut être obtenu toutes les 0,1 s.",
+      "2": "Lorsque la durée de l'épée de lumière est écoulée, elle explose violemment, infligeant des DGT physiques aux ennemis proches.",
+      "3": "Ces DGT augmentent en fonction du nombre de cumuls d'énergie obtenus.",
+      "4": "L'épée explose immédiatement lorsqu'Eula quitte le champ de bataille.",
+      "5": "<br/>",
+      "6": "<i>Le naufrage est facile. Et pourtant, Eula insiste pour figer cette marée.</i>"
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "DGT de base épée de lumière",
+      "2": "DGT élémentaires par cumul d'énergie",
+      "3": "Limite de cumuls d'énergie",
+      "4": "Temps de recharge",
+      "5": "Énergie élémentaire",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Maelström de glace",
+    "description": {
+      "0": "Lorsque vous consommez 2 cumuls de cœur de glace lors de l'appui long de <strong>Vortex des mers glacées</strong>, une brève épée de lumière est créée. Cette dernière explose immédiatement, infligeant des DGT physiques équivalant à 50 % des DGT de base de <strong>Lame de fond</strong>."
+    }
+  },
+  "passive2": {
+    "name": "Esprit belligérant",
+    "description": {
+      "0": "Le TdR de <strong>Vortex des mers glacées</strong> est réinitialisé lors de l'utilisation de <strong>Lame de fond</strong>, et Eula obtient 1 cumul de cœur de glace."
+    }
+  },
+  "passive3": {
+    "name": "Gratification aristocratique",
+    "description": {
+      "0": "10 % de chances d'obtenir le double de produits lors de la synthèse de matériaux d'aptitude de personnage."
+    }
+  },
+  "constellation1": {
+    "name": "Illusion des marées",
+    "description": {
+      "0": "À chaque fois qu'un cumul de cœur de glace de <strong>Vortex des mers glacées</strong> est consommé, Eula gagne un bonus de DGT physiques de 30 % pendant 6 s.",
+      "1": "Chaque cumul de cœur de glace consommé prolonge la durée de l'effet de 6 s, jusqu'à un maximum de 18 s."
+    }
+  },
+  "constellation2": {
+    "name": "Fille d'écume de mer",
+    "description": {
+      "0": "Diminue le TdR de l'appui long de <strong>Vortex des mers glacées</strong> pour correspondre à celui de l'appui simple."
+    }
+  },
+  "constellation3": {
+    "name": "Le sang des Lawrence",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Lame de fond</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation4": {
+    "name": "Émergence de la plèbe",
+    "description": {
+      "0": "Augmente de 25 % les DGT infligés par l'épée de lumière aux ennemis dont les PV sont inférieurs à 50 %."
+    }
+  },
+  "constellation5": {
+    "name": "Honneur de la chevalerie",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Vortex des mers glacées</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation6": {
+    "name": "Obligations aristocratiques",
+    "description": {
+      "0": "Confère immédiatement 5 cumuls d'énergie à l'épée de lumière créée par <strong>Lame de fond</strong>. De plus, lorsque vous utilisez des attaques normales, la compétence ou le déchaînement élémentaires pour obtenir des cumuls, vous avez 50 % de chances d'obtenir un cumul supplémentaire."
+    }
+  }
+}

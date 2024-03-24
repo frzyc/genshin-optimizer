@@ -1,0 +1,24 @@
+{
+  "name": "The Widsith",
+  "description": {
+    "0": "Sebuah buku catatan tebal yang berisi beragam tulisan lagu. Meskipun sudah tua dan dimakan ngengat, di dalam tulisannya masih tersimpan kekuatan yang besar."
+  },
+  "passiveName": "Debut",
+  "passiveDescription": {
+    "0": {
+      "0": "Saat memasuki pertempuran, memulai sebuah musik secara acak selama 10 detik. Dapat terpicu setiap 30 detik. Recitative: Meningkatkan <cryo>60%</cryo> ATK. Aria: Meningkatkan <cryo>48%</cryo> Elemental DMG. Interlude: Meningkatkan <cryo>240</cryo> Elemental Mastery."
+    },
+    "1": {
+      "0": "Saat memasuki pertempuran, memulai sebuah musik secara acak selama 10 detik. Dapat terpicu setiap 30 detik. Recitative: Meningkatkan <cryo>75%</cryo> ATK. Aria: Meningkatkan <cryo>60%</cryo> Elemental DMG. Interlude: Meningkatkan <cryo>300</cryo> Elemental Mastery."
+    },
+    "2": {
+      "0": "Saat memasuki pertempuran, memulai sebuah musik secara acak selama 10 detik. Dapat terpicu setiap 30 detik. Recitative: Meningkatkan <cryo>90%</cryo> ATK. Aria: Meningkatkan <cryo>72%</cryo> Elemental DMG. Interlude: Meningkatkan <cryo>360</cryo> Elemental Mastery."
+    },
+    "3": {
+      "0": "Saat memasuki pertempuran, memulai sebuah musik secara acak selama 10 detik. Dapat terpicu setiap 30 detik. Recitative: Meningkatkan <cryo>105%</cryo> ATK. Aria: Meningkatkan <cryo>84%</cryo> Elemental DMG. Interlude: Meningkatkan <cryo>420</cryo> Elemental Mastery."
+    },
+    "4": {
+      "0": "Saat memasuki pertempuran, memulai sebuah musik secara acak selama 10 detik. Dapat terpicu setiap 30 detik. Recitative: Meningkatkan <cryo>120%</cryo> ATK. Aria: Meningkatkan <cryo>96%</cryo> Elemental DMG. Interlude: Meningkatkan <cryo>480</cryo> Elemental Mastery."
+    }
+  }
+}

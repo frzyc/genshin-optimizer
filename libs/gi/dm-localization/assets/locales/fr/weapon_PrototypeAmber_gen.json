@@ -1,0 +1,24 @@
+{
+  "name": "Malice (prototype)",
+  "description": {
+    "0": "Un catalyseur magique découvert à la Forge de Rochenoire. La lumière du soleil, de la lune et des étoiles semble s'en dégager."
+  },
+  "passiveName": "Blindage d'or",
+  "passiveDescription": {
+    "0": {
+      "0": "Restaure <cryo>4</cryo> pts d'énergie élémentaire toutes les 2 s pendant 6 s après l'utilisation d'un déchaînement élémentaire. Tous les personnages de l'équipe récupèrent <cryo>4 %</cryo> de leurs PV toutes les 2 s pendant cette durée."
+    },
+    "1": {
+      "0": "Restaure <cryo>4,5</cryo> pts d'énergie élémentaire toutes les 2 s pendant 6 s après l'utilisation d'un déchaînement élémentaire. Tous les personnages de l'équipe récupèrent <cryo>4,5 %</cryo> de leurs PV toutes les 2 s pendant cette durée."
+    },
+    "2": {
+      "0": "Restaure <cryo>5</cryo> pts d'énergie élémentaire toutes les 2 s pendant 6 s après l'utilisation d'un déchaînement élémentaire. Tous les personnages de l'équipe récupèrent <cryo>5 %</cryo> de leurs PV toutes les 2 s pendant cette durée."
+    },
+    "3": {
+      "0": "Restaure <cryo>5,5</cryo> pts d'énergie élémentaire toutes les 2 s pendant 6 s après l'utilisation d'un déchaînement élémentaire. Tous les personnages de l'équipe récupèrent <cryo>5,5 %</cryo> de leurs PV toutes les 2 s pendant cette durée."
+    },
+    "4": {
+      "0": "Restaure <cryo>6</cryo> pts d'énergie élémentaire toutes les 2 s pendant 6 s après l'utilisation d'un déchaînement élémentaire. Tous les personnages de l'équipe récupèrent <cryo>6 %</cryo> de leurs PV toutes les 2 s pendant cette durée."
+    }
+  }
+}

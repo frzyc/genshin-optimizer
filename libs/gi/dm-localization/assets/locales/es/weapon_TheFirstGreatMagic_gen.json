@@ -1,0 +1,24 @@
+{
+  "name": "El Primer Gran Número de Magia",
+  "description": {
+    "0": "La herramienta mágica utilizada por cierta gran maga del pasado. El secreto detrás de ella era que, en realidad, se trataba de un arma muy singular."
+  },
+  "passiveName": "Parsifal la Grande",
+  "passiveDescription": {
+    "0": {
+      "0": "El daño de Ataque Cargado aumenta en un <cryo>16%</cryo>. Por cada personaje del equipo del mismo tipo elemental que el portador de esta arma (esto incluye a dicho portador), otorga 1 carga de “ardid”. Por otro lado, por cada personaje de distinto tipo elemental al portador de esta arma, otorga 1 carga de “teatralidad”. Con 1/2/3 o más cargas de ardid, el ATQ aumenta en un <cryo>16/32/48%</cryo>, y con 1/2/3 o más cargas de teatralidad, la Vel. Movimiento aumenta en un <cryo>4/7/10%</cryo>."
+    },
+    "1": {
+      "0": "El daño de Ataque Cargado aumenta en un <cryo>20%</cryo>. Por cada personaje del equipo del mismo tipo elemental que el portador de esta arma (esto incluye a dicho portador), otorga 1 carga de “ardid”. Por otro lado, por cada personaje de distinto tipo elemental al portador de esta arma, otorga 1 carga de “teatralidad”. Con 1/2/3 o más cargas de ardid, el ATQ aumenta en un <cryo>20/40/60%</cryo>, y con 1/2/3 o más cargas de teatralidad, la Vel. Movimiento aumenta en un <cryo>6/9/12%</cryo>."
+    },
+    "2": {
+      "0": "El daño de Ataque Cargado aumenta en un <cryo>24%</cryo>. Por cada personaje del equipo del mismo tipo elemental que el portador de esta arma (esto incluye a dicho portador), otorga 1 carga de “ardid”. Por otro lado, por cada personaje de distinto tipo elemental al portador de esta arma, otorga 1 carga de “teatralidad”. Con 1/2/3 o más cargas de ardid, el ATQ aumenta en un <cryo>24/48/72%</cryo>, y con 1/2/3 o más cargas de teatralidad, la Vel. Movimiento aumenta en un <cryo>8/11/14%</cryo>."
+    },
+    "3": {
+      "0": "El daño de Ataque Cargado aumenta en un <cryo>28%</cryo>. Por cada personaje del equipo del mismo tipo elemental que el portador de esta arma (esto incluye a dicho portador), otorga 1 carga de “ardid”. Por otro lado, por cada personaje de distinto tipo elemental al portador de esta arma, otorga 1 carga de “teatralidad”. Con 1/2/3 o más cargas de ardid, el ATQ aumenta en un <cryo>28/56/84%</cryo>, y con 1/2/3 o más cargas de teatralidad, la Vel. Movimiento aumenta en un <cryo>10/13/16%</cryo>."
+    },
+    "4": {
+      "0": "El daño de Ataque Cargado aumenta en un <cryo>32%</cryo>. Por cada personaje del equipo del mismo tipo elemental que el portador de esta arma (esto incluye a dicho portador), otorga 1 carga de “ardid”. Por otro lado, por cada personaje de distinto tipo elemental al portador de esta arma, otorga 1 carga de “teatralidad”. Con 1/2/3 o más cargas de ardid, el ATQ aumenta en un <cryo>32/64/96%</cryo>, y con 1/2/3 o más cargas de teatralidad, la Vel. Movimiento aumenta en un <cryo>12/15/18%</cryo>."
+    }
+  }
+}

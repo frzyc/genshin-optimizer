@@ -1,0 +1,24 @@
+{
+  "name": "Yeminli Göz",
+  "description": {
+    "0": "Byakuyakoku'nun Dainichi Mikoshi'de saklanan ulusal hazinelerinden biridir. Yılan Tanrısının gelişinden sonra bu eşya, edilen büyük yeminleri ve dilenen dilekleri onaylamak için kullanılırdı."
+  },
+  "passiveName": "Titreyen Işığın Halkı",
+  "passiveDescription": {
+    "0": {
+      "0": "Bir Element Becerisi kullanıldıktan sonra 10 saniyeliğine Enerji Yüklemesini <cryo>%24</cryo> artırır."
+    },
+    "1": {
+      "0": "Bir Element Becerisi kullanıldıktan sonra 10 saniyeliğine Enerji Yüklemesini <cryo>%30</cryo> artırır."
+    },
+    "2": {
+      "0": "Bir Element Becerisi kullanıldıktan sonra 10 saniyeliğine Enerji Yüklemesini <cryo>%36</cryo> artırır."
+    },
+    "3": {
+      "0": "Bir Element Becerisi kullanıldıktan sonra 10 saniyeliğine Enerji Yüklemesini <cryo>%42</cryo> artırır."
+    },
+    "4": {
+      "0": "Bir Element Becerisi kullanıldıktan sonra 10 saniyeliğine Enerji Yüklemesini <cryo>%48</cryo> artırır."
+    }
+  }
+}

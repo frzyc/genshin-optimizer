@@ -1,0 +1,29 @@
+{
+  "setName": "Lied vergangener Tage",
+  "setEffects": {
+    "2": "Erhöht den Heilungsbonus um 15 %.",
+    "4": "Erzeugt, wenn der Träger ein Truppenmitglied heilt, 6 s lang den Effekt „Sehnsucht“, der die Gesamtmenge der durchgeführten Heilung (einschließlich des überschüssigen Heilungswerts) aufzeichnet. Wandelt, wenn die Wirkungsdauer abläuft, den Effekt „Sehnsucht“ in den Effekt „Wellen von damals“ um: Erhöht, wenn die eigene aktuelle Figur in der Truppe einen Gegner mit einem Standardangriff, heftigen Schlag, Angriff aus dem Fall, einer Elementarfähigkeit oder einer Spezialfähigkeit trifft, den verursachten Schaden um 8 % der durch den Effekt „Sehnsucht“ aufgezeichneten Gesamtheilungsmenge. Der Effekt „Wellen von damals“ wird entfernt, nachdem er 5-mal ausgelöst wurde, oder nach 10 s. Ein einzelner „Sehnsucht“-Effekt kann bis zu 15.000 Punkte an Heilung aufzeichnen und es kann zu einem Zeitpunkt nur einen „Sehnsucht“-Effekt geben. Dieser Effekt kann die Menge an Heilung durch mehrere Träger aufzeichnen. Er kann auch noch ausgelöst werden, wenn sich der Träger inaktiv in der Truppe befindet."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Vergessener Eid vergangener Tage",
+      "desc": "Eine nie verwelkende Blume aus Larimar und blassem Silber. Sie gilt noch heute als Symbol der Widerständler."
+    },
+    "plume": {
+      "name": "Aufkeimende Gedanken vergangener Tage",
+      "desc": "Ein schmetterlingsförmiger Federschmuck aus Silber und blassen Kristallen. In der fernen Vergangenheit sollte er den Eid symbolisieren, niemals getrennt zu werden."
+    },
+    "sands": {
+      "name": "Widerhallende Klänge vergangener Tage",
+      "desc": "Eine einzigartig geformte Sanduhr, gefertigt aus Lasurit und Wasserjade. Es wird gesagt, dass sie von dem Glockenturm in Petrichor inspiriert wurde."
+    },
+    "goblet": {
+      "name": "Versprochener Traum vergangener Tage",
+      "desc": "Ein luxuriöses Gefäß, das die Form des legendären „Kelchs des reinen Wassers“ nachahmt. Es heißt, dass es die Wünsche der reinsten Menschen in Erfüllung gehen lassen kann."
+    },
+    "circlet": {
+      "name": "Überliefertes Gedicht vergangener Tage",
+      "desc": "Ein Trachtenhut, der einst bei Fontaines Opernautoren beliebt war. Es heißt, dass die Gestaltung des Federschmucks den Helmen der legendären Okeanidenritter nachempfunden ist."
+    }
+  }
+}

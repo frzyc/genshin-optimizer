@@ -1,0 +1,173 @@
+{
+  "name": "Dori",
+  "title": "La Magnate Acaudalada",
+  "description": "Una impredecible comerciante itinerante cuya mayor pasión es el Mora contante y sonante.",
+  "constellationName": "Magicae Lucerna",
+  "auto": {
+    "name": "Danza de espadas fantástica (modificada)",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Ataque Normal</strong>",
+        "1": "Realiza hasta 3 tajos de espada consecutivos."
+      },
+      "charged": {
+        "0": "<strong>Ataque Cargado</strong>",
+        "1": "Consume Aguante de manera constante para realizar golpes de espada giratorios contra los enemigos cercanos.",
+        "2": "Al final del Ataque Cargado, realizará un golpe de espada más poderoso."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Descendente</strong>",
+        "1": "Se lanza desde el aire para golpear el suelo, dañando a los enemigos cercanos e infligiendo Daño en el AdE en el momento del impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Daño de 1er golpe",
+      "1": "Daño de 2.º golpe",
+      "2": "Daño de 3er golpe",
+      "3": "Daño de ATQ Cargado en ciclo",
+      "4": "Daño final de Ataque Cargado",
+      "5": "Coste de Aguante de ATQ Cargado",
+      "6": "Duración máx.",
+      "7": "Daño de Caída",
+      "8": "Daño de impacto de caída baja/alta",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Lámpara mágica: Cañonazo apaciguador",
+    "description": {
+      "0": "Saca su lámpara mágica para lanzar contra los enemigos un cañonazo apaciguador que inflige <electro>Daño Electro</electro>.",
+      "1": "Al golpear a un objetivo, el cañonazo crea dos balas posventa que persiguen por sí solas a los enemigos cercanos para infligirles <electro>Daño Electro</electro>.",
+      "2": "<br/>",
+      "3": "<i>Dicen que Dori puede solucionar cualquier problema... por el precio indicado.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de cañonazo apaciguador",
+      "1": "Daño de balas posventa",
+      "2": "TdE",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Meticulosidad de Alcazarzaray",
+    "description": {
+      "0": "Invoca al genio de la lámpara para ofrecer todo tipo de asistencia a sus clientes.",
+      "1": "<br/>",
+      "2": "<strong>Genio de la lámpara</strong>",
+      "3": "Se conecta con un personaje cercano, el cual:",
+      "4": [
+        "Recuperará Vida continuamente en función de la Vida Máx. de Dori.",
+        "Recuperará Energía Elemental continuamente.",
+        "Será afectado por <electro>Electro</electro>."
+      ],
+      "5": "<br/>",
+      "6": "Además, cuando el conector entre el personaje y el genio de la lámpara choca contra un enemigo, le inflige un golpe de <electro>Daño Electro</electro> cada 0.4 s.",
+      "7": "<br/>",
+      "8": "Solo puede existir un genio de la lámpara a la vez.",
+      "9": "<br/>",
+      "10": "<i>Oh, así que quiere esta lámpara, ¿cierto, estimad{F#a}{M#o} client{F#a}{M#e}? Vaya, tiene usted muy buen gusto. Lamento decirle que su valor es incalculable. Seguro que usted tampoco vendería a su pequeña mascota ni por todo el dinero del mundo, ¿o me equivoco?</i>"
+    },
+    "skillParams": {
+      "0": "Daño del conector",
+      "1": "Curación continua",
+      "2": "Energía Elemental regenerada",
+      "3": "Duración",
+      "4": "TdE",
+      "5": "Energía Elemental",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Buscando oro",
+    "description": {
+      "0": "Cuando el personaje conectado con el <strong>genio de la lámpara</strong> causa una reacción de Electrocargado, Superconductor, Sobrecarga, Aceleración, Intensificación, Sobreflorecimiento, Torbellino Electro o Cristalización Electro, el TdE de <strong>Lámpara mágica: Cañonazo apaciguador</strong> se reduce en 1 s.",
+      "1": "Este efecto solo puede ocurrir una vez cada 3 s."
+    }
+  },
+  "passive2": {
+    "name": "Interés compuesto",
+    "description": {
+      "0": "Al golpear a un enemigo con el cañonazo apaciguador o las balas posventa de <strong>Lámpara mágica: Cañonazo apaciguador</strong>, Dori recupera 5 pts. de Energía Elemental por cada 100% de su Recarga de Energía.",
+      "1": "Solo puede recuperar Energía Elemental una vez por cada uso de Lámpara mágica: Cañonazo apaciguador, y podrá recuperar un máximo de 15 pts."
+    }
+  },
+  "passive3": {
+    "name": "Venta inesperada",
+    "description": {
+      "0": "Al crear materiales de mejora de personajes y de armas, hay una probabilidad del 25% de recuperar los materiales utilizados."
+    }
+  },
+  "constellation1": {
+    "name": "Inversión adicional",
+    "description": {
+      "0": "El <strong>cañonazo apaciguador</strong> crea 1 bala posventa adicional."
+    }
+  },
+  "constellation2": {
+    "name": "Franquicia singular",
+    "description": {
+      "0": "Cuando estás en combate y el <strong>genio de la lámpara</strong> cura al personaje con el que está conectado, desde la ubicación de ese personaje se dispara un cañonazo de genio que inflige daño equivalente al 50% del ATQ de Dori."
+    }
+  },
+  "constellation3": {
+    "name": "Maravillas sinfín",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Meticulosidad de Alcazarzaray</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Compensación de pérdidas",
+    "description": {
+      "0": "El personaje conectado con el <strong>genio de la lámpara</strong> obtiene las siguientes bonificaciones en función de su Vida y Energía Elemental actuales:",
+      "1": [
+        "Cuando su Vida es inferior al 50%, la curación recibida aumenta en un 50%.",
+        "Cuando su Energía Elemental está por debajo del 50%, su Recarga de Energía aumenta en un 30%."
+      ]
+    }
+  },
+  "constellation5": {
+    "name": "Relación calidad-precio",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Lámpara mágica: Cañonazo apaciguador</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Peso ligero",
+    "description": {
+      "0": "Tras usar <strong>Lámpara mágica: Cañonazo apaciguador</strong>, Dori obtiene los siguientes efectos durante 3 s:",
+      "1": [
+        "Se <electro>imbuye del elemento Electro</electro>.",
+        "Al golpear a un enemigo con un Ataque Normal, regenera Vida para todos los miembros del equipo cercanos en una cantidad equivalente al 4% de la Vida Máx. de Dori. Solo se puede regenerar vida una vez cada 0.1 s de esta manera."
+      ]
+    }
+  }
+}

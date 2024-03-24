@@ -1,0 +1,167 @@
+{
+  "name": "Yoimiya",
+  "title": "Flamme gambadante",
+  "description": "Propriétaire des « Feux de Naganohara ». Connue sous le nom de « Reine du festival d'été », elle excelle dans son art de créer des feux d'artifice qui symbolisent les espoirs et les rêves des gens.",
+  "constellationName": "Carassius Auratus",
+  "auto": {
+    "name": "Flambée pyrotechnique",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attaque normale</strong>",
+        "1": "Enchaîne jusqu'à 5 tirs consécutifs."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Effectue un <strong>tir visé</strong> plus précis et infligeant davantage de DGT.",
+        "2": "En visant, des flammes viennent se concentrer sur le carreau de la flèche avant d'être tirées lors de l'attaque. L'effet varie selon le nombre de charges :",
+        "3": [
+          " 1 charge : Tire une flèche enflammée qui inflige des <pyro>DGT Pyro</pyro>.",
+          " 2 charges : Génère jusqu'à 3 flèches chercheuses en fonction du temps de charge, qui sont libérées lors du tir visé. Les flèches suivent les ennemis proches, et infligent lorsqu'elles touchent des <pyro>DGT Pyro</pyro>."
+        ]
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Tire une pluie de flèches depuis les airs et plonge au sol, infligeant des DGT de zone à l'impact."
+      }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT 4e coup",
+      "4": "DGT 5e coup",
+      "5": "DGT tir visé",
+      "6": "DGT tir visé (pleine charge)",
+      "7": "DGT flèche chercheuse",
+      "8": "DGT durant la chute",
+      "9": "DGT chute basse/élevée",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Danse du feu « Niwabi »",
+    "description": {
+      "0": "Yoimiya brandit un cierge magique, s'entourant d'un champ de salpêtres.",
+      "1": "<br/>",
+      "2": "<strong>Niwabi Enshou</strong>",
+      "3": "Pendant la durée de cette aptitude, les flèches tirées lors de l'attaque normale de Yoimiya sont des flèches enflammées, infligeant davantage de DGT, et dont les DGT sont convertis en <pyro>DGT Pyro</pyro>. Pendant cette période, le second niveau de charge de son attaque normale Flambée pyrotechnique ne génère pas de flèches chercheuses.",
+      "4": "<br/>",
+      "5": "L'effet s'arrête lorsque Yoimiya quitte le champ de bataille.",
+      "6": "<br/>",
+      "7": "<i>Le « Niwabi » est une sorte de feux d'artifice à base d'encens inventé par Yoimiya, qui ne requiert aucune formation ou préparation préalable, ce qui le rend particulièrement populaire. Après plusieurs incidents, la Commission administrative a interdit l'usage du « Niwabi » dans l'enceinte de la ville, mais il arrive encore que de discrètes étincelles illuminent la nuit. Vues des hauteurs, on dirait de petites étoiles filantes.</i>"
+    },
+    "skillParams": {
+      "0": "DGT flèche enflammée",
+      "1": "Durée",
+      "2": "Temps de recharge",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Saxifrage Ryuukin",
+    "description": {
+      "0": "Yoimiya s'élance dans les airs avec sa création originale, le « Saxifrage Ryuukin » et tire des roquettes flamboyantes pleines de surprises, qui infligent des <pyro>DGT Pyro de zone</pyro>, et marquent un ennemi d'une « Flamme Ryuukin ».",
+      "1": "<br/>",
+      "2": "<strong>Flamme Ryuukin</strong>",
+      "3": "Les attaques normales, chargées et plongeantes, les compétences élémentaires et les déchaînements élémentaires de tous les personnages de l'équipe (hormis Yoimiya) génèrent une explosion lorsqu'elles touchent un ennemi marqué d'une Flamme Ryuukin, infligeant des <pyro>DGT Pyro de zone</pyro>.",
+      "4": "Lorsqu'un ennemi marqué d'une Flamme Ryuukin est vaincu avant la fin de l'effet, ce dernier est transféré à un ennemi proche qui hérite de la durée restante.",
+      "5": "<br/>",
+      "6": "Il est possible de générer ainsi une explosion une fois toutes les 2 s. Quand Yoimiya est vaincue, l'effet Flammes Ryuukin généré par ses compétences prend fin.",
+      "7": "<br/>",
+      "8": "<i>Les feux d'artifice sont les étoiles créées par l'homme, comètes destinées aux cieux. Et même si elle n'est qu'éphémère, la lumière qu'ils génèrent peut demeurer longtemps dans le cœur des hommes.</i>"
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "DGT explosion de la Flamme Ryuukin",
+      "2": "Durée",
+      "3": "Temps de recharge",
+      "4": "Énergie élémentaire",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Tour de passe-passe",
+    "description": {
+      "0": "Tant que <strong>Danse du feu « Niwabi »</strong> est active, les attaques normales de Yoimiya augmentent son <pyro>bonus de DGT Pyro</pyro> de 2 %. Cet effet dure 3 s et peut être cumulé 10 fois maximum."
+    }
+  },
+  "passive2": {
+    "name": "Aube d'une nuit d'été",
+    "description": {
+      "0": "Lorsque Yoimiya libère <strong>Saxifrage Ryuukin</strong>, l'ATQ de tous les autres personnages de l'équipe (hormis Yoimiya) augmente de 10 % pendant 15 s. De plus, chaque cumul de l'aptitude passive « Tour de passe-passe » que Yoimiya possède lorsqu'elle exécute <strong>Saxifrage d'or</strong> augmente ce bonus d'ATQ de 1 %."
+    }
+  },
+  "passive3": {
+    "name": "Rentabilisation maximum",
+    "description": {
+      "0": "Lors de la fabrication de décorations de type aménagement, ornement ou paysage, une partie des matériaux est récupérée."
+    }
+  },
+  "constellation1": {
+    "name": "Agate Ryuukin",
+    "description": {
+      "0": "Prolonge la durée de la Flamme Ryuukin générée par <strong>Saxifrage Ryuukin</strong> de 4 s.",
+      "1": "De plus, lorsqu'un ennemi affecté par Flamme Ryuukin est vaincu pendant la durée de l'effet, l'ATQ de Yoimiya augmente de 20 % pendant 20 s."
+    }
+  },
+  "constellation2": {
+    "name": "Procession de feux de joie",
+    "description": {
+      "0": "Lorsque les <pyro>DGT Pyro</pyro> infligés par Yoimiya résultent en un coup CRIT, cette dernière obtient pendant 6 s un <pyro>bonus de DGT Pyro</pyro> de 25 %.",
+      "1": "Cet effet s'applique également lorsque Yoimiya fait partie de l'équipe mais n'est pas déployée."
+    }
+  },
+  "constellation3": {
+    "name": "Flammes ingénieuses",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Danse du feu « Niwabi »</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation4": {
+    "name": "Pro de la pyrotechnie",
+    "description": {
+      "0": "Diminue le TdR de <strong>Danse du feu « Niwabi »</strong> de 1,2 s lorsque Flamme Ryuukin de Yoimiya déclenche une explosion."
+    }
+  },
+  "constellation5": {
+    "name": "Nuit d'un festival d'été",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Saxifrage Ryuukin</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation6": {
+    "name": "Pluie de météores de Naganohara",
+    "description": {
+      "0": "Tant que <strong>Danse du feu « Niwabi »</strong> est active, les attaques normales de Yoimiya ont 50 % de chances de libérer une flèche enflammée supplémentaire qui inflige 60 % des DGT d'origine. Ces DGT sont considérés comme des DGT d'attaque normale."
+    }
+  }
+}

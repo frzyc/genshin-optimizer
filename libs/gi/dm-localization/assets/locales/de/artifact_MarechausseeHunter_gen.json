@@ -1,0 +1,29 @@
+{
+  "setName": "Schattenjäger",
+  "setEffects": {
+    "2": "Erhöht den mit Standardangriffen und heftigen Schlägen verursachten Schaden um 15 %.",
+    "4": "Erhöht beim Erhöhen oder Verringern der aktuellen LP die KT um 12 %. Hält 5 s. 3-fach stapelbar."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Jägerbrosche",
+      "desc": "Eine alte Medaille, die in der Vergangenheit denjenigen verliehen wurde, die sich im Kampf verdient gemacht haben."
+    },
+    "plume": {
+      "name": "Auftakt eines Meisterwerks",
+      "desc": "Ein tragbares Werkzeug zum Einstellen des Drehmoments von Uhrwerken alter Vorrichtungen. Mittlerweile hat es seinen praktischen Wert längst eingebüßt."
+    },
+    "sands": {
+      "name": "Moment des Urteils",
+      "desc": "Eine ganz normale Taschenuhr. Sie ist nicht gerade genau, was die Zeitmessung anbelangt."
+    },
+    "goblet": {
+      "name": "Vergessenes Gefäß",
+      "desc": "Ein tragbarer Metallbehälter für Spirituosen. Passt gut in eine Jackentasche, falls man sich unterwegs mal einen gönnen möchte."
+    },
+    "circlet": {
+      "name": "Antlitz eines Veteranen",
+      "desc": "Eine alte Maske. Sie kann ein durch eine Verletzung entstelltes Gesicht bis zu einem gewissen Grad ergänzen. Je nach Grad der Verletzung und dem Geschlecht des Nutzers gibt es sie in unterschiedlichen Ausführungen."
+    }
+  }
+}

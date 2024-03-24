@@ -1,0 +1,24 @@
+{
+  "name": "Vinho e Música",
+  "description": {
+    "0": "Um livro de canções da época aristocrática passada, cujo compositor foi esquecido. Ele narra a história de um certo fora-da-lei heroico."
+  },
+  "passiveName": "Mudança Constante",
+  "passiveDescription": {
+    "0": {
+      "0": "Quando um Ataque Normal atingir um inimigo, o consumo de Stamina ao Correr ou utilizar uma habilidade que substitua Correr reduz em <cryo>14%</cryo> por 5s. Além disso, depois de Correr ou utilizar uma habilidade que substitua Correr aumenta o Ataque em <cryo>20%</cryo> durante 5s."
+    },
+    "1": {
+      "0": "Quando um Ataque Normal atingir um inimigo, o consumo de Stamina ao Correr ou utilizar uma habilidade que substitua Correr reduz em <cryo>16%</cryo> por 5s. Além disso, depois de Correr ou utilizar uma habilidade que substitua Correr aumenta o Ataque em <cryo>25%</cryo> durante 5s."
+    },
+    "2": {
+      "0": "Quando um Ataque Normal atingir um inimigo, o consumo de Stamina ao Correr ou utilizar uma habilidade que substitua Correr reduz em <cryo>18%</cryo> por 5s. Além disso, depois de Correr ou utilizar uma habilidade que substitua Correr aumenta o Ataque em <cryo>30%</cryo> durante 5s."
+    },
+    "3": {
+      "0": "Quando um Ataque Normal atingir um inimigo, o consumo de Stamina ao Correr ou utilizar uma habilidade que substitua Correr reduz em <cryo>20%</cryo> por 5s. Além disso, depois de Correr ou utilizar uma habilidade que substitua Correr aumenta o Ataque em <cryo>35%</cryo> durante 5s."
+    },
+    "4": {
+      "0": "Quando um Ataque Normal atingir um inimigo, o consumo de Stamina ao Correr ou utilizar uma habilidade que substitua Correr reduz em <cryo>22%</cryo> por 5s. Além disso, depois de Correr ou utilizar uma habilidade que substitua Correr aumenta o Ataque em <cryo>40%</cryo> durante 5s."
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Cortador de Montanhas",
+  "description": {
+    "0": "Um símbolo de um pacto lendário, esta lâmina afiada uma vez cortou o pico de uma montanha."
+  },
+  "passiveName": "Majestade Dourada",
+  "passiveDescription": {
+    "0": {
+      "0": "Aumenta a Força do Escudo em <cryo>20%</cryo>. Acertar ataques em inimigos aumenta o ataque em <cryo>4%</cryo> por 8s. Acumula até 5 vezes. Pode ocorrer apenas uma vez a cada 0.3s. Enquanto estiver protegido por um escudo, esse efeito de ataque é aumentado em 100%."
+    },
+    "1": {
+      "0": "Aumenta a força do Escudo em <cryo>25%</cryo>. Acertar ataques em inimigos aumenta o ataque em <cryo>5%</cryo> por 8s. Acumula até 5 vezes. Pode ocorrer apenas uma vez a cada 0.3s. Enquanto estiver protegido por um escudo, esse efeito de ataque é aumentado em 100%."
+    },
+    "2": {
+      "0": "Aumenta a força do Escudo em <cryo>30%</cryo>. Acertar ataques em inimigos aumenta o ataque em <cryo>6%</cryo> por 8s. Acumula até 5 vezes. Pode ocorrer apenas uma vez a cada 0.3s. Enquanto estiver protegido por um escudo, esse efeito de ataque é aumentado em 100%."
+    },
+    "3": {
+      "0": "Aumenta a força do Escudo em <cryo>35%</cryo>. Acertar ataques em inimigos aumenta o ataque em <cryo>7%</cryo> por 8s. Acumula até 5 vezes. Pode ocorrer apenas uma vez a cada 0.3s. Enquanto estiver protegido por um escudo, esse efeito de ataque é aumentado em 100%."
+    },
+    "4": {
+      "0": "Aumenta a força do Escudo em <cryo>40%</cryo>. Acertar ataques em inimigos aumenta o ataque em <cryo>8%</cryo> por 8s. Acumula até 5 vezes. Pode ocorrer apenas uma vez a cada 0.3s. Enquanto estiver protegido por um escudo, esse efeito de ataque é aumentado em 100%."
+    }
+  }
+}

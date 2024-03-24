@@ -1,0 +1,24 @@
+{
+  "name": "Lưu Nguyệt Châm",
+  "description": {
+    "0": "Mũi thương dài hẹp, binh khí này đến từ dị quốc, đuôi thương có hình bán nguyệt, được thương nhân mang đến Liyue. Chỉ cần tập luyện thì sẽ có sức sát thương khủng khiếp."
+  },
+  "passiveName": "Trâm Năng Lượng",
+  "passiveDescription": {
+    "0": {
+      "0": "Trong 5s sau khi nhận Nguyên Tố Hạt Nhân hoặc Nguyên Tố Tinh Cầu, tấn công thường và trọng kích sẽ tạo thêm sát thương bằng <cryo>20</cryo>% tấn công."
+    },
+    "1": {
+      "0": "Trong 5s sau khi nhận Nguyên Tố Hạt Nhân hoặc Nguyên Tố Tinh Cầu, tấn công thường và trọng kích sẽ tạo thêm sát thương bằng <cryo>25</cryo>% tấn công."
+    },
+    "2": {
+      "0": "Trong 5s sau khi nhận Nguyên Tố Hạt Nhân hoặc Nguyên Tố Tinh Cầu, tấn công thường và trọng kích sẽ tạo thêm sát thương bằng <cryo>30</cryo>% tấn công."
+    },
+    "3": {
+      "0": "Trong 5s sau khi nhận Nguyên Tố Hạt Nhân hoặc Nguyên Tố Tinh Cầu, tấn công thường và trọng kích sẽ tạo thêm sát thương bằng <cryo>35</cryo>% tấn công."
+    },
+    "4": {
+      "0": "Trong 5s sau khi nhận Nguyên Tố Hạt Nhân hoặc Nguyên Tố Tinh Cầu, tấn công thường và trọng kích sẽ tạo thêm sát thương bằng <cryo>40</cryo>% tấn công."
+    }
+  }
+}

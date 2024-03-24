@@ -1,0 +1,154 @@
+{
+  "name": "Rosaria",
+  "title": "La Beata Impía",
+  "description": "Una monja que, aparte de por su ropa, nadie diría que pertenece al clero. Su frialdad hacia todo la hace extremadamente incisiva y siempre actúa en solitario.",
+  "constellationName": "Spinea Corona",
+  "auto": {
+    "name": "Lanza eclesiástica",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Ataque Normal</strong>",
+        "1": "Realiza hasta 5 ataques rápidos con lanza."
+      },
+      "charged": {
+        "0": "<strong>Ataque Cargado</strong>",
+        "1": "Consume una cierta cantidad de Aguante para lanzarse al frente, infligiendo daño a los enemigos en el camino."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Descendente</strong>",
+        "1": "Se lanza desde el aire para golpear el suelo, dañando a los enemigos cercanos e infligiendo Daño en el AdE en el momento del impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Daño de 1er golpe",
+      "1": "Daño de 2.º golpe",
+      "2": "Daño de 3er golpe",
+      "3": "Daño de 4.º golpe",
+      "4": "Daño de 5.º golpe",
+      "5": "Daño de ATQ Cargado",
+      "6": "Coste de Aguante de ATQ Cargado",
+      "7": "Daño de Caída",
+      "8": "Daño de impacto de caída baja/alta",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Confesión impronunciable",
+    "description": {
+      "0": "Rosaria se desplaza rápidamente hasta detrás de su objetivo, clavándole su lanza y realizando un tajo que inflige <cryo>Daño Cryo</cryo>.",
+      "1": "No es posible desplazarse hasta detrás de enemigos de gran tamaño con este movimiento.",
+      "2": "<br/>",
+      "3": "<i>Rosaria no perdona los pecados de aquellos que se confiesan ante ella. Al contrario, cuanto más grave sea el pecado, más penetrante es el frío con el que los castiga.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "TdE",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Extremaunción",
+    "description": {
+      "0": "Esta es la ceremonia de rezo dirigida exclusivamente por Rosaria. Tras empujar con su arma a los enemigos a su alrededor, concentra un frío extremo en su lanza helada para golpear el suelo, infligiendo <cryo>Daño Cryo</cryo>.",
+      "1": "Mientras esté activa, la lanza helada emitirá intermitentemente un aire helado que inflige <cryo>Daño Cryo</cryo> a los enemigos cercanos.",
+      "2": "<br/>",
+      "3": "<i>Juzgar es algo muy fastidioso, así que ¿por qué no saltarse ese paso y celebrar directamente la última ceremonia de rezo? Debido a la poca devoción de Rosaria hacia el Arconte Anemo, esto no le resulta nada complicado.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "Daño continuo de lanza helada",
+      "2": "Duración",
+      "3": "TdE",
+      "4": "Energía Elemental",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Regina probatorum",
+    "description": {
+      "0": "Cuando Rosaria ataca por la espalda a un objetivo con <strong>Confesión impronunciable</strong>, su Prob. CRIT aumenta en un 12% durante 5 s."
+    }
+  },
+  "passive2": {
+    "name": "Oscuridad expiatoria",
+    "description": {
+      "0": "Al usar <strong>Extremaunción</strong>, la Prob. CRIT de todos los miembros del equipo (a excepción de Rosaria) aumenta durante 10 s en un 15% de la Prob. CRIT de Rosaria.",
+      "1": "El aumento de Prob. CRIT conseguido de esta manera no podrá ser superior al 15%."
+    }
+  },
+  "passive3": {
+    "name": "Travesía nocturna",
+    "description": {
+      "0": "Tus personajes del equipo obtienen el efecto de “paso ligero”, de manera que su Vel. Movimiento aumenta en un 10% por la noche (18-06 h).",
+      "1": "Este efecto no se activará en dominios, Dominios de la cruzada y la Espiral del Abismo, y no se puede acumular con otros efectos de paso ligero."
+    }
+  },
+  "constellation1": {
+    "name": "Guía de los pecadores",
+    "description": {
+      "0": "Cuando Rosaria asesta un golpe CRIT, su Vel. de Ataque y el daño de su Ataque Normal aumentan en un 10% durante 4 s."
+    }
+  },
+  "constellation2": {
+    "name": "Tierra de los herejes",
+    "description": {
+      "0": "Aumenta en 4 s la duración de la lanza helada creada mediante <strong>Extremaunción</strong>."
+    }
+  },
+  "constellation3": {
+    "name": "Sacramento de la penitencia",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Confesión impronunciable</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Consagración del sufrimiento",
+    "description": {
+      "0": "Al asestar un golpe CRIT con <strong>Confesión impronunciable</strong>, Rosaria recupera 5 pts. de Energía Elemental.",
+      "1": "Este efecto solo puede activarse 1 vez con cada Confesión impronunciable."
+    }
+  },
+  "constellation5": {
+    "name": "Oración final",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Extremaunción</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Juicio divino",
+    "description": {
+      "0": "Atacar a un enemigo con <strong>Extremaunción</strong> reduce su RES Física en un 20% durante 10 s."
+    }
+  }
+}

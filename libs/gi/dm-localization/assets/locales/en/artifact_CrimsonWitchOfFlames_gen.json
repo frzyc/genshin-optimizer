@@ -1,0 +1,29 @@
+{
+  "setName": "Crimson Witch of Flames",
+  "setEffects": {
+    "2": "Pyro DMG Bonus +15%",
+    "4": "Increases Overloaded, Burning, and Burgeon DMG by 40%. Increases Vaporize and Melt DMG by 15%. Using Elemental Skill increases the 2-Piece Set Bonus by 50% of its starting value for 10s. Max 3 stacks."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Witch's Flower of Blaze",
+      "desc": "A flower touched by the witch who once dreamt of burning away all the demons in the world. The anonymous flames affectionately caress the hands of those who touch it."
+    },
+    "plume": {
+      "name": "Witch's Ever-Burning Plume",
+      "desc": "A bird feather touched by the witch who once dreamt of burning away all the demons in the world. Its eternal flame burns hot."
+    },
+    "sands": {
+      "name": "Witch's End Time",
+      "desc": "A timepiece worn by the witch who dreamt of burning away all the demons in the world. The years the witch dedicated to the flames flow within."
+    },
+    "goblet": {
+      "name": "Witch's Heart Flames",
+      "desc": "A flame-spitting urn left behind by the Crimson Witch of Flames, who once dreamt of burning away all the demons in the world. The fire in the urn burns eternally, as did its former master."
+    },
+    "circlet": {
+      "name": "Witch's Scorching Hat",
+      "desc": "A hat once worn by the witch who dreamt of burning away all of the demons in the world. The large brim blocked her sight."
+    }
+  }
+}

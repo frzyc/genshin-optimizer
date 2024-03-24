@@ -1,0 +1,168 @@
+{
+  "name": "Xinyan",
+  "title": "Mélodie ardente",
+  "description": "La seule et unique rockeuse de Liyue. Elle combat les préjugés avec sa musique et ses chansons passionnées.",
+  "constellationName": "Fila Ignium",
+  "auto": {
+    "name": "Danse du feu",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attaque normale</strong>",
+        "1": "Enchaîne jusqu'à 4 coups d'épée."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Consomme de l'endurance de façon continue pour exécuter une succession d'attaques tournoyantes contre les ennemis proches.",
+        "2": "L'attaque chargée se termine sur un coup puissant."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis en chemin et des DGT de zone à l'impact."
+      }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT 4e coup",
+      "4": "DGT enchaînement attaque chargée",
+      "5": "DGT coup final attaque chargée",
+      "6": "Coût d'endurance attaque chargée",
+      "7": "Durée max",
+      "8": "DGT durant la chute",
+      "9": "DGT chute basse/élevée",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Jeu fervent",
+    "description": {
+      "0": "Xinyan brandit sa guitare, et inflige aux ennemis proches des <pyro>DGT Pyro</pyro>, et génère un bouclier grâce au soutien de l'audience.",
+      "1": "Le bouclier absorbe une quantité de DGT proportionnelle à la DÉF de Xinyan et aux ennemis touchés :",
+      "2": [
+        " 0 à 1 ennemi touché : Bouclier Niv.1",
+        " 2 ennemis touchés : Bouclier Niv.2",
+        " 3 ennemis touchés ou plus : Bouclier Niv.3, qui inflige en plus des <pyro>DGT Pyro</pyro> aux ennemis proches de façon intermittente."
+      ],
+      "3": "<br/>",
+      "4": "Le bouclier a les effets suivants :",
+      "5": [
+        " Applique au moment de sa création l'<pyro>élément Pyro</pyro> à Xinyan."
+      ],
+      "6": "Le bouclier est efficace à 250 % contre les <pyro>DGT Pyro</pyro>.",
+      "7": "<br/>",
+      "8": "<i>Xinyan n'insiste jamais assez sur le fait que tous ces effets sont le pinacle de l'art de la scène, et qu'ils constituent un phénomène d'ordre physique n'ayant bien sûr rien à voir avec son œil divin.</i>"
+    },
+    "skillParams": {
+      "0": "DGT instrument",
+      "1": "Absorption Bouclier Niv.1",
+      "2": "Absorption bouclier Niv.2",
+      "3": "Absorption bouclier Niv.3",
+      "4": "DGT continus",
+      "5": "Durée du bouclier",
+      "6": "Temps de recharge",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Riff rebelle",
+    "description": {
+      "0": "Grattant son instrument avec passion, Xinyan libère une vague d'ondes qui repoussent les ennemis, et infligent aux ennemis proches des DGT physiques, au plus grand plaisir du public.",
+      "1": "L'ambiance se réchauffe tellement que des explosions ont lieu, infligeant aux ennemis proches des <pyro>DGT Pyro</pyro>.",
+      "2": "<br/>",
+      "3": "<i>Xinyan avait autrefois pour habitude de terminer toutes ses représentations de cette manière. Ce n'est pas à cause du danger qu'elle s'est arrêtée, mais parce qu'elle n'avait pas de final encore plus épique à proposer dans le cas d'un nouveau rappel.</i>"
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "DGT Pyro continus",
+      "2": "Durée",
+      "3": "Temps de recharge",
+      "4": "Énergie élémentaire",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "« Le spectacle doit continuer, même sans audience... »",
+    "description": {
+      "0": "Diminue le nombre d'ennemis à toucher pour déclencher chaque niveau de bouclier de <strong>Jeu fervent</strong> :",
+      "1": [
+        " 1 ennemi touché : Bouclier Niv.2.",
+        " 2 ennemis touchés ou plus : Bouclier Niv.3."
+      ]
+    }
+  },
+  "passive2": {
+    "name": "« ... Ça, c'est du rock ! »",
+    "description": {
+      "0": "Les DGT physiques infligés par les personnages sous la protection du bouclier généré par <strong>Jeu fervent</strong> augmentent de 15 %."
+    }
+  },
+  "passive3": {
+    "name": "Recette pour un tube",
+    "description": {
+      "0": "12 % de chances d'obtenir un plat supplémentaire lorsque vous cuisinez un plat parfait qui renforce la DÉF."
+    }
+  },
+  "constellation1": {
+    "name": "Accélération fatale",
+    "description": {
+      "0": "La VIT des attaques normales et chargées de Xinyan augmente de 12 % pendant 5 s lorsque Xinyan inflige un coup CRIT.",
+      "1": "Cet effet ne peut être déclenché qu'une fois toutes les 5 s."
+    }
+  },
+  "constellation2": {
+    "name": "Ouverture impromptue",
+    "description": {
+      "0": "Le taux CRIT des DGT physiques de <strong>Riff rebelle</strong> augmente de 100 %. Un bouclier Niv.3 est de plus généré à l'activation."
+    }
+  },
+  "constellation3": {
+    "name": "Double corde",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Jeu fervent</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation4": {
+    "name": "Rythme irrésistible",
+    "description": {
+      "0": "La RÉS physique des ennemis touchés par Xinyan au début de <strong>Jeu fervent</strong> diminue de 15 % pendant 12 s."
+    }
+  },
+  "constellation5": {
+    "name": "Rappel fervent",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Riff rebelle</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation6": {
+    "name": "Rock infernal",
+    "description": {
+      "0": "Diminue la consommation d'endurance des attaques chargées de Xinyan de 30 %. Xinyan obtient de plus un bonus d'ATQ équivalant à 50 % de sa DÉF lorsqu'elle exécute une attaque chargée."
+    }
+  }
+}

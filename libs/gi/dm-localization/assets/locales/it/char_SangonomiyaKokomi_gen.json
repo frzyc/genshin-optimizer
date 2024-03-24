@@ -1,0 +1,175 @@
+{
+  "name": "Sangonomiya Kokomi",
+  "title": "Perla di saggezza",
+  "description": "La Sacerdotessa divina dell'Isola di Watatsumi. Ha l'ultima parola su ogni questione dell'isola.",
+  "constellationName": "Dracaena Somnolenta",
+  "auto": {
+    "name": "Forma dell'acqua",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attacco normale</strong>",
+        "1": "Sferra fino a 3 attacchi consecutivi che assumono la forma di pesci, infliggendo <hydro>DAN da Hydro</hydro>."
+      },
+      "charged": {
+        "0": "<strong>Attacco caricato</strong>",
+        "1": "Consuma una determinata quantità di vigore per infliggere <hydro>DAN da Hydro ad area</hydro> dopo un breve periodo di lancio."
+      },
+      "plunging": {
+        "0": "<strong>Attacco in picchiata</strong>",
+        "1": "Accumulando la forza di Hydro, Kokomi si scaglia contro il suolo da mezz'aria, danneggiando tutti gli avversari sul suo percorso. Infligge <hydro>DAN da Hydro ad area</hydro> all'impatto col suolo."
+      }
+    },
+    "skillParams": {
+      "0": "DAN da 1º colpo",
+      "1": "DAN da 2º colpo",
+      "2": "DAN da 3º colpo",
+      "3": "DAN da ATT caricato",
+      "4": "Costo vigore ATT caricato",
+      "5": "DAN da ATT in picchiata",
+      "6": "DAN da ATT in picchiata basso/alto",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Giuramento di Kurage",
+    "description": {
+      "0": "Tramite l'acqua, crea una Bake-Kurage in grado di guarire i suoi alleati.",
+      "1": "Usare quest'abilità applica lo stato di <hydro>Umidità</hydro> a Sangonomiya Kokomi.",
+      "2": "<br/>",
+      "3": "<strong>Bake-Kurage</strong>",
+      "4": "Infligge <hydro>DAN da Hydro</hydro> agli avversari circostanti e guarisce i personaggi attivi vicini a intervalli regolari. La guarigione varia in base ai PS max di Kokomi.",
+      "5": "<br/>",
+      "6": "<i>Kokomi deve recuperare le forze con regolarità per mantenere la sua efficienza di lavoro ottimale.</i>"
+    },
+    "skillParams": {
+      "0": "RIGEN",
+      "1": "DAN da Increspatura",
+      "2": "Durata",
+      "3": "TdR",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Ascensione della Nereide",
+    "description": {
+      "0": "Evoca la potenza di Watatsumi, infliggendo <hydro>DAN da Hydro</hydro> agli avversari circostanti, per poi vestire Kokomi di un abito cerimoniale fatto dei corsi d'acqua di Sangonomiya.",
+      "1": "<br/>",
+      "2": "<strong>Abito cerimoniale</strong>",
+      "3": [
+        " I DAN da attacco normale, caricato e da Bake-Kurage di Sangonomiya Kokomi aumentano in base ai suoi PS max.",
+        " Quando i suoi attacchi normali e caricati colpiscono gli avversari, Kokomi ripristina i PS di tutti i membri del gruppo vicini, con la quantità dei PS ripristinati che varia in base ai suoi PS max.",
+        " Aumenta la resistenza all'interruzione di Sangonomiya Kokomi e le permette di camminare sull'acqua."
+      ],
+      "4": "<br/>",
+      "5": "Questi effetti si annullano quando Sangonomiya Kokomi lascia il campo di battaglia.",
+      "6": "<br/>",
+      "7": "<i>La luce pura si fonde in vesti che cingono Sua Eccellenza Sangonomiya Kokomi, riflettendo tutta la sua magnificenza.</i>"
+    },
+    "skillParams": {
+      "0": "DAN da abilità",
+      "1": "Bonus DAN da ATT normale",
+      "2": "Bonus DAN da ATT caricato",
+      "3": "Bonus DAN da Bake-Kurage",
+      "4": "RIGEN PS per colpo",
+      "5": "Durata",
+      "6": "TdR",
+      "7": "Costo energia",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Scrigno di Tamakushi",
+    "description": {
+      "0": "Se la Bake-Kurage è in campo quando Sangonomiya Kokomi usa <strong>Ascensione della Nereide</strong>, la durata della Bake-Kurage viene ripristinata."
+    }
+  },
+  "passive2": {
+    "name": "Canto delle perle",
+    "description": {
+      "0": "Quando indossa l'Abito cerimoniale creato tramite <strong>Ascensione della Nereide</strong>, il bonus DAN da attacco normale e caricato che Sangonomiya Kokomi riceve in base ai suoi PS max otterrà un ulteriore aumento pari a un 15% del suo bonus di guarigione."
+    }
+  },
+  "passive3": {
+    "name": "Principessa di Watatsumi",
+    "description": {
+      "0": "Diminuisce di un 20% il consumo di vigore durante il nuoto per i membri del tuo gruppo.",
+      "1": "Non è cumulabile con talenti passivi che conferiscono gli stessi effetti."
+    }
+  },
+  "passive": {
+    "name": "Strategia infallibile",
+    "description": {
+      "0": "Sangonomiya Kokomi ottiene un 25% di bonus di guarigione, ma il suo tasso di CRIT si riduce di un 100%."
+    }
+  },
+  "constellation1": {
+    "name": "Sul bordo dell'acqua",
+    "description": {
+      "0": "Quando indossa l'Abito cerimoniale creato da <strong>Ascensione della Nereide</strong>, l'attacco normale finale della combo di Sangonomiya Kokomi rilascerà un pesce che infligge <hydro>DAN da Hydro</hydro> pari a un 30% dei suoi PS max.",
+      "1": "Questi DAN non saranno considerati come DAN da attacco normale."
+    }
+  },
+  "constellation2": {
+    "name": "Come le onde, le nuvole si increspano",
+    "description": {
+      "0": "Sangonomiya Kokomi ottiene un bonus di guarigione per i personaggi i cui PS sono pari o inferiori a un 50% nei seguenti modi:",
+      "1": [
+        " Bake-Kurage di <strong>Giuramento di Kurage</strong>: 4,5% dei PS max di Kokomi;",
+        " attacchi normali e caricati di <strong>Ascensione della Nereide</strong>: 0,6% dei PS max di Kokomi."
+      ]
+    }
+  },
+  "constellation3": {
+    "name": "La luna, una nave sui mari",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Ascensione della Nereide</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation4": {
+    "name": "La luna, guardiana delle acque",
+    "description": {
+      "0": "Quando indossa l'Abito cerimoniale creato da <strong>Ascensione della Nereide</strong>, la VEL dell'attacco normale di Sangonomiya Kokomi aumenta di un 10%, e gli attacchi normali che colpiscono gli avversari ripristinano la sua energia di 0,8.",
+      "1": "Si può verificare una sola volta ogni 0,2 s."
+    }
+  },
+  "constellation5": {
+    "name": "Tutti i ruscelli sfociano nel mare",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Giuramento di Kurage</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation6": {
+    "name": "Sango Isshin",
+    "description": {
+      "0": "Quando indossa l'Abito cerimoniale creato da <strong>Ascensione della Nereide</strong>, Sangonomiya Kokomi ottiene un <hydro>Bonus DAN da Hydro</hydro> di un 40% per 4 s quando i suoi attacchi normali e caricati guariscono, o guarirebbero, i membri del gruppo i cui PS sono pari o superiori a un 80%."
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Nhạc Khúc Biển Sâu",
+  "description": {
+    "0": "Thanh kiếm dài trầm lặng như biển sâu thần bí, còn lâu đời hơn vẻ ngoài lâu đời của nó."
+  },
+  "passiveName": "Kinh Điển Cuối Cùng",
+  "passiveDescription": {
+    "0": {
+      "0": "Khi thi triển Kỹ Năng Nguyên Tố, sẽ tăng <cryo>12%</cryo> tấn công, duy trì 15s, và cung cấp Khế Ước Sinh Mệnh tương đương 25% HP tối đa, hiệu quả này mỗi 10s tối đa kích hoạt một lần. Khi xóa Khế Ước Sinh Mệnh, căn cứ vào <cryo>2.4%</cryo> xóa đi để tăng tối đa <cryo>150</cryo> tấn công, duy trì 15s."
+    },
+    "1": {
+      "0": "Khi thi triển Kỹ Năng Nguyên Tố, sẽ tăng <cryo>15%</cryo> tấn công, duy trì 15s, và cung cấp Khế Ước Sinh Mệnh tương đương 25% HP tối đa, hiệu quả này mỗi 10s tối đa kích hoạt một lần. Khi xóa Khế Ước Sinh Mệnh, căn cứ vào <cryo>3%</cryo> xóa đi để tăng tối đa <cryo>187.5</cryo> tấn công, duy trì 15s."
+    },
+    "2": {
+      "0": "Khi thi triển Kỹ Năng Nguyên Tố, sẽ tăng <cryo>18%</cryo> tấn công, duy trì 15s, và cung cấp Khế Ước Sinh Mệnh tương đương 25% HP tối đa, hiệu quả này mỗi 10s tối đa kích hoạt một lần. Khi xóa Khế Ước Sinh Mệnh, căn cứ vào <cryo>3.6%</cryo> xóa đi để tăng tối đa <cryo>225</cryo> tấn công, duy trì 15s."
+    },
+    "3": {
+      "0": "Khi thi triển Kỹ Năng Nguyên Tố, sẽ tăng <cryo>21%</cryo> tấn công, duy trì 15s, và cung cấp Khế Ước Sinh Mệnh tương đương 25% HP tối đa, hiệu quả này mỗi 10s tối đa kích hoạt một lần. Khi xóa Khế Ước Sinh Mệnh, căn cứ vào <cryo>4.2%</cryo> xóa đi để tăng tối đa <cryo>262.5</cryo> tấn công, duy trì 15s."
+    },
+    "4": {
+      "0": "Khi thi triển Kỹ Năng Nguyên Tố, sẽ tăng <cryo>24%</cryo> tấn công, duy trì 15s, và cung cấp Khế Ước Sinh Mệnh tương đương 25% HP tối đa, hiệu quả này mỗi 10s tối đa kích hoạt một lần. Khi xóa Khế Ước Sinh Mệnh, căn cứ vào <cryo>4.8%</cryo> xóa đi để tăng tối đa <cryo>300</cryo> tấn công, duy trì 15s."
+    }
+  }
+}

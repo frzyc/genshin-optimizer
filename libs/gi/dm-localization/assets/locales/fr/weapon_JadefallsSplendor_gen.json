@@ -1,0 +1,24 @@
+{
+  "name": "Splendeur de l'azur",
+  "description": {
+    "0": "Un objet rituel sculpté dans du jade qui reflète l'éclat des cieux et des eaux claires."
+  },
+  "passiveName": "Tablette de jade primordial",
+  "passiveDescription": {
+    "0": {
+      "0": "Pendant 3 s après avoir utilisé un déchaînement élémentaire ou créé un bouclier, l'effet Tablette de jade primordial est accordé : restaure <cryo>4,5</cryo> pts d'énergie élémentaire toutes les 2,5 s et augmente le bonus de DGT de l'élément correspondant de <cryo>0,3 %</cryo> pour chaque tranche de 1 000 PV max que le personnage équipé de l'arme possède, cette augmentation pouvant atteindre jusqu'à <cryo>12 %</cryo>. L'effet Tablette de jade primordial peut être déclenché même lorsque le personnage fait partie de l'équipe mais n'est pas déployé."
+    },
+    "1": {
+      "0": "Pendant 3 s après avoir utilisé un déchaînement élémentaire ou créé un bouclier, l'effet Tablette de jade primordial est accordé : restaure <cryo>5</cryo> pts d'énergie élémentaire toutes les 2,5 s et augmente le bonus de DGT de l'élément correspondant de <cryo>0,5 %</cryo> pour chaque tranche de 1 000 PV max que le personnage équipé de l'arme possède, cette augmentation pouvant atteindre jusqu'à <cryo>20 %</cryo>. L'effet Tablette de jade primordial peut être déclenché même lorsque le personnage fait partie de l'équipe mais n'est pas déployé."
+    },
+    "2": {
+      "0": "Pendant 3 s après avoir utilisé un déchaînement élémentaire ou créé un bouclier, l'effet Tablette de jade primordial est accordé : restaure <cryo>5,5</cryo> pts d'énergie élémentaire toutes les 2,5 s et augmente le bonus de DGT de l'élément correspondant de <cryo>0,7 %</cryo> pour chaque tranche de 1 000 PV max que le personnage équipé de l'arme possède, cette augmentation pouvant atteindre jusqu'à <cryo>28 %</cryo>. L'effet Tablette de jade primordial peut être déclenché même lorsque le personnage fait partie de l'équipe mais n'est pas déployé."
+    },
+    "3": {
+      "0": "Pendant 3 s après avoir utilisé un déchaînement élémentaire ou créé un bouclier, l'effet Tablette de jade primordial est accordé : restaure <cryo>6</cryo> pts d'énergie élémentaire toutes les 2,5 s et augmente le bonus de DGT de l'élément correspondant de <cryo>0,9 %</cryo> pour chaque tranche de 1 000 PV max que le personnage équipé de l'arme possède, cette augmentation pouvant atteindre jusqu'à <cryo>36 %</cryo>. L'effet Tablette de jade primordial peut être déclenché même lorsque le personnage fait partie de l'équipe mais n'est pas déployé."
+    },
+    "4": {
+      "0": "Pendant 3 s après avoir utilisé un déchaînement élémentaire ou créé un bouclier, l'effet Tablette de jade primordial est accordé : restaure <cryo>6,5</cryo> pts d'énergie élémentaire toutes les 2,5 s et augmente le bonus de DGT de l'élément correspondant de <cryo>1,1 %</cryo> pour chaque tranche de 1 000 PV max que le personnage équipé de l'arme possède, cette augmentation pouvant atteindre jusqu'à <cryo>44 %</cryo>. L'effet Tablette de jade primordial peut être déclenché même lorsque le personnage fait partie de l'équipe mais n'est pas déployé."
+    }
+  }
+}

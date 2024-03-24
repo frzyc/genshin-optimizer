@@ -1,0 +1,29 @@
+{
+  "setName": "Wagemut",
+  "setEffects": {
+    "2": "Erhöht den ANG um 18 %.",
+    "4": "Erhöht den Gegnern mit mehr als 50 % LP zugefügten Schaden um 30 %."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Reckenmedaille",
+      "desc": "Eine schlichte Brosche, die als Andenken an ein vergangenes Abenteuer fungiert."
+    },
+    "plume": {
+      "name": "Erwartungen des Recken",
+      "desc": "Eine glänzende Vogelfeder, die ein gewisses Maß an Mut verleiht."
+    },
+    "sands": {
+      "name": "Entschlossenheit des Recken",
+      "desc": "Eine uralte und winzige Sanduhr, die keinen wirklichen Nutzen hat, so unbegreiflich wie die Zeit selbst."
+    },
+    "goblet": {
+      "name": "Schritte des Recken",
+      "desc": "Ein grob geschnitzter hölzerner Becher, dessen Leere von vielen Erinnerungen zeugt."
+    },
+    "circlet": {
+      "name": "Reckenhaarreif",
+      "desc": "Ein grob geflochtener Kranz, der für einige Menschen so wertvoll ist wie eine Krone aus Gold."
+    }
+  }
+}

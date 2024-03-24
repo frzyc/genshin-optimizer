@@ -1,0 +1,24 @@
+{
+  "name": "Yakıcı Güneşin Veliahtı",
+  "description": {
+    "0": "Kral Deshret döneminden kalma kadim bir uzun yay. Üzerine anlaşılamayan metinler ve desenler oyulmuş."
+  },
+  "passiveName": "Güneş Alevi Yolu",
+  "passiveDescription": {
+    "0": {
+      "0": "Yüklü Saldırı bir düşmana vurduktan sonra gökten bir Güneş Alevi Oku iner, Saldırının <cryo>%60'ı</cryo> kadar Hasar verir ve bu Ok ile Hasar alan düşmana 10 saniyeliğine Kalpkavuran etkisi uygular. Kalpkavuran etkisindeki düşmanların, silahı kuşanan karakterden aldığı Yüklü Saldırı Hasarı <cryo>%28</cryo> artar. Güneş Alevi Oku her 10 saniyede bir tetiklenebilir."
+    },
+    "1": {
+      "0": "Yüklü Saldırı bir düşmana vurduktan sonra gökten bir Güneş Alevi Oku iner, Saldırının <cryo>%75'i</cryo> kadar Hasar verir ve bu Ok ile Hasar alan düşmana 10 saniyeliğine Kalpkavuran etkisi uygular. Kalpkavuran etkisindeki düşmanların, silahı kuşanan karakterden aldığı Yüklü Saldırı Hasarı <cryo>%35</cryo> artar. Güneş Alevi Oku her 10 saniyede bir tetiklenebilir."
+    },
+    "2": {
+      "0": "Yüklü Saldırı bir düşmana vurduktan sonra gökten bir Güneş Alevi Oku iner, Saldırının <cryo>%90'ı</cryo> kadar Hasar verir ve bu Ok ile Hasar alan düşmana 10 saniyeliğine Kalpkavuran etkisi uygular. Kalpkavuran etkisindeki düşmanların, silahı kuşanan karakterden aldığı Yüklü Saldırı Hasarı <cryo>%42</cryo> artar. Güneş Alevi Oku her 10 saniyede bir tetiklenebilir."
+    },
+    "3": {
+      "0": "Yüklü Saldırı bir düşmana vurduktan sonra gökten bir Güneş Alevi Oku iner, Saldırının <cryo>%105'i</cryo> kadar Hasar verir ve bu Ok ile Hasar alan düşmana 10 saniyeliğine Kalpkavuran etkisi uygular. Kalpkavuran etkisindeki düşmanların, silahı kuşanan karakterden aldığı Yüklü Saldırı Hasarı <cryo>%49</cryo> artar. Güneş Alevi Oku her 10 saniyede bir tetiklenebilir."
+    },
+    "4": {
+      "0": "Yüklü Saldırı bir düşmana vurduktan sonra gökten bir Güneş Alevi Oku iner, Saldırının <cryo>%120'si</cryo> kadar Hasar verir ve bu Ok ile Hasar alan düşmana 10 saniyeliğine Kalpkavuran etkisi uygular. Kalpkavuran etkisindeki düşmanların, silahı kuşanan karakterden aldığı Yüklü Saldırı Hasarı <cryo>%56</cryo> artar. Güneş Alevi Oku her 10 saniyede bir tetiklenebilir."
+    }
+  }
+}

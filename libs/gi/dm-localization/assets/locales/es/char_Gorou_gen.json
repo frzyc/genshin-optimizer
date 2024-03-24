@@ -1,0 +1,187 @@
+{
+  "name": "Gorou",
+  "title": "El General Canino",
+  "description": "El gran general de las tropas de Watatsumi. Sus subordinados confían plenamente en él.",
+  "constellationName": "Canis Bellatoris",
+  "auto": {
+    "name": "Flecha resquebrajadora",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Ataque Normal</strong>",
+        "1": "Realiza hasta 4 disparos consecutivos con arco."
+      },
+      "charged": {
+        "0": "<strong>Ataque Cargado</strong>",
+        "1": "Realiza un <strong>Disparo Preciso</strong> que inflige mayor daño y tiene mayor precisión.",
+        "2": "Al apuntar, se acumularán fragmentos de roca en la punta de flecha. Una flecha rocosa totalmente cargada infligirá <geo>Daño Geo</geo>."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Descendente</strong>",
+        "1": "Dispara una lluvia de flechas desde el aire mientras desciende rápidamente, infligiendo Daño en el AdE al impactar contra el suelo."
+      }
+    },
+    "skillParams": {
+      "0": "Daño de 1er golpe",
+      "1": "Daño de 2.º golpe",
+      "2": "Daño de 3er golpe",
+      "3": "Daño de 4.º golpe",
+      "4": "Disparo Preciso",
+      "5": "Disparo Preciso (carga completa)",
+      "6": "Daño de Caída",
+      "7": "Daño de impacto de caída baja/alta",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Defensa integral canina",
+    "description": {
+      "0": "Inflige <geo>Daño Geo en el AdE</geo> e iza el estandarte del general.",
+      "1": "<br/>",
+      "2": "<strong>Estandarte del general</strong>",
+      "3": "Teniendo en cuenta el número de personajes <geo>Geo</geo> que hay en el equipo al lanzar esta habilidad, otorga los siguientes efectos a los personajes en uso dentro de la zona del estandarte:",
+      "4": [
+        "1 personaje - Robustez: aumenta la DEF.",
+        "2 personajes - Inquebrantabilidad: además del efecto anterior, aumenta la RES a interrupción.",
+        "3 personajes - Fragmentación: además de los anteriores efectos, otorga un <geo>Bono de Daño Geo</geo>."
+      ],
+      "5": "<br/>",
+      "6": "Solo puede existir al mismo tiempo un estandarte del general creado por Gorou, y los demás personajes solo podrán beneficiarse de los efectos de un único estandarte. Cuando el personaje sale de la zona, los efectos de esta seguirán activos durante 2 s.",
+      "7": "<br/>",
+      "8": "<strong>Mantener pulsado</strong>",
+      "9": "Ajusta la ubicación en la que se activa la habilidad.",
+      "10": "<br/>",
+      "11": "<i>“En esta posición, puedo garantizar la total seguridad de mis soldados”. Sea donde sea y cuando sea, como general, lo último que desea Gorou es ver heridos a sus fieles soldados.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "Aumento de DEF",
+      "2": "Bono de Daño Geo",
+      "3": "Duración",
+      "4": "TdE",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Colmillo de la victoria",
+    "description": {
+      "0": "Haciendo una muestra de su poder, inflige <geo>Daño Geo en el AdE</geo> y crea un área llamada “gloria del general” para animar a sus aliados.",
+      "1": "<br/>",
+      "2": "<strong>Gloria del general</strong>",
+      "3": "Posee las siguientes características:",
+      "4": [
+        "Tiene los mismos efectos que el estandarte del general creado con la Habilidad Elemental, “Defensa integral canina”, es decir, según el número de personajes <geo>Geo</geo> que hay en el equipo, otorga ciertos efectos al personaje en uso dentro de la zona del estandarte, el cual se va moviendo junto a dicho personaje.",
+        "Cada 1.5 s, provoca un derrumbamiento rocoso que inflige <geo>Daño Geo en el AdE</geo> contra un enemigo situado en la zona.",
+        "Cada 1.5 s, atrae hasta la ubicación del personaje en uso un fragmento creado por la reacción de Cristalización dentro de la zona."
+      ],
+      "5": "<br/>",
+      "6": "Si al lanzar esta habilidad ya existe un estandarte del general creado por Gorou, dicho estandarte se destruirá. Además, mientras la zona de gloria del general esté activa, cuando Gorou realice su Habilidad Elemental, “Defensa integral canina”, no creará otro estandarte del general.",
+      "7": "Si Gorou es derrotado, los efectos de gloria del general desaparecerán.",
+      "8": "<br/>",
+      "9": "<i>“¡Tenemos la ventaja del terreno!”. Gorou es capaz de modificar ligeramente el terreno de la batalla para conseguir la victoria.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "Daño de cada derrumbamiento rocoso",
+      "2": "Duración",
+      "3": "TdE",
+      "4": "Energía Elemental",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Contra viento y marea",
+    "description": {
+      "0": "Al realizar <strong>Colmillo de la victoria</strong>, la DEF de todos los miembros del equipo cercanos aumenta en un 25% durante 12 s."
+    }
+  },
+  "passive2": {
+    "name": "Favor recíproco",
+    "description": {
+      "0": "Aumenta el daño de los siguientes ataques de Gorou en proporción a su DEF:",
+      "1": [
+        "El daño de habilidad de <strong>Defensa integral canina</strong> aumenta en un 156% de su DEF.",
+        "El daño de habilidad de <strong>Colmillo de la victoria</strong> y de los derrumbamientos rocosos aumenta en un 15.6% de su DEF."
+      ]
+    }
+  },
+  "passive3": {
+    "name": "Perro rastreador",
+    "description": {
+      "0": "Muestra la ubicación de los <strong>objetos típicos de Inazuma</strong> cercanos en el minimapa."
+    }
+  },
+  "constellation1": {
+    "name": "Velocidad de sabueso: Raudo como el viento",
+    "description": {
+      "0": "Cuando el personaje en uso (a excepción de Gorou) inflige Daño Geo contra un enemigo mientras está dentro de las áreas del <strong>estandarte del general</strong> o de <strong>gloria del general</strong>, el TdE de <strong>Defensa integral canina</strong> de Gorou se reduce en 2 s.",
+      "1": "Este efecto solo puede ocurrir una vez cada 10 s."
+    }
+  },
+  "constellation2": {
+    "name": "Tranquilidad de sabueso: Firme como la roca",
+    "description": {
+      "0": "Cuando un personaje en uso cercano obtiene un fragmento creado con Cristalización mientras <strong>gloria del general</strong> está activa, la duración de sus efectos se prolonga en 1 s.",
+      "1": "Esto solo puede ocurrir una vez cada 0.1 s y solo se puede prolongar un máximo de 3 s de esta manera."
+    }
+  },
+  "constellation3": {
+    "name": "Zarpas de sabueso: Feroz como el fuego",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Defensa integral canina</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Lametón de sabueso: Cálido como el agua",
+    "description": {
+      "0": "Cuando el área de <strong>gloria del general</strong> posee los efectos de Inquebrantabilidad o Fragmentación, los personajes en uso que se encuentren dentro de ella recuperan Vida cada 1.5 s en una cantidad equivalente al 50% de la DEF de Gorou."
+    }
+  },
+  "constellation5": {
+    "name": "Arremetida de sabueso: Potente como el rayo",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Colmillo de la victoria</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Valentía de sabueso: Fiel como un perro",
+    "description": {
+      "0": "Tras usar <strong>Defensa integral canina</strong> o <strong>Colmillo de la victoria</strong>, aumenta el <geo>Daño CRIT Geo</geo> de todos los miembros del equipo cercanos durante 12 s según el nivel del área creada.",
+      "1": [
+        "Robustez: aumenta en un 10%.",
+        "Inquebrantabilidad: aumenta en un 20%.",
+        "Fragmentación: aumenta en un 40%."
+      ],
+      "2": "<br/>",
+      "3": "Este efecto no se puede acumular, sino que será determinado en función de la última bonificación que surtió efecto."
+    }
+  }
+}

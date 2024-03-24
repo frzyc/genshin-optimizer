@@ -1,0 +1,24 @@
+{
+  "name": "Chìa Khóa Khaj-Nisut",
+  "description": {
+    "0": "Một món trong bộ đôi quyền trượng tạo nên từ Hắc Diệu Thạch. Trong truyền thuyết, đây chính là chìa khóa để mở cánh cửa dẫn đến thiên đường trong tận cùng biển cát."
+  },
+  "passiveName": "Sử Thi Trong Biển Cát",
+  "passiveDescription": {
+    "0": {
+      "0": "HP tăng <cryo>20%</cryo>. Khi Kỹ Năng Nguyên Tố đánh trúng kẻ địch sẽ sản sinh hiệu ứng \"Áng Thơ Vĩ Đại\" trong 20s: Tăng Tinh Thông Nguyên Tố dựa trên <cryo>0.12%</cryo> giới hạn HP của nhân vật trang bị vũ khí này, hiệu ứng này mỗi 0.3s tối đa kích hoạt một lần, tối đa cộng dồn 3 tầng. Khi hiệu quả cộng dồn đến tầng thứ ba hoặc thời gian duy trì của tầng thứ ba được làm mới, sẽ tăng Tinh Thông Nguyên Tố cho tất cả nhân vật trong đội gần đó dựa theo <cryo>0.2%</cryo> giới hạn HP của nhân vật trang bị vũ khí này, duy trì 20s."
+    },
+    "1": {
+      "0": "HP tăng <cryo>25%</cryo>. Khi Kỹ Năng Nguyên Tố đánh trúng kẻ địch sẽ sản sinh hiệu ứng \"Áng Thơ Vĩ Đại\" trong 20s: Tăng Tinh Thông Nguyên Tố dựa trên <cryo>0.15%</cryo> giới hạn HP của nhân vật trang bị vũ khí này, hiệu ứng này mỗi 0.3s tối đa kích hoạt một lần, tối đa cộng dồn 3 tầng. Khi hiệu quả cộng dồn đến tầng thứ ba hoặc thời gian duy trì của tầng thứ ba được làm mới, sẽ tăng Tinh Thông Nguyên Tố cho tất cả nhân vật trong đội gần đó dựa theo <cryo>0.25%</cryo> giới hạn HP của nhân vật trang bị vũ khí này, duy trì 20s."
+    },
+    "2": {
+      "0": "HP tăng <cryo>30%</cryo>. Khi Kỹ Năng Nguyên Tố đánh trúng kẻ địch sẽ sản sinh hiệu ứng \"Áng Thơ Vĩ Đại\" trong 20s: Tăng Tinh Thông Nguyên Tố dựa trên <cryo>0.18%</cryo> giới hạn HP của nhân vật trang bị vũ khí này, hiệu ứng này mỗi 0.3s tối đa kích hoạt một lần, tối đa cộng dồn 3 tầng. Khi hiệu quả cộng dồn đến tầng thứ ba hoặc thời gian duy trì của tầng thứ ba được làm mới, sẽ tăng Tinh Thông Nguyên Tố cho tất cả nhân vật trong đội gần đó dựa theo <cryo>0.3%</cryo> giới hạn HP của nhân vật trang bị vũ khí này, duy trì 20s."
+    },
+    "3": {
+      "0": "HP tăng <cryo>35%</cryo>. Khi Kỹ Năng Nguyên Tố đánh trúng kẻ địch sẽ sản sinh hiệu ứng \"Áng Thơ Vĩ Đại\" trong 20s: Tăng Tinh Thông Nguyên Tố dựa trên <cryo>0.21%</cryo> giới hạn HP của nhân vật trang bị vũ khí này, hiệu ứng này mỗi 0.3s tối đa kích hoạt một lần, tối đa cộng dồn 3 tầng. Khi hiệu quả cộng dồn đến tầng thứ ba hoặc thời gian duy trì của tầng thứ ba được làm mới, sẽ tăng Tinh Thông Nguyên Tố cho tất cả nhân vật trong đội gần đó dựa theo <cryo>0.35%</cryo> giới hạn HP của nhân vật trang bị vũ khí này, duy trì 20s."
+    },
+    "4": {
+      "0": "HP tăng <cryo>40%</cryo>. Khi Kỹ Năng Nguyên Tố đánh trúng kẻ địch sẽ sản sinh hiệu ứng \"Áng Thơ Vĩ Đại\" trong 20s: Tăng Tinh Thông Nguyên Tố dựa trên <cryo>0.24%</cryo> giới hạn HP của nhân vật trang bị vũ khí này, hiệu ứng này mỗi 0.3s tối đa kích hoạt một lần, tối đa cộng dồn 3 tầng. Khi hiệu quả cộng dồn đến tầng thứ ba hoặc thời gian duy trì của tầng thứ ba được làm mới, sẽ tăng Tinh Thông Nguyên Tố cho tất cả nhân vật trong đội gần đó dựa theo <cryo>0.4%</cryo> giới hạn HP của nhân vật trang bị vũ khí này, duy trì 20s."
+    }
+  }
+}

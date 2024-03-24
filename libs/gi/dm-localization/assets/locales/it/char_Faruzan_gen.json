@@ -1,0 +1,163 @@
+{
+  "name": "Faruzan",
+  "title": "Enigmatica esperta di macchine",
+  "description": "Una ricercatrice di \"un secolo fa\". Le piace autodefinirsi un'esperta, e possiede una vasta conoscenza di ogni genere di scritti e macchinari antichi.",
+  "constellationName": "Flosculi Implexi",
+  "auto": {
+    "name": "Dardo partico",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attacco normale</strong>",
+        "1": "Scocca fino a 4 frecce consecutive con un arco."
+      },
+      "charged": {
+        "0": "<strong>Attacco caricato</strong>",
+        "1": "Effettua un <strong>attacco mirato</strong> ancora più preciso con DAN aumentati.",
+        "2": "Mentre mira, sulla punta della freccia convergono dei venti impetuosi. Una freccia di vento caricata al massimo infligge <anemo>DAN da Anemo</anemo>."
+      },
+      "plunging": {
+        "0": "<strong>Attacco in picchiata</strong>",
+        "1": "Scocca una pioggia di frecce a mezz'aria prima di cadere al suolo, colpendo gli avversari lungo il percorso e infliggendo DAN ad area all'impatto."
+      }
+    },
+    "skillParams": {
+      "0": "DAN da 1º colpo",
+      "1": "DAN da 2º colpo",
+      "2": "DAN da 3º colpo",
+      "3": "DAN da 4º colpo",
+      "4": "ATT mirato",
+      "5": "ATT mirato a piena carica",
+      "6": "DAN da ATT in picchiata",
+      "7": "DAN da ATT in picchiata basso/alto",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Regno del vento di Nasamjnin",
+    "description": {
+      "0": "Faruzan usa un poliedro che infligge <anemo>DAN da Anemo ad area</anemo> agli avversari vicini, ed entra nello stato di Tempesta eclatante.",
+      "1": "Mentre questo stato è attivo, il colpo caricato successivo di Faruzan consuma parte di Tempesta eclatante per diventare una Freccia uragano che racchiude correnti ad alta pressione. La freccia infligge <anemo>DAN da Anemo</anemo> all'avversario colpito equivalenti a quelli di un attacco caricato di Attacco normale: Dardo partico.",
+      "2": "<br/>",
+      "3": "<strong>Collasso pressurizzato</strong>",
+      "4": "La Freccia uragano applica l'effetto Collasso pressurizzato all'avversario o al personaggio colpito. L'effetto viene rimosso dopo qualche tempo, creando un vortice che infligge <anemo>DAN da Anemo ad area</anemo> risucchiando gli oggetti e gli avversari vicini. Se la Freccia uragano non colpisce nessun avversario o personaggio, genera un effetto Collasso pressurizzato all'impatto.",
+      "5": "I DAN da vortice equivalgono ai DAN da abilità elementale.",
+      "6": "<br/>",
+      "7": "<i>\"I venti della verità banchettano con gli spiriti di coloro alla ricerca del vero, disperdendo il miasma del preconcetto.\"</i>"
+    },
+    "skillParams": {
+      "0": "DAN da abilità",
+      "1": "DAN da Vortice di Collasso pressurizzato",
+      "2": "Durata Tempesta eclatante",
+      "3": "TdR",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Le vie segrete del vento",
+    "description": {
+      "0": "Faruzan usa un Poliedro abbagliante che sprigiona un Impulso vorticoso e infligge <anemo>DAN da Anemo ad area</anemo>.",
+      "1": "Finché il Poliedro abbagliante è attivo, quest'ultimo si muove continuamente lungo un percorso triangolare e, quando raggiunge gli angoli del percorso, genera 1 ulteriore Impulso vorticoso.",
+      "2": "<br/>",
+      "3": "<strong>Impulso vorticoso</strong>",
+      "4": [
+        " Quando si genera un Impulso vorticoso, quest'ultimo infligge l'effetto Rovina del vento perfido agli avversari vicini, che ne riduce la <anemo>RES ad Anemo</anemo>.",
+        " L'Impulso vorticoso applica anche Dono del vento devoto a tutti i membri del gruppo vicini, dando loro un <anemo>bonus DAN da Anemo</anemo>."
+      ],
+      "5": "<br/>",
+      "6": "<i>\"La saggezza ignota può nascondersi tra le rovine antiche, e bisogna averne rispetto.\"</i>"
+    },
+    "skillParams": {
+      "0": "DAN da abilità",
+      "1": "Bonus DAN da Anemo",
+      "2": "Durata Dono del vento devoto",
+      "3": "Riduzione RES ad Anemo",
+      "4": "Durata Rovina del vento perfido",
+      "5": "Durata",
+      "6": "TdR",
+      "7": "Costo energia",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Flusso impetuoso",
+    "description": {
+      "0": "Quando Faruzan è nello stato di Tempesta eclatante creato da <strong>Regno del vento di Nasamjnin</strong>, il tempo necessario per caricare un colpo si riduce di un 60% e Faruzan può applicare Rovina del vento perfido de <strong>Le vie segrete del vento</strong> ai nemici colpiti dal vortice creato da Collasso pressurizzato."
+    }
+  },
+  "passive2": {
+    "name": "Saggezza perduta delle Sette Caverne",
+    "description": {
+      "0": "I personaggi sotto l'effetto del Dono del vento devoto de <strong>Le vie segrete del vento</strong> che infliggono <anemo>DAN da Anemo</anemo> usando attacchi normali, caricati, in picchiata, abilità elementali o Tripudi elementali, ottengono l'effetto Uragano protettivo: questi DAN aumentano di un 32% dell'ATT di base di Faruzan. Uragano protettivo può attivarsi una volta ogni 0,8 s. Il bonus DAN svanisce dopo che Dono del vento devoto cessa o dopo che l'effetto viene attivato una volta."
+    }
+  },
+  "passive3": {
+    "name": "I tomi illuminano la via",
+    "description": {
+      "0": "Ottiene un 25% in più di ricompense quando intraprende una spedizione a Sumeru per 20 ore."
+    }
+  },
+  "constellation1": {
+    "name": "La verità a tutti i costi",
+    "description": {
+      "0": "Mentre si trova sotto l'effetto di una singola Tempesta eclatante generata da <strong>Regno del vento di Nasamjnin</strong>, Faruzan può scoccare fino a 2 Frecce uragano usando attacchi mirati a piena carica."
+    }
+  },
+  "constellation2": {
+    "name": "Intelletto zelante",
+    "description": {
+      "0": "La durata del Poliedro abbagliante creato da <strong>Le vie segrete del vento</strong> aumenta di 6 s."
+    }
+  },
+  "constellation3": {
+    "name": "Passeggiata nel giardino infestato",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Regno del vento di Nasamjnin</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation4": {
+    "name": "Comprensione divina",
+    "description": {
+      "0": "Il vortice creato da <strong>Collasso pressurizzato</strong> rigenera l'energia di Faruzan in base al numero di avversari colpiti: se colpisce 1 avversario, rigenera l'energia di 2. Per ogni altro avversario colpito, l'energia di Faruzan viene rigenerata di un ulteriore 0,5.",
+      "1": "Ogni vortice può rigenerare al massimo 4 di energia."
+    }
+  },
+  "constellation5": {
+    "name": "Paradiso della contemplazione",
+    "description": {
+      "0": "Aumenta di 3 il livello de <strong>Le vie segrete del vento</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation6": {
+    "name": "La meravigliosa via della verità",
+    "description": {
+      "0": "I personaggi sotto l'effetto del Dono del vento devoto de <strong>Le vie segrete del vento</strong> ottengono un 40% di aumento DAN da CRIT quando infliggono <anemo>DAN da Anemo</anemo>. Quando il tuo personaggio attivo infligge DAN mentre sotto l'influsso del Dono del vento devoto, applica Collasso pressurizzato all'avversario danneggiato. Quest'effetto può attivarsi una volta ogni 3 s e il suo TdR è condiviso tra tutti i membri del gruppo."
+    }
+  }
+}

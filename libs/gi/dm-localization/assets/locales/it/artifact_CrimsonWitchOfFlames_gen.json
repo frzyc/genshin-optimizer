@@ -1,0 +1,29 @@
+{
+  "setName": "Strega cremisi delle fiamme",
+  "setEffects": {
+    "2": "Bonus DAN da Pyro +15%.",
+    "4": "Aumenta di un 40% i DAN da Sovraccarico, Ustione e Germinazione, e di un 15% quelli da Vaporizzazione e Fusione. Usare un'abilità elementale aumenta il bonus del set da 2 pezzi di un 50% del suo valore iniziale per 10 s. Cumulabile fino a 3 volte."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Fiore di fuoco della strega",
+      "desc": "Un fiore toccato dalla strega che sognava di ridurre in cenere tutti i demoni del mondo. Le anonime fiamme carezzano affettuosamente le mani di chi lo possiede."
+    },
+    "plume": {
+      "name": "Piuma semprardente della strega",
+      "desc": "La piuma di un uccello toccata dalla strega che sognava di ridurre in cenere tutti i demoni del mondo. La sua fiamma arde in eterno."
+    },
+    "sands": {
+      "name": "Fine della strega",
+      "desc": "Una clessidra usata dalla strega che sognava di ridurre in cenere tutti i demoni del mondo. Segna gli anni che la strega dedicò al suo disegno infuocato."
+    },
+    "goblet": {
+      "name": "Fiamme del cuore della strega",
+      "desc": "Un'urna sputafuoco abbandonata dalla Strega cremisi delle fiamme, che sognava di ridurre in cenere tutti i demoni del mondo. Il fuoco al suo interno brucia in eterno, proprio come la brama della sua antica proprietaria."
+    },
+    "circlet": {
+      "name": "Cappello infuocato della strega",
+      "desc": "Un cappello appartenente alla strega che sognava di ridurre in cenere tutti i demoni del mondo. La larga tesa le impediva la vista."
+    }
+  }
+}

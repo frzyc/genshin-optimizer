@@ -1,0 +1,24 @@
+{
+  "name": "Ultime soupir",
+  "description": {
+    "0": "Un arc aussi élégant qu'une lyre de barde ; les flèches qu'il décoche transpercent le cœur à la manière d'un doux soupir."
+  },
+  "passiveName": "Refrain de séparation",
+  "passiveDescription": {
+    "0": {
+      "0": "Partie du « Concert du millénaire ». Augmente la maîtrise élémentaire de <cryo>60</cryo> pts. Lorsque le personnage équipé de cette arme touche un ennemi avec sa compétence ou son déchaînement élémentaires, il obtient un talisman de réminiscence, à raison d'un talisman toutes les 0,2 s maximum, même lorsque le personnage fait partie de l'équipe mais n'est pas déployé. Une fois 4 talismans cumulés, ils sont consommés et font bénéficier pendant 12 s tous les personnages de l'équipe à proximité de l'effet « Concert du millénaire - Chant d'adieu », ce qui augmente leur maîtrise élémentaire de <cryo>100</cryo> pts et leur ATQ de <cryo>20 %</cryo>. Il n'est plus possible de gagner de talismans de réminiscence pendant 20 s après activation de cet effet. Les différents effets du « Concert du millénaire » ne peuvent pas être cumulés."
+    },
+    "1": {
+      "0": "Partie du « Concert du millénaire ». Augmente la maîtrise élémentaire de <cryo>75</cryo> pts. Lorsque le personnage équipé de cette arme touche un ennemi avec sa compétence ou son déchaînement élémentaires, il obtient un talisman de réminiscence, à raison d'un talisman toutes les 0,2 s maximum, même lorsque le personnage fait partie de l'équipe mais n'est pas déployé. Une fois 4 talismans cumulés, ils sont consommés et font bénéficier pendant 12 s tous les personnages de l'équipe à proximité de l'effet « Concert du millénaire - Chant d'adieu », ce qui augmente leur maîtrise élémentaire de <cryo>125</cryo> pts et leur ATQ de <cryo>25 %</cryo>. Il n'est plus possible de gagner de talismans de réminiscence pendant 20 s après activation de cet effet. Les différents effets du « Concert du millénaire » ne peuvent pas être cumulés."
+    },
+    "2": {
+      "0": "Partie du « Concert du millénaire ». Augmente la maîtrise élémentaire de <cryo>90</cryo> pts. Lorsque le personnage équipé de cette arme touche un ennemi avec sa compétence ou son déchaînement élémentaires, il obtient un talisman de réminiscence, à raison d'un talisman toutes les 0,2 s maximum, même lorsque le personnage fait partie de l'équipe mais n'est pas déployé. Une fois 4 talismans cumulés, ils sont consommés et font bénéficier pendant 12 s tous les personnages de l'équipe à proximité de l'effet « Concert du millénaire - Chant d'adieu », ce qui augmente leur maîtrise élémentaire de <cryo>150</cryo> pts et leur ATQ de <cryo>30 %</cryo>. Il n'est plus possible de gagner de talismans de réminiscence pendant 20 s après activation de cet effet. Les différents effets du « Concert du millénaire » ne peuvent pas être cumulés."
+    },
+    "3": {
+      "0": "Partie du « Concert du millénaire ». Augmente la maîtrise élémentaire de <cryo>105</cryo> pts. Lorsque le personnage équipé de cette arme touche un ennemi avec sa compétence ou son déchaînement élémentaires, il obtient un talisman de réminiscence, à raison d'un talisman toutes les 0,2 s maximum, même lorsque le personnage fait partie de l'équipe mais n'est pas déployé. Une fois 4 talismans cumulés, ils sont consommés et font bénéficier pendant 12 s tous les personnages de l'équipe à proximité de l'effet « Concert du millénaire - Chant d'adieu », ce qui augmente leur maîtrise élémentaire de <cryo>175</cryo> pts et leur ATQ de <cryo>35 %</cryo>. Il n'est plus possible de gagner de talismans de réminiscence pendant 20 s après activation de cet effet. Les différents effets du « Concert du millénaire » ne peuvent pas être cumulés."
+    },
+    "4": {
+      "0": "Partie du « Concert du millénaire ». Augmente la maîtrise élémentaire de <cryo>120</cryo> pts. Lorsque le personnage équipé de cette arme touche un ennemi avec sa compétence ou son déchaînement élémentaires, il obtient un talisman de réminiscence, à raison d'un talisman toutes les 0,2 s maximum, même lorsque le personnage fait partie de l'équipe mais n'est pas déployé. Une fois 4 talismans cumulés, ils sont consommés et font bénéficier pendant 12 s tous les personnages de l'équipe à proximité de l'effet « Concert du millénaire - Chant d'adieu », ce qui augmente leur maîtrise élémentaire de <cryo>200</cryo> pts et leur ATQ de <cryo>40 %</cryo>. Il n'est plus possible de gagner de talismans de réminiscence pendant 20 s après activation de cet effet. Les différents effets du « Concert du millénaire » ne peuvent pas être cumulés."
+    }
+  }
+}

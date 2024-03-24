@@ -1,0 +1,170 @@
+{
+  "name": "Mika",
+  "title": "Coordonnées du givre clair",
+  "description": "Jeune chevalier né dans une famille ordinaire, il occupe le poste d'arpenteur dans son unité. C'est un personnage au caractère discret et prudent.",
+  "constellationName": "Palumbus",
+  "auto": {
+    "name": "Lance de Favonius - Carreau filant",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attaque normale</strong>",
+        "1": "Enchaîne jusqu'à 5 coups d'arbalète et de lance."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Consomme de l'endurance pour charger en ligne droite et infliger des DGT aux ennemis sur la route."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis sur la route et des DGT de zone à l'impact."
+      }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT 4e coup",
+      "4": "DGT 5e coup",
+      "5": "DGT attaque chargée",
+      "6": "Coût d'endurance attaque chargée",
+      "7": "DGT durant la chute",
+      "8": "DGT chute basse/élevée",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Tourbillon de givre étoilé",
+    "description": {
+      "0": "Utilise son arbalète pour attaquer les ennemis et accorde l'état Spirivent à tous les personnages de l'équipe à proximité, tout personnage affecté par cet état voyant sa VIT d'attaque augmenter une fois déployé.",
+      "1": "Différents effets se produisent selon la méthode de déclenchement :",
+      "2": "<br/>",
+      "3": "<strong>Appui simple</strong>",
+      "4": "Tire rapidement une flèche de givreflux qui transperce les ennemis, leur infligeant des <cryo>DGT Cryo</cryo>.",
+      "5": "<br/>",
+      "6": "<strong>Appui long</strong>",
+      "7": "Bascule en mode visée pour tirer une balise de givrétoile sur un ennemi verrouillé, infligeant des <cryo>DGT Cryo</cryo>. Après avoir touché, la balise de givrétoile s'envole avant d'exploser, ce qui projette des éclats de givrétoile sur un maximum de 3 autres ennemis proches, leur infligeant des <cryo>DGT Cryo</cryo>.",
+      "8": "<br/>",
+      "9": "<i>Les étoiles éclatent sous les cieux givrés.</i>"
+    },
+    "skillParams": {
+      "0": "DGT flèche de givreflux",
+      "1": "DGT balise de givrétoile",
+      "2": "DGT éclat de givrétoile",
+      "3": "Bonus VIT d'attaque",
+      "4": "Durée de spirivent",
+      "5": "Temps de recharge",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Chant de plume céleste",
+    "description": {
+      "0": "Trouve la force d'encourager ses coéquipiers à partir des prières de l'Ordre de Favonius, restaurant les PV de tous les personnages de l'équipe à proximité selon les PV max de Mika et leur accordant l'état Plume d'alérion.",
+      "1": "<br/>",
+      "2": "<strong>Plume d'alérion</strong>",
+      "3": "Lorsque l'attaque normale d'un personnage déployé affecté par l'état Plume d'alérion touche un ennemi, Mika restaure les PV de ce dernier selon ses propres PV max.",
+      "4": "Les personnages affectés par ce type d'état ne peuvent restaurer leurs PV de cette manière qu'une fois par court intervalle de temps.",
+      "5": "<br/>",
+      "6": "<i>« Porte l'espoir lors d'une situation désespérée, et veille quand tout va bien... Car ce panache blanc finira par guider les voyageurs perdus. »</i>"
+    },
+    "skillParams": {
+      "0": "Soins lors du déclenchement",
+      "1": "Soins de plume d'alérion",
+      "2": "Intervalle de soin de plume d'alérion",
+      "3": "Durée de plume d'alérion",
+      "4": "Temps de recharge",
+      "5": "Énergie élémentaire",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Épinglage rapide",
+    "description": {
+      "0": "L'état Spirivent de <strong>Tourbillon de givre étoilé</strong> accorde une amélioration de l'effet Localisation dans les situations suivantes afin d'augmenter les DGT physiques infligés par le personnage sur le terrain de 10 % :",
+      "1": [
+        " Si la flèche de givreflux touche plus d'un ennemi, chaque ennemi supplémentaire touché accorde 1 cumul de localisation.",
+        " Lorsqu'un éclat de givrétoile touche un ennemi, 1 cumul de localisation est accordé. Chaque éclat de givrétoile peut déclencher cet effet une fois."
+      ],
+      "2": "<br/>",
+      "3": "L'effet Localisation de l'état Spirivent peut être cumulé 3 fois maximum. Si Tourbillon de givre étoilé est utilisé une nouvelle fois pendant la durée, l'état Spirivent existant et l'effet Localisation sont supprimés."
+    }
+  },
+  "passive2": {
+    "name": "Cartographie géomorphologique",
+    "description": {
+      "0": "Lorsqu'un personnage déployé affecté simultanément par les états Plume d'alérion de <strong>Chant de plume céleste</strong> et Spirivent de <strong>Tourbillon de givre étoilé</strong> inflige un coup CRIT, l'état Spirivent lui accorde 1 cumul de localisation de l'aptitude passive « Épinglage rapide ». Un état Spirivent peut accorder un maximum de 1 cumul de localisation de cette manière.",
+      "1": "De plus, le nombre maximum de cumuls de localisation pouvant être obtenus grâce à l'état Spirivent augmente de 1.",
+      "2": "L'aptitude passive « Épinglage rapide » doit être déjà débloquée."
+    }
+  },
+  "passive3": {
+    "name": "Démarcation",
+    "description": {
+      "0": "Affiche l'emplacement des <strong>produits de Mondstadt</strong> sur la mini-carte."
+    }
+  },
+  "constellation1": {
+    "name": "Confluence de facteurs",
+    "description": {
+      "0": "L'état Spirivent créé par <strong>Tourbillon de givre étoilé</strong> permet de diminuer l'intervalle des soins de l'état Plume d'alérion de <strong>Chant de plume céleste</strong> d'un pourcentage équivalant au pourcentage d'augmentation de VIT d'attaque de l'état Spirivent."
+    }
+  },
+  "constellation2": {
+    "name": "Entrée du compagnon",
+    "description": {
+      "0": "Lorsqu'une flèche de givreflux de <strong>Tourbillon de givre étoilé</strong> touche pour la première fois un ennemi ou lorsqu'une balise de givrétoile touche un ennemi, 1 cumul de localisation de l'aptitude passive « Épinglage rapide » est généré.",
+      "1": "L'aptitude passive « Épinglage rapide » doit être déjà débloquée."
+    }
+  },
+  "constellation3": {
+    "name": "Expérience de reconnaissance",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Chant de plume céleste</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation4": {
+    "name": "Éloge du givre clair",
+    "description": {
+      "0": "Lorsque l'état Plume d'alérion de <strong>Chant de plume céleste</strong> de Mika soigne un personnage de l'équipe, Mika récupère 3 pts d'énergie élémentaire. L'énergie élémentaire peut être restaurée 5 fois pendant l'état Plume d'alérion créé par une utilisation de Chant de plume céleste."
+    }
+  },
+  "constellation5": {
+    "name": "Flèche de signalisation",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Tourbillon de givre étoilé</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation6": {
+    "name": "Conseil du compagnon",
+    "description": {
+      "0": "Augmente le nombre maximum de cumuls de localisation pouvant être obtenus grâce à l'état Spirivent de <strong>Tourbillon de givre étoilé</strong> de 1. L'aptitude passive « Épinglage rapide » doit être déjà débloquée.",
+      "1": "De plus, les personnages déployés affectés par l'état Spirivent voient les DGT CRIT de leurs DGT physiques augmenter de 60 %."
+    }
+  }
+}

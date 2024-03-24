@@ -1,0 +1,182 @@
+{
+  "name": "Lyney",
+  "title": "Spectacle de fantasmagorie",
+  "description": "Un célèbre magicien fontainois qui a un esprit agile et un grand don pour le bagou. Le public est captivé par ses compétences exquises et s'accroche à chacun de ses mots intelligents.",
+  "constellationName": "Felis Fuscus",
+  "auto": {
+    "name": "Cartomagie",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attaque normale</strong>",
+        "1": "Enchaîne jusqu'à 4 tirs consécutifs."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Effectue un <strong>tir visé</strong> plus précis infligeant davantage de DGT.",
+        "2": "Lors de la visée, la puissance du feu vient se concentrer sur la pointe de la flèche. Les effets varient selon le nombre de charges :",
+        "3": [
+          " 1 charge : Tire une flèche enflammée qui inflige des <pyro>DGT Pyro</pyro>.",
+          " 2 charges : Tire une flèche postiche qui inflige des <pyro>DGT Pyro</pyro> et invoque un chapeau félinois après avoir touché."
+        ],
+        "4": "Si Lyney tire une flèche postiche en ayant plus de 60 % de PV, il consomme une partie de ses PV pour obtenir un cumul de fantasmagorie. Cet effet peut être cumulé 5 fois maximum, et sera annulé après 30 s si Lyney quitte le combat.",
+        "5": "Les PV de Lyney peuvent être diminués jusqu'à 60 % de cette manière."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Tire une pluie de flèches depuis les airs et plonge au sol, infligeant des DGT de zone à l'impact."
+      },
+      "grinMalkin": {
+        "0": "<strong>Chapeau félinois</strong>",
+        "1": [
+          " Permet de narguer les ennemis proches pour attirer leurs attaques, chaque ennemi pouvant être nargué par le chapeau une fois toutes les 5 s.",
+          " La durabilité du chapeau est proportionnelle aux PV max de Lyney.",
+          " Lorsque le chapeau est éliminé ou expire, il tire une <strong>balle d'artifice</strong> sur un ennemi proche, infligeant des <pyro>DGT Pyro</pyro>."
+        ],
+        "2": "Il ne peut exister qu'un seul chapeau félinois à la fois."
+      },
+      "arkhe": {
+        "0": "<strong>Arkhe : Pneuma</strong>",
+        "1": "Régulièrement, une épine d'inhalation descend à l'emplacement touché par une flèche postiche pour infliger des <pyro>DGT Pyro</pyro> chargés d'énergie pneuma."
+      }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT 4e coup",
+      "4": "DGT durant la chute",
+      "5": "DGT chute basse/élevée",
+      "6": "DGT tir visé",
+      "7": "DGT 1e charge",
+      "8": "DGT flèche postiche",
+      "9": "Coût de PV",
+      "10": "PV du chapeau félinois",
+      "11": "Durée de chapeau félinois",
+      "12": "DGT balle d'artifice",
+      "13": "DGT épine d'inhalation",
+      "14": "Intervalle d'épine d'inhalation",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Lumières de fioriture",
+    "description": {
+      "0": "Lyney agite son chapeau pour déclencher un feu d'artifice surprise.",
+      "1": "L'utilisation de cette capacité consomme tous les cumuls de fantasmagorie possédés et inflige des <pyro>DGT Pyro de zone</pyro> aux ennemis en face. Les DGT augmentent selon la quantité de cumuls consommés, et les PV de Lyney sont aussi restaurés selon ses PV max.",
+      "2": "<br/>",
+      "3": "Lorsqu'un chapeau félinois créé par Lyney est présent sur le champ de bataille, le feu d'artifice le fait exploser pour infliger des <pyro>DGT Pyro de zone</pyro> d'une valeur équivalant aux DGT d'une balle d'artifice.",
+      "4": "Les DGT infligés par un chapeau félinois de cette manière sont considérés comme des DGT d'attaque chargée.",
+      "5": "<br/>",
+      "6": "<i>« Tout le monde sait que les magiciens détournent intentionnellement le public... Eh oui, pendant que vous me regardiez, mon chapeau et mon assistant là-bas ont tous deux disparu... Fascinant, n'est-ce pas ? »</i>"
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "Bonus de DGT compétence",
+      "2": "Restauration PV",
+      "3": "Temps de recharge",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Clou du spectacle : Parade prodigieuse",
+    "description": {
+      "0": "Libérant sa magie, Lyney se transforme en un félin chaponois qui peut se déplacer rapidement. (À ne pas confondre avec son chapeau félinois. Ce sont deux accessoires bien différents !)",
+      "1": "Lorsque le félin chaponois s'approche des ennemis, il fait pleuvoir des flammes sur ces derniers, infligeant une fois des <pyro>DGT Pyro</pyro> à chaque ennemi. Une fois la durée terminée, le félin chaponois se dissipe en faisant exploser un magnifique feu d'artifice, ce qui inflige des <pyro>DGT Pyro de zone</pyro>, invoque un chapeau félinois et lui accorde un cumul de fantasmagorie.",
+      "2": "<br/>",
+      "3": "Un félin chaponois peut être dissipé manuellement.",
+      "4": "<br/>",
+      "5": "<i>« Regardez attentivement. C'est le moment du miracle, et il n'appartient qu'à nous ! »</i>"
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "DGT feu d'artifice",
+      "2": "Durée",
+      "3": "Temps de recharge",
+      "4": "Énergie élémentaire",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Performance périlleuse",
+    "description": {
+      "0": "Si Lyney consomme des PV en tirant une <strong>flèche postiche</strong>, lorsque le chapeau félinois invoqué touche un ennemi, Lyney récupère 3 pts d'énergie élémentaire et les DGT infligés augmentent d'une valeur équivalant à 80 % de l'ATQ."
+    }
+  },
+  "passive2": {
+    "name": "Ovation concluante",
+    "description": {
+      "0": "Les DGT infligés par Lyney aux ennemis affectés par l'élément <pyro>Pyro</pyro> bénéficient des augmentations suivantes :",
+      "1": [
+        " +60 % de base.",
+        " +20 % pour chacun des personnages de type <pyro>Pyro</pyro> (hormis Lyney) dans l'équipe."
+      ],
+      "2": "Les DGT infligés par Lyney aux ennemis affectés par l'élément <pyro>Pyro</pyro> peuvent être augmentés d'un maximum de 100 % de cette manière."
+    }
+  },
+  "passive3": {
+    "name": "Observation triviale",
+    "description": {
+      "0": "Affiche l'emplacement des <strong>produits de Fontaine</strong> sur la mini-carte."
+    }
+  },
+  "constellation1": {
+    "name": "Art de mysticité",
+    "description": {
+      "0": "Un maximum de 2 <strong>chapeaux félinois</strong> peut exister en même temps.",
+      "1": "De plus, les flèches postiches invoquent 2 chapeaux félinois après avoir touché et accordent un cumul supplémentaire de fantasmagorie. Cet effet peut être déclenché une fois toutes les 15 s."
+    }
+  },
+  "constellation2": {
+    "name": "Cajolerie affable",
+    "description": {
+      "0": "Lyney obtient un cumul de lucidité toutes les 2 s qu'il passe sur le terrain, augmentant ses DGT CRIT de 20 %. Cet effet peut être cumulé 3 fois maximum, et cesse lorsque Lyney quitte le champ de bataille."
+    }
+  },
+  "constellation3": {
+    "name": "Dextérité d'illusionnisme",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Attaque normale : Cartomagie</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation4": {
+    "name": "Planification de familiarité",
+    "description": {
+      "0": "La <pyro>RÉS Pyro</pyro> des ennemis touchés par l'attaque chargée de type <pyro>Pyro</pyro> de Lyney diminue de 20 % pendant 6 s."
+    }
+  },
+  "constellation5": {
+    "name": "Malice de révélation",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Clou du spectacle : Parade prodigieuse</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation6": {
+    "name": "Sourire diplomatique",
+    "description": {
+      "0": "Lorsque Lyney décoche une <strong>flèche postiche</strong>, il tire une balle d'artifice répliquée qui inflige des DGT d'une valeur équivalant à 80 % des DGT d'une balle d'artifice. Ces DGT sont considérés comme des DGT d'attaque chargée."
+    }
+  }
+}

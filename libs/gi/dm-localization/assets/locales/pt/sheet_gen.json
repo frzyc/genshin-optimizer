@@ -1,0 +1,87 @@
+{
+  "normal": {
+    "hit1": "Dano do 1° Golpe",
+    "hit2": "Dano do 2° golpe",
+    "hit3": "Dano do 3° golpe ",
+    "hit4": "Dano do 4° golpe",
+    "hit5": "Dano do 5° Golpe",
+    "hit6": "Dano do 6° Golpe"
+  },
+  "charged": {
+    "dmg": "Dano de Ataque Carregado",
+    "spinning": "Dano de Loop de Ataque Carregado",
+    "final": "Dano Final de Ataque Carregado",
+    "stamina": "Consumo de Stamina de Ataque Carregado",
+    "aimed": "Disparo com Mira",
+    "fullyAimed": "Disparo com Mira com Energização Completa"
+  },
+  "plunging": {
+    "dmg": "Dano Durante a Queda",
+    "low": "Dano de Queda de Baixa Altitude",
+    "high": "Dano de Queda de Alta Altitude"
+  },
+  "maxDuration": "Duração Máxima",
+  "maxStacks": "Limite de Recargas de Energia",
+  "skillDMG": "Dano de Habilidade",
+  "burstDMG": "Dano de Explosão",
+  "dmgAbsorption": "Absorção de Escudo",
+  "healing": "Cura",
+  "contHealing": "Cura Contínua",
+  "duration": "Duração",
+  "cd": "Tempo de Recarga",
+  "energyCost": "Energia Elemental",
+  "energyRegen": "Regeneração de Energia Elemental",
+  "baseDMG": "Dano Básico",
+  "dot": "Dano de Contínuo",
+  "addEleDMG": "Adição de Dano Elemental",
+  "hpRegenPerHit": "Regeneração de Vida por Acerto",
+  "press": {
+    "dmg": "Dano de Toque",
+    "cd": "Recarga ao Pressionar"
+  },
+  "hold": {
+    "dmg": "Dano ao Manter Pressionado",
+    "cd": "Recarga ao Manter Pressionado"
+  },
+  "element": {
+    "anemo": "Anemo",
+    "geo": "Geo",
+    "pyro": "Pyro",
+    "hydro": "Hydro",
+    "cryo": "Cryo",
+    "electro": "Electro",
+    "dendro": "Dendro"
+  },
+  "reaction": {
+    "swirl": "Redemoinho",
+    "crystallize": "Cristal",
+    "overloaded": "Sobrecarregado",
+    "electrocharged": "Carregado Eletricamente",
+    "superconduct": "Supercondutor",
+    "vaporize": "Vaporizar",
+    "melt": "Fundir",
+    "bloom": "Florescimento",
+    "burgeon": "Germinação",
+    "hyperbloom": "Superflorescimento",
+    "quicken": "Aceleração",
+    "aggravate": "Intensificação",
+    "spread": "Propagação"
+  },
+  "stat": {
+    "def": "DEF",
+    "base": {
+      "atk": "ATQ Básico"
+    }
+  },
+  "constellationLvl": "Nv. de Constelação {{level}}",
+  "talentLvl": "Talento Nv.{{level}}",
+  "talents": {
+    "auto": "Ataque Normal",
+    "skill": "Habilidade Elemental",
+    "burst": "Supremo",
+    "altSprint": "Arrancada Alternativa"
+  },
+  "unlockPassive1": "Desbloqueia quando nível de Ascensão do personagem alcançar Nv.1",
+  "unlockPassive2": "Desbloqueia quando nível de Ascensão do personagem alcançar Nv.4",
+  "unlockPassive3": "Talento Passivo"
+}

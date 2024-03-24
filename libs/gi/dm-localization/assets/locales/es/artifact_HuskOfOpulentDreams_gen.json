@@ -1,0 +1,29 @@
+{
+  "setName": "Cáscara de Sueños Opulentos",
+  "setEffects": {
+    "2": "DEF +30%.",
+    "4": "El personaje que equipe este conjunto de artefactos obtendrá el efecto de “curiosidad” en las siguientes circunstancias: al golpear a un enemigo con un ataque Geo, obtiene una carga, lo cual solo puede ocurrir una vez cada 0.3 s; mientras está en tu equipo pero no en uso, obtiene una carga cada 3 s. Este efecto puede acumularse hasta 4 veces, y cada carga aumenta en un 6% la DEF y otorga un 6% de Bono de Daño Geo. Si el personaje no obtiene una carga de curiosidad en 6 s, perderá una acumulación."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Era del Esplendor",
+      "desc": "Un accesorio dorado con forma de flor de seis pétalos. Su belleza inmarcesible nos recuerda lo efímera que puede ser la prosperidad del mundo."
+    },
+    "plume": {
+      "name": "Pluma de la Opulencia",
+      "desc": "Un objeto con forma de pluma de flecha procedente de una sala aislada. Por compasión de su creadora, este objeto fue abandonado en esa sala junto a un cuerpo dormido."
+    },
+    "sands": {
+      "name": "Canto de la Vida",
+      "desc": "En Inazuma, estos pequeños objetos son de importación. Ya no tiene el mecanismo que lo hacía funcionar, y sus agujas ya no se mueven."
+    },
+    "goblet": {
+      "name": "Calabaza del Despertar",
+      "desc": "Una calabaza adornada con un color oscuro y polvos dorados. Aunque ya no se distingue su color original, es posible que fuera usada como atrezo para espectáculos."
+    },
+    "circlet": {
+      "name": "Sombrero del Trotamundos",
+      "desc": "Un gorro de bambú usado por el trotamundos para protegerse del sol y la lluvia. Al final, se convirtió en un objeto con el que se cubría la cara y ocultaba su expresión."
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Dialoghi dei saggi del deserto",
+  "description": {
+    "0": "Un caduceo simbolo della gloria alchemica, creato con speciali leghe che ne valorizzano il prestigio. È estremamente rigido e pesante, e usato come randello potrebbe causare ferite piuttosto gravi."
+  },
+  "passiveName": "Principio dell'Equilibrio",
+  "passiveDescription": {
+    "0": {
+      "0": "Quando il personaggio che equipaggia l'arma apporta effetti di guarigione, la sua energia si ripristina di <cryo>8</cryo>. Quest'effetto può attivarsi una volta ogni 10 s, anche quando il personaggio non si trova in campo."
+    },
+    "1": {
+      "0": "Quando il personaggio che equipaggia l'arma apporta effetti di guarigione, la sua energia si ripristina di <cryo>10</cryo>. Quest'effetto può attivarsi una volta ogni 10 s, anche quando il personaggio non si trova in campo."
+    },
+    "2": {
+      "0": "Quando il personaggio che equipaggia l'arma apporta effetti di guarigione, la sua energia si ripristina di <cryo>12</cryo>. Quest'effetto può attivarsi una volta ogni 10 s, anche quando il personaggio non si trova in campo."
+    },
+    "3": {
+      "0": "Quando il personaggio che equipaggia l'arma apporta effetti di guarigione, la sua energia si ripristina di <cryo>14</cryo>. Quest'effetto può attivarsi una volta ogni 10 s, anche quando il personaggio non si trova in campo."
+    },
+    "4": {
+      "0": "Quando il personaggio che equipaggia l'arma apporta effetti di guarigione, la sua energia si ripristina di <cryo>16</cryo>. Quest'effetto può attivarsi una volta ogni 10 s, anche quando il personaggio non si trova in campo."
+    }
+  }
+}

@@ -1,0 +1,169 @@
+{
+  "skill": {
+    "brandDMG": "Buz Sarmalı Damgası Hasarı",
+    "grimheartDuration": "Buz Yürek Süresi",
+    "name": "Buz Dalgası Girdabı",
+    "description": {
+      "0": "Keskin soğuk, hızlı kılıç.",
+      "1": "<br/>",
+      "2": "<strong>Bas</strong>",
+      "3": "Kılıcı hızla savurarak <cryo>Buz Hasarı</cryo> verir.",
+      "4": "Eula, bir düşmana vurduğunda en fazla 2 kademe birikebilen bir Buz Yürek kademesi kazanır. Bu kademeler yalnızca 0,3 saniyede bir kazanılabilir.",
+      "5": "<br/>",
+      "6": "<strong>Buz Yürek</strong>",
+      "7": "Eula'nın müdahaleye karşı direncini ve Savunmasını artırır.",
+      "8": "<br/>",
+      "9": "<strong>Basılı Tut</strong>",
+      "10": "Eula, kılıcını kullanarak tüm Buz Yürek kademelerini tüketir ve ileri doğru saldırarak önündeki düşmanlara <cryo>Buz Alan Hasarı</cryo> verir.",
+      "11": "Buz Yürek kademeleri tüketilirse etraftaki düşmanların Fiziksel Direnci ve <cryo>Buz Direnci</cryo> azalır.",
+      "12": "Tüketilen her Buz Yürek kademesi yakındaki düşmanlara <cryo>Buz Hasarı</cryo> veren Buz Sarmalı Damgasına dönüşür.",
+      "13": "<br/>",
+      "14": "<i>\"Dalgalar çalkalanarak soyluların tacını yuttu. Sonrasında, altın taç dondurucu dalgaların ortasında üstüne gelen her bir damla ile güneş gibi parıldadı.\"</i>"
+    },
+    "skillParams": {
+      "0": "Basma Hasarı",
+      "1": "Basılı Tutma Hasarı",
+      "2": "Buz Sarmalı Damgası Hasarı",
+      "3": "Savunma Bonusu",
+      "4": "Buz Yürek Süresi",
+      "5": "Fiziksel Direnç Azalması",
+      "6": "Buz Direnci Azalması",
+      "7": "Direnç Azalma Süresi",
+      "8": "Basma BS",
+      "9": "BS (Basılı Tutma)",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "name": "Eula",
+  "title": "Işıltılı Dalganın Dansı",
+  "description": "Dalgalar Şövalyesi, Favonius Keşif Bölüğü Şövalyelerinin Yüzbaşısı. Eski asillerin soyundan gelen birinin Şövalyelere ne sebeple katıldığı, bugüne kadar Mondstadt'ta büyük bir gizem olarak kaldı.",
+  "constellationName": "Deniz Köpüğü",
+  "auto": {
+    "name": "Favonius Kılıç Tekniği - Edel",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Saldırı</strong>",
+        "1": "Arka arkaya en fazla 5 saldırı yapar."
+      },
+      "charged": {
+        "0": "<strong>Yüklü Saldırı</strong>",
+        "1": "Zamanla Dayanıklılık harcayarak arka arkaya saldırılar yapar.",
+        "2": "Saldırıları daha güçlü bir darbeyle bitirir."
+      },
+      "plunging": {
+        "0": "<strong>Havadan Saldırı</strong>",
+        "1": "Havadayken dalışa geçerek yere vurur ve yoluna çıkan düşmanlara Alan Hasarı verir."
+      }
+    },
+    "skillParams": {
+      "0": "1 Vuruş Hasarı",
+      "1": "2 Vuruş Hasarı",
+      "2": "3 Vuruş Hasarı",
+      "3": "4 Vuruş Hasarı",
+      "4": "5 Vuruş Hasarı",
+      "5": "Yüklü Saldırı Dönme Hasarı",
+      "6": "Yüklü Saldırı Son Vuruş Hasarı",
+      "7": "Yüklü Saldırı Dayanıklılık Maliyeti",
+      "8": "Maks. Süre",
+      "9": "Havadan Saldırı Hasarı",
+      "10": "Havadan Saldırı Hasarı (Alçaktan/Yüksekten)",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Buzul Aydınlık",
+    "description": {
+      "0": "Büyük kılıcını çıkararak yakındaki düşmanlara <cryo>Buz Hasarı</cryo> verir ve 7 saniyeye kadar onu takip eden bir Işıksaçan Kılıcı oluşturur.",
+      "1": "Işıksaçan Kılıcı, etki süresince Eula'nın müdahaleye karşı direncini artırır. Eula'nın Normal Saldırısı, Element Becerisi ve Element Patlaması düşmanlara Hasar verdiğinde Işıksaçan Kılıcı yük biriktirir. 0,1 saniyede bir enerji yükü biriktirebilir.",
+      "2": "Işıksaçan Kılıcı, süresi bittiğinde yere iner ve şiddetle patlayarak yakındaki düşmanlara Fiziksel Hasar verir.",
+      "3": "Bu Hasar, Işıksaçan Kılıcının kaç enerji yükü biriktirdiğine göre değişiklik gösterir.",
+      "4": "Eula alandan ayrılırsa Işıksaçan Kılıcı anında patlar.",
+      "5": "<br/>",
+      "6": "<i>Suyun üstünde kalmak bile zorken o, gelen dalgayı dondurmak istiyor.</i>"
+    },
+    "skillParams": {
+      "0": "Beceri Hasarı",
+      "1": "Işıksaçan Kılıcı Temel Hasarı",
+      "2": "Kademe Başına Hasar",
+      "3": "Maks. Kademe Sayısı",
+      "4": "BS",
+      "5": "Enerji Maliyeti",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Çalkantılı Ayaz",
+    "description": {
+      "0": "<strong>Buz Dalgası Girdabı</strong> becerisi basılı tutulduktan sonra 2 kademe Buz Yürek tüketilirse bir Parçalanmış Işıksaçan Kılıcı ortaya çıkar ve derhal patlar. Patladığında <strong>Buzul Aydınlık</strong> ile oluşturulan Işıksaçan Kılıcının verdiği temel Fiziksel Hasarın %50'sini verir."
+    }
+  },
+  "passive2": {
+    "name": "Savaş Arzusu Dehlizi",
+    "description": {
+      "0": "<strong>Buzul Aydınlık</strong> kullanıldığında <strong>Buz Dalgası Girdabı</strong> becerisinin Bekleme Süresi sıfırlanır ve Eula 1 kademe Buz Yürek kazanır."
+    }
+  },
+  "passive3": {
+    "name": "Soylunun İç Gözlemi",
+    "description": {
+      "0": "Eula, Karakter Yeteneği Malzemeleri üretirken elde ettiği ürünü %10 ihtimalle iki katına çıkarır."
+    }
+  },
+  "constellation1": {
+    "name": "Metcezir Yanılsaması",
+    "description": {
+      "0": "<strong>Buz Dalgası Girdabı</strong> becerisinin Buz Yürek kademeleri her tüketildiğinde 6 saniyeliğine Eula'nın Fiziksel Hasarı %30 artar.",
+      "1": "Bu etki süresince tüketilen her kademe süreyi 6 saniye uzatır. Süre maksimum 18 saniye olabilir."
+    }
+  },
+  "constellation2": {
+    "name": "Denizin Kızı",
+    "description": {
+      "0": "<strong>Buz Dalgası Girdabı</strong> Basılı Tutma Bekleme Süresini azaltır ve Basma Bekleme Süresine eşit hale getirir."
+    }
+  },
+  "constellation3": {
+    "name": "Lawrence Soyu",
+    "description": {
+      "0": "<strong>Buzul Aydınlık</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation4": {
+    "name": "Çömezlerin İnadı",
+    "description": {
+      "0": "Işıksaçan Kılıçları, Can oranı %50'nin altında olan düşmanlara %25 daha fazla hasar verirler."
+    }
+  },
+  "constellation5": {
+    "name": "Şövalyelik Vasfı",
+    "description": {
+      "0": "<strong>Buz Dalgası Girdabı</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation6": {
+    "name": "Soylu Bir Vazife",
+    "description": {
+      "0": "<strong>Buzul Aydınlık</strong> becerisinin oluşturduğu Işıksaçan Kılıçlarının başlangıçta 5 enerji kademesi olur. Normal Saldırılar, Element Becerileri ve Element Patlamaları %50 ihtimalle Işıksaçan Kılıcına ek enerji kademesi verir."
+    }
+  }
+}

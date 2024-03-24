@@ -1,0 +1,24 @@
+{
+  "name": "Eye of Perception",
+  "description": {
+    "0": "A dim black glaze pearl that is said to have the power to read the purity of one's heart."
+  },
+  "passiveName": "Echo",
+  "passiveDescription": {
+    "0": {
+      "0": "Normal and Charged Attacks have a 50% chance to fire a Bolt of Perception, dealing <cryo>240%</cryo> ATK as DMG. This bolt can bounce between opponents a maximum of 4 times. This effect can occur once every <cryo>12</cryo>s."
+    },
+    "1": {
+      "0": "Normal and Charged Attacks have a 50% chance to fire a Bolt of Perception, dealing <cryo>270%</cryo> ATK as DMG. This bolt can bounce between opponents a maximum of 4 times. This effect can occur once every <cryo>11</cryo>s."
+    },
+    "2": {
+      "0": "Normal and Charged Attacks have a 50% chance to fire a Bolt of Perception, dealing <cryo>300%</cryo> ATK as DMG. This bolt can bounce between opponents a maximum of 4 times. This effect can occur once every <cryo>10</cryo>s."
+    },
+    "3": {
+      "0": "Normal and Charged Attacks have a 50% chance to fire a Bolt of Perception, dealing <cryo>330%</cryo> ATK as DMG. This bolt can bounce between opponents a maximum of 4 times. This effect can occur once every <cryo>9</cryo>s."
+    },
+    "4": {
+      "0": "Normal and Charged Attacks have a 50% chance to fire a Bolt of Perception, dealing <cryo>360%</cryo> ATK as DMG. This bolt can bounce between opponents a maximum of 4 times. This effect can occur once every <cryo>8</cryo>s."
+    }
+  }
+}

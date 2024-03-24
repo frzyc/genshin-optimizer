@@ -1,0 +1,29 @@
+{
+  "setName": "Martial Artist",
+  "setEffects": {
+    "2": "Meningkatkan 15% DMG Normal Attack dan Charged Attack.",
+    "4": "Setelah melancarkan Elemental Skill, meningkatkan 25% DMG Normal dan Charged Attack selama 8 detik."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Martial Artist's Red Flower",
+      "desc": "Hanya bunga merah ini yang dapat membuat ahli bela diri melupakan rasa sakit untuk sementara."
+    },
+    "plume": {
+      "name": "Martial Artist's Feathered Accessory",
+      "desc": "Bulu burung yang sering ditemui di mana saja, para ahli bela diri menggunakannya dalam latihan pengendalian kekuatan."
+    },
+    "sands": {
+      "name": "Martial Artist's Water Hourglass",
+      "desc": "Alat yang digunakan untuk menakar waktu saat latihan bela diri. Dibandingkan dengan jam pasir, alat ini lebih akurat dan stabil."
+    },
+    "goblet": {
+      "name": "Martial Artist's Wine Cup",
+      "desc": "Gelas arak dengan bentuk yang indah, biasanya digunakan sebelum pertarungan sebagai bagian dari ritual."
+    },
+    "circlet": {
+      "name": "Martial Artist's Bandana",
+      "desc": "Pelajaran utama saat berlatih bela diri: Daya Tahan, Tekad Hati, Kekuatan. Ikat erat tali di kepala, untuk mengingatkan tiga hal ini."
+    }
+  }
+}

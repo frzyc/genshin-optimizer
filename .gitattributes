@@ -1,0 +1,3 @@
+*_gen.json -diff -merge linguist-generated
+*.gen.json -diff -merge linguist-generated
+*.gen.ts   -diff -merge linguist-generated

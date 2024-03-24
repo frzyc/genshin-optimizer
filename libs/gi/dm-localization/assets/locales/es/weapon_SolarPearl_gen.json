@@ -1,0 +1,24 @@
+{
+  "name": "Perla Solar",
+  "description": {
+    "0": "Una perla opaca y dorada hecha de una sustancia desconocida que alberga la luz del sol y la luna. Late con una fuerza muy cálida."
+  },
+  "passiveName": "Brillo solar",
+  "passiveDescription": {
+    "0": {
+      "0": "Tras golpear a un enemigo con un Ataque Normal, el daño de la Habilidad Elemental y la Habilidad Definitiva aumenta en un <cryo>20%</cryo> durante 6 s. Además, tras golpear a un enemigo con una Habilidad Elemental o Definitiva, el daño de Ataque Normal aumenta en un <cryo>20%</cryo> durante 6 s."
+    },
+    "1": {
+      "0": "Tras golpear a un enemigo con un Ataque Normal, el daño de la Habilidad Elemental y la Habilidad Definitiva aumenta en un <cryo>25%</cryo> durante 6 s. Además, tras golpear a un enemigo con una Habilidad Elemental o Definitiva, el daño de Ataque Normal aumenta en un <cryo>25%</cryo> durante 6 s."
+    },
+    "2": {
+      "0": "Tras golpear a un enemigo con un Ataque Normal, el daño de la Habilidad Elemental y la Habilidad Definitiva aumenta en un <cryo>30%</cryo> durante 6 s. Además, tras golpear a un enemigo con una Habilidad Elemental o Definitiva, el daño de Ataque Normal aumenta en un <cryo>30%</cryo> durante 6 s."
+    },
+    "3": {
+      "0": "Tras golpear a un enemigo con un Ataque Normal, el daño de la Habilidad Elemental y la Habilidad Definitiva aumenta en un <cryo>35%</cryo> durante 6 s. Además, tras golpear a un enemigo con una Habilidad Elemental o Definitiva, el daño de Ataque Normal aumenta en un <cryo>35%</cryo> durante 6 s."
+    },
+    "4": {
+      "0": "Tras golpear a un enemigo con un Ataque Normal, el daño de la Habilidad Elemental y la Habilidad Definitiva aumenta en un <cryo>40%</cryo> durante 6 s. Además, tras golpear a un enemigo con una Habilidad Elemental o Definitiva, el daño de Ataque Normal aumenta en un <cryo>40%</cryo> durante 6 s."
+    }
+  }
+}

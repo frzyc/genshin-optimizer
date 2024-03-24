@@ -1,0 +1,195 @@
+{
+  "name": "Mona",
+  "title": "Astral Reflection",
+  "description": "Seorang astrolog yang menyebut dirinya sendiri sebagai \"Mona si Astrolog Hebat\", dan memiliki kemampuan yang sesuai dengan julukannya. Kepandaiannya setara dengan keangkuhannya.",
+  "constellationName": "Astrolabos",
+  "auto": {
+    "name": "Ripple of Fate",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Attack</strong>",
+        "1": "Melancarkan hingga 4 serangan air yang mengakibatkan <hydro>Hydro DMG</hydro>."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Mengonsumsi sejumlah Stamina untuk mengakibatkan <hydro>Hydro DMG area</hydro> setelah jeda singkat."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Mengumpulkan kekuatan Hydro dan menerjang tanah, menyerang musuh di jalur terjangan dan mengakibatkan <hydro>Hydro DMG area</hydro> saat mendarat."
+      }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Tahap 4",
+      "4": "DMG Charged Attack",
+      "5": "Konsumsi Stamina Charged Attack",
+      "6": "DMG Selama Plunging",
+      "7": "DMG Plunging Attack Rendah/Tinggi",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Mirror Reflection of Doom",
+    "description": {
+      "0": "Menciptakan bayangan ilusi nasib dari bunga air.",
+      "1": "<br/>",
+      "2": "<strong>Bayangan</strong> tersebut memiliki karakteristik sebagai berikut:",
+      "3": [
+        "Terus-menerus menarik perhatian musuh di sekitar."
+      ],
+      "4": "Terus-menerus mengakibatkan <hydro>Hydro DMG</hydro> kepada musuh di sekitar.",
+      "5": [
+        "Saat durasinya habis, bayangan akan meledak, mengakibatkan <hydro>Hydro DMG area</hydro>."
+      ],
+      "6": "<br/>",
+      "7": "<strong>Tahan</strong>",
+      "8": "Memanfaatkan arus air untuk bergerak mundur dengan cepat sebelum memanggil bayangan.",
+      "9": "<br/>",
+      "10": "Hanya satu bayangan saja yang dapat dibuat oleh Mirror Reflection of Doom kapan pun juga.",
+      "11": "<br/>",
+      "12": "<i>Astrolog terampil selalu bermimpi untuk menggunakan faksimili diri untuk menangkal nasib buruk yang akan segera terjadi, tapi Mona harus menjadi yang pertama di seluruh Teyvat yang bisa membuat hal itu terjadi.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Berkelanjutan",
+      "1": "DMG Ledakan",
+      "2": "Cooldown",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Stellaris Phantasm",
+    "description": {
+      "0": "Mona menciptakan gelombang air yang memantulkan cahaya langit penuh bintang, menyebabkan efek Illusory Bubble pada musuh dalam area yang besar.",
+      "1": "<br/>",
+      "2": "<strong>Illusory Bubble</strong>",
+      "3": "Mengurung musuh di dalam gelembung bintang dan menyebabkan efek <hydro>Wet</hydro>. Musuh yang lebih lemah akan terkurung dan tidak bisa bergerak.",
+      "4": "Saat musuh dalam gelembung terkena DMG, akan muncul efek berikut:",
+      "5": [
+        "Menyebabkan efek Omen pada musuh, yang akan meningkatkan DMG yang diterima, dan juga meningkatkan DMG serangan yang memicu efek ini;",
+        "Illusory Bubble akan pecah dan mengakibatkan <hydro>Hydro DMG</hydro>."
+      ],
+      "6": "<br/>",
+      "7": "<strong>Omen</strong>",
+      "8": "Meningkatkan DMG yang diterima musuh selama durasi Omen.",
+      "9": "<br/>",
+      "10": "<i>Sejak pertama kali para dewa menulusuri cahaya di langit dengan mata mereka, di situlah lahirnya sebuah \"takdir\".</i>"
+    },
+    "skillParams": {
+      "0": "Durasi Illusory Bubble",
+      "1": "DMG Ledakan Illusory Bubble",
+      "2": "Bonus DMG",
+      "3": "Durasi Omen",
+      "4": "Cooldown",
+      "5": "Konsumsi Energy",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "sprint": {
+    "name": "Illusory Torrent",
+    "description": {
+      "0": "<strong>Alternate Sprint</strong>",
+      "1": "Mona menyembunyikan dirinya di dalam arus air, mengonsumsi sejumlah Stamina untuk bergerak cepat.",
+      "2": "<br/>",
+      "3": "Saat berada di bawah pengaruh efek Illusory Torrent, Mona dapat bergerak dengan kecepatan tinggi di air.",
+      "4": "Saat dia muncul kembali, akan menyebabkan efek <hydro>Wet</hydro> kepada musuh di sekitarnya.",
+      "5": "<br/>",
+      "6": "<i>Ini adalah hal yang bisa dilakukan oleh Mona, namun tidak bisa dilakukan oleh gurunya. Yah, namun demikian gurunya juga tidak akan mempelajari lebih lanjut mengenai Hydro Vision ...</i>"
+    }
+  },
+  "passive1": {
+    "name": "\"Come 'n' Get Me, Hag!\"",
+    "description": {
+      "0": "Jika ada musuh di sekitar, Mona akan menciptakan sebuah bayangan setelah menggunakan <strong>Illusory Torrent</strong> selama 2 detik.",
+      "1": "Bayangan yang dibuat dengan cara ini dapat bertahan selama 2 detik, dan DMG ledakannya setara dengan 50% DMG <strong>Mirror Reflection of Doom</strong>."
+    }
+  },
+  "passive2": {
+    "name": "Waterborne Destiny",
+    "description": {
+      "0": "Meningkatkan <hydro>Hydro DMG Bonus</hydro> Mona sebesar 20% dari Energy Recharge."
+    }
+  },
+  "passive3": {
+    "name": "Principium of Astrology",
+    "description": {
+      "0": "Mona memiliki 25% kemungkinan untuk mendapatkan kembali material yang digunakan saat membuat Material Ascension Senjata."
+    }
+  },
+  "constellation1": {
+    "name": "Prophecy of Submersion",
+    "description": {
+      "0": "Efek <hydro>Reaksi Elemental yang berhubungan dengan elemen Hydro</hydro> akan ditingkatkan selama 8 detik setelah karakter dalam party sendiri menyerang musuh yang terkena efek Omen:",
+      "1": [
+        "DMG Electro Charged meningkat 15%.",
+        "DMG Vaporize meningkat 15%.",
+        "DMG Hydro Swirl meningkat 15%.",
+        "Durasi musuh yang terkena Frozen meningkat 15%."
+      ]
+    }
+  },
+  "constellation2": {
+    "name": "Lunar Chain",
+    "description": {
+      "0": "Saat Normal Attack mengenai musuh, memiliki 20% persentase untuk melancarkan Charged Attack.",
+      "1": "Dapat terpicu setiap 5 detik."
+    }
+  },
+  "constellation3": {
+    "name": "Restless Revolution",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Stellaris Phantasm</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Prophecy of Oblivion",
+    "description": {
+      "0": "Saat anggota party menyerang musuh yang terkena efek Omen, CRIT Rate akan meningkat 15%."
+    }
+  },
+  "constellation5": {
+    "name": "Mockery of Fortuna",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Mirror Reflection of Doom</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Rhetorics of Calamitas",
+    "description": {
+      "0": "Saat dalam kondisi <strong>Illusory Torrent</strong> setiap 1 detik gerakan, Charged Attack Mona meningkat 60%,",
+      "1": "Bonus DMG maksimum yang bisa didapatkan dengan cara ini adalah 180%, efek ini berlangsung selama 8 detik."
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Finale in der Tiefe",
+  "description": {
+    "0": "Dieses Langschwert scheint noch älter zu sein, als das Zeitalter, in dem es benutzt wurde, und ist so still wie die geheimnisvollen Tiefen des Ozeans."
+  },
+  "passiveName": "Erhabenheit des Endes",
+  "passiveDescription": {
+    "0": {
+      "0": "Erhöht beim Auslösen der Elementarfähigkeit den ANG um <cryo>12 %</cryo>, hält 15 s. Es entsteht gleichzeitig ein Eid des Lebens mit einem Basiswert in Höhe von 25 % der max. LP. 10 s Abklingzeit. Wenn der Eid des Lebens entfernt wird, wird der ANG um <cryo>2,4 %</cryo> der entfernten Summe, max. <cryo>150</cryo> Punkte, erhöht. Hält 15 s."
+    },
+    "1": {
+      "0": "Erhöht beim Auslösen der Elementarfähigkeit den ANG um <cryo>15 %</cryo>, hält 15 s. Es entsteht gleichzeitig ein Eid des Lebens mit einem Basiswert in Höhe von 25 % der max. LP. 10 s Abklingzeit. Wenn der Eid des Lebens entfernt wird, wird der ANG um <cryo>3 %</cryo> der entfernten Summe, max. <cryo>187,5</cryo> Punkte, erhöht. Hält 15 s."
+    },
+    "2": {
+      "0": "Erhöht beim Auslösen der Elementarfähigkeit den ANG um <cryo>18 %</cryo>, hält 15 s. Es entsteht gleichzeitig ein Eid des Lebens mit einem Basiswert in Höhe von 25 % der max. LP. 10 s Abklingzeit. Wenn der Eid des Lebens entfernt wird, wird der ANG um <cryo>3,6 %</cryo> der entfernten Summe, max. <cryo>225</cryo> Punkte, erhöht. Hält 15 s."
+    },
+    "3": {
+      "0": "Erhöht beim Auslösen der Elementarfähigkeit den ANG um <cryo>21 %</cryo>, hält 15 s. Es entsteht gleichzeitig ein Eid des Lebens mit einem Basiswert in Höhe von 25 % der max. LP. 10 s Abklingzeit. Wenn der Eid des Lebens entfernt wird, wird der ANG um <cryo>4,2 %</cryo> der entfernten Summe, max. <cryo>262,5</cryo> Punkte, erhöht. Hält 15 s."
+    },
+    "4": {
+      "0": "Erhöht beim Auslösen der Elementarfähigkeit den ANG um <cryo>24 %</cryo>, hält 15 s. Es entsteht gleichzeitig ein Eid des Lebens mit einem Basiswert in Höhe von 25 % der max. LP. 10 s Abklingzeit. Wenn der Eid des Lebens entfernt wird, wird der ANG um <cryo>4,8 %</cryo> der entfernten Summe, max. <cryo>300</cryo> Punkte, erhöht. Hält 15 s."
+    }
+  }
+}

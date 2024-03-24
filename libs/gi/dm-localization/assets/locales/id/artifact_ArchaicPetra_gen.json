@@ -1,0 +1,29 @@
+{
+  "setName": "Archaic Petra",
+  "setEffects": {
+    "2": "Geo DMG Bonus +15%.",
+    "4": "Saat memperoleh Elemental Shard yang terbentuk dari Reaksi Elemental Crystallize, seluruh anggota party memperoleh 35% peningkatan Elemental DMG terhadap elemen tersebut selama 10 detik. Hanya satu jenis Elemental DMG dapat diperoleh dengan cara ini."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Flower of Creviced Cliff",
+      "desc": "Setangkai bunga yang tumbuh di tengah bebatuan di tepi jurang. Kelopaknya yang tertiup angin memberinya kesan kehidupan."
+    },
+    "plume": {
+      "name": "Feather of Jagged Peaks",
+      "desc": "Sehelai bulu yang keras dan kokoh dari seekor elang raksasa. Terkadang embun dingin terkumpul di bagian ujung yang keras dari bulu ini."
+    },
+    "sands": {
+      "name": "Sundial of Enduring Jade",
+      "desc": "Jam bayangan matahari yang terbuat dari sebuah batu giok yang besar. Garis-garisnya memiliki pola yang mencatat berlalunya waktu."
+    },
+    "goblet": {
+      "name": "Goblet of Chiseled Crag",
+      "desc": "Sebuah piala yang megah dan anggun, piala yang kosong ini terisi penuh dengan sejarah akan era yang telah lama sirna."
+    },
+    "circlet": {
+      "name": "Mask of Solitude Basalt",
+      "desc": "Topeng yang terbuat dari basal, matanya seakan menatap kekosongan dengan ekspresi yang dingin."
+    }
+  }
+}

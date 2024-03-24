@@ -1,0 +1,29 @@
+{
+  "setName": "Tiếng Đêm Trong Rừng Vang",
+  "setEffects": {
+    "2": "Tấn công tăng 18%",
+    "4": "Trong 10s sau khi thi triển Kỹ Năng Nguyên Tố, Sát Thương Nguyên Tố Nham tăng 20%; Nếu được khiên sản sinh từ phản ứng Kết Tinh bảo vệ, hiệu quả trên sẽ gia tăng 150%. Hiệu quả tăng thêm này sẽ mất sau 1s khi mất đi tấm khiên kết tinh bảo hộ."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Đóa Hoa Vị Tha",
+      "desc": "Hoa trang sức của phù thủy trong câu chuyện. Cũng như những trang sức yêu thích khác, món đồ này cũng có hình dạng giống con bướm."
+    },
+    "plume": {
+      "name": "Bút Mực Thành Khẩn",
+      "desc": "Bút mực được phù thủy sử dụng trong câu chuyện, nét chữ ngay ngắn là một trong những ưu điểm nhỏ không đáng nhắc tới của nó."
+    },
+    "sands": {
+      "name": "Đồng Hồ Cát Trung Thành",
+      "desc": "Đồng hồ cát mà phù thủy đã nương nhờ trong câu chuyện. Nghe nói khi niệm sai thần chú thì thời gian sẽ trôi nhanh lạ thường."
+    },
+    "goblet": {
+      "name": "Lọ Mực Khảng Khái",
+      "desc": "Lọ mực được phù thủy sử dụng trong câu chuyện, chứa đựng phép thuật thần kỳ không thua gì bút mực."
+    },
+    "circlet": {
+      "name": "Chiếc Mũ Yêu Thương",
+      "desc": "Chiếc mũ được phù thủy ưa chuộng trong câu chuyện. Rất được yêu thích vì thiết kế nhẹ nhàng nhưng tinh nghịch của nó."
+    }
+  }
+}

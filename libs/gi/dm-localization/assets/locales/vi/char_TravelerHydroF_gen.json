@@ -1,0 +1,154 @@
+{
+  "auto": {
+    "name": "Dòng Nước Dị Bang",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Tấn Công Thường</strong>",
+        "1": "Thực hiện tối đa 5 lần đánh kiếm liên tiếp."
+      },
+      "charged": {
+        "0": "<strong>Trọng Kích</strong>",
+        "1": "Tiêu hao thể lực nhất định, vung ra hai nhát kiếm về phía trước trong chớp mắt."
+      },
+      "plunging": {
+        "0": "<strong>Tấn Công Khi Đáp</strong>",
+        "1": "Đáp xuống đất từ trên không, tấn công kẻ địch trên đường và gây sát thương phạm vi khi chạm đất."
+      }
+    },
+    "skillParams": {
+      "0": "Sát Thương Lần 1",
+      "1": "Sát Thương Lần 2",
+      "2": "Sát Thương Lần 3",
+      "3": "Sát Thương Lần 4",
+      "4": "Sát Thương Lần 5",
+      "5": "Sát Thương Trọng Kích",
+      "6": "Thể lực Trọng Kích tiêu hao",
+      "7": "Sát Thương Khi Đáp",
+      "8": "ST Khi Rơi Từ Độ Cao Thấp/Cao",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Thủy Văn Kiếm",
+    "description": {
+      "0": "Triệu hồi dòng chảy chấn động mặt đất.",
+      "1": "<br/>",
+      "2": "<strong>Nhấn</strong>",
+      "3": "Thi triển Dòng Nước Dâng Trào về phía trước, gây <hydro>Sát Thương Nguyên Tố Thủy</hydro> cho kẻ địch trúng phải.",
+      "4": "<br/>",
+      "5": "<strong>Nhấn Giữ</strong>",
+      "6": "Vào trạng thái ngắm chuẩn, liên tục bắn Sương Mai về hướng chỉ định, gây <hydro>Sát Thương Nguyên Tố Thủy</hydro> cho kẻ địch trúng phải.",
+      "7": "Khi kết thúc sẽ thi triển Dòng Nước Dâng Trào về phía trước, gây <hydro>Sát Thương Nguyên Tố Thủy</hydro> cho kẻ địch trúng phải.",
+      "8": "Dồi Dào: Khi nhấn giữ, nếu HP của Nhà Lữ Hành cao hơn 50%, sát thương do Sương Mai gây ra sẽ tăng dựa vào giới hạn HP của Nhà Lữ Hành, đồng thời mỗi giây sẽ tổn thất một lượng HP nhất định.",
+      "9": "<br/>",
+      "10": "<strong>Sức Mạnh Nền Tảng: Pneuma</strong>",
+      "11": "Cứ cách một khoảng thời gian, sau khi thi triển Dòng Nước Dâng Trào sẽ tung ra Gai Linh Hồn xuyên thấu kẻ địch, gây <hydro>Sát Thương Nguyên Tố Thủy</hydro> thuộc tính Pneuma.",
+      "12": "<br/>",
+      "13": "<i>Cùng Paimon quan sát làn sóng trên mặt nước.</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Dòng Nước Dâng Trào",
+      "1": "Sát Thương Sương Mai",
+      "2": "Sát Thương Gai Linh Hồn",
+      "3": "Giãn Cách Gai Linh Hồn",
+      "4": "Dồi Dào Tiêu Hao HP",
+      "5": "Dồi Dào Tăng Sát Thương",
+      "6": "Thời Gian Duy Trì Nhấn Giữ",
+      "7": "CD",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Dòng Chảy Cuồn Cuộn",
+    "description": {
+      "0": "Thi triển Bong Bóng Bay Bổng di chuyển từ từ, liên tục gây <hydro>Sát Thương Nguyên Tố Thủy</hydro> cho kẻ địch gần đó.",
+      "1": "<br/>",
+      "2": "<i>Cùng Paimon nghiên cứu về mực độ lên xuống của ngọn sóng.</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Kỹ Năng",
+      "1": "Thời Gian Kéo Dài",
+      "2": "CD",
+      "3": "Năng Lượng Nguyên Tố",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Dòng Chảy Trong Veo",
+    "description": {
+      "0": "Sau khi nhấn giữ để bắn Sương Mai từ kỹ năng <strong>Thủy Văn Kiếm</strong> trúng kẻ địch, sẽ sản sinh Nguồn Nước Trong gần Nhà Lữ Hành. Nhà Lữ Hành khi nhặt Nguồn Nước Trong sẽ hồi phục 7% HP.",
+      "1": "Mỗi giây tối đa sản sinh 1 Nguồn Nước Trong bằng cách này, mỗi lần thi triển Thủy Văn Kiếm tối đa sản sinh 4 Nguồn Nước Trong."
+    }
+  },
+  "passive2": {
+    "name": "Nguồn Nước Tinh Khiết",
+    "description": {
+      "0": "Nhấn giữ <strong>Thủy Văn Kiếm</strong> nếu tiêu hao HP từ hiệu ứng Dồi Dào, sẽ tăng sát thương Dòng Nước Dâng Trào gây ra sau đó, mức tăng thêm dựa vào 45% lượng HP tiêu hao từ hiệu ứng Dồi Dào của lần này.",
+      "1": "Sát thương tăng thêm tối đa 5000 thông qua cách này."
+    }
+  },
+  "constellation1": {
+    "name": "Nước Hồ Lăn Tăn",
+    "description": {
+      "0": "Sau khi nhặt Nguồn Nước Trong, Nhà Lữ Hành sẽ hồi phục 2 điểm Năng Lượng Nguyên Tố.",
+      "1": "Cần mở khóa thiên phú \"Dòng Chảy Trong Veo\"."
+    }
+  },
+  "constellation2": {
+    "name": "Nước Biếc Rì Rào",
+    "description": {
+      "0": "Tốc độ di chuyển của Bong Bóng Bay Bổng từ kỹ năng <strong>Dòng Chảy Cuồn Cuộn</strong> giảm 30%, thời gian duy trì kéo dài 3s."
+    }
+  },
+  "constellation3": {
+    "name": "Sóng Nước Huyên Náo",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Thủy Văn Kiếm</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation4": {
+    "name": "Dòng Chảy Xối Xả",
+    "description": {
+      "0": "Khi thi triển <strong>Thủy Văn Kiếm</strong>, tạo ra Khiên Thủy Văn hấp thụ sát thương tương ứng 10% Giới Hạn HP của Nhà Lữ Hành, có 250% hiệu quả hấp thụ đối với <hydro>Sát Thương Nguyên Tố Thủy</hydro>, duy trì đến khi kết thúc thi triển kỹ năng.",
+      "1": "Mỗi 2s một lần, khi Sương Mai đánh trúng kẻ địch, nếu Nhà Lữ Hành được Khiên Thủy Văn bảo vệ, mức độ hấp thụ sát thương của Khiên Thủy Văn được nạp lại bằng 10% giới hạn HP của Nhà Lữ Hành; Nếu không được Khiên Thủy Văn bảo vệ sẽ sản sinh Khiên Thủy Văn."
+    }
+  },
+  "constellation5": {
+    "name": "Xoáy Nước Luân Chuyển",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Dòng Chảy Cuồn Cuộn</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation6": {
+    "name": "Thủy Triều Công Lý",
+    "description": {
+      "0": "Nhà Lữ Hành khi nhặt Nguồn Nước Trong sẽ hồi phục 6% HP cho nhân vật có phần trăm HP thấp nhất trong đội gần đó."
+    }
+  }
+}

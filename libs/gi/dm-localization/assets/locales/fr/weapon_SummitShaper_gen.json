@@ -1,0 +1,24 @@
+{
+  "name": "Tranche-sommets",
+  "description": {
+    "0": "Le symbole d'un pacte légendaire. Sa lame tranchante coupa jadis le sommet d'une montagne."
+  },
+  "passiveName": "Majesté dorée",
+  "passiveDescription": {
+    "0": {
+      "0": "Augmente la force du bouclier de <cryo>20 %</cryo>. Toucher un ennemi augmente l'ATQ de <cryo>4 %</cryo> pendant 8 s. Cet effet peut être cumulé 5 fois maximum et déclenché une fois toutes les 0,3 s. Lorsque vous êtes protégé par un bouclier, l'augmentation d'ATQ de cet effet est de 100 %."
+    },
+    "1": {
+      "0": "Augmente la force du bouclier de <cryo>25 %</cryo>. Toucher un ennemi augmente l'ATQ de <cryo>5 %</cryo> pendant 8 s. Cet effet peut être cumulé 5 fois maximum et déclenché une fois toutes les 0,3 s. Lorsque vous êtes protégé par un bouclier, l'augmentation d'ATQ de cet effet est de 100 %."
+    },
+    "2": {
+      "0": "Augmente la force du bouclier de <cryo>30 %</cryo>. Toucher un ennemi augmente l'ATQ de <cryo>6 %</cryo> pendant 8 s. Cet effet peut être cumulé 5 fois maximum et déclenché une fois toutes les 0,3 s. Lorsque vous êtes protégé par un bouclier, l'augmentation d'ATQ de cet effet est de 100 %."
+    },
+    "3": {
+      "0": "Augmente la force du bouclier de <cryo>35 %</cryo>. Toucher un ennemi augmente l'ATQ de <cryo>7 %</cryo> pendant 8 s. Cet effet peut être cumulé 5 fois maximum et déclenché une fois toutes les 0,3 s. Lorsque vous êtes protégé par un bouclier, l'augmentation d'ATQ de cet effet est de 100 %."
+    },
+    "4": {
+      "0": "Augmente la force du bouclier de <cryo>40 %</cryo>. Toucher un ennemi augmente l'ATQ de <cryo>8 %</cryo> pendant 8 s. Cet effet peut être cumulé 5 fois maximum et déclenché une fois toutes les 0,3 s. Lorsque vous êtes protégé par un bouclier, l'augmentation d'ATQ de cet effet est de 100 %."
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Elegy for the End",
+  "description": {
+    "0": "Sebuah busur seanggun alat musik penyair, panah yang ditembakkan menghasilkan suara merdu yang mampu menembus hati seseorang."
+  },
+  "passiveName": "The Parting Refrain",
+  "passiveDescription": {
+    "0": {
+      "0": "Bagian dari \"Millennial Movement\" yang mengembara di tengah angin. Meningkatkan <cryo>60</cryo> Elemental Mastery, dan saat Elemental Skill atau Elemental Burst dari pengguna senjata ini mengenai musuh, Karakter akan mendapatkan Sigil of Remembrance. Efek ini dapat terpicu setiap 0,2 detik dan bisa terpicu walaupun Karakter tersebut tidak berada di medan bertarung. Saat kamu mempunyai 4 Sigil of Remembrance, semuanya akan terkonsumsi dan seluruh anggota party di sekitar akan mendapatkan efek \"Millennial Movement: Farewell Song\" selama 12 detik. \"Millennial Movement: Farewell Song\" meningkatkan <cryo>100</cryo> Elemental Mastery dan <cryo>20%</cryo> ATK. Ketika efek ini sudah terpicu, kamu tidak akan mendapatkan Sigil of Remembrance selama 20 detik. Dari beragam efek \"Millennial Movement\" yang ada, efek dengan jenis sama tidak bisa ditumpuk."
+    },
+    "1": {
+      "0": "Bagian dari \"Millennial Movement\" yang mengembara di tengah angin. Meningkatkan <cryo>75</cryo> Elemental Mastery, dan saat Elemental Skill atau Elemental Burst mengenai musuh, Karakter akan mendapatkan Sigil of Remembrance. Efek ini dapat terpicu setiap 0,2 detik dan dapat terpicu walaupun Karakter tersebut tidak berada di medan bertarung. Saat kamu mempunyai 4 Sigil of Remembrance, semuanya akan terkonsumsi dan seluruh anggota party di sekitar akan mendapatkan efek \"Millennial Movement: Farewell Song\" selama 12 detik. \"Millennial Movement: Farewell Song\" meningkatkan <cryo>125</cryo> Elemental Mastery dan <cryo>25%</cryo> ATK. Ketika efek ini sudah terpicu, kamu tidak akan mendapatkan Sigil of Remembrance selama 20 detik. Dari sekian banyak efek \"Millennial Movement\" yang ada, efek dengan jenis sama tidak bisa ditumpuk."
+    },
+    "2": {
+      "0": "Bagian dari \"Millennial Movement\" yang mengembara di tengah angin. Meningkatkan <cryo>90</cryo> Elemental Mastery, dan saat Elemental Skill atau Elemental Burst mengenai musuh, Karakter akan mendapatkan Sigil of Remembrance. Efek ini dapat terpicu setiap 0,2 detik dan bisa terpicu walaupun Karakter tersebut tidak berada di medan bertarung. Saat kamu mempunyai 4 Sigil of Remembrance, semuanya akan terkonsumsi dan seluruh anggota party di sekitar akan mendapatkan efek \"Millennial Movement: Farewell Song\" selama 12 detik. \"Millennial Movement: Farewell Song\" meningkatkan <cryo>150</cryo> Elemental Mastery dan <cryo>30%</cryo> ATK. Ketika efek ini sudah terpicu, kamu tidak akan mendapatkan Sigil of Remembrance selama 20 detik. Dari beragam efek \"Millennial Movement\" yang ada, efek dengan jenis sama tidak bisa ditumpuk."
+    },
+    "3": {
+      "0": "Bagian dari \"Millennial Movement\" yang mengembara di tengah angin. Meningkatkan <cryo>105</cryo> Elemental Mastery, dan saat Elemental Skill atau Elemental Burst mengenai musuh, Karakter akan mendapatkan Sigil of Remembrance. Efek ini dapat terpicu setiap 0,2 detik dan bisa terpicu walaupun Karakter tersebut tidak berada di medan bertarung. Saat kamu mempunyai 4 Sigil of Remembrance, semuanya akan terkonsumsi dan seluruh anggota party di sekitar akan mendapatkan efek \"Millennial Movement: Farewell Song\" selama 12 detik. \"Millennial Movement: Farewell Song\" meningkatkan <cryo>175</cryo> Elemental Mastery dan <cryo>35%</cryo> ATK. Ketika efek ini sudah terpicu, kamu tidak akan mendapatkan Sigil of Remembrance selama 20 detik. Dari beragam efek \"Millennial Movement\" yang ada, efek dengan jenis sama tidak bisa ditumpuk."
+    },
+    "4": {
+      "0": "Bagian dari \"Millennial Movement\" yang mengembara di tengah angin. Meningkatkan <cryo>120</cryo> Elemental Mastery, dan saat Elemental Skill atau Elemental Burst mengenai musuh, Karakter akan mendapatkan Sigil of Remembrance. Efek ini dapat terpicu setiap 0,2 detik dan bisa terpicu walaupun Karakter tersebut tidak berada di medan bertarung. Saat kamu mempunyai 4 Sigil of Remembrance, semuanya akan terkonsumsi dan seluruh anggota party di sekitar akan mendapatkan efek \"Millennial Movement: Farewell Song\" selama 12 detik. \"Millennial Movement: Farewell Song\" meningkatkan <cryo>200</cryo> Elemental Mastery dan <cryo>40%</cryo> ATK. Ketika efek ini sudah terpicu, kamu tidak akan mendapatkan Sigil of Remembrance selama 20 detik. Dari beragam efek \"Millennial Movement\" yang ada, efek dengan jenis sama tidak bisa ditumpuk."
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Kagotsurube Isshin",
+  "description": {
+    "0": "Bu meşhur kılıç kuzeydeki uzak bir ulusta yapıldı. Fakat kılıç, evine giden yolda \"Isshin\" uğruna pek çok karanlık olayla lekelendi."
+  },
+  "passiveName": "Berrak Isshin Sanatı",
+  "passiveDescription": {
+    "0": {
+      "0": "Normal, Yüklü veya Havadan Saldırılar bir düşmana isabet ederse Yontucu Fırtına oluşur. Bu fırtına, Saldırının %180'i kadar Alan Hasarı verir ve 8 saniyeliğine Saldırıyı %15 artırır. Bu etki 8 saniyede bir tetiklenebilir."
+    }
+  }
+}

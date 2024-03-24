@@ -1,0 +1,24 @@
+{
+  "name": "Ailes de la Voûte d'Azur",
+  "description": {
+    "0": "Un grand arc qui symbolise l'affiliation de Dvalin à Barbatos. Fort de la puissance du ciel et du vent, le son qu'il produit lors de la libération de la flèche est une vraie musique aux oreilles de l'Archon Anémo."
+  },
+  "passiveName": "Ballade résonnante",
+  "passiveDescription": {
+    "0": {
+      "0": "Augmente les DGT CRIT de <cryo>20 %</cryo>. Toucher un ennemi a <cryo>60 %</cryo> de chances d'infliger des DGT physiques équivalant à 125 % de l'ATQ dans une zone restreinte. Cet effet peut être déclenché une fois toutes les <cryo>4</cryo> s."
+    },
+    "1": {
+      "0": "Augmente les DGT CRIT de <cryo>25 %</cryo>. Toucher un ennemi a <cryo>70 %</cryo> de chances d'infliger des DGT physiques équivalant à 125 % de l'ATQ dans une zone restreinte. Cet effet peut être déclenché une fois toutes les <cryo>3,5</cryo> s."
+    },
+    "2": {
+      "0": "Augmente les DGT CRIT de <cryo>30 %</cryo>. Toucher un ennemi a <cryo>80 %</cryo> de chances d'infliger des DGT physiques équivalant à 125 % de l'ATQ dans une zone restreinte. Cet effet peut être déclenché une fois toutes les <cryo>3</cryo> s."
+    },
+    "3": {
+      "0": "Augmente les DGT CRIT de <cryo>35 %</cryo>. Toucher un ennemi a <cryo>90 %</cryo> de chances d'infliger des DGT physiques équivalant à 125 % de l'ATQ dans une zone restreinte. Cet effet peut être déclenché une fois toutes les <cryo>2,5</cryo> s."
+    },
+    "4": {
+      "0": "Augmente les DGT CRIT de <cryo>40 %</cryo>. Toucher un ennemi a <cryo>100 %</cryo> de chances d'infliger des DGT physiques équivalant à 125 % de l'ATQ dans une zone restreinte. Cet effet peut être déclenché une fois toutes les <cryo>2</cryo> s."
+    }
+  }
+}

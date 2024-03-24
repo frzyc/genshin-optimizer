@@ -1,0 +1,163 @@
+{
+  "name": "Amber",
+  "title": "Campionessa di volo a vela",
+  "description": "Piena d'energia e vitalità, Amber è la migliore, nonché l'unica, Vigilante dei Cavalieri di Favonius.",
+  "constellationName": "Lepus",
+  "auto": {
+    "name": "Tiratore scelto",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attacco normale</strong>",
+        "1": "Effettua fino a 5 tiri consecutivi con un arco."
+      },
+      "charged": {
+        "0": "<strong>Attacco caricato</strong>",
+        "1": "Effettua un <strong>attacco mirato</strong> ancora più preciso con DAN aumentati.",
+        "2": "Mentre mira, sulla punta della freccia convergeranno delle fiamme. Una freccia ardente caricata al massimo infligge <pyro>DAN da Pyro</pyro>."
+      },
+      "plunging": {
+        "0": "<strong>Attacco in picchiata</strong>",
+        "1": "Scocca una pioggia di frecce a mezz'aria prima di cadere e colpire il suolo, infliggendo DAN ad area all'impatto."
+      }
+    },
+    "skillParams": {
+      "0": "DAN da 1º colpo",
+      "1": "DAN da 2º colpo",
+      "2": "DAN da 3º colpo",
+      "3": "DAN da 4º colpo",
+      "4": "DAN da 5º colpo",
+      "5": "ATT mirato",
+      "6": "ATT mirato a piena carica",
+      "7": "DAN da ATT in picchiata",
+      "8": "DAN da ATT in picchiata basso/alto",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Bambola esplosiva",
+    "description": {
+      "0": "Il sempre affidabile Baron Coniglio entra in scena.",
+      "1": "<br/>",
+      "2": "<strong>Baron Coniglio</strong>",
+      "3": [
+        " Provoca continuamente il nemico, attirandone gli attacchi.",
+        " I PS di Baron Coniglio variano in base ai PS max di Amber.",
+        " Quando viene distrutto o allo scadere del tempo, Baron Coniglio esplode infliggendo <pyro>DAN da Pyro ad area</pyro>."
+      ],
+      "4": "<br/>",
+      "5": "<strong>Pressione prolungata</strong>",
+      "6": "Regola la direzione di lancio di Baron Coniglio.",
+      "7": "Più tieni premuto, più lontano verrà lanciato.",
+      "8": "<br/>",
+      "9": "<i>Baron Coniglio discende da una stirpe leggendaria, ma Amber ha smesso di tenere il conto da Baron Coniglio DCCCXCIII.</i>"
+    },
+    "skillParams": {
+      "0": "PS ereditati",
+      "1": "DAN da esplosione",
+      "2": "TdR",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Pioggia di Frecce",
+    "description": {
+      "0": "Scocca una pioggia di frecce, infliggendo <pyro>DAN da Pyro ad area</pyro> continui.",
+      "1": "<br/>",
+      "2": "<i>La passione di Amber brucia e scotta.</i>"
+    },
+    "skillParams": {
+      "0": "DAN da Pioggia di Frecce per ondata",
+      "1": "DAN da Pioggia di Frecce totali",
+      "2": "Durata",
+      "3": "TdR",
+      "4": "Costo energia",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Le mie frecce non lasciano alcuno scampo!",
+    "description": {
+      "0": "Aumenta il tasso di CRIT di <strong>Pioggia di Frecce</strong> di un 10% e amplia la sua area d'effetto di un 30%."
+    }
+  },
+  "passive2": {
+    "name": "Tiro perfetto",
+    "description": {
+      "0": "I colpi mirati che colpiscono i punti deboli aumentano l'ATT di un 15% per 10 s."
+    }
+  },
+  "passive3": {
+    "name": "Campionessa di volo a vela",
+    "description": {
+      "0": "Diminuisce di un 20% il consumo di vigore durante la planata per i membri del tuo gruppo.",
+      "1": "Non è cumulabile con talenti passivi che conferiscono gli stessi effetti."
+    }
+  },
+  "constellation1": {
+    "name": "Una freccia per domarli",
+    "description": {
+      "0": "Scocca 2 frecce per ogni <strong>attacco mirato</strong>. La seconda freccia infligge un 20% dei DAN della prima freccia."
+    }
+  },
+  "constellation2": {
+    "name": "Situazione esplosiva",
+    "description": {
+      "0": "Un nuovissimo Baron Coniglio! Se Baron Coniglio viene colpito sul piede con un attacco mirato a piena carica, esploderà tramite detonazione manuale.",
+      "1": "L'esplosione tramite detonazione manuale infligge un 200% di DAN extra."
+    }
+  },
+  "constellation3": {
+    "name": "Brucia!",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Pioggia di Frecce</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation4": {
+    "name": "Non è una bambola qualsiasi...",
+    "description": {
+      "0": "Riduce il TdR di <strong>Bambola esplosiva</strong> di un 20%. Aggiunge 1 carica aggiuntiva."
+    }
+  },
+  "constellation5": {
+    "name": "Ecco a voi Baron Coniglio!",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Bambola esplosiva</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation6": {
+    "name": "Fuoco selvaggio",
+    "description": {
+      "0": "<strong>Pioggia di Frecce</strong> aumenta la VEL di movimento e l'ATT di tutti i membri del gruppo di un 15% per 10 s."
+    }
+  }
+}

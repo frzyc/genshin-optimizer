@@ -1,0 +1,166 @@
+{
+  "name": "Xingqiu",
+  "title": "Tuổi Trẻ Tài Cao",
+  "description": "Vị thiếu niên thường được bắt gặp nơi quầy sách. Tay cầm kiếm, với một trái tim nghĩa hiệp thổn thức trong lồng ngực.",
+  "constellationName": "Cung Cẩm Chức",
+  "auto": {
+    "name": "Cổ Hoa Kiếm Pháp",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Tấn Công Thường</strong>",
+        "1": "Thực hiện tối đa 5 lần đánh kiếm liên tiếp."
+      },
+      "charged": {
+        "0": "<strong>Trọng Kích</strong>",
+        "1": "Tiêu hao thể lực nhất định, đánh ra hai kiếm về phía trước trong chớp mắt."
+      },
+      "plunging": {
+        "0": "<strong>Tấn Công Khi Đáp</strong>",
+        "1": "Đáp xuống đất từ trên không, tấn công kẻ địch trên đường và gây sát thương phạm vi khi chạm đất."
+      }
+    },
+    "skillParams": {
+      "0": "Sát Thương Lần 1",
+      "1": "Sát Thương Lần 2",
+      "2": "Sát Thương Lần 3",
+      "3": "Sát Thương Lần 4",
+      "4": "Sát Thương Lần 5",
+      "5": "Sát Thương Trọng Kích",
+      "6": "Thể lực Trọng Kích tiêu hao",
+      "7": "Sát Thương Khi Rơi",
+      "8": "Sát Thương Khi Rơi Từ Độ Cao Thấp/Cao",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Cổ Hoa Kiếm - Họa Vũ Lung Sơn",
+    "description": {
+      "0": "Thi triển hai đợt kiếm, gây <hydro>Sát Thương Nguyên Tố Thủy</hydro> cho địch phía trước. Đồng thời, tạo ra \"Vũ Liêm Kiếm\" với số lượng tối đa bay xung quanh nhân vật của bản thân trong trận hiện tại.",
+      "1": "Đặc tính:",
+      "2": [
+        "Khi nhân vật chịu sát thương sẽ vỡ và giảm sát thương phải chịu; ",
+        "Tăng khả năng kháng gián đoạn của nhân vật"
+      ],
+      "3": "20% <hydro>buff Sát Thương Nguyên Tố Thủy</hydro> của Xingqiu sẽ chuyển đổi thành giảm sát thương của Vũ Liêm Kiếm.",
+      "4": "<br/>",
+      "5": "Thông qua cách này tối đa sẽ được 24% giảm sát thương thêm.",
+      "6": "Số lượng Vũ Liêm Kiếm ban đầu nhiều nhất là 3.",
+      "7": "Trong thời gian thi triển, tạo trạng thái <hydro>Ẩm Ướt</hydro> cho nhân vật.",
+      "8": "<br/>",
+      "9": "<i>\"Giao Long dễ trảm, mưa rơi khó vẽ\".</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Kỹ Năng",
+      "1": "Tỷ Lệ Miễn Thương",
+      "2": "Thời Gian Kéo Dài",
+      "3": "CD",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Cổ Hoa Kiếm - Tài Vũ Lưu Hồng",
+    "description": {
+      "0": "Thi triển thế kiếm cầu vồng, điều khiển ảo ảnh mưa kiếm để chiến đấu, tăng số lượng Vũ Liêm Kiếm lên mức cao nhất.",
+      "1": "<br/>",
+      "2": "<strong>Kiếm Cầu Vồng</strong>",
+      "3": [
+        "Khi nhân vật của bản thân thi triển tấn công thường, tạo ra mưa kiếm kết hợp tấn công, gây <hydro>Sát Thương Nguyên Tố Thủy</hydro>; ",
+        "Số lượng Vũ Liêm Kiếm sẽ duy trì ở số lượng cao nhất."
+      ],
+      "4": "<br/>",
+      "5": "<i>[Tài Vũ Pháp] là một trong những bí kíp của phái Cổ Hoa.</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Mưa Kiếm",
+      "1": "Thời Gian Kéo Dài",
+      "2": "CD",
+      "3": "Năng Lượng Nguyên Tố",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Sinh Thủy Yêu Quyết",
+    "description": {
+      "0": "Vũ Liêm Kiếm bị phá vỡ hoặc hết thời gian, dựa trên 6% HP tối đa của Xingqiu, trị liệu HP cho nhân vật hiện tại."
+    }
+  },
+  "passive2": {
+    "name": "Ngòi Bút Thực Hư",
+    "description": {
+      "0": "Xingqiu nhận 20% <hydro>buff sát thương Nguyên Tố Thủy</hydro>."
+    }
+  },
+  "passive3": {
+    "name": "Ánh Sáng Lấp Lánh",
+    "description": {
+      "0": "Khi ghép nguyên liệu thiên phú nhân vật, có 25% tỷ lệ hoàn trả một phần nguyên liệu ghép."
+    }
+  },
+  "constellation1": {
+    "name": "Mùi Hương Vương Vấn",
+    "description": {
+      "0": "Số lượng tối đa của Vũ Liêm Kiếm tăng thêm 1."
+    }
+  },
+  "constellation2": {
+    "name": "Cầu Vồng Trời Xanh",
+    "description": {
+      "0": "Kéo dài thời gian <strong>Cổ Hoa Kiếm - Tài Vũ Lưu Hồng</strong> thêm 3s;",
+      "1": "Ngoài ra, kẻ địch chịu sát thương từ Mưa Kiếm giảm 15% kháng <hydro>sát thương Nguyên Tố Thủy</hydro>, kéo dài 4s."
+    }
+  },
+  "constellation3": {
+    "name": "Dệt Thơ Thành Lụa",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Cổ Hoa Kiếm - Tài Vũ Lưu Hồng</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation4": {
+    "name": "Cô Châu Trảm Giao",
+    "description": {
+      "0": "Trong thời gian <strong>Cổ Hoa Kiếm - Tài Vũ Lưu Hồng</strong> còn hiệu lực, sát thương <strong>Cổ Hoa Kiếm - Họa Vũ Lung Sơn</strong> gây ra tăng 50%."
+    }
+  },
+  "constellation5": {
+    "name": "Đóng Cửa Trong Mưa",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Cổ Hoa Kiếm - Họa Vũ Lung Sơn</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation6": {
+    "name": "Sách Đều Ở Đây",
+    "description": {
+      "0": "Mỗi khi <strong>Cổ Hoa Kiếm - Tài Vũ Lưu Hồng</strong> phát động 2 lần mưa kiếm, sẽ tăng sát thương của lần mưa kiếm tiếp theo, đồng thời khi đánh trúng địch sẽ hồi phục 3 điểm Năng Lượng Nguyên Tố cho Xingqiu."
+    }
+  }
+}

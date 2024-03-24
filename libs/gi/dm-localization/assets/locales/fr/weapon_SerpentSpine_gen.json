@@ -1,0 +1,24 @@
+{
+  "name": "Ossature du dragon",
+  "description": {
+    "0": "Une épée rare venue des mers anciennes. Celui qui la manie peut presque entendre les vagues déferler."
+  },
+  "passiveName": "Brise-vagues",
+  "passiveDescription": {
+    "0": {
+      "0": "Les DGT infligés augmentent de <cryo>6 %</cryo> et les DGT reçus de <cryo>3 %</cryo> toutes les 4 s que le personnage passe en combat. Cet effet peut être cumulé 5 fois maximum et ne se réinitialise pas si le personnage quitte le combat, mais diminue d'un cumul si le personnage subit des DGT."
+    },
+    "1": {
+      "0": "Les DGT infligés augmentent de <cryo>7 %</cryo> et les DGT reçus de <cryo>2,7 %</cryo> toutes les 4 s que le personnage passe en combat. Cet effet peut être cumulé 5 fois maximum et ne se réinitialise pas si le personnage quitte le combat, mais diminue d'un cumul si le personnage subit des DGT."
+    },
+    "2": {
+      "0": "Les DGT infligés augmentent de <cryo>8 %</cryo> et les DGT reçus de <cryo>2,4 %</cryo> toutes les 4 s que le personnage passe en combat. Cet effet peut être cumulé 5 fois maximum et ne se réinitialise pas si le personnage quitte le combat, mais diminue d'un cumul si le personnage subit des DGT."
+    },
+    "3": {
+      "0": "Les DGT infligés augmentent de <cryo>9 %</cryo> et les DGT reçus de <cryo>2,2 %</cryo> toutes les 4 s que le personnage passe en combat. Cet effet peut être cumulé 5 fois maximum et ne se réinitialise pas si le personnage quitte le combat, mais diminue d'un cumul si le personnage subit des DGT."
+    },
+    "4": {
+      "0": "Les DGT infligés augmentent de <cryo>10 %</cryo> et les DGT reçus de <cryo>2 %</cryo> toutes les 4 s que le personnage passe en combat. Cet effet peut être cumulé 5 fois maximum et ne se réinitialise pas si le personnage quitte le combat, mais diminue d'un cumul si le personnage subit des DGT."
+    }
+  }
+}

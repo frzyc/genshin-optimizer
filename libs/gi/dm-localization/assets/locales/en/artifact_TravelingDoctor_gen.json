@@ -1,0 +1,29 @@
+{
+  "setName": "Traveling Doctor",
+  "setEffects": {
+    "2": "Increases incoming healing by 20%.",
+    "4": "Using Elemental Burst restores 20% HP."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Traveling Doctor's Silver Lotus",
+      "desc": "A precious medicinal ingredient that has lost all medicinal value after years in storage."
+    },
+    "plume": {
+      "name": "Traveling Doctor's Owl Feather",
+      "desc": "The durable feather of an owl. Emblematic of nocturnal supremacy, it gave some encouragement to the Traveling Doctor when venturing out to visit patients late at night."
+    },
+    "sands": {
+      "name": "Traveling Doctor's Pocket Watch",
+      "desc": "A precise instrument used for keeping time. For a doctor, every second counts."
+    },
+    "goblet": {
+      "name": "Traveling Doctor's Medicine Pot",
+      "desc": "This pot used to carry concentrated and extremely potent concoctions. It is now empty, but still gives off a strong smell of medicine."
+    },
+    "circlet": {
+      "name": "Traveling Doctor's Handkerchief",
+      "desc": "Used to tie back the doctor's hair when treating patients. Can also be used as a sling for sprains and broken arms in emergencies."
+    }
+  }
+}

@@ -1,0 +1,184 @@
+{
+  "constellationName": "Lapis Dei",
+  "name": "Zhongli",
+  "title": "Vago Mundo",
+  "description": "Seorang konsultan misterius yang terikat kontrak dengan Wangsheng Funeral Parlor. Dia memiliki pengetahuan yang mendalam tentang segala sesuatu.",
+  "auto": {
+    "name": "Rain of Stone",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Attack</strong>",
+        "1": "Melancarkan hingga 6 serangan tombak beruntun."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Mengonsumsi sejumlah Stamina untuk menyerang maju, dan menyebabkan tombak batu berjatuhan di sepanjang jalur serangan."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Menerjang dari udara untuk menghantam tanah, menyerang musuh di jalur terjangan dan mengakibatkan DMG area saat mendarat."
+      }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Tahap 4",
+      "4": "DMG Tahap 5",
+      "5": "DMG Tahap 6",
+      "6": "DMG Charged Attack",
+      "7": "Konsumsi Stamina Charged Attack",
+      "8": "DMG Selama Plunging",
+      "9": "DMG Plunging Attack Rendah/Tinggi",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Dominus Lapidis",
+    "description": {
+      "0": "Gunung, tanah, batu, semuanya mengandung kekuatan Geo. Namun, cuma sedikit saja yang bisa mengerahkan kekuatan itu sesuai kehendaknya.",
+      "1": "<br/>",
+      "2": "<strong>Tekan</strong>",
+      "3": "Memerintahkan elemen Geo di permukaan tanah untuk berkumpul dan membentuk sebuah Stone Stele.",
+      "4": "<br/>",
+      "5": "<strong>Tahan</strong>",
+      "6": "Mengakibatkan elemen Geo di sekitar meledak, menyebabkan efek berikut:",
+      "7": [
+        "Bila jumlah Stone Stele yang terbentuk belum mencapai batas maksimum, Stone Stele akan terbentuk.",
+        "Menciptakan sebuah Jade Shield yang dapat menyerap DMG sesuai dengan Max HP Zhongli.",
+        "Mengakibatkan <geo>Geo DMG Area.</geo>",
+        "Bila di sekeliling karakter terdapat musuh dengan <geo>elemen Geo</geo>, maka Zhongli dapat mengonsumsi sejumlah besar <geo>elemen Geo</geo>, maksimum dari 2 musuh. Efek ini tidak mengakibatkan DMG."
+      ],
+      "8": "<br/>",
+      "9": "<strong>Stone Stele</strong>",
+      "10": "Ketika terbentuk, pilar ini akan mengakibatkan <geo>Geo DMG Area</geo>.",
+      "11": "Selain itu, Stone Stele akan beresonansi dengan <geo>Geo Construct</geo> di sekitarnya, mengakibatkan <geo>Geo DMG</geo> ke musuh di sekitar.",
+      "12": "Stone Stele terhitung sebagai <geo>Geo Construct</geo>, yang dapat digunakan untuk menghalangi serangan dan juga dapat dipanjat.",
+      "13": "Awalnya, Stone Stele yang diciptakan oleh Zhongli, hanya bisa ada satu dalam satu waktu.",
+      "14": "<br/>",
+      "15": "<strong>Jade Shield</strong>",
+      "16": "Memiliki bonus 150% efek penyerapan terhadap semua Elemental DMG dan Physical DMG.",
+      "17": "Karakter yang berada dalam perlindungan Jade Shield akan menyebabkan semua Elemental RES dan Physical RES musuh di area kecil sekitarnya berkurang 20%. Efek tersebut tidak dapat ditumpuk.",
+      "18": "<br/>",
+      "19": "<i>Seorang ahli batu sejati akan mampu mengukir giok dan membentuk emas.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Batu/DMG Resonansi",
+      "1": "Cooldown Tekan",
+      "2": "DMG Menahan",
+      "3": "Ketahanan Dasar Perisai",
+      "4": "Bonus Ketahanan Perisai",
+      "5": "Durasi Perisai",
+      "6": "Cooldown (Mode Tahan)",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Planet Befall",
+    "description": {
+      "0": "Menjatuhkan sebuah meteor ke bumi, mengakibatkan <geo>Geo DMG</geo> yang besar serta menyebabkan efek <geo>Petrification</geo> kepada musuh di dalam area skill.",
+      "1": "<br/>",
+      "2": "<strong>Petrification</strong>",
+      "3": "Musuh yang terkena efek <geo>Petrification</geo> tidak dapat bergerak.",
+      "4": "<br/>",
+      "5": "<i>Bintang jatuh menghukum para pelaku yang berbuat curang dan tidak adil.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "Durasi Petrification",
+      "2": "Cooldown",
+      "3": "Konsumsi Energy",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Resonant Waves",
+    "description": {
+      "0": "Jade Shield akan menjadi lebih kuat setelah menerima DMG:",
+      "1": [
+        "Meningkatkan 5% kekuatan perisai milik karakter yang dilindungi Jade Shield.",
+        "Efek ini dapat ditumpuk sebanyak 5 kali dan akan bertahan sampai Jade Shield hilang."
+      ]
+    }
+  },
+  "passive2": {
+    "name": "Dominance of Earth",
+    "description": {
+      "0": "Zhongli menghasilkan bonus DMG berdasarkan Max HP miliknya:",
+      "1": [
+        "Meningkatkan DMG Normal Attack, Charged Attack, dan Plunging Attack sebesar 1,39% dari Max HP Zhongli.",
+        "Meningkatkan DMG <strong>Dominus Lapidis</strong> Stone Stele, resonansi, dan DMG tekan sebesar 1,9% Max HP Zhongli.",
+        "Meningkatkan DMG <strong>Planet Befall</strong> sebesar 33% Max HP Zhongli."
+      ]
+    }
+  },
+  "passive3": {
+    "name": "Arcanum of Crystal",
+    "description": {
+      "0": "Mengembalikan 15% jumlah Ore yang digunakan saat membuat senjata tipe Polearm."
+    }
+  },
+  "constellation1": {
+    "name": "Rock, the Backbone of Earth",
+    "description": {
+      "0": "Jumlah Stone Stele yang dapat diciptakan oleh <strong>Dominus Lapidis</strong> meningkat menjadi 2."
+    }
+  },
+  "constellation2": {
+    "name": "Stone, the Cradle of Jade",
+    "description": {
+      "0": "Saat <strong>Planet Befall</strong> dilancarkan, sebuah Jade Shield akan tercipta untuk Karakter yang berada di dekatnya."
+    }
+  },
+  "constellation3": {
+    "name": "Jade, Shimmering through Darkness",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Dominus Lapidis</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Topaz, Unbreakable and Fearless",
+    "description": {
+      "0": "Meningkatkan radius <strong>Planet Befall</strong> sebesar 20% dan meningkatkan durasi dari efek Petrification Planet Befall sebanyak 2 detik."
+    }
+  },
+  "constellation5": {
+    "name": "Lazuli, Herald of the Order!",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Planet Befall</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Chrysos, Bounty of Dominator",
+    "description": {
+      "0": "Saat Jade Shield aktif, 40% DMG yang diterima akan dikonversi menjadi pemulihan HP.",
+      "1": "Jumlah pemulihan yang diterima dalam satu kali konversi tidak dapat melebihi 8% dari Max HP karakter tersebut."
+    }
+  }
+}

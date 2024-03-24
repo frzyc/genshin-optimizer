@@ -1,0 +1,164 @@
+{
+  "name": "Lisa",
+  "title": "Strega della Rosa purpurea",
+  "description": "La languida ma estremamente colta bibliotecaria dei Cavalieri di Favonius, ritenuta dalla Akademiya di Sumeru la studentessa più illustre degli ultimi due secoli.",
+  "constellationName": "Tempus Fugit",
+  "auto": {
+    "name": "Tocco di fulmine",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attacco normale</strong>",
+        "1": "Effettua fino a 4 attacchi di fulmine che infliggono <electro>DAN da Electro</electro>."
+      },
+      "charged": {
+        "0": "<strong>Attacco caricato</strong>",
+        "1": "Consuma una determinata quantità di vigore per infliggere <electro>DAN da Electro ad area</electro> dopo un breve periodo di lancio."
+      },
+      "plunging": {
+        "0": "<strong>Attacco in picchiata</strong>",
+        "1": "Convogliando la forza di Electro, Lisa si scaglia contro il suolo da mezz'aria, danneggiando tutti gli avversari lungo la sua traiettoria. Infligge <electro>DAN da Electro ad area</electro> all'impatto col suolo."
+      }
+    },
+    "skillParams": {
+      "0": "DAN da 1º colpo",
+      "1": "DAN da 2º colpo",
+      "2": "DAN da 3º colpo",
+      "3": "DAN da 4º colpo",
+      "4": "DAN da ATT caricato",
+      "5": "Costo vigore ATT caricato",
+      "6": "DAN da ATT in picchiata",
+      "7": "DAN da ATT in picchiata basso/alto",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Tuono violetto",
+    "description": {
+      "0": "Incanala il potere del fulmine per spazzare via le questioni fastidiose.",
+      "1": "<br/>",
+      "2": "<strong>Pressione</strong>",
+      "3": "Rilascia una Fulminosfera a ricerca.",
+      "4": "Quando va a segno, infligge <electro>DAN da Electro</electro> e applica lo stato di Conduzione (cumulabile fino a 3 volte) agli avversari in una piccola area d'effetto.",
+      "5": "<br/>",
+      "6": "<strong>Pressione prolungata</strong>",
+      "7": "Dopo un tempo di lancio esteso, richiama i fulmini dal cielo infliggendo ingenti <electro>DAN da Electro</electro> a tutti gli avversari vicini.",
+      "8": "Infligge grandi quantità di danni extra agli avversari in base al numero di accumuli di Conduzione applicati, rimuovendo il loro stato di Conduzione.",
+      "9": "<br/>",
+      "10": "<i>Il viola di Electro è l'abbigliamento della Strega della Rosa purpurea.</i>"
+    },
+    "skillParams": {
+      "0": "DAN da pressione",
+      "1": "TdR pressione",
+      "2": "DAN non conduttivi con pressione prolungata",
+      "3": "DAN conduttivi con pressione prolungata accumulo 1",
+      "4": "DAN conduttivi con pressione prolungata accumulo 2",
+      "5": "DAN conduttivi con pressione prolungata accumulo 3",
+      "6": "TdR pressione prolungata",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Rosa fulminante",
+    "description": {
+      "0": "Evoca una Rosa fulminante che rilascia potenti saette, scagliando via gli avversari circostanti e infliggendo <electro>DAN da Electro</electro>.",
+      "1": "La Rosa fulminante emette continuamente fulmini per respingere gli avversari e infliggere <electro>DAN da Electro</electro> per tutta la durata dell'abilità.",
+      "2": "<br/>",
+      "3": "<i>Questa rosa è splendida, ma attenzione alle sue spine mortali.</i>"
+    },
+    "skillParams": {
+      "0": "DAN da scarica",
+      "1": "Durata",
+      "2": "TdR",
+      "3": "Costo energia",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Scossa di assestamento indotta",
+    "description": {
+      "0": "I colpi degli attacchi caricati applicano lo stato di Conduzione di <strong>Tuono violetto</strong> agli avversari."
+    }
+  },
+  "passive2": {
+    "name": "Campo elettrostatico",
+    "description": {
+      "0": "La DIF degli avversari colpiti da <strong>Rosa fulminante</strong> diminuisce di un 15% per 10 s."
+    }
+  },
+  "passive3": {
+    "name": "Farmaci generici",
+    "description": {
+      "0": "Quando Lisa prepara una pozione, ha un 20% di probabilità di recuperare una parte dei materiali per la creazione utilizzati."
+    }
+  },
+  "constellation1": {
+    "name": "Circuito infinito",
+    "description": {
+      "0": "L'energia di Lisa si rigenera di 2 per ogni avversario colpito tenendo premuto <strong>Tuono violetto</strong>.",
+      "1": "In questo modo può rigenerare fino a 10 di energia alla volta."
+    }
+  },
+  "constellation2": {
+    "name": "Campo elettromagnetico",
+    "description": {
+      "0": "Tenere premuto <strong>Tuono violetto</strong> ha i seguenti effetti:",
+      "1": [
+        " aumenta la DIF di un 25%;",
+        " aumenta la resistenza all'interruzione di Lisa."
+      ]
+    }
+  },
+  "constellation3": {
+    "name": "Lampo risonante",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Rosa fulminante</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation4": {
+    "name": "Eruzione plasmatica",
+    "description": {
+      "0": "<strong>Rosa fulminante</strong> ora sprigiona da 1 a 3 saette durante l'attacco."
+    }
+  },
+  "constellation5": {
+    "name": "Folgorazione",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Tuono violetto</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation6": {
+    "name": "Strega pulsante",
+    "description": {
+      "0": "Quando Lisa entra in campo, applica 3 cariche di Conduzione di <strong>Tuono violetto</strong> agli avversari vicini.",
+      "1": "Si può verificare una sola volta ogni 5 s."
+    }
+  }
+}

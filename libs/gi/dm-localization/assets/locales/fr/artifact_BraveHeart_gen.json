@@ -1,0 +1,29 @@
+{
+  "setName": "Cœur du Brave",
+  "setEffects": {
+    "2": "Augmente l'ATQ de 18 %.",
+    "4": "Augmente les DGT infligés aux ennemis dont les PV sont supérieurs à 50 % de 30 %."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Emblème du Brave",
+      "desc": "Une simple broche qui symbolise le souvenir d'une aventure passée."
+    },
+    "plume": {
+      "name": "Espoir du Brave",
+      "desc": "Une plume d'oiseau brillante qui donne un peu de courage."
+    },
+    "sands": {
+      "name": "Persévérance du Brave",
+      "desc": "Un sablier ancien qui n'a pas grande utilité. Peut-être symbolise-t-il le caractère insaisissable du temps ?"
+    },
+    "goblet": {
+      "name": "Dignité du Brave",
+      "desc": "Une coupe rudimentaire en bois. Elle est remplie de souvenirs."
+    },
+    "circlet": {
+      "name": "Couronne du Brave",
+      "desc": "Couronne rudimentaire en paille fragile. Pour certaines personnes, elle vaut autant qu'une couronne en or digne des plus grands souverains."
+    }
+  }
+}

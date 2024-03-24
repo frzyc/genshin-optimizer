@@ -1,0 +1,24 @@
+{
+  "name": "Fruit of Fulfillment",
+  "description": {
+    "0": "A fruit you obtained from an Aranara tale. It holds the potential to conquer any crisis."
+  },
+  "passiveName": "Full Circle",
+  "passiveDescription": {
+    "0": {
+      "0": "Obtain the \"Wax and Wane\" effect after an Elemental Reaction is triggered, gaining <cryo>24</cryo> Elemental Mastery while losing 5% ATK. For every 0.3s, 1 stack of Wax and Wane can be gained. Max 5 stacks. For every 6s that go by without an Elemental Reaction being triggered, 1 stack will be lost. This effect can be triggered even when the character is off-field."
+    },
+    "1": {
+      "0": "Obtain the \"Wax and Wane\" effect after an Elemental Reaction is triggered, gaining <cryo>27</cryo> Elemental Mastery while losing 5% ATK. For every 0.3s, 1 stack of Wax and Wane can be gained. Max 5 stacks. For every 6s that go by without an Elemental Reaction being triggered, 1 stack will be lost. This effect can be triggered even when the character is off-field."
+    },
+    "2": {
+      "0": "Obtain the \"Wax and Wane\" effect after an Elemental Reaction is triggered, gaining <cryo>30</cryo> Elemental Mastery while losing 5% ATK. For every 0.3s, 1 stack of Wax and Wane can be gained. Max 5 stacks. For every 6s that go by without an Elemental Reaction being triggered, 1 stack will be lost. This effect can be triggered even when the character is off-field."
+    },
+    "3": {
+      "0": "Obtain the \"Wax and Wane\" effect after an Elemental Reaction is triggered, gaining <cryo>33</cryo> Elemental Mastery while losing 5% ATK. For every 0.3s, 1 stack of Wax and Wane can be gained. Max 5 stacks. For every 6s that go by without an Elemental Reaction being triggered, 1 stack will be lost. This effect can be triggered even when the character is off-field."
+    },
+    "4": {
+      "0": "Obtain the \"Wax and Wane\" effect after an Elemental Reaction is triggered, gaining <cryo>36</cryo> Elemental Mastery while losing 5% ATK. For every 0.3s, 1 stack of Wax and Wane can be gained. Max 5 stacks. For every 6s that go by without an Elemental Reaction being triggered, 1 stack will be lost. This effect can be triggered even when the character is off-field."
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Raven Bow",
+  "description": {
+    "0": "Burung gagak diketahui sebagai pengantar kematian. Tubuh busur ini dihiasi dengan bulu burung gagak yang menandakan kematian bagi mangsa yang diincarnya."
+  },
+  "passiveName": "Bane of Flame and Water",
+  "passiveDescription": {
+    "0": {
+      "0": "Meningkatkan <cryo>12%</cryo> DMG terhadap musuh yang terpengaruh Hydro atau Pyro."
+    },
+    "1": {
+      "0": "Meningkatkan <cryo>15%</cryo> DMG terhadap musuh yang terpengaruh Hydro atau Pyro."
+    },
+    "2": {
+      "0": "Meningkatkan <cryo>18%</cryo> DMG terhadap musuh yang terpengaruh Hydro atau Pyro."
+    },
+    "3": {
+      "0": "Meningkatkan <cryo>21%</cryo> DMG terhadap musuh yang terpengaruh Hydro atau Pyro."
+    },
+    "4": {
+      "0": "Meningkatkan <cryo>24%</cryo> DMG terhadap musuh yang terpengaruh Hydro atau Pyro."
+    }
+  }
+}

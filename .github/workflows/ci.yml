@@ -17,27 +17,10 @@ jobs:
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
-        with:
-          persist-credentials: false
-      - name: Get Cache Key
-        id: get-cache-key
-        run: |
-          echo "key=$(git ls-tree -r HEAD | grep '^160000' | sha256sum | cut -d " " -f 1)" >> $GITHUB_OUTPUT
-      - uses: actions/cache/restore@v4
-        with:
-          path: .git/modules
-          key: submodule-${{ steps.get-cache-key.outputs.key }}
-          restore-keys: |
-            submodule-
-      - uses: actions/checkout@v4
-        with:
-          persist-credentials: false
-          submodules: true
       - uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: 'yarn'
-          cache-dependency-path: yarn.lock
       - name: Yarn Install
         run: |
           yarn install --immutable --immutable-cache
@@ -49,8 +32,6 @@ jobs:
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
-        with:
-          persist-credentials: false
       - name: Get Cache Key
         id: get-cache-key
         run: |
@@ -63,13 +44,11 @@ jobs:
             submodule-
       - uses: actions/checkout@v4
         with:
-          persist-credentials: false
           submodules: true
       - uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: 'yarn'
-          cache-dependency-path: yarn.lock
       - name: Yarn Install
         run: |
           yarn install --immutable --immutable-cache
@@ -77,6 +56,43 @@ jobs:
         run: |
           yarn run nx run-many --target=test
   format:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }} # Force checking of the whole repo when running on pushes to master
+      - name: Fetch master
+        if: ${{ github.event_name == 'pull_request' }}
+        run: |
+          git fetch --no-tags --no-recurse-submodules --filter=blob:none origin +master:refs/heads/master
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'yarn'
+      - name: Yarn Install
+        run: |
+          yarn install --immutable --immutable-cache
+      - name: Check Formatting
+        run: |
+          patch -i tools/chunkify.js.patch node_modules/nx/src/utils/chunkify.js
+          yarn run nx format:check
+  typecheck:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'yarn'
+      - name: Yarn Install
+        run: |
+          yarn install --immutable --immutable-cache
+      - name: Check types
+        run: |
+          yarn run nx run-many --target=typecheck
+  gen-file:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -93,12 +109,7 @@ jobs:
             submodule-
       - uses: actions/checkout@v4
         with:
-          ref: ${{ github.sha }} # Force checking of the whole repo when running on pushes to master
           submodules: true
-      - name: Fetch master
-        if: ${{ github.event_name == 'pull_request' }}
-        run: |
-          git fetch --no-tags --no-recurse-submodules --filter=blob:none origin +master:refs/heads/master
       - name: Sparse Checkout
         run: |
           $(cd libs/gi/dm/GenshinData  && git sparse-checkout set TextMap ExcelBinOutput)
@@ -107,40 +118,10 @@ jobs:
         with:
           node-version: 20
           cache: 'yarn'
-          cache-dependency-path: yarn.lock
       - name: Yarn Install
         run: |
           yarn install --immutable --immutable-cache
-      - name: Check Formatting
+      - name: Check Gen File
         run: |
-          yarn run nx format:check
-  typecheck:
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
-    steps:
-      - uses: actions/checkout@v4
-      - name: Get Cache Key
-        id: get-cache-key
-        run: |
-          echo "key=$(git ls-tree -r HEAD | grep '^160000' | sha256sum | cut -d " " -f 1)" >> $GITHUB_OUTPUT
-      - uses: actions/cache/restore@v4
-        with:
-          path: .git/modules
-          key: submodule-${{ steps.get-cache-key.outputs.key }}
-          restore-keys: |
-            submodule-
-      - uses: actions/checkout@v4
-        with:
-          persist-credentials: false
-          submodules: true
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: 'yarn'
-          cache-dependency-path: yarn.lock
-      - name: Yarn Install
-        run: |
-          yarn install --immutable --immutable-cache
-      - name: Check types
-        run: |
-          yarn run nx run-many --target=typecheck
+          yarn run nx run-many -t gen-file
+          test -z "$(git status --porcelain | tee /dev/stderr)"

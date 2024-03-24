@@ -1,0 +1,24 @@
+{
+  "name": "Kızıl Kum Asası",
+  "description": {
+    "0": "Obsidiyenden yapılma bir çift asanın teki. Bu asaların çöl halkını yönetme hakkını tanıdığı söylenir ama şimdi bunların asli olup olmadığını bilecek kimse kalmadı."
+  },
+  "passiveName": "Ufuk Serabı",
+  "passiveDescription": {
+    "0": {
+      "0": "Kuşanan karakter Element Ustalığının <cryo>%52'si</cryo> kadar bonus Saldırı kazanır. Element Becerisi düşmanlara vurduğunda 10 saniyeliğine Kızıl Kum Rüyası etkisi kazanılır: Kuşanan karakter Element Ustalığının <cryo>%28'i</cryo> kadar bonus Saldırı kazanır. 3 kademeye kadar birikebilir."
+    },
+    "1": {
+      "0": "Kuşanan karakter Element Ustalığının <cryo>%65'i</cryo> kadar bonus Saldırı kazanır. Element Becerisi düşmanlara vurduğunda 10 saniyeliğine Kızıl Kum Rüyası etkisi kazanılır: Kuşanan karakter Element Ustalığının <cryo>%35'i</cryo> kadar bonus Saldırı kazanır. 3 kademeye kadar birikebilir."
+    },
+    "2": {
+      "0": "Kuşanan karakter Element Ustalığının <cryo>%78'i</cryo> kadar bonus Saldırı kazanır. Element Becerisi düşmanlara vurduğunda 10 saniyeliğine Kızıl Kum Rüyası etkisi kazanılır: Kuşanan karakter Element Ustalığının <cryo>%42'si</cryo> kadar bonus Saldırı kazanır. 3 kademeye kadar birikebilir."
+    },
+    "3": {
+      "0": "Kuşanan karakter Element Ustalığının <cryo>%91'i</cryo> kadar bonus Saldırı kazanır. Element Becerisi düşmanlara vurduğunda 10 saniyeliğine Kızıl Kum Rüyası etkisi kazanılır: Kuşanan karakter Element Ustalığının <cryo>%49'u</cryo> kadar bonus Saldırı kazanır. 3 kademeye kadar birikebilir."
+    },
+    "4": {
+      "0": "Kuşanan karakter Element Ustalığının <cryo>%104'ü</cryo> kadar bonus Saldırı kazanır. Element Becerisi düşmanlara vurduğunda 10 saniyeliğine Kızıl Kum Rüyası etkisi kazanılır: Kuşanan karakter Element Ustalığının <cryo>%56'sı</cryo> kadar bonus Saldırı kazanır. 3 kademeye kadar birikebilir."
+    }
+  }
+}

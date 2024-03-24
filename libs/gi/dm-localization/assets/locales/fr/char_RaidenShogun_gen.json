@@ -1,0 +1,177 @@
+{
+  "name": "Shogun Raiden",
+  "title": "Plan euthymique",
+  "description": "Son Excellence, la toute-puissante Narukami Ogosho, qui a promis au peuple d'Inazuma une éternité immuable.",
+  "constellationName": "Imperatrix Umbrosa",
+  "auto": {
+    "name": "Prémisse",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attaque normale</strong>",
+        "1": "Enchaîne jusqu'à 5 coups de lance."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Consomme de l'endurance pour déclencher une attaque ascendante."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis sur la route et des DGT de zone à l'impact."
+      }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT 4e coup",
+      "4": "DGT 5e coup",
+      "5": "DGT attaque chargée",
+      "6": "Coût d'endurance attaque chargée",
+      "7": "DGT durant la chute",
+      "8": "DGT chute basse/élevée",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Transcendance : Présage funeste",
+    "description": {
+      "0": "La Shogun Raiden dévoile un fragment de son euthymie, infligeant des <electro>DGT Électro</electro> aux ennemis proches, et accordant à tous les personnages de l'équipe à proximité un œil de jugement orageux.",
+      "1": "<br/>",
+      "2": "<strong>Œil de jugement orageux</strong>",
+      "3": [
+        " Lorsqu'un personnage bénéficiant de cet effet attaque et inflige des DGT à un ennemi, l'œil déclenche une attaque coordonnée, infligeant des <electro>DGT Électro de zone</electro> à l'emplacement de l'ennemi.",
+        " Les personnages qui obtiennent un œil de jugement orageux voient les DGT de leurs déchaînements élémentaires augmenter pendant la durée de l'œil, en fonction de l'énergie élémentaire consommée par le déchaînement."
+      ],
+      "4": "<br/>",
+      "5": "L'œil peut déclencher une attaque coordonnée toutes les 0,9 s par équipe.",
+      "6": "Les attaques coordonnées générées par des personnages hors de votre équipe infligent 20 % des DGT normaux.",
+      "7": "<br/>",
+      "8": "<i>Les êtres d'une grande divinité peuvent affecter tout ce qui les entoure, et l'Archon Électro peut manipuler les étoiles menaçantes pour protéger ses partisans et infliger une sentence fulgurante à ses ennemis.</i>"
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "DGT attaque coordonnée",
+      "2": "Durée",
+      "3": "Bonus DGT déchaînement élémentaire",
+      "4": "Temps de recharge",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Art secret : Dogme d'idéal",
+    "description": {
+      "0": "Rassemblant des vérités innombrables et des souhaits inquantifiables, la Shogun Raiden libère le Kendo d'idéal et inflige des <electro>DGT Électro de zone</electro>, avant d'utiliser l'Harmonie d'idéal au combat pendant un certain temps. Les DGT infligés par le Kendo d'idéal et ceux infligés par les attaques sous l'Harmonie d'idéal augmentent selon le nombre de cumuls de résolution de Chakra Desiderata consommés en utilisant l'aptitude.",
+      "1": "<br/>",
+      "2": "<strong>Harmonie d'idéal</strong>",
+      "3": "Dans cet état, la Shogun Raiden utilisera son tachi au combat, tandis que ses attaques normales, chargées et plongeantes seront imprégnées de <electro>DGT Électro</electro> ne pouvant pas être enchantés. Lorsque de telles attaques touchent des ennemis, la Shogun restaure l'énergie élémentaire de tous les personnages de l'équipe à proximité. La restauration peut être déclenchée une fois toutes les secondes de cette manière, et un maximum de 5 fois pendant toute la durée de cette aptitude.",
+      "4": "Dans cet état, la RÉS à l'interruption de la Shogun Raiden augmente, et elle est immunisée contre les <electro>Électrocutions</electro>.",
+      "5": "Tant que l'Harmonie d'idéal est active, les DGT des attaques normales, chargées et plongeantes de la Shogun Raiden sont considérés comme des DGT de déchaînement élémentaire.",
+      "6": "<br/>",
+      "7": "Les effets de l'Harmonie d'idéal seront annulés lorsque la Shogun Raiden quitte le champ de bataille.",
+      "8": "<br/>",
+      "9": "<strong>Chakra Desiderata</strong>",
+      "10": "Lorsque les personnages de l'équipe à proximité utilisent un déchaînement élémentaire (hormis la Shogun Raiden), le Chakra Desiderata de la Shogun Raiden accumule de la résolution en fonction de l'énergie élémentaire consommée par le déchaînement.",
+      "11": "Il est possible d'obtenir jusqu'à 60 cumuls de résolution.",
+      "12": "<br/>",
+      "13": "La résolution obtenue par le Chakra Desiderata sera annulée après 300 s si la Shogun Raiden quitte le combat.",
+      "14": "<br/>",
+      "15": "<i>C'est la nouvelle technique secrète de la Shogun Raiden. Abandonnant son « insouciance » dénuée de substance, elle porte désormais sur ses épaules un nouvel « idéal » : les rêves et les ambitions de tous. Tout comme « dogme », la « vérité », signifie également le « renouveau », Inazuma est aussi entrée dans un nouveau chapitre.</i>"
+    },
+    "skillParams": {
+      "0": "DGT de base kendo d'idéal",
+      "1": "Bonus de résolution",
+      "2": "Gain de cumuls de résolution",
+      "3": "DGT 1er coup",
+      "4": "DGT 2e coup",
+      "5": "DGT 3e coup",
+      "6": "DGT 4e coup",
+      "7": "DGT 5e coup",
+      "8": "Attaque chargée",
+      "9": "Coût d'endurance attaque chargée",
+      "10": "DGT durant la chute",
+      "11": "DGT Chute basse/élevée",
+      "12": "Restauration énergie d'Harmonie d'idéal",
+      "13": "Durée d'Harmonie d'idéal",
+      "14": "Temps de recharge",
+      "15": "Énergie élémentaire"
+    }
+  },
+  "passive1": {
+    "name": "Souhaits innombrables",
+    "description": {
+      "0": "Lorsque les personnages de l'équipe à proximité obtiennent un orbe ou une particule élémentaire, le <strong>Chakra Desiderata</strong> obtient 2 cumuls de résolution.",
+      "1": "Cet effet peut être déclenché une fois toutes les 3 s."
+    }
+  },
+  "passive2": {
+    "name": "L'illuminée",
+    "description": {
+      "0": "Pour chaque tranche de 1 % de recharge d'énergie qu'elle possède au-dessus de 100 %, la Shogun Raiden bénéficie des effets suivants :",
+      "1": [
+        " La restauration d'énergie élémentaire accordée par l'<strong>Harmonie d'idéal</strong> augmente de 0,6 %.",
+        " Le <electro>bonus de DGT Électro</electro> augmente de 0,4 %."
+      ]
+    }
+  },
+  "passive3": {
+    "name": "Préservation suprême",
+    "description": {
+      "0": "Les moras utilisés lors de l'élévation d'épées à une main et d'armes d'hast diminuent de 50 %."
+    }
+  },
+  "constellation1": {
+    "name": "Inscription menaçante",
+    "description": {
+      "0": "<strong>Chakra Desiderata</strong> accumule de la résolution encore plus rapidement. Quand un personnage <electro>Électro</electro> utilise un déchaînement élémentaire, le gain de résolution augmente de 80 % ; quand un personnage d'un autre type élémentaire utilise un déchaînement élémentaire, le gain de résolution augmente de 20 %."
+    }
+  },
+  "constellation2": {
+    "name": "Brise-acier",
+    "description": {
+      "0": "Lorsqu'elles bénéficient de l'état Harmonie d'idéal accordé par <strong>Art secret : Dogme d'idéal</strong>, les attaques de la Shogun Raiden ignorent 60 % de la DÉF des ennemis."
+    }
+  },
+  "constellation3": {
+    "name": "Shinkage du passé",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Art secret : Dogme d'idéal</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation4": {
+    "name": "Serment de droiture",
+    "description": {
+      "0": "Lorsque l'état <strong>Harmonie d'idéal</strong> accordé par <strong>Art secret : Dogme d'idéal</strong> prend fin, l'ATQ de tous les personnages de l'équipe à proximité (hormis la Shogun Raiden) augmente de 30 % pendant 10 s."
+    }
+  },
+  "constellation5": {
+    "name": "Apparition de la Shogun",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Transcendance : Présage funeste</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation6": {
+    "name": "Porteur de souhaits",
+    "description": {
+      "0": "Lorsqu'elles bénéficient de l'état <strong>Harmonie d'idéal</strong> accordé par <strong>Art secret : Dogme d'idéal</strong>, les attaques de la Shogun Raiden qui sont considérées comme faisant partie de son déchaînement élémentaire diminuent le TdR des déchaînements élémentaires de tous les personnages de l'équipe à proximité (hormis la Shogun Raiden) de 1 s.",
+      "1": "Cet effet peut être déclenché une fois toutes les secondes, et un maximum de 5 fois pendant la durée de cet état."
+    }
+  }
+}

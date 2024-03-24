@@ -1,0 +1,163 @@
+{
+  "name": "Yanfei",
+  "title": "Naive Weisheit",
+  "description": "Eine sehr bekannte Rechtsberaterin in Liyue und ein gescheites Mädchen mit dem Blut einer göttlichen Bestie in ihren Adern.",
+  "constellationName": "Bestia Iustitia",
+  "auto": {
+    "name": "Flammendes Siegel",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Standardangriff</strong>",
+        "1": "Schießt mehrere Feuerbälle nacheinander ab und verursacht bis zu dreimal <pyro>Pyro-Schaden</pyro>.",
+        "2": "Jeder Treffer gibt Yanfei ein Flammensiegel. Kann anfänglich bis zu drei Flammensiegel besitzen. Bei jedem Auslösen wird die Dauer der vorhandenen Flammensiegel aktualisiert.",
+        "3": "Jedes Flammensiegel verringert Yanfeis Ausdauerverbrauch und verschwindet, wenn sie ausgewechselt wird."
+      },
+      "charged": {
+        "0": "<strong>Heftiger Schlag</strong>",
+        "1": "Verbraucht Ausdauer sowie nach kurzem Aufladen alle Flammensiegel und verursacht vor sich <pyro>Pyro-Flächenschaden</pyro>.",
+        "2": "Verstärkt basierend auf der Anzahl der verbrauchten Flammensiegel die Reichweite und den Schaden des heftigen Schlags."
+      },
+      "plunging": {
+        "0": "<strong>Angriff aus dem Fall</strong>",
+        "1": "Konzentriert die Kraft des Feuers, schlägt beim Fallen aus der Luft auf den Boden, greift alle Gegner in der Bahn an und verursacht beim Aufkommen <pyro>Pyro-Flächenschaden</pyro>."
+      }
+    },
+    "skillParams": {
+      "0": "SCH Phase 1",
+      "1": "SCH Phase 2",
+      "2": "SCH Phase 3",
+      "3": "SCH heftiger Schläge",
+      "4": "Ausdauerverbrauch heftiger Schläge",
+      "5": "Verringerung des Ausdauerverbrauchs durch Flammensiegel",
+      "6": "Dauer der Flammensiegel",
+      "7": "SCH beim Fallen",
+      "8": "SCH beim Fallen aus niedriger/großer Höhe",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Pakt des Feuers",
+    "description": {
+      "0": "Beschwört lodernde Flammen und verursacht <pyro>Pyro-Flächenschaden</pyro>.",
+      "1": "Bekommt beim Treffen von Gegnern die Höchstzahl an Flammensiegeln.",
+      "2": "<br/>",
+      "3": "<i>Der Pakt des Feuers beinhaltet nicht nur die geltenden Gesetze, sondern auch die von Yanfei selbst formulierten Klauseln, denn der Rat für Allgemeine Angelegenheiten allein ist nicht in der Lage, die Naturgesetze zu ändern.</i>"
+    },
+    "skillParams": {
+      "0": "Fähigkeits-SCH",
+      "1": "Abklingzeit",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Pakt des flammenden Infernos",
+    "description": {
+      "0": "Beschwört Flammen des Infernos, greift Gegner in der Umgebung an und verursacht <pyro>Pyro-Flächenschaden</pyro>. Gibt dabei Yanfei die Höchstzahl an Flammensiegeln und den Effekt Sengende Hitze.",
+      "1": "<br/>",
+      "2": "<strong>Sengende Hitze</strong>",
+      "3": "Löst folgende Effekte aus:",
+      "4": [
+        " Gibt Yanfei in gleichen zeitlichen Abständen je ein Flammensiegel.",
+        " Erhöht den Schaden heftiger Schläge."
+      ],
+      "5": "Endet, wenn Yanfei ausgewechselt oder besiegt wird.",
+      "6": "<br/>",
+      "7": "<i>„Der Pakt zwischen uns von Leben und Tod ist nun vollständig. Demgemäß wirst du sterben und ich werde weiterleben!“</i>"
+    },
+    "skillParams": {
+      "0": "Fähigkeits-SCH",
+      "1": "",
+      "2": "Intervall der Flammensiegel",
+      "3": "SCH-Bonus für heftige Schläge",
+      "4": "Dauer",
+      "5": "Abklingzeit",
+      "6": "Elementarenergie",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Koppelungsklausel",
+    "description": {
+      "0": "Erhöht mit jedem verbrauchten Flammensiegel durch heftige Schläge den <pyro>Pyro-Schadensbonus</pyro> 6 s lang um 5 %. Falls die Figur innerhalb der Wirkungsdauer des Effekts nochmals heftige Schläge anwendet, wird der vorige Effekt zuerst entfernt."
+    }
+  },
+  "passive2": {
+    "name": "Wachsame Argusaugen",
+    "description": {
+      "0": "Verursacht einmal zusätzlichen <pyro>Pyro-Flächenschaden</pyro> in Höhe von 80 % ANG, wenn Yanfeis heftige Schläge KT bei Gegnern verursachen. Der Flächenschaden wird als Schaden von heftigen Schlägen betrachtet."
+    }
+  },
+  "passive3": {
+    "name": "Gelehrsamkeit",
+    "description": {
+      "0": "Zeigt alle <strong>Besonderheiten Liyues</strong> in der Nähe auf der Minikarte an."
+    }
+  },
+  "constellation1": {
+    "name": "Rechthaberei",
+    "description": {
+      "0": "Erhöht mit jedem Flammensiegel Yanfeis Unterbrechungs-WDS beim Aufladen, wenn sie einen heftigen Schlag ausführt, und verringert den Ausdauerverbrauch für diesen heftigen Schlag zusätzlich um 10 %."
+    }
+  },
+  "constellation2": {
+    "name": "Endgültige Auslegung vorbehalten",
+    "description": {
+      "0": "Erhöht die KT bei Yanfeis heftigen Schlägen gegenüber Gegnern mit weniger als 50 % LP um 20 %."
+    }
+  },
+  "constellation3": {
+    "name": "Siegel in lodernder Flamme",
+    "description": {
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Pakt des Feuers</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation4": {
+    "name": "Eiserner Pakt",
+    "description": {
+      "0": "Effekte bei Anwendung von <strong>Pakt des flammenden Infernos</strong>:",
+      "1": "Erstellt einen Schutzschild, der Schaden in Höhe von 45 % der max. LP abhält, hält 15 s.",
+      "2": "Hält bei <pyro>Pyro-Schaden</pyro> 250 % ab."
+    }
+  },
+  "constellation5": {
+    "name": "Eidesstattliche Versicherung",
+    "description": {
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Pakt des flammenden Infernos</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation6": {
+    "name": "Extraklausel",
+    "description": {
+      "0": "Erhöht die Höchstmenge an Flammensiegeln um 1."
+    }
+  }
+}

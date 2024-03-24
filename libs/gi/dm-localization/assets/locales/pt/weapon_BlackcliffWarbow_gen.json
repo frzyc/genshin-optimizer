@@ -1,0 +1,24 @@
+{
+  "name": "Arco do Penhasco Obscuro",
+  "description": {
+    "0": "Um arco feito de Pedra Negra extremamente robusto. Requer um arqueiro com um braço forte para usar."
+  },
+  "passiveName": "De vitória em vitória",
+  "passiveDescription": {
+    "0": {
+      "0": "Após derrotar um inimigo, o ATQ é aumentado em <cryo>12%</cryo> por 30s. Este efeito pode ser acumulado até 3x e a duração de cada acúmulo é independente dos outros."
+    },
+    "1": {
+      "0": "Após derrotar um inimigo, o ATQ é aumentado em <cryo>15%</cryo> por 30s. Este efeito pode ser acumulado até 3x e a duração de cada acúmulo é independente dos outros."
+    },
+    "2": {
+      "0": "Após derrotar um inimigo, o ATQ é aumentado em <cryo>18%</cryo> por 30s. Este efeito pode ser acumulado até 3x e a duração de cada acúmulo é independente dos outros."
+    },
+    "3": {
+      "0": "Após derrotar um inimigo, o ATQ é aumentado em <cryo>21%</cryo> por 30s. Este efeito pode ser acumulado até 3x e a duração de cada acúmulo é independente dos outros."
+    },
+    "4": {
+      "0": "Após derrotar um inimigo, o ATQ é aumentado em <cryo>24%</cryo> por 30s. Este efeito pode ser acumulado até 3x e a duração de cada acúmulo é independente dos outros."
+    }
+  }
+}

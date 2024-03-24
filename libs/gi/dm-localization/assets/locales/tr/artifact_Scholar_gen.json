@@ -1,0 +1,29 @@
+{
+  "setName": "Alim",
+  "setEffects": {
+    "2": "+%20 Enerji Yüklemesi.",
+    "4": "Element Parçacıkları veya Küreleri kazanmak, bir yay veya katalizör kuşanan tüm grup üyelerine 3 Enerji verir. 3 saniyede bir uygulanabilir."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Alimin Kitap Ayracı",
+      "desc": "Kitap ayracı olarak kullanılan kuru bir çiçek. Kokusunu kitabın sayfalarından alıyor."
+    },
+    "plume": {
+      "name": "Alimin Tüy Kalemi",
+      "desc": "Tüy kalem olarak kullanılan bir kuş tüyü. Çok kullanılmaktan siyahlaşmış."
+    },
+    "sands": {
+      "name": "Alimin Saati",
+      "desc": "Eski sahibi penceresiz bir odada kendini kitaplara gömen bir alim olan küçük bir masa saati. Bu saat muhtemelen onun için zamanı takip etmenin tek yoluydu."
+    },
+    "goblet": {
+      "name": "Alimin Mürekkep Hokkası",
+      "desc": "Normalde su içmek için tasarlanan bu bardak, bir alim fırçalarını temizlemek için kullandığından beri siyah lekeli bir hokkaya dönüştü."
+    },
+    "circlet": {
+      "name": "Alimin Merceği",
+      "desc": "Bu düzeltici lensler, çok çalışmaktan gözü hasar alan bir kişinin görüşünü geri kazanmasına yardımcı oldu."
+    }
+  }
+}

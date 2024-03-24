@@ -1,0 +1,24 @@
+{
+  "name": "Mẫu Kim Phách",
+  "description": {
+    "0": "Pháp khí kim phách của Hắc Nham Xưởng. Trong ánh đen phát ra tia sáng của nhật nguyệt sao."
+  },
+  "passiveName": "Xuy Kim",
+  "passiveDescription": {
+    "0": {
+      "0": "6s sau khi thi triển kỹ năng nộ, mỗi 2s hồi <cryo>4</cryo> điểm năng lượng nguyên tố; Tất cả nhân vật trong đội mỗi 2s hồi <cryo>4%</cryo> HP."
+    },
+    "1": {
+      "0": "6s sau khi thi triển kỹ năng nộ, mỗi 2s hồi <cryo>4.5</cryo> điểm năng lượng nguyên tố; Tất cả nhân vật trong đội mỗi 2s hồi <cryo>4.5%</cryo> HP."
+    },
+    "2": {
+      "0": "6s sau khi thi triển kỹ năng nộ, mỗi 2s hồi <cryo>5</cryo> điểm năng lượng nguyên tố; Tất cả nhân vật trong đội mỗi 2s hồi <cryo>5%</cryo> HP."
+    },
+    "3": {
+      "0": "6s sau khi thi triển kỹ năng nộ, mỗi 2s hồi <cryo>5.5</cryo> điểm năng lượng nguyên tố; Tất cả nhân vật trong đội mỗi 2s hồi <cryo>5.5%</cryo> HP."
+    },
+    "4": {
+      "0": "6s sau khi thi triển kỹ năng nộ, mỗi 2s hồi <cryo>6</cryo> điểm năng lượng nguyên tố; Tất cả nhân vật trong đội mỗi 2s hồi <cryo>6%</cryo> HP."
+    }
+  }
+}

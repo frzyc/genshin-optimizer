@@ -1,0 +1,24 @@
+{
+  "name": "Spada d'osso di serpente",
+  "description": {
+    "0": "Un'arma rara, originaria dell'oceano. Brandendola, puoi quasi sentire il suono delle onde eterne."
+  },
+  "passiveName": "Frangionde",
+  "passiveDescription": {
+    "0": {
+      "0": "Quando è in campo, il personaggio infligge e subisce rispettivamente un <cryo>6%</cryo> e un <cryo>3%</cryo> di DAN in più ogni 4 s. Questo effetto può accumularsi fino a 5 volte e non si annulla se il personaggio lascia il campo. Tuttavia, se quest'ultimo subisce DAN, gli accumuli si riducono di 1."
+    },
+    "1": {
+      "0": "Quando è in campo, il personaggio infligge e subisce rispettivamente un <cryo>7%</cryo> e un <cryo>2,7%</cryo> di DAN in più ogni 4 s. Questo effetto può accumularsi fino a 5 volte e non si annulla se il personaggio lascia il campo. Tuttavia, se quest'ultimo subisce DAN, gli accumuli si riducono di 1."
+    },
+    "2": {
+      "0": "Quando è in campo, il personaggio infligge e subisce rispettivamente un <cryo>8%</cryo> e un <cryo>2,4%</cryo> di DAN in più ogni 4 s. Questo effetto può accumularsi fino a 5 volte e non si annulla se il personaggio lascia il campo. Tuttavia, se quest'ultimo subisce DAN, gli accumuli si riducono di 1."
+    },
+    "3": {
+      "0": "Quando è in campo, il personaggio infligge e subisce rispettivamente un <cryo>9%</cryo> e un <cryo>2,2%</cryo> di DAN in più ogni 4 s. Questo effetto può accumularsi fino a 5 volte e non si annulla se il personaggio lascia il campo. Tuttavia, se quest'ultimo subisce DAN, gli accumuli si riducono di 1."
+    },
+    "4": {
+      "0": "Quando è in campo, il personaggio infligge e subisce rispettivamente un <cryo>10%</cryo> e un <cryo>2%</cryo> di DAN in più ogni 4 s. Questo effetto può accumularsi fino a 5 volte e non si annulla se il personaggio lascia il campo. Tuttavia, se quest'ultimo subisce DAN, gli accumuli si riducono di 1."
+    }
+  }
+}

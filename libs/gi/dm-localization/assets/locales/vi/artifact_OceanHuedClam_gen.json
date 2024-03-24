@@ -1,0 +1,29 @@
+{
+  "setName": "Xà Cừ Đại Dương",
+  "setEffects": {
+    "2": "Tăng Trị Liệu lên 15%.",
+    "4": "Khi nhân vật trang bị bộ Thánh Di Vật này thực hiện trị liệu cho nhân vật trong đội, sẽ tạo ra Bọt Biển kéo dài 3s, ghi lại lượng HP hồi phục của việc trị liệu (Bao gồm cả lượng vượt mức). Khi kết thúc thời gian duy trì, Bọt Biển sẽ nổ tung, gây cho kẻ địch xung quanh sát thương bằng 90% lượng hồi phục tích lũy (Cách tính sát thương này giống với các phản ứng nguyên tố như Điện Cảm, Siêu Dẫn...nhưng không bị ảnh hưởng bởi Tinh Thông Nguyên Tố, cấp hoặc buff sát thương phản ứng). Mỗi 3.5s tối đa tạo 1 Bọt Biển; Bọt Biển tối đa ghi lại 30,000 điểm hồi phục, bao gồm cả lượng trị liệu vượt mức; đội của bản thân cùng lúc chỉ được tồn tại tối đa 1 Bọt Biển. Khi nhân vật trang bị bộ Thánh Di Vật này ở trong đội chờ, vẫn có thể kích hoạt hiệu quả này."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Hoa Đại Dương",
+      "desc": "Đóa hoa nhuốm màu sắc của biển cả, ánh lên những sắc màu kỳ ảo dưới ánh trăng."
+    },
+    "plume": {
+      "name": "Lông Vũ Thủy Cung",
+      "desc": "Lông vũ tiệp màu với san hô, tương truyền rơi ra từ y phục pháp sư."
+    },
+    "sands": {
+      "name": "Vỏ Sò Ly Biệt",
+      "desc": "Vỏ sò hoàn mỹ, đến từ đáy đại dương sâu thẳm."
+    },
+    "goblet": {
+      "name": "Lồng Trân Châu",
+      "desc": "Minh châu được hiến tế bởi pháp sư Đảo Watatsumi, ánh sáng tỏa ra không bao giờ tắt."
+    },
+    "circlet": {
+      "name": "Vương Miện Watatsumi",
+      "desc": "Vương miện cổ xưa, thuộc sở hữu của những \"thần nhân\" bị lãng quên. Giờ đây được người dân Watatsumi bảo quản cẩn thận."
+    }
+  }
+}

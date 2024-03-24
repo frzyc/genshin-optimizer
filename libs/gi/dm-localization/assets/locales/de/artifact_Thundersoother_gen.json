@@ -1,0 +1,29 @@
+{
+  "setName": "Donner beruhigender Weiser",
+  "setEffects": {
+    "2": "Erhöht den Elektro-WDS um 40 %.",
+    "4": "Erhöht den von Elektro-Effekten betroffenen Gegnern zugefügten Schaden um 35 %."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Herz des Donnerbändigers",
+      "desc": "Eine Blume, die nur in Gegenden mit vielen Unwettern und Blitzen gedeiht. Sie gibt Reisenden in stürmischen Zeiten Mut."
+    },
+    "plume": {
+      "name": "Feder des Donnerbändigers",
+      "desc": "Das Abzeichen des tapferen Helden, der den Donner bändigte, und die Feder des Vogels, der durch die Blitze schwebte."
+    },
+    "sands": {
+      "name": "Stunde des Donnerbändigers",
+      "desc": "Der Zeitmesser des Recken, der den Donner bändigte. Darin fließen die Bruchstücke der Blitze unaufhörlich wie die Zeit."
+    },
+    "goblet": {
+      "name": "Kelch des Donnerbändigers",
+      "desc": "Der Weinkelch des Donnerbändigers. Angeblich hat der Bezwinger des Monsters des Donners violette Blitze aus diesem Kelch getrunken."
+    },
+    "circlet": {
+      "name": "Krone des Donnerbändigers",
+      "desc": "Die Krone des Recken, der den Donner bändigte. Er erhielt sie, nachdem er das Monster des Donners besiegt hatte, das das Land zu verwüsten drohte."
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Crescent Pike",
+  "description": {
+    "0": "An exotic weapon with an extremely long blade on the top and a crescent blade at the bottom. It found its way into Liyue through foreign traders. With practice, it can deal heavy damage."
+  },
+  "passiveName": "Infusion Needle",
+  "passiveDescription": {
+    "0": {
+      "0": "After picking up an Elemental Orb/Particle, Normal and Charged Attacks deal additional DMG equal to <cryo>20%</cryo> of ATK for 5s."
+    },
+    "1": {
+      "0": "After picking up an Elemental Orb/Particle, Normal and Charged Attacks deal additional DMG equal to <cryo>25%</cryo> of ATK for 5s."
+    },
+    "2": {
+      "0": "After picking up an Elemental Orb/Particle, Normal and Charged Attacks deal additional DMG equal to <cryo>30%</cryo> of ATK for 5s."
+    },
+    "3": {
+      "0": "After picking up an Elemental Orb/Particle, Normal and Charged Attacks deal additional DMG equal to <cryo>35%</cryo> of ATK for 5s."
+    },
+    "4": {
+      "0": "After picking up an Elemental Orb/Particle, Normal and Charged Attacks deal additional DMG equal to <cryo>40%</cryo> of ATK for 5s."
+    }
+  }
+}

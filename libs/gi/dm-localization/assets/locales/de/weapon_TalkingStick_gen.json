@@ -1,0 +1,24 @@
+{
+  "name": "Lass uns reden",
+  "description": {
+    "0": "Eine schwere, mit Obsidian eingefasste Keule. Weiß als Argumentationsverstärker sicher gut zu überzeugen."
+  },
+  "passiveName": "„Wortgewandtheit“",
+  "passiveDescription": {
+    "0": {
+      "0": "Erhöht nach dem Erleiden vom Pyro-Attribut den ANG 15 s lang um <cryo>16 %</cryo>. 12 s Abklingzeit. Erhöht nach dem Erleiden von Hydro-, Kryo-, Elektro- oder Dendro-Attributen 15 s lang den Elementar-SCH-Bonus aller Elemente um <cryo>12 %</cryo>. 12 s Abklingzeit."
+    },
+    "1": {
+      "0": "Erhöht nach dem Erleiden vom Pyro-Attribut den ANG 15 s lang um <cryo>20 %</cryo>. 12 s Abklingzeit. Erhöht nach dem Erleiden von Hydro-, Kryo-, Elektro- oder Dendro-Attributen 15 s lang den Elementar-SCH-Bonus aller Elemente um <cryo>15 %</cryo>. 12 s Abklingzeit."
+    },
+    "2": {
+      "0": "Erhöht nach dem Erleiden vom Pyro-Attribut den ANG 15 s lang um <cryo>24 %</cryo>. 12 s Abklingzeit. Erhöht nach dem Erleiden von Hydro-, Kryo-, Elektro- oder Dendro-Attributen 15 s lang den Elementar-SCH-Bonus aller Elemente um <cryo>18 %</cryo>. 12 s Abklingzeit."
+    },
+    "3": {
+      "0": "Erhöht nach dem Erleiden vom Pyro-Attribut den ANG 15 s lang um <cryo>28 %</cryo>. 12 s Abklingzeit. Erhöht nach dem Erleiden von Hydro-, Kryo-, Elektro- oder Dendro-Attributen 15 s lang den Elementar-SCH-Bonus aller Elemente um <cryo>21 %</cryo>. 12 s Abklingzeit."
+    },
+    "4": {
+      "0": "Erhöht nach dem Erleiden vom Pyro-Attribut den ANG 15 s lang um <cryo>32 %</cryo>. 12 s Abklingzeit. Erhöht nach dem Erleiden von Hydro-, Kryo-, Elektro- oder Dendro-Attributen 15 s lang den Elementar-SCH-Bonus aller Elemente um <cryo>24 %</cryo>. 12 s Abklingzeit."
+    }
+  }
+}

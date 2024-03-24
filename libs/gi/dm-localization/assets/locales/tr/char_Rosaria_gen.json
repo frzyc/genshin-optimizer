@@ -1,0 +1,154 @@
+{
+  "name": "Rosaria",
+  "title": "Dikenli Gül",
+  "description": "Kilisede bir rahibe olduğunu belli eden tek şey kıyafetleri. Keskin sözleri ve soğuk tavırları vardır. Her zaman tek başına hareket eder.",
+  "constellationName": "Dikenli Taç",
+  "auto": {
+    "name": "Kilisenin Mızrağı",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Saldırı</strong>",
+        "1": "Arka arkaya en fazla 5 mızrak saldırısı yapar."
+      },
+      "charged": {
+        "0": "<strong>Yüklü Saldırı</strong>",
+        "1": "İleri atılırken belirli miktarda Dayanıklılık harcar ve önündeki düşmanlara hasar verir."
+      },
+      "plunging": {
+        "0": "<strong>Havadan Saldırı</strong>",
+        "1": "Havadayken dalışa geçerek yere vurur ve yoluna çıkan düşmanlara Alan Hasarı verir."
+      }
+    },
+    "skillParams": {
+      "0": "1 Vuruş Hasarı",
+      "1": "2 Vuruş Hasarı",
+      "2": "3 Vuruş Hasarı",
+      "3": "4 Vuruş Hasarı",
+      "4": "5 Vuruş Hasarı",
+      "5": "Yüklü Saldırı Hasarı",
+      "6": "Yüklü Saldırı Dayanıklılık Maliyeti",
+      "7": "Havadan Saldırı Hasarı",
+      "8": "Havadan Saldırı Hasarı (Alçaktan/Yüksekten)",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Hiddetli İtiraf",
+    "description": {
+      "0": "Rosaria, hızla yer değiştirerek düşmanın arkasında belirir. Mızrağını düşmana saplayıp savurarak <cryo>Buz Hasarı</cryo> verir.",
+      "1": "Bu beceri ile boyutu büyük düşmanların arkasına geçilemez.",
+      "2": "<br/>",
+      "3": "<i>Günahlarını Rahibe Rosaria'ya anlatanlar bağışlanmaz. Günahları ne kadar büyükse cezaları da bir o kadar sert ve dondurucu olur.</i>"
+    },
+    "skillParams": {
+      "0": "Beceri Hasarı",
+      "1": "BS",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Son Ayin",
+    "description": {
+      "0": "Rosaria, bu eşsiz dua ayininde önce silahını savurarak etrafındaki düşmanlara saldırır. Sonra yere dondurucu bir Buz Mızrağı indirir. İki saldırı da <cryo>Buz Hasarı</cryo> verir.",
+      "1": "Buz Mızrağı etkinken soğuk hava dalgaları yayarak etrafındaki düşmanlara <cryo>Buz Hasarı</cryo> verir.",
+      "2": "<br/>",
+      "3": "<i>Yargı dağıtmak çok yorucu bir iştir. O aşamayı geçip direkt son söze gelmek çok daha kolaydır. Rosaria zaten hiçbir zaman Rüzgar Tanrısı'na düşkün değildi. Bu nedenle ayinler de kısa ve kolaydı.</i>"
+    },
+    "skillParams": {
+      "0": "Beceri Hasarı",
+      "1": "Süreli Buz Mızrağı Hasarı",
+      "2": "Süre",
+      "3": "BS",
+      "4": "Enerji Maliyeti",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "İtirafın Gölgesi",
+    "description": {
+      "0": "<strong>Hiddetli İtiraf</strong> becerisini kullanarak bir düşmana arkadan vurduğunda 5 saniyeliğine Rosaria'nın Kritik Oranı %12 artar."
+    }
+  },
+  "passive2": {
+    "name": "Gölgelerin Merhameti",
+    "description": {
+      "0": "<strong>Son Ayin</strong> becerisi kullanıldığında 10 saniyeliğine yakındaki tüm grup üyelerinin (Rosaria hariç) Kritik Oranı, Rosaria'nın Kritik Oranının %15'i kadar artar.",
+      "1": "Bu şekilde kazanılan Kritik Oran Bonusu %15'i geçemez."
+    }
+  },
+  "passive3": {
+    "name": "Gece Yolculuğu",
+    "description": {
+      "0": "Geceleri (18:00 – 06:00) grup üyelerin Hızlı Adım etkisi kazanır: Hareket Hızı %10 artar.",
+      "1": "Zindanlarda, Ezici Zindanlarda veya Hiçlik Sarmalında etkili değildir. Hızlı Adım etkileri birikmez."
+    }
+  },
+  "constellation1": {
+    "name": "Habis Vahiy",
+    "description": {
+      "0": "Rosaria bir Kritik Vuruş yaptığında 4 saniyeliğine Saldırı Hızı ve Normal Saldırı Hasarı %10 artar."
+    }
+  },
+  "constellation2": {
+    "name": "Umutsuz Topraklar",
+    "description": {
+      "0": "<strong>Son Ayin</strong> becerisinin oluşturduğu Buz Mızrağının süresi 4 saniye artar."
+    }
+  },
+  "constellation3": {
+    "name": "Günahın Bedeli",
+    "description": {
+      "0": "<strong>Hiddetli İtiraf</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation4": {
+    "name": "Acı Dolu Zarafet",
+    "description": {
+      "0": "<strong>Hiddetli İtiraf</strong> becerisinin Kritik Vuruşları Rosaria için 5 Enerji yeniler.",
+      "1": "Hiddetli İtiraf her kullanıldığında yalnızca bir defa tetiklenebilir."
+    }
+  },
+  "constellation5": {
+    "name": "Son Dua",
+    "description": {
+      "0": "<strong>Son Ayin</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation6": {
+    "name": "İlahi Ceza",
+    "description": {
+      "0": "<strong>Son Ayin</strong> saldırısı, 10 saniyeliğine düşmanların Fiziksel Direncini %20 azaltır."
+    }
+  }
+}

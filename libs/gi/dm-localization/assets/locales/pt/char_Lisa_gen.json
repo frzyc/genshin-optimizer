@@ -1,0 +1,161 @@
+{
+  "name": "Lisa",
+  "title": "Bruxa das Rosas",
+  "description": "Preguiçosa, mas conhecida como bibliotecária dos Cavaleiros de Favonius, na verdade foi considerada pela Academia Sumeru como a mais graduada dos últimos dois séculos.",
+  "constellationName": "Tempus Fugit",
+  "auto": {
+    "name": "Toque do Relâmpago",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Ataque Normal</strong>",
+        "1": "Realiza até 4 ataques de relâmpago que infligem <electro>Dano Electro</electro>."
+      },
+      "charged": {
+        "0": "<strong>Ataque Carregado</strong>",
+        "1": "Consome uma certa quantidade de Stamina que inflige <electro>Dano Electro em uma AdE</electro> após um curto período de canalização."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Imersivo</strong>",
+        "1": "Reunindo o poder do Electro, Lisa mergulha ao chão em pleno ar, infligindo dano a todos os inimigos em seu caminho. Inflige <electro>Dano Electro em uma AdE</electro> durante o impacto com o chão."
+      }
+    },
+    "skillParams": {
+      "0": "Dano do 1° Golpe",
+      "1": "Dano do 2° Golpe",
+      "2": "Dano do 3° Golpe",
+      "3": "Dano do 4° Golpe",
+      "4": "Dano de Ataque Carregado",
+      "5": "Consumo de Stamina de Ataque Carregado",
+      "6": "Dano Durante a Queda",
+      "7": "Dano de Queda de Baixa/Alta Altitude",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Arco Violeta",
+    "description": {
+      "0": "Canaliza o poder dos relâmpagos para se livrar de coisas incômodas.",
+      "1": "<br/>",
+      "2": "<strong>Pressionar</strong>",
+      "3": "Libera uma esfera relâmpago perseguidora.",
+      "4": "Ao acertar, inflige <electro>Dano Electro</electro> e aplica um acúmulo do efeito Condutor (máximo de 3 acúmulos) nos inimigos em uma pequena AdE",
+      "5": "<br/>",
+      "6": "<strong>Manter pressionado</strong>",
+      "7": "Após um longo período de canalização, convoca os relâmpagos dos céus, infligindo <electro>Dano Electro</electro> massivo em todos os inimigos próximos baseado no número de acúmulos do efeito Condução aplicados neles, e remove seus efeitos de Condução.",
+      "8": "<br/>",
+      "9": "<i>O Electro Púrpura é a vestimenta de uma Bruxa das Rosas</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Toque",
+      "1": "Recarga ao Pressionar",
+      "2": "Dano não Condutor ao Manter Pressionado",
+      "3": "Dano Condutor ao Manter Pressionado Camada 1",
+      "4": "Dano Condutor ao Manter Pressionado Camada 2",
+      "5": "Dano Condutor ao Manter Pressionado Camada 3",
+      "6": "Recarga ao Manter Pressionado",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Rosa do Relâmpago",
+    "description": {
+      "0": "Evoca uma Rosa Elétrica que desfere poderosos relâmpagos, lançando inimigos próximos e infligindo <electro>Dano Electro</electro>.",
+      "1": "A Rosa Elétrica irá continuamente emitir raios que empurram os inimigos e infligem <electro>Dano Electro</electro> enquanto ela permanecer.",
+      "2": "<br/>",
+      "3": "<i>Essa rosa é linda, mas tenha cuidado com seus espinhos mortais.</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Descarga",
+      "1": "Duração",
+      "2": "Tempo de Recarga",
+      "3": "Energia Elemental",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Indução Pós-Choque",
+    "description": {
+      "0": "Ao ser atingida por Ataques Carregados aplica o estado de Condutividade de <strong>Arco Violeta</strong> aos inimigos."
+    }
+  },
+  "passive2": {
+    "name": "Campo de Eletricidade Estática",
+    "description": {
+      "0": "Inimigos acertados por <strong>Rosa do Relâmpago</strong> têm sua DEF diminuída em 15% por 10 segundos."
+    }
+  },
+  "passive3": {
+    "name": "Conhecimentos Farmacêuticos",
+    "description": {
+      "0": "Quando a Lisa cria uma poção, ela possui 20% de chance de retornar uma porção dos materiais usados."
+    }
+  },
+  "constellation1": {
+    "name": "Circuito Infinito",
+    "description": {
+      "0": "Lisa regenera 2 de Energia para cada oponente atingido ao manter o <strong>Arco Violeta</strong> pressionado.",
+      "1": "É possível regenerar um máximo de 10 de Energia desta maneira por vez."
+    }
+  },
+  "constellation2": {
+    "name": "Campo Eletromagnético",
+    "description": {
+      "0": "Mantendo pressionado o <strong>Arco Violeta</strong> possui os seguintes efeitos:",
+      "1": "Aumenta a DEF em 25%",
+      "2": "Aumenta a RES a interrupção de Lisa."
+    }
+  },
+  "constellation3": {
+    "name": "Relâmpago Ressonante",
+    "description": {
+      "0": "Aumenta o nível da <strong>Rosa do Relâmpago</strong> em 3.",
+      "1": "O nível máximo de elevação é 15."
+    }
+  },
+  "constellation4": {
+    "name": "Erupção de Plasma",
+    "description": {
+      "0": "Aumenta o número de raios lançados pela <strong>Rosa do Relâmpago</strong> entre 1 a 3."
+    }
+  },
+  "constellation5": {
+    "name": "Eletrocutar",
+    "description": {
+      "0": "Aumenta o nível do <strong>Arco Violeta</strong> em 3.",
+      "1": "O nível máximo de elevação é 15."
+    }
+  },
+  "constellation6": {
+    "name": "Bruxa Pulsante",
+    "description": {
+      "0": "Quando a Lisa entra em campo, ela aplica 3 cargas do estado de Condução do <strong>Arco Violeta</strong> nos inimigos ao redor.",
+      "1": "Este efeito pode ser ativado uma vez a cada 5s."
+    }
+  }
+}

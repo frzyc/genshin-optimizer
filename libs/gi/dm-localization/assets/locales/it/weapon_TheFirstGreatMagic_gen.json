@@ -1,0 +1,24 @@
+{
+  "name": "Prima grande magia",
+  "description": {
+    "0": "Uno strano attrezzo di scena usato in passato dalla Grande maga. Il suo segreto è che si tratta anche di un'arma di tutto rispetto."
+  },
+  "passiveName": "Parsifal la Grande",
+  "passiveDescription": {
+    "0": {
+      "0": "I DAN inflitti dagli attacchi caricati aumentano di un <cryo>16%</cryo>. Per ogni membro del gruppo dello stesso tipo elementale del personaggio che usa quest'arma (incluso sé stesso), quest'ultimo ottiene 1 accumulo di Stratagemma; per ogni membro del gruppo di tipo elementale diverso, invece, ottiene 1 accumulo di Scenotecnica. Quando il personaggio ha 1/2/3 o più accumuli di Stratagemma, l'ATT aumenta di un <cryo>16%/32%/48%</cryo>. Quando ha 1/2/3 o più accumuli di Scenotecnica, la VEL di movimento aumenta di un <cryo>4%/7%/10%</cryo>."
+    },
+    "1": {
+      "0": "I DAN inflitti dagli attacchi caricati aumentano di un <cryo>20%</cryo>. Per ogni membro del gruppo dello stesso tipo elementale del personaggio che usa quest'arma (incluso sé stesso), quest'ultimo ottiene 1 accumulo di Stratagemma; per ogni membro del gruppo di tipo elementale diverso, invece, ottiene 1 accumulo di Scenotecnica. Quando il personaggio ha 1/2/3 o più accumuli di Stratagemma, l'ATT aumenta di un <cryo>20%/40%/60%</cryo>. Quando ha 1/2/3 o più accumuli di Scenotecnica, la VEL di movimento aumenta di un <cryo>6%/9%/12%</cryo>."
+    },
+    "2": {
+      "0": "I DAN inflitti dagli attacchi caricati aumentano di un <cryo>24%</cryo>. Per ogni membro del gruppo dello stesso tipo elementale del personaggio che usa quest'arma (incluso sé stesso), quest'ultimo ottiene 1 accumulo di Stratagemma; per ogni membro del gruppo di tipo elementale diverso, invece, ottiene 1 accumulo di Scenotecnica. Quando il personaggio ha 1/2/3 o più accumuli di Stratagemma, l'ATT aumenta di un <cryo>24%/48%/72%</cryo>. Quando ha 1/2/3 o più accumuli di Scenotecnica, la VEL di movimento aumenta di un <cryo>8%/11%/14%</cryo>."
+    },
+    "3": {
+      "0": "I DAN inflitti dagli attacchi caricati aumentano di un <cryo>28%</cryo>. Per ogni membro del gruppo dello stesso tipo elementale del personaggio che usa quest'arma (incluso sé stesso), quest'ultimo ottiene 1 accumulo di Stratagemma; per ogni membro del gruppo di tipo elementale diverso, invece, ottiene 1 accumulo di Scenotecnica. Quando il personaggio ha 1/2/3 o più accumuli di Stratagemma, l'ATT aumenta di un <cryo>28%/56%/84%</cryo>. Quando ha 1/2/3 o più accumuli di Scenotecnica, la VEL di movimento aumenta di un <cryo>10%/13%/16%</cryo>."
+    },
+    "4": {
+      "0": "I DAN inflitti dagli attacchi caricati aumentano di un <cryo>32%</cryo>. Per ogni membro del gruppo dello stesso tipo elementale del personaggio che usa quest'arma (incluso sé stesso), quest'ultimo ottiene 1 accumulo di Stratagemma; per ogni membro del gruppo di tipo elementale diverso, invece, ottiene 1 accumulo di Scenotecnica. Quando il personaggio ha 1/2/3 o più accumuli di Stratagemma, l'ATT aumenta di un <cryo>32%/64%/96%</cryo>. Quando ha 1/2/3 o più accumuli di Scenotecnica, la VEL di movimento aumenta di un <cryo>12%/15%/18%</cryo>."
+    }
+  }
+}

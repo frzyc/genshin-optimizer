@@ -1,0 +1,24 @@
+{
+  "name": "Schwert des Narzissenkreuzes",
+  "description": {
+    "0": "Ein Schwert, dessen Kraft mit dem Ende der Geschichte verblasst ist. Es wird nun eine neue Reise antreten. Die Kraft, die in ihm verbleibt, erinnert an einen bestimmten großen Traum."
+  },
+  "passiveName": "Schwert des Recken",
+  "passiveDescription": {
+    "0": {
+      "0": "Wenn der Träger keine Arkhe-Energiesignatur aufweist: Löst beim Treffen mit Standardangriffen, heftigen Schlägen und Angriffen aus dem Fall einen Pneuma- oder Ousia-Energiestoß aus, dessen Schaden in Höhe von <cryo>160 %</cryo> ANG verursacht, 12 s Abklingzeit. Die Arkhe-Energiesignatur des Energiestoßes wird durch die aktuelle Eigenschaft des Schwertes des Narzissenkreuzes bestimmt."
+    },
+    "1": {
+      "0": "Wenn der Träger keine Arkhe-Energiesignatur aufweist: Löst beim Treffen mit Standardangriffen, heftigen Schlägen und Angriffen aus dem Fall einen Pneuma- oder Ousia-Energiestoß aus, dessen Schaden in Höhe von <cryo>200 %</cryo> ANG verursacht, 12 s Abklingzeit. Die Arkhe-Energiesignatur des Energiestoßes wird durch die aktuelle Eigenschaft des Schwertes des Narzissenkreuzes bestimmt."
+    },
+    "2": {
+      "0": "Wenn der Träger keine Arkhe-Energiesignatur aufweist: Löst beim Treffen mit Standardangriffen, heftigen Schlägen und Angriffen aus dem Fall einen Pneuma- oder Ousia-Energiestoß aus, dessen Schaden in Höhe von <cryo>240 %</cryo> ANG verursacht, 12 s Abklingzeit. Die Arkhe-Energiesignatur des Energiestoßes wird durch die aktuelle Eigenschaft des Schwertes des Narzissenkreuzes bestimmt."
+    },
+    "3": {
+      "0": "Wenn der Träger keine Arkhe-Energiesignatur aufweist: Löst beim Treffen mit Standardangriffen, heftigen Schlägen und Angriffen aus dem Fall einen Pneuma- oder Ousia-Energiestoß aus, dessen Schaden in Höhe von <cryo>280 %</cryo> ANG verursacht, 12 s Abklingzeit. Die Arkhe-Energiesignatur des Energiestoßes wird durch die aktuelle Eigenschaft des Schwertes des Narzissenkreuzes bestimmt."
+    },
+    "4": {
+      "0": "Wenn der Träger keine Arkhe-Energiesignatur aufweist: Löst beim Treffen mit Standardangriffen, heftigen Schlägen und Angriffen aus dem Fall einen Pneuma- oder Ousia-Energiestoß aus, dessen Schaden in Höhe von <cryo>320 %</cryo> ANG verursacht, 12 s Abklingzeit. Die Arkhe-Energiesignatur des Energiestoßes wird durch die aktuelle Eigenschaft des Schwertes des Narzissenkreuzes bestimmt."
+    }
+  }
+}

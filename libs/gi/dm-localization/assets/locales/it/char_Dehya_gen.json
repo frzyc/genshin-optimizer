@@ -1,0 +1,182 @@
+{
+  "name": "Dehya",
+  "title": "Chiomardente",
+  "description": "Un membro degli Eremiti, un'organizzazione mercenaria che vaga per le sabbie di Sumeru. È potente e valorosa, e gode di un'ottima fama tra i suoi compagni.",
+  "constellationName": "Mantichora",
+  "auto": {
+    "name": "Tempesta dorata",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attacco normale</strong>",
+        "1": "Sferra fino a 4 colpi consecutivi utilizzando la sua claymore e le sue arti marziali."
+      },
+      "charged": {
+        "0": "<strong>Attacco caricato</strong>",
+        "1": "Consuma vigore nel tempo per sferrare fendenti continui.",
+        "2": "Al termine della sequenza, sferra un fendente più potente."
+      },
+      "plunging": {
+        "0": "<strong>Attacco in picchiata</strong>",
+        "1": "Attacca scagliandosi contro il suolo da mezz'aria, infliggendo DAN agli avversari lungo la traiettoria e DAN ad area all'impatto."
+      }
+    },
+    "skillParams": {
+      "0": "DAN da 1º colpo",
+      "1": "DAN da 2º colpo",
+      "2": "DAN da 3º colpo",
+      "3": "DAN da 4º colpo",
+      "4": "DAN da ATT caricato ciclico",
+      "5": "DAN da ATT caricato finali",
+      "6": "Costo vigore ATT caricato",
+      "7": "Durata max",
+      "8": "DAN da ATT in picchiata",
+      "9": "DAN da ATT in picchiata basso/alto",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Inferno colante",
+    "description": {
+      "0": "Quest'arte, ideata da Dehya in persona, modifica il proprio metodo di utilizzo in base alla situazione del combattimento.",
+      "1": "<br/>",
+      "2": "<strong>Fiamma indomita</strong>",
+      "3": "Quest'abilità viene scatenata se, al momento dell'uso, non è presente alcun Santuario infuocato creato da Dehya.",
+      "4": "Infligge <pyro>DAN da Pyro ad area</pyro> e crea un campo conosciuto come Santuario infuocato.",
+      "5": "<br/>",
+      "6": "<strong>Fiamma estesa</strong>",
+      "7": "Quest'abilità viene sprigionata se, al momento dell'uso, esiste già un Santuario infuocato creato da Dehya.",
+      "8": "Dehya effettua un attacco con balzo, infliggendo <pyro>DAN da Pyro ad area</pyro>, per poi ricreare un Santuario infuocato nella sua nuova posizione.",
+      "9": "Un campo Santuario infuocato creato in questo modo eredita la durata restante del precedente.",
+      "10": "<br/>",
+      "11": "Per la durata di ogni singolo Santuario infuocato è possibile usare 1 sola Fiamma estesa.",
+      "12": "<br/>",
+      "13": "<strong>Santuario infuocato</strong>",
+      "14": "Quando un avversario all'interno di questo campo subisce DAN, viene sprigionato un attacco coordinato che infligge <pyro>DAN da Pyro ad area</pyro> in base all'ATT e ai PS max di Dehya. Quest'effetto può attivarsi una volta ogni 2,5 s.",
+      "15": "I personaggi attivi all'interno del campo ottengono un aumento della resistenza all'interruzione e, quando subiscono DAN, una porzione di questi viene mitigata e confluisce nel Sangue di Rossomanto. Dopodiché, Dehya subisce tali DAN nell'arco di 10 s. Quando i DAN mitigati accumulati dal Sangue di Rossomanto raggiungono o superano una certa percentuale dei PS max di Dehya, tale mitigazione si interrompe.",
+      "16": "<br/>",
+      "17": "Può esistere 1 solo Santuario infuocato creato da Dehya alla volta.",
+      "18": "<br/>",
+      "19": "<i>Percorri con me questo sentiero infuocato ed elimina ogni impurità, proprio come una bestia infuocata che discende dalle fiamme.</i>"
+    },
+    "skillParams": {
+      "0": "DAN da Fiamma indomita",
+      "1": "DAN da Fiamma estesa",
+      "2": "DAN da campo",
+      "3": "Mitigazione",
+      "4": "Sangue di Rossomanto max",
+      "5": "Durata campo",
+      "6": "TdR",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Morso leonino",
+    "description": {
+      "0": "Sprigionando la sua furia incandescente e gettando via la sua lama, Dehya entra nello stato di Leonessa fiammante e aumenta la sua resistenza all'interruzione.",
+      "1": "Mentre è in questo stato, Dehya scatena in maniera continuativa e automatica i Pugni della Chiomardente, infliggendo <pyro>DAN da Pyro</pyro> in base al suo ATT e ai suoi PS max. Al termine dell'effetto, scaglia un Calcio inceneritore che infligge <pyro>DAN da Pyro ad area</pyro> in base ai medesimi attributi.",
+      "2": "Se, quando si sprigiona quest'abilità, è presente un Santuario infuocato creato dalla sua abilità elementale Inferno colante, Dehya lo recupera per crearne un altro quando l'effetto di Leonessa fiammante si esaurisce. Al momento del suo recupero, questo campo acquisisce la durata del campo recuperato.",
+      "3": "In questo stato, Dehya non è in grado di usare la sua abilità elementale, né di eseguire attacchi normali, caricati o in picchiata. Attacco normale: Tempesta dorata e Inferno colante vengono sostituiti da Raffica ruggente.",
+      "4": "<br/>",
+      "5": "<strong>Raffica ruggente</strong>",
+      "6": "Scatenare Raffica ruggente entro 0,4 s dopo ogni Pugno della Chiomardente aumenta la velocità con cui il Pugno della Chiomardente successivo viene scagliato.",
+      "7": "<br/>",
+      "8": "<i>Perfino le fiamme fluttuanti devono sottostare alla sua furia, e al suo comando si tramutano in artigli e in zanne al suo servizio.</i>"
+    },
+    "skillParams": {
+      "0": "DAN da Pugno della Chiomardente",
+      "1": "DAN da Calcio inceneritore",
+      "2": "Durata",
+      "3": "TdR",
+      "4": "Costo energia",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Generosa assistenza",
+    "description": {
+      "0": "Entro 6 s dal recupero del campo Santuario infuocato tramite <strong>Inferno colante: Fiamma estesa</strong> o <strong>Morso leonino</strong>, Dehya subisce un 60% di DAN in meno dal Sangue di Rossomanto.",
+      "1": "Quest'effetto può attivarsi una volta ogni 2 s.",
+      "2": "Inoltre, entro 9 s dal rilascio di <strong>Inferno colante: Fiamma indomita</strong>, garantisce a tutti i membri del gruppo lo stato di Forma aurea. Quest'ultimo aumenta ulteriormente la resistenza all'interruzione di un personaggio all'interno del campo Santuario infuocato. Lo stato di Forma aurea può attivarsi una volta ogni 18 s."
+    }
+  },
+  "passive2": {
+    "name": "Onesta rettitudine",
+    "description": {
+      "0": "Quando i suoi PS sono inferiori a un 40%, Dehya rigenera un 20% dei suoi PS max e ne recupera un ulteriore 6% ogni 2 s per i 10 s successivi. Quest'effetto può attivarsi una volta ogni 20 s."
+    }
+  },
+  "passive3": {
+    "name": "La via illuminata",
+    "description": {
+      "0": "Di giorno (06:00-18:00), i membri del tuo gruppo ottengono l'effetto Piè veloce: la VEL di movimento aumenta di un 10%.",
+      "1": "Non ha effetto all'interno di domini, Domini della conquista o Abisso a spirale. Piè veloce non è cumulabile."
+    }
+  },
+  "constellation1": {
+    "name": "Fiamma incandescente",
+    "description": {
+      "0": "I PS max di Dehya aumentano di un 20%. Dehya infligge DAN bonus in base ai suoi PS max quando utilizza i seguenti attacchi:",
+      "1": [
+        " i DAN da <strong>Inferno colante</strong> aumentano di un 3,6% dei suoi PS max;",
+        " i DAN da <strong>Morso leonino</strong> aumentano di un 6% dei suoi PS max."
+      ]
+    }
+  },
+  "constellation2": {
+    "name": "Scintillio delle lame di sabbia",
+    "description": {
+      "0": "Quando Dehya utilizza <strong>Inferno colante: Fiamma estesa</strong>, la durata del Santuario infuocato ricreato aumenta di 6 s.",
+      "1": "In aggiunta, quando un Santuario infuocato è presente sul campo e i personaggi attivi al suo interno vengono attaccati, i DAN inflitti dal suo attacco coordinato successivo aumentano di un 50%."
+    }
+  },
+  "constellation3": {
+    "name": "Furia rapida come il fuoco",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Morso leonino</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation4": {
+    "name": "Un giuramento da rispettare",
+    "description": {
+      "0": "Quando gli attacchi Pugno della Chiomardente e Calcio inceneritore sprigionati durante <strong>Morso leonino</strong> colpiscono gli avversari, Dehya recupera 1,5 di energia e un 2,5% dei suoi PS max. Quest'effetto può attivarsi una volta ogni 0,2 s."
+    }
+  },
+  "constellation5": {
+    "name": "Alfa scatenato",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Inferno colante</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation6": {
+    "name": "Squarcio degli artigli ardenti",
+    "description": {
+      "0": "Il tasso di CRIT di <strong>Morso leonino</strong> aumenta di un 10%.",
+      "1": "In più, se un Pugno della Chiomardente infligge colpi CRIT a un avversario durante un singolo stato di Leonessa fiammante, i DAN da CRIT di Morso leonino aumentano di un 15% per il resto della durata di Leonessa fiammante, estendendone la durata di 0,5 s. Quest'effetto può essere attivato ogni 0,2 s. La durata può essere estesa fino a un massimo di 2 s, e in questo modo i DAN da CRIT possono aumentare fino a un 60% max."
+    }
+  }
+}

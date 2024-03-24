@@ -1,0 +1,24 @@
+{
+  "name": "Halcón de Jade",
+  "description": {
+    "0": "Una pesada y afilada lanza de jade capaz de derrotar a los poderosos monstruos marinos de la antigüedad."
+  },
+  "passiveName": "Lanza justiciera del halcón",
+  "passiveDescription": {
+    "0": {
+      "0": "Al atacar a un enemigo, aumenta el ATQ en un <cryo>3.2%</cryo> durante 6 s y puede acumularse hasta 7 veces. Este efecto solo puede ocurrir una vez cada 0.3 s. Cuando se alcanza el máximo de acumulaciones, el daño aumenta en un <cryo>12%</cryo>."
+    },
+    "1": {
+      "0": "Al atacar a un enemigo, aumenta el ATQ en un <cryo>3.9%</cryo> durante 6 s y puede acumularse hasta 7 veces. Este efecto solo puede ocurrir una vez cada 0.3 s. Cuando se alcanza el máximo de acumulaciones, el daño aumenta en un <cryo>15%</cryo>."
+    },
+    "2": {
+      "0": "Al atacar a un enemigo, aumenta el ATQ en un <cryo>4.6%</cryo> durante 6 s y puede acumularse hasta 7 veces. Este efecto solo puede ocurrir una vez cada 0.3 s. Cuando se alcanza el máximo de acumulaciones, el daño aumenta en un <cryo>18%</cryo>."
+    },
+    "3": {
+      "0": "Al atacar a un enemigo, aumenta el ATQ en un <cryo>5.3%</cryo> durante 6 s y puede acumularse hasta 7 veces. Este efecto solo puede ocurrir una vez cada 0.3 s. Cuando se alcanza el máximo de acumulaciones, el daño aumenta en un <cryo>21%</cryo>."
+    },
+    "4": {
+      "0": "Al atacar a un enemigo, aumenta el ATQ en un <cryo>6%</cryo> durante 6 s y puede acumularse hasta 7 veces. Este efecto solo puede ocurrir una vez cada 0.3 s. Cuando se alcanza el máximo de acumulaciones, el daño aumenta en un <cryo>24%</cryo>."
+    }
+  }
+}

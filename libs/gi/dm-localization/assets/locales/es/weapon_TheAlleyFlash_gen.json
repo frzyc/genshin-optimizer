@@ -1,0 +1,24 @@
+{
+  "name": "Destello en la Oscuridad",
+  "description": {
+    "0": "Una espada larga negra con un perfecto ángulo recto. Perteneció a un ladrón que deambulaba por callejones oscuros."
+  },
+  "passiveName": "Héroe errante",
+  "passiveDescription": {
+    "0": {
+      "0": "Aumenta en un <cryo>12%</cryo> el daño infligido. Al recibir daño, este aumento de daño perderá su efecto durante 5 s."
+    },
+    "1": {
+      "0": "Aumenta en un <cryo>15%</cryo> el daño infligido. Al recibir daño, este aumento de daño perderá su efecto durante 5 s."
+    },
+    "2": {
+      "0": "Aumenta en un <cryo>18%</cryo> el daño infligido. Al recibir daño, este aumento de daño perderá su efecto durante 5 s."
+    },
+    "3": {
+      "0": "Aumenta en un <cryo>21%</cryo> el daño infligido. Al recibir daño, este aumento de daño perderá su efecto durante 5 s."
+    },
+    "4": {
+      "0": "Aumenta en un <cryo>24%</cryo> el daño infligido. Al recibir daño, este aumento de daño perderá su efecto durante 5 s."
+    }
+  }
+}

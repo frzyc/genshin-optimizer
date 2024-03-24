@@ -1,0 +1,29 @@
+{
+  "setName": "Cuore profondo",
+  "setEffects": {
+    "2": "Bonus DAN da Hydro +15%.",
+    "4": "Dopo l'uso di un'abilità elementale, aumenta di un 30% i DAN da attacchi normali e caricati per 15 s."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Fermaglio dorato",
+      "desc": "Un fermaglio a forma di fiore che ha perso la sua brillantezza. L'oro che lo ricopriva è stato rimosso dal vento e dalle onde molto tempo fa."
+    },
+    "plume": {
+      "name": "Brezza nostalgica",
+      "desc": "Una piuma trasportata dai venti marini e dalle onde purpuree. Il passare del tempo ne ha cambiato forma e colore."
+    },
+    "sands": {
+      "name": "Bussola di rame",
+      "desc": "Un'antica bussola di rame. La sua lancetta punta verso lidi remoti e approdi inesistenti."
+    },
+    "goblet": {
+      "name": "Calice degli abissi",
+      "desc": "Un calice sbiadito ripescato per caso dal mare. La sua opacità testimonia il tempo che ha trascorso in balia delle onde."
+    },
+    "circlet": {
+      "name": "Tricorno macchiato di vino",
+      "desc": "Un vecchio copricapo marinaresco macchiato di vino che emana ancora odore di alcol."
+    }
+  }
+}

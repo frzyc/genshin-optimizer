@@ -1,0 +1,24 @@
+{
+  "name": "Sắc Nước Lộng Lẫy",
+  "description": {
+    "0": "Quyền trượng với dòng nước tinh khiết vây quanh. Trong quá khứ xa xưa, nó từng tượng trưng cho quyền lực tối cao trên biển."
+  },
+  "passiveName": "Bình Minh Và Hoàng Hôn Của Hồ Nước",
+  "passiveDescription": {
+    "0": {
+      "0": "Khi HP hiện tại của người trang bị tăng hoặc giảm, sát thương gây ra của Kỹ Năng Nguyên Tố tăng <cryo>8%</cryo> trong 6s, tối đa cộng dồn 3 lần, mỗi 0.2s tối đa kích hoạt một lần; Khi HP hiện tại của các nhân vật khác trong đội tăng hoặc giảm, giới hạn HP của người trang bị tăng <cryo>14%</cryo> trong 6s, tối đa cộng dồn 2 lần, mỗi 0.2s tối đa kích hoạt một lần. Người trang bị khi không ra trận cũng có thể kích hoạt hiệu quả nêu trên."
+    },
+    "1": {
+      "0": "Khi HP hiện tại của người trang bị tăng hoặc giảm, sát thương gây ra của Kỹ Năng Nguyên Tố tăng <cryo>10%</cryo> trong 6s, tối đa cộng dồn 3 lần, mỗi 0.2s tối đa kích hoạt một lần; Khi HP hiện tại của các nhân vật khác trong đội tăng hoặc giảm, giới hạn HP của người trang bị tăng <cryo>17.5%</cryo> trong 6s, tối đa cộng dồn 2 lần, mỗi 0.2s tối đa kích hoạt một lần. Người trang bị khi không ra trận cũng có thể kích hoạt hiệu quả nêu trên."
+    },
+    "2": {
+      "0": "Khi HP hiện tại của người trang bị tăng hoặc giảm, sát thương gây ra của Kỹ Năng Nguyên Tố tăng <cryo>12%</cryo> trong 6s, tối đa cộng dồn 3 lần, mỗi 0.2s tối đa kích hoạt một lần; Khi HP hiện tại của các nhân vật khác trong đội tăng hoặc giảm, giới hạn HP của người trang bị tăng <cryo>21%</cryo> trong 6s, tối đa cộng dồn 2 lần, mỗi 0.2s tối đa kích hoạt một lần. Người trang bị khi không ra trận cũng có thể kích hoạt hiệu quả nêu trên."
+    },
+    "3": {
+      "0": "Khi HP hiện tại của người trang bị tăng hoặc giảm, sát thương gây ra của Kỹ Năng Nguyên Tố tăng <cryo>14%</cryo> trong 6s, tối đa cộng dồn 3 lần, mỗi 0.2s tối đa kích hoạt một lần; Khi HP hiện tại của các nhân vật khác trong đội tăng hoặc giảm, giới hạn HP của người trang bị tăng <cryo>24.5%</cryo> trong 6s, tối đa cộng dồn 2 lần, mỗi 0.2s tối đa kích hoạt một lần. Người trang bị khi không ra trận cũng có thể kích hoạt hiệu quả nêu trên."
+    },
+    "4": {
+      "0": "Khi HP hiện tại của người trang bị tăng hoặc giảm, sát thương gây ra của Kỹ Năng Nguyên Tố tăng <cryo>16%</cryo> trong 6s, tối đa cộng dồn 3 lần, mỗi 0.2s tối đa kích hoạt một lần; Khi HP hiện tại của các nhân vật khác trong đội tăng hoặc giảm, giới hạn HP của người trang bị tăng <cryo>28%</cryo> trong 6s, tối đa cộng dồn 2 lần, mỗi 0.2s tối đa kích hoạt một lần. Người trang bị khi không ra trận cũng có thể kích hoạt hiệu quả nêu trên."
+    }
+  }
+}

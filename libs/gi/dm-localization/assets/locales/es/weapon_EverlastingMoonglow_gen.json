@@ -1,0 +1,24 @@
+{
+  "name": "Luna Inalterable",
+  "description": {
+    "0": "Un anillo de jade procedente de las profundidades del océano. Reluce con un brillo puro y distante como el de la luna."
+  },
+  "passiveName": "Noche de luna",
+  "passiveDescription": {
+    "0": {
+      "0": "El Bono de Curación aumenta en un <cryo>10%</cryo>. El daño infligido por los Ataques Normales aumenta en una cantidad equivalente al <cryo>1%</cryo> de la Vida Máx. del personaje que tenga esta arma equipada. Tras usar la Habilidad Definitiva y durante 12 s, cuando un Ataque Normal golpea a un enemigo, se regeneran 0.6 pts. de Energía Elemental. Solo se puede regenerar Energía Elemental de esta manera una vez cada 0.1 s."
+    },
+    "1": {
+      "0": "El Bono de Curación aumenta en un <cryo>12.5%</cryo>. El daño infligido por los Ataques Normales aumenta en una cantidad equivalente al <cryo>1.5%</cryo> de la Vida Máx. del personaje que tenga esta arma equipada. Tras usar la Habilidad Definitiva y durante 12 s, cuando un Ataque Normal golpea a un enemigo, se regeneran 0.6 pts. de Energía Elemental. Solo se puede regenerar Energía Elemental de esta manera una vez cada 0.1 s."
+    },
+    "2": {
+      "0": "El Bono de Curación aumenta en un <cryo>15%</cryo>. El daño infligido por los Ataques Normales aumenta en una cantidad equivalente al <cryo>2%</cryo> de la Vida Máx. del personaje que tenga esta arma equipada. Tras usar la Habilidad Definitiva y durante 12 s, cuando un Ataque Normal golpea a un enemigo, se regeneran 0.6 pts. de Energía Elemental. Solo se puede regenerar Energía Elemental de esta manera una vez cada 0.1 s."
+    },
+    "3": {
+      "0": "El Bono de Curación aumenta en un <cryo>17.5%</cryo>. El daño infligido por los Ataques Normales aumenta en una cantidad equivalente al <cryo>2.5%</cryo> de la Vida Máx. del personaje que tenga esta arma equipada. Tras usar la Habilidad Definitiva y durante 12 s, cuando un Ataque Normal golpea a un enemigo, se regeneran 0.6 pts. de Energía Elemental. Solo se puede regenerar Energía Elemental de esta manera una vez cada 0.1 s."
+    },
+    "4": {
+      "0": "El Bono de Curación aumenta en un <cryo>20%</cryo>. El daño infligido por los Ataques Normales aumenta en una cantidad equivalente al <cryo>3%</cryo> de la Vida Máx. del personaje que tenga esta arma equipada. Tras usar la Habilidad Definitiva y durante 12 s, cuando un Ataque Normal golpea a un enemigo, se regeneran 0.6 pts. de Energía Elemental. Solo se puede regenerar Energía Elemental de esta manera una vez cada 0.1 s."
+    }
+  }
+}

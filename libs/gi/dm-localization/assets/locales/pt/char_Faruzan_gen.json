@@ -1,0 +1,163 @@
+{
+  "name": "Faruzan",
+  "title": "Maquinista Enigmática",
+  "description": "Uma pesquisadora de \"cem anos atrás\". Ela gosta de se identificar como a mais velha de todas, com um conhecimento significativo de escrituras antigas e máquinas de todos os tipos.",
+  "constellationName": "Flosculi Implexi",
+  "auto": {
+    "name": "Disparo com Reviravoltas",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Ataque Normal</strong>",
+        "1": "Realiza até 4 disparos consecutivos com um arco."
+      },
+      "charged": {
+        "0": "<strong>Ataque Carregado</strong>",
+        "1": "Realiza um <strong>Disparo com Mira </strong>mais preciso e com Dano aumentado.",
+        "2": "Ao mirar, ventos fortes se acumularão na ponta da flecha. Uma flecha completamente carregada com ventos fortes irá infligir <anemo>Dano Anemo</anemo>."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Imersivo</strong>",
+        "1": "Dispara uma chuva de flechas no ar que atingirão o solo rapidamente, alcançando os inimigos ao longo do caminho e infligindo Dano em uma AdE durante o impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Dano do 1° Golpe",
+      "1": "Dano do 2° Golpe",
+      "2": "Dano do 3° Golpe",
+      "3": "Dano do 4° Golpe",
+      "4": "Disparo com Mira",
+      "5": "Disparo com Mira com Energização Completa",
+      "6": "Dano Durante a Queda",
+      "7": "Dano de Queda de Baixa/Alta Altitude",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Reino do Vento de Nasamjnin",
+    "description": {
+      "0": "Faruzan lança um poliedro que inflige <anemo>Dano Anemo em AdE</anemo> contra os inimigos próximos e obtém o efeito \"Aparição Tempestuosa\".",
+      "1": "Enquanto estiver no estado \"Aparição Tempestuosa\", o próximo disparo com mira totalmente carregado de Faruzan consumirá o efeito \"Aparição Tempestuosa\" para disparar uma \"Flecha do Furacão Intenso\" que contém um vórtice de alta pressão. Esse disparo infligirá <anemo>Dano Anemo</anemo> baseado no Dano de Disparo com Mira totalmente carregado de \"Ataque Normal: Disparo com Reviravoltas\".",
+      "2": "<br/>",
+      "3": "<strong>Armadilha da Ventania</strong>",
+      "4": "A Flecha do Furacão Intenso desencadeará o efeito \"Armadilha da Ventania\" na posição, inimigo ou personagem que atingir. Esse efeito será removido após um breve intervalo de tempo, gerando um vórtice Anemo que inflige <anemo>Dano Anemo em AdE</anemo> e atrai os inimigos e objetos próximos. Se não atingir inimigos ou personagens, uma Armadilha da Ventania será gerada na posição atingida.",
+      "5": "O Dano do vórtice Anemo é considerado Dano de Habilidade Elemental.",
+      "6": "<br/>",
+      "7": "<i>Os ventos da verdade sopram os espíritos daqueles que buscam a veracidade, dispersando o miasma do preconceito.</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Habilidade",
+      "1": "Dano da Armadilha da Ventania",
+      "2": "Duração da Aparição Tempestuosa",
+      "3": "Tempo de Recarga",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Caminhos Secretos do Vento",
+    "description": {
+      "0": "Faruzan rapidamente envia seu Poliedro Fantástico, lançando uma Onda Anemo Feroz que causa <anemo>Dano Anemo em AdE</anemo>.",
+      "1": "Enquanto existir, o Poliedro Fantástico se moverá em uma trajetória triangular. Quando alcançar cada vértice desse triângulo, lançará uma \"Onda Anemo Feroz\".",
+      "2": "<br/>",
+      "3": "<strong>Onda Anemo Feroz</strong>",
+      "4": [
+        " Quando a Onda Anemo Feroz é lançada, marcará os inimigos ao redor com o efeito \"Calamidade da Ventania\", reduzindo sua <anemo>RES Anemo</anemo>;",
+        " Quando a Onda Anemo Feroz é lançada, aplicará o efeito \"Bênção da Ventania\" em todos os membros próximos da equipe, concedendo <anemo>Bônus de Dano Anemo</anemo>."
+      ],
+      "5": "<br/>",
+      "6": "<i>É necessário respeitar a sabedoria desconhecida que pode ser encontrada em ruínas antigas.</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Habilidade",
+      "1": "Bônus de Dano Anemo",
+      "2": "Duração da Bênção da Ventania",
+      "3": "Diminuição de RES Anemo",
+      "4": "Duração da Calamidade da Ventania",
+      "5": "Duração",
+      "6": "Tempo de Recarga",
+      "7": "Energia Elemental",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Corrente Impetuosa",
+    "description": {
+      "0": "Quando Faruzan se encontra no estado de \"Aparição Tempestuosa\" criado pelo <strong>Reino do Vento de Nasamjnin</strong>, o tempo de carregamento necessário para ela realizar o Disparo com Mira é reduzido em 60%. Além disto, ela também poderá aplicar o efeito da \"Calamidade da Ventania\" de <strong>Caminhos Secretos do Vento</strong> no inimigo atingido pelo vórtice criado pelo efeito \"Armadilha da Ventania\"."
+    }
+  },
+  "passive2": {
+    "name": "Sabedoria Perdida das Sete Cavernas",
+    "description": {
+      "0": "Quando os Ataques Normais, Ataques Carregados, Ataques Imersivos, Habilidades Elementais ou Supremos de um personagem sob o efeito da \"Bênção da Ventania\" de <strong>Caminhos Secretos do Vento</strong> causam <anemo>Dano Anemo</anemo> nos inimigos, gerarão o efeito Proteção do Vento Feroz: aumenta o Dano causado baseado em 32% do ATQ Básico da Faruzan. Este efeito só pode ser ativado uma vez a cada 0.8s e é anulado quando o efeito da Benção da Ventania acaba ou depois que já foi ativado uma vez."
+    }
+  },
+  "passive3": {
+    "name": "Vestígios de Conhecimento",
+    "description": {
+      "0": "Quando enviada para uma Expedição em Sumeru por 20 horas, Faruzan obtém 25% a mais de recompensas."
+    }
+  },
+  "constellation1": {
+    "name": "Busca pela Verdade",
+    "description": {
+      "0": "Quando estiver sob um único efeito \"Aparição Tempestuosa\" de <strong>Reino do Vento de Nasamjnin</strong>, Faruzan pode disparar até 2 Flechas do Furacão Intenso do Disparo com Mira totalmente carregadas."
+    }
+  },
+  "constellation2": {
+    "name": "Inteligência Excessiva",
+    "description": {
+      "0": "A duração do Poliedro Fantástico criado por <strong>Caminhos Secretos do Vento</strong> é estendida por 6s."
+    }
+  },
+  "constellation3": {
+    "name": "Vagando pelo Jardim Espiritual",
+    "description": {
+      "0": "Aumenta o nível de <strong>Reino do Vento de Nasamjnin</strong> em 3.",
+      "1": "O nível máximo de elevação é 15."
+    }
+  },
+  "constellation4": {
+    "name": "Compreensão Divina",
+    "description": {
+      "0": "Com base no número de inimigos atingidos, o vórtice Anemo criado por <strong>Armadilha da Ventania</strong> poderá regenerar Energia Elemental para Faruzan: ao atingir 1 inimigo, regenerará 2 de Energia Elemental para Faruzan; ao atingir cada inimigo adicional, regenerará 0.5 de Energia Elemental para Faruzan.",
+      "1": "Faruzan poderá regenerar até 4 de Energia Elemental por vórtice Anemo desta maneira."
+    }
+  },
+  "constellation5": {
+    "name": "Maravilhas da Contemplação",
+    "description": {
+      "0": "Aumenta o nível de <strong>Caminhos Secretos do Vento</strong> em 3.",
+      "1": "O nível máximo de elevação é 15."
+    }
+  },
+  "constellation6": {
+    "name": "Essência da Verdade",
+    "description": {
+      "0": "Personagens sob a influência do efeito da \"Bênção da Ventania\" de <strong>Caminhos Secretos do Vento</strong> receberão um aumento de 40% de Dano CRIT ao infligir <anemo>Dano Anemo</anemo> nos inimigos. Quando o personagem ativo em uma equipe sob influência da \"Bênção da Ventania\" causa Dano, será lançada 1 Armadilha da Ventania adicional nos inimigos; este efeito pode ser desencadeado até 1 vez a cada 3s e compartilha a recarga entre todos os personagens."
+    }
+  }
+}

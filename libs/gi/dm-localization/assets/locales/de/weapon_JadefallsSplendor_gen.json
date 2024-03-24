@@ -1,0 +1,24 @@
+{
+  "name": "Jadesturz-Pracht",
+  "description": {
+    "0": "Ein zeremonielles Gefäß, das aus wunderschöner türkisfarbener Jade geschnitzt wurde. Es strahlt den Glanz des Himmels und des Wassers aus."
+  },
+  "passiveName": "Urzeitliche Jadeinsignien",
+  "passiveDescription": {
+    "0": {
+      "0": "Verleiht innerhalb 3 s nach Anwenden von Spezialfähigkeiten oder Erstellen eines Schilds den Effekt „Urzeitliche Jadeinsignien“: Stellt alle 2,5 s <cryo>4,5</cryo> Punkte Elementarenergie wieder her und erhöht den Elementar-SCH-Bonus des jeweiligen Elementartyps basierend auf den max. LP des Trägers für je 1.000 Punkte um <cryo>0,3 %</cryo>, max. <cryo>12 %</cryo>. Der Effekt „Urzeitliche Jadeinsignien“ wird auch ausgelöst, wenn die mit dieser Waffe ausgerüstete Figur inaktiv ist."
+    },
+    "1": {
+      "0": "Verleiht innerhalb 3 s nach Anwenden von Spezialfähigkeiten oder Erstellen eines Schilds den Effekt „Urzeitliche Jadeinsignien“: Stellt alle 2,5 s <cryo>5</cryo> Punkte Elementarenergie wieder her und erhöht den Elementar-SCH-Bonus des jeweiligen Elementartyps basierend auf den max. LP des Trägers für je 1.000 Punkte um <cryo>0,5 %</cryo>, max. <cryo>20 %</cryo>. Der Effekt „Urzeitliche Jadeinsignien“ wird auch ausgelöst, wenn die mit dieser Waffe ausgerüstete Figur inaktiv ist."
+    },
+    "2": {
+      "0": "Verleiht innerhalb 3 s nach Anwenden von Spezialfähigkeiten oder Erstellen eines Schilds den Effekt „Urzeitliche Jadeinsignien“: Stellt alle 2,5 s <cryo>5,5</cryo> Punkte Elementarenergie wieder her und erhöht den Elementar-SCH-Bonus des jeweiligen Elementartyps basierend auf den max. LP des Trägers für je 1.000 Punkte um <cryo>0,7 %</cryo>, max. <cryo>28 %</cryo>. Der Effekt „Urzeitliche Jadeinsignien“ wird auch ausgelöst, wenn die mit dieser Waffe ausgerüstete Figur inaktiv ist."
+    },
+    "3": {
+      "0": "Verleiht innerhalb 3 s nach Anwenden von Spezialfähigkeiten oder Erstellen eines Schilds den Effekt „Urzeitliche Jadeinsignien“: Stellt alle 2,5 s <cryo>6</cryo> Punkte Elementarenergie wieder her und erhöht den Elementar-SCH-Bonus des jeweiligen Elementartyps basierend auf den max. LP des Trägers für je 1.000 Punkte um <cryo>0,9 %</cryo>, max. <cryo>36 %</cryo>. Der Effekt „Urzeitliche Jadeinsignien“ wird auch ausgelöst, wenn die mit dieser Waffe ausgerüstete Figur inaktiv ist."
+    },
+    "4": {
+      "0": "Verleiht innerhalb 3 s nach Anwenden von Spezialfähigkeiten oder Erstellen eines Schilds den Effekt „Urzeitliche Jadeinsignien“: Stellt alle 2,5 s <cryo>6,5</cryo> Punkte Elementarenergie wieder her und erhöht den Elementar-SCH-Bonus des jeweiligen Elementartyps basierend auf den max. LP des Trägers für je 1.000 Punkte um <cryo>1,1 %</cryo>, max. <cryo>44 %</cryo>. Der Effekt „Urzeitliche Jadeinsignien“ wird auch ausgelöst, wenn die mit dieser Waffe ausgerüstete Figur inaktiv ist."
+    }
+  }
+}

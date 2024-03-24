@@ -1,0 +1,24 @@
+{
+  "name": "Guisarme stellaire (prototype)",
+  "description": {
+    "0": "Une guisarme découverte à la Forge de Rochenoire. L'éclat à la pointe de son fer est aussi brillant qu'une étoile."
+  },
+  "passiveName": "Soif de magie",
+  "passiveDescription": {
+    "0": {
+      "0": "Après l'utilisation d'une compétence élémentaire, les DGT des attaques normales et chargées augmentent de <cryo>8 %</cryo> pendant 12 s. Cet effet peut être cumulé 2 fois maximum."
+    },
+    "1": {
+      "0": "Après l'utilisation d'une compétence élémentaire, les DGT des attaques normales et chargées augmentent de <cryo>10 %</cryo> pendant 12 s. Cet effet peut être cumulé 2 fois maximum."
+    },
+    "2": {
+      "0": "Après l'utilisation d'une compétence élémentaire, les DGT des attaques normales et chargées augmentent de <cryo>12 %</cryo> pendant 12 s. Cet effet peut être cumulé 2 fois maximum."
+    },
+    "3": {
+      "0": "Après l'utilisation d'une compétence élémentaire, les DGT des attaques normales et chargées augmentent de <cryo>14 %</cryo> pendant 12 s. Cet effet peut être cumulé 2 fois maximum."
+    },
+    "4": {
+      "0": "Après l'utilisation d'une compétence élémentaire, les DGT des attaques normales et chargées augmentent de <cryo>16 %</cryo> pendant 12 s. Cet effet peut être cumulé 2 fois maximum."
+    }
+  }
+}

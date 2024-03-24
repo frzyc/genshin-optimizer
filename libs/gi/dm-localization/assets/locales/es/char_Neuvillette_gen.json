@@ -1,0 +1,169 @@
+{
+  "constellationName": "Leviathan Iudicator",
+  "name": "Neuvillette",
+  "title": "El Sentenciador de lo Inexorable",
+  "description": "El juez supremo de Fontaine. Es conocido por su impecable imparcialidad y abnegación.",
+  "auto": {
+    "name": "Remanso acuático",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Ataque Normal</strong>",
+        "1": "Blande ligeramente su bastón para hacer que las olas del mar ejecuten hasta un máximo de 3 ataques que infligen <hydro>Daño Hydro</hydro>."
+      },
+      "chargedLegal": {
+        "0": "<strong>Ataque Potenciado: Apercibimiento procesal</strong>",
+        "1": "Neuvillette canaliza el poder de las aguas primigenias para formar un blasón del arbitraje. En este momento, podrá moverse y cambiar de orientación para absorber las gotas primigenias que haya dentro de cierta área.",
+        "2": "Con cada gota primigenia que absorba, se acelerará la velocidad a la que se forma el blasón del arbitraje y Neuvillette recuperará Vida.",
+        "3": "Cuando la canalización se detiene, si el blasón no está completamente formado, en su lugar ejecuta un Ataque Cargado. Si está completamente formado, ejecuta un Ataque Cargado: Sentencia ecuánime."
+      },
+      "charged": {
+        "0": "<strong>Ataque Cargado</strong>",
+        "1": "Consume cierta cantidad de Aguante para atacar a los enemigos con un hidroaro que inflige <hydro>Daño Hydro en el AdE</hydro>."
+      },
+      "chargedJudgment": {
+        "0": "<strong>Ataque Cargado: Sentencia ecuánime</strong>",
+        "1": "Libera unos torrentes que infligen <hydro>Daño Hydro en el AdE</hydro> a todos los enemigos que haya en una línea recta frente a Neuvillette.",
+        "2": "El Ataque Cargado: Sentencia ecuánime no consume Aguante y tiene una duración de 3 s.",
+        "3": "Cuando su Vida es superior al 50%, Neuvillette perderá Vida constantemente mientras ejecuta este ataque."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Descendente</strong>",
+        "1": "Concentra el poder del agua, se lanza desde el aire para golpear el suelo y daña a los enemigos a su paso, infligiendo <hydro>Daño Hydro en el AdE</hydro> en el momento del impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Daño de 1er golpe",
+      "1": "Daño de 2.º golpe",
+      "2": "Daño de 3er golpe",
+      "3": "Daño de ATQ Cargado",
+      "4": "Coste de Aguante de ATQ Cargado",
+      "5": "Daño continuo de Ataque Cargado: Sentencia ecuánime",
+      "6": "Recuperación de Vida",
+      "7": "Vida perdida",
+      "8": "Daño de Caída",
+      "9": "Daño de impacto de caída baja/alta",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Plañido del resarcimiento",
+    "description": {
+      "0": "Invoca una cascada tumultuosa que inflige <hydro>Daño Hydro en el AdE </hydro>en función de la Vida Máx. de Neuvillette a los enemigos que haya frente a él. Tras golpear a un enemigo con este ataque, generará 3 gotas primigenias cerca de la ubicación de dicho enemigo.",
+      "1": "<br/>",
+      "2": "<strong>Arjé: pneuma</strong>",
+      "3": "Cada cierto tiempo tras lanzar la cascada tumultuosa, caerá una espina halitoespiritual que inflige <hydro>Daño Hydro</hydro> cargado de energía pneuma.",
+      "4": "<br/>",
+      "5": "<i>“La ley puede contener el crimen, mas no es capaz de erradicar la maldad en sí misma”.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "Daño de espina halitoespiritual",
+      "2": "Intervalo de espina halitoespiritual",
+      "3": "Duración de gota primigenia",
+      "4": "TdE",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Retorno mareal",
+    "description": {
+      "0": "Libera una poderosa marejada que inflige <hydro>Daño Hydro en el AdE</hydro> en función de la Vida Máx. de Neuvillette. Tras un breve intervalo de tiempo, caerán 2 cascadas que infligen <hydro>Daño Hydro</hydro> en una AdE relativamente pequeña y que generan 6 gotas primigenias en cierta área frente a Neuvillette.",
+      "1": "<br/>",
+      "2": "<i>“La ley solo es válida cuando se promulga. Sin embargo, todos los seres vivos y toda la historia han estado sujetos a las leyes de la naturaleza desde tiempos inmemoriales”.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "Daño de cascada tumultuosa",
+      "2": "TdE",
+      "3": "Energía Elemental",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Legatario de toda agua",
+    "description": {
+      "0": "Cuando un personaje del equipo causa una reacción de Vaporización, Congelado, Electrocargado, Florecimiento, Torbellino Hydro o Cristalización Hydro, Neuvillette obtiene una carga de “gloria del legado draconiano” durante 30 s. Este efecto puede acumularse hasta 3 veces y hace que el Ataque Cargado: Sentencia ecuánime inflija, respectivamente, un 110/125/160% de su daño original.",
+      "1": "Los efectos de gloria del legado draconiano obtenidos con cada Reacción Elemental son independientes unos de otros."
+    }
+  },
+  "passive2": {
+    "name": "Arbitrador supremo",
+    "description": {
+      "0": "Por cada 1% de Vida por encima del 30% de su Vida Máx., Neuvillette obtiene un 0.6% de <hydro>Bono de Daño Hydro</hydro>. Este bono solo puede aumentar hasta un 30% de esta forma."
+    }
+  },
+  "passive3": {
+    "name": "Impetuosidad marítima",
+    "description": {
+      "0": "Cuando uno de los personajes de tu equipo esprinta debajo del agua, la Vel. Movimiento aumenta en un 15%.",
+      "1": "No se puede acumular con otros talentos pasivos que tengan los mismos efectos."
+    }
+  },
+  "constellation1": {
+    "name": "Eminente ordenanza",
+    "description": {
+      "0": "Cuando Neuvillette entra en el campo de batalla, obtiene 1 carga del efecto “gloria del legado draconiano” del talento pasivo “Legatario de toda agua” (es necesario desbloquear el talento pasivo Legatario de toda agua).",
+      "1": "Además, al ejecutar el Ataque Potenciado: Apercibimiento procesal y el Ataque Cargado: Sentencia ecuánime, su Res a interrupción aumenta."
+    }
+  },
+  "constellation2": {
+    "name": "Mandato legal",
+    "description": {
+      "0": "Fortalece el talento pasivo “Legatario de toda agua”, de modo que por cada carga de gloria del legado draconiano, el Daño CRIT del Ataque Cargado: Sentencia ecuánime aumenta en un 14%, hasta un máximo del 42%.",
+      "1": "Es necesario desbloquear el talento pasivo “Legatario de toda agua”."
+    }
+  },
+  "constellation3": {
+    "name": "Ficción pretérita",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Ataque Normal: Remanso acuático</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Clemencia culminante",
+    "description": {
+      "0": "Cuando Neuvillette recibe curación mientras está en uso, genera 1 gota primigenia. Esto puede ocurrir una vez cada 4 s."
+    }
+  },
+  "constellation5": {
+    "name": "Fallo axiomático",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Retorno mareal</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Retribución atrabiliaria",
+    "description": {
+      "0": "Al ejecutar el Ataque Cargado: Sentencia ecuánime, Neuvillette absorbe las gotas primigenias que haya en cierta área. Por cada gota que absorba, la duración del Ataque Cargado: Sentencia ecuánime aumentará en 1 s.",
+      "1": "Además, al golpear a un enemigo con el Ataque Cargado: Sentencia ecuánime, se liberan 2 torrentes adicionales cada 2 s, y cada uno inflige <hydro>Daño Hydro</hydro> equivalente al 10% de la Vida Máx. de Neuvillette. El daño infligido de esta manera se considera daño de Ataque Cargado: Sentencia ecuánime."
+    }
+  }
+}

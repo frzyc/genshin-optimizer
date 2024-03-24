@@ -1,0 +1,24 @@
+{
+  "name": "Kurt Dişi",
+  "description": {
+    "0": "Efsaneye göre bu uzun kılıcı çok önceden gezgin bir şövalye kullanırmış."
+  },
+  "passiveName": "Kuzey Rüzgarı Kurdu",
+  "passiveDescription": {
+    "0": {
+      "0": "Element Becerisi ve Element Patlamasının verdiği Hasar <cryo>%16</cryo> artar. Bir Element Becerisi düşmana isabet ettikten sonra Becerinin Kritik Oranı <cryo>%2</cryo> artar. Bir Element Patlaması düşmana isabet ettikten sonra Patlamanın Kritik Oranı <cryo>%2</cryo> artar. Bu iki etki birbirinden bağımsız olarak 10 saniye sürer, en fazla 4 kademeye kadar birikir ve her 0,1 saniyede bir tetiklenebilir."
+    },
+    "1": {
+      "0": "Element Becerisi ve Element Patlamasının verdiği Hasar <cryo>%20</cryo> artar. Bir Element Becerisi düşmana isabet ettikten sonra Becerinin Kritik Oranı <cryo>%2,5</cryo> artar. Bir Element Patlaması düşmana isabet ettikten sonra Patlamanın Kritik Oranı <cryo>%2,5</cryo> artar. Bu iki etki birbirinden bağımsız olarak 10 saniye sürer, en fazla 4 kademeye kadar birikir ve her 0,1 saniyede bir tetiklenebilir."
+    },
+    "2": {
+      "0": "Element Becerisi ve Element Patlamasının verdiği Hasar <cryo>%24</cryo> artar. Bir Element Becerisi düşmana isabet ettikten sonra Becerinin Kritik Oranı <cryo>%3</cryo> artar. Bir Element Patlaması düşmana isabet ettikten sonra Patlamanın Kritik Oranı <cryo>%3</cryo> artar. Bu iki etki birbirinden bağımsız olarak 10 saniye sürer, en fazla 4 kademeye kadar birikir ve her 0,1 saniyede bir tetiklenebilir."
+    },
+    "3": {
+      "0": "Element Becerisi ve Element Patlamasının verdiği Hasar <cryo>%28</cryo> artar. Bir Element Becerisi düşmana isabet ettikten sonra Becerinin Kritik Oranı <cryo>%3,5</cryo> artar. Bir Element Patlaması düşmana isabet ettikten sonra Patlamanın Kritik Oranı <cryo>%3,5</cryo> artar. Bu iki etki birbirinden bağımsız olarak 10 saniye sürer, en fazla 4 kademeye kadar birikir ve her 0,1 saniyede bir tetiklenebilir."
+    },
+    "4": {
+      "0": "Element Becerisi ve Element Patlamasının verdiği Hasar <cryo>%32</cryo> artar. Bir Element Becerisi düşmana isabet ettikten sonra Becerinin Kritik Oranı <cryo>%4</cryo> artar. Bir Element Patlaması düşmana isabet ettikten sonra Patlamanın Kritik Oranı <cryo>%4</cryo> artar. Bu iki etki birbirinden bağımsız olarak 10 saniye sürer, en fazla 4 kademeye kadar birikir ve her 0,1 saniyede bir tetiklenebilir."
+    }
+  }
+}

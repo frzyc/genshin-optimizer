@@ -1,0 +1,152 @@
+{
+  "auto": {
+    "name": "Mannarino da campo",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attacco normale</strong>",
+        "1": "Sferri fino a 5 colpi rapidi."
+      },
+      "charged": {
+        "0": "<strong>Attacco caricato</strong>",
+        "1": "Consumi una determinata quantità di vigore per sferrare 2 colpi di spada rapidi."
+      },
+      "plunging": {
+        "0": "<strong>Attacco in picchiata</strong>",
+        "1": "Attacchi scagliandoti contro il suolo da mezz'aria, infliggendo DAN agli avversari lungo la traiettoria e DAN ad area all'impatto."
+      }
+    },
+    "skillParams": {
+      "0": "DAN da 1º colpo",
+      "1": "DAN da 2º colpo",
+      "2": "DAN da 3º colpo",
+      "3": "DAN da 4º colpo",
+      "4": "DAN da 5º colpo",
+      "5": "DAN da ATT caricato",
+      "6": "Costo vigore ATT caricato",
+      "7": "DAN da ATT in picchiata",
+      "8": "DAN da ATT in picchiata basso/alto",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Foglialama affilata",
+    "description": {
+      "0": "Con un colpo della tua lama, sprigiona un turbine di foglie affilate come rasoi che infliggono <dendro>DAN da Dendro</dendro>.",
+      "1": "<br/>",
+      "2": "<i>Tu e Paimon avete osservato le fluenti sagome dei fili d'erba e delle foglie.</i>"
+    },
+    "skillParams": {
+      "0": "DAN da abilità",
+      "1": "TdR",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Manifestazione silvestre",
+    "description": {
+      "0": "Invocando la potenza della natura circostante, crea una Lampada di loto Lea.",
+      "1": "La Lampada infliggerà <dendro>DAN da Dendro</dendro> continui agli avversari nella sua area d'effetto.",
+      "2": "<br/>",
+      "3": "<strong>Trasfigurazione della luce di loto</strong>",
+      "4": "La Lampada di loto Lea subisce le seguenti modifiche quando entra in contatto con <hydro>Hydro</hydro>/<electro>Electro</electro>/<pyro>Pyro</pyro>.",
+      "5": [
+        " <hydro>Hydro</hydro>: l'area d'effetto della Lampada e dei suoi attacchi aumenta.",
+        " <electro>Electro</electro>: la VEL d'ATT della Lampada aumenta.",
+        " <pyro>Pyro</pyro>: la Lampada esplode dopo un breve lasso di tempo e poi scompare, infliggendo <dendro>DAN da Dendro ad area</dendro>."
+      ],
+      "6": "La Lampada di loto può realizzare una sola Trasfigurazione della luce di loto nel corso della sua durata.",
+      "7": "<br/>",
+      "8": "{F#La}{M#Il} viaggiat{F#rice}{M#ore} può creare una sola lampada alla volta.",
+      "9": "<br/>",
+      "10": "<i>Tu e Paimon avete ascoltato le piante germogliare dopo la pioggia.</i>"
+    },
+    "skillParams": {
+      "0": "DAN da ATT Lampada di loto Lea",
+      "1": "DAN da esplosione",
+      "2": "Durata Lampada di loto Lea",
+      "3": "TdR",
+      "4": "Costo energia",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Supercrescita verdeggiante",
+    "description": {
+      "0": "La <strong>Lampada di loto Lea</strong> ottiene un livello di Luce di Loto inondante ogni secondo in cui è in campo, aumentando di 6 la maestria elementale dei personaggi attivi all'interno della sua area d'effetto. È possibile accumulare fino a un massimo di 10 livelli di Luce di Loto inondante."
+    }
+  },
+  "passive2": {
+    "name": "Fasto verdeggiante",
+    "description": {
+      "0": "Ogni punto di maestria elementale posseduto da{F#lla}{M#l} viaggiat{F#rice}{M#ore} aumenta i DAN inflitti da <strong>Foglialama affilata</strong> di uno 0,15% e i danni inflitti da <strong>Manifestazione silvestre</strong> dello 0,1%."
+    }
+  },
+  "constellation1": {
+    "name": "Parassita rampicante",
+    "description": {
+      "0": "Quando <strong>Foglialama affilata</strong> colpisce un avversario, rigenera l'energia {F#della}{M#del} viaggiat{F#rice}{M#ore} di 3,5."
+    }
+  },
+  "constellation2": {
+    "name": "Resilienza arborea",
+    "description": {
+      "0": "La durata della <strong>Lampada di loto Lea</strong> aumenta di 3 s."
+    }
+  },
+  "constellation3": {
+    "name": "Erba vorticosa",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Foglialama affilata</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation4": {
+    "name": "Erbadolce",
+    "description": {
+      "0": "Quando la <strong>Lampada di loto Lea</strong> innesca una Trasfigurazione della luce di loto, ottiene 5 accumuli dell'effetto Luce di Loto inondante dal talento passivo Supercrescita verdeggiante.",
+      "1": "Devi prima aver sbloccato questo talento passivo."
+    }
+  },
+  "constellation5": {
+    "name": "Fugacità viridiana",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Manifestazione silvestre</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation6": {
+    "name": "Agglomerato di Avvizzimento",
+    "description": {
+      "0": "Il <dendro>bonus DAN da Dendro</dendro> del personaggio sotto l'effetto di Luce di Loto inondante creato dalla <strong>Lampada di loto Lea</strong> aumenta di un 12%. Se la Lampada ha già precedentemente realizzato una Trasfigurazione della luce di loto, il personaggio ottiene anche un 12% di bonus DAN dell'elemento corrispondente."
+    }
+  }
+}

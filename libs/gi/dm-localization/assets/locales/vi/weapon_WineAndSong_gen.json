@@ -1,0 +1,24 @@
+{
+  "name": "Rượu Và Thơ Nơi Hẻm Tối",
+  "description": {
+    "0": "Nhạc phổ lưu hành ở thời đại quý tộc xa xưa, không biết tác giả là ai. Trong đó ghi chép về câu chuyện của một hiệp đạo nào đó..."
+  },
+  "passiveName": "Thiên Biến Vạn Hóa",
+  "passiveDescription": {
+    "0": {
+      "0": "Sau khi đánh thường trúng kẻ địch, thể lực tiêu hao của xung kích hoặc kỹ năng thay thế của xung kích giảm <cryo>14%</cryo>, kéo dài 5s. Ngoài ra, sau khi dùng xung kích hoặc kỹ năng thay thế của xung kích, tấn công tăng <cryo>20%</cryo>, kéo dài 5s."
+    },
+    "1": {
+      "0": "Sau khi đánh thường trúng kẻ địch, thể lực tiêu hao của xung kích hoặc kỹ năng thay thế của xung kích giảm <cryo>16%</cryo>, kéo dài 5s. Ngoài ra, sau khi dùng xung kích hoặc kỹ năng thay thế của xung kích, tấn công tăng <cryo>25%</cryo>, kéo dài 5s."
+    },
+    "2": {
+      "0": "Sau khi đánh thường trúng kẻ địch, thể lực tiêu hao của xung kích hoặc kỹ năng thay thế của xung kích giảm <cryo>18%</cryo>, kéo dài 5s. Ngoài ra, sau khi dùng xung kích hoặc kỹ năng thay thế của xung kích, tấn công tăng <cryo>30%</cryo>, kéo dài 5s."
+    },
+    "3": {
+      "0": "Sau khi đánh thường trúng kẻ địch, thể lực tiêu hao của xung kích hoặc kỹ năng thay thế của xung kích giảm <cryo>20%</cryo>, kéo dài 5s. Ngoài ra, sau khi dùng xung kích hoặc kỹ năng thay thế của xung kích, tấn công tăng <cryo>35%</cryo>, kéo dài 5s."
+    },
+    "4": {
+      "0": "Sau khi đánh thường trúng kẻ địch, thể lực tiêu hao của xung kích hoặc kỹ năng thay thế của xung kích giảm <cryo>22%</cryo>, kéo dài 5s. Ngoài ra, sau khi dùng xung kích hoặc kỹ năng thay thế của xung kích, tấn công tăng <cryo>40%</cryo>, kéo dài 5s."
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Ballad of the Boundless Blue",
+  "description": {
+    "0": "Koleksi puisi yang indah. Berisikan berbagai puisi yang berhubungan dengan topik yang disukai oleh orang Mondstadt seperti langit, bunga dandelion, dan lainnya."
+  },
+  "passiveName": "Azure Skies",
+  "passiveDescription": {
+    "0": {
+      "0": "Selama 6 detik setelah Normal Attack atau Charged Attack mengenai musuh, DMG Normal Attack meningkat <cryo>8%</cryo> dan DMG Charged Attack meningkat <cryo>6%</cryo>. Efek ini dapat ditumpuk sampai 3 lapis dan dapat terpicu sekali setiap 0,3 detik."
+    },
+    "1": {
+      "0": "Selama 6 detik setelah Normal Attack atau Charged Attack mengenai musuh, DMG Normal Attack meningkat <cryo>10%</cryo> dan DMG Charged Attack meningkat <cryo>7,5%</cryo>. Efek ini dapat ditumpuk sampai 3 lapis dan dapat terpicu sekali setiap 0,3 detik."
+    },
+    "2": {
+      "0": "Selama 6 detik setelah Normal Attack atau Charged Attack mengenai musuh, DMG Normal Attack meningkat <cryo>12%</cryo> dan DMG Charged Attack meningkat <cryo>9%</cryo>. Efek ini dapat ditumpuk sampai 3 lapis dan dapat terpicu sekali setiap 0,3 detik."
+    },
+    "3": {
+      "0": "Selama 6 detik setelah Normal Attack atau Charged Attack mengenai musuh, DMG Normal Attack meningkat <cryo>14%</cryo> dan DMG Charged Attack meningkat <cryo>10,5%</cryo>. Efek ini dapat ditumpuk sampai 3 lapis dan dapat terpicu sekali setiap 0,3 detik."
+    },
+    "4": {
+      "0": "Selama 6 detik setelah Normal Attack atau Charged Attack mengenai musuh, DMG Normal Attack meningkat <cryo>16%</cryo> dan DMG Charged Attack meningkat <cryo>12%</cryo>. Efek ini dapat ditumpuk sampai 3 lapis dan dapat terpicu sekali setiap 0,3 detik."
+    }
+  }
+}

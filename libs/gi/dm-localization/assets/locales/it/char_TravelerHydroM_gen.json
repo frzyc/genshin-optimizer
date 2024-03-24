@@ -1,0 +1,154 @@
+{
+  "auto": {
+    "name": "Idrocorrente straniera",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attacco normale</strong>",
+        "1": "Sferra fino a 5 colpi rapidi."
+      },
+      "charged": {
+        "0": "<strong>Attacco caricato</strong>",
+        "1": "Consuma una determinata quantità di vigore per sferrare 2 colpi di spada rapidi."
+      },
+      "plunging": {
+        "0": "<strong>Attacco in picchiata</strong>",
+        "1": "Attacca scagliandosi contro il suolo da mezz'aria, infliggendo DAN agli avversari lungo la traiettoria e DAN ad area all'impatto."
+      }
+    },
+    "skillParams": {
+      "0": "DAN da 1º colpo",
+      "1": "DAN da 2º colpo",
+      "2": "DAN da 3º colpo",
+      "3": "DAN da 4º colpo",
+      "4": "DAN da 5º colpo",
+      "5": "DAN da ATT caricato",
+      "6": "Costo vigore ATT caricato",
+      "7": "DAN da ATT in picchiata",
+      "8": "DAN da ATT in picchiata basso/alto",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Fendente dell'Emblema acqueo",
+    "description": {
+      "0": "Sprigiona un torrente in grado di purificare il mondo.",
+      "1": "<br/>",
+      "2": "<strong>Pressione</strong>",
+      "3": "Scaglia un Flutto torrenziale che infligge <hydro>DAN da Hydro</hydro> agli avversari con cui entra in contatto.",
+      "4": "<br/>",
+      "5": "<strong>Pressione prolungata</strong>",
+      "6": "Entra in modalità di mira e lancia delle Gocce di rugiada nella direzione corrispondente, infliggendo <hydro>DAN da Hydro</hydro> agli avversari colpiti.",
+      "7": "Al termine dell'abilità, scaglia un Flutto torrenziale che infligge <hydro>DAN da Hydro</hydro> agli avversari con cui entra in contatto.",
+      "8": "Diffusione: quando si usa la variante a pressione prolungata di quest'abilità, se {F#la}{M#il} viaggiat{F#rice}{M#ore} possiede più di un 50% dei suoi PS, questi ultimi diminuiscono di una certa quantità ogni secondo, e i DAN inflitti dalle Gocce di rugiada aumentano in base ai suoi PS max.",
+      "9": "<br/>",
+      "10": "<strong>Archè: Pneuma</strong>",
+      "11": "A determinati intervalli, dopo aver usato un Flutto torrenziale, quest'abilità sprigiona un Aculeo spettrale che infligge <hydro>DAN da Hydro</hydro> di polarità Pneuma.",
+      "12": "<br/>",
+      "13": "<i>Tu e Paimon avete esaminato le increspature dell'acqua.</i>"
+    },
+    "skillParams": {
+      "0": "DAN da Flutto torrenziale",
+      "1": "DAN da Goccia di rugiada",
+      "2": "DAN da Aculeo spettrale",
+      "3": "Intervallo Aculeo spettrale",
+      "4": "Costo PS Diffusione",
+      "5": "Bonus DAN da Diffusione",
+      "6": "Durata pressione prolungata",
+      "7": "TdR",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Acque nascenti",
+    "description": {
+      "0": "Genera una bolla fluttuante, che avanza lentamente infliggendo <hydro>DAN da Hydro</hydro> continui agli avversari vicini.",
+      "1": "<br/>",
+      "2": "<i>Tu e Paimon avete studiato i flussi e i riflussi delle maree.</i>"
+    },
+    "skillParams": {
+      "0": "DAN da abilità",
+      "1": "Durata",
+      "2": "TdR",
+      "3": "Costo energia",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Acque incontaminate",
+    "description": {
+      "0": "Quando un nemico viene colpito con una Goccia di rugiada scagliata con la variante a pressione prolungata di <strong>Fendente dell'Emblema acqueo</strong>, si genera una Goccia d'acqua sorgiva accanto al{F#la }{M# }viaggiat{F#rice}{M#ore}. Se quest'ultim{F#a}{M#o} la raccoglie, ripristina un 7% dei suoi PS.",
+      "1": "È possibile generare 1 Goccia d'acqua sorgiva al secondo, fino a un massimo di 4 per ogni uso di Fendente dell'Emblema acqueo."
+    }
+  },
+  "passive2": {
+    "name": "Acque cristalline",
+    "description": {
+      "0": "Se, durante l'uso della variante a pressione prolungata di <strong>Fendente dell'Emblema acqueo</strong>, vengono consumati PS tramite Diffusione, il Flutto torrenziale scagliato alla fine dell'abilità infligge DAN bonus pari a un 45% dei PS totali consumati da{F#lla}{M#l} viaggiat{F#rice}{M#ore} tramite Diffusione durante l'ultimo uso della suddetta abilità.",
+      "1": "Il bonus DAN massimo che è possibile ottenere in questo modo è pari a 5.000."
+    }
+  },
+  "constellation1": {
+    "name": "Lago esondante",
+    "description": {
+      "0": "Raccogliere una Goccia d'acqua sorgiva ripristina 2 di energia del{F#la }{M# }viaggiat{F#rice}{M#ore}.",
+      "1": "Richiede il talento passivo Acque incontaminate."
+    }
+  },
+  "constellation2": {
+    "name": "Stilla di purezza",
+    "description": {
+      "0": "La VEL di movimento della bolla creata da <strong>Acque nascenti</strong> si riduce di un 30%, e la sua durata aumenta di 3 s."
+    }
+  },
+  "constellation3": {
+    "name": "Acque increspate",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Fendente dell'Emblema acqueo</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation4": {
+    "name": "Discesa scrosciante",
+    "description": {
+      "0": "Utilizzando <strong>Fendente dell'Emblema acqueo</strong>, si materializza un'Egida dell'Emblema acqueo in grado di assorbire i DAN subiti dal{F#la }{M# }viaggiat{F#rice}{M#ore} pari a un 10% dei suoi PS max, e che assorbe i <hydro>DAN da Hydro</hydro> con un 250% di efficienza. L'Egida dell'Emblema acqueo persiste finché {F#la}{M#il} viaggiat{F#rice}{M#ore} non termina l'uso dell'abilità.",
+      "1": "Una volta ogni 2 s, quando una Goccia di rugiada colpisce un avversario, se {F#la}{M#il} viaggiat{F#rice}{M#ore} è protett{F#a}{M#o} dall'Egida dell'Emblema acqueo, l'assorbimento DAN di quest'ultima si ripristina a un 10% dei PS max del{F#la }{M# }viaggiat{F#rice}{M#ore}. Se {F#la}{M#il} viaggiat{F#rice}{M#ore} non è protett{F#a}{M#o} da un'Egida, se ne materializza una nuova."
+    }
+  },
+  "constellation5": {
+    "name": "Gorgo burrascoso",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Acque nascenti</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation6": {
+    "name": "Maree della Giustizia",
+    "description": {
+      "0": "Quando {F#la}{M#il} viaggiat{F#rice}{M#ore} raccoglie una Goccia d'acqua sorgiva, ripristina un 6% dei PS max del membro del gruppo vicino con la percentuale di PS rimanenti più bassa."
+    }
+  }
+}

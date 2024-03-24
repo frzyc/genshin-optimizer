@@ -1,0 +1,161 @@
+{
+  "name": "Shikanoin Heizou",
+  "title": "Analitik Ahenk",
+  "description": "Tenryou Heyetinden genç ve dahi bir dedektif. Hisleri oldukça kuvvetli, aklı başında biri.",
+  "constellationName": "Küçük Geyik",
+  "auto": {
+    "name": "Fudou Tarzı Dövüş Sanatı",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Saldırı</strong>",
+        "1": "Kudretli rüzgarla güçlendirilmiş yumruklarını kullanarak en fazla 5 saldırı yapar ve <anemo>Rüzgar Hasarı</anemo> verir."
+      },
+      "charged": {
+        "0": "<strong>Yüklü Saldırı</strong>",
+        "1": "Belirli miktarda Dayanıklılık harcayarak döner tekme atar ve <anemo>Rüzgar Hasarı</anemo> verir."
+      },
+      "plunging": {
+        "0": "<strong>Havadan Saldırı</strong>",
+        "1": "Heizou, yükselen rüzgarı çağırarak havadayken yere doğru atılır ve yoluna çıkan tüm düşmanlara hasar verir. Yere vurduğunda <anemo>Rüzgar Alan Hasarı</anemo> verir."
+      }
+    },
+    "skillParams": {
+      "0": "1 Vuruş Hasarı",
+      "1": "2 Vuruş Hasarı",
+      "2": "3 Vuruş Hasarı",
+      "3": "4 Vuruş Hasarı",
+      "4": "5 Vuruş Hasarı",
+      "5": "Yüklü Saldırı",
+      "6": "Yüklü Saldırı Dayanıklılık Maliyeti",
+      "7": "Havadan Saldırı Hasarı",
+      "8": "Havadan Saldırı Hasarı (Alçaktan/Yüksekten)",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Nabız Kesen Vuruş",
+    "description": {
+      "0": "<strong>Dokun</strong>",
+      "1": "Hızlı rüzgarlara hükmederek Nabız Kesen Vuruş yapar ve <anemo>Rüzgar Hasarı</anemo> verir.",
+      "2": "<br/>",
+      "3": "<strong>Basılı Tut</strong>",
+      "4": "Daha güçlü bir darbe için enerji yüklemesi yapar. Yükleme sırasında Bakış Açısı etkisini kazanır, bu etki Nabız Kesen Vuruşun gücünü artırır. Beceri butonu bırakılır veya yüklenme tamamlanırsa Heizou ileriye doğru saldırarak <anemo>Rüzgar Hasarı</anemo> verir.",
+      "5": "<br/>",
+      "6": "<strong>Bakış Açısı</strong>",
+      "7": "Bir sonraki Nabız Kesen Vuruşun gücünü artırır. 4 kademeye kadar birikir.",
+      "8": "4 Bakış Açısı biriktiğinde Hüküm etkisi oluşur ve bu etki bir sonraki Nabız Kesen Vuruşun gücünü artırıp Etki Alanını genişletir.",
+      "9": "<br/>",
+      "10": "<i>Sıradan görünen bu saldırının ardında Heizou'nun suçlulara gerçeği itiraf ettirip onları hizaya getirme tutkusu yatar.</i>"
+    },
+    "skillParams": {
+      "0": "Beceri Hasarı",
+      "1": "Bakış Açısı Hasar Bonusu",
+      "2": "Hüküm Hasar Bonusu",
+      "3": "Bakış Açısı Süresi",
+      "4": "BS",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Yelkapan Tekmesi",
+    "description": {
+      "0": "Havaya sıçrar ve Fudou Tarzı Vakum Saldırısını kullanarak düşmanını tekmeler. Vakum Saldırısı isabet ederse patlayarak Hapseden Girdap oluşturur. Bu girdap yakındaki nesneleri ve düşmanları kendine çekerek <anemo>Rüzgar Alan Hasarı</anemo> verir.",
+      "1": "Vakum Saldırısı <hydro>Su</hydro>/<pyro>Ateş</pyro>/<cryo>Buz</cryo>/<electro>Elektrik</electro> etkisi altındaki düşmanlara isabet ederse onların üzerinde Yelkapan Gözü etkisi bırakır. Bu Yelkapan Gözü bir süre sonra patlayarak etrafa saçılır ve isabet ettiği element türünde Alan Hasarı verir.",
+      "2": "Vakum Saldırısı en fazla 4 düşman üzerinde Yelkapan Gözü etkisi bırakabilir. Farklı elementlerden oluşan Yelkapan Gözlerinin etkisi tek bir düşman üzerinde aynı anda toplanamaz.",
+      "3": "<br/>",
+      "4": "<i>Tek bölgede toplanan Rüzgarın tümünü tekmeyle fırlatan eşsiz bir teknik. Tabana kuvvet kaçan suçluları kıskıvrak yakalatır.</i>"
+    },
+    "skillParams": {
+      "0": "Fudou Tarzı Vakum Saldırısı Hasarı",
+      "1": "Yelkapan Gözü Hasarı",
+      "2": "BS",
+      "3": "Enerji Maliyeti",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Çelişkili Eğitim",
+    "description": {
+      "0": "Shikanoin Heizou savaş alanındayken Girdap tepkimesi etkinleştirirse <strong>Nabız Kesen Vuruş</strong> için 1 Bakış Açısı biriktirir. Bu etki 0,1 saniyede bir tetiklenebilir."
+    }
+  },
+  "passive2": {
+    "name": "Delici Mantık",
+    "description": {
+      "0": "Shikanoin Heizou'nun yaptığı <strong>Nabız Kesen Vuruş</strong> bir düşmana isabet ederse Shikanoin Heizou hariç tüm grup üyelerinin 10 saniyeliğine Element Ustalığı 80 artar."
+    }
+  },
+  "passive3": {
+    "name": "Geçmişteki Suçluluk",
+    "description": {
+      "0": "Kendi grup üyelerinin depar esnasında harcadığı Dayanıklılık %20 azalır.",
+      "1": "Aynı etkiyi veren Pasif Yeteneklerle birikmez."
+    }
+  },
+  "constellation1": {
+    "name": "Ünlü Dava Kitabı",
+    "description": {
+      "0": "Shikanoin Heizou savaş alanına çıktığında 5 saniyeliğine Normal Saldırı Hızı %15 artar. Ayrıca <strong>Nabız Kesen Vuruş</strong> için 1 Bakış Açısı kademesi kazanır. Bu etki 10 saniyede bir tetiklenebilir."
+    }
+  },
+  "constellation2": {
+    "name": "Soruşturma Derlemesi",
+    "description": {
+      "0": "<strong>Yelkapan Tekmesi</strong> sonucu ortaya çıkan Hapseden Girdap çekim etkisi artar ve süresi 1 saniyeye çıkar."
+    }
+  },
+  "constellation3": {
+    "name": "İlginç Bulmaca Kitabı",
+    "description": {
+      "0": "<strong>Nabız Kesen Vuruş</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation4": {
+    "name": "Yalanlar Kitabı",
+    "description": {
+      "0": "Her <strong>Yelkapan Tekmesi</strong> sonucu ortaya çıkan ilk Yelkapan Gözü patlaması Shikanoin Heizou'ya 9 Element Enerjisi kazandırır. Aynı Yelkapan Tekmesinin sonraki patlamaları Heizou'ya fazladan 1,5 Enerji kazandırır.",
+      "1": "Böylelikle bir <strong>Yelkapan Tekmesi</strong> Heizou'ya toplam 13,5 Enerji kazandırabilir."
+    }
+  },
+  "constellation5": {
+    "name": "Gizli Arşiv",
+    "description": {
+      "0": "<strong>Yelkapan Tekmesi</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation6": {
+    "name": "Enteresan Dava Dosyaları",
+    "description": {
+      "0": "Her Bakış Açısı kademesi <strong>Nabız Kesen Vuruş</strong> Kritik Oranını %4 artırır. Heizou Hüküm etkisine sahipse bu Nabız Kesen Vuruşun Kritik Hasarı %32 artar."
+    }
+  }
+}

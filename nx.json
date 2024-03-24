@@ -1,6 +1,5 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
-  "npmScope": "genshin-optimizer",
   "tasksRunnerOptions": {
     "default": {
       "runner": "nx/tasks-runners/default",
@@ -48,7 +47,6 @@
           "mode": "production"
         }
       },
-      "dependsOn": ["gen-file", "^gen-file", "^build"],
       "inputs": ["production", "^production"]
     },
     "build-ts": {
@@ -59,7 +57,6 @@
         "main": "{projectRoot}/src/index.ts",
         "tsConfig": "{projectRoot}/tsconfig.lib.json"
       },
-      "dependsOn": ["gen-file", "^gen-file", "^build"],
       "inputs": ["production", "^production"]
     },
     "e2e": {
@@ -72,8 +69,7 @@
         "lintFilePatterns": ["{projectRoot}/**/*.{ts,tsx,js,jsx}"],
         "fix": true
       },
-      "inputs": ["default", "{workspaceRoot}/.eslintrc.json"],
-      "dependsOn": ["gen-file", "^gen-file"]
+      "inputs": ["default", "{workspaceRoot}/.eslintrc.json"]
     },
     "test": {
       "executor": "@nx/jest:jest",
@@ -84,7 +80,6 @@
         "reportsDirectory": "{workspaceRoot}/coverage/{projectRoot}",
         "passWithNoTests": true
       },
-      "dependsOn": ["gen-file", "^gen-file"],
       "inputs": ["default", "^production", "{workspaceRoot}/jest.preset.js"]
     },
     "typecheck": {
@@ -92,8 +87,7 @@
       "options": {
         "forwardAllArgs": false,
         "description": "Type check with tsc"
-      },
-      "dependsOn": ["gen-file", "^gen-file"]
+      }
     },
     "publish": {
       "dependsOn": ["build"]

@@ -1,0 +1,24 @@
+{
+  "name": "Blackcliff Longsword",
+  "description": {
+    "0": "A sword made of a material known as \"blackcliff.\" It has a dark crimson glow on its black blade."
+  },
+  "passiveName": "Press the Advantage",
+  "passiveDescription": {
+    "0": {
+      "0": "After defeating an opponent, ATK is increased by <cryo>12%</cryo> for 30s. This effect has a maximum of 3 stacks, and the duration of each stack is independent of the others."
+    },
+    "1": {
+      "0": "After defeating an opponent, ATK is increased by <cryo>15%</cryo> for 30s. This effect has a maximum of 3 stacks, and the duration of each stack is independent of the others."
+    },
+    "2": {
+      "0": "After defeating an opponent, ATK is increased by <cryo>18%</cryo> for 30s. This effect has a maximum of 3 stacks, and the duration of each stack is independent of the others."
+    },
+    "3": {
+      "0": "After defeating an opponent, ATK is increased by <cryo>21%</cryo> for 30s. This effect has a maximum of 3 stacks, and the duration of each stack is independent of the others."
+    },
+    "4": {
+      "0": "After defeating an opponent, ATK is increased by <cryo>24%</cryo> for 30s. This effect has a maximum of 3 stacks, and the duration of each stack is independent of the others."
+    }
+  }
+}

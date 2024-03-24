@@ -1,0 +1,174 @@
+{
+  "name": "Xianyun",
+  "title": "Hạc Sứ Cõi Tiên",
+  "description": "Một trong \"Tam Nhãn Ngũ Hiển Tiên Nhân\" của tiên chúng Tuyệt Vân, biệt danh \"Lưu Vân Tá Phong Chân Quân\". Sở trường dùng cơ quan thuật, tâm hướng về trần thế, nên đã dùng tên \"Xianyun\" để hành tẩu nhân gian.",
+  "constellationName": "Cung Nhàn Hạc",
+  "auto": {
+    "name": "Ngôn Từ Hoa Và Gió",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Tấn Công Thường</strong>",
+        "1": "Nổi gió để tấn công tối đa bốn lần, gây <anemo>Sát Thương Nguyên Tố Phong</anemo>."
+      },
+      "charged": {
+        "0": "<strong>Trọng Kích</strong>",
+        "1": "Tiêu hao thể lực nhất định, thi triển Vòng Gió Thoảng bay theo đường thẳng, gây <anemo>Sát Thương Nguyên Tố Phong</anemo> cho kẻ địch trên đường."
+      },
+      "plunging": {
+        "0": "<strong>Tấn Công Khi Đáp</strong>",
+        "1": "Ngưng tụ sức mạnh nguyên tố Phong, từ trên trời tấn công xuống mặt đất, tấn công kẻ địch trên đường, gây <anemo>Sát Thương Phạm Vi Nguyên Tố Phong</anemo>."
+      }
+    },
+    "skillParams": {
+      "0": "Sát Thương Lần 1",
+      "1": "Sát Thương Lần 2",
+      "2": "Sát Thương Lần 3",
+      "3": "Sát Thương Lần 4",
+      "4": "Sát Thương Trọng Kích",
+      "5": "Thể Lực Trọng Kích Tiêu Hao",
+      "6": "Sát Thương Khi Đáp",
+      "7": "Sát Thương Khi Đáp Từ Độ Cao Thấp/Cao",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Mây Trắng Bình Minh",
+    "description": {
+      "0": "Xianyun tiến vào trạng thái Mây Hạc Ảo Hóa, sẽ không phải chịu sát thương đáp đất, đồng thời thi triển một lần Bộ Thiên Thê.",
+      "1": "Trong trạng thái này, Tấn Công Khi Đáp của Xianyun sẽ chuyển hóa thành Sóng Xung Kích Mây Trôi, gây <anemo>Sát Thương Phạm Vi Nguyên Tố Phong</anemo>, đồng thời kết thúc trạng thái Mây Hạc Ảo Hóa. Sát thương này được tính là sát thương Tấn Công Khi Đáp.",
+      "2": "Trong trạng thái này, mỗi lần thi triển Bộ Thiên Thê đều sẽ tăng sát thương và phạm vi của Sóng Xung Kích Mây Trôi lần sau.",
+      "3": "<br/>",
+      "4": "<strong>Bộ Thiên Thê</strong>",
+      "5": "Có thể thi triển ở trên không. Xianyun sẽ nhảy về phía trước, gây <anemo>Sát Thương Nguyên Tố Phong</anemo> cho mục tiêu trên đường.",
+      "6": "Trong một lần trạng thái Mây Hạc Ảo Hóa tối đa thi triển 3 lần Bộ Thiên Thê, đồng thời chỉ gây được một lần sát thương Bộ Thiên Thê cho cùng một kẻ địch.",
+      "7": "Nếu trong thời gian ngắn không thi triển Bộ Thiên Thê thì trạng thái Mây Hạc Ảo Hóa sẽ bị xóa.",
+      "8": "<br/>",
+      "9": "Nếu không dùng Sóng Xung Kích Mây Trôi trong trạng thái Mây Hạc Ảo Hóa thì thời gian chờ của Mây Trắng Bình Minh sẽ rút ngắn 3s.",
+      "10": "<br/>",
+      "11": "<i>Đừng nên bắt tay Lưu Vân Tá Phong Chân Quân, cô ấy có bộ vuốt của loài hạc đấy.</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Kỹ Năng",
+      "1": "Sát Thương Sóng Xung Kích Mây Trôi",
+      "2": "CD",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Hái Sao Chạng Vạng",
+    "description": {
+      "0": "Triệu hồi gió tiên, gây <anemo>Sát Thương Phạm Vi Nguyên Tố Phong</anemo>, hồi phục HP cho tất cả nhân vật trong đội gần đó, lượng hồi phục căn cứ theo Tấn Công của Xianyun, đồng thời triệu hồi \"Trúc Tinh\".",
+      "1": "<br/>",
+      "2": "<strong>Trúc Tinh</strong>",
+      "3": [
+        "Bay theo nhân vật trong trận hiện tại, đồng thời hồi phục HP theo từng đợt cho toàn bộ nhân vật trong đội gần đó dựa trên Tấn Công của Xianyun;",
+        "Ban đầu có 8 tầng Tiên Lực Trợ Giúp. Khi có Tiên Lực Trợ Giúp, sẽ tăng độ cao khi nhảy của nhân vật ra trận trong đội gần đó.",
+        "Khi nhân vật ra trận hiện tại hoàn thành Tấn Công Khi Đáp, Trúc Tinh sẽ tiêu hao một tầng Tiên Lực Trợ Giúp, gây <anemo>Sát Thương Phạm Vi Nguyên Tố Phong</anemo>."
+      ],
+      "4": "Trong trận chỉ tồn tại tối đa một \"Trúc Tinh\".",
+      "5": "<br/>",
+      "6": "<i>Đây là phát minh mới sau Cơ Quan Nấu Nướng Thần Kỳ, Cơ Quan Trượt Tuyết, Cơ Quan Tạp Vụ, Cơ Quan Vận Chuyển Đồ Vật, Cỗ Máy Hoa Cỏ Thần Thánh. Nó thuộc dòng phát minh \"Tinh Nguyệt Tạo Hóa\". Dòng phát minh này dùng để tặng cho loài người mà Lưu Vân Tá Phong tán thưởng, cho nên không có phần cho vị bán tiên nào đó. Nhưng khi đối diện với món Trúc Tinh này, vị nữ đệ tử nào đó đã nói một cách lạnh lùng: \"Không cần.\"",
+      "7": "Cho nên Lưu Vân Tá Phong chỉ đành giữ Trúc Tinh lại bên mình.</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Kỹ Năng",
+      "1": "Sát thương Trúc Tinh",
+      "2": "Lượng Trị Liệu",
+      "3": "Lượng Trị Liệu Duy Trì",
+      "4": "Thời Gian Duy Trì",
+      "5": "CD",
+      "6": "Năng Lượng Nguyên Tố",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Phong Thái Bất Phàm Đuổi Theo Gió",
+    "description": {
+      "0": "Sóng Xung Kích Mây Trôi của <strong>Mây Trắng Bình Minh</strong> mỗi trúng một kẻ địch, sẽ sản sinh một tầng hiệu quả Phong Linh cho tất cả nhân vật trong đội gần đó trong 20s, tối đa cộng dồn 4 tầng, khiến Tỷ Lệ Bạo Kích từ Tấn Công Khi Đáp của nhân vật tăng 4%/6%/8%/10%.",
+      "1": "Thời gian tồn tại của Phong Linh sản sinh ra từ mỗi lần trúng kẻ địch sẽ tính giờ riêng."
+    }
+  },
+  "passive2": {
+    "name": "Thầm Nghĩ Hẳn Là Tiên Trong Động",
+    "description": {
+      "0": "Trúc Tinh của <strong>Hái Sao Chạng Vạng</strong> khi có Tiên Lực Trợ Giúp, sẽ tăng sát thương xung kích từ Tấn Công Khi Đáp của nhân vật ra trận trong đội gần đó, mức tăng tương đương với 200% Tấn Công của Xianyun. Thông qua cách thức này, tối đa có thể khiến sát thương xung kích từ Tấn Công Khi Đáp của nhân vật ra trận trong đội gần đó tăng 9000.",
+      "1": "Trong một lần sát thương xung kích của Tấn Công Khi Đáp, chỉ có thể gây sát thương nêu trên cho một kẻ địch. Mỗi nhân vật mỗi 0.4s tối đa kích hoạt một lần."
+    }
+  },
+  "passive3": {
+    "name": "Thân Hình Như Hạc",
+    "description": {
+      "0": "Nhân vật trong đội khi lướt, tốc độ di chuyển tăng 15%.",
+      "1": "Không thể cộng dồn với buff Thiên Phú có cùng hiệu quả."
+    }
+  },
+  "constellation1": {
+    "name": "Tá Phong Tẩy Trần Duyên",
+    "description": {
+      "0": "Số lần sử dụng <strong>Mây Trắng Bình Minh</strong> tăng thêm 1 lần."
+    }
+  },
+  "constellation2": {
+    "name": "Hạc Lệ Viễn Nhân Gian",
+    "description": {
+      "0": "Sau khi thi triển Bộ Thiên Thê của <strong>Mây Trắng Bình Minh</strong>, Tấn Công của Xianyun tăng 20% trong 15s.",
+      "1": "Ngoài ra, hiệu quả của thiên phú cố định \"Thầm Nghĩ Hẳn Là Tiên Trong Động\" sẽ được cường hóa: Trúc Tinh của <strong>Hái Sao Chạng Vạng</strong> khi có Tiên Lực Trợ Giúp, sẽ tăng sát thương xung kích từ Tấn Công Khi Đáp của nhân vật ra trận trong đội gần đó, mức tăng tương đương với 400% Tấn Công của Xianyun. Thông qua cách thức này, tối đa có thể khiến sát thương xung kích từ Tấn Công Khi Đáp của nhân vật ra trận trong đội gần đó tăng 18000.",
+      "2": "Trong một lần sát thương xung kích của Tấn Công Khi Đáp, chỉ có thể gây sát thương nêu trên cho một kẻ địch. Mỗi nhân vật mỗi 0.4s tối đa kích hoạt một lần.",
+      "3": "Hiệu quả này cần mở khóa thiên phú cố định \"Thầm Nghĩ Hẳn Là Tiên Trong Động\"."
+    }
+  },
+  "constellation3": {
+    "name": "Tạo Hóa Hữu Tinh Nguyệt",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Hái Sao Chạng Vạng</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation4": {
+    "name": "Áo Diệu Phanh Thử Châu",
+    "description": {
+      "0": "Trong một lần Mây Hạc Ảo Hóa của <strong>Mây Trắng Bình Minh</strong>, sau khi thi triển 1/2/3 lần Bộ Thiên Thê, nếu lần Sóng Xung Kích Mây Trôi trong thời gian Mây Hạc Ảo Hóa đó trúng kẻ địch, sẽ hồi phục HP cho tất cả nhân vật trong đội gần đó, mức hồi phục sẽ tương ứng với 50%/80%/150% Tấn Công của Xianyun. Hiệu quả này mỗi 5s tối đa kích hoạt một lần."
+    }
+  },
+  "constellation5": {
+    "name": "Toàn Bộ Hà Úy Thượng",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Mây Trắng Bình Minh</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation6": {
+    "name": "Tri Thị Lưu Vân Tiên",
+    "description": {
+      "0": "Sau khi thi triển 1/2/3 lần Bộ Thiên Thê trong một lần Mây Hạc Ảo Hóa của <strong>Mây Trắng Bình Minh</strong>, Sát Thương Bạo Kích của Sóng Xung Kích Mây Trôi trong lần Mây Hạc Ảo Hóa đó tăng 15%/35%/70%.",
+      "1": "Trong 16s sau khi Xianyun thi triển <strong>Hái Sao Chạng Vạng</strong>, kỹ năng Mây Trắng Bình Minh sẽ không vào thời gian chờ. Hiệu quả này sẽ bị xóa sau khi Xianyun thi triển 8 lần Mây Trắng Bình Minh."
+    }
+  }
+}

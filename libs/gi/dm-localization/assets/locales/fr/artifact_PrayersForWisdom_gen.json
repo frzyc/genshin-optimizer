@@ -1,0 +1,12 @@
+{
+  "setName": "Sacrifieur Électro",
+  "setEffects": {
+    "1": "Diminue la durée des effets Électro subis de 40 %."
+  },
+  "pieces": {
+    "circlet": {
+      "name": "Couronne rituelle Électro",
+      "desc": "Une couronne portée par les prêtres lors de cérémonies dans les temps anciens. Entendre le bruit du tonnerre tout au long de l'année lui a conféré une merveilleuse résistance."
+    }
+  }
+}

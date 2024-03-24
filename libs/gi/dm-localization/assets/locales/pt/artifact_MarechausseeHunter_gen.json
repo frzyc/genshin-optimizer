@@ -1,0 +1,29 @@
+{
+  "setName": "Caçador das Sombras",
+  "setEffects": {
+    "2": "Aumenta o Dano do Ataque Normal e do Ataque Carregado em 15%.",
+    "4": "Quando a Vida atual aumenta ou diminui, aumenta a Taxa CRIT em 12%. Esse efeito dura 5s e pode ser acumulado até 3 vezes."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Flor de Lapela do Caçador",
+      "desc": "Uma medalha antiga. Era dada àqueles que fizeram contribuições fantásticas em batalha."
+    },
+    "plume": {
+      "name": "Abertura de Obra-prima",
+      "desc": "Uma ferramenta portátil usada para ajustar o torque de alguns Mecautômatos antigos. Não tem mais serventia hoje em dia."
+    },
+    "sands": {
+      "name": "Momento do Julgamento",
+      "desc": "Um relógio de bolso padrão, mas não é tão preciso assim."
+    },
+    "goblet": {
+      "name": "Recipiente Esquecido",
+      "desc": "Um recipiente portátil de metal contendo vinho forte. Pode ser colocado num bolso de um sobretudo para acesso mais fácil."
+    },
+    "circlet": {
+      "name": "Semblante do Veterano",
+      "desc": "Uma máscara antiga. É capaz de substituir, até certo ponto, um rosto coberto de cicatrizes. Seu design varia baseado nas áreas feridas e no gênero de seu usuário."
+    }
+  }
+}

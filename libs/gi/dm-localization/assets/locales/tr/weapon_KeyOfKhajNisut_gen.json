@@ -1,0 +1,24 @@
+{
+  "name": "Khaj-Nisut Anahtarı",
+  "description": {
+    "0": "Obsidiyenden yapılma bir çift asanın teki. Söylenene göre kum denizinin ardındaki cennetin kapısını açmak için kullanılabilirmiş."
+  },
+  "passiveName": "Kumlar Altındaki Şarkı",
+  "passiveDescription": {
+    "0": {
+      "0": "Can <cryo>%20</cryo> artar. Element Becerisi düşmanlara vurduğunda 20 saniyeliğine Büyük İlahi etkisi kazanılır. Bu etki, kuşanan karakterin Maks. Canının <cryo>%0,12</cryo>'si kadar Element Ustalığını artırır. Her 0,3 saniyede bir tetiklenebilir. 3 kademeye kadar birikebilir. 3 kademe biriktikten veya üçüncü kademenin süresi yenilendikten sonra 20 saniyeliğine yakındaki tüm grup üyelerinin Element Ustalığı, kuşanan karakterin Maks. Canının <cryo>%0,2</cryo>'si kadar artar."
+    },
+    "1": {
+      "0": "Can <cryo>%25</cryo> artar. Element Becerisi düşmanlara vurduğunda 20 saniyeliğine Büyük İlahi etkisi kazanılır. Bu etki, kuşanan karakterin Maks. Canının <cryo>%0,15</cryo>'i kadar Element Ustalığını artırır. Her 0,3 saniyede bir tetiklenebilir. 3 kademeye kadar birikebilir. 3 kademe biriktikten veya üçüncü kademenin süresi yenilendikten sonra 20 saniyeliğine yakındaki tüm grup üyelerinin Element Ustalığı, kuşanan karakterin Maks. Canının <cryo>%0,25</cryo>'i kadar artar."
+    },
+    "2": {
+      "0": "Can <cryo>%30</cryo> artar. Element Becerisi düşmanlara vurduğunda 20 saniyeliğine Büyük İlahi etkisi kazanılır. Bu etki, kuşanan karakterin Maks. Canının <cryo>%0,18</cryo>'i kadar Element Ustalığını artırır. Her 0,3 saniyede bir tetiklenebilir. 3 kademeye kadar birikebilir. 3 kademe biriktikten veya üçüncü kademenin süresi yenilendikten sonra 20 saniyeliğine yakındaki tüm grup üyelerinin Element Ustalığı, kuşanan karakterin Maks. Canının <cryo>%0,3</cryo>'ü kadar artar."
+    },
+    "3": {
+      "0": "Can <cryo>%35</cryo> artar. Element Becerisi düşmanlara vurduğunda 20 saniyeliğine Büyük İlahi etkisi kazanılır. Bu etki, kuşanan karakterin Maks. Canının <cryo>%0,21</cryo>'i kadar Element Ustalığını artırır. Her 0,3 saniyede bir tetiklenebilir. 3 kademeye kadar birikebilir. 3 kademe biriktikten veya üçüncü kademenin süresi yenilendikten sonra 20 saniyeliğine yakındaki tüm grup üyelerinin Element Ustalığı, kuşanan karakterin Maks. Canının <cryo>%0,35</cryo>'i kadar artar."
+    },
+    "4": {
+      "0": "Can <cryo>%40</cryo> artar. Element Becerisi düşmanlara vurduğunda 20 saniyeliğine Büyük İlahi etkisi kazanılır. Bu etki, kuşanan karakterin Maks. Canının <cryo>%0,24</cryo>'ü kadar Element Ustalığını artırır. Her 0,3 saniyede bir tetiklenebilir. 3 kademeye kadar birikebilir. 3 kademe biriktikten veya üçüncü kademenin süresi yenilendikten sonra 20 saniyeliğine yakındaki tüm grup üyelerinin Element Ustalığı, kuşanan karakterin Maks. Canının <cryo>%0,4</cryo>'ü kadar artar."
+    }
+  }
+}

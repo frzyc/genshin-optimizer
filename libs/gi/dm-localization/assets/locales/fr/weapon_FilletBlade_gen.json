@@ -1,0 +1,24 @@
+{
+  "name": "Couteau à filets",
+  "description": {
+    "0": "Un couteau de pêche à la lame tranchante. Il est très acéré."
+  },
+  "passiveName": "Détermination",
+  "passiveDescription": {
+    "0": {
+      "0": "Les attaques ont 50 % de chances d'infliger <cryo>240 %</cryo> de DGT d'ATQ à un ennemi lorsqu'elles touchent. Cet effet peut être déclenché une fois toutes les <cryo>15</cryo> s."
+    },
+    "1": {
+      "0": "Les attaques ont 50 % de chances d'infliger <cryo>280 %</cryo> de DGT d'ATQ à un ennemi lorsqu'elles touchent. Cet effet peut être déclenché une fois toutes les <cryo>14</cryo> s."
+    },
+    "2": {
+      "0": "Les attaques ont 50 % de chances d'infliger <cryo>320 %</cryo> de DGT d'ATQ à un ennemi lorsqu'elles touchent. Cet effet peut être déclenché une fois toutes les <cryo>13</cryo> s."
+    },
+    "3": {
+      "0": "Les attaques ont 50 % de chances d'infliger <cryo>360 %</cryo> de DGT d'ATQ à un ennemi lorsqu'elles touchent. Cet effet peut être déclenché une fois toutes les <cryo>12</cryo> s."
+    },
+    "4": {
+      "0": "Les attaques ont 50 % de chances d'infliger <cryo>400 %</cryo> de DGT d'ATQ à un ennemi lorsqu'elles touchent. Cet effet peut être déclenché une fois toutes les <cryo>11</cryo> s."
+    }
+  }
+}

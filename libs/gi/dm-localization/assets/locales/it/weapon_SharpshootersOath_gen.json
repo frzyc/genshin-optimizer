@@ -1,0 +1,24 @@
+{
+  "name": "Patto del cecchino",
+  "description": {
+    "0": "Quest'arco portentoso apparteneva a un grande arciere. Emana un forte odore, il che lo rende inadatto alla caccia."
+  },
+  "passiveName": "Precisione",
+  "passiveDescription": {
+    "0": {
+      "0": "Aumenta i DAN contro i punti deboli di un <cryo>24%</cryo>."
+    },
+    "1": {
+      "0": "Aumenta i DAN contro i punti deboli di un <cryo>30%</cryo>."
+    },
+    "2": {
+      "0": "Aumenta i DAN contro i punti deboli di un <cryo>36%</cryo>."
+    },
+    "3": {
+      "0": "Aumenta i DAN contro i punti deboli di un <cryo>42%</cryo>."
+    },
+    "4": {
+      "0": "Aumenta i DAN contro i punti deboli di un <cryo>48%</cryo>."
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Engulfing Lightning",
+  "description": {
+    "0": "A naginata used to \"cut grass.\" Any army that stands before this weapon will probably be likewise cut down..."
+  },
+  "passiveName": "Timeless Dream: Eternal Stove",
+  "passiveDescription": {
+    "0": {
+      "0": "ATK increased by <cryo>28%</cryo> of Energy Recharge over the base 100%. You can gain a maximum bonus of <cryo>80%</cryo> ATK. Gain <cryo>30%</cryo> Energy Recharge for 12s after using an Elemental Burst."
+    },
+    "1": {
+      "0": "ATK increased by <cryo>35%</cryo> of Energy Recharge over the base 100%. You can gain a maximum bonus of <cryo>90%</cryo> ATK. Gain <cryo>35%</cryo> Energy Recharge for 12s after using an Elemental Burst."
+    },
+    "2": {
+      "0": "ATK increased by <cryo>42%</cryo> of Energy Recharge over the base 100%. You can gain a maximum bonus of <cryo>100%</cryo> ATK. Gain <cryo>40%</cryo> Energy Recharge for 12s after using an Elemental Burst."
+    },
+    "3": {
+      "0": "ATK increased by <cryo>49%</cryo> of Energy Recharge over the base 100%. You can gain a maximum bonus of <cryo>110%</cryo> ATK. Gain <cryo>45%</cryo> Energy Recharge for 12s after using an Elemental Burst."
+    },
+    "4": {
+      "0": "ATK increased by <cryo>56%</cryo> of Energy Recharge over the base 100%. You can gain a maximum bonus of <cryo>120%</cryo> ATK. Gain <cryo>50%</cryo> Energy Recharge for 12s after using an Elemental Burst."
+    }
+  }
+}

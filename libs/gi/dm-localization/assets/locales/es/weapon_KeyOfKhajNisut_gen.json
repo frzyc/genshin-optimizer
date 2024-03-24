@@ -1,0 +1,24 @@
+{
+  "name": "Llave de la Coronación",
+  "description": {
+    "0": "Un cetro que venía junto a un báculo y que está hecho de obsidiana. Cuenta la leyenda que la puerta del paraíso oculto en los confines del desierto se abre con esta misteriosa llave."
+  },
+  "passiveName": "Epopeya sepultada en las arenas",
+  "passiveDescription": {
+    "0": {
+      "0": "Aumenta la Vida en un <cryo>20%</cryo>. Golpear a un enemigo con una Habilidad Elemental activa el efecto de “gran poema”, el cual dura 20 s. Mientras este efecto está activo, la Maestría Elemental del personaje que lleva esta arma equipada aumenta en una cantidad equivalente al <cryo>0.12%</cryo> de su Vida Máx. Este efecto solo puede activarse una vez cada 0.3 s y acumularse un máximo de 3 veces. Al alcanzar 3 acumulaciones o cuando se reinicia la duración de la tercera, la Maestría Elemental de todos los miembros del equipo cercanos aumenta durante 20 s en una cantidad equivalente al <cryo>0.2%</cryo> de la Vida Máx. del personaje que porta esta arma."
+    },
+    "1": {
+      "0": "Aumenta la Vida en un <cryo>25%</cryo>. Golpear a un enemigo con una Habilidad Elemental activa el efecto de “gran poema”, el cual dura 20 s. Mientras este efecto está activo, la Maestría Elemental del personaje que lleva esta arma equipada aumenta en una cantidad equivalente al <cryo>0.15%</cryo> de su Vida Máx. Este efecto solo puede activarse una vez cada 0.3 s y acumularse un máximo de 3 veces. Al alcanzar 3 acumulaciones o cuando se reinicia la duración de la tercera, la Maestría Elemental de todos los miembros del equipo cercanos aumenta durante 20 s en una cantidad equivalente al <cryo>0.25%</cryo> de la Vida Máx. del personaje que porta esta arma."
+    },
+    "2": {
+      "0": "Aumenta la Vida en un <cryo>30%</cryo>. Golpear a un enemigo con una Habilidad Elemental activa el efecto de “gran poema”, el cual dura 20 s. Mientras este efecto está activo, la Maestría Elemental del personaje que lleva esta arma equipada aumenta en una cantidad equivalente al <cryo>0.18%</cryo> de su Vida Máx. Este efecto solo puede activarse una vez cada 0.3 s y acumularse un máximo de 3 veces. Al alcanzar 3 acumulaciones o cuando se reinicia la duración de la tercera, la Maestría Elemental de todos los miembros del equipo cercanos aumenta durante 20 s en una cantidad equivalente al <cryo>0.3%</cryo> de la Vida Máx. del personaje que porta esta arma."
+    },
+    "3": {
+      "0": "Aumenta la Vida en un <cryo>35%</cryo>. Golpear a un enemigo con una Habilidad Elemental activa el efecto de “gran poema”, el cual dura 20 s. Mientras este efecto está activo, la Maestría Elemental del personaje que lleva esta arma equipada aumenta en una cantidad equivalente al <cryo>0.21%</cryo> de su Vida Máx. Este efecto solo puede activarse una vez cada 0.3 s y acumularse un máximo de 3 veces. Al alcanzar 3 acumulaciones o cuando se reinicia la duración de la tercera, la Maestría Elemental de todos los miembros del equipo cercanos aumenta durante 20 s en una cantidad equivalente al <cryo>0.35%</cryo> de la Vida Máx. del personaje que porta esta arma."
+    },
+    "4": {
+      "0": "Aumenta la Vida en un <cryo>40%</cryo>. Golpear a un enemigo con una Habilidad Elemental activa el efecto de “gran poema”, el cual dura 20 s. Mientras este efecto está activo, la Maestría Elemental del personaje que lleva esta arma equipada aumenta en una cantidad equivalente al <cryo>0.24%</cryo> de su Vida Máx. Este efecto solo puede activarse una vez cada 0.3 s y acumularse un máximo de 3 veces. Al alcanzar 3 acumulaciones o cuando se reinicia la duración de la tercera, la Maestría Elemental de todos los miembros del equipo cercanos aumenta durante 20 s en una cantidad equivalente al <cryo>0.4%</cryo> de la Vida Máx. del personaje que porta esta arma."
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "electro": {
+    "skill": {
+      "enerRegen": "Energía Elemental regenerada",
+      "enerRechInc": "Aumento de Rec. de Energía"
+    },
+    "burst": {
+      "thunderDMG": "Daño de rayo temible"
+    }
+  }
+}

@@ -1,0 +1,163 @@
+{
+  "name": "Faruzán",
+  "title": "La Ingeniera Enigmática",
+  "description": "Una erudita “con cien años de antigüedad” a la que le encanta recalcar que tiene más experiencia que los demás. Posee unos amplios conocimientos sobre textos antiguos y sobre todo tipo de mecanismos.",
+  "constellationName": "Flosculi Implexi",
+  "auto": {
+    "name": "Disparo parto",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Ataque Normal</strong>",
+        "1": "Realiza hasta 4 disparos consecutivos con arco."
+      },
+      "charged": {
+        "0": "<strong>Ataque Cargado</strong>",
+        "1": "Realiza un <strong>Disparo Preciso</strong> que inflige mayor daño y tiene mayor precisión.",
+        "2": "Al apuntar, un fuerte viento se acumulará en la punta de la flecha. Una flecha totalmente cargada con la fuerza del viento infligirá <anemo>Daño Anemo</anemo>."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Descendente</strong>",
+        "1": "Dispara una lluvia de flechas desde el aire y desciende rápidamente mientras ataca a los enemigos a su paso, infligiendo Daño en el AdE al impactar contra el suelo."
+      }
+    },
+    "skillParams": {
+      "0": "Daño de 1er golpe",
+      "1": "Daño de 2.º golpe",
+      "2": "Daño de 3er golpe",
+      "3": "Daño de 4.º golpe",
+      "4": "Disparo Preciso",
+      "5": "Disparo Preciso (carga completa)",
+      "6": "Daño de Caída",
+      "7": "Daño de impacto de caída baja/alta",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Cielo ventoso del Nasamjñin",
+    "description": {
+      "0": "Faruzán despliega un poliedro que inflige <anemo>Daño Anemo en el AdE</anemo> contra los enemigos cercanos. Además, obtiene el estado de “encarnación del vendaval”.",
+      "1": "Faruzán consumirá este estado con su próximo Disparo Preciso completamente cargado. Este se convertirá en una flecha huracanada de aire a presión que inflige <anemo>Daño Anemo</anemo> en función del daño de la carga completa del Disparo Preciso de Ataque Normal: Disparo parto.",
+      "2": "<br/>",
+      "3": "<strong>Derribo tormentoso</strong>",
+      "4": "La flecha huracanada aplicará el efecto de “derribo tormentoso” sobre el enemigo o personaje golpeado. Dicho efecto se eliminará tras un breve lapso de tiempo y creará un vórtice que inflige <anemo>Daño Anemo en el AdE</anemo> y atrae hacia sí mismo a los objetos y enemigos cercanos. Si no se golpea a ningún enemigo o personaje, el efecto de derribo tormentoso se aplicará sobre la ubicación golpeada.",
+      "5": "El daño que inflige el vórtice se considera daño de Habilidad Elemental.",
+      "6": "<br/>",
+      "7": "<i>Cuando eliminas la barrera de los prejuicios, los vientos de la verdad comienzan a soplar en el jardín de quienes buscan la sabiduría.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "Daño de vórtice de derribo tormentoso",
+      "2": "Duración de encarnación del vendaval",
+      "3": "TdE",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Camino del ascenso",
+    "description": {
+      "0": "Faruzán despliega rápidamente un poliedro fulgurante que libera ondas borrascosas que infligen <anemo>Daño Anemo en el AdE</anemo>.",
+      "1": "Mientras esté activo, el poliedro fulgurante se moverá continuamente adoptando una trayectoria triangular. Cada vez que llegue a un vértice del triángulo, el poliedro liberará una onda borrascosa.",
+      "2": "<br/>",
+      "3": "<strong>Onda borrascosa</strong>",
+      "4": [
+        "Al ser liberada, aplica a los enemigos de alrededor el efecto de “maldición vientotraidor”, el cual reduce su <anemo>RES Anemo</anemo>.",
+        "Al ser liberada, aplica el efecto de “bendición vientosacro” sobre todos los miembros del equipo cercanos, quienes obtienen un <anemo>Bono de Daño Anemo</anemo>."
+      ],
+      "5": "<br/>",
+      "6": "<i>Es preciso tenerle cierto respeto a la sabiduría desconocida que permanece oculta en ruinas antiguas.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "Bono de Daño Anemo",
+      "2": "Duración de bendición vientosacro",
+      "3": "Reducción de RES Anemo",
+      "4": "Duración de maldición vientotraidor",
+      "5": "Duración",
+      "6": "TdE",
+      "7": "Energía Elemental",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Ráfaga impetuosa",
+    "description": {
+      "0": "Al estar bajo los efectos de encarnación del vendaval de <strong>Cielo ventoso del Nasamjñin</strong>, el tiempo de carga del Disparo Preciso de Faruzán se reduce en un 60%. Además, en dicho estado, aplicará la maldición vientotraidor de <strong>Camino del ascenso</strong> sobre los enemigos golpeados por el vórtice creado con el efecto de derribo tormentoso."
+    }
+  },
+  "passive2": {
+    "name": "Sabiduría del pasado",
+    "description": {
+      "0": "Cuando un personaje bajo los efectos de la bendición vientosacro de <strong>Camino del ascenso</strong> inflige <anemo>Daño Anemo</anemo> contra un enemigo con un Ataque Normal, Cargado, Descendente o una Habilidad Elemental o Definitiva, se produce el efecto de “bendición tempestuosa”, el cual aumenta dicho daño en un 32% del ATQ Básico de Faruzán. Este efecto solo se puede generar una vez cada 0.8 s y se anula cuando termina la duración de la bendición vientosacro o después de que esta se haya activado una vez."
+    }
+  },
+  "passive3": {
+    "name": "Conocimiento deslumbrante",
+    "description": {
+      "0": "Aumenta en un 25% las recompensas de las expediciones de 20 h en Sumeru."
+    }
+  },
+  "constellation1": {
+    "name": "Búsqueda de la verdad",
+    "description": {
+      "0": "Durante un único efecto de encarnación del vendaval de <strong>Cielo ventoso del Nasamjñin</strong>, Faruzán puede disparar un máximo de 2 flechas huracanadas con su Disparo Preciso completamente cargado."
+    }
+  },
+  "constellation2": {
+    "name": "Sabiduría informe",
+    "description": {
+      "0": "Aumenta en 6 s la duración del poliedro fulgurante de <strong>Camino del ascenso</strong>."
+    }
+  },
+  "constellation3": {
+    "name": "Sosiego en el jardín",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Cielo ventoso del Nasamjñin</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Comprensión divina",
+    "description": {
+      "0": "El vórtice creado con <strong>derribo tormentoso</strong> regenera Energía Elemental para Faruzán en función del número de enemigos golpeados. Al golpear a un enemigo, Faruzán recupera 2 pts. de Energía Elemental. Por cada enemigo adicional golpeado, recupera 0.5 pts. de Energía.",
+      "1": "Faruzán solo puede recuperar 4 pts. de Energía Elemental de esta manera por cada vórtice que se haya creado."
+    }
+  },
+  "constellation5": {
+    "name": "Plano de la reflexión",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Camino del ascenso</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Esencia de la verdad",
+    "description": {
+      "0": "Cuando un personaje bajo los efectos de la bendición vientosacro de <strong>Camino del ascenso</strong> inflige <anemo>Daño Anemo</anemo>, el Daño CRIT de ese ataque aumenta en un 40%. Por otro lado, cuando tu personaje en combate inflige daño contra un enemigo mientras está bajo los efectos de la bendición vientosacro, aplicará el efecto de derribo tormentoso sobre dicho enemigo. Este efecto solo se puede activar una vez cada 3 s y su TdE se comparte entre todos los miembros del equipo."
+    }
+  }
+}

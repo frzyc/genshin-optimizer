@@ -1,0 +1,167 @@
+{
+  "name": "Venti",
+  "title": "Windborne Bard",
+  "description": "One of the many bards of Mondstadt, who freely wanders the city's streets and alleys.",
+  "constellationName": "Carmen Dei",
+  "auto": {
+    "name": "Divine Marksmanship",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Attack</strong>",
+        "1": "Performs up to 6 consecutive shots with a bow."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Performs a more precise <strong>Aimed Shot</strong> with increased DMG.",
+        "2": "While aiming, favorable winds will accumulate on the arrowhead. A fully charged wind arrow will deal <anemo>Anemo DMG</anemo>."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Fires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact."
+      }
+    },
+    "skillParams": {
+      "0": "1-Hit DMG",
+      "1": "2-Hit DMG",
+      "2": "3-Hit DMG",
+      "3": "4-Hit DMG",
+      "4": "5-Hit DMG",
+      "5": "6-Hit DMG",
+      "6": "Aimed Shot",
+      "7": "Fully-Charged Aimed Shot",
+      "8": "Plunge DMG",
+      "9": "Low/High Plunge DMG",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Skyward Sonnet",
+    "description": {
+      "0": "O wind upon which all hymns and songs fly, bear these earth-walkers up into the sky!",
+      "1": "<br/>",
+      "2": "<strong>Press</strong>",
+      "3": "Summons a Wind Domain at the opponent's location, dealing <anemo>AoE Anemo DMG</anemo> and launching opponents into the air.",
+      "4": "<br/>",
+      "5": "<strong>Hold</strong>",
+      "6": "Summons an even larger Wind Domain with Venti as the epicenter, dealing <anemo>AoE Anemo DMG</anemo> and launching affected opponents into the air.",
+      "7": "After unleashing the Hold version of this ability, Venti rides the wind into the air.",
+      "8": "<br/>",
+      "9": "Opponents hit by Skyward Sonnet will fall to the ground slowly.",
+      "10": "<br/>",
+      "11": "<i>In the days when gods and men walked the earth together, the heavens were filled with countless songs. This melody has long since been forgotten.</i>"
+    },
+    "skillParams": {
+      "0": "Press DMG",
+      "1": "Press CD",
+      "2": "Hold DMG",
+      "3": "Hold CD",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Wind's Grand Ode",
+    "description": {
+      "0": "Fires off an arrow made of countless coalesced winds, creating a huge Stormeye that sucks in opponents and deals continuous <anemo>Anemo DMG</anemo>.",
+      "1": "<br/>",
+      "2": "<strong>Elemental Absorption</strong>",
+      "3": "If the Stormeye comes into contact with <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<electro>Electro</electro>, it will deal additional elemental DMG of that type.",
+      "4": "Elemental Absorption may only occur once per use.",
+      "5": "<br/>",
+      "6": "<i>Many hymns written in praise of the Anemo Archon have been lost to time. This one sings of his mastery over the wind.</i>"
+    },
+    "skillParams": {
+      "0": "DoT",
+      "1": "Additional Elemental DMG",
+      "2": "Duration",
+      "3": "CD",
+      "4": "Energy Cost",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Embrace of Winds",
+    "description": {
+      "0": "Holding <strong>Skyward Sonnet</strong> creates an upcurrent that lasts for 20s."
+    }
+  },
+  "passive2": {
+    "name": "Stormeye",
+    "description": {
+      "0": "Regenerates 15 Energy for Venti after the effects of <strong>Wind's Grand Ode</strong> end.",
+      "1": "If an Elemental Absorption occurred, this also restores 15 Energy to all characters of that corresponding element in the party."
+    }
+  },
+  "passive3": {
+    "name": "Windrider",
+    "description": {
+      "0": "Decreases gliding Stamina consumption for your own party members by 20%.",
+      "1": "Not stackable with Passive Talents that provide the exact same effects."
+    }
+  },
+  "constellation1": {
+    "name": "Splitting Gales",
+    "description": {
+      "0": "Fires 2 additional arrows per <strong>Aimed Shot</strong>, each dealing 33% of the original arrow's DMG."
+    }
+  },
+  "constellation2": {
+    "name": "Breeze of Reminiscence",
+    "description": {
+      "0": "<strong>Skyward Sonnet</strong> decreases opponents' <anemo>Anemo RES</anemo> and Physical RES by 12% for 10s.",
+      "1": "Opponents launched by <strong>Skyward Sonnet</strong> suffer an additional 12% <anemo>Anemo RES</anemo> and Physical RES decrease while airborne."
+    }
+  },
+  "constellation3": {
+    "name": "Ode to Thousand Winds",
+    "description": {
+      "0": "Increases the Level of <strong>Wind's Grand Ode</strong> by 3.",
+      "1": "Maximum upgrade level is 15."
+    }
+  },
+  "constellation4": {
+    "name": "Hurricane of Freedom",
+    "description": {
+      "0": "When Venti picks up an Elemental Orb or Particle, he receives a 25% <anemo>Anemo DMG Bonus</anemo> for 10s."
+    }
+  },
+  "constellation5": {
+    "name": "Concerto dal Cielo",
+    "description": {
+      "0": "Increases the Level of <strong>Skyward Sonnet</strong> by 3.",
+      "1": "Maximum upgrade level is 15."
+    }
+  },
+  "constellation6": {
+    "name": "Storm of Defiance",
+    "description": {
+      "0": "Targets who take DMG from <strong>Wind's Grand Ode</strong> have their <anemo>Anemo RES</anemo> decreased by 20%.",
+      "1": "If an Elemental Absorption occurred, then their RES towards the corresponding Element is also decreased by 20%."
+    }
+  }
+}

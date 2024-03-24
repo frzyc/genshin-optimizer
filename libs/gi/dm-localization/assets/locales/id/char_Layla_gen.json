@@ -1,0 +1,165 @@
+{
+  "name": "Layla",
+  "title": "Fantastical Evening Star",
+  "description": "Siswa Darshan Rtawahist yang mengambil spesialisasi Teori Astrologi. Sering tidur berjalan, kadang kala terus terjaga sampai sekian lama. Intinya, dia bermasalah untuk urusan tidur dan istirahat.",
+  "constellationName": "Luscinia",
+  "auto": {
+    "name": "Sword of the Radiant Path",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Attack</strong>",
+        "1": "Melancarkan hingga 3 serangan berturut-turut."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Mengonsumsi sejumlah Stamina untuk melancarkan dua tebasan pedang."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Menerjang dari udara untuk menghantam tanah, menyerang musuh di jalur terjangan dan mengakibatkan DMG area saat mendarat."
+      }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Charged Attack",
+      "4": "Konsumsi Stamina Charged Attack",
+      "5": "DMG Selama Plunging",
+      "6": "DMG Plunging Attack Rendah/Tinggi",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Nights of Formal Focus",
+    "description": {
+      "0": "Mengaktifkan Curtain of Slumber dan mengakibatkan <cryo>Cryo DMG Area</cryo>.",
+      "1": "Curtain of Slumber dapat menahan DMG berdasarkan Max HP Layla, perisai juga memiliki 250% pertahanan terhadap <cryo>Cryo DMG</cryo>. Saat mengaktifkan perisai, akan memberikan <cryo>efek Cryo</cryo> sementara untuk Layla.",
+      "2": "<br/>",
+      "3": "<strong>Night Star and Shooting Star</strong>",
+      "4": "Selama Curtain of Slumber aktif, maka setiap 1,5 detik akan menghasilkan 1 buah Night Star yang melekat ke perisai; Saat Karakter yang berada di dalam perlindungan perisai melancarkan Elemental Skill, 2 buah Night Star akan dihasilkan. Night Star dapat dihasilkan dengan cara ini setiap 0,3 detik, sampai maksimal 4 buah Night Star.",
+      "5": "Saat Night Star pada Curtain of Slumber mencapai 4 buah, dan jika ada musuh di sekitar, maka Night Star secara otomatis berubah menjadi Shooting Star yang bisa mengejar musuh, dan mengakibatkan <cryo>Cryo DMG</cryo> terhadap musuh yang terkena.",
+      "6": "Saat durasi Curtain of Slumber berakhir atau perisainya hancur, Night Star juga akan turut lenyap. Jika Night Star sudah berubah menjadi Shooting Star dan sudah diluncurkan, maka Shooting Star akan terus diluncurkan sampai habis.",
+      "7": "<br/>",
+      "8": "Night Star yang baru tidak akan bisa dihasilkan sebelum Shooting Star yang lama habis.",
+      "9": "<br/>",
+      "10": "<i>\"Aku dan dia seperti dua pengrajin ahli yang belum pernah bertemu, yang duduk di alas yang sama, menyulam sekuntum bunga impian yang sama.\"</i>"
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "DMG Shooting Star",
+      "2": "Ketahanan Dasar Perisai",
+      "3": "Durasi Perisai",
+      "4": "Cooldown",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Dream of the Star-Stream Shaker",
+    "description": {
+      "0": "Melancarkan Celestial Dreamsphere yang akan terus-menerus menembakkan Starlight Slug terhadap musuh dalam radiusnya, mengakibatkan <cryo>Cryo DMG</cryo>.",
+      "1": "Setelah Starlight Slug mengenai sasaran, 1 buah Night Star untuk Curtain of Slumber akan dihasilkan. Night Star dapat dihasilkan dengan cara ini setiap 0,5 detik.",
+      "2": "<br/>",
+      "3": "<i>\"Terlelaplah, terlelaplah, biarlah garis takdir menampakkan diri dalam tidurmu, menyinari jalan setapak di dalam mimpimu.\"</i>"
+    },
+    "skillParams": {
+      "0": "DMG Starlight Slug",
+      "1": "Durasi",
+      "2": "Cooldown",
+      "3": "Konsumsi Energy",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Like Nascent Light",
+    "description": {
+      "0": "<strong>Saat Curtain of Slumber</strong> aktif, untuk setiap Night Star yang diperoleh, akan menghasilkan efek Deep Sleep:",
+      "1": [
+        "Karakter yang berada dalam perlindungan Curtain of Slumber akan mendapatkan peningkatan perisai sebesar 6%;"
+      ],
+      "2": "Efek ini dapat ditumpuk sampai 4 kali dan bertahan hingga Curtain of Slumber berakhir."
+    }
+  },
+  "passive2": {
+    "name": "Sweet Slumber Undisturbed",
+    "description": {
+      "0": "DMG yang diakibatkan oleh Shooting Star dari <strong>Nights of Formal Focus</strong> meningkat sebesar 1,5% dari Max HP Layla."
+    }
+  },
+  "passive3": {
+    "name": "Shadowy Dream-Signs",
+    "description": {
+      "0": "Saat membuat Material Talenta Karakter, memiliki 10% kemungkinan untuk mendapatkan hasil 2 kali lipat."
+    }
+  },
+  "constellation1": {
+    "name": "Fortress of Fantasy",
+    "description": {
+      "0": "DMG yang bisa ditahan Curtain of Slumber dari <strong>Nights of Formal Focus</strong> meningkat 20%.",
+      "1": "Selain itu, saat melancarkan Nights of Formal Focus, akan memberikan perisai kepada seluruh Karakter yang tidak berada dalam perlindungan perisai Curtain of Slumber, perisai ini dapat menahan DMG sebesar 35% perisai Curtain of Slumber, bertahan 12 detik, dan memiliki 250% pertahanan terhadap <cryo>Cryo DMG</cryo>."
+    }
+  },
+  "constellation2": {
+    "name": "Light's Remit",
+    "description": {
+      "0": "Saat Shooting Star dari <strong>Nights of Formal Focus</strong> mengenai musuh, akan memulihkan 1 poin Energy Layla. Setiap Shooting Star dapat memulihkan Energy Layla seperti ini sebanyak satu kali."
+    }
+  },
+  "constellation3": {
+    "name": "Secrets of the Night",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Nights of Formal Focus</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Starry Illumination",
+    "description": {
+      "0": "Saat <strong>Nights of Formal Focus</strong> mulai menembakkan Shooting Star, akan memberikan efek Dawn Star terhadap seluruh anggota party di sekitar: DMG yang diakibatkan Normal Attack dan Charged Attack akan meningkat sebesar 5% Max HP Layla.",
+      "1": "Efek Dawn Star bertahan selama 3 detik, dan akan hilang 0,05 detik setelah Normal Attack atau Charged Attack mengakibatkan DMG."
+    }
+  },
+  "constellation5": {
+    "name": "Stream of Consciousness",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Dream of the Star-Stream Shaker</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Radiant Soulfire",
+    "description": {
+      "0": "DMG yang diakibatkan Shooting Star dari <strong>Nights of Formal Focus</strong> meningkat 40%, DMG Starlight Slug dari <strong>Dream of the Star-Stream Shaker</strong> meningkat 40%.",
+      "1": "Selain itu, jeda Night Star yang dihasilkan oleh Nights of Formal Focus berkurang sebesar 20%."
+    }
+  }
+}

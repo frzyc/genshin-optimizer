@@ -1,0 +1,24 @@
+{
+  "name": "Elegy for the End",
+  "description": {
+    "0": "A bow as lovely as any bard's lyre, its arrows pierce the heart like a lamenting sigh."
+  },
+  "passiveName": "The Parting Refrain",
+  "passiveDescription": {
+    "0": {
+      "0": "A part of the \"Millennial Movement\" that wanders amidst the winds. Increases Elemental Mastery by <cryo>60</cryo>. When the Elemental Skills or Elemental Bursts of the character wielding this weapon hit opponents, that character gains a Sigil of Remembrance. This effect can be triggered once every 0.2s and can be triggered even if said character is not on the field. When you possess 4 Sigils of Remembrance, all of them will be consumed and all nearby party members will obtain the \"Millennial Movement: Farewell Song\" effect for 12s. \"Millennial Movement: Farewell Song\" increases Elemental Mastery by <cryo>100</cryo> and increases ATK by <cryo>20%</cryo>. Once this effect is triggered, you will not gain Sigils of Remembrance for 20s. Of the many effects of the \"Millennial Movement,\" buffs of the same type will not stack."
+    },
+    "1": {
+      "0": "A part of the \"Millennial Movement\" that wanders amidst the winds. Increases Elemental Mastery by <cryo>75</cryo>. When the Elemental Skills or Elemental Bursts of the character wielding this weapon hit opponents, that character gains a Sigil of Remembrance. This effect can be triggered once every 0.2s and can be triggered even if said character is not on the field. When you possess 4 Sigils of Remembrance, all of them will be consumed and all nearby party members will obtain the \"Millennial Movement: Farewell Song\" effect for 12s. \"Millennial Movement: Farewell Song\" increases Elemental Mastery by <cryo>125</cryo> and increases ATK by <cryo>25%</cryo>. Once this effect is triggered, you will not gain Sigils of Remembrance for 20s. Of the many effects of the \"Millennial Movement,\" buffs of the same type will not stack."
+    },
+    "2": {
+      "0": "A part of the \"Millennial Movement\" that wanders amidst the winds. Increases Elemental Mastery by <cryo>90</cryo>. When the Elemental Skills or Elemental Bursts of the character wielding this weapon hit opponents, that character gains a Sigil of Remembrance. This effect can be triggered once every 0.2s and can be triggered even if said character is not on the field. When you possess 4 Sigils of Remembrance, all of them will be consumed and all nearby party members will obtain the \"Millennial Movement: Farewell Song\" effect for 12s. \"Millennial Movement: Farewell Song\" increases Elemental Mastery by <cryo>150</cryo> and increases ATK by <cryo>30%</cryo>. Once this effect is triggered, you will not gain Sigils of Remembrance for 20s. Of the many effects of the \"Millennial Movement,\" buffs of the same type will not stack."
+    },
+    "3": {
+      "0": "A part of the \"Millennial Movement\" that wanders amidst the winds. Increases Elemental Mastery by <cryo>105</cryo>. When the Elemental Skills or Elemental Bursts of the character wielding this weapon hit opponents, that character gains a Sigil of Remembrance. This effect can be triggered once every 0.2s and can be triggered even if said character is not on the field. When you possess 4 Sigils of Remembrance, all of them will be consumed and all nearby party members will obtain the \"Millennial Movement: Farewell Song\" effect for 12s. \"Millennial Movement: Farewell Song\" increases Elemental Mastery by <cryo>175</cryo> and increases ATK by <cryo>35%</cryo>. Once this effect is triggered, you will not gain Sigils of Remembrance for 20s. Of the many effects of the \"Millennial Movement,\" buffs of the same type will not stack."
+    },
+    "4": {
+      "0": "A part of the \"Millennial Movement\" that wanders amidst the winds. Increases Elemental Mastery by <cryo>120</cryo>. When the Elemental Skills or Elemental Bursts of the character wielding this weapon hit opponents, that character gains a Sigil of Remembrance. This effect can be triggered once every 0.2s and can be triggered even if said character is not on the field. When you possess 4 Sigils of Remembrance, all of them will be consumed and all nearby party members will obtain the \"Millennial Movement: Farewell Song\" effect for 12s. \"Millennial Movement: Farewell Song\" increases Elemental Mastery by <cryo>200</cryo> and increases ATK by <cryo>40%</cryo>. Once this effect is triggered, you will not gain Sigils of Remembrance for 20s. Of the many effects of the \"Millennial Movement,\" buffs of the same type will not stack."
+    }
+  }
+}

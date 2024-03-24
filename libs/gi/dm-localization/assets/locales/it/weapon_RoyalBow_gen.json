@@ -1,0 +1,24 @@
+{
+  "name": "Arco reale",
+  "description": {
+    "0": "Un vecchio arco lungo appartenuto agli antichi sovrani di Mondstadt. Tramandato da generazioni, la sua corda è ancora ben salda e può scoccare frecce con grande forza."
+  },
+  "passiveName": "Concentrazione",
+  "passiveDescription": {
+    "0": {
+      "0": "Dopo aver inflitto danni a un avversario, il tasso di CRIT aumenta di un <cryo>8%</cryo>. Cumulabile fino a 5 volte. In caso di colpo CRIT, la quantità cumulata si azzera."
+    },
+    "1": {
+      "0": "Dopo aver inflitto danni a un avversario, il tasso di CRIT aumenta di un <cryo>10%</cryo>. Cumulabile fino a 5 volte. In caso di colpo CRIT, la quantità cumulata si azzera."
+    },
+    "2": {
+      "0": "Dopo aver inflitto danni a un avversario, il tasso di CRIT aumenta di un <cryo>12%</cryo>. Cumulabile fino a 5 volte. In caso di colpo CRIT, la quantità cumulata si azzera."
+    },
+    "3": {
+      "0": "Dopo aver inflitto danni a un avversario, il tasso di CRIT aumenta di un <cryo>14%</cryo>. Cumulabile fino a 5 volte. In caso di colpo CRIT, la quantità cumulata si azzera."
+    },
+    "4": {
+      "0": "Dopo aver inflitto danni a un avversario, il tasso di CRIT aumenta di un <cryo>16%</cryo>. Cumulabile fino a 5 volte. In caso di colpo CRIT, la quantità accumulata si azzera."
+    }
+  }
+}

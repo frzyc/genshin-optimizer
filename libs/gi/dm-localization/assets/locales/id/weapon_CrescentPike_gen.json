@@ -1,0 +1,24 @@
+{
+  "name": "Crescent Pike",
+  "description": {
+    "0": "Senjata indah dengan mata pedang yang sangat panjang di bagian atas, dan sabit di bagian bawah. Mencapai di Liyue setelah melalui tangan beberapa tangan pedagang. Dengan latihan, ini bisa menjadi senjata mematikan."
+  },
+  "passiveName": "Infusion Needle",
+  "passiveDescription": {
+    "0": {
+      "0": "Setelah mengambil Elemental Orb atau Particle, Normal dan Charged Attack mendapatkan <cryo>20</cryo>% DMG tambahan selama 5 detik."
+    },
+    "1": {
+      "0": "Setelah mengambil Elemental Orb atau Particle, Normal dan Charged Attack mendapatkan <cryo>25</cryo>% DMG tambahan selama 5 detik."
+    },
+    "2": {
+      "0": "Setelah mengambil Elemental Orb atau Particle, Normal dan Charged Attack mendapatkan <cryo>30</cryo>% DMG tambahan selama 5 detik."
+    },
+    "3": {
+      "0": "Setelah mengambil Elemental Orb atau Particle, Normal dan Charged Attack mendapatkan <cryo>35</cryo>% DMG tambahan selama 5 detik."
+    },
+    "4": {
+      "0": "Setelah mengambil Elemental Orb atau Particle, Normal dan Charged Attack mendapatkan <cryo>40</cryo>% DMG tambahan selama 5 detik."
+    }
+  }
+}

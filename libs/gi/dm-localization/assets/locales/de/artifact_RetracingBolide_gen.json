@@ -1,0 +1,29 @@
+{
+  "setName": "Umgekehrter Meteor",
+  "setEffects": {
+    "2": "Erhöht die Schildeffizienz um 35 %.",
+    "4": "Erhöht den Schaden von Standardangriffen und heftigen Schlägen bei aktivem Schild zusätzlich um 40 %."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Sommerfestbrosche",
+      "desc": "Eine künstliche Blüte, die nie verblüht. Ob darin doch ein wenig Leben steckt?"
+    },
+    "plume": {
+      "name": "Ende des Sommerfestes",
+      "desc": "Ein filigraner Wurfpfeil, der erst ruht, wenn er sein Ziel erreicht hat."
+    },
+    "sands": {
+      "name": "Sommerfestuhr",
+      "desc": "Eine hübsche Taschenuhr mit feiner Technik, die allerdings stehengeblieben ist."
+    },
+    "goblet": {
+      "name": "Sommerfest-Wasserballon",
+      "desc": "Während des Sommerfestes sind mit Wasser gefüllte Ballons nicht selten. Dieser hier ist ein prachtvolles Exemplar."
+    },
+    "circlet": {
+      "name": "Sommerfestmaske",
+      "desc": "Eine Nachbildung der Gestalt einer sagenhaften Gottheit und äußerst beliebt."
+    }
+  }
+}

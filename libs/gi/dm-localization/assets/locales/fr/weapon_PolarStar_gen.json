@@ -1,0 +1,24 @@
+{
+  "name": "Étoile polaire",
+  "description": {
+    "0": "Un arc immaculé aussi tranchant que les glaces éternelles des hivers les plus froids."
+  },
+  "passiveName": "Augure de la lumière du jour",
+  "passiveDescription": {
+    "0": {
+      "0": "Les DGT de la compétence et du déchaînement élémentaires augmentent de <cryo>12 %</cryo>. Lorsqu'une attaque normale ou chargée, une compétence ou un déchaînement élémentaires a touché un ennemi, vous obtenez 1 cumul d'étoile cendrée pendant 12 s. Avec 1/2/3/4 cumul(s) d'étoile cendrée, l'ATQ augmente de <cryo>10/20/30/48 %</cryo>. Les cumuls d'étoile cendrée obtenus grâce aux différents types d'attaques existent indépendamment les uns des autres."
+    },
+    "1": {
+      "0": "Les DGT de la compétence et du déchaînement élémentaires augmentent de <cryo>15 %</cryo>. Lorsqu'une attaque normale ou chargée, une compétence ou un déchaînement élémentaires a touché un ennemi, vous obtenez 1 cumul d'étoile cendrée pendant 12 s. Avec 1/2/3/4 cumul(s) d'étoile cendrée, l'ATQ augmente de <cryo>12,5/25/37,5/60 %</cryo>. Les cumuls d'étoile cendrée obtenus grâce aux différents types d'attaques existent indépendamment les uns des autres."
+    },
+    "2": {
+      "0": "Les DGT de la compétence et du déchaînement élémentaires augmentent de <cryo>18 %</cryo>. Lorsqu'une attaque normale ou chargée, une compétence ou un déchaînement élémentaires a touché un ennemi, vous obtenez 1 cumul d'étoile cendrée pendant 12 s. Avec 1/2/3/4 cumul(s) d'étoile cendrée, l'ATQ augmente de <cryo>15/30/45/72 %</cryo>. Les cumuls d'étoile cendrée obtenus grâce aux différents types d'attaques existent indépendamment les uns des autres."
+    },
+    "3": {
+      "0": "Les DGT de la compétence et du déchaînement élémentaires augmentent de <cryo>21 %</cryo>. Lorsqu'une attaque normale ou chargée, une compétence ou un déchaînement élémentaires a touché un ennemi, vous obtenez 1 cumul d'étoile cendrée pendant 12 s. Avec 1/2/3/4 cumul(s) d'étoile cendrée, l'ATQ augmente de <cryo>17,5/35/52,5/84 %</cryo>. Les cumuls d'étoile cendrée obtenus grâce aux différents types d'attaques existent indépendamment les uns des autres."
+    },
+    "4": {
+      "0": "Les DGT de la compétence et du déchaînement élémentaires augmentent de <cryo>24 %</cryo>. Lorsqu'une attaque normale ou chargée, une compétence ou un déchaînement élémentaires a touché un ennemi, vous obtenez 1 cumul d'étoile cendrée pendant 12 s. Avec 1/2/3/4 cumul(s) d'étoile cendrée, l'ATQ augmente de <cryo>20/40/60/96 %</cryo>. Les cumuls d'étoile cendrée obtenus grâce aux différents types d'attaques existent indépendamment les uns des autres."
+    }
+  }
+}

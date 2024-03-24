@@ -1,0 +1,24 @@
+{
+  "name": "Nergis Haçı'nın Kılıcı",
+  "description": {
+    "0": "Hikayesi sona erdiğinde gücü zayıflamış olan bir kılıç. İçinde kalan ve büyük bir rüyayı anımsatan gücüyle şimdi yeni bir yolculuğa çıkacak."
+  },
+  "passiveName": "Kahramanın Kılıcı",
+  "passiveDescription": {
+    "0": {
+      "0": "Kuşanan karakterin Arkhesi yoksa Normal, Yüklü veya Havadan Saldırılar, Saldırının <cryo>%160</cryo>'ı kadar Hasar veren bir Ruh veya Öz enerjisi patlaması çıkarır. Bu etki 12 saniyede bir tetiklenebilir. Enerji patlamasının türü, mevcut Nergis Haçı'nın Kılıcı türüne göre belirlenir."
+    },
+    "1": {
+      "0": "Kuşanan karakterin Arkhesi yoksa Normal, Yüklü veya Havadan Saldırılar, Saldırının <cryo>%200</cryo>'ü kadar Hasar veren bir Ruh veya Öz enerjisi patlaması çıkarır. Bu etki 12 saniyede bir tetiklenebilir. Enerji patlamasının türü, mevcut Nergis Haçı'nın Kılıcı türüne göre belirlenir."
+    },
+    "2": {
+      "0": "Kuşanan karakterin Arkhesi yoksa Normal, Yüklü veya Havadan Saldırılar, Saldırının <cryo>%240</cryo>'ı kadar Hasar veren bir Ruh veya Öz enerjisi patlaması çıkarır. Bu etki 12 saniyede bir tetiklenebilir. Enerji patlamasının türü, mevcut Nergis Haçı'nın Kılıcı türüne göre belirlenir."
+    },
+    "3": {
+      "0": "Kuşanan karakterin Arkhesi yoksa Normal, Yüklü veya Havadan Saldırılar, Saldırının <cryo>%280</cryo>'i kadar Hasar veren bir Ruh veya Öz enerjisi patlaması çıkarır. Bu etki 12 saniyede bir tetiklenebilir. Enerji patlamasının türü, mevcut Nergis Haçı'nın Kılıcı türüne göre belirlenir."
+    },
+    "4": {
+      "0": "Kuşanan karakterin Arkhesi yoksa Normal, Yüklü veya Havadan Saldırılar, Saldırının <cryo>%320</cryo>'si kadar Hasar veren bir Ruh veya Öz enerjisi patlaması çıkarır. Bu etki 12 saniyede bir tetiklenebilir. Enerji patlamasının türü, mevcut Nergis Haçı'nın Kılıcı türüne göre belirlenir."
+    }
+  }
+}

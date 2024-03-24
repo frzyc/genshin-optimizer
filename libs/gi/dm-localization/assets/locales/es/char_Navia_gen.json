@@ -1,0 +1,163 @@
+{
+  "name": "Navia",
+  "title": "La Líder de las Rosas",
+  "description": "La actual presidenta de Spina di Rosula, una jefa adorable con un profundo sentido de la responsabilidad.",
+  "constellationName": "Rosa Multiflora",
+  "auto": {
+    "name": "Declinación directa",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Ataque Normal</strong>",
+        "1": "Realiza hasta 4 tajos de espada consecutivos."
+      },
+      "charged": {
+        "0": "<strong>Ataque Cargado</strong>",
+        "1": "Consume Aguante de manera constante para realizar golpes de espada giratorios contra los enemigos cercanos.",
+        "2": "Al final del Ataque Cargado, realizará un golpe de espada más poderoso."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Descendente</strong>",
+        "1": "Se lanza desde el aire para golpear el suelo, dañando a los enemigos cercanos e infligiendo Daño en el AdE en el momento del impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Daño de 1er golpe",
+      "1": "Daño de 2.º golpe",
+      "2": "Daño de 3er golpe",
+      "3": "Daño de 4.º golpe",
+      "4": "Daño de ATQ Cargado en ciclo",
+      "5": "Daño final de Ataque Cargado",
+      "6": "Coste de Aguante de ATQ Cargado",
+      "7": "Duración máx.",
+      "8": "Daño de Caída",
+      "9": "Daño de impacto de caída baja/alta",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Etiqueta vidriopírica",
+    "description": {
+      "0": "Cuando un personaje del equipo recoge un fragmento creado con la reacción de Cristalización, Navia obtiene un “fragmento de metralla”, acumulable hasta 6 fragmentos. Cada vez que se recoja un fragmento de Cristalización, se reiniciará la duración de los fragmentos de metralla que posea Navia.",
+      "1": "Al usar esta habilidad, Navia consume todos los fragmentos de metralla, abre su elegante y letal rifleparaguas y dispara varias vidriobalas rosáceas capaces de atravesar las defensas de los enemigos alcanzados para infligirles <geo>Daño Geo</geo>.",
+      "2": "Al consumir 0/1/2/3 o más fragmentos de metralla, se dispararán respectivamente 5/7/9/11 vidriobalas rosáceas. Cuantas más vidriobalas alcancen a un enemigo, más daño recibirá. Si un enemigo es alcanzado por 11 vidriobalas rosáceas, estas infligirán un 200% de su daño original.",
+      "3": "Además, al consumir más de 3 fragmentos de metralla, cada fragmento por encima del tercero aumenta en un 15% adicional el daño infligido por el próximo disparo.",
+      "4": "<br/>",
+      "5": "<strong>Mantener pulsado</strong>",
+      "6": "Apunta para obtener los fragmentos de Cristalización cercanos. Al dejar de mantener pulsado, dispara la misma cantidad de vidriobalas rosáceas que la que se dispara pulsando una vez.",
+      "7": "<br/>",
+      "8": "Inicialmente, esta habilidad tiene 2 cargas.",
+      "9": "<br/>",
+      "10": "<strong>Arjé: ousía</strong>",
+      "11": "Cada cierto tiempo, cuando Navia dispara con su rifleparaguas, libera un filo fluyente que inflige <geo>Daño Geo</geo> cargado de energía ousía.",
+      "12": "<br/>",
+      "13": "<i>“Mantener cierta distancia con las personas con quienes debes mantenerla es parte de la etiqueta social. Ahora bien, hay muchas maneras de mantener esa distancia”.</i>"
+    },
+    "skillParams": {
+      "0": "Daño básico de vidriobalas rosáceas",
+      "1": "Duración de fragmento de metralla",
+      "2": "Daño de filo fluyente",
+      "3": "Intervalo de filo fluyente",
+      "4": "TdE",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Aluvión artillero",
+    "description": {
+      "0": "En calidad de presidenta de Spina di Rosula, ordena que se dispare una salva de cañones para bombardear a los enemigos frente a sí misma, infligirles <geo>Daño Geo en el AdE</geo> y crear un bombardeo auxiliar durante cierto tiempo que inflige <geo>Daño Geo</geo> periódicamente a los enemigos cercanos.",
+      "1": "Cuando el bombardeo alcanza a un enemigo, Navia obtiene 1 fragmento de metralla. Este efecto puede ocurrir una vez cada 2.4 s.",
+      "2": "<br/>",
+      "3": "<i>“Oh, no te confundas. La salva de cañones de Spina di Rosula no sirve para amenazar a nadie, sino que se dispara antes de una negociación para celebrar anticipadamente su éxito”.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "Daño de bombardeo auxiliar",
+      "2": "Duración de bombardeo auxiliar",
+      "3": "TdE",
+      "4": "Energía Elemental",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Canal no identificado",
+    "description": {
+      "0": "Tras usar <strong>Etiqueta vidriopírica</strong>, el daño de los Ataques Normales, Cargados y Descendentes de Navia se transforma durante 4 s en <geo>Daño Geo</geo>, el cual no puede sustituirse imbuyéndose de otro elemento, y además, el daño de dichos ataques aumenta en un 40%."
+    }
+  },
+  "passive2": {
+    "name": "Red de apoyo mutuo",
+    "description": {
+      "0": "El ATQ de Navia aumenta en un 20% por cada personaje <pyro>Pyro</pyro>, <electro>Electro</electro>, <cryo>Cryo</cryo> o <hydro>Hydro</hydro> que haya en el equipo. Este efecto puede acumularse hasta 2 veces."
+    }
+  },
+  "passive3": {
+    "name": "Transacción meticulosa",
+    "description": {
+      "0": "Aumenta en un 25% las recompensas de las expediciones de 20 h en Fontaine."
+    }
+  },
+  "constellation1": {
+    "name": "Distancia de seguridad para una dama",
+    "description": {
+      "0": "Al usar <strong>Etiqueta vidriopírica</strong>, por cada fragmento de metralla que consuma Navia, recupera 3 pts. de Energía Elemental y el TdE de <strong>Aluvión artillero</strong> se reduce en 1 s. De esta manera, podrá recuperar un máximo de 9 pts. de Energía Elemental y el TdE de Aluvión artillero podrá reducirse hasta en 3 s."
+    }
+  },
+  "constellation2": {
+    "name": "Comandante bélica",
+    "description": {
+      "0": "Al usar <strong>Etiqueta vidriopírica</strong>, la Prob. CRIT de dicha habilidad aumenta en un 12% por cada fragmento de metralla consumido. La Prob. CRIT puede aumentar en un máximo de un 36% de esta manera.",
+      "1": "Además, al alcanzar a un enemigo con un disparo de Etiqueta vidriopírica, en la ubicación de dicho enemigo caerá una bomba de bombardeo auxiliar de <strong>Aluvión artillero</strong>. Solo puede caer una bomba de bombardeo auxiliar cada vez que se use Etiqueta vidriopírica, y el daño del bombardeo auxiliar activado de esta manera se considera daño de Habilidad Definitiva."
+    }
+  },
+  "constellation3": {
+    "name": "Visión de empresaria",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Etiqueta vidriopírica</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Tolerancia cero",
+    "description": {
+      "0": "Cuando un enemigo es alcanzado por <strong>Aluvión artillero</strong>, su <geo>RES Geo</geo> se reduce en un 20% durante 8 s."
+    }
+  },
+  "constellation5": {
+    "name": "Negociante férrea",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Aluvión artillero</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Avezada presidenta de Spina di Rosula",
+    "description": {
+      "0": "Si al usar <strong>Etiqueta vidriopírica</strong> se consumen más de 3 fragmentos de metralla, cada fragmento por encima del tercero no solo aumenta en un 45% el Daño CRIT de dicha habilidad, sino que también se recupera."
+    }
+  }
+}

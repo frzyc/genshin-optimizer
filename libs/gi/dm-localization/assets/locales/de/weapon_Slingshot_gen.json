@@ -1,0 +1,24 @@
+{
+  "name": "Steinschleuder",
+  "description": {
+    "0": "Eigentlich ein Bogen. Nach unzähligen Verbesserungen und Experimenten, um die ultimative Steinschleuder zu schaffen, stand der Erfinder am Ende mit einem Bogen in der Hand da."
+  },
+  "passiveName": "Steinschleuder",
+  "passiveDescription": {
+    "0": {
+      "0": "Erhöht den Schaden beim Treffen von Gegnern mit Pfeilen von Standardangriffen und heftigen Schlägen innerhalb von 0,3 s nach dem Abschießen eines Pfeils um <cryo>36 %</cryo>, verringert den verursachten Schaden ansonsten jedoch um 10 %."
+    },
+    "1": {
+      "0": "Erhöht den Schaden beim Treffen von Gegnern mit Pfeilen von Standardangriffen und heftigen Schlägen innerhalb von 0,3 s nach dem Abschießen eines Pfeils um <cryo>42 %</cryo>, verringert den verursachten Schaden ansonsten jedoch um 10 %."
+    },
+    "2": {
+      "0": "Erhöht den Schaden beim Treffen von Gegnern mit Pfeilen von Standardangriffen und heftigen Schlägen innerhalb von 0,3 s nach dem Abschießen eines Pfeils um <cryo>48 %</cryo>, verringert den verursachten Schaden ansonsten jedoch um 10 %."
+    },
+    "3": {
+      "0": "Erhöht den Schaden beim Treffen von Gegnern mit Pfeilen von Standardangriffen und heftigen Schlägen innerhalb von 0,3 s nach dem Abschießen eines Pfeils um <cryo>54 %</cryo>, verringert den verursachten Schaden ansonsten jedoch um 10 %."
+    },
+    "4": {
+      "0": "Erhöht den Schaden beim Treffen von Gegnern mit Pfeilen von Standardangriffen und heftigen Schlägen innerhalb von 0,3 s nach dem Abschießen eines Pfeils um <cryo>60 %</cryo>, verringert den verursachten Schaden ansonsten jedoch um 10 %."
+    }
+  }
+}

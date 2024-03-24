@@ -1,0 +1,24 @@
+{
+  "name": "Festering Desire",
+  "description": {
+    "0": "A creepy straight sword that almost seems to yearn for life. It drips with a shriveling venom that could even corrupt a mighty dragon."
+  },
+  "passiveName": "Undying Admiration",
+  "passiveDescription": {
+    "0": {
+      "0": "Increases Elemental Skill DMG by <cryo>16%</cryo> and Elemental Skill CRIT Rate by <cryo>6%</cryo>."
+    },
+    "1": {
+      "0": "Increases Elemental Skill DMG by <cryo>20%</cryo> and Elemental Skill CRIT Rate by <cryo>7.5%</cryo>."
+    },
+    "2": {
+      "0": "Increases Elemental Skill DMG by <cryo>24%</cryo> and Elemental Skill CRIT Rate by <cryo>9%</cryo>."
+    },
+    "3": {
+      "0": "Increases Elemental Skill DMG by <cryo>28%</cryo> and Elemental Skill CRIT Rate by <cryo>10.5%</cryo>."
+    },
+    "4": {
+      "0": "Increases Elemental Skill DMG by <cryo>32%</cryo> and Elemental Skill CRIT Rate by <cryo>12%</cryo>."
+    }
+  }
+}

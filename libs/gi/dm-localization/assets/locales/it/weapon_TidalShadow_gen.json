@@ -1,0 +1,24 @@
+{
+  "name": "Mareombra",
+  "description": {
+    "0": "Uno spadone modello base forgiato con materiali di prima qualità per gli ufficiali d'alto rango e i capitani di bandiera dell'antica marina di Fontaine."
+  },
+  "passiveName": "Onda bianca",
+  "passiveDescription": {
+    "0": {
+      "0": "Quando chi la utilizza riceve effetti di guarigione, l'ATT aumenta di un <cryo>24%</cryo> per 8 s. Questo effetto può attivarsi anche quando il personaggio non si trova in campo."
+    },
+    "1": {
+      "0": "Quando chi la utilizza riceve effetti di guarigione, l'ATT aumenta di un <cryo>30%</cryo> per 8 s. Questo effetto può attivarsi anche quando il personaggio non si trova in campo."
+    },
+    "2": {
+      "0": "Quando chi la utilizza riceve effetti di guarigione, l'ATT aumenta di un <cryo>36%</cryo> per 8 s. Questo effetto può attivarsi anche quando il personaggio non si trova in campo."
+    },
+    "3": {
+      "0": "Quando chi la utilizza riceve effetti di guarigione, l'ATT aumenta di un <cryo>42%</cryo> per 8 s. Questo effetto può attivarsi anche quando il personaggio non si trova in campo."
+    },
+    "4": {
+      "0": "Quando chi la utilizza riceve effetti di guarigione, l'ATT aumenta di un <cryo>48%</cryo> per 8 s. Questo effetto può attivarsi anche quando il personaggio non si trova in campo."
+    }
+  }
+}

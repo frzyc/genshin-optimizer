@@ -1,0 +1,24 @@
+{
+  "name": "Gereği Düşünüldü",
+  "description": {
+    "0": "Hem düşmanlarının hem sevdiklerinin kanıyla lekelenmiş soyadını geride bırakmayı tercih eden genç bir kadın tarafından kullanılan bir silah."
+  },
+  "passiveName": "Şafak ve Alacakaranlık Yeminleri",
+  "passiveDescription": {
+    "0": {
+      "0": "Saldırıyı <cryo>%20</cryo> artırır. Grup üyeleri Kristalleşme tepkimelerinden Element Parçaları elde ettiğinde kuşanan karakter 1 Mühür kazanır ve Element Becerisi Hasarı <cryo>%18</cryo> artar. Mühür 15sn sürer ve kuşanan karakterin aynı anda en fazla 2 Mührü olabilir. Tüm Mühürler, Element Becerisi Hasar verdikten 0,2sn sonra kaybolur."
+    },
+    "1": {
+      "0": "Saldırıyı <cryo>%25</cryo> artırır. Grup üyeleri Kristalleşme tepkimelerinden Element Parçaları elde ettiğinde kuşanan karakter 1 Mühür kazanır ve Element Becerisi Hasarı <cryo>%22,5</cryo> artar. Mühür 15sn sürer ve kuşanan karakterin aynı anda en fazla 2 Mührü olabilir. Tüm Mühürler, Element Becerisi Hasar verdikten 0,2sn sonra kaybolur."
+    },
+    "2": {
+      "0": "Saldırıyı <cryo>%30</cryo> artırır. Grup üyeleri Kristalleşme tepkimelerinden Element Parçaları elde ettiğinde kuşanan karakter 1 Mühür kazanır ve Element Becerisi Hasarı <cryo>%27</cryo> artar. Mühür 15sn sürer ve kuşanan karakterin aynı anda en fazla 2 Mührü olabilir. Tüm Mühürler, Element Becerisi Hasar verdikten 0,2sn sonra kaybolur."
+    },
+    "3": {
+      "0": "Saldırıyı <cryo>%35</cryo> artırır. Grup üyeleri Kristalleşme tepkimelerinden Element Parçaları elde ettiğinde kuşanan karakter 1 Mühür kazanır ve Element Becerisi Hasarı <cryo>%31,5</cryo> artar. Mühür 15sn sürer ve kuşanan karakterin aynı anda en fazla 2 Mührü olabilir. Tüm Mühürler, Element Becerisi Hasar verdikten 0,2sn sonra kaybolur."
+    },
+    "4": {
+      "0": "Saldırıyı <cryo>%40</cryo> artırır. Grup üyeleri Kristalleşme tepkimelerinden Element Parçaları elde ettiğinde kuşanan karakter 1 Mühür kazanır ve Element Becerisi Hasarı <cryo>%36</cryo> artar. Mühür 15sn sürer ve kuşanan karakterin aynı anda en fazla 2 Mührü olabilir. Tüm Mühürler, Element Becerisi Hasar verdikten 0,2sn sonra kaybolur."
+    }
+  }
+}

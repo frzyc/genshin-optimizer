@@ -1,0 +1,167 @@
+{
+  "name": "Venti",
+  "title": "Barde itinérant",
+  "description": "Un des nombreux bardes de Mondstadt, qui aime à se promener dans tous les recoins de la cité.",
+  "constellationName": "Carmen Dei",
+  "auto": {
+    "name": "Archerie divine",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attaque normale</strong>",
+        "1": "Enchaîne jusqu'à 6 tirs consécutifs."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Effectue un <strong>tir visé</strong> plus précis infligeant davantage de DGT.",
+        "2": "Lors de la visée, la flèche se charge en élément Anémo, infligeant de considérables <anemo>DGT Anémo</anemo> quand elle est complètement chargée."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Tire une pluie de flèches depuis les airs et plonge au sol, infligeant des DGT de zone à l'impact."
+      }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT 4e coup",
+      "4": "DGT 5e coup",
+      "5": "DGT 6e coup",
+      "6": "DGT tir visé",
+      "7": "DGT tir visé (pleine charge)",
+      "8": "DGT durant la chute",
+      "9": "DGT chute basse/élevée",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Sonnet des Vents célestes",
+    "description": {
+      "0": "Le vent porteur de chants et de mélodies vient faire voler les êtres foulant cette terre.",
+      "1": "<br/>",
+      "2": "<strong>Appui simple</strong>",
+      "3": "Venti invoque une bourrasque sur la position de l'ennemi, infligeant des <anemo>DGT Anémo de zone</anemo> et projette les ennemis en l'air.",
+      "4": "<br/>",
+      "5": "<strong>Appui long</strong>",
+      "6": "Venti invoque une bourrasque plus puissante sur sa position, infligeant des <anemo>DGT Anémo de zone</anemo> et projette les ennemis proches en l'air.",
+      "7": "L'appui long permet à Venti de voler dans les airs.",
+      "8": "<br/>",
+      "9": "Les ennemis projetés en l'air retombent lentement au sol.",
+      "10": "<br/>",
+      "11": "<i>Aux temps anciens où dieux et hommes se partageaient la terre, nombreux furent les chants qui atteignirent les cieux. Ce sonnet possède une mélodie oubliée depuis longtemps.</i>"
+    },
+    "skillParams": {
+      "0": "DGT appui simple",
+      "1": "TdR appui simple",
+      "2": "DGT appui long",
+      "3": "TdR appui long",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Ode au Vent",
+    "description": {
+      "0": "Venti tire une flèche porteuse de la puissance de mille vents et de l'Œil de la tempête. Ce dernier attire les ennemis en son centre, et inflige des <anemo>DGT Anémo continus</anemo>.",
+      "1": "<br/>",
+      "2": "<strong>Absorption élémentaire</strong>",
+      "3": "L'Œil de la tempête absorbe les éléments <hydro>Hydro</hydro>, <pyro>Pyro</pyro>, <cryo>Cryo</cryo> et <electro>Électro</electro> avec lesquels il entre en contact, ceux-ci lui conférant leurs attributs et infligeant un bonus de DGT de l'élément correspondant.",
+      "4": "Une seule réaction d'absorption élémentaire peut avoir lieu par utilisation.",
+      "5": "<br/>",
+      "6": "<i>Nombre de poèmes chantant la gloire de l'Archon Anémo ont été perdus. Celui-ci raconte sa puissance, et la puissance des vents.</i>"
+    },
+    "skillParams": {
+      "0": "DGT continus",
+      "1": "Bonus DGT élémentaires",
+      "2": "Durée",
+      "3": "Temps de recharge",
+      "4": "Énergie élémentaire",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Embrasse des vents",
+    "description": {
+      "0": "L'appui long de <strong>Sonnet des Vents célestes</strong> génère une bourrasque ascendante qui dure 20 s."
+    }
+  },
+  "passive2": {
+    "name": "Œil de la tempête",
+    "description": {
+      "0": "Venti récupère 15 pts d'énergie élémentaire à la fin d'<strong>Ode au Vent</strong>.",
+      "1": "En cas d'absorption élémentaire, les personnages de l'élément correspondant récupèrent également 15 pts d'énergie élémentaire."
+    }
+  },
+  "passive3": {
+    "name": "Chevaucheur du vent",
+    "description": {
+      "0": "Diminue la consommation d'endurance de vos personnages dans l'équipe de 20 % lors du planage.",
+      "1": "Ne peut pas être cumulé avec d'autres aptitudes passives aux effets identiques."
+    }
+  },
+  "constellation1": {
+    "name": "Vent violent fractionné",
+    "description": {
+      "0": "Le <strong>tir visé</strong> tire 2 flèches supplémentaires, chacune infligeant 33 % des DGT de la flèche d'origine."
+    }
+  },
+  "constellation2": {
+    "name": "Bise de réminiscence",
+    "description": {
+      "0": "<strong>Sonnet des Vents célestes</strong> diminue la <anemo>RÉS Anémo</anemo> et la RÉS physique des ennemis de 12 % pendant 10 s.",
+      "1": "La <anemo>RÉS Anémo</anemo> et la RÉS physique des ennemis projetés en l'air par <strong>Sonnet des Vents célestes</strong> diminuent de 12 % tant qu'ils sont en l'air."
+    }
+  },
+  "constellation3": {
+    "name": "L'Ode aux mille vents",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Ode au Vent</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation4": {
+    "name": "Vent glacial de liberté",
+    "description": {
+      "0": "Venti inflige 25 % de <anemo>DGT Anémo</anemo> supplémentaires pendant 10 s lorsqu'il obtient un orbe ou une particule élémentaire."
+    }
+  },
+  "constellation5": {
+    "name": "Concerto céleste",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Sonnet des Vents célestes</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation6": {
+    "name": "Tempête de résistance",
+    "description": {
+      "0": "La <anemo>RÉS Anémo</anemo> des ennemis touchés par <strong>Ode au Vent</strong> diminue de 20 %.",
+      "1": "En cas d'absorption élémentaire, leur RÉS à l'élément correspondant diminue également de 20 %."
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Lanza Lítica",
+  "description": {
+    "0": "Una lanza excelentemente forjada con rocas del Bosque de Piedra Guyun. La robustez de su filo no tiene igual."
+  },
+  "passiveName": "Axioma de la roca: Unidad",
+  "passiveDescription": {
+    "0": {
+      "0": "Por cada personaje de Liyue que haya en el equipo, el ATQ del personaje que lleve esta arma equipada aumenta en un <cryo>7%</cryo>, y su Prob. CRIT aumenta en un <cryo>3%</cryo>. Este efecto solo puede acumularse un máximo de 4 veces."
+    },
+    "1": {
+      "0": "Por cada personaje de Liyue que haya en el equipo, el ATQ del personaje que lleve esta arma equipada aumenta en un <cryo>8%</cryo>, y su Prob. CRIT aumenta en un <cryo>4%</cryo>. Este efecto solo puede acumularse un máximo de 4 veces."
+    },
+    "2": {
+      "0": "Por cada personaje de Liyue que haya en el equipo, el ATQ del personaje que lleve esta arma equipada aumenta en un <cryo>9%</cryo>, y su Prob. CRIT aumenta en un <cryo>5%</cryo>. Este efecto solo puede acumularse un máximo de 4 veces."
+    },
+    "3": {
+      "0": "Por cada personaje de Liyue que haya en el equipo, el ATQ del personaje que lleve esta arma equipada aumenta en un <cryo>10%</cryo>, y su Prob. CRIT aumenta en un <cryo>6%</cryo>. Este efecto solo puede acumularse un máximo de 4 veces."
+    },
+    "4": {
+      "0": "Por cada personaje de Liyue que haya en el equipo, el ATQ del personaje que lleve esta arma equipada aumenta en un <cryo>11%</cryo>, y su Prob. CRIT aumenta en un <cryo>7%</cryo>. Este efecto solo puede acumularse un máximo de 4 veces."
+    }
+  }
+}

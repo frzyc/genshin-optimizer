@@ -1,0 +1,24 @@
+{
+  "name": "Étouffeur de calamités",
+  "description": {
+    "0": "Une arme finement affûtée forgée à partir d'un cristal étrange. Sa faible lumière bleue semble chuchoter d'innombrables choses du passé."
+  },
+  "passiveName": "Précepte d'anéantissement",
+  "passiveDescription": {
+    "0": {
+      "0": "Confère un bonus de DGT élémentaires de <cryo>12 %</cryo>. Après l'utilisation d'une compétence élémentaire, accorde 20 s d'Achèvement, augmentant l'ATQ de <cryo>3,2 %</cryo> toutes les secondes. Ce bonus d'ATQ peut être cumulé 6 fois maximum. Lorsque le personnage équipé de cette arme fait partie de l'équipe mais n'est pas déployé, le bonus d'ATQ de l'Achèvement est doublé."
+    },
+    "1": {
+      "0": "Confère un bonus de DGT élémentaires de <cryo>15 %</cryo>. Après l'utilisation d'une compétence élémentaire, accorde 20 s d'Achèvement, augmentant l'ATQ de <cryo>4 %</cryo> toutes les secondes. Ce bonus d'ATQ peut être cumulé 6 fois maximum. Lorsque le personnage équipé de cette arme fait partie de l'équipe mais n'est pas déployé, le bonus d'ATQ de l'Achèvement est doublé."
+    },
+    "2": {
+      "0": "Confère un bonus de DGT élémentaires de <cryo>18 %</cryo>. Après l'utilisation d'une compétence élémentaire, accorde 20 s d'Achèvement, augmentant l'ATQ de <cryo>4,8 %</cryo> toutes les secondes. Ce bonus d'ATQ peut être cumulé 6 fois maximum. Lorsque le personnage équipé de cette arme fait partie de l'équipe mais n'est pas déployé, le bonus d'ATQ de l'Achèvement est doublé."
+    },
+    "3": {
+      "0": "Confère un bonus de DGT élémentaires de <cryo>21 %</cryo>. Après l'utilisation d'une compétence élémentaire, accorde 20 s d'Achèvement, augmentant l'ATQ de <cryo>5,6 %</cryo> toutes les secondes. Ce bonus d'ATQ peut être cumulé 6 fois maximum. Lorsque le personnage équipé de cette arme fait partie de l'équipe mais n'est pas déployé, le bonus d'ATQ de l'Achèvement est doublé."
+    },
+    "4": {
+      "0": "Confère un bonus de DGT élémentaires de <cryo>24 %</cryo>. Après l'utilisation d'une compétence élémentaire, accorde 20 s d'Achèvement, augmentant l'ATQ de <cryo>6,4 %</cryo> toutes les secondes. Ce bonus d'ATQ peut être cumulé 6 fois maximum. Lorsque le personnage équipé de cette arme fait partie de l'équipe mais n'est pas déployé, le bonus d'ATQ de l'Achèvement est doublé."
+    }
+  }
+}

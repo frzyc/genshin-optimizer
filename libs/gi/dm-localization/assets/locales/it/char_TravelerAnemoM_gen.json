@@ -1,0 +1,153 @@
+{
+  "auto": {
+    "name": "Ferrovento straniero",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attacco normale</strong>",
+        "1": "Sferra fino a 5 colpi rapidi."
+      },
+      "charged": {
+        "0": "<strong>Attacco caricato</strong>",
+        "1": "Consuma una determinata quantità di vigore per sferrare 2 colpi di spada rapidi."
+      },
+      "plunging": {
+        "0": "<strong>Attacco in picchiata</strong>",
+        "1": "Attacca scagliandosi contro il suolo da mezz'aria, infliggendo DAN agli avversari lungo la traiettoria e DAN ad area all'impatto."
+      }
+    },
+    "skillParams": {
+      "0": "DAN da 1º colpo",
+      "1": "DAN da 2º colpo",
+      "2": "DAN da 3º colpo",
+      "3": "DAN da 4º colpo",
+      "4": "DAN da 5º colpo",
+      "5": "DAN da ATT caricato",
+      "6": "Costo vigore ATT caricato",
+      "7": "DAN da ATT in picchiata",
+      "8": "DAN da ATT in picchiata basso/alto",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Vortice del palmo",
+    "description": {
+      "0": "Carpendo la forza del vento, forma un vortice nel palmo della sua mano, infliggendo <anemo>DAN da Anemo</anemo> continui agli avversari davanti a sé.",
+      "1": "Il vortice di vuoto esplode al termine della durata dell'abilità, infliggendo una maggiore quantità di DAN da Anemo in un'area più ampia.",
+      "2": "<br/>",
+      "3": "<strong>Pressione prolungata</strong>",
+      "4": "I DAN e l'area d'effetto aumentano gradualmente.",
+      "5": "<br/>",
+      "6": "<strong>Assorbimento elementale</strong>",
+      "7": "Se il vortice entra in contatto con <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<electro>Electro</electro>, infliggerà DAN elementali aggiuntivi di quel tipo.",
+      "8": "L'Assorbimento elementale avviene una volta per utilizzo.",
+      "9": "<br/>",
+      "10": "<i>Hai discusso di come carpire il vento informe con Paimon.</i>"
+    },
+    "skillParams": {
+      "0": "DAN da taglio iniziale",
+      "1": "DAN da taglio max",
+      "2": "DAN da tempesta iniziale",
+      "3": "DAN da tempesta max",
+      "4": "TdR di base",
+      "5": "TdR carica max",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Raffica di vento",
+    "description": {
+      "0": "Guidando il percorso delle correnti di vento, evoca un tornado che si sposta in avanti e attira a sé oggetti e avversari, infliggendo <anemo>DAN da Anemo</anemo> continui.",
+      "1": "<br/>",
+      "2": "<strong>Assorbimento elementale</strong>",
+      "3": "Se il tornado entra in contatto con <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<electro>Electro</electro>, infliggerà DAN elementali aggiuntivi di quel tipo.",
+      "4": "L'Assorbimento elementale avviene una volta per utilizzo.",
+      "5": "<br/>",
+      "6": "<i>Tu e Paimon avete studiato il battito d'ali di una farfalla.</i>"
+    },
+    "skillParams": {
+      "0": "DAN da tornado",
+      "1": "DAN elementali aggiuntivi",
+      "2": "Durata",
+      "3": "TdR",
+      "4": "Costo energia",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Taglio del vento",
+    "description": {
+      "0": "L'ultimo colpo di una combo di attacchi normali rilascia una lama di vento che infligge un 60% dell'ATT come <anemo>DAN da Anemo</anemo> a tutti gli avversari sul suo percorso."
+    }
+  },
+  "passive2": {
+    "name": "Vento rigenerativo",
+    "description": {
+      "0": "Le uccisioni da <strong>Vortice del palmo</strong> rigenerano un 2% di PS per 5 s.",
+      "1": "Questo effetto può avvenire solo una volta ogni 5 s."
+    }
+  },
+  "constellation1": {
+    "name": "Vortice furente",
+    "description": {
+      "0": "<strong>Vortice del palmo</strong> attira gli avversari e gli oggetti in un raggio di 5 m."
+    }
+  },
+  "constellation2": {
+    "name": "Tornado ascendente",
+    "description": {
+      "0": "Aumenta la ricarica d'energia di un 16%."
+    }
+  },
+  "constellation3": {
+    "name": "Raffica improvvisa",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Raffica di vento</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation4": {
+    "name": "Brezza protettrice",
+    "description": {
+      "0": "Riduce di un 10% i DAN subiti durante l'utilizzo di <strong>Vortice del palmo</strong>."
+    }
+  },
+  "constellation5": {
+    "name": "Vortex stellaris",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Vortice del palmo</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation6": {
+    "name": "Venti incrociati",
+    "description": {
+      "0": "La <anemo>RES ad Anemo</anemo> degli avversari che subiscono DAN da <strong>Raffica di Vento</strong> si riduce di un 20%.",
+      "1": "Se si è verificato un assorbimento elementale, anche la loro RES all'elemento corrispondente si riduce di un 20%."
+    }
+  }
+}

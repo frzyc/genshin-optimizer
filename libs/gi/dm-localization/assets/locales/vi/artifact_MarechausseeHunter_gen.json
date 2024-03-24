@@ -1,0 +1,29 @@
+{
+  "setName": "Thợ Săn Marechaussee",
+  "setEffects": {
+    "2": "Tăng 15% sát thương tấn công thường và trọng kích.",
+    "4": "Khi HP hiện tại có tăng hoặc giảm, tỉ lệ bạo kích tăng 12%. Hiệu quả này duy trì 5s, tối đa cộng dồn 3 lần."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Đóa Hoa Của Thợ Săn",
+      "desc": "Huy hiệu cũ xưa, từng được dùng để phát cho những người có biểu hiện kiệt xuất trong chiến đấu."
+    },
+    "plume": {
+      "name": "Khúc Dạo Đầu Kiệt Tác",
+      "desc": "Công cụ tiện lợi dùng để điều chỉnh mô men xoắn dây cót máy móc kiểu cũ. Giờ đây đã mất đi giá trị thực tế."
+    },
+    "sands": {
+      "name": "Thời Khắc Của Phán Quyết",
+      "desc": "Đồng hồ bỏ túi dạng tiêu chuẩn, độ chính xác không cao lắm."
+    },
+    "goblet": {
+      "name": "Bình Chứa Bị Lãng Quên",
+      "desc": "Bình kim loại chứa rượu mạnh, thích hợp để ngoài túi áo cho tiện sử dụng."
+    },
+    "circlet": {
+      "name": "Dung Nhan Của Lão Binh",
+      "desc": "Mặt nạ cũ xưa, có thể thay thế cho khuôn mặt bị tổn thương. Được thiết kế dựa theo diện tích thương tật và giới tính người mang."
+    }
+  }
+}

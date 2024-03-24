@@ -1,0 +1,24 @@
+{
+  "name": "Battito tonante",
+  "description": {
+    "0": "Un arco lungo donato dallo Shogun. Avvolto da una luce eterna."
+  },
+  "passiveName": "Regno del tuono",
+  "passiveDescription": {
+    "0": {
+      "0": "Aumenta l'ATT di un <cryo>20%</cryo> e garantisce il potere dell'Emblema del tuono. Con 1/2/3 emblemi, l'Emblema del tuono aumenta i DAN da attacco normale di un <cryo>12/24/40%</cryo>. Otterrai 1 Emblema del tuono della durata seguente: 5 s se gli attacchi normali infliggeranno DAN; 10 s se userai un'abilità elementale; fino a quando l'energia, se inferiore a un 100%, si sarà ricaricata. La durata di ogni emblema viene calcolata in maniera indipendente."
+    },
+    "1": {
+      "0": "Aumenta l'ATT di un <cryo>25%</cryo> e garantisce il potere dell'Emblema del tuono. Con 1/2/3 emblemi, l'Emblema del tuono aumenta i DAN da attacco normale di un <cryo>15/30/50%</cryo>. Otterrai 1 Emblema del tuono della durata seguente: 5 s se gli attacchi normali infliggeranno DAN; 10 s se userai un'abilità elementale; fino a quando l'energia, se inferiore a un 100%, si sarà ricaricata. La durata di ogni emblema viene calcolata in maniera indipendente."
+    },
+    "2": {
+      "0": "Aumenta l'ATT di un <cryo>30%</cryo> e garantisce il potere dell'Emblema del tuono. Con 1/2/3 emblemi, l'Emblema del tuono aumenta i DAN da attacco normale di un <cryo>18/36/60%</cryo>. Otterrai 1 Emblema del tuono della durata seguente: 5 s se gli attacchi normali infliggeranno DAN; 10 s se userai un'abilità elementale; fino a quando l'energia, se inferiore a un 100%, si sarà ricaricata. La durata di ogni emblema viene calcolata in maniera indipendente."
+    },
+    "3": {
+      "0": "Aumenta l'ATT di un <cryo>35%</cryo> e garantisce il potere dell'Emblema del tuono. Con 1/2/3 emblemi, l'Emblema del tuono aumenta i DAN da attacco normale di un <cryo>21/42/70%</cryo>. Otterrai 1 Emblema del tuono della durata seguente: 5 s se gli attacchi normali infliggeranno DAN; 10 s se userai un'abilità elementale; fino a quando l'energia, se inferiore a un 100%, si sarà ricaricata. La durata di ogni emblema viene calcolata in maniera indipendente."
+    },
+    "4": {
+      "0": "Aumenta l'ATT di un <cryo>40%</cryo> e garantisce il potere dell'Emblema del tuono. Con 1/2/3 emblemi, l'Emblema del tuono aumenta i DAN da attacco normale di un <cryo>24/48/80%</cryo>. Otterrai 1 Emblema del tuono della durata seguente: 5 s se gli attacchi normali infliggeranno DAN; 10 s se userai un'abilità elementale; fino a quando l'energia, se inferiore a un 100%, si sarà ricaricata. La durata di ogni emblema viene calcolata in maniera indipendente."
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Cashflow Supervision",
+  "description": {
+    "0": "Perangkat melayang yang dapat memantau fenomena tertentu. Setelah dulu diterlantarkan, orang yang memungutnya kini memodifikasinya ulang untuk fungsi yang lain."
+  },
+  "passiveName": "Golden Blood-Tide",
+  "passiveDescription": {
+    "0": {
+      "0": "ATK meningkat <cryo>16%</cryo>. Saat HP bertambah atau berkurang, DMG Normal Attack meningkat <cryo>16%</cryo>, dan DMG Charged Attack meningkat <cryo>14%</cryo>. Efek ini berlangsung selama 4 detik, dapat ditumpuk sampai 3 lapis, dan dapat terpicu sekali setiap 0,3 detik. Saat ditumpuk sampai 3 lapis, ATK SPD meningkat <cryo>8%</cryo>."
+    },
+    "1": {
+      "0": "ATK meningkat <cryo>20%</cryo>. Saat HP bertambah atau berkurang, DMG Normal Attack meningkat <cryo>20%</cryo>, dan DMG Charged Attack meningkat <cryo>17,5%</cryo>. Efek ini berlangsung selama 4 detik, dapat ditumpuk sampai 3 lapis, dan dapat terpicu sekali setiap 0,3 detik. Saat ditumpuk sampai 3 lapis, ATK SPD meningkat <cryo>10%</cryo>."
+    },
+    "2": {
+      "0": "ATK meningkat <cryo>24%</cryo>. Saat HP bertambah atau berkurang, DMG Normal Attack meningkat <cryo>24%</cryo>, dan DMG Charged Attack meningkat <cryo>21%</cryo>. Efek ini berlangsung selama 4 detik, dapat ditumpuk sampai 3 lapis, dan dapat terpicu sekali setiap 0,3 detik. Saat ditumpuk sampai 3 lapis, ATK SPD meningkat <cryo>12%</cryo>."
+    },
+    "3": {
+      "0": "ATK meningkat <cryo>28%</cryo>. Saat HP bertambah atau berkurang, DMG Normal Attack meningkat <cryo>28%</cryo>, dan DMG Charged Attack meningkat <cryo>24,5%</cryo>. Efek ini berlangsung selama 4 detik, dapat ditumpuk sampai 3 lapis, dan dapat terpicu sekali setiap 0,3 detik. Saat ditumpuk sampai 3 lapis, ATK SPD meningkat <cryo>14%</cryo>."
+    },
+    "4": {
+      "0": "ATK meningkat <cryo>32%</cryo>. Saat HP bertambah atau berkurang, DMG Normal Attack meningkat <cryo>32%</cryo>, dan DMG Charged Attack meningkat <cryo>28%</cryo>. Efek ini berlangsung selama 4 detik, dapat ditumpuk sampai 3 lapis, dan dapat terpicu sekali setiap 0,3 detik. Saat ditumpuk sampai 3 lapis, ATK SPD meningkat <cryo>16%</cryo>."
+    }
+  }
+}

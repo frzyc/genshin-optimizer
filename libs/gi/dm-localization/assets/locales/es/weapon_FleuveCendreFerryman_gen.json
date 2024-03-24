@@ -1,0 +1,24 @@
+{
+  "name": "Vado del Río Ceniciento",
+  "description": {
+    "0": "Una tubería abandonada muy práctica que en el pasado se usó como arma. Gozaba de una excelente reputación (o de una muy infame, dependiendo de a quién le preguntes)."
+  },
+  "passiveName": "Tuétano ferroso",
+  "passiveDescription": {
+    "0": {
+      "0": "La Prob. CRIT de la Habilidad Elemental aumenta en un <cryo>8%</cryo>. Además, tras usar dicha habilidad, la Recarga de Energía aumenta en un <cryo>16%</cryo> durante 5 s."
+    },
+    "1": {
+      "0": "La Prob. CRIT de la Habilidad Elemental aumenta en un <cryo>10%</cryo>. Además, tras usar dicha habilidad, la Recarga de Energía aumenta en un <cryo>20%</cryo> durante 5 s."
+    },
+    "2": {
+      "0": "La Prob. CRIT de la Habilidad Elemental aumenta en un <cryo>12%</cryo>. Además, tras usar dicha habilidad, la Recarga de Energía aumenta en un <cryo>24%</cryo> durante 5 s."
+    },
+    "3": {
+      "0": "La Prob. CRIT de la Habilidad Elemental aumenta en un <cryo>14%</cryo>. Además, tras usar dicha habilidad, la Recarga de Energía aumenta en un <cryo>28%</cryo> durante 5 s."
+    },
+    "4": {
+      "0": "La Prob. CRIT de la Habilidad Elemental aumenta en un <cryo>16%</cryo>. Además, tras usar dicha habilidad, la Recarga de Energía aumenta en un <cryo>32%</cryo> durante 5 s."
+    }
+  }
+}

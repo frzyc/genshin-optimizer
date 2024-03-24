@@ -1,0 +1,24 @@
+{
+  "name": "Perdición del Dragón",
+  "description": {
+    "0": "Un palo decorado con un dragón dorado entrelazado. Ligera y afilada, esta arma puede matar dragones con facilidad."
+  },
+  "passiveName": "Perdición de las llamas y el agua",
+  "passiveDescription": {
+    "0": {
+      "0": "Aumenta en un <cryo>20%</cryo> el daño contra los enemigos afectados por Hydro o Pyro."
+    },
+    "1": {
+      "0": "Aumenta en un <cryo>24%</cryo> el daño contra los enemigos afectados por Hydro o Pyro."
+    },
+    "2": {
+      "0": "Aumenta en un <cryo>28%</cryo> el daño contra los enemigos afectados por Hydro o Pyro."
+    },
+    "3": {
+      "0": "Aumenta en un <cryo>32%</cryo> el daño contra los enemigos afectados por Hydro o Pyro."
+    },
+    "4": {
+      "0": "Aumenta en un <cryo>36%</cryo> el daño contra los enemigos afectados por Hydro o Pyro."
+    }
+  }
+}

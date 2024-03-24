@@ -1,0 +1,87 @@
+{
+  "normal": {
+    "hit1": "DMG Tahap 1",
+    "hit2": "DMG Tahap 2",
+    "hit3": "DMG Tahap 3",
+    "hit4": "DMG Tahap 4",
+    "hit5": "DMG Tahap 5",
+    "hit6": "DMG Tahap 6"
+  },
+  "charged": {
+    "dmg": "DMG Charged Attack",
+    "spinning": "DMG Berputar Charged Attack",
+    "final": "DMG Akhir Charged Attack",
+    "stamina": "Konsumsi Stamina Charged Attack",
+    "aimed": "DMG Membidik",
+    "fullyAimed": "DMG Membidik Penuh"
+  },
+  "plunging": {
+    "dmg": "DMG Selama Plunging",
+    "low": "DMG Plunging Attack Rendah",
+    "high": "DMG Plunging Attack Tinggi"
+  },
+  "maxDuration": "Durasi Maksimum",
+  "maxStacks": "Lapisan Maks.",
+  "skillDMG": "DMG Skill",
+  "burstDMG": "DMG Burst",
+  "dmgAbsorption": "Pertahanan Perisai",
+  "healing": "Pemulihan HP",
+  "contHealing": "Heal Berkelanjutan",
+  "duration": "Durasi",
+  "cd": "Cooldown",
+  "energyCost": "Konsumsi Energy",
+  "energyRegen": "Pemulihan Energy",
+  "baseDMG": "Base DMG",
+  "dot": "DMG Berkelanjutan",
+  "addEleDMG": "Tambahan Elemental DMG",
+  "hpRegenPerHit": "Pemulihan HP/Hit",
+  "press": {
+    "dmg": "DMG Tekan",
+    "cd": "Cooldown (Mode Tekan)"
+  },
+  "hold": {
+    "dmg": "DMG Menahan",
+    "cd": "Cooldown (Mode Tahan)"
+  },
+  "element": {
+    "anemo": "Anemo",
+    "geo": "Geo",
+    "pyro": "Pyro",
+    "hydro": "Hydro",
+    "cryo": "Cryo",
+    "electro": "Electro",
+    "dendro": "Dendro"
+  },
+  "reaction": {
+    "swirl": "Swirl",
+    "crystallize": "Crystallize",
+    "overloaded": "Overloaded",
+    "electrocharged": "Electro-Charged",
+    "superconduct": "Superconduct",
+    "vaporize": "Vaporize",
+    "melt": "Melt",
+    "bloom": "Bloom",
+    "burgeon": "Burgeon",
+    "hyperbloom": "Hyperbloom",
+    "quicken": "Quicken",
+    "aggravate": "Aggravate",
+    "spread": "Spread"
+  },
+  "stat": {
+    "def": "DEF",
+    "base": {
+      "atk": "Base ATK"
+    }
+  },
+  "constellationLvl": "Konstelasi Lv. {{level}}",
+  "talentLvl": "Talent Lv. {{level}}",
+  "talents": {
+    "auto": "Normal Attack",
+    "skill": "Elemental Skill",
+    "burst": "Elemental Burst",
+    "altSprint": "Alternate Sprint"
+  },
+  "unlockPassive1": "Terbuka saat Tahap Ascension Karakter 1",
+  "unlockPassive2": "Terbuka saat Tahap Ascension Karakter 4",
+  "unlockPassive3": "Talenta Pasif"
+}

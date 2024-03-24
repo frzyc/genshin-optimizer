@@ -1,0 +1,29 @@
+{
+  "setName": "Amour chéri",
+  "setEffects": {
+    "2": "Augmente les soins effectués par le personnage de 15 %.",
+    "4": "Augmente les soins reçus par tous les personnages de l'équipe de 20 % pendant 10 s après l'utilisation d'une compétence élémentaire ou d'un déchaînement élémentaire."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Cœur lointain de la Demoiselle",
+      "desc": "Une fleur délicate qui ne s'est jamais fanée et qui continue d'émettre un parfum irrésistible."
+    },
+    "plume": {
+      "name": "Pensée de la Demoiselle",
+      "desc": "Cet accessoire transporte les pensées d'une certaine personne, semblable à l'oiseau migrateur qui chevauche les vents."
+    },
+    "sands": {
+      "name": "Petit matin de la Demoiselle",
+      "desc": "Le mouvement du temps ne s'arrête pas, contrairement à la jeunesse qui n'est qu'éphémère."
+    },
+    "goblet": {
+      "name": "Loisir de la Demoiselle",
+      "desc": "Une tasse pour le thé sucré plutôt que pour l'alcool amer."
+    },
+    "circlet": {
+      "name": "Beauté fugace de la Demoiselle",
+      "desc": "Un chapeau de femme bien entretenu. Il peut cacher le visage de la personne qui le porte – y compris les pattes d'oie."
+    }
+  }
+}

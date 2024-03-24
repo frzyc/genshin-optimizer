@@ -1,0 +1,14 @@
+{
+  "name": "Sword of Descension",
+  "description": {
+    "0": "Sebilah pedang dengan bentuk yang unik, sepertinya bukan berasal dari dunia ini."
+  },
+  "passiveName": "Descension",
+  "passiveDescription": {
+    "0": {
+      "0": "<cryo>Hanya efektif untuk pemain pada: </cryo>",
+      "1": "<cryo>\"PlayStation Network\"</cryo>",
+      "2": "Memukul musuh dengan Normal dan Charged Attack akan mendapatkan kesempatan <cryo>50%</cryo> untuk menghasilkan <cryo>200%</cryo> ATK sebagai DMG pada area kecil. Efek terpicu setiap 10 detik. Lalu, jika Pengembara menggunakan Sword of Descension, maka ATK akan meningkat sebanyak <cryo>66</cryo>."
+    }
+  }
+}

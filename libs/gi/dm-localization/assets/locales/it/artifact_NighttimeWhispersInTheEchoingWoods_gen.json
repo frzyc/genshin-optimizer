@@ -1,0 +1,29 @@
+{
+  "setName": "Sussurri notturni nella foresta dell'eco",
+  "setEffects": {
+    "2": "ATT +18%.",
+    "4": "Dopo aver usato un'abilità elementale, il personaggio riceve un 20% di bonus DAN da Geo per 10 s. Se il personaggio è protetto da uno scudo ottenuto tramite reazioni di Cristallizzazione, l'effetto sopracitato aumenta di un 150%. Questo aumento si annulla 1 s dopo la perdita dello scudo."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Accessorio floreale altruista",
+      "desc": "Un fermaglio indossato dalla strega all'interno della storia. Presenta decorazioni che ricordano la forma di una farfalla, similmente ad altri degli accessori preferiti della donna."
+    },
+    "plume": {
+      "name": "Penna sincera",
+      "desc": "La penna usata dalla strega all'interno della storia. Tra gli innumerevoli vantaggi che è in grado di offrire, la scorrevolezza nella scrittura è di certo quello meno importante."
+    },
+    "sands": {
+      "name": "Clessidra fedele",
+      "desc": "Una clessidra impiegata dalla strega all'interno della storia. Secondo la leggenda, se si recita l'incantesimo sbagliato mentre la si utilizza, il tempo inizia a scorrere a una velocità impressionante."
+    },
+    "goblet": {
+      "name": "Calamaio magnanimo",
+      "desc": "Un calamaio utilizzato dalla strega all'interno della storia. Il sortilegio che lo permea è potente tanto quanto quello che avvolge la penna."
+    },
+    "circlet": {
+      "name": "Cappello da donna compassionevole",
+      "desc": "Il cappello preferito dalla strega all'interno della storia. La donna lo adorava per via del suo aspetto al contempo solenne e giocoso."
+    }
+  }
+}

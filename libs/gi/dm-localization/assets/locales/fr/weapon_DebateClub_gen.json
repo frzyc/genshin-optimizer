@@ -1,0 +1,24 @@
+{
+  "name": "Épée de la raison",
+  "description": {
+    "0": "Une grande massue en acier fin qui répond bien ; le meilleur recours lors d'une argumentation agitée."
+  },
+  "passiveName": "Franc-parler",
+  "passiveDescription": {
+    "0": {
+      "0": "Après l'utilisation d'une compétence élémentaire, les attaques normales et chargées infligent <cryo>60 %</cryo> de DGT d'ATQ supplémentaires dans une zone restreinte lorsqu'elles touchent. Cet effet dure 15 s, et peut être déclenché une fois toutes les 3 s."
+    },
+    "1": {
+      "0": "Après l'utilisation d'une compétence élémentaire, les attaques normales et chargées infligent <cryo>75 %</cryo> de DGT d'ATQ supplémentaires dans une zone restreinte lorsqu'elles touchent. Cet effet dure 15 s, et peut être déclenché une fois toutes les 3 s."
+    },
+    "2": {
+      "0": "Après l'utilisation d'une compétence élémentaire, les attaques normales et chargées infligent <cryo>90 %</cryo> de DGT d'ATQ supplémentaires dans une zone restreinte lorsqu'elles touchent. Cet effet dure 15 s, et peut être déclenché une fois toutes les 3 s."
+    },
+    "3": {
+      "0": "Après l'utilisation d'une compétence élémentaire, les attaques normales et chargées infligent <cryo>105 %</cryo> de DGT d'ATQ supplémentaires dans une zone restreinte lorsqu'elles touchent. Cet effet dure 15 s, et peut être déclenché une fois toutes les 3 s."
+    },
+    "4": {
+      "0": "Après l'utilisation d'une compétence élémentaire, les attaques normales et chargées infligent <cryo>120 %</cryo> de DGT d'ATQ supplémentaires dans une zone restreinte lorsqu'elles touchent. Cet effet dure 15 s, et peut être déclenché une fois toutes les 3 s."
+    }
+  }
+}

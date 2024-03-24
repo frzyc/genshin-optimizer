@@ -1,0 +1,163 @@
+{
+  "name": "Chevreuse",
+  "title": "La Ejecutora de la Ley",
+  "description": "La capitana de la Unidad Especial de Seguridad y Vigilancia. Su corazón siempre late por la justicia, y su mosquete solo apunta a los criminales.",
+  "constellationName": "Sclopetum Ensiferum",
+  "auto": {
+    "name": "Bayoneta de vanguardia (modificada)",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Ataque Normal</strong>",
+        "1": "Realiza hasta 4 ataques rápidos con lanza."
+      },
+      "charged": {
+        "0": "<strong>Ataque Cargado</strong>",
+        "1": "Consume una cierta cantidad de Aguante para lanzarse al frente e infligir daño a los enemigos en el camino."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Descendente</strong>",
+        "1": "Se lanza desde el aire para golpear el suelo, dañando a los enemigos cercanos e infligiendo Daño en el AdE en el momento del impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Daño de 1er golpe",
+      "1": "Daño de 2.º golpe",
+      "2": "Daño de 3er golpe",
+      "3": "Daño de 4.º golpe",
+      "4": "Daño de ATQ Cargado",
+      "5": "Coste de Aguante de ATQ Cargado",
+      "6": "Daño de Caída",
+      "7": "Daño de impacto de caída baja/alta",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Fuego rápido de proximidad e intercepción",
+    "description": {
+      "0": "Chevreuse apoya rápidamente su rifle contra el hombro para disparar al enemigo e infligir <pyro>Daño Pyro en el AdE</pyro>.",
+      "1": "Durante un tiempo después de que Chevreuse realice su disparo, restaura Vida a tu personaje en uso de forma continua en función de la Vida Máx. de Chevreuse.",
+      "2": "Esta habilidad se libera de manera distinta al mantener pulsado.",
+      "3": "<br/>",
+      "4": "<strong>Mantener pulsado</strong>",
+      "5": "Apunta y fija a un enemigo en su campo de visión para dispararle con un fuego de intercepción de mayor precisión. Si Chevreuse posee una bala de punta sobrecargada, la disparará e infligirá mayor cantidad de <pyro>Daño Pyro</pyro> con una mayor AdE.",
+      "6": "Chevreuse obtiene una bala de punta sobrecargada cuando un miembro del equipo cercano causa una reacción de Sobrecarga. Solo se puede tener 1 bala de punta sobrecargada al mismo tiempo.",
+      "7": "<br/>",
+      "8": "<strong>Arjé: ousía</strong>",
+      "9": "Cada cierto tiempo, cuando el Fuego rápido de proximidad e intercepción de Chevreuse alcance a un objetivo, caerá un filo fluyente que inflige <pyro>Daño Pyro</pyro> cargado de energía ousía.",
+      "10": "<br/>",
+      "11": "<i>“De hecho, el único término que aparece en el reglamento de entrenamiento es ‘fuego de intercepción’, pero según el protagonista de una novela, usar vocabulario técnico para ponerle nombres llamativos a las habilidades es más motivador, y además puede hacer que el enemigo pierda empuje desde un principio. Me pareció algo muy lógico, ¡así que modifiqué el reglamento!”.</i>"
+    },
+    "skillParams": {
+      "0": "Daño al pulsar una vez",
+      "1": "Daño al mantener pulsado",
+      "2": "Daño de bala de punta sobrecargada",
+      "3": "Curación continua",
+      "4": "Duración de curación",
+      "5": "Daño de filo fluyente",
+      "6": "Intervalo de filo fluyente",
+      "7": "TdE",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Bombardeo radial",
+    "description": {
+      "0": "Chevreuse utiliza su rifle para lanzar una granada explosiva a sus enemigos e infligir <pyro>Daño Pyro en el AdE</pyro>. Al impactar, la granada se divide en varias bombas secundarias.",
+      "1": "Dichas bombas explotan tras un breve intervalo de tiempo e infligen <pyro>Daño Pyro</pyro> a los enemigos cercanos.",
+      "2": "<br/>",
+      "3": "<i>“Por regla general, bombardear un área cuadrada es lo más eficaz contra un enemigo en formación cerrada, pero por desgracia, la sección transversal de la onda expansiva de la explosión es circular como un pastel, por lo que las granadas solo pueden esparcirse en círculo, al igual que la fruta alrededor de un pastel”.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de granada explosiva",
+      "1": "Daño de bombas secundarias",
+      "2": "TdE",
+      "3": "Energía Elemental",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Vigilancia coordinada",
+    "description": {
+      "0": "Si el equipo está formado únicamente por personajes <pyro>Pyro</pyro> y <electro>Electro</electro> y hay al menos un personaje Pyro y uno Electro en él, Chevreuse otorga el efecto de “maniobra coordinada” a los miembros del equipo cercanos. Cuando un personaje bajo este efecto causa una reacción de Sobrecarga, la RES <pyro>Pyro</pyro> y <electro>Electro</electro> del enemigo afectado por dicha reacción se reduce en un 40% durante 6 s.",
+      "1": "El efecto de maniobra coordinada desaparecerá cuando el tipo elemental de los miembros de tu equipo no cumpla con los requisitos del talento pasivo."
+    }
+  },
+  "passive2": {
+    "name": "Formación lineal integral",
+    "description": {
+      "0": "Cuando Chevreuse dispara una bala de punta sobrecargada de <strong>Fuego rápido de proximidad e intercepción</strong>, el ATQ de todos los personajes <pyro>Pyro</pyro> y <electro>Electro</electro> cercanos del equipo aumenta en un 1% durante 30 s por cada 1000 pts. de Vida Máx. que tenga Chevreuse. El ATQ puede aumentar en un máximo de un 40% de esta manera."
+    }
+  },
+  "passive3": {
+    "name": "Marcha rápida táctica",
+    "description": {
+      "0": "Disminuye en un 20% el Coste de Aguante al esprintar de todos los miembros de tu equipo.",
+      "1": "No se puede acumular con otros talentos pasivos que tengan los mismos efectos."
+    }
+  },
+  "constellation1": {
+    "name": "Temple estabilizador en el frente",
+    "description": {
+      "0": "Cuando un personaje en uso (a excepción de Chevreuse) que está bajo el efecto de maniobra coordinada causa una reacción de Sobrecarga, recupera 6 pts. de Energía Elemental. Este efecto solo puede ocurrir una vez cada 10 s.",
+      "1": "Es necesario desbloquear el talento pasivo “Vigilancia coordinada”."
+    }
+  },
+  "constellation2": {
+    "name": "Detonación de francotirador",
+    "description": {
+      "0": "Al mantener pulsada la habilidad <strong>Fuego rápido de proximidad e intercepción</strong> y alcanzar a un objetivo con un disparo, cerca de la ubicación del objetivo tienen lugar 2 explosiones encadenadas, cada una de las cuales inflige <pyro>Daño Pyro</pyro> en una cantidad equivalente al 120% del ATQ de Chevreuse. Este efecto solo puede ocurrir una vez cada 10 s, y el daño infligido de esta forma se considera daño de Habilidad Elemental."
+    }
+  },
+  "constellation3": {
+    "name": "Recarga artificiosa",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Fuego rápido de proximidad e intercepción</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Técnica: Multidisparo rápido",
+    "description": {
+      "0": "Tras usar <strong>Bombardeo radial</strong>, al mantener pulsado y lanzar <strong>Fuego rápido de proximidad e intercepción</strong>, este no entra en TdE. Este efecto dura un máximo de 6 s y finaliza tras lanzar 2 veces Fuego rápido de proximidad e intercepción manteniendo pulsado."
+    }
+  },
+  "constellation5": {
+    "name": "Potencia de fuego incremental",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Bombardeo radial</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Persecución fenecedora del mal",
+    "description": {
+      "0": "Tras haber transcurrido 12 s del efecto curativo de <strong>Fuego rápido de proximidad e intercepción</strong>, todos los personajes del equipo cercanos regeneran Vida una vez en una cantidad equivalente al 10% de la Vida Máx. de Chevreuse.",
+      "1": "Después de que un personaje reciba curación a causa de Fuego rápido de proximidad e intercepción, obtiene un 20% de <pyro>Bono de Daño Pyro</pyro> y de <electro>Bono de Daño Electro</electro>. Este efecto dura 8 s y puede acumularse hasta 3 veces. Cada acumulación tendrá su propia duración individual."
+    }
+  }
+}

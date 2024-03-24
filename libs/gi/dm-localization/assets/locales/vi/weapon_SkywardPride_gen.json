@@ -1,0 +1,24 @@
+{
+  "name": "Thiên Không Kiêu Ngạo",
+  "description": {
+    "0": "Là kiếm tượng trưng cho sự kiêu ngạo của Phong Long. Khi vung lên có khí thế của rồng, ẩn chứa sức mạnh của gió và thiên không."
+  },
+  "passiveName": "Long Tích Chém Đứt Thanh Không",
+  "passiveDescription": {
+    "0": {
+      "0": "Sát thương tạo thành tăng <cryo>8%</cryo>; Sau khi thi triển kỹ năng nộ: Khi tấn công thường và trọng kích đánh trúng địch sẽ phóng ra lưỡi dao chân không, tạo thành <cryo>80%</cryo> sát thương cho kẻ địch trên đường đi, kéo dài 20s hoặc đến khi phóng ra 8 lần dao chân không."
+    },
+    "1": {
+      "0": "Sát thương tạo thành tăng <cryo>10%</cryo>; Sau khi thi triển kỹ năng nộ: Khi tấn công thường và trọng kích đánh trúng địch sẽ phóng ra lưỡi dao chân không, tạo thành <cryo>100%</cryo> sát thương cho kẻ địch trên đường đi, kéo dài 20s hoặc đến khi phóng ra 8 lần dao chân không."
+    },
+    "2": {
+      "0": "Sát thương tạo thành tăng <cryo>12%</cryo>; Sau khi thi triển kỹ năng nộ: Khi tấn công thường và trọng kích đánh trúng địch sẽ phóng ra lưỡi dao chân không, tạo thành <cryo>120%</cryo> sát thương cho kẻ địch trên đường đi, kéo dài 20s hoặc đến khi phóng ra 8 lần dao chân không."
+    },
+    "3": {
+      "0": "Sát thương tạo thành tăng <cryo>14%</cryo>; Sau khi thi triển kỹ năng nộ: Khi tấn công thường và trọng kích đánh trúng địch sẽ phóng ra lưỡi dao chân không, tạo thành <cryo>140%</cryo> sát thương cho kẻ địch trên đường đi, kéo dài 20s hoặc đến khi phóng ra 8 lần dao chân không."
+    },
+    "4": {
+      "0": "Sát thương tạo thành tăng <cryo>16%</cryo>; Sau khi thi triển kỹ năng nộ: Khi tấn công thường và trọng kích đánh trúng địch sẽ phóng ra lưỡi dao chân không, tạo thành <cryo>160%</cryo> sát thương cho kẻ địch trên đường đi, kéo dài 20s hoặc đến khi phóng ra 8 lần dao chân không."
+    }
+  }
+}

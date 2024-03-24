@@ -1,0 +1,29 @@
+{
+  "setName": "Aldilà vermiglio",
+  "setEffects": {
+    "2": "ATT +18%.",
+    "4": "Dopo aver usato un Tripudio elementale, il personaggio ottiene l'effetto Luce nascente, che aumenta l'ATT di un 8% per 16 s. Quando i PS del personaggio si riducono, il suo ATT aumenta di un ulteriore 10%. Questo ulteriore aumento può essere accumulato per un massimo di 4 volte. Quest'effetto può attivarsi una volta ogni 0,8 s. Quando il personaggio abbandona il campo, l'effetto Luce nascente si disperde. Usando nuovamente un Tripudio elementale quando Luce nascente è attivo, l'effetto originale si disperde."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Fiore della vitalità",
+      "desc": "Un antico cimelio. Sembra essere ancora vivo come l'essere che lo conservò diversi secoli fa."
+    },
+    "plume": {
+      "name": "Piuma della luce nascente",
+      "desc": "Una piuma che risplende delicatamente, intrisa di forti ricordi."
+    },
+    "sands": {
+      "name": "Reliquia solare",
+      "desc": "Un antico orologio dall'aspetto resistente. La sua lucentezza è data dai cristalli di sabbia."
+    },
+    "goblet": {
+      "name": "Patto siglato",
+      "desc": "Una vecchia coppa realizzata tramite cristalli di sabbia. La sua lucentezza non è stata intaccata dal passare del tempo."
+    },
+    "circlet": {
+      "name": "Portamento tonante",
+      "desc": "Si dice che questa maschera sia stata realizzata dalle genti della montagna per uno Yaksha. È di semplice fattura, ma la sua superficie brilla comunque di una luce intensa."
+    }
+  }
+}

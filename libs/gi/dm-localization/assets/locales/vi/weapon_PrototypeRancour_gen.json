@@ -1,0 +1,24 @@
+{
+  "name": "Mẫu Trảm Nham",
+  "description": {
+    "0": "Kiếm dài cổ xưa được cất giữ trong Hắc Nham Xưởng, có thể chém sắt như chém bùn."
+  },
+  "passiveName": "Đá Vụn",
+  "passiveDescription": {
+    "0": {
+      "0": "Khi tấn công thường hoặc trọng kích đánh trúng địch, tấn công và phòng ngự tăng <cryo>4%</cryo>, kéo dài 6s, tối đa cộng dồn 4 lần. Mỗi 0.3s mới thi triển 1 lần."
+    },
+    "1": {
+      "0": "Khi tấn công thường hoặc trọng kích đánh trúng địch, tấn công và phòng ngự tăng <cryo>5%</cryo>, kéo dài 6s, tối đa cộng dồn 4 lần. Mỗi 0.3s mới thi triển 1 lần."
+    },
+    "2": {
+      "0": "Khi tấn công thường hoặc trọng kích đánh trúng địch, tấn công và phòng ngự tăng <cryo>6%</cryo>, kéo dài 6s, tối đa cộng dồn 4 lần. Mỗi 0.3s mới thi triển 1 lần."
+    },
+    "3": {
+      "0": "Khi tấn công thường hoặc trọng kích đánh trúng địch, tấn công và phòng ngự tăng <cryo>7%</cryo>, kéo dài 6s, tối đa cộng dồn 4 lần. Mỗi 0.3s mới thi triển 1 lần."
+    },
+    "4": {
+      "0": "Khi tấn công thường hoặc trọng kích đánh trúng địch, tấn công và phòng ngự tăng <cryo>8%</cryo>, kéo dài 6s, tối đa cộng dồn 4 lần. Mỗi 0.3s mới thi triển 1 lần."
+    }
+  }
+}

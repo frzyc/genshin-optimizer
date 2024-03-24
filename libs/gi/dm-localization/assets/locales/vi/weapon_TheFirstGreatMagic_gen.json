@@ -1,0 +1,24 @@
+{
+  "name": "Màn Ảo Thuật Đầu Tiên",
+  "description": {
+    "0": "Đạo cụ biểu diễn mà \"ảo thuật gia đại tài\" trong quá khứ từng sử dụng, bí mật cuối cùng được hé lộ là nó thực ra cũng là một vũ khí không tầm thường."
+  },
+  "passiveName": "Parsifal Vĩ Đại",
+  "passiveDescription": {
+    "0": {
+      "0": "Sát thương trọng kích tăng <cryo>16%</cryo>; Trong đội mỗi tồn tại một nhân vật cùng loại nguyên tố với người trang bị (Bao gồm cả người trang bị), thì sẽ nhận 1 tầng \"Thủ Thuật\"; Trong đội mỗi tồn tại một nhân vật khác loại nguyên tố với người trang bị, thì sẽ nhận 1 tầng \"Diễn Xuất\". Hiệu ứng \"Thủ Thuật\" đạt từ 1/2/3 tầng trở lên, tấn công tăng <cryo>16%/32%/48%</cryo>; Hiệu ứng \"Diễn Xuất\" đạt từ 1/2/3 tầng trở lên, tốc độ di chuyển tăng <cryo>4%/7%/10%</cryo>."
+    },
+    "1": {
+      "0": "Sát thương trọng kích tăng <cryo>20%</cryo>; Trong đội mỗi tồn tại một nhân vật cùng loại nguyên tố với người trang bị (Bao gồm cả người trang bị), thì sẽ nhận 1 tầng \"Thủ Thuật\"; Trong đội mỗi tồn tại một nhân vật khác loại nguyên tố với người trang bị, thì sẽ nhận 1 tầng \"Diễn Xuất\". Hiệu ứng \"Thủ Thuật\" đạt từ 1/2/3 tầng trở lên, tấn công tăng <cryo>20%/40%/60%</cryo>; Hiệu ứng \"Diễn Xuất\" đạt từ 1/2/3 tầng trở lên, tốc độ di chuyển tăng <cryo>6%/9%/12%</cryo>."
+    },
+    "2": {
+      "0": "Sát thương trọng kích tăng <cryo>24%</cryo>; Trong đội mỗi tồn tại một nhân vật cùng loại nguyên tố với người trang bị (Bao gồm cả người trang bị), thì sẽ nhận 1 tầng \"Thủ Thuật\"; Trong đội mỗi tồn tại một nhân vật khác loại nguyên tố với người trang bị, thì sẽ nhận 1 tầng \"Diễn Xuất\". Hiệu ứng \"Thủ Thuật\" đạt từ 1/2/3 tầng trở lên, tấn công tăng <cryo>24%/48%/72%</cryo>; Hiệu ứng \"Diễn Xuất\" đạt từ 1/2/3 tầng trở lên, tốc độ di chuyển tăng <cryo>8%/11%/14%</cryo>."
+    },
+    "3": {
+      "0": "Sát thương trọng kích tăng <cryo>28%</cryo>; Trong đội mỗi tồn tại một nhân vật cùng loại nguyên tố với người trang bị (Bao gồm cả người trang bị), thì sẽ nhận 1 tầng \"Thủ Thuật\"; Trong đội mỗi tồn tại một nhân vật khác loại nguyên tố với người trang bị, thì sẽ nhận 1 tầng \"Diễn Xuất\". Hiệu ứng \"Thủ Thuật\" đạt từ 1/2/3 tầng trở lên, tấn công tăng <cryo>28%/56%/84%</cryo>; Hiệu ứng \"Diễn Xuất\" đạt từ 1/2/3 tầng trở lên, tốc độ di chuyển tăng <cryo>10%/13%/16%</cryo>."
+    },
+    "4": {
+      "0": "Sát thương trọng kích tăng <cryo>32%</cryo>; Trong đội mỗi tồn tại một nhân vật cùng loại nguyên tố với người trang bị (Bao gồm cả người trang bị), thì sẽ nhận 1 tầng \"Thủ Thuật\"; Trong đội mỗi tồn tại một nhân vật khác loại nguyên tố với người trang bị, thì sẽ nhận 1 tầng \"Diễn Xuất\". Hiệu ứng \"Thủ Thuật\" đạt từ 1/2/3 tầng trở lên, tấn công tăng <cryo>32%/64%/96%</cryo>; Hiệu ứng \"Diễn Xuất\" đạt từ 1/2/3 tầng trở lên, tốc độ di chuyển tăng <cryo>12%/15%/18%</cryo>."
+    }
+  }
+}

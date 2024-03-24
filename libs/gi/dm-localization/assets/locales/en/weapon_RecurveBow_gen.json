@@ -1,0 +1,24 @@
+{
+  "name": "Recurve Bow",
+  "description": {
+    "0": "It is said that this bow can shoot down eagles in flight, but ultimately how true that is depends on the skill of the archer."
+  },
+  "passiveName": "Cull the Weak",
+  "passiveDescription": {
+    "0": {
+      "0": "Defeating an opponent restores <cryo>8%</cryo> HP."
+    },
+    "1": {
+      "0": "Defeating an opponent restores <cryo>10%</cryo> HP."
+    },
+    "2": {
+      "0": "Defeating an opponent restores <cryo>12%</cryo> HP."
+    },
+    "3": {
+      "0": "Defeating an opponent restores <cryo>14%</cryo> HP."
+    },
+    "4": {
+      "0": "Defeating an opponent restores <cryo>16%</cryo> HP."
+    }
+  }
+}

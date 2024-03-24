@@ -1,0 +1,166 @@
+{
+  "name": "Candace",
+  "title": "Golden Vow",
+  "description": "Keturunan Raja Deshret yang memiliki mata kiri berwarna kuning keemasan. Pelindung Desa Aaru.",
+  "constellationName": "Sagitta Scutum",
+  "auto": {
+    "name": "Gleaming Spear - Guardian Stance",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Attack</strong>",
+        "1": "Melancarkan hingga 4 serangan tombak berturut-turut."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Mengonsumsi sejumlah Stamina untuk menerjang ke depan, mengakibatkan DMG pada musuh di jalur terjangan."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Menerjang dari udara untuk menghantam tanah, menyerang musuh di jalur terjangan dan mengakibatkan DMG area saat mendarat."
+      }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Tahap 4",
+      "4": "DMG Charged Attack",
+      "5": "Konsumsi Stamina Charged Attack",
+      "6": "DMG Selama Plunging",
+      "7": "DMG Plunging Attack Rendah/Tinggi",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Sacred Rite: Heron's Sanctum",
+    "description": {
+      "0": "Gaya bertempur Candace mampu menahan gelombang serbuan musuh.",
+      "1": "<br/>",
+      "2": "<strong>Mode Tekan</strong>",
+      "3": "Menerjang ke depan dengan tamengnya dan mengakibatkan <hydro>Hydro DMG</hydro>.",
+      "4": "<br/>",
+      "5": "<strong>Mode Tahan</strong>",
+      "6": "Mengangkat tameng untuk menahan serangan musuh di sekitar dan membuat perisai yang dapat menyerap DMG berdasarkan Max HP Candace, perisai juga memiliki 250% pertahanan terhadap <hydro>Hydro DMG</hydro>. Perisai akan terus aktif hingga Elemental Skill selesai dilancarkan.",
+      "7": "Candace akan selesai mengisi energi setelah tombol skill ditahan sampai waktu tertentu, dan ketika tombol skill dilepaskan, durasi skill selesai, atau perisainya hancur, Candace akan melakukan sebuah serangan melompat yang mengakibatkan <hydro>Hydro DMG</hydro> terhadap musuh di depannya.",
+      "8": "<br/>",
+      "9": "<i>Sumpah para pelindung lebih kuat daripada tameng yang mereka warisi.</i>"
+    },
+    "skillParams": {
+      "0": "Pertahanan Perisai",
+      "1": "DMG Dasar",
+      "2": "DMG Charge Penuh",
+      "3": "Cooldown Mode Tekan",
+      "4": "Cooldown Mode Tahan",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Sacred Rite: Wagtail's Tide",
+    "description": {
+      "0": "Mengangkat senjata dan meminta perlindungan dewa, mengakibatkan <hydro>Hydro DMG Area</hydro> berdasarkan Max HP Candace, sekaligus memberikan status Prayer of the Crimson Crown kepada Karakter aktif.",
+      "1": "<br/>",
+      "2": "<strong>Prayer of the Crimson Crown</strong>",
+      "3": "Memberikan efek sebagai berikut:",
+      "4": [
+        "Meningkatkan Elemental DMG yang diakibatkan Normal Attack Karakter;",
+        "Saat Karakter memasuki medan pertempuran, akan menghasilkan sebuah gelombang riak yang mengakibatkan <hydro>Hydro DMG</hydro> terhadap musuh di sekitar. Jumlah gelombang riak yang bisa terpicu selama durasi skill ini bersifat terbatas;",
+        "Karakter yang menggunakan Senjata Sword, Claymore, dan Polearm akan mendapatkan <hydro>Hydro Infusion</hydro> selama berada dalam status ini."
+      ],
+      "5": "<br/>",
+      "6": "<i>Ritual rahasia keluarga Candace yang diturunkan dari generasi ke generasi. Kepercayaan lama telah luntur seiring berlalunya waktu, namun lautan pasir masih terus melindungi para pewaris kerajaan kuno.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "Durasi",
+      "2": "Bonus DMG",
+      "3": "DMG Gelombang Air",
+      "4": "Pemicu Gelombang Air",
+      "5": "Cooldown",
+      "6": "Konsumsi Energy",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Aegis of Crossed Arrows",
+    "description": {
+      "0": "Jika Candace terkena serangan ketika dalam durasi Mode Tahan Skill <strong>Sacred Rite: Heron's Sanctum</strong>, maka durasi Charge Skill tersebut akan langsung selesai."
+    }
+  },
+  "passive2": {
+    "name": "Celestial Dome of Sand",
+    "description": {
+      "0": "Ketika Karakter berada dalam pengaruh Prayer of the Crimson Crown dari Skill <strong>Sacred Rite: Wagtail's Tide</strong>, maka untuk setiap 1000 poin Max HP yang dimiliki Candace, Elemental DMG yang diakibatkan oleh Normal Attack Karakter tersebut akan meningkat sebanyak 0.5%."
+    }
+  },
+  "passive3": {
+    "name": "To Dawn's First Light",
+    "description": {
+      "0": "Mengurangi 20% konsumsi Stamina Karakter party sendiri saat memanjat.",
+      "1": "Efek ini tidak dapat ditumpuk dengan Talenta Pasif lain dengan efek yang sama persis."
+    }
+  },
+  "constellation1": {
+    "name": "Returning Heiress of the Scarlet Sands",
+    "description": {
+      "0": "Durasi Prayer of the Crimson Crown yang terpicu oleh skill <strong>Sacred Rite: Wagtail's Tide</strong> bertambah 3 detik."
+    }
+  },
+  "constellation2": {
+    "name": "Moon-Piercing Brilliance",
+    "description": {
+      "0": "Saat <strong>Sacred Rite: Heron's Sanctum</strong> mengenai musuh, akan meningkatkan 20% Max HP Candace selama 15 detik."
+    }
+  },
+  "constellation3": {
+    "name": "Hunter's Supplication",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Sacred Rite: Wagtail's Tide</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Sentinel Oath",
+    "description": {
+      "0": "Mengurangi CD Mode Tahan <strong>Sacred Rite: Heron's Sanctum</strong>, menjadikannya sama dengan CD Mode Tekan."
+    }
+  },
+  "constellation5": {
+    "name": "Heterochromatic Gaze",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Sacred Rite: Heron's Sanctum</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "The Overflow",
+    "description": {
+      "0": "Saat Karakter (kecuali Candace sendiri) yang terpengaruh efek Prayer of the Crimson Crown yang disebabkan oleh <strong>Sacred Rite: Wagtail's Tide</strong> mengakibatkan Elemental DMG terhadap musuh dengan menggunakan Normal Attack, sebuah serangan gelombang yang mengakibatkan <hydro>Hydro DMG Area</hydro> yang setara dengan 15% Max HP Candace akan dilancarkan.",
+      "1": "Efek ini dapat terpicu setiap 2,3 detik, dan DMG yang diakibatkan akan dianggap sebagai DMG Elemental Burst."
+    }
+  }
+}

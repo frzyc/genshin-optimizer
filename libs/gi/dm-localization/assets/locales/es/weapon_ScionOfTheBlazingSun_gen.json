@@ -1,0 +1,24 @@
+{
+  "name": "Descendientes del Sol Abrasador",
+  "description": {
+    "0": "Un vetusto arco perteneciente a una antigua época del reino del Rey Deshret. Tiene grabadas unas incomprensibles inscripciones y unos solemnes patrones."
+  },
+  "passiveName": "Precepto del sol",
+  "passiveDescription": {
+    "0": {
+      "0": "Tras golpear a un enemigo con un Ataque Cargado, sobre él cae una “flecha rayosolar” que inflige daño en una cantidad equivalente al <cryo>60%</cryo> del ATQ, y que le aplica el efecto de “corazón ferviente” durante 10 s. El daño que recibe el enemigo afectado por corazón ferviente de los Ataques Cargados del portador de esta arma aumenta en un <cryo>28%</cryo>. Solo puede caer una flecha rayosolar cada 10 s."
+    },
+    "1": {
+      "0": "Tras golpear a un enemigo con un Ataque Cargado, sobre él cae una “flecha rayosolar” que inflige daño en una cantidad equivalente al <cryo>75%</cryo> del ATQ, y que le aplica el efecto de “corazón ferviente” durante 10 s. El daño que recibe el enemigo afectado por corazón ferviente de los Ataques Cargados del portador de esta arma aumenta en un <cryo>35%</cryo>. Solo puede caer una flecha rayosolar cada 10 s."
+    },
+    "2": {
+      "0": "Tras golpear a un enemigo con un Ataque Cargado, sobre él cae una “flecha rayosolar” que inflige daño en una cantidad equivalente al <cryo>90%</cryo> del ATQ, y que le aplica el efecto de “corazón ferviente” durante 10 s. El daño que recibe el enemigo afectado por corazón ferviente d los Ataques Cargados del portador de esta arma aumenta en un <cryo>42%</cryo>. Solo puede caer una flecha rayosolar cada 10 s."
+    },
+    "3": {
+      "0": "Tras golpear a un enemigo con un Ataque Cargado, sobre él cae una “flecha rayosolar” que inflige daño en una cantidad equivalente al <cryo>105%</cryo> del ATQ, y que le aplica el efecto de “corazón ferviente” durante 10 s. El daño que recibe el enemigo afectado por corazón ferviente de los Ataques Cargados del portador de esta arma aumenta en un <cryo>49%</cryo>. Solo puede caer una flecha rayosolar cada 10 s."
+    },
+    "4": {
+      "0": "Tras golpear a un enemigo con un Ataque Cargado, sobre él cae una “flecha rayosolar” que inflige daño en una cantidad equivalente al <cryo>120%</cryo> del ATQ, y que le aplica el efecto de “corazón ferviente” durante 10 s. El daño que recibe el enemigo afectado por corazón ferviente de los Ataques Cargados del portador de esta arma aumenta en un <cryo>56%</cryo>. Solo puede caer una flecha rayosolar cada 10 s."
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Key of Khaj-Nisut",
+  "description": {
+    "0": "One of a paired set of scepters fashioned from obsidian. They say that this can be used as a key to open the gate to a paradise that lies at the end of the ocean of sand."
+  },
+  "passiveName": "Sunken Song of the Sands",
+  "passiveDescription": {
+    "0": {
+      "0": "HP increased by <cryo>20%</cryo>. When an Elemental Skill hits opponents, you gain the Grand Hymn effect for 20s. This effect increases the equipping character's Elemental Mastery by <cryo>0.12%</cryo> of their Max HP. This effect can trigger once every 0.3s. Max 3 stacks. When this effect gains 3 stacks, or when the third stack's duration is refreshed, the Elemental Mastery of all nearby party members will be increased by <cryo>0.2%</cryo> of the equipping character's max HP for 20s."
+    },
+    "1": {
+      "0": "HP increased by <cryo>25%</cryo>. When an Elemental Skill hits opponents, you gain the Grand Hymn effect for 20s. This effect increases the equipping character's Elemental Mastery by <cryo>0.15%</cryo> of their Max HP. This effect can trigger once every 0.3s. Max 3 stacks. When this effect gains 3 stacks, or when the third stack's duration is refreshed, the Elemental Mastery of all nearby party members will be increased by <cryo>0.25%</cryo> of the equipping character's max HP for 20s."
+    },
+    "2": {
+      "0": "HP increased by <cryo>30%</cryo>. When an Elemental Skill hits opponents, you gain the Grand Hymn effect for 20s. This effect increases the equipping character's Elemental Mastery by <cryo>0.18%</cryo> of their Max HP. This effect can trigger once every 0.3s. Max 3 stacks. When this effect gains 3 stacks, or when the third stack's duration is refreshed, the Elemental Mastery of all nearby party members will be increased by <cryo>0.3%</cryo> of the equipping character's max HP for 20s."
+    },
+    "3": {
+      "0": "HP increased by <cryo>35%</cryo>. When an Elemental Skill hits opponents, you gain the Grand Hymn effect for 20s. This effect increases the equipping character's Elemental Mastery by <cryo>0.21%</cryo> of their Max HP. This effect can trigger once every 0.3s. Max 3 stacks. When this effect gains 3 stacks, or when the third stack's duration is refreshed, the Elemental Mastery of all nearby party members will be increased by <cryo>0.35%</cryo> of the equipping character's max HP for 20s."
+    },
+    "4": {
+      "0": "HP increased by <cryo>40%</cryo>. When an Elemental Skill hits opponents, you gain the Grand Hymn effect for 20s. This effect increases the equipping character's Elemental Mastery by <cryo>0.24%</cryo> of their Max HP. This effect can trigger once every 0.3s. Max 3 stacks. When this effect gains 3 stacks, or when the third stack's duration is refreshed, the Elemental Mastery of all nearby party members will be increased by <cryo>0.4%</cryo> of the equipping character's max HP for 20s."
+    }
+  }
+}

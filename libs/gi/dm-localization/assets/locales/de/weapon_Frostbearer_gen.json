@@ -1,0 +1,24 @@
+{
+  "name": "Permafrostfrucht",
+  "description": {
+    "0": "Eine Frucht, die einen seltsamen, frostigen Willen besitzt. Sie riecht entfernt nach Verbitterung."
+  },
+  "passiveName": "Frostgrab",
+  "passiveDescription": {
+    "0": {
+      "0": "Erstellt beim Treffen von Gegnern mit Standardangriffen und heftigen Schlägen mit einer Wahrscheinlichkeit von <cryo>60 %</cryo> über den Gegnern einen Kristallkern ewigen Eises, der herunterfällt und Flächenschaden in Höhe von <cryo>80 %</cryo> ANG verursacht. Verursacht Schaden in Höhe von <cryo>200 %</cryo> ANG, wenn die Gegner von Kryo-Effekten betroffen sind. 10 s Abklingzeit."
+    },
+    "1": {
+      "0": "Erstellt beim Treffen von Gegnern mit Standardangriffen und heftigen Schlägen mit einer Wahrscheinlichkeit von <cryo>70 %</cryo> über den Gegnern einen Kristallkern ewigen Eises, der herunterfällt und Flächenschaden in Höhe von <cryo>95 %</cryo> ANG verursacht. Verursacht Schaden in Höhe von <cryo>240 %</cryo> ANG, wenn die Gegner von Kryo-Effekten betroffen sind. 10 s Abklingzeit."
+    },
+    "2": {
+      "0": "Erstellt beim Treffen von Gegnern mit Standardangriffen und heftigen Schlägen mit einer Wahrscheinlichkeit von <cryo>80 %</cryo> über den Gegnern einen Kristallkern ewigen Eises, der herunterfällt und Flächenschaden in Höhe von <cryo>110 %</cryo> ANG verursacht. Verursacht Schaden in Höhe von <cryo>280 %</cryo> ANG, wenn die Gegner von Kryo-Effekten betroffen sind. 10 s Abklingzeit."
+    },
+    "3": {
+      "0": "Erstellt beim Treffen von Gegnern mit Standardangriffen und heftigen Schlägen mit einer Wahrscheinlichkeit von <cryo>90 %</cryo> über den Gegnern einen Kristallkern ewigen Eises, der herunterfällt und Flächenschaden in Höhe von <cryo>125 %</cryo> ANG verursacht. Verursacht Schaden in Höhe von <cryo>320 %</cryo> ANG, wenn die Gegner von Kryo-Effekten betroffen sind. 10 s Abklingzeit."
+    },
+    "4": {
+      "0": "Erstellt beim Treffen von Gegnern mit Standardangriffen und heftigen Schlägen mit einer Wahrscheinlichkeit von <cryo>100 %</cryo> über den Gegnern einen Kristallkern ewigen Eises, der herunterfällt und Flächenschaden in Höhe von <cryo>140 %</cryo> ANG verursacht. Verursacht Schaden in Höhe von <cryo>360 %</cryo> ANG, wenn die Gegner von Kryo-Effekten betroffen sind. 10 s Abklingzeit."
+    }
+  }
+}

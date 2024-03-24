@@ -1,0 +1,167 @@
+{
+  "name": "Venti",
+  "title": "Windborne Bard",
+  "description": "Salah satu dari banyaknya penyair di Mondstadt yang bisa dengan bebasnya ke sana kemari di antara lorong-lorong dan gang-gang Mondstadt.",
+  "constellationName": "Carmen Dei",
+  "auto": {
+    "name": "Divine Marksmanship",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Attack</strong>",
+        "1": "Melancarkan hingga 6 tembakan panah berturut-turut menggunakan busur."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Melancarkan sebuah <strong>Serangan Membidik</strong> yang lebih akurat untuk mengakibatkan DMG yang lebih besar.",
+        "2": "Saat membidik, angin akan berkumpul di ujung anak panah. Panah dengan angin yang terkumpul penuh akan mengakibatkan <anemo>Anemo DMG</anemo>."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Melancarkan hujan panah dari udara dan menerjang tanah dengan kecepatan tinggi, mengakibatkan DMG Area saat mendarat."
+      }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Tahap 4",
+      "4": "DMG Tahap 5",
+      "5": "DMG Tahap 6",
+      "6": "DMG Membidik",
+      "7": "DMG Membidik Penuh",
+      "8": "DMG Selama Plunging",
+      "9": "DMG Plunging Attack Rendah/Tinggi",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Skyward Sonnet",
+    "description": {
+      "0": "Wahai angin tempat semua nyanyian dan pujian dilantunkan, mampukan pejalan kaki bumi ini naik ke langit.",
+      "1": "<br/>",
+      "2": "<strong>Tekan</strong>",
+      "3": "Memanggil sebuah Wind Domain di lokasi musuh yang mengakibatkan <anemo>Anemo DMG Area</anemo> serta menghempaskan musuh ke udara.",
+      "4": "<br/>",
+      "5": "<strong>Tahan</strong>",
+      "6": "Memanggil Wind Domain yang lebih besar lagi dengan Venti berada di tengahnya. Mengakibatkan <anemo>Anemo DMG Area</anemo> dan menghempaskan musuh ke udara.",
+      "7": "Setelah mengerahkan Wind Domain yang lebih besar, Venti mengendarai angin ke udara.",
+      "8": "<br/>",
+      "9": "Musuh yang terhempas oleh Skyward Sonnet akan jatuh ke tanah perlahan-lahan dalam waktu singkat.",
+      "10": "<br/>",
+      "11": "<i>Di masa ketika para dewa dan manusia berjalan bersama-sama di bumi, surga dipenuhi dengan lagu-lagu yang tak terhitung jumlahnya. Melodi ini sudah lama dilupakan.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Tekan",
+      "1": "Cooldown (Mode Tekan)",
+      "2": "DMG Tahan",
+      "3": "Cooldown (Mode Tahan)",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Wind's Grand Ode",
+    "description": {
+      "0": "Menembakkan panah yang terbuat dari angin gabungan yang tak terhitung jumlahnya. Membuat Stormeye raksasa yang menarik musuh; mengakibatkan <anemo>Anemo DMG</anemo> berkelanjutan.",
+      "1": "<br/>",
+      "2": "<strong>Elemental Absorption</strong>",
+      "3": "Jika Stormeye bersentuhan dengan elemen <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<electro>Electro</electro>, ia akan mengakibatkan tambahan Elemental DMG dengan tipe tersebut.",
+      "4": "Elemental Absorption hanya dapat terjadi sekali untuk setiap penggunaan skill.",
+      "5": "<br/>",
+      "6": "<i>Sebagian besar nyanyian pujian Archon Anemo telah hilang ditelan waktu. Nyanyian yang satu ini melantunkan keahliannya dalam menguasai angin.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Berkelanjutan",
+      "1": "Tambahan Elemental DMG",
+      "2": "Durasi",
+      "3": "Cooldown",
+      "4": "Konsumsi Energy",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Embrace of Winds",
+    "description": {
+      "0": "Menahan tombol skill <strong>Skyward Sonnet</strong> akan menciptakan arus angin yang berlangsung selama 20 detik."
+    }
+  },
+  "passive2": {
+    "name": "Stormeye",
+    "description": {
+      "0": "Memulihkan 15 Energy Venti setelah <strong>Wind's Grand Ode</strong> berakhir.",
+      "1": "Jika terjadi Elemental Absorption, juga akan memulihkan 15 Energy kepada seluruh anggota party dengan elemen yang sesuai."
+    }
+  },
+  "passive3": {
+    "name": "Windrider",
+    "description": {
+      "0": "Mengurangi 20% konsumsi Stamina Karakter party sendiri saat meluncur.",
+      "1": "Efek ini tidak dapat ditumpuk dengan Talenta Pasif lain dengan efek yang sama persis."
+    }
+  },
+  "constellation1": {
+    "name": "Splitting Gales",
+    "description": {
+      "0": "Menembakkan 2 anak panah tambahan setiap <strong>Serangan Membidik</strong>, yang masing-masing mengakibatkan 33% DMG dari panah utama."
+    }
+  },
+  "constellation2": {
+    "name": "Breeze of Reminiscence",
+    "description": {
+      "0": "<strong>Skyward Sonnet</strong> mengurangi 12% <anemo>Anemo RES</anemo> dan Physical RES musuh selama 10 detik.",
+      "1": "<anemo>Anemo RES</anemo> dan Physical RES musuh yang terhempas oleh <strong>Skyward Sonnet</strong> berkurang lagi 12% saat di udara."
+    }
+  },
+  "constellation3": {
+    "name": "Ode to Thousand Winds",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Wind's Grand Ode</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Hurricane of Freedom",
+    "description": {
+      "0": "Saat Venti mengambil sebuah Elemental Orb atau Particle, dia akan menerima 25% <anemo>Anemo DMG Bonus</anemo> selama 10 detik."
+    }
+  },
+  "constellation5": {
+    "name": "Concerto dal Cielo",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Skyward Sonnet</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Storm of Defiance",
+    "description": {
+      "0": "Musuh yang menerima DMG dari <strong>Wind's Grand Ode</strong> akan mendapat pengurangan <anemo>Anemo RES</anemo> sebanyak 20%.",
+      "1": "Jika Elemental Absorption muncul, maka RES terhadap elemen yang bersangkutan juga berkurang 20%."
+    }
+  }
+}

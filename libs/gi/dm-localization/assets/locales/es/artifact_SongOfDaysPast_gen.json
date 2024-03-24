@@ -1,0 +1,29 @@
+{
+  "setName": "Son de Antaño",
+  "setEffects": {
+    "2": "Bono de Curación +15%.",
+    "4": "Cuando el portador de este conjunto realiza una curación, crea el efecto de “añoranza” durante 6 s, el cual registra la cantidad de Vida recuperada (incluyendo el exceso de curación). Al terminar la duración, el efecto de añoranza se convierte en el de “marea de antaño”, de manera que cuando tu personaje en uso golpea a un enemigo con un Ataque Normal, Cargado o Descendente o con su Habilidad Elemental o Definitiva, el daño que inflige dicho personaje aumenta en una cantidad equivalente al 8% de la cantidad de Vida recuperada y registrada por añoranza. El efecto de marea de antaño se elimina tras activarse 5 veces o después de 10 s. Por su parte, el efecto de añoranza solo puede registrar un máximo de 15 000 pts. de Vida recuperada y solo puede existir uno al mismo tiempo, pero puede registrar la Vida recuperada por varios portadores de este conjunto. Este efecto se puede activar incluso cuando el portador está en tu equipo pero no en uso."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Juramento Olvidado de Antaño",
+      "desc": "Una flor inmarcesible hecha de larimar y plata azulada. Incluso hoy en día se sigue considerando un símbolo de resistencia."
+    },
+    "plume": {
+      "name": "Remembranza Fugaz de Antaño",
+      "desc": "Un accesorio con forma de ala de mariposa fabricado con plata y cristales azulados. Cuentan que, en un pasado muy remoto, simbolizaba la promesa de no separarse nunca."
+    },
+    "sands": {
+      "name": "Tañido de Antaño",
+      "desc": "Un reloj de arena de forma muy particular y fabricado con lapislázuli y jade ácueo. Su diseño está basado en el campanario de Petricor."
+    },
+    "goblet": {
+      "name": "Sueño Prometido de Antaño",
+      "desc": "Un hermoso recipiente cuya forma emula la del legendario cáliz de agua pura. Se dice que puede cumplir los deseos más puros de las personas."
+    },
+    "circlet": {
+      "name": "Poema Legado de Antaño",
+      "desc": "Un sombrero que, en el pasado, gozó de gran popularidad entre los compositores de ópera de Fontaine. El diseño de su pluma ornamental está inspirado en los yelmos de los legendarios Caballeros Aguapura."
+    }
+  }
+}

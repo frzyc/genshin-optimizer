@@ -1,0 +1,29 @@
+{
+  "setName": "Ecos da Floresta Noturna",
+  "setEffects": {
+    "2": "ATQ +18%",
+    "4": "Nos 10s depois de usar uma Habilidade Elemental, aumenta o Bônus de Dano Geo em 20%. Se estiver protegido por um escudo gerado pela Reação de Cristalização, o efeito acima será aumentado em 150%, e esse aumento adicional desaparece 1s após perder esse escudo."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Flor Altruísta",
+      "desc": "Um broche que a bruxa da história usou. Como os outros ornamentos que ela adorava, esse era caracterizado por formas de borboletas."
+    },
+    "plume": {
+      "name": "Pincel de Nanquim Honesto",
+      "desc": "A bruxa na história usou esse pincel. Sua escrita fluida não vale nem a pena ser discutida, de tantas vantagens que possui."
+    },
+    "sands": {
+      "name": "Relógio da Lealdade",
+      "desc": "Uma ampulheta de areia que a bruxa usou na história. Lendas dizem que se você recitar o encantamento errado, o tempo vai passar incrivelmente rápido."
+    },
+    "goblet": {
+      "name": "Garrafa Cheia de Nanquim",
+      "desc": "Uma garrafa de tinta usada pela bruxa da história. Possui um encantamento estranho, que não é nem um pouco menos poderoso que o lançado no pincel."
+    },
+    "circlet": {
+      "name": "Chapéu da Senhorita Amável",
+      "desc": "O chapéu preferido da bruxa na história. Ela adorava esse chapéu por causa de sua elegância."
+    }
+  }
+}

@@ -1,0 +1,161 @@
+{
+  "name": "Shikanoin Heizou",
+  "title": "El Detective de la Armonía",
+  "description": "El joven y talentoso detective de la Comisión Tenryou. Intuitivo, sagaz y muy inteligente.",
+  "constellationName": "Cervus Minor",
+  "auto": {
+    "name": "Artes marciales Fudou",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Ataque Normal</strong>",
+        "1": "Ejecuta hasta 5 golpes marciales fortalecidos con el poder del viento para infligir <anemo>Daño Anemo</anemo>."
+      },
+      "charged": {
+        "0": "<strong>Ataque Cargado</strong>",
+        "1": "Consume una cierta cantidad de Aguante para ejecutar una patada que levanta polvo e inflige <anemo>Daño Anemo</anemo> después de un corto tiempo de canalización."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Descendente</strong>",
+        "1": "Concentra el poder del viento para lanzarse desde el aire y golpear el suelo, dañando a todos los enemigos cercanos e infligiendo <anemo>Daño Anemo en el AdE</anemo> en el momento del impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Daño de 1er golpe",
+      "1": "Daño de 2.º golpe",
+      "2": "Daño de 3er golpe",
+      "3": "Daño de 4.º golpe",
+      "4": "Daño de 5.º golpe",
+      "5": "Ataque Cargado",
+      "6": "Coste de Aguante de ATQ Cargado",
+      "7": "Daño de Caída",
+      "8": "Daño de impacto de caída baja/alta",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Puñetazo cardiaco",
+    "description": {
+      "0": "<strong>Pulsar una vez</strong>",
+      "1": "Crea una ráfaga de viento para ejecutar un puñetazo cardiaco que inflige <anemo>Daño Anemo</anemo>.",
+      "2": "<br/>",
+      "3": "<strong>Mantener pulsado</strong>",
+      "4": "Acumula fuerza para ejecutar un puñetazo aún más poderoso. Durante el tiempo de carga, obtiene el efecto de “decantación”, el cual aumenta continuamente la fuerza del puñetazo cardiaco. Al dejar de pulsar la habilidad o cuando termine su tiempo de carga, ejecuta un puñetazo cardiaco hacia delante que inflige <anemo>Daño Anemo</anemo>.",
+      "5": "<br/>",
+      "6": "<strong>Decantación</strong>",
+      "7": "Aumenta el daño infligido por el puñetazo cardiaco. Este efecto puede acumularse hasta 4 veces.",
+      "8": "Al tener 4 cargas de decantación, se crea el efecto de “convicción”, el cual aumenta aún más el daño y el AdE del puñetazo cardiaco.",
+      "9": "<br/>",
+      "10": "<i>A simple vista, puede parecer un simple puñetazo, pero en realidad refleja la insistencia de Heizou en que los delincuentes admitan su culpa y confiesen.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "Aumento de daño de decantación",
+      "2": "Aumento de daño de convicción",
+      "3": "Duración de decantación",
+      "4": "TdE",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Patada huracanada",
+    "description": {
+      "0": "Salta y le da una patada a una bomba de vacío de técnica Fudou que, al golpear al enemigo, explota, crea un túnel de viento apresador que atrae a los objetos y enemigos cercanos e inflige <anemo>Daño Anemo en el AdE</anemo>.",
+      "1": "Cuando la bomba de vacío golpea a un enemigo afectado por <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<electro>Electro</electro>, aplicará sobre él el efecto de “ojo del tifón”, el cual explotará y desaparecerá para infligir Daño en el AdE del elemento correspondiente.",
+      "2": "La bomba de vacío de técnica Fudou solo podrá aplicar el ojo del tifón sobre un máximo de 4 enemigos golpeados, y cada enemigo no podrá ser afectado por un ojo del tifón de varios elementos distintos al mismo tiempo.",
+      "3": "<br/>",
+      "4": "<i>Heizou canaliza el elemento Anemo para ejecutar este movimiento especial, con el cual da una patada por la espalda a los delincuentes cuando los descubre o cuando intentan huir.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de bomba de vacío de técnica Fudou",
+      "1": "Daño de ojo del tifón",
+      "2": "TdE",
+      "3": "Energía Elemental",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Práctica paradójica",
+    "description": {
+      "0": "Cuando Shikanoin Heizou causa una reacción de Torbellino mientras está en uso, obtiene 1 carga de decantación para <strong>Puñetazo cardiaco</strong>. Esto solo puede ocurrir una vez cada 0.1 s."
+    }
+  },
+  "passive2": {
+    "name": "Razonamiento penetrante",
+    "description": {
+      "0": "Al golpear a un enemigo con <strong>Puñetazo cardiaco</strong>, la Maestría Elemental de todos los miembros del equipo (a excepción de Shikanoin Heizou) aumenta en 80 pts. durante 10 s."
+    }
+  },
+  "passive3": {
+    "name": "Un paso adelante",
+    "description": {
+      "0": "Disminuye en un 20% el Coste de Aguante al esprintar de todos los miembros de tu equipo.",
+      "1": "No se puede acumular con otros talentos pasivos que tengan los mismos efectos."
+    }
+  },
+  "constellation1": {
+    "name": "Los casos de Shikanoin",
+    "description": {
+      "0": "Al entrar en el campo de batalla, la Vel. del Ataque Normal de Shikanoin Heizou aumenta en un 15% durante 5 s, y además obtiene 1 carga de decantación para <strong>Puñetazo cardiaco</strong>. Esto solo puede ocurrir una vez cada 10 s."
+    }
+  },
+  "constellation2": {
+    "name": "Canon Shikanoiniano",
+    "description": {
+      "0": "Mejora el efecto de atracción del túnel de viento apresador creado con <strong>Patada huracanada</strong> y aumenta a 1 s su duración."
+    }
+  },
+  "constellation3": {
+    "name": "Acertijo inextricable",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Puñetazo cardiaco</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Colección de calumnias",
+    "description": {
+      "0": "La primera explosión del ojo del tifón de una <strong>Patada huracanada</strong> regenera 9 pts. de Energía Elemental para Shikanoin Heizou. Después, cada explosión regenera 1.5 pts. de Energía adicionales.",
+      "1": "Una <strong>Patada huracanada</strong> solo podrá regenerar un máximo de 13.5 pts. de Energía Elemental para Shikanoin Heizou de esta manera."
+    }
+  },
+  "constellation5": {
+    "name": "Secrétdex",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Patada huracanada</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Detective Heizou",
+    "description": {
+      "0": "Al usar <strong>Puñetazo cardiaco</strong>, cada carga de decantación aumenta en un 4% la Prob. CRIT del puñetazo. Al estar bajo los efectos de “convicción”, el Daño CRIT del puñetazo cardiaco aumenta en un 32%."
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Song of Stillness",
+  "description": {
+    "0": "A strange longbow that resembles a sea creature. Its string makes no sound at all."
+  },
+  "passiveName": "Benthic Pulse",
+  "passiveDescription": {
+    "0": {
+      "0": "After the wielder is healed, they will deal <cryo>16%</cryo> more DMG for 8s. This can be triggered even when the character is not on the field."
+    },
+    "1": {
+      "0": "After the wielder is healed, they will deal <cryo>20%</cryo> more DMG for 8s. This can be triggered even when the character is not on the field."
+    },
+    "2": {
+      "0": "After the wielder is healed, they will deal <cryo>24%</cryo> more DMG for 8s. This can be triggered even when the character is not on the field."
+    },
+    "3": {
+      "0": "After the wielder is healed, they will deal <cryo>28%</cryo> more DMG for 8s. This can be triggered even when the character is not on the field."
+    },
+    "4": {
+      "0": "After the wielder is healed, they will deal <cryo>32%</cryo> more DMG for 8s. This can be triggered even when the character is not on the field."
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "setName": "Cuồng Chiến",
+  "setEffects": {
+    "2": "Tỷ lệ bạo kích tăng 12%.",
+    "4": "Khi HP dưới 70%, tỷ lệ bạo kích tăng thêm 24%."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Tường Vi Cuồng Chiến",
+      "desc": "Một đóa hoa nhuốm màu đỏ tươi, giống như ý chí của người chiến sĩ."
+    },
+    "plume": {
+      "name": "Lông Vũ Cuồng Chiến",
+      "desc": "Lông đen từ chim báo tang trong truyền thuyết, một góc đã bị nhuộm thành màu đỏ."
+    },
+    "sands": {
+      "name": "Đồng Hồ Cuồng Chiến",
+      "desc": "Những hạt cát vô tình chảy mãi, nhắc nhở người chiến sĩ thời gian trên chiến trường và giới hạn trong cuộc sống."
+    },
+    "goblet": {
+      "name": "Ly Xương Cuồng Chiến",
+      "desc": "Ly được làm từ xương của thú lớn không rõ tên. Là chiến lợi phẩm sau một lần săn bắn nào đó."
+    },
+    "circlet": {
+      "name": "Mặt Quỷ Cuồng Chiến",
+      "desc": "Một nửa mặt nạ đã bị vỡ trong cuộc sát phạt đẫm máu."
+    }
+  }
+}

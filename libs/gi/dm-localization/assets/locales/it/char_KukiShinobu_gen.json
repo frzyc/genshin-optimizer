@@ -1,0 +1,161 @@
+{
+  "name": "Kuki Shinobu",
+  "title": "Risolutrice di ogni problema",
+  "description": "La capace e affidabile vice capo della Banda di Arataki. Ricorda: capace e affidabile non sono aggettivi che generalmente si addicono ai membri della Banda di Arataki, ma solo ed esclusivamente alla loro vice capo.",
+  "constellationName": "Tribulatio Demptio",
+  "auto": {
+    "name": "Lamaombra di Shinobu",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attacco normale</strong>",
+        "1": "Sferra fino a 4 colpi rapidi."
+      },
+      "charged": {
+        "0": "<strong>Attacco caricato</strong>",
+        "1": "Consuma una determinata quantità di vigore per sferrare 2 colpi di spada rapidi."
+      },
+      "plunging": {
+        "0": "<strong>Attacco in picchiata</strong>",
+        "1": "Attacca scagliandosi contro il suolo da mezz'aria, infliggendo DAN agli avversari lungo la traiettoria e DAN ad area all'impatto."
+      }
+    },
+    "skillParams": {
+      "0": "DAN da 1º colpo",
+      "1": "DAN da 2º colpo",
+      "2": "DAN da 3º colpo",
+      "3": "DAN da 4º colpo",
+      "4": "DAN da ATT caricato",
+      "5": "Costo vigore ATT caricato",
+      "6": "DAN da ATT in picchiata",
+      "7": "DAN da ATT in picchiata basso/alto",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Anello purificatore",
+    "description": {
+      "0": "Crea un Anello d'erba purificatore spendendo parte dei suoi PS, infliggendo <electro>DAN da Electro</electro> agli avversari vicini.",
+      "1": "<br/>",
+      "2": "<strong>Anello d'erba purificatore</strong>",
+      "3": "Segue il tuo personaggio attivo. Infligge <electro>DAN da Electro</electro> agli avversari vicini ogni 1,5 s e ripristina i PS dei personaggi attivi all'interno dell'area d'effetto dell'anello in base ai PS max di Kuki Shinobu.",
+      "4": "<br/>",
+      "5": "Il consumo di PS per l'uso di questa abilità può ridurre i suoi PS fino a un 20%.",
+      "6": "<br/>",
+      "7": "<i>\"Cingi il tuo polso con l'Erba del pianto, ed essa esorcizzerà il male.\"</i>"
+    },
+    "skillParams": {
+      "0": "DAN da abilità",
+      "1": "Guarigione da Anello d'erba purificatore",
+      "2": "DAN da Anello d'erba purificatore",
+      "3": "Costo attivazione",
+      "4": "Durata",
+      "5": "TdR",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Rituale di Gyoei Narukami Kariyama",
+    "description": {
+      "0": "Conficca nel terreno una lama purificatrice, creando un campo che libera la zona da ogni male e infligge <electro>DAN da Electro</electro> continui agli avversari all'interno della sua area d'effetto, in base ai PS max di Shinobu.",
+      "1": "Se i PS di Shinobu sono inferiori o pari alla metà quando si usa questa abilità, il campo avrà una maggiore durata.",
+      "2": "<br/>",
+      "3": "<i>Questa era in origine una tecnica usata per estirpare le erbacce e impiegata nelle preghiere rituali per il raccolto annuale, ma Shinobu non l'ha mai dimenticata, nonostante non sia più una sacerdotessa.</i>"
+    },
+    "skillParams": {
+      "0": "DAN da colpo singolo",
+      "1": "DAN totali",
+      "2": "Durata",
+      "3": "TdR",
+      "4": "Costo energia",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Desiderio di libertà",
+    "description": {
+      "0": "Quando i PS di Shinobu sono inferiori alla metà, il suo bonus di guarigione aumenta di un 15%."
+    }
+  },
+  "passive2": {
+    "name": "Quiete del cuore",
+    "description": {
+      "0": "Le abilità dell'<strong>Anello purificatore</strong> vengono potenziate in base alla maestria elementale di Shinobu:",
+      "1": [
+        " la guarigione aumenta di un 75% della maestria elementale;",
+        " i DAN inflitti aumentano di un 25% della maestria elementale."
+      ]
+    }
+  },
+  "passive3": {
+    "name": "Preghiere prolungate",
+    "description": {
+      "0": "Ottiene un 25% in più di ricompense quando intraprende una spedizione a Inazuma per 20 ore."
+    }
+  },
+  "constellation1": {
+    "name": "Compassione reclusa",
+    "description": {
+      "0": "L'area d'effetto di <strong>Rituale di Gyoei Narukami Kariyama</strong> aumenta di un 50%."
+    }
+  },
+  "constellation2": {
+    "name": "Fortuna abbandonata",
+    "description": {
+      "0": "La durata di <strong>Anello d'erba purificatore</strong> aumenta di 3 s."
+    }
+  },
+  "constellation3": {
+    "name": "Dolore reciso",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Anello purificatore</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation4": {
+    "name": "Sigillo spezzato",
+    "description": {
+      "0": "Quando gli attacchi normali, caricati o in picchiata del personaggio sotto l'effetto di <strong>Anello d'erba purificatore</strong> di Shinobu colpiscono gli avversari, un Marchio Tuonerba cade nella posizione dell'avversario infliggendo <electro>DAN da Electro ad area</electro> in base a un 9,7% dei PS max di Shinobu.",
+      "1": "Si può verificare una sola volta ogni 5 s."
+    }
+  },
+  "constellation5": {
+    "name": "Convenevoli conclusi",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Rituale di Gyoei Narukami Kariyama</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation6": {
+    "name": "Debolezza interrotta",
+    "description": {
+      "0": "Quando Kuki Shinobu subisce DAN letali, non viene sconfitta. Questo effetto si innesca automaticamente quando i suoi PS scendono a 1 e si attiva una volta ogni 60 s.",
+      "1": "Quando i PS di Shinobu scendono sotto un 25%, la sua maestria elementale aumenta di 150 per 15 s. Quest'effetto si attiva una volta ogni 60 s."
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Conversas dos Sábios do Deserto",
+  "description": {
+    "0": "Um caduceu simbolizando a glória da alquimia, feito de ligas especiais para combinar com seu status especial. É extremamente rígido e pesado e provavelmente causaria bastante dor se usado como um porrete."
+  },
+  "passiveName": "Princípio do Equilíbrio",
+  "passiveDescription": {
+    "0": {
+      "0": "Ao curar, restaura <cryo>8</cryo> de Energia. Este efeito pode ser ativado uma vez a cada 10s e pode ser ativado mesmo quando o personagem não estiver em campo."
+    },
+    "1": {
+      "0": "Ao curar, restaura <cryo>10</cryo> de Energia. Este efeito pode ser ativado uma vez a cada 10s e pode ser ativado mesmo quando o personagem não estiver em campo."
+    },
+    "2": {
+      "0": "Ao curar, restaura <cryo>12</cryo> de Energia. Este efeito pode ser ativado uma vez a cada 10s e pode ser ativado mesmo quando o personagem não estiver em campo."
+    },
+    "3": {
+      "0": "Ao curar, restaura <cryo>14</cryo> de Energia. Este efeito pode ser ativado uma vez a cada 10s e pode ser ativado mesmo quando o personagem não estiver em campo."
+    },
+    "4": {
+      "0": "Ao curar, restaura <cryo>16</cryo> de Energia. Este efeito pode ser ativado uma vez a cada 10s e pode ser ativado mesmo quando o personagem não estiver em campo."
+    }
+  }
+}

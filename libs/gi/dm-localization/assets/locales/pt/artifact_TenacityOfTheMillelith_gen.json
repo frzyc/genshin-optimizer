@@ -1,0 +1,29 @@
+{
+  "setName": "Millelith Firmes",
+  "setEffects": {
+    "2": "Aumenta a vida em 20%.",
+    "4": "Quando a Habilidade Elemental atinge um oponente, o ATQ de todos os membros da equipe próximos aumenta em 20% e sua Força do Escudo aumenta em 30% por 3s. Esse efeito pode ser ativado uma vez a cada 0,5s. Esse efeito ainda pode ser ativado mesmo quando o personagem que está usando esse conjunto de artefatos não está em campo."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Flor da Conquista",
+      "desc": "Uma fina flor feita de pétalas douradas, simboliza as conquistas e honra de seu dono."
+    },
+    "plume": {
+      "name": "Pena Brilhante Marcial",
+      "desc": "Penas de falcão utilizadas em ocasiões festivas. Exibe uma aparência de autoridade e determinação para as pessoas de fora de Liyue."
+    },
+    "sands": {
+      "name": "Relógio de Sol Dourado",
+      "desc": "Um item de aparência comum para marcar o tempo. Durante a era de guerras, era utilizado como equipamento padrão pelos Millelith."
+    },
+    "goblet": {
+      "name": "Taça Dourada do Juramento",
+      "desc": "Uma taça dourada utilizada pelos Millelith para simbolizar uma aliança. Ainda possui um leve cheiro de vinho."
+    },
+    "circlet": {
+      "name": "Capacete do Comandante",
+      "desc": "Um belo capacete antigo. Brilha como novo depois de se limpar a sujeira e areia nele."
+    }
+  }
+}

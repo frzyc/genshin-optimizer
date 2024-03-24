@@ -1,0 +1,29 @@
+{
+  "setName": "Caballería Sanguinaria",
+  "setEffects": {
+    "2": "Daño Físico +25%.",
+    "4": "Derrotar a un enemigo hace que no consumas Aguante al lanzar un Ataque Cargado, y que el daño de Ataque Cargado aumente en un 50% durante 10 s."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Corazón de Hierro Sanguinario",
+      "desc": "Una flor seca, oscura, con manchas de sangre y dura como el acero. Es considerada una especie de souvenir."
+    },
+    "plume": {
+      "name": "Pluma Oscura Sanguinaria",
+      "desc": "Pluma pegada a la capa del Caballero. Tras mancharse de sangre repetidamente, la pluma se tiñó de un color oscuro."
+    },
+    "sands": {
+      "name": "Reloj del Caballero Sanguinario",
+      "desc": "Un reloj que llevaban los caballeros antiguamente. El líquido que medía las horas ya se ha petrificado. Este reloj ha perdido su única funcionalidad, que era la de medir el tiempo."
+    },
+    "goblet": {
+      "name": "Cáliz del Caballero Sanguinario",
+      "desc": "El cáliz de metal de un caballero con una obsesión por la sangre. Su color negro oscuro se debe a la sangre requemada que se quedó agarrada por todo el recipiente durante mucho tiempo."
+    },
+    "circlet": {
+      "name": "Máscara de Hierro Sanguinaria",
+      "desc": "La máscara de hierro que usaba el Caballero Sanguinario para proteger su cara. Ha habido muchas teorías sobre qué aspecto tenía el rostro que se ocultaba tras ella."
+    }
+  }
+}

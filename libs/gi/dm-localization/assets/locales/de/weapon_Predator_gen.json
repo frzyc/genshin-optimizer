@@ -1,0 +1,14 @@
+{
+  "name": "Raubtier",
+  "description": {
+    "0": "Ein Bogen von außergewöhnlicher Machart. Er scheint nicht von dieser Welt zu sein."
+  },
+  "passiveName": "Wuchtangriff",
+  "passiveDescription": {
+    "0": {
+      "0": "<cryo>Nur für Spieler auf folgender Plattform wirksam:</cryo>",
+      "1": "<cryo>„PlayStation Network“</cryo>",
+      "2": "Erhöht nach dem Treffen von Gegnern mit Kryo-Schaden den mit Standardangriffen und heftigen Schlägen verursachten Schaden 6 s lang um 10 %, 2-fach stapelbar. Erhöht Aloys ANG beim Anlegen von Raubtier zusätzlich um 66 Punkte."
+    }
+  }
+}

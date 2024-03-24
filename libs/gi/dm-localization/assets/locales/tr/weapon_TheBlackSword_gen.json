@@ -1,0 +1,24 @@
+{
+  "name": "Kara Kılıç",
+  "description": {
+    "0": "Kana ve şiddete susamış simsiyah bir kılıç. Bu kılıcı kuşanan savaşçının gözünü kan bürüdüğü söylenir."
+  },
+  "passiveName": "Adalet",
+  "passiveDescription": {
+    "0": {
+      "0": "Normal ve Yüklü Saldırılarla verilen Hasarı <cryo>%20</cryo> artırır. Ayrıca Normal ve Yüklü Saldırılar bir Kritik Vuruş yaptığında Saldırının <cryo>%60</cryo> kadarını Can olarak yeniler. Bu etki 5 saniyede bir uygulanabilir."
+    },
+    "1": {
+      "0": "Normal ve Yüklü Saldırılarla verilen Hasarı <cryo>%25</cryo> artırır. Ayrıca Normal ve Yüklü Saldırılar bir Kritik Vuruş yaptığında Saldırının <cryo>%70</cryo> kadarını Can olarak yeniler. Bu etki 5 saniyede bir uygulanabilir."
+    },
+    "2": {
+      "0": "Normal ve Yüklü Saldırılarla verilen Hasarı <cryo>%30</cryo> artırır. Ayrıca Normal ve Yüklü Saldırılar bir Kritik Vuruş yaptığında Saldırının <cryo>%80</cryo> kadarını Can olarak yeniler. Bu etki 5 saniyede bir uygulanabilir."
+    },
+    "3": {
+      "0": "Normal ve Yüklü Saldırılarla verilen Hasarı <cryo>%35</cryo> artırır. Ayrıca Normal ve Yüklü Saldırılar bir Kritik Vuruş yaptığında Saldırının <cryo>%90</cryo> kadarını Can olarak yeniler. Bu etki 5 saniyede bir uygulanabilir."
+    },
+    "4": {
+      "0": "Normal ve Yüklü Saldırılarla verilen Hasarı <cryo>%40</cryo> artırır. Ayrıca Normal ve Yüklü Saldırılar bir Kritik Vuruş yaptığında Saldırının <cryo>%100</cryo> kadarını Can olarak yeniler. Bu etki 5 saniyede bir uygulanabilir."
+    }
+  }
+}

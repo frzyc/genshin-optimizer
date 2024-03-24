@@ -1,0 +1,24 @@
+{
+  "name": "The Dockhand's Assistant",
+  "description": {
+    "0": "Alat pemotong praktis yang sudah hampir punah saat ini. Kamu bisa mengganti mata pisaunya jika sudah tumpul seiring penggunaan."
+  },
+  "passiveName": "Sea Shanty",
+  "passiveDescription": {
+    "0": {
+      "0": "Saat penggunanya menerima pemulihan atau memberikan pemulihan, akan memberikan satu Stoic's Symbol yang berlangsung selama 30 detik dan dapat ditumpuk sampai 3 lapis. Saat melancarkan Elemental Skill atau Elemental Burst, akan mengonsumsi seluruh Stoic's Symbol yang dimiliki untuk menghasilkan efek Roused yang berlangsung selama 10 detik. Setiap Stoic's Symbol yang dikonsumsi akan: meningkatkan <cryo>40</cryo> poin Elemental Mastery; dan memulihkan <cryo>2</cryo> poin Energy Karakter penggunanya (setelah 2 detik efek Roused dihasilkan). Efek Roused dapat terpicu sekali setiap 15 detik. Stoic's Symbol tetap dapat diperoleh saat Karakter ada di dalam party namun sedang tidak berada di medan pertempuran."
+    },
+    "1": {
+      "0": "Saat penggunanya menerima pemulihan atau memberikan pemulihan, akan memberikan satu Stoic's Symbol yang berlangsung selama 30 detik dan dapat ditumpuk sampai 3 lapis. Saat melancarkan Elemental Skill atau Elemental Burst, akan mengonsumsi seluruh Stoic's Symbol yang dimiliki untuk menghasilkan efek Roused yang berlangsung selama 10 detik. Setiap Stoic's Symbol yang dikonsumsi akan: meningkatkan <cryo>50</cryo> poin Elemental Mastery; dan memulihkan <cryo>2,5</cryo> poin Energy Karakter penggunanya (setelah 2 detik efek Roused dihasilkan). Efek Roused dapat terpicu sekali setiap 15 detik. Stoic's Symbol tetap dapat diperoleh saat Karakter ada di dalam party namun sedang tidak berada di medan pertempuran."
+    },
+    "2": {
+      "0": "Saat penggunanya menerima pemulihan atau memberikan pemulihan, akan memberikan satu Stoic's Symbol yang berlangsung selama 30 detik dan dapat ditumpuk sampai 3 lapis. Saat melancarkan Elemental Skill atau Elemental Burst, akan mengonsumsi seluruh Stoic's Symbol yang dimiliki untuk menghasilkan efek Roused yang berlangsung selama 10 detik. Setiap Stoic's Symbol yang dikonsumsi akan: meningkatkan <cryo>60</cryo> poin Elemental Mastery; dan memulihkan <cryo>3</cryo> poin Energy Karakter penggunanya (setelah 2 detik efek Roused dihasilkan). Efek Roused dapat terpicu sekali setiap 15 detik. Stoic's Symbol tetap dapat diperoleh saat Karakter ada di dalam party namun sedang tidak berada di medan pertempuran."
+    },
+    "3": {
+      "0": "Saat penggunanya menerima pemulihan atau memberikan pemulihan, akan memberikan satu Stoic's Symbol yang berlangsung selama 30 detik dan dapat ditumpuk sampai 3 lapis. Saat melancarkan Elemental Skill atau Elemental Burst, akan mengonsumsi seluruh Stoic's Symbol yang dimiliki untuk menghasilkan efek Roused yang berlangsung selama 10 detik. Setiap Stoic's Symbol yang dikonsumsi akan: meningkatkan <cryo>70</cryo> poin Elemental Mastery; dan memulihkan <cryo>3,5</cryo> poin Energy Karakter penggunanya (setelah 2 detik efek Roused dihasilkan). Efek Roused dapat terpicu sekali setiap 15 detik. Stoic's Symbol tetap dapat diperoleh saat Karakter ada di dalam party namun sedang tidak berada di medan pertempuran."
+    },
+    "4": {
+      "0": "Saat penggunanya menerima pemulihan atau memberikan pemulihan, akan memberikan satu Stoic's Symbol yang berlangsung selama 30 detik dan dapat ditumpuk sampai 3 lapis. Saat melancarkan Elemental Skill atau Elemental Burst, akan mengonsumsi seluruh Stoic's Symbol yang dimiliki untuk menghasilkan efek Roused yang berlangsung selama 10 detik. Setiap Stoic's Symbol yang dikonsumsi akan: meningkatkan <cryo>80</cryo> poin Elemental Mastery; dan memulihkan <cryo>4</cryo> poin Energy Karakter penggunanya (setelah 2 detik efek Roused dihasilkan). Efek Roused dapat terpicu sekali setiap 15 detik. Stoic's Symbol tetap dapat diperoleh saat Karakter ada di dalam party namun sedang tidak berada di medan pertempuran."
+    }
+  }
+}

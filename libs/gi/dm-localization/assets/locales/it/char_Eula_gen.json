@@ -1,0 +1,169 @@
+{
+  "skill": {
+    "brandDMG": "DAN da Marchio geloturbine",
+    "grimheartDuration": "Durata Cuortetro",
+    "name": "Vortice algido",
+    "description": {
+      "0": "Freddo tagliente, rapida lama.",
+      "1": "<br/>",
+      "2": "<strong>Pressione</strong>",
+      "3": "Eula colpisce rapidamente con la sua claymore, infliggendo <cryo>DAN da Cryo</cryo>.",
+      "4": "Quando colpisce un avversario, Eula ottiene un accumulo di Cuortetro, per un massimo di 2 accumuli. Ogni accumulo può essere ottenuto solo una volta ogni 0,3 s.",
+      "5": "<br/>",
+      "6": "<strong>Cuortetro</strong>",
+      "7": "Aumenta la resistenza all'interruzione e la DIF di Eula.",
+      "8": "<br/>",
+      "9": "<strong>Pressione prolungata</strong>",
+      "10": "Brandendo la spada, Eula consuma tutto il Cuortetro accumulato e si scaglia in avanti, infliggendo <cryo>DAN da Cryo ad area</cryo> agli avversari davanti a sé.",
+      "11": "Se il Cuortetro accumulato viene consumato, la RES fisica e la <cryo>RES a Cryo</cryo> degli avversari circostanti si riducono.",
+      "12": "Ogni accumulo di Cuortetro consumato viene convertito in un Marchio geloturbine che infligge <cryo>DAN da Cryo</cryo> agli avversari vicini.",
+      "13": "<br/>",
+      "14": "<i>\"E così, le onde si ritirarono, inghiottendo la corona dei nobili. Da allora, ogni goccia tra le onde di ghiaccio riflette una corona d'oro, e ciascuna brilla della sua luce.\"</i>"
+    },
+    "skillParams": {
+      "0": "DAN da pressione",
+      "1": "DAN da pressione prolungata",
+      "2": "DAN da Marchio geloturbine",
+      "3": "Bonus DIF",
+      "4": "Durata Cuortetro",
+      "5": "Riduzione RES fisica",
+      "6": "Riduzione RES a Cryo",
+      "7": "Durata riduzione RES",
+      "8": "TdR pressione",
+      "9": "TdR pressione prolungata",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "name": "Eula",
+  "title": "Danza dell'onda luccicante",
+  "description": "Cavaliere dell'Onda danzante, discendente dell'antica aristocrazia e capitana della compagnia di ricognizione dei Cavalieri di Favonius. Il motivo per cui una giovane nobile abbia voluto unirsi ai Cavalieri rimane tuttora un grande mistero in tutta Mondstadt.",
+  "constellationName": "Aphros Delos",
+  "auto": {
+    "name": "Tecnica di Favonius - Edel",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attacco normale</strong>",
+        "1": "Sferra fino a 5 colpi consecutivi."
+      },
+      "charged": {
+        "0": "<strong>Attacco caricato</strong>",
+        "1": "Consuma vigore nel tempo per sferrare fendenti continui.",
+        "2": "Al termine della sequenza, sferra un fendente più potente."
+      },
+      "plunging": {
+        "0": "<strong>Attacco in picchiata</strong>",
+        "1": "Attacca scagliandosi contro il suolo da mezz'aria, infliggendo DAN agli avversari lungo la traiettoria e DAN ad area all'impatto."
+      }
+    },
+    "skillParams": {
+      "0": "DAN da 1º colpo",
+      "1": "DAN da 2º colpo",
+      "2": "DAN da 3º colpo",
+      "3": "DAN da 4º colpo",
+      "4": "DAN da 5º colpo",
+      "5": "DAN da ATT caricato rotante",
+      "6": "DAN da ATT caricato finali",
+      "7": "Costo vigore ATT caricato",
+      "8": "Durata max",
+      "9": "DAN da ATT in picchiata",
+      "10": "DAN da ATT in picchiata basso/alto",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Illuminazione glaciale",
+    "description": {
+      "0": "Brandisce il suo spadone, infliggendo <cryo>DAN da Cryo</cryo> agli avversari vicini e creando una Spada di luce cadente che la segue per un massimo di 7 s.",
+      "1": "Mentre è attiva, la Spada di luce cadente aumenta la resistenza all'interruzione di Eula. Quando l'attacco normale, l'abilità elementale e il Tripudio elementale di Eula infliggono DAN agli avversari, i DAN caricano la Spada di luce cadente, che può ottenere un accumulo di energia ogni 0,1 s.",
+      "2": "Al termine della sua durata, la Spada di luce cadente discende ed esplode con violenza, infliggendo DAN fisici agli avversari vicini.",
+      "3": "I DAN variano in base al numero di accumuli di energia della Spada di luce cadente.",
+      "4": "Se Eula lascia il campo di battaglia, la Spada di luce cadente esplode all'istante.",
+      "5": "<br/>",
+      "6": "<i>Affondare è facile. Ma anche così, Eula non desidera altro che congelare l'onda incombente.</i>"
+    },
+    "skillParams": {
+      "0": "DAN da abilità",
+      "1": "DAN base da Spada di luce cadente",
+      "2": "DAN per accumulo",
+      "3": "Numero accumuli massimi",
+      "4": "TdR",
+      "5": "Costo energia",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Brina turbolenta",
+    "description": {
+      "0": "Se si consumano 2 cariche di Cuortetro usando la variante a pressione prolungata di <strong>Vortice algido</strong>, viene generata una Spada di luce cadente in frantumi che esplode all'istante, infliggendo la metà dei DAN fisici di base inflitti da una Spada di luce cadente creata tramite <strong>Illuminazione glaciale</strong>."
+    }
+  },
+  "passive2": {
+    "name": "Spirito belligerante",
+    "description": {
+      "0": "Quando si usa <strong>Illuminazione glaciale</strong>, il TdR di <strong>Vortice algido</strong> viene azzerato ed Eula ottiene 1 accumulo di Cuortetro."
+    }
+  },
+  "passive3": {
+    "name": "Introspezione aristocratica",
+    "description": {
+      "0": "Quando Eula crea materiali per talenti dei personaggi, ha un 10% di probabilità di ricevere il doppio del prodotto."
+    }
+  },
+  "constellation1": {
+    "name": "Illusione delle maree",
+    "description": {
+      "0": "Ogni volta che gli accumuli di Cuortetro di <strong>Vortice algido</strong> vengono consumati, i DAN fisici di Eula aumentano di un 30% per 6 s.",
+      "1": "Ogni accumulo consumato aumenterà la durata di questo effetto di 6 s, fino a un massimo di 18 s."
+    }
+  },
+  "constellation2": {
+    "name": "Figlia del mare",
+    "description": {
+      "0": "Riduce il TdR della variante a pressione prolungata di <strong>Vortice algido</strong>, rendendolo uguale al TdR di quella a pressione."
+    }
+  },
+  "constellation3": {
+    "name": "Stirpe dei Lawrence",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Illuminazione glaciale</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation4": {
+    "name": "Complesso di inferiorità ostinato",
+    "description": {
+      "0": "Le Spade di luce cadente infliggono un 25% di DAN extra contro gli avversari i cui PS sono inferiori a un 50%."
+    }
+  },
+  "constellation5": {
+    "name": "Virtù cavalleresca",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Vortice algido</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation6": {
+    "name": "Doveri aristocratici",
+    "description": {
+      "0": "Le Spade di luce cadente create da <strong>Illuminazione glaciale</strong> iniziano con 5 accumuli di energia. Gli attacchi normali, le abilità elementali e i Tripudi elementali hanno un 50% di probabilità di fornire un accumulo di energia aggiuntivo."
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Tidal Shadow",
+  "description": {
+    "0": "Pedang standar dengan desain yang indah dan ditempa dengan sangat baik, dibuat khusus untuk petugas jabatan kelas atas dan Kapten angkatan laut Fontaine."
+  },
+  "passiveName": "White Cruising Wave",
+  "passiveDescription": {
+    "0": {
+      "0": "Setelah menerima pemulihan, ATK meningkat <cryo>24%</cryo> selama 8 detik. Tetap dapat terpicu saat Karakter ada di dalam party namun sedang tidak berada di medan pertempuran."
+    },
+    "1": {
+      "0": "Setelah menerima pemulihan, ATK meningkat <cryo>30%</cryo> selama 8 detik. Tetap dapat terpicu saat Karakter ada di dalam party namun sedang tidak berada di medan pertempuran."
+    },
+    "2": {
+      "0": "Setelah menerima pemulihan, ATK meningkat <cryo>36%</cryo> selama 8 detik. Tetap dapat terpicu saat Karakter ada di dalam party namun sedang tidak berada di medan pertempuran."
+    },
+    "3": {
+      "0": "Setelah menerima pemulihan, ATK meningkat <cryo>42%</cryo> selama 8 detik. Tetap dapat terpicu saat Karakter ada di dalam party namun sedang tidak berada di medan pertempuran."
+    },
+    "4": {
+      "0": "Setelah menerima pemulihan, ATK meningkat <cryo>48%</cryo> selama 8 detik. Tetap dapat terpicu saat Karakter ada di dalam party namun sedang tidak berada di medan pertempuran."
+    }
+  }
+}

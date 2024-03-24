@@ -1,0 +1,24 @@
+{
+  "name": "Rothorn-Steinbrecher",
+  "description": {
+    "0": "Seinem Vorbesitzer zufolge ist dies die Waffe des „mächtigen Rothorn-Löwenfürsten, der Stein und Gold brechen kann“ und jedes Monster in die Flucht schlägt."
+  },
+  "passiveName": "Gokadaiou Otogibanashi",
+  "passiveDescription": {
+    "0": {
+      "0": "Erhöht die VTD um <cryo>28 %</cryo>. Erhöht den mit Standardangriffen und heftigen Schlägen verursachten Schaden um <cryo>40 %</cryo> VTD."
+    },
+    "1": {
+      "0": "Erhöht die VTD um <cryo>35 %</cryo>. Erhöht den mit Standardangriffen und heftigen Schlägen verursachten Schaden um <cryo>50 %</cryo> VTD."
+    },
+    "2": {
+      "0": "Erhöht die VTD um <cryo>42 %</cryo>. Erhöht den mit Standardangriffen und heftigen Schlägen verursachten Schaden um <cryo>60 %</cryo> VTD."
+    },
+    "3": {
+      "0": "Erhöht die VTD um <cryo>49 %</cryo>. Erhöht den mit Standardangriffen und heftigen Schlägen verursachten Schaden um <cryo>70 %</cryo> VTD."
+    },
+    "4": {
+      "0": "Erhöht die VTD um <cryo>56 %</cryo>. Erhöht den mit Standardangriffen und heftigen Schlägen verursachten Schaden um <cryo>80 %</cryo> VTD."
+    }
+  }
+}

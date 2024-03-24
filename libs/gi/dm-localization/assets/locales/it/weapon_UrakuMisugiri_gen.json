@@ -1,0 +1,24 @@
+{
+  "name": "Uraku Misugiri",
+  "description": {
+    "0": "Questa celeberrima lama è opera di Urakusai, il famoso intellettuale. Leggenda vuole che in questi secoli non abbia mai ferito alcuna creatura vivente."
+  },
+  "passiveName": "Broccato in fiore, Spada del santuario",
+  "passiveDescription": {
+    "0": {
+      "0": "I DAN da attacco normale e da abilità elementale aumentano rispettivamente di un <cryo>16%</cryo> e di un <cryo>24%</cryo>. Quando un personaggio attivo nelle vicinanze infligge DAN da Geo, gli effetti sopracitati aumentano di un 100% per 15 s. Inoltre, la DIF del personaggio che equipaggia l'arma aumenta di un <cryo>20%</cryo>."
+    },
+    "1": {
+      "0": "I DAN da attacco normale e da abilità elementale aumentano rispettivamente di un <cryo>20%</cryo> e di un <cryo>30%</cryo>. Quando un personaggio attivo nelle vicinanze infligge DAN da Geo, gli effetti sopracitati aumentano di un 100% per 15 s. Inoltre, la DIF del personaggio che equipaggia l'arma aumenta di un <cryo>25%</cryo>."
+    },
+    "2": {
+      "0": "I DAN da attacco normale e da abilità elementale aumentano rispettivamente di un <cryo>24%</cryo> e di un <cryo>36%</cryo>. Quando un personaggio attivo nelle vicinanze infligge DAN da Geo, gli effetti sopracitati aumentano di un 100% per 15 s. Inoltre, la DIF del personaggio che equipaggia l'arma aumenta di un <cryo>30%</cryo>."
+    },
+    "3": {
+      "0": "I DAN da attacco normale e da abilità elementale aumentano rispettivamente di un <cryo>28%</cryo> e di un <cryo>42%</cryo>. Quando un personaggio attivo nelle vicinanze infligge DAN da Geo, gli effetti sopracitati aumentano di un 100% per 15 s. Inoltre, la DIF del personaggio che equipaggia l'arma aumenta di un <cryo>35%</cryo>."
+    },
+    "4": {
+      "0": "I DAN da attacco normale e da abilità elementale aumentano rispettivamente di un <cryo>32%</cryo> e di un <cryo>48%</cryo>. Quando un personaggio attivo nelle vicinanze infligge DAN da Geo, gli effetti sopracitati aumentano di un 100% per 15 s. Inoltre, la DIF del personaggio che equipaggia l'arma aumenta di un <cryo>40%</cryo>."
+    }
+  }
+}

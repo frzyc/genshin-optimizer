@@ -1,0 +1,24 @@
+{
+  "name": "Orgoglio celeste",
+  "description": {
+    "0": "Una claymore che simboleggia l'orgoglio di Dvalin mentre libra nel cielo. I suoi colpi producono un fragore che evoca la forza di Dvalin e il potere di Anemo."
+  },
+  "passiveName": "Spada del drago strappacielo",
+  "passiveDescription": {
+    "0": {
+      "0": "Aumenta tutti i DAN di un <cryo>8%</cryo>. Dopo l'uso di un Tripudio elementale, gli attacchi normali e caricati andati a segno generano una lama aspirante che infligge DAN pari a un <cryo>80%</cryo> dell'ATT agli avversari lungo il suo percorso. Dura per 20 s o per 8 lame aspiranti."
+    },
+    "1": {
+      "0": "Aumenta tutti i DAN di un <cryo>10%</cryo>. Dopo l'uso di un Tripudio elementale, gli attacchi normali e caricati andati a segno generano una lama aspirante che infligge DAN pari a un <cryo>100%</cryo> dell'ATT agli avversari lungo il suo percorso. Dura per 20 s o per 8 lame aspiranti."
+    },
+    "2": {
+      "0": "Aumenta tutti i DAN di un <cryo>12%</cryo>. Dopo l'uso di un Tripudio elementale, gli attacchi normali e caricati andati a segno generano una lama aspirante che infligge DAN pari a un <cryo>120%</cryo> dell'ATT agli avversari lungo il suo percorso. Dura per 20 s o per 8 lame aspiranti."
+    },
+    "3": {
+      "0": "Aumenta tutti i DAN di un <cryo>14%</cryo>. Dopo l'uso di un Tripudio elementale, gli attacchi normali e caricati andati a segno generano una lama aspirante che infligge DAN pari a un <cryo>140%</cryo> dell'ATT agli avversari lungo il suo percorso. Dura per 20 s o per 8 lame aspiranti."
+    },
+    "4": {
+      "0": "Aumenta tutti i DAN di un <cryo>16%</cryo>. Dopo l'uso di un Tripudio elementale, gli attacchi normali e caricati andati a segno generano una lama aspirante che infligge DAN pari a un <cryo>160%</cryo> dell'ATT agli avversari lungo il suo percorso. Dura per 20 s o per 8 lame aspiranti."
+    }
+  }
+}

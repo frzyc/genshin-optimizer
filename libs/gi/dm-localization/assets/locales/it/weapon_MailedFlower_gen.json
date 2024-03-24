@@ -1,0 +1,24 @@
+{
+  "name": "Fiore corazzato",
+  "description": {
+    "0": "Uno spadone raffinato ed elegante, decorato con fiori e fiocchi."
+  },
+  "passiveName": "Sussurri di vento e fiori",
+  "passiveDescription": {
+    "0": {
+      "0": "Entro 8 s dopo che l'abilità elementale del personaggio colpisce un avversario o che il personaggio innesca una reazione elementale, l'ATT e la maestria elementale del personaggio aumentano rispettivamente di un <cryo>12%</cryo> e di <cryo>48</cryo>."
+    },
+    "1": {
+      "0": "Entro 8 s dopo che l'abilità elementale del personaggio colpisce un avversario o che il personaggio innesca una reazione elementale, l'ATT e la maestria elementale del personaggio aumentano rispettivamente di un <cryo>15%</cryo> e di <cryo>60</cryo>."
+    },
+    "2": {
+      "0": "Entro 8 s dopo che l'abilità elementale del personaggio colpisce un avversario o che il personaggio innesca una reazione elementale, l'ATT e la maestria elementale del personaggio aumentano rispettivamente di un <cryo>18%</cryo> e di <cryo>72</cryo>."
+    },
+    "3": {
+      "0": "Entro 8 s dopo che l'abilità elementale del personaggio colpisce un avversario o che il personaggio innesca una reazione elementale, l'ATT e la maestria elementale del personaggio aumentano rispettivamente di un <cryo>21%</cryo> e di <cryo>84</cryo>."
+    },
+    "4": {
+      "0": "Entro 8 s dopo che l'abilità elementale del personaggio colpisce un avversario o che il personaggio innesca una reazione elementale, l'ATT e la maestria elementale del personaggio aumentano rispettivamente di un <cryo>24%</cryo> e di <cryo>96</cryo>."
+    }
+  }
+}

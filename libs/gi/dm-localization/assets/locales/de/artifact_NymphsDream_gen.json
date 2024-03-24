@@ -1,0 +1,29 @@
+{
+  "setName": "Traum der Narzisse",
+  "setEffects": {
+    "2": "Erhöht den Hydro-Schaden um 15 %.",
+    "4": "Erschafft beim Treffen von Gegnern mit Standardangriffen, heftigen Schlägen, Angriffen aus dem Fall, Elementarfähigkeiten oder Spezialfähigkeiten eine 8 s anhaltende Stapelung des Effekts „Narzisse im Spiegel“. Erhöht den ANG bei 1/2/3 Stapelungen von „Narzisse im Spiegel“ um 7/16/25 % und den Hydro-SCH-Bonus um 4/9/15 %. Die durch Standardangriffe, heftige Schläge, Angriffe aus dem Fall, Elementarfähigkeiten und Spezialfähigkeiten entstandenen Effekte von „Narzisse im Spiegel“ existieren unabhängig voneinander."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Blume auf der Reise",
+      "desc": "Die Geschichte wird mit Sicherheit enden und die Blumen werden schließlich verwelken. Aber in den Träumen, da werden sie in ewig voller Blüte und nie vergehendem Duft beschrieben."
+    },
+    "plume": {
+      "name": "Feder des bösen Magiers",
+      "desc": "Einst jemandes dekorative Hutfeder. Die dunkelgrüne Farbe dürfte ein echter Blickfang sein."
+    },
+    "sands": {
+      "name": "Beständigkeit der Narzisse",
+      "desc": "Eine Taschenuhr, die schon seit Langem ihren Dienst quittiert hat. Es scheint, als hätte sie unzählige Jahre in vergeblich sinnloser Rotation verschwendet."
+    },
+    "goblet": {
+      "name": "Teegesellschaft der Tapferen",
+      "desc": "Eine reizende Teetasse. Vermutlich wurde sie einst an gemütlichen Nachmittagen in Gesellschaft verwendet."
+    },
+    "circlet": {
+      "name": "Monokel des bösen Drachen",
+      "desc": "Ein exquisites Monokel. Alten Anekdoten zufolge soll es möglich sein, damit in die Zukunft zu blicken."
+    }
+  }
+}

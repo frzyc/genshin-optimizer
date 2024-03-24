@@ -1,0 +1,185 @@
+{
+  "name": "Arataki Itto",
+  "title": "Hanamizaka Heroics",
+  "description": "Ketua Geng Arataki yang Pertama dan yang Terhebat, dan terkenal di Hanamizaka, Kota Inazuma ... Apa katamu? Belum pernah dengar? Mau cari ribut ya?",
+  "constellationName": "Taurus Iracundus",
+  "auto": {
+    "name": "Fight Club Legend",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Attack</strong>",
+        "1": "Melancarkan hingga 4 serangan berturut-turut.",
+        "2": "Serangan ke-2 dan ke-4 yang mengenai musuh masing-masing akan menghasilkan 1 lapis dan 2 lapis efek Superlative Superstrength.",
+        "3": "Maksimum dapat ditumpuk hingga 5 lapis. Setiap kali memicu efek ini akan memperbarui durasi Superlative Superstrength yang sudah dimiliki.",
+        "4": "<br/>",
+        "5": "Selain itu, selama beberapa saat setelah melancarkan Elemental Skill Masatsu Zetsugi: Akaushi Burst! atau berlari, kombo Normal Attack Itto tidak akan di-reset."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Bila Itto memiliki Superlative Superstrength saat menahan tombol serang untuk melancarkan Charged Attack, Itto akan melancarkan serangan Arataki Kesagiri tanpa mengonsumsi Stamina. Setiap serangan Arataki Kesagiri akan mengonsumsi 1 lapis Superlative Superstrength. Dan saat mengonsumsi lapisan terakhir, Itto akan melancarkan 1 tebasan akhir dengan DMG yang lebih kuat.",
+        "2": "Bila tidak memiliki Superlative Superstrength, Itto akan mengonsumsi Stamina untuk melancarkan 1 tebasan Saichimonji yang kuat."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Menerjang dari udara untuk menghantam tanah, menyerang semua musuh di jalurnya dan mengakibatkan DMG Area saat mendarat."
+      }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Tahap 4",
+      "4": "DMG Kombo Tebasan Arataki Kesagiri",
+      "5": "DMG Tebasan Akhir Arataki Kesagiri",
+      "6": "Durasi Superlative Superstrength",
+      "7": "DMG Tebasan Saichimonji",
+      "8": "Konsumsi Stamina Saichimonji",
+      "9": "DMG Selama Plunging",
+      "10": "DMG Plunging Attack Rendah/Tinggi",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Masatsu Zetsugi: Akaushi Burst!",
+    "description": {
+      "0": "Melempar Ushi — seekor banteng akaushi muda yang juga adalah anggota tambahan dari Geng Arataki, untuk mengakibatkan <geo>Geo DMG</geo> pada musuh! Saat Ushi mengenai musuh, Arataki Itto akan memperoleh 1 lapis Superlative Superstrength.",
+      "1": "<br/>",
+      "2": "Ushi akan tetap tinggal di medan pertempuran untuk memberikan bantuan:",
+      "3": [
+        "Terus menerus mengejek musuh di sekitar untuk menarik perhatiannya.",
+        "HP Ushi mewarisi Max HP Arataki Itto berdasarkan persentase tertentu.",
+        "Saat Ushi terkena DMG, Ushi akan memberikan 1 lapis Superlative Superstrength pada Arataki Itto sendiri. Itto hanya bisa mendapatkan 1 lapis Superlative Superstrength setiap 2 detik dengan cara ini.",
+        "Saat HP-nya mencapai 0 atau durasinya berakhir, Ushi akan pergi meninggalkan medan pertempuran dan memberikan 1 lapis Superlative Superstrength kepada Itto sendiri."
+      ],
+      "4": "<br/>",
+      "5": "<strong>Mode Tahan</strong>",
+      "6": "<br/>",
+      "7": "Mengatur arah lemparan.",
+      "8": "<br/>",
+      "9": "Ushi dianggap sebagai sebuah <geo>Geo Construct</geo> dan hanya bisa ada 1 Ushi ciptaan Itto sendiri saja di medan pertempuran pada saat bersamaan.",
+      "10": "<br/>",
+      "11": "<i>Nama teknik ini berasal dari novel ringan Onibudou (karangan Junkichi). Tapi kalau pakai nama \"Onisatsu Zetsugi\", nanti kena masalah hak cipta. Lagian, Itto kan memang oni betulan ....</i>"
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "HP Terwariskan",
+      "2": "Durasi",
+      "3": "Cooldown",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Royal Descent: Behold, Itto the Evil!",
+    "description": {
+      "0": "Waktunya untuk menunjukkan wibawa Geng Arataki! Selama beberapa saat, Itto akan berubah menjadi Raging Oni King dan menggunakan Oni King's Kanabou untuk bertarung.",
+      "1": "Skill ini memiliki karakteristik berikut:",
+      "2": [
+        "DMG yang diakibatkan Normal, Charged, dan Plunging Attack dikonversi menjadi <geo>Geo DMG</geo> yang tidak bisa ditimpa Elemental Infusion lainnya.",
+        "Meningkatkan Normal Attack SPD Itto, dan meningkatkan ATK Itto berdasarkan DEF miliknya.",
+        "Akan memberikan Itto sendiri 1 lapis Superlative Superstrength saat serangan tahap ke-1 dan ke-3 mengenai musuh.",
+        "Mengurangi 20% seluruh Elemental RES dan Physical RES Itto."
+      ],
+      "3": "<br/>",
+      "4": "Status Raging Oni King akan lenyap saat Arataki Itto meninggalkan medan pertempuran.",
+      "5": "<br/>",
+      "6": "<i>Jurus pamungkas super kuat Itto (katanya). Apa faedahnya seorang Arataki Itto meniru benda atau orang lain? Di dunia ini, tidak ada yang lebih kejam atau lebih kuat dari Arataki Itto, si raja oni. Gampang, Arataki Itto cukup meniru dirinya sendiri!</i>",
+      "7": "<i>Shouta merasa ini keren sekali.</i>"
+    },
+    "skillParams": {
+      "0": "Peningkatan ATK",
+      "1": "Peningkatan Normal Attack SPD",
+      "2": "Durasi",
+      "3": "Cooldown",
+      "4": "Konsumsi Energy",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Arataki Ichiban",
+    "description": {
+      "0": "Saat melancarkan Arataki Kesagiri secara beruntun, Arataki Itto akan memperoleh efek-efek berikut:",
+      "1": [
+        "Setiap tebasan akan meningkatkan 10% ATK SPD untuk tebasan berikutnya. Dengan cara ini, ATK SPD dapat meningkat hingga 30%.",
+        "Meningkatkan ketahanan terhadap interupsi."
+      ],
+      "2": "<br/>",
+      "3": "Efek-efek ini akan menghilang saat Itto berhenti melancarkan tebasan beruntun."
+    }
+  },
+  "passive2": {
+    "name": "Bloodline of the Crimson Oni",
+    "description": {
+      "0": "Meningkatkan DMG Arataki Kesagiri sebesar 35% DEF Arataki Itto."
+    }
+  },
+  "passive3": {
+    "name": "Woodchuck Chucked",
+    "description": {
+      "0": "Saat anggota party sendiri memperoleh kayu dengan menyerang pohon, ada 25% kemungkinan untuk memperoleh kayu tambahan."
+    }
+  },
+  "constellation1": {
+    "name": "Stay a While and Listen Up",
+    "description": {
+      "0": "Setelah melancarkan <strong>Royal Descent: Behold, Itto the Evil!</strong>, Arataki Itto akan mendapatkan 2 lapis efek Superlative Superstrength. Setelah 1 detik, Itto akan mendapatkan 1 lapis Superlative Superstrength setiap 0,5 detik, dan berlangsung selama 1,5 detik."
+    }
+  },
+  "constellation2": {
+    "name": "Gather 'Round, It's a Brawl!",
+    "description": {
+      "0": "Setelah melancarkan <strong>Royal Descent: Behold, Itto the Evil!</strong>, CD skill ini akan berkurang 1,5 detik untuk setiap Karakter <geo>Geo</geo> yang ada di dalam party, dan akan memulihkan 6 Energy Arataki Itto.",
+      "1": "Dengan cara ini, CD dapat berkurang maksimum hingga 4,5 detik, dan Energy dapat pulih maksimum hingga 18 Energy."
+    }
+  },
+  "constellation3": {
+    "name": "Horns Lowered, Coming Through",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Masatsu Zetsugi: Akaushi Burst!</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Jailhouse Bread and Butter",
+    "description": {
+      "0": "Setelah status Raging Oni King yang didapatkan dari <strong>Royal Descent: Behold, Itto the Evil!</strong> berakhir, DEF dan ATK seluruh anggota party di sekitar meningkat 20% selama 10 detik."
+    }
+  },
+  "constellation5": {
+    "name": "10 Years of Hanamizaka Fame",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Royal Descent: Behold, Itto the Evil!</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Arataki Itto, Present!",
+    "description": {
+      "0": "Meningkatkan 70% Crit DMG untuk Charged Attack Arataki Itto. Selain itu, saat melancarkan Arataki Kesagiri, Itto memiliki 50% kemungkinan untuk tidak mengonsumsi lapisan Superlative Superstrength."
+    }
+  }
+}

@@ -1,0 +1,168 @@
+{
+  "constellationName": "Leviathan Judicator",
+  "name": "Neuvillette",
+  "title": "Ordenador das Marés",
+  "description": "O Juiz Supremo de Fontaine, conhecido como Iudex, é renomado por sua imparcialidade inabalável.",
+  "auto": {
+    "name": "Como Águas Paradas",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Ataque Normal</strong>",
+        "1": "Brande seu bastão, movendo as ondas dos mares para desferir até 3 golpes que causam <hydro>Dano Hydro</hydro>."
+      },
+      "chargedLegal": {
+        "0": "<strong>Fortalecimento de Ataque Carregado: Reprimenda Judicial</strong>",
+        "1": "Ao carregar, Neuvillette reúne o poder do Mar Primordial e gradualmente forma a Insígnia da Arbitração. Nesse estado, Neuvillette pode se mover e mudar de direção, atraindo Gotas d'Água Primordial em uma certa AdE.",
+        "2": "Cada Gota d'Água Primordial absorvida aumentará a velocidade de formação da Insígnia, e curará Neuvillette.",
+        "3": "Quando parar de carregar, se a Insígnia ainda não tiver sido formada, lançará um Ataque Carregado. Se já tiver se formado, lançará Ataque Carregado: Justiça Igual."
+      },
+      "charged": {
+        "0": "<strong>Ataque Carregado</strong>",
+        "1": "Consome uma certa quantidade de Stamina para atacar oponentes com um anel de água, causando <hydro>Dano Hydro em AdE</hydro>.",
+        "2": "<strong>Ataque Carregado: Justiça Igual</strong>",
+        "3": "Lança correntes que causam <hydro>Dano Hydro em AdE</hydro> continuamente contra todos os oponentes numa linha reta na sua frente.",
+        "4": "Ataque Carregado: Justiça Igual não consumirá Stamina e dura 3s.",
+        "5": "Se a Vida de Neuvillette estiver acima de 50%, perderá Vida continuamente enquanto estiver usando esse ataque."
+      },
+      "chargedJudgment": {},
+      "plunging": {
+        "0": "<strong>Ataque Imersivo</strong>",
+        "1": "Reunindo o poder do Hydro, Neuvillette mergulha em direção ao chão em pleno ar, infligindo dano a todos os inimigos em seu caminho. Causa <hydro>Dano Hydro em AdE</hydro> durante o impacto com o chão."
+      }
+    },
+    "skillParams": {
+      "0": "Dano do 1° Golpe",
+      "1": "Dano do 2° Golpe",
+      "2": "Dano do 3° Golpe",
+      "3": "Dano de Ataque Carregado",
+      "4": "Consumo de Stamina de Ataque Carregado",
+      "5": "Dano Contínuo de Ataque Carregado: Justiça Igual",
+      "6": "Regeneração de Vida",
+      "7": "Vida perdida",
+      "8": "Dano Durante a Queda",
+      "9": "Dano de Queda de Baixa/Alta Altitude",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Lágrimas, Eu Retribuirei",
+    "description": {
+      "0": "Invoca uma Cachoeira Furiosa que causa <hydro>Dano Hydro em AdE</hydro> com base na Vida Máxima de Neuvillette contra os inimigos em sua frente. Ao atingir um inimigo, gera 3 Gotas d'Água Primordial.",
+      "1": "<br/>",
+      "2": "<strong>Arkhe: Pneuma</strong>",
+      "3": "Periodicamente, quando a Cachoeira Furiosa cair, um Espinho Espiritual cairá, perfurando inimigos e causando <hydro>Dano Hydro</hydro> com Pneuma.",
+      "4": "<br/>",
+      "5": "<i>\"A lei restringe todos os crimes, mas não extingue o mal.\"</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Habilidade",
+      "1": "Dano do Espinho Espiritual",
+      "2": "Intervalo de Espinho Espiritual",
+      "3": "Duração da Gota d'Água Primordial",
+      "4": "Tempo de Recarga",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Marés, Eu Retornei",
+    "description": {
+      "0": "Lança uma onda poderosa que causa <hydro>Dano Hydro em AdE</hydro> com base na Vida Máxima de Neuvillette. Depois de um curto intervalo, 2 cachoeiras cairão e causarão <hydro>Dano Hydro</hydro>, gerando 6 Gotas d'Água Primordial numa certa AdE em frente.",
+      "1": "<br/>",
+      "2": "<i>\"A lei só é estabelecida após ser publicada, e acima disso, as leis da natureza governam todas as espécies e eras desde a antiguidade.\"</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Habilidade",
+      "1": "Dano da Cachoeira",
+      "2": "Tempo de Recarga",
+      "3": "Energia Elemental",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Herdeiro do Antigo Legado do Mar",
+    "description": {
+      "0": "Quando um personagem da equipe desencadeia as Reações de Vaporização, Congelamento, Eletricamente Carregado, Florescimento, Redemoinho Hydro ou Reação de Cristalização Hydro, gerará 1 acúmulo do efeito \"Glória do Dragão\" para Neuvillette por 30s. É possível gerar até 3 acúmulos dessa forma. Assim, o Dano do Ataque Carregado: Justiça Igual aumenta em 110%/125%/160%.",
+      "1": "Os acúmulos de \"Glória do Dragão\" gerados por cada tipo de Reação Elemental são contados de forma independente."
+    }
+  },
+  "passive2": {
+    "name": "Disciplina do Grande Juiz",
+    "description": {
+      "0": "Para cada 1% da Vida de Neuvillette acima de 30% da Vida Máxima, obtém 0.6% de <hydro>Bônus de Dano Hydro</hydro>. É possível aumentar o Dano Hydro em até 30% dessa forma."
+    }
+  },
+  "passive3": {
+    "name": "Reunindo-se como a Maré",
+    "description": {
+      "0": "Aumenta a Veloc. Mov. ao correr embaixo da água para os membros da equipe em 15%.",
+      "1": "Não é acumulável com Talentos Passivos que fornecem o mesmo efeito."
+    }
+  },
+  "constellation1": {
+    "name": "Instituição Venerável",
+    "description": {
+      "0": "Quando Neuvillette entra no campo de batalha, ele obtém um acúmulo de \"Glória do Dragão\" do Talento Passivo \"Herdeiro do Antigo Legado do Mar\". É necessário ter desbloqueado o Talento Passivo \"Herdeiro do Antigo Legado do Mar\".",
+      "1": "Além disso, ao lançar seu Fortalecimento de Ataque Carregado: Reprimenda Judicial e Ataque Carregado: Justiça Igual, sua Resistência contra Interrupção aumenta."
+    }
+  },
+  "constellation2": {
+    "name": "A Lei Ordena",
+    "description": {
+      "0": "O Talento Passivo \"Herdeiro do Antigo Legado do Mar\" é fortalecido: para cada acúmulo de \"Glória do Dragão\", aumenta o Dano CRIT de Ataque Carregado: Justiça Igual em 14%, com um máximo de aumento de 42%.",
+      "1": "É necessário ter desbloqueado o Talento Passivo \"Herdeiro do Antigo Legado do Mar\"."
+    }
+  },
+  "constellation3": {
+    "name": "Ficção Antiga",
+    "description": {
+      "0": "Aumenta o nível do <strong>Ataque Normal: Como Águas Paradas</strong> em 3.",
+      "1": "O nível máximo de elevação é 15."
+    }
+  },
+  "constellation4": {
+    "name": "Coroado em Compaixão",
+    "description": {
+      "0": "Quando Neuvillette está ativo no campo de batalha e é curado, gerará 1 Gota d'Água Primordial. Esse efeito pode ser desencadeado uma vez a cada 4s."
+    }
+  },
+  "constellation5": {
+    "name": "Julgamento Axiomático",
+    "description": {
+      "0": "Aumenta o nível de <strong>Marés, Eu Retornei</strong> em 3.",
+      "1": "O nível máximo de elevação é 15."
+    }
+  },
+  "constellation6": {
+    "name": "Recompensa Furiosa",
+    "description": {
+      "0": "Ao lançar Ataque Carregado: Justiça Igual, Neuvillette pode absorver as Gotas d'Água Primordial em uma certa AdE próxima. Cada Gota d'Água Primordial absorvida prolongará a duração de Ataque Carregado: Justiça Igual em 1s.",
+      "1": "Além disso, quando Ataque Carregado: Justiça Igual atingir um inimigo, lançará 2 correntes adicionais a cada 2s. Cada corrente causa <hydro>Dano Hydro</hydro> equivalente a 10% da Vida Máxima de Neuvillette. O Dano causado dessa forma é considerado Dano de Ataque Carregado: Justiça Igual."
+    }
+  }
+}

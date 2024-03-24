@@ -1,0 +1,182 @@
+{
+  "name": "Lyney",
+  "title": "Ảo Ảnh Ngoạn Mục",
+  "description": "Ảo thuật gia nổi tiếng khắp Fontaine, khéo ăn nói, diễn xuất tinh tế, chạm đến trái tim của khán giả bằng ngôn ngữ và kỹ thuật tuyệt vời.",
+  "constellationName": "Cung Hắc Ban Miêu",
+  "auto": {
+    "name": "Thủ Thuật Tráo Bài",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Tấn Công Thường</strong>",
+        "1": "Thực hiện tối đa 4 lần bắn tên liên tiếp."
+      },
+      "charged": {
+        "0": "<strong>Trọng Kích</strong>",
+        "1": "<strong>Ngắm bắn</strong> gây sát thương cao hơn và chính xác hơn.",
+        "2": "Khi ngắm bắn, liên tục tích tụ sức mạnh nguyên tố Hỏa để bắn ra. Dựa vào thời gian tụ lực để có các hiệu quả khác nhau:",
+        "3": [
+          "Tụ Lực Lần 1: Bắn ra mũi tên gây <pyro>Sát Thương Nguyên Tố Hỏa</pyro>;",
+          "Tụ Lực Lần 2：Bắn Mũi Tên Ảo Thuật, gây <pyro>Sát Thương Nguyên Tố Hỏa</pyro>, khi trúng sẽ triệu hồi một \"Mũ Mèo Ma Quái\"."
+        ],
+        "4": "Khi bắn Mũi Tên Ảo Thuật, nếu HP của Lyney cao hơn 60%, Lyney sẽ tiêu hao một phần HP để nhận được một tầng \"Đạo Cụ Dự Phòng\", tối đa cộng dồn 5 tầng, sẽ xóa sau khi rời chiến đấu 30s.",
+        "5": "HP của Lyney tối đa giảm đến 60% thông qua cách này"
+      },
+      "plunging": {
+        "0": "<strong>Tấn Công Khi Đáp</strong>",
+        "1": "Bắn mưa tên liên tiếp xuống mặt đất, đồng thời lao nhanh xuống đất và gây sát thương phạm vi khi chạm đất."
+      },
+      "grinMalkin": {
+        "0": "<strong>Mũ Mèo Ma Quái</strong>",
+        "1": [
+          "Khiêu khích kẻ địch xung quanh tấn công, mỗi kẻ địch mỗi 5s chỉ bị Mũ Mèo Ma Quái khiêu khích một lần;",
+          "Độ bền kế thừa một phần HP tối đa của Lyney;",
+          "Khi bị phá hủy hoặc kết thúc thời gian, sẽ bắn ra <strong>Pháo Hoa Ảo Thuật</strong> cho một kẻ địch xung quanh, gây <pyro>Sát Thương Nguyên Tố Hỏa</pyro>."
+        ],
+        "2": "Cùng lúc chỉ tồn tại 1 chiếc Mũ Mèo Ma Quái."
+      },
+      "arkhe": {
+        "0": "<strong>Sức Mạnh Nền Tảng: Pneuma</strong>",
+        "1": "Cứ cách một khoảng thời gian, Mũi Tên Ảo Thuật sẽ giáng Gai Linh Hồn xuống vị trí bắn trúng, gây <pyro>Sát Thương Nguyên Tố Hỏa</pyro> thuộc tính Pneuma."
+      }
+    },
+    "skillParams": {
+      "0": "Sát Thương Lần 1",
+      "1": "Sát Thương Lần 2",
+      "2": "Sát Thương Lần 3",
+      "3": "Sát Thương Lần 4",
+      "4": "Sát Thương Khi Rơi",
+      "5": "Sát Thương Khi Rơi Từ Độ Cao Thấp/Cao",
+      "6": "Ngắm Bắn",
+      "7": "Tụ Lực Ngắm Bắn Lần 1",
+      "8": "Sát Thương Mũi Tên Ảo Thuật",
+      "9": "HP Tiêu Hao",
+      "10": "HP Mũ Mèo Ma Quái Kế Thừa",
+      "11": "Thời Gian Duy Trì Mũ Mèo Ma Quái",
+      "12": "Sát Thương Pháo Hoa Ảo Thuật",
+      "13": "Sát Thương Gai Linh Hồn",
+      "14": "Giãn Cách Gai Linh Hồn",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Thủ Thuật Đánh Lạc Hướng",
+    "description": {
+      "0": "Lyney dùng chiếc mũ của mình để trình diễn màn ảo thuật pháo hoa.",
+      "1": "Khi thi triển sẽ xóa \"Đạo Cụ Dự Phòng\" đã có, gây <pyro>Sát Thương Phạm Vi Nguyên Tố Hỏa</pyro> cho kẻ địch phía trước. Căn cứ vào số tầng đã xóa để tăng sát thương gây ra, đồng thời hồi phục HP cho Lyney dựa vào giới hạn HP.",
+      "2": "<br/>",
+      "3": "Khi trong trận có Mũ Mèo Ma Quái do bản thân Lyney tạo ra, thì pháo hoa sẽ khiến nó phát nổ, gây <pyro>Sát Thương Phạm Vi Nguyên Tố Hỏa</pyro> tương đồng với Pháo Hoa Ảo Thuật.",
+      "4": "Sát thương gây ra khi làm nổ Mũ Mèo Ma Quái sẽ được xem là sát thương trọng kích.",
+      "5": "<br/>",
+      "6": "<i>\"Như người ta nói, ảo thuật gia thường dùng tay mình để đánh lạc hướng khán giả... Đúng đấy, khi {F#cô}{M#cậu} nhìn phía này thì chiếc mũ và trợ thủ ở phía kia đã biến mất rồi. Thế nào, thú vị chứ.\"</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Kỹ Năng",
+      "1": "Tăng Sát Thương Kỹ Năng",
+      "2": "HP Hồi Phục",
+      "3": "CD",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Ảo Thuật Kinh Điển - Lữ Trình Kỳ Diệu",
+    "description": {
+      "0": "Lyney dùng ảo thuật để biến thành Mèo Mũ Ma Quái di chuyển nhanh. (Đừng nhầm với đạo cụ biểu diễn là Mũ Mèo Ma Quái nhé!)",
+      "1": "Mèo Mũ Ma Quái khi tiếp cận kẻ địch, sẽ khiến ngọn lửa giáng xuống, gây tối đa một lần <pyro>Sát Thương Nguyên Tố Hỏa</pyro> cho mỗi kẻ địch. Khi thời gian kết thúc, Lyney sẽ thoát trạng thái Mèo Mũ Ma Quái và tung pháo hoa, gây <pyro>Sát Thương Phạm Vi Nguyên Tố Hỏa</pyro>, đồng thời triệu hồi một chiếc Mũ Mèo Ma Quái, và nhận một tầng \"Đạo Cụ Dự Phòng\".",
+      "2": "<br/>",
+      "3": "Có thể chủ động thoát trạng thái Mèo Mũ Ma Quái",
+      "4": "<br/>",
+      "5": "<i>\"Giờ thì để cho {F#cô}{M#cậu} thưởng thức thủ thuật độc nhất vô nhị của tôi đây. Xem kỹ nhé!\"</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Kỹ Năng",
+      "1": "Sát Thương Pháo Hoa Nổ",
+      "2": "Thời Gian Kéo Dài",
+      "3": "CD",
+      "4": "Năng Lượng Nguyên Tố",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Trình Diễn Ly Kỳ",
+    "description": {
+      "0": "Nếu Lyney tiêu hao HP thông qua bắn <strong>Mũi Tên Ảo Thuật</strong>, Mũ Mèo Ma Quái được triệu hồi từ Mũi Tên Ảo Thuật khi trúng kẻ địch sẽ hồi cho Lyney 3 điểm Năng Lượng Nguyên Tố，đồng thời tăng sát thương gây ra dựa vào 80% tấn công."
+    }
+  },
+  "passive2": {
+    "name": "Pháo Tay Hạ Màn",
+    "description": {
+      "0": "Sát thương do Lyney gây ra cho kẻ địch bị ảnh hưởng bởi <pyro>nguyên tố Hỏa</pyro> sẽ được tăng theo những cách sau:",
+      "1": [
+        "Sát thương tăng 60% so với mức cơ bản;",
+        "Mỗi nhân vật trong đội bản thân mang <pyro>nguyên tố Hỏa</pyro> ngoài Lyney sẽ tăng thêm 20%."
+      ],
+      "2": "Thông qua cách này, tối đa khiến Lyney tăng 100% sát thương gây ra cho kẻ địch bị ảnh hưởng bởi <pyro>nguyên tố Hỏa</pyro>."
+    }
+  },
+  "passive3": {
+    "name": "Thủ Thuật Quan Sát",
+    "description": {
+      "0": "Hiển thị <strong>đặc sản khu vực Fontaine</strong> trên bản đồ nhỏ."
+    }
+  },
+  "constellation1": {
+    "name": "Tay Nghề Biến Đổi Kỳ Diệu",
+    "description": {
+      "0": "<strong>Mũ Mèo Ma Quái</strong> tối đa tồn tại 2 chiếc cùng lúc.",
+      "1": "Ngoài ra Mũi Tên Ảo Thuật khi trúng đích sẽ triệu hồi 2 chiếc Mũ Mèo Ma Quái, đồng thời tích lũy thêm 1 tầng Đạo Cụ Dự Phòng. Hiệu quả này mỗi 15s tối đa kích hoạt một lần."
+    }
+  },
+  "constellation2": {
+    "name": "Câu Kéo Lời Ngon Tiếng Ngọt",
+    "description": {
+      "0": "Khi Lyney trong trận, mỗi 2s sẽ nhận được một tầng hiệu quả \"Tập Trung Ý Chí\", khiến Sát Thương Bạo Kích của Lyney tăng 20%. Hiệu quả này tối đa cộng dồn 3 tầng, xóa khi Lyney rời trận."
+    }
+  },
+  "constellation3": {
+    "name": "Thủ Pháp Linh Hoạt Bí Ẩn",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Tấn Công Thường - Thủ Thuật Tráo Bài</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation4": {
+    "name": "Mưu Đồ Luyện Tập Thành Thạo",
+    "description": {
+      "0": "Đòn trọng kích mang thuộc tính <pyro>nguyên tố Hỏa</pyro> của Lyney sau khi trúng kẻ địch, <pyro>Kháng Nguyên Tố Hỏa</pyro> của kẻ địch đó giảm 20%, duy trì 6s."
+    }
+  },
+  "constellation5": {
+    "name": "Kỹ Thuật Xuyên Thấu Bí Mật",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Ảo Thuật Kinh Điển - Lữ Trình Kỳ Diệu</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation6": {
+    "name": "Nụ Cười Dối Lòng Bí Ẩn",
+    "description": {
+      "0": "Khi Lyney bắn <strong>Mũi Tên Ảo Thuật</strong>, sẽ bắn ra Pháo Hoa Ảo Thuật - Hợp Tấu, gây sát thương bằng 80% sát thương của Pháo Hoa Ảo Thuật. Loại sát thương này được tính là sát thương trọng kích."
+    }
+  }
+}

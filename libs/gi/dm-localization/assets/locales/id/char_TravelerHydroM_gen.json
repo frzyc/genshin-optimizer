@@ -1,0 +1,154 @@
+{
+  "auto": {
+    "name": "Foreign Stream",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Attack</strong>",
+        "1": "Melancarkan hingga 5 serangan pedang berturut-turut."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Mengonsumsi sejumlah Stamina untuk melancarkan dua tebasan pedang."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Menerjang dari udara untuk menghantam tanah di bawahnya, menyerang musuh di jalurnya dan mengakibatkan DMG Area saat mendarat."
+      }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Tahap 4",
+      "4": "DMG Tahap 5",
+      "5": "DMG Charged Attack",
+      "6": "Konsumsi Stamina Charged Attack",
+      "7": "DMG Selama Plunging",
+      "8": "DMG Plunging Attack Rendah/Tinggi",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Aquacrest Saber",
+    "description": {
+      "0": "Melancarkan arus ganas yang dapat membersihkan dunia.",
+      "1": "<br/>",
+      "2": "<strong>Mode Tekan</strong>",
+      "3": "Melancarkan Torrent Surge ke arah depan dan mengakibatkan <hydro>Hydro DMG</hydro> terhadap musuh yang terkena serangannya.",
+      "4": "<br/>",
+      "5": "<strong>Mode Tahan</strong>",
+      "6": "Memasuki Mode Membidik dan terus-menerus menembakkan Dewdrop ke arah bidikan, mengakibatkan <hydro>Hydro DMG</hydro> terhadap musuh yang terkena serangan.",
+      "7": "Saat skill ini berakhir, akan melancarkan Torrent Surge yang mengakibatkan <hydro>Hydro DMG</hydro> pada musuh yang terkena serangan.",
+      "8": "Suffusion: Saat menggunakan Mode Tahan skill ini, jika HP Pengembara lebih dari 50%, HP akan terus berkurang dalam jumlah tetap setiap detiknya dan DMG yang diakibatkan oleh Dewdrop akan meningkat berdasarkan Max HP Pengembara.",
+      "9": "<br/>",
+      "10": "<strong>Arkhe: Pneuma</strong>",
+      "11": "Setiap kurun waktu tertentu setelah melancarkan Torrent Surge, skill ini akan melancarkan Spiritbreath Thorn yang menembus musuh dan mengakibatkan Pneuma-aligned <hydro>Hydro DMG</hydro>.",
+      "12": "<br/>",
+      "13": "<i>Kamu dan Paimon pernah mengamati kerikil yang mengalir di permukaan air.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Torrent Surge",
+      "1": "DMG Dewdrop",
+      "2": "DMG Spiritbreath Thorn",
+      "3": "Jeda Spiritbreath Thorn",
+      "4": "Konsumsi HP Suffusion",
+      "5": "Bonus DMG Suffusion",
+      "6": "Durasi Mode Tahan",
+      "7": "Cooldown",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Rising Waters",
+    "description": {
+      "0": "Melancarkan Gelembung Air yang bergerak pelan dan mengakibatkan <hydro>Hydro DMG</hydro> berkelanjutan pada musuh di sekitar.",
+      "1": "<br/>",
+      "2": "<i>Kamu dan Paimon pernah mempelajari peningkatan air pasang.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "Durasi",
+      "2": "Cooldown",
+      "3": "Konsumsi Energy",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Spotless Waters",
+    "description": {
+      "0": "Setelah Dewdrop yang ditembakkan dari Mode Tahan <strong>Aquacrest Saber</strong> mengenai musuh, akan menciptakan Sourcewater Droplet di sekitar posisi Pengembara. Mengambil Sourcewater Droplet akan memulihkan 7% HP.",
+      "1": "Hanya 1 Sourcewater Droplet yang dapat diciptakan dengan cara ini setiap detiknya. Setiap penggunaan Aquacrest Saber dapat menciptakan maksimum 4 Sourcewater Droplet."
+    }
+  },
+  "passive2": {
+    "name": "Clear Waters",
+    "description": {
+      "0": "Jika ada HP yang terkonsumsi dikarenakan Suffusion saat melancarkan <strong>Aquacrest Saber</strong> Mode Tahan, maka DMG yang diakibatkan Torrent Surge setelah skill berakhir akan meningkat. Peningkatan DMG ini setara dengan 45% Total HP yang terkonsumsi oleh Suffusion saat melancarkan skill ini.",
+      "1": "Peningkatan DMG yang didapat dengan cara ini adalah maksimum 5.000 poin."
+    }
+  },
+  "constellation1": {
+    "name": "Swelling Lake",
+    "description": {
+      "0": "Setelah mengambil Sourcewater Droplet, akan memulihkan 2 poin Energy.",
+      "1": "Harus membuka Talenta Pasif \"Spotless Waters\" terlebih dahulu."
+    }
+  },
+  "constellation2": {
+    "name": "Trickling Purity",
+    "description": {
+      "0": "Movement SPD gelembung <strong>Rising Waters</strong> berkurang 30%, durasi meningkat 3 detik."
+    }
+  },
+  "constellation3": {
+    "name": "Turbulent Ripples",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Aquacrest Saber</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Pouring Descent",
+    "description": {
+      "0": "Saat melancarkan <strong>Aquacrest Saber</strong>, akan menghasilkan perisai Aquacrest Aegis yang dapat menahan DMG setara dengan 10% Max HP dan memiliki 250% pertahanan terhadap <hydro>Hydro DMG</hydro>. Perisai akan bertahan sampai Pengembara selesai melancarkan skill.",
+      "1": "Sekali setiap 2 detik, setelah Dewdrop mengenai musuh, dan jika Pengembara berada dalam status perlindungan Aquacrest Aegis, maka DMG yang ditahan oleh Aquacrest Aegis akan dikembalikan menjadi 10% Max HP Pengembara. Jika Pengembara tidak berada dalam status perlindungan Aquacrest Aegis, maka akan menghasilkan satu Aquacrest Aegis yang baru."
+    }
+  },
+  "constellation5": {
+    "name": "Churning Whirlpool",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Rising Waters</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Tides of Justice",
+    "description": {
+      "0": "Saat Pengembara mengambil Sourcewater Droplet, akan memulihkan HP anggota party terdekat dengan persentase HP terendah sebesar 6% Max HP anggota party tersebut."
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Schilfmeer-Bake",
+  "description": {
+    "0": "Ein antikes Großschwert. Es scheint die Waffe eines Königs oder eine Art Ritualschwert gewesen zu sein."
+  },
+  "passiveName": "Sandmeers Wacht",
+  "passiveDescription": {
+    "0": {
+      "0": "Erhöht den ANG beim Treffen von Gegnern mit Elementarfähigkeiten 8 s lang um <cryo>20 %</cryo>. Erhöht beim Erleiden von Schaden den ANG 8 s lang um <cryo>20 %</cryo>. Die 2 oben beschriebenen Effekte treten auch in Kraft, wenn sich die Figur inaktiv in der Truppe befindet. Erhöht außerdem die max. LP um <cryo>32 %</cryo>, solange sich die Figur nicht im Schutz von Schilden aufhält."
+    },
+    "1": {
+      "0": "Erhöht den ANG beim Treffen von Gegnern mit Elementarfähigkeiten 8 s lang um <cryo>25 %</cryo>. Erhöht beim Erleiden von Schaden den ANG 8 s lang um <cryo>25 %</cryo>. Die 2 oben beschriebenen Effekte treten auch in Kraft, wenn sich die Figur inaktiv in der Truppe befindet. Erhöht außerdem die max. LP um <cryo>40 %</cryo>, solange sich die Figur nicht im Schutz von Schilden aufhält."
+    },
+    "2": {
+      "0": "Erhöht den ANG beim Treffen von Gegnern mit Elementarfähigkeiten 8 s lang um <cryo>30 %</cryo>. Erhöht beim Erleiden von Schaden den ANG 8 s lang um <cryo>30 %</cryo>. Die 2 oben beschriebenen Effekte treten auch in Kraft, wenn sich die Figur inaktiv in der Truppe befindet. Erhöht außerdem die max. LP um <cryo>48 %</cryo>, solange sich die Figur nicht im Schutz von Schilden aufhält."
+    },
+    "3": {
+      "0": "Erhöht den ANG beim Treffen von Gegnern mit Elementarfähigkeiten 8 s lang um <cryo>35 %</cryo>. Erhöht beim Erleiden von Schaden den ANG 8 s lang um <cryo>35 %</cryo>. Die 2 oben beschriebenen Effekte treten auch in Kraft, wenn sich die Figur inaktiv in der Truppe befindet. Erhöht außerdem die max. LP um <cryo>56 %</cryo>, solange sich die Figur nicht im Schutz von Schilden aufhält."
+    },
+    "4": {
+      "0": "Erhöht den ANG beim Treffen von Gegnern mit Elementarfähigkeiten 8 s lang um <cryo>40 %</cryo>. Erhöht beim Erleiden von Schaden den ANG 8 s lang um <cryo>40 %</cryo>. Die 2 oben beschriebenen Effekte treten auch in Kraft, wenn sich die Figur inaktiv in der Truppe befindet. Erhöht außerdem die max. LP um <cryo>64 %</cryo>, solange sich die Figur nicht im Schutz von Schilden aufhält."
+    }
+  }
+}

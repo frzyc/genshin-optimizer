@@ -1,0 +1,154 @@
+{
+  "auto": {
+    "name": "Foreign Stream",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Attack</strong>",
+        "1": "Performs up to 5 rapid strikes."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Consumes a certain amount of Stamina to unleash 2 rapid sword strikes."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact."
+      }
+    },
+    "skillParams": {
+      "0": "1-Hit DMG",
+      "1": "2-Hit DMG",
+      "2": "3-Hit DMG",
+      "3": "4-Hit DMG",
+      "4": "5-Hit DMG",
+      "5": "Charged Attack DMG",
+      "6": "Charged Attack Stamina Cost",
+      "7": "Plunge DMG",
+      "8": "Low/High Plunge DMG",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Aquacrest Saber",
+    "description": {
+      "0": "Unleashes a torrent that can cleanse the world.",
+      "1": "<br/>",
+      "2": "<strong>Press</strong>",
+      "3": "Sends a Torrent Surge forward that will deal <hydro>Hydro DMG</hydro> to opponents it comes into contact with.",
+      "4": "<br/>",
+      "5": "<strong>Hold</strong>",
+      "6": "Enter Aiming Mode and constantly fire off Dewdrops in the direction in which you are aiming, dealing <hydro>Hydro DMG</hydro> to opponents they hit.",
+      "7": "When the skill ends, it will send a Torrent Surge forward that will deal <hydro>Hydro DMG</hydro> to opponents it comes into contact with.",
+      "8": "Suffusion: When using the Hold configuration of this skill, if the Traveler's HP is higher than 50%, the DMG dealt by Dewdrops will increase based on the Traveler's Max HP, and the Traveler will lose a fixed amount of HP every second.",
+      "9": "<br/>",
+      "10": "<strong>Arkhe: Pneuma</strong>",
+      "11": "At certain intervals, after using Torrent Surge, this skill will unleash a Spiritbreath Thorn that pierces opponents, dealing Pneuma-aligned <hydro>Hydro DMG</hydro>.",
+      "12": "<br/>",
+      "13": "<i>You studied the ripples in the water with Paimon.</i>"
+    },
+    "skillParams": {
+      "0": "Torrent Surge DMG",
+      "1": "Dewdrop DMG",
+      "2": "Spiritbreath Thorn DMG",
+      "3": "Spiritbreath Thorn Interval",
+      "4": "Suffusion HP Cost",
+      "5": "Suffusion DMG Bonus",
+      "6": "Hold Duration",
+      "7": "CD",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Rising Waters",
+    "description": {
+      "0": "Unleashes a slow-moving floating bubble that deals continuous <hydro>Hydro DMG</hydro> to nearby opponents.",
+      "1": "<br/>",
+      "2": "<i>You studied the ebb and flow of the tides with Paimon.</i>"
+    },
+    "skillParams": {
+      "0": "Skill DMG",
+      "1": "Duration",
+      "2": "CD",
+      "3": "Energy Cost",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Spotless Waters",
+    "description": {
+      "0": "After the Dewdrop fired by the Hold Mode of the <strong>Aquacrest Saber</strong> hits an opponent, a Sourcewater Droplet will be generated near to the Traveler. If the Traveler picks it up, they will restore 7% HP.",
+      "1": "1 Droplet can be created this way every second, and each use of Aquacrest Saber can create 4 Droplets at most."
+    }
+  },
+  "passive2": {
+    "name": "Clear Waters",
+    "description": {
+      "0": "If HP has been consumed via Suffusion while using the Hold Mode <strong>Aquacrest Saber</strong>, the Torrent Surge at the skill's end will deal Bonus DMG equal to 45% of the total HP the Traveler has consumed in this skill use via Suffusion.",
+      "1": "The maximum DMG Bonus that can be gained this way is 5,000."
+    }
+  },
+  "constellation1": {
+    "name": "Swelling Lake",
+    "description": {
+      "0": "Picking up a Sourcewater Droplet will restore 2 Energy to the Traveler.",
+      "1": "Requires the Passive Talent \"Spotless Waters.\""
+    }
+  },
+  "constellation2": {
+    "name": "Trickling Purity",
+    "description": {
+      "0": "The Movement SPD of <strong>Rising Waters</strong>' bubble will be decreased by 30%, and its duration increased by 3s."
+    }
+  },
+  "constellation3": {
+    "name": "Turbulent Ripples",
+    "description": {
+      "0": "Increases the Level of <strong>Aquacrest Saber</strong> by 3.",
+      "1": "Maximum upgrade level is 15."
+    }
+  },
+  "constellation4": {
+    "name": "Pouring Descent",
+    "description": {
+      "0": "When using <strong>Aquacrest Saber</strong>, an Aquacrest Aegis that can absorb 10% of the Traveler's Max HP in DMG will be created and will absorb <hydro>Hydro DMG</hydro> with 250% effectiveness. It will persist until the Traveler finishes using the skill.",
+      "1": "Once every 2s, after a Dewdrop hits an opponent, if the Traveler is being protected by Aquacrest Aegis, the DMG Absorption of the Aegis will be restored to 10% of the Traveler's Max HP. If the Traveler is not presently being protected by an Aegis, one will be redeployed."
+    }
+  },
+  "constellation5": {
+    "name": "Churning Whirlpool",
+    "description": {
+      "0": "Increases the Level of <strong>Rising Waters</strong> by 3.",
+      "1": "Maximum upgrade level is 15."
+    }
+  },
+  "constellation6": {
+    "name": "Tides of Justice",
+    "description": {
+      "0": "When the Traveler picks up a Sourcewater Droplet, they will restore HP to a nearby party member with the lowest remaining HP percentage based on 6% of said member's Max HP."
+    }
+  }
+}

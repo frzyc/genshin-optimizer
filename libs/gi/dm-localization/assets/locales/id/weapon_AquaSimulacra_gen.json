@@ -1,0 +1,24 @@
+{
+  "name": "Aqua Simulacra",
+  "description": {
+    "0": "Warna busur ini tidak dapat diprediksi. Di bawah cahaya, ia menjadi warna biru bagaikan air dan terang berkilauan."
+  },
+  "passiveName": "The Cleansing Form",
+  "passiveDescription": {
+    "0": {
+      "0": "HP meningkat <cryo>16%</cryo>. Saat ada musuh di sekitar, maka DMG yang diakibatkan oleh Karakter pengguna Senjata ini meningkat <cryo>20%</cryo> baik saat Karakter-nya aktif, maupun hanya ada dalam party namun sedang tidak bertempur."
+    },
+    "1": {
+      "0": "HP meningkat <cryo>20%</cryo>. Saat ada musuh di sekitar, maka DMG yang diakibatkan oleh Karakter pengguna Senjata ini meningkat <cryo>25%</cryo> baik saat Karakter-nya aktif, maupun hanya ada dalam party namun sedang tidak bertempur."
+    },
+    "2": {
+      "0": "HP meningkat <cryo>24%</cryo>. Saat ada musuh di sekitar, maka DMG yang diakibatkan oleh Karakter pengguna Senjata ini meningkat <cryo>30%</cryo> baik saat Karakter-nya aktif, maupun hanya ada dalam party namun sedang tidak bertempur."
+    },
+    "3": {
+      "0": "HP meningkat <cryo>28%</cryo>. Saat ada musuh di sekitar, maka DMG yang diakibatkan oleh Karakter pengguna Senjata ini meningkat <cryo>35%</cryo> baik saat Karakter-nya aktif, maupun hanya ada dalam party namun sedang tidak bertempur."
+    },
+    "4": {
+      "0": "HP meningkat <cryo>32%</cryo>. Saat ada musuh di sekitar, maka DMG yang diakibatkan oleh Karakter pengguna Senjata ini meningkat <cryo>40%</cryo> baik saat Karakter-nya aktif, maupun hanya ada dalam party namun sedang tidak bertempur."
+    }
+  }
+}

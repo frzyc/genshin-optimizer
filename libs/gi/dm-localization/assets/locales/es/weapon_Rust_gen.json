@@ -1,0 +1,24 @@
+{
+  "name": "Herrumbre",
+  "description": {
+    "0": "Un arco de hierro completamente oxidado. La gente común ni siquiera tiene la fuerza necesaria para levantarlo, y menos aún para disparar sus flechas."
+  },
+  "passiveName": "Disparo rápido",
+  "passiveDescription": {
+    "0": {
+      "0": "El daño de Ataque Normal aumenta en un <cryo>40%</cryo> y el de Ataque Cargado disminuye en un 10%."
+    },
+    "1": {
+      "0": "El daño de Ataque Normal aumenta en un <cryo>50%</cryo> y el de Ataque Cargado disminuye en un 10%."
+    },
+    "2": {
+      "0": "El daño de Ataque Normal aumenta en un <cryo>60%</cryo> y el de Ataque Cargado disminuye en un 10%."
+    },
+    "3": {
+      "0": "El daño de Ataque Normal aumenta en un <cryo>70%</cryo> y el de Ataque Cargado disminuye en un 10%."
+    },
+    "4": {
+      "0": "El daño de Ataque Normal aumenta en un <cryo>80%</cryo> y el de Ataque Cargado disminuye en un 10%."
+    }
+  }
+}

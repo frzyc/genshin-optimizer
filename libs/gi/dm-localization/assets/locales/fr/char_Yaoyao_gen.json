@@ -1,0 +1,180 @@
+{
+  "name": "Yaoyao",
+  "title": "Grâce fleurissante",
+  "description": "La plus jeune disciple de Flâne-Sentier, une « petite adulte » douce et attentionnée.",
+  "constellationName": "Osmanthus",
+  "auto": {
+    "name": "Lance virevoltante",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attaque normale</strong>",
+        "1": "Enchaîne jusqu'à 4 coups de lance."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Consomme de l'endurance pour charger en ligne droite et infliger des DGT aux ennemis sur la route."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis sur la route et des DGT de zone à l'impact."
+      }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT 4e coup",
+      "4": "DGT attaque chargée",
+      "5": "Coût d'endurance attaque chargée",
+      "6": "DGT durant la chute",
+      "7": "DGT chute basse/élevée",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Amas céleste de raphanus",
+    "description": {
+      "0": "Fait appel à « Yuegui lanceur », un mécanisme spécial créé par un certain Adepte pour aider Yaoyao à résoudre ses problèmes.",
+      "1": "En cas d'appui long, la compétence est déclenchée différemment.",
+      "2": "<br/>",
+      "3": "<strong>Appui long</strong>",
+      "4": "Bascule en mode visée, ce qui permet d'ajuster la direction du lancer.",
+      "5": "<br/>",
+      "6": "<strong>Yuegui lanceur</strong>",
+      "7": "Lance des radis de jade blanc qui explosent en touchant des personnages ou des ennemis, infligeant des <dendro>DGT Dendro</dendro> aux ennemis sur une certaine zone et soignant les personnages s'y trouvant selon les PV max de Yaoyao. Si un radis ne touche aucun ennemi ou personnage, il reste là où il a atterri jusqu'à exploser au contact d'un personnage ou d'un ennemi ou après l'expiration de sa durée.",
+      "8": "Le Yuegui lanceur choisit lui-même ses cibles lors de l'envoi de ses radis :",
+      "9": [
+        " Si tous les personnages proches ont plus de 70 % de PV, il lance un radis sur un ennemi proche.",
+        " Si certains personnages proches ont 70 % ou moins de PV, il lance un radis sur celui ayant le pourcentage de PV restant le plus bas. S'il n'y a aucun ennemi à proximité, le Yuegui lance ses radis de jade blanc sur les personnages proches si tous ces derniers ont entre 70 % et 100 % de PV. Sinon, il lance ses radis aléatoirement."
+      ],
+      "10": "<br/>",
+      "11": "Un maximum de 2 Yueguis lanceurs peut exister en même temps.",
+      "12": "<br/>",
+      "13": "<i>« Un radis chaque matin éloigne les chagrins ! ... Oh, ce n'est pas à propos des propriétés médicales des radis, mais ils sont bénéfiques pour la santé ! »</i>"
+    },
+    "skillParams": {
+      "0": "DGT radis de jade blanc",
+      "1": "Soins de radis de jade blanc",
+      "2": "Durée de Yuegui lanceur",
+      "3": "Durée de radis de jade blanc",
+      "4": "Temps de recharge",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Coucher de lune de jade",
+    "description": {
+      "0": "À la demande d'un certain Adepte, le plein potentiel des Yueguis peut être libéré en cas d'urgence, infligeant des <dendro>DGT Dendro</dendro> aux ennemis proches et faisant passer dans l'invincible (dans un certain sens) état Héritage adeptal.",
+      "1": "<br/>",
+      "2": "<strong>Héritage adeptal</strong>",
+      "3": [
+        " Les radis de jade blanc générés sont modifiés pour soigner et infliger des DGT en fonction des attributs de cette capacité, les explosions soignent les PV de tous les personnages de l'équipe à proximité et les <dendro>DGT Dendro</dendro> infligés sont considérés comme des DGT de déchaînement élémentaire.",
+        " Invoque des Yueguis sauteurs de façon régulière jusqu'à la limite. La façon de lancer des radis de cette version des Yueguis est identique à celle de la compétence élémentaire Amas céleste de raphanus. Un maximum de 3 Yueguis sauteurs peut exister en même temps.",
+        " Augmente la VIT de déplacement de Yaoyao de 15 %.",
+        " Augmente la <dendro>RÉS Dendro</dendro> de Yaoyao."
+      ],
+      "4": "<br/>",
+      "5": "L'état Héritage adeptal prend fin lorsque Yaoyao quitte le champ de bataille, et tous les Yueguis sauteurs restants disparaissent à la fin de l'état.",
+      "6": "<br/>",
+      "7": "<i>« Hein ? Lequel est le vrai Yuegui ? Eh bien, ce sont tous des Yueguis, pardi ! »</i>"
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "DGT radis de jade blanc (Héritage adeptal)",
+      "2": "Soins de radis de jade blanc (Héritage adeptal)",
+      "3": "Bonus RÉS Dendro",
+      "4": "Durée d'héritage adeptal",
+      "5": "Temps de recharge",
+      "6": "Énergie élémentaire",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Dispersion stellaire",
+    "description": {
+      "0": "Pendant l'état Héritage adeptal de <strong>Coucher de lune de jade</strong>, Yaoyao lance constamment des radis de jade blanc sur les ennemis proches lorsqu'elle sprinte, saute ou court. Un radis de jade blanc peut être lancé une fois toutes les 0,6 s de cette manière."
+    }
+  },
+  "passive2": {
+    "name": "Empathie",
+    "description": {
+      "0": "Lorsqu'un <strong>radis de jade blanc</strong> explose, les personnages déployés dans la zone d'effet récupèrent des PV d'une valeur équivalant à 0,8 % des PV max de Yaoyao toutes les secondes pendant 5 s."
+    }
+  },
+  "passive3": {
+    "name": "Sur la pointe des pieds",
+    "description": {
+      "0": "Quand Yaoyao fait partie de l'équipe, vos personnages dans l'équipe n'effraient pas certains animaux, tels que le papillon cristallin.",
+      "1": "Pour savoir quels sont les animaux concernés, consultez l'onglet « Divers » dans la section « Faune » du Bestiaire des Archives."
+    }
+  },
+  "constellation1": {
+    "name": "Tutelle",
+    "description": {
+      "0": "Lorsqu'un <strong>radis de jade blanc</strong> explose, les personnages déployés dans la zone d'effet obtiennent un <dendro>bonus de DGT Dendro</dendro> de 15 % pendant 8 s et récupèrent 15 pts d'endurance. L'endurance peut être restaurée une fois toutes les 5 s de cette manière."
+    }
+  },
+  "constellation2": {
+    "name": "Candeur",
+    "description": {
+      "0": "Pendant l'état Héritage adeptal de <strong>Coucher de lune de jade</strong>, Yaoyao récupère 3 pts d'énergie élémentaire lorsqu'une explosion de radis de jade blanc touche un ennemi. L'énergie peut être restaurée une fois toutes les 0,8 s de cette manière."
+    }
+  },
+  "constellation3": {
+    "name": "Loyauté",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Amas céleste de raphanus</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation4": {
+    "name": "Attrait",
+    "description": {
+      "0": "Après avoir utilisé <strong>Amas céleste de raphanus</strong> ou <strong>Coucher de lune de jade</strong>, la maîtrise élémentaire de Yaoyao augmente d'une valeur équivalant à 0,3 % de ses PV max pendant 8 s. La maîtrise élémentaire peut être augmentée d'un maximum de 120 pts de cette manière."
+    }
+  },
+  "constellation5": {
+    "name": "Compassion",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Coucher de lune de jade</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation6": {
+    "name": "Bénévolence",
+    "description": {
+      "0": "Tous les 3 radis de jade blanc envoyés par un <strong>Yuegui lanceur</strong>, ce dernier envoie également un méga-radis destructeur dont la zone d'effet est plus grande que celle d'un radis normal et qui produit les effets suivants en explosant :",
+      "1": [
+        " Inflige des <dendro>DGT Dendro de zone</dendro> d'une valeur équivalant à 75 % de l'ATQ de Yaoyao.",
+        " Restaure les PV des personnages déployés dans la zone d'une valeur équivalant à 7,5 % des PV max de Yaoyao."
+      ],
+      "2": "<br/>",
+      "3": "Chaque Yuegui lanceur peut envoyer un maximum de 2 méga-radis destructeurs."
+    }
+  }
+}

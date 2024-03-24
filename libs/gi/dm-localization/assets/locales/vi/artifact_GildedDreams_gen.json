@@ -1,0 +1,29 @@
+{
+  "setName": "Giấc Mộng Hoàng Kim",
+  "setEffects": {
+    "2": "Tăng 80 điểm tinh thông nguyên tố.",
+    "4": "Trong 8s sau khi kích hoạt phản ứng nguyên tố, sẽ căn cứ theo loại nguyên tố của các nhân vật khác trong đội để kích hoạt hiệu ứng cho người mang trang bị: Mỗi một nhân vật trong đội có cùng loại nguyên tố với người mang trang bị, sẽ tăng 14% tấn công; mỗi một nhân vật trong đội khác loại nguyên tố với người mang trang bị, sẽ tăng 50 điểm tinh thông nguyên tố. Mỗi loại hiệu ứng bên trên tối đa tính 3 nhân vật. Hiệu quả này mỗi 8s tối đa kích hoạt 1 lần. Khi người trang bị không ra trận, thì vẫn sẽ kích hoạt hiệu ứng này."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Hoa Thép Trong Mộng",
+      "desc": "Nụ hoa được đúc từ vàng đen, những cánh hoa không có cơ hội nở ra bao bọc lấy nhụy hoa đỏ thẫm."
+    },
+    "plume": {
+      "name": "Lông Vũ Phán Quyết",
+      "desc": "Lông vũ từng được dùng để đo lường trọng lượng trái tim của tội nhân, giờ đã mất đi công dụng vốn có."
+    },
+    "sands": {
+      "name": "Năm Tháng Vàng Son",
+      "desc": "Đồng hồ cổ xưa ánh vàng, như đang kể lại câu chuyện ngày xưa của sa mạc."
+    },
+    "goblet": {
+      "name": "Bữa Cuối Ngọt Ngào",
+      "desc": "Ly rượu từng được dùng trong yến tiệc cổ xưa, đã mất đi màu sắc hoa lệ khi ấy."
+    },
+    "circlet": {
+      "name": "Hình Chiếu Vua Cát",
+      "desc": "Khăn đầu khảm vàng của tư tế sa mạc xưa kia, hình dạng của nó được mô phỏng theo vị vua của sa mạc trong truyền thuyết."
+    }
+  }
+}

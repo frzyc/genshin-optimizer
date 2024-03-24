@@ -1,0 +1,24 @@
+{
+  "name": "Passeur du Fleuve cendré",
+  "description": {
+    "0": "Un long morceau de tuyau en cuivre qui servait autrefois d'arme, célèbre chez certains, malfamé chez d'autres."
+  },
+  "passiveName": "Os de fer",
+  "passiveDescription": {
+    "0": {
+      "0": "Le taux CRIT des compétences élémentaires augmente de <cryo>8 %</cryo>. De plus, utiliser une compétence élémentaire augmente la recharge d'énergie de <cryo>16 %</cryo> pendant 5 s."
+    },
+    "1": {
+      "0": "Le taux CRIT des compétences élémentaires augmente de <cryo>10 %</cryo>. De plus, utiliser une compétence élémentaire augmente la recharge d'énergie de <cryo>20 %</cryo> pendant 5 s."
+    },
+    "2": {
+      "0": "Le taux CRIT des compétences élémentaires augmente de <cryo>12 %</cryo>. De plus, utiliser une compétence élémentaire augmente la recharge d'énergie de <cryo>24 %</cryo> pendant 5 s."
+    },
+    "3": {
+      "0": "Le taux CRIT des compétences élémentaires augmente de <cryo>14 %</cryo>. De plus, utiliser une compétence élémentaire augmente la recharge d'énergie de <cryo>28 %</cryo> pendant 5 s."
+    },
+    "4": {
+      "0": "Le taux CRIT des compétences élémentaires augmente de <cryo>16 %</cryo>. De plus, utiliser une compétence élémentaire augmente la recharge d'énergie de <cryo>32 %</cryo> pendant 5 s."
+    }
+  }
+}

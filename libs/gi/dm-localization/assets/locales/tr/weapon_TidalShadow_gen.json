@@ -1,0 +1,24 @@
+{
+  "name": "Dalgaların Gölgesi",
+  "description": {
+    "0": "Fontaine eski donanmasının yüksek rütbeli subayları ve amiral gemisi kaptanları için dövülmüş ve özenle işlenerek yapılmış standart modelde bir kılıç."
+  },
+  "passiveName": "Beyaz Seyir Dalgası",
+  "passiveDescription": {
+    "0": {
+      "0": "Kuşanan karakterin Canı yenilendikten sonra 8 saniyeliğine Saldırısı <cryo>%24</cryo> artar. Bu etki, karakter savaş alanında olmasa da tetiklenebilir."
+    },
+    "1": {
+      "0": "Kuşanan karakterin Canı yenilendikten sonra 8 saniyeliğine Saldırısı <cryo>%30</cryo> artar. Bu etki, karakter savaş alanında olmasa da tetiklenebilir."
+    },
+    "2": {
+      "0": "Kuşanan karakterin Canı yenilendikten sonra 8 saniyeliğine Saldırısı <cryo>%36</cryo> artar. Bu etki, karakter savaş alanında olmasa da tetiklenebilir."
+    },
+    "3": {
+      "0": "Kuşanan karakterin Canı yenilendikten sonra 8 saniyeliğine Saldırısı <cryo>%42</cryo> artar. Bu etki, karakter savaş alanında olmasa da tetiklenebilir."
+    },
+    "4": {
+      "0": "Kuşanan karakterin Canı yenilendikten sonra 8 saniyeliğine Saldırısı <cryo>%48</cryo> artar. Bu etki, karakter savaş alanında olmasa da tetiklenebilir."
+    }
+  }
+}

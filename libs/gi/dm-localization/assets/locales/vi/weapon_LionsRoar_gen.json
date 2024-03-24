@@ -1,0 +1,24 @@
+{
+  "name": "Tiếng Hét Của Rồng",
+  "description": {
+    "0": "Phát ra sức mạnh tinh anh nhưng không hề ảnh hưởng đến sự sắc bén cũng như linh hoạt. Vung lên như tiếng hét của rồng."
+  },
+  "passiveName": "Trừ Lôi Dập Hỏa",
+  "passiveDescription": {
+    "0": {
+      "0": "Sát thương tạo ra cho kẻ địch bị ảnh hưởng bởi Nguyên Tố Hỏa hoặc Lôi tăng <cryo>20%</cryo>."
+    },
+    "1": {
+      "0": "Sát thương tạo ra cho kẻ địch bị ảnh hưởng bởi nguyên tố Hỏa hoặc Lôi tăng <cryo>24%</cryo>."
+    },
+    "2": {
+      "0": "Sát thương tạo ra cho kẻ địch bị ảnh hưởng bởi nguyên tố Hỏa hoặc Lôi tăng <cryo>28%</cryo>."
+    },
+    "3": {
+      "0": "Sát thương tạo ra cho kẻ địch bị ảnh hưởng bởi nguyên tố Hỏa hoặc Lôi tăng <cryo>32%</cryo>."
+    },
+    "4": {
+      "0": "Sát thương tạo ra cho kẻ địch bị ảnh hưởng bởi nguyên tố Hỏa hoặc Lôi tăng <cryo>36%</cryo>."
+    }
+  }
+}

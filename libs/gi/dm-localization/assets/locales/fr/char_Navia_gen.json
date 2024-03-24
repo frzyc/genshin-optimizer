@@ -1,0 +1,163 @@
+{
+  "name": "Navia",
+  "title": "Nautonière de la rose radieuse",
+  "description": "L'actuelle présidente de la Spina di Rosula, qui est une patronne adorable, dévouée et formidable.",
+  "constellationName": "Rosa Multiflora",
+  "auto": {
+    "name": "Refus direct",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attaque normale</strong>",
+        "1": "Enchaîne jusqu'à 4 coups."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Consomme de l'endurance de façon continue pour exécuter une succession d'attaques tournoyantes contre les ennemis proches.",
+        "2": "L'attaque chargée se termine sur un coup puissant."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis en chemin et des DGT de zone à l'impact."
+      }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT 4e coup",
+      "4": "DGT enchaînement attaque chargée",
+      "5": "DGT coup final attaque chargée",
+      "6": "Coût d'endurance attaque chargée",
+      "7": "Durée max",
+      "8": "DGT durant la chute",
+      "9": "DGT chute basse/élevée",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Tir cristallin de cérémonie",
+    "description": {
+      "0": "Lorsqu'un personnage de l'équipe obtient un fragment généré par une réaction de Cristallisation, Navia obtient 1 shrapnel cristallin. Navia peut détenir un maximum de 6 shrapnels cristallins, et chaque fois que cet effet se déclenche, la durée des shrapnels en sa possession est réinitialisée.",
+      "1": "Lorsqu'elle tire, Navia consomme tous ses shrapnels cristallins et ouvre son élégante, mais néanmoins mortelle, canombrelle pour tirer plusieurs balles cristarosulées qui transpercent les ennemis, infligeant des <geo>DGT Géo</geo> aux ennemis touchés.",
+      "2": "Consommer 0, 1, 2 ou au minimum 3 shrapnels cristallins permet de tirer respectivement 5, 7, 9 ou 11 balles cristarosulées. Plus le nombre de balles touchant un même ennemi est élevé, plus les DGT qu'il subit sont importants. Si toutes les 11 balles touchent, 200 % des DGT d'origine sont infligés.",
+      "3": "De plus, chaque shrapnel consommé à partir du 4e augmente les DGT infligés de 15 % supplémentaires.",
+      "4": "<br/>",
+      "5": "<strong>Appui long</strong>",
+      "6": "Bascule en mode visée pour collecter de façon continue les fragments proches qui ont été générés par des réactions de Cristallisation, ce qui permet, à la fin de l'appui long, de tirer des balles cristarosulées identiques à celle d'un appui simple.",
+      "7": "<br/>",
+      "8": "Navia commence avec 2 utilisations disponibles.",
+      "9": "<br/>",
+      "10": "<strong>Arkhe : Ousia</strong>",
+      "11": "Régulièrement, lorsque Navia utilise sa canombrelle pour tirer, elle déclenche une lame fluide pour infliger des <geo>DGT Géo</geo> chargés d'énergie ousia.",
+      "12": "<br/>",
+      "13": "<i>« Se maintenir à une distance appropriée de ceux avec qui il est requis de le faire est un élément essentiel de l'étiquette. Naturellement, il existe de nombreuses façons d'y parvenir... »</i>"
+    },
+    "skillParams": {
+      "0": "DGT de base balle cristarosulée",
+      "1": "Durée de shrapnel cristallin",
+      "2": "DGT lame fluide",
+      "3": "Intervalle de lame fluide",
+      "4": "Temps de recharge",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Salut du ciel ensoleillé",
+    "description": {
+      "0": "Sur ordre de la présidente de la Spina di Rosula, un magnifique salut de rose d'or est déclenché : un massif bombardement de canon est alors exécuté sur les ennemis en face, ce qui inflige des <geo>DGT Géo de zone</geo> avant de déclencher un feu d'appui de canon infligeant des <geo>DGT Géo</geo> aux ennemis proches de façon intermittente pendant un moment.",
+      "1": "Lorsqu'une attaque de canon touche un ennemi, Navia obtient 1 shrapnel cristallin. Cet effet peut être déclenché une fois toutes les 2,4 s.",
+      "2": "<br/>",
+      "3": "<i>« Le salut de la Spina di Rosula est une célébration anticipative de la conclusion réussie de nos négociations et est tiré juste avant le début des pourparlers. Mais ne vous méprenez pas, il ne s'agit en aucun cas d'une sorte de menace. »</i>"
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "DGT feu d'appui de canon",
+      "2": "Durée de feu d'appui de canon",
+      "3": "Temps de recharge",
+      "4": "Énergie élémentaire",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Canal de distribution inconnu",
+    "description": {
+      "0": "Pendant 4 s après avoir utilisé <strong>Tir cristallin de cérémonie</strong>, les DGT infligés par les attaques normales, chargées et plongeantes de Navia sont convertis en <geo>DGT Géo</geo> ne pouvant pas être enchantés et augmentent de 40 %."
+    }
+  },
+  "passive2": {
+    "name": "Réseau d'assistance mutuelle",
+    "description": {
+      "0": "Pour chaque personnage <pyro>Pyro</pyro>, <electro>Électro</electro>, <cryo>Cryo</cryo> et <hydro>Hydro</hydro> présent dans l'équipe, l'ATQ de Navia augmente de 20 %. Cet effet peut être cumulé 2 fois maximum."
+    }
+  },
+  "passive3": {
+    "name": "Processus de transaction minutieuse",
+    "description": {
+      "0": "Augmente les récompenses d'une expédition de 20 h à Fontaine de 25 %."
+    }
+  },
+  "constellation1": {
+    "name": "Règle de distanciation de la dame",
+    "description": {
+      "0": "Lorsque Navia utilise <strong>Tir cristallin de cérémonie</strong>, chaque shrapnel cristallin consommé lui accorde 3 pts d'énergie élémentaire et diminue le TdR de <strong>Salut du ciel ensoleillé</strong> de 1 s. L'énergie élémentaire peut être restaurée de 9 pts maximum et le TdR de Salut du ciel ensoleillé peut être diminué de 3 s maximum de cette manière."
+    }
+  },
+  "constellation2": {
+    "name": "Quête de victoire de la présidente",
+    "description": {
+      "0": "Lorsque Navia utilise <strong>Tir cristallin de cérémonie</strong>, chaque shrapnel cristallin consommé en augmente le taux CRIT de 12 %, le taux CRIT pouvant être augmenté d'un maximum de 36 % de cette manière.",
+      "1": "De plus, lorsque Tir cristallin de cérémonie touche un ennemi, un feu d'appui de canon de <strong>Salut du ciel ensoleillé</strong> est déclenché à proximité de l'ennemi touché. Un seul feu d'appui de canon peut être déclenché à chaque utilisation de Tir cristallin de cérémonie, et les DGT infligés de cette manière par le feu d'appui de canon sont considérés comme des DGT de déchaînement élémentaire."
+    }
+  },
+  "constellation3": {
+    "name": "Vision globale de la femme d'affaires",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Tir cristallin de cérémonie</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation4": {
+    "name": "Tolérance zéro de l'assermentée",
+    "description": {
+      "0": "Lorsque <strong>Salut du ciel ensoleillé</strong> touche un ennemi, sa <geo>RÉS Géo</geo> diminue de 20 % pendant 8 s."
+    }
+  },
+  "constellation5": {
+    "name": "Tractation ferme de la négociatrice",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Salut du ciel ensoleillé</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation6": {
+    "name": "Finesse flexible de la présidente de la Spina",
+    "description": {
+      "0": "Lorsque Navia utilise <strong>Tir cristallin de cérémonie</strong>, chaque shrapnel cristallin consommé à partir du 4e en augmente les DGT CRIT de 45 %, et tous les shrapnels cristallins consommés à partir du 4e sont rendus à Navia."
+    }
+  }
+}

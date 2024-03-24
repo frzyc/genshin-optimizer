@@ -1,0 +1,169 @@
+{
+  "constellationName": "Leviathan Judicator",
+  "name": "Neuvillette",
+  "title": "Ordonnateur du jugement inexorable",
+  "description": "Le juge suprême de Fontaine, également connu comme l'iudex, est réputé pour son impartialité sans faille.",
+  "auto": {
+    "name": "Stabilité de l'eau",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attaque normale</strong>",
+        "1": "Agite légèrement sa canne, ordonnant aux marées de déclencher jusqu'à 3 attaques qui infligent des <hydro>DGT Hydro</hydro>."
+      },
+      "chargedLegal": {
+        "0": "<strong>Charge d'attaque chargée : Avertissement procédural</strong>",
+        "1": "Pendant la charge, Neuvillette concentre progressivement la puissance de l'eau en un sceau d'arbitrage. Dans cet état, Neuvillette peut se déplacer, changer d'orientation et absorber les gouttes d'eau de source à portée.",
+        "2": "Chaque goutte absorbée permet d'augmenter la vitesse de formation du sceau d'arbitrage et soigne les PV de Neuvillette.",
+        "3": "À la fin de la charge, Neuvillette déclenche une attaque chargée si le sceau d'arbitrage est incomplet. Si ce dernier est complet, il déclenche une attaque chargée « Jugement équitable »."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Consomme de l'endurance pour attaquer les ennemis avec un cercle d'eau qui inflige des <hydro>DGT Hydro de zone</hydro>."
+      },
+      "chargedJudgment": {
+        "0": "<strong>Attaque chargée : Jugement équitable</strong>",
+        "1": "Neuvillette libère un torrent déferlant qui inflige des <hydro>DGT Hydro de zone</hydro> de façon continue aux ennemis en ligne droite devant lui.",
+        "2": "Le jugement équitable ne consomme pas l'endurance et dure 3 s.",
+        "3": "Lorsque ses PV sont supérieurs à 50 %, Neuvillette perd des PV de façon continue en utilisant cette attaque."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Concentre la puissance de l'élément Hydro avant de plonger depuis les airs pour frapper le sol, infligeant des DGT aux ennemis sur la route et des <hydro>DGT Hydro de zone</hydro> à l'impact."
+      }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT attaque chargée",
+      "4": "Coût d'endurance attaque chargée",
+      "5": "DGT continus attaque chargée « Jugement équitable »",
+      "6": "Restauration PV",
+      "7": "Perte de PV",
+      "8": "DGT durant la chute",
+      "9": "DGT chute basse/élevée",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Ô larmes, je rembourse",
+    "description": {
+      "0": "Neuvillette invoque une cascade déchaînée qui inflige des <hydro>DGT Hydro de zone</hydro> aux ennemis en face de lui selon ses PV max. Après avoir touché un ennemi, 3 gouttes d'eau de source sont générées à proximité de ce dernier.",
+      "1": "<br/>",
+      "2": "<strong>Arkhe : Pneuma</strong>",
+      "3": "Régulièrement, après avoir invoqué une cascade déchaînée, une épine d'inhalation qui transperce les ennemis est libérée pour infliger des <hydro>DGT Hydro</hydro> chargés d'énergie pneuma.",
+      "4": "<br/>",
+      "5": "<i>« La loi peut restreindre toutes sortes de crimes, mais elle ne peut extirper le mal lui-même. »</i>"
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "DGT épine d'inhalation",
+      "2": "Intervalle d'épine d'inhalation",
+      "3": "Durée de goutte d'eau de source",
+      "4": "Temps de recharge",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Ô marées, je reviens",
+    "description": {
+      "0": "Neuvillette déchaîne une vague de rupture qui inflige des <hydro>DGT Hydro de zone</hydro> selon ses PV max. Après un court délai, 2 cascades sont invoquées pour infliger des <hydro>DGT Hydro</hydro> sur une petite zone et générer 6 gouttes d'eau de source en avant.",
+      "1": "<br/>",
+      "2": "<i>« Une loi n'est établie qu'après sa publication, et surtout, les lois de la nature régissent toutes les espèces et les époques depuis les temps anciens. »</i>"
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "DGT cascade",
+      "2": "Temps de recharge",
+      "3": "Énergie élémentaire",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Héritier de l'autorité de l'ancienne mer",
+    "description": {
+      "0": "Lorsqu'un personnage de l'équipe déclenche une réaction d'Évaporation, de Gel, d'Électrocution, de Fleurissement, de Dispersion Hydro ou de Cristallisation Hydro sur un ennemi, Neuvillette obtient un cumul de gloire draconique passée pendant 30 s : peut être cumulé 3 fois maximum, ce qui augmente les DGT de l'attaque chargée « Jugement équitable » à une valeur équivalant à 110 %, 125 % ou 160 % des DGT d'origine, selon le nombre de cumuls.",
+      "1": "Les cumuls de gloire draconique passée de chaque réaction élémentaire existent indépendamment les uns des autres."
+    }
+  },
+  "passive2": {
+    "name": "Discipline de l'arbitrage suprême",
+    "description": {
+      "0": "Pour chaque tranche de 1 % de PV actuels au-dessus de 30 % de ses PV max, Neuvillette obtient un <hydro>bonus de DGT Hydro</hydro> de 0,6 %. Le bonus peut être augmenté d'un maximum de 30 % de cette manière."
+    }
+  },
+  "passive3": {
+    "name": "Rassemblement de la marée",
+    "description": {
+      "0": "Augmente la VIT de sprint sous l'eau de vos personnages dans l'équipe de 15 %.",
+      "1": "Ne peut pas être cumulé avec d'autres aptitudes passives aux effets identiques."
+    }
+  },
+  "constellation1": {
+    "name": "Création de l'honneur",
+    "description": {
+      "0": "Neuvillette obtient un cumul de gloire draconique passée de l'aptitude passive « Héritier de l'autorité de l'ancienne mer » lorsqu'il est déployé au combat. L'aptitude passive « Héritier de l'autorité de l'ancienne mer » doit être déjà débloquée.",
+      "1": "De plus, sa RÉS à l'interruption augmente lors de la charge de l'attaque chargée « Avertissement procédural » et de l'utilisation de l'attaque chargée « Jugement équitable »."
+    }
+  },
+  "constellation2": {
+    "name": "Exhortation de la loi",
+    "description": {
+      "0": "L'aptitude passive « Héritier de l'autorité de l'ancienne mer » est renforcée : chaque cumul de gloire draconique passée augmente les DGT CRIT de l'attaque chargée « Jugement équitable » de 14 %, les DGT CRIT pouvant être augmentés d'un maximum de 42 % de cette manière.",
+      "1": "L'aptitude passive « Héritier de l'autorité de l'ancienne mer » doit être déjà débloquée."
+    }
+  },
+  "constellation3": {
+    "name": "Postulat de l'antan",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Attaque normale : Stabilité de l'eau</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation4": {
+    "name": "Couronne de la commisération",
+    "description": {
+      "0": "Lorsque Neuvillette est déployé et reçoit des soins, 1 goutte d'eau de source est générée. Cet effet peut être déclenché une fois toutes les 4 s."
+    }
+  },
+  "constellation5": {
+    "name": "Verdict de l'axiome",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Ô marées, je reviens</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation6": {
+    "name": "Récompense du courroux",
+    "description": {
+      "0": "En utilisant l'attaque chargée « Jugement équitable », Neuvillette peut aspirer les gouttes d'eau de source à portée. Chaque goutte absorbée permet de prolonger la durée de l'attaque chargée « Jugement équitable » de 1 s.",
+      "1": "De plus, lorsque l'attaque chargée « Jugement équitable » touche un ennemi, 2 torrents supplémentaires sont libérés toutes les 2 s, chacun infligeant des <hydro>DGT Hydro</hydro> d'une valeur équivalant à 10 % des PV max de Neuvillette. Les DGT infligés de cette manière sont considérés comme des DGT de l'attaque chargée « Jugement équitable »."
+    }
+  }
+}

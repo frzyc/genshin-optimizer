@@ -1,0 +1,24 @@
+{
+  "name": "Chương Nhạc Lang Thang",
+  "description": {
+    "0": "Quyển sổ dày ghi chép nhiều bản nhạc. Tuy rằng bị mọt gặm nhấm, nhưng bút tích còn sót lại vẫn phát ra sức mạnh."
+  },
+  "passiveName": "Nhạc Mở Màn",
+  "passiveDescription": {
+    "0": {
+      "0": "Khi nhân vật ra trận, ngẫu nhiên nhận 1 ca khúc, kéo dài 10s. Mỗi 30s mới thi triển 1 lần. Nhạc dạo: Tấn công tăng <cryo>60%</cryo>; Điệp khúc: Toàn bộ sát thương nguyên tố tăng <cryo>48%</cryo>; Khúc nhạc ngắn: Tinh thông nguyên tố tăng <cryo>240</cryo>."
+    },
+    "1": {
+      "0": "Khi nhân vật ra trận, ngẫu nhiên nhận 1 ca khúc, kéo dài 10s. Mỗi 30s mới thi triển 1 lần. Nhạc dạo: Tấn công tăng <cryo>75%</cryo>; Điệp khúc: Toàn bộ sát thương nguyên tố tăng <cryo>60%</cryo>; Khúc nhạc ngắn: Tinh thông nguyên tố tăng <cryo>300</cryo>."
+    },
+    "2": {
+      "0": "Khi nhân vật ra trận, ngẫu nhiên nhận 1 ca khúc, kéo dài 10s. Mỗi 30s mới thi triển 1 lần. Nhạc dạo: Tấn công tăng <cryo>90%</cryo>; Điệp khúc: Toàn bộ sát thương nguyên tố tăng <cryo>72%</cryo>; Khúc nhạc ngắn: Tinh thông nguyên tố tăng <cryo>360</cryo>."
+    },
+    "3": {
+      "0": "Khi nhân vật ra trận, ngẫu nhiên nhận 1 ca khúc, kéo dài 10s. Mỗi 30s mới thi triển 1 lần. Nhạc dạo: Tấn công tăng <cryo>105%</cryo>; Điệp khúc: Toàn bộ sát thương nguyên tố tăng <cryo>84%</cryo>; Khúc nhạc ngắn: Tinh thông nguyên tố tăng <cryo>420</cryo>."
+    },
+    "4": {
+      "0": "Khi nhân vật ra trận, ngẫu nhiên nhận 1 ca khúc, kéo dài 10s. Mỗi 30s mới thi triển 1 lần. Nhạc dạo: Tấn công tăng <cryo>120%</cryo>; Điệp khúc: Toàn bộ sát thương nguyên tố tăng <cryo>96%</cryo>; Khúc nhạc ngắn: Tinh thông nguyên tố tăng <cryo>480</cryo>."
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Garrote del Diálogo",
+  "description": {
+    "0": "Una gran maza con incrustaciones de obsidiana y un excelente poder de persuasión."
+  },
+  "passiveName": "Elocuencia",
+  "passiveDescription": {
+    "0": {
+      "0": "Tras ser afectado por Pyro, el ATQ aumenta en un <cryo>16%</cryo> durante 15 s. Tras ser afectado por Hydro, Cryo, Electro o Dendro, todos los Bonos de Daño Elemental aumentan en un <cryo>12%</cryo> durante 15 s. Cada uno de estos efectos solo se puede activar una vez cada 12 s."
+    },
+    "1": {
+      "0": "Tras ser afectado por Pyro, el ATQ aumenta en un <cryo>20%</cryo> durante 15 s. Tras ser afectado por Hydro, Cryo, Electro o Dendro, todos los Bonos de Daño Elemental aumentan en un <cryo>15%</cryo> durante 15 s. Cada uno de estos efectos solo se puede activar una vez cada 12 s."
+    },
+    "2": {
+      "0": "Tras ser afectado por Pyro, el ATQ aumenta en un <cryo>24%</cryo> durante 15 s. Tras ser afectado por Hydro, Cryo, Electro o Dendro, todos los Bonos de Daño Elemental aumentan en un <cryo>18%</cryo> durante 15 s. Cada uno de estos efectos solo se puede activar una vez cada 12 s."
+    },
+    "3": {
+      "0": "Tras ser afectado por Pyro, el ATQ aumenta en un <cryo>28%</cryo> durante 15 s. Tras ser afectado por Hydro, Cryo, Electro o Dendro, todos los Bonos de Daño Elemental aumentan en un <cryo>21%</cryo> durante 15 s. Cada uno de estos efectos solo se puede activar una vez cada 12 s."
+    },
+    "4": {
+      "0": "Tras ser afectado por Pyro, el ATQ aumenta en un <cryo>32%</cryo> durante 15 s. Tras ser afectado por Hydro, Cryo, Electro o Dendro, todos los Bonos de Daño Elemental aumentan en un <cryo>24%</cryo> durante 15 s. Cada uno de estos efectos solo se puede activar una vez cada 12 s."
+    }
+  }
+}

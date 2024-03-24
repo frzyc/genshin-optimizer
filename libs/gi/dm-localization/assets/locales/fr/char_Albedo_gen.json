@@ -1,0 +1,168 @@
+{
+  "name": "Albedo",
+  "title": "Kreideprinz",
+  "description": "Génie connu sous le surnom de « Kreideprinz », Albedo est l'alchimiste en chef et le capitaine des enquêteurs de l'Ordre de Favonius.",
+  "constellationName": "Princeps Cretaceus",
+  "auto": {
+    "name": "Escrime de Favonius - Blanche",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attaque normale</strong>",
+        "1": "Enchaîne jusqu'à 5 coups d'épée."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Consomme de l'endurance pour déclencher deux coups d'épée rapides."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis en chemin et des DGT de zone à l'impact."
+      }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT 4e coup",
+      "4": "DGT 5e coup",
+      "5": "DGT attaque chargée",
+      "6": "Coût d'endurance attaque chargée",
+      "7": "DGT durant la chute",
+      "8": "DGT chute basse/élevée",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Genèse : Aura solaire",
+    "description": {
+      "0": "Génère une aura solaire, infligeant des <geo>DGT Géo de zone</geo>.",
+      "1": "<br/>",
+      "2": "<strong>Aura solaire</strong>",
+      "3": [
+        " Un germe éphémère est créé lorsque les ennemis se trouvant dans la zone subissent des DGT, infligeant des <geo>DGT Géo de zone</geo> proportionnels à la DÉF d'Albedo.",
+        " Un germe éphémère peut être généré toutes les 2 s.",
+        " Lorsqu'un personnage rejoint le centre de l'aura solaire, l'énergie Géo présente se concentre pour générer un podium ascendant lui permettant de dominer le champ de bataille. Il ne peut exister qu'un seul podium à la fois.",
+        " L'aura solaire est considérée comme une <geo>construction Géo</geo>."
+      ],
+      "4": "<br/>",
+      "5": "<strong>Appui long</strong>",
+      "6": "Ajuste la zone où la compétence sera lancée.",
+      "7": "<br/>",
+      "8": "<i>Cet étrange dispositif rocheux est semblable à l'art même de l'alchimie : né de la terre et aspirant au ciel.</i>"
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "DGT germe éphémère",
+      "2": "Durée",
+      "3": "Temps de recharge",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Transformation : Reflux Géo",
+    "description": {
+      "0": "L'énergie Géo contenue dans le sol explose en émergeant sous les ordres d'Albedo, infligeant des <geo>DGT Géo de zone</geo> devant lui.",
+      "1": "Lorsqu'une aura solaire générée par Albedo est présente sur le champ de bataille, 7 germes fatals sont générés, qui fleurissent en explosant, infligeant des <geo>DGT Géo de zone</geo>.",
+      "2": "<br/>",
+      "3": "Les DGT d'explosion et les DGT des germes fatals ne génèrent pas de germes éphémères.",
+      "4": "<br/>",
+      "5": "<i>Sous les commandes du Kreideprinz, les forces habitant le sol émergent en une marée implacable.</i>"
+    },
+    "skillParams": {
+      "0": "DGT explosifs",
+      "1": "DGT germe fatal",
+      "2": "Temps de recharge",
+      "3": "Énergie élémentaire",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Menace calcaire",
+    "description": {
+      "0": "Les germes éphémères générés par <strong>Genèse : Aura solaire</strong> infligent 25 % de DGT supplémentaires aux ennemis dont les PV sont inférieurs à 50 %."
+    }
+  },
+  "passive2": {
+    "name": "Sagesse en bouteille",
+    "description": {
+      "0": "L'activation de <strong>Transformation : Reflux Géo</strong> confère à tous les personnages de l'équipe à proximité un bonus de 125 pts de maîtrise élémentaire pendant 10 s."
+    }
+  },
+  "passive3": {
+    "name": "Découverte de génie",
+    "description": {
+      "0": "10 % de chances d'obtenir le double de produits lors de la synthèse de matériaux d'élévation d'arme."
+    }
+  },
+  "constellation1": {
+    "name": "Fleur d'Éden",
+    "description": {
+      "0": "Albedo récupère 1,2 pt d'énergie élémentaire lorsqu'un germe éphémère généré par <strong>Genèse : Aura solaire</strong> éclot."
+    }
+  },
+  "constellation2": {
+    "name": "Éon de l'avènement",
+    "description": {
+      "0": "<strong>Genèse : Aura solaire</strong> confère pendant 30 s l'effet Jugement fatal à Albedo lorsque des germes éphémères sont générés :",
+      "1": [
+        " Tous les cumuls de jugement fatal sont consommés lors du lancement de <strong>Transformation : Reflux Géo</strong>, conférant aux germes fatals et aux DGT d'explosion de cette aptitude un bonus de DGT proportionnel au nombre de cumuls.",
+        " Chaque cumul de jugement fatal confère un bonus de DGT équivalant à 30 % de la DÉF d'Albedo.",
+        " Cet effet peut être cumulé 4 fois maximum."
+      ]
+    }
+  },
+  "constellation3": {
+    "name": "Fleur solaire",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Genèse : Aura solaire</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation4": {
+    "name": "Chute divine",
+    "description": {
+      "0": "Les personnages déployés se trouvant dans la zone de l'aura solaire infligent 30 % de DGT d'attaque plongeante supplémentaires."
+    }
+  },
+  "constellation5": {
+    "name": "Flux antique",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Transformation : Reflux Géo</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation6": {
+    "name": "Pureté de la terre",
+    "description": {
+      "0": "Les personnages déployés se trouvant dans la zone de l'aura solaire infligent 17 % de DGT supplémentaires lorsqu'ils sont sous la protection d'un bouclier généré par une Cristallisation."
+    }
+  }
+}

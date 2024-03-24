@@ -1,0 +1,24 @@
+{
+  "name": "Discusión de los Sabios del Desierto",
+  "description": {
+    "0": "Un caduceo que simboliza la gloria de la alquimia y que, debido a su estatus, se ha empleado una aleación especial para su elaboración. Es extremadamente firme y pesado, lo que hace que con él se puedan propinar buenos golpes."
+  },
+  "passiveName": "Ley del equilibrio",
+  "passiveDescription": {
+    "0": {
+      "0": "Al realizar una curación, el personaje recupera <cryo>8</cryo> pts. de Energía Elemental. Este efecto solo se puede activar una vez cada 10 s y puede ocurrir incluso cuando el personaje está en tu equipo pero no en uso."
+    },
+    "1": {
+      "0": "Al realizar una curación, el personaje recupera <cryo>10</cryo> pts. de Energía Elemental. Este efecto solo se puede activar una vez cada 10 s y puede ocurrir incluso cuando el personaje está en tu equipo pero no en uso."
+    },
+    "2": {
+      "0": "Al realizar una curación, el personaje recupera <cryo>12</cryo> pts. de Energía Elemental. Este efecto solo se puede activar una vez cada 10 s y puede ocurrir incluso cuando el personaje está en tu equipo pero no en uso."
+    },
+    "3": {
+      "0": "Al realizar una curación, el personaje recupera <cryo>14</cryo> pts. de Energía Elemental. Este efecto solo se puede activar una vez cada 10 s y puede ocurrir incluso cuando el personaje está en tu equipo pero no en uso."
+    },
+    "4": {
+      "0": "Al realizar una curación, el personaje recupera <cryo>16</cryo> pts. de Energía Elemental. Este efecto solo se puede activar una vez cada 10 s y puede ocurrir incluso cuando el personaje está en tu equipo pero no en uso."
+    }
+  }
+}

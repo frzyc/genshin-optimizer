@@ -1,0 +1,24 @@
+{
+  "name": "Conte d'un autre monde",
+  "description": {
+    "0": "Un roman fantastique sans aucune valeur. Toute affirmation comme quoi il possèderait un pouvoir catalysant n'est qu'affabulation."
+  },
+  "passiveName": "Immersion énergétique",
+  "passiveDescription": {
+    "0": {
+      "0": "Chaque orbe élémentaire ou particule élémentaire obtenue restaure <cryo>1 %</cryo> des PV."
+    },
+    "1": {
+      "0": "Chaque orbe élémentaire ou particule élémentaire obtenue restaure <cryo>1,25 %</cryo> des PV."
+    },
+    "2": {
+      "0": "Chaque orbe élémentaire ou particule élémentaire obtenue restaure <cryo>1,5 %</cryo> des PV."
+    },
+    "3": {
+      "0": "Chaque orbe élémentaire ou particule élémentaire obtenue restaure <cryo>1,75 %</cryo> des PV."
+    },
+    "4": {
+      "0": "Chaque orbe élémentaire ou particule élémentaire obtenue restaure <cryo>2 %</cryo> des PV."
+    }
+  }
+}

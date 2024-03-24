@@ -1,0 +1,24 @@
+{
+  "name": "Fulgore delle placide acque",
+  "description": {
+    "0": "Uno scettro avvolto da un vortice d'acqua cristallina. In un'epoca assai remota, esso rappresentava la suprema autorità sulle correnti del mare."
+  },
+  "passiveName": "Aurora e crepuscolo sul lago",
+  "passiveDescription": {
+    "0": {
+      "0": "Quando i PS attuali del personaggio che equipaggia l'arma aumentano o diminuiscono, i DAN da abilità elementale inflitti aumentano di un <cryo>8%</cryo> per 6 s. Massimo 3 accumuli. Quest'effetto può attivarsi una volta ogni 0,2 s. Quando i PS attuali degli altri membri del gruppo aumentano o diminuiscono, i PS max del personaggio che equipaggia l'arma aumentano di un <cryo>14%</cryo> per 6 s. Massimo 2 accumuli. Quest'effetto può attivarsi una volta ogni 0,2 s. Gli effetti sopracitati possono attivarsi anche se il personaggio non si trova in campo."
+    },
+    "1": {
+      "0": "Quando i PS attuali del personaggio che equipaggia l'arma aumentano o diminuiscono, i DAN da abilità elementale inflitti aumentano di un <cryo>10%</cryo> per 6 s. Massimo 3 accumuli. Quest'effetto può attivarsi una volta ogni 0,2 s. Quando i PS attuali degli altri membri del gruppo aumentano o diminuiscono, i PS max del personaggio che equipaggia l'arma aumentano di un <cryo>17,5%</cryo> per 6 s. Massimo 2 accumuli. Quest'effetto può attivarsi una volta ogni 0,2 s, anche se il personaggio non si trova in campo."
+    },
+    "2": {
+      "0": "Quando i PS attuali del personaggio che equipaggia l'arma aumentano o diminuiscono, i DAN da abilità elementale inflitti aumentano di un <cryo>12%</cryo> per 6 s. Massimo 3 accumuli. Quest'effetto può attivarsi una volta ogni 0,2 s. Quando i PS attuali degli altri membri del gruppo aumentano o diminuiscono, i PS max del personaggio che equipaggia l'arma aumentano di un <cryo>21%</cryo> per 6 s. Massimo 2 accumuli. Quest'effetto può attivarsi una volta ogni 0,2 s, anche se il personaggio non si trova in campo."
+    },
+    "3": {
+      "0": "Quando i PS attuali del personaggio che equipaggia l'arma aumentano o diminuiscono, i DAN da abilità elementale inflitti aumentano di un <cryo>14%</cryo> per 6 s. Massimo 3 accumuli. Quest'effetto può attivarsi una volta ogni 0,2 s. Quando i PS attuali degli altri membri del gruppo aumentano o diminuiscono, i PS max del personaggio che equipaggia l'arma aumentano di un <cryo>24,5%</cryo> per 6 s. Massimo 2 accumuli. Quest'effetto può attivarsi una volta ogni 0,2 s, anche se il personaggio non si trova in campo."
+    },
+    "4": {
+      "0": "Quando i PS attuali del personaggio che equipaggia l'arma aumentano o diminuiscono, i DAN da abilità elementale inflitti aumentano di un <cryo>16%</cryo> per 6 s. Massimo 3 accumuli. Quest'effetto può attivarsi una volta ogni 0,2 s. Quando i PS attuali degli altri membri del gruppo aumentano o diminuiscono, i PS max del personaggio che equipaggia l'arma aumentano di un <cryo>28%</cryo> per 6 s. Massimo 2 accumuli. Quest'effetto può attivarsi una volta ogni 0,2 s, anche se il personaggio non si trova in campo."
+    }
+  }
+}
