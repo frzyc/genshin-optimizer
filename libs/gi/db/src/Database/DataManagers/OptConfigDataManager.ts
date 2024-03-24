@@ -197,13 +197,13 @@ export class OptConfigDataManager extends DataManager<
         const { weaponId, artifactIds: artifactIdsRaw } =
           build as GeneratedBuild
         if (!this.database.weapons.get(weaponId)) return undefined
-        const artifactIds = objectKeyMapInplace(
+        const artifactIds = objKeyMapInplace(
           allArtifactSlotKeys,
-          artifactIdsRaw,
           (slotKey) =>
             this.database.arts.get(artifactIdsRaw[slotKey])?.slotKey === slotKey
               ? artifactIdsRaw[slotKey]
-              : undefined
+              : undefined,
+          artifactIdsRaw
         )
         return artifactIds === artifactIdsRaw
           ? build
@@ -309,6 +309,17 @@ export function handleArtSetExclusion(
   return artSetExclusion
 }
 
+/**
+ * Like `xs.map(f).filter(x=>x)` but if all the returned objects are equal,
+ * the original array is returned
+ *
+ * If `f` returns undefined, the element is removed
+ *
+ * React compares objects by pointer equality, so `xs.map(f).filter(x=>x)`
+ * always causes a rerender
+ *
+ * @template T must not contain undefined
+ */
 function mapFilterInplace<T>(xs: T[], f: (x: T) => T | undefined): T[] {
   const a: T[] = []
   let reuse = true
@@ -322,19 +333,24 @@ function mapFilterInplace<T>(xs: T[], f: (x: T) => T | undefined): T[] {
   return reuse ? xs : a
 }
 
-function objectKeyMapInplace<K extends string, T>(
+/**
+ * Like `objKeyMap` but if all the returned objects are equal, the original
+ * object `o` is returned
+ *
+ * React compares objects by pointer equality, so `objKeyMap`
+ * always causes a rerender
+ */
+function objKeyMapInplace<K extends string, T>(
   ks: readonly K[],
-  o: Record<K, T>,
-  f: (k: K) => T
-) {
+  f: (k: K) => T,
+  o: Record<K, T>
+): Record<K, T> {
   const oKeys = Object.keys(o)
   let reuse = oKeys.length == ks.length && ks.every((k, i) => k === oKeys[i])
-  const r = Object.fromEntries(
-    ks.map((k) => {
-      const y = f(k)
-      reuse &&= y === o[k]
-      return [k, y]
-    })
-  ) as Record<K, T>
-  return reuse ? o : r
+  const r = ks.map((k) => {
+    const y = f(k)
+    reuse &&= y === o[k]
+    return [k, y]
+  })
+  return reuse ? o : Object.fromEntries(r)
 }
