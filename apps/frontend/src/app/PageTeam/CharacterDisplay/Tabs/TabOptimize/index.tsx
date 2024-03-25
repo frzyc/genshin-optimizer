@@ -982,11 +982,8 @@ function LevelFilter({
 }) {
   const database = useDatabase()
   const { t } = useTranslation('page_character_optimize')
-  return useMemo(() => {
-    const setOptConfig = (
-      value: Parameters<typeof database.optConfigs.set>[1]
-    ) => database.optConfigs.set(optConfigId, value)
-    return (
+  return useMemo(
+    () => (
       <CardLight>
         <CardContent sx={{ display: 'flex', gap: 1 }}>
           <Typography sx={{ fontWeight: 'bold' }}>{t`levelFilter`}</Typography>
@@ -997,10 +994,14 @@ function LevelFilter({
           <ArtifactLevelSlider
             levelLow={levelLow}
             levelHigh={levelHigh}
-            setLow={(levelLow) => setOptConfig({ levelLow })}
-            setHigh={(levelHigh) => setOptConfig({ levelHigh })}
+            setLow={(levelLow) =>
+              database.optConfigs.set(optConfigId, { levelLow })
+            }
+            setHigh={(levelHigh) =>
+              database.optConfigs.set(optConfigId, { levelHigh })
+            }
             setBoth={(levelLow, levelHigh) =>
-              setOptConfig({
+              database.optConfigs.set(optConfigId, {
                 levelLow,
                 levelHigh,
               })
@@ -1009,16 +1010,17 @@ function LevelFilter({
           />
         </CardContent>
       </CardLight>
-    )
-  }, [
-    database,
-    generatingBuilds,
-    levelHigh,
-    levelLow,
-    levelTotal,
-    optConfigId,
-    t,
-  ])
+    ),
+    [
+      database,
+      generatingBuilds,
+      levelHigh,
+      levelLow,
+      levelTotal,
+      optConfigId,
+      t,
+    ]
+  )
 }
 
 function PanelLeft({ characterKey }: { characterKey: CharacterKey }) {
