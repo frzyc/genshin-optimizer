@@ -1,14 +1,14 @@
 import { weaponAsset } from '@genshin-optimizer/gi/assets'
 import type { ICachedWeapon } from '@genshin-optimizer/gi/db'
 import { useWeapon } from '@genshin-optimizer/gi/db-ui'
+import { uiInput as input } from '@genshin-optimizer/gi/wr'
 import { Box, Typography } from '@mui/material'
 import { useMemo } from 'react'
 import { getWeaponSheet } from '../../Data/Weapons'
 import WeaponSheet from '../../Data/Weapons/WeaponSheet'
-import { uiInput as input } from '../../Formula'
 import { computeUIData, dataObjForWeapon } from '../../Formula/api'
 import type { NodeDisplay } from '../../Formula/uiData'
-import { nodeVStr } from '../../Formula/uiData'
+import { nodeVStr, resolveInfo } from '../../Formula/uiData'
 import CardDark from '../Card/CardDark'
 import SqBadge from '../SqBadge'
 import WeaponNameTooltip from './WeaponNameTooltip'
@@ -99,9 +99,10 @@ export function WeaponCardPicoObj({ weapon }: { weapon: ICachedWeapon }) {
   )
 }
 function WeaponStatPico({ node }: { node: NodeDisplay }) {
+  const { icon } = resolveInfo(node.info)
   return (
     <Typography>
-      {node.info.icon} {nodeVStr(node)}
+      {icon} {nodeVStr(node)}
     </Typography>
   )
 }

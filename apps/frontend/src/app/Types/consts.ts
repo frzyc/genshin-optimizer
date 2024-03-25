@@ -4,7 +4,10 @@ import type {
   ElementKey,
   LocationCharacterKey,
 } from '@genshin-optimizer/gi/consts'
-import { nonTravelerCharacterKeys } from '@genshin-optimizer/gi/consts'
+import {
+  absorbableEle,
+  nonTravelerCharacterKeys,
+} from '@genshin-optimizer/gi/consts'
 
 export const allArtifactSetCount = [1, 2, 3, 4, 5] as const
 
@@ -49,12 +52,10 @@ export type CharacterSheetKey = (typeof allCharacterSheetKeys)[number]
  */
 export type RollColorKey = (typeof allRollColorKeys)[number]
 
-export const absorbableEle = [
-  'hydro',
-  'pyro',
-  'cryo',
-  'electro',
-] as ElementKey[]
+/**
+ * @deprecated use `absorbableEle` in `@genshin-optimizer/gi/consts`
+ */
+export { absorbableEle }
 export const allowedAmpReactions: Dict<ElementKey, AmplifyingReactionKey[]> = {
   pyro: ['vaporize', 'melt'],
   hydro: ['vaporize'],

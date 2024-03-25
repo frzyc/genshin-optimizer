@@ -6,13 +6,13 @@ import type {
   WeaponKey,
 } from '@genshin-optimizer/gi/consts'
 import type { ArtCharDatabase } from '@genshin-optimizer/gi/db'
-import { input } from '.'
+import type { DisplaySub } from '@genshin-optimizer/gi/wr'
+import { input } from '@genshin-optimizer/gi/wr'
 import ColorText from '../Components/ColoredText'
 import { getArtSheet } from '../Data/Artifacts'
 import { artifactDefIcon } from '../Data/Artifacts/ArtifactSheet'
 import { getCharSheet } from '../Data/Characters'
 import { getWeaponSheet } from '../Data/Weapons'
-import type { DisplaySub } from './type'
 import type { NodeDisplay, UIData } from './uiData'
 
 const errHeader = {

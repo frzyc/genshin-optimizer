@@ -1,12 +1,12 @@
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
-import { input } from '../../../Formula'
 import {
   compareEq,
   constant,
   equal,
   greaterEq,
   infoMut,
+  input,
   lookup,
   naught,
   one,
@@ -14,7 +14,7 @@ import {
   prod,
   subscript,
   sum,
-} from '../../../Formula/utils'
+} from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import type { ICharacterSheet } from '../ICharacterSheet.d'
@@ -144,7 +144,7 @@ const c1AfterSkill_atkSPD_ = greaterEq(
 const c1BonusScaling_ = greaterEq(
   input.constellation,
   1,
-  equal(condAfterSkill, 'on', datamine.constellation1.dmg, {
+  infoMut(equal(condAfterSkill, 'on', datamine.constellation1.dmg), {
     name: ct.ch('c1BonusKey'),
     unit: '%',
   })
@@ -229,7 +229,7 @@ const dmgFormulas = {
           customDmgNode(
             prod(
               subscript(input.total.autoIndex, arr, { unit: '%' }),
-              constant(datamine.constellation6.dmg, {
+              infoMut(constant(datamine.constellation6.dmg), {
                 name: ct.ch('c6Key'),
                 unit: '%',
               }),

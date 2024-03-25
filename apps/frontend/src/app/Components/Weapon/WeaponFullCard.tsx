@@ -4,14 +4,14 @@ import { weaponAsset } from '@genshin-optimizer/gi/assets'
 import type { ICachedWeapon } from '@genshin-optimizer/gi/db'
 import { useWeapon } from '@genshin-optimizer/gi/db-ui'
 import type { IWeapon } from '@genshin-optimizer/gi/good'
+import { uiInput as input } from '@genshin-optimizer/gi/wr'
 import { Box, Typography } from '@mui/material'
 import { useMemo } from 'react'
 import { getWeaponSheet } from '../../Data/Weapons'
 import WeaponSheet from '../../Data/Weapons/WeaponSheet'
-import { uiInput as input } from '../../Formula'
 import { computeUIData, dataObjForWeapon } from '../../Formula/api'
 import type { NodeDisplay } from '../../Formula/uiData'
-import { nodeVStr } from '../../Formula/uiData'
+import { nodeVStr, resolveInfo } from '../../Formula/uiData'
 import SqBadge from '../SqBadge'
 export default function WeaponFullCard({ weaponId }: { weaponId: string }) {
   const weapon = useWeapon(weaponId)
@@ -82,9 +82,10 @@ export function WeaponFullCardObj({
   )
 }
 function WeaponStat({ node }: { node: NodeDisplay }) {
+  const { icon } = resolveInfo(node.info)
   return Number.isNaN(node.value) ? null : (
     <SqBadge color="secondary">
-      {node.info.icon} {nodeVStr(node)}
+      {icon} {nodeVStr(node)}
     </SqBadge>
   )
 }

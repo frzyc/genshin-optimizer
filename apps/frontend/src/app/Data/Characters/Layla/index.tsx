@@ -1,18 +1,19 @@
 import { range } from '@genshin-optimizer/common/util'
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
-import { input, target } from '../../../Formula'
 import {
   equal,
   greaterEq,
   infoMut,
+  input,
   lookup,
   naught,
   one,
   percent,
   prod,
   sum,
-} from '../../../Formula/utils'
+  target,
+} from '@genshin-optimizer/gi/wr'
 import KeyMap from '../../../KeyMap'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
@@ -107,10 +108,12 @@ const a1Shield_disp = greaterEq(
 )
 const a1Shield_ = equal(input.activeCharKey, target.charKey, a1Shield_disp)
 
-const a4_starDmgInc = greaterEq(
-  input.asc,
-  4,
-  prod(percent(dm.passive2.starHpDmgInc), input.total.hp),
+const a4_starDmgInc = infoMut(
+  greaterEq(
+    input.asc,
+    4,
+    prod(percent(dm.passive2.starHpDmgInc), input.total.hp)
+  ),
   { name: ct.ch(`starDmgInc`) }
 )
 
@@ -137,7 +140,7 @@ const c6_slugDmg_ = { ...c6_starDmg_ }
 const skillShield = prod(
   sum(
     one,
-    greaterEq(input.constellation, 1, dm.constellation1.shield_, {
+    infoMut(greaterEq(input.constellation, 1, dm.constellation1.shield_), {
       name: ct.ch(`c1ShieldBonusKey_`),
       unit: '%',
     })

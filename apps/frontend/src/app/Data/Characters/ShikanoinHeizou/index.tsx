@@ -1,19 +1,20 @@
 import { range } from '@genshin-optimizer/common/util'
 import { allStats } from '@genshin-optimizer/gi/stats'
-import { input, target } from '../../../Formula/index'
 import {
   constant,
   equal,
   greaterEq,
   infoMut,
+  input,
   lookup,
   naught,
   percent,
   prod,
   subscript,
   sum,
+  target,
   unequal,
-} from '../../../Formula/utils'
+} from '@genshin-optimizer/gi/wr'
 import KeyMap from '../../../KeyMap'
 import { absorbableEle } from '../../../Types/consts'
 import { cond, st, stg } from '../../SheetUtil'
@@ -100,27 +101,31 @@ const [condDeclensionStacksPath, condDeclensionStacks] = cond(
   key,
   'declensionStacks'
 )
-const declension_dmg_ = lookup(
-  condDeclensionStacks,
-  Object.fromEntries(
-    stacksArr.map((stacks) => [
-      stacks,
-      prod(
-        subscript(input.total.skillIndex, dm.skill.declension_dmg_, {
-          name: st('bonusScaling.skill_'),
-          unit: '%',
-        }),
-        constant(stacks, { name: ct.ch('declensionStacks') })
-      ),
-    ])
+const declension_dmg_ = infoMut(
+  lookup(
+    condDeclensionStacks,
+    Object.fromEntries(
+      stacksArr.map((stacks) => [
+        stacks,
+        prod(
+          infoMut(subscript(input.total.skillIndex, dm.skill.declension_dmg_), {
+            name: st('bonusScaling.skill_'),
+            unit: '%',
+          }),
+          infoMut(constant(stacks), { name: ct.ch('declensionStacks') })
+        ),
+      ])
+    ),
+    naught
   ),
-  naught,
   { name: st('bonusScaling.skill_'), unit: '%' }
 )
-const conviction_dmg_ = equal(
-  condDeclensionStacks,
-  '4',
-  subscript(input.total.skillIndex, dm.skill.conviction_dmg_, { unit: '%' }),
+const conviction_dmg_ = infoMut(
+  equal(
+    condDeclensionStacks,
+    '4',
+    subscript(input.total.skillIndex, dm.skill.conviction_dmg_, { unit: '%' })
+  ),
   { name: st('bonusScaling.skill_'), unit: '%' }
 )
 const totalStacks_dmg_ = sum(declension_dmg_, conviction_dmg_)
@@ -153,7 +158,7 @@ const c6_skill_critRate_ = greaterEq(
         stacks,
         prod(
           percent(dm.constellation6.hsCritRate_),
-          constant(stacks, { name: ct.ch('declensionStacks') })
+          infoMut(constant(stacks), { name: ct.ch('declensionStacks') })
         ),
       ])
     ),

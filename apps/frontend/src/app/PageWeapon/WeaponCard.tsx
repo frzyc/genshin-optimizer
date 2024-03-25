@@ -1,6 +1,7 @@
 import { imgAssets, weaponAsset } from '@genshin-optimizer/gi/assets'
 import { useDatabase, useWeapon } from '@genshin-optimizer/gi/db-ui'
 import { ascensionMaxLevel } from '@genshin-optimizer/gi/util'
+import { uiInput as input } from '@genshin-optimizer/gi/wr'
 import { Lock, LockOpen } from '@mui/icons-material'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import EditIcon from '@mui/icons-material/Edit'
@@ -24,9 +25,8 @@ import ImgIcon from '../Components/Image/ImgIcon'
 import { StarsDisplay } from '../Components/StarDisplay'
 import type CharacterSheet from '../Data/Characters/CharacterSheet'
 import { getWeaponSheet } from '../Data/Weapons'
-import { uiInput as input } from '../Formula'
 import { computeUIData, dataObjForWeapon } from '../Formula/api'
-import { nodeVStr } from '../Formula/uiData'
+import { nodeVStr, resolveInfo } from '../Formula/uiData'
 import type { LocationKey } from '../Types/consts'
 
 type WeaponCardProps = {
@@ -165,11 +165,12 @@ export default function WeaponCard({
           </Box>
           <CardContent>
             {stats.map((node) => {
-              if (!node.info.name) return null
+              const { name, icon } = resolveInfo(node.info)
+              if (!name) return null
               return (
                 <Box key={JSON.stringify(node.info)} sx={{ display: 'flex' }}>
                   <Typography flexGrow={1}>
-                    {node.info.icon} {node.info.name}
+                    {icon} {name}
                   </Typography>
                   <Typography>{nodeVStr(node)}</Typography>
                 </Box>

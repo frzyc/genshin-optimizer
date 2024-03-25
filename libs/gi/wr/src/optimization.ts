@@ -1,5 +1,4 @@
 import { assertUnreachable, objPathValue } from '@genshin-optimizer/common/util'
-import type { DynStat } from '../Solver/common'
 import { customMapFormula, forEachNodes, mapFormulas } from './internal'
 import type {
   AnyNode,
@@ -22,7 +21,7 @@ export type OptNode =
   | ReadNode<number>
   | ConstantNode<number>
 
-const allCommutativeMonoidOperations: StrictDict<
+const allCommutativeMonoidOperations: Record<
   CommutativeMonoidOperation,
   (_: number[]) => number
 > = {
@@ -31,7 +30,7 @@ const allCommutativeMonoidOperations: StrictDict<
   add: (x: number[]): number => x.reduce((a, b) => a + b, 0),
   mul: (x: number[]): number => x.reduce((a, b) => a * b, 1),
 }
-export const allOperations: StrictDict<
+export const allOperations: Record<
   Operation | 'threshold',
   (_: number[]) => number
 > = {
@@ -72,11 +71,15 @@ export function optimize(
  */
 export function precompute<C extends number>(
   formulas: OptNode[],
-  initial: DynStat,
+  initial: Record<string, number>, //DynStat,
   binding: (readNode: ReadNode<number>) => string,
   slotCount: C
 ): (
-  _: readonly { readonly values: Readonly<DynStat> }[] & { length: C }
+  _: readonly {
+    readonly values: Readonly<Record<string, number> /*DynStat */>
+  }[] & {
+    length: C
+  }
 ) => number[] {
   // res copied from the code above
   let body = `

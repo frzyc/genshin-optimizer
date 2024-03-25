@@ -19,7 +19,7 @@ import React, { Suspense, useCallback, useContext, useMemo } from 'react'
 import { DataContext } from '../Context/DataContext'
 import { FormulaDataContext } from '../Context/FormulaDataContext'
 import type { NodeDisplay } from '../Formula/api'
-import { nodeVStr } from '../Formula/uiData'
+import { nodeVStr, resolveInfo } from '../Formula/uiData'
 import type { IBasicFieldDisplay, IFieldDisplay } from '../Types/fieldDisplay'
 import AmpReactionModeText from './AmpReactionModeText'
 import BootstrapTooltip from './BootstrapTooltip'
@@ -212,7 +212,7 @@ export function NodeFieldDisplay({
   )
 }
 export function NodeFieldDisplayText({ node }: { node: NodeDisplay }) {
-  const { textSuffix } = node.info
+  const { textSuffix, icon, isTeamBuff, variant, name } = resolveInfo(node.info)
   const suffixDisplay = textSuffix && <span> {textSuffix}</span>
   return (
     <Typography
@@ -224,10 +224,10 @@ export function NodeFieldDisplayText({ node }: { node: NodeDisplay }) {
         marginRight: 'auto',
       }}
     >
-      {!!node.info.isTeamBuff && <Groups />}
-      {node.info.icon}
-      <ColorText color={node.info.variant}>
-        {node.info.name}
+      {!!isTeamBuff && <Groups />}
+      {icon}
+      <ColorText color={variant}>
+        {name}
         {suffixDisplay}
       </ColorText>
     </Typography>
