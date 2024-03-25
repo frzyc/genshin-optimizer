@@ -47,7 +47,6 @@ describe('export and import test', () => {
     expect((exp as any).loadoutData[0].optConfig.optimizationTarget).toEqual([
       'test',
     ])
-    console.log((exp as any).loadoutData)
 
     let res: object | undefined = undefined
     expect(() => {
