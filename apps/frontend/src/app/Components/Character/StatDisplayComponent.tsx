@@ -48,7 +48,7 @@ function Section({
   sectionKey: string
 }) {
   const optimizationTarget = useContext(OptimizationTargetContext)
-  const { data, oldData } = useContext(DataContext)
+  const { data, compareData } = useContext(DataContext)
   const database = useDatabase()
   const header = useMemo(
     () => getDisplayHeader(data, sectionKey, database),
@@ -77,8 +77,10 @@ function Section({
           <NodeFieldDisplay
             key={nodeKey}
             node={n}
-            oldValue={
-              oldData ? oldData.get(displayNsReads[nodeKey]!).value : undefined
+            compareValue={
+              compareData
+                ? compareData.get(displayNsReads[nodeKey]!).value
+                : undefined
             }
             component={ListItem}
             emphasize={

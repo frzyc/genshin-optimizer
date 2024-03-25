@@ -12,7 +12,7 @@ import WeaponCardNano from '../../../../Components/Weapon/WeaponCardNano'
 import { DataContext } from '../../../../Context/DataContext'
 import { uiInput as input } from '../../../../Formula'
 import CharacterProfileCard from '../../../CharProfileCard'
-import useOldData from '../../../useOldData'
+import useCompareData from '../../../useCompareData'
 import CompareBtn from '../../CompareBtn'
 import EquipmentSection from './EquipmentSection'
 
@@ -24,13 +24,13 @@ export default function TabOverview() {
   )
 
   const data = useContext(DataContext)
-  const oldData = useOldData()
+  const compareData = useCompareData()
   const dataContextObj = useMemo(
     () => ({
       ...data,
-      oldData,
+      compareData,
     }),
-    [data, oldData]
+    [data, compareData]
   )
   return (
     <Stack spacing={1}>
