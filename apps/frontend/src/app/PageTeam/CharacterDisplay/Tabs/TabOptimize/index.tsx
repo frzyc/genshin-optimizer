@@ -585,43 +585,7 @@ export default function TabBuild() {
       {/* Build Generator Editor */}
       <Grid container spacing={1}>
         {/* 1*/}
-        <Grid
-          item
-          xs={12}
-          sm={6}
-          lg={3}
-          display="flex"
-          flexDirection="column"
-          gap={1}
-        >
-          {/* character card */}
-          <Box>
-            <Suspense
-              fallback={
-                <Skeleton variant="rectangular" width="100%" height={600} />
-              }
-            >
-              <CardThemed bgt="light">
-                <CharacterCardHeader characterKey={characterKey}>
-                  <CharacterCardHeaderContent characterKey={characterKey} />
-                </CharacterCardHeader>
-                <Box
-                  sx={{
-                    p: 1,
-                    width: '100%',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    gap: 1,
-                  }}
-                >
-                  <CharacterCardEquipmentRow />
-                  <CharacterCardStats />
-                </Box>
-              </CardThemed>
-            </Suspense>
-          </Box>
-          <BonusStatsCard />
-        </Grid>
+        <PanelLeft characterKey={characterKey} />
 
         {/* 2 */}
         <Grid
@@ -634,34 +598,13 @@ export default function TabBuild() {
           gap={1}
         >
           {/* Level Filter */}
-          <CardLight>
-            <CardContent sx={{ display: 'flex', gap: 1 }}>
-              <Typography
-                sx={{ fontWeight: 'bold' }}
-              >{t`levelFilter`}</Typography>
-              <SqBadge color="info">{levelTotal.in}</SqBadge>
-            </CardContent>
-            <Divider />
-            <CardContent>
-              <ArtifactLevelSlider
-                levelLow={levelLow}
-                levelHigh={levelHigh}
-                setLow={(levelLow) =>
-                  database.optConfigs.set(optConfigId, { levelLow })
-                }
-                setHigh={(levelHigh) =>
-                  database.optConfigs.set(optConfigId, { levelHigh })
-                }
-                setBoth={(levelLow, levelHigh) =>
-                  database.optConfigs.set(optConfigId, {
-                    levelLow,
-                    levelHigh,
-                  })
-                }
-                disabled={generatingBuilds}
-              />
-            </CardContent>
-          </CardLight>
+          <LevelFilter
+            levelTotal={levelTotal.in}
+            levelLow={levelLow}
+            levelHigh={levelHigh}
+            generatingBuilds={generatingBuilds}
+            optConfigId={optConfigId}
+          />
 
           {/* Main Stat Filters */}
           <CardLight>
@@ -1021,6 +964,105 @@ export default function TabBuild() {
         />
       </OptimizationTargetContext.Provider>
     </Box>
+  )
+}
+
+function LevelFilter({
+  levelTotal,
+  levelLow,
+  levelHigh,
+  generatingBuilds,
+  optConfigId,
+}: {
+  levelTotal: string
+  levelLow: number
+  levelHigh: number
+  generatingBuilds: boolean
+  optConfigId: string
+}) {
+  const database = useDatabase()
+  const { t } = useTranslation('page_character_optimize')
+  return useMemo(() => {
+    const setOptConfig = (
+      value: Parameters<typeof database.optConfigs.set>[1]
+    ) => database.optConfigs.set(optConfigId, value)
+    return (
+      <CardLight>
+        <CardContent sx={{ display: 'flex', gap: 1 }}>
+          <Typography sx={{ fontWeight: 'bold' }}>{t`levelFilter`}</Typography>
+          <SqBadge color="info">{levelTotal}</SqBadge>
+        </CardContent>
+        <Divider />
+        <CardContent>
+          <ArtifactLevelSlider
+            levelLow={levelLow}
+            levelHigh={levelHigh}
+            setLow={(levelLow) => setOptConfig({ levelLow })}
+            setHigh={(levelHigh) => setOptConfig({ levelHigh })}
+            setBoth={(levelLow, levelHigh) =>
+              setOptConfig({
+                levelLow,
+                levelHigh,
+              })
+            }
+            disabled={generatingBuilds}
+          />
+        </CardContent>
+      </CardLight>
+    )
+  }, [
+    database,
+    generatingBuilds,
+    levelHigh,
+    levelLow,
+    levelTotal,
+    optConfigId,
+    t,
+  ])
+}
+
+function PanelLeft({ characterKey }: { characterKey: CharacterKey }) {
+  return useMemo(
+    () => (
+      <Grid
+        item
+        xs={12}
+        sm={6}
+        lg={3}
+        display="flex"
+        flexDirection="column"
+        gap={1}
+      >
+        {/* character card */}
+        <Box>
+          <Suspense
+            fallback={
+              <Skeleton variant="rectangular" width="100%" height={600} />
+            }
+          >
+            <CardThemed bgt="light">
+              <CharacterCardHeader characterKey={characterKey}>
+                <CharacterCardHeaderContent characterKey={characterKey} />
+              </CharacterCardHeader>
+              <Box
+                sx={{
+                  p: 1,
+                  width: '100%',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: 1,
+                }}
+              >
+                <CharacterCardEquipmentRow />
+                <CharacterCardStats />
+              </Box>
+            </CardThemed>
+          </Suspense>
+        </Box>
+        <BonusStatsCard />
+      </Grid>
+    ),
+    [characterKey]
   )
 }
 
