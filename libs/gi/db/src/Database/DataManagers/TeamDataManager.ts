@@ -219,15 +219,18 @@ export class TeamDataManager extends DataManager<
     }
   }
   import(data: object): string {
-    const { teamChars, ...rest } = data as Team & { teamChars: object[] }
+    const { loadoutData, ...rest } = data as Team & { loadoutData: object[] }
     const id = this.generateKey()
     if (
       !this.set(id, {
         ...rest,
         name: `${rest.name ?? ''} (Imported)`,
-        loadoutData: teamChars.map((obj) => ({
-          teamCharId: this.database.teamChars.import(obj),
-        })),
+        loadoutData: loadoutData.map(
+          (obj) =>
+            obj && {
+              teamCharId: this.database.teamChars.import(obj),
+            }
+        ),
       } as Team)
     )
       return ''
