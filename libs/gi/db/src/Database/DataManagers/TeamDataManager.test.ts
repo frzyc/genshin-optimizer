@@ -65,7 +65,9 @@ describe('export and import test', () => {
     expect(raidenTeamChar?.key).toEqual('RaidenShogun')
     expect(raidenTeamChar?.buildIds.length).toEqual(0)
     expect(raidenTeamChar?.buildTcIds.length).toEqual(1)
-    expect(database.optConfigs.get(raidenTeamChar?.optConfigId)?.optimizationTarget).toEqual(["test"])
+    expect(
+      database.optConfigs.get(raidenTeamChar?.optConfigId)?.optimizationTarget
+    ).toEqual(['test'])
     const bennettTeamChar = database.teamChars.get(
       importTeam.loadoutData[2]?.teamCharId
     )
