@@ -650,8 +650,8 @@ export default function TabBuild() {
             <Divider />
             <CardContent>
               <ArtifactLevelSlider
-            levelLow={levelLow}
-            levelHigh={levelHigh}
+                levelLow={levelLow}
+                levelHigh={levelHigh}
                 setLow={(levelLow) =>
                   database.optConfigs.set(optConfigId, { levelLow })
                 }
