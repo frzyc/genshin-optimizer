@@ -585,8 +585,17 @@ export default function TabBuild() {
       {/* Build Generator Editor */}
       <Grid container spacing={1}>
         {/* 1*/}
-        <PanelLeft characterKey={characterKey} />
-
+        <Grid
+          item
+          xs={12}
+          sm={6}
+          lg={3}
+          display="flex"
+          flexDirection="column"
+          gap={1}
+        >
+          <CharacterCard characterKey={characterKey} />
+        </Grid>
         {/* 2 */}
         <Grid
           item
@@ -602,7 +611,7 @@ export default function TabBuild() {
             levelTotal={levelTotal.in}
             levelLow={levelLow}
             levelHigh={levelHigh}
-            generatingBuilds={generatingBuilds}
+            disabled={generatingBuilds}
             optConfigId={optConfigId}
           />
 
@@ -971,13 +980,13 @@ function LevelFilter({
   levelTotal,
   levelLow,
   levelHigh,
-  generatingBuilds,
+  disabled,
   optConfigId,
 }: {
   levelTotal: string
   levelLow: number
   levelHigh: number
-  generatingBuilds: boolean
+  disabled: boolean
   optConfigId: string
 }) {
   const database = useDatabase()
@@ -1006,14 +1015,14 @@ function LevelFilter({
                 levelHigh,
               })
             }
-            disabled={generatingBuilds}
+            disabled={disabled}
           />
         </CardContent>
       </CardLight>
     ),
     [
       database,
-      generatingBuilds,
+      disabled,
       levelHigh,
       levelLow,
       levelTotal,
@@ -1023,18 +1032,10 @@ function LevelFilter({
   )
 }
 
-function PanelLeft({ characterKey }: { characterKey: CharacterKey }) {
+function CharacterCard({ characterKey }: { characterKey: CharacterKey }) {
   return useMemo(
     () => (
-      <Grid
-        item
-        xs={12}
-        sm={6}
-        lg={3}
-        display="flex"
-        flexDirection="column"
-        gap={1}
-      >
+      <>
         {/* character card */}
         <Box>
           <Suspense
@@ -1062,7 +1063,7 @@ function PanelLeft({ characterKey }: { characterKey: CharacterKey }) {
           </Suspense>
         </Box>
         <BonusStatsCard />
-      </Grid>
+      </>
     ),
     [characterKey]
   )
