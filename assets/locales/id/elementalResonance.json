@@ -1,9 +1,0 @@
-{
-  "SprawlingGreenery": {
-    "cond2ele": "Setelah memicu reaksi Burn, Catalyze, atau Bloom",
-    "cond3ele": "Setelah memicu reaksi Aggravate, Spread, Hyperbloom, atau Burgeon"
-  },
-  "EnduringRock": {
-    "hitCond": "Setelah mengakibatkan DMG ke musuh ketika dilindungi oleh shield"
-  }
-}

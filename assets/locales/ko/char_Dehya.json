@@ -1,7 +1,0 @@
-{
-  "inFieldAndTakeDmg": "검지옥 영역 안의 필드 위 캐릭터가 공격을 받은 직후",
-  "field_dmg_": "검지옥 피해량 증가",
-  "initialHeal": "초기 회복량",
-  "dotHeal": "추가 회복량",
-  "critHitDuringBurst": "사자 송곳니가 치명타로 명중 후"
-}
