@@ -58,6 +58,7 @@ import {
 } from '@mui/material'
 import React, {
   Suspense,
+  memo,
   useCallback,
   useContext,
   useDeferredValue,
@@ -976,7 +977,7 @@ export default function TabBuild() {
   )
 }
 
-function LevelFilter({
+const LevelFilter = memo(function LevelFilter({
   levelTotal,
   levelLow,
   levelHigh,
@@ -991,75 +992,73 @@ function LevelFilter({
 }) {
   const database = useDatabase()
   const { t } = useTranslation('page_character_optimize')
-  return useMemo(
-    () => (
-      <CardLight>
-        <CardContent sx={{ display: 'flex', gap: 1 }}>
-          <Typography sx={{ fontWeight: 'bold' }}>{t`levelFilter`}</Typography>
-          <SqBadge color="info">{levelTotal}</SqBadge>
-        </CardContent>
-        <Divider />
-        <CardContent>
-          <ArtifactLevelSlider
-            levelLow={levelLow}
-            levelHigh={levelHigh}
-            setLow={(levelLow) =>
-              database.optConfigs.set(optConfigId, { levelLow })
-            }
-            setHigh={(levelHigh) =>
-              database.optConfigs.set(optConfigId, { levelHigh })
-            }
-            setBoth={(levelLow, levelHigh) =>
-              database.optConfigs.set(optConfigId, {
-                levelLow,
-                levelHigh,
-              })
-            }
-            disabled={disabled}
-          />
-        </CardContent>
-      </CardLight>
-    ),
-    [database, disabled, levelHigh, levelLow, levelTotal, optConfigId, t]
+  return (
+    <CardLight>
+      <CardContent sx={{ display: 'flex', gap: 1 }}>
+        <Typography sx={{ fontWeight: 'bold' }}>{t`levelFilter`}</Typography>
+        <SqBadge color="info">{levelTotal}</SqBadge>
+      </CardContent>
+      <Divider />
+      <CardContent>
+        <ArtifactLevelSlider
+          levelLow={levelLow}
+          levelHigh={levelHigh}
+          setLow={(levelLow) =>
+            database.optConfigs.set(optConfigId, { levelLow })
+          }
+          setHigh={(levelHigh) =>
+            database.optConfigs.set(optConfigId, { levelHigh })
+          }
+          setBoth={(levelLow, levelHigh) =>
+            database.optConfigs.set(optConfigId, {
+              levelLow,
+              levelHigh,
+            })
+          }
+          disabled={disabled}
+        />
+      </CardContent>
+    </CardLight>
   )
-}
+})
 
-function CharacterCard({ characterKey }: { characterKey: CharacterKey }) {
-  return useMemo(
-    () => (
-      <>
-        {/* character card */}
-        <Box>
-          <Suspense
-            fallback={
-              <Skeleton variant="rectangular" width="100%" height={600} />
-            }
-          >
-            <CardThemed bgt="light">
-              <CharacterCardHeader characterKey={characterKey}>
-                <CharacterCardHeaderContent characterKey={characterKey} />
-              </CharacterCardHeader>
-              <Box
-                sx={{
-                  p: 1,
-                  width: '100%',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  gap: 1,
-                }}
-              >
-                <CharacterCardEquipmentRow />
-                <CharacterCardStats />
-              </Box>
-            </CardThemed>
-          </Suspense>
-        </Box>
-        <BonusStatsCard />
-      </>
-    ),
-    [characterKey]
+const CharacterCard = memo(function CharacterCard({
+  characterKey,
+}: {
+  characterKey: CharacterKey
+}) {
+  return (
+    <>
+      {/* character card */}
+      <Box>
+        <Suspense
+          fallback={
+            <Skeleton variant="rectangular" width="100%" height={600} />
+          }
+        >
+          <CardThemed bgt="light">
+            <CharacterCardHeader characterKey={characterKey}>
+              <CharacterCardHeaderContent characterKey={characterKey} />
+            </CharacterCardHeader>
+            <Box
+              sx={{
+                p: 1,
+                width: '100%',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: 1,
+              }}
+            >
+              <CharacterCardEquipmentRow />
+              <CharacterCardStats />
+            </Box>
+          </CardThemed>
+        </Suspense>
+      </Box>
+      <BonusStatsCard />
+    </>
   )
-}
+})
 
 function BuildList({
   builds,
