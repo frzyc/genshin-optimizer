@@ -1020,15 +1020,7 @@ function LevelFilter({
         </CardContent>
       </CardLight>
     ),
-    [
-      database,
-      disabled,
-      levelHigh,
-      levelLow,
-      levelTotal,
-      optConfigId,
-      t,
-    ]
+    [database, disabled, levelHigh, levelLow, levelTotal, optConfigId, t]
   )
 }
 
