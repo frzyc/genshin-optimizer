@@ -84,132 +84,143 @@ export default function MainStatSelectionCard({
       slotTots: catTotals.slotTots,
     }
   }, [database, filteredArtIdMap])
-
-  return (
-    <Box display="flex" flexDirection="column">
-      <Divider />
-      <Box display="flex">
-        <CardContent sx={{ flexGrow: 1 }}>
-          <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
-            <BootstrapTooltip
-              placement="top"
-              title={<Typography>{t(`slotName.flower`)}</Typography>}
-            >
-              <FlowerIcon fontSize="inherit" />
-            </BootstrapTooltip>
-            <Box flexGrow={1}>
-              <SqBadge color="info">
-                <HpIcon {...iconInlineProps} /> {mainStatSlotTots.flower.hp}
-              </SqBadge>
-            </Box>
-          </Box>
-        </CardContent>
-        <Divider orientation="vertical" flexItem />
-        <CardContent sx={{ flexGrow: 1 }}>
-          <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
-            <BootstrapTooltip
-              placement="top"
-              title={<Typography>{t(`slotName.plume`)}</Typography>}
-            >
-              <PlumeIcon fontSize="inherit" />
-            </BootstrapTooltip>
-            <Box flexGrow={1}>
-              <SqBadge color="info">
-                <AtkIcon {...iconInlineProps} /> {mainStatSlotTots.plume.atk}
-              </SqBadge>
-            </Box>
-          </Box>
-        </CardContent>
-      </Box>
-      {artifactsSlotsToSelectMainStats.map((slotKey) => {
-        const selectedMainKeys = mainStatKeys[slotKey]
-        const mainKeys = artSlotsData[slotKey].stats
-        const mainKeysHandler = handleMultiSelect([...mainKeys])
-        return (
-          <Box key={slotKey}>
-            <Divider />
-            <CardContent sx={{ pt: 1, pb: 1 }}>
-              <Box
-                sx={{ display: 'flex', gap: 1, alignItems: 'center', pb: 1 }}
+  return useMemo(
+    () => (
+      <Box display="flex" flexDirection="column">
+        <Divider />
+        <Box display="flex">
+          <CardContent sx={{ flexGrow: 1 }}>
+            <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
+              <BootstrapTooltip
+                placement="top"
+                title={<Typography>{t(`slotName.flower`)}</Typography>}
               >
-                <BootstrapTooltip
-                  placement="top"
-                  title={<Typography>{t(`slotName.${slotKey}`)}</Typography>}
-                >
-                  <Box lineHeight={0}>
-                    <SlotIcon
-                      slotKey={slotKey}
-                      iconProps={{ fontSize: 'inherit' }}
-                    />
-                  </Box>
-                </BootstrapTooltip>
-                <Box flexGrow={1}>
-                  <SqBadge color="info">{slotTots[slotKey]}</SqBadge>
-                </Box>
+                <FlowerIcon fontSize="inherit" />
+              </BootstrapTooltip>
+              <Box flexGrow={1}>
+                <SqBadge color="info">
+                  <HpIcon {...iconInlineProps} /> {mainStatSlotTots.flower.hp}
+                </SqBadge>
               </Box>
-              <Grid container spacing={1}>
-                {mainKeys.map((mainStatKey, i) => {
-                  const element = allElementWithPhyKeys.find((ele) =>
-                    mainStatKey.includes(ele)
-                  )
-                  const color = selectedMainKeys.includes(mainStatKey)
-                    ? element ?? 'success'
-                    : 'secondary'
-                  return (
-                    <Grid
-                      item
-                      key={mainStatKey}
-                      flexGrow={1}
-                      xs={
-                        (i < 3 && slotKey !== 'goblet') || slotKey === 'goblet'
-                          ? 4
-                          : undefined
-                      }
-                    >
-                      <BootstrapTooltip
-                        placement="top"
-                        title={
-                          <Typography>
-                            <strong>
-                              <StatColoredWithUnit statKey={mainStatKey} />
-                            </strong>
-                          </Typography>
+            </Box>
+          </CardContent>
+          <Divider orientation="vertical" flexItem />
+          <CardContent sx={{ flexGrow: 1 }}>
+            <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
+              <BootstrapTooltip
+                placement="top"
+                title={<Typography>{t(`slotName.plume`)}</Typography>}
+              >
+                <PlumeIcon fontSize="inherit" />
+              </BootstrapTooltip>
+              <Box flexGrow={1}>
+                <SqBadge color="info">
+                  <AtkIcon {...iconInlineProps} /> {mainStatSlotTots.plume.atk}
+                </SqBadge>
+              </Box>
+            </Box>
+          </CardContent>
+        </Box>
+        {artifactsSlotsToSelectMainStats.map((slotKey) => {
+          const selectedMainKeys = mainStatKeys[slotKey]
+          const mainKeys = artSlotsData[slotKey].stats
+          const mainKeysHandler = handleMultiSelect([...mainKeys])
+          return (
+            <Box key={slotKey}>
+              <Divider />
+              <CardContent sx={{ pt: 1, pb: 1 }}>
+                <Box
+                  sx={{ display: 'flex', gap: 1, alignItems: 'center', pb: 1 }}
+                >
+                  <BootstrapTooltip
+                    placement="top"
+                    title={<Typography>{t(`slotName.${slotKey}`)}</Typography>}
+                  >
+                    <Box lineHeight={0}>
+                      <SlotIcon
+                        slotKey={slotKey}
+                        iconProps={{ fontSize: 'inherit' }}
+                      />
+                    </Box>
+                  </BootstrapTooltip>
+                  <Box flexGrow={1}>
+                    <SqBadge color="info">{slotTots[slotKey]}</SqBadge>
+                  </Box>
+                </Box>
+                <Grid container spacing={1}>
+                  {mainKeys.map((mainStatKey, i) => {
+                    const element = allElementWithPhyKeys.find((ele) =>
+                      mainStatKey.includes(ele)
+                    )
+                    const color = selectedMainKeys.includes(mainStatKey)
+                      ? element ?? 'success'
+                      : 'secondary'
+                    return (
+                      <Grid
+                        item
+                        key={mainStatKey}
+                        flexGrow={1}
+                        xs={
+                          (i < 3 && slotKey !== 'goblet') ||
+                          slotKey === 'goblet'
+                            ? 4
+                            : undefined
                         }
-                        disableInteractive
                       >
-                        <Button
-                          fullWidth
-                          size="small"
-                          color={color}
-                          sx={{
-                            height: '100%',
-                            pointerEvents: disabled ? 'none' : undefined,
-                            cursor: disabled ? 'none' : undefined,
-                          }}
-                          startIcon={<StatIcon statKey={mainStatKey} />}
-                          onClick={() =>
-                            database.optConfigs.set(optConfigId, {
-                              mainStatKeys: {
-                                ...mainStatKeys,
-                                [slotKey]: mainKeysHandler(
-                                  selectedMainKeys,
-                                  mainStatKey
-                                ),
-                              },
-                            })
+                        <BootstrapTooltip
+                          placement="top"
+                          title={
+                            <Typography>
+                              <strong>
+                                <StatColoredWithUnit statKey={mainStatKey} />
+                              </strong>
+                            </Typography>
                           }
+                          disableInteractive
                         >
-                          {mainStatSlotTots[slotKey][mainStatKey]}
-                        </Button>
-                      </BootstrapTooltip>
-                    </Grid>
-                  )
-                })}
-              </Grid>
-            </CardContent>
-          </Box>
-        )
-      })}
-    </Box>
+                          <Button
+                            fullWidth
+                            size="small"
+                            color={color}
+                            sx={{
+                              height: '100%',
+                              pointerEvents: disabled ? 'none' : undefined,
+                              cursor: disabled ? 'none' : undefined,
+                            }}
+                            startIcon={<StatIcon statKey={mainStatKey} />}
+                            onClick={() =>
+                              database.optConfigs.set(optConfigId, {
+                                mainStatKeys: {
+                                  ...mainStatKeys,
+                                  [slotKey]: mainKeysHandler(
+                                    selectedMainKeys,
+                                    mainStatKey
+                                  ),
+                                },
+                              })
+                            }
+                          >
+                            {mainStatSlotTots[slotKey][mainStatKey]}
+                          </Button>
+                        </BootstrapTooltip>
+                      </Grid>
+                    )
+                  })}
+                </Grid>
+              </CardContent>
+            </Box>
+          )
+        })}
+      </Box>
+    ),
+    [
+      database,
+      disabled,
+      mainStatKeys,
+      mainStatSlotTots,
+      optConfigId,
+      slotTots,
+      t,
+    ]
   )
 }

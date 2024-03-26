@@ -501,6 +501,11 @@ function CompareArtifactModal({
     character: { key: characterKey },
   } = useContext(CharacterContext)
 
+  const {
+    teamChar: { optConfigId },
+  } = useContext(TeamCharacterContext)
+  const { artSetExclusion } = useOptConfig(optConfigId)!
+
   const newLoc = database.arts.get(newId)?.location ?? ''
   const newArtifact = useArtifact(newId)
   const oldArtifact = useArtifact(oldId)
@@ -589,6 +594,12 @@ function CompareArtifactModal({
                   ) && (
                     <SetInclusionButton
                       setKey={newArtifact.setKey as ArtSetExclusionKey}
+                      setExclusionSet={
+                        artSetExclusion[
+                          newArtifact.setKey as ArtSetExclusionKey
+                        ]
+                      }
+                      optConfigId={optConfigId}
                     />
                   )}
               </>

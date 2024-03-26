@@ -224,16 +224,16 @@ export default function TabBuild() {
     [database, loadoutData, teamCharId]
   )
   const filteredArts = useMemo(() => {
-    const {
-      mainStatKeys,
-      excludedLocations,
-      artExclusion,
-      levelLow,
-      levelHigh,
-      allowLocationsState,
-      useExcludedArts,
-      useTeammateBuild,
-    } = deferredArtsDirty && deferredBuildSetting
+    // eslint-disable-next-line @typescript-eslint/no-unused-expressions
+    deferredArtsDirty
+    const mainStatKeys = buildSetting.mainStatKeys
+    const excludedLocations = buildSetting.excludedLocations
+    const artExclusion = buildSetting.artExclusion
+    const levelLow = buildSetting.levelLow
+    const levelHigh = buildSetting.levelHigh
+    const allowLocationsState = buildSetting.allowLocationsState
+    const useExcludedArts = buildSetting.useExcludedArts
+    const useTeammateBuild = buildSetting.useTeammateBuild
 
     return database.arts.values.filter((art) => {
       if (!useExcludedArts && artExclusion.includes(art.id)) return false
@@ -262,12 +262,18 @@ export default function TabBuild() {
     })
   }, [
     deferredArtsDirty,
-    deferredBuildSetting,
+    buildSetting.mainStatKeys,
+    buildSetting.excludedLocations,
+    buildSetting.artExclusion,
+    buildSetting.levelLow,
+    buildSetting.levelHigh,
+    buildSetting.allowLocationsState,
+    buildSetting.useExcludedArts,
+    buildSetting.useTeammateBuild,
     database,
     teammateArtifactIds,
     characterKey,
   ])
-
   const filteredArtIdMap = useMemo(
     () =>
       objKeyMap(
@@ -644,8 +650,8 @@ export default function TabBuild() {
             <Divider />
             <CardContent>
               <ArtifactLevelSlider
-                levelLow={levelLow}
-                levelHigh={levelHigh}
+            levelLow={levelLow}
+            levelHigh={levelHigh}
                 setLow={(levelLow) =>
                   database.optConfigs.set(optConfigId, { levelLow })
                 }
