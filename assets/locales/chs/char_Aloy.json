@@ -1,9 +1,0 @@
-{
-  "skill": {
-    "coil": "线圈",
-    "rush": "冰驰",
-    "rushState": "处于冰驰状态下（每秒1层）"
-  },
-  "a1CondName": "埃洛伊获得<strong>冰尘雪野</strong>的线圈效果时",
-  "normCryoInfus": "<cryo>普攻冰附魔</cryo>"
-}

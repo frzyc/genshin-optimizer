@@ -1,9 +1,0 @@
-{
-  "skill": {
-    "coil": "Bobina",
-    "rush": "Gelo Rápido",
-    "rushState": "Tempo passado no estado Gelo Rápido"
-  },
-  "a1CondName": "Após receber o efeito de Bobina",
-  "normCryoInfus": "<cryo>Infusão Cryo nos Ataques Normais</cryo>"
-}

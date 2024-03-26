@@ -1,9 +1,0 @@
-{
-  "SprawlingGreenery": {
-    "cond2ele": "Após desencadear as reações de <pyro>Queimadura</pyro>, <spread>Aceleração</spread> ou <bloom>Florescimento</bloom>",
-    "cond3ele": "Após desencadear as reações de <aggravate>Intensificação</aggravate>, <spread>Propagação</spread>, <hyperbloom>Superflorescimento</hyperbloom> ou <burgeon>Germinação</burgeon>"
-  },
-  "EnduringRock": {
-    "hitCond": "Após infligir Dano ao inimigo enquanto protegido por um escudo"
-  }
-}
