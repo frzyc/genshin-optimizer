@@ -5,19 +5,20 @@ import type {
   RegionKey,
 } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
-import ColorText from '../../../Components/ColoredText'
-import { input, tally } from '../../../Formula'
 import {
   equal,
   equalStr,
   greaterEq,
   greaterEqStr,
   infoMut,
+  input,
   percent,
   prod,
   subscript,
+  tally,
   unequal,
-} from '../../../Formula/utils'
+} from '@genshin-optimizer/gi/wr'
+import ColorText from '../../../Components/ColoredText'
 import { absorbableEle } from '../../../Types/consts'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'

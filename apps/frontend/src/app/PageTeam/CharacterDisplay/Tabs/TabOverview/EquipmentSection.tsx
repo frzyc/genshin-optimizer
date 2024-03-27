@@ -5,6 +5,7 @@ import {
 } from '@genshin-optimizer/gi/consts'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { getCharData } from '@genshin-optimizer/gi/stats'
+import { uiInput as input } from '@genshin-optimizer/gi/wr'
 import {
   Box,
   Button,
@@ -23,7 +24,6 @@ import { CharacterContext } from '../../../../Context/CharacterContext'
 import { DataContext } from '../../../../Context/DataContext'
 import { TeamCharacterContext } from '../../../../Context/TeamCharacterContext'
 import { dataSetEffects } from '../../../../Data/Artifacts'
-import { uiInput as input } from '../../../../Formula'
 
 export default function EquipmentSection() {
   const database = useDatabase()

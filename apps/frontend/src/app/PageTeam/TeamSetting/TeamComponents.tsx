@@ -10,6 +10,7 @@ import {
   useTeamChar,
 } from '@genshin-optimizer/gi/db-ui'
 import { ArtifactSetName } from '@genshin-optimizer/gi/ui'
+import { input } from '@genshin-optimizer/gi/wr'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import {
   Accordion,
@@ -46,7 +47,6 @@ import { TeamCharacterContext } from '../../Context/TeamCharacterContext'
 import { dataSetEffects, getArtSheet } from '../../Data/Artifacts'
 import type CharacterSheet from '../../Data/Characters/CharacterSheet'
 import { resonanceSheets } from '../../Data/Resonance'
-import { input } from '../../Formula'
 import type { NodeDisplay } from '../../Formula/uiData'
 
 export function TeamBuffDisplay() {

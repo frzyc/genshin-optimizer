@@ -1,6 +1,6 @@
 import type { GeneratedBuild } from '@genshin-optimizer/gi/db'
+import type { NumNode } from '@genshin-optimizer/gi/wr'
 import { createContext } from 'react'
-import type { NumNode } from '../Formula/type'
 
 type Data = GeneratedBuild & {
   value: number

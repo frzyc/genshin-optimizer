@@ -1,7 +1,7 @@
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
+import type { NumNode } from '@genshin-optimizer/gi/wr'
 import {
-  NumNode,
   compareEq,
   constant,
   equal,

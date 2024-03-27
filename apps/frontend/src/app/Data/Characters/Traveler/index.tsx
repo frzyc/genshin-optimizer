@@ -4,8 +4,8 @@ import type {
   WeaponTypeKey,
 } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
-import type { Data, DisplaySub } from '../../../Formula/type'
-import { infoMut } from '../../../Formula/utils'
+import type { Data, DisplaySub } from '@genshin-optimizer/gi/wr'
+import { infoMut } from '@genshin-optimizer/gi/wr'
 import type { CharacterSheetKey } from '../../../Types/consts'
 import { stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'

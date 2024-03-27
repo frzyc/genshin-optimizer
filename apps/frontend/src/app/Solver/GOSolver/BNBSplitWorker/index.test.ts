@@ -1,5 +1,5 @@
-import { allOperations } from '../../../Formula/optimization'
 import {
+  allOperations,
   constant,
   customRead,
   frac,
@@ -9,7 +9,7 @@ import {
   res,
   sum,
   threshold,
-} from '../../../Formula/utils'
+} from '@genshin-optimizer/gi/wr'
 import type { ArtifactsBySlot, DynStat } from '../../common'
 import type { Linear } from './linearUB'
 import { linearUB as linearUpperBound } from './linearUB'

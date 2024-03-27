@@ -1,4 +1,5 @@
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
+import type { DisplaySub } from '@genshin-optimizer/gi/wr'
 import { Masonry } from '@mui/lab'
 import {
   CardContent,
@@ -19,7 +20,6 @@ import {
   getDisplayHeader,
   getDisplaySections,
 } from '../../../../../Formula/DisplayUtil'
-import type { DisplaySub } from '../../../../../Formula/type'
 import type { NodeDisplay } from '../../../../../Formula/uiData'
 
 export interface TargetSelectorModalProps {

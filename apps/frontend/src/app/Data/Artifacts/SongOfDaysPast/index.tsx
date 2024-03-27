@@ -1,8 +1,13 @@
 import { objKeyMap, range } from '@genshin-optimizer/common/util'
 import type { ArtifactSetKey } from '@genshin-optimizer/gi/consts'
-import { input } from '../../../Formula'
-import type { Data } from '../../../Formula/type'
-import { constant, greaterEq, lookup, naught } from '../../../Formula/utils'
+import type { Data } from '@genshin-optimizer/gi/wr'
+import {
+  constant,
+  greaterEq,
+  input,
+  lookup,
+  naught,
+} from '@genshin-optimizer/gi/wr'
 import { cond, st, stg, trans } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
 import type { IArtifactSheet } from '../IArtifactSheet'

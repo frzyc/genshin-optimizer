@@ -1,3 +1,5 @@
+import type { NumNode } from '@genshin-optimizer/gi/wr'
+import { uiInput as input } from '@genshin-optimizer/gi/wr'
 import { CardContent, Divider, Typography } from '@mui/material'
 import { useContext } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -5,8 +7,6 @@ import CardLight from '../../../../../Components/Card/CardLight'
 import { NodeFieldDisplay } from '../../../../../Components/FieldDisplay'
 import { DataContext } from '../../../../../Context/DataContext'
 import { TeamCharacterContext } from '../../../../../Context/TeamCharacterContext'
-import { uiInput as input } from '../../../../../Formula'
-import type { NumNode } from '../../../../../Formula/type'
 
 export default function BonusStatsCard() {
   const { t } = useTranslation('page_character_optimize')
