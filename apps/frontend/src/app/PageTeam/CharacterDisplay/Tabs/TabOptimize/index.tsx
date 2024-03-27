@@ -180,17 +180,21 @@ export default function TabBuild() {
 
   const buildSetting = useOptConfig(optConfigId)!
   const {
-    plotBase,
-    optimizationTarget,
-    mainStatAssumptionLevel,
-    allowPartial,
-    maxBuildsToShow,
-    levelLow,
-    levelHigh,
-    builds,
-    buildDate,
-    useTeammateBuild,
     allowLocationsState,
+    allowPartial,
+    artExclusion,
+    buildDate,
+    builds,
+    excludedLocations,
+    levelHigh,
+    levelLow,
+    mainStatAssumptionLevel,
+    mainStatKeys,
+    maxBuildsToShow,
+    optimizationTarget,
+    plotBase,
+    useExcludedArts,
+    useTeammateBuild,
   } = buildSetting
   const { data } = useContext(DataContext)
   const oldData = useOldData()
@@ -226,15 +230,6 @@ export default function TabBuild() {
   const filteredArts = useMemo(() => {
     // eslint-disable-next-line @typescript-eslint/no-unused-expressions
     deferredArtsDirty
-    const mainStatKeys = buildSetting.mainStatKeys
-    const excludedLocations = buildSetting.excludedLocations
-    const artExclusion = buildSetting.artExclusion
-    const levelLow = buildSetting.levelLow
-    const levelHigh = buildSetting.levelHigh
-    const allowLocationsState = buildSetting.allowLocationsState
-    const useExcludedArts = buildSetting.useExcludedArts
-    const useTeammateBuild = buildSetting.useTeammateBuild
-
     return database.arts.values.filter((art) => {
       if (!useExcludedArts && artExclusion.includes(art.id)) return false
       if (!useTeammateBuild && teammateArtifactIds.includes(art.id))
@@ -262,14 +257,14 @@ export default function TabBuild() {
     })
   }, [
     deferredArtsDirty,
-    buildSetting.mainStatKeys,
-    buildSetting.excludedLocations,
-    buildSetting.artExclusion,
-    buildSetting.levelLow,
-    buildSetting.levelHigh,
-    buildSetting.allowLocationsState,
-    buildSetting.useExcludedArts,
-    buildSetting.useTeammateBuild,
+    mainStatKeys,
+    excludedLocations,
+    artExclusion,
+    levelLow,
+    levelHigh,
+    allowLocationsState,
+    useExcludedArts,
+    useTeammateBuild,
     database,
     teammateArtifactIds,
     characterKey,
