@@ -1,4 +1,4 @@
-import { clamp, objKeyMap } from '@genshin-optimizer/common/util'
+import { clamp, objKeyMap, objMap } from '@genshin-optimizer/common/util'
 import type {
   ArtifactRarity,
   ArtifactSetKey,
@@ -98,9 +98,9 @@ export class BuildTcDataManager extends DataManager<
 
     return buildTc
   }
-  export(buildTcId: string): object {
+  export(buildTcId: string): object | undefined {
     const buildTc = this.database.buildTcs.get(buildTcId)
-    if (!buildTc) return {}
+    if (!buildTc) return undefined
     return buildTc
   }
   import(data: object): string {
@@ -200,15 +200,16 @@ function validateCharTCArtifactSlots(
     )
   )
     return initCharTCArtifactSlots()
-  allArtifactSlotKeys.forEach((slotKey) => {
-    ;(slots as BuildTc['artifact']['slots'])[slotKey].level = clamp(
-      (slots as BuildTc['artifact']['slots'])[slotKey].level,
-      0,
-      artMaxLevel[(slots as BuildTc['artifact']['slots'])[slotKey].rarity]
-    )
-  })
-
-  return slots as BuildTc['artifact']['slots']
+  return objMap(
+    slots as BuildTc['artifact']['slots'],
+    ({ level, rarity, ...rest }) => {
+      return {
+        level: clamp(level, 0, artMaxLevel[rarity]),
+        rarity,
+        ...rest,
+      }
+    }
+  )
 }
 function validateCharTcOptimization(
   optimization: unknown
