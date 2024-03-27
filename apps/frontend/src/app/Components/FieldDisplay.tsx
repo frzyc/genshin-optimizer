@@ -14,6 +14,7 @@ import {
   List,
   ListItem,
   Skeleton,
+  Tooltip,
   Typography,
   styled,
 } from '@mui/material'
@@ -132,18 +133,40 @@ export function NodeFieldDisplay({
       <>
         <span>{valueString(nodeValue, node.info.unit, node.info.fixed)}</span>
         {Math.abs(diff) > 0.0001 && (
-          <ColorText color={diff > 0 ? 'success' : 'error'}>
-            <span>
-              ({diff > 0 ? '+' : ''}
-              {valueString(diff, node.info.unit, node.info.fixed)})
-            </span>
-            {node.info.unit !== '%' && compareValue !== 0 && (
+          <Tooltip
+            title={
+              <Typography>
+                Compare to{' '}
+                <ColorText color={diff > 0 ? 'success' : 'error'}>
+                  <strong>
+                    {valueString(compareValue, node.info.unit, node.info.fixed)}
+                  </strong>
+                </ColorText>
+              </Typography>
+            }
+          >
+            <ColorText
+              color={diff > 0 ? 'success' : 'error'}
+              sx={{
+                display: 'flex',
+                gap: 0.5,
+                alignItems: 'center',
+                justifyContent: 'flex-end',
+                flexWrap: 'wrap',
+              }}
+            >
               <span>
                 ({diff > 0 ? '+' : ''}
-                {pctDiff})
+                {valueString(diff, node.info.unit, node.info.fixed)})
               </span>
-            )}
-          </ColorText>
+              {node.info.unit !== '%' && compareValue !== 0 && (
+                <span>
+                  ({diff > 0 ? '+' : ''}
+                  {pctDiff})
+                </span>
+              )}
+            </ColorText>
+          </Tooltip>
         )}
       </>
     )
@@ -231,7 +254,7 @@ export function NodeFieldDisplayText({ node }: { node: NodeDisplay }) {
     >
       {!!node.info.isTeamBuff && <Groups />}
       {node.info.icon}
-      <ColorText color={variant !== 'invalid' ? variant : 'error'}>
+      <ColorText color={variant !== 'invalid' ? variant : undefined}>
         {node.info.name}
         {suffixDisplay}
       </ColorText>
