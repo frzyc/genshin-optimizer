@@ -171,7 +171,6 @@ export function GeneralAutocompleteMulti<T extends string>({
         .filter((o) => o) as unknown as GeneralAutocompleteOption<T>[],
     [options, keys]
   )
-  // console.log(options)
   return (
     <Autocomplete
       autoHighlight
