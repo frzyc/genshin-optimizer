@@ -9,7 +9,10 @@ import {
   allArtifactSetKeys,
   allArtifactSlotKeys,
 } from '@genshin-optimizer/gi/consts'
-import type { ArtSetExclusionKey } from '@genshin-optimizer/gi/db'
+import type {
+  ArtSetExclusion,
+  ArtSetExclusionKey,
+} from '@genshin-optimizer/gi/db'
 import {
   allArtifactSetExclusionKeys,
   handleArtSetExclusion,
@@ -477,6 +480,7 @@ export default function ArtifactSetConfig({
                   setKey={setKey}
                   fakeDataContextObj={fakeDataContextObj}
                   slotCount={artSlotCount[setKey]}
+                  setExclusionSet={artSetExclusion[setKey]}
                 />
               ))}
             </Grid>
@@ -532,145 +536,165 @@ function AllSetAllowExcludeCard({
     </CardLight>
   )
 }
+const emptyArray = []
 function ArtifactSetCard({
   setKey,
   fakeDataContextObj,
   slotCount,
+  setExclusionSet,
 }: {
   setKey: ArtifactSetKey
   fakeDataContextObj: dataContextObj
   slotCount: Record<ArtifactSlotKey, number>
+  setExclusionSet: ArtSetExclusion[keyof ArtSetExclusion]
 }) {
   const { t } = useTranslation('sheet')
   const {
     teamChar: { optConfigId },
   } = useContext(TeamCharacterContext)
-  const { artSetExclusion } = useOptConfig(optConfigId)!
-  const setExclusionSet = artSetExclusion?.[setKey] ?? []
-  const allow4 = !setExclusionSet.includes(4)
+  const allow4 = !setExclusionSet?.includes(4)
   const slots = getNumSlots(slotCount)
   const sheet = getArtSheet(setKey)
   /* Assumes that all conditionals are from 4-Set. needs to change if there are 2-Set conditionals */
   const set4CondNums = useMemo(() => {
-    if (!allow4) return []
+    if (!allow4) return emptyArray
     return Object.keys(sheet.setEffects).filter((setNumKey) =>
       sheet.setEffects[setNumKey]?.document.some((doc) => 'states' in doc)
     )
   }, [sheet.setEffects, allow4])
-  return (
-    <Grid item key={setKey} xs={1}>
-      <CardLight
-        sx={{ height: '100%', opacity: slots < 2 ? '50%' : undefined }}
-      >
-        <Box
-          className={`grad-${sheet.rarity[0]}star`}
-          width="100%"
-          sx={{ display: 'flex' }}
+  return useMemo(
+    () => (
+      <Grid item key={setKey} xs={1}>
+        <CardLight
+          sx={{ height: '100%', opacity: slots < 2 ? '50%' : undefined }}
         >
           <Box
-            component="img"
-            src={artifactDefIcon(setKey)}
-            sx={{ height: 100, width: 'auto', mx: -1 }}
-          />
-          <Box
-            sx={{
-              flexGrow: 1,
-              px: 1,
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'center',
-            }}
+            className={`grad-${sheet.rarity[0]}star`}
+            width="100%"
+            sx={{ display: 'flex' }}
           >
-            <Typography variant="h6">{sheet.name ?? ''}</Typography>
-            <Box>
-              {/* If there is ever a 2-Set conditional, we will need to change this */}
-              <Typography variant="subtitle1">
-                {sheet.rarity.map((ns, i) => (
-                  <Box
-                    component="span"
-                    sx={{ display: 'inline-flex', alignItems: 'center' }}
-                    key={ns}
-                  >
-                    {ns} <StarRoundedIcon fontSize="inherit" />{' '}
-                    {i < sheet.rarity.length - 1 ? '/ ' : null}
-                  </Box>
-                ))}{' '}
-                <InfoTooltipInline
-                  title={
-                    <Box>
-                      <Typography>
-                        <SqBadge color="success">{t`2set`}</SqBadge>
-                      </Typography>
-                      <Typography>
-                        <Translate
-                          ns={`artifact_${setKey}_gen`}
-                          key18={'setEffects.2'}
-                        />
-                      </Typography>
-                      <Box
-                        paddingTop={2}
-                        sx={{ opacity: setExclusionSet.includes(4) ? 0.6 : 1 }}
-                      >
+            <Box
+              component="img"
+              src={artifactDefIcon(setKey)}
+              sx={{ height: 100, width: 'auto', mx: -1 }}
+            />
+            <Box
+              sx={{
+                flexGrow: 1,
+                px: 1,
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+              }}
+            >
+              <Typography variant="h6">{sheet.name ?? ''}</Typography>
+              <Box>
+                {/* If there is ever a 2-Set conditional, we will need to change this */}
+                <Typography variant="subtitle1">
+                  {sheet.rarity.map((ns, i) => (
+                    <Box
+                      component="span"
+                      sx={{ display: 'inline-flex', alignItems: 'center' }}
+                      key={ns}
+                    >
+                      {ns} <StarRoundedIcon fontSize="inherit" />{' '}
+                      {i < sheet.rarity.length - 1 ? '/ ' : null}
+                    </Box>
+                  ))}
+                  <InfoTooltipInline
+                    title={
+                      <Box>
                         <Typography>
-                          <SqBadge color="success">{t`4set`}</SqBadge>
+                          <SqBadge color="success">{t`2set`}</SqBadge>
                         </Typography>
                         <Typography>
                           <Translate
                             ns={`artifact_${setKey}_gen`}
-                            key18={'setEffects.4'}
+                            key18={'setEffects.2'}
                           />
                         </Typography>
+                        <Box
+                          paddingTop={2}
+                          sx={{
+                            opacity: setExclusionSet?.includes(4) ? 0.6 : 1,
+                          }}
+                        >
+                          <Typography>
+                            <SqBadge color="success">{t`4set`}</SqBadge>
+                          </Typography>
+                          <Typography>
+                            <Translate
+                              ns={`artifact_${setKey}_gen`}
+                              key18={'setEffects.4'}
+                            />
+                          </Typography>
+                        </Box>
                       </Box>
-                    </Box>
-                  }
-                />
-              </Typography>
-            </Box>
-            <Box sx={{ display: 'flex', gap: 1 }}>
-              {Object.entries(slotCount).map(([slotKey, count]) => (
-                <Typography
-                  key={slotKey}
-                  sx={{ flexGrow: 1 }}
-                  variant="subtitle2"
-                >
-                  <SqBadge
-                    sx={{ width: '100%' }}
-                    color={count ? 'primary' : 'secondary'}
-                  >
-                    <SlotIcon slotKey={slotKey} iconProps={iconInlineProps} />{' '}
-                    {count}
-                  </SqBadge>
+                    }
+                  />
                 </Typography>
-              ))}
+              </Box>
+              <Box sx={{ display: 'flex', gap: 1 }}>
+                {Object.entries(slotCount).map(([slotKey, count]) => (
+                  <Typography
+                    key={slotKey}
+                    sx={{ flexGrow: 1 }}
+                    variant="subtitle2"
+                  >
+                    <SqBadge
+                      sx={{ width: '100%' }}
+                      color={count ? 'primary' : 'secondary'}
+                    >
+                      <SlotIcon slotKey={slotKey} iconProps={iconInlineProps} />
+                      {count}
+                    </SqBadge>
+                  </Typography>
+                ))}
+              </Box>
             </Box>
           </Box>
-        </Box>
-        {allArtifactSetExclusionKeys.includes(setKey as ArtSetExclusionKey) && (
-          <SetInclusionButton
-            setKey={setKey as ArtSetExclusionKey}
-            buttonGroupSx={{ '.MuiButton-root': { borderRadius: 0 } }}
-          />
-        )}
+          {allArtifactSetExclusionKeys.includes(
+            setKey as ArtSetExclusionKey
+          ) && (
+            <SetInclusionButton
+              setKey={setKey as ArtSetExclusionKey}
+              buttonGroupSx={{ '.MuiButton-root': { borderRadius: 0 } }}
+              setExclusionSet={setExclusionSet}
+              optConfigId={optConfigId}
+            />
+          )}
 
-        {!!set4CondNums.length && (
-          <DataContext.Provider value={fakeDataContextObj}>
-            <CardContent
-              sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}
-            >
-              {set4CondNums.map((setNumKey) => (
-                <SetEffectDisplay
-                  key={setNumKey}
-                  setKey={setKey}
-                  setNumKey={parseInt(setNumKey) as SetNum}
-                  hideHeader
-                  conditionalsOnly
-                />
-              ))}
-            </CardContent>
-          </DataContext.Provider>
-        )}
-      </CardLight>
-    </Grid>
+          {!!set4CondNums.length && (
+            <DataContext.Provider value={fakeDataContextObj}>
+              <CardContent
+                sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}
+              >
+                {set4CondNums.map((setNumKey) => (
+                  <SetEffectDisplay
+                    key={setNumKey}
+                    setKey={setKey}
+                    setNumKey={parseInt(setNumKey) as SetNum}
+                    hideHeader
+                    conditionalsOnly
+                  />
+                ))}
+              </CardContent>
+            </DataContext.Provider>
+          )}
+        </CardLight>
+      </Grid>
+    ),
+    [
+      fakeDataContextObj,
+      optConfigId,
+      set4CondNums,
+      setExclusionSet,
+      setKey,
+      sheet,
+      slotCount,
+      slots,
+      t,
+    ]
   )
 }
 
