@@ -1,8 +1,14 @@
 import { objKeyMap, range } from '@genshin-optimizer/common/util'
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
-import { input } from '../../../../Formula'
-import { lookup, naught, prod, subscript, sum } from '../../../../Formula/utils'
+import {
+  input,
+  lookup,
+  naught,
+  prod,
+  subscript,
+  sum,
+} from '@genshin-optimizer/gi/wr'
 import KeyMap from '../../../../KeyMap'
 import { cond, st, trans } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'

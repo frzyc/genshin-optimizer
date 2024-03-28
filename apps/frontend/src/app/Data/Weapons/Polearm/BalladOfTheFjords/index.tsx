@@ -1,7 +1,12 @@
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
-import { input, tally } from '../../../../Formula'
-import { greaterEq, subscript, unequal } from '../../../../Formula/utils'
+import {
+  greaterEq,
+  input,
+  subscript,
+  tally,
+  unequal,
+} from '@genshin-optimizer/gi/wr'
 import { st } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'

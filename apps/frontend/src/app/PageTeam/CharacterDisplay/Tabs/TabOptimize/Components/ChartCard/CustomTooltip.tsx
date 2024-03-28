@@ -4,6 +4,7 @@ import { allArtifactSlotKeys } from '@genshin-optimizer/gi/consts'
 import type { GeneratedBuild, ICachedArtifact } from '@genshin-optimizer/gi/db'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import type { Unit } from '@genshin-optimizer/gi/keymap'
+import { input } from '@genshin-optimizer/gi/wr'
 import CloseIcon from '@mui/icons-material/Close'
 import {
   Box,
@@ -25,7 +26,6 @@ import SqBadge from '../../../../../../Components/SqBadge'
 import WeaponCardPico from '../../../../../../Components/Weapon/WeaponCardPico'
 import { CharacterContext } from '../../../../../../Context/CharacterContext'
 import { DataContext } from '../../../../../../Context/DataContext'
-import { input } from '../../../../../../Formula'
 import { ArtifactSetBadges } from '../ArtifactSetBadges'
 import type EnhancedPoint from './EnhancedPoint'
 

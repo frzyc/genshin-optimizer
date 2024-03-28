@@ -3,7 +3,7 @@ import type {
   CharacterKey,
   WeaponKey,
 } from '@genshin-optimizer/gi/consts'
-import type { NumNode, ReadNode } from '../Formula/type'
+import type { NumNode, ReadNode } from '@genshin-optimizer/gi/wr'
 import type { UIData } from '../Formula/uiData'
 import type { IFieldDisplay } from './fieldDisplay'
 

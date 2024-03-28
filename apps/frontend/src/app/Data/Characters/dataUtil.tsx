@@ -13,22 +13,23 @@ import type {
 import { allMainStatKeys } from '@genshin-optimizer/gi/consts'
 import type { CharacterDataGen } from '@genshin-optimizer/gi/stats'
 import { allStats } from '@genshin-optimizer/gi/stats'
-import { infusionNode, input } from '../../Formula'
-import { inferInfoMut, mergeData } from '../../Formula/api'
-import { reactions } from '../../Formula/reaction'
-import type { Data, DisplaySub, NumNode } from '../../Formula/type'
+import type { Data, DisplaySub, NumNode } from '@genshin-optimizer/gi/wr'
 import {
   constant,
   data,
   infoMut,
+  infusionNode,
+  input,
   lookup,
   one,
   percent,
   prod,
+  reactions,
   stringPrio,
   subscript,
   sum,
-} from '../../Formula/utils'
+} from '@genshin-optimizer/gi/wr'
+import { inferInfoMut, mergeData } from '../../Formula/api'
 import KeyMap from '../../KeyMap'
 
 const commonBasic = objKeyMap(

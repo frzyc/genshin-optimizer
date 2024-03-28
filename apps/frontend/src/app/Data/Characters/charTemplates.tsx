@@ -1,10 +1,9 @@
 import { characterAsset, imgAssets } from '@genshin-optimizer/gi/assets'
 import type { CharacterKey, WeaponTypeKey } from '@genshin-optimizer/gi/consts'
+import type { NumNode } from '@genshin-optimizer/gi/wr'
+import { greaterEq, input } from '@genshin-optimizer/gi/wr'
 import ImgIcon from '../../Components/Image/ImgIcon'
 import SqBadge from '../../Components/SqBadge'
-import { input } from '../../Formula'
-import type { NumNode } from '../../Formula/type'
-import { greaterEq } from '../../Formula/utils'
 import type { CharacterSheetKey } from '../../Types/consts'
 import { travelerFKeys, travelerMKeys } from '../../Types/consts'
 import type {

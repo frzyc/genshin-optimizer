@@ -9,6 +9,8 @@ import {
   type ICachedWeapon,
 } from '@genshin-optimizer/gi/db'
 import { useDBMeta, useDatabase, useTeam } from '@genshin-optimizer/gi/db-ui'
+import type { Data } from '@genshin-optimizer/gi/wr'
+import { common } from '@genshin-optimizer/gi/wr'
 import { useContext, useDeferredValue, useEffect, useMemo } from 'react'
 import type { TeamData } from '../Context/DataContext'
 import { TeamCharacterContext } from '../Context/TeamCharacterContext'
@@ -18,7 +20,6 @@ import type CharacterSheet from '../Data/Characters/CharacterSheet'
 import { resonanceData } from '../Data/Resonance'
 import { getWeaponSheet } from '../Data/Weapons'
 import WeaponSheet from '../Data/Weapons/WeaponSheet'
-import { common } from '../Formula'
 import type { CharInfo } from '../Formula/api'
 import {
   dataObjForArtifact,
@@ -27,7 +28,6 @@ import {
   mergeData,
   uiDataForTeam,
 } from '../Formula/api'
-import type { Data } from '../Formula/type'
 import { getArtifactData } from '../PageTeam/CharacterDisplay/Tabs/TabTheorycraft/optimizeTc'
 
 type TeamDataBundle = {

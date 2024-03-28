@@ -1,20 +1,20 @@
 import { objKeyMap, range } from '@genshin-optimizer/common/util'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
-import { input } from '../../../Formula'
-import type { Data } from '../../../Formula/type'
+import type { Data } from '@genshin-optimizer/gi/wr'
 import {
   constant,
   equal,
   greaterEq,
   infoMut,
+  input,
   lookup,
   naught,
   percent,
   prod,
   subscript,
   sum,
-} from '../../../Formula/utils'
+} from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import type { ICharacterSheet } from '../ICharacterSheet.d'
@@ -101,15 +101,17 @@ const [condTidalIllusionPath, condTidalIllusion] = cond(key, 'TidalIllusion')
 
 const lightfallSwordStacks = range(1, 30)
 const lightfallSwordBonusScaling = prod(
-  subscript(input.total.burstIndex, dm.burst.dmgPerStack, {
+  infoMut(subscript(input.total.burstIndex, dm.burst.dmgPerStack), {
     name: ct.ch('burstC.bonusScaling'),
     unit: '%',
     variant: 'physical',
   }),
-  lookup(
-    condLightfallSword,
-    objKeyMap(lightfallSwordStacks, (stack) => constant(stack)),
-    naught,
+  infoMut(
+    lookup(
+      condLightfallSword,
+      objKeyMap(lightfallSwordStacks, (stack) => constant(stack)),
+      naught
+    ),
     { name: ct.ch('burstC.name') }
   )
 )
@@ -138,10 +140,12 @@ const physical_dmg_ = greaterEq(
   equal('on', condTidalIllusion, percent(dm.constellation1.physInc))
 )
 
-const c4_sword_dmg_ = greaterEq(
-  input.constellation,
-  4,
-  equal(condC4, 'on', constant(dm.constellation4.dmgInc)),
+const c4_sword_dmg_ = infoMut(
+  greaterEq(
+    input.constellation,
+    4,
+    equal(condC4, 'on', constant(dm.constellation4.dmgInc))
+  ),
   { name: ct.ch('c4C.dmgBonus') }
 )
 const lightSwordAdditional: Data = {

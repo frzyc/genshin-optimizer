@@ -60,7 +60,7 @@ function CharacterEditorContent({
     return {
       data: charUIData,
       teamData,
-      oldData: undefined,
+      compareData: undefined,
     }
   }, [charUIData, teamData])
 

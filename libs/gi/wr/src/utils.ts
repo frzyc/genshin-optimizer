@@ -22,7 +22,7 @@ type Str = string | undefined | StrNode
 type N_S = Num | Str
 type AnyNode = NumNode | StrNode
 
-export const todo: OptNode = constant(NaN, { name: 'TODO' })
+export const todo: OptNode = constant(NaN, { path: 'TODO' })
 export const one = percent(1),
   naught = percent(0)
 export const zero = constant(0)
@@ -51,32 +51,51 @@ export function percent(value: number, info?: Info): ConstantNode<number> {
   if (value <= -Number.MAX_VALUE / 100) value = -Infinity
   return constant(value, { unit: '%', ...info })
 }
+
+export type InfoExtra = {
+  name?: any //Displayable
+  icon?: any //Displayable
+  textSuffix?: any //Displayable
+}
+export const infoManager: Record<string, InfoExtra> = {}
+
+// Generate a key to reference & lookup data later
+let pathCount = 0
+const getPath = () => `path_${pathCount++}`
+
 /** Inject `info` to the node in-place */
-export function infoMut(node: OptNode, info: Info): OptNode
-export function infoMut(node: NumNode, info: Info): NumNode
-export function infoMut(node: StrNode, info: Info): StrNode
-export function infoMut(node: AnyNode, info: Info): AnyNode
-export function infoMut(node: AnyNode, info: Info): AnyNode {
-  if (info) node.info = { ...node.info, ...info }
+export function infoMut(node: OptNode, info: Info & InfoExtra): OptNode
+export function infoMut(node: NumNode, info: Info & InfoExtra): NumNode
+export function infoMut(node: StrNode, info: Info & InfoExtra): StrNode
+export function infoMut(node: AnyNode, info: Info & InfoExtra): AnyNode
+export function infoMut(node: AnyNode, info: Info & InfoExtra): AnyNode {
+  if (info) {
+    const { name, icon, textSuffix, ...infoRest } = info
+    node.info = { ...node.info, ...infoRest }
+    if (name || icon || textSuffix) {
+      node.info.path = node.info!.path ?? getPath()
+      infoManager[node.info.path] = { name, icon, textSuffix }
+    }
+  }
   return node
 }
 
 /** `table[string] ?? defaultNode` */
 export function lookup(
   index: StrNode,
-  table: Dict<string, NumNode>,
+  table: Record<string, NumNode>,
   defaultV: Num | 'none',
   info?: Info
 ): LookupNode<NumNode>
 export function lookup(
   index: StrNode,
-  table: Dict<string, StrNode>,
+  table: Record<string, StrNode>,
   defaultV: Str | 'none',
   info?: Info
 ): LookupNode<StrNode>
 export function lookup(
   index: StrNode,
-  table: Dict<string, AnyNode>,
+  table: Record<string, AnyNode>,
   defaultV: N_S | 'none',
   info?: Info
 ): LookupNode<AnyNode> {

@@ -15,6 +15,7 @@ import {
   handleArtSetExclusion,
 } from '@genshin-optimizer/gi/db'
 import { useDatabase, useOptConfig } from '@genshin-optimizer/gi/db-ui'
+import { constant } from '@genshin-optimizer/gi/wr'
 import { CheckBox, CheckBoxOutlineBlank, Replay } from '@mui/icons-material'
 import BlockIcon from '@mui/icons-material/Block'
 import CloseIcon from '@mui/icons-material/Close'
@@ -48,7 +49,6 @@ import { TeamCharacterContext } from '../../../../../Context/TeamCharacterContex
 import { getArtSheet, setKeysByRarities } from '../../../../../Data/Artifacts'
 import { artifactDefIcon } from '../../../../../Data/Artifacts/ArtifactSheet'
 import { UIData } from '../../../../../Formula/uiData'
-import { constant } from '../../../../../Formula/utils'
 import type { SetNum } from '../../../../../Types/consts'
 import { bulkCatTotal } from '../../../../../Util/totalUtils'
 import SetInclusionButton from './SetInclusionButton'

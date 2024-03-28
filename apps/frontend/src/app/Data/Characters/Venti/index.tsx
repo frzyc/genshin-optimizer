@@ -1,19 +1,20 @@
 import { allStats } from '@genshin-optimizer/gi/stats'
-import ColorText from '../../../Components/ColoredText'
-import { input, target } from '../../../Formula'
 import {
   constant,
   equal,
   greaterEq,
   infoMut,
+  input,
   lookup,
   naught,
   percent,
   prod,
   subscript,
   sum,
+  target,
   unequal,
-} from '../../../Formula/utils'
+} from '@genshin-optimizer/gi/wr'
+import ColorText from '../../../Components/ColoredText'
 import KeyMap from '../../../KeyMap'
 import { absorbableEle } from '../../../Types/consts'
 import { cond, st, stg } from '../../SheetUtil'

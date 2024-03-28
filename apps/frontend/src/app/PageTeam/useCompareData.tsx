@@ -2,17 +2,17 @@ import { useForceUpdate } from '@genshin-optimizer/common/react-util'
 import { charKeyToLocCharKey } from '@genshin-optimizer/gi/consts'
 import type { ICachedArtifact, ICachedWeapon } from '@genshin-optimizer/gi/db'
 import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
+import type { Data } from '@genshin-optimizer/gi/wr'
 import { useContext, useDeferredValue, useEffect, useMemo } from 'react'
 import { TeamCharacterContext } from '../Context/TeamCharacterContext'
-import type { Data } from '../Formula/type'
 import type { UIData } from '../Formula/uiData'
 import { getTeamDataCalc } from '../ReactHooks/useTeamData'
 import { getArtifactData } from './CharacterDisplay/Tabs/TabTheorycraft/optimizeTc'
 
 /**
- * generate data for the "compare build function", usually used in conjunction with `DataContext.oldData`
+ * generate data for the "compare build function", usually used in conjunction with `DataContext.compareData`
  */
-export default function useOldData(): undefined | UIData {
+export default function useCompareData(): undefined | UIData {
   const database = useDatabase()
   const {
     teamId,

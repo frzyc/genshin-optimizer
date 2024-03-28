@@ -13,12 +13,20 @@ import {
   HydroIcon,
   PyroIcon,
 } from '@genshin-optimizer/gi/svgicons'
+import {
+  equal,
+  greaterEq,
+  infoMut,
+  input,
+  percent,
+  sum,
+  tally,
+  target,
+} from '@genshin-optimizer/gi/wr'
 import ElementCycle from '../Components/ElementCycle'
 import { Translate } from '../Components/Translate'
-import { input, tally, target } from '../Formula'
 import { inferInfoMut } from '../Formula/api'
 import type { UIData } from '../Formula/uiData'
-import { equal, greaterEq, infoMut, percent, sum } from '../Formula/utils'
 import KeyMap from '../KeyMap'
 import type { DocumentSection } from '../Types/sheet'
 import { activeCharBuff, condReadNode, st, stg } from './SheetUtil'

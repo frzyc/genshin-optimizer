@@ -1,19 +1,19 @@
 import { range } from '@genshin-optimizer/common/util'
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
-import { input } from '../../../Formula'
 import {
   compareEq,
   constant,
   equal,
   greaterEq,
   infoMut,
+  input,
   lookup,
   naught,
   percent,
   subscript,
   unequal,
-} from '../../../Formula/utils'
+} from '@genshin-optimizer/gi/wr'
 import KeyMap from '../../../KeyMap'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
@@ -259,10 +259,13 @@ const sheet: ICharacterSheet = {
             }),
           },
           {
-            node: subscript(input.total.skillIndex, dm.skill.atkDecrease, {
-              name: ct.chg(`skill.skillParams.2`),
-              unit: '%',
-            }),
+            node: infoMut(
+              subscript(input.total.skillIndex, dm.skill.atkDecrease),
+              {
+                name: ct.chg(`skill.skillParams.2`),
+                unit: '%',
+              }
+            ),
           },
           {
             text: ct.chg('skill.skillParams.3'),

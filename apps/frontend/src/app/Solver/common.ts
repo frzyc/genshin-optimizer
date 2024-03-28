@@ -13,11 +13,19 @@ import type {
   ArtSetExclusion,
   ArtSetExclusionKey,
 } from '@genshin-optimizer/gi/db'
-import { forEachNodes, mapFormulas } from '../Formula/internal'
-import type { OptNode } from '../Formula/optimization'
-import { allOperations, constantFold } from '../Formula/optimization'
-import type { ConstantNode } from '../Formula/type'
-import { constant, dynRead, max, min, sum, threshold } from '../Formula/utils'
+import type { ConstantNode, OptNode } from '@genshin-optimizer/gi/wr'
+import {
+  allOperations,
+  constant,
+  constantFold,
+  dynRead,
+  forEachNodes,
+  mapFormulas,
+  max,
+  min,
+  sum,
+  threshold,
+} from '@genshin-optimizer/gi/wr'
 
 type MicropassOperation =
   | 'reaffine'

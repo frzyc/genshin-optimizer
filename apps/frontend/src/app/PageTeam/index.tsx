@@ -160,7 +160,7 @@ function Page({ teamId }: { teamId: string }) {
     return {
       data: charUIData,
       teamData,
-      oldData: undefined,
+      compareData: undefined,
     }
   }, [charUIData, teamData])
 

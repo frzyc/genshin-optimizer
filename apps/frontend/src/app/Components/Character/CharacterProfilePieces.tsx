@@ -10,6 +10,7 @@ import {
 import { splash } from '@genshin-optimizer/gi/silly-wisher'
 import { SillyContext } from '@genshin-optimizer/gi/ui'
 import { getLevelString } from '@genshin-optimizer/gi/util'
+import { uiInput as input } from '@genshin-optimizer/gi/wr'
 import { Favorite, FavoriteBorder } from '@mui/icons-material'
 import {
   Badge,
@@ -24,7 +25,6 @@ import { useContext } from 'react'
 import { CharacterContext } from '../../Context/CharacterContext'
 import { DataContext } from '../../Context/DataContext'
 import type { TalentSheetElementKey } from '../../Data/Characters/ICharacterSheet'
-import { uiInput as input } from '../../Formula'
 import { ElementIcon } from '../../KeyMap/StatIcon'
 import useCharacterReducer from '../../ReactHooks/useCharacterReducer'
 import ImgIcon from '../Image/ImgIcon'

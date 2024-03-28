@@ -6,7 +6,6 @@ import type {
   RegionKey,
 } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
-import { input, tally } from '../../../Formula'
 import {
   constant,
   equal,
@@ -14,14 +13,16 @@ import {
   greaterEq,
   greaterEqStr,
   infoMut,
+  input,
   lookup,
   naught,
   one,
   percent,
   sum,
+  tally,
   threshold,
   unequal,
-} from '../../../Formula/utils'
+} from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import type { ICharacterSheet } from '../ICharacterSheet'
@@ -138,7 +139,7 @@ const shotsHit_shot_mult_ = lookup(
 const excessSkillCharges_skill_dmg_ = lookup(
   condSkillCharges,
   objKeyMap(skillChargesArr, (charge) =>
-    charge > 3 ? constant((charge - 3) * dm.skill.addlCharge_dmg_) : undefined
+    charge > 3 ? constant((charge - 3) * dm.skill.addlCharge_dmg_) : naught
   ),
   naught
 )
@@ -201,7 +202,7 @@ const c6Shot_critDMG_ = greaterEq(
     objKeyMap(skillChargesArr, (charge) =>
       charge > 3
         ? percent((charge - 3) * dm.constellation6.shot_critDMG_)
-        : undefined
+        : naught
     ),
     naught
   )

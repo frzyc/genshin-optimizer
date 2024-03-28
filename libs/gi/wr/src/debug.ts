@@ -39,4 +39,5 @@ export function formulaString(formula: NumNode | StrNode): string {
     default:
       assertUnreachable(operation)
   }
+  return ''
 }

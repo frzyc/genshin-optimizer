@@ -7,6 +7,8 @@ import {
 import { allArtifactSlotKeys } from '@genshin-optimizer/gi/consts'
 import type { GeneratedBuild } from '@genshin-optimizer/gi/db'
 import { useOptConfig } from '@genshin-optimizer/gi/db-ui'
+import type { NumNode } from '@genshin-optimizer/gi/wr'
+import { input } from '@genshin-optimizer/gi/wr'
 import {
   CheckBox,
   CheckBoxOutlineBlank,
@@ -45,8 +47,7 @@ import InfoTooltip from '../../../../../../Components/InfoTooltip'
 import { DataContext } from '../../../../../../Context/DataContext'
 import { GraphContext } from '../../../../../../Context/GraphContext'
 import { TeamCharacterContext } from '../../../../../../Context/TeamCharacterContext'
-import { input } from '../../../../../../Formula'
-import type { NumNode } from '../../../../../../Formula/type'
+import { resolveInfo } from '../../../../../../Formula/uiData'
 import OptimizationTargetSelector from '../OptimizationTargetSelector'
 import CustomDot from './CustomDot'
 import CustomTooltip from './CustomTooltip'
@@ -541,9 +542,10 @@ function getNearestPoint(
 }
 
 function getLabelFromNode(node: NumNode, t: TFunction) {
-  return typeof node.info?.name === 'string'
-    ? node.info.name
-    : `${t(`${node.info?.name?.props.ns}:${node.info?.name?.props.key18}`)}${
-        node.info?.textSuffix ? ` ${node.info?.textSuffix}` : ''
+  const { name, textSuffix } = (node.info && resolveInfo(node.info)) ?? {}
+  return typeof name === 'string'
+    ? name
+    : `${t(`${name?.props.ns}:${name?.props.key18}`)}${
+        textSuffix ? ` ${textSuffix}` : ''
       }`
 }

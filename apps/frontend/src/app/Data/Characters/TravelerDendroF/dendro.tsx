@@ -1,18 +1,19 @@
 import { range } from '@genshin-optimizer/common/util'
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
-import ColorText from '../../../Components/ColoredText'
-import { input, target } from '../../../Formula'
-import type { DisplaySub } from '../../../Formula/type'
+import type { DisplaySub } from '@genshin-optimizer/gi/wr'
 import {
   equal,
   greaterEq,
   infoMut,
+  input,
   lookup,
   naught,
   percent,
   prod,
-} from '../../../Formula/utils'
+  target,
+} from '@genshin-optimizer/gi/wr'
+import ColorText from '../../../Components/ColoredText'
 import KeyMap from '../../../KeyMap'
 import type { CharacterSheetKey } from '../../../Types/consts'
 import { cond, st, stg } from '../../SheetUtil'

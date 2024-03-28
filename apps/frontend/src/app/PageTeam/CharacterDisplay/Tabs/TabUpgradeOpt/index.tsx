@@ -34,6 +34,8 @@ import {
   charKeyToLocCharKey,
 } from '@genshin-optimizer/gi/consts'
 import { type ICachedArtifact } from '@genshin-optimizer/gi/db'
+import type { NumNode } from '@genshin-optimizer/gi/wr'
+import { optimize } from '@genshin-optimizer/gi/wr'
 import {
   Suspense,
   useCallback,
@@ -49,8 +51,6 @@ import type { dataContextObj } from '../../../../Context/DataContext'
 import { DataContext } from '../../../../Context/DataContext'
 import { TeamCharacterContext } from '../../../../Context/TeamCharacterContext'
 import { mergeData, uiDataForTeam } from '../../../../Formula/api'
-import { optimize } from '../../../../Formula/optimization'
-import type { NumNode } from '../../../../Formula/type'
 import type { DynStat } from '../../../../Solver/common'
 import { shouldShowDevComponents } from '../../../../Util/Util'
 import MainStatSelectionCard from '../TabOptimize/Components/MainStatSelectionCard'

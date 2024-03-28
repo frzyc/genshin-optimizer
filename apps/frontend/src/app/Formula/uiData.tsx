@@ -7,20 +7,17 @@ import {
 } from '@genshin-optimizer/common/util'
 import type { ArtifactSetKey, WeaponKey } from '@genshin-optimizer/gi/consts'
 import { allArtifactSetKeys, allWeaponKeys } from '@genshin-optimizer/gi/consts'
+import { KeyMap } from '@genshin-optimizer/gi/keymap'
+import { StatIcon } from '@genshin-optimizer/gi/svgicons'
 import { SillyContext } from '@genshin-optimizer/gi/ui/Context/SillyContext'
-import { useContext } from 'react'
-import { uiInput } from '.'
-import ColorText from '../Components/ColoredText'
-import { Translate } from '../Components/Translate'
-import type { CharacterSheetKey } from '../Types/consts'
-import { allCharacterSheetKeys } from '../Types/consts'
-import { allOperations } from './optimization'
 import type {
   ComputeNode,
   Data,
   DataNode,
   DisplaySub,
   Info,
+  InfoExtra,
+  KeyMapPrefix,
   LookupNode,
   MatchNode,
   NumNode,
@@ -29,11 +26,19 @@ import type {
   SubscriptNode,
   ThresholdNode,
   UIInput,
-} from './type'
+} from '@genshin-optimizer/gi/wr'
+import { allOperations, infoManager, uiInput } from '@genshin-optimizer/gi/wr'
+import { useContext } from 'react'
+import ColorText from '../Components/ColoredText'
+import { Translate } from '../Components/Translate'
+import type { CharacterSheetKey } from '../Types/consts'
+import { allCharacterSheetKeys } from '../Types/consts'
+import { artifactTr } from '../names'
 const shouldWrap = true
 
 export function nodeVStr(n: NodeDisplay) {
-  return valueString(n.value, n.info.unit, n.info.fixed)
+  const { unit, fixed } = resolveInfo(n.info)
+  return valueString(n.value, unit, fixed)
 }
 
 export interface NodeDisplay<V = number> {
@@ -508,7 +513,7 @@ function accumulateInfo<V>(operands: ContextNodeDisplay<V>[]): Info {
       case 'invalid':
         return -1
       default:
-        assertUnreachable(variant)
+        assertUnreachable(variant as never)
     }
   }
   const variants = new Set(
@@ -534,16 +539,6 @@ function computeNodeDisplay<V>(node: ContextNodeDisplay<V>): NodeDisplay<V> {
   }
 }
 
-export type KeyMapPrefix =
-  | 'default'
-  | 'base'
-  | 'total'
-  | 'uncapped'
-  | 'custom'
-  | 'char'
-  | 'art'
-  | 'weapon'
-  | 'teamBuff'
 const subKeyMap: Record<KeyMapPrefix, string> = {
   default: 'Default',
   base: 'Base',
@@ -556,17 +551,42 @@ const subKeyMap: Record<KeyMapPrefix, string> = {
   teamBuff: 'Team',
 }
 
+function keyMapInfo(path: string): InfoExtra & Info {
+  if (!KeyMap.getStr(path)) return {}
+  const name = KeyMap.get(path)
+  const unit = KeyMap.unit(path)
+  const variant = KeyMap.getVariant(path)
+
+  const icon = (
+    <StatIcon
+      statKey={path}
+      iconProps={{ fontSize: 'inherit', color: variant }}
+    />
+  )
+  return { name, icon, unit, variant }
+}
+function artSetInfo(path: string): InfoExtra {
+  if (!allArtifactSetKeys.includes(path as ArtifactSetKey)) return {}
+  return { name: artifactTr(path as ArtifactSetKey) }
+}
+export function resolveInfo(info: Info): InfoExtra & Info {
+  const mergedInfo: Info & InfoExtra = {
+    ...info,
+    ...(info.path && artSetInfo(info.path)),
+    ...(info.path && keyMapInfo(info.path)),
+    ...((info.path && infoManager[info.path]) ?? {}),
+  }
+  return mergedInfo
+}
 function createDisplay(node: ContextNodeDisplay<number | string | undefined>) {
   /**
    * TODO Fetch these `Displayable` from `node.field` instead
    * In particular, `node.valueDisplay` and `node.name` below
    */
 
-  const {
-    info: { name, prefix, source, variant, fixed, unit },
-    value,
-    formula,
-  } = node
+  const { info, value, formula } = node
+  const mergedInfo = resolveInfo(info)
+  const { name, prefix, source, variant, fixed, unit } = mergedInfo
   if (typeof value !== 'number') return
   node.valueDisplay = (
     <ColorText color="info">{valueString(value, unit, fixed)}</ColorText>

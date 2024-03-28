@@ -5,9 +5,14 @@ import {
   type ArtifactSlotKey,
 } from '@genshin-optimizer/gi/consts'
 import type { ArtSetExclusion } from '@genshin-optimizer/gi/db'
-import type { OptNode } from '../Formula/optimization'
-import { precompute } from '../Formula/optimization'
-import { dynRead, prod, sum, threshold } from '../Formula/utils'
+import type { OptNode } from '@genshin-optimizer/gi/wr'
+import {
+  dynRead,
+  precompute,
+  prod,
+  sum,
+  threshold,
+} from '@genshin-optimizer/gi/wr'
 import type { ArtifactBuildData, ArtifactsBySlot } from './common'
 import { artSetPerm, exclusionToAllowed, pruneAll } from './common'
 

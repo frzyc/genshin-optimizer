@@ -4,12 +4,16 @@ import type {
   WeaponKey,
 } from '@genshin-optimizer/gi/consts'
 import { SillyContext } from '@genshin-optimizer/gi/ui'
+import type { Info, NumNode, ReadNode, StrNode } from '@genshin-optimizer/gi/wr'
+import {
+  customStringRead,
+  equal,
+  infoMut,
+  input,
+} from '@genshin-optimizer/gi/wr'
 import { useContext } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Translate } from '../Components/Translate'
-import { input } from '../Formula'
-import type { Info, NumNode, ReadNode, StrNode } from '../Formula/type'
-import { customStringRead, equal, infoMut } from '../Formula/utils'
 import type { CharacterSheetKey } from '../Types/consts'
 
 export const st = (strKey: string, values?: object) => (

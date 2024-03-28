@@ -14,8 +14,7 @@ import {
   crittableTransformativeReactions,
   transformativeReactionLevelMultipliers,
 } from '@genshin-optimizer/gi/keymap'
-import KeyMap from '../KeyMap'
-import { artifactTr } from '../names'
+import { info } from './info'
 import { deepNodeClone } from './internal'
 import type { Data, Info, NodeData, NumNode, ReadNode, StrNode } from './type'
 import {
@@ -151,10 +150,10 @@ export type InputPremodKey = (typeof allInputPremodKeys)[number]
 
 const talent = objKeyMap(allTalents, (_) => read())
 const allModStatNodes = objKeyMap(allModStats, (key) =>
-  read(undefined, KeyMap.info(key))
+  read(undefined, info(key))
 )
 const allNonModStatNodes = objKeyMap(allNonModStats, (key) =>
-  read(undefined, KeyMap.info(key))
+  read(undefined, info(key))
 )
 
 for (const ele of allElements) {
@@ -209,7 +208,7 @@ const inputBase = {
   charKey: stringRead(),
   charEle: stringRead(),
   weaponType: stringRead(),
-  lvl: read(undefined, { ...KeyMap.info('level'), prefix: 'char' }),
+  lvl: read(undefined, { ...info('level'), prefix: 'char' }),
   constellation: read(),
   asc: read(),
   special: read(),
@@ -220,7 +219,7 @@ const inputBase = {
     team: stringRead('small'),
   },
 
-  base: objKeyMap(['atk', 'hp', 'def'], (key) => read('add', KeyMap.info(key))),
+  base: objKeyMap(['atk', 'hp', 'def'], (key) => read('add', info(key))),
   customBonus: withDefaultInfo(
     { prefix: 'custom', pivot },
     {
@@ -237,7 +236,7 @@ const inputBase = {
       ...allModStatNodes,
       ...allNonModStatNodes,
       /** Total Crit Rate capped to [0%, 100%] */
-      cappedCritRate: read(undefined, KeyMap.info('critRate_')),
+      cappedCritRate: read(undefined, info('critRate_')),
     }
   ),
 
@@ -251,9 +250,7 @@ const inputBase = {
       })),
     }
   ),
-  artSet: objKeyMap(allArtifactSetKeys, (set) =>
-    read('add', { name: artifactTr(set) })
-  ),
+  artSet: objKeyMap(allArtifactSetKeys, (set) => read('add', { path: set })),
 
   weapon: withDefaultInfo(
     { prefix: 'weapon', asConst },
@@ -272,20 +269,20 @@ const inputBase = {
   ),
 
   enemy: {
-    def: read('add', { ...KeyMap.info('enemyDef_multi_'), pivot }),
-    transDef: read('add', { ...KeyMap.info('enemyDef_multi_'), pivot }),
+    def: read('add', { ...info('enemyDef_multi_'), pivot }),
+    transDef: read('add', { ...info('enemyDef_multi_'), pivot }),
     ...objKeyMap(
       allElements.map((ele) => `${ele}_resMulti_` as const),
       (_) => read()
     ),
 
-    level: read(undefined, KeyMap.info('enemyLevel')),
+    level: read(undefined, info('enemyLevel')),
     ...objKeyValMap(allElements, (ele) => [
       `${ele}_res_`,
-      read(undefined, { prefix: 'base', ...KeyMap.info(`${ele}_enemyRes_`) }),
+      read(undefined, { prefix: 'base', ...info(`${ele}_enemyRes_`) }),
     ]),
     defRed: read(undefined),
-    defIgn: read('add', { ...KeyMap.info('enemyDefIgn_'), pivot }),
+    defIgn: read('add', { ...info('enemyDefIgn_'), pivot }),
   },
 
   hit: {
@@ -293,12 +290,12 @@ const inputBase = {
     ele: stringRead(),
     move: stringRead(),
     hitMode: stringRead(),
-    base: read('add', KeyMap.info('base')),
+    base: read('add', info('base')),
     ampMulti: read(),
     addTerm: read(undefined, { pivot }),
 
-    dmgBonus: read('add', { ...KeyMap.info('dmg_'), pivot }),
-    dmgInc: read('add', KeyMap.info('dmgInc')),
+    dmgBonus: read('add', { ...info('dmg_'), pivot }),
+    dmgInc: read('add', info('dmgInc')),
     dmg: read(),
   },
 }
@@ -312,7 +309,7 @@ markAccu('add', {
   art,
   total: objKeyMap(allModStats, (stat) => total[stat]),
 })
-base.atk.info = { ...KeyMap.info('atk'), prefix: 'base', pivot }
+base.atk.info = { ...info('atk'), prefix: 'base', pivot }
 delete total.critRate_.info!.pivot
 total.critRate_.info!.prefix = 'uncapped'
 
@@ -320,7 +317,7 @@ total.critRate_.info!.prefix = 'uncapped'
 
 /** Base Amplifying Bonus */
 const baseAmpBonus = infoMut(sum(one, prod(25 / 9, frac(total.eleMas, 1400))), {
-  ...KeyMap.info('base_amplifying_multi_'),
+  ...info('base_amplifying_multi_'),
   pivot,
 })
 
@@ -338,14 +335,16 @@ const common: Data = {
       const operands: NumNode[] = []
 
       if (key.endsWith('_enemyRes_'))
-        operands.push(enemy[key.replace(/_enemyRes_$/, '_res_')])
+        operands.push(
+          enemy[key.replace(/_enemyRes_$/, '_res_') as keyof typeof enemy]
+        )
 
       const list = [...operands, customBonus[key]].filter((x) => x)
       return list.length === 1 ? list[0] : sum(...list)
     }),
     ...objKeyMap(allModStats, (key) => {
       const operands: NumNode[] = []
-      const info = KeyMap.info(key)
+      const inf = info(key)
       switch (key) {
         case 'atk':
         case 'def':
@@ -354,7 +353,7 @@ const common: Data = {
           break
         case 'critRate_':
           operands.push(
-            percent(0.05, { ...info, prefix: 'default' }),
+            percent(0.05, { ...inf, prefix: 'default' }),
             lookup(
               hit.move,
               // Plunging buff applies to both collision and shockwave types
@@ -391,7 +390,11 @@ const common: Data = {
           operands.push(percent(1, { ...info, prefix: 'default' }))
           break
       }
-      const list = [...operands, art[key], customBonus[key]].filter((x) => x)
+      const list = [
+        ...operands,
+        art[key as keyof typeof art] as NumNode,
+        customBonus[key],
+      ].filter((x) => x)
       return list.length === 1 ? list[0] : sum(...list)
     }),
   },
@@ -404,7 +407,7 @@ const common: Data = {
       sum(total[talent], -1),
     ]),
     stamina: sum(
-      constant(100, { ...KeyMap.info('stamina'), prefix: 'default' }),
+      constant(100, { ...info('stamina'), prefix: 'default' }),
       customBonus.stamina
     ),
 
@@ -455,7 +458,7 @@ const common: Data = {
             NaN
           )
         ),
-        { ...KeyMap.info('dmgInc'), pivot }
+        { ...info('dmgInc'), pivot }
       ),
       hit.addTerm
     ),
@@ -470,7 +473,7 @@ const common: Data = {
             1.25,
             sum(baseAddBonus, total.spread_dmg_)
           ),
-          KeyMap.info('spread_dmgInc')
+          info('spread_dmgInc')
         ),
         aggravate: equal(
           hit.ele,
@@ -480,7 +483,7 @@ const common: Data = {
             1.15,
             sum(baseAddBonus, total.aggravate_dmg_)
           ),
-          KeyMap.info('aggravate_dmgInc')
+          info('aggravate_dmgInc')
         ),
       },
       naught
@@ -512,11 +515,11 @@ const common: Data = {
           hit.ele,
           {
             hydro: prod(
-              constant(2, KeyMap.info('vaporize_multi_')),
+              constant(2, info('vaporize_multi_')),
               sum(baseAmpBonus, total.vaporize_dmg_)
             ),
             pyro: prod(
-              constant(1.5, KeyMap.info('vaporize_multi_')),
+              constant(1.5, info('vaporize_multi_')),
               sum(baseAmpBonus, total.vaporize_dmg_)
             ),
           },
@@ -526,11 +529,11 @@ const common: Data = {
           hit.ele,
           {
             pyro: prod(
-              constant(2, KeyMap.info('melt_multi_')),
+              constant(2, info('melt_multi_')),
               sum(baseAmpBonus, total.melt_dmg_)
             ),
             cryo: prod(
-              constant(1.5, KeyMap.info('melt_multi_')),
+              constant(1.5, info('melt_multi_')),
               sum(baseAmpBonus, total.melt_dmg_)
             ),
           },

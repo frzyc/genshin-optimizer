@@ -31,6 +31,8 @@ import {
   useOptConfig,
 } from '@genshin-optimizer/gi/db-ui'
 import { getCharData } from '@genshin-optimizer/gi/stats'
+import type { NumNode } from '@genshin-optimizer/gi/wr'
+import { optimize } from '@genshin-optimizer/gi/wr'
 import {
   CheckBox,
   CheckBoxOutlineBlank,
@@ -97,8 +99,6 @@ import { GraphContext } from '../../../../Context/GraphContext'
 import { OptimizationTargetContext } from '../../../../Context/OptimizationTargetContext'
 import { TeamCharacterContext } from '../../../../Context/TeamCharacterContext'
 import { mergeData, uiDataForTeam } from '../../../../Formula/api'
-import { optimize } from '../../../../Formula/optimization'
-import type { NumNode } from '../../../../Formula/type'
 import type { UIData } from '../../../../Formula/uiData'
 import useGlobalError from '../../../../ReactHooks/useGlobalError'
 import useTeamData, { getTeamData } from '../../../../ReactHooks/useTeamData'
@@ -106,7 +106,7 @@ import type { OptProblemInput } from '../../../../Solver'
 import { GOSolver } from '../../../../Solver/GOSolver/GOSolver'
 import { mergeBuilds, mergePlot } from '../../../../Solver/common'
 import { bulkCatTotal } from '../../../../Util/totalUtils'
-import useOldData from '../../../useOldData'
+import useCompareData from '../../../useCompareData'
 import CompareBtn from '../../CompareBtn'
 import AllowChar from './Components/AllowChar'
 import ArtifactSetConfig from './Components/ArtifactSetConfig'
@@ -198,7 +198,7 @@ export default function TabBuild() {
     allowLocationsState,
   } = buildSetting
   const { data } = useContext(DataContext)
-  const oldData = useOldData()
+  const compareData = useCompareData()
   const optimizationTargetNode =
     optimizationTarget && objPathValue(data?.getDisplay(), optimizationTarget)
   const isSM = ['xs', 'sm'].includes(useMediaQueryUp())
@@ -961,7 +961,7 @@ export default function TabBuild() {
         {graphBuilds && (
           <BuildList
             builds={graphBuilds}
-            oldData={oldData}
+            compareData={compareData}
             disabled={!!generatingBuilds}
             getLabel={getGraphBuildLabel}
             setBuilds={setGraphBuilds}
@@ -971,7 +971,7 @@ export default function TabBuild() {
         )}
         <BuildList
           builds={constBuilds}
-          oldData={oldData}
+          compareData={compareData}
           disabled={!!generatingBuilds}
           getLabel={getNormBuildLabel}
           mainStatAssumptionLevel={mainStatAssumptionLevel}
@@ -1068,7 +1068,7 @@ const CharacterCard = memo(function CharacterCard({
 const BuildList = memo(function BuildList({
   builds,
   setBuilds,
-  oldData,
+  compareData,
   disabled,
   getLabel,
   mainStatAssumptionLevel,
@@ -1076,7 +1076,7 @@ const BuildList = memo(function BuildList({
 }: {
   builds: GeneratedBuild[]
   setBuilds?: (builds: GeneratedBuild[] | undefined) => void
-  oldData?: UIData
+  compareData?: UIData
   disabled: boolean
   getLabel: (index: number) => Displayable
   mainStatAssumptionLevel: number
@@ -1106,7 +1106,7 @@ const BuildList = memo(function BuildList({
           key={index + Object.values(build.artifactIds).join()}
           characterKey={characterKey}
           build={build}
-          oldData={oldData}
+          compareData={compareData}
           mainStatAssumptionLevel={mainStatAssumptionLevel}
         >
           <BuildItemWrapper
@@ -1317,14 +1317,14 @@ type Prop = {
   children: React.ReactNode
   characterKey: CharacterKey
   build: GeneratedBuild
-  oldData?: UIData
+  compareData?: UIData
   mainStatAssumptionLevel: number
 }
 const DataContextWrapper = memo(function DataContextWrapper({
   children,
   characterKey,
   build,
-  oldData,
+  compareData,
   mainStatAssumptionLevel,
 }: Prop) {
   const { artifactIds, weaponId } = build
@@ -1360,8 +1360,8 @@ const DataContextWrapper = memo(function DataContextWrapper({
   const providerValue = useMemo(() => {
     const tdc = teamData?.[characterKey]
     if (!tdc) return undefined
-    return { data: tdc.target, teamData, oldData }
-  }, [teamData, oldData, characterKey])
+    return { data: tdc.target, teamData, compareData }
+  }, [teamData, compareData, characterKey])
   if (!providerValue) return null
   return (
     <DataContext.Provider value={providerValue}>
