@@ -78,10 +78,7 @@ export class DataManagerBase<
       | ((v: StorageValue) => Partial<StorageValue> | void),
     notify = true
   ): boolean {
-    const old =
-      this.dataKey === 'optConfigs'
-        ? this.get(key) ?? this.getStorage(key)
-        : this.getStorage(key)
+    const old = this.getStorage(key)
     if (typeof valueOrFunc === 'function' && !old) {
       this.trigger(key, 'invalid', valueOrFunc)
       return false
