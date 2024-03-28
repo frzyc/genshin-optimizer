@@ -61,3 +61,33 @@ export function linspace(
 export function notEmpty<T>(value: T | null | undefined): value is T {
   return value !== null && value !== undefined
 }
+
+/**
+ * 'Paginates' the values from a long list based on the limit on the amount of
+ * items per page and the page number that is currently viewed.
+ *
+ * Creates a new list but copies the values inside by reference (unless
+ * primitive values are used).
+ * @param {Array} list - the list to paginate
+ * @param {number} limit - the limit on the amount of items per page
+ * @param {number} n - the page that is requested
+ */
+export function paginateList<T>(list: T[], limit: number, n: number): T[] {
+  if (limit === 0) {
+    return [];
+  }
+
+  if (n === 0) {
+    throw Error("page number 0 is not allowed for pagination of lists");
+  }
+
+  const result: T[] = new Array(limit);
+  const start = (n - 1) * limit;
+  const end = limit * n;
+
+  for (let i = start; i < end; ++i) {
+    result[i] = list[i];
+  }
+
+  return result;
+}

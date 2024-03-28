@@ -3,6 +3,7 @@ import {
   CharacterProvider,
   DatabaseProvider,
   RelicEditor,
+  CharacterInventory
 } from '@genshin-optimizer/sr/ui'
 import {
   CssBaseline,
@@ -30,6 +31,7 @@ export default function App() {
                 <Character />
                 <RelicEditor />
                 <Optimize />
+                <CharacterInventory/>
                 <Database />
               </Stack>
             </CalcProvider>
