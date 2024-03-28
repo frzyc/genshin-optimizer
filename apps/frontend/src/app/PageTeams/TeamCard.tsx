@@ -173,7 +173,6 @@ function HoverCard({
       characterSheet && {
         character,
         characterSheet,
-        characterDispatch: () => {},
       },
     [character, characterSheet]
   )

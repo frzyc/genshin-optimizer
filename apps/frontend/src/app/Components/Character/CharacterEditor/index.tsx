@@ -12,7 +12,6 @@ import type { ChartData, GraphContextObj } from '../../../Context/GraphContext'
 import { GraphContext } from '../../../Context/GraphContext'
 import { getCharSheet } from '../../../Data/Characters'
 import useCharData from '../../../ReactHooks/useCharData'
-import useCharacterReducer from '../../../ReactHooks/useCharacterReducer'
 import Content from './Content'
 
 export default function CharacterEditor({
@@ -53,8 +52,6 @@ function CharacterEditorContent({
   const teamData = useCharData(characterKey)
   const { target: charUIData } = teamData?.[characterKey] ?? {}
 
-  const characterDispatch = useCharacterReducer(character?.key ?? '')
-
   const dataContextValue: dataContextObj | undefined = useMemo(() => {
     if (!teamData || !charUIData) return undefined
     return {
@@ -69,9 +66,8 @@ function CharacterEditorContent({
     return {
       character,
       characterSheet,
-      characterDispatch,
     }
-  }, [character, characterSheet, characterDispatch])
+  }, [character, characterSheet])
 
   const [chartData, setChartData] = useState<ChartData | undefined>()
   const [graphBuilds, setGraphBuilds] = useState<GeneratedBuild[] | undefined>()

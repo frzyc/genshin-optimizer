@@ -26,7 +26,6 @@ import { CharacterContext } from '../../Context/CharacterContext'
 import { DataContext } from '../../Context/DataContext'
 import type { TalentSheetElementKey } from '../../Data/Characters/ICharacterSheet'
 import { ElementIcon } from '../../KeyMap/StatIcon'
-import useCharacterReducer from '../../ReactHooks/useCharacterReducer'
 import ImgIcon from '../Image/ImgIcon'
 import SqBadge from '../SqBadge'
 import { StarsDisplay } from '../StarDisplay'
@@ -87,9 +86,8 @@ export function CharacterCompactConstSelector() {
     characterSheet,
     character: { key: characterKey },
   } = useContext(CharacterContext)
+  const database = useDatabase()
   const { data } = useContext(DataContext)
-  const characterDispatch = useCharacterReducer(characterKey)
-
   const constellation = data.get(input.constellation).value
 
   return (
@@ -98,7 +96,7 @@ export function CharacterCompactConstSelector() {
         <Grid item xs={4} key={i}>
           <CardActionArea
             onClick={() =>
-              characterDispatch({
+              database.chars.set(characterKey, {
                 constellation: i === constellation ? i - 1 : i,
               })
             }
