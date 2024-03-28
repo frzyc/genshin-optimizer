@@ -19,7 +19,7 @@ export type TeamData = Partial<
 >
 export type dataContextObj = {
   data: UIData
-  oldData?: UIData
+  compareData?: UIData
   teamData: TeamData
 }
 

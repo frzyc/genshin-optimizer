@@ -50,7 +50,7 @@ import { resonanceSheets } from '../../Data/Resonance'
 import type { NodeDisplay } from '../../Formula/uiData'
 
 export function TeamBuffDisplay() {
-  const { data, oldData } = useContext(DataContext)
+  const { data, compareData } = useContext(DataContext)
   const teamBuffs = data.getTeamBuff() as any
   const nodes: Array<[string[], NodeDisplay<number>]> = []
   Object.entries(teamBuffs.total ?? {}).forEach(
@@ -97,8 +97,8 @@ export function TeamBuffDisplay() {
                     <Grid item xs={12} key={JSON.stringify(n.info)}>
                       <NodeFieldDisplay
                         node={n}
-                        oldValue={
-                          objPathValue(oldData?.getTeamBuff(), path)?.value
+                        compareValue={
+                          objPathValue(compareData?.getTeamBuff(), path)?.value
                         }
                       />
                     </Grid>

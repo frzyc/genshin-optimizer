@@ -153,7 +153,7 @@ function StatDisplayContent({
   nodes: ReadNode<number>[]
   extra?: Displayable
 }) {
-  const { data, oldData } = useContext(DataContext)
+  const { data, compareData } = useContext(DataContext)
   return (
     <FieldDisplayList>
       {nodes.map((rn) => (
@@ -161,7 +161,7 @@ function StatDisplayContent({
           component={ListItem}
           key={JSON.stringify(rn.info)}
           node={data.get(rn)}
-          oldValue={oldData?.get(rn)?.value}
+          compareValue={compareData?.get(rn)?.value}
         />
       ))}
       {extra}

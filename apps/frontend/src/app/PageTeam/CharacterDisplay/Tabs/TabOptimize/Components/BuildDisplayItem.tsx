@@ -95,7 +95,7 @@ export default function BuildDisplayItem({
     character: { key: characterKey, equippedArtifacts, equippedWeapon },
   } = useContext(CharacterContext)
   const database = useDatabase()
-  const { data, oldData } = useContext(DataContext)
+  const { data, compareData } = useContext(DataContext)
 
   const [dbDirty, setDbDirty] = useForceUpdate()
   // update when a build is changed
@@ -109,10 +109,10 @@ export default function BuildDisplayItem({
   // update when data is recalc'd
   const weaponNewOld = useMemo(
     () => ({
-      oldId: oldData?.get(input.weapon.id)?.value,
+      oldId: compareData?.get(input.weapon.id)?.value,
       newId: data.get(input.weapon.id).value ?? '',
     }),
-    [data, oldData]
+    [data, compareData]
   )
 
   // state for showing weapon compare modal
@@ -122,10 +122,10 @@ export default function BuildDisplayItem({
   const artifactNewOldBySlot: Record<ArtifactSlotKey, NewOld> = useMemo(
     () =>
       objKeyMap(allArtifactSlotKeys, (slotKey) => ({
-        oldId: oldData?.get(input.art[slotKey].id)?.value,
+        oldId: compareData?.get(input.art[slotKey].id)?.value,
         newId: data.get(input.art[slotKey].id).value ?? '',
       })),
-    [data, oldData]
+    [data, compareData]
   )
 
   // state for showing art compare modal
