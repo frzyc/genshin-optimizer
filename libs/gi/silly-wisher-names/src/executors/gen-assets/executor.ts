@@ -153,7 +153,7 @@ export default async function runExecutor(_options: GenAssetsExecutorSchema) {
     const fileDir = `${localeDir}${langkey}`
     if (!existsSync(fileDir)) mkdirSync(fileDir, { recursive: true })
     const fileName = `${fileDir}/sillyWisher_charNames.json`
-    writeFileSync(fileName, content)
+    writeFileSync(fileName, content + '\n')
     console.log('Generated JSON at', fileName)
   })
   return {
