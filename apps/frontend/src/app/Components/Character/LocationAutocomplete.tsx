@@ -12,7 +12,7 @@ import {
 import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { SillyContext } from '@genshin-optimizer/gi/ui'
 import type { Variant } from '@genshin-optimizer/gi/wr'
-import { BusinessCenter } from '@mui/icons-material'
+import BusinessCenterIcon from '@mui/icons-material/BusinessCenter'
 import type { AutocompleteProps } from '@mui/material'
 import { Box, Skeleton } from '@mui/material'
 import { Suspense, useCallback, useContext, useEffect, useMemo } from 'react'
@@ -80,7 +80,7 @@ export function LocationAutocomplete({
   const toImg = useCallback(
     (key: LocationKey) =>
       key === '' ? (
-        <BusinessCenter />
+        <BusinessCenterIcon />
       ) : (
         <Box sx={{ opacity: charInDb.includes(key) ? undefined : 0.7 }}>
           <CharIconSide

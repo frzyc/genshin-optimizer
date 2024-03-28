@@ -11,7 +11,8 @@ import { splash } from '@genshin-optimizer/gi/silly-wisher'
 import { SillyContext } from '@genshin-optimizer/gi/ui'
 import { getLevelString } from '@genshin-optimizer/gi/util'
 import { uiInput as input } from '@genshin-optimizer/gi/wr'
-import { Favorite, FavoriteBorder } from '@mui/icons-material'
+import FavoriteIcon from '@mui/icons-material/Favorite'
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
 import {
   Badge,
   Box,
@@ -273,7 +274,7 @@ function FavoriteButton() {
           database.charMeta.set(characterKey, { favorite: !favorite })
         }
       >
-        {favorite ? <Favorite /> : <FavoriteBorder />}
+        {favorite ? <FavoriteIcon /> : <FavoriteBorderIcon />}
       </IconButton>
     </Box>
   )

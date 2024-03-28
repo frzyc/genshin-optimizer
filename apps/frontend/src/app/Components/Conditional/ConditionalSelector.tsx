@@ -5,7 +5,8 @@ import {
   layeredAssignment,
 } from '@genshin-optimizer/common/util'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
-import { CheckBox, CheckBoxOutlineBlank } from '@mui/icons-material'
+import CheckBoxIcon from '@mui/icons-material/CheckBox'
+import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank'
 import type { ButtonProps } from '@mui/material'
 import { Button, ButtonGroup, Divider, MenuItem } from '@mui/material'
 import { useCallback, useContext } from 'react'
@@ -106,7 +107,9 @@ function SimpleConditionalSelector({
       color={conditionalValue ? 'success' : 'primary'}
       onClick={() => setConditional(conditionalValue ? undefined : stateKey)}
       disabled={disabled}
-      startIcon={conditionalValue ? <CheckBox /> : <CheckBoxOutlineBlank />}
+      startIcon={
+        conditionalValue ? <CheckBoxIcon /> : <CheckBoxOutlineBlankIcon />
+      }
     >
       {condName} {badge}
     </Button>
@@ -251,7 +254,9 @@ function MultipleConditionalSelector({
                 setConditional(st.path, conditionalValue ? undefined : stateKey)
               }
               size="small"
-              startIcon={isSelected ? <CheckBox /> : <CheckBoxOutlineBlank />}
+              startIcon={
+                isSelected ? <CheckBoxIcon /> : <CheckBoxOutlineBlankIcon />
+              }
               sx={{ borderRadius: 0 }}
             >
               {getCondName(st.name)}

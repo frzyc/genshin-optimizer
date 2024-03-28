@@ -1,5 +1,6 @@
 import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
-import { Female, Male } from '@mui/icons-material'
+import FemaleIcon from '@mui/icons-material/Female'
+import MaleIcon from '@mui/icons-material/Male'
 import { Button } from '@mui/material'
 import { useCallback, useContext } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -19,7 +20,7 @@ export default function TravelerGenderSelect() {
   return (
     <Button
       onClick={toggleGender}
-      startIcon={gender === 'F' ? <Female /> : <Male />}
+      startIcon={gender === 'F' ? <FemaleIcon /> : <MaleIcon />}
     >
       <strong>{t(`gender.${gender}`)}</strong>{' '}
     </Button>

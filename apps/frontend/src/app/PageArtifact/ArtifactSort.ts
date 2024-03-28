@@ -13,7 +13,7 @@ import {
   allSubstatKeys,
 } from '@genshin-optimizer/gi/consts'
 import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
-import Artifact from '../Data/Artifacts/Artifact'
+import { getArtifactEfficiency } from '@genshin-optimizer/gi/util'
 import { probability } from './RollProbability'
 export const artifactSortKeys = [
   'rarity',
@@ -72,9 +72,9 @@ export function artifactSortConfigs(
     level: (art) => art.level ?? 0,
     artsetkey: (art) => art.setKey ?? '',
     efficiency: (art) =>
-      Artifact.getArtifactEfficiency(art, effFilterSet).currentEfficiency,
+      getArtifactEfficiency(art, effFilterSet).currentEfficiency,
     mefficiency: (art) =>
-      Artifact.getArtifactEfficiency(art, effFilterSet).maxEfficiency,
+      getArtifactEfficiency(art, effFilterSet).maxEfficiency,
     probability: (art) => {
       if (!Object.keys(probabilityFilter).length) return 0
       const prob = (art as any).probability
@@ -109,16 +109,20 @@ export function artifactFilterConfigs(
     rvLow: (art, filter, filters) => {
       if (filter === 0) return true
       const { useMaxRV } = filters
-      const { currentEfficiency, maxEfficiency } =
-        Artifact.getArtifactEfficiency(art, effFilterSet)
+      const { currentEfficiency, maxEfficiency } = getArtifactEfficiency(
+        art,
+        effFilterSet
+      )
       const efficiencyToCompare = useMaxRV ? maxEfficiency : currentEfficiency
       return filter <= efficiencyToCompare
     },
     rvHigh: (art, filter, filters) => {
       if (filter === 900) return true
       const { useMaxRV } = filters
-      const { currentEfficiency, maxEfficiency } =
-        Artifact.getArtifactEfficiency(art, effFilterSet)
+      const { currentEfficiency, maxEfficiency } = getArtifactEfficiency(
+        art,
+        effFilterSet
+      )
       const efficiencyToCompare = useMaxRV ? maxEfficiency : currentEfficiency
       return filter >= efficiencyToCompare
     },

@@ -1,3 +1,4 @@
+import { CardHeaderCustom } from '@genshin-optimizer/common/ui'
 import { objMap } from '@genshin-optimizer/common/util'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import type { DisplaySub } from '@genshin-optimizer/gi/wr'
@@ -11,7 +12,6 @@ import { OptimizationTargetContext } from '../../Context/OptimizationTargetConte
 import { getDisplayHeader, getDisplaySections } from '../../Formula/DisplayUtil'
 import type { NodeDisplay } from '../../Formula/uiData'
 import CardDark from '../Card/CardDark'
-import CardHeaderCustom from '../Card/CardHeaderCustom'
 import { FieldDisplayList, NodeFieldDisplay } from '../FieldDisplay'
 import ImgIcon from '../Image/ImgIcon'
 import SqBadge from '../SqBadge'

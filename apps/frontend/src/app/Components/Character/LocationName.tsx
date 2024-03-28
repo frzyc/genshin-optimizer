@@ -1,6 +1,6 @@
 import type { LocationKey } from '@genshin-optimizer/gi/consts'
 import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
-import { BusinessCenter } from '@mui/icons-material'
+import BusinessCenterIcon from '@mui/icons-material/BusinessCenter'
 import type { TypographyProps } from '@mui/material'
 import { Box, Typography } from '@mui/material'
 import { useMemo } from 'react'
@@ -35,7 +35,7 @@ export default function LocationName({
         </Box>
       ) : (
         <span>
-          <BusinessCenter sx={{ verticalAlign: 'text-bottom' }} />{' '}
+          <BusinessCenterIcon sx={{ verticalAlign: 'text-bottom' }} />{' '}
           {t('inventory')}
         </span>
       )}

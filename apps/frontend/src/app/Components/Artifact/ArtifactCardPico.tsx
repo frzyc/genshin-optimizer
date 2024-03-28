@@ -2,8 +2,8 @@ import { artifactAsset, imgAssets } from '@genshin-optimizer/gi/assets'
 import type { ArtifactSlotKey } from '@genshin-optimizer/gi/consts'
 import { allElementWithPhyKeys } from '@genshin-optimizer/gi/consts'
 import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
+import { artifactLevelVariant } from '@genshin-optimizer/gi/ui'
 import { Box, Typography } from '@mui/material'
-import Artifact from '../../Data/Artifacts/Artifact'
 import StatIcon from '../../KeyMap/StatIcon'
 import CardDark from '../Card/CardDark'
 import SqBadge from '../SqBadge'
@@ -69,7 +69,7 @@ export default function ArtifactCardPico({
           }}
         >
           <strong>
-            <SqBadge sx={{ p: 0.5 }} color={Artifact.levelVariant(level)}>
+            <SqBadge sx={{ p: 0.5 }} color={artifactLevelVariant(level)}>
               <strong>+{level}</strong>
             </SqBadge>
           </strong>

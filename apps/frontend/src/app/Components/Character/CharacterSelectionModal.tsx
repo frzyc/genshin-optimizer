@@ -19,8 +19,9 @@ import {
 } from '@genshin-optimizer/gi/db-ui'
 import { SillyContext } from '@genshin-optimizer/gi/ui'
 import { ascensionMaxLevel } from '@genshin-optimizer/gi/util'
-import { Favorite, FavoriteBorder } from '@mui/icons-material'
 import CloseIcon from '@mui/icons-material/Close'
+import FavoriteIcon from '@mui/icons-material/Favorite'
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
 import type { TooltipProps } from '@mui/material'
 import {
   Box,
@@ -324,7 +325,7 @@ function SelectionCard({
                 database.charMeta.set(characterKey, { favorite: !favorite })
               }}
             >
-              {favorite ? <Favorite /> : <FavoriteBorder />}
+              {favorite ? <FavoriteIcon /> : <FavoriteBorderIcon />}
             </IconButton>
           </Box>
           <CardActionArea onClick={onClick}>

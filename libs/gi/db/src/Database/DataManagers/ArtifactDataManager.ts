@@ -357,7 +357,7 @@ export function cachedArtifact(
   let totalUnambiguousRolls = 0
 
   function efficiency(value: number, key: SubstatKey): number {
-    return (value / getSubstatValue(key)) * 100
+    return value / getSubstatValue(key)
   }
 
   substats.forEach((substat, index): void => {

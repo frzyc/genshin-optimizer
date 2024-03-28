@@ -1,5 +1,5 @@
 import { ColorText } from '@genshin-optimizer/common/ui'
-import { objKeyMap, unit } from '@genshin-optimizer/common/util'
+import { getUnitStr, objKeyMap } from '@genshin-optimizer/common/util'
 import type {
   ArtifactRarity,
   ArtifactSetKey,
@@ -102,14 +102,16 @@ export function findBestArtifact(
   // Test all *probable* combinations
   for (const slotKey of allArtifactSlotKeys) {
     for (const mainStatKey of artSlotMainKeys[slotKey]) {
-      const mainStatUnit = unit(mainStatKey)
+      const mainStatUnit = getUnitStr(mainStatKey)
       const mainStatFixed = mainStatUnit === '%' ? 1 : 0
       const mainStatOffset = mainStatUnit === '%' ? 0.1 : 1
       const mainStatScore =
         (slotKeys.has(slotKey) ? 1 : 0) +
         (mainStatKeys.has(mainStatKey) ? 1 : 0)
       const relevantMainStatValues = mainStatValues
-        .filter((value) => value.unit !== '%' || unit(mainStatKey) === '%') // Ignore "%" text if key isn't "%"
+        .filter(
+          (value) => value.unit !== '%' || getUnitStr(mainStatKey) === '%'
+        ) // Ignore "%" text if key isn't "%"
         .map((value) => value.mainStatValue)
       for (const [rarityString, rarityIndividualScore] of Object.entries(
         rarityRates
@@ -307,8 +309,8 @@ export function findBestArtifact(
             {detectedText(substat, 'Sub Stat', (value) => (
               <>
                 {statMap[value.key]}+
-                {artDisplayValue(value.value, unit(value.key))}
-                {unit(value.key)}
+                {artDisplayValue(value.value, getUnitStr(value.key))}
+                {getUnitStr(value.key)}
               </>
             ))}
           </div>
@@ -318,11 +320,11 @@ export function findBestArtifact(
 
   const valueStrFunc = (value: number) => (
     <>
-      {artDisplayValue(value, unit(result.mainStatKey))}
-      {unit(result.mainStatKey)}
+      {artDisplayValue(value, getUnitStr(result.mainStatKey))}
+      {getUnitStr(result.mainStatKey)}
     </>
   )
-  const toFixed = unit(result.mainStatKey) === '%' ? 1 : 0
+  const toFixed = getUnitStr(result.mainStatKey) === '%' ? 1 : 0
   if (
     mainStatValues.find(
       (value) =>

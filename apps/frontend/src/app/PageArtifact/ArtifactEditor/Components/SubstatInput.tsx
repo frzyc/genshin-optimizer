@@ -1,11 +1,10 @@
-import { clamp } from '@genshin-optimizer/common/util'
+import { clamp, getUnitStr } from '@genshin-optimizer/common/util'
 import {
   allSubstatKeys,
   artSubstatRollData,
 } from '@genshin-optimizer/gi/consts'
 import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
 import type { ISubstat } from '@genshin-optimizer/gi/good'
-import { KeyMap } from '@genshin-optimizer/gi/keymap'
 import { allStats } from '@genshin-optimizer/gi/stats'
 import {
   artDisplayValue,
@@ -56,7 +55,7 @@ export default function SubstatInput({
   } = artifact?.substats[index] ?? {}
 
   const accurateValue = rolls.reduce((a, b) => a + b, 0)
-  const unit = KeyMap.unit(key),
+  const unit = getUnitStr(key),
     rollNum = rolls.length
 
   let error = '',
@@ -228,7 +227,7 @@ export default function SubstatInput({
                   {'Efficiency: '}
                   <PercentBadge
                     valid={true}
-                    max={rollNum * 100}
+                    max={rollNum}
                     value={
                       efficiency
                         ? efficiency

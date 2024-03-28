@@ -1,5 +1,5 @@
 import { CardThemed, SqBadge } from '@genshin-optimizer/common/ui'
-import { unit } from '@genshin-optimizer/common/util'
+import { getUnitStr } from '@genshin-optimizer/common/util'
 import { artifactAsset } from '@genshin-optimizer/gi/assets'
 import type { ICachedWeapon } from '@genshin-optimizer/gi/db'
 import { useBuildTc } from '@genshin-optimizer/gi/db-ui'
@@ -130,8 +130,8 @@ function TcEquip({ buildTcId }: { buildTcId: string }) {
                   >
                     <StatWithUnit statKey={sk} />
                     <span>
-                      {artDisplayValue(number, unit(sk))}
-                      {unit(sk)}
+                      {artDisplayValue(number, getUnitStr(sk))}
+                      {getUnitStr(sk)}
                     </span>
                   </Box>
                 ))}

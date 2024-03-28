@@ -30,7 +30,7 @@ export default function SubstatEfficiencyDisplayCard({
         <Grid item xs="auto">
           <PercentBadge
             valid={valid}
-            max={900}
+            max={9}
             value={valid ? efficiency : 'ERR'}
           />
         </Grid>

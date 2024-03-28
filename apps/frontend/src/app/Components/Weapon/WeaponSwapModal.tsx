@@ -13,7 +13,7 @@ import type {
 import { allRarityKeys } from '@genshin-optimizer/gi/consts'
 import { initialWeapon } from '@genshin-optimizer/gi/db'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
-import { Add } from '@mui/icons-material'
+import AddIcon from '@mui/icons-material/Add'
 import CloseIcon from '@mui/icons-material/Close'
 import StarRoundedIcon from '@mui/icons-material/StarRounded'
 import {
@@ -233,7 +233,7 @@ export default function WeaponSwapModal({
               fullWidth
               onClick={() => setnewWeaponModalShow(true)}
               color="info"
-              startIcon={<Add />}
+              startIcon={<AddIcon />}
             >
               {t('page_weapon:addWeapon')}
             </Button>

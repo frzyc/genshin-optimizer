@@ -5,7 +5,9 @@ import { allElementWithPhyKeys } from '@genshin-optimizer/gi/consts'
 import type { Team } from '@genshin-optimizer/gi/db'
 import { useDatabase, useTeam } from '@genshin-optimizer/gi/db-ui'
 import { KeyMap } from '@genshin-optimizer/gi/keymap'
-import { CheckBox, CheckBoxOutlineBlank, ExpandMore } from '@mui/icons-material'
+import CheckBoxIcon from '@mui/icons-material/CheckBox'
+import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank'
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import {
   Box,
   Button,
@@ -69,7 +71,7 @@ export function EnemyExpandCard({ teamId }: { teamId: string }) {
               size="small"
               sx={{ marginLeft: 0 }}
             >
-              <ExpandMore />
+              <ExpandMoreIcon />
             </ExpandButton>
           </Box>
         </CardContent>
@@ -193,7 +195,11 @@ export function EnemyEditor({
                   })
                 }
                 startIcon={
-                  elementImmunity ? <CheckBox /> : <CheckBoxOutlineBlank />
+                  elementImmunity ? (
+                    <CheckBoxIcon />
+                  ) : (
+                    <CheckBoxOutlineBlankIcon />
+                  )
                 }
               >
                 Immunity
