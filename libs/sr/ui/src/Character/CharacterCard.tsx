@@ -4,15 +4,8 @@ import { ICachedSroCharacter } from '@genshin-optimizer/sr/db'
 
 export function CharacterCard({ character }: { character: ICachedSroCharacter }) {
   if (!character) {
-    console.log("NO CHARACTER");
-    return (
-      <Stack>
-        <CardThemed>
-          <CardContent>
-          </CardContent>
-        </CardThemed>
-      </Stack>
-    );
+    console.error("NO CHARACTER"); /* we should prevent rendering this in the calling component */
+    return (<div />);
   }
 
   return (

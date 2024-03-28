@@ -1,30 +1,35 @@
 import { CardThemed } from '@genshin-optimizer/common/ui'
-import { CardContent, Container, Pagination, Stack, Typography } from '@mui/material'
-import { CharacterDataManager, ICachedSroCharacter } from '@genshin-optimizer/sr/db'
+import { Box, CardContent, Container, Pagination } from '@mui/material'
 import { CharacterCard, useDatabaseContext } from '@genshin-optimizer/sr/ui'
+import { useState } from 'react'
+import { paginateList } from '@genshin-optimizer/common/util'
 
 export function CharacterInventory() {
   const { database } = useDatabaseContext()
+  const pageLimit = 10;
+  const characters = database.chars.values;
+  const [pageNumber, setPageNumber] = useState(1);
 
-  const characterCards = database.chars.values.map((char: ICachedSroCharacter, index) => {
-    let name = char.key
-    let eidolon = char.eidolon
-    let level = char.level
-
-    return (
-      <CharacterCard key={index} character={char} />
-    )
-  }).slice(0, 5); /* for now, get the first 5 to see some changes */
+  const onPageChange = (_: React.ChangeEvent<unknown>, n: number) => {
+    setPageNumber(n);
+  };
 
   return (
     <Container>
       <CardThemed bgt='dark'>
         <CardContent>
-          {characterCards}
+          {
+            paginateList(characters, pageLimit, pageNumber).map((c, i) => {
+              return <CharacterCard key={i} character={c} />;
+            })
+          }
         </CardContent>
 
-        <Pagination count={characterCards.length} />
+        <Box display="flex" justifyContent="center" padding={4}>
+          <Pagination count={Math.ceil(characters.length / pageLimit)} onChange={onPageChange} />
+        </Box>
       </CardThemed>
     </Container>
   )
 }
+

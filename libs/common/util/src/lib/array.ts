@@ -2,7 +2,7 @@ export function getArrLastElement<E>(arr: E[]): E | null {
   return arr.length ? arr[arr.length - 1] : null
 }
 
-const rangeGen = function* (
+const rangeGen = function*(
   from: number,
   to: number,
   step: number
@@ -66,8 +66,8 @@ export function notEmpty<T>(value: T | null | undefined): value is T {
  * 'Paginates' the values from a long list based on the limit on the amount of
  * items per page and the page number that is currently viewed.
  *
- * Creates a new list but copies the values inside by reference (unless
- * primitive values are used).
+ * Uses Array.prototype.slice for creating a new array. Beware, this function
+ * does not deep clone.
  * @param {Array} list - the list to paginate
  * @param {number} limit - the limit on the amount of items per page
  * @param {number} n - the page that is requested
@@ -81,13 +81,8 @@ export function paginateList<T>(list: T[], limit: number, n: number): T[] {
     throw Error("page number 0 is not allowed for pagination of lists");
   }
 
-  const result: T[] = new Array(limit);
   const start = (n - 1) * limit;
   const end = limit * n;
 
-  for (let i = start; i < end; ++i) {
-    result[i] = list[i];
-  }
-
-  return result;
+  return list.slice(start, end);
 }
