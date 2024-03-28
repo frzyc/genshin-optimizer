@@ -1,19 +1,19 @@
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
-import { input } from '../../../Formula/index'
 import {
   compareEq,
   constant,
   equal,
   greaterEq,
   infoMut,
+  input,
   min,
   one,
   percent,
   prod,
   subscript,
   sum,
-} from '../../../Formula/utils'
+} from '@genshin-optimizer/gi/wr'
 import KeyMap from '../../../KeyMap'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
@@ -94,11 +94,13 @@ const nodeC2 = greaterEq(
 const [condSkillPath, condSkill] = cond(key, 'skill')
 
 const [condBurstPath, condBurst] = cond(key, 'burst')
-const nodeC4 = compareEq(
-  greaterEq(input.constellation, 4, equal(condBurst, 'on', 1)),
-  1,
-  dm.constellation4.dmg_,
-  one,
+const nodeC4 = infoMut(
+  compareEq(
+    greaterEq(input.constellation, 4, equal(condBurst, 'on', 1)),
+    1,
+    dm.constellation4.dmg_,
+    one
+  ),
   { name: st('dmgMult.skill'), unit: '%' }
 )
 

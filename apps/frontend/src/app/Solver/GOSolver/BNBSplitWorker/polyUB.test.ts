@@ -1,17 +1,17 @@
 import { cartesian } from '@genshin-optimizer/common/util'
-import type { OptNode } from '../../../Formula/optimization'
-import { precompute } from '../../../Formula/optimization'
+import type { OptNode } from '@genshin-optimizer/gi/wr'
 import {
   constant,
   customRead,
   frac,
   max,
   min,
+  precompute,
   prod,
   res,
   sum,
   threshold,
-} from '../../../Formula/utils'
+} from '@genshin-optimizer/gi/wr'
 import type { ArtifactsBySlot, DynStat } from '../../common'
 import type { Linear } from './linearUB'
 import { linearUB } from './linearUB'

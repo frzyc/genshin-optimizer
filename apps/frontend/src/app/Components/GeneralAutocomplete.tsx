@@ -1,3 +1,4 @@
+import type { Variant } from '@genshin-optimizer/gi/wr'
 import { Favorite } from '@mui/icons-material'
 import type {
   AutocompleteProps,
@@ -15,7 +16,6 @@ import {
   useTheme,
 } from '@mui/material'
 import { Suspense, useMemo } from 'react'
-import type { Variant } from '../Formula/type'
 import ColorText from './ColoredText'
 /**
  * NOTE: the rationale behind toImg/toExlabel/toExItemLabel, is because `options` needs to be serializable, and having JSX in there will disrupt seralizability.

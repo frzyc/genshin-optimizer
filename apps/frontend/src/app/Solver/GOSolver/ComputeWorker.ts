@@ -1,6 +1,6 @@
+import type { OptNode } from '@genshin-optimizer/gi/wr'
+import { optimize, precompute } from '@genshin-optimizer/gi/wr'
 import type { Interim, Setup } from '..'
-import type { OptNode } from '../../Formula/optimization'
-import { optimize, precompute } from '../../Formula/optimization'
 import type {
   ArtifactBuildData,
   ArtifactsBySlot,

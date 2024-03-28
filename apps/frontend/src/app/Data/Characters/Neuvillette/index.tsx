@@ -5,10 +5,10 @@ import type {
   RegionKey,
 } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
-import { input } from '../../../Formula'
 import {
   greaterEq,
   infoMut,
+  input,
   lookup,
   naught,
   one,
@@ -16,7 +16,7 @@ import {
   prod,
   threshold,
   unequal,
-} from '../../../Formula/utils'
+} from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import type { ICharacterSheet } from '../ICharacterSheet'

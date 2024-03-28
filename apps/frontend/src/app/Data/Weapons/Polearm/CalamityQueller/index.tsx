@@ -2,14 +2,15 @@ import { objKeyMap, range } from '@genshin-optimizer/common/util'
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
 import { allElementKeys } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
-import { input } from '../../../../Formula'
 import {
   compareEq,
   constant,
+  infoMut,
+  input,
   lookup,
   prod,
   subscript,
-} from '../../../../Formula/utils'
+} from '@genshin-optimizer/gi/wr'
 import { cond, st, trans } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
@@ -35,12 +36,12 @@ const atkInc = prod(
   compareEq(
     input.charKey,
     input.activeCharKey,
-    constant(1, { name: trm('active') }),
-    constant(2, { name: trm('inactive') })
+    infoMut(constant(1), { name: trm('active') }),
+    infoMut(constant(1), { name: trm('inactive') })
   ),
   lookup(
     condStack,
-    objKeyMap(range(1, 6), (i) => constant(i, { name: st('stacks') })),
+    objKeyMap(range(1, 6), (i) => infoMut(constant(i), { name: st('stacks') })),
     0
   ),
   subscript(input.weapon.refinement, atk_)

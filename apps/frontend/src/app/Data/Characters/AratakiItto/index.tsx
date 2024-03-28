@@ -2,20 +2,21 @@ import { range } from '@genshin-optimizer/common/util'
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
 import { allElementWithPhyKeys } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
-import { input, tally } from '../../../Formula'
 import {
   constant,
   equal,
   equalStr,
   greaterEq,
   infoMut,
+  input,
   lookup,
   min,
   percent,
   prod,
   subscript,
   sum,
-} from '../../../Formula/utils'
+  tally,
+} from '@genshin-optimizer/gi/wr'
 import KeyMap from '../../../KeyMap'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'

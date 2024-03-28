@@ -1,15 +1,15 @@
 import { range } from '@genshin-optimizer/common/util'
 import type { ArtifactSetKey } from '@genshin-optimizer/gi/consts'
-import { input } from '../../../Formula'
-import type { Data } from '../../../Formula/type'
+import type { Data } from '@genshin-optimizer/gi/wr'
 import {
   greaterEq,
+  input,
   lookup,
   naught,
   percent,
   prod,
   sum,
-} from '../../../Formula/utils'
+} from '@genshin-optimizer/gi/wr'
 import KeyMap from '../../../KeyMap'
 import { cond, st, stg, trans } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'

@@ -1,15 +1,16 @@
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
-import { input, target } from '../../../Formula'
-import type { DisplaySub } from '../../../Formula/type'
+import type { DisplaySub } from '@genshin-optimizer/gi/wr'
 import {
   constant,
   equal,
   greaterEq,
   infoMut,
+  input,
   percent,
   prod,
-} from '../../../Formula/utils'
+  target,
+} from '@genshin-optimizer/gi/wr'
 import KeyMap from '../../../KeyMap'
 import type { CharacterSheetKey } from '../../../Types/consts'
 import { cond, st, stg, trans } from '../../SheetUtil'

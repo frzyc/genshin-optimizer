@@ -1,13 +1,13 @@
 import { range } from '@genshin-optimizer/common/util'
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
-import { input } from '../../../Formula'
 import {
   compareEq,
   constant,
   equal,
   greaterEq,
   infoMut,
+  input,
   lookup,
   one,
   percent,
@@ -15,7 +15,7 @@ import {
   subscript,
   sum,
   unequal,
-} from '../../../Formula/utils'
+} from '@genshin-optimizer/gi/wr'
 import KeyMap from '../../../KeyMap'
 import type { INodeFieldDisplay } from '../../../Types/fieldDisplay'
 import { cond, st, stg } from '../../SheetUtil'
@@ -108,7 +108,7 @@ const const5TalentInc = greaterEq(input.constellation, 5, 3)
 const normal_dmgMult = compareEq(
   condSkill,
   'skill',
-  subscript(input.total.skillIndex, dm.skill.dmg_, {
+  infoMut(subscript(input.total.skillIndex, dm.skill.dmg_), {
     name: st('dmgMult.normal'),
     unit: '%',
   }),
@@ -192,7 +192,7 @@ const kindlingEntries = kindlingArrs.map((arr, i) => [
       customDmgNode(
         prod(
           subscript(input.total.autoIndex, arr, { unit: '%' }),
-          constant(dm.constellation6.dmg_, {
+          infoMut(constant(dm.constellation6.dmg_), {
             name: ct.ch('c6Key_'),
             unit: '%',
           }),

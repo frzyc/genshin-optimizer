@@ -4,8 +4,13 @@ import type {
   RegionKey,
 } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
-import { input } from '../../../Formula'
-import { equal, greaterEq, infoMut, percent } from '../../../Formula/utils'
+import {
+  equal,
+  greaterEq,
+  infoMut,
+  input,
+  percent,
+} from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import type { ICharacterSheet } from '../ICharacterSheet.d'

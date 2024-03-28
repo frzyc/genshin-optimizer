@@ -1,3 +1,4 @@
+import { optimize } from '@genshin-optimizer/gi/wr'
 import type {
   Count,
   FinalizeResult,
@@ -7,7 +8,6 @@ import type {
   WorkerCommand,
   WorkerResult,
 } from '..'
-import { optimize } from '../../Formula/optimization'
 import { pruneAll, pruneExclusion } from '../common'
 import { WorkerCoordinator } from '../coordinator'
 

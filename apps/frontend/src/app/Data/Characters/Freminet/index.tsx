@@ -4,22 +4,23 @@ import type {
   ElementKey,
   RegionKey,
 } from '@genshin-optimizer/gi/consts'
+import { KeyMap } from '@genshin-optimizer/gi/keymap'
 import { allStats } from '@genshin-optimizer/gi/stats'
-import { input } from '../../../Formula'
-import type { Data } from '../../../Formula/type'
+import { StatIcon } from '@genshin-optimizer/gi/svgicons'
+import type { Data } from '@genshin-optimizer/gi/wr'
 import {
   compareEq,
   constant,
   equal,
   greaterEq,
   infoMut,
+  input,
   lookup,
   naught,
   one,
   percent,
   prod,
-} from '../../../Formula/utils'
-import KeyMap from '../../../KeyMap'
+} from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import type { ICharacterSheet } from '../ICharacterSheet'
@@ -111,7 +112,7 @@ const [condStalkPath, condStalk] = cond(key, 'stalk')
 const stalkFrost_dmg_ = compareEq(
   condStalk,
   'on',
-  percent(2, { name: ct.ch('frost_dmgMult_') }),
+  infoMut(percent(2), { name: ct.ch('frost_dmgMult_') }),
   one
 )
 
@@ -418,7 +419,15 @@ const sheet: ICharacterSheet = {
             node: infoMut(c1Pressure_critRate_, {
               name: ct.ch('pressure_critRate_'),
               unit: '%',
-              icon: KeyMap.info('critRate_').icon,
+              icon: (
+                <StatIcon
+                  statKey="critRate_"
+                  iconProps={{
+                    fontSize: 'inherit',
+                    color: KeyMap.getVariant('critRate_'),
+                  }}
+                />
+              ),
             }),
           },
         ],

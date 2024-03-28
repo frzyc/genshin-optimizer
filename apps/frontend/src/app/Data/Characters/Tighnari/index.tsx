@@ -4,19 +4,19 @@ import type {
   RegionKey,
 } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
-import { input } from '../../../Formula'
-import type { Data } from '../../../Formula/type'
+import type { Data } from '@genshin-optimizer/gi/wr'
 import {
   constant,
   equal,
   greaterEq,
   infoMut,
+  input,
   lookup,
   min,
   naught,
   percent,
   prod,
-} from '../../../Formula/utils'
+} from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import type { ICharacterSheet } from '../ICharacterSheet.d'

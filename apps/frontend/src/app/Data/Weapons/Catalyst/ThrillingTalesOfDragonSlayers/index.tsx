@@ -1,7 +1,13 @@
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
-import { input, target } from '../../../../Formula'
-import { equal, infoMut, subscript, unequal } from '../../../../Formula/utils'
+import {
+  equal,
+  infoMut,
+  input,
+  subscript,
+  target,
+  unequal,
+} from '@genshin-optimizer/gi/wr'
 import KeyMap from '../../../../KeyMap'
 import { cond, st, stg, trans } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'

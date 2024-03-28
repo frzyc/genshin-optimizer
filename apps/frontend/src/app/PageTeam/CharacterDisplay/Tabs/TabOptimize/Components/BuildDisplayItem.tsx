@@ -23,6 +23,7 @@ import {
   useDatabase,
   useOptConfig,
 } from '@genshin-optimizer/gi/db-ui'
+import { uiInput as input } from '@genshin-optimizer/gi/wr'
 import { Checkroom, ChevronRight } from '@mui/icons-material'
 import CheckBoxIcon from '@mui/icons-material/CheckBox'
 import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank'
@@ -57,7 +58,6 @@ import { CharacterContext } from '../../../../../Context/CharacterContext'
 import { DataContext } from '../../../../../Context/DataContext'
 import { TeamCharacterContext } from '../../../../../Context/TeamCharacterContext'
 import { getCharSheet } from '../../../../../Data/Characters'
-import { uiInput as input } from '../../../../../Formula'
 import ArtifactCard from '../../../../../PageArtifact/ArtifactCard'
 import WeaponCard from '../../../../../PageWeapon/WeaponCard'
 import EquipBuildModal from '../../../Build/EquipBuildModal'

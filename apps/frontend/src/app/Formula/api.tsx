@@ -23,23 +23,31 @@ import type {
 } from '@genshin-optimizer/gi/db'
 import type { ICharacter } from '@genshin-optimizer/gi/good'
 import { getMainStatValue } from '@genshin-optimizer/gi/util'
-import { input, tally } from './index'
-import { deepNodeClone } from './internal'
-import type { Data, DisplaySub, Info, NumNode, ReadNode, StrNode } from './type'
-import type { NodeDisplay } from './uiData'
-import { UIData } from './uiData'
+import type {
+  Data,
+  DisplaySub,
+  Info,
+  NumNode,
+  ReadNode,
+  StrNode,
+} from '@genshin-optimizer/gi/wr'
 import {
   constant,
   customRead,
   data,
+  deepNodeClone,
   infoMut,
+  input,
   none,
   percent,
   prod,
   resetData,
   setReadNodeKeys,
   sum,
-} from './utils'
+  tally,
+} from '@genshin-optimizer/gi/wr'
+import type { NodeDisplay } from './uiData'
+import { UIData } from './uiData'
 const asConst = true as const,
   pivot = true as const
 
@@ -261,10 +269,15 @@ function dataObjForWeapon(weapon: ICachedWeapon): Data {
 /** These read nodes are very context-specific, and cannot be used anywhere else outside of `uiDataForTeam` */
 const teamBuff = setReadNodeKeys(deepNodeClone(input), ['teamBuff']) // Use ONLY by dataObjForTeam
 function uiDataForTeam(
-  teamData: Dict<CharacterKey, Data[]>,
+  teamData: Partial<Record<CharacterKey, Data[]>>,
   gender: GenderKey,
   activeCharKey?: CharacterKey
-): Dict<CharacterKey, { target: UIData; buffs: Dict<CharacterKey, UIData> }> {
+): Partial<
+  Record<
+    CharacterKey,
+    { target: UIData; buffs: Partial<Record<CharacterKey, UIData>> }
+  >
+> {
   // May the goddess of wisdom bless any and all souls courageous
   // enough to attempt for the understanding of this abomination.
 
@@ -277,7 +290,7 @@ function uiDataForTeam(
       {
         targetRef: {} as Data,
         buffs: [] as Data[],
-        calcs: {} as Dict<CharacterKey, Data>,
+        calcs: {} as Partial<Record<CharacterKey, Data>>,
       },
     ])
   )

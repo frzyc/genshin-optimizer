@@ -1,19 +1,21 @@
 import { range } from '@genshin-optimizer/common/util'
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
-import { input, tally, target } from '../../../Formula'
 import {
   constant,
   equal,
   greaterEq,
   infoMut,
+  input,
   lookup,
   naught,
   percent,
   prod,
   subscript,
   sum,
-} from '../../../Formula/utils'
+  tally,
+  target,
+} from '@genshin-optimizer/gi/wr'
 import KeyMap from '../../../KeyMap'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'

@@ -1,5 +1,5 @@
 import type { BuildTc } from '@genshin-optimizer/gi/db'
-import type { OptNode } from '../../../../Formula/optimization'
+import type { OptNode } from '@genshin-optimizer/gi/wr'
 import { optimizeTcUsingNodes } from './optimizeTc'
 
 type WorkerData = {

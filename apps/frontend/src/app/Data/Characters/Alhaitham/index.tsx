@@ -1,7 +1,6 @@
 import { objKeyMap, range } from '@genshin-optimizer/common/util'
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
-import { input } from '../../../Formula'
 import {
   compareEq,
   constant,
@@ -9,13 +8,14 @@ import {
   equalStr,
   greaterEq,
   infoMut,
+  input,
   lookup,
   min,
   naught,
   percent,
   prod,
   unequal,
-} from '../../../Formula/utils'
+} from '@genshin-optimizer/gi/wr'
 import KeyMap from '../../../KeyMap'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'

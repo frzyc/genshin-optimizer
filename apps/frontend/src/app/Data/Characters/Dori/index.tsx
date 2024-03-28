@@ -4,8 +4,6 @@ import type {
   RegionKey,
 } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
-import ColorText from '../../../Components/ColoredText'
-import { input, target } from '../../../Formula'
 import {
   constant,
   equal,
@@ -13,11 +11,14 @@ import {
   greaterEq,
   greaterEqStr,
   infoMut,
+  input,
   min,
   percent,
   prod,
   subscript,
-} from '../../../Formula/utils'
+  target,
+} from '@genshin-optimizer/gi/wr'
+import ColorText from '../../../Components/ColoredText'
 import KeyMap from '../../../KeyMap'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
@@ -168,7 +169,7 @@ const dmgFormulas = {
       customDmgNode(
         prod(
           subscript(input.total.skillIndex, dm.skill.shotDmg, { unit: '%' }),
-          percent(dm.constellation2.toopDmg, {
+          infoMut(percent(dm.constellation2.toopDmg), {
             name: ct.ch('c2MultiplierKey_'),
           }),
           input.total.atk

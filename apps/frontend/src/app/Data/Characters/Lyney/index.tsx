@@ -5,13 +5,13 @@ import type {
   RegionKey,
 } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
-import { input, tally } from '../../../Formula'
-import type { Data } from '../../../Formula/type'
+import type { Data } from '@genshin-optimizer/gi/wr'
 import {
   constant,
   equal,
   greaterEq,
   infoMut,
+  input,
   lookup,
   min,
   naught,
@@ -19,7 +19,8 @@ import {
   prod,
   subscript,
   sum,
-} from '../../../Formula/utils'
+  tally,
+} from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import type { ICharacterSheet } from '../ICharacterSheet.d'
@@ -101,10 +102,12 @@ const dm = {
 
 const [condPropStacksPath, condPropStacks] = cond(key, 'propStacks')
 const propStacksArr = range(1, 5)
-const propStacks = lookup(
-  condPropStacks,
-  objKeyMap(propStacksArr, (stacks) => constant(stacks)),
-  constant(0),
+const propStacks = infoMut(
+  lookup(
+    condPropStacks,
+    objKeyMap(propStacksArr, (stacks) => constant(stacks)),
+    constant(0)
+  ),
   { name: ct.ch('propStacks') }
 )
 

@@ -1,15 +1,15 @@
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
-import ColorText from '../../../Components/ColoredText'
-import { input } from '../../../Formula'
 import {
   equal,
   equalStr,
   greaterEq,
   infoMut,
+  input,
   percent,
   sum,
-} from '../../../Formula/utils'
+} from '@genshin-optimizer/gi/wr'
+import ColorText from '../../../Components/ColoredText'
 import KeyMap from '../../../KeyMap'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'

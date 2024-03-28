@@ -1,13 +1,16 @@
-import type { ElementWithPhyKey, WeaponKey } from '@genshin-optimizer/gi/consts'
+import type {
+  ArtifactSetKey,
+  CharacterSheetKey,
+  ElementWithPhyKey,
+  WeaponKey,
+} from '@genshin-optimizer/gi/consts'
 import type {
   AdditiveReactionsKey,
   AmplifyingReactionsKey,
-  KeyMapPrefix,
   TransformativeReactionsKey,
   Unit,
 } from '@genshin-optimizer/gi/keymap'
-import type { ArtifactSetKey, CharacterSheetKey } from '../Types/consts'
-import type { input, uiInput } from './index'
+import type { input, uiInput } from './formula'
 
 export type NumNode =
   | ComputeNode
@@ -29,10 +32,20 @@ export type StrNode =
   | ConstantNode<string | undefined>
 type AnyNode = NumNode | StrNode
 
-interface Info {
-  name?: Displayable
+export type KeyMapPrefix =
+  | 'default'
+  | 'base'
+  | 'total'
+  | 'uncapped'
+  | 'custom'
+  | 'char'
+  | 'art'
+  | 'weapon'
+  | 'teamBuff'
+
+export type Info = {
+  path?: string
   unit?: Unit
-  icon?: Displayable
   prefix?: KeyMapPrefix
   source?: CharacterSheetKey | WeaponKey | ArtifactSetKey
   variant?: InfoVariant
@@ -42,7 +55,6 @@ interface Info {
   fixed?: number
   isTeamBuff?: boolean
   multi?: number
-  textSuffix?: Displayable
 }
 export type Variant =
   | ElementWithPhyKey
@@ -74,7 +86,7 @@ export interface LookupNode<
   operands:
     | readonly [index: Input]
     | readonly [index: Input, defaultNode: Output]
-  table: Dict<string, Output>
+  table: Record<string, Output>
 }
 export interface DataNode<Output, Leaf extends Output = AnyNode>
   extends Base<Leaf> {

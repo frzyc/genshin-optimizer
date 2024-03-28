@@ -1,12 +1,11 @@
 import { range } from '@genshin-optimizer/common/util'
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
-import ColorText from '../../../Components/ColoredText'
-import { input } from '../../../Formula'
 import {
   constant,
   greaterEq,
   infoMut,
+  input,
   lookup,
   min,
   naught,
@@ -14,7 +13,8 @@ import {
   prod,
   subscript,
   sum,
-} from '../../../Formula/utils'
+} from '@genshin-optimizer/gi/wr'
+import ColorText from '../../../Components/ColoredText'
 import { absorbableEle } from '../../../Types/consts'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
