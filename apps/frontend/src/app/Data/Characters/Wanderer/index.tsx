@@ -94,18 +94,22 @@ const datamine = {
 } as const
 
 const [condAfterSkillPath, condAfterSkill] = cond(key, 'afterSkill')
-const afterSkill_normal_mult_ = compareEq(
-  condAfterSkill,
-  'on',
-  subscript(input.total.skillIndex, datamine.skill.normal_mult),
-  one,
+const afterSkill_normal_mult_ = infoMut(
+  compareEq(
+    condAfterSkill,
+    'on',
+    subscript(input.total.skillIndex, datamine.skill.normal_mult),
+    one
+  ),
   { name: st('dmgMult.normal'), unit: '%' }
 )
-const afterSkill_charged_mult_ = compareEq(
-  condAfterSkill,
-  'on',
-  subscript(input.total.skillIndex, datamine.skill.charged_mult),
-  one,
+const afterSkill_charged_mult_ = infoMut(
+  compareEq(
+    condAfterSkill,
+    'on',
+    subscript(input.total.skillIndex, datamine.skill.charged_mult),
+    one
+  ),
   { name: st('dmgMult.charged'), unit: '%' }
 )
 
