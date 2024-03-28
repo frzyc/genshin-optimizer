@@ -34,7 +34,14 @@ import {
   Stack,
   Typography,
 } from '@mui/material'
-import { useCallback, useContext, useEffect, useMemo, useState } from 'react'
+import {
+  memo,
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+} from 'react'
 import { Trans, useTranslation } from 'react-i18next'
 import SetEffectDisplay from '../../../../../Components/Artifact/SetEffectDisplay'
 import SlotIcon from '../../../../../Components/Artifact/SlotIcon'
@@ -537,33 +544,33 @@ function AllSetAllowExcludeCard({
   )
 }
 const emptyArray = []
-function ArtifactSetCard({
-  setKey,
-  fakeDataContextObj,
-  slotCount,
-  setExclusionSet,
-}: {
-  setKey: ArtifactSetKey
-  fakeDataContextObj: dataContextObj
-  slotCount: Record<ArtifactSlotKey, number>
-  setExclusionSet: ArtSetExclusion[keyof ArtSetExclusion]
-}) {
-  const { t } = useTranslation('sheet')
-  const {
-    teamChar: { optConfigId },
-  } = useContext(TeamCharacterContext)
-  const allow4 = !setExclusionSet?.includes(4)
-  const slots = getNumSlots(slotCount)
-  const sheet = getArtSheet(setKey)
-  /* Assumes that all conditionals are from 4-Set. needs to change if there are 2-Set conditionals */
-  const set4CondNums = useMemo(() => {
-    if (!allow4) return emptyArray
-    return Object.keys(sheet.setEffects).filter((setNumKey) =>
-      sheet.setEffects[setNumKey]?.document.some((doc) => 'states' in doc)
-    )
-  }, [sheet.setEffects, allow4])
-  return useMemo(
-    () => (
+const ArtifactSetCard = memo(
+  function ArtifactSetCard({
+    setKey,
+    fakeDataContextObj,
+    slotCount,
+    setExclusionSet,
+  }: {
+    setKey: ArtifactSetKey
+    fakeDataContextObj: dataContextObj
+    slotCount: Record<ArtifactSlotKey, number>
+    setExclusionSet: ArtSetExclusion[keyof ArtSetExclusion]
+  }) {
+    const { t } = useTranslation('sheet')
+    const {
+      teamChar: { optConfigId },
+    } = useContext(TeamCharacterContext)
+    const allow4 = !setExclusionSet?.includes(4)
+    const slots = getNumSlots(slotCount)
+    const sheet = getArtSheet(setKey)
+    /* Assumes that all conditionals are from 4-Set. needs to change if there are 2-Set conditionals */
+    const set4CondNums = useMemo(() => {
+      if (!allow4) return emptyArray
+      return Object.keys(sheet.setEffects).filter((setNumKey) =>
+        sheet.setEffects[setNumKey]?.document.some((doc) => 'states' in doc)
+      )
+    }, [sheet.setEffects, allow4])
+    return (
       <Grid item key={setKey} xs={1}>
         <CardLight
           sx={{ height: '100%', opacity: slots < 2 ? '50%' : undefined }}
@@ -683,20 +690,16 @@ function ArtifactSetCard({
           )}
         </CardLight>
       </Grid>
-    ),
-    [
-      fakeDataContextObj,
-      optConfigId,
-      set4CondNums,
-      setExclusionSet,
-      setKey,
-      sheet,
-      slotCount,
-      slots,
-      t,
-    ]
-  )
-}
+    )
+  },
+  (prevProps, nextProps) =>
+    prevProps.fakeDataContextObj === nextProps.fakeDataContextObj &&
+    prevProps.setKey === nextProps.setKey &&
+    JSON.stringify(prevProps.slotCount) ===
+      JSON.stringify(nextProps.slotCount) &&
+    JSON.stringify(prevProps.setExclusionSet) ===
+      JSON.stringify(nextProps.setExclusionSet)
+)
 
 function getNumSlots(slotCount: Record<string, number>): number {
   return Object.values(slotCount).reduce((tot, v) => tot + (v ? 1 : 0), 0)

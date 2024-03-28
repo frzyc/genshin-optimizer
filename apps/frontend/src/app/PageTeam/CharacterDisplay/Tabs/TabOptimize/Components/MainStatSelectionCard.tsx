@@ -1,9 +1,10 @@
 import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
+import type { MainStatKey } from '@genshin-optimizer/gi/consts'
 import {
   allElementWithPhyKeys,
   artSlotsData,
 } from '@genshin-optimizer/gi/consts'
-import { useDatabase, useOptConfig } from '@genshin-optimizer/gi/db-ui'
+import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import {
   AtkIcon,
   FlowerIcon,
@@ -18,7 +19,7 @@ import {
   Grid,
   Typography,
 } from '@mui/material'
-import { useContext, useMemo } from 'react'
+import { memo, useContext, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import SlotIcon from '../../../../../Components/Artifact/SlotIcon'
 import BootstrapTooltip from '../../../../../Components/BootstrapTooltip'
@@ -35,57 +36,64 @@ export const artifactsSlotsToSelectMainStats = [
   'circlet',
 ] as const
 
-export default function MainStatSelectionCard({
-  disabled = false,
-  filteredArtIdMap,
-}: {
-  disabled?: boolean
-  filteredArtIdMap: Record<string, boolean>
-}) {
-  const { t } = useTranslation('artifact')
-  const {
-    teamChar: { optConfigId },
-  } = useContext(TeamCharacterContext)
-  const { mainStatKeys } = useOptConfig(optConfigId)!
-  const database = useDatabase()
-  const { mainStatSlotTots, slotTots } = useMemo(() => {
-    const catKeys = {
-      flowerMainStatTots: artSlotsData['flower'].stats,
-      plumeMainStatTots: artSlotsData['plume'].stats,
-      sandsMainStatTots: artSlotsData['sands'].stats,
-      gobletMainStatTots: artSlotsData['goblet'].stats,
-      circletMainStatTots: artSlotsData['circlet'].stats,
-      slotTots: artifactsSlotsToSelectMainStats,
-    } as const
-    const catTotals = bulkCatTotal(catKeys, (ctMap) =>
-      Object.entries(database.arts.data).forEach(([id, art]) => {
-        const { slotKey, mainStatKey } = art
-        if (
-          (artifactsSlotsToSelectMainStats as readonly string[]).includes(
-            slotKey
-          )
-        ) {
-          ctMap.slotTots[slotKey].total++
-          if (filteredArtIdMap[id]) ctMap.slotTots[slotKey].current++
-        }
-        ctMap[`${slotKey}MainStatTots`][mainStatKey].total++
-        if (filteredArtIdMap[id])
-          ctMap[`${slotKey}MainStatTots`][mainStatKey].current++
-      })
-    )
-    return {
-      mainStatSlotTots: {
-        flower: catTotals.flowerMainStatTots,
-        plume: catTotals.plumeMainStatTots,
-        sands: catTotals.sandsMainStatTots,
-        goblet: catTotals.gobletMainStatTots,
-        circlet: catTotals.circletMainStatTots,
-      },
-      slotTots: catTotals.slotTots,
+export default memo(
+  function MainStatSelectionCard({
+    disabled = false,
+    filteredArtIdMap,
+    mainStatKeys,
+  }: {
+    disabled?: boolean
+    filteredArtIdMap: Record<string, boolean>
+    mainStatKeys: {
+      sands: MainStatKey[]
+      goblet: MainStatKey[]
+      circlet: MainStatKey[]
+      flower?: never
+      plume?: never
     }
-  }, [database, filteredArtIdMap])
-  return useMemo(
-    () => (
+  }) {
+    const { t } = useTranslation('artifact')
+    const {
+      teamChar: { optConfigId },
+    } = useContext(TeamCharacterContext)
+    const database = useDatabase()
+    const { mainStatSlotTots, slotTots } = useMemo(() => {
+      const catKeys = {
+        flowerMainStatTots: artSlotsData['flower'].stats,
+        plumeMainStatTots: artSlotsData['plume'].stats,
+        sandsMainStatTots: artSlotsData['sands'].stats,
+        gobletMainStatTots: artSlotsData['goblet'].stats,
+        circletMainStatTots: artSlotsData['circlet'].stats,
+        slotTots: artifactsSlotsToSelectMainStats,
+      } as const
+      const catTotals = bulkCatTotal(catKeys, (ctMap) =>
+        Object.entries(database.arts.data).forEach(([id, art]) => {
+          const { slotKey, mainStatKey } = art
+          if (
+            (artifactsSlotsToSelectMainStats as readonly string[]).includes(
+              slotKey
+            )
+          ) {
+            ctMap.slotTots[slotKey].total++
+            if (filteredArtIdMap[id]) ctMap.slotTots[slotKey].current++
+          }
+          ctMap[`${slotKey}MainStatTots`][mainStatKey].total++
+          if (filteredArtIdMap[id])
+            ctMap[`${slotKey}MainStatTots`][mainStatKey].current++
+        })
+      )
+      return {
+        mainStatSlotTots: {
+          flower: catTotals.flowerMainStatTots,
+          plume: catTotals.plumeMainStatTots,
+          sands: catTotals.sandsMainStatTots,
+          goblet: catTotals.gobletMainStatTots,
+          circlet: catTotals.circletMainStatTots,
+        },
+        slotTots: catTotals.slotTots,
+      }
+    }, [database, filteredArtIdMap])
+    return (
       <Box display="flex" flexDirection="column">
         <Divider />
         <Box display="flex">
@@ -212,15 +220,8 @@ export default function MainStatSelectionCard({
           )
         })}
       </Box>
-    ),
-    [
-      database,
-      disabled,
-      mainStatKeys,
-      mainStatSlotTots,
-      optConfigId,
-      slotTots,
-      t,
-    ]
-  )
-}
+    )
+  },
+  (prevProps, nextProps) =>
+    JSON.stringify(prevProps) === JSON.stringify(nextProps)
+)

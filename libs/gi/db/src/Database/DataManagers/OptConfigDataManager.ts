@@ -1,4 +1,8 @@
-import { deepClone, deepFreeze } from '@genshin-optimizer/common/util'
+import {
+  deepClone,
+  deepFreeze,
+  validateArr,
+} from '@genshin-optimizer/common/util'
 import type {
   ArtifactSetKey,
   ArtifactSlotKey,
@@ -8,6 +12,7 @@ import type {
 import {
   allArtifactSetKeys,
   allArtifactSlotKeys,
+  allLocationCharacterKeys,
   artSlotsData,
 } from '@genshin-optimizer/gi/consts'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
@@ -148,16 +153,20 @@ export class OptConfigDataManager extends DataManager<
     )
       mainStatAssumptionLevel = 0
 
-    const artsKeys = new Set(this.database.arts.keys)
-    artExclusion = uniqueFilterInplace(artExclusion, (id) => artsKeys.has(id))
+    if (!artExclusion || !Array.isArray(artExclusion)) artExclusion = []
+    else
+      artExclusion = [...new Set(artExclusion)].filter((id) =>
+        this.database.arts.keys.includes(id)
+      )
 
-    excludedLocations = uniqueFilterInplace(
+    excludedLocations = validateArr(
       excludedLocations,
-      (k) =>
-        k !== key &&
-        !!this.database.chars.get(this.database.chars.LocationToCharacterKey(k))
+      allLocationCharacterKeys.filter((k) => k !== key),
+      [] // Remove self from list
+    ).filter(
+      (lk) =>
+        this.database.chars.get(this.database.chars.LocationToCharacterKey(lk)) // Remove characters who do not exist in the DB
     )
-
     if (!allowLocationsState) allowLocationsState = 'unequippedOnly'
 
     if (
@@ -320,35 +329,6 @@ function mapFilterInplace<T>(xs: T[], f: (x: T) => T | undefined): T[] {
       a.push(y)
     }
     reuse &&= x !== undefined && y === x
-  }
-  return reuse ? xs : a
-}
-
-/**
- * Like `[...new Set(xs)].filter(f)` but if the elements are all unique and `f`
- * returns true, the original array is returned
- *
- * If`xs` is not an array, `[]` is returned
- *
- * React compares objects by pointer equality, so `[...new Set(xs)].filter(f)`
- * always causes a rerender
- */
-function uniqueFilterInplace<T>(xs: T[], f: (x: T) => boolean): T[] {
-  if (!Array.isArray(xs)) return []
-  const s = new Set<T>()
-  const a: T[] = []
-  let reuse = true
-  for (const x of xs) {
-    if (s.has(x)) {
-      reuse = false
-      continue
-    }
-    s.add(x)
-    const y = f(x)
-    if (y) {
-      a.push(x)
-    }
-    reuse &&= y
   }
   return reuse ? xs : a
 }

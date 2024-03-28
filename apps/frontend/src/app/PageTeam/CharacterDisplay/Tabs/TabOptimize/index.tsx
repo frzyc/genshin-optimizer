@@ -652,6 +652,7 @@ export default function TabBuild() {
             <MainStatSelectionCard
               disabled={generatingBuilds}
               filteredArtIdMap={filteredArtIdMap}
+              mainStatKeys={mainStatKeys}
             />
           </CardLight>
         </Grid>
