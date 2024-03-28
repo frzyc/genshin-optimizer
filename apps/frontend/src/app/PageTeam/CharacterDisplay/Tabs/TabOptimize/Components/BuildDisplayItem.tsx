@@ -39,6 +39,7 @@ import {
 } from '@mui/material'
 import {
   Suspense,
+  memo,
   useCallback,
   useContext,
   useEffect,
@@ -77,9 +78,11 @@ type BuildDisplayItemProps = {
   allowLocationsState: AllowLocationsState
 }
 
+export default memo(BuildDisplayItem)
+
 // TODO: Translation for build UI
 //for displaying each artifact build
-export default function BuildDisplayItem({
+function BuildDisplayItem({
   label,
   extraButtonsRight,
   extraButtonsLeft,

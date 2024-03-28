@@ -4,7 +4,13 @@ import { objMap } from '@genshin-optimizer/common/util'
 import { useDatabase, useOptConfig } from '@genshin-optimizer/gi/db-ui'
 import CloseIcon from '@mui/icons-material/Close'
 import DifferenceIcon from '@mui/icons-material/Difference'
-import { Button, Skeleton, Tooltip, Typography } from '@mui/material'
+import {
+  Button,
+  IconButton,
+  Skeleton,
+  Tooltip,
+  Typography,
+} from '@mui/material'
 import { Suspense, useContext, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { CharacterContext } from '../Context/CharacterContext'
@@ -150,9 +156,9 @@ function BuildDisplay({
               </>
             }
             extraButtonsRight={
-              <Button size="small" color="error" onClick={onHide}>
+              <IconButton onClick={onHide}>
                 <CloseIcon />
-              </Button>
+              </IconButton>
             }
             mainStatAssumptionLevel={mainStatAssumptionLevel}
             allowLocationsState={allowLocationsState}
