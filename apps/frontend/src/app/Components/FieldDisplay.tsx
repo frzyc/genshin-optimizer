@@ -14,7 +14,6 @@ import {
   List,
   ListItem,
   Skeleton,
-  Tooltip,
   Typography,
   styled,
 } from '@mui/material'
@@ -133,15 +132,13 @@ export function NodeFieldDisplay({
       <>
         <span>{valueString(nodeValue, node.info.unit, node.info.fixed)}</span>
         {Math.abs(diff) > 0.0001 && (
-          <Tooltip
+          <BootstrapTooltip
             title={
               <Typography>
                 Compare to{' '}
-                <ColorText color={diff > 0 ? 'success' : 'error'}>
-                  <strong>
-                    {valueString(compareValue, node.info.unit, node.info.fixed)}
-                  </strong>
-                </ColorText>
+                <strong>
+                  {valueString(compareValue, node.info.unit, node.info.fixed)}
+                </strong>
               </Typography>
             }
           >
@@ -166,7 +163,7 @@ export function NodeFieldDisplay({
                 </span>
               )}
             </ColorText>
-          </Tooltip>
+          </BootstrapTooltip>
         )}
       </>
     )
