@@ -297,7 +297,7 @@ function TeamCharacterSelector({
     return {
       data: charUIData,
       teamData,
-      oldData: undefined,
+      compareData: undefined,
     }
   }, [charUIData, teamData])
   return (
@@ -396,7 +396,7 @@ function CharSelButton({
     return {
       data: charUIData,
       teamData,
-      oldData: undefined,
+      compareData: undefined,
     }
   }, [charUIData, teamData])
 
