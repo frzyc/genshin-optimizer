@@ -103,6 +103,7 @@ export function CharacterMultiAutocomplete({
           (ck): GeneralAutocompleteOption<CharacterKey> => ({
             key: ck,
             label: toLabel(ck, silly),
+            alternateNames: silly ? [toLabel(ck, !silly)] : undefined,
             favorite: charIsFavorite(ck),
             color: toVariant(ck),
           })
