@@ -108,6 +108,7 @@ export function artifactFilterConfigs(
     // When RV is set to 0/900, allow all, just incase someone is doing some teehee haha with negative substats or stupid rolls
     rvLow: (art, filter, filters) => {
       if (filter === 0) return true
+      filter = filter / 100
       const { useMaxRV } = filters
       const { currentEfficiency, maxEfficiency } = getArtifactEfficiency(
         art,
@@ -118,6 +119,7 @@ export function artifactFilterConfigs(
     },
     rvHigh: (art, filter, filters) => {
       if (filter === 900) return true
+      filter = filter / 100
       const { useMaxRV } = filters
       const { currentEfficiency, maxEfficiency } = getArtifactEfficiency(
         art,
