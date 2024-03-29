@@ -6,6 +6,7 @@ import type {
 import { allSubstatKeys, artMaxLevel } from '@genshin-optimizer/gi/consts'
 import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
 import type { MainStatKey, SubstatKey } from '@genshin-optimizer/gi/dm'
+import type { ArtifactBuildData, DynStat } from '@genshin-optimizer/gi/solver'
 import {
   getMainStatValue,
   getRollsRemaining,
@@ -18,7 +19,6 @@ import {
   zero_deriv,
   type OptNode,
 } from '@genshin-optimizer/gi/wr'
-import type { ArtifactBuildData, DynStat } from '../../../../Solver/common'
 import { crawlUpgrades, quadrinomial } from './mathUtil'
 import { gaussianPE, mvnPE_bad } from './mvncdf'
 

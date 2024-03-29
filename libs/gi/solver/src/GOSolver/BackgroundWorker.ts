@@ -1,5 +1,4 @@
 import { assertUnreachable } from '@genshin-optimizer/common/util'
-import type { WorkerCommand, WorkerResult } from '..'
 import type { RequestFilter } from '../common'
 import {
   artSetPerm,
@@ -7,6 +6,7 @@ import {
   filterArts,
   filterFeasiblePerm,
 } from '../common'
+import type { WorkerCommand, WorkerResult } from '../type'
 import { BNBSplitWorker } from './BNBSplitWorker'
 import { ComputeWorker } from './ComputeWorker'
 import { DefaultSplitWorker } from './DefaultSplitWorker'
@@ -45,7 +45,7 @@ async function handleEvent(e: MessageEvent<WorkerCommand>): Promise<void> {
     case 'finalize': {
       computeWorker.refresh(true)
       const { builds, plotData } = computeWorker
-      postMessage({ resultType: 'finalize', builds, plotData })
+      if (plotData) postMessage({ resultType: 'finalize', builds, plotData })
       break
     }
     case 'count': {

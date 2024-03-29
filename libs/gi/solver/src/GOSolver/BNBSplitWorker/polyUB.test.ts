@@ -289,7 +289,7 @@ function doTest(...nodes: OptNode[]) {
   const compute = precompute(nodes, exampleArts.base, (f) => f.path[1], 5)
   cartesian(abd.flower, abd.plume, abd.sands, abd.goblet, abd.circlet).forEach(
     (arts) => {
-      const out = compute(arts)
+      const out = compute(arts as any)
       const stats = { ...exampleArts.base }
       arts.forEach((art) =>
         Object.entries(art.values).forEach(

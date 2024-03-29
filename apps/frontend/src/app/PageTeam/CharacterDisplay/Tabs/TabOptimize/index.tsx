@@ -26,6 +26,8 @@ import {
   useDatabase,
   useOptConfig,
 } from '@genshin-optimizer/gi/db-ui'
+import type { OptProblemInput } from '@genshin-optimizer/gi/solver'
+import { GOSolver, mergeBuilds, mergePlot } from '@genshin-optimizer/gi/solver'
 import { getCharData } from '@genshin-optimizer/gi/stats'
 import type { NumNode } from '@genshin-optimizer/gi/wr'
 import { optimize } from '@genshin-optimizer/gi/wr'
@@ -98,9 +100,6 @@ import { mergeData, uiDataForTeam } from '../../../../Formula/api'
 import type { UIData } from '../../../../Formula/uiData'
 import useGlobalError from '../../../../ReactHooks/useGlobalError'
 import useTeamData, { getTeamData } from '../../../../ReactHooks/useTeamData'
-import type { OptProblemInput } from '../../../../Solver'
-import { GOSolver } from '../../../../Solver/GOSolver/GOSolver'
-import { mergeBuilds, mergePlot } from '../../../../Solver/common'
 import { bulkCatTotal } from '../../../../Util/totalUtils'
 import useCompareData from '../../../useCompareData'
 import CompareBtn from '../../CompareBtn'
