@@ -337,7 +337,7 @@ function uiDataForTeam(
         (x: any) => x.operation,
         (x: NumNode | StrNode, path: string[]) => {
           const info: Info = {
-            ...objPathValue(input, path),
+            ...objPathValue(input, path)?.info,
             source: sourceKeyWithGender,
             prefix: undefined,
             asConst,
