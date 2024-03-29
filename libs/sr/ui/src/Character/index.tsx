@@ -1,5 +1,5 @@
 export * from './BuildDisplay'
 export * from './CharacterAutocomplete'
-export * from './LocationAutocomplete'
 export * from './CharacterCard'
 export * from './CharacterInventory'
+export * from './LocationAutocomplete'

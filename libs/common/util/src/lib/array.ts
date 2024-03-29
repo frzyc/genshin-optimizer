@@ -2,7 +2,7 @@ export function getArrLastElement<E>(arr: E[]): E | null {
   return arr.length ? arr[arr.length - 1] : null
 }
 
-const rangeGen = function*(
+const rangeGen = function* (
   from: number,
   to: number,
   step: number
@@ -74,15 +74,15 @@ export function notEmpty<T>(value: T | null | undefined): value is T {
  */
 export function paginateList<T>(list: T[], limit: number, n: number): T[] {
   if (limit === 0) {
-    return [];
+    return []
   }
 
   if (n === 0) {
-    throw Error("page number 0 is not allowed for pagination of lists");
+    throw Error('page number 0 is not allowed for pagination of lists')
   }
 
-  const start = (n - 1) * limit;
-  const end = limit * n;
+  const start = (n - 1) * limit
+  const end = limit * n
 
-  return list.slice(start, end);
+  return list.slice(start, end)
 }

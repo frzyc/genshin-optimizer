@@ -1,35 +1,73 @@
-import { CardThemed } from '@genshin-optimizer/common/ui'
-import { Box, CardContent, Container, Pagination } from '@mui/material'
-import { CharacterCard, useDatabaseContext } from '@genshin-optimizer/sr/ui'
-import { useState } from 'react'
+import { useMediaQueryUp } from '@genshin-optimizer/common/react-util'
+import { CardThemed, useInfScroll } from '@genshin-optimizer/common/ui'
 import { paginateList } from '@genshin-optimizer/common/util'
+import { CharacterCard, useDatabaseContext } from '@genshin-optimizer/sr/ui'
+import { Box, CardContent, CardHeader, Container, Grid, Pagination, Skeleton, Typography } from '@mui/material'
+import { Suspense, useMemo, useState } from 'react'
+
+const columns = { xs: 1, sm: 2, md: 3, lg: 3, xl: 4 }
+const amtPerSize = { xs: 5, sm: 5, md: 10, lg: 10, xl: 10 }
 
 export function CharacterInventory() {
   const { database } = useDatabaseContext()
-  const pageLimit = 10;
-  const characters = database.chars.values;
-  const [pageNumber, setPageNumber] = useState(1);
+  const { characters } = useMemo(() => {
+    const characters = database.chars.values
+    return { characters }
+  }, [database])
 
-  const onPageChange = (_: React.ChangeEvent<unknown>, n: number) => {
-    setPageNumber(n);
-  };
+  const size = useMediaQueryUp();
+
+  const { numShow, setTriggerElement } = useInfScroll(
+    amtPerSize[size],
+    characters.length
+  );
+
+  const charactersInView = useMemo(
+    () => characters.slice(0, numShow),
+    [characters, numShow]
+  );
 
   return (
-    <Container>
-      <CardThemed bgt='dark'>
-        <CardContent>
-          {
-            paginateList(characters, pageLimit, pageNumber).map((c, i) => {
-              return <CharacterCard key={i} character={c} />;
-            })
-          }
-        </CardContent>
 
-        <Box display="flex" justifyContent="center" padding={4}>
-          <Pagination count={Math.ceil(characters.length / pageLimit)} onChange={onPageChange} />
-        </Box>
-      </CardThemed>
-    </Container>
+    <Suspense
+      fallback={
+        <Skeleton
+          variant='rectangular'
+          sx={{ widht: '100%', height: '100%', minHeight: 300 }}
+        />
+      }
+    >
+      <Container>
+        <CardThemed bgt='dark'>
+          <CardHeader title="Characters" />
+          <CardContent>
+
+            <Box sx={{ overflow: 'auto', maxHeight: '50vh' }}
+              my={1} display="flex" flexDirection="column" gap={1}>
+              <Grid container spacing={1} columns={columns}>
+                {charactersInView.map((c, i) => (
+                  <Grid item key={i} xs={1}>
+                    <CharacterCard character={c} />
+                  </Grid>
+                ))}
+              </Grid>
+
+              {characters.length !== charactersInView.length && (
+                <Skeleton
+                  ref={(node) => {
+                    if (!node) return
+                    setTriggerElement(node)
+                  }}
+                  sx={{ borderRadius: 1 }}
+                  variant="rectangular"
+                  width="100%"
+                  height={100}
+                />
+              )}
+            </Box>
+          </CardContent>
+        </CardThemed>
+      </Container>
+    </Suspense>
   )
 }
-
