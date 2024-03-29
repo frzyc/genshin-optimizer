@@ -1,13 +1,11 @@
 import { CardThemed } from '@genshin-optimizer/common/ui'
 import { CardContent, Stack, Typography } from '@mui/material'
-import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { useLightCone } from '../Hook'
 
 type LightConeCardProps = {
   lightConeId: string
 }
 export function LightConeCard({ lightConeId }: LightConeCardProps) {
-  const database = useDatabase()
   const databaseLightCone = useLightCone(lightConeId)
   const lightCone = databaseLightCone
   return (
