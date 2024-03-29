@@ -2,6 +2,7 @@ import {
   CalcProvider,
   CharacterProvider,
   DatabaseProvider,
+  LightConeInventory,
   RelicEditor,
 } from '@genshin-optimizer/sr/ui'
 import {
@@ -31,6 +32,7 @@ export default function App() {
                 <RelicEditor />
                 <Optimize />
                 <Database />
+                <LightConeInventory />
               </Stack>
             </CalcProvider>
           </CharacterProvider>
