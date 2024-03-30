@@ -3,7 +3,11 @@ import {
   useForceUpdate,
   useMediaQueryUp,
 } from '@genshin-optimizer/common/react-util'
-import { CardThemed, ModalWrapper } from '@genshin-optimizer/common/ui'
+import {
+  CardThemed,
+  ModalWrapper,
+  useConstObj,
+} from '@genshin-optimizer/common/ui'
 import {
   notEmpty,
   objKeyMap,
@@ -182,17 +186,20 @@ export default function TabBuild() {
   const buildSetting = useOptConfig(optConfigId)!
   const {
     plotBase,
-    optimizationTarget,
+    optimizationTarget: optimizationTargetDb,
     mainStatAssumptionLevel,
     allowPartial,
     maxBuildsToShow,
     levelLow,
     levelHigh,
-    builds,
+    builds: buildsDb,
     buildDate,
     useTeammateBuild,
     allowLocationsState,
   } = buildSetting
+
+  const builds = useConstObj(buildsDb)
+  const optimizationTarget = useConstObj(optimizationTargetDb)
   const { data } = useContext(DataContext)
   const compareData = useCompareData()
   const optimizationTargetNode =
@@ -580,6 +587,7 @@ export default function TabBuild() {
     [t]
   )
   const getNormBuildLabel = useCallback((index: number) => `#${index + 1}`, [])
+
   return (
     <Box display="flex" flexDirection="column" gap={1}>
       {noArtifact && <NoArtWarning />}
@@ -1060,7 +1068,7 @@ const CharacterCard = memo(function CharacterCard({
   )
 })
 
-function BuildList({
+const BuildList = memo(function BuildList({
   builds,
   setBuilds,
   compareData,
@@ -1092,52 +1100,33 @@ function BuildList({
   const {
     teamChar: { key: characterKey },
   } = teamCharacterContextValue
-  // Memoize the build list because calculating/rendering the build list is actually very expensive, which will cause longer optimization times.
-  const list = useMemo(
-    () =>
-      !!teamCharacterContextValue && (
-        <Suspense
-          fallback={
-            <Skeleton variant="rectangular" width="100%" height={600} />
-          }
+  return (
+    <Suspense
+      fallback={<Skeleton variant="rectangular" width="100%" height={600} />}
+    >
+      {builds?.map((build, index) => (
+        <DataContextWrapper
+          key={index + Object.values(build.artifactIds).join()}
+          characterKey={characterKey}
+          build={build}
+          compareData={compareData}
+          mainStatAssumptionLevel={mainStatAssumptionLevel}
         >
-          {builds?.map((build, index) => (
-            <DataContextWrapper
-              key={index + Object.values(build.artifactIds).join()}
-              characterKey={characterKey}
-              build={build}
-              compareData={compareData}
-              mainStatAssumptionLevel={mainStatAssumptionLevel}
-            >
-              <BuildItemWrapper
-                index={index}
-                label={getLabel(index)}
-                build={build}
-                disabled={disabled}
-                deleteBuild={setBuilds ? deleteBuild : undefined}
-                mainStatAssumptionLevel={mainStatAssumptionLevel}
-                allowLocationsState={allowLocationsState}
-              />
-            </DataContextWrapper>
-          ))}
-        </Suspense>
-      ),
-    [
-      teamCharacterContextValue,
-      builds,
-      characterKey,
-      compareData,
-      disabled,
-      getLabel,
-      deleteBuild,
-      setBuilds,
-      mainStatAssumptionLevel,
-      allowLocationsState,
-    ]
+          <BuildItemWrapper
+            index={index}
+            label={getLabel(index)}
+            build={build}
+            disabled={disabled}
+            deleteBuild={setBuilds ? deleteBuild : undefined}
+            mainStatAssumptionLevel={mainStatAssumptionLevel}
+            allowLocationsState={allowLocationsState}
+          />
+        </DataContextWrapper>
+      ))}
+    </Suspense>
   )
-  return list
-}
-function BuildItemWrapper({
+})
+const BuildItemWrapper = memo(function BuildItemWrapper({
   index,
   label,
   build,
@@ -1155,32 +1144,34 @@ function BuildItemWrapper({
   allowLocationsState: AllowLocationsState
 }) {
   const { t } = useTranslation('page_character_optimize')
-
+  const extraButtonsLeft = useMemo(() => {
+    return (
+      <>
+        <CopyTcButton build={build} />
+        <CopyBuildButton build={build} />
+        {deleteBuild && (
+          <Button
+            color="error"
+            size="small"
+            startIcon={<DeleteForever />}
+            onClick={() => deleteBuild(index)}
+          >
+            {t('removeBuildButton')}
+          </Button>
+        )}
+      </>
+    )
+  }, [build, deleteBuild, index, t])
   return (
     <BuildDisplayItem
       label={label}
       disabled={disabled}
-      extraButtonsLeft={
-        <>
-          <CopyTcButton build={build} />
-          <CopyBuildButton build={build} />
-          {deleteBuild && (
-            <Button
-              color="error"
-              size="small"
-              startIcon={<DeleteForever />}
-              onClick={() => deleteBuild(index)}
-            >
-              {t('removeBuildButton')}
-            </Button>
-          )}
-        </>
-      }
+      extraButtonsLeft={extraButtonsLeft}
       mainStatAssumptionLevel={mainStatAssumptionLevel}
       allowLocationsState={allowLocationsState}
     />
   )
-}
+})
 function CopyTcButton({ build }: { build: GeneratedBuild }) {
   const [name, setName] = useState('')
   const [showTcPrompt, onShowTcPrompt, OnHideTcPrompt] = useBoolState()
@@ -1332,7 +1323,7 @@ type Prop = {
   compareData?: UIData
   mainStatAssumptionLevel: number
 }
-function DataContextWrapper({
+const DataContextWrapper = memo(function DataContextWrapper({
   children,
   characterKey,
   build,
@@ -1380,4 +1371,4 @@ function DataContextWrapper({
       {children}
     </DataContext.Provider>
   )
-}
+})
