@@ -65,7 +65,7 @@ export default function Character() {
                 <DropdownButton
                   title={`Eidolon Lv. ${character?.eidolon}`}
                   fullWidth={false}
-                  disabled={!character?.eidolon}
+                  disabled={!character}
                 >
                   {allEidolonKeys.map((eidolon) => (
                     <MenuItem
