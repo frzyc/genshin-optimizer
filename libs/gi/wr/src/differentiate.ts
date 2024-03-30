@@ -61,7 +61,7 @@ export function ddx(
       return sum(...f.operands.map((fi) => ddx(fi, binding, x)))
     case 'mul': {
       const ops = f.operands.map((fi, i) =>
-        prod(ddx(fi, binding, x), ...f.operands.filter((v, ix) => ix !== i))
+        prod(ddx(fi, binding, x), ...f.operands.filter((_, ix) => ix !== i))
       )
       return sum(...ops)
     }

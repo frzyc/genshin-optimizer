@@ -289,7 +289,7 @@ function doTest(...nodes: OptNode[]) {
   const compute = precompute(nodes, exampleArts.base, (f) => f.path[1], 5)
   cartesian(abd.flower, abd.plume, abd.sands, abd.goblet, abd.circlet).forEach(
     (arts) => {
-      const out = compute(arts)
+      const out = compute(arts as any)
       const stats = { ...exampleArts.base }
       arts.forEach((art) =>
         Object.entries(art.values).forEach(
@@ -401,10 +401,10 @@ describe('polyUB', () => {
       const compute = precompute([n], {}, (f) => f.path[1], 1)
       fakeArts.values.circlet.forEach((art) => {
         expect(evalPoly(p, art.values)[0]).toBeGreaterThanOrEqual(
-          compute([art])[0]
+          compute([art] as const)[0]
         )
         expect(evalLinear(l, art.values)[0]).toBeGreaterThanOrEqual(
-          compute([art])[0]
+          compute([art] as const)[0]
         )
       })
     })
@@ -443,35 +443,35 @@ describe('polyUB', () => {
       const compute = precompute(nodes, {}, (f) => f.path[1], 1)
       fakeArts.values.circlet.forEach((art) => {
         expect(evalPoly(p, art.values)[0]).toBeGreaterThanOrEqual(
-          compute([art])[0] - prettyMuchZero
+          compute([art] as const)[0] - prettyMuchZero
         )
         expect(evalPoly(p, art.values)[1]).toBeGreaterThanOrEqual(
-          compute([art])[1] - prettyMuchZero
+          compute([art] as const)[1] - prettyMuchZero
         )
         expect(evalPoly(p, art.values)[2]).toBeGreaterThanOrEqual(
-          compute([art])[2] - prettyMuchZero
+          compute([art] as const)[2] - prettyMuchZero
         )
         expect(evalPoly(p, art.values)[3]).toBeGreaterThanOrEqual(
-          compute([art])[3] - prettyMuchZero
+          compute([art] as const)[3] - prettyMuchZero
         )
         expect(evalPoly(p, art.values)[4]).toBeGreaterThanOrEqual(
-          compute([art])[4] - prettyMuchZero
+          compute([art] as const)[4] - prettyMuchZero
         )
 
         expect(evalLinear(l, art.values)[0]).toBeGreaterThanOrEqual(
-          compute([art])[0] - prettyMuchZero
+          compute([art] as const)[0] - prettyMuchZero
         )
         expect(evalLinear(l, art.values)[1]).toBeGreaterThanOrEqual(
-          compute([art])[1] - prettyMuchZero
+          compute([art] as const)[1] - prettyMuchZero
         )
         expect(evalLinear(l, art.values)[2]).toBeGreaterThanOrEqual(
-          compute([art])[2] - prettyMuchZero
+          compute([art] as const)[2] - prettyMuchZero
         )
         expect(evalLinear(l, art.values)[3]).toBeGreaterThanOrEqual(
-          compute([art])[3] - prettyMuchZero
+          compute([art] as const)[3] - prettyMuchZero
         )
         expect(evalLinear(l, art.values)[4]).toBeGreaterThanOrEqual(
-          compute([art])[4] - prettyMuchZero
+          compute([art] as const)[4] - prettyMuchZero
         )
       })
     })
@@ -501,17 +501,17 @@ describe('polyUB', () => {
       const compute = precompute([n, n2], {}, (f) => f.path[1], 1)
       fakeArts.values.circlet.forEach((art) => {
         expect(evalPoly(p, art.values)[0]).toBeGreaterThanOrEqual(
-          compute([art])[0] - prettyMuchZero
+          compute([art] as const)[0] - prettyMuchZero
         )
         expect(evalPoly(p, art.values)[1]).toBeGreaterThanOrEqual(
-          compute([art])[1] - prettyMuchZero
+          compute([art] as const)[1] - prettyMuchZero
         )
 
         expect(evalLinear(l, art.values)[0]).toBeGreaterThanOrEqual(
-          compute([art])[0] - prettyMuchZero
+          compute([art] as const)[0] - prettyMuchZero
         )
         expect(evalLinear(l, art.values)[1]).toBeGreaterThanOrEqual(
-          compute([art])[1] - prettyMuchZero
+          compute([art] as const)[1] - prettyMuchZero
         )
       })
     })
@@ -579,11 +579,11 @@ describe('polyUB', () => {
       const compute = precompute([n], {}, (f) => f.path[1], 1)
       fakeArts.values.circlet.forEach((art) => {
         expect(evalPoly(p, art.values)[0]).toBeGreaterThanOrEqual(
-          compute([art])[0] - prettyMuchZero
+          compute([art] as const)[0] - prettyMuchZero
         )
 
         expect(evalLinear(l, art.values)[0]).toBeGreaterThanOrEqual(
-          compute([art])[0] - prettyMuchZero
+          compute([art] as const)[0] - prettyMuchZero
         )
       })
     })

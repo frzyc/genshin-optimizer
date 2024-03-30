@@ -17,8 +17,8 @@ import type { ArtifactBuildData, ArtifactsBySlot } from './common'
 import { artSetPerm, exclusionToAllowed, pruneAll } from './common'
 
 function* allCombinations(
-  sets: StrictDict<ArtifactSlotKey, ArtifactSetKey[]>
-): Iterable<StrictDict<ArtifactSlotKey, ArtifactSetKey>> {
+  sets: Record<ArtifactSlotKey, ArtifactSetKey[]>
+): Iterable<Record<ArtifactSlotKey, ArtifactSetKey>> {
   for (const flower of sets.flower)
     for (const circlet of sets.circlet)
       for (const goblet of sets.goblet)
@@ -53,7 +53,7 @@ describe('common.ts', () => {
         ...Object.keys(filter),
         ...Object.values(combination),
       ])) {
-        const allowed = exclusionToAllowed(filter[key])
+        const allowed = exclusionToAllowed(filter[key as keyof typeof filter])
         const count = Object.values(combination).filter((x) => x === key).length
         if (count === 1) rainbowCount++
         if (!allowed.has(count)) shouldMatch = false
@@ -88,10 +88,10 @@ describe('common.ts', () => {
     const compute2 = precompute(f2.nodes, f2.arts.base, (f) => f.path[1], 5)
     const truth = cartesian(
       ...allArtifactSlotKeys.map((slot) => f1.arts.values[slot])
-    ).map((aa) => compute1(aa))
+    ).map((aa) => compute1(aa as any))
     const test = cartesian(
       ...allArtifactSlotKeys.map((slot) => f2.arts.values[slot])
-    ).map((aa) => compute2(aa))
+    ).map((aa) => compute2(aa as any))
 
     truth.forEach((trut, i) =>
       trut.forEach((tru, j) => expect(tru).toBeCloseTo(test[i][j]))
