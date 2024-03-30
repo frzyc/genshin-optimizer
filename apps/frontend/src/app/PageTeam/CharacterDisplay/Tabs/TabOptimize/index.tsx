@@ -186,17 +186,20 @@ export default function TabBuild() {
   const buildSetting = useOptConfig(optConfigId)!
   const {
     plotBase,
-    optimizationTarget,
+    optimizationTarget: optimizationTargetDb,
     mainStatAssumptionLevel,
     allowPartial,
     maxBuildsToShow,
     levelLow,
     levelHigh,
-    builds,
+    builds: buildsDb,
     buildDate,
     useTeammateBuild,
     allowLocationsState,
   } = buildSetting
+
+  const builds = useConstObj(buildsDb)
+  const optimizationTarget = useConstObj(optimizationTargetDb)
   const { data } = useContext(DataContext)
   const compareData = useCompareData()
   const optimizationTargetNode =
@@ -584,7 +587,7 @@ export default function TabBuild() {
     [t]
   )
   const getNormBuildLabel = useCallback((index: number) => `#${index + 1}`, [])
-  const constBuilds = useConstObj(builds)
+
   return (
     <Box display="flex" flexDirection="column" gap={1}>
       {noArtifact && <NoArtWarning />}
@@ -970,7 +973,7 @@ export default function TabBuild() {
           />
         )}
         <BuildList
-          builds={constBuilds}
+          builds={builds}
           compareData={compareData}
           disabled={!!generatingBuilds}
           getLabel={getNormBuildLabel}

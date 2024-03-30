@@ -8,7 +8,7 @@ import { useEffect, useState } from 'react'
  * static as long as the JSON stringlization of `objInput`
  * remains the same(even if the reference is different).
  */
-export function useConstObj<T extends object>(objInput: T) {
+export function useConstObj<T extends object | undefined>(objInput: T) {
   const [obj, setobj] = useState(objInput)
   const objStr = JSON.stringify(obj)
   useEffect(() => {
