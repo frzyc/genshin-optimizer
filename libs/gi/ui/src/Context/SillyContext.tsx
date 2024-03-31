@@ -10,13 +10,15 @@ export const SillyContext = createContext({
   setSilly: () => {},
 } as SillyContextObj)
 
-const lsKey = 'silly_optimizer_enabled'
+const lsKey = 'silly_2024'
 
 export function useSilly(): SillyContextObj {
-  const [silly, setSilly] = useState(!!localStorage.getItem(lsKey))
+  const [silly, setSilly] = useState(
+    (localStorage.getItem(lsKey) ?? 'on') === 'on'
+  )
   useEffect(() => {
     if (silly) localStorage.setItem(lsKey, 'on')
-    else localStorage.removeItem(lsKey)
+    else localStorage.setItem(lsKey, 'off')
   }, [silly])
   return useMemo(() => ({ silly, setSilly }), [silly])
 }
