@@ -33,6 +33,7 @@ import {
 import type { OptProblemInput } from '@genshin-optimizer/gi/solver'
 import { GOSolver, mergeBuilds, mergePlot } from '@genshin-optimizer/gi/solver'
 import { getCharData } from '@genshin-optimizer/gi/stats'
+import { SillyContext } from '@genshin-optimizer/gi/ui'
 import type { NumNode } from '@genshin-optimizer/gi/wr'
 import { optimize } from '@genshin-optimizer/gi/wr'
 import {
@@ -585,8 +586,20 @@ export default function TabBuild() {
     ),
     [t]
   )
+  const { silly } = useContext(SillyContext)
   const getNormBuildLabel = useCallback((index: number) => `#${index + 1}`, [])
+  const [runawayCount, setRunAwayCount] = useState(0)
+  const runAway = () =>
+    silly && setRunAwayCount((runawayCount) => runawayCount + 1)
 
+  const { top, left } = useMemo(() => {
+    return runawayCount && runawayCount < 10
+      ? {
+          top: Math.random() * 250 - 125,
+          left: Math.random() * 250 - 230,
+        }
+      : { top: 0, left: 0 }
+  }, [runawayCount])
   return (
     <Box display="flex" flexDirection="column" gap={1}>
       {noArtifact && <NoArtWarning />}
@@ -873,7 +886,7 @@ export default function TabBuild() {
           placement="top"
           title={!optimizationTarget ? t('selectTargetFirst') : ''}
         >
-          <span>
+          <Box sx={{ position: 'relative' }}>
             <Button
               disabled={
                 !characterKey ||
@@ -885,14 +898,21 @@ export default function TabBuild() {
               onClick={
                 generatingBuilds ? () => cancelToken.current() : generateBuilds
               }
+              onMouseOver={runAway}
               startIcon={generatingBuilds ? <Close /> : <TrendingUp />}
-              sx={{ borderRadius: '0px 4px 4px 0px' }}
+              sx={{
+                borderRadius: '0px 4px 4px 0px',
+                position: 'relative',
+                top,
+                left,
+                zIndex: 1000,
+              }}
             >
               {generatingBuilds
                 ? t('generateButton.cancel')
                 : t('generateButton.generateBuilds')}
             </Button>
-          </span>
+          </Box>
         </BootstrapTooltip>
       </ButtonGroup>
       {!!characterKey && (
