@@ -177,13 +177,6 @@
         "swap": "交换"
       },
       "currentDB": "当前数据库"
-    },
-    "sillyCard": {
-      "desc": "我们从<strong>Silly Wisher</strong><1>偷</1>借（经过允许）来了所有的角色信息并且把它们接入到GenshinOptimizer。",
-      "toggle": {
-        "enabled": "Silly Optimizer已启用",
-        "disabled": "Silly Optimizer已禁用"
-      }
     }
   },
   "ui": {

@@ -177,13 +177,6 @@
         "swap": "선택"
       },
       "currentDB": "현재 데이터베이스"
-    },
-    "sillyCard": {
-      "desc": "<strong>Silly Wisher</strong>에서 모든 캐릭터의 자산을 <1>훔치..</1> (허가하에) 가져왔고 유전자를 Genshin Oprimizer에 접목하였습니다.",
-      "toggle": {
-        "enabled": "Silly Optimizer 활성화",
-        "disabled": "Silly Optimizer 비활성화"
-      }
     }
   },
   "ui": {
