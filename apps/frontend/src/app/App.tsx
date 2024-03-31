@@ -2,6 +2,7 @@ import {
   DBLocalStorage,
   SandboxStorage,
 } from '@genshin-optimizer/common/database'
+import { getRandomElementFromArray } from '@genshin-optimizer/common/util'
 import { ArtCharDatabase } from '@genshin-optimizer/gi/db'
 import { DatabaseContext } from '@genshin-optimizer/gi/db-ui'
 import { SillyContext, theme, useSilly } from '@genshin-optimizer/gi/ui'
@@ -18,7 +19,15 @@ import {
   Zoom,
   useScrollTrigger,
 } from '@mui/material'
-import React, { Suspense, lazy, useCallback, useMemo, useState } from 'react'
+import React, {
+  Suspense,
+  lazy,
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+} from 'react'
 import { useTranslation } from 'react-i18next'
 import { HashRouter, Route, Routes, useMatch } from 'react-router-dom'
 import './App.scss'
@@ -29,6 +38,7 @@ import Header from './Header'
 import useTitle from './ReactHooks/useTitle'
 import Snow from './Snow'
 import './i18n'
+import curicon from './icon.cur?url'
 
 const PageHome = lazy(() => import('./PageHome'))
 const PageArtifact = lazy(() => import('./PageArtifact'))
@@ -141,8 +151,37 @@ function App() {
   )
 }
 function Content() {
+  const { silly } = useContext(SillyContext)
+
+  useEffect(() => {
+    let interval: NodeJS.Timer | undefined
+    if (silly) {
+      interval = setInterval(() => {
+        const allCards = document.querySelectorAll('.MuiPaper-root')
+        const ele = getRandomElementFromArray(
+          Array.from(allCards)
+        ) as HTMLElement
+        ele.style.transform = `rotate(${Math.random() - 0.5}deg)`
+      }, 1000)
+    } else {
+      const allCards = document.querySelectorAll('.MuiPaper-root')
+      Array.from(allCards).forEach((ele) => {
+        ;(ele as HTMLElement).style.transform = `rotate(0deg)`
+      })
+    }
+
+    return () => {
+      interval && clearInterval(interval)
+    }
+  }, [silly])
   return (
-    <Grid container direction="column" minHeight="100vh" position="relative">
+    <Grid
+      container
+      direction="column"
+      minHeight="100vh"
+      position="relative"
+      sx={{ cursor: `url("${curicon}"), auto!important` }}
+    >
       <Grid item>
         <Header anchor="back-to-top-anchor" />
       </Grid>

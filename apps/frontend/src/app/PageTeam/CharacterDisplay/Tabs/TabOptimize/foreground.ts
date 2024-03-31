@@ -5,6 +5,11 @@ import {
   artMaxLevel,
 } from '@genshin-optimizer/gi/consts'
 import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
+import type {
+  ArtifactBuildData,
+  ArtifactsBySlot,
+  DynStat,
+} from '@genshin-optimizer/gi/solver'
 import { getMainStatValue } from '@genshin-optimizer/gi/util'
 import type { Data, NumNode } from '@genshin-optimizer/gi/wr'
 import {
@@ -14,11 +19,6 @@ import {
   setReadNodeKeys,
 } from '@genshin-optimizer/gi/wr'
 import { computeUIData } from '../../../../Formula/api'
-import type {
-  ArtifactBuildData,
-  ArtifactsBySlot,
-  DynStat,
-} from '../../../../Solver/common'
 const dynamic = setReadNodeKeys(
   deepClone({ dyn: { ...input.art, ...input.artSet } })
 )

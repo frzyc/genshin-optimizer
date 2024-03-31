@@ -1,4 +1,6 @@
 import { optimize } from '@genshin-optimizer/gi/wr'
+import { pruneAll, pruneExclusion } from '../common'
+import { WorkerCoordinator } from '../coordinator'
 import type {
   Count,
   FinalizeResult,
@@ -7,9 +9,7 @@ import type {
   Setup,
   WorkerCommand,
   WorkerResult,
-} from '..'
-import { pruneAll, pruneExclusion } from '../common'
-import { WorkerCoordinator } from '../coordinator'
+} from '../type'
 
 export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
   private maxIterateSize = 32_000_000

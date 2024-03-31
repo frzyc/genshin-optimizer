@@ -30,7 +30,10 @@ import {
   useDatabase,
   useOptConfig,
 } from '@genshin-optimizer/gi/db-ui'
+import type { OptProblemInput } from '@genshin-optimizer/gi/solver'
+import { GOSolver, mergeBuilds, mergePlot } from '@genshin-optimizer/gi/solver'
 import { getCharData } from '@genshin-optimizer/gi/stats'
+import { SillyContext } from '@genshin-optimizer/gi/ui'
 import type { NumNode } from '@genshin-optimizer/gi/wr'
 import { optimize } from '@genshin-optimizer/gi/wr'
 import {
@@ -99,12 +102,9 @@ import { GraphContext } from '../../../../Context/GraphContext'
 import { OptimizationTargetContext } from '../../../../Context/OptimizationTargetContext'
 import { TeamCharacterContext } from '../../../../Context/TeamCharacterContext'
 import { mergeData, uiDataForTeam } from '../../../../Formula/api'
-import type { UIData } from '../../../../Formula/uiData'
+import { resolveInfo, type UIData } from '../../../../Formula/uiData'
 import useGlobalError from '../../../../ReactHooks/useGlobalError'
 import useTeamData, { getTeamData } from '../../../../ReactHooks/useTeamData'
-import type { OptProblemInput } from '../../../../Solver'
-import { GOSolver } from '../../../../Solver/GOSolver/GOSolver'
-import { mergeBuilds, mergePlot } from '../../../../Solver/common'
 import { bulkCatTotal } from '../../../../Util/totalUtils'
 import useCompareData from '../../../useCompareData'
 import CompareBtn from '../../CompareBtn'
@@ -403,10 +403,9 @@ export default function TabBuild() {
               workerData.display ?? {},
               JSON.parse(pathStr)
             )
+            const infoResolved = filterNode.info && resolveInfo(filterNode.info)
             const minimum =
-              filterNode.info?.unit === '%'
-                ? setting.value / 100
-                : setting.value // TODO: Conversion
+              infoResolved?.unit === '%' ? setting.value / 100 : setting.value // TODO: Conversion
             return { value: filterNode, minimum: minimum }
           })
       )
@@ -470,11 +469,14 @@ export default function TabBuild() {
       if (plotBaseNumNode) {
         const plotData = mergePlot(results.map((x) => x.plotData!))
         const solverBuilds = Object.values(plotData)
-        if (targetNode.info?.unit === '%')
+        const targetNodeinfo = targetNode.info && resolveInfo(targetNode.info)
+        const plotBaseNumNodeInfo =
+          plotBaseNumNode.info && resolveInfo(plotBaseNumNode.info)
+        if (targetNodeinfo?.unit === '%')
           solverBuilds.forEach(
             (dataEntry) => (dataEntry.value = dataEntry.value * 100)
           )
-        if (plotBaseNumNode.info?.unit === '%')
+        if (plotBaseNumNodeInfo?.unit === '%')
           solverBuilds.forEach(
             (dataEntry) => (dataEntry.plot = (dataEntry.plot ?? 0) * 100)
           )
@@ -586,8 +588,20 @@ export default function TabBuild() {
     ),
     [t]
   )
+  const { silly } = useContext(SillyContext)
   const getNormBuildLabel = useCallback((index: number) => `#${index + 1}`, [])
+  const [runawayCount, setRunAwayCount] = useState(0)
+  const runAway = () =>
+    silly && setRunAwayCount((runawayCount) => runawayCount + 1)
 
+  const { top, left } = useMemo(() => {
+    return runawayCount && runawayCount < 10
+      ? {
+          top: Math.random() * 250 - 125,
+          left: Math.random() * 250 - 230,
+        }
+      : { top: 0, left: 0 }
+  }, [runawayCount])
   return (
     <Box display="flex" flexDirection="column" gap={1}>
       {noArtifact && <NoArtWarning />}
@@ -874,7 +888,7 @@ export default function TabBuild() {
           placement="top"
           title={!optimizationTarget ? t('selectTargetFirst') : ''}
         >
-          <span>
+          <Box sx={{ position: 'relative' }}>
             <Button
               disabled={
                 !characterKey ||
@@ -886,14 +900,21 @@ export default function TabBuild() {
               onClick={
                 generatingBuilds ? () => cancelToken.current() : generateBuilds
               }
+              onMouseOver={runAway}
               startIcon={generatingBuilds ? <Close /> : <TrendingUp />}
-              sx={{ borderRadius: '0px 4px 4px 0px' }}
+              sx={{
+                borderRadius: '0px 4px 4px 0px',
+                position: 'relative',
+                top,
+                left,
+                zIndex: 1000,
+              }}
             >
               {generatingBuilds
                 ? t('generateButton.cancel')
                 : t('generateButton.generateBuilds')}
             </Button>
-          </span>
+          </Box>
         </BootstrapTooltip>
       </ButtonGroup>
       {!!characterKey && (
