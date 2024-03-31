@@ -20,7 +20,7 @@ import {
   getDisplayHeader,
   getDisplaySections,
 } from '../../../../../Formula/DisplayUtil'
-import type { NodeDisplay } from '../../../../../Formula/uiData'
+import { resolveInfo, type NodeDisplay } from '../../../../../Formula/uiData'
 
 export interface TargetSelectorModalProps {
   show: boolean
@@ -52,9 +52,10 @@ export function TargetSelectorModal({
               key,
               Object.fromEntries(
                 Object.entries(sectionObj).filter(([_sectionKey, node]) => {
-                  if (flatOnly && node.info.unit === '%') return false
+                  const { unit, variant } = resolveInfo(node.info)
+                  if (flatOnly && unit === '%') return false
 
-                  if (excludeHeal && node.info.variant === 'heal') return false
+                  if (excludeHeal && variant === 'heal') return false
 
                   if (!showEmptyTargets && node.isEmpty) return false
                   return true

@@ -12,7 +12,7 @@ import CustomNumberInput, {
   CustomNumberInputButtonGroupWrapper,
 } from '../../../../../Components/CustomNumberInput'
 import { DataContext } from '../../../../../Context/DataContext'
-import type { NodeDisplay } from '../../../../../Formula/uiData'
+import { resolveInfo, type NodeDisplay } from '../../../../../Formula/uiData'
 import OptimizationTargetSelector from './OptimizationTargetSelector'
 
 type OptimizationTargetEditorListProps = {
@@ -147,7 +147,9 @@ function OptimizationTargetEditorItem({
     data.getDisplay(),
     path ?? []
   )
-  const isPercent = buildConstraintNode?.info?.unit === '%'
+  const resolvedInfo =
+    buildConstraintNode?.info && resolveInfo(buildConstraintNode?.info)
+  const isPercent = resolvedInfo?.unit === '%'
 
   return (
     <ButtonGroup

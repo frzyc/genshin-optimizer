@@ -102,7 +102,7 @@ import { GraphContext } from '../../../../Context/GraphContext'
 import { OptimizationTargetContext } from '../../../../Context/OptimizationTargetContext'
 import { TeamCharacterContext } from '../../../../Context/TeamCharacterContext'
 import { mergeData, uiDataForTeam } from '../../../../Formula/api'
-import type { UIData } from '../../../../Formula/uiData'
+import { resolveInfo, type UIData } from '../../../../Formula/uiData'
 import useGlobalError from '../../../../ReactHooks/useGlobalError'
 import useTeamData, { getTeamData } from '../../../../ReactHooks/useTeamData'
 import { bulkCatTotal } from '../../../../Util/totalUtils'
@@ -403,10 +403,9 @@ export default function TabBuild() {
               workerData.display ?? {},
               JSON.parse(pathStr)
             )
+            const infoResolved = filterNode.info && resolveInfo(filterNode.info)
             const minimum =
-              filterNode.info?.unit === '%'
-                ? setting.value / 100
-                : setting.value // TODO: Conversion
+              infoResolved?.unit === '%' ? setting.value / 100 : setting.value // TODO: Conversion
             return { value: filterNode, minimum: minimum }
           })
       )
@@ -470,11 +469,14 @@ export default function TabBuild() {
       if (plotBaseNumNode) {
         const plotData = mergePlot(results.map((x) => x.plotData!))
         const solverBuilds = Object.values(plotData)
-        if (targetNode.info?.unit === '%')
+        const targetNodeinfo = targetNode.info && resolveInfo(targetNode.info)
+        const plotBaseNumNodeInfo =
+          plotBaseNumNode.info && resolveInfo(plotBaseNumNode.info)
+        if (targetNodeinfo?.unit === '%')
           solverBuilds.forEach(
             (dataEntry) => (dataEntry.value = dataEntry.value * 100)
           )
-        if (plotBaseNumNode.info?.unit === '%')
+        if (plotBaseNumNodeInfo?.unit === '%')
           solverBuilds.forEach(
             (dataEntry) => (dataEntry.plot = (dataEntry.plot ?? 0) * 100)
           )
