@@ -175,13 +175,6 @@
         "swap": "轉移"
       },
       "currentDB": "目前資料庫"
-    },
-    "sillyCard": {
-      "desc": "We <1>stole</1> borrowed (with permission) all the character assets from <strong>Silly Wisher</strong> and gene splice it into Genshin Optimizer.",
-      "toggle": {
-        "enabled": "Silly Optimizer Enabled",
-        "disabled": "Silly Optimizer Disabled"
-      }
     }
   },
   "ui": {

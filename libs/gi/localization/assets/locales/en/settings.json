@@ -5,10 +5,10 @@
     "languageFormat": "Language: {{language}}"
   },
   "sillyCard": {
-    "desc": "We <1>stole</1> borrowed (with permission) all the character assets from <strong>Silly Wisher</strong> and gene spliced them into Genshin Optimizer.",
+    "desc": "We have finally completed work on a hotly anticipated release: Star Rail Optimizer! If you would like to go back to the open world fun of Genshin Optimizer, click the button below. Note: some text won't change",
     "toggle": {
-      "enabled": "Silly Optimizer Enabled",
-      "disabled": "Silly Optimizer Disabled"
+      "enabled": "Board the Astral Express",
+      "disabled": "Board the Astral Express"
     }
   },
   "count": {
