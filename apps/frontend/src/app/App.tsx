@@ -38,6 +38,7 @@ import Header from './Header'
 import useTitle from './ReactHooks/useTitle'
 import Snow from './Snow'
 import './i18n'
+import curicon from './icon.cur?url'
 
 const PageHome = lazy(() => import('./PageHome'))
 const PageArtifact = lazy(() => import('./PageArtifact'))
@@ -174,7 +175,13 @@ function Content() {
     }
   }, [silly])
   return (
-    <Grid container direction="column" minHeight="100vh" position="relative">
+    <Grid
+      container
+      direction="column"
+      minHeight="100vh"
+      position="relative"
+      sx={{ cursor: `url("${curicon}"), auto!important` }}
+    >
       <Grid item>
         <Header anchor="back-to-top-anchor" />
       </Grid>
