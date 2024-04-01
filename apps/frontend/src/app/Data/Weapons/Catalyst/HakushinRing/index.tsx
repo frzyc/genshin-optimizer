@@ -65,13 +65,13 @@ const sheet: IWeaponSheet = {
           fields: [
             {
               node: infoMut(anemo_dmg_disp, {
-                ...{ path: 'anemo_dmg_' },
+                path: 'anemo_dmg_',
                 isTeamBuff: true,
               }),
             },
             {
               node: infoMut(electro_dmg_disp, {
-                ...{ path: 'electro_dmg_' },
+                path: 'electro_dmg_',
                 isTeamBuff: true,
               }),
             },
@@ -91,13 +91,13 @@ const sheet: IWeaponSheet = {
           fields: [
             {
               node: infoMut(cryo_dmg_disp, {
-                ...{ path: 'cryo_dmg_' },
+                path: 'cryo_dmg_',
                 isTeamBuff: true,
               }),
             },
             {
               node: infoMut(electro_dmg_disp, {
-                ...{ path: 'electro_dmg_' },
+                path: 'electro_dmg_',
                 isTeamBuff: true,
               }),
             },
@@ -117,13 +117,13 @@ const sheet: IWeaponSheet = {
           fields: [
             {
               node: infoMut(geo_dmg_disp, {
-                ...{ path: 'geo_dmg_' },
+                path: 'geo_dmg_',
                 isTeamBuff: true,
               }),
             },
             {
               node: infoMut(electro_dmg_disp, {
-                ...{ path: 'electro_dmg_' },
+                path: 'electro_dmg_',
                 isTeamBuff: true,
               }),
             },
@@ -143,13 +143,13 @@ const sheet: IWeaponSheet = {
           fields: [
             {
               node: infoMut(pyro_dmg_disp, {
-                ...{ path: 'pyro_dmg_' },
+                path: 'pyro_dmg_',
                 isTeamBuff: true,
               }),
             },
             {
               node: infoMut(electro_dmg_disp, {
-                ...{ path: 'electro_dmg_' },
+                path: 'electro_dmg_',
                 isTeamBuff: true,
               }),
             },
@@ -169,13 +169,13 @@ const sheet: IWeaponSheet = {
           fields: [
             {
               node: infoMut(hydro_dmg_disp, {
-                ...{ path: 'hydro_dmg_' },
+                path: 'hydro_dmg_',
                 isTeamBuff: true,
               }),
             },
             {
               node: infoMut(electro_dmg_disp, {
-                ...{ path: 'electro_dmg_' },
+                path: 'electro_dmg_',
                 isTeamBuff: true,
               }),
             },
@@ -193,13 +193,13 @@ const sheet: IWeaponSheet = {
           fields: [
             {
               node: infoMut(dendro_dmg_disp, {
-                ...{ path: 'dendro_dmg_' },
+                path: 'dendro_dmg_',
                 isTeamBuff: true,
               }),
             },
             {
               node: infoMut(electro_dmg_disp, {
-                ...{ path: 'electro_dmg_' },
+                path: 'electro_dmg_',
                 isTeamBuff: true,
               }),
             },
