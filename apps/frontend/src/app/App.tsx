@@ -37,6 +37,7 @@ import Footer from './Footer'
 import Header from './Header'
 import useTitle from './ReactHooks/useTitle'
 import Snow from './Snow'
+import clickCurion from './click.cur?url'
 import './i18n'
 import curicon from './icon.cur?url'
 
@@ -180,7 +181,23 @@ function Content() {
       direction="column"
       minHeight="100vh"
       position="relative"
-      sx={{ cursor: `url("${curicon}"), auto!important` }}
+      sx={
+        silly
+          ? {
+              cursor: `url(${curicon}), auto!important`,
+              '& .MuiTypography-root': {
+                fontFamily: `"Comic Sans MS", "Comic Sans", cursive`,
+              },
+              '& .MuiButtonBase-root': {
+                transition: '1s ease-in-out',
+                cursor: `url(${clickCurion}), auto !important`,
+              },
+              '& .MuiButtonBase-root:focus': {
+                transform: 'rotate(360deg)',
+              },
+            }
+          : undefined
+      }
     >
       <Grid item>
         <Header anchor="back-to-top-anchor" />
