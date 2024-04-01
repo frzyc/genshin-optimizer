@@ -4,10 +4,7 @@ import type {
   ElementKey,
   LocationCharacterKey,
 } from '@genshin-optimizer/gi/consts'
-import {
-  absorbableEle,
-  nonTravelerCharacterKeys,
-} from '@genshin-optimizer/gi/consts'
+import { absorbableEle } from '@genshin-optimizer/gi/consts'
 
 export const allArtifactSetCount = [1, 2, 3, 4, 5] as const
 
@@ -38,14 +35,7 @@ export const travelerMKeys = [
   'TravelerHydroM',
 ] as const
 
-export const allCharacterSheetKeys = [
-  ...nonTravelerCharacterKeys,
-  ...travelerFKeys,
-  ...travelerMKeys,
-]
 export type SetNum = (typeof allArtifactSetCount)[number]
-
-export type CharacterSheetKey = (typeof allCharacterSheetKeys)[number]
 
 /**
  * @deprecated use `RollColorKey` in `@genshin-optimizer/gi/ui`

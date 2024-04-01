@@ -1,3 +1,4 @@
+import { ImgIcon } from '@genshin-optimizer/common/ui'
 import { clamp, objMap } from '@genshin-optimizer/common/util'
 import { imgAssets } from '@genshin-optimizer/gi/assets'
 import CheckIcon from '@mui/icons-material/Check'
@@ -19,7 +20,6 @@ import CustomNumberInput, {
   CustomNumberInputButtonGroupWrapper,
 } from '../Components/CustomNumberInput'
 import ImgFullwidth from '../Components/Image/ImgFullwidth'
-import ImgIcon from '../Components/Image/ImgIcon'
 import TextButton from '../Components/TextButton'
 const booksData = {
   advice: {

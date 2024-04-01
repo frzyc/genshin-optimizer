@@ -109,9 +109,7 @@ export function findBestArtifact(
         (slotKeys.has(slotKey) ? 1 : 0) +
         (mainStatKeys.has(mainStatKey) ? 1 : 0)
       const relevantMainStatValues = mainStatValues
-        .filter(
-          (value) => value.unit !== '%' || getUnitStr(mainStatKey) === '%'
-        ) // Ignore "%" text if key isn't "%"
+        .filter((value) => value.unit !== '%' || mainStatUnit === '%') // Ignore "%" text if key isn't "%"
         .map((value) => value.mainStatValue)
       for (const [rarityString, rarityIndividualScore] of Object.entries(
         rarityRates

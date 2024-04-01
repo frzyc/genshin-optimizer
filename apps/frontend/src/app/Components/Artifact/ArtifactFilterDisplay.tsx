@@ -8,7 +8,8 @@ import {
   allMainStatKeys,
   allSubstatKeys,
 } from '@genshin-optimizer/gi/consts'
-import { useDatabase } from '@genshin-optimizer/gi/db-ui'
+import { useDatabase, useDisplayArtifact } from '@genshin-optimizer/gi/db-ui'
+import { SlotIcon } from '@genshin-optimizer/gi/svgicons'
 import BusinessCenterIcon from '@mui/icons-material/BusinessCenter'
 import LockIcon from '@mui/icons-material/Lock'
 import LockOpenIcon from '@mui/icons-material/LockOpen'
@@ -18,7 +19,6 @@ import Stack from '@mui/system/Stack'
 import { Suspense, useMemo } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
 import type { FilterOption } from '../../PageArtifact/ArtifactSort'
-import useDisplayArtifact from '../../ReactHooks/useDisplayArtifact'
 import { handleMultiSelect } from '../../Util/MultiSelect'
 import { bulkCatTotal } from '../../Util/totalUtils'
 import BootstrapTooltip from '../BootstrapTooltip'
@@ -30,7 +30,6 @@ import ArtifactSetMultiAutocomplete from './ArtifactSetMultiAutocomplete'
 import ArtifactSubstatMultiAutocomplete from './ArtifactSubstatMultiAutocomplete'
 import LocationFilterMultiAutocomplete from './LocationFilterMultiAutocomplete'
 import RVSlide from './RVSlide'
-import SlotIcon from './SlotIcon'
 import SubstatToggle from './SubstatToggle'
 
 const lockedValues = ['locked', 'unlocked'] as const
@@ -141,13 +140,7 @@ export default function ArtifactFilterDisplay({
     )
   }, [database, disableSlotFilter, filteredIdMap, filterOption])
 
-  const artifactDisplayState = useDisplayArtifact()
-  const {
-    sortType: _,
-    effFilter,
-    ascending: __,
-    probabilityFilter: ___,
-  } = artifactDisplayState
+  const { effFilter } = useDisplayArtifact()
 
   return (
     <Grid container spacing={1}>

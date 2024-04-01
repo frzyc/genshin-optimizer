@@ -21,6 +21,7 @@ import type {
 } from '@genshin-optimizer/gi/db'
 import { allAllowLocationsState } from '@genshin-optimizer/gi/db'
 import { useDatabase, useOptConfig } from '@genshin-optimizer/gi/db-ui'
+import { SlotIcon } from '@genshin-optimizer/gi/svgicons'
 import { SillyContext } from '@genshin-optimizer/gi/ui'
 import CloseIcon from '@mui/icons-material/Close'
 import SettingsIcon from '@mui/icons-material/Settings'
@@ -48,7 +49,6 @@ import {
   useState,
 } from 'react'
 import { useTranslation } from 'react-i18next'
-import SlotIcon from '../../../../../Components/Artifact/SlotIcon'
 import CardDark from '../../../../../Components/Card/CardDark'
 import CardLight from '../../../../../Components/Card/CardLight'
 import CharacterCardPico from '../../../../../Components/Character/CharacterCardPico'

@@ -1,4 +1,4 @@
-import { CardThemed, SqBadge } from '@genshin-optimizer/common/ui'
+import { CardThemed, ImgIcon, SqBadge } from '@genshin-optimizer/common/ui'
 import { getUnitStr } from '@genshin-optimizer/common/util'
 import { artifactAsset } from '@genshin-optimizer/gi/assets'
 import type { ICachedWeapon } from '@genshin-optimizer/gi/db'
@@ -9,7 +9,6 @@ import { artDisplayValue } from '@genshin-optimizer/gi/util'
 import { Box, Grid } from '@mui/material'
 import { getWeaponSheet } from '../../../Data/Weapons'
 import { BuildCard } from '../../../PageTeam/CharacterDisplay/Build/BuildCard'
-import ImgIcon from '../../Image/ImgIcon'
 import { StatWithUnit } from '../../StatDisplay'
 import { WeaponCardNanoObj } from '../../Weapon/WeaponCardNano'
 

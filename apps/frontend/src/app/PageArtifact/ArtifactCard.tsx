@@ -12,6 +12,7 @@ import {
 } from '@genshin-optimizer/gi/consts'
 import type { ICachedArtifact, ICachedSubstat } from '@genshin-optimizer/gi/db'
 import { useArtifact, useDatabase } from '@genshin-optimizer/gi/db-ui'
+import { SlotIcon } from '@genshin-optimizer/gi/svgicons'
 import { artifactLevelVariant } from '@genshin-optimizer/gi/ui'
 import {
   artDisplayValue,
@@ -36,7 +37,6 @@ import {
 import { Suspense, lazy, useCallback, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { ArtifactSetTooltipContent } from '../Components/Artifact/ArtifactSetTooltip'
-import SlotIcon from '../Components/Artifact/SlotIcon'
 import BootstrapTooltip from '../Components/BootstrapTooltip'
 import CardLight from '../Components/Card/CardLight'
 import { LocationAutocomplete } from '../Components/Character/LocationAutocomplete'

@@ -4,10 +4,10 @@ import type {
   ArtifactSlotKey,
 } from '@genshin-optimizer/gi/consts'
 import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
+import { SlotIcon } from '@genshin-optimizer/gi/svgicons'
 import { Box, Typography } from '@mui/material'
 import { useMemo } from 'react'
 import ArtifactSetTooltip from '../../../../../Components/Artifact/ArtifactSetTooltip'
-import SlotIcon from '../../../../../Components/Artifact/SlotIcon'
 import SqBadge from '../../../../../Components/SqBadge'
 import { getArtSheet } from '../../../../../Data/Artifacts'
 

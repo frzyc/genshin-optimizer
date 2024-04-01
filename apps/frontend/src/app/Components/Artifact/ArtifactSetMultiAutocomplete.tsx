@@ -1,3 +1,4 @@
+import { ImgIcon } from '@genshin-optimizer/common/ui'
 import type {
   ArtifactRarity,
   ArtifactSetKey,
@@ -9,7 +10,6 @@ import { useTranslation } from 'react-i18next'
 import { setKeysByRarities } from '../../Data/Artifacts'
 import { artifactDefIcon } from '../../Data/Artifacts/ArtifactSheet'
 import { GeneralAutocompleteMulti } from '../GeneralAutocomplete'
-import ImgIcon from '../Image/ImgIcon'
 import { StarsDisplay } from '../StarDisplay'
 import sortByRarityAndName from './sortByRarityAndName'
 

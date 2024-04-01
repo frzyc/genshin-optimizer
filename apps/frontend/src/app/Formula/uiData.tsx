@@ -1,3 +1,4 @@
+import { ColorText } from '@genshin-optimizer/common/ui'
 import {
   assertUnreachable,
   crawlObject,
@@ -6,10 +7,19 @@ import {
   objPathValue,
   valueString,
 } from '@genshin-optimizer/common/util'
-import type { ArtifactSetKey, WeaponKey } from '@genshin-optimizer/gi/consts'
-import { allArtifactSetKeys, allWeaponKeys } from '@genshin-optimizer/gi/consts'
+import type {
+  ArtifactSetKey,
+  CharacterSheetKey,
+  WeaponKey,
+} from '@genshin-optimizer/gi/consts'
+import {
+  allArtifactSetKeys,
+  allCharacterSheetKeys,
+  allWeaponKeys,
+} from '@genshin-optimizer/gi/consts'
 import { KeyMap } from '@genshin-optimizer/gi/keymap'
 import { StatIcon } from '@genshin-optimizer/gi/svgicons'
+import { Translate } from '@genshin-optimizer/gi/ui'
 import { SillyContext } from '@genshin-optimizer/gi/ui/Context/SillyContext'
 import type {
   ComputeNode,
@@ -29,11 +39,8 @@ import type {
   UIInput,
 } from '@genshin-optimizer/gi/wr'
 import { allOperations, infoManager, uiInput } from '@genshin-optimizer/gi/wr'
+import type { Palette } from '@mui/material'
 import { useContext } from 'react'
-import ColorText from '../Components/ColoredText'
-import { Translate } from '../Components/Translate'
-import type { CharacterSheetKey } from '../Types/consts'
-import { allCharacterSheetKeys } from '../Types/consts'
 import { artifactTr } from '../names'
 const shouldWrap = true
 
@@ -597,7 +604,7 @@ function createDisplay(node: ContextNodeDisplay<number | string | undefined>) {
     const sourceDisplay = <SourceDisplay source={source} />
     node.name = (
       <>
-        <ColorText color={variant}>
+        <ColorText color={variant as keyof Palette}>
           {prefixDisplay}
           {name}
         </ColorText>
